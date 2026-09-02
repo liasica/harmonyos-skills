@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Local mirror of HarmonyOS developer docs as Markdown for AI-assisted HarmonyOS app development"
 requires-python = ">=3.12"
 dependencies = [
-    "playwright>=1.45",
     "markdownify>=0.13",
     "beautifulsoup4>=4.12",
     "lxml>=5.0",

@@ -1,4 +1,4 @@
-"""HTML → Markdown 提取与转换"""
+"""接口返回的 HTML -> Markdown 转换，以及 frontmatter 的渲染与读取"""
 from __future__ import annotations
 
 import hashlib
@@ -7,15 +7,12 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup, Tag
 from markdownify import markdownify
 
 from scripts.paths import strip_signed_params
-
-
-class ExtractionError(Exception):
-    """选择器全部失配，无法从 HTML 抽出正文"""
 
 
 @dataclass
@@ -26,82 +23,112 @@ class ExtractedDoc:
     markdown: str
 
 
-_UPDATED_RE = re.compile(r"(\d{4}[-/.]\d{1,2}[-/.]\d{1,2})")
+_HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"]
+_LANG_CLASS_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+#.-]{0,20}$")
+# 标题文本开头的 [hK] 是站点标注的显示层级：不带标记的 h4 渲染为顶层章节，带 [h2] 的 h4 渲染为再低一级
+_LEVEL_MARK_RE = re.compile(r"^\s*\[h([1-6])\]\s*")
+# 提示框开头的图标图片（note_3.0-zh-cn.png 之类），页面上显示为「说明」等文字
+_NOTE_ICON_RE = re.compile(r"/(note|caution|notice|warning|danger|tip)_[^/]*\.(?:png|gif|svg)$", re.I)
+_NOTE_LABELS = {"note": "说明", "caution": "注意", "notice": "须知", "warning": "警告", "danger": "危险", "tip": "提示"}
 
 
-def _first_match(soup: BeautifulSoup, candidates: list[str]) -> Optional[Tag]:
-    for sel in candidates:
-        node = soup.select_one(sel)
-        if node is not None:
-            return node
-    return None
+def convert_api_html(html: str, *, title: str, breadcrumb: str, doc_updated_at: Optional[str],
+                     base_url: str) -> ExtractedDoc:
+    """把 getDocumentById 返回的正文 HTML 转为 Markdown
 
-
-_UPDATED_HINT_RE = re.compile(r"更新时间[:：]\s*(\d{4}[-/.]\d{1,2}[-/.]\d{1,2})")
-
-
-def _extract_updated_at(soup: BeautifulSoup, candidates: list[str]) -> Optional[str]:
-    node = _first_match(soup, candidates)
-    if node is not None:
-        m = _UPDATED_RE.search(node.get_text(" ", strip=True))
-        if m:
-            return m.group(1).replace("/", "-").replace(".", "-")
-    # 兜底：全文 grep `更新时间: YYYY-MM-DD`（华为站点未给「更新时间」独立 class）
-    text = soup.get_text(" ", strip=True)
-    m = _UPDATED_HINT_RE.search(text)
-    if m:
-        return m.group(1).replace("/", "-").replace(".", "-")
-    return None
-
-
-def _extract_breadcrumb(soup: BeautifulSoup, candidates: list[str]) -> str:
-    node = _first_match(soup, candidates)
-    if node is None:
-        return ""
-    parts = [t.strip() for t in node.stripped_strings if t.strip() and t.strip() not in {"/", ">"}]
-    return " > ".join(parts)
-
-
-def extract_and_convert(html: str, selectors: dict, *, base_url: str = "") -> ExtractedDoc:
+    - 开头的 h1 就是标题，标题已进 frontmatter，不重复输出；title 为空时用它兜底
+    - 标题文本开头的 [hK] 标记表示比原标签再低 K-1 级，去掉标记并按此调整层级
+    - 接口原文顶层章节是 h4（页面渲染为 h2），把标题层级整体上移到从 h2 开始
+    - 提示框的图标图片换成「说明」「注意」等文字标签
+    - 链接转绝对 URL 并剥掉 CDN 签名参数；没有 href 的空锚点删除
+    """
     soup = BeautifulSoup(html, "lxml")
+    body = soup.body or soup
 
-    title_node = _first_match(soup, selectors.get("title_candidates", []))
-    body_node = _first_match(soup, selectors.get("body_candidates", []))
-    if title_node is None or body_node is None:
-        raise ExtractionError(
-            f"selectors failed: title={title_node is not None}, body={body_node is not None}"
-        )
+    h1 = body.find("h1")
+    if h1 is not None:
+        if not title.strip():
+            title = h1.get_text(strip=True)
+        h1.decompose()
 
-    title = title_node.get_text(strip=True)
-    breadcrumb = _extract_breadcrumb(soup, selectors.get("breadcrumb_candidates", []))
-    doc_updated_at = _extract_updated_at(soup, selectors.get("updated_at_candidates", []))
+    for h in body.find_all(_HEADING_TAGS[1:]):
+        first = h.find(string=True)
+        m = _LEVEL_MARK_RE.match(first) if first else None
+        if m:
+            first.replace_with(first[m.end():])
+            h.name = f"h{min(6, int(h.name[1]) + int(m.group(1)) - 1)}"
 
-    body_copy = BeautifulSoup(str(body_node), "lxml")
-    for sel in selectors.get("updated_at_candidates", []):
-        for n in body_copy.select(sel):
-            n.decompose()
-    for sel in selectors.get("breadcrumb_candidates", []):
-        for n in body_copy.select(sel):
-            n.decompose()
+    headings = body.find_all(_HEADING_TAGS[1:])
+    levels = [int(h.name[1]) for h in headings]
+    if levels:
+        shift = min(levels) - 2
+        if shift > 0:
+            for h in headings:
+                h.name = f"h{int(h.name[1]) - shift}"
 
-    # 把所有 <a href> 转绝对 URL，便于后续按绝对 URL 改写为本仓库相对链接
-    if base_url:
-        from urllib.parse import urljoin
-        for a in body_copy.find_all("a", href=True):
-            try:
-                a["href"] = urljoin(base_url, a["href"])
-            except Exception:
-                pass
-    # 图片等资源链接带按分钟变化的 CDN 签名参数（HW-CC-Date / HW-CC-Sign 等），
-    # 不剥掉的话同一页面每次抓取 hash 都不同，无法判断内容是否真的更新
-    for tag, attr in (("a", "href"), ("img", "src")):
-        for node in body_copy.find_all(tag, **{attr: True}):
-            node[attr] = strip_signed_params(node[attr])
+    # 视频 / 音频没有 Markdown 形式，转成带文字的链接（src 在自身或第一个 <source> 上）
+    for media in body.find_all(["video", "audio"]):
+        src = media.get("src") or next((s.get("src") for s in media.find_all("source") if s.get("src")), None)
+        if src:
+            link = soup.new_tag("a", href=src)
+            link.string = "视频" if media.name == "video" else "音频"
+            media.replace_with(link)
+        else:
+            media.decompose()
 
-    md = markdownify(str(body_copy), heading_style="ATX", code_language_callback=_code_lang)
+    for a in body.find_all("a"):
+        href = a.get("href")
+        if href:
+            a["href"] = strip_signed_params(urljoin(base_url, href))
+        elif not a.get_text(strip=True):
+            a.decompose()
+    for img in body.find_all("img", src=True):
+        src = strip_signed_params(urljoin(base_url, img["src"]))
+        m = _NOTE_ICON_RE.search(src)
+        if m:
+            # 先剥掉签名参数再判断，真实 src 带 ?HW-CC-... 后缀
+            label = soup.new_tag("strong")
+            label.string = _NOTE_LABELS[m.group(1).lower()]
+            img.replace_with(label)
+        else:
+            img["src"] = src
+    # 其余带 src 的元素（source / iframe 等）同样处理
+    for el in body.find_all(src=True):
+        if el.name != "img":
+            el["src"] = strip_signed_params(urljoin(base_url, el["src"]))
+
+    md = markdownify(str(body), heading_style="ATX", code_language_callback=_code_lang)
     md = _post_process(md)
-    return ExtractedDoc(title=title, breadcrumb=breadcrumb,
-                        doc_updated_at=doc_updated_at, markdown=md)
+    return ExtractedDoc(title=title.strip(), breadcrumb=breadcrumb,
+                        doc_updated_at=doc_updated_at or None, markdown=md)
+
+
+def _code_lang(tag: Tag) -> str:
+    """从 <pre class="TypeScript"> 或 <code class="language-ts"> 取代码语言"""
+    candidates = [tag]
+    if tag.name == "pre":
+        code = tag.find("code")
+        if code is not None:
+            candidates.append(code)
+    for el in candidates:
+        classes = el.get("class") or []
+        for c in classes:
+            if c.startswith("language-"):
+                return c[len("language-"):]
+        for c in classes:
+            if _LANG_CLASS_RE.match(c):
+                return c.lower()
+    return ""
+
+
+_URL_RE = re.compile(r"https?://[^\s)\]\"'<>]+")
+
+
+def _post_process(md: str) -> str:
+    # 兜底：正文文本里直接出现的签名 URL 也剥掉参数
+    if "HW-CC-" in md:
+        md = _URL_RE.sub(lambda m: strip_signed_params(m.group(0)), md)
+    return re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
 
 
 _LINK_RE = re.compile(r"\[([^\]]*)\]\((https?://[^\s)]+)\)")
@@ -137,36 +164,6 @@ def rewrite_internal_links(
             return m.group(0)
         return f"[{text}]({rel})"
     return _LINK_RE.sub(repl, markdown)
-
-
-def _code_lang(tag: Tag) -> str:
-    code = tag.find("code") if tag.name == "pre" else tag
-    if code is None:
-        return ""
-    classes = code.get("class") or []
-    for c in classes:
-        if c.startswith("language-"):
-            return c[len("language-"):]
-    return ""
-
-
-_UI_NOISE_LINES = {
-    "收起", "展开", "自动换行", "复制", "深色代码主题",
-    "返回顶部", "查看反馈", "上一篇", "下一篇",
-}
-
-
-def _post_process(md: str) -> str:
-    # 移除孤立的 UI 控件文字（华为站代码块周边 toolbar）
-    cleaned: list[str] = []
-    for line in md.splitlines():
-        stripped = line.strip()
-        if stripped in _UI_NOISE_LINES:
-            continue
-        cleaned.append(line)
-    md = "\n".join(cleaned)
-    md = re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
-    return md
 
 
 # YAML 纯标量不能以这些指示符开头

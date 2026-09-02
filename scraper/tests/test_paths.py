@@ -18,7 +18,7 @@ def test_url_to_local_path_strips_doc_prefix():
 def test_url_to_local_path_trailing_slash_becomes_index():
     url = "https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/"
     assert url_to_local_path(url, root=Path("harmonyos/references")) == Path(
-        "harmonyos/references/harmonyos-releases/index.md"
+        "harmonyos/references/harmonyos-releases/index-doc.md"
     )
 
 
@@ -71,3 +71,10 @@ def test_url_to_reference_relative_outside_whitelist_returns_none():
     rel = url_to_reference_relative("https://example.com/foo", from_md, refs,
                                     ["https://developer.huawei.com/consumer/cn/doc/"])
     assert rel is None
+
+
+def test_url_to_local_path_renames_index_doc_to_avoid_clash_with_category_index():
+    url = "https://developer.huawei.com/consumer/cn/doc/harmonyos-references/index"
+    assert url_to_local_path(url, root=Path("harmonyos/references")) == Path(
+        "harmonyos/references/harmonyos-references/index-doc.md"
+    )

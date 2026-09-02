@@ -19,10 +19,12 @@ roots:
     category: harmonyos-roadmap
 
 settings:
-  concurrency: 8
-  page_timeout_ms: 30000
-  extra_wait_ms: 400
+  # 华为文档站自己的接口：getCatalogTree 拿目录树，getDocumentById 拿正文，不需要浏览器
+  api_base: https://svc-drcn.developer.huawei.com/community/servlet/consumer/cn/documentPortal/
+  concurrency: 16
+  request_timeout_s: 30
   retries: 2
-  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+  user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
+  # 正文里落在这些前缀内的链接改写为仓库内相对路径
   url_allow_prefixes:
     - https://developer.huawei.com/consumer/cn/doc/

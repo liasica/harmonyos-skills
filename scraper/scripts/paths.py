@@ -40,6 +40,19 @@ def strip_signed_params(url: str) -> str:
 
 
 _DOC_PREFIX = "/consumer/cn/doc/"
+_INDEX_DOC_STEM = "index-doc"
+DOC_URL_PREFIX = "https://developer.huawei.com" + _DOC_PREFIX
+
+
+def split_doc_url(url: str) -> tuple[str, str]:
+    """https://developer.huawei.com/consumer/cn/doc/<category>/<objectId>[?query] -> (category, objectId)"""
+    if not url.startswith(DOC_URL_PREFIX):
+        raise ValueError(f"不是华为文档 URL：{url}")
+    rest = url[len(DOC_URL_PREFIX):].split("?", 1)[0].split("#", 1)[0].strip("/")
+    category, _, object_id = rest.partition("/")
+    if not category or not object_id:
+        raise ValueError(f"URL 缺少分类或 objectId：{url}")
+    return category, object_id
 
 
 def url_to_local_path(url: str, root: Path) -> Path:
@@ -48,16 +61,20 @@ def url_to_local_path(url: str, root: Path) -> Path:
     规则：
       - 移除 `/consumer/cn/doc/` 前缀
       - 路径段直接复用
-      - 以 / 结尾 → 该目录下 index.md
-      - 否则 → <最后一段>.md
+      - 以 / 结尾 → 该目录下 index-doc.md
+      - 否则 → <最后一段>.md；最后一段为 index（不分大小写）时改为 index-doc，
+        否则在 macOS 这类大小写不敏感的文件系统上会与分类索引 INDEX.md 是同一个文件
     """
     parsed = urlparse(url)
     raw_path = parsed.path
     if raw_path.startswith(_DOC_PREFIX):
         raw_path = raw_path[len(_DOC_PREFIX):]
     if raw_path.endswith("/"):
-        return root / raw_path.lstrip("/") / "index.md"
+        return root / raw_path.lstrip("/") / f"{_INDEX_DOC_STEM}.md"
     rel = raw_path.lstrip("/")
+    head, _, last = rel.rpartition("/")
+    if last.lower() == "index":
+        rel = f"{head}/{_INDEX_DOC_STEM}" if head else _INDEX_DOC_STEM
     return root / f"{rel}.md"
 
 

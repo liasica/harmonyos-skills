@@ -118,6 +118,17 @@ class Manifest:
         self.entries[url] = entry
         return entry
 
+    def drop_shadowed_stale(self) -> int:
+        """删除 local_path 已被非 stale 条目占用的 stale 条目
+
+        同一文档换了 URL 写法（如去掉 ?istab=1&m=1）后，旧 URL 的记录会变 stale 且与新记录指向同一文件
+        """
+        live = {e.local_path for e in self.entries.values() if e.status != EntryStatus.STALE and e.local_path}
+        dead = [u for u, e in self.entries.items() if e.status == EntryStatus.STALE and e.local_path in live]
+        for u in dead:
+            del self.entries[u]
+        return len(dead)
+
     def mark_stale_except(self, seen: Iterable[str]) -> None:
         seen_set = set(seen)
         for url, entry in self.entries.items():

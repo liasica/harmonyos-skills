@@ -1,7 +1,7 @@
-"""主入口：两阶段同步
+"""主入口：两阶段同步（全部走华为 documentPortal 接口，不需要浏览器）
 
-阶段 1（discover）：访问 5 个根 URL，递归点开 .layout-left 全部折叠节点，抽出全部 a[href]
-阶段 2（fetch）：并发渲染所有发现的 URL，抽正文转 Markdown，按 hash 增量写盘
+阶段 1（discover）：每个根调一次 getCatalogTree，展平目录树得到文档清单与面包屑
+阶段 2（fetch）：并发调 getDocumentById 拉正文 HTML，转 Markdown，按 hash 增量写盘
 
 退出码：0 成功；1 discover 失败或本次抓取错误率过高（结果不可信，CI 据此不提交）；2 参数错误
 """
@@ -9,28 +9,31 @@ from __future__ import annotations
 
 import argparse
 import asyncio
-import json
 import logging
 import re
 import sys
+import time
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import httpx
 import yaml
-from playwright.async_api import async_playwright
 
 from scripts.converter import (
     compute_content_hash,
     read_frontmatter,
     render_with_frontmatter,
     rewrite_internal_links,
+    yaml_scalar,
 )
-from scripts.discover import discover_from_root
-from scripts.fetcher import FetchResult, fetch_page
+from scripts.discover import fetch_catalog_tree, flatten_tree
+from scripts.fetcher import FetchResult, fetch_document
 from scripts.manifest import EntryStatus, Manifest
 from scripts.paths import (
+    DOC_URL_PREFIX,
     normalize_url,
+    split_doc_url,
     url_to_local_path,
     url_to_reference_relative,
 )
@@ -42,12 +45,11 @@ DATA_DIR = SCRAPER_ROOT / "data"
 DOCS_DIR = REPO_ROOT / "harmonyos" / "references"
 LOGS_DIR = DATA_DIR / "logs"
 MANIFEST_PATH = DATA_DIR / "manifest.json"
-DISCOVERY_CACHE_PATH = DATA_DIR / "discovery.json"
 
 TZ_CN = timezone(timedelta(hours=8))
 # 每完成多少页 flush 一次 manifest（中断恢复用）
 FLUSH_EVERY = 50
-# 本次抓取的错误占比超过该值即视为站点或选择器出了问题，退出码置 1
+# 本次抓取的错误占比超过该值即视为站点或接口出了问题，退出码置 1
 MAX_ERROR_RATIO = 0.2
 
 _CATEGORY_DISPLAY = {
@@ -68,36 +70,12 @@ def now_iso() -> str:
     return datetime.now(TZ_CN).isoformat(timespec="seconds")
 
 
-def _load_discovery_cache(today: str, args: argparse.Namespace) -> dict | None:
-    """同日内的 discovery 缓存可复用；--force 或 --root（部分同步）时不复用"""
-    if args.force or args.root:
-        return None
-    if not DISCOVERY_CACHE_PATH.exists():
-        return None
-    try:
-        d = json.loads(DISCOVERY_CACHE_PATH.read_text(encoding="utf-8"))
-        if d.get("date") != today:
-            return None
-        return dict(d.get("urls", {}))
-    except Exception:
-        return None
-
-
-def _save_discovery_cache(discovered: dict[str, dict], today: str) -> None:
-    DISCOVERY_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    payload = {"date": today, "saved_at": now_iso(),
-               "count": len(discovered), "urls": discovered}
-    tmp = DISCOVERY_CACHE_PATH.with_suffix(".json.tmp")
-    tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    tmp.replace(DISCOVERY_CACHE_PATH)
-
-
 def _collect_docs(manifest: Manifest) -> dict[str, list[tuple[str, str]]]:
     """按分类收集可进入 INDEX 的文档，每条为 (相对 references/ 的路径, 标题)
 
     - stale（本次全量未再发现）的条目排除
     - error 条目若磁盘上仍有上次成功的副本则保留，一次瞬时抓取失败不应把文档从索引里抹掉
-    - 同一文档可能被带 / 不带 query 的两个 URL 各记一条，按路径去重
+    - 同一文件若被多条记录指向，按路径去重
     """
     by_category: dict[str, list[tuple[str, str]]] = defaultdict(list)
     seen_paths: set[str] = set()
@@ -214,12 +192,25 @@ def _hash_on_disk(local_path: Path) -> str:
     return read_frontmatter(local_path).get("content_hash", "")
 
 
+def _frontmatter_matches(local_path: Path, url: str, doc) -> bool:
+    """正文没变时也要核对 frontmatter：url 写法、标题、面包屑、更新时间任一变化都应重写文件"""
+    fm = read_frontmatter(local_path)
+    expected = {
+        "url": url,
+        "title": yaml_scalar(doc.title),
+        "breadcrumb": yaml_scalar(doc.breadcrumb) if doc.breadcrumb else None,
+        "doc_updated_at": doc.doc_updated_at or "",
+    }
+    return all(fm.get(k) == v for k, v in expected.items() if v is not None)
+
+
 async def run(args: argparse.Namespace) -> int:
+    started = time.monotonic()
     log = setup_logging()
     whitelist = load_yaml(SCRAPER_ROOT / "config" / "whitelist.yaml")
-    selectors = load_yaml(SCRAPER_ROOT / "config" / "selectors.yaml")
     settings = whitelist["settings"]
     allow_prefixes = settings["url_allow_prefixes"]
+    api_base = settings["api_base"]
 
     categories = [r["category"] for r in whitelist["roots"]]
     if args.root and args.root not in categories:
@@ -232,127 +223,99 @@ async def run(args: argparse.Namespace) -> int:
     today_start = datetime.now(TZ_CN).replace(
         hour=0, minute=0, second=0, microsecond=0
     ).isoformat(timespec="seconds")
-    today = today_start[:10]
 
     roots = whitelist["roots"]
     if args.root:
         roots = [r for r in roots if r["category"] == args.root]
 
-    # category 推断：URL 必须落在 5 个根的二级路径前缀内，否则视为越界
-    category_prefixes: list[tuple[str, str]] = []
-    for r in whitelist["roots"]:
-        seg = r["url"].split("/consumer/cn/doc/", 1)[1].split("/", 1)[0]
-        category_prefixes.append((f"https://developer.huawei.com/consumer/cn/doc/{seg}", r["category"]))
+    limits = httpx.Limits(max_connections=settings["concurrency"],
+                          max_keepalive_connections=settings["concurrency"])
+    async with httpx.AsyncClient(timeout=settings["request_timeout_s"], limits=limits,
+                                 headers={"User-Agent": settings["user_agent"]}) as client:
+        # === Phase 1: discover（各根并行，每根一次 getCatalogTree）===
+        async def discover_one(root: dict) -> tuple[dict, list[dict]]:
+            category, object_id = split_doc_url(root["url"])
+            log.info("discovering: %s", root["url"])
+            try:
+                tree_title, tree = await fetch_catalog_tree(client, api_base, category, object_id)
+            except Exception as e:
+                log.error("discover failed for %s: %s", root["url"], e)
+                return root, []
+            docs = flatten_tree(tree, tree_title or root["name"])
+            # 根文档自身若不在树里也要收录
+            if docs and not any(d["object_id"] == object_id for d in docs):
+                docs.insert(0, {"object_id": object_id, "title": root["name"],
+                                "breadcrumb": tree_title or root["name"]})
+            log.info("  -> %s: %d docs", category, len(docs))
+            return root, docs
 
-    def infer_category(url: str) -> str:
-        for prefix, cat in category_prefixes:
-            if url == prefix or url.startswith(prefix + "/") or url.startswith(prefix + "?"):
-                return cat
-        return "unknown"
+        results = await asyncio.gather(*(discover_one(r) for r in roots))
+        # 任一根失败或树里没有文档就整体放弃：带着残缺清单做全量会把该分类全部误标 stale
+        failed = [root["category"] for root, docs in results if not docs]
+        if failed:
+            log.error("discover failed for %s, abort without touching manifest / INDEX", failed)
+            return 1
 
-    # === 断点续传：尝试加载 discovery 缓存 ===
-    discovered: dict[str, dict] = {}
-    cache = _load_discovery_cache(today, args)
-    if cache is not None:
-        discovered = cache
-        log.info("phase 1 skipped (cache): %d urls from %s", len(discovered), DISCOVERY_CACHE_PATH)
-
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context(user_agent=settings["user_agent"])
-        try:
-            if not discovered:
-                # === Phase 1: discover（各根并行）===
-                async def discover_one(root: dict) -> tuple[dict, list[dict]]:
-                    log.info("discovering: %s", root["url"])
-                    try:
-                        links = await discover_from_root(
-                            root["url"], selectors["sidebar"], allow_prefixes, settings,
-                            browser_context=context,
-                        )
-                    except Exception as e:
-                        log.error("discover failed for %s: %s", root["url"], e)
-                        return root, []
-                    log.info("  -> %s: %d links", root["category"], len(links))
-                    return root, links
-
-                results = await asyncio.gather(*(discover_one(r) for r in roots))
-                # 任一根失败或抽不到链接就整体放弃：带着残缺结果做全量会把该分类全部误标 stale
-                failed = [root["category"] for root, links in results if not links]
-                if failed:
-                    log.error("discover failed for %s, abort without touching manifest / INDEX", failed)
-                    return 1
-                for root, links in results:
-                    discovered.setdefault(root["url"], {
-                        "url": root["url"], "title": root["name"], "category": root["category"],
-                    })
-                    for l in links:
-                        cat = infer_category(l["url"])
-                        if cat == "unknown" or l["url"] in discovered:
-                            continue
-                        discovered[l["url"]] = {"url": l["url"], "title": l["title"], "category": cat}
-
-                log.info("phase 1 done: %d unique URLs", len(discovered))
-                # 只缓存全量 discover 的结果；--root 的部分结果若写入缓存，会被下一次全量误当作完整清单
-                if not args.root:
-                    _save_discovery_cache(discovered, today)
-
-            if args.dry_run:
-                for url in list(discovered)[:50]:
-                    log.info("[dry-run] %s", url)
-                log.info("[dry-run] total %d urls", len(discovered))
-                return 0
-
-            # === Phase 2: fetch（断点续传：本日已 check 过且非 force 跳过）===
-            all_targets = list(discovered.values())
-            if args.limit:
-                all_targets = all_targets[: args.limit]
-
-            skipped: list[dict] = []
-            targets: list[dict] = []
-            claimed_paths: set[Path] = set()
-            duplicates = 0
-            for meta in all_targets:
-                # 同一文档带 / 不带 query 会映射到同一个 .md，只抓先发现的那个，避免两个变体交替改写
-                local_path = url_to_local_path(meta["url"], DOCS_DIR)
-                if local_path in claimed_paths:
-                    duplicates += 1
+        discovered: dict[str, dict] = {}
+        for root, docs in results:
+            category = root["category"]
+            for d in docs:
+                url = f"{DOC_URL_PREFIX}{category}/{d['object_id']}"
+                if url in discovered:
                     continue
-                claimed_paths.add(local_path)
-                entry = manifest.entries.get(meta["url"])
-                if entry and entry.last_checked_at >= today_start and not args.force:
-                    skipped.append(meta)
-                else:
-                    targets.append(meta)
+                discovered[url] = {"url": url, "object_id": d["object_id"], "category": category,
+                                   "title": d["title"], "breadcrumb": d["breadcrumb"]}
+        log.info("phase 1 done: %d docs across %d roots (%.1fs)",
+                 len(discovered), len(roots), time.monotonic() - started)
 
-            log.info("phase 2: %d to fetch, %d already done today (skipped), %d duplicate urls dropped, concurrency=%d",
-                     len(targets), len(skipped), duplicates, settings["concurrency"])
+        if args.dry_run:
+            for url in list(discovered)[:50]:
+                log.info("[dry-run] %s", url)
+            log.info("[dry-run] total %d docs", len(discovered))
+            return 0
 
-            sem = asyncio.Semaphore(settings["concurrency"])
-            seen: set[str] = {m["url"] for m in skipped}
-            done = 0
+        # === Phase 2: fetch（断点续传：本日已 check 过且非 force 跳过）===
+        all_targets = list(discovered.values())
+        if args.limit:
+            all_targets = all_targets[: args.limit]
 
-            async def worker(meta: dict) -> None:
-                nonlocal done
-                async with sem:
-                    result = await fetch_page(meta["url"], selectors, settings, browser_context=context)
-                seen.add(meta["url"])
-                _persist(manifest, result, meta, log, allow_prefixes)
-                done += 1
-                if done % FLUSH_EVERY == 0:
-                    manifest.save()
-                    log.info("progress: %d/%d (manifest flushed)", done, len(targets))
+        skipped: list[dict] = []
+        targets: list[dict] = []
+        for meta in all_targets:
+            entry = manifest.entries.get(meta["url"])
+            if entry and entry.last_checked_at >= today_start and not args.force:
+                skipped.append(meta)
+            else:
+                targets.append(meta)
 
-            # 全部任务一起交给信号量调度，避免按批 gather 时每批都要等最慢的一页
-            await asyncio.gather(*(worker(m) for m in targets))
-        finally:
-            await context.close()
-            await browser.close()
+        log.info("phase 2: %d to fetch, %d already done today (skipped), concurrency=%d",
+                 len(targets), len(skipped), settings["concurrency"])
+
+        sem = asyncio.Semaphore(settings["concurrency"])
+        seen: set[str] = {m["url"] for m in skipped}
+        done = 0
+
+        async def worker(meta: dict) -> None:
+            nonlocal done
+            async with sem:
+                result = await fetch_document(client, api_base, meta, settings)
+            seen.add(meta["url"])
+            _persist(manifest, result, meta, log, allow_prefixes)
+            done += 1
+            if done % FLUSH_EVERY == 0:
+                manifest.save()
+                log.info("progress: %d/%d (manifest flushed)", done, len(targets))
+
+        # 全部任务一起交给信号量调度，避免按批 gather 时每批都要等最慢的一页
+        await asyncio.gather(*(worker(m) for m in targets))
 
     # 仅在全量模式下做 stale 标记
     is_full_sync = not args.root and not args.limit
     if is_full_sync:
         manifest.mark_stale_except(seen=seen)
+        dropped = manifest.drop_shadowed_stale()
+        if dropped:
+            log.info("dropped %d stale entries shadowed by live ones (old url variants)", dropped)
         manifest.last_full_sync_at = now_iso()
     manifest.save()
 
@@ -364,7 +327,7 @@ async def run(args: argparse.Namespace) -> int:
     if is_full_sync:
         _update_readme_stats(docs, log)
     log.info("manifest saved: %s", MANIFEST_PATH)
-    log.info("done. stats=%s", manifest._stats())
+    log.info("done in %.1fs. stats=%s", time.monotonic() - started, manifest._stats())
 
     errors = sum(1 for m in targets if manifest.entries[m["url"]].status == EntryStatus.ERROR)
     if targets and errors / len(targets) > MAX_ERROR_RATIO:
@@ -412,7 +375,7 @@ def _persist(manifest: Manifest, result: FetchResult, meta: dict, log: logging.L
 
     # manifest 里没有记录（如 CI 的全新环境）时退回读磁盘副本 frontmatter 里的 hash，避免整库重写
     previous_hash = existing.content_hash if existing and existing.content_hash else _hash_on_disk(local_path)
-    if previous_hash == content_hash and local_path.exists():
+    if previous_hash == content_hash and local_path.exists() and _frontmatter_matches(local_path, result.url, doc):
         manifest.upsert(
             url=result.url, title=doc.title, category=meta["category"],
             local_path=rel_path, content_hash=content_hash,
@@ -442,11 +405,10 @@ def _persist(manifest: Manifest, result: FetchResult, meta: dict, log: logging.L
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="HarmonyOS docs sync")
-    parser.add_argument("--limit", type=int, default=None, help="只处理前 N 个 URL（调试用）")
+    parser.add_argument("--limit", type=int, default=None, help="只处理前 N 个文档（调试用）")
     parser.add_argument("--root", type=str, default=None, help="只处理指定 category 的根")
-    parser.add_argument("--dry-run", action="store_true", help="只跑 discover，列出 URL 不渲染")
-    parser.add_argument("--force", action="store_true",
-                        help="忽略 discovery 缓存与本日 last_checked_at，强制重抓")
+    parser.add_argument("--dry-run", action="store_true", help="只跑 discover，列出文档 URL 不抓取")
+    parser.add_argument("--force", action="store_true", help="忽略本日 last_checked_at，强制重抓")
     args = parser.parse_args()
     return asyncio.run(run(args))
 
