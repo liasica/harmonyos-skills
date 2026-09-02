@@ -9,11 +9,14 @@ roots:
     url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/development-intro-api
     category: harmonyos-references
   - name: 最佳实践
-    url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-best-practices-overview
+    url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smart-reach
     category: best-practices
   - name: FAQ
-    url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-multi-device-scenario
+    url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-phone
     category: harmonyos-faqs
+  - name: 变更预告
+    url: https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/changelogs-overview-pre
+    category: harmonyos-roadmap
 
 settings:
   concurrency: 8
