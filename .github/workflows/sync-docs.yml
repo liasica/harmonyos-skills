@@ -1,0 +1,144 @@
+name: Sync HarmonyOS docs
+
+on:
+  schedule:
+    # 北京时间每天 04:00（UTC 20:00）
+    - cron: '0 20 * * *'
+  # 手动触发：默认与定时任务相同（全量 + 发布）；root / limit 用于调试，二者任一非默认值时只跑不发布
+  workflow_dispatch:
+    inputs:
+      root:
+        description: '只同步某一分类（调试用，选了分类就不提交、不发布）'
+        type: choice
+        default: all
+        options:
+          - all
+          - harmonyos-releases
+          - harmonyos-guides
+          - harmonyos-references
+          - best-practices
+          - harmonyos-faqs
+          - harmonyos-roadmap
+      limit:
+        description: '只处理前 N 个 URL（调试用，填了就不提交、不发布）'
+        type: string
+        default: ''
+      publish:
+        description: '有变更时提交并发布 Release'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+# 同一时间只允许一个同步在跑，后来的排队而不是取消前面的
+concurrency:
+  group: sync-docs
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Sync docs and publish release
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      TZ: Asia/Shanghai
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: true
+          cache-dependency-glob: scraper/uv.lock
+
+      - name: Install dependencies
+        working-directory: scraper
+        run: |
+          uv sync
+          uv run playwright install --with-deps chromium
+
+      # 定时触发时 inputs 为空：等同 root=all、limit 为空、publish=true
+      - name: Resolve run parameters
+        id: params
+        env:
+          INPUT_ROOT: ${{ inputs.root }}
+          INPUT_LIMIT: ${{ inputs.limit }}
+          INPUT_PUBLISH: ${{ inputs.publish }}
+        run: |
+          args='--force'
+          publish='true'
+          if [ -n "$INPUT_ROOT" ] && [ "$INPUT_ROOT" != 'all' ]; then
+            args="$args --root $INPUT_ROOT"
+            publish='false'
+          fi
+          if [ -n "$INPUT_LIMIT" ]; then
+            args="$args --limit $INPUT_LIMIT"
+            publish='false'
+          fi
+          if [ "$INPUT_PUBLISH" = 'false' ]; then
+            publish='false'
+          fi
+          echo "args=$args" >> "$GITHUB_OUTPUT"
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"
+          echo "同步参数：$args；发布：$publish"
+
+      # discover 失败或错误率过高时脚本以非 0 退出，后续步骤不会执行
+      - name: Run sync
+        working-directory: scraper
+        run: uv run python -m scripts.sync ${{ steps.params.outputs.args }}
+
+      - name: Upload sync logs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: sync-logs
+          path: scraper/data/logs/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Detect changes
+        id: changes
+        run: |
+          # 只看文档目录：README 里的同步日期每次都会变，单独不算「有更新」
+          if [ -z "$(git status --porcelain -- harmonyos)" ]; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo '文档无变更，跳过提交与发布'
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+            git status --porcelain -- harmonyos | cut -c1-2 | sort | uniq -c
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true' && steps.params.outputs.publish == 'true'
+        id: commit
+        run: |
+          git config user.name 'liasica'
+          git config user.email 'magicrolan@qq.com'
+          git add harmonyos README.md
+          date="$(date +%F)"
+          git commit -m "docs: 同步 HarmonyOS 文档（${date}）"
+          git push origin HEAD:master
+          echo "date=${date}" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      # 版本号即 tag：YYYY-MM-DD.<short sha>，例如 2026-09-02.a1b2c3d
+      - name: Create release
+        if: steps.changes.outputs.changed == 'true' && steps.params.outputs.publish == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.commit.outputs.date }}.${{ steps.commit.outputs.sha }}
+        run: |
+          {
+            echo '## 变更'
+            echo
+            git diff --name-status HEAD~1 HEAD -- harmonyos \
+              | awk '{c[$1]++} END {printf "新增 %d 个文件，更新 %d 个，删除 %d 个\n", c["A"], c["M"], c["D"]}'
+            echo
+            echo '## 文档统计'
+            echo
+            sed -n '/^| 分类 |/,/^| \*\*合计\*\*/p' README.md | cut -d'|' -f1-3 | sed 's/$/|/'
+          } > release-notes.md
+          cat release-notes.md
+          gh release create "$TAG" --target "$(git rev-parse HEAD)" --title "$TAG" --notes-file release-notes.md
