@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 卡片错误码
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > 错误码 > 卡片错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:34+08:00
+scraped_at: 2026-09-03T06:32:57+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:fbc23738c6400f3bdbf277ec78a361d3d8382811bcfd98be108d171257844401
+content_hash: sha256:ec48fd0bd58d79eda83ac2f48ecad00e72d0ba842d45a32a59d6ee626e5476ba
 ---
 
 **说明** 
@@ -320,7 +320,7 @@ Some internal server error occurs.
 **处理步骤**
 
 1. 重启系统后重试。
-2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#)获取帮助。
+2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/)获取帮助。
 
 ## 2293766 包管理获取请求的应用包名不存在
 
@@ -339,7 +339,7 @@ The requested bundle name does not exist.
 **处理步骤**
 
 1. 重启系统后重试。
-2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#)获取帮助。
+2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/)获取帮助。
 
 ## 2293767 无效参数
 
@@ -381,7 +381,7 @@ Get bms rpc failed.
 **处理步骤**
 
 1. 重启系统后重试。
-2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#)获取帮助。
+2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/)获取帮助。
 
 ## 2293798 获取卡片管理服务失败
 
@@ -400,7 +400,7 @@ Get fms rpc failed.
 **处理步骤**
 
 1. 重启系统后重试。
-2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#)获取帮助。
+2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/)获取帮助。
 
 ## 2293802 获取系统能力管理服务失败
 
@@ -419,4 +419,4 @@ Get system manager service failed.
 **处理步骤**
 
 1. 重启系统后重试。
-2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#)获取帮助。
+2. 重启后仍旧失败，请提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/)获取帮助。
