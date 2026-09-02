@@ -37,17 +37,17 @@ HarmonyOS NEXT 离线参考库 + 采集脚本，供 AI 编程助手（Claude Cod
 
 ## 文档统计
 
-> 最后一次完整同步：**2026-04-29**
+> 最后一次完整同步：**2026-09-02**
 
 | 分类 | 数量 | 入口 |
 |---|---:|---|
-| 版本说明 (`harmonyos-releases`) | 1009 | [INDEX.md](harmonyos/references/harmonyos-releases/INDEX.md) |
-| 指南 (`harmonyos-guides`) | 4852 | [INDEX.md](harmonyos/references/harmonyos-guides/INDEX.md) |
-| API 参考 (`harmonyos-references`) | 4273 | [INDEX.md](harmonyos/references/harmonyos-references/INDEX.md) |
-| 最佳实践 (`best-practices`) | 447 | [INDEX.md](harmonyos/references/best-practices/INDEX.md) |
-| FAQ (`harmonyos-faqs`) | 1651 | [INDEX.md](harmonyos/references/harmonyos-faqs/INDEX.md) |
-| 变更预告 (`harmonyos-roadmap`) | 0 | [INDEX.md](harmonyos/references/harmonyos-roadmap/INDEX.md) |
-| **合计** | **12232** | [INDEX.md](harmonyos/references/INDEX.md) |
+| 版本说明 (`harmonyos-releases`) | 1249 | [INDEX.md](harmonyos/references/harmonyos-releases/INDEX.md) |
+| 指南 (`harmonyos-guides`) | 5719 | [INDEX.md](harmonyos/references/harmonyos-guides/INDEX.md) |
+| API 参考 (`harmonyos-references`) | 4761 | [INDEX.md](harmonyos/references/harmonyos-references/INDEX.md) |
+| 最佳实践 (`best-practices`) | 483 | [INDEX.md](harmonyos/references/best-practices/INDEX.md) |
+| FAQ (`harmonyos-faqs`) | 4595 | [INDEX.md](harmonyos/references/harmonyos-faqs/INDEX.md) |
+| 变更预告 (`harmonyos-roadmap`) | 13 | [INDEX.md](harmonyos/references/harmonyos-roadmap/INDEX.md) |
+| **合计** | **16820** | [INDEX.md](harmonyos/references/INDEX.md) |
 
 ## SKILL 安装
 
@@ -160,54 +160,53 @@ uv run mcp/server.py
 scraper/sync.sh
 ```
 
-脚本会自行切换到 `scraper/` 目录，在任意路径下都能执行；首次运行自动创建虚拟环境、安装依赖与 Playwright Chromium。命令行参数原样透传，例如 `scraper/sync.sh --root harmonyos-guides`。
+脚本会自行切换到 `scraper/` 目录，在任意路径下都能执行；首次运行自动创建虚拟环境并安装依赖。命令行参数原样透传，例如 `scraper/sync.sh --root harmonyos-guides`。
 
 ### 手动执行
 
 ```bash
 cd scraper
 uv sync                              # 按 uv.lock 安装依赖（含 pytest），首次或依赖变更后执行
-uv run playwright install chromium   # 首次执行
 ```
 
 | 用途 | 命令 |
 |---|---|
 | 全量同步 | `uv run python -m scripts.sync` |
 | 仅某一类 | `uv run python -m scripts.sync --root harmonyos-guides` |
-| dry-run（仅发现，不渲染） | `uv run python -m scripts.sync --dry-run` |
+| dry-run（仅发现，不抓取） | `uv run python -m scripts.sync --dry-run` |
 | 限量调试 | `uv run python -m scripts.sync --limit 50` |
 | 强制重抓 | `uv run python -m scripts.sync --force` |
-| 选择器探测 | `uv run python -m scripts.probe_selectors <URL>` |
 | 单元测试 | `uv run pytest -v` |
 
 `--root` 可选值：`harmonyos-releases` / `harmonyos-guides` / `harmonyos-references` / `best-practices` / `harmonyos-faqs` / `harmonyos-roadmap`。
 
 ### 工作流程
 
-两阶段：
+两阶段，全部走华为文档站自己的接口（`config/whitelist.yaml` 的 `api_base`），不需要浏览器：
 
-1. **discover**（5 个根并行）：访问每个根 URL → 循环点击 `.layout-left .ant-tree-switcher_close` 直到收敛 → 抽出全部 `.layout-left a[href]`。结果缓存到 `data/discovery.json`，同日内复用。任一根失败或抽不到链接则整体退出（退出码 1），不改 manifest 与 INDEX，避免残缺清单把整个分类误标 stale。
-2. **fetch**（concurrency=8）：并发渲染所有发现的 URL，抽正文转 Markdown，按 sha256 增量写盘到 `harmonyos/references/`；manifest 里没有记录时以磁盘副本 frontmatter 的 `content_hash` 为准，全新环境（如 CI）不会整库重写。每完成 50 页 flush 一次 manifest，便于中断恢复。抓取失败的文档若磁盘上还有上次的副本，仍保留在 INDEX 中。
+1. **discover**（各根并行）：每个根调一次 `getCatalogTree`，整棵目录树一次返回；展平后得到每篇文档的 objectId、标题与面包屑（根标题 > 各级目录 > 本节点）。任一根失败或树里没有文档则整体退出（退出码 1），不改 manifest 与 INDEX，避免残缺清单把整个分类误标 stale。
+2. **fetch**（concurrency=16）：并发调 `getDocumentById` 拉正文 HTML，转 Markdown 后按 sha256 增量写盘到 `harmonyos/references/`；manifest 里没有记录时以磁盘副本 frontmatter 的 `content_hash` 为准，全新环境（如 CI）不会整库重写。正文没变但 url、标题、面包屑或更新时间变化时也会重写文件以刷新 frontmatter。每完成 50 篇 flush 一次 manifest，便于中断恢复。抓取失败的文档若磁盘上还有上次的副本，仍保留在 INDEX 中。
+
+转换规则：正文开头的 h1 即标题，不重复输出；接口原文顶层章节是 h4，标题文本前的 `[h2]` 标记表示再低一级，处理后整体上移到从 `##` 开始；「说明 / 注意 / 须知 / 警告」提示框的图标图片换成对应文字标签；代码块语言取自 `<pre>` 的 class；链接转绝对 URL 并剥离 CDN 签名参数，再把白名单内的链接改写为仓库内相对路径。
 
 时间预估（参考实测）：
 
 | 步骤 | 单次成本 |
 |---|---|
-| discover（5 根并行） | ~12 分钟 |
-| fetch（每 100 页） | ~26 秒 |
-| 全量（约 12000 页） | ~1 小时 |
+| discover（6 根并行） | 约 1 秒 |
+| fetch | 约 100 篇/秒 |
+| 全量（约 16800 篇，含写盘） | 约 6 分钟 |
 
 ### 断点续传
 
-- `data/manifest.json` 每 50 页 flush 一次
-- 同日内已 `last_checked_at` 的页面下次启动跳过（除非 `--force`）
-- discover 结果缓存于 `data/discovery.json`，同日复用；`--root` 的部分同步不写缓存，避免下次全量误用残缺清单
+- `data/manifest.json` 每 50 篇 flush 一次
+- 同日内已 `last_checked_at` 的文档下次启动跳过（除非 `--force`）
 
 意外中断后再跑一次 `python -m scripts.sync` 即可从断点继续。
 
 ### 自动同步
 
-仓库自带 [`.github/workflows/sync-docs.yml`](.github/workflows/sync-docs.yml)：每天北京时间 04:00 在 GitHub Actions 上跑一次全量同步（`--force`）。仅当 `harmonyos/` 下有变更时才提交（连同 README 统计）并推送到 `master`，随后创建 Release，tag 与版本号为 `YYYY-MM-DD.<short sha>`（如 `2026-09-02.a1b2c3d`）；无变更则不产生提交。同步日志作为 artifact 保留 14 天。discover 失败或本次抓取错误率超过 20% 时脚本以非 0 退出，工作流失败且不提交。
+仓库自带 [`.github/workflows/sync-docs.yml`](.github/workflows/sync-docs.yml)：每天北京时间 04:00 在 GitHub Actions 上跑一次全量同步（`--force`，只调华为文档接口，几分钟完成）。仅当 `harmonyos/` 下有变更时才提交（连同 README 统计）并推送到 `master`，随后创建 Release，tag 与版本号为 `YYYY-MM-DD.<short sha>`（如 `2026-09-02.a1b2c3d`）；无变更则不产生提交。同步日志作为 artifact 保留 14 天。discover 失败或本次抓取错误率超过 20% 时脚本以非 0 退出，工作流失败且不提交。
 
 也可以手动触发（Actions 页的 Run workflow，或 `gh`），参数：
 
@@ -238,7 +237,6 @@ gh workflow run sync-docs.yml -f root=harmonyos-faqs -f limit=50
 ```
 scraper/data/                                # 运行时数据，不入库
 ├── manifest.json                            # 索引（每条含 status, doc_updated_at, content_hash, last_changed_at）
-├── discovery.json                           # discover 阶段缓存
 └── logs/sync-YYYY-MM-DD.log
 
 harmonyos/references/                        # 文档产物，入库
@@ -250,12 +248,12 @@ harmonyos/references/                        # 文档产物，入库
 
 ```yaml
 ---
-url: https://developer.huawei.com/consumer/cn/doc/...
-title: ...
-breadcrumb: A > B > C
+url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-dev-guide
+title: 应用开发导读
+breadcrumb: 指南 > 基础入门 > 应用开发导读
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:33:00+08:00
-doc_updated_at: 2026-04-20      # 从正文 grep "更新时间: YYYY-MM-DD" 提取
+scraped_at: 2026-09-02T15:00:00+08:00
+doc_updated_at: 2026-08-29      # 接口返回的 displayUpdateTime，即页面上显示的更新时间
 content_hash: sha256:...
 ---
 ```
@@ -265,24 +263,20 @@ content_hash: sha256:...
 ## 维护
 
 - 退出码：任一根 discover 失败或本次抓取错误率超过 20% 为 1；`--root` 取值不合法为 2
-- 选择器随站点改版可能失配 → `data/logs/sync-*.log` 看错误条目；`manifest.json` 中 `status=error` 列出失败 URL
-- 站点结构大改 → `uv run python -m scripts.probe_selectors <URL>` 探测后调 `config/selectors.yaml`
-- 当前选择器（截至 2026-04-28）：
-  - sidebar 链接：`.layout-left a[href]` + `app-navbar a[href]`
-  - sidebar 折叠节点：`.layout-left .ant-tree-switcher_close`（discover 阶段循环点开）
-  - 正文容器：`app-document-text`
-  - 标题：`h1.doc-title`
-  - breadcrumb：`nz-breadcrumb`
-  - 更新时间：从正文 grep `更新时间[:：]\s*\d{4}-\d{1,2}-\d{1,2}`
+- 抓取失败看 `data/logs/sync-*.log` 里的 `fetch failed` 条目；`manifest.json` 中 `status=error` 列出失败 URL
+- 接口（截至 2026-09-02）：
+  - `POST <api_base>getCatalogTree`，body `{"language":"cn","catalogName":"<分类>","objectId":"<根文档 id>"}`，返回 `value.catalogTreeList`，节点字段 `nodeName` / `relateDocument` / `children`
+  - `POST <api_base>getDocumentById`，body `{"objectId":"<id>","version":"","catalogName":"<分类>","language":"cn"}`，返回 `value.title`、`value.content.content`（HTML）、`value.displayUpdateTime`
+  - 接口字段变化时改 `scripts/discover.py` 与 `scripts/fetcher.py`
 
 ## 已知限制
 
-- `harmonyos-releases/` 这种"光带斜杠"的根 URL 在华为站会重定向到 404；白名单已用 `overview-allversion` 替代
-- SPA 路由依赖 `?istab=1&m=1` 之类 query 参数，因此这些参数不会被 `normalize_url` 剥离；同一文档若被带/不带 query 各访问一次，本地路径仍按 path 段映射到同一 `.md`
-- 每次 sync 必须重新渲染所有页面（SPA 站点本质决定）；不支持"只检查 sidebar 是否新增"的轻量模式
-- 同一文档常被带 / 不带 `?istab=1&m=1` 各发现一次，只抓先发现的那个，INDEX 按路径去重
+- 文档 URL 统一为 `https://developer.huawei.com/consumer/cn/doc/<分类>/<objectId>`，不带站点侧边栏链接里的 `?istab=1&m=1`
 - 图片等资源链接上的 CDN 临时签名参数（`HW-CC-KV` / `HW-CC-Date` / `HW-CC-Expire` / `HW-CC-Sign`）在转换时剥离：它们按分钟变化且 24 小时过期，保留会让每次抓取的 hash 都不同。因此 Markdown 里的图片链接只用于标识资源，不保证可直接访问
 - 站点已下线的文档只从 INDEX 移除（manifest 标 `stale`），磁盘上的 `.md` 不删除
+- 同一 objectId 若在多个目录节点下出现，只保留首次出现位置的面包屑
+- objectId 为 `index` 的文档存为 `index-doc.md`：在 macOS 这类大小写不敏感的文件系统上，`index.md` 与分类索引 `INDEX.md` 是同一个文件
+- 视频 / 音频没有 Markdown 形式，转为 `[视频](url)` / `[音频](url)` 链接
 
 ## 白名单根 URL
 
@@ -295,4 +289,4 @@ content_hash: sha256:...
 | FAQ | https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-phone |
 | 变更预告 | https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/changelogs-overview-pre |
 
-跨出白名单的 URL 在抽链时会被丢弃（按 5 个根的二级路径前缀严格判断 category）。
+目录树里的文档按所属根归类；正文中指向白名单外的链接保留为绝对 URL。

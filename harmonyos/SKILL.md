@@ -1,11 +1,11 @@
 ---
 name: harmonyos
-description: 当用户编写、调试或审查 HarmonyOS NEXT 应用（ArkTS / ArkUI / Stage 模型 / @ohos.* API / DevEco Studio / hvigor / hdc），需要查阅华为开发者官方文档（版本说明 / 指南 / API 参考 / 最佳实践 / FAQ），或询问 HarmonyOS API 签名、错误码、能力可用性时使用。先在 `references/INDEX.md` 中 grep 关键词定位目标路径，再 Read 命中的 `.md`，不要遍历目录或一次性读多个文件。
+description: 当用户编写、调试或审查 HarmonyOS NEXT 应用（ArkTS / ArkUI / Stage 模型 / @ohos.* API / DevEco Studio / hvigor / hdc），需要查阅华为开发者官方文档（版本说明 / 指南 / API 参考 / 最佳实践 / FAQ / 变更预告），或询问 HarmonyOS API 签名、错误码、能力可用性时使用。先在 `references/INDEX.md` 中 grep 关键词定位目标路径，再 Read 命中的 `.md`，不要遍历目录或一次性读多个文件。
 ---
 
 # HarmonyOS
 
-HarmonyOS NEXT 开发者文档离线镜像。来源：`developer.huawei.com/consumer/cn/doc/`。每个 `.md` 顶部带 YAML frontmatter，含原始 URL、面包屑、`doc_updated_at` 等元信息。
+HarmonyOS NEXT 开发者文档离线镜像，共 6 个分类约 16800 篇。来源：`developer.huawei.com/consumer/cn/doc/`。每个 `.md` 顶部带 YAML frontmatter，含原始 URL、面包屑、`doc_updated_at` 等元信息。
 
 ## 快速上手
 
@@ -15,7 +15,7 @@ HarmonyOS NEXT 开发者文档离线镜像。来源：`developer.huawei.com/cons
    rg -n "<关键词>" references/INDEX.md | head
    ```
 
-2. Read 命中的 `.md`。文件前 8 行 frontmatter 给出原始 URL 与最后更新时间。
+2. Read 命中的 `.md`。文件顶部的 frontmatter 给出原始 URL（`url`）与最后更新时间（`doc_updated_at`）。
 
 3. 当用户需要参考链接时，从 frontmatter 的 `url` 字段返回——这是华为官方文档的规范引用。
 
