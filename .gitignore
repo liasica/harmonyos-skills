@@ -4,6 +4,7 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 .env
+.venv/
 # scraper 运行时
 scraper/.venv/
 scraper/data/

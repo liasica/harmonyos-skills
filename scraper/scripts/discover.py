@@ -35,9 +35,13 @@ def extract_links_from_html(
     return out
 
 
-async def _expand_tree_fully(page, expandable_selectors: list[str], max_rounds: int = 12) -> int:
-    """循环点击所有折叠节点直到收敛或达上限。返回最终展开的 a[href] 数量"""
-    last_total = -1
+async def _expand_tree_fully(page, expandable_selectors: list[str], link_selector: str,
+                             max_rounds: int = 12) -> None:
+    """循环点击所有折叠节点直到收敛或达上限
+
+    收敛判据同时看折叠节点数与链接数：只看节点数时，展开一层恰好又出现同样多的子节点就会误判收敛
+    """
+    last_key: tuple[int, int] | None = None
     for _ in range(max_rounds):
         # 收集所有折叠节点
         handles = []
@@ -48,16 +52,17 @@ async def _expand_tree_fully(page, expandable_selectors: list[str], max_rounds: 
                 pass
         if not handles:
             break
-        if len(handles) == last_total:
+        n_links = await page.evaluate("(sel) => document.querySelectorAll(sel).length", link_selector)
+        key = (len(handles), n_links)
+        if key == last_key:
             break
-        last_total = len(handles)
+        last_key = key
         for h in handles:
             try:
                 await h.click(timeout=300)
             except Exception:
                 pass
         await page.wait_for_timeout(700)
-    return await page.evaluate("() => document.querySelectorAll('.layout-left a[href]').length")
 
 
 async def discover_from_root(
@@ -69,17 +74,18 @@ async def discover_from_root(
     browser_context,
 ) -> list[dict]:
     """打开 root_url，递归点开所有侧边栏折叠节点，抽出全部 a[href]"""
+    link_selector = selectors["link_candidates"][0]
     page = await browser_context.new_page()
     try:
         await page.goto(root_url, timeout=settings["page_timeout_ms"])
-        ready = selectors.get("ready_selector")
-        if ready:
-            try:
-                await page.wait_for_selector(ready, timeout=settings["page_timeout_ms"])
-            except Exception:
-                pass
+        # 侧边栏树比正文晚渲染，ready_selector 会先被正文满足；必须等到树里真的出现链接再展开，
+        # 否则空树被当成"没有子节点"，整个根抽出 0 条链接
+        try:
+            await page.wait_for_selector(link_selector, timeout=settings["page_timeout_ms"])
+        except Exception:
+            pass
         await page.wait_for_timeout(settings.get("extra_wait_ms", 800))
-        await _expand_tree_fully(page, selectors.get("expandable_node", []))
+        await _expand_tree_fully(page, selectors.get("expandable_node", []), link_selector)
         html = await page.content()
         return extract_links_from_html(html, root_url, selectors, allow_prefixes)
     finally:

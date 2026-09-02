@@ -11,6 +11,7 @@
 | `harmonyos-references` | API 参考 | API 接口文档 |
 | `best-practices` | 最佳实践 | 开发最佳实践 |
 | `harmonyos-faqs` | FAQ | 常见问题解答 |
+| `harmonyos-roadmap` | 变更预告 | API 与特性的变更预告、changelog |
 
 ## 快速开始
 
@@ -33,8 +34,10 @@
 
 ### 手动运行
 
+以下命令均需在本目录（`scraper/`）内执行。
+
 ```bash
-# 安装依赖
+# 安装依赖（含 dev 组的 pytest）
 uv sync
 
 # 首次需要安装 Playwright 浏览器
@@ -57,6 +60,14 @@ uv run python -m scripts.sync [OPTIONS]
 | `--dry-run` | 只发现 URL，不渲染 |
 | `--force` | 忽略缓存和今日状态，强制重抓 |
 
+退出码：0 成功；1 任一根 discover 失败或本次抓取错误率超过 20%（结果不可信，CI 据此不提交）；2 参数错误。
+
+## 单元测试
+
+```bash
+uv run pytest -q
+```
+
 ## 输出结构
 
 ```
@@ -74,7 +85,10 @@ harmonyos/references/
 ├── best-practices/                   # 最佳实践
 │   ├── INDEX.md
 │   └── *.md
-└── harmonyos-faqs/                   # FAQ
+├── harmonyos-faqs/                   # FAQ
+│   ├── INDEX.md
+│   └── *.md
+└── harmonyos-roadmap/                # 变更预告
     ├── INDEX.md
     └── *.md
 ```
@@ -95,5 +109,6 @@ harmonyos/references/
 ## 增量同步
 
 - 同一天内重复运行会跳过已检查的文档
-- 内容哈希未变化时不会重写文件
+- 内容哈希未变化时不会重写文件；manifest 缺失时以磁盘副本 frontmatter 的 `content_hash` 为准
+- `--root` 的部分同步不写 discovery 缓存
 - 使用 `--force` 强制全量更新

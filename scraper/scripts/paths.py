@@ -23,6 +23,22 @@ def normalize_url(url: str) -> str:
     return urlunparse((parsed.scheme, parsed.netloc, path, "", new_query, ""))
 
 
+_SIGNED_PARAM_PREFIX = "HW-CC-"
+
+
+def strip_signed_params(url: str) -> str:
+    """去掉华为 CDN 的临时签名参数（HW-CC-KV / HW-CC-Date / HW-CC-Expire / HW-CC-Sign）
+
+    这些参数按分钟变化且 24 小时过期，保留只会让正文 hash 不稳定
+    """
+    if _SIGNED_PARAM_PREFIX not in url:
+        return url
+    parsed = urlparse(url)
+    pairs = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+             if not k.startswith(_SIGNED_PARAM_PREFIX)]
+    return urlunparse(parsed._replace(query=urlencode(pairs)))
+
+
 _DOC_PREFIX = "/consumer/cn/doc/"
 
 

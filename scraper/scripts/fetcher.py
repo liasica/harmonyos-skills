@@ -18,7 +18,6 @@ class FetchResult:
     success: bool
     doc: Optional[ExtractedDoc] = None
     error: Optional[str] = None
-    raw_html: Optional[str] = None
 
 
 async def fetch_page(
@@ -34,16 +33,19 @@ async def fetch_page(
         last_err: Optional[Exception] = None
         for attempt in range(settings.get("retries", 2) + 1):
             try:
-                await page.goto(url, timeout=settings["page_timeout_ms"])
+                response = await page.goto(url, timeout=settings["page_timeout_ms"])
+                # 4xx 是确定性结果，重试只会白等 ready_selector 超时
+                if response is not None and 400 <= response.status < 500:
+                    return FetchResult(url=url, success=False, error=f"http {response.status}")
                 ready = article_selectors.get("ready_selector")
                 if ready:
                     await page.wait_for_selector(ready, timeout=settings["page_timeout_ms"])
                 await page.wait_for_timeout(settings.get("extra_wait_ms", 800))
                 html = await page.content()
                 doc = extract_and_convert(html, article_selectors, base_url=url)
-                return FetchResult(url=url, success=True, doc=doc, raw_html=html)
+                return FetchResult(url=url, success=True, doc=doc)
             except ExtractionError as e:
-                return FetchResult(url=url, success=False, error=f"extract: {e}", raw_html=None)
+                return FetchResult(url=url, success=False, error=f"extract: {e}")
             except Exception as e:
                 last_err = e
                 await asyncio.sleep(0.5 * (attempt + 1))

@@ -2,12 +2,16 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Optional
 
 from bs4 import BeautifulSoup, Tag
 from markdownify import markdownify
+
+from scripts.paths import strip_signed_params
 
 
 class ExtractionError(Exception):
@@ -42,7 +46,7 @@ def _extract_updated_at(soup: BeautifulSoup, candidates: list[str]) -> Optional[
         m = _UPDATED_RE.search(node.get_text(" ", strip=True))
         if m:
             return m.group(1).replace("/", "-").replace(".", "-")
-    # 兜底：全文 grep "更新时间: YYYY-MM-DD"（华为站点未给"更新时间"独立 class）
+    # 兜底：全文 grep `更新时间: YYYY-MM-DD`（华为站点未给「更新时间」独立 class）
     text = soup.get_text(" ", strip=True)
     m = _UPDATED_HINT_RE.search(text)
     if m:
@@ -88,6 +92,11 @@ def extract_and_convert(html: str, selectors: dict, *, base_url: str = "") -> Ex
                 a["href"] = urljoin(base_url, a["href"])
             except Exception:
                 pass
+    # 图片等资源链接带按分钟变化的 CDN 签名参数（HW-CC-Date / HW-CC-Sign 等），
+    # 不剥掉的话同一页面每次抓取 hash 都不同，无法判断内容是否真的更新
+    for tag, attr in (("a", "href"), ("img", "src")):
+        for node in body_copy.find_all(tag, **{attr: True}):
+            node[attr] = strip_signed_params(node[attr])
 
     md = markdownify(str(body_copy), heading_style="ATX", code_language_callback=_code_lang)
     md = _post_process(md)
@@ -160,6 +169,43 @@ def _post_process(md: str) -> str:
     return md
 
 
+# YAML 纯标量不能以这些指示符开头
+_YAML_INDICATORS = set("-?:,[]{}#&*!|>'\"%@`")
+
+
+def yaml_scalar(value: str) -> str:
+    """能作为 YAML 纯标量原样输出就原样输出，否则用 JSON 双引号形式（JSON 字符串是合法的 YAML 双引号标量）
+
+    标题里常见 `xxx: yyy`、以 `@ohos.` 开头等写法，直接输出会让 frontmatter 不是合法 YAML
+    """
+    if (value and value[0] not in _YAML_INDICATORS and ": " not in value and " #" not in value
+            and not value.endswith(":") and value == value.strip()):
+        return value
+    return json.dumps(value, ensure_ascii=False)
+
+
+def read_frontmatter(path: Path) -> dict[str, str]:
+    """读取 .md 顶部 frontmatter 为 dict，值保持原样（不做 YAML 反转义）
+
+    只认 `key: value` 单行，够用于取 url / content_hash；文件不存在或没有 frontmatter 返回空 dict
+    """
+    try:
+        with path.open(encoding="utf-8") as f:
+            if f.readline().rstrip("\n") != "---":
+                return {}
+            out: dict[str, str] = {}
+            for line in f:
+                line = line.rstrip("\n")
+                if line == "---":
+                    return out
+                key, sep, value = line.partition(": ")
+                if sep:
+                    out[key] = value
+            return {}
+    except OSError:
+        return {}
+
+
 def render_with_frontmatter(
     *,
     markdown: str,
@@ -173,9 +219,9 @@ def render_with_frontmatter(
 ) -> str:
     lines = ["---"]
     lines.append(f"url: {url}")
-    lines.append(f"title: {title}")
+    lines.append(f"title: {yaml_scalar(title)}")
     if breadcrumb:
-        lines.append(f"breadcrumb: {breadcrumb}")
+        lines.append(f"breadcrumb: {yaml_scalar(breadcrumb)}")
     lines.append(f"category: {category}")
     lines.append(f"scraped_at: {scraped_at}")
     lines.append(f"doc_updated_at: {doc_updated_at or ''}")
