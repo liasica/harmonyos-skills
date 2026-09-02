@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-28
-title: 应用的进程启动过程是怎样的
-breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用的进程启动过程是怎样的
+title: 应用的进程启用过程是怎样的
+breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用的进程启用过程是怎样的
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:42+08:00
-doc_updated_at: 2026-03-25
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:0576c70a9c393f603b9a23b796655603eb13d8f7e376b80861d4b5d9d4a2e63e
 ---
 

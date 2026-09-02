@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: 矢量编程
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 矢量编程
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1cd8da8ad113dc795b07a51212ab92935744073694294c88d63909fa61e5676c
+scraped_at: 2026-09-02T15:00:04+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:863dc0cc1f7ffcf8bf4a590f8fb9d5e882ca4028d4a0c7f57a004f91e9be84af
 ---
 
 ## 算子实现流程概述
@@ -14,7 +14,7 @@ content_hash: sha256:1cd8da8ad113dc795b07a51212ab92935744073694294c88d63909fa61e
 
 **图1** 矢量算子实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/BY4J62o4TEyHnNthdUcyuA/zh-cn_image_0000002558606084.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/pjk3D2xqTymCqsbPnp2H7g/zh-cn_image_0000002736314409.png)
 
 * 算子分析：分析算子的数学表达式、输入、输出以及计算逻辑的实现，明确需要调用的AscendC接口。
 * 核函数定义：定义AscendC算子入口函数。
@@ -30,15 +30,15 @@ content_hash: sha256:1cd8da8ad113dc795b07a51212ab92935744073694294c88d63909fa61e
 
    Add算子的数学表达式为：
 
-   ```
-   1. z = x + y
+   ```cpp
+   z = x + y
    ```
 
    计算逻辑是：AscendC提供的[矢量计算](cannkit-vector-calculation-exp.md)接口的操作元素都为LocalTensor，输入数据需要先搬运进片上存储，然后使用计算接口完成两个输入参数相加，得到最终结果，再搬出到外部存储上。AscendC Add算子的计算逻辑如下图所示。
 
    **图2** 算子计算逻辑
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/YIk4xGkrQ9-QH1bCFIoGUA/zh-cn_image_0000002589325611.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/VW2AMo5cQci9JkjuNSpXRQ/zh-cn_image_0000002706675366.png)
 2. 明确输入和输出。
 
    * Add算子有两个输入：x与y，输出为z。
@@ -75,22 +75,22 @@ content_hash: sha256:1cd8da8ad113dc795b07a51212ab92935744073694294c88d63909fa61e
 
    本样例中，函数名为add\_custom（核函数名称可自定义），根据[算子分析](cannkit-vector-programming.md#算子分析)中对算子输入输出的分析，确定有3个参数x，y，z，其中x，y为输入内存，z为输出内存。根据[核函数定义](cannkit-kernel-function.md#核函数定义)核函数的规则介绍，函数原型定义如下所示：使用\_\_global\_\_函数类型限定符来标识它是一个核函数；使用\_\_aicore\_\_函数类型限定符来标识该核函数在设备端aicore上执行；为方便起见，统一使用GM\_ADDR宏修饰入参，GM\_ADDR宏定义请参考[核函数](cannkit-kernel-function.md)。
 
-   ```
-   1. extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z)
-   2. {
-   3. }
+   ```cpp
+   extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z)
+   {
+   }
    ```
 2. 调用算子类的Init和Process函数。
 
    算子类的Init函数，完成内存初始化相关工作，Process函数完成算子实现的核心逻辑，具体介绍参见[算子类实现](cannkit-vector-programming.md#算子类实现)。
 
-   ```
-   1. extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z)
-   2. {
-   3. KernelAdd op;
-   4. op.Init(x, y, z);
-   5. op.Process();
-   6. }
+   ```cpp
+   extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z)
+   {
+       KernelAdd op;
+       op.Init(x, y, z);
+       op.Process();
+   }
    ```
 
 ### 算子类实现
@@ -105,36 +105,35 @@ content_hash: sha256:1cd8da8ad113dc795b07a51212ab92935744073694294c88d63909fa61e
 
 **图3** Add算子实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/TX6nVs-oQZ--x0MHrC0Q4w/zh-cn_image_0000002589245551.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/1-xMe1SPT4G84HIofYorKQ/zh-cn_image_0000002736434453.png)
 
 算子类中主要实现上述流程，包含对外开放的初始化Init函数和核心处理函数Process，Process函数中会对上图中的三个基本任务进行调用；同时包括一些算子实现中会用到的私有成员，比如上图中的Global Tensor和VECIN、VECOUT队列等。KernelAdd算子类具体成员如下。
 
-```
-1. class KernelAdd {
-2. public:
-3. __aicore__ inline KernelAdd() {}
-4. // Initialization function, which initializes the memory
-5. __aicore__ inline void Init(GM_ADDR x, GM_ADDR y, GM_ADDR z){}
-6. // Core processing function, which implements the operator logic and calls the private member functions
-7. // CopyIn, Compute, and CopyOut to complete the three-stage pipelined execution of the vector operator
-8. __aicore__ inline void Process(){}
-
-10. private:
-11. // CopyIn function, which completes the processing in the CopyIn phase and is called by the Process function
-12. __aicore__ inline void CopyIn(int32_t progress){}
-13. // Compute function, which completes the processing in the Compute phase and is called by Process function
-14. __aicore__ inline void Compute(int32_t progress){}
-15. // CopyOut function, which completes the processing in the CopyOut phase and is called by the Process function
-16. __aicore__ inline void CopyOut(int32_t progress){}
-
-18. private:
-19. AscendC::TPipe pipe;  // Pipe memory management object.
-20. AscendC::TQue<AscendC::QuePosition::VECIN, 1> inQueueX, inQueueY;  // Input data queue management object. QuePosition is VECIN.
-21. AscendC::TQue<AscendC::QuePosition::VECOUT, 1> outQueueZ;  // Output data queue management object. QuePosition is VECOUT.
-22. AscendC::GlobalTensor<half> xGm;  // Object for managing the input and output global memory addresses. xGm and yGm are inputs, and zGm is the output.
-23. AscendC::GlobalTensor<half> yGm;
-24. AscendC::GlobalTensor<half> zGm;
-25. };
+```cpp
+class KernelAdd {
+public:
+    __aicore__ inline KernelAdd() {}
+    // 初始化函数，用于初始化内存
+    __aicore__ inline void Init(GM_ADDR x, GM_ADDR y, GM_ADDR z){}
+    // 核心处理函数，实现算子逻辑，调用私有成员函数CopyIn、Compute和CopyOut，完成矢量算子的三阶段流水线执行
+    __aicore__ inline void Process(){}
+  
+private:
+    // CopyIn函数，完成CopyIn阶段的处理，由Process函数调用
+    __aicore__ inline void CopyIn(int32_t progress){}
+    // Compute函数，完成Compute阶段的处理，由Process函数调用
+    __aicore__ inline void Compute(int32_t progress){}
+    // CopyOut函数，完成CopyOut阶段的处理，由Process函数调用
+    __aicore__ inline void CopyOut(int32_t progress){}
+ 
+private:
+    AscendC::TPipe pipe; // 管道内存管理对象
+    AscendC::TQue<AscendC::QuePosition::VECIN, 1> inQueueX, inQueueY; // 输入数据队列管理对象，队列位置为VECIN
+    AscendC::TQue<AscendC::QuePosition::VECOUT, 1> outQueueZ; // 输出数据队列管理对象，队列位置为VECOUT
+    AscendC::GlobalTensor<half> xGm; // 输入输出全局内存地址管理对象，xGm和yGm为输入，zGm为输出
+    AscendC::GlobalTensor<half> yGm;
+    AscendC::GlobalTensor<half> zGm;
+};
 ```
 
 初始化函数主要完成以下内容：
@@ -145,21 +144,21 @@ content_hash: sha256:1cd8da8ad113dc795b07a51212ab92935744073694294c88d63909fa61e
 
   以获取输入x在Global Memory上的内存偏移地址为例：
 
-  ```
-  1. xGm.SetGlobalBuffer((__gm__ half*)x + BLOCK_LENGTH * GetBlockIdx(), BLOCK_LENGTH);
+  ```cpp
+  xGm.SetGlobalBuffer((__gm__ half*)x + BLOCK_LENGTH * GetBlockIdx(), BLOCK_LENGTH);
   ```
 
   本样例中的分配方案是：数据整体长度TOTAL\_LENGTH为8 \* 2048，平均分配到8个核上运行，每个核上处理的数据大小BLOCK\_LENGTH为2048字节。x + BLOCK\_LENGTH \* GetBlockIdx()即为单核处理程序中x在Global Memory上的内存偏移地址，获取偏移地址后，使用[GlobalTensor](cannkit-globaltensor.md)类的接口设定该核上Global Memory的起始地址以及长度。具体示意图请参考图4。
 
   **图4** 多核并行处理示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/bxQizAuqTLusfQf1XPEp0w/zh-cn_image_0000002558765742.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/VPm7ZpvpS3Kn-hzV83F-Ag/zh-cn_image_0000002706835306.png)
 * 通过Pipe内存管理对象为输入输出Queue分配内存。
 
   比如，为输入x的Queue分配内存，可以通过如下代码段实现：
 
-  ```
-  1. pipe.InitBuffer(inQueueX, BUFFER_NUM, TILE_LENGTH * sizeof(half))
+  ```cpp
+  pipe.InitBuffer(inQueueX, BUFFER_NUM, TILE_LENGTH * sizeof(half))
   ```
 
   对于单核上的处理数据，可以进行数据切块(Tiling)，在本示例中，将数据切分成8块（并不意味着8块就是性能最优）仅作为参考。切分后的每个数据块再次切分成2块，即可开启double buffer，实现流水线之间的并行。
@@ -168,44 +167,44 @@ content_hash: sha256:1cd8da8ad113dc795b07a51212ab92935744073694294c88d63909fa61e
 
   **图5** 单核数据切分示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/_SH6PuPsSQGYE54GVHLfMg/zh-cn_image_0000002558606086.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/-n1wNazKSuqcvm9WC-s69g/zh-cn_image_0000002736314411.png)
 
-Kirin9020/KirinX90系列处理器支持的核数为1，具体的初始化函数代码如下。
+Kirin9020/Kirin9030/KirinX90系列处理器支持的核数为1，具体的初始化函数代码如下。
 
-```
-1. constexpr int32_t TOTAL_LENGTH = 8 * 2048;                            // total length of data
-2. constexpr int32_t USE_CORE_NUM = 1;                                   // num of core used
-3. constexpr int32_t BLOCK_LENGTH = TOTAL_LENGTH / USE_CORE_NUM;         // length computed of each core
-4. constexpr int32_t TILE_NUM = 8;                                       // split data into 8 tiles for each core
-5. constexpr int32_t BUFFER_NUM = 2;                                     // tensor num for each queue
-6. constexpr int32_t TILE_LENGTH = BLOCK_LENGTH / TILE_NUM / BUFFER_NUM; // separate to 2 parts, due to double buffer
-7. __aicore__ inline void Init(GM_ADDR x, GM_ADDR y, GM_ADDR z)
-8. {
-9. // get start index for current core, core parallel
-10. xGm.SetGlobalBuffer((__gm__ half*)x + BLOCK_LENGTH * AscendC::GetBlockIdx(), BLOCK_LENGTH);
-11. yGm.SetGlobalBuffer((__gm__ half*)y + BLOCK_LENGTH * AscendC::GetBlockIdx(), BLOCK_LENGTH);
-12. zGm.SetGlobalBuffer((__gm__ half*)z + BLOCK_LENGTH * AscendC::GetBlockIdx(), BLOCK_LENGTH);
-13. // pipe alloc memory to queue, the unit is Bytes
-14. pipe.InitBuffer(inQueueX, BUFFER_NUM, TILE_LENGTH * sizeof(half));
-15. pipe.InitBuffer(inQueueY, BUFFER_NUM, TILE_LENGTH * sizeof(half));
-16. pipe.InitBuffer(outQueueZ, BUFFER_NUM, TILE_LENGTH * sizeof(half));
-17. }
+```cpp
+constexpr int32_t TOTAL_LENGTH = 8 * 2048; // 数据总长度
+constexpr int32_t USE_CORE_NUM = 1; // 使用的核心数量
+constexpr int32_t BLOCK_LENGTH = TOTAL_LENGTH / USE_CORE_NUM; // 每个核心计算的数据长度
+constexpr int32_t TILE_NUM = 8; // 将数据拆分为8个图块（tile）供每个核心处理
+constexpr int32_t BUFFER_NUM = 2; // 每个队列中的张量数量（用于双缓冲）
+constexpr int32_t TILE_LENGTH = BLOCK_LENGTH / TILE_NUM / BUFFER_NUM; // 每个图块长度（由于双缓冲机制，需拆分为2部分）
+__aicore__ inline void Init(GM_ADDR x, GM_ADDR y, GM_ADDR z)
+{
+    // 获取当前核心的起始索引，实现核心并行
+    xGm.SetGlobalBuffer((__gm__ half*)x + BLOCK_LENGTH * AscendC::GetBlockIdx(), BLOCK_LENGTH);
+    yGm.SetGlobalBuffer((__gm__ half*)y + BLOCK_LENGTH * AscendC::GetBlockIdx(), BLOCK_LENGTH);
+    zGm.SetGlobalBuffer((__gm__ half*)z + BLOCK_LENGTH * AscendC::GetBlockIdx(), BLOCK_LENGTH);
+    // 初始化管道（Pipe）缓冲区到队列，单位是字节
+    pipe.InitBuffer(inQueueX, BUFFER_NUM, TILE_LENGTH * sizeof(half));
+    pipe.InitBuffer(inQueueY, BUFFER_NUM, TILE_LENGTH * sizeof(half));
+    pipe.InitBuffer(outQueueZ, BUFFER_NUM, TILE_LENGTH * sizeof(half));
+}
 ```
 
 基于矢量编程范式，将核函数的实现分为3个基本任务：CopyIn，Compute，CopyOut。Process函数中通过如下方式调用这三个函数。
 
-```
-1. __aicore__ inline void Process()
-2. {
-3. // loop count need to be doubled, due to double buffer
-4. constexpr int32_t loopCount = TILE_NUM * BUFFER_NUM;
-5. // tiling strategy, pipeline parallel
-6. for (int32_t i = 0; i < loopCount; i++) {
-7. CopyIn(i);
-8. Compute(i);
-9. CopyOut(i);
-10. }
-11. }
+```cpp
+    __aicore__ inline void Process()
+    {
+        // 由于使用了双缓冲区，循环次数需要加倍。
+        constexpr int32_t loopCount = TILE_NUM * BUFFER_NUM;
+        // 平铺策略，流水线并行
+        for (int32_t i = 0; i < loopCount; i++) {
+            CopyIn(i);
+            Compute(i);
+            CopyOut(i);
+        }
+    }
 ```
 
 根据编程范式上面的算法分析，将整个计算拆分成三个Stage，开发者单独编写每个Stage的代码，三阶段流程示意图参见图3，具体流程如下。
@@ -215,19 +214,19 @@ Kirin9020/KirinX90系列处理器支持的核数为1，具体的初始化函数�
    1. 使用[DataCopy](cannkit-common-data-movement.md)接口将GlobalTensor数据拷贝到LocalTensor。
    2. 使用[EnQue](cannkit-tque-enque.md)将LocalTensor放入VecIn的Queue中。
 
-   ```
-   1. __aicore__ inline void CopyIn(int32_t progress)
-   2. {
-   3. // alloc tensor from queue memory
-   4. AscendC::LocalTensor<half> xLocal = inQueueX.AllocTensor<half>();
-   5. AscendC::LocalTensor<half> yLocal = inQueueY.AllocTensor<half>();
-   6. // copy progress_th tile from global tensor to local tensor
-   7. AscendC::DataCopy(xLocal, xGm[progress * TILE_LENGTH], TILE_LENGTH);
-   8. AscendC::DataCopy(yLocal, yGm[progress * TILE_LENGTH], TILE_LENGTH);
-   9. // enque input tensors to VECIN queue
-   10. inQueueX.EnQue(xLocal);
-   11. inQueueY.EnQue(yLocal);
-   12. }
+   ```cpp
+   __aicore__ inline void CopyIn(int32_t progress)
+       {
+           // 从队列内存中分配张量
+           AscendC::LocalTensor<half> xLocal = inQueueX.AllocTensor<half>();
+           AscendC::LocalTensor<half> yLocal = inQueueY.AllocTensor<half>();
+           // 将progress_th tile从全局张量复制到局部张量
+           AscendC::DataCopy(xLocal, xGm[progress * TILE_LENGTH], TILE_LENGTH);
+           AscendC::DataCopy(yLocal, yGm[progress * TILE_LENGTH], TILE_LENGTH);
+           // 将输入张量入队到VECIN队列
+           inQueueX.EnQue(xLocal);
+           inQueueY.EnQue(yLocal);
+       }
    ```
 2. Compute函数实现。
 
@@ -236,21 +235,21 @@ Kirin9020/KirinX90系列处理器支持的核数为1，具体的初始化函数�
    3. 使用[EnQue](cannkit-tque-enque.md)将计算结果LocalTensor放入到VecOut的Queue中。
    4. 使用[FreeTensor](cannkit-tque-freetensor.md)释放不再使用的LocalTensor。
 
-   ```
-   1. __aicore__ inline void Compute(int32_t progress)
-   2. {
-   3. // deque input tensors from VECIN queue
-   4. AscendC::LocalTensor<half> xLocal = inQueueX.DeQue<half>();
-   5. AscendC::LocalTensor<half> yLocal = inQueueY.DeQue<half>();
-   6. AscendC::LocalTensor<half> zLocal = outQueueZ.AllocTensor<half>();
-   7. // call Add instr for computation
-   8. AscendC::Add(zLocal, xLocal, yLocal, TILE_LENGTH);
-   9. // enque the output tensor to VECOUT queue
-   10. outQueueZ.EnQue<half>(zLocal);
-   11. // free input tensors for reuse
-   12. inQueueX.FreeTensor(xLocal);
-   13. inQueueY.FreeTensor(yLocal);
-   14. }
+   ```cpp
+   __aicore__ inline void Compute(int32_t progress)
+   {
+       // 从VECIN队列中取出输入张量。
+       AscendC::LocalTensor<half> xLocal = inQueueX.DeQue<half>();
+       AscendC::LocalTensor<half> yLocal = inQueueY.DeQue<half>();
+       AscendC::LocalTensor<half> zLocal = outQueueZ.AllocTensor<half>();
+       // 调用Add指令进行计算
+       AscendC::Add(zLocal, xLocal, yLocal, TILE_LENGTH);
+       // 将输出张量加入VECOUT队列
+       outQueueZ.EnQue<half>(zLocal);
+       // 免费输入张量，可重复使用
+       inQueueX.FreeTensor(xLocal);
+       inQueueY.FreeTensor(yLocal);
+   }
    ```
 3. CopyOut函数实现。
 
@@ -258,16 +257,16 @@ Kirin9020/KirinX90系列处理器支持的核数为1，具体的初始化函数�
    2. 使用[DataCopy](cannkit-common-data-movement.md)接口将LocalTensor拷贝到GlobalTensor上。
    3. 使用[FreeTensor](cannkit-tque-freetensor.md)将不再使用的LocalTensor进行回收。
 
-   ```
-   1. __aicore__ inline void CopyOut(int32_t progress)
-   2. {
-   3. // deque output tensor from VECOUT queue
-   4. AscendC::LocalTensor<half> zLocal = outQueueZ.DeQue<half>();
-   5. // copy progress_th tile from local tensor to global tensor
-   6. AscendC::DataCopy(zGm[progress * TILE_LENGTH], zLocal, TILE_LENGTH);
-   7. // free output tensor for reuse
-   8. outQueueZ.FreeTensor(zLocal);
-   9. }
+   ```cpp
+    __aicore__ inline void CopyOut(int32_t progress)
+   {
+       // 从VECOUT队列中取出输出张量。
+       AscendC::LocalTensor<half> zLocal = outQueueZ.DeQue<half>();
+       // 将局部张量中的progress_th块复制到全局张量
+       AscendC::DataCopy(zGm[progress * TILE_LENGTH], zLocal, TILE_LENGTH);
+       // 可自由输出张量以供重用
+       outQueueZ.FreeTensor(zLocal);
+   }
    ```
 
 ### 运行验证

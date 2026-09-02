@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-point-pre
 title: 接入报点预测
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入报点预测
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:66b22c165e6418b3ef275bc317025e130d9e5236e7af2e8ef35227a0a20fe28a
+scraped_at: 2026-09-02T14:50:09+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:9a1e583688a4c5e219990d36ba4c89d284243b06bc5619fd0975ff4e52818cf8
 ---
 
 接入报点预测功能，可以优化应用中手写效果的绘制跟手性，提升应用中手写笔书写场景的跟手体验。
@@ -14,7 +14,7 @@ content_hash: sha256:66b22c165e6418b3ef275bc317025e130d9e5236e7af2e8ef35227a0a20
 
 在应用的自定义界面中，获取到界面的触摸事件，通过调用报点预测的接口，可以得到预测的下一个报点的位置信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ajpklpn1RvuZBRR7x2WLsg/zh-cn_image_0000002589244783.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/kD1SmS6yTfulzEVGcyDXSw/zh-cn_image_0000002706674474.png)
 
 ## 接口说明
 
@@ -24,67 +24,62 @@ content_hash: sha256:66b22c165e6418b3ef275bc317025e130d9e5236e7af2e8ef35227a0a20
 
 ## 开发步骤
 
-1. 导入相关模块。
+1. 导入相关模块。获取当前界面的触摸事件信息，调用接口计算预测点信息。
 
-   ```
-   1. import { PointPredictor } from '@kit.Penkit';
-   ```
-2. 获取当前界面的触摸事件信息，调用接口计算预测点信息。
+   ```typescript
+   @Entry
+   @Component
+   struct PointPredictorDemo {
+     @State actualXCoordinate: number = 0;
+     @State actualYCoordinate: number = 0;
+     @State predictorXCoordinate: Dimension = 0;
+     @State predictorYCoordinate: Dimension = 0;
+     pointPredictor: PointPredictor = new PointPredictor();
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct PointPredictorDemo {
-   4. @State actualXCoordinate: number = 0
-   5. @State actualYCoordinate: number = 0
-   6. @State predictorXCoordinate: Dimension = 0
-   7. @State predictorYCoordinate: Dimension = 0
-   8. pointPredictor: PointPredictor = new PointPredictor();
+     aboutToAppear() {
+       console.info('getPredictionPoint aboutToAppear');
+     }
 
-   10. aboutToAppear() {
-   11. console.info('getPredictionPoint aboutToAppear')
-   12. }
+     aboutToDisappear() {
+       console.info('getPredictionPoint aboutToDisappear');
+     }
 
-   14. aboutToDisappear() {
-   15. console.info('getPredictionPoint aboutToDisappear')
-   16. }
+     build() {
+       Stack({ alignContent: Alignment.TopEnd }) {
+         this.canvas(); // 画布
+       }.height('100%').width('100%')
+     }
 
-   18. build() {
-   19. Stack({ alignContent: Alignment.TopEnd }) {
-   20. this.Canvas() // 画布
-   21. }.height('100%').width('100%')
-   22. }
+     // 画布
+     @Builder
+     canvas() {
+       Column() {
+         Text('实际点坐标： X: ' + this.actualXCoordinate + ' Y: ' + this.actualYCoordinate).textAlign(TextAlign.Start)
+         Text('预测点坐标： X: ' + this.predictorXCoordinate + ' Y: ' + this.predictorYCoordinate)
+           .textAlign(TextAlign.Start)
+       }.position({ x: 0, y: 0 })
+       .alignItems(HorizontalAlign.Start)
 
-   24. // 画布
-   25. @Builder
-   26. Canvas() {
-   27. Column() {
-   28. Text("实际点坐标： X: " + this.actualXCoordinate + " Y: " + this.actualYCoordinate).textAlign(TextAlign.Start)
-   29. Text("预测点坐标： X: " + this.predictorXCoordinate + " Y: " + this.predictorYCoordinate)
-   30. .textAlign(TextAlign.Start)
-   31. }.position({ x: 0, y: 0 })
-   32. .alignItems(HorizontalAlign.Start)
-
-   34. Stack()
-   35. .width('100%')
-   36. .height('100%')
-   37. .onTouch((event: TouchEvent) => {
-   38. switch (event.type) {
-   39. case TouchType.Down: // 按下时，新建一条画图路径
-   40. break;
-   41. case TouchType.Move: // 使用预测算法进行预测,获得预测点
-   42. let point = this.pointPredictor?.getPredictionPoint(event)
-   43. this.actualXCoordinate = event.touches[0]?.x
-   44. this.actualYCoordinate = event.touches[0]?.y
-   45. this.predictorXCoordinate = point?.x
-   46. this.predictorYCoordinate = point?.y
-   47. console.info("pointPredictor 实际点坐标 x:" + event.touches[0]?.x + " y:" + event.touches[0]?.y)
-   48. console.info("pointPredictor 预测点坐标 x:" + point?.x + "  y:" + point?.y)
-   49. break;
-   50. case TouchType.Up:
-   51. break;
-   52. }
-   53. })
-   54. }
-   55. }
+       Stack()
+         .width('100%')
+         .height('100%')
+         .onTouch((event: TouchEvent) => {
+           switch (event.type) {
+             case TouchType.Down: // 按下时，新建一条画图路径
+               break;
+             case TouchType.Move: // 使用预测算法进行预测,获得预测点
+               let point = this.pointPredictor?.getPredictionPoint(event);
+               this.actualXCoordinate = event.touches[0]?.x;
+               this.actualYCoordinate = event.touches[0]?.y;
+               this.predictorXCoordinate = point?.x;
+               this.predictorYCoordinate = point?.y;
+               console.info('pointPredictor 实际点坐标 x:' + event.touches[0]?.x + ' y:' + event.touches[0]?.y);
+               console.info('pointPredictor 预测点坐标 x:' + point?.x + '  y:' + point?.y);
+               break;
+             case TouchType.Up:
+               break;
+           }
+         })
+     }
+   }
    ```

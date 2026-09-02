@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-int
 title: UI Design Kit简介
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > UI Design Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cca3bd4cf5318b2879b3b3dc119404b9e7bcac61913dcb534b2ad3e36023ae54
+scraped_at: 2026-09-02T14:59:26+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:02377ccd3ef7aabaa2d9bc67bd8390e588bf90f052afd498ae6765e7afb9f44f
 ---
 
-UI Design Kit是华为提供的符合HarmonyOS Design System规范的UI界面开发套件集合。通过提供多样式的扩展组件、丰富的光影效果，支撑开发者高效构建高端精致的界面（参见[HarmonyOS设计理念](../design-guides/design-concepts-0000001795698445.md)），确保应用在HarmonyOS全场景设备上达成一致的视觉体验与设计品质，遵循[HarmonyOS设计规范](../design-guides/general_overview-0000001929599380.md)。
+UI Design Kit（UI设计套件）是华为提供的符合HarmonyOS Design System规范的UI界面开发套件集合。通过提供多样式的扩展组件、丰富的光影效果，支撑开发者高效构建高端精致的界面（参见[HarmonyOS设计理念](../design-guides/design-concepts-0000001795698445.md)），确保应用在HarmonyOS全场景设备上达成一致的视觉体验与设计品质，遵循[HarmonyOS设计规范](../design-guides/general_overview-0000001929599380.md)。
 
 | **扩展组件** | **光影效果** | **多设备适配** |
 | --- | --- | --- |
@@ -26,6 +26,7 @@ UI Design Kit是华为提供的符合HarmonyOS Design System规范的UI界面开
 | **[即时操作（HdsSnackBar）](ui-design-snackbar-resident-notification.md)与[核心操作栏（HdsActionBar）](ui-design-actionbar-main-buttons.md)** | 即时操作：提供非模态通知组件，支持图文展示与快速操作按钮，用于轻量化交互反馈。  核心操作栏：组合多个按钮，支持主按钮展开/收起的联动动效。 |
 | **[列表（HdsListItem）](ui-design-set-hds-slide-horizon-listitem.md)** | 封装高端卡片样式，内置横滑删除动效，适配多设备系统风格。 |
 | **[应用内多窗（MultiWindowEntryInAPP）](ui-design-multiwindowentryinapp.md)** | 单应用多窗口入口，支持自定义图标、背板颜色与大小，实现多窗并行。 |
+| **[颜色选择器（HdsColorPicker）](ui-design-color-picker-favorites.md)** | 提供颜色选择与收藏管理功能的组件，支持网格、光谱和滑块三种颜色选择模式。 |
 
 ### HDS沉浸视效
 
@@ -73,10 +74,11 @@ UI Design Kit当前仅支持中国境内（香港特别行政区、澳门特别�
 | [即时操作](ui-design-snackbar-resident-notification.md) | Phone、Tablet、PC/2in1、TV |
 | [核心操作栏](ui-design-actionbar-main-buttons.md) | Phone、Tablet、PC/2in1、TV |
 | [列表](ui-design-set-hds-slide-horizon-listitem.md) | Phone、Tablet、PC/2in1、Wearable、TV |
-| [应用加载自定义Symbol](ui-design-custom-symbol-res-register.md) | Phone、Tablet、PC/2in1、TV |
+| [应用加载自定义Symbol](ui-design-custom-symbol-res-register.md) | Phone、Tablet、PC/2in1 |
 | [HDS视效](ui-design-visual-effect-point-light.md) | Phone、Tablet、PC/2in1 |
 | [应用内多窗](ui-design-multiwindowentryinapp.md) | Phone、Tablet |
 | [沉浸光感材质](ui-design-hds-component-material.md) | Phone、Tablet |
+| [颜色选择器](ui-design-color-picker-favorites.md) | Phone、Tablet |
 
 ### 能力限制
 

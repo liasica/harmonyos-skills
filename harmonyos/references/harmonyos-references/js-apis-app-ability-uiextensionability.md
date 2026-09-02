@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.UIExtensionAbility (带界面的ExtensionAbility组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:29ff8b8d91825c8145855137320dafdbad6dac31c38339bc6505d743709cc211
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:067b87cd9511fec92e5958d85348edd992186e4ecf07d01e478ffa3719278d3e
 ---
 
 UIExtensionAbility组件是带界面的ExtensionAbility组件，继承自[ExtensionAbility](js-apis-app-ability-extensionability.md)，提供了组件创建、销毁、前后台切换等基础生命周期。和UIAbility组件不同，UIExtensionAbility组件不会作为单独的任务在任务视图中体现。UIExtensionAbility组件被宿主窗口启动，该组件的前后台切换状态、以及是否可见均跟随宿主窗口。
 
-开发者不可以直接继承UIExtensionAbility组件，但可以根据实际业务场景选择使用继承自UIExtensionAbility组件的其他组件。例如，开发者处理其他应用分享的数据时，可以使用[ShareExtensionAbility组件](js-apis-app-ability-shareextensionability.md)；开发者提供卡片编辑功能时，可以使用[FormEditExtensionAbility组件](js-apis-app-form-formeditextensionability.md)。
+开发者不可以直接继承UIExtensionAbility组件，但可以根据实际业务场景选择使用继承自UIExtensionAbility组件的其他组件。例如，开发者处理其他应用分享的数据时，可以使用[@ohos.app.ability.ShareExtensionAbility (支持分享详情页接入的ExtensionAbility组件)](js-apis-app-ability-shareextensionability.md)；开发者提供卡片编辑功能时，可以使用[@ohos.app.form.FormEditExtensionAbility (FormEditExtensionAbility)](js-apis-app-form-formeditextensionability.md)。
 
 各类Ability组件的继承关系详见[继承关系说明](js-apis-app-ability-ability.md#ability的继承关系说明)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -22,21 +22,15 @@ UIExtensionAbility组件是带界面的ExtensionAbility组件，继承自[Extens
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { UIExtensionAbility } from '@kit.AbilityKit';
+```ts
+import { UIExtensionAbility } from '@kit.AbilityKit';
 ```
 
 ## UIExtensionAbility
 
-PhonePC/2in1TabletTVWearable
-
 表示包含UI界面的扩展组件，提供组件创建、销毁、前后台切换等生命周期回调。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
 
@@ -45,8 +39,6 @@ PhonePC/2in1TabletTVWearable
 | context | [UIExtensionContext](js-apis-inner-application-uiextensioncontext.md) | 否 | 否 | UIExtensionAbility组件的上下文。 |
 
 ### onCreate
-
-PhonePC/2in1TabletTVWearable
 
 onCreate(launchParam: AbilityConstant.LaunchParam): void
 
@@ -62,22 +54,20 @@ onCreate(launchParam: AbilityConstant.LaunchParam): void
 
 **示例：**
 
-```
-1. // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
-2. import { ShareExtensionAbility, AbilityConstant } from '@kit.AbilityKit';
+```ts
+// UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
+import { ShareExtensionAbility, AbilityConstant } from '@kit.AbilityKit';
 
-4. const TAG: string = '[testTag] ShareExtAbility';
+const TAG: string = '[testTag] ShareExtAbility';
 
-6. export default class ShareExtAbility extends ShareExtensionAbility {
-7. onCreate(launchParam: AbilityConstant.LaunchParam) {
-8. console.info(TAG, `onCreate, launchParam: ${JSON.stringify(launchParam)}`);
-9. }
-10. }
+export default class ShareExtAbility extends ShareExtensionAbility {
+  onCreate(launchParam: AbilityConstant.LaunchParam) {
+    console.info(TAG, `onCreate, launchParam: ${JSON.stringify(launchParam)}`);
+  }
+}
 ```
 
 ### onSessionCreate
-
-PhonePC/2in1TabletTVWearable
 
 onSessionCreate(want: Want, session: UIExtensionContentSession): void
 
@@ -94,30 +84,28 @@ onSessionCreate(want: Want, session: UIExtensionContentSession): void
 
 **示例：**
 
-```
-1. // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
-2. import { ShareExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
+import { ShareExtensionAbility, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. const TAG: string = '[testTag] ShareExtAbility';
+const TAG: string = '[testTag] ShareExtAbility';
 
-7. export default class ShareExtAbility extends ShareExtensionAbility {
-8. onSessionCreate(want: Want, session: UIExtensionContentSession) {
-9. console.info(TAG, `onSessionCreate, want: ${JSON.stringify(want)}`);
-10. try {
-11. session.loadContent('pages/Index');
-12. } catch (error) {
-13. let code = (error as BusinessError).code;
-14. let message = (error as BusinessError).message;
-15. console.error(`Failed to load content, code: ${code}, msg: ${message}`);
-16. }
-17. }
-18. }
+export default class ShareExtAbility extends ShareExtensionAbility {
+  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+    console.info(TAG, `onSessionCreate, want: ${JSON.stringify(want)}`);
+    try {
+      session.loadContent('pages/Index');
+    } catch (error) {
+      let code = (error as BusinessError).code;
+      let message = (error as BusinessError).message;
+      console.error(`Failed to load content, code: ${code}, msg: ${message}`);
+    }
+  }
+}
 ```
 
 ### onSessionDestroy
-
-PhonePC/2in1TabletTVWearable
 
 onSessionDestroy(session: UIExtensionContentSession): void
 
@@ -133,22 +121,20 @@ onSessionDestroy(session: UIExtensionContentSession): void
 
 **示例：**
 
-```
-1. // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
-2. import { ShareExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
+```ts
+// UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
+import { ShareExtensionAbility, UIExtensionContentSession } from '@kit.AbilityKit';
 
-4. const TAG: string = '[testTag] ShareExtAbility';
+const TAG: string = '[testTag] ShareExtAbility';
 
-6. export default class ShareExtAbility extends ShareExtensionAbility {
-7. onSessionDestroy(session: UIExtensionContentSession) {
-8. console.info(TAG, `onSessionDestroy`);
-9. }
-10. }
+export default class ShareExtAbility extends ShareExtensionAbility {
+  onSessionDestroy(session: UIExtensionContentSession) {
+    console.info(TAG, `onSessionDestroy`);
+  }
+}
 ```
 
 ### onForeground
-
-PhonePC/2in1TabletTVWearable
 
 onForeground(): void
 
@@ -158,22 +144,20 @@ onForeground(): void
 
 **示例：**
 
-```
-1. // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
-2. import { ShareExtensionAbility } from '@kit.AbilityKit';
+```ts
+// UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
+import { ShareExtensionAbility } from '@kit.AbilityKit';
 
-4. const TAG: string = '[testTag] ShareExtAbility';
+const TAG: string = '[testTag] ShareExtAbility';
 
-6. export default class ShareExtAbility extends ShareExtensionAbility {
-7. onForeground() {
-8. console.info(TAG, `onForeground`);
-9. }
-10. }
+export default class ShareExtAbility extends ShareExtensionAbility {
+  onForeground() {
+    console.info(TAG, `onForeground`);
+  }
+}
 ```
 
 ### onBackground
-
-PhonePC/2in1TabletTVWearable
 
 onBackground(): void
 
@@ -183,22 +167,20 @@ onBackground(): void
 
 **示例：**
 
-```
-1. // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
-2. import { ShareExtensionAbility } from '@kit.AbilityKit';
+```ts
+// UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
+import { ShareExtensionAbility } from '@kit.AbilityKit';
 
-4. const TAG: string = '[testTag] ShareExtAbility';
+const TAG: string = '[testTag] ShareExtAbility';
 
-6. export default class ShareExtAbility extends ShareExtensionAbility {
-7. onBackground() {
-8. console.info(TAG, `onBackground`);
-9. }
-10. }
+export default class ShareExtAbility extends ShareExtensionAbility {
+  onBackground() {
+    console.info(TAG, `onBackground`);
+  }
+}
 ```
 
 ### onDestroy
-
-PhonePC/2in1TabletTVWearable
 
 onDestroy(): void | Promise<void>
 
@@ -218,41 +200,41 @@ onDestroy(): void | Promise<void>
 
 * 同步回调示例如下：
 
-  ```
-  1. // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
-  2. import { ShareExtensionAbility } from '@kit.AbilityKit';
+  ```ts
+  // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
+  import { ShareExtensionAbility } from '@kit.AbilityKit';
 
-  4. const TAG: string = '[testTag] ShareExtAbility';
+  const TAG: string = '[testTag] ShareExtAbility';
 
-  6. export default class ShareExtAbility extends ShareExtensionAbility {
-  7. onDestroy() {
-  8. console.info(TAG, `onDestroy`);
-  9. }
-  10. }
+  export default class ShareExtAbility extends ShareExtensionAbility {
+    onDestroy() {
+      console.info(TAG, `onDestroy`);
+    }
+  }
   ```
 * 异步回调示例如下：
 
-  ```
-  1. // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
-  2. import { ShareExtensionAbility } from '@kit.AbilityKit';
+  ```ts
+  // UIExtensionAbility组件不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
+  import { ShareExtensionAbility } from '@kit.AbilityKit';
 
-  4. const TAG: string = '[testTag] ShareExtAbility';
+  const TAG: string = '[testTag] ShareExtAbility';
 
-  6. export default class ShareExtAbility extends ShareExtensionAbility {
-  7. // 实现异步回调需要使用async/await语法糖，通过async声明onDestroy是一个异步函数。
-  8. async onDestroy(): Promise<void> {
-  9. console.info(TAG, `onDestroy begin`);
-  10. try {
-  11. const result: string = await new Promise((resolve: Function) => {
-  12. setTimeout(() => {
-  13. resolve('Hello, world!');
-  14. }, 3000);
-  15. });
-  16. console.info(TAG, result); // result is 'Hello, world!'
-  17. } catch (e) {
-  18. console.error(TAG, `Get exception: ${e}`);
-  19. }
-  20. console.info(TAG, `onDestroy end`);
-  21. }
-  22. }
+  export default class ShareExtAbility extends ShareExtensionAbility {
+    // 实现异步回调需要使用async/await语法糖，通过async声明onDestroy是一个异步函数。
+    async onDestroy(): Promise<void> {
+      console.info(TAG, `onDestroy begin`);
+      try {
+        const result: string = await new Promise((resolve: Function) => {
+          setTimeout(() => {
+            resolve('Hello, world!');
+          }, 3000);
+        });
+        console.info(TAG, result); // result is 'Hello, world!'
+      } catch (e) {
+        console.error(TAG, `Get exception: ${e}`);
+      }
+      console.info(TAG, `onDestroy end`);
+    }
+  }
   ```

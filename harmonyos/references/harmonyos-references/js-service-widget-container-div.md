@@ -3,32 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: div
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > div
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b5277369362356870683159546ce2fad9e121ce010a5424dd35f08f8616ae051
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c1f90450008d7e0a6f279b452b4f0258cb39f035bf44c805355bbdc4da5e3db6
 ---
 
 基础容器，用作页面结构的根节点或将内容进行分组。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用属性](js-service-widget-common-attributes.md)。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-service-widget-common-styles.md)外，还支持如下样式：
 
@@ -36,7 +30,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | flex-direction | string | row | 否 | flex容器主轴方向。可选项有：  - column：垂直方向从上到下。  - row：水平方向从左到右。 |
 | flex-wrap | string | nowrap | 否 | flex容器是单行还是多行显示，该值暂不支持动态修改。可选项有：  - nowrap：不换行，单行显示。  - wrap：换行，多行显示。 |
-| justify-content | string | flex-start | 否 | flex容器当前行的主轴对齐格式。可选项有：  - flex-start：项目位于容器的开头。  - flex-end：项目位于容器的结尾。  - center：项目位于容器的中心。  - space-between：项目位于各行之间留有空白的容器内。  - space-around：项目位于各行之前、之间、之后都留有空白的容器内。  - space-evenly5+: 均匀排列每个元素，每个元素之间的间隔相等。 |
+| justify-content | string | flex-start | 否 | flex容器当前行的主轴对齐格式。可选项有：  - flex-start：项目位于容器的开头。  - flex-end：项目位于容器的结尾。  - center：项目位于容器的中心。  - space-between：项目位于各行之间留有空白的容器内。  - space-around：项目位于各行之前、之间、之后都留有空白的容器内。  - space-evenly5+： 均匀排列每个元素，每个元素之间的间隔相等。 |
 | align-items | string | stretch | 否 | flex容器当前行的交叉轴对齐格式，可选值为：  - stretch：弹性元素在交叉轴方向被拉伸到与容器相同的高度或宽度。  - flex-start：元素向交叉轴起点对齐。  - flex-end：元素向交叉轴终点对齐。  - center：元素在交叉轴居中。 |
 | align-content | string | flex-start | 否 | 交叉轴中有额外的空间时，多行内容对齐格式，可选值为：  - flex-start：所有行从交叉轴起点开始填充。第一行的交叉轴起点边和容器的交叉轴起点边对齐。接下来的每一行紧跟前一行。  - flex-end：所有行从交叉轴末尾开始填充。最后一行的交叉轴终点和容器的交叉轴终点对齐。同时所有后续行与前一个对齐。  - center：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的交叉轴起点边和第一行的距离相等于容器的交叉轴终点边和最后一行的距离。  - space-between：所有行在容器中平均分布。相邻两行间距相等。容器的交叉轴起点边和终点边分别与第一行和最后一行的边对齐。  - space-around：所有行在容器中平均分布，相邻两行间距相等。容器的交叉轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。 |
 | display | string | flex | 否 | 确定该元素视图框的类型，该值暂不支持动态修改。可选值为：  - flex：弹性布局  - none：不渲染此元素 |
@@ -49,108 +43,104 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](js-service-widget-common-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 1. Flex样式
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="flex-box">
-   4. <div class="flex-item color-primary"></div>
-   5. <div class="flex-item color-warning"></div>
-   6. <div class="flex-item color-success"></div>
-   7. </div>
-   8. </div>
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="flex-box">
+       <div class="flex-item color-primary"></div>
+       <div class="flex-item color-warning"></div>
+       <div class="flex-item color-success"></div>
+     </div>
+   </div>
    ```
 
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. width: 454px;
-   7. height: 454px;
-   8. }
-   9. .flex-box {
-   10. justify-content: space-around;
-   11. align-items: center;
-   12. width: 400px;
-   13. height: 140px;
-   14. background-color: #ffffff;
-   15. }
-   16. .flex-item {
-   17. width: 120px;
-   18. height: 120px;
-   19. border-radius: 16px;
-   20. }
-   21. .color-primary {
-   22. background-color: #007dff;
-   23. }
-   24. .color-warning {
-   25. background-color: #ff7500;
-   26. }
-   27. .color-success {
-   28. background-color: #41ba41;
-   29. }
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 454px;
+     height: 454px;
+   }
+   .flex-box {
+     justify-content: space-around;
+     align-items: center;
+     width: 400px;
+     height: 140px;
+     background-color: #ffffff;
+   }
+   .flex-item {
+     width: 120px;
+     height: 120px;
+     border-radius: 16px;
+   }
+   .color-primary {
+     background-color: #007dff;
+   }
+   .color-warning {
+     background-color: #ff7500;
+   }
+   .color-success {
+     background-color: #41ba41;
+   }
    ```
 
    **2\*4卡片**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/FcX6bx-DQ1mNjnqbyt4GBw/zh-cn_image_0000002589326819.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xc1hhyMPQyer3OqkzcjEmg/zh-cn_image_0000002706676680.png)
 2. Flex Wrap样式
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="flex-box">
-   4. <div class="flex-item color-primary"></div>
-   5. <div class="flex-item color-warning"></div>
-   6. <div class="flex-item color-success"></div>
-   7. </div>
-   8. </div>
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="flex-box">
+       <div class="flex-item color-primary"></div>
+       <div class="flex-item color-warning"></div>
+       <div class="flex-item color-success"></div>
+     </div>
+   </div>
    ```
 
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. width: 454px;
-   7. height: 454px;
-   8. }
-   9. .flex-box {
-   10. justify-content: space-around;
-   11. align-items: center;
-   12. flex-wrap: wrap;
-   13. width: 300px;
-   14. height: 250px;
-   15. background-color: #ffffff;
-   16. }
-   17. .flex-item {
-   18. width: 120px;
-   19. height: 120px;
-   20. border-radius: 16px;
-   21. }
-   22. .color-primary {
-   23. background-color: #007dff;
-   24. }
-   25. .color-warning {
-   26. background-color: #ff7500;
-   27. }
-   28. .color-success {
-   29. background-color: #41ba41;
-   30. }
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 454px;
+     height: 454px;
+   }
+   .flex-box {
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+     width: 300px;
+     height: 250px;
+     background-color: #ffffff;
+   }
+   .flex-item {
+     width: 120px;
+     height: 120px;
+     border-radius: 16px;
+   }
+   .color-primary {
+     background-color: #007dff;
+   }
+   .color-warning {
+     background-color: #ff7500;
+   }
+   .color-success {
+     background-color: #41ba41;
+   }
    ```
 
    **4\*4卡片**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/GIJB3XHHQCmBWnqcqjigMA/zh-cn_image_0000002589246759.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/AkZZ4qqMTPmSPpOv2LjSCQ/zh-cn_image_0000002736435771.png)

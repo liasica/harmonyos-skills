@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri
 title: 用户文件URI介绍
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 用户文件URI介绍
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1f07c47ff6a9bc36475ecb06e10a242567a05653f1496e08085d551b17dad09a
+scraped_at: 2026-09-02T14:59:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dcbeb2f9b2d7edbf6f5bd5c6d9814dc27ff74d3d783a0c850b9533714ae9542b
 ---
 
 用户文件URI是文件的唯一标识，在对用户文件进行访问与修改等操作时往往都会使用到URI，不建议开发者解析URI中的片段用于业务代码开发，不同类型的URI使用方式将在下文详细介绍。
@@ -17,7 +17,7 @@ URI类型可以归纳为文档类URI和媒体文件URI两类
 * 文档类URI：由picker拉起文件管理器选择或保存返回。具体获取方式参见[文档类URI获取方式](user-file-uri-intro.md#文档类uri获取方式)。
 * 媒体文件URI：由picker通过拉起图库选择图片或者视频返回，通过photoAccessHelper模块获取图片或者视频文件的URI，以及通过userFileManager模块获取图片、视频或者音频文件的URI。具体获取方式参见[媒体文件URI获取方式](user-file-uri-intro.md#媒体文件uri获取方式)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/q87EHaSKQlqVlmWYVAqXHw/zh-cn_image_0000002558764772.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/gTm96hfGS82XgwcIA4ehCg/zh-cn_image_0000002736313239.png)
 
 ## 文档类URI
 
@@ -76,8 +76,9 @@ URI类型可以归纳为文档类URI和媒体文件URI两类
 
 ### 媒体文件URI获取方式
 
-1. 通过PhotoAccessHelper的[PhotoViewPicker](../harmonyos-references/arkts-apis-photoaccesshelper-photoviewpicker.md)选择媒体文件，返回选择的媒体文件的URI。
+1. 通过PhotoAccessHelper的[PhotoViewPicker](../harmonyos-references/arkts-apis-photoaccesshelper-photoviewpicker.md)选择图片和视频资源，返回选择的图片和视频的URI。
 2. 通过[photoAccessHelper](../harmonyos-references/arkts-apis-photoaccesshelper.md)模块中的[getAssets](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#getassets)或[createAsset](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#createasset)接口获取媒体文件对应文件的URI。
+3. 通过Picker的[AudioViewPicker](../harmonyos-references/js-apis-file-picker.md#audioviewpicker)选择和保存音乐文件资源，返回选择和保存后的音乐文件的URI。
 
 ### 媒体文件URI的使用方式
 
@@ -104,79 +105,77 @@ normal等级的应用使用此类URI可以通过[photoAccessHelper](../harmonyos
 
 下面为通过临时授权方式使用媒体文件URI进行获取缩略图和读取文件部分信息的示例代码：
 
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+// ...
+import { common } from '@kit.AbilityKit';
+// ...
+import { dataSharePredicates } from '@kit.ArkData';
+// ...
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+
+// 定义一个uri数组，用于接收PhotoViewPicker选择图片返回的uri
+let uris: string[] = [];
+
+// ...
+
+// 调用PhotoViewPicker.select选择图片
+async function photoPickerGetUri() {
+  try {
+    let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+    photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+    // 设置最多可以选择的图片数量为1
+    photoSelectOptions.maxSelectNumber = 1;
+    let photoPicker = new photoAccessHelper.PhotoViewPicker();
+    // 等待用户选择图片
+    let photoSelectResult: photoAccessHelper.PhotoSelectResult = await photoPicker.select(photoSelectOptions);
+    console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' + JSON.stringify(photoSelectResult));
+    uris = photoSelectResult.photoUris;
+  } catch (err) {
+    let error: BusinessError = err as BusinessError;
+    console.error(`PhotoViewPicker failed with err, code is ${error.code}, message is ${error.message}`);
+  }
+}
+
+// 请在组件内获取context
+async function uriGetAssets(context: common.UIAbilityContext): Promise<string> {
+  // 检查uris数组是否为空
+  if (uris.length === 0) {
+    throw new Error('No URIs available');
+  }
+  try {
+    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+    let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+    // 配置查询条件，使用PhotoViewPicker选择图片返回的uri进行查询
+    predicates.equalTo('uri', uris[0]);
+    let fetchOption: photoAccessHelper.FetchOptions = {
+      fetchColumns: [photoAccessHelper.PhotoKeys.WIDTH, photoAccessHelper.PhotoKeys.HEIGHT,
+        photoAccessHelper.PhotoKeys.TITLE, photoAccessHelper.PhotoKeys.DURATION],
+      predicates: predicates
+    };
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+      await phAccessHelper.getAssets(fetchOption);
+    // 得到uri对应的PhotoAsset对象，读取文件的部分信息
+    const asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    console.info('asset displayName: ', asset.displayName);
+    console.info('asset uri: ', asset.uri);
+    console.info('asset photoType: ', asset.photoType);
+    console.info('asset width: ', asset.get(photoAccessHelper.PhotoKeys.WIDTH));
+    console.info('asset height: ', asset.get(photoAccessHelper.PhotoKeys.HEIGHT));
+    console.info('asset title: ' + asset.get(photoAccessHelper.PhotoKeys.TITLE));
+    // 获取缩略图
+    asset.getThumbnail((err, pixelMap) => {
+      if (err == undefined) {
+        console.info('getThumbnail successful ' + JSON.stringify(pixelMap));
+      } else {
+        console.error('getThumbnail fail', err);
+      }
+    });
+    // ...
+  } catch (error) {
+    console.error(`uriGetAssets failed with err, code is ${error.code}, message is ${error.message}`);
+    return 'ReadMediaUriFail';
+  }
+  return 'ReadMediaUriFail';
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // ...
-3. import { common } from '@kit.AbilityKit';
-4. // ...
-5. import { dataSharePredicates } from '@kit.ArkData';
-6. // ...
-7. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-
-9. // 定义一个uri数组，用于接收PhotoViewPicker选择图片返回的uri
-10. let uris: string[] = [];
-
-12. // ...
-
-14. // 调用PhotoViewPicker.select选择图片
-15. async function photoPickerGetUri() {
-16. try {
-17. let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-18. photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-19. // 设置最多可以选择的图片数量为1
-20. photoSelectOptions.maxSelectNumber = 1;
-21. let photoPicker = new photoAccessHelper.PhotoViewPicker();
-22. // 等待用户选择图片
-23. let photoSelectResult: photoAccessHelper.PhotoSelectResult = await photoPicker.select(photoSelectOptions);
-24. console.info('PhotoViewPicker.select successfully, PhotoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-25. uris = photoSelectResult.photoUris;
-26. } catch (err) {
-27. let error: BusinessError = err as BusinessError;
-28. console.error(`PhotoViewPicker failed with err, code is ${error.code}, message is ${error.message}`);
-29. }
-30. }
-
-32. // 请在组件内获取context
-33. async function uriGetAssets(context: common.UIAbilityContext): Promise<string> {
-34. // 检查uris数组是否为空
-35. if (uris.length === 0) {
-36. throw new Error('No URIs available');
-37. }
-38. try {
-39. let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-40. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-41. // 配置查询条件，使用PhotoViewPicker选择图片返回的uri进行查询
-42. predicates.equalTo('uri', uris[0]);
-43. let fetchOption: photoAccessHelper.FetchOptions = {
-44. fetchColumns: [photoAccessHelper.PhotoKeys.WIDTH, photoAccessHelper.PhotoKeys.HEIGHT,
-45. photoAccessHelper.PhotoKeys.TITLE, photoAccessHelper.PhotoKeys.DURATION],
-46. predicates: predicates
-47. };
-48. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-49. await phAccessHelper.getAssets(fetchOption);
-50. // 得到uri对应的PhotoAsset对象，读取文件的部分信息
-51. const asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-52. console.info('asset displayName: ', asset.displayName);
-53. console.info('asset uri: ', asset.uri);
-54. console.info('asset photoType: ', asset.photoType);
-55. console.info('asset width: ', asset.get(photoAccessHelper.PhotoKeys.WIDTH));
-56. console.info('asset height: ', asset.get(photoAccessHelper.PhotoKeys.HEIGHT));
-57. console.info('asset title: ' + asset.get(photoAccessHelper.PhotoKeys.TITLE));
-58. // 获取缩略图
-59. asset.getThumbnail((err, pixelMap) => {
-60. if (err == undefined) {
-61. console.info('getThumbnail successful ' + JSON.stringify(pixelMap));
-62. } else {
-63. console.error('getThumbnail fail', err);
-64. }
-65. });
-66. // ...
-67. } catch (error) {
-68. console.error(`uriGetAssets failed with err, code is ${error.code}, message is ${error.message}`);
-69. return 'ReadMediaUriFail';
-70. }
-71. return 'ReadMediaUriFail';
-72. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/CoreFile/UserFile/UserFileURI/entry/src/main/ets/pages/Index.ets#L19-L123)

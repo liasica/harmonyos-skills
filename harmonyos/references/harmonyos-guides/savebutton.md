@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/savebutton
 title: 使用保存控件
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 使用保存控件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e19666d4205127ac90884ec889f640bc52693deccf2ab4de2a71c32021e9e095
+scraped_at: 2026-09-02T14:59:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2d4de123f91a31c85e0ec4fc1df3c392f4c8f5cade57dc220685fdc1a17485e3
 ---
 
-保存控件允许用户通过点击按钮临时获取存储权限，无需权限弹框确认。
+保存控件允许用户通过点击按钮临时获取存储权限，无需权限弹窗确认。
 
 集成保存控件后，当用户点击该控件时，应用会在短时间内获取访问媒体库特权接口的授权。在API version 19及之前的版本中，授权持续时间为10秒；在API version 20及之后的版本中，授权持续时间为1分钟。这适用于任何需要将文件保存到媒体库的应用场景，例如保存图片或视频等。
 
@@ -16,18 +16,18 @@ content_hash: sha256:e19666d4205127ac90884ec889f640bc52693deccf2ab4de2a71c32021e
 
 保存控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/2FeUf-KRTzClf3wqDsLwnQ/zh-cn_image_0000002558605202.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/_uFp33hlTICRogOeodhkqg/zh-cn_image_0000002736433409.png)
 
 ## 约束与限制
 
 * 当用户首次点击应用中的保存控件，系统将弹窗请求用户授权。如果用户点击“取消”，弹窗消失，应用无授权，用户再次点击保存控件时，将会重新弹窗；如果用户点击“允许”，弹窗消失，应用将被授予临时保存权限，此后点击该应用的保存控件将不会弹窗。
 * 应用在点击控件触发onClick()回调到调用媒体库特权接口的时间间隔需控制在授权时间内。在API version 19及之前的版本中，授权持续时间为10秒；在API version 20及之后的版本中，授权持续时间为1分钟。
-* 保存控件仅支持在[应用主窗口和子窗口](../harmonyos-references/arkts-apis-window-e.md#windowtype7)中使用，且不支持在[UIExtension](../harmonyos-references/js-apis-arkui-uiextension.md)中使用。
+* 保存控件仅支持在[WindowType](../harmonyos-references/arkts-apis-window-e.md#windowtype7)中定义的应用主窗口和子窗口中使用，且不支持在[UIExtension](../harmonyos-references/js-apis-arkui-uiextension.md)中使用。
 * 用户点击一次控件，仅获取一次授权调用。
 * 为了保障用户的隐私不被恶意应用获取，应用需确保安全控件是可见的且用户能够识别的。开发者需要合理的配置控件的尺寸、颜色等属性，避免视觉混淆的情况，如果发生因控件的样式不合法导致授权失败的情况，请检查设备错误日志。
 * 当开发者需要自定义保存控件的图标和文本时，需要向应用市场申请ohos.permission.CUSTOMIZE\_SAVE\_BUTTON权限。
 
-  注意
+  **注意** 
 
   ohos.permission.CUSTOMIZE\_SAVE\_BUTTON受限开放，仅默认样式无法满足业务场景时可申请，申请方式请参考[申请使用受限权限](declare-permissions-in-acl.md)。
 
@@ -37,9 +37,9 @@ content_hash: sha256:e19666d4205127ac90884ec889f640bc52693deccf2ab4de2a71c32021e
 
 1. 导入文件和媒体库依赖。
 
-   ```
-   1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-   2. import { fileIo } from '@kit.CoreFileKit';
+   ```ts
+   import { photoAccessHelper } from '@kit.MediaLibraryKit';
+   import { fileIo } from '@kit.CoreFileKit';
    ```
 2. 设置图片资源并添加保存控件。
 
@@ -49,64 +49,62 @@ content_hash: sha256:e19666d4205127ac90884ec889f640bc52693deccf2ab4de2a71c32021e
 
    有关将图片保存到媒体库的详细信息，请参考[保存媒体库资源](photoaccesshelper-savebutton.md)。
 
+   ```typescript
+   import { photoAccessHelper } from '@kit.MediaLibraryKit';
+   import { fileIo } from '@kit.CoreFileKit';
+   import { common } from '@kit.AbilityKit';
+   import { promptAction } from '@kit.ArkUI';
+   import { BusinessError } from '@kit.BasicServicesKit';
+
+   async function savePhotoToGallery(context: common.UIAbilityContext) {
+     let helper = photoAccessHelper.getPhotoAccessHelper(context);
+     try {
+       // onClick触发后一分钟内通过createAsset接口创建图片文件，一分钟后createAsset权限收回。
+       let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg');
+       // 使用uri打开文件，可以持续写入内容，写入过程不受时间限制。
+       let file = await fileIo.open(uri, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+       // $r('app.media.test')需要替换为开发者所需的图像资源文件。
+       context.resourceManager.getMediaContent($r('app.media.test').id, 0)
+         .then(async value => {
+           let media = value.buffer;
+           // 写到媒体库文件中。
+           await fileIo.write(file.fd, media);
+           await fileIo.close(file.fd);
+           promptAction.openToast({ message: $r('app.string.saved_in_photo') });
+         });
+     } catch (error) {
+       const err: BusinessError = error as BusinessError;
+       console.error(`Failed to save photo. Code is ${err.code}, message is ${err.message}`);
+     }
+   }
+
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       Row() {
+         Column({ space: 10 }) {
+           // $r('app.media.test')需要替换为开发者所需的图像资源文件。
+           Image($r('app.media.test'))
+             .height(400)
+             .width('100%')
+
+           SaveButton()
+             .padding({top: 12, bottom: 12, left: 24, right: 24})
+             .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
+               if (result === SaveButtonOnClickResult.SUCCESS) {
+                 const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+                 // 免去权限申请和权限请求等环节，获得临时授权，保存对应图片。
+                 savePhotoToGallery(context);
+               } else {
+                 promptAction.openToast({ message: $r('app.string.set_permission_failed') });
+               }
+             })
+         }
+         .width('100%')
+       }
+       .height('100%')
+       .backgroundColor(0xf1f3f5)
+     }
+   }
    ```
-   1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-   2. import { fileIo } from '@kit.CoreFileKit';
-   3. import { common } from '@kit.AbilityKit';
-   4. import { promptAction } from '@kit.ArkUI';
-   5. import { BusinessError } from '@kit.BasicServicesKit';
-
-   7. async function savePhotoToGallery(context: common.UIAbilityContext) {
-   8. let helper = photoAccessHelper.getPhotoAccessHelper(context);
-   9. try {
-   10. // onClick触发后一分钟内通过createAsset接口创建图片文件，一分钟后createAsset权限收回。
-   11. let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg');
-   12. // 使用uri打开文件，可以持续写入内容，写入过程不受时间限制。
-   13. let file = await fileIo.open(uri, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-   14. // $r('app.media.test')需要替换为开发者所需的图像资源文件。
-   15. context.resourceManager.getMediaContent($r('app.media.test').id, 0)
-   16. .then(async value => {
-   17. let media = value.buffer;
-   18. // 写到媒体库文件中。
-   19. await fileIo.write(file.fd, media);
-   20. await fileIo.close(file.fd);
-   21. promptAction.openToast({ message: $r('app.string.saved_in_photo') });
-   22. });
-   23. } catch (error) {
-   24. const err: BusinessError = error as BusinessError;
-   25. console.error(`Failed to save photo. Code is ${err.code}, message is ${err.message}`);
-   26. }
-   27. }
-
-   29. @Entry
-   30. @Component
-   31. struct Index {
-   32. build() {
-   33. Row() {
-   34. Column({ space: 10 }) {
-   35. // $r('app.media.test')需要替换为开发者所需的图像资源文件。
-   36. Image($r('app.media.test'))
-   37. .height(400)
-   38. .width('100%')
-
-   40. SaveButton()
-   41. .padding({top: 12, bottom: 12, left: 24, right: 24})
-   42. .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
-   43. if (result === SaveButtonOnClickResult.SUCCESS) {
-   44. const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   45. // 免去权限申请和权限请求等环节，获得临时授权，保存对应图片。
-   46. savePhotoToGallery(context);
-   47. } else {
-   48. promptAction.openToast({ message: $r('app.string.set_permission_failed') });
-   49. }
-   50. })
-   51. }
-   52. .width('100%')
-   53. }
-   54. .height('100%')
-   55. .backgroundColor(0xf1f3f5)
-   56. }
-   57. }
-   ```
-
-   [Save.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/SecurityComponent/entry/src/main/ets/securitycomponent/pages/Save.ets#L16-L73)

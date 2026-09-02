@@ -3,31 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVTranscoder)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVTranscoder)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:04:20+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:cfd7fca71274ff3e30ea0edf8e873fa097ee4de3b10ba00615ac7d28dce0e8e8
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b315cac3bd0941a3a579720fb3d3cd3f2c9f9ce31e20dc4e417955f54b8f0731
 ---
 
 视频转码管理类，用于视频转码。在调用AVTranscoder的方法前，需要先通过[createAVTranscoder()](arkts-apis-media-f.md#mediacreateavtranscoder12)构建一个AVTranscoder实例。
 
 视频转码demo可参考：[视频转码开发指导](../harmonyos-guides/using-avtranscoder-for-transcodering.md)
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 12开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTV
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
@@ -38,9 +34,76 @@ PhonePC/2in1TabletTV
 | fdSrc12+ | [AVFileDescriptor](arkts-apis-media-i.md#avfiledescriptor9) | 否 | 否 | 源媒体文件描述，通过该属性设置数据源。  **使用示例**：  假设一个连续存储的媒体文件，地址偏移：0，字节长度：100。其文件描述为AVFileDescriptor{ fd = 资源句柄; offset = 0; length = 100; }。  **说明：**  - 将资源句柄（fd）传递给AVTranscoder实例之后，请不要通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer/AVMetadataExtractor/AVImageGenerator/AVTranscoder。  - 同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致视频转码数据获取异常。 |
 | fdDst12+ | number | 否 | 否 | 目标媒体文件描述，通过该属性设置数据输出。在创建AVTranscoder实例后，必须设置fdSrc和fdDst属性。  **说明：**  - 将资源句柄（fd）传递给AVTranscoder实例之后，请不要通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer/AVMetadataExtractor/AVImageGenerator/AVTranscoder。  - 同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致视频转码数据获取异常。 |
 
-## prepare12+
+## addWatermark
 
-PhonePC/2in1TabletTV
+addWatermark(watermark: image.PixelMap, config: WatermarkConfiguration): Promise<number>
+
+为视频转码添加水印。使用Promise异步回调。
+
+**说明** 
+
+* 应用最多可以添加5个水印。
+* 此接口只能在prepared状态之前调用。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.AVTranscoder
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| watermark | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 水印图像。 |
+| config | [WatermarkConfiguration](arkts-apis-media-i.md#watermarkconfiguration) | 是 | 水印配置参数。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<number> | Promise对象，返回添加的水印ID。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Media错误码](errorcode-media.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 5400102 | Operation not allowed. Return by promise. |
+| 5400103 | IO error. Return by promise. |
+| 5400105 | Service died. Return by promise. |
+| 5400108 | The parameter check failed, parameter value out of range. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
+import { image } from '@kit.ImageKit';
+
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  
+  // 配置水印参数。
+  let watermarkConfig: media.WatermarkConfiguration = {
+      // 根据实际需求配置水印参数，单位为像素（px）。
+      top : 40,
+      left : 40,
+      width: 200,
+      height: 300,
+  };
+
+  avTranscoder.addWatermark(watermarkPixelMap, watermarkConfig).then((watermarkId: number) => {
+    console.info('addWatermark success, watermarkId: ' + watermarkId);
+  }).catch((err: BusinessError) => {
+    console.error('addWatermark failed and catch error is ' + err.message);
+  });
+}
+```
+
+## prepare12+
 
 prepare(config: AVTranscoderConfig): Promise<void>
 
@@ -68,7 +131,7 @@ prepare(config: AVTranscoderConfig): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | The parameter check failed. Return by promise. |
+| 401 | The parameter check failed. Return by promise.  适用版本：22+ |
 | 5400102 | Operation not allowed. Return by promise. |
 | 5400103 | IO error. Return by promise. |
 | 5400105 | Service died. Return by promise. |
@@ -76,33 +139,31 @@ prepare(config: AVTranscoderConfig): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. async function test() {
-5. // 创建转码实例。
-6. let avTranscoder = await media.createAVTranscoder();
-7. // 配置参数以实际硬件设备支持的范围为准。
-8. let avTranscoderConfig: media.AVTranscoderConfig = {
-9. audioBitrate : 200000,
-10. audioCodec : media.CodecMimeType.AUDIO_AAC,
-11. fileFormat : media.ContainerFormatType.CFT_MPEG_4,
-12. videoBitrate : 3000000,
-13. videoCodec : media.CodecMimeType.VIDEO_AVC,
-14. };
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  // 配置参数以实际硬件设备支持的范围为准。
+  let avTranscoderConfig: media.AVTranscoderConfig = {
+    audioBitrate : 200000,
+    audioCodec : media.CodecMimeType.AUDIO_AAC,
+    fileFormat : media.ContainerFormatType.CFT_MPEG_4,
+    videoBitrate : 3000000,
+    videoCodec : media.CodecMimeType.VIDEO_AVC,
+  };
 
-16. avTranscoder.prepare(avTranscoderConfig).then(() => {
-17. console.info('prepare success');
-18. }).catch((err: BusinessError) => {
-19. console.error('prepare failed and catch error is ' + err.message);
-20. });
-21. }
+  avTranscoder.prepare(avTranscoderConfig).then(() => {
+    console.info('prepare success');
+  }).catch((err: BusinessError) => {
+    console.error('prepare failed and catch error is ' + err.message);
+  });
+}
 ```
 
 ## start12+
-
-PhonePC/2in1TabletTV
 
 start(): Promise<void>
 
@@ -132,24 +193,22 @@ start(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. async function test() {
-5. // 创建转码实例。
-6. let avTranscoder = await media.createAVTranscoder();
-7. avTranscoder.start().then(() => {
-8. console.info('start AVTranscoder success');
-9. }).catch((err: BusinessError) => {
-10. console.error('start AVTranscoder failed and catch error is ' + err.message);
-11. });
-12. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.start().then(() => {
+    console.info('start AVTranscoder success');
+  }).catch((err: BusinessError) => {
+    console.error('start AVTranscoder failed and catch error is ' + err.message);
+  });
+}
 ```
 
 ## pause12+
-
-PhonePC/2in1TabletTV
 
 pause(): Promise<void>
 
@@ -179,24 +238,22 @@ pause(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. async function test() {
-5. // 创建转码实例。
-6. let avTranscoder = await media.createAVTranscoder();
-7. avTranscoder.pause().then(() => {
-8. console.info('pause AVTranscoder success');
-9. }).catch((err: BusinessError) => {
-10. console.error('pause AVTranscoder failed and catch error is ' + err.message);
-11. });
-12. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.pause().then(() => {
+    console.info('pause AVTranscoder success');
+  }).catch((err: BusinessError) => {
+    console.error('pause AVTranscoder failed and catch error is ' + err.message);
+  });
+}
 ```
 
 ## resume12+
-
-PhonePC/2in1TabletTV
 
 resume(): Promise<void>
 
@@ -226,24 +283,22 @@ resume(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. async function test() {
-5. // 创建转码实例。
-6. let avTranscoder = await media.createAVTranscoder();
-7. avTranscoder.resume().then(() => {
-8. console.info('resume AVTranscoder success');
-9. }).catch((err: BusinessError) => {
-10. console.error('resume AVTranscoder failed and catch error is ' + err.message);
-11. });
-12. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.resume().then(() => {
+    console.info('resume AVTranscoder success');
+  }).catch((err: BusinessError) => {
+    console.error('resume AVTranscoder failed and catch error is ' + err.message);
+  });
+}
 ```
 
 ## cancel12+
-
-PhonePC/2in1TabletTV
 
 cancel(): Promise<void>
 
@@ -273,24 +328,22 @@ cancel(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. async function test() {
-5. // 创建转码实例。
-6. let avTranscoder = await media.createAVTranscoder();
-7. avTranscoder.cancel().then(() => {
-8. console.info('cancel AVTranscoder success');
-9. }).catch((err: BusinessError) => {
-10. console.error('cancel AVTranscoder failed and catch error is ' + err.message);
-11. });
-12. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.cancel().then(() => {
+    console.info('cancel AVTranscoder success');
+  }).catch((err: BusinessError) => {
+    console.error('cancel AVTranscoder failed and catch error is ' + err.message);
+  });
+}
 ```
 
 ## release12+
-
-PhonePC/2in1TabletTV
 
 release(): Promise<void>
 
@@ -319,24 +372,22 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. async function test() {
-5. // 创建转码实例。
-6. let avTranscoder = await media.createAVTranscoder();
-7. avTranscoder.release().then(() => {
-8. console.info('release AVTranscoder success');
-9. }).catch((err: BusinessError) => {
-10. console.error('release AVTranscoder failed and catch error is ' + err.message);
-11. });
-12. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.release().then(() => {
+    console.info('release AVTranscoder success');
+  }).catch((err: BusinessError) => {
+    console.error('release AVTranscoder failed and catch error is ' + err.message);
+  });
+}
 ```
 
 ## on('progressUpdate')12+
-
-PhonePC/2in1TabletTV
 
 on(type:'progressUpdate', callback: Callback<number>):void
 
@@ -355,21 +406,19 @@ on(type:'progressUpdate', callback: Callback<number>):void
 
 **示例：**
 
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 
-3. async function test() {
-4. // 创建转码实例。
-5. let avTranscoder = await media.createAVTranscoder();
-6. avTranscoder.on('progressUpdate', (progress: number) => {
-7. console.info('avTranscoder progressUpdate = ' + progress);
-8. });
-9. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.on('progressUpdate', (progress: number) => {
+    console.info('avTranscoder progressUpdate = ' + progress);
+  });
+}
 ```
 
 ## off('progressUpdate')12+
-
-PhonePC/2in1TabletTV
 
 off(type:'progressUpdate', callback?: Callback<number>): void
 
@@ -388,19 +437,17 @@ off(type:'progressUpdate', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 
-3. async function test() {
-4. // 创建转码实例。
-5. let avTranscoder = await media.createAVTranscoder();
-6. avTranscoder.off('progressUpdate');
-7. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.off('progressUpdate');
+}
 ```
 
 ## on('error')12+
-
-PhonePC/2in1TabletTV
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -436,22 +483,20 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. async function test() {
-5. // 创建转码实例。
-6. let avTranscoder = await media.createAVTranscoder();
-7. avTranscoder.on('error', (err: BusinessError) => {
-8. console.info('case avTranscoder.on(error) called, errMessage is ' + err.message);
-9. });
-10. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.on('error', (err: BusinessError) => {
+    console.info('case avTranscoder.on(error) called, errMessage is ' + err.message);
+  });
+}
 ```
 
 ## off('error')12+
-
-PhonePC/2in1TabletTV
 
 off(type:'error', callback?: ErrorCallback): void
 
@@ -470,19 +515,17 @@ off(type:'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 
-3. async function test() {
-4. // 创建转码实例。
-5. let avTranscoder = await media.createAVTranscoder();
-6. avTranscoder.off('error');
-7. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.off('error');
+}
 ```
 
 ## on('complete')12+
-
-PhonePC/2in1TabletTV
 
 on(type: 'complete', callback: Callback<void>): void
 
@@ -503,28 +546,26 @@ on(type: 'complete', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 
-3. async function test() {
-4. let avTranscoder: media.AVTranscoder | undefined = undefined;
-5. // 创建转码实例。
-6. avTranscoder = await media.createAVTranscoder();
-7. avTranscoder.on('complete', async () => {
-8. console.info('avTranscoder complete');
-9. if (avTranscoder != undefined) {
-10. // 开发者须在此监听转码完成事件。
-11. // 须等待avTranscoder.release()释放转码实例之后，再对转码后的文件进行转发、上传、转存等处理。
-12. await avTranscoder.release();
-13. avTranscoder = undefined;
-14. }
-15. });
-16. }
+async function test() {
+  let avTranscoder: media.AVTranscoder | undefined = undefined;
+  // 创建转码实例。
+  avTranscoder = await media.createAVTranscoder();
+  avTranscoder.on('complete', async () => {
+    console.info('avTranscoder complete');
+    if (avTranscoder != undefined) {
+      // 开发者须在此监听转码完成事件。
+      // 须等待avTranscoder.release()释放转码实例之后，再对转码后的文件进行转发、上传、转存等处理。
+      await avTranscoder.release();
+      avTranscoder = undefined;
+    }
+  });
+}
 ```
 
 ## off('complete')12+
-
-PhonePC/2in1TabletTV
 
 off(type:'complete', callback?: Callback<void>): void
 
@@ -543,12 +584,12 @@ off(type:'complete', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 
-3. async function test() {
-4. // 创建转码实例。
-5. let avTranscoder = await media.createAVTranscoder();
-6. avTranscoder.off('complete');
-7. }
+async function test() {
+  // 创建转码实例。
+  let avTranscoder = await media.createAVTranscoder();
+  avTranscoder.off('complete');
+}
 ```

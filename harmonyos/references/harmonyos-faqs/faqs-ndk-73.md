@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-73
 title: napi_env禁止缓存的原因是什么
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > napi_env禁止缓存的原因是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:52+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b18413b93ebefa1fcea073ac0b928b77c53fd14b0e040de7f9997587aace24a4
 ---
 

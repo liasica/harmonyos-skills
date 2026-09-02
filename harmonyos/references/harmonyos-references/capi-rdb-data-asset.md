@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: Data_Asset
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > Data_Asset
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:58d4091ee68f760648fc89341179ad9590d59df5be34498311d2797d9698785f
+scraped_at: 2026-09-02T14:51:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1802a1b97914a591edcbb5238855f16fd748542919a7b6d90c5a7a836246241c
 ---
 
-```
-1. typedef struct Data_Asset Data_Asset
+```c
+typedef struct Data_Asset Data_Asset
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 表示资产附件类型的数据。
 

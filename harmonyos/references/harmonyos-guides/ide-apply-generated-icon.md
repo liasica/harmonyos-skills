@@ -1,31 +1,26 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-apply-generated-icon
 title: 生成单层图标
-breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 生成单层图标
+breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 生成单层图标
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ff269c28204e28a295d43cab7cae80d396e3fcf97922cd3ca6ee69141a972140
+scraped_at: 2026-09-02T15:00:19+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:1b399d34cefbfbc6d52c2211651870987f7060229b106fe0b3cd5a30bc4aa118
 ---
 
-DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备、不同屏幕密度的图标，并展示图标在目录中的具体位置。
-
-说明
-
-当前Image Asset功能支持为Phone、Tablet、2in1应用生成单层、圆角图标。
-
-Image Asset支持生成以下两种类型图标：
+DevEco Studio支持Image Asset功能，帮助开发者生成适应不同设备、不同屏幕密度的图标，并展示图标在目录中的具体位置。Image Asset支持生成以下两种类型图标：
 
 * icon：应用图标（设备桌面及设置>应用中出现的应用图标）。
 * start window icon：启动页图标。
 
+**说明** 
+
+* 当前Image Asset功能支持为Phone、Tablet、2in1应用生成单层、圆角图标。
+* 若在模块级目录（entry或其他模块）下新建Image Asset，将创建Icon and start window icon类型图标，用于在module.json5文件中配置icon及startWindowIcon字段；若在工程级目录（AppScope或其他目录）下新建Image Asset，将创建Icon类型图标，用于在app.json5文件中配置icon字段。
+
 1. 在工程中选中模块或文件，右键单击**New > Image Asset**，进入图标配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/YTFbdp0GTpCf3if0TYEgYQ/zh-cn_image_0000002530752764.png "点击放大")
-
-   说明
-
-   若在模块级目录（Entry或其他模块）下新建Image Asset，将创建Icon and start window icon类型图标，用于在module.json5文件中配置icon及startWindowIcon字段；在工程级目录（AppScope或其他目录）下新建Image Asset，将创建Icon类型图标，用于在app.json5文件中配置icon字段。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/UqCp6Gc6SKGeJm9B8Ine5g/zh-cn_image_0000002701822600.png "点击放大")
 2. 需要根据向导配置图标样式、大小等基本信息。
    * **Device**：选择当前配置的图标生效的设备类型。
    * **Icon Type**：展示当前图标的类型。
@@ -35,7 +30,7 @@ Image Asset支持生成以下两种类型图标：
      + **Trim**：选择Yes，将调整图标图形与边框之间的距离，同时会去除图片周围多余的透明空间。
      + **Resize**：拖动滑块，设置图形的缩放比例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/PRIygb14TrO6pO-gzCDBNg/zh-cn_image_0000002561832681.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/QRQLJ1bdQu2ZUqCcPoM8VQ/zh-cn_image_0000002701662680.png)
 
    * **Background Layer**：分层图标资源背景层。请配置下列字段信息：
      + **Asset Type**：设置图标背景类型。可以选择颜色（**Color**）或图像（**Image**）。
@@ -44,7 +39,7 @@ Image Asset支持生成以下两种类型图标：
      + **Trim**：选择Yes，将调整图标图形与边框之间的距离，同时会去除图片周围多余的透明空间。
      + **Resize**：拖动滑块，设置图形的缩放比例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/KjJcYozWT2G9hF1t5c9J6Q/zh-cn_image_0000002561752703.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/W80nwTc6TnyfNQogpd6T0A/zh-cn_image_0000002731381903.png)
 3. 点击**Next**，确认图标的存储路径和相应的尺寸信息，图标将默认存放在**resources** 目录下。点击**Finish**完成图标生成。
 
    icon.png为桌面图标，icon\_start window.png为启动页图标，Size为图标的尺寸信息，不同尺寸对照关系如下：
@@ -55,10 +50,10 @@ Image Asset支持生成以下两种类型图标：
    * xxldpi：表示超大规模的屏幕密度（Extra Extra Large-scale Dots Per Inch），适用于dpi取值为(320, 480]的设备。
    * xxxldpi：表示超特大规模的屏幕密度（Extra Extra Extra Large-scale Dots Per Inch），适用于dpi取值为(480, 640]的设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/WAQHhLVyQaWShO40y3pWCA/zh-cn_image_0000002561752701.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Z85AiRcwTCKu15EryBdInw/zh-cn_image_0000002701822604.png)
 4. 如需配置桌面或设置页面出现的应用图标，可将module.json5文件中icon字段修改为新生成的图标名称；如需修改启动页的icon图标，可将module.json5文件中startWindowIcon字段修改为新生成的图标名称。
 
-   说明
+   **说明** 
 
    * 当上述字段配置了新生成的图标名称后，系统会根据当前设备状态优先从相匹配的限定词目录，即步骤3生成的不同尺寸的图标文件中寻找资源。具体请参考[资源匹配](resource-categories-and-access.md)。
    * 若module.json5文件中未配置icon字段，系统将使用app.json5中icon字段配置的图标。

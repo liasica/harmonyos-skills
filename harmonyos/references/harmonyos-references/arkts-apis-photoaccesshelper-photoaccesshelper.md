@@ -3,26 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoAccessHelper)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Interface (PhotoAccessHelper)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6920212e9eef565286f03be2682a0942a07164fb060e9b74a82122ea6596efc9
+scraped_at: 2026-09-02T15:02:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c84c5a8004fa4a9d31f2225cfec9a3f2d881d1f4b4919649906a9b1fe5859519
 ---
 
-说明
+PhotoAccessHelper提供图片和视频资源的访问管理能力，支持获取、创建、删除媒体资产，管理相册，监听资产变化等操作。
+
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```ts
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 ```
 
 ## getAssets
-
-PhonePC/2in1TabletTV
 
 getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult<PhotoAsset>>): void
 
@@ -32,7 +30,7 @@ getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult<PhotoAsset>
 
 **需要权限**：ohos.permission.READ\_IMAGEVIDEO
 
-通过picker的方式调用该接口来查询指定URI对应的图片或视频资源，不需要申请'ohos.permission.READ\_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](../harmonyos-guides/photoaccesshelper-photoviewpicker.md#指定uri获取图片或视频资源)。
+通过picker的方式调用该接口查询指定URI的图片或视频资源时，无需申请'ohos.permission.READ\_IMAGEVIDEO'权限，详情请参考[指定URI获取图片或视频资源](../harmonyos-guides/photoaccesshelper-photoviewpicker.md#指定uri获取图片或视频资源)。
 
 **参数：**
 
@@ -50,7 +48,8 @@ getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult<PhotoAsset>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 201 | Permission denied. |
+| 201 | Permission denied.  适用版本：12+ |
+| 13900012 | Permission denied.  适用版本：10-11 |
 | 13900020 | Invalid argument. |
 | 14000011 | System inner fail. |
 
@@ -58,34 +57,36 @@ getAssets(options: FetchOptions, callback: AsyncCallback<FetchResult<PhotoAsset>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getAssets');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOptions: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getAssets');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
 
-11. phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
-12. if (fetchResult !== undefined) {
-13. console.info('fetchResult success');
-14. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-15. if (photoAsset !== undefined) {
-16. console.info('photoAsset.displayName : ' + photoAsset.displayName);
-17. }
-18. } else {
-19. console.error(`fetchResult fail with error: ${err.code}, ${err.message}`);
-20. }
-21. });
-22. }
+  phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+    if (err) {
+      console.error(`fetchResult fail with error: ${err.code}, ${err.message}`);
+      return;
+    }
+    if (fetchResult !== undefined) {
+      console.info('fetchResult success');
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      if (photoAsset !== undefined) {
+        console.info('photoAsset.displayName : ' + photoAsset.displayName);
+      }
+    } else {
+      console.error(`fetchResult fail with error: ${err.code}, ${err.message}`);
+    }
+  });
+}
 ```
 
 ## getAssets
-
-PhonePC/2in1TabletTV
 
 getAssets(options: FetchOptions): Promise<FetchResult<PhotoAsset>>
 
@@ -119,7 +120,8 @@ getAssets(options: FetchOptions): Promise<FetchResult<PhotoAsset>>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission denied.  适用版本：20+ |
+| 13900012 | Permission denied.  适用版本：10-19 |
 | 13900020 | Invalid argument. |
 | 14000011 | System inner fail. |
 
@@ -127,34 +129,32 @@ getAssets(options: FetchOptions): Promise<FetchResult<PhotoAsset>>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getAssets');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOptions: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. try {
-11. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
-12. if (fetchResult !== undefined) {
-13. console.info('fetchResult success');
-14. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-15. if (photoAsset !== undefined) {
-16. console.info('photoAsset.displayName :' + photoAsset.displayName);
-17. }
-18. }
-19. } catch (err) {
-20. console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
-21. }
-22. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getAssets');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+    if (fetchResult !== undefined) {
+      console.info('fetchResult success');
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      if (photoAsset !== undefined) {
+        console.info('photoAsset.displayName :' + photoAsset.displayName);
+      }
+    }
+  } catch (err) {
+    console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## getBurstAssets12+
-
-PhonePC/2in1TabletTV
 
 getBurstAssets(burstKey: string, options: FetchOptions): Promise<FetchResult<PhotoAsset>>
 
@@ -192,37 +192,35 @@ getBurstAssets(burstKey: string, options: FetchOptions): Promise<FetchResult<Pho
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('getBurstAssets');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOptions: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. // burstKey为36位的uuid，可以根据photoAccessHelper.PhotoKeys获取。
-11. let burstKey: string = "e719d696-09fa-44f8-8e9e-ec3f215aa62a";
-12. try {
-13. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await
-14. phAccessHelper.getBurstAssets(burstKey, fetchOptions);
-15. if (fetchResult !== undefined) {
-16. console.info('fetchResult success');
-17. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-18. if (photoAsset !== undefined) {
-19. console.info('photoAsset.displayName :' + photoAsset.displayName);
-20. }
-21. }
-22. } catch (err) {
-23. console.error(`getBurstAssets failed, error: ${err.code}, ${err.message}`);
-24. }
-25. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getBurstAssets');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  // burstKey为36位的uuid，可以根据photoAccessHelper.PhotoKeys获取。
+  let burstKey: string = "e719d696-09fa-44f8-8e9e-ec3f215aa62a";
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await
+      phAccessHelper.getBurstAssets(burstKey, fetchOptions);
+    if (fetchResult !== undefined) {
+      console.info('fetchResult success');
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      if (photoAsset !== undefined) {
+        console.info('photoAsset.displayName :' + photoAsset.displayName);
+      }
+    }
+  } catch (err) {
+    console.error(`getBurstAssets failed, error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## createAsset
-
-PhonePC/2in1TabletTV
 
 createAsset(photoType: PhotoType, extension: string, options: CreateOptions, callback: AsyncCallback<string>): void
 
@@ -254,7 +252,8 @@ createAsset(photoType: PhotoType, extension: string, options: CreateOptions, cal
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 201 | Permission denied. |
+| 201 | Permission denied.  适用版本：11+ |
+| 13900012 | Permission denied.  适用版本：10 |
 | 13900020 | Invalid argument. |
 | 14000011 | System inner fail. |
 
@@ -262,28 +261,26 @@ createAsset(photoType: PhotoType, extension: string, options: CreateOptions, cal
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-2. console.info('createAssetDemo');
-3. let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-4. let extension:string = 'jpg';
-5. let options: photoAccessHelper.CreateOptions = {
-6. title: 'testPhoto'
-7. }
-8. phAccessHelper.createAsset(photoType, extension, options, (err, uri) => {
-9. if (uri !== undefined) {
-10. console.info('createAsset uri' + uri);
-11. console.info('createAsset successfully');
-12. } else {
-13. console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
-14. }
-15. });
-16. }
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('createAssetDemo');
+  let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+  let extension:string = 'jpg';
+  let options: photoAccessHelper.CreateOptions = {
+    title: 'testPhoto'
+  }
+  phAccessHelper.createAsset(photoType, extension, options, (err, uri) => {
+    if (uri !== undefined) {
+      console.info('createAsset uri' + uri);
+      console.info('createAsset successfully');
+    } else {
+      console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
+    }
+  });
+}
 ```
 
 ## createAsset
-
-PhonePC/2in1TabletTV
 
 createAsset(photoType: PhotoType, extension: string, callback: AsyncCallback<string>): void
 
@@ -314,7 +311,8 @@ createAsset(photoType: PhotoType, extension: string, callback: AsyncCallback<str
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 201 | Permission denied. |
+| 201 | Permission denied.  适用版本：11+ |
+| 13900012 | Permission denied.  适用版本：10 |
 | 13900020 | Invalid argument. |
 | 14000011 | System inner fail. |
 
@@ -322,25 +320,23 @@ createAsset(photoType: PhotoType, extension: string, callback: AsyncCallback<str
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-2. console.info('createAssetDemo');
-3. let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-4. let extension: string = 'jpg';
-5. phAccessHelper.createAsset(photoType, extension, (err, uri) => {
-6. if (uri !== undefined) {
-7. console.info('createAsset uri' + uri);
-8. console.info('createAsset successfully');
-9. } else {
-10. console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
-11. }
-12. });
-13. }
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('createAssetDemo');
+  let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+  let extension: string = 'jpg';
+  phAccessHelper.createAsset(photoType, extension, (err, uri) => {
+    if (uri !== undefined) {
+      console.info('createAsset uri' + uri);
+      console.info('createAsset successfully');
+    } else {
+      console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
+    }
+  });
+}
 ```
 
 ## createAsset
-
-PhonePC/2in1TabletTV
 
 createAsset(photoType: PhotoType, extension: string, options?: CreateOptions): Promise<string>
 
@@ -377,7 +373,8 @@ createAsset(photoType: PhotoType, extension: string, options?: CreateOptions): P
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 201 | Permission denied. |
+| 201 | Permission denied.  适用版本：11+ |
+| 13900012 | Permission denied.  适用版本：10 |
 | 13900020 | Invalid argument. |
 | 14000011 | System inner fail. |
 
@@ -385,27 +382,25 @@ createAsset(photoType: PhotoType, extension: string, options?: CreateOptions): P
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-2. console.info('createAssetDemo');
-3. try {
-4. let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-5. let extension: string = 'jpg';
-6. let options: photoAccessHelper.CreateOptions = {
-7. title: 'testPhoto'
-8. }
-9. let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
-10. console.info('createAsset uri' + uri);
-11. console.info('createAsset successfully');
-12. } catch (err) {
-13. console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
-14. }
-15. }
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('createAssetDemo');
+  try {
+    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+    let extension: string = 'jpg';
+    let options: photoAccessHelper.CreateOptions = {
+      title: 'testPhoto'
+    }
+    let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+    console.info('createAsset uri' + uri);
+    console.info('createAsset successfully');
+  } catch (err) {
+    console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## createPhotoAsset23+
-
-PhonePC/2in1TabletTV
 
 createPhotoAsset(photoType: PhotoType, extension: string, title?: string): Promise<string>
 
@@ -426,7 +421,7 @@ createPhotoAsset(photoType: PhotoType, extension: string, title?: string): Promi
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | photoType | [PhotoType](arkts-apis-photoaccesshelper-e.md#phototype) | 是 | 创建的文件类型。例如：IMAGE或者VIDEO类型。 |
-| extension | string | 是 | 文件名后缀参数。例如：'jpg'。 |
+| extension | string | 是 | 文件名后缀参数。例如：'jpg'、'png'、'mp4'等。 |
 | title | string | 否 | 图片或视频资产的标题。 |
 
 **返回值：**
@@ -449,25 +444,23 @@ createPhotoAsset(photoType: PhotoType, extension: string, title?: string): Promi
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-2. console.info('createPhotoAssetDemo');
-3. try {
-4. let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-5. let extension: string = 'jpg';
-6. let title: string = 'testPhoto';
-7. let uri: string = await phAccessHelper.createPhotoAsset(photoType, extension, title);
-8. console.info('createPhotoAsset uri' + uri);
-9. console.info('createPhotoAsset successfully');
-10. } catch (err) {
-11. console.error(`createPhotoAsset failed, error: ${err.code}, ${err.message}`);
-12. }
-13. }
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('createPhotoAssetDemo');
+  try {
+    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+    let extension: string = 'jpg';
+    let title: string = 'testPhoto';
+    let uri: string = await phAccessHelper.createPhotoAsset(photoType, extension, title);
+    console.info('createPhotoAsset uri' + uri);
+    console.info('createPhotoAsset successfully');
+  } catch (err) {
+    console.error(`createPhotoAsset failed, error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## getAlbums
-
-PhonePC/2in1TabletTV
 
 getAlbums(type: AlbumType, subtype: AlbumSubtype, options: FetchOptions, callback: AsyncCallback<FetchResult<Album>>): void
 
@@ -497,7 +490,8 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options: FetchOptions, callbac
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 201 | Permission denied. |
+| 201 | Permission denied.  适用版本：12+ |
+| 13900012 | Permission denied.  适用版本：10-11 |
 | 13900020 | Invalid argument. |
 | 14000011 | System inner fail. |
 
@@ -505,37 +499,35 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options: FetchOptions, callbac
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. // 示例代码中为获取相册名为newAlbumName的相册。
-5. console.info('getAlbumsDemo');
-6. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-7. predicates.equalTo('album_name', 'newAlbumName');
-8. let fetchOptions: photoAccessHelper.FetchOptions = {
-9. fetchColumns: [],
-10. predicates: predicates
-11. };
-12. phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOptions, async (err, fetchResult) => {
-13. if (err) {
-14. console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-15. return;
-16. }
-17. if (fetchResult === undefined) {
-18. console.error('getAlbumsCallback fetchResult is undefined');
-19. return;
-20. }
-21. let album = await fetchResult.getFirstObject();
-22. console.info('getAlbumsCallback successfully, albumName: ' + album.albumName);
-23. fetchResult.close();
-24. });
-25. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  // 示例代码中为获取相册名为newAlbumName的相册。
+  console.info('getAlbumsDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  predicates.equalTo('album_name', 'newAlbumName');
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOptions, async (err, fetchResult) => {
+    if (err) {
+      console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
+      return;
+    }
+    if (fetchResult === undefined) {
+      console.error('getAlbumsCallback fetchResult is undefined');
+      return;
+    }
+    let album = await fetchResult.getFirstObject();
+    console.info('getAlbumsCallback successfully, albumName: ' + album.albumName);
+    fetchResult.close();
+  });
+}
 ```
 
 ## getAlbums
-
-PhonePC/2in1TabletTV
 
 getAlbums(type: AlbumType, subtype: AlbumSubtype, callback: AsyncCallback<FetchResult<Album>>): void
 
@@ -559,12 +551,11 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, callback: AsyncCallback<FetchR
 
 以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[文件管理错误码](errorcode-filemanagement.md)。
 
-在API version 13及之前的版本，无相关权限返回错误码13900012；从API version 14开始，无相关权限返回错误码201。
-
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 201 | Permission denied. |
+| 201 | Permission denied.  适用版本：12+ |
+| 13900012 | Permission denied.  适用版本：10-11 |
 | 13900020 | Invalid argument. |
 | 14000011 | System inner fail. |
 
@@ -572,29 +563,27 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, callback: AsyncCallback<FetchR
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-2. // 示例代码中为获取系统相册VIDEO，默认已预置。
-3. console.info('getAlbumsDemo');
-4. phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO, async (err, fetchResult) => {
-5. if (err) {
-6. console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-7. return;
-8. }
-9. if (fetchResult === undefined) {
-10. console.error('getAlbumsCallback fetchResult is undefined');
-11. return;
-12. }
-13. let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
-14. console.info('getAlbumsCallback successfully, albumUri: ' + album.albumUri);
-15. fetchResult.close();
-16. });
-17. }
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  // 示例代码中为获取系统相册VIDEO，默认已预置。
+  console.info('getAlbumsDemo');
+  phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO, async (err, fetchResult) => {
+    if (err) {
+      console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
+      return;
+    }
+    if (fetchResult === undefined) {
+      console.error('getAlbumsCallback fetchResult is undefined');
+      return;
+    }
+    let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
+    console.info('getAlbumsCallback successfully, albumUri: ' + album.albumUri);
+    fetchResult.close();
+  });
+}
 ```
 
 ## getAlbums
-
-PhonePC/2in1TabletTV
 
 getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: FetchOptions): Promise<FetchResult<Album>>
 
@@ -629,7 +618,8 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: FetchOptions): Promi
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 201 | Permission denied. |
+| 201 | Permission denied.  适用版本：12+ |
+| 13900012 | Permission denied.  适用版本：10-11 |
 | 13900020 | Invalid argument. |
 | 14000011 | System inner fail. |
 
@@ -637,36 +627,34 @@ getAlbums(type: AlbumType, subtype: AlbumSubtype, options?: FetchOptions): Promi
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-5. // 示例代码中为获取相册名为newAlbumName的相册。
-6. console.info('getAlbumsDemo');
-7. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-8. predicates.equalTo('album_name', 'newAlbumName');
-9. let fetchOptions: photoAccessHelper.FetchOptions = {
-10. fetchColumns: [],
-11. predicates: predicates
-12. };
-13. phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOptions).then( async (fetchResult) => {
-14. if (fetchResult === undefined) {
-15. console.error('getAlbumsPromise fetchResult is undefined');
-16. return;
-17. }
-18. let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
-19. console.info('getAlbumsPromise successfully, albumName: ' + album.albumName);
-20. fetchResult.close();
-21. }).catch((err: BusinessError) => {
-22. console.error(`getAlbumsPromise failed with err: ${err.code}, ${err.message}`);
-23. });
-24. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  // 示例代码中为获取相册名为newAlbumName的相册。
+  console.info('getAlbumsDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  predicates.equalTo('album_name', 'newAlbumName');
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOptions).then( async (fetchResult) => {
+    if (fetchResult === undefined) {
+      console.error('getAlbumsPromise fetchResult is undefined');
+      return;
+    }
+    let album: photoAccessHelper.Album = await fetchResult.getFirstObject();
+    console.info('getAlbumsPromise successfully, albumName: ' + album.albumName);
+    fetchResult.close();
+  }).catch((err: BusinessError) => {
+    console.error(`getAlbumsPromise failed with err: ${err.code}, ${err.message}`);
+  });
+}
 ```
 
 ## registerChange
-
-PhonePC/2in1TabletTV
 
 registerChange(uri: string, forChildUris: boolean, callback: Callback<ChangeData>) : void
 
@@ -698,45 +686,47 @@ registerChange(uri: string, forChildUris: boolean, callback: Callback<ChangeData
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
-4. console.info('registerChangeDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOptions: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
-11. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-12. if (photoAsset !== undefined) {
-13. console.info('photoAsset.displayName : ' + photoAsset.displayName);
-14. }
-15. let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
-16. console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
-17. // file had changed, do something.
-18. }
-19. let onCallback2 = (changeData: photoAccessHelper.ChangeData) => {
-20. console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
-21. // file had changed, do something.
-22. }
-23. // 注册onCallback1监听。
-24. phAccessHelper.registerChange(photoAsset.uri, false, onCallback1);
-25. // 注册onCallback2监听。
-26. phAccessHelper.registerChange(photoAsset.uri, false, onCallback2);
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
+  console.info('registerChangeDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+  let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+  if (photoAsset !== undefined) {
+    console.info('photoAsset.displayName : ' + photoAsset.displayName);
+    } else {
+      console.error('photoAsset is undefined');
+      return;
+    }
+  let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
+      console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+    // file had changed, do something.
+  }
+  let onCallback2 = (changeData: photoAccessHelper.ChangeData) => {
+      console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
+    // file had changed, do something.
+  }
+  // 注册onCallback1监听。
+  phAccessHelper.registerChange(photoAsset.uri, false, onCallback1);
+  // 注册onCallback2监听。
+  phAccessHelper.registerChange(photoAsset.uri, false, onCallback2);
 
-28. await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
-29. }
+  await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
+}
 ```
 
 ## unRegisterChange
 
-PhonePC/2in1TabletTV
-
 unRegisterChange(uri: string, callback?: Callback<ChangeData>): void
 
-取消指定uri的监听，一个uri可以注册多个监听，存在多个callback监听时，可以取消指定注册的callback的监听；不指定callback时取消该uri的所有监听。
+取消对指定URI的监听。一个URI可注册多个监听。存在多个callback监听时，可取消指定callback监听。不指定callback时取消该URI的所有监听。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -763,40 +753,41 @@ unRegisterChange(uri: string, callback?: Callback<ChangeData>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
-4. console.info('offDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOptions: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
-11. let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-12. if (photoAsset !== undefined) {
-13. console.info('photoAsset.displayName : ' + photoAsset.displayName);
-14. }
-15. let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
-16. console.info('onCallback1 on');
-17. }
-18. let onCallback2 = (changeData: photoAccessHelper.ChangeData) => {
-19. console.info('onCallback2 on');
-20. }
-21. // 注册onCallback1监听。
-22. phAccessHelper.registerChange(photoAsset.uri, false, onCallback1);
-23. // 注册onCallback2监听。
-24. phAccessHelper.registerChange(photoAsset.uri, false, onCallback2);
-25. // 关闭onCallback1监听，onCallback2 继续监听。
-26. phAccessHelper.unRegisterChange(photoAsset.uri, onCallback1);
-27. await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
-28. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
+  console.info('offDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+  let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+  if (photoAsset !== undefined) {
+    console.info('photoAsset.displayName : ' + photoAsset.displayName);
+    } else {
+      console.error('photoAsset is undefined');
+      return;
+    }
+  let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
+    console.info('onCallback1 on');
+  }
+  let onCallback2 = (changeData: photoAccessHelper.ChangeData) => {
+    console.info('onCallback2 on');
+  }
+  // 注册onCallback1监听。
+  phAccessHelper.registerChange(photoAsset.uri, false, onCallback1);
+  // 注册onCallback2监听。
+  phAccessHelper.registerChange(photoAsset.uri, false, onCallback2);
+  // 关闭onCallback1监听，onCallback2 继续监听。
+  phAccessHelper.unRegisterChange(photoAsset.uri, onCallback1);
+  await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(context, [photoAsset]);
+}
 ```
 
 ## applyChanges11+
-
-PhonePC/2in1TabletTV
 
 applyChanges(mediaChangeRequest: MediaChangeRequest): Promise<void>
 
@@ -834,11 +825,9 @@ applyChanges(mediaChangeRequest: MediaChangeRequest): Promise<void>
 
 **示例：**
 
-该接口依赖于[MediaChangeRequest](arkts-apis-photoaccesshelper-i.md#mediachangerequest11)对象，详细代码示例请参见[MediaAssetChangeRequest](kts-apis-photoaccesshelper-mediaassetchangerequest.md)和[MediaAlbumChangeRequest](kts-apis-photoaccesshelper-mediaalbumchangerequest.md)中的接口示例。
+该接口依赖于[MediaChangeRequest](arkts-apis-photoaccesshelper-i.md#mediachangerequest11)对象，详细代码示例请参见[MediaAssetChangeRequest](arkts-apis-photoaccesshelper-mediaassetchangerequest.md)和[MediaAlbumChangeRequest](arkts-apis-photoaccesshelper-mediaalbumchangerequest.md)中的接口示例。
 
 ## release
-
-PhonePC/2in1TabletTV
 
 release(callback: AsyncCallback<void>): void
 
@@ -868,22 +857,20 @@ release(callback: AsyncCallback<void>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-2. console.info('releaseDemo');
-3. phAccessHelper.release((err) => {
-4. if (err !== undefined) {
-5. console.error(`release failed. error: ${err.code}, ${err.message}`);
-6. } else {
-7. console.info('release ok.');
-8. }
-9. });
-10. }
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('releaseDemo');
+  phAccessHelper.release((err) => {
+    if (err !== undefined) {
+      console.error(`release failed. error: ${err.code}, ${err.message}`);
+    } else {
+      console.info('release ok.');
+    }
+  });
+}
 ```
 
 ## release
-
-PhonePC/2in1TabletTV
 
 release(): Promise<void>
 
@@ -913,21 +900,19 @@ release(): Promise<void>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-2. console.info('releaseDemo');
-3. try {
-4. await phAccessHelper.release();
-5. console.info('release ok.');
-6. } catch (err) {
-7. console.error(`release failed. error: ${err.code}, ${err.message}`);
-8. }
-9. }
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('releaseDemo');
+  try {
+    await phAccessHelper.release();
+    console.info('release ok.');
+  } catch (err) {
+    console.error(`release failed. error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## showAssetsCreationDialog12+
-
-PhonePC/2in1TabletTV
 
 showAssetsCreationDialog(srcFileUris: Array<string>, photoCreationConfigs: Array<PhotoCreationConfig>): Promise<Array<string>>
 
@@ -935,7 +920,7 @@ showAssetsCreationDialog(srcFileUris: Array<string>, photoCreationConfigs: Array
 
 弹框需显示应用名称，但无法直接获取。因此，调用此接口时，请确保[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的abilities标签已配置label和icon项。需要注意的是，图标不受abilities标签中的icon项影响，不支持修改。
 
-说明
+**说明** 
 
 当传入URI为沙箱路径时，可正常保存图片/视频，但无界面预览。
 
@@ -969,42 +954,40 @@ showAssetsCreationDialog(srcFileUris: Array<string>, photoCreationConfigs: Array
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('ShowAssetsCreationDialogDemo.');
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('ShowAssetsCreationDialogDemo.');
 
-6. try {
-7. // 获取需要保存到媒体库的位于应用沙箱的图片/视频uri。
-8. let srcFileUris: Array<string> = [
-9. 'file://fileUriDemo1' // 实际场景请使用真实的uri。
-10. ];
-11. let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
-12. {
-13. title: 'test2', // 可选。
-14. fileNameExtension: 'jpg',
-15. photoType: photoAccessHelper.PhotoType.IMAGE,
-16. subtype: photoAccessHelper.PhotoSubtype.DEFAULT, // 可选。
-17. }
-18. ];
-19. let desFileUris: Array<string> = await phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs);
-20. console.info('showAssetsCreationDialog success, data is ' + desFileUris);
-21. } catch (err) {
-22. console.error('showAssetsCreationDialog failed, errCode is ' + err.code + ', errMsg is ' + err.message);
-23. }
-24. }
+  try {
+    // 获取需要保存到媒体库的位于应用沙箱的图片/视频URI。
+    let srcFileUris: Array<string> = [
+      'file://fileUriDemo1' // 实际场景请使用真实的URI。
+    ];
+    let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
+      {
+        title: 'test2', // 可选。
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT, // 可选。
+      }
+    ];
+    let desFileUris: Array<string> = await phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs);
+    console.info('showAssetsCreationDialog success, data is ' + desFileUris);
+  } catch (err) {
+    console.error('showAssetsCreationDialog failed, errCode is ' + err.code + ', errMsg is ' + err.message);
+  }
+}
 ```
 
 ## showAssetsCreationDialogEx23+
-
-PhonePC/2in1TabletTV
 
 showAssetsCreationDialogEx(srcFileUris: Array<string>, creationSettings: Array<CreationSetting>): Promise<Array<string>>
 
 调用接口显示保存确认弹窗。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 用户同意后，返回已创建并授予保存权限的URI列表，该列表永久有效，支持写入图片/视频。用户拒绝时，返回空列表。
 * 弹框需显示应用名称，名称和图标需在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)的abilities标签中配置label和icon项。
@@ -1041,41 +1024,39 @@ showAssetsCreationDialogEx(srcFileUris: Array<string>, creationSettings: Array<C
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('ShowAssetsCreationDialogExDemo.');
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('ShowAssetsCreationDialogExDemo.');
 
-6. try {
-7. // 获取需要保存到媒体库的位于应用沙箱的图片/视频uri。
-8. let srcFileUris: Array<string> = [
-9. 'file://fileUriDemo1' // 实际场景请使用真实的uri。
-10. ];
-11. let photoCreationConfigs: Array<photoAccessHelper.CreationSetting> = [
-12. {
-13. title: 'test2', // 可选。
-14. fileNameExtension: 'jpg',
-15. photoType: photoAccessHelper.PhotoType.IMAGE
-16. }
-17. ];
-18. let desFileUris: Array<string> = await phAccessHelper.showAssetsCreationDialogEx(srcFileUris, photoCreationConfigs);
-19. console.info('showAssetsCreationDialogEx success, data is ' + desFileUris);
-20. } catch (err) {
-21. console.error('showAssetsCreationDialogEx failed, errCode is ' + err.code + ', errMsg is ' + err.message);
-22. }
-23. }
+  try {
+    // 获取需要保存到媒体库的位于应用沙箱的图片/视频URI。
+    let srcFileUris: Array<string> = [
+      'file://fileUriDemo1' // 实际场景请使用真实的URI。
+    ];
+    let photoCreationConfigs: Array<photoAccessHelper.CreationSetting> = [
+      {
+        title: 'test2', // 可选。
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE
+      }
+    ];
+    let desFileUris: Array<string> = await phAccessHelper.showAssetsCreationDialogEx(srcFileUris, photoCreationConfigs);
+    console.info('showAssetsCreationDialogEx success, data is ' + desFileUris);
+  } catch (err) {
+    console.error('showAssetsCreationDialogEx failed, errCode is ' + err.code + ', errMsg is ' + err.message);
+  }
+}
 ```
 
 ## showSingleAssetCreationDialogEx23+
-
-PhonePC/2in1TabletTV
 
 showSingleAssetCreationDialogEx(srcFileUri: string, creationSetting: CreationSetting, isImageFullyDisplayed: boolean): Promise<string>
 
 针对单个图片/视频调用接口显示保存确认弹窗。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 如果用户同意保存，将返回一个已创建并授予保存权限的URI（此URI永久生效），应用可使用这个URI写入图片或视频。如果用户拒绝保存，将返回一个空字符串。
 * 弹框需显示应用名称，但无法直接获取。因此，调用此接口时，请确保[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中的abilities标签已配置label和icon项。需要注意的是，图标不受abilities标签中的icon项影响，不支持修改。
@@ -1113,32 +1094,30 @@ showSingleAssetCreationDialogEx(srcFileUri: string, creationSetting: CreationSet
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('ShowSingleAssetCreationDialogExDemo.');
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('ShowSingleAssetCreationDialogExDemo.');
 
-6. try {
-7. // 获取需要保存到媒体库的位于应用沙箱的图片/视频uri。
-8. let srcFileUri: string = 'file://fileUriDemo1'; // 实际场景请使用真实的uri。
-9. let photoCreationConfig: photoAccessHelper.CreationSetting = {
-10. title: 'test2', // 可选。
-11. fileNameExtension: 'jpg',
-12. photoType: photoAccessHelper.PhotoType.IMAGE
-13. }
-14. let isImageFullyDisplayed: boolean = true
-15. let desFileUri: string = await phAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, photoCreationConfig, isImageFullyDisplayed);
-16. console.info('showSingleAssetCreationDialogEx success, data is ' + desFileUri);
-17. } catch (err) {
-18. console.error('showSingleAssetCreationDialogEx failed, errCode is ' + err.code + ', errMsg is ' + err.message);
-19. }
-20. }
+  try {
+    // 获取需要保存到媒体库的位于应用沙箱的图片/视频URI。
+    let srcFileUri: string = 'file://fileUriDemo1'; // 实际场景请使用真实的URI。
+    let photoCreationConfig: photoAccessHelper.CreationSetting = {
+      title: 'test2', // 可选。
+      fileNameExtension: 'jpg',
+      photoType: photoAccessHelper.PhotoType.IMAGE
+    }
+    let isImageFullyDisplayed: boolean = true
+    let desFileUri: string = await phAccessHelper.showSingleAssetCreationDialogEx(srcFileUri, photoCreationConfig, isImageFullyDisplayed);
+    console.info('showSingleAssetCreationDialogEx success, data is ' + desFileUri);
+  } catch (err) {
+    console.error('showSingleAssetCreationDialogEx failed, errCode is ' + err.code + ', errMsg is ' + err.message);
+  }
+}
 ```
 
 ## createAssetWithShortTermPermission12+
-
-PhonePC/2in1TabletTV
 
 createAssetWithShortTermPermission(photoCreationConfig: PhotoCreationConfig): Promise<string>
 
@@ -1176,53 +1155,51 @@ createAssetWithShortTermPermission(photoCreationConfig: PhotoCreationConfig): Pr
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('createAssetWithShortTermPermissionDemo.');
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+    console.info('createAssetWithShortTermPermissionDemo.');
+    
+    try {
+        let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
+            title: '123456',
+            fileNameExtension: 'jpg',
+            photoType: photoAccessHelper.PhotoType.IMAGE,
+            subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+        };
 
-6. try {
-7. let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
-8. title: '123456',
-9. fileNameExtension: 'jpg',
-10. photoType: photoAccessHelper.PhotoType.IMAGE,
-11. subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
-12. };
-
-14. let resultUri: string = await phAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
-15. let resultFile: fileIo.File = fileIo.openSync(resultUri, fileIo.OpenMode.READ_WRITE);
-16. // 实际场景请使用真实的uri和文件大小。
-17. let srcFile:  fileIo.File = fileIo.openSync("file://test.jpg", fileIo.OpenMode.READ_ONLY);
-18. let bufSize: number = 2000000;
-19. let readSize: number = 0;
-20. let buf = new ArrayBuffer(bufSize);
-21. let readLen = fileIo.readSync(srcFile.fd, buf, {
-22. offset: readSize,
-23. length: bufSize
-24. });
-25. if (readLen > 0) {
-26. readSize += readLen;
-27. fileIo.writeSync(resultFile.fd, buf, { length: readLen });
-28. }
-29. fileIo.closeSync(srcFile);
-30. fileIo.closeSync(resultFile);
-31. } catch (err) {
-32. console.error('createAssetWithShortTermPermission failed, errCode is ' + err.code + ', errMsg is ' + err.message);
-33. }
-
-35. }
+        let resultUri: string = await phAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
+        let resultFile: fileIo.File = fileIo.openSync(resultUri, fileIo.OpenMode.READ_WRITE);
+        // 实际场景请使用真实的URI和文件大小。
+        let srcFile:  fileIo.File = fileIo.openSync("file://test.jpg", fileIo.OpenMode.READ_ONLY);
+        let bufSize: number = 2000000;
+        let readSize: number = 0;
+        let buf = new ArrayBuffer(bufSize);
+        let readLen = fileIo.readSync(srcFile.fd, buf, {
+            offset: readSize,
+            length: bufSize
+        });
+        if (readLen > 0) {
+            readSize += readLen;
+            fileIo.writeSync(resultFile.fd, buf, { length: readLen });
+        }
+        fileIo.closeSync(srcFile);
+        fileIo.closeSync(resultFile);
+    } catch (err) {
+        console.error('createAssetWithShortTermPermission failed, errCode is ' + err.code + ', errMsg is ' + err.message);
+    }
+    
+}
 ```
 
 ## createAssetWithShortTermPermissionEx23+
-
-PhonePC/2in1TabletTV
 
 createAssetWithShortTermPermissionEx(creationSetting: CreationSetting): Promise<string>
 
 应用调用该接口后，系统会首次拉起保存确认弹框。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 用户同意保存后，接口将返回已创建并授予保存权限的URI，应用可使用该URI写入图片/视频。
 * 在用户同意后的5分钟内，若同一应用再次调用此接口，系统将无需弹框确认，直接返回已授权的URI，供应用保存图片/视频。退出应用会结束授权，再次进入需要重新弹出弹框进行确认授权。
@@ -1255,8 +1232,6 @@ createAssetWithShortTermPermissionEx(creationSetting: CreationSetting): Promise<
 | 14000011 | Internal system error |
 
 ## requestPhotoUrisReadPermission14+
-
-PhonePC/2in1TabletTV
 
 requestPhotoUrisReadPermission(srcFileUris: Array<string>): Promise<Array<string>>
 
@@ -1291,32 +1266,30 @@ requestPhotoUrisReadPermission(srcFileUris: Array<string>): Promise<Array<string
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
-4. console.info('requestPhotoUrisReadPermissionDemo.');
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
+  console.info('requestPhotoUrisReadPermissionDemo.');
 
-6. try {
-7. // 获取需要进行授权的图片/视频uri。
-8. let srcFileUris: Array<string> = [
-9. 'file://fileUriDemo1' // 实际场景请使用真实的uri。
-10. ];
-11. let desFileUris: Array<string> = await phAccessHelper.requestPhotoUrisReadPermission(srcFileUris);
-12. console.info('requestPhotoUrisReadPermission success, data is ' + desFileUris);
-13. } catch (err) {
-14. console.error('requestPhotoUrisReadPermission failed, errCode is ' + err.code + ', errMsg is ' + err.message);
-15. }
-16. }
+  try {
+    // 获取需要进行授权的图片/视频URI。
+    let srcFileUris: Array<string> = [
+      'file://fileUriDemo1' // 实际场景请使用真实的URI。
+    ];
+    let desFileUris: Array<string> = await phAccessHelper.requestPhotoUrisReadPermission(srcFileUris);
+    console.info('requestPhotoUrisReadPermission success, data is ' + desFileUris);
+  } catch (err) {
+    console.error('requestPhotoUrisReadPermission failed, errCode is ' + err.code + ', errMsg is ' + err.message);
+  }
+}
 ```
 
 ## requestPhotoUrisReadPermissionEx23+
 
-PhonePC/2in1TabletTV
-
 requestPhotoUrisReadPermissionEx(srcFileUris: Array<string>): Promise<RequestReadPermissionResult>
 
-应用调用接口为未授权的URI授权。使用promise异步回调。
+应用调用接口为未授权的URI授权。使用Promise异步回调。
 
 返回授权结果，其中包含已创建并授予保存权限的URI列表以及无效的URI列表。
 
@@ -1350,29 +1323,27 @@ requestPhotoUrisReadPermissionEx(srcFileUris: Array<string>): Promise<RequestRea
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
-2. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-4. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
-5. console.info('requestPhotoUrisReadPermissionExDemo.');
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context) {
+console.info('requestPhotoUrisReadPermissionExDemo.');
 
-7. try {
-8. // 获取需要进行授权的图片/视频uri。
-9. let srcFileUris: Array<string> = [
-10. 'file://fileUriDemo1' // 实际场景请使用真实的uri。
-11. ];
-12. let requestReadPermissionResult: photoAccessHelper.RequestReadPermissionResult = await phAccessHelper.requestPhotoUrisReadPermissionEx(srcFileUris);
-13. console.info('requestPhotoUrisReadPermissionEx success, data is ' + requestReadPermissionResult);
-14. } catch (err) {
-15. console.error('requestPhotoUrisReadPermissionEx failed, errCode is ' + err.code + ', errMsg is ' + err.message);
-16. }
-17. }
+  try {
+    // 获取需要进行授权的图片/视频URI。
+    let srcFileUris: Array<string> = [
+      'file://fileUriDemo1' // 实际场景请使用真实的URI。
+    ];
+    let requestReadPermissionResult: photoAccessHelper.RequestReadPermissionResult = await phAccessHelper.requestPhotoUrisReadPermissionEx(srcFileUris);
+    console.info('requestPhotoUrisReadPermissionEx success, data is ' + requestReadPermissionResult);
+  } catch (err) {
+    console.error('requestPhotoUrisReadPermissionEx failed, errCode is ' + err.code + ', errMsg is ' + err.message);
+  }
+}
 ```
 
 ## getSupportedPhotoFormats18+
-
-PhonePC/2in1TabletTV
 
 getSupportedPhotoFormats(photoType: PhotoType): Promise<Array<string>>
 
@@ -1405,36 +1376,34 @@ getSupportedPhotoFormats(photoType: PhotoType): Promise<Array<string>>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, photoTypeNumber: number){
-2. console.info('getSupportedPhotoFormatsDemo.');
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, photoTypeNumber: number){
+  console.info('getSupportedPhotoFormatsDemo.');
 
-4. try {
-5. let outputText: string;
-6. if (photoTypeNumber !== photoAccessHelper.PhotoType.IMAGE && photoTypeNumber !== photoAccessHelper.PhotoType.VIDEO) {
-7. outputText = 'Does not support querying formats other than images or videos';
-8. return;
-9. }
-10. outputText = 'The supported types are:\n';
-11. let imageFormat  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
-12. let result = "";
-13. for (let i = 0; i < imageFormat.length; i++) {
-14. result += imageFormat[i];
-15. if (i !== imageFormat.length - 1) {
-16. result += ', ';
-17. }
-18. }
-19. outputText += result;
-20. console.info('getSupportedPhotoFormats success, data is ' + outputText);
-21. } catch (error) {
-22. console.error('getSupportedPhotoFormats failed, errCode is', error);
-23. }
-24. }
+  try {
+    let outputText: string;
+    if (photoTypeNumber !== photoAccessHelper.PhotoType.IMAGE && photoTypeNumber !== photoAccessHelper.PhotoType.VIDEO) {
+      outputText = 'Does not support querying formats other than images or videos';
+      return;
+    }
+    outputText = 'The supported types are:\n';
+    let imageFormat  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
+    let result = "";
+    for (let i = 0; i < imageFormat.length; i++) {
+      result += imageFormat[i];
+      if (i !== imageFormat.length - 1) {
+        result += ', ';
+      }
+    }
+    outputText += result;
+    console.info('getSupportedPhotoFormats success, data is ' + outputText);
+  } catch (error) {
+    console.error('getSupportedPhotoFormats failed, errCode is', error);
+  }
+}
 ```
 
 ## on('photoChange')20+
-
-PhonePC/2in1TabletTV
 
 on(type: 'photoChange', callback: Callback<PhotoAssetChangeInfos>): void
 
@@ -1465,35 +1434,34 @@ on(type: 'photoChange', callback: Callback<PhotoAssetChangeInfos>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData'
+```ts
+import { dataSharePredicates } from '@kit.ArkData'
 
-3. let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-4. console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
-5. // file had changed, do something.
-6. }
-7. let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-8. console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
-9. // file had changed, do something.
-10. }
+let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+  // file had changed, do something.
+}
+let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
+  // file had changed, do something.
+}
 
-12. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
-13. console.info('onPhotoChangeDemo.');
+// 注册photoChange监听，用于监听媒体资产的变化，可以注册多个不同的callback。
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
+  console.info('onPhotoChangeDemo.');
 
-15. try {
-16. // 注册onCallback1监听。
-17. phAccessHelper.on('photoChange', onCallback1);
-18. // 注册onCallback2监听。
-19. phAccessHelper.on('photoChange', onCallback2);
-20. } catch (error) {
-21. console.error('onPhotoChangeDemo failed, errCode is', error);
-22. }
-23. }
+  try {
+    // 注册onCallback1监听。
+    phAccessHelper.on('photoChange', onCallback1);
+    // 注册onCallback2监听。
+    phAccessHelper.on('photoChange', onCallback2);
+  } catch (error) {
+    console.error('onPhotoChangeDemo failed, errCode is', error);
+  }
+}
 ```
 
 ## off('photoChange')20+
-
-PhonePC/2in1TabletTV
 
 off(type: 'photoChange', callback?: Callback<PhotoAssetChangeInfos>): void
 
@@ -1524,38 +1492,37 @@ off(type: 'photoChange', callback?: Callback<PhotoAssetChangeInfos>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData'
+```ts
+import { dataSharePredicates } from '@kit.ArkData'
 
-3. let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-4. console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
-5. // file had changed, do something.
-6. }
-7. let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-8. console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
-9. // file had changed, do something.
-10. }
+let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+  // file had changed, do something.
+}
+let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
+  // file had changed, do something.
+}
 
-12. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
-13. console.info('offPhotoChangeDemo.');
+// 注册photoChange监听后，取消指定callback监听，演示取消监听的使用方法。
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
+  console.info('offPhotoChangeDemo.');
 
-15. try {
-16. // 注册onCallback1监听。
-17. phAccessHelper.on('photoChange', onCallback1);
-18. // 注册onCallback2监听。
-19. phAccessHelper.on('photoChange', onCallback2);
+  try {
+    // 注册onCallback1监听。
+    phAccessHelper.on('photoChange', onCallback1);
+    // 注册onCallback2监听。
+    phAccessHelper.on('photoChange', onCallback2);
 
-21. // 关闭onCallback1监听，onCallback2继续监听。
-22. phAccessHelper.off('photoChange', onCallback1);
-23. } catch (error) {
-24. console.error('offPhotoChangeDemo failed, errCode is', error);
-25. }
-26. }
+    // 关闭onCallback1监听，onCallback2继续监听。
+    phAccessHelper.off('photoChange', onCallback1);
+  } catch (error) {
+    console.error('offPhotoChangeDemo failed, errCode is', error);
+  }
+}
 ```
 
 ## on('photoAlbumChange')20+
-
-PhonePC/2in1TabletTV
 
 on(type: 'photoAlbumChange', callback: Callback<AlbumChangeInfos>): void
 
@@ -1586,35 +1553,34 @@ on(type: 'photoAlbumChange', callback: Callback<AlbumChangeInfos>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData'
+```ts
+import { dataSharePredicates } from '@kit.ArkData'
 
-3. let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-4. console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
-5. // file had changed, do something.
-6. }
-7. let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-8. console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
-9. // file had changed, do something.
-10. }
+let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+  // file had changed, do something.
+}
+let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
+  // file had changed, do something.
+}
 
-12. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
-13. console.info('onPhotoAlbumChangeDemo.');
+// 注册photoAlbumChange监听，用于监听相册的变化，可以注册多个不同的callback。
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
+  console.info('onPhotoAlbumChangeDemo.');
 
-15. try {
-16. // 注册onCallback1监听。
-17. phAccessHelper.on('photoAlbumChange', onCallback1);
-18. // 注册onCallback2监听。
-19. phAccessHelper.on('photoAlbumChange', onCallback2);
-20. } catch (error) {
-21. console.error('onPhotoAlbumChangeDemo failed, errCode is', error);
-22. }
-23. }
+  try {
+    // 注册onCallback1监听。
+    phAccessHelper.on('photoAlbumChange', onCallback1);
+    // 注册onCallback2监听。
+    phAccessHelper.on('photoAlbumChange', onCallback2);
+  } catch (error) {
+    console.error('onPhotoAlbumChangeDemo failed, errCode is', error);
+  }
+}
 ```
 
 ## off('photoAlbumChange')20+
-
-PhonePC/2in1TabletTV
 
 off(type: 'photoAlbumChange', callback?: Callback<AlbumChangeInfos>): void
 
@@ -1645,38 +1611,37 @@ off(type: 'photoAlbumChange', callback?: Callback<AlbumChangeInfos>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData'
+```ts
+import { dataSharePredicates } from '@kit.ArkData'
 
-3. let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-4. console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
-5. // file had changed, do something.
-6. }
-7. let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-8. console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
-9. // file had changed, do something.
-10. }
+let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+  // file had changed, do something.
+}
+let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback2 success, changData: ' + JSON.stringify(changeData));
+  // file had changed, do something.
+}
 
-12. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
-13. console.info('onPhotoAlbumChangeDemo.');
+// 注册photoAlbumChange监听后，取消指定callback监听，演示取消监听的使用方法。
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
+  console.info('onPhotoAlbumChangeDemo.');
 
-15. try {
-16. // 注册onCallback1监听。
-17. phAccessHelper.on('photoAlbumChange', onCallback1);
-18. // 注册onCallback2监听。
-19. phAccessHelper.on('photoAlbumChange', onCallback2);
+  try {
+    // 注册onCallback1监听。
+    phAccessHelper.on('photoAlbumChange', onCallback1);
+    // 注册onCallback2监听。
+    phAccessHelper.on('photoAlbumChange', onCallback2);
 
-21. // 关闭onCallback1监听，onCallback2继续监听。
-22. phAccessHelper.off('photoAlbumChange', onCallback1);
-23. } catch (error) {
-24. console.error('onPhotoAlbumChangeDemo failed, errCode is', error);
-25. }
-26. }
+    // 关闭onCallback1监听，onCallback2继续监听。
+    phAccessHelper.off('photoAlbumChange', onCallback1);
+  } catch (error) {
+    console.error('onPhotoAlbumChangeDemo failed, errCode is', error);
+  }
+}
 ```
 
 ## getPhotoPickerComponentDefaultAlbumName20+
-
-PhonePC/2in1TabletTV
 
 getPhotoPickerComponentDefaultAlbumName(): Promise<string>
 
@@ -1694,7 +1659,7 @@ getPhotoPickerComponentDefaultAlbumName(): Promise<string>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)。
+以下错误码的详细介绍请参见[媒体库错误码](errorcode-medialibrary.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1702,33 +1667,31 @@ getPhotoPickerComponentDefaultAlbumName(): Promise<string>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import {photoAccessHelper} from '@kit.MediaLibraryKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import {photoAccessHelper} from '@kit.MediaLibraryKit';
 
-4. async function example(context: Context) {
-5. console.info('getPhotoPickerComponentDefaultAlbumNameDemo');
-6. let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+async function example(context: Context) {
+  console.info('getPhotoPickerComponentDefaultAlbumNameDemo');
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
 
-8. phAccessHelper.getPhotoPickerComponentDefaultAlbumName().then((defaultAlbumName) => {
-9. console.info('getPhotoPickerComponentDefaultAlbumName success, defaultAlbumName is ' + defaultAlbumName);
-10. }).catch((err: BusinessError) => {
-11. console.error(`getPhotoPickerComponentDefaultAlbumName failed with error: ${err.code}, ${err.message}`);
-12. });
-13. }
+  phAccessHelper.getPhotoPickerComponentDefaultAlbumName().then((defaultAlbumName) => {
+    console.info('getPhotoPickerComponentDefaultAlbumName success, defaultAlbumName is ' + defaultAlbumName);
+  }).catch((err: BusinessError) => {
+    console.error(`getPhotoPickerComponentDefaultAlbumName failed with error: ${err.code}, ${err.message}`);
+  });
+}
 ```
 
 ## createDeleteRequest(deprecated)
-
-PhonePC/2in1TabletTV
 
 createDeleteRequest(uriList: Array<string>, callback: AsyncCallback<void>): void
 
 创建一个弹出框来删除照片，删除的文件进入到回收站，使用callback方式返回结果。
 
-说明
+**说明** 
 
-从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAssetChangeRequest.deleteAssets](kts-apis-photoaccesshelper-mediaassetchangerequest.md#deleteassets11-1)替代。
+从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAssetChangeRequest.deleteAssets](arkts-apis-photoaccesshelper-mediaassetchangerequest.md#deleteassets11-1)替代。
 
 **需要权限**：ohos.permission.WRITE\_IMAGEVIDEO
 
@@ -1758,47 +1721,45 @@ createDeleteRequest(uriList: Array<string>, callback: AsyncCallback<void>): void
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('createDeleteRequestDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOptions: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. try {
-11. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
-12. let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-13. if (asset === undefined) {
-14. console.error('asset not exist');
-15. return;
-16. }
-17. phAccessHelper.createDeleteRequest([asset.uri], (err) => {
-18. if (err === undefined) {
-19. console.info('createDeleteRequest successfully');
-20. } else {
-21. console.error(`createDeleteRequest failed with error: ${err.code}, ${err.message}`);
-22. }
-23. });
-24. } catch (err) {
-25. console.error(`fetch failed, error: ${err.code}, ${err.message}`);
-26. }
-27. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('createDeleteRequestDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+    let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    if (asset === undefined) {
+      console.error('asset not exist');
+      return;
+    }
+    phAccessHelper.createDeleteRequest([asset.uri], (err) => {
+      if (err === undefined) {
+        console.info('createDeleteRequest successfully');
+      } else {
+        console.error(`createDeleteRequest failed with error: ${err.code}, ${err.message}`);
+      }
+    });
+  } catch (err) {
+    console.error(`fetch failed, error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## createDeleteRequest(deprecated)
-
-PhonePC/2in1TabletTV
 
 createDeleteRequest(uriList: Array<string>): Promise<void>
 
 创建一个弹出框来删除照片，删除的文件进入到回收站，使用Promise方式返回结果。
 
-说明
+**说明** 
 
-从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAssetChangeRequest.deleteAssets](kts-apis-photoaccesshelper-mediaassetchangerequest.md#deleteassets11-1)替代。
+从API version 10开始支持，从API version 11开始废弃。建议使用[MediaAssetChangeRequest.deleteAssets](arkts-apis-photoaccesshelper-mediaassetchangerequest.md#deleteassets11-1)替代。
 
 **需要权限**：ohos.permission.WRITE\_IMAGEVIDEO
 
@@ -1833,34 +1794,32 @@ createDeleteRequest(uriList: Array<string>): Promise<void>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData';
+```ts
+import { dataSharePredicates } from '@kit.ArkData';
 
-3. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-4. console.info('createDeleteRequestDemo');
-5. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-6. let fetchOptions: photoAccessHelper.FetchOptions = {
-7. fetchColumns: [],
-8. predicates: predicates
-9. };
-10. try {
-11. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
-12. let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-13. if (asset === undefined) {
-14. console.error('asset not exist');
-15. return;
-16. }
-17. await phAccessHelper.createDeleteRequest([asset.uri]);
-18. console.info('createDeleteRequest successfully');
-19. } catch (err) {
-20. console.error(`createDeleteRequest failed with error: ${err.code}, ${err.message}`);
-21. }
-22. }
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('createDeleteRequestDemo');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+    let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    if (asset === undefined) {
+      console.error('asset not exist');
+      return;
+    }
+    await phAccessHelper.createDeleteRequest([asset.uri]);
+    console.info('createDeleteRequest successfully');
+  } catch (err) {
+    console.error(`createDeleteRequest failed with error: ${err.code}, ${err.message}`);
+  }
+}
 ```
 
 ## getRecentPhotoInfo20+
-
-PhonePC/2in1TabletTV
 
 getRecentPhotoInfo(options?: RecentPhotoOptions): Promise<RecentPhotoInfo>
 
@@ -1884,30 +1843,28 @@ getRecentPhotoInfo(options?: RecentPhotoOptions): Promise<RecentPhotoInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { photoAccessHelper, PhotoSource, RecentPhotoOptions} from '@kit.MediaLibraryKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { photoAccessHelper, PhotoSource, RecentPhotoOptions} from '@kit.MediaLibraryKit';
 
-4. async function example(context: Context) {
-5. console.info('getRecentPhotoInfoDemo');
-6. let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-7. let recentPhotoOptions: RecentPhotoOptions = {
-8. period: 60 * 60,
-9. MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE,
-10. photoSource: PhotoSource.ALL
-11. }
+async function example(context: Context) {
+  console.info('getRecentPhotoInfoDemo');
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+  let recentPhotoOptions: RecentPhotoOptions = {
+    period: 60 * 60,
+    MIMEType: photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE,
+    photoSource: PhotoSource.ALL
+  }
 
-13. phAccessHelper.getRecentPhotoInfo(recentPhotoOptions).then((recentPhotoInfo) => {
-14. console.info('getRecentPhotoInfo success, recentPhotoInfo is ' + JSON.stringify(recentPhotoInfo));
-15. }).catch((err: BusinessError) => {
-16. console.error(`getRecentPhotoInfo failed with error: ${err.code}, ${err.message}`);
-17. });
-18. }
+  phAccessHelper.getRecentPhotoInfo(recentPhotoOptions).then((recentPhotoInfo) => {
+    console.info('getRecentPhotoInfo success, recentPhotoInfo is ' + JSON.stringify(recentPhotoInfo));
+  }).catch((err: BusinessError) => {
+    console.error(`getRecentPhotoInfo failed with error: ${err.code}, ${err.message}`);
+  });
+}
 ```
 
 ## getAlbumIdByLpath22+
-
-PhonePC/2in1TabletTV
 
 getAlbumIdByLpath(lpath: string): Promise<number>
 
@@ -1944,25 +1901,23 @@ getAlbumIdByLpath(lpath: string): Promise<number>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
-2. console.info('getAlbumIdByLpath');
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('getAlbumIdByLpath');
 
-4. try {
-5. let albumId: number = await phAccessHelper.getAlbumIdByLpath('testLpath');
-6. console.info('requestFile:: albumId: ', albumId);
+  try {
+      let albumId: number = await phAccessHelper.getAlbumIdByLpath('/DCIM/Camera');
+      console.info('requestFile:: albumId: ', albumId);
 
-8. console.info('getAlbumIdByLpath completed.');
-9. console.info(`albumId : ${albumId}`);
-10. } catch (err) {
-11. console.error(`getAlbumIdByLpath failed: ${err.code}, ${err.message}`);
-12. }
-13. }
+      console.info('getAlbumIdByLpath completed.');
+      console.info(`albumId : ${albumId}`);
+    } catch (err) {
+      console.error(`getAlbumIdByLpath failed: ${err.code}, ${err.message}`);
+    }
+}
 ```
 
 ## onSinglePhotoChange23+
-
-PhonePC/2in1TabletTV
 
 onSinglePhotoChange(asset: PhotoAsset, callback: Callback<PhotoAssetChangeInfos>): void
 
@@ -1993,50 +1948,49 @@ onSinglePhotoChange(asset: PhotoAsset, callback: Callback<PhotoAssetChangeInfos>
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData'
+```ts
+import { dataSharePredicates } from '@kit.ArkData'
 
-3. let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-4. console.info('onCallback1 success, changeData: ' + JSON.stringify(changeData));
-5. // 触发回调时，具体的操作。
-6. }
-7. let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-8. console.info('onCallback2 success, changeData: ' + JSON.stringify(changeData));
-9. // 触发回调时，具体的操作。
-10. }
+let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback1 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
+let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback2 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
 
-12. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
-13. console.info('onSinglePhotoChangeDemo.');
-14. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-15. let fetchOptions: photoAccessHelper.FetchOptions = {
-16. fetchColumns: [],
-17. predicates: predicates
-18. };
-19. try {
-20. let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-21. let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-22. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await album.getAssets(fetchOptions);
-23. let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+// 获取相册和资产后，注册单个资产变化监听，演示onSinglePhotoChange的使用方法。
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
+  console.info('onSinglePhotoChangeDemo.');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+    let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await album.getAssets(fetchOptions);
+    let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
 
-25. if (albumFetchResult.isAfterLast()) {
-26. console.error('lack of album to be moved into');
-27. return;
-28. }
-29. // 注册onCallback1监听。
-30. phAccessHelper.onSinglePhotoChange(asset, onCallback1);
-31. // 注册onCallback2监听。
-32. phAccessHelper.onSinglePhotoChange(asset, onCallback2);
-33. } catch (error) {
-34. console.error('onSinglePhotoChangeDemo failed, errCode is', error);
-35. }
-36. }
+    if (albumFetchResult.isAfterLast()) {
+      console.error('lack of album to be moved into');
+      return;
+    }
+    // 注册onCallback1监听。
+    phAccessHelper.onSinglePhotoChange(asset, onCallback1);
+    // 注册onCallback2监听。
+    phAccessHelper.onSinglePhotoChange(asset, onCallback2);
+  } catch (error) {
+    console.error('onSinglePhotoChangeDemo failed, errCode is', error);
+  }
+}
 ```
 
 ## offSinglePhotoChange23+
 
-PhonePC/2in1TabletTV
-
-offSinglePhotoChange(asset?: PhotoAsset, callback?: Callback<PhotoAssetChangeInfos>): void;
+offSinglePhotoChange(asset?: PhotoAsset, callback?: Callback<PhotoAssetChangeInfos>): void
 
 取消单个资产的监听。具体规则如下：
 
@@ -2069,63 +2023,62 @@ offSinglePhotoChange(asset?: PhotoAsset, callback?: Callback<PhotoAssetChangeInf
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData'
+```ts
+import { dataSharePredicates } from '@kit.ArkData'
 
-3. let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-4. console.info('onCallback1 success, changeData: ' + JSON.stringify(changeData));
-5. // 触发回调时，具体的操作。
-6. }
-7. let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-8. console.info('onCallback2 success, changeData: ' + JSON.stringify(changeData));
-9. // 触发回调时，具体的操作。
-10. }
-11. let onCallback3 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-12. console.info('onCallback3 success, changeData: ' + JSON.stringify(changeData));
-13. // 触发回调时，具体的操作。
-14. }
+let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback1 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
+let onCallback2 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback2 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
+let onCallback3 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+    console.info('onCallback3 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
 
-16. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
-17. console.info('onSinglePhotoChangeDemo.');
-18. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-19. let fetchOptions: photoAccessHelper.FetchOptions = {
-20. fetchColumns: [],
-21. predicates: predicates
-22. };
-23. try {
-24. let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-25. let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-26. let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await album.getAssets(fetchOptions);
-27. let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+// 获取相册和资产后，注册单个资产变化监听，然后演示不同方式取消监听的使用方法。
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
+  console.info('onSinglePhotoChangeDemo.');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+    let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await album.getAssets(fetchOptions);
+    let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
 
-29. if (albumFetchResult.isAfterLast()) {
-30. console.error('lack of album to be moved into');
-31. return;
-32. }
-33. // 注册onCallback1监听。
-34. phAccessHelper.onSinglePhotoChange(asset, onCallback1);
-35. // 注册onCallback2监听。
-36. phAccessHelper.onSinglePhotoChange(asset, onCallback2);
-37. // 注册onCallback3监听。
-38. phAccessHelper.onSinglePhotoChange(asset, onCallback3);
+    if (albumFetchResult.isAfterLast()) {
+      console.error('lack of album to be moved into');
+      return;
+    }
+    // 注册onCallback1监听。
+    phAccessHelper.onSinglePhotoChange(asset, onCallback1);
+    // 注册onCallback2监听。
+    phAccessHelper.onSinglePhotoChange(asset, onCallback2);
+    // 注册onCallback3监听。
+    phAccessHelper.onSinglePhotoChange(asset, onCallback3);
 
-40. // 解注册onCallback1监听。
-41. phAccessHelper.offSinglePhotoChange(asset, onCallback1);
-42. // 解注册asset下所有callback。
-43. phAccessHelper.offSinglePhotoChange(asset);
-44. // 解注册所有singlePhotoAssetChange类型监听。
-45. phAccessHelper.offSinglePhotoChange();
-46. } catch (error) {
-47. console.error('offSinglePhotoChangeDemo failed, errCode is', error);
-48. }
-49. }
+    // 解注册onCallback1监听。
+    phAccessHelper.offSinglePhotoChange(asset, onCallback1);
+    // 解注册asset下所有callback。
+    phAccessHelper.offSinglePhotoChange(asset);
+    // 解注册所有singlePhotoAssetChange类型监听。
+    phAccessHelper.offSinglePhotoChange();
+  } catch (error) {
+    console.error('offSinglePhotoChangeDemo failed, errCode is', error);
+  }
+}
 ```
 
 ## onSinglePhotoAlbumChange23+
 
-PhonePC/2in1TabletTV
-
-onSinglePhotoAlbumChange(album: Album, callback: Callback<AlbumChangeInfos>): void;
+onSinglePhotoAlbumChange(album: Album, callback: Callback<AlbumChangeInfos>): void
 
 注册对普通单个相册变化的监听。使用callback异步回调。
 
@@ -2154,46 +2107,45 @@ onSinglePhotoAlbumChange(album: Album, callback: Callback<AlbumChangeInfos>): vo
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
-```
-1. import { dataSharePredicates } from '@kit.ArkData'
+```ts
+import { dataSharePredicates } from '@kit.ArkData'
 
-3. let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-4. console.info('onCallback1 success, changeData: ' + JSON.stringify(changeData));
-5. // 触发回调时，具体的操作。
-6. }
-7. let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-8. console.info('onCallback2 success, changeData: ' + JSON.stringify(changeData));
-9. // 触发回调时，具体的操作。
-10. }
+let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback1 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
+let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback2 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
 
-12. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
-13. console.info('onSinglePhotoAlbumChangeDemo.');
-14. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-15. let fetchOptions: photoAccessHelper.FetchOptions = {
-16. fetchColumns: [],
-17. predicates: predicates
-18. };
-19. try {
-20. let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-21. let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+// 获取相册后，注册单个相册变化监听，演示onSinglePhotoAlbumChange的使用方法。
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
+  console.info('onSinglePhotoAlbumChangeDemo.');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+    let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
 
-23. if (albumFetchResult.isAfterLast()) {
-24. console.error('lack of album to be moved into');
-25. return;
-26. }
-27. // 注册onCallback1监听。
-28. phAccessHelper.onSinglePhotoAlbumChange(album, onCallback1);
-29. // 注册onCallback2监听。
-30. phAccessHelper.onSinglePhotoAlbumChange(album, onCallback2);
-31. } catch (error) {
-32. console.error('onSinglePhotoAlbumChangeDemo failed, errCode is', error);
-33. }
-34. }
+    if (albumFetchResult.isAfterLast()) {
+      console.error('lack of album to be moved into');
+      return;
+    }
+    // 注册onCallback1监听。
+    phAccessHelper.onSinglePhotoAlbumChange(album, onCallback1);
+    // 注册onCallback2监听。
+    phAccessHelper.onSinglePhotoAlbumChange(album, onCallback2);
+  } catch (error) {
+    console.error('onSinglePhotoAlbumChangeDemo failed, errCode is', error);
+  }
+}
 ```
 
 ## offSinglePhotoAlbumChange23+
-
-PhonePC/2in1TabletTV
 
 offSinglePhotoAlbumChange(album?: Album, callback?: Callback<AlbumChangeInfos>): void
 
@@ -2221,59 +2173,284 @@ offSinglePhotoAlbumChange(album?: Album, callback?: Callback<AlbumChangeInfos>):
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 23800151 | The scenario parameter verification fails. Possible causes： 1. The same callback is unregistered repeatedly. 2. The uri of the album invalid. |
+| 23800151 | The scenario parameter verification fails. Possible causes: 1. The same callback is unregistered repeatedly. 2. The uri of the album invalid. |
 | 23800301 | Internal system error. You are advised to retry and check the logs. Possible causes: 1. The database is corrupted. 2. The file system is abnormal. 3. The IPC request timed out. |
 
 **示例：**
 
 phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
 
+```ts
+import { dataSharePredicates } from '@kit.ArkData'
+
+let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback1 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
+let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback2 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
+let onCallback3 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+    console.info('onCallback3 success, changeData: ' + JSON.stringify(changeData));
+  // 触发回调时，具体的操作。
+}
+
+// 获取相册后，注册单个相册变化监听，然后演示不同方式取消监听的使用方法。
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
+  console.info('onSinglePhotoChangeDemo.');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+    let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+
+    if (albumFetchResult.isAfterLast()) {
+      console.error('lack of album to be moved into');
+      return;
+    }
+    // 注册onCallback1监听。
+    phAccessHelper.onSinglePhotoAlbumChange(album, onCallback1);
+    // 注册onCallback2监听。
+    phAccessHelper.onSinglePhotoAlbumChange(album, onCallback2);
+    // 注册onCallback3监听。
+    phAccessHelper.onSinglePhotoAlbumChange(album, onCallback3);
+
+    // 解注册onCallback1监听。
+    phAccessHelper.offSinglePhotoAlbumChange(album, onCallback1);
+    // 解注册album下所有callback。
+    phAccessHelper.offSinglePhotoAlbumChange(album);
+    // 解注册所有singlePhotoAlbumChange类型监听。
+    phAccessHelper.offSinglePhotoAlbumChange();
+  } catch (error) {
+    console.error('offSinglePhotoAlbumChangeDemo failed, errCode is', error);
+  }
+}
 ```
-1. import { dataSharePredicates } from '@kit.ArkData'
 
-3. let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-4. console.info('onCallback1 success, changeData: ' + JSON.stringify(changeData));
-5. // 触发回调时，具体的操作。
-6. }
-7. let onCallback2 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-8. console.info('onCallback2 success, changeData: ' + JSON.stringify(changeData));
-9. // 触发回调时，具体的操作。
-10. }
-11. let onCallback3 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-12. console.info('onCallback3 success, changeData: ' + JSON.stringify(changeData));
-13. // 触发回调时，具体的操作。
-14. }
+## setAssetCompatibleCapability24+
 
-16. async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper, context: Context){
-17. console.info('onSinglePhotoChangeDemo.');
-18. let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-19. let fetchOptions: photoAccessHelper.FetchOptions = {
-20. fetchColumns: [],
-21. predicates: predicates
-22. };
-23. try {
-24. let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-25. let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+setAssetCompatibleCapability(capability: AssetCompatibleCapability): Promise<void>
 
-27. if (albumFetchResult.isAfterLast()) {
-28. console.error('lack of album to be moved into');
-29. return;
-30. }
-31. // 注册onCallback1监听。
-32. phAccessHelper.onSinglePhotoAlbumChange(album, onCallback1);
-33. // 注册onCallback2监听。
-34. phAccessHelper.onSinglePhotoAlbumChange(album, onCallback2);
-35. // 注册onCallback3监听。
-36. phAccessHelper.onSinglePhotoAlbumChange(album, onCallback3);
+配置资产兼容能力。系统会对特殊的资产（如高分辨率资产）进行兼容性处理，如果开发者希望获得原始资产需要向系统注册兼容能力。
 
-38. // 解注册onCallback1监听。
-39. phAccessHelper.offSinglePhotoAlbumChange(album, onCallback1);
-40. // 解注册album下所有callback。
-41. phAccessHelper.offSinglePhotoAlbumChange(album);
-42. // 解注册所有singlePhotoAlbumChange类型监听。
-43. phAccessHelper.offSinglePhotoAlbumChange();
-44. } catch (error) {
-45. console.error('offSinglePhotoAlbumChangeDemo failed, errCode is', error);
-46. }
-47. }
+​**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| capability | [AssetCompatibleCapability](arkts-apis-photoaccesshelper-i.md#assetcompatiblecapability24) | 是 | 资产兼容能力。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[媒体库错误码](errorcode-medialibrary.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 23800151 | The capability is invalid. |
+| 23800301 | Internal system error. It is recommended to retry and check the logs. Possible causes: 1. Database corrupted; 2. The file system is abnormal; 3. The IPC request timed out. |
+
+**示例：**
+
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
+
+```ts
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  try {
+    let capability : photoAccessHelper.AssetCompatibleCapability = {
+        supportedHighResolution : true,
+    };
+    await phAccessHelper.setAssetCompatibleCapability(capability);
+  } catch (error) {
+    console.error('failed to setAssetCompatibleCapability err', error);
+  }
+}
+```
+
+## checkPhotoUrisReadPermission
+
+checkPhotoUrisReadPermission(uris: string[]): Promise<Map<string, MediaAssetPermissionState>>
+
+查询URI对应资产的读权限，以及资产是否存在。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+​**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uris | string[] | 是 | 待查询的URI数组，单次最多查询500条。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Map<string, [MediaAssetPermissionState](arkts-apis-photoaccesshelper-e.md#mediaassetpermissionstate)>> | Promise对象，返回URI与MediaAssetPermissionState的键值对集合。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[媒体库错误码](errorcode-medialibrary.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 23800151 | Scenario-specific parameters are incorrect. Possible causes are as follows: 1. The length of the input parameter queue is greater than 500. 2. The input parameter is null or undefined. |
+| 23800301 | Internal system error. It is recommended to retry and check the logs. Possible causes: 1. Database corrupted; 2. The file system is abnormal; 3. The IPC request timed out. |
+
+**示例：**
+
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
+  console.info('checkPhotoUrisReadPermissionDemo');
+
+  try {
+    let uris: string[] = [
+      'file://fileUriDemo1', // 实际场景请使用真实的URI。
+      'file://fileUriDemo2'
+    ];
+    let permissionMap: Map<string, photoAccessHelper.MediaAssetPermissionState> =
+      await phAccessHelper.checkPhotoUrisReadPermission(uris);
+  } catch (err) {
+    const error = err as BusinessError;
+    console.error(`checkPhotoUrisReadPermission failed, error: ${error.code}, ${error.message}`);
+  }
+}
+```
+
+## onMediaLibraryAvailability
+
+onMediaLibraryAvailability(callback: Callback<MediaLibraryAvailability>): void
+
+注册媒体库可用性状态，返回媒体库当前可用状态和不可用原因。使用callback异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**需要权限**：ohos.permission.READ\_IMAGEVIDEO
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[MediaLibraryAvailability](arkts-apis-photoaccesshelper-i.md#medialibraryavailability)> | 是 | 回调函数，返回媒体库可用性信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[媒体库错误码](errorcode-medialibrary.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 23800151 | Scenario-specific parameters are incorrect. Possible causes are as follows: 1. The input parameter is null or undefined. |
+| 23800301 | Internal system error. It is recommended to retry and check the logs. Possible causes: 1. Database corrupted; 2. The file system is abnormal; 3. The IPC request timed out. |
+
+**示例：**
+
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
+
+```ts
+class MediaLibraryExample {
+  private helper: photoAccessHelper.PhotoAccessHelper;
+  private handleMediaLibraryChange?: (changeData: photoAccessHelper.MediaLibraryAvailability) => void;
+
+  constructor(context: common.Context) {
+    this.helper = photoAccessHelper.getPhotoAccessHelper(context);
+  }
+
+  onMediaLibraryAvailability = async () => {
+    try {
+      // 定义媒体库可用性变化的回调处理函数。
+      this.handleMediaLibraryChange = (
+        changeData: photoAccessHelper.MediaLibraryAvailability
+      ) => {
+        // 获取媒体库的可用状态和不可用原因。
+        const availabilityStatus = changeData.availabilityStatus;
+        const unavailabilityReason = changeData.unavailabilityReason;
+        console.info(`媒体库状态变化: 状态=${availabilityStatus}, 原因=${unavailabilityReason}`);
+      };
+      // 注册媒体库可用性监听。
+      this.helper.onMediaLibraryAvailability(this.handleMediaLibraryChange);
+      console.info('媒体库监听注册成功');
+    } catch (err) {
+      console.error(`onMediaLibraryAvailability failed::${(err as BusinessError).code}, ${(err as BusinessError).message} !`);
+    }
+  };
+}
+```
+
+## offMediaLibraryAvailability
+
+offMediaLibraryAvailability(callback?: Callback<MediaLibraryAvailability>): void
+
+取消注册媒体库可用性状态。
+
+**起始版本：** 26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**需要权限**：ohos.permission.READ\_IMAGEVIDEO
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[MediaLibraryAvailability](arkts-apis-photoaccesshelper-i.md#medialibraryavailability)> | 否 | 回调函数，返回取消[onMediaLibraryAvailability](arkts-apis-photoaccesshelper-photoaccesshelper.md#onmedialibraryavailability)注册时指定的callback监听。不填时，则取消对媒体库可用性变化的所有监听。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[媒体库错误码](errorcode-medialibrary.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 23800301 | Internal system error. It is recommended to retry and check the logs. Possible causes: 1. Database corrupted; 2. The file system is abnormal; 3. The IPC request timed out. |
+
+**示例：**
+
+phAccessHelper的创建请参考[photoAccessHelper.getPhotoAccessHelper](arkts-apis-photoaccesshelper-f.md#photoaccesshelpergetphotoaccesshelper)的示例使用。
+
+```ts
+class MediaLibraryExample {
+  private helper: photoAccessHelper.PhotoAccessHelper;
+  private handleMediaLibraryChange?: (changeData: photoAccessHelper.MediaLibraryAvailability) => void;
+
+  constructor(context: common.Context) {
+    this.helper = photoAccessHelper.getPhotoAccessHelper(context);
+  }
+
+  offMediaLibraryAvailability = async () => {
+    try {
+      // 先注册媒体库可用性监听，然后取消注册，演示取消监听的使用方法。
+      this.helper.onMediaLibraryAvailability(this.handleMediaLibraryChange);
+      this.helper.offMediaLibraryAvailability(this.handleMediaLibraryChange);
+      console.info('媒体库监听解除成功');
+    } catch (err) {
+      console.error(`offMediaLibraryAvailability failed::${(err as BusinessError).code}, ${(err as BusinessError).message} !`);
+    }
+  };
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 预下单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 支付并签约 > 预下单
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:25333a082bff0ff8bd287d1ca1c7c2091e38b28991f4cff25a05595cb69980e3
+scraped_at: 2026-09-02T14:53:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:197531040e4bb1d7f10cf93adefa329a6c5fc6405db13224895af54731f3e825
 ---
 
 ## 功能介绍
@@ -43,7 +43,7 @@ content_hash: sha256:25333a082bff0ff8bd287d1ca1c7c2091e38b28991f4cff25a05595cb69
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
 | appId | 是 | String | 应用ID。获取方式请参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-0000001757041165.md)。 |
-| mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最大长度46。 |
+| mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最小长度为1，最大长度46。 |
 | mercNo | 是 | String | 商户号。最大长度12。 |
 | tradeSummary | 是 | String | 交易的摘要。格式建议：“商户应用名称-商品描述”。最大长度128。 |
 | totalAmount | 是 | Long | 订单金额，必须为大于0的整数值，单位：分。 |
@@ -58,27 +58,27 @@ content_hash: sha256:25333a082bff0ff8bd287d1ca1c7c2091e38b28991f4cff25a05595cb69
 
 ## 请求示例
 
-```
-1. POST /api/v1/aggr/pay-and-sign/preorder/create/app HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+********************lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/*******************asPj10iUIFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "appId": "5765880207853***",
-7. "mercOrderNo": "czl00120240705***",
-8. "mercNo": "10132120***",
-9. "tradeSummary": "xx商城-手机",
-10. "totalAmount": 2,
-11. "currency": "CNY",
-12. "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
-13. "payload": "example-payload",
-14. "expireTime": "2023-03-28T17:50:12.000+0800",
-15. "contractInfo": {
-16. "planId": "1***",
-17. "mercContractCode": "2024020316555432***",
-18. "callbackUrl": "https://www.xxxxxx.com/hw/sign/callback"
-19. }
-20. }
+```json
+POST /api/v1/aggr/pay-and-sign/preorder/create/app HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+********************lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/*******************asPj10iUIFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "appId": "5765880207853***",
+  "mercOrderNo": "czl00120240705***",
+  "mercNo": "10132120***",
+  "tradeSummary": "xx商城-手机",
+  "totalAmount": 2,
+  "currency": "CNY",
+  "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
+  "payload": "example-payload",
+  "expireTime": "2023-03-28T17:50:12.000+0800",
+  "contractInfo": {
+     "planId": "1***",
+     "mercContractCode": "2024020316555432***",
+     "callbackUrl": "https://www.xxxxxx.com/hw/sign/callback"
+   }
+}
 ```
 
 ## 响应参数
@@ -99,20 +99,20 @@ content_hash: sha256:25333a082bff0ff8bd287d1ca1c7c2091e38b28991f4cff25a05595cb69
 | subDesc | 否 | String | 业务错误描述信息。 |
 | sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
 | prepayId | 是 | String | 预支付ID。有效期10分钟。 |
-| mercOrderNo | 否 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最大长度46。 |
+| mercOrderNo | 否 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最小长度为1，最大长度46。 |
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDdx********************MabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "prepayId": "12407091401520894056950***",
-8. "mercOrderNo": "czl00120240705***"
-9. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDdx********************MabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "prepayId": "12407091401520894056950***",
+  "mercOrderNo": "czl00120240705***"
+}
 ```
 
 ## 错误码

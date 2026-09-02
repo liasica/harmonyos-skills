@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NativeDialogAPI_3
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NativeDialogAPI_3
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:06+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:20a87110f2cf88985f0657a324334ed38b8898836eea7c65645141a05a8bea29
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:23b6dc52598beeaf4e3288fb796bb5800f402fe044bc95343e22f6eeeb376cc8
 ---
 
-```
-1. typedef struct {...} ArkUI_NativeDialogAPI_3
+```c
+typedef struct {...} ArkUI_NativeDialogAPI_3
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-ArkUI提供的Native侧自定义弹窗接口集合。
+ArkUI提供的Native侧自定义弹窗接口集合，支持设置边框样式、尺寸、背景效果、键盘避让模式、焦点管理等能力，用于在Native层精细控制自定义弹窗的外观样式和交互行为，适用于需要高度定制化弹窗UI的场景。
 
 **起始版本：** 19
 
@@ -26,11 +24,7 @@ ArkUI提供的Native侧自定义弹窗接口集合。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [ArkUI\_NativeDialogAPI\_2](capi-arkui-nativemodule-arkui-nativedialogapi-2.md) nativeDialogAPI2 | ArkUI提供的Native侧自定义弹窗接口集合，范围是[ArkUI\_NativeDialogAPI\_2](capi-arkui-nativemodule-arkui-nativedialogapi-2.md)。  **起始版本：** 19 |
 
 ### 成员函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -54,32 +46,28 @@ PhonePC/2in1TabletTVWearable
 | [int32\_t (\*setWidth)(ArkUI\_NativeDialogHandle handle, float width, ArkUI\_LengthMetricUnit unit)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setwidth) | 设置自定义弹窗的背板宽度。 |
 | [int32\_t (\*setHeight)(ArkUI\_NativeDialogHandle handle, float height, ArkUI\_LengthMetricUnit unit)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setheight) | 设置自定义弹窗的背板高度。 |
 | [int32\_t (\*setShadow)(ArkUI\_NativeDialogHandle handle, ArkUI\_ShadowStyle shadow)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setshadow) | 设置自定义弹窗的背板阴影。 |
-| [int32\_t (\*setCustomShadow)(ArkUI\_NativeDialogHandle handle, const ArkUI\_AttributeItem\* customShadow)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setcustomshadow) | 设置自定义弹窗的背板阴影。 |
+| [int32\_t (\*setCustomShadow)(ArkUI\_NativeDialogHandle handle, const ArkUI\_AttributeItem\* customShadow)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setcustomshadow) | 设置自定义弹窗的背板自定义阴影。 |
 | [int32\_t (\*setBackgroundBlurStyle)(ArkUI\_NativeDialogHandle handle, ArkUI\_BlurStyle blurStyle)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setbackgroundblurstyle) | 设置自定义弹窗的背板模糊材质。 |
 | [int32\_t (\*setKeyboardAvoidMode)(ArkUI\_NativeDialogHandle handle, ArkUI\_KeyboardAvoidMode keyboardAvoidMode)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setkeyboardavoidmode) | 设置自定义弹窗避让键盘模式。 |
 | [int32\_t (\*enableHoverMode)(ArkUI\_NativeDialogHandle handle, bool enableHoverMode)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#enablehovermode) | 设置自定义弹窗是否响应悬停态。 |
 | [int32\_t (\*setHoverModeArea)(ArkUI\_NativeDialogHandle handle, ArkUI\_HoverModeAreaType hoverModeAreaType)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#sethovermodearea) | 设置悬停态下自定义弹窗默认展示区域。 |
 | [int32\_t (\*setFocusable)(ArkUI\_NativeDialogHandle handle, bool focusable)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setfocusable) | 设置自定义弹窗是否获取焦点。 |
-| [int32\_t (\*setBackgroundBlurStyleOptions)(ArkUI\_NativeDialogHandle handle, const ArkUI\_AttributeItem\* backgroundBlurStyleOptions)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setbackgroundblurstyleoptions) | 设置自定义弹窗的背景模糊效果。 |
-| [int32\_t (\*setBackgroundEffect)(ArkUI\_NativeDialogHandle handle, const ArkUI\_AttributeItem\* backgroundEffect)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setbackgroundeffect) | 设置自定义弹窗的背景效果参数。 |
+| [int32\_t (\*setBackgroundBlurStyleOptions)(ArkUI\_NativeDialogHandle handle, const ArkUI\_AttributeItem\* backgroundBlurStyleOptions)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setbackgroundblurstyleoptions) | 设置自定义弹窗的背板模糊效果。 |
+| [int32\_t (\*setBackgroundEffect)(ArkUI\_NativeDialogHandle handle, const ArkUI\_AttributeItem\* backgroundEffect)](capi-arkui-nativemodule-arkui-nativedialogapi-3.md#setbackgroundeffect) | 设置自定义弹窗的背板效果参数。 |
 
 ## 成员函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### setLevelOrder()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setLevelOrder)(ArkUI_NativeDialogHandle handle, double levelOrder)
+```c
+int32_t (*setLevelOrder)(ArkUI_NativeDialogHandle handle, double levelOrder)
 ```
 
 **描述：**
 
 设置自定义弹窗显示的顺序。
 
-说明
+**说明** 
 
 setLevelOrder方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -96,21 +84,19 @@ setLevelOrder方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedia
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### registerOnWillAppear()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*registerOnWillAppear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
+```c
+int32_t (*registerOnWillAppear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
 ```
 
 **描述：**
 
 注册自定义弹窗显示之前的回调函数。
 
-说明
+**说明** 
 
 registerOnWillAppear方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -122,27 +108,25 @@ registerOnWillAppear方法需要在调用[show](capi-arkui-nativemodule-arkui-na
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据。 |
-| callback | 自定义弹窗显示之前的回调函数。 |
+| void (callback)(void userData) | 自定义弹窗显示之前的回调函数。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### registerOnDidAppear()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*registerOnDidAppear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
+```c
+int32_t (*registerOnDidAppear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
 ```
 
 **描述：**
 
 注册自定义弹窗显示之后的回调函数。
 
-说明
+**说明** 
 
 registerOnDidAppear方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -154,27 +138,25 @@ registerOnDidAppear方法需要在调用[show](capi-arkui-nativemodule-arkui-nat
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据。 |
-| callback | 自定义弹窗显示之后的回调函数。 |
+| void (callback)(void userData) | 自定义弹窗显示之后的回调函数。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### registerOnWillDisappear()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*registerOnWillDisappear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
+```c
+int32_t (*registerOnWillDisappear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
 ```
 
 **描述：**
 
 注册自定义弹窗关闭之前的回调函数。
 
-说明
+**说明** 
 
 registerOnWillDisappear方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -186,27 +168,25 @@ registerOnWillDisappear方法需要在调用[show](capi-arkui-nativemodule-arkui
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据。 |
-| callback | 自定义弹窗关闭之前的回调函数。 |
+| void (callback)(void userData) | 自定义弹窗关闭之前的回调函数。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### registerOnDidDisappear()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*registerOnDidDisappear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
+```c
+int32_t (*registerOnDidDisappear)(ArkUI_NativeDialogHandle handle, void* userData, void (*callback)(void* userData))
 ```
 
 **描述：**
 
 注册自定义弹窗关闭之后的回调函数。
 
-说明
+**说明** 
 
 registerOnDidDisappear方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -218,27 +198,25 @@ registerOnDidDisappear方法需要在调用[show](capi-arkui-nativemodule-arkui-
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
 | void\* userData | 用户自定义数据。 |
-| callback | 自定义弹窗关闭之后的回调函数。 |
+| void (callback)(void userData) | 自定义弹窗关闭之后的回调函数。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setBorderWidth()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setBorderWidth)(ArkUI_NativeDialogHandle handle, float top, float right, float bottom, float left, ArkUI_LengthMetricUnit unit)
+```c
+int32_t (*setBorderWidth)(ArkUI_NativeDialogHandle handle, float top, float right, float bottom, float left, ArkUI_LengthMetricUnit unit)
 ```
 
 **描述：**
 
 设置自定义弹窗的边框宽度。
 
-说明
+**说明** 
 
 setBorderWidth方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -259,21 +237,19 @@ setBorderWidth方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedi
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setBorderColor()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setBorderColor)(ArkUI_NativeDialogHandle handle, uint32_t top, uint32_t right, uint32_t bottom, uint32_t left)
+```c
+int32_t (*setBorderColor)(ArkUI_NativeDialogHandle handle, uint32_t top, uint32_t right, uint32_t bottom, uint32_t left)
 ```
 
 **描述：**
 
 设置自定义弹窗的边框颜色。
 
-说明
+**说明** 
 
 setBorderColor方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -284,30 +260,28 @@ setBorderColor方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedi
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
-| uint32\_t top | 上边框的颜色。 |
-| uint32\_t right | 右边框的颜色。 |
-| uint32\_t bottom | 下边框的颜色。 |
-| uint32\_t left | 左边框的颜色。 |
+| uint32\_t top | 上边框的颜色，0xARGB格式。 |
+| uint32\_t right | 右边框的颜色，0xARGB格式。 |
+| uint32\_t bottom | 下边框的颜色，0xARGB格式。 |
+| uint32\_t left | 左边框的颜色，0xARGB格式。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setBorderStyle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setBorderStyle)(ArkUI_NativeDialogHandle handle, int32_t top, int32_t right, int32_t bottom, int32_t left)
+```c
+int32_t (*setBorderStyle)(ArkUI_NativeDialogHandle handle, int32_t top, int32_t right, int32_t bottom, int32_t left)
 ```
 
 **描述：**
 
 设置自定义弹窗的边框样式。
 
-说明
+**说明** 
 
 setBorderStyle方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -327,21 +301,19 @@ setBorderStyle方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedi
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setWidth()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setWidth)(ArkUI_NativeDialogHandle handle, float width, ArkUI_LengthMetricUnit unit)
+```c
+int32_t (*setWidth)(ArkUI_NativeDialogHandle handle, float width, ArkUI_LengthMetricUnit unit)
 ```
 
 **描述：**
 
 设置自定义弹窗的背板宽度。
 
-说明
+**说明** 
 
 setWidth方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -359,21 +331,19 @@ setWidth方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogap
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setHeight()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setHeight)(ArkUI_NativeDialogHandle handle, float height, ArkUI_LengthMetricUnit unit)
+```c
+int32_t (*setHeight)(ArkUI_NativeDialogHandle handle, float height, ArkUI_LengthMetricUnit unit)
 ```
 
 **描述：**
 
 设置自定义弹窗的背板高度。
 
-说明
+**说明** 
 
 setHeight方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -391,21 +361,19 @@ setHeight方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialoga
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setShadow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setShadow)(ArkUI_NativeDialogHandle handle, ArkUI_ShadowStyle shadow)
+```c
+int32_t (*setShadow)(ArkUI_NativeDialogHandle handle, ArkUI_ShadowStyle shadow)
 ```
 
 **描述：**
 
 设置自定义弹窗的背板阴影。
 
-说明
+**说明** 
 
 setShadow方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -416,27 +384,25 @@ setShadow方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialoga
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
-| [ArkUI\_ShadowStyle](capi-native-type-h.md#arkui_shadowstyle) shadow | 背板阴影样式，枚举值。 |
+| [ArkUI\_ShadowStyle](capi-native-type-visual-h.md#arkui_shadowstyle) shadow | 背板阴影样式，枚举值。用于设置弹窗背板的阴影效果，不同枚举值提供不同深浅或漂浮样式的阴影。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setCustomShadow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setCustomShadow)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* customShadow)
+```c
+int32_t (*setCustomShadow)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* customShadow)
 ```
 
 **描述：**
 
-设置自定义弹窗的背板阴影。
+设置自定义弹窗的背板自定义阴影。
 
-说明
+**说明** 
 
 setCustomShadow方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -453,21 +419,19 @@ setCustomShadow方法需要在调用[show](capi-arkui-nativemodule-arkui-natived
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setBackgroundBlurStyle()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setBackgroundBlurStyle)(ArkUI_NativeDialogHandle handle, ArkUI_BlurStyle blurStyle)
+```c
+int32_t (*setBackgroundBlurStyle)(ArkUI_NativeDialogHandle handle, ArkUI_BlurStyle blurStyle)
 ```
 
 **描述：**
 
 设置自定义弹窗的背板模糊材质。
 
-说明
+**说明** 
 
 setBackgroundBlurStyle方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -478,27 +442,25 @@ setBackgroundBlurStyle方法需要在调用[show](capi-arkui-nativemodule-arkui-
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
-| [ArkUI\_BlurStyle](capi-native-type-h.md#arkui_blurstyle) blurStyle | 背板模糊材质，枚举值。 |
+| [ArkUI\_BlurStyle](capi-native-type-visual-h.md#arkui_blurstyle) blurStyle | 背板模糊材质，枚举值。用于设置弹窗背板的模糊效果，不同枚举值提供不同深度的材质感。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setKeyboardAvoidMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setKeyboardAvoidMode)(ArkUI_NativeDialogHandle handle, ArkUI_KeyboardAvoidMode keyboardAvoidMode)
+```c
+int32_t (*setKeyboardAvoidMode)(ArkUI_NativeDialogHandle handle, ArkUI_KeyboardAvoidMode keyboardAvoidMode)
 ```
 
 **描述：**
 
 设置自定义弹窗避让键盘模式。
 
-说明
+**说明** 
 
 setKeyboardAvoidMode方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -509,27 +471,25 @@ setKeyboardAvoidMode方法需要在调用[show](capi-arkui-nativemodule-arkui-na
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
-| [ArkUI\_KeyboardAvoidMode](capi-native-type-h.md#arkui_keyboardavoidmode) keyboardAvoidMode | 避让键盘模式，枚举值。 |
+| [ArkUI\_KeyboardAvoidMode](capi-native-type-h.md#arkui_keyboardavoidmode) keyboardAvoidMode | 避让键盘模式，枚举值。用于设置键盘弹出时弹窗的避让行为。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### enableHoverMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*enableHoverMode)(ArkUI_NativeDialogHandle handle, bool enableHoverMode)
+```c
+int32_t (*enableHoverMode)(ArkUI_NativeDialogHandle handle, bool enableHoverMode)
 ```
 
 **描述：**
 
 设置自定义弹窗是否响应悬停态。
 
-说明
+**说明** 
 
 enableHoverMode方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -546,21 +506,19 @@ enableHoverMode方法需要在调用[show](capi-arkui-nativemodule-arkui-natived
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setHoverModeArea()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setHoverModeArea)(ArkUI_NativeDialogHandle handle, ArkUI_HoverModeAreaType hoverModeAreaType)
+```c
+int32_t (*setHoverModeArea)(ArkUI_NativeDialogHandle handle, ArkUI_HoverModeAreaType hoverModeAreaType)
 ```
 
 **描述：**
 
 设置悬停态下自定义弹窗默认展示区域。
 
-说明
+**说明** 
 
 setHoverModeArea方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -571,27 +529,25 @@ setHoverModeArea方法需要在调用[show](capi-arkui-nativemodule-arkui-native
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
-| [ArkUI\_HoverModeAreaType](capi-native-type-h.md#arkui_hovermodeareatype) hoverModeAreaType | 悬停态区域，枚举值。 |
+| [ArkUI\_HoverModeAreaType](capi-native-type-h.md#arkui_hovermodeareatype) hoverModeAreaType | 悬停态区域，枚举值。用于设置悬停时弹窗默认展示的区域位置（上半屏或下半屏）。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setFocusable()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setFocusable)(ArkUI_NativeDialogHandle handle, bool focusable)
+```c
+int32_t (*setFocusable)(ArkUI_NativeDialogHandle handle, bool focusable)
 ```
 
 **描述：**
 
 设置自定义弹窗是否获取焦点。
 
-说明
+**说明** 
 
 setFocusable方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -608,21 +564,19 @@ setFocusable方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedial
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setBackgroundBlurStyleOptions()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setBackgroundBlurStyleOptions)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* backgroundBlurStyleOptions)
+```c
+int32_t (*setBackgroundBlurStyleOptions)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* backgroundBlurStyleOptions)
 ```
 
 **描述：**
 
-设置自定义弹窗的背景模糊效果。
+设置自定义弹窗的背板模糊效果。
 
-说明
+**说明** 
 
 setBackgroundBlurStyleOptions方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -633,27 +587,25 @@ setBackgroundBlurStyleOptions方法需要在调用[show](capi-arkui-nativemodule
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
-| const [ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)\* backgroundBlurStyleOptions | 背景模糊效果。参数[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式：  .value[0].i32：表示深浅色模式，取[ArkUI\_ColorMode](capi-native-type-h.md#arkui_colormode)枚举值。  .value[1]?.i32：表示取色模式，取[ArkUI\_AdaptiveColor](capi-native-type-h.md#arkui_adaptivecolor)枚举值。  .value[2]?.f32：表示模糊效果程度，取[0.0,1.0]范围内的值，超出有效值区间时取边界值。  .value[3]?.u32：表示灰阶模糊参数，对黑色的提亮程度，有效值范围为[0,127]，超出有效值范围，取0。  .value[4]?.u32：表示灰阶模糊参数，对白色的压暗程度，有效值范围为[0,127]，超出有效值范围，取0。  .value[5]?.i32：表示模糊激活策略，取[ArkUI\_BlurStyleActivePolicy](capi-native-type-h.md#arkui_blurstyleactivepolicy)枚举值。  .value[6]?.u32：表示窗口失焦后，窗口内控件模糊效果会被移除，此时控件背板的颜色，0xargb类型。 |
+| const [ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)\* backgroundBlurStyleOptions | 背景模糊效果。参数[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式：  .value[0].i32：表示深浅色模式，取[ArkUI\_ColorMode](capi-native-type-h.md#arkui_colormode)枚举值。  .value[1]?.i32：表示取色模式，取[ArkUI\_AdaptiveColor](capi-native-type-h.md#arkui_adaptivecolor)枚举值。  .value[2]?.f32：表示模糊效果程度，取[0.0,1.0]范围内的值，超出有效值区间时取边界值。  .value[3]?.u32：表示灰阶模糊参数，对黑色的提亮程度，有效值范围为[0,127]，超出有效值范围，取0。  .value[4]?.u32：表示灰阶模糊参数，对白色的压暗程度，有效值范围为[0,127]，超出有效值范围，取0。  .value[5]?.i32：表示模糊激活策略，取[ArkUI\_BlurStyleActivePolicy](capi-native-type-visual-h.md#arkui_blurstyleactivepolicy)枚举值。  .value[6]?.u32：表示窗口失焦后，窗口内控件模糊效果会被移除，此时控件背板的颜色，0xARGB类型。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |
 
 ### setBackgroundEffect()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*setBackgroundEffect)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* backgroundEffect)
+```c
+int32_t (*setBackgroundEffect)(ArkUI_NativeDialogHandle handle, const ArkUI_AttributeItem* backgroundEffect)
 ```
 
 **描述：**
 
-设置自定义弹窗的背景效果参数。
+设置自定义弹窗的背板效果参数。
 
-说明
+**说明** 
 
 setBackgroundEffect方法需要在调用[show](capi-arkui-nativemodule-arkui-nativedialogapi-1.md#show)之前调用。
 
@@ -664,10 +616,10 @@ setBackgroundEffect方法需要在调用[show](capi-arkui-nativemodule-arkui-nat
 | 参数项 | 描述 |
 | --- | --- |
 | [ArkUI\_NativeDialogHandle](capi-arkui-nativemodule-arkui-nativedialog8h.md) handle | 指向自定义弹窗控制器的指针。 |
-| const [ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)\* backgroundEffect | 背景效果参数。参数[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式：  .value[0].f32：表示模糊半径，单位为vp。  .value[1]?.f32：表示饱和度。  .value[2]?.f32：表示亮度。  .value[3]?.u32：表示颜色，0xargb类型。  .value[4]?.i32：表示取色模式，取[ArkUI\_AdaptiveColor](capi-native-type-h.md#arkui_adaptivecolor)枚举值。  .value[5]?.u32：表示灰阶模糊参数，对黑色的提亮程度，有效值范围为[0,127]，超出有效值范围，取0。  .value[6]?.u32：表示灰阶模糊参数，对白色的压暗程度，有效值范围为[0,127]，超出有效值范围，取0。  .value[7]?.i32：表示模糊激活策略，取[ArkUI\_BlurStyleActivePolicy](capi-native-type-h.md#arkui_blurstyleactivepolicy)枚举值。  .value[8]?.u32：表示窗口失焦后，窗口内控件模糊效果会被移除，此时控件背板的颜色，0xargb类型。 |
+| const [ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)\* backgroundEffect | 背景效果参数。参数[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式：  .value[0].f32：表示模糊半径，单位为vp。  .value[1]?.f32：表示饱和度，取[0.0,1.0]范围内的值。  .value[2]?.f32：表示亮度，取[0.0,1.0]范围内的值。  .value[3]?.u32：表示颜色，0xARGB类型。  .value[4]?.i32：表示取色模式，取[ArkUI\_AdaptiveColor](capi-native-type-h.md#arkui_adaptivecolor)枚举值。  .value[5]?.u32：表示灰阶模糊参数，对黑色的提亮程度，有效值范围为[0,127]，超出有效值范围，取0。  .value[6]?.u32：表示灰阶模糊参数，对白色的压暗程度，有效值范围为[0,127]，超出有效值范围，取0。  .value[7]?.i32：表示模糊激活策略，取[ArkUI\_BlurStyleActivePolicy](capi-native-type-visual-h.md#arkui_blurstyleactivepolicy)枚举值。  .value[8]?.u32：表示窗口失焦后，窗口内控件模糊效果被移除时显示的控件背板颜色，0xARGB类型。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-native-type-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-native-type-h.md#arkui_errorcode) 函数参数异常。 |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。 |

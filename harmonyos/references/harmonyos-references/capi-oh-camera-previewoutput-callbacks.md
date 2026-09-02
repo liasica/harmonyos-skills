@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: PreviewOutput_Callbacks
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > PreviewOutput_Callbacks
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ca6adeef1d4a8fbd51963751af5bbbe8d1f266f2b38ff7790b3d954a9e4c0ea7
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:416eaf17d25cdca2d9b41c24ad7699cb7ea98380689dbcee06e6981df4ef296f
 ---
 
-```
-1. typedef struct PreviewOutput_Callbacks {...} PreviewOutput_Callbacks
+```c
+typedef struct PreviewOutput_Callbacks {...} PreviewOutput_Callbacks
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于预览输出的回调。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

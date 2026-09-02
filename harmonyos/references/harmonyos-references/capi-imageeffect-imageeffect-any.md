@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: ImageEffect_Any
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > ImageEffect_Any
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0df5cf7499866bd324821b8706a0c19728e5eff6c0447d0d0a39b4c7d7a9468e
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:edb4447fb7a333cf3fe7cfb49060b3f4e2e4e062f7d435f964f1584cf4b0b239
 ---
 
-```
-1. typedef struct ImageEffect_Any {...} ImageEffect_Any
+```c
+typedef struct ImageEffect_Any {...} ImageEffect_Any
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 参数结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 **支持C++语言语法的声明如下：**
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_receiver_mdk.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_receiver_mdk.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:03:58+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:fc492fb580259bd4680b03b4d14047ec10ba414cc6761b4773ae213d0f80ea42
+scraped_at: 2026-09-02T15:02:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5a36f9e07fac27226a452df15e4ef22e7fe9b5c0d5ccca4b52080c9aa3990f99
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明从native层获取图片数据的方法。
 
@@ -18,7 +16,7 @@ PhonePC/2in1TabletTVWearable
 
 **引用文件：** <multimedia/image\_framework/image\_receiver\_mdk.h>
 
-**系统能力：** SystemCapability.Multimedia.Image.Core
+**系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
 
 **起始版本：** 10
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [ImageReceiverNative\_](capi-image-imagereceivernative-.md) | ImageReceiverNative | 用于定义ImageReceiverNative数据类型名称。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -57,14 +49,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Image\_Receiver\_On\_Callback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_Image_Receiver_On_Callback)(void)
+```c
+typedef void (*OH_Image_Receiver_On_Callback)(void)
 ```
 
 **描述**
@@ -75,10 +63,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_CreateImageReceiver()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_CreateImageReceiver(napi_env env, struct OhosImageReceiverInfo info, napi_value* res)
+```c
+int32_t OH_Image_Receiver_CreateImageReceiver(napi_env env, struct OhosImageReceiverInfo info, napi_value* res)
 ```
 
 **描述**
@@ -103,10 +89,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_InitImageReceiverNative()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. ImageReceiverNative* OH_Image_Receiver_InitImageReceiverNative(napi_env env, napi_value source)
+```c
+ImageReceiverNative* OH_Image_Receiver_InitImageReceiverNative(napi_env env, napi_value source)
 ```
 
 **描述**
@@ -134,10 +118,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_GetReceivingSurfaceId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_GetReceivingSurfaceId(const ImageReceiverNative* native, char* id, size_t len)
+```c
+int32_t OH_Image_Receiver_GetReceivingSurfaceId(const ImageReceiverNative* native, char* id, size_t len)
 ```
 
 **描述**
@@ -162,10 +144,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_ReadLatestImage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_ReadLatestImage(const ImageReceiverNative* native, napi_value* image)
+```c
+int32_t OH_Image_Receiver_ReadLatestImage(const ImageReceiverNative* native, napi_value* image)
 ```
 
 **描述**
@@ -191,10 +171,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_ReadNextImage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_ReadNextImage(const ImageReceiverNative* native, napi_value* image)
+```c
+int32_t OH_Image_Receiver_ReadNextImage(const ImageReceiverNative* native, napi_value* image)
 ```
 
 **描述**
@@ -220,10 +198,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_On()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_On(const ImageReceiverNative* native, OH_Image_Receiver_On_Callback callback)
+```c
+int32_t OH_Image_Receiver_On(const ImageReceiverNative* native, OH_Image_Receiver_On_Callback callback)
 ```
 
 **描述**
@@ -247,10 +223,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_GetSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_GetSize(const ImageReceiverNative* native, struct OhosImageSize* size)
+```c
+int32_t OH_Image_Receiver_GetSize(const ImageReceiverNative* native, struct OhosImageSize* size)
 ```
 
 **描述**
@@ -274,10 +248,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_GetCapacity()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_GetCapacity(const ImageReceiverNative* native, int32_t* capacity)
+```c
+int32_t OH_Image_Receiver_GetCapacity(const ImageReceiverNative* native, int32_t* capacity)
 ```
 
 **描述**
@@ -301,10 +273,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_GetFormat()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_GetFormat(const ImageReceiverNative* native, int32_t* format)
+```c
+int32_t OH_Image_Receiver_GetFormat(const ImageReceiverNative* native, int32_t* format)
 ```
 
 **描述**
@@ -328,10 +298,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Image\_Receiver\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t OH_Image_Receiver_Release(ImageReceiverNative* native)
+```c
+int32_t OH_Image_Receiver_Release(ImageReceiverNative* native)
 ```
 
 **描述**

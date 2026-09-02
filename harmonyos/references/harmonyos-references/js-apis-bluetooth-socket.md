@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.socket (蓝牙socket模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.socket (蓝牙socket模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:58+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:82f7d84b5db9366d432a84ef6f1583d03c2ec7843da906a55c49eea320a30a6d
+scraped_at: 2026-09-02T15:01:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:70a6dd5f7460713a5d6c034cd7b7ff9f28fae6fac4c65ba03ea7e8412e7be254
 ---
 
 本模块提供一种蓝牙套接字功能，可实现设备间连接和数据传输。当两个设备间进行蓝牙套接字通信交互时，依据设备功能的不同，可区分客户端与服务端。
@@ -19,21 +19,17 @@ content_hash: sha256:82f7d84b5db9366d432a84ef6f1583d03c2ec7843da906a55c49eea320a
 
 通过[socket.sppListen](js-apis-bluetooth-socket.md#socketspplisten)创建服务端套接字并监听客户端的连接。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { socket } from '@kit.ConnectivityKit';
+```js
+import { socket } from '@kit.ConnectivityKit';
 ```
 
 ## socket.sppListen
-
-PhonePC/2in1TabletTVWearable
 
 sppListen(name: string, options: SppOptions, callback: AsyncCallback<number>): void
 
@@ -71,38 +67,36 @@ sppListen(name: string, options: SppOptions, callback: AsyncCallback<number>): v
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let serverNumber = -1;
-4. let serverSocket = (code: BusinessError, number: number) => {
-5. if (code) {
-6. console.error('sppListen error, code is ' + code);
-7. return;
-8. } else {
-9. serverNumber = number;
-10. console.info('sppListen success, serverNumber = ' + serverNumber);
-11. }
-12. }
+let serverNumber = -1;
+let serverSocket = (code: BusinessError, number: number) => {
+  if (code) {
+    console.error('sppListen error, code is ' + code);
+    return;
+  } else {
+    serverNumber = number;
+    console.info('sppListen success, serverNumber = ' + serverNumber);
+  }
+}
 
-14. // 以RFCOMM链路类型套接字为例
-15. let sppOption:socket.SppOptions = {uuid: '00001810-0000-1000-8000-00805F9B34FB', secure: false, type: socket.SppType.SPP_RFCOMM};
-16. try {
-17. socket.sppListen('server1', sppOption, serverSocket);
-18. } catch (err) {
-19. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-20. }
+// 以RFCOMM链路类型套接字为例
+let sppOption:socket.SppOptions = {uuid: '00001810-0000-1000-8000-00805F9B34FB', secure: false, type: socket.SppType.SPP_RFCOMM};
+try {
+    socket.sppListen('server1', sppOption, serverSocket);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.getL2capPsm20+
-
-PhonePC/2in1TabletTVWearable
 
 getL2capPsm(serverSocket: number): number
 
 获取服务端L2CAP链路类型套接字的协议/服务多路复用器值（Protocol/Service Multiplexer, [PSM](../harmonyos-guides/terminology.md#psm)），该值用于标识特定的服务数据传输通道。
 
-说明
+**说明** 
 
 需要在服务端调用完[socket.sppListen](js-apis-bluetooth-socket.md#socketspplisten)后调用该接口，且传入的链路类型[SppType](js-apis-bluetooth-socket.md#spptype)需是SPP\_L2CAP或SPP\_L2CAP\_BLE。
 
@@ -122,21 +116,19 @@ getL2capPsm(serverSocket: number): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 服务端获取客户端设备地址。
-4. let serverNumber = 1; // 此处serverNumber需赋值为调用sppListen接口后，回调中得到的serverNumber。
-5. try {
-6. let l2capPsm: number = socket.getL2capPsm(serverNumber);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+// 服务端获取客户端设备地址。
+let serverNumber = 1; // 此处serverNumber需赋值为调用sppListen接口后，回调中得到的serverNumber。
+try {
+    let l2capPsm: number = socket.getL2capPsm(serverNumber);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.sppAccept
-
-PhonePC/2in1TabletTVWearable
 
 sppAccept(serverSocket: number, callback: AsyncCallback<number>): void
 
@@ -144,10 +136,10 @@ sppAccept(serverSocket: number, callback: AsyncCallback<number>): void
 
 * 须在调用[socket.sppListen](js-apis-bluetooth-socket.md#socketspplisten)创建服务端套接字成功后，才能调用该接口监听客户端的连接请求。
 * 客户端可通过[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)向该服务端发起连接请求。
-* 连接建立成功后，即可通过[socket.sppWrite](js-apis-bluetooth-socket.md#socketsppwrite)、[socket.sppWriteAsync](js-apis-bluetooth-socket.md#socketsppwriteasync18)、[socket.sppReadAsync](js-apis-bluetooth-socket.md#socketsppreadasync18)等接口，同客户端进行数据传输。
+* 连接建立成功后，即可通过[socket.sppWrite](js-apis-bluetooth-socket.md#socketsppwrite)、[socket.sppWriteAsync](js-apis-bluetooth-socket.md#socketsppwriteasync18)、[socket.sppReadAsync](js-apis-bluetooth-socket.md#socketsppreadasync18)等接口，与客户端进行数据传输。
 * 当服务端不再需要已建立的连接时，可通过[socket.sppCloseClientSocket](js-apis-bluetooth-socket.md#socketsppcloseclientsocket)主动断开指定的客户端套接字连接。
 
-**系统能力**：SystemCapability.Communication.Bluetooth.Core
+**系统能力：** SystemCapability.Communication.Bluetooth.Core
 
 **参数：**
 
@@ -155,7 +147,8 @@ sppAccept(serverSocket: number, callback: AsyncCallback<number>): void
 | --- | --- | --- | --- |
 | serverSocket | number | 是 | 服务端套接字的ID。  该值是调用[socket.sppListen](js-apis-bluetooth-socket.md#socketspplisten)接口后，通过其异步callback获取到的。 |
 | callback | AsyncCallback<number> | 是 | 回调函数。当收到客户端的连接请求且连接建立成功时，err为undefined，data是用于标识发起此次连接请求的客户端套接字ID，有效值为非负值；否则err为错误对象。 |
-| **错误码**： |  |  |  |
+
+**错误码：**
 
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
 
@@ -170,30 +163,28 @@ sppAccept(serverSocket: number, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let clientNumber = -1;
-4. let serverNumber = 1;
-5. let acceptClientSocket = (code: BusinessError, number: number) => {
-6. if (code) {
-7. console.error('sppListen error, code is ' + code);
-8. return;
-9. } else {
-10. clientNumber = number; // 获取的clientNumber用作客户端后续读/写操作socket的id。
-11. console.info('sppListen success, clientNumber = ' + clientNumber);
-12. }
-13. }
-14. try {
-15. socket.sppAccept(serverNumber, acceptClientSocket); // serverNumber是sppListen回调中得到的serverNumber。
-16. } catch (err) {
-17. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-18. }
+let clientNumber = -1;
+let serverNumber = 1;
+let acceptClientSocket = (code: BusinessError, number: number) => {
+  if (code) {
+    console.error('sppListen error, code is ' + code);
+    return;
+  } else {
+    clientNumber = number; // 获取的clientNumber用作客户端后续读/写操作socket的id。
+    console.info('sppListen success, clientNumber = ' + clientNumber);
+  }
+}
+try {
+    socket.sppAccept(serverNumber, acceptClientSocket); // serverNumber是sppListen回调中得到的serverNumber。
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.sppConnect
-
-PhonePC/2in1TabletTVWearable
 
 sppConnect(deviceId: string, options: SppOptions, callback: AsyncCallback<number>): void
 
@@ -202,7 +193,7 @@ sppConnect(deviceId: string, options: SppOptions, callback: AsyncCallback<number
 * 通过[SppOptions](js-apis-bluetooth-socket.md#sppoptions)参数的type表示需要连接的服务类型。
 * 需确保服务端设备已具备需要连接的服务。服务端可通过[socket.sppListen](js-apis-bluetooth-socket.md#socketspplisten)注册并监听连接请求。
 * 连接建立成功后，即可通过[socket.sppWrite](js-apis-bluetooth-socket.md#socketsppwrite)或[socket.sppWriteAsync](js-apis-bluetooth-socket.md#socketsppwriteasync18)接口，同服务端进行数据传输。
-* 当客户端不再需要已建立的连接时，可通过[socket.sppCloseclientSocket](js-apis-bluetooth-socket.md#socketsppcloseclientsocket)主动断开连接。
+* 当客户端不再需要已建立的连接时，可通过[socket.sppCloseClientSocket](js-apis-bluetooth-socket.md#socketsppcloseclientsocket)主动断开连接。
 
 **需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
@@ -232,35 +223,33 @@ sppConnect(deviceId: string, options: SppOptions, callback: AsyncCallback<number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let clientSocket = (code: BusinessError, number: number) => {
-4. if (code) {
-5. console.error('sppConnect error, code is ' + code);
-6. return;
-7. } else {
-8. // 获取的number用作客户端后续读/写操作的socket id。
-9. console.info('bluetooth clientSocket Number: ' + number);
-10. }
-11. }
+let clientSocket = (code: BusinessError, number: number) => {
+  if (code) {
+    console.error('sppConnect error, code is ' + code);
+    return;
+  } else {
+    // 获取的number用作客户端后续读/写操作的socket id。
+    console.info('bluetooth clientSocket Number: ' + number);
+  }
+}
 
-13. // 以RFCOMM链路类型套接字为例
-14. let sppOption:socket.SppOptions = {uuid: '00001810-0000-1000-8000-00805F9B34FB', secure: false, type: socket.SppType.SPP_RFCOMM};
-15. try {
-16. socket.sppConnect('XX:XX:XX:XX:XX:XX', sppOption, clientSocket);
-17. } catch (err) {
-18. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-19. }
+// 以RFCOMM链路类型套接字为例
+let sppOption:socket.SppOptions = {uuid: '00001810-0000-1000-8000-00805F9B34FB', secure: false, type: socket.SppType.SPP_RFCOMM};
+try {
+    socket.sppConnect('XX:XX:XX:XX:XX:XX', sppOption, clientSocket);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.getDeviceId17+
 
-PhonePC/2in1TabletTVWearable
-
 getDeviceId(clientSocket: number): string
 
-客户端和服务端均可使用，获取套接字连接中的对端设备蓝牙地址。
+客户端和服务端均可使用，获取套接字连接中的对端设备蓝牙地址。若客户端使用，需在调用[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)后，且连接成功后使用。若服务端使用，需在调用[socket.sppAccept](js-apis-bluetooth-socket.md#socketsppaccept)后，且连接成功后使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -274,7 +263,7 @@ getDeviceId(clientSocket: number): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回对端设备地址。  基于信息安全考虑，此处获取的设备地址为虚拟MAC地址。  - 已配对的地址不会变更。  - 若该设备重启蓝牙开关，重新获取到的虚拟地址会立即变更。  - 若取消配对，蓝牙子系统会根据该地址的实际使用情况，决策后续变更时机；若其他应用正在使用该地址，则不会立刻变更。 |
+| string | 返回对端设备地址。  基于信息安全考虑，此处获取的设备地址为虚拟MAC地址。  - 已配对的地址不会变更。  - 若该设备重启蓝牙开关，重新获取到的虚拟地址会立即变更。  - 若取消配对，蓝牙子系统会根据该地址是否仍被其他应用使用来决定变更时机：若其他应用正在使用该地址，则不会立即变更；当无应用使用时，地址将被回收并在下次获取时分配新的虚拟地址。 |
 
 **错误码**：
 
@@ -286,29 +275,27 @@ getDeviceId(clientSocket: number): string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 服务端获取客户端设备地址。
-4. let clientSocket = 1; // clientSocket是sppAccept回调中得到的，调用getDeviceId接口前需更新clientSocket。
-5. try {
-6. let deviceAddr: string = socket.getDeviceId(clientSocket);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+// 服务端获取客户端设备地址。
+let clientSocket = 1; // clientSocket是sppAccept回调中得到的，调用getDeviceId接口前需更新clientSocket。
+try {
+    let deviceAddr: string = socket.getDeviceId(clientSocket);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 
-11. // 客户端获取服务端设备地址。
-12. // clientSocket是sppConnect回调中得到的，调getDeviceId接口前需更新clientSocket。
-13. try {
-14. let deviceAddr: string = socket.getDeviceId(clientSocket);
-15. } catch (err) {
-16. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-17. }
+// 客户端获取服务端设备地址。
+// clientSocket是sppConnect回调中得到的，调getDeviceId接口前需更新clientSocket。
+try {
+    let deviceAddr: string = socket.getDeviceId(clientSocket);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.sppCloseServerSocket
-
-PhonePC/2in1TabletTVWearable
 
 sppCloseServerSocket(socket: number): void
 
@@ -339,20 +326,18 @@ sppCloseServerSocket(socket: number): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let serverNumber = 1; // 此处serverNumber需赋值为调用sppListen接口后，在回调中得到的serverNumber。
-4. try {
-5. socket.sppCloseServerSocket(serverNumber);
-6. } catch (err) {
-7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-8. }
+let serverNumber = 1; // 此处serverNumber需赋值为调用sppListen接口后，在回调中得到的serverNumber。
+try {
+    socket.sppCloseServerSocket(serverNumber);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.sppCloseClientSocket
-
-PhonePC/2in1TabletTVWearable
 
 sppCloseClientSocket(socket: number): void
 
@@ -383,20 +368,18 @@ sppCloseClientSocket(socket: number): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. try {
-5. socket.sppCloseClientSocket(clientNumber);
-6. } catch (err) {
-7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-8. }
+let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
+try {
+    socket.sppCloseClientSocket(clientNumber);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.sppWrite
-
-PhonePC/2in1TabletTVWearable
 
 sppWrite(clientSocket: number, data: ArrayBuffer): void
 
@@ -417,7 +400,7 @@ sppWrite(clientSocket: number, data: ArrayBuffer): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | clientSocket | number | 是 | 客户端套接字的ID。  该值是调用[socket.sppAccept](js-apis-bluetooth-socket.md#socketsppaccept)或[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)接口，通过其异步callback获取到的。 |
-| data | ArrayBuffer | 是 | 写入的数据。 |
+| data | ArrayBuffer | 是 | 写入的数据。  对于L2CAP链路类型（SPP\_L2CAP/SPP\_L2CAP\_BLE），数据大小不能超过当前链路的最大发送数据大小，可通过[socket.getMaxTransmitDataSize](js-apis-bluetooth-socket.md#socketgetmaxtransmitdatasize22)接口获取。 |
 
 **错误码**：
 
@@ -432,23 +415,21 @@ sppWrite(clientSocket: number, data: ArrayBuffer): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. let arrayBuffer = new ArrayBuffer(8);
-5. let data = new Uint8Array(arrayBuffer);
-6. data[0] = 123;
-7. try {
-8. socket.sppWrite(clientNumber, arrayBuffer);
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
+let arrayBuffer = new ArrayBuffer(8);
+let data = new Uint8Array(arrayBuffer);
+data[0] = 123;
+try {
+    socket.sppWrite(clientNumber, arrayBuffer);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.on('sppRead')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'sppRead', clientSocket: number, callback: Callback<ArrayBuffer>): void
 
@@ -484,28 +465,30 @@ on(type: 'sppRead', clientSocket: number, callback: Callback<ArrayBuffer>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. let dataRead = (dataBuffer: ArrayBuffer) => {
-5. let data = new Uint8Array(dataBuffer);
-6. console.info('bluetooth data length is: ' + data.byteLength);
-7. }
-8. try {
-9. socket.on('sppRead', clientNumber, dataRead);
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
+let dataRead = (dataBuffer: ArrayBuffer) => {
+    let data = new Uint8Array(dataBuffer);
+    console.info('bluetooth data length is: ' + data.byteLength);
+}
+try {
+    socket.on('sppRead', clientNumber, dataRead);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.off('sppRead')
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'sppRead', clientSocket: number, callback?: Callback<ArrayBuffer>): void
 
 取消订阅套接字读请求事件。
+
+* 须在调用[socket.on('sppRead')](js-apis-bluetooth-socket.md#socketonsppread)成功订阅后，才能调用该接口取消订阅。
+* 若客户端使用，需在调用[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)后，且连接成功后使用。
+* 若服务端使用，需在调用[socket.sppAccept](js-apis-bluetooth-socket.md#socketsppaccept)后，且连接成功后使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -528,30 +511,28 @@ off(type: 'sppRead', clientSocket: number, callback?: Callback<ArrayBuffer>): vo
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. try {
-5. socket.off('sppRead', clientNumber);
-6. } catch (err) {
-7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-8. }
+let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
+try {
+    socket.off('sppRead', clientNumber);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.sppWriteAsync18+
 
-PhonePC/2in1TabletTVWearable
-
 sppWriteAsync(clientSocket: number, data: ArrayBuffer): Promise<void>
 
-客户端和服务端均可使用，向对端设备发送数据。使用Promise异步回调。该接口支持断开连接时，会抛出错误码并返回。
+客户端和服务端均可使用，向对端设备发送数据。使用Promise异步回调。当连接断开时，该接口会抛出错误码并返回。
 
 * 仅在双方成功建立连接后，调用本接口才有效。
 * 若客户端使用，需在调用[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)后，且连接成功后使用。
 * 若服务端使用，需在调用[socket.sppAccept](js-apis-bluetooth-socket.md#socketsppaccept)后，且连接成功后使用。
 * 按照蓝牙协议规范，数据通道在空闲状态需进入休眠模式以降低功耗。蓝牙子系统实现上，通道在5-7s内没有数据交互时会进入休眠模式，将导致下次调用此接口发送数据前，会耗费500ms左右退出休眠模式才开始发送数据。
-* 若想减少每次发送数据前退休眠模式的耗时，建议每3s左右可往数据通道上发送一次任意大小的心跳数据，对数据通道进行保活，可防止进入休眠模式，但同时也会提高设备功耗。
+* 若想减少每次发送数据前退出休眠模式的耗时，建议每3s左右可往数据通道上发送一次任意大小的心跳数据，对数据通道进行保活，可防止进入休眠模式，但同时也会提高设备功耗。
 * 链路类型为[SPP\_L2CAP](js-apis-bluetooth-socket.md#spptype)或[SPP\_L2CAP\_BLE](js-apis-bluetooth-socket.md#spptype)时，单次发送数据大小存在限制，单位为Byte，超过限制大小的数据将被截断。链路类型为SPP\_L2CAP\_BLE时单次发送数据大小范围为[1, 65535]；链路类型为SPP\_L2CAP时服务端单次发送数据大小范围为[1, 4091]，客户端单次发送数据大小范围为[1, 8085]。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
@@ -581,28 +562,26 @@ sppWriteAsync(clientSocket: number, data: ArrayBuffer): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. let arrayBuffer = new ArrayBuffer(8);
-5. let data = new Uint8Array(arrayBuffer);
-6. try {
-7. socket.sppWriteAsync(clientNumber, arrayBuffer).then(() => {
-8. console.info("sppWrite success");
-9. });
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let clientNumber = 1; // 入参clientNumber由sppAccept或sppConnect接口获取。
+let arrayBuffer = new ArrayBuffer(8);
+let data = new Uint8Array(arrayBuffer);
+try {
+    socket.sppWriteAsync(clientNumber, arrayBuffer).then(() => {
+      console.info("sppWrite success");
+    });
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.sppReadAsync18+
 
-PhonePC/2in1TabletTVWearable
-
 sppReadAsync(clientSocket: number): Promise<ArrayBuffer>
 
-客户端和服务端均可使用，读取对端发送数据的异步接口。使用Promise异步回调。该接口支持断开连接时，会抛出错误码并返回。
+客户端和服务端均可使用，读取对端发送数据的异步接口。使用Promise异步回调。当连接断开时，该接口会抛出错误码并返回。
 
 * 若客户端使用，需在调用[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)后，且连接成功后使用。
 * 若服务端使用，需在调用[socket.sppAccept](js-apis-bluetooth-socket.md#socketsppaccept)后，且连接成功后使用。
@@ -638,35 +617,33 @@ sppReadAsync(clientSocket: number): Promise<ArrayBuffer>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. async function readAsync(clientNumber: number) {
-5. let flag = 1;
-6. try {
-7. while (flag) { // 该接口需业务循环调用读取，具体循环形式按业务需要来实现，这里只是示例。
-8. let buffer = await socket.sppReadAsync(clientNumber); // 使用await确保顺序读取。
-9. let data = new Uint8Array(buffer);
-10. if (data) {
-11. console.info('sppRead success, data length = ' + data.byteLength);
-12. // 在此处理接收到的数据。
-13. }
-14. }
-15. } catch (err) {
-16. console.error('startSppRead errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-17. socket.sppCloseClientSocket(clientNumber); // 发生错误时关闭连接。
-18. }
-19. }
+// 入参clientNumber由sppAccept或sppConnect接口获取。
+async function readAsync(clientNumber: number) {
+  let flag = 1;
+  try {
+    while (flag) { // 该接口需业务循环调用读取，具体循环形式按业务需要来实现，这里只是示例。
+      let buffer = await socket.sppReadAsync(clientNumber); // 使用await确保顺序读取。
+      let data = new Uint8Array(buffer);
+      if (data) {
+        console.info('sppRead success, data length = ' + data.byteLength);
+        // 在此处理接收到的数据。
+      }
+    }
+  } catch (err) {
+    console.error('startSppRead errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    socket.sppCloseClientSocket(clientNumber); // 发生错误时关闭连接。
+  }
+}
 ```
 
 ## socket.getMaxReceiveDataSize22+
 
-PhonePC/2in1TabletTVWearable
-
 getMaxReceiveDataSize(clientSocket: number): number
 
-客户端和服务端均可使用，获取当前套接字链路类型下最大接收数据的大小。
+客户端和服务端均可使用，获取当前套接字链路类型下最大接收数据的大小。通过[socket.sppReadAsync](js-apis-bluetooth-socket.md#socketsppreadasync18)或[socket.on('sppRead')](js-apis-bluetooth-socket.md#socketonsppread)接收数据时，单次接收的数据大小受此返回值约束（SPP\_RFCOMM链路类型无此限制）。例如在文件传输、数据同步等需要接收大量数据的场景中，可调用此接口获取单次接收的最大数据量，以便对接收数据进行分片处理。
 
 * 若客户端使用，需在调用[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)后，且连接成功后使用。
 * 若服务端使用，需在调用[socket.sppAccept](js-apis-bluetooth-socket.md#socketsppaccept)后，且连接成功后使用。
@@ -688,25 +665,23 @@ getMaxReceiveDataSize(clientSocket: number): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. let clientSocket = 1;
-5. try {
-6. let result: number = socket.getMaxReceiveDataSize(clientSocket);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+// 入参clientNumber由sppAccept或sppConnect接口获取。
+let clientSocket = 1;
+try {
+    let result: number = socket.getMaxReceiveDataSize(clientSocket);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.getMaxTransmitDataSize22+
 
-PhonePC/2in1TabletTVWearable
-
 getMaxTransmitDataSize(clientSocket: number): number
 
-客户端和服务端均可使用，获取套接字当前链路类型下最大发送数据的大小。
+客户端和服务端均可使用，获取套接字当前链路类型下最大发送数据的大小。调用[socket.sppWrite](js-apis-bluetooth-socket.md#socketsppwrite)或[socket.sppWriteAsync](js-apis-bluetooth-socket.md#socketsppwriteasync18)发送数据时，单次发送的数据大小不应超过此返回值（SPP\_RFCOMM链路类型无此限制）。例如在文件传输、音视频数据传输等需要发送大量数据的场景中，可调用此接口获取单次发送的最大数据量，以便对发送数据进行分片处理。
 
 * 若客户端使用，需在调用[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)后，且连接成功后使用。
 * 若服务端使用，需在调用[socket.sppAccept](js-apis-bluetooth-socket.md#socketsppaccept)后，且连接成功后使用。
@@ -728,21 +703,19 @@ getMaxTransmitDataSize(clientSocket: number): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. let clientSocket = 1;
-5. try {
-6. let result: number = socket.getMaxTransmitDataSize(clientSocket);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+// 入参clientNumber由sppAccept或sppConnect接口获取。
+let clientSocket = 1;
+try {
+    let result: number = socket.getMaxTransmitDataSize(clientSocket);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## socket.isConnected22+
-
-PhonePC/2in1TabletTVWearable
 
 isConnected(clientSocket: number): boolean
 
@@ -764,21 +737,19 @@ isConnected(clientSocket: number): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 入参clientNumber由sppAccept或sppConnect接口获取。
-4. let clientSocket = 1;
-5. try {
-6. let result: boolean = socket.isConnected(clientSocket);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+// 入参clientNumber由sppAccept或sppConnect接口获取。
+let clientSocket = 1;
+try {
+    let result: boolean = socket.isConnected(clientSocket);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## SppOptions
-
-PhonePC/2in1TabletTVWearable
 
 描述套接字的配置参数。
 
@@ -789,11 +760,9 @@ PhonePC/2in1TabletTVWearable
 | uuid | string | 否 | 否 | RFCOMM套接字链路类型的服务UUID，例如"00001101-0000-1000-8000-00805F9B34FB"。  - 建议开发者使用自定义的服务UUID（可通过工具函数[util.generateRandomUUID](js-apis-util.md#utilgeneraterandomuuid9)生成），也可以使用标准协议定义的Serial Port UUID服务(00001101-0000-1000-8000-00805F9B34FB)。  - SppType设置为SPP\_RFCOMM时该参数必选。  - SppType设置为SPP\_L2CAP或SPP\_L2CAP\_BLE时设置为空字符串。 |
 | secure | boolean | 否 | 否 | 是否是安全通道。true表示是安全通道，false表示非安全通道。 |
 | type | [SppType](js-apis-bluetooth-socket.md#spptype) | 否 | 否 | 蓝牙套接字链路类型。 |
-| psm20+ | number | 否 | 是 | 协议/服务多路复用器值，用于标识特定的服务数据传输通道。不填写该参数时默认值为-1。  对于客户端：  - SppType设置为SPP\_RFCOMM时，该参数不填。  - SppType设置为SPP\_L2CAP\_BLE或SPP\_L2CAP时，需和服务端的psm值保持一致。  对于服务端：  - SppType设置为SPP\_RFCOMM时，该参数不填。  - SppType设置为SPP\_L2CAP\_BLE时，psm值必须由系统自动分配，有效值范围为[0x01, 0xFF]。  - SppType设置为SPP\_L2CAP时，psm值可以主动设置或蓝牙子系统分配，若为主动设置，其有效范围为[0x00, 0xFFFF]，并且需要满足低位字节最低位必须为1，高位字节最低位必须为0；若为蓝牙子系统分配，该参数不填，可以通过[socket.getL2capPsm](js-apis-bluetooth-socket.md#socketgetl2cappsm20)接口获取psm值。 |
+| psm20+ | number | 否 | 是 | 协议/服务多路复用器值，用于标识特定的服务数据传输通道。不填写该参数时默认值为-1。  对于客户端：  - SppType设置为SPP\_RFCOMM时，该参数不填。  - SppType设置为SPP\_L2CAP\_BLE或SPP\_L2CAP时，需和服务端的psm值保持一致。  对于服务端：  - SppType设置为SPP\_RFCOMM时，该参数不填。  - SppType设置为SPP\_L2CAP\_BLE时，psm值必须由系统自动分配，有效值范围为[0x01, 0xFF]。  - SppType设置为SPP\_L2CAP时，psm值可以主动设置或蓝牙子系统分配，若为主动设置，其有效范围为[0x01, 0xFEFF]，并且需要满足低位字节最低位必须为1，高位字节最低位必须为0；若为蓝牙子系统分配，该参数不填，可以通过[socket.getL2capPsm](js-apis-bluetooth-socket.md#socketgetl2cappsm20)接口获取psm值。 |
 
 ## SppType
-
-PhonePC/2in1TabletTVWearable
 
 枚举，蓝牙套接字链路类型。
 

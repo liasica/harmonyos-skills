@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-parame
 title: "@typescript-eslint/no-parameter-properties"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-parameter-properties
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:37+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:43caf17c41d2392718603ee7b8ec62165eb5aba76d9ca9bc561078fa20a0d90d
+content_hash: sha256:025f8d53b2b421a4aafc3109702c864b5c4d888bdf6cfa91a856a5f91c91477d
 ---
 
 禁止在类构造函数中使用参数属性。
@@ -14,13 +14,13 @@ content_hash: sha256:43caf17c41d2392718603ee7b8ec62165eb5aba76d9ca9bc561078fa20a
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/no-parameter-properties": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-parameter-properties": "error"
+  }
+}
 ```
 
 ## 选项
@@ -39,40 +39,40 @@ allows：接受一个字符串数组，数组中的属性可以使用。字符�
 
 示例：
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/no-parameter-properties": ["error", {"allows": ["readonly"]}]
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-parameter-properties": ["error", {"allows": ["readonly"]}]
+  }
+}
 ```
 
 ## 正例
 
-```
-1. export class Foo {
-2. public name: string;
+```screen
+export class Foo {
+  public name: string;
 
-4. public constructor(name: string) {
-5. this.name = name;
-6. }
-7. }
+  public constructor(name: string) {
+    this.name = name;
+  }
+}
 ```
 
 ## 反例
 
-```
-1. export class Foo {
-2. // 默认配置下，参数不允许使用readonly
-3. public constructor(public readonly name: string) {}
-4. }
+```screen
+export class Foo {
+  // 默认配置下，参数不允许使用readonly
+  public constructor(public readonly name: string) {}
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-alphaanimation
-title: AlphaAnimation
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > AlphaAnimation
+title: Class (AlphaAnimation)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (AlphaAnimation)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:15+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:949d3bc640428a5b786a998e4310f8b9fae6f19b5e7f70a3b6e022b4c4c4cc52
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:946fc445c15ff0f3abfcd9b46fa1490a57e290e9f190b899ee3e473ff79dc790
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map } from '@kit.MapKit';
+```typescript
+import { map } from '@kit.MapKit';
 ```
 
 ## AlphaAnimation
-
-PhonePC/2in1TabletWearable
 
 控制透明度的动画类，继承[Animation](map-map-animation.md)。
 
@@ -31,8 +27,6 @@ PhonePC/2in1TabletWearable
 **起始版本：** 4.1.0(11)
 
 ### constructor
-
-PhonePC/2in1TabletWearable
 
 constructor(fromAlpha: number, toAlpha: number)
 
@@ -55,6 +49,6 @@ constructor(fromAlpha: number, toAlpha: number)
 
 **示例：**
 
-```
-1. let animation: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
+```typescript
+let animation: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-uds-
 title: uds.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > uds.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:35+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:0baf15b778d03cc2070ed199c6bf98a77cd8690a713030ffd1509d959cc593cb
+scraped_at: 2026-09-02T15:00:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2d2fd1e0a03d91957c50294dd15c87b2d4fbcbb16dc235dc3d4fd3cf13842364
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 提供标准化数据结构相关接口函数、结构体定义。当参数类型为char\*时，字符串必须以空字符（'\0'）结尾。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -44,9 +38,13 @@ PhonePC/2in1TabletTV
 | [OH\_UdsContentForm](capi-udmf-oh-udscontentform.md) | OH\_UdsContentForm | 描述内容卡片类型的统一数据结构。 |
 | [OH\_UdsDetails](capi-udmf-oh-udsdetails.md) | OH\_UdsDetails | 描述字典类型的统一数据结构。 |
 
-### 函数
+### 枚举
 
-PhonePC/2in1TabletTV
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| [Udmf\_AuthPermission](capi-uds-h.md#udmf_authpermission) | Udmf\_AuthPermission | 拖拽场景下的URI授权策略。  说明：此授权策略仅在拖拽场景下生效，其他场景不生效。 |
+
+### 函数
 
 | 名称 | 描述 |
 | --- | --- |
@@ -79,7 +77,7 @@ PhonePC/2in1TabletTV
 | [const char\* OH\_UdsAppItem\_GetIconId(OH\_UdsAppItem\* pThis)](capi-uds-h.md#oh_udsappitem_geticonid) | 从桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)实例中获取图片ID。 |
 | [const char\* OH\_UdsAppItem\_GetLabelId(OH\_UdsAppItem\* pThis)](capi-uds-h.md#oh_udsappitem_getlabelid) | 从桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)实例中获取标签ID。 |
 | [const char\* OH\_UdsAppItem\_GetBundleName(OH\_UdsAppItem\* pThis)](capi-uds-h.md#oh_udsappitem_getbundlename) | 从桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)实例中获取bundle名称。 |
-| [const char\* OH\_UdsAppItem\_GetAbilityName(OH\_UdsAppItem\* pThis)](capi-uds-h.md#oh_udsappitem_getabilityname) | 从桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)实例中ability名称。 |
+| [const char\* OH\_UdsAppItem\_GetAbilityName(OH\_UdsAppItem\* pThis)](capi-uds-h.md#oh_udsappitem_getabilityname) | 从桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)实例中获取ability名称。 |
 | [int OH\_UdsAppItem\_SetId(OH\_UdsAppItem\* pThis, const char\* appId)](capi-uds-h.md#oh_udsappitem_setid) | 设置桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的应用ID。 |
 | [int OH\_UdsAppItem\_SetName(OH\_UdsAppItem\* pThis, const char\* appName)](capi-uds-h.md#oh_udsappitem_setname) | 设置桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的应用名称。 |
 | [int OH\_UdsAppItem\_SetIconId(OH\_UdsAppItem\* pThis, const char\* appIconId)](capi-uds-h.md#oh_udsappitem_seticonid) | 设置桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的图片ID。 |
@@ -102,7 +100,7 @@ PhonePC/2in1TabletTV
 | [int OH\_UdsArrayBuffer\_Destroy(OH\_UdsArrayBuffer\* buffer)](capi-uds-h.md#oh_udsarraybuffer_destroy) | 销毁ArrayBuffer类型[OH\_UdsArrayBuffer](capi-udmf-oh-udsarraybuffer.md)的实例对象。 |
 | [int OH\_UdsArrayBuffer\_SetData(OH\_UdsArrayBuffer\* buffer, unsigned char\* data, unsigned int len)](capi-uds-h.md#oh_udsarraybuffer_setdata) | 设置ArrayBuffer类型[OH\_UdsArrayBuffer](capi-udmf-oh-udsarraybuffer.md)对象的数据内容。 |
 | [int OH\_UdsArrayBuffer\_GetData(OH\_UdsArrayBuffer\* buffer, unsigned char\*\* data, unsigned int\* len)](capi-uds-h.md#oh_udsarraybuffer_getdata) | 从ArrayBuffer类型[OH\_UdsArrayBuffer](capi-udmf-oh-udsarraybuffer.md)实例中获取用户自定义的ArrayBuffer数据内容。 |
-| [OH\_UdsContentForm\* OH\_UdsContentForm\_Create()](capi-uds-h.md#oh_udscontentform_create) | 创建内容卡片类型[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)指针及实例对象。 |
+| [OH\_UdsContentForm\* OH\_UdsContentForm\_Create()](capi-uds-h.md#oh_udscontentform_create) | 创建内容卡片类型[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)指针及实例对象。当不再需要使用指针时，请使用[OH\_UdsContentForm\_Destroy](capi-uds-h.md#oh_udscontentform_destroy)销毁实例对象，否则会导致内存泄漏。 |
 | [void OH\_UdsContentForm\_Destroy(OH\_UdsContentForm\* pThis)](capi-uds-h.md#oh_udscontentform_destroy) | 销毁内容卡片类型数据[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)指针指向的实例对象。 |
 | [const char\* OH\_UdsContentForm\_GetType(OH\_UdsContentForm\* pThis)](capi-uds-h.md#oh_udscontentform_gettype) | 从内容卡片类型[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)中获取类型ID。 |
 | [int OH\_UdsContentForm\_GetThumbData(OH\_UdsContentForm\* pThis, unsigned char\*\* thumbData, unsigned int\* len)](capi-uds-h.md#oh_udscontentform_getthumbdata) | 从内容卡片类型[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)中获取图片数据。 |
@@ -137,17 +135,58 @@ PhonePC/2in1TabletTV
 | [int OH\_UdsDetails\_SetValue(OH\_UdsDetails\* pThis, const char\* key, const char\* value)](capi-uds-h.md#oh_udsdetails_setvalue) | 向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)中添加键值对数据。 |
 | [const char\* OH\_UdsDetails\_GetValue(const OH\_UdsDetails\* pThis, const char\* key)](capi-uds-h.md#oh_udsdetails_getvalue) | 获取字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)中指定的键对应的值。 |
 | [char\*\* OH\_UdsDetails\_GetAllKeys(OH\_UdsDetails\* pThis, unsigned int\* count)](capi-uds-h.md#oh_udsdetails_getallkeys) | 获取字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)中所有键的结果集。 |
+| [int OH\_UdsHtml\_SetAuthPolicy(OH\_UdsHtml\* pThis, uint32\_t authPolicy)](capi-uds-h.md#oh_udshtml_setauthpolicy) | 给[OH\_UdsHtml](capi-udmf-oh-udshtml.md)设置授权策略。  说明：此授权策略仅在拖拽场景下生效，其他场景不生效。 |
+| [int OH\_UdsFileUri\_SetAuthPolicy(OH\_UdsFileUri\* pThis, uint32\_t authPolicy)](capi-uds-h.md#oh_udsfileuri_setauthpolicy) | 给[OH\_UdsFileUri](capi-udmf-oh-udsfileuri.md)设置授权策略。  说明：此授权策略仅在拖拽场景下生效，其他场景不生效。 |
+
+## 枚举类型说明
+
+### Udmf\_AuthPermission
+
+```c
+enum Udmf_AuthPermission
+```
+
+**描述**
+
+拖拽场景下的URI授权策略。
+
+**说明** 
+
+此授权策略仅在拖拽场景下生效，其他场景不生效。
+
+支持不授权、读、写、持久化四种权限策略，可组合使用，仅以下组合生效：
+
+* 仅使用NONE：不做任何文件授权。
+* 仅使用READ：仅做单次只读授权。
+* 仅使用WRITE：做单次读、写授权（写授权包含读授权）。
+* READ+WRITE：做单次读、写授权，与仅写授权等同。
+* READ+PERSIST：做持久化读授权。
+* WRITE+PERSIST：做持久化读写授权。
+* READ+WRITE+PERSIST：做持久化读写授权。
+
+拖拽授权策略应用规则（按优先级从高到低）：
+
+* 单个数据级别：FileUri、HTML两个UDS支持配置授权策略参数，仅对单个record单次生效，优先级最高。
+* [OH\_UdmfData](capi-udmf-oh-udmfdata.md)级别：[OH\_UdmfProperty](capi-udmf-oh-udmfproperty.md)中提供的授权参数对单次拖拽有效。若某个数据中配置了授权策略，则优先按照该数据的配置进行，优先级次之。
+* 默认级别：若单个数据和[OH\_UdmfProperty](capi-udmf-oh-udmfproperty.md)均未配置授权策略，则按照拖拽默认逻辑进行代理授权。默认逻辑如下：
+* FileUri类型数据：拖拽场景下默认授权为READ+WRITE+PERSIST（读+写+持久化授权）。
+* HTML类型数据：仅针对HTML文本中img标签下的uri做读授权。
+
+**起始版本：** 26.0.0
+
+| 枚举项 | 描述 |
+| --- | --- |
+| UDMF\_PERM\_NONE = 0 | 表示未授予任何权限。 |
+| UDMF\_PERM\_READ = 1u << 0 | 表示读取或查看数据的权限。 |
+| UDMF\_PERM\_WRITE = 1u << 1 | 表示修改数据的权限（包含READ）。 |
+| UDMF\_PERM\_PERSIST = 1u << 2 | 表示持久化文件的权限。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_UdsPlainText\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsPlainText* OH_UdsPlainText_Create()
+```c
+OH_UdsPlainText* OH_UdsPlainText_Create()
 ```
 
 **描述**
@@ -164,10 +203,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsPlainText\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsPlainText_Destroy(OH_UdsPlainText* pThis)
+```c
+void OH_UdsPlainText_Destroy(OH_UdsPlainText* pThis)
 ```
 
 **描述**
@@ -184,10 +221,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsPlainText\_GetType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsPlainText_GetType(OH_UdsPlainText* pThis)
+```c
+const char* OH_UdsPlainText_GetType(OH_UdsPlainText* pThis)
 ```
 
 **描述**
@@ -210,10 +245,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsPlainText\_GetContent()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsPlainText_GetContent(OH_UdsPlainText* pThis)
+```c
+const char* OH_UdsPlainText_GetContent(OH_UdsPlainText* pThis)
 ```
 
 **描述**
@@ -236,10 +269,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsPlainText\_GetAbstract()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsPlainText_GetAbstract(OH_UdsPlainText* pThis)
+```c
+const char* OH_UdsPlainText_GetAbstract(OH_UdsPlainText* pThis)
 ```
 
 **描述**
@@ -260,14 +291,10 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | const char\* | 输入有效入参时返回纯文本摘要信息的字符串指针，否则返回nullptr。 |
 
-OH\_UdsPlainText
-
 ### OH\_UdsPlainText\_SetContent()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsPlainText_SetContent(OH_UdsPlainText* pThis, const char* content)
+```c
+int OH_UdsPlainText_SetContent(OH_UdsPlainText* pThis, const char* content)
 ```
 
 **描述**
@@ -287,14 +314,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsPlainText\_SetAbstract()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsPlainText_SetAbstract(OH_UdsPlainText* pThis, const char* abstract)
+```c
+int OH_UdsPlainText_SetAbstract(OH_UdsPlainText* pThis, const char* abstract)
 ```
 
 **描述**
@@ -314,14 +339,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsHyperlink\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsHyperlink* OH_UdsHyperlink_Create()
+```c
+OH_UdsHyperlink* OH_UdsHyperlink_Create()
 ```
 
 **描述**
@@ -338,10 +361,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHyperlink\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsHyperlink_Destroy(OH_UdsHyperlink* pThis)
+```c
+void OH_UdsHyperlink_Destroy(OH_UdsHyperlink* pThis)
 ```
 
 **描述**
@@ -358,10 +379,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHyperlink\_GetType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsHyperlink_GetType(OH_UdsHyperlink* pThis)
+```c
+const char* OH_UdsHyperlink_GetType(OH_UdsHyperlink* pThis)
 ```
 
 **描述**
@@ -384,10 +403,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHyperlink\_GetUrl()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsHyperlink_GetUrl(OH_UdsHyperlink* pThis)
+```c
+const char* OH_UdsHyperlink_GetUrl(OH_UdsHyperlink* pThis)
 ```
 
 **描述**
@@ -410,10 +427,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHyperlink\_GetDescription()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsHyperlink_GetDescription(OH_UdsHyperlink* pThis)
+```c
+const char* OH_UdsHyperlink_GetDescription(OH_UdsHyperlink* pThis)
 ```
 
 **描述**
@@ -436,10 +451,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHyperlink\_SetUrl()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsHyperlink_SetUrl(OH_UdsHyperlink* pThis, const char* url)
+```c
+int OH_UdsHyperlink_SetUrl(OH_UdsHyperlink* pThis, const char* url)
 ```
 
 **描述**
@@ -459,14 +472,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsHyperlink\_SetDescription()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsHyperlink_SetDescription(OH_UdsHyperlink* pThis, const char* description)
+```c
+int OH_UdsHyperlink_SetDescription(OH_UdsHyperlink* pThis, const char* description)
 ```
 
 **描述**
@@ -486,14 +497,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsHtml\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsHtml* OH_UdsHtml_Create()
+```c
+OH_UdsHtml* OH_UdsHtml_Create()
 ```
 
 **描述**
@@ -510,10 +519,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHtml\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsHtml_Destroy(OH_UdsHtml* pThis)
+```c
+void OH_UdsHtml_Destroy(OH_UdsHtml* pThis)
 ```
 
 **描述**
@@ -530,10 +537,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHtml\_GetType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsHtml_GetType(OH_UdsHtml* pThis)
+```c
+const char* OH_UdsHtml_GetType(OH_UdsHtml* pThis)
 ```
 
 **描述**
@@ -556,10 +561,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHtml\_GetContent()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsHtml_GetContent(OH_UdsHtml* pThis)
+```c
+const char* OH_UdsHtml_GetContent(OH_UdsHtml* pThis)
 ```
 
 **描述**
@@ -582,10 +585,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHtml\_GetPlainContent()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsHtml_GetPlainContent(OH_UdsHtml* pThis)
+```c
+const char* OH_UdsHtml_GetPlainContent(OH_UdsHtml* pThis)
 ```
 
 **描述**
@@ -608,10 +609,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsHtml\_SetContent()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsHtml_SetContent(OH_UdsHtml* pThis, const char* content)
+```c
+int OH_UdsHtml_SetContent(OH_UdsHtml* pThis, const char* content)
 ```
 
 **描述**
@@ -631,14 +630,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsHtml\_SetPlainContent()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsHtml_SetPlainContent(OH_UdsHtml* pThis, const char* plainContent)
+```c
+int OH_UdsHtml_SetPlainContent(OH_UdsHtml* pThis, const char* plainContent)
 ```
 
 **描述**
@@ -658,14 +655,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsAppItem\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsAppItem* OH_UdsAppItem_Create()
+```c
+OH_UdsAppItem* OH_UdsAppItem_Create()
 ```
 
 **描述**
@@ -682,10 +677,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsAppItem\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsAppItem_Destroy(OH_UdsAppItem* pThis)
+```c
+void OH_UdsAppItem_Destroy(OH_UdsAppItem* pThis)
 ```
 
 **描述**
@@ -698,14 +691,12 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 
 ### OH\_UdsAppItem\_GetType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsAppItem_GetType(OH_UdsAppItem* pThis)
+```c
+const char* OH_UdsAppItem_GetType(OH_UdsAppItem* pThis)
 ```
 
 **描述**
@@ -718,7 +709,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 
 **返回：**
 
@@ -728,10 +719,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsAppItem\_GetId()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsAppItem_GetId(OH_UdsAppItem* pThis)
+```c
+const char* OH_UdsAppItem_GetId(OH_UdsAppItem* pThis)
 ```
 
 **描述**
@@ -744,7 +733,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 
 **返回：**
 
@@ -754,10 +743,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsAppItem\_GetName()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsAppItem_GetName(OH_UdsAppItem* pThis)
+```c
+const char* OH_UdsAppItem_GetName(OH_UdsAppItem* pThis)
 ```
 
 **描述**
@@ -770,7 +757,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 
 **返回：**
 
@@ -780,10 +767,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsAppItem\_GetIconId()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsAppItem_GetIconId(OH_UdsAppItem* pThis)
+```c
+const char* OH_UdsAppItem_GetIconId(OH_UdsAppItem* pThis)
 ```
 
 **描述**
@@ -796,7 +781,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 
 **返回：**
 
@@ -806,10 +791,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsAppItem\_GetLabelId()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsAppItem_GetLabelId(OH_UdsAppItem* pThis)
+```c
+const char* OH_UdsAppItem_GetLabelId(OH_UdsAppItem* pThis)
 ```
 
 **描述**
@@ -822,7 +805,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 
 **返回：**
 
@@ -832,10 +815,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsAppItem\_GetBundleName()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsAppItem_GetBundleName(OH_UdsAppItem* pThis)
+```c
+const char* OH_UdsAppItem_GetBundleName(OH_UdsAppItem* pThis)
 ```
 
 **描述**
@@ -848,7 +829,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 
 **返回：**
 
@@ -858,10 +839,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsAppItem\_GetAbilityName()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsAppItem_GetAbilityName(OH_UdsAppItem* pThis)
+```c
+const char* OH_UdsAppItem_GetAbilityName(OH_UdsAppItem* pThis)
 ```
 
 **描述**
@@ -874,7 +853,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 
 **返回：**
 
@@ -884,10 +863,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsAppItem\_SetId()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsAppItem_SetId(OH_UdsAppItem* pThis, const char* appId)
+```c
+int OH_UdsAppItem_SetId(OH_UdsAppItem* pThis, const char* appId)
 ```
 
 **描述**
@@ -900,21 +877,19 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 | const char\* appId | 表示应用ID。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsAppItem\_SetName()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsAppItem_SetName(OH_UdsAppItem* pThis, const char* appName)
+```c
+int OH_UdsAppItem_SetName(OH_UdsAppItem* pThis, const char* appName)
 ```
 
 **描述**
@@ -927,21 +902,19 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 | const char\* appName | 表示应用名称。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsAppItem\_SetIconId()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsAppItem_SetIconId(OH_UdsAppItem* pThis, const char* appIconId)
+```c
+int OH_UdsAppItem_SetIconId(OH_UdsAppItem* pThis, const char* appIconId)
 ```
 
 **描述**
@@ -954,21 +927,19 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 | const char\* appIconId | 表示图片ID。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsAppItem\_SetLabelId()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsAppItem_SetLabelId(OH_UdsAppItem* pThis, const char* appLabelId)
+```c
+int OH_UdsAppItem_SetLabelId(OH_UdsAppItem* pThis, const char* appLabelId)
 ```
 
 **描述**
@@ -981,21 +952,19 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 | const char\* appLabelId | 表示标签ID。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsAppItem\_SetBundleName()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsAppItem_SetBundleName(OH_UdsAppItem* pThis, const char* bundleName)
+```c
+int OH_UdsAppItem_SetBundleName(OH_UdsAppItem* pThis, const char* bundleName)
 ```
 
 **描述**
@@ -1008,21 +977,19 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 | const char\* bundleName | 表示bundle名称。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsAppItem\_SetAbilityName()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsAppItem_SetAbilityName(OH_UdsAppItem* pThis, const char* abilityName)
+```c
+int OH_UdsAppItem_SetAbilityName(OH_UdsAppItem* pThis, const char* abilityName)
 ```
 
 **描述**
@@ -1035,21 +1002,19 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 | const char\* abilityName | 表示ability名称。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsFileUri\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsFileUri* OH_UdsFileUri_Create()
+```c
+OH_UdsFileUri* OH_UdsFileUri_Create()
 ```
 
 **描述**
@@ -1066,10 +1031,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsFileUri\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsFileUri_Destroy(OH_UdsFileUri* pThis)
+```c
+void OH_UdsFileUri_Destroy(OH_UdsFileUri* pThis)
 ```
 
 **描述**
@@ -1086,10 +1049,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsFileUri\_GetType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsFileUri_GetType(OH_UdsFileUri* pThis)
+```c
+const char* OH_UdsFileUri_GetType(OH_UdsFileUri* pThis)
 ```
 
 **描述**
@@ -1112,10 +1073,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsFileUri\_GetFileUri()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsFileUri_GetFileUri(OH_UdsFileUri* pThis)
+```c
+const char* OH_UdsFileUri_GetFileUri(OH_UdsFileUri* pThis)
 ```
 
 **描述**
@@ -1138,10 +1097,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsFileUri\_GetFileType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsFileUri_GetFileType(OH_UdsFileUri* pThis)
+```c
+const char* OH_UdsFileUri_GetFileType(OH_UdsFileUri* pThis)
 ```
 
 **描述**
@@ -1164,10 +1121,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsFileUri\_SetFileUri()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsFileUri_SetFileUri(OH_UdsFileUri* pThis, const char* fileUri)
+```c
+int OH_UdsFileUri_SetFileUri(OH_UdsFileUri* pThis, const char* fileUri)
 ```
 
 **描述**
@@ -1187,14 +1142,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsFileUri\_SetFileType()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsFileUri_SetFileType(OH_UdsFileUri* pThis, const char* fileType)
+```c
+int OH_UdsFileUri_SetFileType(OH_UdsFileUri* pThis, const char* fileType)
 ```
 
 **描述**
@@ -1214,14 +1167,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsPixelMap\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsPixelMap* OH_UdsPixelMap_Create()
+```c
+OH_UdsPixelMap* OH_UdsPixelMap_Create()
 ```
 
 **描述**
@@ -1238,10 +1189,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsPixelMap\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsPixelMap_Destroy(OH_UdsPixelMap* pThis)
+```c
+void OH_UdsPixelMap_Destroy(OH_UdsPixelMap* pThis)
 ```
 
 **描述**
@@ -1258,10 +1207,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsPixelMap\_GetType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsPixelMap_GetType(OH_UdsPixelMap* pThis)
+```c
+const char* OH_UdsPixelMap_GetType(OH_UdsPixelMap* pThis)
 ```
 
 **描述**
@@ -1284,10 +1231,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsPixelMap\_GetPixelMap()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsPixelMap_GetPixelMap(OH_UdsPixelMap* pThis, OH_PixelmapNative* pixelmapNative)
+```c
+void OH_UdsPixelMap_GetPixelMap(OH_UdsPixelMap* pThis, OH_PixelmapNative* pixelmapNative)
 ```
 
 **描述**
@@ -1305,10 +1250,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsPixelMap\_SetPixelMap()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsPixelMap_SetPixelMap(OH_UdsPixelMap* pThis, OH_PixelmapNative* pixelmapNative)
+```c
+int OH_UdsPixelMap_SetPixelMap(OH_UdsPixelMap* pThis, OH_PixelmapNative* pixelmapNative)
 ```
 
 **描述**
@@ -1322,20 +1265,18 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_UdsPixelMap](capi-udmf-oh-udspixelmap.md)\* pThis | 表示指向像素图片类型[OH\_UdsPixelMap](capi-udmf-oh-udspixelmap.md)实例的指针。 |
-| OH\_PixelmapNative\* pixelmapNative | 表示指向像素图片[OH\_PixelmapNative](capi-pixelmap-native-h.md#oh_pixelmapnative_antialiasinglevel)实例的指针 |
+| OH\_PixelmapNative\* pixelmapNative | 表示指向像素图片[OH\_PixelmapNative](capi-pixelmap-native-h.md#oh_pixelmapnative_antialiasinglevel)实例的指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsArrayBuffer\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsArrayBuffer* OH_UdsArrayBuffer_Create()
+```c
+OH_UdsArrayBuffer* OH_UdsArrayBuffer_Create()
 ```
 
 **描述**
@@ -1352,10 +1293,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsArrayBuffer\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsArrayBuffer_Destroy(OH_UdsArrayBuffer* buffer)
+```c
+int OH_UdsArrayBuffer_Destroy(OH_UdsArrayBuffer* buffer)
 ```
 
 **描述**
@@ -1374,14 +1313,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[OH\_UdsArrayBuffer](capi-udmf-oh-udsarraybuffer.md)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsArrayBuffer\_SetData()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsArrayBuffer_SetData(OH_UdsArrayBuffer* buffer, unsigned char* data, unsigned int len)
+```c
+int OH_UdsArrayBuffer_SetData(OH_UdsArrayBuffer* buffer, unsigned char* data, unsigned int len)
 ```
 
 **描述**
@@ -1402,14 +1339,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[OH\_UdsArrayBuffer](capi-udmf-oh-udsarraybuffer.md)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsArrayBuffer\_GetData()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsArrayBuffer_GetData(OH_UdsArrayBuffer* buffer, unsigned char** data, unsigned int* len)
+```c
+int OH_UdsArrayBuffer_GetData(OH_UdsArrayBuffer* buffer, unsigned char** data, unsigned int* len)
 ```
 
 **描述**
@@ -1430,19 +1365,17 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[OH\_UdsArrayBuffer](capi-udmf-oh-udsarraybuffer.md)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsContentForm\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsContentForm* OH_UdsContentForm_Create()
+```c
+OH_UdsContentForm* OH_UdsContentForm_Create()
 ```
 
 **描述**
 
-创建内容卡片类型[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)指针及实例对象。
+创建内容卡片类型[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)指针及实例对象。当不再需要使用指针时，请使用[OH\_UdsContentForm\_Destroy](capi-uds-h.md#oh_udscontentform_destroy)销毁实例对象，否则会导致内存泄漏。
 
 **起始版本：** 14
 
@@ -1454,10 +1387,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsContentForm\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsContentForm_Destroy(OH_UdsContentForm* pThis)
+```c
+void OH_UdsContentForm_Destroy(OH_UdsContentForm* pThis)
 ```
 
 **描述**
@@ -1474,10 +1405,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsContentForm\_GetType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsContentForm_GetType(OH_UdsContentForm* pThis)
+```c
+const char* OH_UdsContentForm_GetType(OH_UdsContentForm* pThis)
 ```
 
 **描述**
@@ -1500,10 +1429,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsContentForm\_GetThumbData()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsContentForm_GetThumbData(OH_UdsContentForm* pThis, unsigned char** thumbData, unsigned int* len)
+```c
+int OH_UdsContentForm_GetThumbData(OH_UdsContentForm* pThis, unsigned char** thumbData, unsigned int* len)
 ```
 
 **描述**
@@ -1524,14 +1451,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。  若返回UDMF\_ERR，表示出现了内部系统错误。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。  若返回UDMF\_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsContentForm\_GetDescription()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsContentForm_GetDescription(OH_UdsContentForm* pThis)
+```c
+const char* OH_UdsContentForm_GetDescription(OH_UdsContentForm* pThis)
 ```
 
 **描述**
@@ -1554,10 +1479,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsContentForm\_GetTitle()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsContentForm_GetTitle(OH_UdsContentForm* pThis)
+```c
+const char* OH_UdsContentForm_GetTitle(OH_UdsContentForm* pThis)
 ```
 
 **描述**
@@ -1580,10 +1503,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsContentForm\_GetAppIcon()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsContentForm_GetAppIcon(OH_UdsContentForm* pThis, unsigned char** appIcon, unsigned int* len)
+```c
+int OH_UdsContentForm_GetAppIcon(OH_UdsContentForm* pThis, unsigned char** appIcon, unsigned int* len)
 ```
 
 **描述**
@@ -1604,14 +1525,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。  若返回UDMF\_ERR，表示出现了内部系统错误。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。  若返回UDMF\_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsContentForm\_GetAppName()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsContentForm_GetAppName(OH_UdsContentForm* pThis)
+```c
+const char* OH_UdsContentForm_GetAppName(OH_UdsContentForm* pThis)
 ```
 
 **描述**
@@ -1634,10 +1553,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsContentForm\_GetLinkUri()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsContentForm_GetLinkUri(OH_UdsContentForm* pThis)
+```c
+const char* OH_UdsContentForm_GetLinkUri(OH_UdsContentForm* pThis)
 ```
 
 **描述**
@@ -1660,10 +1577,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsContentForm\_SetThumbData()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsContentForm_SetThumbData(OH_UdsContentForm* pThis, const unsigned char* thumbData, unsigned int len)
+```c
+int OH_UdsContentForm_SetThumbData(OH_UdsContentForm* pThis, const unsigned char* thumbData, unsigned int len)
 ```
 
 **描述**
@@ -1684,14 +1599,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsContentForm\_SetDescription()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsContentForm_SetDescription(OH_UdsContentForm* pThis, const char* description)
+```c
+int OH_UdsContentForm_SetDescription(OH_UdsContentForm* pThis, const char* description)
 ```
 
 **描述**
@@ -1711,14 +1624,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsContentForm\_SetTitle()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsContentForm_SetTitle(OH_UdsContentForm* pThis, const char* title)
+```c
+int OH_UdsContentForm_SetTitle(OH_UdsContentForm* pThis, const char* title)
 ```
 
 **描述**
@@ -1738,14 +1649,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[OH\_UdsContentForm](capi-udmf-oh-udscontentform.md)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsContentForm\_SetAppIcon()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsContentForm_SetAppIcon(OH_UdsContentForm* pThis, const unsigned char* appIcon, unsigned int len)
+```c
+int OH_UdsContentForm_SetAppIcon(OH_UdsContentForm* pThis, const unsigned char* appIcon, unsigned int len)
 ```
 
 **描述**
@@ -1766,14 +1675,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsContentForm\_SetAppName()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsContentForm_SetAppName(OH_UdsContentForm* pThis, const char* appName)
+```c
+int OH_UdsContentForm_SetAppName(OH_UdsContentForm* pThis, const char* appName)
 ```
 
 **描述**
@@ -1793,14 +1700,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsContentForm\_SetLinkUri()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsContentForm_SetLinkUri(OH_UdsContentForm* pThis, const char* linkUri)
+```c
+int OH_UdsContentForm_SetLinkUri(OH_UdsContentForm* pThis, const char* linkUri)
 ```
 
 **描述**
@@ -1820,14 +1725,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsPlainText\_GetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsPlainText_GetDetails(OH_UdsPlainText* pThis, OH_UdsDetails* details)
+```c
+int OH_UdsPlainText_GetDetails(OH_UdsPlainText* pThis, OH_UdsDetails* details)
 ```
 
 **描述**
@@ -1847,14 +1750,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsPlainText\_SetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsPlainText_SetDetails(OH_UdsPlainText* pThis, const OH_UdsDetails* details)
+```c
+int OH_UdsPlainText_SetDetails(OH_UdsPlainText* pThis, const OH_UdsDetails* details)
 ```
 
 **描述**
@@ -1868,20 +1769,18 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_UdsPlainText](capi-udmf-oh-udsplaintext.md)\* pThis | 表示指向纯文本类型[OH\_UdsPlainText](capi-udmf-oh-udsplaintext.md)实例的指针。 |
-| [const OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
+| const [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsHyperlink\_GetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsHyperlink_GetDetails(OH_UdsHyperlink* pThis, OH_UdsDetails* details)
+```c
+int OH_UdsHyperlink_GetDetails(OH_UdsHyperlink* pThis, OH_UdsDetails* details)
 ```
 
 **描述**
@@ -1901,14 +1800,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsHyperlink\_SetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsHyperlink_SetDetails(OH_UdsHyperlink* pThis, const OH_UdsDetails* details)
+```c
+int OH_UdsHyperlink_SetDetails(OH_UdsHyperlink* pThis, const OH_UdsDetails* details)
 ```
 
 **描述**
@@ -1922,20 +1819,18 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_UdsHyperlink](capi-udmf-oh-udshyperlink.md)\* pThis | 表示指向超链接类型[OH\_UdsHyperlink](capi-udmf-oh-udshyperlink.md)实例的指针。 |
-| [const OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
+| const [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsHtml\_GetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsHtml_GetDetails(OH_UdsHtml* pThis, OH_UdsDetails* details)
+```c
+int OH_UdsHtml_GetDetails(OH_UdsHtml* pThis, OH_UdsDetails* details)
 ```
 
 **描述**
@@ -1955,14 +1850,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsHtml\_SetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsHtml_SetDetails(OH_UdsHtml* pThis, const OH_UdsDetails* details)
+```c
+int OH_UdsHtml_SetDetails(OH_UdsHtml* pThis, const OH_UdsDetails* details)
 ```
 
 **描述**
@@ -1976,20 +1869,18 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_UdsHtml](capi-udmf-oh-udshtml.md)\* pThis | 表示指向超文本标记语言类型[OH\_UdsHtml](capi-udmf-oh-udshtml.md)实例的指针。 |
-| [const OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
+| const [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsAppItem\_GetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsAppItem_GetDetails(OH_UdsAppItem* pThis, OH_UdsDetails* details)
+```c
+int OH_UdsAppItem_GetDetails(OH_UdsAppItem* pThis, OH_UdsDetails* details)
 ```
 
 **描述**
@@ -2002,21 +1893,19 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
 | [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 该参数是输出参数，表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsAppItem\_SetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsAppItem_SetDetails(OH_UdsAppItem* pThis, const OH_UdsDetails* details)
+```c
+int OH_UdsAppItem_SetDetails(OH_UdsAppItem* pThis, const OH_UdsDetails* details)
 ```
 
 **描述**
@@ -2029,21 +1918,19 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示一个指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
-| [const OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
+| [OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)\* pThis | 表示指向桌面图标类型[OH\_UdsAppItem](capi-udmf-oh-udsappitem.md)对象的指针。 |
+| const [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsFileUri\_GetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsFileUri_GetDetails(OH_UdsFileUri* pThis, OH_UdsDetails* details)
+```c
+int OH_UdsFileUri_GetDetails(OH_UdsFileUri* pThis, OH_UdsDetails* details)
 ```
 
 **描述**
@@ -2063,14 +1950,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsFileUri\_SetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsFileUri_SetDetails(OH_UdsFileUri* pThis, const OH_UdsDetails* details)
+```c
+int OH_UdsFileUri_SetDetails(OH_UdsFileUri* pThis, const OH_UdsDetails* details)
 ```
 
 **描述**
@@ -2084,20 +1969,18 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_UdsFileUri](capi-udmf-oh-udsfileuri.md)\* pThis | 表示指向文件Uri类型[OH\_UdsFileUri](capi-udmf-oh-udsfileuri.md)实例的指针。 |
-| [const OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
+| const [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsPixelMap\_GetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsPixelMap_GetDetails(OH_UdsPixelMap* pThis, OH_UdsDetails* details)
+```c
+int OH_UdsPixelMap_GetDetails(OH_UdsPixelMap* pThis, OH_UdsDetails* details)
 ```
 
 **描述**
@@ -2117,14 +2000,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsPixelMap\_SetDetails()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsPixelMap_SetDetails(OH_UdsPixelMap* pThis, const OH_UdsDetails* details)
+```c
+int OH_UdsPixelMap_SetDetails(OH_UdsPixelMap* pThis, const OH_UdsDetails* details)
 ```
 
 **描述**
@@ -2138,20 +2019,18 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_UdsPixelMap](capi-udmf-oh-udspixelmap.md)\* pThis | 表示指向像素图片类型[OH\_UdsPixelMap](capi-udmf-oh-udspixelmap.md)实例的指针。 |
-| [const OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
+| const [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* details | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针，该指针不能为空。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsDetails\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_UdsDetails* OH_UdsDetails_Create()
+```c
+OH_UdsDetails* OH_UdsDetails_Create()
 ```
 
 **描述**
@@ -2166,14 +2045,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_UdsDetails\*](capi-udmf-oh-udsdetails.md) | 执行成功则返回一个指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例对象的指针，否则返回nullptr。 |
+| [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* | 执行成功则返回一个指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例对象的指针，否则返回nullptr。 |
 
 ### OH\_UdsDetails\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_UdsDetails_Destroy(OH_UdsDetails* pThis)
+```c
+void OH_UdsDetails_Destroy(OH_UdsDetails* pThis)
 ```
 
 **描述**
@@ -2190,10 +2067,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsDetails\_HasKey()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_UdsDetails_HasKey(const OH_UdsDetails* pThis, const char* key)
+```c
+bool OH_UdsDetails_HasKey(const OH_UdsDetails* pThis, const char* key)
 ```
 
 **描述**
@@ -2206,7 +2081,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* pThis | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针。 |
+| const [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* pThis | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针。 |
 | const char\* key | 表示字典类型中键值对的键。 |
 
 **返回：**
@@ -2217,10 +2092,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsDetails\_Remove()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsDetails_Remove(OH_UdsDetails* pThis, const char* key)
+```c
+int OH_UdsDetails_Remove(OH_UdsDetails* pThis, const char* key)
 ```
 
 **描述**
@@ -2240,14 +2113,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsDetails\_Clear()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsDetails_Clear(OH_UdsDetails* pThis)
+```c
+int OH_UdsDetails_Clear(OH_UdsDetails* pThis)
 ```
 
 **描述**
@@ -2266,14 +2137,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsDetails\_SetValue()
 
-PhonePC/2in1TabletTV
-
-```
-1. int OH_UdsDetails_SetValue(OH_UdsDetails* pThis, const char* key, const char* value)
+```c
+int OH_UdsDetails_SetValue(OH_UdsDetails* pThis, const char* key, const char* value)
 ```
 
 **描述**
@@ -2294,14 +2163,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效的参数。 |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
 
 ### OH\_UdsDetails\_GetValue()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_UdsDetails_GetValue(const OH_UdsDetails* pThis, const char* key)
+```c
+const char* OH_UdsDetails_GetValue(const OH_UdsDetails* pThis, const char* key)
 ```
 
 **描述**
@@ -2314,7 +2181,7 @@ PhonePC/2in1TabletTV
 
 | 参数项 | 描述 |
 | --- | --- |
-| [const OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* pThis | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针。 |
+| const [OH\_UdsDetails](capi-udmf-oh-udsdetails.md)\* pThis | 表示指向字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)实例的指针。 |
 | const char\* key | 表示字典类型中键值对的键。 |
 
 **返回：**
@@ -2325,10 +2192,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_UdsDetails\_GetAllKeys()
 
-PhonePC/2in1TabletTV
-
-```
-1. char** OH_UdsDetails_GetAllKeys(OH_UdsDetails* pThis, unsigned int* count)
+```c
+char** OH_UdsDetails_GetAllKeys(OH_UdsDetails* pThis, unsigned int* count)
 ```
 
 **描述**
@@ -2349,3 +2214,61 @@ PhonePC/2in1TabletTV
 | 类型 | 说明 |
 | --- | --- |
 | char\*\* | 执行成功时返回字典类型中键的结果集，否则返回nullptr。  当使用[OH\_UdsDetails\_Destroy](capi-uds-h.md#oh_udsdetails_destroy)销毁字典类型[OH\_UdsDetails](capi-udmf-oh-udsdetails.md)指针指向的实例对象，该返回值也会被释放。 |
+
+### OH\_UdsHtml\_SetAuthPolicy()
+
+```c
+int OH_UdsHtml_SetAuthPolicy(OH_UdsHtml* pThis, uint32_t authPolicy)
+```
+
+**描述**
+
+给[OH\_UdsHtml](capi-udmf-oh-udshtml.md)设置授权策略。
+
+**说明** 
+
+此授权策略仅在拖拽场景下生效，其他场景不生效。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_UdsHtml](capi-udmf-oh-udshtml.md)\* pThis | 表示指向[OH\_UdsHtml](capi-udmf-oh-udshtml.md)实例的指针。 |
+| uint32\_t authPolicy | 表示拖拽场景下的URI授权策略，默认值为READ（仅读授权），仅在img标签等场景下生效。只针对单个record使用，优先级最高。具体策略见[Udmf\_AuthPermission](capi-uds-h.md#udmf_authpermission)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int | 返回执行的状态代码。  返回UDMF\_E\_OK表示执行成功。  返回UDMF\_E\_INVALID\_PARAM表示传入了无效参数。  具体请参见[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
+
+### OH\_UdsFileUri\_SetAuthPolicy()
+
+```c
+int OH_UdsFileUri_SetAuthPolicy(OH_UdsFileUri* pThis, uint32_t authPolicy)
+```
+
+**描述**
+
+给[OH\_UdsFileUri](capi-udmf-oh-udsfileuri.md)设置授权策略。
+
+**说明** 
+
+此授权策略仅在拖拽场景下生效，其他场景不生效。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_UdsFileUri](capi-udmf-oh-udsfileuri.md)\* pThis | 表示指向[OH\_UdsFileUri](capi-udmf-oh-udsfileuri.md)实例的指针。 |
+| uint32\_t authPolicy | 表示拖拽场景下的URI授权策略，默认值为READ+WRITE+PERSIST（读+写+持久化授权），只针对单个record使用，优先级最高。具体策略见[Udmf\_AuthPermission](capi-uds-h.md#udmf_authpermission)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |

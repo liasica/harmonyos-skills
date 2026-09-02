@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 开屏广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 开屏广告
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:04+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11bfd52
+scraped_at: 2026-09-02T14:59:52+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:b69d4dc8d32b65f64beeaf4ea2c7c738878cfec8d89642e66d7b6b5d826b11d9
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11
 
 开屏广告分为全屏开屏广告、半屏开屏广告，其中全屏开屏广告展示形式为广告铺满整个页面；半屏开屏广告展示形式会根据媒体页面自定义布局渲染广告、icon和版权信息，一般情况下建议将icon和版权信息展示在广告下方。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/QbvEqtRoQIGI7iaLlyucdw/zh-cn_image_0000002558605612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/SaXosTD_Q2qIY4fp-CWbvQ/zh-cn_image_0000002706674846.png)
 
 ## 约束与限制
 
@@ -35,12 +35,12 @@ content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11
 
 1. 导入相关模块。
 
-   ```
-   1. import { abilityAccessCtrl, common, PermissionRequestResult } from '@kit.AbilityKit';
-   2. import { advertising, identifier } from '@kit.AdsKit';
-   3. import { router, window } from '@kit.ArkUI';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
-   5. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { abilityAccessCtrl, common, PermissionRequestResult } from '@kit.AbilityKit';
+   import { AdComponent, advertising, identifier } from '@kit.AdsKit';
+   import { router, window } from '@kit.ArkUI';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 获取OAID。
 
@@ -48,7 +48,7 @@ content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11
 
    如何获取OAID参见[获取OAID信息](oaid-service.md)。
 
-   说明
+   **说明** 
 
    使用以下示例中提供的测试广告位时，必须先获取OAID信息。
 3. 请求单广告位广告。
@@ -59,7 +59,7 @@ content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11
 
    | 请求广告参数名 | 类型 | 必填 | 说明 |
    | --- | --- | --- | --- |
-   | adType | number | 是 | 请求广告类型，开屏广告类型为1。 |
+   | adType | number | 否 | 请求广告类型，开屏广告类型为1。不填默认为原生广告类型。 |
    | adId | string | 是 | 广告位ID。  - 如果仅调测广告，可使用测试广告位ID：g3tl51sqih半屏开屏（图片）和r145sz31dp全屏开屏（视频）。  - 如果要接入正式广告，则需要申请正式的广告位ID。可在应用发布前进入[流量变现官网](https://developer.huawei.com/consumer/cn/monetize)，点击“开始变现”，登录[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)进行申请，具体操作详情请参见[展示位创建](../monetize/zhanshiweichuangjian-0000001132700049.md)。 |
    | adCount | number | 否 | 广告数量。 |
    | orientation | number | 否 | 媒体请求广告的屏幕方向。1表示竖屏，0表示横屏，不设置则默认为1。当前未上架横屏开屏素材，若设置请求屏幕方向为横屏则不展示开屏广告。如果媒体设置应用固定横屏展示，但该参数未设置或者设置为1，则展示效果会受影响。 |
@@ -68,160 +68,172 @@ content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11
    | --- | --- | --- |
    | isFullScreen | boolean | 标识返回的广告是否为全屏，true为全屏广告，false为半屏广告。 |
 
-   说明
+   **说明** 
 
    1、如果超时没有请求到广告，应用自行跳转到默认首页。
 
    2、为保证开屏展示效果，建议开发者在请求广告前，设置屏幕方向为竖屏。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. @State ad: advertising.Advertisement | undefined = undefined;
-   5. // ...
-   6. private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   7. // 是否超时
-   8. private isTimeOut: boolean = false;
-   9. // 超时时间(单位毫秒)，开发者可根据实际情况修改
-   10. private timeOutDuration: number = 1000;
-   11. // 超时index
-   12. private timeOutIndex: number = -1;
+   ```typescript
+   @Entry
+   @Component
+   struct Index {
+     @State ad: advertising.Advertisement | undefined = undefined;
+     // ...
+     private context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     // 是否超时
+     private isTimeOut: boolean = false;
+     // 超时时间(单位毫秒)，开发者可根据实际情况修改
+     private timeOutDuration: number = 1000;
+     // 超时index
+     private timeOutIndex: number = -1;
 
-   14. aboutToAppear(): void {
-   15. // 开启全屏模式沉浸页面
-   16. this.setWindowLayoutFullScreen(true);
-   17. // 设置屏幕方向为竖屏
-   18. this.setWindowPreferredOrientation(window.Orientation.PORTRAIT);
-   19. // 调用loadAd加载广告
-   20. // ...
-   21. }
+     aboutToAppear(): void {
+       // 开启全屏模式沉浸页面
+       void this.setWindowLayoutFullScreen(true).catch((error: BusinessError) => {
+         hilog.error(0x0000, 'testTag',
+           `Failed to setWindowLayoutFullScreen. Code is ${error.code}, message is ${error.message}`);
+       });
+       // 设置屏幕方向为竖屏
+       void this.setWindowPreferredOrientation(window.Orientation.PORTRAIT).catch((error: BusinessError) => {
+         hilog.error(0x0000, 'testTag',
+           `Failed to setWindowPreferredOrientation. Code is ${error.code}, message is ${error.message}`);
+       });
+       // 调用loadAd加载广告
+       // ...
+     }
 
-   23. aboutToDisappear(): void {
-   24. // 关闭全屏模式，开发者可根据实际情况修改
-   25. this.setWindowLayoutFullScreen(false);
-   26. // 设置屏幕方向为默认值，开发者可根据实际情况修改
-   27. this.setWindowPreferredOrientation(window.Orientation.UNSPECIFIED);
-   28. }
+     aboutToDisappear(): void {
+       // 关闭全屏模式，开发者可根据实际情况修改
+       void this.setWindowLayoutFullScreen(false).catch((error: BusinessError) => {
+         hilog.error(0x0000, 'testTag',
+           `Failed to setWindowLayoutFullScreen. Code is ${error.code}, message is ${error.message}`);
+       });
+       // 设置屏幕方向为默认值，开发者可根据实际情况修改
+       void this.setWindowPreferredOrientation(window.Orientation.UNSPECIFIED).catch((error: BusinessError) => {
+         hilog.error(0x0000, 'testTag',
+           `Failed to setWindowPreferredOrientation. Code is ${error.code}, message is ${error.message}`);
+       });
+     }
 
-   30. private async setWindowLayoutFullScreen(isLayoutFullScreen: boolean): Promise<void> {
-   31. try {
-   32. const win: window.Window = await window.getLastWindow(this.context);
-   33. await win.setWindowLayoutFullScreen(isLayoutFullScreen);
-   34. } catch (e) {
-   35. hilog.error(0x0000, 'testTag', `Failed to set window layout. Code is ${e.code}, message is ${e.message}`);
-   36. }
-   37. }
+     private async setWindowLayoutFullScreen(isLayoutFullScreen: boolean): Promise<void> {
+       try {
+         const win: window.Window = await window.getLastWindow(this.context);
+         await win.setWindowLayoutFullScreen(isLayoutFullScreen);
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', `Failed to set window layout. Code is ${e.code}, message is ${e.message}`);
+       }
+     }
 
-   39. private async setWindowPreferredOrientation(orientation: Orientation): Promise<void> {
-   40. try {
-   41. const win: window.Window = await window.getLastWindow(this.context);
-   42. await win.setPreferredOrientation(orientation);
-   43. } catch (e) {
-   44. hilog.error(0x0000, 'testTag', `Failed to set preferred orientation. Code is ${e.code}, message is ${e.message}`);
-   45. }
-   46. }
+     private async setWindowPreferredOrientation(orientation: Orientation): Promise<void> {
+       try {
+         const win: window.Window = await window.getLastWindow(this.context);
+         await win.setPreferredOrientation(orientation);
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', `Failed to set preferred orientation. Code is ${e.code}, message is ${e.message}`);
+       }
+     }
 
-   48. build() {
-   49. // ...
-   50. }
+     build() {
+       // ...
+     }
 
-   52. // ...
-   53. private async loadAd(adId: string): Promise<void> {
-   54. // 广告请求参数
-   55. const adRequestParams: advertising.AdRequestParams = {
-   56. // 广告位ID
-   57. adId: adId,
-   58. // 开屏广告类型
-   59. adType: 1,
-   60. // 请求的广告数量
-   61. adCount: 1,
-   62. // 开放匿名设备标识符
-   63. oaid: await requestOAID(this.context)
-   64. };
-   65. // 广告请求回调监听
-   66. const adLoadListener: advertising.AdLoadListener = {
-   67. onAdLoadFailure: (errorCode: number, errorMsg: string) => {
-   68. hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
-   69. },
-   70. onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
-   71. clearTimeout(this.timeOutIndex);
-   72. if (this.isTimeOut) {
-   73. return;
-   74. }
-   75. hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
-   76. this.ad = ads[0];
-   77. }
-   78. };
-   79. // 广告配置参数，开发者可根据项目实际情况设置
-   80. const adOptions: advertising.AdOptions = {};
-   81. // 创建AdLoader广告对象
-   82. const adLoader: advertising.AdLoader = new advertising.AdLoader(this.context);
-   83. // 启动超时定时器
-   84. this.timeOutHandler();
-   85. try {
-   86. // 调用广告请求接口
-   87. adLoader.loadAd(adRequestParams, adOptions, adLoadListener);
-   88. } catch (e) {
-   89. hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${e.code}, message is ${e.message}`);
-   90. }
-   91. }
+     // ...
+     private async loadAd(adId: string): Promise<void> {
+       // 广告请求参数
+       const adRequestParams: advertising.AdRequestParams = {
+         // 广告位ID
+         adId: adId,
+         // 开屏广告类型
+         adType: 1,
+         // 请求的广告数量
+         adCount: 1,
+         // 开放匿名设备标识符
+         oaid: await requestOAID(this.context)
+       };
+       // 广告请求回调监听
+       const adLoadListener: advertising.AdLoadListener = {
+         onAdLoadFailure: (errorCode: number, errorMsg: string) => {
+           hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${errorCode}, message is ${errorMsg}`);
+         },
+         onAdLoadSuccess: (ads: Array<advertising.Advertisement>) => {
+           clearTimeout(this.timeOutIndex);
+           if (this.isTimeOut) {
+             return;
+           }
+           hilog.info(0x0000, 'testTag', 'Succeeded in loading ad');
+           this.ad = ads[0];
+         }
+       };
+       // 广告配置参数，开发者可根据项目实际情况设置
+       const adOptions: advertising.AdOptions = {};
+       // 创建AdLoader广告对象
+       const adLoader: advertising.AdLoader = new advertising.AdLoader(this.context);
+       // 启动超时定时器
+       this.timeOutHandler();
+       try {
+         // 调用广告请求接口
+         adLoader.loadAd(adRequestParams, adOptions, adLoadListener);
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', `Failed to load ad. Code is ${e.code}, message is ${e.message}`);
+       }
+     }
 
-   93. private timeOutHandler(): void {
-   94. this.isTimeOut = false;
-   95. // 超时处理
-   96. this.timeOutIndex = setTimeout(() => {
-   97. this.isTimeOut = true;
-   98. this.routeToHome();
-   99. hilog.error(0x0000, 'testTag', 'Load ad time out');
-   100. }, this.timeOutDuration);
-   101. }
+     private timeOutHandler(): void {
+       this.isTimeOut = false;
+       // 超时处理
+       this.timeOutIndex = setTimeout(() => {
+         this.isTimeOut = true;
+         this.routeToHome();
+         hilog.error(0x0000, 'testTag', 'Load ad time out');
+       }, this.timeOutDuration);
+     }
 
-   103. private routeToHome(): void {
-   104. // 开发者可根据项目实际情况修改超时之后要跳转的目标页面
-   105. this.getUIContext().getRouter().replaceUrl({ url: 'pages/Index' }, router.RouterMode.Single)
-   106. .catch((e: BusinessError) => {
-   107. hilog.error(0x0000, 'testTag', `Failed to route to home. Code is ${e.code}, message is ${e.message}`);
-   108. });
-   109. }
-   110. }
+     private routeToHome(): void {
+       // 开发者可根据项目实际情况修改超时之后要跳转的目标页面
+       this.getUIContext().getRouter().replaceUrl({ url: 'pages/Index' }, router.RouterMode.Single)
+         .catch((e: BusinessError) => {
+           hilog.error(0x0000, 'testTag', `Failed to route to home. Code is ${e.code}, message is ${e.message}`);
+         });
+     }
+   }
 
-   112. async function requestOAID(context: Context): Promise<string | undefined> {
-   113. // 向用户请求授权广告跨应用关联访问权限
-   114. let isPermissionGranted: boolean = false;
-   115. try {
-   116. const atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-   117. const result: PermissionRequestResult =
-   118. await atManager.requestPermissionsFromUser(context, ['ohos.permission.APP_TRACKING_CONSENT']);
-   119. isPermissionGranted = result.authResults[0] === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED;
-   120. } catch (err) {
-   121. hilog.error(0x0000, 'testTag', `Failed to request permission. Code is ${err.code}, message is ${err.message}`);
-   122. }
-   123. if (isPermissionGranted) {
-   124. hilog.info(0x0000, 'testTag', 'Succeeded in requesting permission');
-   125. try {
-   126. const oaid = await identifier.getOAID();
-   127. hilog.info(0x0000, 'testTag', 'Succeeded in getting OAID');
-   128. return oaid;
-   129. } catch (err) {
-   130. hilog.error(0x0000, 'testTag', `Failed to get OAID. Code is ${err.code}, message is ${err.message}`);
-   131. }
-   132. } else {
-   133. hilog.error(0x0000, 'testTag', 'Failed to request permission. User rejected');
-   134. }
-   135. return undefined;
-   136. }
+   async function requestOAID(context: Context): Promise<string | undefined> {
+     // 向用户请求授权广告跨应用关联访问权限
+     let isPermissionGranted: boolean = false;
+     try {
+       const atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+       const result: PermissionRequestResult =
+         await atManager.requestPermissionsFromUser(context, ['ohos.permission.APP_TRACKING_CONSENT']);
+       isPermissionGranted = result.authResults[0] === abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED;
+     } catch (err) {
+       hilog.error(0x0000, 'testTag', `Failed to request permission. Code is ${err.code}, message is ${err.message}`);
+     }
+     if (isPermissionGranted) {
+       hilog.info(0x0000, 'testTag', 'Succeeded in requesting permission');
+       try {
+         const oaid = await identifier.getOAID();
+         hilog.info(0x0000, 'testTag', 'Succeeded in getting OAID');
+         return oaid;
+       } catch (err) {
+         hilog.error(0x0000, 'testTag', `Failed to get OAID. Code is ${err.code}, message is ${err.message}`);
+       }
+     } else {
+       hilog.error(0x0000, 'testTag', 'Failed to request permission. User rejected');
+     }
+     return undefined;
+   }
    ```
 
 ### 展示广告
 
 1. 导入相关模块。
 
-   ```
-   1. import { AdComponent, advertising } from '@kit.AdsKit';
-   2. import { router } from '@kit.ArkUI';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { AdComponent, advertising, identifier } from '@kit.AdsKit';
+   import { router, window } from '@kit.ArkUI';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 展示广告。
 
@@ -234,7 +246,7 @@ content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11
    | onAdClose | 关闭广告。 | 广告倒计时结束、用户点击跳过按钮或广告从后台返回时触发，需要跳转到应用首页。回调状态包含了具体的关闭原因，详情见：[data说明](../harmonyos-references/js-apis-advertising.md#onstatuschanged)。 |
    | onAdFail | 广告加载失败。 | 广告展示失败时触发，需要跳转到应用首页。 |
 
-   说明
+   **说明** 
 
    1、请求到广告之前需要展示默认的Slogan图片。
 
@@ -242,145 +254,149 @@ content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11
 
    3、目前只支持展示竖屏广告。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. @State ad: advertising.Advertisement | undefined = undefined;
-   5. // 广告展示参数
-   6. private adDisplayOptions: advertising.AdDisplayOptions = {
-   7. // 是否静音
-   8. mute: true
-   9. };
-   10. // ...
+   ```typescript
+   @Entry
+   @Component
+   struct Index {
+     @State ad: advertising.Advertisement | undefined = undefined;
+     // 广告展示参数
+     private adDisplayOptions: advertising.AdDisplayOptions = {
+       // 是否静音
+       mute: true
+     };
+     // ...
 
-   12. build() {
-   13. RelativeContainer() {
-   14. // 展示开发者自定义Slogan图片
-   15. Image($r('app.media.slogan'))
-   16. .width('100%')
-   17. .height('100%')
-   18. .zIndex(0)
-   19. // 展示开发者自定义icon、应用名称、版权信息
-   20. Column() {
-   21. Row() {
-   22. Image($r('app.media.video'))
-   23. .width(24)
-   24. .height(24)
-   25. .margin(8)
-   26. Text($r('app.string.video'))
-   27. .fontColor('#1A1A1A')
-   28. .fontSize(16)
-   29. }
-   30. .margin({ bottom: 8 })
+     build() {
+       RelativeContainer() {
+         // 展示开发者自定义Slogan图片
+         Image($r('app.media.slogan'))
+           .width('100%')
+           .height('100%')
+           .zIndex(0)
+         // 展示开发者自定义icon、应用名称、版权信息
+         Column() {
+           Row() {
+             Image($r('app.media.video'))
+               .width(24)
+               .height(24)
+               .margin(8)
+             Text($r('app.string.video'))
+               .fontColor('#1A1A1A')
+               .fontSize(16)
+           }
+           .margin({ bottom: 8 })
 
-   32. Column() {
-   33. Text($r('app.string.copyright'))
-   34. .fontColor('#1A1A1A')
-   35. .fontSize(9)
-   36. }
-   37. }
-   38. .zIndex(1)
-   39. .alignRules({ bottom: { anchor: '__container__', align: VerticalAlign.Bottom } })
-   40. .width('100%')
-   41. .height('13%')
+           Column() {
+             Text($r('app.string.copyright'))
+               .fontColor('#1A1A1A')
+               .fontSize(9)
+           }
+         }
+         .zIndex(1)
+         .alignRules({ bottom: { anchor: '__container__', align: VerticalAlign.Bottom } })
+         .width('100%')
+         .height('13%')
 
-   43. if (this.ad) {
-   44. if (this.ad.isFullScreen) {
-   45. // 全屏开屏广告
-   46. this.splashFullScreen()
-   47. } else {
-   48. // 半屏开屏广告
-   49. this.splashHalfScreen()
-   50. }
-   51. }
-   52. }
-   53. .width('100%')
-   54. .height('100%')
-   55. }
+         if (this.ad) {
+           if (this.ad.isFullScreen) {
+             // 全屏开屏广告
+             this.splashFullScreen();
+           } else {
+             // 半屏开屏广告
+             this.splashHalfScreen();
+           }
+         }
+       }
+       .width('100%')
+       .height('100%')
+     }
 
-   57. /**
-   58. * 半屏开屏广告
-   59. */
-   60. @Builder
-   61. private splashHalfScreen() {
-   62. AdComponent({
-   63. ads: [this.ad!],
-   64. displayOptions: this.adDisplayOptions,
-   65. interactionListener: {
-   66. onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
-   67. switch (status) {
-   68. case 'onAdOpen':
-   69. hilog.info(0x0000, 'testTag', 'Status is onAdOpen');
-   70. break;
-   71. case 'onAdClick':
-   72. hilog.info(0x0000, 'testTag', 'Status is onAdClick');
-   73. break;
-   74. case 'onAdClose':
-   75. hilog.info(0x0000, 'testTag', 'Status is onAdClose');
-   76. this.routeToHome();
-   77. break;
-   78. case 'onAdFail':
-   79. hilog.error(0x0000, 'testTag', 'Status is onAdFail');
-   80. this.routeToHome();
-   81. break;
-   82. }
-   83. }
-   84. }
-   85. })
-   86. .zIndex(1)
-   87. .width('100%')
-   88. .height('87%')
-   89. // 自定义组件动画
-   90. .transition(TransitionEffect.OPACITY.animation({ duration: 1000, curve: Curve.Friction}))
-   91. .alignRules({ top: { anchor: '__container__', align: VerticalAlign.Top } })
-   92. }
+     /**
+      * 半屏开屏广告
+      */
+     @Builder
+     private splashHalfScreen() {
+       AdComponent({
+         ads: [this.ad!],
+         displayOptions: this.adDisplayOptions,
+         interactionListener: {
+           onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
+             switch (status) {
+               case 'onAdOpen':
+                 hilog.info(0x0000, 'testTag', 'Status is onAdOpen');
+                 break;
+               case 'onAdClick':
+                 hilog.info(0x0000, 'testTag', 'Status is onAdClick');
+                 break;
+               case 'onAdClose':
+                 hilog.info(0x0000, 'testTag', 'Status is onAdClose');
+                 this.routeToHome();
+                 break;
+               case 'onAdFail':
+                 hilog.error(0x0000, 'testTag', 'Status is onAdFail');
+                 this.routeToHome();
+                 break;
+               default:
+                 break;
+             }
+           }
+         }
+       })
+         .zIndex(1)
+         .width('100%')
+         .height('87%')
+         // 自定义组件动画
+         .transition(TransitionEffect.OPACITY.animation({ duration: 1000, curve: Curve.Friction}))
+         .alignRules({ top: { anchor: '__container__', align: VerticalAlign.Top } })
+     }
 
-   94. /**
-   95. * 全屏开屏广告
-   96. */
-   97. @Builder
-   98. private splashFullScreen() {
-   99. AdComponent({
-   100. ads: [this.ad!],
-   101. displayOptions: this.adDisplayOptions,
-   102. interactionListener: {
-   103. onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
-   104. switch (status) {
-   105. case 'onAdOpen':
-   106. hilog.info(0x0000, 'testTag', 'Status is onAdOpen');
-   107. break;
-   108. case 'onAdClick':
-   109. hilog.info(0x0000, 'testTag', 'Status is onAdClick');
-   110. break;
-   111. case 'onAdClose':
-   112. hilog.info(0x0000, 'testTag', 'Status is onAdClose');
-   113. this.routeToHome();
-   114. break;
-   115. case 'onAdFail':
-   116. hilog.error(0x0000, 'testTag', 'Status is onAdFail');
-   117. this.routeToHome();
-   118. break;
-   119. }
-   120. }
-   121. }
-   122. })
-   123. .zIndex(1)
-   124. .width('100%')
-   125. .height('100%')
-   126. }
-   127. // ...
+     /**
+      * 全屏开屏广告
+      */
+     @Builder
+     private splashFullScreen() {
+       AdComponent({
+         ads: [this.ad!],
+         displayOptions: this.adDisplayOptions,
+         interactionListener: {
+           onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
+             switch (status) {
+               case 'onAdOpen':
+                 hilog.info(0x0000, 'testTag', 'Status is onAdOpen');
+                 break;
+               case 'onAdClick':
+                 hilog.info(0x0000, 'testTag', 'Status is onAdClick');
+                 break;
+               case 'onAdClose':
+                 hilog.info(0x0000, 'testTag', 'Status is onAdClose');
+                 this.routeToHome();
+                 break;
+               case 'onAdFail':
+                 hilog.error(0x0000, 'testTag', 'Status is onAdFail');
+                 this.routeToHome();
+                 break;
+               default:
+                 break;
+             }
+           }
+         }
+       })
+         .zIndex(1)
+         .width('100%')
+         .height('100%')
+     }
+     // ...
 
-   129. private routeToHome(): void {
-   130. // 开发者可根据项目实际情况修改超时之后要跳转的目标页面
-   131. this.getUIContext().getRouter().replaceUrl({ url: 'pages/Index' }, router.RouterMode.Single)
-   132. .catch((e: BusinessError) => {
-   133. hilog.error(0x0000, 'testTag', `Failed to route to home. Code is ${e.code}, message is ${e.message}`);
-   134. });
-   135. }
-   136. }
+     private routeToHome(): void {
+       // 开发者可根据项目实际情况修改超时之后要跳转的目标页面
+       this.getUIContext().getRouter().replaceUrl({ url: 'pages/Index' }, router.RouterMode.Single)
+         .catch((e: BusinessError) => {
+           hilog.error(0x0000, 'testTag', `Failed to route to home. Code is ${e.code}, message is ${e.message}`);
+         });
+     }
+   }
 
-   138. // ...
+   // ...
    ```
 
 ## 测试开屏广告
@@ -391,5 +407,5 @@ content_hash: sha256:670bf679c3bcdf4596fb90b3e52bf97da1063e66410e0a0b8bbe4823b11
 
 | 广告位类型 | 测试广告位ID | 展示形式 | 比例 | 推广类型 |
 | --- | --- | --- | --- | --- |
-| 开屏 | g3tl51sqih | 图片 | 9:16 | 应用促活 |
-| 开屏 | r145sz31dp | 视频 | 9:16 | 应用促活 |
+| 开屏 | u7w58nlimb | 视频 | 9:16 | 元服务推广 |
+| 开屏 | f068vmywiu | 图片 | 2:3 | 网页推广 |

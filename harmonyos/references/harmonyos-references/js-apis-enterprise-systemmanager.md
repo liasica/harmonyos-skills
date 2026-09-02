@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-systemmanager
-title: "@ohos.enterprise.systemManager （系统管理）"
-breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.systemManager （系统管理）
+title: "@ohos.enterprise.systemManager（系统管理）"
+breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.systemManager（系统管理）
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:12+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:5bf73fa55887e77b3322885573cbef11ec4044c03172924b8050279d2c1818c6
+scraped_at: 2026-09-02T15:02:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:331fafe07193f22f0c0a365e99cc53466465c529cf7b52e579c58d2b819b05d8
 ---
 
-本模块提供系统管理能力。
+本模块提供系统管理能力，包括NTP时间服务器设置、OTA升级策略管理、系统更新管理、按键事件处理策略、日志收集、设备激活锁管理等功能。适用于企业设备管理场景，帮助企业管理员统一管控设备系统配置、升级策略和安全策略，提升企业设备管理效率和安全性。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,19 +20,15 @@ content_hash: sha256:5bf73fa55887e77b3322885573cbef11ec4044c03172924b8050279d2c1
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { systemManager } from '@kit.MDMKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
 ```
 
 ## systemManager.setNTPServer
 
-PhonePC/2in1Tablet
-
 setNTPServer(admin: Want, server: string): void
 
-设置NTP时间服务器。
+设置NTP(Network Time Protocol)时间服务器。设置成功后，系统将使用指定的NTP服务器进行时间同步，校准系统时间。适用于企业设备需要统一时间同步的场景，确保企业设备时间与标准时间保持一致，避免因时间不准确导致的业务问题，如日志时间戳不一致、证书验证失败等。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -47,7 +43,7 @@ setNTPServer(admin: Want, server: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| server | string | 是 | NTP服务器地址（以","分隔，如"ntpserver1.com,ntpserver2.com"。最大长度96字节，包括结束符）。 |
+| server | string | 是 | NTP服务器地址（以","分隔，如"ntpserver1.com,ntpserver2.com"。最大长度96字节，包括null终止符（\0））。 |
 
 **错误码**：
 
@@ -62,32 +58,30 @@ setNTPServer(admin: Want, server: string): void
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. // 需根据实际情况进行替换
-10. let server: string = "ntpserver.com";
-11. try {
-12. systemManager.setNTPServer(wantTemp, server);
-13. console.info('Succeeded in setting NTPserver.');
-14. } catch (err) {
-15. console.error(`Failed to set ntp server. Code is ${err.code}, message is ${err.message}`);
-16. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+// 需根据实际情况进行替换
+let server: string = "ntpserver.com";
+try {
+  systemManager.setNTPServer(wantTemp, server);
+  console.info('Succeeded in setting NTPserver.');
+} catch (err) {
+  console.error(`Failed to set ntp server. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.getNTPServer
 
-PhonePC/2in1Tablet
-
 getNTPServer(admin: Want): string
 
-获取NTP时间服务器信息。
+获取NTP时间服务器信息。适用于需要查询当前设备配置的NTP服务器地址的场景，用于验证时间同步配置是否正确，或在进行策略调整前获取当前配置。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -120,30 +114,28 @@ getNTPServer(admin: Want): string
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. try {
-10. systemManager.getNTPServer(wantTemp);
-11. console.info('Succeeded in getting NTP server.');
-12. } catch (err) {
-13. console.error(`Failed to get ntp server. Code is ${err.code}, message is ${err.message}`);
-14. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+try {
+  let result: string = systemManager.getNTPServer(wantTemp);
+  console.info(`Succeeded in getting NTP server. result: ${result}`);
+} catch (err) {
+  console.error(`Failed to get ntp server. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.setOtaUpdatePolicy
 
-PhonePC/2in1Tablet
-
 setOtaUpdatePolicy(admin: Want, policy: OtaUpdatePolicy): void
 
-设置升级策略。内网升级场景下，需要先调用[systemManager.notifyUpdatePackages](js-apis-enterprise-systemmanager.md#systemmanagernotifyupdatepackages)接口通知系统更新包，再调用该接口设置升级策略。
+设置升级策略。设置成功后，系统将按照指定的策略类型进行OTA升级处理，不同策略类型对应不同的升级行为。内网升级场景下，需要先调用[systemManager.notifyUpdatePackages](js-apis-enterprise-systemmanager.md#systemmanagernotifyupdatepackages)接口通知系统更新包，再调用该接口设置升级策略。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -151,7 +143,7 @@ setOtaUpdatePolicy(admin: Want, policy: OtaUpdatePolicy): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
+**冲突规则：** [独占](../harmonyos-guides/mdm-kit-multi-mdm.md#规则2独占)。
 
 **参数：**
 
@@ -173,95 +165,93 @@ setOtaUpdatePolicy(admin: Want, policy: OtaUpdatePolicy): void
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. // 默认升级策略
-10. let otaUpdatePolicy1: systemManager.OtaUpdatePolicy = {
-11. "policyType": systemManager.PolicyType.DEFAULT,
-12. "version": "version_1.0.0.0",
-13. };
-14. try {
-15. systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy1);
-16. console.info('Succeeded in setting ota update policy.');
-17. } catch (err) {
-18. console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
-19. }
-20. // 禁止升级
-21. let otaUpdatePolicy2: systemManager.OtaUpdatePolicy = {
-22. "policyType": systemManager.PolicyType.PROHIBIT,
-23. "version": "version_1.0.0.1",
-24. };
-25. try {
-26. systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy2);
-27. console.info('Succeeded in setting ota update policy.');
-28. } catch (err) {
-29. console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
-30. }
-31. // 强制升级
-32. let otaUpdatePolicy3: systemManager.OtaUpdatePolicy = {
-33. "policyType": systemManager.PolicyType.UPDATE_TO_SPECIFIC_VERSION,
-34. "version": "version_1.0.0.2",
-35. "latestUpdateTime": 1716343200, // 时间戳
-36. };
-37. try {
-38. systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy3);
-39. console.info('Succeeded in setting ota update policy.');
-40. } catch (err) {
-41. console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
-42. }
-43. // 指定时间窗口升级
-44. let otaUpdatePolicy4: systemManager.OtaUpdatePolicy = {
-45. "policyType": systemManager.PolicyType.WINDOWS,
-46. "version": "version_1.0.0.3",
-47. "installStartTime": 1716281049, // 时间戳
-48. "installEndTime": 1716343200, // 时间戳
-49. };
-50. try {
-51. systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy4);
-52. console.info('Succeeded in setting ota update policy.');
-53. } catch (err) {
-54. console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
-55. }
-56. // 延迟升级
-57. let otaUpdatePolicy5: systemManager.OtaUpdatePolicy = {
-58. "policyType": systemManager.PolicyType.POSTPONE,
-59. "version": "version_1.0.0.4",
-60. "delayUpdateTime": 5, // 单位（小时）
-61. };
-62. try {
-63. systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy5);
-64. console.info('Succeeded in setting ota update policy.');
-65. } catch (err) {
-66. console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
-67. }
-68. // 禁用公网升级
-69. let otaUpdatePolicy6: systemManager.OtaUpdatePolicy = {
-70. "policyType": systemManager.PolicyType.DEFAULT,
-71. "version": "version_1.0.0.5",
-72. "disableSystemOtaUpdate": true,
-73. };
-74. try {
-75. systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy6);
-76. console.info('Succeeded in setting ota update policy.');
-77. } catch (err) {
-78. console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
-79. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+// 默认升级策略
+let otaUpdatePolicy1: systemManager.OtaUpdatePolicy = {
+  "policyType": systemManager.PolicyType.DEFAULT,
+  "version": "version_1.0.0.0"
+};
+try {
+  systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy1);
+  console.info('Succeeded in setting ota update policy.');
+} catch (err) {
+  console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
+}
+// 禁止升级
+let otaUpdatePolicy2: systemManager.OtaUpdatePolicy = {
+  "policyType": systemManager.PolicyType.PROHIBIT,
+  "version": "version_1.0.0.1"
+};
+try {
+  systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy2);
+  console.info('Succeeded in setting ota update policy.');
+} catch (err) {
+  console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
+}
+// 强制升级
+let otaUpdatePolicy3: systemManager.OtaUpdatePolicy = {
+  "policyType": systemManager.PolicyType.UPDATE_TO_SPECIFIC_VERSION,
+  "version": "version_1.0.0.2",
+  "latestUpdateTime": 1716343200 // 时间戳
+};
+try {
+  systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy3);
+  console.info('Succeeded in setting ota update policy.');
+} catch (err) {
+  console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
+}
+// 指定时间窗口升级
+let otaUpdatePolicy4: systemManager.OtaUpdatePolicy = {
+  "policyType": systemManager.PolicyType.WINDOWS,
+  "version": "version_1.0.0.3",
+  "installStartTime": 1716281049, // 时间戳
+  "installEndTime": 1716343200 // 时间戳
+};
+try {
+  systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy4);
+  console.info('Succeeded in setting ota update policy.');
+} catch (err) {
+  console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
+}
+// 延迟升级
+let otaUpdatePolicy5: systemManager.OtaUpdatePolicy = {
+  "policyType": systemManager.PolicyType.POSTPONE,
+  "version": "version_1.0.0.4",
+  "delayUpdateTime": 5 // 单位（小时）
+};
+try {
+  systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy5);
+  console.info('Succeeded in setting ota update policy.');
+} catch (err) {
+  console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
+}
+// 禁用公网升级
+let otaUpdatePolicy6: systemManager.OtaUpdatePolicy = {
+  "policyType": systemManager.PolicyType.DEFAULT,
+  "version": "version_1.0.0.5",
+  "disableSystemOtaUpdate": true
+};
+try {
+  systemManager.setOtaUpdatePolicy(wantTemp, otaUpdatePolicy6);
+  console.info('Succeeded in setting ota update policy.');
+} catch (err) {
+  console.error(`Failed to set ota update policy. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.getOtaUpdatePolicy
 
-PhonePC/2in1Tablet
-
 getOtaUpdatePolicy(admin: Want): OtaUpdatePolicy
 
-查询升级策略。
+查询升级策略。适用于需要获取当前设备OTA升级策略配置的场景，用于验证策略是否正确下发，或在进行策略调整前获取当前策略配置。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -294,32 +284,30 @@ getOtaUpdatePolicy(admin: Want): OtaUpdatePolicy
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. try {
-10. let policy: systemManager.OtaUpdatePolicy= systemManager.getOtaUpdatePolicy(wantTemp);
-11. console.info(`Succeeded in getting update policy: ${JSON.stringify(policy)}`);
-12. } catch (err) {
-13. console.error(`Failed to get update policy. Code is ${err.code}, message is ${err.message}`);
-14. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+try {
+  let policy: systemManager.OtaUpdatePolicy = systemManager.getOtaUpdatePolicy(wantTemp);
+  console.info(`Succeeded in getting update policy: ${JSON.stringify(policy)}`);
+} catch (err) {
+  console.error(`Failed to get update policy. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.notifyUpdatePackages
 
-PhonePC/2in1Tablet
-
 notifyUpdatePackages(admin: Want, packageInfo: UpdatePackageInfo): Promise<void>
 
-通知系统更新包信息。内网升级场景下，需要先调用该接口通知系统更新包，再调用[systemManager.setOtaUpdatePolicy](js-apis-enterprise-systemmanager.md#systemmanagersetotaupdatepolicy)设置升级策略。
+通知系统更新包信息。内网升级场景下，需要先调用该接口通知系统更新包，再调用[systemManager.setOtaUpdatePolicy](js-apis-enterprise-systemmanager.md#systemmanagersetotaupdatepolicy)设置升级策略。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口比较耗时，当调用此接口后，后续如果在应用主线程调用其他同步接口时需要等待该接口异步返回。
 
@@ -356,76 +344,74 @@ notifyUpdatePackages(admin: Want, packageInfo: UpdatePackageInfo): Promise<void>
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { Want } from '@kit.AbilityKit';
-4. import { fileIo as fs } from '@kit.CoreFileKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Want } from '@kit.AbilityKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-6. let wantTemp: Want = {
-7. // 需根据实际情况进行替换
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'EnterpriseAdminAbility'
-10. };
-11. let notify: systemManager.NotifyDescription = {
-12. // 需根据实际情况进行替换
-13. "installTips": "installTips",
-14. "installTipsDetail": "installTips detail"
-15. };
-16. let description: systemManager.PackageDescription = {
-17. // 需根据实际情况进行替换
-18. "notify": notify
-19. };
-20. let updatePackages: Array<systemManager.Package> = [];
-21. // 应用沙箱路径，需根据实际情况进行替换
-22. let fileDir = "/xxxx/xxxx/";
-23. let path1: string = "update_sd_base.zip";
-24. let path2: string = "update_sd_cust_xxxxx_all_cn.zip";
-25. let path3: string = "update_sd_preload_xxxxx_all_cn_R1.zip";
-26. let fd1: number = fs.openSync(fileDir + path1, fs.OpenMode.READ_ONLY).fd;
-27. let fd2: number = fs.openSync(fileDir + "xxxxx/" + path2, fs.OpenMode.READ_ONLY).fd;
-28. let fd3: number = fs.openSync(fileDir + "xxxxx/" + path3, fs.OpenMode.READ_ONLY).fd;
-29. let package1: systemManager.Package = {
-30. // 需根据实际情况进行替换
-31. "type": systemManager.PackageType.FIRMWARE,
-32. "path": path1,
-33. "fd": fd1
-34. };
-35. let package2: systemManager.Package = {
-36. // 需根据实际情况进行替换
-37. "type": systemManager.PackageType.FIRMWARE,
-38. "path": path2,
-39. "fd": fd2
-40. };
-41. let package3: systemManager.Package = {
-42. // 需根据实际情况进行替换
-43. "type": systemManager.PackageType.FIRMWARE,
-44. "path": path3,
-45. "fd": fd3
-46. };
-47. updatePackages.push(package1);
-48. updatePackages.push(package2);
-49. updatePackages.push(package3);
-50. let updatePackageInfo: systemManager.UpdatePackageInfo = {
-51. // 需根据实际情况进行替换
-52. "version" : "1.0",
-53. "packages" : updatePackages,
-54. "description" : description
-55. };
-56. systemManager.notifyUpdatePackages(wantTemp, updatePackageInfo).then(() => {
-57. console.info('Succeeded in notifying update packages.');
-58. }).catch ((error: BusinessError) => {
-59. console.error(`Failed to notify update packages. Code is ${error.code},message is ${error.message}`);
-60. });
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let notify: systemManager.NotifyDescription = {
+  // 需根据实际情况进行替换
+  "installTips": "installTips",
+  "installTipsDetail": "installTips detail"
+};
+let description: systemManager.PackageDescription = {
+  // 需根据实际情况进行替换
+  "notify": notify
+};
+let updatePackages: Array<systemManager.Package> = [];
+// 应用沙箱路径，需根据实际情况进行替换
+let fileDir = "/xxxx/xxxx/";
+let path1: string = "update_sd_base.zip";
+let path2: string = "update_sd_cust_xxxxx_all_cn.zip";
+let path3: string = "update_sd_preload_xxxxx_all_cn_R1.zip";
+let fd1: number = fileIo.openSync(fileDir + path1, fileIo.OpenMode.READ_ONLY).fd;
+let fd2: number = fileIo.openSync(fileDir + "xxxxx/" + path2, fileIo.OpenMode.READ_ONLY).fd;
+let fd3: number = fileIo.openSync(fileDir + "xxxxx/" + path3, fileIo.OpenMode.READ_ONLY).fd;
+let package1: systemManager.Package = {
+  // 需根据实际情况进行替换
+  "type": systemManager.PackageType.FIRMWARE,
+  "path": path1,
+  "fd": fd1
+};
+let package2: systemManager.Package = {
+  // 需根据实际情况进行替换
+  "type": systemManager.PackageType.FIRMWARE,
+  "path": path2,
+  "fd": fd2
+};
+let package3: systemManager.Package = {
+  // 需根据实际情况进行替换
+  "type": systemManager.PackageType.FIRMWARE,
+  "path": path3,
+  "fd": fd3
+};
+updatePackages.push(package1);
+updatePackages.push(package2);
+updatePackages.push(package3);
+let updatePackageInfo: systemManager.UpdatePackageInfo = {
+  // 需根据实际情况进行替换
+  "version" : "1.0",
+  "packages" : updatePackages,
+  "description" : description
+};
+systemManager.notifyUpdatePackages(wantTemp, updatePackageInfo).then(() => {
+  console.info('Succeeded in notifying update packages.');
+}).catch ((error: BusinessError) => {
+  console.error(`Failed to notify update packages. Code is ${error.code},message is ${error.message}`);
+});
 ```
 
 ## systemManager.getUpdateResult
 
-PhonePC/2in1Tablet
-
 getUpdateResult(admin: Want, version: string): Promise<UpdateResult>
 
-获取系统更新结果。
+获取系统更新结果。使用Promise异步回调。适用于需要检查系统更新是否成功的场景，帮助企业管理员了解设备升级状态，及时处理更新失败的情况，确保设备系统版本符合企业要求。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -459,30 +445,28 @@ getUpdateResult(admin: Want, version: string): Promise<UpdateResult>
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Want } from '@kit.AbilityKit';
 
-5. let wantTemp: Want = {
-6. // 需根据实际情况进行替换
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EnterpriseAdminAbility'
-9. };
-10. systemManager.getUpdateResult(wantTemp, "1.0").then((result:systemManager.UpdateResult) => {
-11. console.info(`Succeeded in getting update result: ${JSON.stringify(result)}`);
-12. }).catch((error: BusinessError) => {
-13. console.error(`Get update result failed. Code is ${error.code},message is ${error.message}`);
-14. });
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+systemManager.getUpdateResult(wantTemp, "1.0").then((result:systemManager.UpdateResult) => {
+  console.info(`Succeeded in getting update result: ${JSON.stringify(result)}`);
+}).catch((error: BusinessError) => {
+  console.error(`Get update result failed. Code is ${error.code},message is ${error.message}`);
+});
 ```
 
 ## systemManager.getUpdateAuthData19+
 
-PhonePC/2in1Tablet
-
 getUpdateAuthData(admin: Want): Promise<string>
 
-获取系统更新的鉴权数据，用于校验系统更新信息。使用Promise异步回调。
+获取系统更新的鉴权数据，用于校验系统更新信息。使用Promise异步回调。适用于内网升级场景，企业管理员可以通过鉴权数据验证系统更新包的合法性和完整性，防止恶意更新包，提升系统安全性。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -514,26 +498,144 @@ getUpdateAuthData(admin: Want): Promise<string>
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Want } from '@kit.AbilityKit';
 
-5. let wantTemp: Want = {
-6. // 需根据实际情况进行替换
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EnterpriseAdminAbility'
-9. };
-10. systemManager.getUpdateAuthData(wantTemp).then((result: string) => {
-11. console.info(`Succeeded in getting update auth data: ${JSON.stringify(result)}`);
-12. }).catch((error: BusinessError) => {
-13. console.error(`Get update auth data failed. Code is ${error.code},message is ${error.message}`);
-14. });
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+systemManager.getUpdateAuthData(wantTemp).then((result: string) => {
+  console.info(`Succeeded in getting update auth data: ${JSON.stringify(result)}`);
+}).catch((error: BusinessError) => {
+  console.error(`Get update auth data failed. Code is ${error.code},message is ${error.message}`);
+});
+```
+
+## systemManager.setOtaUpdateNonceEnable
+
+setOtaUpdateNonceEnable(admin: Want, isEnable: boolean): void
+
+设置OTA更新时Nonce的启用状态（默认为启用状态）。启用后，系统将在OTA更新过程中校验Nonce的有效性，从而防止重放攻击，提升系统安全性。
+
+**说明** 
+
+为保障系统安全，若非内网升级等特殊业务需求，不建议禁用Nonce校验。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**设备行为差异：** 该接口在PC/2in1企业设备中可正常调用，在其他设备中返回801错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| isEnable | boolean | 是 | true表示启用OTA更新Nonce，false表示禁用OTA更新Nonce。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200016 | Service timeout. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例：**
+
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+// 需根据实际情况进行替换
+let isEnable: boolean = true;
+try {
+  systemManager.setOtaUpdateNonceEnable(wantTemp, isEnable);
+  console.info('Succeeded in setting OTA update Nonce enable.');
+} catch (err) {
+  console.error(`Failed to set OTA update Nonce enable. Code is ${err.code}, message is ${err.message}`);
+}
+```
+
+## systemManager.isOtaUpdateNonceEnable
+
+isOtaUpdateNonceEnable(admin: Want): boolean
+
+查询OTA更新Nonce是否启用。适用于需要验证设备OTA更新安全配置的场景，帮助企业管理员确认Nonce校验功能状态，保障系统更新安全性。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示OTA更新Nonce已启用，返回false表示OTA更新Nonce已禁用。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200016 | Service timeout. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+
+**示例：**
+
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+try {
+  let result: boolean = systemManager.isOtaUpdateNonceEnable(wantTemp);
+  console.info(`Succeeded in querying OTA update Nonce enable: ${result}`);
+} catch (err) {
+  console.error(`Failed to query OTA update Nonce enable. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.addDisallowedNearLinkProtocols20+
-
-PhonePC/2in1Tablet
 
 addDisallowedNearLinkProtocols(admin: Want, protocols: Array<NearLinkProtocol>, accountId: number): void
 
@@ -555,7 +657,7 @@ addDisallowedNearLinkProtocols(admin: Want, protocols: Array<NearLinkProtocol>, 
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | protocols | Array<[NearLinkProtocol](js-apis-enterprise-systemmanager.md#nearlinkprotocol20)> | 是 | 星闪协议列表。 |
-| accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)等接口来获取。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
 
 **错误码**：
 
@@ -571,38 +673,36 @@ addDisallowedNearLinkProtocols(admin: Want, protocols: Array<NearLinkProtocol>, 
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. // 需根据实际情况进行替换
-11. let protocols: systemManager.NearLinkProtocol[] = [systemManager.NearLinkProtocol.SSAP,
-12. systemManager.NearLinkProtocol.DATA_TRANSFER];
+// 需根据实际情况进行替换
+let protocols: systemManager.NearLinkProtocol[] = [systemManager.NearLinkProtocol.SSAP,
+  systemManager.NearLinkProtocol.DATA_TRANSFER];
 
-14. // 需根据实际情况进行替换
-15. let accountId: number = 100;
+// 需根据实际情况进行替换
+let accountId: number = 100;
 
-17. try {
-18. systemManager.addDisallowedNearLinkProtocols(wantTemp, protocols, accountId);
-19. console.info('Succeeded in adding the disabled Starlink protocol list for the specified user.');
-20. } catch (err) {
-21. console.error(`Failed to add the disabled Starlink protocol list for the specified user. Code is ${err.code}, message is ${err.message}`);
-22. }
+try {
+  systemManager.addDisallowedNearLinkProtocols(wantTemp, protocols, accountId);
+  console.info('Succeeded in adding the disabled Starlink protocol list for the specified user.');
+} catch (err) {
+  console.error(`Failed to add the disabled Starlink protocol list for the specified user. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.removeDisallowedNearLinkProtocols20+
 
-PhonePC/2in1Tablet
-
 removeDisallowedNearLinkProtocols(admin: Want, protocols: Array<NearLinkProtocol>, accountId: number): void
 
-为指定用户移除禁用的星闪协议名单。
+为指定用户移除禁用的星闪协议名单。移除成功后，指定用户可以重新使用移除列表中的星闪协议进行通信，恢复相应的协议连接能力。使用场景：在企业设备管理场景下，管理员可通过此接口移除之前设置的星闪协议禁用策略，允许用户恢复使用星闪协议进行设备间通信。适用于需要恢复特定用户星闪通信能力的场景，帮助企业管理员灵活调整用户设备的星闪协议访问权限，满足不同业务场景的通信需求。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -620,7 +720,7 @@ removeDisallowedNearLinkProtocols(admin: Want, protocols: Array<NearLinkProtocol
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | protocols | Array<[NearLinkProtocol](js-apis-enterprise-systemmanager.md#nearlinkprotocol20)> | 是 | 星闪协议列表。 |
-| accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)等接口来获取。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
 
 **错误码**：
 
@@ -636,37 +736,35 @@ removeDisallowedNearLinkProtocols(admin: Want, protocols: Array<NearLinkProtocol
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. // 需根据实际情况进行替换
-11. let protocols: systemManager.NearLinkProtocol[] = [systemManager.NearLinkProtocol.SSAP,
-12. systemManager.NearLinkProtocol.DATA_TRANSFER];
+// 需根据实际情况进行替换
+let protocols: systemManager.NearLinkProtocol[] = [systemManager.NearLinkProtocol.SSAP,
+  systemManager.NearLinkProtocol.DATA_TRANSFER];
 
-14. // 需根据实际情况进行替换
-15. let accountId: number = 100;
-16. try {
-17. systemManager.removeDisallowedNearLinkProtocols(wantTemp, protocols, accountId);
-18. console.info('Succeeded in removing the disabled Starlink protocol list for the specified user.');
-19. } catch (err) {
-20. console.error(`Failed to remove the disabled Starlink protocol list for the specified user. Code is ${err.code}, message is ${err.message}`);
-21. }
+// 需根据实际情况进行替换
+let accountId: number = 100;
+try {
+  systemManager.removeDisallowedNearLinkProtocols(wantTemp, protocols, accountId);
+  console.info('Succeeded in removing the disabled Starlink protocol list for the specified user.');
+} catch (err) {
+  console.error(`Failed to remove the disabled Starlink protocol list for the specified user. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.getDisallowedNearLinkProtocols20+
 
-PhonePC/2in1Tablet
-
 getDisallowedNearLinkProtocols(admin: Want, accountId: number): Array<NearLinkProtocol>
 
-获取指定用户下禁用的星闪协议名单。
+获取指定用户下禁用的星闪协议名单。适用于需要查询用户当前星闪协议访问限制的场景，帮助企业管理员验证策略是否正确下发，或在进行策略调整前获取当前配置。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -681,7 +779,7 @@ getDisallowedNearLinkProtocols(admin: Want, accountId: number): Array<NearLinkPr
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)等接口来获取。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
 
 **返回值：**
 
@@ -702,34 +800,32 @@ getDisallowedNearLinkProtocols(admin: Want, accountId: number): Array<NearLinkPr
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. // 需根据实际情况进行替换
-11. let accountId: number = 100;
+// 需根据实际情况进行替换
+let accountId: number = 100;
 
-13. try {
-14. let result: systemManager.NearLinkProtocol[] = systemManager.getDisallowedNearLinkProtocols(wantTemp, accountId);
-15. console.info(`Succeeded in querying the disabled Starlink protocol list for the specified user: ${result}`);
-16. } catch (err) {
-17. console.error(`Failed to query the disabled Starlink protocol list for the specified user. Code is ${err.code}, message is ${err.message}`);
-18. }
+try {
+  let result: systemManager.NearLinkProtocol[] = systemManager.getDisallowedNearLinkProtocols(wantTemp, accountId);
+  console.info(`Succeeded in querying the disabled Starlink protocol list for the specified user: ${result}`);
+} catch (err) {
+  console.error(`Failed to query the disabled Starlink protocol list for the specified user. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.setInstallLocalEnterpriseAppEnabled20+
 
-PhonePC/2in1Tablet
-
 setInstallLocalEnterpriseAppEnabled(admin: Want, isEnable: boolean): void
 
-设置是否支持本地安装企业应用。设置为支持安装后，具备本地安装能力的PC/2in1企业设备可本地双击应用安装包，安装签名证书分发类型为enterprise\_normal的企业应用。
+设置是否支持本地安装企业应用。设置为支持安装后，具备本地安装能力的PC/2in1企业设备可本地双击应用安装包，安装签名证书分发类型为enterprise\_normal的企业应用。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -761,32 +857,30 @@ setInstallLocalEnterpriseAppEnabled(admin: Want, isEnable: boolean): void
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. // 需根据实际情况进行替换
-10. let isEnable: boolean = true;
-11. try {
-12. systemManager.setInstallLocalEnterpriseAppEnabled(wantTemp, isEnable);
-13. console.info('Succeeded in setting InstallLocalEnterpriseAppEnabled.');
-14. } catch (err) {
-15. console.error(`Failed to set installLocalEnterpriseAppEnabled. Code is ${err.code}, message is ${err.message}`);
-16. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+// 需根据实际情况进行替换
+let isEnable: boolean = true;
+try {
+  systemManager.setInstallLocalEnterpriseAppEnabled(wantTemp, isEnable);
+  console.info('Succeeded in setting InstallLocalEnterpriseAppEnabled.');
+} catch (err) {
+  console.error(`Failed to set installLocalEnterpriseAppEnabled. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.getInstallLocalEnterpriseAppEnabled20+
 
-PhonePC/2in1Tablet
+getInstallLocalEnterpriseAppEnabled(admin: Want | null): boolean
 
-getInstallLocalEnterpriseAppEnabled(admin: Want): boolean
-
-查询是否支持本地安装企业应用。
+查询是否支持本地安装企业应用。适用于需要验证设备本地安装企业应用功能是否开启的场景，帮助企业管理员确认策略配置状态，确保设备能够正常安装企业应用。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -800,7 +894,7 @@ getInstallLocalEnterpriseAppEnabled(admin: Want): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。  API version 24之前，调用本接口查询系统当前是否支持本地安装企业应用。当设备存在多个MDM应用时，传入admin查询对应admin设置的策略。从API version 24开始，admin新增支持传入null，传入null时查询整机实际生效的策略。 |
 
 **返回值：**
 
@@ -821,30 +915,28 @@ getInstallLocalEnterpriseAppEnabled(admin: Want): boolean
 
 **示例：**
 
-```
-1. import { systemManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. try {
-10. let isEnable: boolean = systemManager.getInstallLocalEnterpriseAppEnabled(wantTemp);
-11. console.info('Succeeded in getting installLocalEnterpriseAppEnabled.');
-12. } catch (err) {
-13. console.error(`Failed to get installLocalEnterpriseAppEnabled. Code is ${err.code}, message is ${err.message}`);
-14. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+try {
+  let isEnable: boolean = systemManager.getInstallLocalEnterpriseAppEnabled(wantTemp);
+  console.info('Succeeded in getting installLocalEnterpriseAppEnabled.');
+} catch (err) {
+  console.error(`Failed to get installLocalEnterpriseAppEnabled. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.setAutoUnlockAfterReboot20+
 
-PhonePC/2in1Tablet
-
 setAutoUnlockAfterReboot(admin: Want, isAllowed: boolean): void
 
-设置设备重启自动解锁，仅针对无锁屏密码设备生效。
+设置设备重启自动解锁，仅针对无锁屏密码设备生效。适用于企业无人值守设备或需要快速重启恢复服务的场景，避免因手动解锁导致的设备停机时间，提升设备运维效率和业务连续性。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -876,31 +968,31 @@ setAutoUnlockAfterReboot(admin: Want, isAllowed: boolean): void
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { systemManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { systemManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. let isAllowed: boolean = true;
-10. try {
-11. systemManager.setAutoUnlockAfterReboot(wantTemp, isAllowed);
-12. console.info('Succeeded in setting setAutoUnlockAfterReboot.');
-13. } catch (err) {
-14. console.error(`Failed to set auto unlock after reboot. Code is ${err.code}, message is ${err.message}`);
-15. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let isAllowed: boolean = true;
+try {
+  systemManager.setAutoUnlockAfterReboot(wantTemp, isAllowed);
+  console.info('Succeeded in setting setAutoUnlockAfterReboot.');
+} catch (err) {
+  console.error(`Failed to set auto unlock after reboot. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.getAutoUnlockAfterReboot20+
 
-PhonePC/2in1Tablet
-
 getAutoUnlockAfterReboot(admin: Want): boolean
 
-获取设备是否重启自动解锁。
+获取设备是否重启自动解锁。适用于需要验证设备重启解锁策略是否正确配置的场景，帮助企业管理员确认设备自动解锁功能状态。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[systemManager.getAutoUnlockAfterReboot](js-apis-enterprise-systemmanager.md#systemmanagergetautounlockafterreboot)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -935,26 +1027,77 @@ getAutoUnlockAfterReboot(admin: Want): boolean
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { systemManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { systemManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. try {
-10. systemManager.getAutoUnlockAfterReboot(wantTemp);
-11. console.info('Succeeded in getting auto unlock after reboot.');
-12. } catch (err) {
-13. console.error(`Failed to get auto unlock after reboot. Code is ${err.code}, message is ${err.message}`);
-14. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+try {
+  let result: boolean = systemManager.getAutoUnlockAfterReboot(wantTemp);
+  console.info(`Succeeded in getting auto unlock after reboot. result: ${result}`);
+} catch (err) {
+  console.error(`Failed to get auto unlock after reboot. Code is ${err.code}, message is ${err.message}`);
+}
+```
+
+## systemManager.getAutoUnlockAfterReboot
+
+getAutoUnlockAfterReboot(admin: Want | null): boolean
+
+获取设备是否重启自动解锁。适用于需要验证设备重启解锁策略是否正确配置的场景，帮助企业管理员确认设备自动解锁功能状态。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。  当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示设备重启后自动解锁，返回false表示设备重启后不自动解锁。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例：**
+
+```ts
+import { systemManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  systemManager.getAutoUnlockAfterReboot(null);
+  console.info('Succeeded in getting auto unlock after reboot.');
+} catch (err) {
+  console.error(`Failed to get auto unlock after reboot. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.addKeyEventPolicies23+
-
-PhonePC/2in1Tablet
 
 addKeyEventPolicies(admin: Want, keyPolicies: Array<KeyEventPolicy>): void
 
@@ -973,7 +1116,7 @@ addKeyEventPolicies(admin: Want, keyPolicies: Array<KeyEventPolicy>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| keyPolicies | Array<[KeyEventPolicy](js-apis-enterprise-systemmanager.md#keyeventpolicy23)> | 是 | 按键策略。支持物理按键（电源键、音量加、音量减），导航键（回退、主页、最近打开）。物理键支持任意组合为组合键，导航键不支持组合。组合键事件响应详见[按键事件回调](js-apis-enterpriseadminextensionability.md#onkeyevent23)接口。 |
+| keyPolicies | Array<[KeyEventPolicy](js-apis-enterprise-systemmanager.md#keyeventpolicy23)> | 是 | 按键策略。支持物理按键（电源键、音量加、音量减），导航键（回退、主页、最近打开）。物理键支持任意组合为组合键，导航键不支持组合。组合键事件响应详见按键事件回调[onKeyEvent](js-apis-enterpriseadminextensionability.md#onkeyevent23)接口。 |
 
 **错误码**：
 
@@ -990,42 +1133,40 @@ addKeyEventPolicies(admin: Want, keyPolicies: Array<KeyEventPolicy>): void
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { systemManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { systemManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. let keypolicy: Array<systemManager.KeyEventPolicy> = [
-11. {
-12. "keyCode": systemManager.KeyCode.POWER,
-13. "keyPolicy": systemManager.KeyPolicy.CUSTOM
-14. },
-15. {
-16. "keyCode": systemManager.KeyCode.VOLUME_UP,
-17. "keyPolicy": systemManager.KeyPolicy.CUSTOM
-18. }
-19. ];
+let keypolicy: Array<systemManager.KeyEventPolicy> = [
+  {
+    "keyCode": systemManager.KeyCode.POWER,
+    "keyPolicy": systemManager.KeyPolicy.CUSTOM
+  },
+  {
+    "keyCode": systemManager.KeyCode.VOLUME_UP,
+    "keyPolicy": systemManager.KeyPolicy.CUSTOM
+  }
+];
 
-21. try {
-22. systemManager.addKeyEventPolicies(wantTemp, keypolicy);
-23. console.info('Succeeded in adding key event policies.');
-24. } catch (err) {
-25. console.error(`Failed to add key event policies. Code is ${err.code}, message is ${err.message}`);
-26. }
+try {
+  systemManager.addKeyEventPolicies(wantTemp, keypolicy);
+  console.info('Succeeded in adding key event policies.');
+} catch (err) {
+  console.error(`Failed to add key event policies. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.removeKeyEventPolicies23+
 
-PhonePC/2in1Tablet
-
 removeKeyEventPolicies(admin: Want, keyCodes: Array<KeyCode>): void
 
-删除按键事件处理策略。
+删除按键事件处理策略。删除成功后，系统将恢复对指定按键事件的默认处理行为。适用于需要恢复按键默认行为的场景，帮助企业管理员灵活调整设备按键响应策略，满足不同业务场景的需求。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -1056,35 +1197,35 @@ removeKeyEventPolicies(admin: Want, keyCodes: Array<KeyCode>): void
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { systemManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { systemManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. let keyCodes: Array<systemManager.KeyCode> = [
-11. systemManager.KeyCode.POWER, systemManager.KeyCode.VOLUME_UP,
-12. ];
+let keyCodes: Array<systemManager.KeyCode> = [
+  systemManager.KeyCode.POWER, systemManager.KeyCode.VOLUME_UP
+];
 
-14. try {
-15. systemManager.removeKeyEventPolicies(wantTemp, keyCodes);
-16. console.info('Succeeded in removing key event policies.');
-17. } catch (err) {
-18. console.error(`Failed to remove key event policies. Code is ${err.code}, message is ${err.message}`);
-19. }
+try {
+  systemManager.removeKeyEventPolicies(wantTemp, keyCodes);
+  console.info('Succeeded in removing key event policies.');
+} catch (err) {
+  console.error(`Failed to remove key event policies. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.getKeyEventPolicies23+
 
-PhonePC/2in1Tablet
-
 getKeyEventPolicies(admin: Want): Array<KeyEventPolicy>
 
-获取按键事件处理策略。
+获取按键事件处理策略。适用于需要查询当前按键事件处理策略配置的场景，帮助企业管理员验证策略是否正确下发，或在进行策略调整前获取当前配置。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[systemManager.getKeyEventPolicies](js-apis-enterprise-systemmanager.md#systemmanagergetkeyeventpolicies)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
 
@@ -1119,31 +1260,83 @@ getKeyEventPolicies(admin: Want): Array<KeyEventPolicy>
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { systemManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { systemManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. let result: Array<systemManager.KeyEventPolicy> = [];
-10. try {
-11. result = systemManager.getKeyEventPolicies(wantTemp);
-12. console.info('Succeeded in getting key event policies.');
-13. } catch (err) {
-14. console.error(`Failed to get key event policies. Code is ${err.code}, message is ${err.message}`);
-15. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let result: Array<systemManager.KeyEventPolicy> = [];
+try {
+  result = systemManager.getKeyEventPolicies(wantTemp);
+  console.info('Succeeded in getting key event policies.');
+} catch (err) {
+  console.error(`Failed to get key event policies. Code is ${err.code}, message is ${err.message}`);
+}
+```
+
+## systemManager.getKeyEventPolicies
+
+getKeyEventPolicies(admin: Want | null): Array<KeyEventPolicy>
+
+获取按键事件处理策略。适用于需要查询当前按键事件处理策略配置的场景，帮助企业管理员验证策略是否正确下发，或在进行策略调整前获取当前配置。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**设备行为差异：** 该接口在Phone和Tablet设备中可正常调用，在其他设备中返回801错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。  当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[KeyEventPolicy](js-apis-enterprise-systemmanager.md#keyeventpolicy23)> | 返回当前配置的按键事件策略列表。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例：**
+
+```ts
+import { systemManager } from '@kit.MDMKit';
+
+let result: Array<systemManager.KeyEventPolicy> = [];
+try {
+  // 参数需根据实际情况进行替换
+  result = systemManager.getKeyEventPolicies(null);
+  console.info('Succeeded in getting key event policies.');
+} catch (err) {
+  console.error(`Failed to get key event policies. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## systemManager.startCollectLog23+
 
-PhonePC/2in1Tablet
-
 startCollectLog(admin: Want): Promise<void>
 
-开始收集设备上已生成并存储至硬盘的[faultlog](js-apis-faultlogger.md#faulttype)日志，不支持收集未存储至硬盘的faultlog日志、应用业务日志和系统运行日志。
+开始收集设备上已生成并存储至硬盘的[FaultType](js-apis-faultlogger.md#faulttype)类型的faultlog日志，不支持收集未存储至硬盘的faultlog日志、应用业务日志和系统运行日志。使用Promise异步回调。
 
 * 调用接口后，系统会启动一个日志收集任务，任务启动后接口立即返回。任务可能会因为系统性能等原因导致收集失败。
 * 允许多个MDM应用调用，不同MDM应用在不同用户下收集的日志分开保存，互不影响。同一时间只允许一个MDM应用启动日志收集任务，在任务执行完成前调用本接口会返回错误码9201009，任务执行完成后，允许其他MDM应用调用。
@@ -1187,36 +1380,35 @@ startCollectLog(admin: Want): Promise<void>
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { systemManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { systemManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. systemManager.startCollectLog(wantTemp).then(() => {
-11. console.info('Succeeded in starting collect log');
-12. }).catch((err: BusinessError) => {
-13. console.error(`Failed to start collect log. Code: ${err.code}, message: ${err.message}`);
-14. });
+systemManager.startCollectLog(wantTemp).then(() => {
+  console.info('Succeeded in starting collect log');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to start collect log. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## systemManager.finishLogCollected23+
-
-PhonePC/2in1Tablet
 
 finishLogCollected(admin: Want): void
 
 删除本MDM应用在当前用户下收集到的设备日志。
 
-说明
+**说明** 
 
 在应用调用[startCollectLog](js-apis-enterprise-systemmanager.md#systemmanagerstartcollectlog23)开始收集日志后，收到[EnterpriseAdminExtensionAbility.onLogCollected](js-apis-enterpriseadminextensionability.md#onlogcollected23)回调时，建议立即拷贝或者处理日志，并调用此接口删除收集到的日志。
 
-若不调本接口，设备日志会占用系统存储空间，不影响下一次调用[startCollectLog](js-apis-enterprise-systemmanager.md#systemmanagerstartcollectlog23)启动日志收集任务。
+若不调用本接口，设备日志会占用系统存储空间，不影响下一次调用[startCollectLog](js-apis-enterprise-systemmanager.md#systemmanagerstartcollectlog23)启动日志收集任务。
 
 **需要权限：** ohos.permission.ENTERPRISE\_READ\_LOG
 
@@ -1245,45 +1437,299 @@ finishLogCollected(admin: Want): void
 
 **示例：**
 
+```ts
+import { Want } from '@kit.AbilityKit';
+import { systemManager } from '@kit.MDMKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+
+try {
+  systemManager.finishLogCollected(wantTemp);
+  console.info('Succeeded in finishing log collected.');
+} catch (err) {
+  console.error(`Failed to finish log collected. Code is ${err.code}, message is ${err.message}`);
+}
 ```
-1. import { Want } from '@kit.AbilityKit';
-2. import { systemManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+## systemManager.setActivationLockDisabled24+
 
-10. try {
-11. systemManager.finishLogCollected(wantTemp);
-12. console.info('Succeeded in finishing log collected.');
-13. } catch (err) {
-14. console.error(`Failed to finish log collected. Code is ${err.code}, message is ${err.message}`);
-15. }
+setActivationLockDisabled(admin: Want, isDisabled: boolean, credential?: string): Promise<void>
+
+禁用/启用设备激活锁。使用Promise异步回调。设备激活锁被禁用后，将无法使用查找设备功能。该功能只适用于特定设备（只支持PC/2in1企业设备）。
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**冲突规则：** [配置](../harmonyos-guides/mdm-kit-multi-mdm.md#规则3配置)。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| isDisabled | boolean | 是 | 是否禁用激活锁。true表示禁用，false表示启用。 |
+| credential | string | 否 | 禁用凭据。当设置禁用时该参数必须填写有效凭据，设置启用时为空。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | 无返回结果的Promise对象。当设置禁用/启用失败时，会抛出错误对象。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 9200016 | Service timeout. |
+| 9201011 | The credential of the activation lock is invalid. |
+| 9201012 | Failed to enable or disable the activation lock. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例：**
+
+```ts
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { systemManager } from '@kit.MDMKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+// 需根据实际情况进行替换
+let credential: string = "XXX";
+let isDisabled: boolean = true;
+systemManager.setActivationLockDisabled(wantTemp, isDisabled, credential).then(() => {
+  console.info('Succeeded in setting activation lock status.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set activation lock status. Code: ${err.code}, message: ${err.message}`);
+});
+```
+
+## systemManager.isActivationLockDisabled24+
+
+isActivationLockDisabled(admin: Want): Promise<boolean>
+
+获取设备激活锁禁用状态。使用Promise异步回调。适用于需要验证设备激活锁功能状态的场景，帮助企业管理员确认设备的安全配置，特别是在设备转让或回收时需要了解激活锁状态。
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**设备行为差异：** 该接口在PC/2in1设备中可正常调用，在其他设备中返回801错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，返回当前设备激活锁的禁用状态。返回true表示设备激活锁处于禁用状态，查找设备功能无法使用；返回false表示设备激活锁处于启用状态，可以正常使用设备查找功能。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200016 | Service timeout. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例：**
+
+```ts
+import { Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { systemManager } from '@kit.MDMKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+
+systemManager.isActivationLockDisabled(wantTemp).then(result => {
+  console.info(`Succeeded in getting activation lock status: ${JSON.stringify(result)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to set activation lock status. Code: ${err.code}, message: ${err.message}`);
+});
+```
+
+## systemManager.setInstallLocalEnterpriseAppEnabledForAccount24+
+
+setInstallLocalEnterpriseAppEnabledForAccount(admin: Want, isEnable: boolean, accountId: number): void
+
+设置指定用户下是否支持本地安装企业应用。在具备本地安装能力的PC/2in1企业设备上下发支持本地企业应用策略后，用户可以在桌面或者文件管理器直接双击企业应用安装包，即可直接安装企业应用。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。
+
+仅支持enterprise\_normal或enterprise\_mdm签名类型的企业应用。
+
+**说明** 
+
+满足以下任意条件，PC/2in1企业设备在当前用户下即支持本地安装企业应用：
+
+1. 已通过[setInstallLocalEnterpriseAppEnabled](js-apis-enterprise-systemmanager.md#systemmanagersetinstalllocalenterpriseappenabled20)开启离线安装器；
+2. 已通过本接口设置当前用户支持本地安装企业应用。
+
+本地安装能力依赖华为应用市场。仅7.2.1.300及以上版本的应用市场支持安装MDM应用（分发类型为enterprise\_mdm的应用）；仅7.1.6.300及以上版本的应用市场支持普通企业应用（分发类型为enterprise\_normal的应用）。
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**设备行为差异：** 该接口在PC/2in1企业设备中可正常调用，在其他设备中返回801错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**冲突规则：** [从严管控](../harmonyos-guides/mdm-kit-multi-mdm.md#规则1从严管控)。任意一个MDM应用设置支持本地安装企业应用，则综合策略即为支持本地安装企业应用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| isEnable | boolean | 是 | 是否支持本地安装企业应用。true表示支持，false表示不支持。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例：**
+
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+// 需根据实际情况进行替换
+let isEnable: boolean = true;
+let accountId: number = 100;
+try {
+  systemManager.setInstallLocalEnterpriseAppEnabledForAccount(wantTemp, isEnable, accountId);
+  console.info('Succeeded in setting InstallLocalEnterpriseAppEnabledForAccount.');
+} catch (err) {
+  console.error(`Failed to set installLocalEnterpriseAppEnabledForAccount. Code is ${err.code}, message is ${err.message}`);
+}
+```
+
+## systemManager.getInstallLocalEnterpriseAppEnabledForAccount24+
+
+getInstallLocalEnterpriseAppEnabledForAccount(admin: Want | null, accountId: number): boolean
+
+查询指定用户是否支持本地安装企业应用。适用于需要验证特定用户本地安装企业应用功能是否开启的场景，帮助企业管理员确认策略配置状态，确保用户能够正常安装企业应用。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_SYSTEM
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**设备行为差异：** 该接口在PC/2in1企业设备中可正常调用，在其他设备中返回801错误码。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。  当设备存在多个MDM应用时，传入admin查询对应admin设置的策略。传入null时查询整机实际生效的策略。 |
+| accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持本地安装企业应用，true为支持，false为不支持。当admin为null时，查询系统当前是否支持本地安装企业应用。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200012 | Parameter verification failed. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+
+**示例：**
+
+```ts
+import { systemManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+// 需根据实际情况进行替换
+let accountId: number = 100;
+try {
+  let isEnable: boolean = systemManager.getInstallLocalEnterpriseAppEnabledForAccount(wantTemp, accountId);
+  console.info('Succeeded in getting installLocalEnterpriseAppEnabled.');
+} catch (err) {
+  console.error(`Failed to get installLocalEnterpriseAppEnabled. Code is ${err.code}, message is ${err.message}`);
+}
 ```
 
 ## SystemUpdateInfo
-
-PhonePC/2in1Tablet
 
 待更新的系统版本信息。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | versionName | string | 否 | 否 | 待更新的系统版本名称。 |
-| firstReceivedTime | number | 否 | 否 | 第一次收到系统更新包的时间。 |
-| packageType | string | 否 | 否 | 待更新的系统更新包类型。 |
+| firstReceivedTime | number | 否 | 否 | 第一次收到系统更新包的时间（单位：秒）。 |
+| packageType | string | 否 | 否 | 待更新的系统更新包类型，类型分为normal和patch类型。 |
 
 ## OtaUpdatePolicy
-
-PhonePC/2in1Tablet
 
 升级策略。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1293,31 +1739,31 @@ PhonePC/2in1Tablet
 | delayUpdateTime | number | 否 | 是 | 表示延迟升级时间（单位：小时）。 |
 | installStartTime | number | 否 | 是 | 表示指定安装窗口起始时间（时间戳）。 |
 | installEndTime | number | 否 | 是 | 表示指定安装窗口结束时间（时间戳）。 |
-| disableSystemOtaUpdate20+ | boolean | 否 | 是 | 表示是否禁用在公网环境下升级。true表示禁用公网升级，false表示不禁用公网升级。如果作为[systemManager.setOtaUpdatePolicy](js-apis-enterprise-systemmanager.md#systemmanagersetotaupdatepolicy)的入参，该字段可缺省，缺省时保持当前配置不变。当前配置可通过[systemManager.getOtaUpdatePolicy](js-apis-enterprise-systemmanager.md#systemmanagergetotaupdatepolicy)接口获取。禁用公网升级后，可以采用内网升级。推荐使用[restrictions.setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)禁用公网升级。 |
+| disableSystemOtaUpdate20+ | boolean | 否 | 是 | 表示是否禁用在公网环境下升级。true表示禁用公网升级，false表示不禁用公网升级。如果作为[systemManager.setOtaUpdatePolicy](js-apis-enterprise-systemmanager.md#systemmanagersetotaupdatepolicy)的入参，该字段可缺省，缺省时保持当前配置不变。当前配置可通过[systemManager.getOtaUpdatePolicy](js-apis-enterprise-systemmanager.md#systemmanagergetotaupdatepolicy)接口获取。禁用公网升级后，可以采用内网升级。推荐使用[restrictions.setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)禁用公网升级。 |
 
 ## PolicyType
-
-PhonePC/2in1Tablet
 
 升级策略类型枚举。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | 0 | 默认升级策略。周期提示用户，用户确认后升级。 |
+| DEFAULT | 0 | 默认升级策略。周期弹框提醒用户升级。周期从24小时开始逐渐延长。 |
 | PROHIBIT | 1 | 禁止升级策略。 |
-| UPDATE\_TO\_SPECIFIC\_VERSION | 2 | 强制升级策略。需指定最晚升级时间（latestUpdateTime）参数。 |
-| WINDOWS | 3 | 指定时间窗口升级策略。需指定时间窗口参数（installStartTime、installEndTime）。 |
+| UPDATE\_TO\_SPECIFIC\_VERSION | 2 | 强制升级策略。需指定最晚升级时间（latestUpdateTime）参数。1. 距离最晚升级时间大于48小时未升级，提醒弹框每24小时常规提醒一次。2. 距离最晚升级时间小于48小时未升级，每隔X小时周期提醒安装升级，消息处于通知中心，且不可移除。3. 超过最晚升级时间还未升级，弹出闲时强制升级提醒。 |
+| WINDOWS | 3 | 指定时间窗口升级策略。需指定时间窗口参数（installStartTime、installEndTime）。时间窗口必须大于5分钟。1. 配置时间窗口[A，B]，获取到窗口中的随机升级时间C，到达时间后满足空闲条件，自动升级。2. 配置时间窗口[A，B]，获取到窗口中的随机升级时间C，到达时间后不满足空闲条件，B-C大于半小时，在C和B之间重新刷新一个随机时间D，到达D时间后满足空闲条件，自动升级。3. 配置时间窗口[A，B]，获取到窗口中的随机升级时间C，到达时间后不满足空闲条件，B-C大于半小时，在C和B之间重新刷新一个随机时间D，到达D时间后不满足空闲条件，24小时后再检测，即窗口任务推迟到下一个[A，B]窗口。4. 配置时间[A，B]，获取到窗口中的随机升级时间C，到达时间后不满足空闲条件，B-C小于或等于半小时，24小时后再检测，即窗口任务推迟到下一个[A，B]窗口。 |
 | POSTPONE | 4 | 延迟升级策略。延迟指定时间（delayUpdateTime）后进入DEFAULT模式，周期提示用户升级。 |
 
 ## UpdatePackageInfo
 
-PhonePC/2in1Tablet
-
 系统更新包信息。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1328,11 +1774,11 @@ PhonePC/2in1Tablet
 
 ## Package
 
-PhonePC/2in1Tablet
-
 系统更新包详情。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1342,11 +1788,11 @@ PhonePC/2in1Tablet
 
 ## PackageDescription
 
-PhonePC/2in1Tablet
-
 系统更新包描述信息。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1354,11 +1800,11 @@ PhonePC/2in1Tablet
 
 ## NotifyDescription
 
-PhonePC/2in1Tablet
-
 企业自定义更新通知说明。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1367,11 +1813,11 @@ PhonePC/2in1Tablet
 
 ## UpdateResult
 
-PhonePC/2in1Tablet
-
 系统更新结果信息。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1381,11 +1827,11 @@ PhonePC/2in1Tablet
 
 ## ErrorInfo
 
-PhonePC/2in1Tablet
-
 系统更新错误信息。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1394,11 +1840,11 @@ PhonePC/2in1Tablet
 
 ## PackageType
 
-PhonePC/2in1Tablet
-
 系统更新包类型。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1406,11 +1852,11 @@ PhonePC/2in1Tablet
 
 ## UpdateStatus
 
-PhonePC/2in1Tablet
-
 系统更新状态。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1422,8 +1868,6 @@ PhonePC/2in1Tablet
 
 ## NearLinkProtocol20+
 
-PhonePC/2in1Tablet
-
 星闪协议枚举。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -1432,12 +1876,10 @@ PhonePC/2in1Tablet
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| SSAP | 0 | SSAP（SparkLink Service Access Protocol）协议。具体请参考[SSAP协议](../harmonyos-guides/nearlink-terminology.md#ssap)。 |
-| DATA\_TRANSFER | 1 | 数据传输协议。具体请参考[Data Transfer协议](../harmonyos-guides/nearlink-terminology.md#data-transfer)。 |
+| SSAP | 0 | SSAP（SparkLink Service Access Protocol）协议。具体请参考[SSAP协议](nearlink-ssap.md)。 |
+| DATA\_TRANSFER | 1 | 数据传输协议。具体请参考[Data Transfer协议](nearlink-data-transfer-api.md)。 |
 
 ## KeyEventPolicy23+
-
-PhonePC/2in1Tablet
 
 按键事件处理策略。按键事件发生时，仅拦截响应已下发按键事件处理策略的按键。对于未下发按键事件处理策略的按键事件，系统执行原先的响应逻辑。
 
@@ -1452,9 +1894,7 @@ PhonePC/2in1Tablet
 
 ## KeyCode23+
 
-PhonePC/2in1Tablet
-
-按键编码。[添加按键事件策略](js-apis-enterprise-systemmanager.md#systemmanageraddkeyeventpolicies23)、[删除按键事件策略](js-apis-enterprise-systemmanager.md#systemmanagerremovekeyeventpolicies23)、[获取按键事件策略](js-apis-enterprise-systemmanager.md#systemmanagergetkeyeventpolicies23)和[按键事件回调](js-apis-enterpriseadminextensionability.md#onkeyevent23)接口通过按键编码映射到设备对应实际按键。
+按键编码。添加按键事件处理策略[addKeyEventPolicies](js-apis-enterprise-systemmanager.md#systemmanageraddkeyeventpolicies23)、删除按键事件处理策略[removeKeyEventPolicies](js-apis-enterprise-systemmanager.md#systemmanagerremovekeyeventpolicies23)、获取按键事件处理策略[getKeyEventPolicies](js-apis-enterprise-systemmanager.md#systemmanagergetkeyeventpolicies23)和按键事件回调[onKeyEvent](js-apis-enterpriseadminextensionability.md#onkeyevent23)接口通过按键编码映射到设备对应实际按键。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
@@ -1471,8 +1911,6 @@ PhonePC/2in1Tablet
 
 ## KeyPolicy23+
 
-PhonePC/2in1Tablet
-
 按键策略。MDM应用下发按键策略的按键编码与系统按键事件匹配后的系统行为。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -1485,8 +1923,6 @@ PhonePC/2in1Tablet
 | CUSTOM | 1 | 拦截并转发消息。 设置后会拦截当前按键事件，系统不会再处理该事件，同时通过[EnterpriseAdminExtensionAbility.onKeyEvent](js-apis-enterpriseadminextensionability.md#onkeyevent23)回调接口将发生的按键事件通知给MDM应用，通知MDM应用处理该事件的过程不会阻塞系统后续的其他事件处理。 |
 
 ## KeyEvent23+
-
-PhonePC/2in1Tablet
 
 按键事件。[EnterpriseAdminExtensionAbility.onKeyEvent](js-apis-enterpriseadminextensionability.md#onkeyevent23)按键事件回调触发时，传递当前按键事件信息。
 
@@ -1503,8 +1939,6 @@ PhonePC/2in1Tablet
 
 ## KeyAction23+
 
-PhonePC/2in1Tablet
-
 按键动作。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
@@ -1518,8 +1952,6 @@ PhonePC/2in1Tablet
 | UP | 1 | 按键抬起动作。 |
 
 ## KeyItem23+
-
-PhonePC/2in1Tablet
 
 其他按键信息。当前[KeyCode](js-apis-enterprise-systemmanager.md#keycode23)事件发生时，其他已被按下的按键信息。
 

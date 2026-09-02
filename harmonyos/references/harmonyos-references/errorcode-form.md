@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 卡片错误码
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > 错误码 > 卡片错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8479a129862151ddf5c32654c1dae65ee9630bf4666b2f6f72b135c0fdc7c604
+scraped_at: 2026-09-02T15:01:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fbc23738c6400f3bdbf277ec78a361d3d8382811bcfd98be108d171257844401
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 16500050 进程间通信失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -33,8 +31,6 @@ IPC connection error.
 确认入参是否过长。
 
 ## 16500060 连接服务失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -56,8 +52,6 @@ Service connection error.
 
 ## 16500100 获取卡片配置信息失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to obtain configuration information.
@@ -75,8 +69,6 @@ Failed to obtain configuration information.
 确认并验证卡片配置信息正确性。
 
 ## 16501000 内部功能错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -96,8 +88,6 @@ An internal functional error occurred.
 
 ## 16501001 卡片ID不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The ID of the form to be operated does not exist.
@@ -116,8 +106,6 @@ The ID of the form to be operated does not exist.
 
 ## 16501002 卡片数量达到上限
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The number of forms exceeds the maximum allowed.
@@ -135,8 +123,6 @@ The number of forms exceeds the maximum allowed.
 删除不必要卡片后再请求添加。
 
 ## 16501003 无法操作指定卡片
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -174,8 +160,6 @@ FormRenderService is stopped. Connect to the service again.
 
 ## 16501007 卡片不可信
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Form is not trust.
@@ -211,8 +195,6 @@ Failed to set the live form background image.
 检查传入的背景图资源是否有效。
 
 ## 16501011 卡片不支持调用当前接口
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -268,8 +250,6 @@ The system does not support the current operation.
 
 ## 16501014 半模态卡片编辑页不在前台
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The form edit page is not in the foreground. The current operation is not supported.
@@ -284,11 +264,9 @@ The form edit page is not in the foreground. The current operation is not suppor
 
 **处理步骤**
 
-检查[半模态卡片编辑页](../harmonyos-guides/-ui-widget-event-formeditextensionability-overview.md#半模态卡片编辑)是否已打开。
+检查[半模态卡片编辑页](../harmonyos-guides/arkts-ui-widget-event-formeditextensionability.md#半模态卡片编辑)是否已打开。
 
 ## 16501015 不能关闭其他应用的半模态卡片编辑页
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -306,6 +284,24 @@ Cannot close the widget editing page opened by other apps.
 
 确认打开的半模态编辑页是否属于请求关闭的应用。
 
+## 16501016 卡片位置信息无效
+
+**错误信息**
+
+The location of the widget is invalid.
+
+**错误描述**
+
+卡片位置信息是无效的。
+
+**可能原因**
+
+指定卡片位置信息不在系统定义范围内。
+
+**处理步骤**
+
+检查入参卡片位置是否在[FormLocation](js-apis-app-form-forminfo.md#formlocation20)配置列表。
+
 ## 2293761 内部服务错误
 
 **错误信息**
@@ -319,7 +315,7 @@ Some internal server error occurs.
 **可能原因**
 
 1. 当前系统繁忙。
-2. 当前系统数据内部数据异常。
+2. 当前系统内部数据异常。
 
 **处理步骤**
 

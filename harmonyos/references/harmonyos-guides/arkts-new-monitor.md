@@ -3,22 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-mon
 title: "@Monitor装饰器：状态变量修改异步监听"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Monitor装饰器：状态变量修改异步监听
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:19+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:2feb4739109d93b5f83ecfb1c4f9a3b1a64411800f47cdd1557890e194b00609
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b67f26940b90eebfb9c8f4105e429ab48805cf5f03f0c36f9375a9dfd7e79153
 ---
 
-为了增强状态管理框架对状态变量变化的监听能力，开发者可以使用@Monitor装饰器对状态变量进行监听。
+为了增强状态管理框架对状态变量变化的监听能力，开发者可以使用[@Monitor](../harmonyos-references/ts-state-management-monitor.md#monitor)装饰器对状态变量进行监听。
 
 @Monitor提供了对V2状态变量的监听。在阅读本文档前，建议提前阅读：[@ComponentV2](arkts-create-custom-components.md#componentv2)，[@ObservedV2和@Trace](arkts-new-observedv2-and-trace.md)，[@Local](arkts-new-local.md)。
 
-说明
+**说明** 
 
 @Monitor装饰器从API version 12开始支持。
 
 从API version 12开始，该装饰器支持在元服务中使用。
 
 从API version 23开始，该装饰器支持在ArkTS卡片中使用。
+
+从API版本26.0.0开始，该装饰器新增支持通配符能力。
 
 ## 概述
 
@@ -33,62 +35,75 @@ content_hash: sha256:2feb4739109d93b5f83ecfb1c4f9a3b1a64411800f47cdd1557890e194b
 * 在继承类场景中，可以在父子组件中对同一个属性分别定义@Monitor进行监听，当属性变化时，父子组件中定义的@Monitor回调均会被调用。
 * 和[@Watch装饰器](arkts-watch.md)类似，开发者需要自己定义回调函数，区别在于@Watch装饰器将函数名作为参数，而@Monitor直接装饰回调函数。@Monitor与@Watch的对比可以查看[@Monitor与@Watch的对比](arkts-new-monitor.md#monitor与watch对比)。
 
+从API版本26.0.0开始，支持配置[MonitorDecoratorOptions](../harmonyos-references/ts-state-management-monitor.md#monitordecoratoroptions)来获得以下能力增强：
+
+* 支持在监听路径中设置通配符“\*”，用于模糊监听对象内部变化，包括@ObservedV2中任意@Trace属性变化，内置类型（Array、Map、Date、Set）的API调用引起的变化等。详情见[监听包含通配符的路径](arkts-new-monitor.md#监听包含通配符的路径)。
+* 对@Monitor部分能力进行修正，详情见[@Monitor使用配置项前后的对比](arkts-new-monitor.md#monitor使用配置项前后的对比)。
+
 ## 状态管理V1版本@Watch装饰器的局限性
 
 现有状态管理V1版本无法实现对对象、数组中某一单个属性或数组项变化的监听，且无法获取变化之前的值。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Observed
+class Info {
+  public name: string = 'Tom';
+  public age: number = 25;
+}
+
+@Entry
+@Component
+struct Index {
+  @State @Watch('onInfoChange') info: Info = new Info();
+  @State @Watch('onNumArrChange') numArr: number[] = [1, 2, 3, 4, 5];
+
+  onInfoChange() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `info after change name: ${this.info.name}, age: ${this.info.age} `);
+  }
+
+  onNumArrChange() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `numArr after change ${this.numArr}`);
+  }
+
+  build() {
+    Row() {
+      Column() {
+        // 对象、数组中某一单个属性或数组项变化，不会触发UI刷新
+        Button('change info name')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.name = 'Jack';
+          })
+        Button('change info age')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.age = 30;
+          })
+        Button('change numArr[2]')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.numArr[2] = 5;
+          })
+        Button('change numArr[3]')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.numArr[3] = 6;
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @Observed
-4. class Info {
-5. public name: string = 'Tom';
-6. public age: number = 25;
-7. }
-
-9. @Entry
-10. @Component
-11. struct Index {
-12. @State @Watch('onInfoChange') info: Info = new Info();
-13. @State @Watch('onNumArrChange') numArr: number[] = [1, 2, 3, 4, 5];
-
-15. onInfoChange() {
-16. hilog.info(0xFF00, 'testTag', '%{public}s', `info after change name: ${this.info.name}, age: ${this.info.age} `);
-17. }
-
-19. onNumArrChange() {
-20. hilog.info(0xFF00, 'testTag', '%{public}s', `numArr after change ${this.numArr}`);
-21. }
-
-23. build() {
-24. Row() {
-25. Column() {
-26. // 对象、数组中某一单个属性或数组项变化，不会触发UI刷新
-27. Button('change info name')
-28. .onClick(() => {
-29. this.info.name = 'Jack';
-30. })
-31. Button('change info age')
-32. .onClick(() => {
-33. this.info.age = 30;
-34. })
-35. Button('change numArr[2]')
-36. .onClick(() => {
-37. this.numArr[2] = 5;
-38. })
-39. Button('change numArr[3]')
-40. .onClick(() => {
-41. this.numArr[3] = 6;
-42. })
-43. }
-44. .width('100%')
-45. }
-46. .height('100%')
-47. }
-48. }
-```
-
-[WatchDecoratorLimitationsV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/WatchDecoratorLimitationsV1.ets#L15-L63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/vry-qozMQP6wQdiy88V4SQ/zh-cn_image_0000002736312373.png)
 
 上述代码中，点击"change info name"更改info中的name属性或点击"change info age"更改age时，均会触发info注册的@Watch回调。点击"change numArr[2]"更改numArr中的第3个元素或点击"change numArr[3]"更改第4个元素时，均会触发numArr注册的@Watch回调。在这两个回调中，由于无法获取数据更改前的值，在业务逻辑更加复杂的场景下，无法准确知道是哪一个属性或元素发生了改变从而触发了@Watch事件，这不便于开发者对变量的更改进行准确监听。因此推出@Monitor装饰器实现对对象、数组中某一单个属性或数组项变化的监听，并且能够获取到变化之前的值。
 
@@ -96,12 +111,50 @@ content_hash: sha256:2feb4739109d93b5f83ecfb1c4f9a3b1a64411800f47cdd1557890e194b
 
 | @Monitor属性装饰器 | 说明 |
 | --- | --- |
-| 装饰器参数 | 字符串类型的对象属性名。可同时监听多个对象属性，每个属性以逗号隔开，例如@Monitor('prop1', 'prop2')。可监听深层的属性变化，如多维数组中的某一个元素，嵌套对象或对象数组中的某一个属性。详见[监听变化](arkts-new-monitor.md#监听变化)。 |
-| 装饰对象 | @Monitor装饰成员方法。当监听的属性发生变化时，会触发该回调方法。该回调方法以[IMonitor类型](../harmonyos-references/ts-state-management-watch-monitor.md#imonitor12)的变量作为参数，开发者可以从该参数中获取变化前后的相关信息。 |
+| 装饰器参数 | API版本26.0.0之前，参数为字符串类型的对象属性名。  从API版本26.0.0开始，第一个参数也可以为[MonitorDecoratorOptions](../harmonyos-references/ts-state-management-monitor.md#monitordecoratoroptions)配置项。  可同时监听多个对象属性，每个属性以逗号隔开，例如@Monitor('prop1', 'prop2')。可监听深层的属性变化，如多维数组中的某一个元素，嵌套对象或对象数组中的某一个属性。详见[监听变化](arkts-new-monitor.md#监听变化)。 |
+| 装饰对象 | @Monitor装饰成员方法。当监听的属性发生变化时，会触发该回调方法。该回调方法以[IMonitor类型](../harmonyos-references/ts-state-management-monitor.md#imonitor)的变量作为参数，开发者可以从该参数中获取变化前后的相关信息。 |
+
+### 语法
+
+**说明** 
+
+为简化说明，下文将传入MonitorDecoratorOptions的@Monitor调用称为**使用配置项的@Monitor**。将未传入MonitorDecoratorOptions的@Monitor调用称为**未使用配置项的@Monitor**。
+
+未使用配置项的@Monitor语法：
+
+```typescript
+@Monitor('path')
+onValueChange(monitor: IMonitor) {
+}
+```
+
+使用配置项的@Monitor语法：
+
+```ts
+@Monitor({ enableWildcard: false }, 'path') // 使用配置项，显式配置不使能通配符
+onValueChanged1(monitor: IMonitor) {
+}
+@Monitor({}, 'path.*') // 使用配置项，默认使能通配符，监听path对象内任意可观察变化
+onValueChange2(monitor: IMonitor) {
+}
+@Monitor({ enableWildcard: true }, 'path.*') // 使用配置项，显式配置使能通配符
+onValueChange3(monitor: IMonitor) {
+}
+```
+
+### @Monitor使用配置项前后的对比
+
+| 场景 | 未使用配置项的@Monitor | 使用配置项的@Monitor |
+| --- | --- | --- |
+| 使用通配符 | 不支持。 | 支持。 |
+| 监听不可监听变量 | 存在被连带触发监听的可能，详情见[正确设置@Monitor入参](arkts-new-monitor.md#正确设置monitor入参)。 | 忽略不可监听变量，对路径的监听变为互相独立的监听。 |
+| 变量可访问性变化 | 仅记录变量可访问时的状态，无法正常处理变量变为不可访问的情况。 | 变量从可访问变为不可访问，或从不可访问变为可访问，均能正常处理。 |
+
+使用配置项的@Monitor在以上场景的表现，将与[@SyncMonitor](arkts-new-syncmonitor.md)、[addMonitor](arkts-new-addmonitor-clearmonitor.md)保持一致。
 
 ## 接口说明
 
-IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态变量变化监听](../harmonyos-references/ts-state-management-watch-monitor.md)。
+IMonitor类型、IMonitorValue<T>类型以及MonitorDecoratorOptions的接口说明参考API文档：[@Monitor：状态变量修改监听](../harmonyos-references/ts-state-management-monitor.md)。
 
 ## 监听变化
 
@@ -111,85 +164,95 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 * @Monitor监听的变量需要被@Local、@Param、@Provider、@Consumer、@Computed装饰，未被状态变量装饰器装饰的变量在变化时无法被监听。@Monitor可以同时监听多个状态变量，这些变量名之间用","隔开。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    @Local message: string = 'Hello World';
+    @Local name: string = 'Tom';
+    @Local age: number = 24;
+
+    @Monitor('message', 'name')
+    onStrChange(monitor: IMonitor) {
+      monitor.dirty.forEach((path: string) => {
+        hilog.info(0xFF00, 'testTag', '%{public}s',
+          `${path} changed from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+      });
+    }
+
+    build() {
+      Column() {
+        // 点击Button更新message和name，触发onStrChange回调
+        Button('change string')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.message += '!';
+            this.name = 'Jack';
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @Entry
-  4. @ComponentV2
-  5. struct Index {
-  6. @Local message: string = 'Hello World';
-  7. @Local name: string = 'Tom';
-  8. @Local age: number = 24;
-
-  10. @Monitor('message', 'name')
-  11. onStrChange(monitor: IMonitor) {
-  12. monitor.dirty.forEach((path: string) => {
-  13. hilog.info(0xFF00, 'testTag', '%{public}s',
-  14. `${path} changed from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-  15. });
-  16. }
-
-  18. build() {
-  19. Column() {
-  20. // 点击Button更新message和name，触发onStrChange回调
-  21. Button('change string')
-  22. .onClick(() => {
-  23. this.message += '!';
-  24. this.name = 'Jack';
-  25. })
-  26. }
-  27. }
-  28. }
-  ```
-
-  [MonitorDecoratorMultiWatchCompV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorMultiWatchCompV2.ets#L15-L43)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/kvUI7U6bRBWw31yptsWOpQ/zh-cn_image_0000002706673328.png)
 * @Monitor监听的状态变量为类对象时，仅能监听对象整体的变化。监听类属性的变化需要类属性被@Trace装饰。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  class Info {
+    public name: string;
+    public age: number;
+
+    constructor(name: string, age: number) {
+      this.name = name;
+      this.age = age;
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    @Local info: Info = new Info('Tom', 25);
+
+    @Monitor('info')
+    infoChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `info change`);
+    }
+
+    @Monitor('info.name')
+    infoPropertyChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `info name change`);
+    }
+
+    build() {
+      Column() {
+        Text(`name: ${this.info.name}, age: ${this.info.age}`)
+          .fontSize(20)
+          .margin(10)
+        Button('change info')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info = new Info('Lucy', 18); // 能够监听到
+          })
+        Button('change info.name')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.name = 'Jack'; // 监听不到
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. class Info {
-  4. public name: string;
-  5. public age: number;
-
-  7. constructor(name: string, age: number) {
-  8. this.name = name;
-  9. this.age = age;
-  10. }
-  11. }
-
-  13. @Entry
-  14. @ComponentV2
-  15. struct Index {
-  16. @Local info: Info = new Info('Tom', 25);
-
-  18. @Monitor('info')
-  19. infoChange(monitor: IMonitor) {
-  20. hilog.info(0xFF00, 'testTag', '%{public}s', `info change`);
-  21. }
-
-  23. @Monitor('info.name')
-  24. infoPropertyChange(monitor: IMonitor) {
-  25. hilog.info(0xFF00, 'testTag', '%{public}s', `info name change`);
-  26. }
-
-  28. build() {
-  29. Column() {
-  30. Text(`name: ${this.info.name}, age: ${this.info.age}`)
-  31. Button('change info')
-  32. .onClick(() => {
-  33. this.info = new Info('Lucy', 18); // 能够监听到
-  34. })
-  35. Button('change info.name')
-  36. .onClick(() => {
-  37. this.info.name = 'Jack'; // 监听不到
-  38. })
-  39. }
-  40. }
-  41. }
-  ```
-
-  [MonitorDecoratorObjectTraceCompV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorObjectTraceCompV2.ets#L15-L57)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/zmA5JhLXQN2Z-YGeDx5DSw/zh-cn_image_0000002736432419.gif)
 
 ### 在@ObservedV2装饰的类中使用@Monitor
 
@@ -197,157 +260,172 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 * @Monitor监听的对象属性需要被@Trace装饰，未被@Trace装饰的属性的变化无法被监听。@Monitor可以同时监听多个属性，这些属性之间用","隔开。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ObservedV2
+  class Info {
+    @Trace public name: string = 'Tom';
+    @Trace public region: string = 'North';
+    @Trace public job: string = 'Teacher';
+    public age: number = 25;
+
+    // name被@Trace装饰，能够监听变化
+    @Monitor('name')
+    onNameChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `name change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+
+    // age未被@Trace装饰，不能监听变化
+    @Monitor('age')
+    onAgeChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+
+    // region与job均被@Trace装饰，能够监听变化
+    @Monitor('region', 'job')
+    onChange(monitor: IMonitor) {
+      monitor.dirty.forEach((path: string) => {
+        hilog.info(0xFF00, 'testTag', '%{public}s',
+          `${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+      })
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    info: Info = new Info();
+
+    build() {
+      Column() {
+        Button('change name')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.name = 'Jack'; // 能够触发onNameChange方法
+          })
+        Button('change age')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.age = 26; // 不能够触发onAgeChange方法
+          })
+        Button('change region')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.region = 'South'; // 能够触发onChange方法
+          })
+        Button('change job')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.job = 'Driver'; // 能够触发onChange方法
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @ObservedV2
-  4. class Info {
-  5. @Trace public name: string = 'Tom';
-  6. @Trace public region: string = 'North';
-  7. @Trace public job: string = 'Teacher';
-  8. public age: number = 25;
-
-  10. // name被@Trace装饰，能够监听变化
-  11. @Monitor('name')
-  12. onNameChange(monitor: IMonitor) {
-  13. hilog.info(0xFF00, 'testTag', '%{public}s',
-  14. `name change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  15. }
-
-  17. // age未被@Trace装饰，不能监听变化
-  18. @Monitor('age')
-  19. onAgeChange(monitor: IMonitor) {
-  20. hilog.info(0xFF00, 'testTag', '%{public}s',
-  21. `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  22. }
-
-  24. // region与job均被@Trace装饰，能够监听变化
-  25. @Monitor('region', 'job')
-  26. onChange(monitor: IMonitor) {
-  27. monitor.dirty.forEach((path: string) => {
-  28. hilog.info(0xFF00, 'testTag', '%{public}s',
-  29. `${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-  30. })
-  31. }
-  32. }
-
-  34. @Entry
-  35. @ComponentV2
-  36. struct Index {
-  37. info: Info = new Info();
-
-  39. build() {
-  40. Column() {
-  41. Button('change name')
-  42. .onClick(() => {
-  43. this.info.name = 'Jack'; // 能够触发onNameChange方法
-  44. })
-  45. Button('change age')
-  46. .onClick(() => {
-  47. this.info.age = 26; // 不能够触发onAgeChange方法
-  48. })
-  49. Button('change region')
-  50. .onClick(() => {
-  51. this.info.region = 'South'; // 能够触发onChange方法
-  52. })
-  53. Button('change job')
-  54. .onClick(() => {
-  55. this.info.job = 'Driver'; // 能够触发onChange方法
-  56. })
-  57. }
-  58. }
-  59. }
-  ```
-
-  [MonitorDecoratorMultiWatchObservedV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorMultiWatchObservedV2.ets#L15-L75)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/dp4mecE6QW-oCBc7KcQQwQ/zh-cn_image_0000002706833266.png)
 * @Monitor可以监听深层属性的变化，该深层属性需要被@Trace装饰。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ObservedV2
+  class Inner {
+    @Trace public num: number = 0;
+  }
+
+  @ObservedV2
+  class Outer {
+    public inner: Inner = new Inner();
+
+    @Monitor('inner.num')
+    onChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `inner.num change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    outer: Outer = new Outer();
+
+    build() {
+      Column() {
+        Button('change num')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.outer.inner.num = 100; // 能够触发onChange方法
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @ObservedV2
-  4. class Inner {
-  5. @Trace public num: number = 0;
-  6. }
-
-  8. @ObservedV2
-  9. class Outer {
-  10. public inner: Inner = new Inner();
-
-  12. @Monitor('inner.num')
-  13. onChange(monitor: IMonitor) {
-  14. hilog.info(0xFF00, 'testTag', '%{public}s',
-  15. `inner.num change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  16. }
-  17. }
-
-  19. @Entry
-  20. @ComponentV2
-  21. struct Index {
-  22. outer: Outer = new Outer();
-
-  24. build() {
-  25. Column() {
-  26. Button('change num')
-  27. .onClick(() => {
-  28. this.outer.inner.num = 100; // 能够触发onChange方法
-  29. })
-  30. }
-  31. }
-  32. }
-  ```
-
-  [MonitorDecoratorObjectTraceObservedV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorObjectTraceObservedV2.ets#L15-L48)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/oonlkkIYTximK3LVOAoWmA/zh-cn_image_0000002736312375.png)
 * 在继承类场景下，可以在继承链中对同一个属性进行多次监听。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ObservedV2
+  class Base {
+    @Trace public name: string;
+
+    // 基类监听name属性
+    @Monitor('name')
+    onBaseNameChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `Base Class name change`);
+    }
+
+    constructor(name: string) {
+      this.name = name;
+    }
+  }
+
+  @ObservedV2
+  class Derived extends Base {
+    // 继承类监听name属性
+    @Monitor('name')
+    onDerivedNameChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `Derived Class name change`);
+    }
+
+    constructor(name: string) {
+      super(name);
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    derived: Derived = new Derived('AAA');
+
+    build() {
+      Column() {
+        Button('change name')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.derived.name = 'BBB'; // 能够先后触发onBaseNameChange、onDerivedNameChange方法
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @ObservedV2
-  4. class Base {
-  5. @Trace public name: string;
-
-  7. // 基类监听name属性
-  8. @Monitor('name')
-  9. onBaseNameChange(monitor: IMonitor) {
-  10. hilog.info(0xFF00, 'testTag', '%{public}s', `Base Class name change`);
-  11. }
-
-  13. constructor(name: string) {
-  14. this.name = name;
-  15. }
-  16. }
-
-  18. @ObservedV2
-  19. class Derived extends Base {
-  20. // 继承类监听name属性
-  21. @Monitor('name')
-  22. onDerivedNameChange(monitor: IMonitor) {
-  23. hilog.info(0xFF00, 'testTag', '%{public}s', `Derived Class name change`);
-  24. }
-
-  26. constructor(name: string) {
-  27. super(name);
-  28. }
-  29. }
-
-  31. @Entry
-  32. @ComponentV2
-  33. struct Index {
-  34. derived: Derived = new Derived('AAA');
-
-  36. build() {
-  37. Column() {
-  38. Button('change name')
-  39. .onClick(() => {
-  40. this.derived.name = 'BBB'; // 能够先后触发onBaseNameChange、onDerivedNameChange方法
-  41. })
-  42. }
-  43. }
-  44. }
-  ```
-
-  [MonitorDecoratorInheritanceSupportObservedV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorInheritanceSupportObservedV2.ets#L15-L60)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/y6n0k7o0TDKa8fJQKv-fow/zh-cn_image_0000002706673330.png)
 
 ### 通用监听能力
 
@@ -355,217 +433,855 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 * @Monitor支持对数组中的项进行监听，包括多维数组，对象数组。@Monitor无法监听内置类型（Array、Map、Date、Set）的API调用引起的变化。当@Monitor监听数组整体时，只能观测到数组整体的赋值。可以通过监听数组的长度变化来判断数组是否有插入、删除等变化。当前仅支持使用"."的方式表达深层属性、数组项的监听。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ObservedV2
+  class Info {
+    @Trace public name: string;
+    @Trace public age: number;
+
+    constructor(name: string, age: number) {
+      this.name = name;
+      this.age = age;
+    }
+  }
+
+  @ObservedV2
+  class ArrMonitor {
+    @Trace public dimensionTwo: number[][] = [[1, 1, 1], [2, 2, 2], [3, 3, 3]];
+    @Trace public dimensionThree: number[][][] = [[[1], [2], [3]], [[4], [5], [6]], [[7], [8], [9]]];
+    @Trace public infoArr: Info[] = [new Info('Jack', 24), new Info('Lucy', 18)];
+
+    // dimensionTwo为二维简单类型数组，且被@Trace装饰，能够观测里面的元素变化
+    @Monitor('dimensionTwo.0.0', 'dimensionTwo.1.1')
+    onDimensionTwoChange(monitor: IMonitor) {
+      monitor.dirty.forEach((path: string) => {
+        hilog.info(0xFF00, 'testTag', '%{public}s',
+          `dimensionTwo path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+      })
+    }
+
+    // dimensionThree为三维简单类型数组，且被@Trace装饰，能够观测里面的元素变化
+    @Monitor('dimensionThree.0.0.0', 'dimensionThree.1.1.0')
+    onDimensionThreeChange(monitor: IMonitor) {
+      monitor.dirty.forEach((path: string) => {
+        hilog.info(0xFF00, 'testTag', '%{public}s',
+          `dimensionThree path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+      })
+    }
+
+    // Info类中属性name、age均被@Trace装饰，能够监听到变化
+    @Monitor('infoArr.0.name', 'infoArr.1.age')
+    onInfoArrPropertyChange(monitor: IMonitor) {
+      monitor.dirty.forEach((path: string) => {
+        hilog.info(0xFF00, 'testTag', '%{public}s',
+          `infoArr path:${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+      })
+    }
+
+    // infoArr被@Trace装饰，能够监听到infoArr整体赋值的变化
+    @Monitor('infoArr')
+    onInfoArrChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `infoArr whole change`);
+    }
+
+    // 能够监听到infoArr的长度变化
+    @Monitor('infoArr.length')
+    onInfoArrLengthChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `infoArr length change`);
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    arrMonitor: ArrMonitor = new ArrMonitor();
+
+    build() {
+      Column() {
+        Button('Change dimensionTwo')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 能够触发onDimensionTwoChange方法
+            this.arrMonitor.dimensionTwo[0][0]++;
+            this.arrMonitor.dimensionTwo[1][1]++;
+          })
+        Button('Change dimensionThree')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 能够触发onDimensionThreeChange方法
+            this.arrMonitor.dimensionThree[0][0][0]++;
+            this.arrMonitor.dimensionThree[1][1][0]++;
+          })
+        Button('Change info property')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 能够触发onInfoArrPropertyChange方法
+            this.arrMonitor.infoArr[0].name = 'Tom';
+            this.arrMonitor.infoArr[1].age = 19;
+          })
+        Button('Change whole infoArr')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 能够触发onInfoArrChange、onInfoArrPropertyChange、onInfoArrLengthChange方法
+            this.arrMonitor.infoArr = [new Info('Cindy', 8)];
+          })
+        Button('Push new info to infoArr')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            // 能够触发onInfoArrPropertyChange、onInfoArrLengthChange方法
+            this.arrMonitor.infoArr.push(new Info('David', 50));
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @ObservedV2
-  4. class Info {
-  5. @Trace public name: string;
-  6. @Trace public age: number;
-
-  8. constructor(name: string, age: number) {
-  9. this.name = name;
-  10. this.age = age;
-  11. }
-  12. }
-
-  14. @ObservedV2
-  15. class ArrMonitor {
-  16. @Trace public dimensionTwo: number[][] = [[1, 1, 1], [2, 2, 2], [3, 3, 3]];
-  17. @Trace public dimensionThree: number[][][] = [[[1], [2], [3]], [[4], [5], [6]], [[7], [8], [9]]];
-  18. @Trace public infoArr: Info[] = [new Info('Jack', 24), new Info('Lucy', 18)];
-
-  20. // dimensionTwo为二维简单类型数组，且被@Trace装饰，能够观测里面的元素变化
-  21. @Monitor('dimensionTwo.0.0', 'dimensionTwo.1.1')
-  22. onDimensionTwoChange(monitor: IMonitor) {
-  23. monitor.dirty.forEach((path: string) => {
-  24. hilog.info(0xFF00, 'testTag', '%{public}s',
-  25. `dimensionTwo path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-  26. })
-  27. }
-
-  29. // dimensionThree为三维简单类型数组，且被@Trace装饰，能够观测里面的元素变化
-  30. @Monitor('dimensionThree.0.0.0', 'dimensionThree.1.1.0')
-  31. onDimensionThreeChange(monitor: IMonitor) {
-  32. monitor.dirty.forEach((path: string) => {
-  33. hilog.info(0xFF00, 'testTag', '%{public}s',
-  34. `dimensionThree path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-  35. })
-  36. }
-
-  38. // Info类中属性name、age均被@Trace装饰，能够监听到变化
-  39. @Monitor('infoArr.0.name', 'infoArr.1.age')
-  40. onInfoArrPropertyChange(monitor: IMonitor) {
-  41. monitor.dirty.forEach((path: string) => {
-  42. hilog.info(0xFF00, 'testTag', '%{public}s',
-  43. `infoArr path:${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-  44. })
-  45. }
-
-  47. // infoArr被@Trace装饰，能够监听到infoArr整体赋值的变化
-  48. @Monitor('infoArr')
-  49. onInfoArrChange(monitor: IMonitor) {
-  50. hilog.info(0xFF00, 'testTag', '%{public}s', `infoArr whole change`);
-  51. }
-
-  53. // 能够监听到infoArr的长度变化
-  54. @Monitor('infoArr.length')
-  55. onInfoArrLengthChange(monitor: IMonitor) {
-  56. hilog.info(0xFF00, 'testTag', '%{public}s', `infoArr length change`);
-  57. }
-  58. }
-
-  60. @Entry
-  61. @ComponentV2
-  62. struct Index {
-  63. arrMonitor: ArrMonitor = new ArrMonitor();
-
-  65. build() {
-  66. Column() {
-  67. Button('Change dimensionTwo')
-  68. .onClick(() => {
-  69. // 能够触发onDimensionTwoChange方法
-  70. this.arrMonitor.dimensionTwo[0][0]++;
-  71. this.arrMonitor.dimensionTwo[1][1]++;
-  72. })
-  73. Button('Change dimensionThree')
-  74. .onClick(() => {
-  75. // 能够触发onDimensionThreeChange方法
-  76. this.arrMonitor.dimensionThree[0][0][0]++;
-  77. this.arrMonitor.dimensionThree[1][1][0]++;
-  78. })
-  79. Button('Change info property')
-  80. .onClick(() => {
-  81. // 能够触发onInfoArrPropertyChange方法
-  82. this.arrMonitor.infoArr[0].name = 'Tom';
-  83. this.arrMonitor.infoArr[1].age = 19;
-  84. })
-  85. Button('Change whole infoArr')
-  86. .onClick(() => {
-  87. // 能够触发onInfoArrChange、onInfoArrPropertyChange、onInfoArrLengthChange方法
-  88. this.arrMonitor.infoArr = [new Info('Cindy', 8)];
-  89. })
-  90. Button('Push new info to infoArr')
-  91. .onClick(() => {
-  92. // 能够触发onInfoArrPropertyChange、onInfoArrLengthChange方法
-  93. this.arrMonitor.infoArr.push(new Info('David', 50));
-  94. })
-  95. }
-  96. }
-  97. }
-  ```
-
-  [MonitorDecoratorArraySupport.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorArraySupport.ets#L15-L113)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/S6Sy_htuQd-hQQk1OEiYFA/zh-cn_image_0000002736432421.png)
 * 对象整体改变，但监听的属性不变时，不触发@Monitor回调。
 
   下面的示例按照Step1-Step2-Step3的顺序点击，表现为代码注释中的行为。
 
   如果只点击Step2或Step3，改变name、age的值，此时会触发onNameChange和onAgeChange方法。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ObservedV2
+  class Info {
+    @Trace public person: Person;
+
+    @Monitor('person.name')
+    onNameChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `name change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+
+    @Monitor('person.age')
+    onAgeChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+
+    constructor(name: string, age: number) {
+      this.person = new Person(name, age);
+    }
+  }
+
+  @ObservedV2
+  class Person {
+    @Trace public name: string;
+    @Trace public age: number;
+
+    constructor(name: string, age: number) {
+      this.name = name;
+      this.age = age;
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    info: Info = new Info('Tom', 25);
+
+    build() {
+      Column() {
+        Button('Step1: Only change name')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.person = new Person('Jack', 25); // 能够触发onNameChange方法，不触发onAgeChange方法
+          })
+        Button('Step2: Only change age')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.person = new Person('Jack', 18); // 能够触发onAgeChange方法，不触发onNameChange方法
+          })
+        Button('Step3: Change name and age')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.person = new Person('Lucy', 19); // 能够触发onNameChange、onAgeChange方法
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @ObservedV2
-  4. class Info {
-  5. @Trace public person: Person;
-
-  7. @Monitor('person.name')
-  8. onNameChange(monitor: IMonitor) {
-  9. hilog.info(0xFF00, 'testTag', '%{public}s',
-  10. `name change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  11. }
-
-  13. @Monitor('person.age')
-  14. onAgeChange(monitor: IMonitor) {
-  15. hilog.info(0xFF00, 'testTag', '%{public}s',
-  16. `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  17. }
-
-  19. constructor(name: string, age: number) {
-  20. this.person = new Person(name, age);
-  21. }
-  22. }
-
-  24. @ObservedV2
-  25. class Person {
-  26. @Trace public name: string;
-  27. @Trace public age: number;
-
-  29. constructor(name: string, age: number) {
-  30. this.name = name;
-  31. this.age = age;
-  32. }
-  33. }
-
-  35. @Entry
-  36. @ComponentV2
-  37. struct Index {
-  38. info: Info = new Info('Tom', 25);
-
-  40. build() {
-  41. Column() {
-  42. Button('Step1: Only change name')
-  43. .onClick(() => {
-  44. this.info.person = new Person('Jack', 25); // 能够触发onNameChange方法，不触发onAgeChange方法
-  45. })
-  46. Button('Step2: Only change age')
-  47. .onClick(() => {
-  48. this.info.person = new Person('Jack', 18); // 能够触发onAgeChange方法，不触发onNameChange方法
-  49. })
-  50. Button('Step3: Change name and age')
-  51. .onClick(() => {
-  52. this.info.person = new Person('Lucy', 19); // 能够触发onNameChange、onAgeChange方法
-  53. })
-  54. }
-  55. }
-  56. }
-  ```
-
-  [MonitorDecoratorObjectSupport.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorObjectSupport.ets#L15-L72)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/F0-qSZv9SfGMJB-SwDaWEA/zh-cn_image_0000002706833268.png)
 * 在一次事件中多次改变被@Monitor监听的属性，以最后一次修改为准。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ObservedV2
+  class Frequency {
+    @Trace public count: number = 0;
+
+    @Monitor('count')
+    onCountChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `count change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    frequency: Frequency = new Frequency();
+
+    build() {
+      Column() {
+        Button('change count to 1000')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            for (let i = 1; i <= 1000; i++) {
+              this.frequency.count = i;
+            }
+          })
+        Button('change count to 0 then to 1000')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            for (let i = 999; i >= 0; i--) {
+              this.frequency.count = i;
+            }
+            this.frequency.count = 1000; // 最终不触发onCountChange方法
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @ObservedV2
-  4. class Frequency {
-  5. @Trace public count: number = 0;
-
-  7. @Monitor('count')
-  8. onCountChange(monitor: IMonitor) {
-  9. hilog.info(0xFF00, 'testTag', '%{public}s',
-  10. `count change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  11. }
-  12. }
-
-  14. @Entry
-  15. @ComponentV2
-  16. struct Index {
-  17. frequency: Frequency = new Frequency();
-
-  19. build() {
-  20. Column() {
-  21. Button('change count to 1000')
-  22. .onClick(() => {
-  23. for (let i = 1; i <= 1000; i++) {
-  24. this.frequency.count = i;
-  25. }
-  26. })
-  27. Button('change count to 0 then to 1000')
-  28. .onClick(() => {
-  29. for (let i = 999; i >= 0; i--) {
-  30. this.frequency.count = i;
-  31. }
-  32. this.frequency.count = 1000; // 最终不触发onCountChange方法
-  33. })
-  34. }
-  35. }
-  36. }
-  ```
-
-  [MonitorDecoratorLastWrite.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorDecoratorLastWrite.ets#L15-L52)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/0Smd9oP4RuuFxQKB4y3XSw/zh-cn_image_0000002736312377.png)
 
 在点击按钮"change count to 1000"后，会触发一次onCountChange方法，并输出日志"count change from 0 to 1000"。在点击按钮"change count to 0 then to 1000"后，由于事件前后属性count的值并没有改变，都为1000，所以不触发onCountChange方法。
+
+## 监听包含通配符的路径
+
+从API版本26.0.0开始，@Monitor支持通配符能力。当使用配置项MonitorDecoratorOptions时，将默认开启通配符支持。通配符可以作为路径中的后缀，监听该路径最后确定值中的变化。该变化包括如@Trace属性的变化、内置类型（Array、Map、Set、Date）的API调用引起的变化等。
+
+通配符路径的语法规则为：
+
+* 通配符只能出现在路径末尾。
+* 通配符不能出现在路径开头，也不能出现在路径中间。
+* 一个路径中最多仅可以出现一个通配符。
+
+合法的通配符路径示例为：
+
+| 路径 | 说明 |
+| --- | --- |
+| obj.\* | obj为@ObservedV2装饰的对象。监听该路径的@Monitor将在以下情况触发：  1、对obj整体赋值。  2、obj任意@Trace属性变化。 |
+| arr.\* | arr为可观察数组。监听该路径的@Monitor将在以下情况触发：  1、对arr整体赋值。  2、arr任意元素变化或数组长度变化。  3、调用数组的API（如push、pop、sort、fill、copyWithin等）。 |
+| obj.objA.\* | objA为@ObservedV2装饰的嵌套对象。监听该路径的@Monitor将在以下情况触发：  1、对obj整体赋值且objA变化。  2、对objA整体赋值。  3、objA任意@Trace属性变化。 |
+| arr.1.\* | arr为嵌套可观察数组。监听该路径的@Monitor将在以下情况触发：  1、对arr整体赋值且下标为1的数组发生变化。  2、arr下标为1的数组任意元素变化或数组长度变化。  3、调用arr下标为1的数组的API。 |
+
+当修改嵌套对象中任意对象时，监听包含该对象的通配符路径遵循最终确定值原则，即通配符前的最后一个确定值变化时，才会触发监听回调。例如，监听上表的路径“obj.objA.\*”时，”objA“为通配符前的最后一个确定值，对”obj“整体赋值，若”objA“赋值前后引用同一个对象，则不会触发回调。
+
+此外，使用通配符时，IMonitor的dirty数组能正常包含通配符路径，但其对应的IMonitorValue的before值与now值都将为undefined。
+
+### 使用通配符监听对象属性变化
+
+当使用通配符监听对象时，对象的任意@Trace装饰的属性变化，或者对象本身被整体赋新值时，触发@Monitor回调。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class ClassA {
+  @Trace public propA: number = 8;
+  @Trace public propB: number = 99;
+
+  constructor(a: number, b: number) {
+    this.propA = a;
+    this.propB = b;
+  }
+}
+
+@Entry
+@ComponentV2
+struct MonitorWildcardObject {
+  @Local cls: ClassA = new ClassA(100, 100);
+
+  // 使能通配符
+  @Monitor({}, 'cls.*')
+  onClsChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onClsChanged, dirty: ${m.dirty.toString()}`);
+  }
+
+  build() {
+    Column() {
+      Button(`Change propA: ${this.cls.propA}`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.cls.propA += 1; // 触发onClsChanged
+        })
+      Button(`Change propB: ${this.cls.propB}`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.cls.propB += 1; // 触发onClsChanged
+        })
+      Button('Assign new object')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.cls = new ClassA(-200, -200); // 触发onClsChanged
+        })
+    }
+    .width('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/FtT0oIUzTditYS67zbwsLg/zh-cn_image_0000002706673332.gif)
+
+### 使用通配符监听嵌套对象属性变化
+
+观察嵌套对象属性变化的示例如下。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Person {
+  @Trace public firstName: string = 'first';
+  @Trace public lastName: string = 'last';
+}
+
+@ObservedV2
+class Class1 {
+  @Trace public person: Person = new Person();
+}
+
+@ObservedV2
+class Class0 {
+  @Trace public class1: Class1 = new Class1();
+}
+
+@Entry
+@ComponentV2
+struct MonitorWildcardNestedObject {
+  @Local class0: Class0 | number = new Class0();
+
+  // 使能通配符，监听嵌套对象
+  @Monitor({}, 'class0.class1.person.*')
+  onPersonChange(info: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'onPersonChange, dirty: ' + info.dirty.toString());
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Button('1. Class0 = new Class')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // @Monitor回调触发
+          // 原因：class0, class1, person变更为新对象
+          this.class0 = new Class0();
+        })
+      Button('2. Class0 = new Class, keep Class1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // 当class0为Class0类型时，@Monitor回调不触发
+          // 原因：即使class0变化了，路径'class0.class1.person.*'中通配符前最后一个确定值person也没有改变
+          if (this.class0 instanceof Class0) {
+            let newClass0 = new Class0();
+            newClass0.class1.person = (this.class0 as Class0).class1.person;
+            this.class0 = newClass0;
+          }
+        })
+      Button('3. Class0.class1 = new Class1')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // 当class0为Class0类型时，@Monitor回调触发
+          // 原因：class1、person变更为新对象
+          if (this.class0 instanceof Class0) {
+            (this.class0 as Class0).class1 = new Class1();
+          }
+        })
+      Button('4. Class0.class1.person = new Person')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // 当class0为Class0类型时，@Monitor回调触发
+          // 原因：person变更为新对象
+          if (this.class0 instanceof Class0) {
+            (this.class0 as Class0).class1.person = new Person();
+          }
+        })
+      Button('5. Class0....person.last update')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // 当class0为Class0类型时，@Monitor回调触发
+          // 原因：person的属性发生变化
+          if (this.class0 instanceof Class0) {
+            (this.class0 as Class0).class1.person.lastName += '+';
+          }
+        })
+      Button('6. Class0 toggle number <=> new Class0')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // @Monitor回调触发
+          // 原因：person在可访问与不可访问之间切换
+          this.class0 = (typeof this.class0 === 'object') ? 500 : new Class0();
+        })
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/rM_SSxk6T7mymyICbAdgmQ/zh-cn_image_0000002736432423.png)
+
+当使用配置项的@Monitor监听的变量在可访问和不可访问之间切换时，都会触发@Monitor回调。
+
+### 使用通配符监听数组对象的变化
+
+使用配置项的@Monitor可以监听到数组的API调用。任意数组的方法被调用时，@Monitor回调都会被执行，即使数组为空或并未实际修改数组的内容。API包括push、pop、shift、splice、unshift、copyWithin、fill、reverse、sort。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Person {
+  @Trace public firstName: string = 'first';
+  @Trace public lastName: string = 'last';
+
+  constructor(first: string = 'no first', last: string = 'no last') {
+    this.firstName = first;
+    this.lastName = last;
+  }
+}
+
+@ObservedV2
+class ArrayOfPerson extends Array<Person> {
+}
+
+@ObservedV2
+class TopArray extends Array<ArrayOfPerson> {
+}
+
+@Entry
+@ComponentV2
+struct MonitorWildcardArray {
+  @Local topArray: TopArray = this.makeNewTopArray();
+
+  // 使能通配符
+  @Monitor({}, 'topArray.1.*')
+  topArrayMonitor1Star(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `TopArray[1]: ${monitor.dirty.toString()}`);
+  }
+
+  // 使能通配符
+  @Monitor({}, 'topArray.*')
+  topArrayMonitorStar(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `TopArray: ${monitor.dirty.toString()}`);
+  }
+
+  makeNewTopArray(): TopArray {
+    // 初始化数组
+    return new TopArray(
+      new ArrayOfPerson(new Person('Adrian'), new Person('Andrew'), new Person('Aaliyah'), new Person('Amir'),
+        new Person('Angel')),
+      new ArrayOfPerson(new Person('Carter'), new Person('Charlie'), new Person('Cooper'), new Person('Cole'),
+        new Person('Callie')),
+      new ArrayOfPerson(new Person('Daniel'), new Person('Daisy'), new Person('Dawson'), new Person('Dana'),
+        new Person('Dalton'))
+    );
+  }
+
+  build() {
+    Column() {
+      // topArrayMonitor1Star与topArrayMonitorStar回调均触发
+      Button('topArray = new TopArray')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.topArray = this.makeNewTopArray();
+        })
+
+      // 当topArray[1][0]存在时，topArrayMonitor1Star回调触发，topArrayMonitorStar回调不触发
+      Button('topArray[1][0] = new Person')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          if (this.topArray.length > 1 && this.topArray[1].length > 0) {
+            this.topArray[1][0] = new Person();
+          }
+        })
+
+      // 当topArray[0][1]存在时，topArrayMonitor1Star与topArrayMonitorStar回调均不触发
+      Button('topArray[0][1] = new Person')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          if (this.topArray.length > 0 && this.topArray[0].length > 1) {
+            this.topArray[0][1] = new Person();
+          }
+        })
+
+      // 当topArray[1]存在时，topArrayMonitor1Star回调触发，topArrayMonitorStar回调不触发
+      Button('topArray[1].push')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          if (this.topArray.length > 1 && this.topArray[1] instanceof ArrayOfPerson) {
+            this.topArray[1].push(new Person());
+          }
+        })
+
+      // 当topArray的length大于2时，topArrayMonitor1Star与topArrayMonitorStar回调均触发
+      Button('topArray.shift (length>2)')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          if (this.topArray.length > 2) {
+            this.topArray.shift();
+          }
+        })
+
+      // 当topArray[0]存在时，topArrayMonitor1Star回调不触发，topArrayMonitorStar回调触发
+      Button('topArray[0] = new ArrayOfPerson')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          if (this.topArray.length > 0) {
+            this.topArray[0] = new ArrayOfPerson(new Person(), new Person());
+          }
+        })
+
+      // 当topArray[1][0]存在时，topArrayMonitor1Star与topArrayMonitorStar回调均不触发
+      Button('topArray[1][0].last update')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          if (this.topArray.length > 1 && this.topArray[1].length > 0 && this.topArray[1][0] instanceof Person) {
+            this.topArray[1][0].lastName += '~';
+          }
+        })
+
+      // topArrayMonitor1Star回调不触发，topArrayMonitorStar回调触发
+      Button('topArray = new TopArray, keep [1]')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          let newTop = this.makeNewTopArray();
+          newTop[1] = this.topArray[1]; // topArray.1未改变，路径'topArray.1.*'中通配符前最后一个确定值未改变
+          this.topArray = newTop;
+        })
+
+      // topArrayMonitor1Star回调不触发，topArrayMonitorStar回调触发
+      Button('topArray.push')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.topArray.push(new ArrayOfPerson(new Person(), new Person()));
+        })
+    }
+    .width('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/AxLdMP1tRs2ZcWJG2NkMwg/zh-cn_image_0000002706833270.png)
+
+### 使用通配符监听Date对象的变化
+
+使用通配符可以监听Date对象的API调用。
+
+```ts
+@Monitor({}, 'dateInstance.*')
+onDateChange(m: IMonitor) {
+}
+```
+
+@Monitor会在以下情况回调：
+
+* dateInstance被赋新值。
+* 调用Date的任意API，包括setFullYear、setMonth、setDate、setHours、setMinutes、setSeconds、setMilliseconds、setTime、setUTCFullYear、setUTCMonth、setUTCDate、setUTCHours、setUTCMinutes、setUTCSeconds、setUTCMilliseconds。即使这些API未实际对Date的值产生更改，@Monitor回调也会触发。
+
+使用通配符监听Date对象的示例如下。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@ComponentV2
+struct MonitorWildcardDate {
+  @Local date: Date = new Date();
+
+  // 使能通配符
+  @Monitor({}, 'date.*')
+  onDateChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onDateChanged, dirty: ${m.dirty.toString()}`);
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      // API调用触发onDateChanged
+      Button(`date.setMilliseconds(1000)`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.date.setMilliseconds(1000);
+        })
+      // API调用触发onDateChanged
+      Button(`date.setTime(1000)`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+            this.date.setTime(1000);
+        })
+      // API调用触发onDateChanged
+      Button(`Assign new Date`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.date = new Date();
+        })
+      // 整体赋相同值，不触发onDateChanged
+      Button(`Re-assign the same Date`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          let sameDate = this.date;
+          this.date = sameDate;
+        })
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/uVyiH1fPSkCleveubq6AHw/zh-cn_image_0000002736312379.png)
+
+### 使用通配符监听Map对象的变化
+
+使用通配符可以监听Map对象的API调用。
+
+```ts
+@Monitor({}, 'mapInstance.*')
+onMapChange(m: IMonitor) {
+}
+```
+
+@Monitor会在以下情况回调：
+
+* mapInstance被赋新值。
+* 调用Map的API，例如set、delete、clear时触发。与Array、Date不同的是，只有当变化真的发生时，回调才会触发。这意味着，当对空Map调用clear，对不存在的Map键值调用delete，以及不实际改变值的set调用都不会触发@Monitor回调。
+
+与Array不同，@Monitor无法对Map的某一个key做监听。
+
+使用通配符监听Map对象的示例如下。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@ComponentV2
+struct MonitorWildcardMap {
+  @Local map: Map<string, string> = new Map<string, string>();
+  cnt: number = 0;
+
+  @Monitor({ enableWildcard: false }, 'map.size')
+  onMapSizeChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onMapSizeChanged, size dirty: ${m.dirty.toString()}`);
+  }
+
+  // 使能通配符
+  @Monitor({}, 'map.*')
+  onMapChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onMapChanged, dirty: ${m.dirty.toString()}`);
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Text(`map.size: ${this.map.size}`)
+        .fontSize(20)
+        .margin(10)
+      Text(`map.get('one'): ${this.map.get('one')}`)
+        .fontSize(20)
+        .margin(10)
+      // 在首次点击时，onMapSizeChanged、onMapChanged回调都触发
+      Button(`Init, map.set('one', 'A'), map.set('two', 'B')`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.map.set('one', 'A');
+          this.map.set('two', 'B');
+        })
+      // onMapSizeChanged、onMapChanged回调都触发
+      Button(`Add new, map.set('three' + this.cnt, 'C')`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.cnt++;
+          this.map.set('three' + this.cnt, 'C')
+        })
+      // 当'one'不存在时，onMapSizeChanged、onMapChanged回调都不触发
+      // 当'one'存在时，onMapSizeChanged、onMapChanged回调都触发
+      Button(`Delete from map: map.delete('one')`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.map.delete('one')
+        })
+      // 当map不为空时，onMapSizeChanged、onMapChanged回调都触发
+      // 当map为空时，onMapSizeChanged、onMapChanged回调都不触发
+      Button(`Clear map`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.map.clear();
+        })
+      // 在首次点击且假设存在（'one' -> 'A'）时，仅onMapChanged回调触发
+      // 若已经设置过（'one' -> 'TWO'），则onMapSizeChanged、onMapChanged回调都不触发
+      Button(`Update one to 'TWO' - map.set('one', 'TWO')`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.map.set('one', 'TWO');
+        })
+      // 当Map不存在'one'时，onMapSizeChanged、onMapChanged回调都触发
+      // 当Map存在'one'时，onMapSizeChanged、onMapChanged回调都不会触发
+      Button(`Update one to the same - map.set('one', sameval)`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          const sameval = this.map.get('one') ?? 'one';
+          this.map.set('one', sameval);
+        })
+      // 当Map不存在'one'时，onMapSizeChanged、onMapChanged回调都触发
+      // 当Map存在'one'时，仅onMapChanged回调触发
+      Button(`Update one to new value - map.set('one', newval)`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          let newval = 'x' + (++this.cnt);
+          this.map.set('one', newval);
+        })
+      // 当map为空时，仅onMapChanged回调触发
+      // 当map不为空时，onMapChanged、onMapSizeChanged回调都触发
+      Button(`new map`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.map = new Map();
+        })
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/LboNdUu8RJevazH1uDr8Eg/zh-cn_image_0000002706673334.gif)
+
+### 使用通配符监听Set对象的变化
+
+使用通配符可以监听Set对象的API调用。
+
+```ts
+@Monitor({}, 'setInstance.*')
+onSetChange(m: IMonitor) {
+}
+```
+
+@Monitor会在以下情况回调：
+
+* setInstance被赋新值。
+* 调用Set的API，例如add、delete、clear时触发。与Array、Date不同的是，只有当变化真的发生时，回调才会触发。这意味着，当对空Set调用clear，对不存在的Set元素调用delete，以及不实际新增元素的add调用都不会触发@Monitor回调。
+
+与Array不同，@Monitor无法对Set的某一个元素做监听。
+
+使用通配符监听Set对象的示例如下。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@ComponentV2
+struct MonitorWildcardSet {
+  @Local set: Set<string> = new Set<string>();
+  cnt: number = 0;
+
+  // 使能通配符
+  @Monitor({}, 'set.*')
+  onSetChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onSetChanged, dirty: ${m.dirty.toString()}`);
+  }
+
+  @Monitor({ enableWildcard: false }, 'set.size')
+  onSetSizeChanged(m: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `onSetSizeChanged, size dirty: ${m.dirty.toString()}`);
+  }
+
+  aboutToAppear(): void {
+    this.set.add('one');
+    this.set.add('two');
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      // onSetChanged、onSetSizeChanged回调都触发
+      Button(`Add three<Num> to the set`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.cnt++;
+          this.set.add('three' + this.cnt);
+        })
+      // 当元素不存在时，onSetChanged、onSetSizeChanged回调都不触发
+      // 当元素存在时，onSetChanged、onSetSizeChanged回调都触发
+      Button(`Delete 'three<Num>' from the set - set.delete(...)`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.set.delete('three' + this.cnt);
+        })
+      // 当set不为空时，onSetChanged、onSetSizeChanged回调都触发
+      // 当set为空时，onSetChanged、onSetSizeChanged回调都不触发
+      Button(`Clear the set - set.clear()`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.set.clear();
+        })
+      // 当set不为空时，onSetChanged、onSetSizeChanged回调都触发
+      // 当set为空时，仅onSetChanged回调触发
+      Button(`Assign new set`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.set = new Set();
+        })
+      // 当set不包含'one'时，onSetChanged、onSetSizeChanged回调都触发
+      // 当set包含'one'时，onSetChanged、onSetSizeChanged回调都不触发
+      Button(`Add 'one' to the set`)
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.set.add('one');
+        })
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/BSrSkC8HTx-nDw7Mt3O5CA/zh-cn_image_0000002736432425.png)
 
 ## 限制条件
 
@@ -573,189 +1289,210 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 * 不建议在一个类中对同一个属性进行多次@Monitor的监听。当一个类中存在对一个属性的多次监听时，只有最后一个定义的监听方法会生效。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ObservedV2
+  class Info {
+    @Trace public name: string = 'Tom';
+
+    @Monitor('name')
+    onNameChange(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `onNameChange`);
+    }
+
+    @Monitor('name')
+    onNameChangeDuplicate(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `onNameChangeDuplicate`);
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    info: Info = new Info();
+
+    build() {
+      Column() {
+        Button('change name')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.name = 'Jack'; // 仅会触发onNameChangeDuplicate方法
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @ObservedV2
-  4. class Info {
-  5. @Trace public name: string = 'Tom';
-
-  7. @Monitor('name')
-  8. onNameChange(monitor: IMonitor) {
-  9. hilog.info(0xFF00, 'testTag', '%{public}s', `onNameChange`);
-  10. }
-
-  12. @Monitor('name')
-  13. onNameChangeDuplicate(monitor: IMonitor) {
-  14. hilog.info(0xFF00, 'testTag', '%{public}s', `onNameChangeDuplicate`);
-  15. }
-  16. }
-
-  18. @Entry
-  19. @ComponentV2
-  20. struct Index {
-  21. info: Info = new Info();
-
-  23. build() {
-  24. Column() {
-  25. Button('change name')
-  26. .onClick(() => {
-  27. this.info.name = 'Jack'; // 仅会触发onNameChangeDuplicate方法
-  28. })
-  29. }
-  30. }
-  31. }
-  ```
-
-  [MonitorLimitationLastListenerWins.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorLimitationLastListenerWins.ets#L15-L47)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/YQXJ4KwOT9iqVkgr3ay4tg/zh-cn_image_0000002706833272.png)
 * 当@Monitor传入多个路径参数时，以参数的全拼接结果判断是否重复监听。全拼接时会在参数间加空格，以区分不同参数。例如，'ab', 'c'的全拼接结果为'ab c'，'a', 'bc'的全拼接结果为'a bc'，二者全拼接不相等。以下示例中，Monitor 1、Monitor 2与Monitor 3都监听了name属性的变化。由于Monitor 2与Monitor 3的入参全拼接相等（都为'name position'），因此Monitor 2不生效，仅Monitor 3生效。当name属性变化时，将同时触发onNameAgeChange与onNamePositionChangeDuplicate方法。但请注意，Monitor 2与Monitor 3的写法仍然被视作在一个类中对同一个属性进行多次@Monitor的监听，这是不建议的。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ObservedV2
+  class Info {
+    @Trace public name: string = 'Tom';
+    @Trace public age: number = 25;
+    @Trace public position: string = 'North';
+
+    @Monitor('name', 'age') // Monitor 1
+    onNameAgeChange(monitor: IMonitor) {
+      monitor.dirty.forEach((path: string) => {
+        hilog.info(0xFF00, 'testTag', '%{public}s',
+          `onNameAgeChange path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+      });
+    }
+
+    @Monitor('name', 'position') // Monitor 2
+    onNamePositionChange(monitor: IMonitor) {
+      monitor.dirty.forEach((path: string) => {
+        hilog.info(0xFF00, 'testTag', '%{public}s',
+          `onNamePositionChange path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+      });
+    }
+
+    // 重复监听name、position，仅最后定义的生效
+    @Monitor('name', 'position') // Monitor3
+    onNamePositionChangeDuplicate(monitor: IMonitor) {
+      monitor.dirty.forEach((path: string) => {
+        hilog.info(0xFF00, 'testTag', '%{public}s',
+          `onNamePositionChangeDuplicate path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+      });
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    info: Info = new Info();
+
+    build() {
+      Column() {
+        Button('change name')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.name = 'Jack'; // 同时触发onNameAgeChange与onNamePositionChangeDuplicate方法
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. @ObservedV2
-  4. class Info {
-  5. @Trace public name: string = 'Tom';
-  6. @Trace public age: number = 25;
-  7. @Trace public position: string = 'North';
-
-  9. @Monitor('name', 'age') // Monitor 1
-  10. onNameAgeChange(monitor: IMonitor) {
-  11. monitor.dirty.forEach((path: string) => {
-  12. hilog.info(0xFF00, 'testTag', '%{public}s',
-  13. `onNameAgeChange path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-  14. });
-  15. }
-
-  17. @Monitor('name', 'position') // Monitor 2
-  18. onNamePositionChange(monitor: IMonitor) {
-  19. monitor.dirty.forEach((path: string) => {
-  20. hilog.info(0xFF00, 'testTag', '%{public}s',
-  21. `onNamePositionChange path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-  22. });
-  23. }
-
-  25. // 重复监听name、position，仅最后定义的生效
-  26. @Monitor('name', 'position') // Monitor3
-  27. onNamePositionChangeDuplicate(monitor: IMonitor) {
-  28. monitor.dirty.forEach((path: string) => {
-  29. hilog.info(0xFF00, 'testTag', '%{public}s',
-  30. `onNamePositionChangeDuplicate path: ${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-  31. });
-  32. }
-  33. }
-
-  35. @Entry
-  36. @ComponentV2
-  37. struct Index {
-  38. info: Info = new Info();
-
-  40. build() {
-  41. Column() {
-  42. Button('change name')
-  43. .onClick(() => {
-  44. this.info.name = 'Jack'; // 同时触发onNameAgeChange与onNamePositionChangeDuplicate方法
-  45. })
-  46. }
-  47. }
-  48. }
-  ```
-
-  [MonitorLimitationMultiplePathParams.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorLimitationMultiplePathParams.ets#L15-L64)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/iOPnQg1eQkCI58BrONGkNQ/zh-cn_image_0000002736312381.png)
 * @Monitor的参数需要为监听属性名的字符串，仅可以使用字符串字面量、const常量、enum枚举值作为参数。如果使用变量作为参数，仅会监听@Monitor初始化时，变量值所对应的属性。当更改变量时，@Monitor无法实时改变监听的属性，即@Monitor监听的目标属性从初始化时便已经确定，无法动态更改。不建议开发者使用变量作为@Monitor的参数进行初始化。
 
+  ```typescript
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  const t2: string = 't2'; // const常量
+
+  enum ENUM {
+    T3 = 't3' // enum枚举值
+  };
+  let t4: string = 't4'; // 变量
+
+  @ObservedV2
+  class Info {
+    @Trace public t1: number = 0;
+    @Trace public t2: number = 0;
+    @Trace public t3: number = 0;
+    @Trace public t4: number = 0;
+    @Trace public t5: number = 0;
+
+    // 字符串字面量
+    @Monitor('t1')
+    onT1Change(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `t1 change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+
+    @Monitor(t2)
+    onT2Change(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `t2 change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+
+    @Monitor(ENUM.T3)
+    onT3Change(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `t3 change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+
+    @Monitor(t4)
+    onT4Change(monitor: IMonitor) {
+      hilog.info(0xFF00, 'testTag', '%{public}s', `t4 change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+    }
+  }
+
+  @Entry
+  @ComponentV2
+  struct Index {
+    info: Info = new Info();
+
+    build() {
+      Column() {
+        Button('Change t1')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.t1++; // 能够触发onT1Change方法
+          })
+        Button('Change t2')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.t2++; // 能够触发onT2Change方法
+          })
+        Button('Change t3')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.t3++; // 能够触发onT3Change方法
+          })
+        Button('Change t4')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.t4++; // 能够触发onT4Change方法
+          })
+        Button('Change var t4 to t5')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            t4 = 't5'; // 更改变量值为't5'
+          })
+        Button('Change t5')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.t5++; // onT4Change仍监听t4，不会触发
+          })
+        Button('Change t4 again')
+          .width(300)
+          .margin(10)
+          .onClick(() => {
+            this.info.t4++; // 能够触发onT4Change方法
+          })
+      }
+      .width('100%')
+    }
+  }
   ```
-  1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-  3. const t2: string = 't2'; // const常量
-
-  5. enum ENUM {
-  6. T3 = 't3' // enum枚举值
-  7. };
-  8. let t4: string = 't4'; // 变量
-
-  10. @ObservedV2
-  11. class Info {
-  12. @Trace public t1: number = 0;
-  13. @Trace public t2: number = 0;
-  14. @Trace public t3: number = 0;
-  15. @Trace public t4: number = 0;
-  16. @Trace public t5: number = 0;
-
-  18. // 字符串字面量
-  19. @Monitor('t1')
-  20. onT1Change(monitor: IMonitor) {
-  21. hilog.info(0xFF00, 'testTag', '%{public}s', `t1 change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  22. }
-
-  24. @Monitor(t2)
-  25. onT2Change(monitor: IMonitor) {
-  26. hilog.info(0xFF00, 'testTag', '%{public}s', `t2 change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  27. }
-
-  29. @Monitor(ENUM.T3)
-  30. onT3Change(monitor: IMonitor) {
-  31. hilog.info(0xFF00, 'testTag', '%{public}s', `t3 change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  32. }
-
-  34. @Monitor(t4)
-  35. onT4Change(monitor: IMonitor) {
-  36. hilog.info(0xFF00, 'testTag', '%{public}s', `t4 change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-  37. }
-  38. }
-
-  40. @Entry
-  41. @ComponentV2
-  42. struct Index {
-  43. info: Info = new Info();
-
-  45. build() {
-  46. Column() {
-  47. Button('Change t1')
-  48. .onClick(() => {
-  49. this.info.t1++; // 能够触发onT1Change方法
-  50. })
-  51. Button('Change t2')
-  52. .onClick(() => {
-  53. this.info.t2++; // 能够触发onT2Change方法
-  54. })
-  55. Button('Change t3')
-  56. .onClick(() => {
-  57. this.info.t3++; // 能够触发onT3Change方法
-  58. })
-  59. Button('Change t4')
-  60. .onClick(() => {
-  61. this.info.t4++; // 能够触发onT4Change方法
-  62. })
-  63. Button('Change var t4 to t5')
-  64. .onClick(() => {
-  65. t4 = 't5'; // 更改变量值为't5'
-  66. })
-  67. Button('Change t5')
-  68. .onClick(() => {
-  69. this.info.t5++; // onT4Change仍监听t4，不会触发
-  70. })
-  71. Button('Change t4 again')
-  72. .onClick(() => {
-  73. this.info.t4++; // 能够触发onT4Change方法
-  74. })
-  75. }
-  76. }
-  77. }
-  ```
-
-  [MonitorLimitationParameterStringConstraint.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorLimitationParameterStringConstraint.ets#L15-L93)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/G1PvM9RwTE-qv5562wfQYg/zh-cn_image_0000002706673336.png)
 * 建议开发者避免在@Monitor中再次更改被监听的属性，这会导致无限循环。
 
-  ```
-  1. @ObservedV2
-  2. class Info {
-  3. @Trace count: number = 0;
-  4. @Monitor('count')
-  5. onCountChange(monitor: IMonitor) {
-  6. this.count++; // 应避免这种写法，会导致无限循环
-  7. }
-  8. }
+  ```ts
+  @ObservedV2
+  class Info {
+    @Trace count: number = 0;
+    @Monitor('count')
+    onCountChange(monitor: IMonitor) {
+      this.count++; // 应避免这种写法，会导致无限循环
+    }
+  }
   ```
 
 ## @Monitor与@Watch对比
@@ -779,59 +1516,63 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 下面的示例中监听了属性value的变化，并根据变化的幅度改变Text组件显示的样式。
 
+```typescript
+@ObservedV2
+class Info {
+  @Trace public value: number = 50;
+}
+
+@ObservedV2
+class UIStyle {
+  @Trace public info: Info = new Info();
+  @Trace public color: Color = Color.Black;
+  @Trace public fontSize: number = 45;
+
+  @Monitor('info.value')
+  onValueChange(monitor: IMonitor) {
+    let lastValue: number = monitor.value()?.before as number;
+    let curValue: number = monitor.value()?.now as number;
+    if (lastValue != 0) {
+      let diffPercent: number = (curValue - lastValue) / lastValue;
+      // 通过info.value变化的幅度，改变Text组件显示的样式
+      if (diffPercent > 0.1) {
+        this.color = Color.Red;
+        this.fontSize = 50;
+      } else if (diffPercent < -0.1) {
+        this.color = Color.Green;
+        this.fontSize = 40;
+      } else {
+        this.color = Color.Black;
+        this.fontSize = 45;
+      }
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  textStyle: UIStyle = new UIStyle();
+
+  build() {
+    Column() {
+      Text(`Important Value: ${this.textStyle.info.value}`)
+        .fontColor(this.textStyle.color)
+        .fontSize(this.textStyle.fontSize)
+        .margin(10)
+      Button('change!')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.textStyle.info.value = Math.floor(Math.random() * 100) + 1;
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. @ObservedV2
-2. class Info {
-3. @Trace public value: number = 50;
-4. }
 
-6. @ObservedV2
-7. class UIStyle {
-8. public info: Info = new Info();
-9. @Trace public color: Color = Color.Black;
-10. @Trace public fontSize: number = 45;
-
-12. @Monitor('info.value')
-13. onValueChange(monitor: IMonitor) {
-14. let lastValue: number = monitor.value()?.before as number;
-15. let curValue: number = monitor.value()?.now as number;
-16. if (lastValue != 0) {
-17. let diffPercent: number = (curValue - lastValue) / lastValue;
-18. // 通过info.value变化的幅度，改变Text组件显示的样式
-19. if (diffPercent > 0.1) {
-20. this.color = Color.Red;
-21. this.fontSize = 50;
-22. } else if (diffPercent < -0.1) {
-23. this.color = Color.Green;
-24. this.fontSize = 40;
-25. } else {
-26. this.color = Color.Black;
-27. this.fontSize = 45;
-28. }
-29. }
-30. }
-31. }
-
-33. @Entry
-34. @ComponentV2
-35. struct Index {
-36. textStyle: UIStyle = new UIStyle();
-
-38. build() {
-39. Column() {
-40. Text(`Important Value: ${this.textStyle.info.value}`)
-41. .fontColor(this.textStyle.color)
-42. .fontSize(this.textStyle.fontSize)
-43. Button('change!')
-44. .onClick(() => {
-45. this.textStyle.info.value = Math.floor(Math.random() * 100) + 1;
-46. })
-47. }
-48. }
-49. }
-```
-
-[MonitorSceneDeepAttributeChanges.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorSceneDeepAttributeChanges.ets#L30-L79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/B6PLeSyoR1GP6xHbsab2fQ/zh-cn_image_0000002736432427.gif)
 
 ## 常见问题
 
@@ -839,84 +1580,93 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 当@Monitor定义在@ComponentV2装饰的自定义组件中时，@Monitor会在状态变量初始化完成之后生效，并在组件销毁时失效。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Info {
+  @Trace public message: string = 'not initialized';
+
+  constructor() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'in constructor message change to initialized');
+    // 此时@Monitor还未初始化成功，因此不会监听到message的变化
+    this.message = 'initialized';
+  }
+}
+
+@ComponentV2
+struct Child {
+  @Param info: Info = new Info();
+
+  @Monitor('info.message')
+  onMessageChange(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s',
+      `Child message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+  }
+
+  aboutToAppear(): void {
+    this.info.message = 'Child aboutToAppear';
+  }
+
+  aboutToDisappear(): void {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'Child aboutToDisappear');
+    this.info.message = 'Child aboutToDisappear';
+  }
+
+  build() {
+    Column() {
+      Text('Child')
+        .fontSize(20)
+        .margin(10)
+      Button('change message in Child')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.info.message = 'Child click to change Message';
+        })
+    }
+    .width('95%')
+    .borderColor(Color.Red)
+    .borderWidth(2)
+
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  @Local info: Info = new Info();
+  @Local flag: boolean = false;
+
+  @Monitor('info.message')
+  onMessageChange(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s',
+      `Index message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+  }
+
+  build() {
+    Column() {
+      Button('show/hide Child')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.flag = !this.flag
+        })
+      Button('change message in Index')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.info.message = 'Index click to change Message';
+        })
+      if (this.flag) {
+        Child({ info: this.info })
+      }
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class Info {
-5. @Trace public message: string = 'not initialized';
-
-7. constructor() {
-8. hilog.info(0xFF00, 'testTag', '%{public}s', 'in constructor message change to initialized');
-9. // 此时@Monitor还未初始化成功，因此不会监听到message的变化
-10. this.message = 'initialized';
-11. }
-12. }
-
-14. @ComponentV2
-15. struct Child {
-16. @Param info: Info = new Info();
-
-18. @Monitor('info.message')
-19. onMessageChange(monitor: IMonitor) {
-20. hilog.info(0xFF00, 'testTag', '%{public}s',
-21. `Child message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-22. }
-
-24. aboutToAppear(): void {
-25. this.info.message = 'Child aboutToAppear';
-26. }
-
-28. aboutToDisappear(): void {
-29. hilog.info(0xFF00, 'testTag', '%{public}s', 'Child aboutToDisappear');
-30. this.info.message = 'Child aboutToDisappear';
-31. }
-
-33. build() {
-34. Column() {
-35. Text('Child')
-36. Button('change message in Child')
-37. .onClick(() => {
-38. this.info.message = 'Child click to change Message';
-39. })
-40. }
-41. .borderColor(Color.Red)
-42. .borderWidth(2)
-
-44. }
-45. }
-
-47. @Entry
-48. @ComponentV2
-49. struct Index {
-50. @Local info: Info = new Info();
-51. @Local flag: boolean = false;
-
-53. @Monitor('info.message')
-54. onMessageChange(monitor: IMonitor) {
-55. hilog.info(0xFF00, 'testTag', '%{public}s',
-56. `Index message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-57. }
-
-59. build() {
-60. Column() {
-61. Button('show/hide Child')
-62. .onClick(() => {
-63. this.flag = !this.flag
-64. })
-65. Button('change message in Index')
-66. .onClick(() => {
-67. this.info.message = 'Index click to change Message';
-68. })
-69. if (this.flag) {
-70. Child({ info: this.info })
-71. }
-72. }
-73. }
-74. }
-```
-
-[MonitorProblemEffectTimeCompV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemEffectTimeCompV2.ets#L15-L89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/31sIAstSTn24rISEkK4CNg/zh-cn_image_0000002706833274.gif)
 
 在上面的例子中，可以通过创建和销毁Child组件来观察定义在自定义组件中的@Monitor的生效和失效时机。推荐按如下顺序进行操作：
 
@@ -933,139 +1683,150 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 当@Monitor定义在@ObservedV2装饰的类中时，@Monitor会在类的实例创建完成后生效，在类的实例销毁时失效。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Info {
+  @Trace public message: string = 'not initialized';
+
+  constructor() {
+    // 此时@Monitor还未生效，因此不会监听到message的变化
+    this.message = 'initialized';
+  }
+
+  @Monitor('message')
+  onMessageChange(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s',
+      `message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  info: Info = new Info();
+
+  aboutToAppear(): void {
+    this.info.message = 'Index aboutToAppear';
+  }
+
+  build() {
+    Column() {
+      Button('change message')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.info.message = 'Index click to change message';
+        })
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class Info {
-5. @Trace public message: string = 'not initialized';
-
-7. constructor() {
-8. // 此时@Monitor还未生效，因此不会监听到message的变化
-9. this.message = 'initialized';
-10. }
-
-12. @Monitor('message')
-13. onMessageChange(monitor: IMonitor) {
-14. hilog.info(0xFF00, 'testTag', '%{public}s',
-15. `message change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-16. }
-17. }
-
-19. @Entry
-20. @ComponentV2
-21. struct Index {
-22. info: Info = new Info();
-
-24. aboutToAppear(): void {
-25. this.info.message = 'Index aboutToAppear';
-26. }
-
-28. build() {
-29. Column() {
-30. Button('change message')
-31. .onClick(() => {
-32. this.info.message = 'Index click to change message';
-33. })
-34. }
-35. }
-36. }
-```
-
-[MonitorProblemEffectTimeClass.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemEffectTimeClass.ets#L15-L51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/dyL51fKdQE6l0u2tZfl06w/zh-cn_image_0000002736312383.png)
 
 上面的例子中，@Monitor会在info创建完成后生效，这个时机晚于类的constructor，早于自定义组件的aboutToAppear。当界面加载完成后，点击“change message”，修改message变量。此时日志输出信息如下：
 
-```
-1. message change from initialized to Index aboutToAppear
-2. message change from Index aboutToAppear to Index click to change message
+```ts
+message change from initialized to Index aboutToAppear
+message change from Index aboutToAppear to Index click to change message
 ```
 
 类中定义的@Monitor随着类的销毁失效。而由于类的实际销毁释放依赖于垃圾回收机制，因此会出现即使所在自定义组件已经销毁，类却还未及时销毁，导致类中定义的@Monitor仍在监听变化的情况。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class InfoWrapper {
+  public info?: Info;
+
+  constructor(info: Info) {
+    this.info = info;
+  }
+
+  @Monitor('info.age')
+  onInfoAgeChange(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s',
+      `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+  }
+}
+
+@ObservedV2
+class Info {
+  @Trace public age: number;
+
+  constructor(age: number) {
+    this.age = age;
+  }
+}
+
+@ComponentV2
+struct Child {
+  @Param @Require infoWrapper: InfoWrapper;
+
+  aboutToDisappear(): void {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `Child aboutToDisappear, age: ${this.infoWrapper.info?.age}`);
+  }
+
+  build() {
+    Column() {
+      Text(`${this.infoWrapper.info?.age}`)
+        .fontSize(20)
+        .margin(10)
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  dataArray: Info[] = [];
+  @Local showFlag: boolean = true;
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 5; i++) {
+      this.dataArray.push(new Info(i));
+    }
+  }
+
+  build() {
+    Column() {
+      // 点击Button切换showFlag，触发Child组件的创建/销毁
+      Button('change showFlag')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.showFlag = !this.showFlag;
+        })
+      Button('change number')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
+          this.dataArray.forEach((info: Info) => {
+            info.age += 100;
+          });
+        })
+      if (this.showFlag) {
+        Column() {
+          Text('Children')
+            .fontSize(20)
+            .margin(10)
+          ForEach(this.dataArray, (info: Info) => {
+            Child({ infoWrapper: new InfoWrapper(info) })
+          })
+        }
+        .borderColor(Color.Red)
+        .borderWidth(2)
+      }
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class InfoWrapper {
-5. public info?: Info;
-
-7. constructor(info: Info) {
-8. this.info = info;
-9. }
-
-11. @Monitor('info.age')
-12. onInfoAgeChange(monitor: IMonitor) {
-13. hilog.info(0xFF00, 'testTag', '%{public}s',
-14. `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-15. }
-16. }
-
-18. @ObservedV2
-19. class Info {
-20. @Trace public age: number;
-
-22. constructor(age: number) {
-23. this.age = age;
-24. }
-25. }
-
-27. @ComponentV2
-28. struct Child {
-29. @Param @Require infoWrapper: InfoWrapper;
-
-31. aboutToDisappear(): void {
-32. hilog.info(0xFF00, 'testTag', '%{public}s', 'Child aboutToDisappear', this.infoWrapper.info?.age);
-33. }
-
-35. build() {
-36. Column() {
-37. Text(`${this.infoWrapper.info?.age}`)
-38. }
-39. }
-40. }
-
-42. @Entry
-43. @ComponentV2
-44. struct Index {
-45. dataArray: Info[] = [];
-46. @Local showFlag: boolean = true;
-
-48. aboutToAppear(): void {
-49. for (let i = 0; i < 5; i++) {
-50. this.dataArray.push(new Info(i));
-51. }
-52. }
-
-54. build() {
-55. Column() {
-56. Button('change showFlag')
-57. .onClick(() => {
-58. this.showFlag = !this.showFlag;
-59. })
-60. Button('change number')
-61. .onClick(() => {
-62. hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
-63. this.dataArray.forEach((info: Info) => {
-64. info.age += 100;
-65. });
-66. })
-67. if (this.showFlag) {
-68. Column() {
-69. Text('Children')
-70. ForEach(this.dataArray, (info: Info) => {
-71. Child({ infoWrapper: new InfoWrapper(info) })
-72. })
-73. }
-74. .borderColor(Color.Red)
-75. .borderWidth(2)
-76. }
-77. }
-78. }
-79. }
-```
-
-[MonitorProblemClassDelayed.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemClassDelayed.ets#L15-L95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/rfgBzqRNS12RsPeyurN2Zg/zh-cn_image_0000002706673338.gif)
 
 在上面的例子中，当点击“change showFlag”切换if组件的条件时，Child组件会被销毁。此时，点击“change number”修改age的值时，可以通过日志观察到InfoWrapper中定义的@Monitor回调仍然被触发了。这是因为此时自定义组件Child虽然执行了aboutToDisappear，但是其成员变量infoWrapper还没有被立刻回收，当变量发生变化时，依然能够调用到infoWrapper中定义的onInfoAgeChange方法，所以从现象上看@Monitor回调仍会被触发。
 
@@ -1073,178 +1834,191 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 1、将@Monitor定义在自定义组件中。由于自定义组件在销毁时，状态管理框架会手动取消@Monitor的监听，因此在自定义组件调用完aboutToDisappear，尽管自定义组件的数据不一定已经被释放，但@Monitor回调已不会再被触发。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class InfoWrapper {
+  public info?: Info;
+
+  constructor(info: Info) {
+    this.info = info;
+  }
+}
+
+@ObservedV2
+class Info {
+  @Trace public age: number;
+
+  constructor(age: number) {
+    this.age = age;
+  }
+}
+
+@ComponentV2
+struct Child {
+  @Param @Require infoWrapper: InfoWrapper;
+
+  @Monitor('infoWrapper.info.age')
+  onInfoAgeChange(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s',
+      `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+  }
+
+  aboutToDisappear(): void {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `Child aboutToDisappear, age: ${this.infoWrapper.info?.age}`);
+  }
+
+  build() {
+    Column() {
+      Text(`${this.infoWrapper.info?.age}`)
+        .fontSize(20)
+        .margin(10)
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  dataArray: Info[] = [];
+  @Local showFlag: boolean = true;
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 5; i++) {
+      this.dataArray.push(new Info(i));
+    }
+  }
+
+  build() {
+    Column() {
+      // 点击Button切换showFlag，触发Child组件的创建/销毁
+      Button('change showFlag')
+        .onClick(() => {
+          this.showFlag = !this.showFlag;
+        })
+        .margin(10)
+      Button('change number')
+        .onClick(() => {
+          hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
+          this.dataArray.forEach((info: Info) => {
+            info.age += 100;
+          })
+        })
+        .margin(10)
+      if (this.showFlag) {
+        Column() {
+          Text('Children')
+            .fontSize(20)
+            .margin(10)
+          ForEach(this.dataArray, (info: Info) => {
+            Child({ infoWrapper: new InfoWrapper(info) })
+          })
+        }
+        .borderColor(Color.Red)
+        .borderWidth(2)
+      }
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class InfoWrapper {
-5. public info?: Info;
-
-7. constructor(info: Info) {
-8. this.info = info;
-9. }
-10. }
-
-12. @ObservedV2
-13. class Info {
-14. @Trace public age: number;
-
-16. constructor(age: number) {
-17. this.age = age;
-18. }
-19. }
-
-21. @ComponentV2
-22. struct Child {
-23. @Param @Require infoWrapper: InfoWrapper;
-
-25. @Monitor('infoWrapper.info.age')
-26. onInfoAgeChange(monitor: IMonitor) {
-27. hilog.info(0xFF00, 'testTag', '%{public}s',
-28. `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-29. }
-
-31. aboutToDisappear(): void {
-32. hilog.info(0xFF00, 'testTag', '%{public}s', 'Child aboutToDisappear', this.infoWrapper.info?.age);
-33. }
-
-35. build() {
-36. Column() {
-37. Text(`${this.infoWrapper.info?.age}`)
-38. }
-39. }
-40. }
-
-42. @Entry
-43. @ComponentV2
-44. struct Index {
-45. dataArray: Info[] = [];
-46. @Local showFlag: boolean = true;
-
-48. aboutToAppear(): void {
-49. for (let i = 0; i < 5; i++) {
-50. this.dataArray.push(new Info(i));
-51. }
-52. }
-
-54. build() {
-55. Column() {
-56. // 点击Button切换showFlag，触发Child组件的创建/销毁
-57. Button('change showFlag')
-58. .onClick(() => {
-59. this.showFlag = !this.showFlag;
-60. })
-61. Button('change number')
-62. .onClick(() => {
-63. hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
-64. this.dataArray.forEach((info: Info) => {
-65. info.age += 100;
-66. })
-67. })
-68. if (this.showFlag) {
-69. Column() {
-70. Text('Children')
-71. ForEach(this.dataArray, (info: Info) => {
-72. Child({ infoWrapper: new InfoWrapper(info) })
-73. })
-74. }
-75. .borderColor(Color.Red)
-76. .borderWidth(2)
-77. }
-78. }
-79. }
-80. }
-```
-
-[MonitorProblemClassFailureTimeSetComp.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemClassFailureTimeSetComp.ets#L15-L95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/DjzjqeqTQD-1wKtJXco9Jw/zh-cn_image_0000002736432429.gif)
 
 2、主动置空监听的对象。当自定义组件即将销毁时，主动置空@Monitor的监听目标，这样@Monitor无法再监听原监听目标的变化，达到取消@Monitor监听的效果。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class InfoWrapper {
+  public info?: Info;
+
+  constructor(info: Info) {
+    this.info = info;
+  }
+
+  @Monitor('info.age')
+  onInfoAgeChange(monitor: IMonitor) {
+    hilog.info(0xFF00, 'testTag', '%{public}s',
+      `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
+  }
+}
+
+@ObservedV2
+class Info {
+  @Trace public age: number;
+
+  constructor(age: number) {
+    this.age = age;
+  }
+}
+
+@ComponentV2
+struct Child {
+  @Param @Require infoWrapper: InfoWrapper;
+
+  aboutToDisappear(): void {
+    hilog.info(0xFF00, 'testTag', '%{public}s', `Child aboutToDisappear, age: ${this.infoWrapper.info?.age}`);
+    this.infoWrapper.info = undefined; // 使InfoWrapper对info.age的监听失效
+  }
+
+  build() {
+    Column() {
+      Text(`${this.infoWrapper.info?.age}`)
+        .fontSize(20)
+        .margin(10)
+    }
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  dataArray: Info[] = [];
+  @Local showFlag: boolean = true;
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 5; i++) {
+      this.dataArray.push(new Info(i));
+    }
+  }
+
+  build() {
+    Column() {
+      Button('change showFlag')
+        .onClick(() => {
+          this.showFlag = !this.showFlag;
+        })
+        .margin(10)
+      Button('change number')
+        .onClick(() => {
+          hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
+          this.dataArray.forEach((info: Info) => {
+            info.age += 100;
+          })
+        })
+        .margin(10)
+      if (this.showFlag) {
+        Column() {
+          Text('Children')
+            .fontSize(20)
+            .margin(10)
+          ForEach(this.dataArray, (info: Info) => {
+            Child({ infoWrapper: new InfoWrapper(info) })
+          })
+        }
+        .borderColor(Color.Red)
+        .borderWidth(2)
+      }
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class InfoWrapper {
-5. public info?: Info;
-
-7. constructor(info: Info) {
-8. this.info = info;
-9. }
-
-11. @Monitor('info.age')
-12. onInfoAgeChange(monitor: IMonitor) {
-13. hilog.info(0xFF00, 'testTag', '%{public}s',
-14. `age change from ${monitor.value()?.before} to ${monitor.value()?.now}`);
-15. }
-16. }
-
-18. @ObservedV2
-19. class Info {
-20. @Trace public age: number;
-
-22. constructor(age: number) {
-23. this.age = age;
-24. }
-25. }
-
-27. @ComponentV2
-28. struct Child {
-29. @Param @Require infoWrapper: InfoWrapper;
-
-31. aboutToDisappear(): void {
-32. hilog.info(0xFF00, 'testTag', '%{public}s', 'Child aboutToDisappear', this.infoWrapper.info?.age);
-33. this.infoWrapper.info = undefined; // 使InfoWrapper对info.age的监听失效
-34. }
-
-36. build() {
-37. Column() {
-38. Text(`${this.infoWrapper.info?.age}`)
-39. }
-40. }
-41. }
-
-43. @Entry
-44. @ComponentV2
-45. struct Index {
-46. dataArray: Info[] = [];
-47. @Local showFlag: boolean = true;
-
-49. aboutToAppear(): void {
-50. for (let i = 0; i < 5; i++) {
-51. this.dataArray.push(new Info(i));
-52. }
-53. }
-
-55. build() {
-56. Column() {
-57. // 点击Button切换showFlag，触发Child组件的创建/销毁
-58. Button('change showFlag')
-59. .onClick(() => {
-60. this.showFlag = !this.showFlag;
-61. })
-62. Button('change number')
-63. .onClick(() => {
-64. hilog.info(0xFF00, 'testTag', '%{public}s', 'click to change age');
-65. this.dataArray.forEach((info: Info) => {
-66. info.age += 100;
-67. })
-68. })
-69. if (this.showFlag) {
-70. Column() {
-71. Text('Children')
-72. ForEach(this.dataArray, (info: Info) => {
-73. Child({ infoWrapper: new InfoWrapper(info) })
-74. })
-75. }
-76. .borderColor(Color.Red)
-77. .borderWidth(2)
-78. }
-79. }
-80. }
-81. }
-```
-
-[MonitorProblemClassFailureTimeEmptyObject.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemClassFailureTimeEmptyObject.ets#L15-L96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/WDLPG3BoQE6oatF2XjdgEA/zh-cn_image_0000002706833276.gif)
 
 ### 正确设置@Monitor入参
 
@@ -1252,256 +2026,281 @@ IMonitor类型和IMonitorValue<T>类型的接口说明参考API文档：[状态�
 
 【反例1】
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Info {
+  public name: string = 'John';
+  @Trace public age: number = 24;
+
+  // 同时监听状态变量age和非状态变量name
+  // 此时会编辑、编译告警，提示`The '@Monitor' decorator needs to monitor the state variables that exist.`
+  @Monitor('age', 'name')
+  onPropertyChange(monitor: IMonitor) {
+    monitor.dirty.forEach((path: string) => {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `property path:${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+    })
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  info: Info = new Info();
+
+  build() {
+    Column() {
+      Button('change age&name')
+        .onClick(() => {
+          this.info.age = 25; // 同时改变状态变量age和非状态变量name
+          this.info.name = 'Johny';
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class Info {
-5. public name: string = 'John';
-6. @Trace public age: number = 24;
-
-8. // 同时监听状态变量age和非状态变量name
-9. // 此时会编辑、编译告警，提示`The '@Monitor' decorator needs to monitor the state variables that exist.`
-10. @Monitor('age', 'name')
-11. onPropertyChange(monitor: IMonitor) {
-12. monitor.dirty.forEach((path: string) => {
-13. hilog.info(0xFF00, 'testTag', '%{public}s',
-14. `property path:${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-15. })
-16. }
-17. }
-
-19. @Entry
-20. @ComponentV2
-21. struct Index {
-22. info: Info = new Info();
-
-24. build() {
-25. Column() {
-26. Button('change age&name')
-27. .onClick(() => {
-28. this.info.age = 25; // 同时改变状态变量age和非状态变量name
-29. this.info.name = 'Johny';
-30. })
-31. }
-32. }
-33. }
-```
-
-[MonitorProblemParamCounterExample1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemParamCounterExample1.ets#L15-L48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/GNE0ijpwTqCILMSXALNHlQ/zh-cn_image_0000002736312385.png)
 
 上面的代码中，当点击按钮同时更改状态变量age和非状态变量name时，会输出以下日志：
 
-```
-1. property path:age change from 24 to 25
-2. property path:name change from John to Johny
+```text
+property path:age change from 24 to 25
+property path:name change from John to Johny
 ```
 
-实际上name属性本身并不是可被观测的变量，不应被加入到@Monitor的入参当中。建议开发者去除对name属性的监听或者给name加上@Trace装饰成为状态变量。
+实际上name属性本身并不是可被观测的变量，不应被加入到@Monitor的入参当中。
+
+从API版本26.0.0开始，使用配置项的@Monitor对路径的监听变为互相独立的监听，各路径互不影响。若改为使用配置项的@Monitor（如@Monitor({}, 'age', 'name')），非状态变量name将被忽略，不参与监听。仅当状态变量age变化时才会触发回调，且dirty中仅包含age；当仅修改name时不会触发回调。在这种情况下，点击按钮同时修改age和name时，会输出以下日志：
+
+```text
+property path:age change from 24 to 25
+```
+
+建议开发者去除对name属性的监听，或给name加上@Trace装饰使其成为状态变量；也可改为使用配置项的@Monitor。
 
 【正例1】
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Info {
+  public name: string = 'John';
+  @Trace public age: number = 24;
+
+  // 仅监听状态变量age
+  @Monitor('age')
+  onPropertyChange(monitor: IMonitor) {
+    monitor.dirty.forEach((path: string) => {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `property path:${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
+    })
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  info: Info = new Info();
+
+  build() {
+    Column() {
+      Button('change age&name')
+        .onClick(() => {
+          this.info.age = 25; // 状态变量age改变
+          this.info.name = 'Johny';
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class Info {
-5. public name: string = 'John';
-6. @Trace public age: number = 24;
-
-8. // 仅监听状态变量age
-9. @Monitor('age')
-10. onPropertyChange(monitor: IMonitor) {
-11. monitor.dirty.forEach((path: string) => {
-12. hilog.info(0xFF00, 'testTag', '%{public}s',
-13. `property path:${path} change from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
-14. })
-15. }
-16. }
-
-18. @Entry
-19. @ComponentV2
-20. struct Index {
-21. info: Info = new Info();
-
-23. build() {
-24. Column() {
-25. Button('change age&name')
-26. .onClick(() => {
-27. this.info.age = 25; // 状态变量age改变
-28. this.info.name = 'Johny';
-29. })
-30. }
-31. }
-32. }
-```
-
-[MonitorProblemParamPositiveExample1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemParamPositiveExample1.ets#L15-L48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/PfpgT0l_TIek6Y3RLUb6TA/zh-cn_image_0000002706673340.png)
 
 【反例2】
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Info {
+  public name: string = 'John';
+  @Trace public age: number = 24;
+
+  get myAge() {
+    return this.age; // age为状态变量
+  }
+
+  // 监听非@Computed装饰的getter访问器
+  @Monitor('myAge')
+  onPropertyChange() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'age changed');
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  info: Info = new Info();
+
+  build() {
+    Column() {
+      Button('change age')
+        .onClick(() => {
+          this.info.age = 25; // 状态变量age改变
+        })
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class Info {
-5. public name: string = 'John';
-6. @Trace public age: number = 24;
+上面的代码中，@Monitor的入参为一个getter访问器的名字，但该getter访问器本身并未被@Computed装饰，不是一个可被监听的变量。但由于使用了状态变量参与了计算，在状态变量变化后，myAge也被认为发生了变化，因此触发了@Monitor回调。从API版本26.0.0开始，若改为使用配置项的@Monitor（如@Monitor({}, 'myAge')），由于读取myAge时仍会读取状态变量age，因此行为不变，依然会触发回调。
 
-8. get myAge() {
-9. return this.age; // age为状态变量
-10. }
-
-12. // 监听非@Computed装饰的getter访问器
-13. @Monitor('myAge')
-14. onPropertyChange() {
-15. hilog.info(0xFF00, 'testTag', '%{public}s', 'age changed');
-16. }
-17. }
-
-19. @Entry
-20. @ComponentV2
-21. struct Index {
-22. info: Info = new Info();
-
-24. build() {
-25. Column() {
-26. Button('change age')
-27. .onClick(() => {
-28. this.info.age = 25; // 状态变量age改变
-29. })
-30. }
-31. }
-32. }
-```
-
-[MonitorProblemParamCounterExample2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemParamCounterExample2.ets#L15-L48)
-
-上面的代码中，@Monitor的入参为一个getter访问器的名字，但该getter访问器本身并未被@Computed装饰，不是一个可被监听的变量。但由于使用了状态变量参与了计算，在状态变量变化后，myAge也被认为发生了变化，因此触发了@Monitor回调。建议开发者给myAge添加@Computed装饰器或当getter访问器直接返回状态变量时，不监听getter访问器而是直接监听状态变量本身。
+建议开发者给myAge添加@Computed装饰器使其成为状态变量，或直接监听状态变量本身。
 
 【正例2】
 
 将myAge变为状态变量：
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Info {
+  public name: string = 'John';
+  @Trace public age: number = 24;
+
+  // 给myAge添加@Computed成为状态变量
+  @Computed
+  get myAge() {
+    return this.age;
+  }
+
+  // 监听@Computed装饰的getter访问器
+  @Monitor('myAge')
+  onPropertyChange() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'age changed');
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  info: Info = new Info();
+
+  build() {
+    Column() {
+      Button('change age')
+        .onClick(() => {
+          this.info.age = 25; // 状态变量age改变
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class Info {
-5. public name: string = 'John';
-6. @Trace public age: number = 24;
-
-8. // 给myAge添加@Computed成为状态变量
-9. @Computed
-10. get myAge() {
-11. return this.age;
-12. }
-
-14. // 监听@Computed装饰的getter访问器
-15. @Monitor('myAge')
-16. onPropertyChange() {
-17. hilog.info(0xFF00, 'testTag', '%{public}s', 'age changed');
-18. }
-19. }
-
-21. @Entry
-22. @ComponentV2
-23. struct Index {
-24. info: Info = new Info();
-
-26. build() {
-27. Column() {
-28. Button('change age')
-29. .onClick(() => {
-30. this.info.age = 25; // 状态变量age改变
-31. })
-32. }
-33. }
-34. }
-```
-
-[MonitorProblemParamPositiveExample2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemParamPositiveExample2.ets#L15-L50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/R0-21v4uTOqsPiKoa_uucg/zh-cn_image_0000002736432431.png)
 
 或直接监听状态变量本身：
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Info {
+  public name: string = 'John';
+  @Trace public age: number = 24;
+
+  // 监听状态变量age
+  @Monitor('age')
+  onPropertyChange() {
+    hilog.info(0xFF00, 'testTag', '%{public}s', 'age changed');
+  }
+}
+
+@Entry
+@ComponentV2
+struct Index {
+  info: Info = new Info();
+
+  build() {
+    Column() {
+      Button('change age')
+        .onClick(() => {
+          this.info.age = 25; // 状态变量age改变
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class Info {
-5. public name: string = 'John';
-6. @Trace public age: number = 24;
-
-8. // 监听状态变量age
-9. @Monitor('age')
-10. onPropertyChange() {
-11. hilog.info(0xFF00, 'testTag', '%{public}s', 'age changed');
-12. }
-13. }
-
-15. @Entry
-16. @ComponentV2
-17. struct Index {
-18. info: Info = new Info();
-
-20. build() {
-21. Column() {
-22. Button('change age')
-23. .onClick(() => {
-24. this.info.age = 25; // 状态变量age改变
-25. })
-26. }
-27. }
-28. }
-```
-
-[MonitorProblemParamStateVariables.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemParamStateVariables.ets#L15-L44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/UZFRcwUwQoC4zDuG4v1COQ/zh-cn_image_0000002706833278.png)
 
 ### 无法监听变量从可访问变为不可访问和从不可访问变为可访问
 
 @Monitor仅会保存变量可访问时的值，当状态变量变为不可访问的状态时，并不会记录其值的变化。在下面的例子中，点击三个Button，均不会触发onChange的回调。
 
-从API version 20开始，如果需要监听可访问到不可访问和不可访问到可访问的状态变化，可以使用[addMonitor](arkts-new-addmonitor-clearmonitor.md#监听变量从可访问到不访问和从不可访问到可访问)。
+从API version 20开始，可以使用addMonitor[监听变量从可访问到不可访问和从不可访问到可访问](arkts-new-addmonitor-clearmonitor.md#监听变量从可访问到不可访问和从不可访问到可访问)的状态变化。
 
+从API版本26.0.0开始，使用配置项的@Monitor能够正常处理变量在可访问与不可访问之间的切换。在下面的例子中，若将@Monitor('user.age')改写为使用配置项的形式@Monitor({}, 'user.age')，则点击三个Button均会触发onChange回调，dirty中将包含路径user.age，其对应的IMonitorValue的before值与now值会分别反映可访问性切换前后的状态（变量可访问时为实际值，变量不可访问时为undefined）。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class User {
+  @Trace public age: number = 10;
+}
+
+@Entry
+@ComponentV2
+struct Page {
+  @Local user: User | undefined | null = new User();
+
+  @Monitor('user.age')
+  onChange(mon: IMonitor) {
+    mon.dirty.forEach((path: string) => {
+      hilog.info(0xFF00, 'testTag', '%{public}s',
+        `onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
+    });
+  }
+
+  build() {
+    Column() {
+      Text(`User age ${this.user?.age}`)
+        .fontSize(20)
+        .margin(10)
+      Button('set user to undefined')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // age：可访问 -> 不可访问
+          this.user = undefined;
+        })
+      Button('set user to User')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // age：不可访问 ->可访问
+          this.user = new User();
+        })
+      Button('set user to null')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          // age：可访问->不可访问
+          this.user = null;
+        })
+    }
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. @ObservedV2
-4. class User {
-5. @Trace public age: number = 10;
-6. }
-
-8. @Entry
-9. @ComponentV2
-10. struct Page {
-11. @Local user: User | undefined | null = new User();
-
-13. @Monitor('user.age')
-14. onChange(mon: IMonitor) {
-15. mon.dirty.forEach((path: string) => {
-16. hilog.info(0xFF00, 'testTag', '%{public}s',
-17. `onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
-18. });
-19. }
-
-21. build() {
-22. Column() {
-23. Text(`User age ${this.user?.age}`).fontSize(20)
-24. Button('set user to undefined').onClick(() => {
-25. // age：可访问 -> 不可访问
-26. this.user = undefined;
-27. })
-28. Button('set user to User').onClick(() => {
-29. // age：不可访问 ->可访问
-30. this.user = new User();
-31. })
-32. Button('set user to null').onClick(() => {
-33. // age：可访问->不可访问
-34. this.user = null;
-35. })
-36. }
-37. }
-38. }
-```
-
-[MonitorProblemStateChangeUseAddMonitor.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/monitor/MonitorProblemStateChangeUseAddMonitor.ets#L15-L54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/SfbNGVK9TkKn5Qspz0AeUQ/zh-cn_image_0000002736312387.gif)

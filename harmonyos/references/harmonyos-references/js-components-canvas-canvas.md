@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: canvas组件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > canvas组件
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:30+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bc29fe39608ae520796a37d3d34ff8f5fba2b8f307cc726647a6fa9e43198855
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b3f3139dc9090693ababd82e06763717aeec55ee28b9ce0d9e9845179cf9461b
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,43 +16,29 @@ content_hash: sha256:bc29fe39608ae520796a37d3d34ff8f5fba2b8f307cc726647a6fa9e431
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 不支持。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用属性](js-components-common-attributes.md)。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用样式](js-components-common-styles.md)。
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用事件](js-components-common-events.md)。
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用方法](js-components-common-methods.md)外，还支持如下方法：
 
 ### getContext
-
-PhonePC/2in1TabletTVWearable
 
 getContext(type: '2d', options?: ContextAttrOptions): CanvasRenderingContext2D
 
@@ -73,8 +59,6 @@ getContext(type: '2d', options?: ContextAttrOptions): CanvasRenderingContext2D
 
 ### toDataURL6+
 
-PhonePC/2in1TabletTVWearable
-
 toDataURL(type?: string, quality?: number): string
 
 生成一个包含图片展示的URL。
@@ -94,8 +78,6 @@ toDataURL(type?: string, quality?: number): string
 
 ## ContextAttrOptions6+
 
-PhonePC/2in1TabletTVWearable
-
 用于配置Canvas渲染上下文属性的选项对象。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -106,26 +88,24 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div style="margin: 100; flex-direction: column">
-3. <canvas ref="canvas1" style="width: 200px; height: 150px; background-color: rgb(213, 213, 213);"></canvas>
-4. <input type="button" style="width: 180px; height: 60px; margin: 13;" value="fillStyle" onclick="handleClick" />
-5. </div>
+```html
+<!-- xxx.hml -->
+<div style="margin: 100; flex-direction: column">
+  <canvas ref="canvas1" style="width: 200px; height: 150px; background-color: rgb(213, 213, 213);"></canvas>
+  <input type="button" style="width: 180px; height: 60px; margin: 13;" value="fillStyle" onclick="handleClick" />
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. handleClick() {
-4. const el = this.$refs.canvas1;
-5. var dataURL = el.toDataURL();
-6. console.info(dataURL);
-7. // "data:image/png;base64,xxxxxxxx..."
-8. }
-9. }
+```js
+// xxx.js
+export default {
+  handleClick() {
+    const el = this.$refs.canvas1;
+    var dataURL = el.toDataURL();
+    console.info(dataURL);
+    // "data:image/png;base64,xxxxxxxx..."
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/2hy3KiHiQt6NhGk3TFu-mw/zh-cn_image_0000002558607070.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/sslKWVSuQSiNUI99OveclQ/zh-cn_image_0000002706676460.png)

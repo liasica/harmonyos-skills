@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-news_homep
 title: 首页信息流体验优化
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 首页信息流体验优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:08+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:f236a5bfd7052604d11b765f57ef1187be6aadfde20d394f66949b8f4789080e
+scraped_at: 2026-09-02T15:03:20+08:00
+doc_updated_at: 2026-08-10
+content_hash: sha256:cb618c02d7e710a05728c70387ba4e80afcaa8300f9a9b65868f0d7120c19916
 ---
 
 ## 概述
@@ -16,13 +16,9 @@ content_hash: sha256:f236a5bfd7052604d11b765f57ef1187be6aadfde20d394f66949b8f478
 
 介绍了用户操作应用的主要流程，包括进入首页后通过页签切换页面内容、上拉加载和下拉刷新页面，以及从首页地址进入地址选择页更换地址等功能。
 
-* 应用的主要流程图：
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/L8ALE6sOTwu6dC1q17BQ3w/zh-cn_image_0000002194011020.png)
-
 * 应用的运行效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/bCix0aKXTqehrkXnjxN1qw/zh-cn_image_0000002193851428.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ryQSh43_Rv-jWSCS86hYzA/zh-cn_image_0000002193851428.gif "点击放大")
 
 * 操作流程如下：
 
@@ -76,50 +72,48 @@ content_hash: sha256:f236a5bfd7052604d11b765f57ef1187be6aadfde20d394f66949b8f478
 
 通过添加Tab组件的动效触发事件，实现页面内容切换与页签样式切换的同步效果。具体效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/6EsgakzHRl2PujDlhewrRA/zh-cn_image_0000002229336809.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/KEq7a0TQTlSG0EpBZLxHhw/zh-cn_image_0000002229336809.gif "点击放大")
 
 * 动效触发事件节点
 
   推荐使用onAnimationStart事件设置切换标签动效。使用onChange事件会导致页面切换后再触发动效，造成效果延迟。使用onClick事件会与页面切换冲突。
 
-  ```
-  1. // TabBar.ets
-  2. @Builder
-  3. TabBuilder(id: number, index: number) {
-  4. Column() {
-  5. Text(this.tabBarArray[id].name)
-  6. // ...
-  7. }
-  8. .alignItems(HorizontalAlign.Start)
-  9. }
+  ```typescript
+  // TabBar.ets
+  @Builder
+  TabBuilder(id: number, index: number) {
+    Column() {
+      Text(this.tabBarArray[id].name)
+      // ...
+    }
+    .alignItems(HorizontalAlign.Start)
+  }
 
-  11. build() {
-  12. Tabs({ barPosition: BarPosition.Start }) {
-  13. ForEach(this.tabBarArray, (tabsItem: NewsTypeModel, index: number) => {
-  14. TabContent() {
-  15. // ...
-  16. }
-  17. // ...
-  18. }, (item: NewsTypeModel) => JSON.stringify(item));
-  19. }
-  20. // ...
-  21. .onAnimationStart((_index: number, targetIndex: number, _event: TabsAnimationEvent) => {
-  22. this.currentIndex = targetIndex;
-  23. })
-  24. }
+  build() {
+    Tabs({ barPosition: BarPosition.Start }) {
+      ForEach(this.tabBarArray, (tabsItem: NewsTypeModel, index: number) => {
+        TabContent() {
+          // ...
+        }
+        // ...
+      }, (item: NewsTypeModel) => JSON.stringify(item));
+    }
+    // ...
+    .onAnimationStart((_index: number, targetIndex: number, _event: TabsAnimationEvent) => {
+      this.currentIndex = targetIndex;
+    })
+  }
   ```
-
-  [TabBar.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/TabBar.ets#L30-L75)
 
 ### 底部页签跳转精致流畅
 
 底部页签样式添加Lottie动画，使跳转更加精致流畅。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/xRwoCCJUQlirA8RL7KkcBw/zh-cn_image_0000002229451313.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/TmtgcSnyTj68yKa-xBKJ3w/zh-cn_image_0000002229451313.gif "点击放大")
 
 * 底部页签跳转功能时序图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/4obQLSCiQoqhJXXNlT3SCw/zh-cn_image_0000002194011036.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FDXJx6DIRza8rftDR1b5QA/zh-cn_image_0000002194011036.png "点击放大")
 
 * TabBar集成lottie动画
 
@@ -127,124 +121,112 @@ content_hash: sha256:f236a5bfd7052604d11b765f57ef1187be6aadfde20d394f66949b8f478
 
   引入lottie三方库。
 
-  ```
-  1. ohpm install @ohos/lottie
+  ```screen
+  ohpm install @ohos/lottie
   ```
 
   准备lottie动画资源，建议放置在Entry目录的common文件夹中。如果放置在本模块中，使用相对路径将无法读取。
 
   导入lottie模块。
 
+  ```typescript
+  // Home.ets
+  import lottie, { AnimationItem } from '@ohos/lottie';
   ```
-  1. // Home.ets
-  2. import lottie, { AnimationItem } from '@ohos/lottie';
-  ```
-
-  [Home.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/Home.ets#L18-L19)
 
   使用RenderingContext在Canvas组件上进行绘制，声明CanvasRenderingContext2D变量。使用RenderingContextSettings配置CanvasRenderingContext2D对象的参数，设置canvas是否开启抗锯齿。
 
+  ```typescript
+  // Home.ets
+  private renderingSettings1: RenderingContextSettings = new RenderingContextSettings(true);
+  private canvasRenderingContext1: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.renderingSettings1);
   ```
-  1. // Home.ets
-  2. private renderingSettings1: RenderingContextSettings = new RenderingContextSettings(true);
-  3. private canvasRenderingContext1: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.renderingSettings1);
-  ```
-
-  [Home.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/Home.ets#L36-L38)
 
   定义所需数据类型的接口，初始化变量。接口中包含资源路径信息和CanvasRenderingContext2D。
 
+  ```typescript
+  // Home.ets
+  interface TabBarOption {
+    index: number;
+    text: ResourceStr;
+    name: string;
+    path: string;
+    canvasRenderingContext: CanvasRenderingContext2D;
+    lottieItem?: AnimationItem;
+    currentBottomIndex?: number;
+    currentBreakpoint?: string;
+  }
   ```
-  1. // Home.ets
-  2. interface TabBarOption {
-  3. index: number;
-  4. text: ResourceStr;
-  5. name: string;
-  6. path: string;
-  7. canvasRenderingContext: CanvasRenderingContext2D;
-  8. lottieItem?: AnimationItem;
-  9. currentBottomIndex?: number;
-  10. currentBreakpoint?: string;
-  11. }
-  ```
-
-  [Home.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/Home.ets#L223-L234)
 
   实现动画播放的方法。
 
+  ```typescript
+  // Home.ets
+  lottieController(): void {
+    if (this.currentBottomIndex === 0) {
+      lottie.stop();
+      lottie.play(this.tabOption1.name);
+    }
+    if (this.currentBottomIndex === 1) {
+      lottie.stop();
+      lottie.play(this.tabOption2.name);
+    }
+    if (this.currentBottomIndex === 2) {
+      lottie.stop();
+      lottie.play(this.tabOption3.name);
+    }
+  }
   ```
-  1. // Home.ets
-  2. lottieController(): void {
-  3. if (this.currentBottomIndex === 0) {
-  4. lottie.stop();
-  5. lottie.play(this.tabOption1.name);
-  6. }
-  7. if (this.currentBottomIndex === 1) {
-  8. lottie.stop();
-  9. lottie.play(this.tabOption2.name);
-  10. }
-  11. if (this.currentBottomIndex === 2) {
-  12. lottie.stop();
-  13. lottie.play(this.tabOption3.name);
-  14. }
-  15. }
-  ```
-
-  [Home.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/Home.ets#L147-L162)
 
   在TabBar样式中实现Canvas子组件。
 
+  ```typescript
+  // Home.ets
+  Canvas(tabBarOption.canvasRenderingContext)
+    .width($r('app.float.canvas_size'))
+    .height($r('app.float.canvas_size'))
+    .onReady(() => {
+      tabBarOption.canvasRenderingContext.imageSmoothingEnabled = true;
+      tabBarOption.canvasRenderingContext.imageSmoothingQuality = 'medium';
+      lottie.destroy(tabBarOption.name);
+      const item = lottie.loadAnimation({
+        container: tabBarOption.canvasRenderingContext,
+        renderer: 'canvas',
+        loop: false,
+        autoplay: false,
+        autoSkip: false,
+        name: tabBarOption.name,
+        path: tabBarOption.path,
+      });
+      tabBarOption.lottieItem = item;
+      item.addEventListener('DOMLoaded', (args: Object): void => {
+        if (tabBarOption.index === tabBarOption.currentBottomIndex) {
+          item.play();
+        }
+      })
+    })
   ```
-  1. // Home.ets
-  2. Canvas(tabBarOption.canvasRenderingContext)
-  3. .width($r('app.float.canvas_size'))
-  4. .height($r('app.float.canvas_size'))
-  5. .onReady(() => {
-  6. tabBarOption.canvasRenderingContext.imageSmoothingEnabled = true;
-  7. tabBarOption.canvasRenderingContext.imageSmoothingQuality = 'medium';
-  8. lottie.destroy(tabBarOption.name);
-  9. const item = lottie.loadAnimation({
-  10. container: tabBarOption.canvasRenderingContext,
-  11. renderer: 'canvas',
-  12. loop: false,
-  13. autoplay: false,
-  14. autoSkip: false,
-  15. name: tabBarOption.name,
-  16. path: tabBarOption.path,
-  17. });
-  18. tabBarOption.lottieItem = item;
-  19. item.addEventListener('DOMLoaded', (args: Object): void => {
-  20. if (tabBarOption.index === tabBarOption.currentBottomIndex) {
-  21. item.play();
-  22. }
-  23. })
-  24. })
-  ```
-
-  [Home.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/Home.ets#L179-L202)
 
   在tab组件的onAnimationStart事件中调用播放方法。
 
+  ```screen
+  // Home.ets
+  .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
+    this.currentBottomIndex = targetIndex;
+    this.lottieController();
+    this.updateTabText(targetIndex);
+  })
   ```
-  1. // Home.ets
-  2. .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
-  3. this.currentBottomIndex = targetIndex;
-  4. this.lottieController();
-  5. this.updateTabText(targetIndex);
-  6. })
-  ```
-
-  [Home.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/Home.ets#L136-L141)
 
 ### 上拉加载下拉刷新
 
 通过三方库组件pullToRefresh实现下拉刷新页面和上拉加载更多数据的效果。具体效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/cQLGHiyGRD-U8R2LM-rI3w/zh-cn_image_0000002229451321.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UzAIMH-qTOSU9ifw-brPmw/zh-cn_image_0000002229451321.gif "点击放大")
 
 * 上拉加载和下拉刷新时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/lOqoRP3DT1CLz6BZbZ4_vw/zh-cn_image_0000002229336825.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/PeqLTgYRT1ydRKRf17pSuA/zh-cn_image_0000002229336825.png "点击放大")
 
 * pullToRefresh组件
 
@@ -252,62 +234,56 @@ content_hash: sha256:f236a5bfd7052604d11b765f57ef1187be6aadfde20d394f66949b8f478
 
   引入三方库pullToRefresh。
 
-  ```
-  1. ohpm install @ohos/pulltorefresh
-  ```
-
-  ```
-  1. // PullToRefreshNews.ets
-  2. import { PullToRefresh } from '@ohos/pulltorefresh/index';
+  ```screen
+  ohpm install @ohos/pulltorefresh
   ```
 
-  [PullToRefreshNews.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/PullToRefreshNews.ets#L20-L21)
+  ```typescript
+  // PullToRefreshNews.ets
+  import { PullToRefresh } from '@ohos/pulltorefresh/index';
+  ```
 
   准备数据源，本场景使用本地资源模拟效果，资源文件在resources/rawfile目录下，实际情况可替换为从网络获取。
 
+  ```typescript
+  // PullToRefreshNews.ets
+  const MOCK_DATA_FILE_ONE_DIR: string =
+    uiContext!.getHostContext()!.resourceManager.getStringSync($r('app.string.mock1').id);
+  const MOCK_DATA_FILE_TWO_DIR: string =
+    uiContext!.getHostContext()!.resourceManager.getStringSync($r('app.string.mock2').id);
   ```
-  1. // PullToRefreshNews.ets
-  2. const MOCK_DATA_FILE_ONE_DIR: string =
-  3. uiContext!.getHostContext()!.resourceManager.getStringSync($r('app.string.mock1').id);
-  4. const MOCK_DATA_FILE_TWO_DIR: string =
-  5. uiContext!.getHostContext()!.resourceManager.getStringSync($r('app.string.mock2').id);
-  ```
-
-  [PullToRefreshNews.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/PullToRefreshNews.ets#L38-L42)
 
   包含列表组件、数据对象和scroller对象，并添加上滑和下拉方法。
 
+  ```typescript
+  // PullToRefreshNews.ets
+  PullToRefresh({
+    data: $newsData,
+    scroller: this.scroller,
+    customList: () => {
+      this.getListView();
+    },
+    onRefresh: () => {
+      return new Promise<string>((resolve, reject) => {
+        // ...
+        }, NEWS_REFRESH_TIME);
+      });
+    },
+    onLoadMore: () => {
+      return new Promise<string>((resolve, reject) => {
+        // ...
+      });
+    },
+    customLoad: null,
+    customRefresh: null,
+  })
   ```
-  1. // PullToRefreshNews.ets
-  2. PullToRefresh({
-  3. data: $newsData,
-  4. scroller: this.scroller,
-  5. customList: () => {
-  6. this.getListView();
-  7. },
-  8. onRefresh: () => {
-  9. return new Promise<string>((resolve, reject) => {
-  10. // ...
-  11. }, NEWS_REFRESH_TIME);
-  12. });
-  13. },
-  14. onLoadMore: () => {
-  15. return new Promise<string>((resolve, reject) => {
-  16. // ...
-  17. });
-  18. },
-  19. customLoad: null,
-  20. customRefresh: null,
-  21. })
-  ```
-
-  [PullToRefreshNews.ets](https://gitcode.com/HarmonyOS_Samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/PullToRefreshNews.ets#L70-L112)
 
 ### 首页feed流
 
 使用懒加载实现首页 feed 流的快速渲染和流畅滑动。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/RbAtt_J3TDy8_yqyB3wbLQ/zh-cn_image_0000002194011028.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/PXe-sr83TPG-dSpnIEzr7g/zh-cn_image_0000002194011028.gif "点击放大")
 
 * 懒加载
 
@@ -315,52 +291,46 @@ content_hash: sha256:f236a5bfd7052604d11b765f57ef1187be6aadfde20d394f66949b8f478
 
   准备需要加载的数据源：
 
+  ```typescript
+  // PullToRefreshNews.ets
+  @State newsData: NewsDataSource = new NewsDataSource();
   ```
-  1. // PullToRefreshNews.ets
-  2. @State newsData: NewsDataSource = new NewsDataSource();
-  ```
-
-  [PullToRefreshNews.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/PullToRefreshNews.ets#L49-L50)
 
   创建子组件：
 
+  ```typescript
+  // PullToRefreshNews.ets
+  @Component
+  struct newsItem {
+    // ...
+  }
   ```
-  1. // PullToRefreshNews.ets
-  2. @Component
-  3. struct newsItem {
-  4. // ...
-  5. }
-  ```
-
-  [PullToRefreshNews.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/PullToRefreshNews.ets#L194-L274)
 
   使用LazyForEach对子组件进行渲染：
 
+  ```typescript
+  // PullToRefreshNews.ets
+  List({ space: CommonConstants.LIST_SPACE, scroller: this.scroller }) {
+    LazyForEach(this.newsData, (item: NewsData) => {
+      ListItem() {
+        newsItem({
+          // ...
+        })
+      }
+      // ...
+    }, (item: NewsData, index?: number) => JSON.stringify(item) + index);
+  }
   ```
-  1. // PullToRefreshNews.ets
-  2. List({ space: CommonConstants.LIST_SPACE, scroller: this.scroller }) {
-  3. LazyForEach(this.newsData, (item: NewsData) => {
-  4. ListItem() {
-  5. newsItem({
-  6. // ...
-  7. })
-  8. }
-  9. // ...
-  10. }, (item: NewsData, index?: number) => JSON.stringify(item) + index);
-  11. }
-  ```
-
-  [PullToRefreshNews.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/PullToRefreshNews.ets#L124-L150)
 
 ### 地址选择页
 
 使用位置服务实现定位功能，AlphabetIndexer组件实现地址首字母定位导航条。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/XCSKZRsjQ0W2iFMRyFoLXQ/zh-cn_image_0000002229336813.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/cXuZAL82R3m8ykmSx4TE7g/zh-cn_image_0000002229336813.gif "点击放大")
 
 * 地址选择页效果功能时序图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/rT3ygoLKR6CP5w0q9paw2Q/zh-cn_image_0000002229336833.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/sNEz_xJlS0KK9QNchk7QoQ/zh-cn_image_0000002229336833.png "点击放大")
 
 * 位置服务与索引条导航
 
@@ -368,117 +338,107 @@ content_hash: sha256:f236a5bfd7052604d11b765f57ef1187be6aadfde20d394f66949b8f478
 
   申请权限时，API9及之后的版本，需要申请ohos.permission.APPROXIMATELY\_LOCATION，或同时申请ohos.permission.APPROXIMATELY\_LOCATION和ohos.permission.LOCATION；无法单独申请ohos.permission.LOCATION。
 
+  ```json
+  "requestPermissions": [
+    {
+      "name": "ohos.permission.APPROXIMATELY_LOCATION",
+      "reason": "$string:approximately_location_desc",
+      "usedScene": {
+        "abilities": [
+          "EntryAbility"
+        ],
+        "when": "always"
+      }
+    },
+    {
+      "name": "ohos.permission.LOCATION",
+      "reason": "$string:location_desc",
+      "usedScene": {
+        "abilities": [
+          "EntryAbility"
+        ],
+        "when": "always"
+      }
+    }
+  ],
   ```
-  1. "requestPermissions": [
-  2. {
-  3. "name": "ohos.permission.APPROXIMATELY_LOCATION",
-  4. "reason": "$string:approximately_location_desc",
-  5. "usedScene": {
-  6. "abilities": [
-  7. "EntryAbility"
-  8. ],
-  9. "when": "always"
-  10. }
-  11. },
-  12. {
-  13. "name": "ohos.permission.LOCATION",
-  14. "reason": "$string:location_desc",
-  15. "usedScene": {
-  16. "abilities": [
-  17. "EntryAbility"
-  18. ],
-  19. "when": "always"
-  20. }
-  21. }
-  22. ],
-  ```
-
-  [module.json5](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/module.json5#L11-L32)
 
   申请用户安全权限：
 
+  ```typescript
+  // Index.ets
+  onPageShow(): void {
+    abilityAccessCtrl.createAtManager().requestPermissionsFromUser(this.getUIContext().getHostContext(), [
+      'ohos.permission.LOCATION', 'ohos.permission.APPROXIMATELY_LOCATION']).then(() => {
+      if (this.status) {
+        geoLocationManager.getCurrentLocation(locationChange);
+        this.status = false;
+      }
+    }).catch((err: BusinessError) => {
+      hilog.error(0x0000, 'Index', `requestPermissionsFromUser fail, code: ${err.code}, message: ${err.message}`);
+    });
+  }
   ```
-  1. // Index.ets
-  2. onPageShow(): void {
-  3. abilityAccessCtrl.createAtManager().requestPermissionsFromUser(this.getUIContext().getHostContext(), [
-  4. 'ohos.permission.LOCATION', 'ohos.permission.APPROXIMATELY_LOCATION']).then(() => {
-  5. if (this.status) {
-  6. geoLocationManager.getCurrentLocation(locationChange);
-  7. this.status = false;
-  8. }
-  9. }).catch((err: BusinessError) => {
-  10. hilog.error(0x0000, 'Index', `requestPermissionsFromUser fail, code: ${err.code}, message: ${err.message}`);
-  11. });
-  12. }
-  ```
-
-  [Index.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/pages/Index.ets#L66-L78)
 
   导入位置服务：
 
+  ```typescript
+  // Index.ets
+  import { geoLocationManager } from '@kit.LocationKit';
   ```
-  1. // Index.ets
-  2. import { geoLocationManager } from '@kit.LocationKit';
-  ```
-
-  [Index.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/pages/Index.ets#L17-L18)
 
   获取地理位置信息，进行逆地理编码以确定当前位置：
 
+  ```typescript
+  // Index.ets
+  let locationChange: (err: BusinessError, location: geoLocationManager.Location) => void = (err, location) => {
+    if (err) {
+      hilog.error(0x00000, 'locationChanger: err=', JSON.stringify(err));
+    }
+    if (location) {
+      let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+        'latitude': location.latitude,
+        'longitude': location.longitude,
+        'maxItems': CommonConstants.MAX_ITEMS
+      };
+      geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+        if (data) {
+          hilog.info(0x00000, 'getAddressesFromLocation: data=', JSON.stringify(data));
+          if (data[0].locality !== undefined) {
+            if (i18n.System.getSystemLanguage() === 'zh-Hans') {
+              AppStorage.setOrCreate('local', data[0].locality.replace(/"/g, '').slice(0, -1));
+              AppStorage.setOrCreate('currentLocal', data[0].locality.replace(/"/g, '').slice(0, -1));
+            } else {
+              AppStorage.setOrCreate('local', data[0].locality.replace(/"/g, ''));
+              AppStorage.setOrCreate('currentLocal', data[0].locality.replace(/"/g, ''));
+            }
+          }
+        }
+      });
+    }
+  };
   ```
-  1. // Index.ets
-  2. let locationChange: (err: BusinessError, location: geoLocationManager.Location) => void = (err, location) => {
-  3. if (err) {
-  4. hilog.error(0x00000, 'locationChanger: err=', JSON.stringify(err));
-  5. }
-  6. if (location) {
-  7. let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
-  8. 'latitude': location.latitude,
-  9. 'longitude': location.longitude,
-  10. 'maxItems': CommonConstants.MAX_ITEMS
-  11. };
-  12. geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
-  13. if (data) {
-  14. hilog.info(0x00000, 'getAddressesFromLocation: data=', JSON.stringify(data));
-  15. if (data[0].locality !== undefined) {
-  16. if (i18n.System.getSystemLanguage() === 'zh-Hans') {
-  17. AppStorage.setOrCreate('local', data[0].locality.replace(/"/g, '').slice(0, -1));
-  18. AppStorage.setOrCreate('currentLocal', data[0].locality.replace(/"/g, '').slice(0, -1));
-  19. } else {
-  20. AppStorage.setOrCreate('local', data[0].locality.replace(/"/g, ''));
-  21. AppStorage.setOrCreate('currentLocal', data[0].locality.replace(/"/g, ''));
-  22. }
-  23. }
-  24. }
-  25. });
-  26. }
-  27. };
-  ```
-
-  [Index.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/pages/Index.ets#L29-L56)
 
   使用AlphabetIndexer组件实现导航条。通过onSelect事件获取选中索引值，并使用Scroller的scrollToIndex()方法滑动到指定索引位置：
 
+  ```screen
+  // CityView.ets
+  AlphabetIndexer({ arrayValue: TAB_VALUE, selected: this.stabIndex })
+    .height(CommonConstants.FULL_PERCENT)
+    .selectedColor($r('app.color.alphabet_select_color'))
+    .popupColor($r('app.color.alphabet_pop_color'))
+    .selectedBackgroundColor($r('app.color.alphabet_selected_bgc'))
+    .popupBackground($r('app.color.alphabet_pop_bgc'))
+    .popupPosition({ x: $r('app.integer.pop_position_x'), y: $r('app.integer.pop_position_y') })
+    .usingPopup(true)
+    .selectedFont({ size: $r('app.integer.select_font'), weight: FontWeight.Bolder })
+    .popupFont({ size: $r('app.integer.pop_font'), weight: FontWeight.Bolder })
+    .alignStyle(IndexerAlign.Right)
+    .itemSize(CommonConstants.ITEM_SIZE)
+    .onSelect((tabIndex: number) => {
+      this.scroller.scrollToIndex(tabIndex);
+    })
   ```
-  1. // CityView.ets
-  2. AlphabetIndexer({ arrayValue: TAB_VALUE, selected: this.stabIndex })
-  3. .height(CommonConstants.FULL_PERCENT)
-  4. .selectedColor($r('app.color.alphabet_select_color'))
-  5. .popupColor($r('app.color.alphabet_pop_color'))
-  6. .selectedBackgroundColor($r('app.color.alphabet_selected_bgc'))
-  7. .popupBackground($r('app.color.alphabet_pop_bgc'))
-  8. .popupPosition({ x: $r('app.integer.pop_position_x'), y: $r('app.integer.pop_position_y') })
-  9. .usingPopup(true)
-  10. .selectedFont({ size: $r('app.integer.select_font'), weight: FontWeight.Bolder })
-  11. .popupFont({ size: $r('app.integer.pop_font'), weight: FontWeight.Bolder })
-  12. .alignStyle(IndexerAlign.Right)
-  13. .itemSize(CommonConstants.ITEM_SIZE)
-  14. .onSelect((tabIndex: number) => {
-  15. this.scroller.scrollToIndex(tabIndex);
-  16. })
-  ```
-
-  [CityView.ets](https://gitcode.com/harmonyos_samples/fluent-news-homepage/blob/master/entry/src/main/ets/view/CityView.ets#L131-L146)
 
 ## 示例代码
 

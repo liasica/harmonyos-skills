@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 输入法框架错误码
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > 错误码 > 输入法框架错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:15+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e60529c4f04ea9281f660f329580b3259c49101699c09f17bcbf86ba14244c22
+scraped_at: 2026-09-02T15:01:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5d642ded65ee9663fff7aa98b5bccdc59956afd8d95f0ad7d3f82003a8f88ca9
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 12800001 包管理服务异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -22,43 +20,39 @@ Bundle manager error.
 
 **错误描述**
 
-当依赖包管理接口来获取一些信息失败时，系统会报此错误码。
+当依赖包管理接口来获取输入法应用包名、版本号等信息失败时，系统会报此错误码。
 
 **可能原因**
 
-在调用getInputMethods、listCurrentInputMethodSubtype等接口获取输入法及子类型时，由于获取包管理服务异常会报错。
+调用getInputMethods、listCurrentInputMethodSubtype等接口获取输入法及子类型时，若获取包管理服务异常，则抛出此错误码。
 
 **处理步骤**
 
-无
+开发者检查包管理服务状态，确保服务正常运行。
 
 ## 12800002 输入法应用异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
 Input method engine error. Possible causes:
 
 1. input method panel not created.
-2. the input method application does not subscribe to related events.
+2. input method application does not subscribe to input method panel lifecycle events.
 
 **错误描述**
 
-在执行显示键盘、隐藏键盘等操作时，由于输入法应用进程死亡导致操作失败，系统会报此错误码。
+在执行显示键盘、隐藏键盘等操作时，由于输入法面板未创建或输入法应用未订阅相关事件导致操作失败，系统会报此错误码。
 
 **可能原因**
 
 1. 输入法面板未创建。
-2. 输入法应用不订阅相关事件。
+2. 输入法应用未订阅相关事件。
 
 **处理步骤**
 
-检查输入法应用进程是否正常运行。例如：可在应用中点击对话框，观察键盘是否能正常弹出。
+检查输入法应用进程是否正常运行。点击应用对话框，触发键盘显示，若键盘正常显示，则进程运行正常。
 
 ## 12800003 客户端应用异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -66,7 +60,7 @@ Input method client error. Possible causes:
 
 1. the edit box is not focused.
 2. no edit box is bound to current input method application.
-3. ipc failed due to the large amount of data transferred or other reasons.
+3. ipc failed due to data transferred exceeding 1MB or invalid data format.
 
 **错误描述**
 
@@ -75,18 +69,16 @@ Input method client error. Possible causes:
 **可能原因**
 
 1. 应用没有获得焦点。
-2. 应用客户端服务异常导致输入法应用与应用客户端断连。
-3. 传输的数据量过大等原因，导致IPC失败。
+2. 应用客户端服务异常，导致输入法应用与应用客户端断连。
+3. 传输的数据量超过1MB或数据格式不正确等原因，导致IPC失败。
 
 **处理步骤**
 
-1. 重新将输入法应用与应用进行绑定：将应用后台进程杀死，重新启动应用，通过点击对话框等方式触发输入法键盘的显示，若键盘正常显示，则问题解决。
-2. 将应用切换至前台，并确保无其他应用或窗口遮挡。通过点击对话框等方式触发键盘弹出。
-3. 根据[IPC的约束与限制](../harmonyos-guides/ipc-rpc-overview.md#约束与限制)，需先调整传输数据量，控制为较小规模后再发起请求。需特别注意：一次接口调用在IPC层的总传输数据量=应用侧发送的数据量+系统层处理所需的必要数据量，因此应用调用接口时实际可发送的最大数据量，会小于IPC本身限制的最大数据量。
+1. 开发者重新将输入法应用与应用进行绑定：将应用后台进程杀死，重新启动应用，触发输入法键盘的显示，若键盘正常显示则问题解决。隐藏键盘时需调用hideTextInput接口与showTextInput配对使用。
+2. 开发者将应用切换至前台，确保无其他应用或窗口遮挡，触发键盘弹出。
+3. 开发者根据IPC的约束与限制，调整传输数据量为较小规模后再发起请求。一次接口调用在IPC层的总传输数据量等于应用侧发送的数据量加系统层处理所需的必要数据量，应用调用接口时实际可发送的最大数据量（约1MB），会小于IPC本身限制的最大数据量（约1.2MB）。注意：showTextInput与hideTextInput需配对调用，避免资源泄漏。
 
 ## 12800004 不是输入法应用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -98,15 +90,13 @@ Not an input method application.
 
 **可能原因**
 
-在其他应用中调用了仅支持输入法应用调用的接口。
+非输入法应用调用了仅支持输入法应用的接口。
 
 **处理步骤**
 
 在输入法应用中调用此接口。
 
-## 12800005 配置固化失败
-
-PhonePC/2in1TabletTVWearable
+## 12800005 配置持久化失败
 
 **错误信息**
 
@@ -114,7 +104,7 @@ Configuration persistence error.
 
 **错误描述**
 
-当保存配置失败时，系统会报此错误码。
+当配置持久化失败时，系统会报此错误码。
 
 **可能原因**
 
@@ -122,11 +112,9 @@ Configuration persistence error.
 
 **处理步骤**
 
-执行命令hdc shell param get persist.sys.default\_ime查看默认输入法参数。若参数可正常显示，则系统参数配置模块正常，建议重启设备后重试。
+开发者执行命令hdc shell param get persist.sys.default\_ime查看默认输入法参数。若参数可正常显示则系统参数配置模块正常，建议重启设备后重试。
 
 ## 12800006 输入法控制器异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -134,19 +122,17 @@ Input method controller error. Possible cause: create InputMethodController obje
 
 **错误描述**
 
-当获取到输入法控制器失败时，系统会报此错误码。
+当获取输入法控制器失败时，系统会报此错误码。
 
 **可能原因**
 
-在调用getController接口获取输入法控制器InputMethodController时发生异常时会报错。
+调用getController接口获取输入法控制器InputMethodController时发生异常，则抛出此错误码。
 
 **处理步骤**
 
-无。
+无
 
 ## 12800007 输入法设置器异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -154,19 +140,17 @@ Input method setter error. Possible cause: create InputMethodSetting object fail
 
 **错误描述**
 
-当获取到输入法设置器发生错误时，系统会报此错误码。
+当获取输入法设置器失败时，系统会报此错误码。
 
 **可能原因**
 
-在调用getSetting接口获取输入法设置器InputMethodSetting时发生异常时会报错。
+调用getSetting接口获取输入法设置器InputMethodSetting时发生异常，则抛出此错误码。
 
 **处理步骤**
 
-无。
+无
 
 ## 12800008 输入法管理服务异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -174,7 +158,7 @@ Input method manager service error. Possible cause: a system error, such as null
 
 **错误描述**
 
-获取输入法管理服务异常时，系统会报此错误码。
+当调用输入法框架中的接口时，由于依赖输入法管理服务而服务获取异常时，系统会报此错误码。
 
 **可能原因**
 
@@ -182,11 +166,9 @@ Input method manager service error. Possible cause: a system error, such as null
 
 **处理步骤**
 
-执行命令ps -A | grep inputmethod检查输入法服务的进程号。若进程存在，则服务正常运行。
+开发者执行命令ps -A | grep inputmethod检查输入法服务的进程号。若进程存在则服务正常运行。
 
 ## 12800009 输入法客户端未绑定
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -198,15 +180,13 @@ Input method client detached.
 
 **可能原因**
 
-当前应用在没有绑定输入法的情况下执行了比如showTextInput、hideTextInput等操作。
+当前应用未绑定输入法时，执行了showTextInput、hideTextInput等操作。
 
 **处理步骤**
 
-需先执行attach接口操作。
+需先执行[attach](js-apis-inputmethod.md#attach10)接口操作建立绑定，然后再调用showTextInput等接口进行键盘操作。完整调用流程：attach → showTextInput（显示键盘）→ hideTextInput（隐藏键盘），hideTextInput与showTextInput需配对使用以释放资源。
 
 ## 12800010 不是系统配置的默认输入法
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -226,15 +206,13 @@ Not the preconfigured default input method.
 
 ## 12800011 当前输入框不支持预上屏
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Text preview not supported.
 
 **错误描述**
 
-当前输入框不支持预上屏。
+当前输入框未支持预上屏功能。
 
 **可能原因**
 
@@ -246,8 +224,6 @@ Text preview not supported.
 
 ## 12800012 软键盘类型面板未创建
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The input method panel does not exist.
@@ -258,15 +234,13 @@ The input method panel does not exist.
 
 **可能原因**
 
-调用者输入法应用未创建软键盘类型面板。
+输入法应用未创建软键盘类型面板。
 
 **处理步骤**
 
-开发者可以通过接口[createPanel](js-apis-inputmethodengine.md#createpanel10)创建[软键盘类型](js-apis-inputmethodengine.md#paneltype10)的[面板](js-apis-inputmethodengine.md#panel10)。
+开发者可以通过接口[createPanel](js-apis-inputmethodengine.md#createpanel10)创建。
 
 ## 12800013 窗口管理服务错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -286,8 +260,6 @@ Window manager service error.
 
 ## 12800014 输入法应用非完全访问模式
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The input method is in basic mode.
@@ -298,15 +270,13 @@ The input method is in basic mode.
 
 **可能原因**
 
-开发者调用要求需开启完全访问模式的接口后，若当前输入法非完全访问模式，则抛出此错误码。
+调用需开启完全访问模式的接口时，若当前输入法非完全访问模式，则抛出此错误码。
 
 **处理步骤**
 
 在设置中开启当前输入法的完全访问模式。
 
 ## 12800015 消息接收端无法接收自定义通信数据
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -322,11 +292,9 @@ The other side does not accept the request.
 
 **处理步骤**
 
-消息接收端需注册MessageHandler接收自定义通信数据，输入法应用侧调用[recvMessage](js-apis-inputmethodengine.md#recvmessage15)，输入法客户端侧调用[recvMessage](js-apis-inputmethod.md#recvmessage15)。
+消息接收端需先注册MessageHandler接收自定义通信数据，然后才能调用recvMessage接收消息。调用顺序：先注册MessageHandler（监听数据），再调用recvMessage（接收数据）。输入法应用侧调用[recvMessage](js-apis-inputmethodengine.md#recvmessage15)，输入法客户端侧调用[recvMessage](js-apis-inputmethod.md#recvmessage15)。未注册MessageHandler即调用recvMessage会导致无法接收数据。
 
 ## 12800016 输入法客户端未处于编辑状态
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -342,15 +310,13 @@ Input method client is not editable.
 
 **处理步骤**
 
-输入法客户端绑定后退出编辑状态，需重新进入编辑状态。如：自绘控件需调用[showTextInput](js-apis-inputmethod.md#showtextinput10)重新进入编辑状态。
+输入法客户端绑定后退出编辑状态，需重新进入编辑状态。完整调用流程：attach（建立绑定）→ showTextInput（进入编辑状态）→ hideTextInput（退出编辑状态）。如：自绘控件需调用[showTextInput](js-apis-inputmethod.md#showtextinput10)重新进入编辑状态。注意：hideTextInput后不能直接调用其他编辑操作，必须先调用showTextInput重新进入编辑状态。
 
 ## 12800017 无效的面板类型或面板状态
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Invalid panel type or panel flag.
+Invalid panel type or panel flag. Valid values are defined in PanelType and PanelFlag enums.
 
 **错误描述**
 
@@ -358,33 +324,13 @@ Invalid panel type or panel flag.
 
 **可能原因**
 
-当前的输入法[面板类型](js-apis-inputmethodengine.md#paneltype10)或[面板状态](js-apis-inputmethodengine.md#panelflag10)不支持其调用此接口，或者此接口不支持开发者传入当前面板类型或面板状态，则抛出此错误码。
+当输入法的面板类型或面板状态不支持被调用，或者被调用的接口不接受当前传入的面板类型或面板状态时，系统会抛出此错误码。
 
 **处理步骤**
 
 建议开发者进一步阅读接口使用说明，按要求调整当前的输入法面板类型或者面板状态。
 
-## 12800018 输入法未找到
-
-**错误信息**
-
-The input method is not found.
-
-**错误描述**
-
-输入法未找到。
-
-**可能原因**
-
-该输入法未安装。
-
-**处理步骤**
-
-开发者可以通过接口[getAllInputMethods](js-apis-inputmethod.md#getallinputmethods11)查询所有已经安装的输入法。
-
-## 12800020 沉浸效果不正确
-
-PhonePC/2in1TabletTVWearable
+## 12800020 沉浸效果参数配置错误
 
 **错误信息**
 
@@ -406,13 +352,11 @@ Invalid immersive effect.
 
 **处理步骤**
 
-1. 先打开沉浸模式，再设置渐变模式和流光模式。
-2. 先打开渐变模式，再设置流光模式。
-3. 未启用渐变模式时，将渐变高度设置为0px。
+1. 先设置ImmersiveEffect的immersiveEnabled属性为true启用沉浸模式，再设置gradientMode启用渐变模式和fluidLightMode启用流光模式。
+2. 先设置gradientMode属性启用渐变模式，再设置fluidLightMode属性启用流光模式。
+3. 未启用渐变模式（gradientMode为false）时，将gradientHeight属性设置为0px。
 
-## 12800021 系统配置的默认输入法不支持此操作
-
-PhonePC/2in1TabletTVWearable
+## 12800021 调用顺序错误
 
 **错误信息**
 
@@ -420,7 +364,7 @@ This operation is allowed only after adjustPanelRect or resize is called.
 
 **错误描述**
 
-必须先调用以下任一接口，才能调用当前接口：
+必须先调用以下任一接口，才能调用setImmersiveEffect接口：
 
 * [adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)(支持API version 12)
 * [adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect15)(支持API version 15)
@@ -438,13 +382,10 @@ This operation is allowed only after adjustPanelRect or resize is called.
 
 先调用以下任一接口，再调用setImmersiveEffect接口：
 
-* [adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect12)(支持API version 12)
-* [adjustPanelRect](js-apis-inputmethodengine.md#adjustpanelrect15)(支持API version 15)
-* [resize](js-apis-inputmethodengine.md#resize10)(支持API version 10)
+* adjustPanelRect（支持API version 12或15）
+* resize（支持API version 10）
 
 ## 12800022 无效的displayId
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -452,11 +393,11 @@ Invalid displayId.
 
 **错误描述**
 
-无效的displayId。
+displayId无效或不存在。
 
 **可能原因**
 
-调用[getSystemPanelCurrentInsets](js-apis-inputmethodengine.md#getsystempanelcurrentinsets21)接口传入的displayId为无效的值。
+调用[getSystemPanelCurrentInsets](js-apis-inputmethodengine.md#getsystempanelcurrentinsets21)接口传入的displayId为无效的值时，会导致接口调用失败并抛出此错误码。
 
 **处理步骤**
 

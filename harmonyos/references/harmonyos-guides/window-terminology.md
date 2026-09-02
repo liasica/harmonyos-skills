@@ -3,52 +3,50 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-termin
 title: 窗口开发术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发术语
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c5d7851c7afa6cab683a2368cec9e2b081160a517cedf11b7488e1f253f2a304
+scraped_at: 2026-09-02T14:59:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5ed5daf62e12f72428a8229ec64a457bbd379c17367636755c15a05cac150f81
 ---
 
-## 窗口类型
+## F
 
-窗口有系统窗口、应用窗口两种分类。
+### Floating Window；悬浮窗
 
-### 系统窗口
-
-系统窗口指完成系统特定功能的窗口。如音量条、壁纸、通知栏、状态栏、导航栏等。
-
-系统窗口仅系统应用可用。
-
-### 应用窗口
-
-应用窗口区别于系统窗口，指与应用显示相关的窗口，用来显示应用的内容。根据管理方式和用途的不同，应用窗口又可以分为主窗口、辅助窗口两种类型。
-
-* 主窗口
-
-  主窗口由UIAbility创建时默认创建，会在“任务管理界面”中以一个独立的任务卡片显示，用于显示应用UIAbility主界面。
-* 辅助窗口
-
-  辅助窗口由应用自行管理创建和销毁，不会在“任务管理界面”中以一个独立的任务卡片显示，可以用于显示应用的辅助内容，例如弹窗等。
-
-  辅助窗口包括子窗口、全局悬浮窗、模态窗口、画中画和闪控球。
-
-## 悬浮窗
-
-悬浮窗分为智慧多窗悬浮窗和全局悬浮窗。
+悬浮窗分为智慧多窗悬浮窗、全局悬浮窗和[闪控窗](../harmonyos-references/js-apis-floatview.md)。
 
 * 智慧多窗悬浮窗是指设备屏幕上悬浮的、非全屏的应用窗口。
 
   一般用于在已有全屏任务运行的基础上，临时处理另一个任务，或短时间多任务并行使用。如浏览网页的同时回复消息。
 
   相关参考：[智慧多窗简介](multi-window-intro.md)、[智慧多窗最佳实践](../best-practices/bpta-multi-window-practice.md)。
-* 全局悬浮窗是指一种特殊的应用辅助窗口，具备在应用主窗口和对应Ability退至后台后仍然可以在前台显示的能力。
+* 全局悬浮窗是指一种特殊的应用辅助窗口，具备在应用主窗口和对应UIAbility退至后台后仍然可以在前台显示的能力。
 
-  全局悬浮窗可以用于应用退至后台后，使用小窗继续显示UI，例如音乐应用用于显示桌面歌词等。
+  全局悬浮窗可以用于应用退至后台后，使用小窗继续显示UI。
 
   应用在创建全局悬浮窗前，需要申请对应的权限。
 
-相关参考：[设置全局悬浮窗](application-window-stage.md#设置全局悬浮窗受限开放)。
+  相关参考：[全局悬浮窗开发指导](global-floating-window-guide.md)。
+* 闪控窗是指一种由系统管理并统一绘制UI的特殊应用辅助窗口，具备在应用主窗口和对应UIAbility退至后台后仍然可以在前台显示的能力。
 
-## 自由窗口
+  闪控窗由系统统一管理UI和动效，支持与[闪控球](../harmonyos-references/js-apis-floatingball.md)绑定联合使用，用户点击闪控球可展开为闪控窗，点击闪控窗左上角的缩小按钮可收起为闪控球，实现两种窗口形态的相互切换。闪控窗适用于需要在独立小窗口中持续展示应用内容或提供快捷操作的场景，例如股市盯盘应用实时查看股票行情变化，或手机直播应用展示自定义的互动面板和控制界面。
+
+  应用在创建闪控窗前，需要申请对应的权限。
+
+  相关参考：[闪控窗开发指导](float-view-guide.md)。
+
+### Free Windows；自由多窗模式
+
+自由多窗模式是一种支持用户在移动设备上进行多任务处理的交互方式。
+
+自由多窗下，允许用户在一块屏幕上同时显示多个应用窗口。此时的应用窗口为[自由窗口](window-terminology.md#freeform-window自由窗口)。
+
+部分Tablet设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
+
+部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/aKT4tJolSF6dkoOSHkKKMg/zh-cn_image_0000002706834032.png)
+
+### Freeform Window；自由窗口
 
 自由窗口是一种允许用户在同一屏幕上以自由大小、位置显示的窗口状态。自由窗口支持拖拽、缩放和分屏组合，从而实现多任务处理。
 
@@ -60,63 +58,71 @@ content_hash: sha256:c5d7851c7afa6cab683a2368cec9e2b081160a517cedf11b7488e1f253f
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/2kAPOFO5RJSD_kicnUE1hA/zh-cn_image_0000002589324563.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/T_7fS5CDQNycBe6yn7jOqw/zh-cn_image_0000002736433187.png)
 
 当前设备支持情况：
 
-* **2in1设备**：2in1设备上的窗口，默认为自由窗口。
-* **Tablet设备**：部分Tablet设备，支持开启[自由多窗模式](window-terminology.md#自由多窗模式)（通过下拉控制中心，点击“自由多窗”按钮开启），开启此模式后，应用窗口默认为自由窗口。
-* **Phone设备**：部分Phone设备，支持开启[自由多窗模式](window-terminology.md#自由多窗模式)（通过下拉控制中心，点击“自由多窗”按钮开启），开启此模式后，应用窗口默认为自由窗口。
+* **2in1设备**：2in1设备上的窗口，默认为[自由窗口](window-terminology.md#freeform-window自由窗口)。
+* **Tablet设备**：部分Tablet设备，支持开启[自由多窗模式](window-terminology.md#free-windows自由多窗模式)（通过下拉控制中心，点击“自由多窗”按钮开启），开启此模式后，应用窗口默认为[自由窗口](window-terminology.md#freeform-window自由窗口)。
+* **Phone设备**：部分Phone设备，支持开启[自由多窗模式](window-terminology.md#free-windows自由多窗模式)（通过下拉控制中心，点击“自由多窗”按钮开启），开启此模式后，应用窗口默认为[自由窗口](window-terminology.md#freeform-window自由窗口)。
 
-### 自由多窗模式
+## G
 
-自由多窗模式是一种支持用户在移动设备上进行多任务处理的交互方式。
-
-自由多窗下，允许用户在一块屏幕上同时显示多个应用窗口。此时的应用窗口为[自由窗口](window-terminology.md#自由窗口)。
-
-部分Tablet设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
-
-部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/JYmZqwlfRVSxzNqyYQooVg/zh-cn_image_0000002589244501.png)
-
-### 电脑模式
-
-电脑模式是一种支持用户在移动设备上进行多任务处理的交互方式。
-
-电脑模式下，允许用户在一块屏幕上同时显示多个应用窗口。此时的应用窗口为[自由窗口](window-terminology.md#自由窗口)。
-
-部分Tablet设备上，可通过下拉控制中心，点击“电脑模式”按钮开启电脑模式。
-
-## 沉浸式布局
-
-沉浸式布局是一种让应用界面聚焦内容，减少无关元素干扰的窗口状态。
-
-非[自由窗口](window-terminology.md#自由窗口)可以通过调用[setWindowLayoutFullScreen](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)进入沉浸式布局。
-
-| 非自由窗口的非沉浸式布局示意 | 非自由窗口的沉浸式布局示意 |
-| --- | --- |
-|  |  |
-
-自由窗口可以通过隐藏装饰栏进入沉浸式布局。
-
-| 自由窗口的非沉浸式布局示意 | 自由窗口的沉浸式布局示意 |
-| --- | --- |
-|  |  |
-
-应用窗口进入沉浸式布局之后，页面的所有组件布局范围从安全区域扩展为整个窗口。可以通过[isImmersiveLayout](../harmonyos-references/arkts-apis-window-window.md#isimmersivelayout20)判断当前窗口是否处于沉浸式布局。
-
-多设备场景下不同窗口形态的沉浸式开发与实现可以参考[窗口沉浸式最佳实践](../best-practices/bpta-multi-device-window-immersive.md)。
-
-## 全局坐标系
+### Global Coordinate System；全局坐标系
 
 全局坐标系是指在设备连接[扩展屏](display-terminology.md#扩展屏)（多物理屏幕）的场景下，以主屏幕左上角为原点(0, 0)，屏幕右侧为x轴正方向，屏幕下侧为y轴正方向，对窗口、指针等对象的位置进行统一描述的坐标体系。
 
 在该坐标系中，所有物理屏幕被映射到同一连续的虚拟坐标空间内，各类窗口操作、坐标转换及窗口矩形变化事件均基于该坐标空间进行计算和回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/r2GTg-EvT3uDug2CMQG_uA/zh-cn_image_0000002558764696.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/BobZRAuAT4ycZHSi347aKA/zh-cn_image_0000002736433201.png)
 
 使用场景：
 
 * 窗口跨屏移动：调用基于全局坐标系的接口移动窗口，无需传递具体屏幕ID参数，即可实现窗口在多屏之间移动。
 * 窗口位置变化监听：基于全局坐标系监听窗口矩形变化事件，统一获取窗口在多屏环境中的位置与尺寸变化信息。
+
+## I
+
+### Immersive Layout；沉浸式布局
+
+让应用可布局区域拓展至整个窗口显示区域的状态。沉浸式布局下，应用内的可用布局区域延伸到整个窗口大小，此时应用界面的布局内容可与系统UI界面重叠显示，但系统界面元素层级始终高于应用界面内容。
+
+## P
+
+### PC Mode；电脑模式
+
+一种支持用户在移动设备上进行多任务处理的交互方式。电脑模式下，允许用户在一块屏幕上同时显示多个应用窗口，此时的应用窗口为[自由窗口](window-terminology.md#freeform-window自由窗口)。部分Tablet设备上，可通过下拉控制中心，点击"电脑模式"按钮开启电脑模式。
+
+## S
+
+### Multi-Window；智慧多窗
+
+一个多种窗口模式组合使用的实践范例，它允许用户在同一时间、同一屏幕上以悬浮窗、分屏或全景多窗的方式同时运行多个应用窗口，从而实现多任务处理。智慧多窗包括智慧多窗悬浮窗、分屏和全景多窗等多种显示方式。
+
+### Starting Window；启动页
+
+应用冷启动时显示的首个页面，在应用进程没有运行或者应用内容没有加载完成前都将显示启动页。启动页承载了应用展示品牌特性的功能，应用可以根据自己的设计配置资源，用于展示产品独特的标识。
+
+## L
+
+### Level-1 Subwindow；一级子窗
+
+以主窗口为直接父级的子窗口，不包含其他二级及更深层次的子窗口。
+
+## W
+
+### Window Posture Mode；窗口姿态模式
+
+窗口姿态模式（WindowPostureMode）是指窗口在设备满足特定物理形态条件下的布局模式，应用可以根据窗口姿态模式调整应用内布局方式，从而提升不同设备物理形态下的交互体验。
+
+当前支持的窗口姿态模式：
+
+* 桌面模式（DESKTOP\_MODE）：
+
+  桌面模式适用于折叠屏设备半折叠状态下，窗口铺满整个屏幕并在上下半屏之间适配不同布局的场景，例如视频播放、阅读等。
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/3-5uqsCYT4eJraVXNw10zQ/zh-cn_image_0000002706834046.jpg)
+
+### Window Privacy Mode；隐私模式
+
+窗口的一种特殊显示模式，设置为隐私模式的窗口称为隐私窗口。隐私窗口的窗口内容将无法被截屏、录屏、投屏，主要用于禁止截屏、录屏、投屏的场景，一般用于带有密码等敏感信息的页面。

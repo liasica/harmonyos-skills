@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avsession.h
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 头文件 > native_avsession.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9b5d2cc98f33cd5e0ead5fddd0f04656a1f63523e099b058b189599167db9633
+scraped_at: 2026-09-02T15:02:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ec01db38c5d67aa5f1fe3d108792b4c2b863441f839f6813cf5dadea93de97e2
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 媒体会话定义，可用于设置元数据、播放状态信息等操作。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,14 +33,12 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnCommand)(OH\_AVSession\* session, AVSession\_ControlCommand command, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_oncommand) | OH\_AVSessionCallback\_OnCommand | 通用的执行播控命令的回调。 |
-| [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnFastForward)(OH\_AVSession\* session, uint32\_t seekTime, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_onfastforward) | OH\_AVSessionCallback\_OnFastForward | 快进的回调。 |
-| [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnRewind)(OH\_AVSession\* session, uint32\_t seekTime, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_onrewind) | OH\_AVSessionCallback\_OnRewind | 快退的回调。 |
-| [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnSeek)(OH\_AVSession\* session, uint64\_t seekTime, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_onseek) | OH\_AVSessionCallback\_OnSeek | 进度调节的回调。 |
+| [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnFastForward)(OH\_AVSession\* session, uint32\_t seekTime, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_onfastforward) | OH\_AVSessionCallback\_OnFastForward | 快进的回调。参数seekTime单位为毫秒(ms)。 |
+| [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnRewind)(OH\_AVSession\* session, uint32\_t seekTime, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_onrewind) | OH\_AVSessionCallback\_OnRewind | 快退的回调。参数seekTime单位为毫秒(ms)。 |
+| [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnSeek)(OH\_AVSession\* session, uint64\_t seekTime, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_onseek) | OH\_AVSessionCallback\_OnSeek | 进度调节的回调。参数seekTime单位为毫秒(ms)。 |
 | [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnSetLoopMode)(OH\_AVSession\* session, AVSession\_LoopMode curLoopMode, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_onsetloopmode) | OH\_AVSessionCallback\_OnSetLoopMode | 设置循环模式的回调。 |
 | [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OnToggleFavorite)(OH\_AVSession\* session, const char\* assetId, void\* userData)](capi-native-avsession-h.md#oh_avsessioncallback_ontogglefavorite) | OH\_AVSessionCallback\_OnToggleFavorite | 收藏的回调。 |
 | [typedef AVSessionCallback\_Result (\*OH\_AVSessionCallback\_OutputDeviceChange)(OH\_AVSession\* session, AVSession\_ConnectionState state, AVSession\_OutputDeviceInfo\* outputDeviceInfo)](capi-native-avsession-h.md#oh_avsessioncallback_outputdevicechange) | OH\_AVSessionCallback\_OutputDeviceChange | 设备变化的回调。 |
@@ -55,25 +47,25 @@ PhonePC/2in1TabletTVWearable
 | [AVSession\_ErrCode OH\_AVSession\_Activate(OH\_AVSession\* avsession)](capi-native-avsession-h.md#oh_avsession_activate) | - | 激活会话。 |
 | [AVSession\_ErrCode OH\_AVSession\_Deactivate(OH\_AVSession\* avsession)](capi-native-avsession-h.md#oh_avsession_deactivate) | - | 取消激活媒体会话。 |
 | [AVSession\_ErrCode OH\_AVSession\_GetSessionType(OH\_AVSession\* avsession, AVSession\_Type\* sessionType)](capi-native-avsession-h.md#oh_avsession_getsessiontype) | - | 获取会话类型。 |
-| [AVSession\_ErrCode OH\_AVSession\_GetSessionId(OH\_AVSession\* avsession, const char\*\* sessionId)](capi-native-avsession-h.md#oh_avsession_getsessionid) | - | 获取会话id。 |
+| [AVSession\_ErrCode OH\_AVSession\_GetSessionId(OH\_AVSession\* avsession, const char\*\* sessionId)](capi-native-avsession-h.md#oh_avsession_getsessionid) | - | 获取会话ID。 |
 | [AVSession\_ErrCode OH\_AVSession\_SetAVMetadata(OH\_AVSession\* avsession, OH\_AVMetadata\* avmetadata)](capi-native-avsession-h.md#oh_avsession_setavmetadata) | - | 设置媒体元数据。 |
 | [AVSession\_ErrCode OH\_AVSession\_SetPlaybackState(OH\_AVSession\* avsession, AVSession\_PlaybackState playbackState)](capi-native-avsession-h.md#oh_avsession_setplaybackstate) | - | 设置播放状态。 |
 | [AVSession\_ErrCode OH\_AVSession\_SetPlaybackPosition(OH\_AVSession\* avsession, AVSession\_PlaybackPosition\* playbackPosition)](capi-native-avsession-h.md#oh_avsession_setplaybackposition) | - | 设置播放位置。 |
 | [AVSession\_ErrCode OH\_AVSession\_SetFavorite(OH\_AVSession\* avsession, bool favorite)](capi-native-avsession-h.md#oh_avsession_setfavorite) | - | 设置收藏状态。 |
 | [AVSession\_ErrCode OH\_AVSession\_SetLoopMode(OH\_AVSession\* avsession, AVSession\_LoopMode loopMode)](capi-native-avsession-h.md#oh_avsession_setloopmode) | - | 设置循环模式。 |
-| [AVSession\_ErrCode OH\_AVSession\_SetRemoteCastEnabled(OH\_AVSession\* avsession, bool enabled)](capi-native-avsession-h.md#oh_avsession_setremotecastenabled) | - | 请求使能远程投播。 |
+| [AVSession\_ErrCode OH\_AVSession\_SetRemoteCastEnabled(OH\_AVSession\* avsession, bool enabled)](capi-native-avsession-h.md#oh_avsession_setremotecastenabled) | - | 请求启用远程投播。 |
 | [AVSession\_ErrCode OH\_AVSession\_RegisterCommandCallback(OH\_AVSession\* avsession, AVSession\_ControlCommand command, OH\_AVSessionCallback\_OnCommand callback, void\* userData)](capi-native-avsession-h.md#oh_avsession_registercommandcallback) | - | 注册通用播控的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_UnregisterCommandCallback(OH\_AVSession\* avsession, AVSession\_ControlCommand command, OH\_AVSessionCallback\_OnCommand callback)](capi-native-avsession-h.md#oh_avsession_unregistercommandcallback) | - | 取消注册通用播控的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_RegisterForwardCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnFastForward callback, void\* userData)](capi-native-avsession-h.md#oh_avsession_registerforwardcallback) | - | 注册快进的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_UnregisterForwardCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnFastForward callback)](capi-native-avsession-h.md#oh_avsession_unregisterforwardcallback) | - | 取消注册快进的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_RegisterRewindCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnRewind callback, void\* userData)](capi-native-avsession-h.md#oh_avsession_registerrewindcallback) | - | 注册快退的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_UnregisterRewindCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnRewind callback)](capi-native-avsession-h.md#oh_avsession_unregisterrewindcallback) | - | 取消注册快退的回调。 |
-| [AVSession\_ErrCode OH\_AVSession\_RegisterSeekCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnSeek callback, void\* userData)](capi-native-avsession-h.md#oh_avsession_registerseekcallback) | - | 注册跳转的回调。 |
-| [AVSession\_ErrCode OH\_AVSession\_UnregisterSeekCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnSeek callback)](capi-native-avsession-h.md#oh_avsession_unregisterseekcallback) | - | 取消注册跳转的回调。 |
+| [AVSession\_ErrCode OH\_AVSession\_RegisterSeekCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnSeek callback, void\* userData)](capi-native-avsession-h.md#oh_avsession_registerseekcallback) | - | 注册进度调节的回调。 |
+| [AVSession\_ErrCode OH\_AVSession\_UnregisterSeekCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnSeek callback)](capi-native-avsession-h.md#oh_avsession_unregisterseekcallback) | - | 取消注册进度调节的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_RegisterSetLoopModeCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnSetLoopMode callback, void\* userData)](capi-native-avsession-h.md#oh_avsession_registersetloopmodecallback) | - | 注册设置循环模式的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_UnregisterSetLoopModeCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnSetLoopMode callback)](capi-native-avsession-h.md#oh_avsession_unregistersetloopmodecallback) | - | 取消注册设置循环模式的回调。 |
-| [AVSession\_ErrCode OH\_AVSession\_RegisterToggleFavoriteCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnToggleFavorite callback, void\* userData)](capi-native-avsession-h.md#oh_avsession_registertogglefavoritecallback) | - | 设置收藏的回调。 |
-| [AVSession\_ErrCode OH\_AVSession\_UnregisterToggleFavoriteCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnToggleFavorite callback)](capi-native-avsession-h.md#oh_avsession_unregistertogglefavoritecallback) | - | 取消设置收藏的回调。 |
+| [AVSession\_ErrCode OH\_AVSession\_RegisterToggleFavoriteCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnToggleFavorite callback, void\* userData)](capi-native-avsession-h.md#oh_avsession_registertogglefavoritecallback) | - | 注册收藏的回调。 |
+| [AVSession\_ErrCode OH\_AVSession\_UnregisterToggleFavoriteCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OnToggleFavorite callback)](capi-native-avsession-h.md#oh_avsession_unregistertogglefavoritecallback) | - | 取消注册收藏的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_RegisterOutputDeviceChangeCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OutputDeviceChange callback)](capi-native-avsession-h.md#oh_avsession_registeroutputdevicechangecallback) | - | 注册设备变化的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_UnregisterOutputDeviceChangeCallback(OH\_AVSession\* avsession, OH\_AVSessionCallback\_OutputDeviceChange callback)](capi-native-avsession-h.md#oh_avsession_unregisteroutputdevicechangecallback) | - | 取消注册设备变化的回调。 |
 | [AVSession\_ErrCode OH\_AVSession\_AcquireSession(const char\* sessionTag, const char\* bundleName, const char\* abilityName, OH\_AVSession\*\* avsession)](capi-native-avsession-h.md#oh_avsession_acquiresession) | - | 获取已经存在的媒体会话对象。当不再使用媒体会话对象时，调用[OH\_AVSession\_Destroy](capi-native-avsession-h.md#oh_avsession_destroy)进行释放。 |
@@ -84,14 +76,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVSessionCallback\_OnCommand()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnCommand)(OH_AVSession* session, AVSession_ControlCommand command, void* userData)
+```c
+typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnCommand)(OH_AVSession* session, AVSession_ControlCommand command, void* userData)
 ```
 
 **描述**
@@ -102,52 +90,44 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSessionCallback\_OnFastForward()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnFastForward)(OH_AVSession* session, uint32_t seekTime, void* userData)
+```c
+typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnFastForward)(OH_AVSession* session, uint32_t seekTime, void* userData)
 ```
 
 **描述**
 
-快进的回调。
+快进的回调。参数seekTime单位为毫秒(ms)。
 
 **起始版本：** 13
 
 ### OH\_AVSessionCallback\_OnRewind()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnRewind)(OH_AVSession* session, uint32_t seekTime, void* userData)
+```c
+typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnRewind)(OH_AVSession* session, uint32_t seekTime, void* userData)
 ```
 
 **描述**
 
-快退的回调。
+快退的回调。参数seekTime单位为毫秒(ms)。
 
 **起始版本：** 13
 
 ### OH\_AVSessionCallback\_OnSeek()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSeek)(OH_AVSession* session, uint64_t seekTime, void* userData)
+```c
+typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSeek)(OH_AVSession* session, uint64_t seekTime, void* userData)
 ```
 
 **描述**
 
-进度调节的回调。
+进度调节的回调。参数seekTime单位为毫秒(ms)。
 
 **起始版本：** 13
 
 ### OH\_AVSessionCallback\_OnSetLoopMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSetLoopMode)(OH_AVSession* session, AVSession_LoopMode curLoopMode, void* userData)
+```c
+typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnSetLoopMode)(OH_AVSession* session, AVSession_LoopMode curLoopMode, void* userData)
 ```
 
 **描述**
@@ -158,10 +138,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSessionCallback\_OnToggleFavorite()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnToggleFavorite)(OH_AVSession* session, const char* assetId, void* userData)
+```c
+typedef AVSessionCallback_Result (*OH_AVSessionCallback_OnToggleFavorite)(OH_AVSession* session, const char* assetId, void* userData)
 ```
 
 **描述**
@@ -172,10 +150,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSessionCallback\_OutputDeviceChange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef AVSessionCallback_Result (*OH_AVSessionCallback_OutputDeviceChange)(OH_AVSession* session, AVSession_ConnectionState state, AVSession_OutputDeviceInfo* outputDeviceInfo)
+```c
+typedef AVSessionCallback_Result (*OH_AVSessionCallback_OutputDeviceChange)(OH_AVSession* session, AVSession_ConnectionState state, AVSession_OutputDeviceInfo* outputDeviceInfo)
 ```
 
 **描述**
@@ -186,10 +162,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_Create(AVSession_Type sessionType, const char* sessionTag, const char* bundleName, const char* abilityName, OH_AVSession** avsession)
+```c
+AVSession_ErrCode OH_AVSession_Create(AVSession_Type sessionType, const char* sessionTag, const char* bundleName, const char* abilityName, OH_AVSession** avsession)
 ```
 
 **描述**
@@ -203,9 +177,9 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AVSession\_Type](capi-native-avsession-base-h.md#avsession_type) sessionType | 会话类型[AVSession\_Type](capi-native-avsession-base-h.md#avsession_type)。 |
-| const char\* sessionTag | 会话标签。 |
+| const char\* sessionTag | 应用设置的会话自定义标签。 |
 | const char\* bundleName | 创建会话的包名。 |
-| const char\* abilityName | 创建会话的ability名。 |
+| const char\* abilityName | 创建会话的Ability组件名。 |
 | [OH\_AVSession](capi-ohavsession-oh-avsession.md)\*\* avsession | 返回的媒体会话对象。 |
 
 **返回：**
@@ -216,10 +190,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_Destroy(OH_AVSession* avsession)
+```c
+AVSession_ErrCode OH_AVSession_Destroy(OH_AVSession* avsession)
 ```
 
 **描述**
@@ -242,10 +214,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_Activate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_Activate(OH_AVSession* avsession)
+```c
+AVSession_ErrCode OH_AVSession_Activate(OH_AVSession* avsession)
 ```
 
 **描述**
@@ -268,10 +238,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_Deactivate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_Deactivate(OH_AVSession* avsession)
+```c
+AVSession_ErrCode OH_AVSession_Deactivate(OH_AVSession* avsession)
 ```
 
 **描述**
@@ -294,10 +262,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_GetSessionType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_GetSessionType(OH_AVSession* avsession, AVSession_Type* sessionType)
+```c
+AVSession_ErrCode OH_AVSession_GetSessionType(OH_AVSession* avsession, AVSession_Type* sessionType)
 ```
 
 **描述**
@@ -321,15 +287,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_GetSessionId()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_GetSessionId(OH_AVSession* avsession, const char** sessionId)
+```c
+AVSession_ErrCode OH_AVSession_GetSessionId(OH_AVSession* avsession, const char** sessionId)
 ```
 
 **描述**
 
-获取会话id。
+获取会话ID。
 
 **起始版本：** 13
 
@@ -338,7 +302,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* avsession | 媒体会话对象。 |
-| const char\*\* sessionId | 返回的会话类型id。 |
+| const char\*\* sessionId | 返回的会话ID。 |
 
 **返回：**
 
@@ -348,10 +312,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_SetAVMetadata()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_SetAVMetadata(OH_AVSession* avsession, OH_AVMetadata* avmetadata)
+```c
+AVSession_ErrCode OH_AVSession_SetAVMetadata(OH_AVSession* avsession, OH_AVMetadata* avmetadata)
 ```
 
 **描述**
@@ -375,10 +337,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_SetPlaybackState()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_SetPlaybackState(OH_AVSession* avsession, AVSession_PlaybackState playbackState)
+```c
+AVSession_ErrCode OH_AVSession_SetPlaybackState(OH_AVSession* avsession, AVSession_PlaybackState playbackState)
 ```
 
 **描述**
@@ -402,10 +362,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_SetPlaybackPosition()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_SetPlaybackPosition(OH_AVSession* avsession, AVSession_PlaybackPosition* playbackPosition)
+```c
+AVSession_ErrCode OH_AVSession_SetPlaybackPosition(OH_AVSession* avsession, AVSession_PlaybackPosition* playbackPosition)
 ```
 
 **描述**
@@ -429,10 +387,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_SetFavorite()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_SetFavorite(OH_AVSession* avsession, bool favorite)
+```c
+AVSession_ErrCode OH_AVSession_SetFavorite(OH_AVSession* avsession, bool favorite)
 ```
 
 **描述**
@@ -456,10 +412,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_SetLoopMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_SetLoopMode(OH_AVSession* avsession, AVSession_LoopMode loopMode)
+```c
+AVSession_ErrCode OH_AVSession_SetLoopMode(OH_AVSession* avsession, AVSession_LoopMode loopMode)
 ```
 
 **描述**
@@ -483,15 +437,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_SetRemoteCastEnabled()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_SetRemoteCastEnabled(OH_AVSession* avsession, bool enabled)
+```c
+AVSession_ErrCode OH_AVSession_SetRemoteCastEnabled(OH_AVSession* avsession, bool enabled)
 ```
 
 **描述**
 
-请求使能远程投播。
+请求启用远程投播。
 
 **起始版本：** 23
 
@@ -500,7 +452,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* avsession | 媒体会话对象。 |
-| bool enabled | 是否使能远程投播。true表示使能，false表示不使能。 |
+| bool enabled | 是否启用远程投播。true表示启用，false表示不启用。 |
 
 **返回：**
 
@@ -510,10 +462,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_RegisterCommandCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_RegisterCommandCallback(OH_AVSession* avsession, AVSession_ControlCommand command, OH_AVSessionCallback_OnCommand callback, void* userData)
+```c
+AVSession_ErrCode OH_AVSession_RegisterCommandCallback(OH_AVSession* avsession, AVSession_ControlCommand command, OH_AVSessionCallback_OnCommand callback, void* userData)
 ```
 
 **描述**
@@ -539,10 +489,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_UnregisterCommandCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_UnregisterCommandCallback(OH_AVSession* avsession, AVSession_ControlCommand command, OH_AVSessionCallback_OnCommand callback)
+```c
+AVSession_ErrCode OH_AVSession_UnregisterCommandCallback(OH_AVSession* avsession, AVSession_ControlCommand command, OH_AVSessionCallback_OnCommand callback)
 ```
 
 **描述**
@@ -567,10 +515,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_RegisterForwardCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_RegisterForwardCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnFastForward callback, void* userData)
+```c
+AVSession_ErrCode OH_AVSession_RegisterForwardCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnFastForward callback, void* userData)
 ```
 
 **描述**
@@ -595,10 +541,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_UnregisterForwardCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_UnregisterForwardCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnFastForward callback)
+```c
+AVSession_ErrCode OH_AVSession_UnregisterForwardCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnFastForward callback)
 ```
 
 **描述**
@@ -622,10 +566,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_RegisterRewindCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_RegisterRewindCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnRewind callback, void* userData)
+```c
+AVSession_ErrCode OH_AVSession_RegisterRewindCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnRewind callback, void* userData)
 ```
 
 **描述**
@@ -650,10 +592,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_UnregisterRewindCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_UnregisterRewindCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnRewind callback)
+```c
+AVSession_ErrCode OH_AVSession_UnregisterRewindCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnRewind callback)
 ```
 
 **描述**
@@ -677,15 +617,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_RegisterSeekCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_RegisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback, void* userData)
+```c
+AVSession_ErrCode OH_AVSession_RegisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback, void* userData)
 ```
 
 **描述**
 
-注册跳转的回调。
+注册进度调节的回调。
 
 **起始版本：** 13
 
@@ -705,15 +643,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_UnregisterSeekCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_UnregisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback)
+```c
+AVSession_ErrCode OH_AVSession_UnregisterSeekCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSeek callback)
 ```
 
 **描述**
 
-取消注册跳转的回调。
+取消注册进度调节的回调。
 
 **起始版本：** 13
 
@@ -732,10 +668,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_RegisterSetLoopModeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_RegisterSetLoopModeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSetLoopMode callback, void* userData)
+```c
+AVSession_ErrCode OH_AVSession_RegisterSetLoopModeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSetLoopMode callback, void* userData)
 ```
 
 **描述**
@@ -760,10 +694,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_UnregisterSetLoopModeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_UnregisterSetLoopModeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSetLoopMode callback)
+```c
+AVSession_ErrCode OH_AVSession_UnregisterSetLoopModeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnSetLoopMode callback)
 ```
 
 **描述**
@@ -787,15 +719,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_RegisterToggleFavoriteCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_RegisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback, void* userData)
+```c
+AVSession_ErrCode OH_AVSession_RegisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback, void* userData)
 ```
 
 **描述**
 
-设置收藏的回调。
+注册收藏的回调。
 
 **起始版本：** 13
 
@@ -804,7 +734,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* avsession | 媒体会话对象。 |
-| [OH\_AVSessionCallback\_OnToggleFavorite](capi-native-avsession-h.md#oh_avsessioncallback_ontogglefavorite) callback | 设置收藏命令的回调。 |
+| [OH\_AVSessionCallback\_OnToggleFavorite](capi-native-avsession-h.md#oh_avsessioncallback_ontogglefavorite) callback | 收藏命令的回调。 |
 | void\* userData | 指向通过回调函数传递的应用数据指针。 |
 
 **返回：**
@@ -815,15 +745,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_UnregisterToggleFavoriteCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_UnregisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback)
+```c
+AVSession_ErrCode OH_AVSession_UnregisterToggleFavoriteCallback(OH_AVSession* avsession, OH_AVSessionCallback_OnToggleFavorite callback)
 ```
 
 **描述**
 
-取消设置收藏的回调。
+取消注册收藏的回调。
 
 **起始版本：** 13
 
@@ -832,7 +760,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVSession](capi-ohavsession-oh-avsession.md)\* avsession | 媒体会话对象。 |
-| [OH\_AVSessionCallback\_OnToggleFavorite](capi-native-avsession-h.md#oh_avsessioncallback_ontogglefavorite) callback | 设置收藏命令的回调。 |
+| [OH\_AVSessionCallback\_OnToggleFavorite](capi-native-avsession-h.md#oh_avsessioncallback_ontogglefavorite) callback | 收藏命令的回调。 |
 
 **返回：**
 
@@ -842,10 +770,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_RegisterOutputDeviceChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_RegisterOutputDeviceChangeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OutputDeviceChange callback)
+```c
+AVSession_ErrCode OH_AVSession_RegisterOutputDeviceChangeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OutputDeviceChange callback)
 ```
 
 **描述**
@@ -869,10 +795,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_UnregisterOutputDeviceChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_UnregisterOutputDeviceChangeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OutputDeviceChange callback)
+```c
+AVSession_ErrCode OH_AVSession_UnregisterOutputDeviceChangeCallback(OH_AVSession* avsession, OH_AVSessionCallback_OutputDeviceChange callback)
 ```
 
 **描述**
@@ -896,10 +820,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AcquireSession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_AcquireSession(const char* sessionTag, const char* bundleName, const char* abilityName, OH_AVSession** avsession)
+```c
+AVSession_ErrCode OH_AVSession_AcquireSession(const char* sessionTag, const char* bundleName, const char* abilityName, OH_AVSession** avsession)
 ```
 
 **描述**
@@ -925,10 +847,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_CreateAVCastController()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_CreateAVCastController(OH_AVSession* avsession, OH_AVCastController** avcastcontroller)
+```c
+AVSession_ErrCode OH_AVSession_CreateAVCastController(OH_AVSession* avsession, OH_AVCastController** avcastcontroller)
 ```
 
 **描述**
@@ -952,10 +872,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_StopCasting()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_StopCasting(OH_AVSession* avsession)
+```c
+AVSession_ErrCode OH_AVSession_StopCasting(OH_AVSession* avsession)
 ```
 
 **描述**
@@ -978,10 +896,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_AcquireOutputDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_AcquireOutputDevice(OH_AVSession* avsession, AVSession_OutputDeviceInfo** outputDeviceInfo)
+```c
+AVSession_ErrCode OH_AVSession_AcquireOutputDevice(OH_AVSession* avsession, AVSession_OutputDeviceInfo** outputDeviceInfo)
 ```
 
 **描述**
@@ -1005,10 +921,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVSession\_ReleaseOutputDevice()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AVSession_ErrCode OH_AVSession_ReleaseOutputDevice(OH_AVSession* avsession, AVSession_OutputDeviceInfo *outputDeviceInfo)
+```c
+AVSession_ErrCode OH_AVSession_ReleaseOutputDevice(OH_AVSession* avsession, AVSession_OutputDeviceInfo *outputDeviceInfo)
 ```
 
 **描述**

@@ -3,25 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 无障碍控制操作
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 无障碍相关 > 无障碍控制操作
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:57+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:4413739e4bd7fca0c42f21fc0a659b32ace2e5c3a401554a5d822e1a3a85475c
+scraped_at: 2026-09-02T15:00:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0a0c9edb118276bb8a2781b2117517d11383ca829953c22c0944cae7e9dcdcb8
 ---
 
-在开启无障碍模式后，需要判断是否拦截无障碍控制操作。
+在开启无障碍模式后，本模块提供无障碍控制操作拦截和无障碍节点获焦/失焦状态监听能力。开发者可通过onAccessibilityFocus监听组件的获焦与失焦状态变化，通过onAccessibilityActionIntercept在无障碍控制操作触发前进行拦截判断，适用于需要在无障碍模式下自定义组件交互逻辑的场景。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 18开始支持，后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 * 目前仅支持通过开启无障碍模式触发。
 
 ## onAccessibilityFocus
 
-PhonePC/2in1TabletTVWearable
-
 onAccessibilityFocus(callback: AccessibilityFocusCallback): T
 
-设置无障碍节点获焦、失焦状态的回调函数。当状态发生变化时，触发回调函数。
+该接口在无障碍模式下，设置无障碍节点获焦、失焦状态的回调函数。当无障碍焦点移入或移出当前组件，导致获焦、失焦状态发生变化时，触发回调函数。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -33,7 +32,7 @@ onAccessibilityFocus(callback: AccessibilityFocusCallback): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [AccessibilityFocusCallback](ts-universal-accessibility-event.md#accessibilityfocuscallback) | 是 | 向注册回调函数方通知当前获焦、失焦状态。 |
+| callback | [AccessibilityFocusCallback](ts-universal-accessibility-event.md#accessibilityfocuscallback) | 是 | 在无障碍模式下，当组件获焦、失焦状态发生变化时，向注册方通知当前状态。入参设置undefined时取消回调注册。 |
 
 **返回值：**
 
@@ -42,8 +41,6 @@ onAccessibilityFocus(callback: AccessibilityFocusCallback): T
 | T | 返回当前组件。 |
 
 ## AccessibilityFocusCallback
-
-PhonePC/2in1TabletTVWearable
 
 type AccessibilityFocusCallback = (isFocus: boolean) => void
 
@@ -63,11 +60,9 @@ type AccessibilityFocusCallback = (isFocus: boolean) => void
 
 ## onAccessibilityActionIntercept20+
 
-PhonePC/2in1TabletTVWearable
-
 onAccessibilityActionIntercept(callback: AccessibilityActionInterceptCallback): T
 
-该接口在无障碍模式下，可在无障碍控制操作触发前通知注册的回调函数，由注册方决定是否拦截该次无障碍动作，对不支持Click的组件注册也无法触发回调。
+该接口在无障碍模式下，可在无障碍控制操作触发前通知注册的回调函数，由注册方决定是否拦截该次无障碍控制操作。对不支持点击操作的组件，即使注册该回调也不会被触发。
 
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
@@ -79,7 +74,7 @@ onAccessibilityActionIntercept(callback: AccessibilityActionInterceptCallback): 
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | [AccessibilityActionInterceptCallback](ts-universal-accessibility-event.md#accessibilityactioninterceptcallback20) | 是 | 在无障碍控制操作触发前，向注册回调函数方通知，由注册方决定是否拦截该次无障碍控制操作。  入参设置undefined时取消回调注册。 |
+| callback | [AccessibilityActionInterceptCallback](ts-universal-accessibility-event.md#accessibilityactioninterceptcallback20) | 是 | 在无障碍模式且组件支持点击的前提下，在无障碍控制操作触发前通知注册方该次无障碍控制操作，由注册方决定是否拦截该操作。未开启无障碍模式或组件不支持点击时，回调均不会触发。  入参设置为undefined时，取消回调注册。 |
 
 **返回值：**
 
@@ -89,11 +84,9 @@ onAccessibilityActionIntercept(callback: AccessibilityActionInterceptCallback): 
 
 ## AccessibilityActionInterceptCallback20+
 
-PhonePC/2in1TabletTVWearable
-
 type AccessibilityActionInterceptCallback = (action: AccessibilityAction) => AccessibilityActionInterceptResult
 
-提供onAccessibilityActionIntercept中使用的回调函数参数类型。
+定义onAccessibilityActionIntercept中使用的回调类型。
 
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
@@ -111,11 +104,9 @@ type AccessibilityActionInterceptCallback = (action: AccessibilityAction) => Acc
 
 | 类型 | 说明 |
 | --- | --- |
-| [AccessibilityActionInterceptResult](ts-universal-accessibility-event.md#accessibilityactioninterceptresult20枚举说明) | 无障碍控制操作拦截结果。 |
+| [AccessibilityActionInterceptResult](ts-universal-accessibility-event.md#accessibilityactioninterceptresult20枚举说明) | 无障碍控制操作拦截结果，用于决定是否拦截当前组件的无障碍控制操作及后续处理方式。 |
 
 ## AccessibilityAction20+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 定义组件当前触发的无障碍控制操作类型。
 
@@ -127,12 +118,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| UNDEFINED\_ACTION | 0 | 未定义的无障碍操作。 |
+| UNDEFINED\_ACTION | 0 | 未定义的无障碍控制操作。 |
 | ACCESSIBILITY\_CLICK | 1 | 无障碍点击操作。 |
 
 ## AccessibilityActionInterceptResult20+枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 定义AccessibilityActionInterceptCallback的无障碍控制操作拦截结果。
 
@@ -145,85 +134,86 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | ACTION\_INTERCEPT | 0 | 拦截当前组件接收的无障碍控制操作，回调处理结束后，不允许当前组件响应无障碍控制操作。 |
-| ACTION\_CONTINUE | 1 | 拦截当前组件接收的无障碍控制操作, 回调处理结束后，仍然需要组件做出响应，执行当前组件的处理逻辑。 |
-| ACTION\_RISE | 2 | 拦截执行当前组件接收的无障碍控制操作，回调处理结束后，仍然需要组件做出响应，执行当前组件的处理逻辑，并且将ACTION信息往父组件传递，传递到下一个使用了onAccessibilityActionIntercept的组件，触发当前组件中注册的回调，但不触发组件处理逻辑。处理完成后，可以继续使用RISE向父组件传递ACTION。 |
+| ACTION\_CONTINUE | 1 | 不拦截当前组件接收的无障碍控制操作，回调处理结束后，允许当前组件响应无障碍控制操作，执行当前组件的处理逻辑。 |
+| ACTION\_RISE | 2 | 不拦截当前组件接收的无障碍控制操作，回调处理结束后，仍然需要组件做出响应，执行当前组件的处理逻辑，并且将无障碍控制操作信息向父组件传递。传递到下一个使用了onAccessibilityActionIntercept的组件时，触发该组件中注册的回调，但不触发该组件处理逻辑。处理完成后，可以继续使用ACTION\_RISE向父组件传递无障碍控制操作信息。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置onAccessibilityActionIntercept拦截点击事件）
 
-该示例主要演示通过使用onAccessibilityActionIntercept事件实现Toggle组件在无障碍模式下于点击事件发生之前拦截点击事件并确认是否拦截该点击事件的操作。
+该示例演示在无障碍模式下，通过onAccessibilityActionIntercept事件在Toggle组件点击事件触发前进行拦截，并由开发者确认是否放行该点击事件。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct SwitchBootcamp {
-5. @State private isOn: boolean = false;
+```ts
+// xxx.ets
+@Entry
+@Component
+struct OnAccessibilityActionInterceptExample {
+  @State private isOn: boolean = false;
 
-7. build() {
-8. NavDestination() {
-9. Column() {
-10. Text('onTouchIntercept')
-11. Row() {
-12. Text('Label message')
-13. Blank()
-14. Toggle({ type: ToggleType.Switch, isOn: $$this.isOn })
-15. .onAccessibilityActionIntercept((action : AccessibilityAction) => {
-16. if (action === AccessibilityAction.ACCESSIBILITY_CLICK) {
-17. this.getUIContext().showAlertDialog({
-18. title: '标题',
-19. message: '内容信息',
-20. primaryButton: {
-21. value: '确认',
-22. action: () => {
-23. this.isOn = !this.isOn;
-24. }
-25. },
-26. secondaryButton: {
-27. value: '取消',
-28. action: () => {
-29. }
-30. }
-31. })
-32. return AccessibilityActionInterceptResult.ACTION_INTERCEPT;
-33. } else {
-34. return AccessibilityActionInterceptResult.ACTION_CONTINUE;
-35. }
-36. })
-37. }.width('100%')
-38. }
-39. .padding(24)
-40. .width('100%')
-41. }
-42. }
-43. }
+  build() {
+    NavDestination() {
+      Column() {
+        Text('onAccessibilityActionIntercept')
+        Row() {
+          Text('Label message')
+          Blank()
+          Toggle({ type: ToggleType.Switch, isOn: $$this.isOn })
+            .onAccessibilityActionIntercept((action: AccessibilityAction) => {
+              // 无障碍点击操作触发时，弹出确认对话框由用户决定是否放行
+              if (action === AccessibilityAction.ACCESSIBILITY_CLICK) {
+                this.getUIContext().showAlertDialog({
+                  title: '标题',
+                  message: '内容信息',
+                  primaryButton: {
+                    value: '确认',
+                    action: () => {
+                      this.isOn = !this.isOn;
+                    }
+                  },
+                  secondaryButton: {
+                    value: '取消',
+                    action: () => {
+                    }
+                  }
+                });
+                // 拦截本次点击，阻止组件默认点击行为
+                return AccessibilityActionInterceptResult.ACTION_INTERCEPT;
+              } else {
+                // 其他无障碍操作不拦截，直接放行
+                return AccessibilityActionInterceptResult.ACTION_CONTINUE;
+              }
+            })
+        }.width('100%')
+      }
+      .padding(24)
+      .width('100%')
+    }
+  }
+}
 ```
 
 ### 示例2（设置onAccessibilityFocus回调函数）
 
-从API version 18开始，当获焦、失焦状态发生变化时，触发该回调函数。本示例展示了[onAccessibilityFocus](ts-universal-accessibility-event.md#onaccessibilityfocus)的基本用法，聚焦到"onAccessibilityFocus takes effect"时，会打印"[testingTag] isFocus current is true"，聚焦到除了"onAccessibilityFocus takes effect"以外的地方都会打印"[testingTag] isFocus current is false"。
+从API version 18开始，当获焦、失焦状态发生变化时，触发该回调函数。本示例展示了[onAccessibilityFocus](ts-universal-accessibility-event.md#onaccessibilityfocus)的基本用法，聚焦到"onAccessibilityFocus takes effect"时，会打印"[testingTag] isFocus current is true"，当聚焦到"onAccessibilityFocus takes effect"以外的位置时，会打印"[testingTag] isFocus current is false"。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct OnAccessibilityFocusExample {
+```ts
+// xxx.ets
+@Entry
+@Component
+struct OnAccessibilityFocusExample {
 
-6. build() {
-7. NavDestination() {
-8. Column() {
-9. Text("onAccessibilityFocus doesn't take effect")
-10. Text("onAccessibilityFocus takes effect")
-11. .onAccessibilityFocus((isFocus)=>{
-12. console.info(`[testingTag] isFocus current is ${isFocus}`)
-13. })
-14. }
-15. .padding(24)
-16. .width('100%')
-17. }
-18. }
-19. }
+  build() {
+    NavDestination() {
+      Column() {
+        Text("onAccessibilityFocus doesn't take effect")
+        Text('onAccessibilityFocus takes effect')
+        .onAccessibilityFocus((isFocus: boolean) => {
+          console.info(`[testingTag] isFocus current is ${isFocus}`);
+        })
+      }
+      .padding(24)
+      .width('100%')
+    }
+  }
+}
 ```

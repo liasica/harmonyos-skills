@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: JSVM_VMInfo
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体 > JSVM_VMInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8389cc61fbe652e62b63f8f6d44bcf2f18d4745377c26488af2df8e78bd273e7
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:77da812ee247d2e42e02374eafcaba903d498e9d3627b6a0a13a6a0c246d9d19
 ---
 
-```
-1. typedef struct {...} JSVM_VMInfo
+```c
+typedef struct {...} JSVM_VMInfo
 ```
 
 ## 概述
 
-PhonePC/2in1TabletWearable
-
 JavaScript虚拟机信息。
+
+**系统能力：** SystemCapability.ArkCompiler.JSVM
 
 **起始版本：** 11
 
@@ -26,11 +26,7 @@ JavaScript虚拟机信息。
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |

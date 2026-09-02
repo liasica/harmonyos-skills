@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Camera错误码
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > 错误码 > Camera错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4ca420fb2e17eb547935e9a50960c97c803bcbf6c4b4f41c966fd5f47bbe298e
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e6d2622b5975d38d3c9b6c37f9faafa75cefa5584c32c2ea3d97548b18cf9a00
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 7400101 无效入参
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Parameter missing or parameter type incorrect.
 
 ## 7400102 非法操作
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Operation not allowed.
@@ -53,8 +49,6 @@ Operation not allowed.
 根据接口文档与指导文档，按照正确步骤进行操作。
 
 ## 7400103 会话未配置
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -74,8 +68,6 @@ Session not config.
 
 ## 7400104 会话未运行
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Session not running.
@@ -93,8 +85,6 @@ Session not running.
 先执行会话运行操作。
 
 ## 7400105 会话配置被锁定
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -132,8 +122,6 @@ Device setting locked.
 
 ## 7400107 相机冲突
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Can not use camera cause of conflict.
@@ -151,8 +139,6 @@ Can not use camera cause of conflict.
 等待冲突的相机被释放。
 
 ## 7400108 安全策略无法使用相机
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -190,8 +176,6 @@ Can not use camera cause of preempted.
 
 ## 7400110 与当前配置存在冲突
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unresolved conflicts with current configurations.
@@ -209,8 +193,6 @@ Unresolved conflicts with current configurations.
 检测当前提交的配置是否符合设备所支持的配置。
 
 ## 7400201 相机服务异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

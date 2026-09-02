@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.mediaquery (媒体查询)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > @system.mediaquery (媒体查询)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:51+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:534f6e51a0a29ed1dffa73d8e8438e374a3d7378ca2247c01a37385fbe182381
+scraped_at: 2026-09-02T15:00:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cb3476deb329e9e6b7875b4e0d7575383b9affc60a8418c8cdbf109ffe610c10
 ---
 
 提供根据不同媒体类型定义不同的样式。
 
-说明
+**说明** 
 
 * 从API version 7 开始，该接口不再维护，推荐使用新接口[@ohos.mediaquery](js-apis-mediaquery.md)。
 * 本模块首批接口从API version 3开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import mediaquery from '@system.mediaquery';
+```ts
+import mediaquery from '@system.mediaquery';
 ```
 
 ## MediaQuery
-
-PhonePC/2in1TabletTVWearable
 
 定义MediaQuery接口。
 
@@ -34,8 +30,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### matchMedia
-
-PhonePC/2in1TabletTVWearable
 
 matchMedia(condition: string): MediaQueryList
 
@@ -55,17 +49,15 @@ matchMedia(condition: string): MediaQueryList
 
 | 类型 | 说明 |
 | --- | --- |
-| [MediaQueryList](js-apis-system-mediaquery.md#mediaquerylist) | 表示创建MediaQueryList对象的属性，详情见下表说明。 |
+| [MediaQueryList](js-apis-system-mediaquery.md#mediaquerylist) | 创建MediaQueryList对象，详情见下表说明。 |
 
 **示例：**
 
-```
-1. let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
+```ts
+let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
 ```
 
 ## MediaQueryEvent
-
-PhonePC/2in1TabletTVWearable
 
 定义MediaQuery事件。
 
@@ -79,13 +71,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MediaQueryList
 
-PhonePC/2in1TabletTVWearable
-
 定义MediaQuery列表信息。
 
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -98,8 +86,6 @@ PhonePC/2in1TabletTVWearable
 | onchange | (matches: boolean) => void | 是 | 是 | 匹配结果发生变化时的执行函数。matches表示是否匹配媒体查询条件，true满足查询条件，false不满足查询条件。 |
 
 ### MediaQueryList.addListener
-
-PhonePC/2in1TabletTVWearable
 
 addListener(callback: (event: MediaQueryEvent) => void): void
 
@@ -117,21 +103,19 @@ addListener(callback: (event: MediaQueryEvent) => void): void
 
 **示例：**
 
-```
-1. import mediaquery, { MediaQueryEvent } from '@system.mediaquery';
-2. let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
+```ts
+import mediaquery, { MediaQueryEvent } from '@system.mediaquery';
+let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
 
-4. function maxWidthMatch(e: MediaQueryEvent): void {
-5. if(e.matches){
-6. // do something
-7. }
-8. }
-9. mMediaQueryList.addListener(maxWidthMatch);
+function maxWidthMatch(e: MediaQueryEvent): void {
+  if(e.matches){
+    // do something
+  }
+}
+mMediaQueryList.addListener(maxWidthMatch);
 ```
 
 ### MediaQueryList.removeListener
-
-PhonePC/2in1TabletTVWearable
 
 removeListener(callback: (event: MediaQueryEvent) => void): void
 
@@ -149,14 +133,14 @@ removeListener(callback: (event: MediaQueryEvent) => void): void
 
 **示例：**
 
-```
-1. import mediaquery, { MediaQueryEvent } from '@system.mediaquery';
-2. let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
+```ts
+import mediaquery, { MediaQueryEvent } from '@system.mediaquery';
+let mMediaQueryList = mediaquery.matchMedia('(max-width: 466)');
 
-4. function maxWidthMatch(e: MediaQueryEvent): void {
-5. if(e.matches){
-6. // do something
-7. }
-8. }
-9. mMediaQueryList.removeListener(maxWidthMatch);
+function maxWidthMatch(e: MediaQueryEvent): void {
+  if(e.matches){
+    // do something
+  }
+}
+mMediaQueryList.removeListener(maxWidthMatch);
 ```

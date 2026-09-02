@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何通过hdc命令关闭整个应用
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何通过hdc命令关闭整个应用
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:14:34+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:ce9c7395f23561c4fd1d61942277104d1e0e0126ac0a8764bb2edb3af53c26c6
+scraped_at: 2026-09-02T14:53:51+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:56e90e1af04cd0633d9edd1f493506925e38a7c395031cee6373cac708254a09
 ---
 
 可以通过以下命令结束应用：
 
-```
-1. hdc shell aa force-stop <bundleName>
+```powershell
+hdc shell aa force-stop <bundleName>
 ```
 
 返回“force stop process successfully”，表示应用已成功结束。
 
 示例如下：
 
-```
-1. hdc shell aa force-stop com.example.myapplication
+```powershell
+hdc shell aa force-stop com.example.myapplication
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/rC8SbQ_rQeaFHJGkqlPRYQ/zh-cn_image_0000002194158796.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/jOU90SkgS6OY_B70by7CgQ/zh-cn_image_0000002654835777.png "点击放大")
 
 **参考链接**
 

@@ -1,17 +1,15 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkui-6102
 title: ArkUI
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta2引入的变更 > ArkUI
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta2引入的变更 > ArkUI
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:808f9b8662364e1dc029684eeefa71106a22e6b9e5f107b5d919bb60c1a05a38
+scraped_at: 2026-09-02T14:49:08+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:ed09dc16ebe063606e5710463c5d382ab469bd3e9324035de58bf3887a5dac20
 ---
 
 | 操作 | 旧版本 | 新版本 | d.ts文件 |
 | --- | --- | --- | --- |
-| API废弃版本变更 | 类名：global；  API声明：declare class ActionSheet  差异内容：26 | 类名：global；  API声明：declare class ActionSheet  差异内容：NA | component/action\_sheet.d.ts |
-| API废弃版本变更 | 类名：global；  API声明：declare class AlertDialog  差异内容：26 | 类名：global；  API声明：declare class AlertDialog  差异内容：NA | component/alert\_dialog.d.ts |
 | 新增错误码 | 类名：componentSnapshot；  API声明：function getSync(id: string, options?: SnapshotOptions): image.PixelMap;  差异内容：NA | 类名：componentSnapshot；  API声明：function getSync(id: string, options?: SnapshotOptions): image.PixelMap;  差异内容：160003 | api/@ohos.arkui.componentSnapshot.d.ts |
 | 新增API | NA | 类名：UIContext；  API声明：setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void;  差异内容：setCustomKeyboardContinueFeature(feature: CustomKeyboardContinueFeature): void; | api/@ohos.arkui.UIContext.d.ts |
 | 新增API | NA | 类名：global；  API声明：export const enum CustomKeyboardContinueFeature  差异内容：export const enum CustomKeyboardContinueFeature | api/@ohos.arkui.UIContext.d.ts |

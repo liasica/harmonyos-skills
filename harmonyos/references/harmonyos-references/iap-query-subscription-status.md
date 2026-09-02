@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-query
 title: 订阅状态查询
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 订阅状态查询
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:57+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:66de7c76072f9cee249f8b4851a0f870e4b47528b09faab30142600b601aa7f8
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:9d9669191b91da2f202e1a48f849937ff5af47a5aca3864c24fadf6766218d35
 ---
 
 ## 功能介绍
@@ -49,15 +49,15 @@ content_hash: sha256:66de7c76072f9cee249f8b4851a0f870e4b47528b09faab30142600b601
 
 更多语言及详细的代码示例，请参考[IAP Kit-Sample-ServerDemo](https://gitcode.com/HarmonyOS_Samples/iapkit-sample-serverdemo)。
 
-```
-1. POST /subscription/harmony/v1/application/subscription/status/query
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "purchaseToken": "***.*.***",
-7. "purchaseOrderId": "***.***"
-8. }
+```json
+POST /subscription/harmony/v1/application/subscription/status/query
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "purchaseToken": "***.*.***",
+  "purchaseOrderId": "***.*.***"
+}
 ```
 
 ## 响应参数
@@ -94,7 +94,7 @@ content_hash: sha256:66de7c76072f9cee249f8b4851a0f870e4b47528b09faab30142600b601
 | subGroupGenerationId | 是 | String | 订阅组的代ID。  - 用户切换订阅商品时，此ID不会改变。  - 订阅失效且超出[保留期](../harmonyos-guides/iap-subscription-functions.md#保留期)后，用户重新购买商品时，此ID会改变。 |
 | subscriptionId | 是 | String | 商品的订阅ID。以下场景，此ID会发生改变：  - 用户切换订阅商品时。  - 订阅失效且超出[保留期](../harmonyos-guides/iap-subscription-functions.md#保留期)后，用户重新购买商品时。 |
 | purchaseToken | 是 | String | 购买token，在购买消耗型/非消耗型/非续期订阅商品场景中与具体购买订单一一对应，在订阅型商品场景中与订阅ID一一对应。最大长度256。 |
-| status | 是 | String | 订阅状态。  1：生效状态  2：已到期  3：尝试扣费  5：撤销 |
+| status | 是 | String | 订阅状态。  1：生效中  2：已到期  3：尝试扣费  5：撤销 |
 | expiresTime | 是 | Long | 自动续期订阅商品的过期时间，UTC时间戳，以毫秒为单位。 |
 | lastPurchaseOrder | 否 | Object | 当前订阅最新的一笔购买订单。包含的参数请参见[PurchaseOrderPayload](iap-server-data-model.md#purchaseorderpayload)。 |
 | recentPurchaseOrderList | 否 | List<Object> | 当前订阅最新的购买订单列表，包含续期、折算、延期等产生的购买订单。购买订单包含的参数请参见[PurchaseOrderPayload](iap-server-data-model.md#purchaseorderpayload)。 |
@@ -117,155 +117,156 @@ content_hash: sha256:66de7c76072f9cee249f8b4851a0f870e4b47528b09faab30142600b601
 | currency | 否 | String | 币种，请参见[ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)标准。例如CNY、USD、MYR。 |
 | renewalTime | 否 | Long | 续期时间，UTC时间戳，以毫秒为单位。 |
 | expirationIntent | 否 | String | 订阅续期失败的原因。  1：用户取消  2：商品无效  3：签约无效  4：扣费异常  5：用户不同意涨价  6：未知  7：存在未发货的订阅 |
+| nextRenewPeriodPayload | 否 | String | 商户侧保留信息，由开发者在调用[支付接口](iap-iap.md#iapcreatepurchase)时传入。 |
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "responseCode": "0",
-5. "jwsSubGroupStatus": "***"
-6. }
+```json
+HTTP/1.2 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "responseCode": "0",
+  "jwsSubGroupStatus": "***"
+}
 ```
 
 [SubGroupStatusPayload](iap-query-subscription-status.md#subgroupstatuspayload)结构体示例：
 
-```
-1. {
-2. "environment": "NORMAL",
-3. "applicationId": "10***58",
-4. "packageName": "demoApp",
-5. "subGroupId": "demoSubGroup",
-6. "lastSubscriptionStatus": {
-7. "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
-8. "subscriptionId": "*************.********.****",
-9. "purchaseToken": "***.*.***",
-10. "status": "5",
-11. "expiresTime": 1721716039363,
-12. "lastPurchaseOrder": {
-13. "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
-14. "purchaseOrderId": "*************.********.****",
-15. "subscriptionId": "*************.********.****",
-16. "purchaseToken": "***.*.***",
-17. "applicationId": "10***58",
-18. "productId": "demoProduct",
-19. "subGroupId": "demoSubGroup",
-20. "purchaseTime": 1721082441000,
-21. "duration": "P1W",
-22. "durationTypeCode": "0",
-23. "productType": "2",
-24. "developerPayload": "demoPayload",
-25. "signedTime": 1721111398533,
-26. "purchaseOrderRevocationReasonCode": "1",
-27. "revocationTime": 1721111240720,
-28. "offerTypeCode": "1",
-29. "offerId": "12**56",
-30. "environment": "NORMAL",
-31. "countryCode": "CN",
-32. "price": 880,
-33. "currency": "SGD",
-34. "finishStatus": "1"
-35. },
-36. "recentPurchaseOrderList": [
-37. {
-38. "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
-39. "purchaseOrderId": "*************.********.****",
-40. "subscriptionId": "*************.********.****",
-41. "purchaseToken": "***.*.***",
-42. "applicationId": "10***58",
-43. "productId": "demoProduct",
-44. "subGroupId": "demoSubGroup",
-45. "purchaseTime": 1721082441000,
-46. "duration": "P1W",
-47. "durationTypeCode": "0",
-48. "productType": "2",
-49. "developerPayload": "demoPayload",
-50. "signedTime": 1721111398533,
-51. "purchaseOrderRevocationReasonCode": "1",
-52. "revocationTime": 1721111240720,
-53. "offerTypeCode": "1",
-54. "offerId": "12**56",
-55. "environment": "NORMAL",
-56. "countryCode": "CN",
-57. "price": 880,
-58. "currency": "SGD",
-59. "finishStatus": "1"
-60. }
-61. ],
-62. "renewalInfo": {
-63. "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
-64. "productId": "demoProduct",
-65. "autoRenewStatusCode": "0",
-66. "hasInBillingRetryPeriod": false,
-67. "environment": "NORMAL"
-68. }
-69. },
-70. "historySubscriptionStatusList": [
-71. {
-72. "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
-73. "subscriptionId": "*************.********.****",
-74. "purchaseToken": "***.*.***",
-75. "status": "5",
-76. "expiresTime": 1721716039363,
-77. "lastPurchaseOrder": {
-78. "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
-79. "purchaseOrderId": "*************.********.****",
-80. "subscriptionId": "*************.********.****",
-81. "purchaseToken": "***.*.***",
-82. "applicationId": "10***58",
-83. "productId": "demoProduct",
-84. "subGroupId": "demoSubGroup",
-85. "purchaseTime": 1721082441000,
-86. "duration": "P1W",
-87. "durationTypeCode": "0",
-88. "productType": "2",
-89. "developerPayload": "demoPayload",
-90. "signedTime": 1721111398533,
-91. "purchaseOrderRevocationReasonCode": "1",
-92. "revocationTime": 1721111240720,
-93. "offerTypeCode": "1",
-94. "offerId": "12**56",
-95. "environment": "NORMAL",
-96. "countryCode": "CN",
-97. "price": 880,
-98. "currency": "SGD",
-99. "finishStatus": "1"
-100. },
-101. "recentPurchaseOrderList": [
-102. {
-103. "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
-104. "purchaseOrderId": "*************.********.****",
-105. "subscriptionId": "*************.********.****",
-106. "purchaseToken": "***.*.***",
-107. "applicationId": "10***58",
-108. "productId": "demoProduct",
-109. "subGroupId": "demoSubGroup",
-110. "purchaseTime": 1721082441000,
-111. "duration": "P1W",
-112. "durationTypeCode": "0",
-113. "productType": "2",
-114. "developerPayload": "demoPayload",
-115. "signedTime": 1721111398533,
-116. "purchaseOrderRevocationReasonCode": "1",
-117. "revocationTime": 1721111240720,
-118. "offerTypeCode": "1",
-119. "offerId": "12**56",
-120. "environment": "NORMAL",
-121. "countryCode": "CN",
-122. "price": 880,
-123. "currency": "SGD",
-124. "finishStatus": "1"
-125. }
-126. ],
-127. "renewalInfo": {
-128. "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
-129. "productId": "demoProduct",
-130. "autoRenewStatusCode": "0",
-131. "hasInBillingRetryPeriod": false,
-132. "environment": "NORMAL"
-133. }
-134. }
-135. ]
-136. }
+```javascript
+{
+    "environment": "NORMAL",
+    "applicationId": "10***58",
+    "packageName": "demoApp",
+    "subGroupId": "demoSubGroup",
+    "lastSubscriptionStatus": {
+        "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
+        "subscriptionId": "*************.********.****",
+        "purchaseToken": "***.*.***",
+        "status": "5",
+        "expiresTime": 1721716039363,
+        "lastPurchaseOrder": {
+            "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
+            "purchaseOrderId": "*************.********.****",
+            "subscriptionId": "*************.********.****",
+            "purchaseToken": "***.*.***",
+            "applicationId": "10***58",
+            "productId": "demoProduct",
+            "subGroupId": "demoSubGroup",
+            "purchaseTime": 1721082441000,
+            "duration": "P1W",
+            "durationTypeCode": "0",
+            "productType": "2",
+            "developerPayload": "demoPayload",
+            "signedTime": 1721111398533,
+            "purchaseOrderRevocationReasonCode": "1",
+            "revocationTime": 1721111240720,
+            "offerTypeCode": "1",
+            "offerId": "12**56",
+            "environment": "NORMAL",
+            "countryCode": "CN",
+            "price": 880,
+            "currency": "SGD",
+            "finishStatus": "1"
+        },
+        "recentPurchaseOrderList": [
+            {
+                "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
+                "purchaseOrderId": "*************.********.****",
+                "subscriptionId": "*************.********.****",
+                "purchaseToken": "***.*.***",
+                "applicationId": "10***58",
+                "productId": "demoProduct",
+                "subGroupId": "demoSubGroup",
+                "purchaseTime": 1721082441000,
+                "duration": "P1W",
+                "durationTypeCode": "0",
+                "productType": "2",
+                "developerPayload": "demoPayload",
+                "signedTime": 1721111398533,
+                "purchaseOrderRevocationReasonCode": "1",
+                "revocationTime": 1721111240720,
+                "offerTypeCode": "1",
+                "offerId": "12**56",
+                "environment": "NORMAL",
+                "countryCode": "CN",
+                "price": 880,
+                "currency": "SGD",
+                "finishStatus": "1"
+            }
+        ],
+        "renewalInfo": {
+            "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
+            "productId": "demoProduct",
+            "autoRenewStatusCode": "0",
+            "hasInBillingRetryPeriod": false,
+            "environment": "NORMAL"
+        }
+    },
+    "historySubscriptionStatusList": [
+        {
+            "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
+            "subscriptionId": "*************.********.****",
+            "purchaseToken": "***.*.***",
+            "status": "5",
+            "expiresTime": 1721716039363,
+            "lastPurchaseOrder": {
+                "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
+                "purchaseOrderId": "*************.********.****",
+                "subscriptionId": "*************.********.****",
+                "purchaseToken": "***.*.***",
+                "applicationId": "10***58",
+                "productId": "demoProduct",
+                "subGroupId": "demoSubGroup",
+                "purchaseTime": 1721082441000,
+                "duration": "P1W",
+                "durationTypeCode": "0",
+                "productType": "2",
+                "developerPayload": "demoPayload",
+                "signedTime": 1721111398533,
+                "purchaseOrderRevocationReasonCode": "1",
+                "revocationTime": 1721111240720,
+                "offerTypeCode": "1",
+                "offerId": "12**56",
+                "environment": "NORMAL",
+                "countryCode": "CN",
+                "price": 880,
+                "currency": "SGD",
+                "finishStatus": "1"
+            },
+            "recentPurchaseOrderList": [
+                {
+                    "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
+                    "purchaseOrderId": "*************.********.****",
+                    "subscriptionId": "*************.********.****",
+                    "purchaseToken": "***.*.***",
+                    "applicationId": "10***58",
+                    "productId": "demoProduct",
+                    "subGroupId": "demoSubGroup",
+                    "purchaseTime": 1721082441000,
+                    "duration": "P1W",
+                    "durationTypeCode": "0",
+                    "productType": "2",
+                    "developerPayload": "demoPayload",
+                    "signedTime": 1721111398533,
+                    "purchaseOrderRevocationReasonCode": "1",
+                    "revocationTime": 1721111240720,
+                    "offerTypeCode": "1",
+                    "offerId": "12**56",
+                    "environment": "NORMAL",
+                    "countryCode": "CN",
+                    "price": 880,
+                    "currency": "SGD",
+                    "finishStatus": "1"
+                }
+            ],
+            "renewalInfo": {
+                "subGroupGenerationId": "c0e5f80732852b92f7111b8b9ed4fbb************c842ea854dfa2da67ab9e",
+                "productId": "demoProduct",
+                "autoRenewStatusCode": "0",
+                "hasInBillingRetryPeriod": false,
+                "environment": "NORMAL"
+            }
+        }
+    ]
+}
 ```

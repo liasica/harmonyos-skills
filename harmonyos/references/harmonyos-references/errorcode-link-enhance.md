@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 增强连接错误码
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 错误码 > 增强连接错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f3eeaa9f90fc4b728a64277160b35187f867b56e9277121c1551955444d4fccf
+scraped_at: 2026-09-02T15:01:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:85c43bcf88127444d3ea8791a7246ed7430f5f819b17542a97c92b3eb5ce64a7
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
@@ -42,15 +42,13 @@ Peer server is not started.
 
 **可能原因**
 
-服务端未开启对应服务。
+服务端应用未成功启动对应的服务。
 
 **处理步骤**
 
 检查连接的目标设备是否开启相应服务，若未开启，打开后再发起连接。
 
 ## 32390202 服务个数超出限制
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -62,15 +60,13 @@ The number of servers exceeds the limit.
 
 **可能原因**
 
-已申请的Server资源超过10个。
+已申请的服务资源超过10个。
 
 **处理步骤**
 
-已申请的Server资源数量过多，需要调用close()方法来释放Server资源。
+应用已申请的Server资源数量超过最大允许数量（10个），需要调用close()方法释放这些资源。
 
 ## 32390203 服务名重复注册
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -90,11 +86,9 @@ Duplicate server name.
 
 ## 32390204 连接个数超出限制
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-The number of connection exceeds the limit.
+The number of connections exceeds the limit.
 
 **错误描述**
 
@@ -102,15 +96,13 @@ The number of connection exceeds the limit.
 
 **可能原因**
 
-已申请的Connection资源超过10个。
+已申请的连接资源超过10个。
 
 **处理步骤**
 
-应用已申请的Connection资源数量超过最大允许数量(10个)，需要调用close()方法释放这些资源。
+应用已申请的Connection资源数量超过最大允许数量（10个），需要调用close()方法释放这些资源。
 
 ## 32390205 连接状态不可用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -122,15 +114,13 @@ Connection is not ready.
 
 **可能原因**
 
-客户端或服务端应用正在使用已断开的连接，例如连接建立后因异常中断导致的连接状态改变。
+客户端或服务端应用尝试使用已断开的连接进行操作，例如连接建立后因异常中断导致的连接状态改变。
 
 **处理步骤**
 
-排查连接状态是否成功或已断开，尝试使用成功且未断开的连接进行操作。
+检查连接状态是否成功或已断开，尝试使用成功且未断开的连接进行操作。
 
 ## 32390206 参数非法
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -138,7 +128,7 @@ Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified
 
 **错误描述**
 
-参数错误。
+参数非法。
 
 **可能原因**
 
@@ -149,11 +139,9 @@ Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified
 
 **处理步骤**
 
-请检查必选参数是否已传入，以及传入的参数类型是否正确。如果参数校验失败，请参考API参考中的说明，按照可能的原因进行排查。
+请检查必选参数是否已传入，以及传入的参数类型是否正确。如果参数校验失败，请参考API参考中的说明，对照上述四种可能原因逐项排查。
 
 ## 32390300 内部错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -175,7 +163,7 @@ Internal error.
 
 查看错误日志，详细了解错误原因。针对不同原因做不同处理：
 
-1. 排查传入的deviceId与从蓝牙系统接口中获取到的deviceId是否一致；排查对端广播是否正在广播态。
+1. 排查传入的deviceId与从蓝牙系统接口中获取到的deviceId是否一致；排查对端设备是否正在广播。
 2. 排查客户端与服务端传入的name是否一致；排查是否按接口说明文档传入正确的name。
 3. 排查是否存在对象关闭后再使用的情况。
 4. 排查是否按接口文档正确使用接口。

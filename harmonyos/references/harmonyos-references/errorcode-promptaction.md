@@ -3,24 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 弹窗错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > 弹窗错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:73d49a5f767a146161f5a0db4911ad5e1deecf452eab0859e76631795e872abc
+scraped_at: 2026-09-02T15:01:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bd2c67445d6749932731a8713d1ceafe1b1e21c0156c886f1b4402b55e3b5af8
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 103301 自定义弹窗内容节点错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The ComponentContent is incorrect.
 
-说明
+**说明** 
 
 当接口是[openCustomDialog](arkts-apis-uicontext-promptaction.md#opencustomdialog12)、[openCustomDialogWithController](arkts-apis-uicontext-promptaction.md#opencustomdialogwithcontroller18)、[closeCustomDialog](arkts-apis-uicontext-promptaction.md#closecustomdialog12)和[updateCustomDialog](arkts-apis-uicontext-promptaction.md#updatecustomdialog12)时，返回的错误信息为Dialog content error. The ComponentContent is incorrect.
 
@@ -38,8 +36,6 @@ The ComponentContent is incorrect.
 2. 请确认内容节点能够正常渲染显示。
 
 ## 103302 内容节点对应自定义弹窗已存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -59,13 +55,11 @@ The ComponentContent already exists.
 
 ## 103303 无法找到内容节点对应的自定义弹窗
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The ComponentContent cannot be found.
 
-说明
+**说明** 
 
 当接口是[closeCustomDialog](arkts-apis-uicontext-promptaction.md#closecustomdialog12)和[updateCustomDialog](arkts-apis-uicontext-promptaction.md#updatecustomdialog12)时，返回的错误信息为Dialog content not found. The ComponentContent cannot be found.
 
@@ -84,8 +78,6 @@ The ComponentContent cannot be found.
 
 ## 103304 指定的targetId不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The targetId does not exist.
@@ -102,9 +94,7 @@ targetId无效，或者对应的节点已销毁。
 
 请确认targetId对应的节点是否存在，可以通过[getFrameNodeById()](arkts-apis-uicontext-uicontext.md#getframenodebyid12)接口查询。
 
-## 103305 指定的targetId对应的节点未挂载在节点树上
-
-PhonePC/2in1TabletTVWearable
+## 103305 指定的targetId对应的节点未挂载在组件树上
 
 **错误信息**
 
@@ -112,20 +102,36 @@ The node of targetId is not in the component tree.
 
 **错误描述**
 
-指定的targetId对应的节点未挂载在节点树上时，方法将返回该错误码。
+指定的targetId对应的节点未挂载在组件树上时，方法将返回该错误码。
 
 **可能原因**
 
-指定的targetId对应的节点未挂载在节点树上。
+指定的targetId对应的节点未挂载在组件树上。
 
 **处理步骤**
 
 1. 请确认targetId对应的节点是否存在，可以通过[getFrameNodeById()](arkts-apis-uicontext-uicontext.md#getframenodebyid12)接口查询。
-2. 请确认targetId对应的节点已挂载在主节点树上，可以通过内容节点的[isAttached()](js-apis-arkui-framenode.md#isattached12)接口判断是否被挂载到主节点树上。
+2. 请确认targetId对应的节点已挂载在主组件树上，可以通过内容节点的[isAttached()](js-apis-arkui-framenode.md#isattached12)接口判断是否被挂载到主组件树上。
+
+## 103307 系统弹出窗口导致无法打开浮层
+
+**错误信息**
+
+The overlay cannot be opened due to the system pop-up window.
+
+**错误描述**
+
+由于系统弹出窗口，无法打开浮层。
+
+**可能原因**
+
+当前页面存在系统弹出窗口，拦截浮层的显示。
+
+**处理步骤**
+
+等待用户关闭系统弹出窗口后重新尝试打开浮层。
 
 ## 103401 无法找到对应的文本提示框
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 在进行多网并发传输时，如何判断当前使用的网络是Wi-Fi还是流量
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > Network Boost Kit常见问题 > 在进行多网并发传输时，如何判断当前使用的网络是Wi-Fi还是流量
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:01+08:00
-doc_updated_at: 2026-04-24
+scraped_at: 2026-09-02T15:17:21+08:00
+doc_updated_at: 2026-05-07
 content_hash: sha256:0aad58577b2bbe43f8eb12ee582e95ceea59b993bb8025709ad2e61b2320f9aa
 ---
 

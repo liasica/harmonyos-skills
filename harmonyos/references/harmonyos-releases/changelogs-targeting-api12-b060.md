@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-targeting-api12-b060
 title: 针对API 12应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > 针对API 12应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > 针对API 12应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:12+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:7367fdbbb10a7abf2610bd7cbe309f89ee2cbf7817558feadcc8e024528fd8d1
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:891d35657ecda5ffb5c33d8460503d1e2d7c91e54d5257fd9599fdf4a857c167
 ---
 
 ## ArkData
@@ -41,26 +41,26 @@ content_hash: sha256:7367fdbbb10a7abf2610bd7cbe309f89ee2cbf7817558feadcc8e024528
 
 修改前execute接口执行SQL语句报错错误码：
 
-```
-1. try {
-2. await rdbStore.execute("COMMIT");
-3. } catch (err) {
-4. if (err.code === 14800000) {
-5. console.log(`execute failed, code: ${err.code}`);
-6. }
-7. }
+```ts
+try {
+    await rdbStore.execute("COMMIT");
+} catch (err) {
+    if (err.code === 14800000) {
+        console.log(`execute failed, code: ${err.code}`);
+    }
+}
 ```
 
 修改后execute接口执行SQL语句报错错误码：
 
-```
-1. try {
-2. await rdbStore.execute("COMMIT");
-3. } catch (err) {
-4. if (err.code === 14800021) {
-5. console.log(`execute failed, code: ${err.code}`);
-6. }
-7. }
+```ts
+try {
+    await rdbStore.execute("COMMIT");
+} catch (err) {
+    if (err.code === 14800021) {
+        console.log(`execute failed, code: ${err.code}`);
+    }
+}
 ```
 
 ## ArkTS
@@ -93,35 +93,35 @@ xml.XmlPullParser.parse
 
 如果xml涉及实体引用事件，以下面的例子说明变更前后差异，strXml存放待解析的xml，func为开发者自行准备的tokenValueCallbackFunction型回调函数，parse接口解析后得到的每个事件都会触发一次回调，并传入事件类型和对应的xml解析结果。
 
-```
-1. let strXml = '<?xml version="1.0" encoding="utf-8"?>\n' +
-2. '<note>&amp;happy&amp;</note>';    // 此处第一个实体引用“&amp;”属于实体引用事件，而第二个实体引用“&amp;”由于紧随文本“happy”，“happy&amp;”作为整体属于文本事件。
-3. let textEncoder = new util.TextEncoder();
-4. let arrbuffer = textEncoder.encodeInto(strXml);
-5. let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, 'UTF-8');
-6. let str = "";
-7. function func(key: xml.EventType, value: xml.ParseInfo){
-8. str += 'key:' + key +' value:' + value.getText() + '  ';
-9. return true;
-10. }
-11. let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tokenValueCallbackFunction:func}
-12. that.parse(options);
-13. console.log(str);
+```ts
+let strXml = '<?xml version="1.0" encoding="utf-8"?>\n' +
+                '<note>&amp;happy&amp;</note>';    // 此处第一个实体引用“&amp;”属于实体引用事件，而第二个实体引用“&amp;”由于紧随文本“happy”，“happy&amp;”作为整体属于文本事件。
+let textEncoder = new util.TextEncoder();
+let arrbuffer = textEncoder.encodeInto(strXml);
+let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer, 'UTF-8');
+let str = "";
+function func(key: xml.EventType, value: xml.ParseInfo){
+  str += 'key:' + key +' value:' + value.getText() + '  ';
+  return true;
+}
+let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tokenValueCallbackFunction:func}
+that.parse(options);
+console.log(str);
 ```
 
 API 11及之前版本：
 
-```
-1. &amp;happy&amp;解析结果为：
-2. key为4（文本事件），value为&happy&
+```txt
+&amp;happy&amp;解析结果为：
+key为4（文本事件），value为&happy&
 ```
 
 API 12起：
 
-```
-1. &amp;happy&amp;解析结果为2个：
-2. key为9（实体引用事件），value为&
-3. key为4（文本事件），value为happy&
+```txt
+&amp;happy&amp;解析结果为2个：
+key为9（实体引用事件），value为&
+key为4（文本事件），value为happy&
 ```
 
 开发者如果需要使用实体引用事件，需要至少使用API12，并在xml中严格遵从实体引用事件的格式，不在实体引用前加普通文本形成文本事件。
@@ -132,19 +132,19 @@ API 12起：
 
 目前仅支持在XML中5个预定义的实体引用对应的实体引用事件：
 
-```
-1. &lt;    <  less than
-2. &gt;    >  greater than
-3. &amp;   &  ampersand
-4. &apos;  '  apostrophe
-5. &quot;  "  quotation mark
+```txt
+&lt;    <  less than
+&gt;    >  greater than
+&amp;   &  ampersand
+&apos;  '  apostrophe
+&quot;  "  quotation mark
 ```
 
 另外，实体引用前存在文本时会被一起视为文本事件，如：
 
-```
-1. <note>happy&lt;&gt;</note> 依次为：启动标签事件；文本事件；结束标签事件。
-2. <note>&lt;&gt;happy</note> 依次为：启动标签事件；实体引用事件；实体引用事件；文本事件；结束标签事件。
+```txt
+<note>happy&lt;&gt;</note> 依次为：启动标签事件；文本事件；结束标签事件。
+<note>&lt;&gt;happy</note> 依次为：启动标签事件；实体引用事件；实体引用事件；文本事件；结束标签事件。
 ```
 
 ## ArkUI
@@ -179,60 +179,60 @@ FrameNode的addComponentContent接口。
 
 开发者在使用addComponentContent前需要判断父节点的isModifiable是否为true，不支持isModifiable为false的FrameNode节点使用addComponentContent新增子节点。需要在声明式组件中动态添加内容时，可以通过占位节点[NodeContainer](../harmonyos-references-V5/ts-basic-components-nodecontainer-V5.md)、[ContentSlot](../harmonyos-guides-V5/arkts-rendering-control-contentslot-V5.md)进行操作。
 
-```
-1. import { ComponentContent, NodeContent, typeNode } from "@kit.ArkUI"
+```ts
+import { ComponentContent, NodeContent, typeNode } from "@kit.ArkUI"
 
-3. interface ParamsInterface {
-4. text: string;
-5. }
+interface ParamsInterface {
+  text: string;
+}
 
-7. @Builder
-8. function buildText(params: ParamsInterface) {
-9. Column() {
-10. Text(params.text)
-11. .fontSize(20)
-12. .fontWeight(FontWeight.Bold)
-13. .margin({ bottom: 36 })
-14. }
-15. }
+@Builder
+function buildText(params: ParamsInterface) {
+  Column() {
+    Text(params.text)
+      .fontSize(20)
+      .fontWeight(FontWeight.Bold)
+      .margin({ bottom: 36 })
+  }
+}
 
-17. @Entry
-18. @Component
-19. struct Index {
-20. @State message: string = "hello"
-21. private content: NodeContent = new NodeContent();
+@Entry
+@Component
+struct Index {
+  @State message: string = "hello"
+  private content: NodeContent = new NodeContent();
 
-23. build() {
-24. Row() {
-25. Column() {
-26. Button('addComponentContent')
-27. .onClick(() => {
-28. let column = typeNode.createNode(this.getUIContext(), "Column");
-29. column.initialize();
-30. if (column.isModifiable()) {
-31. column.addComponentContent(new ComponentContent<ParamsInterface>(this.getUIContext(),
-32. wrapBuilder<[ParamsInterface]>(buildText), { text: 'Colum Text isModifiable true' }))
-33. }
-34. this.content.addFrameNode(column)
-35. let column1 = this.getUIContext().getFrameNodeById('column1');
-36. if (!column1?.isModifiable()) {
-37. try {
-38. column1?.addComponentContent(new ComponentContent<ParamsInterface>(this.getUIContext(),
-39. wrapBuilder<[ParamsInterface]>(buildText), { text: 'Colum1 Text isModifiable false' }))
-40. } catch (e) {
-41. console.error('addComponentContent fail, err: ' + e);
-42. }
-43. }
-44. })
-45. ContentSlot(this.content)
-46. }
-47. .id('column1')
-48. .width('100%')
-49. .height('100%')
-50. }
-51. .height('100%')
-52. }
-53. }
+  build() {
+    Row() {
+      Column() {
+        Button('addComponentContent')
+          .onClick(() => {
+            let column = typeNode.createNode(this.getUIContext(), "Column");
+            column.initialize();
+            if (column.isModifiable()) {
+              column.addComponentContent(new ComponentContent<ParamsInterface>(this.getUIContext(),
+                wrapBuilder<[ParamsInterface]>(buildText), { text: 'Colum Text isModifiable true' }))
+            }
+            this.content.addFrameNode(column)
+            let column1 = this.getUIContext().getFrameNodeById('column1');
+            if (!column1?.isModifiable()) {
+              try {
+                column1?.addComponentContent(new ComponentContent<ParamsInterface>(this.getUIContext(),
+                  wrapBuilder<[ParamsInterface]>(buildText), { text: 'Colum1 Text isModifiable false' }))
+              } catch (e) {
+                console.error('addComponentContent fail, err: ' + e);
+              }
+            }
+          })
+        ContentSlot(this.content)
+      }
+      .id('column1')
+      .width('100%')
+      .height('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## Device Security Kit

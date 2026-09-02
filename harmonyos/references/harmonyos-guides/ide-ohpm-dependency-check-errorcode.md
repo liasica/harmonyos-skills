@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-depe
 title: ohpm dependency-check错误码
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm dependency-check错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:50+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:77aca353bcadb8251684d9d4cbb2d8bf20a795cc00067c3d0537d966dcea9437
+scraped_at: 2026-09-02T14:50:59+08:00
+doc_updated_at: 2026-05-28
+content_hash: sha256:8f0bcb07109a36fc27cd2d80db3573a828d989687d04c7bf3909b14576cb5547
 ---
 
 ## 00680001 更新信息查询失败
 
 **错误信息**
 
-querying update information from remote repository failed
+querying update information from remote repository failed.
 
 **错误描述**
 
@@ -30,7 +30,7 @@ querying update information from remote repository failed
 
 **错误信息**
 
-Specified module path or json file not exist
+Specified module path or json file not exist.
 
 **错误描述**
 
@@ -48,7 +48,7 @@ Specified module path or json file not exist
 
 **错误信息**
 
-When no module is specified, querying update information for a specified package is not supported
+When no module is specified, querying update information for a specified package is not supported.
 
 **错误描述**
 

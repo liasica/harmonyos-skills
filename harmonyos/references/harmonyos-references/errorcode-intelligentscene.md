@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 情景模式错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 情景模式错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6152bb4c76fc8c0f61e2ef4a7523d259802b4ff1d7ad07a24cfdbf086aa05607
+scraped_at: 2026-09-02T15:02:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1f4b912f7fdb9094533b4505b898ca80d5d3b23cb68f880beb74cc5a4600f56e
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 35200001 内部错误
-
-PhoneTablet
 
 **错误信息**
 

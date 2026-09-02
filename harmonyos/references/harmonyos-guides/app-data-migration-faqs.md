@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-data-migr
 title: 常见问题与异常处理
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 常见问题与异常处理
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0baf04335c10978ff66db9056349565e396acff3af83bb20e17e51bd2c3d654e
+scraped_at: 2026-09-02T14:59:24+08:00
+doc_updated_at: 2026-05-26
+content_hash: sha256:08369f18cb7a4e59c547645ee3714c3f2589c3158c0f5e887aa79d8f2f8af639
 ---
 
 ## 应用数据迁移暂停
@@ -14,7 +14,7 @@ content_hash: sha256:0baf04335c10978ff66db9056349565e396acff3af83bb20e17e51bd2c3
 
 在数据加载界面，应用数据迁移暂停。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/esqLiqeGQJ2TR7mfehFVZg/zh-cn_image_0000002589244575.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Sx0MIvFaQXyBMm5N_4Gg1w/zh-cn_image_0000002736433283.png)
 
 **可能原因**
 
@@ -24,7 +24,7 @@ content_hash: sha256:0baf04335c10978ff66db9056349565e396acff3af83bb20e17e51bd2c3
 
 单击“稍后连接WLAN加载”按钮，进入桌面后连接网络，终端设备网络可用后，恢复应用数据迁移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/IL2VovVyQf67AoFyfZ1iBQ/zh-cn_image_0000002558764770.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/dNNJQj3wQ06P-kNwtAxK3w/zh-cn_image_0000002706834128.png)
 
 **问题现象2**
 
@@ -32,7 +32,7 @@ content_hash: sha256:0baf04335c10978ff66db9056349565e396acff3af83bb20e17e51bd2c3
 
 在应用加载界面，应用数据迁移暂停。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Q3Ux7VrCT4m7axin_CKJDA/zh-cn_image_0000002558605114.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/8HJ6J-3GRROZxHujHC0vLQ/zh-cn_image_0000002736313237.png)
 
 **可能原因**
 
@@ -42,7 +42,7 @@ content_hash: sha256:0baf04335c10978ff66db9056349565e396acff3af83bb20e17e51bd2c3
 
 单击“稍后连接WLAN加载”按钮，进入桌面后连接网络，终端设备网络可用后，恢复应用数据迁移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/_b_kXs0lTKWaYa6Gn_shXw/zh-cn_image_0000002589324639.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ua4eVXX3S2-WfsBLnhtdkw/zh-cn_image_0000002706674194.png)
 
 ## 应用数据迁移执行十五分钟后失败
 
@@ -50,7 +50,7 @@ content_hash: sha256:0baf04335c10978ff66db9056349565e396acff3af83bb20e17e51bd2c3
 
 应用数据迁移执行十五分钟后显示失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/6oeYGTHcTTSMUVnNm0MLNA/zh-cn_image_0000002558605112.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/nhIMooOyRpSBYF1Bt2D4ig/zh-cn_image_0000002736313235.png)
 
 **可能原因**
 
@@ -60,6 +60,22 @@ content_hash: sha256:0baf04335c10978ff66db9056349565e396acff3af83bb20e17e51bd2c3
 
 请优化应用BackupExtensionAbility的代码实现，在十五分钟内完成应用数据迁移。
 
-说明
+**说明** 
 
 已接入“数据迁移框架”的应用完成数据迁移后，才可以被消费者使用。尽可能快的完成应用数据迁移，可以带给消费者更好的体验。
+
+## 启动迁移按钮无法点击
+
+**问题现象**
+
+在迁移调试界面，输入应用包名后启动迁移按钮无法点亮。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/YlTmHSI1SVODTtYYCLJYVw/zh-cn_image_0000002736433285.png)
+
+**可能原因**
+
+迁移调试工具版本过低（版本号低于6.0.0.190）。
+
+**解决方法**
+
+请参考[开发者自验证](adaptation-process.md#开发者自验证)下“迁移调试”工具获取方式，申请最新版迁移调试工具。

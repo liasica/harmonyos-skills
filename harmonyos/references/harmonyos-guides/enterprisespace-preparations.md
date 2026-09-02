@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:afcd20717f1dc9680e892fd1c39d6935862472cd504611664f2ae7078fc281cb
+scraped_at: 2026-09-02T14:50:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6e200c08759057f64638129b69ac57d607e38f5c5b9d893bf0ced6ef7a44c19d
 ---
 
 ## 环境准备
@@ -30,26 +30,26 @@ content_hash: sha256:afcd20717f1dc9680e892fd1c39d6935862472cd504611664f2ae7078fc
 
 | 应用能力 | 使用场景 | 需要权限 |
 | --- | --- | --- |
-| 空间互传 | 使用空间互传API设置、获取审计信息。 | ohos.permission.ENTERPRISE\_FILE\_TRANSFER\_AUDIT\_POLICY\_MANAGEMENT |
+| 空间互传 | 使用空间互传API设置、获取审批信息。 | ohos.permission.ENTERPRISE\_FILE\_TRANSFER\_AUDIT\_POLICY\_MANAGEMENT |
 | 空间管理 | 下发空间生命周期策略需要申请该权限。 | ohos.permission.ENTERPRISE\_MANAGE\_LOCAL\_PUBLICSPACES |
 | 空间管理 | 查询空间信息需要申请该权限。 | ohos.permission.QUERY\_LOCAL\_WORKSPACES |
 | 空间管理 | 企业应用订阅企业数字空间相关事件需要申请该权限。 | ohos.permission.ENTERPRISE\_WORKSPACES\_EVENT\_SUBSCRIBE |
 
 示例：
 
-```
-1. "requestPermissions": [
-2. {
-3. "name": "ohos.permission.ENTERPRISE_FILE_TRANSFER_AUDIT_POLICY_MANAGEMENT"
-4. },
-5. {
-6. "name": "ohos.permission.ENTERPRISE_MANAGE_LOCAL_PUBLICSPACES"
-7. },
-8. {
-9. "name": "ohos.permission.QUERY_LOCAL_WORKSPACES"
-10. },
-11. {
-12. "name": "ohos.permission.ENTERPRISE_WORKSPACES_EVENT_SUBSCRIBE"
-13. }
-14. ]
+```typescript
+"requestPermissions": [
+  {
+    "name": "ohos.permission.ENTERPRISE_FILE_TRANSFER_AUDIT_POLICY_MANAGEMENT"
+  },
+  {
+    "name": "ohos.permission.ENTERPRISE_MANAGE_LOCAL_PUBLICSPACES"
+  },
+  {
+    "name": "ohos.permission.QUERY_LOCAL_WORKSPACES"
+  },
+  {
+    "name": "ohos.permission.ENTERPRISE_WORKSPACES_EVENT_SUBSCRIBE"
+  }
+]
 ```

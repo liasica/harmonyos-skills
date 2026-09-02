@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: badge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > badge
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ce7e508260220d1e3c7de476d76931c356648fb87a9d3ee41f91a601b3191ade
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6068ea2e3d1a230d518a4d8e98e044b73a87422dfe4b0a0f137ca6bb459e614f
 ---
 
 应用中如果有需用户关注的新事件提醒，可以采用新事件标记来标识。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 仅支持单个子组件。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-service-widget-common-attributes.md)外，还支持如下属性：
 
@@ -37,8 +33,6 @@ PhonePC/2in1TabletTVWearable
 
 ### BadgeConfig
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | badgeColor | <color> | #fa2a2d | 否 | 新事件标记背景色。 |
@@ -48,67 +42,61 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用样式](js-service-widget-common-styles.md)。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用事件](js-service-widget-common-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <badge class="badge" config="{{ badgeConfig }}" visible="true" count="100" maxcount="99">
-4. <text class="text1">example</text>
-5. </badge>
-6. <badge class="badge" visible="true" count="1">
-7. <text class="text2">example</text>
-8. </badge>
-9. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+    <badge class="badge" config="{{ badgeConfig }}" visible="true" count="100" maxcount="99">
+        <text class="text1">example</text>
+    </badge>
+    <badge class="badge" visible="true" count="1">
+        <text class="text2">example</text>
+    </badge>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. width: 100%;
-5. align-items: center;
-6. }
+```css
+/* xxx.css */
+.container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 
-8. .badge {
-9. width: 160px;
-10. height: 60px;
-11. margin-top: 30px;
-12. }
+.badge {
+    width: 160px;
+    height: 60px;
+    margin-top: 30px;
+}
 
-14. .text1 {
-15. background-color: #f9a01e;
-16. font-size: 19fp;
-17. }
+.text1 {
+    background-color: #f9a01e;
+    font-size: 19fp;
+}
 
-19. .text2 {
-20. background-color: #46b1e3;
-21. font-size: 19fp;
-22. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. badgeConfig: {
-5. badgeColor: "#0a59f7",
-6. textColor: "#ffffff",
-7. }
-8. }
-9. }
+.text2 {
+    background-color: #46b1e3;
+    font-size: 19fp;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/JA0WysYqRuq2IQFcyNFaAQ/zh-cn_image_0000002558607290.png)
+```js
+// xxx.js
+export default {
+    data: {
+        badgeConfig: {
+            badgeColor: "#0a59f7",
+            textColor: "#ffffff",
+        }
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/HpKga2C2RTuSxdDPS_F_MA/zh-cn_image_0000002736315723.png)

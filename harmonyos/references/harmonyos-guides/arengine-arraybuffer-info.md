@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-arra
 title: 数据类型转换说明
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > AR Engine常见问题 > 数据类型转换说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:00+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:338a3f99f2a5783d77446f64c6c9e7da221d3eeb16c3d5861b32b9756a1fab3a
+scraped_at: 2026-09-02T14:50:20+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:8e79f7428ac50a249ac054808c25c90a4c6ec14a21cf1cd6e3690e77e0649126
 ---
 
 在开发AR应用时，部分数据类型需要转换才能使用，以下进行汇总及示例。
@@ -27,18 +27,16 @@ content_hash: sha256:338a3f99f2a5783d77446f64c6c9e7da221d3eeb16c3d5861b32b9756a1
 
 转换的示例如下：
 
-```
-1. // ArrayBuffer转float32
-2. function arrayBufferFloat32ToNumber(buffer: ArrayBuffer): number[] {
-3. let view: Float32Array = new Float32Array(buffer);
-4. let numberArray: number[] = Array.from(view);
-5. return numberArray;
-6. }
+```typescript
+export function arrayBufferFloat32ToNumber(buffer: ArrayBuffer): number[] {
+  let view: Float32Array = new Float32Array(buffer);
+  let numberArray: number[] = Array.from(view);
+  return numberArray;
+}
 
-8. // ArrayBuffer转int32
-9. function arrayBufferInt32ToNumber(buffer: ArrayBuffer): number[] {
-10. let view: Int32Array = new Int32Array(buffer);
-11. let numberArray: number[] = Array.from(view);
-12. return numberArray;
-13. }
+export function arrayBufferInt32ToNumber(buffer: ArrayBuffer): number[] {
+  let view: Int32Array = new Int32Array(buffer);
+  let numberArray: number[] = Array.from(view);
+  return numberArray;
+}
 ```

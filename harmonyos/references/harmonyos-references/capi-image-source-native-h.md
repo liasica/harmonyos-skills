@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_source_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_source_native.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:03:54+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:d97b1cb9c245fa099170fd0e0022e08d701018d4ef1479c7019dbd2311e20471
+scraped_at: 2026-09-02T15:02:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:24e3ac0cd07f60d4f26a22e8b45fc2af17cbd29c9a495fcdb69ab8b4fb3345a0
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 图片解码API。
 
@@ -24,24 +22,21 @@ PhonePC/2in1TabletTVWearable
 
 **相关模块：** [Image\_NativeModule](capi-image-nativemodule.md)
 
+**相关开发指导：** [使用Image\_NativeModule完成图片解码](../harmonyos-guides/image-source-c.md)、[图片区域解码与下采样(C/C++)](../harmonyos-guides/image-region-and-downsampling-c.md)、[使用Image\_NativeModule完成动图解码](../harmonyos-guides/image-animated-decoding-c.md)、[使用Image\_NativeModule完成HDR图片解码](../harmonyos-guides/image-hdr-decoding-c.md)、[使用Image\_NativeModule完成多图对象解码](../harmonyos-guides/image-source-picture-c.md)
+
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md) | OH\_ImageSourceNative | OH\_ImageSourceNative是native层封装的ImageSource结构体，用于创建图片数据。 |
 | [OH\_ImageSource\_Info](capi-image-nativemodule-imagesource-info.md) | OH\_ImageSource\_Info | OH\_ImageSource\_Info是native层封装的ImageSource信息结构体，OH\_ImageSource\_Info结构体不可直接操作，而是采用函数调用方式创建、释放结构体以及操作具体字段。 |
-| [OH\_DecodingOptionsForPicture](pi-image-nativemodule-oh-decodingoptionsforpicture.md) | OH\_DecodingOptionsForPicture | Picture解码参数结构体。通过[OH\_DecodingOptionsForPicture\_Create](capi-image-source-native-h.md#oh_decodingoptionsforpicture_create)获取。 |
+| [OH\_DecodingOptionsForPicture](capi-image-nativemodule-oh-decodingoptionsforpicture.md) | OH\_DecodingOptionsForPicture | Picture解码参数结构体。通过[OH\_DecodingOptionsForPicture\_Create](capi-image-source-native-h.md#oh_decodingoptionsforpicture_create)获取。 |
 | [OH\_DecodingOptions](capi-image-nativemodule-oh-decodingoptions.md) | OH\_DecodingOptions | OH\_DecodingOptions是native层封装的解码选项参数结构体，用于设置解码选项参数，在创建Pixelmap时作为入参传入，详细信息见[OH\_ImageSourceNative\_CreatePixelmap](capi-image-source-native-h.md#oh_imagesourcenative_createpixelmap)。 |
+| [OH\_ImageRawData](capi-image-nativemodule-oh-imagerawdata.md) | OH\_ImageRawData | 定义图像中的原始数据。通过[OH\_ImageSourceNative\_CreateImageRawData](capi-image-source-native-h.md#oh_imagesourcenative_createimagerawdata)获取。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -51,8 +46,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [Image\_ErrorCode OH\_ImageSourceInfo\_Create(OH\_ImageSource\_Info \*\*info)](capi-image-source-native-h.md#oh_imagesourceinfo_create) | 创建OH\_ImageSource\_Info指针。 |
@@ -60,7 +53,7 @@ PhonePC/2in1TabletTVWearable
 | [Image\_ErrorCode OH\_ImageSourceInfo\_GetHeight(OH\_ImageSource\_Info \*info, uint32\_t \*height)](capi-image-source-native-h.md#oh_imagesourceinfo_getheight) | 获取图片的高。对于没有height标签的SVG图片，返回默认值0。 |
 | [Image\_ErrorCode OH\_ImageSourceInfo\_GetDynamicRange(OH\_ImageSource\_Info \*info, bool \*isHdr)](capi-image-source-native-h.md#oh_imagesourceinfo_getdynamicrange) | 获取图片是否为高动态范围的信息。 |
 | [Image\_ErrorCode OH\_ImageSourceInfo\_GetMimeType(OH\_ImageSource\_Info \*info, Image\_MimeType \*mimetype)](capi-image-source-native-h.md#oh_imagesourceinfo_getmimetype) | 获取图片源的MIME类型。 |
-| [Image\_ErrorCode OH\_ImageSourceInfo\_Release(OH\_ImageSource\_Info \*info)](capi-image-source-native-h.md#oh_imagesourceinfo_release) | 释放OH\_ImageSource\_Info指针。调用该接口之后，与OH\_ImageSourceInfo结构体相关的属性均会被释放。因此在调用该接口前，请务必确认相关属性已不再被需要或对相关属性已完成深拷贝操作。 |
+| [Image\_ErrorCode OH\_ImageSourceInfo\_Release(OH\_ImageSource\_Info \*info)](capi-image-source-native-h.md#oh_imagesourceinfo_release) | 释放OH\_ImageSource\_Info指针。调用该接口后，通过OH\_ImageSourceInfo\_GetMimeType()获取到的mimeType.data会失效；如需在释放后继续使用MIME类型数据，应在释放前自行深拷贝。 |
 | [Image\_ErrorCode OH\_DecodingOptions\_Create(OH\_DecodingOptions \*\*options)](capi-image-source-native-h.md#oh_decodingoptions_create) | 创建OH\_DecodingOptions指针。 |
 | [Image\_ErrorCode OH\_DecodingOptions\_GetPixelFormat(OH\_DecodingOptions \*options, int32\_t \*pixelFormat)](capi-image-source-native-h.md#oh_decodingoptions_getpixelformat) | 获取pixel格式。 |
 | [Image\_ErrorCode OH\_DecodingOptions\_SetPixelFormat(OH\_DecodingOptions \*options, int32\_t pixelFormat)](capi-image-source-native-h.md#oh_decodingoptions_setpixelformat) | 设置pixel格式。 |
@@ -117,17 +110,17 @@ PhonePC/2in1TabletTVWearable
 | [Image\_ErrorCode OH\_DecodingOptionsForPicture\_GetDesiredAuxiliaryPictures(OH\_DecodingOptionsForPicture \*options, Image\_AuxiliaryPictureType \*\*desiredAuxiliaryPictures, size\_t \*length)](capi-image-source-native-h.md#oh_decodingoptionsforpicture_getdesiredauxiliarypictures) | 获取解码时设置的期望辅助图（期望解码出的picture包含的辅助图）。 |
 | [Image\_ErrorCode OH\_DecodingOptionsForPicture\_SetDesiredAuxiliaryPictures(OH\_DecodingOptionsForPicture \*options, Image\_AuxiliaryPictureType \*desiredAuxiliaryPictures, size\_t length)](capi-image-source-native-h.md#oh_decodingoptionsforpicture_setdesiredauxiliarypictures) | 设置解码选项中的期望辅助图。 |
 | [Image\_ErrorCode OH\_DecodingOptionsForPicture\_Release(OH\_DecodingOptionsForPicture \*options)](capi-image-source-native-h.md#oh_decodingoptionsforpicture_release) | 释放OH\_DecodingOptionsForPicture指针。 |
+| [Image\_ErrorCode OH\_ImageSourceNative\_CreateImageRawData(const OH\_ImageSourceNative \*source, OH\_ImageRawData \*\*rawData)](capi-image-source-native-h.md#oh_imagesourcenative_createimagerawdata) | 从图像中获取rawData对象。 |
+| [Image\_ErrorCode OH\_ImageSourceNative\_GetBufferFromRawData(const OH\_ImageRawData \*rawData, uint8\_t \*\*data, size\_t \*length)](capi-image-source-native-h.md#oh_imagesourcenative_getbufferfromrawdata) | 从rawData对象获取二进制数据。 |
+| [Image\_ErrorCode OH\_ImageSourceNative\_GetBitsPerPixelFromRawData(const OH\_ImageRawData \*rawData, uint8\_t \*bitsPerPixel)](capi-image-source-native-h.md#oh_imagesourcenative_getbitsperpixelfromrawdata) | 获取缓冲区数据中每个像素实际占用的位数。 |
+| [Image\_ErrorCode OH\_ImageSourceNative\_DestroyImageRawData(OH\_ImageRawData \*rawData)](capi-image-source-native-h.md#oh_imagesourcenative_destroyimagerawdata) | 销毁rawData对象。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### IMAGE\_DYNAMIC\_RANGE
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum IMAGE_DYNAMIC_RANGE
+```c
+enum IMAGE_DYNAMIC_RANGE
 ```
 
 **描述**
@@ -144,10 +137,8 @@ PhonePC/2in1TabletTVWearable
 
 ### IMAGE\_ALLOCATOR\_TYPE
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum IMAGE_ALLOCATOR_TYPE
+```c
+enum IMAGE_ALLOCATOR_TYPE
 ```
 
 **描述**
@@ -164,10 +155,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Image\_CropAndScaleStrategy
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Image_CropAndScaleStrategy
+```c
+enum Image_CropAndScaleStrategy
 ```
 
 **描述**
@@ -180,7 +169,7 @@ PhonePC/2in1TabletTVWearable
 
 对于jpeg、webp图片（部分dng图片解码时会优先解码图片中的jpeg预览图，在此场景下也会被视为jpeg图片格式）会先进行下采样，例如按照7/8下采样，再基于175x175的图片大小进行区域裁剪，因此最终的区域内容稍大于原图的左上角1/4区域。
 
-对于svg图片，由于是矢量图，可以任意缩放不损失清晰度，在解码时会根据desiredSize与原图Size的比例选择缩放比例，在基于缩放后的图片大小进行区域裁剪，因此最终返回的解码区域会有所差异。
+对于svg图片，由于是矢量图，可以任意缩放不损失清晰度，在解码时会根据desiredSize与原图Size的比例选择缩放比例，再基于缩放后的图片大小进行区域裁剪，因此最终返回的解码区域会有所差异。
 
 针对该场景，建议在解码选项同时设置了desiredRegion与desiredSize时，参数Image\_CropAndScaleStrategy应传入CROP\_FIRST参数保证效果一致。
 
@@ -193,14 +182,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_ImageSourceInfo\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceInfo_Create(OH_ImageSource_Info **info)
+```c
+Image_ErrorCode OH_ImageSourceInfo_Create(OH_ImageSource_Info **info)
 ```
 
 **描述**
@@ -223,10 +208,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceInfo\_GetWidth()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceInfo_GetWidth(OH_ImageSource_Info *info, uint32_t *width)
+```c
+Image_ErrorCode OH_ImageSourceInfo_GetWidth(OH_ImageSource_Info *info, uint32_t *width)
 ```
 
 **描述**
@@ -240,7 +223,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_ImageSource\_Info](capi-image-nativemodule-imagesource-info.md) \*info | 被操作的OH\_ImageSource\_Info指针。 |
-| uint32\_t \*width | 图片的宽，单位：像素。 |
+| uint32\_t \*width | 图片的宽，单位为像素（px）。 |
 
 **返回：**
 
@@ -250,10 +233,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceInfo\_GetHeight()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceInfo_GetHeight(OH_ImageSource_Info *info, uint32_t *height)
+```c
+Image_ErrorCode OH_ImageSourceInfo_GetHeight(OH_ImageSource_Info *info, uint32_t *height)
 ```
 
 **描述**
@@ -267,7 +248,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_ImageSource\_Info](capi-image-nativemodule-imagesource-info.md) \*info | 被操作的OH\_ImageSource\_Info指针。 |
-| uint32\_t \*height | 图片的高，单位：像素 |
+| uint32\_t \*height | 图片的高，单位为像素（px）。 |
 
 **返回：**
 
@@ -277,10 +258,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceInfo\_GetDynamicRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceInfo_GetDynamicRange(OH_ImageSource_Info *info, bool *isHdr)
+```c
+Image_ErrorCode OH_ImageSourceInfo_GetDynamicRange(OH_ImageSource_Info *info, bool *isHdr)
 ```
 
 **描述**
@@ -304,17 +283,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceInfo\_GetMimeType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_MimeType *mimetype)
+```c
+Image_ErrorCode OH_ImageSourceInfo_GetMimeType(OH_ImageSource_Info *info, Image_MimeType *mimetype)
 ```
 
 **描述**
 
 获取图片源的MIME类型。
 
-说明
+**说明** 
 
 * [mimeType结构体的成员变量](capi-image-nativemodule-image-string.md#成员变量)data为char \*类型指针，其指向info结构体内部持有的mimeType地址，释放info会导致该地址对应的内存也被释放。
 * 开发者可以自行深拷贝一份mimeType.data，或者等mimeType使用完成后再释放info，以免出现乱码现象。
@@ -337,15 +314,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceInfo\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceInfo_Release(OH_ImageSource_Info *info)
+```c
+Image_ErrorCode OH_ImageSourceInfo_Release(OH_ImageSource_Info *info)
 ```
 
 **描述**
 
-释放OH\_ImageSource\_Info指针。调用该接口之后，与OH\_ImageSourceInfo结构体相关的属性均会被释放。因此在调用该接口前，请务必确认相关属性已不再被需要或对相关属性已完成深拷贝操作。
+释放OH\_ImageSource\_Info指针。调用该接口后，通过OH\_ImageSourceInfo\_GetMimeType()获取到的mimeType.data会失效；如需在释放后继续使用MIME类型数据，应在释放前自行深拷贝。
 
 **起始版本：** 12
 
@@ -363,10 +338,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_Create(OH_DecodingOptions **options)
+```c
+Image_ErrorCode OH_DecodingOptions_Create(OH_DecodingOptions **options)
 ```
 
 **描述**
@@ -389,10 +362,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetPixelFormat()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetPixelFormat(OH_DecodingOptions *options, int32_t *pixelFormat)
+```c
+Image_ErrorCode OH_DecodingOptions_GetPixelFormat(OH_DecodingOptions *options, int32_t *pixelFormat)
 ```
 
 **描述**
@@ -416,10 +387,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetPixelFormat()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetPixelFormat(OH_DecodingOptions *options,int32_t pixelFormat)
+```c
+Image_ErrorCode OH_DecodingOptions_SetPixelFormat(OH_DecodingOptions *options,int32_t pixelFormat)
 ```
 
 **描述**
@@ -443,10 +412,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetIndex(OH_DecodingOptions *options, uint32_t *index)
+```c
+Image_ErrorCode OH_DecodingOptions_GetIndex(OH_DecodingOptions *options, uint32_t *index)
 ```
 
 **描述**
@@ -470,10 +437,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetIndex(OH_DecodingOptions *options, uint32_t index)
+```c
+Image_ErrorCode OH_DecodingOptions_SetIndex(OH_DecodingOptions *options, uint32_t index)
 ```
 
 **描述**
@@ -497,10 +462,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetRotate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetRotate(OH_DecodingOptions *options, float *rotate)
+```c
+Image_ErrorCode OH_DecodingOptions_GetRotate(OH_DecodingOptions *options, float *rotate)
 ```
 
 **描述**
@@ -514,7 +477,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_DecodingOptions](capi-image-nativemodule-oh-decodingoptions.md) \*options | 被操作的OH\_DecodingOptions指针。 |
-| float \*rotate | 旋转角度，单位为deg，默认值为0。 |
+| float \*rotate | 旋转角度，单位为角度（deg），默认值为0。取值范围为[0, 360]。 |
 
 **返回：**
 
@@ -524,10 +487,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetRotate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetRotate(OH_DecodingOptions *options, float rotate)
+```c
+Image_ErrorCode OH_DecodingOptions_SetRotate(OH_DecodingOptions *options, float rotate)
 ```
 
 **描述**
@@ -541,7 +502,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_DecodingOptions](capi-image-nativemodule-oh-decodingoptions.md) \*options | 被操作的OH\_DecodingOptions指针。 |
-| float rotate | 旋转角度，单位为deg，默认值为0。 |
+| float rotate | 旋转角度，单位为角度（deg），默认值为0。取值范围为[0, 360]。 |
 
 **返回：**
 
@@ -551,10 +512,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetDesiredSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetDesiredSize(OH_DecodingOptions *options, Image_Size *desiredSize)
+```c
+Image_ErrorCode OH_DecodingOptions_GetDesiredSize(OH_DecodingOptions *options, Image_Size *desiredSize)
 ```
 
 **描述**
@@ -578,10 +537,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetDesiredSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetDesiredSize(OH_DecodingOptions *options, Image_Size *desiredSize)
+```c
+Image_ErrorCode OH_DecodingOptions_SetDesiredSize(OH_DecodingOptions *options, Image_Size *desiredSize)
 ```
 
 **描述**
@@ -605,10 +562,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetDesiredRegion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetDesiredRegion(OH_DecodingOptions *options, Image_Region *desiredRegion)
+```c
+Image_ErrorCode OH_DecodingOptions_GetDesiredRegion(OH_DecodingOptions *options, Image_Region *desiredRegion)
 ```
 
 **描述**
@@ -634,10 +589,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetDesiredRegion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetDesiredRegion(OH_DecodingOptions *options, Image_Region *desiredRegion)
+```c
+Image_ErrorCode OH_DecodingOptions_SetDesiredRegion(OH_DecodingOptions *options, Image_Region *desiredRegion)
 ```
 
 **描述**
@@ -663,10 +616,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetDesiredDynamicRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetDesiredDynamicRange(OH_DecodingOptions *options, int32_t *desiredDynamicRange)
+```c
+Image_ErrorCode OH_DecodingOptions_GetDesiredDynamicRange(OH_DecodingOptions *options, int32_t *desiredDynamicRange)
 ```
 
 **描述**
@@ -690,10 +641,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetDesiredDynamicRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetDesiredDynamicRange(OH_DecodingOptions *options, int32_t desiredDynamicRange)
+```c
+Image_ErrorCode OH_DecodingOptions_SetDesiredDynamicRange(OH_DecodingOptions *options, int32_t desiredDynamicRange)
 ```
 
 **描述**
@@ -717,10 +666,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetDesiredColorSpace()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetDesiredColorSpace(OH_DecodingOptions *options, int32_t *colorSpace)
+```c
+Image_ErrorCode OH_DecodingOptions_GetDesiredColorSpace(OH_DecodingOptions *options, int32_t *colorSpace)
 ```
 
 **描述**
@@ -744,10 +691,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetDesiredColorSpace()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetDesiredColorSpace(OH_DecodingOptions *options, int32_t colorSpace)
+```c
+Image_ErrorCode OH_DecodingOptions_SetDesiredColorSpace(OH_DecodingOptions *options, int32_t colorSpace)
 ```
 
 **描述**
@@ -771,10 +716,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetCropAndScaleStrategy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetCropAndScaleStrategy(OH_DecodingOptions *options, int32_t cropAndScaleStrategy)
+```c
+Image_ErrorCode OH_DecodingOptions_SetCropAndScaleStrategy(OH_DecodingOptions *options, int32_t cropAndScaleStrategy)
 ```
 
 **描述**
@@ -798,10 +741,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetCropAndScaleStrategy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetCropAndScaleStrategy(OH_DecodingOptions *options, int32_t *cropAndScaleStrategy)
+```c
+Image_ErrorCode OH_DecodingOptions_GetCropAndScaleStrategy(OH_DecodingOptions *options, int32_t *cropAndScaleStrategy)
 ```
 
 **描述**
@@ -825,10 +766,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_GetCropRegion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_GetCropRegion(OH_DecodingOptions *options, Image_Region *cropRegion)
+```c
+Image_ErrorCode OH_DecodingOptions_GetCropRegion(OH_DecodingOptions *options, Image_Region *cropRegion)
 ```
 
 **描述**
@@ -852,10 +791,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_SetCropRegion()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_SetCropRegion(OH_DecodingOptions *options, Image_Region *cropRegion)
+```c
+Image_ErrorCode OH_DecodingOptions_SetCropRegion(OH_DecodingOptions *options, Image_Region *cropRegion)
 ```
 
 **描述**
@@ -879,10 +816,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptions\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptions_Release(OH_DecodingOptions *options)
+```c
+Image_ErrorCode OH_DecodingOptions_Release(OH_DecodingOptions *options)
 ```
 
 **描述**
@@ -905,10 +840,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreateFromUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreateFromUri(char *uri, size_t uriSize, OH_ImageSourceNative **res)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreateFromUri(char *uri, size_t uriSize, OH_ImageSourceNative **res)
 ```
 
 **描述**
@@ -933,10 +866,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreateFromFd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreateFromFd(int32_t fd, OH_ImageSourceNative **res)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreateFromFd(int32_t fd, OH_ImageSourceNative **res)
 ```
 
 **描述**
@@ -960,10 +891,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreateFromData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreateFromData(uint8_t *data, size_t dataSize, OH_ImageSourceNative **res)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreateFromData(uint8_t *data, size_t dataSize, OH_ImageSourceNative **res)
 ```
 
 **描述**
@@ -973,6 +902,10 @@ PhonePC/2in1TabletTVWearable
 data数据应该是未解码的数据，不要传入类似于RGBA，YUV的像素buffer数据。
 
 如果想通过像素buffer数据创建pixelMap，可以调用[OH\_PixelmapNative\_CreatePixelmap](capi-pixelmap-native-h.md#oh_pixelmapnative_createpixelmap)这一类接口。
+
+使用场景：适用于应用已经通过网络、文件或其他模块获取到完整编码图片数据的场景，例如JPEG、PNG、WebP等格式的二进制数据。该接口创建的是图片源对象，后续可继续调用[OH\_ImageSourceNative\_GetImageInfo](capi-image-source-native-h.md#oh_imagesourcenative_getimageinfo)读取图片信息，或调用[OH\_ImageSourceNative\_CreatePixelmap](capi-image-source-native-h.md#oh_imagesourcenative_createpixelmap)解码为PixelMap。
+
+资源管理：成功创建的OH\_ImageSourceNative对象由调用方持有，使用完成后必须调用[OH\_ImageSourceNative\_Release](capi-image-source-native-h.md#oh_imagesourcenative_release)释放。传入的data仍由调用方管理，不应传入已经解码后的像素数据。
 
 **起始版本：** 12
 
@@ -992,15 +925,17 @@ data数据应该是未解码的数据，不要传入类似于RGBA，YUV的像素
 
 ### OH\_ImageSourceNative\_CreateFromDataWithUserBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreateFromDataWithUserBuffer(uint8_t *data, size_t datalength, OH_ImageSourceNative **imageSource)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreateFromDataWithUserBuffer(uint8_t *data, size_t datalength, OH_ImageSourceNative **imageSource)
 ```
 
 **描述**
 
 由数据缓存创建图片源。传入的数据缓存将在图片源对象中直接访问，在图片源对象的生命周期内，数据缓存需要保持可用。
+
+使用场景：适用于希望减少图片源创建过程中的数据拷贝，并且调用方能够保证输入缓冲区生命周期的场景。
+
+资源管理：在调用[OH\_ImageSourceNative\_Release](capi-image-source-native-h.md#oh_imagesourcenative_release)释放图片源对象之前，data指向的缓冲区不能被释放、复用或修改为其他图片数据。否则后续读取图片信息、解码或读取元数据时可能访问无效数据。
 
 **起始版本：** 20
 
@@ -1020,10 +955,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreateFromRawFile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreateFromRawFile(RawFileDescriptor *rawFile, OH_ImageSourceNative **res)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreateFromRawFile(RawFileDescriptor *rawFile, OH_ImageSourceNative **res)
 ```
 
 **描述**
@@ -1047,15 +980,19 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreatePixelmap()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreatePixelmap(OH_ImageSourceNative *source, OH_DecodingOptions *options, OH_PixelmapNative **pixelmap)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreatePixelmap(OH_ImageSourceNative *source, OH_DecodingOptions *options, OH_PixelmapNative **pixelmap)
 ```
 
 **描述**
 
 通过图片解码参数创建OH\_PixelmapNative指针。
+
+使用场景：适用于将JPEG、PNG、WebP、GIF单帧等编码图片解码为可读取、处理或再编码的PixelMap。解码前可通过OH\_DecodingOptions设置帧序号、目标像素格式、目标尺寸、裁剪区域、期望动态范围等参数。
+
+使用约束：source、options和pixelmap均不能为空指针。调用前需先创建OH\_ImageSourceNative对象；如需自定义解码参数，需先创建并设置OH\_DecodingOptions对象。接口执行成功后，pixelmap指向新创建的OH\_PixelmapNative对象；接口执行失败时，不应使用pixelmap指向的对象。
+
+资源管理：成功创建的OH\_PixelmapNative对象由调用方持有，使用完成后应调用[OH\_PixelmapNative\_Destroy](capi-pixelmap-native-h.md#oh_pixelmapnative_destroy)释放。OH\_DecodingOptions和OH\_ImageSourceNative对象不会因为创建PixelMap而自动释放，需要分别调用[OH\_DecodingOptions\_Release](capi-image-source-native-h.md#oh_decodingoptions_release)和[OH\_ImageSourceNative\_Release](capi-image-source-native-h.md#oh_imagesourcenative_release)释放。
 
 **起始版本：** 12
 
@@ -1075,10 +1012,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreatePixelmapUsingAllocator()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreatePixelmapUsingAllocator(OH_ImageSourceNative *source, OH_DecodingOptions *options, IMAGE_ALLOCATOR_TYPE allocator, OH_PixelmapNative **pixelmap)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreatePixelmapUsingAllocator(OH_ImageSourceNative *source, OH_DecodingOptions *options, IMAGE_ALLOCATOR_TYPE allocator, OH_PixelmapNative **pixelmap)
 ```
 
 **描述**
@@ -1086,6 +1021,12 @@ PhonePC/2in1TabletTVWearable
 根据解码参数创建一个PixelMap，PixelMap使用的内存类型可以通过allocatorType来指定。
 
 默认情况下，系统会根据图像类型、图像大小、平台能力等选择内存类型。在处理通过此接口返回的PixelMap时，请始终考虑步幅（stride）的影响。
+
+使用场景：适用于调用方需要明确指定PixelMap内存类型的场景。例如，后续图像处理链路要求DMA内存时，可指定IMAGE\_ALLOCATOR\_TYPE\_DMA。
+
+使用约束：source、options和pixelmap均不能为空指针。allocator需为[IMAGE\_ALLOCATOR\_TYPE](capi-image-source-native-h.md#image_allocator_type)中定义的有效枚举值。指定的内存类型可能受图片类型、图片大小、系统版本和设备能力限制，接口可能返回IMAGE\_SOURCE\_UNSUPPORTED\_ALLOCATOR\_TYPE。当调用方进程启用沙箱隔离，且指定IMAGE\_ALLOCATOR\_TYPE\_DMA或由IMAGE\_ALLOCATOR\_TYPE\_AUTO选择DMA内存时，需为该沙箱进程配置访问DMA内存相关资源的SELinux权限；否则可能因SELinux策略拦截导致接口调用阻塞或失败。
+
+资源管理：成功创建的PixelMap需要调用[OH\_PixelmapNative\_Destroy](capi-pixelmap-native-h.md#oh_pixelmapnative_destroy)释放。读取或写入像素数据时，不能假设每行字节数等于宽度乘以每像素字节数，应通过[OH\_PixelmapImageInfo\_GetRowStride](capi-pixelmap-native-h.md#oh_pixelmapimageinfo_getrowstride)获取行跨距。
 
 **起始版本：** 15
 
@@ -1106,10 +1047,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreatePixelmapList()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreatePixelmapList(OH_ImageSourceNative *source, OH_DecodingOptions *options, OH_PixelmapNative *resVecPixMap[], size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreatePixelmapList(OH_ImageSourceNative *source, OH_DecodingOptions *options, OH_PixelmapNative *resVecPixMap[], size_t size)
 ```
 
 **描述**
@@ -1117,6 +1056,12 @@ PhonePC/2in1TabletTVWearable
 通过图片解码参数创建OH\_PixelmapNative数组。
 
 注意，此接口会一次性解码全部帧，当帧数过多或单帧图像过大时，会占用较大内存，造成系统内存紧张，此种情况推荐使用Image组件显示动图，Image组件采用逐帧解码，占用内存比此接口少。
+
+使用场景：适用于需要一次性获取动图所有帧并自行处理的场景，例如生成缩略图序列、分析每帧内容或重新编码动图。仅播放动图时，不建议优先使用该接口。
+
+使用约束：source、options和resVecPixMap均不能为空指针。调用方需根据帧数准备足够长度的resVecPixMap数组，size应与数组可写入元素数量一致。调用前可通过[OH\_ImageSourceNative\_GetFrameCount](capi-image-source-native-h.md#oh_imagesourcenative_getframecount)查询帧数。
+
+资源管理：resVecPixMap数组由调用方提供，数组中的每个OH\_PixelmapNative对象创建成功后都由调用方持有。使用完成后，需要逐个调用[OH\_PixelmapNative\_Destroy](capi-pixelmap-native-h.md#oh_pixelmapnative_destroy)释放。如果接口返回失败，也应检查数组中已写入的非空PixelMap指针并释放。
 
 **起始版本：** 12
 
@@ -1137,15 +1082,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreatePicture()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreatePicture(OH_ImageSourceNative *source, OH_DecodingOptionsForPicture *options, OH_PictureNative **picture)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreatePicture(OH_ImageSourceNative *source, OH_DecodingOptionsForPicture *options, OH_PictureNative **picture)
 ```
 
 **描述**
 
 通过图片解码创建OH\_PictureNative指针。
+
+使用约束：source、options和picture均不能为空指针。
 
 **起始版本：** 13
 
@@ -1154,7 +1099,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md) \*source | 被操作的OH\_ImageSourceNative指针。 |
-| [OH\_DecodingOptionsForPicture](pi-image-nativemodule-oh-decodingoptionsforpicture.md) \*options | 解码参数。 |
+| [OH\_DecodingOptionsForPicture](capi-image-nativemodule-oh-decodingoptionsforpicture.md) \*options | 解码参数。 |
 | [OH\_PictureNative](capi-image-nativemodule-oh-picturenative.md) \*\*picture | 指向c++本地层创建的OH\_PictureNative对象的指针。 |
 
 **返回：**
@@ -1165,10 +1110,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_CreatePictureAtIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_CreatePictureAtIndex(OH_ImageSourceNative *source, uint32_t index, OH_PictureNative **picture)
+```c
+Image_ErrorCode OH_ImageSourceNative_CreatePictureAtIndex(OH_ImageSourceNative *source, uint32_t index, OH_PictureNative **picture)
 ```
 
 **描述**
@@ -1193,10 +1136,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetDelayTimeList()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetDelayTimeList(OH_ImageSourceNative *source, int32_t *delayTimeList, size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetDelayTimeList(OH_ImageSourceNative *source, int32_t *delayTimeList, size_t size)
 ```
 
 **描述**
@@ -1221,10 +1162,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImageInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImageInfo(OH_ImageSourceNative *source, int32_t index, OH_ImageSource_Info *info)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImageInfo(OH_ImageSourceNative *source, int32_t index, OH_ImageSource_Info *info)
 ```
 
 **描述**
@@ -1249,10 +1188,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImageProperty()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImageProperty(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImageProperty(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
 ```
 
 **描述**
@@ -1279,17 +1216,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyShort()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyShort(OH_ImageSourceNative *source, Image_String *key, uint16_t *value)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyShort(OH_ImageSourceNative *source, Image_String *key, uint16_t *value)
 ```
 
 **描述**
 
 以短整型类型获取图像属性的值。
 
-说明
+**说明** 
 
 读取DNG格式图片时，该接口对部分key有特殊处理。以下字段的字符串取值请参考[变量](capi-image-common-h.md#变量)中定义的OHOS\_IMAGE\_PROPERTY\_XXX系列常量的值：
 
@@ -1319,17 +1254,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyLong()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyLong(OH_ImageSourceNative *source, Image_String *key, uint32_t *value)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyLong(OH_ImageSourceNative *source, Image_String *key, uint32_t *value)
 ```
 
 **描述**
 
 以长整型类型获取图像属性的值。
 
-说明
+**说明** 
 
 读取DNG格式图片时，该接口对部分key有特殊处理。以下字段的字符串取值请参考[变量](capi-image-common-h.md#变量)中定义的OHOS\_IMAGE\_PROPERTY\_XXX系列常量的值：
 
@@ -1359,17 +1292,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyDouble()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDouble(OH_ImageSourceNative *source, Image_String *key, double *value)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDouble(OH_ImageSourceNative *source, Image_String *key, double *value)
 ```
 
 **描述**
 
 以浮点型类型获取图像属性的值。
 
-说明
+**说明** 
 
 读取DNG格式图片时，该接口对部分key有特殊处理。以下字段的字符串取值请参考[变量](capi-image-common-h.md#变量)中定义的OHOS\_IMAGE\_PROPERTY\_XXX系列常量的值：
 
@@ -1399,15 +1330,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyArraySize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyArraySize(OH_ImageSourceNative *source, Image_String *key, size_t *size)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyArraySize(OH_ImageSourceNative *source, Image_String *key, size_t *size)
 ```
 
 **描述**
 
 获取数组类型属性的数组长度或字符串类型属性的字符串长度。
+
+使用场景：适用于读取字符串、数组或二进制对象类型的图像属性前，先查询需要分配的缓冲区大小。典型流程为：先调用本接口获取长度，再由调用方分配缓冲区，最后调用[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)、[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)、[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)或[OH\_ImageSourceNative\_GetImagePropertyBlob](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyblob)读取实际内容。
+
+资源管理：本接口不分配属性值缓冲区。后续读取属性值时，如果缓冲区由调用方分配，则由调用方释放；如果使用[OH\_ImageSourceNative\_GetImageProperty](capi-image-source-native-h.md#oh_imagesourcenative_getimageproperty)或[OH\_ImageSourceNative\_GetImagePropertyWithNull](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertywithnull)由系统分配value->data，使用完成后必须调用free()释放。
 
 **起始版本：** 23
 
@@ -1427,17 +1360,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyString()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyString(OH_ImageSourceNative *source, Image_String *key, char *value, size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyString(OH_ImageSourceNative *source, Image_String *key, char *value, size_t size)
 ```
 
 **描述**
 
 以字符串类型获取图像属性的值。
 
-说明
+**说明** 
 
 读取DNG格式图片时，该接口对部分key有特殊处理。以下字段的字符串取值请参考[变量](capi-image-common-h.md#变量)中定义的OHOS\_IMAGE\_PROPERTY\_XXX系列常量的值：
 
@@ -1457,7 +1388,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md) \*source | 被查询属性的ImageSource。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*key | 被查询的属性。 |
-| char \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存应用程序并释放。 |
+| char \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存并释放。 |
 | size\_t size | 字符串长度。 |
 
 **返回：**
@@ -1468,17 +1399,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyIntArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyIntArray(OH_ImageSourceNative *source, Image_String *key, int32_t *value, size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyIntArray(OH_ImageSourceNative *source, Image_String *key, int32_t *value, size_t size)
 ```
 
 **描述**
 
 以整型数组类型获取图像属性的值。
 
-说明
+**说明** 
 
 读取DNG格式图片时，该接口对部分key有特殊处理。以下字段的字符串取值请参考[变量](capi-image-common-h.md#变量)中定义的OHOS\_IMAGE\_PROPERTY\_XXX系列常量的值：
 
@@ -1498,7 +1427,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md) \*source | 被查询属性的ImageSource。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*key | 被查询的属性。 |
-| int32\_t \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存应用程序并释放。 |
+| int32\_t \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存并释放。 |
 | size\_t size | 字符串长度。 |
 
 **返回：**
@@ -1509,17 +1438,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyDoubleArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDoubleArray(OH_ImageSourceNative *source, Image_String *key, double *value, size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyDoubleArray(OH_ImageSourceNative *source, Image_String *key, double *value, size_t size)
 ```
 
 **描述**
 
 以浮点型数组类型获取图像属性的值。
 
-说明
+**说明** 
 
 读取DNG格式图片时，该接口对部分key有特殊处理。以下字段的字符串取值请参考[变量](capi-image-common-h.md#变量)中定义的OHOS\_IMAGE\_PROPERTY\_XXX系列常量的值：
 
@@ -1539,7 +1466,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md) \*source | 被查询属性的ImageSource。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*key | 被查询的属性。 |
-| double \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存应用程序并释放。 |
+| double \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存并释放。 |
 | size\_t size | 数组长度。 |
 
 **返回：**
@@ -1550,17 +1477,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyBlob()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyBlob(OH_ImageSourceNative *source, Image_String *key, void *value, size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyBlob(OH_ImageSourceNative *source, Image_String *key, void *value, size_t size)
 ```
 
 **描述**
 
 以二进制对象类型获取图像属性的值。
 
-说明
+**说明** 
 
 读取DNG格式图片时，该接口对部分key有特殊处理。以下字段的字符串取值请参考[变量](capi-image-common-h.md#变量)中定义的OHOS\_IMAGE\_PROPERTY\_XXX系列常量的值：
 
@@ -1580,7 +1505,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md) \*source | 被查询属性的ImageSource。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*key | 被查询的属性。 |
-| void \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存应用程序并释放。 |
+| void \*value | 被查询属性的查询结果。输出参数。调用者需要管理内存并释放。 |
 | size\_t size | 数组长度。 |
 
 **返回：**
@@ -1591,10 +1516,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_ModifyImagePropertyShort()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyShort(OH_ImageSourceNative *source, Image_String *key, uint16_t value)
+```c
+Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyShort(OH_ImageSourceNative *source, Image_String *key, uint16_t value)
 ```
 
 **描述**
@@ -1619,10 +1542,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_ModifyImagePropertyLong()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyLong(OH_ImageSourceNative *source, Image_String *key, uint32_t value)
+```c
+Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyLong(OH_ImageSourceNative *source, Image_String *key, uint32_t value)
 ```
 
 **描述**
@@ -1647,10 +1568,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_ModifyImagePropertyDouble()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDouble(OH_ImageSourceNative *source, Image_String *key, double value)
+```c
+Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDouble(OH_ImageSourceNative *source, Image_String *key, double value)
 ```
 
 **描述**
@@ -1675,10 +1594,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_ModifyImagePropertyIntArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyIntArray(OH_ImageSourceNative *source, Image_String *key, int32_t *value, size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyIntArray(OH_ImageSourceNative *source, Image_String *key, int32_t *value, size_t size)
 ```
 
 **描述**
@@ -1704,10 +1621,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_ModifyImagePropertyDoubleArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDoubleArray(OH_ImageSourceNative *source, Image_String *key, double *value, size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyDoubleArray(OH_ImageSourceNative *source, Image_String *key, double *value, size_t size)
 ```
 
 **描述**
@@ -1733,10 +1648,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_ModifyImagePropertyBlob()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyBlob(OH_ImageSourceNative *source, Image_String *key, void *value, size_t size)
+```c
+Image_ErrorCode OH_ImageSourceNative_ModifyImagePropertyBlob(OH_ImageSourceNative *source, Image_String *key, void *value, size_t size)
 ```
 
 **描述**
@@ -1762,15 +1675,19 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetImagePropertyWithNull()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetImagePropertyWithNull(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetImagePropertyWithNull(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
 ```
 
 **描述**
 
 获取图像属性值。输出的value.data以字符串结束符'\0'结尾。
+
+使用场景：适用于读取字符串形式的图像属性，例如图片方向、拍摄时间、设备信息等。与[OH\_ImageSourceNative\_GetImageProperty](capi-image-source-native-h.md#oh_imagesourcenative_getimageproperty)相比，本接口返回的value.data以'\0'结尾，更适合直接按C字符串处理。
+
+使用约束：source、key和value均不能为空指针。调用前应将value.data置为NULL、value.size置为0。接口执行成功后，可通过value.data和value.size读取属性值；接口执行失败时，不应读取value.data。
+
+资源管理：接口执行成功后，value.data由系统分配，调用方使用完成后必须调用free()释放。
 
 **起始版本：** 19
 
@@ -1790,15 +1707,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_ModifyImageProperty()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_ModifyImageProperty(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
+```c
+Image_ErrorCode OH_ImageSourceNative_ModifyImageProperty(OH_ImageSourceNative *source, Image_String *key, Image_String *value)
 ```
 
 **描述**
 
 通过指定的键修改图片属性的值。
+
+使用场景：适用于修改ImageSource中的图像属性，例如方向、用户注释等字符串属性。对于短整型、长整型、浮点型、数组或二进制对象类型的属性，优先使用对应的ModifyImagePropertyShort、ModifyImagePropertyLong、ModifyImagePropertyDouble、ModifyImagePropertyIntArray、ModifyImagePropertyDoubleArray或ModifyImagePropertyBlob接口，避免类型不匹配。
+
+资源管理：key和value指向的内存由调用方管理，接口不会接管其生命周期。修改后的属性保存在当前ImageSource对象中；如需生成包含修改后属性的图片文件或图片数据，需要结合编码接口重新输出。
 
 **起始版本：** 12
 
@@ -1818,10 +1737,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetFrameCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetFrameCount(OH_ImageSourceNative *source, uint32_t *frameCount)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetFrameCount(OH_ImageSourceNative *source, uint32_t *frameCount)
 ```
 
 **描述**
@@ -1845,15 +1762,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_GetSupportedFormats()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_GetSupportedFormats(Image_MimeType **supportedFormats, size_t *length)
+```c
+Image_ErrorCode OH_ImageSourceNative_GetSupportedFormats(Image_MimeType **supportedFormats, size_t *length)
 ```
 
 **描述**
 
 获取支持解码的图片格式。
+
+使用场景：适用于在创建图片源或展示格式选择前，动态查询当前系统支持的解码格式。部分格式的解码能力可能和系统版本、设备能力有关，建议以该接口返回结果为准。
 
 **起始版本：** 20
 
@@ -1872,15 +1789,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageSourceNative\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageSourceNative_Release(OH_ImageSourceNative *source)
+```c
+Image_ErrorCode OH_ImageSourceNative_Release(OH_ImageSourceNative *source)
 ```
 
 **描述**
 
 释放OH\_ImageSourceNative指针。
+
+资源管理：由OH\_ImageSourceNative\_CreateFromUri、OH\_ImageSourceNative\_CreateFromFd、OH\_ImageSourceNative\_CreateFromData、OH\_ImageSourceNative\_CreateFromDataWithUserBuffer或OH\_ImageSourceNative\_CreateFromRawFile成功创建的对象，都应在不再使用时调用本接口释放。释放后不得再将该source传入读取图片信息、解码、读取或修改属性等接口。释放ImageSource不会自动释放已经创建出的OH\_PixelmapNative、OH\_PictureNative或OH\_ImageRawData对象，这些对象需要分别调用对应释放接口。
 
 **起始版本：** 12
 
@@ -1898,15 +1815,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptionsForPicture\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptionsForPicture_Create(OH_DecodingOptionsForPicture **options)
+```c
+Image_ErrorCode OH_DecodingOptionsForPicture_Create(OH_DecodingOptionsForPicture **options)
 ```
 
 **描述**
 
 创建OH\_DecodingOptionsForPicture指针。
+
+使用约束：options不能为空指针。接口返回失败时，输出参数的内容不能在后续流程中继续使用。
 
 **起始版本：** 13
 
@@ -1914,7 +1831,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_DecodingOptionsForPicture](pi-image-nativemodule-oh-decodingoptionsforpicture.md) \*\*options | 被操作的OH\_DecodingOptionsForPicture指针。 |
+| [OH\_DecodingOptionsForPicture](capi-image-nativemodule-oh-decodingoptionsforpicture.md) \*\*options | 被操作的OH\_DecodingOptionsForPicture指针。 |
 
 **返回：**
 
@@ -1924,15 +1841,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptionsForPicture\_GetDesiredAuxiliaryPictures()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures(OH_DecodingOptionsForPicture *options, Image_AuxiliaryPictureType **desiredAuxiliaryPictures, size_t *length)
+```c
+Image_ErrorCode OH_DecodingOptionsForPicture_GetDesiredAuxiliaryPictures(OH_DecodingOptionsForPicture *options, Image_AuxiliaryPictureType **desiredAuxiliaryPictures, size_t *length)
 ```
 
 **描述**
 
 获取解码时设置的期望辅助图（期望解码出的picture包含的辅助图）。
+
+使用约束：options、desiredAuxiliaryPictures和length均不能为空指针。未设置期望辅助图时，接口返回IMAGE\_BAD\_PARAMETER。
+
+资源管理：接口成功返回的desiredAuxiliaryPictures数组由接口分配，使用完成后调用方应使用delete[]释放。
 
 **起始版本：** 13
 
@@ -1940,7 +1859,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_DecodingOptionsForPicture](pi-image-nativemodule-oh-decodingoptionsforpicture.md) \*options | 被操作的OH\_DecodingOptionsForPicture指针。 |
+| [OH\_DecodingOptionsForPicture](capi-image-nativemodule-oh-decodingoptionsforpicture.md) \*options | 被操作的OH\_DecodingOptionsForPicture指针。 |
 | [Image\_AuxiliaryPictureType](capi-picture-native-h.md#image_auxiliarypicturetype) \*\*desiredAuxiliaryPictures | 解码选项中的期望辅助图。 |
 | size\_t \*length | 期望辅助图长度。 |
 
@@ -1952,15 +1871,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptionsForPicture\_SetDesiredAuxiliaryPictures()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures(OH_DecodingOptionsForPicture *options, Image_AuxiliaryPictureType *desiredAuxiliaryPictures, size_t length)
+```c
+Image_ErrorCode OH_DecodingOptionsForPicture_SetDesiredAuxiliaryPictures(OH_DecodingOptionsForPicture *options, Image_AuxiliaryPictureType *desiredAuxiliaryPictures, size_t length)
 ```
 
 **描述**
 
 设置解码选项中的期望辅助图。
+
+使用约束：options和desiredAuxiliaryPictures均不能为空指针，length必须大于0，desiredAuxiliaryPictures数组中的辅助图类型必须为当前支持的Image\_AuxiliaryPictureType。
+
+资源管理：接口会将传入数组中的辅助图类型保存到OH\_DecodingOptionsForPicture对象中，不会持有传入的数组指针，接口返回后调用方可自行释放或复用该数组。多次调用该接口时，新传入的辅助图类型会追加到已有集合中；重复类型只保留一份。
 
 **起始版本：** 13
 
@@ -1968,7 +1889,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_DecodingOptionsForPicture](pi-image-nativemodule-oh-decodingoptionsforpicture.md) \*options | 被操作的OH\_DecodingOptionsForPicture指针。 |
+| [OH\_DecodingOptionsForPicture](capi-image-nativemodule-oh-decodingoptionsforpicture.md) \*options | 被操作的OH\_DecodingOptionsForPicture指针。 |
 | [Image\_AuxiliaryPictureType](capi-picture-native-h.md#image_auxiliarypicturetype) \*desiredAuxiliaryPictures | 将要设置的期望辅助图。 |
 | size\_t length | 期望辅助图长度。 |
 
@@ -1980,10 +1901,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_DecodingOptionsForPicture\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_DecodingOptionsForPicture_Release(OH_DecodingOptionsForPicture *options)
+```c
+Image_ErrorCode OH_DecodingOptionsForPicture_Release(OH_DecodingOptionsForPicture *options)
 ```
 
 **描述**
@@ -1996,10 +1915,120 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_DecodingOptionsForPicture](pi-image-nativemodule-oh-decodingoptionsforpicture.md) \*options | 要释放的OH\_DecodingOptionsForPicture指针。 |
+| [OH\_DecodingOptionsForPicture](capi-image-nativemodule-oh-decodingoptionsforpicture.md) \*options | 要释放的OH\_DecodingOptionsForPicture指针。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
 | [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。 |
+
+### OH\_ImageSourceNative\_CreateImageRawData()
+
+```c
+Image_ErrorCode OH_ImageSourceNative_CreateImageRawData(const OH_ImageSourceNative *source, OH_ImageRawData **rawData)
+```
+
+**描述**
+
+从图像中获取rawData对象。rawData对象通常占用大量内存，因为它包含来自相机的原始数据。
+
+当不再使用rawData对象时，请及时调用[OH\_ImageSourceNative\_DestroyImageRawData](capi-image-source-native-h.md#oh_imagesourcenative_destroyimagerawdata)方法销毁，以释放内存资源。
+
+使用场景：适用于从包含原始图像数据的图片源中读取rawData，并交给自定义图像处理、算法分析或保存链路使用。普通图片显示或常规像素处理场景，通常应使用[OH\_ImageSourceNative\_CreatePixelmap](capi-image-source-native-h.md#oh_imagesourcenative_createpixelmap)解码为PixelMap。
+
+资源管理：成功创建的OH\_ImageRawData对象由调用方持有，使用完成后必须调用[OH\_ImageSourceNative\_DestroyImageRawData](capi-image-source-native-h.md#oh_imagesourcenative_destroyimagerawdata)销毁。rawData对象和OH\_ImageSourceNative对象生命周期相互独立，释放ImageSource不会自动销毁rawData。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [const OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md) \*source | 指向图像源的指针。 |
+| [OH\_ImageRawData](capi-image-nativemodule-oh-imagerawdata.md) \*\*rawData | 解码后获得的rawData对象的双指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_SOURCE：源错误。  IMAGE\_SOURCE\_INVALID\_PARAMETER：rawData对象无效。  IMAGE\_SOURCE\_UNSUPPORTED\_MIME\_TYPE：不支持的MIME类型。 |
+
+### OH\_ImageSourceNative\_GetBufferFromRawData()
+
+```c
+Image_ErrorCode OH_ImageSourceNative_GetBufferFromRawData(const OH_ImageRawData *rawData, uint8_t **data, size_t *length)
+```
+
+**描述**
+
+从rawData对象获取二进制数据。
+
+资源管理：data返回的是rawData对象内部二进制缓冲区的地址，调用方不应对\*data调用free()，也不应在[OH\_ImageSourceNative\_DestroyImageRawData](capi-image-source-native-h.md#oh_imagesourcenative_destroyimagerawdata)销毁rawData后继续访问该地址。如需在rawData销毁后继续使用数据，应在销毁前自行深拷贝。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [const OH\_ImageRawData](capi-image-nativemodule-oh-imagerawdata.md) \*rawData | 指向rawData对象的指针。 |
+| uint8\_t \*\*data | 指向二进制缓冲区数据的指针。 |
+| size\_t \*length | 指向所获取数据长度的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：rawData对象无效。 |
+
+### OH\_ImageSourceNative\_GetBitsPerPixelFromRawData()
+
+```c
+Image_ErrorCode OH_ImageSourceNative_GetBitsPerPixelFromRawData(const OH_ImageRawData *rawData, uint8_t *bitsPerPixel)
+```
+
+**描述**
+
+获取缓冲区数据中每个像素实际占用的位数。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [const OH\_ImageRawData](capi-image-nativemodule-oh-imagerawdata.md) \*rawData | 指向rawData对象的指针。 |
+| uint8\_t \*bitsPerPixel | 指向所获取的每像素位数的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：rawData对象无效。 |
+
+### OH\_ImageSourceNative\_DestroyImageRawData()
+
+```c
+Image_ErrorCode OH_ImageSourceNative_DestroyImageRawData(OH_ImageRawData *rawData)
+```
+
+**描述**
+
+销毁rawData对象。
+
+资源管理：该接口只销毁OH\_ImageRawData对象及其内部资源，不会释放OH\_ImageSourceNative对象。销毁后，之前通过[OH\_ImageSourceNative\_GetBufferFromRawData](capi-image-source-native-h.md#oh_imagesourcenative_getbufferfromrawdata)获取到的data地址立即失效。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_ImageRawData](capi-image-nativemodule-oh-imagerawdata.md) \*rawData | 指向rawData对象的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_SOURCE\_INVALID\_PARAMETER：rawData对象无效。 |

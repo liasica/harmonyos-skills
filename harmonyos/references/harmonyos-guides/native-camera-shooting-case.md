@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 拍照实践(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 拍照实践(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:04+08:00
+scraped_at: 2026-09-02T14:50:16+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:61da08341dfaa241e8abd1d15114218200b1cd1f765d07c1533005d4d9debfbe
+content_hash: sha256:808a63ce88f9d473fd7778de7697c2eecfc3b0f9acccfaf4c6cfdfe889e5e40f
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -16,492 +16,492 @@ content_hash: sha256:61da08341dfaa241e8abd1d15114218200b1cd1f765d07c1533005d4d9d
 
 在获取到相机支持的输出流能力后，开始创建拍照流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/BOsgu-DnQkupuLu5Sb8wdQ/zh-cn_image_0000002558605426.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/plvKy9kkTKWwG7qMOcpysw/zh-cn_image_0000002736433711.png)
 
 ## 完整示例
 
 1. 在CMake脚本中链接相关动态库。
 
-   ```
-   1. target_link_libraries(entry PUBLIC
-   2. libace_napi.z.so
-   3. libhilog_ndk.z.so
-   4. libnative_buffer.so
-   5. libohcamera.so
-   6. libohimage.so
-   7. libohfileuri.so
-   8. )
+   ```txt
+   target_link_libraries(entry PUBLIC
+       libace_napi.z.so
+       libhilog_ndk.z.so
+       libnative_buffer.so
+       libohcamera.so
+       libohimage.so
+       libohfileuri.so
+   )
    ```
 2. 创建头文件ndk\_camera.h。
 
    ```
-   1. #include "ohcamera/camera.h"
-   2. #include "ohcamera/camera_input.h"
-   3. #include "ohcamera/capture_session.h"
-   4. #include "ohcamera/photo_output.h"
-   5. #include "ohcamera/preview_output.h"
-   6. #include "ohcamera/video_output.h"
-   7. #include "ohcamera/camera_manager.h"
+   #include "ohcamera/camera.h"
+   #include "ohcamera/camera_input.h"
+   #include "ohcamera/capture_session.h"
+   #include "ohcamera/photo_output.h"
+   #include "ohcamera/preview_output.h"
+   #include "ohcamera/video_output.h"
+   #include "ohcamera/camera_manager.h"
 
-   9. class NDKCamera {
-   10. public:
-   11. ~NDKCamera();
-   12. NDKCamera(char* previewId);
-   13. Camera_ErrorCode RegisterBufferCb(void* cb);
-   14. };
+   class NDKCamera {
+   public:
+       ~NDKCamera();
+       NDKCamera(char* previewId);
+       Camera_ErrorCode RegisterBufferCb(void* cb);
+   };
    ```
 3. cpp侧导入NDK接口，并根据传入的SurfaceId进行拍照。
 
    ```
-   1. #include "hilog/log.h"
+   #include "hilog/log.h"
 
-   3. void CaptureSessionOnFocusStateChange(Camera_CaptureSession* session, Camera_FocusState focusState)
-   4. {
-   5. OH_LOG_INFO(LOG_APP, "CaptureSessionOnFocusStateChange");
-   6. }
+   void CaptureSessionOnFocusStateChange(Camera_CaptureSession* session, Camera_FocusState focusState)
+   {
+       OH_LOG_INFO(LOG_APP, "CaptureSessionOnFocusStateChange");
+   }
 
-   8. void CaptureSessionOnError(Camera_CaptureSession* session, Camera_ErrorCode errorCode)
-   9. {
-   10. OH_LOG_INFO(LOG_APP, "CaptureSessionOnError = %{public}d", errorCode);
-   11. }
+   void CaptureSessionOnError(Camera_CaptureSession* session, Camera_ErrorCode errorCode)
+   {
+       OH_LOG_INFO(LOG_APP, "CaptureSessionOnError = %{public}d", errorCode);
+   }
 
-   13. CaptureSession_Callbacks* GetCaptureSessionRegister(void)
-   14. {
-   15. static CaptureSession_Callbacks captureSessionCallbacks = {
-   16. .onFocusStateChange = CaptureSessionOnFocusStateChange,
-   17. .onError = CaptureSessionOnError
-   18. };
-   19. return &captureSessionCallbacks;
-   20. }
+   CaptureSession_Callbacks* GetCaptureSessionRegister(void)
+   {
+       static CaptureSession_Callbacks captureSessionCallbacks = {
+           .onFocusStateChange = CaptureSessionOnFocusStateChange,
+           .onError = CaptureSessionOnError
+       };
+       return &captureSessionCallbacks;
+   }
 
-   22. void PreviewOutputOnFrameStart(Camera_PreviewOutput* previewOutput)
-   23. {
-   24. OH_LOG_INFO(LOG_APP, "PreviewOutputOnFrameStart");
-   25. }
+   void PreviewOutputOnFrameStart(Camera_PreviewOutput* previewOutput)
+   {
+       OH_LOG_INFO(LOG_APP, "PreviewOutputOnFrameStart");
+   }
 
-   27. void PreviewOutputOnFrameEnd(Camera_PreviewOutput* previewOutput, int32_t frameCount)
-   28. {
-   29. OH_LOG_INFO(LOG_APP, "PreviewOutputOnFrameEnd = %{public}d", frameCount);
-   30. }
+   void PreviewOutputOnFrameEnd(Camera_PreviewOutput* previewOutput, int32_t frameCount)
+   {
+       OH_LOG_INFO(LOG_APP, "PreviewOutputOnFrameEnd = %{public}d", frameCount);
+   }
 
-   32. void PreviewOutputOnError(Camera_PreviewOutput* previewOutput, Camera_ErrorCode errorCode)
-   33. {
-   34. OH_LOG_INFO(LOG_APP, "PreviewOutputOnError = %{public}d", errorCode);
-   35. }
+   void PreviewOutputOnError(Camera_PreviewOutput* previewOutput, Camera_ErrorCode errorCode)
+   {
+       OH_LOG_INFO(LOG_APP, "PreviewOutputOnError = %{public}d", errorCode);
+   }
 
-   37. PreviewOutput_Callbacks* GetPreviewOutputListener(void)
-   38. {
-   39. static PreviewOutput_Callbacks previewOutputListener = {
-   40. .onFrameStart = PreviewOutputOnFrameStart,
-   41. .onFrameEnd = PreviewOutputOnFrameEnd,
-   42. .onError = PreviewOutputOnError
-   43. };
-   44. return &previewOutputListener;
-   45. }
+   PreviewOutput_Callbacks* GetPreviewOutputListener(void)
+   {
+       static PreviewOutput_Callbacks previewOutputListener = {
+           .onFrameStart = PreviewOutputOnFrameStart,
+           .onFrameEnd = PreviewOutputOnFrameEnd,
+           .onError = PreviewOutputOnError
+       };
+       return &previewOutputListener;
+   }
 
-   47. void OnCameraInputError(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
-   48. {
-   49. OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
-   50. }
+   void OnCameraInputError(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
+   {
+       OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
+   }
 
-   52. CameraInput_Callbacks* GetCameraInputListener(void)
-   53. {
-   54. static CameraInput_Callbacks cameraInputCallbacks = {
-   55. .onError = OnCameraInputError
-   56. };
-   57. return &cameraInputCallbacks;
-   58. }
+   CameraInput_Callbacks* GetCameraInputListener(void)
+   {
+       static CameraInput_Callbacks cameraInputCallbacks = {
+           .onError = OnCameraInputError
+       };
+       return &cameraInputCallbacks;
+   }
 
-   60. void CameraManagerStatusCallback(Camera_Manager* cameraManager, Camera_StatusInfo* status)
-   61. {
-   62. OH_LOG_INFO(LOG_APP, "CameraManagerStatusCallback is called");
-   63. }
+   void CameraManagerStatusCallback(Camera_Manager* cameraManager, Camera_StatusInfo* status)
+   {
+       OH_LOG_INFO(LOG_APP, "CameraManagerStatusCallback is called");
+   }
 
-   65. CameraManager_Callbacks* GetCameraManagerListener()
-   66. {
-   67. static CameraManager_Callbacks cameraManagerListener = {
-   68. .onCameraStatus = CameraManagerStatusCallback
-   69. };
-   70. return &cameraManagerListener;
-   71. }
+   CameraManager_Callbacks* GetCameraManagerListener()
+   {
+       static CameraManager_Callbacks cameraManagerListener = {
+           .onCameraStatus = CameraManagerStatusCallback
+       };
+       return &cameraManagerListener;
+   }
 
-   73. static void* bufferCb = nullptr;
-   74. Camera_ErrorCode NDKCamera::RegisterBufferCb(void* cb) {
-   75. OH_LOG_INFO(LOG_APP, " RegisterBufferCb start");
-   76. if (cb == nullptr) {
-   77. OH_LOG_INFO(LOG_APP, " RegisterBufferCb invalid error");
-   78. return CAMERA_INVALID_ARGUMENT;
-   79. }
-   80. bufferCb = cb;
+   static void* bufferCb = nullptr;
+   Camera_ErrorCode NDKCamera::RegisterBufferCb(void* cb) {
+       OH_LOG_INFO(LOG_APP, " RegisterBufferCb start");
+       if (cb == nullptr) {
+           OH_LOG_INFO(LOG_APP, " RegisterBufferCb invalid error");
+           return CAMERA_INVALID_ARGUMENT;
+       }
+       bufferCb = cb;
 
-   82. return CAMERA_OK;
-   83. }
-   84. void OnPhotoAvailable(Camera_PhotoOutput* photoOutput, OH_PhotoNative* photo) {
-   85. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable start!");
-   86. OH_ImageNative* imageNative;
-   87. Camera_ErrorCode errCode = OH_PhotoNative_GetMainImage(photo, &imageNative);
-   88. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable errCode:%{public}d imageNative:%{public}p", errCode, imageNative);
-   89. // 读取 OH_ImageNative 的 size 属性。
-   90. Image_Size size;
-   91. Image_ErrorCode imageErr = OH_ImageNative_GetImageSize(imageNative, &size);
-   92. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d width:%{public}d height:%{public}d", imageErr,
-   93. size.width, size.height);
-   94. // 读取 OH_ImageNative 的组件列表的元素个数。
-   95. size_t componentTypeSize = 0;
-   96. imageErr = OH_ImageNative_GetComponentTypes(imageNative, nullptr, &componentTypeSize);
-   97. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d componentTypeSize:%{public}zu", imageErr,
-   98. componentTypeSize);
-   99. // 读取 OH_ImageNative 的组件列表。
-   100. uint32_t* components = new uint32_t[componentTypeSize];
-   101. imageErr = OH_ImageNative_GetComponentTypes(imageNative, &components, &componentTypeSize);
-   102. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable OH_ImageNative_GetComponentTypes imageErr:%{public}d", imageErr);
-   103. // 读取 OH_ImageNative 的第一个组件所对应的缓冲区对象。
-   104. OH_NativeBuffer* nativeBuffer = nullptr;
-   105. imageErr = OH_ImageNative_GetByteBuffer(imageNative, components[0], &nativeBuffer);
-   106. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable OH_ImageNative_GetByteBuffer imageErr:%{public}d", imageErr);
-   107. // 读取 OH_ImageNative 的第一个组件所对应的缓冲区大小。
-   108. size_t nativeBufferSize = 0;
-   109. imageErr = OH_ImageNative_GetBufferSize(imageNative, components[0], &nativeBufferSize);
-   110. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d nativeBufferSize:%{public}zu", imageErr,
-   111. nativeBufferSize);
-   112. // 读取 OH_ImageNative 的第一个组件所对应的像素行宽。
-   113. int32_t rowStride = 0;
-   114. imageErr = OH_ImageNative_GetRowStride(imageNative, components[0], &rowStride);
-   115. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d rowStride:%{public}d", imageErr, rowStride);
-   116. // 读取 OH_ImageNative 的第一个组件所对应的像素大小。
-   117. int32_t pixelStride = 0;
-   118. imageErr = OH_ImageNative_GetPixelStride(imageNative, components[0], &pixelStride);
-   119. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d pixelStride:%{public}d", imageErr, pixelStride);
-   120. // 将ION内存映射到进程空间。
-   121. void* virAddr = nullptr; // 指向映射内存的虚拟地址，解除映射后这个指针将不再有效。
-   122. int32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr); // 映射后通过第二个参数virAddr返回内存的首地址。
-   123. OH_LOG_INFO(LOG_APP, "OnPhotoAvailable OH_NativeBuffer_Map err:%{public}d", ret);
-   124. // 通过回调函数，将处理完的buffer传给ArkTS侧做显示或通过安全控件写文件保存，参考拍照(C/C++)开发指导。
-   125. if (bufferCb == nullptr) {
-   126. OH_LOG_INFO(LOG_APP, "Current bufferCb invalid error");
-   127. return;
-   128. }
-   129. auto cb = (void (*)(void *, size_t))(bufferCb);
-   130. cb(virAddr, nativeBufferSize);
-   131. // 在处理完之后，解除映射并释放缓冲区。
-   132. ret = OH_NativeBuffer_Unmap(nativeBuffer);
-   133. if (ret != 0) {
-   134. OH_LOG_ERROR(LOG_APP, "OnPhotoAvailable OH_NativeBuffer_Unmap error:%{public}d", ret);
-   135. }
-   136. }
+       return CAMERA_OK;
+   }
+   void OnPhotoAvailable(Camera_PhotoOutput* photoOutput, OH_PhotoNative* photo) {
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable start!");
+       OH_ImageNative* imageNative;
+       Camera_ErrorCode errCode = OH_PhotoNative_GetMainImage(photo, &imageNative);
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable errCode:%{public}d imageNative:%{public}p", errCode, imageNative);
+       // 读取 OH_ImageNative 的 size 属性。
+       Image_Size size;
+       Image_ErrorCode imageErr = OH_ImageNative_GetImageSize(imageNative, &size);
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d width:%{public}d height:%{public}d", imageErr,
+           size.width, size.height);
+       // 读取 OH_ImageNative 的组件列表的元素个数。
+       size_t componentTypeSize = 0;
+       imageErr = OH_ImageNative_GetComponentTypes(imageNative, nullptr, &componentTypeSize);
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d componentTypeSize:%{public}zu", imageErr,
+           componentTypeSize);
+       // 读取 OH_ImageNative 的组件列表。
+       uint32_t* components = new uint32_t[componentTypeSize];
+       imageErr = OH_ImageNative_GetComponentTypes(imageNative, &components, &componentTypeSize);
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable OH_ImageNative_GetComponentTypes imageErr:%{public}d", imageErr);
+       // 读取 OH_ImageNative 的第一个组件所对应的缓冲区对象。
+       OH_NativeBuffer* nativeBuffer = nullptr;
+       imageErr = OH_ImageNative_GetByteBuffer(imageNative, components[0], &nativeBuffer);
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable OH_ImageNative_GetByteBuffer imageErr:%{public}d", imageErr);
+       // 读取 OH_ImageNative 的第一个组件所对应的缓冲区大小。
+       size_t nativeBufferSize = 0;
+       imageErr = OH_ImageNative_GetBufferSize(imageNative, components[0], &nativeBufferSize);
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d nativeBufferSize:%{public}zu", imageErr,
+            nativeBufferSize);
+       // 读取 OH_ImageNative 的第一个组件所对应的像素行宽。
+       int32_t rowStride = 0;
+       imageErr = OH_ImageNative_GetRowStride(imageNative, components[0], &rowStride);
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d rowStride:%{public}d", imageErr, rowStride);
+       // 读取 OH_ImageNative 的第一个组件所对应的像素大小。
+       int32_t pixelStride = 0;
+       imageErr = OH_ImageNative_GetPixelStride(imageNative, components[0], &pixelStride);
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable imageErr:%{public}d pixelStride:%{public}d", imageErr, pixelStride);
+       // 将ION内存映射到进程空间。
+       void* virAddr = nullptr; // 指向映射内存的虚拟地址，解除映射后这个指针将不再有效。
+       int32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr); // 映射后通过第二个参数virAddr返回内存的首地址。
+       OH_LOG_INFO(LOG_APP, "OnPhotoAvailable OH_NativeBuffer_Map err:%{public}d", ret);
+       // 通过回调函数，将处理完的buffer传给ArkTS侧做显示或通过安全控件写文件保存，参考拍照(C/C++)开发指导。
+       if (bufferCb == nullptr) {
+           OH_LOG_INFO(LOG_APP, "Current bufferCb invalid error");
+           return;
+       }
+       auto cb = (void (*)(void *, size_t))(bufferCb);
+       cb(virAddr, nativeBufferSize);
+       // 在处理完之后，解除映射并释放缓冲区。
+       ret = OH_NativeBuffer_Unmap(nativeBuffer);
+       if (ret != 0) {
+           OH_LOG_ERROR(LOG_APP, "OnPhotoAvailable OH_NativeBuffer_Unmap error:%{public}d", ret);
+       }
+   }
 
-   138. NDKCamera::NDKCamera(char* previewId)
-   139. {
-   140. Camera_Manager* cameraManager = nullptr;
-   141. Camera_Device* cameras = nullptr;
-   142. Camera_CaptureSession* captureSession = nullptr;
-   143. Camera_OutputCapability* cameraOutputCapability = nullptr;
-   144. const Camera_Profile* previewProfile = nullptr;
-   145. const Camera_Profile* photoProfile = nullptr;
-   146. Camera_PreviewOutput* previewOutput = nullptr;
-   147. Camera_PhotoOutput* photoOutput = nullptr;
-   148. Camera_Input* cameraInput = nullptr;
-   149. uint32_t size = 0;
-   150. uint32_t cameraDeviceIndex = 0;
-   151. char* previewSurfaceId = previewId;
-   152. // 创建CameraManager对象。
-   153. Camera_ErrorCode ret = OH_Camera_GetCameraManager(&cameraManager);
-   154. if (cameraManager == nullptr || ret != CAMERA_OK) {
-   155. OH_LOG_ERROR(LOG_APP, "OH_Camera_GetCameraManager failed.");
-   156. return;
-   157. }
-   158. // 监听相机状态变化。
-   159. ret = OH_CameraManager_RegisterCallback(cameraManager, GetCameraManagerListener());
-   160. if (ret != CAMERA_OK) {
-   161. OH_LOG_ERROR(LOG_APP, "OH_CameraManager_RegisterCallback failed.");
-   162. }
+   NDKCamera::NDKCamera(char* previewId)
+   {
+       Camera_Manager* cameraManager = nullptr;
+       Camera_Device* cameras = nullptr;
+       Camera_CaptureSession* captureSession = nullptr;
+       Camera_OutputCapability* cameraOutputCapability = nullptr;
+       const Camera_Profile* previewProfile = nullptr;
+       const Camera_Profile* photoProfile = nullptr;
+       Camera_PreviewOutput* previewOutput = nullptr;
+       Camera_PhotoOutput* photoOutput = nullptr;
+       Camera_Input* cameraInput = nullptr;
+       uint32_t size = 0;
+       uint32_t cameraDeviceIndex = 0;
+       char* previewSurfaceId = previewId;
+       // 创建CameraManager对象。
+       Camera_ErrorCode ret = OH_Camera_GetCameraManager(&cameraManager);
+       if (cameraManager == nullptr || ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_Camera_GetCameraManager failed.");
+           return;
+       }
+       // 监听相机状态变化。
+       ret = OH_CameraManager_RegisterCallback(cameraManager, GetCameraManagerListener());
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_RegisterCallback failed.");
+       }
 
-   164. // 获取相机列表。
-   165. ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
-   166. if (cameras == nullptr || size <= 0 || ret != CAMERA_OK) {
-   167. OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
-   168. return;
-   169. }
+       // 获取相机列表。
+       ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
+       if (cameras == nullptr || size <= 0 || ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
+           return;
+       }
 
-   171. if (size < cameraDeviceIndex + 1) {
-   172. OH_LOG_ERROR(LOG_APP, "cameraDeviceIndex is invalid.");
-   173. return;
-   174. }
+       if (size < cameraDeviceIndex + 1) {
+           OH_LOG_ERROR(LOG_APP, "cameraDeviceIndex is invalid.");
+           return;
+       }
 
-   176. // 创建相机输入流。
-   177. ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[cameraDeviceIndex], &cameraInput);
-   178. if (cameraInput == nullptr || ret != CAMERA_OK) {
-   179. OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCameraInput failed.");
-   180. return;
-   181. }
+       // 创建相机输入流。
+       ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[cameraDeviceIndex], &cameraInput);
+       if (cameraInput == nullptr || ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCameraInput failed.");
+           return;
+       }
 
-   183. // 监听cameraInput错误信息。
-   184. ret = OH_CameraInput_RegisterCallback(cameraInput, GetCameraInputListener());
-   185. if (ret != CAMERA_OK) {
-   186. OH_LOG_ERROR(LOG_APP, "OH_CameraInput_RegisterCallback failed.");
-   187. return;
-   188. }
+       // 监听cameraInput错误信息。
+       ret = OH_CameraInput_RegisterCallback(cameraInput, GetCameraInputListener());
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraInput_RegisterCallback failed.");
+           return;
+       }
 
-   190. // 打开相机。
-   191. ret = OH_CameraInput_Open(cameraInput);
-   192. if (ret != CAMERA_OK) {
-   193. OH_LOG_ERROR(LOG_APP, "OH_CameraInput_Open failed.");
-   194. return;
-   195. }
+       // 打开相机。
+       ret = OH_CameraInput_Open(cameraInput);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraInput_Open failed.");
+           return;
+       }
 
-   197. // 获取相机设备支持的输出流能力。
-   198. ret = OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager, &cameras[cameraDeviceIndex],
-   199. &cameraOutputCapability);
-   200. if (cameraOutputCapability == nullptr || ret != CAMERA_OK) {
-   201. OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameraOutputCapability failed.");
-   202. return;
-   203. }
+       // 获取相机设备支持的输出流能力。
+       ret = OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager, &cameras[cameraDeviceIndex],
+                                                                 &cameraOutputCapability);
+       if (cameraOutputCapability == nullptr || ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameraOutputCapability failed.");
+           return;
+       }
 
-   205. if (cameraOutputCapability->previewProfiles == nullptr) {
-   206. OH_LOG_ERROR(LOG_APP, "previewProfiles == null");
-   207. return;
-   208. }
-   209. // 根据所需从cameraOutputCapability->previewProfiles中选择合适的预览分辨率
-   210. previewProfile = cameraOutputCapability->previewProfiles[0];
+       if (cameraOutputCapability->previewProfiles == nullptr) {
+           OH_LOG_ERROR(LOG_APP, "previewProfiles == null");
+           return;
+       }
+       // 根据所需从cameraOutputCapability->previewProfiles中选择合适的预览分辨率
+       previewProfile = cameraOutputCapability->previewProfiles[0];
 
-   212. if (cameraOutputCapability->photoProfiles == nullptr) {
-   213. OH_LOG_ERROR(LOG_APP, "photoProfiles == null");
-   214. return;
-   215. }
-   216. // 根据所需从cameraOutputCapability->photoProfiles中选择合适的拍照分辨率
-   217. photoProfile = cameraOutputCapability->photoProfiles[0];
+       if (cameraOutputCapability->photoProfiles == nullptr) {
+           OH_LOG_ERROR(LOG_APP, "photoProfiles == null");
+           return;
+       }
+       // 根据所需从cameraOutputCapability->photoProfiles中选择合适的拍照分辨率
+       photoProfile = cameraOutputCapability->photoProfiles[0];
 
-   219. // 创建预览输出流,其中参数 previewSurfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface。
-   220. ret = OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, previewSurfaceId, &previewOutput);
-   221. if (previewProfile == nullptr || previewOutput == nullptr || ret != CAMERA_OK) {
-   222. OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed.");
-   223. return;
-   224. }
+       // 创建预览输出流,其中参数 previewSurfaceId 参考上文 XComponent 组件，预览流为XComponent组件提供的surface。
+       ret = OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, previewSurfaceId, &previewOutput);
+       if (previewProfile == nullptr || previewOutput == nullptr || ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed.");
+           return;
+       }
 
-   226. // 监听预览输出错误信息。
-   227. ret = OH_PreviewOutput_RegisterCallback(previewOutput, GetPreviewOutputListener());
-   228. if (ret != CAMERA_OK) {
-   229. OH_LOG_ERROR(LOG_APP, "OH_PreviewOutput_RegisterCallback failed.");
-   230. }
+       // 监听预览输出错误信息。
+       ret = OH_PreviewOutput_RegisterCallback(previewOutput, GetPreviewOutputListener());
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_PreviewOutput_RegisterCallback failed.");
+       }
 
-   232. // 创建拍照输出流。
-   233. ret = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
+       // 创建拍照输出流。
+       ret = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
 
-   235. // 监听单段式拍照回调。
-   236. ret = OH_PhotoOutput_RegisterPhotoAvailableCallback(photoOutput, OnPhotoAvailable);
+       // 监听单段式拍照回调。
+       ret = OH_PhotoOutput_RegisterPhotoAvailableCallback(photoOutput, OnPhotoAvailable);
 
-   238. // 创建会话。
-   239. ret = OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
-   240. if (captureSession == nullptr || ret != CAMERA_OK) {
-   241. OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCaptureSession failed.");
-   242. return;
-   243. }
+       // 创建会话。
+       ret = OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+       if (captureSession == nullptr || ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCaptureSession failed.");
+           return;
+       }
 
-   245. // 监听session错误信息。
-   246. ret = OH_CaptureSession_RegisterCallback(captureSession, GetCaptureSessionRegister());
-   247. if (ret != CAMERA_OK) {
-   248. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_RegisterCallback failed.");
-   249. }
+       // 监听session错误信息。
+       ret = OH_CaptureSession_RegisterCallback(captureSession, GetCaptureSessionRegister());
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_RegisterCallback failed.");
+       }
 
-   251. // 开始配置会话。
-   252. ret = OH_CaptureSession_BeginConfig(captureSession);
-   253. if (ret != CAMERA_OK) {
-   254. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_BeginConfig failed.");
-   255. return;
-   256. }
+       // 开始配置会话。
+       ret = OH_CaptureSession_BeginConfig(captureSession);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_BeginConfig failed.");
+           return;
+       }
 
-   258. // 向会话中添加相机输入流。
-   259. ret = OH_CaptureSession_AddInput(captureSession, cameraInput);
-   260. if (ret != CAMERA_OK) {
-   261. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddInput failed.");
-   262. return;
-   263. }
+       // 向会话中添加相机输入流。
+       ret = OH_CaptureSession_AddInput(captureSession, cameraInput);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddInput failed.");
+           return;
+       }
 
-   265. // 向会话中添加预览输出流。
-   266. ret = OH_CaptureSession_AddPreviewOutput(captureSession, previewOutput);
-   267. if (ret != CAMERA_OK) {
-   268. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddPreviewOutput failed.");
-   269. return;
-   270. }
+       // 向会话中添加预览输出流。
+       ret = OH_CaptureSession_AddPreviewOutput(captureSession, previewOutput);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddPreviewOutput failed.");
+           return;
+       }
 
-   272. // 向会话中添加拍照输出流。
-   273. ret = OH_CaptureSession_AddPhotoOutput(captureSession, photoOutput);
-   274. if (ret != CAMERA_OK) {
-   275. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddPhotoOutput failed.");
-   276. return;
-   277. }
+       // 向会话中添加拍照输出流。
+       ret = OH_CaptureSession_AddPhotoOutput(captureSession, photoOutput);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddPhotoOutput failed.");
+           return;
+       }
 
-   279. // 提交会话配置。
-   280. ret = OH_CaptureSession_CommitConfig(captureSession);
-   281. if (ret != CAMERA_OK) {
-   282. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_CommitConfig failed.");
-   283. return;
-   284. }
+       // 提交会话配置。
+       ret = OH_CaptureSession_CommitConfig(captureSession);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_CommitConfig failed.");
+           return;
+       }
 
-   286. // 启动会话。
-   287. ret = OH_CaptureSession_Start(captureSession);
-   288. if (ret != CAMERA_OK) {
-   289. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Start failed.");
-   290. return;
-   291. }
+       // 启动会话。
+       ret = OH_CaptureSession_Start(captureSession);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Start failed.");
+           return;
+       }
 
-   293. // 判断设备是否支持闪光灯。
-   294. Camera_FlashMode flashMode = FLASH_MODE_AUTO;
-   295. bool hasFlash = false;
-   296. ret = OH_CaptureSession_HasFlash(captureSession, &hasFlash);
-   297. if (ret != CAMERA_OK) {
-   298. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_HasFlash failed.");
-   299. }
-   300. if (hasFlash) {
-   301. OH_LOG_INFO(LOG_APP, "hasFlash success");
-   302. } else {
-   303. OH_LOG_ERROR(LOG_APP, "hasFlash fail");
-   304. }
+       // 判断设备是否支持闪光灯。
+       Camera_FlashMode flashMode = FLASH_MODE_AUTO;
+       bool hasFlash = false;
+       ret = OH_CaptureSession_HasFlash(captureSession, &hasFlash);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_HasFlash failed.");
+       }
+       if (hasFlash) {
+           OH_LOG_INFO(LOG_APP, "hasFlash success");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "hasFlash fail");
+       }
+       
+       // 检测闪光灯模式是否支持。
+       bool isSupported = false;
+       ret = OH_CaptureSession_IsFlashModeSupported(captureSession, flashMode, &isSupported);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_IsFlashModeSupported failed.");
+       }
+       if (isSupported) {
+           OH_LOG_INFO(LOG_APP, "isFlashModeSupported success");
 
-   306. // 检测闪光灯模式是否支持。
-   307. bool isSupported = false;
-   308. ret = OH_CaptureSession_IsFlashModeSupported(captureSession, flashMode, &isSupported);
-   309. if (ret != CAMERA_OK) {
-   310. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_IsFlashModeSupported failed.");
-   311. }
-   312. if (isSupported) {
-   313. OH_LOG_INFO(LOG_APP, "isFlashModeSupported success");
+           // 设置闪光灯模式。
+           ret = OH_CaptureSession_SetFlashMode(captureSession, flashMode);
+           if (ret == CAMERA_OK) {
+               OH_LOG_INFO(LOG_APP, "OH_CaptureSession_SetFlashMode success.");
+           } else {
+               OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetFlashMode failed. ret : %{public}d ", ret);
+           }
 
-   315. // 设置闪光灯模式。
-   316. ret = OH_CaptureSession_SetFlashMode(captureSession, flashMode);
-   317. if (ret == CAMERA_OK) {
-   318. OH_LOG_INFO(LOG_APP, "OH_CaptureSession_SetFlashMode success.");
-   319. } else {
-   320. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetFlashMode failed. ret : %{public}d ", ret);
-   321. }
+           // 获取当前设备的闪光灯模式。
+           ret = OH_CaptureSession_GetFlashMode(captureSession, &flashMode);
+           if (ret == CAMERA_OK) {
+               OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetFlashMode success. flashMode：%{public}d ", flashMode);
+           } else {
+               OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetFlashMode failed. ret : %{public}d ", ret);
+           }
+       } else {
+           OH_LOG_ERROR(LOG_APP, "isFlashModeSupported fail");
+       }
 
-   323. // 获取当前设备的闪光灯模式。
-   324. ret = OH_CaptureSession_GetFlashMode(captureSession, &flashMode);
-   325. if (ret == CAMERA_OK) {
-   326. OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetFlashMode success. flashMode：%{public}d ", flashMode);
-   327. } else {
-   328. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetFlashMode failed. ret : %{public}d ", ret);
-   329. }
-   330. } else {
-   331. OH_LOG_ERROR(LOG_APP, "isFlashModeSupported fail");
-   332. }
+       // 判断是否支持连续自动变焦模式。
+       Camera_FocusMode focusMode = FOCUS_MODE_CONTINUOUS_AUTO;
+       bool isFocusModeSupported = false;
+       ret = OH_CaptureSession_IsFocusModeSupported(captureSession, focusMode, &isFocusModeSupported);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_IsFocusModeSupported failed.");
+       }
+       if (isFocusModeSupported) {
+           OH_LOG_INFO(LOG_APP, "isFocusModeSupported success");
+           ret = OH_CaptureSession_SetFocusMode(captureSession, focusMode);
+           if (ret != CAMERA_OK) {
+               OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetFocusMode failed. ret : %{public}d ", ret);
+           }
+           ret = OH_CaptureSession_GetFocusMode(captureSession, &focusMode);
+           if (ret == CAMERA_OK) {
+               OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetFocusMode success. focusMode%{public}d ", focusMode);
+           } else {
+               OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetFocusMode failed. ret : %{public}d ", ret);
+           }
+       } else {
+           OH_LOG_ERROR(LOG_APP, "isFocusModeSupported fail");
+       }
 
-   334. // 判断是否支持连续自动变焦模式。
-   335. Camera_FocusMode focusMode = FOCUS_MODE_CONTINUOUS_AUTO;
-   336. bool isFocusModeSupported = false;
-   337. ret = OH_CaptureSession_IsFocusModeSupported(captureSession, focusMode, &isFocusModeSupported);
-   338. if (ret != CAMERA_OK) {
-   339. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_IsFocusModeSupported failed.");
-   340. }
-   341. if (isFocusModeSupported) {
-   342. OH_LOG_INFO(LOG_APP, "isFocusModeSupported success");
-   343. ret = OH_CaptureSession_SetFocusMode(captureSession, focusMode);
-   344. if (ret != CAMERA_OK) {
-   345. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetFocusMode failed. ret : %{public}d ", ret);
-   346. }
-   347. ret = OH_CaptureSession_GetFocusMode(captureSession, &focusMode);
-   348. if (ret == CAMERA_OK) {
-   349. OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetFocusMode success. focusMode%{public}d ", focusMode);
-   350. } else {
-   351. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetFocusMode failed. ret : %{public}d ", ret);
-   352. }
-   353. } else {
-   354. OH_LOG_ERROR(LOG_APP, "isFocusModeSupported fail");
-   355. }
+       // 获取相机支持的可变焦距比范围。
+       float minZoom;
+       float maxZoom;
+       ret = OH_CaptureSession_GetZoomRatioRange(captureSession, &minZoom, &maxZoom);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetZoomRatioRange failed.");
+       } else {
+           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomRatioRange success. minZoom: %{public}f, maxZoom:%{public}f",
+               minZoom, maxZoom);
+       }
 
-   357. // 获取相机支持的可变焦距比范围。
-   358. float minZoom;
-   359. float maxZoom;
-   360. ret = OH_CaptureSession_GetZoomRatioRange(captureSession, &minZoom, &maxZoom);
-   361. if (ret != CAMERA_OK) {
-   362. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetZoomRatioRange failed.");
-   363. } else {
-   364. OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomRatioRange success. minZoom: %{public}f, maxZoom:%{public}f",
-   365. minZoom, maxZoom);
-   366. }
+       // 设置变焦。
+       ret = OH_CaptureSession_SetZoomRatio(captureSession, maxZoom);
+       if (ret == CAMERA_OK) {
+           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_SetZoomRatio success.");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetZoomRatio failed. ret : %{public}d ", ret);
+       }
 
-   368. // 设置变焦。
-   369. ret = OH_CaptureSession_SetZoomRatio(captureSession, maxZoom);
-   370. if (ret == CAMERA_OK) {
-   371. OH_LOG_INFO(LOG_APP, "OH_CaptureSession_SetZoomRatio success.");
-   372. } else {
-   373. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetZoomRatio failed. ret : %{public}d ", ret);
-   374. }
+       // 获取当前设备的变焦值。
+       ret = OH_CaptureSession_GetZoomRatio(captureSession, &maxZoom);
+       if (ret == CAMERA_OK) {
+           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomRatio success. zoom：%{public}f ", maxZoom);
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetZoomRatio failed. ret : %{public}d ", ret);
+       }
 
-   376. // 获取当前设备的变焦值。
-   377. ret = OH_CaptureSession_GetZoomRatio(captureSession, &maxZoom);
-   378. if (ret == CAMERA_OK) {
-   379. OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomRatio success. zoom：%{public}f ", maxZoom);
-   380. } else {
-   381. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetZoomRatio failed. ret : %{public}d ", ret);
-   382. }
+       // 无拍照设置进行拍照。
+       ret = OH_PhotoOutput_Capture(photoOutput);
+       if (ret == CAMERA_OK) {
+           OH_LOG_INFO(LOG_APP, "OH_PhotoOutput_Capture success ");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_PhotoOutput_Capture failed. ret : %{public}d ", ret);
+       }
 
-   384. // 无拍照设置进行拍照。
-   385. ret = OH_PhotoOutput_Capture(photoOutput);
-   386. if (ret == CAMERA_OK) {
-   387. OH_LOG_INFO(LOG_APP, "OH_PhotoOutput_Capture success ");
-   388. } else {
-   389. OH_LOG_ERROR(LOG_APP, "OH_PhotoOutput_Capture failed. ret : %{public}d ", ret);
-   390. }
+       // 停止当前会话。
+       ret = OH_CaptureSession_Stop(captureSession);
+       if (ret == CAMERA_OK) {
+           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_Stop success ");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Stop failed. ret : %{public}d ", ret);
+       }
 
-   392. // 停止当前会话。
-   393. ret = OH_CaptureSession_Stop(captureSession);
-   394. if (ret == CAMERA_OK) {
-   395. OH_LOG_INFO(LOG_APP, "OH_CaptureSession_Stop success ");
-   396. } else {
-   397. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Stop failed. ret : %{public}d ", ret);
-   398. }
+       // 释放相机输入流。
+       ret = OH_CameraInput_Close(cameraInput);
+       if (ret == CAMERA_OK) {
+           OH_LOG_INFO(LOG_APP, "OH_CameraInput_Close success ");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraInput_Close failed. ret : %{public}d ", ret);
+       }
 
-   400. // 释放相机输入流。
-   401. ret = OH_CameraInput_Close(cameraInput);
-   402. if (ret == CAMERA_OK) {
-   403. OH_LOG_INFO(LOG_APP, "OH_CameraInput_Close success ");
-   404. } else {
-   405. OH_LOG_ERROR(LOG_APP, "OH_CameraInput_Close failed. ret : %{public}d ", ret);
-   406. }
+       // 释放预览输出流。
+       ret = OH_PreviewOutput_Release(previewOutput);
+       if (ret == CAMERA_OK) {
+           OH_LOG_INFO(LOG_APP, "OH_PreviewOutput_Release success ");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_PreviewOutput_Release failed. ret : %{public}d ", ret);
+       }
 
-   408. // 释放预览输出流。
-   409. ret = OH_PreviewOutput_Release(previewOutput);
-   410. if (ret == CAMERA_OK) {
-   411. OH_LOG_INFO(LOG_APP, "OH_PreviewOutput_Release success ");
-   412. } else {
-   413. OH_LOG_ERROR(LOG_APP, "OH_PreviewOutput_Release failed. ret : %{public}d ", ret);
-   414. }
+       // 释放拍照输出流。
+       ret = OH_PhotoOutput_Release(photoOutput);
+       if (ret == CAMERA_OK) {
+         OH_LOG_INFO(LOG_APP, "OH_PhotoOutput_Release success ");
+       } else {
+         OH_LOG_ERROR(LOG_APP, "OH_PhotoOutput_Release failed. ret : %{public}d ", ret);
+       }
 
-   416. // 释放拍照输出流。
-   417. ret = OH_PhotoOutput_Release(photoOutput);
-   418. if (ret == CAMERA_OK) {
-   419. OH_LOG_INFO(LOG_APP, "OH_PhotoOutput_Release success ");
-   420. } else {
-   421. OH_LOG_ERROR(LOG_APP, "OH_PhotoOutput_Release failed. ret : %{public}d ", ret);
-   422. }
+       // 释放会话。
+       ret = OH_CaptureSession_Release(captureSession);
+       if (ret == CAMERA_OK) {
+           OH_LOG_INFO(LOG_APP, "OH_CaptureSession_Release success ");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Release failed. ret : %{public}d ", ret);
+       }
 
-   424. // 释放会话。
-   425. ret = OH_CaptureSession_Release(captureSession);
-   426. if (ret == CAMERA_OK) {
-   427. OH_LOG_INFO(LOG_APP, "OH_CaptureSession_Release success ");
-   428. } else {
-   429. OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Release failed. ret : %{public}d ", ret);
-   430. }
-
-   432. // 资源释放。
-   433. ret = OH_CameraManager_DeleteSupportedCameras(cameraManager, cameras, size);
-   434. if (ret != CAMERA_OK) {
-   435. OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
-   436. } else {
-   437. OH_LOG_ERROR(LOG_APP, "OH_CameraManager_DeleteSupportedCameras. ok");
-   438. }
-   439. ret = OH_CameraManager_DeleteSupportedCameraOutputCapability(cameraManager, cameraOutputCapability);
-   440. if (ret != CAMERA_OK) {
-   441. OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
-   442. } else {
-   443. OH_LOG_ERROR(LOG_APP, "OH_CameraManager_DeleteSupportedCameraOutputCapability. ok");
-   444. }
-   445. ret = OH_Camera_DeleteCameraManager(cameraManager);
-   446. if (ret != CAMERA_OK) {
-   447. OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
-   448. } else {
-   449. OH_LOG_ERROR(LOG_APP, "OH_Camera_DeleteCameraManager. ok");
-   450. }
-   451. }
+       // 资源释放。
+       ret = OH_CameraManager_DeleteSupportedCameras(cameraManager, cameras, size);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_DeleteSupportedCameras. ok");
+       }
+       ret = OH_CameraManager_DeleteSupportedCameraOutputCapability(cameraManager, cameraOutputCapability);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_CameraManager_DeleteSupportedCameraOutputCapability. ok");
+       }
+       ret = OH_Camera_DeleteCameraManager(cameraManager);
+       if (ret != CAMERA_OK) {
+           OH_LOG_ERROR(LOG_APP, "Delete Cameras failed.");
+       } else {
+           OH_LOG_ERROR(LOG_APP, "OH_Camera_DeleteCameraManager. ok");
+       }
+   }
    ```

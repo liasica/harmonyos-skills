@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-more-ca
 title: 适配指导案例
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > 适配指导案例
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:37+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6cb602
+scraped_at: 2026-09-02T14:59:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8f48dd923e21c5600fad2efa92166b809c332882c76ab3a488e589a61dc43316
 ---
 
 本文通过具体应用场景中的案例，提供在ArkTS语法规则下将TS代码适配成ArkTS代码的建议。各章以ArkTS语法规则的英文名称命名，每个案例展示适配前的TS代码和适配后的ArkTS代码。
@@ -16,114 +16,114 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. interface W {
-2. bundleName: string
-3. action: string
-4. entities: string[]
-5. }
+```typescript
+interface W {
+  bundleName: string
+  action: string
+  entities: string[]
+}
 
-7. let wantInfo: W = {
-8. 'bundleName': 'com.huawei.hmos.browser',
-9. 'action': 'ohos.want.action.viewData',
-10. 'entities': ['entity.system.browsable']
-11. }
+let wantInfo: W = {
+  'bundleName': 'com.huawei.hmos.browser',
+  'action': 'ohos.want.action.viewData',
+  'entities': ['entity.system.browsable']
+}
 ```
 
 **建议改法**
 
-```
-1. interface W {
-2. bundleName: string
-3. action: string
-4. entities: string[]
-5. }
+```typescript
+interface W {
+  bundleName: string
+  action: string
+  entities: string[]
+}
 
-7. let wantInfo: W = {
-8. bundleName: 'com.huawei.hmos.browser',
-9. action: 'ohos.want.action.viewData',
-10. entities: ['entity.system.browsable']
-11. }
+let wantInfo: W = {
+  bundleName: 'com.huawei.hmos.browser',
+  action: 'ohos.want.action.viewData',
+  entities: ['entity.system.browsable']
+}
 ```
 
 ## arkts-no-any-unknown
 
 ### 按照业务逻辑，将代码中的any, unknown改为具体的类型
 
-```
-1. function printObj(obj: any) {
-2. console.info(obj);
-3. }
+```typescript
+function printObj(obj: any) {
+  console.info(obj);
+}
 
-5. printObj('abc'); // abc
+printObj('abc'); // abc
 ```
 
 **建议改法**
 
-```
-1. function printObj(obj: string) {
-2. console.info(obj);
-3. // ...
-4. }
-5. // ...
-6. printObj('abc'); // abc
+```typescript
+function printObj(obj: string) {
+  console.info(obj);
+  // ...
+}
+
+printObj('abc'); // abc
 ```
 
 ### 标注JSON.parse返回值类型
 
 **应用代码**
 
-```
-1. class A {
-2. v: number = 0
-3. s: string = ''
+```typescript
+class A {
+  v: number = 0
+  s: string = ''
 
-5. foo(str: string) {
-6. let tmpStr = JSON.parse(str);
-7. if (tmpStr.add != undefined) {
-8. this.v = tmpStr.v;
-9. this.s = tmpStr.s;
-10. }
-11. }
-12. }
+  foo(str: string) {
+    let tmpStr = JSON.parse(str);
+    if (tmpStr.add != undefined) {
+      this.v = tmpStr.v;
+      this.s = tmpStr.s;
+    }
+  }
+}
 ```
 
 **建议改法**
 
-```
-1. class A {
-2. public v: number = 0
-3. public s: string = ''
+```typescript
+class A {
+  public v: number = 0
+  public s: string = ''
 
-5. foo(str: string) {
-6. let tmpStr: Record<string, Object> = JSON.parse(str);
-7. if (tmpStr.add != undefined) {
-8. this.v = tmpStr.v as number;
-9. this.s = tmpStr.s as string;
-10. }
-11. }
-12. }
+  foo(str: string) {
+    let tmpStr: Record<string, Object> = JSON.parse(str);
+    if (tmpStr.add != undefined) {
+      this.v = tmpStr.v as number;
+      this.s = tmpStr.s as string;
+    }
+  }
+}
 ```
 
 ### 使用Record类型
 
 **应用代码**
 
-```
-1. function printProperties(obj: any) {
-2. console.info(obj.name);
-3. console.info(obj.value);
-4. }
+```typescript
+function printProperties(obj: any) {
+  console.info(obj.name);
+  console.info(obj.value);
+}
 ```
 
 **建议改法**
 
-```
-1. function printProperties(obj: Record<string, Object>) {
-2. console.info(obj.name as string);
-3. console.info(obj.value as string);
-4. // ...
-5. }
+```typescript
+function printProperties(obj: Record<string, Object>) {
+  console.info(obj.name as string);
+  console.info(obj.value as string);
+  // ...
+}
 ```
 
 ## arkts-no-call-signature
@@ -132,33 +132,33 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. interface I {
-2. (value: string): void;
-3. }
+```typescript
+interface I {
+  (value: string): void;
+}
 
-5. function foo(fn: I) {
-6. fn('abc');
-7. }
+function foo(fn: I) {
+  fn('abc');
+}
 
-9. foo((value: string) => {
-10. console.info(value);
-11. })
+foo((value: string) => {
+  console.info(value);
+})
 ```
 
 **建议改法**
 
-```
-1. type I = (value: string) => void
+```typescript
+type I = (value: string) => void
 
-3. function foo(fn: I) {
-4. fn('abc');
-5. }
-6. // ...
-7. foo((value: string) => {
-8. console.info(value);
-9. // ...
-10. })
+function foo(fn: I) {
+  fn('abc');
+}
+// ...
+  foo((value: string) => {
+    console.info(value);
+    // ...
+  })
 ```
 
 ## arkts-no-ctor-signatures-type
@@ -167,61 +167,61 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. class Controller {
-2. value: string = ''
+```typescript
+class Controller {
+  value: string = ''
 
-4. constructor(value: string) {
-5. this.value = value;
-6. }
-7. }
+  constructor(value: string) {
+    this.value = value;
+  }
+}
 
-9. type ControllerConstructor = {
-10. new (value: string): Controller;
-11. }
+type ControllerConstructor = {
+  new (value: string): Controller;
+}
 
-13. class testMenu {
-14. controller: ControllerConstructor = Controller
-15. createController() {
-16. if (this.controller) {
-17. return new this.controller('123');
-18. }
-19. return null;
-20. }
-21. }
+class TestMenu {
+  controller: ControllerConstructor = Controller
+  createController() {
+    if (this.controller) {
+      return new this.controller('123');
+    }
+    return null;
+  }
+}
 
-23. let t = new testMenu();
-24. console.info(t.createController()!.value);
+let t = new TestMenu();
+console.info(t.createController()!.value);
 ```
 
 **建议改法**
 
-```
-1. class Controller {
-2. public value: string = ''
+```typescript
+class Controller {
+  public value: string = ''
 
-4. constructor(value: string) {
-5. this.value = value;
-6. }
-7. }
+  constructor(value: string) {
+    this.value = value;
+  }
+}
 
-9. type ControllerConstructor = () => Controller;
+type ControllerConstructor = () => Controller;
 
-11. class TestMenu {
-12. public controller: ControllerConstructor = () => {
-13. return new Controller('abc');
-14. }
+class TestMenu {
+  public controller: ControllerConstructor = () => {
+    return new Controller('abc');
+  }
 
-16. createController() {
-17. if (this.controller) {
-18. return this.controller();
-19. }
-20. return null;
-21. }
-22. }
-23. // ...
-24. let t: TestMenu = new TestMenu();
-25. console.info(t.createController()!.value);
+  createController() {
+    if (this.controller) {
+      return this.controller();
+    }
+    return null;
+  }
+}
+// ...
+  let t: TestMenu = new TestMenu();
+  console.info(t.createController()!.value);
 ```
 
 ## arkts-no-indexed-signatures
@@ -230,22 +230,22 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. function foo1(data: { [key: string]: string }) {
-2. data['a'] = 'a';
-3. data['b'] = 'b';
-4. data['c'] = 'c';
-5. }
+```typescript
+function foo1(data: { [key: string]: string }) {
+  data['a'] = 'a';
+  data['b'] = 'b';
+  data['c'] = 'c';
+}
 ```
 
 **建议改法**
 
-```
-1. function foo1(data: Record<string, string>) {
-2. data['a'] = 'a';
-3. data['b'] = 'b';
-4. data['c'] = 'c';
-5. }
+```typescript
+function foo1(data: Record<string, string>) {
+  data['a'] = 'a';
+  data['b'] = 'b';
+  data['c'] = 'c';
+}
 ```
 
 ## arkts-no-typing-with-this
@@ -254,22 +254,22 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. class C {
-2. getInstance(): this {
-3. return this;
-4. }
-5. }
+```typescript
+class C {
+  getInstance(): this {
+    return this;
+  }
+}
 ```
 
 **建议改法**
 
-```
-1. class C {
-2. getInstance(): C {
-3. return this;
-4. }
-5. }
+```typescript
+class C {
+  getInstance(): C {
+    return this;
+  }
+}
 ```
 
 ## arkts-no-ctor-prop-decls
@@ -278,29 +278,29 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. class Person {
-2. constructor(readonly name: string) {}
+```typescript
+class Person {
+  constructor(readonly name: string) {}
 
-4. getName(): string {
-5. return this.name;
-6. }
-7. }
+  getName(): string {
+    return this.name;
+  }
+}
 ```
 
 **建议改法**
 
-```
-1. class Person {
-2. public name: string
-3. constructor(name: string) {
-4. this.name = name;
-5. }
+```typescript
+class Person {
+  public name: string
+  constructor(name: string) {
+    this.name = name;
+  }
 
-7. getName(): string {
-8. return this.name;
-9. }
-10. }
+  getName(): string {
+    return this.name;
+  }
+}
 ```
 
 ## arkts-no-ctor-signatures-iface
@@ -309,61 +309,61 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. class Controller {
-2. value: string = ''
+```typescript
+class Controller {
+  value: string = ''
 
-4. constructor(value: string) {
-5. this.value = value;
-6. }
-7. }
+  constructor(value: string) {
+    this.value = value;
+  }
+}
 
-9. interface ControllerConstructor {
-10. new (value: string): Controller;
-11. }
+interface ControllerConstructor {
+  new (value: string): Controller;
+}
 
-13. class testMenu {
-14. controller: ControllerConstructor = Controller
-15. createController() {
-16. if (this.controller) {
-17. return new this.controller('abc');
-18. }
-19. return null;
-20. }
-21. }
+class TestMenu {
+  controller: ControllerConstructor = Controller
+  createController() {
+    if (this.controller) {
+      return new this.controller('abc');
+    }
+    return null;
+  }
+}
 
-23. let t = new testMenu();
-24. console.info(t.createController()!.value);
+let t = new TestMenu();
+console.info(t.createController()!.value);
 ```
 
 **建议改法**
 
-```
-1. class Controller {
-2. public value: string = ''
+```typescript
+class Controller {
+  public value: string = ''
 
-4. constructor(value: string) {
-5. this.value = value;
-6. }
-7. }
+  constructor(value: string) {
+    this.value = value;
+  }
+}
 
-9. type ControllerConstructor = () => Controller;
+type ControllerConstructor = () => Controller;
 
-11. class TestMenu {
-12. public controller: ControllerConstructor = () => {
-13. return new Controller('abc');
-14. }
+class TestMenu {
+  public controller: ControllerConstructor = () => {
+    return new Controller('abc');
+  }
 
-16. createController() {
-17. if (this.controller) {
-18. return this.controller();
-19. }
-20. return null;
-21. }
-22. }
+  createController() {
+    if (this.controller) {
+      return this.controller();
+    }
+    return null;
+  }
+}
 
-24. let t: TestMenu = new TestMenu();
-25. console.info(t.createController()!.value);
+let t: TestMenu = new TestMenu();
+console.info(t.createController()!.value);
 ```
 
 ## arkts-no-props-by-index
@@ -372,20 +372,20 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. function foo2(params: Object) {
-2. let funNum: number = params['funNum'];
-3. let target: string = params['target'];
-4. }
+```typescript
+function foo2(params: Object) {
+  let funNum: number = params['funNum'];
+  let target: string = params['target'];
+}
 ```
 
 **建议改法**
 
-```
-1. function foo2(params: Record<string, string | number>) {
-2. let funNum: number = params['funNum'] as number;
-3. let target: string = params['target'] as string;
-4. }
+```typescript
+function foo2(params: Record<string, string | number>) {
+  let funNum: number = params['funNum'] as number;
+  let target: string = params['target'] as string;
+}
 ```
 
 ## arkts-no-inferred-generic-params
@@ -394,31 +394,31 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. class A {
-2. str: string = ''
-3. }
-4. class B extends A {}
-5. class C extends A {}
+```typescript
+class A {
+  str: string = ''
+}
+class B extends A {}
+class C extends A {}
 
-7. let arr: Array<A> = [];
+let arr: Array<A> = [];
 
-9. let originMenusMap:Map<string, C> = new Map(arr.map(item => [item.str, (item instanceof C) ? item: null]));
+let originMenusMap:Map<string, C> = new Map(arr.map(item => [item.str, (item instanceof C) ? item: null]));
 ```
 
 **建议改法**
 
-```
-1. class A {
-2. public str: string = ''
-3. }
-4. class B extends A {}
-5. class C extends A {}
+```typescript
+class A {
+  public str: string = ''
+}
+class B extends A {}
+class C extends A {}
 
-7. let arr: A[] = [];
+let arr: A[] = [];
 
-9. let originMenusMap: Map<string, C | null> = new Map<string, C | null>
-10. (arr.map<[string, C | null]>(item => [item.str, (item instanceof C) ? item: null]));
+let originMenusMap: Map<string, C | null> = new Map<string, C | null>
+(arr.map<[string, C | null]>(item => [item.str, (item instanceof C) ? item: null]));
 ```
 
 **原因**
@@ -431,14 +431,14 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. let regex: RegExp = /\s*/g;
+```typescript
+let regex: RegExp = /\s*/g;
 ```
 
 **建议改法**
 
-```
-1. let regexp: RegExp = new RegExp('\\s*','g');
+```typescript
+let regexp: RegExp = new RegExp('\\s*','g');
 ```
 
 **原因**
@@ -451,86 +451,86 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. const area = { // 没有写明类型 不方便维护
-2. pixels: new ArrayBuffer(8),
-3. offset: 0,
-4. stride: 8,
-5. region: { size: { height: 1,width:2 }, x: 0, y: 0 }
-6. }
+```typescript
+const area = { // 没有写明类型 不方便维护
+  pixels: new ArrayBuffer(8),
+  offset: 0,
+  stride: 8,
+  region: { size: { height: 1,width:2 }, x: 0, y: 0 }
+}
 ```
 
 **建议改法**
 
-```
-1. import { image } from '@kit.ImageKit';
-2. // ...
-3. const area: image.PositionArea = { // 写明具体类型
-4. pixels: new ArrayBuffer(8),
-5. offset: 0,
-6. stride: 8,
-7. region: { size: { height: 1, width: 2 }, x: 0, y: 0 }
-8. }
+```typescript
+import { image } from '@kit.ImageKit';
+// ...
+const area: image.PositionArea = { // 写明具体类型
+  pixels: new ArrayBuffer(8),
+  offset: 0,
+  stride: 8,
+  region: { size: { height: 1, width: 2 }, x: 0, y: 0 }
+}
 ```
 
 ### 用class为object literal标注类型，要求class的构造函数无参数
 
 **应用代码**
 
-```
-1. class Test {
-2. value: number = 1
-3. // 有构造函数
-4. constructor(value: number) {
-5. this.value = value;
-6. }
-7. }
+```typescript
+class Test {
+  value: number = 1
+  // 有构造函数
+  constructor(value: number) {
+    this.value = value;
+  }
+}
 
-9. let t: Test = { value: 2 };
+let t: Test = { value: 2 };
 ```
 
 **建议改法1**
 
-```
-1. // 去除构造函数
-2. class Test {
-3. public value: number = 1
-4. }
+```typescript
+// 去除构造函数
+class Test {
+  public value: number = 1
+}
 
-6. let t: Test = { value: 2 };
+let t: Test = { value: 2 };
 ```
 
 **建议改法2**
 
-```
-1. // 使用new
-2. class Test {
-3. public value: number = 1
+```typescript
+// 使用new
+class Test {
+  public value: number = 1
 
-5. constructor(value: number) {
-6. this.value = value;
-7. }
-8. }
+  constructor(value: number) {
+    this.value = value;
+  }
+}
 
-10. let t: Test = new Test(2);
+let t: Test = new Test(2);
 ```
 
 **原因**
 
-```
-1. class C {
-2. value: number = 1
+```typescript
+class C {
+  value: number = 1
 
-4. constructor(n: number) {
-5. if (n < 0) {
-6. throw new Error('Negative');
-7. }
-8. this.value = n;
-9. }
-10. }
+  constructor(n: number) {
+    if (n < 0) {
+      throw new Error('Negative');
+    }
+    this.value = n;
+  }
+}
 
-12. let s: C = new C(-2);   // 抛出异常
-13. let t: C = { value: -2 }; // ArkTS 不支持
+let s: C = new C(-2);   // 抛出异常
+let t: C = { value: -2 }; // ArkTS不支持
 ```
 
 如果允许使用C来标注object literal的类型，变量t会导致行为的二义性。ArkTS禁止通过object literal绕过这一行为。
@@ -539,142 +539,142 @@ content_hash: sha256:149f52c3605db6ecb5ca1ae57ea6a89ddb185340226b13bbb7bf224a2a6
 
 **应用代码**
 
-```
-1. class Test {
-2. value: number = 0
-3. }
+```typescript
+class Test {
+  value: number = 0
+}
 
-5. let arr: Test[] = [
-6. {
-7. 'value': 1
-8. },
-9. {
-10. 'value': 2
-11. },
-12. {
-13. 'value': 3
-14. }
-15. ]
+let arr: Test[] = [
+  {
+    'value': 1
+  },
+  {
+    'value': 2
+  },
+  {
+    'value': 3
+  }
+]
 ```
 
 **建议改法**
 
-```
-1. class Test {
-2. public value: number = 0
-3. }
-4. let arr: Test[] = [
-5. {
-6. value: 1
-7. },
-8. {
-9. value: 2
-10. },
-11. {
-12. value: 3
-13. }
-14. ]
+```typescript
+class Test {
+  public value: number = 0
+}
+let arr: Test[] = [
+  {
+    value: 1
+  },
+  {
+    value: 2
+  },
+  {
+    value: 3
+  }
+]
 ```
 
 ### 使用Record类型为object literal标注类型，要求使用字符串作为object literal的key
 
 **应用代码**
 
-```
-1. let obj: Record<string, number | string> = {
-2. value: 123,
-3. name: 'abc'
-4. }
+```typescript
+let obj: Record<string, number | string> = {
+  value: 123,
+  name: 'abc'
+}
 ```
 
 **建议改法**
 
-```
-1. let obj: Record<string, number | string> = {
-2. 'value': 123,
-3. 'name': 'abc'
-4. }
+```typescript
+let obj: Record<string, number | string> = {
+  'value': 123,
+  'name': 'abc'
+}
 ```
 
 ### 函数参数类型包含index signature
 
 **应用代码**
 
-```
-1. function foo3(obj: { [key: string]: string}): string {
-2. if (obj != undefined && obj != null) {
-3. return obj.value1 + obj.value2;
-4. }
-5. return '';
-6. }
+```typescript
+function foo3(obj: { [key: string]: string}): string {
+  if (obj != undefined && obj != null) {
+    return obj.value1 + obj.value2;
+  }
+  return '';
+}
 ```
 
 **建议改法**
 
-```
-1. function foo(obj: Record<string, string>): string {
-2. if (obj != undefined && obj != null) {
-3. return obj.value1 + obj.value2;
-4. }
-5. return '';
-6. }
+```typescript
+function foo(obj: Record<string, string>): string {
+  if (obj != undefined && obj != null) {
+    return obj.value1 + obj.value2;
+  }
+  return '';
+}
 ```
 
 ### 函数实参使用了object literal
 
 **应用代码**
 
-```
-1. (fn) => {
-2. fn({ value: 123, name:'' });
-3. }
+```typescript
+(fn) => {
+  fn({ value: 123, name:'' });
+}
 ```
 
 **建议改法**
 
-```
-1. class T {
-2. public value: number = 0
-3. public name: string = ''
-4. }
+```typescript
+class T {
+  public value: number = 0
+  public name: string = ''
+}
 
-6. (fn: (v: T) => void) => {
-7. fn({ value: 123, name: '' });
-8. }
+(fn: (v: T) => void) => {
+  fn({ value: 123, name: '' });
+}
 ```
 
 ### class/interface 中包含方法
 
 **应用代码**
 
-```
-1. interface T {
-2. foo(value: number): number
-3. }
+```typescript
+interface T {
+  foo(value: number): number
+}
 
-5. let t:T = { foo: (value) => { return value } };
+let t:T = { foo: (value) => { return value } };
 ```
 
 **建议改法1**
 
-```
-1. interface T {
-2. foo: (value: number) => number
-3. }
+```typescript
+interface T {
+  foo: (value: number) => number
+}
 
-5. let t:T = { foo: (value) => { return value } };
+let t:T = { foo: (value) => { return value } };
 ```
 
 **建议改法2**
 
-```
-1. class T {
-2. public foo: (value: number) => number = (value: number) => {
-3. return value;
-4. }
-5. }
+```typescript
+class T {
+  public foo: (value: number) => number = (value: number) => {
+    return value;
+  }
+}
 
-7. let t:T = new T();
+let t:T = new T();
 ```
 
 **原因**
@@ -685,81 +685,81 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. export default {
-2. onCreate() {
-3. // ...
-4. },
-5. onDestroy() {
-6. // ...
-7. }
-8. }
+```typescript
+export default {
+  onCreate() {
+    // ...
+  },
+  onDestroy() {
+    // ...
+  }
+}
 ```
 
 **建议改法**
 
-```
-1. class Test {
-2. onCreate() {
-3. // ...
-4. }
-5. onDestroy() {
-6. // ...
-7. }
-8. }
+```typescript
+class Test {
+  onCreate() {
+    // ...
+  }
+  onDestroy() {
+    // ...
+  }
+}
 
-10. export default new Test()
+export default new Test()
 ```
 
 ### 通过导入namespace获取类型
 
 **应用代码**
 
+```typescript
+// test.d.ets
+declare namespace test {
+  interface I {
+    id: string;
+    type: number;
+  }
+
+  function foo(name: string, option: I): void;
+}
+
+export default test;
 ```
-1. // test.d.ets
-2. declare namespace test {
-3. interface I {
-4. id: string;
-5. type: number;
-6. }
 
-8. function foo(name: string, option: I): void;
-9. }
+```typescript
+// app.ets
+import test from './test';
 
-11. export default test;
-```
-
-```
-1. // app.ets
-2. import test from './test';
-
-4. let option = { id: '', type: 0 };
-5. test.foo('', option);
+let option = { id: '', type: 0 };
+test.foo('', option);
 ```
 
 **建议改法**
 
+```typescript
+// test.d.ets
+declare namespace Test {
+  interface I {
+    id: string;
+    type: number;
+  }
+
+  function foo(name: string, option: I): void;
+  function foo(): I;
+}
+
+export default Test;
 ```
-1. // test.d.ets
-2. declare namespace Test {
-3. interface I {
-4. id: string;
-5. type: number;
-6. }
 
-8. function foo(name: string, option: I): void;
-9. function foo(): I;
-10. }
+```typescript
+// app.ets
+import test from './test';
 
-12. export default Test;
-```
-
-```
-1. // app.ets
-2. import test from './test';
-
-4. let option = { id: '', type: 0 };
-5. test.foo('', option);
+let option = { id: '', type: 0 };
+test.foo('', option);
 ```
 
 **原因**
@@ -772,26 +772,26 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. function emit(event: string, ...args: Object[]): void {}
+```typescript
+function emit(event: string, ...args: Object[]): void {}
 
-3. emit('', {
-4. 'action': 11,
-5. 'outers': false
-6. });
+emit('', {
+  'action': 11,
+  'outers': false
+});
 ```
 
 **建议改法**
 
-```
-1. function emit(event: string, ...args: Object[]): void {}
+```typescript
+function emit(event: string, ...args: Object[]): void {}
 
-3. let emitArg: Record<string, number | boolean> = {
-4. 'action': 11,
-5. 'outers': false
-6. }
+let emitArg: Record<string, number | boolean> = {
+  'action': 11,
+  'outers': false
+}
 
-8. emit('', emitArg);
+emit('', emitArg);
 ```
 
 ## arkts-no-obj-literals-as-types
@@ -800,17 +800,17 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. type Person = { name: string, age: number }
+```typescript
+type Person = { name: string, age: number }
 ```
 
 **建议改法**
 
-```
-1. interface Person {
-2. name: string,
-3. age: number
-4. }
+```typescript
+interface Person {
+  name: string,
+  age: number
+}
 ```
 
 ## arkts-no-noninferrable-arr-literals
@@ -819,29 +819,29 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. let permissionList = [
-2. { name: '设备信息', value: '用于分析设备的续航、通话、上网、SIM卡故障等' },
-3. { name: '麦克风', value: '用于反馈问题单时增加语音' },
-4. { name: '存储', value: '用于反馈问题单时增加本地文件附件' }
-5. ]
+```typescript
+let permissionList = [
+  { name: '设备信息', value: '用于分析设备的续航、通话、上网、SIM卡故障等' },
+  { name: '麦克风', value: '用于反馈问题单时增加语音' },
+  { name: '存储', value: '用于反馈问题单时增加本地文件附件' }
+]
 ```
 
 **建议改法**
 
 为对象字面量声明类型。
 
-```
-1. class PermissionItem {
-2. public name?: string
-3. public value?: string
-4. }
+```typescript
+class PermissionItem {
+  public name?: string
+  public value?: string
+}
 
-6. let permissionList: PermissionItem[] = [
-7. { name: '设备信息', value: '用于分析设备的续航、通话、上网、SIM卡故障等' },
-8. { name: '麦克风', value: '用于反馈问题单时增加语音' },
-9. { name: '存储', value: '用于反馈问题单时增加本地文件附件' }
-10. ]
+let permissionList: PermissionItem[] = [
+  { name: '设备信息', value: '用于分析设备的续航、通话、上网、SIM卡故障等' },
+  { name: '麦克风', value: '用于反馈问题单时增加语音' },
+  { name: '存储', value: '用于反馈问题单时增加本地文件附件' }
+]
 ```
 
 ## arkts-no-method-reassignment
@@ -850,37 +850,37 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. class C {
-2. add(left: number, right: number): number {
-3. return left + right;
-4. }
-5. }
+```typescript
+class C {
+  add(left: number, right: number): number {
+    return left + right;
+  }
+}
 
-7. function sub(left: number, right: number): number {
-8. return left - right;
-9. }
+function sub(left: number, right: number): number {
+  return left - right;
+}
 
-11. let c1 = new C();
-12. c1.add = sub;
+let c1 = new C();
+c1.add = sub;
 ```
 
 **建议改法**
 
-```
-1. class C3 {
-2. public add: (left: number, right: number) => number =
-3. (left: number, right: number) => {
-4. return left + right;
-5. }
-6. }
+```typescript
+class C3 {
+  public add: (left: number, right: number) => number =
+    (left: number, right: number) => {
+      return left + right;
+    }
+}
 
-8. function sub(left: number, right: number): number {
-9. return left - right;
-10. }
+function sub(left: number, right: number): number {
+  return left - right;
+}
 
-12. let c1 = new C3();
-13. c1.add = sub;
+let c1 = new C3();
+c1.add = sub;
 ```
 
 ## arkts-no-polymorphic-unops
@@ -889,20 +889,20 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. let a = +'5'; // 使用操作符隐式转换
-2. let b = -'5';
-3. let c = ~'5';
-4. let d = +'string';
+```typescript
+let a = +'5'; // 使用操作符隐式转换
+let b = -'5';
+let c = ~'5';
+let d = +'string';
 ```
 
 **建议改法**
 
-```
-1. let a = Number.parseInt('5'); // 使用Number.parseInt显示转换
-2. let b = -Number.parseInt('5');
-3. let c = ~Number.parseInt('5');
-4. let d = new Number('123');
+```typescript
+let a = Number.parseInt('5'); // 使用Number.parseInt显式转换
+let b = -Number.parseInt('5');
+let c = ~Number.parseInt('5');
+let d = new Number('123');
 ```
 
 ## arkts-no-type-query
@@ -911,36 +911,36 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. // module1.ts
-2. class C {
-3. value: number = 0
-4. }
+```typescript
+// module1.ts
+class C {
+  value: number = 0
+}
 
-6. export let c = new C()
+export let c = new C()
 ```
 
-```
-1. // module2.ts
-2. import { c } from './module1'
-3. let t: typeof c = { value: 123 };
+```typescript
+// module2.ts
+import { c } from './module1'
+let t: typeof c = { value: 123 };
 ```
 
 **建议改法**
 
-```
-1. // 文件名：module1.ets
-2. class C {
-3. public value: number = 0
-4. }
+```typescript
+// module1.ets
+class C {
+  public value: number = 0
+}
 
-6. export { C }
+export { C }
 ```
 
-```
-1. // 文件名：module2.ets
-2. import { C } from './module1'
-3. let t: C = { value: 123 };
+```typescript
+// module2.ets
+import { C } from './module1'
+let t: C = { value: 123 };
 ```
 
 ## arkts-no-in
@@ -949,23 +949,23 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. function test(str: string, obj: Record<string, Object>) {
-2. return str in obj;
-3. }
+```typescript
+function test(str: string, obj: Record<string, Object>) {
+  return str in obj;
+}
 ```
 
 **建议改法**
 
-```
-1. function test(str: string, obj: Record<string, Object>) {
-2. for (let i of Object.keys(obj)) {
-3. if (i == str) {
-4. return true;
-5. }
-6. }
-7. return false;
-8. }
+```typescript
+function test(str: string, obj: Record<string, Object>) {
+  for (let i of Object.keys(obj)) {
+    if (i == str) {
+      return true;
+    }
+  }
+  return false;
+}
 ```
 
 ## arkts-no-destruct-assignment
@@ -974,28 +974,28 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. let map = new Map<string, string>([['a', 'a'], ['b', 'b']]);
-2. for (let [key, value] of map) {
-3. console.info(key);
-4. console.info(value);
-5. }
+```typescript
+let map = new Map<string, string>([['a', 'a'], ['b', 'b']]);
+for (let [key, value] of map) {
+  console.info(key);
+  console.info(value);
+}
 ```
 
 **建议改法**
 
 使用数组。
 
-```
-1. let map = new Map<string, string>([['a', 'a'], ['b', 'b']]);
-2. // ...
-3. for (let arr of map) {
-4. let key = arr[0];
-5. let value = arr[1];
-6. console.info(key);
-7. console.info(value);
-8. // ...
-9. }
+```typescript
+let map = new Map<string, string>([['a', 'a'], ['b', 'b']]);
+// ...
+for (let arr of map) {
+  let key = arr[0];
+  let value = arr[1];
+  console.info(key);
+  console.info(value);
+  // ...
+}
 ```
 
 ## arkts-no-types-in-catch
@@ -1004,27 +1004,27 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit'
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit'
 
-3. try {
-4. // ...
-5. } catch (e: BusinessError) {
-6. console.error(e.message, e.code);
-7. }
+try {
+  // ...
+} catch (e: BusinessError) {
+  console.error(e.message, e.code);
+}
 ```
 
 **建议改法**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit'
-2. // ...
-3. try {
-4. // ...
-5. } catch (error) {
-6. let e: BusinessError = error as BusinessError;
-7. console.error(e.message, e.code);
-8. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit'
+// ...
+try {
+  // ...
+} catch (error) {
+  let e: BusinessError = error as BusinessError;
+  console.error(e.message, e.code);
+}
 ```
 
 ## arkts-no-for-in
@@ -1033,32 +1033,32 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. interface Person {
-2. [name: string]: string
-3. }
-4. let p: Person = {
-5. name: 'tom',
-6. age: '18'
-7. };
+```typescript
+interface Person {
+  [name: string]: string
+}
+let p: Person = {
+  name: 'tom',
+  age: '18'
+};
 
-9. for (let t in p) {
-10. console.info(p[t]);  // info: "tom", "18"
-11. }
+for (let t in p) {
+  console.info(p[t]);  // info: "tom", "18"
+}
 ```
 
 **建议改法**
 
-```
-1. let p: Record<string, string> = {
-2. 'name': 'tom',
-3. 'age': '18'
-4. };
-5. // ...
-6. for (let ele of Object.entries(p)) {
-7. console.info(ele[1]); // info: "tom", "18"
-8. // ...
-9. }
+```typescript
+let p: Record<string, string> = {
+  'name': 'tom',
+  'age': '18'
+};
+// ...
+for (let ele of Object.entries(p)) {
+  console.info(ele[1]); // info: "tom", "18"
+  // ...
+}
 ```
 
 ## arkts-no-mapped-types
@@ -1067,27 +1067,27 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. class C {
-2. a: number = 0
-3. b: number = 0
-4. c: number = 0
-5. }
-6. type OptionsFlags = {
-7. [Property in keyof C]: string
-8. }
+```typescript
+class C {
+  a: number = 0
+  b: number = 0
+  c: number = 0
+}
+type OptionsFlags = {
+  [Property in keyof C]: string
+}
 ```
 
 **建议改法**
 
-```
-1. class C {
-2. public a: number = 0
-3. public b: number = 0
-4. public c: number = 0
-5. }
+```typescript
+class C {
+  public a: number = 0
+  public b: number = 0
+  public c: number = 0
+}
 
-7. type OptionsFlags = Record<keyof C, string>
+type OptionsFlags = Record<keyof C, string>
 ```
 
 ## arkts-limited-throw
@@ -1096,22 +1096,22 @@ class/interface中声明的方法应被所有实例共享。ArkTS不支持通过
 
 **应用代码**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit'
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit'
 
-3. function ThrowError(error: BusinessError) {
-4. throw error;
-5. }
+function ThrowError(error: BusinessError) {
+  throw error;
+}
 ```
 
 **建议改法**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit'
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit'
 
-3. function throwError(error: BusinessError) {
-4. throw error as Error;
-5. }
+function throwError(error: BusinessError) {
+  throw error as Error;
+}
 ```
 
 **原因**
@@ -1124,92 +1124,92 @@ throw语句中值的类型必须为Error或者其继承类，如果继承类是�
 
 **应用代码**
 
-```
-1. function foo4() {
-2. console.info(this.value);
-3. }
+```typescript
+function foo4() {
+  console.info(this.value);
+}
 
-5. let obj = { value: 'abc' };
-6. foo.apply(obj);
+let obj = { value: 'abc' };
+foo4.apply(obj);
 ```
 
 **建议改法1**
 
-使用类的方法实现,如果该方法被多个类使用,可以考虑采用继承的机制。
+使用类的方法实现，如果该方法被多个类使用，可以考虑采用继承的机制。
 
-```
-1. class Test {
-2. public value: string = ''
-3. constructor (value: string) {
-4. this.value = value
-5. }
+```typescript
+class Test {
+  public value: string = ''
+  constructor (value: string) {
+    this.value = value
+  }
 
-7. foo() {
-8. console.info(this.value);
-9. // ...
-10. }
-11. }
+  foo() {
+    console.info(this.value);
+    // ...
+  }
+}
 
-13. let obj: Test = new Test('abc');
-14. obj.foo();
+let obj: Test = new Test('abc');
+obj.foo();
 ```
 
 **建议改法2**
 
 将this作为参数传入。
 
-```
-1. function foo3(obj: Test) {
-2. console.info(obj.value);
-3. // ...
-4. }
-5. // ...
-6. class Test {
-7. public value: string = ''
-8. }
-9. let obj1: Test = { value: 'abc' };
-10. foo3(obj1);
+```typescript
+function foo3(obj: Test) {
+  console.info(obj.value);
+  // ...
+}
+// ...
+class Test {
+  public value: string = ''
+}
+let obj1: Test = { value: 'abc' };
+foo3(obj1);
 ```
 
 **建议改法3**
 
 将属性作为参数传入。
 
-```
-1. function foo5(value: string) {
-2. console.info(value);
-3. }
+```typescript
+function foo5(value: string) {
+  console.info(value);
+}
 
-5. class Test1 {
-6. value: string = ''
-7. }
+class Test1 {
+  value: string = ''
+}
 
-9. let obj2: Test1 = { value: 'abc' };
-10. foo5(obj2.value);
+let obj2: Test1 = { value: 'abc' };
+foo5(obj2.value);
 ```
 
 ### class的静态方法内使用this
 
 **应用代码**
 
-```
-1. class Test {
-2. static value: number = 123
-3. static foo(): number {
-4. return this.value
-5. }
-6. }
+```typescript
+class Test {
+  static value: number = 123
+  static foo(): number {
+    return this.value
+  }
+}
 ```
 
 **建议改法**
 
-```
-1. class Test {
-2. public static value: number = 123
-3. public static foo(): number {
-4. return Test.value
-5. }
-6. }
+```typescript
+class Test {
+  public static value: number = 123
+  public static foo(): number {
+    return Test.value
+  }
+}
 ```
 
 ## arkts-no-spread
@@ -1218,51 +1218,51 @@ throw语句中值的类型必须为Error或者其继承类，如果继承类是�
 
 **应用代码**
 
-```
-1. // test.d.ets
-2. declare namespace test {
-3. interface I {
-4. id: string;
-5. type: number;
-6. }
+```typescript
+// test.d.ets
+declare namespace test {
+  interface I {
+    id: string;
+    type: number;
+  }
 
-8. function foo(): I;
-9. }
+  function foo(): I;
+}
 
-11. export default test
+export default test
 
-13. // app.ets
-14. import test from 'test';
+// app.ets
+import test from 'test';
 
-16. let t: test.I = {
-17. ...test.foo(),
-18. type: 0
-19. }
+let t: test.I = {
+  ...test.foo(),
+  type: 0
+}
 ```
 
 **建议改法**
 
+```typescript
+// test.d.ets
+declare namespace Test {
+  interface I {
+    id: string;
+    type: number;
+  }
+
+  function foo(name: string, option: I): void;
+  function foo(): I;
+}
+
+export default Test;
 ```
-1. // test.d.ets
-2. declare namespace Test {
-3. interface I {
-4. id: string;
-5. type: number;
-6. }
 
-8. function foo(name: string, option: I): void;
-9. function foo(): I;
-10. }
+```typescript
+// app.ets
+import test from './test';
 
-12. export default Test;
-```
-
-```
-1. // app.ets
-2. import test from './test';
-
-4. let t: test.I = test.foo();
-5. t.type = 0;
+let t: test.I = test.foo();
+t.type = 0;
 ```
 
 **原因**
@@ -1275,131 +1275,131 @@ ArkTS中，对象布局在编译期是确定的。如果需要将一个对象的
 
 **应用代码**
 
-```
-1. class Controller {
-2. value: string = ''
-3. constructor(value: string) {
-4. this.value = value
-5. }
-6. }
+```typescript
+class Controller {
+  value: string = ''
+  constructor(value: string) {
+    this.value = value
+  }
+}
 
-8. type ControllerConstructor = new (value: string) => Controller;
+type ControllerConstructor = new (value: string) => Controller;
 
-10. class testMenu {
-11. controller: ControllerConstructor = Controller
-12. createController() {
-13. if (this.controller) {
-14. return new this.controller('abc');
-15. }
-16. return null;
-17. }
-18. }
+class TestMenu {
+  controller: ControllerConstructor = Controller
+  createController() {
+    if (this.controller) {
+      return new this.controller('abc');
+    }
+    return null;
+  }
+}
 
-20. let t = new testMenu()
-21. console.info(t.createController()!.value)
+let t = new TestMenu();
+console.info(t.createController()!.value);
 ```
 
 **建议改法**
 
-```
-1. class Controller {
-2. public value: string = ''
-3. constructor(value: string) {
-4. this.value = value;
-5. }
-6. }
+```typescript
+class Controller {
+  public value: string = ''
+  constructor(value: string) {
+    this.value = value;
+  }
+}
 
-8. type ControllerConstructor = () => Controller;
+type ControllerConstructor = () => Controller;
 
-10. class TestMenu {
-11. public controller: ControllerConstructor = () => { return new Controller('abc') }
-12. createController() {
-13. if (this.controller) {
-14. return this.controller();
-15. }
-16. return null;
-17. }
-18. }
+class TestMenu {
+  public controller: ControllerConstructor = () => { return new Controller('abc') }
+  createController() {
+    if (this.controller) {
+      return this.controller();
+    }
+    return null;
+  }
+}
 
-20. let t: TestMenu = new TestMenu();
-21. console.info(t.createController()!.value);
+let t: TestMenu = new TestMenu();
+console.info(t.createController()!.value);
 ```
 
 ## arkts-no-globalthis
 
 ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只能通过查找方式访问其属性，导致额外性能开销。另一方面，无法为globalThis的属性标记类型，无法保证操作的安全性和高性能。
 
-说明
+**说明** 
 
 1. 建议按照业务逻辑根据import/export语法实现数据在不同模块的传递。
 2. 必要情况下，可以通过构造的**单例对象**来实现全局对象的功能。（不能在har中定义单例对象，har在打包时会在不同的hap中打包两份，无法实现单例。）
 
 **构造单例对象**
 
-```
-1. // 构造单例对象
-2. export class GlobalContext {
-3. private constructor() {}
-4. private static instance: GlobalContext;
-5. private _objects = new Map<string, Object>();
+```typescript
+// 构造单例对象
+export class GlobalContext {
+  private constructor() {}
+  private static instance: GlobalContext;
+  private _objects = new Map<string, Object>();
 
-7. public static getContext(): GlobalContext {
-8. if (!GlobalContext.instance) {
-9. GlobalContext.instance = new GlobalContext();
-10. }
-11. return GlobalContext.instance;
-12. }
+  public static getContext(): GlobalContext {
+    if (!GlobalContext.instance) {
+      GlobalContext.instance = new GlobalContext();
+    }
+    return GlobalContext.instance;
+  }
 
-14. getObject(value: string): Object | undefined {
-15. return this._objects.get(value);
-16. }
+  getObject(value: string): Object | undefined {
+    return this._objects.get(value);
+  }
 
-18. setObject(key: string, objectClass: Object): void {
-19. this._objects.set(key, objectClass);
-20. }
-21. }
+  setObject(key: string, objectClass: Object): void {
+    this._objects.set(key, objectClass);
+  }
+}
 ```
 
 **应用代码**
 
-```
-1. // file1.ts
+```typescript
+// file1.ts
 
-3. export class Test {
-4. value: string = '';
-5. foo(): void {
-6. globalThis.value = this.value;
-7. }
-8. }
+export class Test {
+  value: string = '';
+  foo(): void {
+    globalThis.value = this.value;
+  }
+}
 ```
 
-```
-1. // file2.ts
+```typescript
+// file2.ts
 
-3. globalThis.value;
+globalThis.value;
 ```
 
 **建议改法**
 
+```typescript
+// file1.ets
+
+import { GlobalContext } from './GlobalContext'
+
+export class Test {
+  public value: string = '';
+  foo(): void {
+    GlobalContext.getContext().setObject('value', this.value);
+  }
+}
 ```
-1. // file1.ets
 
-3. import { GlobalContext } from './GlobalContext'
+```typescript
+// file2.ets
 
-5. export class Test {
-6. public value: string = '';
-7. foo(): void {
-8. GlobalContext.getContext().setObject('value', this.value);
-9. }
-10. }
-```
+import { GlobalContext } from './GlobalContext'
 
-```
-1. // file2.ets
-
-3. import { GlobalContext } from './GlobalContext'
-
-5. GlobalContext.getContext().getObject('value');
+GlobalContext.getContext().getObject('value');
 ```
 
 ## arkts-no-func-apply-bind-call
@@ -1408,129 +1408,129 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 **应用代码**
 
-```
-1. let arr: number[] = [1, 2, 3, 4];
-2. let str = String.fromCharCode.apply(null, Array.from(arr));
+```typescript
+let arr: number[] = [1, 2, 3, 4];
+let str = String.fromCharCode.apply(null, Array.from(arr));
 ```
 
 **建议改法**
 
-```
-1. let arr: number[] = [1, 2, 3, 4];
-2. let str = String.fromCharCode(...Array.from(arr));
+```typescript
+let arr: number[] = [1, 2, 3, 4];
+let str = String.fromCharCode(...Array.from(arr));
 ```
 
 ### bind定义方法
 
 **应用代码**
 
-```
-1. class A {
-2. value: string = ''
-3. foo: Function = () => {}
-4. }
+```typescript
+class A {
+  value: string = ''
+  foo: Function = () => {}
+}
 
-6. class Test {
-7. value: string = '1234'
-8. obj: A = {
-9. value: this.value,
-10. foo: this.foo.bind(this)
-11. }
+class Test {
+  value: string = '1234'
+  obj: A = {
+    value: this.value,
+    foo: this.foo.bind(this)
+  }
 
-13. foo() {
-14. console.info(this.value);
-15. }
-16. }
+  foo() {
+    console.info(this.value);
+  }
+}
 ```
 
 **建议改法1**
 
-```
-1. class A {
-2. public value: string = ''
-3. public foo: Function = () => {}
-4. }
+```typescript
+class A {
+  public value: string = ''
+  public foo: Function = () => {}
+}
 
-6. class Test {
-7. public value: string = '1234'
-8. public obj: A = {
-9. value: this.value,
-10. foo: (): void => this.foo()
-11. }
+class Test {
+  public value: string = '1234'
+  public obj: A = {
+    value: this.value,
+    foo: (): void => this.foo()
+  }
 
-13. foo() {
-14. console.info(this.value);
-15. }
-16. }
+  foo() {
+    console.info(this.value);
+  }
+}
 ```
 
 **建议改法2**
 
-```
-1. class A {
-2. public value: string = ''
-3. public foo: Function = () => {}
-4. }
+```typescript
+class A {
+  public value: string = ''
+  public foo: Function = () => {}
+}
 
-6. class Test {
-7. public value: string = '1234'
-8. public foo: () => void = () => {
-9. console.info(this.value);
-10. }
-11. public obj: A = {
-12. value: this.value,
-13. foo: this.foo
-14. }
-15. }
+class Test {
+  public value: string = '1234'
+  public foo: () => void = () => {
+    console.info(this.value);
+  }
+  public obj: A = {
+    value: this.value,
+    foo: this.foo
+  }
+}
 ```
 
 ### 使用apply
 
 **应用代码**
 
-```
-1. class A {
-2. value: string;
-3. constructor (value: string) {
-4. this.value = value;
-5. }
+```typescript
+class A {
+  value: string;
+  constructor (value: string) {
+    this.value = value;
+  }
 
-7. foo() {
-8. console.info(this.value);
-9. }
-10. }
+  foo() {
+    console.info(this.value);
+  }
+}
 
-12. let a1 = new A('1');
-13. let a2 = new A('2');
+let a1 = new A('1');
+let a2 = new A('2');
 
-15. a1.foo();
-16. a1.foo.apply(a2);
+a1.foo();
+a1.foo.apply(a2);
 ```
 
 **建议改法**
 
-```
-1. class A {
-2. public value: string;
-3. constructor (value: string) {
-4. this.value = value;
-5. }
+```typescript
+class A {
+  public value: string;
+  constructor (value: string) {
+    this.value = value;
+  }
 
-7. foo() {
-8. this.fooApply(this);
-9. }
+  foo() {
+    this.fooApply(this);
+  }
 
-11. fooApply(a: A) {
-12. console.info(a.value);
-13. // ...
-14. }
-15. }
+  fooApply(a: A) {
+    console.info(a.value);
+    // ...
+  }
+}
 
-17. let a1 = new A('1');
-18. let a2 = new A('2');
+let a1 = new A('1');
+let a2 = new A('2');
 
-20. a1.foo();
-21. a1.fooApply(a2);
+a1.foo();
+a1.fooApply(a2);
 ```
 
 ## arkts-limited-stdlib
@@ -1539,29 +1539,29 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 **应用代码**
 
-```
-1. let entries = new Map([
-2. ['foo', 123],
-3. ['bar', 456]
-4. ]);
+```typescript
+let entries = new Map([
+  ['foo', 123],
+  ['bar', 456]
+]);
 
-6. let obj = Object.fromEntries(entries);
+let obj = Object.fromEntries(entries);
 ```
 
 **建议改法**
 
-```
-1. let entries = new Map([
-2. ['foo', 123],
-3. ['bar', 456]
-4. ]);
+```typescript
+let entries = new Map([
+  ['foo', 123],
+  ['bar', 456]
+]);
 
-6. let obj: Record<string, Object> = {};
-7. entries.forEach((value, key) => {
-8. if (key != undefined && key != null) {
-9. obj[key] = value;
-10. }
-11. })
+let obj: Record<string, Object> = {};
+entries.forEach((value, key) => {
+  if (key != undefined && key != null) {
+    obj[key] = value;
+  }
+})
 ```
 
 ## 严格模式检查(StrictModeError)
@@ -1570,86 +1570,84 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 **应用代码**
 
-```
-1. interface I {
-2. name:string
-3. }
+```typescript
+interface I {
+  name: string;
+}
 
-5. class A {}
+class A {}
 
-7. class Test {
-8. a: number;
-9. b: string;
-10. c: boolean;
-11. d: I;
-12. e: A;
-13. }
+class Test {
+  a: number;
+  b: string;
+  c: boolean;
+  d: I;
+  e: A;
+}
 ```
 
 **建议改法**
 
-```
-1. {
-2. interface I {
-3. name:string
-4. }
+```typescript
+interface I {
+  name: string;
+}
 
-6. class A {}
+class A {}
 
-8. class Test {
-9. public a: number;
-10. public b: string;
-11. public c: boolean;
-12. public d: I = { name:'abc' };
-13. public e: A | null = null;
-14. constructor(a:number, b:string, c:boolean) {
-15. this.a = a;
-16. this.b = b;
-17. this.c = c;
-18. }
-19. }
-20. }
+class Test {
+  public a: number;
+  public b: string;
+  public c: boolean;
+  public d: I = { name:'abc' };
+  public e: A | null = null;
+  constructor(a:number, b:string, c:boolean) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+}
 ```
 
 ### Type \*\*\* | null is not assignable to type \*\*\*
 
 **应用代码**
 
-```
-1. class A {
-2. bar() {}
-3. }
-4. function foo(n: number) {
-5. if (n === 0) {
-6. return null;
-7. }
-8. return new A();
-9. }
-10. function getNumber() {
-11. return 5;
-12. }
-13. let a:A = foo(getNumber());
-14. a.bar();
+```typescript
+class A {
+  bar() {}
+}
+function foo(n: number) {
+  if (n === 0) {
+    return null;
+  }
+  return new A();
+}
+function getNumber() {
+  return 5;
+}
+let a:A = foo(getNumber());
+a.bar();
 ```
 
 **建议改法**
 
-```
-1. class A {
-2. bar() {}
-3. }
-4. function foo(n: number) {
-5. if (n === 0) {
-6. return null;
-7. }
-8. return new A();
-9. }
-10. function getNumber() {
-11. return 5;
-12. }
+```typescript
+class A {
+  bar() {}
+}
+function foo(n: number) {
+  if (n === 0) {
+    return null;
+  }
+  return new A();
+}
+function getNumber() {
+  return 5;
+}
 
-14. let a: A | null = foo(getNumber());
-15. a?.bar();
+let a: A | null = foo(getNumber());
+a?.bar();
 ```
 
 ### 严格属性初始化检查
@@ -1660,28 +1658,28 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 1.一般情况下，**建议按照业务逻辑**在声明时初始化属性，或者在构造函数中为属性赋值。如：
 
-```
-1. // code with error
-2. class Test {
-3. value: number
-4. flag: boolean
-5. }
+```typescript
+// code with error
+class Test {
+  value: number
+  flag: boolean
+}
 
-7. // 方式一，在声明时初始化
-8. class Test {
-9. value: number = 0
-10. flag: boolean = false
-11. }
+// 方式一，在声明时初始化
+class Test {
+  value: number = 0
+  flag: boolean = false
+}
 
-13. // 方式二，在构造函数中赋值
-14. class Test {
-15. value: number
-16. flag: boolean
-17. constructor(value: number, flag: boolean) {
-18. this.value = value;
-19. this.flag = flag;
-20. }
-21. }
+// 方式二，在构造函数中赋值
+class Test {
+  value: number
+  flag: boolean
+  constructor(value: number, flag: boolean) {
+    this.value = value;
+    this.flag = flag;
+  }
+}
 ```
 
 2.对于对象类型（包括函数类型）A，如果不确定如何初始化，建议按照以下方式之一进行初始化：
@@ -1690,40 +1688,40 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 ​ 方式(ii) prop?: A
 
-​ 方式三(iii) prop： A | undefined = undefined
+​ 方式三(iii) prop: A | undefined = undefined
 
 * 从性能角度看，null类型仅用于编译期的类型检查，不会影响虚拟机性能。而undefined | A被视为联合类型，运行时可能产生额外开销。
-* 从代码可读性、简洁性的角度来说，prop?:A是prop： A | undefined = undefined的语法糖，**推荐使用可选属性的写法**。
+* 从代码可读性、简洁性的角度来说，prop?:A是prop: A | undefined = undefined的语法糖，**推荐使用可选属性的写法**。
 
 ### 严格函数类型检查
 
 **应用代码**
 
-```
-1. function foo(fn: (value?: string) => void, value: string): void {}
+```typescript
+function foo(fn: (value?: string) => void, value: string): void {}
 
-3. foo((value: string) => {}, ''); // error
+foo((value: string) => {}, ''); // error
 ```
 
 **建议改法**
 
-```
-1. function foo1(fn: (value?: string) => void, value: string): void {}
+```typescript
+function foo1(fn: (value?: string) => void, value: string): void {}
 
-3. foo1((value?: string) => {}, '');
+foo1((value?: string) => {}, '');
 ```
 
 **原因**
 
 例如，在以下的例子中，如果编译期不开启严格函数类型的检查，那么该段代码可以编译通过，但是在运行时会产生非预期的行为。具体来看，在foo的函数体中，一个undefined被传入fn（这是可以的，因为fn可以接受undefined），但是在代码第6行foo的调用点，传入的(value: string) => { console.info(value.toUpperCase()) }的函数实现中，始终将参数value当做string类型，允许其调用toUpperCase方法。如果不开启严格函数类型的检查，那么这段代码在运行时，会出现在undefined上无法找到属性的错误。
 
-```
-1. function foo(fn: (value?: string) => void, value: string): void {
-2. let v: string | undefined = undefined;
-3. fn(v);
-4. }
+```typescript
+function foo(fn: (value?: string) => void, value: string): void {
+  let v: string | undefined = undefined;
+  fn(v);
+}
 
-6. foo((value: string) => { console.info(value.toUpperCase()) }, ''); // Cannot read properties of undefined (reading 'toUpperCase')
+foo((value: string) => { console.info(value.toUpperCase()) }, ''); // Cannot read properties of undefined (reading 'toUpperCase')
 ```
 
 为了避免运行时的非预期行为，开启严格类型检查时，这段代码将无法编译通过，需要提醒开发者修改代码，确保程序安全。
@@ -1732,17 +1730,17 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 **应用代码**
 
-```
-1. class Test {
-2. private value?: string;
+```typescript
+class Test {
+  private value?: string;
 
-4. public printValue () {
-5. console.info(this.value.toLowerCase());
-6. }
-7. }
+  public printValue () {
+    console.info(this.value.toLowerCase());
+  }
+}
 
-9. let t = new Test();
-10. t.printValue();
+let t = new Test();
+t.printValue();
 ```
 
 **应用代码运行时错误原因**
@@ -1755,147 +1753,147 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 在编写代码时，建议减少可空类型的使用。如果对变量、属性标记了可空类型，那么在使用它们之前，需要进行空值的判断，根据是否为空值处理不同的逻辑。
 
-```
-1. class Test {
-2. private value?: string;
+```typescript
+class Test {
+  private value?: string;
 
-4. public printValue () {
-5. if (this.value) {
-6. console.info(this.value.toLowerCase());
-7. }
-8. }
-9. }
+  public printValue () {
+    if (this.value) {
+      console.info(this.value.toLowerCase());
+    }
+  }
+}
 
-11. let t = new Test();
-12. t.printValue();
+let t = new Test();
+t.printValue();
 ```
 
 ### 函数返回类型不匹配
 
 **应用代码**
 
-```
-1. class Test {
-2. handleClick: (action: string, externInfo?: string) => void | null = null;
-3. }
+```typescript
+class Test {
+  handleClick: (action: string, externInfo?: string) => void | null = null;
+}
 ```
 
 **建议改法**
 
 在这种写法下，函数返回类型被解析为 void | undefined，需要添加括号用来区分union类型。
 
-```
-1. class Test {
-2. public handleClick: ((action: string, externInfo?: string) => void) | null = null;
-3. }
+```typescript
+class Test {
+  public handleClick: ((action: string, externInfo?: string) => void) | null = null;
+}
 ```
 
 ### Type '\*\*\* | null' is not assignable to type '\*\*\*'
 
 **应用代码**
 
-```
-1. class A {
-2. value: number
-3. constructor(value: number) {
-4. this.value = value;
-5. }
-6. }
+```typescript
+class A {
+  value: number
+  constructor(value: number) {
+    this.value = value;
+  }
+}
 
-8. function foo6(v: number): A | null {
-9. if (v > 0) {
-10. return new A(v);
-11. }
-12. return null;
-13. }
+function foo6(v: number): A | null {
+  if (v > 0) {
+    return new A(v);
+  }
+  return null;
+}
 
-15. let a1: A = foo6(1);
+let a1: A = foo6(1);
 ```
 
 **建议改法1**
 
 修改变量a的类型：let a: A | null = foo()。
 
-```
-1. class A1 {
-2. value: number
-3. constructor(value: number) {
-4. this.value = value;
-5. }
-6. }
+```typescript
+class A1 {
+  value: number
+  constructor(value: number) {
+    this.value = value;
+  }
+}
 
-8. function foo(v: number): A1 | null {
-9. if (v > 0) {
-10. return new A1(v);
-11. }
-12. return null;
-13. }
+function foo(v: number): A1 | null {
+  if (v > 0) {
+    return new A1(v);
+  }
+  return null;
+}
 
-15. let a: A1 | null = foo(123);
+let a: A1 | null = foo(123);
 
-17. if (a != null) {
-18. // 非空分支
-19. } else {
-20. // 处理null
-21. }
+if (a != null) {
+  // 非空分支
+} else {
+  // 处理null
+}
 ```
 
 **建议改法2**
 
 如果确定此处调用foo一定返回非空值，可以使用非空断言!。
 
-```
-1. class A2 {
-2. value: number
-3. constructor(value: number) {
-4. this.value = value;
-5. }
-6. }
+```typescript
+class A2 {
+  value: number
+  constructor(value: number) {
+    this.value = value;
+  }
+}
 
-8. function foo(v: number): A2 | null {
-9. if (v > 0) {
-10. return new A2(v);
-11. }
-12. return null;
-13. }
+function foo(v: number): A2 | null {
+  if (v > 0) {
+    return new A2(v);
+  }
+  return null;
+}
 
-15. let a: A2 = foo(123)!;
+let a: A2 = foo(123)!;
 ```
 
 ### Cannot invoke an object which is possibly 'undefined'
 
 **应用代码**
 
-```
-1. interface A {
-2. foo?: () => void
-3. }
+```typescript
+interface A {
+  foo?: () => void
+}
 
-5. let a:A = { foo: () => {} };
-6. a.foo();
+let a:A = { foo: () => {} };
+a.foo();
 ```
 
 **建议改法1**
 
-```
-1. interface A {
-2. foo: () => void
-3. }
-4. let a: A = { foo: () => {} };
-5. a.foo();
+```typescript
+interface A {
+  foo: () => void
+}
+let a: A = { foo: () => {} };
+a.foo();
 ```
 
 **建议改法2**
 
-```
-1. interface A {
-2. foo?: () => void
-3. }
+```typescript
+interface A {
+  foo?: () => void
+}
 
-5. let a: A = { foo: () => {} };
-6. if (a.foo) {
-7. a.foo();
-8. }
+let a: A = { foo: () => {} };
+if (a.foo) {
+  a.foo();
+}
 ```
 
 **原因**
@@ -1906,39 +1904,39 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 **应用代码**
 
-```
-1. class Test {
-2. value: number = 0
-3. }
+```typescript
+class Test {
+  value: number = 0
+}
 
-5. let a: Test
-6. try {
-7. a = { value: 1};
-8. } catch (e) {
-9. a.value;
-10. }
-11. a.value;
+let a: Test
+try {
+  a = { value: 1};
+} catch (e) {
+  a.value;
+}
+a.value;
 ```
 
 **建议改法**
 
-```
-1. class Test {
-2. public value: number = 0
-3. }
+```typescript
+class Test {
+  public value: number = 0
+}
 
-5. let a: Test | null = null;
-6. try {
-7. a = { value:1 };
-8. } catch (e) {
-9. if (a) {
-10. a.value;
-11. }
-12. }
+let a: Test | null = null;
+try {
+  a = { value:1 };
+} catch (e) {
+  if (a) {
+    a.value;
+  }
+}
 
-14. if (a) {
-15. a.value;
-16. }
+if (a) {
+  a.value;
+}
 ```
 
 **原因**
@@ -1951,12 +1949,12 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 **应用代码**
 
-```
-1. function foo7(a: number): number {
-2. if (a > 0) {
-3. return a;
-4. }
-5. }
+```typescript
+function foo7(a: number): number {
+  if (a > 0) {
+    return a;
+  }
+}
 ```
 
 **建议改法1**
@@ -1965,13 +1963,13 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 **建议改法2**
 
-```
-1. function foo4(a: number): number | undefined {
-2. if (a > 0) {
-3. return a;
-4. }
-5. return
-6. }
+```typescript
+function foo4(a: number): number | undefined {
+  if (a > 0) {
+    return a;
+  }
+  return
+}
 ```
 
 ## arkts-strict-typing-required
@@ -1980,15 +1978,15 @@ ArkTS不支持globalThis。一方面无法为globalThis添加静态类型，只�
 
 **应用代码**
 
-```
-1. // @ts-ignore
-2. var a: any = 123;
+```typescript
+// @ts-ignore
+var a: any = 123;
 ```
 
 **建议改法**
 
-```
-1. let a: number = 123;
+```typescript
+let a: number = 123;
 ```
 
 **原因**
@@ -2013,14 +2011,14 @@ ArkTS不支持通过注释的方式绕过严格类型检查。首先将注释（
 
 **应用代码**
 
-```
-1. import type {A, B, C, D } from '***'
+```typescript
+import type {A, B, C, D } from '***'
 ```
 
 **建议改法**
 
-```
-1. import {A, B, C, D } from '***'
+```typescript
+import {A, B, C, D } from '***'
 ```
 
 ## arkts-no-classes-as-obj
@@ -2029,104 +2027,104 @@ ArkTS不支持通过注释的方式绕过严格类型检查。首先将注释（
 
 **应用代码**
 
-```
-1. class Controller {
-2. value: string = ''
-3. constructor(value: string) {
-4. this.value = value
-5. }
-6. }
+```typescript
+class Controller {
+  value: string = ''
+  constructor(value: string) {
+    this.value = value
+  }
+}
 
-8. interface ControllerConstructor {
-9. new (value: string): Controller;
-10. }
+interface ControllerConstructor {
+  new (value: string): Controller;
+}
 
-12. class TestMenu {
-13. controller: ControllerConstructor = Controller
-14. createController() {
-15. if (this.controller) {
-16. return new this.controller('abc');
-17. }
-18. return null;
-19. }
-20. }
+class TestMenu {
+  controller: ControllerConstructor = Controller
+  createController() {
+    if (this.controller) {
+      return new this.controller('abc');
+    }
+    return null;
+  }
+}
 
-22. let t = new TestMenu();
-23. console.info(t.createController()!.value);
+let t = new TestMenu();
+console.info(t.createController()!.value);
 ```
 
 **建议改法**
 
-```
-1. class Controller {
-2. public value: string = ''
+```typescript
+class Controller {
+  public value: string = ''
 
-4. constructor(value: string) {
-5. this.value = value;
-6. }
-7. }
+  constructor(value: string) {
+    this.value = value;
+  }
+}
 
-9. type ControllerConstructor = () => Controller;
+type ControllerConstructor = () => Controller;
 
-11. class TestMenu {
-12. public controller: ControllerConstructor = () => {
-13. return new Controller('abc');
-14. }
+class TestMenu {
+  public controller: ControllerConstructor = () => {
+    return new Controller('abc');
+  }
 
-16. createController() {
-17. if (this.controller) {
-18. return this.controller();
-19. }
-20. return null;
-21. }
-22. }
+  createController() {
+    if (this.controller) {
+      return this.controller();
+    }
+    return null;
+  }
+}
 
-24. let t: TestMenu = new TestMenu();
-25. console.info(t.createController()!.value);
+let t: TestMenu = new TestMenu();
+console.info(t.createController()!.value);
 ```
 
 ### 访问静态属性
 
 **应用代码**
 
-```
-1. class C1 {
-2. static value: string = 'abc'
-3. }
+```typescript
+class C1 {
+  static value: string = 'abc'
+}
 
-5. class C2 {
-6. static value: string = 'def'
-7. }
+class C2 {
+  static value: string = 'def'
+}
 
-9. function getValue(obj: any) {
-10. return obj['value'];
-11. }
+function getValue(obj: any) {
+  return obj['value'];
+}
 
-13. console.info(getValue(C1));
-14. console.info(getValue(C2));
+console.info(getValue(C1));
+console.info(getValue(C2));
 ```
 
 **建议改法**
 
-```
-1. class C1 {
-2. public static value: string = 'abc'
-3. }
+```typescript
+class C1 {
+  public static value: string = 'abc'
+}
 
-5. class C2 {
-6. public static value: string = 'def'
-7. }
+class C2 {
+  public static value: string = 'def'
+}
 
-9. function getC1Value(): string {
-10. return C1.value;
-11. }
+function getC1Value(): string {
+  return C1.value;
+}
 
-13. function getC2Value(): string {
-14. return C2.value;
-15. }
+function getC2Value(): string {
+  return C2.value;
+}
 
-17. console.info(getC1Value());
-18. console.info(getC2Value());
+console.info(getC1Value());
+console.info(getC2Value());
 ```
 
 ## arkts-no-side-effects-imports
@@ -2135,14 +2133,14 @@ ArkTS不支持通过注释的方式绕过严格类型检查。首先将注释（
 
 **应用代码**
 
-```
-1. import 'module'
+```typescript
+import 'module'
 ```
 
 **建议改法**
 
-```
-1. import('module')
+```typescript
+import('module')
 ```
 
 ## arkts-no-func-props
@@ -2151,37 +2149,37 @@ ArkTS不支持通过注释的方式绕过严格类型检查。首先将注释（
 
 **应用代码**
 
-```
-1. function foo8(value: number): void {
-2. console.info(value.toString());
-3. }
+```typescript
+function foo8(value: number): void {
+  console.info(value.toString());
+}
 
-5. foo8.add = (left: number, right: number) => {
-6. return left + right;
-7. }
+foo8.add = (left: number, right: number) => {
+  return left + right;
+}
 
-9. foo8.sub = (left: number, right: number) => {
-10. return left - right;
-11. }
+foo8.sub = (left: number, right: number) => {
+  return left - right;
+}
 ```
 
 **建议改法**
 
-```
-1. class Foo {
-2. static foo(value: number): void {
-3. console.info(value.toString());
-4. // ...
-5. }
+```typescript
+class Foo {
+  static foo(value: number): void {
+    console.info(value.toString());
+    // ...
+  }
 
-7. static add(left: number, right: number): number {
-8. return left + right;
-9. }
+  static add(left: number, right: number): number {
+    return left + right;
+  }
 
-11. static sub(left: number, right: number): number {
-12. return left - right;
-13. }
-14. }
+  static sub(left: number, right: number): number {
+    return left - right;
+  }
+}
 ```
 
 ## arkts-limited-esobj
@@ -2190,47 +2188,47 @@ ArkTS不支持通过注释的方式绕过严格类型检查。首先将注释（
 
 **应用代码**
 
-```
-1. // testa.ts
-2. export function foo(): any {
-3. return null;
-4. }
+```typescript
+// testa.ts
+export function foo(): any {
+  return null;
+}
 ```
 
-```
-1. // main.ets
-2. import {foo} from './testa'
-3. let e0: ESObject = foo();
+```typescript
+// main.ets
+import {foo} from './testa'
+let e0: ESObject = foo();
 
-5. function f() {
-6. let e1 = foo();
-7. let e2: ESObject = 1;
-8. let e3: ESObject = {};
-9. let e4: ESObject = '';
-10. }
+function f() {
+  let e1 = foo();
+  let e2: ESObject = 1;
+  let e3: ESObject = {};
+  let e4: ESObject = '';
+}
 ```
 
 **建议改法**
 
-```
-1. // testa.ts
-2. export function foo(): any {
-3. return null;
-4. }
+```typescript
+// testa.ts
+export function foo(): any {
+  return null;
+}
 ```
 
-```
-1. // main.ets
-2. import {foo} from './testa'
-3. interface I {}
+```typescript
+// main.ets
+import {foo} from './testa'
+interface I {}
 
-5. function f() {
-6. let e0: ESObject = foo();
-7. let e1: ESObject = foo();
-8. let e2: number = 1;
-9. let e3: I = {};
-10. let e4: string = '';
-11. }
+function f() {
+  let e0: ESObject = foo();
+  let e1: ESObject = foo();
+  let e2: number = 1;
+  let e3: I = {};
+  let e4: string = '';
+}
 ```
 
 ## 拷贝
@@ -2239,56 +2237,56 @@ ArkTS不支持通过注释的方式绕过严格类型检查。首先将注释（
 
 **TypeScript**
 
-```
-1. function shallowCopy(obj: object): object {
-2. let newObj = {};
-3. Object.assign(newObj, obj);
-4. return newObj;
-5. }
+```typescript
+function shallowCopy(obj: object): object {
+  let newObj = {};
+  Object.assign(newObj, obj);
+  return newObj;
+}
 ```
 
 **ArkTS**
 
-```
-1. function shallowCopy(obj: object): object {
-2. let newObj: Record<string, Object> = {};
-3. for (let key of Object.keys(obj)) {
-4. newObj[key] = obj[key];
-5. }
-6. return newObj;
-7. }
+```typescript
+function shallowCopy(obj: object): object {
+  let newObj: Record<string, Object> = {};
+  for (let key of Object.keys(obj)) {
+    newObj[key] = obj[key];
+  }
+  return newObj;
+}
 ```
 
 ### 深拷贝
 
 **TypeScript**
 
-```
-1. function deepCopy(obj: object): object {
-2. let newObj = Array.isArray(obj) ? [] : {};
-3. for (let key in obj) {
-4. if (typeof obj[key] === 'object') {
-5. newObj[key] = deepCopy(obj[key]);
-6. } else {
-7. newObj[key] = obj[key];
-8. }
-9. }
-10. return newObj;
-11. }
+```typescript
+function deepCopy(obj: object): object {
+  let newObj = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (typeof obj[key] === 'object') {
+      newObj[key] = deepCopy(obj[key]);
+    } else {
+      newObj[key] = obj[key];
+    }
+  }
+  return newObj;
+}
 ```
 
 **ArkTS**
 
-```
-1. function deepCopy(obj: object): object {
-2. let newObj: Record<string, Object> | Object[] = Array.isArray(obj) ? [] : {};
-3. for (let key of Object.keys(obj)) {
-4. if (typeof obj[key] === 'object') {
-5. newObj[key] = deepCopy(obj[key]);
-6. } else {
-7. newObj[key] = obj[key];
-8. }
-9. }
-10. return newObj;
-11. }
+```typescript
+function deepCopy(obj: object): object {
+  let newObj: Record<string, Object> | Object[] = Array.isArray(obj) ? [] : {};
+  for (let key of Object.keys(obj)) {
+    if (typeof obj[key] === 'object') {
+      newObj[key] = deepCopy(obj[key]);
+    } else {
+      newObj[key] = obj[key];
+    }
+  }
+  return newObj;
+}
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton
 title: 使用粘贴控件
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 使用粘贴控件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b2b3cb1dcff7662a9be33b60ed4986493551ab98b8276f566747dc260ff91364
+scraped_at: 2026-09-02T14:49:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:16c60c13527bd4a9277f029728d8995ba313228235d129610018eeeead05698c
 ---
 
 粘贴控件是一种特殊的系统安全控件，它允许应用在用户的授权下静默读取剪贴板数据。
@@ -16,7 +16,7 @@ content_hash: sha256:b2b3cb1dcff7662a9be33b60ed4986493551ab98b8276f566747dc260ff
 
 粘贴控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/UaLlxjsLSmaWk-zGzn08Rg/zh-cn_image_0000002558764858.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Dt0xqGAlR--RIYBEoOo8Xw/zh-cn_image_0000002706674318.gif)
 
 ## 约束与限制
 
@@ -30,8 +30,8 @@ content_hash: sha256:b2b3cb1dcff7662a9be33b60ed4986493551ab98b8276f566747dc260ff
 
 1. 导入剪贴板依赖。
 
-   ```
-   1. import { pasteboard } from '@kit.BasicServicesKit';
+   ```ts
+   import { pasteboard } from '@kit.BasicServicesKit';
    ```
 2. 添加输入框和粘贴控件。
 
@@ -41,40 +41,38 @@ content_hash: sha256:b2b3cb1dcff7662a9be33b60ed4986493551ab98b8276f566747dc260ff
 
    当前示例使用了默认参数。具体详情，请参见[PasteButton控件](../harmonyos-references/ts-security-components-pastebutton.md)。此外，所有安全控件均继承了[安全控件通用属性](../harmonyos-references/ts-securitycomponent-attributes.md)，可用于自定义样式。
 
+   ```typescript
+   import { pasteboard, BusinessError } from '@kit.BasicServicesKit';
+
+   @Entry
+   @Component
+   struct Index {
+     @State message: string = '';
+
+     build() {
+       Row() {
+         Column({ space: 10 }) {
+           TextInput({ placeholder: $r('app.string.input_verify_code'), text: this.message })
+             .onChange((val: string) => {
+               this.message = val;
+             })
+           PasteButton()
+             .padding({top: 12, bottom: 12, left: 24, right: 24})
+             .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
+               if (PasteButtonOnClickResult.SUCCESS === result) {
+                 pasteboard.getSystemPasteboard().getData((err: BusinessError, pasteData: pasteboard.PasteData) => {
+                   if (err) {
+                     console.error(`Failed to get paste data. Code is ${err.code}, message is ${err.message}`);
+                     return;
+                   }
+                   this.message = pasteData.getPrimaryText();
+                 });
+               }
+             })
+         }
+         .width('100%')
+       }
+       .height('100%')
+     }
+   }
    ```
-   1. import { pasteboard, BusinessError } from '@kit.BasicServicesKit';
-
-   3. @Entry
-   4. @Component
-   5. struct Index {
-   6. @State message: string = '';
-
-   8. build() {
-   9. Row() {
-   10. Column({ space: 10 }) {
-   11. TextInput({ placeholder: $r('app.string.input_verify_code'), text: this.message })
-   12. .onChange((val: string) => {
-   13. this.message = val;
-   14. })
-   15. PasteButton()
-   16. .padding({top: 12, bottom: 12, left: 24, right: 24})
-   17. .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
-   18. if (PasteButtonOnClickResult.SUCCESS === result) {
-   19. pasteboard.getSystemPasteboard().getData((err: BusinessError, pasteData: pasteboard.PasteData) => {
-   20. if (err) {
-   21. console.error(`Failed to get paste data. Code is ${err.code}, message is ${err.message}`);
-   22. return;
-   23. }
-   24. this.message = pasteData.getPrimaryText();
-   25. });
-   26. }
-   27. })
-   28. }
-   29. .width('100%')
-   30. }
-   31. .height('100%')
-   32. }
-   33. }
-   ```
-
-   [Paste.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/SecurityComponent/entry/src/main/ets/securitycomponent/pages/Paste.ets#L16-L50)

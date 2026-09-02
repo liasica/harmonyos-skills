@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hds-visual-component
-title: HdsVisualComponent
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsVisualComponent
+title: HdsVisualComponent (视效组件)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsVisualComponent (视效组件)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a8559b6f2afae7cccdd57bad712ebb4d03ad8e063f82dade6bc3fd6f4da67571
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:df7828592f1db232c0baf8c632f2ee0e7ca2cc93011ee82a7274a5be1852006b
 ---
 
 HdsVisualComponent组件承载复杂视效实现，应用开发者通过HdsVisualComponent选择具体视效场景完成复杂视效的开发。
@@ -14,34 +14,28 @@ HdsVisualComponent组件承载复杂视效实现，应用开发者通过HdsVisua
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-说明
+**说明** 
 
 * HdsVisualComponentAttribute是用于配置HdsVisualComponent组件属性的关键接口。6.0.1(21)及之前版本，导入HdsVisualComponent组件后需要开发者手动导入HdsVisualComponentAttribute，否则会编译报错。从6.0.2(22)版本开始，编译工具链识别到导入HdsVisualComponent组件后，会自动导入HdsVisualComponentAttribute，无需开发者手动导入。
 * 如果开发者手动导入HdsVisualComponentAttribute，DevEco Studio会显示置灰，6.0.1(21)及之前版本删除会编译报错，从6.0.2(22)版本开始，删除对功能无影响。
 
 6.0.1(21)及之前版本：
 
-```
-1. import { HdsVisualComponent, HdsVisualComponentAttribute, HdsSceneController, HdsSceneType, hdsEffect } from '@kit.UIDesignKit';
+```typescript
+import { HdsVisualComponent, HdsVisualComponentAttribute, HdsSceneController, HdsSceneType, hdsEffect } from '@kit.UIDesignKit';
 ```
 
 6.0.2(22)及之后版本：
 
-```
-1. import { HdsVisualComponent, HdsSceneController, HdsSceneType, hdsEffect } from '@kit.UIDesignKit';
+```typescript
+import { HdsVisualComponent, HdsSceneController, HdsSceneType, hdsEffect } from '@kit.UIDesignKit';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTV
-
 无
 
 ## 接口
-
-PhonePC/2in1TabletTV
 
 HdsVisualComponent()
 
@@ -57,13 +51,9 @@ HdsVisualComponent()
 
 ## 属性
 
-PhonePC/2in1TabletTV
-
 除支持[通用属性](ts-component-general-attributes.md)，还支持以下属性：
 
 ### scene
-
-PhonePC/2in1TabletTV
 
 scene(sceneType: HdsSceneType, controller: HdsSceneController, callback?: HdsSceneFinishCallback, frameRateRange?: hdsEffect.ExpectedFrameRateRange)
 
@@ -81,24 +71,18 @@ scene(sceneType: HdsSceneType, controller: HdsSceneController, callback?: HdsSce
 | --- | --- | --- | --- |
 | sceneType | [HdsSceneType](ui-design-hds-visual-component.md#hdsscenetype) | 是 | 视效场景类型。 |
 | controller | [HdsSceneController](ui-design-hds-visual-component.md#hdsscenecontroller) | 是 | 视效场景控制器。 |
-| callback | [HdsSceneFinishCallback](ui-design-hds-visual-component.md#hdsscenefinishcallback) | 否 | 视效场景结束回调。 |
+| callback | [HdsSceneFinishCallback](ui-design-hds-visual-component.md#hdsscenefinishcallback) | 否 | 视效场景结束时触发的回调。 |
 | frameRateRange | hdsEffect.[ExpectedFrameRateRange](ui-design-hdseffect.md#expectedframeraterange) | 否 | 视效场景帧率配置。 |
 
 ## 事件
-
-PhonePC/2in1TabletTV
 
 支持[通用事件](ts-component-general-events.md)。
 
 ## HdsSceneType
 
-PhonePC/2in1TabletTV
-
 视效场景。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**卡片能力：** 从6.0.2(22)开始，该接口支持在ArkTS卡片中使用。
 
 **系统能力：** SystemCapability.UIDesign.HDSComponent.Core
 
@@ -109,8 +93,6 @@ PhonePC/2in1TabletTV
 | DUAL\_EDGE\_FLOW\_LIGHT\_WITH\_BACKGROUND\_MASK | 0 | 自带背景的双边流光。  **说明**：该场景在TV中无效果，在其他设备类型中可正常显示。 |
 
 ## HdsSceneFinishCallback
-
-PhonePC/2in1TabletTV
 
 type HdsSceneFinishCallback = () => void
 
@@ -126,8 +108,6 @@ type HdsSceneFinishCallback = () => void
 
 ## HdsSceneController
 
-PhonePC/2in1TabletTV
-
 场景控制器。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -139,8 +119,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 6.0.0(20)
 
 ### constructor
-
-PhonePC/2in1TabletTV
 
 constructor()
 
@@ -156,8 +134,6 @@ HdsSceneController的构造函数。
 
 ### start
 
-PhonePC/2in1TabletTV
-
 start(): void
 
 开始视效场景。
@@ -169,8 +145,6 @@ start(): void
 **起始版本：** 6.0.0(20)
 
 ### pause
-
-PhonePC/2in1TabletTV
 
 pause(): void
 
@@ -184,8 +158,6 @@ pause(): void
 
 ### resume
 
-PhonePC/2in1TabletTV
-
 resume(): void
 
 恢复视效场景。
@@ -198,8 +170,6 @@ resume(): void
 
 ### stop
 
-PhonePC/2in1TabletTV
-
 stop(): void
 
 停止视效场景。
@@ -211,8 +181,6 @@ stop(): void
 **起始版本：** 6.0.0(20)
 
 ### setSceneParams
-
-PhonePC/2in1TabletTV
 
 setSceneParams(params: SceneParams): HdsSceneController
 
@@ -238,8 +206,6 @@ setSceneParams(params: SceneParams): HdsSceneController
 
 ## SceneParams
 
-PhonePC/2in1TabletTV
-
 type SceneParams = DualEdgeFlowLightWithMaskParam
 
 场景视效参数。
@@ -255,8 +221,6 @@ type SceneParams = DualEdgeFlowLightWithMaskParam
 | [DualEdgeFlowLightWithMaskParam](ui-design-hds-visual-component.md#dualedgeflowlightwithmaskparam) | 双边边缘流光视效参数。 |
 
 ## DualEdgeFlowLightWithMaskParam
-
-PhonePC/2in1TabletTV
 
 双边边缘流光视效参数。
 
@@ -274,41 +238,39 @@ PhonePC/2in1TabletTV
 
 ## 示例
 
-PhonePC/2in1TabletTV
+```typescript
+// 从6.0.2(22)版本开始，无需手动导入HdsVisualComponentAttribute。具体请参考HdsVisualComponent的导入模块说明。
+import { HdsVisualComponent, HdsVisualComponentAttribute, HdsSceneController, HdsSceneType } from '@kit.UIDesignKit';
 
-```
-1. // 从6.0.2(22)版本开始，无需手动导入HdsVisualComponentAttribute。具体请参考HdsVisualComponent的导入模块说明。
-2. import { HdsVisualComponent, HdsVisualComponentAttribute, HdsSceneController, HdsSceneType } from '@kit.UIDesignKit';
+@Entry
+@Component
+struct EdgeFlowLightVisualComponent {
+  @State sceneController: HdsSceneController = new HdsSceneController()
+    .setSceneParams({
+      backgroundMaskColors: [Color.Green, Color.Red],
+      firstEdgeFlowLight: {
+        startPos: 0,
+        endPos: 0.5,
+        color: Color.Red
+      },
+      secondEdgeFlowLight: {
+        startPos: 0,
+        endPos: -0.5,
+        color: Color.Green
+      }
+    })
 
-4. @Entry
-5. @Component
-6. struct EdgeFlowLightVisualComponent {
-7. @State sceneController: HdsSceneController = new HdsSceneController()
-8. .setSceneParams({
-9. backgroundMaskColors: [Color.Green, Color.Red],
-10. firstEdgeFlowLight: {
-11. startPos: 0,
-12. endPos: 0.5,
-13. color: Color.Red
-14. },
-15. secondEdgeFlowLight: {
-16. startPos: 0,
-17. endPos: -0.5,
-18. color: Color.Green
-19. }
-20. })
-
-22. build() {
-23. Stack() {
-24. HdsVisualComponent()
-25. .scene(HdsSceneType.DUAL_EDGE_FLOW_LIGHT_WITH_BACKGROUND_MASK, this.sceneController, () => {
-26. console.info('Succeeded in finishing');
-27. })
-28. .width('100%')
-29. .height('50%')
-30. }
-31. }
-32. }
+  build() {
+    Stack() {
+      HdsVisualComponent()
+        .scene(HdsSceneType.DUAL_EDGE_FLOW_LIGHT_WITH_BACKGROUND_MASK, this.sceneController, () => {
+          console.info('Succeeded in finishing');
+        })
+        .width('100%')
+        .height('50%')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/JHHTflxbQNKory1wqHeaZQ/zh-cn_image_0000002558767058.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/snFt_y_zQS-zgB-NZfHwjQ/zh-cn_image_0000002736435879.gif)

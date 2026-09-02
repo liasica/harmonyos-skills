@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-pdfkit-b035
 title: PDF Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta3引入的API > PDF Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta3引入的API > PDF Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:32+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:43+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:a5e238c327e827ec8a06ffaf4244310c01fb3a66f2402ecdc86a3bafa800c780
 ---
 

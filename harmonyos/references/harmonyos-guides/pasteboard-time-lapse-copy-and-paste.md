@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pasteboard-ti
 title: 使用剪贴板进行延迟复制粘贴
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 使用剪贴板进行延迟复制粘贴
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:22+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:43940c084b087206db13a2d45f4a6c40595912e95ec7efee61596065953e0072
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ebae42d1a8342f9f83ef706a61065d9ae99a7853c2a8fe18115c2349390e1763
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:43940c084b087206db13a2d45f4a6c40595912e95ec7efee61596065953
 
 ## 约束限制
 
-* 剪贴板内容包含剪贴板系统服务元数据和应用设置的数据，总大小上限默认为128MB，PC/2in1设备可通过系统配置修改上限，有效范围为128MB~2GB。
+* 剪贴板内容包含剪贴板系统服务元数据和应用设置的数据，总大小上限默认为128MB，PC/2in1设备可通过系统配置修改上限，有效范围为1MB~2GB。
 * NDK接口仅支持Record级别的延迟复制粘贴。
 * 当复制的数据量较小且准备数据所需时间不会影响用户体验时，不建议应用程序使用延迟复制功能，推荐将数据直接写入剪贴板。
 
@@ -55,181 +55,167 @@ content_hash: sha256:43940c084b087206db13a2d45f4a6c40595912e95ec7efee61596065953
 1. 引用头文件。
 
    ```
-   1. #include <cstring>
-   2. #include <hilog/log.h>
-   3. #include <database/pasteboard/oh_pasteboard.h>
-   4. #include <database/udmf/udmf.h>
-   5. #include <database/udmf/uds.h>
-   6. #include <database/udmf/udmf_meta.h>
-   7. #include <accesstoken/ability_access_control.h>
+   #include <cstring>
+   #include <hilog/log.h>
+   #include <database/pasteboard/oh_pasteboard.h>
+   #include <database/udmf/udmf.h>
+   #include <database/udmf/uds.h>
+   #include <database/udmf/udmf_meta.h>
+   #include <accesstoken/ability_access_control.h>
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/pasteboard/pasteboard_NDK_sample/entry/src/main/cpp/napi_init.cpp#L20-L29)
 2. 定义OH\_UdmfRecordProvider的数据提供函数和实例注销回调函数。
 
    ```
-   1. // 1. 获取数据时触发的提供剪贴板数据的回调函数。
-   2. void* GetDataCallback(void* context, const char* type)
-   3. {
-   4. // 纯文本类型
-   5. if (memcmp(type, UDMF_META_PLAIN_TEXT, sizeof(UDMF_META_PLAIN_TEXT) - 1) == 0) {
-   6. // 创建纯文本类型的Uds对象。
-   7. OH_UdsPlainText* udsText = OH_UdsPlainText_Create();
-   8. // 设置纯文本内容。
-   9. OH_UdsPlainText_SetContent(udsText, "hello world");
-   10. return udsText;
-   11. } else if (strcmp(type, UDMF_META_HTML) == 0) {
-   12. // 创建HTML类型的Uds对象。
-   13. OH_UdsHtml* udsHtml = OH_UdsHtml_Create();
-   14. // 设置HTML内容。
-   15. OH_UdsHtml_SetContent(udsHtml, "<div>hello world</div>");
-   16. return udsHtml;
-   17. }
-   18. return nullptr;
-   19. }
-   20. // 2. OH_UdmfRecordProvider销毁时触发的回调函数。
-   21. void ProviderFinalizeCallback(void* context)
-   22. {
-   23. OH_LOG_INFO(LOG_APP, "OH_UdmfRecordProvider finalize.");
-   24. }
+   // 1. 获取数据时触发的提供剪贴板数据的回调函数。
+   void* GetDataCallback(void* context, const char* type)
+   {
+       // 纯文本类型
+       if (memcmp(type, UDMF_META_PLAIN_TEXT, sizeof(UDMF_META_PLAIN_TEXT) - 1) == 0) {
+           // 创建纯文本类型的Uds对象。
+           OH_UdsPlainText* udsText = OH_UdsPlainText_Create();
+           // 设置纯文本内容。
+           OH_UdsPlainText_SetContent(udsText, "hello world");
+           return udsText;
+       } else if (strcmp(type, UDMF_META_HTML) == 0) {
+           // 创建HTML类型的Uds对象。
+           OH_UdsHtml* udsHtml = OH_UdsHtml_Create();
+           // 设置HTML内容。
+           OH_UdsHtml_SetContent(udsHtml, "<div>hello world</div>");
+           return udsHtml;
+       }
+       return nullptr;
+   }
+   // 2. OH_UdmfRecordProvider销毁时触发的回调函数。
+   void ProviderFinalizeCallback(void* context)
+   {
+       OH_LOG_INFO(LOG_APP, "OH_UdmfRecordProvider finalize.");
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/pasteboard/pasteboard_NDK_sample/entry/src/main/cpp/napi_init.cpp#L142-L167)
 3. 定义OH\_Pasteboard\_SyncDelayedDataAsync的回调函数。
 
    ```
-   1. // 3. 定义应用退出时调用延迟同步接口触发的回调函数。
-   2. void SyncCallback(int errorCode)
-   3. {
-   4. // 继续退出
-   5. }
+   // 3. 定义应用退出时调用延迟同步接口触发的回调函数。
+   void SyncCallback(int errorCode)
+   {
+       // 继续退出
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/pasteboard/pasteboard_NDK_sample/entry/src/main/cpp/napi_init.cpp#L168-L174)
 4. 在剪贴板中准备延迟复制数据。此步骤完成后纯文本类型数据与HTML类型数据并未真正写入剪贴板服务，只有当数据使用者从OH\_UdmfRecord中获取OH\_UdsPlainText或OH\_UdsHtml时，才会触发上文定义的GetDataCallback数据提供函数，从中得到数据。
 
    ```
-   1. OH_Pasteboard* CreateAndSetPasteboardData()
-   2. {
-   3. // 4. 创建OH_UdmfRecord对象。
-   4. OH_UdmfRecord* record = OH_UdmfRecord_Create();
-   5. // 5. 创建OH_UdmfRecordProvider对象，并设置用于提供延迟数据、析构的两个回调函数。
-   6. OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
-   7. OH_UdmfRecordProvider_SetData(provider, (void *)record, GetDataCallback, ProviderFinalizeCallback);
-   8. // 6. 将provider绑定到record，并设置支持的数据类型。
-   9. #define TYPE_COUNT 2
-   10. const char* types[TYPE_COUNT] = {UDMF_META_PLAIN_TEXT, UDMF_META_HTML};
-   11. OH_UdmfRecord_SetProvider(record, types, TYPE_COUNT, provider);
-   12. // 7. 创建OH_UdmfData对象，并向OH_UdmfData中添加OH_UdmfRecord。
-   13. OH_UdmfData* setData = OH_UdmfData_Create();
-   14. if (setData != nullptr) {
-   15. OH_UdmfData_AddRecord(setData, record);
-   16. }
-   17. // 8. 创建OH_Pasteboard对象，将数据写入剪贴板中。
-   18. OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
-   19. if (setData != nullptr) {
-   20. OH_Pasteboard_SetData(pasteboard, setData);
-   21. }
-   22. OH_UdmfRecordProvider_Destroy(provider);
-   23. OH_UdmfRecord_Destroy(record);
-   24. OH_UdmfData_Destroy(setData);
-   25. return pasteboard;
-   26. }
+   OH_Pasteboard* CreateAndSetPasteboardData()
+   {
+       // 4. 创建OH_UdmfRecord对象。
+       OH_UdmfRecord* record = OH_UdmfRecord_Create();
+       // 5. 创建OH_UdmfRecordProvider对象，并设置用于提供延迟数据、析构的两个回调函数。
+       OH_UdmfRecordProvider* provider = OH_UdmfRecordProvider_Create();
+       OH_UdmfRecordProvider_SetData(provider, (void *)record, GetDataCallback, ProviderFinalizeCallback);
+       // 6. 将provider绑定到record，并设置支持的数据类型。
+       #define TYPE_COUNT 2
+       const char* types[TYPE_COUNT] = {UDMF_META_PLAIN_TEXT, UDMF_META_HTML};
+       OH_UdmfRecord_SetProvider(record, types, TYPE_COUNT, provider);
+       // 7. 创建OH_UdmfData对象，并向OH_UdmfData中添加OH_UdmfRecord。
+       OH_UdmfData* setData = OH_UdmfData_Create();
+       if (setData != nullptr) {
+           OH_UdmfData_AddRecord(setData, record);
+       }
+       // 8. 创建OH_Pasteboard对象，将数据写入剪贴板中。
+       OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+       if (setData != nullptr) {
+           OH_Pasteboard_SetData(pasteboard, setData);
+       }
+       OH_UdmfRecordProvider_Destroy(provider);
+       OH_UdmfRecord_Destroy(record);
+       OH_UdmfData_Destroy(setData);
+       return pasteboard;
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/pasteboard/pasteboard_NDK_sample/entry/src/main/cpp/napi_init.cpp#L175-L202)
 5. 从剪贴板获取延迟复制数据。
 
    ```
-   1. void ProcessRecordType(OH_UdmfRecord* record, const char* recordType)
-   2. {
-   3. OH_UdsPlainText* udsText = nullptr;
-   4. OH_UdsHtml* udsHtml = nullptr;
-   5. if (strcmp(recordType, UDMF_META_PLAIN_TEXT) == 0) {
-   6. // 创建纯文本类型的Uds对象
-   7. udsText = OH_UdsPlainText_Create();
-   8. if (udsText != nullptr) {
-   9. // 从record中获取纯文本类型的Uds对象
-   10. OH_UdmfRecord_GetPlainText(record, udsText);
-   11. // 从Uds对象中获取内容
-   12. const char* content = OH_UdsPlainText_GetContent(udsText);
-   13. } else if (strcmp(recordType, UDMF_META_HTML) == 0) {
-   14. // 创建HTML类型的Uds对象
-   15. udsHtml = OH_UdsHtml_Create();
-   16. if (udsHtml != nullptr) {
-   17. // 从record中获取HTML类型的Uds对象
-   18. OH_UdmfRecord_GetHtml(record, udsHtml);
-   19. // 从Uds对象中获取内容
-   20. const char* content = OH_UdsHtml_GetContent(udsHtml);
-   21. }
-   22. }
-   23. }
-   24. }
-   25. void ProcessRecord(OH_UdmfRecord* record)
-   26. {
-   27. // 13. 查询OH_UdmfRecord中的数据类型。
-   28. unsigned typeCount = 0;
-   29. char** recordTypes = OH_UdmfRecord_GetTypes(record, &typeCount);
-   30. // 14. 遍历数据类型。
-   31. for (unsigned int typeIndex = 0; typeIndex < typeCount; ++typeIndex) {
-   32. const char* recordType = recordTypes[typeIndex];
-   33. ProcessRecordType(record, recordType);
-   34. }
-   35. }
+   void ProcessRecordType(OH_UdmfRecord* record, const char* recordType)
+   {
+       OH_UdsPlainText* udsText = nullptr;
+       OH_UdsHtml* udsHtml = nullptr;
+       if (strcmp(recordType, UDMF_META_PLAIN_TEXT) == 0) {
+           // 创建纯文本类型的Uds对象
+           udsText = OH_UdsPlainText_Create();
+           if (udsText != nullptr) {
+               // 从record中获取纯文本类型的Uds对象
+               OH_UdmfRecord_GetPlainText(record, udsText);
+               // 从Uds对象中获取内容
+               const char* content = OH_UdsPlainText_GetContent(udsText);
+           } else if (strcmp(recordType, UDMF_META_HTML) == 0) {
+               // 创建HTML类型的Uds对象
+               udsHtml = OH_UdsHtml_Create();
+               if (udsHtml != nullptr) {
+                   // 从record中获取HTML类型的Uds对象
+                   OH_UdmfRecord_GetHtml(record, udsHtml);
+                   // 从Uds对象中获取内容
+                   const char* content = OH_UdsHtml_GetContent(udsHtml);
+               }
+           }
+       }
+   }
+   void ProcessRecord(OH_UdmfRecord* record)
+   {
+       // 13. 查询OH_UdmfRecord中的数据类型。
+       unsigned typeCount = 0;
+       char** recordTypes = OH_UdmfRecord_GetTypes(record, &typeCount);
+       // 14. 遍历数据类型。
+       for (unsigned int typeIndex = 0; typeIndex < typeCount; ++typeIndex) {
+           const char* recordType = recordTypes[typeIndex];
+           ProcessRecordType(record, recordType);
+       }
+   }
 
-   37. static napi_value NAPI_Pasteboard_time(napi_env env, napi_callback_info info)
-   38. {
-   39. OH_Pasteboard* pasteboard = CreateAndSetPasteboardData();
-   40. // 9. 记录当前的剪贴板数据变化次数。
-   41. uint32_t changeCount = OH_Pasteboard_GetChangeCount(pasteboard);
-   42. // 10. 从剪贴板获取OH_UdmfData。
-   43. int status = -1;
-   44. bool hasPermission = OH_AT_CheckSelfPermission("ohos.permission.READ_PASTEBOARD");
-   45. if (!hasPermission) {
-   46. OH_LOG_ERROR(LOG_APP, "No Permission READ_PASTEBOARD");
-   47. };
-   48. OH_UdmfData* getData = OH_Pasteboard_GetData(pasteboard, &status);
-   49. if (getData == nullptr) {
-   50. // 处理错误情况，清理资源
-   51. OH_LOG_ERROR(LOG_APP, "Failed to get data from pasteboard, status: %d\n", status);
-   52. }
-   53. // 11. 获取OH_UdmfData中的所有OH_UdmfRecord。
-   54. unsigned int recordCount = 0;
-   55. OH_UdmfRecord** getRecords = OH_UdmfData_GetRecords(getData, &recordCount);
-   56. OH_UdsPlainText* udsText = nullptr;
-   57. OH_UdsHtml* udsHtml = nullptr;
-   58. // 12. 遍历OH_UdmfRecord。
-   59. for (unsigned int recordIndex = 0; recordIndex < recordCount; ++recordIndex) {
-   60. OH_UdmfRecord* record = getRecords[recordIndex];
-   61. ProcessRecord(record);
-   62. }
+   static napi_value NAPI_Pasteboard_time(napi_env env, napi_callback_info info)
+   {
+       OH_Pasteboard* pasteboard = CreateAndSetPasteboardData();
+       // 9. 记录当前的剪贴板数据变化次数。
+       uint32_t changeCount = OH_Pasteboard_GetChangeCount(pasteboard);
+       // 10. 从剪贴板获取OH_UdmfData。
+       int status = -1;
+       bool hasPermission = OH_AT_CheckSelfPermission("ohos.permission.READ_PASTEBOARD");
+       if (!hasPermission) {
+           OH_LOG_ERROR(LOG_APP, "No Permission READ_PASTEBOARD");
+       };
+       OH_UdmfData* getData = OH_Pasteboard_GetData(pasteboard, &status);
+       if (getData == nullptr) {
+           // 处理错误情况，清理资源
+           OH_LOG_ERROR(LOG_APP, "Failed to get data from pasteboard, status: %d\n", status);
+       }
+       // 11. 获取OH_UdmfData中的所有OH_UdmfRecord。
+       unsigned int recordCount = 0;
+       OH_UdmfRecord** getRecords = OH_UdmfData_GetRecords(getData, &recordCount);
+       OH_UdsPlainText* udsText = nullptr;
+       OH_UdsHtml* udsHtml = nullptr;
+       // 12. 遍历OH_UdmfRecord。
+       for (unsigned int recordIndex = 0; recordIndex < recordCount; ++recordIndex) {
+           OH_UdmfRecord* record = getRecords[recordIndex];
+           ProcessRecord(record);
+       }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/pasteboard/pasteboard_NDK_sample/entry/src/main/cpp/napi_init.cpp#L203-L266)
 6. 应用退出时，如果剪贴板内的数据没有变化，则通知剪贴板获取全量数据，等待回调完成再继续退出，否则可能导致其他应用粘贴获取不到数据。
 
    ```
-   1. // 15. 查询剪贴板内的数据是否变化。
-   2. uint32_t newChangeCount = OH_Pasteboard_GetChangeCount(pasteboard);
-   3. if (newChangeCount == changeCount) {
-   4. // 16. 通知剪贴板获取全量数据。
-   5. OH_Pasteboard_SyncDelayedDataAsync(pasteboard, SyncCallback);
-   6. // 需要等待SyncCallback回调完成再继续退出
-   7. } else {
-   8. // 继续退出
-   9. OH_LOG_INFO(LOG_APP, "No newChangeCount in pasteboard.");
-   10. }
+   // 15. 查询剪贴板内的数据是否变化。
+   uint32_t newChangeCount = OH_Pasteboard_GetChangeCount(pasteboard);
+   if (newChangeCount == changeCount) {
+       // 16. 通知剪贴板获取全量数据。
+       OH_Pasteboard_SyncDelayedDataAsync(pasteboard, SyncCallback);
+       // 需要等待SyncCallback回调完成再继续退出
+   } else {
+       // 继续退出
+       OH_LOG_INFO(LOG_APP, "No newChangeCount in pasteboard.");
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/pasteboard/pasteboard_NDK_sample/entry/src/main/cpp/napi_init.cpp#L267-L278)
 7. 使用完毕后需要及时释放相关对象的内存。
 
    ```
-   1. OH_UdsPlainText_Destroy(udsText);
-   2. OH_UdsHtml_Destroy(udsHtml);
-   3. OH_UdmfData_Destroy(getData);
-   4. OH_Pasteboard_Destroy(pasteboard);
-   5. }
+       OH_UdsPlainText_Destroy(udsText);
+       OH_UdsHtml_Destroy(udsHtml);
+       OH_UdmfData_Destroy(getData);
+       OH_Pasteboard_Destroy(pasteboard);
+   }
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/pasteboard/pasteboard_NDK_sample/entry/src/main/cpp/napi_init.cpp#L280-L286)

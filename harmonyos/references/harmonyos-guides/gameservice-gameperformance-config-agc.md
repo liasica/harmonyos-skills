@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:45e7cf5742155a3a89136dff60e82ed144eab7bc9cb617d3f759d8cebc5b0b28
+scraped_at: 2026-09-02T14:50:26+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:85e27dff694348b19aeb295c2292a4e26d4f9c12e1827c22a0764b5ec6a073d4
 ---
 
 ## 创建游戏
@@ -17,4 +17,4 @@ content_hash: sha256:45e7cf5742155a3a89136dff60e82ed144eab7bc9cb617d3f759d8cebc5
 
 ## 生成签名证书
 
-数字证书和Profile文件等签名信息可以确保游戏的完整性，请参见[配置签名信息](application-dev-overview.md#section42841246144813)完成配置。
+数字证书和Profile文件等签名信息可以确保游戏的完整性，请参见[配置签名信息](application-dev-overview.md#配置签名信息)完成配置。

@@ -3,22 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (SslErrorHandler)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (SslErrorHandler)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f15dc25124ec9bca3a6aa130b33a9098b539bb380a2ce391b60d3b9cc84f3d5a
+scraped_at: 2026-09-02T15:01:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cd25f9653e2d3263ba33662f56493bde5ea034088f7bfc23630e69b12cfc3d05
 ---
 
-Web组件返回的SSL错误通知事件的处理对象。示例代码参考[onSslErrorEvent](arkts-basic-components-web-events.md#onsslerrorevent12)事件。
+SslErrorHandler是Web组件中处理SSL证书验证错误的类。当加载安全页面时遇到SSL证书错误（如证书过期、主机名不匹配、不受信任的CA），应用可通过onSslErrorEvent回调获取SslErrorHandler实例，并决定是否继续加载或取消导航。示例代码参考[onSslErrorEvent](arkts-basic-components-web-events.md#onsslerrorevent12)事件。
 
-说明
+**说明** 
 
-* 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 本Class首批接口从API version 9开始支持。
+* 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本Class从API version 9开始支持。
 * 示例效果请以真机运行为准。
 
 ## constructor9+
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -28,27 +26,21 @@ SslErrorHandler的构造函数。
 
 ## handleCancel9+
 
-PhonePC/2in1TabletTVWearable
-
 handleCancel(): void
 
-通知Web组件取消此请求。
+通知Web组件取消此请求，并停止当前SSL证书验证流程。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 ## handleConfirm9+
 
-PhonePC/2in1TabletTVWearable
-
 handleConfirm(): void
 
-通知Web组件继续使用SSL证书。
+忽略SSL证书验证错误，继续加载页面。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 ## handleCancel20+
-
-PhonePC/2in1TabletTVWearable
 
 handleCancel(abortLoading: boolean): void
 
@@ -60,4 +52,4 @@ handleCancel(abortLoading: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| abortLoading | boolean | 是 | 是否在取消请求后停止加载页面。  true表示停止加载页面，false表示继续加载页面。  默认值为false。 |
+| abortLoading | boolean | 是 | SSL错误页场景，拒绝错误证书后是否终止页面加载；abortLoading为false时表示不终止，为true时表示终止。 |

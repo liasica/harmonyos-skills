@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: assert
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 调测接口 > assert
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7c1a72e60b522f1ea9efbc6bd4e792e198a3c8b3c040f51cdeb66fafc7e505f5
+scraped_at: 2026-09-02T15:00:08+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:3e39db6d5f71e4a9a948cb3bfc18e16f6e0b3a816973a8a4080853ce9341ea42
 ---
 
 ## 函数功能
@@ -14,15 +14,15 @@ content_hash: sha256:7c1a72e60b522f1ea9efbc6bd4e792e198a3c8b3c040f51cdeb66fafc7e
 
 在算子kernel侧实现代码中需要增加断言的地方使用assert检查代码，并格式化输出一些调测信息。示例如下。
 
+```cpp
+int assertFlag = 10;
+ 
+assert(assertFlag == 10);
+assert(assertFlag == 10, "The assertFlag value is 10.\n");
+assert(assertFlag == 10, "The assertFlag value is %d.\n", assertFlag);
 ```
-1. int assertFlag = 10;
 
-3. assert(assertFlag == 10);
-4. assert(assertFlag == 10, "The assertFlag value is 10.\n");
-5. assert(assertFlag == 10, "The assertFlag value is %d.\n", assertFlag);
-```
-
-说明
+**说明** 
 
 assert接口打印功能会对算子实际运行的性能带来一定影响（每一条assert，系统会额外增加一条逻辑判断，具体性能影响取决于代码中assert的使用数量），通常在调测阶段使用。开发者可以按需通过如下方式关闭打印功能。
 
@@ -32,15 +32,15 @@ assert接口打印功能会对算子实际运行的性能带来一定影响（�
 
 在assert条件被触发时，在断言信息前面会自动打印CANN\_VERSION\_STR值与CANN\_TIMESTAMP值。其中，CANN\_VERSION\_STR与CANN\_TIMESTAMP为宏定义，CANN\_VERSION\_STR代表CANN软件包的版本号信息，形式为字符串，CANN\_TIMESTAMP为CANN软件包发布时的时间戳，形式为数值(uint64\_t)。开发者也可在代码中直接使用这两个宏。assert打印信息示例如下。
 
-```
-1. [ASSERT][CANN_VERSION : XXX.XX][TimeStamp : 20240807140556417] /home/.../add_custom.cpp:44: Assertion `assertFlag != 10' The assertFlag value is 10.
+```plaintext
+[ASSERT][CANN_VERSION : XXX.XX][TimeStamp : 20240807140556417] /home/.../add_custom.cpp:44: Assertion `assertFlag != 10' The assertFlag value is 10.
 ```
 
 ## 函数原型
 
-```
-1. assert(expr)
-2. assert(expr, __gm__ const char *fmt, Args&&... args)
+```cpp
+assert(expr)
+assert(expr, __gm__ const char *fmt, Args&&... args)
 ```
 
 ## 参数说明
@@ -59,6 +59,8 @@ assert接口打印功能会对算子实际运行的性能带来一定影响（�
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 注意事项
@@ -72,22 +74,22 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. int assertFlag = 10;
-
-3. // 断言条件
-4. assert(assertFlag == 10);
-
-6. // 打印消息
-7. assert(assertFlag == 10, "The assertFlag value is 10.\n");
-
-9. // 格式化打印
-10. assert(assertFlag == 10, "The assertFlag value is %d.\n", assertFlag);
-11. assert(assertFlag != 10, "The assertFlag value is %d.\n", assertFlag);
+```cpp
+int assertFlag = 10;
+ 
+// 断言条件
+assert(assertFlag == 10);
+ 
+// 打印消息
+assert(assertFlag == 10, "The assertFlag value is 10.\n");
+ 
+// 格式化打印
+assert(assertFlag == 10, "The assertFlag value is %d.\n", assertFlag);
+assert(assertFlag != 10, "The assertFlag value is %d.\n", assertFlag);
 ```
 
 程序运行时会触发assert，打印效果如下。
 
-```
-1. [ASSERT][CANN_VERSION : XXX.XX][TimeStamp : 20240807140556417] /home/.../add_custom.cpp:44: Assertion `assertFlag != 10' The assertFlag value is 10.
+```plaintext
+[ASSERT][CANN_VERSION : XXX.XX][TimeStamp : 20240807140556417] /home/.../add_custom.cpp:44: Assertion `assertFlag != 10' The assertFlag value is 10.
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-phot
 title: photo_output.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > photo_output.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0c772d1231afa8b223024cf7ef431bac87f9a57661222b2db5ee40e9c2acea60
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d682eabe3e3e9f4f41cec27fd5391090290d20e431e7bdcf78680d08265bfc37
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明拍照输出概念。
 
@@ -26,20 +24,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [PhotoOutput\_Callbacks](capi-oh-camera-photooutput-callbacks.md) | PhotoOutput\_Callbacks | 拍照输出的回调。 |
 | [Camera\_PhotoOutput](capi-oh-camera-camera-photooutput.md) | Camera\_PhotoOutput | 拍照输出对象。  可以使用[OH\_CameraManager\_CreatePhotoOutput](capi-camera-manager-h.md#oh_cameramanager_createphotooutput)方法创建指针。 |
+| [OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md) | OH\_Camera\_PhotoCaptureSettingExt | 扩展拍照设置对象（提供镜像、旋转等基础拍照配置，支持连续调节图片压缩质量）。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -83,17 +76,22 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_ErrorCode OH\_PhotoOutput\_EnableMovingPhoto(Camera\_PhotoOutput\* photoOutput, bool enabled)](capi-photo-output-h.md#oh_photooutput_enablemovingphoto) | - | 是否启用动态照片。 |
 | [Camera\_ErrorCode OH\_PhotoOutput\_IsPhotoQualityPrioritizationSupported(Camera\_PhotoOutput\* photoOutput, Camera\_PhotoQualityPrioritization qualityPrioritization, bool\* isSupported)](capi-photo-output-h.md#oh_photooutput_isphotoqualityprioritizationsupported) | - | 检查是否支持指定的拍照画质优先策略。 |
 | [Camera\_ErrorCode OH\_PhotoOutput\_SetPhotoQualityPrioritization(Camera\_PhotoOutput\* photoOutput, Camera\_PhotoQualityPrioritization qualityPrioritization)](capi-photo-output-h.md#oh_photooutput_setphotoqualityprioritization) | - | 设置拍照画质优先策略。 |
+| [bool OH\_PhotoOutput\_IsAutoExtendedGainmapDeliverySupported(const Camera\_PhotoOutput\* photoOutput)](capi-photo-output-h.md#oh_photooutput_isautoextendedgainmapdeliverysupported) | - | 检查是否支持自动扩展增益图（Gainmap）的输出。 |
+| [Camera\_ErrorCode OH\_PhotoOutput\_EnableAutoExtendedGainmapDelivery(Camera\_PhotoOutput\* photoOutput, bool enabled)](capi-photo-output-h.md#oh_photooutput_enableautoextendedgainmapdelivery) | - | 是否启用自动扩展增益图（Gainmap）的输出。 |
+| [Camera\_ErrorCode OH\_PhotoOutput\_CreatePhotoCaptureSettingExt(Camera\_PhotoOutput\* photoOutput, OH\_Camera\_PhotoCaptureSettingExt\*\* setting)](capi-photo-output-h.md#oh_photooutput_createphotocapturesettingext) | - | 创建拍照扩展设置的实例。 |
+| [Camera\_ErrorCode OH\_PhotoOutput\_DestroyPhotoCaptureSettingExt(OH\_Camera\_PhotoCaptureSettingExt\* setting)](capi-photo-output-h.md#oh_photooutput_destroyphotocapturesettingext) | - | 销毁扩展拍照设置实例。 |
+| [Camera\_ErrorCode OH\_PhotoCaptureSettingExt\_SetImageRotation(OH\_Camera\_PhotoCaptureSettingExt\* photoCaptureSettingExt, Camera\_ImageRotation rotation)](capi-photo-output-h.md#oh_photocapturesettingext_setimagerotation) | - | 拍照扩展设置中的图像旋转角度。 |
+| [Camera\_ErrorCode OH\_PhotoCaptureSettingExt\_SetLocation(OH\_Camera\_PhotoCaptureSettingExt\* photoCaptureSettingExt, Camera\_Location location)](capi-photo-output-h.md#oh_photocapturesettingext_setlocation) | - | 拍照扩展设置中的图片位置信息。 |
+| [Camera\_ErrorCode OH\_PhotoCaptureSettingExt\_SetMirror(OH\_Camera\_PhotoCaptureSettingExt\* photoCaptureSettingExt, bool mirror)](capi-photo-output-h.md#oh_photocapturesettingext_setmirror) | - | 拍照扩展设置中的镜像效果。 |
+| [Camera\_ErrorCode OH\_PhotoCaptureSettingExt\_SetCompressionQuality(OH\_Camera\_PhotoCaptureSettingExt\* photoCaptureSettingExt, uint8\_t compressionQuality)](capi-photo-output-h.md#oh_photocapturesettingext_setcompressionquality) | - | 拍照扩展设置中的图片压缩质量。 |
+| [Camera\_ErrorCode OH\_PhotoOutput\_Capture\_WithCaptureSettingExt(Camera\_PhotoOutput\* photoOutput, OH\_Camera\_PhotoCaptureSettingExt\* setting)](capi-photo-output-h.md#oh_photooutput_capture_withcapturesettingext) | - | 使用扩展拍照设置执行拍照操作。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_PhotoOutput\_OnFrameStart()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_OnFrameStart)(Camera_PhotoOutput* photoOutput)
+```c
+typedef void (*OH_PhotoOutput_OnFrameStart)(Camera_PhotoOutput* photoOutput)
 ```
 
 **描述**
@@ -110,10 +108,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_OnFrameShutter()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_OnFrameShutter)(Camera_PhotoOutput* photoOutput, Camera_FrameShutterInfo* info)
+```c
+typedef void (*OH_PhotoOutput_OnFrameShutter)(Camera_PhotoOutput* photoOutput, Camera_FrameShutterInfo* info)
 ```
 
 **描述**
@@ -131,10 +127,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_OnFrameEnd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_OnFrameEnd)(Camera_PhotoOutput* photoOutput, int32_t frameCount)
+```c
+typedef void (*OH_PhotoOutput_OnFrameEnd)(Camera_PhotoOutput* photoOutput, int32_t frameCount)
 ```
 
 **描述**
@@ -152,10 +146,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_OnError()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_OnError)(Camera_PhotoOutput* photoOutput, Camera_ErrorCode errorCode)
+```c
+typedef void (*OH_PhotoOutput_OnError)(Camera_PhotoOutput* photoOutput, Camera_ErrorCode errorCode)
 ```
 
 **描述**
@@ -177,10 +169,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_CaptureEnd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_CaptureEnd)(Camera_PhotoOutput* photoOutput, int32_t frameCount)
+```c
+typedef void (*OH_PhotoOutput_CaptureEnd)(Camera_PhotoOutput* photoOutput, int32_t frameCount)
 ```
 
 **描述**
@@ -198,10 +188,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_CaptureStartWithInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_CaptureStartWithInfo)(Camera_PhotoOutput* photoOutput, Camera_CaptureStartInfo* Info)
+```c
+typedef void (*OH_PhotoOutput_CaptureStartWithInfo)(Camera_PhotoOutput* photoOutput, Camera_CaptureStartInfo* Info)
 ```
 
 **描述**
@@ -219,10 +207,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_OnFrameShutterEnd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_OnFrameShutterEnd)(Camera_PhotoOutput* photoOutput, Camera_FrameShutterInfo* Info)
+```c
+typedef void (*OH_PhotoOutput_OnFrameShutterEnd)(Camera_PhotoOutput* photoOutput, Camera_FrameShutterInfo* Info)
 ```
 
 **描述**
@@ -240,10 +226,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_CaptureReady()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_CaptureReady)(Camera_PhotoOutput* photoOutput)
+```c
+typedef void (*OH_PhotoOutput_CaptureReady)(Camera_PhotoOutput* photoOutput)
 ```
 
 **描述**
@@ -260,10 +244,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_EstimatedCaptureDuration()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_EstimatedCaptureDuration)(Camera_PhotoOutput* photoOutput, int64_t duration)
+```c
+typedef void (*OH_PhotoOutput_EstimatedCaptureDuration)(Camera_PhotoOutput* photoOutput, int64_t duration)
 ```
 
 **描述**
@@ -281,10 +263,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_PhotoAvailable()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_PhotoAvailable)(Camera_PhotoOutput* photoOutput, OH_PhotoNative* photo)
+```c
+typedef void (*OH_PhotoOutput_PhotoAvailable)(Camera_PhotoOutput* photoOutput, OH_PhotoNative* photo)
 ```
 
 **描述**
@@ -302,10 +282,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_PhotoAssetAvailable()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_PhotoOutput_PhotoAssetAvailable)(Camera_PhotoOutput* photoOutput, OH_MediaAsset* photoAsset)
+```c
+typedef void (*OH_PhotoOutput_PhotoAssetAvailable)(Camera_PhotoOutput* photoOutput, OH_MediaAsset* photoAsset)
 ```
 
 **描述**
@@ -323,10 +301,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_RegisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_RegisterCallback(Camera_PhotoOutput* photoOutput, PhotoOutput_Callbacks* callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_RegisterCallback(Camera_PhotoOutput* photoOutput, PhotoOutput_Callbacks* callback)
 ```
 
 **描述**
@@ -350,10 +326,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_UnregisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_UnregisterCallback(Camera_PhotoOutput* photoOutput, PhotoOutput_Callbacks* callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_UnregisterCallback(Camera_PhotoOutput* photoOutput, PhotoOutput_Callbacks* callback)
 ```
 
 **描述**
@@ -377,10 +351,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_RegisterCaptureStartWithInfoCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_RegisterCaptureStartWithInfoCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureStartWithInfo callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_RegisterCaptureStartWithInfoCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureStartWithInfo callback)
 ```
 
 **描述**
@@ -404,10 +376,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_GetPhotoRotation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_GetPhotoRotation(Camera_PhotoOutput* photoOutput, int deviceDegree, Camera_ImageRotation* imageRotation)
+```c
+Camera_ErrorCode OH_PhotoOutput_GetPhotoRotation(Camera_PhotoOutput* photoOutput, int deviceDegree, Camera_ImageRotation* imageRotation)
 ```
 
 **描述**
@@ -432,10 +402,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_GetPhotoRotationWithoutDeviceDegree()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(Camera_PhotoOutput* photoOutput, Camera_ImageRotation* imageRotation)
+```c
+Camera_ErrorCode OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(Camera_PhotoOutput* photoOutput, Camera_ImageRotation* imageRotation)
 ```
 
 **描述**
@@ -459,10 +427,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_UnregisterCaptureStartWithInfoCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureStartWithInfo callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureStartWithInfo callback)
 ```
 
 **描述**
@@ -486,10 +452,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_RegisterCaptureEndCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_RegisterCaptureEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureEnd callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_RegisterCaptureEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureEnd callback)
 ```
 
 **描述**
@@ -513,10 +477,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_UnregisterCaptureEndCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureEnd callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureEnd callback)
 ```
 
 **描述**
@@ -540,10 +502,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_RegisterFrameShutterEndCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_RegisterFrameShutterEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_OnFrameShutterEnd callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_RegisterFrameShutterEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_OnFrameShutterEnd callback)
 ```
 
 **描述**
@@ -567,10 +527,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_UnregisterFrameShutterEndCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_UnregisterFrameShutterEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_OnFrameShutterEnd callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_UnregisterFrameShutterEndCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_OnFrameShutterEnd callback)
 ```
 
 **描述**
@@ -594,10 +552,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_RegisterCaptureReadyCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_RegisterCaptureReadyCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureReady callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_RegisterCaptureReadyCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureReady callback)
 ```
 
 **描述**
@@ -621,10 +577,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_UnregisterCaptureReadyCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureReadyCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureReady callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_UnregisterCaptureReadyCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_CaptureReady callback)
 ```
 
 **描述**
@@ -648,10 +602,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_RegisterEstimatedCaptureDurationCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_EstimatedCaptureDuration callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_EstimatedCaptureDuration callback)
 ```
 
 **描述**
@@ -675,10 +627,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_UnregisterEstimatedCaptureDurationCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_EstimatedCaptureDuration callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_EstimatedCaptureDuration callback)
 ```
 
 **描述**
@@ -702,10 +652,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_RegisterPhotoAvailableCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAvailable callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAvailable callback)
 ```
 
 **描述**
@@ -729,10 +677,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_UnregisterPhotoAvailableCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAvailable callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAvailable callback)
 ```
 
 **描述**
@@ -756,10 +702,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_RegisterPhotoAssetAvailableCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAssetAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAssetAvailable callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_RegisterPhotoAssetAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAssetAvailable callback)
 ```
 
 **描述**
@@ -783,10 +727,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_UnregisterPhotoAssetAvailableCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAssetAvailable callback)
+```c
+Camera_ErrorCode OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback(Camera_PhotoOutput* photoOutput, OH_PhotoOutput_PhotoAssetAvailable callback)
 ```
 
 **描述**
@@ -810,10 +752,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_Capture()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_Capture(Camera_PhotoOutput* photoOutput)
+```c
+Camera_ErrorCode OH_PhotoOutput_Capture(Camera_PhotoOutput* photoOutput)
 ```
 
 **描述**
@@ -838,10 +778,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_Capture\_WithCaptureSetting()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSetting(Camera_PhotoOutput* photoOutput, Camera_PhotoCaptureSetting setting)
+```c
+Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSetting(Camera_PhotoOutput* photoOutput, Camera_PhotoCaptureSetting setting)
 ```
 
 **描述**
@@ -865,10 +803,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_Release(Camera_PhotoOutput* photoOutput)
+```c
+Camera_ErrorCode OH_PhotoOutput_Release(Camera_PhotoOutput* photoOutput)
 ```
 
 **描述**
@@ -891,10 +827,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_IsMirrorSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_IsMirrorSupported(Camera_PhotoOutput* photoOutput, bool* isSupported)
+```c
+Camera_ErrorCode OH_PhotoOutput_IsMirrorSupported(Camera_PhotoOutput* photoOutput, bool* isSupported)
 ```
 
 **描述**
@@ -918,10 +852,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_EnableMirror()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_EnableMirror(Camera_PhotoOutput* photoOutput, bool enabled)
+```c
+Camera_ErrorCode OH_PhotoOutput_EnableMirror(Camera_PhotoOutput* photoOutput, bool enabled)
 ```
 
 **描述**
@@ -945,10 +877,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_GetActiveProfile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_GetActiveProfile(Camera_PhotoOutput* photoOutput, Camera_Profile** profile)
+```c
+Camera_ErrorCode OH_PhotoOutput_GetActiveProfile(Camera_PhotoOutput* photoOutput, Camera_Profile** profile)
 ```
 
 **描述**
@@ -972,10 +902,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_DeleteProfile()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_DeleteProfile(Camera_Profile* profile)
+```c
+Camera_ErrorCode OH_PhotoOutput_DeleteProfile(Camera_Profile* profile)
 ```
 
 **描述**
@@ -998,10 +926,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_IsMovingPhotoSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_IsMovingPhotoSupported(Camera_PhotoOutput* photoOutput, bool* isSupported)
+```c
+Camera_ErrorCode OH_PhotoOutput_IsMovingPhotoSupported(Camera_PhotoOutput* photoOutput, bool* isSupported)
 ```
 
 **描述**
@@ -1025,10 +951,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_EnableMovingPhoto()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_EnableMovingPhoto(Camera_PhotoOutput* photoOutput, bool enabled)
+```c
+Camera_ErrorCode OH_PhotoOutput_EnableMovingPhoto(Camera_PhotoOutput* photoOutput, bool enabled)
 ```
 
 **描述**
@@ -1052,10 +976,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_IsPhotoQualityPrioritizationSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(Camera_PhotoOutput* photoOutput, Camera_PhotoQualityPrioritization qualityPrioritization, bool* isSupported)
+```c
+Camera_ErrorCode OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(Camera_PhotoOutput* photoOutput, Camera_PhotoQualityPrioritization qualityPrioritization, bool* isSupported)
 ```
 
 **描述**
@@ -1080,10 +1002,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoOutput\_SetPhotoQualityPrioritization()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoOutput_SetPhotoQualityPrioritization(Camera_PhotoOutput* photoOutput, Camera_PhotoQualityPrioritization qualityPrioritization)
+```c
+Camera_ErrorCode OH_PhotoOutput_SetPhotoQualityPrioritization(Camera_PhotoOutput* photoOutput, Camera_PhotoQualityPrioritization qualityPrioritization)
 ```
 
 **描述**
@@ -1104,3 +1024,226 @@ PhonePC/2in1TabletTVWearable
 | 类型 | 说明 |
 | --- | --- |
 | [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_OPERATION\_NOT\_ALLOWED：操作不允许。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
+### OH\_PhotoOutput\_IsAutoExtendedGainmapDeliverySupported()
+
+```c
+bool OH_PhotoOutput_IsAutoExtendedGainmapDeliverySupported(const Camera_PhotoOutput* photoOutput)
+```
+
+**描述**
+
+检查是否支持自动扩展增益图（Gainmap）的输出。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [const Camera\_PhotoOutput](capi-oh-camera-camera-photooutput.md)\* photoOutput | 用于检查是否支持自动扩展增益图（Gainmap）的输出的拍照输出实例。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 是否支持自动扩展增益图（Gainmap）的输出的结果。true表示支持，false表示不支持。 |
+
+### OH\_PhotoOutput\_EnableAutoExtendedGainmapDelivery()
+
+```c
+Camera_ErrorCode OH_PhotoOutput_EnableAutoExtendedGainmapDelivery(Camera_PhotoOutput* photoOutput, bool enabled)
+```
+
+**描述**
+
+是否启用自动扩展增益图（Gainmap）的输出。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [Camera\_PhotoOutput](capi-oh-camera-camera-photooutput.md)\* photoOutput | 用于启用或禁用自动扩展增益图（Gainmap）的输出的拍照输出实例。 |
+| bool enabled | 是否启用自动扩展增益图（Gainmap）的输出的结果。true表示启用，false表示不启用。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | * CAMERA\_OK：方法调用成功。  * CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  * CAMERA\_OPERATION\_NOT\_ALLOWED：操作不允许。  * CAMERA\_SESSION\_NOT\_CONFIG：会话未配置。  * CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
+### OH\_PhotoOutput\_CreatePhotoCaptureSettingExt()
+
+```c
+Camera_ErrorCode OH_PhotoOutput_CreatePhotoCaptureSettingExt(Camera_PhotoOutput* photoOutput, OH_Camera_PhotoCaptureSettingExt** setting)
+```
+
+**描述**
+
+创建拍照扩展设置的实例。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [Camera\_PhotoOutput](capi-oh-camera-camera-photooutput.md)\* photoOutput | photoOutput 拍照输出实例。 |
+| [OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md)\*\* setting | 如果方法调用成功，setting指向创建OH\_Camera\_PhotoCaptureSettingExt实例指针的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
+### OH\_PhotoOutput\_DestroyPhotoCaptureSettingExt()
+
+```c
+Camera_ErrorCode OH_PhotoOutput_DestroyPhotoCaptureSettingExt(OH_Camera_PhotoCaptureSettingExt* setting)
+```
+
+**描述**
+
+销毁拍照扩展设置对象的实例。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md)\* setting | 指向扩展拍照设置实例的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。 |
+
+### OH\_PhotoCaptureSettingExt\_SetImageRotation()
+
+```c
+Camera_ErrorCode OH_PhotoCaptureSettingExt_SetImageRotation(OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt, Camera_ImageRotation rotation)
+```
+
+**描述**
+
+拍照扩展设置中的图像旋转角度。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md)\* photoCaptureSettingExt | 指向扩展拍照设置实例的指针。 |
+| [Camera\_ImageRotation](capi-camera-h.md#camera_imagerotation) rotation | 图像旋转角度，定义在[Camera\_ImageRotation](capi-camera-h.md#camera_imagerotation)枚举中。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_OPERATION\_NOT\_ALLOWED：操作不允许。 |
+
+### OH\_PhotoCaptureSettingExt\_SetLocation()
+
+```c
+Camera_ErrorCode OH_PhotoCaptureSettingExt_SetLocation(OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt, Camera_Location location)
+```
+
+**描述**
+
+拍照扩展设置中的图片位置信息。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md)\* photoCaptureSettingExt | 指向扩展拍照设置实例的指针。 |
+| [Camera\_Location](capi-oh-camera-camera-location.md) location | 图片位置，在Camera\_Location枚举中定义。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_OPERATION\_NOT\_ALLOWED：操作不允许。 |
+
+### OH\_PhotoCaptureSettingExt\_SetMirror()
+
+```c
+Camera_ErrorCode OH_PhotoCaptureSettingExt_SetMirror(OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt, bool mirror)
+```
+
+**描述**
+
+拍照扩展设置中的镜像效果。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md)\* photoCaptureSettingExt | 指向扩展拍照设置实例的指针。 |
+| bool mirror | 镜像效果开关。true表示启用，false表示禁用。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_OPERATION\_NOT\_ALLOWED：操作不允许。 |
+
+### OH\_PhotoCaptureSettingExt\_SetCompressionQuality()
+
+```c
+Camera_ErrorCode OH_PhotoCaptureSettingExt_SetCompressionQuality(OH_Camera_PhotoCaptureSettingExt* photoCaptureSettingExt, uint8_t compressionQuality)
+```
+
+**描述**
+
+拍照扩展设置中的图片压缩质量。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md)\* photoCaptureSettingExt | 指向扩展拍照设置实例的指针。 |
+| uint8\_t compressionQuality | 图片压缩质量，取值范围（1, 100），取值越大生成的图片质量越高，1 为最低质量，100 为最高质量。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_OPERATION\_NOT\_ALLOWED：操作不允许。 |
+
+### OH\_PhotoOutput\_Capture\_WithCaptureSettingExt()
+
+```c
+Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSettingExt(Camera_PhotoOutput* photoOutput, OH_Camera_PhotoCaptureSettingExt* setting)
+```
+
+**描述**
+
+使用扩展拍照设置执行拍照操作。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [Camera\_PhotoOutput](capi-oh-camera-camera-photooutput.md)\* photoOutput | 拍照输出实例。 |
+| [OH\_Camera\_PhotoCaptureSettingExt](capi-oh-camera-camera-photocapturesettingext.md)\* setting | 指向扩展拍照设置实例的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SESSION\_NOT\_RUNNING：捕获会话未运行。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |

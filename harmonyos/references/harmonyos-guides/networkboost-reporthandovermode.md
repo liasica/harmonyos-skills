@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 迁移模式设置
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网切换） > 迁移模式设置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:56+08:00
+scraped_at: 2026-09-02T14:50:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f553934b59a8108f409452ac4d5b5a09a64ffaf042118338479a7c6e460d4f8a
+content_hash: sha256:0fbd1611f42e2c15df5906f3319b62b771471c7057c69387efaf89a7f015a0dd
 ---
 
 ## 场景介绍
@@ -24,17 +24,17 @@ content_hash: sha256:f553934b59a8108f409452ac4d5b5a09a64ffaf042118338479a7c6e460
 
 1. 导入Network Boost Kit模块。
 
-   ```
-   1. import { netHandover} from '@kit.NetworkBoostKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { netHandover} from '@kit.NetworkBoostKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 调用setHandoverMode接口，设置为自主模式，禁止系统发起连接迁移。
 
-   ```
-   1. try{
-   2. let mode: netHandover.HandoverMode = netHandover.HandoverMode.DISCRETION;
-   3. netHandover.setHandoverMode(mode);
-   4. } catch (err) {
-   5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-   6. }
+   ```typescript
+   try{
+     let mode: netHandover.HandoverMode = netHandover.HandoverMode.DISCRETION;
+     netHandover.setHandoverMode(mode);
+   } catch (err) {
+     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+   }
    ```

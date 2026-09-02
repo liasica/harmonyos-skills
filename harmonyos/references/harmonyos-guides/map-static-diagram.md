@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-static-di
 title: 静态图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 静态图
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2c2eab901a3d1206763e8963a75cafa08d7fdaefb323dac5a446e2b50f376b4f
+scraped_at: 2026-09-02T14:50:29+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:4f73ec66230338ee5cd96abcf2665012f5ca67615ba09a4b011f898d0de51680
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2c2eab901a3d1206763e8963a75cafa08d7fdaefb323dac5a446e2b50f3
 
 **图1** 静态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/s57jvw2OTHey3nslExPjLw/zh-cn_image_0000002558605892.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/fZY2nZKsSjilM6tpZOxgSg/zh-cn_image_0000002706675132.jpg "点击放大")
 
 ## 接口说明
 
@@ -30,107 +30,111 @@ content_hash: sha256:2c2eab901a3d1206763e8963a75cafa08d7fdaefb323dac5a446e2b50f3
 
 1. 导入相关模块。
 
-   ```
-   1. import { staticMap } from '@kit.MapKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { staticMap } from '@kit.MapKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 创建静态图初始化参数，调用[getMapImage](../harmonyos-references/map-staticmap.md#getmapimage)方法获取静态图，效果如下图。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct StaticMapDemo {
-   4. @State image?: PixelMap = undefined;
+   ```typescript
+   @Entry
+   @Component
+   struct MapStaticDiagramDemo {
+     // ...
+     @State image?: PixelMap = undefined;
 
-   6. build() {
-   7. Column() {
-   8. this.buildDemoUI();
-   9. }.width('100%')
-   10. .margin({ bottom: 48 })
-   11. .backgroundColor(0xf2f2f2)
-   12. .height('100%')
-   13. }
+     build() {
+       // ...
+         Column() {
+           this.buildDemoUI();
+         }.width('100%')
+         .margin({ bottom: 48 })
+         .backgroundColor(0xf2f2f2)
+         .height('100%')
 
-   15. @Builder
-   16. buildDemoUI() {
-   17. // 展示获取的静态图
-   18. Image(this.image)
-   19. .width('100%')
-   20. .fitOriginalSize(false)
-   21. .border({ width: 1 })
-   22. .borderStyle(BorderStyle.Dashed)
-   23. .objectFit(ImageFit.Contain)
-   24. .height("90%")
+         // ...
+     }
 
-   26. Row() {
-   27. Button("getStaticMap")
-   28. .fontSize(12)
-   29. .onClick(async () => {
-   30. // 设置静态图标记参数
-   31. let markers: Array<staticMap.StaticMapMarker> = [{
-   32. location: {
-   33. latitude: 50,
-   34. longitude: 126.3
-   35. },
-   36. font: 'statics',
-   37. defaultIconSize: staticMap.IconSize.TINY
-   38. }];
+     @Builder
+     buildDemoUI() {
+       // 展示获取的静态图
+       Image(this.image)
+         .width('100%')
+         .fitOriginalSize(false)
+         .border({ width: 1 })
+         .borderStyle(BorderStyle.Dashed)
+         .objectFit(ImageFit.Contain)
+         .height('90%')
 
-   40. // 设置静态图绘制路径参数
-   41. let path: staticMap.StaticMapPath = {
-   42. locations: [
-   43. {
-   44. latitude: 50,
-   45. longitude: 126
-   46. },
-   47. {
-   48. latitude: 50.3,
-   49. longitude: 126
-   50. },
-   51. {
-   52. latitude: 50.3,
-   53. longitude: 126.3
-   54. },
-   55. {
-   56. latitude: 49.7,
-   57. longitude: 126
-   58. },
-   59. {
-   60. latitude: 50,
-   61. longitude: 126
-   62. }
-   63. ],
-   64. width: 3
-   65. };
+       Row() {
+         Button('getStaticMap')
+           .fontSize(12)
+           .onClick(async () => {
+             // 设置静态图标记参数
+             let markers: staticMap.StaticMapMarker[] = [{
+               location: {
+                 latitude: 50,
+                 longitude: 126.3
+               },
+               font: 'statics',
+               defaultIconSize: staticMap.IconSize.TINY
+             }];
 
-   67. // 拼装静态图参数
-   68. let option: staticMap.StaticMapOptions = {
-   69. location: {
-   70. latitude: 50,
-   71. longitude: 126
-   72. },
-   73. zoom: 10,
-   74. imageWidth: 1024,
-   75. imageHeight: 1024,
-   76. scale: 1,
-   77. markers: markers,
-   78. path: path
-   79. };
+             // 设置静态图绘制路径参数
+             let path: staticMap.StaticMapPath = {
+               locations: [
+                 {
+                   latitude: 50,
+                   longitude: 126
+                 },
+                 {
+                   latitude: 50.3,
+                   longitude: 126
+                 },
+                 {
+                   latitude: 50.3,
+                   longitude: 126.3
+                 },
+                 {
+                   latitude: 49.7,
+                   longitude: 126
+                 },
+                 {
+                   latitude: 50,
+                   longitude: 126
+                 }
+               ],
+               width: 3
+             };
 
-   81. try {
-   82. // 获取静态图
-   83. this.image = await staticMap.getMapImage(option);
-   84. console.info("Succeeded in getting image.");
-   85. } catch (error) {
-   86. const err: BusinessError = error as BusinessError;
-   87. console.error(`Failed in getting image, code: ${err.code}, message: ${err.message}`);
-   88. }
-   89. })
-   90. }.margin({ top: 12 })
-   91. }
-   92. }
+             // 拼装静态图参数
+             let option: staticMap.StaticMapOptions = {
+               location: {
+                 latitude: 50,
+                 longitude: 126
+               },
+               zoom: 10,
+               imageWidth: 1024,
+               imageHeight: 1024,
+               scale: 1,
+               markers: markers,
+               path: path
+             };
+
+             try {
+               // 获取静态图
+               this.image = await staticMap.getMapImage(option);
+               console.info('Succeeded in getting image.');
+             } catch (error) {
+               const err: BusinessError = error as BusinessError;
+               console.error(`Failed in getting image, code: ${err.code}, message: ${err.message}`);
+             }
+           })
+       }.margin({ top: 12 })
+     }
+   }
    ```
 
    **图2** 调用getMapImage方法获取静态图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/LSdhkCmIS_2h6f109WFi8g/zh-cn_image_0000002589325419.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/G08uLyFsT7SXoX7bhgG2hg/zh-cn_image_0000002736434221.jpg "点击放大")

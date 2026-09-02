@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_i_d_o2
 title: FIDO2_Capability
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > C API > 结构体 > FIDO2_Capability
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7064719894ff6b8e2f23ca8a7ea42b11f8dd0f7519b1140e6d2f99493aa86537
+scraped_at: 2026-09-02T15:01:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:17c8458ff78b3a2a73218103259ce75b233f5000d766579669003c0485c5849d
 ---
 
 ## 概述
@@ -14,7 +14,9 @@ content_hash: sha256:7064719894ff6b8e2f23ca8a7ea42b11f8dd0f7519b1140e6d2f99493aa
 
 **起始版本：** 6.0.0(20)
 
-**相关模块：** [FIDO2](passkey.md)
+**相关模块：** [FIDO2（通行密钥服务）](passkey.md)
+
+**所在头文件：** [fido2\_api.h](onlineauthentication_capi_header_fido2.md)
 
 ## 汇总
 
@@ -29,8 +31,8 @@ content_hash: sha256:7064719894ff6b8e2f23ca8a7ea42b11f8dd0f7519b1140e6d2f99493aa
 
 ### capability
 
-```
-1. FIDO2_ClientCapability FIDO2_Capability::capability
+```cpp
+FIDO2_ClientCapability FIDO2_Capability::capability
 ```
 
 **描述**
@@ -39,8 +41,8 @@ content_hash: sha256:7064719894ff6b8e2f23ca8a7ea42b11f8dd0f7519b1140e6d2f99493aa
 
 ### isSupported
 
-```
-1. bool FIDO2_Capability::isSupported
+```cpp
+bool FIDO2_Capability::isSupported
 ```
 
 **描述**

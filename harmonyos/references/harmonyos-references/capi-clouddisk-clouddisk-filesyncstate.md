@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk_FileSyncState
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体 > CloudDisk_FileSyncState
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0dc53208a6610541bf8a1d8021ca752ba88a7a0afc5e27b202f4451518aecc8b
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:09a7517de466d67515aafc5bf534020d80e5d0c2207e25dfc8ed3c1eefeae212
 ---
 
-```
-1. typedef struct CloudDisk_FileSyncState {...} CloudDisk_FileSyncState
+```c
+typedef struct CloudDisk_FileSyncState {...} CloudDisk_FileSyncState
 ```
 
 ## 概述
-
-PC/2in1Tablet
 
 文件的同步状态。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 成员变量
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

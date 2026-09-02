@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 如何做到连续投播
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 如何做到连续投播
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:43+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:06+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:8efeb244d9dc1dbcf2a998272eeb9327182e2f9e6e4a4493cf38829f0e375819
 ---
 

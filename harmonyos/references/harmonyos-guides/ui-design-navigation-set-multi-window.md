@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 设置应用内多窗
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 设置应用内多窗
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:21+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:292596074edf819b265724ebaa81e648afba0e6b16523e3e0b324966a9e55fc9
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:8dd8c416cab00db08e463e955d6052337ce49cd5e2f443d097366f127bdb8a25
 ---
 
 ## 场景介绍
@@ -28,54 +28,55 @@ content_hash: sha256:292596074edf819b265724ebaa81e648afba0e6b16523e3e0b324966a9e
 
 1. 导入模块。
 
-   ```
-   1. // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
-   2. import { HdsNavigation, HdsNavigationMenuContentOptions, HdsNavigationAttribute } from '@kit.UIDesignKit';
-   3. import { Want } from '@kit.AbilityKit';
+   ```typescript
+   // 从6.0.2(22)版本开始，无需手动导入HdsNavigationAttribute。具体请参考HdsNavigation的导入模块说明。
+   import { HdsNavigation, HdsNavigationMenuContentOptions, HdsNavigationAttribute } from '@kit.UIDesignKit';
+   import { Want } from '@kit.AbilityKit';
    ```
 2. 创建一级导航组件，通过配置titleBar中的menu上的multiWindowEntryInAPPMenu属性，实现应用内多窗图标设置。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct MultiWindowEntryInAPPTest {
-   4. private want: Want = {
-   5. // 修改为当前应用的bundleName、moduleName、abilityName，启动应用内的UIAbility
-   6. bundleName: "com.example.myapplication",
-   7. moduleName: "entry",
-   8. abilityName: "FuncAbility",
-   9. }
-   10. @State menuContent: HdsNavigationMenuContentOptions = {
-   11. multiWindowEntryInAPPMenu: {
-   12. want: this.want,
-   13. },
-   14. maxCount: 3,
-   15. value: [
-   16. { content: { label: 'menu1', icon: $r('sys.symbol.search_things'), } },
-   17. { content: { label: 'menu2', icon: $r('sys.symbol.plus'), } }
-   18. ]
-   19. }
+   ```typescript
+   @Entry
+   @Component
+   struct MultiWindowEntryInAPPTest {
+     private want: Want = {
+       // 修改为当前应用的bundleName、moduleName、abilityName，启动应用内的UIAbility
+       // 注意：以下参数仅为示例，请替换为实际应用的参数
+       bundleName: 'com.example.myapplication',
+       moduleName: 'entry',
+       abilityName: 'FuncAbility',
+     }
+     @State menuContent: HdsNavigationMenuContentOptions = {
+       multiWindowEntryInAPPMenu: {
+         want: this.want
+       },
+       maxCount: 3,
+       value: [
+         { content: { label: 'menu1', icon: $r('sys.symbol.search_things'), } },
+         { content: { label: 'menu2', icon: $r('sys.symbol.plus'), } }
+       ]
+     }
 
-   21. build() {
-   22. HdsNavigation() {
-   23. Stack() {
-   24. Text("Page1")
-   25. }.alignContent(Alignment.Center)
-   26. .width("100%")
-   27. .height("100%")
-   28. }
-   29. .hideToolBar(false)
-   30. .navBarWidth('100%')
-   31. .titleBar({
-   32. content: {
-   33. title: {
-   34. mainTitle: "Index"
-   35. },
-   36. menu: this.menuContent
-   37. }
-   38. })
-   39. }
-   40. }
+     build() {
+       HdsNavigation() {
+         Stack() {
+           Text('Page1')
+         }.alignContent(Alignment.Center)
+         .width('100%')
+         .height('100%')
+       }
+       .hideToolBar(false)
+       .navBarWidth('100%')
+       .titleBar({
+         content: {
+           title: {
+             mainTitle: "Index"
+           },
+           menu: this.menuContent
+         }
+       })
+     }
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/QJZ2-qUcT2K2orpHDY_rCQ/zh-cn_image_0000002558764836.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/rv5GdLtWSwObL9cSAUyOqg/zh-cn_image_0000002706674296.jpg)

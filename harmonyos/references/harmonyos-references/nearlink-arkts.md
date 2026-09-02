@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-arkts
-title: ArkTS API参考
-breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API参考
+title: ArkTS API
+breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1a8e616e9b33feb1e5b8433fa0c1a727c3d20b4a29a7617f07e2135f4727591c
+scraped_at: 2026-09-02T14:52:19+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:96d7964734ecb7d31b64732cb1260fb8245bf3e1810f3dc04b50b30c996aaf1a
 ---
 
 * **[manager（星闪开关能力）](nearlink-manager.md)**
@@ -14,5 +14,6 @@ content_hash: sha256:1a8e616e9b33feb1e5b8433fa0c1a727c3d20b4a29a7617f07e2135f472
 * **[scan（星闪扫描能力）](nearlink-scan.md)**
 * **[ssap（星闪SSAP连接能力）](nearlink-ssap.md)**
 * **[dataTransfer（星闪数传能力）](nearlink-data-transfer-api.md)**
+* **[cdsm（星闪合作设备集合能力）](nearlink-cdsm.md)**
 * **[constant（星闪公共常量定义）](nearlink-constant.md)**
-* **[ArkTS API错误码](nearlink-error-code.md)**
+* **[ArkTS API错误码](errorcode-nearlink.md)**

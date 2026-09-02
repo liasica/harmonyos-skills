@@ -3,14 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.deviceInfo（设备信息管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.deviceInfo（设备信息管理）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:91f847a12cc644958da6845b6636d1a2ac37dee37d489d217d84ffd572ceebfb
+scraped_at: 2026-09-02T15:02:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2a5e5a9e8528981cc5d72fe6453200763507a66305b35aa97f7b545aba21e60b
 ---
 
-本模块提供企业设备信息管理能力，包括获取设备序列号、设备名称等。
+本模块提供企业设备信息管理能力，支持获取设备序列号、设备名称、SIM卡信息等。企业管理员可通过此模块查询设备详细信息，实现设备资产的统一管理和追踪。
 
-说明
+**使用场景：**
+
+* 设备资产管理与追踪
+* 企业设备合规性检查
+* 设备信息采集与统计
+* 故障诊断与设备识别
+
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,15 +27,11 @@ content_hash: sha256:91f847a12cc644958da6845b6636d1a2ac37dee37d489d217d84ffd572c
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { deviceInfo } from '@kit.MDMKit';
+```ts
+import { deviceInfo } from '@kit.MDMKit';
 ```
 
 ## deviceInfo.getDeviceInfo
-
-PhonePC/2in1Tablet
 
 getDeviceInfo(admin: Want, label: string): string
 
@@ -44,7 +47,7 @@ getDeviceInfo(admin: Want, label: string): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件，用于指定具有设备管理能力的目标应用。Want对象中必须包含abilityName（扩展能力名称）和bundleName（应用包名）两个必填字段。 |
 | label | string | 是 | 支持获取的设备信息标签。  - deviceName：设备名称。  - deviceSerial：设备序列号。  - simInfo：SIM卡信息。  - disk：硬盘信息。  - memory：内存信息，当前仅支持PC/2in1设备使用。 |
 
 **返回值：**
@@ -61,26 +64,27 @@ getDeviceInfo(admin: Want, label: string): string
 | --- | --- |
 | 9200001 | The application is not an administrator application of the device. |
 | 9200002 | The administrator application does not have permission to manage the device. |
+| 9200007 | The system ability works abnormally. |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
-```
-1. import { deviceInfo } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { deviceInfo } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. try {
-11. // 需根据实际情况进行替换
-12. let result: string = deviceInfo.getDeviceInfo(wantTemp, 'deviceName');
-13. console.info(`Succeeded in getting device name, result : ${result}`);
-14. } catch (err) {
-15. console.error(`Failed to get device name. Code: ${err.code}, message: ${err.message}`);
-16. }
+try {
+  // 需根据实际情况进行替换
+  let result: string = deviceInfo.getDeviceInfo(wantTemp, 'deviceName');
+  console.info(`Succeeded in getting device name, result : ${result}`);
+} catch (err) {
+  console.error(`Failed to get device name. Code: ${err.code}, message: ${err.message}`);
+}
 ```

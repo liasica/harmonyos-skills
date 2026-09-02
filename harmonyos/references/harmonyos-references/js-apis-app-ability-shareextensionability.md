@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.ShareExtensionAbility (支持分享详情页接入的ExtensionAbility组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.ShareExtensionAbility (支持分享详情页接入的ExtensionAbility组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:41ec8d42327ffb022eccffaa9c08878fc7240a119cf6301c4458debd6f22eb66
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d662469a451d5497e7dba8b4d032a314027f416d7f4acf37a864569cf50e4f23
 ---
 
 ShareExtensionAbility继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)，为开发者提供接入分享详情页能力。
@@ -14,7 +14,7 @@ ShareExtensionAbility继承自[UIExtensionAbility](js-apis-app-ability-uiextensi
 
 各类Ability的继承关系详见[继承关系说明](js-apis-app-ability-ability.md#ability的继承关系说明)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -22,15 +22,11 @@ ShareExtensionAbility继承自[UIExtensionAbility](js-apis-app-ability-uiextensi
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { ShareExtensionAbility } from '@kit.AbilityKit';
+```ts
+import { ShareExtensionAbility } from '@kit.AbilityKit';
 ```
 
 ## ShareExtensionAbility
-
-PhonePC/2in1TabletTVWearable
 
 ShareExtensionAbility继承自[UIExtensionAbility](js-apis-app-ability-uiextensionability.md)，为开发者提供分享详情页扩展能力。
 

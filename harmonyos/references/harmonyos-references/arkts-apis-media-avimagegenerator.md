@@ -3,31 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVImageGenerator)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVImageGenerator)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:73b79b52c0b4547a9649af1d47942cf329e3526dec9e58889b00b899434cdcd4
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:43021f6a46d0b6dbbe80326ce4ff0d8cb5e739f7fc65c4646a17a4e0aa386250
 ---
 
 视频缩略图获取类，用于从视频资源中获取缩略图。在调用AVImageGenerator的方法前，需要先通过[createAVImageGenerator()](arkts-apis-media-f.md#mediacreateavimagegenerator12)构建一个AVImageGenerator实例。
 
 获取视频缩略图的demo可参考：[获取视频缩略图开发指导](../harmonyos-guides/avimagegenerator.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 12开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
 
@@ -36,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | fdSrc12+ | [AVFileDescriptor](arkts-apis-media-i.md#avfiledescriptor9) | 否 | 是 | 媒体文件描述，通过该属性设置数据源。  **使用示例**：  假设一个连续存储的媒体文件，地址偏移：0，字节长度：100。其文件描述为AVFileDescriptor { fd = 资源句柄; offset = 0; length = 100; }。  **说明：**  将资源句柄（fd）传递给AVImageGenerator实例之后，不允许通过该资源句柄做其他读写操作，包括但不限于将同一个资源句柄传递给多个AVPlayer/AVMetadataExtractor/AVImageGenerator/AVTranscoder。同一时间通过同一个资源句柄读写文件时存在竞争关系，将导致视频缩略图数据获取异常。 |
 
 ## fetchFrameByTime12+
-
-PhonePC/2in1TabletTVWearable
 
 fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapParams, callback: AsyncCallback<image.PixelMap>): void
 
@@ -65,45 +59,45 @@ fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapPa
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { image } from '@kit.ImageKit';
-3. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
+import { media } from '@kit.MediaKit';
 
-5. let avImageGenerator: media.AVImageGenerator | undefined = undefined;
-6. let pixel_map: image.PixelMap | undefined = undefined;
+let avImageGenerator: media.AVImageGenerator | undefined = undefined;
+let pixel_map: image.PixelMap | undefined = undefined;
 
-8. // 初始化入参。
-9. let timeUs: number = 0;
+// 初始化入参。
+let timeUs: number = 0;
 
-11. let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
 
-13. let param: media.PixelMapParams = {
-14. width: 300,
-15. height: 300,
-16. };
+let param: media.PixelMapParams = {
+  width: 300,
+  height: 300,
+};
 
-18. // 获取缩略图。
-19. media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
-20. if (generator) {
-21. avImageGenerator = generator;
-22. console.info(`Succeeded in creating AVImageGenerator`);
-23. avImageGenerator.fetchFrameByTime(timeUs, queryOption, param, (error: BusinessError, pixelMap) => {
-24. if (error) {
-25. console.error(`Failed to fetch FrameByTime, err = ${JSON.stringify(error)}`);
-26. return;
-27. }
-28. pixel_map = pixelMap;
-29. });
-30. } else {
-31. console.error(`Failed to create AVImageGenerator, error message:${err.message}`);
-32. }
-33. });
+// 获取缩略图。
+media.createAVImageGenerator(async (err: BusinessError, generator: media.AVImageGenerator) => {
+  if (generator) {
+    avImageGenerator = generator;
+    console.info(`Succeeded in creating AVImageGenerator`);
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    generator.fdSrc = await context.resourceManager.getRawFd('H264_AAC.mp4');
+    avImageGenerator.fetchFrameByTime(timeUs, queryOption, param, (error: BusinessError, pixelMap) => {
+      if (error) {
+        console.error(`Failed to fetch FrameByTime, code: ${error.code}, message: ${error.message}`);
+        return;
+      }
+      pixel_map = pixelMap;
+    });
+  } else {
+    console.error(`Failed to create AVImageGenerator, code: ${err.code}, message: ${err.message}`);
+  }
+});
 ```
 
 ## fetchFrameByTime12+
-
-PhonePC/2in1TabletTVWearable
 
 fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapParams): Promise<image.PixelMap>
 
@@ -136,43 +130,43 @@ fetchFrameByTime(timeUs: number, options: AVImageQueryOptions, param: PixelMapPa
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { image } from '@kit.ImageKit';
-3. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
+import { media } from '@kit.MediaKit';
 
-5. let avImageGenerator: media.AVImageGenerator | undefined = undefined;
-6. let pixel_map: image.PixelMap | undefined = undefined;
+let avImageGenerator: media.AVImageGenerator | undefined = undefined;
+let pixel_map: image.PixelMap | undefined = undefined;
 
-8. // 初始化入参。
-9. let timeUs: number = 0;
+// 初始化入参。
+let timeUs: number = 0;
 
-11. let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
 
-13. let param: media.PixelMapParams = {
-14. width: 300,
-15. height: 300,
-16. };
+let param: media.PixelMapParams = {
+  width: 300,
+  height: 300,
+};
 
-18. // 获取缩略图。
-19. media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
-20. if (generator) {
-21. avImageGenerator = generator;
-22. console.info(`Succeeded in creating AVImageGenerator`);
-23. avImageGenerator.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
-24. pixel_map = pixelMap;
-25. }).catch((error: BusinessError) => {
-26. console.error(`Failed to fetch FrameByTime, error message:${error.message}`);
-27. });
-28. } else {
-29. console.error(`Failed to create AVImageGenerator, error message:${err.message}`);
-30. }
-31. });
+// 获取缩略图。
+media.createAVImageGenerator(async (err: BusinessError, generator: media.AVImageGenerator) => {
+  if (generator) {
+    avImageGenerator = generator;
+    console.info(`Succeeded in creating AVImageGenerator`);
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    generator.fdSrc = await context.resourceManager.getRawFd('H264_AAC.mp4');
+    avImageGenerator.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
+      pixel_map = pixelMap;
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to fetch FrameByTime, code: ${error.code}, message: ${error.message}`);
+    });
+  } else {
+    console.error(`Failed to create AVImageGenerator, code: ${err.code}, message: ${err.message}`);
+  }
+});
 ```
 
 ## fetchScaledFrameByTime20+
-
-PhonePC/2in1TabletTVWearable
 
 fetchScaledFrameByTime(timeUs: number, queryMode: AVImageQueryOptions, outputSize?: OutputSize):Promise<image.PixelMap>
 
@@ -205,39 +199,39 @@ fetchScaledFrameByTime(timeUs: number, queryMode: AVImageQueryOptions, outputSiz
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { image } from '@kit.ImageKit';
-3. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
+import { media } from '@kit.MediaKit';
 
-5. let avImageGenerator: media.AVImageGenerator | undefined = undefined;
-6. let pixel_map: image.PixelMap | undefined = undefined;
-7. // 初始化入参。
-8. let timeUs: number = 0;
-9. let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
-10. let outputSize: media.OutputSize = {
-11. width: 300,
-12. height: 300,
-13. };
-14. // 获取缩略图。
-15. media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
-16. if (generator) {
-17. avImageGenerator = generator;
-18. console.info(`Succeeded in creating AVImageGenerator`);
-19. avImageGenerator.fetchScaledFrameByTime(timeUs, queryOption, outputSize).then((pixelMap: image.PixelMap) => {
-20. pixel_map = pixelMap;
-21. }).catch((error: BusinessError) => {
-22. console.error(`Failed to fetch ScaledFrameByTime, error message:${error.message}`);
-23. });
-24. } else {
-25. console.error(`Failed to create AVImageGenerator, error message:${err.message}`);
-26. }
-27. });
+let avImageGenerator: media.AVImageGenerator | undefined = undefined;
+let pixel_map: image.PixelMap | undefined = undefined;
+// 初始化入参。
+let timeUs: number = 0;
+let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+let outputSize: media.OutputSize = {
+  width: 300,
+  height: 300,
+};
+// 获取缩略图。
+media.createAVImageGenerator(async (err: BusinessError, generator: media.AVImageGenerator) => {
+  if (generator) {
+    avImageGenerator = generator;
+    console.info(`Succeeded in creating AVImageGenerator`);
+    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    generator.fdSrc = await context.resourceManager.getRawFd('H264_AAC.mp4');
+    avImageGenerator.fetchScaledFrameByTime(timeUs, queryOption, outputSize).then((pixelMap: image.PixelMap) => {
+      pixel_map = pixelMap;
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to fetch ScaledFrameByTime, code: ${error.code}, message: ${error.message}`);
+    });
+  } else {
+    console.error(`Failed to create AVImageGenerator, code: ${err.code}, message: ${err.message}`);
+  }
+});
 ```
 
 ## release12+
-
-PhonePC/2in1TabletTVWearable
 
 release(callback: AsyncCallback<void>): void
 
@@ -261,33 +255,31 @@ release(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. let avImageGenerator: media.AVImageGenerator | undefined = undefined;
+let avImageGenerator: media.AVImageGenerator | undefined = undefined;
 
-6. // 释放资源。
-7. media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
-8. if (generator) {
-9. avImageGenerator = generator;
-10. console.info(`Succeeded in creating AVImageGenerator`);
-11. avImageGenerator.release((error: BusinessError) => {
-12. if (error) {
-13. console.error(`Failed to release, err = ${JSON.stringify(error)}`);
-14. return;
-15. }
-16. console.info(`Succeeded in releasing`);
-17. });
-18. } else {
-19. console.error(`Failed to create AVImageGenerator, error message:${err.message}`);
-20. }
-21. });
+// 释放资源。
+media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+  if (generator) {
+    avImageGenerator = generator;
+    console.info(`Succeeded in creating AVImageGenerator`);
+    avImageGenerator.release((error: BusinessError) => {
+      if (error) {
+        console.error(`Failed to release, code: ${error.code}, message: ${error.message}`);
+        return;
+      }
+      console.info(`Succeeded in releasing`);
+    });
+  } else {
+    console.error(`Failed to create AVImageGenerator, code: ${err.code}, message: ${err.message}`);
+  }
+});
 ```
 
 ## release12+
-
-PhonePC/2in1TabletTVWearable
 
 release(): Promise<void>
 
@@ -311,24 +303,24 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { media } from '@kit.MediaKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { media } from '@kit.MediaKit';
 
-4. let avImageGenerator: media.AVImageGenerator | undefined = undefined;
+let avImageGenerator: media.AVImageGenerator | undefined = undefined;
 
-6. // 释放资源。
-7. media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
-8. if (generator) {
-9. avImageGenerator = generator;
-10. console.info(`Succeeded in creating AVImageGenerator`);
-11. avImageGenerator.release().then(() => {
-12. console.info(`Succeeded in releasing.`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`Failed to release, error message:${error.message}`);
-15. });
-16. } else {
-17. console.error(`Failed to create AVImageGenerator, error message:${err.message}`);
-18. }
-19. });
+// 释放资源。
+media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+  if (generator) {
+    avImageGenerator = generator;
+    console.info(`Succeeded in creating AVImageGenerator`);
+    avImageGenerator.release().then(() => {
+      console.info(`Succeeded in releasing.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to release, code: ${error.code}, message: ${error.message}`);
+    });
+  } else {
+    console.error(`Failed to create AVImageGenerator, code: ${err.code}, message: ${err.message}`);
+  }
+});
 ```

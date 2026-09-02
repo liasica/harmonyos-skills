@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-utd-
 title: utd.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > utd.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:34+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:9f0d19a5cb7ee10ba3e2a89cd0055221f03379c44270449a42b8436db98242a1
+scraped_at: 2026-09-02T15:00:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:097d20ff9be38ef01b7910988fc3200c9e60a05f794b893e7ad086754bb5842d
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 提供标准化数据类型描述相关接口和数据结构。当参数类型为char\*时，字符串必须以空字符（'\0'）结尾。
 
@@ -26,19 +24,13 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_Utd](capi-udmf-oh-utd.md) | OH\_Utd | 统一数据类型描述符。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -61,14 +53,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_Utd\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_Utd* OH_Utd_Create(const char* typeId)
+```c
+OH_Utd* OH_Utd_Create(const char* typeId)
 ```
 
 **描述**
@@ -91,15 +79,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_Utd_Destroy(OH_Utd* pThis)
+```c
+void OH_Utd_Destroy(OH_Utd* pThis)
 ```
 
 **描述**
 
-销毁统一数据类型[OH\_Utd](capi-udmf-oh-utd.md)指针指向的实例对象。
+销毁统一数据类型[OH\_Utd](capi-udmf-oh-utd.md)指针指向的实例对象。销毁后指针失效，不可再使用，否则会导致未定义行为。
 
 **起始版本：** 12
 
@@ -111,10 +97,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_GetTypeId()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_Utd_GetTypeId(OH_Utd* pThis)
+```c
+const char* OH_Utd_GetTypeId(OH_Utd* pThis)
 ```
 
 **描述**
@@ -137,10 +121,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_GetDescription()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_Utd_GetDescription(OH_Utd* pThis)
+```c
+const char* OH_Utd_GetDescription(OH_Utd* pThis)
 ```
 
 **描述**
@@ -163,10 +145,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_GetReferenceUrl()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_Utd_GetReferenceUrl(OH_Utd* pThis)
+```c
+const char* OH_Utd_GetReferenceUrl(OH_Utd* pThis)
 ```
 
 **描述**
@@ -189,10 +169,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_GetIconFile()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char* OH_Utd_GetIconFile(OH_Utd* pThis)
+```c
+const char* OH_Utd_GetIconFile(OH_Utd* pThis)
 ```
 
 **描述**
@@ -215,10 +193,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_GetBelongingToTypes()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char** OH_Utd_GetBelongingToTypes(OH_Utd* pThis, unsigned int* count)
+```c
+const char** OH_Utd_GetBelongingToTypes(OH_Utd* pThis, unsigned int* count)
 ```
 
 **描述**
@@ -232,20 +208,18 @@ PhonePC/2in1TabletTV
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Utd](capi-udmf-oh-utd.md)\* pThis | 表示一个指向统一数据类型[OH\_Utd](capi-udmf-oh-utd.md)对象的指针。 |
-| unsigned int\* count | 该参数是输出参数，结果集中的类型数量会写入该变量。 |
+| unsigned int\* count | 输出参数，结果集中的类型数量会写入该变量。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\*\* | 当入参有效时返回归属关系结果集的字符串指针列表，否则返回nullptr。 |
+| const char\*\* | 当入参有效时返回归属关系结果集的字符串指针列表，否则返回nullptr。  当不再需要使用指针时，请及时使用[OH\_Utd\_DestroyStringList](capi-utd-h.md#oh_utd_destroystringlist)销毁对应的实例，否则会导致内存泄漏。 |
 
 ### OH\_Utd\_GetFilenameExtensions()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char** OH_Utd_GetFilenameExtensions(OH_Utd* pThis, unsigned int* count)
+```c
+const char** OH_Utd_GetFilenameExtensions(OH_Utd* pThis, unsigned int* count)
 ```
 
 **描述**
@@ -265,14 +239,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\*\* | 当入参有效时返回文件名后缀结果集的字符串指针列表，否则返回nullptr。 |
+| const char\*\* | 当入参有效时返回文件名后缀结果集的字符串指针列表，否则返回nullptr。  当不再需要使用指针时，请及时使用[OH\_Utd\_DestroyStringList](capi-utd-h.md#oh_utd_destroystringlist)销毁对应的实例，否则会导致内存泄漏。 |
 
 ### OH\_Utd\_GetMimeTypes()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char** OH_Utd_GetMimeTypes(OH_Utd* pThis, unsigned int* count)
+```c
+const char** OH_Utd_GetMimeTypes(OH_Utd* pThis, unsigned int* count)
 ```
 
 **描述**
@@ -292,14 +264,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\*\* | 当入参有效时返回MIME类型结果集的字符串指针列表，否则返回nullptr。 |
+| const char\*\* | 当入参有效时返回MIME类型结果集的字符串指针列表，否则返回nullptr。  当不再需要使用指针时，请及时使用[OH\_Utd\_DestroyStringList](capi-utd-h.md#oh_utd_destroystringlist)销毁对应的实例，否则会导致内存泄漏。 |
 
 ### OH\_Utd\_GetTypesByFilenameExtension()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char** OH_Utd_GetTypesByFilenameExtension(const char* extension, unsigned int* count)
+```c
+const char** OH_Utd_GetTypesByFilenameExtension(const char* extension, unsigned int* count)
 ```
 
 **描述**
@@ -319,14 +289,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\*\* | 返回标准数据描述类型结果集字符串列表。  当不再需要使用指针时，请及时使用[OH\_Utd\_DestroyStringList](capi-utd-h.md#oh_utd_destroystringlist)销毁对应的实例，否则会导致内存泄漏。 |
+| const char\*\* | 当入参有效时返回标准数据描述类型结果集字符串列表，否则返回nullptr。  当不再需要使用指针时，请及时使用[OH\_Utd\_DestroyStringList](capi-utd-h.md#oh_utd_destroystringlist)销毁对应的实例，否则会导致内存泄漏。 |
 
 ### OH\_Utd\_GetTypesByMimeType()
 
-PhonePC/2in1TabletTV
-
-```
-1. const char** OH_Utd_GetTypesByMimeType(const char* mimeType, unsigned int* count)
+```c
+const char** OH_Utd_GetTypesByMimeType(const char* mimeType, unsigned int* count)
 ```
 
 **描述**
@@ -346,14 +314,12 @@ PhonePC/2in1TabletTV
 
 | 类型 | 说明 |
 | --- | --- |
-| const char\*\* | 返回标准数据描述类型结果集字符串列表。  当不再需要使用指针时，请及时使用[OH\_Utd\_DestroyStringList](capi-utd-h.md#oh_utd_destroystringlist)销毁对应的实例，否则会导致内存泄漏。 |
+| const char\*\* | 当入参有效时返回标准数据描述类型结果集字符串列表，否则返回nullptr。  当不再需要使用指针时，请及时使用[OH\_Utd\_DestroyStringList](capi-utd-h.md#oh_utd_destroystringlist)销毁对应的实例，否则会导致内存泄漏。 |
 
 ### OH\_Utd\_BelongsTo()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_Utd_BelongsTo(const char* srcTypeId, const char* destTypeId)
+```c
+bool OH_Utd_BelongsTo(const char* srcTypeId, const char* destTypeId)
 ```
 
 **描述**
@@ -377,10 +343,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_IsLower()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_Utd_IsLower(const char* srcTypeId, const char* destTypeId)
+```c
+bool OH_Utd_IsLower(const char* srcTypeId, const char* destTypeId)
 ```
 
 **描述**
@@ -404,10 +368,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_IsHigher()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_Utd_IsHigher(const char* srcTypeId, const char* destTypeId)
+```c
+bool OH_Utd_IsHigher(const char* srcTypeId, const char* destTypeId)
 ```
 
 **描述**
@@ -431,10 +393,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_Equals()
 
-PhonePC/2in1TabletTV
-
-```
-1. bool OH_Utd_Equals(OH_Utd* utd1, OH_Utd* utd2)
+```c
+bool OH_Utd_Equals(OH_Utd* utd1, OH_Utd* utd2)
 ```
 
 **描述**
@@ -458,15 +418,13 @@ PhonePC/2in1TabletTV
 
 ### OH\_Utd\_DestroyStringList()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_Utd_DestroyStringList(const char** list, unsigned int count)
+```c
+void OH_Utd_DestroyStringList(const char** list, unsigned int count)
 ```
 
 **描述**
 
-销毁标准数据描述类型结果集字符串列表。
+销毁标准数据描述类型结果集字符串列表。销毁后列表指针失效，不可再使用，否则会导致未定义行为。
 
 **起始版本：** 12
 

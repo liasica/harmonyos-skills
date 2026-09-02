@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.AbilityStage (AbilityStage组件管理器)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.AbilityStage (AbilityStage组件管理器)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:13+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:06797a54ec41da30d5a34a46ba58de8bf228aee7e4c0d587b74bee5dde882ccf
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e2c0482df79b91c348d2e6acdfaf2a95cb205c3c58900f23190fa86581714be9
 ---
 
 AbilityStage是一个[Module](../harmonyos-guides/application-package-overview.md#应用的多module设计机制)级别的组件管理器，用于进行Module级别的资源预加载、线程创建等初始化操作，以及维护Module下的应用状态。AbilityStage与Module一一对应，即一个Module拥有一个AbilityStage。
@@ -14,7 +14,7 @@ AbilityStage是一个[Module](../harmonyos-guides/application-package-overview.m
 
 AbilityStage拥有[onCreate()](js-apis-app-ability-abilitystage.md#oncreate)、[onDestroy()](js-apis-app-ability-abilitystage.md#ondestroy12)生命周期回调和[onAcceptWant()](js-apis-app-ability-abilitystage.md#onacceptwant)、[onConfigurationUpdate()](js-apis-app-ability-abilitystage.md#onconfigurationupdate)、[onMemoryLevel()](js-apis-app-ability-abilitystage.md#onmemorylevel)事件回调等。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -22,19 +22,13 @@ AbilityStage拥有[onCreate()](js-apis-app-ability-abilitystage.md#oncreate)、[
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { AbilityStage } from '@kit.AbilityKit';
+```ts
+import { AbilityStage } from '@kit.AbilityKit';
 ```
 
 ## AbilityStage
 
-PhonePC/2in1TabletTVWearable
-
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -45,8 +39,6 @@ PhonePC/2in1TabletTVWearable
 | context | [AbilityStageContext](js-apis-inner-application-abilitystagecontext.md) | 否 | 否 | AbilityStage上下文。 |
 
 ### onCreate
-
-PhonePC/2in1TabletTVWearable
 
 onCreate(): void
 
@@ -60,19 +52,17 @@ onCreate(): void
 
 **示例：**
 
-```
-1. import { AbilityStage } from '@kit.AbilityKit';
+```ts
+import { AbilityStage } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. onCreate() {
-5. console.info('MyAbilityStage.onCreate is called');
-6. }
-7. }
+export default class MyAbilityStage extends AbilityStage {
+  onCreate() {
+    console.info('MyAbilityStage.onCreate is called');
+  }
+}
 ```
 
 ### onAcceptWant
-
-PhonePC/2in1TabletTVWearable
 
 onAcceptWant(want: Want): string
 
@@ -80,7 +70,7 @@ onAcceptWant(want: Want): string
 
 如果系统中已经有相同标识的UIAbility实例存在，则复用已有实例，否则创建新的实例。
 
-说明
+**说明** 
 
 从API version 20开始，当[AbilityStage.onAcceptWantAsync](js-apis-app-ability-abilitystage.md#onacceptwantasync20)实现时，本回调函数将不会被触发。
 
@@ -92,7 +82,7 @@ onAcceptWant(want: Want): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | [Want](js-apis-app-ability-want.md) | 是 | Want类型参数，此处表示调用方传入的启动参数，如Ability名称，Bundle名称等。 |
+| want | [Want](js-apis-app-ability-want.md) | 是 | Want类型参数，此处表示调用方传入的启动参数，如Ability名称、Bundle名称等。 |
 
 **返回值：**
 
@@ -102,20 +92,18 @@ onAcceptWant(want: Want): string
 
 **示例：**
 
-```
-1. import { AbilityStage, Want } from '@kit.AbilityKit';
+```ts
+import { AbilityStage, Want } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. onAcceptWant(want: Want) {
-5. console.info('MyAbilityStage.onAcceptWant called');
-6. return 'com.example.test';
-7. }
-8. }
+export default class MyAbilityStage extends AbilityStage {
+  onAcceptWant(want: Want) {
+    console.info('MyAbilityStage.onAcceptWant called');
+    return 'com.example.test';
+  }
+}
 ```
 
 ### onNewProcessRequest11+
-
-PhonePC/2in1TabletTVWearable
 
 onNewProcessRequest(want: Want): string
 
@@ -125,14 +113,17 @@ onNewProcessRequest(want: Want): string
 
 如果开发者同时实现onNewProcessRequest和[onAcceptWant](js-apis-app-ability-abilitystage.md#onacceptwant)，将先收到onNewProcessRequest回调，再收到onAcceptWant回调。
 
-说明
+**说明** 
 
 * 在API version 19及之前版本，仅支持在指定进程中启动UIAbility。
 * 从API version 20开始，当[AbilityStage.onNewProcessRequestAsync](js-apis-app-ability-abilitystage.md#onnewprocessrequestasync20)实现时，本回调函数将不执行。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-**设备行为差异**：该接口仅在2in1和Tablet设备中可正常执行回调，在其他设备上不执行回调。
+**设备行为差异**：
+
+* 从API version 12开始，该接口在Tablet设备中可正常执行回调，在其他设备上不执行回调。
+* 从API version 13开始，该接口在PC/2in1、Tablet设备中可正常执行回调，在其他设备上不执行回调。
 
 **参数：**
 
@@ -144,30 +135,28 @@ onNewProcessRequest(want: Want): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 返回一个由开发者自行决定的进程字符串标识，如果之前此标识对应的进程已被创建，就让ability在此进程中运行，否则创建新的进程。 |
+| string | 返回一个由开发者自行决定的进程字符串标识，如果之前此标识对应的进程已被创建，就让Ability在此进程中运行，否则创建新的进程。 |
 
 **示例：**
 
-```
-1. import { AbilityStage, Want } from '@kit.AbilityKit';
+```ts
+import { AbilityStage, Want } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. onNewProcessRequest(want: Want) {
-5. console.info('MyAbilityStage.onNewProcessRequest called');
-6. return 'com.example.test';
-7. }
-8. }
+export default class MyAbilityStage extends AbilityStage {
+  onNewProcessRequest(want: Want) {
+    console.info('MyAbilityStage.onNewProcessRequest called');
+    return 'com.example.test';
+  }
+}
 ```
 
 ### onConfigurationUpdate
-
-PhonePC/2in1TabletTVWearable
 
 onConfigurationUpdate(newConfig: Configuration): void
 
 当系统全局配置（例如系统语言、深浅色等）发生变更时，会触发该回调。配置项均定义在[Configuration](js-apis-app-ability-configuration.md)类中。同步接口，不支持异步回调。
 
-说明
+**说明** 
 
 该回调方法在实际触发时存在一定限制。例如如果开发者通过[setLanguage](js-apis-inner-application-applicationcontext.md#applicationcontextsetlanguage11)接口设置应用的语言，即便系统语言发生变化，系统也不再触发onConfigurationUpdate回调。详见[使用场景](../harmonyos-guides/subscribe-system-environment-variable-changes.md#使用场景)。
 
@@ -183,19 +172,17 @@ onConfigurationUpdate(newConfig: Configuration): void
 
 **示例：**
 
-```
-1. import { AbilityStage, Configuration } from '@kit.AbilityKit';
+```ts
+import { AbilityStage, Configuration } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. onConfigurationUpdate(config: Configuration) {
-5. console.info(`MyAbilityStage.onConfigurationUpdate, language: ${config.language}`);
-6. }
-7. }
+export default class MyAbilityStage extends AbilityStage {
+  onConfigurationUpdate(config: Configuration) {
+    console.info(`MyAbilityStage.onConfigurationUpdate, language: ${config.language}`);
+  }
+}
 ```
 
 ### onMemoryLevel
-
-PhonePC/2in1TabletTVWearable
 
 onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 
@@ -203,7 +190,7 @@ onMemoryLevel(level: AbilityConstant.MemoryLevel): void
 
 同步接口，不支持异步回调。
 
-说明
+**说明** 
 
 onMemoryLevel回调运行在当前进程的主线程中，如果在该回调中做耗时的UI组件释放，会阻塞主线程任务，因此不建议在该回调中释放UI组件。
 
@@ -219,19 +206,17 @@ onMemoryLevel回调运行在当前进程的主线程中，如果在该回调中�
 
 **示例：**
 
-```
-1. import { AbilityStage, AbilityConstant } from '@kit.AbilityKit';
+```ts
+import { AbilityStage, AbilityConstant } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. onMemoryLevel(level: AbilityConstant.MemoryLevel) {
-5. console.info(`MyAbilityStage.onMemoryLevel, level: ${JSON.stringify(level)}`);
-6. }
-7. }
+export default class MyAbilityStage extends AbilityStage {
+  onMemoryLevel(level: AbilityConstant.MemoryLevel) {
+    console.info(`MyAbilityStage.onMemoryLevel, level: ${JSON.stringify(level)}`);
+  }
+}
 ```
 
 ### onDestroy12+
-
-PhonePC/2in1TabletTVWearable
 
 onDestroy(): void
 
@@ -243,27 +228,25 @@ onDestroy(): void
 
 **示例：**
 
-```
-1. import { AbilityStage } from '@kit.AbilityKit';
+```ts
+import { AbilityStage } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. onDestroy() {
-5. console.info('MyAbilityStage.onDestroy is called');
-6. }
-7. }
+export default class MyAbilityStage extends AbilityStage {
+  onDestroy() {
+    console.info('MyAbilityStage.onDestroy is called');
+  }
+}
 ```
 
 ### onPrepareTermination15+
-
-PhonePC/2in1TabletTVWearable
 
 onPrepareTermination(): AbilityConstant.PrepareTermination
 
 当应用被用户关闭时调用，可用于询问用户选择立即执行操作还是取消操作。同步接口，不支持异步回调。
 
-说明
+**说明** 
 
-* 仅当应用正常退出（例如，通过doc栏/托盘关闭应用，或者应用随设备关机而退出）时会调用该接口。如果应用被强制关闭，则不会调用该接口。
+* 仅当应用正常退出（例如，通过任务栏/托盘关闭应用，或者应用随设备关机而退出）时会调用该接口。如果应用被强制关闭，则不会调用该接口。
 * 当[AbilityStage.onPrepareTerminationAsync](js-apis-app-ability-abilitystage.md#onprepareterminationasync15)实现时，本回调函数将不执行。
 
 **需要权限**：ohos.permission.PREPARE\_APP\_TERMINATE
@@ -274,8 +257,8 @@ onPrepareTermination(): AbilityConstant.PrepareTermination
 
 **设备行为差异**：
 
-* 从API version 15开始，该接口仅在2in1设备中可正常执行回调，在其他设备上不执行回调。
-* 从API version 19开始，该接口仅在2in1和Tablet设备中可正常执行回调，在其他设备上不执行回调。
+* 从API version 15开始，该接口仅在PC/2in1设备中可正常执行回调，在其他设备上不执行回调。
+* 从API version 19开始，该接口仅在PC/2in1和Tablet设备中可正常执行回调，在其他设备上不执行回调。
 
 **返回值：**
 
@@ -285,28 +268,26 @@ onPrepareTermination(): AbilityConstant.PrepareTermination
 
 **示例：**
 
-```
-1. import { AbilityConstant, AbilityStage } from '@kit.AbilityKit';
+```ts
+import { AbilityConstant, AbilityStage } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. onPrepareTermination(): AbilityConstant.PrepareTermination {
-5. console.info('MyAbilityStage.onPrepareTermination is called');
-6. return AbilityConstant.PrepareTermination.CANCEL;
-7. }
-8. }
+export default class MyAbilityStage extends AbilityStage {
+  onPrepareTermination(): AbilityConstant.PrepareTermination {
+    console.info('MyAbilityStage.onPrepareTermination is called');
+    return AbilityConstant.PrepareTermination.CANCEL;
+  }
+}
 ```
 
 ### onPrepareTerminationAsync15+
-
-PhonePC/2in1TabletTVWearable
 
 onPrepareTerminationAsync(): Promise<AbilityConstant.PrepareTermination>
 
 当应用被用户关闭时调用，可用于询问用户选择立即执行操作还是取消操作。使用Promise异步回调。
 
-说明
+**说明** 
 
-* 仅当应用正常退出（例如，通过doc栏/托盘关闭应用，或者应用随设备关机而退出）时会调用该接口。如果应用被强制关闭，则不会调用该接口。
+* 仅当应用正常退出（例如，通过任务栏/托盘关闭应用，或者应用随设备关机而退出）时会调用该接口。如果应用被强制关闭，则不会调用该接口。
 * 若异步回调内发生crash，按超时处理，执行等待超过10秒未响应，应用将被强制关闭。
 
 **需要权限**：ohos.permission.PREPARE\_APP\_TERMINATE
@@ -317,8 +298,8 @@ onPrepareTerminationAsync(): Promise<AbilityConstant.PrepareTermination>
 
 **设备行为差异**：
 
-* 从API version 15开始，该接口仅在2in1设备中可正常执行回调，在其他设备上不执行回调。
-* 从API version 19开始，该接口仅在2in1和Tablet设备中可正常执行回调，在其他设备上不执行回调。
+* 从API version 15开始，该接口仅在PC/2in1设备中可正常执行回调，在其他设备上不执行回调。
+* 从API version 19开始，该接口仅在PC/2in1和Tablet设备中可正常执行回调，在其他设备上不执行回调。
 
 **返回值：**
 
@@ -328,22 +309,20 @@ onPrepareTerminationAsync(): Promise<AbilityConstant.PrepareTermination>
 
 **示例：**
 
-```
-1. import { AbilityConstant, AbilityStage } from '@kit.AbilityKit';
+```ts
+import { AbilityConstant, AbilityStage } from '@kit.AbilityKit';
 
-3. export default class MyAbilityStage extends AbilityStage {
-4. async onPrepareTerminationAsync(): Promise<AbilityConstant.PrepareTermination> {
-5. await new Promise<AbilityConstant.PrepareTermination>((res, rej) => {
-6. setTimeout(res, 3000); // 延时3秒后执行
-7. });
-8. return AbilityConstant.PrepareTermination.CANCEL;
-9. }
-10. }
+export default class MyAbilityStage extends AbilityStage {
+  async onPrepareTerminationAsync(): Promise<AbilityConstant.PrepareTermination> {
+    await new Promise<AbilityConstant.PrepareTermination>((res, rej) => {
+      setTimeout(res, 3000); // 延时3秒后执行
+    });
+    return AbilityConstant.PrepareTermination.CANCEL;
+  }
+}
 ```
 
 ### onAcceptWantAsync20+
-
-PhonePC/2in1TabletTVWearable
 
 onAcceptWantAsync(want: Want): Promise<string>
 
@@ -369,22 +348,21 @@ onAcceptWantAsync(want: Want): Promise<string>
 
 **示例：**
 
-```
-1. import { AbilityStage } from '@kit.AbilityKit';
+```ts
+import { AbilityStage, Want } from '@kit.AbilityKit';
 
-3. class MyAbilityStage extends AbilityStage {
-4. async onAcceptWantAsync(): Promise<string> {
-5. await new Promise<string>((res, rej) => {
-6. setTimeout(res, 1000); // 延时1秒后执行
-7. });
-8. return 'default';
-9. }
-10. }
+class MyAbilityStage extends AbilityStage {
+  async onAcceptWantAsync(want: Want): Promise<string> {
+    await new Promise<string>((res, rej) => {
+      setTimeout(res, 1000); // 延时1秒后执行
+      console.info(`onAcceptWantAsync, want: ${JSON.stringify(want)}`);
+    });
+    return 'default';
+  }
+}
 ```
 
 ### onNewProcessRequestAsync20+
-
-PhonePC/2in1TabletTVWearable
 
 onNewProcessRequestAsync(want: Want): Promise<string>
 
@@ -396,7 +374,7 @@ onNewProcessRequestAsync(want: Want): Promise<string>
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-**设备行为差异**：该接口仅在2in1和Tablet设备中可正常执行回调，在其他设备上不执行回调。
+**设备行为差异**：该接口仅在PC/2in1和Tablet设备中可正常执行回调，在其他设备上不执行回调。
 
 **参数：**
 
@@ -412,15 +390,110 @@ onNewProcessRequestAsync(want: Want): Promise<string>
 
 **示例：**
 
-```
-1. import { AbilityStage } from '@kit.AbilityKit';
+```ts
+import { AbilityStage, Want } from '@kit.AbilityKit';
 
-3. class MyAbilityStage extends AbilityStage {
-4. async onNewProcessRequestAsync(): Promise<string> {
-5. await new Promise<string>((res, rej) => {
-6. setTimeout(res, 1000); // 延时1秒后执行
-7. });
-8. return '';
-9. }
-10. }
+class MyAbilityStage extends AbilityStage {
+  async onNewProcessRequestAsync(want: Want): Promise<string> {
+    await new Promise<string>((res, rej) => {
+      setTimeout(res, 1000); // 延时1秒后执行
+      console.info(`onNewProcessRequestAsync, want: ${JSON.stringify(want)}`);
+    });
+    return '';
+  }
+}
+```
+
+### onLaunchFromHyperSnap24+
+
+onLaunchFromHyperSnap(): void
+
+当进程从[应用快启](js-apis-app-ability-hypersnapmanager.md#实现原理)启动时调用。
+
+开发者可以通过重写此方法来处理应用快启启动时的特定逻辑，例如重新初始化某些资源或状态。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**示例：**
+
+```ts
+import { AbilityStage } from '@kit.AbilityKit';
+
+export default class MyAbilityStage extends AbilityStage {
+  onLaunchFromHyperSnap(): void {
+    console.info('Launched from Hyper Snap, reinitializing resources...');
+    // 在此添加快启启动时的初始化逻辑
+  }
+}
+```
+
+### onAboutToCreateAbility24+
+
+onAboutToCreateAbility(): void
+
+当AbilityStage即将创建第一个Ability时调用。
+
+开发者可以通过重写此方法来执行在创建第一个Ability之前的准备工作。
+
+**说明** 
+
+* 从API版本26.0.0开始，若实现了[AbilityStage.onAboutToCreateAbilityAsync](js-apis-app-ability-abilitystage.md#onabouttocreateabilityasync)，则不会触发本回调函数。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**示例：**
+
+```ts
+import { AbilityStage } from '@kit.AbilityKit';
+
+export default class MyAbilityStage extends AbilityStage {
+  onAboutToCreateAbility(): void {
+    console.info('About to create first ability, preparing...');
+    // 在此添加创建第一个Ability前的准备工作
+  }
+}
+```
+
+### onAboutToCreateAbilityAsync
+
+onAboutToCreateAbilityAsync(): Promise<void>
+
+当AbilityStage即将创建第一个Ability时调用。使用Promise异步回调。
+
+此方法返回的Promise成功resolve后，后续的生命周期回调才会继续执行；否则将被挂起。
+
+开发者可通过重写此方法，在AbilityStage创建首个Ability之前，执行必要的异步初始化与准备工作。
+
+**起始版本：** 26.0.0
+
+**说明** 
+
+若同时实现[onAboutToCreateAbility](js-apis-app-ability-abilitystage.md#onabouttocreateability24)和此方法，仅此方法生效。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回值。在Promise成功resolve后，后续的生命周期回调才会继续执行。 |
+
+**示例：**
+
+```ts
+import { AbilityStage } from '@kit.AbilityKit';
+
+export default class MyAbilityStage extends AbilityStage {
+  async onAboutToCreateAbilityAsync(): Promise<void> {
+    console.info('About to create first ability, preparing...');
+    // 执行异步初始化操作
+    await new Promise<void>((resolve) => {
+      setTimeout(() => {
+        console.info('Async preparation completed');
+        resolve();
+      }, 1000);
+    });
+    // 初始化完成后，才会继续创建Ability
+  }
+}
 ```

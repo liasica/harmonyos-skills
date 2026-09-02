@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-sound-qual
 title: 音质切换开发实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音质切换开发实践
 category: best-practices
-scraped_at: 2026-04-29T14:11:42+08:00
+scraped_at: 2026-09-02T15:03:17+08:00
 doc_updated_at: 2026-04-01
-content_hash: sha256:ab5787e5ca48a002429ae67c8eb58482958be85712a325d354cc7b06f588fc9f
+content_hash: sha256:f84918a8de8cb2e518761e73b795764da330d88b46b3664f07b261f16330c86f
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:ab5787e5ca48a002429ae67c8eb58482958be85712a325d354cc7b06f58
 
 本场景以同一音频文件的PCM格式与MP3格式之间进行切换播放为例，切换后保持音频播放进度一致，即无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/FY-E68G3Q8SC7l18PdBYvA/zh-cn_image_0000002490682592.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/CQogdDMsT7e4kJK62qw3GQ/zh-cn_image_0000002490682592.gif "点击放大")
 
 ### 实现原理
 
@@ -45,69 +45,65 @@ content_hash: sha256:ab5787e5ca48a002429ae67c8eb58482958be85712a325d354cc7b06f58
    * getMsFromByteLength()：根据字节长度转化为播放时间长度。
    * getOffsetFromTime()：根据播放时间长度转化为字节长度。
 
+   ```typescript
+   export class MediaTools {
+     // ...
+
+     static msToCountdownTime(ms: number): string {
+       if (!ms) {
+         return '00:00';
+       }
+       const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+       const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+       const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+       const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+       return `${(days ? MediaTools.fill(days) + ':' : '')}${(hours ? MediaTools.fill(hours) + ':' : '')}
+         ${MediaTools.fill(minutes)}:${MediaTools.fill(seconds)} `.trim();
+     }
+
+     static getMsFromByteLength(byteLength: number): number {
+       return 1000 * (byteLength / SECOND_BUFFER_WALK);
+     }
+
+     static getOffsetFromTime(curMs: number) {
+       return (curMs / 1000) * SECOND_BUFFER_WALK;
+     }
+   }
    ```
-   1. export class MediaTools {
-   2. // ...
-
-   4. static msToCountdownTime(ms: number): string {
-   5. if (!ms) {
-   6. return '00:00';
-   7. }
-   8. const days = Math.floor(ms / (1000 * 60 * 60 * 24));
-   9. const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-   10. const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-   11. const seconds = Math.floor((ms % (1000 * 60)) / 1000);
-   12. return `${(days ? MediaTools.fill(days) + ':' : '')}${(hours ? MediaTools.fill(hours) + ':' : '')}
-   13. ${MediaTools.fill(minutes)}:${MediaTools.fill(seconds)} `.trim();
-   14. }
-
-   16. static getMsFromByteLength(byteLength: number): number {
-   17. return 1000 * (byteLength / SECOND_BUFFER_WALK);
-   18. }
-
-   20. static getOffsetFromTime(curMs: number) {
-   21. return (curMs / 1000) * SECOND_BUFFER_WALK;
-   22. }
-   23. }
-   ```
-
-   [MediaTools.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/utils/MediaTools.ets#L25-L68)
 2. 在AVPlayerController类中，定义如下方法：
    * reset()：在其中调用AVPlayer实例的[reset()](../harmonyos-references/arkts-apis-media-avplayer.md#reset9)方法，重置播放。
    * pause()：在其中调用AVPlayer实例的[pause()](../harmonyos-references/arkts-apis-media-avplayer.md#pause9-1)方法，暂停播放。
    * seek()：在其中调用AVPlayer实例的[seek()](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)，跳转播放。
 
+   ```typescript
+   export class AVPlayerController {
+     // ...
+
+     reset(fd: number, offset: number, length: number): void {
+       this.currentTime = AppStorage.get('progress') as number;
+       this.isReset = true;
+       this.avPlayer?.reset(() => {
+         if (this.avPlayer != undefined) {
+           this.avPlayer.fdSrc = { fd: fd, offset: offset, length: length };
+         }
+       })
+     }
+     // ...
+
+     // Pause playback
+     pause(): void {
+       this.avPlayer?.pause().catch(() => {
+         Logger.error('AVPlayerController pause error!');
+       })
+     }
+
+     // Jump to playback
+     seek(currentTime: number): void {
+       this.avPlayer?.seek(currentTime, media.SeekMode.SEEK_NEXT_SYNC);
+     }
+     // ...
+   }
    ```
-   1. export class AVPlayerController {
-   2. // ...
-
-   4. reset(fd: number, offset: number, length: number): void {
-   5. this.currentTime = AppStorage.get('progress') as number;
-   6. this.isReset = true;
-   7. this.avPlayer?.reset(() => {
-   8. if (this.avPlayer != undefined) {
-   9. this.avPlayer.fdSrc = { fd: fd, offset: offset, length: length };
-   10. }
-   11. })
-   12. }
-   13. // ...
-
-   15. // Pause playback
-   16. pause(): void {
-   17. this.avPlayer?.pause().catch(() => {
-   18. Logger.error('AVPlayerController pause error!');
-   19. })
-   20. }
-
-   22. // Jump to playback
-   23. seek(currentTime: number): void {
-   24. this.avPlayer?.seek(currentTime, media.SeekMode.SEEK_NEXT_SYNC);
-   25. }
-   26. // ...
-   27. }
-   ```
-
-   [AVPlayerController.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/player/AVPlayerController.ets#L22-L144)
 3. 在AudioRendererController类中，定义如下方法：
    * initAudioRenderer()：初始化，获取AudioRenderer实例。
    * setWriteDataCallback()：写入音频数据。
@@ -115,223 +111,215 @@ content_hash: sha256:ab5787e5ca48a002429ae67c8eb58482958be85712a325d354cc7b06f58
    * pause()：在其中调用AudioRenderer的[pause()](../harmonyos-references/arkts-apis-audio-audiorenderer.md#pause8)方法，暂停音频渲染。
    * seek()：自定义seek()方法保存当前播放进度、时间的转换和字节长度，用于AudioRenderer跳转播放。
 
+   ```typescript
+   export class AudioRendererController {
+     // ...
+     // Initialization AudioRenderer
+     public async initAudioRenderer(fd: number, offset: number, length: number): Promise<void> {
+       this.fd = fd; // File descriptor
+       this.offset = offset; // Start offset
+       this.currentOffset = offset; // Current offset
+       this.length = length; // File length
+       // Audio stream information
+       let audioStreamInfo: audio.AudioStreamInfo = {
+         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // Audio file sampling rate
+         channels: audio.AudioChannel.CHANNEL_2, // Number of audio file channels
+         sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // Audio sampling format
+         encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // Audio encoding format
+       };
+       // AudioRenderer information
+       let audioRendererInfo: audio.AudioRendererInfo = {
+         usage: audio.StreamUsage.STREAM_USAGE_MUSIC, // Audio stream usage type
+         rendererFlags: 0 // Audio renderer flag
+       };
+       // AudioRenderer options information
+       let audioRendererOptions: audio.AudioRendererOptions = {
+         streamInfo: audioStreamInfo,
+         rendererInfo: audioRendererInfo
+       };
+       // Get audio renderer
+       await audio.createAudioRenderer(audioRendererOptions).then((data) => {
+         this.audioRenderer = data;
+         if (this.audioRenderer !== undefined) {
+           try {
+             // Set the focus model to independent focus mode
+             this.audioRenderer.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+             this.setWriteDataCallback(); // Write audio data
+           } catch (error) {
+             Logger.error('createAudioRenderer is calling.');
+           }
+         }
+       });
+       // Convert the file length to the corresponding number of milliseconds and store it in AppStorage.
+       AppStorage.setOrCreate('progressMax', MediaTools.getMsFromByteLength(this.length));
+       // Convert the file length to the corresponding number of milliseconds, then convert it to a timestamp and store it in AppStorage.
+       AppStorage.setOrCreate('totalTime', MediaTools.msToCountdownTime(MediaTools.getMsFromByteLength(this.length)));
+     }
+
+     // Write audio data
+     private setWriteDataCallback(): void {
+       try {
+         // Listening for audio data writing
+         this.audioRenderer?.on('writeData', (buffer) => {
+           if (this.currentOffset - this.offset >= this.length) {
+             this.currentOffset = this.offset;
+             this.seek(0);
+           }
+           let options: ReadOptions = {
+             offset: this.currentOffset,
+             length: buffer.byteLength
+           };
+           let bufferLength = fileIo.readSync(this.fd, buffer, options);
+           this.currentOffset += buffer.byteLength;
+           let processOffset = this.currentOffset - this.offset;
+
+           if (this.offset + this.length <= this.currentOffset) {
+             let view = new DataView(buffer);
+             Logger.info('currentOffset ：' + this.currentOffset + '  endOffset:' + (this.offset + this.length) +
+               ' bufferLength:' + bufferLength);
+             for (let i = bufferLength - 1; i > processOffset - this.length; i--) {
+               view.setUint8(i, 0);
+             }
+           }
+
+           let curMs = MediaTools.getMsFromByteLength(processOffset);
+           AppStorage.setOrCreate('progress', curMs);
+           AppStorage.setOrCreate('currentTime', MediaTools.msToCountdownTime(curMs));
+         })
+       } catch (error) {
+         Logger.error('setWriteDataCallback is failed. ' + error);
+       }
+     }
+
+     public async start(): Promise<void> {
+       if (this.audioRenderer !== undefined) {
+         // Audio state
+         let stateGroup = [audio.AudioState.STATE_PREPARED, audio.AudioState.STATE_PAUSED, audio.AudioState.STATE_STOPPED];
+         if (stateGroup.indexOf(this.audioRenderer.state.valueOf()) === -1) {
+           return;
+         }
+         // Starting the AudioRenderer
+         this.audioRenderer.start((err: BusinessError) => {
+           // ...
+         });
+       }
+     }
+
+     public pause(): void {
+       if (this.audioRenderer !== undefined) {
+         if (this.audioRenderer.state.valueOf() !== audio.AudioState.STATE_RUNNING) {
+           return;
+         }
+        // Pause Audio rendering
+         this.audioRenderer.pause((err: BusinessError) => {
+           // ...
+         });
+       }
+     }
+     // Jump to playback
+     public seek(ms: number): void {
+       this.curMs = ms;
+       AppStorage.setOrCreate('progress', this.curMs);
+       AppStorage.setOrCreate('currentTime', MediaTools.msToCountdownTime(this.curMs));
+       this.currentOffset = this.offset + MediaTools.getOffsetFromTime(this.curMs);
+     }
+     // ...
+   }
    ```
-   1. export class AudioRendererController {
-   2. // ...
-   3. // Initialization AudioRenderer
-   4. public async initAudioRenderer(fd: number, offset: number, length: number): Promise<void> {
-   5. this.fd = fd; // File descriptor
-   6. this.offset = offset; // Start offset
-   7. this.currentOffset = offset; // Current offset
-   8. this.length = length; // File length
-   9. // Audio stream information
-   10. let audioStreamInfo: audio.AudioStreamInfo = {
-   11. samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // Audio file sampling rate
-   12. channels: audio.AudioChannel.CHANNEL_2, // Number of audio file channels
-   13. sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // Audio sampling format
-   14. encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // Audio encoding format
-   15. };
-   16. // AudioRenderer information
-   17. let audioRendererInfo: audio.AudioRendererInfo = {
-   18. usage: audio.StreamUsage.STREAM_USAGE_MUSIC, // Audio stream usage type
-   19. rendererFlags: 0 // Audio renderer flag
-   20. };
-   21. // AudioRenderer options information
-   22. let audioRendererOptions: audio.AudioRendererOptions = {
-   23. streamInfo: audioStreamInfo,
-   24. rendererInfo: audioRendererInfo
-   25. };
-   26. // Get audio renderer
-   27. await audio.createAudioRenderer(audioRendererOptions).then((data) => {
-   28. this.audioRenderer = data;
-   29. if (this.audioRenderer !== undefined) {
-   30. try {
-   31. // Set the focus model to independent focus mode
-   32. this.audioRenderer.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
-   33. this.setWriteDataCallback(); // Write audio data
-   34. } catch (error) {
-   35. Logger.error('createAudioRenderer is calling.');
-   36. }
-   37. }
-   38. });
-   39. // Convert the file length to the corresponding number of milliseconds and store it in AppStorage.
-   40. AppStorage.setOrCreate('progressMax', MediaTools.getMsFromByteLength(this.length));
-   41. // Convert the file length to the corresponding number of milliseconds, then convert it to a timestamp and store it in AppStorage.
-   42. AppStorage.setOrCreate('totalTime', MediaTools.msToCountdownTime(MediaTools.getMsFromByteLength(this.length)));
-   43. }
-
-   45. // Write audio data
-   46. private setWriteDataCallback(): void {
-   47. try {
-   48. // Listening for audio data writing
-   49. this.audioRenderer?.on('writeData', (buffer) => {
-   50. if (this.currentOffset - this.offset >= this.length) {
-   51. this.currentOffset = this.offset;
-   52. this.seek(0);
-   53. }
-   54. let options: ReadOptions = {
-   55. offset: this.currentOffset,
-   56. length: buffer.byteLength
-   57. };
-   58. let bufferLength = fileIo.readSync(this.fd, buffer, options);
-   59. this.currentOffset += buffer.byteLength;
-   60. let processOffset = this.currentOffset - this.offset;
-
-   62. if (this.offset + this.length <= this.currentOffset) {
-   63. let view = new DataView(buffer);
-   64. Logger.info('currentOffset ：' + this.currentOffset + '  endOffset:' + (this.offset + this.length) +
-   65. ' bufferLength:' + bufferLength);
-   66. for (let i = bufferLength - 1; i > processOffset - this.length; i--) {
-   67. view.setUint8(i, 0);
-   68. }
-   69. }
-
-   71. let curMs = MediaTools.getMsFromByteLength(processOffset);
-   72. AppStorage.setOrCreate('progress', curMs);
-   73. AppStorage.setOrCreate('currentTime', MediaTools.msToCountdownTime(curMs));
-   74. })
-   75. } catch (error) {
-   76. Logger.error('setWriteDataCallback is failed. ' + error);
-   77. }
-   78. }
-
-   81. public async start(): Promise<void> {
-   82. if (this.audioRenderer !== undefined) {
-   83. // Audio state
-   84. let stateGroup = [audio.AudioState.STATE_PREPARED, audio.AudioState.STATE_PAUSED, audio.AudioState.STATE_STOPPED];
-   85. if (stateGroup.indexOf(this.audioRenderer.state.valueOf()) === -1) {
-   86. return;
-   87. }
-   88. // Starting the AudioRenderer
-   89. this.audioRenderer.start((err: BusinessError) => {
-   90. // ...
-   91. });
-   92. }
-   93. }
-
-   95. public pause(): void {
-   96. if (this.audioRenderer !== undefined) {
-   97. if (this.audioRenderer.state.valueOf() !== audio.AudioState.STATE_RUNNING) {
-   98. return;
-   99. }
-   100. // Pause Audio rendering
-   101. this.audioRenderer.pause((err: BusinessError) => {
-   102. // ...
-   103. });
-   104. }
-   105. }
-   106. // Jump to playback
-   107. public seek(ms: number): void {
-   108. this.curMs = ms;
-   109. AppStorage.setOrCreate('progress', this.curMs);
-   110. AppStorage.setOrCreate('currentTime', MediaTools.msToCountdownTime(this.curMs));
-   111. this.currentOffset = this.offset + MediaTools.getOffsetFromTime(this.curMs);
-   112. }
-   113. // ...
-   114. }
-   ```
-
-   [AudioRendererController.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/player/AudioRendererController.ets#L22-L192)
 4. 在PlayerController类中，定义如下方法：
    * changeType()：传入[RawFileDescriptor](../harmonyos-references/js-apis-resource-manager.md#rawfiledescriptor9)音频资源描述符，并通过audioType的值，判断使用AudioRenderer或AVPlayer播放音频。
    * seek()：通过判断isAVPlayer()返回值，调用AVPlayerController或AudioRendererController对应的seek()方法，用于跳转指定位置播放音频资源。
    * isAVPlayer()：用于判断是否使用AVPlayer播放音频资源。
 
+   ```typescript
+   export class PlayerController {
+     // ...
+     // Modifying the audio format
+     changeType(rawFileDescriptor: resourceManager.RawFileDescriptor, audioType: AudioType) {
+       try {
+         this.rawFileDescriptor = rawFileDescriptor;
+         if (audioType === 1 || audioType === 2) {
+           this.audioRendererController?.pause(); // Pause AudioRenderer playback
+           // Reset AVPlayer playback
+           this.avPlayerController?.reset(this.rawFileDescriptor.fd, this.rawFileDescriptor.offset,
+             this.rawFileDescriptor.length);
+         } else {
+           this.avPlayerController?.pause(); // Pause AVPlayer playback
+           if (this.audioRendererController === undefined) {
+             this.audioRendererController = new AudioRendererController();
+           }
+           // Create an AudioRenderer instance and listen for audio data writing
+           this.audioRendererController.initAudioRenderer(this.rawFileDescriptor.fd, this.rawFileDescriptor.offset,
+             this.rawFileDescriptor.length).then(() => {
+             this.audioRendererController?.start(); // Start AudioRenderer audio render
+           });
+         }
+         this.currentType = audioType;
+       } catch (error) {
+         Logger.error('changeType error!');
+       }
+     }
+     // ...
+     // Determine the return value of isAVPlayer() and call the corresponding seek() method
+     seek(currentTime: number): void {
+       if (this.isAVPlayer()) {
+         this.avPlayerController?.seek(currentTime);
+       } else {
+         this.audioRendererController?.seek(currentTime);
+       }
+     }
+     // ...
+     // Determine whether to use AVPlayer for playback
+     isAVPlayer(): boolean {
+       return this.currentType === 1 || this.currentType === 2;
+     }
+   }
    ```
-   1. export class PlayerController {
-   2. // ...
-   3. // Modifying the audio format
-   4. changeType(rawFileDescriptor: resourceManager.RawFileDescriptor, audioType: AudioType) {
-   5. try {
-   6. this.rawFileDescriptor = rawFileDescriptor;
-   7. if (audioType === 1 || audioType === 2) {
-   8. this.audioRendererController?.pause(); // Pause AudioRenderer playback
-   9. // Reset AVPlayer playback
-   10. this.avPlayerController?.reset(this.rawFileDescriptor.fd, this.rawFileDescriptor.offset,
-   11. this.rawFileDescriptor.length);
-   12. } else {
-   13. this.avPlayerController?.pause(); // Pause AVPlayer playback
-   14. if (this.audioRendererController === undefined) {
-   15. this.audioRendererController = new AudioRendererController();
-   16. }
-   17. // Create an AudioRenderer instance and listen for audio data writing
-   18. this.audioRendererController.initAudioRenderer(this.rawFileDescriptor.fd, this.rawFileDescriptor.offset,
-   19. this.rawFileDescriptor.length).then(() => {
-   20. this.audioRendererController?.start(); // Start AudioRenderer audio render
-   21. });
-   22. }
-   23. this.currentType = audioType;
-   24. } catch (error) {
-   25. Logger.error('changeType error!');
-   26. }
-   27. }
-   28. // ...
-   29. // Determine the return value of isAVPlayer() and call the corresponding seek() method
-   30. seek(currentTime: number): void {
-   31. if (this.isAVPlayer()) {
-   32. this.avPlayerController?.seek(currentTime);
-   33. } else {
-   34. this.audioRendererController?.seek(currentTime);
-   35. }
-   36. }
-   37. // ...
-   38. // Determine whether to use AVPlayer for playback
-   39. isAVPlayer(): boolean {
-   40. return this.currentType === 1 || this.currentType === 2;
-   41. }
-   42. }
-   ```
-
-   [PlayerController.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/player/PlayerController.ets#L22-L120)
 5. 在页面中自定义changeType()事件，通过[getRawfd()](../harmonyos-references/js-apis-resource-manager.md#getrawfd9-1)获取resources/rawfile目录下的音频资源，将获取到的数据传入PlayerController的changeType()方法，调用playerController的seek()方法传入当前Slider进度的值，用于跳转播放。
 
+   ```typescript
+   private changeType(songSrc: string, audioType: AudioType): void {
+     let current: number = this.value;
+     this.getUIContext().getHostContext()?.resourceManager.getRawFd(songSrc).then((rawFileDescriptor) => {
+       this.playerController.changeType(rawFileDescriptor, audioType);
+       this.playerController.seek(current);
+     }).catch((error: BusinessError) => {
+       Logger.error(`resourceManager error code ${error.code} message ${error.message}`);
+     });
+   }
    ```
-   1. private changeType(songSrc: string, audioType: AudioType): void {
-   2. let current: number = this.value;
-   3. this.getUIContext().getHostContext()?.resourceManager.getRawFd(songSrc).then((rawFileDescriptor) => {
-   4. this.playerController.changeType(rawFileDescriptor, audioType);
-   5. this.playerController.seek(current);
-   6. }).catch((error: BusinessError) => {
-   7. Logger.error(`resourceManager error code ${error.code} message ${error.message}`);
-   8. });
-   9. }
-   ```
-
-   [ControlAreaComponent.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/components/ControlAreaComponent.ets#L220-L228)
 
    通过给对应MenuItem子组件添加对应点击事件，在其中调用changeType()方法传入音频资源文件路径和对应音频格式audioType，实现音频资源PCM格式与MP3格式的切换播放，即AudioRenderer与AVPlayer切换播放。
 
+   ```typescript
+   Menu() {
+     MenuItem({
+       content: $r('app.string.standard_quality'),
+     }).onClick(() => {
+       if (this.index === 0) {
+         return;
+       }
+       this.text = $r('app.string.standard_quality');
+       this.index = 0;
+       this.changeType(this.songData.src + AudioName.MP3, AudioType.MP3);
+       this.isPlay = true;
+     })
+     // ...
+     MenuItem({
+       content: $r('app.string.pcm_high_quality'),
+     })
+       .onClick(() => {
+         if (this.index === 2) {
+           return;
+         }
+         this.text = $r('app.string.pcm_high_quality');
+         this.index = 2;
+         this.changeType(this.songData.src + AudioName.PCM, AudioType.PCM);
+         this.isPlay = true;
+       })
+   }
+   // ...
    ```
-   1. Menu() {
-   2. MenuItem({
-   3. content: $r('app.string.standard_quality'),
-   4. }).onClick(() => {
-   5. if (this.index === 0) {
-   6. return;
-   7. }
-   8. this.text = $r('app.string.standard_quality');
-   9. this.index = 0;
-   10. this.changeType(this.songData.src + AudioName.MP3, AudioType.MP3);
-   11. this.isPlay = true;
-   12. })
-   13. // ...
-   14. MenuItem({
-   15. content: $r('app.string.pcm_high_quality'),
-   16. })
-   17. .onClick(() => {
-   18. if (this.index === 2) {
-   19. return;
-   20. }
-   21. this.text = $r('app.string.pcm_high_quality');
-   22. this.index = 2;
-   23. this.changeType(this.songData.src + AudioName.PCM, AudioType.PCM);
-   24. this.isPlay = true;
-   25. })
-   26. }
-   27. // ...
-   ```
-
-   [ControlAreaComponent.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/components/ControlAreaComponent.ets#L160-L216)
 
 ## AVPlayer与AVPlayer播放切换
 
@@ -339,7 +327,7 @@ content_hash: sha256:ab5787e5ca48a002429ae67c8eb58482958be85712a325d354cc7b06f58
 
 本场景以同一音频文件的FLAC格式与MP3格式之间进行切换播放为例，切换后保持音频播放进度一致，即无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/i5aCz9QdT3CNMoWzDSY76w/zh-cn_image_0000002522762335.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/lFmQcSYlRFuBePZ4m8urNA/zh-cn_image_0000002522762335.gif "点击放大")
 
 ### 实现原理
 
@@ -349,91 +337,85 @@ content_hash: sha256:ab5787e5ca48a002429ae67c8eb58482958be85712a325d354cc7b06f58
 
 1. 在MenuItem组件的点击事件中调用自定义changeType()方法，传入音频资源文件路径和对应音频格式audioType。
 
+   ```typescript
+   Menu() {
+     MenuItem({
+       content: $r('app.string.standard_quality'),
+     }).onClick(() => {
+       if (this.index === 0) {
+         return;
+       }
+       this.text = $r('app.string.standard_quality');
+       this.index = 0;
+       this.changeType(this.songData.src + AudioName.MP3, AudioType.MP3);
+       this.isPlay = true;
+     })
+     MenuItem({
+       content: $r('app.string.flac_high_quality'),
+     })
+       .onClick(() => {
+         if (this.index === 1) {
+           return;
+         }
+         this.text = $r('app.string.flac_high_quality');
+         this.index = 1;
+         this.changeType(this.songData.src + AudioName.FLAC, AudioType.FLAC);
+         this.isPlay = true;
+       })
+     // ...
+   }
+   // ...
    ```
-   1. Menu() {
-   2. MenuItem({
-   3. content: $r('app.string.standard_quality'),
-   4. }).onClick(() => {
-   5. if (this.index === 0) {
-   6. return;
-   7. }
-   8. this.text = $r('app.string.standard_quality');
-   9. this.index = 0;
-   10. this.changeType(this.songData.src + AudioName.MP3, AudioType.MP3);
-   11. this.isPlay = true;
-   12. })
-   13. MenuItem({
-   14. content: $r('app.string.flac_high_quality'),
-   15. })
-   16. .onClick(() => {
-   17. if (this.index === 1) {
-   18. return;
-   19. }
-   20. this.text = $r('app.string.flac_high_quality');
-   21. this.index = 1;
-   22. this.changeType(this.songData.src + AudioName.FLAC, AudioType.FLAC);
-   23. this.isPlay = true;
-   24. })
-   25. // ...
-   26. }
-   27. // ...
-   ```
-
-   [ControlAreaComponent.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/components/ControlAreaComponent.ets#L161-L215)
 2. 同样的，在页面自定义changeType()事件中，通过getRawfd()获取音频资源，将获取到的数据传入PlayerController的changeType()方法，调用playerController的seek()方法传入当前Slider进度值，用于跳转播放。
 
+   ```typescript
+   private changeType(songSrc: string, audioType: AudioType): void {
+     let current: number = this.value;
+     this.getUIContext().getHostContext()?.resourceManager.getRawFd(songSrc).then((rawFileDescriptor) => {
+       this.playerController.changeType(rawFileDescriptor, audioType);
+       this.playerController.seek(current);
+     }).catch((error: BusinessError) => {
+       Logger.error(`resourceManager error code ${error.code} message ${error.message}`);
+     });
+   }
    ```
-   1. private changeType(songSrc: string, audioType: AudioType): void {
-   2. let current: number = this.value;
-   3. this.getUIContext().getHostContext()?.resourceManager.getRawFd(songSrc).then((rawFileDescriptor) => {
-   4. this.playerController.changeType(rawFileDescriptor, audioType);
-   5. this.playerController.seek(current);
-   6. }).catch((error: BusinessError) => {
-   7. Logger.error(`resourceManager error code ${error.code} message ${error.message}`);
-   8. });
-   9. }
-   ```
-
-   [ControlAreaComponent.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/components/ControlAreaComponent.ets#L220-L228)
 3. 在PlayerController的changeType()方法中：
    1. 通过传入的audioType的值，判断音频是否为MP3或FLAC格式。
    2. 调用audioRendererController的pause()方法，暂停AudioRenderer音频渲染。
    3. 通过avPlayerController的reset()方法重置音频资源的描述符、偏移量和文件长度，实现音频资源FLAC格式与MP3格式的切换播放，即AVPlayer与AVPlayer切换播放。
 
+   ```typescript
+   export class PlayerController {
+     // ...
+     // Modifying the audio format
+     changeType(rawFileDescriptor: resourceManager.RawFileDescriptor, audioType: AudioType) {
+       try {
+         this.rawFileDescriptor = rawFileDescriptor;
+         if (audioType === 1 || audioType === 2) {
+           this.audioRendererController?.pause(); // Pause AudioRenderer playback
+           // Reset AVPlayer playback
+           this.avPlayerController?.reset(this.rawFileDescriptor.fd, this.rawFileDescriptor.offset,
+             this.rawFileDescriptor.length);
+         } else {
+           // ...
+         }
+         this.currentType = audioType;
+       } catch (error) {
+         Logger.error('changeType error!');
+       }
+     }
+     // ...
+     // Determine the return value of isAVPlayer() and call the corresponding seek() method
+     seek(currentTime: number): void {
+       if (this.isAVPlayer()) {
+         this.avPlayerController?.seek(currentTime);
+       } else {
+         // ...
+       }
+     }
+     // ...
+   }
    ```
-   1. export class PlayerController {
-   2. // ...
-   3. // Modifying the audio format
-   4. changeType(rawFileDescriptor: resourceManager.RawFileDescriptor, audioType: AudioType) {
-   5. try {
-   6. this.rawFileDescriptor = rawFileDescriptor;
-   7. if (audioType === 1 || audioType === 2) {
-   8. this.audioRendererController?.pause(); // Pause AudioRenderer playback
-   9. // Reset AVPlayer playback
-   10. this.avPlayerController?.reset(this.rawFileDescriptor.fd, this.rawFileDescriptor.offset,
-   11. this.rawFileDescriptor.length);
-   12. } else {
-   13. // ...
-   14. }
-   15. this.currentType = audioType;
-   16. } catch (error) {
-   17. Logger.error('changeType error!');
-   18. }
-   19. }
-   20. // ...
-   21. // Determine the return value of isAVPlayer() and call the corresponding seek() method
-   22. seek(currentTime: number): void {
-   23. if (this.isAVPlayer()) {
-   24. this.avPlayerController?.seek(currentTime);
-   25. } else {
-   26. // ...
-   27. }
-   28. }
-   29. // ...
-   30. }
-   ```
-
-   [PlayerController.ets](https://gitcode.com/harmonyos_samples/audio-format-switch/blob/master/entry/src/main/ets/player/PlayerController.ets#L23-L119)
 
 ## 示例代码
 

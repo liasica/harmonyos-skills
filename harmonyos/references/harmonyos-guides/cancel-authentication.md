@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cancel-authentication
 title: 认证过程中取消认证
-breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 用户身份认证开发指导 > 认证过程中取消认证
+breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 认证过程中取消认证
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:32:25+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:5c2ba2238626b09e5ff0a104bca3ba55182cd94a47b6e952d95f345a976ba0db
+scraped_at: 2026-09-02T14:50:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ad5d2fc493f658df7e291c0c0280817a50be1bef285acbd037fc523c4db048e7
 ---
 
 统一用户认证框架提供了cancel接口，当应用在认证过程中，需要取消认证时可调用该接口。
@@ -28,52 +28,50 @@ content_hash: sha256:5c2ba2238626b09e5ff0a104bca3ba55182cd94a47b6e952d95f345a976
 
 示例代码为发起认证可信等级≥ATL3的人脸+锁屏口令认证后，取消认证请求：
 
-```
-1. handleAuthResultAndCanceling(userAuthInstance: userAuth.UserAuthInstance, exampleNumber: number) {
-2. // ...
-3. // 启动认证
-4. userAuthInstance.start();
-5. Logger.info('auth start successfully.');
-6. // ...
-7. // 取消认证
-8. userAuthInstance.cancel();
-9. Logger.info('auth cancel successfully.');
-10. // ...
-11. }
+```typescript
+handleAuthResultAndCanceling(userAuthInstance: userAuth.UserAuthInstance, exampleNumber: number) {
+  // ...
+    // 启动认证
+    userAuthInstance.start();
+    Logger.info('auth start successfully.');
+    // ...
+      // 取消认证
+      userAuthInstance.cancel();
+      Logger.info('auth cancel successfully.');
+      // ...
+}
 
-13. /*
-14. * cancel-authentication.md
-15. * 发起认证可信等级≥ATL3的人脸+锁屏密码认证后，取消认证请求
-16. * */
-17. cancelingUserAuthentication() {
-18. try {
-19. const randData = getRandData();
-20. if (!randData) {
-21. return;
-22. }
-23. // 设置认证参数
-24. const authParam: userAuth.AuthParam = {
-25. challenge: randData,
-26. authType: [userAuth.UserAuthType.PIN, userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT],
-27. authTrustLevel: userAuth.AuthTrustLevel.ATL3,
-28. };
-29. // 配置认证界面
-30. const widgetParam: userAuth.WidgetParam = {
-31. title: resourceToString($r('app.string.title')),
-32. };
-33. // 获取认证对象
-34. const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
-35. Logger.info('get userAuth instance successfully.');
-36. this.handleAuthResultAndCanceling(userAuthInstance, ResultIndex.CANCEL);
-37. } catch (error) {
-38. const err: BusinessError = error as BusinessError;
-39. Logger.error(`auth failed, code is ${err?.code as number}, message is ${err?.message}`);
-40. }
-41. }
+/*
+ * cancel-authentication.md
+ * 发起认证可信等级≥ATL3的人脸+锁屏密码认证后，取消认证请求
+ * */
+cancelingUserAuthentication() {
+  try {
+    const randData = getRandData();
+    if (!randData) {
+      return;
+    }
+    // 设置认证参数
+    const authParam: userAuth.AuthParam = {
+      challenge: randData,
+      authType: [userAuth.UserAuthType.PIN, userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT],
+      authTrustLevel: userAuth.AuthTrustLevel.ATL3,
+    };
+    // 配置认证界面
+    const widgetParam: userAuth.WidgetParam = {
+      title: resourceToString($r('app.string.title')),
+    };
+    // 获取认证对象
+    const userAuthInstance = userAuth.getUserAuthInstance(authParam, widgetParam);
+    Logger.info('get userAuth instance successfully.');
+    this.handleAuthResultAndCanceling(userAuthInstance, ResultIndex.CANCEL);
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    Logger.error(`auth failed, code is ${err?.code as number}, message is ${err?.message}`);
+  }
+}
 ```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/UserAuthentication/entry/src/main/ets/pages/Index.ets#L326-L395)
 
 ## 示例代码
 
-* [认证过程中取消认证](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/UserAuthentication)
+* [认证过程中取消认证](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)

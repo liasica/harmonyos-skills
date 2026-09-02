@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getfu
 title: GetFusionParseParamFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > GetFusionParseParamFn
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:23+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3050c2175e4aabfa42ba0eba9751ff1ce20910536daa5c8ff8083599c6b7928c
+content_hash: sha256:8a1c32de0438edf85a4f56cd65de77499ec7049f4381f1250b8589dc63b30645
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:3050c2175e4aabfa42ba0eba9751ff1ce20910536daa5c8ff8083599c6b
 
 ## 函数原型
 
-```
-1. FusionParseParamFunc GetFusionParseParamFn() const
+```cpp
+FusionParseParamFunc GetFusionParseParamFn() const
 ```
 
 ## 参数说明

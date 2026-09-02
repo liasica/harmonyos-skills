@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/compilation-t
 title: ArkTS编译工具链概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkTS编译工具链概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:47a5572fdec4414a18b09ef9e1148fce62bb38460c9ff4673bc6b95edc519d7e
+scraped_at: 2026-09-02T14:49:46+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:16227a21e7b91de8ab57e75a580d6fac982dfbc72c135f340ced2668029a145c
 ---
 
 ArkTS SDK提供了一套完整的编译工具链，以支持ArkTS的应用编译，通过集成至[Hvigor](ide-hvigor.md)编译任务的编排工具上，实现将应用的ArkTS/TS/JS源码编译生成方舟字节码文件（\*.abc）。
@@ -17,10 +17,10 @@ ArkTS编译工具链目前主要包含以下功能：
 1. 语法检查：检查ArkTS/TS语法正确性。
 2. UI转换：将UI声明式范式语法转换为标准TS语法。
 3. 源码混淆：使用ArkGuard源码混淆工具对源码进行混淆，开发者可以根据具体业务需求选择开启。
-4. 字节码编译：使用方舟编译器生成方舟字节码文件（\*.abc）。
+4. 生成方舟字节码文件：使用方舟编译器生成方舟字节码文件（\*.abc）。
 5. 自定义修改方舟字节码：提供开发者修改字节码能力的入口，在字节码编译落盘前调用。
-6. 反汇编：使用Disassembler反汇编工具将字节数据反汇编成可阅读的汇编指令。
+6. 反汇编：使用Disassembler反汇编工具将方舟字节码文件反汇编成可阅读的汇编指令。
 
-ArkTS编译工具链在构建HAP流程如下图所示：
+ArkTS编译工具链参与构建HAP的流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/FKdy1rfETXm0YRQ_ufVMlg/zh-cn_image_0000002589323903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/uJq5SNI8R_CoAsCuOBzJXg/zh-cn_image_0000002706673158.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-focus
 title: Web组件焦点管理
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件焦点管理
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0ac8ca917cc99de237ea8f26ab96db012b9b181e2a1fbe1bed939b82e2ec0cf8
+scraped_at: 2026-09-02T14:59:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:458d73ab8f4d45268317fb7426f13a1d2ede6e305c880c9f14a25ed8cde57e26
 ---
 
 开发者可利用Web组件的焦点管理功能，有效管理Web组件的获焦与失焦，同时利用H5端的W3C标准接口，管理网页界面上唯一可交互的元素获焦与失焦。
@@ -75,162 +75,157 @@ Web组件焦点、焦点链和走焦的详情说明请参考[ArkUI焦点基础�
 1. requestFocus接口允许应用开发者主动控制让Web组件获焦。
 2. onFocus和onBlur两个接口通常成对使用，来监听组件的焦点变化。
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  controller2: webview.WebviewController = new webview.WebviewController();
+  @State webBorderColor: Color = Color.Red;
+  @State webBorderColor2: Color = Color.Red;
+
+  build() {
+    Column() {
+      Row() {
+        Button('web1 requestFocus')
+          .onClick(() => {
+            try {
+              this.controller.requestFocus();
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+          });
+        Button('web2 requestFocus')
+          .onClick(() => {
+            try {
+              this.controller2.requestFocus();
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+          });
+      }
+      Web({ src: 'www.example.com', controller: this.controller })
+        .onFocus(() => {
+          this.webBorderColor = Color.Green;
+        })
+        .onBlur(() => {
+          this.webBorderColor = Color.Red;
+        })
+        // ···
+        .margin(3)
+        .borderWidth(10)
+        .borderColor(this.webBorderColor)
+        .height('45%')
+
+      Web({ src: 'www.example.com', controller: this.controller2 })
+        .onFocus(() => {
+          this.webBorderColor2 = Color.Green;
+        })
+        .onBlur(() => {
+          this.webBorderColor2 = Color.Red;
+        })
+        .margin(3)
+        .borderWidth(10)
+        .borderColor(this.webBorderColor2)
+        .height('45%')
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-
-4. @Entry
-5. @Component
-6. struct WebComponent {
-7. controller: webview.WebviewController = new webview.WebviewController();
-8. controller2: webview.WebviewController = new webview.WebviewController();
-9. @State webBorderColor: Color = Color.Red;
-10. @State webBorderColor2: Color = Color.Red;
-
-12. build() {
-13. Column() {
-14. Row() {
-15. Button('web1 requestFocus')
-16. .onClick(() => {
-17. try {
-18. this.controller.requestFocus();
-19. } catch (error) {
-20. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-21. }
-22. });
-23. Button('web2 requestFocus')
-24. .onClick(() => {
-25. try {
-26. this.controller2.requestFocus();
-27. } catch (error) {
-28. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-29. }
-30. });
-31. }
-32. Web({ src: 'www.example.com', controller: this.controller })
-33. .onFocus(() => {
-34. this.webBorderColor = Color.Green;
-35. })
-36. .onBlur(() => {
-37. this.webBorderColor = Color.Red;
-38. })
-39. // ···
-40. .margin(3)
-41. .borderWidth(10)
-42. .borderColor(this.webBorderColor)
-43. .height('45%')
-
-45. Web({ src: 'www.example.com', controller: this.controller2 })
-46. .onFocus(() => {
-47. this.webBorderColor2 = Color.Green;
-48. })
-49. .onBlur(() => {
-50. this.webBorderColor2 = Color.Red;
-51. })
-52. .margin(3)
-53. .borderWidth(10)
-54. .borderColor(this.webBorderColor2)
-55. .height('45%')
-56. }
-57. }
-58. }
-```
-
-[WebFocusManagement.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebFocusManagement/entry/src/main/ets/pages/WebFocusManagement.ets#L15-L76)
 
 **示例图1** 组件获焦/失焦事件
 
 通过requestFocus接口主动请求获焦，并监听通用接口onFocus和onBlur事件，改变Web组件边框颜色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/D2YbavtLTG2gJMDknUpZJg/zh-cn_image_0000002558764710.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/hz2F5N-gTN-Zs5aSqj8amw/zh-cn_image_0000002706834060.gif)
 
 ## Web组件内H5元素焦点控制
 
 * W3C标准事件focus，前端感知网页获焦
 
-```
-1. addEventListener("focus", (event) => {});
+```js
+addEventListener("focus", (event) => {});
 
-3. onfocus = (event) => {};
+onfocus = (event) => {};
 ```
 
 * W3C标准事件blur，前端感知网页失焦
 
-```
-1. addEventListener("blur", (event) => {});
+```js
+addEventListener("blur", (event) => {});
 
-3. onblur = (event) => {};
+onblur = (event) => {};
 ```
 
 * W3C autofocus，表示元素应在页面加载时或其所属的 dialog 显示时获焦
 
-```
-1. <input name="q" autofocus />
+```js
+<input name="q" autofocus />
 ```
 
 在文档或对话框中，最多只能有一个元素具有 autofocus 属性。若应用于多个元素，第一个元素将获得焦点。
 
 **示例：**
 
+```typescript
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+
+  build() {
+    Column() {
+      Web({ src: $rawfile('test.html'), controller: this.controller })
+    }
+  }
+}
 ```
-1. import { webview } from '@kit.ArkWeb';
-
-3. @Entry
-4. @Component
-5. struct WebComponent {
-6. controller: webview.WebviewController = new webview.WebviewController();
-
-8. build() {
-9. Column() {
-10. Web({ src: $rawfile('test.html'), controller: this.controller })
-11. }
-12. }
-13. }
-```
-
-[WebFocusManagement2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkWeb/WebFocusManagement/entry/src/main/ets/pages/WebFocusManagement2.ets#L15-L29)
 
 加载的html文件。
 
-```
-1. // test.html
-2. <!-- test.html -->
-3. <!DOCTYPE html>
-4. <html>
-5. <head>
-6. <meta charset="utf-8">
-7. <title>test</title>
-8. </head>
-9. <body>
-10. <form id="form">
-11. <input type="text" placeholder="text input" />
-12. <input type="password" placeholder="password" />
-13. </form>
-14. </body>
-15. <script>
-16. const form = document.getElementById("form");
+```html
+<!-- test.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+</head>
+<body>
+  <form id="form">
+    <input type="text" placeholder="text input" />
+    <input type="password" placeholder="password" />
+  </form>
+</body>
+<script>
+const form = document.getElementById("form");
 
-18. form.addEventListener(
-19. "focus",
-20. (event) => {
-21. event.target.style.background = "pink";
-22. },
-23. true,
-24. );
+form.addEventListener(
+  "focus",
+  (event) => {
+    event.target.style.background = "pink";
+  },
+  true,
+);
 
-26. form.addEventListener(
-27. "blur",
-28. (event) => {
-29. event.target.style.background = "";
-30. },
-31. true,
-32. );
-33. </script>
-34. </html>
+form.addEventListener(
+  "blur",
+  (event) => {
+    event.target.style.background = "";
+  },
+  true,
+);
+</script>
+</html>
 ```
 
 **示例图2** Web组件内元素焦点获焦/失焦事件
 
 通过监听W3C接口focus和blur事件，改变输入背景色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/6_zR62rsQfmJjP8zR1Mqgw/zh-cn_image_0000002558605056.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/9j_28xO_RqKmPXNIa-a3fw/zh-cn_image_0000002736313169.gif)

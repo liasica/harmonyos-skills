@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/compatibility-warning-suppress
 title: 兼容性告警屏蔽
-breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > API兼容性保护 > 兼容性告警屏蔽
+breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > API兼容性保护和告警屏蔽 > 兼容性告警屏蔽
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:37:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d01668a7732b801d16e1b276d5e564e0671bf531bb4b6cc2f41c118be837e789
+scraped_at: 2026-09-02T14:49:40+08:00
+doc_updated_at: 2026-07-06
+content_hash: sha256:068bc32155c3c94506af29b75ad506c70a2026278599cea78fa09a923a947077
 ---
 
 从DevEco Studio 6.1.0 Beta2开始，DevEco Studio新增ArkTS API接口兼容性告警屏蔽能力，支持通过添加@SuppressWarnings注解或@SuppressWarnings单行注释的方式消除COMPATIBILITY类型的告警。
@@ -16,24 +16,24 @@ content_hash: sha256:d01668a7732b801d16e1b276d5e564e0671bf531bb4b6cc2f41c118be83
 
 **使用示例：**
 
-```
-1. import { Available, SuppressWarnings, SuppressWarningsType } from '@ohos.annotation';
+```screen
+import { Available, SuppressWarnings, SuppressWarningsType } from '@ohos.annotation';
 
-3. // 标记最小可用版本为API 23，当工程兼容版本低于API 23时会触发告警
-4. @Available({ minApiVersion: "23" })
-5. function test(): string {
-6. return "hello world";
-7. }
+// 标记最小可用版本为API 23，当工程兼容版本低于API 23时会触发告警
+@Available({ minApiVersion: "23" })
+function test(): string {
+  return "hello world";
+}
 
-9. // 通过@SuppressWarnings注解屏蔽类成员中的告警提示
-10. @SuppressWarnings({ rules: [SuppressWarningsType.COMPATIBILITY] })
-11. class TestClass {
-12. a = test(); // 告警会被屏蔽
+// 通过@SuppressWarnings注解屏蔽类成员中的告警提示
+@SuppressWarnings({ rules: [SuppressWarningsType.COMPATIBILITY] })
+class TestClass {
+  a = test(); // 告警会被屏蔽
 
-14. testFunction() {
-15. test(); // 告警会被屏蔽
-16. }
-17. }
+  testFunction() {
+    test(); // 告警会被屏蔽
+  }
+}
 ```
 
 ## 通过单行注释屏蔽
@@ -42,20 +42,20 @@ content_hash: sha256:d01668a7732b801d16e1b276d5e564e0671bf531bb4b6cc2f41c118be83
 
 **使用示例：**
 
-```
-1. import { Available } from '@ohos.annotation';
+```screen
+import { Available } from '@ohos.annotation';
 
-3. // 标记最小可用版本为API 23，当工程兼容版本低于API 23时会触发告警
-4. @Available({ minApiVersion: "23" })
-5. function test(): string {
-6. return "hello world";
-7. }
+// 标记最小可用版本为API 23，当工程兼容版本低于API 23时会触发告警
+@Available({ minApiVersion: "23" })
+function test(): string {
+  return "hello world";
+}
 
-9. // 通过@SuppressWarnings注释屏蔽非声明式元素的告警提示
-10. class TestClass {
-11. testFunction() {
-12. // @SuppressWarnings compatibility
-13. test(); // 告警会被屏蔽
-14. }
-15. }
+// 通过@SuppressWarnings注释屏蔽非声明式元素的告警提示
+class TestClass {
+  testFunction() {
+    // @SuppressWarnings compatibility
+    test(); // 告警会被屏蔽
+  }
+}
 ```

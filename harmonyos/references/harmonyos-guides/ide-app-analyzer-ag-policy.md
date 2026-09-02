@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 上架合规体检
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 上架合规体检
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f7013341a720bfcadd8d0533adcad752b797caa9540c0386b2cc85f9ff81f2e9
+scraped_at: 2026-09-02T15:00:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7f12085a9a7b07979edb2e1daf9083982b989005019e42484f8ce930af844335
 ---
 
 从DevEco Studio 6.1.0 Beta1版本开始，AppAnalyzer新增上架合规体检，针对AppGallery应用的上架合规要求进行检测，提前发现需要重点关注的合规事项，了解应做和不应做的事项，避免常见误区。
@@ -14,20 +14,20 @@ content_hash: sha256:f7013341a720bfcadd8d0533adcad752b797caa9540c0386b2cc85f9ff8
 
 1. 确保[DevEco Studio与真机设备已连接](ide-run-device.md)，并对应用进行[签名](ide-signing.md)。
 2. 通过以下任意一种方式，打开AppAnalyzer。
-   * 单击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面。
-   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/lm-RCAmYQQCbSC58YulhWw/zh-cn_image_0000002561833045.png)，打开AppAnalyzer页面。
-3. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/5UIbLSqGR2qgCbSdGd-m7w/zh-cn_image_0000002530913116.png)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
+   * 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面。
+   * 在编辑窗口右侧的工具栏，点击**AppAnalyzer**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/5f38cEILS4CsDowt3rvUbw/zh-cn_image_0000002731542415.png)，打开AppAnalyzer页面。
+3. 点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-VjcS_iHQiin4XD5CQ7CYg/zh-cn_image_0000002701663212.png)图标选择Product、Target和构建模式，点击**Apply**后，在AppAnalyzer的首页中可查看对应的编译产物和构建模式。关于Product、Target、构建模式的介绍请参考[配置多目标产物](ide-customized-multi-targets-and-products-guides.md)和[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/fi_MhnXIR56IGiNyRF1GYg/zh-cn_image_0000002561753055.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/39turYzrSSWZfWT-GySvew/zh-cn_image_0000002701663210.png)
 4. 在**AppAnalyzer**页面，选择**上架合规体检**，选择预置的体检卡片，或根据需要自定义卡片。
-   * 点击预置的体检卡片开始体检，如需查看卡片包含的体检规则，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/qgFtvZ9vR8Oo5cAqOanhGQ/zh-cn_image_0000002530913110.png)按钮，规则详情请参考[体检规则](ide-app-analyzer-ag-policy.md#section63875091019)。
+   * 点击预置的体检卡片开始体检，如需查看卡片包含的体检规则，请点击卡片右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/PpaRV5j2SXecCvzIsdaDnA/zh-cn_image_0000002731382429.png)按钮，规则详情请参考[体检规则](ide-app-analyzer-ag-policy.md#section63875091019)。
    * 如果需要自定义体检规则，点击**+**，选择体检规则。
-5. 开始体检后，请等待AppAnalyzer完成构建、签名、安装等操作，并根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/GUm91_7FQr-rYKbWy6PxlA/zh-cn_image_0000002561833047.png)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/s-cvx3FST-OJQSknF8I_wQ/zh-cn_image_0000002530753124.png)按钮继续测试。在测试过程中，请保持连接的设备为解锁亮屏状态。
+5. 开始体检后，请等待AppAnalyzer完成构建、签名、安装等操作，并根据界面提示，登录应用账号后点击继续按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/O1yHpcZoTsqzRH6PnA2CcA/zh-cn_image_0000002701663222.png)，继续测试；或者无需登录账号，直接点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/sTKpJ1WiT6GZMrofBb9urg/zh-cn_image_0000002731542411.png)按钮继续测试。在测试过程中，请保持连接的设备为解锁亮屏状态。
 6. 测试完成后，查看测试报告，针对测试不通过的规则，AppAnalyzer会给出应该做和不应该做的事项，以及对应的优化建议。
 
-   如果在体检中遇到问题，可点击报告右上角的**用户反馈**向我们反馈。
+   如果在体检中遇到问题，可点击报告右上角的**User Feedback**向我们反馈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/HB_W8V3kRe-B0WXIQyVf1A/zh-cn_image_0000002530753120.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/_gK_BT3ESkK6A2z_3ZQSlw/zh-cn_image_0000002701823138.png)
 
 ## 体检规则
 
@@ -38,10 +38,10 @@ content_hash: sha256:f7013341a720bfcadd8d0533adcad752b797caa9540c0386b2cc85f9ff8
 | 规则名称 | 应该做 | 不应该做 | 应用或元服务规则 |
 | --- | --- | --- | --- |
 | 深色模式 | 应用需支持深色模式显示，确保系统切换到深色模式后，界面以深色风格呈现，并且界面内没有因未适配导致的识别性问题。 | 避免文字与背景对比度小于1.9。 | 应用，元服务 |
-| 色彩对比度 | 应用使用的色彩需满足最小对比度要求：  (1)图标或标题文字与背景对比度大于 3:1。  (2)正文文字与背景对比度大于 4.5:1。  (3)智慧屏深色模式推荐文字与背景对比度范围 5:1 ~ 15.1:1 ，其中正文文字与背景对比度范围 ：11:1 ~15.1:1。 | 避免文字与背景对比度小于1.9。 | 应用，元服务 |
-| 字体大小 | 应用的文字大小需满足最小字号要求：  (1)手机/折叠/平板文本字号不小于12 vp（推荐），最小不得小于8 vp（必须）。  (2)电脑文本字号不小于14vp（推荐），最小不小于10vp（必须）。  (3)智慧屏字号范围 - 所有文本字号不小于16vp（推荐），最小不得小于14vp（必须），其中正文字号建议 22～26vp。 | 应用的文字过小，不满足最小字号要求。 | 应用，元服务 |
-| 状态栏 | (1)应用需要对状态栏进行适配显示。  (2)采用沉浸一体化的背景设计，保证效果的整体性。  (3)根据页面内状态栏区域的背景色选择合适的状态栏颜色 (黑/白)，保证状态栏信息的易读性。 | (1)避免系统状态栏区域被单独切割。  (2)避免系统状态栏信息信息文本与背景色对比度小于3。  (3)避免在状态栏背景区域内采用左右半区对比差异过大的颜色，导致部分系统状态栏信息无法阅读。  (4)避免应用信息和系统状态栏信息互相遮挡。 | 应用，元服务 |
-| 应用图标 | 应用图标资源需分层，尺寸需满足规范要求：  (1)应用图标资源必须分为前景图和背景图两层，尺寸要求必须为 1024 px \* 1024 px。  (2)应用图标显示正常，图标显示完整。 | (1)图标资源不允许自行裁切圆角，不允许在资源内添加内间距。  (2)图标存在明显的模糊、拉伸、压缩、锯齿等情况。 | 应用，元服务 |
+| 色彩对比度 | 应用使用的色彩需满足最小对比度要求：  (1)图标或标题文字与背景对比度大于3:1。  (2)正文文字与背景对比度大于4.5:1。  (3)智慧屏深色模式推荐文字与背景对比度范围5:1~15.1:1 ，其中正文文字与背景对比度范围：11:1~15.1:1。 | 避免文字与背景对比度小于1.9。 | 应用，元服务 |
+| 字体大小 | 应用的文字大小需满足最小字号要求：  (1)手机/折叠/平板文本字号不小于12vp（推荐），最小不得小于8vp（必须）。  (2)电脑文本字号不小于14vp（推荐），最小不小于10vp（必须）。  (3)智慧屏字号范围 - 所有文本字号不小于16vp（推荐），最小不得小于14vp（必须），其中正文字号建议22～26vp。 | 应用的文字过小，不满足最小字号要求。 | 应用，元服务 |
+| 状态栏 | (1)应用需要对状态栏进行适配显示。  (2)采用沉浸一体化的背景设计，保证效果的整体性。  (3)根据页面内状态栏区域的背景色选择合适的状态栏颜色（黑/白），保证状态栏信息的易读性。 | (1)避免系统状态栏区域被单独切割。  (2)避免系统状态栏信息文本与背景色对比度小于3。  (3)避免在状态栏背景区域内采用左右半区对比差异过大的颜色，导致部分系统状态栏信息无法阅读。  (4)避免应用信息和系统状态栏信息互相遮挡。 | 应用，元服务 |
+| 应用图标 | 应用图标资源需分层，尺寸需满足规范要求：  (1)应用图标资源必须分为前景图和背景图两层，尺寸要求必须为1024 px \* 1024 px。  (2)应用图标显示正常，图标显示完整。 | (1)图标资源不允许自行裁切圆角，不允许在资源内添加内间距。  (2)图标存在明显的模糊、拉伸、压缩、锯齿等情况。 | 应用，元服务 |
 
 ### 隐私合规
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-427
 title: Tabs如何实现TabBar左对齐
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Tabs如何实现TabBar左对齐
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Tabs如何实现TabBar左对齐
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:52+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:fba04fc1e018e28862a88637a540025dc2f197fc5681fe0091842466c5b99f7d
 ---
 

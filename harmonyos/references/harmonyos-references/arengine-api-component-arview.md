@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: ARView（AR场景可视化）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS组件 > ARView（AR场景可视化）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:adfcb377cbb240ef94070941d953a9a6a37e419e6f13c5b74fdaed2d497a7a63
+scraped_at: 2026-09-02T15:02:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1ef5d7b55984e32ecbffda6d03e75799fc1353c091b4f3e341343af7c22cd00a
 ---
 
 用于承载ARViewContext，实现AR场景可视化呈现。
@@ -20,15 +20,11 @@ content_hash: sha256:adfcb377cbb240ef94070941d953a9a6a37e419e6f13c5b74fdaed2d497
 
 ## 导入模块
 
-PhoneTabletTV
-
-```
-1. import { ARView, arViewController } from '@kit.AREngine';
+```typescript
+import { ARView, arViewController } from '@kit.AREngine';
 ```
 
 ## ARView
-
-PhoneTabletTV
 
 该类为AR场景可视化呈现组件。
 
@@ -48,8 +44,6 @@ PhoneTabletTV
 
 ### build
 
-PhoneTabletTV
-
 build(): void
 
 用于创建ARView对象的构造函数。
@@ -64,23 +58,23 @@ build(): void
 
 **示例：**
 
-```
-1. import { ARView, arViewController } from '@kit.AREngine';
+```typescript
+import { ARView, arViewController } from '@kit.AREngine';
 
-3. let arContext: arViewController.ARViewContext = new arViewController.ARViewContext();
+let arContext: arViewController.ARViewContext = new arViewController.ARViewContext();
 
-5. @Entry
-6. @Component
-7. struct ARWorld {
-8. // context配置及初始化
-9. build() {
-10. RelativeContainer() {
-11. if (arContext) {
-12. ARView({ context: arContext })
-13. .height('100%')
-14. .width('100%')
-15. }
-16. }
-17. }
-18. }
+@Entry
+@Component
+struct ARWorld {
+  // context配置及初始化
+  build() {
+    RelativeContainer() {
+      if (arContext) {
+        ARView({ context: arContext })
+          .height('100%')
+          .width('100%')
+      }
+    }
+  }
+}
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: xeg_vulkan_hps.h
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 头文件 > xeg_vulkan_hps.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:dd4e23e67ea57a46cc902025672e6d37ea262c9ce620282bece89aa264dfbc50
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b345e14a7e99e9cc8c57e1451833a8b3c5c6448b275c7abf43a37058169c4954
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 XEngine 高性能着色器接口。使用此头文件中的接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询[XEG\_HPS\_RADIX\_SORT\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_hps_radix_sort_extension_name)扩展可用。
 
@@ -26,11 +24,7 @@ XEngine 高性能着色器接口。使用此头文件中的接口前需要通过
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,8 +33,6 @@ PhonePC/2in1TabletTV
 | struct [XEG\_HPSRadixSortDescription](xengine-kit-xeg-hpsradixsortdescription.md) | 此结构体描述使用[XEG\_HPS\_RADIX\_SORT\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_hps_radix_sort_extension_name)扩展进行排序时所需的信息。 |
 
 ### 类型定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -53,8 +45,6 @@ PhonePC/2in1TabletTV
 | typedef VkResult(VKAPI\_PTR \* [PFN\_HMS\_XEG\_CmdRadixSortHPS](xengine-kit-xengine.md#pfn_hms_xeg_cmdradixsorthps)) (VkCommandBuffer commandBuffer, [XEG\_HPS](xengine-kit-xengine.md#xeg_hps) hps, const [XEG\_HPSRadixSortDescription](xengine-kit-xeg-hpsradixsortdescription.md) \*pDescription) | 录制HPS排序命令的函数指针定义，使用此接口前需要通过[HMS\_XEG\_EnumerateDeviceExtensionProperties](xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询是否支持[XEG\_HPS\_RADIX\_SORT\_EXTENSION\_NAME](xengine-kit-xengine.md#xeg_hps_radix_sort_extension_name)扩展。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

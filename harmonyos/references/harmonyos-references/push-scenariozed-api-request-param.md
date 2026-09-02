@@ -1,23 +1,22 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scenariozed-api-request-param
 title: 请求体参数说明
-breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息 > 请求体参数说明
+breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 请求体参数说明
 category: harmonyos-references
-scraped_at: 2026-04-29T14:09:10+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b432459
+scraped_at: 2026-09-02T15:03:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870f93a1
 ---
 
 ## pushOptions
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| testMessage | 否 | Boolean | 测试消息标识：  false：正式消息（**默认值**）  true：测试消息  **说明：**  当testMessage为true时，单个项目每日最多可推送1000条测试消息，每次推送携带Token数不超过10个。1000条为REST API请求成功总数，非成功到达端侧的消息总数。  推送卡片刷新消息时，每次仅能携带一个Token。 |
-| ttl | 否 | Integer | 消息缓存时间，单位是秒。在用户设备离线时，消息在Push服务器进行缓存，在消息缓存时间内用户设备上线，消息会下发，超过缓存时间后消息会丢弃，**默认值为86400秒（1天）** ，最大值为1296000秒（15天）。  **说明：**  推送应用内通话消息场景、推送通知消息（VOIP消息类型）场景以及推送语音播报消息（VOIP消息类型）场景，ttl建议设置为30~60秒。 |
+| testMessage | 否 | Boolean | 测试消息标识：  - false：正式消息（默认值）  - true：测试消息  **说明：**  当testMessage为true时，单个项目每日最多可推送1000条测试消息，每次推送携带Token数不超过10个。1000条为REST API请求成功总数，非成功到达端侧的消息总数。  推送卡片刷新消息时，每次仅能携带一个Token。 |
+| ttl | 否 | Integer | 消息缓存时间，单位：s。在用户设备离线时，消息在Push服务器进行缓存，在消息缓存时间内用户设备上线，消息会下发，超过缓存时间后消息会丢弃，**默认值为86400秒（1天）** ，最大值为1296000秒（15天）。  **说明：**  推送应用内通话消息场景、推送通知消息（VOIP消息类型）场景以及推送语音播报消息（VOIP消息类型）场景，ttl建议设置为30~60秒。 |
 | biTag | 否 | String | 批量任务消息标识，[消息回执](../harmonyos-guides/push-msg-receipt.md)时会返回给应用服务器，长度最大64字节。 |
 | receiptId | 否 | String | 输入一个唯一的回执ID指定本次下行消息的回执地址及配置，该回执ID可以在[配置回执参数](../harmonyos-guides/push-msg-receipt.md#配置回执参数)中查看。 |
-| collapseKey | 否 | Integer | 用户设备离线时，Push服务器对离线消息缓存机制的控制方式，用户设备上线后缓存消息会再次下发，取值如下：  -1：对该取值的所有离线消息都缓存（**默认值**）  0~100：离线消息缓存分组标识，对离线消息进行分组缓存，每个应用每一组只缓存一条最新的离线消息  如果您发送了10条消息，其中前5条的collapseKey为1，后5条的collapseKey为2，那么待用户上线后collapseKey为1和2的分别下发最新的一条消息给最终用户。  **说明：**  collapseKey字段只对push-type为0或2的消息生效。  0：通知消息  2：语音播报消息 |
-| backgroundMode | 否 | Integer | 后台消息模式，仅对push-type为6的消息生效。取值如下：  0（**默认值**）：默认后台消息，按照天粒度管控频次 ，系统会根据现网使用场景和流量进行管控，不合理的使用场景系统会进行频控。  1：即时通讯后台消息，终端设备接收到该条消息后，如果应用在前台则将消息内容传给应用；如果应用在后台，系统会不定时将后台消息送达至应用主进程，您可以在主进程中及时将消息内容同步到应用内。  每次主进程可执行的最大时长为30秒，请在30秒内完成事务处理，超出时间后主进程生命周期结束。  系统限制应用每小时最多发送2条，可能会根据用户使用应用行为，系统运行策略调整。  **说明：**  · 该参数设置为**1**时，应用需要申请即时通讯后台消息推送权益，该权益使用限于专属IM类应用；若应用未申请该权益，系统将按照参数设置为0的场景处理该条消息。  · 即时通讯后台消息是否能够及时送达受多因素影响，例如用户使用应用的行为、设备电量、系统负载等，系统不保障送达。  **说明：**  · 申请时需提供应用的应用内聊天界面截图。  · 提供《增值电信业务经营许可证》（ICP许可证）和《增值电信业务经营许可证》（B22国内多方通信服务业务）。  · 企业内部应用申请特殊权益需要在邮件正文中附带应用下载二维码，并提供应用登录测试账号。  · 当前即时通讯后台消息推送申请场景仅限于IM类应用，审核因素除必须符合应用商店的政策和规定以外，还要综合评估安全性、稳定性以及应用的多样性、性能、用户体验等多因素，当前仅开放邮件申请方式。请将如下信息发送至hwpush@huawei.com进行申请，我们会在15个工作日内回复申请结果，请您留意邮箱消息。  **申请邮件模板**  邮件主题：【场景消息特殊权益申请】- 即时通讯后台消息推送  邮件正文：  申请权益名称：即时通讯后台消息推送  企业名称：\*\*\*  应用名称：\*\*\*  应用包名：com.\*\*\*.\*\*\*  AppID：1\*\*\*\*12  应用痛点/使用场景：\*\*\*是通讯类软件，应用为专属IM类应用。当前用户打开应用后存在聊天消息未实时接收的情况，希望借助即时通讯后台消息推送权益，提升用户打开应用时接收消息的体验。  承诺信息：  1. （应用名称）的即时通讯后台消息推送权益仅用于符合规定的场景中（具体场景）。  2. 业务结束后，应用不再阻止系统休眠。  3. 本次提供的证明函、《增值电信业务经营许可证》（ICP许可证）以及《增值电信业务经营许可证》（B22国内多方通信服务业务）真实有效，不存在造假。  4. 如有违反上述1、2、3及其他行为，同意华为将该权益收回。 |
+| collapseKey | 否 | Integer | 用户设备离线时，Push服务器对离线消息缓存机制的控制方式，用户设备上线后缓存消息会再次下发，取值如下：  -1：对该取值的所有离线消息都缓存（**默认值**）。  0~100：离线消息缓存分组标识，对离线消息进行分组缓存，每个应用每一组只缓存一条最新的离线消息。  如果您发送了10条消息，其中前5条的collapseKey为1，后5条的collapseKey为2，那么待用户上线后collapseKey为1和2的分别下发最新的一条消息给最终用户。  **说明：**  collapseKey字段只对push-type为0或2的消息生效。  0：通知消息  2：语音播报消息 |
 
 ## target
 
@@ -37,24 +36,34 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| category | 是 | String | 通知消息类型。完成[申请通知消息自分类权益](../harmonyos-guides/push-apply-right.md#申请通知消息自分类权益)后，用于标识消息类型，不同的通知消息类型影响消息展示和提醒方式。取值如下：  **服务与通讯类**  · IM：即时聊天  · VOIP：语音通话邀请、视频通话邀请  · MISS\_CALL：未接通话消息提醒  · SUBSCRIPTION：订阅  · TRAVEL：出行  · HEALTH：健康  · WORK：工作事项提醒  · ACCOUNT：账号动态  · EXPRESS：订单&物流  · FINANCE：财务  · DEVICE\_REMINDER：设备提醒  · MAIL：邮件  · PLAY\_VOICE：语音播报  **说明：**  PLAY\_VOICE（语音播报）消息仅可发送push-type为2的语音播报消息。  2：语音播报消息  **资讯营销类**  · MARKETING：新闻、内容推荐、社交动态、产品促销、财经动态、生活资讯、调研、功能推荐、运营活动（仅对内容进行标识，不会加快消息发送），统称为资讯营销类消息。  **说明：**  · 若您仅需发送MARKETING（资讯营销类）消息，则无需申请通知消息自分类权益。MARKETING消息与其他分类的通知消息存在不同的频控策略，详情请参见[通知消息推送数量管理规则](../harmonyos-guides/push-apply-right.md#通知消息推送数量管理规则)。若消息被频控，请参考[频控FAQ](../harmonyos-guides/push-faq-5.md)进行问题排查。 |
+| category | 是 | String | 通知消息类型。完成[申请通知消息自分类权益](../harmonyos-guides/push-apply-right.md#申请通知消息自分类权益)后，用于标识消息类型，不同的通知消息类型影响消息展示和提醒方式。取值如下：  **服务与通讯类**  · IM：即时聊天  · VOIP：语音通话邀请、视频通话邀请  · MISS\_CALL：未接通话消息提醒  · SUBSCRIPTION：订阅  · TRAVEL：出行  · HEALTH：健康  · WORK：工作事项提醒  · ACCOUNT：账号动态  · EXPRESS：订单&物流  · FINANCE：财务  · DEVICE\_REMINDER：设备提醒  · MAIL：邮件  · PLAY\_VOICE：语音播报  **说明：**  PLAY\_VOICE（语音播报）消息仅可发送push-type为2的语音播报消息。  **资讯营销类**  · MARKETING：新闻、内容推荐、社交动态、产品促销、财经动态、生活资讯、调研、功能推荐、运营活动（仅对内容进行标识，不会加快消息发送），统称为资讯营销类消息。  **说明：**  · 若您仅需发送MARKETING（资讯营销类）消息，则无需申请通知消息自分类权益。MARKETING消息与其他分类的通知消息存在不同的频控策略，详情请参见[通知消息推送数量管理规则](../harmonyos-guides/push-apply-right.md#通知消息推送数量管理规则)。若消息被频控，请参考[频控FAQ](../harmonyos-guides/push-faq-5.md)进行问题排查。 |
 | title | 是 | String | 通知消息标题。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | body | 是 | String | 通知消息内容。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | image | 否 | String | 通知右侧大图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · Wearable不支持右侧大图标样式。  · 支持图片格式为PNG、JPG、JPEG、BMP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 6.1.0(23)版本新增支持WEBP格式图片。 |
-| overlayIcon | 否 | String | 通知重叠图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 支持图片格式为PNG、JPG、JPEG、BMP、WEBP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 仅当category为IM或VOIP或MISS\_CALL时，消息生效。  · **起始版本：** 6.1.0(23) |
+| overlayIcon | 否 | String | 通知重叠图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 支持图片格式为PNG、JPG、JPEG、BMP、WEBP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 仅当category为IM或VOIP或MISS\_CALL时，消息生效。  **起始版本：** 6.1.0(23) |
 | style | 否 | Integer | 通知消息样式：  0：普通通知（**默认值**）  1：大文本样式  3：多行文本样式（使用场景请参见[开发指南](../harmonyos-guides/push-send-alert.md#多行文本样式)）  **说明：**  · style=1 大文本样式将要废弃，建议直接使用 style=0 普通通知。  · Wearable不支持大文本样式和多行文本样式。 |
 | bigTitle | 否 | String | 大文本样式的标题，当style为1时必选。设置bigTitle后通知栏展示时，使用bigTitle而不用title。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 此字段将要废弃，建议直接使用title字段。  · Wearable不支持大文本样式。 |
 | bigBody | 否 | String | 大文本样式的内容，当style为1时必选。设置bigBody后通知栏展示时，使用bigBody而不用body。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 此字段将要废弃，建议直接使用body字段。  · Wearable不支持大文本样式。 |
 | notifyId | 否 | Integer | 每条消息在通知显示时的唯一标识。不携带或者设置-1时，Push Kit自动为每条消息生成一个唯一标识；不同的通知消息可以拥有相同的notifyId，实现新消息覆盖旧消息功能。若要用于消息撤回则必填，且范围为[0, 2147483647]，即非负值。详情请参见[消息撤回](push-msg-revoke.md)。 |
-| appMessageId | 否 | String | 应用消息的唯一标识，不携带时默认无appMessageId。长度范围为[1,64]，支持大小写字母、数字、+、/、=、-、\_和空白字符。  **说明：**  · 当同一appMessageId的应用消息通过多个渠道（Push Kit、近场通讯、应用自己拉取或发送本地通知）触达时，目标终端只展示有效期内最早的一条，有效期**默认为24小时**。  · 区别于notifyId,notifyId作用机制是新消息覆盖旧消息。特别地，notifyId和appMessageId均相同时，展示旧消息。 |
+| appMessageId | 否 | String | 应用消息的唯一标识，不携带时默认无appMessageId。长度范围为[1,64]，支持大小写字母、数字、+、/、=、-、\_和空白字符。  **说明：**  · 当同一appMessageId的应用消息通过多个渠道（Push Kit、近场通讯、应用自己拉取或发送本地通知）触达时，目标终端只展示有效期内最早的一条，有效期**默认为24小时**。  · 区别于notifyId，notifyId作用机制是新消息覆盖旧消息。特别地，notifyId和appMessageId均相同时，展示旧消息。 |
 | profileId | 否 | String | 应用内账号id匿名标识，最大长度为64。 |
-| inboxContent | 否 | Array [String] | 多行文本样式的内容，当style为3时，本字段必填，最多支持3条内容，每条最大长度1024且无法完全展示时以“...”截断。  **说明：**  Wearable不支持多行文本样式。 |
+| inboxContent | 否 | Array [String] | 多行文本样式的内容，当style为3时，本字段必填，最多支持3条内容，每条最大长度1024且无法完全展示时以“...”截断。详情参见[inboxContent](push-scenariozed-api-request-param.md#inboxcontent示例) 。  **说明：**  Wearable不支持多行文本样式。 |
 | clickAction | 是 | [ClickAction](push-scenariozed-api-request-param.md#clickaction) Object | 点击消息动作，详情请参见[ClickAction](push-scenariozed-api-request-param.md#clickaction)结构体。 |
-| badge | 否 | [Badge](push-scenariozed-api-request-param.md#badge) Object | 通知消息角标控制参数，详情请参见[Badge](push-scenariozed-api-request-param.md#badge)结构体，不设置时应用不显示角标数字，若当前已存在角标，则角标数字不变化。  **说明：**  Wearable、TV不支持通知角标样式。 |
-| sound | 否 | String | 自定义消息通知铃声。此处设置的铃声文件必须放在应用的/resources/rawfile路径下。例如设置为**alert.mp3**，对应应用本地的**​/resources/rawfile/alert.mp3** 文件。支持的文件格式包括MP3、WAV、MPEG等，如果不设置，则用默认系统铃声。  当请求不携带**soundDuration**字段时，建议铃声时长不超过30秒，若超过30秒则截断处理；当请求携带**soundDuration**字段时，详情请参见**soundDuration**字段说明。  **说明：**  Wearable、TV、PC/2in1不支持自定义铃声。 |
-| soundDuration | 否 | Integer | 自定义消息通知铃声时长。需要配合sound字段使用，只有当请求同时携带sound字段，soundDuration字段才会生效。仅支持数字，单位为秒，取值范围 [1, 60]。  sound字段传入的自定义消息通知铃声会播放至soundDuration字段值后停止，若自定义消息通知铃声对应的时长不足soundDuration字段值则会循环播放，在达到soundDuration字段值后停止。 |
-| foregroundShow | 否 | Boolean | 应用在前台时是否展示通知消息。**默认为true**，表示前后台都展示。  · true：默认值，应用在前后台都展示通知消息，此时[receiveMessage](push-pushservice.md#pushservicereceivemessage)不会被触发，无法获取消息数据。  · false：应用只在后台展示通知消息；应用在前台时，通知消息将不会展示，但可以通过[receiveMessage](push-pushservice.md#pushservicereceivemessage)接收通知消息自行完成业务处理，详情请参见[应用在前台时处理通知消息](../harmonyos-guides/push-send-alert.md#应用在前台时处理通知消息)。 |
+| badge | 否 | [AlertBadge](push-scenariozed-api-request-param.md#alertbadge) Object | 通知消息角标控制参数，详情请参见[AlertBadge](push-scenariozed-api-request-param.md#alertbadge)结构体，不设置时应用不显示角标数字，若当前已存在角标，则角标数字不变化。  **说明：**  Wearable、TV不支持通知角标样式。 |
+| sound | 否 | String | 自定义消息通知铃声。此处设置的铃声文件必须放在应用的/resources/rawfile路径下。例如设置为**alert.mp3**，对应应用本地的**​/resources/rawfile/alert.mp3** 文件。支持的文件格式包括MP3、WAV、MPEG等，如果不设置，则用默认系统铃声。  当请求不携带**soundDuration**字段时，建议铃声时长不超过30秒，若超过30秒则截断处理；当请求携带**soundDuration**字段时，详情请参见**soundDuration**字段说明。  **说明：**  · Wearable、TV、PC/2in1不支持自定义铃声。  · 当category取值为MARKETING时，为静默通知，自定义铃声无效。 |
+| soundDuration | 否 | Integer | 自定义消息通知铃声时长。需要配合sound字段使用，只有当请求同时携带sound字段，soundDuration字段才会生效。仅支持数字，单位：s，取值范围 [1, 60]。  sound字段传入的自定义消息通知铃声会播放至soundDuration字段值后停止，若自定义消息通知铃声对应的时长不足soundDuration字段值则会循环播放，在达到soundDuration字段值后停止。 |
+| foregroundShow | 否 | Boolean | 应用在前台时是否展示通知消息。  true：默认值，应用在前后台都展示通知消息，此时[receiveMessage](push-pushservice.md#pushservicereceivemessage)不会被触发，无法获取消息数据。  false：应用只在后台展示通知消息；应用在前台时，通知消息将不会展示，但可以通过[receiveMessage](push-pushservice.md#pushservicereceivemessage)接收通知消息自行完成业务处理，详情请参见[应用在前台时处理通知消息](../harmonyos-guides/push-send-alert.md#应用在前台时处理通知消息)。  **说明：**  foregroundShow字段仅对push-type为0的通知消息生效。 |
 | priorityScene | 否 | String | 消息的优先通知类型。取值如下：  · PRIMARY\_CONTACT：重要联系人消息  · AT\_ME：@我  · URGENT\_MESSAGE：加急消息  · SCHEDULE\_REMINDER：日程待办提醒  **说明：**  发送优先通知消息需要开通[优先通知权益](../harmonyos-guides/priority-notification-permission-guidelines.md)。 |
+
+### inboxContent示例
+
+```json5
+"inboxContent": [
+  "1. 通知栏消息样式",
+  "2. 通知栏消息提醒方式和展示方式",
+  "3. 通知栏消息语言本地化"
+]
+```
 
 ### ClickAction
 
@@ -63,7 +72,7 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 | actionType | 是 | Integer | 消息点击后的行为。  0：打开应用首页  1：打开应用自定义页面  3：清除通知  5：打开拨号界面  在不同的场景下支持actionType不同，详情请参考[点击行为类型](push-scenariozed-api-request-param.md#点击行为类型)。 |
 | action | 否 | String | 应用内置页面ability对应的action。当actionType为1时，字段uri和action至少填写一个。当action对应的页面路径不存在时，会默认跳转应用首页。  action如何设置请参见[点击消息进入应用内页](../harmonyos-guides/push-send-alert.md#点击消息进入应用内页)。 |
 | uri | 否 | String | 应用内置页面ability对应的uri，uri对象内部结构请参见[skills标签](../harmonyos-guides/module-configuration-file.md#skills标签)。当actionType为1时，字段uri和action至少填写一个。当存在多个Ability时，分别填写不同Ability的action和uri，优先使用action查找对应的应用内置页面。  uri如何设置请参见[点击消息进入应用内页](../harmonyos-guides/push-send-alert.md#点击消息进入应用内页)。 |
-| data | 否 | Object | 点击时传递给应用的数据，格式为JSON对象。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  actionType为5时，data必填。固定携带{"tel": "xxx"} value为电话号码，长度最大为20，允许包含字符：  · +（只能在首位字符）  · -  · 空格  · 0-9  · #  **说明：**  当actionType为5时，首位字符必须为+或0-9。 |
+| data | 否 | Object | 点击时传递给应用的数据，格式为JSON对象，数据获取请参见[数据传递](../harmonyos-guides/push-send-alert.md#数据传递)。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  actionType为5时，data必填。固定携带{"tel": "xxx"} value为电话号码，长度最大为20，允许包含字符：  · +（只能在首位字符）  · -  · 空格  · 0-9  · #  **说明：**  当actionType为5时，首位字符必须为+或0-9。 |
 
 ### 点击行为类型
 
@@ -74,12 +83,32 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 | 7 实况窗 | notificationData.clickAction | 0：打开应用首页  1：打开应用自定义页面 |
 | 7 实况窗 | notificationData.extend.clickAction | 0：打开应用首页  1：打开应用自定义页面  3：清除通知  5：打开拨号界面  **说明：**  如果设备不支持拨号，当actionType取值5时则无法创建实况窗。 |
 
-### Badge
+### AlertBadge
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | addNum | 否 | Integer | 应用角标累加数字（大于0小于100的整数），非应用角标实际显示数字。  **说明：**  · 某应用当前有N条未读消息，若addNum设置为3，则每发一次消息，应用角标显示的数字累加3，为N+3（若N+3 > 99，角标显示“99+”）。  · 当不传入addNum时默认值为0，角标不会增加。 |
 | setNum | 否 | Integer | 角标设置数字（大于等于0小于100的整数），应用角标实际显示数字。  **说明：**  setNum优先级高于addNum：  · 若未传入setNum，说明未下发setNum，则本次以addNum为准。  · 若setNum>=0，说明下发了setNum，则本次以setNum为准。发布通知时不携带addNum字段。 |
+
+## BadgePayload 角标刷新消息
+
+请求体示例请参见[角标刷新消息](push-scenariozed-api-request-example.md#角标刷新消息)。
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| notification | 是 | [BadgeNotification](push-scenariozed-api-request-param.md#badgenotification) Object | 角标刷新消息结构体，详情参见[BadgeNotification](push-scenariozed-api-request-param.md#badgenotification)结构体。 |
+
+### BadgeNotification
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| badge | 是 | [Badge](push-scenariozed-api-request-param.md#badge) Object | 角标刷新消息结构体，详情参见[Badge](push-scenariozed-api-request-param.md#badge)结构体。 |
+
+### Badge
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| setNum | 是 | Integer | 角标设置数字（大于等于0小于100的整数），应用角标实际显示数字。 |
 
 ## ExtensionPayload 语音播报消息
 
@@ -88,7 +117,7 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | notification | 是 | [Notification](push-scenariozed-api-request-param.md#notification) Object | 通知消息结构体，详情请参见[Notification](push-scenariozed-api-request-param.md#notification)结构体。  **说明：**  notification.category必填，且取值为“PLAY\_VOICE”，发送语音播报消息前请先申请推送语音播报消息权益，请参见[申请推送语音播报消息权益](../harmonyos-guides/push-apply-right.md#申请推送语音播报消息权益)。 |
-| extraData | 是 | String | 语音播报消息的额外数据。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）。  extraData数据获取请参见[示例代码](https://gitcode.com/HarmonyOS_Samples/push-kit-sample-code-clientdemo-arkts/blob/master/entry/src/main/ets/entryability/RemoteNotificationExtAbility.ets) |
+| extraData | 是 | String | 语音播报消息的额外数据。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  extraData数据获取请参见[示例代码](https://gitcode.com/HarmonyOS_Samples/push-kit-sample-code-clientdemo-arkts/blob/master/entry/src/main/ets/abilities/PushMessageAbility.ets) |
 
 ## FormUpdatePayload 卡片刷新消息
 
@@ -97,7 +126,7 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | formId | 是 | Long | 服务卡片的实例ID，当卡片[onAddForm](js-apis-app-form-formextensionability.md#formextensionabilityonaddform)（卡片使用方添加卡片至桌面）时获取。请注意，当前端侧生成formId最大值为231-1，formId字段支持输入的最大值为263-1。 |
-| version | 是 | Integer | 卡片刷新消息的版本号，最小值为0，最大值为**231-1**。  · 新的卡片刷新消息的版本号需**大于**当前卡片刷新消息版本号，否则会刷新失败。  · 若新的卡片刷新消息版本号为 **0**则表示卡片刷新版本号重置，**本次卡片刷新仍然有效**，下次卡片刷新消息版本号需大于0。 |
+| version | 是 | Integer | 卡片刷新消息的版本号，最小值为0，最大值为**231-1**。  · 新的卡片刷新消息的版本号需**大于**当前卡片刷新消息版本号，否则会刷新失败。  · 若新的卡片刷新消息版本号为**0**则表示卡片刷新版本号重置，**本次卡片刷新仍然有效**，下次卡片刷新消息版本号需大于0。 |
 | images | 否 | Array [[FormImage](push-scenariozed-api-request-param.md#formimage) Object] | 服务卡片图片数据，结构为数组，数组每个元素为一个object，详情请参见[FormImage](push-scenariozed-api-request-param.md#formimage)结构体。当前仅允许携带一个数组元素。**详情见[示例代码](push-scenariozed-api-request-param.md#示例代码)。** |
 | moduleName | 是 | String | 服务卡片模块名称。  项目模块级别下的**src/main/module.json5**中的**module**标签下的[name](../harmonyos-guides/module-configuration-file.md#配置文件标签)值。 |
 | formName | 是 | String | 服务卡片名称。  该数据来源于**卡片配置文件**中**forms**标签下的某个卡片配置信息的name值，**卡片配置文件**位于项目模块级别下的**src/main/resources/base/profile**，请参见[指南](../harmonyos-guides/push-form-update.md#推送卡片刷新消息-1)。 |
@@ -114,14 +143,14 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 ### **示例代码**
 
-```
-1. {
-2. "images": [{
-3. "keyName": "icon",
-4. "url": "https://xxx.png",
-5. "require": 1
-6. }]
-7. }
+```json
+{
+  "images": [{
+    "keyName": "icon",
+    "url": "https://xxx.png",
+    "require": 1
+  }]
+}
 ```
 
 ## BackgroundPayload 后台消息
@@ -135,40 +164,41 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 ## LiveViewPayload 实况窗消息
 
-实况窗请求示例请见[创建实况窗消息](push-scenariozed-api-request-example.md#创建实况窗消息)和[更新实况窗消息](push-scenariozed-api-request-example.md#更新实况窗消息)。
+实况窗请求示例请见[创建实况窗消息](push-scenariozed-api-request-example.md#创建实况窗消息)和[更新实况窗消息](push-scenariozed-api-request-example.md#更新实况窗消息)。端云API参数关联关系参考[端云API关系说明](liveview-api-map.md)。
 
-说明
+**说明** 
 
 为了确保用户看到内容的时效性，请您确保对实况窗内容进行及时更新。系统将在实况窗超过2小时未更新时，隐藏实况窗在状态栏胶囊和锁屏的展示，保留通知中心展示；超过4小时未更新，系统会认为实况窗结束，并从各个展示入口清除该实况窗。
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| activityId | 是 | Integer | 实况窗唯一标识，取值范围为[-2147483648, 2147483647]，由开发者自行生成。对应Live View Kit中的[id](liveview-liveviewmanager.md#section411410371767)字段。  **说明：**  若发送的activityId对应的实况窗不存在（更新或结束实况窗的场景中），将限制使用该activityId发送实况窗消息24小时。 |
-| operation | 是 | Integer | 实况窗消息操作类型：  0：表示创建实况窗消息，仅允许event值为FLIGHT、TAXI、TRAIN、EXPRESS、CHECK\_IN，详情见[创建实况窗约束](push-scenariozed-api-request-param.md#创建实况窗约束)。  1：表示更新实况窗消息（确保activityId对应的实况窗存在）  2：表示结束实况窗消息（确保activityId对应的实况窗存在）  4：表示增加延迟触发创建实况窗消息（仅每个实况活动1个围栏）  6：表示增加延迟触发结束实况窗消息（仅每个实况活动1个围栏）  更新和结束实况窗时，对于非必选字段，若无特殊说明和默认值，则不携带时默认继承上一次的状态。 |
-| event | 是 | String | 业务场景取值，必须为以下内容之一：  · TAXI：出行打车  · DELIVERY：即时配送（外卖、生鲜）  · FLIGHT：航班  · TRAIN：高铁/火车  · QUEUE：排队  · PICK\_UP：取餐  · SCORE：赛事比分  · RENT：共享租赁  · TIMER：计时  · WORKOUT：运动锻炼  · NAVIGATION：导航  · EXPRESS：快递  · CHECK\_IN：打卡  使用对应场景需要申请权益，详情请参见[开通实况窗权益](../harmonyos-guides/liveview-formal-authority.md)，完成权益的申请。  **说明：**  当创建实况窗消息（operation取值为0）时，event取值仅允许为FLIGHT、TAXI、TRAIN、EXPRESS、CHECK\_IN。 |
-| status | 否 | String | 表示实况窗消息状态。  当operation为0，或operation为1且更新的实况窗为通过REST API创建的实况窗时必填。  status的取值范围根据场景类型而定，详情见[Status取值范围](push-scenariozed-api-request-param.md#status取值范围)。  消息体中占位符{{status}}的使用，参见[支持携带占位符的字段](push-scenariozed-api-request-param.md#支持携带占位符的字段)，满足要求时将替换字段中的占位符为[目标值](push-scenariozed-api-request-param.md#status取值范围)。 |
+| activityId | 是 | Integer | 实况窗唯一标识，取值范围为[-2147483648, 2147483647]，由开发者自行生成。对应Live View Kit中的[id](liveview-liveviewmanager.md#liveview)字段。  **说明：**  若发送的activityId对应的实况窗不存在（更新或结束实况窗的场景中），将限制使用该activityId发送实况窗消息24小时。 |
+| operation | 是 | Integer | 实况窗消息操作类型：  0：表示创建实况窗消息（请参考[创建实况窗约束](push-scenariozed-api-request-param.md#创建实况窗约束)进行创建）  1：表示更新实况窗消息（确保activityId对应的实况窗存在）  2：表示结束实况窗消息（确保activityId对应的实况窗存在）  4：表示增加延迟触发创建实况窗消息（仅每个实况活动1个围栏）  6：表示增加延迟触发结束实况窗消息（仅每个实况活动1个围栏）  更新和结束实况窗时，对于非必选字段，若无特殊说明和默认值，则不携带时默认继承上一次的状态。 |
+| event | 是 | String | 业务场景取值，取值必须为[实况窗支持对接的场景](../harmonyos-guides/liveview-introduction.md#实况窗支持对接的场景)中的内容。  使用对应场景需要申请权益，详情请参见[开通实况窗权益](../harmonyos-guides/liveview-formal-authority.md)，完成权益的申请。  **说明：**  当通过Push Kit创建实况窗消息（operation取值为0）时，event取值仅支持部分业务场景，详情请参考[通过Push Kit创建和更新实况窗的约束限制](../harmonyos-guides/liveview-introduction.md#通过push-kit创建和更新实况窗的约束限制)。 |
+| status | 否 | String | 表示实况窗消息当前的业务阶段或状态。  当operation为0，或operation为1且更新的实况窗为通过REST API创建的实况窗时必填。  status的取值范围根据场景类型而定，详情见[Status取值范围](push-scenariozed-api-request-param.md#status取值范围)。  消息体中占位符{{status}}的使用，参见[支持携带占位符的字段](push-scenariozed-api-request-param.md#支持携带占位符的字段)，满足要求时将替换字段中的占位符为[目标值](push-scenariozed-api-request-param.md#status取值范围)。 |
 | title | 否 | String | 可选，当系统不支持实况窗通知时，展示在通知栏的标题。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | content | 否 | String | 可选，当系统不支持实况窗通知时，展示在通知栏的内容。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | mute | 否 | Boolean | 标识消息更新是否需要提醒。  true：静默提醒 **（默认值）**  false：铃声震动提醒 |
 | version | 否 | Integer | 更新实况窗通知的版本号，大于等于0，新的实况窗通知版本号需**大于**当前实况窗通知版本号，否则会刷新失败。 |
 | activityData | 是 | [ActivityData](push-scenariozed-api-request-param.md#activitydata) Object | 实况窗通知详细数据，具体字段请参见[ActivityData](push-scenariozed-api-request-param.md#activitydata)结构体。 |
-| trigger | 否 | [Trigger](push-scenariozed-api-request-param.md#trigger) Object | 延迟触发实况的围栏信息。 |
+| subEvent | 否 | String | 业务子场景取值，内容只允许包含英文、数字及下划线。主要用于子业务场景的运营统计，使用对应子场景无需额外申请权益。  相关场景的取值请参考实况窗服务[subEvent](liveview-liveviewmanager.md#liveview)。  **起始版本：** 26.0.0 |
+| trigger | 否 | [Trigger](push-scenariozed-api-request-param.md#trigger) Object | 延迟触发实况的围栏信息。  **说明：**  Wearable设备不支持该特性，携带该字段的消息将作为普通实况窗消息展示。 |
+| shareUrl | 否 | String | 实况分享H5页面url链接。url必须以"https://"协议开头，长度范围[1, 127]。当url不满足字段要求，shareUrl字段不生效。  **起始版本：** 26.0.0 |
 
 ### 创建实况窗约束
 
 创建实况窗的消息示例请参见[创建实况窗消息](push-scenariozed-api-request-example.md#创建实况窗消息)。
 
-1. 允许通过REST API创建实况窗的event：FLIGHT、TAXI、TRAIN、EXPRESS、CHECK\_IN。
+1. 允许通过REST API创建实况窗的event取值范围见[通过Push Kit创建和更新实况窗的约束限制](../harmonyos-guides/liveview-introduction.md#通过push-kit创建和更新实况窗的约束限制)。
 2. 12小时内不允许通过REST API创建同一个activityId的实况窗。
-3. 对于不同的event类型，创建实况窗时，对布局类型（activityData.notificationData.[type](push-scenariozed-api-request-param.md#notificationdata)）和必填字段，有以下场景约束：
+3. 对于不同的event类型，创建实况窗时，对布局类型（activityData.notificationData.[type](push-scenariozed-api-request-param.md#notificationdata)）和必填字段，有以下场景约束（表格中未提及的场景，在创建时支持所有布局类型，在创建或更新时无必填字段限制。）：
 
    | event | 创建时允许的布局类型 | 创建时必填字段 | REST API创建的消息，更新时必填字段 |
    | --- | --- | --- | --- |
    | FLIGHT | 左右文本模板类型 | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)  activityData.notificationData.[keywords](push-scenariozed-api-request-param.md#notificationdata) | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息) |
    | TAXI | 进度可视化类型  强调文本模板类型  左右文本模板类型  赛事类型 | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息) | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息) |
    | TRAIN | 左右文本模板类型 | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)  activityData.notificationData.[keywords](push-scenariozed-api-request-param.md#notificationdata) | [status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息) |
-   | EXPRESS | 进度可视化类型  强调文本模板类型  左右文本模板类型  赛事类型 | 无 | 无 |
-   | CHECK\_IN | 进度可视化类型  强调文本模板类型  左右文本模板类型  赛事类型 | 无 | 无 |
+   | SUBSCRIBE\_TIMER | 强调文本模板类型  左右文本模板类型 | 无 | 无 |
 4. 对于不同的布局类型（activityData.notificationData.[type](push-scenariozed-api-request-param.md#notificationdata)），需要在[支持携带占位符的字段](push-scenariozed-api-request-param.md#支持携带占位符的字段)中**填入至少一次[status](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)的占位符{{status}}** ；如果该event下[keywords](push-scenariozed-api-request-param.md#notificationdata)字段也必填，则也需要在[支持携带占位符的字段](push-scenariozed-api-request-param.md#支持携带占位符的字段)中**填入至少一次相应的占位符**，占位符具体请参见[keywords](push-scenariozed-api-request-param.md#notificationdata)字段描述。
 5. 通过REST API创建的实况窗，在更新时必须同时满足status和keywords要求。通过Live View Kit（实况窗服务）创建的实况窗，在REST API更新时可以不填写status和keywords字段，若开发者选择填写则需满足status和keywords要求。
 
@@ -253,10 +283,11 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| type | 是 | Integer | 布局类型：  3：进度可视化类型，适用于外卖配送、生鲜配送、车辆接驾进展等涉及进度节点显示的活动。  4：强调文本模板类型，适用于展示取餐码、取件码、车牌号等关键信息的活动。  5：左右文本模板类型，适用于高铁、火车、航班等涉及展示起点、终点的活动。  7：赛事类型，适用于体育赛事比分场景、游戏赛事比分场景等。  -1：基础模板，只展示[固定区和辅助区](../design-guides/system-features-live-view-0000001955186861.md#section159031834267)。  **说明：**  · 从6.1.0(23)开始，新增支持基础模板（即type为-1）。  · 当更新实况窗时，type传入非法值，终端设备会使用基础模板进行展示。  · 当创建实况窗时，每种[event](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)仅可使用特定的布局类型，详情请参见[创建实况窗约束](push-scenariozed-api-request-param.md#创建实况窗约束)（基础模板不受限制，即每种event都可以使用基础模板创建）；当更新实况窗时，每种[event](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)可以使用任何布局类型。 |
+| type | 是 | Integer | 布局类型：  3：进度可视化类型，适用于外卖配送、生鲜配送、车辆接驾进展等涉及进度节点显示的活动。  4：强调文本模板类型，适用于展示取餐码、取件码、车牌号等关键信息的活动。  5：左右文本模板类型，适用于高铁、火车、航班等涉及展示起点、终点的活动。  7：赛事类型，适用于体育赛事比分场景、游戏赛事比分场景等。  100：自定义实况卡片类型。**起始版本：** 26.0.0  -1：基础模板，只展示[固定区和辅助区](../design-guides/system-features-live-view-0000001955186861.md#section159031834267)。**起始版本：** 6.1.0(23) （Wearable设备不支持本模板布局类型，设备收到该类型的消息后将不会展示）  **说明：**  · 当更新实况窗时，type传入非法值，终端设备会使用基础模板进行展示。  · 当创建实况窗时，每种[event](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)仅可使用特定的布局类型，详情请参见[创建实况窗约束](push-scenariozed-api-request-param.md#创建实况窗约束)（基础模板不受限制，即每种event都可以使用基础模板创建）；当更新实况窗时，每种[event](push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)可以使用任何布局类型。 |
 | keywords | 否 | Map<String, String> | 实况窗关键词，operation为0且event为如下场景时，必填。  · event为FLIGHT时，仅有**flightNo**一个keyword，表示航班号，占位符格式：{{flightNo}}。  · event为TRAIN时，仅有**trainNo**一个keyword，表示火车车次，占位符格式：{{trainNo}}。  消息体中占位符的使用，参见[支持携带占位符的字段](push-scenariozed-api-request-param.md#支持携带占位符的字段)。 |
 | additionalText | 否 | String | 提示信息/免责声明。仅在NotificationData.type=5时可用。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
-| keepTime | 否 | Long | 实况窗通知存档期，在结束实况窗通知后，通知仍保留在通知中心的时长，**默认0不保留**，最多设置1小时，单位为秒（s）。  存档期时间以结束实况窗消息中携带的此字段数据为准，存档期期间不支持再次更新或结束通知。 |
+| keepTime | 否 | Long | 实况窗通知存档期，在结束实况窗通知后，通知仍保留在通知中心的时长，**默认0不保留**，最多设置1小时，单位：s。  存档期时间以结束实况窗消息中携带的此字段数据为准，存档期期间不支持再次更新或结束通知。 |
+| CustomLayout | 否 | [CustomLayout](push-scenariozed-api-request-param.md#customlayout) Object | 实况窗卡片自定义扩展区，type为100时必填，具体字段请参见[CustomLayout](push-scenariozed-api-request-param.md#customlayout)结构体  **起始版本：** 26.0.0 |
 | contentTitle | 否 | String | 通知标题，长度最大1024字符。  operation为0时必填，且不能为空字符串。 |
 | contentText | 否 | Array [[RichText](push-scenariozed-api-request-param.md#richtext) Object] | 通知内容，由多段富文本RichText组成，文本长度总和不超过1024字符，若设置文本颜色，只允许设置为同一种颜色。  operation为0时必填，且不能为空Array。 |
 | richProgress | 否 | [RichProgress](push-scenariozed-api-request-param.md#richprogress) Object | 丰富进度信息，type为3时必填，具体字段请参见[RichProgress](push-scenariozed-api-request-param.md#richprogress)结构体。 |
@@ -264,29 +295,59 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 | firstTextBlock | 否 | [FirstTextBlock](push-scenariozed-api-request-param.md#firsttextblock) Object | 多文本块布局中的左侧文本块，type为5时必填，详情可参见[FirstTextBlock](push-scenariozed-api-request-param.md#firsttextblock)结构体。 |
 | lastTextBlock | 否 | [LastTextBlock](push-scenariozed-api-request-param.md#lasttextblock) Object | 多文本块布局中的右侧文本块，type为5时必填，详情可参见[LastTextBlock](push-scenariozed-api-request-param.md#lasttextblock)结构体。 |
 | displayHorizontalLine | 否 | Boolean | 是否显示扩展区域的分割线，**不设置默认显示分割线**。  true：显示。  false：不显示。  **说明：**  当type为5或7时才会显示分割线。 |
-| spaceIcon | 否 | String | 间隔图标，本地资源，type为5时占据扩展区中间。  operation为0，type为5，spaceType未传或者spaceType为0时必填，且不能为空字符串。  取值为在指定路径下的文件名。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
+| spaceIcon | 否 | String | 间隔图标的文件名，type为5时占据扩展区中间。  当operation为0，type为5，spaceType未传或者spaceType为0时必填，且不能为空字符串。  取值为在指定路径下的文件名。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
+| spaceIconUrl | 否 | String | 间隔图标的URL链接，type为5时占据扩展区中间，URL使用的协议必须是HTTPS协议，图片链接不能为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  优先显示spaceIconUrl链接中的图片，如果图片无法显示，则展示spaceIcon中的图片。  支持图片的格式为PNG、JPG、JPEG、BMP、WEBP，传入图片的大小不超过512KB，若超过则图片不展示。  **起始版本：** 26.0.0 |
 | spaceText | 否 | String | 间隔文本，type为5时占据扩展区中间。  operation为0，type为5，spaceType为1时必填，且不能为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | style | 否 | Integer | 左右文本样式类型。  0：强调型。  1：均衡型。  **说明：**  创建时未传style字段将使用强调型展示。 |
 | spaceType | 否 | Integer | 间隔类型。  0：使用图标。  1：使用文本。  **说明：**  创建时未传spaceType字段将使用图标展示。 |
 | extend | 否 | [Extend](push-scenariozed-api-request-param.md#extend) Object | 辅助区样式，无更新时可不携带。具体字段请参见[Extend](push-scenariozed-api-request-param.md#extend)结构体。  **说明：**  更新type类型为新布局时，需重新携带本字段。  刷新实况窗通知内容时，**辅助区显示类型为图片且图片路径填写错误会导致刷新内容失败。** |
 | game | 否 | [Game](push-scenariozed-api-request-param.md#game) Object | 赛事信息扩展区，type为7时必填，具体字段请参见[Game](push-scenariozed-api-request-param.md#game)结构体。 |
-| descPic | 否 | String | 扩展区域描述图片，默认不显示，当type为4时且descPic不为空时，图片会占据右侧扩展区。不携带时系统显示时采用上次刷新的图像。  operation为0且type为4时必填，且不能为空字符串。  取值为在指定路径下的文件名。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png” |
+| descPic | 否 | String | 扩展区域描述图片文件名。扩展区域描述图片默认存放在应用的“/resources/rawfile”路径下。  当operation为0且type为4时，此字段必填，并且不可为空字符串。  当type为4且descPic不为空时，图片会占据右侧扩展区。不携带该值且系统显示时采用上次刷新的图像。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
+| descPicUrl | 否 | String | 扩展区域描述图片的URL链接，默认不显示。  当type为4时且descPic不为空时，图片会占据右侧扩展区，URL使用的协议必须是HTTPS协议，图片链接不能为空字符串。不携带该值且系统显示时采用上次刷新的图像。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  优先显示descPicUrl链接中的图片，如果图片无法显示，则展示descPic中的图片。  支持图片的格式为PNG、JPG、JPEG、BMP、WEBP，传入图片的大小不超过512KB，若超过则图片不展示。  **起始版本：** 26.0.0 |
 | clickAction | 是 | [ClickAction](push-scenariozed-api-request-param.md#clickaction) Object | 消息点击行为，具体字段请参见[ClickAction](push-scenariozed-api-request-param.md#clickaction)结构体。 |
-| lockScreen | 否 | [LiveViewLockScreen](push-scenariozed-api-request-param.md#liveviewlockscreen) Object | 锁屏沉浸实况窗相关字段，具体字段请参见[LiveViewLockScreen](push-scenariozed-api-request-param.md#liveviewlockscreen)结构体。 |
-| weather | 否 | [Weather](push-scenariozed-api-request-param.md#weather) Object | 传入天气信息结构体。需要同时传入天气类型、天气位置类型与最高最低温度参数，才会在卡片上展示天气。仅支持左右文本模板（即type为5）。  当传入天气类型为雨、雪特殊天气，且同时传入实况窗卡片的背景氛围类型参数backgroundType（合法值参见Live View Kit [BackgroundType](liveview-liveviewmanager.md#section15834105743213)枚举值）为赏月航班或夕阳航班对应的值时，卡片上优先展示天气背景，其余非特殊天气在卡片上优先展示赏月航班或夕阳航班背景氛围。 |
-| backgroundType | 否 | Integer | 表示实况窗卡片的背景氛围类型，仅支持左右文本模板（即type为5），合法值参见Live View Kit [BackgroundType](liveview-liveviewmanager.md#section15834105743213)枚举值。  当传入实况窗卡片的背景氛围类型参数为赏月航班或夕阳航班对应的值时，且同时传入天气类型（[Weather](push-scenariozed-api-request-param.md#weather)）为雨、雪特殊天气，卡片上优先展示天气背景，其余非特殊天气在卡片上优先展示赏月航班或夕阳航班背景氛围。 |
+| lockScreen | 否 | [LiveViewLockScreen](push-scenariozed-api-request-param.md#liveviewlockscreen) Object | 锁屏沉浸实况窗相关字段，具体字段请参见[LiveViewLockScreen](push-scenariozed-api-request-param.md#liveviewlockscreen)结构体。  **说明：**  Wearable设备不支持该特性，携带该字段的消息将不会展示。 |
+| weather | 否 | [Weather](push-scenariozed-api-request-param.md#weather) Object | 传入天气信息结构体。需要同时传入天气类型、天气位置类型与最高最低温度参数，才会在卡片上展示天气。仅支持左右文本模板（即type为5）。  当传入天气类型为雨、雪特殊天气，且同时传入实况窗卡片的背景氛围类型参数backgroundType（合法值参见Live View Kit [BackgroundType](liveview-liveviewmanager.md#backgroundtype)枚举值）为赏月航班或夕阳航班对应的值时，卡片上优先展示天气背景，其余非特殊天气在卡片上优先展示赏月航班或夕阳航班背景氛围。  **说明：**  Wearable设备不支持该特性，携带该字段的消息将不会展示。 |
+| backgroundType | 否 | Integer | 表示实况窗卡片的背景氛围类型，仅支持左右文本模板（即type为5），合法值参见Live View Kit [BackgroundType](liveview-liveviewmanager.md#backgroundtype)枚举值。  当传入实况窗卡片的背景氛围类型参数为赏月航班或夕阳航班对应的值时，且同时传入天气类型（[Weather](push-scenariozed-api-request-param.md#weather)）为雨、雪特殊天气，卡片上优先展示天气背景，其余非特殊天气在卡片上优先展示赏月航班或夕阳航班背景氛围。  **说明：**  Wearable设备不支持该特性，携带该字段的消息将不会展示。 |
+
+### CustomLayout
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| abilityName | 是 | String | [LiveViewCardExtensionAbility](liveview-card-ability.md)（实况窗卡片自定义扩展区的扩展Ability）的名称。字符串长度需小于128。值不能为以下内容：null/undefined/空字符串。  **起始版本：** 26.0.0 |
+| abilityParameters | 否 | Map<String, String> | [LiveViewCardExtensionAbility](liveview-card-ability.md)（实况窗卡片自定义扩展区的扩展Ability）传入的自定义参数。填值时可以为空，key-value键值对最多50个，传入后可在LiveViewCardExtensionAbility的[onRender()](liveview-card-ability.md#onrender)中，通过param获取。  **起始版本：** 26.0.0 |
 
 ### Extend
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ChAkmFHnTCm1RqGEzEMFCw/zh-cn_image_0000002706677180.png)
+
+* 1 实况卡片辅助区类型，对应type字段：
+  + 当辅助区类型为1时，辅助区显示普通文本，使用API字段text传入文本内容。
+  + 当辅助区类型为2时，辅助区显示胶囊文本，使用API字段text传入文本内容。
+  + 当辅助区类型为3时，辅助区显示图片，使用API字段image和imageUrl传入图片资源。
+  + 当辅助区类型为4时，辅助区显示Icon，使用API字段image和imageUrl传入图片资源。
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | type | 否 | Integer | 辅助区显示类型：  0：不显示（**默认值**）  1：显示普通文本  2：显示胶囊文本  3：显示图片（辅助区区域大小44\*44vp，设置的图片会保持宽高比进行缩小或者放大，使得完全显示在辅助区区域的边界内）  4：显示Icon（辅助区区域大小44\*44vp，设置的图片会保持宽高比显示，在辅助区区域内缩小或者保持不变） |
 | text | 否 | String | 辅助区文本信息，当type为1或2时必填，且不能为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | pic | 否 | String | 辅助区图片信息，当type为3或4时必填，且不能为空字符串。  取值为在指定路径下的文件名。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。  **说明：**  本字段即将停止维护，请及时切换使用image字段。 |
-| image | 否 | String | 辅助区图片信息，当type为3或4时必填，且不能为空字符串。  取值为在指定路径下的文件名。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
+| image | 否 | String | 辅助区图片文件名，辅助区图片默认存放在应用的“/resources/rawfile”路径下。  当type为3或4时必填，且不能为空字符串。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
+| imageUrl | 否 | String | 辅助区图片的URL链接，URL使用的协议必须是HTTPS协议，图片链接不能为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  优先显示imageUrl链接中的图片，如果图片无法显示，则展示image中的图片。  支持图片的格式为PNG、JPG、JPEG、BMP、WEBP，传入图片的大小不超过512KB，若超过则图片不展示。  **起始版本：** 26.0.0 |
 | clickAction | 否 | [ClickAction](push-scenariozed-api-request-param.md#clickaction) Object | 辅助区的点击行为，具体字段请参见[ClickAction](push-scenariozed-api-request-param.md#clickaction)结构体的定义。  若不携带该字段，则辅助区不支持点击跳转。 |
 
 ### Game
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/sD6OBwnZQYeL9AItcJwaKg/zh-cn_image_0000002736436269.png)
+
+* 1 左侧队伍名称，对应host中的[name](push-scenariozed-api-request-param.md#team)字段。
+* 2 左侧队伍图标，对应host中的[icon](push-scenariozed-api-request-param.md#team)和[iconUrl](push-scenariozed-api-request-param.md#team)字段。
+* 3 左侧队伍比分，对应host中的[score](push-scenariozed-api-request-param.md#team)字段。
+* 4 右侧队伍名称，对应guest中的[name](push-scenariozed-api-request-param.md#team)字段。
+* 5 右侧队伍图标，对应guest中的[icon](push-scenariozed-api-request-param.md#team)和[iconUrl](push-scenariozed-api-request-param.md#team)字段。
+* 6 右侧队伍比分，对应guest中的[score](push-scenariozed-api-request-param.md#team)字段。
+* 7 赛事描述文本，对应competition中的[desc](push-scenariozed-api-request-param.md#competition)字段。
+* 8 比赛时间，对应competition中的[time](push-scenariozed-api-request-param.md#competition)字段。
+* 9 是否显示扩展区域的分割线，对应notificationData中的[displayHorizontalLine](push-scenariozed-api-request-param.md#notificationdata)字段。
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -298,7 +359,8 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| icon | 否 | String | 展示区队伍图标，当operation为0时必填，且不可为空字符串。  取值为在指定路径下的文件名。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
+| icon | 否 | String | 展示区队伍图标文件名，默认存放在应用的“/resources/rawfile”路径下。  当operation为0时必填，且不可为空字符串。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
+| iconUrl | 否 | String | 展示区队伍图标的URL链接，URL使用的协议必须是HTTPS协议，图片链接不能为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  优先显示iconUrl链接中的图片，如果图片无法显示，则展示icon的图片。  支持图片的格式为PNG、JPG、JPEG、BMP、WEBP，传入图片的大小不超过512KB，若超过则图片不展示。  **起始版本：** 26.0.0 |
 | name | 否 | String | 队伍名称，当operation为0时必填，且不可为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | score | 否 | String | 赛事比分，当operation为0时必填，且不可为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 
@@ -318,15 +380,29 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 ### CapsuleData
 
+以下展示胶囊的三种场景模板以及相对应的参数。
+
+| 图示 | 说明 |
+| --- | --- |
+|  | 定义实况胶囊基本属性的基类：  · 1 胶囊布局类型，对应type字段。  · 2 实况胶囊的图标，对应icon和iconUrl字段。  · 3 实况胶囊的尾部图标，对应tailIcon和tailIconUrl字段。  · 4 实况胶囊副文本是否展示，对应isContentDisplayed字段。  · 5 实况胶囊尾部图标是否展示，对应isTailIconDisplayed字段。 |
+|  | type为1时展示该内容：  · 1 胶囊状态主文本，对应title字段。  · 2 胶囊内容，对应content字段。 |
+|  | type为2时展示该内容：  · 1 胶囊内容，对应content字段。  · 2 胶囊计时器初始值，对应capsuleTimer中的[time](push-scenariozed-api-request-param.md#capsuletimer)字段。  · 3 是否倒计时显示计时器，对应capsuleTimer中的[countDown](push-scenariozed-api-request-param.md#capsuletimer)字段。  · 4 胶囊计时器是否暂停，对应capsuleTimer中的[pause](push-scenariozed-api-request-param.md#capsuletimer)字段。 |
+|  | type为3时展示该内容：  · 1 进度最大值，对应progress中的[max](push-scenariozed-api-request-param.md#progress)字段。  · 2 进度当前值，对应progress中的[progress](push-scenariozed-api-request-param.md#progress)字段。  · 3 进度显示类型，对应progress中的[indeterminate](push-scenariozed-api-request-param.md#progress)字段。  · 4 胶囊内容，对应content字段。 |
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | type | 是 | Integer | 胶囊布局类型：  1：图标+文本类型，胶囊显示：左侧图标，右侧文本。  2：计时器类型，胶囊显示：左侧图标，右侧计时文本。  3：进度类型，胶囊显示：整体进度，左侧图标，右侧百分比/数值占比。 |
 | status | 是 | Integer | 在状态栏上以实况窗胶囊的形式呈现应用实况业务时：  1：胶囊显示。  -1：胶囊不显示。 |
-| icon | 是 | String | 状态图标，本地资源。推荐使用 18\*18vp 的纯色矢量图标。  示例：图标文件“icon.svg”存放在应用的“/resources/rawfile”路径下，则取值为“icon.svg”。 |
+| icon | 是 | String | 实况胶囊的图标文件名。推荐使用18\*18vp的纯色矢量图标。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
+| iconUrl | 否 | String | 实况胶囊的图标的URL链接，URL使用的协议必须是HTTPS协议，图片链接不能为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  优先显示iconUrl链接中的图片，如果图片无法显示，则展示icon中的图片。  支持图片的格式为PNG、JPG、JPEG、BMP、WEBP，传入图片的大小不超过512KB，若超过则图片不展示。  **起始版本：** 26.0.0 |
+| tailIcon | 否 | String | 实况胶囊的尾部图标文件名。推荐使用18\*18vp的纯色矢量图标。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。  **起始版本：** 26.0.0 |
+| tailIconUrl | 否 | String | 实况胶囊的尾部图标的URL链接，URL使用的协议必须是HTTPS协议，图片链接不能为空字符串。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  优先显示tailIconUrl链接中的图片，如果图片无法显示，则展示tailIcon的图片。  支持图片的格式为PNG、JPG、JPEG、BMP、WEBP，传入图片的大小不超过512KB，若超过则图片不展示。  **起始版本：** 26.0.0 |
+| isTailIconDisplayed | 否 | Boolean | 实况胶囊的尾部图标是否展示。  该参数未填时，继承上一次创建或更新实况窗时传入的值。其他情况不传值时默认不展示。  · true：展示。  · false：不展示。  **起始版本：** 26.0.0 |
 | bgColor | 是 | String | 胶囊背景色"#ARGB"16进制格式，长度为9。  避免与实况胶囊的底色冲突，确保显示效果，以下颜色不能使用：  #FF000000  #FFFFFFFF  #FFF1F3F5 |
 | remind | 否 | String | 胶囊在状态栏的动态效果，不携带时默认无特殊效果。  · DEFAULT：无特殊效果。  · FLIP：抢占胶囊位置动态，最高支持5次/活动。  · EXPAND：胶囊自动展开成悬浮卡片动态，最高支持2次/活动。 |
 | title | 否 | String | 胶囊状态主文本，长度不超过128字符。  当operation为0且type为1时必填。  当type为1时，该字段用于设置胶囊标题。 |
 | content | 否 | String | 胶囊内容，长度不超过128字符；当设备为宽屏或设备横屏时，显示该扩展文本。  当operation为0且type为1或2时必填。 |
+| isContentDisplayed | 否 | Boolean | 实况胶囊副文本是否展示。  该参数未填时，继承上一次创建或更新实况窗时传入的值。其他情况不传值时默认为展示。  · true：展示。  · false：不展示。  **起始版本：** 26.0.0 |
 | capsuleTimer | 否 | [CapsuleTimer](push-scenariozed-api-request-param.md#capsuletimer) Object | 胶囊计时器，具体字段请参见[CapsuleTimer](push-scenariozed-api-request-param.md#capsuletimer)结构体。  当type为2时必选，该字段用于设置胶囊计时器信息。 |
 | progress | 否 | [Progress](push-scenariozed-api-request-param.md#progress) Object | 胶囊进度信息，具体字段请参见[Progress](push-scenariozed-api-request-param.md#progress)结构体。  当type为3时必选，该字段用于设置胶囊进度信息。 |
 
@@ -340,6 +416,13 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 ### SingleTextBlock
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/YmLhtcdbTj6Ld17yyeV9sA/zh-cn_image_0000002706837120.png)
+
+* 1 辅助标记文本，对应firstLine字段。
+* 2 强调文本内容，对应secondLine字段。
+* 3 强调下划线，对应underlineColor字段。
+* 4 图片区，对应notificationData中的[descPic](push-scenariozed-api-request-param.md#notificationdata)和[descPicUrl](push-scenariozed-api-request-param.md#notificationdata)字段。
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | firstLine | 是 | String | 首行文本，长度不超过128字符，且不能为空字符串。 |
@@ -348,12 +431,31 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 ### FirstTextBlock
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/AlTiE_pbR0-u1mGZSQQHCw/zh-cn_image_0000002736316229.png)
+
+* 1 左侧首行文本，对应firstLine字段。
+* 2 左侧次行文本内容，对应secondLine字段。
+* 7 间隔图标，对应notificationData中的[spaceIcon](push-scenariozed-api-request-param.md#notificationdata)和[spaceIconUrl](push-scenariozed-api-request-param.md#notificationdata)字段。
+* 8 间隔文本，对应notificationData中的[spaceText](push-scenariozed-api-request-param.md#notificationdata)字段。
+* 10 提示信息/免责声明，对应notificationData中的[additionalText](push-scenariozed-api-request-param.md#notificationdata)字段。
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | firstLine | 是 | String | 首行文本，长度不超过128字符，且不能为空字符串。 |
 | secondLine | 是 | String | 次行文本内容，长度不超过128字符，且不能为空字符串。 |
 
 ### LastTextBlock
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/k3UwNurdRK-DPoQQFw1LnQ/zh-cn_image_0000002706677184.png)
+
+* 3 右侧首行文本，对应firstLine字段。
+* 4 右侧次行文本内容，对应secondLine字段。
+* 5 右侧首行文本右上角的上标字段，对应firstLineSuperscript字段。
+* 6 右侧次行文本右上角的上标字段，对应secondLineSuperscript字段。
+* 7 间隔图标，对应notificationData中的[spaceIcon](push-scenariozed-api-request-param.md#notificationdata)和[spaceIconUrl](push-scenariozed-api-request-param.md#notificationdata)字段。
+* 8 间隔文本，对应notificationData中的[spaceText](push-scenariozed-api-request-param.md#notificationdata)字段。
+* 9 是否显示扩展区域的分割线，对应notificationData中的[displayHorizontalLine](push-scenariozed-api-request-param.md#notificationdata)字段。
+* 10 提示信息/免责声明，对应notificationData中的[additionalText](push-scenariozed-api-request-param.md#notificationdata)字段。
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -363,6 +465,14 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 | secondLineSuperscript | 否 | String | 次行文本右上角的上标字段，固定格式"+x"，x取值范围为1-9，否则不展示。 |
 
 ### RichProgress
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/00KBNtq6R-2Jrgh4h-m0rA/zh-cn_image_0000002736436273.png)
+
+* 1 进度百分比，对应progress字段。
+* 2 进度指示器左侧的进度点及节点图标的颜色，对应color字段。
+* 3 进度指示器右侧的进度点及节点图标的颜色，对应bgColor字段。
+* 4 进度条指示器图标，对应indicatorIcon字段。
+* 5 进度条每个节点的图标，对应nodeIcons字段。
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -378,15 +488,22 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| time | 否 | Long | 胶囊计时器初始值，每秒刷新一次。单位ms，**默认为0**。 |
+| time | 否 | Long | 胶囊计时器初始值，每秒刷新一次。单位：ms，**默认为0**。 |
 | countDown | 否 | Boolean | 是否倒计时显示计时器，**默认正计时**。  false：正计时显示。  true：倒计时显示。 |
 | pause | 否 | Boolean | 胶囊计时器是否暂停，**默认不暂停**。  false：不暂停。  true：暂停，计时器暂停时，胶囊会显示暂停的那一秒。 |
 
 ### ExternalData
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/SR_BagpcQg-mOAPvbWkdvg/zh-cn_image_0000002706837122.png)
+
+* 1 自定义的外屏通知标题，对应title字段。
+* 2 自定义的外屏通知内容，对应body字段。
+* 3 外屏背景颜色，对应bgColor字段。
+* 4 外屏背景图片，对应bgImage字段。
+
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| type | 否 | Integer | 外屏模板类型：  0：默认类型 **（默认值）**  1：背景图片类型 |
+| type | 否 | Integer | 外屏模板类型：  0：背景色类型 **（默认值）**  1：背景图片类型 |
 | bgColor | 否 | String | 外屏背景颜色，"#RGB"16进制格式，长度为7，不设置时使用系统默认颜色。 |
 | bgImage | 否 | String | 外屏背景图片，本地资源，当type为1时，第一次创建实况窗时必须设置，后续不更新时可不设置。  当operation为0且type为1时必填，且不为空字符串。  取值为在指定路径下的文件名。  示例：图标文件“icon.png”存放在应用的“/resources/rawfile”路径下，则取值为“icon.png”。 |
 | title | 否 | String | 自定义的外屏通知标题，总长度不超过128字符。  当operation为0时必填，且不为空字符串。 |
@@ -403,8 +520,8 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| weatherType | 否 | Integer | 天气类型，weatherType不传入或传入非法值，则不展示天气。合法值参见Live View Kit [WeatherType](liveview-liveviewmanager.md#section2062895313473)枚举值。 |
-| locationType | 否 | Integer | 天气位置类型，locationType不传入或传入非法值，则不展示天气。合法值参见Live View Kit [WeatherLocationType](liveview-liveviewmanager.md#section1597237195618)枚举值。 |
+| weatherType | 否 | Integer | 天气类型，weatherType不传入或传入非法值，则不展示天气。合法值参见Live View Kit [WeatherType](liveview-liveviewmanager.md#weathertype)枚举值。 |
+| locationType | 否 | Integer | 天气位置类型，locationType不传入或传入非法值，则不展示天气。合法值参见Live View Kit [WeatherLocationType](liveview-liveviewmanager.md#weatherlocationtype)枚举值。 |
 | highTemperature | 否 | Integer | 天气最高温度，当前仅支持摄氏度，需小于等于58℃且大于传入的最低温度值（lowTemperature）。不传入或传入非法值，则不展示天气。 |
 | lowTemperature | 否 | Integer | 天气最低温度，当前仅支持摄氏度，需大于等于-95℃且小于传入的最高温度值（highTemperature）。不传入或传入非法值，则不展示天气。 |
 
@@ -414,4 +531,4 @@ content_hash: sha256:c8dc2adf564ad3ba291ef0031d1941bbb6e129f5bb44e266f76d2e0a4b4
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| extraData | 是 | String | 传递给应用的数据，应用根据数据自行处理相关逻辑，展示应用内通话消息相关信息。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  extraData数据获取请参考[示例代码](https://gitcode.com/harmonyos_samples/push-kit-sample-code-clientdemo-arkts/blob/master/entry/src/main/ets/service/VoipCallService.ets)。 |
+| extraData | 是 | String | 传递给应用的数据，应用根据数据自行处理相关逻辑，展示应用内通话消息相关信息。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  extraData数据获取请参考[示例代码](https://gitcode.com/harmonyos_samples/push-kit-sample-code-clientdemo-arkts/blob/master/entry/src/main/ets/abilities/PushMessageAbility.ets)。 |

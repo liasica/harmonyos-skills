@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "编译报错“Init keystore failed: parseAlgParameters failed: ObjectIdentifier()”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错“Init keystore failed: parseAlgParameters failed: ObjectIdentifier()”"
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:31+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:bb3ee7048448df0a4355aa985dde77ed5fcee3843ce0dbc39bc653f97b1839cb
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:528549a7f040a62b22b29304a26430bd1d2c72b6b8cfc445cda07374a2ef3c92
 ---
 
 **问题现象**
 
 编译构建时，出现错误：Init keystore failed: parseAlgParameters failed: ObjectIdentifier()
 
-```
-1. hap-sign-tool: error: ACCESS_ERROR, code: 109. Details:   Init keystore failed: parseAlgParameters failed: ObjectIdentifier() -- data isn't an object ID (tag = 48)   Detail: Please check the message from tools
+```text
+hap-sign-tool: error: ACCESS_ERROR, code: 109. Details:   Init keystore failed: parseAlgParameters failed: ObjectIdentifier() -- data isn't an object ID (tag = 48)   Detail: Please check the message from tools
 ```
 
 **错误原因**

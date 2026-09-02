@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-c
 title: 预览PDF文档
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 预览PDF文档
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:46+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:a5f1b29b6e83bc5fd048e7519b6e9ca475e78a789d16b852be0e14773ee22572
+scraped_at: 2026-09-02T14:50:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:f99c58b3106018ee66598b597b8ade3e39f41a33f9794d90b5304c3b4b833ea0
 ---
 
 PDF Kit提供了丰富的PDF文档预览能力，比如：
@@ -25,57 +25,62 @@ PDF Kit提供了丰富的PDF文档预览能力，比如：
 3. 调用loadDocument方法，加载PDF文档。
 4. 调用PdfView预览组件，渲染显示。
 
-```
-1. import { pdfService, pdfViewManager, PdfView } from '@kit.PDFKit'
-2. import { fileIo } from '@kit.CoreFileKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { pdfService, pdfViewManager, PdfView } from '@kit.PDFKit'
+import { fileIo } from '@kit.CoreFileKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// ...
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. private controller: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+@Entry
+@Component
+struct PreviewPage {
+  private controller: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+  private context = this.getUIContext().getHostContext() as Context;
 
-11. aboutToAppear(): void {
-12. let context = this.getUIContext().getHostContext() as Context;
-13. let dir: string = context.resourceDir
-14. // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
-15. let filePath: string = dir + '/input.pdf';
-16. try {
-17. let res = fileIo.accessSync(filePath);
-18. if (!res) {
-19. let content: Uint8Array = context.resourceManager.getRawFileContentSync('rawfile/input.pdf');
-20. let fdSand =
-21. fileIo.openSync(filePath, fileIo.OpenMode.WRITE_ONLY | fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC);
-22. fileIo.writeSync(fdSand.fd, content.buffer);
-23. fileIo.closeSync(fdSand.fd);
-24. }
-25. } catch (e) {
-26. let error: BusinessError = e as BusinessError;
-27. hilog.error(0x0000, 'IndexPage', `Code: ${error.code}, message: ${error.message} `);
-28. }
-29. (async () => {
-30. // 该监听方法只能在文档加载前调用一次
-31. this.controller.registerPageCountChangedListener((pageCount: number) => {
-32. hilog.info(0x0000, 'registerPageCountChanged-', pageCount.toString());
-33. });
-34. let loadResult1: pdfService.ParseResult = await this.controller.loadDocument(filePath);
-35. // 注意：这里刚加载文档，请不要在这里立即设置PDF文档的预览方式
-36. })()
-37. }
+  aboutToAppear(): void {
+    let dir: string = this.context.resourceDir
+    // 确保在工程目录src/main/resources/resfile里存在input.pdf文档
+    let filePath: string = dir + '/input.pdf';
+    try {
+      let res = fileIo.accessSync(filePath);
+      if (!res) {
+        let content: Uint8Array = this.context.resourceManager.getRawFileContentSync('resfile/input.pdf');
+        let fdSand = fileIo.openSync(
+            filePath,
+            fileIo.OpenMode.WRITE_ONLY |
+            fileIo.OpenMode.CREATE |
+            fileIo.OpenMode.TRUNC
+        );
+        fileIo.writeSync(fdSand.fd, content.buffer);
+        fileIo.closeSync(fdSand.fd);
+      }
+    } catch (e) {
+      let error: BusinessError = e as BusinessError;
+      hilog.error(0x0000, 'PreviewPage', `Code: ${error.code}, message: ${error.message} `);
+    }
+    (async () => {
+      // 该监听方法只能在文档加载前调用一次
+      this.controller.registerPageCountChangedListener((pageCount: number) => {
+        hilog.info(0x0000, 'registerPageCountChanged-', pageCount.toString());
+      });
+      let loadResult1: pdfService.ParseResult = await this.controller.loadDocument(filePath);
+      // 注意：这里刚加载文档，请不要在这里立即设置PDF文档的预览方式
+    })()
+  }
 
-39. build() {
-40. Row() {
-41. PdfView({
-42. controller: this.controller,
-43. pageFit: pdfService.PageFit.FIT_WIDTH,
-44. showScroll: true
-45. })
-46. .id('pdfview_app_view')
-47. .layoutWeight(1);
-48. }
-49. .width('100%')
-50. .height('100%')
-51. }
-52. }
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      PdfView({
+        controller: this.controller,
+        pageFit: pdfService.PageFit.FIT_WIDTH,
+        showScroll: true
+      })
+        .id('pdfview_app_view')
+
+         // ...
+    }
+    .width('100%').height('100%')
+  }
+}
 ```

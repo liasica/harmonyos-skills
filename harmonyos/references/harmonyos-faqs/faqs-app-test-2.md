@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: 升级DevEco Studio后执行测试任务失败
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 升级DevEco Studio后执行测试任务失败
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:17+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:17+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:195e3f0e33959e46069bd430e6de818900037ed5114ecbbbcf0871cf743e3dfc
 ---
 

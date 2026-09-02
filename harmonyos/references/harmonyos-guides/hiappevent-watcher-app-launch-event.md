@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 启动耗时事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 启动耗时事件 > 启动耗时事件介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:69807aad2adff44f745f46c0342f678991453f38309a282746505773351cf014
+scraped_at: 2026-09-02T14:59:40+08:00
+doc_updated_at: 2026-06-16
+content_hash: sha256:5ad7e46c74d867ccf05cb92c4167b687dae3881abfc9b1c6062fcc6e839f8aaa
 ---
 
 ## 简介
@@ -16,7 +16,7 @@ content_hash: sha256:69807aad2adff44f745f46c0342f678991453f38309a282746505773351
 
 * [订阅启动耗时事件（ArkTS）](hiappevent-watcher-app-launch-arkts.md)
 
-说明
+**说明** 
 
 启动耗时事件支持在[元服务场景](agc-harmonyos-create-faproject.md)下使用HiAppEvent进行订阅。不支持在[应用分身场景](app-clone.md)或[输入法应用场景](inputmethod-application-guide.md)下使用HiAppEvent进行订阅。
 
@@ -53,4 +53,4 @@ content_hash: sha256:69807aad2adff44f745f46c0342f678991453f38309a282746505773351
 | appattach\_to\_appforeground\_dur | number | 冷启动过程中完成应用进程初始化到应用切换到前台的耗时，单位为ms。  该阶段包括资源加载、虚拟机创建、Application&Ability 对象的创建与初始化、依赖模块加载等。  仅在冷启动中存在该值，若依赖的系统内部事件打点次数超限或在非冷启动类型中，该值为 0。从API version 22开始提供。 |
 | startability\_appforeground\_dur | number | 启动过程中系统开始启动Ability到应用切换到前台状态的耗时，单位为ms。  在冷启动中，该值为startability\_processstart\_dur、processstart\_to\_appattach\_dur和appattach\_to\_appforeground\_dur三者之和；其余启动类型中，该过程包括系统启动Ability和应用切换到前台。从API version 22开始提供。 |
 | appforegr\_abilityonforegr\_dur | number | 应用切换到前台状态到[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)切换至前台（系统触发[onForeground](../harmonyos-references/js-apis-app-ability-uiability.md#onforeground)回调）的耗时，单位为ms。从API version 22开始提供。 |
-| abilityonforeg\_startwindow\_dur | number | 系统完成创建应用窗口[WindowStage](application-window-stage.md)（系统触发[onWindowStageCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#onwindowstagecreate)回调）到UIAbility切换到前台的耗时，单位为ms。  仅在冷启动和预加载启动中存在该值，若依赖的系统内部事件打点次数超限或在热启动类型中，该值为0。从API version 22开始提供。 |
+| abilityonforeg\_startwindow\_dur | number | 系统完成创建窗口管理器[WindowStage](../harmonyos-references/arkts-apis-window-windowstage.md)（系统触发[onWindowStageCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#onwindowstagecreate)回调）到UIAbility切换到前台的耗时，单位为ms。  仅在冷启动和预加载启动中存在该值，若依赖的系统内部事件打点次数超限或在热启动类型中，该值为0。从API version 22开始提供。 |

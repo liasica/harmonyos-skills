@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller
-title: MapComponentController
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > MapComponentController
+title: Class (MapComponentController)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (MapComponentController)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:11+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:cdd36a1d59d9834d4b645ff6981e9b198439b3c258addb2ee47c831151831e7c
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1da73608f388b1a1e8c9fa2ddb618ca400bcded9d5282e0d604685c435b906ca
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## MapComponentController
-
-PhonePC/2in1TabletWearable
 
 地图的主要功能入口类，与地图有关的所有方法从此处接入，并提供事件监听管理功能。
 
@@ -32,72 +28,70 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
+```typescript
+import { MapComponent, mapCommon, map } from '@kit.MapKit';
+import { AsyncCallback } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct HuaweiMapDemo {
+  private TAG = "HuaweiMapDemo";
+  private mapOptions?: mapCommon.MapOptions;
+  private callback?: AsyncCallback<map.MapComponentController>;
+  private mapController?: map.MapComponentController;
+  private mapEventManager?: map.MapEventManager;
+
+  aboutToAppear(): void {
+    // 地图初始化参数，设置地图中心点坐标及层级
+    this.mapOptions = {
+      position: {
+        target: {
+          latitude: 39.9,
+          longitude: 116.4
+        },
+        zoom: 10
+      }
+    };
+
+    // 地图初始化的回调
+    this.callback = async (err, mapController) => {
+      if (!err) {
+        // 获取地图的控制器类，用来操作地图
+        this.mapController = mapController;
+        // 返回地图组件的监听事件管理接口
+        this.mapEventManager = this.mapController.getEventManager();
+        let callback = () => {
+          console.info(this.TAG, `on-mapLoad`);
+        };
+        this.mapEventManager.on("mapLoad", callback);
+
+        // 执行自定义的方法
+        this.customizedMethod();
+      }
+    };
+  }
+
+  // 自定义的方法
+  private customizedMethod() {
+    // ...
+  }
+
+  build() {
+    Stack() {
+      // 调用MapComponent组件初始化地图
+      MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
+        .width('100%')
+        .height('100%')
+    }.height('100%')
+  }
+}
 ```
-1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-2. import { AsyncCallback } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct HuaweiMapDemo {
-7. private TAG = "HuaweiMapDemo";
-8. private mapOptions?: mapCommon.MapOptions;
-9. private callback?: AsyncCallback<map.MapComponentController>;
-10. private mapController?: map.MapComponentController;
-11. private mapEventManager?: map.MapEventManager;
-
-13. aboutToAppear(): void {
-14. // 地图初始化参数，设置地图中心点坐标及层级
-15. this.mapOptions = {
-16. position: {
-17. target: {
-18. latitude: 39.9,
-19. longitude: 116.4
-20. },
-21. zoom: 10
-22. }
-23. };
-
-25. // 地图初始化的回调
-26. this.callback = async (err, mapController) => {
-27. if (!err) {
-28. // 获取地图的控制器类，用来操作地图
-29. this.mapController = mapController;
-30. // 返回地图组件的监听事件管理接口
-31. this.mapEventManager = this.mapController.getEventManager();
-32. let callback = () => {
-33. console.info(this.TAG, `on-mapLoad`);
-34. }
-35. this.mapEventManager.on("mapLoad", callback);
-
-37. // 执行自定义的方法
-38. this.customizedMethod();
-39. }
-40. };
-41. }
-
-43. // 自定义的方法
-44. private customizedMethod() {
-45. // ...
-46. }
-
-48. build() {
-49. Stack() {
-50. // 调用MapComponent组件初始化地图
-51. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback })
-52. .width('100%')
-53. .height('100%')
-54. }.height('100%')
-55. }
-56. }
-```
-
-说明
+**说明** 
 
 MapComponentController中的方法需要放在上述示例的地图初始化的回调中运行或自定义的方法中运行。
 
 ### animateCamera
-
-PhonePC/2in1TabletWearable
 
 animateCamera(update: CameraUpdate, duration?: number): void
 
@@ -120,24 +114,22 @@ animateCamera(update: CameraUpdate, duration?: number): void
 
 **示例：**
 
-```
-1. let target: mapCommon.LatLng = {
-2. latitude: 39.9,
-3. longitude: 116.4
-4. };
-5. let cameraPosition: mapCommon.CameraPosition = {
-6. target: target,
-7. zoom: 10
-8. };
-9. // 新建CameraUpdate对象
-10. let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
-11. // 在1000ms内以动画的形式移动相机
-12. this.mapController.animateCamera(cameraUpdate, 1000);
+```typescript
+let target: mapCommon.LatLng = {
+  latitude: 39.9,
+  longitude: 116.4
+};
+let cameraPosition: mapCommon.CameraPosition = {
+  target: target,
+  zoom: 10
+};
+// 新建CameraUpdate对象
+let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
+// 在1000ms内以动画的形式移动相机
+this.mapController.animateCamera(cameraUpdate, 1000);
 ```
 
 ### animateCameraStatus
-
-PhonePC/2in1TabletWearable
 
 animateCameraStatus(update: CameraUpdate, duration?: number): Promise<AnimateResult>
 
@@ -174,28 +166,26 @@ animateCameraStatus(update: CameraUpdate, duration?: number): Promise<AnimateRes
 
 **示例：**
 
-```
-1. let target: mapCommon.LatLng = {
-2. latitude: 39.9,
-3. longitude: 116.4
-4. };
-5. let cameraPosition: mapCommon.CameraPosition = {
-6. target: target,
-7. zoom: 10
-8. };
-9. // 新建CameraUpdate对象
-10. let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
-11. // 在1000ms内以动画的形式移动相机
-12. let animateResult = await this.mapController.animateCameraStatus(cameraUpdate, 1000);
+```typescript
+let target: mapCommon.LatLng = {
+  latitude: 39.9,
+  longitude: 116.4
+};
+let cameraPosition: mapCommon.CameraPosition = {
+  target: target,
+  zoom: 10
+};
+// 新建CameraUpdate对象
+let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
+// 在1000ms内以动画的形式移动相机
+let animateResult = await this.mapController.animateCameraStatus(cameraUpdate, 1000);
 ```
 
 ### animateCameraWithMarker
 
-PhonePC/2in1TabletWearable
-
 animateCameraWithMarker(update: CameraUpdate, marker: Marker, duration: number): Promise<AnimateResult>
 
-在指定的持续时间内以动画的形式更新相机状态，并更新指定的marker。使用Promise异步回调。相机移动过程中不能被打断，否则[AnimateResult](map-map-animateresult.md)的参数isCanceled返回值为true。
+在指定的持续时间内以动画的形式更新相机状态，并更新指定的marker。使用Promise异步回调。如果相机移动过程中被打断，则[AnimateResult](map-map-animateresult.md)的参数isCanceled返回值为true。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -221,37 +211,35 @@ animateCameraWithMarker(update: CameraUpdate, marker: Marker, duration: number):
 
 **示例：**
 
-```
-1. let target: mapCommon.LatLng = {
-2. latitude: 39.9,
-3. longitude: 116.4
-4. };
-5. let cameraPosition: mapCommon.CameraPosition = {
-6. target: target,
-7. zoom: 10
-8. };
-9. // 新建CameraUpdate对象
-10. let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
-11. // marker初始化参数
-12. let markerOptions: mapCommon.MarkerOptions = {
-13. position: {
-14. latitude: 39.9,
-15. longitude: 116.4
-16. },
-17. title: "XXX",
-18. // 图标需存放在resources/rawfile目录下
-19. icon: 'icon/icon.png',
-20. clickable: true
-21. };
-22. // 新建marker
-23. let marker = await this.mapController?.addMarker(markerOptions);
-24. // 在1000ms内以动画的形式移动相机, 并更新指定的marker
-25. await this.mapController.animateCameraWithMarker(cameraUpdate, marker, 1000);
+```typescript
+let target: mapCommon.LatLng = {
+  latitude: 39.9,
+  longitude: 116.4
+};
+let cameraPosition: mapCommon.CameraPosition = {
+  target: target,
+  zoom: 10
+};
+// 新建CameraUpdate对象
+let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
+// marker初始化参数
+let markerOptions: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 39.9,
+    longitude: 116.4
+  },
+  title: "XXX",
+  // 图标需存放在resources/rawfile目录下
+  icon: 'icon/icon.png',
+  clickable: true
+};
+// 新建marker
+let marker = await this.mapController?.addMarker(markerOptions);
+// 在1000ms内以动画的形式移动相机, 并更新指定的marker
+await this.mapController.animateCameraWithMarker(cameraUpdate, marker, 1000);
 ```
 
 ### animateCameraWithMarkers
-
-PhonePC/2in1TabletWearable
 
 animateCameraWithMarkers(update: CameraUpdate, markers: Array<Marker>, duration: number): Promise<AnimateResult>
 
@@ -271,7 +259,7 @@ animateCameraWithMarkers(update: CameraUpdate, markers: Array<Marker>, duration:
 | --- | --- | --- | --- |
 | update | [CameraUpdate](map-map-cameraupdate.md) | 是 | 相机状态将要发生的变化，异常值返回401错误码。 |
 | markers | Array<[Marker](map-map-marker.md)> | 是 | 一组标记。  **说明：**  一组标记的位置必须相同，否则会返回401错误码。 |
-| duration | number | 是 | 动画的持续时间，单位：ms，默认值为250，取值范围：大于0，异常值按默认值处理。 |
+| duration | number | 是 | 动画的持续时间，单位：ms，默认值为250，取值范围：大于0，小于等于0按照默认值处理，异常值按默认值处理。 |
 
 **返回值：**
 
@@ -289,50 +277,48 @@ animateCameraWithMarkers(update: CameraUpdate, markers: Array<Marker>, duration:
 
 **示例：**
 
-```
-1. let target: mapCommon.LatLng = {
-2. latitude: 39.9,
-3. longitude: 116.4
-4. };
-5. let cameraPosition: mapCommon.CameraPosition = {
-6. target: target,
-7. zoom: 10
-8. };
-9. // 新建CameraUpdate对象
-10. let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
-11. // marker1初始化参数
-12. let markerOptions1: mapCommon.MarkerOptions = {
-13. position: {
-14. latitude: 31.984410259206815,
-15. longitude: 118.76625379397866
-16. },
-17. title: "icon",
-18. // 图标需存放在resources/rawfile目录下
-19. icon: 'icon/icon.png',
-20. clickable: true
-21. };
-22. let markerOptions2: mapCommon.MarkerOptions = {
-23. position: {
-24. latitude: 31.984410259206815,
-25. longitude: 118.76625379397866
-26. },
-27. title: "avocado",
-28. // 图标需存放在resources/rawfile目录下
-29. icon: 'icon/avocado.png',
-30. clickable: true,
-31. anchorU: 0.5,
-32. anchorV: 1
-33. };
-34. let marker1 = await this.mapController?.addMarker(markerOptions1);
-35. // marker2初始化参数
-36. let marker2 = await this.mapController?.addMarker(markerOptions2);
-37. // 在1000ms内以动画的形式移动相机, 并更新指定的marker
-38. await this.mapController.animateCameraWithMarkers(cameraUpdate, [marker1, marker2], 1000);
+```typescript
+let target: mapCommon.LatLng = {
+  latitude: 39.9,
+  longitude: 116.4
+};
+let cameraPosition: mapCommon.CameraPosition = {
+  target: target,
+  zoom: 10
+};
+// 新建CameraUpdate对象
+let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
+// marker1初始化参数
+let markerOptions1: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 31.984410259206815,
+    longitude: 118.76625379397866
+  },
+  title: "icon",
+  // 图标需存放在resources/rawfile目录下
+  icon: 'icon/icon.png',
+  clickable: true
+};
+let markerOptions2: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 31.984410259206815,
+    longitude: 118.76625379397866
+  },
+  title: "avocado",
+  // 图标需存放在resources/rawfile目录下
+  icon: 'icon/avocado.png',
+  clickable: true,
+  anchorU: 0.5,
+  anchorV: 1
+};
+let marker1 = await this.mapController?.addMarker(markerOptions1);
+// marker2初始化参数
+let marker2 = await this.mapController?.addMarker(markerOptions2);
+// 在1000ms内以动画的形式移动相机, 并更新指定的marker
+await this.mapController.animateCameraWithMarkers(cameraUpdate, [marker1, marker2], 1000);
 ```
 
 ### stopAnimation
-
-PhonePC/2in1TabletWearable
 
 stopAnimation(): void
 
@@ -348,13 +334,11 @@ stopAnimation(): void
 
 **示例：**
 
-```
-1. this.mapController.stopAnimation();
+```typescript
+this.mapController.stopAnimation();
 ```
 
 ### clear
-
-PhonePC/2in1TabletWearable
 
 clear(): void
 
@@ -370,13 +354,11 @@ clear(): void
 
 **示例：**
 
-```
-1. this.mapController.clear();
+```typescript
+this.mapController.clear();
 ```
 
 ### moveCamera
-
-PhonePC/2in1TabletWearable
 
 moveCamera(update: CameraUpdate): void
 
@@ -394,28 +376,26 @@ moveCamera(update: CameraUpdate): void
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| update | [CameraUpdate](map-map-cameraupdate.md) | 是 | 相机状态将要发生的变化，异常值不处理。 |
+| update | [CameraUpdate](map-map-cameraupdate.md) | 是 | 相机状态将要发生的变化。异常值不处理。 |
 
 **示例：**
 
-```
-1. let target: mapCommon.LatLng = {
-2. latitude: 39.9,
-3. longitude: 116.4
-4. };
-5. let cameraPosition: mapCommon.CameraPosition = {
-6. target: target,
-7. zoom: 10
-8. };
-9. // 新建CameraUpdate对象
-10. let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
-11. // 移动相机
-12. this.mapController.moveCamera(cameraUpdate);
+```typescript
+let target: mapCommon.LatLng = {
+  latitude: 39.9,
+  longitude: 116.4
+};
+let cameraPosition: mapCommon.CameraPosition = {
+  target: target,
+  zoom: 10
+};
+// 新建CameraUpdate对象
+let cameraUpdate: map.CameraUpdate = map.newCameraPosition(cameraPosition);
+// 移动相机
+this.mapController.moveCamera(cameraUpdate);
 ```
 
 ### getCameraPosition
-
-PhonePC/2in1TabletWearable
 
 getCameraPosition(): mapCommon.CameraPosition
 
@@ -437,13 +417,11 @@ getCameraPosition(): mapCommon.CameraPosition
 
 **示例：**
 
-```
-1. let cameraPosition: mapCommon.CameraPosition = this.mapController.getCameraPosition();
+```typescript
+let cameraPosition: mapCommon.CameraPosition = this.mapController.getCameraPosition();
 ```
 
 ### setLatLngBounds
-
-PhonePC/2in1TabletWearable
 
 setLatLngBounds(bounds: mapCommon.LatLngBounds): void
 
@@ -465,23 +443,21 @@ setLatLngBounds(bounds: mapCommon.LatLngBounds): void
 
 **示例：**
 
-```
-1. let bounds:mapCommon.LatLngBounds = {
-2. northeast: {
-3. latitude: 31,
-4. longitude: 118
-5. },
-6. southwest: {
-7. latitude: 30,
-8. longitude: 117
-9. }
-10. };
-11. this.mapController.setLatLngBounds(bounds);
+```typescript
+let bounds:mapCommon.LatLngBounds = {
+  northeast: {
+    latitude: 31,
+    longitude: 118
+  },
+  southwest: {
+    latitude: 30,
+    longitude: 117
+  }
+};
+this.mapController.setLatLngBounds(bounds);
 ```
 
 ### setPointToCenter
-
-PhonePC/2in1TabletWearable
 
 setPointToCenter(point: mapCommon.MapPoint): void
 
@@ -503,17 +479,15 @@ setPointToCenter(point: mapCommon.MapPoint): void
 
 **示例：**
 
-```
-1. let point: mapCommon.MapPoint = {
-2. positionX: 1000,
-3. positionY: 1000
-4. };
-5. this.mapController.setPointToCenter(point);
+```typescript
+let point: mapCommon.MapPoint = {
+  positionX: 1000,
+  positionY: 1000
+};
+this.mapController.setPointToCenter(point);
 ```
 
 ### setMaxZoom
-
-PhonePC/2in1TabletWearable
 
 setMaxZoom(maxZoom: number): void
 
@@ -535,13 +509,11 @@ setMaxZoom(maxZoom: number): void
 
 **示例：**
 
-```
-1. this.mapController.setMaxZoom(10);
+```typescript
+this.mapController.setMaxZoom(10);
 ```
 
 ### setMinZoom
-
-PhonePC/2in1TabletWearable
 
 setMinZoom(minZoom: number): void
 
@@ -563,13 +535,11 @@ setMinZoom(minZoom: number): void
 
 **示例：**
 
-```
-1. this.mapController.setMinZoom(3);
+```typescript
+this.mapController.setMinZoom(3);
 ```
 
 ### getMaxZoom
-
-PhonePC/2in1TabletWearable
 
 getMaxZoom(): number
 
@@ -591,13 +561,11 @@ getMaxZoom(): number
 
 **示例：**
 
-```
-1. let maxZoom: number = this.mapController.getMaxZoom();
+```typescript
+let maxZoom: number = this.mapController.getMaxZoom();
 ```
 
 ### getMinZoom
-
-PhonePC/2in1TabletWearable
 
 getMinZoom(): number
 
@@ -619,13 +587,11 @@ getMinZoom(): number
 
 **示例：**
 
-```
-1. let minZoom: number = this.mapController.getMinZoom();
+```typescript
+let minZoom: number = this.mapController.getMinZoom();
 ```
 
 ### setTrafficEnabled
-
-PhonePC/2in1TabletWearable
 
 setTrafficEnabled(enabled: boolean): void
 
@@ -647,13 +613,11 @@ setTrafficEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setTrafficEnabled(true);
+```typescript
+this.mapController.setTrafficEnabled(true);
 ```
 
 ### isTrafficEnabled
-
-PhonePC/2in1TabletWearable
 
 isTrafficEnabled(): boolean
 
@@ -675,13 +639,11 @@ isTrafficEnabled(): boolean
 
 **示例：**
 
-```
-1. let isTrafficEnabled: boolean = this.mapController.isTrafficEnabled();
+```typescript
+let isTrafficEnabled: boolean = this.mapController.isTrafficEnabled();
 ```
 
 ### setBuildingEnabled
-
-PhonePC/2in1TabletWearable
 
 setBuildingEnabled(enabled: boolean): void
 
@@ -703,13 +665,11 @@ setBuildingEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setBuildingEnabled(true);
+```typescript
+this.mapController.setBuildingEnabled(true);
 ```
 
 ### isBuildingEnabled
-
-PhonePC/2in1TabletWearable
 
 isBuildingEnabled(): boolean
 
@@ -731,17 +691,15 @@ isBuildingEnabled(): boolean
 
 **示例：**
 
-```
-1. let isBuildingEnabled: boolean = this.mapController.isBuildingEnabled();
+```typescript
+let isBuildingEnabled: boolean = this.mapController.isBuildingEnabled();
 ```
 
 ### setMyLocationEnabled
 
-PhonePC/2in1TabletWearable
-
 setMyLocationEnabled(myLocationEnabled: boolean): void
 
-我的位置图层功能开关，默认使用系统的连续定位能力显示用户位置。开关打开后，“我的位置”按钮默认显示在地图的右下角。点击“我的位置”按钮，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现。
+我的位置图层功能开关，默认使用系统的连续定位能力显示用户位置。开关打开后，“我的位置”按钮默认显示在地图的右下角。点击“我的位置”按钮，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现。如果需要自定义位置图标样式，请参见[setMyLocationStyle](map-map-mapcomponentcontroller.md#setmylocationstyle)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -759,13 +717,11 @@ setMyLocationEnabled(myLocationEnabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setMyLocationEnabled(true);
+```typescript
+this.mapController.setMyLocationEnabled(true);
 ```
 
 ### setMyLocation
-
-PhonePC/2in1TabletWearable
 
 setMyLocation(location: geoLocationManager.Location): void
 
@@ -787,17 +743,15 @@ Map Kit默认使用系统的连续定位能力显示用户位置，如果您希�
 
 **示例：**
 
-```
-1. // 需要引入@kit.LocationKit模块
-2. import { geoLocationManager } from '@kit.LocationKit';
+```typescript
+// 需要引入@kit.LocationKit模块
+import { geoLocationManager } from '@kit.LocationKit';
 
-4. let location = await geoLocationManager.getCurrentLocation();
-5. this.mapController.setMyLocation(location);
+let location = await geoLocationManager.getCurrentLocation();
+this.mapController.setMyLocation(location);
 ```
 
 ### setMyLocationStyle
-
-PhonePC/2in1TabletWearable
 
 setMyLocationStyle(style: mapCommon.MyLocationStyle): Promise<void>
 
@@ -815,7 +769,7 @@ setMyLocationStyle(style: mapCommon.MyLocationStyle): Promise<void>
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| style | [mapCommon.MyLocationStyle](map-common.md#mylocationstyle) | 是 | 用户的位置样式，异常值不处理。  **说明：**  如果displayType使用FOLLOW\_ROTATE需应用申请传感器权限：ohos.permission.ACCELEROMETER，具体可参考[声明权限](../harmonyos-guides/declare-permissions.md)。 |
+| style | [mapCommon.MyLocationStyle](map-common.md#mylocationstyle) | 是 | 用户的位置样式，异常值不处理。 |
 
 **返回值：**
 
@@ -825,20 +779,18 @@ setMyLocationStyle(style: mapCommon.MyLocationStyle): Promise<void>
 
 **示例：**
 
-```
-1. let style: mapCommon.MyLocationStyle = {
-2. anchorU: 0.5,
-3. anchorV: 0.5,
-4. radiusFillColor: 0xffff0000,
-5. // icon为自定义图标资源，使用时需要替换，图标存放在resources/rawfile
-6. icon: 'icon/avocado.png'
-7. };
-8. await this.mapController.setMyLocationStyle(style);
+```typescript
+let style: mapCommon.MyLocationStyle = {
+  anchorU: 0.5,
+  anchorV: 0.5,
+  radiusFillColor: 0xffff0000,
+  // icon为自定义图标资源，使用时需要替换，图标存放在resources/rawfile
+  icon: 'icon/avocado.png'
+};
+await this.mapController.setMyLocationStyle(style);
 ```
 
 ### isMyLocationEnabled
-
-PhonePC/2in1TabletWearable
 
 isMyLocationEnabled(): boolean
 
@@ -856,17 +808,15 @@ isMyLocationEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 我的位置图层的开启状态。  - true：启用  - false：禁用 |
+| boolean | 我的位置图层的开启状态。  - true：我的位置图层为已启用状态  - false：我的位置图层为已禁用状态 |
 
 **示例：**
 
-```
-1. let isMyLocationEnabled: boolean = this.mapController.isMyLocationEnabled();
+```typescript
+let isMyLocationEnabled: boolean = this.mapController.isMyLocationEnabled();
 ```
 
 ### setZoomGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 setZoomGesturesEnabled(enabled: boolean): void
 
@@ -895,13 +845,11 @@ setZoomGesturesEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setZoomGesturesEnabled(true);
+```typescript
+this.mapController.setZoomGesturesEnabled(true);
 ```
 
 ### isZoomGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 isZoomGesturesEnabled(): boolean
 
@@ -919,17 +867,15 @@ isZoomGesturesEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 缩放手势功能的启用状态。  - true：启用缩放手势  - false：禁用缩放手势 |
+| boolean | 缩放手势功能的启用状态。  - true：缩放手势为已启用状态  - false：缩放手势为已禁用状态 |
 
 **示例：**
 
-```
-1. let isZoomGesturesEnabled: boolean = this.mapController.isZoomGesturesEnabled();
+```typescript
+let isZoomGesturesEnabled: boolean = this.mapController.isZoomGesturesEnabled();
 ```
 
 ### setScrollGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 setScrollGesturesEnabled(enabled: boolean): void
 
@@ -954,13 +900,11 @@ setScrollGesturesEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setScrollGesturesEnabled(true);
+```typescript
+this.mapController.setScrollGesturesEnabled(true);
 ```
 
 ### isScrollGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 isScrollGesturesEnabled(): boolean
 
@@ -978,17 +922,15 @@ isScrollGesturesEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 滚动手势的启用状态。  - true：启用滚动手势  - false：禁用滚动手势 |
+| boolean | 滚动手势的启用状态。  - true：滚动手势为已启用状态  - false：滚动手势为已禁用状态 |
 
 **示例：**
 
-```
-1. let isScrollGesturesEnabled: boolean = this.mapController.isScrollGesturesEnabled();
+```typescript
+let isScrollGesturesEnabled: boolean = this.mapController.isScrollGesturesEnabled();
 ```
 
 ### setRotateGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 setRotateGesturesEnabled(enabled: boolean): void
 
@@ -1013,13 +955,11 @@ setRotateGesturesEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setRotateGesturesEnabled(true);
+```typescript
+this.mapController.setRotateGesturesEnabled(true);
 ```
 
 ### isRotateGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 isRotateGesturesEnabled(): boolean
 
@@ -1037,17 +977,15 @@ isRotateGesturesEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 旋转手势的启用状态。  - true：启用旋转手势  - false：禁用旋转手势 |
+| boolean | 旋转手势的启用状态。  - true：旋转手势为已启用状态  - false：旋转手势为已禁用状态 |
 
 **示例：**
 
-```
-1. let isRotateGesturesEnabled: boolean = this.mapController.isRotateGesturesEnabled();
+```typescript
+let isRotateGesturesEnabled: boolean = this.mapController.isRotateGesturesEnabled();
 ```
 
 ### setTiltGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 setTiltGesturesEnabled(enabled: boolean): void
 
@@ -1072,13 +1010,11 @@ setTiltGesturesEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setTiltGesturesEnabled(true);
+```typescript
+this.mapController.setTiltGesturesEnabled(true);
 ```
 
 ### isTiltGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 isTiltGesturesEnabled(): boolean
 
@@ -1096,17 +1032,15 @@ isTiltGesturesEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 倾斜手势的启用状态。  - true：启用倾斜手势  - false：禁用倾斜手势 |
+| boolean | 倾斜手势的启用状态。  - true：倾斜手势为已启用状态  - false：倾斜手势为已禁用状态 |
 
 **示例：**
 
-```
-1. let isTiltGesturesEnabled: boolean = this.mapController.isTiltGesturesEnabled();
+```typescript
+let isTiltGesturesEnabled: boolean = this.mapController.isTiltGesturesEnabled();
 ```
 
 ### setZoomControlsEnabled
-
-PhonePC/2in1TabletWearable
 
 setZoomControlsEnabled(enabled: boolean): void
 
@@ -1131,13 +1065,11 @@ setZoomControlsEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setZoomControlsEnabled(true);
+```typescript
+this.mapController.setZoomControlsEnabled(true);
 ```
 
 ### isZoomControlsEnabled
-
-PhonePC/2in1TabletWearable
 
 isZoomControlsEnabled(): boolean
 
@@ -1155,17 +1087,15 @@ isZoomControlsEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 缩放控制器的启用状态。  - true：启用缩放控制器  - false：禁用缩放控制器 |
+| boolean | 缩放控制器的启用状态。  - true：缩放控制器为已启用状态  - false：缩放控制器为已禁用状态 |
 
 **示例：**
 
-```
-1. let isZoomControlsEnabled: boolean = this.mapController.isZoomControlsEnabled();
+```typescript
+let isZoomControlsEnabled: boolean = this.mapController.isZoomControlsEnabled();
 ```
 
 ### setMyLocationControlsEnabled
-
-PhonePC/2in1TabletWearable
 
 setMyLocationControlsEnabled(enabled: boolean): void
 
@@ -1187,13 +1117,11 @@ setMyLocationControlsEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setMyLocationControlsEnabled(true);
+```typescript
+this.mapController.setMyLocationControlsEnabled(true);
 ```
 
 ### isMyLocationControlsEnabled
-
-PhonePC/2in1TabletWearable
 
 isMyLocationControlsEnabled(): boolean
 
@@ -1211,17 +1139,15 @@ isMyLocationControlsEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 我的位置按钮的启用状态。  - true：启用  - false：禁用 |
+| boolean | 我的位置按钮的启用状态。  - true：我的位置按钮为已启用状态  - false：我的位置按钮为已禁用状态 |
 
 **示例：**
 
-```
-1. let isMyLocationControlsEnabled: boolean = this.mapController.isMyLocationControlsEnabled();
+```typescript
+let isMyLocationControlsEnabled: boolean = this.mapController.isMyLocationControlsEnabled();
 ```
 
 ### setScaleControlsEnabled
-
-PhonePC/2in1TabletWearable
 
 setScaleControlsEnabled(enabled: boolean): void
 
@@ -1243,13 +1169,11 @@ setScaleControlsEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setScaleControlsEnabled(true);
+```typescript
+this.mapController.setScaleControlsEnabled(true);
 ```
 
 ### isScaleControlsEnabled
-
-PhonePC/2in1TabletWearable
 
 isScaleControlsEnabled(): boolean
 
@@ -1267,17 +1191,15 @@ isScaleControlsEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 比例尺的启用状态。  - true：启用  - false：禁用 |
+| boolean | 比例尺的启用状态。  - true：比例尺为已启用状态  - false：比例尺为已禁用状态 |
 
 **示例：**
 
-```
-1. let isScaleControlsEnabled: boolean = this.mapController.isScaleControlsEnabled();
+```typescript
+let isScaleControlsEnabled: boolean = this.mapController.isScaleControlsEnabled();
 ```
 
 ### setCompassControlsEnabled
-
-PhonePC/2in1TabletWearable
 
 setCompassControlsEnabled(enabled: boolean): void
 
@@ -1299,13 +1221,11 @@ setCompassControlsEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setCompassControlsEnabled(true);
+```typescript
+this.mapController.setCompassControlsEnabled(true);
 ```
 
 ### isCompassControlsEnabled
-
-PhonePC/2in1TabletWearable
 
 isCompassControlsEnabled(): boolean
 
@@ -1323,17 +1243,15 @@ isCompassControlsEnabled(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 指南针的启用状态。  - true：启用  - false：禁用 |
+| boolean | 指南针的启用状态。  - true：指南针为已启用状态  - false：指南针为已禁用状态 |
 
 **示例：**
 
-```
-1. let isCompassControlsEnabled: boolean = this.mapController.isCompassControlsEnabled();
+```typescript
+let isCompassControlsEnabled: boolean = this.mapController.isCompassControlsEnabled();
 ```
 
 ### setGestureScaleByMapCenter
-
-PhonePC/2in1TabletWearable
 
 setGestureScaleByMapCenter(enabled: boolean): void
 
@@ -1358,13 +1276,11 @@ setGestureScaleByMapCenter(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setGestureScaleByMapCenter(true);
+```typescript
+this.mapController.setGestureScaleByMapCenter(true);
 ```
 
 ### isGestureScaleByMapCenter
-
-PhonePC/2in1TabletWearable
 
 isGestureScaleByMapCenter(): boolean
 
@@ -1382,17 +1298,15 @@ isGestureScaleByMapCenter(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 以固定屏幕中心点进行缩放功能的开启状态。  - true：启用  - false：禁用 |
+| boolean | 以固定屏幕中心点进行缩放功能的开启状态。  - true：以固定屏幕中心点进行缩放功能为启用状态  - false：以固定屏幕中心点进行缩放功能为禁用状态 |
 
 **示例：**
 
-```
-1. let isGestureScaleByMapCenter: boolean = this.mapController.isGestureScaleByMapCenter();
+```typescript
+let isGestureScaleByMapCenter: boolean = this.mapController.isGestureScaleByMapCenter();
 ```
 
 ### setLogoAlignment
-
-PhonePC/2in1TabletWearable
 
 setLogoAlignment(alignment: mapCommon.LogoAlignment): void
 
@@ -1414,13 +1328,11 @@ setLogoAlignment(alignment: mapCommon.LogoAlignment): void
 
 **示例：**
 
-```
-1. this.mapController.setLogoAlignment(mapCommon.LogoAlignment.BOTTOM_START);
+```typescript
+this.mapController.setLogoAlignment(mapCommon.LogoAlignment.BOTTOM_START);
 ```
 
 ### setLogoPadding
-
-PhonePC/2in1TabletWearable
 
 setLogoPadding(padding: mapCommon.Padding): void
 
@@ -1430,7 +1342,7 @@ setLogoPadding(padding: mapCommon.Padding): void
 * 当Logo位置在左下角时left和bottom参数生效。
 * 当Logo位置在右上角时right和top参数生效，以此类推。
 
-说明
+**说明** 
 
 在调整设置地图边界与Logo之间的间距时，请避免隐藏或遮盖Logo。
 
@@ -1450,21 +1362,19 @@ setLogoPadding(padding: mapCommon.Padding): void
 
 **示例：**
 
-```
-1. let padding: mapCommon.Padding = {
-2. left: 0,
-3. bottom: 50
-4. };
-5. this.mapController.setLogoPadding(padding);
+```typescript
+let padding: mapCommon.Padding = {
+  left: 0,
+  bottom: 50
+};
+this.mapController.setLogoPadding(padding);
 ```
 
 ### getScalePerPixel
 
-PhonePC/2in1TabletWearable
-
 getScalePerPixel(): number
 
-获取当前缩放级别下，地图上1像素点对应的长度，单位：米。
+获取当前缩放级别下，地图上1个像素点对应的长度，单位：m。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1478,17 +1388,15 @@ getScalePerPixel(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 地图上1像素点对应的长度，单位：米。 |
+| number | 地图上1个像素点对应的长度，单位：m。当地图对象不存在或者销毁时返回0。 |
 
 **示例：**
 
-```
-1. let scalePerPixel: number = this.mapController.getScalePerPixel();
+```typescript
+let scalePerPixel: number = this.mapController.getScalePerPixel();
 ```
 
 ### addMarker
-
-PhonePC/2in1TabletWearable
 
 addMarker(options: mapCommon.MarkerOptions): Promise<Marker>
 
@@ -1522,36 +1430,34 @@ addMarker(options: mapCommon.MarkerOptions): Promise<Marker>
 | --- | --- |
 | 401 | Invalid input parameter. |
 | 1002601001 | The object to be operated does not exist. |
-| 1002601005 | Failed to generate the icon of the customized component.  **说明：**  从6.0.0(20)版本开始。 |
+| 1002601005 | Failed to generate the icon of the customized component.  适用版本：6.0.0(20)+ |
 
 **示例：**
 
-```
-1. // Marker初始化参数
-2. let markerOptions: mapCommon.MarkerOptions = {
-3. position: {
-4. latitude: 39.9,
-5. longitude: 116.4
-6. },
-7. rotation: 0,
-8. visible: true,
-9. zIndex: 0,
-10. alpha: 1,
-11. anchorU: 0.5,
-12. anchorV: 1,
-13. clickable: true,
-14. draggable: true,
-15. flat: false,
-16. // 图标存放在resources/rawfile
-17. icon: 'test.png'
-18. };
-19. // 在地图上添加一个marker
-20. let marker: map.Marker = await this.mapController.addMarker(markerOptions);
+```typescript
+// Marker初始化参数
+let markerOptions: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 39.9,
+    longitude: 116.4
+  },
+  rotation: 0,
+  visible: true,
+  zIndex: 0,
+  alpha: 1,
+  anchorU: 0.5,
+  anchorV: 1,
+  clickable: true,
+  draggable: true,
+  flat: false,
+  // 图标存放在resources/rawfile
+  icon: 'test.png'
+};
+// 在地图上添加一个marker
+let marker: map.Marker = await this.mapController.addMarker(markerOptions);
 ```
 
 ### addCircle
-
-PhonePC/2in1TabletWearable
 
 addCircle(options: mapCommon.MapCircleOptions): Promise<MapCircle>
 
@@ -1588,36 +1494,34 @@ addCircle(options: mapCommon.MapCircleOptions): Promise<MapCircle>
 
 **示例：**
 
-```
-1. // Circle初始化参数
-2. let mapCircleOptions: mapCommon.MapCircleOptions = {
-3. center: {
-4. latitude: 39.9,
-5. longitude: 116.4
-6. },
-7. patterns: [{
-8. type: 0,
-9. length: 100
-10. }, {
-11. type: 1,
-12. length: 100
-13. }, {
-14. type: 2,
-15. length: 100
-16. }],
-17. radius: 700,
-18. fillColor: 0XFF00FFFF,
-19. strokeColor: 0xFFFF0000,
-20. strokeWidth: 10,
-21. zIndex: 15
-22. };
-23. // 在地图上添加一个Circle
-24. let mapCircle: map.MapCircle = await this.mapController.addCircle(mapCircleOptions);
+```typescript
+// Circle初始化参数
+let mapCircleOptions: mapCommon.MapCircleOptions = {
+  center: {
+    latitude: 39.9,
+    longitude: 116.4
+  },
+  patterns: [{
+    type: 0,
+    length: 100
+  }, {
+    type: 1,
+    length: 100
+  }, {
+    type: 2,
+    length: 100
+  }],
+  radius: 700,
+  fillColor: 0XFF00FFFF,
+  strokeColor: 0xFFFF0000,
+  strokeWidth: 10,
+  zIndex: 15
+};
+// 在地图上添加一个Circle
+let mapCircle: map.MapCircle = await this.mapController.addCircle(mapCircleOptions);
 ```
 
 ### addPolyline
-
-PhonePC/2in1TabletWearable
 
 addPolyline(options: mapCommon.MapPolylineOptions): Promise<MapPolyline>
 
@@ -1654,35 +1558,33 @@ addPolyline(options: mapCommon.MapPolylineOptions): Promise<MapPolyline>
 
 **示例：**
 
-```
-1. // 初始化参数
-2. let polylineOption: mapCommon.MapPolylineOptions = {
-3. // 折线坐标点，必传
-4. points: [{
-5. latitude: 31.984410,
-6. longitude: 118.7662537
-7. }, {
-8. latitude: 31.084410,
-9. longitude: 118.0662537
-10. }],
-11. clickable: true,
-12. color: 0xff000000,
-13. startCap: mapCommon.CapStyle.BUTT,
-14. endCap: mapCommon.CapStyle.BUTT,
-15. geodesic: false,
-16. jointType: mapCommon.JointType.DEFAULT,
-17. visible: true,
-18. width: 10,
-19. zIndex: 0,
-20. gradient: false
-21. };
-22. // 在地图上添加一条折线
-23. let mapPolyline: map.MapPolyline = await this.mapController.addPolyline(polylineOption);
+```typescript
+// 初始化参数
+let polylineOption: mapCommon.MapPolylineOptions = {
+  // 折线坐标点，必传
+  points: [{
+    latitude: 31.984410,
+    longitude: 118.7662537
+  }, {
+    latitude: 31.084410,
+    longitude: 118.0662537
+  }],
+  clickable: true,
+  color: 0xff000000,
+  startCap: mapCommon.CapStyle.BUTT,
+  endCap: mapCommon.CapStyle.BUTT,
+  geodesic: false,
+  jointType: mapCommon.JointType.DEFAULT,
+  visible: true,
+  width: 10,
+  zIndex: 0,
+  gradient: false
+};
+// 在地图上添加一条折线
+let mapPolyline: map.MapPolyline = await this.mapController.addPolyline(polylineOption);
 ```
 
 ### addPolygon
-
-PhonePC/2in1TabletWearable
 
 addPolygon(options: mapCommon.MapPolygonOptions): Promise<MapPolygon>
 
@@ -1719,39 +1621,37 @@ addPolygon(options: mapCommon.MapPolygonOptions): Promise<MapPolygon>
 
 **示例：**
 
-```
-1. // 初始化参数
-2. let polygonOptions: mapCommon.MapPolygonOptions = {
-3. // 多边形坐标点，必传
-4. points: [{
-5. latitude: 31.98441,
-6. longitude: 118.066253
-7. }, {
-8. latitude: 31.98441,
-9. longitude: 118.766253
-10. }, {
-11. latitude: 32.98441,
-12. longitude: 118.766253
-13. }, {
-14. latitude: 32.98441,
-15. longitude: 118.066253
-16. }],
-17. clickable: true,
-18. fillColor: 0xff00DE00,
-19. geodesic: false,
-20. strokeColor: 0xff000000,
-21. jointType: mapCommon.JointType.DEFAULT,
-22. strokeWidth: 10,
-23. visible: true,
-24. zIndex: 10
-25. };
-26. // 在地图上添加一个多边形
-27. let mapPolygon: map.MapPolygon = await this.mapController.addPolygon(polygonOptions);
+```typescript
+// 初始化参数
+let polygonOptions: mapCommon.MapPolygonOptions = {
+  // 多边形坐标点，必传
+  points: [{
+    latitude: 31.98441,
+    longitude: 118.066253
+  }, {
+    latitude: 31.98441,
+    longitude: 118.766253
+  }, {
+    latitude: 32.98441,
+    longitude: 118.766253
+  }, {
+    latitude: 32.98441,
+    longitude: 118.066253
+  }],
+  clickable: true,
+  fillColor: 0xff00DE00,
+  geodesic: false,
+  strokeColor: 0xff000000,
+  jointType: mapCommon.JointType.DEFAULT,
+  strokeWidth: 10,
+  visible: true,
+  zIndex: 10
+};
+// 在地图上添加一个多边形
+let mapPolygon: map.MapPolygon = await this.mapController.addPolygon(polygonOptions);
 ```
 
 ### addPointAnnotation
-
-PhonePC/2in1TabletWearable
 
 addPointAnnotation(params: mapCommon.PointAnnotationParams): Promise<PointAnnotation>
 
@@ -1788,59 +1688,57 @@ addPointAnnotation(params: mapCommon.PointAnnotationParams): Promise<PointAnnota
 
 **示例：**
 
-```
-1. let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
-2. // 定义点注释图标锚点
-3. position: {
-4. latitude: 39.918,
-5. longitude: 116.397
-6. },
-7. // 定义点注释名称与地图POI名称相同时，是否支持去重
-8. repeatable: true,
-9. // 定义点注释的碰撞规则
-10. collisionRule: mapCommon.CollisionRule.NAME,
-11. // 定义点注释的标题，数组长度最小为1，最大为3
-12. titles: [{
-13. // 定义标题内容
-14. content: "Title1",
-15. // 定义标题字体颜色
-16. color: 0xFF000000,
-17. // 定义标题字体大小
-18. fontSize: 15,
-19. // 定义标题描边颜色
-20. strokeColor: 0xFFFFFFFF,
-21. // 定义标题描边宽度
-22. strokeWidth: 2,
-23. // 定义标题字体样式
-24. fontStyle: mapCommon.FontStyle.ITALIC
-25. }],
-26. // 定义点注释的图标，图标存放在resources/rawfile
-27. icon: "icon/avocado.png",
-28. // 定义点注释是否展示图标
-29. showIcon: true,
-30. // 定义点注释的锚点在水平方向上的位置
-31. anchorU: 0.5,
-32. // 定义点注释的锚点在垂直方向上的位置
-33. anchorV: 1,
-34. // 定义点注释的显示属性，为true时，在被碰撞后仍能显示
-35. forceVisible: false,
-36. // 定义碰撞优先级，数值越大，优先级越低
-37. priority: 3,
-38. // 定义点注释展示的最小层级
-39. minZoom: 2,
-40. // 定义点注释展示的最大层级
-41. maxZoom: 20,
-42. // 定义点注释是否可见
-43. visible: true,
-44. // 定义点注释叠加层级属性
-45. zIndex: 10
-46. };
-47. let pointAnnotation: map.PointAnnotation = await this.mapController.addPointAnnotation(pointAnnotationOptions);
+```typescript
+let pointAnnotationOptions: mapCommon.PointAnnotationParams = {
+  // 定义点注释图标锚点
+  position: {
+    latitude: 39.918,
+    longitude: 116.397
+  },
+  // 定义点注释名称与地图POI名称相同时，是否支持去重
+  repeatable: true,
+  // 定义点注释的碰撞规则
+  collisionRule: mapCommon.CollisionRule.NAME,
+  // 定义点注释的标题，数组长度最小为1，最大为3
+  titles: [{
+    // 定义标题内容
+    content: "Title1",
+    // 定义标题字体颜色
+    color: 0xFF000000,
+    // 定义标题字体大小
+    fontSize: 15,
+    // 定义标题描边颜色
+    strokeColor: 0xFFFFFFFF,
+    // 定义标题描边宽度
+    strokeWidth: 2,
+    // 定义标题字体样式
+    fontStyle: mapCommon.FontStyle.ITALIC
+  }],
+  // 定义点注释的图标，图标存放在resources/rawfile
+  icon: "icon/avocado.png",
+  // 定义点注释是否展示图标
+  showIcon: true,
+  // 定义点注释的锚点在水平方向上的位置
+  anchorU: 0.5,
+  // 定义点注释的锚点在垂直方向上的位置
+  anchorV: 1,
+  // 定义点注释的显示属性，为true时，在被碰撞后仍能显示
+  forceVisible: false,
+  // 定义碰撞优先级，数值越大，优先级越低
+  priority: 3,
+  // 定义点注释展示的最小层级
+  minZoom: 2,
+  // 定义点注释展示的最大层级
+  maxZoom: 20,
+  // 定义点注释是否可见
+  visible: true,
+  // 定义点注释叠加层级属性
+  zIndex: 10
+};
+let pointAnnotation: map.PointAnnotation = await this.mapController.addPointAnnotation(pointAnnotationOptions);
 ```
 
 ### addBubble
-
-PhonePC/2in1TabletWearable
 
 addBubble(params: mapCommon.BubbleParams): Promise<Bubble>
 
@@ -1877,36 +1775,34 @@ addBubble(params: mapCommon.BubbleParams): Promise<Bubble>
 
 **示例：**
 
-```
-1. let bubbleOptions: mapCommon.BubbleParams = {
-2. // 气泡位置
-3. positions: [[{ latitude: 31, longitude: 118 }]],
-4. // 气泡图标，需要传4个方向的图标，图标存放在resources/rawfile
-5. icons: [
-6. 'icon.png',
-7. 'icon.png',
-8. 'icon.png',
-9. 'icon.png'
-10. ],
-11. // 定义气泡的显示属性，为true时，在被碰撞后仍能显示
-12. forceVisible: true,
-13. // 定义气泡碰撞优先级，数值越大，优先级越低
-14. priority: 3,
-15. // 定义气泡展示的最小层级
-16. minZoom: 2,
-17. // 定义气泡展示的最大层级
-18. maxZoom: 20,
-19. // 定义气泡是否可见
-20. visible: true,
-21. // 定义气泡叠加层级属性
-22. zIndex: 1
-23. };
-24. let bubble: map.Bubble = await this.mapController.addBubble(bubbleOptions);
+```typescript
+let bubbleOptions: mapCommon.BubbleParams = {
+  // 气泡位置
+  positions: [[{ latitude: 31, longitude: 118 }]],
+  // 气泡图标，需要传4个方向的图标，图标存放在resources/rawfile
+  icons: [
+    'icon.png',
+    'icon.png',
+    'icon.png',
+    'icon.png'
+  ],
+  // 定义气泡的显示属性，为true时，在被碰撞后仍能显示
+  forceVisible: true,
+  // 定义气泡碰撞优先级，数值越大，优先级越低
+  priority: 3,
+  // 定义气泡展示的最小层级
+  minZoom: 2,
+  // 定义气泡展示的最大层级
+  maxZoom: 20,
+  // 定义气泡是否可见
+  visible: true,
+  // 定义气泡叠加层级属性
+  zIndex: 1
+};
+let bubble: map.Bubble = await this.mapController.addBubble(bubbleOptions);
 ```
 
 ### setPadding
-
-PhonePC/2in1TabletWearable
 
 setPadding(padding?: mapCommon.Padding): void
 
@@ -1928,18 +1824,16 @@ setPadding(padding?: mapCommon.Padding): void
 
 **示例：**
 
-```
-1. // 初始化参数，左边距0，底边距50
-2. let padding: mapCommon.Padding = {
-3. left: 0,
-4. bottom: 50
-5. };
-6. this.mapController.setPadding(padding);
+```typescript
+// 初始化参数，左边距0，底边距50
+let padding: mapCommon.Padding = {
+  left: 0,
+  bottom: 50
+};
+this.mapController.setPadding(padding);
 ```
 
 ### getProjection
-
-PhonePC/2in1TabletWearable
 
 getProjection(): Projection
 
@@ -1961,13 +1855,11 @@ getProjection(): Projection
 
 **示例：**
 
-```
-1. let projection: map.Projection = this.mapController.getProjection();
+```typescript
+let projection: map.Projection = this.mapController.getProjection();
 ```
 
 ### setCustomMapStyle
-
-PhonePC/2in1TabletWearable
 
 setCustomMapStyle(customMapStyleOptions: mapCommon.CustomMapStyleOptions): Promise<void>
 
@@ -2004,17 +1896,15 @@ setCustomMapStyle(customMapStyleOptions: mapCommon.CustomMapStyleOptions): Promi
 
 **示例：**
 
-```
-1. // styleId需要替换为您自己的样式ID，样式ID可在Petal Maps Studio平台上创建
-2. let param: mapCommon.CustomMapStyleOptions = {
-3. styleId: "xxxxxxx"
-4. };
-5. await this.mapController.setCustomMapStyle(param);
+```typescript
+// styleId需要替换为您自己的样式ID，样式ID可在Petal Maps Studio平台上创建
+let param: mapCommon.CustomMapStyleOptions = {
+  styleId: "xxxxxxx"
+};
+await this.mapController.setCustomMapStyle(param);
 ```
 
 ### getDayNightMode
-
-PhonePC/2in1TabletWearable
 
 getDayNightMode(): mapCommon.DayNightMode
 
@@ -2032,17 +1922,15 @@ getDayNightMode(): mapCommon.DayNightMode
 
 | 类型 | 说明 |
 | --- | --- |
-| [mapCommon.DayNightMode](map-common.md#daynightmode) | 日间夜间模式。 |
+| [mapCommon.DayNightMode](map-common.md#daynightmode) | 日间夜间模式。  - DayNightMode.DAY：日间模式。  - DayNightMode.NIGHT：夜间模式。  - DayNightMode.AUTO：自动模式，如果系统打开深色开关，显示夜间模式，否则显示日间模式。  当地图对象不存在或者销毁时，返回[mapCommon.DayNightMode.DAY](map-common.md#daynightmode)。 |
 
 **示例：**
 
-```
-1. let mode = this.mapController.getDayNightMode();
+```typescript
+let mode = this.mapController.getDayNightMode();
 ```
 
 ### setDayNightMode
-
-PhonePC/2in1TabletWearable
 
 setDayNightMode(mode: mapCommon.DayNightMode): void
 
@@ -2064,13 +1952,11 @@ setDayNightMode(mode: mapCommon.DayNightMode): void
 
 **示例：**
 
-```
-1. this.mapController.setDayNightMode(mapCommon.DayNightMode.AUTO);
+```typescript
+this.mapController.setDayNightMode(mapCommon.DayNightMode.AUTO);
 ```
 
 ### getMapType
-
-PhonePC/2in1TabletWearable
 
 getMapType(): mapCommon.MapType
 
@@ -2088,17 +1974,15 @@ getMapType(): mapCommon.MapType
 
 | **类型** | **说明** |
 | --- | --- |
-| [mapCommon.MapType](map-common.md#maptype) | 查询地图的类型。 |
+| [mapCommon.MapType](map-common.md#maptype) | 查询地图的类型，当地图对象不存在或者销毁时，返回[mapCommon.MapType.STANDARD](map-common.md#maptype)。 |
 
 **示例：**
 
-```
-1. let mapType = this.mapController.getMapType();
+```typescript
+let mapType = this.mapController.getMapType();
 ```
 
 ### setMapType
-
-PhonePC/2in1TabletWearable
 
 setMapType(mapType: mapCommon.MapType): void
 
@@ -2120,13 +2004,11 @@ setMapType(mapType: mapCommon.MapType): void
 
 **示例：**
 
-```
-1. this.mapController.setMapType(mapCommon.MapType.TERRAIN);
+```typescript
+this.mapController.setMapType(mapCommon.MapType.TERRAIN);
 ```
 
 ### setScalePosition
-
-PhonePC/2in1TabletWearable
 
 setScalePosition(point: mapCommon.MapPoint): void
 
@@ -2148,19 +2030,17 @@ setScalePosition(point: mapCommon.MapPoint): void
 
 **示例：**
 
-```
-1. let point: mapCommon.MapPoint = {
-2. // 以当前地图组件左上角为原点，向右移动1000
-3. positionX: 1000,
-4. // 以当前地图组件左上角为原点，向下移动1000
-5. positionY: 1000
-6. };
-7. this.mapController.setScalePosition(point);
+```typescript
+let point: mapCommon.MapPoint = {
+  // 以当前地图组件左上角为原点，向右移动1000
+  positionX: 1000,
+  // 以当前地图组件左上角为原点，向下移动1000
+  positionY: 1000
+};
+this.mapController.setScalePosition(point);
 ```
 
 ### getScaleLevel
-
-PhonePC/2in1TabletWearable
 
 getScaleLevel(): number
 
@@ -2178,17 +2058,15 @@ getScaleLevel(): number
 
 | **类型** | **说明** |
 | --- | --- |
-| number | 接口返回比例尺上的文本数字，单位：米。 |
+| number | 接口返回比例尺上的文本数字，单位：m。当地图对象不存在或者销毁时，返回0。 |
 
 **示例：**
 
-```
-1. let level = this.mapController.getScaleLevel();
+```typescript
+let level = this.mapController.getScaleLevel();
 ```
 
 ### setCompassPosition
-
-PhonePC/2in1TabletWearable
 
 setCompassPosition(point: mapCommon.MapPoint): void
 
@@ -2210,17 +2088,15 @@ setCompassPosition(point: mapCommon.MapPoint): void
 
 **示例：**
 
-```
-1. let point: mapCommon.MapPoint = {
-2. positionX: 10,
-3. positionY: 10
-4. };
-5. this.mapController.setCompassPosition(point);
+```typescript
+let point: mapCommon.MapPoint = {
+  positionX: 10,
+  positionY: 10
+};
+this.mapController.setCompassPosition(point);
 ```
 
 ### setAllGesturesEnabled
-
-PhonePC/2in1TabletWearable
 
 setAllGesturesEnabled(enabled: boolean): void
 
@@ -2242,13 +2118,11 @@ setAllGesturesEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setAllGesturesEnabled(true);
+```typescript
+this.mapController.setAllGesturesEnabled(true);
 ```
 
 ### getScaleControlsHeight
-
-PhonePC/2in1TabletWearable
 
 getScaleControlsHeight(): number
 
@@ -2270,13 +2144,11 @@ getScaleControlsHeight(): number
 
 **示例：**
 
-```
-1. let height = this.mapController.getScaleControlsHeight();
+```typescript
+let height = this.mapController.getScaleControlsHeight();
 ```
 
 ### getScaleControlsWidth
-
-PhonePC/2in1TabletWearable
 
 getScaleControlsWidth(): number
 
@@ -2298,13 +2170,11 @@ getScaleControlsWidth(): number
 
 **示例：**
 
-```
-1. let width = this.mapController.getScaleControlsWidth();
+```typescript
+let width = this.mapController.getScaleControlsWidth();
 ```
 
 ### setAlwaysShowScaleEnabled
-
-PhonePC/2in1TabletWearable
 
 setAlwaysShowScaleEnabled(enabled: boolean): void
 
@@ -2326,13 +2196,11 @@ setAlwaysShowScaleEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setAlwaysShowScaleEnabled(true);
+```typescript
+this.mapController.setAlwaysShowScaleEnabled(true);
 ```
 
 ### isAlwaysShowScaleEnabled
-
-PhonePC/2in1TabletWearable
 
 isAlwaysShowScaleEnabled(): boolean
 
@@ -2354,13 +2222,11 @@ isAlwaysShowScaleEnabled(): boolean
 
 **示例：**
 
-```
-1. let scaleEnabled: boolean = this.mapController.isAlwaysShowScaleEnabled();
+```typescript
+let scaleEnabled: boolean = this.mapController.isAlwaysShowScaleEnabled();
 ```
 
 ### addClusterOverlay
-
-PhonePC/2in1TabletWearable
 
 addClusterOverlay(params: mapCommon.ClusterOverlayParams): Promise<ClusterOverlay>
 
@@ -2397,30 +2263,28 @@ addClusterOverlay(params: mapCommon.ClusterOverlayParams): Promise<ClusterOverla
 
 **示例：**
 
-```
-1. let clusterItem1: mapCommon.ClusterItem = {
-2. position: {
-3. latitude: 31.98,
-4. longitude: 118.766
-5. }
-6. };
-7. let clusterItem2: mapCommon.ClusterItem = {
-8. position: {
-9. latitude: 31.68,
-10. longitude: 118.366
-11. }
-12. };
-13. let array: Array<mapCommon.ClusterItem> = [
-14. clusterItem1,
-15. clusterItem2
-16. ];
-17. let clusterOverlayParams: mapCommon.ClusterOverlayParams = { distance: 40, clusterItems: array };
-18. let clusterOverlay: map.ClusterOverlay = await this.mapController.addClusterOverlay(clusterOverlayParams);
+```typescript
+let clusterItem1: mapCommon.ClusterItem = {
+  position: {
+    latitude: 31.98,
+    longitude: 118.766
+  }
+};
+let clusterItem2: mapCommon.ClusterItem = {
+  position: {
+    latitude: 31.68,
+    longitude: 118.366
+  }
+};
+let array: Array<mapCommon.ClusterItem> = [
+  clusterItem1,
+  clusterItem2
+];
+let clusterOverlayParams: mapCommon.ClusterOverlayParams = { distance: 40, clusterItems: array };
+let clusterOverlay: map.ClusterOverlay = await this.mapController.addClusterOverlay(clusterOverlayParams);
 ```
 
 ### addImageOverlay
-
-PhonePC/2in1TabletWearable
 
 addImageOverlay(params: mapCommon.ImageOverlayParams): Promise<ImageOverlay>
 
@@ -2457,32 +2321,30 @@ addImageOverlay(params: mapCommon.ImageOverlayParams): Promise<ImageOverlay>
 
 **示例：**
 
-```
-1. let imageOverlayParams: mapCommon.ImageOverlayParams = {
-2. bounds: {
-3. southwest: { latitude: 32, longitude: 118 },
-4. northeast: { latitude: 32.4, longitude: 118.4 }
-5. },
-6. // 图标需存放在resources/rawfile目录下
-7. image: 'icon/icon.png',
-8. transparency: 0.3,
-9. zIndex: 101,
-10. anchorU: 0.5,
-11. anchorV: 0.5,
-12. clickable: true,
-13. visible: true,
-14. bearing: 0
-15. };
-16. let imageOverlay = await this.mapController?.addImageOverlay(imageOverlayParams);
+```typescript
+let imageOverlayParams: mapCommon.ImageOverlayParams = {
+  bounds: {
+    southwest: { latitude: 32, longitude: 118 },
+    northeast: { latitude: 32.4, longitude: 118.4 }
+  },
+  // 图标需存放在resources/rawfile目录下
+  image: 'icon/icon.png',
+  transparency: 0.3,
+  zIndex: 101,
+  anchorU: 0.5,
+  anchorV: 0.5,
+  clickable: true,
+  visible: true,
+  bearing: 0
+};
+let imageOverlay = await this.mapController?.addImageOverlay(imageOverlayParams);
 ```
 
 ### snapshot
 
-PhonePC/2in1TabletWearable
-
 snapshot(): Promise<image.PixelMap>
 
-生成地图快照。使用Promise异步回调。
+生成地图快照。使用Promise异步回调，调用时建议增加3s超时防护。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2500,15 +2362,13 @@ snapshot(): Promise<image.PixelMap>
 
 **示例：**
 
-```
-1. import { image } from '@kit.ImageKit';
+```typescript
+import { image } from '@kit.ImageKit';
 
-3. let image: image.PixelMap = await this.mapController.snapshot();
+let image: image.PixelMap = await this.mapController.snapshot();
 ```
 
 ### addBuildingOverlay
-
-PhonePC/2in1TabletWearable
 
 addBuildingOverlay(params: mapCommon.BuildingOverlayParams): Promise<BuildingOverlay>
 
@@ -2545,175 +2405,173 @@ addBuildingOverlay(params: mapCommon.BuildingOverlayParams): Promise<BuildingOve
 
 **示例：**
 
-```
-1. let points: Array<mapCommon.LatLng> = [
-2. {
-3. latitude: 31.984794,
-4. longitude: 118.765865
-5. },
-6. {
-7. latitude: 31.98468,
-8. longitude: 118.766076
-9. },
-10. {
-11. latitude: 31.98472,
-12. longitude: 118.766116
-13. },
-14. {
-15. latitude: 31.98463,
-16. longitude: 118.766292
-17. },
-18. {
-19. latitude: 31.984586,
-20. longitude: 118.766251
-21. },
-22. {
-23. latitude: 31.984536,
-24. longitude: 118.766344
-25. },
-26. {
-27. latitude: 31.984633,
-28. longitude: 118.766446
-29. },
-30. {
-31. latitude: 31.9848,
-32. longitude: 118.766285
-33. },
-34. {
-35. latitude: 31.984925,
-36. longitude: 118.766312
-37. },
-38. {
-39. latitude: 31.985282,
-40. longitude: 118.766661
-41. },
-42. {
-43. latitude: 31.985438,
-44. longitude: 118.766419
-45. },
-46. {
-47. latitude: 31.985801,
-48. longitude: 118.766755
-49. },
-50. {
-51. latitude: 31.985856,
-52. longitude: 118.766504
-53. },
-54. {
-55. latitude: 31.985785,
-56. longitude: 118.766434
-57. },
-58. {
-59. latitude: 31.985821,
-60. longitude: 118.766278
-61. },
-62. {
-63. latitude: 31.985897,
-64. longitude: 118.766311
-65. },
-66. {
-67. latitude: 31.985944,
-68. longitude: 118.766095
-69. },
-70. {
-71. latitude: 31.985909,
-72. longitude: 118.766069
-73. },
-74. {
-75. latitude: 31.985794,
-76. longitude: 118.765989
-77. },
-78. {
-79. latitude: 31.9857,
-80. longitude: 118.766029
-81. },
-82. {
-83. latitude: 31.985658,
-84. longitude: 118.766164
-85. },
-86. {
-87. latitude: 31.985647,
-88. longitude: 118.766271
-89. },
-90. {
-91. latitude: 31.985574,
-92. longitude: 118.766297
-93. },
-94. {
-95. latitude: 31.985458,
-96. longitude: 118.766285
-97. },
-98. {
-99. latitude: 31.985271,
-100. longitude: 118.766002
-101. },
-102. {
-103. latitude: 31.985219,
-104. longitude: 118.766002
-105. },
-106. {
-107. latitude: 31.985135,
-108. longitude: 118.766029
-109. },
-110. {
-111. latitude: 31.985093,
-112. longitude: 118.766083
-113. },
-114. {
-115. latitude: 31.985019,
-116. longitude: 118.766109
-117. },
-118. {
-119. latitude: 31.984978,
-120. longitude: 118.766083
-121. },
-122. {
-123. latitude: 31.984794,
-124. longitude: 118.765865
-125. }
-126. ];
-127. points.reverse();
-128. // 3D建筑参数
-129. let buildingOverlayOptions: mapCommon.BuildingOverlayParams =
-130. {
-131. // 3D建筑的范围参数（点为顺时针绘制）
-132. points: points,
-133. // 3D建筑的高度
-134. totalHeight: 51,
-135. // 3D建筑的选中楼层高度
-136. floorBottomHeight: 33,
-137. // 3D建筑的顶部颜色
-138. topFaceColor: 0xffa4b8f7,
-139. // 3D建筑的侧面颜色
-140. sideFaceColor: 0x44a4b8f7,
-141. // 3D建筑的选中楼层颜色
-142. floorColor: 0xff000000,
-143. // 3D建筑的展示层级
-144. showLevel: 14,
-145. // 3D建筑选中楼层从底部升起的动画时长
-146. animationDuration: 5000,
-147. // 3D建筑侧面的纹理
-148. sideTexture: { image: $r("app.media.side_tex"), height: 3, width: 3 },
-149. // 3D建筑选中楼层的纹理
-150. floorTexture: { image: $r("app.media.floor_tex"), height: 3, width: 3 }
-151. };
-152. let cameraUpdate = map.newCameraPosition({
-153. target: {
-154. latitude: 31.984794,
-155. longitude: 118.765865
-156. },
-157. zoom: 18,
-158. tilt: 70
-159. });
-160. // 将地图镜头移动到3D建筑区域
-161. this.mapController?.moveCamera(cameraUpdate);
-162. // 新建3D建筑
-163. let buildingOverlay: map.BuildingOverlay = await this.mapController?.addBuildingOverlay(buildingOverlayOptions);
+```typescript
+let points: Array<mapCommon.LatLng> = [
+  {
+    latitude: 31.984794,
+    longitude: 118.765865
+  },
+  {
+    latitude: 31.98468,
+    longitude: 118.766076
+  },
+  {
+    latitude: 31.98472,
+    longitude: 118.766116
+  },
+  {
+    latitude: 31.98463,
+    longitude: 118.766292
+  },
+  {
+    latitude: 31.984586,
+    longitude: 118.766251
+  },
+  {
+    latitude: 31.984536,
+    longitude: 118.766344
+  },
+  {
+    latitude: 31.984633,
+    longitude: 118.766446
+  },
+  {
+    latitude: 31.9848,
+    longitude: 118.766285
+  },
+  {
+    latitude: 31.984925,
+    longitude: 118.766312
+  },
+  {
+    latitude: 31.985282,
+    longitude: 118.766661
+  },
+  {
+    latitude: 31.985438,
+    longitude: 118.766419
+  },
+  {
+    latitude: 31.985801,
+    longitude: 118.766755
+  },
+  {
+    latitude: 31.985856,
+    longitude: 118.766504
+  },
+  {
+    latitude: 31.985785,
+    longitude: 118.766434
+  },
+  {
+    latitude: 31.985821,
+    longitude: 118.766278
+  },
+  {
+    latitude: 31.985897,
+    longitude: 118.766311
+  },
+  {
+    latitude: 31.985944,
+    longitude: 118.766095
+  },
+  {
+    latitude: 31.985909,
+    longitude: 118.766069
+  },
+  {
+    latitude: 31.985794,
+    longitude: 118.765989
+  },
+  {
+    latitude: 31.9857,
+    longitude: 118.766029
+  },
+  {
+    latitude: 31.985658,
+    longitude: 118.766164
+  },
+  {
+    latitude: 31.985647,
+    longitude: 118.766271
+  },
+  {
+    latitude: 31.985574,
+    longitude: 118.766297
+  },
+  {
+    latitude: 31.985458,
+    longitude: 118.766285
+  },
+  {
+    latitude: 31.985271,
+    longitude: 118.766002
+  },
+  {
+    latitude: 31.985219,
+    longitude: 118.766002
+  },
+  {
+    latitude: 31.985135,
+    longitude: 118.766029
+  },
+  {
+    latitude: 31.985093,
+    longitude: 118.766083
+  },
+  {
+    latitude: 31.985019,
+    longitude: 118.766109
+  },
+  {
+    latitude: 31.984978,
+    longitude: 118.766083
+  },
+  {
+    latitude: 31.984794,
+    longitude: 118.765865
+  }
+];
+points.reverse();
+// 3D建筑参数
+let buildingOverlayOptions: mapCommon.BuildingOverlayParams =
+  {
+    // 3D建筑的范围参数（点为顺时针绘制）
+    points: points,
+    // 3D建筑的高度
+    totalHeight: 51,
+    // 3D建筑的选中楼层高度
+    floorBottomHeight: 33,
+    // 3D建筑的顶部颜色
+    topFaceColor: 0xffa4b8f7,
+    // 3D建筑的侧面颜色
+    sideFaceColor: 0x44a4b8f7,
+    // 3D建筑的选中楼层颜色
+    floorColor: 0xff000000,
+    // 3D建筑的展示层级
+    showLevel: 14,
+    // 3D建筑选中楼层从底部升起的动画时长
+    animationDuration: 5000,
+    // 3D建筑侧面的纹理
+    sideTexture: { image: $r("app.media.side_tex"), height: 3, width: 3 },
+    // 3D建筑选中楼层的纹理
+    floorTexture: { image: $r("app.media.floor_tex"), height: 3, width: 3 }
+  };
+let cameraUpdate = map.newCameraPosition({
+  target: {
+    latitude: 31.984794,
+    longitude: 118.765865
+  },
+  zoom: 18,
+  tilt: 70
+});
+// 将地图镜头移动到3D建筑区域
+this.mapController?.moveCamera(cameraUpdate);
+// 新建3D建筑
+let buildingOverlay: map.BuildingOverlay = await this.mapController?.addBuildingOverlay(buildingOverlayOptions);
 ```
 
 ### addTraceOverlay
-
-PhonePC/2in1TabletWearable
 
 addTraceOverlay(params: mapCommon.TraceOverlayParams, markers?: Array<Marker>): Promise<TraceOverlay>
 
@@ -2751,151 +2609,149 @@ addTraceOverlay(params: mapCommon.TraceOverlayParams, markers?: Array<Marker>): 
 
 **示例：**
 
-```
-1. // marker1的参数
-2. let markerOptions1: mapCommon.MarkerOptions = {
-3. position: {
-4. latitude: 31.99227173519985,
-5. longitude: 118.7622219990476
-6. },
-7. // 图标需存放在resources/base/media目录下
-8. icon: $r("app.media.track_setting_sport_map_marker_22"),
-9. anchorU: 0.5,
-10. anchorV: 1,
-11. visible: true
-12. };
-13. // 新增marker1
-14. let markerBoy1 = await this.mapController.addMarker(markerOptions1);
-15. let boyImages1: map.PlayImageAnimation = new map.PlayImageAnimation();
-16. boyImages1.setDuration(1000);
-17. let resourceArray: Array<Resource> = new Array();
-18. resourceArray.push($r("app.media.side_0"));
-19. resourceArray.push($r("app.media.side_1"));
-20. resourceArray.push($r("app.media.side_2"));
-21. resourceArray.push($r("app.media.side_3"));
-22. resourceArray.push($r("app.media.side_4"));
-23. resourceArray.push($r("app.media.side_5"));
-24. resourceArray.push($r("app.media.side_6"));
-25. resourceArray.push($r("app.media.side_7"));
-26. resourceArray.push($r("app.media.side_8"));
-27. resourceArray.push($r("app.media.side_9"));
-28. resourceArray.push($r("app.media.side_10"));
-29. resourceArray.push($r("app.media.side_11"));
-30. resourceArray.push($r("app.media.side_12"));
-31. resourceArray.push($r("app.media.side_13"));
-32. resourceArray.push($r("app.media.side_14"));
-33. resourceArray.push($r("app.media.side_15"));
-34. resourceArray.push($r("app.media.side_16"));
-35. resourceArray.push($r("app.media.side_17"));
-36. resourceArray.push($r("app.media.side_18"));
-37. resourceArray.push($r("app.media.side_19"));
-38. resourceArray.push($r("app.media.side_20"));
-39. await boyImages1.addImages(resourceArray);
-40. boyImages1.setRepeatCount(-1);
+```typescript
+// marker1的参数
+let markerOptions1: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 31.99227173519985,
+    longitude: 118.7622219990476
+  },
+  // 图标需存放在resources/base/media目录下
+  icon: $r("app.media.track_setting_sport_map_marker_22"),
+  anchorU: 0.5,
+  anchorV: 1,
+  visible: true
+};
+// 新增marker1
+let markerBoy1 = await this.mapController.addMarker(markerOptions1);
+let boyImages1: map.PlayImageAnimation = new map.PlayImageAnimation();
+boyImages1.setDuration(1000);
+let resourceArray: Array<Resource> = new Array();
+resourceArray.push($r("app.media.side_0"));
+resourceArray.push($r("app.media.side_1"));
+resourceArray.push($r("app.media.side_2"));
+resourceArray.push($r("app.media.side_3"));
+resourceArray.push($r("app.media.side_4"));
+resourceArray.push($r("app.media.side_5"));
+resourceArray.push($r("app.media.side_6"));
+resourceArray.push($r("app.media.side_7"));
+resourceArray.push($r("app.media.side_8"));
+resourceArray.push($r("app.media.side_9"));
+resourceArray.push($r("app.media.side_10"));
+resourceArray.push($r("app.media.side_11"));
+resourceArray.push($r("app.media.side_12"));
+resourceArray.push($r("app.media.side_13"));
+resourceArray.push($r("app.media.side_14"));
+resourceArray.push($r("app.media.side_15"));
+resourceArray.push($r("app.media.side_16"));
+resourceArray.push($r("app.media.side_17"));
+resourceArray.push($r("app.media.side_18"));
+resourceArray.push($r("app.media.side_19"));
+resourceArray.push($r("app.media.side_20"));
+await boyImages1.addImages(resourceArray);
+boyImages1.setRepeatCount(-1);
 
-42. // marker1添加动画
-43. markerBoy1.setAnimation(boyImages1);
-44. markerBoy1.startAnimation();
+// marker1添加动画
+markerBoy1.setAnimation(boyImages1);
+markerBoy1.startAnimation();
 
-46. // marker2的参数
-47. let markerOptions2: mapCommon.MarkerOptions = {
-48. position: {
-49. latitude: 31.99227173519985,
-50. longitude: 118.7622219990476
-51. },
-52. // 图标需存放在resources/base/media目录下
-53. icon: $r("app.media.track_setting_sport_map_marker_22"),
-54. anchorU: 0.5,
-55. anchorV: 1,
-56. visible: false
-57. };
-58. // 新增marker2
-59. let markerBoy2 = await this.mapController.addMarker(markerOptions2);
-60. let boyImages2: map.PlayImageAnimation = new map.PlayImageAnimation();
-61. boyImages2.setDuration(1000);
-62. let resourceArray2: Array<Resource> = new Array();
-63. resourceArray2.push($r("app.media.behavior_front_cycling_boy_000"));
-64. resourceArray2.push($r("app.media.behavior_front_cycling_boy_001"));
-65. resourceArray2.push($r("app.media.behavior_front_cycling_boy_002"));
-66. resourceArray2.push($r("app.media.behavior_front_cycling_boy_003"));
-67. resourceArray2.push($r("app.media.behavior_front_cycling_boy_004"));
-68. resourceArray2.push($r("app.media.behavior_front_cycling_boy_005"));
-69. resourceArray2.push($r("app.media.behavior_front_cycling_boy_006"));
-70. resourceArray2.push($r("app.media.behavior_front_cycling_boy_007"));
-71. resourceArray2.push($r("app.media.behavior_front_cycling_boy_008"));
-72. resourceArray2.push($r("app.media.behavior_front_cycling_boy_009"));
-73. resourceArray2.push($r("app.media.behavior_front_cycling_boy_010"));
-74. resourceArray2.push($r("app.media.behavior_front_cycling_boy_011"));
-75. resourceArray2.push($r("app.media.behavior_front_cycling_boy_012"));
-76. resourceArray2.push($r("app.media.behavior_front_cycling_boy_013"));
-77. resourceArray2.push($r("app.media.behavior_front_cycling_boy_014"));
-78. resourceArray2.push($r("app.media.behavior_front_cycling_boy_015"));
-79. resourceArray2.push($r("app.media.behavior_front_cycling_boy_016"));
-80. resourceArray2.push($r("app.media.behavior_front_cycling_boy_017"));
-81. resourceArray2.push($r("app.media.behavior_front_cycling_boy_018"));
-82. await boyImages2.addImages(resourceArray2);
-83. boyImages2.setRepeatCount(-1);
-84. // marker2添加动画
-85. markerBoy2.setAnimation(boyImages2);
-86. markerBoy2.startAnimation();
+// marker2的参数
+let markerOptions2: mapCommon.MarkerOptions = {
+  position: {
+    latitude: 31.99227173519985,
+    longitude: 118.7622219990476
+  },
+  // 图标需存放在resources/base/media目录下
+  icon: $r("app.media.track_setting_sport_map_marker_22"),
+  anchorU: 0.5,
+  anchorV: 1,
+  visible: false
+};
+// 新增marker2
+let markerBoy2 = await this.mapController.addMarker(markerOptions2);
+let boyImages2: map.PlayImageAnimation = new map.PlayImageAnimation();
+boyImages2.setDuration(1000);
+let resourceArray2: Array<Resource> = new Array();
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_000"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_001"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_002"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_003"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_004"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_005"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_006"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_007"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_008"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_009"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_010"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_011"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_012"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_013"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_014"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_015"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_016"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_017"));
+resourceArray2.push($r("app.media.behavior_front_cycling_boy_018"));
+await boyImages2.addImages(resourceArray2);
+boyImages2.setRepeatCount(-1);
+// marker2添加动画
+markerBoy2.setAnimation(boyImages2);
+markerBoy2.startAnimation();
 
-88. let points: Array<mapCommon.LatLng> = new Array();
-89. points.push({ latitude: 31.99685233070878, longitude: 118.75846023442728 });
-90. points.push({ latitude: 31.99671325810786, longitude: 118.75846738985165 });
-91. points.push({ latitude: 31.99659191076709, longitude: 118.7585347621686 });
-92. points.push({ latitude: 31.99648202537233, longitude: 118.7586266510386 });
-93. points.push({ latitude: 31.99637707201552, longitude: 118.75872004590596 });
-94. points.push({ latitude: 31.996278207010903, longitude: 118.75880449946251 });
-95. points.push({ latitude: 31.996187481969695, longitude: 118.7588781960278 });
-96. points.push({ latitude: 31.996092248919354, longitude: 118.75895330554488 });
-97. points.push({ latitude: 31.995962740450565, longitude: 118.75904721407304 });
-98. points.push({ latitude: 31.995792921394, longitude: 118.75916904998051 });
-99. points.push({ latitude: 31.995601885713416, longitude: 118.7593235241019 });
-100. points.push({ latitude: 31.995398221178277, longitude: 118.75949998588176 });
-101. points.push({ latitude: 31.995185902197715, longitude: 118.7596871082939 });
-102. points.push({ latitude: 31.994983473052656, longitude: 118.75987334062296 });
-103. points.push({ latitude: 31.99482433699269, longitude: 118.76002095184032 });
-104. points.push({ latitude: 31.994709073721708, longitude: 118.76012902920532 });
-105. points.push({ latitude: 31.99460732100702, longitude: 118.76023892576234 });
-106. points.push({ latitude: 31.99449284962087, longitude: 118.7603694232856 });
-107. points.push({ latitude: 31.99435358179254, longitude: 118.76053622438056 });
-108. points.push({ latitude: 31.99420771148339, longitude: 118.76072790126692 });
-109. points.push({ latitude: 31.994075194901523, longitude: 118.7609100960977 });
-110. points.push({ latitude: 31.993952686158877, longitude: 118.7610741329013 });
-111. points.push({ latitude: 31.993840180644217, longitude: 118.7612193418965 });
-112. points.push({ latitude: 31.993733787150244, longitude: 118.76135383115654 });
-113. points.push({ latitude: 31.993617206525155, longitude: 118.76150529647698 });
+let points: Array<mapCommon.LatLng> = new Array();
+points.push({ latitude: 31.99685233070878, longitude: 118.75846023442728 });
+points.push({ latitude: 31.99671325810786, longitude: 118.75846738985165 });
+points.push({ latitude: 31.99659191076709, longitude: 118.7585347621686 });
+points.push({ latitude: 31.99648202537233, longitude: 118.7586266510386 });
+points.push({ latitude: 31.99637707201552, longitude: 118.75872004590596 });
+points.push({ latitude: 31.996278207010903, longitude: 118.75880449946251 });
+points.push({ latitude: 31.996187481969695, longitude: 118.7588781960278 });
+points.push({ latitude: 31.996092248919354, longitude: 118.75895330554488 });
+points.push({ latitude: 31.995962740450565, longitude: 118.75904721407304 });
+points.push({ latitude: 31.995792921394, longitude: 118.75916904998051 });
+points.push({ latitude: 31.995601885713416, longitude: 118.7593235241019 });
+points.push({ latitude: 31.995398221178277, longitude: 118.75949998588176 });
+points.push({ latitude: 31.995185902197715, longitude: 118.7596871082939 });
+points.push({ latitude: 31.994983473052656, longitude: 118.75987334062296 });
+points.push({ latitude: 31.99482433699269, longitude: 118.76002095184032 });
+points.push({ latitude: 31.994709073721708, longitude: 118.76012902920532 });
+points.push({ latitude: 31.99460732100702, longitude: 118.76023892576234 });
+points.push({ latitude: 31.99449284962087, longitude: 118.7603694232856 });
+points.push({ latitude: 31.99435358179254, longitude: 118.76053622438056 });
+points.push({ latitude: 31.99420771148339, longitude: 118.76072790126692 });
+points.push({ latitude: 31.994075194901523, longitude: 118.7609100960977 });
+points.push({ latitude: 31.993952686158877, longitude: 118.7610741329013 });
+points.push({ latitude: 31.993840180644217, longitude: 118.7612193418965 });
+points.push({ latitude: 31.993733787150244, longitude: 118.76135383115654 });
+points.push({ latitude: 31.993617206525155, longitude: 118.76150529647698 });
 
-115. // 动态轨迹的入参
-116. let traceOptions: mapCommon.TraceOverlayParams = {
-117. // 轨迹点
-118. points: points,
-119. // 轨迹的动画时长
-120. animationDuration: 5000,
-121. // 相机是否跟随动画移动
-122. isMapMoving: true,
-123. // 轨迹的颜色
-124. color: 0xAAFFAA00,
-125. // 轨迹的宽度
-126. width: 20,
-127. // 轨迹的动画回调（回调轨迹点的index）
-128. animationCallback: (pointIndex) => {
-129. // 换成骑行
-130. if (pointIndex === 10) {
-131. markerBoy1.setVisible(false);
-132. markerBoy2.setVisible(true);
-133. }
-134. }
-135. };
-136. let markers: Array<map.Marker> = new Array();
-137. markers.push(markerBoy1, markerBoy2);
-138. // 新增轨迹点动画
-139. let traceOverlay: map.TraceOverlay = await this.mapController.addTraceOverlay(traceOptions, markers);
+// 动态轨迹的入参
+let traceOptions: mapCommon.TraceOverlayParams = {
+  // 轨迹点
+  points: points,
+  // 轨迹的动画时长
+  animationDuration: 5000,
+  // 相机是否跟随动画移动
+  isMapMoving: true,
+  // 轨迹的颜色
+  color: 0xAAFFAA00,
+  // 轨迹的宽度
+  width: 20,
+  // 轨迹的动画回调（回调轨迹点的index）
+  animationCallback: (pointIndex) => {
+    // 换成骑行
+    if (pointIndex === 10) {
+      markerBoy1.setVisible(false);
+      markerBoy2.setVisible(true);
+    }
+  }
+};
+let markers: Array<map.Marker> = new Array();
+markers.push(markerBoy1, markerBoy2);
+// 新增轨迹点动画
+let traceOverlay: map.TraceOverlay = await this.mapController.addTraceOverlay(traceOptions, markers);
 ```
 
 ### addArc
-
-PhonePC/2in1TabletWearable
 
 addArc(params: mapCommon.MapArcParams): MapArc
 
@@ -2932,36 +2788,34 @@ addArc(params: mapCommon.MapArcParams): MapArc
 
 **示例：**
 
-```
-1. // 设置弧线参数
-2. let mapArcParams: mapCommon.MapArcParams = {
-3. // 弧线起点坐标
-4. startPoint: {
-5. latitude: 39.913138,
-6. longitude: 116.415112
-7. },
-8. // 弧线终点坐标
-9. endPoint: {
-10. latitude: 28.239473,
-11. longitude: 112.954094
-12. },
-13. // 弧线中心点坐标
-14. centerPoint: {
-15. latitude: 33.86970399048567,
-16. longitude: 112.08633528544145
-17. },
-18. width: 10,
-19. color: 0xffff0000,
-20. visible: true,
-21. zIndex: 100
-22. };
-23. // 添加弧线
-24. this.mapController.addArc(mapArcParams);
+```typescript
+// 设置弧线参数
+let mapArcParams: mapCommon.MapArcParams = {
+  // 弧线起点坐标
+  startPoint: {
+    latitude: 39.913138,
+    longitude: 116.415112
+  },
+  // 弧线终点坐标
+  endPoint: {
+    latitude: 28.239473,
+    longitude: 112.954094
+  },
+  // 弧线中心点坐标
+  centerPoint: {
+    latitude: 33.86970399048567,
+    longitude: 112.08633528544145
+  },
+  width: 10,
+  color: 0xffff0000,
+  visible: true,
+  zIndex: 100
+};
+// 添加弧线
+this.mapController.addArc(mapArcParams);
 ```
 
 ### show
-
-PhonePC/2in1TabletWearable
 
 show(): void
 
@@ -2977,19 +2831,17 @@ show(): void
 
 **示例：**
 
-```
-1. // 页面每次显示时触发一次，包括路由过程、应用进入前台等场景，仅@Entry装饰的自定义组件生效
-2. onPageShow(): void {
-3. // 绘制地图页面的生命周期onPageShow，将地图切换到前台
-4. if (this.mapController) {
-5. this.mapController.show();
-6. }
-7. }
+```typescript
+// 页面每次显示时触发一次，包括路由过程、应用进入前台等场景，仅@Entry装饰的自定义组件生效
+onPageShow(): void {
+  // 绘制地图页面的生命周期onPageShow，将地图切换到前台
+  if (this.mapController) {
+    this.mapController.show();
+  }
+}
 ```
 
 ### hide
-
-PhonePC/2in1TabletWearable
 
 hide(): void
 
@@ -3005,19 +2857,17 @@ hide(): void
 
 **示例：**
 
-```
-1. // 页面每次隐藏时触发一次，包括路由过程、应用进入后台等场景，仅@Entry装饰的自定义组件生效。
-2. onPageHide(): void {
-3. // 绘制地图页面的生命周期onPageHide，将地图切换到后台
-4. if (this.mapController) {
-5. this.mapController.hide();
-6. }
-7. }
+```typescript
+// 页面每次隐藏时触发一次，包括路由过程、应用进入后台等场景，仅@Entry装饰的自定义组件生效。
+onPageHide(): void {
+  // 绘制地图页面的生命周期onPageHide，将地图切换到后台
+  if (this.mapController) {
+    this.mapController.hide();
+  }
+}
 ```
 
 ### getEventManager
-
-PhonePC/2in1TabletWearable
 
 getEventManager(): MapEventManager
 
@@ -3039,13 +2889,11 @@ getEventManager(): MapEventManager
 
 **示例：**
 
-```
-1. let mapEventManager: map.MapEventManager = this.mapController.getEventManager();
+```typescript
+let mapEventManager: map.MapEventManager = this.mapController.getEventManager();
 ```
 
 ### setDisplayOrder
-
-PhonePC/2in1TabletWearable
 
 setDisplayOrder(types: Array<mapCommon.MapElementType>): void
 
@@ -3075,18 +2923,16 @@ setDisplayOrder(types: Array<mapCommon.MapElementType>): void
 
 **示例：**
 
-```
-1. let mapElementTypeArr: Array<mapCommon.MapElementType> = [
-2. mapCommon.MapElementType.OVERLAY,
-3. mapCommon.MapElementType.POI,
-4. mapCommon.MapElementType.CUSTOM_POI,
-5. mapCommon.MapElementType.MARKER];
-6. this.mapController.setDisplayOrder(mapElementTypeArr);
+```typescript
+let mapElementTypeArr: Array<mapCommon.MapElementType> = [
+  mapCommon.MapElementType.OVERLAY,
+  mapCommon.MapElementType.POI,
+  mapCommon.MapElementType.CUSTOM_POI,
+  mapCommon.MapElementType.MARKER];
+this.mapController.setDisplayOrder(mapElementTypeArr);
 ```
 
 ### setLogoScale
-
-PhonePC/2in1TabletWearable
 
 setLogoScale(logoScale: number): void
 
@@ -3116,13 +2962,11 @@ setLogoScale(logoScale: number): void
 
 **示例：**
 
-```
-1. this.mapController.setLogoScale(0.9);
+```typescript
+this.mapController.setLogoScale(0.9);
 ```
 
 ### getLogoScale
-
-PhonePC/2in1TabletWearable
 
 getLogoScale(): number
 
@@ -3144,13 +2988,11 @@ getLogoScale(): number
 
 **示例：**
 
-```
-1. let logoScale: number = this.mapController.getLogoScale();
+```typescript
+let logoScale: number = this.mapController.getLogoScale();
 ```
 
 ### isSphereEnabled
-
-PhonePC/2in1TabletWearable
 
 isSphereEnabled(): boolean
 
@@ -3172,17 +3014,15 @@ isSphereEnabled(): boolean
 
 **示例：**
 
-```
-1. let result: boolean = this.mapController.isSphereEnabled();
+```typescript
+let result: boolean = this.mapController.isSphereEnabled();
 ```
 
 ### setSphereEnabled
 
-PhonePC/2in1TabletWearable
-
 setSphereEnabled(enabled: boolean): void
 
-以动画形式切换2D或3D地球。
+以动画形式切换2D或3D地球。3D地球是指将地球表面信息以三维立体的方式在数字设备上展示的技术。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3200,17 +3040,15 @@ setSphereEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. this.mapController.setSphereEnabled(true);
+```typescript
+this.mapController.setSphereEnabled(true);
 ```
 
 ### setSphereEnabled
 
-PhonePC/2in1TabletWearable
-
 setSphereEnabled(enabled: boolean, animateDuration: number): void
 
-以动画形式切换2D或3D地球。
+以动画形式切换2D或3D地球。3D地球是指将地球表面信息以三维立体的方式在数字设备上展示的技术。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3229,17 +3067,15 @@ setSphereEnabled(enabled: boolean, animateDuration: number): void
 
 **示例：**
 
-```
-1. this.mapController.setSphereEnabled(true, 1000);
+```typescript
+this.mapController.setSphereEnabled(true, 1000);
 ```
 
 ### setSphereEnabled
 
-PhonePC/2in1TabletWearable
-
 setSphereEnabled(enabled: boolean, animateDuration: number, cityLight: boolean): void
 
-以动画形式切换2D或3D地球。
+以动画形式切换2D或3D地球。3D地球是指将地球表面信息以三维立体的方式在数字设备上展示的技术。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3259,13 +3095,56 @@ setSphereEnabled(enabled: boolean, animateDuration: number, cityLight: boolean):
 
 **示例：**
 
+```typescript
+this.mapController.setSphereEnabled(true, 1000, true);
 ```
-1. this.mapController.setSphereEnabled(true, 1000, true);
+
+### setSphereMapEnabled
+
+setSphereMapEnabled(enabled: boolean, params?: mapCommon.SphereParams): Promise<void>
+
+设置3D地图开关。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+**参数**：
+
+| **参数名** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围：  - true：开启3D地球  - false：开启2D地球 |
+| params | [mapCommon.SphereParams](map-common.md#sphereparams) | 否 | 球体属性。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**示例：**
+
+```typescript
+let mSphereOptions: mapCommon.SphereParams =
+  {
+    // 开启球体太阳光
+    sunLightEnabled: true,
+    // 开启球体城市光
+    cityLightEnabled: true,
+    // 设置动画时长为1000ms
+    animateDuration: 1000,
+    // 图片需存放在resources/base/media目录下
+    backgroundImage: $r('app.media.bg_compress'),
+    coverageImage: $r('app.media.coverage_icon')
+  };
+await this.mapController.setSphereMapEnabled(true, mSphereOptions);
 ```
 
 ### addHeatmap
-
-PhonePC/2in1TabletWearable
 
 addHeatmap(params: mapCommon.HeatmapParams): Promise<Heatmap>
 
@@ -3302,33 +3181,32 @@ addHeatmap(params: mapCommon.HeatmapParams): Promise<Heatmap>
 
 **示例：**
 
-```
-1. let data: mapCommon.WeightedLatLng[] = [];
-2. for (let i = 0; i < 500; i++) {
-3. data.push({
-4. point: {
-5. longitude: 118.000000 + Math.random() * 1 - 0.25,
-6. latitude: 31.000000 + Math.random() * 1 - 0.25,
-7. },
-8. intensity: 1
-9. });
-10. }
-11. let heatMapOptions: mapCommon.HeatmapParams = {
-12. id: 'heatmap0001',
-13. data: data,
-14. radius: 20,
-15. intensity: {
-16. 2: 1,
-17. 5: 5,
-18. 8: 10
-19. },
-20. }
-21. await this.mapController?.addHeatmap(heatMapOptions)
+```typescript
+let data: mapCommon.WeightedLatLng[] = [];
+// 生成500个随机坐标点，用于热力图数据
+for (let i = 0; i < 500; i++) {
+  data.push({
+    point: {
+      longitude: 118.000000 + Math.random() * 1 - 0.25,
+      latitude: 31.000000 + Math.random() * 1 - 0.25
+    },
+    intensity: 1
+  });
+}
+let heatMapOptions: mapCommon.HeatmapParams = {
+  id: 'heatmap0001',
+  data: data,
+  radius: 20,
+  intensity: {
+    2: 1,
+    5: 5,
+    8: 10
+  },
+}
+await this.mapController?.addHeatmap(heatMapOptions)
 ```
 
 ### addMvtOverlay
-
-PhonePC/2in1Tablet
 
 addMvtOverlay(params: mapCommon.MvtOverlayParams): MvtOverlay
 
@@ -3362,37 +3240,35 @@ addMvtOverlay(params: mapCommon.MvtOverlayParams): MvtOverlay
 | --- | --- |
 | 1022100001 | The operation object does not exist. |
 
-```
-1. let params: mapCommon.MvtOverlayParams = {
-2. source: {
-3. // 设置矢量图层的地址,必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
-4. tileUrl: 'http://xxx/tiles/{z}/{x}/{y}.pbf',
-5. minZoom: 2,
-6. maxZoom: 15
-7. },
-8. layers: [{
-9. id: 'layer-map',
-10. type: mapCommon.MvtLayerType.FILL,
-11. // 对应矢量图层数据中图层的name字段
-12. sourceLayer: 'XX',
-13. paint: {
-14. fillColor: {
-15. operator: mapCommon.Operator.GET,
-16. args: 'fill'
-17. },
-18. fillOpacity: {
-19. operator: mapCommon.Operator.GET,
-20. args: 'fill-opacity'
-21. }
-22. }
-23. }]
-24. };
-25. let mvtOverlay = this.mapController?.addMvtOverlay(params);
+```typescript
+let params: mapCommon.MvtOverlayParams = {
+  source: {
+    // 设置矢量图层的地址,必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
+    tileUrl: 'http://xxx/tiles/{z}/{x}/{y}.pbf',
+    minZoom: 2,
+    maxZoom: 15
+  },
+  layers: [{
+    id: 'layer-map',
+    type: mapCommon.MvtLayerType.FILL,
+    // 对应矢量图层数据中图层的name字段
+    sourceLayer: 'XX',
+    paint: {
+      fillColor: {
+        operator: mapCommon.Operator.GET,
+        args: 'fill'
+      },
+      fillOpacity: {
+        operator: mapCommon.Operator.GET,
+        args: 'fill-opacity'
+      }
+    }
+  }]
+};
+let mvtOverlay = this.mapController?.addMvtOverlay(params);
 ```
 
 ### setFramePerSecond
-
-PhonePC/2in1TabletWearable
 
 setFramePerSecond(fps: number): void
 
@@ -3414,13 +3290,11 @@ setFramePerSecond(fps: number): void
 
 **示例：**
 
-```
-1. this.mapController?.setFramePerSecond(60);
+```typescript
+this.mapController?.setFramePerSecond(60);
 ```
 
 ### addFlowFieldOverlay
-
-PhonePC/2in1Tablet
 
 addFlowFieldOverlay(params: mapCommon.FlowFieldOverlayParams): Promise<FlowFieldOverlay>
 
@@ -3456,17 +3330,15 @@ addFlowFieldOverlay(params: mapCommon.FlowFieldOverlayParams): Promise<FlowField
 
 **示例：**
 
-```
-1. let params: mapCommon.FlowFieldOverlayParams = {
-2. // data为GRIB2规范的json数据，需开发者自行传输，可参考流场数据格式参考
-3. data: 'xxx'
-4. };
-5. let fieldOverlay = await this.mapController.addFlowFieldOverlay(params);
+```typescript
+let params: mapCommon.FlowFieldOverlayParams = {
+  // data为GRIB2规范的json数据，需开发者自行传输，可参考流场数据格式参考
+  data: 'xxx'
+};
+let fieldOverlay = await this.mapController.addFlowFieldOverlay(params);
 ```
 
 ### addMassPointOverlay
-
-PhonePC/2in1TabletWearable
 
 addMassPointOverlay(params: mapCommon.MassPointOverlayParams): Promise<MassPointOverlay>
 
@@ -3502,32 +3374,30 @@ addMassPointOverlay(params: mapCommon.MassPointOverlayParams): Promise<MassPoint
 
 **示例：**
 
-```
-1. let items: mapCommon.MassPointItem[] = [];
-2. for (let i = 0; i < 1000; i++) {
-3. // 将海量点存入items
-4. items.push({
-5. itemId: 'test' + i,
-6. position: {
-7. longitude: 118.11111 + Math.random() * 1 - 0.5,
-8. latitude: 32.11111 + Math.random() * 1 - 0.5,
-9. },
-10. snippet: 'test' + i,
-11. title: 'test' + i
-12. })
-13. }
-14. let params: mapCommon.MassPointOverlayParams = {
-15. id: 'test',
-16. items: items,
-17. // 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径
-18. icon: 'icon/maps_blue_dot.png',
-19. }
-20. let massPointOverlay = await this.mapController?.addMassPointOverlay(params);
+```typescript
+let items: mapCommon.MassPointItem[] = [];
+for (let i = 0; i < 1000; i++) {
+  // 将海量点存入items
+  items.push({
+    itemId: 'test' + i,
+    position: {
+      longitude: 118.11111 + Math.random() * 1 - 0.5,
+      latitude: 32.11111 + Math.random() * 1 - 0.5,
+    },
+    snippet: 'test' + i,
+    title: 'test' + i
+  })
+}
+let params: mapCommon.MassPointOverlayParams = {
+  id: 'test',
+  items: items,
+  // 图标存放在resources/rawfile，icon参数传入rawfile文件夹下的相对路径
+  icon: 'icon/maps_blue_dot.png',
+}
+let massPointOverlay = await this.mapController?.addMassPointOverlay(params);
 ```
 
 ### setLanguage
-
-PhonePC/2in1TabletWearable
 
 setLanguage(language: string): void
 
@@ -3549,13 +3419,11 @@ setLanguage(language: string): void
 
 **示例：**
 
-```
-1. this.mapController?.setLanguage('ja');
+```typescript
+this.mapController?.setLanguage('ja');
 ```
 
 ### getLanguage
-
-PhonePC/2in1TabletWearable
 
 getLanguage(): string
 
@@ -3577,13 +3445,11 @@ getLanguage(): string
 
 **示例：**
 
-```
-1. let language = this.mapController?.getLanguage();
+```typescript
+let language = this.mapController?.getLanguage();
 ```
 
 ### changeMyLocationLayerOrder
-
-PhonePC/2in1TabletWearable
 
 changeMyLocationLayerOrder(isBelow: boolean): void
 
@@ -3605,13 +3471,11 @@ changeMyLocationLayerOrder(isBelow: boolean): void
 
 **示例：**
 
-```
-1. this.mapController?.changeMyLocationLayerOrder(true);
+```typescript
+this.mapController?.changeMyLocationLayerOrder(true);
 ```
 
 ### addTileOverlay
-
-PhonePC/2in1TabletWearable
 
 addTileOverlay(params: mapCommon.TileOverlayParams | mapCommon.TileOverlayOptions): TileOverlay
 
@@ -3647,28 +3511,26 @@ addTileOverlay(params: mapCommon.TileOverlayParams | mapCommon.TileOverlayOption
 
 **示例：**
 
-```
-1. let params: mapCommon.TileOverlayOptions = {
-2. // 设置地图瓦片图层的地址，必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
-3. // 需要替换为开发者自己的在线地址
-4. tileUrl: "https://xxx/xxx?x={x}&y={y}&z={z}",
-5. // 透明度
-6. transparency: 0.5,
-7. // 开启瓦片图层淡入
-8. fadeIn: true,
-9. // 开启磁盘缓存
-10. diskCacheEnabled: true,
-11. // 磁盘缓存大小 默认大小 20480KB, 单位KB
-12. diskCacheSize: 20480,
-13. // 存放磁盘缓存的沙箱路径
-14. diskCachePath: this.getUIContext().getHostContext()?.databaseDir
-15. };
-16. let tileOverlay: map.TileOverlay = this.mapController?.addTileOverlay(params);
+```typescript
+let params: mapCommon.TileOverlayOptions = {
+  // 设置地图瓦片图层的地址，必须是以http或者https开头的URL且包含占位符{x}、{y}和{z}
+  // 需要替换为开发者自己的在线地址
+  tileUrl: "https://xxx/xxx?x={x}&y={y}&z={z}",
+  // 透明度
+  transparency: 0.5,
+  // 开启瓦片图层淡入
+  fadeIn: true,
+  // 开启磁盘缓存
+  diskCacheEnabled: true,
+  // 磁盘缓存大小 默认大小 20480KB, 单位KB
+  diskCacheSize: 20480,
+  // 存放磁盘缓存的沙箱路径
+  diskCachePath: this.getUIContext().getHostContext()?.databaseDir
+};
+let tileOverlay: map.TileOverlay = this.mapController?.addTileOverlay(params);
 ```
 
 ### on('cameraChange')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'cameraChange', callback: Callback<mapCommon.LatLng>): void
 
@@ -3693,15 +3555,13 @@ on(type: 'cameraChange', callback: Callback<mapCommon.LatLng>): void
 
 **示例：**
 
-```
-1. this.mapController.on("cameraChange", (position) => {
-2. console.info("cameraChange", `on-cameraChange position = ${position.longitude}`);
-3. });
+```typescript
+this.mapController.on("cameraChange", (position) => {
+  console.info("cameraChange", `on-cameraChange position = ${position.longitude}`);
+});
 ```
 
 ### off('cameraChange')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'cameraChange', callback: Callback<void>): void
 
@@ -3722,19 +3582,17 @@ off(type: 'cameraChange', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraChange'：监听地图相机状态变化事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("cameraChange", (position) => {
-2. console.info("cameraChange", `off-cameraChange`);
-3. });
+```typescript
+this.mapController.off("cameraChange", (position) => {
+  console.info("cameraChange", `off-cameraChange`);
+});
 ```
 
 ### on('cameraIdle')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'cameraIdle', callback: Callback<void>): void
 
@@ -3755,19 +3613,17 @@ on(type: 'cameraIdle', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraIdle'：监听相机移动结束事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.on("cameraIdle", () => {
-2. console.info("cameraIdle", `on-cameraIdle`);
-3. });
+```typescript
+this.mapController.on("cameraIdle", () => {
+  console.info("cameraIdle", `on-cameraIdle`);
+});
 ```
 
 ### off('cameraIdle')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'cameraIdle', callback: Callback<void>): void
 
@@ -3788,19 +3644,17 @@ off(type: 'cameraIdle', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraIdle'：监听相机移动结束事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("cameraIdle", () => {
-2. console.info("cameraIdle", `off-cameraIdle`);
-3. });
+```typescript
+this.mapController.off("cameraIdle", () => {
+  console.info("cameraIdle", `off-cameraIdle`);
+});
 ```
 
 ### on('cameraMoveCancel')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'cameraMoveCancel', callback: Callback<void>): void
 
@@ -3821,19 +3675,17 @@ on(type: 'cameraMoveCancel', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveCancel'：监听地图相机移动取消事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.on("cameraMoveCancel", () => {
-2. console.info("cameraMoveCancel", `on-cameraMoveCancel`);
-3. });
+```typescript
+this.mapController.on("cameraMoveCancel", () => {
+  console.info("cameraMoveCancel", `on-cameraMoveCancel`);
+});
 ```
 
 ### off('cameraMoveCancel')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'cameraMoveCancel', callback: Callback<void>): void
 
@@ -3854,19 +3706,17 @@ off(type: 'cameraMoveCancel', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveCancel'：监听地图相机移动取消事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("cameraMoveCancel", () => {
-2. console.info("cameraMoveCancel", `off-cameraMoveCancel`);
-3. });
+```typescript
+this.mapController.off("cameraMoveCancel", () => {
+  console.info("cameraMoveCancel", `off-cameraMoveCancel`);
+});
 ```
 
 ### on('cameraMove')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'cameraMove', callback: Callback<void>): void
 
@@ -3887,19 +3737,17 @@ on(type: 'cameraMove', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMove'：监听相机移动事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.on("cameraMove", () => {
-2. console.info("cameraMove", `on-cameraMove`);
-3. });
+```typescript
+this.mapController.on("cameraMove", () => {
+  console.info("cameraMove", `on-cameraMove`);
+});
 ```
 
 ### off('cameraMove')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'cameraMove', callback: Callback<void>): void
 
@@ -3920,19 +3768,17 @@ off(type: 'cameraMove', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMove'：监听相机移动事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("cameraMove", () => {
-2. console.info("cameraMove", `off-cameraMove`);
-3. });
+```typescript
+this.mapController.off("cameraMove", () => {
+  console.info("cameraMove", `off-cameraMove`);
+});
 ```
 
 ### on('cameraMoveStart')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'cameraMoveStart', callback: Callback<number>): void
 
@@ -3957,15 +3803,13 @@ on(type: 'cameraMoveStart', callback: Callback<number>): void
 
 **示例：**
 
-```
-1. this.mapController.on("cameraMoveStart", (reason) => {
-2. console.info("cameraMoveStart", `on-cameraMoveStart reason = ${reason}`);
-3. });
+```typescript
+this.mapController.on("cameraMoveStart", (reason) => {
+  console.info("cameraMoveStart", `on-cameraMoveStart reason = ${reason}`);
+});
 ```
 
 ### off('cameraMoveStart')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'cameraMoveStart', callback: Callback<void>): void
 
@@ -3986,19 +3830,17 @@ off(type: 'cameraMoveStart', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'cameraMoveStart'：监听相机移动开始事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("cameraMoveStart", () => {
-2. console.info("cameraMoveStart", `off-cameraMoveStart`);
-3. });
+```typescript
+this.mapController.off("cameraMoveStart", () => {
+  console.info("cameraMoveStart", `off-cameraMoveStart`);
+});
 ```
 
 ### on('mapClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'mapClick', callback: Callback<mapCommon.LatLng>): void
 
@@ -4023,15 +3865,13 @@ on(type: 'mapClick', callback: Callback<mapCommon.LatLng>): void
 
 **示例：**
 
-```
-1. this.mapController.on("mapClick", (position) => {
-2. console.info("mapClick", `on-mapClick position = ${position.longitude}`);
-3. });
+```typescript
+this.mapController.on("mapClick", (position) => {
+  console.info("mapClick", `on-mapClick position = ${position.longitude}`);
+});
 ```
 
 ### off('mapClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'mapClick', callback: Callback<void>): void
 
@@ -4052,19 +3892,17 @@ off(type: 'mapClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapClick'：监听地图点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("mapClick", () => {
-2. console.info("mapClick", `off-mapClick`);
-3. });
+```typescript
+this.mapController.off("mapClick", () => {
+  console.info("mapClick", `off-mapClick`);
+});
 ```
 
 ### on('mapLoad')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'mapLoad', callback: Callback<void>): void
 
@@ -4085,19 +3923,17 @@ on(type: 'mapLoad', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLoad'：监听地图加载事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.on("mapLoad", () => {
-2. console.info("mapLoad", `on-mapLoad`);
-3. });
+```typescript
+this.mapController.on("mapLoad", () => {
+  console.info("mapLoad", `on-mapLoad`);
+});
 ```
 
 ### off('mapLoad')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'mapLoad', callback: Callback<void>): void
 
@@ -4118,19 +3954,17 @@ off(type: 'mapLoad', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLoad'：监听地图加载事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("mapLoad", () => {
-2. console.info("mapLoad", `off-mapLoad`);
-3. });
+```typescript
+this.mapController.off("mapLoad", () => {
+  console.info("mapLoad", `off-mapLoad`);
+});
 ```
 
 ### on('mapLongClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'mapLongClick', callback: Callback<mapCommon.LatLng>): void
 
@@ -4155,15 +3989,13 @@ on(type: 'mapLongClick', callback: Callback<mapCommon.LatLng>): void
 
 **示例：**
 
-```
-1. this.mapController.on("mapLongClick", () => {
-2. console.info("mapLongClick", `on-mapLongClick`);
-3. });
+```typescript
+this.mapController.on("mapLongClick", () => {
+  console.info("mapLongClick", `on-mapLongClick`);
+});
 ```
 
 ### off('mapLongClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'mapLongClick', callback: Callback<void>): void
 
@@ -4184,19 +4016,17 @@ off(type: 'mapLongClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'mapLongClick'：监听地图长按事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("mapLongClick", () => {
-2. console.info("mapLongClick", `off-mapLongClick`);
-3. });
+```typescript
+this.mapController.off("mapLongClick", () => {
+  console.info("mapLongClick", `off-mapLongClick`);
+});
 ```
 
 ### on('myLocationButtonClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'myLocationButtonClick', callback: Callback<void>): void
 
@@ -4217,19 +4047,17 @@ on(type: 'myLocationButtonClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationButtonClick'：监听我的位置按钮点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.on("myLocationButtonClick", () => {
-2. console.info("myLocationButtonClick", `on-myLocationButtonClick`);
-3. });
+```typescript
+this.mapController.on("myLocationButtonClick", () => {
+  console.info("myLocationButtonClick", `on-myLocationButtonClick`);
+});
 ```
 
 ### off('myLocationButtonClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'myLocationButtonClick', callback: Callback<void>): void
 
@@ -4250,19 +4078,17 @@ off(type: 'myLocationButtonClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationButtonClick'：监听我的位置按钮点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("myLocationButtonClick", () => {
-2. console.info("myLocationButtonClick", `off-myLocationButtonClick`);
-3. });
+```typescript
+this.mapController.off("myLocationButtonClick", () => {
+  console.info("myLocationButtonClick", `off-myLocationButtonClick`);
+});
 ```
 
 ### on('myLocationClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'myLocationClick', callback: Callback<mapCommon.LatLng>): void
 
@@ -4287,15 +4113,13 @@ on(type: 'myLocationClick', callback: Callback<mapCommon.LatLng>): void
 
 **示例：**
 
-```
-1. this.mapController.on("myLocationClick", (position) => {
-2. console.info("myLocationClick", `on-myLocationClick position = ${position.longitude}`);
-3. });
+```typescript
+this.mapController.on("myLocationClick", (position) => {
+  console.info("myLocationClick", `on-myLocationClick position = ${position.longitude}`);
+});
 ```
 
 ### off('myLocationClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'myLocationClick', callback: Callback<void>): void
 
@@ -4316,19 +4140,17 @@ off(type: 'myLocationClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'myLocationClick'：监听我的位置点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("myLocationClick", () => {
-2. console.info("myLocationClick", `off-myLocationClick`);
-3. });
+```typescript
+this.mapController.off("myLocationClick", () => {
+  console.info("myLocationClick", `off-myLocationClick`);
+});
 ```
 
 ### on('poiClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'poiClick', callback: Callback<mapCommon.Poi>): void
 
@@ -4353,15 +4175,13 @@ on(type: 'poiClick', callback: Callback<mapCommon.Poi>): void
 
 **示例：**
 
-```
-1. this.mapController.on("poiClick", (poi) => {
-2. console.info("poiClick", `on-poiClick poi = ${poi.id}`);
-3. });
+```typescript
+this.mapController.on("poiClick", (poi) => {
+  console.info("poiClick", `on-poiClick poi = ${poi.id}`);
+});
 ```
 
 ### off('poiClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'poiClick', callback: Callback<void>): void
 
@@ -4382,19 +4202,17 @@ off(type: 'poiClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'poiClick'：监听POI点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("poiClick", () => {
-2. console.info("poiClick", `off-poiClick`);
-3. });
+```typescript
+this.mapController.off("poiClick", () => {
+ console.info("poiClick", `off-poiClick`);
+});
 ```
 
 ### on('markerClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'markerClick', callback: Callback<Marker>): void
 
@@ -4419,15 +4237,13 @@ on(type: 'markerClick', callback: Callback<Marker>): void
 
 **示例：**
 
-```
-1. this.mapController.on("markerClick", (marker) => {
-2. console.info("markerClick", `on-markerClick position = ${marker.getId()}`);
-3. });
+```typescript
+this.mapController.on("markerClick", (marker) => {
+ console.info("markerClick", `on-markerClick position = ${marker.getId()}`);
+});
 ```
 
 ### off('markerClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'markerClick', callback: Callback<void>): void
 
@@ -4448,19 +4264,17 @@ off(type: 'markerClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerClick'：监听标记点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("markerClick", () => {
-2. console.info("markerClick", `off-markerClick`);
-3. });
+```typescript
+this.mapController.off("markerClick", () => {
+ console.info("markerClick", `off-markerClick`);
+});
 ```
 
 ### on('markerDragStart')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'markerDragStart', callback: Callback<Marker>): void
 
@@ -4485,15 +4299,13 @@ on(type: 'markerDragStart', callback: Callback<Marker>): void
 
 **示例：**
 
-```
-1. this.mapController.on("markerDragStart", (marker) => {
-2. console.info("markerDragStart", `on-markerDragStart position = ${marker.getId()}`);
-3. });
+```typescript
+this.mapController.on("markerDragStart", (marker) => {
+ console.info("markerDragStart", `on-markerDragStart position = ${marker.getId()}`);
+});
 ```
 
 ### off('markerDragStart')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'markerDragStart', callback: Callback<void>): void
 
@@ -4514,19 +4326,17 @@ off(type: 'markerDragStart', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragStart'：监听标记开始拖拽事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("markerDragStart", () => {
-2. console.info("markerDragStart", `off-markerDragStart`);
-3. });
+```typescript
+this.mapController.off("markerDragStart", () => {
+ console.info("markerDragStart", `off-markerDragStart`);
+});
 ```
 
 ### on('markerDrag')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'markerDrag', callback: Callback<Marker>): void
 
@@ -4551,15 +4361,13 @@ on(type: 'markerDrag', callback: Callback<Marker>): void
 
 **示例：**
 
-```
-1. this.mapController.on("markerDrag", (marker) => {
-2. console.info("markerDrag", `on-markerDrag position = ${marker.getId()}`);
-3. });
+```typescript
+this.mapController.on("markerDrag", (marker) => {
+ console.info("markerDrag", `on-markerDrag position = ${marker.getId()}`);
+});
 ```
 
 ### off('markerDrag')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'markerDrag', callback: Callback<void>): void
 
@@ -4580,19 +4388,17 @@ off(type: 'markerDrag', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDrag'：监听标记拖拽事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("markerDrag", () => {
-2. console.info("markerDrag", `off-markerDrag`);
-3. });
+```typescript
+this.mapController.off("markerDrag", () => {
+ console.info("markerDrag", `off-markerDrag`);
+});
 ```
 
 ### on('markerDragEnd')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'markerDragEnd', callback: Callback<Marker>): void
 
@@ -4617,15 +4423,13 @@ on(type: 'markerDragEnd', callback: Callback<Marker>): void
 
 **示例：**
 
-```
-1. this.mapController.on("markerDragEnd", (marker) => {
-2. console.info("markerDragEnd", `on-markerDragEnd position = ${marker.getId()}`);
-3. });
+```typescript
+this.mapController.on("markerDragEnd", (marker) => {
+ console.info("markerDragEnd", `on-markerDragEnd position = ${marker.getId()}`);
+});
 ```
 
 ### off('markerDragEnd')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'markerDragEnd', callback: Callback<void>): void
 
@@ -4646,19 +4450,17 @@ off(type: 'markerDragEnd', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'markerDragEnd'：监听标记拖动结束事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("markerDragEnd", () => {
-2. console.info("markerDragEnd", `off-markerDragEnd`);
-3. });
+```typescript
+this.mapController.off("markerDragEnd", () => {
+ console.info("markerDragEnd", `off-markerDragEnd`);
+});
 ```
 
 ### on('circleClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'circleClick', callback: Callback<MapCircle>): void
 
@@ -4683,15 +4485,13 @@ on(type: 'circleClick', callback: Callback<MapCircle>): void
 
 **示例：**
 
-```
-1. this.mapController.on("circleClick", (position) => {
-2. console.info("circleClick", `on-circleClick position = ${position.getCenter().longitude}`);
-3. });
+```typescript
+this.mapController.on("circleClick", (position) => {
+ console.info("circleClick", `on-circleClick position = ${position.getCenter().longitude}`);
+});
 ```
 
 ### off('circleClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'circleClick', callback: Callback<void>): void
 
@@ -4712,19 +4512,17 @@ off(type: 'circleClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'circleClick'：监听圆点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("circleClick", () => {
-2. console.info("circleClick", `off-circleClick`);
-3. });
+```typescript
+this.mapController.off("circleClick", () => {
+ console.info("circleClick", `off-circleClick`);
+});
 ```
 
 ### on('polylineClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'polylineClick', callback: Callback<MapPolyline>): void
 
@@ -4749,15 +4547,13 @@ on(type: 'polylineClick', callback: Callback<MapPolyline>): void
 
 **示例：**
 
-```
-1. this.mapController.on("polylineClick", (polyline) => {
-2. console.info("polylineClick", `on-polylineClick position = ${polyline.getId()}`);
-3. });
+```typescript
+this.mapController.on("polylineClick", (polyline) => {
+  console.info("polylineClick", `on-polylineClick position = ${polyline.getId()}`);
+});
 ```
 
 ### off('polylineClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'polylineClick', callback: Callback<void>): void
 
@@ -4778,19 +4574,17 @@ off(type: 'polylineClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polylineClick'：监听折线点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("polylineClick", () => {
-2. console.info("polylineClick", "off-polylineClick");
-3. });
+```typescript
+this.mapController.off("polylineClick", () => {
+  console.info("polylineClick", "off-polylineClick");
+});
 ```
 
 ### on('polygonClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'polygonClick', callback: Callback<MapPolygon>): void
 
@@ -4815,15 +4609,13 @@ on(type: 'polygonClick', callback: Callback<MapPolygon>): void
 
 **示例：**
 
-```
-1. this.mapController.on("polygonClick", (polygon) => {
-2. console.info("polygonClick", `on-polygonClick position = ${polygon.getId()}`);
-3. });
+```typescript
+this.mapController.on("polygonClick", (polygon) => {
+  console.info("polygonClick", `on-polygonClick position = ${polygon.getId()}`);
+});
 ```
 
 ### off('polygonClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'polygonClick', callback: Callback<void>): void
 
@@ -4844,19 +4636,17 @@ off(type: 'polygonClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'polygonClick'：监听多边形点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("polygonClick", () => {
-2. console.info("polygonClick", "off-polygonClick");
-3. });
+```typescript
+this.mapController.off("polygonClick", () => {
+  console.info("polygonClick", "off-polygonClick");
+});
 ```
 
 ### on('infoWindowClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'infoWindowClick', callback: Callback<Marker>): void
 
@@ -4881,15 +4671,13 @@ on(type: 'infoWindowClick', callback: Callback<Marker>): void
 
 **示例：**
 
-```
-1. this.mapController.on("infoWindowClick", (infoWindow) => {
-2. console.info("infoWindowClick", `on-infoWindowClick infoWindow = ${infoWindow.getId()}`);
-3. });
+```typescript
+this.mapController.on("infoWindowClick", (infoWindow) => {
+ console.info("infoWindowClick", `on-infoWindowClick infoWindow = ${infoWindow.getId()}`);
+});
 ```
 
 ### off('infoWindowClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'infoWindowClick', callback: Callback<void>): void
 
@@ -4910,19 +4698,17 @@ off(type: 'infoWindowClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClick'：监听信息窗点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("infoWindowClick", () => {
-2. console.info("infoWindowClick", `off-infoWindowClick`);
-3. });
+```typescript
+this.mapController.off("infoWindowClick", () => {
+ console.info("infoWindowClick", `off-infoWindowClick`);
+});
 ```
 
 ### on('infoWindowClose')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'infoWindowClose', callback: Callback<Marker>): void
 
@@ -4947,15 +4733,13 @@ on(type: 'infoWindowClose', callback: Callback<Marker>): void
 
 **示例：**
 
-```
-1. this.mapController.on("infoWindowClose", (infoWindowClose) => {
-2. console.info("infoWindowClose", `on-infoWindowClose infoWindowClose = ${infoWindowClose.getId()}`);
-3. });
+```typescript
+this.mapController.on("infoWindowClose", (infoWindowClose) => {
+ console.info("infoWindowClose", `on-infoWindowClose infoWindowClose = ${infoWindowClose.getId()}`);
+});
 ```
 
 ### off('infoWindowClose')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'infoWindowClose', callback: Callback<void>): void
 
@@ -4976,19 +4760,17 @@ off(type: 'infoWindowClose', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'infoWindowClose'：监听信息窗关闭事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("infoWindowClose", () => {
-2. console.info("infoWindowClose", `off-infoWindowClose`);
-3. });
+```typescript
+this.mapController.off("infoWindowClose", () => {
+ console.info("infoWindowClose", `off-infoWindowClose`);
+});
 ```
 
 ### on('pointAnnotationClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'pointAnnotationClick', callback: Callback<PointAnnotation>): void
 
@@ -5013,15 +4795,13 @@ on(type: 'pointAnnotationClick', callback: Callback<PointAnnotation>): void
 
 **示例：**
 
-```
-1. this.mapController.on("pointAnnotationClick", (pointAnnotation) => {
-2. console.info("pointAnnotationClick", `on-PointAnnotationClick pointAnnotation = ${pointAnnotation.getId()}`);
-3. });
+```typescript
+this.mapController.on("pointAnnotationClick", (pointAnnotation) => {
+ console.info("pointAnnotationClick", `on-PointAnnotationClick pointAnnotation = ${pointAnnotation.getId()}`);
+});
 ```
 
 ### off('pointAnnotationClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'pointAnnotationClick', callback: Callback<void>): void
 
@@ -5042,19 +4822,17 @@ off(type: 'pointAnnotationClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'pointAnnotationClick'：监听点注释点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("pointAnnotationClick", () => {
-2. console.info("pointAnnotationClick", `off-PointAnnotationClick`);
-3. });
+```typescript
+this.mapController.off("pointAnnotationClick", () => {
+ console.info("pointAnnotationClick", `off-PointAnnotationClick`);
+});
 ```
 
 ### on('bubbleClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'bubbleClick', callback: Callback<Bubble>): void
 
@@ -5079,15 +4857,13 @@ on(type: 'bubbleClick', callback: Callback<Bubble>): void
 
 **示例：**
 
-```
-1. this.mapController.on("bubbleClick", (bubble) => {
-2. console.info("bubbleClick", `on-BubbleClick bubble = ${bubble.getId()}`);
-3. });
+```typescript
+this.mapController.on("bubbleClick", (bubble) => {
+ console.info("bubbleClick", `on-BubbleClick bubble = ${bubble.getId()}`);
+});
 ```
 
 ### off('bubbleClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'bubbleClick', callback: Callback<void>): void
 
@@ -5108,19 +4884,17 @@ off(type: 'bubbleClick', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'bubbleClick'：监听气泡点击事件。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("bubbleClick", () => {
-2. console.info("bubbleClick", `off-BubbleClick`);
-3. });
+```typescript
+this.mapController.off("bubbleClick", () => {
+ console.info("bubbleClick", `off-BubbleClick`);
+});
 ```
 
 ### on('imageOverlayClick')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'imageOverlayClick', callback: Callback<ImageOverlay>): void
 
@@ -5145,17 +4919,15 @@ on(type: 'imageOverlayClick', callback: Callback<ImageOverlay>): void
 
 **示例：**
 
-```
-1. // 监听覆盖物点击事件的回调
-2. let imageOverlayCallback: Callback<map.ImageOverlay> = (imageOverlay:map.ImageOverlay) => {
-3. console.info("imageOverlay:" + imageOverlay?.getId());
-4. };
-5. this.mapController.on("imageOverlayClick", imageOverlayCallback)
+```typescript
+// 监听覆盖物点击事件的回调
+let imageOverlayCallback: Callback<map.ImageOverlay> = (imageOverlay:map.ImageOverlay) => {
+  console.info("imageOverlay:" + imageOverlay?.getId());
+};
+this.mapController.on("imageOverlayClick", imageOverlayCallback)
 ```
 
 ### off('imageOverlayClick')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'imageOverlayClick', callback?: Callback<ImageOverlay>): void
 
@@ -5180,16 +4952,14 @@ off(type: 'imageOverlayClick', callback?: Callback<ImageOverlay>): void
 
 **示例：**
 
-```
-1. let imageOverlayCallback: Callback<map.ImageOverlay> = (imageOverlay:map.ImageOverlay) => {
-2. console.info("imageOverlay:" + imageOverlay?.getId());
-3. };
-4. this.mapController.off("imageOverlayClick", imageOverlayCallback);
+```typescript
+let imageOverlayCallback: Callback<map.ImageOverlay> = (imageOverlay:map.ImageOverlay) => {
+  console.info("imageOverlay:" + imageOverlay?.getId());
+};
+this.mapController.off("imageOverlayClick", imageOverlayCallback);
 ```
 
 ### on('error')
-
-PhonePC/2in1TabletWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -5214,15 +4984,13 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. this.mapController.on("error", (error) => {
-2. console.error("error", `on-error: Code: ${error.code}, message: ${error.message}`);
-3. });
+```typescript
+this.mapController.on("error", (error) => {
+  console.error("error", `on-error: Code: ${error.code}, message: ${error.message}`);
+});
 ```
 
 ### off('error')
-
-PhonePC/2in1TabletWearable
 
 off(type: 'error', callback: Callback<void>): void
 
@@ -5243,19 +5011,17 @@ off(type: 'error', callback: Callback<void>): void
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 'error'：监听发生的异常。 |
-| callback | Callback<void> | 是 | 回调函数，无返回结果的回调函数。 |
+| callback | Callback<void> | 是 | 回调函数，无返回结果。 |
 
 **示例：**
 
-```
-1. this.mapController.off("error", () => {
-2. console.error("error", `off-error`);
-3. });
+```typescript
+this.mapController.off("error", () => {
+  console.error("error", `off-error`);
+});
 ```
 
 ### setIndoorMapEnabled
-
-PhonePC/2in1TabletWearable
 
 setIndoorMapEnabled(enabled: boolean): void
 
@@ -5267,7 +5033,7 @@ setIndoorMapEnabled(enabled: boolean): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在API19及之后版本该接口在phone、tablet、2in1均可正常使用，在其他设备中返回801错误。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -5287,14 +5053,12 @@ setIndoorMapEnabled(enabled: boolean): void
 
 **示例：**
 
-```
-1. // 打开室内图
-2. this.mapController.setIndoorMapEnabled(true);
+```typescript
+// 打开室内图
+this.mapController.setIndoorMapEnabled(true);
 ```
 
 ### isIndoorMapEnabled
-
-PhonePC/2in1TabletWearable
 
 isIndoorMapEnabled(): boolean
 
@@ -5306,7 +5070,7 @@ isIndoorMapEnabled(): boolean
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在API19及之后版本该接口在phone、tablet、2in1均可正常使用，在其他设备中返回801错误。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -5326,13 +5090,11 @@ isIndoorMapEnabled(): boolean
 
 **示例：**
 
-```
-1. let isIndoorMapEnabled = this.mapController.isIndoorMapEnabled();
+```typescript
+let isIndoorMapEnabled = this.mapController.isIndoorMapEnabled();
 ```
 
 ### switchIndoorMapFloor
-
-PhonePC/2in1TabletWearable
 
 switchIndoorMapFloor(buildingId: string, floorName: string): void
 
@@ -5344,7 +5106,7 @@ switchIndoorMapFloor(buildingId: string, floorName: string): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在API19及之后版本该接口在phone、tablet、2in1均可正常使用，在其他设备中返回801错误。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -5365,13 +5127,11 @@ switchIndoorMapFloor(buildingId: string, floorName: string): void
 
 **示例：**
 
-```
-1. this.mapController?.switchIndoorMapFloor('822588304363886720', '3F');
+```typescript
+this.mapController?.switchIndoorMapFloor('822588304363886720', '3F');
 ```
 
 ### setFloorControlsPosition
-
-PhonePC/2in1TabletWearable
 
 setFloorControlsPosition(point: mapCommon.MapPoint): void
 
@@ -5383,7 +5143,7 @@ setFloorControlsPosition(point: mapCommon.MapPoint): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在API20及之后版本该接口在phone、tablet、2in1均可正常使用，在其他设备中返回801错误。
+**设备行为差异：** 在6.0.0(20)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 6.0.0(20)
 
@@ -5403,16 +5163,14 @@ setFloorControlsPosition(point: mapCommon.MapPoint): void
 
 **示例：**
 
-```
-1. this.mapController?.setFloorControlsPosition({
-2. positionX: 500,
-3. positionY: 500
-4. });
+```typescript
+this.mapController?.setFloorControlsPosition({
+  positionX: 500,
+  positionY: 500
+});
 ```
 
 ### isApproveNumberEnabled
-
-PhonePC/2in1TabletWearable
 
 isApproveNumberEnabled(): boolean
 
@@ -5434,13 +5192,11 @@ isApproveNumberEnabled(): boolean
 
 **示例：**
 
-```
-1. let isApproveNumberEnabled = this.mapController?.isApproveNumberEnabled();
+```typescript
+let isApproveNumberEnabled = this.mapController?.isApproveNumberEnabled();
 ```
 
 ### setApproveNumberEnabled
-
-PhonePC/2in1TabletWearable
 
 setApproveNumberEnabled(enabled: boolean): void
 
@@ -5462,6 +5218,89 @@ setApproveNumberEnabled(enabled: boolean): void
 
 **示例：**
 
+```typescript
+this.mapController?.setApproveNumberEnabled(true);
 ```
-1. this.mapController?.setApproveNumberEnabled(true);
+
+### addSignalLine
+
+addSignalLine(signalParams: mapCommon.MapSignalParams): Promise<MapSignalLine>
+
+添加信号路线到地图，使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| **参数名** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| signalParams | [mapCommon.MapSignalParams](map-common.md#mapsignalparams) | 是 | 信号路线管理对象。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[MapSignalLine](map-map-mapsignalline.md)> | Promise对象，返回信号路线管理对象。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-map.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1002600001 | System internal error. |
+| 1002600017 | The app lacks permission for the map signal prediction capability. |
+| 1002600018 | signalId in the signal route already exists. |
+| 1002600019 | The route length exceeds the maximum limit of 200 km. |
+| 1002600020 | Invalid carrier. |
+| 1002600021 | The route signal is unpredictable. |
+
+**示例：**
+
+```typescript
+let mapSignalParams: mapCommon.MapSignalParams = {
+  signalId: 'signalId1'
+};
+mapSignalParams.points =
+  [{ longitude: 118.553695, latitude: 32.050789 },
+    { longitude: 118.553738, latitude: 32.050884 },
+    { longitude: 118.548506, latitude: 32.048543 },
+    { longitude: 118.548413, latitude: 32.048374 },
+    { longitude: 118.547185, latitude: 32.048252 },
+    { longitude: 118.546939, latitude: 32.048296 }]
+// 添加信号路线
+let mapSignalLine1 = await mapController.addSignalLine(mapSignalParams);
+```
+
+### removeSignalLineCache
+
+removeSignalLineCache(signalLineId?: string): void
+
+移除地图的信号路线数据缓存。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| **参数名** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| signalLineId | string | 否 | 信号路线ID。  若为空值，则清空所有地图的信号路线数据缓存。 |
+
+**示例：**
+
+```typescript
+// 删除信号路线ID为signalId1的缓存
+this.mapController?.removeSignalLineCache('signalId1');
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-addco
 title: AddConfig
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 原型注册与管理 > OpAICoreDef > AddConfig
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cae3d2d86eaa53f541d0d95195d8d89afc20bf981b4f72891b16285bc1254e20
+scraped_at: 2026-09-02T14:50:38+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:af94df3f022f4452f22a14aea4525dcf898bdd5f9fbc78e10dbf8650b0a0565d
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:cae3d2d86eaa53f541d0d95195d8d89afc20bf981b4f72891b16285bc12
 
 ## 函数原型
 
-```
-1. void AddConfig(const char *soc);
+```cpp
+void AddConfig(const char *soc);
 ```
 
 ## 参数说明
@@ -28,8 +28,14 @@ content_hash: sha256:cae3d2d86eaa53f541d0d95195d8d89afc20bf981b4f72891b16285bc12
 
 无
 
-## 约束说明
+## 支持的型号
 
-支持Kirin9020系列处理器
+Kirin9020系列处理器
+
+Kirin9030系列处理器
 
 KirinX90系列处理器
+
+## 约束说明
+
+无

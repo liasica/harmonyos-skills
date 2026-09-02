@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-desktopextensionkit-6101
 title: Desktop Extension Kit
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Desktop Extension Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > Desktop Extension Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:30+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:22+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:3e26f56c285be749d7062a6e7f0f9c984639849c745b0aa27a9ac32e70a741c1
 ---
 

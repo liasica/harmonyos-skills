@@ -3,29 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-m
 title: 数据模型说明
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数据模型说明
 category: harmonyos-references
-scraped_at: 2026-04-29T14:08:58+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:2ada696b1d39d5db71b1a8e7a84230fbeaa125d705cfda77d34e2382b54ebfe8
+scraped_at: 2026-09-02T14:53:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3146a9731b3bcd60598adf060837d4e7bf8ba45974c05d91e04a9e4ac614ebdd
 ---
 
 ## orderStr
 
 SDK华为支付接口入参**订单支付信息**。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | app\_id | 否 | String | 应用ID。获取方式请参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-0000001757041165.md)。  **说明：** 服务商模式接入，切换到商户应用/元服务拉起收银台时，需要把app\_id改成商户相应的appId，并在[平台类商户/服务商预下单](payment-agent-prepay.md)接口通过subAppId字段同步传递。 |
 | merc\_no | 是 | String | 商户号。获取商户号请参见[查询商户号信息](../pay-docs/hwzf-shanghuhao-0000001725982508.md)。  **说明：** 请传递直连、平台/服务商商户号，需要和获取预支付ID商户号保持一致。 |
 | prepay\_id | 是 | String | 预支付ID。使用[直连商户预下单](payment-prepay.md)/[平台类商户/服务商预下单](payment-agent-prepay.md)请求生成，有效期10分钟。 |
 | timestamp | 是 | String | 当前时间戳，标准北京时间，时区为东八区，自1970年1月1日 0点0分0秒以来的毫秒数，13位。示例值：1666230721315。 |
-| noncestr | 是 | String | 随机字符串。最小值1，最大值32，传递非取值范围内的值会导致请求异常。推荐随机数生成算法。  每笔订单都需重新生成。 |
+| noncestr | 是 | String | 随机字符串。最小长度1，最大长度32，传递非取值范围内的值会导致请求异常。推荐随机数生成算法。  每笔订单都需重新生成。 |
 | sign | 是 | String | 签名，使用除了sign字段以外的其他字段计算签名值。可参考[签名规则](payment-rest-overview.md#签名规则)。 |
-| auth\_id | 是 | String | 商户证书编号。一个商户可配置多套证书，请妥善保管。获取可参见[准备证书](../harmonyos-guides/payment-certificates-config.md)。 |
+| auth\_id | 是 | String | 商户证书ID。一个商户可配置多套证书，请妥善保管。获取可参见[准备证书](../harmonyos-guides/payment-certificates-config.md)。 |
 | reserved | 否 | String | 扩展字段，jsonStr格式。参见[reserved](payment-model.md#reserved)说明。 |
 
 SDK跳转三方支付接口入参**订单支付跳转信息**。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | nextAction | 是 | String | 指定三方支付方式。  - L：linkUrl  - S：scheme |
 | linkUrl | 否 | String | 三方支付方式linkUrl类型的链接（按照三方支付平台接入要求获取），默认值为空字符串。根据nextAction指定支付方式传递。 |
@@ -36,23 +36,24 @@ SDK跳转三方支付接口入参**订单支付跳转信息**。
 
 orderStr扩展字段信息说明。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | sandbox\_flag | 否 | Boolean | 沙盒环境标识。是否使用沙盒环境进行调试，使用沙盒环境调试时必填。  - true：是  - false：否（默认） |
+| referer | 否 | String | referer链接。跳转微信支付时，如传入了referer并且referer有效，则优先使用。  **说明：** 传递的referer链接有效性校验：  - 域名不为空且必须是HTTPS协议。  - 只保留协议和域名（若传入https://xxx.com/search?xxx=123&yyy=456，则只保留https://xx.com）。  - 最小长度1，最大长度2048。 |
 
 ## extraInfo
 
 SDK华为支付接口保留字段说明。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| selectPayType | 否 | String | 指定收银台展示的支付方式列表。多个支付方式通过竖线 “|” 分隔，支付方式为在申请[产品开通与配置](../harmonyos-guides/payment-common-pay-introduction.md#产品开通与配置)中提供的支付方式。  **说明：** 例如商户配置3个支付方式（微信支付wechat\_pay、支付宝ali\_pay、支付宝沙盒ali\_pay\_sandbox），开发者可传入 ：  1. wechat\_pay|ali\_pay（收银台展示微信支付、支付宝）  2. wechat\_pay|ali\_pay\_sandbox（收银台展示微信支付、支付宝沙盒） |
+| selectPayType | 否 | String | 指定收银台展示的支付方式列表。多个支付方式通过竖线 “|” 分隔，支付方式为在申请[产品开通与配置](../harmonyos-guides/payment-common-pay-introduction.md#产品开通与配置)中提供的支付方式。  **说明：** 例如商户配置3个支付方式（微信支付wechat\_pay、支付宝ali\_pay、支付宝沙盒ali\_pay\_sandbox），开发者可传入：  1. wechat\_pay|ali\_pay（收银台展示微信支付、支付宝）  2. wechat\_pay|ali\_pay\_sandbox（收银台展示微信支付、支付宝沙盒） |
 
 ## payload
 
 SDK华为支付接口预留信息字段payload说明。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | method | 否 | String | 备选支付方式。  AP: alternative Payment Type |
 
@@ -60,7 +61,7 @@ SDK华为支付接口预留信息字段payload说明。
 
 SDK签约接口入参说明。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | appId | 否 | String | 应用ID。获取方式请参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-0000001757041165.md)。 |
 | preSignNo | 是 | String | 预签约号，使用[直连商户预签约](payment-withhold-presign.md)/[平台类商户/服务商预签约](payment-partner-withhold-presign.md)请求生成，有效期10分钟。 |
@@ -69,12 +70,12 @@ SDK签约接口入参说明。
 
 PayMercAuth JSON类型保存了商户鉴权信息，用于请求头入参。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| callerId | 是 | String | 商户号。获取商户号参见[查询商户号信息](../pay-docs/hwzf-shanghuhao-0000001725982508.md)。  **说明：** 请传递直连、平台/服务商商户号，和商户证书编号（authId）归属商户号保持一致。 |
+| callerId | 是 | String | 商户号。获取商户号参见[查询商户号信息](../pay-docs/hwzf-shanghuhao-0000001725982508.md)。  **说明：** 请传递直连、平台/服务商商户号，和商户证书ID（authId）归属商户号保持一致。 |
 | traceId | 是 | String | 与请求对应，需要保证每次请求唯一，建议时间戳+随机数。最大长度32。 |
 | time | 是 | Long | 当前时间戳，以ms为单位，防止重复请求。 |
-| authId | 是 | String | 商户证书编号。一个商户可配置多套证书，请妥善保管。获取可参见[准备证书](../harmonyos-guides/payment-certificates-config.md)。 |
+| authId | 是 | String | 商户证书ID。一个商户可配置多套证书，请妥善保管。获取可参见[准备证书](../harmonyos-guides/payment-certificates-config.md)。 |
 | sessionKey | 否 | String | 使用SM2加密过的SM4密钥，涉及敏感参数传递场景（参见[敏感信息处理](../harmonyos-guides/payment-server-connect.md#敏感信息处理)）必传，否则无须传递。 |
 | headerSign | 是 | String | PayMercAuth对象内入参的签名值（除headerSign外的所有字段），根据[签名规则](payment-rest-overview.md#签名规则)排序拼接后签名。 |
 | bodySign | 是 | String | 请求Body参数签名，根据[签名规则](payment-rest-overview.md#签名规则)排序拼接后签名。  **说明：**  GET请求方式请对请求uri进行签名，如请求url为https://www.xxxxxx.com/api/v2/aggr/transactions/merc-orders/202xxx?mercNo=1015xxx ，则签名内容为/api/v2/aggr/transactions/merc-orders/202xxx?mercNo=1015xxx |
@@ -83,7 +84,7 @@ PayMercAuth JSON类型保存了商户鉴权信息，用于请求头入参。
 
 JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | clientId | 是 | String | 应用的OAuth 2.0客户端ID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“我的项目”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“OAuth 2.0客户端ID（凭据）：Client ID”的值）。 |
 | accessToken | 是 | String | 应用级的token。获取方式请参见[获取应用级凭证](payment-api-common-get-app-token.md)。 |
@@ -100,7 +101,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 营销信息缓存模型。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | promotionId | 否 | String | 营销活动类型Id。 |
 | promotionType | 否 | String | 营销活动类型。  - PROMOTION：营销活动  - COUPON：优惠券  - VOUCHER：支付满减券  - CONSVOUCHER：消费金 |
@@ -111,7 +112,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 账单下载地址信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | headers | 是 | [Map](payment-model.md#map) | 下载鉴权信息。 |
 | method | 是 | String | 调用方法。 |
@@ -121,7 +122,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 账单下载信息请求头相关字段
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | Authorization | 是 | String | 鉴权请求头。 |
 | x-amz-content-sha256 | 是 | String | 签名计算方式。 |
@@ -136,7 +137,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 接口请求用户信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | userClientIp | 否 | String | 客户端下单时ip。 |
 | credentialType | 否 | String | 证件类型。最大长度为2。  01：身份证（默认）  02：军官证  03：护照  04：户口簿  05：士兵证  06：港澳来往内地通行证  07：台湾同胞来往内地通行证  08：临时身份证  09：外国人居留证  10：警官证  15：港澳居民居住证  16：台湾居民居住证  99：其他 |
@@ -148,7 +149,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 用户信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | openId | 否 | String | 用户在所属商户AppID下的唯一标识。 |
 | spOpenId | 否 | String | 用户在所属合作伙伴商户AppID下的唯一标识。 |
@@ -160,17 +161,17 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 签约信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | planId | 是 | String | 协议模板ID。该模板ID是商户在向华为支付[提交代扣权限申请](../harmonyos-guides/payment-password-free-pay-overview.md)时由华为支付生成。 |
-| mercContractCode | 是 | String | 商户签约协议号。商户请求签约时传入的签约协议号，商户侧须唯一。最大长度64。 |
+| mercContractCode | 是 | String | 商户签约协议号。开发者请求签约时传入的签约协议号，由商户生成，商户需保证字段唯一性。最大长度64。 |
 | callbackUrl | 是 | String | 回调通知地址，通知URL必须为外网环境可直接访问的URL，要求为https地址。具体要求参考[通知回调接口说明](payment-rest-overview.md#通知回调接口说明)。最大长度为512 |
 
 ## GoodDetail
 
 商品详情。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | quantity | 是 | Integer | 商品数量。 |
 | unitPrice | 是 | Integer | 商品单价，单位为分。取值必须大于0，传递非取值范围内的值会导致请求异常。 |
@@ -181,7 +182,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 子订单信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | mercNo | 是 | String | 子单收款子商户号。  **说明：**  1. 子商户号必须是子单关联的主订单中传递商户号的子商户。  2. 子订单的商户号不能相同，同一子商户的订单可合并到一个子订单，不用拆分。 |
 | tradeSummary | 是 | String | 交易的摘要。格式建议：“商户应用名称-商品描述”。最大长度128。 |
@@ -195,11 +196,11 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 子订单结果信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | sysTransOrderNo | 是 | String | 华为支付系统订单号。 |
-| mercOrderNo | 是 | String | 商户订单号。 |
-| orderStatus | 是 | String | 订单状态。  - TRX\_SUCCESS：交易成功  - TRX\_FAILED：交易失败  - TRX\_APPLY：交易处理中  - TRX\_PROC：交易处理中 |
+| mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最小长度为1，最大长度46。 |
+| orderStatus | 是 | String | 订单状态。  - TRX\_SUCCESS：交易成功  - TRX\_FAILED：交易失败  - TRX\_APPLY：交易处理中 |
 | payload | 否 | String | 预留信息，如商户请求时传递该参数，此时会原样返回。 |
 | currency | 否 | String | 交易币种单位，最大长度为3。  CNY （默认，当前仅支持该币种单位） |
 | totalAmount | 否 | Long | 交易总金额，单位：分。 |
@@ -213,10 +214,10 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 三方支付服务接口入参payInfo说明，json字符串的格式。参考示例如下：
 
-```
-1. // PayMethod.WECHAT_PAY：'{"appId":"***","partnerId":"***","prepayId":"***","packageValue":"***","nonceStr":"***","timeStamp":"***","sign":"***","extData":"***","token":"***"}'
-2. // PayMethod.ALI_PAY：'{"orderInfo":"***", "token":"***"}'
-3. // PayMethod.WECHAT_MINI_PROGRAM：'{"userName":"原始id", "path":"小程序启动路径", "miniProgramType":"小程序的类型，0-正式版 1-开发版 2-体验版 默认0", "extData":"***", "token":"***"}'
+```java
+// PayMethod.WECHAT_PAY：'{"appId":"***","partnerId":"***","prepayId":"***","packageValue":"***","nonceStr":"***","timeStamp":"***","sign":"***","extData":"***","token":"***"}'
+// PayMethod.ALI_PAY：'{"orderInfo":"***", "token":"***"}'
+// PayMethod.WECHAT_MINI_PROGRAM：'{"userName":"原始id", "path":"小程序启动路径", "miniProgramType":"小程序的类型，0-正式版 1-开发版 2-体验版 默认0", "extData":"***", "token":"***"}'
 ```
 
 具体传递参数需开发者根据不同三方支付方式（[PayMethod](payment-third-payment-service.md#paymethod)）拉起收银台要求传递。
@@ -227,7 +228,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 以下为华为支付要求传递参数：
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | token | 是 | string | 客户端凭证。拉起通用收银台时响应支付信息[PayResult](payment-paymentservice.md#payresult)(混合支付场景）/[PickerResult](payment-paymentservice.md#pickerresult)（纯外部支付场景）中返回。 |
 
@@ -235,7 +236,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 平台券信息请求信息。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | platCoupons | 否 | List<[PlatCoupon](payment-model.md#platcoupon)> | 平台券信息（可参见[查询用户可用券](payment-api-common-promotion-service-inquiry.md)接口获取）。 |
 | isPlatCouponRecommend | 否 | Boolean | 是否为用户推荐平台券。  - true（默认）：platCoupons可指定推荐的平台券；若不指定，则由华为支付默认逻辑处理。  - false：platCoupons字段不生效。 |
@@ -244,7 +245,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 平台券信息数据模型。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | platCouponNo | 是 | String | 平台券ID。 |
 | openid | 是 | String | 用户ID。 |
@@ -254,7 +255,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 查询用户平台券信息。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | sceneId | 是 | String | 场景Id，唯一字符串，由商户自己生成，用于匹配响应结果。 |
 | [sceneParams](payment-model.md#sceneparams) | 是 | Map<String, Object> | 场景扩展参数，用于匹配平台券的使用条件。部分参数可参考[设备信息](js-apis-device-info.md) |
@@ -263,7 +264,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 平台券场景参数。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | tradeOrderAmount | 是 | Integer | 订单金额，单位为分。 |
 | bundleType | 是 | String | 包类型。示例：APP (HarmonyOS应用)、ATOMIC\_SERVICE(元服务) |
@@ -276,7 +277,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 优惠券信息。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | couponCode | 是 | String | 优惠券编号。 |
 | batchNo | 是 | String | 优惠券批次。 |
@@ -290,7 +291,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 优惠券简易展示信息。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | couponDesc | 否 | String | 券描述。 |
 | logoUrl | 否 | String | 品牌Logo的URL。 |
@@ -299,7 +300,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 各场景匹配到的券号信息。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | sceneId | 否 | String | 场景Id。 |
 | couponNos | 否 | List<String> | 优惠券编号列表。 |
@@ -308,20 +309,20 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 券发放规则。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | maxCoupons | 是 | Integer | 批次总限额，最大可发放券个数限制，最大值为1000000。  特殊规则：取值范围 0 ≤ value ≤ 1000000。  **说明**：新建批次时，如果couponCodeMode为MERCHANT\_UPLOAD，需要设置为0。 |
 | maxCouponsPerUser | 是 | Integer | 用户限额，用户可领券数，最大值为100。  **说明**：新建批次时，如果couponCodeMode为HWPAY\_MODE或者MERCHANT\_API，要求用户限额小于等于批次总限额。 |
 | maxCouponsByDay | 否 | Integer | 日限额，单天发放上限券数，最大值为1000000。  特殊规则：取值范围 1 ≤ value ≤ 1000000  **说明**：新建批次时，如果couponCodeMode为HWPAY\_MODE或者MERCHANT\_API，要求日限额小于等于批次总限额。 |
 | sendEntrance | 是 | String | 投放商家券的位置。  PLATFORM\_PUSH：平台流量  MERC\_SELF\_CHANNEL：商家自有流量 |
 | naturalPersonLimit | 否 | boolean | 自然人防刷即同证件号下的所有账户合并计算的限领次数。  - true：是  - false：否（默认）  **说明**：限领次数指的是参数字段“用户最大领取个数”填写的值，当前版本暂不支持。 |
-| preventApiAbuse | 否 | boolean | 是否开启可疑账号拦截。  - true：是  - false：否（默认）  **说明**：如果选择“是”，则需要在发券消息中上报终端用户的设备信息，详情请查看[发放优惠券](ommon-promotion-service-merc-coup-ucoup-distribute.md)接口。 |
+| preventApiAbuse | 否 | boolean | 是否开启可疑账号拦截。  - true：是  - false：否（默认）  **说明**：如果选择“是”，则需要在发券消息中上报终端用户的设备信息，详情请查看[发放优惠券](payment-api-common-promotion-service-merc-coup-ucoup-distribute.md)接口。 |
 
 ## CouponUseRuleMod
 
 券核销相关规则。
 
-| **参数** | **是否必选** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | useMethod | 是 | List<String> | 核销方式。  - FASTAPP：应用/元服务 |
 | useAppId | 否 | List<String> | 核销方式为线上应用/元服务核销时必填。列表最大长度为8。每个元素最小长度为1，最大长度为32。 |
@@ -330,7 +331,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 批次已发放总量信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | totalSendNum | 否 | Integer | 批次已发放的券数量，满减、折扣、换购类型会返回该字段。 |
 | totalSendAmount | 否 | Integer | 批次已发放的预算金额，满减券类型会返回该字段。 |
@@ -341,7 +342,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 用户的设备信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | deviceId | 否 | String | 设备标识，最大长度为128。 |
 | deviceIdType | 否 | String | 设备标识类型，UDID、OAID等，最大长度为8。 |
@@ -355,7 +356,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 通知消息的附加信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | receiveTime | 是 | String | 给用户发放优惠券的时间。格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。注意：要使用必须传准确的UTC时间。 |
 | batchNo | 是 | String | 批次号。 |
@@ -365,7 +366,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 本次导入失败的code信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | couponCode | 是 | String | 商户通过API上传的券code。 |
 | subCode | 否 | String | 对应券code上传失败的错误码。 |
@@ -375,7 +376,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 折扣券使用规则。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | discountPercent | 是 | Integer | 折扣百分比，例如：86为八六折。 |
 | transactionMinimum | 是 | Integer | 消费门槛，单位：分。  特殊规则：取值范围 1 ≤ value ≤ 10000000。 |
@@ -384,7 +385,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 券分发规则。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | preventApiAbuse | 否 | boolean | 是否开启可疑账号拦截（如黑灰产账号）。  - true：是  - false：否（默认）  **说明**：不填默认“否”，如果选择“是”，则需要在发券消息中上报终端用户的设备信息，详情请查看发券接口。 |
 
@@ -392,7 +393,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 券核销相关规则。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | availableTime | 否 | [CouponAvailableTime](payment-model.md#couponavailabletime) | 优惠券的日期类核销条件。 |
 | fixedNormalCoupon | 否 | [FixedNormalCoupon](payment-model.md#fixednormalcoupon) | 固定面额满减券使用规则。  **说明**：当优惠券类型（couponType）为满减券（NORMAL）时，该参数必传。 |
@@ -405,7 +406,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 待发券的批次信息和券码。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | couponCode | 是 | String | 优惠券编号。 |
 | batchNo | 是 | String | 优惠券批次号。 |
@@ -433,7 +434,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 券批次查询响应。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | batchStatus | 是 | String | 批次当前状态。  - DEACTIVATED：已停用  - ACTIVATED：已激活  - EXPIRED：已过期 |
 | batchNo | 是 | String | 券批次号。 |
@@ -454,7 +455,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 当天可用时间。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | beginTime | 否 | Integer | 当天可用开始时间，单位：秒，1代表当天0点0分1秒。 |
 | endTime | 否 | Integer | 当天可用结束时间，单位：秒，86399代表当天23点59分59秒。 |
@@ -463,7 +464,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 无规律的有效时间段。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | beginTime | 否 | String | 开始时间，格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。  注意：要使用必须传准确的UTC时间。 |
 | endTime | 否 | String | 结束时间，格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。  注意：要使用必须传准确的UTC时间。 |
@@ -472,7 +473,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 失败发券的结果信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | subCode | 是 | String | 失败的结果码。 |
 | subMessage | 否 | String | 失败的结果描述信息。 |
@@ -484,22 +485,22 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 优惠券展示信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | merchantLogoUrl | 是 | String | 商户Logo的URL地址。最小长度为1，最大长度为256。 |
 | merchantName | 是 | String | 商户简称。最小长度为1，最大长度为16。 |
 | backgroundColor | 否 | String | 背景颜色，默认：#DF674F（红色），建议使用深色。最大长度为16。 |
 | couponTitle | 否 | String | 优惠券标题，不填写时和券批次名称保持一致。最大长度为64。 |
 | description | 否 | String | 使用须知，用于描述详细的活动规则。最大长度为5120。 |
-| jumpUrl | 否 | String | 跳转连接，支持商家应用/元服务地址，不支持app地址，支持url、fastapp，如果不填写，则在华为平台（负一屏）不跳转。最大长度为1024。 |
-| nextJumpUrl | 否 | String | HarmonyOS Next版本跳转连接，支持[元服务applinking地址](../atomic-guides/atomic-applinking.md)，不支持app地址，支持url、fastapp，如果不填写，则在华为平台（负一屏）不跳转。最大长度为1024。 |
+| jumpUrl | 否 | String | 跳转连接，支持商家应用/元服务地址，不支持app地址，支持url、fastapp，如果不填写，则在华为流量场景不跳转。最大长度为1024。 |
+| nextJumpUrl | 否 | String | HarmonyOS Next版本跳转连接，支持[元服务applinking地址](../atomic-guides/atomic-applinking.md)，不支持app地址，支持url、fastapp，如果不填写，则在华为流量场景不跳转。最大长度为1024。 |
 | diversionName | 否 | String | 导流栏目显示名称。最大长度为16。 |
 
 ## ExchangeCoupon
 
 换购券使用规则。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | exchangePrice | 是 | Integer | 单品换购价，单位：分。  特殊规则：取值范围 0 ≤ value ≤ 10000000。 |
 | transactionMinimum | 是 | Integer | 消费门槛，单位：分。  特殊规则：取值范围 1 ≤ value ≤ 10000000。 |
@@ -508,16 +509,16 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 通知回调配置。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| notifyAppId | 否 | String | 事件通知APPID，最大长度为32。用于回调通知时，计算返回操作用户的openid（比如领券用户），商家私域发券时可以不填写。华为平台（负一屏）发券时如果不填写，则不通知商家发券结果。  **说明**：华为平台（负一屏）发券必须填写，并且填写完成之后不建议更改，因为更改后会导致openid发生变化。 |
+| notifyAppId | 否 | String | 事件通知APPID，最大长度为32。用于回调通知时，计算返回操作用户的openid（比如领券用户），商家私域发券时可以不填写。华为流量场景发券时如果不填写，则不通知商家发券结果。  **说明**：华为流量场景发券必须填写，并且填写完成之后不建议更改，因为更改后会导致openid发生变化。 |
 | notifyUrl | 否 | String | 事件通知的URL地址，最大长度为256。用于商家私域发券时通知商家发券结果的地址，如果不填写，则不通知。回调地址必须是https开头。 |
 
 ## SendCouponInfo
 
 待发券的批次信息和券码。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | sendNum | 是 | Integer | 该批次下一次发放的券数量，默认是1张。 |
 | batchNo | 是 | String | 批次号。 |
@@ -527,7 +528,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 批次券code数量统计。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | totalCount | 是 | Integer | 该批次总共已上传的code总数 |
 | availableCount | 是 | Integer | 该批次当前可用的code数 |
@@ -536,7 +537,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 固定面额满减券使用规则。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | discountAmount | 是 | Integer | 优惠金额（优惠券面额）， 单位分。特殊规则：取值范围 1 ≤ value ≤ 10000000。 |
 | transactionMinimum | 是 | Integer | 消费门槛，单位：分。  特殊规则：取值范围 1 ≤ value ≤ 10000000。 |
@@ -545,7 +546,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 成功发券的结果信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | batchNo | 是 | String | 批次号。 |
 | couponCodes | 否 | List<String> | 此批次下的券Code列表，用于创建批次时外部指定Code，或结果返回时返回券的Code。 |
@@ -554,7 +555,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 优惠券的日期类核销条件。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | beginTime | 是 | String | 批次开始时间，长度为28，格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。  **说明**：  - 要使用必须传准确的UTC时间。  - 商家券有效期最长为1年。 |
 | endTime | 是 | String | 批次结束时间，长度为28，格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。  **说明**：  - 要使用必须传准确的UTC时间。  - 商家券有效期最长为1年。  - 这个有效期也会影响用户收到的优惠券的有效期，由于券在卡包中展示时是精确到日期，建议endTime需要配置到截止日期的23:59:59。 |
@@ -567,7 +568,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 固定周期有效时间段。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | weekDay | 否 | List<Integer> | 可用星期数，0代表周日，当填写dayTime时，该字段必填。 |
 | dayTime | 否 | List<[CurrentDayTime](payment-model.md#currentdaytime)> | 当天可用时间段，最多不超过2个，具体定义参考CurrentDayTime结构定义。 |
@@ -576,11 +577,11 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 优惠券展示信息。
 
-| **参数** | **是否必填** | **参数类型** | **描述** |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | backgroundColor | 否 | String | 背景颜色，默认：#DF674F（红色），建议使用深色。最大长度为16。 |
 | couponTitle | 否 | String | 优惠券标题，不填写时和券批次名称保持一致。最大长度为64。 |
 | description | 否 | String | 使用须知，用于描述详细的活动规则。最大长度为5120。 |
-| jumpUrl | 否 | String | 跳转连接，支持商家应用/元服务地址，不支持app地址，支持url、fastapp，如果不填写，则在华为平台（负一屏）不跳转。最大长度为1024。 |
-| nextJumpUrl | 否 | String | HarmonyOS Next版本跳转连接，支持[元服务applinking地址](../atomic-guides/atomic-applinking.md)，不支持app地址，支持url、fastapp，如果不填写，则在华为平台（负一屏）不跳转。最大长度为1024。 |
+| jumpUrl | 否 | String | 跳转连接，支持商家应用/元服务地址，不支持app地址，支持url、fastapp，如果不填写，则在华为流量场景不跳转。最大长度为1024。 |
+| nextJumpUrl | 否 | String | HarmonyOS Next版本跳转连接，支持[元服务applinking地址](../atomic-guides/atomic-applinking.md)，不支持app地址，支持url、fastapp，如果不填写，则在华为流量场景不跳转。最大长度为1024。 |
 | diversionName | 否 | String | 导流栏目显示名称。最大长度为16。 |

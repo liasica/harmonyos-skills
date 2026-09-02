@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getdy
 title: GetDynamicInputDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > ExtendedKernelContext > GetDynamicInputDesc
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:57+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ad9132145b433d071ab97493d4f7c03f846ef8c088dbe7bff7af116108923491
+content_hash: sha256:bc637c011b2ce6fe44ef5c120f23dad8c30043da1d911292610102c8106872eb
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:ad9132145b433d071ab97493d4f7c03f846ef8c088dbe7bff7af1161089
 
 ## 函数原型
 
-```
-1. const CompileTimeTensorDesc *GetDynamicInputDesc(const size_t ir_index, const size_t relative_index) const
+```cpp
+const CompileTimeTensorDesc *GetDynamicInputDesc(const size_t ir_index, const size_t relative_index) const
 ```
 
 ## 参数说明

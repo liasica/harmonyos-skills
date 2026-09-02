@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-inst
 title: ohpm install错误码
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm install错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d192492cc9108b0080387046d4095714c8ac1b1c9e08e948b37f4dfe1c9bfe02
+scraped_at: 2026-09-02T14:50:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b6eb3c4a9550004956032e3dd10bf0b85236a131dc76628aefc682bd2ff1c9ad
 ---
 
 ## 00604001 无匹配版本
@@ -20,7 +20,7 @@ No Match.
 
 **可能原因**
 
-从服务器获取的ohpm版本号和oh-package.json5中配置的版本号不匹配。
+从服务器获取的包版本号和oh-package.json5中配置的版本号不匹配。
 
 **处理步骤**
 
@@ -69,7 +69,7 @@ Install Local Hsp Failed.
 
 **错误信息**
 
-Not FoundHsp File By Registry Tgz.
+Not Found Hsp File By Registry Tgz.
 
 **错误描述**
 
@@ -81,13 +81,13 @@ Not FoundHsp File By Registry Tgz.
 
 **处理步骤**
 
-检查HSP包，确保包含.hsp 文件。
+检查HSP包，确保包含.hsp文件。
 
 ## 00604005 依赖的包名无效
 
 **错误信息**
 
-Invalid CliInput Pkg .
+Invalid CliInput Pkg.
 
 **错误描述**
 
@@ -155,6 +155,42 @@ Internal Program Error.
 
 检查包依赖关系，确保没有依赖包冲突或不兼容的情况。具体请参考[模块内依赖版本冲突](ide-ohpmrc.md#section1623415477574)。
 
+## 00608002 文件不存在
+
+**错误信息**
+
+File Not Found.
+
+**错误描述**
+
+文件不存在。
+
+**可能原因**
+
+目录下不存在oh-package.json5文件。
+
+**处理步骤**
+
+确认目录下存在oh-package.json5文件。
+
+## 00611002 钩子命令执行失败
+
+**错误信息**
+
+Hook Fail.
+
+**错误描述**
+
+钩子命令执行失败。
+
+**可能原因**
+
+钩子命令执行失败，如oh-package.json5中配置如下："hooks": { "postInstall": "echo 'Installation complete' && exit 1" }，执行ohpm install。
+
+**处理步骤**
+
+检查hooks命令是否正确。
+
 ## 00633001 在命令行中指定的路径不存在
 
 **错误信息**
@@ -167,7 +203,7 @@ Target Path UnExist Error.
 
 **可能原因**
 
-当使用--target\_path选项时，指定的target\_path不存在或不正确错误。
+当使用--target\_path选项时，指定的target\_path不存在或不正确。
 
 **处理步骤**
 
@@ -185,7 +221,7 @@ parameterFile未找到。
 
 **可能原因**
 
-配置的parameterFile文件或地址不存在错误。
+配置的parameterFile文件或地址不存在。
 
 **处理步骤**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-66
 title: 如何通过C接口使用网络相关功能
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何通过C接口使用网络相关功能
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:51+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:5800a25ae23c6e3691b9ad72ebc3d1a4e27ee308ff315659e1daa6bdc4e4297f
 ---
 

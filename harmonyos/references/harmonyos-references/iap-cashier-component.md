@@ -3,28 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-cashi
 title: CashierComponent (iap嵌入式收银台组件)
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS组件 > CashierComponent (iap嵌入式收银台组件)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:75bcac808c483d0553a3cdb1b5d1168bafbdb816f87361529eac673988c2f93a
+scraped_at: 2026-09-02T15:02:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ce94ec3a6f3a5aeb6cc54bbceed082f8b536c45d15433f09ef76f8001de0ed94
 ---
 
-本模块提供CashierComponent组件，应用通过集成该组件完成iap嵌入式收银台功能。
+CashierComponent是IAP Kit提供的ArkUI嵌入式收银台组件，需配合cashierComponentManager使用，用于在应用页面内直接展示商品选择与支付界面，无需跳转外部收银台。该组件目前仅适用于TV设备的扫码支付场景，支持通过CashierDisplayOptions配置显示参数，并通过CashierListener回调处理购买结果。
 
-CashierComponent需要配合[cashierComponentManager](iap-cashier-component-manager.md)一起使用，用于实现iap嵌入式收银台功能。
+开发者可通过本组件实现以下功能：
+
+* 在应用内直接展示支付页面，完成商品购买和支付全流程。
+* 配置收银台显示参数及 UI 样式（如背景色）。
+* 监听购买结果并处理交易闭环，获取成功或失败的事件通知。
 
 **起始版本：** 6.1.0(23)
 
 ## 导入模块
 
-TV
-
-```
-1. import { CashierComponent, cashierComponentManager } from '@kit.IAPKit';
+```typescript
+import { CashierComponent, cashierComponentManager } from '@kit.IAPKit';
 ```
 
 ## CashierComponent
-
-TV
 
 该类用来展示嵌入式收银台的UI组件。
 
@@ -48,8 +48,6 @@ TV
 
 ### build
 
-TV
-
 build(): void
 
 用于创建[CashierComponent](iap-cashier-component.md#cashiercomponent)对象的构造函数。
@@ -64,52 +62,52 @@ build(): void
 
 **示例：**
 
-```
-1. import { CashierComponent, cashierComponentManager,iap } from '@kit.IAPKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
+```typescript
+import { CashierComponent, cashierComponentManager,iap } from '@kit.IAPKit';
+import { BusinessError} from '@kit.BasicServicesKit';
 
-4. const displayOptions: cashierComponentManager.CashierDisplayOptions = {
-5. backgroundColor: Color.Grey
-6. }
-7. class PurchaseListener implements cashierComponentManager.CashierListener {
-8. onPurchaseSuccess: (productId: string, purchaseResult: iap.CreatePurchaseResult) => void;
-9. onPurchaseFailure: (productId: string, error: BusinessError<void>) => void;
+const displayOptions: cashierComponentManager.CashierDisplayOptions = {
+  backgroundColor: Color.Grey
+}
+class PurchaseListener implements cashierComponentManager.CashierListener {
+  onPurchaseSuccess: (productId: string, purchaseResult: iap.CreatePurchaseResult) => void;
+  onPurchaseFailure: (productId: string, error: BusinessError<void>) => void;
 
-11. constructor() {
-12. this.onPurchaseSuccess = () => {
+  constructor() {
+    this.onPurchaseSuccess = () => {
 
-14. };
-15. this.onPurchaseFailure = () => {
+    };
+    this.onPurchaseFailure = () => {
 
-17. }
-18. }
-19. }
-20. const purchaseListener = new PurchaseListener();
+    }
+  }
+}
+const purchaseListener = new PurchaseListener();
 
-22. @Entry
-23. @Component
-24. struct CashierComponentPage {
-25. @State params: iap.PurchaseParameter = {
-26. // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
-27. productId: 'testProduct01',
-28. // iap.ProductType.CONSUMABLE：消耗型商品
-29. // iap.ProductType.NONCONSUMABLE：非消耗型商品
-30. // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
-31. // iap.ProductType.NONRENEWABLE：非续期订阅商品
-32. productType: iap.ProductType.CONSUMABLE,
-33. developerPayload: 'test developer payload string.',
-34. };
+@Entry
+@Component
+struct CashierComponentPage {
+  @State params: iap.PurchaseParameter = {
+    // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+    productId: 'testProduct01',
+    // iap.ProductType.CONSUMABLE：消耗型商品
+    // iap.ProductType.NONCONSUMABLE：非消耗型商品
+    // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
+    // iap.ProductType.NONRENEWABLE：非续期订阅商品
+    productType: iap.ProductType.CONSUMABLE,
+    developerPayload: 'test developer payload string.'
+  };
 
-36. build() {
-37. Column() {
-38. CashierComponent({
-39. params: this.params,
-40. purchaseListener: purchaseListener,
-41. displayOptions: displayOptions
-42. });
-43. }
-44. .width(360)
-45. .height(640)
-46. }
-47. }
+  build() {
+    Column() {
+      CashierComponent({
+        params: this.params,
+        purchaseListener: purchaseListener,
+        displayOptions: displayOptions
+      });
+    }
+    .width(360)
+    .height(640)
+  }
+}
 ```

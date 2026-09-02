@@ -3,38 +3,34 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Enums
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:750054ea0bf589afb858e522305f3cd4dfd31bd1fa9ce121fc948e351dc74ea2
+scraped_at: 2026-09-02T15:02:34+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:98742a0ab3a673e3c589bed3703a62c289edc58e5534f252fd95c8c384bea683
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## AVErrorCode9+
 
-PhonePC/2in1TabletTVWearable
-
 [Media错误码](errorcode-media.md)类型枚举。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| AVERR\_OK | 0 | 表示操作成功。 |
-| AVERR\_NO\_PERMISSION | 201 | 表示无权限执行此操作。 |
-| AVERR\_INVALID\_PARAMETER | 401 | 表示传入参数无效。 |
-| AVERR\_UNSUPPORT\_CAPABILITY | 801 | 表示当前版本不支持该API能力。 |
-| AVERR\_NO\_MEMORY | 5400101 | 表示系统内存不足或服务数量达到上限。 |
-| AVERR\_OPERATE\_NOT\_PERMIT | 5400102 | 表示当前状态不允许或无权执行此操作。 |
-| AVERR\_IO | 5400103 | 表示数据流异常信息。 |
-| AVERR\_TIMEOUT | 5400104 | 表示系统或网络响应超时。 |
-| AVERR\_SERVICE\_DIED | 5400105 | 表示服务进程死亡。 |
-| AVERR\_UNSUPPORT\_FORMAT | 5400106 | 表示不支持当前媒体资源的格式。 |
-| AVERR\_AUDIO\_INTERRUPTED11+ | 5400107 | 表示音频焦点被抢占。 |
+| AVERR\_OK | 0 | 表示操作成功。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_NO\_PERMISSION | 201 | 表示无权限执行此操作。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_INVALID\_PARAMETER | 401 | 表示传入参数无效。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_UNSUPPORT\_CAPABILITY | 801 | 表示当前版本不支持该API能力。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_NO\_MEMORY | 5400101 | 表示系统内存不足或服务数量达到上限。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_OPERATE\_NOT\_PERMIT | 5400102 | 表示当前状态不允许或无权执行此操作。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_IO | 5400103 | 表示数据流异常信息。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_TIMEOUT | 5400104 | 表示系统或网络响应超时。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_SERVICE\_DIED | 5400105 | 表示服务进程死亡。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_UNSUPPORT\_FORMAT | 5400106 | 表示不支持当前媒体资源的格式。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| AVERR\_AUDIO\_INTERRUPTED11+ | 5400107 | 表示音频焦点被抢占。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | AVERR\_IO\_HOST\_NOT\_FOUND14+ | 5411001 | 表示解析或链接服务端地址错误。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | AVERR\_IO\_CONNECTION\_TIMEOUT14+ | 5411002 | 表示网络连接超时。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | AVERR\_IO\_NETWORK\_ABNORMAL14+ | 5411003 | 表示网络异常导致的数据或链路异常。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
@@ -54,26 +50,22 @@ PhonePC/2in1TabletTVWearable
 
 ## MediaType8+
 
-PhonePC/2in1TabletTVWearable
-
 媒体类型枚举。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| MEDIA\_TYPE\_UNSUPPORTED20+ | -1 | 表示未支持的类型。  **元服务API：** 从API version 20 开始，该接口支持在元服务中使用。 |
-| MEDIA\_TYPE\_AUD | 0 | 表示音频。  **元服务API：** 从API version 11 开始，该接口支持在元服务中使用。 |
-| MEDIA\_TYPE\_VID | 1 | 表示视频。  **元服务API：** 从API version 11 开始，该接口支持在元服务中使用。 |
-| MEDIA\_TYPE\_SUBTITLE12+ | 2 | 表示字幕。  **元服务API：** 从API version 12 开始，该接口支持在元服务中使用。 |
-| MEDIA\_TYPE\_ATTACHMENT20+ | 3 | 表示附件信息（如嵌入的外部文件）。  **元服务API：** 从API version 20 开始，该接口支持在元服务中使用。 |
-| MEDIA\_TYPE\_DATA20+ | 4 | 表示数据。  **元服务API：** 从API version 20 开始，该接口支持在元服务中使用。 |
-| MEDIA\_TYPE\_TIMED\_METADATA20+ | 5 | 表示带时间戳的元数据。  **元服务API：** 从API version 20 开始，该接口支持在元服务中使用。 |
-| MEDIA\_TYPE\_AUXILIARY20+ | 6 | 表示辅助（轨道）信息。  **元服务API：** 从API version 20 开始，该接口支持在元服务中使用。 |
+| MEDIA\_TYPE\_UNSUPPORTED20+ | -1 | 表示未支持的类型。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
+| MEDIA\_TYPE\_AUD | 0 | 表示音频。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| MEDIA\_TYPE\_VID | 1 | 表示视频。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| MEDIA\_TYPE\_SUBTITLE12+ | 2 | 表示字幕。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| MEDIA\_TYPE\_ATTACHMENT20+ | 3 | 表示附件信息（如嵌入的外部文件）。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
+| MEDIA\_TYPE\_DATA20+ | 4 | 表示数据。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
+| MEDIA\_TYPE\_TIMED\_METADATA20+ | 5 | 表示带时间戳的元数据。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
+| MEDIA\_TYPE\_AUXILIARY20+ | 6 | 表示辅助（轨道）信息。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 
 ## CodecMimeType8+
-
-PhonePC/2in1TabletTVWearable
 
 Codec MIME类型枚举。
 
@@ -81,23 +73,22 @@ Codec MIME类型枚举。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| VIDEO\_H263 | 'video/h263' | 表示视频/h263类型。 |
-| VIDEO\_AVC | 'video/avc' | 表示视频/avc类型。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
-| VIDEO\_MPEG2 | 'video/mpeg2' | 表示视频/mpeg2类型。 |
-| VIDEO\_MPEG4 | 'video/mp4v-es' | 表示视频/mpeg4类型。 |
-| VIDEO\_VP8 | 'video/x-vnd.on2.vp8' | 表示视频/vp8类型。 |
-| VIDEO\_HEVC11+ | 'video/hevc' | 表示视频/H265类型。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
-| AUDIO\_AAC | 'audio/mp4a-latm' | 表示音频/mp4a-latm类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| AUDIO\_VORBIS | 'audio/vorbis' | 表示音频/vorbis类型。 |
-| AUDIO\_FLAC | 'audio/flac' | 表示音频/flac类型。 |
-| AUDIO\_MP312+ | 'audio/mpeg' | 表示音频/mpeg类型。 |
-| AUDIO\_G711MU12+ | 'audio/g711mu' | 表示音频/G711-mulaw类型。 |
-| AUDIO\_AMR\_NB18+ | 'audio/3gpp' | 表示音频/amr-nb类型。 |
-| AUDIO\_AMR\_WB18+ | 'audio/amr-wb' | 表示音频/amr-wb类型。 |
+| VIDEO\_H263 | 'video/h263' | 表示视频/H.263类型。 |
+| VIDEO\_AVC | 'video/avc' | 表示视频/H.264类型。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| VIDEO\_MPEG2 | 'video/mpeg2' | 表示视频/MPEG-2类型。 |
+| VIDEO\_MPEG4 | 'video/mp4v-es' | 表示视频/MPEG-4类型。 |
+| VIDEO\_VP8 | 'video/x-vnd.on2.vp8' | 表示视频/VP8类型。 |
+| VIDEO\_HEVC11+ | 'video/hevc' | 表示视频/H.265类型。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| AUDIO\_AAC | 'audio/mp4a-latm' | 表示音频/AAC类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| AUDIO\_VORBIS | 'audio/vorbis' | 表示音频/Vorbis类型。 |
+| AUDIO\_FLAC | 'audio/flac' | 表示音频/FLAC类型。 |
+| AUDIO\_RAW | 'audio/raw' | 表示音频/RAW类型。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AUDIO\_MP312+ | 'audio/mpeg' | 表示音频/MPEG类型。 |
+| AUDIO\_G711MU12+ | 'audio/g711mu' | 表示音频/G.711 μ-law类型。 |
+| AUDIO\_AMR\_NB18+ | 'audio/3gpp' | 表示音频/AMR-NB类型。 |
+| AUDIO\_AMR\_WB18+ | 'audio/amr-wb' | 表示音频/AMR-WB类型。 |
 
 ## AacProfile22+
-
-PhonePC/2in1TabletTVWearable
 
 高级音频编码（AAC）类型枚举。
 
@@ -112,8 +103,6 @@ PhonePC/2in1TabletTVWearable
 | AAC\_HE\_V2 | 2 | 表示AAC High-Efficiency version 2类型。 |
 
 ## MediaDescriptionKey8+
-
-PhonePC/2in1TabletTVWearable
 
 媒体信息描述枚举。
 
@@ -143,8 +132,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FetchResult23+
 
-PhonePC/2in1TabletTVWearable
-
 表示批量获取缩略图操作结果的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -159,8 +146,6 @@ PhonePC/2in1TabletTVWearable
 
 ## PlaybackInfoKey12+
 
-PhonePC/2in1TabletTVWearable
-
 播放信息描述枚举。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
@@ -174,8 +159,6 @@ PhonePC/2in1TabletTVWearable
 | BUFFER\_DURATION | 'buffer\_duration' | 表示缓存数据的可播放时长，其对应键值类型为number，单位为秒（s）。 |
 
 ## PlaybackMetricsKey23+
-
-PhonePC/2in1TabletTVWearable
 
 表示播放器指标信息的枚举。
 
@@ -192,10 +175,10 @@ PhonePC/2in1TabletTVWearable
 | TOTAL\_DOWNLOAD\_SIZE | 'total\_loading\_bytes' | 表示总的加载大小，单位为字节（Byte）。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | STALLING\_COUNT | 'stalling\_count' | 表示总的卡顿次数。 |
 | TOTAL\_STALLING\_TIME | 'total\_stalling\_time' | 表示总的卡顿时长，单位为毫秒（ms）。 |
+| LIP\_ASYNC\_COUNT | 'lip\_async\_count' | 表示总的音画不同步的次数。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| TOTAL\_LIP\_ASYNC\_TIME | 'total\_lip\_async\_time' | 表示总的音画不同步时长，单位为毫秒（ms）。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## BufferingInfoType8+
-
-PhonePC/2in1TabletTVWearable
 
 缓存事件类型枚举。
 
@@ -212,8 +195,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SoundInterruptMode23+
 
-PhonePC/2in1TabletTVWearable
-
 表示在SoundPool中，同一ID的音频在播放时的打断模式的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -226,8 +207,6 @@ PhonePC/2in1TabletTVWearable
 | SAME\_SOUND\_INTERRUPT | 1 | 表示同一ID的音频，如果前者尚未播放完成，后者在播放前会先打断前者的播放。 |
 
 ## StateChangeReason9+
-
-PhonePC/2in1TabletTVWearable
 
 表示播放或录制实例状态机切换原因的枚举，伴随state一起上报。
 
@@ -242,8 +221,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SeekMode8+
 
-PhonePC/2in1TabletTVWearable
-
 视频播放的Seek模式枚举，可通过seek方法作为参数传递下去。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
@@ -257,9 +234,9 @@ PhonePC/2in1TabletTVWearable
 
 ## SwitchMode12+
 
-PhonePC/2in1TabletTVWearable
+表示视频播放的selectTrack模式枚举。
 
-视频播放的selectTrack模式枚举，可通过selectTrack方法作为参数传递下去，当前仅DASH协议视频轨支持该扩展参数。
+可通过selectTrack方法作为参数传递下去，当前DASH/HLS协议视频轨均支持该扩展参数（从API版本26.0.0开始HLS协议视频轨支持该扩展参数）。
 
 **系统能力：** SystemCapability.Multimedia.Media.Core
 
@@ -270,8 +247,6 @@ PhonePC/2in1TabletTVWearable
 | CLOSEST | 2 | 表示从距离当前播放时间点最近的帧开始播放，该模式立即切换，切换后会卡住3到5s，然后恢复播放。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## PlaybackSpeed8+
-
-PhonePC/2in1TabletTVWearable
 
 视频播放的倍速枚举，可通过setSpeed方法作为参数传递下去。
 
@@ -294,8 +269,6 @@ PhonePC/2in1TabletTVWearable
 
 ## VideoScaleType9+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，视频缩放模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -310,8 +283,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioSourceType9+
 
-PhonePC/2in1TabletTVWearable
-
 表示视频录制中音频源类型的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
@@ -319,15 +290,13 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUDIO\_SOURCE\_TYPE\_DEFAULT | 0 | 默认的音频输入源类型。 |
-| AUDIO\_SOURCE\_TYPE\_MIC | 1 | 表示MIC的音频输入源。  **元服务API：** 从API version 12 开始，该接口支持在元服务中使用。 |
+| AUDIO\_SOURCE\_TYPE\_MIC | 1 | 表示MIC的音频输入源。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | AUDIO\_SOURCE\_TYPE\_VOICE\_RECOGNITION12+ | 2 | 表示语音识别场景的音频源。 |
 | AUDIO\_SOURCE\_TYPE\_VOICE\_COMMUNICATION12+ | 7 | 表示语音通话场景的音频源。 |
 | AUDIO\_SOURCE\_TYPE\_VOICE\_MESSAGE12+ | 10 | 表示短语音消息的音频源。 |
 | AUDIO\_SOURCE\_TYPE\_CAMCORDER12+ | 13 | 表示相机录像的音频源。 |
 
 ## VideoSourceType9+
-
-PhonePC/2in1TabletTVWearable
 
 表示视频录制中视频源类型的枚举。
 
@@ -339,8 +308,6 @@ PhonePC/2in1TabletTVWearable
 | VIDEO\_SOURCE\_TYPE\_SURFACE\_ES | 1 | 输入surface中携带的是ES data。 |
 
 ## ContainerFormatType8+
-
-PhonePC/2in1TabletTVWearable
 
 表示容器格式类型的枚举，缩写为CFT。
 
@@ -357,8 +324,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FileGenerationMode12+
 
-PhonePC/2in1TabletTVWearable
-
 表示创建媒体文件模式的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
@@ -366,11 +331,9 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | APP\_CREATE | 0 | 由应用自行在沙箱创建媒体文件。 |
-| AUTO\_CREATE\_CAMERA\_SCENE | 1 | 由系统创建媒体文件，当前仅在相机录制场景下生效，会忽略应用设置的url。 |
+| AUTO\_CREATE\_CAMERA\_SCENE | 1 | 由系统创建媒体文件，会忽略应用设置的url。 |
 
 ## HdrType12+
-
-PhonePC/2in1TabletTVWearable
 
 表示视频HDR类型的枚举。
 
@@ -382,8 +345,6 @@ PhonePC/2in1TabletTVWearable
 | AV\_HDR\_TYPE\_VIVID | 1 | 表示为HDR VIVID类型。 |
 
 ## AVImageQueryOptions12+
-
-PhonePC/2in1TabletTVWearable
 
 需要获取的缩略图时间点与视频帧的对应关系。
 
@@ -399,8 +360,6 @@ PhonePC/2in1TabletTVWearable
 | AV\_IMAGE\_QUERY\_CLOSEST | 3 | 表示选取离传入时间点最近的帧，该帧不一定是关键帧。 |
 
 ## LoadingRequestError18+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，数据加载过程中状态变化的原因。
 
@@ -420,8 +379,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AVMimeTypes12+
 
-PhonePC/2in1TabletTVWearable
-
 媒体MIME类型，通过[setMimeType](arkts-apis-media-mediasource.md#setmimetype12)设置。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -434,8 +391,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AVScreenCaptureRecordPreset12+
 
-PhonePC/2in1TabletTV
-
 进行屏幕录制时的编码、封装格式参数的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
@@ -446,8 +401,6 @@ PhonePC/2in1TabletTV
 | SCREEN\_RECORD\_PRESET\_H265\_AAC\_MP4 | 1 | 使用视频H265编码，音频AAC编码，MP4封装格式。 |
 
 ## AVScreenCaptureStateCode12+
-
-PhonePC/2in1TabletTV
 
 屏幕录制的状态回调。
 
@@ -466,10 +419,12 @@ PhonePC/2in1TabletTV
 | SCREENCAPTURE\_STATE\_ENTER\_PRIVATE\_SCENE | 8 | 录屏进入隐私页面。 |
 | SCREENCAPTURE\_STATE\_EXIT\_PRIVATE\_SCENE | 9 | 录屏退出隐私页面。 |
 | SCREENCAPTURE\_STATE\_STOPPED\_BY\_USER\_SWITCHES | 10 | 系统用户切换，录屏中断。 |
+| SCREENCAPTURE\_STATE\_PAUSED\_BY\_USER | 11 | 录屏已被用户暂停。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| SCREENCAPTURE\_STATE\_RESUMED\_BY\_USER | 12 | 录屏已被用户恢复。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| SCREENCAPTURE\_STATE\_PAUSED\_BY\_APP | 13 | 录屏已被应用程序暂停。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| SCREENCAPTURE\_STATE\_RESUMED\_BY\_APP | 14 | 录屏已被应用程序恢复。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## AVScreenCaptureFillMode18+
-
-PhonePC/2in1TabletTV
 
 进行屏幕录制时视频填充模式的枚举。
 
@@ -482,8 +437,6 @@ PhonePC/2in1TabletTV
 
 ## PickerMode22+
 
-PhonePC/2in1TabletTV
-
 表示屏幕录制Picker模式的枚举。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVScreenCapture
@@ -493,10 +446,12 @@ PhonePC/2in1TabletTV
 | WINDOW\_ONLY | 0 | 仅显示窗口列表。 |
 | SCREEN\_ONLY | 1 | 仅显示屏幕列表。 |
 | SCREEN\_AND\_WINDOW | 2 | 同时显示屏幕列表和窗口列表。 |
+| APP\_ONLY | 3 | 仅显示应用模式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| WINDOW\_AND\_APP | 4 | 同时显示窗口和应用模式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| SCREEN\_AND\_APP | 5 | 同时显示屏幕和应用模式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| SCREEN\_WINDOW\_AND\_APP | 6 | 同时显示屏幕、窗口和应用模式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## AVMetricsEventType23+
-
-PhonePC/2in1TabletTVWearable
 
 表示媒体服务支持的指标事件的枚举。
 
@@ -505,12 +460,35 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AV\_METRICS\_EVENT\_STALLING | 1 | 表示播放卡顿的指标事件。 |
+| AV\_METRICS\_EVENT\_LIP\_ASYNC | 2 | 表示音画不同步的指标事件。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AV\_METRICS\_EVENT\_LOADINGRATE\_CHANGE | 3 | 表示加载速率变化超过10%的事件。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AV\_METRICS\_EVENT\_LOADING\_ERROR | 4 | 表示加载数据请求错误的事件。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AV\_METRICS\_EVENT\_CONTENT\_CHANGED | 5 | 表示播放内容切换的事件。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AV\_METRICS\_EVENT\_CONTENT\_DISCONTINUITY | 6 | 表示播放内容不连续的事件。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| AV\_METRICS\_EVENT\_AUDIO\_ABNORMAL | 7 | 表示音频状态变化的事件。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+
+## PlaylistLoopMode
+
+表示播放列表循环模式的枚举。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Media.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| PLAYLIST\_LOOP\_MODE\_ALL | 1 | 列表循环模式。 |
+| PLAYLIST\_LOOP\_MODE\_ONE | 2 | 单曲循环模式。 |
+| PLAYLIST\_LOOP\_MODE\_SHUFFLE | 3 | 随机循环模式。 |
+| PLAYLIST\_LOOP\_MODE\_NONE | 4 | 关闭循环模式。 |
 
 ## AudioEncoder(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 从API version 6开始支持，从API version 8开始废弃，建议使用[CodecMimeType](arkts-apis-media-e.md#codecmimetype8)替代。
 
@@ -528,11 +506,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AudioOutputFormat(deprecated)
 
-PhonePC/2in1TabletTVWearable
+**说明** 
 
-说明
-
-从API version 6开始支持，从API version 8 开始废弃，建议使用[ContainerFormatType](arkts-apis-media-e.md#containerformattype8)替代。
+从API version 6开始支持，从API version 8开始废弃，建议使用[ContainerFormatType](arkts-apis-media-e.md#containerformattype8)替代。
 
 表示音频封装格式的枚举。
 
@@ -548,11 +524,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MediaErrorCode(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 媒体服务错误类型枚举。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 11开始废弃，建议使用[AVErrorCode](arkts-apis-media-e.md#averrorcode9)替代。
 

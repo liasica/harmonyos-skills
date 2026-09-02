@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (FlashQuery)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (FlashQuery)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c355ccba9c5f17d902de7864d32aa54e9ec84dc7d8a6903bb216bf4e2242c249
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:65df2ab30dc82b832ed2826c3917efeed008f8ec020a122c32369737d86edd98
 ---
 
 提供了查询设备的闪光灯状态和模式的能力。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface的起始版本为API version 12。接口在API version 12发生兼容变更，保留了内层元素的起始版本信息，会出现外层元素@since版本号大于内层元素的情况，不影响接口使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## hasFlash11+
-
-PhonePC/2in1TabletTVWearable
 
 hasFlash(): boolean
 
@@ -51,25 +47,23 @@ hasFlash(): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function hasFlash(photoSession: camera.PhotoSession): boolean {
-4. let status: boolean = false;
-5. try {
-6. status = photoSession.hasFlash();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The hasFlash call failed. error code: ${err.code}`);
-11. }
-12. return status;
-13. }
+function hasFlash(photoSession: camera.PhotoSession): boolean {
+  let status: boolean = false;
+  try {
+    status = photoSession.hasFlash();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The hasFlash call failed. error code: ${err.code}`);
+  }
+  return status;
+}
 ```
 
 ## isFlashModeSupported11+
-
-PhonePC/2in1TabletTVWearable
 
 isFlashModeSupported(flashMode: FlashMode): boolean
 
@@ -101,18 +95,18 @@ isFlashModeSupported(flashMode: FlashMode): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function isFlashModeSupported(photoSession: camera.PhotoSession): boolean {
-4. let status: boolean = false;
-5. try {
-6. status = photoSession.isFlashModeSupported(camera.FlashMode.FLASH_MODE_AUTO);
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The isFlashModeSupported call failed. error code: ${err.code}`);
-11. }
-12. return status;
-13. }
+function isFlashModeSupported(photoSession: camera.PhotoSession): boolean {
+  let status: boolean = false;
+  try {
+    status = photoSession.isFlashModeSupported(camera.FlashMode.FLASH_MODE_AUTO);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The isFlashModeSupported call failed. error code: ${err.code}`);
+  }
+  return status;
+}
 ```

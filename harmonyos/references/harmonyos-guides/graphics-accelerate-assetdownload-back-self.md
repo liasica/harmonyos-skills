@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-assetdownload-back-self
 title: extension协同下载
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 系统后台下载资源包 > extension协同下载
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6fa5087ac0f391d3f2feed28436a60adb082183b5166f473276fd03fa77990db
+scraped_at: 2026-09-02T14:59:50+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:4b373e2a996ef4de8a3b75de97b273d14d08ffddc69c4e79ff9a8310412b38e4
 ---
 
 从5.1.1(19)版本开始，新增extension协同下载。
@@ -13,7 +14,7 @@ content_hash: sha256:6fa5087ac0f391d3f2feed28436a60adb082183b5166f473276fd03fa77
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/lF399TcdQ6uii4jn0gEamg/zh-cn_image_0000002583438763.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/DitxSxunR8m_DcvmwROCYA/zh-cn_image_0000002706834724.png)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务从AppGallery Connect获取相关资源下载配置信息，例如下载类型、CDN类型、manifestUrl、域名白名单等。具体资源下载配置信息请参见[发布资源包下载任务](graphics-accelerate-assetdownload-release.md)。
@@ -39,78 +40,87 @@ content_hash: sha256:6fa5087ac0f391d3f2feed28436a60adb082183b5166f473276fd03fa77
 
 ## 开发步骤
 
-1. 在“src/main/module.json5”的extensionAbilities层级中添加资源加速ExtensionAbility信息。
+1. 新增配置信息。
 
-   ```
-   1. "extensionAbilities": [
-   2. {
-   3. "name": "AssetAccelExtAbility", // 游戏资源加速ExtensionAbility组件的名称。
-   4. "srcEntry": "./ets/extensionability/AssetAccelExtAbility.ets", // 游戏资源加速ExtensionAbility组件所对应的代码路径。
-   5. "type": "assetAcceleration"
-   6. }
-   7. ]
-   ```
-2. 在ets目录下新建extensionability文件夹及AssetAccelExtAbility.ets文件，导入assetDownloadManager模块、AssetAccelerationExtensionAbility模块及相关模块，同时新增AssetAccelExtAbility类继承AssetAccelerationExtensionAbility。
+   在“src/main/module.json5”的extensionAbilities层级中添加资源加速ExtensionAbility信息。
 
+   ```json5
+   "extensionAbilities": [
+     {
+       "name": "AssetAccelExtAbility", // 游戏资源加速ExtensionAbility组件的名称。
+       "srcEntry": "./ets/extensionability/AssetAccelExtAbility.ets", // 游戏资源加速ExtensionAbility组件所对应的代码路径。
+       "type": "assetAcceleration"
+     }
+   ],
    ```
-   1. import { BusinessError } from '@kit.BasicServicesKit';
-   2. import { deviceInfo } from '@kit.BasicServicesKit';
-   3. import { common } from '@kit.AbilityKit';
-   4. import { assetDownloadManager, AssetAccelerationExtensionAbility, AssetAccelerationExtensionInfo, ContentRequestType } from '@kit.GraphicsAccelerateKit';
+2. 导入模块信息。
 
-   6. export default class AssetAccelExtAbility extends AssetAccelerationExtensionAbility {
-   7. };
-   ```
-3. 游戏实现[onDownloadWithAppControl](../harmonyos-references/graphics-accelerate-extensionability.md#ondownloadwithappcontrol)方法，调用应用自身下载器下载资源包。
+   在ets目录下新建extensionability文件夹及AssetAccelExtAbility.ets文件，导入assetDownloadManager模块、AssetAccelerationExtensionAbility模块及相关模块，同时新增AssetAccelExtAbility类继承AssetAccelerationExtensionAbility。
 
-   说明
+   **说明** 
 
-   若接口需要使用common.Context类型的上下文，可以从this.context中获取类型为common.ExtensionContext的上下文对象。
+   针对AssetAccelerationExtensionAbility接口调用限制，详细请参考API中的[约束限制](../harmonyos-references/graphics-accelerate-extensionability.md#约束限制)。
 
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { deviceInfo } from '@kit.BasicServicesKit';
+   import { common } from '@kit.AbilityKit';
+   import { assetDownloadManager, AssetAccelerationExtensionAbility, AssetAccelerationExtensionInfo, ContentRequestType } from '@kit.GraphicsAccelerateKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. async onDownloadWithAppControl(requestType: ContentRequestType, manifestUrl: string,
-   2. assetAccelerationExtensionInfo: AssetAccelerationExtensionInfo): Promise<boolean> {
-   3. const context = this.context as common.ExtensionContext; // 将当前上下文转换为ExtensionContext类型。
-   4. console.info('AssetAccelDemo', `application file directory = ${context.filesDir}`);
-   5. console.info('AssetAccelDemo', `onDownloadWithAppControl enter, requestType: ${requestType}, manifestUrl: ${manifestUrl}.`);
-   6. // 如果有下载任务，则调用应用自身下载器进行资源下载，并返回true，否则返回false。
-   7. // ...
-   8. let hasDownloadTask = true;
-   9. return hasDownloadTask;
-   10. }
-   ```
-4. 应用自身下载器下载过程中和下载完成后，会同步下载信息给资源加速ExtensionAbility。在资源加速ExtensionAbility中调用[reportDownloadProgress](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerreportdownloadprogress)方法，向游戏资源加速服务上报下载进度信息和下载完成信息。
+3. 实现extension协同下载功能。
 
-   ```
-   1. try {
-   2. let progressInfo: assetDownloadManager.AppDownloadProgress = {
-   3. totalBytesWritten: 0,
-   4. totalExpectedBytes: 0,
-   5. totalFiles: 0,
-   6. successCount: 0,
-   7. failureCount: 0,
-   8. status:assetDownloadManager.AppDownloadStatus.IN_PROGRESS
-   9. }
-   10. // 判断当前HarmonyOS SDK版本是否为6.1.0(23)及以上版本
-   11. if (deviceInfo.sdkApiVersion >= 23) {
-   12. progressInfo.resourceType = assetDownloadManager.ResourceType.RELEASED
-   13. }
-   14. assetDownloadManager.reportDownloadProgress(progressInfo);
-   15. console.info('AssetAccelDemo', `Succeeded in reporting downloadProgress`);
-   16. } catch (error) {
-   17. console.error('AssetAccelDemo', `Failed to report downloadProgress, errCode:${error.code}, errMessage:${error.message}`);
-   18. }
-   ```
-5. 游戏实现[onExtensionWillTerminate](../harmonyos-references/graphics-accelerate-extensionability.md#onextensionwillterminate)方法，接收游戏资源加速服务关闭资源包后台下载功能的通知。
+   1. 游戏实现[onDownloadWithAppControl](../harmonyos-references/graphics-accelerate-extensionability.md#ondownloadwithappcontrol)方法，调用应用自身下载器下载资源包。
 
-   ```
-   1. async onExtensionWillTerminate(error?: BusinessError): Promise<void> {
-   2. // 避免进行耗时处理。
-   3. if (error) {
-   4. console.error('AssetAccelDemo', `onExtensionWillTerminate enter, TerminateReason：${error?.code}, msg: ${error?.message}.`);
-   5. // 添加异常终止处理逻辑。
-   6. return;
-   7. }
-   8. // 添加资源清理等处理逻辑。
-   9. }
-   ```
+      **说明** 
+
+      若接口需要使用common.Context类型的上下文，可以从this.context中获取类型为common.ExtensionContext的上下文对象。
+
+      ```typescript
+      async onDownloadWithAppControl(requestType: ContentRequestType, manifestUrl: string,
+        aaAppExtensionInfo: AssetAccelerationExtensionInfo): Promise<boolean> {
+        hilog.info(DOMAINID, TAG, `onDownloadWithAppControl enter; requestType = ${requestType}`);
+        // 如果有下载任务，则调用应用自身下载器进行资源下载，并返回true，否则返回false。
+        // ...
+        // ...
+        let hasDownloadTask = true;
+        return hasDownloadTask;
+      }
+      ```
+   2. 应用自身下载器下载过程中和下载完成后，会同步下载信息给资源加速ExtensionAbility。在资源加速ExtensionAbility中调用[reportDownloadProgress](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerreportdownloadprogress)方法，向游戏资源加速服务上报下载进度信息和下载完成信息。
+
+      ```typescript
+      try {
+        let progressInfo: assetDownloadManager.AppDownloadProgress = {
+          totalBytesWritten: this.progress.totalBytesWritten,
+          totalExpectedBytes: this.progress.totalExpectedBytes,
+          totalFiles: this.progress.totalFiles,
+          successCount: this.progress.successCount,
+          failureCount: this.progress.failureCount,
+          status: this.progress.status == 'inProgress' ? assetDownloadManager.AppDownloadStatus.IN_PROGRESS :
+            assetDownloadManager.AppDownloadStatus.FINISH
+        }
+        // 判断当前HarmonyOS SDK版本是否为6.1.0(23)及以上版本
+        if (deviceInfo.sdkApiVersion >= 23) {
+          progressInfo.resourceType = assetDownloadManager.ResourceType.RELEASED
+        }
+        assetDownloadManager.reportDownloadProgress(progressInfo);
+        hilog.info(DOMAINID, TAG, `Succeeded in reporting downloadProgress`);
+      } catch (error) {
+        hilog.error(DOMAINID, TAG, `Failed to report downloadProgress, errCode:${error.code}, errMessage:${error.message}`);
+      }
+      ```
+   3. 游戏实现[onExtensionWillTerminate](../harmonyos-references/graphics-accelerate-extensionability.md#onextensionwillterminate)方法，接收游戏资源加速服务关闭资源包后台下载功能的通知。
+
+      ```typescript
+      async onExtensionWillTerminate(error?: BusinessError): Promise<void> {
+        // 避免进行耗时处理。
+        if (error) {
+          hilog.error(DOMAINID, TAG, `onExtensionWillTerminate enter, TerminateReason:${error?.code}, msg:${error?.message}.`);
+          // 添加异常终止处理逻辑。
+          return;
+        }
+        // 添加资源清理等处理逻辑。
+        // ...
+      }
+      ```

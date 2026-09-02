@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_pasteboard.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > oh_pasteboard.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:00:30+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:633a2267b36a30e4266317b08eb8b9ce99aa0b7fd1e009de6a49a8010ea34453
+scraped_at: 2026-09-02T15:02:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:25be404aa06bb60693ccb82f6fb98faee32516e4ac295e0986a4038fc3c3a96d
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-提供访问系统剪贴板的接口、数据结构、枚举类型。
+提供访问系统剪贴板的接口、数据结构、枚举类型。支持剪贴板数据的读写、监听剪贴板内容变化、获取粘贴进度等功能。
 
 **引用文件：** <database/pasteboard/oh\_pasteboard.h>
 
@@ -26,22 +24,16 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Pasteboard\_ProgressInfo](capi-pasteboard-progressinfo.md) | Pasteboard\_ProgressInfo | 定义进度上报的数据结构。 |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md) | Pasteboard\_GetDataParams | 表示从剪贴板获取粘贴数据和进度时需要写入的参数。 |
-| [OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md) | OH\_PasteboardObserver | 定义剪贴板数据变更观察者。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md) | Pasteboard\_GetDataParams | 表示从剪贴板获取粘贴数据和进度时需要提供的参数。 |
+| [OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md) | OH\_PasteboardObserver | 定义剪贴板数据变更观察者。用于监听系统剪贴板数据的变化事件，当剪贴板内容发生更新时，通过回调通知应用。典型使用场景：需要响应剪贴板内容变化的应用。 |
 | [OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md) | OH\_Pasteboard | 定义剪贴板对象，用以操作系统剪贴板。 |
 
 ### 宏定义
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -53,8 +45,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Pasteboard\_NotifyType](capi-oh-pasteboard-h.md#pasteboard_notifytype) | Pasteboard\_NotifyType | 剪贴板的数据变更类型。 |
@@ -62,8 +52,6 @@ PhonePC/2in1TabletTVWearable
 | [Pasteboard\_ProgressIndicator](capi-oh-pasteboard-h.md#pasteboard_progressindicator) | Pasteboard\_ProgressIndicator | 定义进度条指示选项，可选择是否采用系统默认进度显示。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -88,7 +76,7 @@ PhonePC/2in1TabletTVWearable
 | [Pasteboard\_GetDataParams \*OH\_Pasteboard\_GetDataParams\_Create(void)](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_create) | - | 创建剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)指针及实例对象。 |
 | [void OH\_Pasteboard\_GetDataParams\_Destroy(Pasteboard\_GetDataParams\* params)](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_destroy) | - | 销毁剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)指针指向的实例对象。 |
 | [void OH\_Pasteboard\_GetDataParams\_SetProgressIndicator(Pasteboard\_GetDataParams\* params,Pasteboard\_ProgressIndicator progressIndicator)](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setprogressindicator) | - | 向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置进度条指示选项，可选择是否采用系统默认进度显示。 |
-| [void OH\_Pasteboard\_GetDataParams\_SetDestUri(Pasteboard\_GetDataParams\* params, const char\* destUri, uint32\_t destUriLen)](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setdesturi) | - | 向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置拷贝文件时目标路径。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件copy处理。 |
+| [void OH\_Pasteboard\_GetDataParams\_SetDestUri(Pasteboard\_GetDataParams\* params, const char\* destUri, uint32\_t destUriLen)](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setdesturi) | - | 向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置拷贝文件时目标路径。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件复制处理。 |
 | [void OH\_Pasteboard\_GetDataParams\_SetFileConflictOptions(Pasteboard\_GetDataParams\* params,Pasteboard\_FileConflictOptions option)](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setfileconflictoptions) | - | 向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置文件冲突选项。 |
 | [void OH\_Pasteboard\_GetDataParams\_SetProgressListener(Pasteboard\_GetDataParams\* params,const OH\_Pasteboard\_ProgressListener listener)](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setprogresslistener) | - | 向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置进度上报回调函数。 |
 | [int OH\_Pasteboard\_ProgressInfo\_GetProgress(Pasteboard\_ProgressInfo\* progressInfo)](capi-oh-pasteboard-h.md#oh_pasteboard_progressinfo_getprogress) | - | 从[Pasteboard\_ProgressInfo](capi-pasteboard-progressinfo.md)获取粘贴进度。 |
@@ -96,17 +84,14 @@ PhonePC/2in1TabletTVWearable
 | [OH\_UdmfData\* OH\_Pasteboard\_GetDataWithProgress(OH\_Pasteboard\* pasteboard, Pasteboard\_GetDataParams\* params,int\* status)](capi-oh-pasteboard-h.md#oh_pasteboard_getdatawithprogress) | - | 获取剪贴板的数据以及粘贴进度，不支持对文件夹的拷贝。 |
 | [uint32\_t OH\_Pasteboard\_GetChangeCount(OH\_Pasteboard \*pasteboard)](capi-oh-pasteboard-h.md#oh_pasteboard_getchangecount) | - | 获取剪贴板内容的变化次数。 |
 | [void OH\_Pasteboard\_SyncDelayedDataAsync(OH\_Pasteboard\* pasteboard, void (\*callback)(int errorCode))](capi-oh-pasteboard-h.md#oh_pasteboard_syncdelayeddataasync) | - | 通知剪贴板从应用同步所有延迟数据，与延迟复制接口[OH\_UdmfRecordProvider\_SetData](capi-udmf-h.md#oh_udmfrecordprovider_setdata)搭配使用。当应用使用延迟复制功能复制时，仅将应用支持的数据类型写入剪贴板。应用应在退出时，重新调用[OH\_Pasteboard\_SetData](capi-oh-pasteboard-h.md#oh_pasteboard_setdata)接口主动提交所有复制数据或调用此接口通知剪贴板获取全量数据，等待数据同步完成再继续退出，否则可能导致其他应用粘贴获取不到数据。 |
+| [bool OH\_Pasteboard\_HasRemoteData(OH\_Pasteboard\* pasteboard)](capi-oh-pasteboard-h.md#oh_pasteboard_hasremotedata) | - | 判断当前待粘贴的剪贴板数据是否在远端设备上。 |
 
 ## 宏定义说明
 
-PhonePC/2in1TabletTVWearable
-
 ### PASTEBOARD\_MIMETYPE\_TEXT\_PLAIN
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define PASTEBOARD_MIMETYPE_TEXT_PLAIN "text/plain"
+```c
+#define PASTEBOARD_MIMETYPE_TEXT_PLAIN "text/plain"
 ```
 
 **描述**
@@ -117,10 +102,8 @@ PhonePC/2in1TabletTVWearable
 
 ### PASTEBOARD\_MIMETYPE\_TEXT\_URI
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define PASTEBOARD_MIMETYPE_TEXT_URI "text/uri"
+```c
+#define PASTEBOARD_MIMETYPE_TEXT_URI "text/uri"
 ```
 
 **描述**
@@ -131,10 +114,8 @@ URI类型。
 
 ### PASTEBOARD\_MIMETYPE\_TEXT\_HTML
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define PASTEBOARD_MIMETYPE_TEXT_HTML "text/html"
+```c
+#define PASTEBOARD_MIMETYPE_TEXT_HTML "text/html"
 ```
 
 **描述**
@@ -145,10 +126,8 @@ HTML类型。
 
 ### PASTEBOARD\_MIMETYPE\_PIXELMAP
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define PASTEBOARD_MIMETYPE_PIXELMAP "pixelMap"
+```c
+#define PASTEBOARD_MIMETYPE_PIXELMAP "pixelMap"
 ```
 
 **描述**
@@ -159,10 +138,8 @@ pixelMap类型。
 
 ### PASTEBOARD\_MIMETYPE\_TEXT\_WANT
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define PASTEBOARD_MIMETYPE_TEXT_WANT "text/want"
+```c
+#define PASTEBOARD_MIMETYPE_TEXT_WANT "text/want"
 ```
 
 **描述**
@@ -173,19 +150,17 @@ want类型。
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Pasteboard\_NotifyType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Pasteboard_NotifyType
+```c
+enum Pasteboard_NotifyType
 ```
 
 **描述：**
 
 剪贴板的数据变更类型。
+
+**使用场景**：用于区分剪贴板数据变更的来源，判断是本地设备还是远端设备的数据变更。
 
 **起始版本：** 13
 
@@ -196,15 +171,15 @@ PhonePC/2in1TabletTVWearable
 
 ### Pasteboard\_FileConflictOptions
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Pasteboard_FileConflictOptions
+```c
+enum Pasteboard_FileConflictOptions
 ```
 
 **描述：**
 
 定义文件拷贝冲突时的选项。
+
+**使用场景**：在获取剪贴板数据并拷贝文件时，目标路径已存在同名文件，需指定冲突处理策略。
 
 **起始版本：** 15
 
@@ -215,15 +190,15 @@ PhonePC/2in1TabletTVWearable
 
 ### Pasteboard\_ProgressIndicator
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Pasteboard_ProgressIndicator
+```c
+enum Pasteboard_ProgressIndicator
 ```
 
 **描述：**
 
 定义进度条指示选项，可选择是否采用系统默认进度显示。
+
+**使用场景**：在获取剪贴板数据并拷贝文件时，控制是否显示进度提示。
 
 **起始版本：** 15
 
@@ -234,19 +209,17 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Pasteboard\_ProgressListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_Pasteboard_ProgressListener)(Pasteboard_ProgressInfo* progressInfo)
+```c
+typedef void (*OH_Pasteboard_ProgressListener)(Pasteboard_ProgressInfo* progressInfo)
 ```
 
 **描述：**
 
 用于在不使用系统默认进度显示时，通知应用拷贝粘贴任务进度。
+
+**使用场景**：当需要自定义进度显示UI时，设置此回调函数来获取进度信息。
 
 **起始版本：** 15
 
@@ -258,15 +231,15 @@ PhonePC/2in1TabletTVWearable
 
 ### Pasteboard\_Notify()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*Pasteboard_Notify)(void* context, Pasteboard_NotifyType type)
+```c
+typedef void (*Pasteboard_Notify)(void* context, Pasteboard_NotifyType type)
 ```
 
 **描述：**
 
 定义剪贴板内容变更时触发的回调函数。
+
+**使用场景**：需要在剪贴板数据变更时执行特定逻辑时实现此回调函数。
 
 **起始版本：** 13
 
@@ -279,15 +252,15 @@ PhonePC/2in1TabletTVWearable
 
 ### Pasteboard\_Finalize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*Pasteboard_Finalize)(void* context)
+```c
+typedef void (*Pasteboard_Finalize)(void* context)
 ```
 
 **描述：**
 
 定义用于释放上下文的回调函数，剪贴板数据变更观察者对象销毁时触发。
+
+**使用场景**：当在Pasteboard\_Notify回调中使用了动态分配的上下文数据时，需要实现此回调来释放资源。
 
 **起始版本：** 13
 
@@ -295,19 +268,22 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| void\* context | 要释放的上下文指针。 |
+| void\* context | 要释放的上下文指针。当context指向需要手动释放的动态内存或资源时，应在回调函数中释放；当context指向静态内存或无需管理的资源时，回调函数可以不做处理。 |
 
 ### OH\_PasteboardObserver\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_PasteboardObserver* OH_PasteboardObserver_Create()
+```c
+OH_PasteboardObserver* OH_PasteboardObserver_Create()
 ```
 
 **描述：**
 
-创建一个剪贴板数据变更观察者[OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md)指针及实例对象。
+创建一个剪贴板数据变更观察者[OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md)指针及实例对象。典型使用场景包括：监听剪贴板内容变化以实现数据同步、在剪贴板内容更新时触发业务逻辑等。调用此函数后，系统会初始化一个剪贴板数据变更观察者对象，返回指向该对象的指针。创建成功后，开发者需要通过[OH\_PasteboardObserver\_SetData](capi-oh-pasteboard-h.md#oh_pasteboardobserver_setdata)设置回调函数，然后通过[OH\_Pasteboard\_Subscribe](capi-oh-pasteboard-h.md#oh_pasteboard_subscribe)订阅剪贴板变更事件。
+
+**约束和限制：**
+
+* 调用者应在不需要监听剪贴板数据变更时调用[OH\_PasteboardObserver\_Destroy](capi-oh-pasteboard-h.md#oh_pasteboardobserver_destroy)释放资源，否则会导致内存泄漏。
+* 观察者对象不支持多线程并发访问，需要在同一线程中创建和销毁。
 
 **起始版本：** 13
 
@@ -319,15 +295,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PasteboardObserver\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PasteboardObserver_Destroy(OH_PasteboardObserver* observer)
+```c
+int OH_PasteboardObserver_Destroy(OH_PasteboardObserver* observer)
 ```
 
 **描述：**
 
 销毁剪贴板数据变更观察者[OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md)指针指向的实例对象。
+
+**使用场景**：不再需要监听剪贴板数据变更时，应先取消订阅，再销毁观察者对象。
+
+**开发建议**：销毁前请确保已调用[OH\_Pasteboard\_Unsubscribe](capi-oh-pasteboard-h.md#oh_pasteboard_unsubscribe)取消订阅。
 
 **起始版本：** 13
 
@@ -341,19 +319,22 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回执行的错误码。错误码定义详见[PASTEBOARD\_ErrCode](capi-oh-pasteboard-err-code-h.md#pasteboard_errcode)。  若返回ERR\_OK，表示执行成功。  若返回ERR\_INVALID\_PARAMETER，表示传入了无效参数。 |
+| int | 返回执行的错误码。详见[PASTEBOARD\_ErrCode](capi-oh-pasteboard-err-code-h.md#pasteboard_errcode)。 |
+
+**错误码说明:**
+
+* **ERR\_OK**: 执行成功
+* **ERR\_INVALID\_PARAMETER**: 参数无效
 
 ### OH\_PasteboardObserver\_SetData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_PasteboardObserver_SetData(OH_PasteboardObserver* observer, void* context,const Pasteboard_Notify callback, const Pasteboard_Finalize finalize)
+```c
+int OH_PasteboardObserver_SetData(OH_PasteboardObserver* observer, void* context, const Pasteboard_Notify callback, const Pasteboard_Finalize finalize)
 ```
 
 **描述：**
 
-向剪贴板数据变更观察者设置回调函数。
+向剪贴板数据变更观察者设置回调函数。当应用需要在剪贴板数据发生变化时执行特定操作（如更新UI显示、同步数据到其他模块）时，通过此接口设置回调函数。设置完成后，当剪贴板发生对应类型的数据变更时将触发回调。回调通常在系统线程中执行，需注意线程安全。回调函数的生命周期应不短于观察者的生命周期。
 
 **起始版本：** 13
 
@@ -363,8 +344,8 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md)\* observer | 表示指向剪贴板数据变更观察者[OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md)实例的指针。 |
 | void\* context | 表示指向上下文数据的指针，将作为第一个参数传入[Pasteboard\_Notify](capi-oh-pasteboard-h.md#pasteboard_notify)。 |
-| const [Pasteboard\_Notify](capi-oh-pasteboard-h.md#pasteboard_notify) callback | 表示数据变更回调函数。详见：[Pasteboard\_Notify](capi-oh-pasteboard-h.md#pasteboard_notify)。 |
-| const [Pasteboard\_Finalize](capi-oh-pasteboard-h.md#pasteboard_finalize) finalize | 表示可选的回调函数，可以用于剪贴板数据变更观察者销毁时释放上下文数据。详见：[Pasteboard\_Finalize](capi-oh-pasteboard-h.md#pasteboard_finalize)。 |
+| const [Pasteboard\_Notify](capi-oh-pasteboard-h.md#pasteboard_notify) callback | 表示数据变更回调函数，在剪贴板数据变更时触发。详见[Pasteboard\_Notify](capi-oh-pasteboard-h.md#pasteboard_notify)。 |
+| const [Pasteboard\_Finalize](capi-oh-pasteboard-h.md#pasteboard_finalize) finalize | 表示可选的回调函数，可以用于剪贴板数据变更观察者销毁时释放上下文数据。默认为nullptr，不执行释放操作。详见[Pasteboard\_Finalize](capi-oh-pasteboard-h.md#pasteboard_finalize)。 |
 
 **返回：**
 
@@ -374,15 +355,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Pasteboard* OH_Pasteboard_Create()
+```c
+OH_Pasteboard* OH_Pasteboard_Create()
 ```
 
 **描述：**
 
 创建剪贴板[OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)指针及实例对象。
+
+**使用场景**：需要访问或操作系统剪贴板时，首先创建剪贴板对象实例。
+
+**开发建议**：创建成功后请及时使用，并在不需要时调用OH\_Pasteboard\_Destroy销毁。
 
 **起始版本：** 13
 
@@ -394,15 +377,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Pasteboard_Destroy(OH_Pasteboard* pasteboard)
+```c
+void OH_Pasteboard_Destroy(OH_Pasteboard* pasteboard)
 ```
 
 **描述：**
 
 销毁剪贴板[OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)实例对象。
+
+**使用场景**：不再需要访问剪贴板时，应销毁剪贴板对象释放资源。
+
+**开发建议**：销毁前请确保已取消所有订阅。
 
 **起始版本：** 13
 
@@ -414,15 +399,25 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_Subscribe()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Pasteboard_Subscribe(OH_Pasteboard* pasteboard, int type, const OH_PasteboardObserver* observer)
+```c
+int OH_Pasteboard_Subscribe(OH_Pasteboard* pasteboard, int type, const OH_PasteboardObserver* observer)
 ```
 
 **描述：**
 
-订阅剪贴板的数据变更事件。
+订阅剪贴板的数据变更事件。典型使用场景包括：监听剪贴板内容变化、实现跨设备剪贴板同步、剪贴板内容变化时更新UI等。调用此函数后，当剪贴板数据发生变化时，系统会通过观察者的回调函数[Pasteboard\_Notify](capi-oh-pasteboard-h.md#pasteboard_notify)通知应用。可以订阅本地设备或远端设备的数据变更事件，通过type参数指定需要订阅的事件类型。
+
+**配对调用：**
+
+* 调用此方法订阅剪贴板变更事件后，当不再需要监听时，必须调用[OH\_Pasteboard\_Unsubscribe](capi-oh-pasteboard-h.md#oh_pasteboard_unsubscribe)取消订阅。
+* 取消订阅时需传入与订阅时相同的观察者对象和事件类型。
+* 未取消订阅可能导致持续监听和资源占用。
+
+**约束和限制：**
+
+* 同一观察者不能重复订阅同一类型的事件，否则会返回错误。
+* 订阅后的观察者对象在取消订阅前不能被销毁。
+* 回调函数在异步IPC线程中执行，需要注意线程安全。
 
 **起始版本：** 13
 
@@ -442,15 +437,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_Unsubscribe()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Pasteboard_Unsubscribe(OH_Pasteboard* pasteboard, int type, const OH_PasteboardObserver* observer)
+```c
+int OH_Pasteboard_Unsubscribe(OH_Pasteboard* pasteboard, int type, const OH_PasteboardObserver* observer)
 ```
 
 **描述：**
 
-取消对剪贴板数据变更事件的订阅。
+取消对剪贴板数据变更事件的订阅。调用此方法前，必须先调用OH\_Pasteboard\_Subscribe订阅剪贴板数据变更事件。
+
+**使用场景**：不再需要监听剪贴板数据变更时，应取消订阅释放资源。
 
 **起始版本：** 13
 
@@ -459,7 +454,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)\* pasteboard | 表示指向剪贴板[OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)实例的指针。 |
-| int type | 表示订阅的剪贴板数据变更类型，详见：[Pasteboard\_NotifyType](capi-oh-pasteboard-h.md#pasteboard_notifytype)。 |
+| int type | 表示订阅的剪贴板数据变更类型，需与订阅时传入的类型值一致，详见：[Pasteboard\_NotifyType](capi-oh-pasteboard-h.md#pasteboard_notifytype)。 |
 | const [OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md)\* observer | 表示指向剪贴板数据变更观察者[OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md)实例的指针。它指定了剪贴板数据变更时触发的回调函数，详见：[OH\_PasteboardObserver](capi-pasteboard-oh-pasteboardobserver.md)。 |
 
 **返回：**
@@ -470,15 +465,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_IsRemoteData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_Pasteboard_IsRemoteData(OH_Pasteboard* pasteboard)
+```c
+bool OH_Pasteboard_IsRemoteData(OH_Pasteboard* pasteboard)
 ```
 
 **描述：**
 
-判断剪贴板中的数据是否来自远端设备。
+判断剪贴板中的数据是否来自远端设备。典型使用场景包括：跨设备剪贴板同步、分布式场景下根据数据来源选择处理策略、实现数据来源相关的安全校验等。
 
 **起始版本：** 13
 
@@ -496,15 +489,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_GetDataSource()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Pasteboard_GetDataSource(OH_Pasteboard* pasteboard, char* source, unsigned int len)
+```c
+int OH_Pasteboard_GetDataSource(OH_Pasteboard* pasteboard, char* source, unsigned int len)
 ```
 
 **描述：**
 
 获取剪贴板中数据的数据源。
+
+**使用场景**：适用于需要识别数据来源或进行权限控制的场景。
 
 **起始版本：** 13
 
@@ -513,8 +506,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)\* pasteboard | 表示指向剪贴板[OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)实例的指针。 |
-| char\* source | 表示用于存放剪贴板数据源实例的指针，开发者需在调用接口前申请指针指向的内存。 |
-| unsigned int len | 表示source指针对应的内存长度，当内存长度不足时调用接口会失败，建议长度：128字节。 |
+| char\* source | 表示用于存放剪贴板数据源实例的指针，开发者需在调用接口前申请指针指向的内存，建议申请128字节。 |
+| unsigned int len | 表示source指针对应的内存长度，取值需不小于数据源字符串的长度（含字符串结束符），建议长度：128字节。当内存长度不足时，返回ERR\_INVALID\_PARAMETER错误码。 |
 
 **返回：**
 
@@ -524,15 +517,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_HasType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_Pasteboard_HasType(OH_Pasteboard* pasteboard, const char* type)
+```c
+bool OH_Pasteboard_HasType(OH_Pasteboard* pasteboard, const char* type)
 ```
 
 **描述：**
 
-判断剪贴板中是否有指定类型的数据。
+判断剪贴板中是否有指定类型的数据。典型使用场景包括：粘贴前检查剪贴板数据类型是否支持、根据数据类型选择不同的处理方式、验证剪贴板数据格式等。
 
 **起始版本：** 13
 
@@ -551,15 +542,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_HasData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_Pasteboard_HasData(OH_Pasteboard* pasteboard)
+```c
+bool OH_Pasteboard_HasData(OH_Pasteboard* pasteboard)
 ```
 
 **描述：**
 
 判断剪贴板中是否有数据。
+
+**使用场景**：在读取剪贴板数据前，先判断是否有数据，避免空数据操作。
 
 **起始版本：** 13
 
@@ -575,17 +566,45 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | bool | 返回剪贴板中是否有数据。返回true表示剪贴板中有数据，返回false表示剪贴板中没有数据。 |
 
-### OH\_Pasteboard\_GetData()
+### OH\_Pasteboard\_HasRemoteData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_UdmfData* OH_Pasteboard_GetData(OH_Pasteboard* pasteboard, int* status)
+```c
+bool OH_Pasteboard_HasRemoteData(OH_Pasteboard* pasteboard)
 ```
 
 **描述：**
 
-获取剪贴板中的数据。
+判断剪贴板数据是否在远端设备上。由于数据跨设备传输耗时较大，如果剪贴板数据在远端设备上，不建议在UI线程执行检查剪贴板数据中是否包含自定义数据类型，或读取剪贴板数据。
+
+**起始版本：** 24
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)\* pasteboard | 表示指向剪贴板[OH\_Pasteboard](capi-pasteboard-oh-pasteboard.md)实例的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 返回指示剪贴板数据是否在远端设备上的结果。true表示剪贴板数据在远端设备上；false表示剪贴板数据不在远端设备上。默认为false。 |
+
+### OH\_Pasteboard\_GetData()
+
+```c
+OH_UdmfData* OH_Pasteboard_GetData(OH_Pasteboard* pasteboard, int* status)
+```
+
+**描述：**
+
+获取剪贴板中的数据。调用此函数后，系统会读取剪贴板中的内容，返回统一数据对象[OH\_UdmfData](capi-udmf-oh-udmfdata.md)实例的指针。开发者可以通过OH\_UdmfData相关接口解析数据内容。获取到的数据对象需要开发者手动释放。由于获取剪贴板中数据的时延受数据量大小与网络环境的影响，调用此接口可能耗时较长，建议开发者在非UI线程调用。
+
+**约束和限制：**
+
+* 如果剪贴板为空或数据格式不支持，会返回nullptr。
+* 返回的OH\_UdmfData对象需要开发者调用[OH\_UdmfData\_Destroy](capi-udmf-h.md#oh_udmfdata_destroy)释放。
+* 粘贴的数据量大时，建议使用[OH\_Pasteboard\_GetDataWithProgress](capi-oh-pasteboard-h.md#oh_pasteboard_getdatawithprogress)接口以获取进度信息。
 
 **起始版本：** 13
 
@@ -606,15 +625,19 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_SetData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Pasteboard_SetData(OH_Pasteboard* pasteboard, OH_UdmfData* data)
+```c
+int OH_Pasteboard_SetData(OH_Pasteboard* pasteboard, OH_UdmfData* data)
 ```
 
 **描述：**
 
-将统一数据对象数据写入剪贴板。
+将统一数据对象数据写入剪贴板。写入成功后，其他应用可以使用系统剪贴板提供的数据读取接口访问该数据。统一数据对象的数据大小受系统剪贴板容量限制，在写入系统剪贴板后，数据的生命周期由系统剪贴板进行管理。调用此函数后，合法的数据内容会被写入系统剪贴板，覆盖之前的剪贴板数据内容。写入成功后，会触发所有订阅了剪贴板数据变更事件的观察者的回调函数。其他应用可以通过剪贴板API读取这些数据。
+
+**约束和限制：**
+
+* 序列化后的数据大小不能超过系统容量限制（在不同设备上的容量存在差异，通常为128MB）。
+* 写入操作会清除之前剪贴板中的所有内容。
+* 对于复制数据的数据量比较大的场景，建议使用延迟复制功能以提升性能。
 
 **起始版本：** 13
 
@@ -633,15 +656,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_ClearData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Pasteboard_ClearData(OH_Pasteboard* pasteboard)
+```c
+int OH_Pasteboard_ClearData(OH_Pasteboard* pasteboard)
 ```
 
 **描述：**
 
 清空剪贴板中的数据。
+
+**使用场景**：需要清除剪贴板中的数据时使用，如退出应用时清除敏感数据。
 
 **起始版本：** 13
 
@@ -659,15 +682,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_GetMimeTypes()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char **OH_Pasteboard_GetMimeTypes(OH_Pasteboard *pasteboard, unsigned int *count)
+```c
+char **OH_Pasteboard_GetMimeTypes(OH_Pasteboard *pasteboard, unsigned int *count)
 ```
 
 **描述：**
 
-获取剪贴板中的MIME类型。
+获取剪贴板中的MIME类型。典型使用场景包括：判断剪贴板数据类型以选择合适的处理方式、在粘贴前检查数据类型是否支持等。
 
 **起始版本：** 14
 
@@ -686,15 +707,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_GetDataParams\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Pasteboard_GetDataParams *OH_Pasteboard_GetDataParams_Create(void)
+```c
+Pasteboard_GetDataParams *OH_Pasteboard_GetDataParams_Create(void)
 ```
 
 **描述：**
 
-创建剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)指针及实例对象。
+创建剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)指针及实例对象。当应用需要获取剪贴板数据并监控进度（如大文件拷贝场景）时，应用按需调用[OH\_Pasteboard\_GetDataParams\_SetProgressIndicator](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setprogressindicator)、[OH\_Pasteboard\_GetDataParams\_SetDestUri](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setdesturi)、[OH\_Pasteboard\_GetDataParams\_SetFileConflictOptions](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setfileconflictoptions)接口配置进度条指示选项、拷贝文件时目标路径、文件冲突选项。
+
+**使用场景**：需要获取剪贴板数据并监控进度（如大文件拷贝、远端数据粘贴等场景），或需要自定义粘贴行为（如指定目标路径、处理文件冲突）时使用。
 
 **起始版本：** 15
 
@@ -702,19 +723,25 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* | 执行成功时返回一个指向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)实例对象的指针，否则返回空指针。  当不再需要使用指针时，请使用[OH\_Pasteboard\_GetDataParams\_Destroy](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_destroy)销毁实例对象，否则会导致内存泄漏。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md) \* | 执行成功时返回一个指向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)实例对象的指针，否则返回空指针。  当不再需要使用指针时，请使用[OH\_Pasteboard\_GetDataParams\_Destroy](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_destroy)销毁实例对象，否则会导致内存泄漏。 |
 
 ### OH\_Pasteboard\_GetDataParams\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Pasteboard_GetDataParams_Destroy(Pasteboard_GetDataParams* params)
+```c
+void OH_Pasteboard_GetDataParams_Destroy(Pasteboard_GetDataParams* params)
 ```
 
 **描述：**
 
-销毁剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)指针指向的实例对象。
+销毁剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)指针指向的实例对象。调用此函数后，Pasteboard\_GetDataParams对象被释放，参数配置随之失效。如果在获取粘贴数据过程中销毁参数对象，可能导致进度回调无法正常触发。
+
+**配对调用：**
+
+* 此方法与[OH\_Pasteboard\_GetDataParams\_Create](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_create)配对使用。
+* 必须在[OH\_Pasteboard\_GetDataWithProgress](capi-oh-pasteboard-h.md#oh_pasteboard_getdatawithprogress)调用完成后销毁参数对象。
+* 不能在进度回调函数中调用此方法销毁。
+
+**使用场景**：不再需要Pasteboard\_GetDataParams对象时，应销毁释放资源。
 
 **起始版本：** 15
 
@@ -722,19 +749,17 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md) \* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
+| [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
 
 ### OH\_Pasteboard\_GetDataParams\_SetProgressIndicator()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Pasteboard_GetDataParams_SetProgressIndicator(Pasteboard_GetDataParams* params,Pasteboard_ProgressIndicator progressIndicator)
+```c
+void OH_Pasteboard_GetDataParams_SetProgressIndicator(Pasteboard_GetDataParams* params,Pasteboard_ProgressIndicator progressIndicator)
 ```
 
 **描述：**
 
-向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置进度条指示选项，可选择是否采用系统默认进度显示。
+向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置进度条指示选项，可选择是否采用系统默认进度显示。典型使用场景：大文件粘贴时建议使用PASTEBOARD\_DEFAULT显示系统默认进度条；需要自定义进度UI或后台静默粘贴时使用PASTEBOARD\_NONE。
 
 **起始版本：** 15
 
@@ -747,15 +772,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_GetDataParams\_SetDestUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Pasteboard_GetDataParams_SetDestUri(Pasteboard_GetDataParams* params, const char* destUri, uint32_t destUriLen)
+```c
+void OH_Pasteboard_GetDataParams_SetDestUri(Pasteboard_GetDataParams* params, const char* destUri, uint32_t destUriLen)
 ```
 
 **描述：**
 
-设置拷贝文件时目标路径。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件copy处理。
+设置拷贝文件时目标路径。若不支持文件处理，则不需要设置此参数；若应用涉及复杂文件处理策略或需要区分文件多路径存储，建议不设置此参数，由应用自行完成文件复制处理。
+
+**使用场景**：需要将剪贴板中的文件拷贝到指定目标路径时设置。
 
 **起始版本：** 15
 
@@ -764,20 +789,25 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
-| const char\* destUri | 定义拷贝文件目标路径。 |
-| uint32\_t destUriLen | 定义拷贝文件目标路径长度。 |
+| const char\* destUri | 定义拷贝文件目标路径。路径需为绝对路径格式，且应用需具有该路径的读写权限。 |
+| uint32\_t destUriLen | 定义拷贝文件目标路径长度，单位：字节。 |
 
 ### OH\_Pasteboard\_GetDataParams\_SetFileConflictOptions()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Pasteboard_GetDataParams_SetFileConflictOptions(Pasteboard_GetDataParams* params,Pasteboard_FileConflictOptions option)
+```c
+void OH_Pasteboard_GetDataParams_SetFileConflictOptions(Pasteboard_GetDataParams* params,Pasteboard_FileConflictOptions option)
 ```
 
 **描述：**
 
-向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置文件冲突选项。
+向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置文件冲突选项。调用[OH\_Pasteboard\_GetDataWithProgress](capi-oh-pasteboard-h.md#oh_pasteboard_getdatawithprogress)时，需将已设置文件冲突选项的[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)作为参数传入。
+
+**使用场景**：拷贝文件时，目标路径存在同名文件，需要设置冲突处理策略。
+
+**参数选取原则**：
+
+* PASTEBOARD\_OVERWRITE：需要确保使用最新文件内容时选择覆盖。
+* PASTEBOARD\_SKIP：需要保留原有文件时选择跳过。
 
 **起始版本：** 15
 
@@ -790,15 +820,15 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_GetDataParams\_SetProgressListener()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Pasteboard_GetDataParams_SetProgressListener(Pasteboard_GetDataParams* params,const OH_Pasteboard_ProgressListener listener)
+```c
+void OH_Pasteboard_GetDataParams_SetProgressListener(Pasteboard_GetDataParams* params,const OH_Pasteboard_ProgressListener listener)
 ```
 
 **描述：**
 
 向剪贴板[Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)设置进度上报回调函数。
+
+**使用场景**：需要自定义进度显示UI或后台静默处理粘贴任务时，通过设置此回调函数来接收进度更新。
 
 **起始版本：** 15
 
@@ -807,19 +837,17 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [Pasteboard\_GetDataParams](capi-pasteboard-getdataparams.md)\* params | 表示指向剪贴板Pasteboard\_GetDataParams的指针。 |
-| const [OH\_Pasteboard\_ProgressListener](capi-oh-pasteboard-h.md#oh_pasteboard_progresslistener) listener | 表示进度上报回调函数。 |
+| const [OH\_Pasteboard\_ProgressListener](capi-oh-pasteboard-h.md#oh_pasteboard_progresslistener) listener | 表示进度上报回调函数，仅在[progressIndicator](capi-oh-pasteboard-h.md#oh_pasteboard_getdataparams_setprogressindicator)设置为PASTEBOARD\_NONE时生效。该参数支持传入NULL，以表示无需进度回调。 |
 
 ### OH\_Pasteboard\_ProgressInfo\_GetProgress()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int OH_Pasteboard_ProgressInfo_GetProgress(Pasteboard_ProgressInfo* progressInfo)
+```c
+int OH_Pasteboard_ProgressInfo_GetProgress(Pasteboard_ProgressInfo* progressInfo)
 ```
 
 **描述：**
 
-从[Pasteboard\_ProgressInfo](capi-pasteboard-progressinfo.md)获取粘贴进度。
+从[Pasteboard\_ProgressInfo](capi-pasteboard-progressinfo.md)获取粘贴进度。典型使用场景包括：在自定义进度回调中更新UI进度条、监控大文件粘贴进度、根据进度调整业务逻辑等。
 
 **起始版本：** 15
 
@@ -833,19 +861,25 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| int | 返回粘贴进度百分比。 |
+| int | 返回粘贴进度百分比，取值范围[0, 100]。 |
 
 ### OH\_Pasteboard\_ProgressCancel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Pasteboard_ProgressCancel(Pasteboard_GetDataParams* params)
+```c
+void OH_Pasteboard_ProgressCancel(Pasteboard_GetDataParams* params)
 ```
 
 **描述：**
 
-定义取消函数，用于在获取粘贴数据时取消正在进行的粘贴动作。
+取消正在进行的粘贴操作。该函数用于中断[OH\_Pasteboard\_GetDataWithProgress](capi-oh-pasteboard-h.md#oh_pasteboard_getdatawithprogress)执行过程中的数据传输。调用后，当前粘贴操作将被终止，已传输的部分数据可能保留或清理，取决于具体操作状态。取消后如需再次获取剪贴板数据，需重新调用[OH\_Pasteboard\_GetDataWithProgress](capi-oh-pasteboard-h.md#oh_pasteboard_getdatawithprogress)。
+
+**使用场景**：适用于用户主动取消、错误中断传输，或限制粘贴超时等情形。
+
+**约束和限制：**
+
+* 仅在调用[OH\_Pasteboard\_GetDataWithProgress](capi-oh-pasteboard-h.md#oh_pasteboard_getdatawithprogress)且操作未完成时有效。
+* 取消操作是异步的，可能不会立即生效。
+* 取消操作不可逆，一旦取消，如需要获取剪贴板数据，需要重新开始粘贴流程。
 
 **起始版本：** 15
 
@@ -857,15 +891,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_GetDataWithProgress()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_UdmfData* OH_Pasteboard_GetDataWithProgress(OH_Pasteboard* pasteboard, Pasteboard_GetDataParams* params,int* status)
+```c
+OH_UdmfData* OH_Pasteboard_GetDataWithProgress(OH_Pasteboard* pasteboard, Pasteboard_GetDataParams* params,int* status)
 ```
 
 **描述：**
 
-获取剪贴板的数据以及粘贴进度，不支持对文件夹的拷贝。
+获取剪贴板的数据以及粘贴进度，不支持对文件夹的拷贝。调用此函数后，系统开始从系统剪贴板获取数据。如果剪贴板数据来自远端设备或包含大量文件，会通过[OH\_Pasteboard\_ProgressListener](capi-oh-pasteboard-h.md#oh_pasteboard_progresslistener)回调函数上报进度。数据传输完成后，返回统一数据对象指针。整个过程可能耗时较长，建议在非UI线程调用。
 
 **起始版本：** 15
 
@@ -887,15 +919,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Pasteboard\_GetChangeCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint32_t OH_Pasteboard_GetChangeCount(OH_Pasteboard *pasteboard)
+```c
+uint32_t OH_Pasteboard_GetChangeCount(OH_Pasteboard *pasteboard)
 ```
 
 **描述：**
 
-获取剪贴板内容的变化次数。
+获取剪贴板内容的变化次数。典型使用场景包括：判断剪贴板内容是否已变化、实现剪贴板内容增量同步、检测剪贴板内容是否过期、基于变化计数实现缓存优化等。
 
 **起始版本：** 18
 
@@ -909,21 +939,25 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| uint32\_t | 执行成功时返回剪贴板内容的变化次数，否则返回0。  当剪贴板内容过期或调用OH\_Pasteboard\_ClearData等接口导致剪贴板内容为空时，内容变化次数不会因此改变。  系统重启或剪贴板服务异常重启时，剪贴板内容变化次数重新从0开始计数。对同一内容连续多次复制会被视作多次更改，每次复制均会导致内容变化次数增加。 |
+| uint32\_t | 执行成功时返回剪贴板内容的变化次数，否则返回0。 |
+
+**返回值说明:**
+
+* 当剪贴板内容过期（如设备重启、剪贴板服务重启或数据生命周期结束）或调用OH\_Pasteboard\_ClearData等接口导致剪贴板内容为空时，内容变化次数不会因此改变。
+* 系统重启或剪贴板服务异常重启时，剪贴板内容变化次数重新从0开始计数。
+* 对同一内容连续多次复制会被视作多次更改，每次复制均会导致内容变化次数增加。
 
 ### OH\_Pasteboard\_SyncDelayedDataAsync()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Pasteboard_SyncDelayedDataAsync(OH_Pasteboard* pasteboard, void (*callback)(int errorCode))
+```c
+void OH_Pasteboard_SyncDelayedDataAsync(OH_Pasteboard* pasteboard, void (*callback)(int errorCode))
 ```
 
 **描述：**
 
-通知剪贴板从应用同步所有延迟数据，与延迟复制接口[OH\_UdmfRecordProvider\_SetData](capi-udmf-h.md#oh_udmfrecordprovider_setdata)搭配使用。当应用使用延迟复制功能复制时，仅将应用支持的数据类型写入剪贴板。应用应在退出时，重新调用[OH\_Pasteboard\_SetData](capi-oh-pasteboard-h.md#oh_pasteboard_setdata)接口主动提交所有复制数据或调用此接口通知剪贴板获取全量数据，等待数据同步完成再继续退出，否则可能导致其他应用粘贴获取不到数据。
+通知剪贴板从应用同步所有延迟数据（延迟数据指在延迟复制模式下，先写入数据类型到剪贴板，实际数据内容按需延迟加载的数据传输机制），与延迟复制接口[OH\_UdmfRecordProvider\_SetData](capi-udmf-h.md#oh_udmfrecordprovider_setdata)搭配使用。当所有延迟数据同步完成时，使用callback异步通知应用。当应用使用延迟复制功能复制时，仅将应用支持的数据类型写入剪贴板。应用应在退出时，重新调用[OH\_Pasteboard\_SetData](capi-oh-pasteboard-h.md#oh_pasteboard_setdata)接口主动提交所有复制数据或调用此接口通知剪贴板获取全量数据，等待数据同步完成再继续退出，否则可能导致其他应用粘贴获取不到数据。
 
-注意
+**注意** 
 
 * 调用此接口会延长退出过程，建议应用直接设置数据到剪贴板，而不是调用延迟复制接口[OH\_UdmfRecordProvider\_SetData](capi-udmf-h.md#oh_udmfrecordprovider_setdata)和此接口。
 

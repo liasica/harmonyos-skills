@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handw
 title: HandWrite_HistoricalPoint
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > C API > 头文件和结构体 > 结构体 > HandWrite_HistoricalPoint
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:12f5f8feb2a15ed9c3923480f90daa8adcf90ae21064f0b66afff4e97cbbc0bb
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:59ebbeeacd4627cebe9c080a60a6304c38fa2d40a898d23673bef6aafad4b0cf
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 定义历史触摸点信息的结构体。
 
@@ -24,11 +22,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,14 +33,10 @@ PhonePC/2in1Tablet
 
 ## 结构体成员变量说明
 
-PhonePC/2in1Tablet
-
 ### x
 
-PhonePC/2in1Tablet
-
-```
-1. float HandWrite_HistoricalPoint::x
+```c
+float HandWrite_HistoricalPoint::x
 ```
 
 **描述**
@@ -55,10 +45,8 @@ PhonePC/2in1Tablet
 
 ### y
 
-PhonePC/2in1Tablet
-
-```
-1. float HandWrite_HistoricalPoint::y
+```c
+float HandWrite_HistoricalPoint::y
 ```
 
 **描述**
@@ -67,10 +55,8 @@ PhonePC/2in1Tablet
 
 ### timeStamp
 
-PhonePC/2in1Tablet
-
-```
-1. int64_t HandWrite_HistoricalPoint::timeStamp
+```c
+int64_t HandWrite_HistoricalPoint::timeStamp
 ```
 
 **描述**
@@ -79,10 +65,8 @@ PhonePC/2in1Tablet
 
 ### force
 
-PhonePC/2in1Tablet
-
-```
-1. float HandWrite_HistoricalPoint::force
+```c
+float HandWrite_HistoricalPoint::force
 ```
 
 **描述**

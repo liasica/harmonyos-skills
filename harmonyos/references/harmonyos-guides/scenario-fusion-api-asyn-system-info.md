@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-api-asyn-system-info
 title: 通过API异步获取系统信息属性
+breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化API > 通过API异步获取系统信息属性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a90793ac8f25034d1974f22a2fde7f3aadec53998826df4651f09c6cf2d305c3
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:cfb0bcf25f70515a79aaf690e8ab05457d4e882c8111ec73d07c16ede353ce80
 ---
 
 ## 场景介绍
@@ -13,7 +14,7 @@ Scenario Fusion Kit提供获取系统信息属性API，调用该接口可以获�
 
 ## 约束与限制
 
-场景化API支持Phone、Tablet和2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。
+场景化API支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。
 
 ## 接口说明
 
@@ -27,43 +28,44 @@ Scenario Fusion Kit提供获取系统信息属性API，调用该接口可以获�
 
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
-   ```
-   1. import { atomicService } from '@kit.ScenarioFusionKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { window } from '@kit.ArkUI';
+   ```typescript
+   import { atomicService } from '@kit.ScenarioFusionKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { window } from '@kit.ArkUI';
    ```
 2. 传入属性参数，调用接口获取对应属性值，代码如下：
 
-   ```
-   1. let stateArray: Array<atomicService.SystemInfoType> =
-   2. ['brand', 'deviceModel', 'screenWidth', 'screenHeight', 'statusBarHeight', 'screenSafeArea', 'language', 'osFullName',
-   3. 'fontSizeSetting', 'sdkApiVersion', 'bluetoothEnabled', 'wifiEnabled', 'locationEnabled', 'deviceOrientation',
-   4. 'theme', 'windowWidth', 'windowHeight'];
-   5. try {
-   6. atomicService.getSystemInfo(stateArray).then((data: atomicService.SystemInfo) => {
-   7. hilog.info(0x0000, 'testTag', 'succeeded in getting system info asynchronously');
-   8. let brand: string | undefined = data.brand;
-   9. let deviceModel: string | undefined = data.deviceModel;
-   10. let screenWidth: number | undefined = data.screenWidth;
-   11. let screenHeight: number | undefined = data.screenHeight;
-   12. let statusBarHeight: number | undefined = data.statusBarHeight;
-   13. let screenSafeArea: window.AvoidArea | undefined = data.screenSafeArea;
-   14. let language: string | undefined = data.language;
-   15. let osFullName: string | undefined = data.osFullName;
-   16. let fontSizeSetting: number | undefined = data.fontSizeSetting;
-   17. let sdkApiVersion: number | undefined = data.sdkApiVersion;
-   18. let bluetoothEnabled: boolean | undefined = data.bluetoothEnabled;
-   19. let wifiEnabled: boolean | undefined = data.wifiEnabled;
-   20. let locationEnabled: boolean | undefined = data.locationEnabled;
-   21. let deviceOrientation: string | undefined = data.deviceOrientation;
-   22. let theme: ColorMode | undefined = data.theme;
-   23. let windowWidth: number | undefined = data.windowWidth;
-   24. let windowHeight: number | undefined = data.windowHeight;
-   25. }).catch((error: BusinessError) => {
-   26. hilog.error(0x0000, 'testTag', 'Promise error: %{public}d %{public}s', error.code, error.message);
-   27. })
-   28. } catch (error) {
-   29. hilog.error(0x0000, 'testTag', 'failReason: %{public}d %{public}s', error.code, error.message);
-   30. }
+   ```typescript
+   let stateArray: atomicService.SystemInfoType[] =
+     ['brand', 'deviceModel', 'screenWidth', 'screenHeight', 'statusBarHeight', 'screenSafeArea', 'language', 'osFullName',
+       'fontSizeSetting', 'sdkApiVersion', 'bluetoothEnabled', 'wifiEnabled', 'locationEnabled', 'deviceOrientation',
+       'theme', 'windowWidth', 'windowHeight'];
+   try {
+     atomicService.getSystemInfo(stateArray).then((data: atomicService.SystemInfo) => {
+       hilog.info(0x0000, 'testTag', 'succeeded in getting system info asynchronously');
+       // 当前参数未调用，开发者自行实现参数的逻辑处理
+       let brand: string | undefined = data.brand;
+       let deviceModel: string | undefined = data.deviceModel;
+       let screenWidth: number | undefined = data.screenWidth;
+       let screenHeight: number | undefined = data.screenHeight;
+       let statusBarHeight: number | undefined = data.statusBarHeight;
+       let screenSafeArea: window.AvoidArea | undefined = data.screenSafeArea;
+       let language: string | undefined = data.language;
+       let osFullName: string | undefined = data.osFullName;
+       let fontSizeSetting: number | undefined = data.fontSizeSetting;
+       let sdkApiVersion: number | undefined = data.sdkApiVersion;
+       let bluetoothEnabled: boolean | undefined = data.bluetoothEnabled;
+       let wifiEnabled: boolean | undefined = data.wifiEnabled;
+       let locationEnabled: boolean | undefined = data.locationEnabled;
+       let deviceOrientation: string | undefined = data.deviceOrientation;
+       let theme: ColorMode | undefined = data.theme;
+       let windowWidth: number | undefined = data.windowWidth;
+       let windowHeight: number | undefined = data.windowHeight;
+     }).catch((error: BusinessError) => {
+       hilog.error(0x0000, 'testTag', 'Promise error: %{public}d %{public}s', error.code, error.message);
+     });
+   } catch (error) {
+     hilog.error(0x0000, 'testTag', 'Failed to get system info asynchronously, failReason: %{public}d %{public}s', error.code, error.message);
+   }
    ```

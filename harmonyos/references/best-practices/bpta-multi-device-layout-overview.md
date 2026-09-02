@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 布局概述
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 布局概述
 category: best-practices
-scraped_at: 2026-04-28T08:21:03+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:3f27936192ec8c3fd23850eccb49f569bd7f0ef6a08618d3c6e046d6db42bd50
+scraped_at: 2026-09-02T15:03:18+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:413eebd8f4feb989b67a73c722ba0a2f0b13bc278753de097d9023325b07d0bc
 ---
 
 布局可以分为自适应布局和响应式布局，二者的介绍如下表所示。
@@ -13,13 +13,11 @@ content_hash: sha256:3f27936192ec8c3fd23850eccb49f569bd7f0ef6a08618d3c6e046d6db4
 | 名称 | 简介 |
 | --- | --- |
 | 自适应布局 | 当外部容器大小发生变化时，元素可以**根据相对关系自动变化**以适应外部容器变化的布局能力。相对关系如占比、固定宽高比、显示优先级等。当前自适应布局能力有7种：[拉伸能力](bpta-multi-device-adaptive-layout.md#拉伸能力)、[均分能力](bpta-multi-device-adaptive-layout.md#均分能力)、[占比能力](bpta-multi-device-adaptive-layout.md#占比能力)、[缩放能力](bpta-multi-device-adaptive-layout.md#缩放能力)、[延伸能力](bpta-multi-device-adaptive-layout.md#延伸能力)、[隐藏能力](bpta-multi-device-adaptive-layout.md#隐藏能力)、[折行能力](bpta-multi-device-adaptive-layout.md#折行能力)。自适应布局能力可以实现界面显示随外部容器大小连续变化。 |
-| 响应式布局 | 当外部容器大小发生变化时，元素可以**根据断点、栅格或特定的特征（如屏幕方向、窗口宽高等）自动变化**以适应外部容器变化的布局能力。当前响应式布局能力有3种：[断点](bpta-multi-device-responsive-layout.md#section1532120147301)、[媒体查询](bpta-multi-device-responsive-layout.md#section1950102518311)、[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)。响应式布局可实现界面随外部容器大小的不连续变化，通常在不同特征下界面显示会有较大差异。 |
+| 响应式布局 | 当外部容器大小发生变化时，元素可以**根据断点、栅格或特定的特征（如屏幕方向、窗口宽高等）自动变化**以适应外部容器变化的布局能力。当前响应式布局能力有4种：[断点](bpta-multi-device-responsive-layout.md#section1532120147301)、[媒体查询](bpta-multi-device-responsive-layout.md#section1950102518311)、[栅格](bpta-multi-device-responsive-layout.md#section1061332817545)、[响应式组件](bpta-multi-device-responsive-layout.md#section1914110349546)。响应式布局可实现界面随外部容器大小的不连续变化，通常在不同特征下界面显示会有较大差异。 |
 
-说明
+**说明** 
 
 自适应布局多用于解决页面各区域内的布局差异，响应式布局多用于解决页面各区域间的布局差异。
-
-自适应布局和响应式布局通常需要借助或搭配容器类组件实现。
 
 * 自适应布局常常需要借助[Row组件](../harmonyos-references/ts-container-row.md)、[Column组件](../harmonyos-references/ts-container-column.md)或[Flex组件](../harmonyos-references/ts-container-flex.md)实现。
 

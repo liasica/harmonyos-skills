@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-launch-faq-4
-title: 游戏调用UnityEngine.Application.Quit侧滑退出时出现黑屏现象，应该如何避免？
-breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏启动加速服务 > 游戏调用UnityEngine.Application.Quit侧滑退出时出现黑屏现象，应该如何避免？
+title: 游戏调用UnityEngine.Application.Quit侧滑退出时出现黑屏现象，应该如何避免
+breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏启动加速服务 > 游戏调用UnityEngine.Application.Quit侧滑退出时出现黑屏现象，应该如何避免
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:49+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:17:37+08:00
+doc_updated_at: 2026-05-08
 content_hash: sha256:574788f270c296451c84047c3b8570a42f45615fb021ea5710f8a9ce9b81903d
 ---
 

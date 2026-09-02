@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-dev-ar
 title: 开发相机应用基础能力(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c786dc96c50f8d114c99b31209583e90051e14c84e954482e49c5cf2c3a17b2c
+scraped_at: 2026-09-02T14:50:16+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:452c76fd5893ec26f35c2a1633551a99406d719d4902ecbfe9f625a8099b4ae6
 ---
 
 * **[通过系统相机拍照和录像(CameraPicker)](camera-picker.md)**
@@ -15,7 +15,7 @@ content_hash: sha256:c786dc96c50f8d114c99b31209583e90051e14c84e954482e49c5cf2c3a
 * **[拍照实践(ArkTS)](camera-shooting-case.md)**
 * **[录像(ArkTS)](camera-recording.md)**
 * **[录像实践(ArkTS)](camera-recording-case.md)**
-* **[元数据(ArkTS)](camera-metadata.md)**
+* **[元数据（ArkTS）](camera-metadata.md)**
 * **[手电筒使用(ArkTS)](camera-torch-use.md)**
 * **[适配不同折叠状态的摄像头变更(ArkTS)](camera-foldable-display.md)**
 * **[分段式拍照(ArkTS)](camera-deferred-capture.md)**
@@ -38,3 +38,4 @@ content_hash: sha256:c786dc96c50f8d114c99b31209583e90051e14c84e954482e49c5cf2c3a
 * **[使用相机预配置(ArkTS)](camera-preconfig.md)**
 * **[HDR Vivid相机拍照(ArkTS)](camera-hdr-shooting.md)**
 * **[HDR Vivid相机录像(ArkTS)](camera-hdr-recording.md)**
+* **[相机预览花屏解决方案](camera-preview-glitch-solution.md)**

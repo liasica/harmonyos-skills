@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-navi-rout
 title: 出行路线规划
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 路径规划 > 出行路线规划
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:53+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:8f3a9b216c8359936b2a11414dcc0cb36afd5811ad185610f249c693585668b2
+scraped_at: 2026-09-02T14:59:58+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:45c4f8fcfe30c5bece56cc0e05389bb229968a48b7f3bff4c5fcee4d700f8679
 ---
 
 ## 场景介绍
@@ -37,9 +37,9 @@ content_hash: sha256:8f3a9b216c8359936b2a11414dcc0cb36afd5811ad185610f249c693585
 
 导入相关模块。
 
-```
-1. import { navi } from '@kit.MapKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { navi } from '@kit.MapKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 ### 驾车路径规划
@@ -52,40 +52,40 @@ content_hash: sha256:8f3a9b216c8359936b2a11414dcc0cb36afd5811ad185610f249c693585
 * 支持根据实时路况进行合理路线规划。
 * 支持多种路线偏好选择，如时间最短、避免经过收费的公路、避开高速公路、距离优先等。
 
-```
-1. async testDrivingRoutes() {
-2. let params: navi.DrivingRouteParams = {
-3. // 起点的经纬度
-4. origins: [{
-5. latitude: 31.982129213545843,
-6. longitude: 120.27745557768591
-7. }],
-8. // 终点的经纬度
-9. destination: {
-10. latitude: 31.986129213545843,
-11. longitude: 120.32745557768591
-12. },
-13. // 路径的途经点
-14. waypoints: [{
-15. latitude: 31.967236140819114,
-16. longitude: 120.27142088866847
-17. }, {
-18. latitude: 31.972868002238872,
-19. longitude: 120.2943211817165
-20. }, {
-21. latitude: 31.98469327973332,
-22. longitude: 120.29101107384068
-23. }],
-24. language: 'zh_CN'
-25. };
-26. try {
-27. const result = await navi.getDrivingRoutes(params);
-28. console.info(`Succeeded in getting driving routes. result is ${JSON.stringify(result)}`);
-29. } catch (error) {
-30. const err: BusinessError = error as BusinessError;
-31. console.error(`Failed in getting driving routes. Code is ${err.code}, message is ${err.message}`);
-32. }
-33. }
+```typescript
+async testDrivingRoutes() {
+  let params: navi.DrivingRouteParams = {
+    // 起点的经纬度
+    origins: [{
+      latitude: 31.982129213545843,
+      longitude: 120.27745557768591
+    }],
+    // 终点的经纬度
+    destination: {
+      latitude: 31.986129213545843,
+      longitude: 120.32745557768591
+    },
+    // 路径的途经点
+    waypoints: [{
+      latitude: 31.967236140819114,
+      longitude: 120.27142088866847
+    }, {
+      latitude: 31.972868002238872,
+      longitude: 120.2943211817165
+    }, {
+      latitude: 31.98469327973332,
+      longitude: 120.29101107384068
+    }],
+    language: 'zh_CN'
+  };
+  try {
+    const result = await navi.getDrivingRoutes(params);
+    console.info(`Succeeded in getting driving routes. result is ${JSON.stringify(result)}`);
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    console.error(`Failed in getting driving routes. Code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ### 步行路径规划
@@ -95,32 +95,32 @@ content_hash: sha256:8f3a9b216c8359936b2a11414dcc0cb36afd5811ad185610f249c693585
 * 支持直线距离150km以内的步行路径规划能力。
 * 融入出行策略（时间最短、避免轮渡）。
 
-```
-1. async testWalkingRoutes() {
-2. let params: navi.RouteParams = {
-3. // 起点的经纬度
-4. origins: [{
-5. latitude: 39.992281,
-6. longitude: 116.31088
-7. }, {
-8. latitude: 39.996,
-9. longitude: 116.311
-10. }],
-11. // 终点的经纬度
-12. destination: {
-13. latitude: 39.94,
-14. longitude: 116.311
-15. },
-16. language: 'zh_CN'
-17. };
-18. try {
-19. const result = await navi.getWalkingRoutes(params);
-20. console.info(`Succeeded in getting walking routes. result is ${JSON.stringify(result)}`);
-21. } catch (error) {
-22. const err: BusinessError = error as BusinessError;
-23. console.error(`Failed in getting walking routes. Code is ${err.code}, message is ${err.message}`);
-24. }
-25. }
+```typescript
+async testWalkingRoutes() {
+  let params: navi.RouteParams = {
+    // 起点的经纬度
+    origins: [{
+      latitude: 39.992281,
+      longitude: 116.31088
+    }, {
+      latitude: 39.996,
+      longitude: 116.311
+    }],
+    // 终点的经纬度
+    destination: {
+      latitude: 39.94,
+      longitude: 116.311
+    },
+    language: 'zh_CN'
+  };
+  try {
+    const result = await navi.getWalkingRoutes(params);
+    console.info(`Succeeded in getting walking routes. result is ${JSON.stringify(result)}`);
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    console.error(`Failed in getting walking routes. Code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ### 骑行路径规划
@@ -130,57 +130,57 @@ content_hash: sha256:8f3a9b216c8359936b2a11414dcc0cb36afd5811ad185610f249c693585
 * 支持直线距离500km以内的骑行路径规划能力。
 * 融入出行策略（时间最短、避免轮渡）。
 
-```
-1. async testCyclingRoutes() {
-2. let params: navi.RouteParams = {
-3. // 起点的经纬度
-4. origins: [{
-5. latitude: 31.9844102,
-6. longitude: 118.7662537
-7. }],
-8. // 终点的经纬度
-9. destination: {
-10. latitude: 31.9874102,
-11. longitude: 118.7362537
-12. },
-13. language: 'zh_CN'
-14. };
-15. try {
-16. const result = await navi.getCyclingRoutes(params);
-17. console.info(`Succeeded in getting cycling routes. result is ${JSON.stringify(result)}`);
-18. } catch (error) {
-19. const err: BusinessError = error as BusinessError;
-20. console.error(`Failed in getting cycling routes. Code is ${err.code}, message is ${err.message}`);
-21. }
-22. }
+```typescript
+async testCyclingRoutes() {
+  let params: navi.RouteParams = {
+    // 起点的经纬度
+    origins: [{
+      latitude: 31.9844102,
+      longitude: 118.7662537
+    }],
+    // 终点的经纬度
+    destination: {
+      latitude: 31.9874102,
+      longitude: 118.7362537
+    },
+    language: 'zh_CN'
+  };
+  try {
+    const result = await navi.getCyclingRoutes(params);
+    console.info(`Succeeded in getting cycling routes. result is ${JSON.stringify(result)}`);
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    console.error(`Failed in getting cycling routes. Code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ### 公共交通规划
 
 根据起点终点坐标规划道路，从而返回两地之间的多种公共交通中转路线，仅支持中国大陆。
 
-```
-1. async testGetTransitRoutes() {
-2. let params: navi.TransitRouteParams = {
-3. // 起点经纬度
-4. origin: {
-5. latitude: 39.921619,
-6. longitude: 116.356587
-7. },
-8. // 终点经纬度
-9. destination: {
-10. latitude: 39.94161,
-11. longitude: 116.353621
-12. },
-13. // 设置出发时间为当前时间（单位s）
-14. departureTime: new Date().getTime() / 1000
-15. };
-16. try {
-17. const result = await navi.getTransitRoutes(this.getUIContext().getHostContext(), params);
-18. console.info(`Succeeded in getting transit routes. result is ${JSON.stringify(result)}`);
-19. } catch (error) {
-20. const err: BusinessError = error as BusinessError;
-21. console.error(`Failed in getting transit routes. Code is ${err.code}, message is ${err.message}`);
-22. }
-23. }
+```typescript
+async testGetTransitRoutes() {
+  let params: navi.TransitRouteParams = {
+    // 起点经纬度
+    origin: {
+      latitude: 39.921619,
+      longitude: 116.356587
+    },
+    // 终点经纬度
+    destination: {
+      latitude: 39.94161,
+      longitude: 116.353621
+    },
+    // 设置出发时间为当前时间（单位s）
+    departureTime: new Date().getTime() / 1000
+  };
+  try {
+    const result = await navi.getTransitRoutes(this.getUIContext().getHostContext(), params);
+    console.info(`Succeeded in getting transit routes. result is ${JSON.stringify(result)}`);
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    console.error(`Failed in getting transit routes. Code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```

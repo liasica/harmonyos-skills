@@ -1,12 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compatibility-third-har
 title: 应用集成三方库（har包）的兼容性指导
-breadcrumb: 版本说明 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > 应用集成三方库（har包）的兼容性指导
+breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > 应用集成三方库（har包）的兼容性指导
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:25:21+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:55a3c1bd83114b1f90babca7a302e091b23d946a9bd47b1d92d512f7a5c7b33a
+scraped_at: 2026-09-02T14:59:08+08:00
+doc_updated_at: 2026-07-06
+content_hash: sha256:07fab71a038a1da50727e699f04017b31a0ee717010a5925d4a3426b78ae28d2
 ---
+
+**说明** 
+
+API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说明](version-number-26.md)），不影响对API兼容性判断的基本逻辑，因此在文档的示意性描述中暂时仍保持旧版本格式的说明。
+
+近期API版本号的大小关系如下：
+
+26.0.0 > 6.1.1(24) > 6.1.0(23) > 6.0.2(22) > 6.0.1(21) > 6.0.0(20) > 5.1.1(19) > 5.1.0(18) > 5.0.5(17)
 
 在应用开发过程中，会依赖大量的三方库，应用hap和三方库har之间因为SDK版本属性字段的版本差异，会存在各种兼容性问题。
 
@@ -28,98 +36,98 @@ content_hash: sha256:55a3c1bd83114b1f90babca7a302e091b23d946a9bd47b1d92d512f7a5c
 
 （3）因为在应用集成三方库的时候，最终打包到应用中的targetSdkVersion字段值会填写为应用的值，则为了让三方库被应用集成后的行为一致，需要进行一些适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cnitJJoXQ-yHWu1NicdyYA/zh-cn_image_0000002409845612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/cjCHej7UTfqAak148D-vkQ/zh-cn_image_0000002409845612.png "点击放大")
 
-```
-1. import bundleManager from '@ohos.bundle.bundleManager';
-2. import display from '@ohos.display';
-3. import hilog from '@ohos.hilog';
-4. import deviceInfo from '@ohos.deviceInfo';
-5. const TAG = 'DisplayCompat';
-6. const SDK_VER_14 = 14;
-7. const COMP_ID = 0xFF00;
-8. enum Orientation {
-9. PORTRAIT = 0,
-10. LANDSCAPE = 1,
-11. PORTRAIT_INVERTED = 2,
-12. LANDSCAPE_INVERTED = 3
-13. }
-14. class DisplayCompat {
-15. private static targetVer = 0;
-16. private static deviceVer: number;
-17. private static callback: Callback<number>|null;
-18. public static async init() {
-19. if (!DisplayCompat.targetVer) {
-20. try {
-21. let bundleInfo:bundleManager.BundleInfo = await bundleManager.getBundleInfoForSelf(
-22. bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION
-23. );
-24. const targetSdkVersion = bundleInfo.targetVersion;
-25. DisplayCompat.targetVer = targetSdkVersion;
-26. } catch (e) {
-27. hilog.error(COMP_ID, TAG, 'Init failed: %{public}s', e);
-28. }
-29. }
-30. if (!DisplayCompat.deviceVer) {
-31. DisplayCompat.deviceVer = deviceInfo.sdkApiVersion;
-32. }
-33. }
-34. public static register(cb: Callback<number>) {
-35. if (typeof cb !== 'function') return;
-36. DisplayCompat.callback = cb;
-37. display.on('change', DisplayCompat.handleRotation);
-38. }
-39. public static unregister() {
-40. display.off('change', DisplayCompat.handleRotation);
-41. DisplayCompat.callback = null;
-42. }
-43. private static handleRotation = async (rot: number) => {
-44. if (!DisplayCompat.callback) return;
-45. try {
-46. if (!DisplayCompat.targetVer || !DisplayCompat.deviceVer) await DisplayCompat.init();
-47. const disp = display.getDefaultDisplaySync();
-48. if (!disp) return;
-49. // 判断是否使用旧版行为逻辑
-50. console.info(`mast shouldConvert()`+this.shouldConvert())
-51. DisplayCompat.callback(this.shouldConvert() ?
-52. this.convertOrientation(disp.orientation) : disp.rotation);
-53. } catch (e) {
-54. hilog.error(COMP_ID, TAG, 'Rotation error: %{public}s', e);
-55. }
-56. }
-57. /**
-58. * 判断是否使用旧版行为
-59. */
-60. private static shouldConvert() {
-61. // 目标版本<14 或 目标版本≥14但设备版本<14
-62. return DisplayCompat.targetVer % 100 < SDK_VER_14 ||
-63. (DisplayCompat.targetVer % 100 >= SDK_VER_14 && DisplayCompat.deviceVer < SDK_VER_14);
-64. }
-65. /**
-66. * 转换到旧版方向值
-67. * @param orientation 原始方向值
-68. */
-69. private static convertOrientation(orientation: number): number {
-70. // 设备在旧版本上的特殊处理
-71. switch (orientation) {
-72. case Orientation.LANDSCAPE:
-73. return Orientation.LANDSCAPE_INVERTED;
-74. case Orientation.LANDSCAPE_INVERTED:
-75. return Orientation.LANDSCAPE;
-76. default:
-77. return orientation;
-78. }
-79. }
-80. }
-81. export default DisplayCompat;
+```screen
+import bundleManager from '@ohos.bundle.bundleManager';
+import display from '@ohos.display';
+import hilog from '@ohos.hilog';
+import deviceInfo from '@ohos.deviceInfo';
+const TAG = 'DisplayCompat';
+const SDK_VER_14 = 14;
+const COMP_ID = 0xFF00;
+enum Orientation {
+  PORTRAIT = 0,
+  LANDSCAPE = 1,
+  PORTRAIT_INVERTED = 2,
+  LANDSCAPE_INVERTED = 3
+}
+class DisplayCompat {
+  private static targetVer = 0;
+  private static deviceVer: number;
+  private static callback: Callback<number>|null;
+  public static async init() {
+    if (!DisplayCompat.targetVer) {
+      try {
+        let bundleInfo:bundleManager.BundleInfo = await bundleManager.getBundleInfoForSelf(
+          bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION
+        );
+        const targetSdkVersion = bundleInfo.targetVersion;
+        DisplayCompat.targetVer = targetSdkVersion;
+      } catch (e) {
+        hilog.error(COMP_ID, TAG, 'Init failed: %{public}s', e);
+      }
+    }
+    if (!DisplayCompat.deviceVer) {
+      DisplayCompat.deviceVer = deviceInfo.sdkApiVersion;
+    }
+  }
+  public static register(cb: Callback<number>) {
+    if (typeof cb !== 'function') return;
+    DisplayCompat.callback = cb;
+    display.on('change', DisplayCompat.handleRotation);
+  }
+  public static unregister() {
+    display.off('change', DisplayCompat.handleRotation);
+    DisplayCompat.callback = null;
+  }
+  private static handleRotation = async (rot: number) => {
+    if (!DisplayCompat.callback) return;
+    try {
+      if (!DisplayCompat.targetVer || !DisplayCompat.deviceVer) await DisplayCompat.init();
+      const disp = display.getDefaultDisplaySync();
+      if (!disp) return;
+      // 判断是否使用旧版行为逻辑
+      console.info(`mast shouldConvert()`+this.shouldConvert())
+      DisplayCompat.callback(this.shouldConvert() ?
+        this.convertOrientation(disp.orientation) : disp.rotation);
+    } catch (e) {
+      hilog.error(COMP_ID, TAG, 'Rotation error: %{public}s', e);
+    }
+  }
+  /**
+   * 判断是否使用旧版行为
+   */
+  private static shouldConvert() {
+    // 目标版本<14 或 目标版本≥14但设备版本<14
+    return DisplayCompat.targetVer % 100 < SDK_VER_14 ||
+      (DisplayCompat.targetVer % 100 >= SDK_VER_14 && DisplayCompat.deviceVer < SDK_VER_14);
+  }
+  /**
+   * 转换到旧版方向值
+   * @param orientation 原始方向值
+   */
+  private static convertOrientation(orientation: number): number {
+    // 设备在旧版本上的特殊处理
+    switch (orientation) {
+      case Orientation.LANDSCAPE:
+        return Orientation.LANDSCAPE_INVERTED;
+      case Orientation.LANDSCAPE_INVERTED:
+        return Orientation.LANDSCAPE;
+      default:
+        return orientation;
+    }
+  }
+}
+export default DisplayCompat;
 ```
 
 **【示例2: 应用集成三方库（具有更高compatibleSdkVersion版本】**
 
 应用配置compatibleSdkVersion为5.0.0(12)，三方库配置的compatibleSdkVersion为5.0.1(13)， 当应用依赖这个三方库，编译构建时提示如下：
 
-```
-1. > hvigor ERROR: Failed :entry:default@MergeProfile...
-2. > hvigor ERROR: 00306004 Specification Limit Violation
-3. Error Message: The compatibleSDKVersion 12 cannot be smaller than 13 declared in library har.
+```screen
+> hvigor ERROR: Failed :entry:default@MergeProfile...
+> hvigor ERROR: 00306004 Specification Limit Violation
+Error Message: The compatibleSDKVersion 12 cannot be smaller than 13 declared in library har.
 ```

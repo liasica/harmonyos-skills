@@ -3,32 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: picker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > picker
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9298a898736ec0a8c57daf7a832451b16ae89e98272de24389b960f41a4d3e94
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:79e3ace269b372fd8a648121db52aad59293f4a84edfd92895560d527285c97a
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
-滑动选择器组件，类型支持普通选择器、日期选择器、时间选择器、时间日期选择器和多列文本选择器。
+滑动选择器组件，类型支持普通选择器、日期选择器、时间选择器、日期时间选择器和多列文本选择器。
 
 ## 权限列表
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -38,19 +32,15 @@ PhonePC/2in1TabletTVWearable
 
 ### 普通选择器
 
-PhonePC/2in1TabletTVWearable
-
 滑动选择器类型设置为text时表示普通选择器。
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
-| range | Array | - | 否 | 设置普通选择器的取值范围，如["15", "20", "25"]。  使用时需要使用数据绑定的方式range ={{data}}，js中声明相应变量data：["15","20","25"]。 |
+| range | Array | - | 否 | 设置普通选择器的取值范围，如["15", "20", "25"]。  使用时需要使用数据绑定的方式range ={{data}}，js中声明相应变量data:["15","20","25"]。 |
 | selected | string | 0 | 否 | 设置普通选择器弹窗的默认取值，取值需要是 range 的索引值，该取值表示选择器弹窗界面的默认选择值。 |
 | value | string | - | 否 | 设置普通选择器的值。 |
 
 ### 日期选择器
-
-PhonePC/2in1TabletTVWearable
 
 滑动选择器类型设置为date时表示日期选择器。
 
@@ -65,8 +55,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 时间选择器
 
-PhonePC/2in1TabletTVWearable
-
 滑动选择器类型设置为time时表示时间选择器。
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -78,8 +66,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 日期时间选择器
 
-PhonePC/2in1TabletTVWearable
-
 滑动选择器类型设置为datetime时表示日期时间选择器，日期的选择范围为本年的日月。
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -87,25 +73,21 @@ PhonePC/2in1TabletTVWearable
 | selected | string | 当前日期时间 | 否 | 设置日期时间选择器弹窗的默认取值，有两种可选格式。  - 月日时分：MM-DD-HH-mm  - 年月日时分：YYYY-MM-DD-HH-mm  不设置年时，默认使用当前年，该取值表示选择器弹窗界面的默认选择值。 |
 | value | string | - | 是 | 设置日期时间选择器的值。 |
 | hours | number | 241-4  -5+ | 否 | 设置日期时间选择器采用的时间格式，可选值：  - 12：按照12小时制显示，用上午和下午进行区分；  - 24：按照24小时制显示。  从API version 5开始，默认值会依据系统当前所选地区和语言选择当地习惯的小时制(12小时制或24小时制)。 |
-| lunar5+ | boolean | false | 否 | 设置日期时间选择器是否为农历展示。  默认值：false，表示设置日期选择器为公历展示。 |
-| lunarswitch | boolean | false | 否 | 设置日期选择器是否显示农历开关。当值为true时，显示农历开关，点击农历开关可切换公历和农历。当值为false时，不显示农历开关。  当lunarswitch=true且lunar=true时，开关按钮处于被选中状态。 |
+| lunar5+ | boolean | false | 否 | 设置日期时间选择器是否为农历展示。  默认值：false，表示设置日期时间选择器为公历展示。 |
+| lunarswitch | boolean | false | 否 | 设置日期时间选择器是否显示农历开关。当值为true时，显示农历开关，点击农历开关可切换公历和农历。当值为false时，不显示农历开关。  当lunarswitch=true且lunar=true时，开关按钮处于被选中状态。 |
 
 ### 多列文本选择器
-
-PhonePC/2in1TabletTVWearable
 
 滑动选择器类型设置为multi-text时表示多列文本选择器。
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | columns | number | - | 是 | 设置多列文本选择器的列数。 |
-| range | 二维Array | - | 否 | 设置多列文本选择器的选择项，其中range 为二维数组。长度表示多少列，数组的每项表示每列的数据，如 [["a","b"], ["c","d"]]。  使用时需要使用数据绑定的方式range ={{data}}，js中声明相应变量data：["15","20","25"]。 |
+| range | 二维Array | - | 否 | 设置多列文本选择器的选择项，其中range 为二维数组。长度表示多少列，数组的每项表示每列的数据，如 [["a","b"], ["c","d"]]。  使用时需要使用数据绑定的方式range ={{data}}，js中声明相应变量data:[["a","b"], ["c","d"]]。 |
 | selected | Array | [0,0,0,…] | 否 | 设置多列文本选择器弹窗的默认值，每一列被选中项对应的索引构成的数组，该取值表示选择器弹窗界面的默认选择值。 |
 | value | Array | - | 否 | 设置多列文本选择器的值，每一列被选中项对应的值构成的数组。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
@@ -124,22 +106,16 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
 ### 普通选择器
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
-| change | { newValue: newValue, newSelected: newSelected } | 普通选择器选择值后点击弹窗中的确定按钮时触发该事件（newSelected为索引）。 |
+| change | { newValue: newValue, newSelected: newSelected } | 普通选择器选择值后点击弹窗中的确认按钮时触发该事件（newSelected为索引）。 |
 | cancel | - | 用户点击弹窗中的取消按钮时触发该事件。 |
 
 ### 日期选择器
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -148,8 +124,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 日期时间选择器
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { year: year, month: month, day: day, hour: hour, minute: minute} | 日期时间选择器选择值后点击弹窗中的确认按钮时触发该事件。 |
@@ -157,16 +131,12 @@ PhonePC/2in1TabletTVWearable
 
 ### 时间选择器
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { hour: hour, minute: minute, [second: second] } | 时间选择器选择值后点击弹窗中的确认按钮时触发该事件，当使用时分秒时，还包含秒数据。 |
 | cancel | - | 用户点击弹窗中的取消按钮时触发该事件。 |
 
 ### 多列文本选择器
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
@@ -176,8 +146,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用方法](js-components-common-methods.md)外，支持如下方法：
 
 | 名称 | 参数 | 描述 |
@@ -186,161 +154,159 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+```html
+<!-- xxx.hml -->
+<div class="container">
+    <select @change="selectChange">
+        <option value="{{ item }}" for="item in selectList">
+            {{ item }}
+        </option>
+    </select>
+    <picker id="picker0" type="text" value="{{ textvalue }}" selected="{{ textselect }}" range="{{ rangetext }}"
+            onchange="textonchange"
+            oncancel="textoncancel" class="pickertext" show="false"></picker>
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <select @change="selectChange">
-4. <option value="{{ item }}" for="item in selectList">
-5. {{ item }}
-6. </option>
-7. </select>
-8. <picker id="picker0" type="text" value="{{ textvalue }}" selected="{{ textselect }}" range="{{ rangetext }}"
-9. onchange="textonchange"
-10. oncancel="textoncancel" class="pickertext" show="false"></picker>
+    <picker id="picker1" type="date" value="{{ datevalue }}" start="2002-2-5" end="2030-6-5" selected="{{ dateselect }}"
+            lunarswitch="true"
+            onchange="dateonchange" oncancel="dateoncancel" class="pickerdate" show="false"></picker>
 
-12. <picker id="picker1" type="date" value="{{ datevalue }}" start="2002-2-5" end="2030-6-5" selected="{{ dateselect }}"
-13. lunarswitch="true"
-14. onchange="dateonchange" oncancel="dateoncancel" class="pickerdate" show="false"></picker>
+    <picker id="picker2" type="time" value="{{ timevalue }}" containsecond="{{ containsecond }}"
+            selected="{{ timeselect }}" hours="12"
+            onchange="timeonchange" oncancel="timeoncancel" class="pickertime" show="false"></picker>
 
-16. <picker id="picker2" type="time" value="{{ timevalue }}" containsecond="{{ containsecond }}"
-17. selected="{{ timeselect }}" hours="12"
-18. onchange="timeonchange" oncancel="timeoncancel" class="pickertime" show="false"></picker>
+    <picker id="picker3" type="datetime" value="{{ datetimevalue }}" selected="{{ datetimeselect }}" hours="24"
+            lunarswitch="true"
+            onchange="datetimeonchange" oncancel="datetimeoncancel" class="pickerdatetime" show="false"></picker>
 
-20. <picker id="picker3" type="datetime" value="{{ datetimevalue }}" selected="{{ datetimeselect }}" hours="24"
-21. lunarswitch="true"
-22. onchange="datetimeonchange" oncancel="datetimeoncancel" class="pickerdatetime" show="false"></picker>
-
-24. <picker id="picker4" type="multi-text" value="{{ multitextvalue }}" columns="3" range="{{ multitext }}"
-25. selected="{{ multitextselect }}"
-26. onchange="multitextonchange" oncancel="multitextoncancel" class="pickermuitl" show="false"></picker>
-27. </div>
+    <picker id="picker4" type="multi-text" value="{{ multitextvalue }}" columns="3" range="{{ multitext }}"
+            selected="{{ multitextselect }}"
+            onchange="multitextonchange" oncancel="multitextoncancel" class="pickermuitl" show="false"></picker>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. }
+```css
+/* xxx.css */
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-8. picker {
-9. width: 60%;
-10. height: 80px;
-11. border-radius: 20px;
-12. text-color: white;
-13. font-size: 15px;
-14. background-color: #4747e3;
-15. margin-left: 20%;
-16. }
+picker {
+    width: 60%;
+    height: 80px;
+    border-radius: 20px;
+    text-color: white;
+    font-size: 15px;
+    background-color: #4747e3;
+    margin-left: 20%;
+}
 
-18. select {
-19. background-color: #efecec;
-20. height: 50px;
-21. width: 60%;
-22. margin-left: 20%;
-23. margin-top: 300px;
-24. margin-bottom: 50px;
-25. font-size: 22px;
-26. }
-```
-
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-
-4. export default {
-5. data: {
-6. selectList: ["text", "data", "time", "datetime", "multitext"],
-7. rangetext: ['15', "20", "25"],
-8. multitext: [["a", "b", "c"], ["e", "f", "g"], ["h", "i"], ["k", "l", "m"]],
-9. textvalue: 'default textvalue',
-10. datevalue: 'default datevalue',
-11. timevalue: 'default timevalue',
-12. datetimevalue: 'default datetimevalue',
-13. multitextvalue: 'default multitextvalue',
-14. containsecond: true,
-15. multitextselect: [1, 2, 0],
-16. datetimeselect: '2012-5-6-11-25',
-17. timeselect: '11:22:30',
-18. dateselect: '2021-3-2',
-19. textselect: '2'
-20. },
-21. selectChange(e) {
-22. for (let i = 0;i < this.selectList.length; i++) {
-23. if (e.newValue == this.selectList[i]) {
-24. this.$element("picker" + i).show();
-25. }
-26. }
-27. },
-28. textonchange(e) {
-29. this.textvalue = e.newValue;
-30. promptAction.showToast({
-31. message: "text:" + e.newValue + ",newSelected:" + e.newSelected
-32. })
-33. },
-34. textoncancel(e) {
-35. promptAction.showToast({
-36. message: "text: textoncancel"
-37. })
-38. },
-39. dateonchange(e) {
-40. this.datevalue = e.year + "-" + e.month + "-" + e.day;
-41. promptAction.showToast({
-42. message: "date:" + e.year + "-" + (e.month + 1) + "-" + e.day
-43. })
-44. },
-45. dateoncancel() {
-46. promptAction.showToast({
-47. message: "date: dateoncancel"
-48. })
-49. },
-50. timeonchange(e) {
-51. if (this.containsecond) {
-52. this.timevalue = e.hour + ":" + e.minute + ":" + e.second;
-53. promptAction.showToast({
-54. message: "Time:" + e.hour + ":" + e.minute + ":" + e.second
-55. })
-56. } else {
-57. this.timevalue = e.hour + ":" + e.minute;
-58. promptAction.showToast({
-59. message: "Time:" + e.hour + ":" + e.minute
-60. })
-61. }
-62. },
-63. timeoncancel() {
-64. promptAction.showToast({
-65. message: "timeoncancel"
-66. })
-67. },
-68. datetimeonchange(e) {
-69. this.datetimevalue = e.year + "-" + e.month + "-" + e.day + " " + e.hour + ":" + e.minute;
-70. promptAction.showToast({
-71. message: "Time:" + (e.month + 1) + "-" + e.day + " " + e.hour + ":" + e.minute
-72. })
-73. },
-74. datetimeoncancel() {
-75. promptAction.showToast({
-76. message: "datetimeoncancel"
-77. })
-78. },
-79. multitextonchange(e) {
-80. this.multitextvalue = e.newValue;
-81. promptAction.showToast({
-82. message: "Multi-column text change" + e.newValue
-83. })
-84. },
-85. multitextoncancel() {
-86. promptAction.showToast({
-87. message: "multitextoncancel"
-88. })
-89. },
-90. popup_picker() {
-91. this.$element("picker_text").show();
-92. },
-93. }
+select {
+    background-color: #efecec;
+    height: 50px;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 300px;
+    margin-bottom: 50px;
+    font-size: 22px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/twtLBVNqS0yoqSX9s69nkw/zh-cn_image_0000002558607060.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+
+export default {
+    data: {
+        selectList: ["text", "date", "time", "datetime", "multitext"],
+        rangetext: ['15', "20", "25"],
+        multitext: [["a", "b", "c"], ["e", "f", "g"], ["h", "i"], ["k", "l", "m"]],
+        textvalue: 'default textvalue',
+        datevalue: 'default datevalue',
+        timevalue: 'default timevalue',
+        datetimevalue: 'default datetimevalue',
+        multitextvalue: 'default multitextvalue',
+        containsecond: true,
+        multitextselect: [1, 2, 0],
+        datetimeselect: '2012-5-6-11-25',
+        timeselect: '11:22:30',
+        dateselect: '2021-3-2',
+        textselect: '2'
+    },
+    selectChange(e) {
+        for (let i = 0;i < this.selectList.length; i++) {
+            if (e.newValue == this.selectList[i]) {
+                this.$element("picker" + i).show();
+            }
+        }
+    },
+    textonchange(e) {
+        this.textvalue = e.newValue;
+        promptAction.showToast({
+            message: "text:" + e.newValue + ",newSelected:" + e.newSelected
+        })
+    },
+    textoncancel(e) {
+        promptAction.showToast({
+            message: "text: textoncancel"
+        })
+    },
+    dateonchange(e) {
+        this.datevalue = e.year + "-" + (e.month + 1) + "-" + e.day;
+        promptAction.showToast({
+            message: "date:" + e.year + "-" + (e.month + 1) + "-" + e.day
+        })
+    },
+    dateoncancel() {
+        promptAction.showToast({
+            message: "date: dateoncancel"
+        })
+    },
+    timeonchange(e) {
+        if (this.containsecond) {
+            this.timevalue = e.hour + ":" + e.minute + ":" + e.second;
+            promptAction.showToast({
+                message: "Time:" + e.hour + ":" + e.minute + ":" + e.second
+            })
+        } else {
+            this.timevalue = e.hour + ":" + e.minute;
+            promptAction.showToast({
+                message: "Time:" + e.hour + ":" + e.minute
+            })
+        }
+    },
+    timeoncancel() {
+        promptAction.showToast({
+            message: "timeoncancel"
+        })
+    },
+    datetimeonchange(e) {
+        this.datetimevalue = e.year + "-" + (e.month + 1) + "-" + e.day + " " + e.hour + ":" + e.minute;
+        promptAction.showToast({
+            message: "Time:" + (e.month + 1) + "-" + e.day + " " + e.hour + ":" + e.minute
+        })
+    },
+    datetimeoncancel() {
+        promptAction.showToast({
+            message: "datetimeoncancel"
+        })
+    },
+    multitextonchange(e) {
+        this.multitextvalue = e.newValue;
+        promptAction.showToast({
+            message: "Multi-column text change" + e.newValue
+        })
+    },
+    multitextoncancel() {
+        promptAction.showToast({
+            message: "multitextoncancel"
+        })
+    },
+    popup_picker() {
+        this.$element("picker0").show();
+    },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/wrr7fl7LRZCrgqe8Xgh4Qg/zh-cn_image_0000002706676450.gif)

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-stat
 title: status.h
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 头文件 > status.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5076bfde33aefa0307c065f26888b6bebb45aa6823a2ffaf1d3ac4464a29f10b
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:264bc910e31e89f37c0c3aaedf3191e8a7a0529405d250dad88e12de1b487b74
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供了MindSpore Lite运行时的状态码。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,14 +33,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AI\_CompCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_CompCode
+```c
+enum OH_AI_CompCode
 ```
 
 **描述**
@@ -65,10 +55,8 @@ MindSpore不同组件的代码。
 
 ### OH\_AI\_Status
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AI_Status
+```c
+enum OH_AI_Status
 ```
 
 **描述**

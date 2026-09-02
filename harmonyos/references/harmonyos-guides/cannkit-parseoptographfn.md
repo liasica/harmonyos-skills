@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-parse
 title: ParseOpToGraphFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > ParseOpToGraphFn
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:20+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5cf3e747de95799b56a0fbe43d99a586c929460fccea2d8af011d7f481eba758
+content_hash: sha256:1860cea18ac9297bf7f0ea14d888f2ee0943849946f90dd0b6c4c0444a3b7c0b
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:5cf3e747de95799b56a0fbe43d99a586c929460fccea2d8af011d7f481e
 
 ## 函数原型
 
-```
-1. OpRegistrationData &ParseOpToGraphFn(const ParseOpToGraphFunc &parse_op_to_graph_fn)
+```cpp
+OpRegistrationData &ParseOpToGraphFn(const ParseOpToGraphFunc &parse_op_to_graph_fn)
 ```
 
 ## 参数说明
@@ -36,8 +36,8 @@ content_hash: sha256:5cf3e747de95799b56a0fbe43d99a586c929460fccea2d8af011d7f481e
 
 回调函数原型定义如下。
 
-```
-1. Status  ParseOpToGraphFunc(const ge::Operator &op, ge::Graph &graph)
+```cpp
+Status  ParseOpToGraphFunc(const ge::Operator &op, ge::Graph &graph)
 ```
 
 **表1** 参数说明
@@ -58,46 +58,46 @@ content_hash: sha256:5cf3e747de95799b56a0fbe43d99a586c929460fccea2d8af011d7f481e
 
 实现Add算子到PartitionedCall算子的映射函数示例如下所示：
 
-```
-1. Status ParseParams(const ge::Operator &op_src, ge::Operator& op_dest)
-2. {
-3. // ...
-4. op_dest.SetAttr("original_type", "ai.onnx::11::Add");
-5. }
+```cpp
+Status ParseParams(const ge::Operator &op_src, ge::Operator& op_dest)
+{
+    // ...
+    op_dest.SetAttr("original_type", "ai.onnx::11::Add");
+}
 ```
 
 一对多子图构造函数实现示例如下所示：
 
-```
-1. static Status ParseOpToGraph(const Operator &op, Graph &graph) {
-2. auto data_0 = op::Data().set_attr_index(0);
-3. auto data_1 = op::Data().set_attr_index(1);
-4. auto addn = op::AddN("addn_sum").create_dynamic_input_x(2)
-5. .set_dynamic_input_x(0, data_0)
-6. .set_dynamic_input_x(1, data_1)
-7. .set_attr_N(2);
-8. auto abs = op::Abs("abs_sum").set_input_x(addn);
-9. std::vector<Operator> inputs{data_0, data_1};
-10. std::vector<std::pair<Operator, std::vector<size_t>>> output_indexs;
-11. output_indexs.emplace_back(abs, std::vector<std::size_t>{0});
-12. graph.SetInputs(inputs).SetOutputs(output_indexs);
-13. return domi::SUCCESS;
-14. }
+```cpp
+static Status ParseOpToGraph(const Operator &op, Graph &graph) {
+  auto data_0 = op::Data().set_attr_index(0);
+  auto data_1 = op::Data().set_attr_index(1);
+  auto addn = op::AddN("addn_sum").create_dynamic_input_x(2)
+      .set_dynamic_input_x(0, data_0)
+      .set_dynamic_input_x(1, data_1)
+      .set_attr_N(2);
+  auto abs = op::Abs("abs_sum").set_input_x(addn);
+  std::vector<Operator> inputs{data_0, data_1};
+  std::vector<std::pair<Operator, std::vector<size_t>>> output_indexs;
+  output_indexs.emplace_back(abs, std::vector<std::size_t>{0});
+  graph.SetInputs(inputs).SetOutputs(output_indexs);
+  return domi::SUCCESS;
+}
 ```
 
 进行注册：
 
-```
-1. REGISTER_CUSTOM_OP("PartitionedCall")
-2. .FrameworkType(xx)
-3. .OriginOpType(xx)
-4. .ParseParamsByOperatorFn(ParseParams)
-5. .ParseOpToGraphFn(ParseOpToGraph)
-6. .ImplyType(ImplyType::TVM);
+```cpp
+REGISTER_CUSTOM_OP("PartitionedCall")
+.FrameworkType(xx)
+.OriginOpType(xx)
+.ParseParamsByOperatorFn(ParseParams)
+.ParseOpToGraphFn(ParseOpToGraph)
+.ImplyType(ImplyType::TVM);
 ```
 
 图为将Add算子进行一对多子图映射后的示例。
 
 **图1** 一对多转换示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7w4byvmXT82Zs5lrBpYnZA/zh-cn_image_0000002589325663.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/gfx6i9NgQeyCoFMWXFtQfg/zh-cn_image_0000002706675418.png)

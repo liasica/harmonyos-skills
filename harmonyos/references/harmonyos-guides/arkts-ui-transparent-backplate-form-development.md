@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-transparent-backplate-form-development
-title: 背板透明卡片开发指导
-breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS背板透明卡片 > 背板透明卡片开发指导
+title: ArkTS背板透明卡片
+breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS背板透明卡片
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6a302127a344e0b48df670df887eb74ff02486054ea7998798a8d32a2cfc3b7a
+scraped_at: 2026-09-02T14:59:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f0e5dddd866dd4b224841df2bf492f79b3bf47c429212b0d89bbbc5eafdf05cb
 ---
 
 从API version 22开始，Form Kit提供卡片背板元素透明显示的能力，满足更丰富的UI设计以及美观诉求。
 
-说明
+**说明** 
 
 示例效果请以真机运行为准，当前不支持DevEco Studio预览器。
 
@@ -25,27 +25,29 @@ content_hash: sha256:6a302127a344e0b48df670df887eb74ff02486054ea7998798a8d32a2cf
 
 因为背板透明卡片仅使用于符合UI规范以及声明使用的场景，不允许对用户隐藏卡片显示或者功能按钮的恶意设计，所以需要开发者申请上架开放能力。
 
+因此在应用调试或发布时，必须使用[手动签名](ide-signing-manual.md)，并在手动签名[申请Profile](../app/agc-help-debug-profile-0000002248181278.md)过程中[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)，创建应用时参考如下指导为应用接入开放能力。
+
 1. 登录AppGallery Connect，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/U2SmV9fOSKiihVhJjm-ZBA/zh-cn_image_0000002558605146.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/5H7-Oy7ZQpeDt494NeelHw/zh-cn_image_0000002736433317.png)
 2. 在项目列表中找到您的项目，并点击选择需开启开放能力的应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/V61vvL13S_aaDvMKjSazVw/zh-cn_image_0000002589324671.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/mflOYOS7SjOlOR_Ncg330w/zh-cn_image_0000002706834162.png)
 3. 在“开放能力管理”页面，点击背板透明卡片对应的申请按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/jS_a6QvCS9Smg0cE6LONAA/zh-cn_image_0000002589244609.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/jPeW1xaOSN68wfv2dTva5Q/zh-cn_image_0000002736313271.png)
 4. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。申请原因：必填，包括应用介绍、使用场景、申请用途，不超过256个字符。上传附件：必填，提供对应卡片UI设计释义材料，仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/KyqscHfSQHm4MAoFEDHldw/zh-cn_image_0000002558764804.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/xKz9dON5ScSZJe5VYP1YSg/zh-cn_image_0000002706674228.png)
 5. 返回“开放能力管理”页面，原“申请”按钮变为“申请中”，1-3个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/nngGdaGmQs-wc6IC-V1SfA/zh-cn_image_0000002558605148.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/XETPF7CFQOOZPwEcZEX9lg/zh-cn_image_0000002736433319.png)
 6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/mBmclyevSLyKFKxx8UUCSA/zh-cn_image_0000002589324673.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/uWI1kQh6Sjaib27LnO9DTA/zh-cn_image_0000002706834164.png)
 7. 能力申请通过后，勾选背板透明卡片的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Ng8LX4CqTA2phr2Ekyx_rg/zh-cn_image_0000002589244611.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ubTZIseyQZqbdUAI8fSc3A/zh-cn_image_0000002736313273.png)
 
 ## 开发步骤
 
@@ -56,158 +58,158 @@ content_hash: sha256:6a302127a344e0b48df670df887eb74ff02486054ea7998798a8d32a2cf
 
    在form\_config.json配置文件中，背板透明卡片必须配置transparencyEnabled字段为true。具体参考[配置文件字段说明](arkts-ui-widget-configuration.md#配置文件字段说明)。
 
-   ```
-   1. // entry/src/main/resources/base/profile/form_config.json
+   ```json5
+   // entry/src/main/resources/base/profile/form_config.json
 
-   3. {
-   4. "forms": [
-   5. {
-   6. "name": "widget",
-   7. "displayName": "$string:widget_display_name",
-   8. "description": "$string:widget_desc",
-   9. "src": "./ets/widget/pages/WidgetCard.ets",
-   10. "uiSyntax": "arkts",
-   11. "window": {
-   12. "designWidth": 720,
-   13. "autoDesignWidth": true
-   14. },
-   15. "isDynamic": true,
-   16. "isDefault": true,
-   17. "updateEnabled": false,
-   18. "scheduledUpdateTime": "10:30",
-   19. "updateDuration": 1,
-   20. "defaultDimension": "2*2",
-   21. "transparencyEnabled": true,
-   22. "supportDimensions": [
-   23. "2*2"
-   24. ]
-   25. }
-   26. ]
-   27. }
+   {
+     "forms": [
+       {
+           "name": "widget",
+           "displayName": "$string:widget_display_name",
+           "description": "$string:widget_desc",
+           "src": "./ets/widget/pages/WidgetCard.ets",
+           "uiSyntax": "arkts",
+           "window": {
+               "designWidth": 720,
+               "autoDesignWidth": true
+           },
+           "isDynamic": true,
+           "isDefault": true,
+           "updateEnabled": false,
+           "scheduledUpdateTime": "10:30",
+           "updateDuration": 1,
+           "defaultDimension": "2*2",
+           "transparencyEnabled": true,
+           "supportDimensions": [
+               "2*2"
+           ]
+       }
+     ]
+   }
    ```
 3. 设置背板透明卡片字体反色。
 
    在WidgetCard.ets卡片布局文件中，实现默认卡片反色字体颜色设置。
 
-   ```
-   1. // entry/src/main/ets/widget/pages/WidgetCard.ets
-   2. const TAG: string = 'WidgetCard';
+   ```ets
+   // entry/src/main/ets/widget/pages/WidgetCard.ets
+   const TAG: string = 'WidgetCard';
 
-   4. @Entry
-   5. @Component
-   6. export struct WidgetCard {
-   7. readonly title: string = '已配置form_config为true三方透明卡片';
-   8. readonly actionType: string = 'router';
-   9. readonly abilityName: string = 'EntryAbility';
-   10. readonly message: string = 'add detail';
-   11. readonly fullWidthPercent: string = '100%';
-   12. readonly fullHeightPercent: string = '100%';
+   @Entry
+   @Component
+   export struct WidgetCard {
+     readonly title: string = '已配置form_config为true三方透明卡片';
+     readonly actionType: string = 'router';
+     readonly abilityName: string = 'EntryAbility';
+     readonly message: string = 'add detail';
+     readonly fullWidthPercent: string = '100%';
+     readonly fullHeightPercent: string = '100%';
 
-   14. // 获取反色信息
-   15. @LocalStorageProp('textColor') @Watch('getTextColor') textColor: string = '#00ff00';
+     // 获取反色信息
+     @LocalStorageProp('textColor') @Watch('getTextColor') textColor: string = '#00ff00';
 
-   17. build() {
-   18. Row() {
-   19. Column() {
-   20. Text(this.title)
-   21. .fontSize('20vp')
-   22. .fontWeight(FontWeight.Medium)
-   23. .fontColor(this.textColor)
-   24. }
-   25. .width(this.fullWidthPercent)
-   26. }
-   27. .height(this.fullHeightPercent)
-   28. .backgroundColor(Color.Transparent)
-   29. .onClick(() => {
-   30. postCardAction(this, {
-   31. action: this.actionType,
-   32. abilityName: this.abilityName,
-   33. params: {
-   34. message: this.message
-   35. }
-   36. });
-   37. })
-   38. }
+     build() {
+       Row() {
+         Column() {
+           Text(this.title)
+             .fontSize('20vp')
+             .fontWeight(FontWeight.Medium)
+             .fontColor(this.textColor)
+         }
+         .width(this.fullWidthPercent)
+       }
+       .height(this.fullHeightPercent)
+       .backgroundColor(Color.Transparent)
+       .onClick(() => {
+         postCardAction(this, {
+           action: this.actionType,
+           abilityName: this.abilityName,
+           params: {
+             message: this.message
+           }
+         });
+       })
+     }
 
-   40. private getTextColor(): void {
-   41. console.info(TAG, `this.textColor = ${this.textColor}`);
-   42. }
-   43. }
+     private getTextColor(): void {
+       console.info(TAG, `this.textColor = ${this.textColor}`);
+     }
+   }
    ```
 
    在卡片Ability生命周期EntryFormAbility.ets文件中，实现反色字体颜色更新。
 
+   ```ets
+   // entry/src/main/ets/entryformability/EntryFormAbility.ets
+   import { formBindingData, FormExtensionAbility, formInfo, formProvider } from '@kit.FormKit';
+   import { Want } from '@kit.AbilityKit';
+
+   const TAG: string = 'ServiceEntryFormAbility';
+
+   export default class EntryFormAbility extends FormExtensionAbility {
+     onAddForm(want: Want) {
+       console.info(TAG, 'onAddForm', JSON.stringify(want));
+       let textColor: string = '#707070';
+       let formData: Record<string, string> = {};
+       if (want && want.parameters) {
+         // 获取反色信息
+         let testColorJsonStr = want.parameters[formInfo.FormParam.HOST_BG_INVERSE_COLOR_KEY] as TextColor;
+         if (!testColorJsonStr) {
+           console.error(TAG, `no host_bg_inverse_color in want parameters`);
+         } else {
+           textColor = testColorJsonStr.mTextColor;
+           formData['textColor'] = textColor;
+         }
+       }
+
+       return formBindingData.createFormBindingData(formData);
+     }
+
+     onCastToNormalForm(formId: string) {}
+
+     onUpdateForm(formId: string, wantParams?: Record<string, Object>) {
+       console.info(TAG, 'onUpdateForm', JSON.stringify(wantParams));
+       let textColor: string = '#707070';
+       if (wantParams) {
+         let testColorJsonStr = wantParams[formInfo.FormParam.HOST_BG_INVERSE_COLOR_KEY] as TextColor;
+         console.info(TAG, `onUpdate typeof testColorJsonStr = ${JSON.stringify(testColorJsonStr)}`);
+         // 获取反色信息
+         if (!testColorJsonStr) {
+           console.error(TAG, `no host_bg_inverse_color in wantParams parameters`);
+           return;
+         } else {
+           textColor = testColorJsonStr.mTextColor;
+         }
+       }
+
+       let formMsg: Record<string, string> = {
+         'textColor': textColor
+       };
+
+       let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(formMsg);
+       formProvider.updateForm(formId, formData).then((succ) => {
+         console.info(TAG,`succ = ${JSON.stringify(succ)}`);
+       }).catch((fail :Error) => {
+         console.info(TAG,`err = ${JSON.stringify(fail)}`);
+       })
+
+     }
+
+     onFormEvent(formId: string, message: string) {}
+
+     onRemoveForm(formId: string) {}
+
+     onAcquireFormState(want: Want) {
+       return formInfo.FormState.READY;
+     }
+   }
+
+   interface  TextColor {
+     mTextColor: string;
+     mWallpaperType: number;
+   }
    ```
-   1. // entry/src/main/ets/entryformability/EntryFormAbility.ets
-   2. import { formBindingData, FormExtensionAbility, formInfo, formProvider } from '@kit.FormKit';
-   3. import { Want } from '@kit.AbilityKit';
-
-   5. const TAG: string = 'ServiceEntryFormAbility';
-
-   7. export default class EntryFormAbility extends FormExtensionAbility {
-   8. onAddForm(want: Want) {
-   9. console.info(TAG, 'onAddForm', JSON.stringify(want));
-   10. let textColor: string = '#707070';
-   11. let formData: Record<string, string> = {};
-   12. if (want && want.parameters) {
-   13. // 获取反色信息
-   14. let testColorJsonStr = want.parameters[formInfo.FormParam.HOST_BG_INVERSE_COLOR_KEY] as TextColor;
-   15. if (!testColorJsonStr) {
-   16. console.error(TAG, `no host_bg_inverse_color in want parameters`);
-   17. } else {
-   18. textColor = testColorJsonStr.mTextColor;
-   19. formData['textColor'] = textColor;
-   20. }
-   21. }
-
-   23. return formBindingData.createFormBindingData(formData);
-   24. }
-
-   26. onCastToNormalForm(formId: string) {}
-
-   28. onUpdateForm(formId: string, wantParams?: Record<string, Object>) {
-   29. console.info(TAG, 'onUpdateForm', JSON.stringify(wantParams));
-   30. let textColor: string = '#707070';
-   31. if (wantParams) {
-   32. let testColorJsonStr = wantParams[formInfo.FormParam.HOST_BG_INVERSE_COLOR_KEY] as TextColor;
-   33. console.info(TAG, `onUpdate typeof testColorJsonStr = ${JSON.stringify(testColorJsonStr)}`);
-   34. // 获取反色信息
-   35. if (!testColorJsonStr) {
-   36. console.error(TAG, `no host_bg_inverse_color in wantParams parameters`);
-   37. return;
-   38. } else {
-   39. textColor = testColorJsonStr.mTextColor;
-   40. }
-   41. }
-
-   43. let formMsg: Record<string, string> = {
-   44. 'textColor': textColor
-   45. };
-
-   47. let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(formMsg);
-   48. formProvider.updateForm(formId, formData).then((succ) => {
-   49. console.info(TAG,`succ = ${JSON.stringify(succ)}`);
-   50. }).catch((fail :Error) => {
-   51. console.info(TAG,`err = ${JSON.stringify(fail)}`);
-   52. })
-
-   54. }
-
-   56. onFormEvent(formId: string, message: string) {}
-
-   58. onRemoveForm(formId: string) {}
-
-   60. onAcquireFormState(want: Want) {
-   61. return formInfo.FormState.READY;
-   62. }
-   63. }
-
-   65. interface  TextColor {
-   66. mTextColor: string;
-   67. mWallpaperType: number;
-   68. }
-   ```
-4. 在应用调试或发布时，进行[手动签名](ide-signing.md#section297715173233)后运行。
+4. 在应用调试或发布时，进行[手动签名](ide-signing-manual.md)后运行。
 5. 用户可在卡片中心-卡片管理页面，点击“添加至桌面”，此时在桌面即可看到新添加的背板透明卡片。结果示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/dCIGjZKbQn2iKjspfEVL3g/zh-cn_image_0000002558764806.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/128egOl6TQeRs-B5JztkxQ/zh-cn_image_0000002706674230.gif)

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-510
 title: OS新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > OS新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2635f907868846dfba89f987eadc8615f6e3dc29ae126df1e420c0195071040c
+scraped_at: 2026-09-02T14:58:46+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:2c20ed7a1d7e72a249435a0d636ef88d8e5b1873461450aaadeb4f3b3dc53542
 ---
 
 ## 关键特性
@@ -32,7 +32,7 @@ HarmonyOS 5.1.0 Release版本重点提供如下的开放能力。全量新增接
 
 ### AR Engine
 
-* 新增ArkTS API，支持运动跟踪能力、环境跟踪能力和命中检测能力，包括管理AR会话、获取设备位姿、检测环境中的平面、识别平面语义、获取深度估计信息、获取网格扫描信息、图像跟踪、AR物体摆放。（[指南](../harmonyos-guides/arengine-guide.md)）
+* 新增ArkTS API，支持运动跟踪能力、环境跟踪能力和命中检测能力，包括[管理AR会话](../harmonyos-guides/arengine-arsession.md)、[获取设备位姿](../harmonyos-guides/arengine-get-pose.md)、检[测环境中的平面](../harmonyos-guides/arengine-get-plane.md)、[识别平面语义](../harmonyos-guides/arengine-get-semantics.md)、[获取深度估计信息](../harmonyos-guides/arengine-get-depth.md)、[获取网格扫描信息](../harmonyos-guides/arengine-get-mesh.md)、[图像跟踪](../harmonyos-guides/arengine-image-track.md)、[AR物体摆放](../harmonyos-guides/arengine-arworld.md)。
 * 新增C API，支持如下特性：
   + 图像跟踪，实现传入图像数据对现实环境中的物体进行识别跟踪。（[指南](../harmonyos-guides/arengine-c-image-track.md)）
   + 获取网格扫描信息，实现检测当前环境中的物体，并对物体表面进行网格化。（[指南](../harmonyos-guides/arengine-c-get-mesh.md)）
@@ -63,7 +63,7 @@ HarmonyOS 5.1.0 Release版本重点提供如下的开放能力。全量新增接
   + 富文本（RichEditor）组件支持设置最大行数。（[API参考](../harmonyos-references/ts-basic-components-richeditor.md#maxlength18)）
   + TextInput组件支持设置文本省略位置。（[API参考](../harmonyos-references/ts-basic-components-textinput.md#ellipsismode18)）
   + TextInput/TextArea/Search/RichEditor组件支持将文本行间距平分至行的顶部与底部。（[API参考-TextInput](../harmonyos-references/ts-basic-components-textinput.md#halfleading18)、[API参考-TextArea](../harmonyos-references/ts-basic-components-textarea.md#halfleading18)、[API参考-Search](../harmonyos-references/ts-basic-components-search.md#halfleading18)、[API参考-RichEditor](../harmonyos-references/ts-basic-components-richeditor.md#richeditortextstyleresult)）
-  + TextInput/TextArea组件扩展自动填充类型，包含：车牌号、护照号等。（[API参考-ArkTS](../harmonyos-references/ts-basic-components-textinput.md#contenttype12枚举说明)、[API参考-C API](../harmonyos-references/capi-native-type-h.md#arkui_textinputcontenttype)）
+  + TextInput/TextArea组件扩展自动填充类型，包含：车牌号、护照号等。（[API参考-ArkTS](../harmonyos-references/ts-basic-components-textinput.md#contenttype12枚举说明)、[API参考-C API](../harmonyos-references/capi-text-input-h.md#arkui_textinputcontenttype)）
   + 富文本（RichEditor）组件在长按预览菜单时支持振动效果。（[API参考](../harmonyos-references/ts-basic-components-richeditor.md#previewmenuoptions18)）
 * 新增适配圆形屏幕的能力。包括：
   + 新增旋转表冠事件，组件获焦后扭动表冠可获取时间戳、旋转角速度、旋转角度和表冠动作信息。（[API参考](../harmonyos-references/ts-universal-events-crown.md)、[指南](../harmonyos-guides/arkts-common-events-crown-event.md)）
@@ -94,7 +94,7 @@ HarmonyOS 5.1.0 Release版本重点提供如下的开放能力。全量新增接
   + Swiper组件CAPI能力增强，可设置缓存节点是否显示、数字导航点和导航箭头的样式。（[API参考-C API](../harmonyos-references/capi-arkui-nativemodule-arkui-swiperdigitindicator.md)）
   + List组件支持设置布局样式和滚动效果（NODE\_LIST\_SCROLL\_TO\_INDEX\_IN\_GROUP、 NODE\_LIST\_LANES、NODE\_LIST\_SCROLL\_SNAP\_ALIGN、NODE\_LIST\_MAINTAIN\_VISIBLE\_CONTENT\_POSITION）（[API参考-C API](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)）。
 * 新增C API，支持可配置用户自定义数据的手势中断事件回调函数。（[API参考](../harmonyos-references/capi-arkui-nativemodule-arkui-nativegestureapi-2.md)）
-* 支持设置组件的自定义焦点走焦逻辑。（[API参考](../harmonyos-references/ts-universal-attributes-focus.md#nextfocus18)、[API参考-C API](../harmonyos-references/capi-native-type-h.md#arkui_focusmove)）
+* 支持设置组件的自定义焦点走焦逻辑。（[API参考](../harmonyos-references/ts-universal-attributes-focus.md#nextfocus18)、[API参考-C API](../harmonyos-references/capi-common-attributes-h.md#arkui_focusmove)）
 * 支持动态获取手势配置参数，可返回连续点击次数阈值。（[API参考](../harmonyos-references/ts-gesture-common.md#taprecognizer18)）
 * 支持手势取消时，触发的onActionCancel回调中返回手势事件信息。（[API参考-LongPressGesture](../harmonyos-references/ts-basic-gestures-longpressgesture.md#事件)、[API参考-PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md#事件)、[API参考-PinchGesture](../harmonyos-references/ts-basic-gestures-pinchgesture.md#事件)、[API参考-RotationGesture](../harmonyos-references/ts-basic-gestures-rotationgesture.md#事件)）
 * 无障碍支持自定义焦点顺序（[API参考](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitynextfocusid18)）、支持控制组件的屏幕朗读方式（[API参考](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilityrole18)）、支持设置屏幕朗读滚动操作（[API参考](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilityscrolltriggerable18)）。
@@ -194,7 +194,7 @@ HarmonyOS 5.1.0 Release版本重点提供如下的开放能力。全量新增接
 
 ### MDM Kit
 
-* 可禁用/启用的特性限制新增MTP（mtpClient/mtpServer）和恢复出厂设置（resetFactory）。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)）
+* 可禁用/启用的特性限制新增MTP（mtpClient/mtpServer）和恢复出厂设置（resetFactory）。（[API参考](../harmonyos-references/js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)）
 * 新增支持按系统账户安装用户证书。（[API参考](../harmonyos-references/js-apis-enterprise-securitymanager.md#securitymanagerinstallusercertificate18)）
 * 新增支持订阅账号的新增、删除、切换系统事件。（[API参考](../harmonyos-references/js-apis-enterprise-adminmanager.md#managedevent)）
 
@@ -243,7 +243,7 @@ MultipartForm新增boundary分隔符字段，支持开发者在上传多表单�
 
 ### Scan Kit
 
-新增setAutoZoomEnabled接口，支持设置自动变焦。（[API参考](../harmonyos-references/scan-customscan-api.md#customscansetautozoomenabled)）
+新增setAutoZoomEnabled接口，支持设置自动变焦。（[API参考](../harmonyos-references/scan-customscan-api.md#setautozoomenabled)）
 
 ### Scenario Fusion Kit
 

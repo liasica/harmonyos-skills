@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getou
 title: GetOutputShape
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > GetOutputShape
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:18+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:65808fd82d97c7b8002646f2adecaf0d3c297edeb6a4bc27fbbd116293938cb1
+content_hash: sha256:96e0ec470a8a951052393d59c9f73fe8b75875fd9ae58961850429405990805a
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:65808fd82d97c7b8002646f2adecaf0d3c297edeb6a4bc27fbbd1162939
 
 ## 函数原型
 
-```
-1. const StorageShape *GetOutputShape(size_t index) const;
+```cpp
+const StorageShape *GetOutputShape(size_t index) const;
 ```
 
 ## 参数说明
@@ -36,9 +36,9 @@ content_hash: sha256:65808fd82d97c7b8002646f2adecaf0d3c297edeb6a4bc27fbbd1162939
 
 ## 调用示例
 
-```
-1. ge::graphStatus Tiling4ConcatD(TilingContext* context) {
-2. auto out_shape = context->GetOutputShape(0);
-3. // ...
-4. }
+```cpp
+ge::graphStatus Tiling4ConcatD(TilingContext* context) {
+  auto out_shape = context->GetOutputShape(0);
+  // ...
+}
 ```

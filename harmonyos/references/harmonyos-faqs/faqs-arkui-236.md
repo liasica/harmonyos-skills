@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-236
 title: 如何正确获取刘海区域的高度，topRect中的取值是height、top还是height+top
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何正确获取刘海区域的高度，topRect中的取值是height、top还是height+top
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何正确获取刘海区域的高度，topRect中的取值是height、top还是height+top
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:00+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:3497630c952bdbbc9b5f8fd736606ddc7f738f6d017f93b8093f2abd06d57c56
 ---
 

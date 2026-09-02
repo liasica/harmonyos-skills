@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool
 title: bm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > bm工具
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8d9bf3a219ae1587c20635f5fbf96e76a5be4b8208f9b34ada6988044a666d6f
+scraped_at: 2026-09-02T14:59:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:669e50bd1882d271ac27e42278ae451513bfa7c9f712cc84bbe45e101109eab6
 ---
 
 Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、更新、查询等功能的工具，bm为开发者提供基本的应用安装包的调试能力。
@@ -36,25 +36,26 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 ## 帮助命令（help）
 
-```
-1. # 显示帮助信息
-2. bm help
+```bash
+# 显示帮助信息
+bm help
 ```
 
 ## 参数说明
 
 ### userId
 
-表示当前系统账号的编号，系统账号的相关接口请参考[系统账号管理模块](../harmonyos-references/js-apis-osaccount.md)，下面给出几种常见的系统账号。
+表示当前系统账号的编号，详情请参考[系统账号ID体系](os-account-introduction.md#系统账号id体系)，系统账号的相关接口请参考[@ohos.account.osAccount (系统账号管理)](../harmonyos-references/js-apis-osaccount.md)，下面给出几种常见的系统账号。
 
 * userId = 100，表示编号为100的系统账号，系统默认账号，在设备出厂首次启动时由系统账号管理模块创建，且创建完成后会在100账号下安装所有的预置应用。
 * userId = 102，表示编号为102的系统账号，由系统账号管理模块创建，仅支持系统应用创建账号。在100账号下安装的应用，在102账号下不会显示，如有需求，需要在102账号下重新安装。在创建102账号过程中，系统会在102账号下安装预置系统应用。
 * userId = 0，表示共有系统账号，也叫账号0，该共有系统账号和系统账号编号不同，不是系统账号管理模块创建的。在账号0下安装的应用，所有系统账号共享，会在每个系统账号下都会显示。所有三方应用都不能安装到账号0下。
+* userId = 1，表示企业级公共服务账号，企业级服务与应用安装并运行在此账号下，安装此账号下的应用需要申请[ohos.permission.SUPPORT\_INSTALL\_ON\_U1](permissions-for-enterprise-apps.md#ohospermissionsupport_install_on_u1)权限。
 
 ## 安装命令（install）
 
-```
-1. bm install [-h] [-p filePath] [-r] [-w waitingTime] [-s hspDirPath] [-u userId] [-d]
+```bash
+bm install [-h] [-p filePath] [-r] [-w waitingTime] [-s hspDirPath] [-u userId] [-d] [-g]
 ```
 
 **安装命令参数列表**
@@ -64,36 +65,39 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 | -h | 帮助信息。 |
 | -p | 可选参数，指定待安装的HAP/HSP路径，多HAP/HSP应用可指定多HAP/HSP所在文件夹路径。从API version 22开始，支持指定待安装的APP路径，也可指定只存在一个APP的文件夹路径。 |
 | -r | 可选参数，覆盖安装一个HAP/HSP。默认缺省，缺省时表示覆盖安装。 |
-| -s | 安装应用间HSP时为必选参数，其他场景为可选参数。用于指定待安装应用间HSP的路径。指定目录的时候，每个路径目录下只能存在一个HSP。  **说明：**  应用间HSP不对三方应用开放，三方无法安装应用间HSP。 |
-| -w | 可选参数，安装HAP时指定bm工具等待时间，最小的等待时长为180s，最大的等待时长为600s, 默认缺省为180s。 |
+| -s | 安装应用间HSP时为必选参数，其他场景为可选参数。用于指定待安装应用间HSP的路径。从API version 24开始，当指定目录时，路径目录下可以存在多个同包名、不同模块名的HSP。API version 23及之前版本，路径目录下只能存在一个HSP。  **说明：**  应用间HSP不对三方应用开放，三方无法安装应用间HSP。 |
+| -w | 可选参数，安装HAP时指定bm工具等待时间，最小的等待时长为180s，最大的等待时长为600s，默认缺省为180s。 |
 | -u | 可选参数，指定[用户](bm-tool.md#userid)，默认在当前活跃用户下安装应用。仅支持在当前活跃用户或0用户下安装。  **说明：**  如果当前活跃用户是100，使用命令bm install -p /data/local/tmp/ohos.app.hap -u 102安装时，只会在当前活跃用户100下安装应用。 |
 | -d | 可选参数，允许应用降级安装，即设备已安装较高版本的应用，也可以覆盖安装较低版本的应用。仅支持签名证书分发类型为app\_gallery或者签名证书类型为debug的三方应用降级安装。从API version 23开始支持。 |
+| -g | 可选参数，安装签名证书类型为debug的应用时自动授予[user\_grant](app-permission-mgmt-overview.md#user_grant用户授权)和[manual\_settings](app-permission-mgmt-overview.md#manual_settings手动设置授权)权限。  仅对[开发者模式](ide-developer-mode.md#section530763213432)下的签名证书类型为debug的应用生效。可以通过[Profile签名文件](../app/agc-help-profile-overview-0000002283260125.md)中的type字段查看签名证书类型。  签名证书类型为debug的应用更新为签名证书类型为release的应用时取消已授予的[user\_grant](app-permission-mgmt-overview.md#user_grant用户授权)和[manual\_settings](app-permission-mgmt-overview.md#manual_settings手动设置授权)权限。从API version 24开始支持。 |
 
 示例：
 
-```
-1. # 安装一个hap
-2. bm install -p /data/local/tmp/ohos.app.hap
-3. # 在100用户下安装一个hap
-4. bm install -p /data/local/tmp/ohos.app.hap -u 100
-5. # 覆盖安装一个hap
-6. bm install -p /data/local/tmp/ohos.app.hap -r
-7. # 安装一个应用间共享库
-8. bm install -s xxx.hsp
-9. # 同时安装使用方应用和其依赖的应用间共享库
-10. bm install -p aaa.hap -s xxx.hsp yyy.hsp
-11. # 同时安装HAP和应用内共享库
-12. bm install -p /data/local/tmp/hapPath/
-13. # 安装一个hap,等待时间为180s
-14. bm install -p /data/local/tmp/ohos.app.hap -w 180
-15. # 设备已安装了一个高版本的应用，覆盖安装一个同包名低版本的hap
-16. bm install -p /data/local/tmp/ohos.app.hap -d
+```bash
+# 安装一个hap
+bm install -p /data/local/tmp/ohos.app.hap
+# 在100用户下安装一个hap
+bm install -p /data/local/tmp/ohos.app.hap -u 100
+# 覆盖安装一个hap
+bm install -p /data/local/tmp/ohos.app.hap -r
+# 安装一个应用间共享库
+bm install -s xxx.hsp
+# 同时安装使用方应用和其依赖的应用间共享库
+bm install -p aaa.hap -s xxx.hsp yyy.hsp
+# 同时安装HAP和应用内共享库
+bm install -p /data/local/tmp/hapPath/
+# 安装一个hap,等待时间为180s
+bm install -p /data/local/tmp/ohos.app.hap -w 180
+# 设备已安装了一个高版本的应用，覆盖安装一个同包名低版本的hap
+bm install -p /data/local/tmp/ohos.app.hap -d
+# 安装签名证书类型为debug的应用时自动授予user_grant权限和manual_settings权限
+bm install -p /data/local/tmp/ohos.app.hap -g
 ```
 
 ## 卸载命令（uninstall）
 
-```
-1. bm uninstall [-h] [-n bundleName] [-m moduleName] [-k] [-s] [-v versionCode] [-u userId]
+```bash
+bm uninstall [-h] [-n bundleName] [-m moduleName] [-k] [-s] [-v versionCode] [-u userId]
 ```
 
 **卸载命令参数列表**
@@ -110,25 +114,25 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 卸载一个应用
-2. bm uninstall -n com.ohos.app
-3. # 在用户100下卸载一个应用
-4. bm uninstall -n com.ohos.app -u 100
-5. # 卸载应用的一个模块
-6. bm uninstall -n com.ohos.app -m entry
-7. # 卸载一个shared bundle
-8. bm uninstall -n com.ohos.example -s
-9. # 卸载一个shared bundle的指定版本
-10. bm uninstall -n com.ohos.example -s -v 100001
-11. # 卸载一个应用，并保留用户数据
-12. bm uninstall -n com.ohos.app -k
+```bash
+# 卸载一个应用
+bm uninstall -n com.ohos.app
+# 在用户100下卸载一个应用
+bm uninstall -n com.ohos.app -u 100
+# 卸载应用的一个模块
+bm uninstall -n com.ohos.app -m entry
+# 卸载一个shared bundle
+bm uninstall -n com.ohos.example -s
+# 卸载一个shared bundle的指定版本
+bm uninstall -n com.ohos.example -s -v 100001
+# 卸载一个应用，并保留用户数据
+bm uninstall -n com.ohos.app -k
 ```
 
 ## 查询应用信息命令（dump）
 
-```
-1. bm dump [-h] [-a] [-g] [-n bundleName] [-s shortcutInfo] [-d deviceId] [-l label] [-u userId]
+```bash
+bm dump [-h] [-a] [-g] [-n bundleName] [-s shortcutInfo] [-d deviceId] [-l label] [-u userId]
 ```
 
 **查询命令参数列表**
@@ -146,29 +150,29 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 显示所有已安装的Bundle名称
-2. bm dump -a
-3. # 查询系统中签名为调试类型的应用包名
-4. bm dump -g
-5. # 查询该应用的详细信息
-6. bm dump -n com.ohos.app
-7. # 在用户100下查询该应用的详细信息
-8. bm dump -n com.ohos.app -u 100
-9. # 查询该应用的快捷方式信息
-10. bm dump -s -n com.ohos.app
-11. # 查询跨设备应用信息
-12. bm dump -n com.ohos.app -d xxxxx
-13. # 查询该应用的label值（应用的名称）
-14. bm dump -n com.ohos.app -l
-15. # 显示所有已安装应用的bundle名称和label值（应用的名称）
-16. bm dump -a -l
+```bash
+# 显示所有已安装的Bundle名称
+bm dump -a
+# 查询系统中签名为调试类型的应用包名
+bm dump -g
+# 查询该应用的详细信息
+bm dump -n com.ohos.app
+# 在用户100下查询该应用的详细信息
+bm dump -n com.ohos.app -u 100
+# 查询该应用的快捷方式信息
+bm dump -s -n com.ohos.app
+# 查询跨设备应用信息
+bm dump -n com.ohos.app -d xxxxx
+# 查询该应用的label值（应用的名称）
+bm dump -n com.ohos.app -l
+# 显示所有已安装应用的bundle名称和label值（应用的名称）
+bm dump -a -l
 ```
 
 ## 清理命令（clean）
 
-```
-1. bm clean [-h] [-c] [-n bundleName] [-d] [-i appIndex] [-u userId]
+```bash
+bm clean [-h] [-c] [-n bundleName] [-d] [-i appIndex] [-u userId]
 ```
 
 **清理命令参数列表**
@@ -183,21 +187,21 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 清理该应用下的缓存数据
-2. bm clean -c -n com.ohos.app
-3. # 在用户100下清理该应用下的缓存数据
-4. bm clean -c -n com.ohos.app -u 100
-5. # 清理该应用下的用户数据
-6. bm clean -d -n com.ohos.app
-7. # 执行结果
-8. clean bundle data files successfully.
+```bash
+# 清理该应用下的缓存数据
+bm clean -c -n com.ohos.app
+# 在用户100下清理该应用下的缓存数据
+bm clean -c -n com.ohos.app -u 100
+# 清理该应用下的用户数据
+bm clean -d -n com.ohos.app
+# 执行结果
+clean bundle data files successfully.
 ```
 
 ## 获取udid命令（get）
 
-```
-1. bm get [-h] [-u]
+```bash
+bm get [-h] [-u]
 ```
 
 **获取udid命令参数列表**
@@ -209,18 +213,18 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 获取设备的udid
-2. bm get -u
-3. # 执行结果
-4. udid of current device is :
-5. 23CADE0C
+```bash
+# 获取设备的udid
+bm get -u
+# 执行结果
+udid of current device is :
+23CADE0C
 ```
 
 ## 快速修复命令（quickfix）
 
-```
-1. bm quickfix [-h] [-a -f filePath [-t targetPath] [-d] [-o]] [-q -b bundleName] [-r -b bundleName]
+```bash
+bm quickfix [-h] [-a -f filePath [-t targetPath] [-d] [-o]] [-q -b bundleName] [-r -b bundleName]
 ```
 
 注：hqf文件制作方式可参考[HQF打包指令](packing-tool.md#hqf打包指令)。
@@ -239,35 +243,35 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 根据包名查询补丁包信息
-2. bm quickfix -q -b com.ohos.app
-3. # 执行结果
-4. # Information as follows:
-5. # ApplicationQuickFixInfo:
-6. #  bundle name: com.ohos.app
-7. #  bundle version code: xxx
-8. #  bundle version name: xxx
-9. #  patch version code: x
-10. #  patch version name:
-11. #  cpu abi:
-12. #  native library path:
-13. #  type:
+```bash
+# 根据包名查询补丁包信息
+bm quickfix -q -b com.ohos.app
+# 执行结果
+# Information as follows:
+# ApplicationQuickFixInfo:
+#  bundle name: com.ohos.app
+#  bundle version code: xxx
+#  bundle version name: xxx
+#  patch version code: x
+#  patch version name:
+#  cpu abi:
+#  native library path:
+#  type:
 
-15. # 快速修复补丁安装
-16. bm quickfix -a -f /data/app/
-17. # 执行结果
-18. apply quickfix succeed.
-19. # 快速修复补丁卸载
-20. bm quickfix -r -b com.ohos.app
-21. # 执行结果
-22. delete quick fix successfully
+# 快速修复补丁安装
+bm quickfix -a -f /data/app/
+# 执行结果
+apply quickfix succeed.
+# 快速修复补丁卸载
+bm quickfix -r -b com.ohos.app
+# 执行结果
+delete quick fix successfully
 ```
 
 ## 共享库查询命令（dump-shared）
 
-```
-1. bm dump-shared [-h] [-a] [-n bundleName]
+```bash
+bm dump-shared [-h] [-a] [-n bundleName]
 ```
 
 **共享库查询命令参数列表**
@@ -280,17 +284,17 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 显示所有已安装共享库包名
-2. bm dump-shared -a
-3. # 显示该共享库的详细信息
-4. bm dump-shared -n com.ohos.lib
+```bash
+# 显示所有已安装共享库包名
+bm dump-shared -a
+# 显示该共享库的详细信息
+bm dump-shared -n com.ohos.lib
 ```
 
 ## 共享库依赖关系查询命令（dump-dependencies）
 
-```
-1. bm dump-dependencies [-h] [-n bundleName] [-m moduleName]
+```bash
+bm dump-dependencies [-h] [-n bundleName] [-m moduleName]
 ```
 
 **共享库依赖关系查询命令参数列表**
@@ -299,19 +303,19 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 | --- | --- |
 | -h | 帮助信息。 |
 | -n | 必选参数，查询指定应用依赖的共享库信息。 |
-| -m | 可选参数，查询指定应用指定模块依赖的共享库信息。 |
+| -m | 必选参数，查询指定应用指定模块依赖的共享库信息。 |
 
 示例：
 
-```
-1. # 查询指定应用指定模块依赖的共享库信息
-2. bm dump-dependencies -n com.ohos.app -m entry
+```bash
+# 查询指定应用指定模块依赖的共享库信息
+bm dump-dependencies -n com.ohos.app -m entry
 ```
 
 ## 应用执行编译AOT命令（compile）
 
-```
-1. bm compile [-h] [-m mode] [-r bundleName] [-a]
+```bash
+bm compile [-h] [-m mode] [-r bundleName] [-a]
 ```
 
 **compile命令参数列表**
@@ -325,17 +329,17 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 根据包名编译应用
-2. bm compile -m partial com.example.myapplication
+```bash
+# 根据包名编译应用
+bm compile -m partial com.example.myapplication
 ```
 
 ## 拷贝ap文件命令（copy-ap）
 
 拷贝ap文件到指定应用的/data/local/pgo路径。
 
-```
-1. bm copy-ap [-h] [-a] [-n bundleName]
+```bash
+bm copy-ap [-h] [-a] [-n bundleName]
 ```
 
 **copy-ap命令参数列表**
@@ -348,15 +352,15 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 根据包名移动对应包相关的ap文件
-2. bm copy-ap -n com.example.myapplication
+```bash
+# 根据包名移动对应包相关的ap文件
+bm copy-ap -n com.example.myapplication
 ```
 
 ## 查询overlay应用信息命令（dump-overlay）
 
-```
-1. bm dump-overlay [-h] [-b bundleName] [-m moduleName] [-t targetModuleName] [-u userId]
+```bash
+bm dump-overlay [-h] [-b bundleName] [-m moduleName] [-t targetModuleName] [-u userId]
 ```
 
 **dump-overlay命令参数列表**
@@ -371,26 +375,26 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 根据包名来获取overlay应用com.ohos.app中的所有OverlayModuleInfo信息
-2. bm dump-overlay -b com.ohos.app
+```bash
+# 根据包名来获取overlay应用com.ohos.app中的所有OverlayModuleInfo信息
+bm dump-overlay -b com.ohos.app
 
-4. # 在用户100下，根据包名来获取overlay应用com.ohos.app中的所有OverlayModuleInfo信息
-5. bm dump-overlay -b com.ohos.app -u 100
+# 在用户100下，根据包名来获取overlay应用com.ohos.app中的所有OverlayModuleInfo信息
+bm dump-overlay -b com.ohos.app -u 100
 
-7. # 根据包名和module来获取overlay应用com.ohos.app中overlay module为libraryModuleName的所有OverlayModuleInfo信息
-8. bm dump-overlay -b com.ohos.app -m libraryModuleName
+# 根据包名和module来获取overlay应用com.ohos.app中overlay module为libraryModuleName的所有OverlayModuleInfo信息
+bm dump-overlay -b com.ohos.app -m libraryModuleName
 
-10. # 根据目标包名和module来获取overlay应用com.ohos.app中目标module为entryModuleName的所有OverlayModuleInfo信息
-11. bm dump-overlay -b com.ohos.app -t entryModuleName
+# 根据目标包名和module来获取overlay应用com.ohos.app中目标module为entryModuleName的所有OverlayModuleInfo信息
+bm dump-overlay -b com.ohos.app -t entryModuleName
 ```
 
 ## 查询应用的overlay相关信息命令（dump-target-overlay）
 
 查询目标应用的所有关联overlay应用的overlayModuleInfo信息。
 
-```
-1. bm dump-target-overlay [-h] [-b bundleName] [-m moduleName] [-u userId]
+```bash
+bm dump-target-overlay [-h] [-b bundleName] [-m moduleName] [-u userId]
 ```
 
 **dump-target-overlay命令参数列表**
@@ -404,21 +408,21 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 根据包名来获取目标应用com.ohos.app中的所有关联的OverlayBundleInfo信息
-2. bm dump-target-overlay -b com.ohos.app
+```bash
+# 根据包名来获取目标应用com.ohos.app中的所有关联的OverlayBundleInfo信息
+bm dump-target-overlay -b com.ohos.app
 
-4. # 在用户100下，根据包名来获取目标应用com.ohos.app中的所有关联的OverlayBundleInfo信息
-5. bm dump-target-overlay -b com.ohos.app -u 100
+# 在用户100下，根据包名来获取目标应用com.ohos.app中的所有关联的OverlayBundleInfo信息
+bm dump-target-overlay -b com.ohos.app -u 100
 
-7. # 根据包名和module来获取目标应用com.ohos.app中目标module为entry的所有关联的OverlayModuleInfo信息
-8. bm dump-target-overlay -b com.ohos.app -m entry
+# 根据包名和module来获取目标应用com.ohos.app中目标module为entry的所有关联的OverlayModuleInfo信息
+bm dump-target-overlay -b com.ohos.app -m entry
 ```
 
 ## 安装插件命令（install-plugin）
 
-```
-1. bm install-plugin [-h] [-n hostBundleName] [-p filePath]
+```bash
+bm install-plugin [-h] [-n hostBundleName] [-p filePath]
 ```
 
 **install-plugin命令参数列表**
@@ -431,12 +435,12 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 安装一个插件
-2. bm install-plugin -n com.ohos.app -p /data/plugin.hsp
+```bash
+# 安装一个插件
+bm install-plugin -n com.ohos.app -p /data/plugin.hsp
 ```
 
-说明
+**说明** 
 
 在同一个应用中安装同一个插件，则视作插件版本更新，插件不支持降级安装；插件版本更新后，需要重启应用插件才能生效。
 
@@ -444,8 +448,8 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 ## 卸载插件命令（uninstall-plugin）
 
-```
-1. bm uninstall-plugin [-h] [-n hostBundleName] [-p pluginBundleName]
+```bash
+bm uninstall-plugin [-h] [-n hostBundleName] [-p pluginBundleName]
 ```
 
 **uninstall-plugin命令参数列表**
@@ -458,9 +462,9 @@ Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、�
 
 示例：
 
-```
-1. # 卸载一个插件
-2. bm uninstall-plugin -n com.ohos.app -p com.ohos.plugin
+```bash
+# 卸载一个插件
+bm uninstall-plugin -n com.ohos.app -p com.ohos.plugin
 ```
 
 ## bm工具错误码
@@ -482,10 +486,10 @@ error: user not exist.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. hdc file recv /data/log/hilog/
+   ```shell
+   hdc file recv /data/log/hilog/
    ```
 
 ### 304 当前系统账号没有安装HAP包
@@ -543,6 +547,10 @@ HAP/HSP包没有签名。
 **处理步骤**
 
 请开发者根据实际场景选择自动签名或者手动签名，例如无法连接互联网的情况下推荐使用手动签名方式，详情参考[使用场景说明](ide-signing.md#section54361623194519)。
+
+**说明** 
+
+在工程级build-profile.json5文件下的products标签中，signingConfig字段为非必填字段，若该字段缺失，将导致签名失效。详情请参考[products](ide-hvigor-build-profile-app.md#section45865492619)标签下的字段说明。
 
 方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
 
@@ -720,7 +728,7 @@ error: fail to verify pkcs7 file.
 
 error: install parse profile prop check error.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Axm72NK2TOSWBkuiv6bGoQ/zh-cn_image_0000002558765014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/sVGjoWORQAC3JT6NA_gGzg/zh-cn_image_0000002736313555.png)
 
 **错误描述**
 
@@ -754,13 +762,13 @@ error: Failed to install the HAP or HSP because the dependent module does not ex
 
 * 方法一：先通过[bm install -p](bm-tool.md#安装命令install)命令安装依赖的动态共享包（HSP）模块，再在应用运行配置页勾选Keep Application Data，点击OK保存配置，再运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/b80TBvDJTnS1QGxYFrA_vw/zh-cn_image_0000002558605358.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/7tuI5IkERz2csvfaIbw6rQ/zh-cn_image_0000002706674512.png)
 * 方法二：在运行配置页，选择Deploy Multi Hap标签页，勾选Deploy Multi Hap Packages，选择依赖的模块，点击OK保存配置，再进行运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/-dt_dMSbT-CU9PwWV1Nxxg/zh-cn_image_0000002589324885.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Rq-yc_AhTl6eqiIDzvvyLw/zh-cn_image_0000002736433601.png)
 * 方法三：单击Run > Edit Configurations，在General中，勾选Auto Dependencies。点击OK保存配置，再运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/dR83YujHT7uijUhkZGLAeQ/zh-cn_image_0000002589244821.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/210fUAUWQLaGQn5AbOx_qQ/zh-cn_image_0000002706834450.png)
 
 场景二：依赖的HSP与HAP不在同一工程内：
 
@@ -772,7 +780,7 @@ error: Failed to install the HAP or HSP because the dependent module does not ex
 
 DevEco Studio自动安装运行应用时，查看Run中的日志，如果存在remote\_hsp目录，说明依赖集成态HSP，remote\_hsp目录下的HSP文件就是集成态HSP编译后的包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/RpN7Vb8NTNGW2NIEb20ADQ/zh-cn_image_0000002558765016.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/f7T6zWRmS3aRS8zju1q-ig/zh-cn_image_0000002736313557.png)
 
 ### 9568259 安装解析配置文件缺少字段
 
@@ -780,7 +788,7 @@ DevEco Studio自动安装运行应用时，查看Run中的日志，如果存在r
 
 error: install parse profile missing prop.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/1dWAxS80R3iUJsJB0E_AGA/zh-cn_image_0000002558605360.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/mhtUb4NXR1WMpypetIsJiA/zh-cn_image_0000002706674514.png)
 
 **错误描述**
 
@@ -797,8 +805,8 @@ error: install parse profile missing prop.
 
   开启落盘命令：
 
-  ```
-  1. hilog -w start
+  ```shell
+  hilog -w start
   ```
 
   落盘位置：/data/log/hilog。
@@ -811,7 +819,7 @@ error: install parse profile missing prop.
 
 error: install releaseType target not same.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/5luiBE9JQkeL4Y772mFjRw/zh-cn_image_0000002589324887.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Aw4W8EE1QpG_yNNITQnoSw/zh-cn_image_0000002736433603.png)
 
 **错误描述**
 
@@ -863,7 +871,7 @@ error: install host installer failed.
 
 请尝试重启设备后重新安装。
 
-### 9568262 插件安装命令错误
+### 9568262 安装解析应用失败
 
 **错误信息**
 
@@ -871,15 +879,19 @@ error: install parse failed.
 
 **错误描述**
 
-插件安装使用的命令不正确。
+安装解析应用失败。
 
 **可能原因**
 
-安装插件用了[bm install](bm-tool.md#安装命令install)命令。
+1. 使用了[bm install](bm-tool.md#安装命令install)命令安装插件。
+2. 使用了[bm install](bm-tool.md#安装命令install)命令安装[bundleType](app-configuration-file.md#配置文件标签)为skill类型的包。
+3. 待安装应用的module.json中配置了skillProfiles，但配置的skill名称、skill目录名与SKILL.md中frontmatter的name不一致。
 
 **处理步骤**
 
-安装插件请使用[bm install-plugin](bm-tool.md#安装插件命令install-plugin)命令。
+1. 安装插件请使用[bm install-plugin](bm-tool.md#安装插件命令install-plugin)命令。
+2. skill类型的包不支持命令行安装，请修改应用[bundleType](app-configuration-file.md#配置文件标签)的类型。
+3. 检查module.json中skillProfiles下skill的name、skills目录下的子目录名称、SKILL.md中frontmatter的name，确保三者一致。
 
 ### 9568265 安装过程中内部参数有误
 
@@ -998,7 +1010,7 @@ error: install file path invalid.
 
 error: signature verification failed due to not trusted app source.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/-SJGS3yxS42uFCzz5-RQcA/zh-cn_image_0000002589244823.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/cS3HoB2OSoCs4DbE6telFw/zh-cn_image_0000002706834452.png)
 
 **错误描述**
 
@@ -1014,9 +1026,7 @@ error: signature verification failed due to not trusted app source.
 
 * 场景一：使用[调试profile文件](../app/agc-help-debug-profile-0000002248181278.md)重新签名应用。
 * 场景二：请确保profile文件是由配置中的.cer文件生成的，可以登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择“证书、APP ID和Profile”，在左侧导航栏选择“证书、APP ID和Profile > Profile”，进入“Profile”页面，选择配置的profile文件，右侧操作点击“查看”，确认“查看Profile”页面中“归属证书”是否与配置的.cer文件一致。
-* 场景三：
-
-1. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+* 场景三：使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
 ### 9568286 安装应用的签名证书profile文件中的类型与已安装应用的不相同
 
@@ -1053,7 +1063,7 @@ error: install failed due to insufficient disk memory.
 
 **处理步骤**
 
-查看设备存储空间并清理，保证满足安装所需空间，再重试安装应用。
+查看应用安装的设备存储空间并清理，保证满足安装所需空间，再重试安装应用。模拟器上存储空间清理之后仍然失败，请尝试创建新的模拟器设备，并设置更大的存储空间，详情请参考[创建新的模拟器](ide-emulator-create.md#section1764055173710)。
 
 ### 9568289 权限请求失败导致安装失败
 
@@ -1061,7 +1071,7 @@ error: install failed due to insufficient disk memory.
 
 error: install failed due to grant request permissions failed.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/6RXCXKHMTH6bD921WrNpiw/zh-cn_image_0000002558765018.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Q42F0iL7RJe6u6nZ2bWfEg/zh-cn_image_0000002736313559.png)
 
 **错误描述**
 
@@ -1095,10 +1105,10 @@ error: install failed due to update hap token failed.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. hdc file recv /data/log/hilog/
+   ```shell
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568291 singleton不一致导致安装失败
@@ -1133,7 +1143,7 @@ SysCap不一致导致安装失败。
 
 **可能原因**
 
-多个HAP/HSP中配置的[SysCap](../harmonyos-references/syscap.md)不一致。
+多个HAP/HSP中配置的[SysCap](../harmonyos-references/syscap.md#syscap的用途)不一致。
 
 **处理步骤**
 
@@ -1145,7 +1155,7 @@ SysCap不一致导致安装失败。
 
 error: install failed due to older sdk version in the device.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FRsE5Jh7SrClXDUMYB_VSQ/zh-cn_image_0000002558605362.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/WChIQaAuTcaIAZ6kucG5fg/zh-cn_image_0000002706674516.png)
 
 **错误描述**
 
@@ -1159,8 +1169,8 @@ error: install failed due to older sdk version in the device.
 
 * 场景一：设备上的镜像版本低于编译打包的SDK版本，请更新设备镜像版本。查询设备镜像版本命令：
 
-  ```
-  1. hdc shell param get const.ohos.apiversion
+  ```bash
+  hdc shell param get const.ohos.apiversion
   ```
 
   如果镜像提供的api版本为10，且应用编译所使用的SDK版本也为10，仍出现该报错，可能是由于镜像版本较低，未兼容新版本SDK校验规则，请将镜像版本更新为最新版本。
@@ -1208,7 +1218,7 @@ error: moduleName is not unique.
 
 error: install sign info inconsistent.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/e0gVFkQvRu-3I9Eurrt8QA/zh-cn_image_0000002589324889.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/-sG-P4XFQPmmUNmLNgNgPQ/zh-cn_image_0000002736433605.png)
 
 **错误描述**
 
@@ -1231,7 +1241,7 @@ error: install sign info inconsistent.
 
 error: verify signature failed.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/9qvdQ1abQTqKJy7365xhEA/zh-cn_image_0000002589244825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/GPdzHSYrTvq42wZPl14hhA/zh-cn_image_0000002706834454.png)
 
 **错误描述**
 
@@ -1245,7 +1255,7 @@ error: verify signature failed.
 **处理步骤**
 
 * 场景一：HSP只能给同包名的应用使用，只有集成态HSP可以给不同包名的应用使用。需要用户与三方开发者确认，三方开发者应提供集成态HSP、或同包名的HSP给用户使用。
-* 场景二：检查签名流程和签名证书，参考[应用/元服务签名](ide-signing.md)。
+* 场景二：检查签名流程和签名证书，参考[配置调试签名](ide-signing.md)。
 
 ### 9568266 安装权限拒绝
 
@@ -1253,7 +1263,7 @@ error: verify signature failed.
 
 error: install permission denied.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/2meHNec2S_i8OcJkVRnRkw/zh-cn_image_0000002558765020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Yq1C9rUcTNqGF2wxoID0Hw/zh-cn_image_0000002736313561.png)
 
 **错误描述**
 
@@ -1414,8 +1424,8 @@ UserID 0用户安装了非singleton权限的应用。
 
 1. 应用是非singleton权限的，不需要指定用户，直接安装。
 
-   ```
-   1. hdc shell bm install -p /data/hap名.hap
+   ```bash
+   hdc shell bm install -p /data/hap名.hap
    ```
 
 ### 9568263 无法降级安装
@@ -1437,8 +1447,8 @@ error: install version downgrade.
 1. 卸载已安装的应用（PC/2in1设备需要确保所有用户下都卸载完成，手机/平板侧需要关注隐私空间和主用户下是否卸载完成），重新安装新应用。
 2. 对于已安装的证书分发类型为app\_gallery或者签名证书类型为debug的三方应用，当新安装的版本低于当前版本时，支持降级安装，可以使用-d命令实现降级安装。
 
-   ```
-   1. hdc shell bm install -p /data/example.hap -d
+   ```bash
+   hdc shell bm install -p /data/example.hap -d
    ```
 
 ### 9568264 安装检验签名一致性失败
@@ -1552,13 +1562,13 @@ error: isolationMode does not match the system.
 
 1. 按照设备的隔离模式配置HAP配置文件isolationMode属性。
 
-   ```
-   1. # 查询设备persist.bms.supportIsolationMode值，若返回errNum is:106说明没配置
-   2. hdc shell
-   3. param get persist.bms.supportIsolationMode
-   4. # 配置设备persist.bms.supportIsolationMode值
-   5. hdc shell
-   6. param set persist.bms.supportIsolationMode [true|false]
+   ```bash
+   # 查询设备persist.bms.supportIsolationMode值，若返回errNum is:106说明没配置
+   hdc shell
+   param get persist.bms.supportIsolationMode
+   # 配置设备persist.bms.supportIsolationMode值
+   hdc shell
+   param set persist.bms.supportIsolationMode [true|false]
    ```
 
 ### 9568310 兼容策略不同
@@ -1599,16 +1609,16 @@ error: bundle manager service is died.
 1. 重启手机后再次尝试安装应用。
 2. 重复上述步骤3到5次后依旧安装失败，请查询设备的/data/log/faultlog/faultlogger/目录下是否存在包含foundation字样的crash文件。
 
-   ```
-   1. hdc shell
-   2. cd /data/log/faultlog/faultlogger/
-   3. ls -ls
+   ```bash
+   hdc shell
+   cd /data/log/faultlog/faultlogger/
+   ls -ls
    ```
 3. 导出crash文件和日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. hdc file recv /data/log/faultlog/faultlogger/
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   hdc file recv /data/log/faultlog/faultlogger/
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568393 验证代码签名失败
@@ -1653,10 +1663,10 @@ error: copy file failed.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. hdc file recv /data/log/hilog/
+   ```bash
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568401 调试包仅支持运行在开发者模式设备
@@ -1701,10 +1711,10 @@ error: delivery sign profile failed.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. hdc file recv /data/log/hilog/
+   ```bash
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568405 删除签名配置文件失败
@@ -1726,10 +1736,10 @@ error: remove sign profile failed.
 **处理步骤**
 
 1. 重启手机后再次尝试卸载应用（PC/2in1设备需要确保所有用户下都卸载完成，手机/平板侧需要关注隐私空间和主用户下是否卸载完成）。
-2. 重复上述步骤3到5次后依旧卸载失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧卸载失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. hdc file recv /data/log/hilog/
+   ```bash
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568381 应用进程删除失败
@@ -1785,11 +1795,11 @@ bm工具进程异常或者权限丢失，导致卸载应用时无权限。
 **处理步骤**
 
 1. 设备重启之后再尝试卸载应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568385 卸载服务异常
@@ -1811,16 +1821,16 @@ error: uninstall bundle mgr service error.
 1. 重启手机后再次尝试卸载应用。
 2. 重复上述步骤3到5次后依旧安装失败，请查询设备的/data/log/faultlog/faultlogger/目录下是否存在包含foundation字样的crash文件。
 
-   ```
-   1. hdc shell
-   2. cd /data/log/faultlog/faultlogger/
-   3. ls -ls
+   ```bash
+   hdc shell
+   cd /data/log/faultlog/faultlogger/
+   ls -ls
    ```
 3. 导出crash文件和日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. hdc file recv /data/log/faultlog/faultlogger/
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   hdc file recv /data/log/faultlog/faultlogger/
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568386 卸载的应用不存在
@@ -1876,11 +1886,11 @@ error: unknown.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568284 安装版本不匹配
@@ -2124,11 +2134,11 @@ error: installd param error.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568351 创建文件目录异常导致安装失败
@@ -2148,11 +2158,11 @@ error: installd create dir failed.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568354 删除文件目录异常导致安装失败
@@ -2172,11 +2182,11 @@ error: installd remove dir failed.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568355 安装包中提取文件失败
@@ -2196,11 +2206,11 @@ error: installd extract files failed.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568356 安装过程中重命名目录名失败
@@ -2220,11 +2230,11 @@ error: installd rename dir failed.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568357 清理文件失败
@@ -2244,11 +2254,11 @@ error: installd clean dir failed.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568359 安装设置selinux失败
@@ -2269,10 +2279,10 @@ error: installd set selinux label failed.
 
 1. 确认签名文件p7b中apl字段是否有误。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/Jw7mgEbsRRWJ6dti3rr67w/zh-cn_image_0000002558605364.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/mZMjy4FZQiyJl1glAJjp5w/zh-cn_image_0000002706674518.png)
 2. 若apl字段有误，修改UnsgnedReleasedProfileTemplate.json文件中apl字段，并重新签名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/MTu8kMoTSPq_Fr9SyabW2A/zh-cn_image_0000002589324891.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/y7oV9MI3TAKx7jFZj_dE7Q/zh-cn_image_0000002736433607.png)
 
 ### 9568360 安装overlay应用出现错误
 
@@ -2646,7 +2656,7 @@ error: Failed to install the HAP because the device is unauthorized, make sure t
 
 方式一：根据[指导](../app/agc-help-debug-profile-0000002248181278.md)将当前设备添加到调试类型证书或使用[发布类型证书](../app/agc-help-release-profile-0000002248341090.md)重新签名。
 
-方式二：重新[自动签名](ide-signing.md#section18815157237)。
+方式二：重新[自动签名](ide-signing-auto.md)。
 
 ### 9568380 卸载系统应用失败
 
@@ -2702,12 +2712,12 @@ error: Check pluginDistributionID between plugin and host application failed.
 
 重新配置应用或者插件[Profile签名文件](../app/agc-help-profile-overview-0000002283260125.md)中的 pluginDistributionIDs。配置格式如下：
 
-```
-1. "app-services-capabilities":{
-2. "ohos.permission.kernel.SUPPORT_PLUGIN":{
-3. "pluginDistributionIDs":"value-1,value-2,···"
-4. }
-5. }
+```json
+"app-services-capabilities":{
+    "ohos.permission.kernel.SUPPORT_PLUGIN":{
+        "pluginDistributionIDs":"value-1,value-2,···"
+    }
+}
 ```
 
 ### 9568433 应用缺少ohos.permission.kernel.SUPPORT\_PLUGIN权限
@@ -2762,7 +2772,7 @@ error: Install incompatible signature info.
 
 **处理步骤**
 
-重新签名，使多个HAP包签名信息一致。参考[应用/元服务签名](ide-signing.md)。
+重新签名，使多个HAP包签名信息一致。参考[配置调试签名](ide-signing.md)。
 
 ### 9568334 模块名称重复
 
@@ -2862,7 +2872,7 @@ error: install parse syscap error.
 
 **错误描述**
 
-安装过程中，解析安装包获取[SysCap](../harmonyos-references/syscap.md)信息失败。
+安装过程中，解析安装包获取[SysCap](../harmonyos-references/syscap.md#syscap的用途)信息失败。
 
 **可能原因**
 
@@ -2886,7 +2896,7 @@ error: install parse native so failed.
 
 设备支持的Abi类型与C++工程中配置的Abi类型不匹配。
 
-说明
+**说明** 
 
 * 如果工程有依赖HSP或者HAR模块，请确保所有包含C++代码的模块配置的Abi类型包含设备支持的Abi类型。
 * 如果工程依赖的三方库包含so文件，请确保oh\_modules/三方库/libs目录包含有设备支持的Abi目录，如libs/arm64-v8a、/libs/x86\_64。
@@ -2895,12 +2905,12 @@ error: install parse native so failed.
 
 **处理步骤**
 
-1. 将设备或模拟器与DevEco Studio进行连接，具体指导及要求可查看[运行应用/元服务](ide-run-device.md)。
+1. 将设备或模拟器与DevEco Studio进行连接，具体指导及要求可查看[使用本地真机运行应用](ide-run-device.md)。
 2. 在命令行执行如下[hdc命令](bm-tool.md#环境要求hdc工具)，查询设备支持的Abi列表。
 
-   ```
-   1. hdc shell
-   2. param get const.product.cpu.abilist
+   ```bash
+   hdc shell
+   param get const.product.cpu.abilist
    ```
 3. 根据查询返回结果，检查[模块级build-profile.json5](ide-hvigor-build-profile.md)文件中的[“abiFilters”参数](ohos-abi.md#在编译架构中指定abi)中的配置，规则如下：
 
@@ -2941,11 +2951,11 @@ error: Installd get proxy error.
 **处理步骤**
 
 1. 重启手机后再次尝试安装应用。
-2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
+2. 重复上述步骤3到5次后依旧安装失败，请导出日志文件，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/)获取帮助。
 
-   ```
-   1. # 导出日志文件
-   2. hdc file recv /data/log/hilog/
+   ```bash
+   # 导出日志文件
+   hdc file recv /data/log/hilog/
    ```
 
 ### 9568434 设备不具备插件能力
@@ -3020,12 +3030,12 @@ error: Failed to install the plugin because the plugin id failed to be parsed.
 
 参考如下格式，重新配置插件[Profile签名文件](../app/agc-help-profile-overview-0000002283260125.md)中的"app-services-capabilities"字段。
 
-```
-1. "app-services-capabilities":{
-2. "ohos.permission.kernel.SUPPORT_PLUGIN":{
-3. "pluginDistributionIDs":"value-1,value-2,···"
-4. }
-5. }
+```json
+"app-services-capabilities":{
+    "ohos.permission.kernel.SUPPORT_PLUGIN":{
+        "pluginDistributionIDs":"value-1,value-2,···"
+    }
+}
 ```
 
 ### 9568438 插件包名不存在
@@ -3183,3 +3193,41 @@ APP包签名不正确或没有签名。
 方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
 
 方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+
+### 9568449 二进制文件校验失败
+
+**错误信息**
+
+error: check bin file failed.
+
+**错误描述**
+
+用户安装应用时，二进制文件校验失败。
+
+**可能原因**
+
+1. 在应用的module.json5配置文件中配置了[executableBinaryPaths标签](module-configuration-file.md#executablebinarypaths标签)，但是应用未配置解压模式。
+2. 该设备不支持安装配置了[executableBinaryPaths标签](module-configuration-file.md#executablebinarypaths标签)的应用。
+
+**处理步骤**
+
+1. 配置应用为解压模式，即在应用的[module.json5配置文件](module-configuration-file.md#配置文件标签)中设置compressNativeLibs标签为true。
+2. 更换为PC/2in1设备。
+
+### 9568450 安装失败，应用包需为签名证书类型为debug的应用
+
+**错误信息**
+
+error: Failed to install because the bundle must be debug type.
+
+**错误描述**
+
+应用包需为签名证书类型为debug的应用。
+
+**可能原因**
+
+[开发者模式](ide-developer-mode.md#section530763213432)下使用[-g参数](bm-tool.md#安装命令install)授权签名证书类型为非debug的应用。可以通过[Profile签名文件](../app/agc-help-profile-overview-0000002283260125.md)中的type字段来查看签名证书类型。
+
+**处理步骤**
+
+使用debug类型证书对应用重新签名。

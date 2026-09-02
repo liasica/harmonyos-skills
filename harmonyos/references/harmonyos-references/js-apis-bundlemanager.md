@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bundle.bundleManager (应用程序包管理模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.bundleManager (应用程序包管理模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fafb38b53a7920e9fdc6e111256238b950de78d3ed297d9a88c5ae27c77ff248
+scraped_at: 2026-09-02T15:00:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9db2726be3a8eb77c49c8adb142fbaaadaec9d0ddf2e7e21c177c81b9fc6f1dc
 ---
 
 本模块提供应用信息的查询能力，支持应用包信息[BundleInfo](js-apis-bundlemanager-bundleinfo.md)、应用程序信息[ApplicationInfo](js-apis-bundlemanager-applicationinfo.md)、UIAbility组件信息[AbilityInfo](js-apis-bundlemanager-abilityinfo.md)、ExtensionAbility组件信息[ExtensionAbilityInfo](js-apis-bundlemanager-extensionabilityinfo.md)等信息的查询。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { bundleManager } from '@kit.AbilityKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
 ```
 
 ## BundleFlag
-
-PhonePC/2in1TabletTVWearable
 
 包信息标志，指示需要获取的包信息的内容。
 
@@ -48,8 +44,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ExtensionAbilityType
 
-PhonePC/2in1TabletTVWearable
-
 扩展组件的类型。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
@@ -61,29 +55,31 @@ PhonePC/2in1TabletTVWearable
 | INPUT\_METHOD | 2 | [InputMethodExtensionAbility](js-apis-inputmethod-extension-ability.md)：输入法扩展能力，用于开发输入法应用。 |
 | ACCESSIBILITY | 4 | [AccessibilityExtensionAbility](js-apis-application-accessibilityextensionability.md)：无障碍服务扩展能力，支持访问与操作前台界面。 |
 | BACKUP | 9 | [BackupExtensionAbility](js-apis-application-backupextensionability.md)：数据备份扩展能力，提供应用数据的备份恢复能力。 |
-| ENTERPRISE\_ADMIN | 11 | [EnterpriseAdminExtensionAbility](js-apis-enterpriseadminextensionability.md)：企业设备管理扩展能力，提供企业管理时处理管理事件的能力，比如设备上应用安装事件、锁屏密码输入错误次数过多事件等。 |
+| ENTERPRISE\_ADMIN | 11 | [EnterpriseAdminExtensionAbility](js-apis-enterpriseadminextensionability.md)：企业设备管理扩展能力，提供企业管理时处理管理事件的能力。 |
 | SHARE10+ | 16 | [ShareExtensionAbility](js-apis-app-ability-shareextensionability.md)：提供分享业务能力，为开发者提供基于UIExtension的分享业务模板。 |
 | DRIVER10+ | 18 | [DriverExtensionAbility](js-apis-app-ability-driverextensionability.md)：驱动扩展能力，提供外设驱动扩展能力。应用配置了driver类型的ExtensionAbility后会被视为驱动应用，驱动应用在安装、卸载和恢复时不会区分用户，且创建新用户时也会安装设备上已有的驱动应用。例如，创建子用户时会默认安装主用户已有的驱动应用，在子用户上卸载驱动应用时，主用户上对应的驱动应用也会同时被卸载。 |
 | ACTION10+ | 19 | [ActionExtensionAbility](js-apis-app-ability-actionextensionability.md)：自定义服务扩展能力，为开发者提供基于UIExtension的自定义操作业务模板。 |
 | EMBEDDED\_UI12+ | 21 | [EmbeddedUIExtensionAbility](js-apis-app-ability-embeddeduiextensionability.md)：嵌入式UI扩展能力，提供跨进程界面嵌入的能力。 |
-| INSIGHT\_INTENT\_UI12+ | 22 | InsightIntentUIExtensionAbility：为开发者提供能被小艺意图调用，以窗口形态呈现内容的扩展能力。 |
+| INSIGHT\_INTENT\_UI12+ | 22 | InsightIntentUIExtensionAbility：为开发者提供能被系统入口调用，以窗口形态呈现内容的扩展能力。 |
 | FENCE18+ | 24 | [FenceExtensionAbility](js-apis-app-ability-fenceextensionability.md)：为开发者提供地理围栏相关的能力，继承自ExtensionAbility。 |
 | ASSET\_ACCELERATION18+ | 26 | AssetAccelerationExtensionAbility：资源预下载扩展能力，提供在设备闲时状态，进行后台资源预下载的能力。 |
 | FORM\_EDIT18+ | 27 | [FormEditExtensionAbility](js-apis-app-form-formeditextensionability.md)：为开发者提供卡片编辑的能力，继承自UIExtensionAbility。 |
 | DISTRIBUTED20+ | 28 | [DistributedExtensionAbility](js-apis-distributedextensionability.md)：提供分布式相关扩展能力，提供分布式创建、销毁、连接的生命周期回调。 |
 | APP\_SERVICE20+ | 29 | [AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)：为企业普通应用提供后台服务能力。 |
 | LIVE\_FORM20+ | 30 | [LiveFormExtensionAbility](js-apis-app-form-liveformextensionability.md)：互动卡片相关扩展能力，提供互动卡片创建、销毁的生命周期回调。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
-| WEB\_NATIVE\_MESSAGING21+ | 32 | [WebNativeMessagingExtensionAbility](arkts-apis-web-webnativemessagingextensionability.md)：为开发者提供Web原生消息通信能力的ExtensionAbility。 |
+| SELECTION24+ | 31 | [SelectionExtensionAbility](js-apis-selectioninput-selectionextensionability.md)：为开发者提供划词弹窗能力的ExtensionAbility。  **模型约束**：此接口仅可在Stage模型下使用。 |
+| WEB\_NATIVE\_MESSAGING21+ | 32 | [WebNativeMessagingExtensionAbility](arkts-apis-web-webnativemessagingextensionability.md)：为开发者提供Web消息通信能力的ExtensionAbility。 |
 | FAULT\_LOG21+ | 33 | [FaultLogExtensionAbility](js-apis-hiviewdfx-faultlogextensionability.md)：提供故障延迟通知的能力。 |
 | NOTIFICATION\_SUBSCRIBER22+ | 34 | [NotificationSubscriberExtensionAbility](js-apis-notificationsubscriberextensionability.md)：提供通知订阅的相关功能。 |
 | CRYPTO22+ | 35 | [CryptoExtensionAbility](../harmonyos-guides/huks-extension-ability-support-dev.md)：提供外部密钥管理扩展的相关功能。 |
-| PARTNER\_AGENT23+ | 36 | [PartnerAgentExtensionAbility](is-fusionconnectivity-partneragentextensionability.md)：基于蓝牙通信技术，提供设备发现与设备下线的通知功能。  **模型约束**：此接口仅可在Stage模型下使用。 |
+| PARTNER\_AGENT23+ | 36 | [PartnerAgentExtensionAbility](js-apis-fusionconnectivity-partneragentextensionability.md)：基于蓝牙通信技术，提供设备发现与设备下线的通知功能。  **模型约束**：此接口仅可在Stage模型下使用。 |
+| AGENT24+ | 37 | [AgentExtensionAbility](js-apis-app-agent-agentextensionability.md)：提供智能体扩展能力，包括智能体服务的创建、销毁、连接、断开的生命周期回调接口，以及接收客户端所发送数据和安全认证的回调接口。  **模型约束**：此接口仅可在Stage模型下使用。 |
+| AGENT\_UI24+ | 38 | [AgentUIExtensionAbility](js-apis-agent-agentuiextensionability.md)：为开发者提供接入端侧Agent UI界面显示能力。  **模型约束**：此接口仅可在Stage模型下使用。 |
+| MODULAR\_OBJECT | 39 | [modular\_object\_extension\_ability](capi-modular-object-extension-ability-h.md)：提供[模块化对象](../harmonyos-guides/modular-object-extension-overview.md)扩展能力，可以将应用自身功能封装为独立的功能模块，开放给其他应用使用。  **模型约束**：此接口仅可在Stage模型下使用。  **起始版本：** 26.0.0 |
 | UNSPECIFIED | 255 | 不指定类型。 |
 | CALLER\_INFO\_QUERY19+ | 25 | [CallerInfoQueryExtensionAbility](callservicekit-callerinfoquery-extension-ability.md)：为开发者提供来去电信息查询能力。 |
 
 ## PermissionGrantState
-
-PhonePC/2in1TabletTVWearable
 
 权限授予状态。
 
@@ -97,8 +93,6 @@ PhonePC/2in1TabletTVWearable
 | PERMISSION\_GRANTED | 0 | 授予权限。 |
 
 ## SupportWindowMode
-
-PhonePC/2in1TabletTVWearable
 
 标识该组件所支持的窗口模式。
 
@@ -114,8 +108,6 @@ PhonePC/2in1TabletTVWearable
 
 ## LaunchType
 
-PhonePC/2in1TabletTVWearable
-
 标识组件的[启动模式](../harmonyos-guides/uiability-launch-type.md)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -130,8 +122,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AbilityType
 
-PhonePC/2in1TabletTVWearable
-
 标识Ability组件的类型。
 
 **模型约束：** 仅可在FA模型下使用。
@@ -141,14 +131,12 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | PAGE | 1 | UI界面类型的Ability。表示基于Page模板开发的FA，用于提供与用户交互的能力。 |
-| SERVICE | 2 | 后台服务类型的Ability，无UI界面。表示基于Service模板开发的[PA（ParticleAbility）](js-apis-ability-particleability.md)，用于提供后台运行任务的能力，例如后台下载或者播放音乐。 |
-| DATA | 3 | 表示基于Data模板开发的[PA（ParticleAbility）](js-apis-ability-particleability.md)，用于对外部提供统一的数据访问对象。 |
+| SERVICE | 2 | 后台服务类型的Ability，无UI界面。表示基于Service模板开发的[ParticleAbility](js-apis-ability-particleability.md)，用于提供后台运行任务的能力，例如后台下载或者播放音乐。 |
+| DATA | 3 | 表示基于Data模板开发的[ParticleAbility](js-apis-ability-particleability.md)，用于对外部提供统一的数据访问对象。 |
 
 ## DisplayOrientation
 
-PhonePC/2in1TabletTVWearable
-
-标识该Ability的显示模式。仅适用于FA模型的[PageAbility](../harmonyos-guides/pageability-overview.md)。
+标识该Ability的显示模式。仅适用于FA模型的[PageAbility](../lite-wearable-guides/pageability-overview.md)。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
@@ -172,8 +160,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CompatiblePolicy10+
 
-PhonePC/2in1TabletTVWearable
-
 标识动态共享库的版本兼容类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -185,8 +171,6 @@ PhonePC/2in1TabletTVWearable
 | BACKWARD\_COMPATIBILITY | 1 | 共享库是向后兼容类型。 |
 
 ## ModuleType
-
-PhonePC/2in1TabletTVWearable
 
 标识模块类型。
 
@@ -202,8 +186,6 @@ PhonePC/2in1TabletTVWearable
 
 ## BundleType
 
-PhonePC/2in1TabletTVWearable
-
 标识应用的类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -217,8 +199,6 @@ PhonePC/2in1TabletTVWearable
 
 ## MultiAppModeType12+
 
-PhonePC/2in1TabletTVWearable
-
 标识应用多开的模式类型。
 
 **系统能力：** SystemCapability.BundleManager.BundleFramework.Core
@@ -230,8 +210,6 @@ PhonePC/2in1TabletTVWearable
 | APP\_CLONE | 2 | [分身模式](../harmonyos-guides/app-clone.md)。 |
 
 ## AbilityFlag20+
-
-PhonePC/2in1TabletTVWearable
 
 Ability组件信息标志，指示需要获取的Ability组件信息的内容。
 
@@ -247,12 +225,10 @@ Ability组件信息标志，指示需要获取的Ability组件信息的内容。
 | GET\_ABILITY\_INFO\_WITH\_METADATA | 0x00000004 | 获取包含metadata的AbilityInfo。 |
 | GET\_ABILITY\_INFO\_WITH\_DISABLE | 0x00000008 | 获取被禁用Ability对应的AbilityInfo。 |
 | GET\_ABILITY\_INFO\_ONLY\_SYSTEM\_APP | 0x00000010 | 获取系统应用对应的AbilityInfo。 |
-| GET\_ABILITY\_INFO\_WITH\_APP\_LINKING | 0x00000040 | 获取通过[域名校验](../harmonyos-guides/app-linking-startup.md#section4452103365213)筛选的AbilityInfo。 |
+| GET\_ABILITY\_INFO\_WITH\_APP\_LINKING | 0x00000040 | 获取通过[域名校验](../harmonyos-guides/app-linking-startupapp.md#在modulejson5中配置关联的网址域名)筛选的AbilityInfo。 |
 | GET\_ABILITY\_INFO\_WITH\_SKILL | 0x00000080 | 获取包含skills的AbilityInfo。 |
 
 ## bundleManager.getBundleInfoForSelf
-
-PhonePC/2in1TabletTVWearable
 
 getBundleInfoForSelf(bundleFlags: number): Promise<BundleInfo>
 
@@ -284,30 +260,28 @@ getBundleInfoForSelf(bundleFlags: number): Promise<BundleInfo>
 
 **示例：**
 
-```
-1. // 获取bundleInfo，包含带有metadataArray信息的appInfo信息
-2. import { bundleManager } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+// 获取bundleInfo，包含带有metadataArray信息的appInfo信息
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. let bundleFlags =
-7. bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA;
+let bundleFlags =
+  bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA;
 
-9. try {
-10. bundleManager.getBundleInfoForSelf(bundleFlags).then((data) => {
-11. hilog.info(0x0000, 'testTag', 'getBundleInfoForSelf successfully. Data: %{public}s', JSON.stringify(data));
-12. }).catch((err: BusinessError) => {
-13. hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed. Cause: %{public}s', err.message);
-14. });
-15. } catch (err) {
-16. let message = (err as BusinessError).message;
-17. hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed: %{public}s', message);
-18. }
+try {
+  bundleManager.getBundleInfoForSelf(bundleFlags).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getBundleInfoForSelf successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleInfoForSelf
-
-PhonePC/2in1TabletTVWearable
 
 getBundleInfoForSelf(bundleFlags: number, callback: AsyncCallback<BundleInfo>): void
 
@@ -322,7 +296,7 @@ getBundleInfoForSelf(bundleFlags: number, callback: AsyncCallback<BundleInfo>): 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | [bundleFlags](js-apis-bundlemanager.md#bundleflag) | number | 是 | 指定返回的BundleInfo所包含的信息。 |
-| callback | AsyncCallback<[BundleInfo](js-apis-bundlemanager-bundleinfo.md)> | 是 | [回调函数](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的当前应用的BundleInfo；否则为错误对象。 |
+| callback | AsyncCallback<[BundleInfo](js-apis-bundlemanager-bundleinfo.md)> | 是 | [AsyncCallback](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的当前应用的BundleInfo；否则为错误对象。 |
 
 **错误码：**
 
@@ -334,33 +308,31 @@ getBundleInfoForSelf(bundleFlags: number, callback: AsyncCallback<BundleInfo>): 
 
 **示例：**
 
-```
-1. // 获取bundleInfo，包含permissions信息的abilitiesInfo信息
-2. import { bundleManager } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+// 获取bundleInfo，包含permissions信息的abilitiesInfo信息
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. let bundleFlags =
-7. bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY |
-8. bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION;
+let bundleFlags =
+  bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY |
+  bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION;
 
-10. try {
-11. bundleManager.getBundleInfoForSelf(bundleFlags, (err, data) => {
-12. if (err) {
-13. hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed: %{public}s', err.message);
-14. } else {
-15. hilog.info(0x0000, 'testTag', 'getBundleInfoForSelf successfully: %{public}s', JSON.stringify(data));
-16. }
-17. });
-18. } catch (err) {
-19. let message = (err as BusinessError).message;
-20. hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed: %{public}s', message);
-21. }
+try {
+  bundleManager.getBundleInfoForSelf(bundleFlags, (err, data) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed: %{public}s', err.message);
+    } else {
+      hilog.info(0x0000, 'testTag', 'getBundleInfoForSelf successfully: %{public}s', JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfoForSelf failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getProfileByAbility
-
-PhonePC/2in1TabletTVWearable
 
 getProfileByAbility(moduleName: string, abilityName: string, metadataName: string, callback: AsyncCallback<Array<string>>): void
 
@@ -368,7 +340,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName: strin
 
 说明：
 
-如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理模块](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
+如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -381,11 +353,11 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName: strin
 | moduleName | string | 是 | 表示Module名称。 |
 | abilityName | string | 是 | 表示UIAbility组件的名称。 |
 | metadataName | string | 是 | 表示UIAbility组件的[元信息名称](../harmonyos-guides/module-configuration-file.md#metadata标签)，即module.json5配置文件中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下的metadata标签的name。 |
-| callback | AsyncCallback<Array<string>> | 是 | [回调函数](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的Array<string>；否则为错误对象。 |
+| callback | AsyncCallback<Array<string>> | 是 | [AsyncCallback](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的Array<string>；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -397,32 +369,30 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName: strin
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let moduleName = 'entry';
-6. let abilityName = 'EntryAbility';
-7. let metadataName = 'ability_metadata';
+let moduleName = 'entry';
+let abilityName = 'EntryAbility';
+let metadataName = 'ability_metadata';
 
-9. try {
-10. bundleManager.getProfileByAbility(moduleName, abilityName, metadataName, (err, data) => {
-11. if (err) {
-12. hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', err.message);
-13. } else {
-14. hilog.info(0x0000, 'testTag', 'getProfileByAbility successfully: %{public}s', JSON.stringify(data));
-15. }
-16. });
-17. } catch (err) {
-18. let message = (err as BusinessError).message;
-19. hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', message);
-20. }
+try {
+  bundleManager.getProfileByAbility(moduleName, abilityName, metadataName, (err, data) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', err.message);
+    } else {
+      hilog.info(0x0000, 'testTag', 'getProfileByAbility successfully: %{public}s', JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getProfileByAbility
-
-PhonePC/2in1TabletTVWearable
 
 getProfileByAbility(moduleName: string, abilityName: string, metadataName?: string): Promise<Array<string>>
 
@@ -430,7 +400,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName?: stri
 
 说明：
 
-如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理模块](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
+如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -452,7 +422,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName?: stri
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -464,58 +434,56 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName?: stri
 
 **示例：**
 
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+let moduleName = 'entry';
+let abilityName = 'EntryAbility';
+
+try {
+  // 通过模块名称和ability名称获取相应配置文件的json格式字符串信息
+  bundleManager.getProfileByAbility(moduleName, abilityName).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getProfileByAbility successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', message);
+}
 ```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let moduleName = 'entry';
-6. let abilityName = 'EntryAbility';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-8. try {
-9. // 通过模块名称和ability名称获取相应配置文件的json格式字符串信息
-10. bundleManager.getProfileByAbility(moduleName, abilityName).then((data) => {
-11. hilog.info(0x0000, 'testTag', 'getProfileByAbility successfully. Data: %{public}s', JSON.stringify(data));
-12. }).catch((err: BusinessError) => {
-13. hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', err.message);
-14. });
-15. } catch (err) {
-16. let message = (err as BusinessError).message;
-17. hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', message);
-18. }
-```
+let moduleName = 'entry';
+let abilityName = 'EntryAbility';
+let metadataName = 'ability_metadata';
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. let moduleName = 'entry';
-6. let abilityName = 'EntryAbility';
-7. let metadataName = 'ability_metadata';
-
-9. try {
-10. // 通过模块名称，ability名称和UIAbility组件的元信息名称获取自身相应配置文件的json格式字符串信息
-11. bundleManager.getProfileByAbility(moduleName, abilityName, metadataName).then((data) => {
-12. hilog.info(0x0000, 'testTag', 'getProfileByAbility successfully. Data: %{public}s', JSON.stringify(data));
-13. }).catch((err: BusinessError) => {
-14. hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', err.message);
-15. });
-16. } catch (err) {
-17. let message = (err as BusinessError).message;
-18. hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', message);
-19. }
+try {
+  // 通过模块名称，ability名称和UIAbility组件的元信息名称获取自身相应配置文件的json格式字符串信息
+  bundleManager.getProfileByAbility(moduleName, abilityName, metadataName).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getProfileByAbility successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByAbility failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getProfileByAbilitySync10+
-
-PhonePC/2in1TabletTVWearable
 
 getProfileByAbilitySync(moduleName: string, abilityName: string, metadataName?: string): Array<string>
 
 以同步方法根据给定的moduleName、abilityName和metadataName（module.json5中[metadata标签](../harmonyos-guides/module-configuration-file.md#metadata标签)下的name）获取自身相应配置文件的json格式字符串，返回对象为string数组。
 
-如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理模块](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
+如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -537,7 +505,7 @@ getProfileByAbilitySync(moduleName: string, abilityName: string, metadataName?: 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -549,52 +517,50 @@ getProfileByAbilitySync(moduleName: string, abilityName: string, metadataName?: 
 
 **示例：**
 
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+let moduleName = 'entry';
+let abilityName = 'EntryAbility';
+
+try {
+  // 通过模块名称和ability名称获取相应配置文件的json格式字符串信息
+  let data = bundleManager.getProfileByAbilitySync(moduleName, abilityName);
+  hilog.info(0x0000, 'testTag', 'getProfileByAbilitySync successfully. Data: %{public}s', JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByAbilitySync failed. Cause: %{public}s', message);
+}
 ```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let moduleName = 'entry';
-6. let abilityName = 'EntryAbility';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-8. try {
-9. // 通过模块名称和ability名称获取相应配置文件的json格式字符串信息
-10. let data = bundleManager.getProfileByAbilitySync(moduleName, abilityName);
-11. hilog.info(0x0000, 'testTag', 'getProfileByAbilitySync successfully. Data: %{public}s', JSON.stringify(data));
-12. } catch (err) {
-13. let message = (err as BusinessError).message;
-14. hilog.error(0x0000, 'testTag', 'getProfileByAbilitySync failed. Cause: %{public}s', message);
-15. }
-```
+let moduleName: string = 'entry';
+let abilityName: string = 'EntryAbility';
+let metadataName: string = 'ability_metadata';
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. let moduleName: string = 'entry';
-6. let abilityName: string = 'EntryAbility';
-7. let metadataName: string = 'ability_metadata';
-
-9. try {
-10. // 通过模块名称，ability名称和UIAbility组件的元信息名称获取相应配置文件的json格式字符串信息
-11. let data = bundleManager.getProfileByAbilitySync(moduleName, abilityName, metadataName);
-12. hilog.info(0x0000, 'testTag', 'getProfileByAbilitySync successfully. Data: %{public}s', JSON.stringify(data));
-13. } catch (err) {
-14. let message = (err as BusinessError).message;
-15. hilog.error(0x0000, 'testTag', 'getProfileByAbilitySync failed. Cause: %{public}s', message);
-16. }
+try {
+  // 通过模块名称，ability名称和UIAbility组件的元信息名称获取相应配置文件的json格式字符串信息
+  let data = bundleManager.getProfileByAbilitySync(moduleName, abilityName, metadataName);
+  hilog.info(0x0000, 'testTag', 'getProfileByAbilitySync successfully. Data: %{public}s', JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByAbilitySync failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getProfileByExtensionAbility
-
-PhonePC/2in1TabletTVWearable
 
 getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, metadataName: string, callback: AsyncCallback<Array<string>>): void
 
 根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](../harmonyos-guides/module-configuration-file.md#metadata标签)下的name）获取自身相应配置文件的json格式字符串。使用callback异步回调。
 
-如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理模块](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
+如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -607,11 +573,11 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 | moduleName | string | 是 | 表示Module名称。 |
 | extensionAbilityName | string | 是 | 表示ExtensionAbility组件的名称。 |
 | metadataName | string | 是 | 表示ExtensionAbility组件的元信息名称，即module.json5配置文件中[extensionAbilities标签](../harmonyos-guides/module-configuration-file.md#extensionabilities标签)下的metadata标签的name。 |
-| callback | AsyncCallback<Array<string>> | 是 | [回调函数](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的Array<string>；否则为错误对象。 |
+| callback | AsyncCallback<Array<string>> | 是 | [AsyncCallback](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的Array<string>；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -622,38 +588,36 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let moduleName = 'entry';
-6. let extensionAbilityName = 'com.example.myapplication.extension';
-7. let metadataName = 'ability_metadata';
+let moduleName = 'entry';
+let extensionAbilityName = 'com.example.myapplication.extension';
+let metadataName = 'ability_metadata';
 
-9. try {
-10. bundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName, metadataName, (err, data) => {
-11. if (err) {
-12. hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed: %{public}s', err.message);
-13. } else {
-14. hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbility successfully: %{public}s', JSON.stringify(data));
-15. }
-16. });
-17. } catch (err) {
-18. let message = (err as BusinessError).message;
-19. hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed: %{public}s', message);
-20. }
+try {
+  bundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName, metadataName, (err, data) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed: %{public}s', err.message);
+    } else {
+      hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbility successfully: %{public}s', JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getProfileByExtensionAbility
-
-PhonePC/2in1TabletTVWearable
 
 getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, metadataName?: string): Promise<Array<string>>
 
 根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](../harmonyos-guides/module-configuration-file.md#metadata标签)下的name）获取自身相应配置文件的json格式字符串。使用Promise异步回调。
 
-如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理模块](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
+如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -675,7 +639,7 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -686,47 +650,45 @@ getProfileByExtensionAbility(moduleName: string, extensionAbilityName: string, m
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let moduleName = 'entry';
-6. let extensionAbilityName = 'com.example.myapplication.extension';
-7. let metadataName = 'ability_metadata';
+let moduleName = 'entry';
+let extensionAbilityName = 'com.example.myapplication.extension';
+let metadataName = 'ability_metadata';
 
-9. try {
-10. bundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName).then((data) => {
-11. hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbility successfully. Data: %{public}s', JSON.stringify(data));
-12. }).catch((err: BusinessError) => {
-13. hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed. Cause: %{public}s', err.message);
-14. });
-15. } catch (err) {
-16. let message = (err as BusinessError).message;
-17. hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed. Cause: %{public}s', message);
-18. }
+try {
+  bundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbility successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed. Cause: %{public}s', message);
+}
 
-20. try {
-21. bundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName, metadataName).then((data) => {
-22. hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbility successfully. Data: %{public}s', JSON.stringify(data));
-23. }).catch((err: BusinessError) => {
-24. hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed. Cause: %{public}s', err.message);
-25. });
-26. } catch (err) {
-27. let message = (err as BusinessError).message;
-28. hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed. Cause: %{public}s', message);
-29. }
+try {
+  bundleManager.getProfileByExtensionAbility(moduleName, extensionAbilityName, metadataName).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbility successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbility failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getProfileByExtensionAbilitySync10+
-
-PhonePC/2in1TabletTVWearable
 
 getProfileByExtensionAbilitySync(moduleName: string, extensionAbilityName: string, metadataName?: string): Array<string>
 
 以同步方法根据给定的moduleName、extensionAbilityName和metadataName（module.json5中[metadata标签](../harmonyos-guides/module-configuration-file.md#metadata标签)下的name）获取自身相应配置文件的json格式字符串，返回对象为string数组。
 
-如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理模块](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
+如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -748,7 +710,7 @@ getProfileByExtensionAbilitySync(moduleName: string, extensionAbilityName: strin
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -759,37 +721,35 @@ getProfileByExtensionAbilitySync(moduleName: string, extensionAbilityName: strin
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let moduleName = 'entry';
-6. let extensionAbilityName = 'com.example.myapplication.extension';
-7. let metadataName = 'ability_metadata';
+let moduleName = 'entry';
+let extensionAbilityName = 'com.example.myapplication.extension';
+let metadataName = 'ability_metadata';
 
-9. try {
-10. let data = bundleManager.getProfileByExtensionAbilitySync(moduleName, extensionAbilityName);
-11. hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbilitySync successfully. Data: %{public}s',
-12. JSON.stringify(data));
-13. } catch (err) {
-14. let message = (err as BusinessError).message;
-15. hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbilitySync failed. Cause: %{public}s', message);
-16. }
+try {
+  let data = bundleManager.getProfileByExtensionAbilitySync(moduleName, extensionAbilityName);
+  hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbilitySync successfully. Data: %{public}s',
+    JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbilitySync failed. Cause: %{public}s', message);
+}
 
-18. try {
-19. let data = bundleManager.getProfileByExtensionAbilitySync(moduleName, extensionAbilityName, metadataName);
-20. hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbilitySync successfully. Data: %{public}s',
-21. JSON.stringify(data));
-22. } catch (err) {
-23. let message = (err as BusinessError).message;
-24. hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbilitySync failed. Cause: %{public}s', message);
-25. }
+try {
+  let data = bundleManager.getProfileByExtensionAbilitySync(moduleName, extensionAbilityName, metadataName);
+  hilog.info(0x0000, 'testTag', 'getProfileByExtensionAbilitySync successfully. Data: %{public}s',
+    JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getProfileByExtensionAbilitySync failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleInfoForSelfSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleInfoForSelfSync(bundleFlags: number): BundleInfo
 
@@ -821,25 +781,23 @@ getBundleInfoForSelfSync(bundleFlags: number): BundleInfo
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION;
+let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION;
 
-7. try {
-8. let data = bundleManager.getBundleInfoForSelfSync(bundleFlags);
-9. hilog.info(0x0000, 'testTag', 'getBundleInfoForSelfSync successfully: %{public}s', JSON.stringify(data));
-10. } catch (err) {
-11. let message = (err as BusinessError).message;
-12. hilog.error(0x0000, 'testTag', 'getBundleInfoForSelfSync failed: %{public}s', message);
-13. }
+try {
+  let data = bundleManager.getBundleInfoForSelfSync(bundleFlags);
+  hilog.info(0x0000, 'testTag', 'getBundleInfoForSelfSync successfully: %{public}s', JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfoForSelfSync failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.canOpenLink12+
-
-PhonePC/2in1TabletTVWearable
 
 canOpenLink(link: string): boolean
 
@@ -863,7 +821,7 @@ canOpenLink(link: string): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -873,28 +831,26 @@ canOpenLink(link: string): boolean
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. try {
-6. let link = 'welink://';
-7. let data = bundleManager.canOpenLink(link);
-8. hilog.info(0x0000, 'testTag', 'canOpenLink successfully: %{public}s', JSON.stringify(data));
-9. } catch (err) {
-10. let message = (err as BusinessError).message;
-11. hilog.error(0x0000, 'testTag', 'canOpenLink failed: %{public}s', message);
-12. }
+try {
+  let link = 'welink://';
+  let data = bundleManager.canOpenLink(link);
+  hilog.info(0x0000, 'testTag', 'canOpenLink successfully: %{public}s', JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'canOpenLink failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getLaunchWant13+
 
-PhonePC/2in1TabletTVWearable
-
 getLaunchWant(): Want
 
-获取本应用[入口UIAbility](../harmonyos-guides/application-package-glossary.md#uiability)的Want参数。
+获取本应用[入口UIAbility](../harmonyos-guides/application-package-glossary.md#entry-uiability入口uiability)的Want参数。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
@@ -908,7 +864,7 @@ getLaunchWant(): Want
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -916,24 +872,22 @@ getLaunchWant(): Want
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { bundleManager } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { bundleManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. try {
-6. let want = bundleManager.getLaunchWant();
-7. hilog.info(0x0000, 'testTag', 'getLaunchWant ability name: %{public}s', want.abilityName);
-8. hilog.info(0x0000, 'testTag', 'getLaunchWant bundle name: %{public}s', want.bundleName);
-9. } catch (error) {
-10. let message = (error as BusinessError).message;
-11. hilog.error(0x0000, 'testTag', 'getLaunchWant failed: %{public}s', message);
-12. }
+try {
+  let want = bundleManager.getLaunchWant();
+  hilog.info(0x0000, 'testTag', 'getLaunchWant ability name: %{public}s', want.abilityName);
+  hilog.info(0x0000, 'testTag', 'getLaunchWant bundle name: %{public}s', want.bundleName);
+} catch (error) {
+  let message = (error as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getLaunchWant failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleInfo14+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, userId: number, callback: AsyncCallback<BundleInfo>): void
 
@@ -954,12 +908,12 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId: number, callback:
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
 | [bundleFlags](js-apis-bundlemanager.md#bundleflag) | number | 是 | 指定返回的BundleInfo所包含的信息。 |
-| userId | number | 是 | 表示用户ID，可以通过[getOsAccountLocalId接口](js-apis-osaccount.md#getosaccountlocalid9)获取。 |
-| callback | AsyncCallback<[BundleInfo](js-apis-bundlemanager-bundleinfo.md)> | 是 | [回调函数](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的bundleInfo；否则为错误对象。 |
+| userId | number | 是 | 表示用户ID，可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)获取。 |
+| callback | AsyncCallback<[BundleInfo](js-apis-bundlemanager-bundleinfo.md)> | 是 | [AsyncCallback](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的BundleInfo；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -971,59 +925,57 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId: number, callback:
 
 **示例：**
 
+```ts
+// 额外获取包含AbilityInfo信息的bundleInfo
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+let bundleName = 'com.example.myapplication';
+let bundleFlags =
+  bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY;
+let userId = 100;
+
+try {
+  bundleManager.getBundleInfo(bundleName, bundleFlags, userId, (err, data) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', err.message);
+    } else {
+      hilog.info(0x0000, 'testTag', 'getBundleInfo successfully: %{public}s', JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', message);
+}
 ```
-1. // 额外获取包含AbilityInfo信息的bundleInfo
-2. import { bundleManager } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. let bundleName = 'com.example.myapplication';
-7. let bundleFlags =
-8. bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY;
-9. let userId = 100;
+```ts
+// 额外获取包含ApplicationInfo中的metadata的bundleInfo
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-11. try {
-12. bundleManager.getBundleInfo(bundleName, bundleFlags, userId, (err, data) => {
-13. if (err) {
-14. hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', err.message);
-15. } else {
-16. hilog.info(0x0000, 'testTag', 'getBundleInfo successfully: %{public}s', JSON.stringify(data));
-17. }
-18. });
-19. } catch (err) {
-20. let message = (err as BusinessError).message;
-21. hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', message);
-22. }
-```
+let bundleName = 'com.example.myapplication';
+let bundleFlags =
+  bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA;
+let userId = 100;
 
-```
-1. // 额外获取包含ApplicationInfo中的metadata的bundleInfo
-2. import { bundleManager } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-6. let bundleName = 'com.example.myapplication';
-7. let bundleFlags =
-8. bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA;
-9. let userId = 100;
-
-11. try {
-12. bundleManager.getBundleInfo(bundleName, bundleFlags, userId, (err, data) => {
-13. if (err) {
-14. hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', err.message);
-15. } else {
-16. hilog.info(0x0000, 'testTag', 'getBundleInfo successfully: %{public}s', JSON.stringify(data));
-17. }
-18. });
-19. } catch (err) {
-20. let message = (err as BusinessError).message;
-21. hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', message);
-22. }
+try {
+  bundleManager.getBundleInfo(bundleName, bundleFlags, userId, (err, data) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', err.message);
+    } else {
+      hilog.info(0x0000, 'testTag', 'getBundleInfo successfully: %{public}s', JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleInfo14+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback<BundleInfo>): void
 
@@ -1044,11 +996,11 @@ getBundleInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback<B
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
 | [bundleFlags](js-apis-bundlemanager.md#bundleflag) | number | 是 | 指定返回的BundleInfo所包含的信息。 |
-| callback | AsyncCallback<[BundleInfo](js-apis-bundlemanager-bundleinfo.md)> | 是 | [回调函数](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的BundleInfo；否则为错误对象。 |
+| callback | AsyncCallback<[BundleInfo](js-apis-bundlemanager-bundleinfo.md)> | 是 | [AsyncCallback](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的BundleInfo；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1059,33 +1011,31 @@ getBundleInfo(bundleName: string, bundleFlags: number, callback: AsyncCallback<B
 
 **示例：**
 
-```
-1. // 额外获取extensionAbility
-2. import { bundleManager } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+// 额外获取extensionAbility
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. let bundleName = 'com.example.myapplication';
-7. let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
-8. bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY;
+let bundleName = 'com.example.myapplication';
+let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
+bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY;
 
-10. try {
-11. bundleManager.getBundleInfo(bundleName, bundleFlags, (err, data) => {
-12. if (err) {
-13. hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', err.message);
-14. } else {
-15. hilog.info(0x0000, 'testTag', 'getBundleInfo successfully: %{public}s', JSON.stringify(data));
-16. }
-17. });
-18. } catch (err) {
-19. let message = (err as BusinessError).message;
-20. hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', message);
-21. }
+try {
+  bundleManager.getBundleInfo(bundleName, bundleFlags, (err, data) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', err.message);
+    } else {
+      hilog.info(0x0000, 'testTag', 'getBundleInfo successfully: %{public}s', JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfo failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleInfo14+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleInfo(bundleName: string, bundleFlags: number, userId?: number): Promise<BundleInfo>
 
@@ -1106,7 +1056,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId?: number): Promise
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
 | [bundleFlags](js-apis-bundlemanager.md#bundleflag) | number | 是 | 指定返回的BundleInfo所包含的信息。 |
-| userId | number | 否 | 表示用户ID，可以通过[getOsAccountLocalId接口](js-apis-osaccount.md#getosaccountlocalid9)获取，默认值：调用方所在用户，取值范围：大于等于0。 |
+| userId | number | 否 | 表示用户ID，可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)获取，默认值：调用方所在用户，取值范围：大于等于0。 |
 
 **返回值：**
 
@@ -1116,7 +1066,7 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId?: number): Promise
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1128,52 +1078,50 @@ getBundleInfo(bundleName: string, bundleFlags: number, userId?: number): Promise
 
 **示例：**
 
+```ts
+// 额外获取ApplicationInfo和SignatureInfo
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+let bundleName = 'com.example.myapplication';
+let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
+bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE_INFO;
+let userId = 100;
+
+try {
+  bundleManager.getBundleInfo(bundleName, bundleFlags, userId).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getBundleInfo successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getBundleInfo failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfo failed. Cause: %{public}s', message);
+}
 ```
-1. // 额外获取ApplicationInfo和SignatureInfo
-2. import { bundleManager } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-6. let bundleName = 'com.example.myapplication';
-7. let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
-8. bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE_INFO;
-9. let userId = 100;
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-11. try {
-12. bundleManager.getBundleInfo(bundleName, bundleFlags, userId).then((data) => {
-13. hilog.info(0x0000, 'testTag', 'getBundleInfo successfully. Data: %{public}s', JSON.stringify(data));
-14. }).catch((err: BusinessError) => {
-15. hilog.error(0x0000, 'testTag', 'getBundleInfo failed. Cause: %{public}s', err.message);
-16. });
-17. } catch (err) {
-18. let message = (err as BusinessError).message;
-19. hilog.error(0x0000, 'testTag', 'getBundleInfo failed. Cause: %{public}s', message);
-20. }
-```
+let bundleName = 'com.example.myapplication';
+let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT;
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. let bundleName = 'com.example.myapplication';
-6. let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT;
-
-8. try {
-9. bundleManager.getBundleInfo(bundleName, bundleFlags).then((data) => {
-10. hilog.info(0x0000, 'testTag', 'getBundleInfo successfully. Data: %{public}s', JSON.stringify(data));
-11. }).catch((err: BusinessError) => {
-12. hilog.error(0x0000, 'testTag', 'getBundleInfo failed. Cause: %{public}s', err.message);
-13. });
-14. } catch (err) {
-15. let message = (err as BusinessError).message;
-16. hilog.error(0x0000, 'testTag', 'getBundleInfo failed. Cause: %{public}s', message);
-17. }
+try {
+  bundleManager.getBundleInfo(bundleName, bundleFlags).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getBundleInfo successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getBundleInfo failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfo failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleInfoSync14+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleInfoSync(bundleName: string, bundleFlags: number, userId: number): BundleInfo
 
@@ -1194,7 +1142,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number, userId: number): Bund
 | --- | --- | --- | --- |
 | bundleName | string | 是 | 表示要查询的应用Bundle名称。 |
 | [bundleFlags](js-apis-bundlemanager.md#bundleflag) | number | 是 | 指定返回的BundleInfo所包含的信息。 |
-| userId | number | 是 | 表示用户ID，可以通过[getOsAccountLocalId接口](js-apis-osaccount.md#getosaccountlocalid9)获取。 |
+| userId | number | 是 | 表示用户ID，可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)获取。 |
 
 **返回值：**
 
@@ -1204,7 +1152,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number, userId: number): Bund
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1216,27 +1164,25 @@ getBundleInfoSync(bundleName: string, bundleFlags: number, userId: number): Bund
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bundleName = 'com.example.myapplication';
-6. let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION;
-7. let userId = 100;
+let bundleName = 'com.example.myapplication';
+let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION;
+let userId = 100;
 
-9. try {
-10. let data = bundleManager.getBundleInfoSync(bundleName, bundleFlags, userId);
-11. hilog.info(0x0000, 'testTag', 'getBundleInfoSync successfully: %{public}s', JSON.stringify(data));
-12. } catch (err) {
-13. let message = (err as BusinessError).message;
-14. hilog.error(0x0000, 'testTag', 'getBundleInfoSync failed: %{public}s', message);
-15. }
+try {
+  let data = bundleManager.getBundleInfoSync(bundleName, bundleFlags, userId);
+  hilog.info(0x0000, 'testTag', 'getBundleInfoSync successfully: %{public}s', JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfoSync failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleInfoSync14+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleInfoSync(bundleName: string, bundleFlags: number): BundleInfo
 
@@ -1266,7 +1212,7 @@ getBundleInfoSync(bundleName: string, bundleFlags: number): BundleInfo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1277,25 +1223,23 @@ getBundleInfoSync(bundleName: string, bundleFlags: number): BundleInfo
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let bundleName = 'com.example.myapplication';
-6. let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION;
-7. try {
-8. let data = bundleManager.getBundleInfoSync(bundleName, bundleFlags);
-9. hilog.info(0x0000, 'testTag', 'getBundleInfoSync successfully: %{public}s', JSON.stringify(data));
-10. } catch (err) {
-11. let message = (err as BusinessError).message;
-12. hilog.error(0x0000, 'testTag', 'getBundleInfoSync failed: %{public}s', message);
-13. }
+let bundleName = 'com.example.myapplication';
+let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION;
+try {
+  let data = bundleManager.getBundleInfoSync(bundleName, bundleFlags);
+  hilog.info(0x0000, 'testTag', 'getBundleInfoSync successfully: %{public}s', JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInfoSync failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleNameByUid14+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleNameByUid(uid: number, callback: AsyncCallback<string>): void
 
@@ -1313,11 +1257,11 @@ getBundleNameByUid(uid: number, callback: AsyncCallback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uid | number | 是 | 表示应用程序的UID。 |
-| callback | AsyncCallback<string> | 是 | [回调函数](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的BundleName；否则为错误对象。 |
+| callback | AsyncCallback<string> | 是 | [AsyncCallback](js-apis-base.md#asynccallback)，当获取成功时，err为undefined，data为获取到的BundleName；否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1327,29 +1271,27 @@ getBundleNameByUid(uid: number, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let uid = 20010005;
-6. try {
-7. bundleManager.getBundleNameByUid(uid, (err, data) => {
-8. if (err) {
-9. hilog.error(0x0000, 'testTag', 'getBundleNameByUid failed: %{public}s', err.message);
-10. } else {
-11. hilog.info(0x0000, 'testTag', 'getBundleNameByUid successfully: %{public}s', JSON.stringify(data));
-12. }
-13. });
-14. } catch (err) {
-15. let message = (err as BusinessError).message;
-16. hilog.error(0x0000, 'testTag', 'getBundleNameByUid failed: %{public}s', message);
-17. }
+let uid = 20010005;
+try {
+  bundleManager.getBundleNameByUid(uid, (err, data) => {
+    if (err) {
+      hilog.error(0x0000, 'testTag', 'getBundleNameByUid failed: %{public}s', err.message);
+    } else {
+      hilog.info(0x0000, 'testTag', 'getBundleNameByUid successfully: %{public}s', JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleNameByUid failed: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleNameByUid14+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleNameByUid(uid: number): Promise<string>
 
@@ -1376,7 +1318,7 @@ getBundleNameByUid(uid: number): Promise<string>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1386,27 +1328,25 @@ getBundleNameByUid(uid: number): Promise<string>
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let uid = 20010005;
-6. try {
-7. bundleManager.getBundleNameByUid(uid).then((data) => {
-8. hilog.info(0x0000, 'testTag', 'getBundleNameByUid successfully. Data: %{public}s', JSON.stringify(data));
-9. }).catch((err: BusinessError) => {
-10. hilog.error(0x0000, 'testTag', 'getBundleNameByUid failed. Cause: %{public}s', err.message);
-11. });
-12. } catch (err) {
-13. let message = (err as BusinessError).message;
-14. hilog.error(0x0000, 'testTag', 'getBundleNameByUid failed. Cause: %{public}s', message);
-15. }
+let uid = 20010005;
+try {
+  bundleManager.getBundleNameByUid(uid).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getBundleNameByUid successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getBundleNameByUid failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleNameByUid failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getBundleNameByUidSync14+
-
-PhonePC/2in1TabletTVWearable
 
 getBundleNameByUidSync(uid: number): string
 
@@ -1433,7 +1373,7 @@ getBundleNameByUidSync(uid: number): string
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1443,24 +1383,22 @@ getBundleNameByUidSync(uid: number): string
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let uid = 20010005;
-6. try {
-7. let data = bundleManager.getBundleNameByUidSync(uid);
-8. hilog.info(0x0000, 'testTag', 'getBundleNameByUidSync successfully. Data: %{public}s', JSON.stringify(data));
-9. } catch (err) {
-10. let message = (err as BusinessError).message;
-11. hilog.error(0x0000, 'testTag', 'getBundleNameByUidSync failed. Cause: %{public}s', message);
-12. }
+let uid = 20010005;
+try {
+  let data = bundleManager.getBundleNameByUidSync(uid);
+  hilog.info(0x0000, 'testTag', 'getBundleNameByUidSync successfully. Data: %{public}s', JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleNameByUidSync failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getAppCloneIdentity14+
-
-PhonePC/2in1TabletTVWearable
 
 getAppCloneIdentity(uid: number): Promise<AppCloneIdentity>;
 
@@ -1483,11 +1421,11 @@ getAppCloneIdentity(uid: number): Promise<AppCloneIdentity>;
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[AppCloneIdentity](js-apis-bundlemanager-bundleinfo.md#appcloneidentity14)> | Promise对象，返回<AppCloneIdentity>。 |
+| Promise<[AppCloneIdentity](js-apis-bundlemanager-bundleinfo.md#appcloneidentity14)> | Promise对象，返回AppCloneIdentity信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1497,28 +1435,26 @@ getAppCloneIdentity(uid: number): Promise<AppCloneIdentity>;
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let uid = 20010005;
+let uid = 20010005;
 
-7. try {
-8. bundleManager.getAppCloneIdentity(uid).then((res) => {
-9. hilog.info(0x0000, 'testTag', 'getAppCloneIdentity res = %{public}s', JSON.stringify(res));
-10. }).catch((err: BusinessError) => {
-11. hilog.error(0x0000, 'testTag', 'getAppCloneIdentity failed. Cause: %{public}s', err.message);
-12. });
-13. } catch (err) {
-14. let message = (err as BusinessError).message;
-15. hilog.error(0x0000, 'testTag', 'getAppCloneIdentity failed. Cause: %{public}s', message);
-16. }
+try {
+  bundleManager.getAppCloneIdentity(uid).then((res) => {
+    hilog.info(0x0000, 'testTag', 'getAppCloneIdentity res = %{public}s', JSON.stringify(res));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getAppCloneIdentity failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getAppCloneIdentity failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getSignatureInfo18+
-
-PhonePC/2in1TabletTVWearable
 
 getSignatureInfo(uid: number): SignatureInfo
 
@@ -1542,7 +1478,7 @@ getSignatureInfo(uid: number): SignatureInfo
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1551,24 +1487,22 @@ getSignatureInfo(uid: number): SignatureInfo
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let uid = 20010005; // uid需要替换为对应应用程序的UID。
-6. try {
-7. let data = bundleManager.getSignatureInfo(uid);
-8. hilog.info(0x0000, 'testTag', 'getSignatureInfo successfully. Data: %{public}s', JSON.stringify(data));
-9. } catch (err) {
-10. let message = (err as BusinessError).message;
-11. hilog.error(0x0000, 'testTag', 'getSignatureInfo failed. Cause: %{public}s', message);
-12. }
+let uid = 20010005; // uid需要替换为对应应用程序的UID。
+try {
+  let data = bundleManager.getSignatureInfo(uid);
+  hilog.info(0x0000, 'testTag', 'getSignatureInfo successfully. Data: %{public}s', JSON.stringify(data));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getSignatureInfo failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.getAbilityInfo20+
-
-PhonePC/2in1TabletTVWearable
 
 getAbilityInfo(uri: string, abilityFlags: number): Promise<Array<AbilityInfo>>
 
@@ -1597,7 +1531,7 @@ getAbilityInfo(uri: string, abilityFlags: number): Promise<Array<AbilityInfo>>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ohos.bundle错误码](errorcode-bundle.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1606,30 +1540,28 @@ getAbilityInfo(uri: string, abilityFlags: number): Promise<Array<AbilityInfo>>
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. let abilityFlags = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_APPLICATION;
-6. let uri = "https://www.example.com";
+let abilityFlags = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_APPLICATION;
+let uri = "https://www.example.com";
 
-8. try {
-9. bundleManager.getAbilityInfo(uri, abilityFlags).then((data) => {
-10. hilog.info(0x0000, 'testTag', 'getAbilityInfo successfully. Data: %{public}s', JSON.stringify(data));
-11. }).catch((err: BusinessError) => {
-12. let message = (err as BusinessError).message;
-13. hilog.error(0x0000, 'testTag', 'getAbilityInfo failed. Cause: %{public}s', message);
-14. });
-15. } catch (err) {
-16. let message = (err as BusinessError).message;
-17. hilog.error(0x0000, 'testTag', 'getAbilityInfo failed. Cause: %{public}s', message);
-18. }
+try {
+  bundleManager.getAbilityInfo(uri, abilityFlags).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getAbilityInfo successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    let message = (err as BusinessError).message;
+    hilog.error(0x0000, 'testTag', 'getAbilityInfo failed. Cause: %{public}s', message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getAbilityInfo failed. Cause: %{public}s', message);
+}
 ```
 
 ## bundleManager.cleanBundleCacheFilesForSelf21+
-
-PhonePC/2in1TabletTVWearable
 
 cleanBundleCacheFilesForSelf(): Promise<void>
 
@@ -1647,18 +1579,16 @@ cleanBundleCacheFilesForSelf(): Promise<void>
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. bundleManager.cleanBundleCacheFilesForSelf().then(() => {
-5. hilog.info(0x0000, 'testTag', 'cleanBundleCacheFilesForSelf complete.');
-6. });
+bundleManager.cleanBundleCacheFilesForSelf().then(() => {
+  hilog.info(0x0000, 'testTag', 'cleanBundleCacheFilesForSelf complete.');
+});
 ```
 
 ## bundleManager.getPluginBundlePathForSelf22+
-
-PhonePC/2in1TabletTVWearable
 
 getPluginBundlePathForSelf(pluginBundleName: string): string
 
@@ -1680,7 +1610,7 @@ getPluginBundlePathForSelf(pluginBundleName: string): string
 
 **错误码：**
 
-错误码请参见[ohos.bundle错误码](errorcode-bundle.md)。
+错误码请参见[包管理子系统通用错误码](errorcode-bundle.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1688,25 +1618,313 @@ getPluginBundlePathForSelf(pluginBundleName: string): string
 
 **示例：**
 
-```
-1. import { bundleManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-5. // 请开发者替换为实际插件对应的包名
-6. let pluginBundleName = 'com.ohos.pluginDemo';
-7. try {
-8. let path = bundleManager.getPluginBundlePathForSelf(pluginBundleName);
-9. hilog.info(0x0000, 'testTag', 'getPluginBundlePathForSelf successfully. path: %{public}s', path);
-10. } catch (err) {
-11. let message = (err as BusinessError).message;
-12. hilog.error(0x0000, 'testTag', 'getPluginBundlePathForSelf failed. Cause: %{public}s', message);
-13. }
+// 请开发者替换为实际插件对应的包名
+let pluginBundleName = 'com.ohos.pluginDemo';
+try {
+  let path = bundleManager.getPluginBundlePathForSelf(pluginBundleName);
+  hilog.info(0x0000, 'testTag', 'getPluginBundlePathForSelf successfully. path: %{public}s', path);
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getPluginBundlePathForSelf failed. Cause: %{public}s', message);
+}
+```
+
+## bundleManager.getLaunchWantForBundleSync24+
+
+getLaunchWantForBundleSync(bundleName: string, userId?: number): Want
+
+根据给定的包名和用户ID，获取用于启动应用程序的Want参数。
+
+**需要权限：** ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED 或 (ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED 和 ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS)
+
+* 获取用于启动当前用户下的应用程序所需的Want参数时，需要申请权限ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED。
+* 获取用于启动其他用户下的应用程序所需的Want参数时，如果调用方是系统应用，需要申请权限ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED，如果调用方是三方应用需要申请权限ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED和ohos.permission.INTERACT\_ACROSS\_LOCAL\_ACCOUNTS。
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 表示应用的包名。 |
+| userId | number | 否 | 表示用户ID，可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9)获取。  默认值：调用方所在用户。  取值范围：大于等于0。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Want](js-apis-app-ability-want.md#want) | Want对象。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
+| 17700001 | The specified bundle is not found. |
+| 17700004 | The specified user id is not found. |
+| 17700026 | The specified bundle is disabled. |
+
+**示例：**
+
+```ts
+// 示例接口含有userId参数，获取用于启动指定用户下的应用程序所需的Want参数
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { Want } from '@kit.AbilityKit';
+
+let bundleName = 'com.example.myapplication';
+let userId = 100;
+
+try {
+  let want: Want = bundleManager.getLaunchWantForBundleSync(bundleName, userId);
+  hilog.info(0x0000, 'testTag', 'getLaunchWantForBundleSync successfully. Data: %{public}s', JSON.stringify(want));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getLaunchWantForBundleSync failed. Cause: %{public}s', message);
+}
+```
+
+```ts
+// 示例接口不含userId参数，获取用于启动当前用户下的应用程序所需的Want参数
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { Want } from '@kit.AbilityKit';
+
+let bundleName = 'com.example.myapplication';
+
+try {
+  let want: Want = bundleManager.getLaunchWantForBundleSync(bundleName);
+  hilog.info(0x0000, 'testTag', 'getLaunchWantForBundleSync successfully. Data: %{public}s', JSON.stringify(want));
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getLaunchWantForBundleSync failed. Cause: %{public}s', message);
+}
+```
+
+## bundleManager.getApplicationLabel
+
+getApplicationLabel(bundleName: string, appIndex: number): Promise<string>
+
+获取指定包名和分身索引的应用名称。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Resource
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 应用的包名。 |
+| appIndex | number | 是 | 表示应用索引。取值范围0~5，取值为0表示主应用，取值1~5表示分身应用的索引。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<string> | Promise对象，调用成功返回应用名称；调用失败返回错误对象。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 17700001 | The specified bundle is not found. |
+| 17700061 | The specified app index is invalid. |
+
+**示例：**
+
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+try {
+  bundleManager.getApplicationLabel('com.hap.myapplication', 1).then((data: string) => {
+    hilog.info(0x0000, 'testTag', 'getApplicationLabel succeed: Data: %{public}s', data);
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getApplicationLabel failed: %{public}d  %{public}s', err.code, err.message);
+  });
+} catch (err) {
+  hilog.error(0x0000, 'testTag', 'getApplicationLabel failed: error %{public}d  %{public}s', err.code, err.message);
+}
+```
+
+## bundleManager.getInstalledBundleList
+
+getInstalledBundleList(bundleFlags: number): Promise<Array<BundleInfo>>
+
+根据给定的bundleFlags获取系统中所有的BundleInfo。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ENTERPRISE\_GET\_INSTALLED\_BUNDLE\_LIST
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+**设备行为差异：** 该接口仅在PC/2in1设备中可正常调用，在其他设备中返回201错误码。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleFlags | number | 是 | 指定返回的BundleInfo所包含的信息，详情请参考[BundleFlag](js-apis-bundlemanager.md#bundleflag)。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[BundleInfo](js-apis-bundlemanager-bundleinfo.md#bundleinfo-1)>> | Promise对象，返回当前已安装应用的信息列表。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+
+**示例：**
+
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT;
+
+try {
+  bundleManager.getInstalledBundleList(bundleFlags).then((data) => {
+    hilog.info(0x0000, 'testTag', 'getInstalledBundleList successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getInstalledBundleList failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getInstalledBundleList failed. Cause: %{public}s', message);
+}
+```
+
+## bundleManager.setAlternateIcon
+
+setAlternateIcon(alternateIconName: string): Promise<void>;
+
+根据给定的备用图标名称设置调用方自身的备用图标。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| alternateIconName | string | 是 | 要设置的备用图标名称。备用图标名称须在app.json5中[alternateIcons标签](../harmonyos-guides/app-configuration-file.md#alternateicons标签)的name字段内。  alternateIconName为空时表示取消备用图标。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[包管理子系统通用错误码](errorcode-bundle.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17700308 | The alternateIconName must match the name field under alternateIcons in the app.json5 file. |
+| 17700309 | No alternate icon is enabled. |
+| 17700310 | Failed to set the alternate icon. |
+
+**示例：**
+
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// alternateIconName需要替换为要设置的备用图标名称
+let alternateIconName: string = 'com.ohos.demo';
+
+try {
+  bundleManager.setAlternateIcon(alternateIconName).then((data) => {
+    hilog.info(0x0000, 'testTag', 'setAlternateIcon successfully');
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'setAlternateIcon failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'setAlternateIcon failed. Cause: %{public}s', message);
+}
+```
+
+## bundleManager.getAlternateIcons
+
+getAlternateIcons(): Promise<Array<AlternateIconInfo>>
+
+查询当前应用在app.json5中[alternateIcons标签](../harmonyos-guides/app-configuration-file.md#alternateicons标签)配置的备用图标信息。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[AlternateIconInfo](js-apis-bundlemanager-bundleinfo.md#alternateiconinfo)>> | Promise对象，返回当前应用的备用图标信息列表。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[包管理子系统通用错误码](errorcode-bundle.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 17700311 | Failed to obtain the alternate icon. |
+
+**示例：**
+
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+try {
+  bundleManager.getAlternateIcons().then((data) => {
+    hilog.info(0x0000, 'testTag', 'getAlternateIcons successfully. Data: %{public}s', JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    hilog.error(0x0000, 'testTag', 'getAlternateIcons failed. Cause: %{public}s', err.message);
+  });
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getAlternateIcons failed. Cause: %{public}s', message);
+}
 ```
 
 ## ApplicationInfo
-
-PhonePC/2in1TabletTVWearable
 
 type ApplicationInfo = \_ApplicationInfo
 
@@ -1722,8 +1940,6 @@ type ApplicationInfo = \_ApplicationInfo
 
 ## ModuleMetadata10+
 
-PhonePC/2in1TabletTVWearable
-
 type ModuleMetadata = \_ModuleMetadata
 
 模块的元数据信息。
@@ -1738,23 +1954,19 @@ type ModuleMetadata = \_ModuleMetadata
 
 ## Metadata
 
-PhonePC/2in1TabletTVWearable
-
 type Metadata = \_Metadata
 
 元数据信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
-**系统能力**: SystemCapability.BundleManager.BundleFramework.Core
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
 
 | 类型 | 说明 |
 | --- | --- |
 | [\_Metadata](js-apis-bundlemanager-metadata.md#metadata-1) | 元数据信息。 |
 
 ## BundleInfo
-
-PhonePC/2in1TabletTVWearable
 
 type BundleInfo = \_BundleInfo.BundleInfo
 
@@ -1770,8 +1982,6 @@ type BundleInfo = \_BundleInfo.BundleInfo
 
 ## UsedScene
 
-PhonePC/2in1TabletTVWearable
-
 type UsedScene = \_BundleInfo.UsedScene
 
 权限使用的场景和时机。
@@ -1785,8 +1995,6 @@ type UsedScene = \_BundleInfo.UsedScene
 | [\_BundleInfo.UsedScene](js-apis-bundlemanager-bundleinfo.md#usedscene) | 权限使用的场景和时机。 |
 
 ## ReqPermissionDetail
-
-PhonePC/2in1TabletTVWearable
 
 type ReqPermissionDetail = \_BundleInfo.ReqPermissionDetail
 
@@ -1802,8 +2010,6 @@ type ReqPermissionDetail = \_BundleInfo.ReqPermissionDetail
 
 ## SignatureInfo
 
-PhonePC/2in1TabletTVWearable
-
 type SignatureInfo = \_BundleInfo.SignatureInfo
 
 应用包的签名信息。
@@ -1817,8 +2023,6 @@ type SignatureInfo = \_BundleInfo.SignatureInfo
 | [\_BundleInfo.SignatureInfo](js-apis-bundlemanager-bundleinfo.md#signatureinfo) | 应用包的签名信息。 |
 
 ## HapModuleInfo
-
-PhonePC/2in1TabletTVWearable
 
 type HapModuleInfo = \_HapModuleInfo.HapModuleInfo
 
@@ -1834,8 +2038,6 @@ type HapModuleInfo = \_HapModuleInfo.HapModuleInfo
 
 ## PreloadItem
 
-PhonePC/2in1TabletTVWearable
-
 type PreloadItem = \_HapModuleInfo.PreloadItem
 
 元服务中模块的预加载模块信息。
@@ -1849,8 +2051,6 @@ type PreloadItem = \_HapModuleInfo.PreloadItem
 | [\_HapModuleInfo.PreloadItem](js-apis-bundlemanager-hapmoduleinfo.md#preloaditem) | 元服务中模块的预加载模块信息。 |
 
 ## Dependency
-
-PhonePC/2in1TabletTVWearable
 
 type Dependency = \_HapModuleInfo.Dependency
 
@@ -1866,8 +2066,6 @@ type Dependency = \_HapModuleInfo.Dependency
 
 ## RouterItem12+
 
-PhonePC/2in1TabletTVWearable
-
 type RouterItem = \_HapModuleInfo.RouterItem
 
 模块配置的路由表信息。
@@ -1881,8 +2079,6 @@ type RouterItem = \_HapModuleInfo.RouterItem
 | [\_HapModuleInfo.RouterItem](js-apis-bundlemanager-hapmoduleinfo.md#routeritem12) | 模块配置的路由表信息。 |
 
 ## DataItem12+
-
-PhonePC/2in1TabletTVWearable
 
 type DataItem = \_HapModuleInfo.DataItem
 
@@ -1898,8 +2094,6 @@ type DataItem = \_HapModuleInfo.DataItem
 
 ## AbilityInfo
 
-PhonePC/2in1TabletTVWearable
-
 type AbilityInfo = \_AbilityInfo.AbilityInfo
 
 Ability信息。
@@ -1913,8 +2107,6 @@ Ability信息。
 | [\_AbilityInfo.AbilityInfo](js-apis-bundlemanager-abilityinfo.md#abilityinfo-1) | Ability信息。 |
 
 ## WindowSize
-
-PhonePC/2in1TabletTVWearable
 
 type WindowSize = \_AbilityInfo.WindowSize
 
@@ -1930,8 +2122,6 @@ type WindowSize = \_AbilityInfo.WindowSize
 
 ## ExtensionAbilityInfo
 
-PhonePC/2in1TabletTVWearable
-
 type ExtensionAbilityInfo = \_ExtensionAbilityInfo.ExtensionAbilityInfo
 
 ExtensionAbility信息。
@@ -1945,8 +2135,6 @@ ExtensionAbility信息。
 | [\_ExtensionAbilityInfo.ExtensionAbilityInfo](js-apis-bundlemanager-extensionabilityinfo.md#extensionabilityinfo-1) | ExtensionAbility信息。 |
 
 ## ElementName
-
-PhonePC/2in1TabletTVWearable
 
 type ElementName = \_ElementName
 
@@ -1962,11 +2150,9 @@ ElementName信息。
 
 ## Skill12+
 
-PhonePC/2in1TabletTVWearable
-
 type Skill = \_Skill.Skill
 
-skill信息。
+Skill信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1974,11 +2160,9 @@ skill信息。
 
 | 类型 | 说明 |
 | --- | --- |
-| [\_Skill.Skill](js-apis-bundlemanager-skill.md#skill-1) | skill信息。 |
+| [\_Skill.Skill](js-apis-bundlemanager-skill.md#skill-1) | Skill信息。 |
 
 ## SkillUrl12+
-
-PhonePC/2in1TabletTVWearable
 
 type SkillUrl = \_Skill.SkillUri
 
@@ -1994,8 +2178,6 @@ SkillUri信息。
 
 ## AppCloneIdentity15+
 
-PhonePC/2in1TabletTVWearable
-
 type AppCloneIdentity = \_BundleInfo.AppCloneIdentity
 
 描述应用包的身份信息。
@@ -2005,3 +2187,19 @@ type AppCloneIdentity = \_BundleInfo.AppCloneIdentity
 | 类型 | 说明 |
 | --- | --- |
 | [\_BundleInfo.AppCloneIdentity](js-apis-bundlemanager-bundleinfo.md#appcloneidentity14) | 应用包的身份信息。 |
+
+## AlternateIconInfo
+
+type AlternateIconInfo = \_BundleInfo.AlternateIconInfo
+
+应用备用图标信息。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+| 类型 | 说明 |
+| --- | --- |
+| [\_BundleInfo.AlternateIconInfo](js-apis-bundlemanager-bundleinfo.md#alternateiconinfo) | 应用的备用图标信息。 |

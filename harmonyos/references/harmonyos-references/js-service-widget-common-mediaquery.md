@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 媒体查询
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 组件通用信息 > 媒体查询
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2073983e982aa859361ecb73d7aaef267e0191e35a1c360f97d34056824382f8
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d525c5378b908f242a3e609477bcad90c9b793b8df79d02821ab5ef2c46a29ee
 ---
 
 媒体查询（MediaQuery）在移动设备上应用十分广泛，开发者经常需要根据设备的大致类型或者特定的特征和设备参数（例如屏幕分辨率）来修改应用的样式。为此媒体查询提供了如下功能：
@@ -13,7 +13,7 @@ content_hash: sha256:2073983e982aa859361ecb73d7aaef267e0191e35a1c360f97d34056824
 1. 针对设备和应用的属性信息，可以设计出相匹配的布局样式。
 2. 当屏幕发生动态改变时（比如分屏、横竖屏切换），应用页面布局同步更新。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -21,14 +21,12 @@ media属性值默认为设备的真实尺寸大小、物理像素和真实的屏
 
 ## CSS语法规则
 
-PhonePC/2in1TabletTVWearable
-
 使用@media来引入查询语句，具体规则如下：
 
-```
-1. @media [media-type] [and|not|only] [(media-feature)] {
-2. CSS-Code;
-3. }
+```css
+@media [media-type] [and|not|only] [(media-feature)] {
+  CSS-Code;
+}
 ```
 
 例子：
@@ -43,31 +41,25 @@ PhonePC/2in1TabletTVWearable
 
 ## 页面中引用资源
 
-PhonePC/2in1TabletTVWearable
-
 通过@import方式引入媒体查询，具体使用方法如下：
 
-```
-1. @import url [media-type] [and|not|only] [(media-feature)];
+```js
+@import url [media-type] [and|not|only] [(media-feature)];
 ```
 
 例如：
 
-```
-1. @import '../common/style.css' screen and (min-width: 600) and (max-width: 1200);
+```js
+@import '../common/style.css' screen and (min-width: 600) and (max-width: 1200);
 ```
 
 ## 媒体类型
-
-PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
 | screen | 按屏幕相关参数进行媒体查询。 |
 
 ## 媒体逻辑操作
-
-PhonePC/2in1TabletTVWearable
 
 媒体逻辑操作符：and、or、not、only用于构成复杂媒体查询，也可以通过comma（,）将其组合起来，详细解释说明如下表。
 
@@ -94,8 +86,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 媒体特征
 
-PhonePC/2in1TabletTVWearable
-
 | 类型 | 说明 |
 | --- | --- |
 | height | 应用页面显示区域的高度。 |
@@ -115,6 +105,7 @@ PhonePC/2in1TabletTVWearable
 | min-device-height | 设备的最小高度。 |
 | max-device-height | 设备的最大高度。 |
 | device-width | 设备的宽度。 |
+| device-type | 设备的类型。  支持的取值包括：default、phone、tablet、tv、car、wearable、2in1。 |
 | min-device-width | 设备的最小宽度。 |
 | max-device-width | 设备的最大宽度。 |
 | round-screen | 屏幕类型，圆形屏幕为true， 非圆形屏幕为 false。 |
@@ -122,64 +113,62 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例代码
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <div class="container">
-4. <text class="title">Hello World</text>
-5. </div>
-6. </div>
+```html
+<!-- xxx.hml -->
+<div>
+  <div class="container">
+    <text class="title">Hello World</text>
+  </div>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. width: 300px;
-4. height: 600px;
-5. background-color: #008000;
-6. }
+```css
+/* xxx.css */
+.container {
+  width: 300px;
+  height: 600px;
+  background-color: #008000;
+}
 
-8. @media (device-type: wearable) {
-9. .container-inner {
-10. justify-content: center;
-11. align-items: center;
-12. padding: 40px 26px;
-13. }
+@media (device-type: wearable) {
+    .container-inner {
+        justify-content: center;
+        align-items: center;
+        padding: 40px 26px;
+    }
 
-15. .title {
-16. text-align: center;
-17. }
+    .title {
+        text-align: center;
+    }
 
-19. .detail_text {
-20. max-lines: 2;
-21. text-align: center;
-22. }
-23. }
+    .detail_text {
+        max-lines: 2;
+        text-align: center;
+    }
+}
 
-25. @media (device-type: tv) {
-26. .title {
-27. font-size: 16px;
-28. }
+@media (device-type: tv) {
+    .title {
+        font-size: 16px;
+    }
 
-30. .detail_text {
-31. font-size: 12px;
-32. }
-33. }
+    .detail_text {
+        font-size: 12px;
+    }
+}
 
-35. @media (device-type: car) {
-36. .title {
-37. font-size: 12px;
-38. color: #FFFFFF;
-39. font-family: @id_text_font_family_medium;
-40. }
+@media (device-type: car) {
+    .title {
+        font-size: 12px;
+        color: #FFFFFF;
+        font-family: @id_text_font_family_medium;
+    }
 
-42. .detail_text {
-43. font-size: 12px;
-44. margin-top: 2px;
-45. font-family: @id_text_font_family_regular;
-46. color: #FFFFFF;
-47. }
-48. }
+    .detail_text {
+        font-size: 12px;
+        margin-top: 2px;
+        font-family: @id_text_font_family_regular;
+        color: #FFFFFF;
+    }
+}
 ```

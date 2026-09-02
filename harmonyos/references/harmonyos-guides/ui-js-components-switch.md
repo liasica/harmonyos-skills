@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: switch开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > switch开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:49+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:674d3a8f47cb376f601b78a6980661b768b444aaa3d48b1ad76fb1003a52ea04
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:68b6ceba2ec4aaccce9324b88ce2579665346ca33abf0de2f9f1f4854bbd5c8e
 ---
 
 switch为开关选择器，切换开启或关闭状态。具体用法请参考[switch](../harmonyos-references/js-components-basic-switch.md)。
@@ -14,73 +14,72 @@ switch为开关选择器，切换开启或关闭状态。具体用法请参考[s
 
 在pages/index目录下的hml文件中创建一个switch组件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <switch checked="true"></switch>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. background-color: #F1F3F5;
-5. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+    <switch checked="true"></switch>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/3VJyQiuZTtKCcP3VAdcjyA/zh-cn_image_0000002589244417.png)
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  background-color: #F1F3F5;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/tXbjitR_Ru6gOq9J-zTWMA/zh-cn_image_0000002736313057.png)
 
 ## 添加属性和方法
 
-switch组件通过textoff和showtext属性设置文本选中和未选中时的状态。设置checked属性值为true（组件为打开状态）。添加change事件，当组件状态改变时触发，触发后执行switchChange函数获取组件当前状态（关闭/打开）。
+switch组件通过texton、textoff和showtext属性设置文本选中和未选中时的状态。设置checked属性值为true（组件为打开状态）。添加change事件，当组件状态改变时触发，触发后执行switchChange函数获取组件当前状态（关闭/打开）。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <switch showtext="true" texton="open" textoff="close" checked="true" @change="switchChange"></switch>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. display: flex;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-10. switch {
-11. texton-color: #002aff;
-12. textoff-color: silver;
-13. text-padding: 20px;
-14. font-size: 50px;
-15. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <switch showtext="true" texton="open" textoff="close" checked="true" @change="switchChange"></switch>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. switchChange(e){
-5. if(e.checked){
-6. promptAction.showToast({
-7. message: "open"
-8. });
-9. }else{
-10. promptAction.showToast({
-11. message: "close"
-12. });
-13. }
-14. }
-15. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+switch {
+  texton-color: #002aff;
+  textoff-color: silver;
+  text-padding: 20px;
+  font-size: 50px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/eKSQtkIsR7-Os-msH4m3uw/zh-cn_image_0000002558764610.gif)
+```js
+// xxx.js
+export default {
+  switchChange(e){
+    if(e.checked){
+      this.getUIContext().getPromptAction().showToast({
+        message: "open"
+      });
+    }else{
+      this.getUIContext().getPromptAction().showToast({
+        message: "close"
+      });
+    }
+  }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/FhHFK2SISlaux1q2U0DTHw/zh-cn_image_0000002706674014.gif)
+
+**说明** 
 
 当showtext属性值设置为true时，texton和textoff设置的文本才会生效。
 
@@ -90,101 +89,101 @@ switch组件通过textoff和showtext属性设置文本选中和未选中时的�
 
 实现方法：创建switch开关，设置checked属性为true，通过数据绑定改变收货地址。设置display属性（默认为none），当关闭开关改变display属性值为flex后显示地址模块，点击按钮改变颜色。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="change">
-4. <text>Choose default address:</text>
-5. <switch showtext="true" texton="on" textoff="off" checked="true" @change="switchChange"></switch>
-6. </div>
-7. <div class="content">
-8. <text class="address"><span>Shipping address:</span><span class="textSpan">{{address}}</span></text>
-9. </div>
-10. <div class="myAddress" style="display: {{addressDisplay}};">
-11. <text style="font-size: 30px;margin-bottom: 50px;">Choose an address:</text>
-12. <text class="addressText" style="background-color: {{item == address?'#0fabe7':''}};color: {{item == address?'white':'black'}};"
-13. for="item in addressList"@click="changeAddress({{$idx}}})">{{item}}</text>
-14. </div>
-15. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. background-color: #F1F3F5;
-6. flex-direction: column;
-7. padding: 50px;
-8. }
-9. .change{
-10. margin-top: 20%;
-11. width: 100%;
-12. justify-content: center;
-13. }
-14. switch{
-15. texton-color: #002aff;
-16. textoff-color: silver;
-17. text-padding: 20px;
-18. }
-19. .content{
-20. width: 70%;
-21. text-align: center;
-22. flex-direction: column;
-23. border: 1px solid #002aff;
-24. margin-left: 15%;
-25. text-align: center;
-26. }
-27. .address{
-28. width: 100%;
-29. height: 100px;
-30. line-height: 100px;
-31. text-align: center;
-32. font-size: 28px;
-33. margin-bottom: 50px;
-34. }
-35. .textSpan{
-36. color: #0aa9f1;
-37. }
-38. .myAddress{
-39. flex-direction: column;
-40. margin-top: 50px;
-41. }
-42. .addressText{
-43. margin-left: 35%;
-44. width: 30%;
-45. height: 75px;
-46. text-align: center;
-47. color: white;
-48. margin-bottom: 30px;
-49. border-radius: 10px;
-50. border: 1px solid #0fabe7;
-51. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="change">
+    <text>Choose default address:</text>
+    <switch showtext="true" texton="on" textoff="off" checked="true" @change="switchChange"></switch>
+  </div>
+  <div class="content">
+    <text class="address"><span>Shipping address:</span><span class="textSpan">{{address}}</span></text>
+  </div>
+  <div class="myAddress" style="display: {{addressDisplay}};">
+    <text style="font-size: 30px;margin-bottom: 50px;">Choose an address:</text>
+    <text class="addressText" style="background-color: {{item == address?'#0fabe7':''}};color: {{item == address?'white':'black'}};"
+    for="item in addressList"@click="changeAddress({{$idx}})">{{item}}</text>
+  </div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data:{
-4. address: '',
-5. addressDisplay: 'none',
-6. addressList: ['family','company','commissary'],
-7. },
-8. onInit(){
-9. // 初始化默认地址为地址列表中的第一个
-10. this.address = this.addressList[0];
-11. },
-12. switchChange(e){
-13. if(e.checked){
-14. this.addressDisplay = "none";
-15. }else{
-16. this.addressDisplay = "flex";
-17. }
-18. },
-19. changeAddress(i){
-20. this.address= this.addressList[i];
-21. }
-22. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #F1F3F5;
+  flex-direction: column;
+  padding: 50px;
+}
+.change{
+  margin-top: 20%;
+  width: 100%;
+  justify-content: center;
+}
+switch{
+  texton-color: #002aff;
+  textoff-color: silver;
+  text-padding: 20px;
+}
+.content{
+  width: 70%;
+  text-align: center;
+  flex-direction: column;
+  border: 1px solid #002aff;
+  margin-left: 15%;
+  text-align: center;
+}
+.address{
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+.textSpan{
+  color: #0aa9f1;
+}
+.myAddress{
+  flex-direction: column;
+  margin-top: 50px;
+}
+.addressText{
+  margin-left: 35%;
+  width: 30%;
+  height: 75px;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 1px solid #0fabe7;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/LXdoyQ1AQmq6X6E0KD-gfA/zh-cn_image_0000002558604954.gif)
+```js
+// xxx.js
+export default {
+  data:{
+    address: '',
+    addressDisplay: 'none',
+    addressList: ['family','company','commissary'],
+  },
+  onInit(){
+    // 初始化默认地址为地址列表中的第一个
+    this.address = this.addressList[0];
+  },
+  switchChange(e){
+    if(e.checked){
+        this.addressDisplay = "none";
+    }else{
+        this.addressDisplay = "flex";
+    }
+  },
+  changeAddress(i){
+    this.address= this.addressList[i];
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/1wQlXbADSJ2olKYmqSbU-g/zh-cn_image_0000002736433105.gif)

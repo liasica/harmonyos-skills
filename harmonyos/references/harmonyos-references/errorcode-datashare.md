@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 数据共享错误码
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > 错误码 > 数据共享错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f32b9e26eda799081089c8847da355e7054b348c3c5923c241ba23d5e47c210f
+scraped_at: 2026-09-02T15:00:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bfd57dfd19dd713166a63acdcd1d02c8f8c35b0dd14e060662a0c0337108e624
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 15700000 内部错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -40,33 +38,7 @@ Inner error.
 3. 开发者排查权限配置是否正确。
 4. 尝试重试，如果依然无法解决，可以提示用户重启应用、升级应用或升级设备版本。
 
-## 15700010 创建DataShareHelper异常
-
-**错误信息**
-
-The DataShareHelper fails to be initialized.
-
-**错误描述**
-
-创建DataShareHelper工具类异常时，系统会产生此错误码。
-
-**可能原因**
-
-1. 创建DataShareHelper时，接口createDataHelper的入参uri不正确。
-2. 创建DataShareHelper时，接口createDataHelper的入参context不正确。
-3. 创建DataShareHelper时，客户端从后台拉起DataShareExtension时，未配置后台拉起权限。
-
-**处理步骤**
-
-1. 咨询DataShare服务端提供者，获取正确的uri路径。
-2. DataShare仅支持Stage模型，检查context是否为Stage模型的context。
-3. 检查客户端是否有数据的读或者写权限，具体步骤如下：
-
-   (1) 找到数据提供者包名，在uri的path里面找，例如：uri = "datashareproxy://com.acts.ohos.data.datasharetest/test"。
-
-   (2) 根据包名找到配置，例如：bm dump --bundle-name com.acts.ohos.data.datasharetest，在里面找到DataShareExtension的配置，确认数据访问者是否有readPermission或writePermission中配置的权限。
-
-## 15700011 uri不存在
+## 15700011 URI不存在
 
 **错误信息**
 
@@ -85,45 +57,7 @@ The URI does not exist.
 
 咨询DataShare服务端提供者，获取正确的uri路径。
 
-## 15700012 数据区不存在
-
-**错误信息**
-
-The data area does not exist.
-
-**错误描述**
-
-数据更新异常时，系统会产生此错误码。
-
-**可能原因**
-
-数据更新异常时，接口publish的入参bundleName不正确。
-
-**处理步骤**
-
-咨询DataShare服务端提供者，获取正确的bundleName。
-
-## 15700013 DataShareHelper实例被关闭
-
-**错误信息**
-
-The DataShareHelper instance is already closed.
-
-**错误描述**
-
-DataShareHelper实例被关闭后，继续使用该实例会产生此错误码。
-
-**可能原因**
-
-调用close接口关闭了DataShareHelper实例后，继续使用该实例。
-
-**处理步骤**
-
-重新创建DataShareHelper实例，再进行使用。
-
 ## 15700014 配置共享参数错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -137,7 +71,7 @@ The parameter format is incorrect or the value range is invalid.
 **可能原因**
 
 1. URI长度超过256字节。
-2. proxyData的value长度超过4096字节。
+2. proxyData（代理数据配置项）的value长度超过4096字节。
 3. 接口传入的URI数组长度超过32。
 4. 接口传入的proxyData数组长度超过32。
 5. URI格式校验失败。
@@ -150,4 +84,22 @@ The parameter format is incorrect or the value range is invalid.
 4. 检查接口传入的proxyData数组的长度是否超过32。
 5. 检查接口传入的URI数组或者proxyData数组中的URI是否满足格式校验：
 
-   URI的固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写。
+   uri的固定格式为"datashareproxy://{bundleName}/{path}"，其中bundleName为配置发布方应用的bundleName，path可随意填写。
+
+## 15700015 访问URI权限错误
+
+**错误信息**
+
+No permission to access the data specified by the URI.
+
+**错误描述**
+
+没有权限访问URI所指定的数据。
+
+**可能原因**
+
+未申请访问指定数据所需的权限。
+
+**处理步骤**
+
+咨询数据提供方访问指定数据所需的权限。

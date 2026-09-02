@@ -1,9 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-onlineauthenticationkit-6011
 title: Online Authentication Kit
+breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > OS平台能力 > API变更清单 > 6.0.1(21) Beta1引入的API > Online Authentication Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:00+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:26+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:7d65ecb3dbbb84a52f3e0c7db6fc2e41f1f3f3a321b377755e1105207d895be9
 ---
 

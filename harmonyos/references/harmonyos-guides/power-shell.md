@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/power-shell
 title: power-shell工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > power-shell工具
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:27+08:00
+scraped_at: 2026-09-02T14:50:13+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:33e0483be14057940b1289d86c4972d1b9de531307336fc747a4cceed3acdccc
+content_hash: sha256:9a6a49cead3424823080afb133adc572dd1a8eea6a79c8b6992a0e6108a5c03e
 ---
 
 power-shell是实现设备电源状态转换等功能的工具，为开发者提供基本的设备电源状态调试能力，例如：熄屏、唤醒、设置电源模式等。
@@ -26,15 +26,15 @@ power-shell是实现设备电源状态转换等功能的工具，为开发者提
 
 ## 帮助命令
 
-```
-1. # 显示帮助信息
-2. power-shell help
+```bash
+# 显示帮助信息
+power-shell help
 ```
 
 ## 设置电源模式命令
 
-```
-1. power-shell setmode
+```bash
+power-shell setmode
 ```
 
 **设置电源模式命令列表**
@@ -49,21 +49,21 @@ power-shell是实现设备电源状态转换等功能的工具，为开发者提
 
 示例：
 
-```
-1. # 设置设备电源状态为正常模式
-2. power-shell setmode 600
-3. # 设置设备电源状态为省电模式
-4. power-shell setmode 601
-5. # 设置设备电源状态为性能模式
-6. power-shell setmode 602
-7. # 设置设备电源状态为超级省电模式
-8. power-shell setmode 603
+```bash
+# 设置设备电源状态为正常模式
+power-shell setmode 600
+# 设置设备电源状态为省电模式
+power-shell setmode 601
+# 设置设备电源状态为性能模式
+power-shell setmode 602
+# 设置设备电源状态为超级省电模式
+power-shell setmode 603
 ```
 
 ## 亮屏命令
 
-```
-1. power-shell wakeup
+```bash
+power-shell wakeup
 ```
 
 **亮屏命令列表**
@@ -74,15 +74,15 @@ power-shell是实现设备电源状态转换等功能的工具，为开发者提
 
 示例：
 
-```
-1. # shell命令亮屏
-2. power-shell wakeup
+```bash
+# shell命令亮屏
+power-shell wakeup
 ```
 
 ## 熄屏命令
 
-```
-1. power-shell suspend
+```bash
+power-shell suspend
 ```
 
 **熄屏命令列表**
@@ -93,15 +93,15 @@ power-shell是实现设备电源状态转换等功能的工具，为开发者提
 
 示例：
 
-```
-1. # shell命令熄屏
-2. power-shell suspend
+```bash
+# shell命令熄屏
+power-shell suspend
 ```
 
 ## 自动熄屏命令
 
-```
-1. power-shell timeout
+```bash
+power-shell timeout
 ```
 
 **自动熄屏命令参数列表**
@@ -113,10 +113,10 @@ power-shell是实现设备电源状态转换等功能的工具，为开发者提
 
 示例：
 
-```
-1. # 当前系统设置中自动熄屏时间为30秒
-2. # shell命令设置自动熄屏时间为15000毫秒
-3. power-shell timeout -o 15000
-4. # 恢复系统设置的自动熄屏时间，此时自动熄屏时间为30秒
-5. power-shell timeout -r
+```bash
+# 当前系统设置中自动熄屏时间为30秒
+# shell命令设置自动熄屏时间为15000毫秒
+power-shell timeout -o 15000
+# 恢复系统设置的自动熄屏时间，此时自动熄屏时间为30秒
+power-shell timeout -r
 ```

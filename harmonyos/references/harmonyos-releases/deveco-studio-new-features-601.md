@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-601
 title: 新增和增强特性
-breadcrumb: 版本说明 > HarmonyOS 6.0.1(21) > DevEco Studio > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 6.0.1(21) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:03+08:00
-doc_updated_at: 2026-02-13
-content_hash: sha256:fe3f080f043cf38149c5a5feb0677e15ef416a310ebcc9311ef76c558925bf8b
+scraped_at: 2026-09-02T14:49:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3bec1f5fda205414948aaf105f31ed6485f0d0a26217bfab32e70f9e3bf5f781
 ---
 
 ## DevEco Studio 6.0.1 Release（6.0.1.268）兼容性配套关系
@@ -84,7 +84,7 @@ DevEco Studio 6.0.1.260配套使用的命令行工具列表、支持的API范围
 
 **编写与调试应用**
 
-* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+* 新增部分ACL权限支持通过自动签名快速申请。具体请参考[支持ACL权限](../harmonyos-guides/ide-signing-auto.md#section5301916183411)。
 
 ## DevEco Studio 6.0.1 Release（6.0.1.251）兼容性配套关系
 
@@ -201,7 +201,6 @@ DevEco Studio 6.0.1.246配套使用的命令行工具列表、支持的API范围
 **开发环境搭建**
 
 * DevEco Studio支持开发API 21工程。
-* ohpm-repo支持导出和导入包权限数据。具体请参考[ohpm-repo export\_pkgPermission](../harmonyos-guides/ide-ohpm-repo-export-pkgpermission.md)和[ohpm-repo import\_pkgPermission](../harmonyos-guides/ide-ohpm-repo-import-pkgpermission.md)。
 
 **使用AI智能辅助编程**
 
@@ -216,7 +215,7 @@ DevEco Studio 6.0.1.246配套使用的命令行工具列表、支持的API范围
 * 支持在计算机和模拟器之间互相复制粘贴。具体请参考[操控屏幕](../harmonyos-guides/ide-emulator-control-screen.md)。
 * 新增tablet类型的模拟器支持多屏能力。具体请参考[模拟器多屏能力](../harmonyos-guides/ide-emulator-more-features.md#section9744191415368)。
 * 新增foldable、tablet和2in1类型的模拟器支持自定义屏幕配置。具体请参考[自定义屏幕配置](../harmonyos-guides/ide-emulator-customize-screen-configuration.md)。
-* 通过命令行启动模拟器时，支持指定hdc端口号。具体请参考[启动模拟器](../harmonyos-guides/ide-emulator-command-line.md#section11776121917710)。
+* 通过命令行启动模拟器时，支持指定hdc端口号。具体请参考[启动模拟器](../harmonyos-guides/ide-emulator-command-line.md#section1986131715236)。
 * DevEco Studio支持对部分ExtensionAbility进行黑盒覆盖率测试。具体请参考[黑盒覆盖率测试](../harmonyos-guides/ide-ui-test.md)。
 * 应用与元服务体检提供全新UX界面，针对高频的体检场景，提供预置的体检卡片，开发者可选择预置卡片快速进行体检，或者根据需要自定义卡片。具体请参考[应用与元服务体检](../harmonyos-guides/ide-app-analyzer.md)。
 

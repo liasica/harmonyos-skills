@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-tele
 title: telephony_radio.h
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > C API > 头文件 > telephony_radio.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:175b221dda274aa13e67d5bec15e96a7cb87691044cce4d66c602c70e92dc778
+scraped_at: 2026-09-02T15:02:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2a49d5a07ee363fa5bf10091a03864beaa5e5b417811e212ac3909f51b955fd9
 ---
 
 ## 概述
 
-PhoneTabletWearable
-
-为网络搜索模块定义C接口。
+为网络搜索模块定义C接口，提供获取移动网络状态（包括网络注册状态、运营商信息、网络制式等）的能力，适用于应用需要查询当前卡槽网络连接状态的场景。
 
 **引用文件：** <telephony/core\_service/telephony\_radio.h>
 
@@ -26,11 +24,7 @@ PhoneTabletWearable
 
 ## 汇总
 
-PhoneTabletWearable
-
 ### 函数
-
-PhoneTabletWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,14 +33,10 @@ PhoneTabletWearable
 
 ## 函数说明
 
-PhoneTabletWearable
-
 ### OH\_Telephony\_GetNetworkState()
 
-PhoneTabletWearable
-
-```
-1. Telephony_RadioResult OH_Telephony_GetNetworkState(Telephony_NetworkState *state)
+```c
+Telephony_RadioResult OH_Telephony_GetNetworkState(Telephony_NetworkState *state)
 ```
 
 **描述**
@@ -63,7 +53,7 @@ PhoneTabletWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [Telephony\_NetworkState](capi-telephony-telephony-networkstate.md) \*state | 用户接收网络状态信息的结构体。 |
+| [Telephony\_NetworkState](capi-telephony-telephony-networkstate.md) \*state | 用于接收网络状态信息的结构体。 |
 
 **返回：**
 
@@ -73,10 +63,8 @@ PhoneTabletWearable
 
 ### OH\_Telephony\_GetNetworkStateForSlot()
 
-PhoneTabletWearable
-
-```
-1. Telephony_RadioResult OH_Telephony_GetNetworkStateForSlot(int32_t slotId, Telephony_NetworkState *state)
+```c
+Telephony_RadioResult OH_Telephony_GetNetworkStateForSlot(int32_t slotId, Telephony_NetworkState *state)
 ```
 
 **描述**
@@ -94,7 +82,7 @@ PhoneTabletWearable
 | 参数项 | 描述 |
 | --- | --- |
 | int32\_t slotId | 卡槽ID。 |
-| [Telephony\_NetworkState](capi-telephony-telephony-networkstate.md) \*state | 用户接收网络状态信息的结构体。 |
+| [Telephony\_NetworkState](capi-telephony-telephony-networkstate.md) \*state | 用于接收网络状态信息的结构体。 |
 
 **返回：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 基本概念
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 栅格组件 > 基本概念
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fb7b72b6681e0c79f65c21a7e150c2576064780823293507cbc77db20447729b
+scraped_at: 2026-09-02T14:51:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3e0652a4e3c01dcb53a4204ce3dcd674f4701375760673b52e2a725d518878c4
 ---
 
 提供栅格布局效果，通过栅格系统进行元素布局，主要提供<grid-container>、<grid-row>、<grid-col>栅格容器组件。
@@ -17,8 +17,6 @@ content_hash: sha256:fb7b72b6681e0c79f65c21a7e150c2576064780823293507cbc77db2044
 3. 给应用提供一种灵活的间距调整方法，满足特殊场景布局调整的可能性。
 
 ## 栅格系统的概念
-
-PhonePC/2in1TabletTVWearable
 
 栅格系统有Margins、Gutters、Columns三个属性。
 
@@ -32,7 +30,7 @@ PhonePC/2in1TabletTVWearable
 
    是用来辅助布局的主要定位工具，不同的屏幕尺寸匹配不同的Columns数量来辅助布局定位。Columns的宽度在保证Margins和Gutters符合规范的情况下，根据实际设备的宽度和Columns数量自动计算每一个Columns的宽度。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/DWrHt-8aR1CEZavHrB3O0g/zh-cn_image_0000002589246573.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/2D-XvOS0RxaNjZU0ELQUqQ/zh-cn_image_0000002706836430.png)
 
    **栅格断点系统**
 

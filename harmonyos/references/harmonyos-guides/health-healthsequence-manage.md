@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-health
 title: 健康记录
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 管理运动健康数据 > 健康记录
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:13+08:00
+scraped_at: 2026-09-02T14:59:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7bf264fbec4bf668a40762a0bdb4c7bf36b4dcdc19c918b0b6fc284a01378a04
+content_hash: sha256:18b71bdf0e4c5355bcebcd13084df32cf7eb2032e00b55d13f8b07b7e2ff0714
 ---
 
 ## 场景介绍
@@ -34,166 +34,166 @@ content_hash: sha256:7bf264fbec4bf668a40762a0bdb4c7bf36b4dcdc19c918b0b6fc284a013
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 获取dataSourceId，参考[管理数据源](health-datasource-manage.md)，插入一个新的数据源或读取已有数据源。
 3. 创建健康记录。
 
-   ```
-   1. let healthSequence: healthStore.healthSequenceHelper.sleepRecord.Model = {
-   2. summaries: {
-   3. fallAsleepTime: 1695740400000, // 2023-09-26 23:00:00
-   4. wakeupTime: 1695769200000, // 2023-09-27 7:00:00
-   5. sleepScore: 80,
-   6. wakeCount: 2,
-   7. sleepType: 1,
-   8. shallowDuration: 14400,
-   9. deepDuration: 7200,
-   10. dreamDuration: 7200,
-   11. wakeDuration: 0,
-   12. duration: 28800
-   13. },
-   14. dataType: healthStore.healthSequenceHelper.sleepRecord.DATA_TYPE,
-   15. // insertDataSource插入数据源接口返回的dataSourceId，或读取已有数据源的dataSourceId
-   16. dataSourceId: 'xxx',
-   17. localDate: '09/26/2023',
-   18. startTime: 1695740400000,
-   19. endTime: 1695769200000,
-   20. timeZone: '+0800',
-   21. modifiedTime: 1695769200000,
-   22. details: {
-   23. sleepSegment: [
-   24. {
-   25. startTime: 1695740400000, // 2023-09-26 23:00:00
-   26. endTime: 1695747600000, // 2023-09-27 01:00:00
-   27. sleepStatus: 2
-   28. },
-   29. {
-   30. startTime: 1695747600000, // 2023-09-27 01:00:00
-   31. endTime: 1695754800000, // 2023-09-27 03:00:00
-   32. sleepStatus: 1
-   33. },
-   34. {
-   35. startTime: 1695754800000, // 2023-09-27 03:00:00
-   36. endTime: 1695762000000, // 2023-09-27 05:00:00
-   37. sleepStatus: 3
-   38. },
-   39. {
-   40. startTime: 1695762000000, // 2023-09-27 05:00:00
-   41. endTime: 1695769200000, // 2023-09-27 07:00:00
-   42. sleepStatus: 2
-   43. }
-   44. ]
-   45. }
-   46. }
+   ```typescript
+   let healthSequence: healthStore.healthSequenceHelper.sleepRecord.Model = {
+     summaries: {
+       fallAsleepTime: 1695740400000, // 2023-09-26 23:00:00
+       wakeupTime: 1695769200000, // 2023-09-27 7:00:00
+       sleepScore: 80,
+       wakeCount: 2,
+       sleepType: 1,
+       shallowDuration: 14400,
+       deepDuration: 7200,
+       dreamDuration: 7200,
+       wakeDuration: 0,
+       duration: 28800
+     },
+     dataType: healthStore.healthSequenceHelper.sleepRecord.DATA_TYPE,
+     // insertDataSource插入数据源接口返回的dataSourceId，或读取已有数据源的dataSourceId
+     dataSourceId: 'xxx',
+     localDate: '09/26/2023',
+     startTime: 1695740400000,
+     endTime: 1695769200000,
+     timeZone: '+0800',
+     modifiedTime: 1695769200000,
+     details: {
+       sleepSegment: [
+         {
+           startTime: 1695740400000, // 2023-09-26 23:00:00
+           endTime: 1695747600000, // 2023-09-27 01:00:00
+           sleepStatus: 2
+         },
+         {
+           startTime: 1695747600000, // 2023-09-27 01:00:00
+           endTime: 1695754800000, // 2023-09-27 03:00:00
+           sleepStatus: 1
+         },
+         {
+           startTime: 1695754800000, // 2023-09-27 03:00:00
+           endTime: 1695762000000, // 2023-09-27 05:00:00
+           sleepStatus: 3
+         },
+         {
+           startTime: 1695762000000, // 2023-09-27 05:00:00
+           endTime: 1695769200000, // 2023-09-27 07:00:00
+           sleepStatus: 2
+         }
+       ]
+     }
+   }
    ```
 4. 调用[saveData](../harmonyos-references/health-api-healthstore.md#healthstoresavedata-2)方法执行保存数据请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. await healthStore.saveData(healthSequence);
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in saving data.');
-   4. } catch (err) {
-   5. hilog.error(0x0000, 'testTag', `Failed to save data. Code: ${err.code}, message: ${err.message}`);
-   6. }
+   ```typescript
+   try {
+     await healthStore.saveData(healthSequence);
+     hilog.info(0x0000, 'testTag', 'Succeeded in saving data.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to save data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```
 
 ### 读取用户的健康记录
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 创建查询健康记录请求。
 
-   ```
-   1. let healthSequenceReadRequest: healthStore.HealthSequenceReadRequest = {
-   2. healthSequenceDataType: healthStore.healthSequenceHelper.sleepRecord.DATA_TYPE,
-   3. startTime: 1695740400000,
-   4. endTime: 1695769200000,
-   5. readOptions: {
-   6. withDetails: true
-   7. }
-   8. }
+   ```typescript
+   let healthSequenceReadRequest: healthStore.HealthSequenceReadRequest = {
+     healthSequenceDataType: healthStore.healthSequenceHelper.sleepRecord.DATA_TYPE,
+     startTime: 1695740400000,
+     endTime: 1695769200000,
+     readOptions: {
+       withDetails: true
+     }
+   }
    ```
 3. 调用[readData](../harmonyos-references/health-api-healthstore.md#healthstorereaddata-2)方法执行查询请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. const healthSequences = await healthStore.readData(healthSequenceReadRequest);
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in reading data.');
-   4. healthSequences.forEach((healthSequence) => {
-   5. hilog.info(0x0000, 'testTag', `the start time is ${healthSequence.startTime}.`);
-   6. hilog.info(0x0000, 'testTag', `the end time is ${healthSequence.endTime}.`);
-   7. Object.keys(healthSequence.summaries).forEach((key) => {
-   8. hilog.info(0x0000, 'testTag', `the summaries of ${key} is ${healthSequence.summaries[key]}.`);
-   9. });
-   10. });
-   11. } catch (err) {
-   12. hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
-   13. }
+   ```typescript
+   try {
+     const healthSequences = await healthStore.readData(healthSequenceReadRequest);
+     hilog.info(0x0000, 'testTag', 'Succeeded in reading data.');
+     healthSequences.forEach((healthSequence) => {
+       hilog.info(0x0000, 'testTag', `the start time is ${healthSequence.startTime}.`);
+       hilog.info(0x0000, 'testTag', `the end time is ${healthSequence.endTime}.`);
+       Object.keys(healthSequence.summaries).forEach((key) => {
+         hilog.info(0x0000, 'testTag', `the summaries of ${key} is ${healthSequence.summaries[key]}.`);
+       });
+     });
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to read data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```
 
 ### 删除指定的健康记录
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 查询待删除健康记录。
 
-   ```
-   1. let healthSequenceReadRequest: healthStore.HealthSequenceReadRequest = {
-   2. healthSequenceDataType: healthStore.healthSequenceHelper.sleepRecord.DATA_TYPE,
-   3. startTime: 1695740400000,
-   4. endTime: 1695769200000
-   5. }
-   6. const healthSequences = await healthStore.readData(healthSequenceReadRequest);
+   ```typescript
+   let healthSequenceReadRequest: healthStore.HealthSequenceReadRequest = {
+     healthSequenceDataType: healthStore.healthSequenceHelper.sleepRecord.DATA_TYPE,
+     startTime: 1695740400000,
+     endTime: 1695769200000
+   }
+   const healthSequences = await healthStore.readData(healthSequenceReadRequest);
    ```
 3. 调用[deleteData](../harmonyos-references/health-api-healthstore.md#healthstoredeletedata-5)方法执行删除请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. for (let index = 0; index < healthSequences.length; index++) {
-   3. const healthSequence = healthSequences[index];
-   4. await healthStore.deleteData(healthSequence);
-   5. }
-   6. hilog.info(0x0000, 'testTag', 'Succeeded in deleting data.');
-   7. } catch (err) {
-   8. hilog.error(0x0000, 'testTag', `Failed to delete data. Code: ${err.code}, message: ${err.message}`);
-   9. }
+   ```typescript
+   try {
+     for (let index = 0; index < healthSequences.length; index++) {
+       const healthSequence = healthSequences[index];
+       await healthStore.deleteData(healthSequence);
+     }
+     hilog.info(0x0000, 'testTag', 'Succeeded in deleting data.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to delete data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```
 
 ### 根据请求删除用户健康记录
 
 1. 导入运动健康服务功能模块及相关公共模块。
 
-   ```
-   1. import { healthStore } from '@kit.HealthServiceKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { healthStore } from '@kit.HealthServiceKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 创建删除健康记录请求。
 
-   ```
-   1. const healthSequenceDeleteRequest: healthStore.HealthSequenceDeleteRequest= {
-   2. healthSequenceDataType: healthStore.healthSequenceHelper.sleepRecord.DATA_TYPE,
-   3. startTime: 1695740400000,
-   4. endTime: 1695769200000
-   5. }
+   ```typescript
+   const healthSequenceDeleteRequest: healthStore.HealthSequenceDeleteRequest= {
+     healthSequenceDataType: healthStore.healthSequenceHelper.sleepRecord.DATA_TYPE,
+     startTime: 1695740400000,
+     endTime: 1695769200000
+   }
    ```
 3. 调用[deleteData](../harmonyos-references/health-api-healthstore.md#healthstoredeletedata-2)方法执行删除请求，并处理返回结果。
 
-   ```
-   1. try {
-   2. await healthStore.deleteData(healthSequenceDeleteRequest);
-   3. hilog.info(0x0000, 'testTag', 'Succeeded in deleting data.');
-   4. } catch (err) {
-   5. hilog.error(0x0000, 'testTag', `Failed to delete data. Code: ${err.code}, message: ${err.message}`);
-   6. }
+   ```typescript
+   try {
+     await healthStore.deleteData(healthSequenceDeleteRequest);
+     hilog.info(0x0000, 'testTag', 'Succeeded in deleting data.');
+   } catch (err) {
+     hilog.error(0x0000, 'testTag', `Failed to delete data. Code: ${err.code}, message: ${err.message}`);
+   }
    ```

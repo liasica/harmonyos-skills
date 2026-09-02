@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-data-transfer-api
 title: dataTransfer（星闪数传能力）
-breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API参考 > dataTransfer（星闪数传能力）
+breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > dataTransfer（星闪数传能力）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c2729a04cdfbeb54038013bcae5b616f5306939b8e63cf5d333d8000bb0e25fd
+scraped_at: 2026-09-02T14:52:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:368cacd0677f8d9cc4cc0da95885f981da1716906c599637822dccb8f5ade1be
 ---
 
 本模块提供了星闪数据传输的功能。
@@ -14,19 +14,17 @@ content_hash: sha256:c2729a04cdfbeb54038013bcae5b616f5306939b8e63cf5d333d8000bb0
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { dataTransfer } from '@kit.NearLinkKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
 ```
 
 ## ConnectionState
 
-PhonePC/2in1TabletTVWearable
-
-type ConnectionState = [constant.ConnectionState](nearlink-constant.md#connectionstate)
+type ConnectionState = constant.ConnectionState
 
 表示和远端设备的连接状态，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -38,11 +36,11 @@ type ConnectionState = [constant.ConnectionState](nearlink-constant.md#connectio
 
 ## createPort
 
-PhonePC/2in1TabletTVWearable
-
 createPort(uuid: string): void
 
 注册端口通道。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -58,40 +56,40 @@ createPort(uuid: string): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700020 | The UUID is already registered |
-| 1009700021 | Port is exceeds the upper limit |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700020 | The UUID is already registered. |
+| 1009700021 | The number of ports exceeds the upper limit. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let uuid: string = 'FFFFFFFF-FC70-11EA-B720-000078951234'; // 星闪服务UUID
-6. dataTransfer.createPort(uuid);
-7. console.info('create port success');
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+try {
+  let uuid: string = 'FFFFFFFF-FC70-11EA-B720-000078951234'; // 星闪服务UUID
+  dataTransfer.createPort(uuid);
+  console.info('create port success');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## destroyPort
 
-PhonePC/2in1TabletTVWearable
-
 destroyPort(uuid: string): void
 
 销毁端口通道。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -107,40 +105,40 @@ destroyPort(uuid: string): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700022 | The UUID is not registered |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700022 | The UUID is not registered. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let uuid: string = 'FFFFFFFF-FC70-11EA-B720-000078951234'; // 星闪服务UUID
-6. dataTransfer.destroyPort(uuid);
-7. console.info('destroy port success');
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+try {
+  let uuid: string = 'FFFFFFFF-FC70-11EA-B720-000078951234'; // 星闪服务UUID
+  dataTransfer.destroyPort(uuid);
+  console.info('destroy port success');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connect
-
-PhonePC/2in1TabletTVWearable
 
 connect(params: ConnectionParams): Promise<void>
 
 连接远端设备，建立端口通道。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
@@ -157,49 +155,51 @@ connect(params: ConnectionParams): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. // 构造端口通道建立的参数
-6. let connectionParams:dataTransfer.ConnectionParams = {
-7. address: '01:02:03:04:05:06', // 星闪远端设备地址
-8. uuid: '37BEA880-FC70-11EA-B720-00000000060D', // 星闪服务UUID
-9. mtu: 1024, // 期望发送数据包的字节大小,可选参数
-10. };
-11. dataTransfer.connect(connectionParams).then(()=>{
-12. console.info('connect success');
-13. });
-14. } catch (err) {
-15. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-16. }
+try {
+  // 构造端口通道建立的参数
+  let connectionParams:dataTransfer.ConnectionParams = {
+    address: '01:02:03:04:05:06', // 星闪远端设备地址
+    uuid: '37BEA880-FC70-11EA-B720-00000000060D', // 星闪服务UUID
+    mtu: 1024 // 期望发送数据包的字节大小，可选参数
+  };
+  dataTransfer.connect(connectionParams).then(()=>{
+    console.info('connect success');
+  }).catch ((err: BusinessError) => {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## disconnect
-
-PhonePC/2in1TabletTVWearable
 
 disconnect(params: ConnectionParams): Promise<void>
 
 断连远端设备，销毁端口通道。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
@@ -216,48 +216,50 @@ disconnect(params: ConnectionParams): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. // 构造端口通道建立的参数
-6. let connectionParams:dataTransfer.ConnectionParams = {
-7. address: '01:02:03:04:05:06', // 星闪远端设备地址
-8. uuid: '37BEA880-FC70-11EA-B720-00000000060D', // 星闪服务UUID
-9. mtu: 1024, // 期望发送数据包的字节大小，可选参数
-10. };
-11. dataTransfer.disconnect(connectionParams).then(()=>{
-12. console.info('disconnect success');
-13. });
-14. } catch (err) {
-15. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-16. }
+try {
+  // 构造端口通道建立的参数
+  let connectionParams:dataTransfer.ConnectionParams = {
+    address: '01:02:03:04:05:06', // 星闪远端设备地址
+    uuid: '37BEA880-FC70-11EA-B720-00000000060D', // 星闪服务UUID
+    mtu: 1024 // 期望发送数据包的字节大小，可选参数
+  };
+  dataTransfer.disconnect(connectionParams).then(()=>{
+    console.info('disconnect success');
+  }).catch ((err: BusinessError) => {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## on('connectionStateChanged')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'connectionStateChanged', callback: Callback<ConnectionResult>): void
 
-订阅端口通道连接状态变更事件。
+订阅端口通道连接状态变更事件。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -269,44 +271,43 @@ on(type: 'connectionStateChanged', callback: Callback<ConnectionResult>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定填写"connectionStateChanged"字符串，表示端口通道连接状态变更事件。 |
-| callback | Callback<[ConnectionResult](nearlink-data-transfer-api.md#connectionresult)> | 是 | 表示端口通道连接状态变化回调函数的入参，回调函数由用户创建通过该接口注册。 |
+| type | string | 是 | 事件回调类型，支持的事件为'connectionStateChanged'，表示连接状态发生变化的事件。  当端口通道连接状态发生变化时，触发该事件。  当调用[datatransfer.connect](nearlink-data-transfer-api.md#connect)或[datatransfer.disconnect](nearlink-data-transfer-api.md#disconnect)时，可能引起连接状态发生变化。 |
+| callback | Callback<[ConnectionResult](nearlink-data-transfer-api.md#connectionresult)> | 是 | 回调函数，返回与远端设备端口连接参数的协商结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { Callback } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
 
-5. let callback: Callback<dataTransfer.ConnectionResult> = (data: dataTransfer.ConnectionResult) => {
-6. console.info('data: ' + JSON.stringify(data));
-7. };
-8. try {
-9. dataTransfer.on('connectionStateChanged', callback);
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let callback: Callback<dataTransfer.ConnectionResult> = (data: dataTransfer.ConnectionResult) => {
+  console.info('data: ' + JSON.stringify(data));
+};
+try {
+  dataTransfer.on('connectionStateChanged', callback);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## off('connectionStateChanged')
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'connectionStateChanged', callback?: Callback<ConnectionResult>): void
 
-取消订阅端口通道连接状态变更事件。
+取消订阅端口通道连接状态变更事件。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -318,40 +319,40 @@ off(type: 'connectionStateChanged', callback?: Callback<ConnectionResult>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定填写"connectionStateChanged"字符串，表示端口通道连接状态变更事件。 |
-| callback | Callback<[ConnectionResult](nearlink-data-transfer-api.md#connectionresult)> | 否 | 可选参数，需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| type | string | 是 | 事件回调类型，支持的事件为'connectionStateChanged'，表示数传连接状态发生变化的事件。 |
+| callback | Callback<[ConnectionResult](nearlink-data-transfer-api.md#connectionresult)> | 否 | 回调函数，返回与远端设备端口连接参数的协商结果。  填写该参数则取消当前callback订阅。不填写该参数则取消该type对应的所有回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. dataTransfer.off('connectionStateChanged');
-6. } catch (err) {
-7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-8. }
+try {
+  dataTransfer.off('connectionStateChanged');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## getConnectionState
 
-PhonePC/2in1TabletTVWearable
-
 getConnectionState(params: ConnectionStateParams): ConnectionState
 
 获取与远端设备之间的端口通道连接状态。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -373,41 +374,41 @@ getConnectionState(params: ConnectionStateParams): ConnectionState
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
+| 201 | Permission denied. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported |
-| 1009700003 | NearLink is off |
-| 1009700099 | Operation failed |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer } from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let connectionStateParams:dataTransfer.ConnectionStateParams = {
-6. address: '01:02:03:04:05:06', // 扫描获取到的远端设备地址
-7. uuid: 'FFFFFFFF-FC70-11EA-B720-000078951234' // 星闪服务UUID示例
-8. };
-9. let state:dataTransfer.ConnectionState = dataTransfer.getConnectionState (connectionStateParams);
-10. console.info('state:' + JSON.stringify(state));
-11. } catch (err) {
-12. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-13. }
+try {
+  let connectionStateParams:dataTransfer.ConnectionStateParams = {
+    address: '01:02:03:04:05:06', // 扫描获取到的远端设备地址
+    uuid: 'FFFFFFFF-FC70-11EA-B720-000078951234' // 星闪服务UUID示例
+  };
+  let state:dataTransfer.ConnectionState = dataTransfer.getConnectionState(connectionStateParams);
+  console.info('state:' + JSON.stringify(state));
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## writeData
 
-PhonePC/2in1TabletTVWearable
-
 writeData(params: DataParams): Promise<void>
 
 通过设备地址和uuid向远端设备发数据。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -425,54 +426,56 @@ writeData(params: DataParams): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700003 | Nearlink is off |
-| 1009700023 | Write data congest |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700003 | NearLink is off. |
+| 1009700023 | The data writing process is congested. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. // 构造发送数据参数
-6. let transferValueBuffer: Uint8Array = new Uint8Array(4);
-7. transferValueBuffer[0] = 1;
-8. transferValueBuffer[1] = 2;
-9. transferValueBuffer[2] = 3;
-10. transferValueBuffer[3] = 4;
-11. let dataParams: dataTransfer.DataParams = {
-12. address: '01:02:03:04:05:06', // 星闪远端设备地址
-13. uuid: '37BEA880-FC70-11EA-B720-00000000060D', // 星闪服务UUID
-14. data: transferValueBuffer.buffer, // 星闪设备间传输的数据
-15. };
-16. dataTransfer.writeData(dataParams).then(() => {
-17. console.info('writeData success');
-18. });
-19. } catch (err) {
-20. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-21. }
+try {
+  // 构造发送数据参数
+  let transferValueBuffer: Uint8Array = new Uint8Array(4);
+  transferValueBuffer[0] = 1;
+  transferValueBuffer[1] = 2;
+  transferValueBuffer[2] = 3;
+  transferValueBuffer[3] = 4;
+  let dataParams: dataTransfer.DataParams = {
+    address: '01:02:03:04:05:06', // 星闪远端设备地址
+    uuid: '37BEA880-FC70-11EA-B720-00000000060D', // 星闪服务UUID
+    data: transferValueBuffer.buffer // 星闪设备间传输的数据
+  };
+  dataTransfer.writeData(dataParams).then(() => {
+    console.info('writeData success');
+  }).catch ((err: BusinessError) => {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## on('readData')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'readData', callback: Callback<DataParams>): void
 
-订阅端口通道数据接收事件。
+订阅端口通道数据接收事件。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -484,44 +487,43 @@ on(type: 'readData', callback: Callback<DataParams>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定填写"readData"字符串，表示端口通道数据接收事件。 |
-| callback | Callback<[DataParams](nearlink-data-transfer-api.md#dataparams)> | 是 | 表示端口通道数据接收回调函数的入参。回调函数由用户创建通过该接口注册。 |
+| type | string | 是 | 事件回调类型，支持的事件为'readData'，表示端口通道数据接收事件。  当收到远端设备的端口数据时，触发该事件。 |
+| callback | Callback<[DataParams](nearlink-data-transfer-api.md#dataparams)> | 是 | 回调函数，返回端口数据发送和接收的参数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { Callback } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError, Callback } from '@kit.BasicServicesKit';
 
-5. let callback: Callback<dataTransfer.DataParams> = (data: dataTransfer.DataParams) => {
-6. console.info('data: ' + JSON.stringify(data));
-7. };
-8. try {
-9. dataTransfer.on('readData', callback);
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+let callback: Callback<dataTransfer.DataParams> = (data: dataTransfer.DataParams) => {
+  console.info('data: ' + JSON.stringify(data));
+};
+try {
+  dataTransfer.on('readData', callback);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## off('readData')
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'readData', callback?: Callback<DataParams>): void
 
-取消订阅端口通道数据接收事件。
+取消订阅端口通道数据接收事件。使用callback异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.ACCESS\_NEARLINK
 
@@ -533,38 +535,38 @@ off(type: 'readData', callback?: Callback<DataParams>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定填写"readData"字符串，表示端口接收数据事件。 |
-| callback | Callback<[DataParams](nearlink-data-transfer-api.md#dataparams)> | 否 | 可选参数，需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
+| type | string | 是 | 事件回调类型，支持的事件为'readData'，表示端口通道数据接收事件。 |
+| callback | Callback<[DataParams](nearlink-data-transfer-api.md#dataparams)> | 否 | 回调函数，返回端口数据发送和接收的参数。  填写该参数则取消当前callback订阅。不填写该参数则取消该type对应的所有回调。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](nearlink-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-nearlink.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied |
-| 401 | Invalid parameter |
-| 801 | Capability not supported |
-| 1009700099 | Operation failed |
+| 201 | Permission denied. |
+| 401 | Invalid parameter. |
+| 801 | Capability not supported. |
+| 1009700099 | Operation failed. |
 
 **示例：**
 
-```
-1. import { dataTransfer} from '@kit.NearLinkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { dataTransfer } from '@kit.NearLinkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. dataTransfer.off('readData');
-6. } catch (err) {
-7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-8. }
+try {
+  dataTransfer.off('readData');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## ConnectionParams
 
-PhonePC/2in1TabletTVWearable
-
 发起端口连接的参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -572,16 +574,16 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考："11:22:33:AA:BB:FF"。 |
+| address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考：11:22:33:AA:BB:FF。 |
 | uuid | string | 否 | 否 | 星闪服务UUID，例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考[星闪标准服务UUID](../harmonyos-guides/nearlink-faq.md#星闪标准服务uuid的格式)。 |
 | mtu | number | 否 | 是 | 期望发送数据的包长，单位为byte。范围[0, 65535]，默认值为512。 |
 | transferMode | [TransferMode](nearlink-data-transfer-api.md#transfermode) | 否 | 是 | 表示和远端设备的数据传输模式。默认值是BASIC。 |
 
 ## DataParams
 
-PhonePC/2in1TabletTVWearable
-
 端口数据发送和接收的参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -589,15 +591,15 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考："11:22:33:AA:BB:FF"。 |
+| address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考：11:22:33:AA:BB:FF。 |
 | uuid | string | 否 | 否 | 星闪服务UUID，例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考[星闪标准服务UUID](../harmonyos-guides/nearlink-faq.md#星闪标准服务uuid的格式)。 |
 | data | ArrayBuffer | 否 | 否 | 发送的数据包。 |
 
 ## ConnectionResult
 
-PhonePC/2in1TabletTVWearable
-
 与远端设备端口连接参数的协商结果
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -605,16 +607,16 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考："11:22:33:AA:BB:FF"。 |
+| address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考：11:22:33:AA:BB:FF。 |
 | uuid | string | 否 | 否 | 星闪服务UUID，例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考[星闪标准服务UUID](../harmonyos-guides/nearlink-faq.md#星闪标准服务uuid的格式)。 |
 | mtu | number | 否 | 否 | 协商后的发送和接收数据的包长，单位为byte，范围[0, 65535]。 |
 | state | [ConnectionState](nearlink-constant.md#connectionstate) | 否 | 否 | 与远端设备的连接状态。 |
 
 ## ConnectionStateParams
 
-PhonePC/2in1TabletTVWearable
-
 获取端口通道连接状态所需参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 
@@ -622,14 +624,14 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考："11:22:33:AA:BB:FF"。 |
+| address | string | 否 | 否 | 远端设备的星闪地址。地址格式参考：11:22:33:AA:BB:FF。 |
 | uuid | string | 否 | 否 | 星闪服务UUID，例如：37bea880-fc70-11ea-b720-000000004386。UUID格式参考[星闪标准服务UUID](../harmonyos-guides/nearlink-faq.md#星闪标准服务uuid的格式)。 |
 
 ## TransferMode
 
-PhonePC/2in1TabletTVWearable
-
 表示和远端设备的数据传输模式，为枚举值。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NearLink.Core
 

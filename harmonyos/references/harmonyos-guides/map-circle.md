@@ -3,16 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-circle
 title: 圆形
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 圆形
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6eab36ad0c72c5076044d84116a0a783a0ae183df1a2ed62016db14e936081ac
+scraped_at: 2026-09-02T14:50:28+08:00
+doc_updated_at: 2026-05-18
+content_hash: sha256:3424a9f0b2ed72f29b464c3f50fc41599c84c523c4b7b5fe0947e05bfbbee86e
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制圆形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/w2Rqx8nyScmTKOTpvq_AXg/zh-cn_image_0000002589245347.jpg "点击放大")
+圆形通常用于表示特定区域的服务覆盖范围、地理围栏或兴趣点的影响区域。通过设置中心点和半径，可以直观地展示某一地点周边一定距离内的范围。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/d33-xdAZQJmZQ7Dn1VtjCw/zh-cn_image_0000002706835060.jpg "点击放大")
 
 ## 接口说明
 
@@ -28,70 +30,70 @@ content_hash: sha256:6eab36ad0c72c5076044d84116a0a783a0ae183df1a2ed62016db14e936
 
 1. 导入相关模块。
 
-   ```
-   1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { MapComponent, mapCommon, map } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 添加圆，在callback方法中创建初始化参数并新建Circle。
 
+   ```typescript
+   @Entry
+   @Component
+   struct MapCircleDemo {
+     private mapOptions?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
+     private mapCircle?: map.MapCircle;
+
+     aboutToAppear(): void {
+       // 地图初始化参数
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 39.918,
+             longitude: 116.397
+           },
+           zoom: 14
+         }
+       };
+
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           this.mapController = mapController;
+           // Circle初始化参数
+           let mapCircleOptions: mapCommon.MapCircleOptions = {
+             center: {
+               latitude: 39.918,
+               longitude: 116.397
+             },
+             radius: 500,
+             clickable: true,
+             fillColor: 0xFFFFC100,
+             strokeColor: 0xFFFF0000,
+             strokeWidth: 10,
+             visible: true,
+             zIndex: 15
+           }
+           // 创建Circle
+           try {
+             this.mapCircle = await this.mapController.addCircle(mapCircleOptions);
+           } catch (e) {
+             console.error(`Failed to create the mapCircle, code is：${e.code}, message is ${e.message}`);
+           }
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       };
+     }
+
+     build() {
+       Stack() {
+         Column() {
+           MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
+         }.width('100%')
+       }.height('100%')
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct MapCircleDemo {
-   4. private mapOptions?: mapCommon.MapOptions;
-   5. private mapController?: map.MapComponentController;
-   6. private callback?: AsyncCallback<map.MapComponentController>;
-   7. private mapCircle?: map.MapCircle;
 
-   9. aboutToAppear(): void {
-   10. // 地图初始化参数
-   11. this.mapOptions = {
-   12. position: {
-   13. target: {
-   14. latitude: 39.918,
-   15. longitude: 116.397
-   16. },
-   17. zoom: 14
-   18. }
-   19. };
-
-   21. this.callback = async (err, mapController) => {
-   22. if (!err) {
-   23. this.mapController = mapController;
-   24. // Circle初始化参数
-   25. let mapCircleOptions: mapCommon.MapCircleOptions = {
-   26. center: {
-   27. latitude: 39.918,
-   28. longitude: 116.397
-   29. },
-   30. radius: 500,
-   31. clickable: true,
-   32. fillColor: 0xFFFFC100,
-   33. strokeColor: 0xFFFF0000,
-   34. strokeWidth: 10,
-   35. visible: true,
-   36. zIndex: 15
-   37. }
-   38. // 创建Circle
-   39. try {
-   40. this.mapCircle = await this.mapController.addCircle(mapCircleOptions);
-   41. } catch (e) {
-   42. console.error(`Failed to create the mapCircle, code is：${e.code}, message is ${e.message}`);
-   43. }
-   44. } else {
-   45. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   46. }
-   47. };
-   48. }
-
-   50. build() {
-   51. Stack() {
-   52. Column() {
-   53. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
-   54. }.width('100%')
-   55. }.height('100%')
-   56. }
-   57. }
-   ```
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/HftGvE7dQrqI5FvXYOv4yg/zh-cn_image_0000002558765540.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/fTT2HislR7iENqChdXDzgA/zh-cn_image_0000002736314167.jpg "点击放大")

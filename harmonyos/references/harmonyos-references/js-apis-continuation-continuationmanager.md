@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.continuation.continuationManager (流转/协同管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.continuation.continuationManager (流转/协同管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:25+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cc07db8e6aac078ae4aa43cf6b27c2854f7a554e9772bb00a5e835d4f4b941c3
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8dc375cc447a30b9211fe06ee0fed7e906ee2372beee23bcd4c591aec13bd4e0
 ---
 
 continuationManager模块提供了流转/协同入口管理服务能力，包括连接/取消流转管理服务，注册/解注册设备连接变化监听，拉起设备选择模块，更新连接状态。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持，从API version 22开始废弃，建议使用[分布式设备管理](js-apis-distributeddevicemanager.md)替代。
 
@@ -18,21 +18,17 @@ continuationManager模块提供了流转/协同入口管理服务能力，包括
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 ```
 
 ## continuationManager.register(deprecated)
-
-PhonePC/2in1TabletTV
 
 register(callback: AsyncCallback<number>): void
 
 注册流转管理服务，并获取对应的注册token，无过滤条件，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[ondevicestatechange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -48,29 +44,27 @@ register(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = -1;
-4. continuationManager.register((err, data) => {
-5. if (err.code != 0) {
-6. console.error('register failed, cause: ' + JSON.stringify(err));
-7. return;
-8. }
-9. console.info('register finished, ' + JSON.stringify(data));
-10. token = data;
-11. });
+let token: number = -1;
+continuationManager.register((err, data) => {
+  if (err.code != 0) {
+    console.error('register failed, cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('register finished, ' + JSON.stringify(data));
+  token = data;
+});
 ```
 
 ## continuationManager.register(deprecated)
-
-PhonePC/2in1TabletTV
 
 register(options: ContinuationExtraParams, callback: AsyncCallback<number>): void
 
 连接流转管理服务，并获取对应的注册token，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -87,33 +81,31 @@ register(options: ContinuationExtraParams, callback: AsyncCallback<number>): voi
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = -1;
-4. continuationManager.register(
-5. {
-6. deviceType: ["00E"]
-7. },
-8. (err, data) => {
-9. if (err.code != 0) {
-10. console.error('register failed, cause: ' + JSON.stringify(err));
-11. return;
-12. }
-13. console.info('register finished, ' + JSON.stringify(data));
-14. token = data;
-15. });
+let token: number = -1;
+continuationManager.register(
+  {
+    deviceType: ["00E"]
+  },
+  (err, data) => {
+    if (err.code != 0) {
+      console.error('register failed, cause: ' + JSON.stringify(err));
+      return;
+    }
+    console.info('register finished, ' + JSON.stringify(data));
+    token = data;
+});
 ```
 
 ## continuationManager.register(deprecated)
-
-PhonePC/2in1TabletTV
 
 register(options?: ContinuationExtraParams): Promise<number>
 
 连接流转管理服务，并获取对应的注册token，使用Promise方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -135,29 +127,27 @@ register(options?: ContinuationExtraParams): Promise<number>
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let token: number = -1;
-5. continuationManager.register(
-6. { deviceType: ["00E"] }).then((data) => {
-7. console.info('register finished, ' + JSON.stringify(data));
-8. token = data;
-9. }).catch((err: BusinessError) => {
-10. console.error('register failed, cause: ' + JSON.stringify(err));
-11. });
+let token: number = -1;
+continuationManager.register(
+  { deviceType: ["00E"] }).then((data) => {
+    console.info('register finished, ' + JSON.stringify(data));
+    token = data;
+  }).catch((err: BusinessError) => {
+    console.error('register failed, cause: ' + JSON.stringify(err));
+});
 ```
 
 ## continuationManager.registerContinuation(deprecated)
-
-PhonePC/2in1TabletTV
 
 registerContinuation(callback: AsyncCallback<number>): void
 
 注册流转管理服务，并获取对应的注册token，无过滤条件，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -188,33 +178,31 @@ registerContinuation(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = -1;
-4. try {
-5. continuationManager.registerContinuation((err, data) => {
-6. if (err.code != 0) {
-7. console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('registerContinuation finished, ' + JSON.stringify(data));
-11. token = data;
-12. });
-13. } catch (err) {
-14. console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
-15. }
+let token: number = -1;
+try {
+  continuationManager.registerContinuation((err, data) => {
+    if (err.code != 0) {
+      console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
+      return;
+    }
+    console.info('registerContinuation finished, ' + JSON.stringify(data));
+    token = data;
+  });
+} catch (err) {
+  console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.registerContinuation(deprecated)
-
-PhonePC/2in1TabletTV
 
 registerContinuation(options: ContinuationExtraParams, callback: AsyncCallback<number>): void
 
 连接流转管理服务，并获取对应的注册token，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -246,37 +234,35 @@ registerContinuation(options: ContinuationExtraParams, callback: AsyncCallback<n
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = -1;
-4. try {
-5. continuationManager.registerContinuation(
-6. {
-7. deviceType: ["00E"]
-8. },
-9. (err, data) => {
-10. if (err.code != 0) {
-11. console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
-12. return;
-13. }
-14. console.info('registerContinuation finished, ' + JSON.stringify(data));
-15. token = data;
-16. });
-17. } catch (err) {
-18. console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
-19. }
+let token: number = -1;
+try {
+  continuationManager.registerContinuation(
+    {
+      deviceType: ["00E"]
+    },
+    (err, data) => {
+      if (err.code != 0) {
+        console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
+        return;
+      }
+      console.info('registerContinuation finished, ' + JSON.stringify(data));
+      token = data;
+  });
+} catch (err) {
+  console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.registerContinuation(deprecated)
-
-PhonePC/2in1TabletTV
 
 registerContinuation(options?: ContinuationExtraParams): Promise<number>
 
 连接流转管理服务，并获取对应的注册token，使用Promise方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -313,35 +299,33 @@ registerContinuation(options?: ContinuationExtraParams): Promise<number>
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let token: number = -1;
-5. try {
-6. continuationManager.registerContinuation(
-7. {
-8. deviceType: ["00E"]
-9. }).then((data) => {
-10. console.info('registerContinuation finished, ' + JSON.stringify(data));
-11. token = data;
-12. }).catch((err: BusinessError) => {
-13. console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
-14. });
-15. } catch (err) {
-16. console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
-17. }
+let token: number = -1;
+try {
+  continuationManager.registerContinuation(
+    {
+      deviceType: ["00E"]
+    }).then((data) => {
+      console.info('registerContinuation finished, ' + JSON.stringify(data));
+      token = data;
+    }).catch((err: BusinessError) => {
+      console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
+  });
+} catch (err) {
+  console.error('registerContinuation failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.on('deviceConnect')(deprecated)
-
-PhonePC/2in1TabletTV
 
 on(type: 'deviceConnect', callback: Callback<ContinuationResult>): void
 
 异步方法，监听设备连接状态，使用Callback形式返回连接的设备信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -358,25 +342,23 @@ on(type: 'deviceConnect', callback: Callback<ContinuationResult>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. continuationManager.on("deviceConnect", (data) => {
-4. console.info('onDeviceConnect deviceId: ' + JSON.stringify(data.id));
-5. console.info('onDeviceConnect deviceType: ' + JSON.stringify(data.type));
-6. console.info('onDeviceConnect deviceName: ' + JSON.stringify(data.name));
-7. });
+continuationManager.on("deviceConnect", (data) => {
+  console.info('onDeviceConnect deviceId: ' + JSON.stringify(data.id));
+  console.info('onDeviceConnect deviceType: ' + JSON.stringify(data.type));
+  console.info('onDeviceConnect deviceName: ' + JSON.stringify(data.name));
+});
 ```
 
 ## continuationManager.on('deviceDisconnect')(deprecated)
-
-PhonePC/2in1TabletTV
 
 on(type: 'deviceDisconnect', callback: Callback<string>): void
 
 异步方法，监听设备断开状态，使用Callback形式返回断开的设备信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -393,23 +375,21 @@ on(type: 'deviceDisconnect', callback: Callback<string>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. continuationManager.on("deviceDisconnect", (data) => {
-4. console.info('onDeviceDisconnect deviceId: ' + JSON.stringify(data));
-5. });
+continuationManager.on("deviceDisconnect", (data) => {
+  console.info('onDeviceDisconnect deviceId: ' + JSON.stringify(data));
+});
 ```
 
 ## continuationManager.off('deviceConnect')(deprecated)
-
-PhonePC/2in1TabletTV
 
 off(type: 'deviceConnect', callback?: Callback<ContinuationResult>): void
 
 异步方法，取消监听设备连接状态，使用Callback形式返回连接的设备信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[offDeviceStateChange](js-apis-distributeddevicemanager.md#offdevicestatechange)替代。
 
@@ -426,25 +406,23 @@ off(type: 'deviceConnect', callback?: Callback<ContinuationResult>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. continuationManager.off("deviceConnect", (data) => {
-4. console.info('onDeviceConnect deviceId: ' + JSON.stringify(data.id));
-5. console.info('onDeviceConnect deviceType: ' + JSON.stringify(data.type));
-6. console.info('onDeviceConnect deviceName: ' + JSON.stringify(data.name));
-7. });
+continuationManager.off("deviceConnect", (data) => {
+  console.info('onDeviceConnect deviceId: ' + JSON.stringify(data.id));
+  console.info('onDeviceConnect deviceType: ' + JSON.stringify(data.type));
+  console.info('onDeviceConnect deviceName: ' + JSON.stringify(data.name));
+});
 ```
 
 ## continuationManager.off('deviceDisconnect')(deprecated)
-
-PhonePC/2in1TabletTV
 
 off(type: 'deviceDisconnect', callback?: Callback<string>): void
 
 异步方法，取消监听设备断开状态，使用Callback形式返回连接的设备信息。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[offDeviceStateChange](js-apis-distributeddevicemanager.md#offdevicestatechange)替代。
 
@@ -461,23 +439,21 @@ off(type: 'deviceDisconnect', callback?: Callback<string>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. continuationManager.off("deviceDisconnect", (data) => {
-4. console.info('onDeviceDisconnect deviceId: ' + JSON.stringify(data));
-5. });
+continuationManager.off("deviceDisconnect", (data) => {
+  console.info('onDeviceDisconnect deviceId: ' + JSON.stringify(data));
+});
 ```
 
 ## continuationManager.on('deviceSelected')(deprecated)
-
-PhonePC/2in1TabletTV
 
 on(type: 'deviceSelected', token: number, callback: Callback<Array<ContinuationResult>>): void
 
 异步方法，监听设备连接状态，使用Callback形式返回连接的设备信息。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -511,33 +487,31 @@ on(type: 'deviceSelected', token: number, callback: Callback<Array<ContinuationR
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. try {
-5. continuationManager.on("deviceSelected", token, (data) => {
-6. console.info('onDeviceSelected len: ' + data.length);
-7. for (let i = 0; i < data.length; i++) {
-8. console.info('onDeviceSelected deviceId: ' + JSON.stringify(data[i].id));
-9. console.info('onDeviceSelected deviceType: ' + JSON.stringify(data[i].type));
-10. console.info('onDeviceSelected deviceName: ' + JSON.stringify(data[i].name));
-11. }
-12. });
-13. } catch (err) {
-14. console.error('on failed, cause: ' + JSON.stringify(err));
-15. }
+let token: number = 1;
+try {
+  continuationManager.on("deviceSelected", token, (data) => {
+    console.info('onDeviceSelected len: ' + data.length);
+    for (let i = 0; i < data.length; i++) {
+      console.info('onDeviceSelected deviceId: ' + JSON.stringify(data[i].id));
+      console.info('onDeviceSelected deviceType: ' + JSON.stringify(data[i].type));
+      console.info('onDeviceSelected deviceName: ' + JSON.stringify(data[i].name));
+    }
+  });
+} catch (err) {
+  console.error('on failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.on('deviceUnselected')(deprecated)
-
-PhonePC/2in1TabletTV
 
 on(type: 'deviceUnselected', token: number, callback: Callback<Array<ContinuationResult>>): void
 
 异步方法，监听设备断开状态，使用Callback形式返回断开的设备信息。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[onDeviceStateChange](js-apis-distributeddevicemanager.md#ondevicestatechange)替代。
 
@@ -571,34 +545,32 @@ on(type: 'deviceUnselected', token: number, callback: Callback<Array<Continuatio
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. try {
-5. continuationManager.on("deviceUnselected", token, (data) => {
-6. console.info('onDeviceUnselected len: ' + data.length);
-7. for (let i = 0; i < data.length; i++) {
-8. console.info('onDeviceUnselected deviceId: ' + JSON.stringify(data[i].id));
-9. console.info('onDeviceUnselected deviceType: ' + JSON.stringify(data[i].type));
-10. console.info('onDeviceUnselected deviceName: ' + JSON.stringify(data[i].name));
-11. }
-12. console.info('onDeviceUnselected finished.');
-13. });
-14. } catch (err) {
-15. console.error('on failed, cause: ' + JSON.stringify(err));
-16. }
+let token: number = 1;
+try {
+  continuationManager.on("deviceUnselected", token, (data) => {
+    console.info('onDeviceUnselected len: ' + data.length);
+    for (let i = 0; i < data.length; i++) {
+      console.info('onDeviceUnselected deviceId: ' + JSON.stringify(data[i].id));
+      console.info('onDeviceUnselected deviceType: ' + JSON.stringify(data[i].type));
+      console.info('onDeviceUnselected deviceName: ' + JSON.stringify(data[i].name));
+    }
+    console.info('onDeviceUnselected finished.');
+  });
+} catch (err) {
+  console.error('on failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.off('deviceSelected')(deprecated)
-
-PhonePC/2in1TabletTV
 
 off(type: 'deviceSelected', token: number): void
 
 取消监听设备连接状态。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[offDeviceStateChange](js-apis-distributeddevicemanager.md#offdevicestatechange)替代。
 
@@ -631,26 +603,24 @@ off(type: 'deviceSelected', token: number): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. try {
-5. continuationManager.off("deviceSelected", token);
-6. } catch (err) {
-7. console.error('off failed, cause: ' + JSON.stringify(err));
-8. }
+let token: number = 1;
+try {
+  continuationManager.off("deviceSelected", token);
+} catch (err) {
+  console.error('off failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.off('deviceUnselected')(deprecated)
-
-PhonePC/2in1TabletTV
 
 off(type: 'deviceUnselected', token: number): void
 
 取消监听设备断开状态。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[offDeviceStateChange](js-apis-distributeddevicemanager.md#offdevicestatechange)替代。
 
@@ -683,26 +653,24 @@ off(type: 'deviceUnselected', token: number): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. try {
-5. continuationManager.off("deviceUnselected", token);
-6. } catch (err) {
-7. console.error('off failed, cause: ' + JSON.stringify(err));
-8. }
+let token: number = 1;
+try {
+  continuationManager.off("deviceUnselected", token);
+} catch (err) {
+  console.error('off failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.startDeviceManager(deprecated)
-
-PhonePC/2in1TabletTV
 
 startDeviceManager(token: number, callback: AsyncCallback<void>): void
 
 拉起设备选择模块，可显示组网内可选择设备列表信息，无过滤条件，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[startDiscovering](js-apis-distributeddevicemanager.md#startdiscovering)替代。
 
@@ -719,28 +687,26 @@ startDeviceManager(token: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. continuationManager.startDeviceManager(token, (err) => {
-5. if (err.code != 0) {
-6. console.error('startDeviceManager failed, cause: ' + JSON.stringify(err));
-7. return;
-8. }
-9. console.info('startDeviceManager finished. ');
-10. });
+let token: number = 1;
+continuationManager.startDeviceManager(token, (err) => {
+  if (err.code != 0) {
+    console.error('startDeviceManager failed, cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('startDeviceManager finished. ');
+});
 ```
 
 ## continuationManager.startDeviceManager(deprecated)
-
-PhonePC/2in1TabletTV
 
 startDeviceManager(token: number, options: ContinuationExtraParams, callback: AsyncCallback<void>): void
 
 拉起设备选择模块，可显示组网内可选择设备列表信息，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[startDiscovering](js-apis-distributeddevicemanager.md#startdiscovering)替代。
 
@@ -758,33 +724,31 @@ startDeviceManager(token: number, options: ContinuationExtraParams, callback: As
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. continuationManager.startDeviceManager(
-5. token,
-6. {
-7. deviceType: ["00E"]
-8. },
-9. (err) => {
-10. if (err.code != 0) {
-11. console.error('startDeviceManager failed, cause: ' + JSON.stringify(err));
-12. return;
-13. }
-14. console.info('startDeviceManager finished. ');
-15. });
+let token: number = 1;
+continuationManager.startDeviceManager(
+  token,
+  {
+    deviceType: ["00E"]
+  },
+  (err) => {
+    if (err.code != 0) {
+      console.error('startDeviceManager failed, cause: ' + JSON.stringify(err));
+      return;
+    }
+    console.info('startDeviceManager finished. ');
+});
 ```
 
 ## continuationManager.startDeviceManager(deprecated)
-
-PhonePC/2in1TabletTV
 
 startDeviceManager(token: number, options?: ContinuationExtraParams): Promise<void>
 
 拉起设备选择模块，可显示组网内可选择设备列表信息，使用Promise方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[startDiscovering](js-apis-distributeddevicemanager.md#startdiscovering)替代。
 
@@ -807,31 +771,29 @@ startDeviceManager(token: number, options?: ContinuationExtraParams): Promise<vo
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let token: number = -1;
-5. continuationManager.startDeviceManager(
-6. token,
-7. {
-8. deviceType: ["00E"]
-9. }).then(() => {
-10. console.info('startDeviceManager finished. ');
-11. }).catch((err: BusinessError) => {
-12. console.error('startDeviceManager failed, cause: ' + JSON.stringify(err));
-13. });
+let token: number = -1;
+continuationManager.startDeviceManager(
+  token,
+  {
+    deviceType: ["00E"]
+  }).then(() => {
+    console.info('startDeviceManager finished. ');
+  }).catch((err: BusinessError) => {
+    console.error('startDeviceManager failed, cause: ' + JSON.stringify(err));
+});
 ```
 
 ## continuationManager.startContinuationDeviceManager(deprecated)
-
-PhonePC/2in1TabletTV
 
 startContinuationDeviceManager(token: number, callback: AsyncCallback<void>): void
 
 拉起设备选择模块，可显示组网内可选择设备列表信息，无过滤条件，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[startDiscovering](js-apis-distributeddevicemanager.md#startdiscovering)替代。
 
@@ -863,32 +825,30 @@ startContinuationDeviceManager(token: number, callback: AsyncCallback<void>): vo
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = -1;
-4. try {
-5. continuationManager.startContinuationDeviceManager(token, (err) => {
-6. if (err.code != 0) {
-7. console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('startContinuationDeviceManager finished. ');
-11. });
-12. } catch (err) {
-13. console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
-14. }
+let token: number = -1;
+try {
+  continuationManager.startContinuationDeviceManager(token, (err) => {
+    if (err.code != 0) {
+      console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
+      return;
+    }
+    console.info('startContinuationDeviceManager finished. ');
+  });
+} catch (err) {
+  console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.startContinuationDeviceManager(deprecated)
-
-PhonePC/2in1TabletTV
 
 startContinuationDeviceManager(token: number, options: ContinuationExtraParams, callback: AsyncCallback<void>): void
 
 拉起设备选择模块，可显示组网内可选择设备列表信息，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[startDiscovering](js-apis-distributeddevicemanager.md#startdiscovering)替代。
 
@@ -921,37 +881,35 @@ startContinuationDeviceManager(token: number, options: ContinuationExtraParams, 
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = -1;
-4. try {
-5. continuationManager.startContinuationDeviceManager(
-6. token,
-7. {
-8. deviceType: ["00E"]
-9. },
-10. (err) => {
-11. if (err.code != 0) {
-12. console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
-13. return;
-14. }
-15. console.info('startContinuationDeviceManager finished. ');
-16. });
-17. } catch (err) {
-18. console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
-19. }
+let token: number = -1;
+try {
+  continuationManager.startContinuationDeviceManager(
+    token,
+    {
+      deviceType: ["00E"]
+    },
+    (err) => {
+      if (err.code != 0) {
+        console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
+        return;
+      }
+      console.info('startContinuationDeviceManager finished. ');
+  });
+} catch (err) {
+  console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.startContinuationDeviceManager(deprecated)
-
-PhonePC/2in1TabletTV
 
 startContinuationDeviceManager(token: number, options?: ContinuationExtraParams): Promise<void>
 
 拉起设备选择模块，可显示组网内可选择设备列表信息，使用Promise方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[startDiscovering](js-apis-distributeddevicemanager.md#startdiscovering)替代。
 
@@ -989,35 +947,33 @@ startContinuationDeviceManager(token: number, options?: ContinuationExtraParams)
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let token: number = -1;
-5. try {
-6. continuationManager.startContinuationDeviceManager(
-7. token,
-8. {
-9. deviceType: ["00E"]
-10. }).then(() => {
-11. console.info('startContinuationDeviceManager finished. ');
-12. }).catch((err: BusinessError) => {
-13. console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
-14. });
-15. } catch (err) {
-16. console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
-17. }
+let token: number = -1;
+try {
+  continuationManager.startContinuationDeviceManager(
+    token,
+    {
+      deviceType: ["00E"]
+    }).then(() => {
+      console.info('startContinuationDeviceManager finished. ');
+    }).catch((err: BusinessError) => {
+      console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
+    });
+} catch (err) {
+  console.error('startContinuationDeviceManager failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.updateConnectStatus(deprecated)
-
-PhonePC/2in1TabletTV
 
 updateConnectStatus(token: number, deviceId: string, status: DeviceConnectState, callback: AsyncCallback<void>): void
 
 通知设备选择模块，更新当前的连接状态，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[getAvailableDeviceListSync](js-apis-distributeddevicemanager.md#getavailabledevicelistsync)替代。
 
@@ -1036,29 +992,27 @@ updateConnectStatus(token: number, deviceId: string, status: DeviceConnectState,
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = -1;
-4. let deviceId: string = "test deviceId";
-5. continuationManager.updateConnectStatus(token, deviceId, continuationManager.DeviceConnectState.CONNECTED, (err) => {
-6. if (err.code != 0) {
-7. console.error('updateConnectStatus failed, cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('updateConnectStatus finished. ');
-11. });
+let token: number = -1;
+let deviceId: string = "test deviceId";
+continuationManager.updateConnectStatus(token, deviceId, continuationManager.DeviceConnectState.CONNECTED, (err) => {
+  if (err.code != 0) {
+    console.error('updateConnectStatus failed, cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('updateConnectStatus finished. ');
+});
 ```
 
 ## continuationManager.updateConnectStatus(deprecated)
-
-PhonePC/2in1TabletTV
 
 updateConnectStatus(token: number, deviceId: string, status: DeviceConnectState): Promise<void>
 
 通知设备选择模块，更新当前的连接状态，使用Promise方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[getAvailableDeviceListSync](js-apis-distributeddevicemanager.md#getavailabledevicelistsync)替代。
 
@@ -1082,30 +1036,28 @@ updateConnectStatus(token: number, deviceId: string, status: DeviceConnectState)
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let token: number = 1;
-5. let deviceId: string = "test deviceId";
-6. continuationManager.updateConnectStatus(token, deviceId, continuationManager.DeviceConnectState.CONNECTED)
-7. .then(() => {
-8. console.info('updateConnectStatus finished. ');
-9. })
-10. .catch((err: BusinessError) => {
-11. console.error('updateConnectStatus failed, cause: ' + JSON.stringify(err));
-12. });
+let token: number = 1;
+let deviceId: string = "test deviceId";
+continuationManager.updateConnectStatus(token, deviceId, continuationManager.DeviceConnectState.CONNECTED)
+  .then(() => {
+    console.info('updateConnectStatus finished. ');
+  })
+  .catch((err: BusinessError) => {
+    console.error('updateConnectStatus failed, cause: ' + JSON.stringify(err));
+});
 ```
 
 ## continuationManager.updateContinuationState(deprecated)
-
-PhonePC/2in1TabletTV
 
 updateContinuationState(token: number, deviceId: string, status: DeviceConnectState, callback: AsyncCallback<void>): void
 
 通知设备选择模块，更新当前的连接状态，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[getAvailableDeviceListSync](js-apis-distributeddevicemanager.md#getavailabledevicelistsync)替代。
 
@@ -1139,33 +1091,31 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. let deviceId: string = "test deviceId";
-5. try {
-6. continuationManager.updateContinuationState(token, deviceId, continuationManager.DeviceConnectState.CONNECTED, (err) => {
-7. if (err.code != 0) {
-8. console.error('updateContinuationState failed, cause: ' + JSON.stringify(err));
-9. return;
-10. }
-11. console.info('updateContinuationState finished. ');
-12. });
-13. } catch (err) {
-14. console.error('updateContinuationState failed, cause: ' + JSON.stringify(err));
-15. }
+let token: number = 1;
+let deviceId: string = "test deviceId";
+try {
+  continuationManager.updateContinuationState(token, deviceId, continuationManager.DeviceConnectState.CONNECTED, (err) => {
+    if (err.code != 0) {
+      console.error('updateContinuationState failed, cause: ' + JSON.stringify(err));
+      return;
+    }
+    console.info('updateContinuationState finished. ');
+  });
+} catch (err) {
+  console.error('updateContinuationState failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.updateContinuationState(deprecated)
-
-PhonePC/2in1TabletTV
 
 updateContinuationState(token: number, deviceId: string, status: DeviceConnectState): Promise<void>
 
 通知设备选择模块，更新当前的连接状态，使用Promise方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[getAvailableDeviceListSync](js-apis-distributeddevicemanager.md#getavailabledevicelistsync)替代。
 
@@ -1204,34 +1154,32 @@ updateContinuationState(token: number, deviceId: string, status: DeviceConnectSt
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let token: number = 1;
-5. let deviceId: string = "test deviceId";
-6. try {
-7. continuationManager.updateContinuationState(token, deviceId, continuationManager.DeviceConnectState.CONNECTED)
-8. .then(() => {
-9. console.info('updateContinuationState finished. ');
-10. })
-11. .catch((err: BusinessError) => {
-12. console.error('updateContinuationState failed, cause: ' + JSON.stringify(err));
-13. });
-14. } catch (err) {
-15. console.error('updateContinuationState failed, cause: ' + JSON.stringify(err));
-16. }
+let token: number = 1;
+let deviceId: string = "test deviceId";
+try {
+  continuationManager.updateContinuationState(token, deviceId, continuationManager.DeviceConnectState.CONNECTED)
+    .then(() => {
+      console.info('updateContinuationState finished. ');
+    })
+    .catch((err: BusinessError) => {
+      console.error('updateContinuationState failed, cause: ' + JSON.stringify(err));
+    });
+} catch (err) {
+  console.error('updateContinuationState failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.unregister(deprecated)
-
-PhonePC/2in1TabletTV
 
 unregister(token: number, callback: AsyncCallback<void>): void
 
 解注册流转管理服务，传入注册时获取的token进行解注册，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[offDeviceStateChange](js-apis-distributeddevicemanager.md#offdevicestatechange)替代。
 
@@ -1248,28 +1196,26 @@ unregister(token: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. continuationManager.unregister(token, (err) => {
-5. if (err.code != 0) {
-6. console.error('unregister failed, cause: ' + JSON.stringify(err));
-7. return;
-8. }
-9. console.info('unregister finished. ');
-10. });
+let token: number = 1;
+continuationManager.unregister(token, (err) => {
+  if (err.code != 0) {
+    console.error('unregister failed, cause: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('unregister finished. ');
+});
 ```
 
 ## continuationManager.unregister(deprecated)
-
-PhonePC/2in1TabletTV
 
 unregister(token: number): Promise<void>
 
 解注册流转管理服务，传入注册时获取的token进行解注册，使用Promise方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始废弃，建议使用[offDeviceStateChange](js-apis-distributeddevicemanager.md#offdevicestatechange)替代。
 
@@ -1291,28 +1237,26 @@ unregister(token: number): Promise<void>
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let token: number = 1;
-5. continuationManager.unregister(token)
-6. .then(() => {
-7. console.info('unregister finished. ');
-8. }).catch((err: BusinessError) => {
-9. console.error('unregister failed, cause: ' + JSON.stringify(err));
-10. });
+let token: number = 1;
+continuationManager.unregister(token)
+  .then(() => {
+    console.info('unregister finished. ');
+  }).catch((err: BusinessError) => {
+    console.error('unregister failed, cause: ' + JSON.stringify(err));
+});
 ```
 
 ## continuationManager.unregisterContinuation(deprecated)
-
-PhonePC/2in1TabletTV
 
 unregisterContinuation(token: number, callback: AsyncCallback<void>): void
 
 解注册流转管理服务，传入注册时获取的token进行解注册，使用AsyncCallback方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[offDeviceStateChange](js-apis-distributeddevicemanager.md#offdevicestatechange)替代。
 
@@ -1344,32 +1288,30 @@ unregisterContinuation(token: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
 
-3. let token: number = 1;
-4. try {
-5. continuationManager.unregisterContinuation(token, (err) => {
-6. if (err.code != 0) {
-7. console.error('unregisterContinuation failed, cause: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('unregisterContinuation finished. ');
-11. });
-12. } catch (err) {
-13. console.error('unregisterContinuation failed, cause: ' + JSON.stringify(err));
-14. }
+let token: number = 1;
+try {
+  continuationManager.unregisterContinuation(token, (err) => {
+    if (err.code != 0) {
+      console.error('unregisterContinuation failed, cause: ' + JSON.stringify(err));
+      return;
+    }
+    console.info('unregisterContinuation finished. ');
+  });
+} catch (err) {
+  console.error('unregisterContinuation failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## continuationManager.unregisterContinuation(deprecated)
-
-PhonePC/2in1TabletTV
 
 unregisterContinuation(token: number): Promise<void>
 
 解注册流转管理服务，传入注册时获取的token进行解注册，使用Promise方式作为异步方法。
 
-说明
+**说明** 
 
 从API version 9开始支持，从API version 22开始废弃，建议使用[offDeviceStateChange](js-apis-distributeddevicemanager.md#offdevicestatechange)替代。
 
@@ -1406,29 +1348,27 @@ unregisterContinuation(token: number): Promise<void>
 
 **示例：**
 
-```
-1. import { continuationManager } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { continuationManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let token: number = -1;
-5. try {
-6. continuationManager.unregisterContinuation(token).then(() => {
-7. console.info('unregisterContinuation finished. ');
-8. }).catch((err: BusinessError) => {
-9. console.error('unregisterContinuation failed, cause: ' + JSON.stringify(err));
-10. });
-11. } catch (err) {
-12. console.error('unregisterContinuation failed, cause: ' + JSON.stringify(err));
-13. }
+let token: number = -1;
+try {
+  continuationManager.unregisterContinuation(token).then(() => {
+      console.info('unregisterContinuation finished. ');
+    }).catch((err: BusinessError) => {
+      console.error('unregisterContinuation failed, cause: ' + JSON.stringify(err));
+  });
+} catch (err) {
+  console.error('unregisterContinuation failed, cause: ' + JSON.stringify(err));
+}
 ```
 
 ## DeviceConnectState(deprecated)
 
-PhonePC/2in1TabletTV
-
 设备连接状态。
 
-说明
+**说明** 
 
 从API version 22开始废弃，建议使用[DeviceStateChange](js-apis-distributeddevicemanager.md#devicestatechange)替代。
 
@@ -1447,11 +1387,9 @@ PhonePC/2in1TabletTV
 
 ## ContinuationMode(deprecated)
 
-PhonePC/2in1TabletTV
-
 设备选择模块连接模式。
 
-说明
+**说明** 
 
 从API version 22开始废弃，建议使用[DeviceStateChange](js-apis-distributeddevicemanager.md#devicestatechange)替代。
 
@@ -1468,13 +1406,11 @@ PhonePC/2in1TabletTV
 
 ## ContinuationResult(deprecated)
 
-PhonePC/2in1TabletTV
-
 type ContinuationResult = \_ContinuationResult
 
 流转管理入口返回的设备信息。
 
-说明
+**说明** 
 
 从API version 10开始支持，从API version 22开始废弃，建议使用[DeviceBasicInfo](js-apis-distributeddevicemanager.md#devicebasicinfo)替代。
 
@@ -1490,13 +1426,11 @@ type ContinuationResult = \_ContinuationResult
 
 ## ContinuationExtraParams(deprecated)
 
-PhonePC/2in1TabletTV
-
 type ContinuationExtraParams = \_ContinuationExtraParams
 
 流转管理入口中设备选择模块所需的过滤参数。
 
-说明
+**说明** 
 
 从API version 10开始支持，从API version 22开始废弃，建议使用[DeviceBasicInfo](js-apis-distributeddevicemanager.md#devicebasicinfo)替代。
 

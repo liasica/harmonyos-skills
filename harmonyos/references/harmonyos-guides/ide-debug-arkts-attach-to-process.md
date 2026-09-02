@@ -3,30 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: 等待调试
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 等待调试
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:46:41+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:003d47be5055cf471d5e296fcb89548730acb9d85037a1a3417a5cf4111f8feb
+scraped_at: 2026-09-02T15:00:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2fbd7948805a7abb52f1ed84c92e215a060c31cd867d8fc58ea37e95eeba8c37
 ---
 
-开发者可以通过将某个应用设置为“等待调试模式”，然后当开发者需要对应用进行调试时，拉起应用即可快速进入调试。
+开发者可以通过将某个应用设置为“等待调试模式”，需要调试时拉起应用，即可快速进入调试状态。
 
-说明
+**说明** 
 
-* 应用设置为“等待调试模式”后，此时如果启动普通的debug调试，将会取消当前的等待调试模式。
+* 应用设置为“等待调试模式”后，此时如果启动debug调试，将会取消当前的等待调试模式。
 * 设置“等待调试模式”前，需要将应用安装到设备上。
 
 ## 操作步骤
 
-1. 在设备选择框中选择调试的设备，并单击Run > Attach to Process by Name。
+1. 在设备选择框中选择调试的设备，并点击**Run > Attach to Process by Name**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/nb1C2Y3jSD-sWD0VxCBvVg/zh-cn_image_0000002561753735.png)
-2. 选择需要设置为“等待调试模式”的应用（默认为当前工程），选择需要进行调试的调试类型。然后单击**Attach**，即可将该应用设置为“等待调试模式”。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/aXl5R8OiSjiIHhZM1jho_A/zh-cn_image_0000002701663814.png)
+2. 选择需要设置为“等待调试模式”的应用（默认为当前工程），选择调试类型，点击**Attach**，即可将该应用设置为“等待调试模式”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/pEZob1UQQ7iCohD7F0s2ug/zh-cn_image_0000002561753733.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/w--17MwkSay5K2ILXYnqAw/zh-cn_image_0000002701823736.png)
 
-   此时会在DevEco Studio底部显示一个等待进度条，在应用被拉起之前，将一直处于等待状态。可通过进度条右侧的取消按钮进行取消。
+   此时DevEco Studio底部会显示一个等待进度条，在应用被拉起之前，一直处于等待状态。可通过进度条右侧的取消按钮进行取消。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/BzjpQbjgRjSBbW24gJQ6iw/zh-cn_image_0000002530913786.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/j-foofnyQwW44DTEhczGUg/zh-cn_image_0000002701663812.png)
 3. 拉起设备端应用，此时将会进入调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/OBCii6SbS52Ff1OgIkAnfg/zh-cn_image_0000002530753796.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/wlPU1CpqTqCAkPoceEJdhQ/zh-cn_image_0000002731543013.png)

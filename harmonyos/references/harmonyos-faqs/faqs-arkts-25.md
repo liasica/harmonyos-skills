@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-25
 title: 应该如何设计大量线程并发方案
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 应该如何设计大量线程并发方案
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:20+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:2a8daa0bbb44a290f00745d459fefd491b1377e2ee2e29df0e4b1a0326a60ec0
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: 结构体
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4a788385ddb1a74f935c8680090d14083d1e1dcfe06c433a36cdd97b90de021c
+scraped_at: 2026-09-02T14:53:12+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:425cca860b1b7e6c587d39614b0dd72923f90fbcbbdde5def228f5ccc91d43cb
 ---
 
 * **[XEG\_AdaptiveVRSCreateInfo](xengine-kit-xeg-adaptivevrscreateinfo.md)**
@@ -30,3 +30,5 @@ content_hash: sha256:4a788385ddb1a74f935c8680090d14083d1e1dcfe06c433a36cdd97b90d
 * **[XEG\_SpatialUpscaleDescription](xengine-kit-xeg-spatialupscaledescription.md)**
 * **[XEG\_TemporalUpscaleCreateInfo](xengine-kit-xeg-temporalupscalecreateinfo.md)**
 * **[XEG\_TemporalUpscaleDescription](xengine-kit-xeg-temporalupscaledescription.md)**
+* **[XEG\_NeuralUpscaleCreateInfo](xengine-kit-xeg-neuralupscalecreateinfo.md)**
+* **[XEG\_NeuralUpscaleDescription](xengine-kit-xeg-neuralupscaledescription.md)**

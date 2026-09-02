@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Uint32Array)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Uint32Array)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:eaded934cb8bed13b039f5f3b2d84847cf6150bec8a68381c5048410a83e1aea
+scraped_at: 2026-09-02T15:00:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d8ca7302dbc93071d414c90e45bfc971c4a61e66e89bc4a8cc85f6bf5a11db90
 ---
 
-一种线性数据结构，底层基于[ArkTS ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)实现。
+一种线性数据结构，底层基于[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)实现。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,15 +20,11 @@ content_hash: sha256:eaded934cb8bed13b039f5f3b2d84847cf6150bec8a68381c5048410a83
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { collections } from '@kit.ArkTS';
+```ts
+import { collections } from '@kit.ArkTS';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -36,15 +32,13 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| buffer | ArrayBuffer | 是 | 否 | ArkTS Uint32Array底层使用的buffer。 |
-| byteLength | number | 是 | 否 | ArkTS Uint32Array的所占的字节数。 |
-| byteOffset | number | 是 | 否 | ArkTS Uint32Array距离其ArrayBuffer起始位置的偏移。 |
+| buffer | [ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md) | 是 | 否 | ArkTS Uint32Array底层使用的[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)对象。 |
+| byteLength | number | 是 | 否 | ArkTS Uint32Array所占的字节数。 |
+| byteOffset | number | 是 | 否 | ArkTS Uint32Array距离其ArrayBuffer起始位置的字节偏移。 |
 | length | number | 是 | 否 | ArkTS Uint32Array元素个数。 |
-| BYTES\_PER\_ELEMENT | number | 是 | 否 | ArkTS Uint32Array中每个元素所占用的字节数。 |
+| BYTES\_PER\_ELEMENT | number | 是 | 否 | ArkTS Uint32Array中每个元素所占的字节数。 |
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -64,13 +58,11 @@ constructor()
 
 **示例：**
 
-```
-1. let uint32Array: collections.Uint32Array = new collections.Uint32Array();
+```ts
+let uint32Array: collections.Uint32Array = new collections.Uint32Array();
 ```
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(length: number)
 
@@ -84,27 +76,24 @@ constructor(length: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| length | number | 是 | 用于指定ArkTS Uint32Array的长度。 |
+| length | number | 是 | 用于指定ArkTS Uint32Array的长度，需为非负整数。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Uint32Array's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. // 以长度参数构造对象
-2. let uint32Array: collections.Uint32Array = new collections.Uint32Array(12);
+```ts
+// 以长度参数构造对象
+let uint32Array: collections.Uint32Array = new collections.Uint32Array(12);
 ```
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(elements: Iterable<number>)
 
@@ -122,25 +111,22 @@ constructor(elements: Iterable<number>)
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Uint32Array's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. // 从一个Iterable构造对象
-2. let set: Set<number> = new Set<number>([1, 2, 3]);
-3. let array: collections.Uint32Array = new collections.Uint32Array(set);
-4. // Uint32Array [1, 2, 3]
+```ts
+// 从一个Iterable构造对象
+let set: Set<number> = new Set<number>([1, 2, 3]);
+let array: collections.Uint32Array = new collections.Uint32Array(set);
+// Uint32Array [1, 2, 3]
 ```
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(array: ArrayLike<number> | ArrayBuffer)
 
@@ -154,47 +140,44 @@ constructor(array: ArrayLike<number> | ArrayBuffer)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| array | ArrayLike<number> | ArrayBuffer | 是 | 用于构造ArkTS Uint32Array的对象。当参数类型是ArrayBuffer时buffer所占的字节数须是4的整数倍。 |
+| array | ArrayLike<number> | ArrayBuffer | 是 | 用于构造ArkTS Uint32Array的对象。当参数类型是ArrayBuffer时buffer所占的字节数需是4的整数倍。当参数类型是ArrayLike时，将复制其中的元素并创建新的底层[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Uint32Array's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. // 例1 从一个ArrayLike构造对象
-2. let arrayLike = [1, 3, 5];
-3. let array: collections.Uint32Array = new collections.Uint32Array(arrayLike);
-```
-
-```
-1. // 例2 从一个ArrayBuffer构造对象
-2. let arrayBuffer: collections.ArrayBuffer = new collections.ArrayBuffer(12);
-3. let array: collections.Uint32Array = new collections.Uint32Array(arrayBuffer);
+```ts
+// 例1 从一个ArrayLike构造对象
+let arrayLike = [1, 3, 5];
+let array: collections.Uint32Array = new collections.Uint32Array(arrayLike);
 ```
 
+```ts
+// 例2 从一个ArrayBuffer构造对象
+let arrayBuffer: collections.ArrayBuffer = new collections.ArrayBuffer(12);
+let array: collections.Uint32Array = new collections.Uint32Array(arrayBuffer);
 ```
-1. // 例3 从另一ArkTS Uint32Array构造对象
-2. let arrayLike = [1, 3, 5];
-3. // uint32Array1 [1, 3, 5]
-4. let uint32Array1: collections.Uint32Array = new collections.Uint32Array(arrayLike);
-5. // uint32Array2 [1, 3, 5]
-6. let uint32Array2: collections.Uint32Array = new collections.Uint32Array(uint32Array1);
+
+```ts
+// 例3 从另一ArkTS Uint32Array构造对象
+let arrayLike = [1, 3, 5];
+// uint32Array1 [1, 3, 5]
+let uint32Array1: collections.Uint32Array = new collections.Uint32Array(arrayLike);
+// uint32Array2 [1, 3, 5]
+let uint32Array2: collections.Uint32Array = new collections.Uint32Array(uint32Array1);
 ```
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 
-构造函数，以ArrayBuffer创建一个ArkTS Uint32Array对象。
+构造函数，以ArrayBuffer创建一个ArkTS Uint32Array对象。Uint32Array与传入的ArrayBuffer共享同一份底层数据。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -204,36 +187,33 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buffer | ArrayBuffer | 是 | 用于构造ArkTS Uint32Array的ArrayBuffer对象。buffer所占的字节数须是4的整数倍。 |
-| byteOffset | number | 否 | 指定buffer的字节偏移，从0开始，默认为0。 |
-| length | number | 否 | 指定ArkTS Uint32Array的长度，默认为0。 |
+| buffer | [ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md) | 是 | 用于构造ArkTS Uint32Array的[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)对象。buffer所占的字节数需是4的整数倍。 |
+| byteOffset | number | 否 | 指定buffer的字节偏移，需为非负整数且为4的整数倍。默认值为0。 |
+| length | number | 否 | 指定ArkTS Uint32Array的长度，需为非负整数。默认值为0。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Uint32Array's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. let uint32Array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5, 6]);
-2. console.info("byteLength: " + uint32Array.buffer.byteLength); // byteLength: 24
-3. // 从uint32Array对应buffer第4个字节开始，长度为5
-4. let uint32Array1: collections.Uint32Array = new collections.Uint32Array(uint32Array.buffer, 4, 5);
-5. console.info("[" + uint32Array1 + "]"); // [2, 3, 4, 5, 6]
+```ts
+let uint32Array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5, 6]);
+console.info(`byteLength: ${uint32Array.buffer.byteLength}`); // byteLength: 24
+// 从uint32Array对应buffer第5个字节开始，长度为5
+let uint32Array1: collections.Uint32Array = new collections.Uint32Array(uint32Array.buffer, 4, 5);
+console.info(`[${uint32Array1}]`); // [2, 3, 4, 5, 6]
 ```
 
 ## from
 
-PhonePC/2in1TabletTVWearable
-
 static from(arrayLike: ArrayLike<number>): Uint32Array
 
-从一个ArrayLike或者可迭代对象中创建一个ArkTS Uint32Array对象。
+从一个ArrayLike中创建一个ArkTS Uint32Array对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -251,28 +231,18 @@ static from(arrayLike: ArrayLike<number>): Uint32Array
 | --- | --- |
 | Uint32Array | 新创建的ArkTS Uint32Array对象。 |
 
-**错误码：**
-
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. |
-
 **示例：**
 
-```
-1. let arrayLike = [1, 3, 5];
-2. let array: collections.Uint32Array = collections.Uint32Array.from(arrayLike); // array [1, 3, 5]
+```ts
+let arrayLike = [1, 3, 5];
+let array: collections.Uint32Array = collections.Uint32Array.from(arrayLike); // array [1, 3, 5]
 ```
 
 ## from
 
-PhonePC/2in1TabletTVWearable
-
 static from<T>(arrayLike: ArrayLike<T>, mapFn: TypedArrayFromMapFn<T, number>): Uint32Array
 
-从一个ArrayLike中创建一个ArkTS Uint32Array对象。
+从一个ArrayLike中创建一个ArkTS Uint32Array对象，通过映射函数对每个元素进行转换。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -282,7 +252,7 @@ static from<T>(arrayLike: ArrayLike<T>, mapFn: TypedArrayFromMapFn<T, number>): 
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| arrayLike | ArrayLike<T> | 是 | 用于构造ArrayLike对象。 |
+| arrayLike | ArrayLike<T> | 是 | 用于构造ArkTS Uint32Array的ArrayLike对象。 |
 | mapFn | [TypedArrayFromMapFn](arkts-apis-arkts-collections-types.md#typedarrayfrommapfn)<T, number> | 是 | 映射函数。 |
 
 **返回值：**
@@ -291,40 +261,30 @@ static from<T>(arrayLike: ArrayLike<T>, mapFn: TypedArrayFromMapFn<T, number>): 
 | --- | --- |
 | Uint32Array | 新创建的ArkTS Uint32Array对象。 |
 
-**错误码：**
-
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. |
-
 **示例：**
 
-```
-1. // 例1 从一个对象创建
-2. let array: collections.Uint32Array = collections.Uint32Array.from<number>(
-3. { length: 5 }, (v: Object, k: number) => k);
-4. // Uint32Array [0, 1, 2, 3, 4]
-```
-
-```
-1. // 例2 从一个字符数组创建
-2. let array: collections.Uint32Array = collections.Uint32Array.from<string>(
-3. ["1", "3", "5"], (v: string, k: number) => parseInt(v));
-4. // Uint32Array [1, 3, 5]
+```ts
+// 例1 从一个对象创建
+let array: collections.Uint32Array = collections.Uint32Array.from<number>(
+  { length: 5 }, (v: number, k: number) => k);
+// Uint32Array [0, 1, 2, 3, 4]
 ```
 
+```ts
+// 例2 从一个字符数组创建
+let array: collections.Uint32Array = collections.Uint32Array.from<string>(
+  ["1", "3", "5"], (value: string, k: number) => parseInt(value));
+// Uint32Array [1, 3, 5]
 ```
-1. // 例3 从一个字符串创建
-2. let array: collections.Uint32Array = collections.Uint32Array.from<string>(
-3. "12345", (v: string, k: number) => parseInt(v));
-4. // Uint32Array [1, 2, 3, 4, 5]
+
+```ts
+// 例3 从一个字符串创建
+let array: collections.Uint32Array = collections.Uint32Array.from<string>(
+  "12345", (value: string, k: number) => parseInt(value));
+// Uint32Array [1, 2, 3, 4, 5]
 ```
 
 ## from
-
-PhonePC/2in1TabletTVWearable
 
 static from(arrayLike: Iterable<number>, mapFn?: TypedArrayFromMapFn<number, number>): Uint32Array
 
@@ -338,7 +298,7 @@ static from(arrayLike: Iterable<number>, mapFn?: TypedArrayFromMapFn<number, num
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| arrayLike | Iterable<number> | 是 | 用于构造的可迭代对象。 |
+| arrayLike | Iterable<number> | 是 | 用于构造ArkTS Uint32Array的可迭代对象。 |
 | mapFn | [TypedArrayFromMapFn](arkts-apis-arkts-collections-types.md#typedarrayfrommapfn)<number, number> | 否 | 映射函数。如果省略，则不对元素进行加工处理。 |
 
 **返回值：**
@@ -347,38 +307,28 @@ static from(arrayLike: Iterable<number>, mapFn?: TypedArrayFromMapFn<number, num
 | --- | --- |
 | Uint32Array | 新创建的ArkTS Uint32Array对象。 |
 
-**错误码：**
-
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. |
-
 **示例：**
 
-```
-1. // 例1 不指定映射函数
-2. let set: Set<number> = new Set<number>([1, 2, 3]);
-3. let array: collections.Uint32Array = collections.Uint32Array.from(set);
-4. // Uint32Array [1, 2, 3]
+```ts
+// 例1 不指定映射函数
+let set: Set<number> = new Set<number>([1, 2, 3]);
+let array: collections.Uint32Array = collections.Uint32Array.from(set);
+// Uint32Array [1, 2, 3]
 ```
 
-```
-1. // 例2 指定映射函数
-2. let set: Set<number> = new Set<number>([1, 2, 3]);
-3. let array: collections.Uint32Array = collections.Uint32Array.from(
-4. set, (v: number, k: number) => v + k);
-5. // Uint32Array [1, 3, 5]
+```ts
+// 例2 指定映射函数
+let set: Set<number> = new Set<number>([1, 2, 3]);
+let array: collections.Uint32Array = collections.Uint32Array.from(
+  set, (value: number, k: number) => value + k);
+// Uint32Array [1, 3, 5]
 ```
 
 ## of18+
 
-PhonePC/2in1TabletTVWearable
-
 static of(...items: number[]): Uint32Array
 
-通过可变数量的参数创建一个新的ArkTS Uint32Array对象，参数个数可以是0个、1个或者多个。
+通过可变数量的参数创建一个新的ArkTS Uint32Array对象。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -396,28 +346,18 @@ static of(...items: number[]): Uint32Array
 | --- | --- |
 | Uint32Array | 新的ArkTS Uint32Array实例。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. let arr: collections.Uint32Array = collections.Uint32Array.of(1, 2, 3, 4);
-2. console.info(arr.toString()); // 预期输出：1,2,3,4
+```ts
+let uint32Array: collections.Uint32Array = collections.Uint32Array.of(1, 2, 3, 4);
+console.info(uint32Array.toString()); // 预期输出：1,2,3,4
 ```
 
 ## toString18+
 
-PhonePC/2in1TabletTVWearable
-
 toString(): string
 
-ArkTS Uint32Array转换为字符串。
+将ArkTS Uint32Array转换为字符串。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -431,7 +371,7 @@ ArkTS Uint32Array转换为字符串。
 
 **错误码：**
 
-以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -440,15 +380,13 @@ ArkTS Uint32Array转换为字符串。
 
 **示例：**
 
-```
-1. let array = new collections.Uint32Array([1, 2, 3, 4, 5]);
-2. let stringArray = array.toString();
-3. console.info(stringArray); // 预期输出：1,2,3,4,5
+```ts
+let array = new collections.Uint32Array([1, 2, 3, 4, 5]);
+let stringArray = array.toString();
+console.info(stringArray); // 预期输出：1,2,3,4,5
 ```
 
 ## toLocaleString18+
-
-PhonePC/2in1TabletTVWearable
 
 toLocaleString(): string
 
@@ -466,7 +404,7 @@ toLocaleString(): string
 
 **错误码：**
 
-以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -475,20 +413,18 @@ toLocaleString(): string
 
 **示例：**
 
-```
-1. // 当前应用所在系统为法国地区
-2. let array = new collections.Uint32Array([1000, 2000, 3000]);
-3. let stringArray = array.toLocaleString();
-4. console.info(stringArray); // 预期输出：1,000, 2,000, 3,000
+```ts
+// 当前应用所在系统为法国地区
+let array = new collections.Uint32Array([1000, 2000, 3000]);
+let stringArray = array.toLocaleString();
+console.info(stringArray); // 预期输出：1,000, 2,000, 3,000
 ```
 
 ## copyWithin
 
-PhonePC/2in1TabletTVWearable
-
 copyWithin(target: number, start: number, end?: number): Uint32Array
 
-从ArkTS Uint32Array指定范围内的元素依次拷贝到目标位置。
+将ArkTS Uint32Array指定范围内的元素依次拷贝到目标位置。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -498,7 +434,7 @@ copyWithin(target: number, start: number, end?: number): Uint32Array
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| target | number | 是 | 目标起始位置的下标，如果target < 0，则会从target + array.length位置开始。 |
+| target | number | 是 | 目标起始位置的下标，如果target < 0，则会从target + Uint32Array.length位置开始。 |
 | start | number | 是 | 源起始位置下标，如果start < 0，则会从start + Uint32Array.length位置开始。 |
 | end | number | 否 | 源终止位置下标（不包含end位置的元素），如果end < 0，则会从end + Uint32Array.length位置终止。默认为ArkTS Uint32Array的长度。 |
 
@@ -506,33 +442,30 @@ copyWithin(target: number, start: number, end?: number): Uint32Array
 
 | 类型 | 说明 |
 | --- | --- |
-| Uint32Array | 修改后的Uint32Array。 |
+| Uint32Array | 修改后的ArkTS Uint32Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The copyWithin method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5, 6, 7, 8]);
-2. let copied: collections.Uint32Array = array.copyWithin(3, 1, 3);
-3. // Uint32Array [1, 2, 3, 2, 3, 6, 7, 8]
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5, 6, 7, 8]);
+let copied: collections.Uint32Array = array.copyWithin(3, 1, 3);
+// Uint32Array [1, 2, 3, 2, 3, 6, 7, 8]
 ```
 
 ## some
 
-PhonePC/2in1TabletTVWearable
-
 some(predicate: TypedArrayPredicateFn<number, Uint32Array>): boolean
 
-测试ArkTS Uint32Array中的是否存在元素满足指定条件。
+测试ArkTS Uint32Array中是否存在满足指定条件的元素。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -552,25 +485,22 @@ some(predicate: TypedArrayPredicateFn<number, Uint32Array>): boolean
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The some method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let arrayLike = [10, 20, 30, 40, 50];
-2. let uint32Array: collections.Uint32Array = new collections.Uint32Array(arrayLike);
-3. uint32Array.some((element: number) => element < 1); // false
+```ts
+let arrayLike = [10, 20, 30, 40, 50];
+let uint32Array: collections.Uint32Array = new collections.Uint32Array(arrayLike);
+uint32Array.some((element: number) => element < 1); // false
 ```
 
 ## every
-
-PhonePC/2in1TabletTVWearable
 
 every(predicate: TypedArrayPredicateFn<number, Uint32Array>): boolean
 
@@ -594,25 +524,22 @@ every(predicate: TypedArrayPredicateFn<number, Uint32Array>): boolean
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The every method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let arrayLike = [10, 20, 30, 40, 50];
-2. let uint32Array: collections.Uint32Array = new collections.Uint32Array(arrayLike);
-3. uint32Array.every((element: number) => element > 1);  // true
+```ts
+let arrayLike = [10, 20, 30, 40, 50];
+let uint32Array: collections.Uint32Array = new collections.Uint32Array(arrayLike);
+uint32Array.every((element: number) => element > 1);  // true
 ```
 
 ## fill
-
-PhonePC/2in1TabletTVWearable
 
 fill(value: number, start?: number, end?: number): Uint32Array
 
@@ -634,30 +561,27 @@ fill(value: number, start?: number, end?: number): Uint32Array
 
 | 类型 | 说明 |
 | --- | --- |
-| Uint32Array | 填充后的Uint32Array。 |
+| Uint32Array | 填充后的ArkTS Uint32Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The fill method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let arrayLike = [1, 2, 3];
-2. new collections.Uint32Array(arrayLike).fill(4); // Uint32Array [4, 4, 4]
-3. new collections.Uint32Array(arrayLike).fill(4, 1); // Uint32Array [1, 4, 4]
-4. new collections.Uint32Array(arrayLike).fill(4, 1, 2); // Uint32Array [1, 4, 3]
+```ts
+let arrayLike = [1, 2, 3];
+new collections.Uint32Array(arrayLike).fill(4); // Uint32Array [4, 4, 4]
+new collections.Uint32Array(arrayLike).fill(4, 1); // Uint32Array [1, 4, 4]
+new collections.Uint32Array(arrayLike).fill(4, 1, 2); // Uint32Array [1, 4, 3]
 ```
 
 ## filter
-
-PhonePC/2in1TabletTVWearable
 
 filter(predicate: TypedArrayPredicateFn<number, Uint32Array>): Uint32Array
 
@@ -681,25 +605,22 @@ filter(predicate: TypedArrayPredicateFn<number, Uint32Array>): Uint32Array
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The filter method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([0, 1, 2, 3, 4]);
-2. let filtered: collections.Uint32Array = array.filter((element: number) => element % 2 == 0);
-3. // Uint32Array [0, 2, 4]
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([0, 1, 2, 3, 4]);
+let filtered: collections.Uint32Array = array.filter((element: number) => element % 2 == 0);
+// Uint32Array [0, 2, 4]
 ```
 
 ## find
-
-PhonePC/2in1TabletTVWearable
 
 find(predicate: TypedArrayPredicateFn<number, Uint32Array>): number | undefined
 
@@ -723,25 +644,22 @@ find(predicate: TypedArrayPredicateFn<number, Uint32Array>): number | undefined
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The find method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([0, 1, 2, 3, 4]);
-2. array.find((element: number) => element > 2); // 3
-3. array.find((element: number) => element > 4); // undefined
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([0, 1, 2, 3, 4]);
+array.find((element: number) => element > 2); // 3
+array.find((element: number) => element > 4); // undefined
 ```
 
 ## findIndex
-
-PhonePC/2in1TabletTVWearable
 
 findIndex(predicate: TypedArrayPredicateFn<number, Uint32Array>): number
 
@@ -765,24 +683,21 @@ findIndex(predicate: TypedArrayPredicateFn<number, Uint32Array>): number
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The findIndex method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. const array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let foundIndex: number = array.findIndex((element: number) => element % 2 === 0); // 1
+```ts
+const array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let foundIndex: number = array.findIndex((element: number) => element % 2 === 0); // 1
 ```
 
 ## forEach
-
-PhonePC/2in1TabletTVWearable
 
 forEach(callbackFn: TypedArrayForEachCallback<number, Uint32Array>): void
 
@@ -800,26 +715,23 @@ forEach(callbackFn: TypedArrayForEachCallback<number, Uint32Array>): void
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The forEach method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let uint32Array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3]);
-2. uint32Array.forEach((value: number, index: number, array: collections.Uint32Array) => {
-3. console.info(`Element ${value} at index ${index}`);
-4. });
+```ts
+let uint32Array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3]);
+uint32Array.forEach((value: number, index: number, array: collections.Uint32Array) => {
+  console.info(`Element ${value} at index ${index}`);
+});
 ```
 
 ## indexOf
-
-PhonePC/2in1TabletTVWearable
 
 indexOf(searchElement: number, fromIndex?: number): number
 
@@ -834,41 +746,38 @@ indexOf(searchElement: number, fromIndex?: number): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待索引的值。 |
-| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint32Array的长度，则返回-1。如果提供的下标值是负数，则被当做距离数组尾部的偏移，从前到后搜索。 |
+| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint32Array的长度，则返回-1。如果下标为负数，则被视为距离数组尾部的偏移，从前到后搜索。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 数组中元素的第一个索引；没有找到，则返回-1。 |
+| number | ArkTS Uint32Array中给定元素的第一个索引；没有找到，则返回-1。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The indexOf method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([3, 5, 9]);
-2. array.indexOf(3); // 0
-3. array.indexOf(7); // -1
-4. array.indexOf(9, 2); // 2
-5. array.indexOf(9, -2); // 2
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([3, 5, 9]);
+array.indexOf(3); // 0
+array.indexOf(7); // -1
+array.indexOf(9, 2); // 2
+array.indexOf(9, -2); // 2
 ```
 
 ## lastIndexOf18+
 
-PhonePC/2in1TabletTVWearable
-
 lastIndexOf(searchElement: number, fromIndex?: number): number
 
-返回ArkTS Uint32Array实例中最后一次出现searchElement的索引，如果对象不包含，则为-1。
+返回ArkTS Uint32Array实例中最后一次出现searchElement的索引，如果不包含该元素，则返回-1。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -879,13 +788,13 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待索引的值。 |
-| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint32Array的长度，则返回-1。如果提供的下标值是负数，则被当做距离数组尾部的偏移，从后到前搜索。 |
+| fromIndex | number | 否 | 搜索的起始下标，从该位置开始往前查找。默认值为ArkTS Uint32Array长度减1（即从末尾开始）。如果提供的下标值是负数，则被当作距离数组尾部的偏移，从后到前搜索。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 数组中给定元素的最后一个索引；没有找到，则返回-1。 |
+| number | ArkTS Uint32Array中给定元素的最后一个索引；没有找到，则返回-1。 |
 
 **错误码：**
 
@@ -898,17 +807,15 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([3, 5, 9]);
-2. console.info(array.lastIndexOf(3) + ''); // 预期输出：0
-3. console.info(array.lastIndexOf(7) + ''); // 预期输出：-1
-4. console.info(array.lastIndexOf(9, 2) + ''); // 预期输出：2
-5. console.info(array.lastIndexOf(9, -2) + ''); // 预期输出：-1
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([3, 5, 9]);
+console.info(`${array.lastIndexOf(3)}`); // 预期输出：0
+console.info(`${array.lastIndexOf(7)}`); // 预期输出：-1
+console.info(`${array.lastIndexOf(9, 2)}`); // 预期输出：2
+console.info(`${array.lastIndexOf(9, -2)}`); // 预期输出：-1
 ```
 
 ## join
-
-PhonePC/2in1TabletTVWearable
 
 join(separator?: string): string
 
@@ -932,24 +839,21 @@ join(separator?: string): string
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The join method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let joined: string = array.join('-'); // "1-2-3-4-5"
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let joined: string = array.join('-'); // "1-2-3-4-5"
 ```
 
 ## map
-
-PhonePC/2in1TabletTVWearable
 
 map(callbackFn: TypedArrayMapCallback<number, Uint32Array>): Uint32Array
 
@@ -973,28 +877,25 @@ map(callbackFn: TypedArrayMapCallback<number, Uint32Array>): Uint32Array
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The map method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([25, 36, 49]);
-2. const mapped: collections.Uint32Array = array.map(Math.sqrt); // Uint32Array [5, 6 ,7]
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([25, 36, 49]);
+const mapped: collections.Uint32Array = array.map(Math.sqrt); // Uint32Array [5, 6, 7]
 ```
 
 ## reduce
 
-PhonePC/2in1TabletTVWearable
-
 reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint32Array>): number
 
-对ArkTS Uint32Array中的每个元素执行归约函数，并返回最终的归约结果。
+对每个元素执行归约函数，并返回最终的归约结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1014,29 +915,26 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint32Array>): numbe
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The reduce method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let reducedValue: number = array.reduce((accumulator: number, value: number) => accumulator + value);
-3. // reducedValue == 15
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let reducedValue: number = array.reduce((accumulator: number, value: number) => accumulator + value);
+// reducedValue == 15
 ```
 
 ## reduceRight18+
 
-PhonePC/2in1TabletTVWearable
-
 reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint32Array>): number
 
-反向遍历ArkTS Uint32Array，对ArkTS Uint32Array中的每个元素执行归约函数，并返回最终的归约结果。
+反向遍历ArkTS Uint32Array，对每个元素执行归约函数，并返回最终的归约结果。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -1056,29 +954,26 @@ reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint32Array>): 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 10200011 | The reduceRight method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let reducedValue: number = array.reduceRight((accumulator: number, value: number) => accumulator + value);
-3. console.info(reducedValue + ''); // 预期输出： 15
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let reducedValue: number = array.reduceRight((accumulator: number, value: number) => accumulator + value);
+console.info(`${reducedValue}`); // 预期输出： 15
 ```
 
 ## reduce
 
-PhonePC/2in1TabletTVWearable
-
 reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint32Array>, initialValue: number): number
 
-对ArkTS Uint32Array中的每个元素执行归约函数，且接收一个初始值作为归约函数首次调用的参数，并返回最终的归约结果。
+对每个元素执行归约函数，接收初始值作为首次调用参数，并返回最终的归约结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1099,29 +994,26 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint32Array>, initia
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The reduce method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let reducedValue: number = array.reduce((accumulator: number, value: number) => accumulator + value, 1);
-3. // reducedValue == 16
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let reducedValue: number = array.reduce((accumulator: number, value: number) => accumulator + value, 1);
+// reducedValue == 16
 ```
 
 ## reduceRight18+
 
-PhonePC/2in1TabletTVWearable
-
 reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint32Array>, initialValue: U): U
 
-反向遍历ArkTS Uint32Array，对ArkTS Uint32Array中的每个元素执行归约函数，且接收一个初始值作为归约函数首次调用的参数，并返回最终的归约结果。
+反向遍历ArkTS Uint32Array，对每个元素执行归约函数，接收初始值作为首次调用参数，并返回最终的归约结果。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -1142,29 +1034,26 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint32Ar
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 10200011 | The reduceRight method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let reducedValue: number = array.reduceRight((accumulator: number, value: number) => accumulator + value, 1);
-3. console.info(reducedValue + ''); // 预期输出： 16
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let reducedValue: number = array.reduceRight((accumulator: number, value: number) => accumulator + value, 1);
+console.info(`${reducedValue}`); // 预期输出： 16
 ```
 
 ## reduce
 
-PhonePC/2in1TabletTVWearable
-
 reduce<U>(callbackFn: TypedArrayReduceCallback<U, number, Uint32Array>, initialValue: U): U
 
-对ArkTS Uint32Array中的每个元素执行归约函数，且接收一个初始值作为归约函数首次调用的参数，并返回最终的归约结果。
+对每个元素执行归约函数，接收初始值作为首次调用参数，并返回最终的归约结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1185,29 +1074,26 @@ reduce<U>(callbackFn: TypedArrayReduceCallback<U, number, Uint32Array>, initialV
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The reduce method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let reducedValue: string = array.reduce<string>((accumulator: string, value: number) => accumulator + value, "initialValue");
-3. // reducedValue == initialValue12345
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let reducedValue: string = array.reduce<string>((accumulator: string, value: number) => accumulator + value, "initialValue");
+// reducedValue == initialValue12345
 ```
 
 ## reverse
 
-PhonePC/2in1TabletTVWearable
-
 reverse(): Uint32Array
 
-反转ArkTS Uint32Array。
+原地反转ArkTS Uint32Array的元素顺序（修改原数组），并返回修改后的原数组引用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1230,14 +1116,12 @@ reverse(): Uint32Array
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let reversed: collections.Uint32Array = array.reverse(); // Uint32Array [5, 4, 3, 2, 1]
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let reversed: collections.Uint32Array = array.reverse(); // Uint32Array [5, 4, 3, 2, 1]
 ```
 
 ## set
-
-PhonePC/2in1TabletTVWearable
 
 set(array: ArrayLike<number>, offset?: number): void
 
@@ -1252,29 +1136,26 @@ set(array: ArrayLike<number>, offset?: number): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | ArrayLike<number> | 是 | 用于设置的ArrayLike对象。 |
-| offset | number | 否 | 写入的起始位置。默认为0。 |
+| offset | number | 否 | 写入的起始位置，需为非负整数。默认值为0。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The set method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(32);
-2. let array: collections.Uint32Array = new collections.Uint32Array(buffer);
-3. array.set([1, 2, 3], 3); // Uint32Array [0, 0, 0, 1, 2, 3, 0, 0]
+```ts
+let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(32);
+let array: collections.Uint32Array = new collections.Uint32Array(buffer);
+array.set([1, 2, 3], 3); // Uint32Array [0, 0, 0, 1, 2, 3, 0, 0]
 ```
 
 ## slice
-
-PhonePC/2in1TabletTVWearable
 
 slice(start?: number, end?: number): Uint32Array
 
@@ -1288,7 +1169,7 @@ slice(start?: number, end?: number): Uint32Array
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| start | number | 否 | 开始索引，如果start < 0，则会从start + Uint32Array.length位置开始。默认为0。 |
+| start | number | 否 | 开始索引，如果start < 0，则会从start + Uint32Array.length位置开始。默认值为0。 |
 | end | number | 否 | 结束索引（不包括该元素），如果end < 0，则会到end + Uint32Array.length位置结束。默认为ArkTS Uint32Array的长度。 |
 
 **返回值：**
@@ -1299,30 +1180,27 @@ slice(start?: number, end?: number): Uint32Array
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The slice method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. array.slice(); // Uint32Array [1, 2, 3, 4, 5]
-3. array.slice(1, 3); // Uint32Array [2, 3]
-4. array.slice(-2); // Uint32Array [4, 5]
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+array.slice(); // Uint32Array [1, 2, 3, 4, 5]
+array.slice(1, 3); // Uint32Array [2, 3]
+array.slice(-2); // Uint32Array [4, 5]
 ```
 
 ## sort
 
-PhonePC/2in1TabletTVWearable
-
 sort(compareFn?: TypedArrayCompareFn<number>): Uint32Array
 
-对ArkTS Uint32Array进行排序，并返回排序后的ArkTS Uint32Array对象。
+原地对ArkTS Uint32Array进行排序（修改原数组），并返回排序后的原数组引用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1342,30 +1220,27 @@ sort(compareFn?: TypedArrayCompareFn<number>): Uint32Array
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The sort method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 3, 5, 4, 2]);
-2. array.sort(); // Uint32Array [1, 2, 3, 4, 5]
-3. array.sort((a: number, b: number) => a - b); // Uint32Array [1, 2, 3, 4, 5]
-4. array.sort((a: number, b: number) => b - a); // Uint32Array [5, 4, 3, 2, 1]
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 3, 5, 4, 2]);
+array.sort(); // Uint32Array [1, 2, 3, 4, 5]
+array.sort((first: number, second: number) => first - second); // Uint32Array [1, 2, 3, 4, 5]
+array.sort((first: number, second: number) => second - first); // Uint32Array [5, 4, 3, 2, 1]
 ```
 
 ## subarray
 
-PhonePC/2in1TabletTVWearable
-
 subarray(begin?: number, end?: number): Uint32Array
 
-从指定的位置截取数组，返回一个新的、基于相同ArkTS ArrayBuffer的ArkTS Uint32Array对象。
+从指定的位置截取数组，返回一个新的、基于相同ArkTS ArrayBuffer的ArkTS Uint32Array对象。修改返回的subarray或原始ArkTS Uint32Array会互相影响，因为它们共享同一份底层[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)数据。如需创建独立副本，请使用[slice()](arkts-apis-arkts-collections-uint32array.md#slice)方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1382,29 +1257,26 @@ subarray(begin?: number, end?: number): Uint32Array
 
 | 类型 | 说明 |
 | --- | --- |
-| Uint32Array | 新的ArkTS Uint32Array对象。 |
+| Uint32Array | 与原Uint32Array共享底层ArrayBuffer的ArkTS Uint32Array对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The subarray method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let subArray: collections.Uint32Array = array.subarray(); // Uint32Array [1, 2, 3, 4, 5]
-3. subArray.set([10, 20, 30]); // Uint32Array [10, 20, 30, 4, 5]
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let subArray: collections.Uint32Array = array.subarray(); // Uint32Array [1, 2, 3, 4, 5]
+subArray.set([10, 20, 30]); // Uint32Array [10, 20, 30, 4, 5]
 ```
 
 ## at
-
-PhonePC/2in1TabletTVWearable
 
 at(index: number): number | undefined
 
@@ -1418,7 +1290,7 @@ at(index: number): number | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 要返回的Array元素的索引（从零开始），取值为整数。如果index < 0，则会访问index + Uint32Array.length位置的元素。 |
+| index | number | 是 | 要返回的元素的索引（从0开始），取值为整数。如果index < 0，则会访问index + Uint32Array.length位置的元素。 |
 
 **返回值：**
 
@@ -1428,26 +1300,23 @@ at(index: number): number | undefined
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The at method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. console.info("element: " + array.at(2));  // element: 3
-3. console.info("element: " + array.at(-1)); // element: 5
-4. console.info("element: " + array.at(6));  // element: undefined
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+console.info(`element: ${array.at(2)}`);  // element: 3
+console.info(`element: ${array.at(-1)}`); // element: 5
+console.info(`element: ${array.at(6)}`);  // element: undefined
 ```
 
 ## includes
-
-PhonePC/2in1TabletTVWearable
 
 includes(searchElement: number, fromIndex?: number): boolean
 
@@ -1472,26 +1341,23 @@ includes(searchElement: number, fromIndex?: number): boolean
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The includes method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3]);
-2. console.info("includes: " + array.includes(2));    // includes: true
-3. console.info("includes: " + array.includes(4));    // includes: false
-4. console.info("includes: " + array.includes(3, 3)); // includes: false
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3]);
+console.info(`includes: ${array.includes(2)}`);    // includes: true
+console.info(`includes: ${array.includes(4)}`);    // includes: false
+console.info(`includes: ${array.includes(3, 3)}`); // includes: false
 ```
 
 ## entries
-
-PhonePC/2in1TabletTVWearable
 
 entries(): IterableIterator<[number, number]>
 
@@ -1518,17 +1384,15 @@ entries(): IterableIterator<[number, number]>
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([11, 22, 33]);
-2. let iterator: IterableIterator<[number, number]> = array.entries();
-3. console.info("value: " + iterator.next().value); // value: 0,11
-4. console.info("value: " + iterator.next().value); // value: 1,22
-5. console.info("value: " + iterator.next().value); // value: 2,33
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([11, 22, 33]);
+let iterator: IterableIterator<[number, number]> = array.entries();
+console.info(`value: ${iterator.next().value}`); // value: 0,11
+console.info(`value: ${iterator.next().value}`); // value: 1,22
+console.info(`value: ${iterator.next().value}`); // value: 2,33
 ```
 
 ## keys
-
-PhonePC/2in1TabletTVWearable
 
 keys(): IterableIterator<number>
 
@@ -1555,17 +1419,15 @@ keys(): IterableIterator<number>
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let iterator: IterableIterator<number> = array.keys();
-3. for (const key of iterator) {
-4. console.info("" + key); // 依次输出 0,1,2,3,4
-5. }
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let iterator: IterableIterator<number> = array.keys();
+for (const key of iterator) {
+  console.info(`${key}`); // 依次输出 0,1,2,3,4
+}
 ```
 
 ## values
-
-PhonePC/2in1TabletTVWearable
 
 values(): IterableIterator<number>
 
@@ -1592,23 +1454,21 @@ values(): IterableIterator<number>
 
 **示例：**
 
-```
-1. let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
-2. let iterator: IterableIterator<number> = array.values();
-3. for (const value of iterator) {
-4. console.info("" + value); // 依次输出 1,2,3,4,5
-5. }
+```ts
+let array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5]);
+let iterator: IterableIterator<number> = array.values();
+for (const value of iterator) {
+  console.info(`${value}`); // 依次输出 1,2,3,4,5
+}
 ```
 
 ## [Symbol.iterator]
 
-PhonePC/2in1TabletTVWearable
-
 [Symbol.iterator](): IterableIterator<number>
 
-返回一个迭代器，迭代器的每一项都是一个 JavaScript 对象，并返回该对象。
+返回一个迭代器，迭代器的每一项是ArkTS Uint32Array中对应位置的元素值。
 
-说明
+**说明** 
 
 本接口不支持在.ets文件中使用。
 
@@ -1632,21 +1492,19 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let uint32Array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5, 6]);
+```ts
+let uint32Array: collections.Uint32Array = collections.Uint32Array.from([1, 2, 3, 4, 5, 6]);
 
-3. for (let item of uint32Array) {
-4. console.info(`value : ${item}`);
-5. }
+for (let item of uint32Array) {
+  console.info(`value : ${item}`);
+}
 ```
 
 ## [index: number]
 
-PhonePC/2in1TabletTVWearable
-
 [index: number]: number
 
-返回Uint32Array指定索引位置的元素。
+返回ArkTS Uint32Array指定索引位置的元素。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1656,17 +1514,17 @@ PhonePC/2in1TabletTVWearable
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 所需代码单元的从零开始的索引。 |
+| index | number | 是 | 所需元素的从零开始的索引。取值范围为[0, Uint32Array.length-1]。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回number数据类型。 |
+| number | 返回指定索引位置的元素值。 |
 
 **示例：**
 
-```
-1. let uint32Array = collections.Uint32Array.from([1, 2, 4]);
-2. console.info("Element at index 1: ", uint32Array[1]);
+```ts
+let uint32Array = collections.Uint32Array.from([1, 2, 4]);
+console.info(`Element at index 1: ${uint32Array[1]}`);
 ```

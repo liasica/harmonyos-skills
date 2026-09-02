@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-5101
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > OS平台行为变更说明 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > OS平台行为变更说明 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:22:44+08:00
-doc_updated_at: 2026-02-14
-content_hash: sha256:f8d8a53e603c624c3a97f371ca91fd0989fc6e770ee7af47b80fe23b52013399
+scraped_at: 2026-09-02T14:58:46+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:49c0338bec2cbaa2f41eddb552f1b70910346b41821e720c3973e9649dc046d6
 ---
 
 ## 按钮默认值变更为新增圆角矩形类型
@@ -18,7 +18,7 @@ content_hash: sha256:f8d8a53e603c624c3a97f371ca91fd0989fc6e770ee7af47b80fe23b520
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 
@@ -26,7 +26,7 @@ content_hash: sha256:f8d8a53e603c624c3a97f371ca91fd0989fc6e770ee7af47b80fe23b520
 
 变更后：ButtonOptions中type的默认值为ButtonType.ROUNDED\_RECTANGLE。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/v6pIIMXmS6aMF2W8TiYl_Q/zh-cn_image_0000002295507629.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/JBuJpYvoTfC-GqvJyB5xZA/zh-cn_image_0000002295507629.png "点击放大")
 
 **起始API Level**
 
@@ -40,33 +40,33 @@ Button组件中ButtonOptions对象的type属性默认值。
 
 开发者在使用Button组件时，按钮的默认类型会从Capsule类型变更为ROUNDED\_RECTANGLE类型，两个类型对应的圆角大小存在差异，如果应用期望保持变更之前的圆角大小，需要手动添加type属性并指定为Capsule类型。
 
-```
-1. @Entry
-2. @Component
-3. struct ButtonExample {
-4. build() {
-5. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
-6. Text('Capsule button with rounded corners by default.').fontSize(9).fontColor(0xCCCCCC)
-7. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-8. Button('Capsule')
-9. .type(ButtonType.Capsule)
-10. .backgroundColor(0x317aff)
-11. .height(60)
-12. .controlSize(ControlSize.NORMAL)
-13. .width(180)
-14. }
-15. Text('Rounded rectangle button with rounded corners by default.').fontSize(9).fontColor(0xCCCCCC)
-16. Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
-17. Button('Rounded rectangle')
-18. .type(ButtonType.ROUNDED_RECTANGLE)
-19. .backgroundColor(0x317aff)
-20. .controlSize(ControlSize.NORMAL)
-21. .height(60)
-22. .width(180)
-23. }
-24. }.height(400).padding({ left: 35, right: 35, top: 35 })
-25. }
-26. }
+```ts
+@Entry
+@Component
+struct ButtonExample {
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
+      Text('Capsule button with rounded corners by default.').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Capsule')
+          .type(ButtonType.Capsule)
+          .backgroundColor(0x317aff)
+          .height(60)
+          .controlSize(ControlSize.NORMAL)
+          .width(180)
+      }
+      Text('Rounded rectangle button with rounded corners by default.').fontSize(9).fontColor(0xCCCCCC)
+      Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+        Button('Rounded rectangle')
+          .type(ButtonType.ROUNDED_RECTANGLE)
+          .backgroundColor(0x317aff)
+          .controlSize(ControlSize.NORMAL)
+          .height(60)
+          .width(180)
+      }
+    }.height(400).padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
 
 ## 修复Popup高级组件宽度限制计算错误的问题
@@ -111,7 +111,7 @@ UX规格变更。
 
 此变更不涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.1.0(18)时生效。
 

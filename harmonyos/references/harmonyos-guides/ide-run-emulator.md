@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-emula
 title: 使用模拟器运行应用
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:39+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-02T15:18:09+08:00
+doc_updated_at: 2026-07-28
 content_hash: sha256:e5c05c353cd39f47a1962eae6021e9a130cbec2868e47b1d665e78197397bb0f
 ---
 

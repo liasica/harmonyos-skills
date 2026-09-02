@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Uint8ClampedArray)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Uint8ClampedArray)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1582f522a42f3b4b3fae4da8057dc46d6ffff939e01a59e839f60cede241d8ff
+scraped_at: 2026-09-02T15:00:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4172522cf7fd8bbfe698a64cb3cede77a3d9c7587169bfa921f2ed2c027493a4
 ---
 
-一种线性数据结构，底层基于[ArkTS ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)实现。
+一种线性数据结构，底层基于[ArrayBuffer](arkts-apis-arkts-collections-arraybuffer.md)实现。且对元素数值有钳制，小于0的会被钳制为0，大于255的会被钳制为255，不同于Uint8Array的截断处理。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 此模块仅支持在ArkTS文件（文件后缀为.ets）中导入使用。
 
-**装饰器类型：**@Sendable
+**装饰器类型：**[@Sendable](../harmonyos-guides/arkts-sendable.md#sendable装饰器)
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { collections } from '@kit.ArkTS';
+```ts
+import { collections } from '@kit.ArkTS';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -40,11 +36,9 @@ PhonePC/2in1TabletTVWearable
 | byteLength | number | 是 | 否 | ArkTS Uint8ClampedArray所占的字节数。 |
 | byteOffset | number | 是 | 否 | ArkTS Uint8ClampedArray距离其ArrayBuffer起始位置的偏移。 |
 | length | number | 是 | 否 | ArkTS Uint8ClampedArray元素个数。 |
-| BYTES\_PER\_ELEMENT | number | 是 | 否 | ArkTS Uint8ClampedArray中每个元素所占用的字节数。 |
+| BYTES\_PER\_ELEMENT | number | 是 | 否 | ArkTS Uint8ClampedArray中每个元素所占的字节数。 |
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -56,7 +50,7 @@ constructor()
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -64,17 +58,15 @@ constructor()
 
 **示例：**
 
-```
-1. let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8ClampedArray();
+```ts
+let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8ClampedArray();
 ```
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(length: number)
 
-构造函数，用于创建一个指定长度的ArkTS Uint8ClampedArray对象。
+构造函数，用于创建一个指定长度的ArkTS Uint8ClampedArray对象，所有元素初始值为0。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -84,31 +76,28 @@ constructor(length: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| length | number | 是 | 用于指定ArkTS Uint8ClampedArray的长度。 |
+| length | number | 是 | 用于指定ArkTS Uint8ClampedArray的长度。取值范围为非负整数。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Uint8ClampedArray's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. // 以长度参数构造对象
-2. let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(12);
+```ts
+// 以长度参数构造对象
+let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(12);
 ```
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(elements: Iterable<number>)
 
-构造函数，以Iterable创建一个ArkTS Uint8ClampedArray对象。
+构造函数，以Iterable创建一个ArkTS Uint8ClampedArray对象，且ArkTS Uint8ClampedArray中的各元素都会经过钳位处理。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -122,29 +111,26 @@ constructor(elements: Iterable<number>)
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Uint8ClampedArray's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. // 从一个Iterable构造对象
-2. let set: Set<number> = new Set<number>([1, 2, 3]);
-3. let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(set);
-4. // Uint8ClampedArray [1, 2, 3]
+```ts
+// 从一个Iterable构造对象
+let set: Set<number> = new Set<number>([1, 2, 3]);
+let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(set);
+// Uint8ClampedArray [1, 2, 3]
 ```
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(array: ArrayLike<number> | ArrayBuffer)
 
-构造函数，以ArrayLike或ArkTS ArrayBuffer创建一个ArkTS Uint8ClampedArray对象。
+构造函数，以ArrayLike或ArkTS ArrayBuffer创建一个ArkTS Uint8ClampedArray对象，且ArkTS Uint8ClampedArray中的各元素都会经过钳位处理。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -154,47 +140,44 @@ constructor(array: ArrayLike<number> | ArrayBuffer)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| array | ArrayLike<number> | ArrayBuffer | 是 | 用于构造ArkTS Uint8ClampedArray的对象。当参数类型是ArrayBuffer时buffer所占的字节数须是4的整数倍。 |
+| array | ArrayLike<number> | ArrayBuffer | 是 | 用于构造ArkTS Uint8ClampedArray的对象。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Uint8ClampedArray's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. // 例1 从一个ArrayLike构造对象
-2. let arrayLike = [1, 3, 5];
-3. let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayLike);
-```
-
-```
-1. // 例2 从一个ArrayBuffer构造对象
-2. let arrayBuffer: collections.ArrayBuffer = new collections.ArrayBuffer(12);
-3. let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayBuffer);
+```ts
+// 例1 从一个ArrayLike构造对象
+let arrayLike = [1, 3, 5];
+let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayLike);
 ```
 
+```ts
+// 例2 从一个ArrayBuffer构造对象
+let arrayBuffer: collections.ArrayBuffer = new collections.ArrayBuffer(10);
+let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayBuffer);
 ```
-1. // 例3 从另一ArkTS Uint8ClampedArray构造对象
-2. let arrayLike = [1, 3, 5];
-3. // uint8ClampedArray1 [1, 3, 5]
-4. let uint8ClampedArray1: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayLike);
-5. // uint8ClampedArray2 [1, 3, 5]
-6. let uint8ClampedArray2: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(uint8ClampedArray1);
+
+```ts
+// 例3 从另一ArkTS Uint8ClampedArray构造对象
+let arrayLike = [1, 3, 5];
+// uint8ClampedArray1 [1, 3, 5]
+let uint8ClampedArray1: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayLike);
+// uint8ClampedArray2 [1, 3, 5]
+let uint8ClampedArray2: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(uint8ClampedArray1);
 ```
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 
-构造函数，以ArrayBuffer创建一个ArkTS Uint8ClampedArray对象。
+构造函数，以ArrayBuffer创建一个ArkTS Uint8ClampedArray对象，且ArkTS Uint8ClampedArray和ArrayBuffer共享内存。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -204,36 +187,33 @@ constructor(buffer: ArrayBuffer, byteOffset?: number, length?: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| buffer | ArrayBuffer | 是 | 用于构造ArkTS Uint8ClampedArray的ArrayBuffer对象。buffer所占的字节数须是4的整数倍。 |
-| byteOffset | number | 否 | 指定buffer的字节偏移，从0开始，默认为0。 |
-| length | number | 否 | 指定ArkTS Uint8ClampedArray的长度，默认为0。 |
+| buffer | ArrayBuffer | 是 | 用于构造ArkTS Uint8ClampedArray的ArrayBuffer对象。 |
+| byteOffset | number | 否 | 指定buffer的字节偏移，取值为非负整数且须小于buffer.byteLength，从0开始，默认为0。 |
+| length | number | 否 | 指定ArkTS Uint8ClampedArray的长度，默认为0。byteOffset和length的总和不能超过buffer.byteLength。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Uint8ClampedArray's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. let uint8ClampedArray: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5, 6]);
-2. console.info("byteLength: " + uint8ClampedArray.buffer.byteLength); // byteLength: 6
-3. // 从uint8ClampedArray对应buffer第1个字节开始，长度为5
-4. let uint8ClampedArray1: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(uint8ClampedArray.buffer, 1, 5);
-5. console.info("[" + uint8ClampedArray1 + "]"); // [2, 3, 4, 5, 6]
+```ts
+let uint8ClampedArray: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5, 6]);
+console.info(`byteLength: ${uint8ClampedArray.buffer.byteLength}`); // byteLength: 6
+// 从uint8ClampedArray对应buffer第1个字节开始，长度为5，uint8ClampedArray1和uint8ClampedArray共享内存
+let uint8ClampedArray1: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(uint8ClampedArray.buffer, 1, 5);
+console.info(`[${uint8ClampedArray1}]`); // [2, 3, 4, 5, 6]
 ```
 
 ## from
 
-PhonePC/2in1TabletTVWearable
-
 static from(arrayLike: ArrayLike<number>): Uint8ClampedArray
 
-从一个ArrayLike或者可迭代对象中创建一个ArkTS Uint8ClampedArray对象。
+从一个ArrayLike中创建一个ArkTS Uint8ClampedArray对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -251,24 +231,14 @@ static from(arrayLike: ArrayLike<number>): Uint8ClampedArray
 | --- | --- |
 | Uint8ClampedArray | 新创建的ArkTS Uint8ClampedArray对象。 |
 
-**错误码：**
-
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. |
-
 **示例：**
 
-```
-1. let arrayLike = [1, 3, 5];
-2. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from(arrayLike); // array [1, 3, 5]
+```ts
+let arrayLike = [1, 3, 5];
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from(arrayLike); // array [1, 3, 5]
 ```
 
 ## from
-
-PhonePC/2in1TabletTVWearable
 
 static from<T>(arrayLike: ArrayLike<T>, mapFn: TypedArrayFromMapFn<T, number>): Uint8ClampedArray
 
@@ -282,7 +252,7 @@ static from<T>(arrayLike: ArrayLike<T>, mapFn: TypedArrayFromMapFn<T, number>): 
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| arrayLike | ArrayLike<T> | 是 | 用于构造ArrayLike对象。 |
+| arrayLike | ArrayLike<T> | 是 | 用于构造ArkTS Uint8ClampedArray的ArrayLike对象。 |
 | mapFn | [TypedArrayFromMapFn](arkts-apis-arkts-collections-types.md#typedarrayfrommapfn)<T, number> | 是 | 映射函数。 |
 
 **返回值：**
@@ -291,40 +261,30 @@ static from<T>(arrayLike: ArrayLike<T>, mapFn: TypedArrayFromMapFn<T, number>): 
 | --- | --- |
 | Uint8ClampedArray | 新创建的ArkTS Uint8ClampedArray对象。 |
 
-**错误码：**
-
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. |
-
 **示例：**
 
-```
-1. // 例1 从一个对象创建
-2. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from<number>(
-3. { length: 5 }, (v: Object, k: number) => k);
-4. // Uint8ClampedArray [0, 1, 2, 3, 4]
-```
-
-```
-1. // 例2 从一个字符数组创建
-2. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from<string>(
-3. ["1", "3", "5"], (v: string, k: number) => parseInt(v));
-4. // Uint8ClampedArray [1, 3, 5]
+```ts
+// 例1 从一个对象创建
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from<number>(
+  { length: 5 }, (v: Object, k: number) => k);
+// Uint8ClampedArray [0, 1, 2, 3, 4]
 ```
 
+```ts
+// 例2 从一个字符数组创建
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from<string>(
+  ["1", "3", "5"], (v: string, k: number) => parseInt(v));
+// Uint8ClampedArray [1, 3, 5]
 ```
-1. // 例3 从一个字符串创建
-2. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from<string>(
-3. "12345", (v: string, k: number) => parseInt(v));
-4. // Uint8ClampedArray [1, 2, 3, 4, 5]
+
+```ts
+// 例3 从一个字符串创建
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from<string>(
+  "12345", (v: string, k: number) => parseInt(v));
+// Uint8ClampedArray [1, 2, 3, 4, 5]
 ```
 
 ## from
-
-PhonePC/2in1TabletTVWearable
 
 static from(arrayLike: Iterable<number>, mapFn?: TypedArrayFromMapFn<number, number>): Uint8ClampedArray
 
@@ -338,8 +298,8 @@ static from(arrayLike: Iterable<number>, mapFn?: TypedArrayFromMapFn<number, num
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| arrayLike | Iterable<number> | 是 | 用于构造的可迭代对象。 |
-| mapFn | [TypedArrayFromMapFn](arkts-apis-arkts-collections-types.md#typedarrayfrommapfn)<number, number> | 否 | 映射函数。如果省略，则不对元素进行加工处理。 |
+| arrayLike | Iterable<number> | 是 | 用于构造ArkTS Uint8ClampedArray的可迭代对象。 |
+| mapFn | [TypedArrayFromMapFn](arkts-apis-arkts-collections-types.md#typedarrayfrommapfn)<number, number> | 否 | 映射函数。如果省略，则不对元素进行转换，直接使用原始值。 |
 
 **返回值：**
 
@@ -347,34 +307,24 @@ static from(arrayLike: Iterable<number>, mapFn?: TypedArrayFromMapFn<number, num
 | --- | --- |
 | Uint8ClampedArray | 新创建的ArkTS Uint8ClampedArray对象。 |
 
-**错误码：**
-
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error. |
-
 **示例：**
 
-```
-1. // 例1 不指定映射函数
-2. let set: Set<number> = new Set<number>([1, 2, 3]);
-3. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from(set);
-4. // Uint8ClampedArray [1, 2, 3]
+```ts
+// 例1 不指定映射函数
+let set: Set<number> = new Set<number>([1, 2, 3]);
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from(set);
+// Uint8ClampedArray [1, 2, 3]
 ```
 
-```
-1. // 例2 指定映射函数
-2. let set: Set<number> = new Set<number>([1, 2, 3]);
-3. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from(
-4. set, (v: number, k: number) => v + k);
-5. // Uint8ClampedArray [1, 3, 5]
+```ts
+// 例2 指定映射函数
+let set: Set<number> = new Set<number>([1, 2, 3]);
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from(
+  set, (v: number, k: number) => v + k);
+// Uint8ClampedArray [1, 3, 5]
 ```
 
 ## of18+
-
-PhonePC/2in1TabletTVWearable
 
 static of(...items: number[]): Uint8ClampedArray
 
@@ -396,28 +346,18 @@ static of(...items: number[]): Uint8ClampedArray
 | --- | --- |
 | Uint8ClampedArray | 新的ArkTS Uint8ClampedArray实例。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types;3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. let arr: collections.Uint8ClampedArray = collections.Uint8ClampedArray.of(1, 2, 3, 4);
-2. console.info(arr.toString()); // 预期输出：1,2,3,4
+```ts
+let arr: collections.Uint8ClampedArray = collections.Uint8ClampedArray.of(1, 2, 3, 4);
+console.info(arr.toString()); // 预期输出：1,2,3,4
 ```
 
 ## toString18+
 
-PhonePC/2in1TabletTVWearable
-
 toString(): string
 
-ArkTS Uint8ClampedArray转换为字符串。
+将ArkTS Uint8ClampedArray转换为字符串，各元素值以逗号分隔拼接。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -440,19 +380,17 @@ ArkTS Uint8ClampedArray转换为字符串。
 
 **示例：**
 
-```
-1. let array = new collections.Uint8ClampedArray([1, 2, 3, 4, 5]);
-2. let stringArray = array.toString();
-3. console.info(stringArray); // 预期输出：1,2,3,4,5
+```ts
+let array = new collections.Uint8ClampedArray([1, 2, 3, 4, 5]);
+let stringArray = array.toString();
+console.info(stringArray); // 预期输出：1,2,3,4,5
 ```
 
 ## toLocaleString18+
 
-PhonePC/2in1TabletTVWearable
-
 toLocaleString(): string
 
-根据当前应用的系统地区获取符合当前文化习惯的数字表示形式，让每个元素调用自己的toLocaleString方法把数字转换为字符串，然后使用逗号将每个元素的结果字符串按照顺序拼接成字符串。
+根据当前应用的系统地区，将每个元素转换为本地化字符串，并使用逗号按顺序拼接成结果字符串。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -475,20 +413,18 @@ toLocaleString(): string
 
 **示例：**
 
-```
-1. // 当前应用所在系统为法国地区
-2. let array = new collections.Uint8ClampedArray([100, 110, 120]);
-3. let stringArray = array.toLocaleString();
-4. console.info(stringArray); // 预期输出：100,110,120
+```ts
+// 当前应用所在系统为法国地区
+let array = new collections.Uint8ClampedArray([100, 110, 120]);
+let stringArray = array.toLocaleString();
+console.info(stringArray); // 预期输出：100,110,120
 ```
 
 ## copyWithin
 
-PhonePC/2in1TabletTVWearable
-
 copyWithin(target: number, start: number, end?: number): Uint8ClampedArray
 
-从ArkTS Uint8ClampedArray指定范围内的元素依次拷贝到目标位置。
+从ArkTS Uint8ClampedArray指定范围内的元素依次拷贝到自身buffer内目标位置，覆盖目标范围内原有数据。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -498,7 +434,7 @@ copyWithin(target: number, start: number, end?: number): Uint8ClampedArray
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| target | number | 是 | 目标起始位置的下标，如果target < 0，则会从target + array.length位置开始。 |
+| target | number | 是 | 目标起始位置的下标，如果target < 0，则会从target + Uint8ClampedArray.length位置开始。 |
 | start | number | 是 | 源起始位置下标，如果start < 0，则会从start + Uint8ClampedArray.length位置开始。 |
 | end | number | 否 | 源终止位置下标（不包含end位置的元素），如果end < 0，则会从end + Uint8ClampedArray.length位置终止。默认为ArkTS Uint8ClampedArray的长度。 |
 
@@ -510,29 +446,26 @@ copyWithin(target: number, start: number, end?: number): Uint8ClampedArray
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The copyWithin method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5, 6, 7, 8]);
-2. let copied: collections.Uint8ClampedArray = array.copyWithin(3, 1, 3);
-3. // Uint8ClampedArray [1, 2, 3, 2, 3, 6, 7, 8]
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5, 6, 7, 8]);
+let copied: collections.Uint8ClampedArray = array.copyWithin(3, 1, 3);
+// Uint8ClampedArray [1, 2, 3, 2, 3, 6, 7, 8]
 ```
 
 ## some
 
-PhonePC/2in1TabletTVWearable
-
 some(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 
-测试ArkTS Uint8ClampedArray中的是否存在元素满足指定条件。
+测试ArkTS Uint8ClampedArray中是否存在元素满足指定条件，存在则返回true，否则返回false。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -552,25 +485,22 @@ some(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The some method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let arrayLike = [10, 20, 30, 40, 50];
-2. let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayLike);
-3. uint8ClampedArray.some((element: number) => element < 1); // false
+```ts
+let arrayLike = [10, 20, 30, 40, 50];
+let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayLike);
+uint8ClampedArray.some((element: number) => element < 1); // false
 ```
 
 ## every
-
-PhonePC/2in1TabletTVWearable
 
 every(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 
@@ -594,25 +524,22 @@ every(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): boolean
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The every method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let arrayLike = [10, 20, 30, 40, 50];
-2. let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayLike);
-3. uint8ClampedArray.every((element: number) => element > 10);  // false
+```ts
+let arrayLike = [10, 20, 30, 40, 50];
+let uint8ClampedArray: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(arrayLike);
+uint8ClampedArray.every((element: number) => element > 10);  // false
 ```
 
 ## fill
-
-PhonePC/2in1TabletTVWearable
 
 fill(value: number, start?: number, end?: number): Uint8ClampedArray
 
@@ -626,7 +553,7 @@ fill(value: number, start?: number, end?: number): Uint8ClampedArray
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | 是 | 待填充的值。 |
+| value | number | 是 | 待填充的值，取值范围为0~255，超出范围的值会被钳制到范围内（小于0的自动修正为0。大于255的自动修正为255）。 |
 | start | number | 否 | 开始填充的索引，如果start < 0，则会从start + Uint8ClampedArray.length位置开始。默认值为0。 |
 | end | number | 否 | 结束填充的索引（不包括该元素），如果end < 0，则会到end + Uint8ClampedArray.length位置结束。默认为ArkTS Uint8ClampedArray的长度。 |
 
@@ -638,26 +565,23 @@ fill(value: number, start?: number, end?: number): Uint8ClampedArray
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The fill method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let arrayLike = [1, 2, 3];
-2. new collections.Uint8ClampedArray(arrayLike).fill(4); // Uint8ClampedArray [4, 4, 4]
-3. new collections.Uint8ClampedArray(arrayLike).fill(4, 1); // Uint8ClampedArray [1, 4, 4]
-4. new collections.Uint8ClampedArray(arrayLike).fill(4, 1, 2); // Uint8ClampedArray [1, 4, 3]
+```ts
+let arrayLike = [1, 2, 3];
+new collections.Uint8ClampedArray(arrayLike).fill(4); // Uint8ClampedArray [4, 4, 4]
+new collections.Uint8ClampedArray(arrayLike).fill(4, 1); // Uint8ClampedArray [1, 4, 4]
+new collections.Uint8ClampedArray(arrayLike).fill(4, 1, 2); // Uint8ClampedArray [1, 4, 3]
 ```
 
 ## filter
-
-PhonePC/2in1TabletTVWearable
 
 filter(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): Uint8ClampedArray
 
@@ -681,25 +605,22 @@ filter(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): Uint8Clampe
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The filter method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([0, 1, 2, 3, 4]);
-2. let filtered: collections.Uint8ClampedArray = array.filter((element: number) => element % 2 == 0);
-3. // Uint8ClampedArray [0, 2, 4]
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([0, 1, 2, 3, 4]);
+let filtered: collections.Uint8ClampedArray = array.filter((element: number) => element % 2 == 0);
+// Uint8ClampedArray [0, 2, 4]
 ```
 
 ## find
-
-PhonePC/2in1TabletTVWearable
 
 find(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number | undefined
 
@@ -723,25 +644,22 @@ find(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number | unde
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The find method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([0, 1, 2, 3, 4]);
-2. array.find((element: number) => element > 2); // 3
-3. array.find((element: number) => element > 4); // undefined
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([0, 1, 2, 3, 4]);
+array.find((element: number) => element > 2); // 3
+array.find((element: number) => element > 4); // undefined
 ```
 
 ## findIndex
-
-PhonePC/2in1TabletTVWearable
 
 findIndex(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number
 
@@ -765,24 +683,21 @@ findIndex(predicate: TypedArrayPredicateFn<number, Uint8ClampedArray>): number
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The findIndex method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. const array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let foundIndex: number = array.findIndex((element: number) => element % 2 === 0); // 1
+```ts
+const array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let foundIndex: number = array.findIndex((element: number) => element % 2 === 0); // 1
 ```
 
 ## forEach
-
-PhonePC/2in1TabletTVWearable
 
 forEach(callbackFn: TypedArrayForEachCallback<number, Uint8ClampedArray>): void
 
@@ -800,26 +715,23 @@ forEach(callbackFn: TypedArrayForEachCallback<number, Uint8ClampedArray>): void
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The forEach method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let uint8ClampedArray: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3]);
-2. uint8ClampedArray.forEach((value: number, index: number, array: collections.Uint8ClampedArray) => {
-3. console.info(`Element ${value} at index ${index}`);
-4. });
+```ts
+let uint8ClampedArray: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3]);
+uint8ClampedArray.forEach((value: number, index: number, array: collections.Uint8ClampedArray) => {
+  console.info(`Element ${value} at index ${index}`);
+});
 ```
 
 ## indexOf
-
-PhonePC/2in1TabletTVWearable
 
 indexOf(searchElement: number, fromIndex?: number): number
 
@@ -834,7 +746,7 @@ indexOf(searchElement: number, fromIndex?: number): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待索引的值。 |
-| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint8ClampedArray的长度，则返回-1。如果提供的下标值是负数，则被当做距离数组尾部的偏移，从前到后搜索。 |
+| fromIndex | number | 否 | 从前到后搜索的起始下标。默认值为0。如果提供的下标值是负数，则被当做距离数组尾部的偏移。如果fromIndex的值导致搜索区间和数组范围没有重叠，则返回-1。 |
 
 **返回值：**
 
@@ -844,27 +756,24 @@ indexOf(searchElement: number, fromIndex?: number): number
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The indexOf method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([3, 5, 9]);
-2. array.indexOf(3); // 0
-3. array.indexOf(7); // -1
-4. array.indexOf(9, 2); // 2
-5. array.indexOf(9, -2); // 2
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([3, 5, 9]);
+array.indexOf(3); // 0
+array.indexOf(7); // -1
+array.indexOf(9, 2); // 2
+array.indexOf(9, -2); // 2
 ```
 
 ## lastIndexOf18+
-
-PhonePC/2in1TabletTVWearable
 
 lastIndexOf(searchElement: number, fromIndex?: number): number
 
@@ -879,7 +788,7 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | number | 是 | 待索引的值。 |
-| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Uint8ClampedArray的长度，则返回-1。如果提供的下标值是负数，则被当做距离数组尾部的偏移，从后到前搜索。 |
+| fromIndex | number | 否 | 从后到前搜索的起始下标。默认值为ArkTS Uint8ClampedArray的长度减1。如果提供的下标值是负数，则被当做距离数组尾部的偏移。如果fromIndex的值导致搜索区间和数组范围没有重叠，则返回-1。 |
 
 **返回值：**
 
@@ -889,7 +798,7 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -898,17 +807,15 @@ lastIndexOf(searchElement: number, fromIndex?: number): number
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([3, 5, 9]);
-2. console.info(array.lastIndexOf(3) + ''); // 预期输出：0
-3. console.info(array.lastIndexOf(7) + ''); // 预期输出：-1
-4. console.info(array.lastIndexOf(9, 2) + ''); // 预期输出：2
-5. console.info(array.lastIndexOf(9, -2) + ''); // 预期输出：-1
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([3, 5, 9]);
+console.info(`${array.lastIndexOf(3)}`); // 预期输出：0
+console.info(`${array.lastIndexOf(7)}`); // 预期输出：-1
+console.info(`${array.lastIndexOf(9, 2)}`); // 预期输出：2
+console.info(`${array.lastIndexOf(9, -2)}`); // 预期输出：-1
 ```
 
 ## join
-
-PhonePC/2in1TabletTVWearable
 
 join(separator?: string): string
 
@@ -932,24 +839,21 @@ join(separator?: string): string
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The join method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let joined: string = array.join('-'); // "1-2-3-4-5"
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let joined: string = array.join('-'); // "1-2-3-4-5"
 ```
 
 ## map
-
-PhonePC/2in1TabletTVWearable
 
 map(callbackFn: TypedArrayMapCallback<number, Uint8ClampedArray>): Uint8ClampedArray
 
@@ -973,24 +877,21 @@ map(callbackFn: TypedArrayMapCallback<number, Uint8ClampedArray>): Uint8ClampedA
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The map method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([25, 36, 49]);
-2. const mapped: collections.Uint8ClampedArray = array.map(Math.sqrt); // Uint8ClampedArray [5, 6 ,7]
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([25, 36, 49]);
+const mapped: collections.Uint8ClampedArray = array.map(Math.sqrt); // Uint8ClampedArray [5, 6 ,7]
 ```
 
 ## reduce
-
-PhonePC/2in1TabletTVWearable
 
 reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArray>): number
 
@@ -1014,25 +915,22 @@ reduce(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArray>):
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The reduce method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let reducedValue: number = array.reduce((accumulator: number, value: number) => accumulator + value);
-3. // reducedValue == 15
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let reducedValue: number = array.reduce((accumulator: number, value: number) => accumulator + value);
+// reducedValue == 15
 ```
 
 ## reduceRight18+
-
-PhonePC/2in1TabletTVWearable
 
 reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArray>): number
 
@@ -1056,25 +954,22 @@ reduceRight(callbackFn: TypedArrayReduceCallback<number, number, Uint8ClampedArr
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 10200011 | The reduceRight method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let reducedValue: number = array.reduceRight((accumulator: number, value: number) => accumulator + value);
-3. console.info(reducedValue + ''); // 预期输出： 15
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let reducedValue: number = array.reduceRight((accumulator: number, value: number) => accumulator + value);
+console.info(`${reducedValue}`); // 预期输出： 15
 ```
 
 ## reduce
-
-PhonePC/2in1TabletTVWearable
 
 reduce<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8ClampedArray>, initialValue: U): U
 
@@ -1099,25 +994,22 @@ reduce<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8ClampedA
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The reduce method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let reducedValue: number = array.reduce((accumulator: number, value: number) => accumulator + value, 1);
-3. // reducedValue == 16
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let reducedValue: number = array.reduce((accumulator: number, value: number) => accumulator + value, 1);
+// reducedValue == 16
 ```
 
 ## reduceRight18+
-
-PhonePC/2in1TabletTVWearable
 
 reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8ClampedArray>, initialValue: U): U
 
@@ -1142,29 +1034,26 @@ reduceRight<U = number>(callbackFn: TypedArrayReduceCallback<U, number, Uint8Cla
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 10200011 | The reduceRight method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let reducedValue: number = array.reduceRight((accumulator: number, value: number) => accumulator + value, 1);
-3. console.info(reducedValue + ''); // 预期输出： 16
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let reducedValue: number = array.reduceRight((accumulator: number, value: number) => accumulator + value, 1);
+console.info(`${reducedValue}`); // 预期输出： 16
 ```
 
 ## reverse
 
-PhonePC/2in1TabletTVWearable
-
 reverse(): Uint8ClampedArray
 
-反转ArkTS Uint8ClampedArray。
+反转ArkTS Uint8ClampedArray中元素的顺序，并返回反转后的ArkTS Uint8ClampedArray对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1178,7 +1067,7 @@ reverse(): Uint8ClampedArray
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1187,18 +1076,16 @@ reverse(): Uint8ClampedArray
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let reversed: collections.Uint8ClampedArray = array.reverse(); // Uint8ClampedArray [5, 4, 3, 2, 1]
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let reversed: collections.Uint8ClampedArray = array.reverse(); // Uint8ClampedArray [5, 4, 3, 2, 1]
 ```
 
 ## set
 
-PhonePC/2in1TabletTVWearable
-
 set(array: ArrayLike<number>, offset?: number): void
 
-将传入的ArrayLike元素依次写入到指定的起始位置。
+将传入的ArrayLike元素依次写入到ArkTS Uint8ClampedArray中，从起始位置开始依次替换原有元素。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1209,33 +1096,30 @@ set(array: ArrayLike<number>, offset?: number): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | array | ArrayLike<number> | 是 | 用于设置的ArrayLike对象。 |
-| offset | number | 否 | 写入的起始位置。默认为0。 |
+| offset | number | 否 | 写入的起始位置，取值为非负整数，且offset与array.length之和不能超过ArkTS Uint8ClampedArray的长度。默认为0。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The set method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(8);
-2. let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(buffer);
-3. array.set([1, 2, 3], 3); // Uint8ClampedArray [0, 0, 0, 1, 2, 3, 0, 0]
+```ts
+let buffer: collections.ArrayBuffer = new collections.ArrayBuffer(8);
+let array: collections.Uint8ClampedArray = new collections.Uint8ClampedArray(buffer);
+array.set([1, 2, 3], 3); // Uint8ClampedArray [0, 0, 0, 1, 2, 3, 0, 0]
 ```
 
 ## slice
 
-PhonePC/2in1TabletTVWearable
-
 slice(start?: number, end?: number): Uint8ClampedArray
 
-返回一个新的ArkTS Uint8ClampedArray对象，其包含原ArkTS Uint8ClampedArray指定范围的内容。
+返回一个新的ArkTS Uint8ClampedArray对象，其拷贝了原ArkTS Uint8ClampedArray指定范围的内容。和[subarray](arkts-apis-arkts-collections-uint8clampedarray.md#subarray)不同，本方法生成的是独立副本，不会影响原ArkTS Uint8ClampedArray对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1256,26 +1140,23 @@ slice(start?: number, end?: number): Uint8ClampedArray
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The slice method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. array.slice(); // Uint8ClampedArray [1, 2, 3, 4, 5]
-3. array.slice(1, 3); // Uint8ClampedArray [2, 3]
-4. array.slice(-2); // Uint8ClampedArray [4, 5]
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+array.slice(); // Uint8ClampedArray [1, 2, 3, 4, 5]
+array.slice(1, 3); // Uint8ClampedArray [2, 3]
+array.slice(-2); // Uint8ClampedArray [4, 5]
 ```
 
 ## sort
-
-PhonePC/2in1TabletTVWearable
 
 sort(compareFn?: TypedArrayCompareFn<number>): Uint8ClampedArray
 
@@ -1299,30 +1180,27 @@ sort(compareFn?: TypedArrayCompareFn<number>): Uint8ClampedArray
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The sort method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 3, 5, 4, 2]);
-2. array.sort(); // Uint8ClampedArray [1, 2, 3, 4, 5]
-3. array.sort((a: number, b: number) => a - b); // Uint8ClampedArray [1, 2, 3, 4, 5]
-4. array.sort((a: number, b: number) => b - a); // Uint8ClampedArray [5, 4, 3, 2, 1]
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 3, 5, 4, 2]);
+array.sort(); // Uint8ClampedArray [1, 2, 3, 4, 5]
+array.sort((a: number, b: number) => a - b); // Uint8ClampedArray [1, 2, 3, 4, 5]
+array.sort((a: number, b: number) => b - a); // Uint8ClampedArray [5, 4, 3, 2, 1]
 ```
 
 ## subarray
 
-PhonePC/2in1TabletTVWearable
-
 subarray(begin?: number, end?: number): Uint8ClampedArray
 
-从指定的位置截取数组，返回一个新的、基于相同ArkTS ArrayBuffer的ArkTS Uint8ClampedArray对象。
+从指定的位置截取数组，返回一个新的、基于相同ArkTS ArrayBuffer的ArkTS Uint8ClampedArray对象。和[slice](arkts-apis-arkts-collections-uint8clampedarray.md#slice)不同，本方法生成的不是独立副本，会影响原ArkTS Uint8ClampedArray对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1343,25 +1221,22 @@ subarray(begin?: number, end?: number): Uint8ClampedArray
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The subarray method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let subArray: collections.Uint8ClampedArray = array.subarray(); // Uint8ClampedArray [1, 2, 3, 4, 5]
-3. subArray.set([10, 20, 30]); // Uint8ClampedArray [10, 20, 30, 4, 5]
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let subArray: collections.Uint8ClampedArray = array.subarray(); // Uint8ClampedArray [1, 2, 3, 4, 5]
+subArray.set([10, 20, 30]); // Uint8ClampedArray [10, 20, 30, 4, 5]
 ```
 
 ## at
-
-PhonePC/2in1TabletTVWearable
 
 at(index: number): number | undefined
 
@@ -1375,7 +1250,7 @@ at(index: number): number | undefined
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 要返回的Array元素的索引（从零开始），取值为整数。如果index < 0，则会访问index + Uint8ClampedArray.length位置的元素。 |
+| index | number | 是 | 要返回的ArkTS Uint8ClampedArray元素的索引（从零开始），取值为整数。如果index < 0，则会访问index + Uint8ClampedArray.length位置的元素。 |
 
 **返回值：**
 
@@ -1385,26 +1260,23 @@ at(index: number): number | undefined
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The at method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. console.info("element: " + array.at(2));  // element: 3
-3. console.info("element: " + array.at(-1)); // element: 5
-4. console.info("element: " + array.at(6));  // element: undefined
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+console.info(`element: ${array.at(2)}`);  // element: 3
+console.info(`element: ${array.at(-1)}`); // element: 5
+console.info(`element: ${array.at(6)}`);  // element: undefined
 ```
 
 ## includes
-
-PhonePC/2in1TabletTVWearable
 
 includes(searchElement: number, fromIndex?: number): boolean
 
@@ -1429,30 +1301,27 @@ includes(searchElement: number, fromIndex?: number): boolean
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The includes method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3]);
-2. console.info("includes: " + array.includes(2));    // includes: true
-3. console.info("includes: " + array.includes(4));    // includes: false
-4. console.info("includes: " + array.includes(3, 3)); // includes: false
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3]);
+console.info(`includes: ${array.includes(2)}`);    // includes: true
+console.info(`includes: ${array.includes(4)}`);    // includes: false
+console.info(`includes: ${array.includes(3, 3)}`); // includes: false
 ```
 
 ## entries
 
-PhonePC/2in1TabletTVWearable
-
 entries(): IterableIterator<[number, number]>
 
-返回一个新的迭代器对象，该对象包含ArkTS Uint8ClampedArray中每个元素的键值对。
+返回一个新的迭代器对象，该对象包含ArkTS Uint8ClampedArray中每个元素的键值对。迭代器遍历期间不能使用会改变ArkTS Uint8ClampedArray数组内容的方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1466,7 +1335,7 @@ entries(): IterableIterator<[number, number]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1475,21 +1344,19 @@ entries(): IterableIterator<[number, number]>
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([11, 22, 33]);
-2. let iterator: IterableIterator<[number, number]> = array.entries();
-3. console.info("value: " + iterator.next().value); // value: 0,11
-4. console.info("value: " + iterator.next().value); // value: 1,22
-5. console.info("value: " + iterator.next().value); // value: 2,33
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([11, 22, 33]);
+let iterator: IterableIterator<[number, number]> = array.entries();
+console.info(`value: ${iterator.next().value}`); // value: 0,11
+console.info(`value: ${iterator.next().value}`); // value: 1,22
+console.info(`value: ${iterator.next().value}`); // value: 2,33
 ```
 
 ## keys
 
-PhonePC/2in1TabletTVWearable
-
 keys(): IterableIterator<number>
 
-返回一个新的迭代器对象，该对象包含ArkTS Uint8ClampedArray中每个元素的键（下标）。
+返回一个新的迭代器对象，该对象包含ArkTS Uint8ClampedArray中每个元素的键（下标）。迭代器遍历期间不能使用会改变ArkTS Uint8ClampedArray数组内容的方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1503,7 +1370,7 @@ keys(): IterableIterator<number>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1512,21 +1379,19 @@ keys(): IterableIterator<number>
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let iterator: IterableIterator<number> = array.keys();
-3. for (const key of iterator) {
-4. console.info("" + key); // 依次输出 0,1,2,3,4
-5. }
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let iterator: IterableIterator<number> = array.keys();
+for (const key of iterator) {
+  console.info(`${key}`); // 依次输出 0,1,2,3,4
+}
 ```
 
 ## values
 
-PhonePC/2in1TabletTVWearable
-
 values(): IterableIterator<number>
 
-返回一个新的迭代器对象，该对象包含ArkTS Uint8ClampedArray中每个元素的值。
+返回一个新的迭代器对象，该对象包含ArkTS Uint8ClampedArray中每个元素的值。迭代器遍历期间不能使用会改变ArkTS Uint8ClampedArray数组内容的方法。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1540,7 +1405,7 @@ values(): IterableIterator<number>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1549,23 +1414,21 @@ values(): IterableIterator<number>
 
 **示例：**
 
-```
-1. let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
-2. let iterator: IterableIterator<number> = array.values();
-3. for (const value of iterator) {
-4. console.info("" + value); // 依次输出 1,2,3,4,5
-5. }
+```ts
+let array: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5]);
+let iterator: IterableIterator<number> = array.values();
+for (const value of iterator) {
+  console.info(`${value}`); // 依次输出 1,2,3,4,5
+}
 ```
 
 ## [Symbol.iterator]
 
-PhonePC/2in1TabletTVWearable
-
 [Symbol.iterator](): IterableIterator<number>
 
-返回一个迭代器，迭代器的每一项都是一个 JavaScript 对象，并返回该对象。
+返回一个迭代器对象，用于遍历ArkTS Uint8ClampedArray中的每个元素值。迭代器遍历期间不能使用会改变ArkTS Uint8ClampedArray数组内容的方法。
 
-说明
+**说明** 
 
 本接口不支持在.ets文件中使用。
 
@@ -1577,11 +1440,11 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| IterableIterator<number> | 返回一个迭代器。 |
+| IterableIterator<number> | 包含每个元素值的迭代器对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1589,17 +1452,15 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let uint8ClampedArray: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5, 6]);
+```ts
+let uint8ClampedArray: collections.Uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 3, 4, 5, 6]);
 
-3. for (let item of uint8ClampedArray) {
-4. console.info(`value : ${item}`);
-5. }
+for (let item of uint8ClampedArray) {
+  console.info(`value : ${item}`);
+}
 ```
 
 ## [index: number]
-
-PhonePC/2in1TabletTVWearable
 
 [index: number]: number
 
@@ -1613,17 +1474,17 @@ PhonePC/2in1TabletTVWearable
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 所需代码单元的从零开始的索引。 |
+| index | number | 是 | 所需元素的从零开始的索引。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回number数据类型。 |
+| number | 指定索引位置的元素。 |
 
 **示例：**
 
-```
-1. let uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 4]);
-2. console.info("Element at index 1: ", uint8ClampedArray[1]);
+```ts
+let uint8ClampedArray = collections.Uint8ClampedArray.from([1, 2, 4]);
+console.info(`Element at index 1: ${uint8ClampedArray[1]}`);
 ```

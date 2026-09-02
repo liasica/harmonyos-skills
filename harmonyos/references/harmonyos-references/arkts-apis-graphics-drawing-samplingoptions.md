@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (SamplingOptions)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (SamplingOptions)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cdfee53c77f4f7bb7d738692cee1fe7a137d1eb5f468a021393dc590ca3127ca
+scraped_at: 2026-09-02T15:02:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a57ce7e52f127876fdf684bdf0e19b770bef84e1aec9bbe726339c3baf3e1bba
 ---
 
 采样选项对象。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 12开始支持。
@@ -19,15 +19,11 @@ content_hash: sha256:cdfee53c77f4f7bb7d738692cee1fe7a137d1eb5f468a021393dc590ca3
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -37,22 +33,20 @@ constructor()
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. const pen = new drawing.Pen();
-8. let samplingOptions = new drawing.SamplingOptions();
-9. }
-10. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    const pen = new drawing.Pen();
+    let samplingOptions = new drawing.SamplingOptions();
+  }
+}
 ```
 
 ## constructor12+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(filterMode: FilterMode)
 
@@ -76,14 +70,14 @@ constructor(filterMode: FilterMode)
 
 **示例：**
 
-```
-1. import { RenderNode } from '@kit.ArkUI';
-2. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { RenderNode } from '@kit.ArkUI';
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-4. class DrawingRenderNode extends RenderNode {
-5. draw(context : DrawContext) {
-6. const canvas = context.canvas;
-7. let samplingOptions = new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST);
-8. }
-9. }
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let samplingOptions = new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST);
+  }
+}
 ```

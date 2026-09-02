@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: OH_Camera
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 模块 > OH_Camera
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b154655869e3a49b73252f4bbb4a823da294bb4f873dc1c07403c7d94ac4fb4f
+scraped_at: 2026-09-02T14:52:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2f36103ac82133d1c0e04df482b34863a1bd4a6372dbe81452618b9cc7cc1753
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 为相机模块提供C接口的定义。
 
@@ -37,8 +35,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 文件汇总
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [camera.h](capi-camera-h.md) | 定义相机的基本接口和功能。 |
@@ -51,3 +47,4 @@ PhonePC/2in1TabletTVWearable
 | [photo\_output.h](capi-photo-output-h.md) | 声明拍照输出概念。 |
 | [preview\_output.h](capi-preview-output-h.md) | 声明预览输出概念。 |
 | [video\_output.h](capi-video-output-h.md) | 声明录像输出概念。 |
+| [metadata\_object\_ext.h](capi-metadata-object-ext-h.md) | 声明元数据对象扩展概念。  **起始版本：** 26.0.0 |

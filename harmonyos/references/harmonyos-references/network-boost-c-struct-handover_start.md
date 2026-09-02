@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: NetworkBoost_HandoverStart
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 结构体 > NetworkBoost_HandoverStart
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0bd0c71ded88d845d4eb42efe09fa30eeef6b438fa74db07638f6d0317686299
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d4a07364ac6e739eaaad8a9a90bc6590319bf1e06e0741a46175cae8497a4d62
 ---
 
 ## 概述
 
-PhonePC/2in1Tablet
-
-连接迁移开始信息。
+连接迁移开始信息。该结构体用于配置连接迁移开始时的相关参数，通常系统发起多网迁移（Wi-Fi与蜂窝网络切换，主卡与副卡切换等）开始时使用，其主要作用是设置迁移过程中的超时时间和老链路的发包建议，以保证迁移过程的稳定性和效率。
 
 **起始版本：** 5.1.0(18)
 
@@ -22,11 +20,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1Tablet
 
 ## 结构体成员变量说明
 
-PhonePC/2in1Tablet
-
 ### dataSpeedAction
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_DataSpeedAction NetworkBoost_HandoverStart::dataSpeedAction
+```c
+NetworkBoost_DataSpeedAction NetworkBoost_HandoverStart::dataSpeedAction
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1Tablet
 
 ### expires
 
-PhonePC/2in1Tablet
-
-```
-1. uint32_t NetworkBoost_HandoverStart::expires
+```c
+uint32_t NetworkBoost_HandoverStart::expires
 ```
 
 **描述**

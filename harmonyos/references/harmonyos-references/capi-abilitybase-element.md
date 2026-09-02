@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abil
 title: AbilityBase_Element
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 结构体 > AbilityBase_Element
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:eb065fc554c0bcd1d417aeb63abd663d42863a4b73c69e18c949a90c7680ff5a
+scraped_at: 2026-09-02T15:00:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2f98b429d5bb8e705dae7bff4adcf558567c42f9904fbd242186570ecab4c216
 ---
 
-```
-1. typedef struct AbilityBase_Element {...} AbilityBase_Element
+```c
+typedef struct AbilityBase_Element {...} AbilityBase_Element
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明[Want](capi-want-h.md)中Element结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

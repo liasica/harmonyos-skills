@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-api-healthmodels
-title: healthModels(运动健康数据模型)
-breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthModels(运动健康数据模型)
+title: healthModels (运动健康数据模型)
+breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthModels (运动健康数据模型)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c384a8b9eb070fba3cacb982ca58fdfc9bbff12a98c47512e77445a8a7fe1d42
+scraped_at: 2026-09-02T15:02:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:742961f16c5bd7c0b886a23563b5ba3a7c974b9a872631f49a242009094b9c1b
 ---
 
 本模块提供运动健康数据模型。
@@ -14,19 +14,15 @@ content_hash: sha256:c384a8b9eb070fba3cacb982ca58fdfc9bbff12a98c47512e77445a8a7f
 
 ## 导入模块
 
-PhoneTabletWearable
-
-```
-1. import { healthStore } from '@kit.HealthServiceKit';
+```typescript
+import { healthStore } from '@kit.HealthServiceKit';
 ```
 
-说明
+**说明** 
 
 此模块为healthStore子模块，需通过healthStore.healthModels方式使用。
 
 ## Adventures
-
-PhoneTabletWearable
 
 type Adventures = healthStore.ExerciseSequence<healthFields.AdventuresSummary, healthFields.AdventuresDetail>
 
@@ -36,13 +32,13 @@ type Adventures = healthStore.ExerciseSequence<healthFields.AdventuresSummary, h
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.AdventuresSummary](health-api-healthfields.md#adventuressummary), [healthFields.AdventuresDetail](health-api-healthfields.md#adventuresdetail)> | 户外探险锻炼记录数据模型。 |
 
 ## Basketball
-
-PhoneTabletWearable
 
 type Basketball = healthStore.ExerciseSequence<healthFields.BasketballSummary, healthFields.BasketballDetail>
 
@@ -52,13 +48,13 @@ type Basketball = healthStore.ExerciseSequence<healthFields.BasketballSummary, h
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.BasketballSummary](health-api-healthfields.md#basketballsummary), [healthFields.BasketballDetail](health-api-healthfields.md#basketballdetail)> | 篮球锻炼记录数据模型。 |
 
 ## Biathlon
-
-PhoneTabletWearable
 
 type Biathlon = healthStore.ExerciseSequence<healthFields.BiathlonSummary, healthFields.BiathlonDetail>
 
@@ -68,13 +64,13 @@ type Biathlon = healthStore.ExerciseSequence<healthFields.BiathlonSummary, healt
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.BiathlonSummary](health-api-healthfields.md#biathlonsummary), [healthFields.BiathlonDetail](health-api-healthfields.md#biathlondetail)> | 冬季两项锻炼记录数据模型。 |
 
 ## BloodOxygenSaturation
-
-PhoneTabletWearable
 
 type BloodOxygenSaturation = healthStore.SamplePoint<healthFields.BloodOxygenSaturation>
 
@@ -84,13 +80,13 @@ type BloodOxygenSaturation = healthStore.SamplePoint<healthFields.BloodOxygenSat
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.BloodOxygenSaturation](health-api-healthfields.md#bloodoxygensaturation)> | 血氧采样数据模型。 |
 
 ## BloodOxygenSaturationAggregateRequest
-
-PhoneTabletWearable
 
 type BloodOxygenSaturationAggregateRequest = healthStore.AggregateRequest<healthFields.BloodOxygenSaturationAggregation>
 
@@ -100,13 +96,13 @@ type BloodOxygenSaturationAggregateRequest = healthStore.AggregateRequest<health
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateRequest](health-api-healthstore.md#aggregaterequest)<[healthFields.BloodOxygenSaturationAggregation](health-api-healthfields.md#bloodoxygensaturationaggregation)> | 血氧采样数据聚合统计请求模型。 |
 
 ## BloodOxygenSaturationAggregateResult
-
-PhoneTabletWearable
 
 type BloodOxygenSaturationAggregateResult = healthStore.AggregateResult<healthFields.BloodOxygenSaturationAggregation>
 
@@ -116,13 +112,13 @@ type BloodOxygenSaturationAggregateResult = healthStore.AggregateResult<healthFi
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateResult](health-api-healthstore.md#aggregateresult)<[healthFields.BloodOxygenSaturationAggregation](health-api-healthfields.md#bloodoxygensaturationaggregation)> | 血氧聚合结果数据模型。 |
 
 ## BloodPressure
-
-PhoneTabletWearable
 
 type BloodPressure = healthStore.SamplePoint<healthFields.BloodPressure>
 
@@ -132,15 +128,15 @@ type BloodPressure = healthStore.SamplePoint<healthFields.BloodPressure>
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.BloodPressure](health-api-healthfields.md#bloodpressure)> | 血压采样数据模型。 |
 
 ## Bmx
 
-PhoneTabletWearable
-
-type Bmx = healthStore.ExerciseSequence<healthFields.CyclingSummary, healthFields.CyclingDetail>
+type Bmx = Cycling
 
 BMX自行车锻炼记录数据模型。
 
@@ -148,13 +144,13 @@ BMX自行车锻炼记录数据模型。
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
-| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.CyclingSummary](health-api-healthfields.md#cyclingsummary), [healthFields.CyclingDetail](health-api-healthfields.md#cyclingdetail)> | BMX自行车锻炼记录数据模型。 |
+| [healthModels.Cycling](health-api-healthmodels.md#cycling) | BMX自行车锻炼记录数据模型。 |
 
 ## BodyTemperature
-
-PhoneTabletWearable
 
 type BodyTemperature = healthStore.SamplePoint<healthFields.BodyTemperature>
 
@@ -164,13 +160,13 @@ type BodyTemperature = healthStore.SamplePoint<healthFields.BodyTemperature>
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.BodyTemperature](health-api-healthfields.md#bodytemperature)> | 体温采样数据模型。 |
 
 ## BodyTemperatureAggregateRequest
-
-PhoneTabletWearable
 
 type BodyTemperatureAggregateRequest = healthStore.AggregateRequest<healthFields.BodyTemperatureAggregation>
 
@@ -180,13 +176,13 @@ type BodyTemperatureAggregateRequest = healthStore.AggregateRequest<healthFields
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateRequest](health-api-healthstore.md#aggregaterequest)<[healthFields.BodyTemperatureAggregation](health-api-healthfields.md#bodytemperatureaggregation)> | 体温采样数据聚合统计请求模型。 |
 
 ## BodyTemperatureAggregateResult
-
-PhoneTabletWearable
 
 type BodyTemperatureAggregateResult = healthStore.AggregateResult<healthFields.BodyTemperatureAggregation>
 
@@ -196,13 +192,13 @@ type BodyTemperatureAggregateResult = healthStore.AggregateResult<healthFields.B
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateResult](health-api-healthstore.md#aggregateresult)<[healthFields.BodyTemperatureAggregation](health-api-healthfields.md#bodytemperatureaggregation)> | 体温聚合结果数据模型。 |
 
 ## BreathHoldingTest
-
-PhoneTabletWearable
 
 type BreathHoldingTest = healthStore.ExerciseSequence<healthFields.BreathHoldingTestSummary, healthFields.BreathHoldingTestDetail>
 
@@ -212,13 +208,13 @@ type BreathHoldingTest = healthStore.ExerciseSequence<healthFields.BreathHolding
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.BreathHoldingTestSummary](health-api-healthfields.md#breathholdingtestsummary), [healthFields.BreathHoldingTestDetail](health-api-healthfields.md#breathholdingtestdetail)> | 闭气测试锻炼记录数据模型。 |
 
 ## BreathHoldingTrain
-
-PhoneTabletWearable
 
 type BreathHoldingTrain = healthStore.ExerciseSequence<healthFields.BreathHoldingTrainSummary, healthFields.BreathHoldingTrainDetail>
 
@@ -228,13 +224,13 @@ type BreathHoldingTrain = healthStore.ExerciseSequence<healthFields.BreathHoldin
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.BreathHoldingTrainSummary](health-api-healthfields.md#breathholdingtrainsummary), [healthFields.BreathHoldingTrainDetail](health-api-healthfields.md#breathholdingtraindetail)> | 闭气训练锻炼记录数据模型。 |
 
 ## Cycling
-
-PhoneTabletWearable
 
 type Cycling = healthStore.ExerciseSequence<healthFields.CyclingSummary, healthFields.CyclingDetail>
 
@@ -244,13 +240,13 @@ type Cycling = healthStore.ExerciseSequence<healthFields.CyclingSummary, healthF
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.CyclingSummary](health-api-healthfields.md#cyclingsummary), [healthFields.CyclingDetail](health-api-healthfields.md#cyclingdetail)> | 户外骑行锻炼记录数据模型。 |
 
 ## DailyActivities
-
-PhoneTabletWearable
 
 type DailyActivities = healthStore.SamplePoint<healthFields.DailyActivities>
 
@@ -260,13 +256,13 @@ type DailyActivities = healthStore.SamplePoint<healthFields.DailyActivities>
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.DailyActivities](health-api-healthfields.md#dailyactivities)> | 日常活动采样数据模型。 |
 
 ## DailyActivitiesAggregateRequest
-
-PhoneTabletWearable
 
 type DailyActivitiesAggregateRequest = healthStore.AggregateRequest<healthFields.DailyActivitiesAggregation>
 
@@ -278,13 +274,13 @@ type DailyActivitiesAggregateRequest = healthStore.AggregateRequest<healthFields
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateRequest](health-api-healthstore.md#aggregaterequest)<[healthFields.DailyActivitiesAggregation](health-api-healthfields.md#dailyactivitiesaggregation)> | 日常活动采样数据聚合统计请求模型。 |
 
 ## DailyActivitiesAggregateResult
-
-PhoneTabletWearable
 
 type DailyActivitiesAggregateResult = healthStore.AggregateResult<healthFields.DailyActivitiesAggregation>
 
@@ -296,13 +292,13 @@ type DailyActivitiesAggregateResult = healthStore.AggregateResult<healthFields.D
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateResult](health-api-healthstore.md#aggregateresult)<[healthFields.DailyActivitiesAggregation](health-api-healthfields.md#dailyactivitiesaggregation)> | 日常活动聚合结果数据模型。 |
 
 ## Diving
-
-PhoneTabletWearable
 
 type Diving = healthStore.ExerciseSequence<healthFields.DivingSummary, healthFields.DivingDetail>
 
@@ -312,13 +308,13 @@ type Diving = healthStore.ExerciseSequence<healthFields.DivingSummary, healthFie
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.DivingSummary](health-api-healthfields.md#divingsummary), [healthFields.DivingDetail](health-api-healthfields.md#divingdetail)> | 自由潜水锻炼记录数据模型。 |
 
 ## Elliptical
-
-PhoneTabletWearable
 
 type Elliptical = healthStore.ExerciseSequence<healthFields.EllipticalSummary, healthFields.EllipticalDetail>
 
@@ -328,13 +324,13 @@ type Elliptical = healthStore.ExerciseSequence<healthFields.EllipticalSummary, h
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.EllipticalSummary](health-api-healthfields.md#ellipticalsummary), [healthFields.EllipticalDetail](health-api-healthfields.md#ellipticaldetail)> | 椭圆机锻炼记录数据模型。 |
 
 ## Emotion
-
-PhoneTabletWearable
 
 type Emotion = healthStore.SamplePoint<healthFields.Emotion>
 
@@ -344,13 +340,13 @@ type Emotion = healthStore.SamplePoint<healthFields.Emotion>
 
 **起始版本：** 5.1.0(18)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.Emotion](health-api-healthfields.md#emotion)> | 情绪采样数据模型。 |
 
 ## GolfCourseModel
-
-PhoneTabletWearable
 
 type GolfCourseModel = healthStore.ExerciseSequence<healthFields.GolfCourseModelSummary, healthFields.GolfCourseModelDetail>
 
@@ -360,13 +356,13 @@ type GolfCourseModel = healthStore.ExerciseSequence<healthFields.GolfCourseModel
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.GolfCourseModelSummary](health-api-healthfields.md#golfcoursemodelsummary), [healthFields.GolfCourseModelDetail](health-api-healthfields.md#golfcoursemodeldetail)> | 高尔夫场地模式锻炼记录数据模型。 |
 
 ## GolfPractice
-
-PhoneTabletWearable
 
 type GolfPractice = healthStore.ExerciseSequence<healthFields.GolfPracticeSummary, healthFields.GolfPracticeDetail>
 
@@ -376,13 +372,13 @@ type GolfPractice = healthStore.ExerciseSequence<healthFields.GolfPracticeSummar
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.GolfPracticeSummary](health-api-healthfields.md#golfpracticesummary), [healthFields.GolfPracticeDetail](health-api-healthfields.md#golfpracticedetail)> | 高尔夫练习场模式锻炼记录数据模型。 |
 
 ## HeartRate
-
-PhoneTabletWearable
 
 type HeartRate = healthStore.SamplePoint<healthFields.HeartRate>
 
@@ -392,13 +388,13 @@ type HeartRate = healthStore.SamplePoint<healthFields.HeartRate>
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.HeartRate](health-api-healthfields.md#heartrate)> | 动态心率采样数据模型。 |
 
 ## HeartRateAggregateRequest
-
-PhoneTabletWearable
 
 type HeartRateAggregateRequest = healthStore.AggregateRequest<healthFields.HeartRateAggregation>
 
@@ -408,13 +404,13 @@ type HeartRateAggregateRequest = healthStore.AggregateRequest<healthFields.Heart
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateRequest](health-api-healthstore.md#aggregaterequest)<[healthFields.HeartRateAggregation](health-api-healthfields.md#heartrateaggregation)> | 动态心率采样数据聚合统计请求模型。 |
 
 ## HeartRateAggregateResult
-
-PhoneTabletWearable
 
 type HeartRateAggregateResult = healthStore.AggregateResult<healthFields.HeartRateAggregation>
 
@@ -424,13 +420,13 @@ type HeartRateAggregateResult = healthStore.AggregateResult<healthFields.HeartRa
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateResult](health-api-healthstore.md#aggregateresult)<[healthFields.HeartRateAggregation](health-api-healthfields.md#heartrateaggregation)> | 动态心率聚合结果数据模型。 |
 
 ## HeartRateVariability
-
-PhoneTabletWearable
 
 type HeartRateVariability = healthStore.SamplePoint<healthFields.HeartRateVariability>
 
@@ -440,13 +436,13 @@ type HeartRateVariability = healthStore.SamplePoint<healthFields.HeartRateVariab
 
 **起始版本：** 5.1.0(18)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.HeartRateVariability](health-api-healthfields.md#heartratevariability)> | 心率变异性采样数据模型。 |
 
 ## Height
-
-PhoneTabletWearable
 
 type Height = healthStore.SamplePoint<healthFields.Height>
 
@@ -456,15 +452,15 @@ type Height = healthStore.SamplePoint<healthFields.Height>
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.Height](health-api-healthfields.md#height)> | 身高采样数据模型。 |
 
 ## Hiking
 
-PhoneTabletWearable
-
-type Hiking = healthStore.ExerciseSequence<healthFields.WalkingSummary, healthFields.WalkingDetail>
+type Hiking = Walking
 
 徒步锻炼记录数据模型。
 
@@ -472,15 +468,15 @@ type Hiking = healthStore.ExerciseSequence<healthFields.WalkingSummary, healthFi
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
-| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.WalkingSummary](health-api-healthfields.md#walkingsummary), [healthFields.WalkingDetail](health-api-healthfields.md#walkingdetail)> | 徒步锻炼记录数据模型。 |
+| [healthModels.Walking](health-api-healthmodels.md#walking) | 徒步锻炼记录数据模型。 |
 
 ## IndoorCycling
 
-PhoneTabletWearable
-
-type IndoorCycling = healthStore.ExerciseSequence<healthFields.CyclingSummary, healthFields.CyclingDetail>
+type IndoorCycling = Cycling
 
 室内单车锻炼记录数据模型。
 
@@ -488,15 +484,15 @@ type IndoorCycling = healthStore.ExerciseSequence<healthFields.CyclingSummary, h
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
-| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.CyclingSummary](health-api-healthfields.md#cyclingsummary), [healthFields.CyclingDetail](health-api-healthfields.md#cyclingdetail)> | 室内单车锻炼记录数据模型。 |
+| [healthModels.Cycling](health-api-healthmodels.md#cycling) | 室内单车锻炼记录数据模型。 |
 
 ## IndoorRunning
 
-PhoneTabletWearable
-
-type IndoorRunning = healthStore.ExerciseSequence<healthFields.RunningSummary, healthFields.RunningDetail>
+type IndoorRunning = Running
 
 室内跑步锻炼记录数据模型。
 
@@ -504,15 +500,15 @@ type IndoorRunning = healthStore.ExerciseSequence<healthFields.RunningSummary, h
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
-| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.RunningSummary](health-api-healthfields.md#runningsummary), [healthFields.RunningDetail](health-api-healthfields.md#runningdetail)> | 室内跑步锻炼记录数据模型。 |
+| [healthModels.Running](health-api-healthmodels.md#running) | 室内跑步锻炼记录数据模型。 |
 
 ## IndoorWalking
 
-PhoneTabletWearable
-
-type IndoorWalking = healthStore.ExerciseSequence<healthFields.WalkingSummary, healthFields.WalkingDetail>
+type IndoorWalking = Walking
 
 室内步行锻炼记录数据模型。
 
@@ -520,13 +516,13 @@ type IndoorWalking = healthStore.ExerciseSequence<healthFields.WalkingSummary, h
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
-| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.WalkingSummary](health-api-healthfields.md#walkingsummary), [healthFields.WalkingDetail](health-api-healthfields.md#walkingdetail)> | 室内步行锻炼记录数据模型。 |
+| [healthModels.Walking](health-api-healthmodels.md#walking) | 室内步行锻炼记录数据模型。 |
 
 ## JumpingRope
-
-PhoneTabletWearable
 
 type JumpingRope = healthStore.ExerciseSequence<healthFields.JumpingRopeSummary, healthFields.JumpingRopeDetail>
 
@@ -536,13 +532,29 @@ type JumpingRope = healthStore.ExerciseSequence<healthFields.JumpingRopeSummary,
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.JumpingRopeSummary](health-api-healthfields.md#jumpingropesummary), [healthFields.JumpingRopeDetail](health-api-healthfields.md#jumpingropedetail)> | 跳绳锻炼记录数据模型。 |
 
-## MountainHike
+## MenstrualCycle
 
-PhoneTabletWearable
+type MenstrualCycle = healthStore.HealthSequence<healthFields.MenstrualCycle, healthFields.MenstrualCycleDetail>
+
+生理周期健康记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 6.1.1(24)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.HealthSequence](health-api-healthstore.md#healthsequence)<[healthFields.MenstrualCycle](health-api-healthfields.md#menstrualcycle), [healthFields.MenstrualCycleDetail](health-api-healthfields.md#menstrualcycledetail)> | 生理周期健康记录数据模型。 |
+
+## MountainHike
 
 type MountainHike = healthStore.ExerciseSequence<healthFields.MountainHikeSummary, healthFields.MountainHikeDetail>
 
@@ -552,13 +564,13 @@ type MountainHike = healthStore.ExerciseSequence<healthFields.MountainHikeSummar
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.MountainHikeSummary](health-api-healthfields.md#mountainhikesummary), [healthFields.MountainHikeDetail](health-api-healthfields.md#mountainhikedetail)> | 登山锻炼记录数据模型。 |
 
 ## OpenWaterSwim
-
-PhoneTabletWearable
 
 type OpenWaterSwim = healthStore.ExerciseSequence<healthFields.OpenWaterSwimSummary, healthFields.OpenWaterSwimDetail>
 
@@ -568,13 +580,13 @@ type OpenWaterSwim = healthStore.ExerciseSequence<healthFields.OpenWaterSwimSumm
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.OpenWaterSwimSummary](health-api-healthfields.md#openwaterswimsummary), [healthFields.OpenWaterSwimDetail](health-api-healthfields.md#openwaterswimdetail)> | 开放水域游泳锻炼记录数据模型。 |
 
 ## PoolSwim
-
-PhoneTabletWearable
 
 type PoolSwim = healthStore.ExerciseSequence<healthFields.PoolSwimSummary, healthFields.PoolSwimDetail>
 
@@ -584,13 +596,13 @@ type PoolSwim = healthStore.ExerciseSequence<healthFields.PoolSwimSummary, healt
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.PoolSwimSummary](health-api-healthfields.md#poolswimsummary), [healthFields.PoolSwimDetail](health-api-healthfields.md#poolswimdetail)> | 泳池游泳锻炼记录数据模型。 |
 
 ## RestingHeartRate
-
-PhoneTabletWearable
 
 type RestingHeartRate = healthStore.SamplePoint<healthFields.RestingHeartRate>
 
@@ -600,13 +612,13 @@ type RestingHeartRate = healthStore.SamplePoint<healthFields.RestingHeartRate>
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.RestingHeartRate](health-api-healthfields.md#restingheartrate)> | 静息心率采样数据模型。 |
 
 ## RestingHeartRateAggregateRequest
-
-PhoneTabletWearable
 
 type RestingHeartRateAggregateRequest = healthStore.AggregateRequest<healthFields.RestingHeartRateAggregation>
 
@@ -616,13 +628,13 @@ type RestingHeartRateAggregateRequest = healthStore.AggregateRequest<healthField
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateRequest](health-api-healthstore.md#aggregaterequest)<[healthFields.RestingHeartRateAggregation](health-api-healthfields.md#restingheartrateaggregation)> | 静息心率采样数据聚合统计请求模型。 |
 
 ## RestingHeartRateAggregateResult
-
-PhoneTabletWearable
 
 type RestingHeartRateAggregateResult = healthStore.AggregateResult<healthFields.RestingHeartRateAggregation>
 
@@ -632,13 +644,13 @@ type RestingHeartRateAggregateResult = healthStore.AggregateResult<healthFields.
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateResult](health-api-healthstore.md#aggregateresult)<[healthFields.RestingHeartRateAggregation](health-api-healthfields.md#restingheartrateaggregation)> | 静息心率聚合结果数据模型。 |
 
 ## Rower
-
-PhoneTabletWearable
 
 type Rower = healthStore.ExerciseSequence<healthFields.RowerSummary, healthFields.RowerDetail>
 
@@ -648,13 +660,13 @@ type Rower = healthStore.ExerciseSequence<healthFields.RowerSummary, healthField
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.RowerSummary](health-api-healthfields.md#rowersummary), [healthFields.RowerDetail](health-api-healthfields.md#rowerdetail)> | 划船机锻炼记录数据模型。 |
 
 ## Rowing
-
-PhoneTabletWearable
 
 type Rowing = healthStore.ExerciseSequence<healthFields.RowingSummary, healthFields.RowingDetail>
 
@@ -664,13 +676,13 @@ type Rowing = healthStore.ExerciseSequence<healthFields.RowingSummary, healthFie
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.RowingSummary](health-api-healthfields.md#rowingsummary), [healthFields.RowingDetail](health-api-healthfields.md#rowingdetail)> | 赛艇锻炼记录数据模型。 |
 
 ## Running
-
-PhoneTabletWearable
 
 type Running = healthStore.ExerciseSequence<healthFields.RunningSummary, healthFields.RunningDetail>
 
@@ -680,13 +692,13 @@ type Running = healthStore.ExerciseSequence<healthFields.RunningSummary, healthF
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.RunningSummary](health-api-healthfields.md#runningsummary), [healthFields.RunningDetail](health-api-healthfields.md#runningdetail)> | 户外跑步锻炼记录数据模型。 |
 
 ## ScubaDiving
-
-PhoneTabletWearable
 
 type ScubaDiving = healthStore.ExerciseSequence<healthFields.ScubaDivingSummary, healthFields.ScubaDivingDetail>
 
@@ -696,13 +708,13 @@ type ScubaDiving = healthStore.ExerciseSequence<healthFields.ScubaDivingSummary,
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.ScubaDivingSummary](health-api-healthfields.md#scubadivingsummary), [healthFields.ScubaDivingDetail](health-api-healthfields.md#scubadivingdetail)> | 水肺潜水锻炼记录数据模型。 |
 
 ## Skiing
-
-PhoneTabletWearable
 
 type Skiing = healthStore.ExerciseSequence<healthFields.SkiingSummary, healthFields.SkiingDetail>
 
@@ -712,13 +724,13 @@ type Skiing = healthStore.ExerciseSequence<healthFields.SkiingSummary, healthFie
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.SkiingSummary](health-api-healthfields.md#skiingsummary), [healthFields.SkiingDetail](health-api-healthfields.md#skiingdetail)> | 滑雪锻炼记录数据模型。 |
 
 ## SkinTemperature
-
-PhoneTabletWearable
 
 type SkinTemperature = healthStore.SamplePoint<healthFields.SkinTemperature>
 
@@ -728,13 +740,13 @@ type SkinTemperature = healthStore.SamplePoint<healthFields.SkinTemperature>
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.SkinTemperature](health-api-healthfields.md#skintemperature)> | 皮肤体温采样数据模型。 |
 
 ## SkinTemperatureAggregateRequest
-
-PhoneTabletWearable
 
 type SkinTemperatureAggregateRequest = healthStore.AggregateRequest<healthFields.SkinTemperatureAggregation>
 
@@ -744,13 +756,13 @@ type SkinTemperatureAggregateRequest = healthStore.AggregateRequest<healthFields
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateRequest](health-api-healthstore.md#aggregaterequest)<[healthFields.SkinTemperatureAggregation](health-api-healthfields.md#skintemperatureaggregation)> | 皮肤体温采样数据聚合统计请求模型。 |
 
 ## SkinTemperatureAggregateResult
-
-PhoneTabletWearable
 
 type SkinTemperatureAggregateResult = healthStore.AggregateResult<healthFields.SkinTemperatureAggregation>
 
@@ -760,13 +772,13 @@ type SkinTemperatureAggregateResult = healthStore.AggregateResult<healthFields.S
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateResult](health-api-healthstore.md#aggregateresult)<[healthFields.SkinTemperatureAggregation](health-api-healthfields.md#skintemperatureaggregation)> | 皮肤体温聚合结果数据模型。 |
 
 ## Sled
-
-PhoneTabletWearable
 
 type Sled = healthStore.ExerciseSequence<healthFields.SledSummary, healthFields.SledDetail>
 
@@ -776,13 +788,13 @@ type Sled = healthStore.ExerciseSequence<healthFields.SledSummary, healthFields.
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.SledSummary](health-api-healthfields.md#sledsummary), [healthFields.SledDetail](health-api-healthfields.md#sleddetail)> | 滑雪橇锻炼记录数据模型。 |
 
 ## SleepNapRecord
-
-PhoneTabletWearable
 
 type SleepNapRecord = healthStore.HealthSequence<healthFields.SleepNap, healthFields.SleepDetail>
 
@@ -792,13 +804,13 @@ type SleepNapRecord = healthStore.HealthSequence<healthFields.SleepNap, healthFi
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.HealthSequence](health-api-healthstore.md#healthsequence)<[healthFields.SleepNap](health-api-healthfields.md#sleepnap), [healthFields.SleepDetail](health-api-healthfields.md#sleepdetail)> | 零星小睡健康记录数据模型。 |
 
 ## SleepRecord
-
-PhoneTabletWearable
 
 type SleepRecord = healthStore.HealthSequence<healthFields.Sleep, healthFields.SleepDetail>
 
@@ -808,13 +820,13 @@ type SleepRecord = healthStore.HealthSequence<healthFields.Sleep, healthFields.S
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.HealthSequence](health-api-healthstore.md#healthsequence)<[healthFields.Sleep](health-api-healthfields.md#sleep), [healthFields.SleepDetail](health-api-healthfields.md#sleepdetail)> | 夜间睡眠健康记录数据模型。 |
 
 ## Snowboarding
-
-PhoneTabletWearable
 
 type Snowboarding = healthStore.ExerciseSequence<healthFields.SnowboardingSummary, healthFields.SnowboardingDetail>
 
@@ -824,15 +836,15 @@ type Snowboarding = healthStore.ExerciseSequence<healthFields.SnowboardingSummar
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.SnowboardingSummary](health-api-healthfields.md#snowboardingsummary), [healthFields.SnowboardingDetail](health-api-healthfields.md#snowboardingdetail)> | 单板滑雪锻炼记录数据模型。 |
 
 ## Spinning
 
-PhoneTabletWearable
-
-type Spinning = healthStore.ExerciseSequence<healthFields.CyclingSummary, healthFields.CyclingDetail>
+type Spinning = Cycling
 
 动感单车锻炼记录数据模型。
 
@@ -840,13 +852,13 @@ type Spinning = healthStore.ExerciseSequence<healthFields.CyclingSummary, health
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
-| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.CyclingSummary](health-api-healthfields.md#cyclingsummary), [healthFields.CyclingDetail](health-api-healthfields.md#cyclingdetail)> | 动感单车锻炼记录数据模型。 |
+| [healthModels.Cycling](health-api-healthmodels.md#cycling) | 动感单车锻炼记录数据模型。 |
 
 ## Sports
-
-PhoneTabletWearable
 
 type Sports = healthStore.ExerciseSequence<healthFields.SportsSummary, healthFields.SportsDetail>
 
@@ -856,13 +868,13 @@ type Sports = healthStore.ExerciseSequence<healthFields.SportsSummary, healthFie
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.SportsSummary](health-api-healthfields.md#sportssummary), [healthFields.SportsDetail](health-api-healthfields.md#sportsdetail)> | 通用锻炼记录数据模型。 |
 
 ## Stress
-
-PhoneTabletWearable
 
 type Stress = healthStore.SamplePoint<healthFields.Stress>
 
@@ -872,13 +884,13 @@ type Stress = healthStore.SamplePoint<healthFields.Stress>
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.Stress](health-api-healthfields.md#stress)> | 压力采样数据模型。 |
 
 ## StressAggregateRequest
-
-PhoneTabletWearable
 
 type StressAggregateRequest = healthStore.AggregateRequest<healthFields.StressAggregation>
 
@@ -888,13 +900,13 @@ type StressAggregateRequest = healthStore.AggregateRequest<healthFields.StressAg
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateRequest](health-api-healthstore.md#aggregaterequest)<[healthFields.StressAggregation](health-api-healthfields.md#stressaggregation)> | 压力采样数据聚合统计请求模型。 |
 
 ## StressAggregateResult
-
-PhoneTabletWearable
 
 type StressAggregateResult = healthStore.AggregateResult<healthFields.StressAggregation>
 
@@ -904,15 +916,15 @@ type StressAggregateResult = healthStore.AggregateResult<healthFields.StressAggr
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.AggregateResult](health-api-healthstore.md#aggregateresult)<[healthFields.StressAggregation](health-api-healthfields.md#stressaggregation)> | 压力聚合结果数据模型。 |
 
 ## TrailRunning
 
-PhoneTabletWearable
-
-type TrailRunning = healthStore.ExerciseSequence<healthFields.RunningSummary, healthFields.RunningDetail>
+type TrailRunning = Running
 
 越野跑锻炼记录数据模型。
 
@@ -920,13 +932,13 @@ type TrailRunning = healthStore.ExerciseSequence<healthFields.RunningSummary, he
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
-| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.RunningSummary](health-api-healthfields.md#runningsummary), [healthFields.RunningDetail](health-api-healthfields.md#runningdetail)> | 越野跑锻炼记录数据模型。 |
+| [healthModels.Running](health-api-healthmodels.md#running) | 越野跑锻炼记录数据模型。 |
 
 ## Walking
-
-PhoneTabletWearable
 
 type Walking = healthStore.ExerciseSequence<healthFields.WalkingSummary, healthFields.WalkingDetail>
 
@@ -936,13 +948,13 @@ type Walking = healthStore.ExerciseSequence<healthFields.WalkingSummary, healthF
 
 **起始版本：** 5.0.0(12)
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.WalkingSummary](health-api-healthfields.md#walkingsummary), [healthFields.WalkingDetail](health-api-healthfields.md#walkingdetail)> | 户外步行锻炼数据模型记录。 |
 
 ## Weight
-
-PhoneTabletWearable
 
 type Weight = healthStore.SamplePoint<healthFields.Weight>
 
@@ -951,6 +963,8 @@ type Weight = healthStore.SamplePoint<healthFields.Weight>
 **系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 类型 | **说明** |
 | --- | --- |

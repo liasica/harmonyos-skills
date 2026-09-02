@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-detect-si
 title: Web应用模拟点击检测
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web应用模拟点击检测
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:58+08:00
+scraped_at: 2026-09-02T14:59:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:140f950e8506da9f79012c37b15d04d82dfd50c458820c57e6c1b0f3ec25cf80
+content_hash: sha256:103bf5ebea5085d5886f4c920a3667ffa0af6fe22366b48afb7f1f8087ad244c
 ---
 
 从API version 23开始，新增支持Web应用模拟点击检测。
@@ -41,14 +41,14 @@ Promise对象，返回模拟点击检测结果，格式为一个JSON Web Signatu
 
 样例：
 
-```
-1. {
-2. "alg": "ES256",
-3. "x5c": ["", ""],
-4. "nonce": "R2Rra24fVm5xa2Mg",
-5. "appId": "xxxxxxxx",
-6. "authToken": "xxxxxxxx"
-7. }
+```json
+{
+    "alg": "ES256",
+    "x5c": ["", ""],
+    "nonce": "R2Rra24fVm5xa2Mg",
+    "appId": "xxxxxxxx",
+    "authToken": "xxxxxxxx"
+}
 ```
 
 | 字段 | 描述 |
@@ -62,13 +62,13 @@ Promise对象，返回模拟点击检测结果，格式为一个JSON Web Signatu
 
 样例：
 
-```
-1. {
-2. "timestampMs": 9860437986543,
-3. "version": 1,
-4. "riskDecision": "fake",
-5. "tags": ["AbnormalTap"]
-6. }
+```json
+{
+    "timestampMs": 9860437986543,
+    "version": 1,
+    "riskDecision": "fake",
+    "tags": ["AbnormalTap"]
+}
 ```
 
 | 字段 | 描述 |
@@ -109,22 +109,22 @@ Promise对象，返回模拟点击检测结果，格式为一个JSON Web Signatu
 
 ## 代码示例
 
-```
-1. // 兼容性判断
-2. if (window.detectSimulatedClickRiskEnhanced) {
-3. // 此处nonce入参仅为示例，实际开发时应为包含随机数的数组
-4. window.detectSimulatedClickRiskEnhanced(0, new Array(48).fill(0), 1).then(result => {
-5. console.info('Detect simulated click risk success. length: ', result.length);
-6. const resultArray = result.split('.');
-7. const header = resultArray[0];
-8. const payload = resultArray[1];
-9. const signature = resultArray[2];
-10. }).catch(e => {
-11. console.error('Detect simulated click risk failed: ', e.code, e.message);
-12. });
-13. } else {
-14. // 不支持该接口时
-15. }
+```javascript
+// 兼容性判断
+if (window.detectSimulatedClickRiskEnhanced) {
+    // 此处nonce入参仅为示例，实际开发时应为包含随机数的数组
+    window.detectSimulatedClickRiskEnhanced(0, new Array(48).fill(0), 1).then(result => {
+        console.info('Detect simulated click risk success. length: ', result.length);
+        const resultArray = result.split('.');
+        const header = resultArray[0];
+        const payload = resultArray[1];
+        const signature = resultArray[2];
+    }).catch(e => {
+        console.error('Detect simulated click risk failed: ', e.code, e.message);
+    });
+} else {
+// 不支持该接口时
+}
 ```
 
 ## 开发流程
@@ -133,7 +133,7 @@ Promise对象，返回模拟点击检测结果，格式为一个JSON Web Signatu
 
 在调用window.detectSimulatedClickRiskEnhanced接口时，开发者必须传入一个随机生成的nonce数组。在检测结果中会包含这个nonce值，您可以通过校验这个nonce值来确定返回结果能够对应您的请求，并且没有被重放攻击。
 
-说明
+**说明** 
 
 * nonce是一个数组，数组长度范围[24, 80]，其中元素数值范围[-128, 127]。
 * 推荐的做法是，每次请求都从服务器随机生成新的nonce数组。

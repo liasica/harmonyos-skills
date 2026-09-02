@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-81
 title: 有无api判断web组件是否与controller绑定
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 有无api判断web组件是否与controller绑定
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:47+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:79a77eabf8c9a563b3ca3b115164e596b6f92fd21306ead86b647e46446fb017
 ---
 

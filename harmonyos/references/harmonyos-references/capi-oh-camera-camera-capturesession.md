@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_CaptureSession
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_CaptureSession
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:13d64903d192513530e3b0ff613b1e3d04cfce73832219ad95992e6dd25e4481
+scraped_at: 2026-09-02T14:52:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f20cc27c851bbc4571efe333717487bbae1cb0e4cf25b455dd051623ef19bc14
 ---
 
-```
-1. typedef struct Camera_CaptureSession Camera_CaptureSession
+```c
+typedef struct Camera_CaptureSession Camera_CaptureSession
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 捕获会话对象。
 

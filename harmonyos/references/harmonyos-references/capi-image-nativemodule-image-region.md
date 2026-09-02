@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: Image_Region
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > Image_Region
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d98d7dcd4011f190289bc07014ad35bc040bcbc71d7c76a0eb74550639203fd5
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d4261e2d439507a46535c4e9d7f8f83e9bc26c1c67ed697d5c860330e1d4cc3c
 ---
 
-```
-1. struct Image_Region {...}
+```c
+struct Image_Region {...}
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 待解码的图像源区域结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

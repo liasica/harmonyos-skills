@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-core
 title: OH_AVFormat
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 结构体 > OH_AVFormat
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a9d8727c2ce99d7b9859c454479f3bf9cc977d2703bc569f122ffbed49395257
+scraped_at: 2026-09-02T14:52:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f5e9569a2a1c38eb7defa71922b7ed3d7d22ef81dc0f55f301e984cc4e6c5823
 ---
 
-```
-1. typedef struct OH_AVFormat OH_AVFormat
+```c
+typedef struct OH_AVFormat OH_AVFormat
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 为OH\_AVFormat接口定义native层对象。
 

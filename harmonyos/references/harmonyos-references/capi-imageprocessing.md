@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: ImageProcessing
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 模块 > ImageProcessing
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:16+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6a6636a6eba29b70fc72e769d00c8418719b56e9b5c0ac183ecdbc34a63ef6db
+scraped_at: 2026-09-02T14:52:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:df7d7e5f1333a979ee62f3a30e89c59938d18d4cd798285d9e1d191d75b33d36
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTV
-
-ImageProcessing模块提供图片处理功能的API接口，包括颜色空间转换和元数据生成。
+ImageProcessing模块提供图片处理功能的API接口，包括色彩空间转换和元数据生成。
 
 开发者可根据实际的开发需求，参考对应的开发指南及样例：
 
@@ -25,8 +23,6 @@ ImageProcessing模块提供图片处理功能的API接口，包括颜色空间�
 **起始版本：** 13
 
 ## 文件汇总
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

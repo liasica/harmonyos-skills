@@ -3,16 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-code
 title: CodecBase
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 模块 > CodecBase
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:00+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:df8355ef5f8c41ba2319509e57c73cb1a959944c95124a7548132d0e5f43de08
+scraped_at: 2026-09-02T15:02:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:82cc4499452e7e46e9558e27802114e8bd436ade7afee343e0bf822bc7fa330b
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
+CodecBase模块提供用于音视频封装、解封装、编解码基础功能的变量、属性以及函数，包括编解码器基础结构体、异步回调机制、MIME类型定义、媒体描述键、用户自定义数据源以及视频特定配置等。本模块是AVCodec Kit的基础模块，为视频编码器、视频解码器、音频编码器、音频解码器、封装器、解封装器等模块提供通用的类型定义和属性键。
 
-CodecBase模块提供用于音视频封装、解封装、编解码基础功能的变量、属性以及函数。
+本模块提供的主要能力包括：
+
+* **编解码器基础结构体**：定义编解码器实例 OH\_AVCodec 和图形接口 OHNativeWindow，是音视频编解码操作的核心对象。
+* **异步回调机制**：提供错误回调、流变化回调、输入缓冲区回调、输出缓冲区回调等函数指针类型，以及回调集合结构体 OH\_AVCodecCallback，用于处理编解码过程中的异步事件。
+* **用户自定义数据源**：支持通过回调函数 OH\_AVDataSourceReadAt 和结构体 OH\_AVDataSource 自定义媒体数据读取方式。
+* **MIME 类型定义**：定义视频编解码（H.264、H.265等）、音频编解码（MP3、FLAC、OGG、WAV等）、字幕（SRT、WEBVTT）等格式的MIME类型常量。
+* **媒体描述键**：提供统一的键名常量（OH\_MD\_KEY\_\*）用于配置和查询媒体参数，涵盖视频分辨率、帧率、码率、档次、像素格式、色彩空间，音频采样率、声道数、声道布局，编解码特性（分层编码、长期参考帧、B帧、低时延），以及媒体元数据（标题、艺术家、专辑等）。
+* **视频 ROI 配置**：支持感兴趣区域（ROI）编码配置，包括ROI区域坐标、量化参数偏移、语义标签等，并提供ROI字符串解析与格式化函数。
+* **音频声道布局**：定义音频声道集合和声道布局枚举。
+
+适用场景包括：音视频编解码、媒体封装与解封装、媒体数据处理等需要使用通用编解码基础类型和属性键的场景。
 
 **系统能力：** SystemCapability.Multimedia.Media.CodecBase
 
@@ -20,16 +30,12 @@ CodecBase模块提供用于音视频封装、解封装、编解码基础功能�
 
 ## 文件汇总
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [avcodec\_audio\_channel\_layout.h](capi-avcodec-audio-channel-layout-h.md) | 音频编解码声道布局枚举的声明。 |
 | [native\_avcodec\_base.h](capi-native-avcodec-base-h.md) | 声明用于音视频封装、解封装、编解码基础功能的Native API。 |
 
 ## 媒体编解码格式
-
-PhonePC/2in1TabletTVWearable
 
 用于描述媒体编解码格式的名字如下表。类型是常量字符串。
 
@@ -81,6 +87,7 @@ PhonePC/2in1TabletTVWearable
 | OH\_AVCODEC\_MIMETYPE\_VIDEO\_DVVIDEO | DVVIDEO（Digital Video）视频编解码器的MIME类型。支持DV NTSC、DV PAL与DVCPRO HD。  从API version 23开始支持。 |
 | OH\_AVCODEC\_MIMETYPE\_VIDEO\_RAWVIDEO | RAWVIDEO视频编解码器的MIME类型。  从API version 23开始支持。 |
 | OH\_AVCODEC\_MIMETYPE\_VIDEO\_MPEG1 | MPEG1视频编解码器的MIME类型。  从API version 23开始支持。 |
+| OH\_AVCODEC\_MIMETYPE\_VIDEO\_CINEPAK | Cinepak视频编解码器的MIME类型。  从API version 24开始支持。 |
 | OH\_AVCODEC\_MIMETYPE\_IMAGE\_JPG | JPG图片编码的MIME类型，仅用于封装JPG封面时使用。 |
 | OH\_AVCODEC\_MIMETYPE\_IMAGE\_PNG | PNG图片编码的MIME类型，仅用于封装PNG封面时使用。 |
 | OH\_AVCODEC\_MIMETYPE\_IMAGE\_BMP | BMP图片编码的MIME类型，仅用于封装BMP封面时使用。 |
@@ -89,23 +96,17 @@ PhonePC/2in1TabletTVWearable
 
 ## 媒体数据键值对
 
-PhonePC/2in1TabletTVWearable
-
 用于描述媒体数据的键值对查找表如下。键的类型是常量字符串，值的类型可以是int32\_t/int64\_t/float/double/char \*/uint8\_t \*。
 
 使用以下key的主要接口是[OH\_AVFormat](capi-core-oh-avformat.md)，通过以下key可以进行参数配置或查询。
 
 ### 能力查询专有的键值对
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | OH\_FEATURE\_PROPERTY\_KEY\_VIDEO\_ENCODER\_MAX\_LTR\_FRAME\_COUNT | 在视频编码中获取长期参考帧（LTR）的最大个数的键，值类型为int32\_t。 |
 
 ### 音视频公共的键值对
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -118,8 +119,6 @@ PhonePC/2in1TabletTVWearable
 | OH\_MD\_KEY\_ENABLE\_SYNC\_MODE | 使能音视频编解码同步模式的键，值类型为int32\_t，1表示使能，0表示不使能。该键是可选的配置项，默认不配置则表示不使能同步模式，在Configure阶段使用。 |
 
 ### 视频专有的键值对
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -135,8 +134,8 @@ PhonePC/2in1TabletTVWearable
 | OH\_MD\_KEY\_MATRIX\_COEFFICIENTS | 视频矩阵系数的键，值类型为int32\_t，请参见[OH\_MatrixCoefficient](capi-native-avcodec-base-h.md#oh_matrixcoefficient)，遵循H.273标准Table4。该键是可选的。 |
 | OH\_MD\_KEY\_VIDEO\_STRIDE | 描述视频帧宽跨距的键，值类型为int32\_t。该键是可选的。 |
 | OH\_MD\_KEY\_VIDEO\_SLICE\_HEIGHT | 描述视频帧高跨距的键，值类型为int32\_t。该键是可选的。 |
-| OH\_MD\_KEY\_VIDEO\_PIC\_WIDTH | 描述视频帧真实宽度的键，值类型为int32\_t。该键是可选的。 |
-| OH\_MD\_KEY\_VIDEO\_PIC\_HEIGHT | 描述视频帧真实高度的键，值类型为int32\_t。该键是可选的。 |
+| OH\_MD\_KEY\_VIDEO\_PIC\_WIDTH | 描述解码后视频帧实际有效宽度的键名。值类型为int32\_t。该键为只读，仅用于视频解码。该键是可选的。 |
+| OH\_MD\_KEY\_VIDEO\_PIC\_HEIGHT | 描述解码后视频帧实际有效高度的键名。值类型为int32\_t。该键为只读，仅用于视频解码。该键是可选的。 |
 | OH\_MD\_KEY\_VIDEO\_ENABLE\_LOW\_LATENCY | 使能低时延视频编解码的键，值类型为int32\_t，1表示使能，0表示不使能。该键是可选的配置项，默认不配置则表示不使能，在Configure阶段使用。 |
 | OH\_MD\_KEY\_VIDEO\_ENCODE\_BITRATE\_MODE | 视频编码码率模式，值类型为int32\_t，请参见[OH\_BitrateMode](capi-native-avcodec-base-h.md#oh_bitratemode)。该键是可选的。 |
 | OH\_MD\_KEY\_QUALITY | 所需编码质量的键。值类型为int32\_t，此键仅适用于配置在恒定质量模式下的编码器。该键是可选的。 |
@@ -145,6 +144,7 @@ PhonePC/2in1TabletTVWearable
 | OH\_MD\_KEY\_VIDEO\_ENCODER\_ENABLE\_TEMPORAL\_SCALABILITY | 使能分层编码的键，值类型为int32\_t，1表示使能，0表示不使能。该键是可选的且只用于视频编码，默认不配置则表示不使能，在Configure阶段使用。 |
 | OH\_MD\_KEY\_VIDEO\_ENCODER\_TEMPORAL\_GOP\_SIZE | 描述图片组基本层图片的间隔大小的键，值类型为int32\_t，只在使能分层编码时生效。该键是可选的且只用于视频编码，在Configure阶段使用。 |
 | OH\_MD\_KEY\_VIDEO\_ENCODER\_TEMPORAL\_GOP\_REFERENCE\_MODE | 描述图片组内参考模式的键，值类型为int32\_t，请参见[OH\_TemporalGopReferenceMode](capi-native-avcodec-base-h.md#oh_temporalgopreferencemode)，只在使能分层编码时生效。该键是可选的且只用于视频编码，在Configure阶段使用。 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_TEMPORAL\_LAYER\_ID | 描述图像组（GOP）内的时域层号ID键，数据类型为int32\_t。  时域层号为0时，表示基础层，1及以上时表示增强层，最大时域层号与OH\_MD\_KEY\_VIDEO\_ENCODER\_TEMPORAL\_GOP\_REFERENCE\_MODE参数和OH\_MD\_KEY\_VIDEO\_ENCODER\_TEMPORAL\_GOP\_SIZE参数相关。  该键目前仅用于查询编码器输出的AVBuffer中携带的时域层号。  使用流程如下：  1. 通过[OH\_AVCodecOnNewOutputBuffer](capi-native-avcodec-base-h.md#oh_avcodeconnewoutputbuffer)接口或[OH\_VideoEncoder\_GetOutputBuffer](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_getoutputbuffer)获取缓冲区实例（AVBuffer）。  2. 通过[OH\_AVBuffer\_GetParameter](capi-native-avbuffer-h.md#oh_avbuffer_getparameter)获取除基础属性外的其他参数实例（OH\_AVFormat）。  3. 通过[OH\_AVFormat\_GetIntValue](capi-native-avformat-h.md#oh_avformat_getintvalue)接口和本键获取对应帧的时域层号。  **起始版本：** 26.0.0 |
 | OH\_MD\_KEY\_VIDEO\_ENCODER\_LTR\_FRAME\_COUNT | 描述长期参考帧（LTR）个数的键，值类型为int32\_t，必须在支持的值范围内使用。该键是可选的且只用于视频编码。 |
 | OH\_MD\_KEY\_VIDEO\_ENCODER\_PER\_FRAME\_MARK\_LTR | 标记当前帧为长期参考帧（LTR）的键，值类型为int32\_t，1表示被标记为长期参考帧（LTR），0表示未被标记为长期参考帧（LTR）。该键是可选的且只用于视频编码。 |
 | OH\_MD\_KEY\_VIDEO\_ENCODER\_PER\_FRAME\_USE\_LTR | 描述当前帧参考的长期参考帧（LTR）的POC号的键，值类型为int32\_t。该键是可选的且只用于视频编码。 |
@@ -172,10 +172,19 @@ PhonePC/2in1TabletTVWearable
 | OH\_MD\_KEY\_VIDEO\_ENCODER\_MAX\_B\_FRAMES | 描述视频编码器支持的最大连续B帧数的键，值类型为int32\_t。注意：该键目前仅用于查询编码器能力。  使用规范如下：  1. 通过[OH\_AVCapability\_IsFeatureSupported](capi-native-avcapability-h.md#oh_avcapability_isfeaturesupported)接口和枚举值[OH\_AVCapabilityFeature](capi-native-avcapability-h.md#oh_avcapabilityfeature).VIDEO\_ENCODER\_B\_FRAME查询特性支持情况。  2. 通过[OH\_AVCapability\_GetFeatureProperties](capi-native-avcapability-h.md#oh_avcapability_getfeatureproperties)接口和枚举值[OH\_AVCapabilityFeature](capi-native-avcapability-h.md#oh_avcapabilityfeature).VIDEO\_ENCODER\_B\_FRAME获取OH\_AVFormat指针。  3. 通过[OH\_AVFormat\_GetIntValue](capi-native-avformat-h.md#oh_avformat_getintvalue)接口和本键获取最大B帧数。 |
 | OH\_MD\_KEY\_VIDEO\_DECODER\_BLANK\_FRAME\_ON\_SHUTDOWN | 用于指定视频解码器关闭时是否输出空白帧的键，值类型为int32\_t，1表示使能，0表示不使能，默认值为0。配置非0值将按照配置1处理，表示使能。该键是可选的且仅用于视频解码Surface模式。  使能后，调用[OH\_VideoDecoder\_Stop](capi-native-avcodec-videodecoder-h.md#oh_videodecoder_stop)接口或者[OH\_VideoDecoder\_Destroy](capi-native-avcodec-videodecoder-h.md#oh_videodecoder_destroy)接口时，视频解码器将输出空白帧（通常为黑色）。该机制可避免因解码器突然终止导致的显示残留。 |
 | OH\_MD\_KEY\_VIDEO\_NATIVE\_BUFFER\_FORMAT | 用于查询视频编解码中native buffer像素格式的键，值类型为int32\_t。  具体取值请参见[OH\_NativeBuffer\_Format](capi-buffer-common-h.md#oh_nativebuffer_format)中定义的像素格式。该键主要用于以下两种场景：  1. 视频解码：调用[OH\_VideoDecoder\_GetOutputDescription](capi-native-avcodec-videodecoder-h.md#oh_videodecoder_getoutputdescription)接口或[OH\_AVCodecOnStreamChanged](capi-native-avcodec-base-h.md#oh_avcodeconstreamchanged)，从返回的OH\_AVFormat对象中获取当前输出格式。  2. 视频编码：调用[OH\_VideoEncoder\_GetInputDescription](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_getinputdescription)接口，从返回的OH\_AVFormat对象中获取当前输入格式。 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_DOWNSAMPLING\_WIDTH | 视频编码前处理降采样目标宽度的键，值类型为int32\_t。该键是可选的，降采样功能默认关闭。该键与OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_DOWNSAMPLING\_HEIGHT必须同时配置，当都设置为0时则关闭降采样功能，可以通过[OH\_AVCapability\_IsVideoSizeSupported](capi-native-avcapability-h.md#oh_avcapability_isvideosizesupported)查询支持的降采样宽高范围。降采样参数与裁剪参数互斥，降采样功能与裁剪功能不可同时启用。  该键仅用于支持前处理的视频编码器或一入二出编码场景，可在Configure阶段配置或通过SetParameter运行时动态调整。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_DOWNSAMPLING\_HEIGHT | 视频编码前处理降采样目标高度的键，值类型为int32\_t。该键是可选的，降采样功能默认关闭。该键与OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_DOWNSAMPLING\_WIDTH必须同时配置，当都设置为0时则关闭降采样功能，可以通过[OH\_AVCapability\_IsVideoSizeSupported](capi-native-avcapability-h.md#oh_avcapability_isvideosizesupported)查询支持的降采样宽高范围。降采样参数与裁剪参数互斥，降采样功能与裁剪功能不可同时启用。  该键仅用于支持前处理的视频编码器或一入二出编码场景，可在Configure阶段配置或通过SetParameter运行时动态调整。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_CROP\_LEFT | 视频编码前处理裁剪区域左边坐标（x）的键，值类型为int32\_t。该键是可选的，裁剪功能默认关闭。OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_CROP\_LEFT/TOP/RIGHT/BOTTOM 4个参数必须同时配置，当全部设置为0时则关闭裁剪功能，默认坐标原点为输入视频帧左上角(0, 0)，坐标取值不可超过输入视频帧宽高，且需满足(0, 0) <= (LEFT, TOP) < (RIGHT, BOTTOM) < (输入视频帧宽度，输入视频帧高度)。降采样参数与裁剪参数互斥，降采样功能与裁剪功能不可同时启用。  该键仅用于支持前处理的视频编码器或一入二出编码场景，可在Configure阶段配置或通过SetParameter运行时动态调整。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_CROP\_TOP | 视频编码前处理裁剪区域顶部坐标（y）的键，值类型为int32\_t。该键是可选的，裁剪功能默认关闭。OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_CROP\_LEFT/TOP/RIGHT/BOTTOM 4个参数必须同时配置，当全部设置为0时则关闭裁剪功能，默认坐标原点为输入视频帧左上角(0, 0)，坐标取值不可超过输入视频帧宽高，且需满足(0, 0) <= (LEFT, TOP) < (RIGHT, BOTTOM) < (输入视频帧宽度，输入视频帧高度)。降采样参数与裁剪参数互斥，降采样功能与裁剪功能不可同时启用。  该键仅用于支持前处理的视频编码器或一入二出编码场景，可在Configure阶段配置或通过SetParameter运行时动态调整。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_CROP\_RIGHT | 视频编码前处理裁剪区域右边坐标（x）的键，值类型为int32\_t。该键是可选的，裁剪功能默认关闭。OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_CROP\_LEFT/TOP/RIGHT/BOTTOM 4个参数必须同时配置，当全部设置为0时则关闭裁剪功能，默认坐标原点为输入视频帧左上角(0, 0)，坐标取值不可超过输入视频帧宽高，且需满足(0, 0) <= (LEFT, TOP) < (RIGHT, BOTTOM) < (输入视频帧宽度，输入视频帧高度)。降采样参数与裁剪参数互斥，降采样功能与裁剪功能不可同时启用。  该键仅用于支持前处理的视频编码器或一入二出编码场景，可在Configure阶段配置或通过SetParameter运行时动态调整。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_CROP\_BOTTOM | 视频编码前处理裁剪区域底部坐标（y）的键，值类型为int32\_t。该键是可选的，裁剪功能默认关闭。OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_CROP\_LEFT/TOP/RIGHT/BOTTOM 4个参数必须同时配置，当全部设置为0时则关闭裁剪功能，默认坐标原点为输入视频帧左上角(0, 0)，坐标取值不可超过输入视频帧宽高，且需满足(0, 0) <= (LEFT, TOP) < (RIGHT, BOTTOM) < (输入视频帧宽度，输入视频帧高度)。降采样参数与裁剪参数互斥，降采样功能与裁剪功能不可同时启用。  该键仅用于支持前处理的视频编码器或一入二出编码场景，可在Configure阶段配置或通过SetParameter运行时动态调整。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_PREPROC\_DROP\_TO\_FRAME\_RATE | 视频编码前处理丢帧目标帧率的键，单位为fps，值类型为double，数值精度保留2位小数。该键是可选的，丢帧功能默认关闭。当设置0.00时则关闭丢帧功能，配置值时自动四舍五入保留两位小数。可独立使用，也可与降采样或裁剪组合使用。  该键仅用于支持前处理的视频编码器或一入二出编码场景，可在Configure阶段配置或通过SetParameter运行时动态调整。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_NUMBER\_OF\_PENDING\_FRAMES | 视频编码器待处理帧数量的键值，值类型为int32\_t。该键是只读的，用于查询当前待编码帧的数量。可通过[OH\_VideoEncoder\_GetInputDescription](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_getinputdescription)接口获取。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_DECODER\_OUTPUT\_IN\_DECODING\_ORDER | 解码器输出模式的键值。值类型为int32\_t，取值为0或1。1表示解码器按解码顺序输出帧；0表示解码器按显示顺序输出帧，默认值为0。该键是可选的，仅用于视频解码，且仅可在Configure阶段使用。设置该键前，可通过[OH\_AVCapability\_IsFeatureSupported](capi-native-avcapability-h.md#oh_avcapability_isfeaturesupported)接口和枚举值[OH\_AVCapabilityFeature](capi-native-avcapability-h.md#oh_avcapabilityfeature).VIDEO\_DECODER\_OUTPUT\_IN\_DECODING\_ORDER查询是否支持该特性。如果视频解码不支持该特性，通过[OH\_VideoDecoder\_Configure](capi-native-avcodec-videodecoder-h.md#oh_videodecoder_configure)接口设置该键将返回AV\_ERR\_INVALID\_VAL。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_MAX\_FRAME\_DELAY\_COUNT | 视频编码器在输出压缩帧前允许缓存的最大帧数的键值。值类型为int32\_t，取值范围为[1，5]。该键是可选的，仅用于视频编码，且仅可在Configure阶段使用。取值在[1，5]区间内时可正常生效；若超出该范围（小于1或大于5），调用[OH\_VideoEncoder\_Configure](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_configure)接口会返回AV\_ERR\_INVALID\_VAL。  **起始版本：** 26.0.0 |
+| OH\_MD\_KEY\_VIDEO\_ENCODER\_REPEAT\_HEADER\_BEFORE\_SYNC\_FRAMES | 码流同步帧前置参数集的键值。值类型为int32\_t，取值为0或1，1表示使能，0表示不使能，默认值为0。该键是可选的，仅用于视频编码，且仅可在Configure阶段使用。开启后，编码器会在每个同步帧前插入前置参数集数据（例如H.264/H.265格式对应的SPS、PPS）。  **起始版本：** 26.0.0 |
 
 ### 音频专有的键值对
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -190,13 +199,19 @@ PhonePC/2in1TabletTVWearable
 | OH\_MD\_KEY\_AAC\_IS\_ADTS | aac格式的键，aac格式分为ADTS格式和LATM格式。值类型为int32\_t，aac解码器支持。该键是可选的。 |
 | OH\_MD\_KEY\_IDENTIFICATION\_HEADER | vorbis标识头的键，值类型为uint8\_t\*，仅vorbis解码器支持。该键是可选的。 |
 | OH\_MD\_KEY\_SETUP\_HEADER | vorbis设置头的键，值类型为uint8\_t\*，仅vorbis解码器支持。该键是可选的。 |
-| OH\_MD\_KEY\_AUDIO\_OBJECT\_NUMBER | 音频对象数目的键，值类型为int32\_t，只有Audio Vivid解码使用。该键是可选的。 |
-| OH\_MD\_KEY\_AUDIO\_VIVID\_METADATA | Audio Vivid元数据的键，值类型为uint8\_t\*，只有Audio Vivid解码使用。该键是可选的。 |
+| OH\_MD\_KEY\_AUDIO\_OBJECT\_NUMBER | 音频对象数目的键，值类型为int32\_t，该键是可选的且仅用于Audio Vivid编解码器。 |
+| OH\_MD\_KEY\_AUDIO\_OBJECT\_BITRATE | 设置音频对象编码比特率的键，值类型为int64\_t，该键是可选的且仅用于Audio Vivid编码器。  实际编码比特率可能会根据编码器的能力调整。  该键从API版本26.0.0开始支持。 |
+| OH\_MD\_KEY\_AUDIO\_VIVID\_METADATA | Audio Vivid元数据的键，值类型为uint8\_t\*，该键是可选的且仅用于Audio Vivid编解码器。 |
 | OH\_MD\_KEY\_BLOCK\_ALIGN | 划分音频数据块大小的键，单位为字节，值类型为int32\_t。该键从API version 22开始支持，仅WMAV1、WMAV2、WMA PRO解码时必须配置。 |
+| OH\_MD\_KEY\_ENABLE\_BUFFER\_SKIP\_SAMPLES | 在音频解码器中使能OH\_MD\_KEY\_BUFFER\_SKIP\_SAMPLES\_INFO的键，值类型为int32\_t。1表示使能，0表示不使能，默认值为0。配置非1值将按照配置0处理，表示不使能。  该键是可选的。仅用于音频解码器。  该键从API version 24开始支持。 |
+| OH\_MD\_KEY\_AUDIO\_VIVID\_SIGNAL\_FORMAT | 设置Audio Vivid输入信号格式的键，值类型为int32\_t，该键适用于Audio Vivid编码器。  具体取值请参见[OH\_AudioVividSignalFormat](capi-native-audio-vivid-h.md#oh_audiovividsignalformat)。  该键从API版本26.0.0开始支持。 |
+| OH\_MD\_KEY\_AUDIO\_SOUNDBED\_LAYOUT | 设置音频声床的通道布局的键，值类型为int64\_t，该键是可选的且仅用于Audio Vivid编码器。  具体取值请参见[OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout)。  该键从API版本26.0.0开始支持。 |
+| OH\_MD\_KEY\_AUDIO\_SOUNDBED\_BITRATE | 设置音频声床编码比特率的键，值类型为int64\_t，该键是可选的且仅用于Audio Vivid编码器。  实际编码比特率可能会根据编码器的能力调整。  该键从API版本26.0.0开始支持。 |
+| OH\_MD\_KEY\_AUDIO\_MAX\_INPUT\_BUFFER\_SIZE | 设置或查询音频编解码器最大输入缓冲区大小的键，值类型为int32\_t，单位为字节。实际缓冲区大小受编解码器实现限制，超出上限的值不生效。该键是可选的。 |
+| OH\_MD\_KEY\_AUDIO\_ENCODER\_PTS\_MODE | 配置音频编码器输出PTS模式的键，值类型为int32\_t，请参见[OH\_AudioEncoderPTSMode](capi-native-avcodec-base-h.md#oh_audioencoderptsmode)。该键是可选的，不设置时默认为OH\_AUDIO\_ENCODER\_PTS\_MODE\_DEFAULT。 |
+| OH\_MD\_KEY\_AUDIO\_ENCODER\_ENABLE\_SAMPLE\_FORMAT\_CONVERT | 使能音频编码器采样格式转换的键，值类型为int32\_t，1表示使能，0表示不使能，默认值为0。使能后支持的输入采样格式为：SAMPLE\_U8、SAMPLE\_S16LE、SAMPLE\_S24LE、SAMPLE\_S32LE、SAMPLE\_F32LE。该键是可选的。 |
 
 ### 封装/解封装专有的键值对
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -226,3 +241,6 @@ PhonePC/2in1TabletTVWearable
 | OH\_MD\_KEY\_TRACK\_REFERENCE\_TYPE | 媒体文件辅助轨类型，值类型为char \*。 |
 | OH\_MD\_KEY\_TRACK\_DESCRIPTION | 媒体文件辅助轨描述信息，值类型为char \*。 |
 | OH\_MD\_KEY\_BUFFER\_SKIP\_SAMPLES\_INFO | OH\_AVBuffer中携带的键，仅解封装支持。在解封装输出音频的起始、末尾帧可能携带此键。  此键对应一个10字节的uint8\_t[]类型的数组，记录的是音频文件元数据中解码后需跳过的音频采样点数。  具体结构如下：  1. 数组0~3，这4个字节表示从当前帧第一个采样点开始往后跳过的采样点数，以小端序存储uint32\_t值。  2. 数组4~7，这4个字节表示从当前帧最后一个采样点开始往前跳过的采样点数（不大于1帧采样点数），以小端序存储uint32\_t值。  3. 数组8~9，这2个字节表示保留位，默认输出为0。  该键从API version 23开始支持。 |
+| OH\_MD\_KEY\_LATITUDE | 纬度的键，值类型为float，范围为[-90.0, 90.0]。表示地理位置信息中的纬度。  该键从API version 24开始支持。 |
+| OH\_MD\_KEY\_LONGITUDE | 经度的键，值类型为float，范围为[-180.0, 180.0]。表示地理位置信息中的经度。  该键从API version 24开始支持。 |
+| OH\_MD\_KEY\_ALTITUDE | 海拔的键，值类型为float，该键是可选的。表示地理位置信息中的海拔。  该键从API version 24开始支持。 |

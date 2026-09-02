@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: NetworkBoost_MultiPathQuotaInfo
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 结构体 > NetworkBoost_MultiPathQuotaInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:33ebb3b62761838ca42792f60f7e1d10e38af0b0fb338ce99539904fc49594fd
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5e801a78088726fdb350462c3a76e94dbda0c679c294d316812b77a7d99050e8
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 多网配额信息，包含配额次数信息和时长信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1Tablet
 
 ## 结构体成员变量说明
 
-PhonePC/2in1Tablet
-
 ## count
 
-PhonePC/2in1Tablet
-
-```
-1. uint16_t NetworkBoost_MultiPathQuotaInfo::count
+```c
+uint16_t NetworkBoost_MultiPathQuotaInfo::count
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1Tablet
 
 ## duration
 
-PhonePC/2in1Tablet
-
-```
-1. uint16_t NetworkBoost_MultiPathQuotaInfo::duration
+```c
+uint16_t NetworkBoost_MultiPathQuotaInfo::duration
 ```
 
 **描述**

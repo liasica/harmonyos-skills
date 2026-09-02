@@ -1,174 +1,175 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-media-reading
-title: 插画/视频/动画的播报场景
-breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 插画/视频/动画的播报场景
+title: 插画/视频/动画的播报
+breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 插画/视频/动画的播报
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:34867441bf8c0278d86257ec9b7a1104c94ce05b8f173248a695d7e355c9cf7f
+scraped_at: 2026-09-02T14:49:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:67d0df68d9ad04564e3e4a15e8e2959344fe742acd89993883038ec0e9b8ff13
 ---
 
-## 开发实例1
+## 插画信息开发流程
 
 如下图，插画信息有一定提示作用，插画和对应的功能介绍应该组合在一起，当焦点落到插画或者包含插画的符合控件时，需要朗读出对应的功能描述。建议插画和功能介绍作为一个组合使用一个焦点朗读。它可以借助“accessibilityGroup(true)”属性来实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Vd5gS-QQR2WVeD8cPFdLnA/zh-cn_image_0000002558764008.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/P_0fhKpySsOz9M4s3j0S-Q/zh-cn_image_0000002736432209.png)
 
+```typescript
+@Entry
+@Component
+export struct Rule_2_1_6_1 {
+  title: string = 'Rule 2.1.6.1';
+  private description: string = 'gesture swipe left then up';
+
+  build() {
+    NavDestination() {
+      Column() {
+        Flex({
+          direction: FlexDirection.Column,
+          alignItems: ItemAlign.Center,
+          justifyContent: FlexAlign.Center,
+        }) {
+          Column() {
+            Image($r("app.media.gesture_swipe_left_then_up"))
+              .width(200)
+              .height(180)
+              .objectFit(ImageFit.Contain)
+            Text(this.description)
+              .fontSize(22)
+              .fontColor(Color.Red)
+              .fontWeight(FontWeight.Bold)
+              .textAlign(TextAlign.Center)
+          }
+          .accessibilityGroup(true) // 将图像和文本合并为一个辅助功能对象。
+        }
+        .width('100%')
+        .height('100%')
+        .backgroundColor(Color.White)
+      }
+    }
+    .title(this.title)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct Rule_2_1_6_1 {
-4. title: string = 'Rule 2.1.6.1'
-5. private description: string = 'gesture swipe left then up'
 
-7. build() {
-8. NavDestination() {
-9. Column() {
-10. Flex({
-11. direction: FlexDirection.Column,
-12. alignItems: ItemAlign.Center,
-13. justifyContent: FlexAlign.Center,
-14. }) {
-15. Column() {
-16. Image($r("app.media.gesture_swipe_left_then_up"))
-17. .width(220)
-18. .height(220)
-19. Text(this.description)
-20. .fontSize(22)
-21. .fontColor(Color.Red)
-22. .fontWeight(FontWeight.Bold)
-23. .textAlign(TextAlign.Center)
-24. }.accessibilityGroup(true) // 将图像和文本合并为一个辅助功能对象
-25. }
-26. .width('100%')
-27. .height('100%')
-28. .backgroundColor(Color.White)
-29. }
-30. }
-31. .title(this.title)
-32. }
-33. }
-```
+## 列表控件开发流程
 
-## 开发实例2
-
-以下List的每个Item，应该进行组合标注，从而给用户一个完整的提示信息：
+以下[List](../harmonyos-references/ts-container-list.md)的每个[Item](../harmonyos-references/ts-container-listitem.md)，应该进行组合标注，从而给用户一个完整的提示信息：
 
 * 对于列表/网格控件，控件中的每个项目默认需要一起标记。
 * 列表/网格控件，每个item应提供item包含的元素的所有信息。
 * 建议朗读列表每一项的所有嵌套元素的组合信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/fXVBiX8xT6uh1zCqmCD0cw/zh-cn_image_0000002558604352.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/h6-OPKoiT8i_6p2FHVxH-g/zh-cn_image_0000002706833054.png)
 
   它可以借助“accessibilityGroup(true)”属性来实现：
 
-  ```
-  1. @Entry
-  2. @Preview
-  3. @Component
-  4. export struct Rule_2_1_6_2 {
-  5. title: string = 'Rule 2.1.6.2'
+  ```typescript
+  @Entry
+  @Component
+  export struct Rule_2_1_6_2 {
+    title: string = 'Rule 2.1.6.2';
 
-  7. build() {
-  8. NavDestination() {
-  9. Flex({
-  10. direction: FlexDirection.Column,
-  11. alignItems: ItemAlign.Center,
-  12. justifyContent: FlexAlign.Center,
-  13. }) {
-  14. Column() {
-  15. Item_2_1_6_3({
-  16. title: 'Video card',
-  17. subtitle: 'provided with options',
-  18. time: '1:23 hrs',
-  19. color: '#ffdee5ff'
-  20. })
-  21. Item_2_1_6_3({
-  22. title: 'Music card',
-  23. subtitle: 'sound feedback available',
-  24. time: '2:75 min',
-  25. color: '#92e1ffd8'
-  26. })
-  27. Item_2_1_6_3({
-  28. title: 'Live card',
-  29. subtitle: 'health support on request',
-  30. time: '10:55',
-  31. color: '#fff3deff'
-  32. })
-  33. Item_2_1_6_3({
-  34. title: 'Play card',
-  35. subtitle: 'play station tournament',
-  36. time: '5:12 hrs',
-  37. color: '#92e1ffd8'
-  38. })
-  39. Item_2_1_6_3({
-  40. title: 'Theater card',
-  41. subtitle: 'ticket on concert',
-  42. time: '2:75 min',
-  43. color: '#ffdee5ff'
-  44. })
-  45. }
-  46. }
-  47. }.title(this.title)
-  48. }
-  49. }
+    build() {
+      NavDestination() {
+        Flex({
+          direction: FlexDirection.Column,
+          alignItems: ItemAlign.Center,
+          justifyContent: FlexAlign.Center,
+        }) {
+          Column() {
+            Item_2_1_6_3({
+              title: 'Video card',
+              subtitle: 'provided with options',
+              time: '1:23 hrs',
+              color: '#ffdee5ff'
+            })
+            Item_2_1_6_3({
+              title: 'Music card',
+              subtitle: 'sound feedback available',
+              time: '2:75 min',
+              color: '#92e1ffd8'
+            })
+            Item_2_1_6_3({
+              title: 'Live card',
+              subtitle: 'health support on request',
+              time: '10:55',
+              color: '#fff3deff'
+            })
+            Item_2_1_6_3({
+              title: 'Play card',
+              subtitle: 'play station tournament',
+              time: '5:12 hrs',
+              color: '#92e1ffd8'
+            })
+            Item_2_1_6_3({
+              title: 'Theater card',
+              subtitle: 'ticket on concert',
+              time: '2:75 min',
+              color: '#ffdee5ff'
+            })
+          }
+        }
+      }.title(this.title)
+    }
+  }
 
-  51. @Component
-  52. export struct Item_2_1_6_3 {
-  53. title: string = 'Video card'
-  54. subtitle: string = 'provided with additional options'
-  55. time: string = '1:23 hr'
-  56. color: ResourceColor = "#80FAFAFA"
+  @Component
+  export struct Item_2_1_6_3 {
+    title: string = 'Video card';
+    subtitle: string = 'provided with additional options';
+    time: string = '1:23 hr';
+    color: ResourceColor = "#80FAFAFA";
 
-  58. build() {
-  59. Flex({
-  60. direction: FlexDirection.Row,
-  61. alignItems: ItemAlign.Center,
-  62. justifyContent: FlexAlign.SpaceBetween,
-  63. }) {
-  64. Column() {
-  65. Text(this.title)
-  66. .fontSize(22)
-  67. .fontWeight(FontWeight.Bold)
-  68. .textAlign(TextAlign.Center)
-  69. .padding({ left: 20, right: 0 })
-  70. Text(this.subtitle)
-  71. .fontSize(14)
-  72. .fontColor(Color.Gray)
-  73. .fontWeight(FontWeight.Normal)
-  74. .textAlign(TextAlign.Center)
-  75. .padding({ left: 20, right: 0 })
-  76. }
+    build() {
+      Flex({
+        direction: FlexDirection.Row,
+        alignItems: ItemAlign.Center,
+        justifyContent: FlexAlign.SpaceBetween,
+      }) {
+        Column() {
+          Text(this.title)
+            .fontSize(22)
+            .fontWeight(FontWeight.Bold)
+            .textAlign(TextAlign.Center)
+            .padding({ left: 20, right: 0 })
+          Text(this.subtitle)
+            .fontSize(14)
+            .fontColor(Color.Gray)
+            .fontWeight(FontWeight.Normal)
+            .textAlign(TextAlign.Center)
+            .padding({ left: 20, right: 0 })
+        }
 
-  78. Column() {
-  79. Text(this.time)
-  80. .fontSize(20)
-  81. .fontWeight(FontWeight.Normal)
-  82. .textAlign(TextAlign.Center)
-  83. .padding({ left: 10, right: 10 })
-  84. }
+        Column() {
+          Text(this.time)
+            .fontSize(20)
+            .fontWeight(FontWeight.Normal)
+            .textAlign(TextAlign.Center)
+            .padding({ left: 10, right: 10 })
+        }
 
-  86. Column() {
-  87. Image($r("app.media.ic_arrow")) // 此处为图片资源，请替换为本地图片
-  88. .width(28)
-  89. .height(28)
-  90. .fillColor(Color.Gray)
-  91. }.align(Alignment.End)
-
-  93. }
-  94. .width('90%')
-  95. .height(75)
-  96. .border({
-  97. width: 1,
-  98. color: '#FFC0C0C0',
-  99. radius: 8,
-  100. style: {
-  101. top: BorderStyle.Solid,
-  102. }
-  103. })
-  104. .backgroundColor(this.color)
-  105. .accessibilityGroup(true) // combines text and image into single object
-  106. .margin({ top: 10 })
-  107. }
-  108. }
+        Column() {
+          Image($r("sys.media.ohos_ic_public_arrow_right")) // 此处为图片资源，请替换为本地图片。
+            .width(28)
+            .height(28)
+            .fillColor(Color.Gray)
+        }
+        .align(Alignment.End)
+      }
+      .width('90%')
+      .height(75)
+      .border({
+        width: 1,
+        color: '#FFC0C0C0',
+        radius: 8,
+        style: {
+          top: BorderStyle.Solid,
+        }
+      })
+      .backgroundColor(this.color)
+      .accessibilityGroup(true) // combines text and image into single object.
+      .margin({ top: 10 })
+    }
+  }
   ```

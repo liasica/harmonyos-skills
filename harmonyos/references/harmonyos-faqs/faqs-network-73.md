@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-73
 title: 如何解决应用退至后台TCP连接会被中断
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何解决应用退至后台TCP连接会被中断
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:16+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f98b44be5e449af6817ff479a416dbda6c6b5ece40814796ab9b981e0d74273c
 ---
 

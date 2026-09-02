@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: neural_network_runtime_type.h
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 头文件 > neural_network_runtime_type.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e7240e2a63b7e249a367e78799e10d1ceff93b07f8fe230de3a5136d2f57921a
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f653d1d13040f549e1710a0c7a168164e3cc6667520fab5d3d2142a9631e24b9
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 Neural Network Runtime定义的结构体和枚举值。
 
@@ -26,11 +24,7 @@ Neural Network Runtime定义的结构体和枚举值。
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 结构体
-
-PhonePC/2in1TabletTV
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -47,8 +41,6 @@ PhonePC/2in1TabletTV
 
 ### 枚举
 
-PhonePC/2in1TabletTV
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_NN\_PerformanceMode](capi-neural-network-runtime-type-h.md#oh_nn_performancemode) | OH\_NN\_PerformanceMode | 硬件的性能模式。 |
@@ -63,8 +55,6 @@ PhonePC/2in1TabletTV
 
 ### 函数
 
-PhonePC/2in1TabletTV
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [typedef void (\*NN\_OnRunDone)(void \*userData, OH\_NN\_ReturnCode errCode, void \*outputTensor[], int32\_t outputCount)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neural-network-runtime-type-h#nn_onrundone) | NN\_OnRunDone | 异步推理结束后的回调处理函数句柄。  使用参数**userData**来查询希望获取的那次异步推理执行。**userData**与调用异步推理[OH\_NNExecutor\_RunAsync](capi-neural-network-core-h.md#oh_nnexecutor_runasync)接口时传入的参数**userData**是一致的。使用参数**errCode**（[OH\_NN\_ReturnCode](capi-neural-network-runtime-type-h.md#oh_nn_returncode)类型）来获取该次异步推理的返回状态。 |
@@ -72,14 +62,10 @@ PhonePC/2in1TabletTV
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_NN\_PerformanceMode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_PerformanceMode
+```c
+enum OH_NN_PerformanceMode
 ```
 
 **描述**
@@ -98,10 +84,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NN\_Priority
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_Priority
+```c
+enum OH_NN_Priority
 ```
 
 **描述**
@@ -119,10 +103,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NN\_ReturnCode
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_ReturnCode
+```c
+enum OH_NN_ReturnCode
 ```
 
 **描述**
@@ -151,10 +133,8 @@ Neural Network Runtime 定义的错误码类型。
 
 ### OH\_NN\_FuseType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_FuseType
+```c
+enum OH_NN_FuseType
 ```
 
 **描述**
@@ -171,10 +151,8 @@ Neural Network Runtime 融合算子中激活函数的类型。
 
 ### OH\_NN\_Format
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_Format
+```c
+enum OH_NN_Format
 ```
 
 **描述**
@@ -192,10 +170,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NN\_DeviceType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_DeviceType
+```c
+enum OH_NN_DeviceType
 ```
 
 **描述**
@@ -213,10 +189,8 @@ Neural Network Runtime 支持的设备类型。
 
 ### OH\_NN\_DataType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_DataType
+```c
+enum OH_NN_DataType
 ```
 
 **描述**
@@ -243,10 +217,8 @@ Neural Network Runtime 支持的数据类型。
 
 ### OH\_NN\_OperationType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_OperationType
+```c
+enum OH_NN_OperationType
 ```
 
 **描述**
@@ -339,7 +311,7 @@ Neural Network Runtime 支持算子的类型。
 | OH\_NN\_OPS\_LOG = 80 | 逐元素计算输入的自然对数。  输入：  input，n维张量，数值必须大于0，数值类型为OH\_NN\_FLOAT64、OH\_NN\_FLOAT32或OH\_NN\_FLOAT16。  输出：  output，n维张量，形状和数据类型和输入相同。  **起始版本：** 12 |
 | OH\_NN\_OPS\_LOGICAL\_AND = 81 | 逐元素计算两个输入张量的逻辑与运算。  输入：  input1，n维张量，数值类型是OH\_NN\_BOOL。input2，n维张量，数值类型是OH\_NN\_BOOL，形状与input1相同。  输出：  output，n维张量，逻辑与的计算结果，数值类型是OH\_NN\_BOOL。  **起始版本：** 12 |
 | OH\_NN\_OPS\_LOGICAL\_NOT = 82 | 逐元素计算两个输入张量的逻辑非运算。  输入：  input，n维张量，数值类型是OH\_NN\_BOOL。  输出：  output，n维张量，逻辑非的计算结果，数值类型是OH\_NN\_BOOL。  **起始版本：** 12 |
-| OH\_NN\_OPS\_MOD = 83 | 对输入张量做求余运算，input1和input2需要遵循数据类型转换的规则转成一致的数据类型；输入必须是两个张量或一个张量和一个标量。当输入是两个张量时，数据类型都不能是OH\_NN\_BOOL，可以广播为相同的形状；当输入是一个张量和一个标量时，标量输入只能是一个常量数值。  输入：  input1，被求余的标量或张量，数值型或OH\_NN\_BOOL类型，或数值类型维数值型的n维张量。  input2，求余因子；当第一个输入是n维张量时，第二个输入可以是数值型、OH\_NN\_BOOL类型，或数值类型维数值型的n维张量；当第一个输入是数值型、OH\_NN\_BOOL类型时，第二个输入必须是数据类型维数值型的张量。  输出：  output，n维张量，形状与广播后的输入相同，数据类型为两个输入中精度较高的数据类型。  **起始版本：** 12 |
+| OH\_NN\_OPS\_MOD = 83 | 对输入张量做求余运算，input1和input2需要遵循数据类型转换的规则转成一致的数据类型；输入必须是两个张量或一个张量和一个标量。当输入是两个张量时，数据类型都不能是OH\_NN\_BOOL，可以广播为相同的形状；当输入是一个张量和一个标量时，标量输入只能是一个常量数值。  输入：  input1，被求余的标量或张量，数值型或OH\_NN\_BOOL类型，或数值类型为数值型的n维张量。  input2，求余因子；当第一个输入是n维张量时，第二个输入可以是数值型、OH\_NN\_BOOL类型，或数值类型为数值型的n维张量；当第一个输入是数值型、OH\_NN\_BOOL类型时，第二个输入必须是数据类型为数值型的张量。  输出：  output，n维张量，形状与广播后的输入相同，数据类型为两个输入中精度较高的数据类型。  **起始版本：** 12 |
 | OH\_NN\_OPS\_NEG = 84 | 逐元素计算输入的相反数。  输入：  input，n维张量，数据类型为数值型。  输出：  output，n维张量，形状和数据类型和输入一致。  **起始版本：** 12 |
 | OH\_NN\_OPS\_RECIPROCAL = 85 | 逐元素计算输入的倒数。  输入：  input，n维张量，数据类型为数值类型为OH\_NN\_FLOAT64、OH\_NN\_FLOAT32或OH\_NN\_FLOAT16。  输出：  output，n维张量，形状和数据类型和输入一致。  **起始版本：** 12 |
 | OH\_NN\_OPS\_SIN = 86 | 逐元素计算输入的正弦值。  输入：  input，n维张量，数值类型为OH\_NN\_FLOAT64、OH\_NN\_FLOAT32或OH\_NN\_FLOAT16。  输出：  output，n维张量，形状和数据类型和输入相同。  **起始版本：** 12 |
@@ -348,12 +320,12 @@ Neural Network Runtime 支持算子的类型。
 | OH\_NN\_OPS\_LOGICAL\_OR = 89 | 逐元素计算两个输入张量的逻辑或运算。  输入：  input1，n维张量，数值类型是OH\_NN\_BOOL。  input2，n维张量，数值类型是OH\_NN\_BOOL，形状与输入1相同。  输出：  output，n维张量，逻辑或的计算结果，数值类型是OH\_NN\_BOOL。  **起始版本：** 12 |
 | OH\_NN\_OPS\_CEIL = 90 | 对输入的每个元素做向上取整。  输入：  input，n维张量，数据类型为OH\_NN\_FLOAT64、OH\_NN\_FLOAT32或OH\_NN\_FLOAT16。  输出：  n维张量，形状和数据类型与输入相同。  **起始版本：** 12 |
 | OH\_NN\_OPS\_CROP = 91 | 对输入张量根据axis和offset参数裁剪指定shape大小的张量。  输入：  input，n维待裁剪的张量。shape，1维张量，表示要裁剪的张量大小。  参数：  axis，裁剪区域开始的轴。取值范围为[0,1,...,r-1]，其中r是输入张量的秩，负数表示反向取值。  offset，裁剪区域的起始偏移量。  输出：  output，裁剪后的张量。  **起始版本：** 12 |
-| OH\_NN\_OPS\_DETECTION\_POST\_PROCESS = 92 | 对目标检测模型的输出进行后处理。包括对模型输出的边界框、类别概率和分数进行解码，然后执行非极大值抑制（NMS）以去除重叠的边界框，最终输出检测结果。  输入：  bbox，模型输出的边界框。  scores，模型输出的类别得分概率。  anchors，用于生成检测框的候选框的坐标和大小信息。在目标检测任务中，候选框指在图像中按照一定的规则预设的一系列矩形框，这些矩形框通常具有不同的大小和长宽比，用于对图像中的目标进行初步的预测和筛选。  参数：  inputSize，输入张量的尺寸。  scale，用于将输出图片从归一化的形式转换到原始图像坐标的缩放因子。  nmsIoUThreshold，非极大值抑制的阈值，用于去除重复的检测框。  nmsScoreThreshold，置信度阈值，用于过滤低置信度的检测框。  maxDetections，每张图片最多输出的检测框数量。  detectionsPerClass，每个类别的最大检测数量。  maxClassesPerDetection，每个检测框中的最大检测类别数。  numClasses，检测总类别数量。  useRegularNms，bool值，是否使用基于IoU阈值的非极大值抑制算法，当为true时，使用基于IoU阈值的NMS算法来过滤重叠的目标框，保留得分最高的目标框；当为false时，不适用基于IoU阈值的NMS算法，进根据得分对目标框进行排序，保留最高得分的目标框。  outQuantized，bool值，表示输出是否需要做量化。  输出：  bboxes，3维张量，内部数组表示目标检测框的坐标值。  classes，2维张量，内部数值表示每个检测框对应的分类索引。  confidences，2维张量，内部数值表示检测到的物体的置信度。  numDetections，检测结果的数量。  **起始版本：** 12 |
+| OH\_NN\_OPS\_DETECTION\_POST\_PROCESS = 92 | 对目标检测模型的输出进行后处理。包括对模型输出的边界框、类别概率和分数进行解码，然后执行非极大值抑制（NMS）以去除重叠的边界框，最终输出检测结果。  输入：  bbox，模型输出的边界框。  scores，模型输出的类别得分概率。  anchors，用于生成检测框的候选框的坐标和大小信息。在目标检测任务中，候选框指在图像中按照一定的规则预设的一系列矩形框，这些矩形框通常具有不同的大小和长宽比，用于对图像中的目标进行初步的预测和筛选。  参数：  inputSize，输入张量的尺寸。  scale，用于将输出图片从归一化的形式转换到原始图像坐标的缩放因子。  nmsIoUThreshold，非极大值抑制的阈值，用于去除重复的检测框。  nmsScoreThreshold，置信度阈值，用于过滤低置信度的检测框。  maxDetections，每张图片最多输出的检测框数量。  detectionsPerClass，每个类别的最大检测数量。  maxClassesPerDetection，每个检测框中的最大检测类别数。  numClasses，检测总类别数量。  useRegularNms，bool值，是否使用基于IoU阈值的非极大值抑制算法，当为true时，使用基于IoU阈值的NMS算法来过滤重叠的目标框，保留得分最高的目标框；当为false时，不使用基于IoU阈值的NMS算法，仅根据得分对目标框进行排序，保留最高得分的目标框。  outQuantized，bool值，表示输出是否需要做量化。  输出：  bboxes，3维张量，内部数组表示目标检测框的坐标值。  classes，2维张量，内部数值表示每个检测框对应的分类索引。  confidences，2维张量，内部数值表示检测到的物体的置信度。  numDetections，检测结果的数量。  **起始版本：** 12 |
 | OH\_NN\_OPS\_FLOOR = 93 | 对输入的每个元素做向下取整。  输入：  input，n维张量，数据类型为OH\_NN\_FLOAT64、OH\_NN\_FLOAT32或OH\_NN\_FLOAT16。  输出：  n维张量，形状和数据类型与输入相同。  **起始版本：** 12 |
 | OH\_NN\_OPS\_L2\_NORMALIZE = 94 | 根据指定的axis轴对输入张量做L2-正则化。  输入：  input，需要做L2正则化的n维张量。  参数：  axis，做正则化的指定维度，-1表示最后一个维度。  epsilon，保持计算稳定性，在分母上加上一个很小的数值，默认为1e-6。activationType，激活函数类型。  输出：  output，输出张量，和输入相同的数据类型和形状。  **起始版本：** 12 |
 | OH\_NN\_OPS\_LOG\_SOFTMAX = 95 | 对输入张量的每个元素做指数运算，然后将运算结果进行归一化处理，最终得到一个概率分布向量。  输入：  2维张量，形状为[batchSize，numClasses]，数据类型为OH\_NN\_FLOAT64、OH\_NN\_FLOAT32、OH\_NN\_FLOAT16。  参数：  axis，指定进行计算的维度。  输出：  output，2维张量，完成计算后的概率向量。  **起始版本：** 12 |
 | OH\_NN\_OPS\_LRN = 96 | 对输入做局部响应归一化操作。  输入：  input，4维张量，待归一化的输入张量。  参数：  depthRadius，标量，归一化窗口的半宽。  bias，偏移量，通常为正避免除零问题，默认为1。  alpha，比例系数，默认为1。  beta，指数变量，默认为0.5。  normRegion，指定归一化的区域，默认0，代表归一化区域为"ACROSS\_CHANNELS"，目前仅支持该模式。  输出：  output，归一化的输出张量，形状和数据类型和输入相同。  **起始版本：** 12 |
-| OH\_NN\_OPS\_MINIMUM = 97 | 逐元素计算两个张量的最小值，输入必须是两个张量，或一个张量和一个标量。当输入是两个张量是，数据类型不能同时是bool值，并且两个要能广播到相同的形状。当输入是一个张量和一个常量时，标量必须是常量。  输入：  input1，n维张量，数据类型可以是数值类型或bool值。  input2，n维张量，数据类型可以是数值类型或bool值。  输出：  output，比较结果张量，形状和数据类型和输入相同。  **起始版本：** 12 |
+| OH\_NN\_OPS\_MINIMUM = 97 | 逐元素计算两个张量的最小值，输入必须是两个张量，或一个张量和一个标量。当输入是两个张量时，数据类型不能同时是bool值，并且两个要能广播到相同的形状。当输入是一个张量和一个常量时，标量必须是常量。  输入：  input1，n维张量，数据类型可以是数值类型或bool值。  input2，n维张量，数据类型可以是数值类型或bool值。  输出：  output，比较结果张量，形状和数据类型和输入相同。  **起始版本：** 12 |
 | OH\_NN\_OPS\_RANK = 98 | 计算张量的秩。  输入：  input，n维张量。  输出：  output，0维的int32结果张量，表示输入的秩。  **起始版本：** 12 |
 | OH\_NN\_OPS\_REDUCE\_MAX = 99 | 计算输入张量在指定维度上的最大值，如果keepDims是false，输出张量的维度将会缩减；如果keepDims为true，输出张量的维度和输入张量保持不变。  输入：  input，n维张量，其中n<8。  axis，用于计算最大值的维度。  参数：  keepDims，布尔值，是否保留维度的标志位。  reduceToEnd，bool值，是否需要执行reduce操作直到最后一轴。  coeff，一个OH\_NN\_FLOAT32标量，表示输出的缩放因子。  输出：  output，m维输出张量，数据类型和input相同。当keepDims为false时，m<n；当keepDims为true时，m==n。  **起始版本：** 12 |
 | OH\_NN\_OPS\_REDUCE\_MIN = 100 | 计算输入张量在指定维度上的最小值，如果keepDims是false，输出张量的维度将会缩减；如果keepDims为true，输出张量的维度和输入张量保持不变。  输入：  input，n维张量，其中n<8。  axis，用于计算最小值的维度。  参数：  keepDims，布尔值，是否保留维度的标志位。  reduceToEnd，bool值，是否需要执行reduce操作直到最后一轴。  coeff，一个OH\_NN\_FLOAT32标量，表示输出的缩放因子。  输出：  output，m维输出张量，数据类型和input相同。当keepDims为false时，m<n；当keepDims为true时，m==n。  **起始版本：** 12 |
@@ -368,10 +340,8 @@ Neural Network Runtime 支持算子的类型。
 
 ### OH\_NN\_TensorType
 
-PhonePC/2in1TabletTV
-
-```
-1. enum OH_NN_TensorType
+```c
+enum OH_NN_TensorType
 ```
 
 **描述**
@@ -552,14 +522,10 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### NN\_OnRunDone()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*NN_OnRunDone)(void *userData, OH_NN_ReturnCode errCode, void *outputTensor[], int32_t outputCount)
+```c
+typedef void (*NN_OnRunDone)(void *userData, OH_NN_ReturnCode errCode, void *outputTensor[], int32_t outputCount)
 ```
 
 **描述**
@@ -581,10 +547,8 @@ PhonePC/2in1TabletTV
 
 ### NN\_OnServiceDied()
 
-PhonePC/2in1TabletTV
-
-```
-1. typedef void (*NN_OnServiceDied)(void *userData)
+```c
+typedef void (*NN_OnServiceDied)(void *userData)
 ```
 
 **描述**

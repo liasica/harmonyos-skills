@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faq
 title: 常见问题
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:48:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d9f0f7021c004f6e224bbcc6161a6b68d7522509ed16e8521cc166479421dab8
+scraped_at: 2026-09-02T14:50:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5833bb753a6ed3ed5655866128e0e3ecc7d2114e2469e440fdcdbac836366dfc
 ---
 
 **Q1：执行过程中，设备断连重连后，任务能否继续执行？**
@@ -31,7 +31,7 @@ A4：请确认Mac版DevEco Testing客户端是否按照以下步骤安装：
 
 步骤1：DevEco Testing 客户端下载完成后将出现下图弹框。将下载的 DevEco\_Testing\_for\_App 文件拖拽至 Applications 文件夹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/eH6jSLInSG-ssc2EKbmelw/zh-cn_image_0000002524623351.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/kH7SgjoOTwCN2NGpKnJhCQ/zh-cn_image_0000002633533182.png "点击放大")
 
 步骤2：在启动台找到 DevEco Testing 图标则表示 DevEco Testing 已正常安装。
 
@@ -39,8 +39,26 @@ A4：请确认Mac版DevEco Testing客户端是否按照以下步骤安装：
 
 A5：点击取消报错弹框，进入客户端设置选项，关闭"开启登录状态保活"；最后点击“关于”退出登录。完成以上操作后重新登录即可恢复。
 
-**Q6：Mac版本客户端如果覆盖安装后，报错****“‘DecEco\_Testing\_for\_App’ 已损坏，无法打开。你应该将它移到废纸篓。”****，如何解决？**
+**Q6：Mac版本客户端如果覆盖安装后，报错****“‘DevEco\_Testing\_for\_App’ 已损坏，无法打开。你应该将它移到废纸篓。”****，如何解决****？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/C2TENNhfQcOMTjBy8xoJBA/zh-cn_image_0000002537783290.png)
+A6：请先重启电脑，再重新覆盖安装。
 
-更多问题详见[FAQ](../harmonyos-faqs/faqs-deveco-testing.md)
+注：退出 DevEco Testing 客户端时，建议点击客户端界面左上角的关闭按钮或者在dock栏 control 键+鼠标点击 DevEco Testing 图标进行退出。
+
+**Q7：win版本客户端，在进行上架预检****测试时，性能基础质量测试执行异常，报告页性能无数据，如何解决？**
+
+A7：如当前电脑仅有C盘，需要在客户端将数据目录设置为 C:\Users\...\AppData\Local\Temp\Deveco Testing 。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/UDtmPfwCQxeqE2wQgjFzNw/zh-cn_image_0000002633533180.png "点击放大")
+
+**Q8：如何通过客户端反馈日志****？**
+
+A8：（1）在客户端导航栏点击设置——选择问题反馈
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/sdX4vpkjTuaSgFnPFqFaYw/zh-cn_image_0000002678748202.png "点击放大")
+
+（2）根据页面提醒填问题反馈的信息，勾选“上传日志”选项；如果想反馈某一个任务的日志及执行情况，在“选择任务”栏点击对应的任务即可。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/P1Po2ckeRJqURXsL59qCzA/zh-cn_image_0000002708349369.png "点击放大")
+
+更多问题详见[FAQ](../harmonyos-faqs/faqs-deveco-testing-faq.md)

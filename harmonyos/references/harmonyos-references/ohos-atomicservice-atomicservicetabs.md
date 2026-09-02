@@ -3,68 +3,62 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceTabs
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceTabs
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5ff81a2c9046bdba0eb13ebf07fb5c738632d4c92413070fa0fe54424d783fbb
+scraped_at: 2026-09-02T15:01:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a1ee2c017cd543229ec7f03253ab2cfe936b71f5b8f29bedd100fdf7f891389e
 ---
 
-AtomicServiceTabs高级组件，对Tabs组件一些不需提供给用户自定义设计的属性进行简化，限制最多显示5个页签，固定页签样式，位置和大小。
+AtomicServiceTabs高级组件，对Tabs组件中不需要暴露给用户进行自定义的属性进行简化，限制最多显示5个页签，固定页签的样式、位置和大小。
 
-说明
+**说明** 
 
-该组件从API Version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+该组件从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCallback } from '@kit.ArkUI';
+```ts
+import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCallback } from '@kit.ArkUI';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
-无
+无。
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
-不支持[通用属性](ts-component-general-attributes.md)
+不支持[通用属性](ts-component-general-attributes.md)。
 
 ## AtomicServiceTabs
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AtomicServiceTabs({
-2. tabContents?: [ TabContentBuilder?,
-3. TabContentBuilder?,
-4. TabContentBuilder?,
-5. TabContentBuilder?,
-6. TabContentBuilder?
-7. ],
-8. tabBarOptionsArray: [ TabBarOptions,
-9. TabBarOptions,
-10. TabBarOptions?,
-11. TabBarOptions?,
-12. TabBarOptions?
-13. ],
-14. tabBarPosition?: TabBarPosition,
-15. layoutMode?: LayoutMode,
-16. barBackgroundColor?: ResourceColor,
-17. index?: number,
-18. barOverlap?: boolean,
-19. controller?: TabsController,
-20. onChange?: Callback<number>,
-21. onTabBarClick?: Callback<number>,
-22. onContentWillChange?: OnContentWillChangeCallback,
-23. })
+```ts
+AtomicServiceTabs({
+   tabContents?: [ TabContentBuilder?,
+                    TabContentBuilder?,
+                  TabContentBuilder?,
+                  TabContentBuilder?,
+                  TabContentBuilder?
+                ],
+   tabBarOptionsArray: [ TabBarOptions,
+                        TabBarOptions,
+                        TabBarOptions?,
+                        TabBarOptions?,
+                        TabBarOptions?
+                      ],
+   tabBarPosition?: TabBarPosition,
+   layoutMode?: LayoutMode,
+   barBackgroundColor?: ResourceColor,
+   index?: number,
+   barOverlap?: boolean,
+   controller?: TabsController,
+   onChange?: Callback<number>,
+   onTabBarClick?: Callback<number>,
+   onContentWillChange?: OnContentWillChangeCallback,
+})
 ```
 
 **装饰器类型：**@Component
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -72,25 +66,23 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| tabContents | [[TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder),[TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder), [TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder),[TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder), [TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder)] | 否 | @BuilderParam | 内容视图容器数组，默认值为空，无内容展示。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| tabBarOptionsArray | [[TabBarOptions](ohos-atomicservice-atomicservicetabs.md#tabbaroptions),[TabBarOptions](ohos-atomicservice-atomicservicetabs.md#tabbaroptions), [TabBarOptions?](ohos-atomicservice-atomicservicetabs.md#tabbaroptions),[TabBarOptions?](ohos-atomicservice-atomicservicetabs.md#tabbaroptions), [TabBarOptions?](ohos-atomicservice-atomicservicetabs.md#tabbaroptions)] | 是 | @Prop | 页签容器数组。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| tabBarPosition | [TabBarPosition](ohos-atomicservice-atomicservicetabs.md#tabbarposition) | 否 | @Prop | 设置页签栏位置，默认值为TabBarPosition.Bottom。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| tabContents | [[TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder),[TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder), [TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder),[TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder), [TabContentBuilder?](ohos-atomicservice-atomicservicetabs.md#tabcontentbuilder)] | 否 | @BuilderParam | 内容视图容器数组，最多支持5个页签，默认值为空。 |
+| tabBarOptionsArray | [[TabBarOptions](ohos-atomicservice-atomicservicetabs.md#tabbaroptions),[TabBarOptions](ohos-atomicservice-atomicservicetabs.md#tabbaroptions), [TabBarOptions?](ohos-atomicservice-atomicservicetabs.md#tabbaroptions),[TabBarOptions?](ohos-atomicservice-atomicservicetabs.md#tabbaroptions), [TabBarOptions?](ohos-atomicservice-atomicservicetabs.md#tabbaroptions)] | 是 | @Prop | 页签选项数组，最多支持5个页签。 |
+| tabBarPosition | [TabBarPosition](ohos-atomicservice-atomicservicetabs.md#tabbarposition) | 否 | @Prop | 设置页签栏位置，默认值为TabBarPosition.BOTTOM。 |
 | layoutMode18+ | [LayoutMode](ts-container-tabcontent.md#layoutmode10) | 否 | @Prop | 设置底部页签的图片、文字排布的方式，默认值为LayoutMode.VERTICAL。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| barBackgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | @Prop | 设置TabBar的背景颜色，默认值为透明。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| index | number | 否 | @Prop | 设置当前显示页签的索引，索引值从0开始。默认值为0。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| barOverlap | boolean | 否 | @Prop | 设置TabBar是否背景变模糊并叠加在TabContent之上。true表示TabBar背景变模糊并叠加在TabContent之上。默认值：true。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| controller | [TabsController](ts-container-tabs.md#tabscontroller) | 否 | - | Tabs组件的控制器，用于控制Tabs组件进行页签切换。默认值为new TabsController()。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| onChange | Callback<number> | 否 | - | Tabs页签切换后触发的事件。默认值为空。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| onTabBarClick | Callback<number> | 否 | - | Tabs页签点击后触发的事件。默认值为空。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| onContentWillChange | [OnContentWillChangeCallback](ohos-atomicservice-atomicservicetabs.md#oncontentwillchangecallback) | 否 | - | Tabs页面切换拦截事件能力，新页面即将显示时触发该回调。默认值为空。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| barBackgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | @Prop | 设置TabBar的背景颜色，默认值为透明。 |
+| index | number | 否 | @Prop | 设置当前显示页签的索引，索引值从0开始，取值范围为[0, 页签数-1]，最大不超过4。默认值为0。 |
+| barOverlap | boolean | 否 | @Prop | 设置TabBar是否背景变模糊并叠加在TabContent之上。true表示TabBar背景变模糊并叠加在TabContent之上，false表示TabBar背景不变模糊且不叠加在TabContent之上。默认值为true。 |
+| controller | [TabsController](ts-container-tabs.md#tabscontroller) | 否 | - | Tabs组件的控制器，用于控制页签切换。默认值为new TabsController()。 |
+| onChange | Callback<number> | 否 | - | Tabs页签切换后触发的事件，回调参数为切换后的页签索引，索引值从0开始。当onContentWillChange回调返回false拦截页面切换时，该事件不会被触发。默认值为空。 |
+| onTabBarClick | Callback<number> | 否 | - | Tabs页签点击后触发的事件，回调参数为被点击页签的索引值，索引值从0开始。默认值为空。 |
+| onContentWillChange | [OnContentWillChangeCallback](ohos-atomicservice-atomicservicetabs.md#oncontentwillchangecallback) | 否 | - | Tabs页面切换拦截事件，新页面即将显示时触发该回调。当回调返回false拦截页面切换时，onChange事件不会被触发。默认值为空。 |
 
 ## TabContentBuilder
 
-PhonePC/2in1TabletTVWearable
-
 type TabContentBuilder = () => void
 
-内容视图容器。
+内容视图构建器，用于构建TabContent页签内容的函数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -98,11 +90,9 @@ type TabContentBuilder = () => void
 
 ## TabBarOptions
 
-PhonePC/2in1TabletTVWearable
+页签选项。
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(icon: ResourceStr | TabBarSymbol, text: ResourceStr, unselectedColor?: ResourceColor, selectedColor?: ResourceColor)
 
@@ -116,14 +106,14 @@ TabBarOptions的构造函数。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| icon | [ResourceStr](ts-types.md#resourcestr) | [TabBarSymbol](ts-container-tabcontent.md#tabbarsymbol12对象说明) | 是 | 页签内的图片内容。 |
+| icon | [ResourceStr](ts-types.md#resourcestr) | [TabBarSymbol](ts-container-tabcontent.md#tabbarsymbol12对象说明) | 是 | 页签内的图标内容。 |
 | text | [ResourceStr](ts-types.md#resourcestr) | 是 | 页签内的文字内容。 |
-| unselectedColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 未选择时的页签颜色，默认值：#99182431。 |
-| selectedColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 被选择时的页签颜色，默认值：#FF007DFF。 |
+| unselectedColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 未选择时的页签颜色，默认值为#99182431。 |
+| selectedColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 已选择时的页签颜色，默认值为#FF007DFF。 |
 
 ## TabBarPosition
 
-PhonePC/2in1TabletTVWearable
+设置页签栏位置，默认值为TabBarPosition.BOTTOM。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -136,11 +126,9 @@ PhonePC/2in1TabletTVWearable
 
 ## OnContentWillChangeCallback
 
-PhonePC/2in1TabletTVWearable
-
 type OnContentWillChangeCallback = (currentIndex: number, comingIndex: number) => boolean
 
-页面内容发生变化时触发的回调函数。
+页面内容即将发生变化时触发的回调函数，用于拦截页面切换，开发者可通过返回值控制是否允许切换。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -157,249 +145,242 @@ type OnContentWillChangeCallback = (currentIndex: number, comingIndex: number) =
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 回调函数正常执行则返回true，反之返回false。 |
+| boolean | 返回true表示允许切换到即将显示的页面，返回false表示不允许切换，仍然显示当前页面内容。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1(纯文本样式)
 
+```ts
+// Index.ets
+import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCallback } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State onClickNumber: number = 0;
+  @State currentIndex: number = 0;
+  @State comingIndex: number = 0;
+  onContentWillChangeCallback: OnContentWillChangeCallback = (currentIndex: number, comingIndex: number): boolean => {
+    this.currentIndex = currentIndex;
+    this.comingIndex = comingIndex;
+    console.info('OnContentWillChangeCallback');
+    return true;
+  }
+  onTabClick: Callback<number> = (index: number) => {
+    this.onClickNumber++;
+    console.info('onTabClick');
+  }
+  @Builder
+  tabContent1() {
+    Column().width('100%').height('100%').alignItems(HorizontalAlign.Center).backgroundColor('#00CB87')
+  }
+
+  @Builder
+  tabContent2() {
+    Column().width('100%').height('100%').backgroundColor('#007DFF')
+  }
+
+  @Builder
+  tabContent3() {
+    Column().width('100%').height('100%').backgroundColor('#FFBF00')
+  }
+
+  build() {
+    Stack() {
+    AtomicServiceTabs({
+      tabContents: [
+        () => {
+          this.tabContent1()
+        },
+        () => {
+          this.tabContent2()
+        },
+        () => {
+          this.tabContent3()
+        }
+      ],
+      tabBarOptionsArray: [
+        new TabBarOptions('', '绿色', Color.Black, Color.Green),
+        new TabBarOptions('', '蓝色', Color.Black, Color.Blue),
+        new TabBarOptions('', '黄色', Color.Black, Color.Yellow),
+      ],
+      tabBarPosition: TabBarPosition.BOTTOM,
+      barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
+      onTabBarClick: this.onTabClick,
+      onContentWillChange: this.onContentWillChangeCallback,
+    })
+    Column() {
+      Text('onTabBarClick回调次数: ' + this.onClickNumber)
+      Text('comingIndex = ' + this.comingIndex + ', currentIndex = ' + this.currentIndex)
+    }.margin({top:500})
+    }.height('100%')
+  }
+}
 ```
-1. // Index.ets
-2. import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCallback } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = '首页';
-8. @State onClickNumber: number = 0;
-9. @State currentIndex: number = 0;
-10. @State comingIndex: number = 0;
-11. onContentWillChangeCallBack:  OnContentWillChangeCallback = (currentIndex: number, comingIndex: number): boolean => {
-12. this.currentIndex = currentIndex;
-13. this.comingIndex = comingIndex;
-14. console.info('OnContentWillChangeCallback')
-15. return true;
-16. }
-17. onTabClick: Callback<number> = (index:number)=>{
-18. this.onClickNumber ++;
-19. console.info('onTabClick');
-20. }
-21. @Builder
-22. tabContent1() {
-23. Column().width('100%').height('100%').alignItems(HorizontalAlign.Center).backgroundColor('#00CB87')
-24. }
-
-26. @Builder
-27. tabContent2() {
-28. Column().width('100%').height('100%').backgroundColor('#007DFF')
-29. }
-
-31. @Builder
-32. tabContent3() {
-33. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-34. }
-
-36. build() {
-37. Stack() {
-38. AtomicServiceTabs({
-39. tabContents: [
-40. () => {
-41. this.tabContent1()
-42. },
-43. () => {
-44. this.tabContent2()
-45. },
-46. () => {
-47. this.tabContent3()
-48. }
-49. ],
-50. tabBarOptionsArray: [
-51. new TabBarOptions('', '绿色', Color.Black, Color.Green),
-52. new TabBarOptions('', '蓝色', Color.Black, Color.Blue),
-53. new TabBarOptions('', '黄色', Color.Black, Color.Yellow),
-54. ],
-55. tabBarPosition: TabBarPosition.BOTTOM,
-56. barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
-57. onTabBarClick:this.onTabClick,
-58. onContentWillChange: this.onContentWillChangeCallBack,
-59. })
-60. Column() {
-61. Text("onchange回调次数:" + this.onClickNumber)
-62. Text("comingIndex = " + this.comingIndex + ", currentIndex = " + this.currentIndex)
-63. }.margin({top:500})
-64. }.height('100%')
-65. }
-66. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/dZoOp-ShRii0sPwLgPFFiw/zh-cn_image_0000002558766612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/W1vnZ7__SbiXeOJ_2-N9XA/zh-cn_image_0000002736315359.png)
 
 ### 示例2(纯图标样式)
 
+```ts
+// Index.ets
+import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCallback } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @State onClickNumber: number = 0;
+  @State currentIndex: number = 0;
+  @State comingIndex: number = 0;
+  onContentWillChangeCallback: OnContentWillChangeCallback = (currentIndex: number, comingIndex: number): boolean => {
+    this.currentIndex = currentIndex;
+    this.comingIndex = comingIndex;
+    console.info('OnContentWillChangeCallback');
+    return true;
+  }
+  onTabClick: Callback<number> = (index: number) => {
+    this.onClickNumber++;
+    console.info('onTabClick');
+  }
+  @Builder
+  tabContent1() {
+    Column().width('100%').height('100%').alignItems(HorizontalAlign.Center).backgroundColor('#00CB87')
+  }
+
+  @Builder
+  tabContent2() {
+    Column().width('100%').height('100%').backgroundColor('#007DFF')
+  }
+
+  @Builder
+  tabContent3() {
+    Column().width('100%').height('100%').backgroundColor('#FFBF00')
+  }
+
+  build() {
+    Stack() {
+    AtomicServiceTabs({
+      tabContents: [
+        () => {
+          this.tabContent1()
+        },
+        () => {
+          this.tabContent2()
+        },
+        () => {
+          this.tabContent3()
+        }
+      ],
+      tabBarOptionsArray: [
+        new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '', Color.Black, Color.Blue),
+        new TabBarOptions($r('sys.media.ohos_ic_public_location'), '', Color.Black, Color.Blue),
+        new TabBarOptions($r('sys.media.ohos_ic_public_more'), '', Color.Black, Color.Blue),
+      ],
+      tabBarPosition: TabBarPosition.BOTTOM,
+      barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
+      onTabBarClick: this.onTabClick,
+      onContentWillChange: this.onContentWillChangeCallback,
+    })
+    Column() {
+      Text('onTabBarClick回调次数: ' + this.onClickNumber)
+      Text('comingIndex = ' + this.comingIndex + ', currentIndex = ' + this.currentIndex)
+    }.margin({top:500})
+    }.height('100%')
+  }
+}
 ```
-1. // Index.ets
-2. import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCallback } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. @State message: string = '首页';
-8. @State onClickNumber: number = 0;
-9. @State currentIndex: number = 0;
-10. @State comingIndex: number = 0;
-11. onContentWillChangeCallBack: OnContentWillChangeCallback = (currentIndex: number, comingIndex: number): boolean => {
-12. this.currentIndex = currentIndex;
-13. this.comingIndex = comingIndex;
-14. console.info('OnContentWillChangeCallback');
-15. return true;
-16. }
-17. onTabClick: Callback<number> = (index:number)=>{
-18. this.onClickNumber ++;
-19. console.info('onTabClick');
-20. }
-21. @Builder
-22. tabContent1() {
-23. Column().width('100%').height('100%').alignItems(HorizontalAlign.Center).backgroundColor('#00CB87')
-24. }
-
-26. @Builder
-27. tabContent2() {
-28. Column().width('100%').height('100%').backgroundColor('#007DFF')
-29. }
-
-31. @Builder
-32. tabContent3() {
-33. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-34. }
-
-36. build() {
-37. Stack() {
-38. AtomicServiceTabs({
-39. tabContents: [
-40. () => {
-41. this.tabContent1()
-42. },
-43. () => {
-44. this.tabContent2()
-45. },
-46. () => {
-47. this.tabContent3()
-48. }
-49. ],
-50. tabBarOptionsArray: [
-51. new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '', Color.Black, Color.Blue),
-52. new TabBarOptions($r('sys.media.ohos_ic_public_location'), '', Color.Black, Color.Blue),
-53. new TabBarOptions($r('sys.media.ohos_ic_public_more'), '', Color.Black, Color.Blue),
-54. ],
-55. tabBarPosition: TabBarPosition.BOTTOM,
-56. barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
-57. onTabBarClick:this.onTabClick,
-58. onContentWillChange: this.onContentWillChangeCallBack,
-59. })
-60. Column() {
-61. Text("onchange回调次数:" + this.onClickNumber)
-62. Text("comingIndex = " + this.comingIndex + ", currentIndex = " + this.currentIndex)
-63. }.margin({top:500})
-64. }.height('100%')
-65. }
-66. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Rd7IOX5UQYKEXyJe-zNAaw/zh-cn_image_0000002558606952.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/-JdrAsBJT4elm0M-gAFZ6w/zh-cn_image_0000002706676320.png)
 
 ### 示例3(图标加文本，自定义图文排布)
 
-```
-1. // Index.ets
-2. import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCallback } from '@kit.ArkUI';
+```ts
+// Index.ets
+import { AtomicServiceTabs, TabBarOptions, TabBarPosition, OnContentWillChangeCallback } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct AtomicserviceTabs  {
-7. @State flag: boolean = false;
-8. @State message: string = '首页';
-9. @State onClickNumber: number = 0;
-10. @State currentIndex: number = 0;
-11. @State comingIndex: number = 0;
-12. @State layoutMode: LayoutMode = LayoutMode.VERTICAL;
-13. onContentWillChangeCallBack: OnContentWillChangeCallback = (currentIndex: number, comingIndex: number): boolean => {
-14. this.currentIndex = currentIndex;
-15. this.comingIndex = comingIndex;
-16. console.info('OnContentWillChangeCallback');
-17. return true;
-18. }
-19. onTabClick: Callback<number> = (index: number) => {
-20. this.onClickNumber++;
-21. console.info('onTabClick');
-22. }
-23. onChange: Callback<number, void> = (Index: number) => {
-24. console.info('onChange');
-25. console.info('onChange2');
-26. }
+@Entry
+@Component
+struct Index {
+  @State onClickNumber: number = 0;
+  @State currentIndex: number = 0;
+  @State comingIndex: number = 0;
+  @State layoutMode: LayoutMode = LayoutMode.VERTICAL;
+  onContentWillChangeCallback: OnContentWillChangeCallback = (currentIndex: number, comingIndex: number): boolean => {
+    this.currentIndex = currentIndex;
+    this.comingIndex = comingIndex;
+    console.info('OnContentWillChangeCallback');
+    return true;
+  }
+  onTabClick: Callback<number> = (index: number) => {
+    this.onClickNumber++;
+    console.info('onTabClick');
+  }
+  onChange: Callback<number> = (index: number) => {
+    console.info('onChange');
+  }
 
-28. @Builder
-29. tabContent1() {
-30. Column().width('100%').height('100%').alignItems(HorizontalAlign.Center).backgroundColor('#00CB87')
-31. }
+  @Builder
+  tabContent1() {
+    Column().width('100%').height('100%').alignItems(HorizontalAlign.Center).backgroundColor('#00CB87')
+  }
 
-33. @Builder
-34. tabContent2() {
-35. Column().width('100%').height('100%').backgroundColor(Color.Blue)
-36. }
+  @Builder
+  tabContent2() {
+    Column().width('100%').height('100%').backgroundColor(Color.Blue)
+  }
 
-38. @Builder
-39. tabContent3() {
-40. Column().width('100%').height('100%').backgroundColor('#FFBF00')
-41. }
+  @Builder
+  tabContent3() {
+    Column().width('100%').height('100%').backgroundColor('#FFBF00')
+  }
 
-43. build() {
-44. Stack() {
-45. AtomicServiceTabs({
-46. tabContents: [
-47. () => {
-48. this.tabContent1()
-49. },
-50. () => {
-51. this.tabContent2()
-52. },
-53. () => {
-54. this.tabContent3()
-55. },
-56. ],
-57. tabBarOptionsArray: [
-58. new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '绿色', Color.Black, Color.Blue),
-59. new TabBarOptions($r('sys.media.ohos_ic_public_location'), '蓝色', Color.Black, Color.Blue),
-60. new TabBarOptions($r('sys.media.ohos_ic_public_more'), '黄色', Color.Black, Color.Blue),
-61. ],
-62. tabBarPosition: TabBarPosition.BOTTOM,
-63. barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
-64. onTabBarClick: this.onTabClick,
-65. onContentWillChange: this.onContentWillChangeCallBack,
-66. onChange: this.onChange,
-67. layoutMode: this.layoutMode,
-68. })
+  build() {
+    Stack() {
+      AtomicServiceTabs({
+        tabContents: [
+          () => {
+            this.tabContent1()
+          },
+          () => {
+            this.tabContent2()
+          },
+          () => {
+            this.tabContent3()
+          },
+        ],
+        tabBarOptionsArray: [
+        new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '绿色', Color.Black, Color.Blue),
+        new TabBarOptions($r('sys.media.ohos_ic_public_location'), '蓝色', Color.Black, Color.Blue),
+        new TabBarOptions($r('sys.media.ohos_ic_public_more'), '黄色', Color.Black, Color.Blue),
+        ],
+        tabBarPosition: TabBarPosition.BOTTOM,
+        barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
+        onTabBarClick: this.onTabClick,
+        onContentWillChange: this.onContentWillChangeCallback,
+        onChange: this.onChange,
+        layoutMode: this.layoutMode,
+      })
 
-70. Column() {
-71. Button("layoutMode垂直 ")
-72. .width('30%')
-73. .height(50)
-74. .margin({ top: 5 })
-75. .onClick((event?: ClickEvent) => {
-76. this.layoutMode = LayoutMode.VERTICAL;
-77. })
-78. Button("layoutMode水平 ")
-79. .width('30%')
-80. .height(50)
-81. .margin({ top: 5 })
-82. .onClick((event?: ClickEvent) => {
-83. this.layoutMode = LayoutMode.HORIZONTAL;
-84. })
-85. }.margin({ top: 10 })
-86. }.height('100%')
-87. }
-88. }
+      Column() {
+        Button('layoutMode垂直')
+          .width('30%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.layoutMode = LayoutMode.VERTICAL;
+          })
+        Button('layoutMode水平')
+          .width('30%')
+          .height(50)
+          .margin({ top: 5 })
+          .onClick((event?: ClickEvent) => {
+            this.layoutMode = LayoutMode.HORIZONTAL;
+          })
+      }.margin({ top: 10 })
+    }.height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/qThn4i-6TIGjQXEbCGTDUw/zh-cn_image_0000002589326479.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/BvEvPbtaRX-i0Yld0hj7-Q/zh-cn_image_0000002736435407.gif)

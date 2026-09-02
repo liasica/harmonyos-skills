@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___se
 title: Rcp_SessionConfiguration
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_SessionConfiguration
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3b59bf5cb154dd9488f0a44f3cb5237370fa8ad8ade036dafefc1db50648c9ad
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:62e67d396a5c7f3c97fb81b664d672046702e3a4d454036aa3cce308300cfc0c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 会话配置。
 
@@ -22,48 +20,38 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| [Rcp\_SessionType](remote-communication-overview.md#rcp_sessiontype)[type](_rcp___session_configuration.md#type) | 会话类型。 |
-| [Rcp\_InterceptorArray](_rcp___interceptor_array.md)[interceptors](_rcp___session_configuration.md#interceptors) | 用户自定义的异步拦截器数组。 |
-| [Rcp\_SyncInterceptorArray](_rcp___sync_interceptor_array.md)[syncInterceptors](_rcp___session_configuration.md#syncinterceptors) | 用户定义的同步拦截器数组。 |
+| [Rcp\_SessionType](remote-communication-overview.md#rcp_sessiontype) [type](_rcp___session_configuration.md#type) | 会话类型。 |
+| [Rcp\_InterceptorArray](_rcp___interceptor_array.md) [interceptors](_rcp___session_configuration.md#interceptors) | 用户自定义的异步拦截器数组。 |
+| [Rcp\_SyncInterceptorArray](_rcp___sync_interceptor_array.md) [syncInterceptors](_rcp___session_configuration.md#syncinterceptors) | 用户定义的同步拦截器数组。 |
 | const char \* [baseUrl](_rcp___session_configuration.md#baseurl) | 基本URL。 |
 | [Rcp\_Headers](remote-communication-overview.md#rcp_headers) \* [headers](_rcp___session_configuration.md#headers) | 请求标头。 |
 | [Rcp\_RequestCookies](remote-communication-overview.md#rcp_requestcookies) \* [cookies](_rcp___session_configuration.md#cookies) | 请求的Cookie。 |
-| [Rcp\_SessionListener](_rcp___session_listener.md)[sessionListener](_rcp___session_configuration.md#sessionlistener) | 回调函数，供session监听close()或cancel()事件。 |
+| [Rcp\_SessionListener](_rcp___session_listener.md) [sessionListener](_rcp___session_configuration.md#sessionlistener) | 回调函数，供session监听close()或cancel()事件。 |
 | [Rcp\_Configuration](_rcp___configuration.md) \* [requestConfiguration](_rcp___session_configuration.md#requestconfiguration) | 默认请求配置。这些选项可以通过[Request.configuration](_rcp___request.md#configuration)覆盖。 |
-| [Rcp\_ConnectionConfiguration](_rcp___connection_configuration.md)[connectionConfiguration](_rcp___session_configuration.md#connectionconfiguration) | 连接配置。 |
+| [Rcp\_ConnectionConfiguration](_rcp___connection_configuration.md) [connectionConfiguration](_rcp___session_configuration.md#connectionconfiguration) | 连接配置。 |
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### baseUrl
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. const char* Rcp_SessionConfiguration::baseUrl
+```cpp
+const char* Rcp_SessionConfiguration::baseUrl
 ```
 
 **描述**
 
 基本URL。
 
-举例， 如果请求的url为 '?name=value', 基本url是 “https://example.com”，那么最后当请求被送往服务端时的最终url为 “https://example.com?name=value”。
+例如：请求的url为 '?name=value', 基本url是 “https://example.com”，那么最后当请求被送往服务端时的最终url为 “https://example.com?name=value”。
 
 ### connectionConfiguration
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_ConnectionConfiguration Rcp_SessionConfiguration::connectionConfiguration
+```cpp
+Rcp_ConnectionConfiguration Rcp_SessionConfiguration::connectionConfiguration
 ```
 
 **描述**
@@ -74,10 +62,8 @@ PhonePC/2in1TabletTVWearable
 
 ### cookies
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_RequestCookies* Rcp_SessionConfiguration::cookies
+```cpp
+Rcp_RequestCookies* Rcp_SessionConfiguration::cookies
 ```
 
 **描述**
@@ -88,10 +74,8 @@ PhonePC/2in1TabletTVWearable
 
 ### headers
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_Headers* Rcp_SessionConfiguration::headers
+```cpp
+Rcp_Headers* Rcp_SessionConfiguration::headers
 ```
 
 **描述**
@@ -102,10 +86,8 @@ PhonePC/2in1TabletTVWearable
 
 ### interceptors
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_InterceptorArray Rcp_SessionConfiguration::interceptors
+```cpp
+Rcp_InterceptorArray Rcp_SessionConfiguration::interceptors
 ```
 
 **描述**
@@ -118,10 +100,8 @@ PhonePC/2in1TabletTVWearable
 
 ### requestConfiguration
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_Configuration* Rcp_SessionConfiguration::requestConfiguration
+```cpp
+Rcp_Configuration* Rcp_SessionConfiguration::requestConfiguration
 ```
 
 **描述**
@@ -130,10 +110,8 @@ PhonePC/2in1TabletTVWearable
 
 ### sessionListener
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_SessionListener Rcp_SessionConfiguration::sessionListener
+```cpp
+Rcp_SessionListener Rcp_SessionConfiguration::sessionListener
 ```
 
 **描述**
@@ -142,10 +120,8 @@ PhonePC/2in1TabletTVWearable
 
 ### syncInterceptors
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_SyncInterceptorArray Rcp_SessionConfiguration::syncInterceptors
+```cpp
+Rcp_SyncInterceptorArray Rcp_SessionConfiguration::syncInterceptors
 ```
 
 **描述**
@@ -158,10 +134,8 @@ PhonePC/2in1TabletTVWearable
 
 ### type
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_SessionType Rcp_SessionConfiguration::type
+```cpp
+Rcp_SessionType Rcp_SessionConfiguration::type
 ```
 
 **描述**

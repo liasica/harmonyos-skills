@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_PhotoCaptureSetting
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_PhotoCaptureSetting
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:066d149b01dfe8b9eb70475ec01c98c4642d3e1bd493c8b82324529506919fa3
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b665878a8310a879ce5dd6e7dd95455abdc5b36749124b6340b38d2b29c7bc19
 ---
 
-```
-1. typedef struct Camera_PhotoCaptureSetting {...} Camera_PhotoCaptureSetting
+```c
+typedef struct Camera_PhotoCaptureSetting {...} Camera_PhotoCaptureSetting
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 要设置的拍照捕获选项。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-assetstorekit-b123sp18
 title: Asset Store Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 > API变更清单 > Asset Store Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > API变更清单 > Asset Store Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:47+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:38+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:28b19dc68099c3a4ee9a4f8fac162cb2f005de5289ead17c1b3f80cd05807879
 ---
 

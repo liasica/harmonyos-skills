@@ -1,9 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-overview-releasenote-600
 title: DevEco Studio
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > DevEco Studio
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:44+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:31+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:5a327deadecc1c55188f9e7bd276255bf248cb204eb5f7287f1f640ac1ef26ff
 ---
 

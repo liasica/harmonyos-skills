@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-navig
 title: 使用网络领航员进行网络模拟
 breadcrumb: 指南 > 系统 > 网络 > 网络调试调优 > 使用网络领航员进行网络模拟
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:433a91917fe4845e1dd1add0c42ec04a9a841cd805f0a84aa84d73ecc49a0668
+scraped_at: 2026-09-02T14:59:35+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:955e9be4333d375c591eb6a3ea06c9c52dd0a83942e8bcd034176a43381ada65
 ---
 
 ## 网络领航员功能简介
 
-说明
+**说明** 
 
 网络领航员功能从API version 20开始支持，目前只支持手机和平板。
 
@@ -30,29 +30,29 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当您首次使用该功能时，可根据 **[开启开发者选项](ide-developer-mode.md#section530763213432)** 指引先开启设备的开发者模式，然后点击**设置** -> **系统** -> **开发者选项** -> **网络领航员**即可进入网络领航员页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/PRl8OhftRFayRcM--shdbg/zh-cn_image_0000002589324809.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/RzSnxwC6Q1eSUeX7DNz-BA/zh-cn_image_0000002706674430.png)
 
 网络领航员已预置如下常用网络模拟场景，您可以直接使用预置的网络模拟场景快速进行App使用体验测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/aXuk_K5oSOqXi9zSTT8ujQ/zh-cn_image_0000002589244747.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/5q7wj4fgRve-mOzc1iliiA/zh-cn_image_0000002736433519.png)
 
 **如何启用一个网络模拟场景**
 
 在**可用的网络模拟场景**中点击任意一个您需要模拟的场景即可启用网络模拟。例如，点击**进出电梯**后，即可启用该模拟场景，并可查看**已生效的网络模拟场景。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/tr_lFsgkSDqYehlgZuAfdQ/zh-cn_image_0000002558764942.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/r-FGGUZ1TDqsnnVvtyBb1Q/zh-cn_image_0000002706834368.png)
 
 同时您可在设备实况窗中查看到网络模拟内容（以进出电梯为例）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/U4F0LlTQTMSMYMfdfWnV6A/zh-cn_image_0000002558605286.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/JnyvCBp0SXGic8NcY1pUgg/zh-cn_image_0000002736313473.png)
 
 **如何停止一个网络模拟场景**
 
-如果您需要停止网络模拟场景，可点击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/zUONw1GiTOK-wMmz4fe1sQ/zh-cn_image_0000002589324811.png)，然后点击退出该网络模拟场景即可退出模拟。
+如果您需要停止网络模拟场景，可点击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/LwPLLCaySsOlwHhATkXroA/zh-cn_image_0000002706674432.png)，然后点击退出该网络模拟场景即可退出模拟。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/jnZec3k8QfiQqtP3HLbDvQ/zh-cn_image_0000002589244749.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/rl1BAq9NQ-2KQ2W_nSE2wA/zh-cn_image_0000002736433521.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/LxKlnVUsRpeRDEHR3FVUjQ/zh-cn_image_0000002558764944.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/WwFb3FXcQlmE3ra5Y9Sc8Q/zh-cn_image_0000002706834370.png)
 
 预置的网络模拟场景使用前置条件及模拟场景阶段说明如下：
 
@@ -73,7 +73,7 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当上述预置网络模拟场景无法满足您的开发需要时，您也可以在网络领航员页面通过点击底部的 **添加自定义网络场景** 来新增所需网络配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/KcNeY4xcSxWmrdzzPXkZJg/zh-cn_image_0000002558605288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/rd5SYxapTUGx_JQdJ-j2mQ/zh-cn_image_0000002736313475.png)
 
 参数的取值范围参考如下，输入参数取值后会自动添加单位。自定义场景的参数配置将应用于启动时的默认网络，建议在网络环境稳定时使用。
 
@@ -92,13 +92,13 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当您使用网络领航员能力时，可以通过实况窗实时了解网络变化，同时您也可以点击实况窗查看该场景的详细介绍，点击蓝色字体可**查看详细的网络参数**和**网络开发代码开发最佳实践**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/aNDrW0KbT4e6eSsl8m5SYQ/zh-cn_image_0000002589324813.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/DUW4aRtXQE-ku92x7wwh0g/zh-cn_image_0000002706674434.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ryVXEyV2S2S8Jb-QB7698w/zh-cn_image_0000002589244751.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/xNue8FEARa2WemdcISGT8w/zh-cn_image_0000002736433523.png)
 
 ## 网络领航员代码优化建议
 
-"网络领航员"功能在激活指定场景时，可智能模拟该场景下的网络QoS（服务质量）变化，帮助开发者快速构建目标网络环境。通过此功能，开发者能够前瞻性发现应用在不同网络环境中的兼容性问题，并基于本节的最佳实践指南进行针对性优化。
+“网络领航员”功能在激活指定场景时，可智能模拟该场景下的网络QoS（服务质量）变化，帮助开发者快速构建目标网络环境。通过此功能，开发者能够前瞻性发现应用在不同网络环境中的兼容性问题，并基于本节的最佳实践指南进行针对性优化。
 
 **代码优化建议**
 
@@ -107,30 +107,30 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 **网络切换场景**
 
 * 特征：设备在网络制式间切换（如WLAN与蜂窝网络互切）或多SIM卡切换时，会导致IP地址变更、TCP连接强制中断（触发RST复位），并伴随DNS重解析和新连接握手延迟。
-* 典型场景：进出电梯、离家断开WLAN、高铁行驶（多SIM卡切换）
+* 典型场景：进出电梯、离家断开WLAN、高铁行驶（多SIM卡切换）。
 * 最佳实践：应用需及时识别网络切换并重建连接，解析DNS，重新发起未完成的请求，也可直接使用Network Kit的HTTP数据请求模块发起网络请求。Network Kit集成了通途协议栈的智能多网切换功能，能够在网络切换时自动将待发和进行中的请求切换至已激活的网络，有效避免网络切换环境下请求失败或业务响应延迟的问题。Network Kit HTTP请求示例代码如下：
 
-  ```
-  1. // 引入包名
-  2. import { http } from '@kit.NetworkKit';
-  3. import { BusinessError } from '@kit.BasicServicesKit';
-  4. // 每一个httpRequest对应一个HTTP请求任务，不可复用
-  5. let httpRequest = http.createHttp();
-  6. httpRequest.request(
-  7. // 填写HTTP请求的URL地址，可以带参数也可以不带参数。URL地址需要开发者自定义。请求的参数可以在extraData中指定
-  8. "EXAMPLE_URL", (err: BusinessError, data: http.HttpResponse) => {
-  9. if (!err) {
-  10. // data.result为HTTP响应内容，可根据业务需要进行解析
-  11. console.info('Result:' + JSON.stringify(data.result));
-  12. // 当该请求使用完毕时，调用destroy方法主动销毁
-  13. httpRequest.destroy();
-  14. } else {
-  15. console.error('error:' + JSON.stringify(err));
-  16. // 当该请求使用完毕时，调用destroy方法主动销毁
-  17. httpRequest.destroy();
-  18. }
-  19. }
-  20. );
+  ```js
+  // 引入包名
+  import { http } from '@kit.NetworkKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+  // 每一个httpRequest对应一个HTTP请求任务，不可复用
+   let httpRequest = http.createHttp();
+   httpRequest.request(
+    // 填写HTTP请求的URL地址，可以带参数也可以不带参数。URL地址需要开发者自定义。请求的参数可以在extraData中指定
+    "EXAMPLE_URL", (err: BusinessError, data: http.HttpResponse) => {
+    if (!err) {
+      // data.result为HTTP响应内容，可根据业务需要进行解析
+      console.info('Result:' + JSON.stringify(data.result));
+      // 当该请求使用完毕时，调用destroy方法主动销毁
+      httpRequest.destroy();
+    } else {
+      console.error('error:' + JSON.stringify(err));
+      // 当该请求使用完毕时，调用destroy方法主动销毁
+      httpRequest.destroy();
+    }
+  }
+  );
   ```
 
   **网络波动场景**
@@ -140,48 +140,48 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
   + 最佳实践：
   1. 订阅Network Boost Kit的netQuality事件，实时感知网络质量，并进行针对性处理。
 
-     ```
-     1. // 引入包名
-     2. import { netQuality } from '@kit.NetworkBoostKit';
-     3. import { BusinessError } from '@kit.BasicServicesKit';
-     4. try {
-     5. netQuality.on('netQosChange', (list: Array<netQuality.NetworkQos>) => {
-     6. if (list.length > 0) {
-     7. list.forEach((qos) => {
-     8. // 回调信息处理
-     9. console.info(`该数据链路类型的上行带宽: ${JSON.stringify(qos.linkUpBandwidth)}.` );
-     10. console.info(`该数据链路类型的下行带宽: ${JSON.stringify(qos.linkDownBandwidth)}.` );
-     11. // 应用可根据上下行带宽等信息实时感知网络质量，调整请求策略
-     12. });
-     13. }
-     14. });
-     15. } catch (err) {
-     16. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-     17. }
+     ```ts
+     // 引入包名
+     import { netQuality } from '@kit.NetworkBoostKit';
+     import { BusinessError } from '@kit.BasicServicesKit';
+     try {
+       netQuality.on('netQosChange', (list: Array<netQuality.NetworkQos>) => {
+         if (list.length > 0) {
+           list.forEach((qos) => {
+             // 回调信息处理
+             console.info(`该数据链路类型的上行带宽: ${JSON.stringify(qos.linkUpBandwidth)}.` );
+             console.info(`该数据链路类型的下行带宽: ${JSON.stringify(qos.linkDownBandwidth)}.` );
+             // 应用可根据上下行带宽等信息实时感知网络质量，调整请求策略
+           });
+         }
+       });
+      } catch (err) {
+       console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+     }
      ```
   2. 在网络质量好时进行请求预取，提前发送后续可能产生的请求，并缓存获取的资源。后续产生对应请求时直接加载缓存的资源，提高响应速度，避免卡顿。
 
-     ```
-     1. // 引入包名
-     2. import { rcp } from '@kit.RemoteCommunicationKit';
-     3. import { HashMap } from "@kit.ArkTS";
-     4. export class PrefetchingRcp {
-     5. private session = rcp.createSession();
-     6. private responsePrefetched: HashMap<string, rcp.Response> = new HashMap<string, rcp.Response>();
-     7. public async prefetch(url: string) {
-     8. const request = new rcp.Request(url);
-     9. try {
-     10. // 发送预取请求
-     11. let response: rcp.Response = await this.session.fetch(request);
-     12. // 缓存预取结果
-     13. this.responsePrefetched.set(url, response);
-     14. return Promise.resolve();
-     15. } catch (reason) {
-     16. console.error(`Rcp prefetch failed: ${reason.code}`);
-     17. return Promise.reject();
-     18. }
-     19. }
-     20. }
+     ```ts
+     // 引入包名
+     import { rcp } from '@kit.RemoteCommunicationKit';
+     import { HashMap } from "@kit.ArkTS";
+     export class PrefetchingRcp {
+       private session = rcp.createSession();
+       private responsePrefetched: HashMap<string, rcp.Response> = new HashMap<string, rcp.Response>();
+       public async prefetch(url: string) {
+         const request = new rcp.Request(url);
+         try {
+           // 发送预取请求
+           let response: rcp.Response = await this.session.fetch(request);
+           // 缓存预取结果
+           this.responsePrefetched.set(url, response);
+           return Promise.resolve();
+          } catch (reason) {
+            console.error(`Rcp prefetch failed: ${reason.code}`);
+            return Promise.reject();
+         }
+       }
+     }
      ```
   3. 在网络质量差时降低请求频率/请求数据量，避免加剧网络拥塞。
 
@@ -191,30 +191,30 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 * 典型场景：拥挤的食堂、停车场。
 * 最佳实践：在拥塞场景及时降低请求频率、请求数据量等，网络恢复时恢复请求。除通过netQosChange判断网络质量外，还可通过订阅网络场景识别事件，直接检测网络拥塞或网络信号差。检测到时及时减少请求，避免反复请求加剧网络拥塞。示例代码如下：
 
-  ```
-  1. // 引入包名
-  2. import { netQuality } from '@kit.NetworkBoostKit';
-  3. import { BusinessError } from '@kit.BasicServicesKit';
-  4. try {
-  5. netQuality.on('netSceneChange', (list: Array<netQuality.NetworkScene>) => {
-  6. if (list.length > 0) {
-  7. list.forEach((sceneInfo) => {
-  8. // 网络场景识别回调信息处理
-  9. if (sceneInfo.scene == 'congestion') {
-  10. // 检测到当前为网络拥塞场景，应用处理
-  11. }
-  12. if (sceneInfo.scene == 'normal') {
-  13. // 检测到网络不再拥塞，应用处理
-  14. }
-  15. if (sceneInfo.weakSignalPrediction) {
-  16. // 弱信号场景预测，感知到网络质量即将变差，应用提前应对
-  17. }
-  18. });
-  19. }
-  20. });
-  21. } catch (err) {
-  22. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-  23. }
+  ```ts
+  // 引入包名
+  import { netQuality } from '@kit.NetworkBoostKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
+  try {
+    netQuality.on('netSceneChange', (list: Array<netQuality.NetworkScene>) => {
+      if (list.length > 0) {
+        list.forEach((sceneInfo) => {
+          // 网络场景识别回调信息处理
+          if (sceneInfo.scene == 'congestion') {
+            // 检测到当前为网络拥塞场景，应用处理
+          }
+          if (sceneInfo.scene == 'normal') {
+            // 检测到网络不再拥塞，应用处理
+          }
+          if (sceneInfo.weakSignalPrediction) {
+            // 弱信号场景预测，感知到网络质量即将变差，应用提前应对
+          }
+        });
+      }
+    });
+   } catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+  }
   ```
 
 ## 信息收集说明
@@ -282,7 +282,7 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 | 就坐用餐 | 120-240s | WLAN | 15-60Mbps | random | 10-20Mbps | random | 0-55ms | random | 0.00%-0.2% | random |
 | 离开食堂 | 240-300s | WLAN | 60-140Mbps | random | 30-60Mbps | random | 0-20ms | random | 0.00%-0.00% | random |
 
-**信号弱的地库**
+**信号弱的停车场**
 
 该场景一共5分钟，循环执行。
 
@@ -323,7 +323,7 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 | 子阶段 | 持续时间 | 网络接口 | 下行带宽 | 下行带宽分布 | 上行带宽 | 上行带宽分布 | 时延 | 时延分布 | 丢包 | 丢包分布 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 汽车在市区行驶 | 0-60S | 蜂窝 | 300-500Mbps | random | 50-100Mbps | random | 0-25ms | random | 0.00%-0.00% | random |
+| 汽车在市区行驶 | 0-60s | 蜂窝 | 300-500Mbps | random | 50-100Mbps | random | 0-25ms | random | 0.00%-0.00% | random |
 | 汽车进出隧道 | 60-120s | 蜂窝 | 0-2Mbps | random | 0-2Mbps | random | 300-2000ms | random | 0.00%-5.00% | random |
 | 汽车在市区行驶 | 120-180s | 蜂窝 | 300-500Mbps | random | 50-100Mbps | random | 0-25ms | random | 0.00%-0.00% | random |
 | 汽车在高架行驶 | 180-240s | 蜂窝 | 0-10Mbps | random | 0-10Mbps | random | 0-35ms | random | 0.00%-0.00% | random |

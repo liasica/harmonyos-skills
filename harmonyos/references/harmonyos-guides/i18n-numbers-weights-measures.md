@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-numbers-
 title: 数字与度量衡国际化
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 数字与度量衡国际化
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6bc0c08e146f0407dbe200d6476c74fffba9b5837965b95c24ff0efe496b1cb1
+scraped_at: 2026-09-02T14:59:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:870b74cb2b6919fc8b46c6dfb6a535b1404bec0225f47bc6540fb98af02c1b88
 ---
 
 ## 功能介绍
@@ -48,23 +48,19 @@ unitConvert接口可以将原始单位转换为目标单位，并根据区域ID�
 
 1. 导入模块。
 
+   ```typescript
+   import { i18n } from '@kit.LocalizationKit';
    ```
-   1. import { i18n } from '@kit.LocalizationKit';
-   ```
-
-   [NumberMeasurementFormatting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/NumberMeasurementFormatting.ets#L19-L21)
 2. 单位转换。
 
+   ```typescript
+   // 设置要转换的单位和目标单位
+   let fromUnit: i18n.UnitInfo = {unit: 'cup', measureSystem: 'US'};
+   let toUnit: i18n.UnitInfo = {unit: 'liter', measureSystem: 'SI'};
+
+   // 以en-US区域ID转换度量衡
+   let simplifyConvertedUnit = i18n.I18NUtil.unitConvert(fromUnit, toUnit, 1000, 'en-US'); // simplifyConvertedUnit = '236.588 L'
+
+   // 显示完整的度量衡
+   let convertedUnit = i18n.I18NUtil.unitConvert(fromUnit, toUnit, 1000, 'en-US', 'long'); // convertedUnit = '236.588 liters'
    ```
-   1. // 设置要转换的单位和目标单位
-   2. let fromUnit: i18n.UnitInfo = {unit: 'cup', measureSystem: 'US'};
-   3. let toUnit: i18n.UnitInfo = {unit: 'liter', measureSystem: 'SI'};
-
-   5. // 以en-US区域ID转换度量衡
-   6. let simplifyConvertedUnit = i18n.I18NUtil.unitConvert(fromUnit, toUnit, 1000, 'en-US'); // simplifyConvertedUnit = '236.588 L'
-
-   8. // 显示完整的度量衡
-   9. let convertedUnit = i18n.I18NUtil.unitConvert(fromUnit, toUnit, 1000, 'en-US', 'long'); // convertedUnit = '236.588 liters'
-   ```
-
-   [NumberMeasurementFormatting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/NumberMeasurementFormatting.ets#L31-L41)

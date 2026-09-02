@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.geoLocationManager (位置服务)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > @ohos.geoLocationManager (位置服务)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1e77da1a9a3a5dfb7b670687d1c9e48b828dd84a0abdd5872980c9e004668916
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3d0285b607b355ae9145b8415daa14a5282ffacb6e608a56d7635f5dde9ffef3
 ---
 
 位置服务提供GNSS定位、网络定位（蜂窝基站、WLAN、蓝牙定位技术）、地理编码、逆地理编码、国家码和地理围栏等基本功能。
 
 使用位置服务时请打开设备“位置”开关。如果“位置”开关关闭并且代码未设置捕获异常，可能导致应用异常。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,21 +20,15 @@ content_hash: sha256:1e77da1a9a3a5dfb7b670687d1c9e48b828dd84a0abdd5872980c9e0046
 
 ## 申请权限
 
-PhonePC/2in1TabletTVWearable
-
 请参考[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 ```
 
 ## ReverseGeoCodeRequest
-
-PhonePC/2in1TabletWearable
 
 逆地理编码请求参数。
 
@@ -49,8 +43,6 @@ PhonePC/2in1TabletWearable
 | maxItems | number | 否 | 是 | 指定返回位置信息的最大个数。取值范围为大于等于0，推荐该值小于10。默认值是1。 |
 
 ## GeoCodeRequest
-
-PhonePC/2in1TabletWearable
 
 地理编码请求参数。
 
@@ -68,8 +60,6 @@ PhonePC/2in1TabletWearable
 | maxLongitude | number | 否 | 是 | 表示最大经度信息。取值范围为-180到180。仅支持WGS84坐标系。默认值是0。 |
 
 ## GeoAddress
-
-PhonePC/2in1TabletWearable
 
 地理编码地址信息。
 
@@ -92,13 +82,11 @@ PhonePC/2in1TabletWearable
 | premises | string | 否 | 是 | 表示门牌号信息。 |
 | postalCode | string | 否 | 是 | 表示邮政编码信息。 |
 | phoneNumber | string | 否 | 是 | 表示联系方式信息。 |
-| addressUrl | string | 否 | 是 | 表示位置信息附件的网址信息。 |
+| addressUrl | string | 否 | 是 | 表示位置信息附近的网址信息。 |
 | descriptions | Array<string> | 否 | 是 | 表示附加的描述信息。目前包含城市编码cityCode（Array下标为0）和区划编码adminCode（Array下标为1），例如["025","320114001"]。 |
 | descriptionsSize | number | 否 | 是 | 表示附加的描述信息数量。取值范围为大于等于0，推荐该值小于10。 |
 
 ## LocationRequest
-
-PhonePC/2in1TabletTVWearable
 
 位置信息请求参数。
 
@@ -116,8 +104,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CurrentLocationRequest
 
-PhonePC/2in1TabletTVWearable
-
 当前位置信息请求参数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -133,23 +119,18 @@ PhonePC/2in1TabletTVWearable
 
 ## ContinuousLocationRequest12+
 
-PhonePC/2in1TabletTVWearable
-
 持续定位的请求参数。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| interval | number | 否 | 否 | 表示上报位置信息的时间间隔，单位是秒。默认值为1，取值范围为大于等于0。等于0时对位置上报时间间隔无限制。 |
-| locationScenario | [UserActivityScenario](js-apis-geolocationmanager.md#useractivityscenario12) | [PowerConsumptionScenario](js-apis-geolocationmanager.md#powerconsumptionscenario12) | 否 | 否 | 表示定位的场景信息。取值范围见[UserActivityScenario](js-apis-geolocationmanager.md#useractivityscenario12)和[PowerConsumptionScenario](js-apis-geolocationmanager.md#powerconsumptionscenario12)的定义。 |
+| interval | number | 否 | 否 | 表示上报位置信息的时间间隔，单位是秒。默认值为1，取值范围为大于等于0。等于0时对位置上报时间间隔无限制。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| locationScenario | [UserActivityScenario](js-apis-geolocationmanager.md#useractivityscenario12) | [PowerConsumptionScenario](js-apis-geolocationmanager.md#powerconsumptionscenario12) | 否 | 否 | 表示定位的场景信息。取值范围见[UserActivityScenario](js-apis-geolocationmanager.md#useractivityscenario12)和[PowerConsumptionScenario](js-apis-geolocationmanager.md#powerconsumptionscenario12)的定义。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| sportsType | [SportsType](js-apis-geolocationmanager.md#sportstype18) | 否 | 是 | 表示运动模式。取值范围见[SportsType](js-apis-geolocationmanager.md#sportstype18)定义。此参数仅在locationScenario设置为UserActivityScenario.SPORT时有效。默认值为0，表示该参数不生效。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | needPoi19+ | boolean | 否 | 是 | 表示是否需要获取当前位置附近的POI信息。false代表不需要获取当前位置附近的POI信息，true代表需要获取当前位置附近的POI信息。不设置时，默认值为false。  该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY\_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY\_LOCATION 权限）下不返回POI信息。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 
 ## SingleLocationRequest12+
-
-PhonePC/2in1TabletTVWearable
 
 单次定位的请求参数。
 
@@ -164,8 +145,6 @@ PhonePC/2in1TabletTVWearable
 | needPoi19+ | boolean | 否 | 是 | 表示是否需要获取当前位置附近的POI信息。false代表不需要获取当前位置附近的POI信息，true代表需要获取当前位置附近的POI信息。不设置时，默认值为false。  该参数仅在精确位置功能场景（即同时授权了ohos.permission.APPROXIMATELY\_LOCATION和ohos.permission.LOCATION 权限）下有效，模糊位置功能生效场景（即仅授权了ohos.permission.APPROXIMATELY\_LOCATION 权限）下不返回POI信息。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 
 ## SatelliteStatusInfo
-
-PhoneTabletWearable
 
 卫星状态信息。
 
@@ -184,8 +163,6 @@ PhoneTabletWearable
 
 ## CachedGnssLocationsRequest
 
-PhoneTabletWearable
-
 请求订阅GNSS缓存位置上报功能接口的配置参数。
 
 **系统能力**：SystemCapability.Location.Location.Gnss
@@ -196,8 +173,6 @@ PhoneTabletWearable
 | wakeUpCacheQueueFull | boolean | 否 | 否 | true表示GNSS芯片底层缓存队列满之后会主动唤醒AP芯片，并把缓存位置上报给应用。  false表示GNSS芯片底层缓存队列满之后不会主动唤醒AP芯片，会把缓存位置直接丢弃。 |
 
 ## Geofence
-
-PhoneTablet
 
 GNSS围栏的配置参数。目前只支持圆形围栏。
 
@@ -213,8 +188,6 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 
 ## GeofenceRequest
 
-PhoneTablet
-
 请求添加GNSS围栏消息中携带的参数，包括定位场景和围栏信息。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
@@ -226,8 +199,6 @@ PhoneTablet
 
 ## LocationCommand
 
-PhonePC/2in1TabletTVWearable
-
 扩展命令参数。
 
 **系统能力**：SystemCapability.Location.Location.Core
@@ -238,8 +209,6 @@ PhonePC/2in1TabletTVWearable
 | command | string | 否 | 否 | 扩展命令字符串，字符串长度不超过100。 |
 
 ## Location
-
-PhonePC/2in1TabletTVWearable
 
 位置信息。
 
@@ -261,13 +230,12 @@ PhonePC/2in1TabletTVWearable
 | altitudeAccuracy12+ | number | 否 | 是 | 表示高度信息的精度，单位米。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | speedAccuracy12+ | number | 否 | 是 | 表示速度信息的精度，单位米每秒。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | directionAccuracy12+ | number | 否 | 是 | 表示航向信息的精度。单位是“度”，取值范围为0到360。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| uncertaintyOfTimeSinceBoot12+ | number | 否 | 是 | 表示位置时间戳的不确定度。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| uncertaintyOfTimeSinceBoot12+ | number | 否 | 是 | 表示从开机到获取位置所经过的时间的不确定度。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | sourceType12+ | [LocationSourceType](js-apis-geolocationmanager.md#locationsourcetype12) | 否 | 是 | 表示定位结果的来源。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | poi19+ | [PoiInfo](js-apis-geolocationmanager.md#poiinfo19) | 否 | 是 | 表示当前位置附近的POI信息。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
+| isFromMock | boolean | 否 | 是 | true：位置信息来自于位置模拟功能。  false：位置信息不是来自于位置模拟功能。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 ## GeofenceTransition12+
-
-PhoneTablet
 
 地理围栏事件信息；包含地理围栏ID和具体的地理围栏事件。
 
@@ -280,8 +248,6 @@ PhoneTablet
 | beaconFence20+ | [BeaconFence](js-apis-geolocationmanager.md#beaconfence20) | 否 | 是 | beacon围栏的参数配置。仅beacon围栏使用。  从API version 20开始，支持该字段。 |
 
 ## GnssGeofenceRequest12+
-
-PhoneTablet
 
 GNSS地理围栏请求参数。
 
@@ -298,8 +264,6 @@ GNSS地理围栏请求参数。
 
 ## CountryCode
 
-PhonePC/2in1TabletTVWearable
-
 国家码信息，包含国家码字符串和国家码的来源信息。
 
 **系统能力**：SystemCapability.Location.Location.Core
@@ -310,8 +274,6 @@ PhonePC/2in1TabletTVWearable
 | type | [CountryCodeType](js-apis-geolocationmanager.md#countrycodetype) | 否 | 否 | 表示国家码信息来源。 |
 
 ## LocationRequestPriority
-
-PhonePC/2in1TabletTVWearable
 
 位置请求中位置信息优先级类型。
 
@@ -328,15 +290,13 @@ PhonePC/2in1TabletTVWearable
 
 ## LocationRequestScenario
 
-PhonePC/2in1TabletTVWearable
-
 位置请求中定位场景类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
-说明
+**说明** 
 
 当使用NAVIGATION/TRAJECTORY\_TRACKING/CAR\_HAILING场景进行单次定位或持续定位时，我们会在GNSS提供稳定位置结果之前使用网络定位技术提供服务；在持续定位时，如果超过30秒无法获取GNSS定位结果则会使用网络定位技术获取位置。
 
@@ -351,8 +311,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CountryCodeType
 
-PhonePC/2in1TabletTVWearable
-
 国家码来源类型。
 
 **系统能力**：SystemCapability.Location.Location.Core
@@ -366,8 +324,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CoordinateSystemType12+
 
-PhoneTablet
-
 坐标系类型。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
@@ -378,8 +334,6 @@ PhoneTablet
 | GCJ02 | 2 | GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。 |
 
 ## GeofenceTransitionEvent12+
-
-PhoneTablet
 
 地理围栏事件。
 
@@ -392,8 +346,6 @@ PhoneTablet
 | GEOFENCE\_TRANSITION\_EVENT\_DWELL | 4 | 该事件表示设备在地理围栏范围内，且持续徘徊超过10秒。 |
 
 ## SatelliteConstellationCategory12+
-
-PhoneTabletWearable
 
 卫星星座类型。
 
@@ -412,8 +364,6 @@ PhoneTabletWearable
 
 ## SatelliteAdditionalInfo12+
 
-PhoneTabletWearable
-
 卫星附加信息类型。
 
 **系统能力**：SystemCapability.Location.Location.Gnss
@@ -427,8 +377,6 @@ PhoneTabletWearable
 | SATELLITES\_ADDITIONAL\_INFO\_CARRIER\_FREQUENCY\_EXIST | 8 | 表示本卫星具有载波频率。 |
 
 ## PowerConsumptionScenario12+
-
-PhonePC/2in1TabletTVWearable
 
 位置请求中的功耗场景类型。
 
@@ -444,15 +392,13 @@ PhonePC/2in1TabletTVWearable
 
 ## UserActivityScenario12+
 
-PhonePC/2in1TabletTVWearable
-
 位置请求中的用户活动场景类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Location.Location.Core
 
-说明
+**说明** 
 
 当使用NAVIGATION/SPORT/TRANSPORT场景进行单次定位或持续定位时，我们会在GNSS提供稳定位置结果之前使用网络定位技术提供服务；在持续定位时，如果超过30秒无法获取GNSS定位结果则会使用网络定位技术获取位置。
 
@@ -464,8 +410,6 @@ PhonePC/2in1TabletTVWearable
 | DAILY\_LIFE\_SERVICE | 0x404 | 表示日常服务使用场景。  适用于不需要定位用户精确位置的使用场景，如新闻资讯、网购、点餐类应用。  该场景仅使用网络定位技术提供定位服务，功耗较低。 |
 
 ## LocatingPriority12+
-
-PhonePC/2in1TabletTVWearable
 
 单次位置请求中的优先级类型。
 
@@ -479,8 +423,6 @@ PhonePC/2in1TabletTVWearable
 | PRIORITY\_LOCATING\_SPEED | 0x502 | 表示快速获取位置优先，如果应用希望快速拿到一个位置，可以将优先级设置为该类型。  快速定位优先策略会同时使用GNSS定位和网络定位技术，以便在室内和户外场景下均可以快速获取到位置结果，我们会把最先拿到的定位结果返回给应用。对设备的硬件资源消耗较大，功耗也较大。 |
 
 ## LocationError12+
-
-PhonePC/2in1TabletTVWearable
 
 持续定位过程中的错误信息。
 
@@ -498,8 +440,6 @@ PhonePC/2in1TabletTVWearable
 
 ## LocationSourceType12+
 
-PhonePC/2in1TabletTVWearable
-
 定位结果的来源。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -515,8 +455,6 @@ PhonePC/2in1TabletTVWearable
 
 ## BluetoothScanResult16+
 
-PhonePC/2in1TabletTVWearable
-
 蓝牙扫描结果。
 
 **系统能力**：SystemCapability.Location.Location.Core
@@ -530,8 +468,6 @@ PhonePC/2in1TabletTVWearable
 | connectable | boolean | 否 | 否 | 表示扫描到的设备是否可连接。true表示可连接，false表示不可连接。 |
 
 ## Poi19+
-
-PhonePC/2in1TabletTVWearable
 
 POI(Point of Interest, 兴趣点)信息。
 
@@ -551,10 +487,9 @@ POI(Point of Interest, 兴趣点)信息。
 | locality | string | 否 | 否 | 表示POI所在的城市信息，一般是市。 |
 | subLocality | string | 否 | 否 | 表示POI所在的子城市信息，一般是区/县。 |
 | address | string | 否 | 否 | 表示POI的详细地址。 |
+| additionalInfo | string | 否 | 是 | 表示POI附加信息，本字符串为JSON格式。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束**：此接口仅可在Stage模型下使用。 |
 
 ## PoiInfo19+
-
-PhonePC/2in1TabletTVWearable
 
 POI信息结构体。
 
@@ -569,8 +504,6 @@ POI信息结构体。
 
 ## SportsType18+
 
-PhonePC/2in1TabletTVWearable
-
 运动类型。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
@@ -582,10 +515,9 @@ PhonePC/2in1TabletTVWearable
 | RUNNING | 1 | 表示跑步。 |
 | WALKING | 2 | 表示步行。 |
 | CYCLING | 3 | 表示骑行。 |
+| SKIING | 4 | 表示滑雪。  **起始版本：** 26.0.0  **模型约束**：此接口仅可在Stage模型下使用。 |
 
 ## BeaconFenceInfoType20+
-
-PhoneTablet
 
 beacon围栏信息类型。当前仅支持设备制造商数据过滤。
 
@@ -598,8 +530,6 @@ beacon围栏信息类型。当前仅支持设备制造商数据过滤。
 | BEACON\_MANUFACTURE\_DATA | 1 | 标识使用beacon设备制造商数据。 |
 
 ## BeaconManufactureData20+
-
-PhoneTablet
 
 beacon设备制造商数据。
 
@@ -615,8 +545,6 @@ beacon设备制造商数据。
 
 ## BeaconFence20+
 
-PhoneTablet
-
 beacon围栏的参数配置。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
@@ -631,8 +559,6 @@ beacon围栏的参数配置。
 
 ## BeaconFenceRequest20+
 
-PhoneTablet
-
 beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选其一，都不填则参数无效。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
@@ -645,9 +571,95 @@ beacon围栏请求参数。transitionCallback与fenceExtensionAbilityName任选�
 | transitionCallback | Callback<[GeofenceTransition](js-apis-geolocationmanager.md#geofencetransition12)> | 否 | 是 | beacon围栏事件信息。默认值为undefined。仅支持前台回调。 |
 | fenceExtensionAbilityName | string | 否 | 是 | [FenceExtensionAbility](js-apis-app-ability-fenceextensionability.md)名称。默认值为空字符串。 |
 
-## geoLocationManager.on('locationChange')
+## MatchingWlanInfo
 
-PhonePC/2in1TabletTVWearable
+匹配的WLAN信息结构体。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| index | number | 否 | 否 | 表示匹配的WLAN在wlanBssidArray中的索引。 |
+| ssid | string | 否 | 否 | 表示匹配的WLAN的SSID。 |
+
+## DistrictRequestParams
+
+表示获取区县信息的请求参数。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Location.Location.Geocoder
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| locale | string | 否 | 是 | 表示位置描述信息的语言，“zh”代表中文，“en”代表英文。默认值从设置中的“语言和地区”获取。 |
+| timeoutMs | number | 否 | 是 | 表示超时时间，单位是毫秒。默认值是5000毫秒。 |
+
+## DistrictInfo
+
+表示区域信息。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Location.Location.Geocoder
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| locale | string | 否 | 是 | 表示位置描述信息的语言，“zh”代表中文，“en”代表英文。 |
+| countryCode | string | 否 | 是 | 表示国家码信息。 |
+| countryName | string | 否 | 是 | 表示国家信息。 |
+| administrativeArea | string | 否 | 是 | 表示国家以下的一级行政区，一般是省/州。 |
+| subAdministrativeArea | string | 否 | 是 | 表示国家以下的二级行政区，一般是市。 |
+| locality | string | 否 | 是 | 表示城市信息，一般是市。 |
+| subLocality | string | 否 | 是 | 表示子城市信息，一般是区/县。 |
+
+## BluetoothSearchRequestParams
+
+蓝牙扫描请求参数。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceIdArray | Array<string> | 否 | 否 | 表示蓝牙设备的地址列表，用于过滤扫描结果。单个字符串的长度不超过64，数组的长度不超过1000。仅当扫描到的蓝牙设备的地址与该数组中的一个元素相同时才通过callback返回该蓝牙设备信息。当传入空数组（数组长度为0）时，不会返回蓝牙扫描结果。数组中每个元素的格式如下："XX:XX:XX:XX:XX:XX"。 |
+| rssiThreshold | number | 否 | 是 | 表示RSSI阈值，只扫描RSSI大于此阈值的设备。取值范围为-128至127。 |
+
+## Point
+
+表示一个位置点。
+
+**起始版本：** 26.0.0
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| latitude | number | 否 | 否 | 表示纬度信息，正值表示北纬，负值表示南纬。取值范围为-90到90。仅支持WGS84坐标系。 |
+| longitude | number | 否 | 否 | 表示经度信息，正值表示东经，负值表示西经。取值范围为-180到180。仅支持WGS84坐标系。 |
+
+## geoLocationManager.on('locationChange')
 
 on(type: 'locationChange', request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
 
@@ -678,53 +690,52 @@ on(type: 'locationChange', request: LocationRequest | ContinuousLocationRequest,
 | 801 | Capability not supported. Failed to call ${geoLocationManager.on('locationChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
 | 3301100 | The location switch is off. |
+| 3301200 | Failed to obtain the geographical location.  适用版本：9-17 |
 
 **示例**
 
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+
+// 方式一：使用LocationRequest作为入参
+let requestInfo: geoLocationManager.LocationRequest = {
+  'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+  'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+  'timeInterval': 1,
+  'distanceInterval': 0,
+  'maxAccuracy': 0
+};
+let locationChange = (location: geoLocationManager.Location): void => {
+  console.info('locationChange: data: ' + JSON.stringify(location));
+};
+try {
+  geoLocationManager.on('locationChange', requestInfo, locationChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
+
+// 方式二：使用ContinuousLocationRequest作为入参
+let request: geoLocationManager.ContinuousLocationRequest = {
+  'interval': 1,
+  'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
+};
+let locationCallback = (location: geoLocationManager.Location): void => {
+  console.info('locationCallback: data: ' + JSON.stringify(location));
+};
+try {
+  geoLocationManager.on('locationChange', request, locationCallback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
-1. import { geoLocationManager } from '@kit.LocationKit';
 
-3. // 方式一：使用LocationRequest作为入参
-4. let requestInfo: geoLocationManager.LocationRequest = {
-5. 'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
-6. 'scenario': geoLocationManager.LocationRequestScenario.UNSET,
-7. 'timeInterval': 1,
-8. 'distanceInterval': 0,
-9. 'maxAccuracy': 0
-10. };
-11. let locationChange = (location: geoLocationManager.Location): void => {
-12. console.info('locationChange: data: ' + JSON.stringify(location));
-13. };
-14. try {
-15. geoLocationManager.on('locationChange', requestInfo, locationChange);
-16. } catch (err) {
-17. console.error("errCode:" + err.code + ", message:" + err.message);
-18. }
+## geoLocationManager.onLocationChange
 
-20. // 方式二：使用ContinuousLocationRequest作为入参
-21. let request: geoLocationManager.ContinuousLocationRequest = {
-22. 'interval': 1,
-23. 'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
-24. };
-25. let locationCallback = (location: geoLocationManager.Location): void => {
-26. console.info('locationCallback: data: ' + JSON.stringify(location));
-27. };
-28. try {
-29. geoLocationManager.on('locationChange', request, locationCallback);
-30. } catch (err) {
-31. console.error("errCode:" + err.code + ", message:" + err.message);
-32. }
-```
+onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
 
-## geoLocationManager.off('locationChange')
+开启位置变化订阅，并发起定位请求。使用callback异步回调。
 
-PhonePC/2in1TabletTVWearable
-
-off(type: 'locationChange', callback?: Callback<Location>): void
-
-关闭位置变化订阅，并删除对应的定位请求。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**起始版本：** 26.0.0
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -734,8 +745,8 @@ off(type: 'locationChange', callback?: Callback<Location>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 设置事件类型。type为“locationChange”，表示位置变化。 |
-| callback | Callback<[Location](js-apis-geolocationmanager.md#location)> | 否 | 需要取消订阅的回调函数。该回调函数需要与on接口传入的回调函数保持一致。若无此参数，则取消当前类型的所有订阅。 |
+| request | [LocationRequest](js-apis-geolocationmanager.md#locationrequest) | [ContinuousLocationRequest](js-apis-geolocationmanager.md#continuouslocationrequest12) | 是 | 设置位置请求参数。 |
+| callback | Callback<[Location](js-apis-geolocationmanager.md#location)> | 是 | 回调函数，返回位置信息。 |
 
 **错误码**：
 
@@ -745,35 +756,156 @@ off(type: 'locationChange', callback?: Callback<Location>): void
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call ${geoLocationManager.onLocationChange} due to limited device capabilities. |
+| 3301000 | The location service is unavailable. |
+| 3301100 | The location switch is off. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+
+// 方式一：使用LocationRequest作为入参
+let requestInfo: geoLocationManager.LocationRequest = {
+  'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+  'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+  'timeInterval': 1,
+  'distanceInterval': 0,
+  'maxAccuracy': 0
+};
+let locationChange = (location: geoLocationManager.Location): void => {
+  console.info('locationChange: data: ' + JSON.stringify(location));
+};
+try {
+  geoLocationManager.onLocationChange(requestInfo, locationChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
+
+// 方式二：使用ContinuousLocationRequest作为入参
+let request: geoLocationManager.ContinuousLocationRequest = {
+  'interval': 1,
+  'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
+};
+let locationCallback = (location: geoLocationManager.Location): void => {
+  console.info('locationCallback: data: ' + JSON.stringify(location));
+};
+try {
+  geoLocationManager.onLocationChange(request, locationCallback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
+```
+
+## geoLocationManager.off('locationChange')
+
+off(type: 'locationChange', callback?: Callback<Location>): void
+
+关闭位置变化订阅，并删除对应的定位请求。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**需要权限**
+
+* API版本9-24：ohos.permission.APPROXIMATELY\_LOCATION
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | string | 是 | 设置事件类型。type为“locationChange”，表示位置变化。 |
+| callback | Callback<[Location](js-apis-geolocationmanager.md#location)> | 否 | 需要取消订阅的回调函数。该回调函数需要与on接口传入的回调函数保持一致，否则会取消订阅失败且不会返回任何错误码。若无此参数，则取消当前类型的所有订阅。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API.  适用版本：9-24 |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call ${geoLocationManager.off('locationChange')} due to limited device capabilities. |
+| 3301000 | The location service is unavailable. |
+| 3301100 | The location switch is off.  适用版本：9-17 |
+| 3301200 | Failed to obtain the geographical location.  适用版本：9-17 |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+
+let requestInfo: geoLocationManager.LocationRequest = {
+  'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+  'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+  'timeInterval': 1,
+  'distanceInterval': 0,
+  'maxAccuracy': 0
+};
+let locationChange = (location: geoLocationManager.Location): void => {
+  console.info('locationChange: data: ' + JSON.stringify(location));
+};
+try {
+  geoLocationManager.on('locationChange', requestInfo, locationChange);
+  geoLocationManager.off('locationChange', locationChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
+```
+
+## geoLocationManager.offLocationChange
+
+offLocationChange(callback?: Callback<Location>): void
+
+关闭位置变化订阅，并删除对应的定位请求。
+
+当传入的callback与onLocationChange接口传入的callback不一致时会抛出401错误码。
+
+**起始版本：** 26.0.0
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[Location](js-apis-geolocationmanager.md#location)> | 否 | 需要取消订阅的回调函数。该回调函数需要与onLocationChange接口传入的回调函数保持一致，否则将抛出401错误码。若无此参数，则取消所有订阅。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call ${geoLocationManager.offLocationChange} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let requestInfo: geoLocationManager.LocationRequest = {
-4. 'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
-5. 'scenario': geoLocationManager.LocationRequestScenario.UNSET,
-6. 'timeInterval': 1,
-7. 'distanceInterval': 0,
-8. 'maxAccuracy': 0
-9. };
-10. let locationChange = (location: geoLocationManager.Location): void => {
-11. console.info('locationChange: data: ' + JSON.stringify(location));
-12. };
-13. try {
-14. geoLocationManager.on('locationChange', requestInfo, locationChange);
-15. geoLocationManager.off('locationChange', locationChange);
-16. } catch (err) {
-17. console.error("errCode:" + err.code + ", message:" + err.message);
-18. }
+let requestInfo: geoLocationManager.LocationRequest = {
+  'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+  'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+  'timeInterval': 1,
+  'distanceInterval': 0,
+  'maxAccuracy': 0
+};
+let locationChange = (location: geoLocationManager.Location): void => {
+  console.info('locationChange: data: ' + JSON.stringify(location));
+};
+try {
+  geoLocationManager.onLocationChange(requestInfo, locationChange);
+  geoLocationManager.offLocationChange(locationChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.on('locationError')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'locationError', callback: Callback<LocationError>): void
 
@@ -805,38 +937,36 @@ on(type: 'locationError', callback: Callback<LocationError>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let requestInfo: geoLocationManager.LocationRequest = {
-4. 'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
-5. 'scenario': geoLocationManager.LocationRequestScenario.UNSET,
-6. 'timeInterval': 1,
-7. 'distanceInterval': 0,
-8. 'maxAccuracy': 0
-9. };
-10. let locationChange = (location: geoLocationManager.Location): void => {
-11. console.info('locationChange: data: ' + JSON.stringify(location));
-12. };
-13. try {
-14. geoLocationManager.on('locationChange', requestInfo, locationChange);
-15. } catch (err) {
-16. console.error("errCode:" + err.code + ", message:" + err.message);
-17. }
+let requestInfo: geoLocationManager.LocationRequest = {
+  'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+  'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+  'timeInterval': 1,
+  'distanceInterval': 0,
+  'maxAccuracy': 0
+};
+let locationChange = (location: geoLocationManager.Location): void => {
+  console.info('locationChange: data: ' + JSON.stringify(location));
+};
+try {
+  geoLocationManager.on('locationChange', requestInfo, locationChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 
-19. let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
-20. console.info('locationErrorChange: data: ' + JSON.stringify(errcode));
-21. };
-22. try {
-23. geoLocationManager.on('locationError', locationErrorChange);
-24. } catch (err) {
-25. console.error("errCode:" + err.code + ", message:" + err.message);
-26. }
+let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
+  console.error('locationErrorChange: data: ' + JSON.stringify(errcode));
+};
+try {
+  geoLocationManager.on('locationError', locationErrorChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.off('locationError')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'locationError', callback?: Callback<LocationError>): void
 
@@ -868,23 +998,21 @@ off(type: 'locationError', callback?: Callback<LocationError>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
-4. console.info('locationErrorChange: data: ' + JSON.stringify(errcode));
-5. };
-6. try {
-7. geoLocationManager.on('locationError', locationErrorChange);
-8. geoLocationManager.off('locationError', locationErrorChange);
-9. } catch (err) {
-10. console.error("errCode:" + err.code + ", message:" + err.message);
-11. }
+let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
+  console.error('locationErrorChange: data: ' + JSON.stringify(errcode));
+};
+try {
+  geoLocationManager.on('locationError', locationErrorChange);
+  geoLocationManager.off('locationError', locationErrorChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.on('locationEnabledChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'locationEnabledChange', callback: Callback<boolean>): void
 
@@ -911,22 +1039,20 @@ on(type: 'locationEnabledChange', callback: Callback<boolean>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let locationEnabledChange = (state: boolean): void => {
-4. console.info('locationEnabledChange: ' + JSON.stringify(state));
-5. }
-6. try {
-7. geoLocationManager.on('locationEnabledChange', locationEnabledChange);
-8. } catch (err) {
-9. console.error("errCode:" + err.code + ", message:" + err.message);
-10. }
+let locationEnabledChange = (state: boolean): void => {
+    console.info('locationEnabledChange: ' + JSON.stringify(state));
+}
+try {
+    geoLocationManager.on('locationEnabledChange', locationEnabledChange);
+} catch (err) {
+    console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.off('locationEnabledChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'locationEnabledChange', callback?: Callback<boolean>): void
 
@@ -953,27 +1079,25 @@ off(type: 'locationEnabledChange', callback?: Callback<boolean>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let locationEnabledChange = (state: boolean): void => {
-4. console.info('locationEnabledChange: state: ' + JSON.stringify(state));
-5. }
-6. try {
-7. geoLocationManager.on('locationEnabledChange', locationEnabledChange);
-8. geoLocationManager.off('locationEnabledChange', locationEnabledChange);
-9. } catch (err) {
-10. console.error("errCode:" + err.code + ", message:" + err.message);
-11. }
+let locationEnabledChange = (state: boolean): void => {
+    console.info('locationEnabledChange: state: ' + JSON.stringify(state));
+}
+try {
+    geoLocationManager.on('locationEnabledChange', locationEnabledChange);
+    geoLocationManager.off('locationEnabledChange', locationEnabledChange);
+} catch (err) {
+    console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.on('cachedGnssLocationsChange')
 
-PhoneTabletWearable
-
 on(type: 'cachedGnssLocationsChange', request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void
 
-订阅缓存GNSS定位结果上报事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用callback异步回调。
+订阅缓存GNSS定位结果上报事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用callback异步回调。调用该接口前建议先通过[geoLocationManager.isCachedGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanageriscachedgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -998,33 +1122,34 @@ on(type: 'cachedGnssLocationsChange', request: CachedGnssLocationsRequest, callb
 | 801 | Capability not supported. Failed to call ${geoLocationManager.on('cachedGnssLocationsChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
 | 3301100 | The location switch is off. |
+| 3301200 | Failed to obtain the geographical location.  适用版本：9-17 |
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let cachedLocationsCb = (locations: Array<geoLocationManager.Location>): void => {
-4. console.info('cachedGnssLocationsChange: locations: ' + JSON.stringify(locations));
-5. }
-6. let requestInfo: geoLocationManager.CachedGnssLocationsRequest = {
-7. 'reportingPeriodSec': 10,
-8. 'wakeUpCacheQueueFull': true
-9. };
-10. try {
-11. geoLocationManager.on('cachedGnssLocationsChange', requestInfo, cachedLocationsCb);
-12. } catch (err) {
-13. console.error("errCode:" + err.code + ", message:" + err.message);
-14. }
+let cachedLocationsCb = (locations: Array<geoLocationManager.Location>): void => {
+  console.info('cachedGnssLocationsChange: locations: ' + JSON.stringify(locations));
+}
+let requestInfo: geoLocationManager.CachedGnssLocationsRequest = {
+  'reportingPeriodSec': 10,
+  'wakeUpCacheQueueFull': true
+};
+try {
+  if (geoLocationManager.isCachedGnssServiceSupported()) {
+    geoLocationManager.on('cachedGnssLocationsChange', requestInfo, cachedLocationsCb);
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.off('cachedGnssLocationsChange')
 
-PhoneTabletWearable
-
 off(type: 'cachedGnssLocationsChange', callback?: Callback<Array<Location>>): void
 
-取消订阅缓存GNSS定位结果上报事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。
+取消订阅缓存GNSS定位结果上报事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。调用该接口前建议先通过[geoLocationManager.isCachedGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanageriscachedgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -1048,34 +1173,35 @@ off(type: 'cachedGnssLocationsChange', callback?: Callback<Array<Location>>): vo
 | 801 | Capability not supported. Failed to call ${geoLocationManager.off('cachedGnssLocationsChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
 | 3301100 | The location switch is off. |
+| 3301200 | Failed to obtain the geographical location.  适用版本：9-17 |
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let cachedLocationsCb = (locations: Array<geoLocationManager.Location>): void => {
-4. console.info('cachedGnssLocationsChange: locations: ' + JSON.stringify(locations));
-5. }
-6. let requestInfo: geoLocationManager.CachedGnssLocationsRequest = {
-7. 'reportingPeriodSec': 10,
-8. 'wakeUpCacheQueueFull': true
-9. };
-10. try {
-11. geoLocationManager.on('cachedGnssLocationsChange', requestInfo, cachedLocationsCb);
-12. geoLocationManager.off('cachedGnssLocationsChange');
-13. } catch (err) {
-14. console.error("errCode:" + err.code + ", message:" + err.message);
-15. }
+let cachedLocationsCb = (locations: Array<geoLocationManager.Location>): void => {
+  console.info('cachedGnssLocationsChange: locations: ' + JSON.stringify(locations));
+}
+let requestInfo: geoLocationManager.CachedGnssLocationsRequest = {
+  'reportingPeriodSec': 10,
+  'wakeUpCacheQueueFull': true
+};
+try {
+  if (geoLocationManager.isCachedGnssServiceSupported()) {
+    geoLocationManager.on('cachedGnssLocationsChange', requestInfo, cachedLocationsCb);
+    geoLocationManager.off('cachedGnssLocationsChange');
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.on('satelliteStatusChange')
 
-PhoneTabletWearable
-
 on(type: 'satelliteStatusChange', callback: Callback<SatelliteStatusInfo>): void
 
-订阅GNSS卫星状态信息上报事件。使用callback异步回调。
+订阅GNSS卫星状态信息上报事件。使用callback异步回调。调用该接口前建议先通过[geoLocationManager.isGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -1102,56 +1228,56 @@ on(type: 'satelliteStatusChange', callback: Callback<SatelliteStatusInfo>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
-4. console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
-5. // 表示卫星个数
-6. let totalNumber: number = satelliteStatusInfo.satellitesNumber;
-7. let satelliteIds: Array<number> = satelliteStatusInfo.satelliteIds;
-8. let carrierToNoiseDensitys: Array<number> = satelliteStatusInfo.carrierToNoiseDensitys;
-9. let altitudes: Array<number> = satelliteStatusInfo.altitudes;
-10. let azimuths: Array<number> = satelliteStatusInfo.azimuths;
-11. let carrierFrequencies: Array<number> = satelliteStatusInfo.carrierFrequencies;
-12. let satelliteConstellations: Array<geoLocationManager.SatelliteConstellationCategory> | undefined = satelliteStatusInfo.satelliteConstellation;
-13. let satelliteAdditionalInfos: Array<number> | undefined = satelliteStatusInfo.satelliteAdditionalInfo;
-14. for (let i = 0;i < totalNumber; i++) {
-15. // 卫星的ID
-16. let satelliteId: number = satelliteIds[i];
-17. // 表示卫星的ID为 ${satelliteId} 的卫星的载波噪声功率谱密度比
-18. let carrierToNoiseDensity: number = carrierToNoiseDensitys[i];
-19. // 表示卫星的ID为 ${satelliteId} 的卫星的高度角信息
-20. let altitude: number = altitudes[i];
-21. // 表示卫星的ID为 ${satelliteId} 的卫星的方位角
-22. let azimuth: number = azimuths[i];
-23. // 表示卫星的ID为 ${satelliteId} 的卫星的载波频率
-24. let carrierFrequency: number = carrierFrequencies[i];
-25. if (satelliteConstellations != undefined) {
-26. // 表示卫星的ID为 ${satelliteId} 的卫星的星座类型
-27. let satelliteConstellation: geoLocationManager.SatelliteConstellationCategory = satelliteConstellations[i];
-28. }
-29. if (satelliteAdditionalInfos != undefined) {
-30. // 表示卫星的ID为 ${satelliteId} 的卫星的附加信息；表示是否在最新的位置解算中使用了本卫星，是否具有星历数据，是否具有年历数据，是否具有载波频率信息等。
-31. let satelliteAdditionalInfo: number = satelliteAdditionalInfos[i];
-32. }
-33. }
-34. }
+let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
+  console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
+  // 表示卫星个数
+  let totalNumber: number = satelliteStatusInfo.satellitesNumber;
+  let satelliteIds: Array<number> = satelliteStatusInfo.satelliteIds;
+  let carrierToNoiseDensitys: Array<number> = satelliteStatusInfo.carrierToNoiseDensitys;
+  let altitudes: Array<number> = satelliteStatusInfo.altitudes;
+  let azimuths: Array<number> = satelliteStatusInfo.azimuths;
+  let carrierFrequencies: Array<number> = satelliteStatusInfo.carrierFrequencies;
+  let satelliteConstellations: Array<geoLocationManager.SatelliteConstellationCategory> | undefined = satelliteStatusInfo.satelliteConstellation;
+  let satelliteAdditionalInfos: Array<number> | undefined = satelliteStatusInfo.satelliteAdditionalInfo;
+  for (let i = 0;i < totalNumber; i++) {
+    // 卫星的ID
+    let satelliteId: number = satelliteIds[i];
+    // 表示卫星的ID为 ${satelliteId} 的卫星的载波噪声功率谱密度比
+    let carrierToNoiseDensity: number = carrierToNoiseDensitys[i];
+    // 表示卫星的ID为 ${satelliteId} 的卫星的高度角信息
+    let altitude: number = altitudes[i];
+    // 表示卫星的ID为 ${satelliteId} 的卫星的方位角
+    let azimuth: number = azimuths[i];
+    // 表示卫星的ID为 ${satelliteId} 的卫星的载波频率
+    let carrierFrequency: number = carrierFrequencies[i];
+    if (satelliteConstellations != undefined) {
+      // 表示卫星的ID为 ${satelliteId} 的卫星的星座类型
+      let satelliteConstellation: geoLocationManager.SatelliteConstellationCategory = satelliteConstellations[i];
+    }
+    if (satelliteAdditionalInfos != undefined) {
+      // 表示卫星的ID为 ${satelliteId} 的卫星的附加信息；表示是否在最新的位置解算中使用了本卫星，是否具有星历数据，是否具有年历数据，是否具有载波频率信息等。
+      let satelliteAdditionalInfo: number = satelliteAdditionalInfos[i];
+    }
+  }
+}
 
-36. try {
-37. geoLocationManager.on('satelliteStatusChange', gnssStatusCb);
-38. } catch (err) {
-39. console.error("errCode:" + err.code + ", message:" + err.message);
-40. }
+try {
+  if (geoLocationManager.isGnssServiceSupported()) {
+    geoLocationManager.on('satelliteStatusChange', gnssStatusCb);
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.off('satelliteStatusChange')
 
-PhoneTabletWearable
-
 off(type: 'satelliteStatusChange', callback?: Callback<SatelliteStatusInfo>): void
 
-取消订阅GNSS卫星状态信息上报事件。
+取消订阅GNSS卫星状态信息上报事件。调用该接口前建议先通过[geoLocationManager.isGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -1178,27 +1304,27 @@ off(type: 'satelliteStatusChange', callback?: Callback<SatelliteStatusInfo>): vo
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
-4. console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
-5. }
-6. try {
-7. geoLocationManager.on('satelliteStatusChange', gnssStatusCb);
-8. geoLocationManager.off('satelliteStatusChange', gnssStatusCb);
-9. } catch (err) {
-10. console.error("errCode:" + err.code + ", message:" + err.message);
-11. }
+let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
+  console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
+}
+try {
+  if (geoLocationManager.isGnssServiceSupported()) {
+    geoLocationManager.on('satelliteStatusChange', gnssStatusCb);
+    geoLocationManager.off('satelliteStatusChange', gnssStatusCb);
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.on('nmeaMessage')
 
-PhoneTabletWearable
-
 on(type: 'nmeaMessage', callback: Callback<string>): void
 
-订阅GNSS NMEA信息上报事件。使用callback异步回调。
+订阅GNSS NMEA信息上报事件。使用callback异步回调。调用该接口前建议先通过[geoLocationManager.isGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -1225,27 +1351,27 @@ on(type: 'nmeaMessage', callback: Callback<string>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let nmeaCb = (str: string): void => {
-4. console.info('nmeaMessage: ' + JSON.stringify(str));
-5. }
+let nmeaCb = (str: string): void => {
+  console.info('nmeaMessage: ' + JSON.stringify(str));
+}
 
-7. try {
-8. geoLocationManager.on('nmeaMessage', nmeaCb);
-9. } catch (err) {
-10. console.error("errCode:" + err.code + ", message:" + err.message);
-11. }
+try {
+  if (geoLocationManager.isGnssServiceSupported()) {
+    geoLocationManager.on('nmeaMessage', nmeaCb);
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.off('nmeaMessage')
 
-PhoneTabletWearable
-
 off(type: 'nmeaMessage', callback?: Callback<string>): void
 
-取消订阅GNSS NMEA信息上报事件。
+取消订阅GNSS NMEA信息上报事件。调用该接口前建议先通过[geoLocationManager.isGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -1272,28 +1398,30 @@ off(type: 'nmeaMessage', callback?: Callback<string>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let nmeaCb = (str: string): void => {
-4. console.info('nmeaMessage: ' + JSON.stringify(str));
-5. }
+let nmeaCb = (str: string): void => {
+  console.info('nmeaMessage: ' + JSON.stringify(str));
+}
 
-7. try {
-8. geoLocationManager.on('nmeaMessage', nmeaCb);
-9. geoLocationManager.off('nmeaMessage', nmeaCb);
-10. } catch (err) {
-11. console.error("errCode:" + err.code + ", message:" + err.message);
-12. }
+try {
+  if (geoLocationManager.isGnssServiceSupported()) {
+    geoLocationManager.on('nmeaMessage', nmeaCb);
+    geoLocationManager.off('nmeaMessage', nmeaCb);
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.on('gnssFenceStatusChange')
 
-PhoneTablet
-
 on(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): void
 
-添加一个围栏，并订阅地理围栏事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。
+添加一个围栏，并订阅地理围栏事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。调用该接口前建议先通过[geoLocationManager.isGnssFenceServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssfenceservicesupported)接口判断对应能力是否支持。
+
+单应用添加地理围栏上限为100，超过上限将移除剩余地理围栏中存活时间最短的围栏。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -1322,45 +1450,47 @@ on(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): vo
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { wantAgent } from '@kit.AbilityKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { wantAgent } from '@kit.AbilityKit';
 
-5. let wantAgentInfo: wantAgent.WantAgentInfo = {
-6. wants: [
-7. {
-8. bundleName: "com.example.myapplication",
-9. abilityName: "EntryAbility",
-10. action: "action1"
-11. }
-12. ],
-13. actionType: wantAgent.OperationType.START_ABILITY,
-14. requestCode: 0,
-15. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-16. };
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      bundleName: "com.example.myapplication",
+      abilityName: "EntryAbility",
+      action: "action1"
+    }
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-18. wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
-19. let requestInfo: geoLocationManager.GeofenceRequest = {
-20. 'scenario': 0x301,
-21. "geofence": { "latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000 }
-22. };
-23. try {
-24. geoLocationManager.on('gnssFenceStatusChange', requestInfo, wantAgentObj);
-25. } catch (err) {
-26. console.error("errCode:" + err.code + ", message:" + err.message);
-27. }
-28. });
+wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
+  let requestInfo: geoLocationManager.GeofenceRequest = {
+    'scenario': 0x301,
+    "geofence": { "latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000 }
+  };
+  try {
+    if (geoLocationManager.isGnssFenceServiceSupported()) {
+      geoLocationManager.on('gnssFenceStatusChange', requestInfo, wantAgentObj);
+    }
+  } catch (err) {
+    console.error("errCode:" + err.code + ", message:" + err.message);
+  }
+});
 ```
 
 ## geoLocationManager.off('gnssFenceStatusChange')
 
-PhoneTablet
-
 off(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): void
 
-删除一个围栏，并取消订阅该围栏事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。
+删除一个围栏，并取消订阅该围栏事件。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。调用该接口前建议先通过[geoLocationManager.isGnssFenceServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssfenceservicesupported)接口判断对应能力是否支持。
 
-**需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
+**需要权限**
+
+* API版本9-24：ohos.permission.APPROXIMATELY\_LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
@@ -1378,7 +1508,7 @@ off(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): v
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API.  适用版本：9-24 |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call ${geoLocationManager.off('gnssFenceStatusChange')} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
@@ -1387,40 +1517,40 @@ off(type: 'gnssFenceStatusChange', request: GeofenceRequest, want: WantAgent): v
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { wantAgent } from '@kit.AbilityKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { wantAgent } from '@kit.AbilityKit';
 
-5. let wantAgentInfo: wantAgent.WantAgentInfo = {
-6. wants: [
-7. {
-8. bundleName: "com.example.myapplication",
-9. abilityName: "EntryAbility",
-10. action: "action1",
-11. }
-12. ],
-13. actionType: wantAgent.OperationType.START_ABILITY,
-14. requestCode: 0,
-15. wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-16. };
+let wantAgentInfo: wantAgent.WantAgentInfo = {
+  wants: [
+    {
+      bundleName: "com.example.myapplication",
+      abilityName: "EntryAbility",
+      action: "action1",
+    }
+  ],
+  actionType: wantAgent.OperationType.START_ABILITY,
+  requestCode: 0,
+  wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+};
 
-18. wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
-19. let requestInfo: geoLocationManager.GeofenceRequest = {
-20. 'scenario': 0x301,
-21. "geofence": { "latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000 }
-22. };
-23. try {
-24. geoLocationManager.on('gnssFenceStatusChange', requestInfo, wantAgentObj);
-25. geoLocationManager.off('gnssFenceStatusChange', requestInfo, wantAgentObj);
-26. } catch (err) {
-27. console.error("errCode:" + err.code + ", message:" + err.message);
-28. }
-29. });
+wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj) => {
+  let requestInfo: geoLocationManager.GeofenceRequest = {
+    'scenario': 0x301,
+    "geofence": { "latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000 }
+  };
+  try {
+    if (geoLocationManager.isGnssFenceServiceSupported()) {
+      geoLocationManager.on('gnssFenceStatusChange', requestInfo, wantAgentObj);
+      geoLocationManager.off('gnssFenceStatusChange', requestInfo, wantAgentObj);
+    }
+  } catch (err) {
+    console.error("errCode:" + err.code + ", message:" + err.message);
+  }
+});
 ```
 
 ## geoLocationManager.on('countryCodeChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'countryCodeChange', callback: Callback<CountryCode>): void
 
@@ -1448,23 +1578,21 @@ on(type: 'countryCodeChange', callback: Callback<CountryCode>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let callback = (code: geoLocationManager.CountryCode): void => {
-4. console.info('countryCodeChange: ' + JSON.stringify(code));
-5. }
+let callback = (code: geoLocationManager.CountryCode): void => {
+  console.info('countryCodeChange: ' + JSON.stringify(code));
+}
 
-7. try {
-8. geoLocationManager.on('countryCodeChange', callback);
-9. } catch (err) {
-10. console.error("errCode:" + err.code + ", message:" + err.message);
-11. }
+try {
+  geoLocationManager.on('countryCodeChange', callback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.off('countryCodeChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'countryCodeChange', callback?: Callback<CountryCode>): void
 
@@ -1492,24 +1620,22 @@ off(type: 'countryCodeChange', callback?: Callback<CountryCode>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let callback = (code: geoLocationManager.CountryCode): void => {
-4. console.info('countryCodeChange: ' + JSON.stringify(code));
-5. }
+let callback = (code: geoLocationManager.CountryCode): void => {
+  console.info('countryCodeChange: ' + JSON.stringify(code));
+}
 
-7. try {
-8. geoLocationManager.on('countryCodeChange', callback);
-9. geoLocationManager.off('countryCodeChange', callback);
-10. } catch (err) {
-11. console.error("errCode:" + err.code + ", message:" + err.message);
-12. }
+try {
+  geoLocationManager.on('countryCodeChange', callback);
+  geoLocationManager.off('countryCodeChange', callback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getCurrentLocation
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
 
@@ -1543,54 +1669,52 @@ getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, call
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. // 方式一：使用CurrentLocationRequest作为入参
-4. let requestInfo: geoLocationManager.CurrentLocationRequest = {
-5. 'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
-6. 'scenario': geoLocationManager.LocationRequestScenario.UNSET,
-7. 'maxAccuracy': 0
-8. };
-9. let locationChange = (err: BusinessError, location: geoLocationManager.Location): void => {
-10. if (err) {
-11. console.error('locationChange: err=' + JSON.stringify(err));
-12. }
-13. if (location) {
-14. console.info('locationChange: location=' + JSON.stringify(location));
-15. }
-16. };
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// 方式一：使用CurrentLocationRequest作为入参
+let requestInfo: geoLocationManager.CurrentLocationRequest = {
+  'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+  'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+  'maxAccuracy': 0
+};
+let locationChange = (err: BusinessError, location: geoLocationManager.Location): void => {
+  if (err) {
+    console.error('locationChange: err=' + JSON.stringify(err));
+  }
+  if (location) {
+    console.info('locationChange: location=' + JSON.stringify(location));
+  }
+};
 
-18. try {
-19. geoLocationManager.getCurrentLocation(requestInfo, locationChange);
-20. } catch (err) {
-21. console.error("errCode:" + err.code + ", message:" + err.message);
-22. }
+try {
+  geoLocationManager.getCurrentLocation(requestInfo, locationChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 
-24. // 方式二：使用SingleLocationRequest作为入参
-25. let request: geoLocationManager.SingleLocationRequest = {
-26. 'locatingTimeoutMs': 10000,
-27. 'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
-28. };
-29. let locationCallback = (err: BusinessError, location: geoLocationManager.Location): void => {
-30. if (err) {
-31. console.error('locationChange: err=' + JSON.stringify(err));
-32. }
-33. if (location) {
-34. console.info('locationChange: location=' + JSON.stringify(location));
-35. }
-36. };
+// 方式二：使用SingleLocationRequest作为入参
+let request: geoLocationManager.SingleLocationRequest = {
+  'locatingTimeoutMs': 10000,
+  'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
+};
+let locationCallback = (err: BusinessError, location: geoLocationManager.Location): void => {
+  if (err) {
+    console.error('locationChange: err=' + JSON.stringify(err));
+  }
+  if (location) {
+    console.info('locationChange: location=' + JSON.stringify(location));
+  }
+};
 
-38. try {
-39. geoLocationManager.getCurrentLocation(request, locationCallback);
-40. } catch (err) {
-41. console.error("errCode:" + err.code + ", message:" + err.message);
-42. }
+try {
+  geoLocationManager.getCurrentLocation(request, locationCallback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getCurrentLocation
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentLocation(callback: AsyncCallback<Location>): void
 
@@ -1623,29 +1747,27 @@ getCurrentLocation(callback: AsyncCallback<Location>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let locationChange = (err: BusinessError, location: geoLocationManager.Location) => {
-5. if (err) {
-6. console.error('locationChange: err=' + JSON.stringify(err));
-7. }
-8. if (location) {
-9. console.info('locationChange: location=' + JSON.stringify(location));
-10. }
-11. };
+let locationChange = (err: BusinessError, location: geoLocationManager.Location) => {
+  if (err) {
+    console.error('locationChange: err=' + JSON.stringify(err));
+  }
+  if (location) {
+    console.info('locationChange: location=' + JSON.stringify(location));
+  }
+};
 
-13. try {
-14. geoLocationManager.getCurrentLocation(locationChange);
-15. } catch (err) {
-16. console.error("errCode:" + err.code + ", message:" + err.message);
-17. }
+try {
+  geoLocationManager.getCurrentLocation(locationChange);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getCurrentLocation
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
 
@@ -1684,47 +1806,45 @@ getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Pr
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 方式一：使用CurrentLocationRequest作为入参
-5. let requestInfo: geoLocationManager.CurrentLocationRequest = {
-6. 'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
-7. 'scenario': geoLocationManager.LocationRequestScenario.UNSET,
-8. 'maxAccuracy': 0
-9. };
-10. try {
-11. geoLocationManager.getCurrentLocation(requestInfo).then((result) => {
-12. console.info('current location: ' + JSON.stringify(result));
-13. })
-14. .catch((error: BusinessError) => {
-15. console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
-16. });
-17. } catch (err) {
-18. console.error("errCode:" + err.code + ", message:" + err.message);
-19. }
+// 方式一：使用CurrentLocationRequest作为入参
+let requestInfo: geoLocationManager.CurrentLocationRequest = {
+  'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+  'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+  'maxAccuracy': 0
+};
+try {
+  geoLocationManager.getCurrentLocation(requestInfo).then((result) => {
+    console.info('current location: ' + JSON.stringify(result));
+  })
+    .catch((error: BusinessError) => {
+      console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
+    });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 
-21. // 方式二：使用SingleLocationRequest作为入参
-22. let request: geoLocationManager.SingleLocationRequest = {
-23. 'locatingTimeoutMs': 10000,
-24. 'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
-25. };
-26. try {
-27. geoLocationManager.getCurrentLocation(request).then((result) => {
-28. console.info('current location: ' + JSON.stringify(result));
-29. })
-30. .catch((error: BusinessError) => {
-31. console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
-32. });
-33. } catch (err) {
-34. console.error("errCode:" + err.code + ", message:" + err.message);
-35. }
+// 方式二：使用SingleLocationRequest作为入参
+let request: geoLocationManager.SingleLocationRequest = {
+  'locatingTimeoutMs': 10000,
+  'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
+};
+try {
+  geoLocationManager.getCurrentLocation(request).then((result) => {
+    console.info('current location: ' + JSON.stringify(result));
+  })
+    .catch((error: BusinessError) => {
+      console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
+    });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getLastLocation
-
-PhonePC/2in1TabletTVWearable
 
 getLastLocation(): Location
 
@@ -1756,19 +1876,17 @@ getLastLocation(): Location
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. let location = geoLocationManager.getLastLocation();
-5. } catch (err) {
-6. console.error("errCode:" + err.code + ", message:" + err.message);
-7. }
+try {
+  let location = geoLocationManager.getLastLocation();
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.isLocationEnabled
-
-PhonePC/2in1TabletTVWearable
 
 isLocationEnabled(): boolean
 
@@ -1795,19 +1913,17 @@ isLocationEnabled(): boolean
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. let locationEnabled = geoLocationManager.isLocationEnabled();
-5. } catch (err) {
-6. console.error("errCode:" + err.code + ", message:" + err.message);
-7. }
+try {
+  let locationEnabled = geoLocationManager.isLocationEnabled();
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getAddressesFromLocation
-
-PhonePC/2in1TabletWearable
 
 getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
 
@@ -1835,31 +1951,29 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
-4. "latitude": 31.12,
-5. "longitude": 121.11,
-6. "maxItems": 1
-7. };
-8. try {
-9. geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
-10. if (err) {
-11. console.error('getAddressesFromLocation: err=' + JSON.stringify(err));
-12. }
-13. if (data) {
-14. console.info('getAddressesFromLocation: data=' + JSON.stringify(data));
-15. }
-16. });
-17. } catch (err) {
-18. console.error("errCode:" + err.code + ", message:" + err.message);
-19. }
+let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+  "latitude": 31.12,
+  "longitude": 121.11,
+  "maxItems": 1
+};
+try {
+  geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+    if (err) {
+      console.error('getAddressesFromLocation: err=' + JSON.stringify(err));
+    }
+    if (data) {
+      console.info('getAddressesFromLocation: data=' + JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getAddressesFromLocation
-
-PhonePC/2in1TabletWearable
 
 getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddress>>
 
@@ -1892,30 +2006,28 @@ getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddre
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
-5. "latitude": 31.12,
-6. "longitude": 121.11,
-7. "maxItems": 1
-8. };
-9. try {
-10. geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-11. console.info('getAddressesFromLocation: ' + JSON.stringify(data));
-12. })
-13. .catch((error: BusinessError) => {
-14. console.error('promise, getAddressesFromLocation: error=' + JSON.stringify(error));
-15. });
-16. } catch (err) {
-17. console.error("errCode:" + err.code + ", message:" + err.message);
-18. }
+let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+  "latitude": 31.12,
+  "longitude": 121.11,
+  "maxItems": 1
+};
+try {
+  geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+    console.info('getAddressesFromLocation: ' + JSON.stringify(data));
+  })
+    .catch((error: BusinessError) => {
+      console.error('promise, getAddressesFromLocation: error=' + JSON.stringify(error));
+    });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getAddressesFromLocationName
-
-PhonePC/2in1TabletWearable
 
 getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
 
@@ -1943,27 +2055,25 @@ getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Ar
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let geocodeRequest: geoLocationManager.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
-4. try {
-5. geoLocationManager.getAddressesFromLocationName(geocodeRequest, (err, data) => {
-6. if (err) {
-7. console.error('getAddressesFromLocationName: err=' + JSON.stringify(err));
-8. }
-9. if (data) {
-10. console.info('getAddressesFromLocationName: data=' + JSON.stringify(data));
-11. }
-12. });
-13. } catch (err) {
-14. console.error("errCode:" + err.code + ", message:" + err.message);
-15. }
+let geocodeRequest: geoLocationManager.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
+try {
+  geoLocationManager.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+    if (err) {
+      console.error('getAddressesFromLocationName: err=' + JSON.stringify(err));
+    }
+    if (data) {
+      console.info('getAddressesFromLocationName: data=' + JSON.stringify(data));
+    }
+  });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getAddressesFromLocationName
-
-PhonePC/2in1TabletWearable
 
 getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array<GeoAddress>>
 
@@ -1996,26 +2106,24 @@ getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array<GeoAddress>
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let geocodeRequest: geoLocationManager.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
-5. try {
-6. geoLocationManager.getAddressesFromLocationName(geocodeRequest).then((result) => {
-7. console.info('getAddressesFromLocationName: ' + JSON.stringify(result));
-8. })
-9. .catch((error: BusinessError) => {
-10. console.error('promise, getAddressesFromLocationName: error=' + JSON.stringify(error));
-11. });
-12. } catch (err) {
-13. console.error("errCode:" + err.code + ", message:" + err.message);
-14. }
+let geocodeRequest: geoLocationManager.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
+try {
+  geoLocationManager.getAddressesFromLocationName(geocodeRequest).then((result) => {
+    console.info('getAddressesFromLocationName: ' + JSON.stringify(result));
+  })
+    .catch((error: BusinessError) => {
+      console.error('promise, getAddressesFromLocationName: error=' + JSON.stringify(error));
+    });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.isGeocoderAvailable
-
-PhonePC/2in1TabletWearable
 
 isGeocoderAvailable(): boolean
 
@@ -2040,23 +2148,21 @@ isGeocoderAvailable(): boolean
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. let isAvailable = geoLocationManager.isGeocoderAvailable();
-5. } catch (err) {
-6. console.error("errCode:" + err.code + ", message:" + err.message);
-7. }
+try {
+  let isAvailable = geoLocationManager.isGeocoderAvailable();
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getCachedGnssLocationsSize
 
-PhoneTabletWearable
-
 getCachedGnssLocationsSize(callback: AsyncCallback<number>): void
 
-获取GNSS芯片缓存位置的个数。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用callback异步回调。
+获取GNSS芯片缓存位置的个数。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用callback异步回调。调用该接口前建议先通过[geoLocationManager.isCachedGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanageriscachedgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -2082,30 +2188,30 @@ getCachedGnssLocationsSize(callback: AsyncCallback<number>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. geoLocationManager.getCachedGnssLocationsSize((err, size) => {
-5. if (err) {
-6. console.error('getCachedGnssLocationsSize: err=' + JSON.stringify(err));
-7. }
-8. if (size) {
-9. console.info('getCachedGnssLocationsSize: size=' + JSON.stringify(size));
-10. }
-11. });
-12. } catch (err) {
-13. console.error("errCode:" + err.code + ", message:" + err.message);
-14. }
+try {
+  if (geoLocationManager.isCachedGnssServiceSupported()) {
+    geoLocationManager.getCachedGnssLocationsSize((err, size) => {
+      if (err) {
+        console.error('getCachedGnssLocationsSize: err=' + JSON.stringify(err));
+      }
+      if (size) {
+        console.info('getCachedGnssLocationsSize: size=' + JSON.stringify(size));
+      }
+    });
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getCachedGnssLocationsSize
 
-PhoneTabletWearable
-
 getCachedGnssLocationsSize(): Promise<number>
 
-获取GNSS芯片缓存位置的个数。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用Promise异步回调。
+获取GNSS芯片缓存位置的个数。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用Promise异步回调。调用该接口前建议先通过[geoLocationManager.isCachedGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanageriscachedgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -2130,29 +2236,29 @@ getCachedGnssLocationsSize(): Promise<number>
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. geoLocationManager.getCachedGnssLocationsSize().then((result) => {
-6. console.info('promise, getCachedGnssLocationsSize: ' + JSON.stringify(result));
-7. })
-8. .catch((error: BusinessError) => {
-9. console.error('promise, getCachedGnssLocationsSize: error=' + JSON.stringify(error));
-10. });
-11. } catch (err) {
-12. console.error("errCode:" + err.code + ", message:" + err.message);
-13. }
+try {
+  if (geoLocationManager.isCachedGnssServiceSupported()) {
+    geoLocationManager.getCachedGnssLocationsSize().then((result) => {
+      console.info('promise, getCachedGnssLocationsSize: ' + JSON.stringify(result));
+    })
+      .catch((error: BusinessError) => {
+        console.error('promise, getCachedGnssLocationsSize: error=' + JSON.stringify(error));
+      });
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.flushCachedGnssLocations
 
-PhoneTabletWearable
-
 flushCachedGnssLocations(callback: AsyncCallback<void>): void
 
-读取并清空GNSS芯片所有缓存位置。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用callback异步回调。
+读取并清空GNSS芯片所有缓存位置。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用callback异步回调。调用该接口前建议先通过[geoLocationManager.isCachedGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanageriscachedgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -2179,27 +2285,27 @@ flushCachedGnssLocations(callback: AsyncCallback<void>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. geoLocationManager.flushCachedGnssLocations((err) => {
-5. if (err) {
-6. console.error('flushCachedGnssLocations: err=' + JSON.stringify(err));
-7. }
-8. });
-9. } catch (err) {
-10. console.error("errCode:" + err.code + ", message:" + err.message);
-11. }
+try {
+  if (geoLocationManager.isCachedGnssServiceSupported()) {
+    geoLocationManager.flushCachedGnssLocations((err) => {
+      if (err) {
+        console.error('flushCachedGnssLocations: err=' + JSON.stringify(err));
+      }
+    });
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.flushCachedGnssLocations
 
-PhoneTabletWearable
-
 flushCachedGnssLocations(): Promise<void>
 
-读取并清空GNSS芯片所有缓存位置。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用Promise异步回调。
+读取并清空GNSS芯片所有缓存位置。该接口功能由GNSS定位芯片提供（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。使用Promise异步回调。调用该接口前建议先通过[geoLocationManager.isCachedGnssServiceSupported](js-apis-geolocationmanager.md#geolocationmanageriscachedgnssservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -2225,25 +2331,25 @@ flushCachedGnssLocations(): Promise<void>
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. geoLocationManager.flushCachedGnssLocations().then(() => {
-6. console.info('promise, flushCachedGnssLocations success');
-7. })
-8. .catch((error: BusinessError) => {
-9. console.error('promise, flushCachedGnssLocations: error=' + JSON.stringify(error));
-10. });
-11. } catch (err) {
-12. console.error("errCode:" + err.code + ", message:" + err.message);
-13. }
+try {
+  if (geoLocationManager.isCachedGnssServiceSupported()) {
+    geoLocationManager.flushCachedGnssLocations().then(() => {
+      console.info('promise, flushCachedGnssLocations success');
+    })
+      .catch((error: BusinessError) => {
+        console.error('promise, flushCachedGnssLocations: error=' + JSON.stringify(error));
+      });
+  }
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.sendCommand
-
-PhonePC/2in1TabletTVWearable
 
 sendCommand(command: LocationCommand, callback: AsyncCallback<void>): void
 
@@ -2270,24 +2376,22 @@ sendCommand(command: LocationCommand, callback: AsyncCallback<void>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let requestInfo: geoLocationManager.LocationCommand = { 'scenario': 0x301, 'command': "command_1" };
-4. try {
-5. geoLocationManager.sendCommand(requestInfo, (err) => {
-6. if (err) {
-7. console.error('sendCommand: err=' + JSON.stringify(err));
-8. }
-9. });
-10. } catch (err) {
-11. console.error("errCode:" + err.code + ", message:" + err.message);
-12. }
+let requestInfo: geoLocationManager.LocationCommand = { 'scenario': 0x301, 'command': "command_1" };
+try {
+  geoLocationManager.sendCommand(requestInfo, (err) => {
+    if (err) {
+      console.error('sendCommand: err=' + JSON.stringify(err));
+    }
+  });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.sendCommand
-
-PhonePC/2in1TabletTVWearable
 
 sendCommand(command: LocationCommand): Promise<void>
 
@@ -2319,26 +2423,24 @@ sendCommand(command: LocationCommand): Promise<void>
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let requestInfo: geoLocationManager.LocationCommand = { 'scenario': 0x301, 'command': "command_1" };
-5. try {
-6. geoLocationManager.sendCommand(requestInfo).then(() => {
-7. console.info('promise, sendCommand success');
-8. })
-9. .catch((error: BusinessError) => {
-10. console.error('promise, sendCommand: error=' + JSON.stringify(error));
-11. });
-12. } catch (err) {
-13. console.error("errCode:" + err.code + ", message:" + err.message);
-14. }
+let requestInfo: geoLocationManager.LocationCommand = { 'scenario': 0x301, 'command': "command_1" };
+try {
+  geoLocationManager.sendCommand(requestInfo).then(() => {
+    console.info('promise, sendCommand success');
+  })
+    .catch((error: BusinessError) => {
+      console.error('promise, sendCommand: error=' + JSON.stringify(error));
+    });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getCountryCode
-
-PhonePC/2in1TabletTVWearable
 
 getCountryCode(callback: AsyncCallback<CountryCode>): void
 
@@ -2365,26 +2467,24 @@ getCountryCode(callback: AsyncCallback<CountryCode>): void
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. geoLocationManager.getCountryCode((err, result) => {
-5. if (err) {
-6. console.error('getCountryCode: err=' + JSON.stringify(err));
-7. }
-8. if (result) {
-9. console.info('getCountryCode: result=' + JSON.stringify(result));
-10. }
-11. });
-12. } catch (err) {
-13. console.error("errCode:" + err.code + ", message:" + err.message);
-14. }
+try {
+  geoLocationManager.getCountryCode((err, result) => {
+    if (err) {
+      console.error('getCountryCode: err=' + JSON.stringify(err));
+    }
+    if (result) {
+      console.info('getCountryCode: result=' + JSON.stringify(result));
+    }
+  });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.getCountryCode
-
-PhonePC/2in1TabletTVWearable
 
 getCountryCode(): Promise<CountryCode>
 
@@ -2410,34 +2510,34 @@ getCountryCode(): Promise<CountryCode>
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. geoLocationManager.getCountryCode()
-6. .then((result) => {
-7. console.info('promise, getCountryCode: result=' + JSON.stringify(result));
-8. })
-9. .catch((error: BusinessError) => {
-10. console.error('promise, getCountryCode: error=' + JSON.stringify(error));
-11. });
-12. } catch (err) {
-13. console.error("errCode:" + err.code + ", message:" + err.message);
-14. }
+try {
+  geoLocationManager.getCountryCode()
+    .then((result) => {
+      console.info('promise, getCountryCode: result=' + JSON.stringify(result));
+    })
+    .catch((error: BusinessError) => {
+      console.error('promise, getCountryCode: error=' + JSON.stringify(error));
+    });
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.addGnssGeofence12+
 
-PhoneTablet
-
 addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
 
-添加一个GNSS地理围栏，并订阅地理围栏事件。使用Promise异步回调。
+添加一个GNSS地理围栏，并订阅地理围栏事件。使用Promise异步回调。调用该接口前建议先通过[geoLocationManager.isGnssFenceServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssfenceservicesupported)接口判断对应能力是否支持。
 
 APP可以在入参[GnssGeofenceRequest](js-apis-geolocationmanager.md#gnssgeofencerequest12)中传入回调函数用于接收地理围栏事件；也可以传入通知对象[NotificationRequest](js-apis-notification.md#notificationrequest)，在系统识别到地理围栏事件发生时会弹出APP创建的通知。
 
 GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。
+
+单应用添加地理围栏上限为100，超过上限将移除剩余地理围栏中存活时间最短的围栏。
 
 **需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -2470,96 +2570,98 @@ GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { notificationManager } from '@kit.NotificationKit';
-4. // 创建围栏
-5. let geofence: geoLocationManager.Geofence = {
-6. "latitude": 34.12, "longitude": 124.11, "radius": 10000.0, "expiration": 10000.0
-7. }
-8. // 指定APP需要监听的地理围栏事件类型，这里表示需要监听进入围栏和退出围栏事件
-9. let transitionStatusList: Array<geoLocationManager.GeofenceTransitionEvent> = [
-10. geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER,
-11. geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT,
-12. ];
-13. // 创建GEOFENCE_TRANSITION_EVENT_ENTER事件对应的通知对象
-14. let notificationRequest1: notificationManager.NotificationRequest = {
-15. id: 1,
-16. content: {
-17. notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-18. normal: {
-19. title: "围栏通知",
-20. text: "围栏进入",
-21. additionalText: ""
-22. }
-23. }
-24. };
-25. // 创建GEOFENCE_TRANSITION_EVENT_EXIT事件对应的通知对象
-26. let notificationRequest2: notificationManager.NotificationRequest = {
-27. id: 2,
-28. content: {
-29. notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-30. normal: {
-31. title: '围栏通知',
-32. text: '围栏退出',
-33. additionalText: ""
-34. }
-35. }
-36. };
-37. // 把创建的通知对象存入Array中，存入顺序与transitionStatusList一致
-38. let notificationRequestList: Array<notificationManager.NotificationRequest> =
-39. [notificationRequest1, notificationRequest2];
-40. // 构造GNSS地理围栏请求对象gnssGeofenceRequest
-41. let gnssGeofenceRequest: geoLocationManager.GnssGeofenceRequest = {
-42. // 围栏属性，包含圆心和半径等信息
-43. geofence: geofence,
-44. // 指定APP需要监听的地理围栏事件类型
-45. monitorTransitionEvents: transitionStatusList,
-46. // 地理围栏事件对应的通知对象，该参数为可选
-47. notifications: notificationRequestList,
-48. // 设备驻留在地理围栏内的时间，该参数为可选
-49. loiterTimeMs: 10000,
-50. // 围栏回调要拉起的FenceExtensionAbility名称，该参数为可选
-51. fenceExtensionAbilityName: "FenceExtensionAbility",
-52. // 用于监听围栏事件的callback
-53. geofenceTransitionCallback: (err: BusinessError, transition: geoLocationManager.GeofenceTransition) => {
-54. if (err) {
-55. console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
-56. }
-57. if (transition) {
-58. console.info("GeofenceTransition: %{public}s", JSON.stringify(transition));
-59. }
-60. }
-61. }
-62. try {
-63. // 添加围栏
-64. geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
-65. // 围栏添加成功后返回围栏ID
-66. console.info("addGnssGeofence success, fence id: " + id);
-67. let fenceId = id;
-68. }).catch((err: BusinessError) => {
-69. console.error("addGnssGeofence failed, promise errCode:" + (err as BusinessError).code +
-70. ",errMessage:" + (err as BusinessError).message);
-71. });
-72. } catch (error) {
-73. console.error("addGnssGeofence failed, err:" + JSON.stringify(error));
-74. }
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { notificationManager } from '@kit.NotificationKit';
+// 创建围栏
+let geofence: geoLocationManager.Geofence = {
+  "latitude": 34.12, "longitude": 124.11, "radius": 10000.0, "expiration": 10000.0
+}
+// 指定APP需要监听的地理围栏事件类型，这里表示需要监听进入围栏和退出围栏事件
+let transitionStatusList: Array<geoLocationManager.GeofenceTransitionEvent> = [
+geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER,
+geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT,
+];
+// 创建GEOFENCE_TRANSITION_EVENT_ENTER事件对应的通知对象
+let notificationRequest1: notificationManager.NotificationRequest = {
+  id: 1,
+  content: {
+    notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+    normal: {
+      title: "围栏通知",
+      text: "围栏进入",
+      additionalText: ""
+    }
+  }
+};
+// 创建GEOFENCE_TRANSITION_EVENT_EXIT事件对应的通知对象
+let notificationRequest2: notificationManager.NotificationRequest = {
+  id: 2,
+  content: {
+    notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+    normal: {
+      title: '围栏通知',
+      text: '围栏退出',
+      additionalText: ""
+    }
+  }
+};
+// 把创建的通知对象存入Array中，存入顺序与transitionStatusList一致
+let notificationRequestList: Array<notificationManager.NotificationRequest> =
+  [notificationRequest1, notificationRequest2];
+// 构造GNSS地理围栏请求对象gnssGeofenceRequest
+let gnssGeofenceRequest: geoLocationManager.GnssGeofenceRequest = {
+  // 围栏属性，包含圆心和半径等信息
+  geofence: geofence,
+  // 指定APP需要监听的地理围栏事件类型
+  monitorTransitionEvents: transitionStatusList,
+  // 地理围栏事件对应的通知对象，该参数为可选
+  notifications: notificationRequestList,
+  // 设备驻留在地理围栏内的时间，该参数为可选
+  loiterTimeMs: 10000,
+  // 围栏回调要拉起的FenceExtensionAbility名称，该参数为可选
+  fenceExtensionAbilityName: "FenceExtensionAbility",
+  // 用于监听围栏事件的callback
+  geofenceTransitionCallback: (err: BusinessError, transition: geoLocationManager.GeofenceTransition) => {
+    if (err) {
+      console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
+    }
+    if (transition) {
+      console.info("GeofenceTransition: %{public}s", JSON.stringify(transition));
+    }
+  }
+}
+try {
+  if (geoLocationManager.isGnssFenceServiceSupported()) {
+    // 添加围栏
+    geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
+      // 围栏添加成功后返回围栏ID
+      console.info("addGnssGeofence success, fence id: " + id);
+      let fenceId = id;
+    }).catch((err: BusinessError) => {
+      console.error("addGnssGeofence failed, promise errCode:" + (err as BusinessError).code +
+      ",errMessage:" + (err as BusinessError).message);
+    });
+  }
+} catch (error) {
+  console.error("addGnssGeofence failed, err:" + JSON.stringify(error));
+}
 ```
 
 ## geoLocationManager.removeGnssGeofence12+
-
-PhoneTablet
 
 removeGnssGeofence(geofenceId: number): Promise<void>
 
 删除一个GNSS地理围栏，并取消订阅该地理围栏事件。使用Promise异步回调。
 
-GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。
-
-**需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
+GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果设备无此芯片或使用的芯片型号不支持该功能，则返回错误码801（Capability not supported）。调用该接口前建议先通过[geoLocationManager.isGnssFenceServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssfenceservicesupported)接口判断对应能力是否支持。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
+
+**需要权限**
+
+* API版本9-24：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
 
 **参数**：
 
@@ -2579,7 +2681,7 @@ GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API.  适用版本：12-24 |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 801 | Capability not supported. Failed to call ${geoLocationManager.removeGnssGeofence} due to limited device capabilities. |
 | 3301000 | The location service is unavailable. |
@@ -2587,29 +2689,29 @@ GNSS地理围栏功能依赖GNSS定位芯片（仅部分型号支持），如果
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. // fenceId是在geoLocationManager.addGnssGeofence执行成功后获取的
-4. let fenceId = 1;
-5. try {
-6. geoLocationManager.removeGnssGeofence(fenceId).then(() => {
-7. console.info("removeGnssGeofence success fenceId:" + fenceId);
-8. }).catch((error: BusinessError) => {
-9. console.error("removeGnssGeofence: error=" + JSON.stringify(error));
-10. });
-11. } catch (error) {
-12. console.error("removeGnssGeofence: error=" + JSON.stringify(error));
-13. }
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// fenceId是在geoLocationManager.addGnssGeofence执行成功后获取的
+let fenceId = 1;
+try {
+  if (geoLocationManager.isGnssFenceServiceSupported()) {
+    geoLocationManager.removeGnssGeofence(fenceId).then(() => {
+      console.info("removeGnssGeofence success fenceId:" + fenceId);
+    }).catch((error: BusinessError) => {
+      console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+    });
+  }
+} catch (error) {
+  console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+}
 ```
 
 ## geoLocationManager.getGeofenceSupportedCoordTypes12+
 
-PhoneTablet
-
 getGeofenceSupportedCoordTypes(): Array<CoordinateSystemType>
 
-获取地理围栏功能支持的坐标系列表。
+获取地理围栏功能支持的坐标系列表。调用该接口前建议先通过[geoLocationManager.isGnssFenceServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssfenceservicesupported)接口判断对应能力是否支持。
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
@@ -2630,20 +2732,20 @@ getGeofenceSupportedCoordTypes(): Array<CoordinateSystemType>
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. let supportedCoordTypes: Array<geoLocationManager.CoordinateSystemType> = geoLocationManager.getGeofenceSupportedCoordTypes();
-5. console.info("getGeofenceSupportedCoordTypes return:" + JSON.stringify(supportedCoordTypes));
-6. } catch (error) {
-7. console.error("getGeofenceSupportedCoordTypes: error=" + JSON.stringify(error));
-8. }
+try {
+  if (geoLocationManager.isGnssFenceServiceSupported()) {
+    let supportedCoordTypes: Array<geoLocationManager.CoordinateSystemType> = geoLocationManager.getGeofenceSupportedCoordTypes();
+    console.info("getGeofenceSupportedCoordTypes return:" + JSON.stringify(supportedCoordTypes));
+  }
+} catch (error) {
+  console.error("getGeofenceSupportedCoordTypes: error=" + JSON.stringify(error));
+}
 ```
 
 ## geoLocationManager.getCurrentWifiBssidForLocating14+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentWifiBssidForLocating(): string
 
@@ -2673,20 +2775,18 @@ getCurrentWifiBssidForLocating(): string
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. let bssid: string = geoLocationManager.getCurrentWifiBssidForLocating();
-5. console.info("get wifi bssid:" + bssid);
-6. } catch (error) {
-7. console.error("getCurrentWifiBssidForLocating: errCode" + error.code + ", errMessage" + error.message);
-8. }
+try {
+  let bssid: string = geoLocationManager.getCurrentWifiBssidForLocating();
+  console.info("get wifi bssid:" + bssid);
+} catch (error) {
+  console.error("getCurrentWifiBssidForLocating: errCode" + error.code + ", errMessage" + error.message);
+}
 ```
 
 ## geoLocationManager.on('bluetoothScanResultChange')16+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bluetoothScanResultChange', callback: Callback<BluetoothScanResult>): void
 
@@ -2723,22 +2823,20 @@ on(type: 'bluetoothScanResultChange', callback: Callback<BluetoothScanResult>): 
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-4. let callback = (result: geoLocationManager.BluetoothScanResult): void => {
-5. console.info('bluetoothScanResultChange: ' + JSON.stringify(result));
-6. };
-7. try {
-8. geoLocationManager.on('bluetoothScanResultChange', callback);
-9. } catch (err) {
-10. console.error("errCode:" + err.code + ", message:" + err.message);
-11. }
+let callback = (result: geoLocationManager.BluetoothScanResult): void => {
+  console.info('bluetoothScanResultChange: ' + JSON.stringify(result));
+};
+try {
+  geoLocationManager.on('bluetoothScanResultChange', callback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.off('bluetoothScanResultChange')16+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'bluetoothScanResultChange', callback?: Callback<BluetoothScanResult>): void
 
@@ -2768,23 +2866,21 @@ off(type: 'bluetoothScanResultChange', callback?: Callback<BluetoothScanResult>)
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let callback = (result: geoLocationManager.BluetoothScanResult): void => {
-4. console.info('bluetoothScanResultChange: ' + JSON.stringify(result));
-5. };
-6. try {
-7. geoLocationManager.on('bluetoothScanResultChange', callback);
-8. geoLocationManager.off('bluetoothScanResultChange', callback);
-9. } catch (err) {
-10. console.error("errCode:" + err.code + ", message:" + err.message);
-11. }
+let callback = (result: geoLocationManager.BluetoothScanResult): void => {
+  console.info('bluetoothScanResultChange: ' + JSON.stringify(result));
+};
+try {
+  geoLocationManager.on('bluetoothScanResultChange', callback);
+  geoLocationManager.off('bluetoothScanResultChange', callback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.isPoiServiceSupported20+
-
-PhonePC/2in1TabletTVWearable
 
 isPoiServiceSupported(): boolean
 
@@ -2802,16 +2898,14 @@ isPoiServiceSupported(): boolean
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. let poiServiceState = geoLocationManager.isPoiServiceSupported();
-4. console.info("poiServiceState:" + poiServiceState);
+let poiServiceState = geoLocationManager.isPoiServiceSupported();
+console.info("poiServiceState:" + poiServiceState);
 ```
 
 ## geoLocationManager.getPoiInfo20+
-
-PhonePC/2in1TabletTVWearable
 
 getPoiInfo(): Promise<PoiInfo>
 
@@ -2842,25 +2936,23 @@ getPoiInfo(): Promise<PoiInfo>
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. if (geoLocationManager.isPoiServiceSupported()) {
-5. geoLocationManager.getPoiInfo().then((poiInfo) => {
-6. if (poiInfo !== undefined) {
-7. console.info("get PoiInfo:" + JSON.stringify(poiInfo));
-8. }
-9. })
-10. }
-11. } catch (error) {
-12. console.error("getPoiInfo errCode:" + error.code + ", errMessage:" + error.message);
-13. }
+try {
+  if (geoLocationManager.isPoiServiceSupported()) {
+    geoLocationManager.getPoiInfo().then((poiInfo) => {
+      if (poiInfo !== undefined) {
+        console.info("get PoiInfo:" + JSON.stringify(poiInfo));
+      }
+    })
+  }
+} catch (error) {
+  console.error("getPoiInfo errCode:" + error.code + ", errMessage:" + error.message);
+}
 ```
 
 ## geoLocationManager.getDistanceBetweenLocations20+
-
-PhonePC/2in1TabletTVWearable
 
 getDistanceBetweenLocations(location1: Location, location2: Location): number
 
@@ -2885,42 +2977,40 @@ getDistanceBetweenLocations(location1: Location, location2: Location): number
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. let location1: geoLocationManager.Location = {
-5. "latitude": 30.12,
-6. "longitude": 120.11,
-7. "altitude": 0,
-8. "accuracy": 0,
-9. "speed": 0,
-10. "timeStamp": 0,
-11. "direction": 0,
-12. "timeSinceBoot": 0,
-13. "additionSize": 0
-14. }
-15. let location2: geoLocationManager.Location = {
-16. "latitude": 30.12,
-17. "longitude": 120.11,
-18. "altitude": 0,
-19. "accuracy": 0,
-20. "speed": 0,
-21. "timeStamp": 0,
-22. "direction": 0,
-23. "timeSinceBoot": 0,
-24. "additionSize": 0
-25. }
-26. let distance = geoLocationManager.getDistanceBetweenLocations(location1, location2);
-27. console.info("distance:" + distance);
-28. } catch (error) {
-29. console.error("getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
-30. }
+try {
+  let location1: geoLocationManager.Location = {
+    "latitude": 30.12,
+    "longitude": 120.11,
+    "altitude": 0,
+    "accuracy": 0,
+    "speed": 0,
+    "timeStamp": 0,
+    "direction": 0,
+    "timeSinceBoot": 0,
+    "additionSize": 0
+  }
+  let location2: geoLocationManager.Location = {
+    "latitude": 31.12,
+    "longitude": 121.11,
+    "altitude": 0,
+    "accuracy": 0,
+    "speed": 0,
+    "timeStamp": 0,
+    "direction": 0,
+    "timeSinceBoot": 0,
+    "additionSize": 0
+  }
+  let distance = geoLocationManager.getDistanceBetweenLocations(location1, location2);
+  console.info("distance:" + distance);
+} catch (error) {
+  console.error("getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
+}
 ```
 
 ## geoLocationManager.addBeaconFence20+
-
-PhoneTablet
 
 addBeaconFence(fenceRequest: BeaconFenceRequest): Promise<number>
 
@@ -2929,6 +3019,8 @@ addBeaconFence(fenceRequest: BeaconFenceRequest): Promise<number>
 beacon围栏是指通过蓝牙beacon设备和手机应用配合，实现“虚拟围栏”的功能。当用户靠近或离开某个特定的beacon设备时，手机应用会收到通知。
 
 应用可以在入参[BeaconFenceRequest](js-apis-geolocationmanager.md#beaconfencerequest20)中传入回调函数用于接收围栏事件；也可以传入[FenceExtensionAbility](js-apis-app-ability-fenceextensionability.md)名称，在系统识别到围栏事件发生时通知应用。
+
+单应用添加beacon围栏上限为10，超过上限会导致添加beacon围栏失败，并抛出3501601错误码。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -2958,62 +3050,60 @@ beacon围栏是指通过蓝牙beacon设备和手机应用配合，实现“虚�
 | 801 | Capability not supported. Failed to call ${geoLocationManager.addBeaconFence} due to limited device capabilities. |
 | 3501100 | Failed to add a beacon fence because the location switch is off. |
 | 3501101 | Failed to add a beacon fence because the bluetooth switch is off. |
-| 3501601 | The number of beacon fence exceeds the maximum. |
+| 3501601 | The number of beacon fences exceeds the maximum. |
 | 3501603 | Duplicate beacon fence information. |
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. // 以iBeacon协议为例，格式如下
-6. // 01 byte    type = 0x02
-7. // 01 byte    len = 0x15 = 21
-8. // 16 byte    UUID
-9. // 02 byte    major
-10. // 02 byte    minor
-11. // 01 byte    tx power
-12. let manufactureDataBuffer: Uint8Array = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
-13. 0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
-14. let manufactureDataMaskBuffer: Uint8Array = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
-15. 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
+try {
+  // 以iBeacon协议为例，格式如下
+  // 01 byte    type = 0x02
+  // 01 byte    len = 0x15 = 21
+  // 16 byte    UUID
+  // 02 byte    major
+  // 02 byte    minor
+  // 01 byte    tx power
+  let manufactureDataBuffer: Uint8Array = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
+    0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
+  let manufactureDataMaskBuffer: Uint8Array = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
+    0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
 
-17. let manufactureData: geoLocationManager.BeaconManufactureData = {
-18. manufactureId: 0X004C,
-19. manufactureData: manufactureDataBuffer.buffer,
-20. manufactureDataMask: manufactureDataMaskBuffer.buffer
-21. };
+  let manufactureData: geoLocationManager.BeaconManufactureData = {
+    manufactureId: 0X004C,
+    manufactureData: manufactureDataBuffer.buffer,
+    manufactureDataMask: manufactureDataMaskBuffer.buffer
+  };
 
-23. let beacon: geoLocationManager.BeaconFence = {
-24. identifier: "11",
-25. beaconFenceInfoType: geoLocationManager.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
-26. manufactureData: manufactureData
-27. };
+  let beacon: geoLocationManager.BeaconFence = {
+    identifier: "11",
+    beaconFenceInfoType: geoLocationManager.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+    manufactureData: manufactureData
+  };
 
-29. let fenceRequest: geoLocationManager.BeaconFenceRequest = {
-30. beacon: beacon,
-31. transitionCallback: (transition: geoLocationManager.GeofenceTransition) => {
-32. if (transition) {
-33. console.info("GeofenceTransition: err" + JSON.stringify(transition));
-34. }
-35. },
-36. fenceExtensionAbilityName: "MyFenceExtensionAbility",
-37. };
-38. geoLocationManager.addBeaconFence(fenceRequest).then((id) => {
-39. console.info("addBeaconFence success, fence id:" + id);
-40. }).catch((err: BusinessError) => {
-41. console.error('promise, addBeaconFence: error=' + JSON.stringify(err));
-42. });
-43. } catch (error) {
-44. console.error("addBeaconFence: errCode" + error.code + ", errMessage" + error.message);
-45. }
+  let fenceRequest: geoLocationManager.BeaconFenceRequest = {
+    beacon: beacon,
+    transitionCallback: (transition: geoLocationManager.GeofenceTransition) => {
+      if (transition) {
+        console.info("GeofenceTransition: err" + JSON.stringify(transition));
+      }
+    },
+    fenceExtensionAbilityName: "MyFenceExtensionAbility",
+  };
+  geoLocationManager.addBeaconFence(fenceRequest).then((id) => {
+    console.info("addBeaconFence success, fence id:" + id);
+  }).catch((err: BusinessError) => {
+    console.error('promise, addBeaconFence: error=' + JSON.stringify(err));
+  });
+} catch (error) {
+  console.error("addBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+}
 ```
 
 ## geoLocationManager.removeBeaconFence20+
-
-PhoneTablet
 
 removeBeaconFence(beaconFence?: BeaconFence): Promise<void>
 
@@ -3021,7 +3111,9 @@ removeBeaconFence(beaconFence?: BeaconFence): Promise<void>
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
-**需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
+**需要权限**：
+
+* API版本20-24：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
 
 **系统能力**：SystemCapability.Location.Location.Geofence
 
@@ -3043,49 +3135,47 @@ removeBeaconFence(beaconFence?: BeaconFence): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API.  适用版本：20-24 |
 | 801 | Capability not supported. Failed to call ${geoLocationManager.removeBeaconFence} due to limited device capabilities. |
 | 3501602 | Failed to delete the fence due to incorrect beacon fence information. |
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let manufactureDataBuffer: Uint8Array = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
-6. 0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
-7. let manufactureDataMaskBuffer: Uint8Array = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
-8. 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
+try {
+  let manufactureDataBuffer: Uint8Array = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
+    0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
+  let manufactureDataMaskBuffer: Uint8Array = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
+    0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
 
-10. let manufactureData: geoLocationManager.BeaconManufactureData = {
-11. manufactureId: 0X004C,
-12. manufactureData: manufactureDataBuffer.buffer,
-13. manufactureDataMask: manufactureDataMaskBuffer.buffer
-14. };
+  let manufactureData: geoLocationManager.BeaconManufactureData = {
+    manufactureId: 0X004C,
+    manufactureData: manufactureDataBuffer.buffer,
+    manufactureDataMask: manufactureDataMaskBuffer.buffer
+  };
 
-16. let beacon: geoLocationManager.BeaconFence = {
-17. identifier: "11",
-18. beaconFenceInfoType: geoLocationManager.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
-19. manufactureData: manufactureData
-20. };
-21. geoLocationManager.removeBeaconFence(beacon).then(() => {
-22. console.info("promise, removeBeaconFence success");
-23. })
-24. .catch((error: BusinessError) => {
-25. console.error("promise, removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
-26. });
-27. } catch (error) {
-28. console.error("removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
-29. }
+  let beacon: geoLocationManager.BeaconFence = {
+    identifier: "11",
+    beaconFenceInfoType: geoLocationManager.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+    manufactureData: manufactureData
+  };
+  geoLocationManager.removeBeaconFence(beacon).then(() => {
+    console.info("promise, removeBeaconFence success");
+  })
+    .catch((error: BusinessError) => {
+      console.error("promise, removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+    });
+} catch (error) {
+  console.error("removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+}
 ```
 
 ## geoLocationManager.isBeaconFenceSupported20+
 
-PhoneTablet
-
-isBeaconFenceSupported(): boolean;
+isBeaconFenceSupported(): boolean
 
 判断当前设备是否支持beacon围栏。
 
@@ -3101,19 +3191,17 @@ isBeaconFenceSupported(): boolean;
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. let isBeaconFenceSupported = geoLocationManager.isBeaconFenceSupported();
-5. } catch (err) {
-6. console.error("errCode:" + err.code + ", message:" + err.message);
-7. }
+try {
+  let isBeaconFenceSupported = geoLocationManager.isBeaconFenceSupported();
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```
 
 ## geoLocationManager.isWlanBssidMatched21+
-
-PhonePC/2in1TabletTVWearable
 
 isWlanBssidMatched(wlanBssidArray: Array<string>, rssiThreshold: number, needStartScan: boolean): Promise<boolean>
 
@@ -3152,28 +3240,143 @@ isWlanBssidMatched(wlanBssidArray: Array<string>, rssiThreshold: number, needSta
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. let wlanBssidArray: Array<string> = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
-5. let rssiThreshold: number = -70;
-6. let needStartScan: boolean = true;
-7. geoLocationManager.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
-8. console.info("Wlan Bssid Matched Result:" + res);
-9. })
-10. } catch (error) {
-11. console.error("isWlanBssidMatched: errCode" + error.code + ", errMessage" + error.message);
-12. }
+try {
+  let wlanBssidArray: Array<string> = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
+  let rssiThreshold: number = -70;
+  let needStartScan: boolean = true;
+  geoLocationManager.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
+    console.info("Wlan Bssid Matched Result:" + res);
+  })
+} catch (error) {
+  console.error("isWlanBssidMatched: errCode" + error.code + ", errMessage" + error.message);
+}
+```
+
+## geoLocationManager.isGnssServiceSupported
+
+isGnssServiceSupported(): boolean
+
+判断是否支持GNSS功能。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：支持GNSS功能。  false：不支持GNSS功能。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 3301000 | The location service is unavailable. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+try {
+    let gnssServiceSupported = geoLocationManager.isGnssServiceSupported();
+} catch (err) {
+    console.error("errCode:" + err.code + ", message:"  + err.message);
+}
+```
+
+## geoLocationManager.isGnssFenceServiceSupported
+
+isGnssFenceServiceSupported(): boolean
+
+判断是否支持围栏功能。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：支持围栏功能。  false：不支持围栏功能。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 3301000 | The location service is unavailable. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+try {
+    let gnssFenceServiceSupported = geoLocationManager.isGnssFenceServiceSupported();
+} catch (err) {
+    console.error("errCode:" + err.code + ", message:"  + err.message);
+}
+```
+
+## geoLocationManager.isCachedGnssServiceSupported
+
+isCachedGnssServiceSupported(): boolean
+
+判断是否支持GNSS batching功能。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true：支持GNSS batching功能。  false：不支持GNSS batching功能。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 3301000 | The location service is unavailable. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+try {
+    let cachedGnssServiceSupported = geoLocationManager.isCachedGnssServiceSupported();
+} catch (err) {
+    console.error("errCode:" + err.code + ", message:"  + err.message);
+}
 ```
 
 ## geoLocationManager.getActiveGeoFences23+
 
-PhoneTablet
-
 getActiveGeoFences(): Promise<Map<number, Geofence>>
 
-查询当前有效的围栏信息。使用Promise异步回调。
+查询当前有效的围栏信息。使用Promise异步回调。调用该接口前建议先通过[geoLocationManager.isGnssFenceServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerisgnssfenceservicesupported)接口判断对应能力是否支持。
 
 **需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
 
@@ -3196,22 +3399,356 @@ getActiveGeoFences(): Promise<Map<number, Geofence>>
 
 **示例**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. try {
-4. geoLocationManager.getActiveGeoFences().then((res) => {
-5. if (res) {
-6. console.info("fence num:" + res.size);
-7. for (const item of res) {
-8. console.info("data=" + JSON.stringify(item));
-9. }
-10. }
-11. })
-12. .catch((error: BusinessError) => {
-13. console.error('promise, getActiveGeoFences: error=' + JSON.stringify(error));
-14. });
-15. } catch (error) {
-16. console.error("getActiveGeoFences: errCode" + error.code + ", errMessage" + error.message);
-17. }
+try {
+  if (geoLocationManager.isGnssFenceServiceSupported()) {
+    geoLocationManager.getActiveGeoFences().then((res) => {
+      if (res) {
+        console.info("fence num:" + res.size);
+        for (const item of res) {
+          console.info("data=" + JSON.stringify(item));
+        }
+      }
+    })
+      .catch((error: BusinessError) => {
+        console.error('promise, getActiveGeoFences: error=' + JSON.stringify(error));
+      });
+  }
+} catch (error) {
+  console.error("getActiveGeoFences: errCode" + error.code + ", errMessage" + error.message);
+}
+```
+
+## geoLocationManager.findMatchingWlan
+
+findMatchingWlan(wlanBssidArray: Array<string>, rssiThreshold: number, needStartScan: boolean):Promise<Array<MatchingWlanInfo>>
+
+使用WLAN扫描结果与输入的WLAN BSSID列表进行匹配，匹配成功时返回对应的WLAN设备信息，匹配失败时返回空数组(数组长度为0)。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**需要权限**：ohos.permission.LOCATION 和 ohos.permission.APPROXIMATELY\_LOCATION
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| wlanBssidArray | Array<string> | 是 | 请求匹配的BSSID列表。单个字符串的长度不超过64，数组的长度不超过1000。 |
+| rssiThreshold | number | 是 | RSSI阈值。只匹配RSSI大于此阈值的BSSID，取值范围为-10000至10000（单位：dBm）。 |
+| needStartScan | boolean | 是 | 是否需要发起WLAN扫描。需要发起WLAN扫描设置为true。不需要发起WLAN扫描，使用最近一次WLAN扫描结果进行匹配设置为false。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[MatchingWlanInfo](js-apis-geolocationmanager.md#matchingwlaninfo)>> | Promise对象，匹配成功时返回对应的WLAN设备信息，匹配失败时返回空数组(数组长度为0)。仅返回rssi最强的3个设备信息。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Failed to call ${geoLocationManager.findMatchingWlan} due to limited device capabilities. |
+| 3301100 | The location switch is off. |
+| 3301800 | Failed to start WLAN scanning. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+
+try {
+  let wlanBssidArray: Array<string> = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
+  let rssiThreshold: number = -70;
+  let needStartScan: boolean = true;
+  geoLocationManager.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
+    console.info("WLAN BSSID Matched Result: " + JSON.stringify(res));
+  })
+} catch (error) {
+  console.error("findMatchingWlan: errCode " + error.code + ", errMessage " + error.message);
+}
+```
+
+## geoLocationManager.getCurrentDistrict
+
+getCurrentDistrict(params?: DistrictRequestParams): Promise<DistrictInfo>
+
+获取当前设备所在区域的信息。使用Promise异步回调。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
+
+**系统能力**：SystemCapability.Location.Location.Geocoder
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| params | [DistrictRequestParams](js-apis-geolocationmanager.md#districtrequestparams) | 否 | 设置区域信息请求参数。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[DistrictInfo](js-apis-geolocationmanager.md#districtinfo)> | Promise对象，当前设备所在区域的信息。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call ${geoLocationManager.getCurrentDistrict} due to limited device capabilities. |
+| 3301000 | The location service is unavailable. |
+| 3301100 | The location switch is off. |
+| 3301500 | Failed to query the area information because the reverse geocoding server returns an error. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// 参数配置一：指定语言/国家/超时时间
+try {
+  let params: geoLocationManager.DistrictRequestParams = {
+    locale: "en",
+    timeoutMs: 5000
+  }
+  geoLocationManager.getCurrentDistrict(params).then((res) => {
+    if (res) {
+      console.info("getCurrentDistrict result:" + res);
+    }
+  })
+  .catch((error: BusinessError) => {
+    console.error('promise, getCurrentDistrict: error=' + JSON.stringify(error));
+  });
+} catch (error) {
+  console.error("getCurrentDistrict: errCode" + error.code + ", errMessage" + error.message);
+}
+// 参数配置二：使用默认值
+try {
+  geoLocationManager.getCurrentDistrict().then((res) => {
+    if (res) {
+      console.info("getCurrentDistrict result:" + res);
+    }
+  })
+  .catch((error: BusinessError) => {
+    console.error('promise, getCurrentDistrict: error=' + JSON.stringify(error));
+  });
+} catch (error) {
+  console.error("getCurrentDistrict: errCode" + error.code + ", errMessage" + error.message);
+}
+```
+
+## geoLocationManager.getPostProcessingTrack
+
+getPostProcessingTrack(sportsType: SportsType): Promise<Array<Location>>
+
+根据传入的[sportsType](js-apis-geolocationmanager.md#sportstype18)获取特定运动模式下的后处理轨迹。在调用此接口之前，需要先调用[geoLocationManager.on('locationChange')](js-apis-geolocationmanager.md#geolocationmanageronlocationchange)，并在[ContinuousLocationRequest](js-apis-geolocationmanager.md#continuouslocationrequest12)入参中的[SportsType](js-apis-geolocationmanager.md#sportstype18)配置正确的运动模式。当前仅支持滑雪模式。记录的运动轨迹会在24小时之后清除。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**需要权限**：ohos.permission.LOCATION
+
+**系统能力**：SystemCapability.Location.Location.Gnss
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sportsType | [SportsType](js-apis-geolocationmanager.md#sportstype18) | 是 | 设置要获取后处理轨迹的运动模式。当前仅支持滑雪模式。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[Location](js-apis-geolocationmanager.md#location)>> | Promise对象，用于返回后处理运动轨迹。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call ${geoLocationManager.getPostProcessingTrack} due to limited device capabilities. |
+| 3301000 | The location service is unavailable. |
+| 3301100 | The location switch is off. |
+| 3301200 | Failed to obtain the post processing track because sports type is not supported. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let request: geoLocationManager.ContinuousLocationRequest = {
+  'interval': 1,
+  'locationScenario': geoLocationManager.UserActivityScenario.SPORT,
+  // 设置运动类型为滑雪
+  'sportsType': geoLocationManager.SportsType.SKIING,
+};
+
+let locationCallback = (location: geoLocationManager.Location): void => {
+  console.info('locationCallback: data: ' + JSON.stringify(location));
+};
+
+let processTrackTask = (): void => {
+  // 先移除定位请求
+  geoLocationManager.off('locationChange', locationCallback);
+  // 获取后处理轨迹
+  geoLocationManager.getPostProcessingTrack(geoLocationManager.SportsType.SKIING)
+    .then((res) => {
+      console.info('getPostProcessingTrack len: ' + JSON.stringify(res.length));
+    }).catch((err: BusinessError) => {
+      console.error('getPostProcessingTrack err: ' + JSON.stringify(err));
+    })
+}
+
+try {
+  // 发起滑雪模式定位请求
+  geoLocationManager.on('locationChange', request, locationCallback);
+  // 满足轨迹采集条件后，移除定位请求并获取后处理轨迹，这里设定30分钟后满足轨迹采集要求。
+  let delayTaskTime = 30 * 60 * 1000;
+  setTimeout(processTrackTask, delayTaskTime);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
+```
+
+## geoLocationManager.startBluetoothSearch
+
+startBluetoothSearch(request: BluetoothSearchRequestParams, callback: Callback<BluetoothScanResult>): void
+
+启动蓝牙扫描并查找指定的蓝牙设备，仅当扫描到的蓝牙设备满足入参BluetoothSearchRequestParams指定的条件时，才通过callback异步返回该蓝牙设备信息。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**需要权限**：ohos.permission.APPROXIMATELY\_LOCATION
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | [BluetoothSearchRequestParams](js-apis-geolocationmanager.md#bluetoothsearchrequestparams) | 是 | 设置蓝牙扫描请求参数。 |
+| callback | Callback<[BluetoothScanResult](js-apis-geolocationmanager.md#bluetoothscanresult16)> | 是 | 回调函数，用于返回蓝牙扫描结果。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call ${geoLocationManager.startBluetoothSearch} due to limited device capabilities. |
+| 3301000 | The location service is unavailable. |
+| 3301800 | Failed to start Bluetooth scanning. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+
+private callback = (bluetoothScanResult: geoLocationManager.BluetoothScanResult) => {
+  if (bluetoothScanResult) {
+    console.info('bluetoothScanResult: deviceId=' + bluetoothScanResult.deviceId);
+      try {
+         // 开发者需要考虑在合适的时机调用stopBluetoothSearch停止蓝牙扫描以节省功耗，本代码仅作为参考
+         geoLocationManager.stopBluetoothSearch(this.callback);
+      } catch (err) {
+         console.error("errCode:" + err.code + ", message:" + err.message);
+      }
+  }
+};
+let request: geoLocationManager.BluetoothSearchRequestParams = {
+  'rssiThreshold': -100,
+  'deviceIdArray': ['98:56:07:E6:AA:46','4E:E6:D2:02:27:F9']
+};
+ 
+try {
+  geoLocationManager.startBluetoothSearch(request, this.callback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
+```
+
+## geoLocationManager.stopBluetoothSearch
+
+stopBluetoothSearch(callback?: Callback<BluetoothScanResult>): void
+
+停止蓝牙扫描，该回调函数需要与startBluetoothSearch接口传入的回调函数保持一致。若无此参数，则取消当前类型的所有订阅。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Location.Location.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[BluetoothScanResult](js-apis-geolocationmanager.md#bluetoothscanresult16)> | 否 | 取消订阅的回调函数。该回调函数需要与on接口传入的回调函数保持一致。若无此参数，则取消当前类型的所有订阅。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[位置服务错误码](errorcode-geolocationmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 801 | Capability not supported. Failed to call ${geoLocationManager.stopBluetoothSearch} due to limited device capabilities. |
+| 3301000 | The location service is unavailable. |
+
+**示例**
+
+```ts
+import { geoLocationManager } from '@kit.LocationKit';
+ 
+let request: geoLocationManager.BluetoothSearchRequestParams = {
+  'rssiThreshold': -100,
+  'deviceIdArray': ['98:56:07:E6:AA:46','4E:E6:D2:02:27:F9']
+};
+let callback = (bluetoothScanResult: geoLocationManager.BluetoothScanResult) => {
+  if (bluetoothScanResult) {
+    console.info('bluetoothScanResult: deviceId=' + bluetoothScanResult.deviceId);
+  }
+};
+try {
+  geoLocationManager.startBluetoothSearch(request, callback);
+  geoLocationManager.stopBluetoothSearch(callback);
+} catch (err) {
+  console.error("errCode:" + err.code + ", message:" + err.message);
+}
 ```

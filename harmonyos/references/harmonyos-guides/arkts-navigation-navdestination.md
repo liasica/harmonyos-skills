@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation子页面
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation子页面
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:41d5472810bfec1814e365f2294587884772f254b91e6f268614d4e23d64330e
+scraped_at: 2026-09-02T14:49:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9d31dfb560dd19def830bea363a6230fb30fdfe1d75b9fb7e9f29f26843fa5fd
 ---
 
 [NavDestination](../harmonyos-references/ts-basic-components-navdestination.md)是Navigation子页面的根容器，用于承载子页面的特殊属性和生命周期。NavDestination可以配置独立的标题栏、菜单栏与工具栏等属性，使用方法与Navigation一致。NavDestination还支持通过mode属性设置不同的显示模式，以适应不同页面的需求。
@@ -21,75 +21,73 @@ NavDestination提供了两种类型。
 
   NavDestination设置mode为NavDestinationMode.DIALOG弹窗类型，此时整个NavDestination默认透明显示。弹窗类型的NavDestination显示和消失时不会影响下层标准类型的NavDestination的显示和生命周期，两者可以同时显示。
 
+  ```typescript
+  // Dialog NavDestination
+  @Entry
+  @Component
+  struct PageDisplayType {
+    @Provide('NavPathStack') pageStack: NavPathStack = new NavPathStack();
+
+    @Builder
+    PagesMap(name: string) {
+      if (name == 'DialogPage') {
+        DialogPage();
+      }
+    }
+
+    build() {
+      Navigation(this.pageStack) {
+        Button('Push DialogPage')
+          .margin(20)
+          .width('80%')
+          .onClick(() => {
+            this.pageStack.pushPathByName('DialogPage', '');
+          })
+      }
+      .mode(NavigationMode.Stack)
+      .title('Main')
+      .navDestination(this.PagesMap)
+    }
+  }
+
+  @Component
+  export struct DialogPage {
+    @Consume('NavPathStack') pageStack: NavPathStack;
+
+    build() {
+      NavDestination() {
+        Stack({ alignContent: Alignment.Center }) {
+          Column() {
+            Text('Dialog NavDestination')
+              .fontSize(20)
+              .margin({ bottom: 100 })
+            Button('Close').onClick(() => {
+              this.pageStack.pop();
+            }).width('30%')
+          }
+          .justifyContent(FlexAlign.Center)
+          .backgroundColor(Color.White)
+          .borderRadius(10)
+          .height('30%')
+          .width('80%')
+        }.height('100%').width('100%')
+      }
+      .backgroundColor('rgba(0,0,0,0.5)')
+      .hideTitleBar(true)
+      .mode(NavDestinationMode.DIALOG)
+    }
+  }
   ```
-  1. // Dialog NavDestination
-  2. @Entry
-  3. @Component
-  4. struct PageDisplayType {
-  5. @Provide('NavPathStack') pageStack: NavPathStack = new NavPathStack();
 
-  7. @Builder
-  8. PagesMap(name: string) {
-  9. if (name == 'DialogPage') {
-  10. DialogPage();
-  11. }
-  12. }
-
-  14. build() {
-  15. Navigation(this.pageStack) {
-  16. Button('Push DialogPage')
-  17. .margin(20)
-  18. .width('80%')
-  19. .onClick(() => {
-  20. this.pageStack.pushPathByName('DialogPage', '');
-  21. })
-  22. }
-  23. .mode(NavigationMode.Stack)
-  24. .title('Main')
-  25. .navDestination(this.PagesMap)
-  26. }
-  27. }
-
-  29. @Component
-  30. export struct DialogPage {
-  31. @Consume('NavPathStack') pageStack: NavPathStack;
-
-  33. build() {
-  34. NavDestination() {
-  35. Stack({ alignContent: Alignment.Center }) {
-  36. Column() {
-  37. Text('Dialog NavDestination')
-  38. .fontSize(20)
-  39. .margin({ bottom: 100 })
-  40. Button('Close').onClick(() => {
-  41. this.pageStack.pop();
-  42. }).width('30%')
-  43. }
-  44. .justifyContent(FlexAlign.Center)
-  45. .backgroundColor(Color.White)
-  46. .borderRadius(10)
-  47. .height('30%')
-  48. .width('80%')
-  49. }.height('100%').width('100%')
-  50. }
-  51. .backgroundColor('rgba(0,0,0,0.5)')
-  52. .hideTitleBar(true)
-  53. .mode(NavDestinationMode.DIALOG)
-  54. }
-  55. }
-  ```
-
-  [PageDisplayType.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/template1/PageDisplayType.ets#L15-L71)
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/vAzRwE5vSRmlG81__rFivA/zh-cn_image_0000002589324041.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/nebYkNfwQqmq7-nS28tN5g/zh-cn_image_0000002736432537.gif)
 
 ## 页面生命周期
 
-页面生命周期承载在NavDestination组件上，可分为三类：自定义组件生命周期、通用组件生命周期和[NavDestination生命周期](../harmonyos-references/ts-basic-components-navdestination.md#事件)。其中，[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)和[aboutToDisappear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttodisappear)是自定义组件的生命周期（NavDestination外层包含的自定义组件），[onAppear](../harmonyos-references/ts-universal-events-show-hide.md#onappear)和[onDisAppear](../harmonyos-references/ts-universal-events-show-hide.md#ondisappear)是组件的通用生命周期。剩下的生命周期为NavDestination独有。
+页面生命周期承载在NavDestination组件上，可分为三类：自定义组件生命周期、通用组件生命周期和NavDestination生命周期[事件](../harmonyos-references/ts-basic-components-navdestination.md#事件)。其中，[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)和[aboutToDisappear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttodisappear)是自定义组件的生命周期（NavDestination外层包含的自定义组件），[onAppear](../harmonyos-references/ts-universal-events-show-hide.md#onappear)和[onDisAppear](../harmonyos-references/ts-universal-events-show-hide.md#ondisappear)是组件的通用生命周期。剩下的生命周期为NavDestination独有。
 
 生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rQYiFtOoR9y2rN3q9U9hJQ/zh-cn_image_0000002589243981.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/-4lQhL-cREylrwpVlVHv6Q/zh-cn_image_0000002706833384.png)
 
 * **[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)**：在创建自定义组件后，执行其build()函数之前执行（NavDestination创建之前），允许在该方法中改变状态变量，更改将在后续执行build()函数中生效。
 * **[onWillAppear](../harmonyos-references/ts-basic-components-navdestination.md#onwillappear12)**：NavDestination创建后，挂载到组件树之前执行，在该方法中更改状态变量会在当前帧显示生效。
@@ -117,31 +115,29 @@ NavDestination提供了两种类型。
 
   自定义组件提供[queryNavDestinationInfo](../harmonyos-references/ts-custom-component-api.md#querynavdestinationinfo)方法，可以在NavDestination内部查询到当前所属页面的信息，返回值为[NavDestinationInfo](../harmonyos-references/js-apis-arkui-observer.md#navdestinationinfo)，若查询不到则返回undefined。
 
+  ```typescript
+  import { uiObserver } from '@kit.ArkUI';
+
+  // NavDestination内的自定义组件
+  @Component
+  struct MyComponent {
+    navDesInfo: uiObserver.NavDestinationInfo | undefined;
+    context = this.getUIContext().getHostContext();
+
+    aboutToAppear() {
+      this.navDesInfo = this.queryNavDestinationInfo();
+    }
+
+    build() {
+      // ...
+        Column() {
+          // $r('app.string.onPageName')资源文件中的value值为“所属页面Name:”
+          Text(this.context!.resourceManager.getStringSync($r('app.string.onPageName').id) + `${this.navDesInfo?.name}`)
+        }.width('100%').height('100%')
+        // ...
+    }
+  }
   ```
-  1. import { uiObserver } from '@kit.ArkUI';
-
-  3. // NavDestination内的自定义组件
-  4. @Component
-  5. struct MyComponent {
-  6. navDesInfo: uiObserver.NavDestinationInfo | undefined;
-  7. context = this.getUIContext().getHostContext();
-
-  9. aboutToAppear() {
-  10. this.navDesInfo = this.queryNavDestinationInfo();
-  11. }
-
-  13. build() {
-  14. // ...
-  15. Column() {
-  16. // $r('app.string.onPageName')资源文件中的value值为“所属页面Name:”
-  17. Text(this.context!.resourceManager.getStringSync($r('app.string.onPageName').id) + `${this.navDesInfo?.name}`)
-  18. }.width('100%').height('100%')
-  19. // ...
-  20. }
-  21. }
-  ```
-
-  [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/observer/template1/Index.ets#L15-L41)
 * 页面状态监听：
 
   通过[observer.on('navDestinationUpdate')](../harmonyos-references/js-apis-arkui-observer.md#uiobserveronnavdestinationupdate)提供的注册接口可以注册NavDestination生命周期变化的监听。

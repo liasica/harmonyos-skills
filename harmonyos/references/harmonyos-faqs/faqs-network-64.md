@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-64
 title: http请求传输大于5M文件报错2300023
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > http请求传输大于5M文件报错2300023
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:14+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:c237b8763d60caf595a5743e7e9e64b78cd8e814b1ca1d6dcdf47a68ca5add28
 ---
 

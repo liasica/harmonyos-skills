@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Functions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ab71f57465816f356a219c5e26f6db8c24edcd0faf310dcd057bd66d4d3fdaa1
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5d95e3148c8d909ae8a34756e395d5d77d7462fa4fd10b2b7f101a4d7749dcb7
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## camera.getCameraManager
-
-PhonePC/2in1TabletTVWearable
 
 getCameraManager(context: Context): CameraManager
 
@@ -55,18 +51,18 @@ getCameraManager(context: Context): CameraManager
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. function getCameraManager(context: common.BaseContext): camera.CameraManager | undefined {
-5. let cameraManager: camera.CameraManager | undefined = undefined;
-6. try {
-7. cameraManager = camera.getCameraManager(context);
-8. } catch (error) {
-9. let err = error as BusinessError;
-10. console.error(`The getCameraManager call failed. error code: ${err.code}`);
-11. }
-12. return cameraManager;
-13. }
+function getCameraManager(context: common.BaseContext): camera.CameraManager | undefined {
+  let cameraManager: camera.CameraManager | undefined = undefined;
+  try {
+    cameraManager = camera.getCameraManager(context);
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`The getCameraManager call failed. error code: ${err.code}`);
+  }
+  return cameraManager;
+}
 ```

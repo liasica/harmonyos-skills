@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 邀请组队
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 邀请组队
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d79f908233338602a432d75316e0629b63fa302d3cd49d0e363aafbfc2054761
+scraped_at: 2026-09-02T14:50:33+08:00
+doc_updated_at: 2026-06-05
+content_hash: sha256:435adc1514626ce64bdf8abeb0ddef389d94e080e6c11ee86aeb9db02f0388e3
 ---
 
 ## 注册碰一碰事件
@@ -14,11 +14,11 @@ content_hash: sha256:d79f908233338602a432d75316e0629b63fa302d3cd49d0e363aafbfc20
 
 **图1** 横屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/NZ3g_Xq1Qi2V0i9CvNiuxA/zh-cn_image_0000002589245497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/TCKvgWwhSHmKYJxX3Iy0Lw/zh-cn_image_0000002736434365.png)
 
 **图2** 竖屏应用示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bHMF68ysTRuc_6PTpFDiiA/zh-cn_image_0000002558765690.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/rwoMm_EPRya60-dTxz0syQ/zh-cn_image_0000002706835216.png)
 
 ## 注册单向分享能力
 
@@ -28,45 +28,45 @@ content_hash: sha256:d79f908233338602a432d75316e0629b63fa302d3cd49d0e363aafbfc20
 
 若碰一碰的双方都设置单向仅发送，则终止本次分享并提示用户"请任意一方退出当前应用后再试"；反之，均可分享成功。
 
-```
-1. import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-2. import { systemShare, harmonyShare } from '@kit.ShareKit';
-3. import { fileUri } from '@kit.CoreFileKit';
+```typescript
+import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+import { systemShare, harmonyShare } from '@kit.ShareKit';
+import { fileUri } from '@kit.CoreFileKit';
 
-5. @Component
-6. export default struct Index {
-7. aboutToAppear(): void {
-8. let capabilityRegistry: harmonyShare.SendCapabilityRegistry = {
-9. windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
-10. sendOnly: true, // 声明仅支持单向发送 若对端也同样声明仅支持单向发送 则双向分享时会失败
-11. }
-12. harmonyShare.on('knockShare', capabilityRegistry, (sharableTarget: harmonyShare.SharableTarget) => {
-13. let uiContext: UIContext = this.getUIContext();
-14. let contextFaker: Context = uiContext.getHostContext() as Context;
-15. let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
-16. let shareData: systemShare.SharedData = new systemShare.SharedData({
-17. utd: utd.UniformDataType.HYPERLINK,
-18. content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
-19. // 根据title,description,thumbnailUri会生成不同的卡片模板。
-20. thumbnailUri: fileUri.getUriFromPath(filePath),
-21. title: '碰一碰分享卡片标题',
-22. description: '碰一碰分享卡片描述'
-23. });
-24. sharableTarget.share(shareData);
-25. });
-26. }
+@Component
+export default struct Index {
+  aboutToAppear(): void {
+    let capabilityRegistry: harmonyShare.SendCapabilityRegistry = {
+      windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
+      sendOnly: true // 声明仅支持单向发送 若对端也同样声明仅支持单向发送 则双向分享时会失败
+    }
+    harmonyShare.on('knockShare', capabilityRegistry, (sharableTarget: harmonyShare.SharableTarget) => {
+      let uiContext: UIContext = this.getUIContext();
+      let contextFaker: Context = uiContext.getHostContext() as Context;
+      let filePath = contextFaker.filesDir + '/exampleKnock1.jpg'; // 仅为示例 请替换正确的文件路径
+      let shareData: systemShare.SharedData = new systemShare.SharedData({
+        utd: utd.UniformDataType.HYPERLINK,
+        content: 'https://sharekitdemo.drcn.agconnect.link/ZB3p',
+        // 根据title,description,thumbnailUri会生成不同的卡片模板。
+        thumbnailUri: fileUri.getUriFromPath(filePath),
+        title: '碰一碰分享卡片标题',
+        description: '碰一碰分享卡片描述'
+      });
+      sharableTarget.share(shareData);
+    });
+  }
 
-28. aboutToDisappear(): void {
-29. let capabilityRegistry: harmonyShare.SendCapabilityRegistry = {
-30. windowId: 999, // 此值仅为示例 实际使用时请替换正确的windowId
-31. }
-32. // 解除碰一碰分享'knockShare'监听事件
-33. harmonyShare.off('knockShare', capabilityRegistry);
-34. }
+  aboutToDisappear(): void {
+    let capabilityRegistry: harmonyShare.SendCapabilityRegistry = {
+      windowId: 999 // 此值仅为示例 实际使用时请替换正确的windowId
+    }
+    // 解除碰一碰分享'knockShare'监听事件
+    harmonyShare.off('knockShare', capabilityRegistry);
+  }
 
-36. build() {
-37. }
-38. }
+  build() {
+  }
+}
 ```
 
 ## 设置组队邀请预览
@@ -79,29 +79,29 @@ content_hash: sha256:d79f908233338602a432d75316e0629b63fa302d3cd49d0e363aafbfc20
 
 示例代码：
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-4. export default class EntryAbility extends UIAbility {
-5. async onWindowStageCreate(windowStage: window.WindowStage): Promise<void> {
-6. try {
-7. windowStage.loadContent('pages/Index');
-8. } catch (error) {
-9. console.error(`onWindowStageCreate error. Code: ${error?.code}, message: ${error?.message}`);
-10. }
-11. }
+export default class EntryAbility extends UIAbility {
+  async onWindowStageCreate(windowStage: window.WindowStage): Promise<void> {
+    try {
+      windowStage.loadContent('pages/Index');
+    } catch (error) {
+      console.error(`onWindowStageCreate error. Code: ${error?.code}, message: ${error?.message}`);
+    }
+  }
 
-13. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-14. console.info('EntryAbility onCreate invoked. uri: ', want.uri);
-15. // to do things.
-16. }
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    console.info('EntryAbility onCreate invoked. uri: ', want.uri);
+    // to do things.
+  }
 
-18. onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-19. console.info('EntryAbility onNewWant invoked. uri: ', want.uri);
-20. // to do things.
-21. }
-22. }
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    console.info('EntryAbility onNewWant invoked. uri: ', want.uri);
+    // to do things.
+  }
+}
 ```
 
 ## 异常场景终止分享

@@ -3,19 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo help
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo help
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5e8b423236e4924265bcc8a511fb7f68a4591f5ffcd68dfd4b3ff47cf0008796
+scraped_at: 2026-09-02T14:50:48+08:00
+doc_updated_at: 2026-07-15
+content_hash: sha256:452cf1f5069000da680198ad8d9800155ff1a1d7639308d572ba00849ebdbc80
 ---
 
 获取有关ohpm-repo的帮助。
 
 ## 命令格式
 
-```
-1. ohpm-repo help [command]
-2. ohpm-repo [command] --help
-3. alias: -h
+```screen
+ohpm-repo help [command]
+ohpm-repo [command] --help
+alias: -h
 ```
 
 ## 参数
@@ -31,10 +31,10 @@ command：命令名称
 
 执行以下命令：
 
-```
-1. ohpm-repo -h
+```screen
+ohpm-repo -h
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/iIKECeFCRHyBgYffCG17mw/zh-cn_image_0000002561751217.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/0IlzaLivQaqm1Gdc1TvaSg/zh-cn_image_0000002701822266.png)

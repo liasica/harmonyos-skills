@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_cencinfo.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_cencinfo.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:06+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ab72d43628bbaaa88e205b8e78ac5622f4ce2f5537eb186710c161c3ec5d594d
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:de0a064b765f17ffcc7bbd293bc919002bfb6270f50b0786c23e3504cfca4b05
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明用于设置解密参数的Native API。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,16 +34,12 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [DrmCencAlgorithm](capi-native-cencinfo-h.md#drmcencalgorithm) | DrmCencAlgorithm | Drm CENC算法类型。 |
 | [DrmCencInfoMode](capi-native-cencinfo-h.md#drmcencinfomode) | DrmCencInfoMode | 枚举类型，表示cencInfo中keyId/iv/subsample信息是否设置。 |
 
 ### 宏定义
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -58,8 +48,6 @@ PhonePC/2in1TabletTVWearable
 | DRM\_KEY\_MAX\_SUB\_SAMPLE\_NUM 64 | 最大的Subsample数量为64个。  **起始版本：** 12 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -73,14 +61,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### DrmCencAlgorithm
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DrmCencAlgorithm
+```c
+enum DrmCencAlgorithm
 ```
 
 **描述**
@@ -100,10 +84,8 @@ Drm CENC算法类型。
 
 ### DrmCencInfoMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DrmCencInfoMode
+```c
+enum DrmCencInfoMode
 ```
 
 **描述**
@@ -119,14 +101,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVCencInfo\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCencInfo *OH_AVCencInfo_Create()
+```c
+OH_AVCencInfo *OH_AVCencInfo_Create()
 ```
 
 **描述**
@@ -145,10 +123,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCencInfo\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCencInfo_Destroy(OH_AVCencInfo *cencInfo)
+```c
+OH_AVErrCode OH_AVCencInfo_Destroy(OH_AVCencInfo *cencInfo)
 ```
 
 **描述**
@@ -175,10 +151,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCencInfo\_SetAlgorithm()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCencInfo_SetAlgorithm(OH_AVCencInfo *cencInfo, enum DrmCencAlgorithm algo)
+```c
+OH_AVErrCode OH_AVCencInfo_SetAlgorithm(OH_AVCencInfo *cencInfo, enum DrmCencAlgorithm algo)
 ```
 
 **描述**
@@ -204,10 +178,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCencInfo\_SetKeyIdAndIv()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCencInfo_SetKeyIdAndIv(OH_AVCencInfo *cencInfo, uint8_t *keyId, uint32_t keyIdLen, uint8_t *iv, uint32_t ivLen)
+```c
+OH_AVErrCode OH_AVCencInfo_SetKeyIdAndIv(OH_AVCencInfo *cencInfo, uint8_t *keyId, uint32_t keyIdLen, uint8_t *iv, uint32_t ivLen)
 ```
 
 **描述**
@@ -236,10 +208,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCencInfo\_SetSubsampleInfo()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCencInfo_SetSubsampleInfo(OH_AVCencInfo *cencInfo, uint32_t encryptedBlockCount, uint32_t skippedBlockCount, uint32_t firstEncryptedOffset, uint32_t subsampleCount, DrmSubsample *subsamples)
+```c
+OH_AVErrCode OH_AVCencInfo_SetSubsampleInfo(OH_AVCencInfo *cencInfo, uint32_t encryptedBlockCount, uint32_t skippedBlockCount, uint32_t firstEncryptedOffset, uint32_t subsampleCount, DrmSubsample *subsamples)
 ```
 
 **描述**
@@ -269,10 +239,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCencInfo\_SetMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCencInfo_SetMode(OH_AVCencInfo *cencInfo, enum DrmCencInfoMode mode)
+```c
+OH_AVErrCode OH_AVCencInfo_SetMode(OH_AVCencInfo *cencInfo, enum DrmCencInfoMode mode)
 ```
 
 **描述**
@@ -298,10 +266,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AVCencInfo\_SetAVBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AVCencInfo_SetAVBuffer(OH_AVCencInfo *cencInfo, OH_AVBuffer *buffer)
+```c
+OH_AVErrCode OH_AVCencInfo_SetAVBuffer(OH_AVCencInfo *cencInfo, OH_AVBuffer *buffer)
 ```
 
 **描述**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-na
 title: "@typescript-eslint/prefer-namespace-keyword"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-namespace-keyword
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:44+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:59b1bb5c4dfdda17fc290d2e673532538fc8de4e9cd6176ab45913d091ec3f23
+scraped_at: 2026-09-02T14:50:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5c53b27265c9ddb85e2b8f2202a3328358ea85035931b5a3e814f726a9c89860
 ---
 
 推荐使用“namespace”关键字而不是“module”关键字来声明一个自定义的 TypeScript 模块。
@@ -14,35 +14,35 @@ content_hash: sha256:59b1bb5c4dfdda17fc290d2e673532538fc8de4e9cd6176ab45913d091e
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/prefer-namespace-keyword": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/prefer-namespace-keyword": "error"
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. export namespace Example {}
+```screen
+export namespace Example {}
 ```
 
 ## 反例
 
-```
-1. export module Example {}
+```screen
+export module Example {}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

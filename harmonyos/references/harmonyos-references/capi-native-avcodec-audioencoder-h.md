@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcodec_audioencoder.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 已停止维护的接口 > 头文件 > native_avcodec_audioencoder.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:13+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f88bb7d8bd2048d6e1bfad04b00192f4333c84dbbb7cc9d49b047fca700511ac
+scraped_at: 2026-09-02T15:02:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6ad34f6d959f4c081c65ad0d4012fcf52542e1e34469252fa2da451aa55a6873
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 音频编码Native API的声明。
 
@@ -30,11 +28,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -56,14 +50,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioEncoder\_CreateByMime()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCodec *OH_AudioEncoder_CreateByMime(const char *mime)
+```c
+OH_AVCodec *OH_AudioEncoder_CreateByMime(const char *mime)
 ```
 
 **描述**
@@ -92,10 +82,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_CreateByName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVCodec *OH_AudioEncoder_CreateByName(const char *name)
+```c
+OH_AVCodec *OH_AudioEncoder_CreateByName(const char *name)
 ```
 
 **描述**
@@ -124,10 +112,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_Destroy(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioEncoder_Destroy(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -156,10 +142,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_SetCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallback callback, void *userData)
+```c
+OH_AVErrCode OH_AudioEncoder_SetCallback(OH_AVCodec *codec, OH_AVCodecAsyncCallback callback, void *userData)
 ```
 
 **描述**
@@ -190,10 +174,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_Configure()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
+```c
+OH_AVErrCode OH_AudioEncoder_Configure(OH_AVCodec *codec, OH_AVFormat *format)
 ```
 
 **描述**
@@ -223,10 +205,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_Prepare()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_Prepare(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioEncoder_Prepare(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -255,10 +235,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_Start()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_Start(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioEncoder_Start(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -287,10 +265,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_Stop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_Stop(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioEncoder_Stop(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -319,10 +295,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_Flush()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_Flush(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioEncoder_Flush(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -353,10 +327,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_Reset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_Reset(OH_AVCodec *codec)
+```c
+OH_AVErrCode OH_AudioEncoder_Reset(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -385,10 +357,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_GetOutputDescription()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVFormat *OH_AudioEncoder_GetOutputDescription(OH_AVCodec *codec)
+```c
+OH_AVFormat *OH_AudioEncoder_GetOutputDescription(OH_AVCodec *codec)
 ```
 
 **描述**
@@ -413,14 +383,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVFormat](capi-core-oh-avformat.md) \* | 返回OH\_AVFormat句柄指针，生命周期将使用下一个GetOutputDescription刷新，或使用OH\_AVCodec销毁。 |
+| [OH\_AVFormat](capi-core-oh-avformat.md) \* | 返回OH\_AVFormat句柄指针。 |
 
 ### OH\_AudioEncoder\_SetParameter()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format)
+```c
+OH_AVErrCode OH_AudioEncoder_SetParameter(OH_AVCodec *codec, OH_AVFormat *format)
 ```
 
 **描述**
@@ -452,10 +420,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_PushInputData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr)
+```c
+OH_AVErrCode OH_AudioEncoder_PushInputData(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr)
 ```
 
 **描述**
@@ -490,10 +456,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_FreeOutputData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
+```c
+OH_AVErrCode OH_AudioEncoder_FreeOutputData(OH_AVCodec *codec, uint32_t index)
 ```
 
 **描述**
@@ -523,10 +487,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioEncoder\_IsValid()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AVErrCode OH_AudioEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
+```c
+OH_AVErrCode OH_AudioEncoder_IsValid(OH_AVCodec *codec, bool *isValid)
 ```
 
 **描述**

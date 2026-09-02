@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 字体管理器中注册自定义字体时字体文件的路径如何填写
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 字体管理器中注册自定义字体时字体文件的路径如何填写
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:28+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:52+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:a1199d986fb5d3edf461dedfc180e6815fb082b68ba926db0ac5b7540d49a0b4
 ---
 

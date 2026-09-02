@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: RdbStore多线程安全注意事项
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > RdbStore多线程安全注意事项
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:14+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:c4867f1c08aae5e3d423134126f52c567012c4ec643f7f7e3f9f7550cb1cca0d
 ---
 

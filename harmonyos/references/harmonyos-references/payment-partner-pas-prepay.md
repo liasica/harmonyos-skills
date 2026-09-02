@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 预下单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 支付并签约 > 预下单
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8ce2f38ce335caa2efa17208e103b165583fc2dbadd1c8e8e2cda37e9fd39229
+scraped_at: 2026-09-02T14:53:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5292ae1cb8418ec054855ca0466efe623c91609b9ed6793f0163c580fb87fb7e
 ---
 
 ## 功能介绍
@@ -42,10 +42,10 @@ content_hash: sha256:8ce2f38ce335caa2efa17208e103b165583fc2dbadd1c8e8e2cda37e9fd
 
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| spAppId | 是 | String | 合作伙伴父商户关联的应用ID（参考[商户号绑定AppID](../harmonyos-guides/payment-binding-appid-to-merc.md)）。 |
-| spMercNo | 是 | String | 合作伙伴父商户号。最大长度12。 |
-| subAppId | 否 | String | 合作伙伴子商户关联的应用ID（参考[商户号绑定AppID](../harmonyos-guides/payment-binding-appid-to-merc.md#服务商邀请特约商户绑定)）。  **说明：** 平台子商户当前不支持绑定AppID，平台类商户请求传递该入参可能导致校验异常。 |
-| subMercNo | 是 | String | 合作伙伴子商户号。最大长度12。 |
+| spAppId | 是 | String | 平台类商户/服务商关联的应用ID（参考[商户号绑定AppID](../harmonyos-guides/payment-binding-appid-to-merc.md)）。 |
+| spMercNo | 是 | String | 合平台类商户/服务商商户号。最大长度12。 |
+| subAppId | 否 | String | 特约商户关联的应用ID（参考[商户号绑定AppID](../harmonyos-guides/payment-binding-appid-to-merc.md#服务商邀请特约商户绑定)）。  **说明：** 平台子商户当前不支持绑定AppID，平台类商户请求传递该入参可能导致校验异常。 |
+| subMercNo | 是 | String | 平台子商户/特约商户商户号。最大长度12。 |
 | mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最大长度46。 |
 | tradeSummary | 是 | String | 交易的摘要。格式建议：“商户应用名称-商品描述”。最大长度128。 |
 | totalAmount | 是 | Long | 订单金额，必须为大于0的整数值，单位：分。 |
@@ -60,29 +60,29 @@ content_hash: sha256:8ce2f38ce335caa2efa17208e103b165583fc2dbadd1c8e8e2cda37e9fd
 
 ## 请求示例
 
-```
-1. POST /api/v1/partner/aggr/pay-and-sign/preorder/create/app HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+TELYgG4bKyECwrVGwwExH********************g/lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/Lh********************IFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "spAppId": "5765880207853***",
-7. "subAppId": "5765880207853***",
-8. "spMercNo": "10132120***",
-9. "subMercNo": "10193600***",
-10. "mercOrderNo": "czl00120240705***",
-11. "tradeSummary": "xx商城-手机",
-12. "totalAmount": 2,
-13. "currency": "CNY",
-14. "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
-15. "payload": "example-payload",
-16. "expireTime": "2023-03-28T17:50:12.000+0800",
-17. "contractInfo": {
-18. "planId": "1***",
-19. "mercContractCode": "2024020316555432***",
-20. "callbackUrl": "https://www.xxxxxx.com/hw/sign/callback"
-21. }
-22. }
+```json
+POST /api/v1/partner/aggr/pay-and-sign/preorder/create/app HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+TELYgG4bKyECwrVGwwExH********************g/lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/Lh********************IFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "spAppId": "5765880207853***",
+  "subAppId": "5765880207853***",
+  "spMercNo": "10132120***",
+  "subMercNo": "10193600***",
+  "mercOrderNo": "czl00120240705***",
+  "tradeSummary": "xx商城-手机",
+  "totalAmount": 2,
+  "currency": "CNY",
+  "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
+  "payload": "example-payload",
+  "expireTime": "2023-03-28T17:50:12.000+0800",
+  "contractInfo": {
+     "planId": "1***",
+     "mercContractCode": "2024020316555432***",
+     "callbackUrl": "https://www.xxxxxx.com/hw/sign/callback"
+   }
+  }
 ```
 
 ## 响应参数
@@ -107,16 +107,16 @@ content_hash: sha256:8ce2f38ce335caa2efa17208e103b165583fc2dbadd1c8e8e2cda37e9fd
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDd********************MabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "prepayId": "12407091401520894056950***",
-8. "mercOrderNo": "czl00120240705***"
-9. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFuDd********************MabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "prepayId": "12407091401520894056950***",
+  "mercOrderNo": "czl00120240705***"
+}
 ```
 
 ## 错误码

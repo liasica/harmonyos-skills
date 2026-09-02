@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: App更新版本后，之前的首选项数据是否保留
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > App更新版本后，之前的首选项数据是否保留
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:20+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:2474967d964fc118f07844f62b62030ec759334eac2e7c76619d73ba0a5e6d5e
 ---
 

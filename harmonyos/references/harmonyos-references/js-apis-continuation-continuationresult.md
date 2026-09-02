@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: ContinuationResult
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > continuation > ContinuationResult
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:25+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:9e5a3f3809dd1f9f20af16e3300f1663ba04e0d5a293fe24bdeaae10fe400e9e
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:40e67be64f5bcaa6d8c8c291a241f5addea2a192bad5908ac4da28238522f9f1
 ---
 
 流转管理入口返回的设备信息。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持，从API version 22开始废弃，建议使用[分布式设备管理](js-apis-distributeddevicemanager.md)替代。
 
@@ -18,11 +18,9 @@ content_hash: sha256:9e5a3f3809dd1f9f20af16e3300f1663ba04e0d5a293fe24bdeaae10fe4
 
 ## ContinuationResult(deprecated)
 
-PhonePC/2in1TabletTV
-
 ContinuationManager的[on](js-apis-continuation-continuationmanager.md#continuationmanagerondeviceselecteddeprecated)接口返回此对象表示流转管理入口返回的设备信息。
 
-说明
+**说明** 
 
 从API version 22开始废弃，建议使用[DeviceBasicInfo](js-apis-distributeddevicemanager.md#devicebasicinfo)代替。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: printf
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 调测接口 > printf
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7a7b3b22ba7aab7f7ecc0b4c8b7519c568cf9aebff3d9fc53f4682268fcb55c8
+scraped_at: 2026-09-02T15:00:07+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:d83dc6f9bdf66aca7ba6370c484e2605fab3685a11d2b66272177a63d67359a2
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:7a7b3b22ba7aab7f7ecc0b4c8b7519c568cf9aebff3d9fc53f4682268fc
 
 在算子kernel侧实现代码中需要输出日志信息的地方调用printf接口打印相关内容。样例如下。
 
-```
-1. #include "kernel_operator.h"
-2. AscendC::printf("fmt string %d\n", 0x123);
-3. AscendC::PRINTF("fmt string %d\n", 0x123);
+```cpp
+#include "kernel_operator.h"
+AscendC::printf("fmt string %d\n", 0x123);
+AscendC::PRINTF("fmt string %d\n", 0x123);
 ```
 
-说明
+**说明** 
 
 printf(PRINTF)接口打印功能会对算子实际运行的性能带来一定影响，通常在调测阶段使用。开发者可以按需通过如下方式关闭打印功能。
 
@@ -32,18 +32,18 @@ printf(PRINTF)接口打印功能会对算子实际运行的性能带来一定影
 
 printf打印结果示例如下。
 
-```
-1. fmt string 291
-2. fmt string 291
+```plaintext
+fmt string 291
+fmt string 291
 ```
 
 根据算子执行方式的不同，printf的打印结果输出方式不同。动态图或者单算子直调场景下，待输出内容会被解析并打印在屏幕上。静态图场景下，整图算子需要全下沉到NPU侧执行，无法直接调用接口打印出单个算子的信息，因此需要在模型执行完毕后，将待输出内容落盘在dump文件中，dump文件需要通过工具解析为可读内容。
 
 ## 函数原型
 
-```
-1. void printf(__gm__ const char* fmt, Args&&... args)
-2. void PRINTF(__gm__ const char* fmt, Args&&... args)
+```cpp
+void printf(__gm__ const char* fmt, Args&&... args)
+void PRINTF(__gm__ const char* fmt, Args&&... args)
 ```
 
 ## 参数说明
@@ -61,6 +61,8 @@ printf打印结果示例如下。
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 注意事项
@@ -71,29 +73,29 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. #include "kernel_operator.h"
-
-3. // 整型打印：
-4. AscendC::printf("fmt string %d\n", 0x123);
-5. AscendC::PRINTF("fmt string %d\n", 0x123);
-
-7. // 浮点型打印：
-8. float a = 3.14;
-9. AscendC::printf("fmt string %f\n", a);
-10. AscendC::PRINTF("fmt string %f\n", a);
-
-12. // 指针打印：
-13. int *a;
-14. AscendC::printf("TEST %p\n", a);
-15. AscendC::PRINTF("TEST %p\n", a);
+```cpp
+#include "kernel_operator.h"
+ 
+// 整型打印：
+AscendC::printf("fmt string %d\n", 0x123);
+AscendC::PRINTF("fmt string %d\n", 0x123);
+ 
+// 浮点型打印：
+float a = 3.14;
+AscendC::printf("fmt string %f\n", a);
+AscendC::PRINTF("fmt string %f\n", a);
+ 
+// 指针打印：
+int *a;
+AscendC::printf("TEST %p\n", a);
+AscendC::PRINTF("TEST %p\n", a);
 ```
 
 程序运行时打印效果如下。
 
-```
-1. fmt string 291
-2. fmt string 291
-3. TEST 0x12c08001a000
-4. TEST 0x12c08001a000
+```plaintext
+fmt string 291
+fmt string 291
+TEST 0x12c08001a000
+TEST 0x12c08001a000
 ```

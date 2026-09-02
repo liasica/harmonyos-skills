@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-filec
 title: 通用文件缓存加速（C/C++）
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > 通用文件缓存加速（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b744000e5856c7f293d351b2f74ebbdf6622c2498141fb65e1b004fcd3ed56ce
+scraped_at: 2026-09-02T14:50:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:6a3d15bb485307c78ea60317b81882bad4d40677fc708ab5e7cab4a79ec593bc
 ---
 
 从6.1.0(23)版本开始，新增通用文件缓存加速功能。提供了缓存机制将文件的解码数据缓存到磁盘中，后续用户再次打开或浏览该文件，应用无需执行解码流程，可直接从磁盘中获取缓存的解码数据，省去耗时的解码时间。
@@ -18,6 +18,7 @@ content_hash: sha256:b744000e5856c7f293d351b2f74ebbdf6622c2498141fb65e1b004fcd3e
 
 | 接口名 | 描述 |
 | --- | --- |
+| bool HMS\_Preview\_FileCacheBoost\_IsSupported (void) | 查询当前设备是否支持文件缓存加速功能。建议使用本接口检查，确认设备支持文件缓存加速功能后，再使用其他文件缓存加速接口如HMS\_FileCacheBoost\_Init等。 |
 | FileCacheBoost\_ErrCode HMS\_FileCacheBoost\_Init (  const char\* path, size\_t pathLen, uint32\_t cacheUpperLimitMb, const char\* dbName, size\_t dbNameLen) | 初始化缓存路径、缓存容量上限、数据库名称。系统保证了线程并发安全控制，如需支持多进程并发场景，建议各进程使用不同的数据库文件名以保证访问安全性。 |
 | FileCacheBoost\_ErrCode HMS\_FileCacheBoost\_AddObjectByKey (  const uint8\_t \*key, size\_t keyLen, const uint8\_t \*data, size\_t dataLen, uint32\_t weight) | 向系统添加缓存。计算的key为缓存的唯一标识。用户可传入缓存的权重，系统会参考该权重计算缓存的优先级进行容量管理，若开发者希望某个缓存对象优先保留，应为其分配较高的权重。 |
 | FileCacheBoost\_ErrCode HMS\_FileCacheBoost\_GetObjectByKey (  const uint8\_t \*key, size\_t keyLen, uint8\_t \*\*data, size\_t \*dataLen) | 根据key值获取对应的缓存。 |
@@ -28,178 +29,545 @@ content_hash: sha256:b744000e5856c7f293d351b2f74ebbdf6622c2498141fb65e1b004fcd3e
 
 ## 开发准备
 
-需要先通过[Syscap](../harmonyos-references/syscap.md#判断-api-是否可以使用)查询您的目标设备是否支持SystemCapability.PCService.OpenFileBoost系统能力，当前仅在2in1设备上支持该能力。
+需要先通过[Syscap](../harmonyos-references/syscap.md#使用caniuse判断syscap是否可调用)查询您的目标设备是否支持SystemCapability.PCService.OpenFileBoost系统能力，当前仅在PC/2in1和tablet设备上支持该能力。
 
 ## 开发步骤
 
 1. 添加对应的头文件。
 
-   ```
-   1. #include "PreviewKit/file_cache_boost.h"
-   2. #include <string>
+   ```cpp
+   #include "PreviewKit/file_cache_boost.h"
+   #include <string>
    ```
 2. 编写CMakeLists.txt，新增对通用文件缓存功能的依赖。
 
-   ```
-   1. target_link_libraries(entry PUBLIC
-   2. libfile_cache_boost.so
-   3. )
+   ```cmake
+   find_library(
+       FILE_CACHE_BOOST
+       NAMES libfile_cache_boost.so
+       PATHS ${CMAKE_FIND_ROOT_PATH}/lib/aarch64-linux-ohos
+   )
+   # ...
+   target_link_libraries(entry PUBLIC ${FILE_CACHE_BOOST})
    ```
 3. 初始化操作，开发者可初始化缓存路径、缓存容量上限、数据库名称，系统会创建缓存路径和对应的数据库。
 
    ```
-   1. // 开发者可传入一个相对路径
-   2. const char* path = "ohcache";
-   3. size_t pathLen = strlen(path);
-   4. // 以MB为单位，2GB = 2048MB
-   5. uint32_t cacheUpperLimitMb = 2048;
-   6. const char* dbName = "cache";
-   7. size_t dbNameLen = strlen(dbName);
-   8. FileCacheBoost_ErrCode res = HMS_FileCacheBoost_Init(path, pathLen,
-   9. cacheUpperLimitMb, dbName, dbNameLen);
-   10. if (res != FILE_CACHE_BOOST_SUCCESS) {
-   11. // 初始化失败，开发者可自定义错误处理
-   12. }
+   napi_value OH_Init(napi_env env, napi_callback_info info) {
+       // 获取参数数量
+       size_t argc = 2; // 需要 2 个参数：path 和 cacheUpperLimitMb
+       napi_value args[2];
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+       // 检查参数数量
+       if (argc < 2) {
+           napi_throw_error(env, nullptr, "Invalid number of arguments");
+           return nullptr;
+       }
+
+       // 获取 path
+       size_t pathLen;
+       char *path;
+       napi_status status = napi_get_value_string_utf8(env, args[0], nullptr, 0, &pathLen);
+       if (status != napi_ok) {
+           napi_throw_error(env, nullptr, "Failed to get path length");
+           return nullptr;
+       }
+
+       // 分配内存并获取 path 的内容
+       path = new char[pathLen + 1];
+       napi_get_value_string_utf8(env, args[0], path, pathLen + 1, &pathLen);
+
+       // 获取 cacheUpperLimitMb
+       uint32_t cacheUpperLimitMb;
+       napi_get_value_uint32(env, args[1], &cacheUpperLimitMb);
+
+       // 设置固定的 dbName 参数
+       const char *dbName = "hwcache"; // 硬编码数据库名称
+       int32_t dbNameLen = static_cast<int32_t>(strlen(dbName));
+       // path 开发者可传入一个相对路径，如"ohcache"，cacheUpperLimitMb以MB为单位，2GB = 2048MB
+       int result = HMS_FileCacheBoost_Init(path, pathLen, cacheUpperLimitMb, dbName, dbNameLen);
+       if (result != FILE_CACHE_BOOST_SUCCESS) {
+           // 初始化失败，开发者可自定义错误处理
+       }
+       // 释放 path 的内存
+       delete[] path;
+
+       // 将 result 转换为 napi_value
+       napi_value jsResult;
+       napi_create_int32(env, result, &jsResult);
+
+       return jsResult;
+   }
    ```
-4. 初始化完成后，开发者可实现添加、获取和删除等操作，将需要的缓存数据落盘，下次使用时直接获取缓存数据。
-
-   ```
-   1. // 添加缓存
-   2. std::string keyStr = "test_000";
-   3. std::vector<uint8_t> keyVector(keyStr.begin(), keyStr.end());
-   4. size_t keyLen = keyStr.size();
-   5. uint8_t *key = keyVector.data();
-   6. uint8_t *data = new uint8_t[90 * 1024];
-   7. size_t dataLen = 90 * 1024;
-   8. uint32_t weight = 100;
-   9. // 用 abc 填充
-   10. for (size_t i = 0; i < dataLen; i++) {
-   11. data[i] = 'a' + (i % 3);
-   12. }
-   13. FileCacheBoost_ErrCode res = HMS_FileCacheBoost_AddObjectByKey(key, keyLen, data, dataLen, weight);
-   14. if (res == FILE_CACHE_BOOST_SUCCESS) {
-   15. // 添加缓存成功，开发者后续可使用该缓存
-   16. } else if (res == FILE_CACHE_BOOST_ERROR_KEY_EXIST) {
-   17. // key缓存已经存在，如果开发者需要对缓存进行修改，需要先删除后再添加
-   18. HMS_FileCacheBoost_RemoveObjectByKey(key, keyLen);
-   19. } else if (res == FILE_CACHE_BOOST_ERROR_NOT_INITIALIZED) {
-   20. // 未初始化，开发者可初始化后执行
-   21. } else if (res == FILE_CACHE_BOOST_ERROR_EXCEED_LIMIT) {
-   22. // 单个缓存大于容量上限，无法添加
-   23. } else {
-   24. // 添加缓存失败，开发者可自定义错误处理
-   25. }
-
-   27. // 获取缓存
-   28. uint8_t *revData = new uint8_t[90 * 1024 * 1024];
-   29. FileCacheBoost_ErrCode res = HMS_FileCacheBoost_GetObjectByKey(key, keyLen, &revData, &dataLen);
-   30. if (res == FILE_CACHE_BOOST_SUCCESS) {
-   31. // 获取缓存数据成功，开发者可直接使用该缓存数据执行后续逻辑
-
-   33. // 使用完成后，开发者可以释放系统分配的内存空间
-   34. HMS_FileCacheBoost_FreeObject(revData);
-   35. } else if (res == FILE_CACHE_BOOST_ERROR_KEY_NOT_FOUND) {
-   36. // key值不存在，开发者可对该key进行添加缓存
-   37. HMS_FileCacheBoost_AddObjectByKey(key, keyLen, data, dataLen, weight);
-   38. } else if (res == FILE_CACHE_BOOST_ERROR_NOT_INITIALIZED) {
-   39. // 未初始化，开发者可初始化后执行
-   40. } else {
-   41. // 获取缓存失败，开发者可自定义错误处理
-   42. }
-
-   44. // 删除缓存
-   45. FileCacheBoost_ErrCode res = HMS_FileCacheBoost_RemoveObjectByKey(key, keyLen);
-   46. // 新增key不存在的返回值
-   47. if (res != FILE_CACHE_BOOST_SUCCESS) {
-   48. // 删除失败，开发者可自定义错误处理
-   49. }
-   ```
-5. 如果开发者需要清除所有缓存，可以调用HMS\_FileCacheBoost\_ClearAllCache。
+4. 初始化完成后，开发者可实现添加缓存操作，将需要的缓存数据落盘，下次使用时直接获取缓存数据。
 
    ```
-   1. FileCacheBoost_ErrCode res = HMS_FileCacheBoost_ClearAllCache();
-   2. if (res != FILE_CACHE_BOOST_SUCCESS) {
-   3. // 删除失败，开发者可自定义错误处理
-   4. }
+   napi_value OH_AddObjectByKey(napi_env env, napi_callback_info info) {
+       // 获取参数数量
+       size_t argc = 3;
+       napi_value args[3];
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+       // 检查参数数量
+       if (argc < 3) {
+           napi_throw_error(env, nullptr, "Invalid number of arguments");
+           return nullptr;
+       }
+
+       // 获取 key
+       size_t keyLen;
+       size_t fillStrLen;
+       uint8_t *key = GetStringArg(env, args[0], keyLen);
+       // 获取填充字符串
+       uint8_t *fillStr = GetStringArg(env, args[1], fillStrLen);
+       if (!key || !fillStr) {
+           delete[] key;
+           delete[] fillStr;
+           napi_throw_error(env, nullptr, "Key or fill string is empty");
+           return nullptr;
+       }
+
+       // 获取内存大小
+       uint32_t bufferMB;
+       napi_get_value_uint32(env, args[2], &bufferMB);
+       // 计算内存大小
+       size_t bufferLen = static_cast<size_t>(bufferMB) * 1024 * 1024;
+       // 分配内存
+       uint8_t *buffer = new uint8_t[bufferLen];
+
+       // 用填充字符串填充内存
+       for (size_t i = 0; i < bufferLen; i++) {
+           buffer[i] = fillStr[i % fillStrLen]; // 用填充字符串循环填充
+       }
+
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "add Get Key is : %{public}s, KeyLen: %{public}zu", key,
+                keyLen);
+       uint32_t weight = 0;
+       int result = isEableCancel
+           ? ExecuteAddWithCancel(key, keyLen, buffer, bufferLen, weight)
+           : HMS_FileCacheBoost_AddObjectByKey(key, keyLen, buffer, bufferLen, weight);
+
+       v1.push_back(*key);
+       delete[] key;
+       delete[] fillStr;
+       delete[] buffer;
+       napi_value jsResult;
+       napi_create_int32(env, result, &jsResult);
+       return jsResult;
+   }
    ```
-6. 如果缓存数据依附于一个复杂类的对象，该类中可能包含其他复杂对象数据结构、指针等不可控数据，不一并保存，落盘后无法恢复。对于这种复杂类型数据需要开发者提供序列化和反序列化函数，然后调用HMS\_FileCacheBoost\_AddSerialObjectByKey和HMS\_FileCacheBoost\_GetSerialObjectByKey实现添加和获取缓存。
+5. 添加缓存完成后，开发者使用时调用HMS\_FileCacheBoost\_GetObjectByKey直接获取缓存数据。
 
+   ```cpp
+   napi_value OH_GetObjectByKey(napi_env env, napi_callback_info info) {
+       // 获取参数数量
+       size_t argc = 1;
+       napi_value args[1];
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+       // 检查参数数量
+       if (argc < 1) {
+           napi_throw_error(env, nullptr, "Invalid number of arguments");
+           return nullptr;
+       }
+
+       // 获取 key 和 keyLen
+       size_t keyLen;
+       char *key;
+       napi_get_value_string_utf8(env, args[0], nullptr, 0, &keyLen);
+       key = new char[keyLen + 1];
+       napi_get_value_string_utf8(env, args[0], key, keyLen + 1, &keyLen);
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "Get Key is : %{public}s", key);
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "Get KeyLen is : %{public}zu", keyLen);
+
+       uint8_t *data = new uint8_t[500];
+       size_t dataLen = 0;
+
+       // 调用 OH_Cache_GetObjectByKey
+       int result = HMS_FileCacheBoost_GetObjectByKey(reinterpret_cast<uint8_t *>(key), keyLen, &data, &dataLen);
+
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "Data length: %{public}zu", dataLen);
+       if (result != FILE_CACHE_BOOST_SUCCESS) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "key is no exits!");
+           HMS_FileCacheBoost_FreeObject(data);
+           delete[] key;
+           napi_value jsResult;
+           napi_create_int32(env, result, &jsResult);
+           return jsResult;
+       }
+       if (data == nullptr || dataLen == 0) {
+           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "get object fail! and Data length: %{public}zu", dataLen);
+           HMS_FileCacheBoost_FreeObject(data);
+           delete[] key;
+           napi_value jsResult;
+           napi_create_int32(env, result, &jsResult);
+           return jsResult;
+       }
+       size_t printLen = std::min(dataLen, static_cast<size_t>(100));
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "First 100 bytes of data:");
+       for (size_t i = 0; i < printLen; ++i) {
+           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "Byte[%{public}zu]: %{public}c", i, data[i]);
+       }
+       HMS_FileCacheBoost_FreeObject(data);
+       delete[] key;
+       napi_value jsResult;
+       napi_create_int32(env, result, &jsResult);
+       return jsResult;
+   }
    ```
-   1. // 自定义的图片结构体样例
-   2. struct SimpleImage {
-   3. int width;
-   4. int height;
-   5. int format;
-   6. unsigned char* pixels; // RGB 三通道或灰度图等
-   7. };
+6. 如果开发者需要删除不需要再使用的缓存，可以调用Previewkit\_FileCacheBoost\_RemoveObject。
 
-   9. static FileCacheBoost_CbErrCode serialize(const void* object, WriteFunc writeFunc, struct CacheKey* key) {
-   10. const struct SimpleImage* img = (const struct SimpleImage*)object;
+   ```cpp
+   napi_value OH_RemoveObjectByKey(napi_env env, napi_callback_info info) {
+       // 获取参数数量
+       size_t argc = 1; // 只需要一个参数：key
+       napi_value args[1];
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-   12. // 写头部信息: width, height, format
-   13. int header[3] = {img->width, img->height, img->format};
-   14. if (writeFunc(header, sizeof(header), key) != 0) {
-   15. return FILE_CACHE_BOOST_CALLBACK_FAILURE;
-   16. }
+       // 检查参数数量
+       if (argc < 1) {
+           napi_throw_error(env, nullptr, "Invalid number of arguments");
+           return nullptr;
+       }
 
-   18. // 计算像素总大小
-   19. int dataSize = img->width * img->height *
-   20. ((img->format == 1) ? 1 : 3); // 格式1为灰度图，其它当作RGB处理
+       // 获取 key
+       napi_value keyArg = args[0];
 
-   22. // 写入像素数据
-   23. if (writeFunc(img->pixels, dataSize, key) != 0) {
-   24. return FILE_CACHE_BOOST_CALLBACK_FAILURE;
-   25. }
-   26. return FILE_CACHE_BOOST_CALLBACK_SUCCESS;
-   27. }
-   28. // 添加复杂类数据缓存
-   29. std::string keyStr = "test_000";
-   30. std::vector<uint8_t> keyVector(keyStr.begin(), keyStr.end());
-   31. size_t keyLen = keyStr.size();
-   32. uint8_t *key = keyVector.data();
-   33. void *object = nullptr;
-   34. uint32_t weight = 100;
-   35. HMS_FileCacheBoost_AddSerialObjectByKey(key, keyLen, serialize, object, weight);
+       // 获取 key 的字符串信息
+       size_t keyLen;
+       napi_get_value_string_utf8(env, keyArg, nullptr, 0, &keyLen); // 获取 key 的长度
 
-   37. static FileCacheBoost_CbErrCode deserialize(void** object, ReadFunc readFunc, struct CacheKey* key) {
-   38. // width, height, format
-   39. int header[3];
-   40. size_t headerSize = sizeof(header);
-   41. if (readFunc(header, &headerSize, key) != 0) {
-   42. return FILE_CACHE_BOOST_CALLBACK_FAILURE;
-   43. }
+       // 分配缓冲区并获取 key 的内容
+       char *keyData = new char[keyLen + 1];
+       napi_get_value_string_utf8(env, keyArg, keyData, keyLen + 1, &keyLen);
 
-   45. int w = header[0], h = header[1], fmt = header[2];
-   46. int bytesPerPixel = (fmt == 1) ? 1 : 3;
-   47. int dataSize = w * h * bytesPerPixel;
+       // 调用 OH_Cache_RemoveObjectByKey，删除缓存
+       int result = HMS_FileCacheBoost_RemoveObjectByKey(reinterpret_cast<uint8_t *>(keyData), keyLen);
+       // 新增key不存在的返回值
+       if (result != FILE_CACHE_BOOST_SUCCESS) {
+           // 删除失败，开发者可自定义错误处理
+           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "RemoveObjectByKey error");
+       }
+       // 释放缓冲区
+       delete[] keyData;
 
-   49. // 分配像素内存
-   50. unsigned char* pixelData = (unsigned char*)malloc(dataSize);
-   51. if (!pixelData) {
-   52. return FILE_CACHE_BOOST_CALLBACK_FAILURE;
-   53. }
-
-   55. size_t pixelSize = dataSize;
-   56. if (readFunc(pixelData, &pixelSize, key) != 0 || pixelSize != (size_t)dataSize) {
-   57. free(pixelData);
-   58. return FILE_CACHE_BOOST_CALLBACK_FAILURE;
-   59. }
-
-   61. // 构造新结构体
-   62. struct SimpleImage* newImg = (struct SimpleImage*)malloc(sizeof(struct SimpleImage));
-   63. if (!newImg) {
-   64. free(pixelData);
-   65. return FILE_CACHE_BOOST_CALLBACK_FAILURE;
-   66. }
-
-   68. newImg->width = w;
-   69. newImg->height = h;
-   70. newImg->format = fmt;
-   71. newImg->pixels = pixelData;
-
-   73. *object = newImg;
-   74. return FILE_CACHE_BOOST_CALLBACK_SUCCESS;
-   75. }
-   76. // 获取复杂类数据缓存
-   77. HMS_FileCacheBoost_GetSerialObjectByKey(key, keyLen, deserialize, &object);
+       // 返回结果
+       napi_value jsResult;
+       napi_create_int32(env, result, &jsResult);
+       return jsResult;
+   }
    ```
+7. 如果开发者需要清除所有缓存，可以调用HMS\_FileCacheBoost\_ClearAllCache。
+
+   ```cpp
+   napi_value OH_ClearAllCache(napi_env env, napi_callback_info info) {
+       int result = HMS_FileCacheBoost_ClearAllCache();
+
+       // 返回结果
+       napi_value jsResult;
+       napi_create_int32(env, result, &jsResult);
+       return jsResult;
+   }
+   ```
+8. 当一个线程尝试删除数据对象的同时，有其他线程对其进行HMS\_FileCacheBoost\_AddObjectByKey操作， 调用HMS\_FileCacheBoost\_CancelOngoingIOByKey取消key对应的缓存对象当前正在进行的I/O操作。
+
+   ```cpp
+   napi_value OH_CancelAllOperation(napi_env env, napi_callback_info info) {
+       // 获取参数数量
+       size_t argc = 1; // 只需要一个参数：key
+       napi_value args[1];
+       napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+       // 检查参数数量
+       if (argc < 1) {
+           napi_throw_error(env, nullptr, "Invalid number of arguments");
+           return nullptr;
+       }
+
+       // 获取 key 的字符串信息
+       size_t keyLen;
+       napi_get_value_string_utf8(env, args[0], nullptr, 0, &keyLen); // 获取 key 的长度
+
+       // 分配缓冲区并获取 key 的内容
+       uint8_t *keyData = new uint8_t[keyLen + 1];
+       napi_get_value_string_utf8(env, args[0], reinterpret_cast<char *>(keyData), keyLen + 1, &keyLen);
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "OH_CancelAllOperation keyArg: %{public}s",
+                    reinterpret_cast<uint8_t *>(keyData));
+       // 调用 OH_Cache_CancelAllOperation
+       int result =
+           HMS_FileCacheBoost_CancelOngoingIOByKey(reinterpret_cast<uint8_t *>(keyData), static_cast<size_t>(keyLen));
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "OH_CancelAllOperation result: %{public}d", result);
+       delete[] keyData;
+
+       // 返回结果
+       napi_value jsResult;
+       napi_create_int32(env, result, &jsResult);
+       return jsResult;
+   }
+   ```
+9. 如果缓存数据依附于一个复杂类的对象，该类中可能包含其他复杂对象数据结构、指针等不可控数据，不一并保存，落盘后无法恢复。对于这种复杂类型数据，需要开发者提供序列化函数。
+
+   ```cpp
+   // 序列化函数：将ImageData对象序列化为字节流
+   FileCacheBoost_CbErrCode Serialize(const void *object, WriteFunc write, struct CacheKey *key) {
+       // 1. 参数校验
+       if (object == nullptr || write == nullptr || key == nullptr) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "Serialize: invalid parameters!");
+           return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+       }
+       const struct ImageData* img = static_cast<const struct ImageData*>(object);
+       // 2. 数据有效性检查
+       if (img->width == 0 || img->height == 0 || img->pixels == nullptr) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                        "Serialize: invalid image data! width=%{public}u, height=%{public}u",
+                        img->width, img->height);
+           return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+       }
+       // 3. 计算数据大小
+       size_t metaDataSize = sizeof(uint32_t) * 2;  // width + height
+       size_t imageSize = img->width * img->height * sizeof(uint8_t);
+       size_t totalSize = metaDataSize + imageSize;
+       // 4. 分配缓冲区（一次写入策略，性能优化）
+       uint8_t *buffer = new (std::nothrow) uint8_t[totalSize];
+       if (buffer == nullptr) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                        "Serialize: memory allocation failed! size=%{public}zu", totalSize);
+           return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+       }
+       // 5. 填充元数据（小端序）
+       uint8_t *ptr = buffer;
+       // 写入width（4字节，小端序）
+       *ptr++ = static_cast<uint8_t>(img->width & 0xFF);
+       *ptr++ = static_cast<uint8_t>((img->width >> 8) & 0xFF);
+       *ptr++ = static_cast<uint8_t>((img->width >> 16) & 0xFF);
+       *ptr++ = static_cast<uint8_t>((img->width >> 24) & 0xFF);
+       // 写入height（4字节，小端序）
+       *ptr++ = static_cast<uint8_t>(img->height & 0xFF);
+       *ptr++ = static_cast<uint8_t>((img->height >> 8) & 0xFF);
+       *ptr++ = static_cast<uint8_t>((img->height >> 16) & 0xFF);
+       *ptr++ = static_cast<uint8_t>((img->height >> 24) & 0xFF);
+       // 6. 复制像素数据
+       std::copy(img->pixels, img->pixels + imageSize, ptr);
+       // 7. 一次性写入所有数据（性能优化）
+       FileCacheBoost_ErrCode errorCode = write(buffer, totalSize, key);
+       // 8. 释放缓冲区
+       delete[] buffer;
+       if (errorCode == FILE_CACHE_BOOST_SUCCESS) {
+           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG,
+                        "Serialize success! width=%{public}u, height=%{public}u, size=%{public}zu",
+                        img->width, img->height, totalSize);
+           return FILE_CACHE_BOOST_CALLBACK_SUCCESS;
+       } else {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                        "Serialize: write failed! errorCode=%{public}d", errorCode);
+           return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+       }
+   }
+   ```
+10. 调用HMS\_FileCacheBoost\_AddSerialObjectByKey添加复杂数据的序列化缓存。
+
+    ```cpp
+    napi_value OH_AddSerialObjectByKey(napi_env env, napi_callback_info info) {
+        size_t argc = 3;
+        napi_value args[3];
+        napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+        // 检查参数数量
+        if (argc < 3) {
+            napi_throw_error(env, nullptr, "Invalid number of arguments");
+            return nullptr;
+        }
+        // 获取key
+        char* key1;
+        size_t keyLen;
+        napi_get_value_string_utf8(env, args[0], nullptr, 0, &keyLen);
+        key1 = new char[keyLen + 1];
+        napi_get_value_string_utf8(env, args[0], key1, keyLen + 1, &keyLen);
+        // 获取width和height（作为字符串接收，然后转换为数字）
+        char* widthStr = nullptr;
+        size_t widthStrLen = 0;
+        napi_get_value_string_utf8(env, args[1], nullptr, 0, &widthStrLen);
+        widthStr = new char[widthStrLen + 1];
+        napi_get_value_string_utf8(env, args[1], widthStr, widthStrLen + 1, &widthStrLen);
+        uint32_t width = static_cast<uint32_t>(atoi(widthStr));
+        char* heightStr = nullptr;
+        size_t heightStrLen = 0;
+        napi_get_value_string_utf8(env, args[2], nullptr, 0, &heightStrLen);
+        heightStr = new char[heightStrLen + 1];
+        napi_get_value_string_utf8(env, args[2], heightStr, heightStrLen + 1, &heightStrLen);
+        uint32_t height = static_cast<uint32_t>(atoi(heightStr));
+        // 构造ImageData对象
+        struct ImageData* img = new (std::nothrow) ImageData();
+        if (img == nullptr) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "OH_AddSerialObjectByKey: ImageData allocation failed!");
+            delete[] widthStr;
+            delete[] heightStr;
+            delete[] key1;
+            napi_value jsResult;
+            napi_create_int32(env, FILE_CACHE_BOOST_ERROR_NOMEM, &jsResult);
+            return jsResult;
+        }
+        img->width = width;
+        img->height = height;
+        img->pixels = new (std::nothrow) uint8_t[width * height];
+        if (img->pixels == nullptr) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "OH_AddSerialObjectByKey: pixels allocation failed!");
+            delete img;
+            delete[] widthStr;
+            delete[] heightStr;
+            delete[] key1;
+            napi_value jsResult;
+            napi_create_int32(env, FILE_CACHE_BOOST_ERROR_NOMEM, &jsResult);
+            return jsResult;
+        }
+        // 填充测试数据（'a', 'b', 'c'循环）
+        for (size_t i = 0; i < width * height; i++) {
+            img->pixels[i] = 'a' + (i % 3);
+        }
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG,
+                     "HMS_FileCacheBoost_AddSerialObjectByKey: key=%{public}s, width=%{public}u, height=%{public}u",
+                     key1, width, height);
+        uint32_t weight = 100;
+        // 添加复杂类数据缓存
+        int result = HMS_FileCacheBoost_AddSerialObjectByKey(
+            reinterpret_cast<uint8_t*>(key1), keyLen, Serialize, img, weight
+        );
+        // 释放临时对象（数据已序列化到缓存）
+        delete[] img->pixels;
+        delete img;
+        // 将 result 转换为 napi_value
+        napi_value jsResult;
+        napi_create_int32(env, result, &jsResult);
+        delete[] widthStr;
+        delete[] heightStr;
+        delete[] key1;
+        return jsResult;
+    }
+    ```
+11. 对于使用序列化缓存的数据，获取时需要开发者提供反序列化函数。
+
+    ```cpp
+    // 反序列化函数：从字节流恢复ImageData对象
+    FileCacheBoost_CbErrCode Deserialize(void **object, ReadFunc read, struct CacheKey *key) {
+        // 1. 参数校验
+        if (object == nullptr || read == nullptr || key == nullptr) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, "Deserialize: invalid parameters!");
+            return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+        }
+        // 2. 读取元数据头部（8字节：width + height）
+        uint8_t header[8];
+        size_t headerSize = 8;
+        FileCacheBoost_ErrCode errorCode = read(header, &headerSize, key);
+        if (errorCode != FILE_CACHE_BOOST_SUCCESS || headerSize != 8) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                         "Deserialize: read header failed! errorCode=%{public}d, size=%{public}zu",
+                         errorCode, headerSize);
+            return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+        }
+        // 3. 解析元数据（小端序）
+        uint32_t width = static_cast<uint32_t>(
+            header[0] | (header[1] << 8) | (header[2] << 16) | (header[3] << 24)
+        );
+        uint32_t height = static_cast<uint32_t>(
+            header[4] | (header[5] << 8) | (header[6] << 16) | (header[7] << 24)
+        );
+        // 4. 数据有效性检查
+        if (width == 0 || height == 0 || width > 10000 || height > 10000) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                         "Deserialize: invalid dimensions! width=%{public}u, height=%{public}u",
+                         width, height);
+            return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+        }
+        // 5. 计算图像数据大小
+        size_t imageSize = width * height * sizeof(uint8_t);
+        // 6. 分配ImageData结构体内存
+        struct ImageData* img = new (std::nothrow) struct ImageData;
+        if (img == nullptr) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                         "Deserialize: ImageData allocation failed!");
+            return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+        }
+        // 7. 分配像素数据内存
+        img->pixels = new (std::nothrow) uint8_t[imageSize];
+        if (img->pixels == nullptr) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                         "Deserialize: pixels allocation failed! size=%{public}zu", imageSize);
+            delete img;
+            return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+        }
+        // 8. 设置图像属性
+        img->width = width;
+        img->height = height;
+        // 9. 读取像素数据
+        size_t pixelSize = imageSize;
+        errorCode = read(img->pixels, &pixelSize, key);
+        if (errorCode != FILE_CACHE_BOOST_SUCCESS || pixelSize != imageSize) {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                         "Deserialize: read pixels failed! errorCode=%{public}d, expected=%{public}zu, actual=%{public}zu",
+                         errorCode, imageSize, pixelSize);
+            delete[] img->pixels;
+            delete img;
+            return FILE_CACHE_BOOST_CALLBACK_FAILURE;
+        }
+        // 10. 正确设置输出参数（修复原bug）
+        *object = static_cast<void*>(img);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG,
+                     "Deserialize success! width=%{public}u, height=%{public}u, size=%{public}zu",
+                     width, height, imageSize);
+        return FILE_CACHE_BOOST_CALLBACK_SUCCESS;
+    }
+    ```
+12. 调用HMS\_FileCacheBoost\_GetSerialObjectByKey获取缓存数据。
+
+    ```cpp
+    napi_value OH_GetSerialObjectByKey(napi_env env, napi_callback_info info) {
+        // 获取参数数量
+        size_t argc = 1;
+        napi_value args[1];
+        napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+        // 检查参数数量
+        if (argc < 1) {
+            napi_throw_error(env, nullptr, "Invalid number of arguments");
+            return nullptr;
+        }
+        char *key;
+        size_t keyLen;
+        napi_get_value_string_utf8(env, args[0], nullptr, 0, &keyLen);
+        key = new char[keyLen + 1];
+        napi_get_value_string_utf8(env, args[0], key, keyLen + 1, &keyLen);
+
+        // 定义 object
+        void *object = nullptr;
+        // 调用HMS_FileCacheBoost_GetSerialObjectByKey获取复杂类数据缓存
+        int result = HMS_FileCacheBoost_GetSerialObjectByKey(
+            reinterpret_cast<uint8_t*>(key), keyLen, Deserialize, &object
+        );
+        if (result == FILE_CACHE_BOOST_SUCCESS && object != nullptr) {
+            // 获取成功，输出图像信息
+            struct ImageData* img = static_cast<struct ImageData*>(object);
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG,
+                         "GetSerialObject success! width=%{public}u, height=%{public}u",
+                         img->width, img->height);
+            // 打印部分像素数据（前100字节）
+            size_t printLen = std::min(img->width * img->height, static_cast<uint32_t>(100));
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, "First %{public}zu pixels:", printLen);
+            for (size_t i = 0; i < printLen; i++) {
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG,
+                             "Pixel[%{public}zu]=%{public}c", i, img->pixels[i]);
+            }
+            // 释放ImageData对象内存
+            delete[] img->pixels;
+            delete img;
+        } else {
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG,
+                         "GetSerialObject failed! result=%{public}d", result);
+        }
+        // 释放内存
+        delete[] key;
+
+        // 返回结果
+        napi_value jsResult;
+        napi_create_int32(env, result, &jsResult);
+        return jsResult;
+    }
+    ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-grap
 title: graphic_error_code.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > graphic_error_code.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:07+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:562f58f96c4427e22bbab247ddc720479dae2e76f8d5e788f18c2d93378d6bcb
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7a832b62b556a64c5d38390fac51d1b4f835a5b124367ddfa7736e500fdc1429
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义错误码。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OHNativeErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OHNativeErrorCode
+```c
+enum OHNativeErrorCode
 ```
 
 **描述**
@@ -61,6 +51,7 @@ PhonePC/2in1TabletTVWearable
 | NATIVE\_ERROR\_INVALID\_ARGUMENTS = 40001000 | 入参无效。 |
 | NATIVE\_ERROR\_NO\_PERMISSION = 40301000 | 无权限操作。 |
 | NATIVE\_ERROR\_NO\_BUFFER = 40601000 | 无空闲可用的buffer。 |
+| NATIVE\_ERROR\_INVALID\_OPERATION = 41201000 | 无效操作。  **起始版本：** 26.0.0 |
 | NATIVE\_ERROR\_NO\_CONSUMER = 41202000 | 消费端不存在。 |
 | NATIVE\_ERROR\_NOT\_INIT = 41203000 | 未初始化。 |
 | NATIVE\_ERROR\_CONSUMER\_CONNECTED = 41206000 | 消费端已经被连接。 |

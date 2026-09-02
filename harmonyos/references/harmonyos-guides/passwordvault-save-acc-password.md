@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 账号密码保存
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 自动保存 > 账号密码保存
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:38+08:00
+scraped_at: 2026-09-02T14:49:59+08:00
 doc_updated_at: 2026-03-20
-content_hash: sha256:c2ee961a111e75d79425aded208409f3ca6ce3bb59fbf86b33efe9d47a9a1987
+content_hash: sha256:4699eb5646a58b1669a0f9d8db8329d94ee20527edf6031505b65658e3001d55
 ---
 
 密码保险箱在应用的登录、注册、修改密码等场景中具备自动保存用户名和密码的能力。
@@ -14,7 +14,7 @@ content_hash: sha256:c2ee961a111e75d79425aded208409f3ca6ce3bb59fbf86b33efe9d47a9
 
 当应用界面触发账号密码自动保存时，若密码保险箱中不存在同应用下的相同账号，系统将弹出账号密码保存提示框，用户点击“保存密码”按钮后，本次使用的账号和密码将被保存至密码保险箱。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/cOdAdGGqRNiOqrWycE7z5w/zh-cn_image_0000002589244665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/HestjAywR0KFP_jhpUzdKA/zh-cn_image_0000002736313363.png)
 
 当应用触发账号登录或注册时，均可触发保存功能，以下分别介绍两种布局的标准适配场景。
 
@@ -37,213 +37,213 @@ content_hash: sha256:c2ee961a111e75d79425aded208409f3ca6ce3bb59fbf86b33efe9d47a9
 
 ## 账号密码登录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/pVdAtr6_RhqhSv1Ucjwycw/zh-cn_image_0000002558764860.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/sHBH-A3kTYCVdzAntz9opg/zh-cn_image_0000002706674320.png)
 
 示例代码如下：
 
-```
-1. @Entry
-2. @Component
-3. struct LoginExample {
-4. pathInfos: NavPathStack = new NavPathStack();
-5. @State ReserveAccount: string = '';
-6. @State ReservePassword: string = '';
+```ts
+@Entry
+@Component
+struct LoginExample {
+  pathInfos: NavPathStack = new NavPathStack();
+  @State ReserveAccount: string = '';
+  @State ReservePassword: string = '';
 
-8. @Builder
-9. PageMap(name: string) {
-10. if (name === 'home_page') {
-11. HomePage()
-12. }
-13. }
+  @Builder
+  PageMap(name: string) {
+    if (name === 'home_page') {
+      HomePage()
+    }
+  }
 
-15. build() {
-16. Navigation(this.pathInfos) {
-17. Column({ space: 16 }) {
-18. Text("账户登录").commonTitleStyles()
+  build() {
+    Navigation(this.pathInfos) {
+      Column({ space: 16 }) {
+        Text("账户登录").commonTitleStyles()
 
-20. TextInput({ placeholder: '用户名' })
-21. .commonInputStyles()
-22. .type(InputType.USER_NAME) // 账号框使用USER_NAME属性
-23. .onChange((value: string) => {
-24. this.ReserveAccount = value;
-25. })
+        TextInput({ placeholder: '用户名' })
+          .commonInputStyles()
+          .type(InputType.USER_NAME) // 账号框使用USER_NAME属性
+          .onChange((value: string) => {
+            this.ReserveAccount = value;
+          })
 
-27. TextInput({ placeholder: '密码' })
-28. .showPasswordIcon(true)
-29. .commonInputStyles()
-30. .type(InputType.Password) // 密码框使用Password属性
-31. .onChange((value: string) => {
-32. this.ReservePassword = value;
-33. })
+        TextInput({ placeholder: '密码' })
+          .showPasswordIcon(true)
+          .commonInputStyles()
+          .type(InputType.Password) // 密码框使用Password属性
+          .onChange((value: string) => {
+            this.ReservePassword = value;
+          })
 
-35. Button('登录')
-36. .width('100%')
-37. .enabled((this.ReserveAccount !== '') && (this.ReservePassword !== ''))
-38. .onClick(() => {
-39. this.pathInfos.pushPathByName('home_page', null)
-40. })
-41. }
-42. .padding(16)
-43. }
-44. .navDestination(this.PageMap)
-45. .height('100%')
-46. .width('100%')
-47. }
-48. }
+        Button('登录')
+          .width('100%')
+          .enabled((this.ReserveAccount !== '') && (this.ReservePassword !== ''))
+          .onClick(() => {
+            this.pathInfos.pushPathByName('home_page', null)
+          })
+      }
+      .padding(16)
+    }
+    .navDestination(this.PageMap)
+    .height('100%')
+    .width('100%')
+  }
+}
 
-50. @Component
-51. struct HomePage {
-52. pathInfos: NavPathStack = new NavPathStack();
+@Component
+struct HomePage {
+  pathInfos: NavPathStack = new NavPathStack();
 
-54. build() {
-55. NavDestination() {
-56. Column() {
-57. Text("Home Page").commonTitleStyles()
-58. }.width('100%').height('100%')
-59. }.title("Home Page")
-60. .onReady((context: NavDestinationContext) => {
-61. this.pathInfos = context.pathStack;
-62. })
-63. }
-64. }
+  build() {
+    NavDestination() {
+      Column() {
+        Text("Home Page").commonTitleStyles()
+      }.width('100%').height('100%')
+    }.title("Home Page")
+    .onReady((context: NavDestinationContext) => {
+      this.pathInfos = context.pathStack;
+    })
+  }
+}
 
-66. @Extend(Text)
-67. function commonTitleStyles() {
-68. .fontSize(24)
-69. .fontColor('#000000')
-70. .fontWeight(FontWeight.Medium)
-71. .margin({ top: 24, bottom: 16 })
-72. }
+@Extend(Text)
+function commonTitleStyles() {
+  .fontSize(24)
+  .fontColor('#000000')
+  .fontWeight(FontWeight.Medium)
+  .margin({ top: 24, bottom: 16 })
+}
 
-74. @Extend(TextInput)
-75. function commonInputStyles() {
-76. .placeholderColor(0x182431)
-77. .width('100%')
-78. .opacity(0.6)
-79. .placeholderFont({ size: 16, weight: FontWeight.Regular })
-80. .margin({ top: 16 })
-81. }
+@Extend(TextInput)
+function commonInputStyles() {
+  .placeholderColor(0x182431)
+  .width('100%')
+  .opacity(0.6)
+  .placeholderFont({ size: 16, weight: FontWeight.Regular })
+  .margin({ top: 16 })
+}
 
-83. @Extend(Button)
-84. function commonButtonStyles() {
-85. .width('100%')
-86. .height(40)
-87. .borderRadius(20)
-88. .margin({ top: 24 })
-89. }
+@Extend(Button)
+function commonButtonStyles() {
+  .width('100%')
+  .height(40)
+  .borderRadius(20)
+  .margin({ top: 24 })
+}
 ```
 
 ## 账号密码注册
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/qoor2vIcRJOf42KWsbM5Cw/zh-cn_image_0000002558605204.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/-KXntDKBQuC9B4f8r2MquA/zh-cn_image_0000002736433411.png)
 
 示例代码如下：
 
-```
-1. @Entry
-2. @Component
-3. struct RegisterExample {
-4. pathInfos: NavPathStack = new NavPathStack();
-5. @State ReserveAccount: string = '';
-6. @State ReservePassword: string = '';
-7. @State enableAutoFill: boolean = true;
+```ts
+@Entry
+@Component
+struct RegisterExample {
+  pathInfos: NavPathStack = new NavPathStack();
+  @State ReserveAccount: string = '';
+  @State ReservePassword: string = '';
+  @State enableAutoFill: boolean = true;
 
-9. onBackPress() {
-10. // 当非成功登录、返回等页面跳转时，将enableAutoFill设置为false，密码保险箱将不启用自动填充功能
-11. this.enableAutoFill = false;
-12. return false;
-13. }
+  onBackPress() {
+    // 当非成功登录、返回等页面跳转时，将enableAutoFill设置为false，密码保险箱将不启用自动填充功能
+    this.enableAutoFill = false;
+    return false;
+  }
 
-15. @Builder
-16. PageMap(name: string) {
-17. if (name === 'register_result_page') {
-18. RegisterResultPage()
-19. }
-20. }
+  @Builder
+  PageMap(name: string) {
+    if (name === 'register_result_page') {
+      RegisterResultPage()
+    }
+  }
 
-22. build() {
-23. Navigation(this.pathInfos) {
-24. Column() {
-25. Text("注册账号")
-26. .commonTitleStyles()
+  build() {
+    Navigation(this.pathInfos) {
+      Column() {
+        Text("注册账号")
+          .commonTitleStyles()
 
-28. TextInput({ placeholder: '用户名' })
-29. .commonInputStyles()
-30. .type(InputType.USER_NAME) // 账号框使用USER_NAME属性
-31. .onChange((value: string) => {
-32. this.ReserveAccount = value;
-33. })
+        TextInput({ placeholder: '用户名' })
+          .commonInputStyles()
+          .type(InputType.USER_NAME) // 账号框使用USER_NAME属性
+          .onChange((value: string) => {
+            this.ReserveAccount = value;
+          })
 
-35. TextInput({ placeholder: '新密码' })
-36. .showPasswordIcon(true)
-37. .commonInputStyles()
-38. .type(InputType.NEW_PASSWORD) // 密码框使用NEW_PASSWORD属性，可以触发生成强密码。
-39. .enableAutoFill(this.enableAutoFill)
-40. .passwordRules('begin:[upper],special:[yes],len:[maxlen:32,minlen:12]')
-41. .onChange((value: string) => {
-42. this.ReservePassword = value;
-43. })
+        TextInput({ placeholder: '新密码' })
+          .showPasswordIcon(true)
+          .commonInputStyles()
+          .type(InputType.NEW_PASSWORD) // 密码框使用NEW_PASSWORD属性，可以触发生成强密码。
+          .enableAutoFill(this.enableAutoFill)
+          .passwordRules('begin:[upper],special:[yes],len:[maxlen:32,minlen:12]')
+          .onChange((value: string) => {
+            this.ReservePassword = value;
+          })
 
-45. Button('页面跳转')
-46. .commonButtonStyles()
-47. .enabled((this.ReserveAccount !== '') && (this.ReservePassword !== ''))
-48. .onClick(() => {
-49. this.pathInfos.pushPathByName('register_result_page', null)
-50. })
+        Button('页面跳转')
+          .commonButtonStyles()
+          .enabled((this.ReserveAccount !== '') && (this.ReservePassword !== ''))
+          .onClick(() => {
+            this.pathInfos.pushPathByName('register_result_page', null)
+          })
 
-52. Button('页面跳转（跳转前关闭autofill）')
-53. .commonButtonStyles()
-54. .enabled((this.ReserveAccount !== '') && (this.ReservePassword !== ''))
-55. .onClick(() => {
-56. this.enableAutoFill = false;
-57. this.pathInfos.pushPathByName('register_result_page', null)
-58. })
-59. }
-60. }
-61. .navDestination(this.PageMap)
-62. .height('100%')
-63. .width('100%')
-64. }
-65. }
+        Button('页面跳转（跳转前关闭autofill）')
+          .commonButtonStyles()
+          .enabled((this.ReserveAccount !== '') && (this.ReservePassword !== ''))
+          .onClick(() => {
+            this.enableAutoFill = false;
+            this.pathInfos.pushPathByName('register_result_page', null)
+          })
+      }
+    }
+    .navDestination(this.PageMap)
+    .height('100%')
+    .width('100%')
+  }
+}
 
-67. @Component
-68. struct RegisterResultPage {
-69. pathInfos: NavPathStack = new NavPathStack();
+@Component
+struct RegisterResultPage {
+  pathInfos: NavPathStack = new NavPathStack();
 
-71. build() {
-72. NavDestination() {
-73. Column() {
-74. Text("Result Page").commonTitleStyles()
-75. }.width('100%').height('100%')
-76. }.title("Result Page")
-77. .onReady((context: NavDestinationContext) => {
-78. this.pathInfos = context.pathStack;
-79. })
-80. }
-81. }
+  build() {
+    NavDestination() {
+      Column() {
+        Text("Result Page").commonTitleStyles()
+      }.width('100%').height('100%')
+    }.title("Result Page")
+    .onReady((context: NavDestinationContext) => {
+      this.pathInfos = context.pathStack;
+    })
+  }
+}
 
-83. @Extend(Text)
-84. function commonTitleStyles() {
-85. .fontSize(24)
-86. .fontColor('#000000')
-87. .fontWeight(FontWeight.Medium)
-88. .margin({ top: 24, bottom: 16 })
-89. }
+@Extend(Text)
+function commonTitleStyles() {
+  .fontSize(24)
+  .fontColor('#000000')
+  .fontWeight(FontWeight.Medium)
+  .margin({ top: 24, bottom: 16 })
+}
 
-91. @Extend(TextInput)
-92. function commonInputStyles() {
-93. .placeholderColor(0x182431)
-94. .width('100%')
-95. .opacity(0.6)
-96. .placeholderFont({ size: 16, weight: FontWeight.Regular })
-97. .margin({ top: 16 })
-98. }
+@Extend(TextInput)
+function commonInputStyles() {
+  .placeholderColor(0x182431)
+  .width('100%')
+  .opacity(0.6)
+  .placeholderFont({ size: 16, weight: FontWeight.Regular })
+  .margin({ top: 16 })
+}
 
-100. @Extend(Button)
-101. function commonButtonStyles() {
-102. .width('100%')
-103. .height(40)
-104. .borderRadius(20)
-105. .margin({ top: 24 })
-106. }
+@Extend(Button)
+function commonButtonStyles() {
+  .width('100%')
+  .height(40)
+  .borderRadius(20)
+  .margin({ top: 24 })
+}
 ```

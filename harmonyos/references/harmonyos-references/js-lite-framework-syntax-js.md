@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-f
 title: JS语法参考
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 框架说明 > 语法 > JS语法参考
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3263b891246d727f64d575824f9ac1f758dc630a70293b9fe7894d6d0b4b97c5
+scraped_at: 2026-09-02T14:51:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ba5bfb81d7a5ea5fab00951611f3614535d59d4583e9c5ac8107484de97fcf74
 ---
 
 JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语言。基于JavaScript语言的动态化能力，可以使应用更加富有表现力，具备更加灵活的设计。下面讲述JS文件的编译和运行的支持情况。
 
 ## 语法
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 支持ES6语法。轻量级智能穿戴支持的ES6语法有限，仅支持以下ES6 语法：
 
@@ -31,20 +29,18 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
   使用import方法引入功能模块：
 
-  ```
-  1. import router from '@ohos.router';
+  ```ts
+  import router from '@ohos.router';
   ```
 * 代码引用
 
   使用import方法导入js代码：
 
-  ```
-  1. import utils from '../../common/utils.js';
+  ```ts
+  import utils from '../../common/utils.js';
   ```
 
 ## 对象
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 * 页面对象
 
@@ -55,37 +51,35 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 获取DOM元素
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 1. 通过$refs获取DOM元素
 
-   ```
-   1. <!-- index.hml -->
-   2. <div class="container">
-   3. <image-animator class="image-player" ref="animator" images="{{images}}" duration="1s" onclick="handleClick"></image-animator>
-   4. </div>
+   ```html
+   <!-- index.hml -->
+   <div class="container">
+     <image-animator class="image-player" ref="animator" images="{{images}}" duration="1s" onclick="handleClick"></image-animator>
+   </div>
    ```
 
-   ```
-   1. // index.js
-   2. export default {
-   3. data: {
-   4. images: [
-   5. { src: '/common/frame1.png' },
-   6. { src: '/common/frame2.png' },
-   7. { src: '/common/frame3.png' },
-   8. ],
-   9. },
-   10. handleClick() {
-   11. const animator = this.$refs.animator; // 获取ref属性为animator的DOM元素
-   12. const state = animator.getState();
-   13. if (state === 'paused') {
-   14. animator.resume();
-   15. } else if (state === 'stopped') {
-   16. animator.start();
-   17. } else {
-   18. animator.pause();
-   19. }
-   20. },
-   21. };
+   ```js
+   // index.js
+   export default {
+     data: {
+       images: [
+         { src: '/common/frame1.png' },
+         { src: '/common/frame2.png' },
+         { src: '/common/frame3.png' },
+       ],
+     },
+     handleClick() {
+       const animator = this.$refs.animator; // 获取ref属性为animator的DOM元素
+       const state = animator.getState();
+       if (state === 'paused') {
+         animator.resume();
+       } else if (state === 'stopped') {
+         animator.start();
+       } else {
+         animator.pause();
+       }
+     },
+   };
    ```

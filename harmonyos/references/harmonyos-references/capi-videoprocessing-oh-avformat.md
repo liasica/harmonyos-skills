@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vide
 title: OH_AVFormat
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_AVFormat
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e04535ce5cdfcd5db30ad5d238d3a3aac109619025d551f799b5a164d9512f17
+scraped_at: 2026-09-02T14:53:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8146f0e02098409554735d17d5acffa47c7d99a282a39b10883dac75fb41548a
 ---
 
-```
-1. typedef struct OH_AVFormat OH_AVFormat
+```c
+typedef struct OH_AVFormat OH_AVFormat
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 定义OH\_AVFormat对象。
 

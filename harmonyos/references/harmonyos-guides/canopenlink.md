@@ -1,17 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canopenlink
 title: （可选）使用canOpenLink判断应用是否可访问
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定应用 > （可选）使用canOpenLink判断应用是否可访问
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:49+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4dfcf0ecbdb805c219be6ed9a07d1b7c7a5d3e5738aab28ae98c3a095687625b
+scraped_at: 2026-09-02T14:59:10+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:000ea93d4410d50ae1f363b841b52a8c1c4a54846b6bfa9fbffab593f21e3652
 ---
 
 ## 使用场景
 
 在应用A想要拉起应用B的场景中，应用A可先调用canOpenLink接口判断应用B是否可访问，如果可访问，再拉起应用B。
 
-说明
+**说明** 
 
 canOpenLink接口不支持判断以App Linking方式跳转的目标应用是否可访问。
 
@@ -21,7 +22,7 @@ canOpenLink接口不支持判断以App Linking方式跳转的目标应用是否�
 
 ## 接口说明
 
-canOpenLink是[bundleManager](../harmonyos-references/js-apis-bundlemanager.md#bundlemanagercanopenlink12)提供的支持判断目标应用是否可访问的接口。
+canOpenLink是[@ohos.bundle.bundleManager (应用程序包管理模块)](../harmonyos-references/js-apis-bundlemanager.md)提供的支持判断目标应用是否可访问的接口。
 
 匹配规则请参考[显式Want与隐式Want匹配规则](explicit-implicit-want-mappings.md)。
 
@@ -31,64 +32,64 @@ canOpenLink是[bundleManager](../harmonyos-references/js-apis-bundlemanager.md#b
 
 1. 在entry模块的module.json5文件中配置[querySchemes](module-configuration-file.md)属性，声明想要查询的URL scheme。
 
-   ```
-   1. {
-   2. "module": {
-   3. //...
-   4. "querySchemes": [
-   5. "app1Scheme"
-   6. ]
-   7. }
-   8. }
+   ```json5
+   {
+     "module": {
+       // ...
+       "querySchemes": [
+         "app1Scheme"
+       ]
+     }
+   }
    ```
 2. 导入ohos.bundle.bundleManager模块。
 3. 调用canOpenLink接口。
 
-   ```
-   1. import { bundleManager } from '@kit.AbilityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```ts
+   import { bundleManager } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
 
-   5. try {
-   6. let link = 'app1Scheme://test.example.com/home';
-   7. let canOpen = bundleManager.canOpenLink(link);
-   8. hilog.info(0x0000, 'testTag', 'canOpenLink successfully: %{public}s', JSON.stringify(canOpen));
-   9. } catch (err) {
-   10. let message = (err as BusinessError).message;
-   11. hilog.error(0x0000, 'testTag', 'canOpenLink failed: %{public}s', message);
-   12. }
+   try {
+     let link = 'app1Scheme://test.example.com/home';
+     let canOpen = bundleManager.canOpenLink(link);
+     hilog.info(0x0000, 'testTag', 'canOpenLink successfully: %{public}s', JSON.stringify(canOpen));
+   } catch (err) {
+     let message = (err as BusinessError).message;
+     hilog.error(0x0000, 'testTag', 'canOpenLink failed: %{public}s', message);
+   }
    ```
 
 ### 目标方操作步骤
 
 在module.json5文件中配置[uris](module-configuration-file.md#skills标签)属性。
 
-```
-1. {
-2. "module": {
-3. //...
-4. "abilities": [
-5. {
-6. //...
-7. "skills": [
-8. {
-9. // actions不能为空，actions为空会造成目标方匹配失败
-10. "actions": [
-11. "ohos.want.action.home"
-12. ],
-13. "uris": [
-14. {
-15. "scheme": "app1Scheme",
-16. "host": "test.example.com",
-17. "pathStartWith": "home"
-18. }
-19. ]
-20. }
-21. ]
-22. }
-23. ]
-24. }
-25. }
+```json5
+{
+  "module": {
+    // ...
+    "abilities": [
+      {
+        // ...
+        "skills": [
+          {
+            // actions不能为空，actions为空会造成目标方匹配失败
+            "actions": [
+              "ohos.want.action.home"
+            ],
+            "uris": [
+              {
+                "scheme": "app1Scheme",
+                "host": "test.example.com",
+                "pathStartWith": "home"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 
 ## FAQ

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-511-beta1
 title: 版本概览
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.1(19) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:46+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:caef9fcd4352ed7a149bc71e433d7c80f9d154c65fbba48e6000421520acbc97
+scraped_at: 2026-09-02T14:58:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0cc851886ae9ab081ecbaeadad8da5d1d8a8f112d07b4393fb2b84e7924faa2c
 ---
 
 HarmonyOS 5.1.1(19)在HarmonyOS 5.1.0(18)的基础上，进一步增强ArkUI组件能力，提供更多组件调用细节，尤其是跟随手势相关的组件能力；进一步增强地图服务的能力，丰富开发者可使用的地图场景；进一步增强Hitrace的日志打点能力，等等。
@@ -14,7 +14,7 @@ HarmonyOS 5.1.1(19)在HarmonyOS 5.1.0(18)的基础上，进一步增强ArkUI组�
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -33,7 +33,7 @@ HarmonyOS 5.1.1(19)在HarmonyOS 5.1.0(18)的基础上，进一步增强ArkUI组�
 | SDK | Release | HarmonyOS 5.1.1 Release SDK  基于OpenHarmony SDK Ohos\_sdk\_public 5.1.1.212(API 19 Release) | 2025/10/24 |
 | HarmonyOS 5.1.1 Release SDK  基于OpenHarmony SDK Ohos\_sdk\_public 5.1.1.202(API 19 Release) | 2025/06/30 |
 
-说明
+**说明** 
 
 * 该版本仅面向部分通过开发者渠道定向获得推送的Mate 60系列手机提供，因此使用其他设备的开发者可能暂时无法体验5.1.1(19)的新增能力。
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。

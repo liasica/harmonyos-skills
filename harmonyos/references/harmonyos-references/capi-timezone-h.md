@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-time
 title: timezone.h
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > C API > 头文件 > timezone.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:33+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6415725dbcfa0e81b9de357bd17130f919accc0587d169a6bc5d77b0bed034b2
+scraped_at: 2026-09-02T15:01:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ffb2f8312c77fb96f5780663651c4ff0add525b9c3ef2a42d51866a358c3855c
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供获取时区信息的能力。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -43,8 +37,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [DateRuleType](capi-timezone-h.md#dateruletype) | DateRuleType | 日期规则类型的枚举。 |
@@ -52,15 +44,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 宏定义
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | MAX\_YEAR\_IN\_ANNUAL\_TIMEZONE\_RULE 0x7fffffff | 每年生效时区规则的年份最大值。  **起始版本：** 22 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -78,14 +66,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### DateRuleType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DateRuleType
+```c
+enum DateRuleType
 ```
 
 **描述**
@@ -105,10 +89,8 @@ PhonePC/2in1TabletTVWearable
 
 ### TimeRuleType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum TimeRuleType
+```c
+enum TimeRuleType
 ```
 
 **描述**
@@ -127,14 +109,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_i18n\_GetTimeZoneRules()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetTimeZoneRules(const char* timeZoneID, TimeZoneRules* rules)
+```c
+I18n_ErrorCode OH_i18n_GetTimeZoneRules(const char* timeZoneID, TimeZoneRules* rules)
 ```
 
 **描述**
@@ -160,10 +138,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetFirstStartFromTimeArrayTimeZoneRule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
 ```
 
 **描述**
@@ -189,10 +165,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetFirstStartFromAnnualTimeZoneRule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetFirstStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetFirstStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
 ```
 
 **描述**
@@ -218,10 +192,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetFinalStartFromTimeArrayTimeZoneRule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
 ```
 
 **描述**
@@ -247,10 +219,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetFinalStartFromAnnualTimeZoneRule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetFinalStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetFinalStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
 ```
 
 **描述**
@@ -276,10 +246,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetNextStartFromTimeArrayTimeZoneRule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
 ```
 
 **描述**
@@ -305,10 +273,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetNextStartFromAnnualTimeZoneRule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetNextStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetNextStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
 ```
 
 **描述**
@@ -334,10 +300,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetPrevStartFromTimeArrayTimeZoneRule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(TimeArrayTimeZoneRule* rule, TimeZoneRuleQuery* query)
 ```
 
 **描述**
@@ -363,10 +327,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetPrevStartFromAnnualTimeZoneRule()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetPrevStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetPrevStartFromAnnualTimeZoneRule(AnnualTimeZoneRule* rule, TimeZoneRuleQuery* query)
 ```
 
 **描述**
@@ -392,10 +354,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetStartTimeAt()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetStartTimeAt(TimeArrayTimeZoneRule* rule, int32_t index, double* result)
+```c
+I18n_ErrorCode OH_i18n_GetStartTimeAt(TimeArrayTimeZoneRule* rule, int32_t index, double* result)
 ```
 
 **描述**
@@ -411,8 +371,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [TimeArrayTimeZoneRule](capi-i18n-timearraytimezonerule.md)\* rule | 起始时间戳数组定义的时区规则[TimeArrayTimeZoneRule](capi-i18n-timearraytimezonerule.md)。 |
-| int32\_t index | 起始时间的索引。 |
-| double\* result | 规则生效的起始时间。 |
+| int32\_t index | 起始时间的索引。取值范围：[0, rule.numStartTimes - 1]。 |
+| double\* result | 规则生效的起始时间，单位为毫秒（ms），采用Unix时间戳格式。 |
 
 **返回：**
 
@@ -422,10 +382,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_i18n\_GetStartInYear()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. I18n_ErrorCode OH_i18n_GetStartInYear(AnnualTimeZoneRule* rule, int32_t year, TimeZoneRuleQuery* query)
+```c
+I18n_ErrorCode OH_i18n_GetStartInYear(AnnualTimeZoneRule* rule, int32_t year, TimeZoneRuleQuery* query)
 ```
 
 **描述**

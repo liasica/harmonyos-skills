@@ -3,22 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 锁屏敏感数据管理错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 锁屏敏感数据管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f6548f29779cb41607ab519b878e8233a2bd61bc0ccc2a9598e62b4be9867438
+scraped_at: 2026-09-02T15:00:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:23af687dd168c8d7f6bd5158c4f30f9eb99acaa541431b7ea491f3d184859b7e
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 29300002 系统服务工作异常
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
-The system ability work abnormally.
+The system ability works abnormally.
+
+**错误描述**
+
+当系统服务工作异常时，将返回该错误码。
 
 **可能原因**
 
@@ -33,11 +35,13 @@ The system ability work abnormally.
 
 ## 29300003 应用未开启锁屏敏感数据保护功能
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
-The application has not enabled the data protection under lock screen.
+The application has not enabled the data protection function under lock screen.
+
+**错误描述**
+
+当应用未开启锁屏敏感数据保护功能时，将返回该错误码。
 
 **可能原因**
 
@@ -50,11 +54,13 @@ The application has not enabled the data protection under lock screen.
 
 ## 29300004 锁屏敏感数据访问权限已释放
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
-File access is denied.
+The file access is denied due to security strategy.
+
+**错误描述**
+
+文件访问被拒绝。当锁屏敏感数据访问权限已被释放时，将返回该错误码。
 
 **可能原因**
 
@@ -62,15 +68,17 @@ File access is denied.
 
 **处理步骤**
 
-锁屏下无法访问敏感数据，如有需要，请提示用户重新解锁屏幕，解锁后敏感数据恢复方可使用。
+锁屏下无法访问敏感数据。如需继续使用，请引导用户重新解锁屏幕，待解锁完成后可恢复正常访问。
 
 ## 29300005 未申请锁屏敏感数据访问权限
 
-PhonePC/2in1Tablet
-
 **错误信息**
 
-File access was not acquired.
+File access is not acquired.
+
+**错误描述**
+
+当未申请锁屏敏感数据访问权限时，将返回该错误码。
 
 **可能原因**
 

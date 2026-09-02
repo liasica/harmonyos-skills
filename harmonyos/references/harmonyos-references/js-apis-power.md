@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.power (系统电源管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.power (系统电源管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cd70341943f380abd99b3fbacc55949994f951e94ce33153781eab51ba776f06
+scraped_at: 2026-09-02T15:02:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bc1a0b8ae882e79fcd6bca7926977cb30e145d50f8e8899a187407474f4ff913
 ---
 
 该模块主要提供重启、关机、查询屏幕状态等接口。开发者可以使用该模块的接口获取设备的活动状态、电源模式、亮灭屏状态等。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import {power} from '@kit.BasicServicesKit';
+```js
+import {power} from '@kit.BasicServicesKit';
 ```
 
 ## power.isActive9+
-
-PhonePC/2in1TabletTVWearable
 
 isActive(): boolean
 
@@ -43,22 +39,20 @@ isActive(): boolean
 
 **示例：**
 
-```
-1. let isActive = power.isActive();
-2. console.info('power is active: ' + isActive);
+```js
+let isActive = power.isActive();
+console.info('power is active: ' + isActive);
 ```
 
 ## power.rebootDevice(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 rebootDevice(reason: string): void
 
-说明
+重启系统。
+
+**说明** 
 
 从API version 7开始支持，从API version 9开始不再维护，替代接口能力仅对系统应用开放。
-
-重启设备。
 
 **需要权限：** ohos.permission.REBOOT,该权限仅系统应用可申请。
 
@@ -68,17 +62,15 @@ rebootDevice(reason: string): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| reason | string | 是 | 重启原因。 |
+| reason | string | 是 | 重启原因。例如，“updater”表示重启后进入更新模式。如果未指定该参数，系统将在重启后进入正常模式。 |
 
 **示例：**
 
-```
-1. power.rebootDevice('reboot_test');
+```js
+power.rebootDevice('reboot_test');
 ```
 
 ## power.getPowerMode9+
-
-PhonePC/2in1TabletTVWearable
 
 getPowerMode(): DevicePowerMode
 
@@ -94,14 +86,12 @@ getPowerMode(): DevicePowerMode
 
 **示例：**
 
-```
-1. let mode = power.getPowerMode();
-2. console.info('power mode: ' + mode);
+```js
+let mode = power.getPowerMode();
+console.info('power mode: ' + mode);
 ```
 
 ## power.isStandby10+
-
-PhonePC/2in1TabletTVWearable
 
 isStandby(): boolean
 
@@ -125,26 +115,24 @@ isStandby(): boolean
 
 **示例：**
 
-```
-1. try {
-2. let isStandby = power.isStandby();
-3. console.info('device is in standby: ' + isStandby);
-4. } catch(err) {
-5. console.error('check isStandby failed, err: ' + err);
-6. }
+```js
+try {
+    let isStandby = power.isStandby();
+    console.info('device is in standby: ' + isStandby);
+} catch(err) {
+    console.error('check isStandby failed, err: ' + err);
+}
 ```
 
 ## power.isScreenOn(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 isScreenOn(callback: AsyncCallback<boolean>): void
 
-说明
+检测当前设备的亮灭屏状态。使用callback异步回调。
+
+**说明** 
 
 从API version 7开始支持，从API version 9开始不再维护，建议使用[power.isActive](js-apis-power.md#powerisactive9)替代。
-
-检测当前设备的亮灭屏状态。使用callback异步回调。
 
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
 
@@ -156,27 +144,25 @@ isScreenOn(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. power.isScreenOn((err: Error, data: boolean) => {
-2. if (typeof err === 'undefined') {
-3. console.info('screen on status is ' + data);
-4. } else {
-5. console.error('check screen status failed, err: ' + err);
-6. }
-7. })
+```js
+power.isScreenOn((err: Error, data: boolean) => {
+    if (typeof err === 'undefined') {
+        console.info('screen on status is ' + data);
+    } else {
+        console.error('check screen status failed, err: ' + err);
+    }
+})
 ```
 
 ## power.isScreenOn(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 isScreenOn(): Promise<boolean>
 
-说明
+检测当前设备的亮灭屏状态。使用Promise异步回调。
+
+**说明** 
 
 从API version 7开始支持，从API version 9开始不再维护，建议使用[power.isActive](js-apis-power.md#powerisactive9)替代。
-
-检测当前设备的亮灭屏状态。使用Promise异步回调。
 
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
 
@@ -188,19 +174,17 @@ isScreenOn(): Promise<boolean>
 
 **示例：**
 
-```
-1. power.isScreenOn()
-2. .then((data: boolean) => {
-3. console.info('screen on status is ' + data);
-4. })
-5. .catch((err: Error) => {
-6. console.error('check screen status failed, err: ' + err);
-7. })
+```js
+power.isScreenOn()
+.then((data: boolean) => {
+    console.info('screen on status is ' + data);
+})
+.catch((err: Error) => {
+    console.error('check screen status failed, err: ' + err);
+})
 ```
 
 ## DevicePowerMode9+
-
-PhonePC/2in1TabletTVWearable
 
 表示电源模式的枚举值。
 
@@ -216,13 +200,11 @@ PhonePC/2in1TabletTVWearable
 
 ## PowerKeyFilteringStrategy21+
 
-PhonePC/2in1TabletTVWearable
-
 表示电源键过滤策略。
 
 **系统能力：** SystemCapability.PowerManager.PowerManager.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DISABLE\_LONG\_PRESS\_FILTERING | 0 | 表示不使能电源键过滤策略，默认值。 |
+| DISABLE\_LONG\_PRESS\_FILTERING | 0 | 表示不使能电源键长按事件的过滤策略，默认值。 |
 | LONG\_PRESS\_FILTERING\_ONCE | 1 | 表示仅过滤当前电源键长按事件，下一次不过滤。 |

@@ -3,36 +3,44 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-righ
 title: 开通实况窗服务权益
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发准备 > 开通实况窗服务权益
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0a13bd5201626b5efca5fa2e327405cc57d8a836d5c23087108223cde27b720e
+scraped_at: 2026-09-02T14:59:57+08:00
+doc_updated_at: 2026-08-04
+content_hash: sha256:0f9e04d8447822b3c57dd8b9b398e78617bcaa933dd8ff05d28e5102c2b8a2af
 ---
+
+若需完成应用的实况窗接入与调测，开发者需预先开通实况窗服务权益，可依据以下操作步骤提交申请，完成服务权益开通。
+
+## 操作步骤
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/DevL-k9eRiOm_7C094WcQA/zh-cn_image_0000002558605814.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lOZDw-FISo2o9uXjvHPCWQ/zh-cn_image_0000002736314093.png)
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要申请实况窗服务的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/_CFZ2kXDQ_WkT6Z65j7S-Q/zh-cn_image_0000002589325341.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/1RiRvGXZRiWHVk1QXr1pUg/zh-cn_image_0000002706675050.png)
 3. 进入“项目设置 > 开放能力管理”页面，点击“实况窗服务”的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/88zbzZgpTUu3Cv4DwcSw_A/zh-cn_image_0000002589245279.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/l-J-fcLkRB2eZHdsMCfjyw/zh-cn_image_0000002736434139.png)
 4. 开发者可参考“申请原因”中的模板，提供申请必须的相关信息，包括场景类型、场景描述、附件，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ZGZbuoe6QzGs8p9kBGnC0w/zh-cn_image_0000002558765472.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Vha7TwxORH6ha240lCX62g/zh-cn_image_0000002706834988.png)
+
+   **说明** 
+
+   * 开发者可依据[实况窗设计规范](liveview-design-formula.md)，通过[实况窗可视化工具](https://gitcode.com/HarmonyOS_Samples/live-view-kit_-sample-code_-clientdemo_-arkts/blob/master/LiveViewDevelopmentAssistantGuide.md)，完成实况窗场景节点与方案视图设计。完成设计后，请将方案归档整理并作为附件提交，以此申请实况窗使用权益。
 5. 开发者将在5个工作日内收到实况窗服务权益申请结果，请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/CPgvJjl8S7K2iJiTGH42DA/zh-cn_image_0000002558605816.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/l5xxbwbWSt6Lns4b4UWGOg/zh-cn_image_0000002736314095.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Pir3GhXMQiqwQEJNnwYwOQ/zh-cn_image_0000002589325343.png)
-6. 实况窗服务权限通过后，须在“证书、APP ID和Profile”页面下左侧树形菜单的“Profile”页签，点击“添加”重新生成Profile文件，并下载Profile文件到本地，然后在“[发布应用](ide-publish-app.md)”时，须将该Profile打包到应用包中。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/x12s8TlwRdiSAeINmoRqgw/zh-cn_image_0000002706675052.png)
+6. 实况窗服务权限通过后，开发者需在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)选择“证书、APP ID和Profile”，点击左侧树形菜单的“Profile”页签，在页面右上角点击“添加”按钮，重新生成Profile文件，并将其下载至本地。在“[发布应用](ide-publish-app.md)”时，将该Profile打包到应用包中。
 
-   说明
+   **说明** 
 
-   Profile文件生成请参考“[管理Profile](../app/agc-help-profile-0000002270709473.md)”章节，Profile文件打包到应用包中请参考“[配置签名信息](ide-publish-app.md#section280162182818)”。
+   Profile文件生成请参考“[管理Profile](../app/agc-help-profile-0000002270709473.md)”章节，Profile文件打包到应用包中请参考“[配置签名信息](ide-publish-app.md#section945904791115)”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/1GHnf9xTR4aPvqxDBvlSSQ/zh-cn_image_0000002589245281.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/5Hy4AtdTRy6LXiof_shK7A/zh-cn_image_0000002736434141.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/_fPnPAPOTbSI2PA0ZR-RVw/zh-cn_image_0000002558765474.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/fG_uLnzEQkuHZzj_igRFrA/zh-cn_image_0000002706834990.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/_CNWuL21SUyphN_DG87T9w/zh-cn_image_0000002558605818.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/k0LK55u3QNyJyDCKBx4SKA/zh-cn_image_0000002736314097.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用时延优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 应用启动与响应优化 > 应用时延优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:38+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd269fc9
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-05-30
+content_hash: sha256:b0e5344e3b9f01a96177662f4ca95a35543a4bca00398356be54d4be58418e1f
 ---
 
 ## 应用时延概述
@@ -15,10 +15,10 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 在一定时延水平以上，时延越短越好，当时延小于一定水平后，用户的流畅体验不再继续提升。建议应用或元服务内点击操作响应时延应≤100ms，应用或元服务内点击操作完成时延≤900ms，更多体验建议，请参考指南[《应用性能体验建议》](../harmonyos-guides/performance-experience-suggestions.md)。本文将给出时延问题常见优化方案。
 
 **图1** 点击完成起止点示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/MyUbz0pgT9uwC9jTY8x6OA/zh-cn_image_0000002229337521.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/N4D7UtvrRyWLGE4hDb803A/zh-cn_image_0000002229337521.png "点击放大")
 
 **图2** 页面转场过程解析  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/B3Qsm1duQlKgK1eJiamEwg/zh-cn_image_0000002229452017.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/AAEjBBigQ7mcdCndrSCtnQ/zh-cn_image_0000002229452017.png "点击放大")
 
 ## 常见时延问题优化方案
 
@@ -32,13 +32,13 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 
 **图3** 留言箱列表界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/4FJMjGtTRH6ByvsYGbXWhg/zh-cn_image_0000002229337533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/SOv_h5iCRVixYeXNxrsWLQ/zh-cn_image_0000002229337533.png "点击放大")
 
 分解关系结构后，单个子项界面由6个构成元素组成，元素排列以线性风格为主，使用的组件包括Image、Badge和Text。
 
 **图4** 单个ListItem界面示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/MTCb4pEsQ7SqyiCk-WSizA/zh-cn_image_0000002193852136.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/PXcGT_4mTQ2yspEZzvfGqg/zh-cn_image_0000002193852136.png "点击放大")
 
 **具体实现**
 
@@ -46,11 +46,11 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 * 接下来采用相对布局优化实现。先将左侧头像添加到容器中，然后锚定其位置，逐一在右侧添加其他元素。实现结果使用工具观察，发现层级相对减少，最终实现的层级是3层。同时，借助相对布局，子元素结构扁平化，容器也相对减少，进一步优化了页面的构建渲染时间。
 
 **图5** Flex布局下的界面层级关系  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/9NlvKGUURF6XciSuuOBVLQ/zh-cn_image_0000002229452013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/KL3XJA1cQvqq6XnJtTZgew/zh-cn_image_0000002229452013.png)
 
 **图6** 相对布局下的界面层级关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/sWna8zPpQF2ZWuZCicr47w/zh-cn_image_0000002229452029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/DUHkhfRwR1ms-HWBTah2vQ/zh-cn_image_0000002229452029.png)
 
 **统计分析**
 
@@ -98,44 +98,42 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 
 在目标页面的aboutToAppear()中，使用TaskPool启动子线程加载城市数据，实现并发：
 
+```typescript
+@Concurrent
+function computeTask(): string[] {
+  let array: string[] = []
+  // AppConstant.CITYS is the data to be loaded.
+  for (let t of AppConstant.CITYS) {
+    array.push(t.trim())
+  }
+  let collator = new Intl.Collator("zh-CN", { localeMatcher: "lookup", usage: "sort" });
+  array.sort((a, b) => collator.compare(a, b))
+  return array;
+}
+
+@Entry
+@Component
+struct CityList {
+  isAsync: boolean = (this.getUIContext().getRouter().getParams() as Record<string, boolean>)['isAsync'];
+  // Interface data
+  @State citys: string[] = []
+  private listScroller: Scroller = new Scroller();
+
+  aboutToAppear() {
+    this.computeTaskAsync(); // Call asynchronous operation function
+  }
+
+  // Asynchronous thread
+  computeTaskAsync() {
+    let task: taskpool.Task = new taskpool.Task(computeTask);
+    taskpool.execute(task).then((res) => {
+      this.citys = res as string[]
+    })
+  }
+
+  // ...
+}
 ```
-1. @Concurrent
-2. function computeTask(): string[] {
-3. let array: string[] = []
-4. // AppConstant.CITYS is the data to be loaded.
-5. for (let t of AppConstant.CITYS) {
-6. array.push(t.trim())
-7. }
-8. let collator = new Intl.Collator("zh-CN", { localeMatcher: "lookup", usage: "sort" });
-9. array.sort((a, b) => collator.compare(a, b))
-10. return array;
-11. }
-
-13. @Entry
-14. @Component
-15. struct CityList {
-16. isAsync: boolean = (this.getUIContext().getRouter().getParams() as Record<string, boolean>)['isAsync'];
-17. // Interface data
-18. @State citys: string[] = []
-19. private listScroller: Scroller = new Scroller();
-
-21. aboutToAppear() {
-22. this.computeTaskAsync(); // Call asynchronous operation function
-23. }
-
-25. // Asynchronous thread
-26. computeTaskAsync() {
-27. let task: taskpool.Task = new taskpool.Task(computeTask);
-28. taskpool.execute(task).then((res) => {
-29. this.citys = res as string[]
-30. })
-31. }
-
-33. // ...
-34. }
-```
-
-[CityListPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/CityListPage.ets#L28-L137)
 
 **统计分析**
 
@@ -160,51 +158,47 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 
 修改前代码：
 
+```typescript
+for (let i = 0; i < count; i++) {
+  let tmp: AccountData = {
+    id: 0,
+    accountType: 0,
+    typeText: '',
+    amount: 0
+  };
+  tmp.id = resultSet.getDouble(resultSet.getColumnIndex('id'));
+  tmp.accountType = resultSet.getDouble(resultSet.getColumnIndex('accountType'));
+  tmp.typeText = resultSet.getString(resultSet.getColumnIndex('typeText'));
+  tmp.amount = resultSet.getDouble(resultSet.getColumnIndex('amount'));
+  result[i] = tmp;
+  resultSet.goToNextRow();
+}
 ```
-1. for (let i = 0; i < count; i++) {
-2. let tmp: AccountData = {
-3. id: 0,
-4. accountType: 0,
-5. typeText: '',
-6. amount: 0
-7. };
-8. tmp.id = resultSet.getDouble(resultSet.getColumnIndex('id'));
-9. tmp.accountType = resultSet.getDouble(resultSet.getColumnIndex('accountType'));
-10. tmp.typeText = resultSet.getString(resultSet.getColumnIndex('typeText'));
-11. tmp.amount = resultSet.getDouble(resultSet.getColumnIndex('amount'));
-12. result[i] = tmp;
-13. resultSet.goToNextRow();
-14. }
-```
-
-[AccountTable.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/common/db/AccountTable.ets#L42-L55)
 
 在数据表结构固定的情况下，可以将getColumnIndex的调用提前，以减少总的调用次数，从而优化指令耗时。随着数据行数count的增加，for循环内的getColumnIndex调用次数也会增加，但索引不会变化。
 
 修改后代码：
 
+```typescript
+const idIndex = resultSet.getColumnIndex("id");
+const accountTypeIndex = resultSet.getColumnIndex("accountType");
+const typeTextIndex = resultSet.getColumnIndex("typeText");
+const amountIndex = resultSet.getColumnIndex("amount");
+for (let i = 0; i < count; i++) {
+  let tmp: AccountData = {
+    id: 0,
+    accountType: 0,
+    typeText: '',
+    amount: 0
+  };
+  tmp.id = resultSet.getDouble(idIndex);
+  tmp.accountType = resultSet.getDouble(accountTypeIndex);
+  tmp.typeText = resultSet.getString(typeTextIndex);
+  tmp.amount = resultSet.getDouble(amountIndex);
+  result[i] = tmp;
+  resultSet.goToNextRow();
+}
 ```
-1. const idIndex = resultSet.getColumnIndex("id");
-2. const accountTypeIndex = resultSet.getColumnIndex("accountType");
-3. const typeTextIndex = resultSet.getColumnIndex("typeText");
-4. const amountIndex = resultSet.getColumnIndex("amount");
-5. for (let i = 0; i < count; i++) {
-6. let tmp: AccountData = {
-7. id: 0,
-8. accountType: 0,
-9. typeText: '',
-10. amount: 0
-11. };
-12. tmp.id = resultSet.getDouble(idIndex);
-13. tmp.accountType = resultSet.getDouble(accountTypeIndex);
-14. tmp.typeText = resultSet.getString(typeTextIndex);
-15. tmp.amount = resultSet.getDouble(amountIndex);
-16. result[i] = tmp;
-17. resultSet.goToNextRow();
-18. }
-```
-
-[AccountTable.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/common/db/AccountTable.ets#L58-L75)
 
 **统计分析**
 
@@ -227,71 +221,67 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 
 下列代码将资源释放操作放在相机页面隐藏时触发的函数：
 
+```typescript
+let cameraOutput: camera.PreviewOutput;
+let cameraInput: camera.CameraInput;
+let captureSession: camera.PhotoSession;
+let previewOutput: camera.PhotoOutput;
+
+  // The camera page is triggered once every time it is hidden.
+  onPageHide() {
+    this.releaseCamera();
+  }
+
+  // Release resources
+  public async releaseCamera() {
+    try {
+      // Photo mode session class pause
+      await captureSession?.stop();
+      // Photo mode conversation class release
+      await captureSession?.release();
+      // The photo input object class is closed.
+      await cameraInput?.close();
+      // Preview output object class release
+      await previewOutput?.release();
+      // Photo output object class release
+      await cameraOutput?.release();
+    } catch (e) {
+      hilog.error(0x00, 'release input output error:', JSON.stringify(e));
+    }
+  }
 ```
-1. let cameraOutput: camera.PreviewOutput;
-2. let cameraInput: camera.CameraInput;
-3. let captureSession: camera.PhotoSession;
-4. let previewOutput: camera.PhotoOutput;
-
-6. // The camera page is triggered once every time it is hidden.
-7. onPageHide() {
-8. this.releaseCamera();
-9. }
-
-11. // Release resources
-12. public async releaseCamera() {
-13. try {
-14. // Photo mode session class pause
-15. await captureSession?.stop();
-16. // Photo mode conversation class release
-17. await captureSession?.release();
-18. // The photo input object class is closed.
-19. await cameraInput?.close();
-20. // Preview output object class release
-21. await previewOutput?.release();
-22. // Photo output object class release
-23. await cameraOutput?.release();
-24. } catch (e) {
-25. hilog.error(0x00, 'release input output error:', JSON.stringify(e));
-26. }
-27. }
-```
-
-[CameraPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/CameraPage.ets#L23-L58)
 
 启动setTimeout异步延迟操作，在200毫秒后调用release释放并关闭相机。通过“停止拍摄进程>并发执行：暂停并释放相机会话>关闭和释放预览及拍照的输入输出对象>清空相机管理对象”的过程，确保应用程序在不再使用相机时能够有效管理并回收所有相机资源。移除await关键字应用于相机资源释放操作，允许异步并发执行，减少主线程阻塞，提升应用性能和响应速度。
 
+```screen
+let cameraOutput: camera.PreviewOutput;
+let cameraInput: camera.CameraInput;
+let captureSession: camera.PhotoSession;
+let previewOutput: camera.PhotoOutput;
+
+  // The camera page is triggered once every time it is hidden.
+  onPageHide() {
+    setTimeout(this.releaseCamera, 200);
+  }
+
+  // Release resources
+  public async releaseCamera() {
+    try {
+      // Photo mode session class pause
+      captureSession?.stop();
+      // Photo mode conversation class release
+      captureSession?.release();
+      // The photo input object class is closed.
+      cameraInput?.close();
+      // Preview output object class release
+      previewOutput?.release();
+      // Photo output object class release
+      cameraOutput?.release();
+    } catch (e) {
+      hilog.error(0x00, 'release input output error:', JSON.stringify(e));
+    }
+  }
 ```
-1. let cameraOutput: camera.PreviewOutput;
-2. let cameraInput: camera.CameraInput;
-3. let captureSession: camera.PhotoSession;
-4. let previewOutput: camera.PhotoOutput;
-
-6. // The camera page is triggered once every time it is hidden.
-7. onPageHide() {
-8. setTimeout(this.releaseCamera, 200);
-9. }
-
-11. // Release resources
-12. public async releaseCamera() {
-13. try {
-14. // Photo mode session class pause
-15. await captureSession?.stop();
-16. // Photo mode conversation class release
-17. await captureSession?.release();
-18. // The photo input object class is closed.
-19. await cameraInput?.close();
-20. // Preview output object class release
-21. await previewOutput?.release();
-22. // Photo output object class release
-23. await cameraOutput?.release();
-24. } catch (e) {
-25. hilog.error(0x00, 'release input output error:', JSON.stringify(e));
-26. }
-27. }
-```
-
-[CameraOptPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/CameraOptPage.ets#L23-L58)
 
 **性能比对**
 
@@ -308,87 +298,83 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 
 该场景涉及为组件添加手势事件。优化前，设置触发拖动手势事件的最小拖动距离为100vp。代码如下：
 
+```typescript
+import { hiTraceMeter } from '@kit.PerformanceAnalysisKit'
+
+@Entry
+@Component
+struct PanGestureExample {
+  @State offsetX: number = 0
+  @State offsetY: number = 0
+  @State positionX: number = 0
+  @State positionY: number = 0
+  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left | PanDirection.Right })
+
+  build() {
+    Column() {
+      Column() {
+        Text('PanGesture offset:\nX: ' + this.offsetX + '\n' + 'Y: ' + this.offsetY)
+      }
+      .height(200)
+      .width(300)
+      .padding(20)
+      .border({ width: 3 })
+      .margin(50)
+      .translate({ x: this.offsetX, y: this.offsetY, z: 0 }) // Move with the upper left corner of the component as the coordinate origin.
+      // Drag left and right to trigger the gesture event.
+      .gesture(
+        PanGesture(this.panOption)
+          .onActionStart((event: GestureEvent) => {
+            console.info('Pan start')
+            hiTraceMeter.startTrace("PanGesture", 1)
+          })
+          .onActionUpdate((event: GestureEvent) => {
+            if (event) {
+              this.offsetX = this.positionX + event.offsetX
+              this.offsetY = this.positionY + event.offsetY
+            }
+          })
+          .onActionEnd(() => {
+            this.positionX = this.offsetX
+            this.positionY = this.offsetY
+            console.info('Pan end')
+            hiTraceMeter.finishTrace("PanGesture", 1)
+          })
+      )
+
+      Button('修改PanGesture触发条件')
+        .onClick(() => {
+          this.panOption.setDistance(100)
+        })
+    }
+  }
+}
 ```
-1. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit'
-
-3. @Entry
-4. @Component
-5. struct PanGestureExample {
-6. @State offsetX: number = 0
-7. @State offsetY: number = 0
-8. @State positionX: number = 0
-9. @State positionY: number = 0
-10. private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left | PanDirection.Right })
-
-12. build() {
-13. Column() {
-14. Column() {
-15. Text('PanGesture offset:\nX: ' + this.offsetX + '\n' + 'Y: ' + this.offsetY)
-16. }
-17. .height(200)
-18. .width(300)
-19. .padding(20)
-20. .border({ width: 3 })
-21. .margin(50)
-22. .translate({ x: this.offsetX, y: this.offsetY, z: 0 }) // Move with the upper left corner of the component as the coordinate origin.
-23. // Drag left and right to trigger the gesture event.
-24. .gesture(
-25. PanGesture(this.panOption)
-26. .onActionStart((event: GestureEvent) => {
-27. console.info('Pan start')
-28. hiTraceMeter.startTrace("PanGesture", 1)
-29. })
-30. .onActionUpdate((event: GestureEvent) => {
-31. if (event) {
-32. this.offsetX = this.positionX + event.offsetX
-33. this.offsetY = this.positionY + event.offsetY
-34. }
-35. })
-36. .onActionEnd(() => {
-37. this.positionX = this.offsetX
-38. this.positionY = this.offsetY
-39. console.info('Pan end')
-40. hiTraceMeter.finishTrace("PanGesture", 1)
-41. })
-42. )
-
-44. Button('修改PanGesture触发条件')
-45. .onClick(() => {
-46. this.panOption.setDistance(100)
-47. })
-48. }
-49. }
-50. }
-```
-
-[PanGestureDistancePage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/PanGestureDistancePage.ets#L19-L69)
 
 利用Profiler工具分析得到的trace图，重点关注两个trace标签：DispatchTouchEvent表示点击事件，PanGesture表示事件响应。追踪流程从应用侧的DispatchTouchEvent（type=0，表示手指接触屏幕）标签开始，到PanGesture（事件响应）的变化，整个过程耗时145.1毫秒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Yq5LcTEqQYaNIQ2iqO9SwA/zh-cn_image_0000002229337529.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/SjjNzeqQQlSqNNVwe_CSMA/zh-cn_image_0000002229337529.png "点击放大")
 
 日志关注从应用接收TouchDown事件到pan识别的耗时，该过程耗时127ms。注：日志信息和trace图非同一时间获取，性能数据存在差异，提供的数值仅供参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/uvMs2RYeTPmQu1xvsTnuMg/zh-cn_image_0000002229452021.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/QGwxUB0XTQyQ0RxtInTdrA/zh-cn_image_0000002229452021.png "点击放大")
 
 针对该组件，其拖动手势识别距离可以调整到更合适的数值，这里优化后，指定触发拖动手势事件的最小拖动距离为4vp，代码如下：
 
+```typescript
+Button('修改PanGesture触发条件')
+  .onClick(() => {
+    this.panOption.setDistance(4)
+  })
 ```
-1. Button('修改PanGesture触发条件')
-2. .onClick(() => {
-3. this.panOption.setDistance(4)
-4. })
-```
-
-[PanGestureDistanceOptPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/PanGestureDistanceOptPage.ets#L62-L65)
 
 同样采用Profiler工具分析trace图，得到对应耗时38.4ms
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/ADZHi8f7S1-zdV0gi9WxAg/zh-cn_image_0000002194011720.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/WAcw8AG-TBa4zbr6l8FkZQ/zh-cn_image_0000002194011720.png "点击放大")
 
 对应日志过程耗时42ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/R3euGxlDQ5C8BlQoHfW3LA/zh-cn_image_0000002229452025.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/UTNul3KIQWy9wtuCEZyRHQ/zh-cn_image_0000002229452025.png "点击放大")
 
 **性能比对**
 
@@ -413,7 +399,7 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 
 **图7** 场景实例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/6zxtixVDR9mSBUNttkqlxQ/zh-cn_image_0000002193852132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/RQ3AiyjlS2q51k8g-r2nRg/zh-cn_image_0000002193852132.png "点击放大")
 
 **具体实现**
 
@@ -427,89 +413,81 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 
 转场动画设置：
 
+```typescript
+// page A Transition animation settings
+pageTransition() {
+  PageTransitionEnter({ type: RouteType.None, duration: 400 })
+    .slide(SlideEffect.Left)
+  PageTransitionExit({ type: RouteType.None, duration: 400 })
+    .slide(SlideEffect.Left)
+}
 ```
-1. // page A Transition animation settings
-2. pageTransition() {
-3. PageTransitionEnter({ type: RouteType.None, duration: 400 })
-4. .slide(SlideEffect.Left)
-5. PageTransitionExit({ type: RouteType.None, duration: 400 })
-6. .slide(SlideEffect.Left)
-7. }
-```
-
-[VisionOptPage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/VisionOptPage.ets#L30-L37)
 
 列表页中共享元素动画设置：
 
+```typescript
+// Use the avatar as a shared element in the list and specify the id as sharedImage+this.itemData.id
+Image(this.itemData.avatar)
+  .height('40vp')
+  .width('40vp')
+  .borderRadius(8)
+  .sharedTransition('sharedImage' + this.itemData.id, { duration: 500, curve: Curve.FastOutSlowIn, delay: 0 })
 ```
-1. // Use the avatar as a shared element in the list and specify the id as sharedImage+this.itemData.id
-2. Image(this.itemData.avatar)
-3. .height('40vp')
-4. .width('40vp')
-5. .borderRadius(8)
-6. .sharedTransition('sharedImage' + this.itemData.id, { duration: 500, curve: Curve.FastOutSlowIn, delay: 0 })
-```
-
-[OptChatItemView.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/view/OptChatItemView.ets#L30-L35)
 
 个人页中共享元素动画设置：
 
+```typescript
+// The personal page sharing element needs to be the same as the previous page id.
+Image(this.itemData.avatar)
+  .size({
+    width: $r('app.float.user_image_size'),
+    height: $r('app.float.user_image_size')
+  })// .borderRadius($r('app.float.user_image_border_radius'))
+  .borderRadius(8)
+  .margin({ bottom: $r('app.float.user_image_padding'), top: $r('app.float.user_image_padding') })
+  .sharedTransition('sharedImage' + this.itemData.id,
+    { duration: 500, curve: Curve.FastOutSlowIn, delay: 0 })
 ```
-1. // The personal page sharing element needs to be the same as the previous page id.
-2. Image(this.itemData.avatar)
-3. .size({
-4. width: $r('app.float.user_image_size'),
-5. height: $r('app.float.user_image_size')
-6. })// .borderRadius($r('app.float.user_image_border_radius'))
-7. .borderRadius(8)
-8. .margin({ bottom: $r('app.float.user_image_padding'), top: $r('app.float.user_image_padding') })
-9. .sharedTransition('sharedImage' + this.itemData.id,
-10. { duration: 500, curve: Curve.FastOutSlowIn, delay: 0 })
-```
-
-[ProfilePage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/ProfilePage.ets#L57-L66)
 
 骨架图实现：
 
+```typescript
+// Skeleton diagram, presenting skeleton animation in a fading way.
+startAnimation(): void {
+  this.getUIContext().animateTo(CommonConstants.SKELETON_ANIMATION, () => {
+    this.listOpacity = CommonConstants.HALF_OPACITY;
+  });
+}
+
+// Skeletal diagram layout
+build() {
+  Row() {
+    List({ space: Constants.RESOURCE_LIST_SPACE }) {
+      ForEach(SkeletonData, (item: SkeType) => {
+        ListItem() {
+          ArticleSkeletonView({ isMine: item.isMine, isFeed: item.isFeed })
+        }
+      })
+    }
+    .padding({
+      left: '12vp',
+      right: '12vp'
+    })
+    .lanes(1)
+    .layoutWeight(1)
+    .scrollBar(BarState.Off)
+
+    Row()
+      .layoutWeight(0)
+      .backgroundColor($r('app.color.skeleton_color_medium'))
+  }
+  .width('100%')
+  .opacity(this.listOpacity)
+  .onAppear(() => {
+    this.startAnimation();
+  })
+}
 ```
-1. // Skeleton diagram, presenting skeleton animation in a fading way.
-2. startAnimation(): void {
-3. this.getUIContext().animateTo(CommonConstants.SKELETON_ANIMATION, () => {
-4. this.listOpacity = CommonConstants.HALF_OPACITY;
-5. });
-6. }
-
-8. // Skeletal diagram layout
-9. build() {
-10. Row() {
-11. List({ space: Constants.RESOURCE_LIST_SPACE }) {
-12. ForEach(SkeletonData, (item: SkeType) => {
-13. ListItem() {
-14. ArticleSkeletonView({ isMine: item.isMine, isFeed: item.isFeed })
-15. }
-16. })
-17. }
-18. .padding({
-19. left: '12vp',
-20. right: '12vp'
-21. })
-22. .lanes(1)
-23. .layoutWeight(1)
-24. .scrollBar(BarState.Off)
-
-26. Row()
-27. .layoutWeight(0)
-28. .backgroundColor($r('app.color.skeleton_color_medium'))
-29. }
-30. .width('100%')
-31. .opacity(this.listOpacity)
-32. .onAppear(() => {
-33. this.startAnimation();
-34. })
-35. }
-```
-
-[LoadingView.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/view/LoadingView.ets#L30-L65)
 
 ### 动画时延场景案例
 
@@ -525,105 +503,101 @@ content_hash: sha256:2d2793ec098a26f0fa7b187d5d3dc745b77187920a3faa7855165abfbd2
 
 实验一：设置animationDuration为100ms
 
+```typescript
+@Entry
+@Component
+struct TabsPositiveExample {
+  @State currentIndex: number = 0;
+  private controller: TabsController = new TabsController();
+  private list: string[] = ['green', 'blue', 'yellow', 'pink'];
+
+  @Builder
+  customContent(color: Color) {
+    Column()
+      .width('100%')
+      .height('100%')
+      .backgroundColor(color)
+  }
+
+  build() {
+    Column() {
+      Row({ space: 10 }) {
+        ForEach(this.list, (item: string, index: number) => {
+          Text(item)
+            .textAlign(TextAlign.Center)
+            .fontSize(16)
+            .height(32)
+            .layoutWeight(1)
+            .fontColor(this.currentIndex === index ? Color.White : Color.Black)
+            .backgroundColor(this.currentIndex === index ? Color.Blue : '#f2f2f2')
+            .borderRadius(16)
+            .onClick(() => {
+              this.currentIndex = index;
+              this.controller.changeIndex(index);
+            })
+        }, (item: string, index: number) => JSON.stringify(item) + index)
+      }
+      .margin(10)
+
+      Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
+        TabContent() {
+          this.customContent(Color.Green)
+        }
+
+        TabContent() {
+          this.customContent(Color.Blue)
+        }
+
+        TabContent() {
+          this.customContent(Color.Yellow)
+        }
+
+        TabContent() {
+          this.customContent(Color.Pink)
+        }
+      }
+      .animationDuration(100)
+      .layoutWeight(1)
+      .barHeight(0)
+      .scrollable(false)
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct TabsPositiveExample {
-4. @State currentIndex: number = 0;
-5. private controller: TabsController = new TabsController();
-6. private list: string[] = ['green', 'blue', 'yellow', 'pink'];
 
-8. @Builder
-9. customContent(color: Color) {
-10. Column()
-11. .width('100%')
-12. .height('100%')
-13. .backgroundColor(color)
-14. }
-
-16. build() {
-17. Column() {
-18. Row({ space: 10 }) {
-19. ForEach(this.list, (item: string, index: number) => {
-20. Text(item)
-21. .textAlign(TextAlign.Center)
-22. .fontSize(16)
-23. .height(32)
-24. .layoutWeight(1)
-25. .fontColor(this.currentIndex === index ? Color.White : Color.Black)
-26. .backgroundColor(this.currentIndex === index ? Color.Blue : '#f2f2f2')
-27. .borderRadius(16)
-28. .onClick(() => {
-29. this.currentIndex = index;
-30. this.controller.changeIndex(index);
-31. })
-32. }, (item: string, index: number) => JSON.stringify(item) + index)
-33. }
-34. .margin(10)
-
-36. Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
-37. TabContent() {
-38. this.customContent(Color.Green)
-39. }
-
-41. TabContent() {
-42. this.customContent(Color.Blue)
-43. }
-
-45. TabContent() {
-46. this.customContent(Color.Yellow)
-47. }
-
-49. TabContent() {
-50. this.customContent(Color.Pink)
-51. }
-52. }
-53. .animationDuration(100)
-54. .layoutWeight(1)
-55. .barHeight(0)
-56. .scrollable(false)
-57. }
-58. .width('100%')
-59. }
-60. }
-```
-
-[TabsPositiveExample.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/TabsPositiveExample.ets#L22-L82)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/oBaKOjP5TLiF7MM05M6_nQ/zh-cn_image_0000002229337537.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/GvP2EJioRq6RI65La33mhg/zh-cn_image_0000002229337537.png "点击放大")
 
 实验二：设置animationDuration为1000ms
 
+```typescript
+@Entry
+@Component
+struct TabsNegativeExample {
+  // ...
+  private controller: TabsController = new TabsController();
+
+  // ...
+
+  build() {
+    Column() {
+      // ...
+
+      Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
+        // ...
+
+      }
+      .barHeight(0)
+      .layoutWeight(1)
+      .animationDuration(1000)
+      .scrollable(false)
+    }
+    .width('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct TabsNegativeExample {
-4. // ...
-5. private controller: TabsController = new TabsController();
 
-7. // ...
-
-9. build() {
-10. Column() {
-11. // ...
-
-13. Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
-14. // ...
-
-16. }
-17. .barHeight(0)
-18. .layoutWeight(1)
-19. .animationDuration(1000)
-20. .scrollable(false)
-21. }
-22. .width('100%')
-23. }
-24. }
-```
-
-[TabsNegativeExample.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/OptimizationAppDelay/entry/src/main/ets/pages/TabsNegativeExample.ets#L22-L94)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/1I-zXkK3TT25GA9foRua1w/zh-cn_image_0000002229337525.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/R3QwGSqNQGi2MM2bjDiwkw/zh-cn_image_0000002229337525.png "点击放大")
 
 **表7** 运行效果图
 

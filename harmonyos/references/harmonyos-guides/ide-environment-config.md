@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-environme
 title: 配置代理
 breadcrumb: 指南 > 编写与调试应用 > 附录 > 配置代理
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:06+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:9f43ea5a3448fe5a265811d35f0425d940558130dd9904207d6e61a89519f738
+scraped_at: 2026-09-02T15:00:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8c1c1c3645faf1c5c2d03ee5143aeb7a77b05b5a28385494ce618224d8b3e063
 ---
 
 DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。
 
-一般来说，如果使用的是个人或家庭网络，是不需要配置代理信息的，部分企业网络受限的情况下，才需要配置代理信息。
+通常情况下，如果使用的是个人或家庭网络，是不需要配置代理信息的，部分企业网络受限的情况下，才需要配置代理信息。
 
 ## 诊断开发环境
 
 为了您开发应用/元服务的良好体验，DevEco Studio提供了开发环境诊断的功能，帮助您识别开发环境是否完备。您可以在欢迎页面单击**Diagnose**进行诊断。如果您已经打开了工程开发界面，也可以在菜单栏单击**Help > Diagnostic Tools > Diagnose Development Environment**进行诊断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Pk-NM-6TRD-9xrfkrSR_zQ/zh-cn_image_0000002561752921.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/x9XAl1A-TZuc5v_ZpkjWQw/zh-cn_image_0000002731542107.png)
 
 DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况等。如果检测结果为未通过，请根据检查项的描述和修复建议进行处理。
 
-## 配置Proxy代理
+## 配置HTTP代理
 
 1. 在欢迎页单击**Customize > All settings… > Appearance & Behavior > System Settings > HTTP Proxy**进入HTTP Proxy设置界面。如果已经打开了工程，可以单击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Appearance & Behavior > System Settings > HTTP Proxy**进入HTTP Proxy设置界面。
    * **HTTP**配置项，配置代理服务器信息。**如果不清楚代理服务器信息，请咨询您的网络管理人员**。
@@ -32,7 +32,7 @@ DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况�
      + **Password**：访问代理服务器的密码。
      + **Remember**：勾选，记住密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/2oqMwk97TKOQjvk7lLZY_Q/zh-cn_image_0000002530752980.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/mSgoZIwpRAypjAoO8aswhQ/zh-cn_image_0000002731542111.png)
 2. 配置完成后，单击**Check connection**，输入网络地址（如：https://developer.huawei.com），检查网络连通性。提示“Connection successful”表示代理设置成功。
 
 ## 配置NPM代理
@@ -41,21 +41,21 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
 1. 进入*C:\Users\用户名*目录，打开**.npmrc**文件。如果该目录下没有**.npmrc**文件，请新建一个。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/4s94dwQwTuq0ZpolaN8onA/zh-cn_image_0000002530752986.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/BuyxXMRTR7OWKaxL-_w59A/zh-cn_image_0000002701822836.png)
 2. 修改npm仓库信息，示例如下所示：
 
-   ```
-   1. registry=https://repo.huaweicloud.com/repository/npm/
-   2. @ohos:registry=https://repo.harmonyos.com/npm/
+   ```screen
+   registry=https://repo.huaweicloud.com/repository/npm/
+   @ohos:registry=https://repo.harmonyos.com/npm/
    ```
 3. 修改代理信息，在proxy和https-proxy中，将user、password、proxyserver和port按照实际代理服务器进行修改。**如果不清楚代理服务器信息，请咨询您的网络管理人员**。示例如下所示：
 
-   ```
-   1. proxy=http://user:password@proxy.proxyserver.com:port
-   2. https-proxy=http://user:password@proxy.proxyserver.com:port
+   ```screen
+   proxy=http://user:password@proxy.proxyserver.com:port
+   https-proxy=http://user:password@proxy.proxyserver.com:port
    ```
 
-   说明
+   **说明** 
 
    如果password中存在特殊字符，如@、#、\*等符号，可能导致配置不生效，建议将特殊字符替换为ASCII码，并在ASCII码前加百分号%。常用符号替换为ASCII码对照表如下：
 
@@ -73,19 +73,19 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
      打开终端工具，执行以下命令。
 
-     ```
-     1. export NODE_HOME=/home/xx/Downloads/node-vxx.xx.x-linux-x64  #本处路径请替换为Node.js的安装路径（默认路径为$DevEco Studio安装目录\tools\node下）
-     2. export PATH=$NODE_HOME/bin:$PATH
+     ```screen
+     export NODE_HOME=/home/xx/Downloads/node-vxx.xx.x-linux-x64  #本处路径请替换为Node.js的安装路径（默认路径为$DevEco Studio安装目录\tools\node下）
+     export PATH=$NODE_HOME/bin:$PATH
      ```
 5. 代理配置完成后，打开命令行工具，执行如下命令验证网络是否正常。
 
-   ```
-   1. npm info express
+   ```screen
+   npm info express
    ```
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/FDfXwlxmSdm2XPcwjUlMcA/zh-cn_image_0000002561832899.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/6L_qPDT3TjCPd7nnRQQ2cg/zh-cn_image_0000002701662914.png)
 
 ## 配置OHPM代理
 
@@ -98,20 +98,20 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
 * **ohpm registry**：配置ohpm仓的地址信息。
 
-  ```
-  1. https://ohpm.openharmony.cn/ohpm/
+  ```screen
+  https://ohpm.openharmony.cn/ohpm/
   ```
 
 * **HTTP proxy**：代理服务器信息，默认会与DevEco Studio的HTTP proxy设置项保持一致。**如果不清楚代理服务器信息，请咨询您的网络管理人员**。如果需要配置账号密码，请使用如下格式进行配置：
 
-  ```
-  1. http://user:password@proxy.proxyserver.com
+  ```screen
+  http://user:password@proxy.proxyserver.com
   ```
 * **Enable Https Proxy**：同步配置HTTPS Proxy信息。
 
 **填写**并**勾选**以上信息后，点击**OK**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/XFre-lP_QL2HFpeupa7xkA/zh-cn_image_0000002530912972.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/RuRdQP-DTYSQOsLUtuqhcg/zh-cn_image_0000002731382139.png)
 
 说明：ohpm默认校验registry仓库地址证书。如果环境检查中ohpm registry access出现'SELF\_SIGNED\_CERT\_IN\_CHAIN'或'UNABLE\_TO\_VERIFY\_LEAF\_SIGNATURE'等证书校验错误时，请查看[FAQ-问题现象2](../harmonyos-faqs/faqs-development-environment-10.md)解决证书校验错误问题。
 
@@ -120,17 +120,17 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 1. 进入*C:/Users/用户名*目录/.ohpm，打开**.ohpmrc**文件。如果该目录下没有**.ohpmrc**文件，请新建一个。
 2. 修改ohpm仓库信息，示例如下所示：
 
-   ```
-   1. registry=https://ohpm.openharmony.cn/ohpm/
+   ```screen
+   registry=https://ohpm.openharmony.cn/ohpm/
    ```
 3. 修改ohpm代理信息，在http\_proxy和https\_proxy中，将user、password、proxyserver和port按照实际代理服务器进行修改。示例如下所示：
 
-   ```
-   1. http_proxy=http://user:password@proxy.proxyserver.com:port
-   2. https_proxy=http://user:password@proxy.proxyserver.com:port
+   ```screen
+   http_proxy=http://user:password@proxy.proxyserver.com:port
+   https_proxy=http://user:password@proxy.proxyserver.com:port
    ```
 
-   说明
+   **说明** 
 
    如果password中存在特殊字符，如@、#、\*等符号，可能导致配置不生效，建议将特殊字符替换为ASCII码，并在ASCII码前加百分号%。常用符号替换为ASCII码对照表如下：
 
@@ -148,16 +148,16 @@ Hvigor、ohpm在初始化时需要从npm仓库下载依赖，如果需要代理�
 
      打开终端工具，执行以下命令。
 
-     ```
-     1. export OHPM_HOME=/home/xx/Downloads/ohpm  #本处路径请替换为ohpm的安装路径。默认路径为:/home/xx/Downloads/DevEco Studio安装目录\tools\ohpm
-     2. export PATH=$OHPM_HOME/bin:$PATH
+     ```screen
+     export OHPM_HOME=/home/xx/Downloads/ohpm  #本处路径请替换为ohpm的安装路径。默认路径为:/home/xx/Downloads/DevEco Studio安装目录\tools\ohpm
+     export PATH=$OHPM_HOME/bin:$PATH
      ```
 5. 代理配置完成后，执行如下命令验证网络是否正常。
 
-   ```
-   1. ohpm info @ohos/lottie
+   ```screen
+   ohpm info @ohos/lottie
    ```
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/xuNqa7YDSSOnkwf7GAX9rw/zh-cn_image_0000002561832903.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/oo8bynUaSmay7D3FIUzMvA/zh-cn_image_0000002701822840.png)

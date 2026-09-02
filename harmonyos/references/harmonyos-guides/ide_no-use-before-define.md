@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-use-be
 title: "@typescript-eslint/no-use-before-define"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-use-before-define
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:43+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:633ed20a8d8e87a951dbff42b3a425fd00ec6634e7718ac9de079462dc49c7e9
+content_hash: sha256:04980ee9457409add548dae252ac5a8060befdfd5eb6e981ebe005ffa91d4270
 ---
 
 禁止在变量声明之前使用变量。
@@ -14,13 +14,13 @@ content_hash: sha256:633ed20a8d8e87a951dbff42b3a425fd00ec6634e7718ac9de079462dc4
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/no-use-before-define": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/no-use-before-define": "error"
+  }
+}
 ```
 
 ## 选项
@@ -29,38 +29,38 @@ content_hash: sha256:633ed20a8d8e87a951dbff42b3a425fd00ec6634e7718ac9de079462dc4
 
 ## 正例
 
-```
-1. const a = '10';
-2. console.info(a);
+```screen
+const a = '10';
+console.info(a);
 
-4. function ff(): void {
-5. console.info('function');
-6. }
-7. ff();
+function ff(): void {
+  console.info('function');
+}
+ff();
 
-9. const foo = '1';
-10. export { foo };
+const foo = '1';
+export { foo };
 ```
 
 ## 反例
 
-```
-1. console.info(a);
-2. const a = '10';
+```screen
+console.info(a);
+const a = '10';
 
-4. ff();
-5. function ff(): void {
-6. console.info('function');
-7. }
+ff();
+function ff(): void {
+  console.info('function');
+}
 
-9. export { foo };
-10. const foo = '1';
+export { foo };
+const foo = '1';
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

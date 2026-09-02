@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-g
 title: 状态管理V1-V2迁移指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:14+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:17:02+08:00
+doc_updated_at: 2026-06-05
 content_hash: sha256:854e7414b4b4f347446e7127bcefabf234cad077311d3ce97eae52a9a3dacbd3
 ---
 

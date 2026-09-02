@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-phot
 title: photo_native.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > photo_native.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:be1a453442decd3bcec68b35c7a423d4dd811028c6d53cf1eef7833a6ee3f8bf
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a5f245844d4014e979be332799a87bc32633e7024212c962976579b0d5ab85dd
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明相机照片的概念。
 
@@ -26,19 +24,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_PhotoNative](capi-oh-camera-oh-photonative.md) | OH\_PhotoNative | 相机照片对象。  全质量图对象。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -48,14 +40,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_PhotoNative\_GetMainImage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoNative_GetMainImage(OH_PhotoNative* photo, OH_ImageNative** mainImage)
+```c
+Camera_ErrorCode OH_PhotoNative_GetMainImage(OH_PhotoNative* photo, OH_ImageNative** mainImage)
 ```
 
 **描述**
@@ -79,10 +67,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoNative\_GetUncompressedImage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoNative_GetUncompressedImage(OH_PhotoNative* photo, OH_PictureNative** picture)
+```c
+Camera_ErrorCode OH_PhotoNative_GetUncompressedImage(OH_PhotoNative* photo, OH_PictureNative** picture)
 ```
 
 **描述**
@@ -106,10 +92,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PhotoNative\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_PhotoNative_Release(OH_PhotoNative* photo)
+```c
+Camera_ErrorCode OH_PhotoNative_Release(OH_PhotoNative* photo)
 ```
 
 **描述**

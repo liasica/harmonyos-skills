@@ -3,64 +3,62 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.form.FormExtensionAbility (FormExtensionAbility)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.FormExtensionAbility (FormExtensionAbility)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:56:30+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:6d9d04a76a93ba22cbeb22ca48db5a08a8744a119dd9e1da4b56788a9a21edd4
+scraped_at: 2026-09-02T15:01:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7f9d706af2fc170c3aa0971b50a8635fda8866f0cf378a1036425c73b678c63c
 ---
 
-FormExtensionAbility为卡片扩展模块，提供卡片创建、销毁、刷新等生命周期回调。
+FormExtensionAbility为卡片扩展模块，提供卡片创建、销毁、刷新等生命周期回调。适用于需要在应用中实现卡片功能的场景，帮助开发者快速构建卡片数据更新机制，提升用户与应用的交互体验。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 FormExtensionAbility创建后10秒内无操作将会被清理。
 
-如下模块不支持在FormExtensionAbility引用，可能会导致程序异常退出。
+## 约束限制
 
-* @ohos.ability.particleAbility (ParticleAbility模块)
-* @ohos.multimedia.audio (音频管理)
-* @ohos.multimedia.camera (相机管理)
-* @ohos.multimedia.media (媒体服务)
-* @ohos.resourceschedule.backgroundTaskManager (后台任务管理)
+为保障系统安全性和稳定性，防止 FormExtensionAbility 滥用系统资源，系统对其能力进行管控， 不支持以下模块的引用：
+
+* [@ohos.ability.particleAbility (ParticleAbility模块)](js-apis-ability-particleability.md)
+* [@ohos.multimedia.audio (音频管理)](arkts-apis-audio.md)
+* [@ohos.multimedia.camera (相机管理)](arkts-apis-camera.md)
+* [@ohos.multimedia.media (媒体服务)](arkts-apis-media.md)
+* [@ohos.resourceschedule.backgroundTaskManager (后台任务管理)](js-apis-resourceschedule-backgroundtaskmanager.md)
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { FormExtensionAbility } from '@kit.FormKit';
+```ts
+import { FormExtensionAbility } from '@kit.FormKit';
 ```
 
 ## FormExtensionAbility
 
-PhonePC/2in1TabletTVWearable
-
 卡片扩展类。包含卡片提供方接收创建卡片、修改可见性等的通知接口。
-
-**模型约束：** 此接口仅可在Stage模型下使用。
-
-**系统能力：** SystemCapability.Ability.Form
 
 ### 属性
 
-PhonePC/2in1TabletTVWearable
-
 **模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务。
 
 **系统能力：** SystemCapability.Ability.Form
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| context | [FormExtensionContext](js-apis-inner-application-formextensioncontext.md) | 否 | 否 | FormExtensionAbility的上下文环境，继承自[ExtensionContext](js-apis-inner-application-extensioncontext.md)。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| context | [FormExtensionContext](js-apis-inner-application-formextensioncontext.md) | 否 | 否 | FormExtensionAbility的上下文环境，继承自[ExtensionContext](js-apis-inner-application-extensioncontext.md)。 |
 
 ### FormExtensionAbility.onAddForm
 
-PhonePC/2in1TabletTVWearable
-
 onAddForm(want: Want): formBindingData.FormBindingData
 
-卡片提供方接收创建卡片的通知接口。
+卡片提供方接收创建卡片的通知接口。需要注意：FormExtensionAbility创建后10秒内无操作将会被清理，请避免在回调中执行耗时操作。
+
+**配合使用：**
+
+* 必须调用[formBindingData.createFormBindingData()](js-apis-app-form-formbindingdata.md#formbindingdatacreateformbindingdata)创建卡片数据对象。
+* 调用顺序：先创建数据对象（如dataObj1），再调用formBindingData.createFormBindingData(dataObj1)创建FormBindingData对象。
+* 返回要求：必须返回FormBindingData对象，卡片要显示的数据通过参数传入。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -78,35 +76,33 @@ onAddForm(want: Want): formBindingData.FormBindingData
 
 | 类型 | 说明 |
 | --- | --- |
-| [formBindingData.FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | formBindingData.FormBindingData对象，卡片要显示的数据。 |
+| [formBindingData.FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | formBindingData.FormBindingData对象，卡片要显示的数据。可通过[formBindingData.createFormBindingData()](js-apis-app-form-formbindingdata.md#formbindingdatacreateformbindingdata)创建。 |
 
 **示例：**
 
-```
-1. import { formBindingData, FormExtensionAbility } from '@kit.FormKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { formBindingData, FormExtensionAbility } from '@kit.FormKit';
+import { Want } from '@kit.AbilityKit';
 
-4. export default class MyFormExtensionAbility extends FormExtensionAbility {
-5. onAddForm(want: Want) {
-6. console.info(`FormExtensionAbility onAddForm, want: ${want.abilityName}`);
-7. let dataObj1: Record<string, string> = {
-8. 'temperature': '11c',
-9. 'time': '11:00'
-10. };
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onAddForm(want: Want) {
+    console.info(`FormExtensionAbility onAddForm, want: ${want.abilityName}`);
+    let temperatureData: Record<string, string> = {
+      'temperature': '11°C',
+      'time': '11:00'
+    };
 
-12. let obj1: formBindingData.FormBindingData = formBindingData.createFormBindingData(dataObj1);
-13. return obj1;
-14. }
-15. }
+    let formBindingDataObj: formBindingData.FormBindingData = formBindingData.createFormBindingData(temperatureData);
+    return formBindingDataObj;
+  }
+}
 ```
 
 ### FormExtensionAbility.onCastToNormalForm
 
-PhonePC/2in1TabletTVWearable
-
 onCastToNormalForm(formId: string): void
 
-卡片提供方收到卡片使用方将临时卡片转常态卡片的通知接口。临时卡片、常态卡片是卡片使用方的概念，其中：临时卡片是短期存在的，在特定事件或用户行为后显示，完成后自动消失。常态卡片是持久存在的，在用户未进行清除或更改的情况下，会一直存在，平时开发的功能卡片属于常态卡片。当前卡片使用方不会使用临时卡片。
+卡片提供方收到卡片使用方将临时卡片转常态卡片的通知接口。临时卡片、常态卡片是卡片使用方的概念，其中：临时卡片是短期存在的，在特定事件或用户行为后显示，完成后自动消失。常态卡片具有持久性，在用户主动清除或更改前将一直保留；日常开发的功能卡片均归属此类。在当前版本，卡片使用方不使用临时卡片。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -122,24 +118,22 @@ onCastToNormalForm(formId: string): void
 
 **示例：**
 
-```
-1. import { FormExtensionAbility } from '@kit.FormKit';
+```ts
+import { FormExtensionAbility } from '@kit.FormKit';
 
-3. export default class MyFormExtensionAbility extends FormExtensionAbility {
-4. onCastToNormalForm(formId: string) {
-5. // 卡片提供方收到卡片使用方将临时卡片转常态卡片的通知时触发，开发者需根据实际需求做相应的处理
-6. console.info(`FormExtensionAbility onCastToNormalForm, formId: ${formId}`);
-7. }
-8. };
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onCastToNormalForm(formId: string) {
+    // 卡片提供方收到卡片使用方将临时卡片转常态卡片的通知时触发，开发者需根据实际需求做相应的处理
+    console.info(`FormExtensionAbility onCastToNormalForm, formId: ${formId}`);
+  }
+}
 ```
 
 ### FormExtensionAbility.onUpdateForm
 
-PhonePC/2in1TabletTVWearable
-
 onUpdateForm(formId: string, wantParams?: Record<string, Object>): void
 
-卡片提供方接收携带参数的更新卡片的通知接口。获取最新数据后调用formProvider的[updateForm](js-apis-app-form-formprovider.md#formproviderupdateform)接口刷新卡片数据。
+卡片提供方接收携带参数的更新卡片的通知接口。获取最新数据后调用formProvider的[updateForm](js-apis-app-form-formprovider.md#formproviderupdateform)接口刷新卡片数据。需要传入formId和FormBindingData对象，可通过formBindingData.createFormBindingData()创建数据对象。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -151,40 +145,38 @@ onUpdateForm(formId: string, wantParams?: Record<string, Object>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| formId | string | 是 | 请求更新的卡片ID。 |
-| wantParams12+ | Record<string, Object> | 否 | 更新参数。 |
+| formId | string | 是 | 请求更新的卡片标识。 |
+| wantParams12+ | Record<string, Object> | 否 | 更新参数，用于携带卡片更新的额外信息。当需要传递自定义参数更新卡片时传入，不传入时为undefined。支持的参数包括：ohos.extra.param.key.host\_bg\_inverse\_color（是否启用宿主背景反色）等。 |
 
 **示例：**
 
-```
-1. import { formBindingData, FormExtensionAbility, formProvider } from '@kit.FormKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { formBindingData, FormExtensionAbility, formProvider } from '@kit.FormKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class MyFormExtensionAbility extends FormExtensionAbility {
-5. onUpdateForm(formId: string, wantParams?: Record<string, Object>) {
-6. console.info(`FormExtensionAbility onUpdateForm, formId: ${formId},
-7. wantPara: ${wantParams?.['ohos.extra.param.key.host_bg_inverse_color']}`);
-8. let param: Record<string, string> = {
-9. 'temperature': '22c',
-10. 'time': '22:00'
-11. }
-12. let obj2: formBindingData.FormBindingData = formBindingData.createFormBindingData(param);
-13. formProvider.updateForm(formId, obj2).then(() => {
-14. console.info(`FormExtensionAbility context updateForm`);
-15. }).catch((error: BusinessError) => {
-16. console.error(`FormExtensionAbility context updateForm failed, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
-17. });
-18. }
-19. };
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onUpdateForm(formId: string, wantParams?: Record<string, Object>) {
+    console.info(`FormExtensionAbility onUpdateForm, formId: ${formId},
+        wantPara: ${wantParams?.['ohos.extra.param.key.host_bg_inverse_color']}`);
+    let param: Record<string, string> = {
+      'temperature': '22c',
+      'time': '22:00'
+    }
+    let obj2: formBindingData.FormBindingData = formBindingData.createFormBindingData(param);
+    formProvider.updateForm(formId, obj2).then(() => {
+      console.info(`FormExtensionAbility context updateForm`);
+    }).catch((error: BusinessError) => {
+      console.error(`FormExtensionAbility context updateForm failed, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+    });
+  }
+}
 ```
 
 ### FormExtensionAbility.onChangeFormVisibility
 
-PhonePC/2in1TabletTVWearable
-
 onChangeFormVisibility(newStatus: Record<string, number>): void
 
-卡片提供方接收修改可见性的通知接口。该接口仅对系统应用生效，且需要将formVisibleNotify配置为true。
+卡片提供方接收修改可见性的通知接口。当卡片在桌面上的可见性发生变化（如卡片被遮挡、移出屏幕等）时，会触发此回调。开发者可以在此优化卡片的资源占用或暂停不必要的更新操作，并通过formProvider.updateForm()更新卡片数据。仅当FormExtensionAbility存活时才会触发此回调。该接口仅对系统应用生效，且需要将formVisibleNotify配置为true。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -194,51 +186,49 @@ onChangeFormVisibility(newStatus: Record<string, number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| newStatus | Record<string, number> | 是 | 请求修改的卡片标识和可见状态。  **说明：** number参数是取值范围[0, 2]的整数，0是未知类型，1是可见状态，2是不可见状态。  详细参考 [formInfo.VisibilityType](js-apis-app-form-forminfo.md#visibilitytype) |
+| newStatus | Record<string, number> | 是 | 请求修改的卡片标识和可见状态。  **说明：** number参数是取值范围[0, 2]的整数，0是未知类型，1是可见状态，2是不可见状态。超出范围的值无效，不产生任何效果。该接口仅对系统应用生效，且需要将formVisibleNotify配置为true。  详细参考 [formInfo.VisibilityType](js-apis-app-form-forminfo.md#visibilitytype) |
 
 **示例：**
 
-```
-1. import { formBindingData, FormExtensionAbility, formProvider } from '@kit.FormKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { formBindingData, FormExtensionAbility, formProvider } from '@kit.FormKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // ArkTS规范中ets文件无法使用Object.keys和for..in...获取Object的key值，请使用自定义函数getObjKeys代替。
-5. // 使用时请将此函数单独抽离至一个ts文件中并导出，在需要用到的ets文件中导入此函数后使用。
-6. function getObjKeys(obj: Object): string[] {
-7. let keys = Object.keys(obj);
-8. return keys;
-9. }
+// ArkTS规范中ets文件无法使用Object.keys和for..in...获取Object的key值，请使用自定义函数getObjKeys代替。
+// 使用时请将此函数单独抽离至一个ts文件中并导出，在需要用到的ets文件中导入此函数后使用。
+function getObjKeys(obj: Object): string[] {
+  let keys = Object.keys(obj);
+  return keys;
+}
 
-11. export default class MyFormExtensionAbility extends FormExtensionAbility {
-12. onChangeFormVisibility(newStatus: Record<string, number>) {
-13. console.info(`FormExtensionAbility onChangeFormVisibility, newStatus: ${newStatus}`);
-14. let param: Record<string, string> = {
-15. 'temperature': '22c',
-16. 'time': '22:00'
-17. }
-18. let obj2: formBindingData.FormBindingData = formBindingData.createFormBindingData(param);
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onChangeFormVisibility(newStatus: Record<string, number>) {
+    console.info(`FormExtensionAbility onChangeFormVisibility, newStatus: ${newStatus}`);
+    let param: Record<string, string> = {
+      'temperature': '22°C',
+      'time': '22:00'
+    }
+    let formBindingDataObj: formBindingData.FormBindingData = formBindingData.createFormBindingData(param);
 
-20. let keys: string[] = getObjKeys(newStatus);
+    let keys: string[] = getObjKeys(newStatus);
 
-22. for (let i: number = 0; i < keys.length; i++) {
-23. console.info(`FormExtensionAbility onChangeFormVisibility, key: ${keys[i]}, value= ${newStatus[keys[i]]}`);
-24. formProvider.updateForm(keys[i], obj2).then(() => {
-25. console.info('FormExtensionAbility context updateForm');
-26. }).catch((error: BusinessError) => {
-27. console.error(`Operation updateForm failed. , code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message})`);
-28. });
-29. }
-30. }
-31. };
+    for (let i: number = 0; i < keys.length; i++) {
+      console.info(`FormExtensionAbility onChangeFormVisibility, key: ${keys[i]}, value= ${newStatus[keys[i]]}`);
+      formProvider.updateForm(keys[i], formBindingDataObj).then(() => {
+        console.info('FormExtensionAbility context updateForm');
+      }).catch ((error: BusinessError) => {
+        console.error(`Operation updateForm failed, code: ${error.code}, message: ${error.message}`);
+      });
+    }
+  }
+}
 ```
 
 ### FormExtensionAbility.onFormEvent
 
-PhonePC/2in1TabletTVWearable
-
 onFormEvent(formId: string, message: string): void
 
-卡片提供方接收处理卡片事件的通知接口。
+卡片提供方接收处理卡片事件的通知接口，例如卡片使用方触发的自定义事件。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -251,23 +241,21 @@ onFormEvent(formId: string, message: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | formId | string | 是 | 请求触发事件的卡片标识。 |
-| message | string | 是 | 事件消息。 |
+| message | string | 是 | 事件消息，用于传递卡片事件的具体信息。消息内容由开发者自定义，通常为JSON格式字符串或特定标识符，用于标识事件类型或传递事件数据。 |
 
 **示例：**
 
-```
-1. import { FormExtensionAbility } from '@kit.FormKit';
+```ts
+import { FormExtensionAbility } from '@kit.FormKit';
 
-3. export default class MyFormExtensionAbility extends FormExtensionAbility {
-4. onFormEvent(formId: string, message: string) {
-5. console.info(`FormExtensionAbility onFormEvent, formId: ${formId}, message: ${message}`);
-6. }
-7. };
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onFormEvent(formId: string, message: string) {
+    console.info(`FormExtensionAbility onFormEvent, formId: ${formId}, message: ${message}`);
+  }
+}
 ```
 
 ### FormExtensionAbility.onRemoveForm
-
-PhonePC/2in1TabletTVWearable
 
 onRemoveForm(formId: string): void
 
@@ -287,19 +275,17 @@ onRemoveForm(formId: string): void
 
 **示例：**
 
-```
-1. import { FormExtensionAbility } from '@kit.FormKit';
+```ts
+import { FormExtensionAbility } from '@kit.FormKit';
 
-3. export default class MyFormExtensionAbility extends FormExtensionAbility {
-4. onRemoveForm(formId: string) {
-5. console.info(`FormExtensionAbility onRemoveForm, formId: ${formId}`);
-6. }
-7. };
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onRemoveForm(formId: string) {
+    console.info(`FormExtensionAbility onRemoveForm, formId: ${formId}`);
+  }
+}
 ```
 
 ### FormExtensionAbility.onConfigurationUpdate
-
-PhonePC/2in1TabletTVWearable
 
 onConfigurationUpdate(newConfig: Configuration): void
 
@@ -319,26 +305,24 @@ onConfigurationUpdate(newConfig: Configuration): void
 
 **示例：**
 
-```
-1. import { FormExtensionAbility } from '@kit.FormKit';
-2. import { Configuration } from '@kit.AbilityKit';
+```ts
+import { FormExtensionAbility } from '@kit.FormKit';
+import { Configuration } from '@kit.AbilityKit';
 
-4. export default class MyFormExtensionAbility extends FormExtensionAbility {
-5. onConfigurationUpdate(newConfig: Configuration) {
-6. // 仅当前formExtensionAbility存活时更新配置才会触发此生命周期。
-7. // 需要注意：formExtensionAbility创建后10秒内无操作将会被清理。
-8. console.info(`onConfigurationUpdate, config: ${newConfig?.language}`);
-9. }
-10. };
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onConfigurationUpdate(newConfig: Configuration) {
+    // 仅当前formExtensionAbility存活时更新配置才会触发此生命周期。
+    // 需要注意：formExtensionAbility创建后10秒内无操作将会被清理。
+    console.info(`onConfigurationUpdate, config: ${newConfig?.language}`);
+  }
+}
 ```
 
 ### FormExtensionAbility.onAcquireFormState
 
-PhonePC/2in1TabletTVWearable
-
 onAcquireFormState?(want: Want): formInfo.FormState
 
-卡片提供方接收查询卡片状态通知接口，默认返回卡片初始状态（该方法可以选择性重写）。
+卡片提供方接收查询卡片状态通知接口。当卡片使用方（如桌面）需要获取卡片当前状态（如卡片是否可用、是否需要更新等）时，会调用此方法，该方法可重写。默认返回卡片初始状态（该方法可以选择性重写）。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -360,21 +344,19 @@ onAcquireFormState?(want: Want): formInfo.FormState
 
 **示例：**
 
-```
-1. import { FormExtensionAbility, formInfo } from '@kit.FormKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { FormExtensionAbility, formInfo } from '@kit.FormKit';
+import { Want } from '@kit.AbilityKit';
 
-4. export default class MyFormExtensionAbility extends FormExtensionAbility {
-5. onAcquireFormState(want: Want) {
-6. console.info(`FormExtensionAbility onAcquireFormState, want: ${want}`);
-7. return formInfo.FormState.UNKNOWN;
-8. }
-9. };
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onAcquireFormState(want: Want) {
+    console.info(`FormExtensionAbility onAcquireFormState, want: ${want}`);
+    return formInfo.FormState.UNKNOWN;
+  }
+}
 ```
 
 ### FormExtensionAbility.onStop12+
-
-PhonePC/2in1TabletTVWearable
 
 onStop?(): void
 
@@ -388,23 +370,21 @@ onStop?(): void
 
 **示例：**
 
-```
-1. import { FormExtensionAbility } from '@kit.FormKit';
+```ts
+import { FormExtensionAbility } from '@kit.FormKit';
 
-3. export default class MyFormExtensionAbility extends FormExtensionAbility {
-4. onStop() {
-5. console.info(`FormExtensionAbility onStop`);
-6. }
-7. }
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onStop() {
+    console.info(`FormExtensionAbility onStop`);
+  }
+}
 ```
 
 ### FormExtensionAbility.onFormLocationChanged20+
 
-PhonePC/2in1TabletTVWearable
-
 onFormLocationChanged(formId: string, newFormLocation: formInfo.FormLocation): void
 
-当卡片位置发生变化时，触发该回调。
+当卡片位置发生变化时，触发该回调。开发者可以根据新的位置信息调整卡片的展示或预加载相关内容。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -417,34 +397,32 @@ onFormLocationChanged(formId: string, newFormLocation: formInfo.FormLocation): v
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | formId | string | 是 | 发生位置变化的卡片标识。 |
-| newFormLocation | [formInfo.FormLocation](js-apis-app-form-forminfo.md#formlocation20) | 是 | 卡片最新位置的枚举值。 |
+| newFormLocation | [formInfo.FormLocation](js-apis-app-form-forminfo.md#formlocation20) | 是 | 卡片最新位置的枚举值，表示卡片当前所在的位置（如桌面、卡片中心等）。 |
 
 **示例：**
 
-```
-1. import { formBindingData, FormExtensionAbility, formInfo } from '@kit.FormKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { formBindingData, FormExtensionAbility, formInfo } from '@kit.FormKit';
+import { Want } from '@kit.AbilityKit';
 
-4. export default class EntryFormAbility extends FormExtensionAbility {
-5. onAddForm(want: Want) {
-6. let formData: Record<string, string | Object> = {
-7. 'data': 'addForm'
-8. };
-9. return formBindingData.createFormBindingData(formData);
-10. }
-11. onFormLocationChanged(formId: string, newFormLocation: formInfo.FormLocation) {
-12. console.info("EntryFormAbility onFormLocationChanged current location: " + newFormLocation);
-13. }
-14. }
+export default class EntryFormAbility extends FormExtensionAbility {
+  onAddForm(want: Want) {
+    let formData: Record<string, string | Object> = {
+      'data': 'addForm'
+    };
+    return formBindingData.createFormBindingData(formData);
+  }
+  onFormLocationChanged(formId: string, newFormLocation: formInfo.FormLocation) {
+    console.info('EntryFormAbility onFormLocationChanged current location: ' + newFormLocation);
+  }
+}
 ```
 
 ### FormExtensionAbility.onSizeChanged20+
 
-PhonePC/2in1TabletTVWearable
-
 onSizeChanged(formId: string, newDimension: formInfo.FormDimension, newRect: formInfo.Rect): void
 
-卡片大小变化时，触发回调。
+当卡片大小发生变化时（如用户调整卡片尺寸），触发该回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -456,18 +434,18 @@ onSizeChanged(formId: string, newDimension: formInfo.FormDimension, newRect: for
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| formId | string | 是 | 卡片标识。 |
+| formId | string | 是 | 发生大小变化的卡片标识。 |
 | newDimension | [formInfo.FormDimension](js-apis-app-form-forminfo.md#formdimension) | 是 | 卡片尺寸，例如 Dimension\_1\_2，表示 1 x 2 卡片。 |
 | newRect | [formInfo.Rect](js-apis-app-form-forminfo.md#rect20) | 是 | 卡片位置信息，包括卡片左上角顶点的xy坐标和卡片的宽高。 |
 
 **示例：**
 
-```
-1. import { FormExtensionAbility, formInfo } from '@kit.FormKit';
+```ts
+import { FormExtensionAbility, formInfo } from '@kit.FormKit';
 
-3. export default class MyFormExtensionAbility extends FormExtensionAbility {
-4. onSizeChanged(formId: string, newDimension: formInfo.FormDimension, newRect: formInfo.Rect) {
-5. console.info(`FormExtensionAbility onSizeChanged, formId: ${formId}, newDimension: ${newDimension}`);
-6. }
-7. }
+export default class MyFormExtensionAbility extends FormExtensionAbility {
+  onSizeChanged(formId: string, newDimension: formInfo.FormDimension, newRect: formInfo.Rect) {
+    console.info(`FormExtensionAbility onSizeChanged, formId: ${formId}, newDimension: ${newDimension}`);
+  }
+}
 ```

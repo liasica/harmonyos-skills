@@ -1,22 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ffrt-ffrt-condattr-t
 title: ffrt_condattr_t
-breadcrumb: API参考 > 系统 > 基础功能 > Function Flow Runtime Kit > C API > 结构体 > ffrt_condattr_t
+breadcrumb: API参考 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > C API > 结构体 > ffrt_condattr_t
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:09+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:b7e0cf8602a21b01bf1a7a4e87ef4955aff1411d1f0e8127321f50b24503673e
+scraped_at: 2026-09-02T15:02:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:21136b1ded750a7aa141efc8d88c2ed48a01b2c1b4f61a79f01b06810cd6f588
 ---
 
-```
-1. typedef struct {...} ffrt_condattr_t
+```c
+typedef struct {...} ffrt_condattr_t
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-FFRT条件变量属性结构。
+条件变量属性结构体，用于存储条件变量的属性信息。
 
 **起始版本：** 10
 
@@ -26,12 +24,8 @@ FFRT条件变量属性结构。
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| long storage | FFRT条件变量属性占用空间 |
+| long storage | 条件变量属性的内部存储。请勿直接访问。 |

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-effe
 title: effect_types.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > effect_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:05+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9b4a6a8e2feb9bbc09b5922b4021d5ae29a28b50c15bde4ff4093ad9834bf9ee
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cb17dd6a008e12a018335da5ba409afd576b8c2d69c6752ccc0d649f075fef3e
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明滤镜效果的数据类型。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,8 +34,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [EffectErrorCode](capi-effect-types-h.md#effecterrorcode) | EffectErrorCode | 定义滤镜效果的状态码。 |
@@ -49,14 +41,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### EffectErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum EffectErrorCode
+```c
+enum EffectErrorCode
 ```
 
 **描述**
@@ -74,10 +62,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EffectTileMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum EffectTileMode
+```c
+enum EffectTileMode
 ```
 
 **描述**

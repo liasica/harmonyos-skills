@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 操作异常错误码
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 操作异常错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1f6c9659618893a0db822e80934e6e729b5489db1b311be6000ce7f4c961baae
+scraped_at: 2026-09-02T14:50:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5c20170cba7eb8ba23cc94c294e7509ce5de758b1f0737c449bb962b7f6f8799
 ---
 
 ## 00308001 删除文件失败
@@ -43,11 +43,47 @@ XXX execute failed.
 
 **可能原因**
 
-不同场景，参考具体报错信息。
+不同场景，根据控制台打印的构建日志进行处理。
+
+* **场景一：**构建日志中包含“ERR\_PNPM\_FETCH\_404”，原因是要安装的包在仓库里不存在，可能是包名拼写错误，或者包没有上传到npm配置的远程仓库中。
+* **场景二：**构建日志中包含“ERR\_PNPM\_NO\_MATCHING\_VERSION”，原因是指定版本的包在仓库里不存在，可能是对应版本的包没有上传到npm配置的远程仓库中。
+* **场景三：**构建日志中包含“ERR\_PNPM\_META\_FETCH\_FAIL”，原因是找不到包的元数据，可能是网络问题，或npm仓库地址配置错误。
+* **场景四：**构建日志中包含“ERR\_PNPM\_NO\_OFFLINE\_META”，原因是离线模式下无法从本地缓存中找到某个依赖包的元数据，可能是包的相关依赖没有打包完整。
+* **场景五：**构建日志中包含“CERT\_HAS\_EXPIRED”，原因是使用的npm远程仓库服务器上的证书已过期。
+* **场景六：**构建日志中包含“ETIMEDOUT”，原因是链接npm仓库超时，可能是网络问题，或者npm仓库地址配置错误。
 
 **处理步骤**
 
-根据具体报错信息处理。
+* **场景一：**
+  1. 请检查失败的包在npm仓库中是否存在，或者联系包的提供方确认仓库地址。
+  2. 检查要安装的包名是否拼写错误。
+* **场景二：**
+  1. 在控制台执行以下命令，查询要安装的xxx包在npm仓库中的版本。
+
+     ```screen
+     pnpm view ${xxx} versions
+     ```
+  2. 检查要安装的包名是否拼写错误。
+  3. 如果找不到的包是"@ohos/hvigor-ohos-arkui-x-plugin"，按以下步骤找到配套的插件版本号。
+     1. 创建ArkUI-X模板工程。
+     2. 打开hvigor/hvigor-config.json5，找到dependencies中@ohos/hvigor-ohos-arkui-x-plugin对应的版本号。
+     3. 将上一步获取的版本号替换至报错工程的@ohos/hvigor-ohos-arkui-x-plugin的版本号。
+
+* **场景三：**
+  1. 请确保仓库地址可以访问，查看npm配置的仓库地址是否正确、是否有防火墙或代理限制等。
+  2. 联系仓库提供方确认仓库地址是否可用，或更换新的npm仓库地址。
+
+* **场景四：**
+  1. 请检查离线包在迁移前是否已下载完整。
+  2. 参考[离线环境配置指导](ide-no-network.md)。
+
+* **场景五：**
+
+  请联系仓库提供方确保仓库服务器的证书有效，或更换新的npm仓库地址。
+
+* **场景六：**
+  1. 请确保仓库地址可以访问，查看npm配置的仓库地址是否正确、是否有防火墙或代理限制等。
+  2. 联系仓库提供方确认仓库地址是否可用，或更换新的npm仓库地址。
 
 ## 00308003 找不到Hvigor的入口文件
 
@@ -119,11 +155,19 @@ Write file failed: XXX, at file: YYY.
 
 **可能原因**
 
-未知。
+加密/解密材料未知原因损坏。
 
 **处理步骤**
 
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+删除.hvigor文件夹中的meta目录。.hvigor文件夹默认位于用户目录下：
+
+* Windows：C:\Users\username\.hvigor
+* macOS：/Users/username/.hvigor
+* Linux：
+  + root用户：/root/.hvigor
+  + 非root用户：/home/username/.hvigor
+
+更多内容请参考[自定义.hvigor路径](ide-hvigor-path.md)。
 
 ## 00308007 操作文件失败
 
@@ -148,7 +192,7 @@ Failed to operate file as XXX.
 
 **错误信息**
 
-Failed to write File：XXX.
+Failed to write File: XXX.
 
 **错误描述**
 
@@ -168,7 +212,7 @@ Failed to write File：XXX.
 
 **错误信息**
 
-Failed to write File：please check File Path：XXX.
+Failed to write File: please check File Path：XXX.
 
 **错误描述**
 
@@ -268,7 +312,7 @@ Cache material error. Please ensure that no cache materials have been added or m
 
 **错误描述**
 
-缓存材料错误，请确保meta/ac、ce、fd目录下的缓存材料未进行增加或修改。
+缓存材料错误，请确保meta/ac、ce、fd目录下的缓存材料未增加或修改。
 
 **可能原因**
 
@@ -276,7 +320,7 @@ Cache material error. Please ensure that no cache materials have been added or m
 
 **处理步骤**
 
-1. 排查Users/*用户名*目录下的.hvigor/meta下的缓存材料数量是否正确，ac、ce、fd目录下分别有1、1、3个文件或文件夹，请勿对文件夹下的内容进行增加或修改。
+1. 排查Users/*用户名*目录下的.hvigor/meta下的缓存材料数量是否正确，ac、ce、fd目录下分别有1、1、3个文件或文件夹，请勿对目录内容进行增加或修改。
 2. 删除.hvigor下的meta目录，重新编译。
 
 ## 00308018 未知错误
@@ -291,11 +335,13 @@ Unknown Error.
 
 **可能原因**
 
-原因未知。
+1. 报错信息包含"Remote sign har failed"，原因是hvigor-config.json5中配置ohos.sign.har为true后，流水线构建har时指定的JDK版本低于21。
+2. 其他未知原因。
 
 **处理步骤**
 
-请检查工程目录下.hvigor > outputs > build-logs目录下的详细报错日志进行分析。如果无法解决，通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+1. 将流水线的JDK版本升级到21。
+2. 请检查工程目录下.hvigor > outputs > build-logs目录下的详细报错日志进行分析。如果无法解决，通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
 
 ## 00308019 npm仓库中找不到指定的包
 
@@ -350,10 +396,14 @@ If you need the full list of all published versions run "$ pnpm view yyy version
 
 1. 在控制台执行以下命令，查询yyy包在npm仓库中的版本。
 
-   ```
-   1. pnpm view ${yyy} versions
+   ```screen
+   pnpm view ${yyy} versions
    ```
 2. 检查要安装的yyy包名是否拼写错误。
+3. 如果找不到的包是"@ohos/hvigor-ohos-arkui-x-plugin"，按以下步骤找到配套的插件版本号。
+   1. 创建ArkUI-X模板工程。
+   2. 打开hvigor/hvigor-config.json5，找到dependencies中@ohos/hvigor-ohos-arkui-x-plugin对应的版本号。
+   3. 将上一步获取的版本号替换至报错工程的@ohos/hvigor-ohos-arkui-x-plugin的版本号。
 
 ## 00308021 npm仓库中无法获取包的元数据
 
@@ -441,7 +491,7 @@ npm ERR! code ETIMEDOUT
 
 npm ERR! errno ETIMEDOUT
 
-npm ERR! request to https://xxx failed, reason: connect ETIMEDOUT xxx.xxx.xxx.xxx:443
+npm ERR! network request to https://xxx failed, reason: connect ETIMEDOUT xxx.xxx.xxx.xxx:443
 
 This error happened while installing a direct dependency of xxx.
 
@@ -457,3 +507,21 @@ This error happened while installing a direct dependency of xxx.
 
 1. 请确保仓库地址可以访问，查看npm配置的仓库地址是否正确、是否有防火墙或代理限制等。
 2. 联系仓库提供方确认仓库地址是否可用，或更换新的npm仓库地址。
+
+## 00308025 无法重置守护进程注册表
+
+**错误信息**
+
+Failed to reset daemon registry file: XXX.
+
+**错误描述**
+
+无法重置守护进程注册表。
+
+**可能原因**
+
+DevEco Studio无权限操作XXX文件或者XXX文件被占用。
+
+**处理步骤**
+
+手动删除XXX文件。

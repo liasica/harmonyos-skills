@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_volume_manager.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_volume_manager.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a4863d71cf72fd954183027106b1c24ac694ab289d6e567e88343dad485eaf5e
+scraped_at: 2026-09-02T15:02:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:917350f52995400596d28b5a79bb3c030ca15231b10249a9cd2f9deaf3786992
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明音频音量管理器接口。
 
@@ -28,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -40,13 +34,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [typedef void (\*OH\_AudioVolumeManager\_OnStreamVolumeChangeCallback)(void \*userData, OH\_AudioStream\_Usage usage, int32\_t volumeLevel, bool updateUi)](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_onstreamvolumechangecallback) | OH\_AudioVolumeManager\_OnStreamVolumeChangeCallback | 音量变化回调函数的原型定义，用于传递给[OH\_AudioVolumeManager\_RegisterStreamVolumeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_registerstreamvolumechangecallback)。 |
 | [typedef void (\*OH\_AudioVolumeManager\_OnRingerModeChangeCallback)(void \*userData, OH\_AudioRingerMode ringerMode)](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_onringermodechangecallback) | OH\_AudioVolumeManager\_OnRingerModeChangeCallback | 铃声模式变化回调函数的原型定义，用于传递给[OH\_AudioVolumeManager\_RegisterRingerModeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_registerringermodechangecallback)。 |
-| [OH\_AudioCommon\_Result OH\_AudioManager\_GetAudioVolumeManager(OH\_AudioVolumeManager \*\*volumeManager)](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager) | - | 使用音量管理器相关功能，首先需要获取音量管理器实例。 |
+| [OH\_AudioCommon\_Result OH\_AudioManager\_GetAudioVolumeManager(OH\_AudioVolumeManager \*\*volumeManager)](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager) | - | 获取音量管理器实例。  使用音量管理器相关功能，首先需要获取音量管理器实例。 |
 | [OH\_AudioCommon\_Result OH\_AudioVolumeManager\_GetMaxVolumeByUsage(OH\_AudioVolumeManager \*volumeManager, OH\_AudioStream\_Usage usage, int32\_t \*maxVolumeLevel)](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_getmaxvolumebyusage) | - | 获取指定用途类型音频流的最大音量等级。 |
 | [OH\_AudioCommon\_Result OH\_AudioVolumeManager\_GetMinVolumeByUsage(OH\_AudioVolumeManager \*volumeManager, OH\_AudioStream\_Usage usage, int32\_t \*minVolumeLevel)](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_getminvolumebyusage) | - | 获取指定用途类型音频流的最小音量等级。 |
 | [OH\_AudioCommon\_Result OH\_AudioVolumeManager\_GetVolumeByUsage(OH\_AudioVolumeManager \*volumeManager, OH\_AudioStream\_Usage usage, int32\_t \*volumeLevel)](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_getvolumebyusage) | - | 获取指定用途类型音频流的系统音量等级。 |
@@ -59,14 +51,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AudioVolumeManager\_OnStreamVolumeChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AudioVolumeManager_OnStreamVolumeChangeCallback)(void *userData, OH_AudioStream_Usage usage, int32_t volumeLevel, bool updateUi)
+```c
+typedef void (*OH_AudioVolumeManager_OnStreamVolumeChangeCallback)(void *userData, OH_AudioStream_Usage usage, int32_t volumeLevel, bool updateUi)
 ```
 
 **描述**
@@ -86,10 +74,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_OnRingerModeChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_AudioVolumeManager_OnRingerModeChangeCallback)(void *userData, OH_AudioRingerMode ringerMode)
+```c
+typedef void (*OH_AudioVolumeManager_OnRingerModeChangeCallback)(void *userData, OH_AudioRingerMode ringerMode)
 ```
 
 **描述**
@@ -107,13 +93,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioManager\_GetAudioVolumeManager()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioManager_GetAudioVolumeManager(OH_AudioVolumeManager **volumeManager)
+```c
+OH_AudioCommon_Result OH_AudioManager_GetAudioVolumeManager(OH_AudioVolumeManager **volumeManager)
 ```
 
 **描述**
+
+获取音量管理器实例。
 
 使用音量管理器相关功能，首先需要获取音量管理器实例。
 
@@ -123,7 +109,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*\*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*\*volumeManager | 指向OH\_AudioVolumeManager指针的地址，用于接收获取的音量管理器实例。 |
 
 **返回：**
 
@@ -133,10 +119,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_GetMaxVolumeByUsage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_GetMaxVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *maxVolumeLevel)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_GetMaxVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *maxVolumeLevel)
 ```
 
 **描述**
@@ -149,7 +133,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioStream\_Usage](capi-native-audiostream-base-h.md#oh_audiostream_usage) usage | 用于映射特定音量类型的音频流用途类型。 |
 | int32\_t \*maxVolumeLevel | 用于接收返回的最大音量。 |
 
@@ -161,10 +145,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_GetMinVolumeByUsage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_GetMinVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *minVolumeLevel)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_GetMinVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *minVolumeLevel)
 ```
 
 **描述**
@@ -177,7 +159,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioStream\_Usage](capi-native-audiostream-base-h.md#oh_audiostream_usage) usage | 用于映射特定音量类型的音频流用途类型。 |
 | int32\_t \*minVolumeLevel | 用于接收返回的最小音量。 |
 
@@ -189,10 +171,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_GetVolumeByUsage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_GetVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *volumeLevel)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_GetVolumeByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, int32_t *volumeLevel)
 ```
 
 **描述**
@@ -205,7 +185,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioStream\_Usage](capi-native-audiostream-base-h.md#oh_audiostream_usage) usage | 用于映射特定音量类型的音频流用途类型。 |
 | int32\_t \*volumeLevel | 用于接收返回的系统音量。 |
 
@@ -217,10 +197,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_IsMuteByUsage()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_IsMuteByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, bool *muted)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_IsMuteByUsage(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, bool *muted)
 ```
 
 **描述**
@@ -233,7 +211,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioStream\_Usage](capi-native-audiostream-base-h.md#oh_audiostream_usage) usage | 用于映射特定音量类型的音频流用途类型。 |
 | bool \*muted | 用于接收返回的音频流是否静音。true表示静音，false表示未静音。 |
 
@@ -245,10 +223,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_RegisterStreamVolumeChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, OH_AudioVolumeManager_OnStreamVolumeChangeCallback callback, void *userData)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_RegisterStreamVolumeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioStream_Usage usage, OH_AudioVolumeManager_OnStreamVolumeChangeCallback callback, void *userData)
 ```
 
 **描述**
@@ -261,7 +237,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioStream\_Usage](capi-native-audiostream-base-h.md#oh_audiostream_usage) usage | 监听用于映射特定音量类型的音频流用途类型。 |
 | [OH\_AudioVolumeManager\_OnStreamVolumeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_onstreamvolumechangecallback) callback | 监听的音频流音量发生时，将调用此回调函数[OH\_AudioVolumeManager\_OnStreamVolumeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_onstreamvolumechangecallback)。 |
 | void \*userData | 用户自定义数据指针。 |
@@ -274,10 +250,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_UnregisterStreamVolumeChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterStreamVolumeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnStreamVolumeChangeCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterStreamVolumeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnStreamVolumeChangeCallback callback)
 ```
 
 **描述**
@@ -290,7 +264,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioVolumeManager\_OnStreamVolumeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_onstreamvolumechangecallback) callback | 指向[OH\_AudioVolumeManager\_RegisterStreamVolumeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_registerstreamvolumechangecallback)传入的回调函数，用于取消注册。 |
 
 **返回：**
@@ -301,10 +275,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_GetRingerMode()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_GetRingerMode(OH_AudioVolumeManager *volumeManager, OH_AudioRingerMode *ringerMode)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_GetRingerMode(OH_AudioVolumeManager *volumeManager, OH_AudioRingerMode *ringerMode)
 ```
 
 **描述**
@@ -317,7 +289,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioRingerMode](capi-native-audio-common-h.md#oh_audioringermode) \*ringerMode | 用于接收返回的铃声模式。 |
 
 **返回：**
@@ -328,10 +300,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_RegisterRingerModeChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_RegisterRingerModeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnRingerModeChangeCallback callback, void *userData)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_RegisterRingerModeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnRingerModeChangeCallback callback, void *userData)
 ```
 
 **描述**
@@ -344,7 +314,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioVolumeManager\_OnRingerModeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_onringermodechangecallback) callback | 监听的铃声模式发生切换时，将调用此回调函数[OH\_AudioVolumeManager\_OnRingerModeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_onringermodechangecallback)。 |
 | void \*userData | 用户自定义数据指针。 |
 
@@ -356,10 +326,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioVolumeManager\_UnregisterRingerModeChangeCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterRingerModeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnRingerModeChangeCallback callback)
+```c
+OH_AudioCommon_Result OH_AudioVolumeManager_UnregisterRingerModeChangeCallback(OH_AudioVolumeManager *volumeManager, OH_AudioVolumeManager_OnRingerModeChangeCallback callback)
 ```
 
 **描述**
@@ -372,7 +340,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向OH\_AudioVolumeManager用于接收创建的音量管理器实例。 |
+| [OH\_AudioVolumeManager](capi-ohaudio-oh-audiovolumemanager.md) \*volumeManager | 指向通过[OH\_AudioManager\_GetAudioVolumeManager](capi-native-audio-volume-manager-h.md#oh_audiomanager_getaudiovolumemanager)获取的音量管理器实例。 |
 | [OH\_AudioVolumeManager\_OnRingerModeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_onringermodechangecallback) callback | 指向[OH\_AudioVolumeManager\_RegisterRingerModeChangeCallback](capi-native-audio-volume-manager-h.md#oh_audiovolumemanager_registerringermodechangecallback)传入的回调函数，用于取消注册。 |
 
 **返回：**

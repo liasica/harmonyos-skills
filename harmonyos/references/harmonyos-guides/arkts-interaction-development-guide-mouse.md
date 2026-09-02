@@ -3,21 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持鼠标输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持鼠标输入事件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:787a75180a52002d2f92ffefc1406d7156e9c5eac0aa2ef6533ac8fb5d66f803
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1ba0ccac61492de4154db810d7fb78d4d1dcc6f58bc7bff06a8bea2ca46182fb
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/OzNQdli8Qh6C8lbN7yQXOA/zh-cn_image_0000002589244243.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/-YF_dDtlSPmEuYDZsKSIig/zh-cn_image_0000002736312843.png)
 
-鼠标设备是2in1类型设备必不可少的输入设备，其特点是可以通过按键达成点击或滑动操作，也可以通过滚轮触发滑动，另外还有一些按键，这些分别通过MouseEvent及AxisEvent上报给应用。
+鼠标设备是PC/2in1、Tablet类型设备必不可少的输入设备，其特点是可以通过按键达成点击或滑动操作，也可以通过滚轮触发滑动，另外还有一些按键，这些分别通过[MouseEvent](../harmonyos-references/ts-universal-mouse-key.md#mouseevent对象说明)及[AxisEvent](../harmonyos-references/ts-universal-events-axis.md#axisevent)上报给应用。
 
-说明
+**说明** 
 
 所有单指可响应的触摸事件/手势事件，均可通过鼠标左键来操作和响应。
 
-* 例如当我们需要开发单击Button跳转页面的功能、且需要支持手指点击和鼠标左键点击，那么只绑定一个点击事件（onClick）就可以实现该效果；
+* 例如当我们需要开发单击[Button](../harmonyos-references/ts-basic-components-button.md)跳转页面的功能、且需要支持手指点击和鼠标左键点击，那么只绑定一个点击事件（[onClick](../harmonyos-references/ts-universal-events-click.md#onclick)）就可以实现该效果；
 * 若需要针对手指和鼠标左键的点击实现不一样的效果，可以在onClick回调中，使用回调参数中的source字段判断当前触发事件的来源是手指还是鼠标。
+
+此外，对PC/2in1、Tablet类型设备上没有针对鼠标操作适配的应用，系统会提供兜底方案，将鼠标左键的点击和滑动，以及滚轮事件转换为触摸事件。并且对开发者开放了通过配置文件自行控制是否转换事件的能力。
 
 ## 处理鼠标移动
 
@@ -25,70 +27,68 @@ content_hash: sha256:787a75180a52002d2f92ffefc1406d7156e9c5eac0aa2ef6533ac8fb5d6
 
 ### onMouse
 
-```
-1. onMouse(event: (event?: MouseEvent) => void)
+```ts
+onMouse(event: (event?: MouseEvent) => void)
 ```
 
 鼠标事件回调。每当鼠标指针在绑定该API的组件内产生行为（MouseAction）时，触发事件回调，参数为[MouseEvent](../harmonyos-references/ts-universal-mouse-key.md#mouseevent对象说明)对象，表示触发此次的鼠标事件。该事件支持自定义冒泡设置，默认父子冒泡。常用于开发者自定义的鼠标行为逻辑处理。
 
-开发者可以通过回调中的MouseEvent对象获取触发事件的坐标（displayX/displayY/windowX/windowY/x/y）、按键（[MouseButton](../harmonyos-references/ts-appendix-enums.md#mousebutton8)）、行为（[MouseAction](../harmonyos-references/ts-appendix-enums.md#mouseaction8)）、时间戳（[timestamp](../harmonyos-references/ts-gesture-customize-judge.md#baseevent8)）、交互组件的区域（[EventTarget](../harmonyos-references/ts-universal-events-click.md#eventtarget8)）、事件来源（[SourceType](../harmonyos-references/ts-gesture-settings.md#sourcetype枚举说明8)）等。MouseEvent的回调函数stopPropagation用于设置当前事件是否阻止冒泡。
+开发者可以通过回调中的MouseEvent对象获取触发事件的坐标（displayX/displayY/windowX/windowY/x/y）、按键（[MouseButton](../harmonyos-references/ts-appendix-enums.md#mousebutton8)）、行为（[MouseAction](../harmonyos-references/ts-appendix-enums.md#mouseaction8)）、时间戳（[BaseEvent](../harmonyos-references/ts-universal-events-click.md#baseevent8)的timestamp属性）、交互组件的区域（[EventTarget](../harmonyos-references/ts-universal-events-click.md#eventtarget8)）、事件来源（[SourceType](../harmonyos-references/ts-gesture-settings.md#sourcetype枚举说明8)）等。MouseEvent的回调函数stopPropagation用于设置当前事件是否阻止冒泡。
 
-说明
+**说明** 
 
 按键（MouseButton）的值：Left/Right/Middle/Back/Forward均对应鼠标上的实体按键，当这些按键被按下或松开时触发这些按键的事件。None表示没有鼠标按键按下或松开的状态下，仅移动鼠标所触发的事件。
 
-```
-1. @Entry
-2. @Component
-3. struct MouseMove {
-4. @State buttonText: string = '';
-5. @State columnText: string = '';
-6. @State text: string = 'OnMouse Sample Button';
-7. @State color: Color = Color.Gray;
+```typescript
+@Entry
+@Component
+struct MouseMove {
+  @State buttonText: string = '';
+  @State columnText: string = '';
+  @State text: string = 'OnMouse Sample Button';
+  @State color: Color = Color.Gray;
 
-9. build() {
-10. Column() {
-11. Button(this.text, { type: ButtonType.Capsule })
-12. .width(200)
-13. .height(100)
-14. .backgroundColor(this.color)
-15. .onMouse((event?: MouseEvent) => { // 设置Button的onMouse回调
-16. if (event) {
-17. this.buttonText = 'Button onMouse:\n' + '' +
-18. 'button = ' + event.button + '\n' +
-19. 'action = ' + event.action + '\n' +
-20. 'x,y = ' + '\n' + '(' + event.x + ',' + event.y + ')' + '\n' +
-21. 'windowXY=' + '\n' + '(' + event.windowX + ',' + event.windowY + ')';
-22. }
-23. })
-24. Column() {
-25. Divider()
-26. Text(this.buttonText).fontColor(Color.Green).padding(5)
-27. Divider()
-28. Text(this.columnText).fontColor(Color.Red).padding(5)
-29. }
-30. .width('100%')
-31. .alignItems(HorizontalAlign.Start)
-32. }
-33. .width('100%')
-34. .height('100%')
-35. .justifyContent(FlexAlign.Center)
-36. .borderWidth(2)
-37. .borderColor(Color.Red)
-38. .onMouse((event?: MouseEvent) => { // Set the onMouse callback for the column.
-39. if (event) {
-40. this.columnText = 'Column onMouse:\n' + '' +
-41. 'button = ' + event.button + '\n' +
-42. 'action = ' + event.action + '\n' +
-43. 'x,y = ' + '\n' + '(' + event.x + ',' + event.y + ')' + '\n' +
-44. 'windowXY=' + '\n' + '(' + event.windowX + ',' + event.windowY + ')';
-45. }
-46. })
-47. }
-48. }
+  build() {
+    Column() {
+      Button(this.text, { type: ButtonType.Capsule })
+        .width(200)
+        .height(100)
+        .backgroundColor(this.color)
+        .onMouse((event?: MouseEvent) => { // 设置Button的onMouse回调
+          if (event) {
+            this.buttonText = 'Button onMouse:\n' + '' +
+              'button = ' + event.button + '\n' +
+              'action = ' + event.action + '\n' +
+              'x,y = ' + '\n' + '(' + event.x + ',' + event.y + ')' + '\n' +
+              'windowXY=' + '\n' + '(' + event.windowX + ',' + event.windowY + ')';
+          }
+        })
+      Column() {
+        Divider()
+        Text(this.buttonText).fontColor(Color.Green).padding(5)
+        Divider()
+        Text(this.columnText).fontColor(Color.Red).padding(5)
+      }
+      .width('100%')
+      .alignItems(HorizontalAlign.Start)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+    .borderWidth(2)
+    .borderColor(Color.Red)
+    .onMouse((event?: MouseEvent) => { // 设置Column的onMouse回调
+      if (event) {
+        this.columnText = 'Column onMouse:\n' + '' +
+          'button = ' + event.button + '\n' +
+          'action = ' + event.action + '\n' +
+          'x,y = ' + '\n' + '(' + event.x + ',' + event.y + ')' + '\n' +
+          'windowXY=' + '\n' + '(' + event.windowX + ',' + event.windowY + ')';
+      }
+    })
+  }
+}
 ```
-
-[MouseMove.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/mouseMove/MouseMove.ets#L16-L65)
 
 上面的示例中给Button绑定onMouse接口。在回调中，打印出鼠标事件的button/action等回调参数值。同时，在外层的Column容器上，也做相同的设置。整个过程可以分为以下两个动作：
 
@@ -99,65 +99,63 @@ content_hash: sha256:787a75180a52002d2f92ffefc1406d7156e9c5eac0aa2ef6533ac8fb5d6
 
    右键点击时：button = 2（MouseButton.Right的枚举值），按下时：action = 1（MouseAction.Press的枚举值），抬起时：action = 2（MouseAction.Release的枚举值）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/yWtR4aHfQWaBKxMEspqERg/zh-cn_image_0000002558764436.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Q45xZ2DaTGyiYveSfZtW7Q/zh-cn_image_0000002706673800.gif)
 
 如果需要阻止鼠标事件冒泡，可以通过调用stopPropagation方法进行设置。
 
+```typescript
+@Entry
+@Component
+struct StopPropagation {
+  @State buttonText: string = '';
+  @State columnText: string = '';
+  @State text: string = 'OnMouse Sample Button';
+  @State color: Color = Color.Gray;
+
+  build() {
+    Column() {
+      Button(this.text, { type: ButtonType.Capsule })
+        .width(200)
+        .height(100)
+        .backgroundColor(this.color)
+        .onMouse((event?: MouseEvent) => { // 设置Button的onMouse回调
+          if (event) {
+            event.stopPropagation(); // 在Button的onMouse事件中设置阻止冒泡
+            this.buttonText = 'Button onMouse:\n' + '' +
+              'button = ' + event.button + '\n' +
+              'action = ' + event.action + '\n' +
+              'x,y = ' + '\n' + '(' + event.x + ',' + event.y + ')' + '\n' +
+              'windowXY=' + '\n' + '(' + event.windowX + ',' + event.windowY + ')';
+          }
+        })
+      Column() {
+        Divider()
+        Text(this.buttonText).fontColor(Color.Green).padding(5)
+        Divider()
+        Text(this.columnText).fontColor(Color.Red).padding(5)
+      }
+      .width('100%')
+      .alignItems(HorizontalAlign.Start)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+    .borderWidth(2)
+    .borderColor(Color.Red)
+    .onMouse((event?: MouseEvent) => { // 设置Column的onMouse回调
+      if (event) {
+        this.columnText = 'Column onMouse:\n' + '' +
+          'button = ' + event.button + '\n' +
+          'action = ' + event.action + '\n' +
+          'x,y = ' + '\n' + '(' + event.x + ',' + event.y + ')' + '\n' +
+          'windowXY=' + '\n' + '(' + event.windowX + ',' + event.windowY + ')';
+      }
+    })
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct StopPropagation {
-4. @State buttonText: string = '';
-5. @State columnText: string = '';
-6. @State text: string = 'OnMouse Sample Button';
-7. @State color: Color = Color.Gray;
 
-9. build() {
-10. Column() {
-11. Button(this.text, { type: ButtonType.Capsule })
-12. .width(200)
-13. .height(100)
-14. .backgroundColor(this.color)
-15. .onMouse((event?: MouseEvent) => { // 设置Button的onMouse回调
-16. if (event) {
-17. event.stopPropagation(); // 在Button的onMouse事件中设置阻止冒泡
-18. this.buttonText = 'Button onMouse:\n' + '' +
-19. 'button = ' + event.button + '\n' +
-20. 'action = ' + event.action + '\n' +
-21. 'x,y = ' + '\n' + '(' + event.x + ',' + event.y + ')' + '\n' +
-22. 'windowXY=' + '\n' + '(' + event.windowX + ',' + event.windowY + ')';
-23. }
-24. })
-25. Column() {
-26. Divider()
-27. Text(this.buttonText).fontColor(Color.Green).padding(5)
-28. Divider()
-29. Text(this.columnText).fontColor(Color.Red).padding(5)
-30. }
-31. .width('100%')
-32. .alignItems(HorizontalAlign.Start)
-33. }
-34. .width('100%')
-35. .height('100%')
-36. .justifyContent(FlexAlign.Center)
-37. .borderWidth(2)
-38. .borderColor(Color.Red)
-39. .onMouse((event?: MouseEvent) => { // 设置Column的onMouse回调
-40. if (event) {
-41. this.columnText = 'Column onMouse:\n' + '' +
-42. 'button = ' + event.button + '\n' +
-43. 'action = ' + event.action + '\n' +
-44. 'x,y = ' + '\n' + '(' + event.x + ',' + event.y + ')' + '\n' +
-45. 'windowXY=' + '\n' + '(' + event.windowX + ',' + event.windowY + ')';
-46. }
-47. })
-48. }
-49. }
-```
-
-[StopPropagation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/stopPropagation/StopPropagation.ets#L16-L66)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/twm7F2J2SUmahRltq1qF_g/zh-cn_image_0000002558604780.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/lbCY_lKYQKmWnSw1B_Z2sQ/zh-cn_image_0000002736432891.gif)
 
 在子组件（Button）的onMouse中，通过回调参数event调用stopPropagation回调方法（如上）即可阻止Button子组件的鼠标事件冒泡到父组件Column上。
 
@@ -165,203 +163,204 @@ content_hash: sha256:787a75180a52002d2f92ffefc1406d7156e9c5eac0aa2ef6533ac8fb5d6
 
 如果需要感知鼠标移入或移出控件范围，建议直接使用高级事件[onHover](../harmonyos-references/ts-universal-events-hover.md#onhover)，建议避免直接处理鼠标move事件，以保持代码简洁。
 
-```
-1. onHover(event: (isHover: boolean) => void)
+```ts
+onHover(event: (isHover: boolean) => void)
 ```
 
 悬浮事件回调。参数isHover类型为boolean，表示鼠标进入组件或离开组件。该事件支持自定义冒泡设置，默认父子冒泡。
 
 若组件绑定了该接口，当鼠标指针从组件外部进入到该组件的瞬间会触发事件回调，参数isHover等于true；鼠标指针离开组件的瞬间也会触发该事件回调，参数isHover等于false。
 
+```typescript
+@Entry
+@Component
+struct OnHover {
+  @State hoverText: string = 'Not Hover';
+  @State color: Color = Color.Gray;
+
+  build() {
+    Column() {
+      Button(this.hoverText)
+        .width(200).height(100)
+        .backgroundColor(this.color)
+        .onHover((isHover?: boolean) => { // 使用onHover接口监听鼠标是否悬浮在Button组件上
+          if (isHover) {
+            this.hoverText = 'Hovered!';
+            this.color = Color.Green;
+          } else {
+            this.hoverText = 'Not Hover';
+            this.color = Color.Gray;
+          }
+        })
+    }.width('100%').height('100%').justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct OnHover {
-4. @State hoverText: string = 'Not Hover';
-5. @State color: Color = Color.Gray;
 
-7. build() {
-8. Column() {
-9. Button(this.hoverText)
-10. .width(200).height(100)
-11. .backgroundColor(this.color)
-12. .onHover((isHover?: boolean) => { // 使用onHover接口监听鼠标是否悬浮在Button组件上
-13. if (isHover) {
-14. this.hoverText = 'Hovered!';
-15. this.color = Color.Green;
-16. } else {
-17. this.hoverText = 'Not Hover';
-18. this.color = Color.Gray;
-19. }
-20. })
-21. }.width('100%').height('100%').justifyContent(FlexAlign.Center)
-22. }
-23. }
-```
+该示例创建了一个Button组件，初始背景色为灰色，内容为“Not Hover”。示例中的Button组件绑定了onHover回调，在该回调中根据参数isHover更新组件的背景色和文本内容。
 
-[OnHover.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/onHover/OnHover.ets#L16-L40)
-
-该示例创建了一个Button组件，初始背景色为灰色，内容为“Not Hover”。示例中的Button组件绑定了onHover回调，在该回调中将this.isHovered变量置为回调参数：isHover。
-
-当鼠标从Button外移动到Button内的瞬间，回调响应，isHover值等于true，isHovered的值变为true，将组件的背景色改成Color.Green，内容变为“Hovered!”。
+当鼠标从Button外移动到Button内的瞬间，回调响应，isHover值等于true，将组件的背景色改成Color.Green，内容变为“Hovered!”。
 
 当鼠标从Button内移动到Button外的瞬间，回调响应，isHover值等于false，又将组件变成了初始的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/abXr3GgKR6iYT4XzHNVg7Q/zh-cn_image_0000002589324305.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/gPSmz_-oRBylATDLxs-7kQ/zh-cn_image_0000002706833736.gif)
 
 ## 处理鼠标按键
 
-当用户按下鼠标上的按键时，会产生鼠标按下事件，可以通过[MouseEvent](../harmonyos-references/ts-universal-mouse-key.md#mouseevent对象说明)访问事件的一些重要信息，如发生时间，鼠标按键(MouseButton: 左键/右键等)，也可以通过[**getModifierKeyState**](../harmonyos-references/ts-gesture-customize-judge.md#getmodifierkeystate12)接口获取到用户在使用鼠标时，物理键盘上的**ctrl/alt/shift**这几个修饰键的按下状态，可以通过组合判断它们的状态来实现一些便捷操作。
+当用户按下鼠标上的按键时，会产生鼠标按下事件，可以通过[MouseEvent](../harmonyos-references/ts-universal-mouse-key.md#mouseevent对象说明)访问事件的一些重要信息，如发生时间，鼠标按键（MouseButton：左键/右键等），也可以通过[getModifierKeyState](../harmonyos-references/ts-universal-events-click.md#getmodifierkeystate12)接口获取到用户在使用鼠标时，物理键盘上的**ctrl/alt/shift**这几个修饰键的按下状态，可以通过组合判断它们的状态来实现一些便捷操作。
 
 以下是一个通过处理鼠标按键实现快速多选的示例：
 
+```typescript
+class ListDataSource implements IDataSource {
+  private list: number[] = [];
+  private listeners: DataChangeListener[] = [];
+
+  constructor(list: number[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): number {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      this.listeners.push(listener);
+    }
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      this.listeners.splice(pos, 1);
+    }
+  }
+
+  // 通知控制器数据删除
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+    });
+  }
+
+  // 在指定索引位置删除一个元素
+  public deleteItem(index: number): void {
+    this.list.splice(index, 1);
+    this.notifyDataDelete(index);
+  }
+}
+
+@Entry
+@Component
+struct ListExample {
+  private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  private allSelectedItems: Array<number> = [];
+  @State isSelected: boolean[] = [];
+
+  @Styles
+  selectedStyle(): void {
+    .backgroundColor(Color.Blue);
+  }
+
+  isItemSelected(item: number): boolean {
+    for (let i = 0; i < this.allSelectedItems.length; i++) {
+      if (this.allSelectedItems[i] === item) {
+        this.isSelected[item] = true;
+        return true;
+      }
+    }
+    this.isSelected[item] = false;
+    return false;
+  }
+
+  build() {
+    Column() {
+      List({ space: 10, initialIndex: 0 }) {
+        LazyForEach(this.arr, (index: number) => {
+          ListItem() {
+            Text('' + index)
+              .width('100%')
+              .height(100)
+              .fontSize(16)
+              .fontColor(this.isSelected[index] ? Color.White : Color.Black)
+              .textAlign(TextAlign.Center)
+          }
+          .backgroundColor(Color.White)
+          .selectable(true)
+          .selected(this.isSelected[index])
+          .stateStyles({
+            selected: this.selectedStyle
+          })
+          .onMouse((event: MouseEvent) => {
+            // 判断是否按下鼠标左键
+            if (event.button === MouseButton.Left && event.action === MouseAction.Press) {
+              // 判断之前是否已经是选中状态
+              let isSelected: boolean = this.isItemSelected(index);
+              // 判断修饰键状态
+              let isCtrlPressing: boolean = false;
+              if (event.getModifierKeyState) {
+                try {
+                  isCtrlPressing = event.getModifierKeyState(['Ctrl']);
+                } catch (error) {
+                  console.error('Get modifier key state failed!')
+                }
+              }
+              // 如果没有按着ctrl键点鼠标，则强制清理掉其他选中的条目并只让当前条目选中
+              if (!isCtrlPressing) {
+                this.allSelectedItems = [];
+                for (let i = 0; i < this.isSelected.length; i++) {
+                  this.isSelected[i] = false;
+                }
+              }
+              if (isSelected) {
+                this.allSelectedItems = this.allSelectedItems.filter(item => item !== index);
+                this.isSelected[index] = false;
+              } else {
+                this.allSelectedItems.push(index);
+                this.isSelected[index] = true;
+              }
+            }
+          })
+        }, (item: string) => item)
+      }
+      .listDirection(Axis.Vertical)
+      .scrollBar(BarState.Off)
+      .friction(0.6)
+      .edgeEffect(EdgeEffect.Spring)
+      .width('90%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xDCDCDC)
+    .padding({ top: 5 })
+  }
+}
 ```
-1. class ListDataSource implements IDataSource {
-2. private list: number[] = [];
-3. private listeners: DataChangeListener[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
-
-9. totalCount(): number {
-10. return this.list.length;
-11. }
-
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
-
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. if (this.listeners.indexOf(listener) < 0) {
-19. this.listeners.push(listener);
-20. }
-21. }
-
-23. unregisterDataChangeListener(listener: DataChangeListener): void {
-24. const pos = this.listeners.indexOf(listener);
-25. if (pos >= 0) {
-26. this.listeners.splice(pos, 1);
-27. }
-28. }
-
-30. // 通知控制器数据删除
-31. notifyDataDelete(index: number): void {
-32. this.listeners.forEach(listener => {
-33. listener.onDataDelete(index);
-34. });
-35. }
-
-37. // 在指定索引位置删除一个元素
-38. public deleteItem(index: number): void {
-39. this.list.splice(index, 1);
-40. this.notifyDataDelete(index);
-41. }
-42. }
-
-44. @Entry
-45. @Component
-46. struct ListExample {
-47. private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-48. private allSelectedItems: Array<number> = [];
-49. @State isSelected: boolean[] = [];
-
-51. @Styles
-52. selectedStyle(): void {
-53. .backgroundColor(Color.Blue);
-54. }
-
-56. isItemSelected(item: number): boolean {
-57. for (let i = 0; i < this.allSelectedItems.length; i++) {
-58. if (this.allSelectedItems[i] === item) {
-59. this.isSelected[item] = true;
-60. return true;
-61. }
-62. }
-63. this.isSelected[item] = false;
-64. return false;
-65. }
-
-67. build() {
-68. Column() {
-69. List({ space: 10, initialIndex: 0 }) {
-70. LazyForEach(this.arr, (index: number) => {
-71. ListItem() {
-72. Text('' + index)
-73. .width('100%')
-74. .height(100)
-75. .fontSize(16)
-76. .fontColor(this.isSelected[index] ? Color.White : Color.Black)
-77. .textAlign(TextAlign.Center)
-78. }
-79. .backgroundColor(Color.White)
-80. .selectable(true)
-81. .selected(this.isSelected[index])
-82. .stateStyles({
-83. selected: this.selectedStyle
-84. })
-85. .onMouse((event: MouseEvent) => {
-86. // 判断是否按下鼠标左键
-87. if (event.button === MouseButton.Left && event.action === MouseAction.Press) {
-88. // 判断之前是否已经是选中状态
-89. let isSelected: boolean = this.isItemSelected(index);
-90. // 判断修饰键状态
-91. let isCtrlPressing: boolean = false;
-92. if (event.getModifierKeyState) {
-93. isCtrlPressing = event.getModifierKeyState(['Ctrl']);
-94. }
-95. // 如果没有按着ctrl键点鼠标，则强制清理掉其他选中的条目并只让当前条目选中
-96. if (!isCtrlPressing) {
-97. this.allSelectedItems = [];
-98. for (let i = 0; i < this.isSelected.length; i++) {
-99. this.isSelected[i] = false;
-100. }
-101. }
-102. if (isSelected) {
-103. this.allSelectedItems.filter(item => item !== index);
-104. this.isSelected[index] = false;
-105. } else {
-106. this.allSelectedItems.push(index);
-107. this.isSelected[index] = true;
-108. }
-109. }
-110. })
-111. }, (item: string) => item)
-112. }
-113. .listDirection(Axis.Vertical)
-114. .scrollBar(BarState.Off)
-115. .friction(0.6)
-116. .edgeEffect(EdgeEffect.Spring)
-117. .width('90%')
-118. }
-119. .width('100%')
-120. .height('100%')
-121. .backgroundColor(0xDCDCDC)
-122. .padding({ top: 5 })
-123. }
-124. }
-```
-
-[MouseButton.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/MouseButton/MouseButton.ets#L16-L142)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/bWp-8Z-dSva-dL6Irm76TQ/zh-cn_image_0000002589244245.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/dMxi9UAKQzCrQXNnEdQ8xw/zh-cn_image_0000002736312845.gif)
 
 ## 处理滚轮
 
-鼠标的滚轮是一种可以产生纵向滚动量的输入设备，当用户滚动鼠标滚轮时，系统会产生纵向[轴事件](../harmonyos-references/ts-universal-events-axis.md)上报，应用可在组件上通过[onAxisEvent](../harmonyos-references/ts-universal-events-axis.md#onaxisevent)接口接收轴事件，轴事件中上报的坐标，为鼠标光标所在的位置，而滚轮上报的角度变化可从[BaseEvent](../harmonyos-references/ts-gesture-customize-judge.md#baseevent8)的axisVertical获得。
+鼠标的滚轮是一种可以产生纵向滚动量的输入设备，当用户滚动鼠标滚轮时，系统会产生纵向[轴事件](../harmonyos-references/ts-universal-events-axis.md)上报，应用可在组件上通过[onAxisEvent](../harmonyos-references/ts-universal-events-axis.md#onaxisevent)接口接收轴事件，轴事件中上报的坐标，为鼠标光标所在的位置，而滚轮上报的角度变化可从[BaseEvent](../harmonyos-references/ts-universal-events-click.md#baseevent8)的axisVertical获得。
 
-鼠标滚轮轴事件的上报，每次都以[AxisAction](../harmonyos-references/ts-appendix-enums.md#axisaction17).BEGIN类型开始，当停止滚动时以[AxisAction](../harmonyos-references/ts-appendix-enums.md#axisaction17).End结束，慢速滚动时，会产生多段的BEGIN、END上报。当你处理axisVertical时，应确保理解它的数值含义与单位，其有以下特点：
+鼠标滚轮轴事件的上报，每次都以[AxisAction](../harmonyos-references/ts-appendix-enums.md#axisaction17).BEGIN类型开始，当停止滚动时以[AxisAction](../harmonyos-references/ts-appendix-enums.md#axisaction17).END结束，慢速滚动时，会产生多段的BEGIN、END上报。当你处理axisVertical时，应确保理解它的数值含义与单位，其有以下特点：
 
 * 上报的数值单位为角度，为单次变化量，非总量。
 * 上报数值大小受系统设置中对滚轮放大倍数设置的影响。
-* 系统设置中的放大倍数通过AxisEvent中的scrollStep告知。
+* 系统设置中的放大倍数通过[AxisEvent](../harmonyos-references/ts-universal-events-axis.md#axisevent)中的scrollStep告知。
 * 向前滚动，上报数值为负，向后滚动，上报数值为正。
 
 如果使用滚动类组件，对于滚轮的响应，系统内部已实现，不需要额外处理。
 
 如果使用[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)，对于滚轮的响应，此时向前滚动，offsetY的上报数值为正，向后滚动，offsetY的上报数值为负。
 
-说明
+**说明** 
 
 1. 滚轮产生的纵向轴值，一般情况下只能触发纵向滚动手势，无法触发横向滚动。
 2. 系统会在发现鼠标指针下只有能够响应横向滚动的组件时，也可以触发横向滚动。
@@ -369,127 +368,196 @@ content_hash: sha256:787a75180a52002d2f92ffefc1406d7156e9c5eac0aa2ef6533ac8fb5d6
 
 以下是纵向和横向的List响应滚轮的示例：
 
-```
-1. export class ListDataSource implements IDataSource {
-2. private list: number[] = [];
-3. private listeners: DataChangeListener[] = [];
+```typescript
+export class ListDataSource implements IDataSource {
+  private list: number[] = [];
+  private listeners: DataChangeListener[] = [];
 
-5. constructor(list: number[]) {
-6. this.list = list;
-7. }
+  constructor(list: number[]) {
+    this.list = list;
+  }
 
-9. totalCount(): number {
-10. return this.list.length;
-11. }
+  totalCount(): number {
+    return this.list.length;
+  }
 
-13. getData(index: number): number {
-14. return this.list[index];
-15. }
+  getData(index: number): number {
+    return this.list[index];
+  }
 
-17. registerDataChangeListener(listener: DataChangeListener): void {
-18. if (this.listeners.indexOf(listener) < 0) {
-19. this.listeners.push(listener);
-20. }
-21. }
+  registerDataChangeListener(listener: DataChangeListener): void {
+    if (this.listeners.indexOf(listener) < 0) {
+      this.listeners.push(listener);
+    }
+  }
 
-23. unregisterDataChangeListener(listener: DataChangeListener): void {
-24. const pos = this.listeners.indexOf(listener);
-25. if (pos >= 0) {
-26. this.listeners.splice(pos, 1);
-27. }
-28. }
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+    const pos = this.listeners.indexOf(listener);
+    if (pos >= 0) {
+      this.listeners.splice(pos, 1);
+    }
+  }
 
-30. // 通知控制器数据删除
-31. notifyDataDelete(index: number): void {
-32. this.listeners.forEach(listener => {
-33. listener.onDataDelete(index);
-34. });
-35. }
+  // 通知控制器数据删除
+  notifyDataDelete(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataDelete(index);
+    });
+  }
 
-37. // 通知控制器添加数据
-38. notifyDataAdd(index: number): void {
-39. this.listeners.forEach(listener => {
-40. listener.onDataAdd(index);
-41. });
-42. }
+  // 通知控制器添加数据
+  notifyDataAdd(index: number): void {
+    this.listeners.forEach(listener => {
+      listener.onDataAdd(index);
+    });
+  }
 
-44. // 在指定索引位置删除一个元素
-45. public deleteItem(index: number): void {
-46. this.list.splice(index, 1);
-47. this.notifyDataDelete(index);
-48. }
+  // 在指定索引位置删除一个元素
+  public deleteItem(index: number): void {
+    this.list.splice(index, 1);
+    this.notifyDataDelete(index);
+  }
 
-50. // 在指定索引位置插入一个元素
-51. public insertItem(index: number, data: number): void {
-52. this.list.splice(index, 0, data);
-53. this.notifyDataAdd(index);
-54. }
-55. }
-```
-
-[ListDataSource.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/MouseWheel/ListDataSource.ets#L16-L72)
-
-```
-1. import { ListDataSource } from './ListDataSource';
-
-3. @Entry
-4. @Component
-5. struct MouseWheel {
-6. private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-7. @State dir1: Axis = Axis.Vertical;
-
-9. build() {
-10. Column() {
-11. Button('Click to Change ListDirection')
-12. .margin(20)
-13. .onClick(() => {
-14. if (this.dir1 === Axis.Vertical) {
-15. this.dir1 = Axis.Horizontal
-16. } else {
-17. this.dir1 = Axis.Vertical
-18. }
-19. })
-20. List({ space: 20, initialIndex: 0 }) {
-21. LazyForEach(this.arr, (item: number) => {
-22. ListItem() {
-23. Text('' + item)
-24. .width('100%')
-25. .height(100)
-26. .fontSize(16)
-27. .textAlign(TextAlign.Center)
-28. .borderRadius(10)
-29. .backgroundColor(0xFFFFFF)
-30. }
-31. .margin(20)
-32. // 为ListItem绑定滑动手势，当在ListItem上滚动鼠标滚轮时，会优先触发ListItem的滑动手势
-33. .gesture(PanGesture({ direction: PanDirection.Vertical })
-34. .onActionStart(() => {
-35. })
-36. .onActionUpdate(() => {
-37. }))
-38. }, (item: number) => item.toString())
-39. }
-40. .borderWidth(1)
-41. .listDirection(this.dir1) // 排列方向
-42. .scrollBar(BarState.Off)
-43. .friction(0.6)
-44. .divider({
-45. strokeWidth: 2,
-46. color: 0xFFFFFF,
-47. startMargin: 20,
-48. endMargin: 20
-49. }) // 每行之间的分界线
-50. .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
-51. .width('90%')
-52. }
-53. .width('100%')
-54. .height('100%')
-55. .backgroundColor(0xDCDCDC)
-56. .padding(20)
-57. }
-58. }
+  // 在指定索引位置插入一个元素
+  public insertItem(index: number, data: number): void {
+    this.list.splice(index, 0, data);
+    this.notifyDataAdd(index);
+  }
+}
 ```
 
-[MouseWheel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/InterAction/entry/src/main/ets/pages/MouseWheel/MouseWheel.ets#L16-L75)
+```typescript
+import { ListDataSource } from './ListDataSource';
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/h45KTAuVTiC33bJGvZXXMA/zh-cn_image_0000002558764438.gif)
+@Entry
+@Component
+struct MouseWheel {
+  private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  @State dir1: Axis = Axis.Vertical;
+
+  build() {
+    Column() {
+      Button('Click to Change ListDirection')
+        .margin(20)
+        .onClick(() => {
+          if (this.dir1 === Axis.Vertical) {
+            this.dir1 = Axis.Horizontal;
+          } else {
+            this.dir1 = Axis.Vertical;
+          }
+        })
+      List({ space: 20, initialIndex: 0 }) {
+        LazyForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text('' + item)
+              .width('100%')
+              .height(100)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .borderRadius(10)
+              .backgroundColor(0xFFFFFF)
+          }
+          .margin(20)
+          // 为ListItem绑定滑动手势，当在ListItem上滚动鼠标滚轮时，会优先触发ListItem的滑动手势
+          .gesture(PanGesture({ direction: PanDirection.Vertical })
+            .onActionStart(() => {
+            })
+            .onActionUpdate(() => {
+            }))
+        }, (item: number) => item.toString())
+      }
+      .borderWidth(1)
+      .listDirection(this.dir1) // 排列方向
+      .scrollBar(BarState.Off)
+      .friction(0.6)
+      .divider({
+        strokeWidth: 2,
+        color: 0xFFFFFF,
+        startMargin: 20,
+        endMargin: 20
+      }) // 每行之间的分界线
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
+      .width('90%')
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xDCDCDC)
+    .padding(20)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/81HJKu0bSnCpovBJnut3Iw/zh-cn_image_0000002706673802.gif)
+
+## 鼠标事件转换
+
+如果开发者在开发应用时，只考虑实现了触控操作场景，没有针对PC/2in1、Tablet设备使用鼠标操作的场景做适配，会导致出现应用在使用鼠标操作时发生实际行为与预期不一致、甚至无法操作的情况。针对该场景，系统提供兜底方案，会默认将鼠标左键事件、轴事件转换成触摸事件发送给应用，从而达到类似手机上的操作体验。
+
+此外，如果开发者期望控制上述转换行为，系统开放了自定义配置能力，开发者可以通过在应用中新增配置文件的方式来控制是否将鼠标事件转换成触摸事件。
+
+### 开发步骤
+
+**1. 增加配置文件**
+
+在应用的entry/src/main/resources/base/profile目录下创建配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5](module-configuration-file.md)配置文件中添加easyGo字段，并指向引用的easy\_go.json配置文件。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/RvuNpMBhQ92A7MOaAe7mcA/zh-cn_image_0000002736432893.png)
+
+**2. 增加事件转换配置**
+
+在easy\_go.json配置文件中，配置事件转换的相关属性。
+
+### 配置内容说明
+
+easy\_go.json是一个标准的Object类型JSON文件，整体结构分为两层。第一层配置设备类型；第二层配置对应设备类型下的鼠标事件转换模式。
+
+**1. 设备类型**
+
+第一层配置，设置鼠标事件转换在不同设备类型下的表现。
+
+```json
+{
+  "common": {},
+  "phone": {},
+  "2in1": {},
+  "tablet": {}
+}
+```
+
+| 枚举值 | 说明 | 可选 |
+| --- | --- | --- |
+| common | 通用设备配置，为所有设备类型提供基础默认配置。 | 否 |
+| phone | Phone类型设备上生效的配置，配置后common配置在Phone类型设备上不再生效。 | 是 |
+| 2in1 | PC/2in1类型设备上生效的配置，配置后common配置在PC/2in1类型设备上不再生效。 | 是 |
+| tablet | Tablet类型设备上生效的配置，配置后common配置在Tablet类型设备上不再生效。 | 是 |
+
+**2. 多模态输入选项**
+
+第二层配置multiModalInputOptions字段，设置事件输入选项。内部字段说明如下：
+
+| 字段名 | 说明 | 可选 |
+| --- | --- | --- |
+| mouse2TouchEventMode | 配置鼠标事件转触摸事件模式。 | 是 |
+
+mouse2TouchEventMode可配置字段说明：
+
+| 枚举值 | 说明 |
+| --- | --- |
+| all | 表示鼠标事件全部都转换成触摸事件。 |
+| xcomponentAndWebOnly | 表示鼠标事件在XComponent和Web组件里需要转换成触摸事件。 |
+| disabled | 表示鼠标事件全部都不转换成触摸事件。 |
+
+**3. 配置示例**
+
+在PC/2in1设备上，配置为鼠标事件不转换成触摸事件，示例如下：
+
+```json
+{
+  "common": {},
+  "2in1": {
+    "multiModalInputOptions": {
+      "mouse2TouchEventMode": "disabled"
+    }
+  }
+}
+```

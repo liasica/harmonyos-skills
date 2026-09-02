@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-impo
 title: 密钥导入介绍及算法规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 密钥导入介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecdeb089f
+scraped_at: 2026-09-02T14:59:31+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:e6bfcbafda11eabb6611a55752546eaa02d34c81beb360996f2703b92756f34e
 ---
 
 如果业务在HUKS外部生成密钥（比如应用间协商生成、服务器端生成），业务可以将密钥导入到HUKS中由HUKS进行管理。密钥一旦导入到HUKS中，在密钥的生命周期内，其明文仅在安全环境中进行访问操作，不会传递出安全环境。
 
 密钥导入的方式包含明文导入和安全导入两种方式。
 
-说明
+**说明** 
 
 使用现有密钥别名作为导入的密钥别名会把现有密钥覆盖。
 
@@ -25,7 +25,7 @@ content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecde
 * 推荐使用该方式导入的密钥类型：非对称密钥的公钥。
 * 不推荐使用该方式导入的密钥类型：对称密钥、非对称密钥对。
 
-  说明
+  **说明** 
 
   轻量级智能穿戴只支持明文导入，不支持安全导入。
 
@@ -37,7 +37,7 @@ content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecde
 
 下图为安全导入密钥开发时序图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/aUXf7evQSEaIMbqlmAsuww/zh-cn_image_0000002558764910.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/qFuR1sf4SMaL5SqZr_zYPg/zh-cn_image_0000002706834316.png)
 
 根据开发流程，在安全导入密钥过程中，需要依次调用HUKS的能力包括：
 
@@ -49,7 +49,7 @@ content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecde
 
 导出密钥接口返回的[公钥明文材料是按照**X.509**格式封装](huks-concepts.md#公钥材料格式)，导入加密密钥接口中的密钥材料需满足**LengthData-Data**的格式封装，形如：[(Lengthpart1Datapart1)……(LengthpartnDatapartn)]。
 
-说明
+**说明** 
 
 1. 安全导入密钥时，协商算法支持ECDH和X25519，协商后的Shared\_Key使用AES-GCM算法加密Caller\_Kek。对应算法套件定义见[HuksUnwrapSuite](../harmonyos-references/js-apis-huks.md#huksunwrapsuite9)。
 2. 安全导入不支持X.509格式。
@@ -90,7 +90,7 @@ content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecde
 
 下图为数字信封导入密钥开发时序图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/VF-JEuvIRPuL8KzwGVx2_A/zh-cn_image_0000002558605254.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/XsQGlmRATwm4uY-RJyca7g/zh-cn_image_0000002736313425.png)
 
 根据业务流程，导入数字信封时需要调用HUKS的能力。
 
@@ -102,7 +102,7 @@ content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecde
 
 导出密钥接口返回的[公钥材料格式](huks-concepts.md#公钥材料格式)按照X.509格式封装，导入加密密钥接口返回的密钥材料按照**LengthData-Data**的格式封装，分别是[(LengthEncSm4DataEncSm4)(LengthEncImpKeyDataEncImpKey)]。
 
-说明
+**说明** 
 
 仅手机、平板、PC/2in1设备、TV、智能穿戴支持数字信封导入。
 
@@ -110,11 +110,16 @@ content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecde
 
 以下为密钥导入支持的规格说明。
 
-说明
+**说明** 
 
 导入RSA密钥时，公钥必须大于或者等于65537。
 
 数字信封不支持 DSA 算法，X25519密钥和Ed25519密钥，在使用数字信封导入密钥时公钥采用裸密钥的方式在该标签中填入。
+
+若对端设备非HarmonyOS设备且不支持密钥管理服务，则在构造数字信封数据时需遵循以下要求：
+
+* SM2加密结果组合方式为C1C3C2，其中C1x和C1y各32字节；
+* SM2加密结果采用ASN.1格式，其中bigint采用大端的方式存储；
 
 **手机、平板、PC/2in1设备、TV、智能穿戴规格**
 
@@ -132,6 +137,7 @@ content_hash: sha256:238efea121e0cf0435e2a0c0c5c3f6a08473123cffdb39c875f7790ecde
 | SM4 | 128 | 9+ |
 | DES | 64 | 18+ |
 | 3DES | 128、192 | 18+ |
+| ML-DSA | 安全参数集支持44、65、87 | 26.0.0+ |
 
 **轻量级智能穿戴规格**
 
@@ -153,4 +159,4 @@ HUKS支持导入密钥类型众多，各种不同类型对应的密钥格式不�
 | 对称密钥 | - | 密钥字节数据 |
 | 非对称密钥-密钥对 | - | [密钥对材料格式](huks-concepts.md#密钥对材料格式) |
 | 非对称密钥-公钥 | ED25519、X25519 | 密钥字节数据，参考[导入X25519密钥公钥](huks-import-key-in-plaintext-arkts.md#导入x25519密钥公钥) |
-| 非对称密钥-公钥 | RSA、ECC、ECDH、DH、SM2 | X.509规范的DER格式 |
+| 非对称密钥-公钥 | RSA、ECC、ECDH、DH、SM2、ML-DSA | X.509规范的DER格式 |

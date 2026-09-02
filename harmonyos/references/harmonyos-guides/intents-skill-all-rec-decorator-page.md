@@ -3,73 +3,85 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 基于Page的装饰器方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 基于Page的装饰器方案
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:449e59fb0cf92f53123e5413e1c5fad42ef69082733575029932c11392dbcf0a
+scraped_at: 2026-09-02T14:50:44+08:00
+doc_updated_at: 2026-05-26
+content_hash: sha256:254d6617632da7ced80421676a38afa2c58a91329a1e8a24c128b9ec87b7713f
 ---
 
-开发者使用@InsightIntentPage装饰器进行基于Page的意图声明，可快速将已有的Page页面接入意图框架，以购买电影票的意图为例，详细说明如下：
+## 概述
+
+开发者使用@InsightIntentPage装饰器进行基于Page的意图声明，可快速将已有的Navigation页面接入意图框架，实现功能页面的拉起。
+
+## 约束说明
+
+* 仅支持Navigation页面架构跳转。
+* 该跳转不能有自定义上下文依赖，比如必须打开前置页面才能跳转，开发者需要进行验证，确认兜底策略。
+* 跳转页面时，默认使用Navigation页面栈进行push，如果开发者需要实现其他跳转逻辑，则需要自行适配。
+
+## 开发示例
+
+以购买电影票的意图为例，详细说明如下：
 
 1. 装饰器添加位置：基于Page的装饰器需要添加在Entry页面组件上，建议在目标页面中进行声明。
 
-   ```
-   1. import { InsightIntentPage } from "@kit.AbilityKit";
+   ```typescript
+   import { InsightIntentPage } from '@kit.AbilityKit';
 
-   3. @Builder
-   4. export function PurchaseMovieTicketsIntentPageBuilder(pageName: string, param: object) {
-   5. PurchaseMovieTicketsIntentPage({ param: param });
-   6. }
+   @Builder
+   export function purchaseMovieTicketsIntentPageBuilder(pageName: string, param: object) {
+     PurchaseMovieTicketsIntentPage({ param: param });
+   }
 
-   8. @InsightIntentPage({
-   9. intentName: 'PurchaseMovieTickets',
-   10. domain: 'PurchaseTickets',
-   11. intentVersion: '1.0.1',
-   12. displayName: '购买电影票',
-   13. llmDescription: '用于在线购买电影票，允许用户选择指定影院、电影和场次时间进行购票。在用户明确表达购票需求，且已提供所有必要信息（cinema, film, time）时使用。如果信息不全或者用户只是查询电影信息、放映时间或票价，不应调用此工具。',
-   14. uiAbility: 'EntryAbility',
-   15. pagePath: './ets/pages/MainPage',
-   16. navDestinationName: 'PurchaseMovieTicketsIntentPage',
-   17. parameters: {
-   18. "type": "object",
-   19. "properties": {
-   20. "cinema": {
-   21. "type": "string",
-   22. "description": "目标影院名称，仅支持平台合作的影院"
-   23. },
-   24. "film": {
-   25. "type": "string",
-   26. "description": "目标电影名称，需为当前上映或即将上映且在影院排片列表中的电影"
-   27. },
-   28. "time": {
-   29. "type": "string",
-   30. "description": "放映时间，必须为未来的场次，且需为影院当天有效排片时间；时间格式应为'YYYY-MM-DD HH:MM'（例如'2025-07-01 19:30'）"
-   31. }
-   32. },
-   33. "required": ["cinema", "film", "time"]
-   34. }
-   35. })
-   36. @Entry
-   37. @Component
-   38. struct PurchaseMovieTicketsIntentPage {
-   39. param: object = new Object();
-   40. cinema: string = '';
-   41. film: string = '';
-   42. time: string = '';
-   43. aboutToAppear(): void {
-   44. this.cinema= this.param?.['cinema'];
-   45. this.film = this.param?.['film'];
-   46. this.time = this.param?.['time'];
-   47. }
-   48. build() {
-   49. NavDestination(){
-   50. Text(`${this.cinema} ${this.film} ${this.time}`)
-   51. .fontSize(30)
-   52. .fontWeight(FontWeight.Bolder)
-   53. }
-   54. .title('IntentPage')
-   55. .width('100%')
-   56. }
-   57. }
+   @InsightIntentPage({
+     intentName: 'PurchaseMovieTickets',
+     domain: 'PurchaseTickets',
+     intentVersion: '1.0.1',
+     displayName: '购买电影票',
+     llmDescription: '用于在线购买电影票，允许用户选择指定影院、电影和场次时间进行购票。在用户明确表达购票需求，且已提供所有必要信息（cinema, film, time）时使用。如果信息不全或者用户只是查询电影信息、放映时间或票价，不应调用此工具。',
+     uiAbility: 'EntryAbility',
+     pagePath: './ets/pages/MainPage',
+     navDestinationName: 'PurchaseMovieTicketsIntentPage',
+     parameters: {
+       'type': 'object',
+       'properties': {
+         'cinema': {
+           'type': 'string',
+           'description': '目标影院名称，仅支持平台合作的影院'
+         },
+         'film': {
+           'type': 'string',
+           'description': '目标电影名称，需为当前上映或即将上映且在影院排片列表中的电影'
+         },
+         'time': {
+           'type': 'string',
+           'description': '放映时间，必须为未来的场次，且需为影院当天有效排片时间；时间格式应为\'YYYY-MM-DD HH:MM\'（例如\'2025-07-01 19:30\'）'
+         }
+       },
+       'required': ['cinema', 'film', 'time']
+     }
+   })
+   @Entry
+   @Component
+   struct PurchaseMovieTicketsIntentPage {
+     param: object = new Object();
+     cinema: string = '';
+     film: string = '';
+     time: string = '';
+     aboutToAppear(): void {
+       this.cinema = this.param?.['cinema'];
+       this.film = this.param?.['film'];
+       this.time = this.param?.['time'];
+     }
+     build() {
+       NavDestination(){
+         Text(`${this.cinema} ${this.film} ${this.time}`)
+           .fontSize(30)
+           .fontWeight(FontWeight.Bolder)
+       }
+       .title('IntentPage')
+       .width('100%')
+     }
+   }
    ```
 2. 装饰器的字段说明以及示例：@InsightIntentPage字段以及具体说明如下。
 
@@ -90,30 +102,25 @@ content_hash: sha256:449e59fb0cf92f53123e5413e1c5fad42ef69082733575029932c11392d
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ARSHp_HsQnus3WCUwrhHRw/zh-cn_image_0000002583439369.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/0BqNwv9tREynnfKrRd3hVQ/zh-cn_image_0000002706675454.png)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/QnFN8oAHR--EZds4FjvX4w/zh-cn_image_0000002552959324.png)
-   3. 在选中的代码块上右键CodeGenie > Insight Intent > 选择适合的装饰器。
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/WlHsq-wsRpi0vId1Foe4RQ/zh-cn_image_0000002736434541.png)
+   3. 在选中的代码块上右键CodeGenie > Insight Intent，选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/ZNi-3uCtSAaR_EpusagWVg/zh-cn_image_0000002583479325.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/gy_sRk6kSMaFHHOP2_pSmA/zh-cn_image_0000002706835394.png)
    4. 在DevEco CodeGenie对话框中对意图定义，功能，参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/NK6d3cLvQ3CH74KwRiuQ3A/zh-cn_image_0000002552799676.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/9JAxfopzQYCdab49RpRP8g/zh-cn_image_0000002736314499.png)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/5Ut3sgFUTcWVL6Y1IsJxlg/zh-cn_image_0000002583439371.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/l-ZSWQsRQjOEzHH1k3bkVQ/zh-cn_image_0000002706675456.png)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
       插入前：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kMvNx4jLQty7x4LQr6QVAA/zh-cn_image_0000002552959326.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/YnBYv_hPSQCpNTPu1PgoWw/zh-cn_image_0000002736434543.png)
 
       插入后：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/R-h4hd3VRH-Q1Iqf_tkvFw/zh-cn_image_0000002583479327.png)
-4. 装饰器的使用约束和说明：
-
-   * 仅支持Navigation页面架构跳转。
-   * 该跳转不能有自定义上下文依赖，比如必须打开前置页面才能跳转，开发者需要进行验证，确认兜底策略。
-   * 跳转页面时，默认使用Navigation页面栈进行push，如果开发者需要实现其他跳转逻辑，则需要自行适配。
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/ITdzw0mnQ-qP20ZA99F8vQ/zh-cn_image_0000002706835396.png)

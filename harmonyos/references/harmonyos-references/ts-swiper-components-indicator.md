@@ -3,36 +3,31 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-swiper
 title: Indicator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > Indicator
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:90cb9003b0a50c5dac06c7084dd9dc3f6b2b70b64049cd85273a995f484b67d6
+scraped_at: 2026-09-02T15:00:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8ddf9b2c1717717006cf6b06d61540adbb65234d1524d06a8fd4025ea453d421
 ---
 
 导航点组件，提供圆点导航点以及数字导航点两种导航点样式。
 
-将原[Swiper](ts-container-swiper.md)组件中的[indicator](ts-container-swiper.md#indicator)已有的能力作为一个单独组件提供给开发者使用。开发者可以不依赖Swiper组件单独显示导航点，也可以通过IndicatorComponentController与Swiper组件绑定使用。
+将原[Swiper](ts-container-swiper.md)组件中的[indicator](ts-container-swiper.md#indicator)已有的能力作为一个单独组件提供给开发者使用。开发者可以不依赖Swiper组件单独显示导航点，也可以通过[IndicatorComponentController](ts-swiper-components-indicator.md#indicatorcomponentcontroller)与Swiper组件绑定使用。
 
 当多个导航点组件和同一个Swiper绑定时，只有最后一个导航点组件能成功和Swiper绑定。
 
 当一个导航点组件和多个Swiper绑定时，只有最后一个Swiper能成功和导航点组件绑定。
 
-说明
+**说明** 
 
-该组件从API version 15开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 该组件从API version 15开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 不包含子组件。
 
 ## 接口
 
-PhonePC/2in1TabletTVWearable
-
 ### IndicatorComponent
-
-PhonePC/2in1TabletTVWearable
 
 IndicatorComponent(controller?: IndicatorComponentController)
 
@@ -52,13 +47,9 @@ IndicatorComponent(controller?: IndicatorComponentController)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性。
 
 ### style
-
-PhonePC/2in1TabletTVWearable
 
 style(indicatorStyle: DotIndicator | DigitIndicator)
 
@@ -76,13 +67,11 @@ style(indicatorStyle: DotIndicator | DigitIndicator)
 | --- | --- | --- | --- |
 | indicatorStyle | [DotIndicator](ts-container-swiper.md#dotindicator10) | [DigitIndicator](ts-container-swiper.md#digitindicator10) | 是 | 可选导航点指示器样式。  - DotIndicator：圆点指示器样式。  - DigitIndicator：数字指示器样式。  默认类型：DotIndicator。 |
 
-说明
+**说明** 
 
 当indicatorStyle类型为DotIndicator且未与Swiper组件绑定时，[maxDisplayCount](ts-container-swiper.md#maxdisplaycount12)不生效。
 
 ### count
-
-PhonePC/2in1TabletTVWearable
 
 count(totalCount: number)
 
@@ -104,8 +93,6 @@ count(totalCount: number)
 
 ### initialIndex
 
-PhonePC/2in1TabletTVWearable
-
 initialIndex(index: number)
 
 设置首次显示时当前导航点的索引值。设置小于0或大于等于导航点数量时，按照默认值0处理。
@@ -125,8 +112,6 @@ initialIndex(index: number)
 | index | number | 是 | 首次显示时当前导航点的索引值。  默认值：0。 |
 
 ### loop
-
-PhonePC/2in1TabletTVWearable
 
 loop(isLoop: boolean)
 
@@ -148,8 +133,6 @@ loop(isLoop: boolean)
 
 ### vertical
 
-PhonePC/2in1TabletTVWearable
-
 vertical(isVertical: boolean)
 
 设置是否为纵向滑动。
@@ -170,13 +153,9 @@ vertical(isVertical: boolean)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onChange
-
-PhonePC/2in1TabletTVWearable
 
 onChange(event: Callback<number>)
 
@@ -192,17 +171,13 @@ onChange(event: Callback<number>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | [Callback](ts-types.md#callback12)<number> | 是 | 当前显示元素的索引变化时触发的回调。 |
+| event | [Callback](ts-types.md#callback12)<number> | 是 | 当前显示的选中导航点索引变化时触发的回调。 |
 
 ## IndicatorComponentController
-
-PhonePC/2in1TabletTVWearable
 
 Indicator组件的控制器，可以将此对象绑定至Indicator组件来控制翻页。
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -216,8 +191,6 @@ IndicatorComponentController的构造函数。
 
 ### showNext
 
-PhonePC/2in1TabletTVWearable
-
 showNext(): void
 
 跳转到下一导航点。
@@ -229,8 +202,6 @@ showNext(): void
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### showPrevious
-
-PhonePC/2in1TabletTVWearable
 
 showPrevious(): void
 
@@ -244,11 +215,9 @@ showPrevious(): void
 
 ### changeIndex
 
-PhonePC/2in1TabletTVWearable
-
 changeIndex(index: number, useAnimation?: boolean): void
 
-翻至指定导航点。
+翻至指定导航点。使用该方法前须确保该控制器已绑定至Indicator组件。适用于需要跳转到指定导航点的场景。
 
 **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。
 
@@ -260,136 +229,134 @@ changeIndex(index: number, useAnimation?: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 指定导航点在Swiper中的索引值。  **说明：**  设置的值小于0或大于最大导航点索引时，取0。 |
+| index | number | 是 | 指定导航点的索引值。  **说明：**  设置的值小于0或大于最大导航点索引时，取0。 |
 | useAnimation | boolean | 否 | 设置翻至指定导航点时是否有动效，true表示有动效，false表示没有动效。  默认值：false。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（圆点单独导航点与Swiper绑定使用）
 
 该示例通过[Swiper](ts-container-swiper.md)组件的[indicator](ts-container-swiper.md#indicator)接口与[IndicatorComponent](ts-swiper-components-indicator.md#indicatorcomponent)的构造函数绑定同一[IndicatorComponentController](ts-swiper-components-indicator.md#indicatorcomponentcontroller)对象，实现了圆点单独导航点与Swiper的交互。
 
+```ts
+@Entry
+@Component
+struct DotIndicatorDemo {
+  private indicatorController: IndicatorComponentController = new IndicatorComponentController();
+  private swiperController: SwiperController = new SwiperController();
+  @State list: number[] = [];
+  aboutToAppear(): void {
+    for (let i = 1; i <= 6; i++) {
+      this.list.push(i);
+    }
+  }
+
+  build() {
+    Column() {
+      Swiper(this.swiperController) {
+        ForEach(this.list, (item: number) => {
+          Text(item.toString())
+            .width('100%')
+            .height(160)
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .cachedCount(2)
+      .index(0)
+      .autoPlay(true)
+      .interval(2000)
+      .indicator(this.indicatorController)
+      .loop(true)
+      .duration(1000)
+      .itemSpace(0)
+      .curve(Curve.Linear)
+      .onChange((index: number) => {
+        console.info(index.toString());
+      })
+
+      IndicatorComponent(this.indicatorController)
+        .initialIndex(0)
+        .style(
+          new DotIndicator()
+            .itemWidth(15)
+            .itemHeight(15)
+            .selectedItemWidth(15)
+            .selectedItemHeight(15)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue))
+        .loop(true)
+        .count(6)
+        .vertical(true)
+        .onChange((index: number) => {
+          console.info("current index: " + index );
+        })
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct DotIndicatorDemo {
-4. private indicatorController: IndicatorComponentController = new IndicatorComponentController();
-5. private swiperController: SwiperController = new SwiperController();
-6. @State list: number[] = [];
-7. aboutToAppear(): void {
-8. for (let i = 1; i <= 6; i++) {
-9. this.list.push(i);
-10. }
-11. }
 
-13. build() {
-14. Column() {
-15. Swiper(this.swiperController) {
-16. ForEach(this.list, (item: string) => {
-17. Text(item.toString())
-18. .width('100%')
-19. .height(160)
-20. .backgroundColor(0xAFEEEE)
-21. .textAlign(TextAlign.Center)
-22. .fontSize(30)
-23. }, (item: string) => item)
-24. }
-25. .cachedCount(2)
-26. .index(0)
-27. .autoPlay(true)
-28. .interval(2000)
-29. .indicator(this.indicatorController)
-30. .loop(true)
-31. .duration(1000)
-32. .itemSpace(0)
-33. .curve(Curve.Linear)
-34. .onChange((index: number) => {
-35. console.info(index.toString());
-36. })
-
-38. IndicatorComponent(this.indicatorController)
-39. .initialIndex(0)
-40. .style(
-41. new DotIndicator()
-42. .itemWidth(15)
-43. .itemHeight(15)
-44. .selectedItemWidth(15)
-45. .selectedItemHeight(15)
-46. .color(Color.Gray)
-47. .selectedColor(Color.Blue))
-48. .loop(true)
-49. .count(6)
-50. .vertical(true)
-51. .onChange((index: number) => {
-52. console.info("current index: " + index );
-53. })
-54. }
-55. }
-56. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/HECigvXkQe2Lcoq4zEVGWQ/zh-cn_image_0000002558606524.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/bF4fYcmwQJ-Pi2xSNeW8sg/zh-cn_image_0000002736314921.gif)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
 该示例通过[Swiper](ts-container-swiper.md)组件的[indicator](ts-container-swiper.md#indicator)接口与[IndicatorComponent](ts-swiper-components-indicator.md#indicatorcomponent)的构造函数绑定同一[IndicatorComponentController](ts-swiper-components-indicator.md#indicatorcomponentcontroller)对象，实现了数字单独导航点与Swiper的交互。
 
+```ts
+@Entry
+@Component
+struct DigitIndicatorDemo {
+  private indicatorController: IndicatorComponentController = new IndicatorComponentController();
+  private swiperController: SwiperController = new SwiperController();
+  @State list: number[] = [];
+  aboutToAppear(): void {
+    for (let i = 1; i <= 6; i++) {
+      this.list.push(i);
+    }
+  }
+
+  build() {
+    Column() {
+      Swiper(this.swiperController) {
+        ForEach(this.list, (item: number) => {
+          Text(item.toString())
+            .width('100%')
+            .height(160)
+            .backgroundColor(0xAFEEEE)
+            .textAlign(TextAlign.Center)
+            .fontSize(30)
+        }, (item: number) => item.toString())
+      }
+      .cachedCount(2)
+      .index(0)
+      .autoPlay(true)
+      .interval(2000)
+      .indicator(this.indicatorController)
+      .loop(true)
+      .duration(1000)
+      .itemSpace(0)
+      .curve(Curve.Linear)
+      .onChange((index: number) => {
+        console.info(index.toString());
+      })
+
+      IndicatorComponent(this.indicatorController)
+        .initialIndex(0)
+        .style(Indicator.digit()
+          .fontColor(Color.Gray)
+          .selectedFontColor(Color.Gray)
+          .digitFont({ size: 20, weight: FontWeight.Bold })
+          .selectedDigitFont({ size: 20, weight: FontWeight.Normal }))
+        .loop(true)
+        .count(6)
+        .vertical(true)
+        .onChange((index: number) => {
+          console.info("current index: " + index );
+        })
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct DigitIndicatorDemo {
-4. private indicatorController: IndicatorComponentController = new IndicatorComponentController();
-5. private swiperController: SwiperController = new SwiperController();
-6. @State list: number[] = [];
-7. aboutToAppear(): void {
-8. for (let i = 1; i <= 6; i++) {
-9. this.list.push(i);
-10. }
-11. }
 
-13. build() {
-14. Column() {
-15. Swiper(this.swiperController) {
-16. ForEach(this.list, (item: string) => {
-17. Text(item.toString())
-18. .width('100%')
-19. .height(160)
-20. .backgroundColor(0xAFEEEE)
-21. .textAlign(TextAlign.Center)
-22. .fontSize(30)
-23. }, (item: string) => item)
-24. }
-25. .cachedCount(2)
-26. .index(0)
-27. .autoPlay(true)
-28. .interval(2000)
-29. .indicator(this.indicatorController)
-30. .loop(true)
-31. .duration(1000)
-32. .itemSpace(0)
-33. .curve(Curve.Linear)
-34. .onChange((index: number) => {
-35. console.info(index.toString());
-36. })
-
-38. IndicatorComponent(this.indicatorController)
-39. .initialIndex(0)
-40. .style(Indicator.digit()
-41. .fontColor(Color.Gray)
-42. .selectedFontColor(Color.Gray)
-43. .digitFont({ size: 20, weight: FontWeight.Bold })
-44. .selectedDigitFont({ size: 20, weight: FontWeight.Normal }))
-45. .loop(true)
-46. .count(6)
-47. .vertical(true)
-48. .onChange((index: number) => {
-49. console.info("current index: " + index );
-50. })
-51. }
-52. }
-53. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/D7JcPSFSRZGq1Mg_YfBKMQ/zh-cn_image_0000002589326051.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/J7K_ftRpTn-qtrsXVVGsDA/zh-cn_image_0000002706675878.gif)

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: Rdb_SubscribeCallback
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > Rdb_SubscribeCallback
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:38+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:db340f58e5b0dac992adb920b60dbdf3ecbb4cb30704f5d3d10bb6db6fab36e6
+scraped_at: 2026-09-02T15:00:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5264d06e7e3fab8e0e6a688ee0ae07484bda26315cc8c6eb4d5d42c1a0365eba
 ---
 
-```
-1. typedef union Rdb_SubscribeCallback {...} Rdb_SubscribeCallback
+```c
+typedef union Rdb_SubscribeCallback {...} Rdb_SubscribeCallback
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 表示回调函数。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mappolyline
-title: MapPolyline
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > MapPolyline
+title: Interface (MapPolyline)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MapPolyline)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:11+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:fed5b30e96aa84ed58e146023708e25155e8cf06aad1cd6d0a81115cfe6e8473
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b6b7057306b426a8bdb586ab5c21b4a5ba85a5d9ea32cb32f828fdc607d098e8
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## MapPolyline
-
-PhonePC/2in1TabletWearable
 
 折线，继承[BaseOverlay](map-map-baseoverlay.md)。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addPolyline](map-map-mapcomponentcontroller.md#addpolyline)方法时会返回该类型的实例。
 
@@ -32,32 +28,30 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. import { image } from '@kit.ImageKit';
+```typescript
+import { image } from '@kit.ImageKit';
 
-3. // 数组存放图片内容
-4. let customTextures: Array<ResourceStr | image.PixelMap> = new Array();
-5. // 图标存放在resources/rawfile目录下
-6. customTextures.push('icon/img.png');
-7. customTextures.push('icon/img_1.png');
-8. let cusIndexNumber: Array<number> = new Array();
-9. // cusIndexNumber数组长度与折线点数量必须相同，数组元素内容与customTextures下标相对应，图片从数组第二个元素开始选择
-10. cusIndexNumber.push(0, 0, 1);
-11. let polylineOption: mapCommon.MapPolylineOptions = {
-12. points: [
-13. { latitude: 31.68, longitude: 118.166 },
-14. { latitude: 31.48, longitude: 118.366 },
-15. { latitude: 31.28, longitude: 118.766 }
-16. ],
-17. customTextures: customTextures,
-18. customTextureIndexes: cusIndexNumber
-19. };
-20. let mapPolyline = await this.mapController.addPolyline(polylineOption);
+// 数组存放图片内容
+let customTextures: Array<ResourceStr | image.PixelMap> = new Array();
+// 图标存放在resources/rawfile目录下
+customTextures.push('icon/img.png');
+customTextures.push('icon/img_1.png');
+let cusIndexNumber: Array<number> = new Array();
+// cusIndexNumber数组长度与折线点数量必须相同，数组元素内容与customTextures下标相对应，图片从数组第二个元素开始选择
+cusIndexNumber.push(0, 0, 1);
+let polylineOption: mapCommon.MapPolylineOptions = {
+  points: [
+    { latitude: 31.68, longitude: 118.166 },
+    { latitude: 31.48, longitude: 118.366 },
+    { latitude: 31.28, longitude: 118.766 }
+  ],
+  customTextures: customTextures,
+  customTextureIndexes: cusIndexNumber
+};
+let mapPolyline = await this.mapController.addPolyline(polylineOption);
 ```
 
 ### getColor
-
-PhonePC/2in1TabletWearable
 
 getColor(): number
 
@@ -79,13 +73,11 @@ getColor(): number
 
 **示例：**
 
-```
-1. let color: number = mapPolyline.getColor();
+```typescript
+let color: number = mapPolyline.getColor();
 ```
 
 ### getColors
-
-PhonePC/2in1TabletWearable
 
 getColors(): Array<number>
 
@@ -107,13 +99,11 @@ getColors(): Array<number>
 
 **示例：**
 
-```
-1. let colors: Array<number> = mapPolyline.getColors();
+```typescript
+let colors: Array<number> = mapPolyline.getColors();
 ```
 
 ### getEndCap
-
-PhonePC/2in1TabletWearable
 
 getEndCap(): mapCommon.CapStyle
 
@@ -135,13 +125,11 @@ getEndCap(): mapCommon.CapStyle
 
 **示例：**
 
-```
-1. let endCap: mapCommon.CapStyle = mapPolyline.getEndCap();
+```typescript
+let endCap: mapCommon.CapStyle = mapPolyline.getEndCap();
 ```
 
 ### getJointType
-
-PhonePC/2in1TabletWearable
 
 getJointType(): mapCommon.JointType
 
@@ -163,13 +151,11 @@ getJointType(): mapCommon.JointType
 
 **示例：**
 
-```
-1. let jointType: mapCommon.JointType = mapPolyline.getJointType();
+```typescript
+let jointType: mapCommon.JointType = mapPolyline.getJointType();
 ```
 
 ### getPatterns
-
-PhonePC/2in1TabletWearable
 
 getPatterns(): Array<mapCommon.PatternItem>
 
@@ -191,13 +177,11 @@ getPatterns(): Array<mapCommon.PatternItem>
 
 **示例：**
 
-```
-1. let patterns: Array<mapCommon.PatternItem> = mapPolyline.getPatterns();
+```typescript
+let patterns: Array<mapCommon.PatternItem> = mapPolyline.getPatterns();
 ```
 
 ### getPoints
-
-PhonePC/2in1TabletWearable
 
 getPoints(): Array<mapCommon.LatLng>
 
@@ -219,13 +203,11 @@ getPoints(): Array<mapCommon.LatLng>
 
 **示例：**
 
-```
-1. let points: Array<mapCommon.LatLng> = mapPolyline.getPoints();
+```typescript
+let points: Array<mapCommon.LatLng> = mapPolyline.getPoints();
 ```
 
 ### getStartCap
-
-PhonePC/2in1TabletWearable
 
 getStartCap(): mapCommon.CapStyle
 
@@ -247,13 +229,11 @@ getStartCap(): mapCommon.CapStyle
 
 **示例：**
 
-```
-1. let startCap: mapCommon.CapStyle = mapPolyline.getStartCap();
+```typescript
+let startCap: mapCommon.CapStyle = mapPolyline.getStartCap();
 ```
 
 ### getWidth
-
-PhonePC/2in1TabletWearable
 
 getWidth(): number
 
@@ -275,13 +255,11 @@ getWidth(): number
 
 **示例：**
 
-```
-1. let width: number = mapPolyline.getWidth();
+```typescript
+let width: number = mapPolyline.getWidth();
 ```
 
 ### isClickable
-
-PhonePC/2in1TabletWearable
 
 isClickable(): boolean
 
@@ -303,13 +281,11 @@ isClickable(): boolean
 
 **示例：**
 
-```
-1. let isClickable: boolean = mapPolyline.isClickable();
+```typescript
+let isClickable: boolean = mapPolyline.isClickable();
 ```
 
 ### isGeodesic
-
-PhonePC/2in1TabletWearable
 
 isGeodesic(): boolean
 
@@ -331,13 +307,11 @@ isGeodesic(): boolean
 
 **示例：**
 
-```
-1. let isGeodesic: boolean = mapPolyline.isGeodesic();
+```typescript
+let isGeodesic: boolean = mapPolyline.isGeodesic();
 ```
 
 ### isGradient
-
-PhonePC/2in1TabletWearable
 
 isGradient(): boolean
 
@@ -359,13 +333,11 @@ isGradient(): boolean
 
 **示例：**
 
-```
-1. let isGradient: boolean = mapPolyline.isGradient();
+```typescript
+let isGradient: boolean = mapPolyline.isGradient();
 ```
 
 ### setClickable
-
-PhonePC/2in1TabletWearable
 
 setClickable(clickable: boolean): void
 
@@ -387,13 +359,11 @@ setClickable(clickable: boolean): void
 
 **示例：**
 
-```
-1. mapPolyline.setClickable(true);
+```typescript
+mapPolyline.setClickable(true);
 ```
 
 ### setColor
-
-PhonePC/2in1TabletWearable
 
 setColor(color: number): void
 
@@ -415,13 +385,11 @@ setColor(color: number): void
 
 **示例：**
 
-```
-1. mapPolyline.setColor(0xff000000);
+```typescript
+mapPolyline.setColor(0xff000000);
 ```
 
 ### setColors
-
-PhonePC/2in1TabletWearable
 
 setColors(colors: Array<number>): void
 
@@ -443,13 +411,11 @@ setColors(colors: Array<number>): void
 
 **示例：**
 
-```
-1. mapPolyline.setColors([0xffffff00, 0xff000000]);
+```typescript
+mapPolyline.setColors([0xffffff00, 0xff000000]);
 ```
 
 ### setEndCap
-
-PhonePC/2in1TabletWearable
 
 setEndCap(endCap: mapCommon.CapStyle): void
 
@@ -471,13 +437,11 @@ setEndCap(endCap: mapCommon.CapStyle): void
 
 **示例：**
 
-```
-1. mapPolyline.setEndCap(mapCommon.CapStyle.BUTT);
+```typescript
+mapPolyline.setEndCap(mapCommon.CapStyle.BUTT);
 ```
 
 ### setGeodesic
-
-PhonePC/2in1TabletWearable
 
 setGeodesic(geodesic: boolean): void
 
@@ -499,13 +463,11 @@ setGeodesic(geodesic: boolean): void
 
 **示例：**
 
-```
-1. mapPolyline.setGeodesic(true);
+```typescript
+mapPolyline.setGeodesic(true);
 ```
 
 ### setGradient
-
-PhonePC/2in1TabletWearable
 
 setGradient(gradient: boolean): void
 
@@ -527,13 +489,11 @@ setGradient(gradient: boolean): void
 
 **示例：**
 
-```
-1. mapPolyline.setGradient(true);
+```typescript
+mapPolyline.setGradient(true);
 ```
 
 ### setJointType
-
-PhonePC/2in1TabletWearable
 
 setJointType(jointType: mapCommon.JointType): void
 
@@ -555,13 +515,11 @@ setJointType(jointType: mapCommon.JointType): void
 
 **示例：**
 
-```
-1. mapPolyline.setJointType(mapCommon.JointType.DEFAULT);
+```typescript
+mapPolyline.setJointType(mapCommon.JointType.DEFAULT);
 ```
 
 ### setPatterns
-
-PhonePC/2in1TabletWearable
 
 setPatterns(patterns: Array<mapCommon.PatternItem>): void
 
@@ -583,18 +541,16 @@ setPatterns(patterns: Array<mapCommon.PatternItem>): void
 
 **示例：**
 
-```
-1. let linePattern: Array<mapCommon.PatternItem> = [
-2. { type: mapCommon.PatternItemType.DASH, length: 100 },
-3. { type: mapCommon.PatternItemType.DOT, length: 100 },
-4. { type: mapCommon.PatternItemType.GAP, length: 100 }
-5. ];
-6. mapPolyline.setPatterns(linePattern);
+```typescript
+let linePattern: Array<mapCommon.PatternItem> = [
+  { type: mapCommon.PatternItemType.DASH, length: 100 },
+  { type: mapCommon.PatternItemType.DOT, length: 100 },
+  { type: mapCommon.PatternItemType.GAP, length: 100 }
+];
+mapPolyline.setPatterns(linePattern);
 ```
 
 ### setPoints
-
-PhonePC/2in1TabletWearable
 
 setPoints(points: Array<mapCommon.LatLng>): void
 
@@ -616,20 +572,18 @@ setPoints(points: Array<mapCommon.LatLng>): void
 
 **示例：**
 
-```
-1. let points: Array<mapCommon.LatLng> = [
-2. { latitude: 31.18, longitude: 118.766 },
-3. { latitude: 31.38, longitude: 118.366 },
-4. { latitude: 31.68, longitude: 118.566 },
-5. { latitude: 31.98, longitude: 118.266 },
-6. { latitude: 31.88, longitude: 118.866 }
-7. ];
-8. mapPolyline.setPoints(points);
+```typescript
+let points: Array<mapCommon.LatLng> = [
+  { latitude: 31.18, longitude: 118.766 },
+  { latitude: 31.38, longitude: 118.366 },
+  { latitude: 31.68, longitude: 118.566 },
+  { latitude: 31.98, longitude: 118.266 },
+  { latitude: 31.88, longitude: 118.866 }
+];
+mapPolyline.setPoints(points);
 ```
 
 ### setStartCap
-
-PhonePC/2in1TabletWearable
 
 setStartCap(startCap: mapCommon.CapStyle): void
 
@@ -651,13 +605,11 @@ setStartCap(startCap: mapCommon.CapStyle): void
 
 **示例：**
 
-```
-1. mapPolyline.setStartCap(mapCommon.CapStyle.BUTT);
+```typescript
+mapPolyline.setStartCap(mapCommon.CapStyle.BUTT);
 ```
 
 ### setWidth
-
-PhonePC/2in1TabletWearable
 
 setWidth(width: number): void
 
@@ -679,13 +631,11 @@ setWidth(width: number): void
 
 **示例：**
 
-```
-1. mapPolyline.setWidth(20);
+```typescript
+mapPolyline.setWidth(20);
 ```
 
 ### setCustomTexture
-
-PhonePC/2in1TabletWearable
 
 setCustomTexture(customTexture: ResourceStr | image.PixelMap): Promise<void>
 
@@ -703,24 +653,22 @@ setCustomTexture(customTexture: ResourceStr | image.PixelMap): Promise<void>
 
 | 参数名 | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| customTexture | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 折线纹理。建议纹理使用没有背景色（透明色）的图片。 |
+| customTexture | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 折线纹理。建议纹理使用没有背景色（透明色）的图片，异常值不处理。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象，异常值不处理。 |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **示例：**
 
-```
-1. // 图标存放在resources/rawfile目录下
-2. await mapPolyline.setCustomTexture("icon/naviline_arrow.png");
+```typescript
+// 图标存放在resources/rawfile目录下
+await mapPolyline.setCustomTexture("icon/naviline_arrow.png");
 ```
 
 ### setCustomTexture
-
-PhonePC/2in1TabletWearable
 
 setCustomTexture(customTexture: ResourceStr | image.PixelMap, isTextureMappingUsed: boolean): Promise<void>
 
@@ -749,14 +697,12 @@ setCustomTexture(customTexture: ResourceStr | image.PixelMap, isTextureMappingUs
 
 **示例：**
 
-```
-1. // 图标需存放在resources/rawfile目录下
-2. await mapPolyline.setCustomTexture("icon/naviline_arrow.png", true);
+```typescript
+// 图标需存放在resources/rawfile目录下
+await mapPolyline.setCustomTexture("icon/naviline_arrow.png", true);
 ```
 
 ### setCustomTextureIndexes
-
-PhonePC/2in1TabletWearable
 
 setCustomTextureIndexes(customTextureIndexes: number[]): Promise<void>
 
@@ -774,7 +720,7 @@ setCustomTextureIndexes(customTextureIndexes: number[]): Promise<void>
 
 | 参数名 | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| customTextureIndexes | number[] | 是 | 每个坐标对应的纹理索引。数组长度需要和points的数量保持一致，异常值不处理。 |
+| customTextureIndexes | number[] | 是 | 每个坐标对应的纹理索引。数组长度需要和points的数量保持一致，数组中的元素取值范围：自然数，异常值不处理。 |
 
 **返回值：**
 
@@ -782,16 +728,63 @@ setCustomTextureIndexes(customTextureIndexes: number[]): Promise<void>
 | --- | --- |
 | Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
-**错误码：**
+**示例：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-map.md)。
+```typescript
+await mapPolyline.setCustomTextureIndexes([0,1,0]);
+```
 
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Invalid input parameter. |
+### addLineText
+
+addLineText(lineText: mapCommon.LineText): void
+
+添加折线的线条文本。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| lineText | [mapCommon.LineText](map-common.md#linetext) | 是 | 折线的线条文本参数，异常值作为无响应处理。 |
 
 **示例：**
 
+```typescript
+let textLine: mapCommon.LineText = {
+  lineNames: ['第一段文字', '第二段文字'],
+  lineNameIndexes: [0, 1, 1, 2],
+  nameOnRight: false,
+  color: 0xFF000000,
+  fontSize: 15,
+  strokeColor: 0xFFFFFFFF,
+  fontStyle: 0
+};
+mapPolyline.addLineText(textLine);
 ```
-1. await mapPolyline.setCustomTextureIndexes([0,1,0]);
+
+### removeLineText
+
+removeLineText(): void
+
+删除折线的文本。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+**示例：**
+
+```typescript
+mapPolyline.removeLineText();
 ```

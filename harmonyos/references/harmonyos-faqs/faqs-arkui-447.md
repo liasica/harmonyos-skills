@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-447
 title: 组件A通过bindContextMenu配置了长按菜单，点击菜单外区域，组件A响应了点击事件
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 组件A通过bindContextMenu配置了长按菜单，点击菜单外区域，组件A响应了点击事件
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 组件A通过bindContextMenu配置了长按菜单，点击菜单外区域，组件A响应了点击事件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:59+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:5101c998f9fc5a88be23b57107b54a90b8e7b23262c544106085e0e7528de000
+scraped_at: 2026-09-02T14:54:00+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:9d0767c553a244785e54a77d5a65958e22eeed64fc0806a8171bf689aeaf9eee
 ---
 
 **问题背景**
@@ -18,44 +18,42 @@ content_hash: sha256:5101c998f9fc5a88be23b57107b54a90b8e7b23262c544106085e0e7528
 
 **参考示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct ModalModeDemo {
-4. @State btnMessage: string = "Click To Trigger, longPress To Pop Up Menu"
-5. @State toastMessage: string = "The Click event was triggered."
-6. @Builder
-7. MyMenu() {
-8. Menu() {
-9. MenuItem({ content: "MenuOptionOne" })
-10. MenuItem({ content: "MenuOptionTwo" })
-11. }
-12. }
+```typescript
+@Entry
+@Component
+struct ModalModeDemo {
+  @State btnMessage: string = "Click To Trigger, longPress To Pop Up Menu"
+  @State toastMessage: string = "The Click event was triggered."
+  @Builder
+  MyMenu() {
+    Menu() {
+      MenuItem({ content: "MenuOptionOne" })
+      MenuItem({ content: "MenuOptionTwo" })
+    }
+  }
 
-14. build() {
-15. Stack({ alignContent: Alignment.Center }) {
-16. Column() {
-17. Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-18. Column() {
-19. Button(this.btnMessage)
-20. .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
-21. modalMode: ModalMode.TARGET_WINDOW,
-22. placement: Placement.BottomLeft
-23. })
-24. .onClick(() => {
-25. this.getUIContext().getPromptAction().showToast({
-26. message: this.toastMessage
-27. })
-28. })
-29. }
-30. }
-31. }
-32. }.width('100%').height('100%')
-33. }
-34. }
+  build() {
+    Stack({ alignContent: Alignment.Center }) {
+      Column() {
+        Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+          Column() {
+            Button(this.btnMessage)
+              .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
+                modalMode: ModalMode.TARGET_WINDOW,
+                placement: Placement.BottomLeft
+              })
+              .onClick(() => {
+                this.getUIContext().getPromptAction().showToast({
+                  message: this.toastMessage
+                })
+              })
+          }
+        }
+      }
+    }.width('100%').height('100%')
+  }
+}
 ```
-
-[ModalModeDemo.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/ModalModeDemo.ets#L21-L54)
 
 **参考链接**
 

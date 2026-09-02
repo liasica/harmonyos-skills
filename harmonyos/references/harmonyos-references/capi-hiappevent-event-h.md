@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiap
 title: hiappevent_event.h
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 头文件 > hiappevent_event.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:624897635fd1e9d75d308ed12f2af1e3f8a25d6f83fb029afded88d9608f1e30
+scraped_at: 2026-09-02T15:02:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:377874460021e153dc5c79c2a496c5c8df030b6b913d6bb21d2bd269f27538c9
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义所有预定义事件的事件名称。除了与特定应用关联的自定义事件之外，开发者还可以使用预定义事件进行打点。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 宏定义
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -51,17 +45,14 @@ PhonePC/2in1TabletTVWearable
 | [EVENT\_AUDIO\_JANK\_FRAME](capi-hiappevent-event-h.md#event_audio_jank_frame) "AUDIO\_JANK\_FRAME" | 音频卡顿事件。  **起始版本：** 21 |
 | [DOMAIN\_OS](capi-hiappevent-event-h.md#domain_os) "OS" | OS作用域。  **起始版本：** 12 |
 | [EVENT\_MAIN\_THREAD\_JANK\_V2](capi-hiappevent-event-h.md#event_main_thread_jank_v2) "MAIN\_THREAD\_JANK\_V2" | 用于设置主线程超时事件配置策略。  **起始版本：** 22 |
+| [OH\_EVENT\_APP\_FREEZE\_WARNING](capi-hiappevent-event-h.md#oh_event_app_freeze_warning) "APPFREEZE\_WARNING" | 应用冻屏告警事件。  **起始版本：** 26.0.0 |
 
 ## 宏定义说明
 
-PhonePC/2in1TabletTVWearable
-
 ### EVENT\_USER\_LOGIN
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_USER_LOGIN "hiappevent.user_login"
+```c
+#define EVENT_USER_LOGIN "hiappevent.user_login"
 ```
 
 **描述**
@@ -72,10 +63,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_USER\_LOGOUT
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_USER_LOGOUT "hiappevent.user_logout"
+```c
+#define EVENT_USER_LOGOUT "hiappevent.user_logout"
 ```
 
 **描述**
@@ -86,10 +75,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_DISTRIBUTED\_SERVICE\_START
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_DISTRIBUTED_SERVICE_START "hiappevent.distributed_service_start"
+```c
+#define EVENT_DISTRIBUTED_SERVICE_START "hiappevent.distributed_service_start"
 ```
 
 **描述**
@@ -100,10 +87,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_APP\_CRASH
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_APP_CRASH "APP_CRASH"
+```c
+#define EVENT_APP_CRASH "APP_CRASH"
 ```
 
 **描述**
@@ -114,10 +99,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_APP\_FREEZE
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_APP_FREEZE "APP_FREEZE"
+```c
+#define EVENT_APP_FREEZE "APP_FREEZE"
 ```
 
 **描述**
@@ -128,10 +111,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_APP\_LAUNCH
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_APP_LAUNCH "APP_LAUNCH"
+```c
+#define EVENT_APP_LAUNCH "APP_LAUNCH"
 ```
 
 **描述**
@@ -142,10 +123,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_SCROLL\_JANK
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_SCROLL_JANK "SCROLL_JANK"
+```c
+#define EVENT_SCROLL_JANK "SCROLL_JANK"
 ```
 
 **描述**
@@ -156,10 +135,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_CPU\_USAGE\_HIGH
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_CPU_USAGE_HIGH "CPU_USAGE_HIGH"
+```c
+#define EVENT_CPU_USAGE_HIGH "CPU_USAGE_HIGH"
 ```
 
 **描述**
@@ -170,10 +147,8 @@ CPU高负载事件。
 
 ### EVENT\_BATTERY\_USAGE
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_BATTERY_USAGE "BATTERY_USAGE"
+```c
+#define EVENT_BATTERY_USAGE "BATTERY_USAGE"
 ```
 
 **描述**
@@ -184,10 +159,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_RESOURCE\_OVERLIMIT
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_RESOURCE_OVERLIMIT "RESOURCE_OVERLIMIT"
+```c
+#define EVENT_RESOURCE_OVERLIMIT "RESOURCE_OVERLIMIT"
 ```
 
 **描述**
@@ -198,10 +171,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_ADDRESS\_SANITIZER
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_ADDRESS_SANITIZER "ADDRESS_SANITIZER"
+```c
+#define EVENT_ADDRESS_SANITIZER "ADDRESS_SANITIZER"
 ```
 
 **描述**
@@ -212,10 +183,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_MAIN\_THREAD\_JANK
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_MAIN_THREAD_JANK "MAIN_THREAD_JANK"
+```c
+#define EVENT_MAIN_THREAD_JANK "MAIN_THREAD_JANK"
 ```
 
 **描述**
@@ -226,10 +195,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_APP\_HICOLLIE
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_APP_HICOLLIE "APP_HICOLLIE"
+```c
+#define EVENT_APP_HICOLLIE "APP_HICOLLIE"
 ```
 
 **描述**
@@ -240,10 +207,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_APP\_KILLED
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_APP_KILLED "APP_KILLED"
+```c
+#define EVENT_APP_KILLED "APP_KILLED"
 ```
 
 **描述**
@@ -254,10 +219,8 @@ PhonePC/2in1TabletTVWearable
 
 ### EVENT\_AUDIO\_JANK\_FRAME
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_AUDIO_JANK_FRAME "AUDIO_JANK_FRAME"
+```c
+#define EVENT_AUDIO_JANK_FRAME "AUDIO_JANK_FRAME"
 ```
 
 **描述**
@@ -268,10 +231,8 @@ PhonePC/2in1TabletTVWearable
 
 ### DOMAIN\_OS
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define DOMAIN_OS "OS"
+```c
+#define DOMAIN_OS "OS"
 ```
 
 **描述**
@@ -282,10 +243,8 @@ OS作用域。
 
 ### EVENT\_MAIN\_THREAD\_JANK\_V2
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. #define EVENT_MAIN_THREAD_JANK_V2 "MAIN_THREAD_JANK_V2"
+```c
+#define EVENT_MAIN_THREAD_JANK_V2 "MAIN_THREAD_JANK_V2"
 ```
 
 **描述**
@@ -293,3 +252,15 @@ PhonePC/2in1TabletTVWearable
 用于设置主线程超时事件配置策略。
 
 **起始版本：** 22
+
+### OH\_EVENT\_APP\_FREEZE\_WARNING
+
+```c
+#define OH_EVENT_APP_FREEZE_WARNING "APPFREEZE_WARNING"
+```
+
+**描述**
+
+应用冻屏告警事件。
+
+**起始版本：** 26.0.0

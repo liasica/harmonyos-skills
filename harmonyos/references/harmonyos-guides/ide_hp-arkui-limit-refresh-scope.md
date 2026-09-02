@@ -3,86 +3,86 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-
 title: "@performance/hp-arkui-limit-refresh-scope（已下线）"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-limit-refresh-scope（已下线）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:04+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:3c851a5124d9b93007f94dee28ac2e0d972a989f7144414e2a004e4b65697185
+scraped_at: 2026-09-02T14:50:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:85091c73f5eb62f0b835d73da2e2f3a427cf29d0ed68e3e658055039cd2d660b
 ---
 
 建议减少组件刷新范围。该规则已于5.0.3.500版本下线。
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@performance/hp-arkui-limit-refresh-scope": "suggestion",
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@performance/hp-arkui-limit-refresh-scope": "suggestion",
+  }
+}
 ```
 
 ## 选项
 
-该规则无需配置额外选项。
+该规则无需配置选项。
 
 ## 正例
 
-```
-1. @Entry
-2. @Component
-3. struct StackExample6 {
-4. @State isVisible : boolean = false;
-5. build() {
-6. Column() {
-7. Stack({alignContent: Alignment.Top}) {
-8. Text().width('100%').height('70%').backgroundColor(0xd2cab3)
-9. .align(Alignment.Center).textAlign(TextAlign.Center);
-10. // 此处省略100个相同的背景Text组件
-11. Stack() {
-12. if (this.isVisible) {
-13. Text('New Page').height("70%").backgroundColor(0xd2cab3)
-14. .align(Alignment.Center).textAlign(TextAlign.Center);
-15. }
-16. }.width('100%').height('70%')
-17. }
-18. Button("press").onClick(() => {
-19. this.isVisible = !(this.isVisible);
-20. })
-21. }
-22. }
-23. }
+```screen
+@Entry
+@Component
+struct StackExample6 {
+  @State isVisible : boolean = false;
+  build() {
+    Column() {
+      Stack({alignContent: Alignment.Top}) {
+        Text().width('100%').height('70%').backgroundColor(0xd2cab3)
+          .align(Alignment.Center).textAlign(TextAlign.Center);
+        // 此处省略100个相同的背景Text组件
+        Stack() {
+          if (this.isVisible) {
+            Text('New Page').height("70%").backgroundColor(0xd2cab3)
+              .align(Alignment.Center).textAlign(TextAlign.Center);
+          }
+        }.width('100%').height('70%')
+      }
+      Button("press").onClick(() => {
+        this.isVisible = !(this.isVisible);
+      })
+    }
+  }
+}
 ```
 
 ## 反例
 
-```
-1. @Entry
-2. @Component
-3. struct StackExample5 {
-4. @State isVisible : boolean = false;
-5. build() {
-6. Column() {
-7. Stack({alignContent: Alignment.Top}) {
-8. Text().width('100%').height('70%').backgroundColor(0xd2cab3)
-9. .align(Alignment.Center).textAlign(TextAlign.Center);
-10. // 此处省略100个相同的背景Text组件
-11. if (this.isVisible) {
-12. Text('New Page').height("70%").backgroundColor(0xd2cab3)
-13. .align(Alignment.Center).textAlign(TextAlign.Center);
-14. }
-15. }
-16. Button("press").onClick(() => {
-17. this.isVisible = !(this.isVisible);
-18. })
-19. }
-20. }
-21. }
+```screen
+@Entry
+@Component
+struct StackExample5 {
+  @State isVisible : boolean = false;
+  build() {
+    Column() {
+      Stack({alignContent: Alignment.Top}) {
+        Text().width('100%').height('70%').backgroundColor(0xd2cab3)
+          .align(Alignment.Center).textAlign(TextAlign.Center);
+        // 此处省略100个相同的背景Text组件
+        if (this.isVisible) {
+          Text('New Page').height("70%").backgroundColor(0xd2cab3)
+            .align(Alignment.Center).textAlign(TextAlign.Center);
+        }
+      }
+      Button("press").onClick(() => {
+        this.isVisible = !(this.isVisible);
+      })
+    }
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@performance/all
+```screen
+plugin:@performance/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

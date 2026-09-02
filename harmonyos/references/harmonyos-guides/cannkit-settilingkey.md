@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setti
 title: SetTilingKey
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > SetTilingKey
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:18+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f2a1314ff624fdeee8e972226cf39ce63d24191b23bcb7fe49fa7e23037a3951
+content_hash: sha256:1806d80987307fe6912028a84b948b8580d1e48eab072a8b29226ba338089d03
 ---
 
 ## 函数功能
@@ -16,8 +16,8 @@ content_hash: sha256:f2a1314ff624fdeee8e972226cf39ce63d24191b23bcb7fe49fa7e23037
 
 ## 函数原型
 
-```
-1. ge::graphStatus SetTilingKey(const uint64_t tiling_key);
+```cpp
+ge::graphStatus SetTilingKey(const uint64_t tiling_key);
 ```
 
 ## 参数说明
@@ -38,9 +38,9 @@ tiling\_key的取值范围在uint64\_t数据类型范围内，但不可以取值
 
 ## 调用示例
 
-```
-1. ge::graphStatus Tiling4XXX(TilingContext* context) {
-2. auto ret = context->SetTilingKey(20);
-3. // ...
-4. }
+```cpp
+ge::graphStatus Tiling4XXX(TilingContext* context) {
+  auto ret = context->SetTilingKey(20);
+  // ...
+}
 ```

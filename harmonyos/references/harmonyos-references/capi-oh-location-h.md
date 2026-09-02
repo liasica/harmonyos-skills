@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-l
 title: oh_location.h
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > C API > 头文件 > oh_location.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e468b38f59e225acb8e3e9376893e103f88e2931140be9894b2b4f5813f718af
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ac46ff6770bd5a9b1725a442e49b549d4d6bd5d066f6783c3ba395e8512548e2
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义查询位置开关状态、启动定位、停止定位的接口。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -40,14 +34,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Location\_IsLocatingEnabled()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Location_ResultCode OH_Location_IsLocatingEnabled(bool* enabled)
+```c
+Location_ResultCode OH_Location_IsLocatingEnabled(bool* enabled)
 ```
 
 **描述**
@@ -70,10 +60,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Location\_StartLocating()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Location_ResultCode OH_Location_StartLocating(const Location_RequestConfig* requestConfig)
+```c
+Location_ResultCode OH_Location_StartLocating(const Location_RequestConfig* requestConfig)
 ```
 
 **描述**
@@ -98,10 +86,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Location\_StopLocating()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Location_ResultCode OH_Location_StopLocating(const Location_RequestConfig* requestConfig)
+```c
+Location_ResultCode OH_Location_StopLocating(const Location_RequestConfig* requestConfig)
 ```
 
 **描述**

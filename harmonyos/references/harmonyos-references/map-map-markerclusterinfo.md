@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-markerclusterinfo
-title: MarkerClusterInfo
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > MarkerClusterInfo
+title: Interface (MarkerClusterInfo)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MarkerClusterInfo)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:19+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:be2d106b7af467c1af1d6404a1a87995fe2291055b6282fdc5721f30217a7ee8
+scraped_at: 2026-09-02T14:53:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dd91e0aa0df71773b0b2bdba99d802d4cc796984872dcc58d863d67267dd1031
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## MarkerClusterInfo
-
-PhonePC/2in1TabletWearable
 
 聚合图层的标记的信息。
 
@@ -37,30 +33,30 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let clusterItem1: mapCommon.ClusterItem = {
-2. position: {
-3. latitude: 31.984,
-4. longitude: 118.766
-5. }
-6. };
-7. let clusterItem2: mapCommon.ClusterItem = {
-8. position: {
-9. latitude: 31.974,
-10. longitude: 118.75
-11. }
-12. };
-13. let array: Array<mapCommon.ClusterItem> = [
-14. clusterItem1,
-15. clusterItem2
-16. ];
-17. let clusterOverlayParams: mapCommon.ClusterOverlayParams = {
-18. distance: 40,
-19. clusterItems: array
-20. };
-21. let clusterOverlay: map.ClusterOverlay = await this.mapController.addClusterOverlay(clusterOverlayParams);
-22. let callback1 = (markerClusterInfo: map.MarkerClusterInfo) => {
-23. console.info("markerClusterClick", `callback1 markerClusterInfo`);
-24. };
-25. clusterOverlay.on("markerClusterClick", callback1);
+```typescript
+let clusterItem1: mapCommon.ClusterItem = {
+  position: {
+    latitude: 31.984,
+    longitude: 118.766
+  }
+};
+let clusterItem2: mapCommon.ClusterItem = {
+  position: {
+    latitude: 31.974,
+    longitude: 118.75
+  }
+};
+let array: Array<mapCommon.ClusterItem> = [
+  clusterItem1,
+  clusterItem2
+];
+let clusterOverlayParams: mapCommon.ClusterOverlayParams = {
+  distance: 40,
+  clusterItems: array
+};
+let clusterOverlay: map.ClusterOverlay = await this.mapController.addClusterOverlay(clusterOverlayParams);
+let callback1 = (markerClusterInfo: map.MarkerClusterInfo) => {
+  console.info("markerClusterClick", `callback1 markerClusterInfo`);
+};
+clusterOverlay.on("markerClusterClick", callback1);
 ```

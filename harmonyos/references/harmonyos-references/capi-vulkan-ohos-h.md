@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vulk
 title: vulkan_ohos.h
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan扩展能力 > vulkan_ohos.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a1c84c14ffa1166e5cffc8781f0fad09602b14686006e95472032989ff35f10b
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8e0c3538e58de71fce074331ac0a5e9bfb4a012fafd530e3c4c6d9cd1b20af95
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义了HarmonyOS平台扩展的Vulkan接口。
 
@@ -18,13 +16,13 @@ PhonePC/2in1TabletTVWearable
 
 **库：** libvulkan.so
 
+**系统能力：** SystemCapability.Graphic.Vulkan
+
 **起始版本：** 10
 
 **相关模块：** [Vulkan](capi-vulkan.md)
 
 ## 汇总
-
-PhonePC/2in1TabletTVWearable
 
 ### 结构体
 
@@ -33,7 +31,7 @@ PhonePC/2in1TabletTVWearable
 | [VkSurfaceCreateInfoOHOS](capi-vulkan-vksurfacecreateinfoohos.md) | VkSurfaceCreateInfoOHOS | 包含创建Vulkan Surface时必要的参数。 |
 | [VkNativeBufferOHOS](capi-vulkan-vknativebufferohos.md) | VkNativeBufferOHOS | 包含本地显存的参数。 |
 | [VkSwapchainImageCreateInfoOHOS](capi-vulkan-vkswapchainimagecreateinfoohos.md) | VkSwapchainImageCreateInfoOHOS | 包含创建Image时必要的参数。 |
-| [VkPhysicalDevicePresentationPropertiesOHOS](-vulkan-vkphysicaldevicepresentationpropertiesohos.md) | VkPhysicalDevicePresentationPropertiesOHOS | 包含设备的显示属性的参数。 |
+| [VkPhysicalDevicePresentationPropertiesOHOS](capi-vulkan-vkphysicaldevicepresentationpropertiesohos.md) | VkPhysicalDevicePresentationPropertiesOHOS | 包含设备的显示属性的参数。 |
 | [VkNativeBufferUsageOHOS](capi-vulkan-vknativebufferusageohos.md) | VkNativeBufferUsageOHOS | 提供HarmonyOS NativeBuffer用途的说明。 |
 | [VkNativeBufferPropertiesOHOS](capi-vulkan-vknativebufferpropertiesohos.md) | VkNativeBufferPropertiesOHOS | 包含了NativeBuffer的属性。 |
 | [VkNativeBufferFormatPropertiesOHOS](capi-vulkan-vknativebufferformatpropertiesohos.md) | VkNativeBufferFormatPropertiesOHOS | 包含了NativeBuffer的一些格式属性。 |
@@ -49,6 +47,13 @@ PhonePC/2in1TabletTVWearable
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [VkSwapchainImageUsageFlagBitsOHOS](capi-vulkan-ohos-h.md#vkswapchainimageusageflagbitsohos) | VkSwapchainImageUsageFlagBitsOHOS | 图像使用标志位。 |
+
+### 变量
+
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| VkFlags | VkSwapchainImageUsageFlagsOHOS | 设置掩码的位掩码类型。  **起始版本：** 10 |
+| VkFlags | VkSurfaceCreateFlagsOHOS | 用于Vulkan Surface创建时使用的VkFlags类型位掩码，预留的标志类型。  **起始版本：** 10 |
 
 ### 宏定义
 
@@ -74,25 +79,23 @@ PhonePC/2in1TabletTVWearable
 | [VkResult (VKAPI\_PTR PFN\_vkGetMemoryNativeBufferOHOS)(VkDevice device, const VkMemoryGetNativeBufferInfoOHOS pInfo, struct OH\_NativeBuffer\*\* pBuffer)](capi-vulkan-ohos-h.md#pfn_vkgetmemorynativebufferohos) | PFN\_vkGetMemoryNativeBufferOHOS | 获取OH\_NativeBuffer的函数指针定义。 |
 | [VKAPI\_ATTR VkResult VKAPI\_CALL vkGetNativeBufferPropertiesOHOS(VkDevice device, const struct OH\_NativeBuffer\* buffer, VkNativeBufferPropertiesOHOS\* pProperties)](capi-vulkan-ohos-h.md#vkgetnativebufferpropertiesohos) | - | 获取OH\_NativeBuffer属性。 |
 | [VKAPI\_ATTR VkResult VKAPI\_CALL vkGetMemoryNativeBufferOHOS(VkDevice device, const VkMemoryGetNativeBufferInfoOHOS\* pInfo, struct OH\_NativeBuffer\*\* pBuffer)](capi-vulkan-ohos-h.md#vkgetmemorynativebufferohos) | - | 获取OH\_NativeBuffer。 |
-| [VKAPI\_ATTR VkResult VKAPI\_CALL vkGetSwapchainGrallocUsageOHOS(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64\_t\* grallocUsage)](capi-vulkan-ohos-h.md#vkgetswapchaingrallocusageohos) | - | 根据给定的Vulkan设备、图像格式和图像使用标志, 返回适当的Gralloc(内存分配器)使用标志。 |
-| [VKAPI\_ATTR VkResult VKAPI\_CALL vkAcquireImageOHOS(VkDevice device, VkImage image, int32\_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)](capi-vulkan-ohos-h.md#vkacquireimageohos) | - | 用于获取交换链图像的所有权, 并将外部信号的Fence导入到VkSemaphore对象和VkFence对象中。 |
-| [VKAPI\_ATTR VkResult VKAPI\_CALL vkQueueSignalReleaseImageOHOS(VkQueue queue, uint32\_t waitSemaphoreCount, const VkSemaphore\* pWaitSemaphores, VkImage image, int32\_t\* pNativeFenceFd)](capi-vulkan-ohos-h.md#vkqueuesignalreleaseimageohos) | - | 当前图像使用完毕后，通过该函数向系统硬件缓冲区发出释放信号, 以便其他组件可以访问该图像。 |
+| [VKAPI\_ATTR VkResult VKAPI\_CALL vkGetSwapchainGrallocUsageOHOS(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64\_t\* grallocUsage)](capi-vulkan-ohos-h.md#vkgetswapchaingrallocusageohos) | - | 根据给定的Vulkan设备、图像格式和图像使用标志，返回适当的Gralloc(内存分配器)使用标志。 |
+| [VKAPI\_ATTR VkResult VKAPI\_CALL vkAcquireImageOHOS(VkDevice device, VkImage image, int32\_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)](capi-vulkan-ohos-h.md#vkacquireimageohos) | - | 用于获取交换链图像的所有权，并将外部信号的Fence导入到VkSemaphore对象和VkFence对象中。 |
+| [VKAPI\_ATTR VkResult VKAPI\_CALL vkQueueSignalReleaseImageOHOS(VkQueue queue, uint32\_t waitSemaphoreCount, const VkSemaphore\* pWaitSemaphores, VkImage image, int32\_t\* pNativeFenceFd)](capi-vulkan-ohos-h.md#vkqueuesignalreleaseimageohos) | - | 当前图像使用完毕后，通过该函数向系统硬件缓冲区发出释放信号，以便其他组件可以访问该图像。 |
 | [VkResult (VKAPI\_PTR \*PFN\_vkSetNativeFenceFdOpenHarmony)(VkDevice device, int32\_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)](capi-vulkan-ohos-h.md#vkapi_ptr-pfn_vksetnativefencefdopenharmony) | VKAPI\_PTR \*PFN\_vkSetNativeFenceFdOpenHarmony | 该接口已废弃。 |
 | [typedef VkResult (VKAPI\_PTR PFN\_vkGetNativeFenceFdOpenHarmony)(VkQueue queue, uint32\_t waitSemaphoreCount, const VkSemaphore pWaitSemaphores, VkImage image, int32\_t\* pNativeFenceFd)](capi-vulkan-ohos-h.md#vkapi_ptr-pfn_vkgetnativefencefdopenharmony) | VKAPI\_PTR \*PFN\_vkGetNativeFenceFdOpenHarmony | 该接口已废弃。 |
-| [VkResult (VKAPI\_PTR PFN\_vkGetSwapchainGrallocUsageOHOS)(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64\_t grallocUsage)](capi-vulkan-ohos-h.md#vkapi_ptr-pfn_vkgetswapchaingrallocusageohos) | VKAPI\_PTR \*PFN\_vkGetSwapchainGrallocUsageOHOS | 根据给定的Vulkan设备、图像格式和图像使用标志, 返回适当的Gralloc(内存分配器)使用标志。应用开发者无需使用该接口。 |
-| [VkResult (VKAPI\_PTR \*PFN\_vkAcquireImageOHOS)(VkDevice device, VkImage image, int32\_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)](capi-vulkan-ohos-h.md#vkapi_ptr-pfn_vkacquireimageohos) | VKAPI\_PTR \*PFN\_vkAcquireImageOHOS | 用于获取交换链图像的所有权, 并将外部信号的Fence导入到VkSemaphore对象和VkFence对象中。应用开发者无需使用该接口。 |
-| [typedef VkResult (VKAPI\_PTR PFN\_vkQueueSignalReleaseImageOHOS)(VkQueue queue, uint32\_t waitSemaphoreCount, const VkSemaphore pWaitSemaphores, VkImage image, int32\_t\* pNativeFenceFd)](capi-vulkan-ohos-h.md#vkapi_ptr-pfn_vkqueuesignalreleaseimageohos) | VKAPI\_PTR \*PFN\_vkQueueSignalReleaseImageOHOS | 当前图像使用完毕后，通过该函数向系统硬件缓冲区发出释放信号, 以便其他组件可以访问该图像。应用开发者无需使用该接口。 |
+| [VkResult (VKAPI\_PTR PFN\_vkGetSwapchainGrallocUsageOHOS)(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64\_t grallocUsage)](capi-vulkan-ohos-h.md#vkapi_ptr-pfn_vkgetswapchaingrallocusageohos) | VKAPI\_PTR \*PFN\_vkGetSwapchainGrallocUsageOHOS | 根据给定的Vulkan设备、图像格式和图像使用标志，返回适当的Gralloc(内存分配器)使用标志。应用开发者无需使用该接口。 |
+| [VkResult (VKAPI\_PTR \*PFN\_vkAcquireImageOHOS)(VkDevice device, VkImage image, int32\_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)](capi-vulkan-ohos-h.md#vkapi_ptr-pfn_vkacquireimageohos) | VKAPI\_PTR \*PFN\_vkAcquireImageOHOS | 用于获取交换链图像的所有权，并将外部信号的Fence导入到VkSemaphore对象和VkFence对象中。应用开发者无需使用该接口。 |
+| [typedef VkResult (VKAPI\_PTR PFN\_vkQueueSignalReleaseImageOHOS)(VkQueue queue, uint32\_t waitSemaphoreCount, const VkSemaphore pWaitSemaphores, VkImage image, int32\_t\* pNativeFenceFd)](capi-vulkan-ohos-h.md#vkapi_ptr-pfn_vkqueuesignalreleaseimageohos) | VKAPI\_PTR \*PFN\_vkQueueSignalReleaseImageOHOS | 当前图像使用完毕后，通过该函数向系统硬件缓冲区发出释放信号，以便其他组件可以访问该图像。应用开发者无需使用该接口。 |
 | [VKAPI\_ATTR VkResult VKAPI\_CALL vkSetNativeFenceFdOpenHarmony(VkDevice device, int32\_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)](capi-vulkan-ohos-h.md#vksetnativefencefdopenharmony) | - | 该接口已废弃。 |
 | [VKAPI\_ATTR VkResult VKAPI\_CALL vkGetNativeFenceFdOpenHarmony(VkQueue queue, uint32\_t waitSemaphoreCount, const VkSemaphore\* pWaitSemaphores, VkImage image, int32\_t\* pNativeFenceFd)](capi-vulkan-ohos-h.md#vkgetnativefencefdopenharmony) | - | 该接口已废弃。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### VkSwapchainImageUsageFlagBitsOHOS
 
-```
-1. enum VkSwapchainImageUsageFlagBitsOHOS
+```c
+enum VkSwapchainImageUsageFlagBitsOHOS
 ```
 
 **描述**
@@ -108,14 +111,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### PFN\_vkCreateSurfaceOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef VkResult (VKAPI_PTR *PFN_vkCreateSurfaceOHOS)(VkInstance instance, const VkSurfaceCreateInfoOHOS* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface)
+```c
+typedef VkResult (VKAPI_PTR *PFN_vkCreateSurfaceOHOS)(VkInstance instance, const VkSurfaceCreateInfoOHOS* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface)
 ```
 
 **描述**
@@ -143,10 +142,8 @@ PhonePC/2in1TabletTVWearable
 
 ### vkCreateSurfaceOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL vkCreateSurfaceOHOS(VkInstance instance, const VkSurfaceCreateInfoOHOS* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface)
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkCreateSurfaceOHOS(VkInstance instance, const VkSurfaceCreateInfoOHOS* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface)
 ```
 
 **描述**
@@ -174,10 +171,8 @@ PhonePC/2in1TabletTVWearable
 
 ### PFN\_vkGetNativeBufferPropertiesOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef VkResult (VKAPI_PTR *PFN_vkGetNativeBufferPropertiesOHOS)(VkDevice device, const struct OH_NativeBuffer* buffer, VkNativeBufferPropertiesOHOS* pProperties)
+```c
+typedef VkResult (VKAPI_PTR *PFN_vkGetNativeBufferPropertiesOHOS)(VkDevice device, const struct OH_NativeBuffer* buffer, VkNativeBufferPropertiesOHOS* pProperties)
 ```
 
 **描述**
@@ -204,10 +199,8 @@ PhonePC/2in1TabletTVWearable
 
 ### PFN\_vkGetMemoryNativeBufferOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef VkResult (VKAPI_PTR *PFN_vkGetMemoryNativeBufferOHOS)(VkDevice device, const VkMemoryGetNativeBufferInfoOHOS* pInfo, struct OH_NativeBuffer** pBuffer)
+```c
+typedef VkResult (VKAPI_PTR *PFN_vkGetMemoryNativeBufferOHOS)(VkDevice device, const VkMemoryGetNativeBufferInfoOHOS* pInfo, struct OH_NativeBuffer** pBuffer)
 ```
 
 **描述**
@@ -234,10 +227,8 @@ PhonePC/2in1TabletTVWearable
 
 ### vkGetNativeBufferPropertiesOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeBufferPropertiesOHOS(VkDevice device, const struct OH_NativeBuffer* buffer, VkNativeBufferPropertiesOHOS* pProperties)
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeBufferPropertiesOHOS(VkDevice device, const struct OH_NativeBuffer* buffer, VkNativeBufferPropertiesOHOS* pProperties)
 ```
 
 **描述**
@@ -264,10 +255,8 @@ PhonePC/2in1TabletTVWearable
 
 ### vkGetMemoryNativeBufferOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryNativeBufferOHOS(VkDevice device, const VkMemoryGetNativeBufferInfoOHOS* pInfo, struct OH_NativeBuffer** pBuffer)
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkGetMemoryNativeBufferOHOS(VkDevice device, const VkMemoryGetNativeBufferInfoOHOS* pInfo, struct OH_NativeBuffer** pBuffer)
 ```
 
 **描述**
@@ -294,15 +283,13 @@ PhonePC/2in1TabletTVWearable
 
 ### vkGetSwapchainGrallocUsageOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainGrallocUsageOHOS(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64_t* grallocUsage)
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkGetSwapchainGrallocUsageOHOS(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64_t* grallocUsage)
 ```
 
 **描述**
 
-根据给定的Vulkan设备、图像格式和图像使用标志, 返回适当的Gralloc(内存分配器)使用标志。应用开发者无需使用该接口。
+根据给定的Vulkan设备、图像格式和图像使用标志，返回适当的Gralloc(内存分配器)使用标志。应用开发者无需使用该接口。
 
 **系统能力：** SystemCapability.Graphic.Vulkan
 
@@ -317,7 +304,7 @@ PhonePC/2in1TabletTVWearable
 | VkDevice device | VkDevice对象。 |
 | VkFormat format | 图像格式。 |
 | VkImageUsageFlags imageUsage | 图像使用标志。 |
-| uint64\_t\* grallocUsage | 出参, 返回Gralloc(内存分配器)使用标志。 |
+| uint64\_t\* grallocUsage | 出参，返回Gralloc(内存分配器)使用标志。 |
 
 **返回：**
 
@@ -327,15 +314,13 @@ PhonePC/2in1TabletTVWearable
 
 ### VKAPI\_PTR \*PFN\_vkGetSwapchainGrallocUsageOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef VkResult (VKAPI_PTR *PFN_vkGetSwapchainGrallocUsageOHOS)(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64_t* grallocUsage)
+```c
+typedef VkResult (VKAPI_PTR *PFN_vkGetSwapchainGrallocUsageOHOS)(VkDevice device, VkFormat format, VkImageUsageFlags imageUsage, uint64_t* grallocUsage)
 ```
 
 **描述**
 
-根据给定的Vulkan设备、图像格式和图像使用标志, 返回适当的Gralloc(内存分配器)使用标志。应用开发者无需使用该接口。
+根据给定的Vulkan设备、图像格式和图像使用标志，返回适当的Gralloc(内存分配器)使用标志。应用开发者无需使用该接口。
 
 **系统能力：** SystemCapability.Graphic.Vulkan
 
@@ -350,7 +335,7 @@ PhonePC/2in1TabletTVWearable
 | VkDevice device | VkDevice对象。 |
 | VkFormat format | 图像格式。 |
 | VkImageUsageFlags imageUsage | 图像使用标志。 |
-| uint64\_t\* grallocUsage | 出参, 返回Gralloc(内存分配器)使用标志。 |
+| uint64\_t\* grallocUsage | 出参，返回Gralloc(内存分配器)使用标志。 |
 
 **返回：**
 
@@ -360,15 +345,13 @@ PhonePC/2in1TabletTVWearable
 
 ### vkAcquireImageOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL vkAcquireImageOHOS(VkDevice device, VkImage image, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkAcquireImageOHOS(VkDevice device, VkImage image, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
 ```
 
 **描述**
 
-用于获取交换链图像的所有权, 并将外部信号的Fence导入到VkSemaphore对象和VkFence对象中。应用开发者无需使用该接口。
+用于获取交换链图像的所有权，并将外部信号的Fence导入到VkSemaphore对象和VkFence对象中。应用开发者无需使用该接口。
 
 **系统能力：** SystemCapability.Graphic.Vulkan
 
@@ -394,15 +377,13 @@ PhonePC/2in1TabletTVWearable
 
 ### VKAPI\_PTR \*PFN\_vkAcquireImageOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef VkResult (VKAPI_PTR *PFN_vkAcquireImageOHOS)(VkDevice device, VkImage image, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
+```c
+typedef VkResult (VKAPI_PTR *PFN_vkAcquireImageOHOS)(VkDevice device, VkImage image, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
 ```
 
 **描述**
 
-用于获取交换链图像的所有权, 并将外部信号的Fence导入到VkSemaphore对象和VkFence对象中。应用开发者无需使用该接口。
+用于获取交换链图像的所有权，并将外部信号的Fence导入到VkSemaphore对象和VkFence对象中。应用开发者无需使用该接口。
 
 **系统能力：** SystemCapability.Graphic.Vulkan
 
@@ -428,15 +409,13 @@ PhonePC/2in1TabletTVWearable
 
 ### vkQueueSignalReleaseImageOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL vkQueueSignalReleaseImageOHOS(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkQueueSignalReleaseImageOHOS(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
 ```
 
 **描述**
 
-当前图像使用完毕后，通过该函数向系统硬件缓冲区发出释放信号, 以便其他组件可以访问该图像。应用开发者无需使用该接口。
+当前图像使用完毕后，通过该函数向系统硬件缓冲区发出释放信号，以便其他组件可以访问该图像。应用开发者无需使用该接口。
 
 **系统能力：** SystemCapability.Graphic.Vulkan
 
@@ -462,15 +441,13 @@ PhonePC/2in1TabletTVWearable
 
 ### VKAPI\_PTR \*PFN\_vkQueueSignalReleaseImageOHOS()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef VkResult (VKAPI_PTR *PFN_vkQueueSignalReleaseImageOHOS)(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
+```c
+typedef VkResult (VKAPI_PTR *PFN_vkQueueSignalReleaseImageOHOS)(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
 ```
 
 **描述**
 
-当前图像使用完毕后，通过该函数向系统硬件缓冲区发出释放信号, 以便其他组件可以访问该图像。应用开发者无需使用该接口。
+当前图像使用完毕后，通过该函数向系统硬件缓冲区发出释放信号，以便其他组件可以访问该图像。应用开发者无需使用该接口。
 
 **系统能力：** SystemCapability.Graphic.Vulkan
 
@@ -496,8 +473,8 @@ PhonePC/2in1TabletTVWearable
 
 ### VKAPI\_PTR \*PFN\_vkSetNativeFenceFdOpenHarmony()
 
-```
-1. typedef VkResult (VKAPI_PTR *PFN_vkSetNativeFenceFdOpenHarmony)(VkDevice device, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
+```c
+typedef VkResult (VKAPI_PTR *PFN_vkSetNativeFenceFdOpenHarmony)(VkDevice device, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
 ```
 
 **描述**
@@ -512,8 +489,8 @@ PhonePC/2in1TabletTVWearable
 
 ### VKAPI\_PTR \*PFN\_vkGetNativeFenceFdOpenHarmony()
 
-```
-1. typedef VkResult (VKAPI_PTR *PFN_vkGetNativeFenceFdOpenHarmony)(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
+```c
+typedef VkResult (VKAPI_PTR *PFN_vkGetNativeFenceFdOpenHarmony)(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
 ```
 
 **描述**
@@ -528,8 +505,8 @@ PhonePC/2in1TabletTVWearable
 
 ### vkSetNativeFenceFdOpenHarmony()
 
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL vkSetNativeFenceFdOpenHarmony(VkDevice device, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkSetNativeFenceFdOpenHarmony(VkDevice device, int32_t nativeFenceFd, VkSemaphore semaphore, VkFence fence)
 ```
 
 **描述**
@@ -544,8 +521,8 @@ PhonePC/2in1TabletTVWearable
 
 ### vkGetNativeFenceFdOpenHarmony()
 
-```
-1. VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeFenceFdOpenHarmony(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkGetNativeFenceFdOpenHarmony(VkQueue queue, uint32_t waitSemaphoreCount, const VkSemaphore* pWaitSemaphores, VkImage image, int32_t* pNativeFenceFd)
 ```
 
 **描述**

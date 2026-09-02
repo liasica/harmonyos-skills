@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-403
 title: Navigation管理的页面生命周期是什么，需要什么回调监听页面生命周期
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > Navigation管理的页面生命周期是什么，需要什么回调监听页面生命周期
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation管理的页面生命周期是什么，需要什么回调监听页面生命周期
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:46+08:00
-doc_updated_at: 2026-04-27
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:fa7dd490066e55b9754cf74cd872ae8332b14870ec02534d162e16475ae0e51c
 ---
 

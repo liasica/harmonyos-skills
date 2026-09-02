@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-migrati
 title: ArkTS语法适配背景
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > ArkTS语法适配背景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:36+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:1de88a848dd96127e74d38a3bdc91ddbb10d6efc3dbe71b980cf492812f025f3
+scraped_at: 2026-09-02T14:49:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bd4c785a937c932e2ecb5e83f41fb947fa7728eb83d1f266f2556008f067a771
 ---
 
 ArkTS在保留TypeScript（简称TS）基本语法风格的基础上，进一步通过规范强化了静态检查和分析，使得开发者在程序开发阶段能够检测出更多错误，提升程序的稳定性和运行性能。本文将详细解释为什么建议将TS代码适配为ArkTS代码。
@@ -20,66 +20,66 @@ ArkTS在保留TypeScript（简称TS）基本语法风格的基础上，进一步
 
 ArkTS要求类的所有属性在声明时或者在构造函数中显式地初始化，这和TS中的strictPropertyInitialization检查一致。以下的代码片段是非严格模式下的TS代码。
 
-```
-1. class Person {
-2. name: string; // undefined
+```typescript
+class Person {
+  name: string; // undefined
+  
+  setName(n: string): void {
+    this.name = n;
+  }
+  
+  getName(): string {
+  // 开发者使用"string"作为返回类型，这隐藏了name可能为"undefined"的事实
+  // 更合适的做法是将返回类型标注为"string | undefined"，以告诉开发者这个API所有可能的返回值的类型
+    return this.name;
+  }
+}
 
-4. setName(n: string): void {
-5. this.name = n;
-6. }
-
-8. getName(): string {
-9. // 开发者使用"string"作为返回类型，这隐藏了name可能为"undefined"的事实。
-10. // 更合适的做法是将返回类型标注为"string | undefined"，以告诉开发者这个API所有可能的返回值的类型。
-11. return this.name;
-12. }
-13. }
-
-15. let buddy = new Person()
-16. // 假设代码中没有对name的赋值，例如没有调用"buddy.setName('John')"
-17. buddy.getName().length; // 运行时异常：name is undefined
+let buddy = new Person()
+// 假设代码中没有对name的赋值，例如没有调用"buddy.setName('John')"
+buddy.getName().length; // 运行时异常：name is undefined
 ```
 
 ArkTS要求属性显式初始化，代码应如下所示：
 
-```
-1. class Person {
-2. name: string = ''; // undefined
+```typescript
+class Person {
+  name: string = ''; // undefined
 
-4. setName(n: string): void {
-5. this.name = n;
-6. }
+  setName(n: string): void {
+    this.name = n;
+  }
 
-8. // 类型为"string"，不可能为"null"或者"undefined"。
-9. getName(): string {
-10. return this.name;
-11. }
-12. }
-13. // ...
-14. let buddy = new Person()
-15. // 假设代码中没有对name的赋值，例如没有调用"buddy.setName('John')"。
-16. let len = buddy.getName().length; // 0, 没有运行时异常。
+  // 类型为"string"，不可能为"null"或者"undefined"
+  getName(): string {
+    return this.name;
+  }
+}
+// ...
+  let buddy = new Person()
+  // 假设代码中没有对name的赋值，例如没有调用"buddy.setName('John')"
+  let len = buddy.getName().length; // 0，没有运行时异常
 ```
 
 如果name可以是undefined，其类型应在代码中精确标注。
 
-```
-1. class Person1 {
-2. name?: string; // 可能为undefined。
+```typescript
+class Person1 {
+  name?: string; // 可能为undefined
 
-4. setName(n: string): void {
-5. this.name = n;
-6. }
+  setName(n: string): void {
+    this.name = n;
+  }
 
-8. getName(): string | undefined { // 返回类型匹配name的类型。
-9. return this.name;
-10. }
-11. }
-12. // ...
-13. let buddy = new Person1()
-14. // 假设代码中没有对name的赋值，例如没有调用"buddy.setName('John')"。
+  getName(): string | undefined { // 返回类型匹配name的类型
+    return this.name;
+  }
+}
+// ...
+  let buddy = new Person1()
+  // 假设代码中没有对name的赋值，例如没有调用"buddy.setName('John')"
 
-16. let len = buddy.getName()?.length; // 编译成功，没有运行时错误。
+  let len = buddy.getName()?.length; // 编译成功，没有运行时错误
 ```
 
 ## 程序性能
@@ -88,42 +88,42 @@ ArkTS要求属性显式初始化，代码应如下所示：
 
 **Null Safety**
 
-```
-1. function notify(who: string, what: string) {
-2. console.info(`Dear ${who}, a message for you: ${what}`);
-3. }
+```typescript
+function notify(who: string, what: string) {
+  console.info(`Dear ${who}, a message for you: ${what}`);
+}
 
-5. // ...
-6. notify('Jack', 'You look great today');
+// ...
+  notify('Jack', 'You look great today');
 ```
 
 在大多数情况下，函数notify会接受两个string类型的变量作为输入，产生一个新的字符串。但是，如果将一些特殊值作为输入，例如notify(null, undefined)，情况会怎么样呢？
 
 程序仍会正常运行，输出预期值：Dear null, a message for you: undefined。虽然系统表现一切正常，但值得注意的是，为了保障该场景下程序的正确性，引擎在运行时会持续进行类型检查，其实现机制类似于以下伪代码所示：
 
-```
-1. function __internal_tostring(s: any): string {
-2. if (typeof s === 'string')
-3. return s;
-4. if (s === undefined)
-5. return 'undefined';
-6. if (s === null)
-7. return 'null';
-8. // ...
-9. }
+```typescript
+function __internal_tostring(s: any): string {
+  if (typeof s === 'string')
+    return s;
+  if (s === undefined)
+    return 'undefined';
+  if (s === null)
+    return 'null';
+  // ...
+}
 ```
 
 试想一下，如果notify函数并非只是简单的日志打印，而是某些高负载场景下关键逻辑的一部分，那么在运行时频繁执行类似\_\_internal\_tostring的类型检查操作，势必会带来显著的性能开销。
 
 如果可以保证在运行时，只有string类型的值（不会是其他类型的值，例如null或者undefined）可以被传入函数notify呢？在这种情况下，因为可以确保没有其他边界情况，像\_\_internal\_tostring的检查就是多余的了。在该场景下，这种机制被称为“null-safety”（空安全），其核心目的是确保null不能作为合法的字符串类型值。如果ArkTS支持这一特性，那么任何类型不匹配的代码都将在编译阶段被拦截，无法编译通过。
 
-```
-1. function notify(who: string, what: string) {
-2. console.info(`Dear ${who}, a message for you: ${what}`);
-3. }
+```typescript
+function notify(who: string, what: string) {
+  console.info(`Dear ${who}, a message for you: ${what}`);
+}
 
-5. notify('Jack', 'You look great today');
-6. notify(null, undefined); // 编译时错误
+notify('Jack', 'You look great today');
+notify(null, undefined); // 编译时错误
 ```
 
 TS通过启用编译选项strictNullChecks实现此特性。虽然TS被编译成JS，但因为JS没有这个特性，所以严格null检查仅在编译时起效。从程序稳定性和性能的角度考虑，ArkTS将“null-safety”视为一个重要的特性。因此，ArkTS强制进行严格null检查，在ArkTS中上述代码将会编译失败。作为交换，此类代码为ArkTS引擎提供了更多信息和关于值的类型保证，有助于优化性能。
@@ -141,22 +141,22 @@ TS通过启用编译选项strictNullChecks实现此特性。虽然TS被编译成
 
 ArkTS支持与TS/JS的高效互操作。在当前版本中，ArkTS运行时兼容动态类型对象语义。在ArkTS与TypeScript/JavaScript交互操作场景中，直接复用TS/JS的数据和对象作为ArkTS的实体使用时，可能规避ArkTS的静态类型检查机制，进而引发运行时异常或引入额外的性能损耗。
 
-```
-1. // lib.ts
-2. export class C {
-3. v: string; // 在TS严格模式下，编译期报错 Property 'v' has no initializer
-4. }
+```typescript
+// lib.ts
+export class C {
+  v: string; // 在TS严格模式下，编译期报错 Property 'v' has no initializer
+}
 
-6. export let c = new C()
+export let c = new C()
 
-8. // app.ets
-9. import { C, c } from './lib';
+// app.ets
+import { C, c } from './lib';
 
-11. function foo(c: C) {
-12. c.v.length;
-13. }
+function foo(c: C) {
+  c.v.length;
+}
 
-15. foo(c);
+foo(c);
 ```
 
 ## 方舟运行时兼容TS/JS
@@ -173,20 +173,20 @@ ArkTS支持与TS/JS的高效互操作。在当前版本中，ArkTS运行时兼�
 
    循环依赖示例:
 
-   ```
-   1. // bar.ets
-   2. import {v} from './foo'; // bar.ets依赖foo.ets
-   3. export let u = 0;
-   4. console.info(`v: ${v}`);
+   ```typescript
+   // bar.ets
+   import {v} from './foo'; // bar.ets依赖foo.ets
+   export let u = 0;
+   console.info(`v: ${v}`);
    ```
 
-   ```
-   1. // foo.ets
-   2. import {u} from './bar'; // foo.ets同时又依赖bar.ets
-   3. export let v = 0;
-   4. console.info(`u: ${u}`);
+   ```typescript
+   // foo.ets
+   import {u} from './bar'; // foo.ets同时又依赖bar.ets
+   export let v = 0;
+   console.info(`u: ${u}`);
 
-   6. // 应用加载失败
+   // 应用加载失败
    ```
 
 **与标准TS/JS的差异**

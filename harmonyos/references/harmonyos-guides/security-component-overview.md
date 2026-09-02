@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/security-comp
 title: 安全控件概述
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 安全控件概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:37+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:a797b892b15d3d1f4e80d28550fd249c451032fdeffdf573c49d170c975224ab
+scraped_at: 2026-09-02T14:59:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:51177803e314ec2d1918fc9ee54b80bcdc06f43189f3e7fa7844f591e5a16eab
 ---
 
 安全控件是系统提供的一组ArkUI基础组件，包括保存控件和粘贴控件。它们可以作为一种“特殊的按钮”融入应用页面，实现用户“点击即许可”的设计思路。
@@ -16,7 +16,7 @@ content_hash: sha256:a797b892b15d3d1f4e80d28550fd249c451032fdeffdf573c49d170c975
 2. 授权场景可匹配用户真实意图。
 3. 减少弹窗打扰。
 
-安全控件坚持仅采集实现业务功能所必须的个人数据，以服务于用户的需求，帮助开发透明、可选、可控的隐私合规应用。
+安全控件坚持仅采集实现业务功能所必需的个人数据，以服务于用户的需求，帮助开发透明、可选、可控的隐私合规应用。
 
 ## 安全控件列表
 
@@ -39,11 +39,11 @@ content_hash: sha256:a797b892b15d3d1f4e80d28550fd249c451032fdeffdf573c49d170c975
 
 * 安全控件UI组件：实现了固定文字图标的样式，便于用户识别，同时提供了相对丰富的定制化能力，便于开发者定制。
 * 安全控件管理服务：提供控件注册管理能力、控件临时授权机制、管理授权生效周期，确保应用后台、锁屏下无法注册使用安全控件。
-* 安全控件增强：安全控件实现相关安全防护能力，例如：地址随机化、挑战值检查、回调UI框架复核控件信息、调用者地址检查、组件防覆盖、真实点击事件校验等机制，防止应用开发者通过混淆、隐藏、篡改、仿冒等方式滥用授权机制，泄露用户隐私。
+* 安全控件增强：安全控件实现相关防护能力，防止相关安全机制被绕过。
 
 开发者调用接口时，运作流程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/v72xN9R_QxqR2KoW6cMlqQ/zh-cn_image_0000002589244663.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/KtCbSBk2S5qZ-hYY2AVvLg/zh-cn_image_0000002736313361.png)
 
 1. 应用开发者在ETS文件中集成安全控件，通过JS引擎解析后，在ArkUI框架中生成具体的控件。
 2. 安全控件注册控件信息到安全控件管理服务，安全控件管理服务检查控件信息的合法性。
@@ -62,7 +62,7 @@ content_hash: sha256:a797b892b15d3d1f4e80d28550fd249c451032fdeffdf573c49d170c975
 
 当控件样式不合法导致授权失败的情况发生时，请开发者检查设备日志，过滤关键字"SecurityComponentCheckFail"可以获取具体原因。
 
-说明
+**说明** 
 
 该关键字相关的日志可能出现在不同级别的日志上，建议在过滤该关键字时不要筛选日志级别。
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-face
 title: 人脸跟踪（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人脸识别与跟踪 > 人脸跟踪（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:00+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:b122005b70e9f80c889b2d3442a5d795595463babaa0bfb8787a623a8cd7895c
+scraped_at: 2026-09-02T14:59:48+08:00
+doc_updated_at: 2026-08-14
+content_hash: sha256:b3999664b699c801bf798d929ad54fd52787a98cfa2902145e348be1698762a5
 ---
 
 ## 约束与限制
 
-人脸跟踪能力支持部分Phone、部分Tablet、TV设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持运动跟踪及平面识别特性（[ARENGINE\_FEATURE\_TYPE\_FACE](../harmonyos-references/arengine-api-arengine.md#arfeaturetype)）。
+从6.1.0(23)开始，人脸跟踪能力支持部分Phone、部分Tablet、TV设备。请参考[硬件要求](arengine-preparations.md#硬件要求)判断设备是否支持人脸识别与跟踪特性（[ARENGINE\_FEATURE\_TYPE\_FACE](../harmonyos-references/arengine-api-arengine.md#arfeaturetype)）。
 
 ## 接口说明
 
@@ -31,154 +31,210 @@ content_hash: sha256:b122005b70e9f80c889b2d3442a5d795595463babaa0bfb8787a623a8cd
 
 人脸跟踪能力所需要导入的模块如下：
 
-```
-1. import { arEngine, ARView, arViewController } from '@kit.AREngine';
-2. import { Node, Scene } from '@kit.ArkGraphics3D';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { arEngine, ARView, arViewController } from '@kit.AREngine';
+import {CustomGeometry, Geometry, Material, MaterialType, MeshResource, Node, PrimitiveTopology,
+  Scene, SceneResourceFactory, Shader, ShaderMaterial, Vec3} from '@kit.ArkGraphics3D';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { logger } from '../utils/Logger';
+import {arrayBufferFloat32ToNumber, arrayBufferInt32ToNumber, generateFaceMeshIndex,
+  generateMeshInput, getFaceFrontVertices} from '../utils/Utils';
 ```
 
 ### 定义变量
 
 定义变量face接收人脸对象，定义变量faceGeometry接收人脸几何对象，定义变量faceBlendShapes接收人脸微表情对象。
 
-```
-1. let face: arEngine.ARFace;
-2. let faceGeometry: arEngine.ARGeometry;
-3. let faceBlendShapes: arEngine.ARBlendShapes;
+```typescript
+let face: arEngine.ARFace = trackables[i] as arEngine.ARFace;
+// ...
+// 数据处理。
+let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
 ```
 
 ### 显示预览流
 
 首先初始化AR会话和AR场景，可以参考[初始化AR会话和AR场景](arengine-arsession.md#初始化ar会话和ar场景)章节。
 
-更改type为[ARType](../harmonyos-references/arengine-api-arengine.md#artype).FACE，更改cameraLensFacing为[ARCameraLensFacing](../harmonyos-references/arengine-api-arengine.md#arcameralensfacing).FRONT，更改multiFaceMode为[ARMultiFaceMode](../harmonyos-references/arengine-api-arengine.md#armultifacemode).MULTIFACE\_DISABLE，启用前置相机的人脸跟踪能力。
+更改type为[ARType](../harmonyos-references/arengine-api-arengine.md#artype).FACE，更改cameraLensFacing为[ARCameraLensFacing](../harmonyos-references/arengine-api-arengine.md#arcameralensfacing).FRONT，更改multiFaceMode为[ARMultiFaceMode](../harmonyos-references/arengine-api-arengine.md#armultifacemode).MULTIFACE\_ENABLE，启用前置相机的人脸跟踪能力。
 
-```
-1. @Builder
-2. export function ARFaceBuilder(): void {
-3. ARFace();
-4. }
+```typescript
+@Builder
+export function ARFaceBuilder() {
+  ARFace();
+}
+// ...
+@Component
+export struct ARFace {
+  pageInfos: NavPathStack = new NavPathStack();
+  @State context: Context = this.getUIContext().getHostContext() as Context;
+  @State arContext?: arViewController.ARViewContext = undefined;
 
-6. @Component
-7. struct ARFace {
-8. @State arContext?: arViewController.ARViewContext = undefined;
+  build() {
+    NavDestination() {
+      RelativeContainer() {
+        if (this.arContext) {
+          ARView({ context: this.arContext })
+            .height('100%')
+            .width('100%')
+            .alignRules({
+              center: { anchor: '__container__', align: VerticalAlign.Center },
+              middle: { anchor: '__container__', align: HorizontalAlign.Center }
+            })
+        }
+      }
+    }
+    .onAppear(async () => {
+      this.initARView();
+    })
+    .onWillDisappear(async () => {
+      await this.stopARView();
+      this.clearGlobalVariables();
+    })
+    .onShown(() => {
+      this.resumeARView();
+    })
+    .onHidden(() => {
+      this.pauseARView();
+    })
+    .hideTitleBar(true)
+    .hideBackButton(true)
+    .hideToolBar(true)
+  }
 
-10. build(): void {
-11. NavDestination() {
-12. RelativeContainer() {
-13. if (this.arContext) {
-14. ARView({ context: this.arContext })
-15. .height('100%')
-16. .width('100%')
-17. .alignRules({
-18. center: { anchor: '__container__', align: VerticalAlign.Center },
-19. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-20. })
-21. }
-22. }
-23. }
-24. .onAppear(() => {
-25. this.initARView();
-26. })
-27. .onWillDisappear(() => {
-28. this.stopARView();
-29. })
-30. .onShown(() => {
-31. this.resumeARView();
-32. })
-33. .onHidden(() => {
-34. this.pauseARView();
-35. })
-36. .hideTitleBar(true)
-37. .hideBackButton(true)
-38. .hideToolBar(true)
-39. }
+  private async stopARView(): Promise<void> {
+    if (!this.arContext) {
+      return;
+    }
+    try {
+      await this.arContext.destroy();
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      logger.error(`Failed to pause context. Code is ${err.code}, message is ${err.message}`);
+    }
+  }
 
-41. private initARView(): void {
-42. Scene.load().then((scene: Scene) => {
-43. let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
-44. viewContext.scene = scene;
-45. viewContext.callback = new ARViewCallbackImpl();
-46. viewContext.config = {
-47. type: arEngine.ARType.FACE,
-48. planeFindingMode: arEngine.ARPlaneFindingMode.DISABLED,
-49. semanticMode: arEngine.ARSemanticMode.NONE,
-50. meshMode: arEngine.ARMeshMode.DISABLED,
-51. focusMode: arEngine.ARFocusMode.AUTO,
-52. cameraLensFacing: arEngine.ARCameraLensFacing.FRONT,
-53. multiFaceMode: arEngine.ARMultiFaceMode.MULTIFACE_DISABLE
-54. }
-55. viewContext.init().then(() => {
-56. this.arContext = viewContext;
-57. console.info('Succeeded in initializing ARView.');
-58. }).catch((err: BusinessError) => {
-59. console.error(`Failed to init ARView. Code is ${err.code}, message is ${err.message}.`);
-60. })
-61. })
-62. }
+  private pauseARView(): void {
+    if (!this.arContext) {
+      return;
+    }
+    try {
+      this.arContext.pause();
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      logger.error(`Failed to pause context. Code is ${err.code}, message is ${err.message}`);
+    }
+  }
 
-64. private stopARView(): void {
-65. // ...
-66. }
-67. private resumeARView(): void {
-68. // ...
-69. }
-70. private pauseARView(): void {
-71. // ...
-72. }
-73. }
+  private resumeARView(): void {
+    if (!this.arContext) {
+      return;
+    }
+    try {
+      this.arContext.resume();
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      logger.error(`Failed to resume context. Code is ${err.code}, message is ${err.message}`);
+    }
+  }
+
+  private initARView(): void {
+    Scene.load().then(async (result: Scene) => {
+      try {
+        let ret: boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+        logger.info(`ARFace isARTypeSupported is ${ret}`);
+      } catch (error) {
+        const err: BusinessError = error as BusinessError;
+        logger.error(
+          `Failed to get whether the device is support ARFace. Code is ${err.code}, message is ${err.message}`);
+      }
+
+      let context = new arViewController.ARViewContext();
+      context.scene = result;
+      context.callback = new ARViewCallbackImpl();
+      context.config = {
+        type: arEngine.ARType.FACE,
+        planeFindingMode: arEngine.ARPlaneFindingMode.DISABLED,
+        powerMode: arEngine.ARPowerMode.NORMAL,
+        focusMode: arEngine.ARFocusMode.AUTO,
+        cameraLensFacing: arEngine.ARCameraLensFacing.FRONT,
+        multiFaceMode: arEngine.ARMultiFaceMode.MULTIFACE_ENABLE,
+      };
+      context.init().then(() => {
+        this.arContext = context;
+      }).catch((err: BusinessError) => {
+        logger.error(`Failed to init context. Code is ${err.code}, message is ${err.message}`);
+      });
+    })
+  }
+  // ...
+}
 ```
 
 ### 获取人脸几何数据和微表情数据
 
 调用[ARViewCallback](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcallback)，使用其中的[onFrameUpdate](../harmonyos-references/arengine-api-arviewcontroller.md#arviewcallbackonframeupdate)方法进行帧数据更新，通过[ARSession.getFrame](../harmonyos-references/arengine-api-arengine.md#arsessiongetframe)方法获取当前帧，通过[ARSession.getAllTrackables](../harmonyos-references/arengine-api-arengine.md#arsessiongetalltrackables)获得当前会话包含的人脸对象数据，通过[ARFace.getGeometry](../harmonyos-references/arengine-api-arengine.md#arfacegetgeometry)和[ARFace.getBlendShapes](../harmonyos-references/arengine-api-arengine.md#arfacegetblendshapes)从人脸对象数据中获取识别到的几何信息和微表情信息，相关变量定义参考[定义变量](arengine-face.md#定义变量)。
 
-```
-1. class ARViewCallbackImpl extends arViewController.ARViewCallback {
-2. onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-3. // ...
-4. }
+```typescript
+class ARViewCallbackImpl extends arViewController.ARViewCallback {
+  onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-6. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-7. // ...
-8. }
+  onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  }
 
-10. onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
-11. if (!ctx.session) {
-12. return;
-13. }
+  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+    if (!ctx.session) {
+      logger.error('arSession is undefined');
+      return;
+    }
 
-15. let arSession: arEngine.ARSession = ctx.session;
+    let session: arEngine.ARSession = ctx.session;
+    // ...
+    try {
+      let mesh = new CustomGeometry();
+      let geometry: Geometry | null = null;
+      if (session == null) {
+        logger.error('session is null');
+      }
 
-17. try {
-18. let frame: arEngine.ARFrame = arSession.getFrame();
-19. if (frame) {
-20. // 获取face信息
-21. let trackables: Array<arEngine.ARTrackable> = arSession.getAllTrackables(arEngine.ARTrackableType.FACE);
-22. for (let i = 0; i < trackables.length; ++i) {
-23. if (trackables[i].state !== arEngine.ARTrackingState.TRACKING) {
-24. console.error('Face not in tracking state');
-25. continue;
-26. }
-27. face = trackables[i] as arEngine.ARFace;
-28. faceGeometry = face.getGeometry();
-29. faceBlendShapes = face.getBlendShapes();
-30. if(faceGeometry){
-31. let tmpVert = faceGeometry.getVertices();
-32. let tmpIndices = faceGeometry.getIndices();
-33. }
-34. if(faceBlendShapes){
-35. let tmpData = faceBlendShapes.getData();
-36. let tmpTypes = faceBlendShapes.getTypes();
-37. }
-38. faceGeometry.release();
-39. faceBlendShapes.release();
-40. }
-41. }
-42. } catch (error) {
-43. const err: BusinessError = error as BusinessError;
-44. console.error(`Failed to update data. Code is ${err.code}, message is ${err.message}.`);
-45. }
-46. }
-47. }
+      let vertexArray: Vec3[][] = [];
+      let indexArray: Map<number, number[]> = new Map;
+
+      // 获取人脸数据。
+      let trackables: arEngine.ARTrackable[] = session.getAllTrackables(arEngine.ARTrackableType.FACE);
+      logger.debug(`the faceList length is ${trackables.length}`);
+      for (let i = 0; i < trackables.length; ++i) {
+        let face: arEngine.ARFace = trackables[i] as arEngine.ARFace;
+        let centerPose = face.getPose();
+        let viewMatrix = centerPose.getMatrix();
+
+        if (trackables[i].state !== arEngine.ARTrackingState.TRACKING) {
+          logger.error(`Face not in tracking state`);
+          continue;
+        }
+        // 数据处理。
+        let faceGeometry: arEngine.ARGeometry = face.getGeometry();
+        let faceBlendShapes: arEngine.ARBlendShapes = face.getBlendShapes();
+        let tmpVert = faceGeometry.getVertices();
+        let tmpIndices = faceGeometry.getIndices();
+        faceVertices = arrayBufferFloat32ToNumber(tmpVert);
+        let faceIndices: number[] = arrayBufferInt32ToNumber(tmpIndices);
+        vertexArray.push(getFaceFrontVertices(viewMatrix, faceVertices));
+        indexArray.set(i, faceIndices);
+
+        // BlendShapes打印。
+        logger.info('the count of blendShapes is' + faceBlendShapes.count);
+        logger.info('the data of blendShapes is' + arrayBufferFloat32ToNumber(faceBlendShapes.getData()));
+        logger.info('the types of blendShapes is' + faceBlendShapes.getTypes());
+      }
+
+      // ...
+    } catch (error) {
+      const err: BusinessError = error as BusinessError;
+      logger.error(`Failed to acquire face information. Code is ${err.code}, message is ${err.message}`)
+    }
+  }
+}
 ```

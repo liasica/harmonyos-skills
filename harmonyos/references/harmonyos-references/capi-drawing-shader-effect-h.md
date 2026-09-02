@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_shader_effect.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_shader_effect.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:59+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:a97de715799d13999ad511949af226da9ec1a5c3aa51eb029574c2ef49cf687e
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:b617e37872312a8fe4c02b5e9c5f57b8d0551485a0d65fcfee9c3712ed5b3325
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 声明与绘图模块中的着色器对象相关的函数。
+
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_shader\_effect.h>
 
@@ -26,19 +26,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_Drawing\_TileMode](capi-drawing-shader-effect-h.md#oh_drawing_tilemode) | OH\_Drawing\_TileMode | 着色器效果平铺模式的枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -52,19 +46,15 @@ PhonePC/2in1TabletTVWearable
 | [OH\_Drawing\_ShaderEffect\* OH\_Drawing\_ShaderEffectCreateImageShader(OH\_Drawing\_Image\* image,OH\_Drawing\_TileMode tileX, OH\_Drawing\_TileMode tileY, const OH\_Drawing\_SamplingOptions\* samplingOptions,const OH\_Drawing\_Matrix\* matrix)](capi-drawing-shader-effect-h.md#oh_drawing_shadereffectcreateimageshader) | 创建图像着色器。此接口不建议用于录制类型的画布，会影响性能。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  image、samplingOptions任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER；  tileX、tileY任意一个不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RANGE。 |
 | [OH\_Drawing\_ShaderEffect\* OH\_Drawing\_ShaderEffectCreateTwoPointConicalGradient(const OH\_Drawing\_Point2D\* startPt,float startRadius, const OH\_Drawing\_Point2D\* endPt, float endRadius, const uint32\_t\* colors, const float\* pos,uint32\_t size, OH\_Drawing\_TileMode tileMode, const OH\_Drawing\_Matrix\* matrix)](capi-drawing-shader-effect-h.md#oh_drawing_shadereffectcreatetwopointconicalgradient) | 创建着色器，在给定两个圆之间生成渐变。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  startPt、endPt、colors任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER；  tileMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RANGE。 |
 | [OH\_Drawing\_ShaderEffect\* OH\_Drawing\_ShaderEffectCreateCompose(OH\_Drawing\_ShaderEffect\* dst,OH\_Drawing\_ShaderEffect\* src, OH\_Drawing\_BlendMode mode)](capi-drawing-shader-effect-h.md#oh_drawing_shadereffectcreatecompose) | 按照指定的混合模式对两个着色器进行叠加，生成一个新的着色器。 |
-| [void OH\_Drawing\_ShaderEffectDestroy(OH\_Drawing\_ShaderEffect\* shaderEffect)](capi-drawing-shader-effect-h.md#oh_drawing_shadereffectdestroy) | 销毁着色器对象，并收回该对象占用的内存。 |
+| [void OH\_Drawing\_ShaderEffectDestroy(OH\_Drawing\_ShaderEffect\* shaderEffect)](capi-drawing-shader-effect-h.md#oh_drawing_shadereffectdestroy) | 销毁着色器对象，并回收该对象占用的内存。 |
 | [OH\_Drawing\_ShaderEffect\* OH\_Drawing\_ShaderEffectCreatePixelMapShader(OH\_Drawing\_PixelMap\* pixelMap,OH\_Drawing\_TileMode tileX, OH\_Drawing\_TileMode tileY, const OH\_Drawing\_SamplingOptions\* samplingOptions,const OH\_Drawing\_Matrix\* matrix)](capi-drawing-shader-effect-h.md#oh_drawing_shadereffectcreatepixelmapshader) | 创建像素图着色器。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_TileMode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_TileMode
+```c
+enum OH_Drawing_TileMode
 ```
 
 **描述**
@@ -82,14 +72,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_ShaderEffectCreatePixelMapShader()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreatePixelMapShader(OH_Drawing_PixelMap* pixelMap,OH_Drawing_TileMode tileX, OH_Drawing_TileMode tileY, const OH_Drawing_SamplingOptions* samplingOptions,const OH_Drawing_Matrix* matrix)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreatePixelMapShader(OH_Drawing_PixelMap* pixelMap,OH_Drawing_TileMode tileX, OH_Drawing_TileMode tileY, const OH_Drawing_SamplingOptions* samplingOptions,const OH_Drawing_Matrix* matrix)
 ```
 
 **描述**
@@ -118,10 +104,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ShaderEffectCreateColorShader()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateColorShader(const uint32_t color)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateColorShader(const uint32_t color)
 ```
 
 **描述**
@@ -146,10 +130,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ShaderEffectCreateLinearGradient()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateLinearGradient(const OH_Drawing_Point* startPt,const OH_Drawing_Point* endPt, const uint32_t* colors,const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateLinearGradient(const OH_Drawing_Point* startPt,const OH_Drawing_Point* endPt, const uint32_t* colors,const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
 ```
 
 **描述**
@@ -185,10 +167,8 @@ tileMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RA
 
 ### OH\_Drawing\_ShaderEffectCreateLinearGradientWithLocalMatrix()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(const OH_Drawing_Point2D* startPt, const OH_Drawing_Point2D* endPt, const uint32_t* colors, const float* pos,uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateLinearGradientWithLocalMatrix(const OH_Drawing_Point2D* startPt, const OH_Drawing_Point2D* endPt, const uint32_t* colors, const float* pos,uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
 ```
 
 **描述**
@@ -225,10 +205,8 @@ tileMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RA
 
 ### OH\_Drawing\_ShaderEffectCreateRadialGradient()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateRadialGradient(const OH_Drawing_Point* centerPt, float radius,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateRadialGradient(const OH_Drawing_Point* centerPt, float radius,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
 ```
 
 **描述**
@@ -266,10 +244,8 @@ tileMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RA
 
 ### OH\_Drawing\_ShaderEffectCreateRadialGradientWithLocalMatrix()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix(const OH_Drawing_Point2D* centerPt, float radius, const uint32_t* colors, const float* pos, uint32_t size,OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix(const OH_Drawing_Point2D* centerPt, float radius, const uint32_t* colors, const float* pos, uint32_t size,OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
 ```
 
 **描述**
@@ -308,10 +284,8 @@ tileMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RA
 
 ### OH\_Drawing\_ShaderEffectCreateSweepGradientWithLocalMatrix()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(const OH_Drawing_Point* centerPt,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(const OH_Drawing_Point* centerPt,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
 ```
 
 **描述**
@@ -343,10 +317,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ShaderEffectCreateSweepGradient()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradient(const OH_Drawing_Point* centerPt,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateSweepGradient(const OH_Drawing_Point* centerPt,const uint32_t* colors, const float* pos, uint32_t size, OH_Drawing_TileMode tileMode)
 ```
 
 **描述**
@@ -383,10 +355,8 @@ tileMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RA
 
 ### OH\_Drawing\_ShaderEffectCreateImageShader()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateImageShader(OH_Drawing_Image* image,OH_Drawing_TileMode tileX, OH_Drawing_TileMode tileY, const OH_Drawing_SamplingOptions* samplingOptions,const OH_Drawing_Matrix* matrix)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateImageShader(OH_Drawing_Image* image,OH_Drawing_TileMode tileX, OH_Drawing_TileMode tileY, const OH_Drawing_SamplingOptions* samplingOptions,const OH_Drawing_Matrix* matrix)
 ```
 
 **描述**
@@ -421,10 +391,8 @@ tileX、tileY任意一个不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAM
 
 ### OH\_Drawing\_ShaderEffectCreateTwoPointConicalGradient()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateTwoPointConicalGradient(const OH_Drawing_Point2D* startPt,float startRadius, const OH_Drawing_Point2D* endPt, float endRadius, const uint32_t* colors, const float* pos,uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateTwoPointConicalGradient(const OH_Drawing_Point2D* startPt,float startRadius, const OH_Drawing_Point2D* endPt, float endRadius, const uint32_t* colors, const float* pos,uint32_t size, OH_Drawing_TileMode tileMode, const OH_Drawing_Matrix* matrix)
 ```
 
 **描述**
@@ -463,10 +431,8 @@ tileMode不在枚举范围内时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RA
 
 ### OH\_Drawing\_ShaderEffectCreateCompose()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateCompose(OH_Drawing_ShaderEffect* dst,OH_Drawing_ShaderEffect* src, OH_Drawing_BlendMode mode)
+```c
+OH_Drawing_ShaderEffect* OH_Drawing_ShaderEffectCreateCompose(OH_Drawing_ShaderEffect* dst,OH_Drawing_ShaderEffect* src, OH_Drawing_BlendMode mode)
 ```
 
 **描述**
@@ -493,15 +459,13 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ShaderEffectDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_ShaderEffectDestroy(OH_Drawing_ShaderEffect* shaderEffect)
+```c
+void OH_Drawing_ShaderEffectDestroy(OH_Drawing_ShaderEffect* shaderEffect)
 ```
 
 **描述**
 
-销毁着色器对象，并收回该对象占用的内存。
+销毁着色器对象，并回收该对象占用的内存。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_Point3D
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_Point3D
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7de2b4554427ea23cbbbf30c257fe55d9c41e312834d6da90266ab17e1de7d79
+scraped_at: 2026-09-02T15:02:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:783fa00798ec8274e09d570b09a39d7d1b64192b6e41c3f8f851a2e5db2d5fa8
 ---
 
-```
-1. typedef struct {...} OH_Drawing_Point3D
+```c
+typedef struct {...} OH_Drawing_Point3D
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义一个三维的坐标点。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

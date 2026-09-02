@@ -3,28 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputDevice (输入设备)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputDevice (输入设备)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8eb4f03d732f2121a9fcc7ee1a4ef199d582e6bb0dfabb752de4af1a2845240f
+scraped_at: 2026-09-02T15:02:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:284285c79435f724096b7562ad807f977b316b5272cd09f3c2734e9891a8c344
 ---
 
 本模块提供输入设备管理能力，包括监听输入设备的连接和断开状态，查询设备名称等输入设备信息。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { inputDevice } from '@kit.InputKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 ## inputDevice.getDeviceList9+
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceList(callback: AsyncCallback<Array<number>>): void
 
@@ -36,7 +33,7 @@ getDeviceList(callback: AsyncCallback<Array<number>>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array<number>> | 是 | 回调函数，返回所有输入设备的ID列表。ID是输入设备的唯一标识。 |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数。当获取成功，err为undefined，data为所有输入设备的ID列表（ID是输入设备的唯一标识）；否则为错误对象。 |
 
 **错误码**：
 
@@ -44,41 +41,40 @@ getDeviceList(callback: AsyncCallback<Array<number>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. try {
-12. inputDevice.getDeviceList((error: BusinessError, ids: Array<number>) => {
-13. if (error) {
-14. console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
-15. return;
-16. }
-17. console.info(`Device id list: ${JSON.stringify(ids)}`);
-18. });
-19. } catch (error) {
-20. console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
-21. }
-22. })
-23. }
-24. }
-25. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          try {
+            // 获取输入设备列表
+            inputDevice.getDeviceList((error: BusinessError, ids: Array<number>) => {
+              if (error) {
+                console.error(`Failed to get device id list, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+                return;
+              }
+              console.info(`Succeeded in getting device id list: ${JSON.stringify(ids)}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to get device id list, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        });
+    }
+  }
+}
 ```
 
 ## inputDevice.getDeviceList9+
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceList(): Promise<Array<number>>
 
@@ -94,35 +90,34 @@ getDeviceList(): Promise<Array<number>>
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. try {
-12. inputDevice.getDeviceList().then((ids: Array<number>) => {
-13. console.info(`Device id list: ${JSON.stringify(ids)}`);
-14. }).catch((error: BusinessError) => {
-15. console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
-16. });
-17. } catch (error) {
-18. console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
-19. }
-20. })
-21. }
-22. }
-23. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          try {
+            // 获取输入设备列表
+            inputDevice.getDeviceList().then((ids: Array<number>) => {
+              console.info(`Succeeded in getting device id list: ${JSON.stringify(ids)}.`);
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to get device id list, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to get device id list, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getDeviceInfo9+
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceInfo(deviceId: number, callback: AsyncCallback<InputDeviceData>): void
 
@@ -135,7 +130,7 @@ getDeviceInfo(deviceId: number, callback: AsyncCallback<InputDeviceData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
-| callback | AsyncCallback<[InputDeviceData](js-apis-inputdevice.md#inputdevicedata)> | 是 | 回调函数。返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息等。 |
+| callback | AsyncCallback<[InputDeviceData](js-apis-inputdevice.md#inputdevicedata)> | 是 | 回调函数。当获取成功，err为undefined，data为输入设备信息（包括输入设备ID、名称、支持的输入能力等）；否则为错误对象。 |
 
 **错误码**：
 
@@ -143,42 +138,41 @@ getDeviceInfo(deviceId: number, callback: AsyncCallback<InputDeviceData>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. // 获取输入设备ID为1的设备信息。
-12. try {
-13. inputDevice.getDeviceInfo(1, (error: BusinessError, deviceData: inputDevice.InputDeviceData) => {
-14. if (error) {
-15. console.error(`Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-16. return;
-17. }
-18. console.info(`Device info: ${JSON.stringify(deviceData)}`);
-19. });
-20. } catch (error) {
-21. console.error(`Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-22. }
-23. })
-24. }
-25. }
-26. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 获取输入设备ID为1的设备信息。
+          try {
+            // 获取输入设备信息
+            inputDevice.getDeviceInfo(1, (error: BusinessError, deviceData: inputDevice.InputDeviceData) => {
+              if (error) {
+                console.error(`Failed to get device info, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+                return;
+              }
+              console.info(`Succeeded in getting device info: ${JSON.stringify(deviceData)}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to get device info, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getDeviceInfo9+
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceInfo(deviceId: number): Promise<InputDeviceData>
 
@@ -204,40 +198,39 @@ getDeviceInfo(deviceId: number): Promise<InputDeviceData>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. // 获取输入设备ID为1的设备信息。
-12. try {
-13. inputDevice.getDeviceInfo(1).then((deviceData: inputDevice.InputDeviceData) => {
-14. console.info(`Device info: ${JSON.stringify(deviceData)}`);
-15. }).catch((error: BusinessError) => {
-16. console.error(`Get device info failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-17. });
-18. } catch (error) {
-19. console.error(`Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-20. }
-21. })
-22. }
-23. }
-24. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 获取输入设备ID为1的设备信息。
+          try {
+            // 获取输入设备信息
+            inputDevice.getDeviceInfo(1).then((deviceData: inputDevice.InputDeviceData) => {
+              console.info(`Succeeded in getting device info: ${JSON.stringify(deviceData)}.`);
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to get device info, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to get device info, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getDeviceInfoSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceInfoSync(deviceId: number): InputDeviceData
 
@@ -263,38 +256,37 @@ getDeviceInfoSync(deviceId: number): InputDeviceData
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. // 获取输入设备ID为1的设备信息。
-11. try {
-12. let deviceData: inputDevice.InputDeviceData = inputDevice.getDeviceInfoSync(1);
-13. console.info(`Device info: ${JSON.stringify(deviceData)}`);
-14. } catch (error) {
-15. console.error(`Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-16. }
-17. })
-18. }
-19. }
-20. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 获取输入设备ID为1的设备信息。
+          try {
+            let deviceData: inputDevice.InputDeviceData = inputDevice.getDeviceInfoSync(1);
+            console.info(`Succeeded in getting device info: ${JSON.stringify(deviceData)}.`);
+          } catch (error) {
+            console.error(`Failed to get device info, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.on('change')9+
 
-PhonePC/2in1TabletTVWearable
-
-on(type: "change", listener: Callback<DeviceListener>): void
+on(type: 'change', listener: Callback<DeviceListener>): void
 
 注册监听输入设备的热插拔事件，使用时需连接鼠标、键盘、触摸屏等外部设备。使用callback异步回调。
 
@@ -305,7 +297,7 @@ on(type: "change", listener: Callback<DeviceListener>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 输入设备的事件类型，固定值为'change'。 |
-| listener | Callback<[DeviceListener](js-apis-inputdevice.md#devicelistener9)> | 是 | 回调函数，异步上报输入设备热插拔事件。 |
+| listener | Callback<[DeviceListener](js-apis-inputdevice.md#devicelistener9)> | 是 | 回调函数，返回输入设备热插拔事件。 |
 
 **错误码**：
 
@@ -313,78 +305,88 @@ on(type: "change", listener: Callback<DeviceListener>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. const DOMAIN = 0x0000;
+const DOMAIN = 0x0000;
 
-6. @Entry
-7. @Component
-8. struct Index {
-9. @State isPhysicalKeyboardExist: boolean = false;
-10. @State message: string = "Click to obtain the device list and monitor device hot-plug events";
-11. keyBoards: Map<number, inputDevice.KeyboardType> = new Map();
+@Entry
+@Component
+struct Index {
+  @State isPhysicalKeyboardExist: boolean = false;
+  @State message: string = 'Click to obtain the device list and monitor device hot-plug events';
+  keyboards: Map<number, inputDevice.KeyboardType> = new Map();
 
-13. build() {
-14. RelativeContainer() {
-15. Column() {
-16. Text(this.message)
-17. .onClick(() => {
-18. try {
-19. // 1.获取设备列表，判断是否有物理键盘连接
-20. inputDevice.getDeviceList().then(data => {
-21. for (let i = 0; i < data.length; ++i) {
-22. inputDevice.getKeyboardType(data[i]).then(type => {
-23. if (type === inputDevice.KeyboardType.ALPHABETIC_KEYBOARD) {
-24. // 物理键盘已连接
-25. this.isPhysicalKeyboardExist = true;
-26. this.keyBoards.set(data[i], type);
-27. }
-28. });
-29. }
-30. });
-31. // 2.监听设备热插拔
-32. inputDevice.on("change", (data) => {
-33. hilog.info(DOMAIN, 'InputDevice', `Device event info: %{public}s`, JSON.stringify(data));
-34. inputDevice.getKeyboardType(data.deviceId).then((type) => {
-35. hilog.info(DOMAIN, 'InputDevice', 'The keyboard type is: %{public}d', type);
-36. if (type === inputDevice.KeyboardType.ALPHABETIC_KEYBOARD && data.type === 'add') {
-37. // 物理键盘已插入
-38. this.isPhysicalKeyboardExist = true;
-39. this.keyBoards.set(data.deviceId, type);
-40. }
-41. });
-42. if (this.keyBoards.get(data.deviceId) === inputDevice.KeyboardType.ALPHABETIC_KEYBOARD &&
-43. data.type === 'remove') {
-44. // 物理键盘已拔掉
-45. this.isPhysicalKeyboardExist = false;
-46. this.keyBoards.delete(data.deviceId);
-47. }
-48. });
-49. this.message = "Device monitoring enabled successfully"
-50. } catch (error) {
-51. hilog.error(DOMAIN, 'InputDevice', `Execute failed, error: %{public}s`,
-52. JSON.stringify(error, ["code", "message"]));
-53. this.message = `Failed to enable device monitoring. Click to retry. Error message:${JSON.stringify(error,
-54. ["code", "message"])}`
-55. }
-56. })
-57. }
-58. }
-59. }
-60. }
+  build() {
+    RelativeContainer() {
+      Column() {
+        Text(this.message)
+          .onClick(() => {
+            try {
+              // 1.获取设备列表，判断是否有物理键盘连接
+              inputDevice.getDeviceList().then(data => {
+                for (let i = 0; i < data.length; ++i) {
+                  // 获取键盘类型
+                  inputDevice.getKeyboardType(data[i]).then(type => {
+                    if (type === inputDevice.KeyboardType.ALPHABETIC_KEYBOARD) {
+                      // 物理键盘已连接
+                      this.isPhysicalKeyboardExist = true;
+                      this.keyboards.set(data[i], type);
+                    }
+                  }).catch((error: BusinessError) => {
+                    console.error(`Failed to get keyboard type, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+                  });
+                }
+              }).catch((error: BusinessError) => {
+                console.error(`Failed to get Device List, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+              });
+              // 2.监听设备热插拔
+              inputDevice.on('change', (data) => {
+                // 打印日志
+                hilog.info(DOMAIN, 'InputDevice', `Device event info: %{public}s`, JSON.stringify(data));
+                // 获取键盘类型
+                inputDevice.getKeyboardType(data.deviceId).then((type) => {
+                  // 打印日志
+                  hilog.info(DOMAIN, 'InputDevice', 'The keyboard type is: %{public}d', type);
+                  if (type === inputDevice.KeyboardType.ALPHABETIC_KEYBOARD && data.type === 'add') {
+                    // 物理键盘已插入
+                    this.isPhysicalKeyboardExist = true;
+                    this.keyboards.set(data.deviceId, type);
+                  }
+                }).catch((error: BusinessError) => {
+                  console.error(`Failed to get keyboard type, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+                });
+                if (this.keyboards.get(data.deviceId) === inputDevice.KeyboardType.ALPHABETIC_KEYBOARD &&
+                  data.type === 'remove') {
+                  // 物理键盘已拔掉
+                  this.isPhysicalKeyboardExist = false;
+                  this.keyboards.delete(data.deviceId);
+                }
+              });
+              this.message = 'Device monitoring enabled successfully'
+            } catch (error) {
+              // 打印错误日志
+              hilog.error(DOMAIN, 'InputDevice', `Execute failed, error: %{public}s`,
+                JSON.stringify(error, ['code', 'message']));
+              this.message = `Failed to enable device monitoring. Click to retry. Error message:${JSON.stringify(error,
+                ["code", "message"])}`
+            }
+          })
+      }
+    }
+  }
+}
 ```
 
 ## inputDevice.off('change')9+
 
-PhonePC/2in1TabletTVWearable
-
-off(type: "change", listener?: Callback<DeviceListener>): void
+off(type: 'change', listener?: Callback<DeviceListener>): void
 
 取消监听输入设备的热插拔事件。在应用退出前调用，取消监听。使用callback异步回调。
 
@@ -403,58 +405,60 @@ off(type: "change", listener?: Callback<DeviceListener>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. let callback = (data: inputDevice.DeviceListener) => {
-11. console.info(`Report device event info: ${JSON.stringify(data, [`type`, `deviceId`])}`);
-12. };
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          let callback = (data: inputDevice.DeviceListener) => {
+            console.info(`Succeeded in listening to device change, data: ${JSON.stringify(data, [`type`, `deviceId`])}.`);
+          };
 
-14. try {
-15. inputDevice.on("change", callback);
-16. } catch (error) {
-17. console.error(`Listen device event failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-18. }
+          try {
+            // 监听设备热插拔事件
+            inputDevice.on('change', callback);
+          } catch (error) {
+            console.error(`Failed to listen to device event, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
 
-20. // 取消指定的监听。
-21. try {
-22. inputDevice.off("change", callback);
-23. } catch (error) {
-24. console.error(`Cancel listening device event failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-25. }
+          // 取消指定的监听。
+          try {
+            // 取消监听设备热插拔事件
+            inputDevice.off('change', callback);
+          } catch (error) {
+            console.error(`Failed to cancel listening to device event, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
 
-27. // 取消所有监听。
-28. try {
-29. inputDevice.off("change");
-30. } catch (error) {
-31. console.error(`Cancel all listening device event failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-32. }
-33. })
-34. }
-35. }
-36. }
+          // 取消所有监听。
+          try {
+            // 取消监听设备热插拔事件
+            inputDevice.off('change');
+          } catch (error) {
+            console.error(`Failed to cancel all listening device event, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getDeviceIds(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceIds(callback: AsyncCallback<Array<number>>): void
 
 获取所有输入设备的ID列表，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceList](js-apis-inputdevice.md#inputdevicegetdevicelist9)替代。
 
@@ -464,43 +468,42 @@ getDeviceIds(callback: AsyncCallback<Array<number>>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<Array<number>> | 是 | 回调函数，返回所有输入设备的ID列表。ID是输入设备的唯一标识。 |
+| callback | AsyncCallback<Array<number>> | 是 | 回调函数。当获取成功，err为undefined，data为所有输入设备的ID列表；否则为错误对象。 |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. inputDevice.getDeviceIds((error: BusinessError, ids: Array<number>) => {
-12. if (error) {
-13. console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
-14. return;
-15. }
-16. console.info(`Device id list: ${JSON.stringify(ids)}`);
-17. });
-18. })
-19. }
-20. }
-21. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 获取输入设备ID列表
+          inputDevice.getDeviceIds((error: BusinessError, ids: Array<number>) => {
+            if (error) {
+              console.error(`Failed to get device id list, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+              return;
+            }
+            console.info(`Succeeded in getting device id list: ${JSON.stringify(ids)}.`);
+          });
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getDeviceIds(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceIds(): Promise<Array<number>>
 
 获取所有输入设备的ID列表，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceList](js-apis-inputdevice.md#inputdevicegetdevicelist9)替代。
 
@@ -514,37 +517,36 @@ getDeviceIds(): Promise<Array<number>>
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. inputDevice.getDeviceIds().then((ids: Array<number>) => {
-12. console.info(`Device id list: ${JSON.stringify(ids)}`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
-15. })
-16. })
-17. }
-18. }
-19. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 获取输入设备ID列表
+          inputDevice.getDeviceIds().then((ids: Array<number>) => {
+            console.info(`Succeeded in getting device id list: ${JSON.stringify(ids)}.`);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to get device id list, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          })
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getDevice(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDevice(deviceId: number, callback: AsyncCallback<InputDeviceData>): void
 
 获取指定id的输入设备信息，使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceInfo](js-apis-inputdevice.md#inputdevicegetdeviceinfo9)替代。
 
@@ -555,44 +557,42 @@ getDevice(deviceId: number, callback: AsyncCallback<InputDeviceData>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
-| callback | AsyncCallback<[InputDeviceData](js-apis-inputdevice.md#inputdevicedata)> | 是 | 回调函数，返回输入设备信息，包括输入设备ID、名称、支持的输入能力、物理地址、版本信息及产品信息等。 |
+| callback | AsyncCallback<[InputDeviceData](js-apis-inputdevice.md#inputdevicedata)> | 是 | 回调函数。当获取成功，err为undefined，data为输入设备信息；否则为错误对象。 |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. // 获取输入设备ID为1的设备信息。
-12. inputDevice.getDevice(1, (error: BusinessError, deviceData: inputDevice.InputDeviceData) => {
-13. if (error) {
-14. console.error(`Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-15. return;
-16. }
-17. console.info(`Device info: ${JSON.stringify(deviceData)}`);
-18. });
-19. })
-20. }
-21. }
-22. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 获取输入设备ID为1的设备信息。
+          inputDevice.getDevice(1, (error: BusinessError, deviceData: inputDevice.InputDeviceData) => {
+            if (error) {
+              console.error(`Failed to get device info, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+              return;
+            }
+            console.info(`Succeeded in getting device info: ${JSON.stringify(deviceData)}.`);
+          });
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getDevice(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDevice(deviceId: number): Promise<InputDeviceData>
 
 获取指定id的输入设备信息，使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 8 开始支持，从API version 9 开始废弃，建议使用[inputDevice.getDeviceInfo](js-apis-inputdevice.md#inputdevicegetdeviceinfo9)替代。
 
@@ -612,36 +612,34 @@ getDevice(deviceId: number): Promise<InputDeviceData>
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. // 获取输入设备ID为1的设备信息。
-12. inputDevice.getDevice(1).then((deviceData: inputDevice.InputDeviceData) => {
-13. console.info(`Device info: ${JSON.stringify(deviceData)}`);
-14. }).catch((error: BusinessError) => {
-15. console.error(`Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
-16. })
-17. })
-18. }
-19. }
-20. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 获取输入设备ID为1的设备信息。
+          inputDevice.getDevice(1).then((deviceData: inputDevice.InputDeviceData) => {
+            console.info(`Succeeded in getting device info: ${JSON.stringify(deviceData)}.`);
+          }).catch((error: BusinessError) => {
+            console.error(`Failed to get device info, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          })
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.supportKeys9+
 
-PhonePC/2in1TabletTVWearable
-
 supportKeys(deviceId: number, keys: Array<KeyCode>, callback: AsyncCallback <Array<boolean>>): void
 
-查询指定输入设备是否支持指定按键，使用Callback异步回调。
+查询指定输入设备是否支持指定按键，使用callback异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
@@ -650,8 +648,8 @@ supportKeys(deviceId: number, keys: Array<KeyCode>, callback: AsyncCallback <Arr
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
-| keys | Array[<KeyCode>](js-apis-keycode.md#keycode) | 是 | 需要查询的键值，最多支持5个按键查询。 |
-| callback | AsyncCallback<Array<boolean>> | 是 | 回调函数，返回查询结果。 |
+| keys | Array<[KeyCode](js-apis-keycode.md#keycode)> | 是 | 需要查询的键值，最多支持5个按键查询。 |
+| callback | AsyncCallback<Array<boolean>> | 是 | 回调函数。当查询成功，err为undefined，data为按键支持查询结果（数组元素与keys参数一一对应，true表示支持，false表示不支持）；否则为错误对象。 |
 
 **错误码**：
 
@@ -659,38 +657,41 @@ supportKeys(deviceId: number, keys: Array<KeyCode>, callback: AsyncCallback <Arr
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. // 查询ID为1的输入设备对于17、22和2055按键的支持情况。
-12. try {
-13. inputDevice.supportKeys(1, [17, 22, 2055], (error: BusinessError, supportResult: Array<Boolean>) => {
-14. console.info(`Query result: ${JSON.stringify(supportResult)}`);
-15. });
-16. } catch (error) {
-17. console.error(`Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-18. }
-19. })
-20. }
-21. }
-22. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 查询ID为1的输入设备对于17、22和2055按键的支持情况。
+          try {
+            // 查询按键支持情况
+            inputDevice.supportKeys(1, [17, 22, 2055], (error: BusinessError, supportResult: Array<Boolean>) => {
+              if (error) {
+                console.error(`Failed to query support key, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+                return;
+              }
+              console.info(`Succeeded in querying support keys, supportResult: ${JSON.stringify(supportResult)}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to query support key, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.supportKeys9+
-
-PhonePC/2in1TabletTVWearable
 
 supportKeys(deviceId: number, keys: Array<KeyCode>): Promise<Array<boolean>>
 
@@ -703,13 +704,13 @@ supportKeys(deviceId: number, keys: Array<KeyCode>): Promise<Array<boolean>>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
-| keys | Array[<KeyCode>](js-apis-keycode.md#keycode) | 是 | 需要查询的键值，最多支持查询5个按键。 |
+| keys | Array<[KeyCode](js-apis-keycode.md#keycode)> | 是 | 需要查询的键值，最多支持查询5个按键。 |
 
 **返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<Array<boolean>> | Promise对象，返回查询结果。true 表示支持，false表示不支持。 |
+| Promise<Array<boolean>> | Promise对象，返回查询结果。true表示支持，false表示不支持。 |
 
 **错误码**：
 
@@ -717,40 +718,39 @@ supportKeys(deviceId: number, keys: Array<KeyCode>): Promise<Array<boolean>>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. // 查询ID为1的输入设备对于17、22和2055按键的支持情况。
-12. try {
-13. inputDevice.supportKeys(1, [17, 22, 2055]).then((supportResult: Array<Boolean>) => {
-14. console.info(`Query result: ${JSON.stringify(supportResult)}`);
-15. }).catch((error: BusinessError) => {
-16. console.error(`Query support Keys failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-17. });
-18. } catch (error) {
-19. console.error(`Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-20. }
-21. })
-22. }
-23. }
-24. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 查询ID为1的输入设备对于17、22和2055按键的支持情况。
+          try {
+            // 查询按键支持情况
+            inputDevice.supportKeys(1, [17, 22, 2055]).then((supportResult: Array<Boolean>) => {
+              console.info(`Succeeded in querying support keys, result: ${JSON.stringify(supportResult)}.`);
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to query support Keys, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to query support key, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.supportKeysSync10+
-
-PhonePC/2in1TabletTVWearable
 
 supportKeysSync(deviceId: number, keys: Array<KeyCode>): Array<boolean>
 
@@ -763,7 +763,7 @@ supportKeysSync(deviceId: number, keys: Array<KeyCode>): Array<boolean>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
-| keys | Array[<KeyCode>](js-apis-keycode.md#keycode) | 是 | 需要查询的键值，最多支持查询5个按键。 |
+| keys | Array<[KeyCode](js-apis-keycode.md#keycode)> | 是 | 需要查询的键值，最多支持查询5个按键。 |
 
 **返回值**：
 
@@ -777,40 +777,39 @@ supportKeysSync(deviceId: number, keys: Array<KeyCode>): Array<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. // 查询ID为1的输入设备对于17、22和2055按键的支持情况。
-11. try {
-12. let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, [17, 22, 2055])
-13. console.info(`Query result: ${JSON.stringify(supportResult)}`)
-14. } catch (error) {
-15. console.error(`Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`)
-16. }
-17. })
-18. }
-19. }
-20. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 查询ID为1的输入设备对于17、22和2055按键的支持情况。
+          try {
+            let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, [17, 22, 2055]);
+            console.info(`Succeeded in querying support keys, result: ${JSON.stringify(supportResult)}.`);
+          } catch (error) {
+            console.error(`Failed to query support key, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getKeyboardType9+
 
-PhonePC/2in1TabletTVWearable
-
 getKeyboardType(deviceId: number, callback: AsyncCallback<KeyboardType>): void
 
-获取输入设备的键盘类型，如全键盘、小键盘等，使用callback异步回调。输入设备的键盘类型以接口返回结果为准。
+获取输入设备的键盘类型，如全键盘、小键盘等。输入设备的键盘类型以接口返回结果为准。使用callback异步回调。
 
 **系统能力**：SystemCapability.MultimodalInput.Input.InputDevice
 
@@ -819,7 +818,7 @@ getKeyboardType(deviceId: number, callback: AsyncCallback<KeyboardType>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | number | 是 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
-| callback | AsyncCallback<[KeyboardType](js-apis-inputdevice.md#keyboardtype9)> | 是 | 回调函数，返回查询结果。 |
+| callback | AsyncCallback<[KeyboardType](js-apis-inputdevice.md#keyboardtype9)> | 是 | 回调函数。当查询成功，err为undefined，data为输入设备的键盘类型；否则为错误对象。 |
 
 **错误码**：
 
@@ -827,42 +826,41 @@ getKeyboardType(deviceId: number, callback: AsyncCallback<KeyboardType>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. // 查询ID为1的输入设备的键盘类型。
-12. try {
-13. inputDevice.getKeyboardType(1, (error: BusinessError, type: number) => {
-14. if (error) {
-15. console.error(`Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
-16. return;
-17. }
-18. console.info(`Keyboard type: ${JSON.stringify(type)}`);
-19. });
-20. } catch (error) {
-21. console.error(`Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
-22. }
-23. })
-24. }
-25. }
-26. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 查询ID为1的输入设备的键盘类型。
+          try {
+            // 获取键盘类型
+            inputDevice.getKeyboardType(1, (error: BusinessError, type: inputDevice.KeyboardType) => {
+              if (error) {
+                console.error(`Failed to get keyboard type, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+                return;
+              }
+              console.info(`Succeeded in getting keyboard type: ${JSON.stringify(type)}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to get keyboard type, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getKeyboardType9+
-
-PhonePC/2in1TabletTVWearable
 
 getKeyboardType(deviceId: number): Promise<KeyboardType>
 
@@ -880,7 +878,7 @@ getKeyboardType(deviceId: number): Promise<KeyboardType>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[KeyboardType](js-apis-inputdevice.md#keyboardtype9)> | Promise对象，返回查询结果。 |
+| Promise<[KeyboardType](js-apis-inputdevice.md#keyboardtype9)> | Promise对象，返回输入设备的键盘类型。 |
 
 **错误码**：
 
@@ -888,40 +886,39 @@ getKeyboardType(deviceId: number): Promise<KeyboardType>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. // 示例查询设备ID为1的设备键盘类型。
-12. try {
-13. inputDevice.getKeyboardType(1).then((type: number) => {
-14. console.info(`Keyboard type: ${JSON.stringify(type)}`);
-15. }).catch((error: BusinessError) => {
-16. console.error(`Get keyboard type failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-17. })
-18. } catch (error) {
-19. console.error(`Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
-20. }
-21. })
-22. }
-23. }
-24. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 示例查询设备ID为1的设备键盘类型。
+          try {
+            // 获取键盘类型
+            inputDevice.getKeyboardType(1).then((type: inputDevice.KeyboardType) => {
+              console.info(`Succeeded in getting keyboard type: ${JSON.stringify(type)}.`);
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to get keyboard type, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+            })
+          } catch (error) {
+            console.error(`Failed to get keyboard type, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getKeyboardTypeSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getKeyboardTypeSync(deviceId: number): KeyboardType
 
@@ -947,36 +944,35 @@ getKeyboardTypeSync(deviceId: number): KeyboardType
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. build() {
-7. RelativeContainer() {
-8. Text()
-9. .onClick(() => {
-10. // 示例查询设备ID为1的设备键盘类型。
-11. try {
-12. let type: number = inputDevice.getKeyboardTypeSync(1)
-13. console.info(`Keyboard type: ${JSON.stringify(type)}`)
-14. } catch (error) {
-15. console.error(`Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`)
-16. }
-17. })
-18. }
-19. }
-20. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          // 示例查询设备ID为1的设备键盘类型。
+          try {
+            let type: inputDevice.KeyboardType = inputDevice.getKeyboardTypeSync(1);
+            console.info(`Succeeded in getting keyboard type: ${JSON.stringify(type)}.`);
+          } catch (error) {
+            console.error(`Failed to get keyboard type, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.isFunctionKeyEnabled15+
-
-PhonePC/2in1TabletTVWearable
 
 isFunctionKeyEnabled(functionKey: FunctionKey): Promise<boolean>
 
@@ -1002,40 +998,39 @@ isFunctionKeyEnabled(functionKey: FunctionKey): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 3900002 | There is currently no keyboard device connected. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. try {
-12. inputDevice.isFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK).then((state: boolean) => {
-13. console.info(`capslock state: ${JSON.stringify(state)}`);
-14. }).catch((error: BusinessError) => {
-15. console.error(`Get capslock state failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-16. })
-17. } catch (error) {
-18. console.error(`Failed to get capslock state, error: ${JSON.stringify(error, [`code`, `message`])}`);
-19. }
-20. })
-21. }
-22. }
-23. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          try {
+            // 查询功能键是否使能
+            inputDevice.isFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK).then((state: boolean) => {
+              console.info(`Succeeded in getting capslock state: ${JSON.stringify(state)}.`);
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to get capslock state, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+            })
+          } catch (error) {
+            console.error(`Failed to get capslock state, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.setFunctionKeyEnabled15+
-
-PhonePC/2in1TabletTVWearable
 
 setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise<void>
 
@@ -1056,7 +1051,7 @@ setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，无返回结果的Promise对象。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码**：
 
@@ -1065,41 +1060,40 @@ setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 3900002 | There is currently no keyboard device connected. |
 | 3900003 | It is prohibited for non-input applications. |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. try {
-12. inputDevice.setFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK, true).then(() => {
-13. console.info(`Set capslock state success`);
-14. }).catch((error: BusinessError) => {
-15. console.error(`Set capslock state failed, error=${JSON.stringify(error)}`);
-16. });
-17. } catch (error) {
-18. console.error(`Set capslock enable error`);
-19. }
-20. })
-21. }
-22. }
-23. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          try {
+            // 设置功能键使能状态
+            inputDevice.setFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK, true).then(() => {
+              console.info(`Succeeded in setting capslock state.`);
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to set capslock state, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to set capslock enable, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## inputDevice.getIntervalSinceLastInput14+
-
-PhonePC/2in1TabletTVWearable
 
 getIntervalSinceLastInput(): Promise<number>
 
@@ -1111,35 +1105,38 @@ getIntervalSinceLastInput(): Promise<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，返回距离上次系统输入事件的时间间隔，单位：μs。 |
+| Promise<number> | Promise对象，返回距离上次系统输入事件的时间间隔，单位为微秒（μs）。 |
 
 **示例**：
 
-```
-1. import { inputDevice } from '@kit.InputKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { inputDevice } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. RelativeContainer() {
-9. Text()
-10. .onClick(() => {
-11. inputDevice.getIntervalSinceLastInput().then((timeInterval: number) => {
-12. console.info(`Interval since last input: ${JSON.stringify(timeInterval)}`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`Get interval since last input failed, error: ${JSON.stringify(error)}`);
-15. })
-16. })
-17. }
-18. }
-19. }
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+           try {
+            // 获取距上次输入的时间间隔
+            inputDevice.getIntervalSinceLastInput().then((timeInterval: number) => {
+              console.info(`Succeeded in getting interval since last input: ${JSON.stringify(timeInterval)}.`);
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to get interval since last input, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+            })
+          } catch (error) {
+            console.error(`Failed to get interval since last input, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
 ```
 
 ## DeviceListener9+
-
-PhonePC/2in1TabletTVWearable
 
 描述输入设备热插拔的信息。
 
@@ -1151,8 +1148,6 @@ PhonePC/2in1TabletTVWearable
 | deviceId | number | 否 | 否 | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
 
 ## InputDeviceData
-
-PhonePC/2in1TabletTVWearable
 
 描述输入设备的信息。
 
@@ -1170,12 +1165,10 @@ PhonePC/2in1TabletTVWearable
 | version9+ | number | 否 | 否 | 输入设备的版本信息。 |
 | phys9+ | string | 否 | 否 | 输入设备的物理地址。 |
 | uniq9+ | string | 否 | 否 | 输入设备的唯一标识。 |
-| isVirtual23+ | boolean | 否 | 是 | 输入设备是否为虚拟设备。  true表示是虚拟设备，false表示是非虚拟设备。 |
-| isLocal23+ | boolean | 否 | 是 | 输入设备是否为本地设备。  true表示是本地设备，false表示是非本地设备。 |
+| isVirtual23+ | boolean | 否 | 是 | 输入设备是否为虚拟设备。  true表示是虚拟设备，false表示是非虚拟设备。当该字段不存在时，默认值为false。 |
+| isLocal23+ | boolean | 否 | 是 | 输入设备是否为本地设备。  true表示是本地设备，false表示是非本地设备。当该字段不存在时，默认值为false。 |
 
 ## AxisType9+
-
-PhonePC/2in1TabletTVWearable
 
 type AxisType = 'touchmajor' | 'touchminor' | 'orientation' | 'x' | 'y' | 'pressure' | 'toolminor' | 'toolmajor' | 'null'
 
@@ -1193,11 +1186,9 @@ type AxisType = 'touchmajor' | 'touchminor' | 'orientation' | 'x' | 'y' | 'press
 | 'pressure' | 压力轴。 |
 | 'x' | 横坐标轴。 |
 | 'y' | 纵坐标轴。 |
-| 'null' | 无。 |
+| 'null' | 无类型。 |
 
 ## AxisRange
-
-PhonePC/2in1TabletTVWearable
 
 输入设备的轴信息。
 
@@ -1214,8 +1205,6 @@ PhonePC/2in1TabletTVWearable
 | resolution9+ | number | 否 | 否 | 轴的分辨率。 |
 
 ## SourceType9+
-
-PhonePC/2in1TabletTVWearable
 
 type SourceType = 'keyboard' | 'mouse' | 'touchpad' | 'touchscreen' | 'joystick' | 'trackball'
 
@@ -1234,8 +1223,6 @@ type SourceType = 'keyboard' | 'mouse' | 'touchpad' | 'touchscreen' | 'joystick'
 
 ## ChangedType9+
 
-PhonePC/2in1TabletTVWearable
-
 type ChangedType = 'add' | 'remove'
 
 监听设备热插拔事件类型。
@@ -1248,8 +1235,6 @@ type ChangedType = 'add' | 'remove'
 | 'remove' | 移除输入设备。 |
 
 ## KeyboardType9+
-
-PhonePC/2in1TabletTVWearable
 
 键盘输入设备的类型。
 
@@ -1265,8 +1250,6 @@ PhonePC/2in1TabletTVWearable
 | REMOTE\_CONTROL | 5 | 表示遥控器设备。 |
 
 ## FunctionKey15+
-
-PhonePC/2in1TabletTVWearable
 
 功能键的类型。
 

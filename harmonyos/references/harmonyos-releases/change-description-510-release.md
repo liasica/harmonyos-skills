@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/change-description-510-release
 title: 变更说明
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > DevEco Studio > 变更说明
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:17+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:08f94335bfef741d8d34ca5f668338fd791a28c5e4dfe17429553d1bcfdc12be
+scraped_at: 2026-09-02T14:49:22+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:fe2b21c9de95dcbda64701c3e8248617b9ebadaa64c4816644f51870b29435f1
 ---
 
 ## DevEco Studio中fastjson版本升级
@@ -24,9 +24,9 @@ DevEco Studio使用的fastjson版本升级至fastjson2。
 
 升级到DevEco Studio 5.1.0.828及以上版本，堆栈路径前增加模块的packageName，用于确认堆栈对应的模块。
 
-```
-1. at anonymous (entry/src/main/ets/pages/Index.ets:21:19)     // 变更前
-2. at anonymous entry (entry/src/main/ets/pages/Index.ets:21:19)   // 变更后
+```screen
+at anonymous (entry/src/main/ets/pages/Index.ets:21:19)     // 变更前
+at anonymous entry (entry/src/main/ets/pages/Index.ets:21:19)   // 变更后
 ```
 
 **变更影响**

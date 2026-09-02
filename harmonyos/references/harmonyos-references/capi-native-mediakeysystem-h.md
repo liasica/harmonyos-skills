@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_mediakeysystem.h
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > C API > 头文件 > native_mediakeysystem.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0a50bd2a554bfec5cb538b43eb93863fdf27c746c06cf2d8ee30b388e304654b
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7e0f083049aa0ae19b61e53968f499525fbe40a7cba1a9e07e971999ace7946c
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 定义Drm MediaKeySystem API。提供以下功能：
 
-查询是否支持特定的drm、创建媒体密钥会话、获取和设置配置、获取统计信息、获取内容保护级别、生成提供请求、处理提供响应、事件监听、获取内容防护级别、管理离线媒体密钥等。
+查询是否支持特定的DRM、创建媒体密钥会话、获取和设置配置、获取统计信息、获取内容保护级别、生成提供请求、处理提供响应、事件监听、获取内容防护级别、管理离线媒体密钥等。
 
 **引用文件：** <multimedia/drm\_framework/native\_mediakeysystem.h>
 
@@ -28,21 +26,17 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [typedef Drm\_ErrCode (\*MediaKeySystem\_Callback)(DRM\_EventType eventType, uint8\_t \*info, int32\_t infoLen, char \*extra)](capi-native-mediakeysystem-h.md#mediakeysystem_callback) | MediaKeySystem\_Callback | MediaKeySystem事件触发时将调用的回调，不返回MediaKeySystem实例，适用于单个MediaKeySystem场景。 |
-| [typedef Drm\_ErrCode (\*OH\_MediaKeySystem\_Callback)(MediaKeySystem \*mediaKeySystem, DRM\_EventType eventType, uint8\_t \*info, int32\_t infoLen, char \*extra)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_callback) | OH\_MediaKeySystem\_Callback | MediaKeySystem事件触发时将调用的回调，返回MediaKeySystem实例，适用于多个MediaKeySystem场景。 |
+| [typedef Drm\_ErrCode (\*MediaKeySystem\_Callback)(DRM\_EventType eventType, uint8\_t \*info, int32\_t infoLen, char \*extra)](capi-native-mediakeysystem-h.md#mediakeysystem_callback) | MediaKeySystem\_Callback | MediaKeySystem事件触发时将调用的回调函数，不返回MediaKeySystem实例，适用于单个MediaKeySystem场景。 |
+| [typedef Drm\_ErrCode (\*OH\_MediaKeySystem\_Callback)(MediaKeySystem \*mediaKeySystem, DRM\_EventType eventType, uint8\_t \*info, int32\_t infoLen, char \*extra)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_callback) | OH\_MediaKeySystem\_Callback | MediaKeySystem事件触发时将调用的回调函数，返回MediaKeySystem实例，适用于多个MediaKeySystem场景。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_SetCallback(MediaKeySystem \*mediaKeySystem, OH\_MediaKeySystem\_Callback callback)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_setcallback) | - | 设置MediaKeySystem事件回调。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_GetMediaKeySystems(DRM\_MediaKeySystemDescription \*descs, uint32\_t \*count)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getmediakeysystems) | - | 获取设备支持的DRM解决方案的名称和唯一标识的列表。 |
 | [bool OH\_MediaKeySystem\_IsSupported(const char \*name)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported) | - | 查询设备是否支持对应的DRM解决方案。 |
-| [bool OH\_MediaKeySystem\_IsSupported2(const char \*name, const char \*mimeType)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported2) | - | 查询设备是否支持对应的DRM解决方案名称及媒体类型。 |
-| [bool OH\_MediaKeySystem\_IsSupported3(const char \*name, const char \*mimeType, DRM\_ContentProtectionLevel contentProtectionLevel)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported3) | - | 查询设备是否支持对应的DRM解决方案、媒体类型、内容保护级别。 |
+| [bool OH\_MediaKeySystem\_IsSupported2(const char \*name, const char \*mimeType)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported2) | - | 查询设备是否支持对应的DRM解决方案名称及媒体类型。可通过[OH\_MediaKeySystem\_IsSupported](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported)接口先确认DRM解决方案是否被设备支持。 |
+| [bool OH\_MediaKeySystem\_IsSupported3(const char \*name, const char \*mimeType, DRM\_ContentProtectionLevel contentProtectionLevel)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported3) | - | 查询设备是否支持对应的DRM解决方案、媒体类型、内容保护级别。可通过[OH\_MediaKeySystem\_IsSupported2](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported2)接口先判断mimeType是否支持。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_Create(const char \*name, MediaKeySystem \*\*mediaKeySystem)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_create) | - | 创建MediaKeySystem实例。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_SetConfigurationString(MediaKeySystem \*mediaKeySystem, const char \*configName, const char \*value)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_setconfigurationstring) | - | 设置字符串类型的配置属性。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_GetConfigurationString(MediaKeySystem \*mediaKeySystem, const char \*configName, char \*value, int32\_t valueLen)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getconfigurationstring) | - | 获取字符串类型配置属性值。 |
@@ -56,25 +50,21 @@ PhonePC/2in1TabletTVWearable
 | [Drm\_ErrCode OH\_MediaKeySystem\_ProcessKeySystemResponse(MediaKeySystem \*mediaKeySystem, uint8\_t \*response, int32\_t responseLen)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_processkeysystemresponse) | - | 处理设备DRM证书请求响应。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_GetOfflineMediaKeyIds(MediaKeySystem \*mediaKeySystem, DRM\_OfflineMediakeyIdArray \*offlineMediaKeyIds)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getofflinemediakeyids) | - | 获取离线媒体密钥标识列表，媒体密钥标识用于对离线媒体密钥的管理。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_GetOfflineMediaKeyStatus(MediaKeySystem \*mediaKeySystem, uint8\_t \*offlineMediaKeyId, int32\_t offlineMediaKeyIdLen, DRM\_OfflineMediaKeyStatus \*status)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getofflinemediakeystatus) | - | 获取离线媒体密钥状态。 |
-| [Drm\_ErrCode OH\_MediaKeySystem\_ClearOfflineMediaKeys(MediaKeySystem \*mediaKeySystem, uint8\_t \*offlineMediaKeyId, int32\_t offlineMediaKeyIdLen)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_clearofflinemediakeys) | - | 按id清除离线媒体密钥。 |
+| [Drm\_ErrCode OH\_MediaKeySystem\_ClearOfflineMediaKeys(MediaKeySystem \*mediaKeySystem, uint8\_t \*offlineMediaKeyId, int32\_t offlineMediaKeyIdLen)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_clearofflinemediakeys) | - | 按ID清除离线媒体密钥。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_GetCertificateStatus(MediaKeySystem \*mediaKeySystem, DRM\_CertificateStatus \*certStatus)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getcertificatestatus) | - | 获取设备DRM证书状态。 |
 | [Drm\_ErrCode OH\_MediaKeySystem\_Destroy(MediaKeySystem \*mediaKeySystem)](capi-native-mediakeysystem-h.md#oh_mediakeysystem_destroy) | - | 销毁MediaKeySystem实例。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### MediaKeySystem\_Callback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef  Drm_ErrCode (*MediaKeySystem_Callback)(DRM_EventType eventType, uint8_t *info,int32_t infoLen, char *extra)
+```c
+typedef  Drm_ErrCode (*MediaKeySystem_Callback)(DRM_EventType eventType, uint8_t *info,int32_t infoLen, char *extra)
 ```
 
 **描述**
 
-MediaKeySystem事件触发时将调用的回调，不返回MediaKeySystem实例，适用于单个MediaKeySystem场景。
+MediaKeySystem事件触发时将调用的回调函数，不返回MediaKeySystem实例，适用于单个MediaKeySystem场景。
 
 **起始版本：** 11
 
@@ -95,15 +85,13 @@ MediaKeySystem事件触发时将调用的回调，不返回MediaKeySystem实例�
 
 ### OH\_MediaKeySystem\_Callback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef Drm_ErrCode (*OH_MediaKeySystem_Callback)(MediaKeySystem *mediaKeySystem, DRM_EventType eventType,uint8_t *info, int32_t infoLen, char *extra)
+```c
+typedef Drm_ErrCode (*OH_MediaKeySystem_Callback)(MediaKeySystem *mediaKeySystem, DRM_EventType eventType,uint8_t *info, int32_t infoLen, char *extra)
 ```
 
 **描述**
 
-MediaKeySystem事件触发时将调用的回调，返回MediaKeySystem实例，适用于多个MediaKeySystem场景。
+MediaKeySystem事件触发时将调用的回调函数，返回MediaKeySystem实例，适用于多个MediaKeySystem场景。
 
 **起始版本：** 12
 
@@ -125,10 +113,8 @@ MediaKeySystem事件触发时将调用的回调，返回MediaKeySystem实例，�
 
 ### OH\_MediaKeySystem\_SetCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_SetCallback(MediaKeySystem *mediaKeySystem, OH_MediaKeySystem_Callback callback)
+```c
+Drm_ErrCode OH_MediaKeySystem_SetCallback(MediaKeySystem *mediaKeySystem, OH_MediaKeySystem_Callback callback)
 ```
 
 **描述**
@@ -152,10 +138,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GetMediaKeySystems()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GetMediaKeySystems(DRM_MediaKeySystemDescription *descs, uint32_t *count)
+```c
+Drm_ErrCode OH_MediaKeySystem_GetMediaKeySystems(DRM_MediaKeySystemDescription *descs, uint32_t *count)
 ```
 
 **描述**
@@ -175,14 +159,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：可能原因：  1.输入参数descs为空指针或输入参数count为空指针。  2.输入参数descs长度不足。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。 |
+| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：  输入参数descs为空指针。  输入参数count为空指针。  输入参数descs长度不足。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。 |
 
 ### OH\_MediaKeySystem\_IsSupported()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_MediaKeySystem_IsSupported(const char *name)
+```c
+bool OH_MediaKeySystem_IsSupported(const char *name)
 ```
 
 **描述**
@@ -195,25 +177,23 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const char \*name | DRM解决方案名称。 |
+| const char \*name | DRM解决方案名称。可通过[OH\_MediaKeySystem\_GetMediaKeySystems](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getmediakeysystems)接口获取设备支持的DRM解决方案名称。示例："com.wiseplay.drm"。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| bool | 表示是否支持指定DRM解决方案。true表示支持，false表示不支持。 |
+| bool | 返回是否支持指定的DRM解决方案。true表示支持，false表示不支持。 |
 
 ### OH\_MediaKeySystem\_IsSupported2()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_MediaKeySystem_IsSupported2(const char *name, const char *mimeType)
+```c
+bool OH_MediaKeySystem_IsSupported2(const char *name, const char *mimeType)
 ```
 
 **描述**
 
-查询设备是否支持对应的DRM解决方案名称及媒体类型。
+查询设备是否支持对应的DRM解决方案名称及媒体类型。可通过[OH\_MediaKeySystem\_IsSupported](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported)接口先确认DRM解决方案是否被设备支持。
 
 **起始版本：** 11
 
@@ -221,26 +201,24 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const char \*name | DRM解决方案名称。 |
-| const char \*mimeType | 媒体类型，支持的媒体类型取决于DRM解决方案，如：video/avc、video/hev。 |
+| const char \*name | DRM解决方案名称。可通过[OH\_MediaKeySystem\_GetMediaKeySystems](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getmediakeysystems)接口获取设备支持的DRM解决方案名称。 |
+| const char \*mimeType | 输入参数，媒体类型，支持的媒体类型取决于DRM解决方案，如：video/avc、video/hevc。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| bool | 表示是否支持指定DRM解决方案及媒体类型。true表示支持，false表示不支持。 |
+| bool | 表示是否支持指定的DRM解决方案及媒体类型。当name和mimeType都支持时返回true，否则返回false。当name或mimeType参数为空或无效时返回false。 |
 
 ### OH\_MediaKeySystem\_IsSupported3()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. bool OH_MediaKeySystem_IsSupported3(const char *name, const char *mimeType,DRM_ContentProtectionLevel contentProtectionLevel)
+```c
+bool OH_MediaKeySystem_IsSupported3(const char *name, const char *mimeType,DRM_ContentProtectionLevel contentProtectionLevel)
 ```
 
 **描述**
 
-查询设备是否支持对应的DRM解决方案、媒体类型、内容保护级别。
+查询设备是否支持对应的DRM解决方案、媒体类型、内容保护级别。可通过[OH\_MediaKeySystem\_IsSupported2](capi-native-mediakeysystem-h.md#oh_mediakeysystem_issupported2)接口先判断mimeType是否支持。
 
 **起始版本：** 11
 
@@ -248,22 +226,20 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const char \*name | DRM解决方案名称。 |
-| const char \*mimeType | 媒体类型，支持的媒体类型取决于DRM解决方案，如：video/avc、video/hev。 |
-| [DRM\_ContentProtectionLevel](capi-native-drm-common-h.md#drm_contentprotectionlevel) contentProtectionLevel | 内容保护级别。 |
+| const char \*name | DRM解决方案名称。可通过[OH\_MediaKeySystem\_GetMediaKeySystems](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getmediakeysystems)接口获取设备支持的DRM解决方案名称。 |
+| const char \*mimeType | 输入参数，媒体类型，支持的媒体类型取决于DRM解决方案，如：video/avc、video/hevc。 |
+| [DRM\_ContentProtectionLevel](capi-native-drm-common-h.md#drm_contentprotectionlevel) contentProtectionLevel | 输入参数，内容保护级别。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| bool | 表示是否支持指定DRM解决方案，媒体类型以及内容保护级别。true表示支持，false表示不支持。 |
+| bool | 表示是否支持指定的DRM解决方案、媒体类型以及内容保护级别。当name、mimeType和contentProtectionLevel都支持时返回true，否则返回false。 |
 
 ### OH\_MediaKeySystem\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_Create(const char *name, MediaKeySystem **mediaKeySystem)
+```c
+Drm_ErrCode OH_MediaKeySystem_Create(const char *name, MediaKeySystem **mediaKeySystem)
 ```
 
 **描述**
@@ -283,14 +259,12 @@ PhonePC/2in1TabletTVWearable
 
 | 类型 | 说明 |
 | --- | --- |
-| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：可能原因：  1.输入参数name为空指针或长度为0。  2.输入参数mediaKeySystem为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。  DRM\_ERR\_SERVICE\_DIED：服务死亡。  DRM\_ERR\_MAX\_SYSTEM\_NUM\_REACHED：已创建的MediaKeySystem数量达到最大限制(64个)。 |
+| [Drm\_ErrCode](capi-native-drm-err-h.md#drm_errcode) | DRM\_ERR\_OK：执行成功。  DRM\_ERR\_INVALID\_VAL：  输入参数name为空指针。  输入参数name长度为0。  输入参数mediaKeySystem为空指针。  DRM\_ERR\_UNKNOWN：发生内部错误，请查看日志详细信息。  DRM\_ERR\_SERVICE\_DIED：服务死亡。  DRM\_ERR\_MAX\_SYSTEM\_NUM\_REACHED：已创建的MediaKeySystem数量达到最大限制(64个)。 |
 
 ### OH\_MediaKeySystem\_SetConfigurationString()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_SetConfigurationString(MediaKeySystem *mediaKeySystem,const char *configName, const char *value)
+```c
+Drm_ErrCode OH_MediaKeySystem_SetConfigurationString(MediaKeySystem *mediaKeySystem,const char *configName, const char *value)
 ```
 
 **描述**
@@ -315,10 +289,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GetConfigurationString()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GetConfigurationString(MediaKeySystem *mediaKeySystem,const char *configName, char *value, int32_t valueLen)
+```c
+Drm_ErrCode OH_MediaKeySystem_GetConfigurationString(MediaKeySystem *mediaKeySystem,const char *configName, char *value, int32_t valueLen)
 ```
 
 **描述**
@@ -333,7 +305,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [MediaKeySystem](capi-drm-mediakeysystem.md) \*mediaKeySystem | MediaKeySystem实例。 |
 | const char \*configName | 字符串类型配置名。 |
-| char \*value | 字符串类型配置值。 |
+| char \*value | 字符串类型配置值，用于存储获取的配置属性值。该参数不能为空，具体支持的取值由设备上DRM解决方案决定。 |
 | int32\_t valueLen | 字符串类型配置值长度。 |
 
 **返回：**
@@ -344,10 +316,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_SetConfigurationByteArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_SetConfigurationByteArray(MediaKeySystem *mediaKeySystem,const char *configName, uint8_t *value, int32_t valueLen)
+```c
+Drm_ErrCode OH_MediaKeySystem_SetConfigurationByteArray(MediaKeySystem *mediaKeySystem,const char *configName, uint8_t *value, int32_t valueLen)
 ```
 
 **描述**
@@ -361,7 +331,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [MediaKeySystem](capi-drm-mediakeysystem.md) \*mediaKeySystem | MediaKeySystem实例。 |
-| const char \*configName | 字符数组类型配置属性名，不能为空，具体支持的属性名由设备上DRM解决方案决定。 |
+| const char \*configName | 字符数组类型配置属性名称，不能为空，具体支持的属性名由设备上DRM解决方案决定。 |
 | uint8\_t \*value | 字符数组类型配置属性值，不能为空，具体支持的属性值由设备上DRM解决方案决定。 |
 | int32\_t valueLen | 字符数组类型配置属性值长度。 |
 
@@ -373,10 +343,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GetConfigurationByteArray()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GetConfigurationByteArray(MediaKeySystem *mediaKeySystem,const char *configName, uint8_t *value, int32_t *valueLen)
+```c
+Drm_ErrCode OH_MediaKeySystem_GetConfigurationByteArray(MediaKeySystem *mediaKeySystem,const char *configName, uint8_t *value, int32_t *valueLen)
 ```
 
 **描述**
@@ -391,7 +359,7 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [MediaKeySystem](capi-drm-mediakeysystem.md) \*mediaKeySystem | MediaKeySystem实例。 |
 | const char \*configName | 字符数组类型配置属性名称，不能为空，具体支持的属性名由设备上DRM解决方案决定。 |
-| uint8\_t \*value | 字符数组类型配置属性。 |
+| uint8\_t \*value | 字符数组类型配置属性，用于存储获取的配置属性值。该参数不能为空，具体支持的取值由设备上DRM解决方案决定。 |
 | int32\_t \*valueLen | 字符数组类型配置属性长度。 |
 
 **返回：**
@@ -402,10 +370,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GetStatistics()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GetStatistics(MediaKeySystem *mediaKeySystem, DRM_Statistics *statistics)
+```c
+Drm_ErrCode OH_MediaKeySystem_GetStatistics(MediaKeySystem *mediaKeySystem, DRM_Statistics *statistics)
 ```
 
 **描述**
@@ -429,10 +395,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GetMaxContentProtectionLevel()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GetMaxContentProtectionLevel(MediaKeySystem *mediaKeySystem,DRM_ContentProtectionLevel *contentProtectionLevel)
+```c
+Drm_ErrCode OH_MediaKeySystem_GetMaxContentProtectionLevel(MediaKeySystem *mediaKeySystem,DRM_ContentProtectionLevel *contentProtectionLevel)
 ```
 
 **描述**
@@ -456,10 +420,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_SetMediaKeySystemCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_SetMediaKeySystemCallback(MediaKeySystem *mediaKeySystem,MediaKeySystem_Callback callback)
+```c
+Drm_ErrCode OH_MediaKeySystem_SetMediaKeySystemCallback(MediaKeySystem *mediaKeySystem,MediaKeySystem_Callback callback)
 ```
 
 **描述**
@@ -483,10 +445,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_CreateMediaKeySession()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_CreateMediaKeySession(MediaKeySystem *mediaKeySystem,DRM_ContentProtectionLevel *level, MediaKeySession **mediaKeySession)
+```c
+Drm_ErrCode OH_MediaKeySystem_CreateMediaKeySession(MediaKeySystem *mediaKeySystem,DRM_ContentProtectionLevel *level, MediaKeySession **mediaKeySession)
 ```
 
 **描述**
@@ -500,7 +460,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [MediaKeySystem](capi-drm-mediakeysystem.md) \*mediaKeySystem | MediaKeySystem实例。 |
-| [DRM\_ContentProtectionLevel](capi-native-drm-common-h.md#drm_contentprotectionlevel) \*level | 内容保护级别。 |
+| [DRM\_ContentProtectionLevel](capi-native-drm-common-h.md#drm_contentprotectionlevel) \*level | 内容保护级别。可通过[OH\_MediaKeySystem\_GetMaxContentProtectionLevel](capi-native-mediakeysystem-h.md#oh_mediakeysystem_getmaxcontentprotectionlevel)接口先获取设备支持的最大内容保护级别。 |
 | [MediaKeySession](capi-drm-mediakeysession.md) \*\*mediaKeySession | MediaKeySession实例。 |
 
 **返回：**
@@ -511,10 +471,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GenerateKeySystemRequest()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GenerateKeySystemRequest(MediaKeySystem *mediaKeySystem, uint8_t *request,int32_t *requestLen, char *defaultUrl, int32_t defaultUrlLen)
+```c
+Drm_ErrCode OH_MediaKeySystem_GenerateKeySystemRequest(MediaKeySystem *mediaKeySystem, uint8_t *request,int32_t *requestLen, char *defaultUrl, int32_t defaultUrlLen)
 ```
 
 **描述**
@@ -541,10 +499,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_ProcessKeySystemResponse()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_ProcessKeySystemResponse(MediaKeySystem *mediaKeySystem,uint8_t *response, int32_t responseLen)
+```c
+Drm_ErrCode OH_MediaKeySystem_ProcessKeySystemResponse(MediaKeySystem *mediaKeySystem,uint8_t *response, int32_t responseLen)
 ```
 
 **描述**
@@ -569,10 +525,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GetOfflineMediaKeyIds()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GetOfflineMediaKeyIds(MediaKeySystem *mediaKeySystem,DRM_OfflineMediakeyIdArray *offlineMediaKeyIds)
+```c
+Drm_ErrCode OH_MediaKeySystem_GetOfflineMediaKeyIds(MediaKeySystem *mediaKeySystem,DRM_OfflineMediakeyIdArray *offlineMediaKeyIds)
 ```
 
 **描述**
@@ -596,10 +550,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GetOfflineMediaKeyStatus()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GetOfflineMediaKeyStatus(MediaKeySystem *mediaKeySystem,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen, DRM_OfflineMediaKeyStatus *status)
+```c
+Drm_ErrCode OH_MediaKeySystem_GetOfflineMediaKeyStatus(MediaKeySystem *mediaKeySystem,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen, DRM_OfflineMediaKeyStatus *status)
 ```
 
 **描述**
@@ -625,10 +577,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_ClearOfflineMediaKeys()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_ClearOfflineMediaKeys(MediaKeySystem *mediaKeySystem,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen)
+```c
+Drm_ErrCode OH_MediaKeySystem_ClearOfflineMediaKeys(MediaKeySystem *mediaKeySystem,uint8_t *offlineMediaKeyId, int32_t offlineMediaKeyIdLen)
 ```
 
 **描述**
@@ -653,10 +603,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_GetCertificateStatus()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_GetCertificateStatus(MediaKeySystem *mediaKeySystem,DRM_CertificateStatus *certStatus)
+```c
+Drm_ErrCode OH_MediaKeySystem_GetCertificateStatus(MediaKeySystem *mediaKeySystem,DRM_CertificateStatus *certStatus)
 ```
 
 **描述**
@@ -680,10 +628,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_MediaKeySystem\_Destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Drm_ErrCode OH_MediaKeySystem_Destroy(MediaKeySystem *mediaKeySystem)
+```c
+Drm_ErrCode OH_MediaKeySystem_Destroy(MediaKeySystem *mediaKeySystem)
 ```
 
 **描述**

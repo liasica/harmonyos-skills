@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-regis
 title: REGISTER_CUSTOM_OP宏
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > REGISTER_CUSTOM_OP宏
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:18+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1b435f7cb9684449d5c74be235b3f45c2f89c9a09b21c5299dad864843a3245a
+content_hash: sha256:a2a241b77a8ca236e2f7ce3522d9c008a0ae2ca37b5ac30cdeaffeb3cb2e810e
 ---
 
 ## 宏功能
@@ -14,8 +14,8 @@ content_hash: sha256:1b435f7cb9684449d5c74be235b3f45c2f89c9a09b21c5299dad864843a
 
 ## 宏原型
 
-```
-1. REGISTER_CUSTOM_OP(name)
+```cpp
+REGISTER_CUSTOM_OP(name)
 ```
 
 ## 参数说明

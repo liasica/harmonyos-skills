@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: stepper-item
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > stepper-item
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3d3770752ca71202245d0d5ba499bb66d995adb4da425285f7026f8dda798d3e
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:025090d9ce878de3a732d803da2315a0781536083b326e87cb3ba1b20e76ba86
 ---
 
-说明
+**说明** 
 
 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:3d3770752ca71202245d0d5ba499bb66d995adb4da425285f7026f8dda7
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -40,13 +34,11 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| prevLabel | string | - | 步骤导航器底部回退文本按钮的描述文本。 |
+| prevLabel | string | - | 步骤导航器底部返回文本按钮的描述文本。 |
 | nextLabel | string | - | 步骤导航器底部下一步文本按钮的描述文本。 |
 | status | string | normal | 步骤导航器当前步骤的初始状态，可选值为：  - normal：正常状态，右侧文本按钮正常显示，可点击进入下一个步骤。  - disabled：不可用状态，右侧文本按钮灰度显示，不可点击进入下一个步骤。  - waiting：等待状态，右侧文本按钮不显示，使用等待进度条，不可点击进入下一个步骤。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
@@ -60,14 +52,12 @@ PhonePC/2in1TabletTVWearable
 | text-decoration | string | none | 否 | 文本修饰，可选值为：  - underline: 文本下划线修饰。  - line-through: 穿过文本的修饰线。  - none: 标准文本。 |
 | font-family | string | sans-serif | 否 | 字体列表，用逗号分隔，每个字体用字体名或者字体族名设置。列表中第一个系统中存在的或者通过[自定义字体](js-components-common-customizing-font.md)指定的字体，会被选中作为文本的字体。 |
 
-说明
+**说明** 
 
 * 不支持长宽样式，宽和父容器stepper一样，高是父容器stepper减去底部导航按钮的高度。
 * 不支持position样式。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
@@ -78,12 +68,8 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 详见[stepper示例](js-components-container-stepper.md)。

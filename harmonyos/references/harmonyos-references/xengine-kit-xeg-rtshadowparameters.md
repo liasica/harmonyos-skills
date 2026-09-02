@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_RTShadowParameters
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_RTShadowParameters
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6a5db5b55dcaff9a88ec57d7616db95563f036550a70a8831cff2f59063107de
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a5952a27fb4d77676bb59f09f56f102f1594b3062eef62b70795fc23636cadff
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 光线追踪阴影（Shadow）算法参数。
 
@@ -22,16 +20,12 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
-| float [rayTMax](xengine-kit-xeg-rtshadowparameters.md#raytmax) | 阴影光线的tMax值。 |
-| float [rayTMin](xengine-kit-xeg-rtshadowparameters.md#raytmin) | 阴影光线的tMin值。 |
+| float [rayTMax](xengine-kit-xeg-rtshadowparameters.md#raytmax) | 阴影光线的tMax值，必须为非负数。 |
+| float [rayTMin](xengine-kit-xeg-rtshadowparameters.md#raytmin) | 阴影光线的tMin值，必须为非负数。 |
 | float [sunDirection](xengine-kit-xeg-rtshadowparameters.md#sundirection) [3] | 方向光的方向。 |
 | float [raySourceAngleInDegree](xengine-kit-xeg-rtshadowparameters.md#raysourceangleindegree) = 0.0f | 沿光源方向进行阴影采样的角度范围，值越大，半影区域越大。此参数的值将被限制在[0.0, 90.0]范围内。默认值为0.0。 |
 | uint32\_t [shadowCullMask](xengine-kit-xeg-rtshadowparameters.md#shadowcullmask) = 0x5FF | 配置光线查询[rayQueryInitializeEXT](https://github.com/KhronosGroup/GLSL/blob/main/extensions/ext/GLSL_EXT_ray_query.txt)函数中的rayFlags和cullMask参数，高24bit表示rayFlags，低8bit表示cullMask。 默认值为0x5FF，即 ((gl\_RayFlagsOpaqueEXT | gl\_RayFlagsTerminateOnFirstHitEXT) << 8) | 0xFF。 |
@@ -40,14 +34,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### rayPerPixel
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_RTShadowParameters::rayPerPixel = 1
+```cpp
+uint32_t XEG_RTShadowParameters::rayPerPixel = 1
 ```
 
 **描述**
@@ -56,10 +46,8 @@ PhonePC/2in1TabletTV
 
 ### raySourceAngleInDegree
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowParameters::raySourceAngleInDegree = 0.0f
+```cpp
+float XEG_RTShadowParameters::raySourceAngleInDegree = 0.0f
 ```
 
 **描述**
@@ -68,34 +56,28 @@ PhonePC/2in1TabletTV
 
 ### rayTMax
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowParameters::rayTMax
+```cpp
+float XEG_RTShadowParameters::rayTMax
 ```
 
 **描述**
 
-阴影光线的tMax值。
+阴影光线的tMax值，必须为非负数。
 
 ### rayTMin
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowParameters::rayTMin
+```cpp
+float XEG_RTShadowParameters::rayTMin
 ```
 
 **描述**
 
-阴影光线的tMin值。
+阴影光线的tMin值，必须为非负数。
 
 ### shadowCullDistance
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowParameters::shadowCullDistance
+```cpp
+float XEG_RTShadowParameters::shadowCullDistance
 ```
 
 **描述**
@@ -104,10 +86,8 @@ PhonePC/2in1TabletTV
 
 ### shadowCullMask
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_RTShadowParameters::shadowCullMask = 0x5FF
+```cpp
+uint32_t XEG_RTShadowParameters::shadowCullMask = 0x5FF
 ```
 
 **描述**
@@ -116,10 +96,8 @@ PhonePC/2in1TabletTV
 
 ### sunDirection
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTShadowParameters::sunDirection[3]
+```cpp
+float XEG_RTShadowParameters::sunDirection[3]
 ```
 
 **描述**

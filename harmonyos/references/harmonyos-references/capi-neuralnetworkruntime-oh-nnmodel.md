@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: OH_NNModel
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 结构体 > OH_NNModel
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:23b9d53d0a863aed9eef5c77d6172a3951d93cb04b98cbe23805b44510a75257
+scraped_at: 2026-09-02T14:53:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1a0fa3b47d46ad86bf188e0130f85b710028b6ad9268367825ec5bd6116aa6d1
 ---
 
-```
-1. typedef struct OH_NNModel OH_NNModel
+```c
+typedef struct OH_NNModel OH_NNModel
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 模型句柄。
 

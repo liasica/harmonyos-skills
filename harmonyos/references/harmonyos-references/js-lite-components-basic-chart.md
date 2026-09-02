@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0c20f0e039c35b7a1d666b2aec494bbb3089fb501fb432897616dd08be8bbe00
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:aecad3c76434ad9065c10ecbdb22ed20df76f31f04906933d130d1dc57faf61f
 ---
 
 图表组件，用于呈现线形图、柱状图界面。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
@@ -56,8 +52,8 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
-| min | number | 0 | 否 | 轴的最小值。  不支持负数。仅线形图支持。 |
-| max | number | 100 | 否 | 轴的最大值。  不支持负数。仅线形图支持。 |
+| min | number | 0 | 否 | 轴的最小值。  不支持负数。 |
+| max | number | 100 | 否 | 轴的最大值。  不支持负数。 |
 | axisTick | number | 10 | 否 | 轴显示的刻度数量。  **说明：**  仅支持1~20，且具体显示的效果与如下计算值有关（图的宽度所占的像素/（max-min））。  由于轻量级智能穿戴设备采用整数运算，在除法运算无法整除时会产生误差，具体表现为x轴末尾可能出现空白区域。  在柱状图中，每组数据显示的柱子数量与刻度数量一致，且柱子显示在刻度处。 |
 | display | boolean | false | 否 | 是否显示轴。  默认值：false，表示不显示轴。 |
 | color | <color> | #c0c0c0 | 否 | 轴颜色。 |
@@ -98,25 +94,19 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 方法 | 参数 | 描述 |
 | --- | --- | --- |
 | append | {  serial: number, // 设置要更新的线形图数据下标  data: Array<number>, // 设置新增的数据  } | 往已有的数据序列中动态添加数据，根据serial指定目标序列，serial为datasets数组的下标，从0开始。注意：不会更新datasets[index].data。仅线形图支持，按横坐标加1递增（与xAxis min/max设置相关）。 |
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | click | - | 点击动作触发该事件。 |
 | longpress | - | 长按动作触发该事件。 |
-| swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
+| swipe5+ | [SwipeEvent](js-lite-common-events.md#swipeevent) | 组件上快速滑动后触发。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -135,149 +125,147 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 1. 线形图
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <chart class="chart" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}"></chart>
-   4. <input class="button" type="button" value="Add data" onclick="addData"/>
-   5. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. width: 454px;
-   7. height: 454px;
-   8. background-color: white;
-   9. }
-   10. .chart {
-   11. width: 300px;
-   12. height: 300px;
-   13. }
-   14. .button {
-   15. width: 280px;
-   16. border-radius: 0px;
-   17. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <chart class="chart" type="line" ref="linechart" options="{{lineOps}}" datasets="{{lineData}}"></chart>
+     <input class="button" type="button" value="Add data" onclick="addData"/>
+   </div>
    ```
 
-   ```
-   1. // xxx.js
-   2. export default {
-   3. data: {
-   4. lineData: [
-   5. {
-   6. strokeColor: '#0081ff',
-   7. fillColor: '#cce5ff',
-   8. data: [763, 550, 551, 554, 731, 654, 525, 696, 595, 628, 791, 505, 613, 575, 475, 553, 491, 680, 657, 716],
-   9. gradient: false,
-   10. }
-   11. ],
-   12. lineOps: {
-   13. xAxis: {
-   14. min: 0,
-   15. max: 20,
-   16. display: false,
-   17. },
-   18. yAxis: {
-   19. min: 0,
-   20. max: 1000,
-   21. display: false,
-   22. },
-   23. series: {
-   24. lineStyle: {
-   25. width: "5px",
-   26. smooth: true,
-   27. },
-   28. headPoint: {
-   29. shape: "circle",
-   30. size: 10,
-   31. strokeWidth: 5,
-   32. fillColor: '#ffffff',
-   33. strokeColor: '#007aff',
-   34. display: true,
-   35. },
-   36. loop: {
-   37. margin: 2,
-   38. gradient: true,
-   39. }
-   40. }
-   41. },
-   42. },
-   43. addData() {
-   44. this.$refs.linechart.append({
-   45. serial: 0,
-   46. data: [Math.floor(Math.random() * 400) + 400]
-   47. })
-   48. }
-   49. }
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 454px;
+     height: 454px;
+     background-color: white;
+   }
+   .chart {
+     width: 300px;
+     height: 300px;
+   }
+   .button {
+     width: 280px;
+     border-radius: 0px;
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/q8KF0eYGTYaaDi4nD82NaQ/zh-cn_image_0000002589246741.png)
+   ```js
+   // xxx.js
+   export default {
+     data: {
+       lineData: [
+         {
+           strokeColor: '#0081ff',
+           fillColor: '#cce5ff',
+           data: [763, 550, 551, 554, 731, 654, 525, 696, 595, 628, 791, 505, 613, 575, 475, 553, 491, 680, 657, 716],
+           gradient: false,
+         }
+       ],
+       lineOps: {
+         xAxis: {
+           min: 0,
+           max: 20,
+           display: false,
+         },
+         yAxis: {
+           min: 0,
+           max: 1000,
+           display: false,
+         },
+         series: {
+           lineStyle: {
+             width: "5px",
+             smooth: true,
+           },
+           headPoint: {
+             shape: "circle",
+             size: 10,
+             strokeWidth: 5,
+             fillColor: '#ffffff',
+             strokeColor: '#007aff',
+             display: true,
+           },
+           loop: {
+             margin: 2,
+             gradient: true,
+           }
+         }
+       },
+     },
+     addData() {
+       this.$refs.linechart.append({
+         serial: 0,
+         data: [Math.floor(Math.random() * 400) + 400]
+       })
+     }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/JN8QHmiZRsOZXEuM8ct6Ug/zh-cn_image_0000002736435751.png)
 2. 柱状图
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <chart class="chart" type="bar" id="bar-chart" options="{{barOps}}" datasets="{{barData}}"></chart>
-   4. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. flex-direction: column;
-   4. justify-content: center;
-   5. align-items: center;
-   6. width: 454px;
-   7. height: 454px;
-   8. background-color: white;
-   9. }
-   10. .chart {
-   11. width: 300px;
-   12. height: 300px;
-   13. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <chart class="chart" type="bar" id="bar-chart" options="{{barOps}}" datasets="{{barData}}"></chart>
+   </div>
    ```
 
-   ```
-   1. // xxx.js
-   2. export default {
-   3. data: {
-   4. barData: [
-   5. {
-   6. fillColor: '#f07826',
-   7. data: [763, 550, 551, 554, 731, 654, 525, 696, 595, 628],
-   8. },
-   9. {
-   10. fillColor: '#cce5ff',
-   11. data: [535, 776, 615, 444, 694, 785, 677, 609, 562, 410],
-   12. },
-   13. {
-   14. fillColor: '#ff88bb',
-   15. data: [673, 500, 574, 483, 702, 583, 437, 506, 693, 657],
-   16. },
-   17. ],
-   18. barOps: {
-   19. xAxis: {
-   20. min: 0,
-   21. max: 20,
-   22. display: false,
-   23. axisTick: 10
-   24. },
-   25. yAxis: {
-   26. min: 0,
-   27. max: 1000,
-   28. display: false,
-   29. },
-   30. },
-   31. }
-   32. }
+   ```css
+   /* xxx.css */
+   .container {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 454px;
+     height: 454px;
+     background-color: white;
+   }
+   .chart {
+     width: 300px;
+     height: 300px;
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/KQb7C62gRp6wFUF3IOcDvQ/zh-cn_image_0000002558766934.png)
+   ```js
+   // xxx.js
+   export default {
+     data: {
+       barData: [
+         {
+           fillColor: '#f07826',
+           data: [763, 550, 551, 554, 731, 654, 525, 696, 595, 628],
+         },
+         {
+           fillColor: '#cce5ff',
+           data: [535, 776, 615, 444, 694, 785, 677, 609, 562, 410],
+         },
+         {
+           fillColor: '#ff88bb',
+           data: [673, 500, 574, 483, 702, 583, 437, 506, 693, 657],
+         },
+       ],
+       barOps: {
+         xAxis: {
+           min: 0,
+           max: 20,
+           display: false,
+           axisTick: 10
+         },
+         yAxis: {
+           min: 0,
+           max: 1000,
+           display: false,
+         },
+       },
+     }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/8wsniKKKQViyRvxStAU1cw/zh-cn_image_0000002706836598.png)

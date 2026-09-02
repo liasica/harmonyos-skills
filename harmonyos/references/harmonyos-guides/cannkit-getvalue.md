@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getva
 title: GetValue
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > AttrValue > GetValue
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:29+08:00
+scraped_at: 2026-09-02T15:00:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bf75040873e923348b98ecfd241839c0d847ccce526d86e16612f0223bedb2d0
+content_hash: sha256:7777794bce9417daabab39593b1281b6f861732dee976b9448f089c7b447763b
 ---
 
 ## 函数功能
@@ -18,14 +18,14 @@ content_hash: sha256:bf75040873e923348b98ecfd241839c0d847ccce526d86e16612f0223be
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. template<typename T, typename DT>
-2. graphStatus GetValue(DT &val) const
-3. graphStatus GetValue(AscendString &val);
+```cpp
+template<typename T, typename DT>
+graphStatus GetValue(DT &val) const
+graphStatus GetValue(AscendString &val);
 ```
 
 ## 参数说明

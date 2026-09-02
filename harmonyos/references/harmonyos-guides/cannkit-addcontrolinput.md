@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-addco
 title: AddControlInput
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > AddControlInput
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:38+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e1623dc7fc25014bf80da6c854c4fd0f6cd26b2862b990ff208264a66bc4de86
+content_hash: sha256:5feb4b8a61cd4007c2ecc40138a6a88f2a22ee9d47c88328c467063b6ea1aa4f
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:e1623dc7fc25014bf80da6c854c4fd0f6cd26b2862b990ff208264a66bc
 
 ## 函数原型
 
-```
-1. Operator &AddControlInput(const Operator &src_oprt);
+```cpp
+Operator &AddControlInput(const Operator &src_oprt);
 ```
 
 ## 参数说明

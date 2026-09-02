@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 解决执行hdc出现FreeChannelContinue handle->data is nullptr
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 解决执行hdc出现FreeChannelContinue handle->data is nullptr
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:24+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d5ba2a6e5e10f48e7a8d750e222bc74b4e38bcdc88341b55942b8158e45b190f
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-95
 title: ConstraintSize尺寸设置不生效
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > ConstraintSize尺寸设置不生效
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ConstraintSize尺寸设置不生效
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:26+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:20+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:40880f284197222976f2720f52fb6d041be2bc4be726d0e5d8d4be273b57a813
 ---
 

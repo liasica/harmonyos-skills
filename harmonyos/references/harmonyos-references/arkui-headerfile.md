@@ -3,13 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-hea
 title: 头文件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:57a6aeec076e471be46a7521546078a1afc4f31fa084d4bc3a8ad5caa15167bb
+scraped_at: 2026-09-02T14:51:43+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:91eb8d04b7760defe15d4d0febe63f81825dd3f8d6c5a092b4f11e4927857c56
 ---
 
+* **[common\_attributes.h](capi-common-attributes-h.md)**
 * **[drag\_and\_drop.h](capi-drag-and-drop-h.md)**
 * **[drawable\_descriptor.h](capi-drawable-descriptor-h.md)**
+* **[image.h](capi-image-h.md)**
+* **[image\_animator.h](capi-image-animator-h.md)**
+* **[layout.h](capi-layout-h.md)**
+* **[embedded\_component.h](capi-embedded-component-h.md)**
 * **[native\_animate.h](capi-native-animate-h.md)**
 * **[native\_dialog.h](capi-native-dialog-h.md)**
 * **[native\_gesture.h](capi-native-gesture-h.md)**
@@ -18,12 +23,33 @@ content_hash: sha256:57a6aeec076e471be46a7521546078a1afc4f31fa084d4bc3a8ad5caa15
 * **[native\_interface\_focus.h](capi-native-interface-focus-h.md)**
 * **[native\_interface\_xcomponent.h](capi-native-interface-xcomponent-h.md)**
 * **[native\_key\_event.h](capi-native-key-event-h.md)**
+* **[native\_material.h](capi-native-material-h.md)**
 * **[native\_node.h](capi-native-node-h.md)**
+* **[custom\_attributes.h](capi-native-node-node-attributes-custom-attributes-h.md)**
 * **[native\_node\_napi.h](capi-native-node-napi-h.md)**
 * **[native\_render.h](capi-native-render-h.md)**
+* **[grid.h](capi-grid-h.md)**
+* **[list.h](capi-list-h.md)**
 * **[native\_type.h](capi-native-type-h.md)**
+* **[native\_type\_visual.h](capi-native-type-visual-h.md)**
 * **[native\_xcomponent\_key\_event.h](capi-native-xcomponent-key-event-h.md)**
+* **[navigation\_router.h](capi-navigation-router-h.md)**
+* **[picker.h](capi-picker-h.md)**
+* **[button.h](capi-button-h.md)**
+* **[checkbox.h](capi-checkbox-h.md)**
+* **[slider.h](capi-slider-h.md)**
+* **[scroll.h](capi-scroll-h.md)**
 * **[styled\_string.h](capi-styled-string-h.md)**
+* **[custom\_span.h](capi-custom-span-h.md)**
+* **[image\_span.h](capi-image-span-h.md)**
+* **[progress.h](capi-progress-h.md)**
+* **[rich\_editor.h](capi-rich-editor-h.md)**
+* **[text.h](capi-text-h.md)**
+* **[text\_common.h](capi-text-common-h.md)**
+* **[text\_input.h](capi-text-input-h.md)**
+* **[text\_area.h](capi-text-area-h.md)**
+* **[swiper.h](capi-swiper-h.md)**
+* **[water\_flow.h](capi-water-flow-h.md)**
 * **[ui\_input\_event.h](capi-ui-input-event-h.md)**
 * **[oh\_window.h](capi-oh-window-h.md)**
 * **[oh\_window\_comm.h](capi-oh-window-comm-h.md)**
@@ -32,3 +58,5 @@ content_hash: sha256:57a6aeec076e471be46a7521546078a1afc4f31fa084d4bc3a8ad5caa15
 * **[oh\_display\_capture.h](capi-oh-display-capture-h.md)**
 * **[oh\_display\_info.h](capi-oh-display-info-h.md)**
 * **[oh\_display\_manager.h](capi-oh-display-manager-h.md)**
+* **[xcomponent.h](capi-xcomponent-h.md)**
+* **[error\_code.h](capi-arkui-nativemodule-arkui-error-code-h.md)**

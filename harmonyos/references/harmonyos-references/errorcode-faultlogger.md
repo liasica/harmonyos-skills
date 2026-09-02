@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Faultlogger 错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码 > Faultlogger 错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b50dacce9d9f128eb1af85d79cea2a629e8bea1804c69c3d8beee3d25408e60b
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:60803d7da33083e09bcba34573873752e1a25e848356626a779c5b90b5c999f6
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 10600001 服务未启动或故障
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

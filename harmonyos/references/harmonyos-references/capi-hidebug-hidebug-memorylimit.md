@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_MemoryLimit
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_MemoryLimit
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:7fe7921e8dd55cf93560a59d06a1d6ca86b79a3c8d355ddc9e8ffd453df9da52
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d1e0ab6d9d2af6a0fca197b76ab064d49d111849dded908d13dab323e2961c66
 ---
 
-```
-1. typedef struct HiDebug_MemoryLimit {...} HiDebug_MemoryLimit
+```c
+typedef struct HiDebug_MemoryLimit {...} HiDebug_MemoryLimit
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 应用程序进程内存限制结构类型定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

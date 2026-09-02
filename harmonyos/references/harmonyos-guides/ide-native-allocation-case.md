@@ -3,42 +3,42 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-native-al
 title: 案例：Native内存泄漏分析
 breadcrumb: 指南 > 优化应用性能 > 基础内存：Allocation分析 > 案例：Native内存泄漏分析
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:30c5ee743d524513565991ad7bd020a2e8e9582d48a03016a0ea3c3cc9e43f30
+scraped_at: 2026-09-02T15:00:28+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:0b48d5eceb4d5ae44b1c9fc8e82103753af41ab4e977cb4edbe0ef3dea3f074f
 ---
 
 本案例介绍如何判断应用存在Native内存泄漏。
 
-DevEco Studio 6.1.0 Beta1以下版本，通过Native Allocation泳道找出Native内存泄漏的原因。
+[6.1.0(23) Beta1](../harmonyos-releases/overview-610.md#section174491130173414)以下版本，通过Native Allocation泳道找出Native内存泄漏的原因。
 
-DevEco Studio 6.1.0 Beta1及以上版本，通过All Heap泳道找出Native内存泄漏的原因。
+[6.1.0(23) Beta1](../harmonyos-releases/overview-610.md#section174491130173414)及以上版本，通过All Heap泳道找出Native内存泄漏的原因。
 
 ## 初步识别内存问题
 
-1. 使用[实时监控功能](realtime-monitor.md)对应用的内存资源进行监控。正常操作应用，观察运行过程中的应用内存变化情况。
+1. 使用[实时监控功能](realtime-monitor.md)对应用的内存资源进行监控。正常操作应用，观察运行过程中Memory泳道的变化。
 
-   监控Memory用到变化。当在一段时间内应用内存没有明显增加或者在内存上涨后又逐渐回落至正常水平，则基本可以排除应用存在内存问题；反之，在一段时间内不断上涨且无回落或者内存占用明显增长超出预期，那么则可初步判断应用可能存在内存问题。
+   当在一段时间内应用内存没有明显增加或者在内存上涨后又逐渐回落至正常水平，则基本可以排除应用存在内存问题；反之，在一段时间内不断上涨且无回落或者内存占用明显增长超出预期，那么则可初步判断应用可能存在内存问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/yfTEiVKZTzaXQzqNpIA4tQ/zh-cn_image_0000002530752708.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/XXrONi5fS0KhoKgHQEXjAw/zh-cn_image_0000002701662668.png "点击放大")
 2. 当从实时监控页面初步判断应用可能存在内存问题后，通过[深度录制](deep-recording.md)抓取应用内存在问题场景下的详细数据，初步定界问题出现的位置。Memory泳道存在Allocation或Snapshot模板中，使用Allocation或Snapshot模板录制均可。
 3. 以Allocation模板为例，创建模板后，将模板中的其余泳道去除勾选，仅录制Memory泳道的数据。
 
-   说明
+   **说明** 
 
    其余泳道会抓取内存分配、内存对象等数据，为避免额外开销和影响分析，建议先排除录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/r4M9VmmtTuu-lGqJZEsazQ/zh-cn_image_0000002530912718.png)
-4. 点击三角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Sr0Z_3sMTGGCqO-jVUEnfA/zh-cn_image_0000002561752653.png)即开始录制。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/BUq1nuudRti3f8ghVBnhBA/zh-cn_image_0000002701662662.png)
+4. 点击三角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/q8jMymJOR3OjUIj2kMBG3A/zh-cn_image_0000002701662664.png "点击放大")即开始录制。
 5. 录制过程中，不断在问题场景操作应用功能，放大问题便于快速定界问题点。
 6. 点击下图中方块按钮或者左侧停止按钮结束录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/BlPJlC6PQ9mS8tjdCStJoQ/zh-cn_image_0000002530752718.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/KPnO3qQ0QfGxtkAh8RTcQg/zh-cn_image_0000002731541859.png "点击放大")
 7. 录制完成后，展开Memory泳道，其中Native Heap表示Native内存，主要是应用使用到的一些涉及Native API所申请的内存以及开发者自己的Native代码所申请使用的堆内存（通常是C/C++），这部分内存需要开发者自行管理申请和释放。
 
    当Native Heap有明显的上涨，说明Native内存上可能存在内存泄漏，可以使用[Allocation模板](ide-native-allocation-case.md#section776643810160)进行下一步分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cA7wFxioTt6-VmWf875ykA/zh-cn_image_0000002530912732.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/W7Vfh2fERKa8hAG1F59Meg/zh-cn_image_0000002731381887.png "点击放大")
 
 ## 使用Allocation模板分析Native内存问题（DevEco Studio 6.1.0 Beta1及以上版本）
 
@@ -47,18 +47,18 @@ DevEco Studio 6.1.0 Beta1及以上版本，通过All Heap泳道找出Native内�
 1. 连接设备后，点击应用选择框选择需要录制的应用，选择**Allocation**模板，点击Create Session或双击Allocation图标即可创建一个Allocation的录制模板。
 2. 创建模板后，点击三角按钮即开始录制。
 
-   说明
+   **说明** 
 
-   如果要分析启动内存，单击Allocation任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/kfiu7EOpTNq0eGQ0xBYJhA/zh-cn_image_0000002530912730.png)按钮。
+   如果要分析启动内存，单击Allocation任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/9izLSr-3Ty25inyJ8kKeBw/zh-cn_image_0000002731541847.png "点击放大")按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/R6K3f0-dSoSG_b1Wr6hGzw/zh-cn_image_0000002530912720.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/X7_-b3oFS5eOQ49f7lr_bQ/zh-cn_image_0000002731381875.png "点击放大")
 3. 操作应用复现问题场景，并在问题复现完成后，点击下图中方块按钮或者左侧停止按钮结束录制。
 
-   说明
+   **说明** 
 
    默认使用统计模式采集数据。该模式下工具的采集性能更好、负载更低。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/ok_k88-sQQqrfa5-XlNW-g/zh-cn_image_0000002530912726.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/gfk6k3WYSIS1jhyEGhvVvA/zh-cn_image_0000002701662658.png "点击放大")
 
 ### 分析Native数据
 
@@ -69,16 +69,16 @@ DevEco Studio 6.1.0 Beta1及以上版本，通过All Heap泳道找出Native内�
    * Created & Existing：默认选中，在框选范围的起点之后分配的，且在框选范围的终点之前没有释放的内存数据。
    * Created & Released：在框选范围的起点之后分配的，且在框选范围的终点之前已经释放的内存数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/2djgNVS0SvqRq6RZicbL3A/zh-cn_image_0000002530912724.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/ZhMi4XKlQ66gdrJx-UthBg/zh-cn_image_0000002701822576.png "点击放大")
 3. 切换到“Call Trees”页签，该部分数据展示了详细的内存分配栈信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/UZwz3IOVR8CKB9bJpALDFQ/zh-cn_image_0000002561752663.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Nw04khaJSF2SVyURIb084w/zh-cn_image_0000002731381883.png "点击放大")
 4. 优先在内存分配栈信息中寻找与业务代码强相关的Symbol Name，即Category中为亮色。从上图中看，主要泄漏点在业务代码侧，需要结合业务代码进行分析。
 
-   说明
+   **说明** 
 
    * Category中亮色代表开发者调用栈，灰色代表系统调用栈。
-   * 栈帧中主要为 Native 栈，除了应用本身编译的一些so及带有部分接口信息的so信息外，其他系统库部分仅展示so库与函数偏移信息，若需要查看这部分信息，需要导入相应版本的带符号的 so 库（具体参考[离线符号解析](ide-profiler-data.md#section11376118192614)）。
+   * 栈帧中主要为Native栈，为便于开发者分析Native的函数热点，工具提供了符号导入的能力，若需要查看这部分信息，需要导入相应版本的带符号的so库（具体参考[离线符号解析](ide-profiler-data.md#section11376118192614)）。
 
 ## 使用Allocation模板分析Native内存问题（DevEco Studio 6.1.0 Beta1以下版本）
 
@@ -87,18 +87,18 @@ DevEco Studio 6.1.0 Beta1及以上版本，通过All Heap泳道找出Native内�
 1. 连接设备后，点击应用选择框选择需要录制的应用，选择**Allocation**模板，点击Create Session或双击Allocation图标即可创建一个Allocation的录制模板。
 2. 创建模板后，点击三角按钮即开始录制。
 
-   说明
+   **说明** 
 
-   如果要分析启动内存，单击Allocation任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/pbanXBdaSYyz4Xp5y0J3DQ/zh-cn_image_0000002561832631.png)按钮。
+   如果要分析启动内存，单击Allocation任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/5VfFXr57TRSAIPJCCvOliA/zh-cn_image_0000002731381877.png "点击放大")按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/1ZVfvZevTZ-6DYwxvwliCg/zh-cn_image_0000002561832633.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Kx95koA5ThW9vnG9rgfuQQ/zh-cn_image_0000002701822572.png "点击放大")
 3. 操作应用复现问题场景，并在问题复现完成后，点击下图中方块按钮或者左侧停止按钮结束录制。
 
-   说明
+   **说明** 
 
    默认使用统计模式采集数据。该模式下工具的采集性能更好、负载更低。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/gNBPJaQDQYiGTOkW7t3kbQ/zh-cn_image_0000002530752722.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/iDohsLVKSYqMsVNMzln1eA/zh-cn_image_0000002731381881.png "点击放大")
 
 ### 分析Native数据
 
@@ -109,13 +109,13 @@ DevEco Studio 6.1.0 Beta1及以上版本，通过All Heap泳道找出Native内�
    * Created & Existing：在框选范围的起点之后分配的，且在框选范围的终点之前没有释放的内存数据。
    * Created & Released：在框选范围的起点之后分配的，且在框选范围的终点之前已经释放的内存数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/A597oCmeTj6L4cEpKhKOig/zh-cn_image_0000002530912712.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/wgFwf6roSJCslMBnAG82WQ/zh-cn_image_0000002701822580.png "点击放大")
 3. 切换到“Call Trees”页签，该部分数据展示了详细的内存分配栈信息，同样需要选择Created & Existing。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/w2bzINC_Rju3K52XKTozDA/zh-cn_image_0000002561832641.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/WUBEi9mVQ7CZ-c033iLJRg/zh-cn_image_0000002731541855.png "点击放大")
 4. 优先在内存分配栈信息中寻找与业务代码强相关的Symbol Name，即Category中为亮色。从上图中看，主要泄漏点在业务代码侧，需要结合业务代码进行分析。
 
-   说明
+   **说明** 
 
    * Category中亮色代表开发者调用栈，灰色代表系统调用栈。
    * 栈帧中主要为 Native 栈，除了应用本身编译的一些so及带有部分接口信息的so信息外，其他系统库部分仅展示so库与函数偏移信息，若需要查看这部分信息，需要导入相应版本的带符号的 so 库（具体参考[离线符号解析](ide-profiler-data.md#section11376118192614)）。

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: polyline
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > polyline
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:37+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:964236789dae4d429b68679c0a557892ef1a111a5db9d1532bf1d1bec60ecb7d
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8d1556837e9578cb5f4c24810bd5b7fb4e364c82fa70902c4e4b9e6790ca6572
 ---
 
-说明
+**说明** 
 
 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:964236789dae4d429b68679c0a557892ef1a111a5db9d1532bf1d1bec60
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持[animate](js-components-svg-animate.md)、[animateMotion](js-components-svg-animatemotion.md)、[animateTransform](js-components-svg-animatetransform.md)。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 支持Svg组件[通用属性](js-components-svg-common-attributes.md)和以下属性。
 
@@ -39,16 +33,14 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <svg fill="white" stroke="blue" width="400" height="400">
-4. <polyline points="10,110 60,35 60,85 110,10" fill="red"></polyline>
-5. <polyline points="10,200 60,125 60,175 110,100" stroke-dasharray="10 5" stroke-dashoffset="3"></polyline>
-6. </svg>
-7. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <svg fill="white" stroke="blue" width="400" height="400">
+    <polyline points="10,110 60,35 60,85 110,10" fill="red"></polyline>
+    <polyline points="10,200 60,125 60,175 110,100" stroke-dasharray="10 5" stroke-dashoffset="3"></polyline>
+  </svg>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/IXmsqs-YSK6HIfwPC7jeAw/zh-cn_image_0000002589246577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/sqhUp-0FRaOmC_YhZTyNfg/zh-cn_image_0000002706836434.png)

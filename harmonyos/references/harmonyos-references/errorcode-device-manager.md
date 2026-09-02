@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 设备管理错误码
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 错误码 > 设备管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:16+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:418de8ecc520771775ee5f6efea5fcee12b4371ab6c63a23c13f27fffc25717f
+scraped_at: 2026-09-02T15:01:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e72dcdb4a0870c8318ae7af02be4c688a6a78aa44c683bff521261c1432306cc
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 11600101 服务调用异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -40,7 +38,7 @@ Failed to obtain the service.
 
 **错误描述**
 
-服务启动异常, 业务访问服务失败。
+服务启动异常，业务访问服务失败。
 
 **可能原因**
 
@@ -51,8 +49,6 @@ Failed to obtain the service.
 检查服务是否正常启动，重新获取服务。
 
 ## 11600103 认证业务不可用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -71,8 +67,6 @@ Authentication unavailable.
 等待上一次认证业务结束，重新发起认证调用。
 
 ## 11600104 发现业务不可用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

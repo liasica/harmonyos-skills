@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-bac
 title: 后台播放
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 后台播放
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:50+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b8161bb2725a94dea776cf886297fe40c2e395c960a59dfb0b5bbbf4699d2151
+scraped_at: 2026-09-02T14:59:44+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:84fb37183eedd2ac283b618e442621407f319a56f3c05c2d0017c27de25d4b9f
 ---
 
-实际应用中，大多数音视频都有后台播放的需求，本指南将详细讲解如何实现后台长时间播放的方法。
+在实际应用场景中，大多数音视频应用都有后台播放的需求，本指南将详细介绍如何实现后台长时间播放。
 
 ## 基本概念
 
@@ -21,17 +21,17 @@ content_hash: sha256:b8161bb2725a94dea776cf886297fe40c2e395c960a59dfb0b5bbbf4699
   当应用退至后台并需要长时间运行用户可感知的任务（如播放音乐、播放视频等）时，为防止应用进程被挂起，导致对应功能异常，可以申请长时任务，使应用在后台长时间运行。
 * AVSession：请参考[AVSession Kit简介](avsession-overview.md)。
 
-  AVSession Kit（音视频播控服务）是系统提供的音视频管控服务，用于统一管理系统中音视频行为，帮助开发者快速构建音视频统一展示和控制能力。音视频类应用接入AVSession后，可以设置应用的数据（如正在播放的歌曲、歌曲的播放状态等）。用户可以通过系统播控中心来展示和控制不同应用的播放。AVSession会对后台的媒体播放有约束行为，所以通常来说，音频应用、听书类应用、视频应用等都需要接入AVSession。如果应用在没有创建AVSession的情况进行上述业务，系统会在检测到应用退至后台时，停止对应的音视频播放，以达到约束应用行为的目的。
-* AVPlayer：参考[AVPlayer](media-kit-intro.md#avplayer)说明。
+  AVSession Kit（音视频播控服务）是系统提供的音视频管控服务，用于统一管理系统中音视频行为，帮助开发者快速构建音视频统一展示和控制能力。音视频类应用接入AVSession后，可以设置应用的数据（如正在播放的歌曲、歌曲的播放状态等）。用户可以通过系统播控中心来展示和控制不同应用的播放。AVSession会对后台的媒体播放有约束行为，因此，音频应用、听书类应用、视频应用等都需要接入AVSession。如果应用在没有创建AVSession的情况下进行上述业务，系统会在检测到应用退至后台时，停止对应的音视频播放，以达到约束应用行为的目的。
+* AVPlayer：请参考[AVPlayer](media-kit-intro.md#avplayer)说明。
 
   AVPlayer是一款功能强大的媒体播放器。使用AVPlayer可以实现端到端地播放多种音视频格式（如mp4、mp3、mkv、mpeg-ts等），开发者提供媒体源即可启动播放，无需关注复杂的解封装、解码处理。
-* AudioRenderer：请参考[使用AudioRenderer开发音频播放功能(ArkTs)](using-audiorenderer-for-playback.md)说明。
+* AudioRenderer：请参考[使用AudioRenderer开发音频播放功能(ArkTS)](using-audiorenderer-for-playback.md)说明。
 
   AudioRenderer是音频渲染器，用于播放PCM（Pulse Code Modulation）音频数据。相比AVPlayer而言，AudioRenderer可以在输入前添加数据预处理，更适合有音频开发经验的开发者，以实现更灵活的播放功能。
 
 ## 应用接入规范
 
-* 当应用需要在后台播放媒体类型（流类型为STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE和STREAM\_USAGE\_AUDIOBOOK）和游戏类型（流类型为STREAM\_USAGE\_GAME）时，必须接入AVSession和申请长时任务。流类型请参考[使用合适的音频流类型](using-right-streamusage-and-sourcetype.md)，长时任务支持的类型请参考[BackgroundMode](../harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager.md#backgroundmode)。
+* 当应用需要在后台播放媒体类型（流类型为STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE和STREAM\_USAGE\_AUDIOBOOK）和游戏类型（流类型为STREAM\_USAGE\_GAME）时，必须接入AVSession和申请长时任务。流类型请参考[选择合适的播放流类型](using-right-streamusage-for-playback.md)，长时任务支持的类型请参考[BackgroundMode](../harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager.md#backgroundmode)。
 * 除了上述播放类型，针对用户可感知的其他播放任务，如果应用需要在后台长时间运行该任务，必须申请AUDIO\_PLAYBACK类型长时任务。
 
 如果应用不满足上述接入规范，退至后台播放时会被系统静音并冻结，无法在后台正常播放。直到应用重新切回前台时，才会被解除静音并恢复播放。
@@ -42,13 +42,13 @@ content_hash: sha256:b8161bb2725a94dea776cf886297fe40c2e395c960a59dfb0b5bbbf4699
 
 ### 启动播放器
 
-应用播放可以通过AudioRenderer、AVPlayer、其他第三方或自研的播放器来播放音视频。
+应用可以通过AudioRenderer、AVPlayer、其他第三方或自研的播放器来播放音视频。
 
-* AudioRenderer：使用AudioRenderer创建播放音频流时应该注意使用合适的音频流类型。流类型的不同对音量控制、音频焦点管理以及输入/输出设备都具有决定性影响。详细内容请参考[使用合适的音频流类型](using-right-streamusage-and-sourcetype.md)。
+* AudioRenderer：使用AudioRenderer创建播放音频流时应该注意使用合适的音频流类型。流类型的不同对音量控制、音频焦点管理以及输入/输出设备都具有决定性影响。详细内容请参考[选择合适的播放流类型](using-right-streamusage-for-playback.md)。
 
   同时需要注意正确处理音频焦点，系统预设了默认的音频焦点策略，根据音频流的类型及启动的先后顺序，对所有播放和录制音频流进行统一管理。在应用播放或录制音频的过程中，若有其他音频流申请焦点，系统会根据焦点策略进行焦点处理。若判定本音频流的焦点有变化，系统会自动执行一些必要操作（如暂停、继续、降低音量、恢复音量等），并通过音频焦点事件（InterruptEvent）通知应用。详细内容请参考[处理音频焦点变化](audio-playback-concurrency.md#处理音频焦点变化)。
 
-  开发指导请参考[使用AudioRenderer开发音频播放功能(ArkTs)](using-audiorenderer-for-playback.md)。
+  开发指导请参考[使用AudioRenderer开发音频播放功能(ArkTS)](using-audiorenderer-for-playback.md)。
 * AVPlayer：使用AVPlayer可以实现端到端播放原始媒体资源。如果要实现后台播放或熄屏播放，需要接入AVSession和申请长时任务，避免播放被系统强制中断。[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)可通过audioInterruptMode属性设置焦点管理策略，该策略默认使用SHARE\_MODE共享焦点模式。
 
   开发指导请参考[使用AVPlayer播放音频(ArkTS)](using-avplayer-for-playback.md)。
@@ -57,24 +57,24 @@ content_hash: sha256:b8161bb2725a94dea776cf886297fe40c2e395c960a59dfb0b5bbbf4699
 
 当创建的音频流类型为STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK或STREAM\_USAGE\_GAME时，无论是将应用退至后台继续播放，还是在后台启动播放，都必须接入AVSession。
 
-关于AVSession的创建和释放时机，建议在应用启动或开始播放业务之前进行创建，并在应用进程结束或完全退出播放业务且不再播放时予以释放，以避免频繁创建和释放AVSession，从而保证应用播放业务的连续性和稳定性。应用后台播放时，需要确保AVSession对象实例在应用后台活动期间一直存在，避免被系统回收、释放，比如不要使用局部变量保存AVSession对象等。
+建议在应用启动或开始播放业务前创建AVSession，在应用进程结束或退出播放业务时释放，避免频繁创建和释放影响播放连续性。后台播放期间需确保AVSession对象实例一直存在，避免被系统回收，例如使用类成员变量而非局部变量保存。
 
-创建AVSession后，为了保证接入体验，要求设置以下元数据并注册以下控制命令。
+创建AVSession后，为了保证用户体验，要求设置以下元数据并注册以下控制命令。
 
-* 元数据：标题、副标题/歌手、封面图。具体操作请参考[设置元数据](avsession-access-scene.md#设置元数据)。
-* 注册控制命令：播放/暂停。具体操作请参考[注册控制命令](avsession-access-scene.md#注册控制命令)。
+* 元数据：标题、副标题/歌手、封面图。具体操作请参考[设置元数据信息](avsession-access-scene.md#设置元数据信息)。
+* 注册控制命令：播放/暂停。具体操作请参考[控制命令的处理](avsession-access-scene.md#控制命令的处理)。
 
 AVSession的接入开发请参考指南[应用接入AVSession场景介绍](avsession-access-scene.md)。
 
 ### 申请长时任务
 
-在长时任务中可以申请多种类型的任务。例如：当后台播音的任务类型为AUDIO\_PLAYBACK时，应用在后台播放音频、视频或通过AVSession投播组件投播，都可申请类型为AUDIO\_PLAYBACK的长时任务。
+在长时任务中可以申请多种类型的任务。例如：当后台播放音频的任务类型为AUDIO\_PLAYBACK时，应用在后台播放音频、视频或通过AVSession投播组件投播，都可申请类型为AUDIO\_PLAYBACK的长时任务。
 
 * 播放时申请长时任务，如果应用明确有后台播放业务（例如：视频应用开启后台放音选项），可以在前台播放时申请长时任务。
 * 暂停或停止时主动取消长时任务。（例如：用户主动点击音乐暂停播放时，应用需及时取消对应的长时任务；用户再次点击音乐播放时，需重新申请长时任务。）
-* 若音频在后台播放时被打断（例如：焦点打断），系统会自行检测，冻结或者取消长时任务。当应用重启音频播放时，需要再次申请长时任务。
-* 应用收到AVSession播控指令，收到音频设备变更等需要做出对应播放和暂停操作时，都需要在暂停时取消长时任务，播放时重新申请长时任务。
-* 通过AVSession投播组件后台投播，开始投播时申请长时任务，断开投播时取消长时任务。投播过程中音频暂停，无须对长时任务做处理。
+* 若音频在后台播放时被打断（例如：焦点打断），系统会自行检测并冻结或者取消长时任务。当应用重启音频播放时，需要再次申请长时任务。
+* 当应用收到AVSession播控指令或收到音频设备变更等需要做出对应播放和暂停操作时，都需要在暂停时取消长时任务，播放时重新申请长时任务。
+* 通过AVSession投播组件后台投播，开始投播时申请长时任务，断开投播时取消长时任务。投播过程中音频暂停，无需对长时任务进行处理。
 
 具体操作请参考长时任务(ArkTS)中的[开发步骤](continuous-task.md#开发步骤)。
 
@@ -82,12 +82,77 @@ AVSession的接入开发请参考指南[应用接入AVSession场景介绍](avses
 
 如果应用本身没有后台播放业务，可以通过监听生命周期函数[onBackground](../harmonyos-references/js-apis-app-ability-uiability.md#onbackground)来判断应用是否已进入后台并主动停止播放。否则会受到AVSession与长时任务模块管控，对应用正常的播放业务造成影响。如需在应用回到前台时重启播放，可以通过监听生命周期函数[onForeground](../harmonyos-references/js-apis-app-ability-uiability.md#onforeground)来判断应用是否回到前台。
 
+## 设置后台播放模式
+
+应用在退至后台前，可以通过[setBackgroundPlayMode](../harmonyos-references/arkts-apis-avsession-avsession.md#setbackgroundplaymode24)设置后台播放模式，告知系统当应用退至后台时是否具有播放行为。针对音视频类型应用设置后台播放模式，系统会根据应用设置的值来决定应用退后台时是否展示系统实况窗。
+
+### 播放模式说明
+
+当前系统支持设置两种播放模式：
+
+* **ENABLE\_BACKGROUND\_PLAY（支持后台播放）**：表示应用退至后台时仍继续进行播放。
+* **DISABLE\_BACKGROUND\_PLAY（不支持后台播放）**：表示应用退至后台时不会再继续播放。
+
+**注意** 
+
+1. 对于[AVSessionType](../harmonyos-references/arkts-apis-avsession-t.md#avsessiontype10)为audio类型的应用，系统默认值为ENABLE\_BACKGROUND\_PLAY，[AVSessionType](../harmonyos-references/arkts-apis-avsession-t.md#avsessiontype10)为video类型的应用，系统默认值为DISABLE\_BACKGROUND\_PLAY。
+2. 音视频应用在退至后台前应设置正确的后台播放模式，以确保退至后台时系统实况窗展示正确。如果应用内提供了类似“是否支持后台播放”的开关，应用设置的后台播放模式务必与应用内的开关状态保持一致。
+
+### 开发步骤
+
+音视频应用进行后台播放的开发步骤如下所示。
+
+1. 设置后台播放模式之前，需要先创建AVSession会话。建议在应用启动或开始播放业务时创建会话，具体操作请参考[接入AVSession](avsession-background-scene.md#接入avsession)。
+2. 创建AVSession后，应用在退至后台前应调用[setBackgroundPlayMode](../harmonyos-references/arkts-apis-avsession-avsession.md#setbackgroundplaymode24)接口设置准确的后台播放模式。
+
+```typescript
+import { avSession } from '@kit.AVSessionKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// ...
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
+  // ...
+
+  build() {
+    Column() {
+      // ...
+      Text(this.message)
+        .onClick(async () => {
+          let currentAVSession: avSession.AVSession | undefined = undefined;
+          let tag = 'createNewSession';
+          let context: Context = this.getUIContext().getHostContext() as Context;
+          // 假设已经创建了一个session，如何创建session可以参考之前的案例。
+          avSession.createAVSession(context, tag, 'audio', (err: BusinessError, data: avSession.AVSession) => {
+            if (err) {
+              console.error(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+              currentAVSession = data;
+            }
+          });
+          // 设置后台播放模式
+          if (currentAVSession !== undefined) {
+            try {
+              (currentAVSession as avSession.AVSession)
+                .setBackgroundPlayMode(avSession.BackgroundPlayMode.ENABLE_BACKGROUND_PLAY);
+              // ...
+            } catch (err) {
+              console.error(`setBackgroundPlayMode BusinessError: code: ${err.code}, message: ${err.message}`);
+              // ...
+            }
+          }
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
 ## 完整示例
 
-[使用AVPlayer后台播放](https://gitcode.com/HarmonyOS_Samples/video-player)
+[基础播控与播控增强](https://gitcode.com/HarmonyOS_Samples/media-provider)
 
-* 本示例主要展示通过系统播放器AVPlayer实现视频类应用的开发，功能包括后台播放和系统播控中心的交互。
-
-[使用AudioRenderer后台播放](https://gitcode.com/HarmonyOS_Samples/audio-interaction)
-
-* 本场景解决方案主要面向前台音频开发人员。指导开发者基于AudioRenderer开发音频播控功能。功能包括后台播放、系统播控中心的交互、适配不同类型的焦点打断策略、切换路由发声设备、切换输出设备等。
+* 本示例主要展示通过系统播放器AVPlayer实现音频类应用的开发，功能包括后台播放和系统播控中心的交互。

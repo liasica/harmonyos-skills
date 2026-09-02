@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 推包调试报错“Error message:cannot find record '&XXX/src/main/ets/YYY&x.y.z', please check the request path.'ZZZ.abc'.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 推包调试报错“Error message:cannot find record '&XXX/src/main/ets/YYY&x.y.z', please check the request path.'ZZZ.abc'.”
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:01+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:702a8641e1968a1993a4eb51f725665751c1686b73cab0fb20c87c64370d3754
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:32e1d01c381fa967a0b66b032af9959dde5c3d41e5e922ca7b515ff937c3d0ef
 ---
 
 **问题现象**
 
 在使用DevEco Studio推包到设备进行调试时，如果遇到jscrash报错，FaultLog中显示“Error message: cannot find record '&XXX/src/main/ets/YYY&x.y.z'，请检查请求路径 'ZZZ.abc'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iihUbdnrRS6of-ztdpKFyw/zh-cn_image_0000002251128405.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/pZECThcaT4O9S3hAGY29rg/zh-cn_image_0000002654798015.png)
 
 **问题原因**
 
@@ -62,162 +62,158 @@ content_hash: sha256:702a8641e1968a1993a4eb51f725665751c1686b73cab0fb20c87c64370
 
 1）在工程根目录下新增plugin.ts文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/o7415WO_SVSWPKjpkvxQMQ/zh-cn_image_0000002215928680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/A9SzcNmbTgui9x_yAEc1OA/zh-cn_image_0000002624638566.png)
 
 plugin.ts文件内容：
 
+```typescript
+import {OhosPluginId, Target} from '@ohos/hvigor-ohos-plugin';
+import {hvigor, HvigorNode, HvigorPlugin} from '@ohos/hvigor';
+import path from "path";
+import fs from "fs";
+
+function getLoaderJsonPath(target: Target) {
+  return path.resolve(target.getBuildTargetOutputPath(), `../../intermediates/loader/${target.getTargetName()}/loader.json`);
+}
+
+function getPkgContextInfoPath(target: Target) {
+  return path.resolve(target.getBuildTargetOutputPath(), `../../intermediates/loader/${target.getTargetName()}/pkgContextInfo.json`);
+}
+
+function deleteLoaderJson(target: Target) {
+  const loaderJsonPath = getLoaderJsonPath(target);
+  if (fs.existsSync(loaderJsonPath)) {
+    fs.rmSync(loaderJsonPath);
+  }
+}
+
+function deletePkgContextInfo(target: Target) {
+  const pkgContextInfoPath = getPkgContextInfoPath(target);
+  if (fs.existsSync(pkgContextInfoPath)) {
+    fs.rmSync(pkgContextInfoPath);
+  }
+}
+
+function deleteRollupCache(target: Target, buildMode: string) {
+  const arkTSCompileCachePath = path.resolve(target.getBuildTargetOutputPath(),
+    `../../cache/${target.getTargetName()}/${target.getTargetName()}@HarCompileArkTS/esmodule/${buildMode}/compiler.cache`);
+  if (fs.existsSync(arkTSCompileCachePath)) {
+    fs.rmSync(arkTSCompileCachePath, { recursive: true });
+  }
+}
+
+function updateHapHspAbcVersion(subNode: HvigorNode, target: Target) {
+  const task = subNode.getTaskByName(`${target.getTargetName()}@GenerateLoaderJson`);
+  if (!task) {
+    console.log('GenerateLoaderJson not found.');
+    return;
+  }
+  deleteLoaderJson(target);
+  deletePkgContextInfo(target);
+  task.afterRun(() => {
+    const pkgContextInfoPath = getPkgContextInfoPath(target);
+    if (!fs.existsSync(pkgContextInfoPath)) {
+      console.log('pkgContextInfo not found.');
+      return;
+    }
+    const pkgContextInfoObj = JSON.parse(fs.readFileSync(pkgContextInfoPath).toString());
+    if (!pkgContextInfoObj) {
+      console.log('pkgContextInfo parse failed.');
+      return;
+    }
+    const loaderJsonPath = getLoaderJsonPath(target);
+    if (!fs.existsSync(loaderJsonPath)) {
+      console.log('loaderJson not found.');
+      return;
+    }
+    const loaderJsonObj = JSON.parse(fs.readFileSync(loaderJsonPath).toString());
+    if (!loaderJsonObj) {
+      console.log('loaderJson parse failed.');
+      return;
+    }
+    for (const [key, value] of Object.entries(pkgContextInfoObj)) {
+      if (!value?.version) {
+        continue;
+      }
+      if (!loaderJsonObj.updateVersionInfo[key]) {
+        loaderJsonObj.updateVersionInfo[key] = {};
+      }
+      loaderJsonObj.updateVersionInfo[key][key] = value.version;
+    }
+    fs.writeFileSync(loaderJsonPath, JSON.stringify(loaderJsonObj));
+  });
+}
+
+function updateHarAbcVersion(target: Target) {
+  deleteLoaderJson(target);
+  deleteRollupCache(target, 'debug');
+  deleteRollupCache(target, 'release');
+}
+
+// The user of bytecode har can use this plugin to correctly modify the version number of ohmurl in abc when integrating bytecode har, ensuring no crashes during runtime
+export function updateAbcVersionPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'updateAbcVersionPlugin',
+    apply(node: HvigorNode) {
+      hvigor.nodesEvaluated(() => {
+        hvigor.getRootNode().subNodes(subNode => {
+          let context = subNode.getContext(OhosPluginId.OHOS_HAP_PLUGIN);
+          if (!context) {
+            context = subNode.getContext(OhosPluginId.OHOS_HSP_PLUGIN);
+          }
+          if (!context) {
+            return;
+          }
+          context.targets(target => {
+            updateHapHspAbcVersion(subNode, target);
+          });
+        });
+      });
+    }
+  };
+}
+
+// The generator of bytecode har uses this plugin to incrementally build ohmurl with the correct bytecode har after modifying the version number
+export function updateHarAbcVersionPlugin(): HvigorPlugin {
+  return {
+    pluginId: 'updateHarAbcVersionPlugin',
+    apply(node: HvigorNode) {
+      hvigor.nodesEvaluated(() => {
+        hvigor.getRootNode().subNodes(subNode => {
+          const context = subNode.getContext(OhosPluginId.OHOS_HAR_PLUGIN);
+          if (!context) {
+            return;
+          }
+          context.targets(target => {
+            updateHarAbcVersion(target);
+          });
+        });
+      });
+    }
+  };
+}
 ```
-1. import {OhosPluginId, Target} from '@ohos/hvigor-ohos-plugin';
-2. import {hvigor, HvigorNode, HvigorPlugin} from '@ohos/hvigor';
-3. import path from "path";
-4. import fs from "fs";
-
-7. function getLoaderJsonPath(target: Target) {
-8. return path.resolve(target.getBuildTargetOutputPath(), `../../intermediates/loader/${target.getTargetName()}/loader.json`);
-9. }
-
-12. function getPkgContextInfoPath(target: Target) {
-13. return path.resolve(target.getBuildTargetOutputPath(), `../../intermediates/loader/${target.getTargetName()}/pkgContextInfo.json`);
-14. }
-
-17. function deleteLoaderJson(target: Target) {
-18. const loaderJsonPath = getLoaderJsonPath(target);
-19. if (fs.existsSync(loaderJsonPath)) {
-20. fs.rmSync(loaderJsonPath);
-21. }
-22. }
-
-25. function deletePkgContextInfo(target: Target) {
-26. const pkgContextInfoPath = getPkgContextInfoPath(target);
-27. if (fs.existsSync(pkgContextInfoPath)) {
-28. fs.rmSync(pkgContextInfoPath);
-29. }
-30. }
-
-33. function deleteRollupCache(target: Target, buildMode: string) {
-34. const arkTSCompileCachePath = path.resolve(target.getBuildTargetOutputPath(),
-35. `../../cache/${target.getTargetName()}/${target.getTargetName()}@HarCompileArkTS/esmodule/${buildMode}/compiler.cache`);
-36. if (fs.existsSync(arkTSCompileCachePath)) {
-37. fs.rmSync(arkTSCompileCachePath, { recursive: true });
-38. }
-39. }
-
-42. function updateHapHspAbcVersion(subNode: HvigorNode, target: Target) {
-43. const task = subNode.getTaskByName(`${target.getTargetName()}@GenerateLoaderJson`);
-44. if (!task) {
-45. console.log('GenerateLoaderJson not found.');
-46. return;
-47. }
-48. deleteLoaderJson(target);
-49. deletePkgContextInfo(target);
-50. task.afterRun(() => {
-51. const pkgContextInfoPath = getPkgContextInfoPath(target);
-52. if (!fs.existsSync(pkgContextInfoPath)) {
-53. console.log('pkgContextInfo not found.');
-54. return;
-55. }
-56. const pkgContextInfoObj = JSON.parse(fs.readFileSync(pkgContextInfoPath).toString());
-57. if (!pkgContextInfoObj) {
-58. console.log('pkgContextInfo parse failed.');
-59. return;
-60. }
-61. const loaderJsonPath = getLoaderJsonPath(target);
-62. if (!fs.existsSync(loaderJsonPath)) {
-63. console.log('loaderJson not found.');
-64. return;
-65. }
-66. const loaderJsonObj = JSON.parse(fs.readFileSync(loaderJsonPath).toString());
-67. if (!loaderJsonObj) {
-68. console.log('loaderJson parse failed.');
-69. return;
-70. }
-71. for (const [key, value] of Object.entries(pkgContextInfoObj)) {
-72. if (!value?.version) {
-73. continue;
-74. }
-75. if (!loaderJsonObj.updateVersionInfo[key]) {
-76. loaderJsonObj.updateVersionInfo[key] = {};
-77. }
-78. loaderJsonObj.updateVersionInfo[key][key] = value.version;
-79. }
-80. fs.writeFileSync(loaderJsonPath, JSON.stringify(loaderJsonObj));
-81. });
-82. }
-
-85. function updateHarAbcVersion(target: Target) {
-86. deleteLoaderJson(target);
-87. deleteRollupCache(target, 'debug');
-88. deleteRollupCache(target, 'release');
-89. }
-
-92. // The user of bytecode har can use this plugin to correctly modify the version number of ohmurl in abc when integrating bytecode har, ensuring no crashes during runtime
-93. export function updateAbcVersionPlugin(): HvigorPlugin {
-94. return {
-95. pluginId: 'updateAbcVersionPlugin',
-96. apply(node: HvigorNode) {
-97. hvigor.nodesEvaluated(() => {
-98. hvigor.getRootNode().subNodes(subNode => {
-99. let context = subNode.getContext(OhosPluginId.OHOS_HAP_PLUGIN);
-100. if (!context) {
-101. context = subNode.getContext(OhosPluginId.OHOS_HSP_PLUGIN);
-102. }
-103. if (!context) {
-104. return;
-105. }
-106. context.targets(target => {
-107. updateHapHspAbcVersion(subNode, target);
-108. });
-109. });
-110. });
-111. }
-112. };
-113. }
-
-116. // The generator of bytecode har uses this plugin to incrementally build ohmurl with the correct bytecode har after modifying the version number
-117. export function updateHarAbcVersionPlugin(): HvigorPlugin {
-118. return {
-119. pluginId: 'updateHarAbcVersionPlugin',
-120. apply(node: HvigorNode) {
-121. hvigor.nodesEvaluated(() => {
-122. hvigor.getRootNode().subNodes(subNode => {
-123. const context = subNode.getContext(OhosPluginId.OHOS_HAR_PLUGIN);
-124. if (!context) {
-125. return;
-126. }
-127. context.targets(target => {
-128. updateHarAbcVersion(target);
-129. });
-130. });
-131. });
-132. }
-133. };
-134. }
-```
-
-[plugin.ts](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/CompilingAndBuilding/plugin.ts#L6-L139)
 
 2）在工程级hvigorfile.ts文件中增加两个插件，并执行Sync。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/KRhx6Pz6Q1OV4rIi7t47MA/zh-cn_image_0000002216088460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/ITGHnD0pQXG-SCPSt1qAjg/zh-cn_image_0000002654837971.png)
 
 hvigorfile.ts文件内容：
 
-```
-1. import { appTasks } from '@ohos/hvigor-ohos-plugin';
-2. import { updateAbcVersionPlugin, updateHarAbcVersionPlugin } from './plugin.ts';
+```typescript
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { updateAbcVersionPlugin, updateHarAbcVersionPlugin } from './plugin.ts';
 
-5. export default {
-6. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-7. plugins:[updateAbcVersionPlugin(), updateHarAbcVersionPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-8. }
+export default {
+    system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+    plugins:[updateAbcVersionPlugin(), updateHarAbcVersionPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
-
-[hvigorfile.ts](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/CompilingAndBuilding/hvigorfile.ts#L6-L13)
 
 3) 在Terminal终端执行以下命令后，重新推包运行。
 
-```
-1. hvigorw --stop-daemon
+```powershell
+hvigorw --stop-daemon
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/k1oo4dLHTyq7TKpMiLe5cA/zh-cn_image_0000002251048357.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/onHwOjQDRKue1O5_XD-f1g/zh-cn_image_0000002624478660.png)

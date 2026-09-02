@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_common.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_common.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f243075a5abb6765c322def922ebe84a5fb7149fcd95f32f70dc630a8141bf9c
+scraped_at: 2026-09-02T15:02:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:425e1868ae2734d704cde5c09ca701aa8ab66a2040ca141c13885251c4d35136
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明图像接口使用的公共枚举和结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -43,8 +37,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | Image\_ErrorCode | 错误码。 |
@@ -53,20 +45,19 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [Image\_ErrorCode OH\_PictureMetadata\_Create(Image\_MetadataType metadataType, OH\_PictureMetadata \*\*metadata)](capi-image-common-h.md#oh_picturemetadata_create) | 创建OH\_PictureMetadata指针。 |
 | [Image\_ErrorCode OH\_PictureMetadata\_GetProperty(OH\_PictureMetadata \*metadata, Image\_String \*key, Image\_String \*value)](capi-image-common-h.md#oh_picturemetadata_getproperty) | 根据key获取Metadata的单条属性。该接口获取到的value.data缺少字符串结束符'\0'，请谨慎使用。 |
 | [Image\_ErrorCode OH\_PictureMetadata\_SetProperty(OH\_PictureMetadata \*metadata, Image\_String \*key, Image\_String \*value)](capi-image-common-h.md#oh_picturemetadata_setproperty) | 根据key修改Metadata的单条属性。 |
+| [Image\_ErrorCode OH\_PictureMetadata\_SetBlobData(OH\_PictureMetadata \*metadata, uint8\_t \*blob, uint32\_t blobSize)](capi-image-common-h.md#oh_picturemetadata_setblobdata) | 使用二进制数据替换当前元数据。 |
+| [Image\_ErrorCode OH\_PictureMetadata\_GetBlobDataSize(OH\_PictureMetadata \*metadata, uint32\_t \*blobSize)](capi-image-common-h.md#oh_picturemetadata_getblobdatasize) | 获取元数据中blob数据的大小。 |
+| [Image\_ErrorCode OH\_PictureMetadata\_GetBlobData(OH\_PictureMetadata \*metadata, uint8\_t \*blob, uint32\_t blobSize)](capi-image-common-h.md#oh_picturemetadata_getblobdata) | 以二进制数据的形式获取元数据。 |
 | [Image\_ErrorCode OH\_PictureMetadata\_GetPropertyWithNull(OH\_PictureMetadata \*metadata, Image\_String \*key, Image\_String \*value)](capi-image-common-h.md#oh_picturemetadata_getpropertywithnull) | 获取图片元数据的属性值。输出的value.data以字符串结束符'\0'结尾。 |
 | [Image\_ErrorCode OH\_PictureMetadata\_Release(OH\_PictureMetadata \*metadata)](capi-image-common-h.md#oh_picturemetadata_release) | 释放OH\_PictureMetadata指针。 |
 | [Image\_ErrorCode OH\_PictureMetadata\_Clone(OH\_PictureMetadata \*oldMetadata, OH\_PictureMetadata \*\*newMetadata)](capi-image-common-h.md#oh_picturemetadata_clone) | 拷贝元数据。 |
 
 ### 变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -140,7 +131,7 @@ PhonePC/2in1TabletTVWearable
 | static const char \* OHOS\_IMAGE\_PROPERTY\_EXPOSURE\_INDEX = "ExposureIndex" | 捕获时选定的曝光指数。  **起始版本：** 12 |
 | static const char \* OHOS\_IMAGE\_PROPERTY\_SENSING\_METHOD = "SensingMethod" | 相机上的图像传感器类型。  **起始版本：** 12 |
 | static const char \* OHOS\_IMAGE\_PROPERTY\_FILE\_SOURCE = "FileSource" | 表明图像来源。  **起始版本：** 12 |
-| static const char \* OHOS\_IMAGE\_PROPERTY\_CFA\_PATTERN = "CFAPattern" | 图像传感器的色彩滤光片（CFA）几何图案。  **起始版本：** 12 |
+| static const char \* OHOS\_IMAGE\_PROPERTY\_CFA\_PATTERN = "CFAPattern" | 图像传感器的色彩滤光片几何图案。  **起始版本：** 12 |
 | static const char \* OHOS\_IMAGE\_PROPERTY\_CUSTOM\_RENDERED = "CustomRendered" | 指示图像数据上的特殊处理。  **起始版本：** 12 |
 | static const char \* OHOS\_IMAGE\_PROPERTY\_EXPOSURE\_MODE = "ExposureMode" | 拍摄时设置的曝光模式。  **起始版本：** 12 |
 | static const char \* OHOS\_IMAGE\_PROPERTY\_DIGITAL\_ZOOM\_RATIO = "DigitalZoomRatio" | 捕获时的数字变焦比率。  **起始版本：** 12 |
@@ -225,17 +216,102 @@ PhonePC/2in1TabletTVWearable
 | static const char \* OHOS\_IMAGE\_PROPERTY\_FRAGMENT\_HEIGHT = "FragmentImageHeight" | 水印裁剪图的高。  **起始版本：** 13 |
 | static const char \* IMAGE\_PROPERTY\_GIF\_DELAY\_TIME = "GifDelayTime" | GIF图片的每帧播放时长（单位为毫秒）。  **起始版本：** 20 |
 | static const char \* IMAGE\_PROPERTY\_GIF\_DISPOSAL\_TYPE = "GifDisposalType" | GIF图片每帧的帧过渡模式。  **起始版本：** 20 |
+| static const char \* OHOS\_DNG\_PROPERTY\_DNG\_VERSION = "DNGVersion" | DNG版本号。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_DNG\_BACKWARD\_VERSION = "DNGBackwardVersion" | DNG向后兼容版本号。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_UNIQUE\_CAMERA\_MODEL = "UniqueCameraModel" | 唯一的相机型号标识。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_LOCALIZED\_CAMERA\_MODEL = "LocalizedCameraModel" | 本地化的相机型号。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CFA\_PLANE\_COLOR = "CFAPlaneColor" | CFA（色彩滤镜阵列）平面颜色。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CFA\_LAYOUT = "CFALayout" | CFA（色彩滤镜阵列）布局。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)和[OH\_ImageSourceNative\_GetImagePropertyLong](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertylong)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_LINEARIZATION\_TABLE = "LinearizationTable" | 线性化表。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BLACK\_LEVEL\_REPEAT\_DIM = "BlackLevelRepeatDim" | 黑电平重复维度。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BLACK\_LEVEL = "BlackLevel" | 零光照编码电平。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BLACK\_LEVEL\_DELTA\_H = "BlackLevelDeltaH" | 水平方向黑电平校正增量。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BLACK\_LEVEL\_DELTA\_V = "BlackLevelDeltaV" | 垂直方向黑电平校正增量。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_WHITE\_LEVEL = "WhiteLevel" | 白电平。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_DEFAULT\_SCALE = "DefaultScale" | 默认缩放比例。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_DEFAULT\_CROP\_ORIGIN = "DefaultCropOrigin" | 默认裁剪原点。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_DEFAULT\_CROP\_SIZE = "DefaultCropSize" | 默认裁剪尺寸。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_COLOR\_MATRIX1 = "ColorMatrix1" | 第一个校准光源下的变换矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_COLOR\_MATRIX2 = "ColorMatrix2" | 第二个校准光源下的变换矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CAMERA\_CALIBRATION1 = "CameraCalibration1" | 第一个校准光源下的校准矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CAMERA\_CALIBRATION2 = "CameraCalibration2" | 第二个校准光源下的校准矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_REDUCTION\_MATRIX1 = "ReductionMatrix1" | 第一个校准光源下的降维矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_REDUCTION\_MATRIX2 = "ReductionMatrix2" | 第二个校准光源下的降维矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ANALOG\_BALANCE = "AnalogBalance" | 模拟平衡。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_AS\_SHOT\_NEUTRAL = "AsShotNeutral" | 拍摄时中性色。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_AS\_SHOT\_WHITEXY = "AsShotWhiteXY" | 拍摄时白点的CIE（1931 色彩空间） x-y色度坐标。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BASELINE\_EXPOSURE = "BaselineExposure" | 基线曝光。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BASELINE\_NOISE = "BaselineNoise" | 基线噪点。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BASELINE\_SHARPNESS = "BaselineSharpness" | 基线锐度。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BAYER\_GREEN\_SPLIT = "BayerGreenSplit" | Bayer图像中两个绿色通道的分离程度。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_LINEAR\_RESPONSE\_LIMIT = "LinearResponseLimit" | 线性响应限制。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CAMERA\_SERIAL\_NUMBER = "CameraSerialNumber" | 相机序列号。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_LENS\_INFO = "LensInfo" | 镜头信息。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CHROMA\_BLUR\_RADIUS = "ChromaBlurRadius" | 色差模糊半径，单位：像素。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ANTI\_ALIAS\_STRENGTH = "AntiAliasStrength" | 抗锯齿强度。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_SHADOW\_SCALE = "ShadowScale" | 阴影缩放。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_DNG\_PRIVATE\_DATA = "DNGPrivateData" | 私有数据。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyBlob](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyblob)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_MAKER\_NOTE\_SAFETY = "MakerNoteSafety" | EXIF MakerNote标签是否安全。0：不安全，1：安全。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)和[OH\_ImageSourceNative\_GetImagePropertyLong](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertylong)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CALIBRATION\_ILLUMINANT1 = "CalibrationIlluminant1" | 第一个校准光源。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)和[OH\_ImageSourceNative\_GetImagePropertyLong](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertylong)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CALIBRATION\_ILLUMINANT2 = "CalibrationIlluminant2" | 第二个校准光源。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)和[OH\_ImageSourceNative\_GetImagePropertyLong](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertylong)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BEST\_QUALITY\_SCALE = "BestQualityScale" | 最佳质量缩放。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_RAW\_DATA\_UNIQUE\_ID = "RawDataUniqueID" | 原始图像数据的唯一标识符。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ORIGINAL\_RAW\_FILE\_NAME = "OriginalRawFileName" | 原始文件名。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ORIGINAL\_RAW\_FILE\_DATA = "OriginalRawFileData" | 原始文件数据。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyBlob](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyblob)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ACTIVE\_AREA = "ActiveArea" | 活动区域。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_MASKED\_AREAS = "MaskedAreas" | 掩蔽区域。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_AS\_SHOT\_ICC\_PROFILE = "AsShotICCProfile" | ICC配置文件。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyBlob](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyblob)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_AS\_SHOT\_PRE\_PROFILE\_MATRIX = "AsShotPreProfileMatrix" | 拍摄时预配置文件矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CURRENT\_ICC\_PROFILE = "CurrentICCProfile" | 当前ICC配置文件。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyBlob](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyblob)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CURRENT\_PRE\_PROFILE\_MATRIX = "CurrentPreProfileMatrix" | 当前预配置文件矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_COLORIMETRIC\_REFERENCE = "ColorimetricReference" | 色度参考。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)和[OH\_ImageSourceNative\_GetImagePropertyLong](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertylong)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_CAMERA\_CALIBRATION\_SIGNATURE = "CameraCalibrationSignature" | 相机校准签名。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_CALIBRATION\_SIGNATURE = "ProfileCalibrationSignature" | 配置文件校准签名。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_EXTRA\_CAMERA\_PROFILES = "ExtraCameraProfiles" | 额外相机配置文件。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_AS\_SHOT\_PROFILE\_NAME = "AsShotProfileName" | 拍摄时配置文件名称。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_NOISE\_REDUCTION\_APPLIED = "NoiseReductionApplied" | 应用的降噪量。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_NAME = "ProfileName" | 配置文件名称。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_HUE\_SAT\_MAP\_DIMS = "ProfileHueSatMapDims" | 配置文件色调/饱和度映射维度。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_HUE\_SAT\_MAP\_DATA1 = "ProfileHueSatMapData1" | 第一个色调/饱和度映射表数据。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_HUE\_SAT\_MAP\_DATA2 = "ProfileHueSatMapData2" | 第二个色调/饱和度映射表数据。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_TONE\_CURVE = "ProfileToneCurve" | 配置文件色调曲线。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_EMBED\_POLICY = "ProfileEmbedPolicy" | 配置文件嵌入策略。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_COPYRIGHT = "ProfileCopyright" | 配置文件版权。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_FORWARD\_MATRIX1 = "ForwardMatrix1" | 第一个前向矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_FORWARD\_MATRIX2 = "ForwardMatrix2" | 第二个前向矩阵。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PREVIEW\_APPLICATION\_NAME = "PreviewApplicationName" | 预览应用程序名称。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PREVIEW\_APPLICATION\_VERSION = "PreviewApplicationVersion" | 预览应用程序版本。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PREVIEW\_SETTINGS\_NAME = "PreviewSettingsName" | 预览设置名称。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PREVIEW\_SETTINGS\_DIGEST = "PreviewSettingsDigest" | 预览设置摘要。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PREVIEW\_COLOR\_SPACE = "PreviewColorSpace" | 预览颜色空间。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PREVIEW\_DATE\_TIME = "PreviewDateTime" | 预览日期和时间。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_RAW\_IMAGE\_DIGEST = "RawImageDigest" | 原始图像数据的MD5摘要。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ORIGINAL\_RAW\_FILE\_DIGEST = "OriginalRawFileDigest" | 存储在OriginalRawFileData中的数据的MD5摘要。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_SUB\_TILE\_BLOCK\_SIZE = "SubTileBlockSize" | 子图块大小。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ROW\_INTERLEAVE\_FACTOR = "RowInterleaveFactor" | 行交错因子。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)和[OH\_ImageSourceNative\_GetImagePropertyLong](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertylong)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_LOOK\_TABLE\_DIMS = "ProfileLookTableDims" | 配置文件查找表维度。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_LOOK\_TABLE\_DATA = "ProfileLookTableData" | 配置文件查找表数据。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_OPCODE\_LIST1 = "OpcodeList1" | 第一个操作码列表。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyBlob](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyblob)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_OPCODE\_LIST2 = "OpcodeList2" | 第二个操作码列表。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyBlob](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyblob)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_OPCODE\_LIST3 = "OpcodeList3" | 第三个操作码列表。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyBlob](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyblob)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_NOISE\_PROFILE = "NoiseProfile" | 噪点配置文件。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ORIGINAL\_DEFAULT\_FINAL\_SIZE = "OriginalDefaultFinalSize" | 原始默认最终尺寸。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ORIGINAL\_BEST\_QUALITY\_FINAL\_SIZE = "OriginalBestQualityFinalSize" | 原始最佳质量最终尺寸。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_ORIGINAL\_DEFAULT\_CROP\_SIZE = "OriginalDefaultCropSize" | 原始默认裁剪尺寸。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyDoubleArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydoublearray)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_HUE\_SAT\_MAP\_ENCODING = "ProfileHueSatMapEncoding" | 配置文件色调、饱和度映射编码。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_PROFILE\_LOOK\_TABLE\_ENCODING = "ProfileLookTableEncoding" | 配置文件查找表编码。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_BASELINE\_EXPOSURE\_OFFSET = "BaselineExposureOffset" | 基线曝光偏移。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_DEFAULT\_BLACK\_RENDER = "DefaultBlackRender" | 默认黑色渲染。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyShort](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyshort)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_NEW\_RAW\_IMAGE\_DIGEST = "NewRawImageDigest" | 修改后的原始图像数据MD5摘要。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyString](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertystring)共同获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_RAW\_TO\_PREVIEW\_GAIN = "RawToPreviewGain" | 主原始IFD（Image File Directory）和预览IFD之间的增益。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyDouble](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertydouble)获取。  **起始版本：** 24 |
+| static const char \* OHOS\_DNG\_PROPERTY\_DEFAULT\_USER\_CROP = "DefaultUserCrop" | 默认用户裁剪。取值可以通过[OH\_ImageSourceNative\_GetImagePropertyArraySize](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyarraysize)和[OH\_ImageSourceNative\_GetImagePropertyIntArray](capi-image-source-native-h.md#oh_imagesourcenative_getimagepropertyintarray)共同获取。  **起始版本：** 24 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### Image\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Image_ErrorCode
+```c
+enum Image_ErrorCode
 ```
 
 **描述**
@@ -252,6 +328,7 @@ PhonePC/2in1TabletTVWearable
 | IMAGE\_UNKNOWN\_MIME\_TYPE = 7600102 | 未知的MIME类型。 |
 | IMAGE\_TOO\_LARGE = 7600103 | 过大的数据或图片。 |
 | IMAGE\_GET\_IMAGE\_DATA\_FAILED = 7600104 | 获取图像数据失败。  **起始版本：** 23 |
+| IMAGE\_PIXELMAP\_RELEASED = 7600105 | PixelMap已被释放。  **起始版本：** 26.0.0 |
 | IMAGE\_DMA\_NOT\_EXIST = 7600173 | 内存不是DMA内存。 |
 | IMAGE\_DMA\_OPERATION\_FAILED = 7600174 | DMA内存操作失败。 |
 | IMAGE\_UNSUPPORTED\_OPERATION = 7600201 | 不支持的操作。 |
@@ -266,6 +343,7 @@ PhonePC/2in1TabletTVWearable
 | IMAGE\_LOCK\_UNLOCK\_FAILED = 7600303 | 内存加锁或解锁失败。  **起始版本：** 15 |
 | IMAGE\_INIT\_FAILED = 7600304 | 初始化失败。  **起始版本：** 22 |
 | IMAGE\_CREATE\_PIXELMAP\_FAILED = 7600305 | 创建PixelMap失败。  **起始版本：** 22 |
+| IMAGE\_DATA\_CONVERSION\_FAILED = 7600306 | 数据转换失败。  **起始版本：** 26.0.0 |
 | IMAGE\_ALLOCATOR\_MODE\_UNSUPPORTED = 7600501 | 不支持的内存分配器类型。例如，使用共享内存创建hdr图像。  DMA内存支持hdr元数据。  **起始版本：** 20 |
 | IMAGE\_UNKNOWN\_ERROR = 7600901 | 未知错误。 |
 | IMAGE\_BAD\_SOURCE = 7700101 | 解码数据源异常。 |
@@ -283,10 +361,8 @@ PhonePC/2in1TabletTVWearable
 
 ### Image\_MetadataType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum Image_MetadataType
+```c
+enum Image_MetadataType
 ```
 
 **描述**
@@ -303,10 +379,8 @@ PhonePC/2in1TabletTVWearable
 
 ### IMAGE\_ALLOCATOR\_MODE
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum IMAGE_ALLOCATOR_MODE
+```c
+enum IMAGE_ALLOCATOR_MODE
 ```
 
 **描述**
@@ -323,19 +397,19 @@ pixelmap内存分配类型。
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_PictureMetadata\_Create()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_PictureMetadata_Create(Image_MetadataType metadataType, OH_PictureMetadata **metadata)
+```c
+Image_ErrorCode OH_PictureMetadata_Create(Image_MetadataType metadataType, OH_PictureMetadata **metadata)
 ```
 
 **描述**
 
 创建OH\_PictureMetadata指针。
+
+使用约束：metadata不能为空指针。接口返回失败时，输出参数内容不应使用。
+
+资源管理：接口成功返回的OH\_PictureMetadata对象由调用方管理，使用完成后应调用[OH\_PictureMetadata\_Release](capi-image-common-h.md#oh_picturemetadata_release)释放。
 
 **起始版本：** 13
 
@@ -344,7 +418,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [Image\_MetadataType](capi-image-common-h.md#image_metadatatype) metadataType | 元数据的类型。 |
-| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*\*metadata | 被操作的OH\_PictureMetadata指针。 |
+| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*\*metadata | 指向OH\_PictureMetadata对象的指针。 |
 
 **返回：**
 
@@ -354,15 +428,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureMetadata\_GetProperty()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_PictureMetadata_GetProperty(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
+```c
+Image_ErrorCode OH_PictureMetadata_GetProperty(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
 ```
 
 **描述**
 
 根据key获取Metadata的单条属性。该接口获取到的value.data缺少字符串结束符'\0'，请谨慎使用。
+
+使用约束：metadata、key、key->data和value均不能为空指针，key->size必须大于0。接口返回失败时，不应读取value.data。
+
+资源管理：接口执行成功后，value.data由接口分配，调用方使用完成后应使用delete[]释放。该接口返回的value.data不以字符串结束符'\0'结尾，如需按C字符串处理，建议使用[OH\_PictureMetadata\_GetPropertyWithNull](capi-image-common-h.md#oh_picturemetadata_getpropertywithnull)。
 
 **起始版本：** 13
 
@@ -370,7 +446,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*metadata | 被操作的OH\_PictureMetadata指针。 |
+| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*metadata | 指向OH\_PictureMetadata对象的指针。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*key | 属性的键。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*value | 属性的值。 |
 
@@ -382,15 +458,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureMetadata\_SetProperty()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_PictureMetadata_SetProperty(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
+```c
+Image_ErrorCode OH_PictureMetadata_SetProperty(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
 ```
 
 **描述**
 
 根据key修改Metadata的单条属性。
+
+使用约束：metadata、key、key->data、value和value->data均不能为空指针，key->size和value->size必须大于0。
+
+资源管理：接口会读取传入的key和value内容，不持有调用方传入的Image\_String指针。接口返回后，调用方仍需自行管理key和value的生命周期。
 
 **起始版本：** 13
 
@@ -398,7 +476,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*metadata | 被操作的OH\_PictureMetadata指针。 |
+| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*metadata | 指向OH\_PictureMetadata对象的指针。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*key | 属性的键。 |
 | [Image\_String](capi-image-nativemodule-image-string.md) \*value | 属性的值。 |
 
@@ -408,17 +486,98 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：执行成功。  IMAGE\_BAD\_PARAMETER：参数错误。  IMAGE\_UNSUPPORTED\_METADATA：不支持的元数据类型，或元数据类型与辅助图片类型不匹配。 |
 
+### OH\_PictureMetadata\_SetBlobData()
+
+```c
+Image_ErrorCode OH_PictureMetadata_SetBlobData(OH_PictureMetadata *metadata, uint8_t *blob, uint32_t blobSize)
+```
+
+**描述**
+
+使用二进制数据替换当前元数据。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*metadata | 指向OH\_PictureMetadata对象的指针。 |
+| uint8\_t \*blob | 指向二进制数据的指针。 |
+| uint32\_t blobSize | 二进制数据的大小。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | * IMAGE\_SUCCESS：执行成功。  * IMAGE\_INVALID\_PARAMETER：metadata或blob为空指针、blobSize为0。  * IMAGE\_UNSUPPORTED\_METADATA：不支持的元数据类型。  * IMAGE\_UNSUPPORTED\_OPERATION：未能设置二进制数据。 |
+
+### OH\_PictureMetadata\_GetBlobDataSize()
+
+```c
+Image_ErrorCode OH_PictureMetadata_GetBlobDataSize(OH_PictureMetadata *metadata, uint32_t *blobSize)
+```
+
+**描述**
+
+获取元数据中blob数据的大小。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*metadata | 指向OH\_PictureMetadata对象的指针。 |
+| uint32\_t \*blobSize | 指向二进制数据大小的指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | * IMAGE\_SUCCESS：执行成功。  * IMAGE\_INVALID\_PARAMETER：metadata或blobSize为空指针。  * IMAGE\_UNSUPPORTED\_METADATA：不支持的元数据类型。 |
+
+### OH\_PictureMetadata\_GetBlobData()
+
+```c
+Image_ErrorCode OH_PictureMetadata_GetBlobData(OH_PictureMetadata *metadata, uint8_t *blob, uint32_t blobSize)
+```
+
+**描述**
+
+以二进制数据的形式获取元数据。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_PictureMetadata](capi-image-nativemodule-oh-picturemetadata.md) \*metadata | 指向OH\_PictureMetadata对象的指针。 |
+| uint8\_t \*blob | 指向获取到的二进制数据的指针。 |
+| uint32\_t blobSize | 二进制数据的大小。该值必须大于或等于通过OH\_PictureMetadata\_GetBlobDataSize方法获取的值。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | * IMAGE\_SUCCESS：执行成功。  * IMAGE\_INVALID\_PARAMETER：metadata或blob为空指针、blobSize为0或小于要求。  * IMAGE\_UNSUPPORTED\_METADATA：不支持的元数据类型。  * IMAGE\_UNSUPPORTED\_OPERATION：无法获取二进制数据。 |
+
 ### OH\_PictureMetadata\_GetPropertyWithNull()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_PictureMetadata_GetPropertyWithNull(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
+```c
+Image_ErrorCode OH_PictureMetadata_GetPropertyWithNull(OH_PictureMetadata *metadata, Image_String *key, Image_String *value)
 ```
 
 **描述**
 
 获取图片元数据的属性值。输出的value.data以字符串结束符'\0'结尾。
+
+使用场景：适用于读取字符串形式的元数据属性值。与[OH\_PictureMetadata\_GetProperty](capi-image-common-h.md#oh_picturemetadata_getproperty)相比，本接口返回的value.data以'\0'结尾，更适合直接按C字符串处理。
+
+使用约束：metadata、key、key->data和value均不能为空指针，key->size必须大于0。接口返回失败时，不应读取value.data。
+
+资源管理：接口执行成功后，value.data由接口分配，调用方使用完成后应使用delete[]释放。
 
 **起始版本：** 19
 
@@ -438,15 +597,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureMetadata\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_PictureMetadata_Release(OH_PictureMetadata *metadata)
+```c
+Image_ErrorCode OH_PictureMetadata_Release(OH_PictureMetadata *metadata)
 ```
 
 **描述**
 
 释放OH\_PictureMetadata指针。
+
+使用约束：metadata不能为空指针。
+
+资源管理：调用该接口后，metadata指向的OH\_PictureMetadata对象会被释放，不应继续使用。
 
 **起始版本：** 13
 
@@ -464,15 +625,17 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_PictureMetadata\_Clone()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_PictureMetadata_Clone(OH_PictureMetadata *oldMetadata, OH_PictureMetadata **newMetadata)
+```c
+Image_ErrorCode OH_PictureMetadata_Clone(OH_PictureMetadata *oldMetadata, OH_PictureMetadata **newMetadata)
 ```
 
 **描述**
 
 拷贝元数据。
+
+使用约束：oldMetadata和newMetadata均不能为空指针；接口返回失败时，输出参数内容不应使用。
+
+资源管理：接口成功返回的newMetadata由调用方管理，使用完成后应调用[OH\_PictureMetadata\_Release](capi-image-common-h.md#oh_picturemetadata_release)释放。
 
 **起始版本：** 13
 

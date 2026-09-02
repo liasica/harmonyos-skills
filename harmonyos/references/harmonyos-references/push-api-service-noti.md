@@ -3,18 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 服务通知
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 服务通知
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:68a9360978ba7bcb95f93584735cc8f598c94d82e0b883a20bd88d370ab0f31c
+scraped_at: 2026-09-02T15:03:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:750a43567e885832fc365febecaf31a52be260de92e6bd22fc16c4f3092feeda
 ---
-
-说明
-
-为了更安全的网络访问，华为服务通知仅支持TLS1.2及以上版本，应用使用TLS1.2以下协议或使用规定外的加密套件将无法正常发送消息。
 
 ## 功能介绍
 
-元服务调用服务通知REST API，完成订阅消息下发功能。
+元服务通过调用[requestSubscribeNotification](push-servicenotification.md#servicenotificationrequestsubscribenotification-1)获取用户授权后，可调用服务通知REST API，完成订阅消息下发功能。
 
 ## 约束与限制
 
@@ -34,7 +30,7 @@ content_hash: sha256:68a9360978ba7bcb95f93584735cc8f598c94d82e0b883a20bd88d370ab
 * **接口URL：** https://push-api.cloud.huawei.com/**v1**/**[projectId]**/service\_notification/send
 * **数据格式：** Content-Type: application/json
 
-说明
+**说明** 
 
 **[projectId]** ：项目ID，登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”，在该页面获取。
 
@@ -42,7 +38,7 @@ content_hash: sha256:68a9360978ba7bcb95f93584735cc8f598c94d82e0b883a20bd88d370ab
 
 | 参数 | 取值描述 | 样例 |
 | --- | --- | --- |
-| Authorization | 鉴权方式：  **JWT方式**  详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  · 调用服务通知API接口必须使用**PS256**算法。  · 建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJr\*\*\*\*\*OiIx---\*\*\*\*.eyJh\*\*\*\*\*iJodHR--\*\*\*.QRod\*\*\*\*\*4Gp---\*\*\*\* |
+| Authorization | 鉴权方式：  **JWT方式**  详情参见[基于服务账号生成鉴权令牌](../harmonyos-guides/push-jwt-token.md)。  **说明：**  · 调用服务通知API接口必须使用**PS256**算法。  · 建议JWT令牌过期时间设置为3600秒，有效期内可以复用。  - Bearer后面拼接空格，再拼接获取的鉴权信息。 | Bearer eyJr\*\*\*\*\*OiIx---\*\*\*\*.eyJh\*\*\*\*\*iJodHR--\*\*\*.QRod\*\*\*\*\*4Gp---\*\*\*\* |
 
 ### Request Body
 
@@ -78,32 +74,33 @@ content_hash: sha256:68a9360978ba7bcb95f93584735cc8f598c94d82e0b883a20bd88d370ab
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| actionType | 是 | Integer | 消息点击后的行为。  0：打开元服务首页  1：打开元服务指定页面 |
+| actionType | 是 | Integer | 消息点击后的行为。  0：打开元服务首页。  1：打开元服务指定页面。 |
 | action | 否 | String | 应用内置页面ability对应的action。当actionType为1时，字段action和uri至少填写一个，若都填写优先寻找与action匹配的应用页面。 |
 | uri | 否 | String | 应用内置页面ability对应的uri。当actionType为1时，字段action和uri至少填写一个，若都填写优先寻找与action匹配的应用页面。 |
 | data | 否 | Object | 当actionType为0或1时，该字段用于在点击按钮后将数据传递给元服务。格式必须为key-value形式，最大长度1024字节。示例：  {"key1": "value1", "key2": "value2"} |
 
 ## 请求示例
 
-```
-1. // Request URL
-2. POST "https://push-api.cloud.huawei.com/v1/[projectId]/service_notification/send"
+```json5
+// Request URL
+POST "https://push-api.cloud.huawei.com/v1/[projectId]/service_notification/send"
+ 
+// Request Header
+Content-Type: application/json
+Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
 
-4. // Request Header
-5. Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
-
-7. // Request Body
-8. {
-9. "msgId": "2**********80",
-10. "appId": "6**********972",
-11. "toOpenId": "A**********O",
-12. "templateId": "1**********2",
-13. "templateParams": {
-14. "thing_0": "N0001",
-15. "time_1": "2024年4月27日 22:22",
-16. "thing_2": "软件大道101号"
-17. }
-18. }
+// Request Body
+{
+    "msgId": "2**********80",
+    "appId": "6**********972",
+    "toOpenId": "A**********O",
+    "templateId": "1**********2",
+    "templateParams": {
+        "thing_0": "N0001",
+        "time_1": "2024年4月27日 22:22",
+        "thing_2": "软件大道101号"
+    }
+}
 ```
 
 ## 响应参数
@@ -120,22 +117,22 @@ content_hash: sha256:68a9360978ba7bcb95f93584735cc8f598c94d82e0b883a20bd88d370ab
 
 **响应成功示例：**
 
-```
-1. {
-2. "code": "80000000",
-3. "msg": "Success",
-4. "requestId": "157*******006"
-5. }
+```json
+{
+  "code": "80000000",
+  "msg": "Success",
+  "requestId": "157*******006"
+}
 ```
 
 **响应失败示例：**
 
-```
-1. {
-2. "code": "82500003",
-3. "msg": "Template subscribe msg appId error",
-4. "requestId": "157*******006"
-5. }
+```json
+{
+  "code": "82500003",
+  "msg": "Template subscribe msg appId error",
+  "requestId": "157*******006"
+}
 ```
 
 ## HTTP响应码
@@ -145,7 +142,7 @@ content_hash: sha256:68a9360978ba7bcb95f93584735cc8f598c94d82e0b883a20bd88d370ab
 | 200 | 成功。 | - |
 | 400 | 参数错误。 | 请检查业务响应码并根据业务响应码进一步排查问题。 |
 | 401 | 鉴权失败。 | 请检查HTTP头中Authorization参数。 |
-| 404 | 找不到服务。 | 请检查请求URI是否正确。 |
+| 404 | 找不到服务。 | 请检查请求URL是否正确。 |
 | 500 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 502 | 请求连接异常，常见于网络状况不稳定。 | 建议稍后重试，或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 503 | 流量控制。 | · 平均分配发送速度。  · 平均分布推送时间段，不要集中发送。  **说明：**  单日单项目最多10万次，流控100tps。 |
@@ -337,7 +334,7 @@ Service notification msg send subtitle build error.
 
 **错误描述**
 
-副标题构建异常。
+副文本构建异常。
 
 **可能原因**
 

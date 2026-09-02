@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mind
 title: OH_AI_TrainCfgHandle
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 结构体 > OH_AI_TrainCfgHandle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ec541a25060ab109864654074805d72ba1858fbe98b89dd21e015aba89aea29f
+scraped_at: 2026-09-02T14:53:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6b9742f39a57e67ade6bdb33dd37c499d6b7bde9aeaaa6ac81935cd9af3ab23c
 ---
 
-```
-1. typedef void *OH_AI_TrainCfgHandle
+```c
+typedef void *OH_AI_TrainCfgHandle
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 指向训练配置对象的指针。
 

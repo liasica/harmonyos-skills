@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-singl
 title: 单算子应用
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 单算子应用
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9c841d2a1591ea0aeb7ab1b197caf34a8ace0a6724f923d371b6fea867e6bc22
+scraped_at: 2026-09-02T14:50:34+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:260a50e8ea2fe1db7e91285db97650b491d506ef93547d89d84c63404dad0e00
 ---
 
 ## 概述
 
 CANN Kit提供独立的算子创建和计算通路，三方框架可以在模型加载、推理过程中，将卷积、深度卷积等算子通过单算子对接的方式迁移至NPU，经过硬件平台的加速计算，与整网模式对比灵活度更高，相比于整网CPU计算性能更优。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/fO7vrAIrTzi88MeZnr3P4Q/zh-cn_image_0000002558606068.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/UVNUsDcRRpiX1luiiL6yRg/zh-cn_image_0000002736314393.jpg)
 
 以下为单算子Tensor创建，单算子执行器创建、加载、执行接口，接口使用请参见[开发步骤](cannkit-single-operator-application.md#开发步骤)。如要使用更丰富的设置和查询接口，请参见[API参考](../harmonyos-references/cannkit.md)。
 
@@ -81,122 +81,182 @@ CANN Kit提供独立的算子创建和计算通路，三方框架可以在模型
 假定现在有一个深度卷积算子，输入维度为1x8x224x224，输入NCHW格式排布的float32类型数据，准备好NCHW排布的权重与偏置数据，调用单算子接口推理运算获得NCHW格式float32类型的输出可以参考如下示例代码：
 
 ```
-1. #include "CANNKit/hiai_single_op.h"
-2. #include <cstdio>
-3. #include <cstdlib>
-4. #include <cstring>
-5. // 示例算子参数
-6. // 单算子卷积模式
-7. HiAI_SingleOpConvMode convMode = HIAI_SINGLEOP_CONV_MODE_DEPTHWISE;
-8. int64_t strides[2] = {1, 1};
-9. int64_t dilations[2] = {1, 1};
-10. int64_t pads[4] = {0, 0, 0, 0};
-11. int64_t groups = 1;
-12. // 单算子填充模式
-13. HiAI_SingleOpPadMode padMode = HIAI_SINGLEOP_PAD_MODE_SAME;
-14. int64_t filterDims[4] = {8, 1, 3, 3};
-15. size_t filterDataSize = 8 * 1 * 3 * 3 * sizeof(float);
-16. void* filterData = malloc(filterDataSize);
-17. int64_t biasDims[1] = {8};
-18. size_t biasDataSize = 8 * sizeof(float);
-19. void* biasData = malloc(biasDataSize);
-20. int64_t inputDims[4] = {1, 8, 224, 224};
-21. HiAI_SingleOpDataType inputDataType = HIAI_SINGLEOP_DT_FLOAT;
-22. // 单算子张量排布格式
-23. HiAI_SingleOpFormat inputFormat = HIAI_SINGLEOP_FORMAT_NCHW;
-24. bool inputIsVirtual = false;
-25. // 若不指定算子输出数据类型和排布格式，请设置数据类型为HIAI_SINGLEOP_DT_UNDEFINED，排布格式为HIAI_SINGLEOP_FORMAT_RESERVED
-26. // 在单算子创建完成后，调用HMS_HiAISingleOpExecutor_UpdateOutputTensorDesc，将输出Tensor描述更新为硬件适配最优的数据类型和排布格式
-27. int64_t outputDims[4] = {1, 8, 224, 224};
-28. HiAI_SingleOpDataType outputDataType = HIAI_SINGLEOP_DT_FLOAT;
-29. HiAI_SingleOpFormat outputFormat = HIAI_SINGLEOP_FORMAT_NCHW;
-30. bool outputIsVirtual = false;
+// 示例算子参数
+// 单算子卷积模式
+HiAI_SingleOpConvMode convMode = HIAI_SINGLEOP_CONV_MODE_DEPTHWISE;
+int64_t strides[2] = {1, 1};
+int64_t dilations[2] = {1, 1};
+int64_t pads[4] = {0, 0, 0, 0};
+int64_t groups = 1;
+// 单算子填充模式
+HiAI_SingleOpPadMode padMode = HIAI_SINGLEOP_PAD_MODE_SAME;
+int64_t filterDims[4] = {8, 1, 3, 3};
+size_t filterDataSize = 8 * 1 * 3 * 3 * sizeof(float);
+void *filterData = malloc(filterDataSize);
+// ...
+int64_t biasDims[1] = {8};
+size_t biasDataSize = 8 * sizeof(float);
+void *biasData = malloc(biasDataSize);
+// ...
+int64_t inputDims[4] = {1, 8, 224, 224};
+HiAI_SingleOpDataType inputDataType = HIAI_SINGLEOP_DT_FLOAT;
+// 单算子张量排布格式
+HiAI_SingleOpFormat inputFormat = HIAI_SINGLEOP_FORMAT_NCHW;
+bool inputIsVirtual = false;
+// 若不指定算子输出数据类型和排布格式，请设置数据类型为HIAI_SINGLEOP_DT_UNDEFINED，排布格式为HIAI_SINGLEOP_FORMAT_RESERVED
+// 在单算子创建完成后，调用HMS_HiAISingleOpExecutor_UpdateOutputTensorDesc，将输出Tensor描述更新为硬件适配最优的数据类型和排布格式
+int64_t outputDims[4] = {1, 8, 224, 224};
+HiAI_SingleOpDataType outputDataType = HIAI_SINGLEOP_DT_FLOAT;
+HiAI_SingleOpFormat outputFormat = HIAI_SINGLEOP_FORMAT_NCHW;
+bool outputIsVirtual = false;
 
-32. // 创建单算子执行器
-33. HiAI_SingleOpOptions* options = HMS_HiAISingleOpOptions_Create();
-34. HiAISingleOpDescriptor_ConvolutionParam convOpDescCreateParam = {convMode, {0}, {0}, {0}, groups, padMode};
-35. memcpy(convOpDescCreateParam.strides, strides, 2 * sizeof(int64_t));
-36. memcpy(convOpDescCreateParam.dilations, dilations, 2 * sizeof(int64_t));
-37. memcpy(convOpDescCreateParam.pads, pads, 4 * sizeof(int64_t));
-38. // 创建卷积类的描述符对象
-39. HiAI_SingleOpDescriptor* convOpDesc = HMS_HiAISingleOpDescriptor_CreateConvolution(convOpDescCreateParam);
-40. // 创建一个单算子tensor描述对象，根据维度、数据类型和格式
-41. HiAI_SingleOpTensorDesc* filterDesc = HMS_HiAISingleOpTensorDesc_Create(filterDims, 4, HIAI_SINGLEOP_DT_FLOAT, HIAI_SINGLEOP_FORMAT_NCHW, false);
-42. // 创建一个单算子tensor对象
-43. HiAI_SingleOpTensor* filter = HMS_HiAISingleOpTensor_CreateFromConst(filterDesc, filterData, filterDataSize);
-44. HiAI_SingleOpTensorDesc* biasDesc = HMS_HiAISingleOpTensorDesc_Create(biasDims, 1, HIAI_SINGLEOP_DT_FLOAT, HIAI_SINGLEOP_FORMAT_NCHW, false);
-45. HiAI_SingleOpTensor* bias = HMS_HiAISingleOpTensor_CreateFromConst(biasDesc, biasData, biasDataSize);
-46. HiAI_SingleOpTensorDesc* inputDesc = HMS_HiAISingleOpTensorDesc_Create(inputDims, 4, inputDataType, inputFormat, inputIsVirtual);
-47. HiAI_SingleOpTensorDesc* outputDesc = HMS_HiAISingleOpTensorDesc_Create(outputDims, 4, outputDataType, outputFormat, outputIsVirtual);
-48. // 构造单算子卷积executor参数
-49. HiAI_SingleOpExecutorConvolutionParam executorCreateParam = {options, convOpDesc, inputDesc, outputDesc, filter, bias};
-50. // 创建卷积单算子executor
-51. HiAI_SingleOpExecutor* executor = HMS_HiAISingleOpExecutor_CreateConvolution(executorCreateParam);
-52. if (executor == nullptr) {
-53. printf("HMS_HiAISingleOp executor create failed. \n");
-54. }
-55. // 对不需要的资源建议即时销毁
-56. HMS_HiAISingleOpTensorDesc_Destroy(&filterDesc);
-57. HMS_HiAISingleOpTensorDesc_Destroy(&biasDesc);
-58. HMS_HiAISingleOpOptions_Destroy(&options);
-59. HMS_HiAISingleOpDescriptor_Destroy(&convOpDesc);
-60. OH_NN_ReturnCode ret = HMS_HiAISingleOpTensor_Destroy(&filter);
-61. if (ret != OH_NN_SUCCESS) {
-62. printf("HMS_HiAISingleOp filter destroy failed.\n");
-63. }
-64. ret = HMS_HiAISingleOpTensor_Destroy(&bias);
-65. if (ret != OH_NN_SUCCESS) {
-66. printf("HMS_HiAISingleOp bias destroy failed.\n");
-67. }
+// 创建单算子执行器
+options_ = HMS_HiAISingleOpOptions_Create();
+HiAISingleOpDescriptor_ConvolutionParam convOpDescCreateParam = {convMode, {0}, {0}, {0}, groups, padMode};
+memcpy(convOpDescCreateParam.strides, strides, opDescSize * sizeof(int64_t));
+memcpy(convOpDescCreateParam.dilations, dilations, opDescSize * sizeof(int64_t));
+memcpy(convOpDescCreateParam.pads, pads, tensorSize * sizeof(int64_t));
+// 创建卷积类的描述符对象
+convOpDesc_ = HMS_HiAISingleOpDescriptor_CreateConvolution(convOpDescCreateParam);
+// 创建一个单算子tensor描述对象，根据维度、数据类型和格式
+filterDesc_ = HMS_HiAISingleOpTensorDesc_Create(filterDims, tensorSize, inputDataType, inputFormat, false);
+// 创建一个单算子tensor对象
+filter_ = HMS_HiAISingleOpTensor_CreateFromConst(filterDesc_, filterData, filterDataSize);
+biasDesc_ = HMS_HiAISingleOpTensorDesc_Create(biasDims, 1, outputDataType, outputFormat, false);
+bias_ = HMS_HiAISingleOpTensor_CreateFromConst(biasDesc_, biasData, biasDataSize);
+inputDesc_ = HMS_HiAISingleOpTensorDesc_Create(inputDims, tensorSize, inputDataType, inputFormat, inputIsVirtual);
+outputDesc_ = HMS_HiAISingleOpTensorDesc_Create(outputDims, tensorSize, outputDataType, outputFormat,
+                                                outputIsVirtual);
+// 构造单算子卷积 executor参数
+executorCreateParam_ = {options_, convOpDesc_, inputDesc_, outputDesc_, filter_, bias_};
+// ...
+// 创建卷积单算子executor
+executor_ = HMS_HiAISingleOpExecutor_CreateConvolution(executorCreateParam_);
+if (executor_ == nullptr) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp executor create failed");
+    // ...
+}
+// 对不需要的资源建议即时销毁
+HMS_HiAISingleOpTensorDesc_Destroy(&filterDesc_);
+HMS_HiAISingleOpTensorDesc_Destroy(&biasDesc_);
+HMS_HiAISingleOpOptions_Destroy(&options_);
+HMS_HiAISingleOpDescriptor_Destroy(&convOpDesc_);
+ret = HMS_HiAISingleOpTensor_Destroy(&filter_);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp filter destroy failed");
+    // ...
+}
+ret = HMS_HiAISingleOpTensor_Destroy(&bias_);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp bias destroy failed");
+    // ...
+}
+// ...
+// 统计算子构图耗时
+std::chrono::system_clock::time_point createTimeBegin = std::chrono::system_clock::now();
+// 创建输入/输出Tensor
+input_ = HMS_HiAISingleOpTensor_CreateFromTensorDesc(inputDesc_);
+output_ = HMS_HiAISingleOpTensor_CreateFromTensorDesc(outputDesc_);
+// 单算子输入Tensor和输出Tensor的内存必须为ION内存以节省拷贝开销
+// 创建输入Tensor成功后，可以使用以下方式获取输入Tensor内的ION内存地址进行输入数据填装
+// 输出Tensor内的ION内存地址也可以用以下方式获取，在推理计算成功后用于输出数据读取
+HiAI_SingleOpBuffer *inputBuffer = HMS_HiAISingleOpTensor_GetBuffer(input_);
+void *inputData = HMS_HiAISingleOpBuffer_GetData(inputBuffer);
+size_t inputDataSize = HMS_HiAISingleOpBuffer_GetSize(inputBuffer);
+memset(inputData, 0, inputDataSize);
+std::chrono::system_clock::time_point createTimeEnd = std::chrono::system_clock::now();
+createTensorTime = GetRunTime(createTimeBegin, createTimeEnd);
 
-69. // 创建输入/输出Tensor
-70. HiAI_SingleOpTensor* input = HMS_HiAISingleOpTensor_CreateFromTensorDesc(inputDesc);
-71. HMS_HiAISingleOpTensorDesc_Destroy(&inputDesc);
-72. HiAI_SingleOpTensor* output = HMS_HiAISingleOpTensor_CreateFromTensorDesc(outputDesc);
-73. HMS_HiAISingleOpTensorDesc_Destroy(&outputDesc);
-74. // 单算子输入Tensor和输出Tensor的内存必须为ION内存以节省拷贝开销
-75. // 创建输入Tensor成功后，可以使用以下方式获取输入Tensor内的ION内存地址进行输入数据填装
-76. // 输出Tensor内的ION内存地址也可以用以下方式获取，在推理计算成功后用于输出数据读取
-77. HiAI_SingleOpBuffer* inputBuffer = HMS_HiAISingleOpTensor_GetBuffer(input);
-78. void* inputData = HMS_HiAISingleOpBuffer_GetData(inputBuffer);
-79. size_t inputDataSize = HMS_HiAISingleOpBuffer_GetSize(inputBuffer);
-80. memset(inputData, 0, inputDataSize);
-
-82. // 查询单算子执行器所需的ION内存工作空间的字节大小
-83. size_t workspaceSize = HMS_HiAISingleOpExecutor_GetWorkspaceSize(executor);
-84. // 若存在多个单算子执行器，各个执行器的工作空间内存可以复用，只需要申请所需的最大工作空间即可
-85. HiAI_SingleOpBuffer* workspaceBuffer = HMS_HiAISingleOpBuffer_Create(workspaceSize);
-86. void* workspace = HMS_HiAISingleOpBuffer_GetData(workspaceBuffer);
-87. ret = HMS_HiAISingleOpExecutor_Init(executor, workspace, workspaceSize);
-88. if (ret != OH_NN_SUCCESS) {
-89. printf("HMS_HiAISingleOp executor init failed.\n");
-90. }
-
-92. // 执行推理运算
-93. HiAI_SingleOpTensor* inputs[] = {input};
-94. HiAI_SingleOpTensor* outputs[] = {output};
-95. ret = HMS_HiAISingleOpExecutor_Execute(executor, inputs, 1, outputs, 1);
-96. if (ret != OH_NN_SUCCESS) {
-97. printf("HMS_HiAISingleOp executor execute failed.\n");
-98. }
-
-100. // 卸载单算子执行器，释放资源
-101. ret = HMS_HiAISingleOpTensor_Destroy(&input);
-102. if (ret != OH_NN_SUCCESS) {
-103. printf("HMS_HiAISingleOp input destroy failed.\n");
-104. }
-105. ret = HMS_HiAISingleOpTensor_Destroy(&output);
-106. if (ret != OH_NN_SUCCESS) {
-107. printf("HMS_HiAISingleOp output destroy failed.\n");
-108. }
-109. ret = HMS_HiAISingleOpBuffer_Destroy(&workspaceBuffer);
-110. if (ret != OH_NN_SUCCESS) {
-111. printf("HMS_HiAISingleOp workspaceBuffer destroy failed.\n");
-112. }
-113. ret = HMS_HiAISingleOpExecutor_Destroy(&executor);
-114. if (ret != OH_NN_SUCCESS) {
-115. printf("HMS_HiAISingleOp executor destroy failed.\n");
-116. }
-117. free(filterData);
-118. free(biasData);
+HMS_HiAISingleOpTensorDesc_Destroy(&inputDesc_);
+HMS_HiAISingleOpTensorDesc_Destroy(&outputDesc_);
+// ...
+// 查询单算子执行器所需的ION内存工作空间的字节大小
+size_t workspaceSize = HMS_HiAISingleOpExecutor_GetWorkspaceSize(executor_);
+// 若存在多个单算子执行器，各个执行器的工作空间内存可以复用，只需要申请所需的最大工作空间即可
+workspaceBuffer_ = HMS_HiAISingleOpBuffer_Create(workspaceSize);
+void *workspace = HMS_HiAISingleOpBuffer_GetData(workspaceBuffer_);
+// 在调用该接口之前，需要申请执行器所需的工作空间内存
+OH_NN_ReturnCode ret = HMS_HiAISingleOpExecutor_Init(executor_, workspace, workspaceSize);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp executor init failed");
+    // ...
+}
+// ...
+// 多轮多次执行推理运算，统计算子的推理耗时
+for (size_t i = 0; i < times; i++) {
+    for (size_t j = 0; j < opNum; j++) {
+        // 执行推理运算
+        HiAI_SingleOpTensor *inputs[] = {input_};
+        HiAI_SingleOpTensor *outputs[] = {output_};
+        std::chrono::system_clock::time_point executeTimeBegin = std::chrono::system_clock::now();
+        OH_NN_ReturnCode ret = HMS_HiAISingleOpExecutor_Execute(executor_, inputs, 1, outputs, 1);
+        if (ret != OH_NN_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP, "HMS_HiAISingleOp executor execute failed");
+            // ...
+        }
+        std::chrono::system_clock::time_point executeTimeEnd = std::chrono::system_clock::now();
+        auto executeElapsedTime = GetRunTime(executeTimeBegin, executeTimeEnd);
+        OH_LOG_INFO(LOG_APP, "idx-%zu execute succ: %llu us", j, executeElapsedTime);
+        aveTime[j] += executeElapsedTime;
+    }
+    OH_LOG_INFO(LOG_APP, "------ Round %zu ------ ", i);
+}
+// ...
+// 统计算子资源释放耗时
+std::chrono::system_clock::time_point destroyTimeBegin = std::chrono::system_clock::now();
+// 销毁输入Tensor，释放资源
+OH_NN_ReturnCode ret = HMS_HiAISingleOpTensor_Destroy(&input_);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp input_ destroy failed");
+    // ...
+}
+// 销毁输出Tensor，释放资源
+ret = HMS_HiAISingleOpTensor_Destroy(&output_);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp output_ destroy failed");
+    // ...
+}
+// 释放单算子Buffer对象
+ret = HMS_HiAISingleOpBuffer_Destroy(&workspaceBuffer_);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp workspaceBuffer_ destroy failed");
+    // ...
+}
+// 销毁单算子执行器，释放执行器占用的内存
+ret = HMS_HiAISingleOpExecutor_Destroy(&executor_);
+if (ret != OH_NN_SUCCESS) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp executor destroy failed");
+    // ...
+}
+std::chrono::system_clock::time_point destroyTimeEnd = std::chrono::system_clock::now();
+destroyTime = GetRunTime(destroyTimeBegin, destroyTimeEnd);
+// ...
+// 汇总各阶段耗时结果
+std::vector<float> outputs(returnArraySize, 0);
+if (!times_) {
+    OH_LOG_ERROR(LOG_APP, "iteration times_ is not initialized or is zero");
+    return outputs;
+}
+if (aveTime.empty()) {
+    OH_LOG_INFO(LOG_APP, "HMS_HiAISingleOp_GetResult failed");
+    return outputs;
+}
+// 获取构图时间，微妙转秒
+createTensorTime /= 1000000.0f;
+outputs[0] = createTensorTime;
+// 获取推理时间
+executeTime = 0;
+for (size_t i = 0; i < opNum; i++) {
+    aveTime[i] /= times_;
+    OH_LOG_INFO(LOG_APP, "idx-%zu average time: %.2f us", i, aveTime[i]);
+    executeTime += aveTime[i];
+}
+OH_LOG_INFO(LOG_APP, "op average time sum: %.2f us", executeTime);
+executeTime /= 1000000.0f;
+outputs[1] = executeTime;
+// 获取资源释放时间
+destroyTime /= 1000000.0f;
+outputs[2] = destroyTime;
+OH_LOG_INFO(LOG_APP, "GetResult success");
+return outputs;
 ```

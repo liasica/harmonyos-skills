@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API其他实用接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API其他实用接口
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:05+08:00
+scraped_at: 2026-09-02T15:00:16+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:bda248aa2e3633fe6a32b1ea506b62ed66e0ec71c79106d5516ca155872f5a42
+content_hash: sha256:2f1d013fe2b6690f730fa72266cafb446bc4c94bfe77bafdcdcdfce345d0a05f
 ---
 
 ## 简介
@@ -37,45 +37,45 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 
 cpp部分代码
 
-```
-1. #include "napi/native_api.h"
+```cpp
+#include "napi/native_api.h"
 
-3. static napi_value GetModuleFileName(napi_env env, napi_callback_info info)
-4. {
-5. // 声明一个const char类型的指针变量file，用于存储模块绝对路径
-6. const char *file = nullptr;
-7. napi_value value = nullptr;
-8. // 获取当前模块的绝对路径，并将结果存储在file变量中
-9. napi_status status = node_api_get_module_file_name(env, &file);
-10. if (status != napi_ok) {
-11. napi_throw_error(env, nullptr, "Failed to get module file name");
-12. return nullptr;
-13. }
-14. // 创建一个包含绝对路径的napi_value类型的字符串
-15. napi_create_string_utf8(env, file, NAPI_AUTO_LENGTH, &value);
-16. return value;
-17. }
+static napi_value GetModuleFileName(napi_env env, napi_callback_info info)
+{
+    // 声明一个const char类型的指针变量file，用于存储模块绝对路径
+    const char *file = nullptr;
+    napi_value value = nullptr;
+    // 获取当前模块的绝对路径，并将结果存储在file变量中
+    napi_status status = node_api_get_module_file_name(env, &file);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to get module file name");
+        return nullptr;
+    }
+    // 创建一个包含绝对路径的napi_value类型的字符串
+    napi_create_string_utf8(env, file, NAPI_AUTO_LENGTH, &value);
+    return value;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const getModuleFileName: () => string | undefined;
+```ts
+// index.d.ts
+export const getModuleFileName: () => string | undefined;
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
 
-4. try {
-5. let filename = testNapi.getModuleFileName();
-6. hilog.info(0x0000, 'testTag', 'Test Node-API node_api_get_module_file_name:%{public}s', filename);
-7. } catch (error) {
-8. hilog.error(0x0000, 'testTag', 'Test Node-API node_api_get_module_file_name error: %{public}s', error.message);
-9. }
+try {
+    let filename = testNapi.getModuleFileName();
+    hilog.info(0x0000, 'testTag', 'Test Node-API node_api_get_module_file_name:%{public}s', filename);
+} catch (error) {
+    hilog.error(0x0000, 'testTag', 'Test Node-API node_api_get_module_file_name error: %{public}s', error.message);
+}
 ```
 
 ### napi\_strict\_equals
@@ -84,60 +84,60 @@ ArkTS侧示例代码
 
 cpp部分代码
 
-```
-1. #include "napi/native_api.h"
+```cpp
+#include "napi/native_api.h"
 
-3. static napi_value StrictEquals(napi_env env, napi_callback_info info)
-4. {
-5. // 接受两个入参
-6. size_t argc = 2;
-7. napi_value args[2] = {nullptr};
-8. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-9. // 调用napi_strict_equals接口判断给定的两个ArkTS value是否严格相等
-10. bool result = true;
-11. napi_status status = napi_strict_equals(env, args[0], args[1], &result);
-12. if (status != napi_ok) {
-13. napi_throw_error(env, nullptr, "Node-API napi_strict_equals fail");
-14. return nullptr;
-15. }
-16. // 将结果转成napi_value类型返回
-17. napi_value returnValue = nullptr;
-18. napi_get_boolean(env, result, &returnValue);
-19. return returnValue;
-20. }
+static napi_value StrictEquals(napi_env env, napi_callback_info info)
+{
+    // 接受两个入参
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 调用napi_strict_equals接口判断给定的两个ArkTS value是否严格相等
+    bool result = true;
+    napi_status status = napi_strict_equals(env, args[0], args[1], &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_strict_equals fail");
+        return nullptr;
+    }
+    // 将结果转成napi_value类型返回
+    napi_value returnValue = nullptr;
+    napi_get_boolean(env, result, &returnValue);
+    return returnValue;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const strictEquals: (lhs: string, rhs: string | number) => boolean | undefined;
+```ts
+// index.d.ts
+export const strictEquals: (lhs: string, rhs: string | number) => boolean | undefined;
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
 
-4. try {
-5. let lhs = "123";
-6. let rhs = "123";
-7. let str = "456";
-8. let num = 123;
-9. hilog.info(0x0000, 'testTag', 'Test Node-API napi_strict_equals: %{public}s', testNapi.strictEquals(lhs, rhs));
-10. hilog.info(0x0000, 'testTag', 'Test Node-API napi_strict_equals: %{public}s', testNapi.strictEquals(lhs, str));
-11. hilog.info(0x0000, 'testTag', 'Test Node-API napi_strict_equals: %{public}s', testNapi.strictEquals(lhs, num));
-12. } catch (error) {
-13. hilog.error(0x0000, 'testTag', 'Test Node-API napi_strict_equals error: %{public}s', error.message);
-14. }
+try {
+  let lhs = "123";
+  let rhs = "123";
+  let str = "456";
+  let num = 123;
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_strict_equals: %{public}s', testNapi.strictEquals(lhs, rhs));
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_strict_equals: %{public}s', testNapi.strictEquals(lhs, str));
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_strict_equals: %{public}s', testNapi.strictEquals(lhs, num));
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_strict_equals error: %{public}s', error.message);
+}
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```

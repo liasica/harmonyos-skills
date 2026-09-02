@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-seri
 title: UsbSerial_Device
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体 > UsbSerial_Device
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:1583f2aeb8b09f8e39b11bf613273b1a447d23356df3c5c0e5121804bb14fbfe
+scraped_at: 2026-09-02T14:52:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cf1effdef8511fa9b3ebe1b7018cd3222074548bf4dc9d449a0c2e7961167b42
 ---
 
-```
-1. typedef struct UsbSerial_Device UsbSerial_Device
+```c
+typedef struct UsbSerial_Device UsbSerial_Device
 ```
 
 ## 概述
 
-PC/2in1
-
-USB串口设备数据结构（不透明）。
+USB串口设备数据结构（不透明），用于表示USB串口设备。开发者应通过[OH\_UsbSerial\_Open](capi-usb-serial-api-h.md#oh_usbserial_open)接口函数获取此结构体实例。
 
 **起始版本：** 18
 

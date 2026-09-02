@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-su
 title: 支持的国家/地区
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 附录 > 支持的国家/地区
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:518c23c627430c25816e4d4e520fb4189ca65e92ac1486c5c26ca4ff8b75a14c
+scraped_at: 2026-09-02T14:50:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:90a30493ff1d324d8efb01fd546bc2951f0744fd06452f55ac1416de263cf76c
 ---
 
-* 手机、平板、2in1、车机、智慧屏仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
-* 智能穿戴设备支持以下国家/地区。
+* Phone、Tablet、PC/2in1、TV、Car仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
+* Wearable设备支持以下国家/地区。
 
   | 国家/地区 | 英文名称 |
   | --- | --- |

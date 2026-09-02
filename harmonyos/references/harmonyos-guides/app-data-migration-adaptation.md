@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-data-migr
 title: 应用数据迁移适配指导
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 应用数据迁移适配指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:42+08:00
+scraped_at: 2026-09-02T14:59:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8e8ada45f44efb0f6280409d6525724d537a2afa24c623d655571cdff246626b
+content_hash: sha256:07dd09bcf8ac7992eb023cae34f1451eca3f9793b72793e2da6842e47447d3ff
 ---
 
 ## 环境准备
@@ -28,7 +28,7 @@ content_hash: sha256:8e8ada45f44efb0f6280409d6525724d537a2afa24c623d655571cdff24
 
 开发者可以在BackupExtension.ts文件中自定义类继承BackupExtensionAbility，通过重写其中的onBackup和onRestore方法，自定义应用数据的转换和迁移。终端设备从HarmonyOS升级到HarmonyOS NEXT数据迁移场景中，onRestore回调接口中的参数**bundleVersion.name**的**前缀**为“**0.0.0.0**”。
 
-注意
+**注意** 
 
 **onRestore 接口是同步接口，其内部所有的异步操作请进行同步等待。**
 
@@ -36,50 +36,50 @@ content_hash: sha256:8e8ada45f44efb0f6280409d6525724d537a2afa24c623d655571cdff24
 
 1. 在**entry/src/main/ets/**目录下，点击 **New > Directory** 创建**backupExtension**目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DeT649esRISDuREGyz-yQA/zh-cn_image_0000002558605104.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/3pZpPIF-TiOytBZzx0XfKA/zh-cn_image_0000002736313227.png)
 2. 点击**entry/src/main/ets/backupExtension/**目录，点击 **New > File** 创建**BackupExtension.ets**文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/QDydwwCxQBWcxjVLASeplQ/zh-cn_image_0000002589324629.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/ZdW8HkRwTT2tc_sMCJF57g/zh-cn_image_0000002706674184.png)
 3. 参考示例代码实现BackupExtensionAbility，应用的数据转换和迁移逻辑，请在指定位置填充实现。
 
    终端设备从HarmonyOS升级到HarmonyOS NEXT中，会将原有APK应用沙箱目录中文件放置到HarmonyOS备份恢复目录。对应关系详见[APK应用沙箱目录与备份恢复目录映射关系](app-data-migration-adaptation.md#apk应用沙箱目录与备份恢复目录映射关系)。
 
+   ```ts
+   import { BackupExtensionAbility, BundleVersion } from '@kit.CoreFileKit';
+
+   const TAG = `EntryBackupAbility`;
+
+   /**
+    * serviceExt进程入口
+    */
+   export default class EntryBackupAbility extends  BackupExtensionAbility {
+     async onBackup () {
+       console.info(TAG,`onBackup ok`);
+       await Promise.resolve();
+     }
+
+     /**
+      * 数据恢复处理接口。接口是同步接口，其内部所有的异步操作请进行同步等待。
+      *
+      * @param bundleVersion 版本信息
+      */
+     async onRestore (bundleVersion : BundleVersion): Promise<void> {
+       console.info(TAG, `onRestore ok ${JSON.stringify(bundleVersion)}`);
+       //bundleVersion.name的前缀为“0.0.0.0”时，表示终端设备从HarmonyOS升级到HarmonyOS NEXT数据迁移场景
+       if (bundleVersion.name.startsWith("0.0.0.0")){
+         // 在此处实现终端设备从HarmonyOS 4.x升级到HarmonyOS NEXT后，应用数据的转换和迁移
+         // 涉及异步操作请进行同步等待
+         console.info(TAG, `HarmonyOS to HarmonyOS NEXT scenario`);
+       } else {
+         // 在此处实现从HarmonyOS NEXT设备迁移到HarmonyOS NEXT设备后，应用数据的处理。无特殊要求，可以空实现
+         // 涉及异步操作请进行同步等待
+         console.info(TAG, `Other scenario`);
+       }
+     }
+   }
    ```
-   1. import { BackupExtensionAbility, BundleVersion } from '@kit.CoreFileKit';
 
-   3. const TAG = `EntryBackupAbility`;
-
-   5. /**
-   6. * serviceExt进程入口
-   7. */
-   8. export default class EntryBackupAbility extends  BackupExtensionAbility {
-   9. async onBackup () {
-   10. console.info(TAG,`onBackup ok`);
-   11. await Promise.resolve();
-   12. }
-
-   14. /**
-   15. * 数据恢复处理接口。接口是同步接口，其内部所有的异步操作请进行同步等待。
-   16. *
-   17. * @param bundleVersion 版本信息
-   18. */
-   19. async onRestore (bundleVersion : BundleVersion): Promise<void> {
-   20. console.info(TAG, `onRestore ok ${JSON.stringify(bundleVersion)}`);
-   21. //bundleVersion.name的前缀为“0.0.0.0”时，表示终端设备从HarmonyOS升级到HarmonyOS NEXT数据迁移场景
-   22. if (bundleVersion.name.startsWith("0.0.0.0")){
-   23. // 在此处实现终端设备从HarmonyOS 4.x升级到HarmonyOS NEXT后，应用数据的转换和迁移
-   24. // 涉及异步操作请进行同步等待
-   25. console.info(TAG, `HarmonyOS to HarmonyOS NEXT scenario`);
-   26. } else {
-   27. // 在此处实现从HarmonyOS NEXT设备迁移到HarmonyOS NEXT设备后，应用数据的处理。无特殊要求，可以空实现
-   28. // 涉及异步操作请进行同步等待
-   29. console.info(TAG, `Other scenario`);
-   30. }
-   31. }
-   32. }
-   ```
-
-   注意
+   **注意** 
 
    1. 单个应用设定的最长数据迁移时间为十五分钟，超过十五分钟还未完成应用数据迁移的应用，应用数据迁移会失败。
    2. 应用的“BackupExtensionAbility”执行完后，“备份恢复框架”会清空备份恢复目录，开发者请在应用的“BackupExtensionAbility”执行结束前，完成所有所需数据的转换和迁移。
@@ -93,22 +93,22 @@ content_hash: sha256:8e8ada45f44efb0f6280409d6525724d537a2afa24c623d655571cdff24
 1. 在**entry/src/main/resources/base/profile/**目录下，点击 **New > File** 创建**backup\_config.json**文件。
 2. 参考示例代码实现元数据资源文件配置。
 
-   ```
-   1. {
-   2. "allowToBackupRestore": true,
-   3. "extraInfo": {
-   4. "supportScene": [
-   5. "hmos2next"
-   6. ]
-   7. }
-   8. }
+   ```ts
+   {
+     "allowToBackupRestore": true,
+     "extraInfo": {
+       "supportScene": [
+         "hmos2next"
+       ]
+     }
+   }
    ```
 
 ### module.json5适配
 
 开发者需要在应用配置文件module.json5中进行注册，其中注册类型type需要设置为backup，元数据信息metadata需要新增一个name为ohos.extension.backup的条目。
 
-注意
+**注意** 
 
 **extensionAbilities需要配置在entry内的module.json5才能正常访问。**
 
@@ -116,23 +116,23 @@ content_hash: sha256:8e8ada45f44efb0f6280409d6525724d537a2afa24c623d655571cdff24
 
 1. 开发者需要在entry内的module.json5里面进行注册,参考示例代码实现元数据资源文件配置。
 
-   ```
-   1. "extensionAbilities": [
-   2. {
-   3. "description": "DemoBackupExtension",
-   4. "icon": "$media:app_icon",
-   5. "name": "BackupExtensionAbility",
-   6. "srcEntry": "./ets/backupExtension/BackupExtension.ets",  // 对应BackupExtension.ets在代码仓中的位置
-   7. "type": "backup",                                         // 类型需要选择backup
-   8. "exported": false,
-   9. "metadata": [                                             // 对应注册的元数据资源
-   10. {
-   11. "name": "ohos.extension.backup",
-   12. "resource": "$profile:backup_config"
-   13. }
-   14. ]
-   15. }
-   16. ]
+   ```ts
+   "extensionAbilities": [
+     {
+       "description": "DemoBackupExtension",
+       "icon": "$media:app_icon",
+       "name": "BackupExtensionAbility",
+       "srcEntry": "./ets/backupExtension/BackupExtension.ets",  // 对应BackupExtension.ets在代码仓中的位置
+       "type": "backup",                                         // 类型需要选择backup
+       "exported": false,
+       "metadata": [                                             // 对应注册的元数据资源
+         {
+           "name": "ohos.extension.backup",
+           "resource": "$profile:backup_config"
+         }
+       ]
+     }
+   ]
    ```
 
 ## APK应用沙箱目录与备份恢复目录映射关系

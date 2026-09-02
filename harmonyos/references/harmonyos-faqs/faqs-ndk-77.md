@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-77
 title: 如何在ArkTS侧管理Native侧的C++对象
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在ArkTS侧管理Native侧的C++对象
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:52+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:987e2d24695e73387ed08a5231711fd6db377220f94a58ee6fd2e33b9f7e6eab
+scraped_at: 2026-09-02T14:53:57+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:bc69d3c93152611c833b133cdc9cdee76e1d28931d26b83836ffcd00a20e0b3b
 ---
 
 **问题现象**
@@ -18,103 +18,95 @@ C++层分配一个类对象，返回该对象的地址给ArkTS层。ArkTS层通�
 
 声明TestClass：
 
+```cpp
+class TestClass { 
+public: 
+    int GetValue() { 
+        return this->value; 
+    } 
+    void SetValue(int value) { 
+        this->value = value; 
+    } 
+private: 
+    int value = 999; 
+};
 ```
-1. class TestClass {
-2. public:
-3. int GetValue() {
-4. return this->value;
-5. }
-6. void SetValue(int value) {
-7. this->value = value;
-8. }
-9. private:
-10. int value = 999;
-11. };
-```
-
-[TestClass.h](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/ArkTSManageCObjects/src/main/cpp/TestClass.h#L21-L31)
 
 C++层将定义的对象地址返回到ArkTS层：
 
+```cpp
+#include "napi/native_api.h" 
+#include "TestClass.h" 
+#include "hilog/log.h"
+#define LOG_TAG "MY_TAG"
+ 
+static napi_value DefineObject(napi_env env, napi_callback_info info) { 
+    OH_LOG_INFO(LOG_APP, "enter DefineObject"); 
+     
+    napi_value result; 
+    auto a = new TestClass(); 
+    int64_t addrValue = (int64_t)a; 
+    napi_create_bigint_int64(env, addrValue, &result); 
+    OH_LOG_INFO(LOG_APP, "end DefineObject, addrValue:%{public}ld", addrValue); 
+    return result; 
+}
 ```
-1. #include "napi/native_api.h"
-2. #include "TestClass.h"
-3. #include "hilog/log.h"
-4. #define LOG_TAG "MY_TAG"
-
-6. static napi_value DefineObject(napi_env env, napi_callback_info info) {
-7. OH_LOG_INFO(LOG_APP, "enter DefineObject");
-
-9. napi_value result;
-10. auto a = new TestClass();
-11. int64_t addrValue = (int64_t)a;
-12. napi_create_bigint_int64(env, addrValue, &result);
-13. OH_LOG_INFO(LOG_APP, "end DefineObject, addrValue:%{public}ld", addrValue);
-14. return result;
-15. }
-```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/ArkTSManageCObjects/src/main/cpp/napi_init.cpp#L19-L33)
 
 C++层接收ArkTS层传递过来的对象地址完成业务：
 
+```cpp
+static napi_value CallObject(napi_env env, napi_callback_info info) { 
+    OH_LOG_INFO(LOG_APP, "enter CallObject"); 
+    size_t argc = 1; 
+    napi_value args[1] = {nullptr}; 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr); 
+    int64_t addrValue = 0; 
+    bool flag = false; 
+    napi_get_value_bigint_int64(env, args[0], &addrValue, &flag); 
+    TestClass *a = (TestClass *)addrValue; 
+    OH_LOG_INFO(LOG_APP, "CallObject, addrValue:%{public}ld", addrValue); 
+    OH_LOG_INFO(LOG_APP, "CallObject, value:%{public}d", a->GetValue()); 
+    a->SetValue(888); 
+    return nullptr; 
+}
 ```
-1. static napi_value CallObject(napi_env env, napi_callback_info info) {
-2. OH_LOG_INFO(LOG_APP, "enter CallObject");
-3. size_t argc = 1;
-4. napi_value args[1] = {nullptr};
-5. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-6. int64_t addrValue = 0;
-7. bool flag = false;
-8. napi_get_value_bigint_int64(env, args[0], &addrValue, &flag);
-9. TestClass *a = (TestClass *)addrValue;
-10. OH_LOG_INFO(LOG_APP, "CallObject, addrValue:%{public}ld", addrValue);
-11. OH_LOG_INFO(LOG_APP, "CallObject, value:%{public}d", a->GetValue());
-12. a->SetValue(888);
-13. return nullptr;
-14. }
-```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/ArkTSManageCObjects/src/main/cpp/napi_init.cpp#L37-L50)
 
 ArkTS侧调用接口：
 
+```ts
+import testNapi from 'libentry.so';
+
+@Entry
+@Component
+struct Index {
+  @State message: string = 'DefineObject';
+  @State message2: string = 'CallObject';
+  addr: number = 0;
+
+  build() {
+    Column() {
+      Button(this.message)
+        .fontSize(16)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          this.addr = testNapi.defineObject();
+          console.log('testTag:' + this.addr.toString());
+        })
+      Button(this.message2)
+        .fontSize(16)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          if (this.addr != 0) {
+            testNapi.callObject(this.addr);
+            this.message2 = 'CallObject';
+          } else {
+            this.message2 = 'want define Object';
+          }
+        })
+    }
+    .justifyContent(FlexAlign.Center)
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import testNapi from 'libentry.so';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'DefineObject';
-7. @State message2: string = 'CallObject';
-8. addr: number = 0;
-
-10. build() {
-11. Column() {
-12. Button(this.message)
-13. .fontSize(16)
-14. .fontWeight(FontWeight.Bold)
-15. .onClick(() => {
-16. this.addr = testNapi.defineObject();
-17. console.log('testTag:' + this.addr.toString());
-18. })
-19. Button(this.message2)
-20. .fontSize(16)
-21. .fontWeight(FontWeight.Bold)
-22. .onClick(() => {
-23. if (this.addr != 0) {
-24. testNapi.callObject(this.addr);
-25. this.message2 = 'CallObject';
-26. } else {
-27. this.message2 = 'want define Object';
-28. }
-29. })
-30. }
-31. .justifyContent(FlexAlign.Center)
-32. .height('100%')
-33. .width('100%')
-34. }
-35. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/Ndk/Ndk2/ArkTSManageCObjects/src/main/ets/pages/Index.ets#L19-L53)

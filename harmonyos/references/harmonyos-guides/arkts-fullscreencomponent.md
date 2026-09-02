@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fullscreencomponent
-title: 全屏启动元服务组件（FullScreenLaunchComponent）
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 嵌入式组件 > 全屏启动元服务组件（FullScreenLaunchComponent）
+title: 全屏启动元服务 (FullScreenLaunchComponent)
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 嵌入式组件 > 全屏启动元服务 (FullScreenLaunchComponent)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:29+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:e6b1966214126a0efba9826201f6be2dbbd0b649ac8505f683830485acab6cd1
+scraped_at: 2026-09-02T14:59:19+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:47fc2aaed749da16a90227cbae8dc147c192bc861cffd3eaa26f35923e5df86a
 ---
 
 FullScreenLaunchComponent允许开发者以全屏方式拉起元服务，使得应用能够提供更友好的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/TfWZjcc7RJSSbGoCxQS-8g/zh-cn_image_0000002558764550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/p9k_xkK7SZaBTOdXh0poQw/zh-cn_image_0000002706673950.png)
 
 ## 基本概念
 
@@ -23,11 +23,11 @@ FullScreenLaunchComponent允许开发者以全屏方式拉起元服务，使得�
 
 ## 实现原理
 
-FullScreenLaunchComponent提供的一种全屏启动元服务的能力。需要拉起元服务时，拉起方向AMS查询拉起方是否授权使用方可以嵌入式运行元服务。已授权时，使用方全屏嵌入式运行元服务；未授权时，使用方跳出式拉起元服务。
+FullScreenLaunchComponent提供的一种全屏启动元服务的能力。需要拉起元服务时，拉起方向AMS查询被拉起方是否授权使用方可以嵌入式运行元服务。已授权时，使用方全屏嵌入式运行元服务；未授权时，使用方跳出式拉起元服务。
 
 跳出式运行元服务是指，非组件化的方式拉起EmbeddableUIAbility，交互体验接近独立窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_3fmLwKdTcOpfiEDRvkNbA/zh-cn_image_0000002558604894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/WrpO5vBzQHeAGKez7viyEQ/zh-cn_image_0000002736433039.png)
 
 ## 能力范围
 
@@ -147,7 +147,7 @@ FullScreenLaunchComponent不支持通用事件，会将事件经过坐标转换�
 应用开发者（提供方）需要考虑如下设计约束：
 
 * 尽量使用布局变化少的场景。
-* 当由布局变化时，提供方js线程尽量少的执行任务，确保js线程能够及时响应布局变化的任务。
+* 当有布局变化时，提供方js线程尽量少的执行任务，确保js线程能够及时响应布局变化的任务。
 
 应用开发者（使用方）可以通过如下方式消减闪白问题：
 

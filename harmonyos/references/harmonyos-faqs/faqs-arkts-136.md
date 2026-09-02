@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-136
 title: 编译异常，无具体错误日志，难以定位问题
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 编译异常，无具体错误日志，难以定位问题
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:15:33+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:c4c8d7d1e6f6176b5dc8356df209a998905295681805d42213bcd521a0d2fa8f
+scraped_at: 2026-09-02T14:53:53+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:2f12a3d96eda4459c44c3b25588a280512231c9ea4cb8da453ff7fdfea6d5278
 ---
 
 **问题现象**
@@ -20,15 +20,15 @@ content_hash: sha256:c4c8d7d1e6f6176b5dc8356df209a998905295681805d42213bcd521a0d
 
 在Windows上，可以打开事件管理器，找到Windows日志中的应用程序日志，查看对应的时间。如果找到es2abc.exe的崩溃日志，并且异常代码为0xc00000fd，表示该程序因栈溢出而崩溃。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/4Df9B5FkQtyMQqBBiS4XOA/zh-cn_image_0000002229604157.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/leueThPLTJWX98aUQ-YFTA/zh-cn_image_0000002654795255.png "点击放大")
 
 在mac上，可以进入控制台，点击崩溃报告，找到es2abc,双击查看崩溃日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/KnaB8JfLROSgKyNgfzyvww/zh-cn_image_0000002194318388.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/tItY4YxWRJO6JhTm9ITHwg/zh-cn_image_0000002624635788.png "点击放大")
 
 如果出现下图中所示，调用栈出现大量反复的调用相同的函数，那么极有可能是出现了大量递归导致栈溢出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/rQQx3KhtSou6WlFBo4BioA/zh-cn_image_0000002194158780.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/isUxXO5YSYS9t6HZeeonnw/zh-cn_image_0000002624475886.png "点击放大")
 
 **解决措施**
 
@@ -38,47 +38,47 @@ content_hash: sha256:c4c8d7d1e6f6176b5dc8356df209a998905295681805d42213bcd521a0d
 
 以下问题场景包括但不限于：
 
-```
-1. if (condition) {
-2. if (condition) {
-3. if (condition) {
-4. if (condition) {
-5. if (condition) {
-6. if (condition) {
-7. ...
-8. }
-9. }
-10. }
-11. }
-12. }
-13. }
-14. [
-15. [
-16. [
-17. [
-18. [
-19. [
-20. [
-21. [
-22. ...
-23. ]
-24. ]
-25. ]
-26. ]
-27. ]
-28. ]
-29. ]
-30. ]
-```
-
-```
-1. !!!!!!!!!!
-2. !!!!!!!!!!
-3. ...
-4. !!!!!a
+```typescript
+if (condition) {
+     if (condition) {
+         if (condition) {
+             if (condition) {
+                 if (condition) {
+                     if (condition) {
+                         ...
+                     }
+                 }
+             }
+         }
+     }
+ } 
+[
+     [
+         [
+             [
+                 [
+                     [
+                         [
+                             [
+                                 ... 
+                            ]
+                         ]
+                     ]
+                 ]
+             ]
+         ]
+     ]
+ ]
 ```
 
+```text
+!!!!!!!!!! 
+!!!!!!!!!! 
+... 
+!!!!!a
 ```
-1. var a = 1
-2. a as Int as Int as Int as Int as Int ...
+
+```typescript
+var a = 1
+a as Int as Int as Int as Int as Int ...
 ```

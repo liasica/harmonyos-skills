@@ -1,10 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault-quick-adaptation
 title: 快速适配
+breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 快速适配
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:06+08:00
+scraped_at: 2026-09-02T14:59:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6f26f03f652c1034b89307a643d6f4e8de432087c35cd062ccf2b5a8f687b75d
+content_hash: sha256:d72c4f6e36aec1a5ce65fa5daafeedd761aa5ac406b7553d95f775bde71479cd
 ---
 
 密码自动填充服务依托ArkUI [TextInput 组件](../harmonyos-references/ts-basic-components-textinput.md)为开发者提供的一系列登录场景相关控件，密码保险箱帮助开发者快速集成自动填充等功能，仅需在界面上使用ArkUI标准控件，开发者即可通过密码保险箱的便捷登录，让用户快速上手应用功能。
@@ -22,7 +23,7 @@ content_hash: sha256:6f26f03f652c1034b89307a643d6f4e8de432087c35cd062ccf2b5a8f68
 | NUMBER\_PASSWORD | 数字密码输入模式。仅支持输入数字。  密码显示小眼睛图标并且默认会将文字变成圆点。 | 用于登录、注册等场景的密码输入。 |
 | NEW\_PASSWORD | 新密码输入模式。 | 用于注册、修改密码等场景的新密码输入。 |
 
-说明
+**说明** 
 
 本文档中类型描述为Password的类型，均可用NUMBER\_PASSWORD类型替代。
 
@@ -34,12 +35,12 @@ content_hash: sha256:6f26f03f652c1034b89307a643d6f4e8de432087c35cd062ccf2b5a8f68
 
 代码示例：
 
-```
-1. TextInput({ placeholder: '用户名' })
-2. .opacity(0.6)
-3. .type(InputType.USER_NAME)
-4. .placeholderColor(0x182431)
-5. .width('100%')
-6. .placeholderFont({ size: 16, weight: FontWeight.Regular })
-7. .margin({ top: 32, bottom: 8 })
+```ts
+TextInput({ placeholder: '用户名' })
+  .opacity(0.6)
+  .type(InputType.USER_NAME)
+  .placeholderColor(0x182431)
+  .width('100%')
+  .placeholderFont({ size: 16, weight: FontWeight.Regular })
+  .margin({ top: 32, bottom: 8 })
 ```

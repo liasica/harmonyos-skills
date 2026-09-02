@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (JsResult)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (JsResult)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3b6b6fa28470ac735b03cda07126428c0b9610b2f34c13eda18a2f2f971bc067
+scraped_at: 2026-09-02T15:01:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d2338af0698246815b59166d2f0a7574d650d0074c8930aaabf05969ab40f218
 ---
 
-Web组件返回的弹窗确认或弹窗取消功能对象。示例代码参考[onAlert事件](arkts-basic-components-web-events.md#onalert)。
+JsResult是Web组件在处理JavaScript弹窗事件时返回的结果处理对象，适用于开发者拦截并自定义处理window.alert、window.confirm、window.prompt等弹窗场景。开发者可在[onAlert](arkts-basic-components-web-events.md#onalert)、[onConfirm](arkts-basic-components-web-events.md#onconfirm)或[onPrompt](arkts-basic-components-web-events.md#onprompt9)等事件回调中，通过该对象向Web组件反馈用户的确认、取消或输入内容等操作结果，从而控制弹窗的后续行为。
 
-说明
+**说明** 
 
-* 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 本Class首批接口从API version 8开始支持。
+* 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本Class从API version 8开始支持。
 * 示例效果请以真机运行为准。
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
-JsResult的构造函数。
+JsResult的构造函数。用于处理JavaScript弹窗事件。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
 ## handleCancel
-
-PhonePC/2in1TabletTVWearable
 
 handleCancel(): void
 
@@ -38,8 +34,6 @@ handleCancel(): void
 
 ## handleConfirm
 
-PhonePC/2in1TabletTVWearable
-
 handleConfirm(): void
 
 通知Web组件用户确认弹窗操作。
@@ -48,11 +42,9 @@ handleConfirm(): void
 
 ## handlePromptConfirm9+
 
-PhonePC/2in1TabletTVWearable
-
 handlePromptConfirm(result: string): void
 
-通知Web组件用户确认弹窗操作及对话框内容。
+通知Web组件用户确认弹窗操作并传递对话框内容。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

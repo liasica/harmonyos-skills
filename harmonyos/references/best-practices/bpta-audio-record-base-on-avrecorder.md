@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（C++）
 category: best-practices
-scraped_at: 2026-04-29T14:11:28+08:00
+scraped_at: 2026-09-02T15:03:17+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:f92cdd6983dcbff6ec2219405fc49300f4a57d63b3a9ff52ca2da19c7a3a514d
+content_hash: sha256:15a0c8e3f1b3dcb0e38cad3245ca5a754fb11c31eab2140149e6201bace60555
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
 
 基于AVRecorder录制格式化音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/fdQn-ZtCRsqu773o1ds5og/zh-cn_image_0000002524221070.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/EGv3cM9KRZWcQ-ATtGab6g/zh-cn_image_0000002524221070.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,17 +28,15 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/6xgOFtmYROa7VIdKVrPZ2g/zh-cn_image_0000002555340939.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/UsEBXZchTXyfh0f-Oz3GKQ/zh-cn_image_0000002555340939.jpg "点击放大")
 
 ### 开发步骤
 
 1.在CMake脚本中链接动态库libavrecorder.so、libnative\_media\_core.so等。
 
+```screen
+target_link_libraries(entry PUBLIC libace_napi.z.so libavrecorder.so libnative_media_core.so libhilog_ndk.z.so)
 ```
-1. target_link_libraries(entry PUBLIC libace_napi.z.so libavrecorder.so libnative_media_core.so libhilog_ndk.z.so)
-```
-
-[CMakeLists.txt](https://gitcode.com/HarmonyOS_Samples/avrecorder-record-formatted-audio-cpp/blob/master/entry/src/main/cpp/CMakeLists.txt#L16-L16)
 
 2.在Native侧，配置AVRecorder。
 
@@ -46,165 +44,153 @@ AVRecorder提供了Native API，可以快速实现音频录制，支持m4a、mp3
 * 根据实际需要，设置音频录制的回调函数，如错误回调函数OH\_AVRecorder\_SetErrorCallback()等。
 * 调用OH\_AVRecorder\_Prepare()接口，让AVRecorder进入prepare状态。
 
+```cpp
+// Set AVRecorder Config
+void SetConfig(OH_AVRecorder_Config &config) {
+    config.audioSourceType = AVRECORDER_MIC;
+    // Set media config
+    config.profile.audioBitrate = 96000; // Set audio bitrate
+    config.profile.audioChannels = 2; // Set audio channels
+    config.profile.audioCodec = AVRECORDER_AUDIO_MP3; // Set audio codec
+    config.profile.audioSampleRate = 48000; // Set audio sampleRate
+    config.profile.fileFormat = AVRECORDER_CFT_MP3; // Set fileFormat
+    config.fileGenerationMode = AVRECORDER_APP_CREATE; // Set FileGenerationMode
+}
+
+// Prepare AVRecorder
+napi_value AVRecorder::PrepareAVRecorder(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    napi_get_value_int32(env, args[0], &g_outputFd);
+    if (g_outputFd <= 0) {
+        napi_value res;
+        napi_create_int32(env, -1, &res);
+        return res;
+    }
+    OH_LOG_INFO(LOG_APP, "PrepareAVRecorder in!");
+    g_avRecorder = OH_AVRecorder_Create();
+    OH_LOG_INFO(LOG_APP, "AVRecorder Create ok! g_avRecorder: %{public}p", g_avRecorder);
+    if (g_avRecorder == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "AVRecorder Create failed!");
+    }
+    OH_AVRecorder_Config *config = new OH_AVRecorder_Config();
+    SetConfig(*config);
+
+    // Set url
+    std::string fileUrl = "fd://" + std::to_string(g_outputFd);
+    config->url = const_cast<char *>(fileUrl.c_str());
+    OH_LOG_INFO(LOG_APP, "config.url is: %s", const_cast<char *>(fileUrl.c_str()));
+
+    // Set State Callback
+    OH_AVRecorder_SetStateCallback(g_avRecorder, OnStateChange, nullptr);
+    // Set Error Callback
+    OH_AVRecorder_SetErrorCallback(g_avRecorder, OnError, nullptr);
+    // Set recorder configuration
+    OH_AVRecorder_SetWillMuteWhenInterrupted(g_avRecorder, true);
+    
+    // Prepare
+    int result = OH_AVRecorder_Prepare(g_avRecorder, config);
+    if (result != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, " AVRecorder Prepare failed %{public}d", result);
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
 ```
-1. // Set AVRecorder Config
-2. void SetConfig(OH_AVRecorder_Config &config) {
-3. config.audioSourceType = AVRECORDER_MIC;
-4. // Set media config
-5. config.profile.audioBitrate = 96000; // Set audio bitrate
-6. config.profile.audioChannels = 2; // Set audio channels
-7. config.profile.audioCodec = AVRECORDER_AUDIO_MP3; // Set audio codec
-8. config.profile.audioSampleRate = 48000; // Set audio sampleRate
-9. config.profile.fileFormat = AVRECORDER_CFT_MP3; // Set fileFormat
-10. config.fileGenerationMode = AVRECORDER_APP_CREATE; // Set FileGenerationMode
-11. }
-
-13. // Prepare AVRecorder
-14. napi_value AVRecorder::PrepareAVRecorder(napi_env env, napi_callback_info info) {
-15. size_t argc = 1;
-16. napi_value args[1] = {nullptr};
-17. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-19. napi_get_value_int32(env, args[0], &g_outputFd);
-20. if (g_outputFd <= 0) {
-21. napi_value res;
-22. napi_create_int32(env, -1, &res);
-23. return res;
-24. }
-25. OH_LOG_INFO(LOG_APP, "PrepareAVRecorder in!");
-26. g_avRecorder = OH_AVRecorder_Create();
-27. OH_LOG_INFO(LOG_APP, "AVRecorder Create ok! g_avRecorder: %{public}p", g_avRecorder);
-28. if (g_avRecorder == nullptr) {
-29. OH_LOG_ERROR(LOG_APP, "AVRecorder Create failed!");
-30. }
-31. OH_AVRecorder_Config *config = new OH_AVRecorder_Config();
-32. SetConfig(*config);
-
-34. // Set url
-35. std::string fileUrl = "fd://" + std::to_string(g_outputFd);
-36. config->url = const_cast<char *>(fileUrl.c_str());
-37. OH_LOG_INFO(LOG_APP, "config.url is: %s", const_cast<char *>(fileUrl.c_str()));
-
-39. // Set State Callback
-40. OH_AVRecorder_SetStateCallback(g_avRecorder, OnStateChange, nullptr);
-41. // Set Error Callback
-42. OH_AVRecorder_SetErrorCallback(g_avRecorder, OnError, nullptr);
-43. // Set recorder configuration
-44. OH_AVRecorder_SetWillMuteWhenInterrupted(g_avRecorder, true);
-
-46. // Prepare
-47. int result = OH_AVRecorder_Prepare(g_avRecorder, config);
-48. if (result != AV_ERR_OK) {
-49. OH_LOG_ERROR(LOG_APP, " AVRecorder Prepare failed %{public}d", result);
-50. }
-51. napi_value res;
-52. napi_create_int32(env, result, &res);
-53. return res;
-54. }
-```
-
-[AVRecorder.cpp](https://gitcode.com/HarmonyOS_Samples/avrecorder-record-formatted-audio-cpp/blob/master/entry/src/main/cpp/capabilities/AVRecorder.cpp#L68-L121)
 
 3.启动音频录制。
 
+```cpp
+// Start AVRecorder
+napi_value AVRecorder::StartAVRecorder(napi_env env, napi_callback_info info) {
+    (void)info;
+    OH_LOG_INFO(LOG_APP, " g_avRecorder start: %{public}p", g_avRecorder);
+    int result = OH_AVRecorder_Start(g_avRecorder);
+    if (result != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, " AVRecorder Start failed %{public}d", result);
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
 ```
-1. // Start AVRecorder
-2. napi_value AVRecorder::StartAVRecorder(napi_env env, napi_callback_info info) {
-3. (void)info;
-4. OH_LOG_INFO(LOG_APP, " g_avRecorder start: %{public}p", g_avRecorder);
-5. int result = OH_AVRecorder_Start(g_avRecorder);
-6. if (result != AV_ERR_OK) {
-7. OH_LOG_ERROR(LOG_APP, " AVRecorder Start failed %{public}d", result);
-8. }
-9. napi_value res;
-10. napi_create_int32(env, result, &res);
-11. return res;
-12. }
-```
-
-[AVRecorder.cpp](https://gitcode.com/HarmonyOS_Samples/avrecorder-record-formatted-audio-cpp/blob/master/entry/src/main/cpp/capabilities/AVRecorder.cpp#L125-L136)
 
 4.暂停音频录制。
 
+```cpp
+// Pause AVRecorder
+napi_value AVRecorder::PauseAVRecorder(napi_env env, napi_callback_info info) {
+    (void)info;
+    int result = OH_AVRecorder_Pause(g_avRecorder);
+    if (result != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, " AVRecorder Pause failed %{public}d", result);
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
 ```
-1. // Pause AVRecorder
-2. napi_value AVRecorder::PauseAVRecorder(napi_env env, napi_callback_info info) {
-3. (void)info;
-4. int result = OH_AVRecorder_Pause(g_avRecorder);
-5. if (result != AV_ERR_OK) {
-6. OH_LOG_ERROR(LOG_APP, " AVRecorder Pause failed %{public}d", result);
-7. }
-8. napi_value res;
-9. napi_create_int32(env, result, &res);
-10. return res;
-11. }
-```
-
-[AVRecorder.cpp](https://gitcode.com/HarmonyOS_Samples/avrecorder-record-formatted-audio-cpp/blob/master/entry/src/main/cpp/capabilities/AVRecorder.cpp#L140-L150)
 
 5.继续音频录制。
 
+```cpp
+// Resume AVRecorder
+napi_value AVRecorder::ResumeAVRecorder(napi_env env, napi_callback_info info) {
+    (void)info;
+    int result = OH_AVRecorder_Resume(g_avRecorder);
+    if (result != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, " AVRecorder Resume failed %{public}d", result);
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
 ```
-1. // Resume AVRecorder
-2. napi_value AVRecorder::ResumeAVRecorder(napi_env env, napi_callback_info info) {
-3. (void)info;
-4. int result = OH_AVRecorder_Resume(g_avRecorder);
-5. if (result != AV_ERR_OK) {
-6. OH_LOG_ERROR(LOG_APP, " AVRecorder Resume failed %{public}d", result);
-7. }
-8. napi_value res;
-9. napi_create_int32(env, result, &res);
-10. return res;
-11. }
-```
-
-[AVRecorder.cpp](https://gitcode.com/HarmonyOS_Samples/avrecorder-record-formatted-audio-cpp/blob/master/entry/src/main/cpp/capabilities/AVRecorder.cpp#L154-L164)
 
 6.停止音频录制。
 
+```cpp
+// Stop AVRecorder
+napi_value AVRecorder::StopAVRecorder(napi_env env, napi_callback_info info) {
+    (void)info;
+    int result = OH_AVRecorder_Stop(g_avRecorder);
+    if (result != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, " AVRecorder Stop failed %{public}d", result);
+    }
+    close(g_outputFd);
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
 ```
-1. // Stop AVRecorder
-2. napi_value AVRecorder::StopAVRecorder(napi_env env, napi_callback_info info) {
-3. (void)info;
-4. int result = OH_AVRecorder_Stop(g_avRecorder);
-5. if (result != AV_ERR_OK) {
-6. OH_LOG_ERROR(LOG_APP, " AVRecorder Stop failed %{public}d", result);
-7. }
-8. close(g_outputFd);
-9. napi_value res;
-10. napi_create_int32(env, result, &res);
-11. return res;
-12. }
-```
-
-[AVRecorder.cpp](https://gitcode.com/HarmonyOS_Samples/avrecorder-record-formatted-audio-cpp/blob/master/entry/src/main/cpp/capabilities/AVRecorder.cpp#L168-L179)
 
 7.释放音频录制资源。
 
+```cpp
+// Release AVRecorder
+napi_value AVRecorder::ReleaseAVRecorder(napi_env env, napi_callback_info info) {
+    (void)info;
+    if (g_avRecorder == nullptr) {
+        OH_LOG_ERROR(LOG_APP, " g_avRecorder is nullptr!");
+        napi_value res;
+        napi_create_int32(env, AV_ERR_INVALID_VAL, &res);
+        return res;
+    }
+
+    int result = OH_AVRecorder_Release(g_avRecorder);
+    g_avRecorder = nullptr;
+
+    if (result != AV_ERR_OK) {
+        OH_LOG_ERROR(LOG_APP, " AVRecorder Release failed %{public}d", result);
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
 ```
-1. // Release AVRecorder
-2. napi_value AVRecorder::ReleaseAVRecorder(napi_env env, napi_callback_info info) {
-3. (void)info;
-4. if (g_avRecorder == nullptr) {
-5. OH_LOG_ERROR(LOG_APP, " g_avRecorder is nullptr!");
-6. napi_value res;
-7. napi_create_int32(env, AV_ERR_INVALID_VAL, &res);
-8. return res;
-9. }
-
-11. int result = OH_AVRecorder_Release(g_avRecorder);
-12. g_avRecorder = nullptr;
-
-14. if (result != AV_ERR_OK) {
-15. OH_LOG_ERROR(LOG_APP, " AVRecorder Release failed %{public}d", result);
-16. }
-17. napi_value res;
-18. napi_create_int32(env, result, &res);
-19. return res;
-20. }
-```
-
-[AVRecorder.cpp](https://gitcode.com/HarmonyOS_Samples/avrecorder-record-formatted-audio-cpp/blob/master/entry/src/main/cpp/capabilities/AVRecorder.cpp#L204-L223)
 
 ## 常见问题
 

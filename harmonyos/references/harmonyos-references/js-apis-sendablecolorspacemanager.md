@@ -3,32 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.graphics.sendableColorSpaceManager (可共享的色彩管理)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.sendableColorSpaceManager (可共享的色彩管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:36+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:edcd5960f9dd86ceac1e409c8fb7090e08ced8167e56a3d6bb5c6e5e3b097252
+scraped_at: 2026-09-02T15:02:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:70441e6561b4cc5143b4b84a8f736c8185ac75f5457afe42594e9cc801330c35
 ---
 
-本模块提供管理抽象化色域对象的一些基础能力，包括可共享的色彩管理的创建与可共享的色域基础属性的获取等。
+本模块提供管理抽象化色域对象的基础能力，包括可共享的色彩管理的创建与可共享的色域基础属性的获取等。适用于需要在多线程间传递色域信息的场景，能够解决跨线程色彩管理对象无法共享的问题，提高色彩处理的效率和一致性。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { sendableColorSpaceManager } from '@kit.ArkGraphics2D';
+```ts
+import { sendableColorSpaceManager } from '@kit.ArkGraphics2D';
 ```
 
 ## ISendable
 
-PhonePC/2in1TabletTVWearable
-
 type ISendable = lang.ISendable
 
-ISendable是所有Sendable类型（除null和undefined）的父类型。自身没有任何必须的方法和属性。
+为与当前模块的接口规范保持一致，定义了ISendable类型别名。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -38,11 +34,9 @@ ISendable是所有Sendable类型（除null和undefined）的父类型。自身�
 
 ## sendableColorSpaceManager.create
 
-PhonePC/2in1TabletTVWearable
-
 create(colorSpaceName: colorSpaceManager.ColorSpace): ColorSpaceManager
 
-创建标准可共享的色彩管理。
+创建标准可共享的色彩管理实例。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -64,20 +58,19 @@ create(colorSpaceName: colorSpaceManager.ColorSpace): ColorSpaceManager
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible cause: 1.Incorrect parameter type. 2.Parameter verification failed. |
+| 401 | Parameter error. Possible cause: 1. Incorrect parameter type. 2. Parameter verification failed. |
 | 18600001 | The parameter value is abnormal. |
 
 **示例：**
 
-```
-1. import { colorSpaceManager, sendableColorSpaceManager } from '@kit.ArkGraphics2D';
-2. let colorSpace: sendableColorSpaceManager.ColorSpaceManager;
-3. colorSpace = sendableColorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB);
+```ts
+import { colorSpaceManager, sendableColorSpaceManager } from '@kit.ArkGraphics2D';
+let colorSpace: sendableColorSpaceManager.ColorSpaceManager;
+// 创建标准SRGB色域的色彩管理实例
+colorSpace = sendableColorSpaceManager.create(colorSpaceManager.ColorSpace.SRGB);
 ```
 
 ## sendableColorSpaceManager.create
-
-PhonePC/2in1TabletTVWearable
 
 create(primaries: colorSpaceManager.ColorSpacePrimaries, gamma: number): ColorSpaceManager
 
@@ -104,39 +97,38 @@ create(primaries: colorSpaceManager.ColorSpacePrimaries, gamma: number): ColorSp
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible cause: 1.Incorrect parameter type. 2.Parameter verification failed. |
+| 401 | Parameter error. Possible cause: 1. Incorrect parameter type. 2. Parameter verification failed. |
 | 18600001 | The parameter value is abnormal. |
 
 **示例：**
 
-```
-1. import { colorSpaceManager, sendableColorSpaceManager } from '@kit.ArkGraphics2D';
-2. let colorSpace: sendableColorSpaceManager.ColorSpaceManager;
-3. let primaries: colorSpaceManager.ColorSpacePrimaries = {
-4. redX: 0.1,
-5. redY: 0.1,
-6. greenX: 0.2,
-7. greenY: 0.2,
-8. blueX: 0.3,
-9. blueY: 0.3,
-10. whitePointX: 0.4,
-11. whitePointY: 0.4
-12. };
-13. let gamma: number = 2.2;
-14. colorSpace = sendableColorSpaceManager.create(primaries, gamma);
+```ts
+import { colorSpaceManager, sendableColorSpaceManager } from '@kit.ArkGraphics2D';
+let colorSpace: sendableColorSpaceManager.ColorSpaceManager;
+// 定义色域标准三原色参数
+let primaries: colorSpaceManager.ColorSpacePrimaries = {
+  redX: 0.1,
+  redY: 0.1,
+  greenX: 0.2,
+  greenY: 0.2,
+  blueX: 0.3,
+  blueY: 0.3,
+  whitePointX: 0.4,
+  whitePointY: 0.4
+};
+// 定义色域gamma值
+let gamma: number = 2.2;
+// 创建自定义可共享的色彩管理实例
+colorSpace = sendableColorSpaceManager.create(primaries, gamma);
 ```
 
 ## ColorSpaceManager
 
-PhonePC/2in1TabletTVWearable
-
-当前可共享的色彩管理实例。
+当前可共享的色彩管理实例。ColorSpaceManager是用于管理和操作色域对象的核心类，提供了获取色域类型、白点值、gamma值等功能，并支持在ArkTS并发实例间传递。
 
 下列API示例中都需先使用[create()](js-apis-sendablecolorspacemanager.md#sendablecolorspacemanagercreate)获取到ColorSpaceManager实例，再通过此实例调用对应方法。
 
 ### getColorSpaceName
-
-PhonePC/2in1TabletTVWearable
 
 getColorSpaceName(): colorSpaceManager.ColorSpace
 
@@ -150,19 +142,26 @@ getColorSpaceName(): colorSpaceManager.ColorSpace
 | --- | --- |
 | [colorSpaceManager.ColorSpace](js-apis-colorspacemanager.md#colorspace) | 返回色域类型枚举值。 |
 
+**错误码：**
+
+以下错误码的详细介绍请参见[色彩管理错误码](errorcode-colorspace-manager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 18600001 | The parameter value is abnormal.  适用版本：12-22 |
+
 **示例：**
 
-```
-1. let spaceName: colorSpaceManager.ColorSpace = colorSpace.getColorSpaceName();
+```ts
+// 获取色域类型
+let spaceName: colorSpaceManager.ColorSpace = colorSpace.getColorSpaceName();
 ```
 
 ### getWhitePoint
 
-PhonePC/2in1TabletTVWearable
-
 getWhitePoint(): collections.Array<number>
 
-获取色域白点值。
+获取色域白点值，返回色度坐标[x, y]，表示色彩空间中白色点的坐标位置。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.ColorManager.Core
 
@@ -170,18 +169,25 @@ getWhitePoint(): collections.Array<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| [collections.Array<number>](arkts-apis-arkts-collections-array.md) | 返回色域白点值[x, y]。 |
+| [collections.Array](arkts-apis-arkts-collections-array.md)<number> | 返回色域白点值[x, y]。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[色彩管理错误码](errorcode-colorspace-manager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 18600001 | The parameter value is abnormal.  适用版本：12-22 |
 
 **示例：**
 
-```
-1. import { collections } from '@kit.ArkTS';
-2. let point: collections.Array<number> = colorSpace.getWhitePoint();
+```ts
+import { collections } from '@kit.ArkTS';
+// 获取色域白点值[x, y]
+let point: collections.Array<number> = colorSpace.getWhitePoint();
 ```
 
 ### getGamma
-
-PhonePC/2in1TabletTVWearable
 
 getGamma(): number
 
@@ -195,8 +201,17 @@ getGamma(): number
 | --- | --- |
 | number | 返回色域gamma值。 |
 
+**错误码：**
+
+以下错误码的详细介绍请参见[色彩管理错误码](errorcode-colorspace-manager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 18600001 | The parameter value is abnormal.  适用版本：12-22 |
+
 **示例：**
 
-```
-1. let gamma: number = colorSpace.getGamma();
+```ts
+// 获取色域gamma值
+let gamma: number = colorSpace.getGamma();
 ```

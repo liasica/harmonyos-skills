@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: backgroundTaskManager错误码
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 错误码 > backgroundTaskManager错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:40+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:b4e23e32f832aa04453c1d6578bf4cf1de51df64cdd3920f97e1869814f3e57c
+scraped_at: 2026-09-02T15:01:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d2b6c3c7a60f51277a9434e5711e7c20d40799128d21090370e7ac99290c28c3
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 9800001 内存操作失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -35,8 +33,6 @@ Memory operation failed.
 2. 请检查是否内存泄漏。
 
 ## 9800002 Parcel读写操作失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -59,8 +55,6 @@ Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Fa
 
 ## 9800003 IPC通信失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Internal transaction failed.
@@ -78,8 +72,6 @@ IPC通信失败。
 系统内部工作异常，请稍候重试，或者重启设备尝试。
 
 ## 9800004 系统服务失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -99,8 +91,6 @@ System service operation failed.
 系统服务内部工作异常，请稍候重试，或者重启设备尝试。
 
 ## 9800005 长时任务校验失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -127,6 +117,7 @@ Continuous task verification failed.
 13. 应用申请TASK\_KEEPING长时任务时，未申请ACL授权。
 14. 数据传输类型不支持通过更新接口更新长时任务类型。
 15. 在后台申请除播音外新的长时任务类型。
+16. 应用申请[MODE\_SPECIAL\_SCENARIO\_PROCESSING](js-apis-resourceschedule-backgroundtaskmanager.md#backgroundtaskmode21)类型的长时任务时，未申请ACL授权。
 
 **处理步骤**
 
@@ -145,10 +136,9 @@ Continuous task verification failed.
 13. 请检查申请TASK\_KEEPING长时任务时，是否申请了[ohos.permission.KEEP\_BACKGROUND\_RUNNING\_SYSTEM](../harmonyos-guides/restricted-permissions.md#ohospermissionkeep_background_running_system)的ACL授权。
 14. 请检查更新长时任务时，原类型或者新增类型是否包含了数据传输类型。
 15. 请检查除了播音和已经在前台申请过的长时任务类型，是否在后台申请了其他长时任务类型。
+16. 请检查申请[MODE\_SPECIAL\_SCENARIO\_PROCESSING](js-apis-resourceschedule-backgroundtaskmanager.md#backgroundtaskmode21)类型的长时任务时，是否申请了[ohos.permission.KEEP\_BACKGROUND\_RUNNING\_SPECIAL\_SCENARIO](../harmonyos-guides/restricted-permissions.md#ohospermissionkeep_background_running_special_scenario)或者[ohos.permission.KEEP\_BACKGROUND\_RUNNING\_SYSTEM](../harmonyos-guides/restricted-permissions.md#ohospermissionkeep_background_running_system)的ACL授权。
 
 ## 9800006 长时任务通知信息校验失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -169,8 +159,6 @@ Notification verification failed for a continuous task.
 2. 系统服务内部工作异常，请稍候重试，或者重启设备尝试。
 
 ## 9800007 长时任务信息存储失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -193,8 +181,6 @@ Continuous task storage failed.
 
 ## 9900001 短时任务调用方信息校验失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Caller information verification failed for a transient task.
@@ -216,8 +202,6 @@ Caller information verification failed for a transient task.
 3. 系统服务内部工作异常，请稍候重试，或者重启设备尝试。
 
 ## 9900002 短时任务校验失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -242,8 +226,6 @@ Transient task verification failed.
 
 ## 9900003 Parcel读写操作失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Failed to apply for memory.
@@ -264,8 +246,6 @@ Failed to write data into parcel. Possible reasons: 1. Invalid parameters; 2. Fa
 系统内部工作异常，请稍候重试，或者重启设备尝试。
 
 ## 9900004 系统服务失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

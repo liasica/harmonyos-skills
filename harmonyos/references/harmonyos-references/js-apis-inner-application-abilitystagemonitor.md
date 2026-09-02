@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: AbilityStageMonitor
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > AbilityStageMonitor
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c75dca6059a10303adbb2961b30cf687bb4f5ccc89f6bdf11c6209ab6778538e
+scraped_at: 2026-09-02T15:00:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:902c4743289f1a3b66ebacb2f8f41d193b175876b1a7442bcfbc8c564c6a1c86
 ---
 
-本模块提供监听指定[AbilityStage](js-apis-app-ability-abilitystage.md)对象的能力。开发者可以将AbilityStageMonitor作为[abilityDelegator.waitAbilityStageMonitor](js-apis-inner-application-abilitydelegator.md#waitabilitystagemonitor9)的入参来注册监听。
+本模块提供监听指定[AbilityStage](js-apis-app-ability-abilitystage.md)对象的能力。开发者可以将AbilityStageMonitor作为[abilityDelegator.waitAbilityStageMonitor](js-apis-inner-application-abilitydelegator.md#waitabilitystagemonitor)的入参来注册监听。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 ```
 
 ## AbilityStageMonitor
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -37,20 +33,20 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { abilityDelegatorRegistry } from '@kit.TestKit';
+```ts
+import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-3. let monitor: abilityDelegatorRegistry.AbilityStageMonitor = {
-4. moduleName: 'feature_as1',
-5. srcEntrance: './ets/Application/MyAbilityStage.ts',
-6. }
+let monitor: abilityDelegatorRegistry.AbilityStageMonitor = {
+  moduleName: 'feature_as1',
+  srcEntrance: './ets/Application/MyAbilityStage.ts',
+}
 
-8. let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-9. abilityDelegator.waitAbilityStageMonitor(monitor, (error, data) => {
-10. if (error) {
-11. console.error(`waitAbilityStageMonitor fail, error: ${JSON.stringify(error)}`);
-12. } else {
-13. console.info(`waitAbilityStageMonitor success, data: ${JSON.stringify(data)}`);
-14. }
-15. });
+let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+abilityDelegator.waitAbilityStageMonitor(monitor, (error, data) => {
+  if (error) {
+    console.error(`waitAbilityStageMonitor fail, error: ${JSON.stringify(error)}`);
+  } else {
+    console.info(`waitAbilityStageMonitor success, data: ${JSON.stringify(data)}`);
+  }
+});
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation分栏开发
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation分栏开发
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:93a5e4ad37b97d2740645359065db4b12e2e0025403a3a24063faf2f5c2b7a61
+scraped_at: 2026-09-02T14:59:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c48e3b5b576a8c69d5d5852a27824bb8fd82e79cf31912b139de37e5380f249d
 ---
 
 [Navigation](../harmonyos-references/ts-basic-components-navigation.md)作为一个容器组件，提供了两种布局样式：单栏布局、分栏布局。分栏布局一般适用于宽屏设备，在分栏布局下，导航栏（navBar）会固定显示， 子页面（NavDestination）通过导航控制器（NavPathStack）切换显示， 在导航栏和子页面之间有一条分割线， 可以通过分割线拖拽控制左右显示的比例。架构图详见[Navigation基础架构介绍](arkts-navigation-architecture.md)。
@@ -14,19 +14,23 @@ content_hash: sha256:93a5e4ad37b97d2740645359065db4b12e2e0025403a3a24063faf2f5c2
 
 ### mode
 
-[mode](../harmonyos-references/ts-basic-components-navigation.md#mode9)属性用于控制Navigation的显示模式，有三种模式：单栏，分栏，自适应。
+[mode](../harmonyos-references/ts-basic-components-navigation.md#mode9)属性用于控制Navigation的显示模式，有四种模式：单栏，分栏，自适应，根据高宽比自适应。
 
 **图1** 单栏（NavigationMode.Stack）效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/aHc_ZUtrTCGA3jm0oXxo1Q/zh-cn_image_0000002589243983.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/dk7W26O8T6KzPb6kGz_kLw/zh-cn_image_0000002706833386.png)
 
 **图2** 分栏（NavigationMode.Split）效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/p_WXySPMR7mxPRvrIYlHuA/zh-cn_image_0000002558764176.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/AJdu8lF9SHSIr7y_K_falQ/zh-cn_image_0000002736312495.png)
 
 **图3** 自适应（NavigationMode.Auto）效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/n9CVhBALSmqdUhMq5UiQ_Q/zh-cn_image_0000002558604520.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rWR2QtWHQDmkP2syPZmz0Q/zh-cn_image_0000002706673452.gif)
+
+**图4** 根据高宽比自适应（NavigationMode.AUTO\_WITH\_ASPECT\_RATIO）效果
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/rF_HQYpFQamO4xtEc_xsew/zh-cn_image_0000002736432541.gif)
 
 ### navBarPosition
 
@@ -34,35 +38,35 @@ content_hash: sha256:93a5e4ad37b97d2740645359065db4b12e2e0025403a3a24063faf2f5c2
 
 **NavBarPosition.Start**
 
-**图4** 系统语言为LTR时NavBarPosition.Start效果
+**图5** 系统语言为LTR时NavBarPosition.Start效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/bnSEW8rxR8qfjHtz9LAFmw/zh-cn_image_0000002589324045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/BGzKy0gDQHewdEIUIZGFtQ/zh-cn_image_0000002706833388.png)
 
-**图5** 系统语言为RTL时NavBarPosition.Start效果
+**图6** 系统语言为RTL时NavBarPosition.Start效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/kRWKCv9OQwCreGNb3vxeRw/zh-cn_image_0000002589243985.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/tdjjtfV_RQyeBWrfQXwu0g/zh-cn_image_0000002736312497.png)
 
 **NavBarPosition.End**
 
-**图6** 系统语言为LTR时NavBarPosition.End效果
+**图7** 系统语言为LTR时NavBarPosition.End效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/9ZtCGMisQIGHB7gTlFpqBw/zh-cn_image_0000002558764178.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wpGYSHIHQTifSUqRjmP8uw/zh-cn_image_0000002706673454.png)
 
-**图7** 系统语言为RTL时NavBarPosition.End效果
+**图8** 系统语言为RTL时NavBarPosition.End效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/uxynnDt7Q4iBfGCv_hWdpw/zh-cn_image_0000002558604522.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/xPsjdzQuT42MYEnaFlfXkQ/zh-cn_image_0000002736432543.png)
 
 ### enableDragBar
 
 [enableDragBar](../harmonyos-references/ts-basic-components-navigation.md#enabledragbar14)用于控制是否显示分栏的拖动按钮。
 
-**图8** enableDragBar为false效果
+**图9** enableDragBar为false效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/cqQmQQ5lQpy93RasxK1Bqg/zh-cn_image_0000002589324047.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/3F9SXs13QM2Y7JTArnmh0g/zh-cn_image_0000002706833390.png)
 
-**图9** enableDragBar为true
+**图10** enableDragBar为true
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/_FbzybtgQUas99vdI7hMlA/zh-cn_image_0000002589243987.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/1oqeq8LUTC266We712SWnA/zh-cn_image_0000002736312499.png)
 
 ### navBarWidth
 
@@ -99,137 +103,133 @@ content_hash: sha256:93a5e4ad37b97d2740645359065db4b12e2e0025403a3a24063faf2f5c2
 
 配置的路由表：
 
-```
-1. {
-2. "routerMap": [
-3. {
-4. "name": "NewsDetail",
-5. "pageSourceFile": "src/main/ets/pages/navigation/splitmode/NewsDetail.ets",
-6. "buildFunction": "NewsDetailPageBuilder",
-7. "data": {
-8. "description": "this is DetailPageA"
-9. }
-10. }
-11. ]
-12. }
+```json
+{
+  "routerMap": [
+    {
+      "name": "NewsDetail",
+      "pageSourceFile": "src/main/ets/pages/navigation/splitmode/NewsDetail.ets",
+      "buildFunction": "NewsDetailPageBuilder",
+      "data": {
+        "description": "this is NewsDetail"
+      }
+    }
+  ]
+}
 ```
 
 子页代码：
 
+```typescript
+// 自定义的参数类型，用于在push页面时给子页传递参数
+export class NewsItem {
+  public title: string;
+  public overview: string;
+  public content: string;
+
+  constructor(title: string, overview: string, content: string) {
+    this.title = title;
+    this.overview = overview;
+    this.content = content;
+  }
+}
+
+@Builder
+export function NewsDetailPageBuilder() {
+  NewsDetail()
+}
+
+@Component
+struct NewsDetail {
+  @State title: string = '';
+  @State content: string = '';
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text(this.content)
+      }
+    }
+    .title(this.title)
+    .backgroundColor('#fff6e3c8')
+    .onReady((ctx: NavDestinationContext) => {
+      // 在onReady生命周期拿到传来的页面参数
+      let param = ctx.pathInfo.param as NewsItem;
+      this.title = param?.title;
+      this.content = param?.content;
+    })
+  }
+}
 ```
-1. // 自定义的参数类型，用于在push页面时给子页传递参数
-2. export class NewsItem {
-3. public title: string;
-4. public overview: string;
-5. public content: string;
-
-7. constructor(title: string, overview: string, content: string) {
-8. this.title = title;
-9. this.overview = overview;
-10. this.content = content;
-11. }
-12. }
-
-14. @Builder
-15. export function NewsDetailPageBuilder() {
-16. NewsDetail()
-17. }
-
-19. @Component
-20. struct NewsDetail {
-21. @State title: string = '';
-22. @State content: string = '';
-
-24. build() {
-25. NavDestination() {
-26. Column() {
-27. Text(this.content)
-28. }
-29. }
-30. .title(this.title)
-31. .backgroundColor('#fff6e3c8')
-32. .onReady((ctx: NavDestinationContext) => {
-33. // 在onReady生命周期拿到传来的页面参数
-34. let param = ctx.pathInfo.param as NewsItem;
-35. this.title = param?.title;
-36. this.content = param?.content;
-37. })
-38. }
-39. }
-```
-
-[NewsDetail.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/splitmode/NewsDetail.ets#L15-L55)
 
 主页代码：
 
+```typescript
+import { NewsItem } from './NewsDetail'
+
+@Component
+struct NewsHome {
+  private newsItemArray: Array<NewsItem> = [];
+  private stack: NavPathStack | undefined = undefined;
+
+  aboutToAppear(): void {
+    // 这里省略了从网络获取新闻信息的过程
+    for (let i = 0; i < 50; i++) {
+      this.newsItemArray.push(new NewsItem(`新闻标题${i + 1}`, `新闻概述${i + 1}`, `新闻详情${i + 1}`))
+    }
+    let info = this.queryNavigationInfo();
+    this.stack = info?.pathStack;
+  }
+
+  build() {
+    List() {
+      ForEach(this.newsItemArray, (item: NewsItem, index: number) => {
+        ListItem() {
+          Column() {
+            Text(`${item.title}`).margin(15).fontSize(25).fontColor(Color.Black)
+            Text(`${item.overview}`).fontSize(13).fontColor(Color.Gray)
+          }.margin({bottom: 15}).backgroundColor('#eeeeee').width('100%')
+          .borderRadius(15).height(120).onClick(() => {
+            // 用户点击某一个新闻标签时，就在右侧子页区域push一个NavDestination页面，用来展示新闻详情
+            this.stack?.pushPath({name: 'NewsDetail', param: item})
+          })
+        }.width('100%')
+      }, (item: NewsItem, index: number) => {
+        return item.title;
+      })
+    }.width('100%').height('100%').padding(15)
+  }
+}
+
+@Entry
+@Component
+struct Index {
+  private stack: NavPathStack = new NavPathStack();
+  @State navWidth: number = 100;
+
+  build() {
+    RelativeContainer() {
+      Navigation(this.stack) {
+        NewsHome().width('100%').height('100%')
+      }
+      .mode(NavigationMode.Split)
+      .enableDragBar(true)
+      .hideNavBar(false)
+      .navBarWidthRange([100, 700]) // 指定NavBar区域的宽度范围
+      .minContentWidth(100) // 指定子页区域的最小宽度
+      .hideTitleBar(true)
+      .hideToolBar(true)
+      .height('100%')
+      .width(`${this.navWidth}%`)
+      .alignRules({
+        top: { anchor: '__container__', align: VerticalAlign.Top },
+        left: { anchor: '__container__', align: HorizontalAlign.Start }
+      })
+    }
+  }
+}
 ```
-1. import { NewsItem } from './NewsDetail'
 
-3. @Component
-4. struct NewsHome {
-5. private newsItemArray: Array<NewsItem> = [];
-6. private stack: NavPathStack | undefined = undefined;
+**图11** 运行效果
 
-8. aboutToAppear(): void {
-9. // 这里省略了从网络获取新闻信息的过程
-10. for (let i = 0; i < 50; i++) {
-11. this.newsItemArray.push(new NewsItem(`新闻标题${i + 1}`, `新闻概述${i + 1}`, `新闻详情${i + 1}`))
-12. }
-13. let info = this.queryNavigationInfo();
-14. this.stack = info?.pathStack;
-15. }
-
-17. build() {
-18. List() {
-19. ForEach(this.newsItemArray, (item: NewsItem, index: number) => {
-20. ListItem() {
-21. Column() {
-22. Text(`${item.title}`).margin(15).fontSize(25).fontColor(Color.Black)
-23. Text(`${item.overview}`).fontSize(13).fontColor(Color.Gray)
-24. }.margin({bottom: 15}).backgroundColor('#eeeeee').width('100%')
-25. .borderRadius(15).height(120).onClick(() => {
-26. // 用户点击某一个新闻标签时，就在右侧子页区域push一个NavDestination页面，用来展示新闻详情
-27. this.stack?.pushPath({name: 'NewsDetail', param: item})
-28. })
-29. }.width('100%')
-30. }, (item: NewsItem, index: number) => {
-31. return item.title;
-32. })
-33. }.width('100%').height('100%').padding(15)
-34. }
-35. }
-
-37. @Entry
-38. @Component
-39. struct Index {
-40. private stack: NavPathStack = new NavPathStack();
-41. @State navWidth: number = 100;
-
-43. build() {
-44. RelativeContainer() {
-45. Navigation(this.stack) {
-46. NewsHome().width('100%').height('100%')
-47. }
-48. .mode(NavigationMode.Split)
-49. .enableDragBar(true)
-50. .hideNavBar(false)
-51. .navBarWidthRange([100, 700]) // 指定NavBar区域的宽度范围
-52. .minContentWidth(100) // 指定子页区域的最小宽度
-53. .hideTitleBar(true)
-54. .hideToolBar(true)
-55. .height('100%')
-56. .width(`${this.navWidth}%`)
-57. .alignRules({
-58. top: { anchor: '__container__', align: VerticalAlign.Top },
-59. left: { anchor: '__container__', align: HorizontalAlign.Start }
-60. })
-61. }
-62. }
-63. }
-```
-
-[SplitNavigation.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NavigationSample/entry/src/main/ets/pages/navigation/splitmode/SplitNavigation.ets#L15-L79)
-
-**图10** 运行效果
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/_O08MXQ4RRqosbLe3aMveA/zh-cn_image_0000002558764180.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/huQwJgFbS9OuNsf2IJPeww/zh-cn_image_0000002706673456.gif)

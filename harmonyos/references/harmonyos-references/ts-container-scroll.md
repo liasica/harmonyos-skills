@@ -3,34 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Scroll
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Scroll
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1a7697b5706d143c8c5fa48e264b90b6466678a588306b6543e7c397bdd91349
+scraped_at: 2026-09-02T15:00:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e63759917d65a6a9bb09305402d3aa31bc662d85e6659c9688ddeb3ee6dc0257
 ---
 
-可滚动的容器组件，当子组件的布局尺寸超过父组件的尺寸时，内容可以滚动。
+可滚动的容器组件，当子组件的布局尺寸超过父组件的尺寸时，内容可以滚动。支持设置滚动方向、滚动条、边缘效果、嵌套滚动以及自由滚动缩放等能力，适用于内容超出显示区域或需要复杂滚动交互的场景。
 
-说明
+**说明** 
 
 * 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 该组件嵌套List子组件滚动时，若List不设置宽高，则默认全部加载，在对性能有要求的场景下建议指定List的宽高，最佳实践请参考[懒加载优化性能-Scroll嵌套List导致按需加载失效](../best-practices/bpta-lazyforeach-optimization.md#section6296154115367)。
+* 该组件嵌套List子组件滚动时，若List不设置宽高，则默认全部加载。在对性能有要求的场景下，开发者应指定List的宽高，以避免默认全部加载影响性能。最佳实践请参考[懒加载优化性能——Scroll嵌套List导致按需加载失效](../best-practices/bpta-lazyforeach-optimization.md#section6296154115367)。
 * 该组件滚动的前提是主轴方向大小小于内容大小。
-* Scroll组件[通用属性clip](ts-universal-attributes-sharp-clipping.md#clip12)的默认值为true。
+* Scroll组件通用属性[clip](ts-universal-attributes-sharp-clipping.md#clip12)的默认值为true。
 * Scroll组件的高度超出屏幕显示范围时，可以通过设置通用属性[layoutWeight](ts-universal-attributes-size.md#layoutweight)让Scroll高度适应主轴的剩余空间。
 * 手指触摸屏幕时，会停止当前触摸范围内所有滚动组件的滚动动画（[scrollTo](ts-container-scroll.md#scrollto)和[scrollToIndex](ts-container-scroll.md#scrolltoindex)接口触发的滚动动画除外），包括边缘回弹动画。
 * 组件内部已绑定手势实现跟手滚动等功能，需要增加自定义手势操作时请参考[手势拦截增强](ts-gesture-blocking-enhancement.md)进行处理。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持单个子组件。
 
 从API version 21开始，Scroll单个子组件的宽高最大为16777216px；API version 20及之前，Scroll单个子组件的宽高最大为1000000px。子组件超出该大小可能导致滚动或显示异常。
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Scroll(scroller?: Scroller)
 
@@ -44,21 +40,17 @@ Scroll(scroller?: Scroller)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| scroller | [Scroller](ts-container-scroll.md#scroller) | 否 | 可滚动组件的控制器。用于与可滚动组件进行绑定。  **说明：**  不允许和其他滚动类组件，如：[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)绑定同一个滚动控制对象。 |
+| scroller | [Scroller](ts-container-scroll.md#scroller) | 否 | 可滚动组件的控制器。用于与可滚动组件进行绑定，并通过控制器接口控制滚动；不传入时，无法通过控制器接口控制该Scroll组件。  **说明：**  不允许和其他滚动类组件，如：[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)绑定同一个滚动控制对象。 |
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](ts-component-general-attributes.md)和[滚动组件通用属性](ts-container-scrollable-common.md#属性)外，还支持以下属性：
 
 ### scrollable
 
-PhonePC/2in1TabletTVWearable
-
 scrollable(value: ScrollDirection)
 
-设置滚动方向。该值被修改后会重置滚动偏移量。
+设置滚动方向。该值被修改后会重置滚动偏移量。可根据布局选择竖直滚动、水平滚动或自由滚动。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -70,15 +62,13 @@ scrollable(value: ScrollDirection)
 | --- | --- | --- | --- |
 | value | [ScrollDirection](ts-container-scroll.md#scrolldirection枚举说明) | 是 | 滚动方向。  默认值：ScrollDirection.Vertical |
 
-当滚动方向设置为[ScrollDirection.FREE](ts-container-scroll.md#scrolldirection枚举说明)时，Scroll组件仅支持部分能力，见[自由滚动模式下支持的能力](ts-container-scroll.md#scrolldirection枚举说明)。
+当滚动方向设置为[ScrollDirection.FREE](ts-container-scroll.md#scrolldirection枚举说明)时，Scroll组件仅支持部分能力，见[ScrollDirection.FREE](ts-container-scroll.md#scrolldirection枚举说明)中自由滚动模式下支持的能力。
 
 ### scrollBar
 
-PhonePC/2in1TabletTVWearable
-
 scrollBar(barState: BarState)
 
-设置滚动条状态。如果容器组件无法滚动，则滚动条不显示。如果容器组件的子组件大小为无穷大，则滚动条不支持拖动和伴随滚动。
+设置滚动条状态。如果容器组件无法滚动，则滚动条不显示。如果容器组件的子组件大小为无穷大，则滚动条不支持拖动和伴随滚动。可用于控制滚动条是否常驻显示、自动显示或隐藏。
 
 从API version 10开始，当滚动组件存在圆角时，为避免滚动条被圆角截断，滚动条会自动计算距顶部和底部的避让距离。
 
@@ -94,8 +84,6 @@ scrollBar(barState: BarState)
 
 ### scrollBarColor
 
-PhonePC/2in1TabletTVWearable
-
 scrollBarColor(color: Color | number | string)
 
 设置滚动条的颜色。
@@ -108,11 +96,9 @@ scrollBarColor(color: Color | number | string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [Color](ts-appendix-enums.md#color) | number | string | 是 | 滚动条的颜色。  默认值：'#66182431'  number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。  string为rgb或者argb格式颜色，示例：'#ffffff'。 |
+| color | [Color](ts-appendix-enums.md#color) | number | string | 是 | 滚动条的颜色。  默认值：'#66182431'  number为HEX格式颜色，支持rgb或者argb，取值范围：[0x0, 0xFFFFFFFF]，示例：0xffffff。  string为rgb或者argb格式颜色，示例：'#ffffff'。 |
 
 ### scrollBarColor22+
-
-PhonePC/2in1TabletTVWearable
 
 scrollBarColor(color: Color | number | string | Resource)
 
@@ -120,21 +106,21 @@ scrollBarColor(color: Color | number | string | Resource)
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [Color](ts-appendix-enums.md#color) | number | string | [Resource](ts-types.md#resource) | 是 | 滚动条的颜色。  默认值：'#66182431'  number为HEX格式颜色，支持rgb或者argb，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
+| color | [Color](ts-appendix-enums.md#color) | number | string | [Resource](ts-types.md#resource) | 是 | 滚动条的颜色。  默认值：'#66182431'  number为HEX格式颜色，支持rgb或者argb，取值范围：[0x0, 0xFFFFFFFF]，示例：0xffffff。string为rgb或者argb格式颜色，示例：'#ffffff'。 |
 
 ### scrollBarWidth
 
-PhonePC/2in1TabletTVWearable
-
 scrollBarWidth(value: number | string)
 
-设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过Scroll组件主轴方向的高度，则滚动条的宽度会变为默认值。
+设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过Scroll组件主轴方向的可视尺寸，则按默认值4vp处理。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -144,31 +130,51 @@ scrollBarWidth(value: number | string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | 是 | 滚动条的宽度。  默认值：4  单位：vp  取值范围：设置为小于0的值时，按默认值处理。设置为0时，不显示滚动条。 |
+| value | number | string | 是 | 滚动条的宽度。  默认值：4  单位：vp  取值范围：设置为小于0的值时，按默认值4vp处理。设置为0时，不显示滚动条。 |
+
+### scrollBarWidth
+
+scrollBarWidth(value: number | string | Resource)
+
+设置滚动条的宽度，不支持百分比设置。宽度设置后，滚动条正常状态和按压状态宽度均为滚动条的宽度值。如果滚动条的宽度超过Scroll组件主轴方向的可视尺寸，则按默认值4vp处理，支持Resource资源类型。
+
+未通过该接口设置时，滚动条宽度为默认值4vp。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | string | [Resource](ts-types.md#resource) | 是 | 滚动条的宽度。  默认值：4  单位：vp  取值范围：[0, +∞)。设置为小于0的值时，按默认值4vp处理。设置为0时，不显示滚动条。 |
 
 ### scrollSnap10+
 
-PhonePC/2in1TabletTVWearable
-
 scrollSnap(value: ScrollSnapOptions)
 
-设置Scroll组件的限位滚动模式。
+设置Scroll组件的限位滚动模式，用于实现分页滚动、卡片对齐等需要滚动结束后定位到指定位置的场景。
 
 限位动画期间[onWillScroll](ts-container-scroll.md#onwillscroll12)事件上报的滚动操作来源类型为ScrollSource.FLING。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ScrollSnapOptions](ts-container-scroll.md#scrollsnapoptions10对象说明) | 是 | Scroll组件的限位滚动模式。 |
+| value | [ScrollSnapOptions](ts-container-scroll.md#scrollsnapoptions10对象说明) | 是 | Scroll组件的限位滚动模式。该对象包含snapAlign（对齐方式）、snapPagination（分页点）、enableSnapToStart（是否在开头限位）和enableSnapToEnd（是否在末尾限位）等属性。 |
 
 ### edgeEffect
-
-PhonePC/2in1TabletTVWearable
 
 edgeEffect(edgeEffect: EdgeEffect, options?: EdgeEffectOptions)
 
@@ -183,17 +189,17 @@ edgeEffect(edgeEffect: EdgeEffect, options?: EdgeEffectOptions)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | edgeEffect | [EdgeEffect](ts-appendix-enums.md#edgeeffect) | 是 | Scroll组件的边缘滑动效果，支持弹簧效果和阴影效果。  默认值：EdgeEffect.None |
-| options11+ | [EdgeEffectOptions](ts-container-scrollable-common.md#edgeeffectoptions11对象说明) | 否 | 组件内容大小小于组件自身时，是否开启滑动效果。设置为{ alwaysEnabled: true }会开启滑动效果，{ alwaysEnabled: false }不开启。  默认值：{ alwaysEnabled: true } |
+| options11+ | [EdgeEffectOptions](ts-container-scrollable-common.md#edgeeffectoptions11对象说明) | 否 | 组件内容大小小于组件自身时，是否开启滑动效果。设置为{ alwaysEnabled: true }会开启滑动效果，{ alwaysEnabled: false }不开启；不传入时使用默认值。  默认值：{ alwaysEnabled: true }  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ### enableScrollInteraction10+
 
-PhonePC/2in1TabletTVWearable
-
 enableScrollInteraction(value: boolean)
 
-设置是否支持滚动手势。
+设置是否支持滚动手势。可用于在自定义拖动、自定义滚动等业务需要接管滑动手势的场景中，临时禁用滚动组件的用户手势滚动。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -203,19 +209,19 @@ enableScrollInteraction(value: boolean)
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持滚动手势。设置为true时可以通过手指或者鼠标滚动，设置为false时无法通过手指或者鼠标滚动，但不影响控制器[Scroller](ts-container-scroll.md#scroller)的滚动接口。  默认值：true |
 
-说明
+**说明** 
 
 组件无法通过鼠标按下拖动操作进行滚动。
 
 ### nestedScroll10+
 
-PhonePC/2in1TabletTVWearable
-
 nestedScroll(value: NestedScrollOptions)
 
-设置前后两个方向的嵌套滚动模式，实现与父组件的滚动联动。
+设置前后两个方向的嵌套滚动模式，实现与父组件的滚动联动。适用于页面内列表与外层滚动区域联动等嵌套滚动场景。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -223,17 +229,17 @@ nestedScroll(value: NestedScrollOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [NestedScrollOptions](ts-container-scrollable-common.md#nestedscrolloptions10对象说明) | 是 | 嵌套滚动选项。  默认值：{ scrollForward: NestedScrollMode.SELF\_ONLY, scrollBackward: NestedScrollMode.SELF\_ONLY }  Scroll设置[enablePaging](ts-container-scroll.md#enablepaging11)或者[scrollSnap](ts-container-scroll.md#scrollsnap10)，并同时设置父组件优先的嵌套滚动时，嵌套滚动不生效。 |
+| value | [NestedScrollOptions](ts-container-scrollable-common.md#nestedscrolloptions10对象说明) | 是 | 嵌套滚动选项，用于配置前后两个方向的嵌套滚动模式，包含scrollForward（向前滚动模式）和scrollBackward（向后滚动模式）字段。NestedScrollMode.SELF\_ONLY表示仅自身滚动，NestedScrollMode.SELF\_FIRST表示自身优先滚动，NestedScrollMode.PARENT\_FIRST表示父组件优先滚动，NestedScrollMode.PARALLEL表示自身和父组件同时滚动。  默认值：{ scrollForward: NestedScrollMode.SELF\_ONLY, scrollBackward: NestedScrollMode.SELF\_ONLY }  Scroll设置[enablePaging](ts-container-scroll.md#enablepaging11)或者[scrollSnap](ts-container-scroll.md#scrollsnap10)，并同时设置父组件优先的嵌套滚动时，嵌套滚动不生效。 |
 
 ### friction10+
 
-PhonePC/2in1TabletTVWearable
-
 friction(value: number | Resource)
 
-设置摩擦系数，手动划动滚动区域时生效，仅影响惯性滚动过程，对惯性滚动过程中的链式效果有间接影响。
+设置摩擦系数，手动滑动滚动区域时生效，仅影响惯性滚动过程，对惯性滚动过程中的链式效果有间接影响。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -245,13 +251,13 @@ friction(value: number | Resource)
 
 ### enablePaging11+
 
-PhonePC/2in1TabletTVWearable
-
 enablePaging(value: boolean)
 
-设置是否支持划动翻页。如果同时设置了划动翻页enablePaging和限位滚动scrollSnap，则scrollSnap优先生效，enablePaging不生效。
+设置是否支持滑动翻页。如果同时设置了滑动翻页enablePaging和限位滚动scrollSnap，则scrollSnap优先生效，enablePaging不生效。可用于书籍翻页、卡片分页浏览等场景。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -259,17 +265,17 @@ enablePaging(value: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | boolean | 是 | 是否支持划动翻页。设置为true支持滑动翻页，false不支持。  默认值：false |
+| value | boolean | 是 | 是否支持滑动翻页。设置为true支持滑动翻页，false不支持。  默认值：false |
 
 ### initialOffset12+
 
-PhonePC/2in1TabletTVWearable
-
 initialOffset(value: OffsetOptions)
 
-设置初始滚动偏移量。只在首次布局时生效，后续动态修改该属性值不生效。
+设置初始滚动偏移量。只在首次布局时生效，后续动态修改该属性值不生效。可用于页面首次显示时定位到指定滚动位置。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -281,13 +287,13 @@ initialOffset(value: OffsetOptions)
 
 ### maxZoomScale20+
 
-PhonePC/2in1TabletTVWearable
-
 maxZoomScale(scale: number)
 
 设置Scroll组件内容的最大手势缩放比例。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -299,13 +305,13 @@ maxZoomScale(scale: number)
 
 ### minZoomScale20+
 
-PhonePC/2in1TabletTVWearable
-
 minZoomScale(scale: number)
 
 设置Scroll组件内容的最小手势缩放比例。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -315,19 +321,19 @@ minZoomScale(scale: number)
 | --- | --- | --- | --- |
 | scale | number | 是 | Scroll组件内容的最小手势缩放比例。  默认值：1  取值范围：(0, maxZoomScale]，小于或等于0时按默认值1处理，大于maxZoomScale时按maxZoomScale处理。 |
 
-说明
+**说明** 
 
 当maxZoomScale和minZoomScale不同时为1时，Scroll组件会启用缩放手势。
 
 ### zoomScale20+
-
-PhonePC/2in1TabletTVWearable
 
 zoomScale(scale: number)
 
 设置Scroll组件内容的缩放比例。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -339,13 +345,13 @@ zoomScale(scale: number)
 
 ### enableBouncesZoom20+
 
-PhonePC/2in1TabletTVWearable
-
 enableBouncesZoom(enable: boolean)
 
-启用过缩放回弹效果。
+设置是否启用过缩放回弹效果。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -353,11 +359,9 @@ enableBouncesZoom(enable: boolean)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enable | boolean | 是 | 启用过缩放回弹效果。设置为true表示启用该效果，设置为false表示禁用该效果。  默认值：true |
+| enable | boolean | 是 | 是否启用过缩放回弹效果。当用户缩放超出最大或最小缩放比例时，释放手势后内容会回弹到最大或最小缩放比例。设置为true表示启用该效果，设置为false表示禁用该效果。  默认值：true |
 
 ## ScrollDirection枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 滚动方向枚举。
 
@@ -369,7 +373,7 @@ PhonePC/2in1TabletTVWearable
 | Horizontal | 1 | 仅支持水平方向滚动。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | Free(deprecated) | 2 | 支持竖直或水平方向滚动。  **说明：** 从API version 7开始支持，从API version 9开始废弃，建议使用FREE替代。FREE枚举值从API version 20开始支持。 |
 | None | 3 | 不可滚动。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| FREE20+ | 4 | 自由滚动。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
+| FREE20+ | 4 | 自由滚动。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 FREE（自由滚动）模式下支持的能力：
 
@@ -386,7 +390,7 @@ FREE（自由滚动）模式下支持的能力：
 | [initialOffset](ts-container-scroll.md#initialoffset12) | - | - |
 | [scrollable](ts-container-scroll.md#scrollable) | - | - |
 
-说明
+**说明** 
 
 * edgeEffect属性仅支持Spring和None边缘滑动效果。
 * onWillScroll回调仅支持在跟手滑动阶段重载偏移量。
@@ -395,34 +399,30 @@ FREE（自由滚动）模式下支持的能力：
 
 ## ScrollSnapOptions10+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 限位滚动模式对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| snapAlign | [ScrollSnapAlign](ts-container-list.md#scrollsnapalign10枚举说明) | 否 | 否 | 设置Scroll组件限位滚动时的对齐方式。  **说明：**  1.该属性默认值为ScrollSnapAlign.NONE。 |
-| snapPagination | [Dimension](ts-types.md#dimension10) | Array<Dimension> | 否 | 是 | 设置Scroll组件限位滚动时的分页点。  **说明：**  1.当属性为Dimension时，Dimension表示每页的大小，系统按照该大小进行分页。  2.当属性为Array<Dimension>时，每个Dimension表示分页点，系统按照分页点进行分页。每个Dimension的范围为[0,可滑动距离]。  3.当该属性不填或者Dimension为小于等于0的输入时，按异常值，无限位滚动处理。当该属性值为Array<Dimension>数组时，数组中的数值必须为单调递增。  4.当输入为百分比时，实际的大小为Scroll组件的视口与百分比数值之积。 |
-| enableSnapToStart | boolean | 否 | 是 | 在Scroll组件限位滚动模式下，该属性设置为true后，不允许Scroll在开头和第一页间自由滑动，该属性设置为false后，允许Scroll在开头和第一页间自由滑动。  **说明：**  1.该属性值默认为true。  2.该属性仅当snapPagination属性为Array<Dimension>时生效，不支持Dimension。 |
-| enableSnapToEnd | boolean | 否 | 是 | 在Scroll组件限位滚动模式下，该属性设置为true后，不允许Scroll在最后一页和末尾间自由滑动，该属性设置为false后，允许Scroll在最后一页和末尾间自由滑动。  **说明：**  1.该属性值默认为true。  2.该属性仅当snapPagination属性为Array<Dimension>时生效，不支持Dimension。 |
+| snapAlign | [ScrollSnapAlign](ts-container-list.md#scrollsnapalign10枚举说明) | 否 | 否 | 设置Scroll组件限位滚动时的对齐方式。  **说明：**  1. 该属性默认值为ScrollSnapAlign.NONE。 |
+| snapPagination | [Dimension](ts-types.md#dimension10) | Array<Dimension> | 否 | 是 | 设置Scroll组件限位滚动时的分页点。  **说明：**  1. 当属性为Dimension时，Dimension表示每页的大小，系统按照该大小进行分页。  2. 当属性为Array<Dimension>时，每个Dimension表示分页点，系统按照分页点进行分页。每个Dimension的范围为[0,可滑动距离]。  3. 当该属性不填或者Dimension为小于等于0的输入时，按异常值，无限位滚动处理。当该属性值为Array<Dimension>数组时，数组中的数值必须为单调递增。  4. 当输入为百分比时，实际的大小为Scroll组件的视口与百分比数值之积。 |
+| enableSnapToStart | boolean | 否 | 是 | 在Scroll组件限位滚动模式下，该属性设置为true后，不允许Scroll在开头和第一页间自由滑动，该属性设置为false后，允许Scroll在开头和第一页间自由滑动。  **说明：**  1. 该属性值默认为true。  2. 该属性仅当snapPagination属性为Array<Dimension>时生效，不支持Dimension。 |
+| enableSnapToEnd | boolean | 否 | 是 | 在Scroll组件限位滚动模式下，该属性设置为true后，不允许Scroll在最后一页和末尾间自由滑动，该属性设置为false后，允许Scroll在最后一页和末尾间自由滑动。  **说明：**  1. 该属性值默认为true。  2. 该属性仅当snapPagination属性为Array<Dimension>时生效，不支持Dimension。 |
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](ts-component-general-events.md)和[滚动组件通用事件](ts-container-scrollable-common.md#事件)外，还支持以下事件：
 
-说明
+**说明** 
 
 不支持滚动组件通用事件中的[onWillScroll](ts-container-scrollable-common.md#onwillscroll12)、[onDidScroll](ts-container-scrollable-common.md#ondidscroll12)事件。
 
 ### onScrollFrameBegin9+
-
-PhonePC/2in1TabletTVWearable
 
 onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
@@ -456,21 +456,17 @@ onScrollFrameBegin(event: OnScrollFrameBeginCallback)
 
 ### onScroll(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 onScroll(event: (xOffset: number, yOffset: number) => void)
 
 滚动事件回调，返回滚动时水平、竖直方向偏移量，单位vp。
 
 触发该事件的条件：
 
-1、滚动组件触发滚动时触发，支持键鼠操作等其他触发滚动的输入设置。
+1. 滚动组件触发滚动时触发，支持键鼠操作等其他触发滚动的输入设置。
+2. 通过滚动控制器API接口调用。
+3. 越界回弹。
 
-2、通过滚动控制器API接口调用。
-
-3、越界回弹。
-
-说明
+**说明** 
 
 从API version 7开始支持，从API version 12开始废弃，建议使用[onWillScroll](ts-container-scroll.md#onwillscroll12)替代。
 
@@ -487,8 +483,6 @@ onScroll(event: (xOffset: number, yOffset: number) => void)
 
 ### onWillScroll12+
 
-PhonePC/2in1TabletTVWearable
-
 onWillScroll(handler: ScrollOnWillScrollCallback)
 
 滚动事件回调，Scroll滚动前触发。
@@ -497,17 +491,17 @@ onWillScroll(handler: ScrollOnWillScrollCallback)
 
 触发该事件的条件：
 
-1、滚动组件触发滚动时触发，支持键鼠操作等其他触发滚动的输入设置。
+1. 滚动组件触发滚动时触发，支持键鼠操作等其他触发滚动的输入设置。
+2. 通过滚动控制器API接口调用。
+3. 越界回弹。
 
-2、通过滚动控制器API接口调用。
-
-3、越界回弹。
-
-说明
+**说明** 
 
 滚动事件的回调函数在滚动过程中会被频繁触发，因此应避免在该回调函数中执行耗时操作，以防止应用出现卡顿和丢帧的问题。最佳实践请参考[主线程耗时操作优化指导-高频回调场景](../best-practices/bpta-time-optimization-of-the-main-thread.md#section10112623611)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -519,8 +513,6 @@ onWillScroll(handler: ScrollOnWillScrollCallback)
 
 ### onDidScroll12+
 
-PhonePC/2in1TabletTVWearable
-
 onDidScroll(handler: ScrollOnScrollCallback)
 
 滚动事件回调，Scroll滚动时触发。
@@ -529,13 +521,13 @@ onDidScroll(handler: ScrollOnScrollCallback)
 
 触发该事件的条件：
 
-1、滚动组件触发滚动时触发，支持键鼠操作等其他触发滚动的输入设置。
-
-2、通过滚动控制器API接口调用。
-
-3、越界回弹。
+1. 滚动组件触发滚动时触发，支持键鼠操作等其他触发滚动的输入设置。
+2. 通过滚动控制器API接口调用。
+3. 越界回弹。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -547,19 +539,17 @@ onDidScroll(handler: ScrollOnScrollCallback)
 
 ### onScrollEdge
 
-PhonePC/2in1TabletTVWearable
-
 onScrollEdge(event: OnScrollEdgeCallback)
 
 滚动到边缘事件回调。
 
 触发该事件的条件：
 
-1、滚动组件滚动到边缘时触发，支持键鼠操作等其他触发滚动的输入设置。
+1. 滚动组件滚动到边缘时触发，支持键鼠操作等其他触发滚动的输入设置。
 
-2、通过滚动控制器API接口调用。
+   2. 通过滚动控制器API接口调用。
 
-3、越界回弹。
+   3. 越界回弹。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -573,19 +563,17 @@ onScrollEdge(event: OnScrollEdgeCallback)
 
 ### onScrollEnd(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 onScrollEnd(event: () => void)
 
 滚动停止事件回调。
 
 触发该事件的条件：
 
-1、滚动组件触发滚动后停止，支持键鼠操作等其他触发滚动的输入设置。
+1. 滚动组件触发滚动后停止，支持键鼠操作等其他触发滚动的输入设置。
 
-2、通过滚动控制器API接口调用后停止，带过渡动效。
+   2. 通过滚动控制器API接口调用后停止，带过渡动效。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[onScrollStop](ts-container-scroll.md#onscrollstop9)替代。
 
@@ -599,17 +587,15 @@ onScrollEnd(event: () => void)
 
 ### onScrollStart9+
 
-PhonePC/2in1TabletTVWearable
-
 onScrollStart(event: VoidCallback)
 
 滚动开始时触发。手指拖动Scroll或拖动Scroll的滚动条触发的滚动开始时，会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滚动控制器触发的带动画的滚动，动画开始时会触发该事件。
 
 触发该事件的条件：
 
-1、滚动组件开始滚动时触发，支持键鼠操作等其他触发滚动的输入设置。
+1. 滚动组件开始滚动时触发，支持键鼠操作等其他触发滚动的输入设置。
 
-2、通过滚动控制器API接口调用后开始，带过渡动效。
+   2. 通过滚动控制器API接口调用后开始，带过渡动效。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -623,17 +609,15 @@ onScrollStart(event: VoidCallback)
 
 ### onScrollStop9+
 
-PhonePC/2in1TabletTVWearable
-
 onScrollStop(event: VoidCallback)
 
 滚动停止时触发。手拖动Scroll或拖动Scroll的滚动条触发的滚动，手离开屏幕后滚动停止时会触发该事件。使用[Scroller](ts-container-scroll.md#scroller)滚动控制器触发的带动画的滚动，动画停止时会触发该事件。
 
 触发该事件的条件：
 
-1、滚动组件触发滚动后停止，支持键鼠操作等其他触发滚动的输入设置。
+1. 滚动组件触发滚动后停止，支持键鼠操作等其他触发滚动的输入设置。
 
-2、通过滚动控制器API接口调用后开始，带过渡动效。
+   2. 通过滚动控制器API接口调用后开始，带过渡动效。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -647,13 +631,13 @@ onScrollStop(event: VoidCallback)
 
 ### onDidZoom20+
 
-PhonePC/2in1TabletTVWearable
-
 onDidZoom(event: ScrollOnDidZoomCallback)
 
 每帧缩放完成时触发。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -665,13 +649,13 @@ onDidZoom(event: ScrollOnDidZoomCallback)
 
 ### onZoomStart20+
 
-PhonePC/2in1TabletTVWearable
-
 onZoomStart(event: VoidCallback)
 
 手势缩放开始触发。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -683,13 +667,13 @@ onZoomStart(event: VoidCallback)
 
 ### onZoomStop20+
 
-PhonePC/2in1TabletTVWearable
-
 onZoomStop(event: VoidCallback)
 
 手势缩放停止时触发。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -701,13 +685,13 @@ onZoomStop(event: VoidCallback)
 
 ## ScrollOnScrollCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type ScrollOnScrollCallback = (xOffset: number, yOffset: number, scrollState: ScrollState) => void
 
 Scroll滚动时触发的回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -717,15 +701,13 @@ Scroll滚动时触发的回调。
 | --- | --- | --- | --- |
 | xOffset | number | 是 | 相对于上一帧水平方向的偏移量，Scroll中的内容向左滚动时偏移量为正，向右滚动时偏移量为负。  单位vp。 |
 | yOffset | number | 是 | 相对于上一帧竖直方向的偏移量，Scroll中的内容向上滚动时偏移量为正，向下滚动时偏移量为负。  单位vp。 |
-| scrollState | [ScrollState](ts-container-list.md#scrollstate枚举说明) | 是 | 当前滚动状态。 |
+| scrollState | [ScrollState](ts-container-list.md#scrollstate枚举说明) | 是 | 当前滚动状态。Idle表示空闲状态，Scroll表示滚动状态，Fling表示惯性滚动状态。 |
 
-说明
+**说明** 
 
 若通过[onScrollFrameBegin](ts-container-scroll.md#onscrollframebegin9)事件和[scrollBy](ts-container-scroll.md#scrollby9)方法实现容器嵌套滚动，需设置子滚动节点的EdgeEffect为None。如Scroll嵌套List滚动时，List组件的[edgeEffect](ts-container-list.md#edgeeffect)属性需设置为EdgeEffect.None。
 
 ## ScrollOnWillScrollCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 type ScrollOnWillScrollCallback = (xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => void | OffsetResult
 
@@ -733,6 +715,8 @@ Scroll滚动前触发的回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -741,8 +725,8 @@ Scroll滚动前触发的回调。
 | --- | --- | --- | --- |
 | xOffset | number | 是 | 相对于上一帧水平方向的偏移量，Scroll中的内容向左滚动时偏移量为正，向右滚动时偏移量为负。  单位vp。 |
 | yOffset | number | 是 | 相对于上一帧竖直方向的偏移量，Scroll中的内容向上滚动时偏移量为正，向下滚动时偏移量为负。  单位vp。 |
-| scrollState | [ScrollState](ts-container-list.md#scrollstate枚举说明) | 是 | 当前滚动状态。 |
-| scrollSource | [ScrollSource](ts-appendix-enums.md#scrollsource12) | 是 | 当前滚动操作的来源。 |
+| scrollState | [ScrollState](ts-container-list.md#scrollstate枚举说明) | 是 | 当前滚动状态。Idle表示空闲状态，Scroll表示滚动状态，Fling表示惯性滚动状态。 |
+| scrollSource | [ScrollSource](ts-appendix-enums.md#scrollsource12) | 是 | 当前滚动操作的来源，如DRAG表示拖拽触发，FLING表示惯性滑动触发，SCROLLER表示Scroller不带动效方法触发，SCROLLER\_ANIMATION表示Scroller带动效方法触发。 |
 
 **返回值：**
 
@@ -752,13 +736,13 @@ Scroll滚动前触发的回调。
 
 ## OnScrollEdgeCallback18+
 
-PhonePC/2in1TabletTVWearable
-
 type OnScrollEdgeCallback = (side: Edge) => void
 
 滚动到边缘时触发的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -766,17 +750,17 @@ type OnScrollEdgeCallback = (side: Edge) => void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| side | [Edge](ts-appendix-enums.md#edge) | 是 | 滚动到的边缘位置。 |
+| side | [Edge](ts-appendix-enums.md#edge) | 是 | 滚动到的边缘位置。竖直方向滚动时，Edge.Top和Edge.Start表示起始边缘，Edge.Bottom和Edge.End表示末尾边缘。水平方向滚动时，Edge.Center表示水平方向起始位置，Edge.Baseline表示水平方向末尾位置。 |
 
 ## OnScrollFrameBeginCallback18+
-
-PhonePC/2in1TabletTVWearable
 
 type OnScrollFrameBeginCallback = (offset: number, state: ScrollState) => OnScrollFrameBeginHandlerResult;
 
 Scroll每帧滚动前触发的回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -785,25 +769,25 @@ Scroll每帧滚动前触发的回调。
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | offset | number | 是 | 即将发生的滑动量，单位vp。 |
-| state | [ScrollState](ts-container-list.md#scrollstate枚举说明) | 是 | 当前滑动状态。 |
+| state | [ScrollState](ts-container-list.md#scrollstate枚举说明) | 是 | 当前滑动状态。Idle表示空闲状态，Scroll表示滚动状态，Fling表示惯性滚动状态。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OnScrollFrameBeginHandlerResult](ts-container-scroll.md#onscrollframebeginhandlerresult18对象说明) | 返回实际滑动量。 |
+| [OnScrollFrameBeginHandlerResult](ts-container-scroll.md#onscrollframebeginhandlerresult18对象说明) | 返回实际滑动量，Scroll将按照返回值中的offsetRemain进行滚动。 |
 
 ## OnScrollFrameBeginHandlerResult18+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 [OnScrollFrameBeginCallback](ts-container-scroll.md#onscrollframebegincallback18)返回的实际相对上一帧滚动偏移量。
 
-说明
+**说明** 
 
 为规范匿名对象的定义，API version 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -813,13 +797,13 @@ PhonePC/2in1TabletTVWearable
 
 ## ScrollOnDidZoomCallback20+
 
-PhonePC/2in1TabletTVWearable
-
 type ScrollOnDidZoomCallback = (scale: number) => void
 
 Scroll每帧缩放完成时触发的回调。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -831,29 +815,22 @@ Scroll每帧缩放完成时触发的回调。
 
 ## Scroller
 
-PhonePC/2in1TabletTVWearable
-
 可滚动容器组件的控制器，可以将此组件绑定至容器组件，然后通过它控制容器组件的滚动。同一个控制器不可以控制多个容器组件，目前支持绑定到ArcList、ArcScrollBar、List、Scroll、ScrollBar、Grid、WaterFlow上。
 
-说明
+**说明** 
 
-1、Scroller控制器与滚动容器组件的绑定发生在组件创建阶段。
-
-2、Scroller控制器与滚动容器组件绑定后才可以正常调用Scroller方法，否则根据调用接口不同会不生效或者抛异常。
-
-3、以[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)为例，aboutToAppear在创建自定义组件的新实例后，在执行其build()方法之前执行。因此如果滚动组件在自定义组件build内，在该自定义组件aboutToAppear执行时，内部滚动组件还没有创建，是不能正常调用上述Scroller方法的。
-
-4、以[onAppear](ts-universal-events-show-hide.md#onappear)为例，组件挂载显示后触发此回调。因此在滚动组件的onAppear回调执行时，滚动组件已经创建并已经和Scroller绑定成功，是可以正常调用Scroller方法的。
+1. Scroller控制器与滚动容器组件的绑定发生在组件创建阶段。
+2. Scroller控制器与滚动容器组件绑定后才可以正常调用Scroller方法，否则根据调用接口不同会不生效或者抛异常。
+3. 以[aboutToAppear](ts-custom-component-lifecycle.md#abouttoappear)为例，aboutToAppear在创建自定义组件的新实例后，在执行其build()方法之前执行。因此如果滚动组件在自定义组件build内，在该自定义组件aboutToAppear执行时，内部滚动组件还没有创建，是不能正常调用上述Scroller方法的。
+4. 以[onAppear](ts-universal-events-show-hide.md#onappear)为例，组件挂载显示后触发此回调。因此在滚动组件的onAppear回调执行时，滚动组件已经创建并已经和Scroller绑定成功，是可以正常调用Scroller方法的。
 
 ### 导入对象
 
-```
-1. scroller: Scroller = new Scroller();
+```ts
+scroller: Scroller = new Scroller();
 ```
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -865,11 +842,18 @@ Scroller的构造函数。
 
 ### scrollTo
 
-PhonePC/2in1TabletTVWearable
-
 scrollTo(options: ScrollOptions)
 
-滑动到指定位置。
+滑动到指定位置，可用于目录跳转、返回顶部、搜索结果定位等场景。
+
+**说明** 
+
+* scrollTo动画速度大于200vp/s时，滚动组件区域内的组件不响应点击事件。
+* 各组件行为存在差异：
+
+  + [ArcList](ts-container-arclist.md)和[List](ts-container-list.md)组件会对所有经过的item进行加载和布局。
+  + Grid组件和[SLIDING\_WINDOW](ts-container-waterflow.md#waterflowlayoutmode12枚举说明)模式的[WaterFlow](ts-container-waterflow.md)组件在跳转距离较大（大于2倍组件主轴高度）时，会直接估算出要显示的item。跳转指一帧滑动。
+  + [ALWAYS\_TOP\_DOWN](ts-container-waterflow.md#waterflowlayoutmode12枚举说明)模式的WaterFlow组件向后跳转（即dx或dy为正值时）会加载和布局所有经过的item，向前跳转（即dx或dy为负值时）会直接跳转到对应位置。跳转指一帧滑动。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -879,19 +863,13 @@ scrollTo(options: ScrollOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ScrollOptions](ts-container-scroll.md#scrolloptions18对象说明) | 是 | 滑动到指定位置的参数。 |
-
-说明
-
-ScrollTo动画速度大于200vp/s时，滚动组件区域内的组件不响应点击事件。
+| options | [ScrollOptions](ts-container-scroll.md#scrolloptions18对象说明) | 是 | 滑动到指定位置的参数，包含xOffset、yOffset、animation、canOverScroll等字段，用于指定滚动目标位置和滚动行为。 |
 
 ### scrollEdge
 
-PhonePC/2in1TabletTVWearable
-
 scrollEdge(value: Edge, options?: ScrollEdgeOptions)
 
-滚动到容器边缘，不区分滚动轴方向，Edge.Top和Edge.Start表现相同，Edge.Bottom和Edge.End表现相同。
+滚动到容器边缘，不区分滚动轴方向，Edge.Top和Edge.Start表现相同，Edge.Bottom和Edge.End表现相同。可用于返回顶部、跳转到内容末尾等场景。
 
 Scroll组件默认有动画，Grid、List、WaterFlow组件默认无动画。
 
@@ -904,17 +882,17 @@ Scroll组件默认有动画，Grid、List、WaterFlow组件默认无动画。
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Edge](ts-appendix-enums.md#edge) | 是 | 滚动到的边缘位置。 |
-| options12+ | [ScrollEdgeOptions](ts-container-scroll.md#scrolledgeoptions12对象说明) | 否 | 设置滚动到边缘位置的模式。 |
+| options12+ | [ScrollEdgeOptions](ts-container-scroll.md#scrolledgeoptions12对象说明) | 否 | 设置滚动到边缘位置的模式，可通过velocity字段设置固定滚动速度。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ### fling12+
 
-PhonePC/2in1TabletTVWearable
-
 fling(velocity: number): void
 
-滚动类组件根据传入的初始速度进行惯性滚动。
+滚动类组件根据传入的初始速度进行惯性滚动，可用于模拟抛滑效果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -922,7 +900,7 @@ fling(velocity: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| velocity | number | 是 | 惯性滚动的初始速度值。单位：vp/s  **说明：**  velocity值设置为0，视为异常值，本次滚动不生效。如果值为正数，则向顶部滚动；如果值为负数，则向底部滚动。 |
+| velocity | number | 是 | 惯性滚动的初始速度值。单位：vp/s  **说明：**  velocity值设置为0时，本次滚动不生效且不会产生滚动动画。如果值为正数，则向顶部滚动；如果值为负数，则向底部滚动。 |
 
 **错误码**：
 
@@ -934,8 +912,6 @@ fling(velocity: number): void
 | 100004 | Controller not bound to a component. |
 
 ### scrollPage9+
-
-PhonePC/2in1TabletTVWearable
 
 scrollPage(value: ScrollPageOptions)
 
@@ -949,17 +925,15 @@ scrollPage(value: ScrollPageOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ScrollPageOptions](ts-container-scroll.md#scrollpageoptions14对象说明) | 是 | 设置翻页模式。 |
+| value | [ScrollPageOptions](ts-container-scroll.md#scrollpageoptions14对象说明) | 是 | 设置翻页模式。包含next（是否向下翻页）和animation（是否开启翻页动画）字段，用于指定翻页行为。 |
 
 ### scrollPage(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 scrollPage(value: { next: boolean, direction?: Axis })
 
 滚动到下一页或者上一页。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[scrollPage9+](ts-container-scroll.md#scrollpage9)替代。
 
@@ -974,15 +948,13 @@ scrollPage(value: { next: boolean, direction?: Axis })
 
 ### currentOffset
 
-PhonePC/2in1TabletTVWearable
-
 currentOffset(): OffsetResult
 
 获取当前的滚动总偏移量。
 
-说明
+**说明** 
 
-1. 当Scroller没有和组件绑定时，该接口会返回undefined，但是接口中没有声明，推荐使用[offset](ts-container-scroll.md#offset23)函数。
+1. 当Scroller没有和组件绑定时，该接口会返回undefined，但是接口中没有声明。推荐使用[offset](ts-container-scroll.md#offset23)函数，其返回类型显式包含undefined。
 2. Grid、List、WaterFlow组件有懒加载机制，组件内容没有加载并布局完成时，内容总偏移量通过估算得到，估算结果可能会有误差。其中List组件可以通过[childrenMainSize](ts-container-list.md#childrenmainsize12)属性解决估算不准确的问题，Grid与WaterFlow估算不准暂无解决方案。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -993,11 +965,9 @@ currentOffset(): OffsetResult
 
 | 类型 | 说明 |
 | --- | --- |
-| [OffsetResult11+](ts-container-scroll.md#offsetresult11对象说明) | 返回当前的滚动总偏移量。 |
+| [OffsetResult11+](ts-container-scroll.md#offsetresult11对象说明) | 返回当前的滚动总偏移量。xOffset表示水平滚动总偏移量，yOffset表示竖直滚动总偏移量。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ### offset23+
-
-PhonePC/2in1TabletTVWearable
 
 offset(): OffsetResult | undefined
 
@@ -1005,35 +975,33 @@ offset(): OffsetResult | undefined
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OffsetResult](ts-container-scroll.md#offsetresult11对象说明) | undefined | 返回当前的滚动总偏移量。当Scroller没有和组件绑定时，该接口会返回undefined。 |
+| [OffsetResult](ts-container-scroll.md#offsetresult11对象说明) | undefined | 返回当前的滚动总偏移量。xOffset表示水平滚动总偏移量，yOffset表示竖直滚动总偏移量。当Scroller没有和组件绑定时，该接口会返回undefined。 |
 
 ### scrollToIndex
-
-PhonePC/2in1TabletTVWearable
 
 scrollToIndex(value: number, smooth?: boolean, align?: ScrollAlign, options?: ScrollToIndexOptions)
 
 滑动到指定Index，支持设置滑动额外偏移量。
 
-开启smooth动效时，会对经过的所有item进行加载和布局计算，当大量加载item时会导致性能问题，建议先调用scrollToIndex不带动画跳转到目标附近位置，再调用scrollToIndex带动画滚动到目标位置。
+开启smooth动画时，会对经过的所有item进行加载和布局计算。当大量加载item时会导致性能问题，开发者应先调用scrollToIndex不带动画跳转到目标附近位置，再调用scrollToIndex带动画滚动到目标位置，以优化性能。
 
-说明
+**说明** 
 
-1.仅支持ArcList、Grid、List、WaterFlow组件。
+1. 仅支持ArcList、Grid、List、WaterFlow组件。
+2. 在[LazyForEach](ts-rendering-control-lazyforeach.md)、[ForEach](ts-rendering-control-foreach.md)、[Repeat](ts-rendering-control-repeat.md)刷新数据源时，需确保在数据刷新完成之后再调用此接口。
+3. 从API version 11开始，在List中支持[contentStartOffset](ts-container-list.md#contentstartoffset11)和[contentEndOffset](ts-container-list.md#contentendoffset11)。从API version 22开始，在Grid和WaterFlow组件中支持设置[contentStartOffset](ts-container-scrollable-common.md#contentstartoffset22)和[contentEndOffset](ts-container-scrollable-common.md#contentendoffset22)。
 
-2.在[LazyForEach](ts-rendering-control-lazyforeach.md)、[ForEach](ts-rendering-control-foreach.md)、[Repeat](ts-rendering-control-repeat.md)刷新数据源时，需确保在数据刷新完成之后再调用此接口。
-
-3.从API version 11开始，在List中支持[contentStartOffset](ts-container-list.md#contentstartoffset11)和[contentEndOffset](ts-container-list.md#contentendoffset11)。从API version 22开始，在Grid和Waterflow组件中支持设置[contentStartOffset](ts-container-scrollable-common.md#contentstartoffset22)和[contentEndOffset](ts-container-scrollable-common.md#contentendoffset22)。
-
-* 当滚动容器组件设置contentStartOffset时，如果ScrollAlign设置为START，滚动结束时，指定item首部会与滚动容器组件contentStartOffset处对齐。
-* 当滚动容器组件设置contentEndOffset时，如果ScrollAlign设置为END，滚动结束时，指定item尾部会与滚动容器组件contentEndOffset处对齐。
-* 当滚动容器组件设置contentStartOffset或contentEndOffset时，如果ScrollAlign设置为AUTO，且指定item完全处于显示区内，不做调整；否则依照滚动距离最短的原则，将指定item首部与滚动组件contentStartOffset处对齐，或指定item尾部与滚动组件contentEndOffset处对齐，使指定item完全显示。
+   * 当滚动容器组件设置contentStartOffset时，如果ScrollAlign设置为START，滚动结束时，指定item首部会与滚动容器组件contentStartOffset处对齐。
+   * 当滚动容器组件设置contentEndOffset时，如果ScrollAlign设置为END，滚动结束时，指定item尾部会与滚动容器组件contentEndOffset处对齐。
+   * 当滚动容器组件设置contentStartOffset或contentEndOffset时，如果ScrollAlign设置为AUTO，且指定item完全处于显示区内，不做调整；否则依照滚动距离最短的原则，将指定item首部与滚动组件contentStartOffset处对齐，或指定item尾部与滚动组件contentEndOffset处对齐，使指定item完全显示。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1044,21 +1012,24 @@ scrollToIndex(value: number, smooth?: boolean, align?: ScrollAlign, options?: Sc
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 要滑动到的目标元素在当前容器中的索引值。  **说明：**  value值设置成负值或者大于当前容器子组件的最大索引值，视为异常值，本次跳转不生效。 |
-| smooth | boolean | 否 | 设置滑动到列表项在列表中的索引值时是否有动效，true表示有动效，false表示没有动效。  默认值：false。 |
-| align | [ScrollAlign](ts-container-scroll.md#scrollalign10枚举说明) | 否 | 指定滑动到的元素与当前容器的对齐方式。  List中的默认值为：ScrollAlign.START。Grid中默认值为：ScrollAlign.AUTO。WaterFlow中的默认值为：ScrollAlign.START。  **说明：**  仅List、Grid、WaterFlow组件支持该参数。 |
-| options12+ | [ScrollToIndexOptions](ts-container-scroll.md#scrolltoindexoptions12对象说明) | 否 | 设置滑动到指定Index的选项，如额外偏移量。  默认值：0，单位：vp。 |
+| smooth | boolean | 否 | 设置滑动到列表项在列表中的索引值时是否有动画，true表示有动画，false表示没有动画。不传入时默认无动画。  默认值：false。 |
+| align | [ScrollAlign](ts-container-scroll.md#scrollalign10枚举说明) | 否 | 指定滑动到的元素与当前容器的对齐方式，可根据期望item首部、尾部或居中显示选择对应对齐方式。  默认值：List为ScrollAlign.START，Grid为ScrollAlign.AUTO，WaterFlow为ScrollAlign.START。  **说明：**  仅List、Grid、WaterFlow组件支持该参数。 |
+| options12+ | [ScrollToIndexOptions](ts-container-scroll.md#scrolltoindexoptions12对象说明) | 否 | 设置滑动到指定Index的选项，包含extraOffset字段，用于指定滚动后的额外偏移量。  不传入时无额外偏移量。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ### scrollBy9+
-
-PhonePC/2in1TabletTVWearable
 
 scrollBy(dx: Length, dy: Length)
 
 滑动指定距离。
 
-说明
+**说明** 
 
-支持ArcList、Scroll、List、Grid、WaterFlow组件。
+* 支持ArcList、Scroll、List、Grid、WaterFlow组件。
+* 各组件行为存在差异：
+
+  + [ArcList](ts-container-arclist.md)和[List](ts-container-list.md)组件会对所有经过的item进行加载和布局。
+  + Grid组件和[SLIDING\_WINDOW](ts-container-waterflow.md#waterflowlayoutmode12枚举说明)模式的WaterFlow组件在跳转距离较大（大于2倍组件主轴高度）时，会直接估算出要显示的item。跳转指一帧滑动。
+  + [ALWAYS\_TOP\_DOWN](ts-container-waterflow.md#waterflowlayoutmode12枚举说明)模式的WaterFlow组件向后跳转（即dx或dy为正值时）会加载和布局所有经过的item，向前跳转（即dx或dy为负值时）会直接跳转到对应位置。跳转指一帧滑动。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -1073,17 +1044,17 @@ scrollBy(dx: Length, dy: Length)
 
 ### isAtEnd10+
 
-PhonePC/2in1TabletTVWearable
-
 isAtEnd(): boolean
 
 查询组件是否滚动到底部。
 
-说明
+**说明** 
 
 支持ArcList、Scroll、List、Grid、WaterFlow组件。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1095,17 +1066,17 @@ isAtEnd(): boolean
 
 ### getItemRect11+
 
-PhonePC/2in1TabletTVWearable
-
 getItemRect(index: number): RectResult
 
 获取子组件的大小及相对容器组件的位置。
 
-说明
+**说明** 
 
 支持ArcList、Scroll、List、Grid、WaterFlow组件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1115,7 +1086,7 @@ getItemRect(index: number): RectResult
 | --- | --- | --- | --- |
 | index | number | 是 | 子组件的索引值。 |
 
-说明
+**说明** 
 
 * index必须是当前显示区域显示的子组件的索引值，否则视为非法值。
 * 非法值返回的大小和位置均为0。
@@ -1137,17 +1108,17 @@ getItemRect(index: number): RectResult
 
 ### getItemIndex14+
 
-PhonePC/2in1TabletTVWearable
-
 getItemIndex(x: number, y: number): number
 
 通过坐标获取子组件的索引。
 
-说明
+**说明** 
 
 支持List、Grid、WaterFlow组件。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1158,15 +1129,15 @@ getItemIndex(x: number, y: number): number
 | x | number | 是 | x轴坐标，单位为vp。 |
 | y | number | 是 | y轴坐标，单位为vp。 |
 
-说明
+**说明** 
 
-非法值返回的索引为-1。
+坐标未命中子组件时，返回-1。
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回子组件的索引。 |
+| number | 返回坐标命中的子组件索引。坐标未命中子组件时，返回-1。 |
 
 **错误码**：
 
@@ -1179,16 +1150,14 @@ getItemIndex(x: number, y: number): number
 
 ### contentSize22+
 
-PhonePC/2in1TabletTVWearable
-
 contentSize(): SizeResult
 
 获取滚动组件内容总大小。
 
-说明
+**说明** 
 
 * Grid、List、WaterFlow和Scroll组件主轴方向内容大小为所有子组件布局后的总大小，交叉轴方向内容大小为组件自身交叉轴方向大小减去padding和border后的大小。
-* Grid、List、WaterFlow组件有懒加载机制，该接口依赖已布局的子节点进行估算。如果组件内容没有布局完成且子组件高度不一致，估算结果可能会有误差，需要开发者去适配，比如List组件可以通过childrenMainSize属性解决估算不准问题。
+* Grid、List、WaterFlow组件有懒加载机制，该接口依赖已布局的子节点进行估算。如果组件内容没有布局完成且子组件高度不一致，估算结果可能会有误差，开发者需要适配。例如，List组件可以通过childrenMainSize属性解决估算不准问题。
 * 如果应用动态增删子节点，则需要应用动态获取内容总大小，来保证接口获取结果的即时性。
 * 当Scroll组件设置scrollable为ScrollDirection.FREE自由滚动模式时，获取到的内容总大小为子组件缩放后的总大小。
 * 当Scroll组件设置scrollable为ScrollDirection.None不可滚动时，获取到的内容总大小为0。
@@ -1196,13 +1165,15 @@ contentSize(): SizeResult
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [SizeResult](ts-custom-component-layout.md#sizeresult10) | 滚动组件内容总大小，包括内容宽度和高度。  单位：vp |
+| [SizeResult](ts-custom-component-layout.md#sizeresult10) | 滚动组件内容总大小。主轴方向内容大小为所有子组件布局后的总大小，交叉轴方向内容大小为组件自身交叉轴方向大小减去padding和border后的大小。  单位：vp |
 
 **错误码**：
 
@@ -1212,28 +1183,48 @@ contentSize(): SizeResult
 | --- | --- |
 | 100004 | Controller not bound to a component. |
 
-## OffsetResult11+对象说明
+### getFrameNode
 
-PhonePC/2in1TabletTVWearable
+getFrameNode(): FrameNode | undefined
+
+获取与当前Scroller绑定的FrameNode。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [FrameNode](js-apis-arkui-framenode.md) | undefined | 当Scroller已绑定到Scroll、List、Grid、WaterFlow等滚动类组件时，返回对应组件的FrameNode；如果Scroller未绑定组件，则返回undefined。 |
+
+## OffsetResult11+对象说明
 
 滑动偏移量对象。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| xOffset | number | 否 | 否 | 水平滑动偏移。  返回值单位为vp。 |
-| yOffset | number | 否 | 否 | 竖直滑动偏移。  返回值单位为vp。 |
+| xOffset | number | 否 | 否 | 水平滑动偏移。  单位：vp。 |
+| yOffset | number | 否 | 否 | 竖直滑动偏移。  单位：vp。 |
 
 ## ScrollAnimationOptions12+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 自定义滚动动效的参数选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1245,11 +1236,11 @@ PhonePC/2in1TabletTVWearable
 
 ## ScrollAlign10+枚举说明
 
-PhonePC/2in1TabletTVWearable
-
 对齐方式枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1262,11 +1253,11 @@ PhonePC/2in1TabletTVWearable
 
 ## ScrollToIndexOptions12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 滑动到指定Index的参数选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1276,11 +1267,11 @@ PhonePC/2in1TabletTVWearable
 
 ## ScrollPageOptions14+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 翻页模式的参数选项。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1291,57 +1282,55 @@ PhonePC/2in1TabletTVWearable
 
 ## OffsetOptions12+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 初始滚动偏移量的参数选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| xOffset | [Dimension](ts-types.md#dimension10) | 否 | 是 | 水平滚动偏移。  默认值：0 |
-| yOffset | [Dimension](ts-types.md#dimension10) | 否 | 是 | 垂直滚动偏移。  默认值：0 |
+| xOffset | [Dimension](ts-types.md#dimension10) | 否 | 是 | 水平滚动偏移。  默认值：0  参数类型为number时单位为vp。 |
+| yOffset | [Dimension](ts-types.md#dimension10) | 否 | 是 | 垂直滚动偏移。  默认值：0  参数类型为number时单位为vp。 |
 
 ## ScrollEdgeOptions12+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 滚动到边缘位置的参数选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| velocity | number | 否 | 是 | 设置滚动到容器边缘的固定速度。如果设置小于等于0的值，参数不生效。  默认值：0  单位： vp/s |
+| velocity | number | 否 | 是 | 设置滚动到容器边缘的固定速度。未设置或设置小于等于0的值时，固定速度设置不生效。  默认值：0  单位：vp/s |
 
 ## ScrollOptions18+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 滚动到指定位置的参数选项。
 
-说明
+**说明** 
 
 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| xOffset10+ | number | string | 否 | 否 | 水平滚动总偏移量。  **说明：**  该参数值不支持设置百分比。  仅滚动轴为x轴时生效。  取值范围：当值小于0时，不带动画的滚动，按0处理。带动画的滚动，默认滚动到起始位置后停止，可通过设置animation参数，使滚动在越界时启动回弹动画。  参数类型为number时单位为vp。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| yOffset10+ | number | string | 否 | 否 | 垂直滚动总偏移量。  **说明：**  该参数值不支持设置百分比。  仅滚动轴为y轴时生效。  取值范围：当值小于0时，不带动画的滚动，按0处理。带动画的滚动，默认滚动到起始位置后停止，可通过设置animation参数，使滚动在越界时启动回弹动画。  参数类型为number时单位为vp。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| animation10+ | [ScrollAnimationOptions](ts-container-scroll.md#scrollanimationoptions12对象说明) | boolean | 否 | 是 | 动画配置。  - ScrollAnimationOptions: 自定义滚动动效。  - boolean: 使能默认弹簧动效。  默认值：  ScrollAnimationOptions: { duration: 1000, curve: Curve.Ease, canOverScroll: false }  boolean: false  **说明：**  当前List、Scroll、Grid、WaterFlow均支持boolean类型和ICurve曲线。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| xOffset10+ | number | string | 否 | 否 | 水平滚动总偏移量。  **说明：**  不支持设置百分比。  仅滚动轴为x轴时生效。  取值范围：当值小于0时，不带动画的滚动，按0处理。带动画的滚动，默认滚动到起始位置后停止，可通过设置animation参数，使滚动在越界时启动回弹动画。  参数类型为number时单位为vp。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| yOffset10+ | number | string | 否 | 否 | 垂直滚动总偏移量。  **说明：**  不支持设置百分比。  仅滚动轴为y轴时生效。  取值范围：当值小于0时，不带动画的滚动，按0处理。带动画的滚动，默认滚动到起始位置后停止，可通过设置animation参数，使滚动在越界时启动回弹动画。  参数类型为number时单位为vp。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| animation10+ | [ScrollAnimationOptions](ts-container-scroll.md#scrollanimationoptions12对象说明) | boolean | 否 | 是 | 动画配置。  - ScrollAnimationOptions：自定义滚动动效。  - boolean：使能默认弹簧动效。  默认值：  ScrollAnimationOptions：{ duration: 1000, curve: Curve.Ease, canOverScroll: false }  boolean：false  **说明：**  当前List、Scroll、Grid、WaterFlow均支持boolean类型和ICurve曲线。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | canOverScroll20+ | boolean | 否 | 是 | 滚动目标位置是否可以超出边界停留。仅当组件的edgeEffect设置为EdgeEffect.Spring时，滚动能够越界停留。  设置为true时滚动可以在过界后停留，设置为false时滚动无法在过界后停留。  默认值：false  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 
 ## UIScrollEvent19+
-
-PhonePC/2in1TabletTVWearable
 
 frameNode中[getEvent('Scroll')](js-apis-arkui-framenode.md#geteventscroll19)方法的返回值，可用于给Scroll节点设置滚动事件。
 
@@ -1349,15 +1338,15 @@ UIScrollEvent继承于[UIScrollableCommonEvent](ts-container-scrollable-common.m
 
 ### setOnWillScroll19+
 
-PhonePC/2in1TabletTVWearable
-
 setOnWillScroll(callback: ScrollOnWillScrollCallback | undefined): void
 
-设置[onWillScroll](ts-container-scroll.md#onwillscroll12)事件的回调。
+[onWillScroll](ts-container-scroll.md#onwillscroll12)事件的回调。
 
 方法入参为undefined时，会重置事件回调。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1369,15 +1358,15 @@ setOnWillScroll(callback: ScrollOnWillScrollCallback | undefined): void
 
 ### setOnDidScroll19+
 
-PhonePC/2in1TabletTVWearable
-
 setOnDidScroll(callback: ScrollOnScrollCallback | undefined): void
 
-设置[onDidScroll](ts-container-scroll.md#ondidscroll12)事件的回调。
+[onDidScroll](ts-container-scroll.md#ondidscroll12)事件的回调。
 
 方法入参为undefined时，会重置事件回调。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1389,733 +1378,752 @@ setOnDidScroll(callback: ScrollOnScrollCallback | undefined): void
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置scroller控制器）
 
 该示例展示了Scroll组件部分属性和scroller控制器的使用。
 
+```ts
+// xxx.ets
+import { curves } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct ScrollExample {
+  scroller: Scroller = new Scroller();
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      Scroll(this.scroller) {
+        Column() {
+          ForEach(this.arr, (item: number) => {
+            Text(item.toString())
+              .width('90%')
+              .height(150)
+              .backgroundColor(0xFFFFFF)
+              .borderRadius(15)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .margin({ top: 10 })
+          }, (item: number) => item.toString())
+        }.width('100%')
+      }
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
+      .friction(0.6)
+      .edgeEffect(EdgeEffect.None)
+      .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState) => {
+        console.info(`onWillScroll xOffset = ${xOffset}, yOffset = ${yOffset}, scrollState = ${scrollState}`);
+      })
+      .onScrollEdge((side: Edge) => {
+        console.info('To the edge');
+      })
+      .onScrollStop(() => {
+        console.info('Scroll Stop');
+      })
+
+      Button('scroll 150')
+        .height('5%')
+        .onClick(() => { // 下滑150.0vp
+          this.scroller.scrollBy(0, 150);
+        })
+        .margin({ top: 10, left: 20 })
+      Button('scroll 100')
+        .height('5%')
+        .onClick(() => { // 点击后滑动到指定位置，即下滑100.0vp的距离
+          const yOffset: number = this.scroller.currentOffset().yOffset;
+          this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 100 });
+        })
+        .margin({ top: 60, left: 20 })
+      Button('scroll 100')
+        .height('5%')
+        .onClick(() => { // 点击后滑动到指定位置，即下滑100.0vp的距离，滑动过程配置有动画
+          let curve = curves.interpolatingSpring(10, 1, 228, 30); // 创建一个弹簧曲线
+          const yOffset: number = this.scroller.currentOffset().yOffset;
+          this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 100, animation: { duration: 1000, curve: curve } });
+        })
+        .margin({ top: 110, left: 20 })
+      Button('back top')
+        .height('5%')
+        .onClick(() => { // 点击后回到顶部
+          this.scroller.scrollEdge(Edge.Top);
+        })
+        .margin({ top: 160, left: 20 })
+      Button('next page')
+        .height('5%')
+        .onClick(() => { // 点击后滑到下一页
+          this.scroller.scrollPage({ next: true ,animation: true });
+        })
+        .margin({ top: 210, left: 20 })
+      Button('fling -3000')
+        .height('5%')
+        .onClick(() => { // 点击后触发初始速度为-3000vp/s的惯性滚动
+          try {
+            this.scroller.fling(-3000);
+          } catch (error) {
+            let err: BusinessError = error as BusinessError;
+            console.error(`Failed to execute fling scroll. Code: ${err.code}, message: ${err.message}`);
+          }
+        })
+        .margin({ top: 260, left: 20 })
+      Button('scroll to bottom 700')
+        .height('5%')
+        .onClick(() => { // 点击后滑到下边缘，速度值是700vp/s
+          this.scroller.scrollEdge(Edge.Bottom, { velocity: 700 });
+        })
+        .margin({ top: 310, left: 20 })
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+  }
+}
 ```
-1. // xxx.ets
-2. import { curves } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct ScrollExample {
-7. scroller: Scroller = new Scroller();
-8. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-10. build() {
-11. Stack({ alignContent: Alignment.TopStart }) {
-12. Scroll(this.scroller) {
-13. Column() {
-14. ForEach(this.arr, (item: number) => {
-15. Text(item.toString())
-16. .width('90%')
-17. .height(150)
-18. .backgroundColor(0xFFFFFF)
-19. .borderRadius(15)
-20. .fontSize(16)
-21. .textAlign(TextAlign.Center)
-22. .margin({ top: 10 })
-23. }, (item: number) => item.toString())
-24. }.width('100%')
-25. }
-26. .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
-27. .scrollBar(BarState.On) // 滚动条常驻显示
-28. .scrollBarColor(Color.Gray) // 滚动条颜色
-29. .scrollBarWidth(10) // 滚动条宽度
-30. .friction(0.6)
-31. .edgeEffect(EdgeEffect.None)
-32. .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState) => {
-33. console.info(xOffset + ' ' + yOffset);
-34. })
-35. .onScrollEdge((side: Edge) => {
-36. console.info('To the edge');
-37. })
-38. .onScrollStop(() => {
-39. console.info('Scroll Stop');
-40. })
-
-42. Button('scroll 150')
-43. .height('5%')
-44. .onClick(() => { // 点击后下滑指定距离150.0vp
-45. this.scroller.scrollBy(0, 150);
-46. })
-47. .margin({ top: 10, left: 20 })
-48. Button('scroll 100')
-49. .height('5%')
-50. .onClick(() => { // 点击后滑动到指定位置，即下滑100.0vp的距离
-51. const yOffset: number = this.scroller.currentOffset().yOffset;
-52. this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 100 });
-53. })
-54. .margin({ top: 60, left: 20 })
-55. Button('scroll 100')
-56. .height('5%')
-57. .onClick(() => { // 点击后滑动到指定位置，即下滑100.0vp的距离，滑动过程配置有动画
-58. let curve = curves.interpolatingSpring(10, 1, 228, 30); // 创建一个弹簧曲线
-59. const yOffset: number = this.scroller.currentOffset().yOffset;
-60. this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 100, animation: { duration: 1000, curve: curve } });
-61. })
-62. .margin({ top: 110, left: 20 })
-63. Button('back top')
-64. .height('5%')
-65. .onClick(() => { // 点击后回到顶部
-66. this.scroller.scrollEdge(Edge.Top);
-67. })
-68. .margin({ top: 160, left: 20 })
-69. Button('next page')
-70. .height('5%')
-71. .onClick(() => { // 点击后滑到下一页
-72. this.scroller.scrollPage({ next: true ,animation: true });
-73. })
-74. .margin({ top: 210, left: 20 })
-75. Button('fling -3000')
-76. .height('5%')
-77. .onClick(() => { // 点击后触发初始速度为-3000vp/s的惯性滚动
-78. this.scroller.fling(-3000);
-79. })
-80. .margin({ top: 260, left: 20 })
-81. Button('scroll to bottom 700')
-82. .height('5%')
-83. .onClick(() => { // 点击后滑到下边缘，速度值是700vp/s
-84. this.scroller.scrollEdge(Edge.Bottom, { velocity: 700 });
-85. })
-86. .margin({ top: 310, left: 20 })
-87. }.width('100%').height('100%').backgroundColor(0xDCDCDC)
-88. }
-89. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/8AIB_Zg5TyihcRP8n9NBMQ/zh-cn_image_0000002589326023.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/CUXOY837Sju2hkXgoGvUWA/zh-cn_image_0000002736314889.gif)
 
 ### 示例2（嵌套滚动实现方式一）
 
 该示例使用onScrollFrameBegin事件实现了内层List组件和外层Scroll组件的嵌套滚动。
 
+```ts
+import { LengthMetrics } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct NestedScroll {
+  @State listPosition: number = 0; // 0代表滚动到List顶部，1代表中间值，2代表滚动到List底部。
+  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  private scrollerForScroll: Scroller = new Scroller();
+  private scrollerForList: Scroller = new Scroller();
+
+  build() {
+    Flex() {
+      Scroll(this.scrollerForScroll) {
+        Column() {
+          Text('Scroll Area')
+            .width('100%')
+            .height('40%')
+            .backgroundColor(0X330000FF)
+            .fontSize(16)
+            .textAlign(TextAlign.Center)
+            .onClick(() => {
+              this.scrollerForList.scrollToIndex(5, false, ScrollAlign.START, { extraOffset: LengthMetrics.vp(5) });
+            })
+
+          List({ space: 20, scroller: this.scrollerForList }) {
+            ForEach(this.arr, (item: number) => {
+              ListItem() {
+                Text('ListItem' + item)
+                  .width('100%')
+                  .height('100%')
+                  .borderRadius(15)
+                  .fontSize(16)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(Color.White)
+              }.width('100%').height(100)
+            }, (item: number) => item.toString())
+          }
+          .width('100%')
+          .height('50%')
+          .edgeEffect(EdgeEffect.None)
+          .friction(0.6)
+          .onReachStart(() => {
+            this.listPosition = 0;
+          })
+          .onReachEnd(() => {
+            this.listPosition = 2;
+          })
+          .onScrollFrameBegin((offset: number) => {
+            if ((this.listPosition == 0 && offset <= 0) || (this.listPosition == 2 && offset >= 0)) {
+              this.scrollerForScroll.scrollBy(0, offset);
+              return { offsetRemain: 0 };
+            }
+            this.listPosition = 1;
+            return { offsetRemain: offset };
+          })
+
+          Text('Scroll Area')
+            .width('100%')
+            .height('40%')
+            .backgroundColor(0X330000FF)
+            .fontSize(16)
+            .textAlign(TextAlign.Center)
+        }
+      }
+      .width('100%').height('100%')
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding(20)
+  }
+}
 ```
-1. import { LengthMetrics } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct NestedScroll {
-6. @State listPosition: number = 0; // 0代表滚动到List顶部，1代表中间值，2代表滚动到List底部。
-7. private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-8. private scrollerForScroll: Scroller = new Scroller();
-9. private scrollerForList: Scroller = new Scroller();
-
-11. build() {
-12. Flex() {
-13. Scroll(this.scrollerForScroll) {
-14. Column() {
-15. Text('Scroll Area')
-16. .width('100%')
-17. .height('40%')
-18. .backgroundColor(0X330000FF)
-19. .fontSize(16)
-20. .textAlign(TextAlign.Center)
-21. .onClick(() => {
-22. this.scrollerForList.scrollToIndex(5, false, ScrollAlign.START, { extraOffset: LengthMetrics.vp(5) });
-23. })
-
-25. List({ space: 20, scroller: this.scrollerForList }) {
-26. ForEach(this.arr, (item: number) => {
-27. ListItem() {
-28. Text('ListItem' + item)
-29. .width('100%')
-30. .height('100%')
-31. .borderRadius(15)
-32. .fontSize(16)
-33. .textAlign(TextAlign.Center)
-34. .backgroundColor(Color.White)
-35. }.width('100%').height(100)
-36. }, (item: string) => item)
-37. }
-38. .width('100%')
-39. .height('50%')
-40. .edgeEffect(EdgeEffect.None)
-41. .friction(0.6)
-42. .onReachStart(() => {
-43. this.listPosition = 0;
-44. })
-45. .onReachEnd(() => {
-46. this.listPosition = 2;
-47. })
-48. .onScrollFrameBegin((offset: number) => {
-49. if ((this.listPosition == 0 && offset <= 0) || (this.listPosition == 2 && offset >= 0)) {
-50. this.scrollerForScroll.scrollBy(0, offset);
-51. return { offsetRemain: 0 };
-52. }
-53. this.listPosition = 1;
-54. return { offsetRemain: offset };
-55. })
-
-57. Text('Scroll Area')
-58. .width('100%')
-59. .height('40%')
-60. .backgroundColor(0X330000FF)
-61. .fontSize(16)
-62. .textAlign(TextAlign.Center)
-63. }
-64. }
-65. .width('100%').height('100%')
-66. }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding(20)
-67. }
-68. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/_vkyLHL1ReuuazhsT0So8w/zh-cn_image_0000002589245965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/14-y3fboTVSs-EjIE6k3UQ/zh-cn_image_0000002706675846.gif)
 
 ### 示例3（嵌套滚动实现方式二）
 
 该示例使用[nestedScroll](ts-container-scroll.md#nestedscroll10)属性实现了内层List组件和外层Scroll组件的嵌套滚动。
 
+```ts
+@Entry
+@Component
+struct StickyNestedScroll {
+  @State arr: number[] = [];
+
+  @Styles
+  listCard() {
+    .backgroundColor(Color.White)
+    .height(72)
+    .width('100%')
+    .borderRadius(12)
+  }
+
+  build() {
+    Scroll() {
+      Column() {
+        Text('Scroll Area')
+          .width('100%')
+          .height('40%')
+          .backgroundColor('#0080DC')
+          .textAlign(TextAlign.Center)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            List({ space: 10 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('item' + item)
+                    .fontSize(16)
+                }.listCard()
+              }, (item: number) => item.toString())
+            }.width('100%')
+            .edgeEffect(EdgeEffect.Spring)
+            .nestedScroll({
+              scrollForward: NestedScrollMode.PARENT_FIRST,
+              scrollBackward: NestedScrollMode.SELF_FIRST
+            })
+          }.tabBar('Tab1')
+
+          TabContent() {
+          }.tabBar('Tab2')
+        }
+        .vertical(false)
+        .height('100%')
+      }.width('100%')
+    }
+    .edgeEffect(EdgeEffect.Spring)
+    .friction(0.6)
+    .backgroundColor('#DCDCDC')
+    .scrollBar(BarState.Off)
+    .width('100%')
+    .height('100%')
+  }
+
+  aboutToAppear() {
+    for (let i = 0; i < 30; i++) {
+      this.arr.push(i);
+    }
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct StickyNestedScroll {
-4. @State arr: number[] = [];
 
-6. @Styles
-7. listCard() {
-8. .backgroundColor(Color.White)
-9. .height(72)
-10. .width('100%')
-11. .borderRadius(12)
-12. }
-
-14. build() {
-15. Scroll() {
-16. Column() {
-17. Text('Scroll Area')
-18. .width('100%')
-19. .height('40%')
-20. .backgroundColor('#0080DC')
-21. .textAlign(TextAlign.Center)
-22. Tabs({ barPosition: BarPosition.Start }) {
-23. TabContent() {
-24. List({ space: 10 }) {
-25. ForEach(this.arr, (item: number) => {
-26. ListItem() {
-27. Text('item' + item)
-28. .fontSize(16)
-29. }.listCard()
-30. }, (item: number) => item.toString())
-31. }.width('100%')
-32. .edgeEffect(EdgeEffect.Spring)
-33. .nestedScroll({
-34. scrollForward: NestedScrollMode.PARENT_FIRST,
-35. scrollBackward: NestedScrollMode.SELF_FIRST
-36. })
-37. }.tabBar('Tab1')
-
-39. TabContent() {
-40. }.tabBar('Tab2')
-41. }
-42. .vertical(false)
-43. .height('100%')
-44. }.width('100%')
-45. }
-46. .edgeEffect(EdgeEffect.Spring)
-47. .friction(0.6)
-48. .backgroundColor('#DCDCDC')
-49. .scrollBar(BarState.Off)
-50. .width('100%')
-51. .height('100%')
-52. }
-
-54. aboutToAppear() {
-55. for (let i = 0; i < 30; i++) {
-56. this.arr.push(i);
-57. }
-58. }
-59. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/iAmw-V0bRhSprjBleuBIiw/zh-cn_image_0000002558766156.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/DsA7nyCyTJ228Dp8Go1oKw/zh-cn_image_0000002736434933.gif)
 
 ### 示例4（嵌套滚动父组件向子组件传递滚动）
 
 该示例使用[enableScrollInteraction](ts-container-scroll.md#enablescrollinteraction10)属性和[onScrollFrameBegin](ts-container-scroll.md#onscrollframebegin9)事件实现了父组件向子组件传递滚动。
 
+```ts
+@Entry
+@Component
+struct NestedScroll {
+  private headerHeight: number = 0;
+  private arr: number[] = [];
+  private scrollerForParent: Scroller = new Scroller();
+  private scrollerForChild: Scroller = new Scroller();
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      this.arr.push(i);
+    }
+  }
+
+  build() {
+    Scroll(this.scrollerForParent) {
+      Column() {
+        Text('Scroll Area')
+          .width('100%')
+          .height('40%')
+          .backgroundColor(0X330000FF)
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+          .onClick(() => {
+            this.scrollerForChild.scrollToIndex(5);
+          })
+          .onSizeChange((oldValue: SizeOptions, newValue: SizeOptions) => {
+            this.headerHeight = newValue.height! as number;
+          })
+        List({ space: 20, scroller: this.scrollerForChild }) {
+          ForEach(this.arr, (item: number) => {
+            ListItem() {
+              Text('ListItem' + item)
+                .width('100%')
+                .height('100%')
+                .borderRadius(15)
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .backgroundColor(Color.White)
+            }.width('100%').height(100)
+          }, (item: number) => item.toString())
+        }
+        .width('100%')
+        .height('100%')
+        .edgeEffect(EdgeEffect.None)
+        .scrollBar(BarState.Off)
+        .enableScrollInteraction(false)
+
+        Text('Scroll Area')
+          .width('100%')
+          .height('40%')
+          .backgroundColor(0X330000FF)
+          .fontSize(16)
+          .textAlign(TextAlign.Center)
+      }
+    }
+    .scrollBar(BarState.Off)
+    .edgeEffect(EdgeEffect.Spring)
+    .onScrollFrameBegin((offset: number, state: ScrollState) => {
+      let retOffset = offset;
+      let currOffset = this.scrollerForParent.currentOffset().yOffset;
+      let newOffset = currOffset + offset;
+      if (offset > 0) {
+        if (this.scrollerForChild.isAtEnd()) {
+          return { offsetRemain: offset };
+        }
+        if (newOffset > this.headerHeight) {
+          retOffset = this.headerHeight - currOffset;
+        }
+        this.scrollerForChild.scrollBy(0, offset - retOffset);
+      } else {
+        if (this.scrollerForChild.currentOffset().yOffset <= 0) {
+          return { offsetRemain: offset };
+        }
+        if (newOffset < this.headerHeight) {
+          retOffset = this.headerHeight - currOffset;
+        }
+        this.scrollerForChild.scrollBy(0, offset - retOffset);
+      }
+      return { offsetRemain: retOffset };
+    })
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xDCDCDC)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct NestedScroll {
-4. private headerHeight: number = 0;
-5. private arr: number[] = [];
-6. private scrollerForParent: Scroller = new Scroller();
-7. private scrollerForChild: Scroller = new Scroller();
 
-9. aboutToAppear(): void {
-10. for (let i = 0; i < 10; i++) {
-11. this.arr.push(i);
-12. }
-13. }
-
-15. build() {
-16. Scroll(this.scrollerForParent) {
-17. Column() {
-18. Text('Scroll Area')
-19. .width('100%')
-20. .height('40%')
-21. .backgroundColor(0X330000FF)
-22. .fontSize(16)
-23. .textAlign(TextAlign.Center)
-24. .onClick(() => {
-25. this.scrollerForChild.scrollToIndex(5);
-26. })
-27. .onSizeChange((oldValue: SizeOptions, newValue: SizeOptions) => {
-28. this.headerHeight = newValue.height! as number;
-29. })
-30. List({ space: 20, scroller: this.scrollerForChild }) {
-31. ForEach(this.arr, (item: number) => {
-32. ListItem() {
-33. Text('ListItem' + item)
-34. .width('100%')
-35. .height('100%')
-36. .borderRadius(15)
-37. .fontSize(16)
-38. .textAlign(TextAlign.Center)
-39. .backgroundColor(Color.White)
-40. }.width('100%').height(100)
-41. }, (item: number) => item.toString())
-42. }
-43. .width('100%')
-44. .height('100%')
-45. .edgeEffect(EdgeEffect.None)
-46. .scrollBar(BarState.Off)
-47. .enableScrollInteraction(false)
-
-49. Text('Scroll Area')
-50. .width('100%')
-51. .height('40%')
-52. .backgroundColor(0X330000FF)
-53. .fontSize(16)
-54. .textAlign(TextAlign.Center)
-55. }
-56. }
-57. .scrollBar(BarState.Off)
-58. .edgeEffect(EdgeEffect.Spring)
-59. .onScrollFrameBegin((offset: number, state: ScrollState) => {
-60. let retOffset = offset;
-61. let currOffset = this.scrollerForParent.currentOffset().yOffset;
-62. let newOffset = currOffset + offset;
-63. if (offset > 0) {
-64. if (this.scrollerForChild.isAtEnd()) {
-65. return { offsetRemain: offset };
-66. }
-67. if (newOffset > this.headerHeight) {
-68. retOffset = this.headerHeight - currOffset;
-69. }
-70. this.scrollerForChild.scrollBy(0, offset - retOffset);
-71. } else {
-72. if (this.scrollerForChild.currentOffset().yOffset <= 0) {
-73. return { offsetRemain: offset };
-74. }
-75. if (newOffset < this.headerHeight) {
-76. retOffset = this.headerHeight - currOffset;
-77. }
-78. this.scrollerForChild.scrollBy(0, offset - retOffset);
-79. }
-80. return { offsetRemain: retOffset };
-81. })
-82. .width('100%')
-83. .height('100%')
-84. .backgroundColor(0xDCDCDC)
-85. }
-86. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/cW6xwS0xRseg9i4VdKHxgg/zh-cn_image_0000002558606498.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/V1CnciScTHGkXKl16ZkXpQ/zh-cn_image_0000002706835786.gif)
 
 ### 示例5（设置限位滚动）
 
 该示例实现了Scroll组件的限位滚动。
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. scroller: Scroller = new Scroller();
-5. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-6. build() {
-7. Scroll(this.scroller) {
-8. Column() {
-9. ForEach(this.arr, (item: number) => {
-10. Text(item.toString())
-11. .width('90%')
-12. .height(200)
-13. .backgroundColor(0xFFFFFF)
-14. .borderWidth(1)
-15. .borderColor(Color.Black)
-16. .borderRadius(15)
-17. .fontSize(16)
-18. .textAlign(TextAlign.Center)
-19. }, (item: number) => item.toString())
-20. }.width('100%').backgroundColor(0xDCDCDC)
-21. }
-22. .backgroundColor(Color.Yellow)
-23. .height('100%')
-24. .edgeEffect(EdgeEffect.Spring)
-25. .scrollSnap({snapAlign:ScrollSnapAlign.START, snapPagination:400, enableSnapToStart:true, enableSnapToEnd:true})
-26. }
-27. }
+```ts
+@Entry
+@Component
+struct Index {
+  scroller: Scroller = new Scroller();
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  build() {
+    Scroll(this.scroller) {
+      Column() {
+        ForEach(this.arr, (item: number) => {
+          Text(item.toString())
+            .width('90%')
+            .height(200)
+            .backgroundColor(0xFFFFFF)
+            .borderWidth(1)
+            .borderColor(Color.Black)
+            .borderRadius(15)
+            .fontSize(16)
+            .textAlign(TextAlign.Center)
+        }, (item: number) => item.toString())
+      }.width('100%').backgroundColor(0xDCDCDC)
+    }
+    .backgroundColor(Color.Yellow)
+    .height('100%')
+    .edgeEffect(EdgeEffect.Spring)
+    .scrollSnap({snapAlign:ScrollSnapAlign.START, snapPagination:400, enableSnapToStart:true, enableSnapToEnd:true})
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/eG8TgvRiSPCE5KxvNV9GAQ/zh-cn_image_0000002589326025.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ZgINyX3uQJKMyYcR6WLRkw/zh-cn_image_0000002736314891.gif)
 
 ### 示例6（获取子组件索引）
 
 该示例展示了如何获得List组件的子组件索引。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ListExample {
-5. private arr: number[] = [];
-6. private scroller: ListScroller = new ListScroller();
-7. @State listSpace: number = 10;
-8. @State listChildrenSize: ChildrenMainSize = new ChildrenMainSize(100);
-9. @State listIndex: number = -1;
-10. @State itemBackgroundColorArr: boolean[] = [false];
-11. aboutToAppear(){
-12. // 初始化数据源。
-13. for (let i = 0; i < 10; i++) {
-14. this.arr.push(i);
-15. }
-16. this.listChildrenSize.splice(0, 5, [100, 100, 100, 100, 100]);
-17. }
-18. build() {
-19. Column() {
-20. List({ space: this.listSpace, initialIndex: 4, scroller: this.scroller }) {
-21. ForEach(this.arr, (item: number) => {
-22. ListItem() {
-23. Text('item-' + item)
-24. .height( item < 5 ? 100 : this.listChildrenSize.childDefaultSize)
-25. .width('90%')
-26. .fontSize(16)
-27. .textAlign(TextAlign.Center)
-28. .borderRadius(10)
-29. .backgroundColor( this.itemBackgroundColorArr[item] ? 0x68B4FF: 0xFFFFFF)
-30. }
-31. }, (item: number) => item.toString())
-32. }
-33. .backgroundColor(Color.Gray)
-34. .layoutWeight(1)
-35. .scrollBar(BarState.On)
-36. .childrenMainSize(this.listChildrenSize)
-37. .alignListItem(ListItemAlign.Center)
-38. .gesture(
-39. PanGesture()
-40. .onActionUpdate((event: GestureEvent) => {
-41. if (event.fingerList[0] != undefined && event.fingerList[0].localX != undefined && event.fingerList[0].localY != undefined) {
-42. this.listIndex = this.scroller.getItemIndex(event.fingerList[0].localX, event.fingerList[0].localY);
-43. this.itemBackgroundColorArr[this.listIndex] = true;
-44. }
-45. })
-46. )
-47. .gesture(
-48. TapGesture({ count: 1 })
-49. .onAction((event: GestureEvent) => {
-50. if (event) {
-51. this.itemBackgroundColorArr.splice(0,this.itemBackgroundColorArr.length);
-52. }
-53. })
-54. )
+```ts
+// xxx.ets
+import { BusinessError } from '@kit.BasicServicesKit';
 
-56. Text('您当前位置Item索引为：'+ this.listIndex)
-57. .fontColor(Color.Red)
-58. .height(50)
-59. }
-60. }
-61. }
+@Entry
+@Component
+struct ListExample {
+  private arr: number[] = [];
+  private scroller: ListScroller = new ListScroller();
+  @State listSpace: number = 10;
+  @State listChildrenSize: ChildrenMainSize = new ChildrenMainSize(120);
+  @State listIndex: number = -1;
+  @State itemBackgroundColorArr: boolean[] = [];
+  aboutToAppear(){
+    // 初始化数据源。
+    for (let i = 0; i < 10; i++) {
+      this.arr.push(i);
+      this.itemBackgroundColorArr.push(false);
+    }
+    try {
+      this.listChildrenSize.splice(0, 5, [100, 100, 100, 100, 100]);
+    } catch (error) {
+      let err: BusinessError = error as BusinessError;
+      console.error(`Failed to splice childrenMainSize for first 5 items. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+  build() {
+    Column() {
+      List({ space: this.listSpace, initialIndex: 4, scroller: this.scroller }) {
+        ForEach(this.arr, (item: number) => {
+          ListItem() {
+            Text('item-' + item)
+              .height( item < 5 ? 100 : this.listChildrenSize.childDefaultSize)
+              .width('90%')
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .borderRadius(10)
+              .backgroundColor( this.itemBackgroundColorArr[item] ? 0x68B4FF: 0xFFFFFF)
+          }
+        }, (item: number) => item.toString())
+      }
+      .backgroundColor(Color.Gray)
+      .layoutWeight(1)
+      .scrollBar(BarState.On)
+      .childrenMainSize(this.listChildrenSize)
+      .alignListItem(ListItemAlign.Center)
+      .gesture(
+        PanGesture()
+          .onActionUpdate((event: GestureEvent) => {
+            if (event.fingerList[0] != undefined && event.fingerList[0].localX != undefined && event.fingerList[0].localY != undefined) {
+              try {
+                this.listIndex = this.scroller.getItemIndex(event.fingerList[0].localX, event.fingerList[0].localY);
+              } catch (error) {
+                let err: BusinessError = error as BusinessError;
+                console.error(`Failed to get item index from scroller. Code: ${err.code}, message: ${err.message}`);
+              }
+              if (this.listIndex >= 0 && this.listIndex < this.itemBackgroundColorArr.length) {
+                this.itemBackgroundColorArr[this.listIndex] = true;
+              }
+            }
+          })
+      )
+      .gesture(
+        TapGesture({ count: 1 })
+          .onAction((event: GestureEvent) => {
+            if (event) {
+              this.itemBackgroundColorArr = this.arr.map(() => false);
+            }
+          })
+      )
+
+      Text('您当前位置Item索引为：'+ this.listIndex)
+        .fontColor(Color.Red)
+        .height(50)
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/DgJnL6BEQX6bUffV74DmaA/zh-cn_image_0000002589245967.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/jGZJxD0tRrquR_J8RLZH6g/zh-cn_image_0000002706675848.gif)
 
 ### 示例7（设置边缘渐隐）
 
 该示例实现了Scroll组件开启边缘渐隐效果并设置边缘渐隐长度。
 
+```ts
+// xxx.ets
+import { LengthMetrics } from '@kit.ArkUI';
+@Entry
+@Component
+struct ScrollExample {
+  scroller: Scroller = new Scroller();
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      Scroll(this.scroller) {
+        Column() {
+          ForEach(this.arr, (item: number) => {
+            Text(item.toString())
+              .width('90%')
+              .height(150)
+              .backgroundColor(0xFFFFFF)
+              .borderRadius(15)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .margin({ top: 10 })
+          }, (item: number) => item.toString())
+        }.width('100%')
+      }
+      .fadingEdge(true,{fadingEdgeLength:LengthMetrics.vp(80)})
+
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+  }
+}
 ```
-1. // xxx.ets
-2. import { LengthMetrics } from '@kit.ArkUI';
-3. @Entry
-4. @Component
-5. struct ScrollExample {
-6. scroller: Scroller = new Scroller();
-7. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-9. build() {
-10. Stack({ alignContent: Alignment.TopStart }) {
-11. Scroll(this.scroller) {
-12. Column() {
-13. ForEach(this.arr, (item: number) => {
-14. Text(item.toString())
-15. .width('90%')
-16. .height(150)
-17. .backgroundColor(0xFFFFFF)
-18. .borderRadius(15)
-19. .fontSize(16)
-20. .textAlign(TextAlign.Center)
-21. .margin({ top: 10 })
-22. }, (item: string) => item)
-23. }.width('100%')
-24. }
-25. .fadingEdge(true,{fadingEdgeLength:LengthMetrics.vp(80)})
-
-29. }.width('100%').height('100%').backgroundColor(0xDCDCDC)
-30. }
-31. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/gLQ60X62RyKzbEpcLGzJWw/zh-cn_image_0000002558766158.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/1dPi3RSVQqGYS2dGWzuMmg/zh-cn_image_0000002736434935.gif)
 
 ### 示例8（单边边缘效果）
 
 该示例通过[edgeEffect](ts-container-scroll.md#edgeeffect)接口，实现了Scroll组件设置单边边缘效果。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct ScrollExample {
+  scroller: Scroller = new Scroller();
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      Scroll(this.scroller) {
+        Column() {
+          ForEach(this.arr, (item: number) => {
+            Text(item.toString())
+              .width('90%')
+              .height(150)
+              .backgroundColor(0xFFFFFF)
+              .borderRadius(15)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .margin({ top: 10 })
+          }, (item: number) => item.toString())
+        }.width('100%')
+      }
+      .edgeEffect(EdgeEffect.Spring,{alwaysEnabled:true,effectEdge:EffectEdge.START})
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct ScrollExample {
-5. scroller: Scroller = new Scroller();
-6. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-8. build() {
-9. Stack({ alignContent: Alignment.TopStart }) {
-10. Scroll(this.scroller) {
-11. Column() {
-12. ForEach(this.arr, (item: number) => {
-13. Text(item.toString())
-14. .width('90%')
-15. .height(150)
-16. .backgroundColor(0xFFFFFF)
-17. .borderRadius(15)
-18. .fontSize(16)
-19. .textAlign(TextAlign.Center)
-20. .margin({ top: 10 })
-21. }, (item: string) => item)
-22. }.width('100%')
-23. }
-24. .edgeEffect(EdgeEffect.Spring,{alwaysEnabled:true,effectEdge:EffectEdge.START})
-25. }.width('100%').height('100%').backgroundColor(0xDCDCDC)
-26. }
-27. }
-```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/98YbiP6lR7mnhjVkCOCTwg/zh-cn_image_0000002706835788.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/dpzFRdZsSU-WrTGJ-c1Bww/zh-cn_image_0000002558606500.gif)
-
-### 示例9（划动翻页效果）
+### 示例9（滑动翻页效果）
 
 该示例通过[enablePaging](ts-container-scroll.md#enablepaging11)接口，实现了Scroll组件滑动翻页效果。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct EnablePagingExample {
-5. private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```ts
+// xxx.ets
+@Entry
+@Component
+struct EnablePagingExample {
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-7. build() {
-8. Stack({ alignContent: Alignment.Center }) {
-9. Scroll() {
-10. Column() {
-11. ForEach(this.arr, (item: number) => {
-12. Text(item.toString())
-13. .width('100%')
-14. .height('100%')
-15. .borderRadius(15)
-16. .fontSize(16)
-17. .textAlign(TextAlign.Center)
-18. .backgroundColor(0xFFFFFF)
-19. }, (item: number) => item.toString())
-20. }
-21. }.width('90%').height('90%')
-22. .enablePaging(true)
-23. }.width('100%').height('100%').backgroundColor(0xDCDCDC)
-24. }
-25. }
+  build() {
+    Stack({ alignContent: Alignment.Center }) {
+      Scroll() {
+        Column() {
+          ForEach(this.arr, (item: number) => {
+            Text(item.toString())
+              .width('100%')
+              .height('100%')
+              .borderRadius(15)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .backgroundColor(0xFFFFFF)
+          }, (item: number) => item.toString())
+        }
+      }.width('90%').height('90%')
+      .enablePaging(true)
+    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/3yecczALRTGTPynmvqakbA/zh-cn_image_0000002589326027.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/qg4OaA0uRwe-S7QlNRKB9Q/zh-cn_image_0000002736314893.gif)
 
 ### 示例10（设置过界停留）
 
 该示例通过[scrollTo](ts-container-scroll.md#scrollto)接口，实现了Scroll组件设置过界停留效果。
 
+```ts
+// xxx.ets
+import { curves } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct StickyNestedScroll {
+  scroller: Scroller = new Scroller();
+
+  build() {
+    Column() {
+      Row() {
+        Button('有动画scrollTo').onClick(() => {
+          let curve = curves.interpolatingSpring(0.5, 5, 10, 15) // 创建一个弹簧曲线
+          const yOffset: number = this.scroller.currentOffset().yOffset;
+          this.scroller.scrollTo({
+            xOffset: 0,
+            yOffset: yOffset - 100,
+            animation: { duration: 1000, curve: curve, canOverScroll: true },
+            canOverScroll: true
+          })
+        }).margin({ top: 10 })
+        Button('无动画scrollTo').onClick(() => {
+          const yOffset: number = this.scroller.currentOffset().yOffset;
+          this.scroller.scrollTo({
+            xOffset: 0,
+            yOffset: yOffset - 100,
+            animation: false,
+            canOverScroll: true
+          })
+        }).margin({ top: 10, left: 20 })
+      }.margin({ bottom: 20 })
+
+      Scroll(this.scroller) {
+        Column() {
+          Text('Scroll Area')
+            .width('100%')
+            .height('100%')
+            .backgroundColor('#0080DC')
+            .textAlign(TextAlign.Center)
+        }
+        .width('100%')
+        .height('100%')
+      }
+      .scrollable(ScrollDirection.Vertical)
+      .edgeEffect(EdgeEffect.Spring) // 设置边缘效果
+      .fadingEdge(false) // 关闭边缘渐隐效果
+      .scrollBar(BarState.Auto)
+      .friction(undefined)
+      .backgroundColor('#DCDCDC')
+      .width('100%')
+      .height('50%')
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import { curves } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct StickyNestedScroll {
-7. scroller: Scroller = new Scroller;
-
-9. build() {
-10. Column() {
-11. Row() {
-12. Button('有动画scrollTo').onClick(() => {
-13. let curve = curves.interpolatingSpring(0.5, 5, 10, 15) // 创建一个弹簧曲线
-14. const yOffset: number = this.scroller.currentOffset().yOffset;
-15. this.scroller.scrollTo({
-16. xOffset: 0,
-17. yOffset: yOffset - 100,
-18. animation: { duration: 1000, curve: curve, canOverScroll: true },
-19. canOverScroll: true
-20. })
-21. }).margin({ top: 10 })
-22. Button('无动画scrollTo').onClick(() => {
-23. const yOffset: number = this.scroller.currentOffset().yOffset;
-24. this.scroller.scrollTo({
-25. xOffset: 0,
-26. yOffset: yOffset - 100,
-27. animation: false,
-28. canOverScroll: true
-29. })
-30. }).margin({ top: 10, left: 20 })
-31. }.margin({ bottom: 20 })
-
-33. Scroll(this.scroller) {
-34. Column() {
-35. Text('Scroll Area')
-36. .width('100%')
-37. .height('100%')
-38. .backgroundColor('#0080DC')
-39. .textAlign(TextAlign.Center)
-40. }
-41. .width('100%')
-42. .height('100%')
-43. }
-44. .scrollable(ScrollDirection.Vertical)
-45. .edgeEffect(EdgeEffect.Spring) // 设置边缘效果
-46. .fadingEdge(false) // 关闭边缘渐隐效果
-47. .scrollBar(BarState.Auto)
-48. .friction(undefined)
-49. .backgroundColor('#DCDCDC')
-50. .width('100%')
-51. .height('50%')
-52. }
-53. }
-54. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/G1s0RBORS-CgImowc5WN1Q/zh-cn_image_0000002589245969.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IcEmCWCBSZWfVtHBvqriUg/zh-cn_image_0000002706675850.gif)
 
 ### 示例11（自由滚动和缩放）
 
 从API version 20开始，该示例实现了Scroll组件自由滚动和缩放效果。
 
-```
-1. @Entry
-2. @Component
-3. struct ScrollZoomExample {
-4. @State currScale:number = 1;
-5. build() {
-6. Column() {
-7. Scroll() {
-8. Image($r('app.media.image1')) // 'app.media.image1'仅作示例，请替换实际图片。
-9. }
-10. .height(400)
-11. .scrollable(ScrollDirection.FREE)
-12. .minZoomScale(1)
-13. .maxZoomScale(2)
-14. .zoomScale(this.currScale!!)
-15. .enableBouncesZoom(true)
-16. .onDidZoom((scale: number) => {
-17. console.info(`onDidZoom:${scale}`);
-18. })
-19. .onZoomStart(() => {
-20. console.info('onZoomStart');
-21. })
-22. .onZoomStop(() => {
-23. console.info('onZoomStop');
-24. })
-25. }.width('100%').height('100%')
-26. }
-27. }
+```ts
+@Entry
+@Component
+struct ScrollZoomExample {
+  @State currScale:number = 1;
+  build() {
+    Column() {
+      Scroll() {
+        Image($r('app.media.image1')) // 'app.media.image1'仅作示例，请替换实际图片。
+      }
+      .height(400)
+      .scrollable(ScrollDirection.FREE)
+      .minZoomScale(1)
+      .maxZoomScale(2)
+      .zoomScale(this.currScale!!)
+      .enableBouncesZoom(true)
+      .onDidZoom((scale: number) => {
+        console.info(`onDidZoom:${scale}`);
+      })
+      .onZoomStart(() => {
+        console.info('onZoomStart');
+      })
+      .onZoomStop(() => {
+        console.info('onZoomStop');
+      })
+    }.width('100%').height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ergrV7S8THKWHcZRm50Mdw/zh-cn_image_0000002558766160.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zMIw_z9yRfCV9hRluzJoTA/zh-cn_image_0000002736434937.gif)
 
 ### 示例12（获取内容总大小）
 
 从API version 22 开始，该示例实现了获取内容总大小的功能。
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct ScrollExample1 {
+  scroller: Scroller = new Scroller();
+  private arr: number[] = []
+
+  aboutToAppear() {
+    for (let j = 0; j < 10; j++) {
+      this.arr.push(j);
+    }
+  }
+
+  @State contentWidth: number = -1;
+  @State contentHeight: number = -1;
+
+  build() {
+    Column() {
+      Text('设置scroller控制器和ForEach')
+      Row() {
+        // 点击按钮来调用contentSize函数获取内容尺寸
+        Button('GetContentSize')
+          .onClick(() => {
+            // Scroller未绑定组件时会抛异常，需要加上try catch保护
+            try {
+              // 通过调用contentSize函数获取内容尺寸的宽度值
+              this.contentWidth = this.scroller.contentSize().width;
+              // 通过调用contentSize函数获取内容尺寸的高度值
+              this.contentHeight = this.scroller.contentSize().height;
+            } catch (error) {
+              let err: BusinessError = error as BusinessError;
+              console.error(`Failed to get contentSize. Code: ${err.code}, message: ${err.message}`);
+            }
+          })
+        // 将获取到的内容尺寸信息通过文本进行呈现
+        Text('Width：' + this.contentWidth + '，Height：' + this.contentHeight)
+          .fontColor(Color.Red)
+          .height(50)
+      }
+
+      Stack({ alignContent: Alignment.TopStart }) {
+        Scroll(this.scroller) {
+          Column() {
+            ForEach(this.arr, (item: number) => {
+              Text(item.toString())
+                .width('90%')
+                .height(150)
+                .backgroundColor(0xFFFFFF)
+                .borderRadius(15)
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .margin({ top: 10 })
+            }, (item: number) => item.toString())
+          }.width('100%')
+        }
+        .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+        .scrollBar(BarState.On) // 滚动条常驻显示
+        .scrollBarColor(Color.Gray) // 滚动条颜色
+        .scrollBarWidth(10) // 滚动条宽度
+        .friction(0.6)
+        .edgeEffect(EdgeEffect.None)
+      }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+    }
+  }
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. @Entry
-4. @Component
-5. struct ScrollExample1 {
-6. scroller: Scroller = new Scroller();
-7. private arr: number[] = []
-
-9. aboutToAppear() {
-10. for (let j = 0; j < 10; j++) {
-11. this.arr.push(j);
-12. }
-13. }
-
-15. @State contentWidth: number = -1;
-16. @State contentHeight: number = -1;
-
-18. build() {
-19. Column() {
-20. Text('设置scroller控制器和ForEach')
-21. Row() {
-22. // 点击按钮来调用contentSize函数获取内容尺寸
-23. Button('GetContentSize')
-24. .onClick(() => {
-25. // Scroller未绑定组件时会抛异常，需要加上try catch保护
-26. try {
-27. // 通过调用contentSize函数获取内容尺寸的宽度值
-28. this.contentWidth = this.scroller.contentSize().width;
-29. // 通过调用contentSize函数获取内容尺寸的高度值
-30. this.contentHeight = this.scroller.contentSize().height;
-31. } catch (error) {
-32. let err: BusinessError = error as BusinessError;
-33. console.error(`Failed to get contentSize of the grid, code=${err.code}, message=${err.message}`);
-34. }
-35. })
-36. // 将获取到的内容尺寸信息通过文本进行呈现
-37. Text('Width：' + this.contentWidth + '，Height：' + this.contentHeight)
-38. .fontColor(Color.Red)
-39. .height(50)
-40. }
-
-42. Stack({ alignContent: Alignment.TopStart }) {
-43. Scroll(this.scroller) {
-44. Column() {
-45. ForEach(this.arr, (item: number) => {
-46. Text(item.toString())
-47. .width('90%')
-48. .height(150)
-49. .backgroundColor(0xFFFFFF)
-50. .borderRadius(15)
-51. .fontSize(16)
-52. .textAlign(TextAlign.Center)
-53. .margin({ top: 10 })
-54. }, (item: number) => item.toString())
-55. }.width('100%')
-56. }
-57. .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
-58. .scrollBar(BarState.On) // 滚动条常驻显示
-59. .scrollBarColor(Color.Gray) // 滚动条颜色
-60. .scrollBarWidth(10) // 滚动条宽度
-61. .friction(0.6)
-62. .edgeEffect(EdgeEffect.None)
-63. }.width('100%').height('100%').backgroundColor(0xDCDCDC)
-64. }
-65. }
-66. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/pVyMhatLQxaGMpTreI_kfQ/zh-cn_image_0000002558606502.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/HxDQuMSqRfCHQROD9kmVRQ/zh-cn_image_0000002706835790.gif)
 
 ### 示例13（设置滚动事件）
 
@@ -2123,105 +2131,105 @@ PhonePC/2in1TabletTVWearable
 
 从API version 19开始，新增UIScrollEvent接口。
 
-```
-1. import { NodeController, FrameNode, typeNode } from '@kit.ArkUI';
+```ts
+import { NodeController, FrameNode, typeNode } from '@kit.ArkUI';
 
-3. class MyNodeController extends NodeController {
-4. public rootNode: FrameNode | null = null;
+class MyNodeController extends NodeController {
+  public rootNode: FrameNode | null = null;
 
-6. makeNode(uiContext: UIContext): FrameNode | null {
-7. this.rootNode = new FrameNode(uiContext);
-8. this.rootNode.commonAttribute.width(100);
-9. return this.rootNode;
-10. }
+  makeNode(uiContext: UIContext): FrameNode | null {
+    this.rootNode = new FrameNode(uiContext);
+    this.rootNode.commonAttribute.width(100);
+    return this.rootNode;
+  }
 
-12. addCommonEvent(frameNode: FrameNode) {
-13. // 获取Scroll事件
-14. let scrollEvent: UIScrollEvent | undefined = typeNode.getEvent(frameNode, 'Scroll');
+  addCommonEvent(frameNode: FrameNode) {
+    // 获取Scroll事件
+    let scrollEvent: UIScrollEvent | undefined = typeNode.getEvent(frameNode, 'Scroll');
 
-16. // 设置OnWillScroll事件
-17. scrollEvent?.setOnWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState,
-18. scrollSource: ScrollSource) => {
-19. console.info('onWillScroll xOffset = ${xOffset}, yOffset = ${yOffset}, scrollState = ${scrollState}, scrollSource = ${scrollSource}');
-20. });
+    // 设置OnWillScroll事件
+    scrollEvent?.setOnWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState,
+      scrollSource: ScrollSource) => {
+      console.info(`onWillScroll xOffset = ${xOffset}, yOffset = ${yOffset}, scrollState = ${scrollState}, scrollSource = ${scrollSource}`);
+    });
 
-22. // 设置OnDidScroll事件
-23. scrollEvent?.setOnDidScroll((scrollOffset: number, scrollState: ScrollState) => {
-24. console.info('onDidScroll scrollOffset = ${scrollOffset}, scrollState = ${scrollState}');
-25. });
+    // 设置OnDidScroll事件
+    scrollEvent?.setOnDidScroll((xOffset: number, yOffset: number, scrollState: ScrollState) => {
+      console.info(`onDidScroll xOffset = ${xOffset}, yOffset = ${yOffset}, scrollState = ${scrollState}`);
+    });
 
-27. // 设置OnReachStart事件
-28. scrollEvent?.setOnReachStart(() => {
-29. console.info('onReachStart');
-30. });
+    // 设置OnReachStart事件
+    scrollEvent?.setOnReachStart(() => {
+      console.info('onReachStart');
+    });
 
-32. // 设置OnReachEnd事件
-33. scrollEvent?.setOnReachEnd(() => {
-34. console.info('onReachEnd');
-35. });
+    // 设置OnReachEnd事件
+    scrollEvent?.setOnReachEnd(() => {
+      console.info('onReachEnd');
+    });
 
-37. // 设置OnScrollStart事件
-38. scrollEvent?.setOnScrollStart(() => {
-39. console.info('onScrollStart');
-40. });
+    // 设置OnScrollStart事件
+    scrollEvent?.setOnScrollStart(() => {
+      console.info('onScrollStart');
+    });
 
-42. // 设置OnScrollStop事件
-43. scrollEvent?.setOnScrollStop(() => {
-44. console.info('onScrollStop');
-45. });
+    // 设置OnScrollStop事件
+    scrollEvent?.setOnScrollStop(() => {
+      console.info('onScrollStop');
+    });
 
-47. // 设置OnScrollFrameBegin事件
-48. scrollEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
-49. console.info('onScrollFrameBegin offset = ${offset}, state = ${state}');
-50. return undefined;
-51. });
-52. }
-53. }
+    // 设置OnScrollFrameBegin事件
+    scrollEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
+      console.info(`onScrollFrameBegin offset = ${offset}, state = ${state}`);
+      return undefined;
+    });
+  }
+}
 
-55. @Entry
-56. @Component
-57. struct Index {
-58. @State index: number = 0;
-59. private myNodeController: MyNodeController = new MyNodeController();
-60. @State numbers: string[] = [];
+@Entry
+@Component
+struct Index {
+  @State index: number = 0;
+  private myNodeController: MyNodeController = new MyNodeController();
+  @State numbers: string[] = [];
 
-62. aboutToAppear() {
-63. for (let i = 0; i < 30; i++) {
-64. this.numbers.push('${i+1}');
-65. }
-66. }
+  aboutToAppear() {
+    for (let i = 0; i < 30; i++) {
+      this.numbers.push(`${i + 1}`);
+    }
+  }
 
-68. build() {
-69. Column() {
-70. Button('add CommonEvent to Scroll')
-71. .onClick(() => {
-72. this.myNodeController!.addCommonEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling()!)
-73. })
-74. Scroll() {
-75. Column() {
-76. ForEach(this.numbers, (day: string, index: number) => {
-77. Column() {
-78. Text(day)
-79. .fontSize(16)
-80. .backgroundColor(0xF9CF93)
-81. .width('90%')
-82. .height(80)
-83. .textAlign(TextAlign.Center)
-84. .margin({ top: 10 })
-85. }
-86. .width('100%')
-87. .justifyContent(FlexAlign.Center)
-88. .alignItems(HorizontalAlign.Center)
-89. }, (day: string, index: number) => index.toString() + day)
-90. }
-91. }
-92. .scrollable(ScrollDirection.Vertical)
-93. .edgeEffect(EdgeEffect.Spring)
-94. .width('90%')
-95. .backgroundColor(0xFAEEE0)
-96. .height(300)
-97. NodeContainer(this.myNodeController)
-98. }
-99. }
-100. }
+  build() {
+    Column() {
+      Button('add CommonEvent to Scroll')
+        .onClick(() => {
+          this.myNodeController!.addCommonEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling()!)
+        })
+      Scroll() {
+        Column() {
+          ForEach(this.numbers, (day: string, index: number) => {
+            Column() {
+              Text(day)
+                .fontSize(16)
+                .backgroundColor(0xF9CF93)
+                .width('90%')
+                .height(80)
+                .textAlign(TextAlign.Center)
+                .margin({ top: 10 })
+            }
+            .width('100%')
+            .justifyContent(FlexAlign.Center)
+            .alignItems(HorizontalAlign.Center)
+          }, (day: string, index: number) => index.toString() + day)
+        }
+      }
+      .scrollable(ScrollDirection.Vertical)
+      .edgeEffect(EdgeEffect.Spring)
+      .width('90%')
+      .backgroundColor(0xFAEEE0)
+      .height(300)
+      NodeContainer(this.myNodeController)
+    }
+  }
+}
 ```

@@ -3,32 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: dialog
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > dialog
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:17+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8d87f6805477a8760cc0b7d725d3ebd2fa1f67541860866bf183b3433d22ad9c
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e0de5111f99400097328ff24087fbd17d8bfd69a053b1adf8c5ce1847637780d
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
-自定义弹窗容器。
+自定义对话框容器。
 
 ## 权限列表
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持单个子组件。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，支持如下属性：
 
@@ -36,31 +30,25 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | dragable7+ | boolean | false | 否 | 设置对话框是否支持拖拽。true表示支持拖拽，false表示不支持拖拽。 |
 
-说明
+**说明** 
 
 弹窗类组件不支持focusable、click-effect属性。
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 仅支持[通用样式](js-components-common-styles.md)中的width、height、margin、margin-[left | top | right | bottom]、margin-[start | end]样式。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 不支持[通用事件](js-components-common-events.md)，仅支持如下事件：
 
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
-| cancel | - | 用户点击非dialog区域触发取消弹窗时触发的事件。 |
+| cancel | - | 用户点击非对话框区域触发取消对话框时触发的事件。 |
 | show7+ | - | 对话框弹出时触发该事件。 |
 | close7+ | - | 对话框关闭时触发该事件。 |
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 不支持[通用方法](js-components-common-methods.md)，仅支持如下方法。
 
@@ -69,113 +57,111 @@ PhonePC/2in1TabletTVWearable
 | show | - | 弹出对话框。 |
 | close | - | 关闭对话框。 |
 
-说明
+**说明** 
 
 dialog属性、样式均不支持动态更新。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="doc-page">
-3. <div class="btn-div">
-4. <button type="capsule" value="Click here" class="btn" onclick="showDialog"></button>
-5. </div>
-6. <dialog id="simpledialog" dragable="true" class="dialog-main" oncancel="cancelDialog">
-7. <div class="dialog-div">
-8. <div class="inner-txt">
-9. <text class="txt" ondoubleclick="doubleclick">Simple dialog</text>
-10. </div>
-11. <div class="inner-btn">
-12. <button type="capsule" value="Cancel" onclick="cancelSchedule" class="btn-txt"></button>
-13. <button type="capsule" value="Confirm" onclick="setSchedule" class="btn-txt"></button>
-14. </div>
-15. </div>
-16. </dialog>
-17. </div>
+```html
+<!-- xxx.hml -->
+<div class="doc-page">
+  <div class="btn-div">
+    <button type="capsule" value="Click here" class="btn" onclick="showDialog"></button>
+  </div>
+  <dialog id="simpledialog" dragable="true" class="dialog-main" oncancel="cancelDialog">
+    <div class="dialog-div">
+      <div class="inner-txt">
+        <text class="txt" ondoubleclick="doubleclick">Simple dialog</text>
+      </div>
+      <div class="inner-btn">
+        <button type="capsule" value="Cancel" onclick="cancelSchedule" class="btn-txt"></button>
+        <button type="capsule" value="Confirm" onclick="setSchedule" class="btn-txt"></button>
+      </div>
+    </div>
+  </dialog>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .doc-page {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. }
-7. .btn-div {
-8. width: 100%;
-9. height: 200px;
-10. flex-direction: column;
-11. align-items: center;
-12. justify-content: center;
-13. }
-14. .btn {
-15. background-color: #F2F2F2;
-16. text-color: #0D81F2;
-17. }
-18. .txt {
-19. color: #000000;
-20. font-weight: bold;
-21. font-size: 39px;
-22. }
-23. .dialog-main {
-24. width: 500px;
-25. }
-26. .dialog-div {
-27. flex-direction: column;
-28. align-items: center;
-29. }
-30. .inner-txt {
-31. width: 400px;
-32. height: 160px;
-33. flex-direction: column;
-34. align-items: center;
-35. justify-content: space-around;
-36. }
-37. .inner-btn {
-38. width: 400px;
-39. height: 120px;
-40. justify-content: space-around;
-41. align-items: center;
-42. }
-43. .btn-txt {
-44. background-color: #F2F2F2;
-45. text-color: #0D81F2;
-46. }
-```
-
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. showDialog() {
-5. this.$element('simpledialog').show()
-6. },
-7. cancelDialog() {
-8. promptAction.showToast({
-9. message: 'Dialog cancelled'
-10. })
-11. },
-12. cancelSchedule() {
-13. this.$element('simpledialog').close()
-14. promptAction.showToast({
-15. message: 'Successfully cancelled'
-16. })
-17. },
-18. setSchedule() {
-19. this.$element('simpledialog').close()
-20. promptAction.showToast({
-21. message: 'Successfully confirmed'
-22. })
-23. },
-24. doubleclick(){
-25. promptAction.showToast({
-26. message: 'doubleclick'
-27. })
-28. }
-29. }
+```css
+/* xxx.css */
+.doc-page {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-div {
+  width: 100%;
+  height: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  background-color: #F2F2F2;
+  text-color: #0D81F2;
+}
+.txt {
+  color: #000000;
+  font-weight: bold;
+  font-size: 39px;
+}
+.dialog-main {
+  width: 500px;
+}
+.dialog-div {
+  flex-direction: column;
+  align-items: center;
+}
+.inner-txt {
+  width: 400px;
+  height: 160px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.inner-btn {
+  width: 400px;
+  height: 120px;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn-txt {
+  background-color: #F2F2F2;
+  text-color: #0D81F2;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/7vn0674ITEyHHJ9w2TcCCg/zh-cn_image_0000002558607044.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+  showDialog() {
+    this.$element('simpledialog').show()
+  },
+  cancelDialog() {
+    promptAction.showToast({
+      message: 'Dialog cancelled'
+    })
+  },
+  cancelSchedule() {
+    this.$element('simpledialog').close()
+    promptAction.showToast({
+      message: 'Successfully cancelled'
+    })
+  },
+  setSchedule() {
+    this.$element('simpledialog').close()
+    promptAction.showToast({
+      message: 'Successfully confirmed'
+    })
+  },
+  doubleclick(){
+    promptAction.showToast({
+      message: 'doubleclick'
+    })
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/dkftgMB4SSmfTIj_WIJDug/zh-cn_image_0000002706676434.gif)

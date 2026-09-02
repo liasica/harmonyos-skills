@@ -3,22 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 证书管理错误码
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 错误码 > 证书管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:25fe1525ec4775852fed670fc796e837b62274f0f59a3b91dcfc3e0ff98859ac
+scraped_at: 2026-09-02T15:01:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a1128f899dba9e038a1d4f0ab808fac60c3ebad402dd2d4e9e2ff9f5ac6d8f7e
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 17500001 内部错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error.
+
+**错误描述**
+
+内部错误。可能原因：1. IPC通信失败；2. 内存操作错误；3. 文件操作错误。
 
 **可能原因**
 
@@ -30,11 +32,13 @@ Internal error. Possible causes: 1. IPC communication failed; 2. Memory operatio
 
 ## 17500002 证书不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The certificate does not exist.
+
+**错误描述**
+
+证书不存在。
 
 **可能原因**
 
@@ -46,11 +50,13 @@ The certificate does not exist.
 
 ## 17500003 证书或凭据无效
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The keystore is in an invalid format or the keystore password is incorrect.
+
+**错误描述**
+
+密钥库格式无效或密钥库密码错误。
 
 **可能原因**
 
@@ -62,11 +68,13 @@ The keystore is in an invalid format or the keystore password is incorrect.
 
 ## 17500004 证书或凭据数量达到上限
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The number of certificates or credentials reaches the maximum allowed.
+
+**错误描述**
+
+证书或凭据的数量已达到允许的最大值。
 
 **可能原因**
 
@@ -78,11 +86,13 @@ The number of certificates or credentials reaches the maximum allowed.
 
 ## 17500005 应用未经用户授权
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The application is not authorized by the user.
+
+**错误描述**
+
+应用未经过用户授权。
 
 **可能原因**
 
@@ -94,11 +104,13 @@ The application is not authorized by the user.
 
 ## 17500007 设备进入坚盾守护模式
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The device enters advanced security mode.
+
+**错误描述**
+
+设备进入坚盾守护模式。
 
 **可能原因**
 
@@ -110,11 +122,13 @@ The device enters advanced security mode.
 
 ## 17500009 不支持指定的证书存储路径
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The device does not support the specified certificate store path.
+
+**错误描述**
+
+设备不支持指定的证书存储路径。
 
 **可能原因**
 
@@ -126,11 +140,13 @@ The device does not support the specified certificate store path.
 
 ## 17500010 访问USB证书凭据失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The USB key service access failed.
+
+**错误描述**
+
+USB Key服务访问失败。
 
 **可能原因**
 
@@ -142,11 +158,13 @@ USB硬件驱动服务发生异常。
 
 ## 17500011 入参校验失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The input parameters validation failed.
+
+**错误描述**
+
+入参校验失败。
 
 **可能原因**
 

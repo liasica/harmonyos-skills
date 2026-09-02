@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-variabl
 title: 视频可变帧率
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频可变帧率
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:44+08:00
+scraped_at: 2026-09-02T14:50:15+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:bcc62d820f1bea287761371da1e9bc97f12c944cc20fd1a12e07668f47db850b
+content_hash: sha256:6e5f4c6318e4eb025aa3f0a89754f41be25dac03fbf3d755ebfa96e2fcdd4dd2
 ---
 
 从API version 15开始，支持视频可变帧率。
@@ -16,7 +16,7 @@ content_hash: sha256:bcc62d820f1bea287761371da1e9bc97f12c944cc20fd1a12e07668f47d
 
 具有高帧率（>30fps）视频源的播放场景；视频帧率小于或等于30的场景建议以30Hz的刷新率运行。下图以播放一段60fps的视频为例，算法根据视频内容实时调整屏幕刷新率，调节过程中，当刷新率小于视频帧率时，显示前会丢弃部分视频帧以节省功耗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/h_LeW8LGQ0aboLK4b9yXKA/zh-cn_image_0000002558765052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/M3EYA2nBQweEQKieCnXNfw/zh-cn_image_0000002736313607.png)
 
 ## 约束与限制
 
@@ -35,20 +35,20 @@ content_hash: sha256:bcc62d820f1bea287761371da1e9bc97f12c944cc20fd1a12e07668f47d
 
    • videoDec：视频解码器实例的指针。创建方式参考[Surface模式下创建解码器实例对象](video-decoding.md#surface模式)。
 
-   ```
-   1. OH_AVFormat *format = OH_AVFormat_Create();
-   2. int32_t width = 1280; // 视频帧宽度。
-   3. int32_t height = 720; // 视频帧高度。
-   4. int32_t fps = 60; // 视频帧率。
-   5. OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, width);
-   6. OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, height);
-   7. OH_AVFormat_SetIntValue(format, OH_MD_KEY_FRAME_RATE, fps);
-   8. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_ENABLE_VRR, 1);
-   9. int32_t ret = OH_VideoDecoder_Configure(videoDec, format);
-   10. if (ret != AV_ERR_OK) {
-   11. // 异常处理。
-   12. }
-   13. OH_AVFormat_Destroy(format);
+   ```cpp
+   OH_AVFormat *format = OH_AVFormat_Create();
+   int32_t width = 1280; // 视频帧宽度。
+   int32_t height = 720; // 视频帧高度。
+   int32_t fps = 60; // 视频帧率。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, width);
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, height);
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_FRAME_RATE, fps);
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_ENABLE_VRR, 1);
+   int32_t ret = OH_VideoDecoder_Configure(videoDec, format);
+   if (ret != AV_ERR_OK) {
+       // 异常处理。
+   }
+   OH_AVFormat_Destroy(format);
    ```
 2. （可选）视频播放过程中，动态开关视频可变帧率。
 
@@ -56,19 +56,19 @@ content_hash: sha256:bcc62d820f1bea287761371da1e9bc97f12c944cc20fd1a12e07668f47d
 
    动态关闭如下：
 
-   ```
-   1. OH_AVFormat *format = OH_AVFormat_Create();
-   2. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_ENABLE_VRR, 0);
-   3. OH_VideoDecoder_SetParameter(videoDec, format);
-   4. OH_AVFormat_Destroy(format);
+   ```cpp
+   OH_AVFormat *format = OH_AVFormat_Create();
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_ENABLE_VRR, 0);
+   OH_VideoDecoder_SetParameter(videoDec, format);
+   OH_AVFormat_Destroy(format);
    ```
 
    动态开启如下：
 
-   ```
-   1. OH_AVFormat *format = OH_AVFormat_Create();
-   2. OH_AVFormat_SetIntValue(format, OH_MD_KEY_FRAME_RATE, fps);
-   3. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_ENABLE_VRR, 1);
-   4. OH_VideoDecoder_SetParameter(videoDec, format);
-   5. OH_AVFormat_Destroy(format);
+   ```cpp
+   OH_AVFormat *format = OH_AVFormat_Create();
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_FRAME_RATE, fps);
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_OUTPUT_ENABLE_VRR, 1);
+   OH_VideoDecoder_SetParameter(videoDec, format);
+   OH_AVFormat_Destroy(format);
    ```

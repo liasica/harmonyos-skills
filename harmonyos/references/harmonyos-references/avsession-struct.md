@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/avsession
 title: 结构体
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d039ce73576a65b396415960e19a53982a6ab22e09c9cae941c816d141efe194
+scraped_at: 2026-09-02T14:52:50+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:dbae15493671080f2f2885f23e2d9741a915b92c4e2ced4be570736de3a4125e
 ---
 
 * **[OH\_AVMetadataBuilderStruct](capi-ohavsession-oh-avmetadatabuilderstruct.md)**
@@ -16,6 +16,6 @@ content_hash: sha256:d039ce73576a65b396415960e19a53982a6ab22e09c9cae941c816d141e
 * **[OH\_AVSession\_AVPlaybackState](capi-ohavsession-oh-avsession-avplaybackstate.md)**
 * **[OH\_AVSession\_AVQueueItem](capi-ohavsession-oh-avsession-avqueueitem.md)**
 * **[OH\_AVSession\_AVMediaDescription](capi-ohavsession-oh-avsession-avmediadescription.md)**
-* **[OH\_AVSession\_AVMediaDescriptionBuilder](ohavsession-oh-avsession-avmediadescriptionbuilder.md)**
+* **[OH\_AVSession\_AVMediaDescriptionBuilder](capi-ohavsession-oh-avsession-avmediadescriptionbuilder.md)**
 * **[AVSession\_OutputDeviceInfo](capi-ohavsession-avsession-outputdeviceinfo.md)**
 * **[AVSession\_DeviceInfo](capi-ohavsession-avsession-deviceinfo.md)**

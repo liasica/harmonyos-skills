@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-compa
 title: 兼容性说明
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > 兼容性说明
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:59+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a8f666bb845c01ab239290547a0ab35daa090b83ac8b0e546b7c6cf2bb29facf
+content_hash: sha256:51f88e65661b9d46b3755dcb00374a395b83433aa0fa527f076f8393b57e0234
 ---
 
 总体兼容性策略见表1 Ascend C API兼容策略，兼容性范围不包含编译器BuiltIn API、Ascend C内部实现接口等。若开发者希望在新平台运行其它平台开发的Ascend C程序，需要在新平台重新编译并运行，并可能需要根据迁移指导进行代码调整。
 
 **图1** Ascend C API层次结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vuRDt6NISc6RynsfcCTbQA/zh-cn_image_0000002589245603.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/mI6RXs3NSHC80cPsERNUjQ/zh-cn_image_0000002736434505.png)
 
 **表1** Ascend C API兼容策略
 
@@ -31,15 +31,15 @@ content_hash: sha256:a8f666bb845c01ab239290547a0ab35daa090b83ac8b0e546b7c6cf2bb2
    * 非Ascend C公开接口、结构体，例如impl目录下的接口、结构体等；
    * 对芯片规格进行硬编码。例如：
 
-     ```
-     1. uint32_t MAX_UB_SIZE = 256 * 1024;
-     2. // 建议获取方式：ascendcPlatform.GetCoreMemSize(platform_ascendc::CoreMemType::UB, MAX_UB_SIZE);
-     3. // ...
+     ```cpp
+     uint32_t MAX_UB_SIZE = 256 * 1024;
+     // 建议获取方式：ascendcPlatform.GetCoreMemSize(platform_ascendc::CoreMemType::UB, MAX_UB_SIZE);
+     // ...
      ```
    * 编译器BuiltIn API。例如：
 
-     ```
-     1. copy_gm_to_ubuf(input_1_local_ub, input_1, 0, 1, 8, 0, 0);
+     ```cpp
+     copy_gm_to_ubuf(input_1_local_ub, input_1, 0, 1, 8, 0, 0);
      ```
    * TilingKey编程。
 2. 建议开发者使用如下接口或编程方式。

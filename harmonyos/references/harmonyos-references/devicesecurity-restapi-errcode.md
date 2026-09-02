@@ -1,13 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesecurity-restapi-errcode
 title: REST API错误码
+breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > REST API > REST API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:22+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:14df4610cfb731e51cb80b89452388d9d41fc270ebd99aeb3b30e0dd7274710b
+scraped_at: 2026-09-02T15:01:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9970137950a82cfb5974fee48c154f4d154249537a054d3b298e8ff3e74a30c7
 ---
 
-说明
+**说明** 
 
 以下仅介绍云服务特有错误码及原因分析。
 
@@ -15,10 +16,10 @@ content_hash: sha256:14df4610cfb731e51cb80b89452388d9d41fc270ebd99aeb3b30e0dd727
 
 **错误信息**
 
-```
-1. {
-2. "errorCodes": "InvalidBundleName"
-3. }
+```json
+{
+     "errorCodes": "InvalidBundleName"
+}
 ```
 
 **错误描述**
@@ -41,10 +42,10 @@ bundleName缺失或不合法。
 
 **错误信息**
 
-```
-1. {
-2. "errorCodes": "InvalidDeviceToken"
-3. }
+```json
+{
+     "errorCodes": "InvalidDeviceToken"
+}
 ```
 
 **错误描述**
@@ -63,10 +64,10 @@ deviceToken缺失或不合法。
 
 **错误信息**
 
-```
-1. {
-2. "errorCodes": "DeviceTokenExpired"
-3. }
+```json
+{
+     "errorCodes": "DeviceTokenExpired"
+}
 ```
 
 **错误描述**
@@ -85,10 +86,10 @@ deviceToken有效期为1小时，重新生成token后尝试即可。
 
 **错误信息**
 
-```
-1. {
-2. "errorCodes": "InvalidTimeStamp"
-3. }
+```json
+{
+     "errorCodes": "InvalidTimeStamp"
+}
 ```
 
 **错误描述**
@@ -107,10 +108,10 @@ timeStamp缺失或不合法。
 
 **错误信息**
 
-```
-1. {
-2. "errorCodes": "NotFound"
-3. }
+```json
+{
+     "errorCodes": "NotFound"
+}
 ```
 
 **错误描述**
@@ -131,10 +132,10 @@ timeStamp缺失或不合法。
 
 **错误信息**
 
-```
-1. {
-2. "errorCodes": "InvalidMode"
-3. }
+```json
+{
+     "errorCodes": "InvalidMode"
+}
 ```
 
 **错误描述**
@@ -153,10 +154,10 @@ mode不合法。
 
 **错误信息**
 
-```
-1. {
-2. "errorCodes": "InvalidBits"
-3. }
+```json
+{
+     "errorCodes": "InvalidBits"
+}
 ```
 
 **错误描述**
@@ -175,10 +176,10 @@ bit值缺失或不合法。
 
 **错误信息**
 
-```
-1. {
-2. "errorCodes": "InternalServerError"
-3. }
+```json
+{
+     "errorCodes": "InternalServerError"
+}
 ```
 
 **错误描述**

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 是否推荐使用BM QuickFix制造修复包
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 是否推荐使用BM QuickFix制造修复包
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:35+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f6c224cda4b962516af2f470ed57969f98de9698fbd1442460c1f7845ecdb346
 ---
 

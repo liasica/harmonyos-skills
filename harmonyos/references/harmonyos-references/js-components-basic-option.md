@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: option
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > option
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:01+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:65b99dea8641326babdac8c874b9dbb633fbce42471abc45a550c5d6f6a2c94e
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ab3c8295fcf13e41f692954075c497b6d632af3202bf07e6610563fa7c4bb6e3
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -18,19 +18,13 @@ content_hash: sha256:65b99dea8641326babdac8c874b9dbb633fbce42471abc45a550c5d6f6a
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -41,8 +35,6 @@ PhonePC/2in1TabletTVWearable
 | icon | string | - | 否 | 图标资源路径，该图标展示在选项文本前，图标格式为jpg，png和svg。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 支持如下样式。
 
@@ -57,18 +49,12 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 详见[menu示例](js-components-basic-menu.md#示例)。

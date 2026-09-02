@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-gettings
 title: 使用入门
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 使用入门
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:51+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:519eee1a486c2040e839db9b5c17197ac3cc2a2af27ecb0063744ca4525ea721
+scraped_at: 2026-09-02T15:00:00+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:6ce0d6dabaf861edb85c7a7db956c3de16a141cb0dfe76e9fe8db409efe36356
 ---
 
 ## 示例代码
@@ -37,6 +37,6 @@ Push Kit支持的所有消息类型及使用场景可以参考[推送消息类�
 * 部分场景化消息类型需要您申请特殊权益才能正常发送，详情请参考[场景化消息权益简介](push-apply-right.md#场景化消息权益简介)。
 * 权益申请通过后，请参考对应消息类型的开发指南章节进行开发。
 
-  说明
+  **说明** 
 
-  如果您的项目之前已经基于HarmonyOS 3.x/4.x的系统接入过推送服务，现在需要给HarmonyOS Next/5.x及之后的系统版本推送通知，客户端和服务端仍然需要按照上述开发流程重新进行开发。
+  如果您的项目之前已经基于HarmonyOS 3.x/4.x的系统接入过Push Kit，现在需要给HarmonyOS Next/5.x及之后的系统版本推送通知，客户端和服务端仍然需要按照上述开发流程重新进行开发。

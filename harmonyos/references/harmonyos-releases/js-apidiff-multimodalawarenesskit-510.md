@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-multimodalawarenesskit-510
 title: Multimodal Awareness Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.0(18) > OS平台能力 > API变更清单 > Multimodal Awareness Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > API变更清单 > Multimodal Awareness Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:12+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:35+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:3a6e36ac8f2d416d052c4e335636ffac7d11994b798638a00a0968eb11fee96a
 ---
 

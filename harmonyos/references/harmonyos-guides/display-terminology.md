@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/display-termi
 title: 屏幕管理开发术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 屏幕管理 > 屏幕管理开发术语
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:48+08:00
+scraped_at: 2026-09-02T14:59:22+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:b2e02244270f0f51013e3f23025fe97bd3fe53bf6194c0e79e2880ec3e50f973
 ---

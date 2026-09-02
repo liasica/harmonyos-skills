@@ -3,16 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-polygon
 title: 多边形
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 多边形
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6ae83ea16bd70560d3c0d828c90c8109060f96de6a500c301663b477a3494b99
+scraped_at: 2026-09-02T14:50:28+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:9a2f115df7a9644b8e60d4790de59e4da46c464ee11dec74ffab23b028e63c98
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在地图上绘制多边形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/MUjwkhcuQn2pYbgPviY6BQ/zh-cn_image_0000002558605882.jpg "点击放大")
+多边形主要用于标识小区、学校、商圈等封闭区域范围，同时可呈现省、市、区县等行政区域边界。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/rb0JMRNATq6EaaJtlRdhlg/zh-cn_image_0000002706675122.jpg "点击放大")
 
 ## 接口说明
 
@@ -28,72 +30,76 @@ content_hash: sha256:6ae83ea16bd70560d3c0d828c90c8109060f96de6a500c301663b477a34
 
 1. 导入相关模块。
 
-   ```
-   1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { MapComponent, mapCommon, map } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 添加多边形，在callback方法中创建初始化参数并新建polygon。
 
+   ```typescript
+   @Entry
+   @Component
+   struct MapPolygonDemo {
+     // ...
+     private mapOptions?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
+     private mapPolygon?: map.MapPolygon;
+
+     aboutToAppear(): void {
+       // 地图初始化参数
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 31.98,
+             longitude: 118.78
+           },
+           zoom: 14
+         }
+       };
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           this.mapController = mapController;
+           // 多边形初始化参数
+           let polygonOptions: mapCommon.MapPolygonOptions = {
+             points: [
+               { longitude: 118.78, latitude: 31.975 },
+               { longitude: 118.78, latitude: 31.985 },
+               { longitude: 118.79, latitude: 31.985 },
+               { longitude: 118.79, latitude: 31.975 }
+             ],
+             clickable: true,
+             fillColor: 0xff00DE00,
+             geodesic: false,
+             strokeColor: 0xff000000,
+             jointType: mapCommon.JointType.DEFAULT,
+             strokeWidth: 10,
+             visible: true,
+             zIndex: 10
+           }
+           // 创建多边形
+           try {
+             this.mapPolygon = await this.mapController.addPolygon(polygonOptions);
+           } catch (e) {
+             console.error(`Failed to create the mapPolygon, code is：${e.code}, message is ${e.message}`);
+           }
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       };
+     }
+
+     build() {
+       // ...
+         Stack() {
+           Column() {
+             MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
+           }.width('100%')
+         }.height('100%')
+
+         // ...
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct MapPolygonDemo {
-   4. private mapOptions?: mapCommon.MapOptions;
-   5. private mapController?: map.MapComponentController;
-   6. private callback?: AsyncCallback<map.MapComponentController>;
-   7. private mapPolygon?: map.MapPolygon;
 
-   9. aboutToAppear(): void {
-   10. // 地图初始化参数
-   11. this.mapOptions = {
-   12. position: {
-   13. target: {
-   14. latitude: 31.98,
-   15. longitude: 118.78
-   16. },
-   17. zoom: 14
-   18. }
-   19. };
-   20. this.callback = async (err, mapController) => {
-   21. if (!err) {
-   22. this.mapController = mapController;
-   23. // 多边形初始化参数
-   24. let polygonOptions: mapCommon.MapPolygonOptions = {
-   25. points: [
-   26. { longitude: 118.78, latitude: 31.975 },
-   27. { longitude: 118.78, latitude: 31.985 },
-   28. { longitude: 118.79, latitude: 31.985 },
-   29. { longitude: 118.79, latitude: 31.975 }
-   30. ],
-   31. clickable: true,
-   32. fillColor: 0xff00DE00,
-   33. geodesic: false,
-   34. strokeColor: 0xff000000,
-   35. jointType: mapCommon.JointType.DEFAULT,
-   36. strokeWidth: 10,
-   37. visible: true,
-   38. zIndex: 10
-   39. }
-   40. // 创建多边形
-   41. try {
-   42. this.mapPolygon = await this.mapController.addPolygon(polygonOptions);
-   43. } catch (e) {
-   44. console.error(`Failed to create the mapPolygon, code is：${e.code}, message is ${e.message}`);
-   45. }
-   46. } else {
-   47. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   48. }
-   49. };
-   50. }
-
-   52. build() {
-   53. Stack() {
-   54. Column() {
-   55. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
-   56. }.width('100%')
-   57. }.height('100%')
-   58. }
-   59. }
-   ```
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/L43hp1GdSsqrGReoW0TKAw/zh-cn_image_0000002589325409.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/_dN8KAehSEi0vCicKql0XA/zh-cn_image_0000002736434211.jpg "点击放大")

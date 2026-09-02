@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取用户风险等级
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 获取用户风险等级
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2dfbf2bccb4fded6574e2ef0a74c460d5992a4cee19f5a462b4c4039cfec4856
+scraped_at: 2026-09-02T15:02:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9b86f5a277c42f6e45cf63e53178b9b80bfcb08c888dbd89c5dc82e128260fc6
 ---
 
-注意
+**注意** 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
@@ -27,7 +27,7 @@ content_hash: sha256:2dfbf2bccb4fded6574e2ef0a74c460d5992a4cee19f5a462b4c4039cfe
 * 需确保调用端网络正常。
 * 应用使用此功能之前，需要完成riskLevel（获取用户风险等级）的scope权限申请，在获取Authorization Code时携带riskLevel（获取用户风险等级）的scope，详见[开发前提](../harmonyos-guides/account-get-risklevel-byquicklogin.md#开发前提)。
 
-说明
+**说明** 
 
 应用未申请riskLevel（获取用户风险等级）的scope权限，或获取Authorization Code时未携带riskLevel（获取用户风险等级）的scope，调用接口将返回错误，响应体中errCode=403。
 
@@ -68,12 +68,12 @@ content_hash: sha256:2dfbf2bccb4fded6574e2ef0a74c460d5992a4cee19f5a462b4c4039cfe
 
 请通过POST方式调用，示例如下：
 
-```
-1. POST /user/getuserrisklevel?clientID=<clientID>&transactionID=<transactionID> HTTP/1.1
-2. Host: account.cloud.huawei.com
-3. Content-Type: application/json;charset=utf-8
+```http
+POST /user/getuserrisklevel?clientID=<clientID>&transactionID=<transactionID> HTTP/1.1
+Host: account.cloud.huawei.com
+Content-Type: application/json;charset=utf-8
 
-5. {"accessToken":"<Access Token>", "scene":"<scene>"}
+{"accessToken":"<Access Token>", "scene":"<scene>"}
 ```
 
 ## 响应参数
@@ -120,98 +120,98 @@ content_hash: sha256:2dfbf2bccb4fded6574e2ef0a74c460d5992a4cee19f5a462b4c4039cfe
 
 ### 请求成功时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
 
-4. {
-5. "errCode": 0,
-6. "errMsg": "",
-7. "riskLevel": 2,
-8. "riskTag": [
-9. "spamMailbox"
-10. ]
-11. }
+{
+    "errCode": 0,
+    "errMsg": "",
+    "riskLevel": 2,
+    "riskTag": [
+        "spamMailbox"
+    ]
+}
 ```
 
 ### 请求失败时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
 
-4. {
-5. "errCode": 403,
-6. "errMsg": "no permission"
-7. }
+{
+    "errCode": 403,
+    "errMsg": "access forbidden;no basePermission"
+}
 ```
 
 ## 示例代码
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](account-api-common.md#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
-```
-1. import com.alibaba.fastjson2.JSONArray;
-2. import com.alibaba.fastjson2.JSONObject;
-3. import org.apache.http.client.methods.CloseableHttpResponse;
-4. import org.apache.http.client.methods.HttpPost;
-5. import java.io.IOException;
-6. import java.util.HashMap;
-7. import java.util.Map;
-8. import java.util.Objects;
+```java
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
-10. /**
-11. * 获取用户风险等级
-12. */
-13. public class GetUserRiskLevelDemo {
-14. public static void main(String[] args) throws IOException {
-15. // 获取用户风险等级的接口URL
-16. String url = "https://account.cloud.huawei.com/user/getuserrisklevel";
-17. // 替换为实际的Client ID
-18. String clientID = "<Client ID>";
-19. // 替换为实际的transactionID
-20. String transactionID = "<transactionID>";
-21. // 替换为实际获取到的用户级凭证Access Token
-22. String accessToken = "<Access Token>";
-23. // 替换为实际的scene
-24. String scene = "<scene>";
-25. JSONObject result = getUserRiskLevel(url, clientID, transactionID, accessToken, scene);
-26. // 解析获取errCode
-27. Integer errCode = result.getInteger("errCode");
-28. // 解析获取errMsg
-29. String errMsg = result.getString("errMsg");
-30. // 解析获取riskLevel
-31. Integer riskLevel = result.getInteger("riskLevel");
-32. // 解析获取riskTag
-33. JSONArray riskTag = result.getJSONArray("riskTag");
-34. }
+/**
+ * 获取用户风险等级
+ */
+public class GetUserRiskLevelDemo {
+    public static void main(String[] args) throws IOException {
+        // 获取用户风险等级的接口URL
+        String url = "https://account.cloud.huawei.com/user/getuserrisklevel";
+        // 替换为实际的Client ID
+        String clientID = "<Client ID>";
+        // 替换为实际的transactionID
+        String transactionID = "<transactionID>";
+        // 替换为实际获取到的用户级凭证Access Token
+        String accessToken = "<Access Token>";
+        // 替换为实际的scene
+        String scene = "<scene>";
+        JSONObject result = getUserRiskLevel(url, clientID, transactionID, accessToken, scene);
+        // 解析获取errCode
+        Integer errCode = result.getInteger("errCode");
+        // 解析获取errMsg
+        String errMsg = result.getString("errMsg");
+        // 解析获取riskLevel
+        Integer riskLevel = result.getInteger("riskLevel");
+        // 解析获取riskTag
+        JSONArray riskTag = result.getJSONArray("riskTag");
+    }
 
-36. private static JSONObject getUserRiskLevel(String url, String clientID, String transactionID,
-37. String accessToken, String scene) throws IOException {
-38. HttpPost httpPost = new HttpPost(url + "?" + "clientID=" + clientID + "&transactionID=" + transactionID);
-39. Map<String, String> reqBody = new HashMap<>();
-40. reqBody.put("accessToken", accessToken);
-41. reqBody.put("scene", scene);
-42. httpPost.setHeader("Content-Type", "application/json;charset=utf-8");
-43. httpPost.setEntity(CallUtils.wrapJsonEntity(reqBody));
-44. return CallUtils.toJsonObject(CallUtils.remoteCall(httpPost, (CloseableHttpResponse response, String rawBody) -> {
-45. int statusCode = response.getStatusLine().getStatusCode();
-46. // http状态码不是200，请求失败
-47. if (statusCode != 200) {
-48. return new IOException("call failed! http status code: " + statusCode + ", response data: " + rawBody);
-49. }
-50. // http状态码为200，解析响应的body，判断业务错误码
-51. JSONObject errorResponseBody = CallUtils.toJsonObject(rawBody);
-52. // 错误码
-53. Integer errCode = errorResponseBody.getInteger("errCode");
-54. // errCode为0表示成功，非0表示失败
-55. if (Objects.nonNull(errCode) && errCode != 0) {
-56. return new IOException("call failed! http status code: " + statusCode + ", response data: " + rawBody);
-57. }
-58. return null;
-59. }));
-60. }
-61. }
+    private static JSONObject getUserRiskLevel(String url, String clientID, String transactionID,
+        String accessToken, String scene) throws IOException {
+        HttpPost httpPost = new HttpPost(url + "?" + "clientID=" + clientID + "&transactionID=" + transactionID);
+        Map<String, String> reqBody = new HashMap<>();
+        reqBody.put("accessToken", accessToken);
+        reqBody.put("scene", scene);
+        httpPost.setHeader("Content-Type", "application/json;charset=utf-8");
+        httpPost.setEntity(CallUtils.wrapJsonEntity(reqBody));
+        return CallUtils.toJsonObject(CallUtils.remoteCall(httpPost, (CloseableHttpResponse response, String rawBody) -> {
+            int statusCode = response.getStatusLine().getStatusCode();
+            // http状态码不是200，请求失败
+            if (statusCode != 200) {
+                return new IOException("call failed! http status code: " + statusCode + ", response data: " + rawBody);
+            }
+            // http状态码为200，解析响应的body，判断业务错误码
+            JSONObject errorResponseBody = CallUtils.toJsonObject(rawBody);
+            // 错误码
+            Integer errCode = errorResponseBody.getInteger("errCode");
+            // errCode为0表示成功，非0表示失败
+            if (Objects.nonNull(errCode) && errCode != 0) {
+                return new IOException("call failed! http status code: " + statusCode + ", response data: " + rawBody);
+            }
+            return null;
+        }));
+    }
+}
 ```
 
 ## 错误码

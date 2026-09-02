@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-b123sp16
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 > OS平台行为变更说明 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > OS平台行为变更说明 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:23:38+08:00
-doc_updated_at: 2026-01-16
-content_hash: sha256:5de1a3723ea668ae1f6edeb49d01b4de35bf7e7639d09d97731a8b2101cc3a40
+scraped_at: 2026-09-02T14:58:51+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:86f831cb8aeab62c0bf44f7432d817b811894f07d1e1a72bbd7cc7890c5f4ecd
 ---
 
 ## borderImage的outset属性按照实际的延伸距离来绘制边框向外扩展的效果
@@ -16,7 +16,7 @@ borderImage中的边框外延距离（outset属性）在无需绘制的区域不
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -44,7 +44,7 @@ borderImage中的边框外延距离（outset属性）在无需绘制的区域不
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -76,7 +76,7 @@ Canvas组件的toDataURL接口。
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -86,11 +86,11 @@ API version 14及以后，设备宽度在600-840vp间时，默认显示居中弹
 
 变更前：设备宽度在600-840vp间时，SheetOptions中的preferType设置为SheetType.POPUP，实际显示居中弹窗样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/przeKRN_SqSM3Rp8CqqN-w/zh-cn_image_0000002334372189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vH-YgIG_QyS1zK2Rk07dPw/zh-cn_image_0000002334372189.png)
 
 变更后：设备宽度在600-840vp间时，SheetOptions中的preferType设置为SheetType.POPUP，实际显示跟手弹窗样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/qlA2LDb0QOOfiT1yOK8qAQ/zh-cn_image_0000002334332009.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8tvPsWLgQyCwAyO5Pab7wg/zh-cn_image_0000002334332009.png)
 
 **起始API Level**
 
@@ -112,7 +112,7 @@ bindSheet半模态面板。
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 

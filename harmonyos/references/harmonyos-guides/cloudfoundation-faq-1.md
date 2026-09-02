@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 使用云存储上传文件失败，提示“404:Product does not exist”
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit常见问题 > 云存储 > 使用云存储上传文件失败，提示“404:Product does not exist”
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:55+08:00
+scraped_at: 2026-09-02T14:50:25+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:ff729d02c2a9f711ddddbb8f5852eb4993eccde2861612c58b87641ca099594b
+content_hash: sha256:b21522d71418332bca0244d6d845abf46f8cdacebf7b7b0d7ff860428b61d740
 ---
 
 **问题现象**
 
 使用云存储上传文件失败，HiLog提示“404:Product does not exist”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/inGZF622Sqmihh2VvG4Vug/zh-cn_image_0000002589245183.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/EjVvNUnpQYWfKQ7MebAbTA/zh-cn_image_0000002706674958.png)
 
 **解决措施**
 

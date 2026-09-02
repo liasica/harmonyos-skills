@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: AnimateTo使用迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > AnimateTo使用迁移
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5b0df87206b5adc70f61d3d53ed198e90e1b9668c9c0e9f95834b59815fca6e0
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:85f62dbb6ec79f8930918d29936e22cae5067051bb612377f160365315ba816b
 ---
 
 在状态管理从V1迁移至V2的过程中，[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)执行动画前如需修改状态变量，可参考本文档的适配方案。
@@ -14,89 +14,87 @@ content_hash: sha256:5b0df87206b5adc70f61d3d53ed198e90e1b9668c9c0e9f95834b59815f
 
 **V1实现代码如下：**
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State w: number = 50; // 宽度
-5. @State h: number = 50; // 高度
-6. @State message: string = 'Hello';
+```typescript
+@Entry
+@Component
+struct Index {
+  @State w: number = 50; // 宽度
+  @State h: number = 50; // 高度
+  @State message: string = 'Hello';
 
-8. build() {
-9. Column() {
-10. Button('change size')
-11. .margin(20)
-12. .onClick(() => {
-13. // 在执行动画前，存在额外的修改
-14. this.w = 100;
-15. this.h = 100;
-16. this.message = 'Hello World';
-17. this.getUIContext().animateTo({
-18. duration: 1000
-19. }, () => {
-20. this.w = 200;
-21. this.h = 200;
-22. this.message = 'Hello ArkUI';
-23. })
-24. })
-25. Column() {
-26. Text(`${this.message}`)
-27. }
-28. .backgroundColor('#ff17a98d')
-29. .width(this.w)
-30. .height(this.h)
-31. }
-32. }
-33. }
+  build() {
+    Column() {
+      Button('change size')
+        .margin(20)
+        .onClick(() => {
+          // 在执行动画前，存在额外的修改
+          this.w = 100;
+          this.h = 100;
+          this.message = 'Hello World';
+          this.getUIContext().animateTo({
+            duration: 1000
+          }, () => {
+            this.w = 200;
+            this.h = 200;
+            this.message = 'Hello ArkUI';
+          })
+        })
+      Column() {
+        Text(`${this.message}`)
+      }
+      .backgroundColor('#ff17a98d')
+      .width(this.w)
+      .height(this.h)
+    }
+  }
+}
 ```
 
 预期动画效果：绿色矩形从长宽100变为200，字符串从Hello World变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/gQ_4_rRZTNKjYcgxv_Gzjg/zh-cn_image_0000002589243915.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/sFmROnbpTlCIv7gckpPNdg/zh-cn_image_0000002706833242.gif)
 
 **V1迁移V2**
 
-```
-1. @Entry
-2. @ComponentV2
-3. struct Index {
-4. @Local w: number = 50; // 宽度
-5. @Local h: number = 50; // 高度
-6. @Local message: string = 'Hello';
+```typescript
+@Entry
+@ComponentV2
+struct Index {
+  @Local w: number = 50; // 宽度
+  @Local h: number = 50; // 高度
+  @Local message: string = 'Hello';
 
-8. build() {
-9. Column() {
-10. Button('change size')
-11. .margin(20)
-12. .onClick(() => {
-13. // 在执行动画前，存在额外的修改
-14. this.w = 100;
-15. this.h = 100;
-16. this.message = 'Hello World';
-17. this.getUIContext().animateTo({
-18. duration: 1000
-19. }, () => {
-20. this.w = 200;
-21. this.h = 200;
-22. this.message = 'Hello ArkUI';
-23. })
-24. })
-25. Column() {
-26. Text(`${this.message}`)
-27. }
-28. .backgroundColor('#ff17a98d')
-29. .width(this.w)
-30. .height(this.h)
-31. }
-32. }
-33. }
+  build() {
+    Column() {
+      Button('change size')
+        .margin(20)
+        .onClick(() => {
+          // 在执行动画前，存在额外的修改
+          this.w = 100;
+          this.h = 100;
+          this.message = 'Hello World';
+          this.getUIContext().animateTo({
+            duration: 1000
+          }, () => {
+            this.w = 200;
+            this.h = 200;
+            this.message = 'Hello ArkUI';
+          })
+        })
+      Column() {
+        Text(`${this.message}`)
+      }
+      .backgroundColor('#ff17a98d')
+      .width(this.w)
+      .height(this.h)
+    }
+  }
+}
 ```
-
-[LocalQuestionV2animateTo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalQuestionV2animateTo.ets#L29-L63)
 
 由于当前animateTo与V2的刷新机制不兼容，执行动画前的额外修改未生效，实际显示的动画效果如下图所示：绿色矩形从长宽50变为200，字符串从Hello变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/5vhEjH4QQxGYOSrIQ9WvHg/zh-cn_image_0000002589323975.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/6Zh9EdrwSP6b3AmmAITOwA/zh-cn_image_0000002736432395.gif)
 
 ## 迁移方案
 
@@ -106,44 +104,44 @@ content_hash: sha256:5b0df87206b5adc70f61d3d53ed198e90e1b9668c9c0e9f95834b59815f
 
 完整代码如下：
 
-```
-1. @Entry
-2. @ComponentV2
-3. struct Index {
-4. @Local w: number = 50; // 宽度
-5. @Local h: number = 50; // 高度
-6. @Local message: string = 'Hello';
+```typescript
+@Entry
+@ComponentV2
+struct Index {
+  @Local w: number = 50; // 宽度
+  @Local h: number = 50; // 高度
+  @Local message: string = 'Hello';
 
-8. build() {
-9. Column() {
-10. Button('change size')
-11. .margin(20)
-12. .onClick(() => {
-13. // 在执行动画前，存在额外的修改
-14. this.w = 100;
-15. this.h = 100;
-16. this.message = 'Hello World';
-17. animateToImmediately({
-18. duration: 0
-19. }, () => {
-20. })
-21. this.getUIContext().animateTo({
-22. duration: 1000
-23. }, () => {
-24. this.w = 200;
-25. this.h = 200;
-26. this.message = 'Hello ArkUI';
-27. })
-28. })
-29. Column() {
-30. Text(`${this.message}`)
-31. }
-32. .backgroundColor('#ff17a98d')
-33. .width(this.w)
-34. .height(this.h)
-35. }
-36. }
-37. }
+  build() {
+    Column() {
+      Button('change size')
+        .margin(20)
+        .onClick(() => {
+          // 在执行动画前，存在额外的修改
+          this.w = 100;
+          this.h = 100;
+          this.message = 'Hello World';
+          animateToImmediately({
+            duration: 0
+          }, () => {
+          })
+          this.getUIContext().animateTo({
+            duration: 1000
+          }, () => {
+            this.w = 200;
+            this.h = 200;
+            this.message = 'Hello ArkUI';
+          })
+        })
+      Column() {
+        Text(`${this.message}`)
+      }
+      .backgroundColor('#ff17a98d')
+      .width(this.w)
+      .height(this.h)
+    }
+  }
+}
 ```
 
 ### API version 22及以后的迁移方案
@@ -152,44 +150,42 @@ content_hash: sha256:5b0df87206b5adc70f61d3d53ed198e90e1b9668c9c0e9f95834b59815f
 
 原理为使用applySync接口同步刷新闭包函数内的状态变量变化，再执行原来的动画达成预期的效果。
 
+```typescript
+import { UIUtils } from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct Index {
+  @Local w: number = 50; // 宽度
+  @Local h: number = 50; // 高度
+  @Local message: string = 'Hello';
+
+  build() {
+    Column() {
+      Button('change size')
+        .margin(20)
+        .onClick(() => {
+          // 在执行动画前，存在额外的修改
+          UIUtils.applySync(() => {
+            this.w = 100;
+            this.h = 100;
+            this.message = 'Hello World';
+          })
+          this.getUIContext().animateTo({
+            duration: 1000
+          }, () => {
+            this.w = 200;
+            this.h = 200;
+            this.message = 'Hello ArkUI';
+          })
+        })
+      Column() {
+        Text(`${this.message}`)
+      }
+      .backgroundColor('#ff17a98d')
+      .width(this.w)
+      .height(this.h)
+    }
+  }
+}
 ```
-1. import { UIUtils } from '@kit.ArkUI';
-
-3. @Entry
-4. @ComponentV2
-5. struct Index {
-6. @Local w: number = 50; // 宽度
-7. @Local h: number = 50; // 高度
-8. @Local message: string = 'Hello';
-
-10. build() {
-11. Column() {
-12. Button('change size')
-13. .margin(20)
-14. .onClick(() => {
-15. // 在执行动画前，存在额外的修改
-16. UIUtils.applySync(() => {
-17. this.w = 100;
-18. this.h = 100;
-19. this.message = 'Hello World';
-20. })
-21. this.getUIContext().animateTo({
-22. duration: 1000
-23. }, () => {
-24. this.w = 200;
-25. this.h = 200;
-26. this.message = 'Hello ArkUI';
-27. })
-28. })
-29. Column() {
-30. Text(`${this.message}`)
-31. }
-32. .backgroundColor('#ff17a98d')
-33. .width(this.w)
-34. .height(this.h)
-35. }
-36. }
-37. }
-```
-
-[LocalQuestionExpectedEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/local/LocalQuestionExpectedEffect.ets#L15-L53)

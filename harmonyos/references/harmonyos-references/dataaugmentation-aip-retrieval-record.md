@@ -1,18 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-aip-retrieval-record
 title: aip_retrieval_record.h
-breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件和结构体 > aip_retrieval_record.h
+breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件 > aip_retrieval_record.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f08bb2cfacf006a2a9fe5e8076b5ad4d0d74d5d8b939e0334d671529ee298384
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a4549584f7df79b41d8f214166428dc67240df65cc3194e078df973842039d49
 ---
 
 ## 概述
 
-PhonePC/2in1Tablet
-
 提供与检索结果相关的接口。
+
+检索结果（OH\_Retrieval\_Record）是知识检索操作的返回数据，包含从知识库中检索到的字段和字段取值。检索结果由多个数据库bucket数组（OH\_Retrieval\_RecordItem）组成，每个bucket数组对应一条匹配的记录，其中包含该记录各字段的名称和值。
+
+适用于需要从知识库中获取相关信息并进行展示的应用场景，例如：知识问答系统中获取检索结果、智能推荐中提取匹配记录等。
 
 **引用文件：** #include "dataaugmentation/retrieval/aip\_retrieval\_record.h"
 
@@ -25,8 +27,6 @@ PhonePC/2in1Tablet
 **相关模块：** [Retrieval](dataaugmentation-capi-retrieval.md)
 
 ## 汇总
-
-PhonePC/2in1Tablet
 
 ### 类型定义
 

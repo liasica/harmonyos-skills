@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 从包管理的角度，保证代码安全的措施有哪些
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 从包管理的角度，保证代码安全的措施有哪些
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:b92a4eaea62303f1fad1bb433bb4bbcf9d21ea6316bb6d823cbe86592c8ec93d
 ---
 

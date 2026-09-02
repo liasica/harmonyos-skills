@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-tes
 title: 针对 HarmonyOS 应用测试，DevEco Testing提供了哪些配套测试能力
 breadcrumb: FAQ > DevEco Testing > 常见问题 > 针对 HarmonyOS 应用测试，DevEco Testing提供了哪些配套测试能力
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:24+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:00a88b09a3462f52d23d097752c284acdd6e3a4b34bc2d225c471955b319fb82
 ---
 

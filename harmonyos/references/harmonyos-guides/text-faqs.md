@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-faqs
 title: 文本开发常见问题
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本开发常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:19+08:00
+scraped_at: 2026-09-02T14:50:21+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:01ccff587d7dc1ffbf67a7faa525a309de41648c050a92318c910c43946c605a
+content_hash: sha256:bb4c2b45b3d6fc545ce52ad25936f7ccb9a5013b2ac57dbe84b8a1939ca5d49f
 ---
 
 ## 如何对找不到字形的字符进行显示优化
@@ -16,17 +16,17 @@ content_hash: sha256:01ccff587d7dc1ffbf67a7faa525a309de41648c050a92318c910c43946
 
 * 在ArkTS环境中，可以使用setTextUndefinedGlyphDisplay接口开启开关，找不到字形的字符会强制显示为豆腐块。
 
-  ```
-  1. import { text } from "@kit.ArkGraphics2D";
+  ```ts
+  import { text } from "@kit.ArkGraphics2D";
 
-  3. text.setTextUndefinedGlyphDisplay(text.TextUndefinedGlyphDisplay.USE_TOFU);
+  text.setTextUndefinedGlyphDisplay(text.TextUndefinedGlyphDisplay.USE_TOFU);
   ```
 * 在C/C++环境中，可以使用OH\_Drawing\_SetTextUndefinedGlyphDisplay接口开启开关，找不到字形的字符会强制显示为豆腐块。
 
-  ```
-  1. #include "drawing/drawing_text_global.h"
+  ```c
+  #include "drawing/drawing_text_global.h"
 
-  3. OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_TOFU);
+  OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_TOFU);
   ```
 
 上述两个接口控制同一个开关，使用其一即可。

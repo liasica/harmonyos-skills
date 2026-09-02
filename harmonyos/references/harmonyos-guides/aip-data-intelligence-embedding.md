@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aip-data-inte
 title: 应用数据向量化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据向量化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:52d64aa63a0340c7c5b5a2607ee29d2ec7f616aea5112634282cfab3c7f42bf2
+scraped_at: 2026-09-02T14:59:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d4e4d15624de5477f8d8fa962ef71e44ca88900866e906e4fa243f31d2f86d54
 ---
 
 ## 场景介绍
@@ -68,190 +68,191 @@ content_hash: sha256:52d64aa63a0340c7c5b5a2607ee29d2ec7f616aea5112634282cfab3c7f
 
 1. 导入模块。
 
-   ```
-   1. import { intelligence } from '@kit.ArkData';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { intelligence } from '@kit.ArkData';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 获取文本嵌入模型。
 
    调用getTextEmbeddingModel方法，获取文本嵌入模型。示例代码如下所示：
 
-   ```
-   1. let textConfig:intelligence.ModelConfig = {
-   2. version:intelligence.ModelVersion.BASIC_MODEL,
-   3. isNpuAvailable:false,
-   4. cachePath:"/data"
-   5. }
-   6. let textEmbedding:intelligence.TextEmbedding;
+   ```typescript
+   let textConfig: intelligence.ModelConfig = {
+     version: intelligence.ModelVersion.BASIC_MODEL,
+     isNpuAvailable: false,
+     cachePath: "/data"
+   }
+   let textEmbedding: intelligence.TextEmbedding;
+   let modelInfo:  intelligence.CloudModelInfo;
    ```
 
-   ```
-   1. intelligence.getTextEmbeddingModel(textConfig)
-   2. .then((data:intelligence.TextEmbedding) => {
-   3. console.info('Succeeded in getting TextModel');
-   4. textEmbedding = data;
-   5. // ...
-   6. })
-   7. .catch((err:BusinessError) => {
-   8. console.error('Failed to get TextModel and code is ' + err.code);
-   9. // ...
-   10. })
+   ```typescript
+   intelligence.getTextEmbeddingModel(textConfig)
+     .then((data: intelligence.TextEmbedding) => {
+       console.info('Succeeded in getting TextModel');
+       textEmbedding = data;
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to get TextModel and code is ' + err.code);
+       // ...
+     })
    ```
 3. 加载文本嵌入模型。
 
    调用loadModel方法，加载文本嵌入模型。示例代码如下所示：
 
-   ```
-   1. textEmbedding.loadModel()
-   2. .then(() => {
-   3. console.info('Succeeded in loading Model');
-   4. // ...
-   5. })
-   6. .catch((err:BusinessError) => {
-   7. console.error('Failed to load Model and code is ' + err.code);
-   8. // ...
-   9. })
+   ```typescript
+   textEmbedding.loadModel()
+     .then(() => {
+       console.info('Succeeded in loading Model');
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to load Model and code is ' + err.code);
+       // ...
+     })
    ```
 4. 获取文本的分块。当数据长度超过限定时，使用splitText()接口将其分块，然后再进行数据向量化。
 
    调用splitText方法，获取文本的分块结果。示例代码如下所示：
 
-   ```
-   1. let splitConfig:intelligence.SplitConfig = {
-   2. size:10,
-   3. overlapRatio:0.1
-   4. }
-   5. let splitText = 'text';
+   ```typescript
+   let splitConfig:intelligence.SplitConfig = {
+     size: 10,
+     overlapRatio: 0.1
+   }
+   let splitText = 'text';
 
-   7. intelligence.splitText(splitText, splitConfig)
-   8. .then((data:Array<string>) => {
-   9. console.info('Succeeded in splitting Text');
-   10. // ...
-   11. })
-   12. .catch((err:BusinessError) => {
-   13. console.error('Failed to split Text and code is ' + err.code);
-   14. // ...
-   15. })
+   intelligence.splitText(splitText, splitConfig)
+     .then((data: Array<string>) => {
+       console.info('Succeeded in splitting Text');
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to split Text and code is ' + err.code);
+       // ...
+     })
    ```
 5. 获取给定文本的嵌入向量。给定的文本数据可以是单个文本或文本集合。
 
    调用getEmbedding方法，获取给定单个文本或文本集合的嵌入向量。示例代码如下所示：
 
-   ```
-   1. let text = 'text';
-   2. textEmbedding.getEmbedding(text)
-   3. .then((data:Array<number>) => {
-   4. console.info('Succeeded in getting Embedding');
-   5. // ...
-   6. })
-   7. .catch((err:BusinessError) => {
-   8. console.error('Failed to get Embedding and code is ' + err.code);
-   9. // ...
-   10. })
+   ```typescript
+   let text = 'text';
+   textEmbedding.getEmbedding(text)
+     .then((data: Array<number>) => {
+       console.info('Succeeded in getting Embedding');
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to get Embedding and code is ' + err.code);
+       // ...
+     })
 
-   12. let batchTexts = ['text1','text2'];
-   13. textEmbedding.getEmbedding(batchTexts)
-   14. .then((data:Array<Array<number>>) => {
-   15. console.info('Succeeded in getting Embedding');
-   16. // ...
-   17. })
-   18. .catch((err:BusinessError) => {
-   19. console.error('Failed to get Embedding and code is ' + err.code);
-   20. // ...
-   21. })
+   let batchTexts = ['text1','text2'];
+   textEmbedding.getEmbedding(batchTexts)
+     .then((data: Array<Array<number>>) => {
+       console.info('Succeeded in getting Embedding');
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to get Embedding and code is ' + err.code);
+       // ...
+     })
    ```
 6. 释放文本嵌入模型。
 
    调用releaseModel方法，释放文本嵌入模型。示例代码如下所示：
 
-   ```
-   1. textEmbedding.releaseModel()
-   2. .then(() => {
-   3. console.info('Succeeded in releasing Model');
-   4. // ...
-   5. })
-   6. .catch((err:BusinessError) => {
-   7. console.error('Failed to release Model and code is ' + err.code);
-   8. // ...
-   9. })
+   ```typescript
+   textEmbedding.releaseModel()
+     .then(() => {
+       console.info('Succeeded in releasing Model');
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to release Model and code is ' + err.code);
+       // ...
+     })
    ```
 
 ## 图像向量化开发步骤
 
 1. 导入模块。
 
-   ```
-   1. import { intelligence } from '@kit.ArkData';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { intelligence } from '@kit.ArkData';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 获取图像嵌入模型。
 
    调用getImageEmbeddingModel方法，获取图像嵌入模型。示例代码如下所示：
 
-   ```
-   1. let imageConfig:intelligence.ModelConfig = {
-   2. version:intelligence.ModelVersion.BASIC_MODEL,
-   3. isNpuAvailable:false,
-   4. cachePath:"/data"
-   5. }
-   6. let imageEmbedding:intelligence.ImageEmbedding;
+   ```typescript
+   let imageConfig: intelligence.ModelConfig = {
+     version: intelligence.ModelVersion.BASIC_MODEL,
+     isNpuAvailable: false,
+     cachePath: "/data"
+   }
+   let imageEmbedding: intelligence.ImageEmbedding;
    ```
 
-   ```
-   1. intelligence.getImageEmbeddingModel(imageConfig)
-   2. .then((data:intelligence.ImageEmbedding) => {
-   3. console.info('Succeeded in getting ImageModel');
-   4. imageEmbedding = data;
-   5. // ...
-   6. })
-   7. .catch((err:BusinessError) => {
-   8. console.error('Failed to get ImageModel and code is ' + err.code);
-   9. // ...
-   10. })
+   ```typescript
+   intelligence.getImageEmbeddingModel(imageConfig)
+     .then((data: intelligence.ImageEmbedding) => {
+       console.info('Succeeded in getting ImageModel');
+       imageEmbedding = data;
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to get ImageModel and code is ' + err.code);
+       // ...
+     })
    ```
 3. 加载图像嵌入模型。
 
    调用loadModel方法，加载图像嵌入模型。示例代码如下所示：
 
-   ```
-   1. imageEmbedding.loadModel()
-   2. .then(() => {
-   3. console.info('Succeeded in loading Model');
-   4. // ...
-   5. })
-   6. .catch((err:BusinessError) => {
-   7. console.error('Failed to load Model and code is ' + err.code);
-   8. // ...
-   9. })
+   ```typescript
+   imageEmbedding.loadModel()
+     .then(() => {
+       console.info('Succeeded in loading Model');
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to load Model and code is ' + err.code);
+       // ...
+     })
    ```
 4. 获取给定图像的嵌入向量。
 
    调用getEmbedding方法，获取给定图像的嵌入向量。示例代码如下所示：
 
-   ```
-   1. let image = 'file://<packageName>/data/storage/el2/base/haps/entry/files/xxx.jpg';
-   2. imageEmbedding.getEmbedding(image)
-   3. .then((data:Array<number>) => {
-   4. console.info('Succeeded in getting Embedding');
-   5. // ...
-   6. })
-   7. .catch((err:BusinessError) => {
-   8. console.error('Failed to get Embedding and code is ' + err.code);
-   9. // ...
-   10. })
+   ```typescript
+   let image = 'file://<packageName>/data/storage/el2/base/haps/entry/files/xxx.jpg';
+   imageEmbedding.getEmbedding(image)
+     .then((data: Array<number>) => {
+       console.info('Succeeded in getting Embedding');
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to get Embedding and code is ' + err.code);
+       // ...
+     })
    ```
 5. 释放图像嵌入模型。
 
    调用releaseModel方法，释放图像嵌入模型。示例代码如下所示：
 
-   ```
-   1. imageEmbedding.releaseModel()
-   2. .then(() => {
-   3. console.info('Succeeded in releasing Model');
-   4. // ...
-   5. })
-   6. .catch((err:BusinessError) => {
-   7. console.error('Failed to release Model and code is ' + err.code);
-   8. // ...
-   9. })
+   ```typescript
+   imageEmbedding.releaseModel()
+     .then(() => {
+       console.info('Succeeded in releasing Model');
+       // ...
+     })
+     .catch((err: BusinessError) => {
+       console.error('Failed to release Model and code is ' + err.code);
+       // ...
+     })
    ```

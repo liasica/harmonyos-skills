@@ -3,48 +3,111 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何在构建任务中执行shell脚本
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何在构建任务中执行shell脚本
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:29+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:46584095488c47a4cf1c29c0b1dcc8f2b9aedea77eccd5be09f9b940eb63ad1a
+scraped_at: 2026-09-02T15:04:33+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:2ac665e28cb14cb1533b664981a9c4245b8622bb97cf199d6be1a02ceeb0f21d
 ---
 
-在hvigorfile.ts文件中执行如下示例：
+## 场景一
 
+只在模块中调用shell脚本，在模块的hvigorfile.ts文件中执行如下示例：
+
+**说明** 
+
+需要特别注意system字段的取值，不同的模块需要使用不同的值：
+
+1. 在har模块的hvigorfile.ts中，需要使用system: harTasks。
+2. 在hsp模块的hvigorfile.ts中，需要使用system: hspTasks。
+3. 在hap模块的hvigorfile.ts中，需要使用system: hapTasks。
+
+```ts
+// 模块级hvigorfile.ts文件
+import { harTasks } from '@ohos/hvigor-ohos-plugin';
+import { exec } from 'node:child_process';
+import util from 'node:util';
+const scriptPath = 'xxxx.bat';
+// 实现自定义插件
+export function customPluginFunction2(str?: string) {
+  return {
+    pluginId: 'CustomPluginID2',
+    apply(pluginContext) {
+      pluginContext.registerTask({
+       // 在模块上注册任务
+        name: 'customTask2',
+        run: (taskContext) => {
+          console.log('run into: ');
+          const execPromise = util.promisify(exec)
+          execPromise(scriptPath).then(res => {
+            console.log(res, 'res');
+          }).catch(err => {
+            console.log(err, 'err');
+          })
+        },
+        // 配置前置任务依赖
+        dependencies: ['default@BuildJS'],
+	// 配置任务的后置任务依赖
+        postDependencies: ['default@CompileArkTS']
+      })
+    }
+  }
+}
+export default {
+  // Hvigor插件任务类型，具体请查看最后的说明内容
+  system: harTasks,
+  // 用于扩展Hvigor功能的自定义插件
+  plugins: [customPluginFunction2()]
+}
 ```
-1. import { harTasks } from '@ohos/hvigor-ohos-plugin';
-2. import { exec } from 'node:child_process';
-3. import util from 'node:util';
 
-5. const scriptPath = 'xxxx.bat';
+## 场景二
 
-7. export function customPluginFunction1(str?: string) {
-8. return {
-9. pluginId: 'CustomPluginID1',
-10. apply(pluginContext) {
-11. pluginContext.registerTask({
-12. // Write a custom task
-13. name: 'customTask1',
-14. run: (taskContext) => {
-15. console.log('run into: ');
-16. const execPromise = util.promisify(exec)
-17. execPromise(scriptPath).then(res => {
-18. console.log(res, 'res');
-19. }).catch(err => {
-20. console.log(err, 'err');
-21. })
-22. },
-23. // Confirm custom task insertion position
-24. dependencies: ['default@BuildJS'],
-25. postDependencies: ['default@CompileArkTS']
-26. })
-27. }
-28. }
-29. }
+如果多个模块的shell脚本是共用的，可以在工程级的hvigorfile.ts中调用：
 
-31. export default {
-32. system: harTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
-33. plugins: [customPluginFunction1()] /* Custom plugin to extend the functionality of Hvigor. */
-34. }
+```ts
+// 工程级hvigorfile.ts文件
+import { hvigor, HvigorNode, HvigorPlugin } from '@ohos/hvigor';
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
+import { exec } from 'node:child_process';
+import util from 'node:util';
+const scriptPath = 'xxxx.bat';
+// 实现自定义插件
+export function customPluginFunction1(): HvigorPlugin {
+  return {
+    pluginId: 'CustomPluginID1',
+    async apply(currentNode: HvigorNode): Promise<void> {
+      hvigor.nodesEvaluated(async () => {
+        // 注册模块级任务
+        hapTask(currentNode);
+      });
+    }
+  };
+}
+function hapTask(currentNode: HvigorNode) {
+  // 遍历所有子模块节点
+  currentNode.subNodes((node: HvigorNode) => {
+    // 在每个子模块上注册任务
+    node.registerTask({
+      name: 'customTask1',
+      run: (taskContext) => {
+        console.log('run into: ', taskContext.moduleName);
+        const execPromise = util.promisify(exec);
+        execPromise(scriptPath).then(res => {
+          console.log(res, 'res');
+        }).catch(err => {
+          console.log(err, 'err');
+        })
+      },
+	  // 配置前置任务依赖
+	  dependencies: ['default@BuildJS'],
+	  // 配置任务的后置任务依赖
+	  postDependencies: ['default@']
+    });
+  });
+}
+export default {
+  // 任务类型，不可修改
+  system: appTasks,
+  // 用于扩展Hvigor功能的自定义插件
+  plugins: [customPluginFunction1()]
+};
 ```
-
-[hvigorfile.ts](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/CompilingAndBuilding/library3/hvigorfile.ts#L3-L36)

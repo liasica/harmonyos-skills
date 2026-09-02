@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sheet-p
 title: 绑定半模态页面（bindSheet）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 绑定模态页面 > 绑定半模态页面（bindSheet）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3ba77d000ec16e19939634c084a582655e940d3b3186a1279ca517f59a52b64d
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6a98dd4a180fbce7d651a698034f1de8b23b655ad1a2090e6c162b61b8f5b776
 ---
 
 [半模态页面（bindSheet）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)默认是模态形式的非全屏弹窗式交互页面，允许部分底层父视图可见，帮助用户在与半模态交互时保留其父视图环境。
@@ -17,7 +17,7 @@ content_hash: sha256:3ba77d000ec16e19939634c084a582655e940d3b3186a1279ca517f59a5
 ## 使用约束
 
 * 半模态内嵌[UIExtension](../harmonyos-references/js-apis-arkui-uiextension.md)时，不支持再在UIExtension内拉起半模态/弹窗。
-* 若无二次确认或者自定义关闭行为的场景，不建议使用[shouldDismiss/onWillDismiss](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)接口。
+* 若无二次确认或者自定义关闭行为的场景，不建议使用[shouldDismiss](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)/[onWillDismiss](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)接口。
 
 ## 生命周期
 
@@ -52,159 +52,156 @@ content_hash: sha256:3ba77d000ec16e19939634c084a582655e940d3b3186a1279ca517f59a5
 
 如果开发者希望在面板内容的builder中定义滚动容器，如List、Scroll，并结合半模态的上述交互能力，那么需要在垂直方向上为滚动容器设置嵌套滚动属性。
 
-```
-1. .nestedScroll({
-2. // 可滚动组件往末尾端滚动时的嵌套滚动选项，手势向上
-3. scrollForward: NestedScrollMode.PARENT_FIRST,
-4. // 可滚动组件往起始端滚动时的嵌套滚动选项，手势向下
-5. scrollBackward: NestedScrollMode.SELF_FIRST,
-6. })
+```ts
+.nestedScroll({
+    // 可滚动组件往末尾端滚动时的嵌套滚动选项，手势向上
+    scrollForward: NestedScrollMode.PARENT_FIRST,
+    // 可滚动组件往起始端滚动时的嵌套滚动选项，手势向下
+    scrollBackward: NestedScrollMode.SELF_FIRST,
+})
 ```
 
 完整示例代码如下：
 
+```typescript
+@Entry
+@Component
+struct SheetDemo {
+  @State isShowSheet: boolean = false;
+  private items: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  @Builder
+  SheetBuilder() {
+    Column() {
+      // 第一步：自定义滚动容器
+      List({ space: '10vp' }) {
+        ForEach(this.items, (item: number) => {
+          ListItem() {
+            Text(String(item)).fontSize(16).fontWeight(FontWeight.Bold)
+          }.width('90%').height('80vp').backgroundColor('#ff53ecd9').borderRadius(10)
+        })
+      }
+      .alignListItem(ListItemAlign.Center)
+      .margin({ top: '10vp' })
+      .width('100%')
+      .height('900px')
+      // 第二步：设置滚动组件的嵌套滚动属性
+      .nestedScroll({
+        scrollForward: NestedScrollMode.PARENT_FIRST,
+        scrollBackward: NestedScrollMode.SELF_FIRST,
+      })
+
+      // 请将$r('app.string.tSheetBuilder_text1')替换为实际资源文件，在本示例中该资源文件的value值为"非滚动区域"
+      Text($r('app.string.tSheetBuilder_text1'))
+        .width('100%')
+        .backgroundColor(Color.Gray)
+        .layoutWeight(1)
+        .textAlign(TextAlign.Center)
+        .align(Alignment.Top)
+    }.width('100%').height('100%')
+  }
+
+  build() {
+    Column() {
+      Button('Open Sheet').width('90%').height('80vp')
+        .onClick(() => {
+          this.isShowSheet = !this.isShowSheet;
+        })
+        .bindSheet($$this.isShowSheet, this.SheetBuilder(), {
+          detents: [SheetSize.MEDIUM, SheetSize.LARGE, 600],
+          preferType: SheetType.BOTTOM,
+          // 请将$r('app.string.tSheetBuilder_text2')替换为实际资源文件，在本示例中该资源文件的value值为"嵌套滚动场景"
+          title: { title: $r('app.string.tSheetBuilder_text2') },
+        })
+    }.width('100%').height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct SheetDemo {
-4. @State isShowSheet: boolean = false;
-5. private items: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-7. @Builder
-8. SheetBuilder() {
-9. Column() {
-10. // 第一步：自定义滚动容器
-11. List({ space: '10vp' }) {
-12. ForEach(this.items, (item: number) => {
-13. ListItem() {
-14. Text(String(item)).fontSize(16).fontWeight(FontWeight.Bold)
-15. }.width('90%').height('80vp').backgroundColor('#ff53ecd9').borderRadius(10)
-16. })
-17. }
-18. .alignListItem(ListItemAlign.Center)
-19. .margin({ top: '10vp' })
-20. .width('100%')
-21. .height('900px')
-22. // 第二步：设置滚动组件的嵌套滚动属性
-23. .nestedScroll({
-24. scrollForward: NestedScrollMode.PARENT_FIRST,
-25. scrollBackward: NestedScrollMode.SELF_FIRST,
-26. })
-
-28. // 请将$r('app.string.tSheetBuilder_text1')替换为实际资源文件，在本示例中该资源文件的value值为"非滚动区域"
-29. Text($r('app.string.tSheetBuilder_text1'))
-30. .width('100%')
-31. .backgroundColor(Color.Gray)
-32. .layoutWeight(1)
-33. .textAlign(TextAlign.Center)
-34. .align(Alignment.Top)
-35. }.width('100%').height('100%')
-36. }
-
-38. build() {
-39. Column() {
-40. Button('Open Sheet').width('90%').height('80vp')
-41. .onClick(() => {
-42. this.isShowSheet = !this.isShowSheet;
-43. })
-44. .bindSheet($$this.isShowSheet, this.SheetBuilder(), {
-45. detents: [SheetSize.MEDIUM, SheetSize.LARGE, 600],
-46. preferType: SheetType.BOTTOM,
-47. // 请将$r('app.string.tSheetBuilder_text2')替换为实际资源文件，在本示例中该资源文件的value值为"嵌套滚动场景"
-48. title: { title: $r('app.string.tSheetBuilder_text2') },
-49. })
-50. }.width('100%').height('100%')
-51. .justifyContent(FlexAlign.Center)
-52. }
-53. }
-```
-
-[SheetDemo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template10/SheetDemo.ets#L16-L72)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gqT85-_kSDOpruC5Lnq6ZQ/zh-cn_image_0000002589244221.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Xedp-srkTRm_OtdvwIdi8g/zh-cn_image_0000002706673762.png)
 
 ## 二次确认能力
 
 推荐使用onWillDismiss接口，此接口支持在回调中处理二次确认，或自定义关闭行为。
 
-说明
+**说明** 
 
 声明onWillDismiss接口后，半模态页面的所有关闭操作，包括侧滑、点击关闭按钮、点击蒙层和下拉关闭，都需通过调用dismiss方法来实现。若未实现此逻辑，半模态页面将无法响应上述关闭操作。
 
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG = '[Sample_SupportingAgingFriendly]';
+const DOMAIN = 0xF811;
+const BUNDLE = 'SupportingAgingFriendly_';
+
+@Entry
+@Component
+struct OnWillDismiss_Dismiss {
+  @State isShow: boolean = false;
+
+  @Builder
+  myBuilder() {
+    Column() {
+      Button('Button')
+    }
+  }
+
+  build() {
+    Button('OpenBindSheet')
+      .onClick(() => {
+        this.isShow = true
+      })
+      .margin(120)
+      // 第一步：创建半模态页面
+      .bindSheet($$this.isShow, this.myBuilder(), {
+        height: SheetSize.MEDIUM,
+        blurStyle: BlurStyle.Thick,
+        dragBar: true,
+        detents: [SheetSize.MEDIUM, SheetSize.LARGE],
+        title: { title: 'title', subtitle: 'subtitle' },
+        enableOutsideInteractive: false,
+        onWillDismiss: ((dismissSheetAction: DismissSheetAction) => {
+          // 第二步：确认二次回调交互能力，此处用AlertDialog提示 "是否选择关闭半模态"
+          this.getUIContext().showAlertDialog(
+            {
+              // 请将$r('app.string.bindSheetCmd_label12')替换为实际资源文件，在本示例中该资源文件的value值为"是否选择关闭半模态"
+              message: $r('app.string.bindSheetCmd_label12'),
+              autoCancel: true,
+              alignment: DialogAlignment.Bottom,
+              gridCount: 4,
+              offset: { dx: 0, dy: -20 },
+              primaryButton: {
+                value: 'cancel',
+                action: () => {
+                  hilog.info(DOMAIN, TAG, 'Callback when the cancel button is clicked');
+                }
+              },
+              secondaryButton: {
+                enabled: true,
+                defaultFocus: true,
+                style: DialogButtonStyle.HIGHLIGHT,
+                value: 'ok',
+                // 第三步：确认关闭半模态逻辑所在，此处为AlertDialog的Button回调
+                action: () => {
+                  // 第四步：上述第三步逻辑触发的时候，调用dismiss()关闭半模态
+                  dismissSheetAction.dismiss();
+                  hilog.info(DOMAIN, TAG, 'Callback when the ok button is clicked');
+                }
+              },
+              cancel: () => {
+                hilog.info(DOMAIN, TAG, BUNDLE + 'onWillDismiss_Dismiss:' + 'AlertDialog Closed callbacks');
+              }
+            }
+          )
+        })
+      })
+  }
+}
 ```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. const TAG = '[Sample_SupportingAgingFriendly]';
-4. const DOMAIN = 0xF811;
-5. const BUNDLE = 'SupportingAgingFriendly_';
-
-7. @Entry
-8. @Component
-9. struct OnWillDismiss_Dismiss {
-10. @State isShow: Boolean = false;
-
-12. @Builder
-13. myBuilder() {
-14. Column() {
-15. Button('Button')
-16. }
-17. }
-
-19. build() {
-20. Button('OpenBindSheet')
-21. .onClick(() => {
-22. this.isShow = true
-23. })
-24. .margin(120)
-25. .bindSheet($$this.isShow, this.myBuilder(), {
-26. height: SheetSize.MEDIUM,
-27. blurStyle: BlurStyle.Thick,
-28. dragBar: true,
-29. detents: [SheetSize.MEDIUM, SheetSize.LARGE],
-30. title: { title: 'title', subtitle: 'subtitle' },
-31. enableOutsideInteractive: false,
-32. onWillDismiss: ((dismissSheetAction: DismissSheetAction) => {
-33. // 第二步：确认二次回调交互能力，此处用AlertDialog提示 "是否需要关闭半模态"
-34. this.getUIContext().showAlertDialog(
-35. {
-36. // 请将$r('app.string.bindContentCover_label2')替换为实际资源文件，在本示例中该资源文件的value值为"示例2（自定义转场动画）"
-37. message: $r('app.string.bindContentCover_label2'),
-38. autoCancel: true,
-39. alignment: DialogAlignment.Bottom,
-40. gridCount: 4,
-41. offset: { dx: 0, dy: -20 },
-42. primaryButton: {
-43. value: 'cancel',
-44. action: () => {
-45. hilog.info(DOMAIN, TAG, 'Callback when the cancel button is clicked');
-46. }
-47. },
-48. secondaryButton: {
-49. enabled: true,
-50. defaultFocus: true,
-51. style: DialogButtonStyle.HIGHLIGHT,
-52. value: 'ok',
-53. // 第三步：确认关闭半模态逻辑所在，此处为AlertDialog的Button回调
-54. action: () => {
-55. // 第四步：上述第三步逻辑触发的时候，调用dismiss()关闭半模态
-56. dismissSheetAction.dismiss();
-57. hilog.info(DOMAIN, TAG, 'Callback when the ok button is clicked');
-58. }
-59. },
-60. cancel: () => {
-61. hilog.info(DOMAIN, TAG, BUNDLE + 'onWillDismiss_Dismiss:' + 'AlertDialog Closed callbacks');
-62. }
-63. }
-64. )
-65. })
-66. })
-67. }
-68. }
-```
-
-[OnWillDismiss\_Dismiss.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template11/OnWillDismiss_Dismiss.ets#L16-L86)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/IlFh_GGgSX6qZPQs8EFSQQ/zh-cn_image_0000002558764414.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/kn1uGWZmQv6cv1dr0kTUYg/zh-cn_image_0000002736432853.png)
 
 ## 屏蔽部分关闭行为
 
@@ -212,12 +209,12 @@ content_hash: sha256:3ba77d000ec16e19939634c084a582655e940d3b3186a1279ca517f59a5
 
 下述示例显示半模态页面只在下滑的时候关闭。
 
-```
-1. onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
-2. if (DismissSheetAction.reason === DismissReason.SLIDE_DOWN) {
-3. DismissSheetAction.dismiss();// 注册dismiss行为
-4. }
-5. }),
+```ts
+onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
+  if (DismissSheetAction.reason === DismissReason.SLIDE_DOWN) {
+    DismissSheetAction.dismiss();// 注册dismiss行为
+  }
+}),
 ```
 
 同理可以结合onWillSpringBackWhenDismiss接口实现更好的下滑体验。
@@ -226,16 +223,16 @@ content_hash: sha256:3ba77d000ec16e19939634c084a582655e940d3b3186a1279ca517f59a5
 
 具体代码如下，在半模态下滑的时候无需回弹。
 
-```
-1. onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
-2. if (DismissSheetAction.reason === DismissReason.SLIDE_DOWN) {
-3. DismissSheetAction.dismiss();// 注册dismiss行为
-4. }
-5. }),
+```ts
+onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
+  if (DismissSheetAction.reason === DismissReason.SLIDE_DOWN) {
+    DismissSheetAction.dismiss();// 注册dismiss行为
+  }
+}),
 
-7. onWillSpringBackWhenDismiss: ((SpringBackAction: SpringBackAction) => {
-8. // 没有注册springBack，下拉半模态页面无回弹行为
-9. }),
+onWillSpringBackWhenDismiss: ((SpringBackAction: SpringBackAction) => {
+// 没有注册springBack，下拉半模态页面无回弹行为
+}),
 ```
 
 ## 半模态支持避让中轴
@@ -247,69 +244,67 @@ content_hash: sha256:3ba77d000ec16e19939634c084a582655e940d3b3186a1279ca517f59a5
 
 完整示例代码如下：
 
+```typescript
+@Entry
+@Component
+struct SheetTransitionExample {
+  @State isShow: boolean = false;
+  @State enableHoverMode: boolean = true;
+  @State hoverModeArea: HoverModeAreaType = HoverModeAreaType.TOP_SCREEN;
+
+  @Builder
+  myBuilder() {
+    Column() {
+      // 请将$r('app.string.bindSheetCmd_label10')替换为实际资源文件，在本示例中该资源文件的value值为"enableHoverMode切换"
+      Button($r('app.string.bindSheetCmd_label10'))
+        .margin(10)
+        .fontSize(20)
+        .onClick(() => {
+          this.enableHoverMode = !this.enableHoverMode;
+        })
+
+      // 请将$r('app.string.bindSheetCmd_label11')替换为实际资源文件，在本示例中该资源文件的value值为"hoverModeArea切换"
+      Button($r('app.string.bindSheetCmd_label11'))
+        .margin(10)
+        .fontSize(20)
+        .onClick(() => {
+          this.hoverModeArea = this.hoverModeArea === HoverModeAreaType.TOP_SCREEN ?
+            HoverModeAreaType.BOTTOM_SCREEN : HoverModeAreaType.TOP_SCREEN;
+        })
+
+      Button('close modal')
+        .margin(10)
+        .fontSize(20)
+        .onClick(() => {
+          this.isShow = false;
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+
+  build() {
+    Column() {
+      // 请将$r('app.string.bindSheetCmd_label9')替换为实际资源文件，在本示例中该资源文件的value值为"拉起半模态"
+      Button($r('app.string.bindSheetCmd_label9'))
+        .onClick(() => {
+          this.isShow = true;
+        })
+        .fontSize(20)
+        .margin(10)
+        .bindSheet($$this.isShow, this.myBuilder(), {
+          height: 300,
+          backgroundColor: Color.Green,
+          preferType: SheetType.CENTER,
+          enableHoverMode: this.enableHoverMode,
+          hoverModeArea: this.hoverModeArea
+        })
+    }
+    .justifyContent(FlexAlign.Center)
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct SheetTransitionExample {
-4. @State isShow: boolean = false;
-5. @State enableHoverMode: boolean = true;
-6. @State hoverModeArea: HoverModeAreaType = HoverModeAreaType.TOP_SCREEN;
 
-8. @Builder
-9. myBuilder() {
-10. Column() {
-11. // 请将$r('app.string.bindSheetCmd_label10')替换为实际资源文件，在本示例中该资源文件的value值为"enableHoverMode切换"
-12. Button($r('app.string.bindSheetCmd_label10'))
-13. .margin(10)
-14. .fontSize(20)
-15. .onClick(() => {
-16. this.enableHoverMode = !this.enableHoverMode;
-17. })
-
-19. // 请将$r('app.string.bindSheetCmd_label11')替换为实际资源文件，在本示例中该资源文件的value值为"hoverModeArea切换"
-20. Button($r('app.string.bindSheetCmd_label11'))
-21. .margin(10)
-22. .fontSize(20)
-23. .onClick(() => {
-24. this.hoverModeArea = this.hoverModeArea === HoverModeAreaType.TOP_SCREEN ?
-25. HoverModeAreaType.BOTTOM_SCREEN : HoverModeAreaType.TOP_SCREEN;
-26. })
-
-28. Button('close modal')
-29. .margin(10)
-30. .fontSize(20)
-31. .onClick(() => {
-32. this.isShow = false;
-33. })
-34. }
-35. .width('100%')
-36. .height('100%')
-37. }
-
-39. build() {
-40. Column() {
-41. // 请将$r('app.string.bindSheetCmd_label9')替换为实际资源文件，在本示例中该资源文件的value值为"拉起半模态"
-42. Button($r('app.string.bindSheetCmd_label9'))
-43. .onClick(() => {
-44. this.isShow = true;
-45. })
-46. .fontSize(20)
-47. .margin(10)
-48. .bindSheet($$this.isShow, this.myBuilder(), {
-49. height: 300,
-50. backgroundColor: Color.Green,
-51. preferType: SheetType.CENTER,
-52. enableHoverMode: this.enableHoverMode,
-53. hoverModeArea: this.hoverModeArea
-54. })
-55. }
-56. .justifyContent(FlexAlign.Center)
-57. .width('100%')
-58. .height('100%')
-59. }
-60. }
-```
-
-[SheetTransitionExample.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/BindSheet/entry/src/main/ets/pages/bindSheet/template12/SheetTransitionExample.ets#L16-L79)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/1T_2-aVISEy5DgQL-DYJmw/zh-cn_image_0000002558604758.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/8kaSxN1mQAGzVH7FdkvIdg/zh-cn_image_0000002706833698.png)

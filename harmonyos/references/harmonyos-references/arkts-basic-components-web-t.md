@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Types
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Types
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ab525645c3d81efd2fa7567fad7577b203289ae68b92ac5b5703a33b6baa1de7
+scraped_at: 2026-09-02T15:01:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:756fefe2c619e0f2076ef973937b6627241f6b9ca768fd2201b48aea28bbd4ca
 ---
 
-说明
+本文档提供 ArkWeb 组件中使用的类型定义，包括 Web 控制器及各类事件回调函数类型。其中，WebviewController 用于控制 Web 组件的行为；各类回调函数类型为开发者提供 Web 组件运行过程中多种事件场景的事件监听和处理能力。
 
-* 该组件首批接口从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+**说明** 
+
+* 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 示例效果请以真机运行为准。
 
 ## WebviewController9+
 
-PhonePC/2in1TabletTVWearable
-
-type WebviewController = WebviewController
+type WebviewController = import('../api/@ohos.web.webview').default.WebviewController
 
 提供Web控制器的方法。
 
@@ -25,11 +25,9 @@ type WebviewController = WebviewController
 
 | 类型 | 说明 |
 | --- | --- |
-| [WebviewController](arkts-apis-webview-webviewcontroller.md) | 通过WebviewController可以控制Web组件各种行为。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。 |
+| [import('../api/@ohos.web.webview').default.WebviewController](arkts-apis-webview-webviewcontroller.md) | 通过WebviewController可以控制Web组件各种行为。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。 |
 
 ## OnAdsBlockedCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 type OnAdsBlockedCallback = (details: AdsBlockedDetails) => void
 
@@ -45,11 +43,9 @@ type OnAdsBlockedCallback = (details: AdsBlockedDetails) => void
 
 ## OnSslErrorEventCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnSslErrorEventCallback = (sslErrorEvent: SslErrorEvent) => void
 
-用户加载资源时发生SSL错误时触发的回调。
+用户加载资源时发生SSL错误时触发的回调，返回SSL错误详细信息。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -57,11 +53,9 @@ type OnSslErrorEventCallback = (sslErrorEvent: SslErrorEvent) => void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sslErrorEvent | [SslErrorEvent](arkts-basic-components-web-i.md#sslerrorevent12) | 是 | 用户加载资源时发生SSL错误时触发的回调详情。 |
+| sslErrorEvent | [SslErrorEvent](arkts-basic-components-web-i.md#sslerrorevent12) | 是 | 用户加载资源时发生SSL错误时传递的详细信息。 |
 
 ## OnVerifyPinCallback22+
-
-PhonePC/2in1TabletTVWearable
 
 type OnVerifyPinCallback = (verifyPinEvent: VerifyPinEvent) => void
 
@@ -77,8 +71,6 @@ type OnVerifyPinCallback = (verifyPinEvent: VerifyPinEvent) => void
 
 ## OnContextMenuHideCallback11+
 
-PhonePC/2in1TabletTVWearable
-
 type OnContextMenuHideCallback = () => void
 
 上下文菜单自定义隐藏的回调。
@@ -86,8 +78,6 @@ type OnContextMenuHideCallback = () => void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 ## OnRenderProcessNotRespondingCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 type OnRenderProcessNotRespondingCallback = (data : RenderProcessNotRespondingData) => void
 
@@ -103,8 +93,6 @@ type OnRenderProcessNotRespondingCallback = (data : RenderProcessNotRespondingDa
 
 ## OnRenderProcessRespondingCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnRenderProcessRespondingCallback = () => void
 
 渲染进程由无响应状态变回正常运行状态时触发该回调。
@@ -112,8 +100,6 @@ type OnRenderProcessRespondingCallback = () => void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 ## OnViewportFitChangedCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 type OnViewportFitChangedCallback = (viewportFit: ViewportFit) => void
 
@@ -129,8 +115,6 @@ type OnViewportFitChangedCallback = (viewportFit: ViewportFit) => void
 
 ## OnNativeEmbedVisibilityChangeCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnNativeEmbedVisibilityChangeCallback = (nativeEmbedVisibilityInfo: NativeEmbedVisibilityInfo) => void
 
 当同层标签可见性变化时触发该回调。
@@ -141,11 +125,9 @@ type OnNativeEmbedVisibilityChangeCallback = (nativeEmbedVisibilityInfo: NativeE
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| nativeEmbedVisibilityInfo | [NativeEmbedVisibilityInfo](arkts-basic-components-web-i.md#nativeembedvisibilityinfo12) | 是 | 提供同层标签的可见性信息。 |
+| nativeEmbedVisibilityInfo | [NativeEmbedVisibilityInfo](arkts-basic-components-web-i.md#nativeembedvisibilityinfo12) | 是 | 提供同层标签可见性变化的信息。 |
 
 ## OnFullScreenEnterCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 type OnFullScreenEnterCallback = (event: FullScreenEnterEvent) => void
 
@@ -161,11 +143,9 @@ Web组件进入全屏时触发的回调。
 
 ## OnFirstMeaningfulPaintCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnFirstMeaningfulPaintCallback = (firstMeaningfulPaint: [FirstMeaningfulPaint](arkts-basic-components-web-i.md#firstmeaningfulpaint12)) => void
 
-网页绘制页面度量信息的回调，当网页加载完页面主要内容时会触发该回调。
+网页首次绘制页面主要内容度量的回调，当网页加载完页面主要内容时会触发此回调。与OnLargestContentfulPaintCallback关注最大内容元素绘制时间、OnFirstScreenPaintCallback关注首屏可见内容渲染完成相比，本回调更关注主要内容是否加载完成，适合评估用户可见内容的加载体验。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -177,11 +157,9 @@ type OnFirstMeaningfulPaintCallback = (firstMeaningfulPaint: [FirstMeaningfulPai
 
 ## OnLargestContentfulPaintCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnLargestContentfulPaintCallback = (largestContentfulPaint: [LargestContentfulPaint](arkts-basic-components-web-i.md#largestcontentfulpaint12)) => void
 
-网页绘制页面最大内容度量信息的回调。
+当网页绘制最大内容区域时触发的回调，用于获取最大内容绘制的性能度量信息。适用于需要监控网页加载性能、优化页面渲染速度等场景。与OnFirstMeaningfulPaintCallback关注主要内容加载完成、OnFirstScreenPaintCallback关注首屏可见内容渲染完成相比，本回调关注最大内容元素的绘制时间，适合评估页面渲染完成度和性能瓶颈。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -192,8 +170,6 @@ type OnLargestContentfulPaintCallback = (largestContentfulPaint: [LargestContent
 | largestContentfulPaint | [LargestContentfulPaint](arkts-basic-components-web-i.md#largestcontentfulpaint12) | 是 | 网页绘制页面最大内容度量的详细信息。 |
 
 ## OnNavigationEntryCommittedCallback11+
-
-PhonePC/2in1TabletTVWearable
 
 type OnNavigationEntryCommittedCallback = (loadCommittedDetails: [LoadCommittedDetails](arkts-basic-components-web-i.md#loadcommitteddetails11)) => void
 
@@ -209,8 +185,6 @@ type OnNavigationEntryCommittedCallback = (loadCommittedDetails: [LoadCommittedD
 
 ## OnSafeBrowsingCheckResultCallback11+
 
-PhonePC/2in1TabletTVWearable
-
 type OnSafeBrowsingCheckResultCallback = (threatType: ThreatType) => void
 
 网站安全风险检查触发的回调。
@@ -224,8 +198,6 @@ type OnSafeBrowsingCheckResultCallback = (threatType: ThreatType) => void
 | threatType | [ThreatType](arkts-basic-components-web-e.md#threattype11) | 是 | 定义网站threat类型。 |
 
 ## OnIntelligentTrackingPreventionCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 type OnIntelligentTrackingPreventionCallback = (details: IntelligentTrackingPreventionDetails) => void
 
@@ -241,11 +213,9 @@ type OnIntelligentTrackingPreventionCallback = (details: IntelligentTrackingPrev
 
 ## OnOverrideUrlLoadingCallback12+
 
-PhonePC/2in1TabletTVWearable
-
 type OnOverrideUrlLoadingCallback = (webResourceRequest: WebResourceRequest) => boolean
 
-onOverrideUrlLoading的回调。
+用于拦截URL加载请求的回调，可阻止特定URL的加载或进行自定义处理。适用于需要拦截广告、阻止恶意网站跳转等场景。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -262,8 +232,6 @@ onOverrideUrlLoading的回调。
 | boolean | 返回true表示阻止此次加载，否则允许此次加载。 |
 
 ## WebKeyboardCallback12+
-
-PhonePC/2in1TabletTVWearable
 
 type WebKeyboardCallback = (keyboardCallbackInfo: WebKeyboardCallbackInfo) => WebKeyboardOptions
 
@@ -285,8 +253,6 @@ type WebKeyboardCallback = (keyboardCallbackInfo: WebKeyboardCallbackInfo) => We
 
 ## OnOverrideErrorPageCallback20+
 
-PhonePC/2in1TabletTVWearable
-
 type OnOverrideErrorPageCallback = (errorPageEvent: OnErrorReceiveEvent) => string
 
 onOverrideErrorPage的回调函数，网页加载失败时触发。
@@ -307,11 +273,9 @@ onOverrideErrorPage的回调函数，网页加载失败时触发。
 
 ## MouseInfoCallback20+
 
-PhonePC/2in1TabletTVWearable
-
 type MouseInfoCallback = (event: NativeEmbedMouseInfo) => void
 
-当鼠标/触摸板点击到同层标签时触发该回调。
+当鼠标/触摸板单击到同层标签时触发此回调。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -319,15 +283,13 @@ type MouseInfoCallback = (event: NativeEmbedMouseInfo) => void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | [NativeEmbedMouseInfo](arkts-basic-components-web-i.md#nativeembedmouseinfo20) | 是 | 提供鼠标/触摸板在同层标签上点击或长按的详细信息。 |
+| event | [NativeEmbedMouseInfo](arkts-basic-components-web-i.md#nativeembedmouseinfo20) | 是 | 提供鼠标/触摸板在同层标签上单击或长按的详细信息。 |
 
 **示例：**
 
 完整示例代码参考[onNativeEmbedMouseEvent](arkts-basic-components-web-events.md#onnativeembedmouseevent20)。
 
 ## OnNativeEmbedObjectParamChangeCallback21+
-
-PhonePC/2in1TabletTVWearable
 
 type OnNativeEmbedObjectParamChangeCallback = (event: NativeEmbedParamDataInfo) => void
 
@@ -347,8 +309,6 @@ type OnNativeEmbedObjectParamChangeCallback = (event: NativeEmbedParamDataInfo) 
 
 ## OnDetectBlankScreenCallback22+
 
-PhonePC/2in1TabletTVWearable
-
 type OnDetectBlankScreenCallback = (event: BlankScreenDetectionEventInfo) => void
 
 检测到白屏时触发此回调。
@@ -367,9 +327,7 @@ type OnDetectBlankScreenCallback = (event: BlankScreenDetectionEventInfo) => voi
 
 ## OnCameraCaptureStateChangeCallback23+
 
-PhonePC/2in1TabletTVWearable
-
-type OnCameraCaptureStateChangeCallback = (event: CameraCaptureStateChangeInfo) => void;
+type OnCameraCaptureStateChangeCallback = (event: CameraCaptureStateChangeInfo) => void
 
 当页面摄像设备状态发生改变时触发此回调。
 
@@ -383,9 +341,7 @@ type OnCameraCaptureStateChangeCallback = (event: CameraCaptureStateChangeInfo) 
 
 ## OnMicrophoneCaptureStateChangeCallback23+
 
-PhonePC/2in1TabletTVWearable
-
-type OnMicrophoneCaptureStateChangeCallback = (event: MicrophoneCaptureStateChangeInfo) => void;
+type OnMicrophoneCaptureStateChangeCallback = (event: MicrophoneCaptureStateChangeInfo) => void
 
 当页面麦克风状态发生改变时触发此回调。
 
@@ -398,8 +354,6 @@ type OnMicrophoneCaptureStateChangeCallback = (event: MicrophoneCaptureStateChan
 | event | [MicrophoneCaptureStateChangeInfo](arkts-basic-components-web-i.md#microphonecapturestatechangeinfo23) | 是 | 网页麦克风状态发生改变时，返回原来的状态和改变后的状态。 |
 
 ## TextSelectionChangeCallback23+
-
-PhonePC/2in1TabletTVWearable
 
 type TextSelectionChangeCallback = (selectionText: string) => void
 
@@ -419,11 +373,9 @@ onTextSelectionChange的回调，选区内容改变时触发。
 
 ## OnFirstScreenPaintCallback23+
 
-PhonePC/2in1TabletTVWearable
-
 type OnFirstScreenPaintCallback = (firstScreenPaint: FirstScreenPaint) => void
 
-检测到首屏渲染结束时会触发此回调。
+检测到首屏渲染结束时会触发此回调。与OnFirstMeaningfulPaintCallback关注主要内容加载完成、OnLargestContentfulPaintCallback关注最大内容元素绘制时间相比，本回调更关注首屏可见内容的渲染完成时间，适合评估用户首次视觉体验。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -436,3 +388,102 @@ type OnFirstScreenPaintCallback = (firstScreenPaint: FirstScreenPaint) => void
 **示例：**
 
 完整示例代码参考[onFirstScreenPaint](arkts-basic-components-web-events.md#onfirstscreenpaint23)。
+
+## OnCreateAISession
+
+type OnCreateAISession = (id: string, params: string, result: OnAISessionCallback) => boolean
+
+AI会话创建回调函数类型。允许自定义模型初始化和结果处理。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 会话任务ID。 |
+| params | string | 是 | 会话创建时传递的上下文数据，JSON字符串格式。 |
+| result | [OnAISessionCallback](arkts-basic-components-web-t.md#onaisessioncallback) | 是 | 用于通知系统会话创建结果的回调函数。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | true表示使用自定义逻辑，跳过系统默认行为；false表示继续执行系统默认逻辑。 |
+
+## OnExecuteAIAction
+
+type OnExecuteAIAction = (id: string, params: string, result: OnAISessionCallback) => void
+
+AI会话执行操作回调函数类型。用于自定义实现AI模型执行。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 会话任务ID。 |
+| params | string | 是 | 执行操作时传递的上下文数据，JSON字符串格式。 |
+| result | [OnAISessionCallback](arkts-basic-components-web-t.md#onaisessioncallback) | 是 | 用于通知系统操作执行结果的回调函数。 |
+
+## OnDestroyAISession
+
+type OnDestroyAISession = (id: string) => void
+
+AI会话销毁回调函数类型。用于清理与自定义AI模型关联的资源。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| id | string | 是 | 会话任务ID。 |
+
+## OnAISessionCallback
+
+type OnAISessionCallback = (state: AISessionResultType, content: string) => void
+
+AI会话操作结果回调函数类型。用于报告会话创建或执行的结果。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| state | [AISessionResultType](arkts-basic-components-web-e.md#aisessionresulttype) | 是 | AI会话创建或执行的状态结果。 |
+| content | string | 是 | AI会话的响应内容，文本或JSON格式，包含AI模型生成的回复内容。 |
+
+## OnInputmethodAttachedCallback
+
+type OnInputmethodAttachedCallback = () => void;
+
+当检测到输入法绑定成功时，会触发此回调。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**示例：**
+
+完整示例代码参考[onInputmethodAttached](arkts-basic-components-web-events.md#oninputmethodattached)。

@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: CanvasGradient对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > CanvasGradient对象
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:01039e4fbfd5a324fd0910d2eb5bf05934e408a7afa04e1eb21a1fe58e51e496
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7bcac0033125ddebc838bcb18a0d80d6a3d6d00bd22b487d4282ea462f0add81
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 渐变对象。
 
 ## addColorStop
-
-PhonePC/2in1TabletTVWearable
 
 addColorStop(offset: number, color: string): void
 
@@ -31,27 +29,27 @@ addColorStop(offset: number, color: string): void
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. const gradient = ctx.createLinearGradient(50, 0, 300, 100);
-7. gradient.addColorStop(0.0, '#ff0000')
-8. gradient.addColorStop(0.5, '#ffffff')
-9. gradient.addColorStop(1.0, '#00ff00')
-10. ctx.fillStyle = gradient
-11. ctx.fillRect(0, 0, 300, 300)
-12. }
-13. }
+```html
+<!-- xxx.hml -->
+<div>
+  <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/dTZAmbDPScqokRBlArOavQ/zh-cn_image_0000002589246565.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    const gradient = ctx.createLinearGradient(50, 0, 300, 100);
+    gradient.addColorStop(0.0, '#ff0000');
+    gradient.addColorStop(0.5, '#ffffff');
+    gradient.addColorStop(1.0, '#00ff00');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 300, 300);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/2UymFdEUQwKlf_Bqc4lvsQ/zh-cn_image_0000002706836422.png)

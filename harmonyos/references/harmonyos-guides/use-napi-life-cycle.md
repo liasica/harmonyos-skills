@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-life
 title: 使用Node-API接口进行生命周期相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行生命周期相关开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fa8bb677144a2185ec486b9533c2193fbdd7db8b6796bdc42e5e5d4382d1e4a7
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3d95265d69104af258706a003680c57c0aea6d0bb8e8cad18f9c308dcacc5cb4
 ---
 
 ## 简介
@@ -49,17 +49,17 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 
 本文cpp部分代码所需引用的头文件如下：
 
-```
-1. #include "napi/native_api.h"
-2. // log.h用于C++中日志打印
-3. #include "hilog/log.h"
+```cpp
+#include "napi/native_api.h"
+// log.h用于C++中日志打印
+#include "hilog/log.h"
 ```
 
 本文ArkTS侧示例代码所需的模块导入如下：
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
 ```
 
 ### napi\_open\_handle\_scope、napi\_close\_handle\_scope
@@ -72,175 +72,175 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 
 [生命周期管理](napi-guidelines.md#生命周期管理)
 
-关于典型错误使用方法的代码部分也可参考下面链接:
+关于典型错误使用方法的代码部分也可参考下面链接：
 
 [典型错误场景](napi-faq-about-stability.md#napi_open_handle_scope与napi_close_handle_scope进行生命周期相关开发典型错误场景)
 
 cpp部分代码
 
 ```
-1. // napi_open_handle_scope、napi_close_handle_scope
-2. static napi_value HandleScopeTest(napi_env env, napi_callback_info info)
-3. {
-4. // 通过调用napi_open_handle_scope来创建一个句柄作用域
-5. napi_handle_scope scope;
-6. napi_open_handle_scope(env, &scope);
-7. // 在句柄作用域内创建一个obj
-8. napi_value obj = nullptr;
-9. napi_create_object(env, &obj);
-10. // 在对象中添加属性
-11. napi_value value = nullptr;
-12. napi_create_string_utf8(env, "handleScope", NAPI_AUTO_LENGTH, &value);
-13. napi_set_named_property(env, obj, "key", value);
-14. // 在作用域内获取obj的属性并返回
-15. napi_value result = nullptr;
-16. napi_get_named_property(env, obj, "key", &result);
-17. // 关闭句柄作用域，自动释放在该作用域内创建的对象句柄
-18. napi_close_handle_scope(env, scope);
-19. // result已经离开scope的作用域，继续使用可能会存在稳定性问题，如果需要在作用域外使用对象，建议使用napi_open_escapable_handle_scope系列接口
-20. return nullptr;
-21. }
+// napi_open_handle_scope、napi_close_handle_scope
+static napi_value HandleScopeTest(napi_env env, napi_callback_info info)
+{
+    // 通过调用napi_open_handle_scope来创建一个句柄作用域
+    napi_handle_scope scope;
+    napi_open_handle_scope(env, &scope);
+    // 在句柄作用域内创建一个obj
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    // 在对象中添加属性
+    napi_value value = nullptr;
+    napi_create_string_utf8(env, "handleScope", NAPI_AUTO_LENGTH, &value);
+    napi_set_named_property(env, obj, "key", value);
+    // 在作用域内获取obj的属性并返回
+    napi_value result = nullptr;
+    napi_get_named_property(env, obj, "key", &result);
+    // 关闭句柄作用域，自动释放在该作用域内创建的对象句柄
+    napi_close_handle_scope(env, scope);
+    // result已经离开scope的作用域，继续使用可能会存在稳定性问题，如果需要在作用域外使用对象，建议使用napi_open_escapable_handle_scope系列接口
+    return nullptr;
+}
 
-23. static napi_value HandleScope(napi_env env, napi_callback_info info)
-24. {
-25. // 通过调用napi_open_handle_scope来创建一个句柄作用域
-26. napi_handle_scope scope;
-27. napi_open_handle_scope(env, &scope);
-28. // 在句柄作用域内创建一个obj
-29. napi_value obj = nullptr;
-30. napi_create_object(env, &obj);
-31. // 在对象中添加属性
-32. napi_value value = nullptr;
-33. napi_create_string_utf8(env, "handleScope", NAPI_AUTO_LENGTH, &value);
-34. napi_set_named_property(env, obj, "key", value);
-35. // 关闭句柄作用域，自动释放在该作用域内创建的对象句柄
-36. napi_close_handle_scope(env, scope);
-37. // 在作用域外获取obj的属性并返回，此处只能得到“undefined”
-38. napi_value result = nullptr;
-39. napi_get_named_property(env, obj, "key", &result);
-40. return result;
-41. }
+static napi_value HandleScope(napi_env env, napi_callback_info info)
+{
+    // 通过调用napi_open_handle_scope来创建一个句柄作用域
+    napi_handle_scope scope;
+    napi_open_handle_scope(env, &scope);
+    // 在句柄作用域内创建一个obj
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    // 在对象中添加属性
+    napi_value value = nullptr;
+    napi_create_string_utf8(env, "handleScope", NAPI_AUTO_LENGTH, &value);
+    napi_set_named_property(env, obj, "key", value);
+    // 关闭句柄作用域，自动释放在该作用域内创建的对象句柄
+    napi_close_handle_scope(env, scope);
+    // 在作用域外获取obj的属性并返回，此处只能得到“undefined”
+    napi_value result = nullptr;
+    napi_get_named_property(env, obj, "key", &result);
+    return result;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const handleScopeTest: () => string; // napi_open_handle_scope、napi_close_handle_scope
+```typescript
+export const handleScopeTest: () => string; // napi_open_handle_scope、napi_close_handle_scope
 
-3. export const handleScope: () => string;
+export const handleScope: () => string;
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_open_handle_scope  napi_close_handle_scope
-2. try {
-3. hilog.info(0x0000, 'testTag', 'Test Node-API handleScopeTest: %{public}s',
-4. testNapi.handleScopeTest());
-5. hilog.info(0x0000, 'testTag', 'Test Node-API handleScope: %{public}s', testNapi.handleScope());
-6. // ...
-7. } catch (error) {
-8. hilog.error(0x0000, 'testTag',
-9. 'Test Node-API handleScopeTest errorCode: %{public}s, errorMessage: %{public}s', error.code,
-10. error.message);
-11. // ...
-12. }
+```typescript
+// napi_open_handle_scope  napi_close_handle_scope
+try {
+  hilog.info(0x0000, 'testTag', 'Test Node-API handleScopeTest: %{public}s',
+    testNapi.handleScopeTest());
+  hilog.info(0x0000, 'testTag', 'Test Node-API handleScope: %{public}s', testNapi.handleScope());
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag',
+    'Test Node-API handleScopeTest errorCode: %{public}s, errorMessage: %{public}s', error.code,
+    error.message);
+  // ...
+}
 ```
 
-框架层在核心初始化函数Init中定义了ArkTS侧和native侧的接口映射表，在ArkTS侧通过映射表中的接口访问native侧的函数时，框架层会自动加上scope, 不需要额外增加napi\_open\_handle\_scope、napi\_close\_handle\_scope接口来管理ArkTS对象的生命周期。即：进入开发者自己写的native函数前自动open scope, native函数结束后自动close scope。native侧函数中创建的ArkTS对象的生命周期在native函数返回时结束，不会存在内存泄漏的问题。以NewObject函数举例如下（定义接口映射表中映射的函数不需要手动加napi\_open\_handle\_scope、napi\_close\_handle\_scope管理ArkTS对象的生命周期）：
+框架层在核心初始化函数Init中定义了ArkTS侧和native侧的接口映射表，在ArkTS侧通过映射表中的接口访问native侧的函数时，框架层会自动加上scope，不需要额外增加napi\_open\_handle\_scope、napi\_close\_handle\_scope接口来管理ArkTS对象的生命周期。即：进入开发者自己写的native函数前自动open scope，native函数结束后自动close scope。native侧函数中创建的ArkTS对象的生命周期在native函数返回时结束，不会存在内存泄漏的问题。以NewObject函数举例如下（定义接口映射表中映射的函数不需要手动加napi\_open\_handle\_scope、napi\_close\_handle\_scope管理ArkTS对象的生命周期）：
 
-```
-1. // 调用NewObject前会open scope
-2. napi_value NewObject(napi_env env, napi_callback_info info)
-3. {
-4. napi_value object = nullptr;
-5. // 创建一个空对象
-6. napi_create_object(env, &object);
-7. // 设置对象的属性
-8. napi_value name = nullptr;
-9. // 设置属性名为"name"
-10. napi_create_string_utf8(env, "name", NAPI_AUTO_LENGTH, &name);
-11. napi_value value = nullptr;
-12. // 设置属性值为"Hello from Node-API!"
-13. napi_create_string_utf8(env, "Hello from Node-API!", NAPI_AUTO_LENGTH, &value);
-14. // 将属性设置到对象上
-15. napi_set_property(env, object, name, value);
-16. //result离开作用域后，对象句柄（handle）跟随释放，返回到ArkTS侧的对象由ArkTS侧管理
-17. return object;
-18. }
-19. // NewObject调用函数结束后框架层会close scope
+```cpp
+// 调用NewObject前会open scope
+napi_value NewObject(napi_env env, napi_callback_info info)
+{
+    napi_value object = nullptr;
+    // 创建一个空对象
+    napi_create_object(env, &object);
+    // 设置对象的属性
+    napi_value name = nullptr;
+    // 设置属性名为"name"
+    napi_create_string_utf8(env, "name", NAPI_AUTO_LENGTH, &name);
+    napi_value value = nullptr;
+    // 设置属性值为"Hello from Node-API!"
+    napi_create_string_utf8(env, "Hello from Node-API!", NAPI_AUTO_LENGTH, &value);
+    // 将属性设置到对象上
+    napi_set_property(env, object, name, value);
+    //result离开作用域后，对象句柄（handle）跟随释放，返回到ArkTS侧的对象由ArkTS侧管理
+    return object;
+}
+// NewObject调用函数结束后框架层会close scope
 
-21. // 核心初始化函数
-22. static napi_value Init(napi_env env, napi_value exports)
-23. {
-24. // 定义接口映射表
-25. napi_property_descriptor desc[] = {
-26. { "newObject", nullptr, NewObject, nullptr, nullptr, nullptr, napi_default, nullptr }
-27. };
-28. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-29. return exports;
-30. }
+// 核心初始化函数
+static napi_value Init(napi_env env, napi_value exports)
+{
+    // 定义接口映射表
+    napi_property_descriptor desc[] = {
+        { "newObject", nullptr, NewObject, nullptr, nullptr, nullptr, napi_default, nullptr }
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
 ```
 
 ### napi\_open\_escapable\_handle\_scope、napi\_close\_escapable\_handle\_scope、napi\_escape\_handle
 
 通过接口napi\_open\_escapable\_handle\_scope创建出一个可逃逸的handle scope，可将范围内声明的值返回到父作用域。该作用域需要使用napi\_close\_escapable\_handle\_scope进行关闭。napi\_escape\_handle用于提升传入的ArkTS对象的生命周期到其父作用域。
 
-通过上述接口可以更灵活的使用管理传入的ArkTS对象，特别是在处理跨作用域的值传递时非常有用。
+通过上述接口可以更灵活地使用管理传入的ArkTS对象，特别是在处理跨作用域的值传递时非常有用。
 
 cpp部分代码
 
 ```
-1. // napi_open_escapable_handle_scope、napi_close_escapable_handle_scope、napi_escape_handle
-2. static napi_value EscapableHandleScopeTest(napi_env env, napi_callback_info info)
-3. {
-4. // 创建一个可逃逸的句柄作用域
-5. napi_escapable_handle_scope scope;
-6. napi_open_escapable_handle_scope(env, &scope);
-7. // 在可逃逸的句柄作用域内创建一个obj
-8. napi_value obj = nullptr;
-9. napi_create_object(env, &obj);
-10. // 在对象中添加属性
-11. napi_value value = nullptr;
-12. napi_create_string_utf8(env, "Test napi_escapable_handle_scope", NAPI_AUTO_LENGTH, &value);
-13. napi_set_named_property(env, obj, "key", value);
-14. napi_value prop = nullptr;
-15. napi_get_named_property(env, obj, "key", &prop);
-16. // 调用napi_escape_handle将属性值逃逸到作用域之外
-17. napi_value result = nullptr;
-18. napi_escape_handle(env, scope, prop, &result);
-19. // 关闭可逃逸的句柄作用域，清理资源
-20. napi_close_escapable_handle_scope(env, scope);
-21. // 逃逸后的result可以在作用域外继续使用
-22. return result;
-23. }
+// napi_open_escapable_handle_scope、napi_close_escapable_handle_scope、napi_escape_handle
+static napi_value EscapableHandleScopeTest(napi_env env, napi_callback_info info)
+{
+    // 创建一个可逃逸的句柄作用域
+    napi_escapable_handle_scope scope;
+    napi_open_escapable_handle_scope(env, &scope);
+    // 在可逃逸的句柄作用域内创建一个obj
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    // 在对象中添加属性
+    napi_value value = nullptr;
+    napi_create_string_utf8(env, "Test napi_escapable_handle_scope", NAPI_AUTO_LENGTH, &value);
+    napi_set_named_property(env, obj, "key", value);
+    napi_value prop = nullptr;
+    napi_get_named_property(env, obj, "key", &prop);
+    // 调用napi_escape_handle将属性值逃逸到作用域之外
+    napi_value result = nullptr;
+    napi_escape_handle(env, scope, prop, &result);
+    // 关闭可逃逸的句柄作用域，清理资源
+    napi_close_escapable_handle_scope(env, scope);
+    // 逃逸后的result可以在作用域外继续使用
+    return result;
+}
 ```
 
 接口声明
 
 index.d.ts
 
-```
-1. export const escapableHandleScopeTest: () => string; // napi_open_escapable_handle_scope、napi_close_escapable_handle_scope、napi_escape_handle
+```typescript
+export const escapableHandleScopeTest: () => string; // napi_open_escapable_handle_scope、napi_close_escapable_handle_scope、napi_escape_handle
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_open_escapable_handle_scope napi_close_escapable_handle_scope、napi_escape_handle
-2. try {
-3. hilog.info(0x0000, 'testTag', 'Test Node-API EscapableHandleScopeTest: %{public}s',
-4. testNapi.escapableHandleScopeTest());
-5. // ...
-6. } catch (error) {
-7. hilog.error(0x0000, 'testTag',
-8. 'Test Node-API EscapableHandleScopeTest errorCode: %{public}s, errorMessage: %{public}s',
-9. error.code,
-10. error.message);
-11. // ...
-12. }
+```typescript
+// napi_open_escapable_handle_scope napi_close_escapable_handle_scope、napi_escape_handle
+try {
+  hilog.info(0x0000, 'testTag', 'Test Node-API EscapableHandleScopeTest: %{public}s',
+    testNapi.escapableHandleScopeTest());
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag',
+    'Test Node-API EscapableHandleScopeTest errorCode: %{public}s, errorMessage: %{public}s',
+    error.code,
+    error.message);
+  // ...
+}
 ```
 
 ### napi\_ref
@@ -259,7 +259,7 @@ napi\_ref 是 napi 中用于管理 ArkTS 对象生命周期的引用类型，分
 
 获取与reference相关联的ArkTS Object。
 
-说明
+**说明** 
 
 由于弱引用（引用计数为0的napi\_ref）的释放与gc回收js对象并非同时发生。
 
@@ -274,76 +274,76 @@ napi\_ref 是 napi 中用于管理 ArkTS 对象生命周期的引用类型，分
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+#include "napi/native_api.h"
 
-3. napi_ref g_weakRef = nullptr;
+napi_ref g_weakRef = nullptr;
 
-5. static napi_value CreateWeakReference(napi_env env, napi_callback_info info)
-6. {
-7. napi_value value = nullptr;
-8. napi_create_string_utf8(env, "This is a test property", NAPI_AUTO_LENGTH, &value);
-9. napi_value jsObject = nullptr;
-10. napi_create_object(env, &jsObject);
-11. napi_set_named_property(env, jsObject, "test", value);
+static napi_value CreateWeakReference(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    napi_create_string_utf8(env, "This is a test property", NAPI_AUTO_LENGTH, &value);
+    napi_value jsObject = nullptr;
+    napi_create_object(env, &jsObject);
+    napi_set_named_property(env, jsObject, "test", value);
 
-13. // 清理之前的引用（如果存在）
-14. if (g_weakRef != nullptr) {
-15. napi_delete_reference(env, g_weakRef);
-16. g_weakRef = nullptr;
-17. }
+    // 清理之前的引用（如果存在）
+    if (g_weakRef != nullptr) {
+        napi_delete_reference(env, g_weakRef);
+        g_weakRef = nullptr;
+    }
 
-19. // 创建弱引用，不会阻止垃圾回收，没有其他强引用持有时会被正常回收
-20. napi_status status = napi_create_reference(env, jsObject, 0, &g_weakRef);
-21. if (status != napi_ok) {
-22. napi_throw_error(env, nullptr, "Failed to create weak reference");
-23. return nullptr;
-24. }
+    // 创建弱引用，不会阻止垃圾回收，没有其他强引用持有时会被正常回收
+    napi_status status = napi_create_reference(env, jsObject, 0, &g_weakRef);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to create weak reference");
+        return nullptr;
+    }
 
-26. return nullptr;
-27. }
+    return nullptr;
+}
 
-29. static napi_value GetWeakReferenceValue(napi_env env, napi_callback_info info)
-30. {
-31. napi_value weakValue;
-32. napi_status status = napi_get_reference_value(env, g_weakRef, &weakValue);
-33. if (status != napi_ok) {
-34. napi_throw_error(env, nullptr, "Failed to get reference value");
-35. return nullptr;
-36. }
+static napi_value GetWeakReferenceValue(napi_env env, napi_callback_info info)
+{
+    napi_value weakValue = nullptr;
+    napi_status status = napi_get_reference_value(env, g_weakRef, &weakValue);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to get reference value");
+        return nullptr;
+    }
 
-38. // 判断对象是否已被回收
-39. if (weakValue == nullptr) {
-40. napi_throw_error(env, nullptr, "Object has been garbage collected");
-41. return nullptr;
-42. }
+    // 判断对象是否已被回收
+    if (weakValue == nullptr) {
+        napi_throw_error(env, nullptr, "Object has been garbage collected");
+        return nullptr;
+    }
 
-44. // 尝试获取对象的属性来确认它仍然有效
-45. napi_value result = nullptr;
-46. napi_get_named_property(env, weakValue, "test", &result);
+    // 尝试获取对象的属性来确认它仍然有效
+    napi_value result = nullptr;
+    napi_get_named_property(env, weakValue, "test", &result);
 
-48. return result;
-49. }
+    return result;
+}
 ```
 
 接口声明
 
 // index.d.ts
 
-```
-1. export const createWeakReference: () => void;
+```typescript
+export const createWeakReference: () => void;
 
-3. export const getWeakReferenceValue: () => string;
+export const getWeakReferenceValue: () => string;
 ```
 
 ArkTS侧示例代码
 
-```
-1. try {
-2. testNapi.createWeakReference();
-3. hilog.info(0x0000, 'testTag', 'reference test: %{public}s', testNapi.getWeakReferenceValue());
-4. } catch (error) {
-5. hilog.error(0x0000, 'testTag', `调用错误：${error.message}`);
-6. }
+```typescript
+try {
+    testNapi.createWeakReference();
+    hilog.info(0x0000, 'testTag', 'reference test: %{public}s', testNapi.getWeakReferenceValue());
+} catch (error) {
+    hilog.error(0x0000, 'testTag', `调用错误：${error.message}`);
+}
 ```
 
 **强引用使用示例代码：**
@@ -353,90 +353,90 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+#include "napi/native_api.h"
 
-3. // 全局强引用
-4. napi_ref g_strongRef = nullptr;
+// 全局强引用
+napi_ref g_strongRef = nullptr;
 
-6. // 创建强引用
-7. static napi_value CreateStrongReference(napi_env env, napi_callback_info info)
-8. {
-9. napi_value value = nullptr;
-10. napi_create_string_utf8(env, "This is a test property", NAPI_AUTO_LENGTH, &value);
-11. napi_value jsObject = nullptr;
-12. napi_create_object(env, &jsObject);
-13. napi_set_named_property(env, jsObject, "test", value);
+// 创建强引用
+static napi_value CreateStrongReference(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    napi_create_string_utf8(env, "This is a test property", NAPI_AUTO_LENGTH, &value);
+    napi_value jsObject = nullptr;
+    napi_create_object(env, &jsObject);
+    napi_set_named_property(env, jsObject, "test", value);
 
-15. // 清理之前的强引用（如果存在）
-16. if (g_strongRef != nullptr) {
-17. napi_delete_reference(env, g_strongRef);
-18. g_strongRef = nullptr;
-19. }
+    // 清理之前的强引用（如果存在）
+    if (g_strongRef != nullptr) {
+        napi_delete_reference(env, g_strongRef);
+        g_strongRef = nullptr;
+    }
 
-21. // 创建强引用（初始引用计数为1），阻止垃圾回收器回收
-22. napi_status status = napi_create_reference(env, jsObject, 1, &g_strongRef);
+    // 创建强引用（初始引用计数为1），阻止垃圾回收器回收
+    napi_status status = napi_create_reference(env, jsObject, 1, &g_strongRef);
 
-24. if (status != napi_ok) {
-25. napi_throw_error(env, nullptr, "Failed to create strong reference");
-26. return nullptr;
-27. }
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to create strong reference");
+        return nullptr;
+    }
 
-29. return nullptr;
-30. }
+    return nullptr;
+}
 
-32. static napi_value GetStrongReferenceValue(napi_env env, napi_callback_info info)
-33. {
-34. napi_value jsValue;
-35. napi_status status = napi_get_reference_value(env, g_strongRef, &jsValue);
-36. if (status != napi_ok) {
-37. napi_throw_error(env, nullptr, "Failed to get reference value");
-38. return nullptr;
-39. }
+static napi_value GetStrongReferenceValue(napi_env env, napi_callback_info info)
+{
+    napi_value jsValue;
+    napi_status status = napi_get_reference_value(env, g_strongRef, &jsValue);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to get reference value");
+        return nullptr;
+    }
 
-41. // 尝试获取对象的属性来确认它仍然有效
-42. napi_value result = nullptr;
-43. napi_get_named_property(env, jsValue, "test", &result);
+    // 尝试获取对象的属性来确认它仍然有效
+    napi_value result = nullptr;
+    napi_get_named_property(env, jsValue, "test", &result);
 
-45. return result;
-46. }
+    return result;
+}
 
-48. // 清理强引用
-49. static napi_value CleanupStrongReference(napi_env env, napi_callback_info info) {
-50. napi_value ret = nullptr;
-51. if (g_strongRef != nullptr) {
-52. // 强制删除引用，即使引用计数不为0
-53. napi_delete_reference(env, g_strongRef);
-54. g_strongRef = nullptr;
-55. napi_get_boolean(env, true, &ret);
-56. return ret;
-57. }
-58. napi_get_boolean(env, false, &ret);
-59. return ret;
-60. }
+// 清理强引用
+static napi_value CleanupStrongReference(napi_env env, napi_callback_info info) {
+    napi_value ret = nullptr;
+    if (g_strongRef != nullptr) {
+        // 强制删除引用，即使引用计数不为0
+        napi_delete_reference(env, g_strongRef);
+        g_strongRef = nullptr;
+        napi_get_boolean(env, true, &ret);
+        return ret;
+    }
+    napi_get_boolean(env, false, &ret);
+    return ret;
+}
 ```
 
 接口声明
 
 // index.d.ts
 
-```
-1. export const createStrongReference: () => void;
+```typescript
+export const createStrongReference: () => void;
 
-3. export const getStrongReferenceValue: () => string;
+export const getStrongReferenceValue: () => string;
 
-5. export const cleanupStrongReference: () => void;
+export const cleanupStrongReference: () => void;
 ```
 
 ArkTS侧示例代码
 
-```
-1. try {
-2. testNapi.createStrongReference();
-3. hilog.info(0x0000, 'testTag', 'reference test: %{public}s', testNapi.getStrongReferenceValue());
-4. testNapi.cleanupStrongReference();
-5. } catch (error) {
-6. hilog.error(0x0000, 'testTag', `调用错误：${error.message}`);
-7. }
+```typescript
+try {
+    testNapi.createStrongReference();
+    hilog.info(0x0000, 'testTag', 'reference test: %{public}s', testNapi.getStrongReferenceValue());
+    testNapi.cleanupStrongReference();
+} catch (error) {
+    hilog.error(0x0000, 'testTag', `调用错误：${error.message}`);
+}
 ```
 
 ### napi\_add\_finalizer
@@ -446,180 +446,180 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // 创建一个napi_ref类型的指针，用于存储创建的引用。在调用napi_add_finalizer函数前，分配一个napi_ref类型的变量，并传递其地址作为result参数。
-2. napi_ref gRefFinalizer = nullptr;
+// 创建一个napi_ref类型的指针，用于存储创建的引用。在调用napi_add_finalizer函数前，分配一个napi_ref类型的变量，并传递其地址作为result参数。
+napi_ref gRefFinalizer = nullptr;
 
-4. // 创建一个napi_ref类型的指针，用于存储创建的引用。在调用napi_create_reference函数前，分配一个napi_ref类型的变量，并传递其地址作为result参数。
-5. napi_ref gRef = nullptr;
+// 创建一个napi_ref类型的指针，用于存储创建的引用。在调用napi_create_reference函数前，分配一个napi_ref类型的变量，并传递其地址作为result参数。
+napi_ref gRef = nullptr;
 
-7. void Finalizer(napi_env env, void *data, void *hint)
-8. {
-9. // 执行资源清理操作
-10. OH_LOG_INFO(LOG_APP, "Test Node-API Use Finalizer to release resources.");
-11. // do something 执行资源清理操作
-12. }
+void Finalizer(napi_env env, void *data, void *hint)
+{
+    // 执行资源清理操作
+    OH_LOG_INFO(LOG_APP, "Test Node-API Use Finalizer to release resources.");
+    // do something 执行资源清理操作
+}
 
-14. static napi_value AddFinalizer(napi_env env, napi_callback_info info)
-15. {
-16. napi_value obj = nullptr;
-17. napi_status status = napi_create_object(env, &obj);
-18. if (status != napi_ok) {
-19. napi_throw_error(env, nullptr, "napi_create_object fail");
-20. return nullptr;
-21. }
-22. napi_value value = nullptr;
-23. status = napi_create_string_utf8(env, "AddFinalizer", NAPI_AUTO_LENGTH, &value);
-24. if (status != napi_ok) {
-25. napi_throw_error(env, nullptr, "napi_create_string_utf8 fail");
-26. return nullptr;
-27. }
-28. // 将键值对添加到对象中
-29. status = napi_set_named_property(env, obj, "key", value);
-30. if (status != napi_ok) {
-31. napi_throw_error(env, nullptr, "napi_set_named_property fail");
-32. return nullptr;
-33. }
+static napi_value AddFinalizer(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_status status = napi_create_object(env, &obj);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_create_object fail");
+        return nullptr;
+    }
+    napi_value value = nullptr;
+    status = napi_create_string_utf8(env, "AddFinalizer", NAPI_AUTO_LENGTH, &value);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_create_string_utf8 fail");
+        return nullptr;
+    }
+    // 将键值对添加到对象中
+    status = napi_set_named_property(env, obj, "key", value);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_set_named_property fail");
+        return nullptr;
+    }
 
-35. // 注册回调函数Finalizer用于清理资源
-36. void *data = {};
-37. status = napi_add_finalizer(env, obj, data, Finalizer, nullptr, &gRefFinalizer);
-38. if (status != napi_ok) {
-39. napi_throw_error(env, nullptr, "napi_add_finalizer fail");
-40. return nullptr;
-41. }
+    // 注册回调函数Finalizer用于清理资源
+    void *data = {};
+    status = napi_add_finalizer(env, obj, data, Finalizer, nullptr, &gRefFinalizer);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_add_finalizer fail");
+        return nullptr;
+    }
 
-43. return obj;
-44. }
+    return obj;
+}
 
-46. static napi_value CreateReference(napi_env env, napi_callback_info info)
-47. {
-48. napi_value obj = nullptr;
-49. napi_status status = napi_create_object(env, &obj);
-50. if (status != napi_ok) {
-51. napi_throw_error(env, nullptr, "napi_create_object fail");
-52. return nullptr;
-53. }
-54. napi_value value = nullptr;
-55. status = napi_create_string_utf8(env, "CreateReference", NAPI_AUTO_LENGTH, &value);
-56. if (status != napi_ok) {
-57. napi_throw_error(env, nullptr, "napi_create_string_utf8 fail");
-58. return nullptr;
-59. }
-60. // 将键值对添加到对象中
-61. status = napi_set_named_property(env, obj, "key", value);
-62. if (status != napi_ok) {
-63. napi_throw_error(env, nullptr, "napi_set_named_property fail");
-64. return nullptr;
-65. }
-66. // 创建对ArkTS对象的引用
-67. status = napi_create_reference(env, obj, 1, &gRef);
-68. if (status != napi_ok) {
-69. napi_throw_error(env, nullptr, "napi_create_reference fail");
-70. return nullptr;
-71. }
-72. // 增加传入引用的引用计数并返回生成的引用计数
-73. uint32_t result = 0;
-74. status = napi_reference_ref(env, gRef, &result);
-75. OH_LOG_INFO(LOG_APP, "Test Node-API napi_reference_ref, count = %{public}d.", result);
-76. uint32_t numCount = 2;
-77. if (status != napi_ok || result != numCount) {
-78. // 若传入引用的引用计数未增加，则抛出错误
-79. napi_throw_error(env, nullptr, "napi_reference_ref fail");
-80. return nullptr;
-81. }
-82. return obj;
-83. }
+static napi_value CreateReference(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_status status = napi_create_object(env, &obj);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_create_object fail");
+        return nullptr;
+    }
+    napi_value value = nullptr;
+    status = napi_create_string_utf8(env, "CreateReference", NAPI_AUTO_LENGTH, &value);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_create_string_utf8 fail");
+        return nullptr;
+    }
+    // 将键值对添加到对象中
+    status = napi_set_named_property(env, obj, "key", value);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_set_named_property fail");
+        return nullptr;
+    }
+    // 创建对ArkTS对象的引用
+    status = napi_create_reference(env, obj, 1, &gRef);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_create_reference fail");
+        return nullptr;
+    }
+    // 增加传入引用的引用计数并返回生成的引用计数
+    uint32_t result = 0;
+    status = napi_reference_ref(env, gRef, &result);
+    OH_LOG_INFO(LOG_APP, "Test Node-API napi_reference_ref, count = %{public}d.", result);
+    uint32_t numCount = 2;
+    if (status != napi_ok || result != numCount) {
+        // 若传入引用的引用计数未增加，则抛出错误
+        napi_throw_error(env, nullptr, "napi_reference_ref fail");
+        return nullptr;
+    }
+    return obj;
+}
 
-85. static napi_value UseReference(napi_env env, napi_callback_info info)
-86. {
-87. napi_value obj = nullptr;
-88. // 通过调用napi_get_reference_value获取引用的ArkTS对象
-89. napi_status status = napi_get_reference_value(env, gRef, &obj);
-90. if (status != napi_ok) {
-91. napi_throw_error(env, nullptr, "napi_get_reference_value fail");
-92. return nullptr;
-93. }
-94. // 返回获取的对象
-95. return obj;
-96. }
+static napi_value UseReference(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    // 通过调用napi_get_reference_value获取引用的ArkTS对象
+    napi_status status = napi_get_reference_value(env, gRef, &obj);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_get_reference_value fail");
+        return nullptr;
+    }
+    // 返回获取的对象
+    return obj;
+}
 
-98. static napi_value DeleteReference(napi_env env, napi_callback_info info)
-99. {
-100. // 减少传入引用的引用计数并返回生成的引用计数
-101. uint32_t result = 0;
-102. napi_value count = nullptr;
-103. napi_status status = napi_reference_unref(env, gRef, &result);
-104. OH_LOG_INFO(LOG_APP, "Test Node-API napi_reference_unref, count = %{public}d.", result);
-105. uint32_t numCount = 1;
-106. if (status != napi_ok || result != numCount) {
-107. // 若传入引用的引用计数未减少，则抛出错误
-108. napi_throw_error(env, nullptr, "napi_reference_unref fail");
-109. return nullptr;
-110. }
+static napi_value DeleteReference(napi_env env, napi_callback_info info)
+{
+    // 减少传入引用的引用计数并返回生成的引用计数
+    uint32_t result = 0;
+    napi_value count = nullptr;
+    napi_status status = napi_reference_unref(env, gRef, &result);
+    OH_LOG_INFO(LOG_APP, "Test Node-API napi_reference_unref, count = %{public}d.", result);
+    uint32_t numCount = 1;
+    if (status != napi_ok || result != numCount) {
+        // 若传入引用的引用计数未减少，则抛出错误
+        napi_throw_error(env, nullptr, "napi_reference_unref fail");
+        return nullptr;
+    }
 
-112. // 通过调用napi_delete_reference删除对ArkTS对象的引用
-113. status = napi_delete_reference(env, gRef);
-114. if (status != napi_ok) {
-115. napi_throw_error(env, nullptr, "napi_delete_reference fail");
-116. return nullptr;
-117. }
+    // 通过调用napi_delete_reference删除对ArkTS对象的引用
+    status = napi_delete_reference(env, gRef);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_delete_reference fail");
+        return nullptr;
+    }
 
-119. status = napi_delete_reference(env, gRefFinalizer);
-120. if (status != napi_ok) {
-121. napi_throw_error(env, nullptr, "napi_delete_reference fail");
-122. return nullptr;
-123. }
-124. napi_value returnResult = nullptr;
-125. status = napi_create_string_utf8(env, "napi_delete_reference success", NAPI_AUTO_LENGTH, &returnResult);
-126. if (status != napi_ok) {
-127. napi_throw_error(env, nullptr, "napi_create_string_utf8 fail");
-128. return nullptr;
-129. }
-130. return returnResult;
-131. }
+    status = napi_delete_reference(env, gRefFinalizer);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_delete_reference fail");
+        return nullptr;
+    }
+    napi_value returnResult = nullptr;
+    status = napi_create_string_utf8(env, "napi_delete_reference success", NAPI_AUTO_LENGTH, &returnResult);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_create_string_utf8 fail");
+        return nullptr;
+    }
+    return returnResult;
+}
 ```
 
 接口声明
 
 // index.d.ts
 
-```
-1. export const addFinalizer: () => Object | undefined; // napi_add_finalizer
+```typescript
+export const addFinalizer: () => Object | undefined; // napi_add_finalizer
 
-3. export const createReference: () => Object | undefined; // napi_create_reference、napi_reference_ref
+export const createReference: () => Object | undefined; // napi_create_reference、napi_reference_ref
 
-5. export const useReference: () => Object | undefined; // napi_get_reference_value
+export const useReference: () => Object | undefined; // napi_get_reference_value
 
-7. export const deleteReference: () => string | undefined; // napi_delete_reference、napi_reference_unref
+export const deleteReference: () => string | undefined; // napi_delete_reference、napi_reference_unref
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_add_finalizer
-2. try {
-3. hilog.info(0x0000, 'testTag', 'Test Node-API addFinalizer: %{public}s',
-4. JSON.stringify(testNapi.addFinalizer()));
-5. hilog.info(0x0000, 'testTag', 'Test Node-API createReference: %{public}s',
-6. JSON.stringify(testNapi.createReference()));
-7. hilog.info(0x0000, 'testTag', 'Test Node-API useReference: %{public}s',
-8. JSON.stringify(testNapi.useReference()));
-9. hilog.info(0x0000, 'testTag', 'Test Node-API deleteReference: %{public}s',
-10. testNapi.deleteReference());
-11. // ...
-12. } catch (error) {
-13. hilog.error(0x0000, 'testTag',
-14. 'Test Node-API ReferenceTest errorCode: %{public}s, errorMessage: %{public}s', error.code,
-15. error.message);
-16. // ...
-17. }
+```typescript
+// napi_add_finalizer
+try {
+  hilog.info(0x0000, 'testTag', 'Test Node-API addFinalizer: %{public}s',
+    JSON.stringify(testNapi.addFinalizer()));
+  hilog.info(0x0000, 'testTag', 'Test Node-API createReference: %{public}s',
+    JSON.stringify(testNapi.createReference()));
+  hilog.info(0x0000, 'testTag', 'Test Node-API useReference: %{public}s',
+    JSON.stringify(testNapi.useReference()));
+  hilog.info(0x0000, 'testTag', 'Test Node-API deleteReference: %{public}s',
+    testNapi.deleteReference());
+  // ...
+} catch (error) {
+  hilog.error(0x0000, 'testTag',
+    'Test Node-API ReferenceTest errorCode: %{public}s, errorMessage: %{public}s', error.code,
+    error.message);
+  // ...
+}
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```

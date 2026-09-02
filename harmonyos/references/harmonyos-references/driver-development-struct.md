@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/driver-de
 title: 结构体
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:45+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3012d2a9264e19e0f1759f071a8b9536120725e7239e9a7f6397e67b654d622b
+scraped_at: 2026-09-02T14:52:37+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:7d825e64f0116da93a95394f4523cb0a655efdc3a092bd23b96a41319ee82619
 ---
 
 * **[DDK\_Ashmem](capi-baseddk-ddk-ashmem.md)**
@@ -23,14 +23,14 @@ content_hash: sha256:3012d2a9264e19e0f1759f071a8b9536120725e7239e9a7f6397e67b654
 * **[ScsiPeripheral\_IORequest](capi-scsiperipheralddk-scsiperipheral-iorequest.md)**
 * **[ScsiPeripheral\_Request](capi-scsiperipheralddk-scsiperipheral-request.md)**
 * **[ScsiPeripheral\_Response](capi-scsiperipheralddk-scsiperipheral-response.md)**
-* **[ScsiPeripheral\_TestUnitReadyRequest](iperipheralddk-scsiperipheral-testunitreadyrequest.md)**
-* **[ScsiPeripheral\_InquiryRequest](pi-scsiperipheralddk-scsiperipheral-inquiryrequest.md)**
+* **[ScsiPeripheral\_TestUnitReadyRequest](capi-scsiperipheralddk-scsiperipheral-testunitreadyrequest.md)**
+* **[ScsiPeripheral\_InquiryRequest](capi-scsiperipheralddk-scsiperipheral-inquiryrequest.md)**
 * **[ScsiPeripheral\_InquiryInfo](capi-scsiperipheralddk-scsiperipheral-inquiryinfo.md)**
-* **[ScsiPeripheral\_ReadCapacityRequest](siperipheralddk-scsiperipheral-readcapacityrequest.md)**
+* **[ScsiPeripheral\_ReadCapacityRequest](capi-scsiperipheralddk-scsiperipheral-readcapacityrequest.md)**
 * **[ScsiPeripheral\_CapacityInfo](capi-scsiperipheralddk-scsiperipheral-capacityinfo.md)**
-* **[ScsiPeripheral\_RequestSenseRequest](siperipheralddk-scsiperipheral-requestsenserequest.md)**
-* **[ScsiPeripheral\_BasicSenseInfo](pi-scsiperipheralddk-scsiperipheral-basicsenseinfo.md)**
-* **[ScsiPeripheral\_VerifyRequest](api-scsiperipheralddk-scsiperipheral-verifyrequest.md)**
+* **[ScsiPeripheral\_RequestSenseRequest](capi-scsiperipheralddk-scsiperipheral-requestsenserequest.md)**
+* **[ScsiPeripheral\_BasicSenseInfo](capi-scsiperipheralddk-scsiperipheral-basicsenseinfo.md)**
+* **[ScsiPeripheral\_VerifyRequest](capi-scsiperipheralddk-scsiperipheral-verifyrequest.md)**
 * **[ScsiPeripheral\_Device](capi-scsiperipheralddk-scsiperipheral-device.md)**
 * **[UsbControlRequestSetup](capi-usbddk-usbcontrolrequestsetup.md)**
 * **[UsbDeviceDescriptor](capi-usbddk-usbdevicedescriptor.md)**
@@ -44,5 +44,6 @@ content_hash: sha256:3012d2a9264e19e0f1759f071a8b9536120725e7239e9a7f6397e67b654
 * **[UsbRequestPipe](capi-usbddk-usbrequestpipe.md)**
 * **[UsbDeviceMemMap](capi-usbddk-usbdevicememmap.md)**
 * **[Usb\_DeviceArray](capi-usbddk-usb-devicearray.md)**
+* **[Usb\_NonRootHubArray](capi-usbddk-usb-nonroothubarray.md)**
 * **[UsbSerial\_Params](capi-serialddk-usbserial-params.md)**
 * **[UsbSerial\_Device](capi-serialddk-usbserial-devicehandle.md)**

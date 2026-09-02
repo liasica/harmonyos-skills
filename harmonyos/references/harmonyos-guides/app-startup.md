@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup
 title: 应用启动框架AppStartup
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > 应用启动框架AppStartup
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用启动框架AppStartup
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6f9371e7e9fc702fb9416157b55a3f4880bf989c1ea863b226c2e717cd945df5
+scraped_at: 2026-09-02T14:59:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:69b97ee127cb83df753b3da7c7de92a482b3aea8e86beaaece484348bde1205c
 ---
 
 ## 概述
@@ -14,18 +14,28 @@ content_hash: sha256:6f9371e7e9fc702fb9416157b55a3f4880bf989c1ea863b226c2e717cd9
 
 AppStartup提供了一种简单高效的应用启动方式，可以支持任务的异步启动，加快应用启动速度。同时，通过在一个配置文件中统一设置多个启动任务的执行顺序以及依赖关系，让执行启动任务的代码变得更加简洁清晰、容易维护。
 
+**图1** 启动框架使用场景
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/-K_A-5tJQRG7hML51DTI_A/zh-cn_image_0000002736432177.png)
+
 ## 运行机制
 
-启动框架支持以自动模式或手动模式执行启动任务，默认采用自动模式。在构造[AbilityStage](ability-terminology.md#abilitystage)过程中开始加载开发者配置的启动任务，以自动模式执行启动任务。开发者也可以在AbilityStage创建完后调用[startupManager.run](../harmonyos-references/js-apis-app-appstartup-startupmanager.md#startupmanagerrun)方法，执行手动模式的启动任务。
+启动框架支持以自动模式或手动模式执行启动任务，默认采用自动模式。在构造[AbilityStage](ability-terminology.md#abilitystage)过程中开始加载开发者配置的启动任务，以自动模式执行启动任务。
 
-**图1** 启动框架执行时机
+**图2** 启动框架自动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/go61K2onSlC0GTwuC2GJ-w/zh-cn_image_0000002558604334.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ssnHuHhVTZOu5M0Lo-spnw/zh-cn_image_0000002706833022.png)
+
+开发者也可以在AbilityStage创建完后调用[startupManager.run](../harmonyos-references/js-apis-app-appstartup-startupmanager.md#startupmanagerrun)方法，执行手动模式的启动任务。
+
+**图3** 启动框架手动模式执行时机
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/gbyINPApSmyV6EGBhkPH7A/zh-cn_image_0000002736312131.png)
 
 ## 支持的范围
 
 * HAP：entry类型的HAP支持以自动和手动模式启动。从API version 20开始，feature类型的HAP支持以自动和手动模式启动。
-* HSP/HAR: 从API version 18开始，支持在[HSP](in-app-hsp.md)和[HAR](har-package.md)中配置启动任务。HSP和HAR的启动任务、so预加载任务无法主动配置为自动模式，但可以被HAP中自动模式的启动任务、so预加载任务拉起。
+* HSP/HAR：从API version 18开始，支持在[HSP](in-app-hsp.md)和[HAR](har-package.md)中配置启动任务。HSP和HAR的启动任务、so预加载任务无法主动配置为自动模式，但可以被HAP中自动模式的启动任务、so预加载任务拉起。
 * 启动框架从API version 18开始支持配置[应用级so](ability-terminology.md#应用级so)预加载任务，so文件开发可以参考[Node-API](use-napi-process.md)创建Native C++工程。不支持配置[系统级so](ability-terminology.md#系统级so)预加载任务。
 
 ## 约束限制
@@ -60,19 +70,17 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
    module.json5示例代码如下。
 
+   ```json5
+   {
+     "module": {
+       "name": "entry",
+       "type": "entry",
+       // ···
+       "appStartup": "$profile:startup_config", // 启动框架的配置文件
+       // ···
+     }
+   }
    ```
-   1. {
-   2. "module": {
-   3. "name": "entry",
-   4. "type": "entry",
-   5. // ···
-   6. "appStartup": "$profile:startup_config", // 启动框架的配置文件
-   7. // ···
-   8. }
-   9. }
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/entry/src/main/module.json5#L15-L72)
 
 ### 定义启动参数配置
 
@@ -83,16 +91,16 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
    startup\_config.json文件示例如下：
 
-   ```
-   1. {
-   2. "startupTasks": [
-   3. // 启动任务
-   4. ],
-   5. "appPreloadHintStartupTasks": [
-   6. // 预加载so任务
-   7. ],
-   8. "configEntry": "./ets/startup/StartupConfig.ets" // 启动参数的配置
-   9. }
+   ```json5
+   {
+     "startupTasks": [
+       // 启动任务
+     ],
+     "appPreloadHintStartupTasks": [
+       // 预加载so任务
+     ],
+     "configEntry": "./ets/startup/StartupConfig.ets" // 启动参数的配置
+   }
    ```
 
 **表1** startup\_config.json配置文件标签说明
@@ -101,82 +109,82 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 | --- | --- | --- | --- |
 | startupTasks | 启动任务配置信息，详见[定义启动任务配置](app-startup.md#定义启动任务配置)。 | 对象数组 | 该标签可缺省，缺省值为空。 |
 | appPreloadHintStartupTasks | 预加载so任务配置信息，详见[定义预加载so任务配置](app-startup.md#定义预加载so任务配置)。 | 对象数组 | 该标签可缺省，缺省值为空。 |
-| configEntry | 启动参数配置文件所在路径。详见[设置启动参数](app-startup.md#设置启动参数)。  **说明：**  - HSP、HAR中不允许配置configEntry字段。  - 如果应用开启了[文件名混淆](source-obfuscation.md#section-enable-filename-obfuscation)，则需要将文件路径添加到保留白名单中。具体操作详见[ArkGuard混淆原理及功能](source-obfuscation.md)的[-keep-file-name](source-obfuscation.md#section-keep-file-name)部分。 | 字符串 | 该标签不可缺省。 |
+| configEntry | 启动参数配置文件所在路径。详见[设置启动参数](app-startup.md#设置启动参数)。  **说明：**  - HSP、HAR中不允许配置configEntry字段。  - 如果应用开启了[文件名混淆](source-obfuscation-rule-options.md#section-enable-filename-obfuscation)，则需要将文件路径添加到保留白名单中。具体操作详见[ArkGuard混淆保留选项](source-obfuscation-keep-options.md)的[-keep-file-name](source-obfuscation-keep-options.md#section-keep-file-name)部分。 | 字符串 | 该标签不可缺省。 |
 
 ### 定义启动任务配置
 
 假设当前应用启动框架共包含6个启动任务，任务之间的依赖关系如下图所示。为了便于并发执行启动任务，单个启动任务文件包含的启动任务应尽量单一，本例中每个启动任务对应一个启动任务文件。
 
-**图2** 启动任务依赖关系图
+**图4** 启动任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/qCX-bCCrR9Wt9rQclZGUeA/zh-cn_image_0000002589323859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/13rUUy2UQNKXpenx4eC8FA/zh-cn_image_0000002706673088.png)
 
 1. 在“ets/startup”路径下，依次创建6个启动任务文件。文件名称必须确保唯一性。本例中的6个文件名分别为StartupTask\_001.ets~StartupTask\_006.ets。
 2. 在启动框架配置文件startup\_config.json中，添加启动任务配置。
 
    startup\_config.json文件示例如下：
 
-   ```
-   1. {
-   2. "startupTasks": [
-   3. {
-   4. "name": "StartupTask_001",
-   5. "srcEntry": "./ets/startup/StartupTask_001.ets",
-   6. "dependencies": [
-   7. "StartupTask_002",
-   8. "StartupTask_003"
-   9. ],
-   10. "runOnThread": "taskPool",
-   11. "waitOnMainThread": false
-   12. },
-   13. {
-   14. "name": "StartupTask_002",
-   15. "srcEntry": "./ets/startup/StartupTask_002.ets",
-   16. "dependencies": [
-   17. "StartupTask_003",
-   18. "StartupTask_004"
-   19. ],
-   20. "runOnThread": "taskPool",
-   21. "waitOnMainThread": false
-   22. },
-   23. {
-   24. "name": "StartupTask_003",
-   25. "srcEntry": "./ets/startup/StartupTask_003.ets",
-   26. "dependencies": [
-   27. "StartupTask_004"
-   28. ],
-   29. "runOnThread": "taskPool",
-   30. "waitOnMainThread": false
-   31. },
-   32. {
-   33. "name": "StartupTask_004",
-   34. "srcEntry": "./ets/startup/StartupTask_004.ets",
-   35. "runOnThread": "taskPool",
-   36. "waitOnMainThread": false
-   37. },
-   38. {
-   39. "name": "StartupTask_005",
-   40. "srcEntry": "./ets/startup/StartupTask_005.ets",
-   41. "dependencies": [
-   42. "StartupTask_006"
-   43. ],
-   44. "runOnThread": "mainThread",
-   45. "waitOnMainThread": true,
-   46. "excludeFromAutoStart": true
-   47. },
-   48. {
-   49. "name": "StartupTask_006",
-   50. "srcEntry": "./ets/startup/StartupTask_006.ets",
-   51. "runOnThread": "mainThread",
-   52. "waitOnMainThread": false,
-   53. "excludeFromAutoStart": true
-   54. }
-   55. ],
-   56. "appPreloadHintStartupTasks": [
-   57. // 预加载so任务
-   58. ],
-   59. "configEntry": "./ets/startup/StartupConfig.ets"
-   60. }
+   ```json5
+   {
+     "startupTasks": [
+       {
+         "name": "StartupTask_001",
+         "srcEntry": "./ets/startup/StartupTask_001.ets",
+         "dependencies": [
+           "StartupTask_002",
+           "StartupTask_003"
+         ],
+         "runOnThread": "taskPool",
+         "waitOnMainThread": false
+       },
+       {
+         "name": "StartupTask_002",
+         "srcEntry": "./ets/startup/StartupTask_002.ets",
+         "dependencies": [
+           "StartupTask_003",
+           "StartupTask_004"
+         ],
+         "runOnThread": "taskPool",
+         "waitOnMainThread": false
+       },
+       {
+         "name": "StartupTask_003",
+         "srcEntry": "./ets/startup/StartupTask_003.ets",
+         "dependencies": [
+           "StartupTask_004"
+         ],
+         "runOnThread": "taskPool",
+         "waitOnMainThread": false
+       },
+       {
+         "name": "StartupTask_004",
+         "srcEntry": "./ets/startup/StartupTask_004.ets",
+         "runOnThread": "taskPool",
+         "waitOnMainThread": false
+       },
+       {
+         "name": "StartupTask_005",
+         "srcEntry": "./ets/startup/StartupTask_005.ets",
+         "dependencies": [
+           "StartupTask_006"
+         ],
+         "runOnThread": "mainThread",
+         "waitOnMainThread": true,
+         "excludeFromAutoStart": true
+       },
+       {
+         "name": "StartupTask_006",
+         "srcEntry": "./ets/startup/StartupTask_006.ets",
+         "runOnThread": "mainThread",
+         "waitOnMainThread": false,
+         "excludeFromAutoStart": true
+       }
+     ],
+     "appPreloadHintStartupTasks": [
+       // 预加载so任务
+     ],
+     "configEntry": "./ets/startup/StartupConfig.ets"
+   }
    ```
 
 **表2** startupTasks标签说明
@@ -184,7 +192,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 | 属性名称 | 含义 | 数据类型 | 是否可缺省 |
 | --- | --- | --- | --- |
 | name | 启动任务名称，可自定义，推荐与类名保持一致。 | 字符串 | 该标签不可缺省。 |
-| srcEntry | 启动任务对应的文件路径。  **说明：**  如果应用开启了[文件名混淆](source-obfuscation.md#section-enable-filename-obfuscation)，则需要将文件路径添加到保留白名单中。具体操作详见[ArkGuard混淆原理及功能](source-obfuscation.md)的[-keep-file-name](source-obfuscation.md#section-keep-file-name)部分。 | 字符串 | 该标签不可缺省。 |
+| srcEntry | 启动任务对应的文件路径。  **说明：**  如果应用开启了[文件名混淆](source-obfuscation-rule-options.md#section-enable-filename-obfuscation)，则需要将文件路径添加到保留白名单中。具体操作详见[ArkGuard混淆保留选项](source-obfuscation-keep-options.md)的[-keep-file-name](source-obfuscation-keep-options.md#section-keep-file-name)部分。 | 字符串 | 该标签不可缺省。 |
 | dependencies | 启动任务依赖的其他启动任务的类名数组。 | 对象数组 | 该标签可缺省，缺省值为空。 |
 | excludeFromAutoStart | 是否排除自动模式，详细介绍可以查看[修改启动模式](app-startup.md#修改启动模式)。  - true：手动模式。  - false：自动模式。  **说明：**  HSP、HAR中startupTask里的excludeFromAutoStart标签必须配置为true。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 | runOnThread | 执行初始化所在的线程。  - mainThread：在主线程中执行。  - taskPool：在异步线程中执行。 | 字符串 | 该标签可缺省，缺省值为mainThread。 |
@@ -196,70 +204,70 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 假设当前应用启动框架共包含6个so预加载任务，任务之间的依赖关系如下图所示。不建议应用在so文件的加载回调中运行代码逻辑，so文件的加载不宜过长，否则会影响主线程的运行。
 
-**图3** so预加载任务依赖关系图
+**图5** so预加载任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/AJ497ZhJQxGzjPtUDUSm2g/zh-cn_image_0000002589243797.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/TtdWLW_hRqSgrvnmerlM0g/zh-cn_image_0000002736432179.png)
 
 1. 参考[Node-API](use-napi-process.md)创建so文件。本例中的6个so文件名称分别为libentry\_001.so~libentry\_006.so。
 2. 在启动框架配置文件startup\_config.json中，添加预加载so任务配置。
 
    startup\_config.json文件示例如下：
 
-   ```
-   1. {
-   2. "startupTasks": [
-   3. // 启动任务
-   4. ],
-   5. "appPreloadHintStartupTasks": [
-   6. {
-   7. "name": "libentry_001",
-   8. "srcEntry": "libentry_001.so",
-   9. "dependencies": [
-   10. "libentry_002",
-   11. "libentry_003"
-   12. ],
-   13. "runOnThread": "taskPool"
-   14. },
-   15. {
-   16. "name": "libentry_002",
-   17. "srcEntry": "libentry_002.so",
-   18. "dependencies": [
-   19. "libentry_003",
-   20. "libentry_004"
-   21. ],
-   22. "runOnThread": "taskPool"
-   23. },
-   24. {
-   25. "name": "libentry_003",
-   26. "srcEntry": "libentry_003.so",
-   27. "dependencies": [
-   28. "libentry_004"
-   29. ],
-   30. "runOnThread": "taskPool"
-   31. },
-   32. {
-   33. "name": "libentry_004",
-   34. "srcEntry": "libentry_004.so",
-   35. "runOnThread": "taskPool"
-   36. },
-   37. {
-   38. "name": "libentry_005",
-   39. "srcEntry": "libentry_005.so",
-   40. "dependencies": [
-   41. "libentry_006"
-   42. ],
-   43. "runOnThread": "taskPool",
-   44. "excludeFromAutoStart": true
-   45. },
-   46. {
-   47. "name": "libentry_006",
-   48. "srcEntry": "libentry_006.so",
-   49. "runOnThread": "taskPool",
-   50. "excludeFromAutoStart": true
-   51. }
-   52. ],
-   53. "configEntry": "./ets/startup/StartupConfig.ets"
-   54. }
+   ```json5
+   {
+     "startupTasks": [
+       // 启动任务
+     ],
+     "appPreloadHintStartupTasks": [
+       {
+         "name": "libentry_001",
+         "srcEntry": "libentry_001.so",
+         "dependencies": [
+           "libentry_002",
+           "libentry_003"
+         ],
+         "runOnThread": "taskPool"
+       },
+       {
+         "name": "libentry_002",
+         "srcEntry": "libentry_002.so",
+         "dependencies": [
+           "libentry_003",
+           "libentry_004"
+         ],
+         "runOnThread": "taskPool"
+       },
+       {
+         "name": "libentry_003",
+         "srcEntry": "libentry_003.so",
+         "dependencies": [
+           "libentry_004"
+         ],
+         "runOnThread": "taskPool"
+       },
+       {
+         "name": "libentry_004",
+         "srcEntry": "libentry_004.so",
+         "runOnThread": "taskPool"
+       },
+       {
+         "name": "libentry_005",
+         "srcEntry": "libentry_005.so",
+         "dependencies": [
+           "libentry_006"
+         ],
+         "runOnThread": "taskPool",
+         "excludeFromAutoStart": true
+       },
+       {
+         "name": "libentry_006",
+         "srcEntry": "libentry_006.so",
+         "runOnThread": "taskPool",
+         "excludeFromAutoStart": true
+       }
+     ],
+     "configEntry": "./ets/startup/StartupConfig.ets"
+   }
    ```
 
 **表3** appPreloadHintStartupTasks标签说明
@@ -280,37 +288,35 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 * [StartupConfig](../harmonyos-references/js-apis-app-appstartup-startupconfig.md)：用于设置任务超时时间和启动框架的监听器。
 * [StartupListener](../harmonyos-references/js-apis-app-appstartup-startuplistener.md)：用于监听启动任务是否执行成功。
 
-```
-1. import { StartupConfig, StartupConfigEntry, StartupListener } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { StartupConfig, StartupConfigEntry, StartupListener, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. export default class MyStartupConfigEntry extends StartupConfigEntry {
-6. onConfig() {
-7. hilog.info(0x0000, 'testTag', `onConfig`);
-8. let onCompletedCallback = (error: BusinessError<void>) => {
-9. hilog.info(0x0000, 'testTag', `onCompletedCallback`);
-10. if (error) {
-11. hilog.error(0x0000, 'testTag', 'onCompletedCallback: %{public}d, message: %{public}s', error.code,
-12. error.message);
-13. } else {
-14. hilog.info(0x0000, 'testTag', `onCompletedCallback: success.`);
-15. }
-16. };
-17. let startupListener: StartupListener = {
-18. 'onCompleted': onCompletedCallback
-19. };
-20. let config: StartupConfig = {
-21. 'timeoutMs': 10000,
-22. 'startupListener': startupListener
-23. };
-24. return config;
-25. }
-26. // ···
-27. }
+export default class MyStartupConfigEntry extends StartupConfigEntry {
+  onConfig() {
+    hilog.info(0x0000, 'testTag', `onConfig`);
+    let onCompletedCallback = (error: BusinessError<void>) => {
+      hilog.info(0x0000, 'testTag', `onCompletedCallback`);
+      if (error) {
+        hilog.error(0x0000, 'testTag', 'onCompletedCallback: %{public}d, message: %{public}s', error.code,
+          error.message);
+      } else {
+        hilog.info(0x0000, 'testTag', `onCompletedCallback: success.`);
+      }
+    };
+    let startupListener: StartupListener = {
+      'onCompleted': onCompletedCallback
+    };
+    let config: StartupConfig = {
+      'timeoutMs': 10000,
+      'startupListener': startupListener
+    };
+    return config;
+  }
+  // ...
+}
 ```
-
-[StartupConfig.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/entry/src/main/ets/startup/StartupConfig.ets#L15-L56)
 
 ## 为每个待初始化功能组件添加启动任务
 
@@ -321,33 +327,31 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 下面以[startup\_config.json](app-startup.md#定义启动任务配置)中的StartupTask\_001.ets文件为例，示例代码如下。开发者需要分别为每个待初始化功能组件添加启动任务。
 
-说明
+**说明** 
 
 由于StartupTask采用了[Sendable协议](arkts-sendable.md#sendable协议)，在继承该接口时，必须添加Sendable注解。
 
+```typescript
+import { StartupTask, common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Sendable
+export default class StartupTask_001 extends StartupTask {
+  constructor() {
+    super();
+  }
+
+  async init(context: common.AbilityStageContext) {
+    hilog.info(0x0000, 'testTag', 'StartupTask_001 init.');
+    return 'StartupTask_001';
+  }
+
+  onDependencyCompleted(dependence: string, result: Object): void {
+    hilog.info(0x0000, 'testTag', 'StartupTask_001 onDependencyCompleted, dependence: %{public}s, result: %{public}s',
+      dependence, JSON.stringify(result));
+  }
+}
 ```
-1. import { StartupTask, common } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. @Sendable
-5. export default class StartupTask_001 extends StartupTask {
-6. constructor() {
-7. super();
-8. }
-
-10. async init(context: common.AbilityStageContext) {
-11. hilog.info(0x0000, 'testTag', 'StartupTask_001 init.');
-12. return 'StartupTask_001';
-13. }
-
-15. onDependencyCompleted(dependence: string, result: Object): void {
-16. hilog.info(0x0000, 'testTag', 'StartupTask_001 onDependencyCompleted, dependence: %{public}s, result: %{public}s',
-17. dependence, JSON.stringify(result));
-18. }
-19. }
-```
-
-[StartupTask\_001.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/entry/src/main/ets/startup/StartupTask_001.ets#L15-L35)
 
 ## 可选操作
 
@@ -355,101 +359,95 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 通常大型应用会有多个[HSP](in-app-hsp.md)和[HAR](har-package.md)，本节将提供一个应用示例，以展示如何在HSP包和HAR包中使用启动框架。该示例应用包括两个HSP包（hsp1、hsp2）和一个HAR包（har1），并且包含启动任务和so预加载任务。
 
+假设当前应用存在的启动任务与so预加载任务如下表所示。
+
+**表4** 应用启动任务与so预加载任务说明
+
+| 模块 | 启动任务 | so预加载任务 |
+| --- | --- | --- |
+| entry | HAP\_Task\_01 | libentry\_01 |
+| hsp1 | HSP1\_Task\_01  HSP1\_Task\_02 | libhsp1\_01  libhsp1\_02 |
+| hsp2 | HSP2\_Task\_01 | libhsp2\_01 |
+| har | HAR1\_Task\_01 | libhar1\_01 |
+
+**图6** 启动任务与so预加载依赖关系图
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/i19SYxd_Q9yMNae5admEMg/zh-cn_image_0000002706833024.png)
+
 开发步骤如下：
 
 1. 除[HAP](hap-package.md)外，在HSP包和HAR包的“resources/base/profile”目录下创建启动框架配置文件，不同模块可以使用相同文件名，本文以"startup\_config.json"为例。
 2. 分别在各个模块的启动框架配置文件startup\_config.json中， 添加对应的配置信息。
 
-   假设当前应用存在的启动任务与so预加载任务如下表所示。
-
-   **表4** 应用启动任务与so预加载任务说明
-
-   | 模块 | 启动任务 | so预加载任务 |
-   | --- | --- | --- |
-   | entry | HAP\_Task\_01 | libentry\_01 |
-   | hsp1 | HSP1\_Task\_01  HSP1\_Task\_02 | libhsp1\_01  libhsp1\_02 |
-   | hsp2 | HSP2\_Task\_01 | libhsp2\_01 |
-   | har | HAR1\_Task\_01 | libhar1\_01 |
-
-   **图4** 启动任务与so预加载依赖关系图
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GNjwBWkZQLyUh3s-SmygoQ/zh-cn_image_0000002558763992.png)
-
    [HAP](hap-package.md)的startup\_config.json可参考[定义启动任务配置](app-startup.md#定义启动任务配置)，HSP与HAR的startup\_config.json文件无法配置"configEntry"字段，以hsp1包配置文件为例，示例如下：
 
-   ```
-   1. {
-   2. "startupTasks": [
-   3. {
-   4. "name": "HSP1_Task_01",
-   5. "srcEntry": "./ets/startup/HSP1_Task_01.ets",
-   6. "dependencies": [
-   7. "HSP1_Task_02",
-   8. "HAR1_Task_01"
-   9. ],
-   10. "runOnThread": "taskPool",
-   11. "waitOnMainThread": false,
-   12. "excludeFromAutoStart": true
-   13. }
-   14. ],
-   15. "appPreloadHintStartupTasks": [
-   16. {
-   17. "name": "libhsp1_01",
-   18. "srcEntry": "libhsp1_01.so",
-   19. "dependencies": [
-   20. "libhsp1_02",
-   21. "libhar1_01"
-   22. ],
-   23. "runOnThread": "taskPool",
-   24. "excludeFromAutoStart": true
-   25. }
-   26. ]
-   27. }
+   ```json
+   {
+     "startupTasks": [
+       {
+         "name": "HSP1_Task_01",
+         "srcEntry": "./ets/startup/HSP1_Task_01.ets",
+         "dependencies": [
+           "HSP1_Task_02",
+           "HAR1_Task_01"
+         ],
+         "runOnThread": "taskPool",
+         "waitOnMainThread": false,
+         "excludeFromAutoStart": true
+       }
+     ],
+     "appPreloadHintStartupTasks": [
+       {
+         "name": "libhsp1_01",
+         "srcEntry": "libhsp1_01.so",
+         "dependencies": [
+           "libhsp1_02",
+           "libhar1_01"
+         ],
+         "runOnThread": "taskPool",
+         "excludeFromAutoStart": true
+       }
+     ]
+   }
    ```
 3. 分别在各个模块的[module.json5配置文件](module-configuration-file.md)的appStartup标签中，添加启动框架配置文件的索引。
 
    hsp1、hsp2以及har1的module.json5示例代码如下。
 
-   ```
-   1. {
-   2. "module": {
-   3. "name": "hsp1",
-   4. "type": "shared",
-   5. // ···
-   6. "appStartup": "$profile:startup_config", // 启动框架的配置文件
-   7. // ···
-   8. }
-   9. }
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/hsp1/src/main/module.json5#L15-L34)
-
-   ```
-   1. {
-   2. "module": {
-   3. "name": "hsp2",
-   4. "type": "shared",
-   5. // ···
-   6. "appStartup": "$profile:startup_config", // 启动框架的配置文件
-   7. // ···
-   8. }
-   9. }
+   ```json5
+   {
+     "module": {
+       "name": "hsp1",
+       "type": "shared",
+       // ···
+       "appStartup": "$profile:startup_config", // 启动框架的配置文件
+       // ···
+     }
+   }
    ```
 
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/hsp2/src/main/module.json5#L15-L34)
-
+   ```json5
+   {
+     "module": {
+       "name": "hsp2",
+       "type": "shared",
+       // ···
+       "appStartup": "$profile:startup_config", // 启动框架的配置文件
+       // ···
+     }
+   }
    ```
-   1. {
-   2. "module": {
-   3. "name": "har1",
-   4. "type": "har",
-   5. // ···
-   6. "appStartup": "$profile:startup_config", // 启动框架的配置文件
-   7. }
-   8. }
-   ```
 
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/har1/src/main/module.json5#L15-L29)
+   ```json5
+   {
+     "module": {
+       "name": "har1",
+       "type": "har",
+       // ...
+       "appStartup": "$profile:startup_config" // 启动框架的配置文件
+     }
+   }
+   ```
 
 其余步骤请参考[设置启动参数](app-startup.md#设置启动参数)和[为每个待初始化功能组件添加启动任务](app-startup.md#为每个待初始化功能组件添加启动任务)章节进行配置。
 
@@ -462,80 +460,80 @@ AppStartup分别提供了自动和手动两种方式来执行启动任务，entr
 
 下面以UIAbility的onCreate生命周期中为例，介绍如何采用手动模式来启动任务，示例代码如下。
 
+```typescript
+import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// ···
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    let startParams = ['StartupTask_005', 'StartupTask_006'];
+    try {
+      startupManager.run(startParams).then(() => {
+        console.info(`StartupTest startupManager run then, startParams = ${JSON.stringify(startParams)}.`);
+      }).catch((error: BusinessError) => {
+        console.error(`StartupTest promise catch error, error = ${JSON.stringify(error)}.`);
+        console.error(`StartupTest promise catch error, startParams = ${JSON.stringify(startParams)}.`);
+      })
+    } catch (error) {
+      let errMsg = (error as BusinessError).message;
+      let errCode = (error as BusinessError).code;
+      console.error(`Startup catch error, errCode= ${errCode}.`);
+      console.error(`Startup catch error, errMsg= ${errMsg}.`);
+    }
+  }
+
+// ···
+}
 ```
-1. import { AbilityConstant, UIAbility, Want, startupManager } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-4. // ···
-
-6. export default class EntryAbility extends UIAbility {
-7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-8. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-9. let startParams = ['StartupTask_005', 'StartupTask_006'];
-10. try {
-11. startupManager.run(startParams).then(() => {
-12. console.info(`StartupTest startupManager run then, startParams = ${JSON.stringify(startParams)}.`);
-13. }).catch((error: BusinessError) => {
-14. console.error(`StartupTest promise catch error, error = ${JSON.stringify(error)}.`);
-15. console.error(`StartupTest promise catch error, startParams = ${JSON.stringify(startParams)}.`);
-16. })
-17. } catch (error) {
-18. let errMsg = (error as BusinessError).message;
-19. let errCode = (error as BusinessError).code;
-20. console.error(`Startup catch error, errCode= ${errCode}.`);
-21. console.error(`Startup catch error, errMsg= ${errMsg}.`);
-22. }
-23. }
-
-25. // ···
-26. }
-```
-
-[EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/entry/src/main/ets/entryability/EntryAbility.ets#L15-L77)
 
 开发者还可以在页面加载完成后，在页面中调用启动框架手动模式，示例代码如下。
 
+```typescript
+import { startupManager } from '@kit.AbilityKit';
+
+@Entry
+@Component
+struct Index {
+  // 请将$r('app.string.manual_mode')替换为实际资源文件，在本示例中该资源文件的value值为"手动模式"
+  @State message: ResourceStr = $r('app.string.manual_mode');
+  @State startParams1: Array<string> = ['StartupTask_006'];
+  @State startParams2: Array<string> = ['libentry_006'];
+
+  build() {
+    RelativeContainer() {
+      Button(this.message)
+        .id('AppStartup')
+        .fontSize(20)
+        .fontWeight(FontWeight.Bold)
+        .onClick(() => {
+          if (!startupManager.isStartupTaskInitialized('StartupTask_006')) { // 判断是否已经完成初始化
+            startupManager.run(this.startParams1);
+          }
+          if (!startupManager.isStartupTaskInitialized('libentry_006')) {
+            startupManager.run(this.startParams2);
+          }
+        })
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
-1. import { startupManager } from '@kit.AbilityKit';
-
-3. @Entry
-4. @Component
-5. struct Index {
-6. // 请将$r('app.string.manual_mode')替换为实际资源文件，在本示例中该资源文件的value值为"手动模式"
-7. @State message: ResourceStr = $r('app.string.manual_mode');
-8. @State startParams1: Array<string> = ['StartupTask_006'];
-9. @State startParams2: Array<string> = ['libentry_006'];
-
-11. build() {
-12. RelativeContainer() {
-13. Button(this.message)
-14. .id('AppStartup')
-15. .fontSize(20)
-16. .fontWeight(FontWeight.Bold)
-17. .onClick(() => {
-18. if (!startupManager.isStartupTaskInitialized('StartupTask_006')) { // 判断是否已经完成初始化
-19. startupManager.run(this.startParams1);
-20. }
-21. if (!startupManager.isStartupTaskInitialized('libentry_006')) {
-22. startupManager.run(this.startParams2);
-23. }
-24. })
-25. .alignRules({
-26. center: { anchor: '__container__', align: VerticalAlign.Center },
-27. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-28. })
-29. }
-30. .height('100%')
-31. .width('100%')
-32. }
-33. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/entry/src/main/ets/pages/Index.ets#L15-L49)
 
 ### 添加任务匹配规则
 
 在通过卡片、通知、意图调用等方式拉起某个页面时，为了实现功能服务一步直达，可以通过添加matchRules匹配规则，仅加载与当前场景相关的部分启动任务，无需加载全部默认的自动启动任务，以提高启动性能。
+
+**图7** 启动任务设置匹配规则
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/D7PVCgIrQViCFsRY5eJE_w/zh-cn_image_0000002736312133.png)
 
 可以通过以下两种方式添加匹配规则：
 
@@ -551,7 +549,7 @@ AppStartup分别提供了自动和手动两种方式来执行启动任务，entr
   | insightIntents | 表示自动模式执行的任务的意图名称取值范围。当UIAbility启动时，会将意图名称与此处配置的insightIntents数组取值进行匹配。 | 字符串数组 | 可缺省，缺省值为空。 | 通过特定意图名称拉起UIAbility的场景。 |
   | customization | 表示自动模式执行的任务的自定义规则取值范围。通过实现StartupConfigEntry的[onRequestCustomMatchRule](../harmonyos-references/js-apis-app-appstartup-startupconfigentry.md#onrequestcustommatchrule20)接口返回自定义规则值。当UIAbility启动时，会将自定义规则值与此处配置的customization数组取值进行匹配。  **说明：**  仅支持startupTasks中的任务配置。 | 字符串数组 | 可缺省，缺省值为空。 | 如果使用uris、actions、insightIntents字段无法满足要求，可以使用customization自定义规则。 |
 
-  说明
+  **说明** 
 
   + uris、insightIntents、actions、customization任一属性匹配成功即为任务匹配成功。
   + 匹配成功的任务及其依赖任务都将在自动模式执行。
@@ -565,36 +563,36 @@ AppStartup分别提供了自动和手动两种方式来执行启动任务，entr
 
 1. 对[定义启动任务配置](app-startup.md#定义启动任务配置)步骤中的startup\_config.json文件进行修改，增加StartupTask\_004任务和libentry\_006任务的matchRules配置。
 
-   ```
-   1. {
-   2. "startupTasks": [
-   3. {
-   4. "name": "StartupTask_004",
-   5. "srcEntry": "./ets/startup/StartupTask_004.ets",
-   6. "runOnThread": "taskPool",
-   7. "waitOnMainThread": false,
-   8. "matchRules": {
-   9. "uris": [
-   10. "test://com.example.startupdemo/notification"
-   11. ]
-   12. }
-   13. },
-   14. ],
-   15. "appPreloadHintStartupTasks": [
-   16. {
-   17. "name": "libentry_006",
-   18. "srcEntry": "libentry_006.so",
-   19. "runOnThread": "taskPool",
-   20. "excludeFromAutoStart": true,
-   21. "matchRules": {
-   22. "uris": [
-   23. "test://com.example.startupdemo/notification"
-   24. ]
-   25. }
-   26. }
-   27. ],
-   28. "configEntry": "./ets/startup/StartupConfig.ets"
-   29. }
+   ```json5
+   {
+     "startupTasks": [
+       {
+         "name": "StartupTask_004",
+         "srcEntry": "./ets/startup/StartupTask_004.ets",
+         "runOnThread": "taskPool",
+         "waitOnMainThread": false,
+         "matchRules": {
+           "uris": [
+             "test://com.example.startupdemo/notification"
+           ]
+         }
+       },
+     ],
+     "appPreloadHintStartupTasks": [
+       {
+         "name": "libentry_006",
+         "srcEntry": "libentry_006.so",
+         "runOnThread": "taskPool",
+         "excludeFromAutoStart": true,
+         "matchRules": {
+           "uris": [
+             "test://com.example.startupdemo/notification"
+           ]
+         }
+       }
+     ],
+     "configEntry": "./ets/startup/StartupConfig.ets"
+   }
    ```
 
 **场景2：customization匹配**
@@ -603,69 +601,70 @@ AppStartup分别提供了自动和手动两种方式来执行启动任务，entr
 
 1. 对[设置启动参数](app-startup.md#设置启动参数)步骤中的MyStartupConfigEntry.ets文件进行修改，新增[onRequestCustomMatchRule](../harmonyos-references/js-apis-app-appstartup-startupconfigentry.md#onrequestcustommatchrule20)方法。
 
+   ```typescript
+   import { StartupConfig, StartupConfigEntry, StartupListener, Want } from '@kit.AbilityKit';
+   // ...
+
+   export default class MyStartupConfigEntry extends StartupConfigEntry {
+     // ...
+     onRequestCustomMatchRule(want: Want): string {
+       if (want?.parameters?.fromType == 'card') {
+         return 'ruleCard';
+       }
+       return '';
+     }
+   }
    ```
-   1. import { StartupConfigEntry, Want } from '@kit.AbilityKit';
-   2. // ···
-
-   4. export default class MyStartupConfigEntry extends StartupConfigEntry {
-   5. // ···
-   6. onRequestCustomMatchRule(want: Want): string {
-   7. if (want?.parameters?.fromType == 'card') {
-   8. return 'ruleCard';
-   9. }
-   10. return '';
-   11. }
-
-   13. }
-   ```
-
-   [StartupConfig.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/AppStartup/entry/src/main/ets/startup/StartupConfig.ets#L16-L55)
 2. 对[定义启动任务配置](app-startup.md#定义启动任务配置)步骤中的startup\_config.json文件进行修改，增加StartupTask\_006任务的matchRules配置。预加载so任务不支持customization字段，按任务原有的excludeFromAutoStart配置处理。
 
-   ```
-   1. {
-   2. "startupTasks": [
-   3. {
-   4. "name": "StartupTask_006",
-   5. "srcEntry": "./ets/startup/StartupTask_006.ets",
-   6. "runOnThread": "mainThread",
-   7. "waitOnMainThread": false,
-   8. "excludeFromAutoStart": true,
-   9. "matchRules": {
-   10. "customization": [
-   11. "ruleCard"
-   12. ]
-   13. }
-   14. }
-   15. ],
-   16. "configEntry": "./ets/startup/StartupConfig.ets"
-   17. }
+   ```json
+   {
+     "startupTasks": [
+       {
+         "name": "StartupTask_006",
+         "srcEntry": "./ets/startup/StartupTask_006.ets",
+         "runOnThread": "mainThread",
+         "waitOnMainThread": false,
+         "excludeFromAutoStart": true,
+         "matchRules": {
+           "customization": [
+             "ruleCard"
+           ]
+         }
+       }
+     ],
+     "configEntry": "./ets/startup/StartupConfig.ets"
+   }
    ```
 
 ### 设置启动任务调度阶段
 
 从API version 21开始，支持设置启动任务调度阶段。启动任务默认在AbilityStage模块加载后、[AbilityStage.onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)生命周期之前开始执行。对于大型应用，AbilityStage模块的加载可能耗时较长，开发者可以将启动任务的schedulerPhase字段配置为preAbilityStageLoad，使启动任务在AbilityStage模块加载前被调度，并在异步线程中与AbilityStage模块加载并发执行，从而缩短应用启动时间。
 
-说明
+**说明** 
 
 由于启动任务在AbilityStage模块加载前被调度执行，改变了原有的执行顺序。如果启动任务依赖于AbilityStage模块的加载，可能会导致运行结果不符合预期，请参考[模块加载副作用及优化](arkts-module-side-effects.md)对依赖部分进行适配。
+
+**图8** 设置启动任务提前调度
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/-aQ7CjdpSUiY5qh0STs8rA/zh-cn_image_0000002706673090.png)
 
 例如，应用首页需要通过网络请求获取Feed流数据，且希望该任务能在异步线程中与AbilityStage模块加载并发执行。假设网络请求任务为[定义启动任务配置](app-startup.md#定义启动任务配置)步骤中的StartupTask\_004，开发步骤如下：
 
 1. 配置任务在AbilityStage模块加载前调度执行。在startup\_config.json文件中，将StartupTask\_004任务的schedulerPhase字段设为preAbilityStageLoad。
 2. 配置任务在异步线程中与AbilityStage模块加载并发执行。将StartupTask\_004任务的runOnThread设为taskPool，waitOnMainThread设为false。
 
-```
-1. {
-2. "startupTasks": [
-3. {
-4. "name": "StartupTask_004",
-5. "srcEntry": "./ets/startup/StartupTask_004.ets",
-6. "runOnThread": "taskPool",
-7. "waitOnMainThread": false,
-8. "schedulerPhase": "preAbilityStageLoad"
-9. }
-10. ],
-11. "configEntry": "./ets/startup/StartupConfig.ets"
-12. }
+```json
+{
+  "startupTasks": [
+    {
+      "name": "StartupTask_004",
+      "srcEntry": "./ets/startup/StartupTask_004.ets",
+      "runOnThread": "taskPool",
+      "waitOnMainThread": false,
+      "schedulerPhase": "preAbilityStageLoad"
+    }
+  ],
+  "configEntry": "./ets/startup/StartupConfig.ets"
+}
 ```

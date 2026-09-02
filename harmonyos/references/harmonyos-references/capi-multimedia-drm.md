@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mult
 title: Multimedia_Drm
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 模块 > Multimedia_Drm
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:01+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b592b4efec28bfaf3770fe4cfb2d5a0db9c1132b8e4cd0271ceab7944a62a407
+scraped_at: 2026-09-02T14:52:46+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7ec45330ee89c6cbd538f1d5f7c31f78267b03f7a672ab8100474920480ed3c3
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 该功能使第三方应用程序可以自行实现媒体解封装和解复用功能，而不是使用系统提供的。
 
@@ -21,8 +19,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 12
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

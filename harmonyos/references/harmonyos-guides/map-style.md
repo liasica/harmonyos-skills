@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-style
 title: 显示自定义地图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示自定义地图
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:06+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bae1fee3742f92e93754cf5778a194d8c3ed959c46cddd3b1c9df4db376b9237
+scraped_at: 2026-09-02T14:59:58+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:1065c5d03b18f7055ae96c66a9761f47a56ac31fa56a6aee9d287c970b15d280
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在应用中添加自定义样式的地图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/hk9ULeDKSDGFRbZ3wvBp8Q/zh-cn_image_0000002589245321.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/6mFMarszT4WVOqcpgB0cIQ/zh-cn_image_0000002706835032.jpg "点击放大")
 
 ## 接口说明
 
@@ -34,197 +34,173 @@ Map Kit提供两种方法设置自定义地图样式：
 
 1. 导入相关模块。
 
-   ```
-   1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-   2. import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { MapComponent, mapCommon, map } from '@kit.MapKit';
+   import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 创建样式ID。
 
    a.登录[Petal Maps Studio](https://developer.petalmaps.com/console/studio/)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/KkUqA9LKQNaq68FaxVhExg/zh-cn_image_0000002558765516.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/892vDoDAQAOmhxcDi8VTJQ/zh-cn_image_0000002736314139.png)
 
    b.点击“Create map”创建自定义样式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/PJcb5LbLQUuVSEFwz-LoFw/zh-cn_image_0000002558605860.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/mqdNNbnFTomTrnX0l2dJoA/zh-cn_image_0000002706675096.png)
 
    c.导入JSON样式文件，点击“Import”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/1ThjqBs5QN-G2pvm5yko6A/zh-cn_image_0000002589325387.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/naSFirzrQ4C23zKrC_mauw/zh-cn_image_0000002736434185.png)
 
    d.在编辑器里修改样式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/EeI2pSeTRPyVdg7iRKlmrw/zh-cn_image_0000002589245323.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/3VdEIazuSzqcj2F3xL2KZQ/zh-cn_image_0000002706835034.png)
 
    e.点击“SAVE”生成预览ID，预览ID在编辑样式时会重新生成，您可以通过预览ID测试样式效果。点击“PUBLISH”发布生成样式ID，样式ID是唯一ID，一旦发布生效不会变化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/lZ31v0HyQ2S4IJ-5DkMEZg/zh-cn_image_0000002558765518.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/AVQZ_ZffTKCNBJqP8blz0A/zh-cn_image_0000002736314141.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/BWvbeeGETrOkpWOMR-6hWg/zh-cn_image_0000002558605862.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/hvP8nZnJTZCcGdKvPd1TGQ/zh-cn_image_0000002706675098.png)
 3. Map Kit提供两种方法设置样式ID：
 
    * 在创建地图后设置样式ID
 
-     ```
-     1. @Entry
-     2. @Component
-     3. struct CustomMapStyleDemo {
-     4. private TAG = "CustomMapStyleDemo";
-     5. private mapOptions?: mapCommon.MapOptions;
-     6. private mapController?: map.MapComponentController;
-     7. private callback?: AsyncCallback<map.MapComponentController>;
-
-     9. aboutToAppear(): void {
-     10. // 地图初始化参数
-     11. this.mapOptions = {
-     12. position: {
-     13. target: {
-     14. latitude: 31.984410259206815,
-     15. longitude: 118.76625379397866
-     16. },
-     17. zoom: 15
-     18. }
-     19. };
-     20. this.callback = async (err, mapController) => {
-     21. if (!err) {
-     22. this.mapController = mapController;
-     23. // 自定义样式参数，styleId需要替换为您自己的样式ID或者预览ID，样式ID或者预览ID可在Petal Maps Studio平台上创建
-     24. let param: mapCommon.CustomMapStyleOptions = {
-     25. styleId: "XXX"
-     26. };
-     27. // 设置自定义样式
-     28. await this.mapController.setCustomMapStyle(param).then(() => {
-     29. console.info(this.TAG + `setCustomMapStyle OK`);
-     30. }).catch((error: BusinessError) => {
-     31. console.error(this.TAG + `Failed in getting CustomMapStyle, code is：${error.code},message is ${error.message}`);
-     32. })
-     33. } else {
-     34. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-     35. }
-     36. };
-     37. }
-
-     39. build() {
-     40. Stack() {
-     41. Column() {
-     42. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
-     43. }.width('100%')
-     44. }.height('100%')
-     45. }
-     46. }
+     ```typescript
+     import { MapComponent, mapCommon, map } from '@kit.MapKit';
+     import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
      ```
    * 在初始化地图时设置样式ID
 
-     ```
-     1. @Entry
-     2. @Component
-     3. struct CustomMapStyleDemo {
-     4. private mapOptions?: mapCommon.MapOptions;
-     5. private mapController?: map.MapComponentController;
-     6. private callback?: AsyncCallback<map.MapComponentController>;
+     ```typescript
+     @Entry
+     @Component
+     struct MapStyleDemo {
+       // ...
+       private TAG = 'MapStyleDemo';
+       private mapOptions?: mapCommon.MapOptions;
+       private mapController?: map.MapComponentController;
+       private callback?: AsyncCallback<map.MapComponentController>;
 
-     8. aboutToAppear(): void {
-     9. // 地图初始化参数
-     10. this.mapOptions = {
-     11. position: {
-     12. target: {
-     13. latitude: 31.984410259206815,
-     14. longitude: 118.76625379397866
-     15. },
-     16. zoom: 15
-     17. },
-     18. // 自定义样式参数，styleId需要替换为您自己的样式ID或者预览ID，样式ID或者预览ID可在Petal Maps Studio平台上创建
-     19. styleId: "XXX"
-     20. };
-     21. this.callback = async (err, mapController) => {
-     22. if (!err) {
-     23. this.mapController = mapController;
-     24. } else {
-     25. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-     26. }
-     27. };
-     28. }
+       aboutToAppear(): void {
+         // 地图初始化参数
+         this.mapOptions = {
+           position: {
+             target: {
+               latitude: 31.984410259206815,
+               longitude: 118.76625379397866
+             },
+             zoom: 15
+           }
+         };
+         this.callback = async (err, mapController) => {
+           if (!err) {
+             this.mapController = mapController;
+             // 自定义样式参数，styleId需要替换为您自己的样式ID或者预览ID，样式ID或者预览ID可在Petal Maps Studio平台上创建
+             let param: mapCommon.CustomMapStyleOptions = {
+               styleId: 'XXX'
+             };
+             // 设置自定义样式
+             await this.mapController.setCustomMapStyle(param).then(() => {
+               console.info(this.TAG + `setCustomMapStyle OK`);
+             }).catch((error: BusinessError) => {
+               console.error(this.TAG + `Failed in getting CustomMapStyle, code is：${error.code}, message is
+               ${error.message}`);
+             })
+           } else {
+             console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+           }
+         };
+       }
 
-     30. build() {
-     31. Stack() {
-     32. Column() {
-     33. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
-     34. }.width('100%')
-     35. }.height('100%')
-     36. }
-     37. }
+       build() {
+         // ...
+           Stack() {
+             // 调用MapComponent组件初始化地图
+             Column() {
+               MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
+             }.width('100%')
+           }.height('100%')
+
+           // ...
+       }
+     }
      ```
 
      设置样式ID之后效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Nv75yTCDSOevfzKNyEoGYA/zh-cn_image_0000002589325389.jpg "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/JCa9zCm9T2y9mC3RSJUwNQ/zh-cn_image_0000002736434187.jpg "点击放大")
 
 ### 设置样式内容
 
 1. 导入相关模块。
 
-   ```
-   1. import { MapComponent, mapCommon, map } from '@kit.MapKit';
-   2. import { AsyncCallback } from '@kit.BasicServicesKit';
+   ```typescript
+   import { MapComponent, mapCommon, map } from '@kit.MapKit';
+   import { AsyncCallback } from '@kit.BasicServicesKit';
    ```
 2. 设置样式内容。
 
+   ```typescript
+   @Entry
+   @Component
+   struct MapStyleDemo {
+     // ...
+     private mapOptions?: mapCommon.MapOptions;
+     private mapController?: map.MapComponentController;
+     private callback?: AsyncCallback<map.MapComponentController>;
+
+     aboutToAppear(): void {
+       // 地图初始化参数
+       this.mapOptions = {
+         position: {
+           target: {
+             latitude: 31.984410259206815,
+             longitude: 118.76625379397866
+           },
+           zoom: 15
+         }
+       };
+       this.callback = async (err, mapController) => {
+         if (!err) {
+           this.mapController = mapController;
+           // 自定义样式参数
+           let param: mapCommon.CustomMapStyleOptions = {
+             styleContent: `[{
+                      'mapFeature': 'landcover.natural',
+                      'options': 'geometry.fill',
+                      'paint': {
+                          'color': '#8FBC8F'
+                      }},
+                      {
+                     'mapFeature': 'water',
+                     'options': 'geometry.fill',
+                     'paint': {
+                         'color': '#4682B4'
+                     }}]`
+           };
+           // 设置自定义样式
+           await this.mapController.setCustomMapStyle(param);
+         } else {
+           console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
+         }
+       };
+     }
+
+     build() {
+       // ...
+         Stack() {
+           // 调用MapComponent组件初始化地图
+           Column() {
+             MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
+           }.width('100%')
+         }.height('100%')
+
+         // ...
+     }
+   }
    ```
-   1. @Entry
-   2. @Component
-   3. struct CustomMapStyleDemo {
-   4. private mapOptions?: mapCommon.MapOptions;
-   5. private mapController?: map.MapComponentController;
-   6. private callback?: AsyncCallback<map.MapComponentController>;
 
-   8. aboutToAppear(): void {
-   9. // 地图初始化参数
-   10. this.mapOptions = {
-   11. position: {
-   12. target: {
-   13. latitude: 31.984410259206815,
-   14. longitude: 118.76625379397866
-   15. },
-   16. zoom: 15
-   17. }
-   18. };
-   19. this.callback = async (err, mapController) => {
-   20. if (!err) {
-   21. this.mapController = mapController;
-   22. // 自定义样式参数
-   23. let param: mapCommon.CustomMapStyleOptions = {
-   24. styleContent: `[{
-   25. "mapFeature": "landcover.natural",
-   26. "options": "geometry.fill",
-   27. "paint": {
-   28. "color": "#8FBC8F"
-   29. }},
-   30. {
-   31. "mapFeature": "water",
-   32. "options": "geometry.fill",
-   33. "paint": {
-   34. "color": "#4682B4"
-   35. }}]`
-   36. };
-   37. // 设置自定义样式
-   38. await this.mapController.setCustomMapStyle(param);
-   39. } else {
-   40. console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
-   41. }
-   42. };
-   43. }
-
-   45. build() {
-   46. Stack() {
-   47. Column() {
-   48. MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
-   49. }.width('100%')
-   50. }.height('100%')
-   51. }
-   52. }
-   ```
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/q9NZTsC0TFyYcayE6-La0g/zh-cn_image_0000002589245327.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/JGhmOwiaSm6Kslb3Q6Afww/zh-cn_image_0000002706835036.jpg "点击放大")
 
 ### 样式参考
 
@@ -250,7 +226,7 @@ Map Kit提供两种方法设置自定义地图样式：
 
 下列各表将向您展示支持修改的地图元素。
 
-说明
+**说明** 
 
 * 图标类型icon-type支持范围为：standard/night/simple。
 

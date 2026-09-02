@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 服务动态参数说明
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 服务动态 > 服务动态参数说明
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7ea4ee8d95f942e59f9fe7b64849ba08a141c3e58dda139d430d9cc34873420f
+scraped_at: 2026-09-02T15:03:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:16290ad60948d91143fa6512df12872e8567c5758ccaffbca35b324eedcd413e
 ---
 
 ## 服务动态发送场景说明
@@ -26,7 +26,7 @@ content_hash: sha256:7ea4ee8d95f942e59f9fe7b64849ba08a141c3e58dda139d430d9cc3487
 | amount | String | 金额，商家提供含货币单位金额。最大长度16。示例：￥20.00 |
 | productCount | Integer | 商品数量。范围为[0, 2147483647]，即非负值。 |
 | productName | String | 商品名称。最大长度256。 |
-| productImg | String | 图片SKUId，商家图片托管分配的资源唯一标识。需要通过[申请权益](../atomic-guides/push-as-timeline.md#section592010820304)提供图片获取SKUId。最大长度128。示例：Image\_001  **说明：**  如需更换或者新增图片，需要通过[申请图片资源托管](../atomic-guides/push-as-timeline.md#section19921168203013)提供图片重新获取SKUId。 |
+| productImg | String | 图片SKUId，商家图片托管分配的资源唯一标识。需要通过[申请权益](../atomic-guides/push-as-timeline.md#section592010820304)提供图片获取SKUId。最大长度128。示例：Image\_001  **说明：**  如需更换或者新增图片，需要通过[申请图片资源托管](../atomic-guides/push-as-timeline.md#section592010820304)提供图片重新获取SKUId。 |
 | merchantName | String | 商家名称。最大长度256。 |
 | paymentEndTime | String | 支付截止时间。最大长度32。示例：请在17:15前支付 |
 | remainOrders | String | 待制作订单数。最大长度16。示例：3单/共5杯 |
@@ -59,7 +59,7 @@ content_hash: sha256:7ea4ee8d95f942e59f9fe7b64849ba08a141c3e58dda139d430d9cc3487
 | status | Integer | 服务动态指定场景下指定子场景状态。例如：发送**外卖**场景下**外卖配送**子场景“制作中”状态，则status=3。详细参数取值参见[指定状态下发送服务动态参数要求](push-api-service-timeline-param.md#指定状态下发送服务动态参数要求-1)。  取值如下：  1：待支付  2：下单成功  3：制作中  4：制作完成  5：骑手已接单  6：骑手正在赶往商家  7：骑手已到店  8：正在配送  9：已送达  10：订单完成  11：订单已取消  **说明：**  根据不同状态必传参数、选填参数发送请求。 |
 | amount | String | 金额。最大长度16。示例：￥20.00 |
 | paymentEndTime | String | 支付截止时间。最大长度32。示例：请在17:15前支付 |
-| productImg | String | 图片SKUId，商家图片托管分配的资源唯一标识。需要通过[申请权益](../atomic-guides/push-as-timeline.md#section592010820304)提供图片获取SKUId。最大长度128。示例：Image\_001  **说明：**  如需更换或者新增图片，需要通过[申请图片资源托管](../atomic-guides/push-as-timeline.md#section19921168203013)提供图片重新获取SKUId。 |
+| productImg | String | 图片SKUId，商家图片托管分配的资源唯一标识。需要通过[申请权益](../atomic-guides/push-as-timeline.md#section592010820304)提供图片获取SKUId。最大长度128。示例：Image\_001  **说明：**  如需更换或者新增图片，需要通过[申请图片资源托管](../atomic-guides/push-as-timeline.md#section592010820304)提供图片重新获取SKUId。 |
 | productCount | Integer | 商品数量。范围为[0, 2147483647]，即非负值。 |
 | productName | String | 商品名称。最大长度256。 |
 | merchantName | String | 商家名称。最大长度256。 |

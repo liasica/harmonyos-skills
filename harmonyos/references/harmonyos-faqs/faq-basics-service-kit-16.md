@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何持有wakelock锁，防止系统休眠
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何持有wakelock锁，防止系统休眠
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:22+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-02T15:22:00+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:da36334fbe513d20a3153bce5f9724ab3e9413698341a3d48f8916f87e834a2b
 ---
 

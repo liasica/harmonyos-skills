@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-gener
 title: 通用约束
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 通用约束
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8120c303e545cd6b53a3581a934e808ef5ba9e787ce663533fc4ef4593a93772
+scraped_at: 2026-09-02T14:50:35+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:c13de0ba3191ad8f24e3d93c74dc89eb5f5079dff43326ab25c3f5d0528cf8fa
 ---
 
 AscendC管理不同层级的物理内存时，用一种抽象的逻辑位置（TPosition）来表达各级别的存储，代替了片上物理存储的概念，达到隐藏硬件架构的目的。TPosition类型包括：VECIN、VECOUT、VECCALC、A1、A2、B1、B2、CO1、CO2，具体介绍请参考[TPosition](cannkit-tposition.md)。TPosition与物理内存的映射关系如表1所示。
@@ -22,16 +22,12 @@ AscendC管理不同层级的物理内存时，用一种抽象的逻辑位置（T
 | A2 | L0A Buffer |
 | B1 | L1 Buffer |
 | B2 | L0B Buffer |
-| C1 | Kirin9020系列处理器，L1 Buffer |
-| C1 | KirinX90系列处理器，L1Buffer |
-| C2 | Kirin9020系列处理器，BT Buffer |
-| C2 | KirinX90系列处理器，BT Buffer |
+| C1 | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，L1 Buffer |
+| C2 | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，BT Buffer |
 | CO1 | L0C Buffer |
-| CO2 | Kirin9020系列处理器，Global Memory |
-| CO2 | KirinX90系列处理器，Global Memory |
+| CO2 | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，Global Memory |
 | TSCM | L1 Buffer |
-| SPM | Kirin9020系列处理器，Global Memory |
-| SPM | KirinX90系列处理器，Global Memory |
+| SPM | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器，Global Memory |
 
 AscendC内存管理模块在进行内存分配时会对起始地址进行对齐。各类存储单元的对齐要求如表2所示。
 

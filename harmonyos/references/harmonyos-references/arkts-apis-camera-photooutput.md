@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (PhotoOutput)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:13227172789f085355353487b7230f39ca2edcd8c57f132b22f2d8ec39ce950b
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:43dfef8f6c30b555d2fa0fc9a887b1d0a3c2b228882cb43cd859ddacbed232bc
 ---
 
 拍照会话中使用的输出信息，继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## capture
-
-PhonePC/2in1TabletTVWearable
 
 capture(callback: AsyncCallback<void>): void
 
@@ -51,23 +47,21 @@ capture(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function capture(photoOutput: camera.PhotoOutput): void {
-4. photoOutput.capture((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to capture the photo, error code: ${err.code}.`);
-7. return;
-8. }
-9. console.info('Callback invoked to indicate the photo capture request success.');
-10. });
-11. }
+function capture(photoOutput: camera.PhotoOutput): void {
+  photoOutput.capture((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to capture the photo, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Callback invoked to indicate the photo capture request success.');
+  });
+}
 ```
 
 ## capture
-
-PhonePC/2in1TabletTVWearable
 
 capture(): Promise<void>
 
@@ -94,21 +88,19 @@ capture(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function capture(photoOutput: camera.PhotoOutput): void {
-4. photoOutput.capture().then(() => {
-5. console.info('Promise returned to indicate that photo capture request success.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to photo output capture, error code: ${error.code}.`);
-8. });
-9. }
+function capture(photoOutput: camera.PhotoOutput): void {
+  photoOutput.capture().then(() => {
+    console.info('Promise returned to indicate that photo capture request success.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to photo output capture, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## capture
-
-PhonePC/2in1TabletTVWearable
 
 capture(setting: PhotoCaptureSetting, callback: AsyncCallback<void>): void
 
@@ -137,34 +129,32 @@ capture(setting: PhotoCaptureSetting, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function capture(photoOutput: camera.PhotoOutput): void {
-4. let captureLocation: camera.Location = {
-5. latitude: 0,
-6. longitude: 0,
-7. altitude: 0
-8. }
-9. let settings: camera.PhotoCaptureSetting = {
-10. quality: camera.QualityLevel.QUALITY_LEVEL_LOW,
-11. rotation: camera.ImageRotation.ROTATION_0,
-12. location: captureLocation,
-13. mirror: false
-14. }
-15. photoOutput.capture(settings, (err: BusinessError) => {
-16. if (err) {
-17. console.error(`Failed to capture the photo, error code: ${err.code}.`);
-18. return;
-19. }
-20. console.info('Callback invoked to indicate the photo capture request success.');
-21. });
-22. }
+function capture(photoOutput: camera.PhotoOutput): void {
+  let captureLocation: camera.Location = {
+    latitude: 0,
+    longitude: 0,
+    altitude: 0
+  }
+  let settings: camera.PhotoCaptureSetting = {
+    quality: camera.QualityLevel.QUALITY_LEVEL_LOW,
+    rotation: camera.ImageRotation.ROTATION_0,
+    location: captureLocation,
+    mirror: false
+  }
+  photoOutput.capture(settings, (err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to capture the photo, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Callback invoked to indicate the photo capture request success.');
+  });
+}
 ```
 
 ## capture
-
-PhonePC/2in1TabletTVWearable
 
 capture(setting: PhotoCaptureSetting): Promise<void>
 
@@ -198,38 +188,36 @@ capture(setting: PhotoCaptureSetting): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function capture(photoOutput: camera.PhotoOutput): void {
-4. let captureLocation: camera.Location = {
-5. latitude: 0,
-6. longitude: 0,
-7. altitude: 0
-8. }
-9. let settings: camera.PhotoCaptureSetting = {
-10. quality: camera.QualityLevel.QUALITY_LEVEL_LOW,
-11. rotation: camera.ImageRotation.ROTATION_0,
-12. location: captureLocation,
-13. mirror: false
-14. }
-15. photoOutput.capture(settings).then(() => {
-16. console.info('Promise returned to indicate that photo capture request success.');
-17. }).catch((error: BusinessError) => {
-18. console.error(`Failed to photo output capture, error code: ${error.code}.`);
-19. });
-20. }
+function capture(photoOutput: camera.PhotoOutput): void {
+  let captureLocation: camera.Location = {
+    latitude: 0,
+    longitude: 0,
+    altitude: 0
+  }
+  let settings: camera.PhotoCaptureSetting = {
+    quality: camera.QualityLevel.QUALITY_LEVEL_LOW,
+    rotation: camera.ImageRotation.ROTATION_0,
+    location: captureLocation,
+    mirror: false
+  }
+  photoOutput.capture(settings).then(() => {
+    console.info('Promise returned to indicate that photo capture request success.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to photo output capture, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## on('photoAvailable')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'photoAvailable', callback: AsyncCallback<Photo>): void
 
 注册监听拍照返回照片上报事件。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -246,27 +234,25 @@ on(type: 'photoAvailable', callback: AsyncCallback<Photo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { image } from '@kit.ImageKit';
-3. import { camera } from '@kit.CameraKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
+import { camera } from '@kit.CameraKit';
 
-5. function callback(err: BusinessError, photo: camera.Photo): void {
-6. if (err !== undefined && err.code !== 0) {
-7. console.error(`Callback Error, errorCode: ${err.code}`);
-8. return;
-9. }
-10. let mainImage: image.Image = photo.main;
-11. }
+function callback(err: BusinessError, photo: camera.Photo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  let mainImage: image.Image = photo.main;
+}
 
-13. function registerPhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): void {
-14. photoOutput.on('photoAvailable', callback);
-15. }
+function registerPhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('photoAvailable', callback);
+}
 ```
 
 ## off('photoAvailable')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'photoAvailable', callback?: AsyncCallback<Photo>): void
 
@@ -285,32 +271,30 @@ off(type: 'photoAvailable', callback?: AsyncCallback<Photo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { image } from '@kit.ImageKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { image } from '@kit.ImageKit';
 
-4. function callback(err: BusinessError, photo: camera.Photo): void {
-5. if (err !== undefined && err.code !== 0) {
-6. console.error(`Callback Error, errorCode: ${err.code}`);
-7. return;
-8. }
-9. let mainImage: image.Image = photo.main;
-10. }
+function callback(err: BusinessError, photo: camera.Photo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  let mainImage: image.Image = photo.main;
+}
 
-12. function unRegisterPhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): void {
-13. photoOutput.off('photoAvailable', callback);
-14. }
+function unRegisterPhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('photoAvailable', callback);
+}
 ```
 
 ## onCapturePhotoAvailable23+
-
-PhonePC/2in1TabletTVWearable
 
 onCapturePhotoAvailable(callback: Callback<CapturePhoto>): void
 
 注册监听全质量图和未压缩图。使用callback异步回调。
 
-说明
+**说明** 
 
 * 注册监听接口时，不支持在该接口监听的回调方法里调用[offCapturePhotoAvailable](arkts-apis-camera-photooutput.md#offcapturephotoavailable23)注销回调。
 * 拍摄未压缩图（YUV）格式图片时，仅支持使用此接口注册监听。
@@ -329,22 +313,20 @@ onCapturePhotoAvailable(callback: Callback<CapturePhoto>): void
 
 **示例：**
 
-```
-1. import { camera } from '@kit.CameraKit';
-2. import { image } from '@kit.ImageKit';
+```ts
+import { camera } from '@kit.CameraKit';
+import { image } from '@kit.ImageKit';
 
-4. function callback(capturePhoto: camera.CapturePhoto): void {
-5. let picture: image.Image | image.Picture = capturePhoto.main;
-6. }
+function callback(capturePhoto: camera.CapturePhoto): void {
+  let picture: image.Image | image.Picture = capturePhoto.main;
+}
 
-8. function registerCapturePhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): void {
-9. photoOutput.onCapturePhotoAvailable(callback);
-10. }
+function registerCapturePhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): void {
+  photoOutput.onCapturePhotoAvailable(callback);
+}
 ```
 
 ## offCapturePhotoAvailable23+
-
-PhonePC/2in1TabletTVWearable
 
 offCapturePhotoAvailable(callback?: Callback<CapturePhoto>): void
 
@@ -364,28 +346,26 @@ offCapturePhotoAvailable(callback?: Callback<CapturePhoto>): void
 
 **示例：**
 
-```
-1. import { camera } from '@kit.CameraKit';
-2. import { image } from '@kit.ImageKit';
+```ts
+import { camera } from '@kit.CameraKit';
+import { image } from '@kit.ImageKit';
 
-4. function callback(capturePhoto: camera.CapturePhoto): void {
-5. let picture: image.Image | image.Picture = capturePhoto.main;
-6. }
+function callback(capturePhoto: camera.CapturePhoto): void {
+  let picture: image.Image | image.Picture = capturePhoto.main;
+}
 
-8. function unRegisterCapturePhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): void {
-9. photoOutput.offCapturePhotoAvailable(callback);
-10. }
+function unRegisterCapturePhotoOutputPhotoAvailable(photoOutput: camera.PhotoOutput): void {
+  photoOutput.offCapturePhotoAvailable(callback);
+}
 ```
 
 ## on('captureStartWithInfo')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'captureStartWithInfo', callback: AsyncCallback<CaptureStartInfo>): void
 
 监听拍照开始，通过注册回调函数获取[CaptureStartInfo](arkts-apis-camera-i.md#capturestartinfo11)。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -402,25 +382,23 @@ on(type: 'captureStartWithInfo', callback: AsyncCallback<CaptureStartInfo>): voi
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, captureStartInfo: camera.CaptureStartInfo): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`photo capture started, captureStartInfo : ${captureStartInfo}`);
-9. }
+function callback(err: BusinessError, captureStartInfo: camera.CaptureStartInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`photo capture started, captureStartInfo : ${captureStartInfo}`);
+}
 
-11. function registerCaptureStartWithInfo(photoOutput: camera.PhotoOutput): void {
-12. photoOutput.on('captureStartWithInfo', callback);
-13. }
+function registerCaptureStartWithInfo(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('captureStartWithInfo', callback);
+}
 ```
 
 ## off('captureStartWithInfo')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'captureStartWithInfo', callback?: AsyncCallback<CaptureStartInfo>): void
 
@@ -439,17 +417,15 @@ off(type: 'captureStartWithInfo', callback?: AsyncCallback<CaptureStartInfo>): v
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function unRegisterCaptureStartWithInfo(photoOutput: camera.PhotoOutput): void {
-4. photoOutput.off('captureStartWithInfo');
-5. }
+function unRegisterCaptureStartWithInfo(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('captureStartWithInfo');
+}
 ```
 
 ## isMovingPhotoSupported12+
-
-PhonePC/2in1TabletTVWearable
 
 isMovingPhotoSupported(): boolean
 
@@ -475,25 +451,23 @@ isMovingPhotoSupported(): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function isMovingPhotoSupported(photoOutput: camera.PhotoOutput): boolean {
-4. let isSupported: boolean = false;
-5. try {
-6. isSupported = photoOutput.isMovingPhotoSupported();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The isMovingPhotoSupported call failed. error code: ${err.code}`);
-11. }
-12. return isSupported;
-13. }
+function isMovingPhotoSupported(photoOutput: camera.PhotoOutput): boolean {
+  let isSupported: boolean = false;
+  try {
+    isSupported = photoOutput.isMovingPhotoSupported();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The isMovingPhotoSupported call failed. error code: ${err.code}`);
+  }
+  return isSupported;
+}
 ```
 
 ## enableMovingPhoto12+
-
-PhonePC/2in1TabletTVWearable
 
 enableMovingPhoto(enabled: boolean): void
 
@@ -523,29 +497,27 @@ enableMovingPhoto(enabled: boolean): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function enableMovingPhoto(photoOutput: camera.PhotoOutput): void {
-4. try {
-5. photoOutput.enableMovingPhoto(true);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The enableMovingPhoto call failed. error code: ${err.code}`);
-10. }
-11. }
+function enableMovingPhoto(photoOutput: camera.PhotoOutput): void {
+  try {
+    photoOutput.enableMovingPhoto(true);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The enableMovingPhoto call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## on('photoAssetAvailable')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'photoAssetAvailable', callback: AsyncCallback<photoAccessHelper.PhotoAsset>): void
 
 注册监听photoAsset上报。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -562,27 +534,25 @@ on(type: 'photoAssetAvailable', callback: AsyncCallback<photoAccessHelper.PhotoA
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-4. function photoAssetAvailableCallback(err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset): void {
-5. if (err) {
-6. console.info(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
-7. return;
-8. }
-9. console.info('photoOutPutCallBack photoAssetAvailable');
-10. // 开发者可通过photoAsset获取图片相关信息。
-11. }
+function photoAssetAvailableCallback(err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset): void {
+  if (err) {
+    console.info(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
+    return;
+  }
+  console.info('photoOutPutCallBack photoAssetAvailable');
+  // 开发者可通过photoAsset获取图片相关信息。
+}
 
-13. function onPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): void {
-14. photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
-15. }
+function onPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
+}
 ```
 
 ## off('photoAssetAvailable')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'photoAssetAvailable', callback?: AsyncCallback<photoAccessHelper.PhotoAsset>): void
 
@@ -601,15 +571,13 @@ off(type: 'photoAssetAvailable', callback?: AsyncCallback<photoAccessHelper.Phot
 
 **示例：**
 
-```
-1. function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): void {
-2. photoOutput.off('photoAssetAvailable');
-3. }
+```ts
+function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('photoAssetAvailable');
+}
 ```
 
 ## isMirrorSupported
-
-PhonePC/2in1TabletTVWearable
 
 isMirrorSupported(): boolean
 
@@ -627,16 +595,14 @@ isMirrorSupported(): boolean
 
 **示例：**
 
-```
-1. function isMirrorSupported(photoOutput: camera.PhotoOutput): boolean {
-2. let isSupported: boolean = photoOutput.isMirrorSupported();
-3. return isSupported;
-4. }
+```ts
+function isMirrorSupported(photoOutput: camera.PhotoOutput): boolean {
+  let isSupported: boolean = photoOutput.isMirrorSupported();
+  return isSupported;
+}
 ```
 
 ## enableMirror13+
-
-PhonePC/2in1TabletTVWearable
 
 enableMirror(enabled: boolean): void
 
@@ -666,23 +632,21 @@ enableMirror(enabled: boolean): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function enableMirror(photoOutput: camera.PhotoOutput): void {
-4. try {
-5. photoOutput.enableMirror(true);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The enableMirror call failed. error code: ${err.code}`);
-10. }
-11. }
+function enableMirror(photoOutput: camera.PhotoOutput): void {
+  try {
+    photoOutput.enableMirror(true);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The enableMirror call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## getSupportedMovingPhotoVideoCodecTypes13+
-
-PhonePC/2in1TabletTVWearable
 
 getSupportedMovingPhotoVideoCodecTypes(): Array<VideoCodecType>
 
@@ -708,20 +672,20 @@ getSupportedMovingPhotoVideoCodecTypes(): Array<VideoCodecType>
 
 **示例：**
 
-```
-1. function getSupportedMovingPhotoVideoCodecType(photoOutput: camera.PhotoOutput): Array<camera.VideoCodecType> {
-2. let supportedVideoCodecTypesArray: Array<camera.VideoCodecType> = photoOutput.getSupportedMovingPhotoVideoCodecTypes();
-3. return supportedVideoCodecTypesArray;
-4. }
+```ts
+function getSupportedMovingPhotoVideoCodecType(photoOutput: camera.PhotoOutput): Array<camera.VideoCodecType> {
+  let supportedVideoCodecTypesArray: Array<camera.VideoCodecType> = photoOutput.getSupportedMovingPhotoVideoCodecTypes();
+  return supportedVideoCodecTypesArray;
+}
 ```
 
 ## setMovingPhotoVideoCodecType13+
 
-PhonePC/2in1TabletTVWearable
-
 setMovingPhotoVideoCodecType(codecType: VideoCodecType): void
 
 设置动态照片短视频编码类型。
+
+设置之前，可先使用方法[getSupportedMovingPhotoVideoCodecTypes](arkts-apis-camera-photooutput.md#getsupportedmovingphotovideocodectypes13)查询设备支持的动态照片短视频编码类型。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -743,15 +707,13 @@ setMovingPhotoVideoCodecType(codecType: VideoCodecType): void
 
 **示例：**
 
-```
-1. function setMovingPhotoVideoCodecTypes(photoOutput: camera.PhotoOutput, videoCodecType: camera.VideoCodecType): void {
-2. photoOutput.setMovingPhotoVideoCodecType(videoCodecType);
-3. }
+```ts
+function setMovingPhotoVideoCodecTypes(photoOutput: camera.PhotoOutput, videoCodecType: camera.VideoCodecType): void {
+  photoOutput.setMovingPhotoVideoCodecType(videoCodecType);
+}
 ```
 
 ## on('frameShutter')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'frameShutter', callback: AsyncCallback<FrameShutterInfo>): void
 
@@ -770,26 +732,24 @@ on(type: 'frameShutter', callback: AsyncCallback<FrameShutterInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, frameShutterInfo: camera.FrameShutterInfo): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`CaptureId for frame : ${frameShutterInfo.captureId}`);
-9. console.info(`Timestamp for frame : ${frameShutterInfo.timestamp}`);
-10. }
+function callback(err: BusinessError, frameShutterInfo: camera.FrameShutterInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`CaptureId for frame : ${frameShutterInfo.captureId}`);
+  console.info(`Timestamp for frame : ${frameShutterInfo.timestamp}`);
+}
 
-12. function registerPhotoOutputFrameShutter(photoOutput: camera.PhotoOutput): void {
-13. photoOutput.on('frameShutter', callback);
-14. }
+function registerPhotoOutputFrameShutter(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('frameShutter', callback);
+}
 ```
 
 ## off('frameShutter')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'frameShutter', callback?: AsyncCallback<FrameShutterInfo>): void
 
@@ -808,21 +768,19 @@ off(type: 'frameShutter', callback?: AsyncCallback<FrameShutterInfo>): void
 
 **示例：**
 
-```
-1. function unregisterPhotoOutputFrameShutter(photoOutput: camera.PhotoOutput): void {
-2. photoOutput.off('frameShutter');
-3. }
+```ts
+function unregisterPhotoOutputFrameShutter(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('frameShutter');
+}
 ```
 
 ## on('captureEnd')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'captureEnd', callback: AsyncCallback<CaptureEndInfo>): void
 
 监听拍照结束，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -839,26 +797,24 @@ on(type: 'captureEnd', callback: AsyncCallback<CaptureEndInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, captureEndInfo: camera.CaptureEndInfo): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`photo capture end, captureId : ${captureEndInfo.captureId}`);
-9. console.info(`frameCount : ${captureEndInfo.frameCount}`);
-10. }
+function callback(err: BusinessError, captureEndInfo: camera.CaptureEndInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`photo capture end, captureId : ${captureEndInfo.captureId}`);
+  console.info(`frameCount : ${captureEndInfo.frameCount}`);
+}
 
-12. function registerPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
-13. photoOutput.on('captureEnd', callback);
-14. }
+function registerPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('captureEnd', callback);
+}
 ```
 
 ## off('captureEnd')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'captureEnd', callback?: AsyncCallback<CaptureEndInfo>): void
 
@@ -877,21 +833,19 @@ off(type: 'captureEnd', callback?: AsyncCallback<CaptureEndInfo>): void
 
 **示例：**
 
-```
-1. function unregisterPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
-2. photoOutput.off('captureEnd');
-3. }
+```ts
+function unregisterPhotoOutputCaptureEnd(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('captureEnd');
+}
 ```
 
 ## on('frameShutterEnd')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'frameShutterEnd', callback: AsyncCallback<FrameShutterEndInfo>): void
 
 监听拍照曝光结束捕获，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -908,25 +862,23 @@ on(type: 'frameShutterEnd', callback: AsyncCallback<FrameShutterEndInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, frameShutterEndInfo: camera.FrameShutterEndInfo): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`CaptureId for frame : ${frameShutterEndInfo.captureId}`);
-9. }
+function callback(err: BusinessError, frameShutterEndInfo: camera.FrameShutterEndInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`CaptureId for frame : ${frameShutterEndInfo.captureId}`);
+}
 
-11. function registerPhotoOutputFrameShutterEnd(photoOutput: camera.PhotoOutput): void {
-12. photoOutput.on('frameShutterEnd', callback);
-13. }
+function registerPhotoOutputFrameShutterEnd(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('frameShutterEnd', callback);
+}
 ```
 
 ## off('frameShutterEnd')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'frameShutterEnd', callback?: AsyncCallback<FrameShutterEndInfo>): void
 
@@ -945,21 +897,19 @@ off(type: 'frameShutterEnd', callback?: AsyncCallback<FrameShutterEndInfo>): voi
 
 **示例：**
 
-```
-1. function unregisterPhotoOutputFrameShutterEnd(photoOutput: camera.PhotoOutput): void {
-2. photoOutput.off('frameShutterEnd');
-3. }
+```ts
+function unregisterPhotoOutputFrameShutterEnd(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('frameShutterEnd');
+}
 ```
 
 ## on('captureReady')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'captureReady', callback: AsyncCallback<void>): void
 
 监听可拍下一张，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -976,25 +926,23 @@ on(type: 'captureReady', callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`photo capture ready`);
-9. }
+function callback(err: BusinessError): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`photo capture ready`);
+}
 
-11. function registerPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
-12. photoOutput.on('captureReady', callback);
-13. }
+function registerPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('captureReady', callback);
+}
 ```
 
 ## off('captureReady')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'captureReady', callback?: AsyncCallback<void>): void
 
@@ -1013,21 +961,19 @@ off(type: 'captureReady', callback?: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. function unregisterPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
-2. photoOutput.off('captureReady');
-3. }
+```ts
+function unregisterPhotoOutputCaptureReady(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('captureReady');
+}
 ```
 
 ## on('estimatedCaptureDuration')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'estimatedCaptureDuration', callback: AsyncCallback<number>): void
 
 监听预估的拍照时间，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -1044,25 +990,23 @@ on(type: 'estimatedCaptureDuration', callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, duration: number): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`photo estimated capture duration : ${duration}`);
-9. }
+function callback(err: BusinessError, duration: number): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`photo estimated capture duration : ${duration}`);
+}
 
-11. function registerPhotoOutputEstimatedCaptureDuration(photoOutput: camera.PhotoOutput): void {
-12. photoOutput.on('estimatedCaptureDuration', callback);
-13. }
+function registerPhotoOutputEstimatedCaptureDuration(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('estimatedCaptureDuration', callback);
+}
 ```
 
 ## off('estimatedCaptureDuration')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'estimatedCaptureDuration', callback?: AsyncCallback<number>): void
 
@@ -1081,21 +1025,19 @@ off(type: 'estimatedCaptureDuration', callback?: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. function unregisterPhotoOutputEstimatedCaptureDuration(photoOutput: camera.PhotoOutput): void {
-2. photoOutput.off('estimatedCaptureDuration');
-3. }
+```ts
+function unregisterPhotoOutputEstimatedCaptureDuration(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('estimatedCaptureDuration');
+}
 ```
 
 ## on('error')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 监听拍照输出发生错误，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -1112,21 +1054,19 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. console.error(`Photo output error code: ${err.code}`);
-5. }
+function callback(err: BusinessError): void {
+  console.error(`Photo output error code: ${err.code}`);
+}
 
-7. function registerPhotoOutputError(photoOutput: camera.PhotoOutput): void {
-8. photoOutput.on('error', callback);
-9. }
+function registerPhotoOutputError(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('error', callback);
+}
 ```
 
 ## off('error')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -1145,15 +1085,13 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. function unregisterPhotoOutputError(photoOutput: camera.PhotoOutput): void {
-2. photoOutput.off('error');
-3. }
+```ts
+function unregisterPhotoOutputError(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('error');
+}
 ```
 
 ## getActiveProfile12+
-
-PhonePC/2in1TabletTVWearable
 
 getActiveProfile(): Profile
 
@@ -1179,25 +1117,23 @@ getActiveProfile(): Profile
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function testGetActiveProfile(photoOutput: camera.PhotoOutput): camera.Profile | undefined {
-4. let activeProfile: camera.Profile | undefined = undefined;
-5. try {
-6. activeProfile = photoOutput.getActiveProfile();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The photoOutput.getActiveProfile call failed. error code: ${err.code}`);
-11. }
-12. return activeProfile;
-13. }
+function testGetActiveProfile(photoOutput: camera.PhotoOutput): camera.Profile | undefined {
+  let activeProfile: camera.Profile | undefined = undefined;
+  try {
+    activeProfile = photoOutput.getActiveProfile();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The photoOutput.getActiveProfile call failed. error code: ${err.code}`);
+  }
+  return activeProfile;
+}
 ```
 
 ## getPhotoRotation12+
-
-PhonePC/2in1TabletTVWearable
 
 getPhotoRotation(deviceDegree?: number): ImageRotation
 
@@ -1230,49 +1166,48 @@ getPhotoRotation(deviceDegree?: number): ImageRotation
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect.  适用版本：12-22 |
 | 7400201 | Camera service fatal error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function testGetPhotoRotation(photoOutput: camera.PhotoOutput, deviceDegree : number): camera.ImageRotation {
-4. let photoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
-5. try {
-6. photoRotation = photoOutput.getPhotoRotation(deviceDegree);
-7. console.info(`Photo rotation is: ${photoRotation}`);
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The photoOutput.getPhotoRotation call failed. error code: ${err.code}`);
-12. }
-13. return photoRotation;
-14. }
+function testGetPhotoRotation(photoOutput: camera.PhotoOutput, deviceDegree : number): camera.ImageRotation {
+  let photoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
+  try {
+    photoRotation = photoOutput.getPhotoRotation(deviceDegree);
+    console.info(`Photo rotation is: ${photoRotation}`);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The photoOutput.getPhotoRotation call failed. error code: ${err.code}`);
+  }
+  return photoRotation;
+}
 
-16. function testGetPhotoRotationWithOutParam(photoOutput: camera.PhotoOutput): camera.ImageRotation {
-17. let photoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
-18. try {
-19. photoRotation = photoOutput.getPhotoRotation();
-20. console.info(`Photo rotation is: ${photoRotation}`);
-21. } catch (error) {
-22. // 失败返回错误码error.code并处理。
-23. let err = error as BusinessError;
-24. console.error(`The photoOutput.testGetPhotoRotationWithOutParam call failed. error code: ${err.code}`);
-25. }
-26. return photoRotation;
-27. }
+function testGetPhotoRotationWithOutParam(photoOutput: camera.PhotoOutput): camera.ImageRotation {
+  let photoRotation: camera.ImageRotation = camera.ImageRotation.ROTATION_0;
+  try {
+    photoRotation = photoOutput.getPhotoRotation();
+    console.info(`Photo rotation is: ${photoRotation}`);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The photoOutput.testGetPhotoRotationWithOutParam call failed. error code: ${err.code}`);
+  }
+  return photoRotation;
+}
 ```
 
 ## on('captureStart')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'captureStart', callback: AsyncCallback<number>): void
 
 监听拍照开始，通过注册回调函数获取Capture ID。使用callback异步回调。
 
-说明
+**说明** 
 
 从 API version 10开始支持，从API version 11开始废弃。建议使用[on('captureStartWithInfo')](arkts-apis-camera-photooutput.md#oncapturestartwithinfo11)替代。
 
@@ -1289,31 +1224,29 @@ on(type: 'captureStart', callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, captureId: number): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`photo capture started, captureId : ${captureId}`);
-9. }
+function callback(err: BusinessError, captureId: number): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`photo capture started, captureId : ${captureId}`);
+}
 
-11. function registerPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
-12. photoOutput.on('captureStart', callback);
-13. }
+function registerPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
+  photoOutput.on('captureStart', callback);
+}
 ```
 
 ## off('captureStart')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'captureStart', callback?: AsyncCallback<number>): void
 
 注销拍照开始的监听。
 
-说明
+**说明** 
 
 从 API version 10开始支持，从API version 11开始废弃。建议使用[off('captureStartWithInfo')](arkts-apis-camera-photooutput.md#offcapturestartwithinfo11)替代。
 
@@ -1330,15 +1263,13 @@ off(type: 'captureStart', callback?: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. function unregisterPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
-2. photoOutput.off('captureStart');
-3. }
+```ts
+function unregisterPhotoOutputCaptureStart(photoOutput: camera.PhotoOutput): void {
+  photoOutput.off('captureStart');
+}
 ```
 
 ## isPhotoQualityPrioritizationSupported21+
-
-PhonePC/2in1TabletTVWearable
 
 isPhotoQualityPrioritizationSupported(qualityPrioritization: PhotoQualityPrioritization): boolean
 
@@ -1370,27 +1301,25 @@ isPhotoQualityPrioritizationSupported(qualityPrioritization: PhotoQualityPriorit
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { camera } from '@kit.CameraKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { camera } from '@kit.CameraKit';
 
-4. let photoOutput: camera.PhotoOutput;
+let photoOutput: camera.PhotoOutput;
 
-6. function isPhotoQualityPrioritizationSupported(qualityPrioritization: camera.PhotoQualityPrioritization): boolean {
-7. let isSupported: boolean = false;
-8. try {
-9. isSupported = photoOutput.isPhotoQualityPrioritizationSupported(qualityPrioritization);
-10. } catch (error) {
-11. let err = error as BusinessError;
-12. console.error(`The isPhotoQualityPrioritizationSupported call failed. error code: ${err.code}`);
-13. }
-14. return isSupported;
-15. }
+function isPhotoQualityPrioritizationSupported(qualityPrioritization: camera.PhotoQualityPrioritization): boolean {
+  let isSupported: boolean = false;
+  try {
+    isSupported = photoOutput.isPhotoQualityPrioritizationSupported(qualityPrioritization);
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`The isPhotoQualityPrioritizationSupported call failed. error code: ${err.code}`);
+  }
+  return isSupported;
+}
 ```
 
 ## setPhotoQualityPrioritization21+
-
-PhonePC/2in1TabletTVWearable
 
 setPhotoQualityPrioritization(qualityPrioritization: PhotoQualityPrioritization): void
 
@@ -1419,18 +1348,104 @@ setPhotoQualityPrioritization(qualityPrioritization: PhotoQualityPrioritization)
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { camera } from '@kit.CameraKit';
+
+let photoOutput: camera.PhotoOutput;
+
+function setPhotoQualityPrioritization(qualityPrioritization: camera.PhotoQualityPrioritization): void {
+  try {
+    photoOutput.setPhotoQualityPrioritization(qualityPrioritization);
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`The setPhotoQualityPrioritization call failed. error code: ${err.code}`);
+  }
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { camera } from '@kit.CameraKit';
 
-4. let photoOutput: camera.PhotoOutput;
+## isAutoExtendedGainmapDeliverySupported
 
-6. function setPhotoQualityPrioritization(qualityPrioritization: camera.PhotoQualityPrioritization): void {
-7. try {
-8. photoOutput.setPhotoQualityPrioritization(qualityPrioritization);
-9. } catch (error) {
-10. let err = error as BusinessError;
-11. console.error(`The setPhotoQualityPrioritization call failed. error code: ${err.code}`);
-12. }
-13. }
+isAutoExtendedGainmapDeliverySupported(): boolean
+
+确认是否支持自动扩展增益图（Gainmap）的输出。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否支持自动扩展增益图（Gainmap）的输出。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { camera } from '@kit.CameraKit';
+
+function isAutoExtendedGainmapDeliverySupported(photoOutput: camera.PhotoOutput): boolean {
+  let isSupported: boolean = false;
+  try {
+    isSupported = photoOutput.isAutoExtendedGainmapDeliverySupported();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The isAutoExtendedGainmapDeliverySupported call failed. error code: ${err.code}`);
+  }
+  return isSupported;
+}
+```
+
+## enableAutoExtendedGainmapDelivery
+
+enableAutoExtendedGainmapDelivery(enabled: boolean): void
+
+是否启用自动扩展增益图（Gainmap）的输出。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| enabled | boolean | 是 | 是否启用自动扩展增益图（Gainmap）的输出。true表示启用，false表示不启用。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400102 | Operation not allowed. |
+| 7400103 | Session not config, only throw in session usage. |
+| 7400201 | Camera service fatal error. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { camera } from '@kit.CameraKit';
+
+function enableAutoExtendedGainmapDelivery(photoOutput: camera.PhotoOutput): void {
+  try {
+    photoOutput.enableAutoExtendedGainmapDelivery(true);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The enableAutoExtendedGainmapDelivery call failed. error code: ${err.code}`);
+  }
+}
 ```

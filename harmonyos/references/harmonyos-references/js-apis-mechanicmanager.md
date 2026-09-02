@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.distributedHardware.mechanicManager (机械体控制模块)"
 breadcrumb: API参考 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务） > ArkTS API > @ohos.distributedHardware.mechanicManager (机械体控制模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:11+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:7fd3b7b74e765719d589a087e2285a7839be3b40eacd463a9eb04a149d12a339
+scraped_at: 2026-09-02T15:02:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5076e28462d3971522aff8290e6aa6ad1d4fe4026b20c4378c6adbecadb9343e
 ---
 
 本模块提供与机械体设备交互的能力，包括设备连接状态监听、跟踪控制和跟踪状态监听功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 20开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhoneTablet
-
-```
-1. import { mechanicManager } from '@kit.MechanicKit';
+```js
+import { mechanicManager } from '@kit.MechanicKit';
 ```
 
 ## mechanicManager.on('attachStateChange')
-
-PhoneTablet
 
 on(type: 'attachStateChange', callback: Callback<AttachStateChangeInfo>): void
 
@@ -49,19 +45,21 @@ on(type: 'attachStateChange', callback: Callback<AttachStateChangeInfo>): void
 
 **示例：**
 
-```
-1. let callback = (result: mechanicManager.AttachStateChangeInfo) => {
-2. console.info(`'callback result:' ${result}`);
-3. };
+```ts
+// 定义连接状态变化回调函数，result为设备连接状态变化信息
+let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+  console.info(`'callback result:' ${result}`);
+};
 
-5. console.info('Register');
-6. mechanicManager.on("attachStateChange", callback);
-7. console.info('Succeeded in registering callback.');
+// 打印日志，表示开始注册监听
+console.info('Register');
+// 注册"attachStateChange"事件监听，当设备连接状态变化时触发callback回调
+mechanicManager.on("attachStateChange", callback);
+// 打印日志，表示注册监听成功
+console.info('Succeeded in registering callback.');
 ```
 
 ## mechanicManager.off('attachStateChange')
-
-PhoneTablet
 
 off(type: 'attachStateChange', callback?: Callback<AttachStateChangeInfo>): void
 
@@ -86,19 +84,19 @@ off(type: 'attachStateChange', callback?: Callback<AttachStateChangeInfo>): void
 
 **示例：**
 
-```
-1. let callback = (result: mechanicManager.AttachStateChangeInfo) => {
-2. console.info(`'callback result:' ${result}`);
-3. };
+```ts
+// 定义连接状态变化回调函数
+let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+  console.info(`'callback result:' ${result}`);
+};
 
-5. console.info('Unregister');
-6. mechanicManager.off("attachStateChange", callback);
-7. console.info('Succeeded in unregistering callback.');
+console.info('Unregister');
+// 取消注册"attachStateChange"事件监听
+mechanicManager.off("attachStateChange", callback);
+console.info('Succeeded in unregistering callback.');
 ```
 
 ## mechanicManager.getAttachedMechDevices
-
-PhoneTablet
 
 getAttachedMechDevices(): MechInfo[]
 
@@ -122,15 +120,14 @@ getAttachedMechDevices(): MechInfo[]
 
 **示例：**
 
-```
-1. console.info('Query device list');
-2. let mechanicInfos = mechanicManager.getAttachedMechDevices();
-3. console.info(`'device list:' ${mechanicInfos}`);
+```ts
+console.info('Query device list');
+// 调用getAttachedMechDevices方法获取已连接的机械体设备列表
+let mechanicInfos = mechanicManager.getAttachedMechDevices();
+console.info(`'device list:' ${mechanicInfos}`);
 ```
 
 ## mechanicManager.setCameraTrackingEnabled
-
-PhoneTablet
 
 setCameraTrackingEnabled(isEnabled: boolean): void
 
@@ -156,15 +153,14 @@ setCameraTrackingEnabled(isEnabled: boolean): void
 
 **示例：**
 
-```
-1. console.info('Enable tracing');
-2. mechanicManager.setCameraTrackingEnabled(true);
-3. console.info('Succeeded in enabling tracking.');
+```ts
+console.info('Enable tracing');
+// 调用setCameraTrackingEnabled方法，参数true表示启用摄像头跟踪
+mechanicManager.setCameraTrackingEnabled(true);
+console.info('Succeeded in enabling tracking.');
 ```
 
 ## mechanicManager.getCameraTrackingEnabled
-
-PhoneTablet
 
 getCameraTrackingEnabled(): boolean
 
@@ -189,15 +185,14 @@ getCameraTrackingEnabled(): boolean
 
 **示例：**
 
-```
-1. console.info('Get tracking status');
-2. let enabled = mechanicManager.getCameraTrackingEnabled();
-3. console.info(`'current tracking status:' ${enabled}`);
+```ts
+console.info('Get tracking status');
+// 调用getCameraTrackingEnabled方法获取当前摄像头跟踪是否启用
+let enabled = mechanicManager.getCameraTrackingEnabled();
+console.info(`'current tracking status:' ${enabled}`);
 ```
 
 ## mechanicManager.on('trackingStateChange')
-
-PhoneTablet
 
 on(type: 'trackingStateChange', callback: Callback<TrackingEventInfo>): void
 
@@ -222,19 +217,19 @@ on(type: 'trackingStateChange', callback: Callback<TrackingEventInfo>): void
 
 **示例：**
 
-```
-1. let callback = (result: mechanicManager.TrackingEventInfo) => {
-2. console.info(`'callback result:' ${result}`);
-3. };
+```ts
+// 定义跟踪状态变化回调函数，result为跟踪事件信息
+let callback = (result: mechanicManager.TrackingEventInfo) => {
+  console.info(`'callback result:' ${result}`);
+};
 
-5. console.info('Register');
-6. mechanicManager.on("trackingStateChange", callback);
-7. console.info('Succeeded in registering callback.');
+console.info('Register');
+// 注册"trackingStateChange"事件监听，当跟踪状态变化时触发callback回调
+mechanicManager.on("trackingStateChange", callback);
+console.info('Succeeded in registering callback.');
 ```
 
 ## mechanicManager.off('trackingStateChange')
-
-PhoneTablet
 
 off(type: 'trackingStateChange', callback?: Callback<TrackingEventInfo>): void
 
@@ -247,7 +242,7 @@ off(type: 'trackingStateChange', callback?: Callback<TrackingEventInfo>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | 'trackingStateChange' | 是 | 取消注册的监听事件类型。取值为：'trackingStateChange'。 |
-| callback | Callback<[TrackingEventInfo](js-apis-mechanicmanager.md#trackingeventinfo)> | 否 | mechanicManager.off('trackingStateChange')注册的回调函数。不填时默认取消所有注册的回调函数。 |
+| callback | Callback<[TrackingEventInfo](js-apis-mechanicmanager.md#trackingeventinfo)> | 否 | 回调函数，返回跟踪事件信息。 |
 
 **错误码：**
 
@@ -259,19 +254,19 @@ off(type: 'trackingStateChange', callback?: Callback<TrackingEventInfo>): void
 
 **示例：**
 
-```
-1. let callback = (result: mechanicManager.TrackingEventInfo) => {
-2. console.info(`'callback result:' ${result}`);
-3. };
+```ts
+// 定义跟踪状态变化回调函数
+let callback = (result: mechanicManager.TrackingEventInfo) => {
+  console.info(`'callback result:' ${result}`);
+};
 
-5. console.info('Unregister');
-6. mechanicManager.off("trackingStateChange", callback);
-7. console.info('Succeeded in unregistering callback.');
+console.info('Unregister');
+// 取消注册"trackingStateChange"事件监听
+mechanicManager.off("trackingStateChange", callback);
+console.info('Succeeded in unregistering callback.');
 ```
 
 ## mechanicManager.getCameraTrackingLayout
-
-PhoneTablet
 
 getCameraTrackingLayout(): CameraTrackingLayout
 
@@ -296,15 +291,45 @@ getCameraTrackingLayout(): CameraTrackingLayout
 
 **示例：**
 
+```ts
+console.info('Query layout');
+// 调用getCameraTrackingLayout方法获取当前摄像头跟踪布局
+let layout = mechanicManager.getCameraTrackingLayout();
+console.info(`'Succeeded in querying layout, current layout:' ${layout}`);
 ```
-1. console.info('Query layout');
-2. let layout = mechanicManager.getCameraTrackingLayout();
-3. console.info(`'Succeeded in querying layout, current layout:' ${layout}`);
+
+## mechanicManager.isControlSupported()
+
+isControlSupported(mechDeviceType?: MechDeviceType): boolean
+
+应用判断当前设备是否支持对特定设备类型的机械体设备控制，以便作出相应的功能选择，例如决定使用APP内部的跟踪控制功能还是系统的默认控制功能，或者给予用户相应的提示。三方厂商APP可以根据此接口判断当前设备是否支持对特定类型的设备的机械控制和智能跟踪功能，以决定是否使用自身APP的跟踪控制功能，还是直接使用系统提供的跟踪功能，或者给予用户相应的提示。
+
+**起始版本：** 26.0.0
+
+**系统能力**：SystemCapability.Mechanic.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mechDeviceType | [MechDeviceType](js-apis-mechanicmanager.md#mechdevicetype) | 否 | 机械体设备的类型。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 当前设备是否支持某类设备的机械体设备控制。true表示支持，false表示不支持。 |
+
+**示例：**
+
+```ts
+console.info('Check whether control is supported');
+// 调用isControlSupported方法，传入MechDeviceType.GIMBAL_DEVICE类型，判断是否支持云台设备控制
+let isSupported = mechanicManager.isControlSupported(mechanicManager.MechDeviceType.GIMBAL_DEVICE);
+console.info(`isSupported: ${isSupported}`);
 ```
 
 ## MechInfo
-
-PhoneTablet
 
 机械体设备信息。
 
@@ -314,11 +339,9 @@ PhoneTablet
 | --- | --- | --- | --- | --- |
 | mechId | number | 否 | 否 | 机械体设备ID，取值为大于等于0的整数。 |
 | mechDeviceType | [MechDeviceType](js-apis-mechanicmanager.md#mechdevicetype) | 否 | 否 | 机械体设备的类型。 |
-| mechName | string | 否 | 否 | 机械体设备名称。 |
+| mechName | string | 否 | 否 | 机械体设备名称，长度不超过64字符。 |
 
 ## TrackingEventInfo
-
-PhoneTablet
 
 跟踪事件信息。
 
@@ -330,8 +353,6 @@ PhoneTablet
 
 ## AttachStateChangeInfo
 
-PhoneTablet
-
 设备连接状态变化的信息。
 
 **系统能力**：SystemCapability.Mechanic.Core
@@ -342,8 +363,6 @@ PhoneTablet
 | mechInfo | [MechInfo](js-apis-mechanicmanager.md#mechinfo) | 否 | 否 | 机械体设备信息。 |
 
 ## TrackingEvent
-
-PhoneTablet
 
 跟踪事件的枚举。
 
@@ -357,8 +376,6 @@ PhoneTablet
 
 ## MechDeviceType
 
-PhoneTablet
-
 机械体设备类型的枚举。
 
 **系统能力**：SystemCapability.Mechanic.Core
@@ -368,8 +385,6 @@ PhoneTablet
 | GIMBAL\_DEVICE | 0 | 便携式云台设备。 |
 
 ## AttachState
-
-PhoneTablet
 
 设备连接状态的枚举。
 
@@ -381,8 +396,6 @@ PhoneTablet
 | DETACHED | 1 | 设备已断开。 |
 
 ## CameraTrackingLayout
-
-PhoneTablet
 
 摄像头跟踪布局的枚举。
 

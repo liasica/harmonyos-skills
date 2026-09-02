@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/widget-develo
 title: JS卡片开发指导（FA模型）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片开发 > JS卡片开发指导（FA模型）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:06+08:00
-doc_updated_at: 2026-03-19
-content_hash: sha256:1f7eb3423e4b86a298380b855334cb22873c515049fa1f4af51cf2d4238009a8
+scraped_at: 2026-09-02T14:59:25+08:00
+doc_updated_at: 2026-07-24
+content_hash: sha256:82d1de2d9863a9fb1e56f3800d3ddc7911bd573081c081e03b37782b21920804
 ---
 
 FA模型从API version 7开始支持，已经不再主推。该应用模型通过导出匿名对象、固定入口文件的方式指定应用组件，开发者无法进行派生，不利于扩展能力。建议使用新的Stage模型进行开发。
@@ -30,8 +30,8 @@ FormProvider类有如下API接口，具体的API介绍详见[@ohos.app.form.form
 
 | 接口名 | 描述 |
 | --- | --- |
-| setFormNextRefreshTime(formId: string, minute: number, callback: AsyncCallback<void>): void; | 设置指定卡片的下一次更新时间，使用callback异步回调。 |
-| setFormNextRefreshTime(formId: string, minute: number): Promise<void>; | 设置指定卡片的下一次更新时间，以promise方式返回。 |
+| setFormNextRefreshTime(formId: string, minute: number, callback: AsyncCallback<void>): void; | 设置指定卡片的下一次刷新时间，使用callback异步回调。 |
+| setFormNextRefreshTime(formId: string, minute: number): Promise<void>; | 设置指定卡片的下一次刷新时间，以promise方式返回。 |
 | updateForm(formId: string, formBindingData: formBindingData.FormBindingData,callback: AsyncCallback<void>): void; | 更新指定的卡片，使用callback异步回调。 |
 | updateForm(formId: string, formBindingData: FormBindingData): Promise<void>; | 更新指定的卡片，以promise方式返回。 |
 
@@ -43,7 +43,7 @@ FormBindingData类有如下API接口，具体的API介绍详见[@ohos.app.form.f
 
 ## 开发步骤
 
-FA卡片开发，即基于[FA模型](fa-model-development-overview.md)的卡片提供方开发，主要涉及如下关键步骤：
+FA卡片开发，即基于[FA模型](../lite-wearable-guides/fa-model-development-overview.md)的卡片提供方开发，主要涉及如下关键步骤：
 
 * [实现卡片生命周期接口](widget-development-fa.md#实现卡片生命周期接口)：开发FormAbility生命周期回调函数。
 * [配置卡片配置文件](widget-development-fa.md#配置卡片配置文件)：配置应用配置文件config.json。
@@ -58,149 +58,145 @@ FA卡片开发，即基于[FA模型](fa-model-development-overview.md)的卡片�
 
 1. 在form.ts中，导入相关模块
 
-   ```
-   1. import type featureAbility from '@ohos.ability.featureAbility';
-   2. import type Want from '@ohos.app.ability.Want';
-   3. import formBindingData from '@ohos.app.form.formBindingData';
-   4. import formInfo from '@ohos.app.form.formInfo';
-   5. import formProvider from '@ohos.app.form.formProvider';
-   6. import dataPreferences from '@ohos.data.preferences';
-   7. import hilog from '@ohos.hilog';
+   ```ts
+   import type featureAbility from '@ohos.ability.featureAbility';
+   import type Want from '@ohos.app.ability.Want';
+   import formBindingData from '@ohos.app.form.formBindingData';
+   import formInfo from '@ohos.app.form.formInfo';
+   import formProvider from '@ohos.app.form.formProvider';
+   import dataPreferences from '@ohos.data.preferences';
+   import hilog from '@ohos.hilog';
    ```
 2. 在form.ts中，实现卡片生命周期接口
 
-   ```
-   1. const TAG: string = '[Sample_FAModelAbilityDevelop]';
-   2. const domain: number = 0xFF00;
+   ```ts
+   const TAG: string = '[Sample_FAModelAbilityDevelop]';
+   const domain: number = 0xFF00;
 
-   4. const DATA_STORAGE_PATH: string = 'form_store';
-   5. let storeFormInfo = async (formId: string, formName: string, tempFlag: boolean, context: featureAbility.Context): Promise<void> => {
-   6. // 此处仅对卡片ID：formId，卡片名：formName和是否为临时卡片：tempFlag进行了持久化
-   7. let formInfo: Record<string, string | number | boolean> = {
-   8. 'formName': 'formName',
-   9. 'tempFlag': 'tempFlag',
-   10. 'updateCount': 0
-   11. };
-   12. try {
-   13. const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
-   14. // put form info
-   15. await storage.put(formId, JSON.stringify(formInfo));
-   16. hilog.info(domain, TAG, `storeFormInfo, put form info successfully, formId: ${formId}`);
-   17. await storage.flush();
-   18. } catch (err) {
-   19. hilog.error(domain, TAG, `failed to storeFormInfo, err: ${JSON.stringify(err as Error)}`);
-   20. }
-   21. };
+   const DATA_STORAGE_PATH: string = 'form_store';
+   let storeFormInfo = async (formId: string, formName: string, tempFlag: boolean, context: featureAbility.Context): Promise<void> => {
+     // 此处仅对卡片名：formName， 是否为临时卡片：tempFlag进行了持久化
+     let formInfo: Record<string, string | number | boolean> = {
+       'formName': formName,
+       'tempFlag': tempFlag,
+       'updateCount': 0
+     };
+     try {
+       const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
+       // put form info
+       await storage.put(formId, JSON.stringify(formInfo));
+       hilog.info(domain, TAG, `storeFormInfo, put form info successfully, formId: ${formId}`);
+       await storage.flush();
+     } catch (err) {
+       hilog.error(domain, TAG, `failed to storeFormInfo, err: ${JSON.stringify(err as Error)}`);
+     }
+   };
 
-   23. let deleteFormInfo = async (formId: string, context: featureAbility.Context) => {
-   24. try {
-   25. const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
-   26. // del form info
-   27. await storage.delete(formId);
-   28. hilog.info(domain, TAG, `deleteFormInfo, del form info successfully, formId: ${formId}`);
-   29. await storage.flush();
-   30. } catch (err) {
-   31. hilog.error(domain, TAG, `failed to deleteFormInfo, err: ${JSON.stringify(err)}`);
-   32. }
-   33. }
+   let deleteFormInfo = async (formId: string, context: featureAbility.Context) => {
+     try {
+       const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
+       // del form info
+       await storage.delete(formId);
+       hilog.info(domain, TAG, `deleteFormInfo, del form info successfully, formId: ${formId}`);
+       await storage.flush();
+     } catch (err) {
+       hilog.error(domain, TAG, `failed to deleteFormInfo, err: ${JSON.stringify(err)}`);
+     }
+   }
 
-   35. class LifeCycle {
-   36. onCreate: (want: Want) => formBindingData.FormBindingData = (want) => ({ data: '' });
-   37. onCastToNormal: (formId: string) => void = (formId) => {
-   38. };
-   39. onUpdate: (formId: string) => void = (formId) => {
-   40. };
-   41. onVisibilityChange: (newStatus: Record<string, number>) => void = (newStatus) => {
-   42. let obj: Record<string, number> = {
-   43. 'test': 1
-   44. };
-   45. return obj;
-   46. };
-   47. onEvent: (formId: string, message: string) => void = (formId, message) => {
-   48. };
-   49. onDestroy: (formId: string) => void = (formId) => {
-   50. };
-   51. onAcquireFormState?: (want: Want) => formInfo.FormState = (want) => (0);
-   52. onShareForm?: (formId: string) => Record<string, Object> = (formId) => {
-   53. let obj: Record<string, number> = {
-   54. 'test': 1
-   55. };
-   56. return obj;
-   57. };
-   58. }
+   class LifeCycle {
+     onCreate: (want: Want) => formBindingData.FormBindingData = (want) => ({ data: '' });
+     onCastToNormal: (formId: string) => void = (formId) => {
+     };
+     onUpdate: (formId: string) => void = (formId) => {
+     };
+     onVisibilityChange: (newStatus: Record<string, number>) => void = (newStatus) => {
+     };
+     onEvent: (formId: string, message: string) => void = (formId, message) => {
+     };
+     onDestroy: (formId: string) => void = (formId) => {
+     };
+     onAcquireFormState?: (want: Want) => formInfo.FormState = (want) => (0);
+     onShareForm?: (formId: string) => Record<string, Object> = (formId) => {
+       let obj: Record<string, number> = {
+         'test': 1
+       };
+       return obj;
+     };
+   }
 
-   60. let obj: LifeCycle = {
-   61. onCreate(want: Want) {
-   62. hilog.info(domain, TAG, 'FormAbility onCreate');
-   63. if (want.parameters) {
-   64. let formId = String(want.parameters['ohos.extra.param.key.form_identity']);
-   65. let formName = String(want.parameters['ohos.extra.param.key.form_name']);
-   66. let tempFlag = Boolean(want.parameters['ohos.extra.param.key.form_temporary']);
-   67. // 将创建的卡片信息持久化，以便在下次获取/更新该卡片实例时进行使用
-   68. // 此接口请根据实际情况实现，具体请参考：FormExtAbility Stage模型卡片实例
-   69. hilog.info(domain, TAG, 'FormAbility onCreate' + formId);
-   70. storeFormInfo(formId, formName, tempFlag, this.context);
-   71. }
+   let obj: LifeCycle = {
+     onCreate(want: Want) {
+       hilog.info(domain, TAG, 'FormAbility onCreate');
+       if (want.parameters) {
+         let formId = String(want.parameters['ohos.extra.param.key.form_identity']);
+         let formName = String(want.parameters['ohos.extra.param.key.form_name']);
+         let tempFlag = Boolean(want.parameters['ohos.extra.param.key.form_temporary']);
+         // 将创建的卡片信息持久化，以便在下次获取/更新该卡片实例时进行使用
+         // 此接口请根据实际情况实现，具体请参考：FormExtAbility Stage模型卡片实例
+         hilog.info(domain, TAG, 'FormAbility onCreate' + formId);
+         storeFormInfo(formId, formName, tempFlag, this.context);
+       }
 
-   73. // 使用方创建卡片时触发，提供方需要返回卡片数据绑定类
-   74. let obj: Record<string, string> = {
-   75. 'title': 'titleOnCreate',
-   76. 'detail': 'detailOnCreate'
-   77. };
-   78. let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
-   79. return formData;
-   80. },
-   81. onCastToNormal(formId: string) {
-   82. // 使用方将临时卡片转换为常态卡片触发，提供方需要做相应的处理，当前卡片使用方不存在临时卡片场景
-   83. hilog.info(domain, TAG, 'FormAbility onCastToNormal');
-   84. },
-   85. onUpdate(formId: string) {
-   86. // 若卡片支持定时更新/定点更新/卡片使用方主动请求更新功能，则提供方需要重写该方法以支持数据更新
-   87. hilog.info(domain, TAG, 'FormAbility onUpdate');
-   88. let obj: Record<string, string> = {
-   89. 'title': 'titleOnUpdate',
-   90. 'detail': 'detailOnUpdate'
-   91. };
-   92. let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
-   93. // 调用updateForm接口去更新对应的卡片，仅更新入参中携带的数据信息，其他信息保持不变
-   94. formProvider.updateForm(formId, formData).catch((error: Error) => {
-   95. hilog.error(domain, TAG, 'FormAbility updateForm, error:' + JSON.stringify(error));
-   96. });
-   97. },
-   98. onVisibilityChange(newStatus: Record<string, number>) {
-   99. // 使用方发起可见或者不可见通知触发，提供方需要做相应的处理，仅系统应用生效
-   100. hilog.info(domain, TAG, 'FormAbility onVisibilityChange');
-   101. },
-   102. onEvent(formId: string, message: string) {
-   103. // 若卡片支持触发事件，则需要重写该方法并实现对事件的触发
-   104. let obj: Record<string, string> = {
-   105. 'title': 'titleOnEvent',
-   106. 'detail': 'detailOnEvent'
-   107. };
-   108. let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
-   109. // 调用updateForm接口去更新对应的卡片，仅更新入参中携带的数据信息，其他信息保持不变
-   110. formProvider.updateForm(formId, formData).catch((error: Error) => {
-   111. hilog.error(domain, TAG, 'FormAbility updateForm, error:' + JSON.stringify(error));
-   112. });
-   113. hilog.info(domain, TAG, 'FormAbility onEvent');
-   114. },
-   115. onDestroy(formId: string) {
-   116. // 删除卡片实例数据
-   117. hilog.info(domain, TAG, 'FormAbility onDestroy');
-   118. // 删除之前持久化的卡片实例数据
-   119. // 此接口请根据实际情况实现，具体请参考：FormExtAbility Stage模型卡片实例
-   120. deleteFormInfo(formId, this.context);
-   121. },
-   122. onAcquireFormState(want: Want) {
-   123. hilog.info(domain, TAG, 'FormAbility onAcquireFormState');
-   124. return formInfo.FormState.READY;
-   125. }
-   126. };
+       // 使用方创建卡片时触发，提供方需要返回卡片数据绑定类
+       let obj: Record<string, string> = {
+         'title': 'titleOnCreate',
+         'detail': 'detailOnCreate'
+       };
+       let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
+       return formData;
+     },
+     onCastToNormal(formId: string) {
+       // 使用方将临时卡片转换为常态卡片触发，提供方需要做相应的处理，当前卡片使用方不存在临时卡片场景
+       hilog.info(domain, TAG, 'FormAbility onCastToNormal');
+     },
+     onUpdate(formId: string) {
+       // 若卡片支持定时更新/定点更新/卡片使用方主动请求更新功能，则提供方需要重写该方法以支持数据更新
+       hilog.info(domain, TAG, 'FormAbility onUpdate');
+       let obj: Record<string, string> = {
+         'title': 'titleOnUpdate',
+         'detail': 'detailOnUpdate'
+       };
+       let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
+       // 调用updateForm接口去更新对应的卡片，仅更新入参中携带的数据信息，其他信息保持不变
+       formProvider.updateForm(formId, formData).catch((error: Error) => {
+         hilog.error(domain, TAG, 'FormAbility updateForm, error:' + JSON.stringify(error));
+       });
+     },
+     onVisibilityChange(newStatus: Record<string, number>) {
+       // 使用方发起可见或者不可见通知触发，提供方需要做相应的处理，仅系统应用生效
+       hilog.info(domain, TAG, 'FormAbility onVisibilityChange');
+     },
+     onEvent(formId: string, message: string) {
+       // 若卡片支持触发事件，则需要重写该方法并实现对事件的触发
+       let obj: Record<string, string> = {
+         'title': 'titleOnEvent',
+         'detail': 'detailOnEvent'
+       };
+       let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
+       // 调用updateForm接口去更新对应的卡片，仅更新入参中携带的数据信息，其他信息保持不变
+       formProvider.updateForm(formId, formData).catch((error: Error) => {
+         hilog.error(domain, TAG, 'FormAbility updateForm, error:' + JSON.stringify(error));
+       });
+       hilog.info(domain, TAG, 'FormAbility onEvent');
+     },
+     onDestroy(formId: string) {
+       // 删除卡片实例数据
+       hilog.info(domain, TAG, 'FormAbility onDestroy');
+       // 删除之前持久化的卡片实例数据
+       // 此接口请根据实际情况实现，具体请参考：FormExtAbility Stage模型卡片实例
+       deleteFormInfo(formId, this.context);
+     },
+     onAcquireFormState(want: Want) {
+       hilog.info(domain, TAG, 'FormAbility onAcquireFormState');
+       return formInfo.FormState.READY;
+     }
+   };
 
-   128. export default obj;
+   export default obj;
    ```
 
-说明
+**说明** 
 
 FormAbility不能常驻后台，即在卡片生命周期回调函数中无法处理长时间的任务。
 
@@ -220,21 +216,21 @@ FormAbility不能常驻后台，即在卡片生命周期回调函数中无法处
 
   配置示例如下：
 
-  ```
-  1. "js": [
-  2. // ...
-  3. {
-  4. "name": "widget",
-  5. "pages": [
-  6. "pages/index/index"
-  7. ],
-  8. "window": {
-  9. "designWidth": 720,
-  10. "autoDesignWidth": true
-  11. },
-  12. "type": "form"
-  13. }
-  14. ]
+  ```json5
+  "js": [
+    // ...
+    {
+      "name": "widget",
+      "pages": [
+        "pages/index/index"
+      ],
+      "window": {
+        "designWidth": 720,
+        "autoDesignWidth": true
+      },
+        "type": "form"
+      }
+    ]
   ```
 * abilities模块，用于对应卡片的FormAbility，内部字段结构说明：
 
@@ -258,124 +254,124 @@ FormAbility不能常驻后台，即在卡片生命周期回调函数中无法处
 
   配置示例如下：
 
-  ```
-  1. "abilities": [
-  2. // ...
-  3. {
-  4. "name": ".FormAbility",
-  5. "srcPath": "FormAbility",
-  6. "description": "$string:FormAbility_desc",
-  7. "icon": "$media:icon",
-  8. "label": "$string:FormAbility_label",
-  9. "type": "service",
-  10. "formsEnabled": true,
-  11. "srcLanguage": "ets",
-  12. "forms": [
-  13. {
-  14. "jsComponentName": "widget",
-  15. "isDefault": true,
-  16. "scheduledUpdateTime": "10:30",
-  17. "defaultDimension": "2*2",
-  18. "name": "widget",
-  19. "description": "This is a service widget.",
-  20. "type": "JS",
-  21. "formVisibleNotify": true,
-  22. "supportDimensions": [
-  23. "2*2"
-  24. ],
-  25. "updateEnabled": true,
-  26. "updateDuration": 1
-  27. }
-  28. ]
-  29. },
-  30. // ...
-  31. ]
+  ```json5
+  "abilities": [
+    // ...
+    {
+      "name": ".FormAbility",
+      "srcPath": "FormAbility",
+      "description": "$string:FormAbility_desc",
+      "icon": "$media:icon",
+      "label": "$string:FormAbility_label",
+      "type": "service",
+      "formsEnabled": true,
+      "srcLanguage": "ets",
+      "forms": [
+        {
+          "jsComponentName": "widget",
+          "isDefault": true,
+          "scheduledUpdateTime": "10:30",
+          "defaultDimension": "2*2",
+          "name": "widget",
+          "description": "This is a service widget.",
+          "type": "JS",
+          "formVisibleNotify": true,
+          "supportDimensions": [
+            "2*2"
+          ],
+          "updateEnabled": true,
+          "updateDuration": 1
+        }
+      ]
+    },
+    // ...
+  ]
   ```
 
 ### 卡片信息的持久化
 
 因大部分卡片提供方都不是常驻服务，只有在需要使用时才会被拉起获取卡片信息，且卡片管理服务支持对卡片进行多实例管理，卡片ID对应实例ID，因此若卡片提供方支持对卡片数据进行配置，则需要对卡片的业务数据按照卡片ID进行持久化管理，以便在后续获取、更新以及拉起时能获取到正确的卡片业务数据。且需要适配onDestroy卡片删除通知接口，在其中实现卡片实例数据的删除。
 
-```
-1. const TAG: string = '[Sample_FAModelAbilityDevelop]';
-2. const domain: number = 0xFF00;
+```ts
+const TAG: string = '[Sample_FAModelAbilityDevelop]';
+const domain: number = 0xFF00;
 
-4. const DATA_STORAGE_PATH: string = 'form_store';
-5. let storeFormInfo = async (formId: string, formName: string, tempFlag: boolean, context: featureAbility.Context): Promise<void> => {
-6. // 此处仅对卡片ID：formId，卡片名：formName和是否为临时卡片：tempFlag进行了持久化
-7. let formInfo: Record<string, string | number | boolean> = {
-8. 'formName': 'formName',
-9. 'tempFlag': 'tempFlag',
-10. 'updateCount': 0
-11. };
-12. try {
-13. const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
-14. // put form info
-15. await storage.put(formId, JSON.stringify(formInfo));
-16. hilog.info(domain, TAG, `storeFormInfo, put form info successfully, formId: ${formId}`);
-17. await storage.flush();
-18. } catch (err) {
-19. hilog.error(domain, TAG, `failed to storeFormInfo, err: ${JSON.stringify(err as Error)}`);
-20. }
-21. };
+const DATA_STORAGE_PATH: string = 'form_store';
+let storeFormInfo = async (formId: string, formName: string, tempFlag: boolean, context: featureAbility.Context): Promise<void> => {
+  // 此处仅对卡片名：formName， 是否为临时卡片：tempFlag进行了持久化
+  let formInfo: Record<string, string | number | boolean> = {
+    'formName': formName,
+    'tempFlag': tempFlag,
+    'updateCount': 0
+  };
+  try {
+    const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
+    // put form info
+    await storage.put(formId, JSON.stringify(formInfo));
+    hilog.info(domain, TAG, `storeFormInfo, put form info successfully, formId: ${formId}`);
+    await storage.flush();
+  } catch (err) {
+    hilog.error(domain, TAG, `failed to storeFormInfo, err: ${JSON.stringify(err as Error)}`);
+  }
+};
 
-23. let deleteFormInfo = async (formId: string, context: featureAbility.Context) => {
-24. try {
-25. const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
-26. // del form info
-27. await storage.delete(formId);
-28. hilog.info(domain, TAG, `deleteFormInfo, del form info successfully, formId: ${formId}`);
-29. await storage.flush();
-30. } catch (err) {
-31. hilog.error(domain, TAG, `failed to deleteFormInfo, err: ${JSON.stringify(err)}`);
-32. }
-33. }
+let deleteFormInfo = async (formId: string, context: featureAbility.Context) => {
+  try {
+    const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
+    // del form info
+    await storage.delete(formId);
+    hilog.info(domain, TAG, `deleteFormInfo, del form info successfully, formId: ${formId}`);
+    await storage.flush();
+  } catch (err) {
+    hilog.error(domain, TAG, `failed to deleteFormInfo, err: ${JSON.stringify(err)}`);
+  }
+}
 
-35. // ...
-36. onCreate(want: Want) {
-37. hilog.info(domain, TAG, 'FormAbility onCreate');
-38. if (want.parameters) {
-39. let formId = String(want.parameters['ohos.extra.param.key.form_identity']);
-40. let formName = String(want.parameters['ohos.extra.param.key.form_name']);
-41. let tempFlag = Boolean(want.parameters['ohos.extra.param.key.form_temporary']);
-42. // 将创建的卡片信息持久化，以便在下次获取/更新该卡片实例时进行使用
-43. // 此接口请根据实际情况实现，具体请参考：FormExtAbility Stage模型卡片实例
-44. hilog.info(domain, TAG, 'FormAbility onCreate' + formId);
-45. storeFormInfo(formId, formName, tempFlag, this.context);
-46. }
+// ...
+  onCreate(want: Want) {
+    hilog.info(domain, TAG, 'FormAbility onCreate');
+    if (want.parameters) {
+      let formId = String(want.parameters['ohos.extra.param.key.form_identity']);
+      let formName = String(want.parameters['ohos.extra.param.key.form_name']);
+      let tempFlag = Boolean(want.parameters['ohos.extra.param.key.form_temporary']);
+      // 将创建的卡片信息持久化，以便在下次获取/更新该卡片实例时进行使用
+      // 此接口请根据实际情况实现，具体请参考：FormExtAbility Stage模型卡片实例
+      hilog.info(domain, TAG, 'FormAbility onCreate' + formId);
+      storeFormInfo(formId, formName, tempFlag, this.context);
+    }
 
-48. // 使用方创建卡片时触发，提供方需要返回卡片数据绑定类
-49. let obj: Record<string, string> = {
-50. 'title': 'titleOnCreate',
-51. 'detail': 'detailOnCreate'
-52. };
-53. let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
-54. return formData;
-55. },
-56. // ...
+    // 使用方创建卡片时触发，提供方需要返回卡片数据绑定类
+    let obj: Record<string, string> = {
+      'title': 'titleOnCreate',
+      'detail': 'detailOnCreate'
+    };
+    let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
+    return formData;
+  },
+// ...
 
-58. let deleteFormInfo = async (formId: string, context: featureAbility.Context): Promise<void> => {
-59. try {
-60. const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
-61. // del form info
-62. await storage.delete(formId);
-63. hilog.info(domain, TAG, `deleteFormInfo, del form info successfully, formId: ${formId}`);
-64. await storage.flush();
-65. } catch (err) {
-66. hilog.error(domain, TAG, `failed to deleteFormInfo, err: ${JSON.stringify(err)}`);
-67. }
-68. };
+let deleteFormInfo = async (formId: string, context: featureAbility.Context): Promise<void> => {
+  try {
+    const storage = await dataPreferences.getPreferences(context, DATA_STORAGE_PATH);
+    // del form info
+    await storage.delete(formId);
+    hilog.info(domain, TAG, `deleteFormInfo, del form info successfully, formId: ${formId}`);
+    await storage.flush();
+  } catch (err) {
+    hilog.error(domain, TAG, `failed to deleteFormInfo, err: ${JSON.stringify(err)}`);
+  }
+};
 
-70. // ...
-71. // 适配onDestroy卡片删除通知接口，在其中实现卡片实例数据的删除。
-72. onDestroy(formId: string) {
-73. // 删除卡片实例数据
-74. hilog.info(domain, TAG, 'FormAbility onDestroy');
-75. // 删除之前持久化的卡片实例数据
-76. // 此接口请根据实际情况实现，具体请参考：FormExtAbility Stage模型卡片实例
-77. deleteFormInfo(formId, this.context);
-78. }
-79. // ...
+// ...
+    // 适配onDestroy卡片删除通知接口，在其中实现卡片实例数据的删除。
+  onDestroy(formId: string) {
+    // 删除卡片实例数据
+    hilog.info(domain, TAG, 'FormAbility onDestroy');
+    // 删除之前持久化的卡片实例数据
+    // 此接口请根据实际情况实现，具体请参考：FormExtAbility Stage模型卡片实例
+    deleteFormInfo(formId, this.context);
+  }
+// ...
 ```
 
 具体的持久化方法可以参考[应用数据持久化概述](app-data-persistence-overview.md)。
@@ -393,126 +389,126 @@ FormAbility不能常驻后台，即在卡片生命周期回调函数中无法处
 
 当卡片应用需要更新数据时（如触发了定时更新或定点更新），卡片应用获取最新数据，并调用updateForm()接口更新主动触发卡片的更新。
 
-```
-1. const TAG: string = '[Sample_FAModelAbilityDevelop]';
-2. const domain: number = 0xFF00;
+```ts
+const TAG: string = '[Sample_FAModelAbilityDevelop]';
+const domain: number = 0xFF00;
 
-4. onUpdate(formId: string) {
-5. // 若卡片支持定时更新/定点更新/卡片使用方主动请求更新功能，则提供方需要重写该方法以支持数据更新
-6. hilog.info(domain, TAG, 'FormAbility onUpdate');
-7. let obj: Record<string, string> = {
-8. 'title': 'titleOnUpdate',
-9. 'detail': 'detailOnUpdate'
-10. };
-11. let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
-12. // 调用updateForm接口去更新对应的卡片，仅更新入参中携带的数据信息，其他信息保持不变
-13. formProvider.updateForm(formId, formData).catch((error: Error) => {
-14. hilog.error(domain, TAG, 'FormAbility updateForm, error:' + JSON.stringify(error));
-15. });
-16. }
+onUpdate(formId: string) {
+  // 若卡片支持定时更新/定点更新/卡片使用方主动请求更新功能，则提供方需要重写该方法以支持数据更新
+  hilog.info(domain, TAG, 'FormAbility onUpdate');
+  let obj: Record<string, string> = {
+    'title': 'titleOnUpdate',
+    'detail': 'detailOnUpdate'
+  };
+  let formData: formBindingData.FormBindingData = formBindingData.createFormBindingData(obj);
+  // 调用updateForm接口去更新对应的卡片，仅更新入参中携带的数据信息，其他信息保持不变
+  formProvider.updateForm(formId, formData).catch((error: Error) => {
+    hilog.error(domain, TAG, 'FormAbility updateForm, error:' + JSON.stringify(error));
+  });
+}
 ```
 
 ### 开发卡片页面
 
 开发者可以使用类Web范式（HML+CSS+JSON）开发JS卡片页面。生成如下卡片页面，可以这样配置卡片页面文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/qm5i1TLNQkOVzy8Yks9cZQ/zh-cn_image_0000002589244619.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/aD8QJ44cR8KWplLYf2dESg/zh-cn_image_0000002706834206.png)
 
-说明
+**说明** 
 
 FA模型当前仅支持JS扩展的类Web开发范式来实现卡片的UI。
 
 * HML：使用类Web范式的组件描述卡片的页面信息。
 
-  ```
-  1. <div class="container">
-  2. <stack>
-  3. <div class="container-img">
-  4. <image src="/common/widget.png" class="bg-img"></image>
-  5. <image src="/common/rect.png" class="bottom-img"></image>
-  6. </div>
-  7. <div class="container-inner">
-  8. <text class="title" onclick="routerEvent">{{title}}</text>
-  9. <text class="detail_text" onclick="messageEvent">{{detail}}</text>
-  10. </div>
-  11. </stack>
-  12. </div>
+  ```html
+  <div class="container">
+      <stack>
+          <div class="container-img">
+              <image src="/common/widget.png" class="bg-img"></image>
+              <image src="/common/rect.png" class="bottom-img"></image>
+          </div>
+          <div class="container-inner">
+              <text class="title" onclick="routerEvent">{{title}}</text>
+              <text class="detail_text" onclick="messageEvent">{{detail}}</text>
+          </div>
+      </stack>
+  </div>
   ```
 * CSS：HML中类Web范式组件的样式信息。
 
-  ```
-  1. .container {
-  2. flex-direction: column;
-  3. justify-content: center;
-  4. align-items: center;
-  5. }
+  ```css
+  .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
 
-  7. .bg-img {
-  8. flex-shrink: 0;
-  9. height: 100%;
-  10. z-index: 1;
-  11. }
+  .bg-img {
+      flex-shrink: 0;
+      height: 100%;
+      z-index: 1;
+  }
 
-  13. .bottom-img {
-  14. position: absolute;
-  15. width: 150px;
-  16. height: 56px;
-  17. top: 63%;
-  18. background-color: rgba(216, 216, 216, 0.15);
-  19. filter: blur(20px);
-  20. z-index: 2;
-  21. }
+  .bottom-img {
+      position: absolute;
+      width: 150px;
+      height: 56px;
+      top: 63%;
+      background-color: rgba(216, 216, 216, 0.15);
+      filter: blur(20px);
+      z-index: 2;
+  }
 
-  23. .container-inner {
-  24. flex-direction: column;
-  25. justify-content: flex-end;
-  26. align-items: flex-start;
-  27. height: 100%;
-  28. width: 100%;
-  29. padding: 12px;
-  30. }
+  .container-inner {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      height: 100%;
+      width: 100%;
+      padding: 12px;
+  }
 
-  32. .title {
-  33. font-family: HarmonyHeiTi-Medium;
-  34. font-size: 14px;
-  35. color: rgba(255,255,255,0.90);
-  36. letter-spacing: 0.6px;
-  37. }
+  .title {
+      font-family: HarmonyHeiTi-Medium;
+      font-size: 14px;
+      color: rgba(255,255,255,0.90);
+      letter-spacing: 0.6px;
+  }
 
-  39. .detail_text {
-  40. font-family: HarmonyHeiTi;
-  41. font-size: 12px;
-  42. color: rgba(255,255,255,0.60);
-  43. letter-spacing: 0.51px;
-  44. text-overflow: ellipsis;
-  45. max-lines: 1;
-  46. margin-top: 6px;
-  47. }
+  .detail_text {
+      font-family: HarmonyHeiTi;
+      font-size: 12px;
+      color: rgba(255,255,255,0.60);
+      letter-spacing: 0.51px;
+      text-overflow: ellipsis;
+      max-lines: 1;
+      margin-top: 6px;
+  }
   ```
 * JSON：卡片页面中的数据和事件交互。
 
-  ```
-  1. {
-  2. "data": {
-  3. "title": "TitleDefault",
-  4. "detail": "TextDefault"
-  5. },
-  6. "actions": {
-  7. "routerEvent": {
-  8. "action": "router",
-  9. "abilityName": "com.samples.famodelabilitydevelop.MainAbility",
-  10. "params": {
-  11. "message": "add detail"
-  12. }
-  13. },
-  14. "messageEvent": {
-  15. "action": "message",
-  16. "params": {
-  17. "message": "add detail"
-  18. }
-  19. }
-  20. }
-  21. }
+  ```json
+  {
+    "data": {
+      "title": "TitleDefault",
+      "detail": "TextDefault"
+    },
+    "actions": {
+      "routerEvent": {
+        "action": "router",
+        "abilityName": "com.samples.famodelabilitydevelop.MainAbility",
+        "params": {
+          "message": "add detail"
+        }
+      },
+      "messageEvent": {
+        "action": "message",
+        "params": {
+          "message": "add detail"
+        }
+      }
+    }
+  }
   ```
 
 ### 开发卡片事件
@@ -523,8 +519,8 @@ FA模型当前仅支持JS扩展的类Web开发范式来实现卡片的UI。
 2. 如何设置router事件：
 
    * action属性值为"router"；
-   * abilityName为跳转目标的Ability名（支持跳转FA模型的PageAbility组件和Stage模型的UIAbility组件），如目前DevEco创建的FA模型的UIAbility默认名为com.example.entry.EntryAbility；
-   * params为传递给跳转目标Ability的自定义参数，可以按需填写。其值可以在目标Ability启动时的want中的parameters里获取。如FA模型EntryAbility的onCreate生命周期里可以通过featureAbility.getWant()获取到want，然后在其parameters字段下获取到配置的参数；
+   * abilityName为跳转目标的Ability名（支持跳转FA模型的PageAbility组件和Stage模型的UIAbility组件），如目前DevEco创建的Stage模型的UIAbility默认名为com.example.entry.EntryAbility；
+   * params为传递给跳转目标Ability的自定义参数，可以按需填写。其值可以在目标Ability启动时的want中的parameters里获取。如FA模型PageAbility的onCreate生命周期里可以通过featureAbility.getWant()获取到want，然后在其parameters字段下获取到配置的参数；
 3. 如何设置message事件：
 
    * action属性值为"message"；
@@ -534,93 +530,93 @@ FA模型当前仅支持JS扩展的类Web开发范式来实现卡片的UI。
 
 * hml文件
 
-  ```
-  1. <div class="container">
-  2. <stack>
-  3. <div class="container-img">
-  4. <image src="/common/widget.png" class="bg-img"></image>
-  5. <image src="/common/rect.png" class="bottom-img"></image>
-  6. </div>
-  7. <div class="container-inner">
-  8. <text class="title" onclick="routerEvent">{{title}}</text>
-  9. <text class="detail_text" onclick="messageEvent">{{detail}}</text>
-  10. </div>
-  11. </stack>
-  12. </div>
+  ```html
+  <div class="container">
+      <stack>
+          <div class="container-img">
+              <image src="/common/widget.png" class="bg-img"></image>
+              <image src="/common/rect.png" class="bottom-img"></image>
+          </div>
+          <div class="container-inner">
+              <text class="title" onclick="routerEvent">{{title}}</text>
+              <text class="detail_text" onclick="messageEvent">{{detail}}</text>
+          </div>
+      </stack>
+  </div>
   ```
 * css文件
 
-  ```
-  1. .container {
-  2. flex-direction: column;
-  3. justify-content: center;
-  4. align-items: center;
-  5. }
+  ```css
+  .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
 
-  7. .bg-img {
-  8. flex-shrink: 0;
-  9. height: 100%;
-  10. z-index: 1;
-  11. }
+  .bg-img {
+      flex-shrink: 0;
+      height: 100%;
+      z-index: 1;
+  }
 
-  13. .bottom-img {
-  14. position: absolute;
-  15. width: 150px;
-  16. height: 56px;
-  17. top: 63%;
-  18. background-color: rgba(216, 216, 216, 0.15);
-  19. filter: blur(20px);
-  20. z-index: 2;
-  21. }
+  .bottom-img {
+      position: absolute;
+      width: 150px;
+      height: 56px;
+      top: 63%;
+      background-color: rgba(216, 216, 216, 0.15);
+      filter: blur(20px);
+      z-index: 2;
+  }
 
-  23. .container-inner {
-  24. flex-direction: column;
-  25. justify-content: flex-end;
-  26. align-items: flex-start;
-  27. height: 100%;
-  28. width: 100%;
-  29. padding: 12px;
-  30. }
+  .container-inner {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      height: 100%;
+      width: 100%;
+      padding: 12px;
+  }
 
-  32. .title {
-  33. font-family: HarmonyHeiTi-Medium;
-  34. font-size: 14px;
-  35. color: rgba(255,255,255,0.90);
-  36. letter-spacing: 0.6px;
-  37. }
+  .title {
+      font-family: HarmonyHeiTi-Medium;
+      font-size: 14px;
+      color: rgba(255,255,255,0.90);
+      letter-spacing: 0.6px;
+  }
 
-  39. .detail_text {
-  40. font-family: HarmonyHeiTi;
-  41. font-size: 12px;
-  42. color: rgba(255,255,255,0.60);
-  43. letter-spacing: 0.51px;
-  44. text-overflow: ellipsis;
-  45. max-lines: 1;
-  46. margin-top: 6px;
-  47. }
+  .detail_text {
+      font-family: HarmonyHeiTi;
+      font-size: 12px;
+      color: rgba(255,255,255,0.60);
+      letter-spacing: 0.51px;
+      text-overflow: ellipsis;
+      max-lines: 1;
+      margin-top: 6px;
+  }
   ```
 * json文件
 
-  ```
-  1. {
-  2. "data": {
-  3. "title": "TitleDefault",
-  4. "detail": "TextDefault"
-  5. },
-  6. "actions": {
-  7. "routerEvent": {
-  8. "action": "router",
-  9. "abilityName": "com.samples.famodelabilitydevelop.MainAbility",
-  10. "params": {
-  11. "message": "add detail"
-  12. }
-  13. },
-  14. "messageEvent": {
-  15. "action": "message",
-  16. "params": {
-  17. "message": "add detail"
-  18. }
-  19. }
-  20. }
-  21. }
+  ```json
+  {
+    "data": {
+      "title": "TitleDefault",
+      "detail": "TextDefault"
+    },
+    "actions": {
+      "routerEvent": {
+        "action": "router",
+        "abilityName": "com.samples.famodelabilitydevelop.MainAbility",
+        "params": {
+          "message": "add detail"
+        }
+      },
+      "messageEvent": {
+        "action": "message",
+        "params": {
+          "message": "add detail"
+        }
+      }
+    }
+  }
   ```

@@ -3,30 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (HeifsMetadata)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Class (HeifsMetadata)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3e70f494052665361f5bd958292e06ebc55b7df43e623a818b97015747ffe303
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c707389951c15a6e35560d1d4b8510bc9865c630e0127641d4bf8538a43d200e
 ---
 
 HeifsMetadata implements Metadata
 
 HEIF序列图像元数据类，用于存储图像的元数据。
 
-说明
+**说明** 
 
 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { image } from '@kit.ImageKit';
+```ts
+import { image } from '@kit.ImageKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -34,11 +30,12 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| heifsDelayTime | number | 是 | 是 | HEIF序列图片的每帧播放时长。单位为毫秒。 |
+| heifsDelayTime | number | 是 | 是 | HEIF序列图片的每帧播放时长。单位为毫秒（ms）。 |
+| heifsCanvasHeight | number | 是 | 是 | HEIF序列图片的画布高度。  单位为像素（px）。  该值为正整数。  **起始版本：** 26.0.0 |
+| heifsCanvasWidth | number | 是 | 是 | HEIF序列图片的画布宽度。  单位为像素（px）。  该值为正整数。  **起始版本：** 26.0.0 |
+| heifsUnclampedDelayTime | number | 是 | 是 | HEIF序列图片每帧未钳制的延迟时长。  单位为毫秒（ms）。  该值为正整数。  **起始版本：** 26.0.0 |
 
 ## createInstance
-
-PhonePC/2in1TabletTVWearable
 
 static createInstance(): HeifsMetadata
 
@@ -56,18 +53,16 @@ static createInstance(): HeifsMetadata
 
 **示例：**
 
-```
-1. async function heifsMetadataCreateInstance(context: Context) {
-2. let heifsMetadata = image.HeifsMetadata.createInstance();
-3. if (heifsMetadata != undefined) {
-4. console.info("createInstance success");
-5. }
-6. }
+```ts
+async function heifsMetadataCreateInstance(context: Context) {
+  let heifsMetadata = image.HeifsMetadata.createInstance();
+  if (heifsMetadata != undefined) {
+    console.info("Succeeded in creating a HeifsMetadata instance.");
+  }
+}
 ```
 
 ## getProperties
-
-PhonePC/2in1TabletTVWearable
 
 getProperties(key: Array<string>): Promise<Record<string, string | null>>
 
@@ -101,36 +96,34 @@ getProperties(key: Array<string>): Promise<Record<string, string | null>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function heifsMetadataGetProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
-15. if (metaData != undefined && metaData.heifsMetadata != undefined) {
-16. await metaData.heifsMetadata.getProperties(["HeifsDelayTime"]).then((data) => {
-17. console.info('Get properties ',JSON.stringify(data));
-18. }).catch((error: BusinessError) => {
-19. console.error(`Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
-20. });
-21. } else {
-22. console.error('Metadata is null.');
-23. }
-24. }
+async function heifsMetadataGetProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
+  if (metaData != undefined && metaData.heifsMetadata != undefined) {
+    await metaData.heifsMetadata.getProperties(["HeifsDelayTime"]).then((data) => {
+      console.info('Succeeded in getting properties. ',JSON.stringify(data));
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to get properties. error.code is ${error.code}, error.message is ${error.message}`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## setProperties
-
-PhonePC/2in1TabletTVWearable
 
 setProperties(records: Record<string, string | null>): Promise<void>
 
@@ -164,39 +157,37 @@ setProperties(records: Record<string, string | null>): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function heifsMetadataSetProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
-15. if (metaData != undefined && metaData.heifsMetadata != undefined) {
-16. let setkey: Record<string, string | null> = {
-17. "HeifsDelayTime": "200",
-18. };
-19. await metaData.heifsMetadata.setProperties(setkey).then(async () => {
-20. console.info('Set properties success.');
-21. }).catch((error: BusinessError) => {
-22. console.error(`Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
-23. })
-24. } else {
-25. console.error('metadata is null. ');
-26. }
-27. }
+async function heifsMetadataSetProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
+  if (metaData != undefined && metaData.heifsMetadata != undefined) {
+    let setkey: Record<string, string | null> = {
+      "HeifsDelayTime": "200",
+    };
+    await metaData.heifsMetadata.setProperties(setkey).then(async () => {
+      console.info('Succeeded in setting properties.');
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
+    })
+  } else {
+    console.error('metadata is null. ');
+  }
+}
 ```
 
 ## getAllProperties
-
-PhonePC/2in1TabletTVWearable
 
 getAllProperties(): Promise<Record<string, string | null>>
 
@@ -216,38 +207,35 @@ getAllProperties(): Promise<Record<string, string | null>>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function heifsMetadataGetAllProperties(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
-15. if (metaData != undefined && metaData.heifsMetadata != undefined) {
-16. await metaData.heifsMetadata.getAllProperties().then((data) => {
-17. const count = Object.keys(data).length;
-18. console.info('Metadata have ', count, ' properties');
-19. console.info(`Get metadata all properties: ${data}`);
-20. }).catch((error: BusinessError) => {
-21. console.error(`Get metadata all properties failed error.code is ${error.code}, error.message is ${error.message}`);
-22. });
-23. } else {
-24. console.error('Metadata is null.');
-25. }
-26. }
+async function heifsMetadataGetAllProperties(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
+  if (metaData != undefined && metaData.heifsMetadata != undefined) {
+    await metaData.heifsMetadata.getAllProperties().then((data) => {
+      const count = Object.keys(data).length;
+      console.info(`Succeeded in getting all properties. Count: ${count}, data: ${JSON.stringify(data)}.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to get all properties. Code: ${error.code}, message: ${error.message}.`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## clone
-
-PhonePC/2in1TabletTVWearable
 
 clone(): Promise<HeifsMetadata>
 
@@ -265,37 +253,35 @@ clone(): Promise<HeifsMetadata>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
-4. function getFileFd(context: Context): number | undefined {
-5. const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
-6. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-7. const fd: number = file?.fd;
-8. return fd;
-9. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-11. async function heifsMetadataClone(context: Context) {
-12. let fd = getFileFd(context);
-13. let imageSource = image.createImageSource(fd);
-14. let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
-15. if (metaData != undefined && metaData.heifsMetadata != undefined) {
-16. let new_metadata = await metaData.heifsMetadata.clone();
-17. new_metadata.getProperties(["HeifsDelayTime"]).then((data1) => {
-18. console.info(`Clone new_metadata and get Properties: ${data1}`);
-19. }).catch((err: BusinessError) => {
-20. console.error(`Clone new_metadata failed, error : ${err}`);
-21. });
-22. } else {
-23. console.error('Metadata is null.');
-24. }
-25. }
+async function heifsMetadataClone(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
+  if (metaData != undefined && metaData.heifsMetadata != undefined) {
+    let new_metadata = await metaData.heifsMetadata.clone();
+    new_metadata.getProperties(["HeifsDelayTime"]).then((data1) => {
+      console.info(`Succeeded in cloning metadata and getting properties. Data: ${JSON.stringify(data1)}.`);
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to clone metadata and get properties. Code: ${err.code}, message: ${err.message}.`);
+    });
+  } else {
+    console.error('Metadata is null.');
+  }
+}
 ```
 
 ## getBlob
-
-PhonePC/2in1TabletTVWearable
 
 getBlob(): Promise<ArrayBuffer>
 
@@ -313,32 +299,30 @@ getBlob(): Promise<ArrayBuffer>
 
 **示例：**
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
 
-3. function getFileFd(context: Context): number | undefined {
-4. const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
-5. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-6. const fd: number = file?.fd;
-7. return fd;
-8. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-10. async function heifsMetadataGetBlob(context: Context) {
-11. let fd = getFileFd(context);
-12. let imageSource = image.createImageSource(fd);
-13. let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
-14. if (metaData != undefined && metaData.heifsMetadata != undefined) {
-15. let blob = await metaData.heifsMetadata.getBlob();
-16. if (blob != undefined) {
-17. console.info("get blob success");
-18. }
-19. }
-20. }
+async function heifsMetadataGetBlob(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
+  if (metaData != undefined && metaData.heifsMetadata != undefined) {
+    let blob = await metaData.heifsMetadata.getBlob();
+    if (blob != undefined) {
+      console.info("Succeeded in getting blob.");
+    }
+  }
+}
 ```
 
 ## setBlob
-
-PhonePC/2in1TabletTVWearable
 
 setBlob(blob: ArrayBuffer): Promise<void>
 
@@ -370,30 +354,30 @@ setBlob(blob: ArrayBuffer): Promise<void>
 
 **示例：**
 
-```
-1. import { fileIo } from '@kit.CoreFileKit';
+```ts
+import { fileIo } from '@kit.CoreFileKit';
 
-3. function getFileFd(context: Context): number | undefined {
-4. const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
-5. const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
-6. const fd: number = file?.fd;
-7. return fd;
-8. }
+function getFileFd(context: Context): number | undefined {
+  const filePath: string = context.cacheDir + '/heifs.heic';  // 图片包含HeifsMetadata。
+  const file: fileIo.File = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+  const fd: number = file?.fd;
+  return fd;
+}
 
-10. async function heifsMetadataSetBlob(context: Context) {
-11. let fd = getFileFd(context);
-12. let imageSource = image.createImageSource(fd);
-13. let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
-14. if (metaData != undefined && metaData.heifsMetadata != undefined) {
-15. let blob = await metaData.heifsMetadata.getBlob();
-16. if (blob != undefined) {
-17. console.info("get blob success");
-18. metaData.heifsMetadata.setBlob(blob);
-19. }
-20. let new_blob = metaData.heifsMetadata.getBlob();
-21. if (new_blob != undefined) {
-22. console.info("new_blob is not undefined");
-23. }
-24. }
-25. }
+async function heifsMetadataSetBlob(context: Context) {
+  let fd = getFileFd(context);
+  let imageSource = image.createImageSource(fd);
+  let metaData = await imageSource.readImageMetadata(["HeifsDelayTime"]);
+  if (metaData != undefined && metaData.heifsMetadata != undefined) {
+    let blob = await metaData.heifsMetadata.getBlob();
+    if (blob != undefined) {
+      console.info("Succeeded in getting blob.");
+      metaData.heifsMetadata.setBlob(blob);
+    }
+    let new_blob = metaData.heifsMetadata.getBlob();
+    if (new_blob != undefined) {
+      console.info("new_blob is not undefined");
+    }
+  }
+}
 ```

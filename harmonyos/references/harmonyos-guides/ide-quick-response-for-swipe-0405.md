@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-res
 title: 滑动操作响应快
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 滑动操作响应快
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3f52ad3f34fac7ebd0787faaf727cbeb1bc4b9fabed535c43ad1657b92aa2671
+scraped_at: 2026-09-02T14:50:55+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:e9962dde59d2fc8bbb252346a4794b60d83f442ad52eadcc7e7f6f579bc883bf
 ---
 
 ## 规则详情
 
-应用内滑动操作响应时延应≤ 80毫秒；时间起点：手指滑动；时间终点：界面发生变化。
+应用内滑动操作响应时延应≤80ms；时间起点：手指滑动；时间终点：界面发生变化。
 
 ## 检测逻辑
 
@@ -26,7 +26,7 @@ content_hash: sha256:3f52ad3f34fac7ebd0787faaf727cbeb1bc4b9fabed535c43ad1657b92a
   H:WEB\_LIST\_FLING
 * 备注：由于trace的响应时延小于用户实际感知的时延，所以目前滑动类算法会补偿30ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/OzK4EEqJT0GdFw79EH89Dw/zh-cn_image_0000002561833679.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/oeQGLUUyQzSPHvkpeyKvWA/zh-cn_image_0000002731542981.png)
 
 ## 计算逻辑
 

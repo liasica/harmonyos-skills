@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用HWASan检测内存错误
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 使用HWASan检测内存错误
 category: best-practices
-scraped_at: 2026-04-29T14:14:00+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:35eaa28a436e11f0d6baedd1ea0a39111de72cf9303f6e41a48ba6d23b72e4fc
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-08-10
+content_hash: sha256:3e9903a944d403b236b6f0411716e45e44e54a5140f46362ca4c8386c91b6326
 ---
 
 HWASan的能力概述和检测原理可参考[地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)以及[HWASan检测原理](bpta-stability-address-sanitizer-principle.md#section187526511146)，适用于开发态调试压测场景。
@@ -19,29 +19,27 @@ HWASan的能力概述和检测原理可参考[地址越界检测能力概述](bp
 
 HWASAN\_OPTIONS：在运行时配置HWASan的行为，包括设置检测级别、输出格式、内存错误报告的详细程度等。常用参数请查看[表1](bpta-stability-hwasan-detection.md#table152415255816)。
 
-HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Configurations”中配置。“app.json5”的优先级较高，即两种方式都配置后，以“app.json5”中的配置为准。
+HWASAN\_OPTIONS支持在“app.json5”中配置。
 
 ### 在app.json5中配置环境变量
 
 打开AppScope > app.json5文件，添加配置示例如下。
 
-```
-1. {
-2. "app": {
-3. "appEnvironments": [
-4. {
-5. "name": "HWASAN_OPTIONS",
-6. "value": "abort_on_error=0 heap_history_size_main_thread=102300" // 示例仅供参考，具体以实际为准
-7. },
-8. ],
-9. ...
-10. }
-11. }
+```screen
+{
+  "app": {
+    "appEnvironments": [
+      {
+        "name": "HWASAN_OPTIONS",
+        "value": "abort_on_error=0 heap_history_size_main_thread=102300" // 示例仅供参考，具体以实际为准
+      },
+    ],
+    ...
+  }
+}
 ```
 
-### 在Run/Debug Configurations中配置环境变量
-
-具体请查看[配置环境变量](../harmonyos-guides/ide-run-debug-configurations.md#section9413113717532)。常用参数如下表所示。
+常用参数如下表所示。
 
 | 参数 | 默认值 | 是否必填 | 说明 |
 | --- | --- | --- | --- |
@@ -75,23 +73,23 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
 
 **DevEco Studio****场景**
 
-点击**Run > Edit Configurations >****Diagnostics**，勾选**Hardware-Assisted Address Sanitizer**开启检测。
+点击**Run > Edit Configurations >****Diagnostics**，勾选**Hardware-Assisted Address Sanitizer**开启C++源码检测插桩。从DevEco Studio 6.1.0 Beta1版本开始，可以同时勾选**BinXO check**，开启无源码的so文件的HWASan检测插桩。（注意：BinXO只能处理大小在128M以内的so文件）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MjyT0mm8Sf6RUe6tm6DQ2w/zh-cn_image_0000002370565424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/0LZFIh_MSouecAkW9NyXng/zh-cn_image_0000002613938015.png "点击放大")
 
 **流水线场景**
 
 1. 修改工程目录下的AppScope/app.json5文件，添加HWASan配置开关。
 
-   ```
-   1. "hwasanEnabled": true
+   ```screen
+   "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/kH3ty3PqRhiykWRxYXGQfA/zh-cn_image_0000002404125093.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/e1MDxSVaRjqOBe0it01vCw/zh-cn_image_0000002404125093.png)
 2. 在hvigorw命令后加上**-p** **ohos-enable-hwasan=true**的选项，执行hvigorw命令，更多options参考[hvigorw文档](../harmonyos-guides/ide-hvigor-commandline.md)。
 
-   ```
-   1. hvigorw [taskNames...] -p ohos-enable-hwasan=true  <options>
+   ```screen
+   hvigorw [taskNames...] -p ohos-enable-hwasan=true  <options>
    ```
 
 ### 方式二 配置文件方式使能
@@ -100,25 +98,34 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
 
 1. 修改工程目录下的AppScope/app.json5文件，添加HWASan配置开关。
 
-   ```
-   1. "hwasanEnabled": true
+   ```screen
+   "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/uS8lGJYzSOaHhEQ84lIAWw/zh-cn_image_0000002370405544.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/cmyCmy7GRUCM2sdlucXozg/zh-cn_image_0000002370405544.png)
 2. 在需要使能HWASan的模块中，通过添加构建参数开启HWASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数。
 
+   ```screen
+   // DevEco Studio 6.1.0 Beta1以下版本
+   "buildOption": {
+     "externalNativeOptions": {
+       "arguments": ["-DOHOS_ENABLE_HWASAN=ON"]
+     }
+   }
+   // DevEco Studio 6.1.0 Beta1及以上版本，同时开启有源码和无源码的C++的HWASan检测插桩
+   "buildOption": {
+     "externalNativeOptions": {
+       "arguments": ["-DOHOS_ENABLE_HWASAN=ON", "-DOHOS_ENABLE_BINXO=ON"]
+     }
+   }
    ```
-   1. "arguments": "-DOHOS_ENABLE_HWASAN=ON"
-   ```
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/bXk2KrtHT8aQT4MbutoqxA/zh-cn_image_0000002404045257.png)
 
 **流水线场景**
 
 在AppScope/app.json5和模块build-profile.json5配置对应HWASan项后，可直接执行hvigorw命令，更多options参考[hvigorw文档](../harmonyos-guides/ide-hvigor-commandline.md)。
 
-```
-1. hvigorw [taskNames...] -p ohos-enable-hwasan=true  <options>
+```screen
+hvigorw [taskNames...] -p ohos-enable-hwasan=true  <options>
 ```
 
 ### 方式三 针对单个动态库使能
@@ -127,11 +134,11 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
 
 如果要对单个so文件进行插桩编译，可在其对应的CMakeLists.txt中添加以下编译选项：
 
-```
-1. set(CMAKE_CXX_FLAGS "$CMAKE_CXX_FLAGS -shared-libasan -fsanitize=hwaddress -mllvm -hwasan-globals=0 -fno-emulated-tls -fno-omit-frame-pointer")
+```screen
+set(CMAKE_CXX_FLAGS "$CMAKE_CXX_FLAGS -shared-libasan -fsanitize=hwaddress -mllvm -hwasan-globals=0 -fno-emulated-tls -fno-omit-frame-pointer")
 ```
 
-说明
+**说明** 
 
 1. 如果按方式一DevEco Studio场景勾选Hardware-Assisted Address Sanitizer以后，配置app.json5中的hwasanEnabled为false，HWASan仍生效。
 2. 如需同步开启MemDebug，可选择方式一或方式二使能。
@@ -144,14 +151,14 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
 
 当应用依赖未经过HWASan插桩的第三方或第四方库时，HWASan无法检测这些库中可能存在的越界错误。因此，对于应用所引用的第三方或第四方动态库，必须单独进行HWASan插桩适配处理，以确保内存错误能够被完整捕获。 动态库插桩状态检查方法，可使用llvm-readelf工具检查目标动态库是否已完成HWASan插桩，当前默认以动态库的方式链接，查询是否插桩成功命令如下：
 
-```
-1. llvm-readelf -d libthird_party.so | grep 'libclang_rt.hwasan.so'
+```screen
+llvm-readelf -d libthird_party.so | grep 'libclang_rt.hwasan.so'
 ```
 
 若是静态链接，可使用如下命令查询：
 
-```
-1. llvm-readelf -s libthird_party.so | grep '__hwasan_init'
+```screen
+llvm-readelf -s libthird_party.so | grep '__hwasan_init'
 ```
 
 ## 运行HWASan
@@ -159,7 +166,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出HWASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/IcN7KlEXRWKuwG7u0C941A/zh-cn_image_0000002370565428.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/xuqRt7beRReOHYRq1eiF7A/zh-cn_image_0000002370565428.png)
 
 ## HWASan异常检测类型
 
@@ -167,47 +174,45 @@ HWASAN\_OPTIONS支持在“app.json5”中配置，也支持在“Run/Debug Conf
 
 **背景**
 
-“stack tag-mismatch”在HWASan中指的是栈内存标签不匹配错误。这种错误通常发生在访问栈内存时，指针携带的标签与栈内存中存储的标签不一致，触发其异常检测码字的异常类型有：stack-buffer-overflow/underflow、stack-use-after-return。
+“stack tag-mismatch”在HWASan中指的是栈内存标签不匹配错误。这种错误通常发生在访问栈内存时，指针携带的标签与栈内存中存储的标签不一致，触发该检测的异常类型有：stack-buffer-overflow/underflow、stack-use-after-return。
 
 **代码实例**
 
+```cpp
+// stack-buffer-overflow
+int stackBufferOverflowEx() {
+    int subscript = 43;
+    char buffer[42];
+    buffer[subscript] = 42;
+    printf("address: %p", buffer);
+    return 0;
+}
+
+// stack-buffer-underflow
+int stackBufferUnderflowEX() {
+    int subscript = -1;
+    char buffer[42];
+    buffer[subscript] = 42;
+    printf("address: %p", buffer);
+    return 0;
+}
+
+// stack-use-after-return
+int *ptrEx;
+__attribute__((noinline))
+void FunctionThatEscapesLocalObjectEx()
+{
+    int local[100];
+    ptrEx = &local[0];
+    printf("address: %p", local);
+}
+
+int Run(int argc)
+{
+    FunctionThatEscapesLocalObjectEx();
+    return ptrEx[argc];
+}
 ```
-1. // stack-buffer-overflow
-2. int stackBufferOverflowEx() {
-3. int subscript = 43;
-4. char buffer[42];
-5. buffer[subscript] = 42;
-6. printf("address: %p", buffer);
-7. return 0;
-8. }
-
-11. // stack-buffer-underflow
-12. int stackBufferUnderflowEX() {
-13. int subscript = -1;
-14. char buffer[42];
-15. buffer[subscript] = 42;
-16. printf("address: %p", buffer);
-17. return 0;
-18. }
-
-21. // stack-use-after-return
-22. int *ptrEx;
-23. __attribute__((noinline))
-24. void FunctionThatEscapesLocalObjectEx()
-25. {
-26. int local[100];
-27. ptrEx = &local[0];
-28. printf("address: %p", local);
-29. }
-
-31. int Run(int argc)
-32. {
-33. FunctionThatEscapesLocalObjectEx();
-34. return ptrEx[argc];
-35. }
-```
-
-[address\_problems.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/address_problems.cpp#L166-L200)
 
 **影响**
 
@@ -223,7 +228,7 @@ Cause: stack tag-mismatch
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/6vT6xml9SSeXmN_qRdMvsw/zh-cn_image_0000002505468708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/tdUfKE8GS9at2OSmbHg5jQ/zh-cn_image_0000002505468708.png)
 
 **优化建议**
 
@@ -235,35 +240,33 @@ stack-use-after-return：在作用域内使用局部变量，如果需要在函�
 
 **背景**
 
-访问堆内存越界（上下界），触发其异常检测码字的异常类型有：heap-buffer-overflow、heap-buffer-underflow
+访问堆内存越界（上下界），触发该检测的异常类型有：heap-buffer-overflow、heap-buffer-underflow
 
 **代码实例**
 
-```
-1. // heap-buffer-overflow
-2. void HeapBufferOverflowEx()
-3. {
-4. char *buffer;
-5. buffer = (char *)malloc(10);
-6. *(buffer + 11) = 'n';
-7. *(buffer + 12) = 'n';
-8. printf("address: %p", buffer);
-9. free(buffer);
-10. }
+```cpp
+// heap-buffer-overflow
+void HeapBufferOverflowEx()
+{
+    char *buffer;
+    buffer = (char *)malloc(10);
+    *(buffer + 11) = 'n';
+    *(buffer + 12) = 'n';
+    printf("address: %p", buffer);
+    free(buffer);
+}
 
-12. // heap-buffer-underflow
-13. void HeapBufferUnderflowEx()
-14. {
-15. char *buffer;
-16. buffer = (char *)malloc(10);
-17. *(buffer - 11) = 'n';
-18. *(buffer - 12) = 'n';
-19. printf("address: %p", buffer);
-20. free(buffer);
-21. }
+// heap-buffer-underflow
+void HeapBufferUnderflowEx()
+{
+    char *buffer;
+    buffer = (char *)malloc(10);
+    *(buffer - 11) = 'n';
+    *(buffer - 12) = 'n';
+    printf("address: %p", buffer);
+    free(buffer);
+}
 ```
-
-[address\_problems.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/address_problems.cpp#L209-L229)
 
 **影响**
 
@@ -279,7 +282,7 @@ Cause: heap-buffer-overflow
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/eXT9iEjdReiIIUNZADe6rw/zh-cn_image_0000002537308659.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/lrYI1T_TQoaC1GHP7vse6g/zh-cn_image_0000002537308659.png)
 
 **修改方法**
 
@@ -297,7 +300,7 @@ heap-buffer-underflow：访问数组位置不要越下界
 
 **背景**
 
-触发其异常检测码字的异常类型有：heap-use-after-free、double-free
+触发该检测的异常类型有：heap-use-after-free、double-free
 
 heap-use-after-free：当指针指向的内存被释放后，仍然通过该指针访问已经被释放的内存，就会触发heap-use-after-free
 
@@ -305,26 +308,24 @@ double-free：重复释放内存
 
 **代码实例**
 
-```
-1. // heap-use-after-free
-2. int UseAfterFreeEx(int argc)
-3. {
-4. int *array = new int[100];
-5. delete[] array;
-6. return array[argc];
-7. }
+```screen
+// heap-use-after-free
+int UseAfterFreeEx(int argc)
+{
+    int *array = new int[100];
+    delete[] array;
+    return array[argc];
+}
 
-9. // double free
-10. void DoubleFreeEx()
-11. {
-12. char *p = (char *)malloc(32 * sizeof(char));
-13. printf("address: %p", p);
-14. free(p);
-15. free(p);
-16. }
+// double free
+void DoubleFreeEx()
+{
+    char *p = (char *)malloc(32 * sizeof(char));
+    printf("address: %p", p);
+    free(p);
+    free(p);
+}
 ```
-
-[address\_problems.cpp](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/MemoryDetection/entry/src/main/cpp/address_problems.cpp#L238-L253)
 
 **影响**
 
@@ -338,9 +339,9 @@ Cause: use-after-free
 
 **定位思路**
 
-如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
+如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/eZ8K21YMQdWnLYh5mH1rAQ/zh-cn_image_0000002505469052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/LAaqYS-oSI-7P3PbhHU6qQ/zh-cn_image_0000002505469052.png)
 
 **修改方法**
 

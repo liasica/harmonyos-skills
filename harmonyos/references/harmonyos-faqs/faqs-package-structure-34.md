@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何使HSP包版本号统一
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何使HSP包版本号统一
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:33+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:7bdd344c91dede05c19ffbafd492967d3c7da657dccf1ffde013ad77a240d6bb
+scraped_at: 2026-09-02T14:53:52+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:f4acd9e5e2a5d5a2929ec71af8ccd2db91737c8a3471796b74b9c6f4a023e27d
 ---
 
 **问题场景**
@@ -18,6 +18,6 @@ HSP和宿主HAP一起安装时，校验严格。包名、版本号、sdk版本�
 
 示例：
 
-```
-1. java -jar path\app_packing_tool.jar --mode versionNormalize --input-list 1.hap,2.hsp --version-code 1000001 --version-name 1.0.1 --out-path path\out\
+```powershell
+java -jar path\app_packing_tool.jar --mode versionNormalize --input-list 1.hap,2.hsp --version-code 1000001 --version-name 1.0.1 --out-path path\out\
 ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-regression
 title: 测试过程中没有显示用例包步骤且指标监控中无数据
 breadcrumb: FAQ > DevEco Testing > 回归测试 > 测试过程中没有显示用例包步骤且指标监控中无数据
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:43+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:13df33e30a18b1fce2bfa7abb59d627dfe9035247c73cf055b2ad5120c02d9cd
 ---
 

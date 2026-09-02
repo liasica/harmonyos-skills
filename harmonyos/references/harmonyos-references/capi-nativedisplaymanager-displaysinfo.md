@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: NativeDisplayManager_DisplaysInfo
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > NativeDisplayManager_DisplaysInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:631805f0befbbe5204c316dc2c7c25658d72ab9ae82cc60a97deb3f742ad8555
+scraped_at: 2026-09-02T15:01:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6da4bb06bd05b6321433c573808b8fc683b2aa058b383d0fe14160ee81c6a05c
 ---
 
-```
-1. typedef struct {...} NativeDisplayManager_DisplaysInfo
+```c
+typedef struct {...} NativeDisplayManager_DisplaysInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 多显示设备的Display对象。
 
@@ -26,13 +24,9 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| uint32\_t displaysLength | 多显示设备Display对象的长度。 |
+| uint32\_t displaysLength | 多显示设备Display对象的数组长度。 |
 | [NativeDisplayManager\_DisplayInfo](capi-nativedisplaymanager-displayinfo.md)\* displaysInfo | 多显示设备Display对象的属性。 |

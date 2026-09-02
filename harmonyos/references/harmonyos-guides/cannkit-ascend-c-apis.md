@@ -3,19 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-ascen
 title: AscendC API列表
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > AscendC API列表
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:20+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:fa13cba294004a7ee46077d4187e7d4a772118ca43d68bfa142ee28222141e58
+scraped_at: 2026-09-02T14:50:35+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:de01877066d7fdfebbd6fd820f9ca5e6c56e849736f5f28573a08cdffc0ad02c
 ---
 
 AscendC提供一组类库API，开发者使用标准C++语法和类库API进行编程。AscendC编程类库API示意图如下所示，分为：
 
 * Kernel API：用于实现算子核函数的API接口。包括：
 
-  + **基本数据结构：** Kernel API中使用到的基本数据结构，比如GlobalTensor和LocalTensor。
-  + **基础API：** 实现对硬件能力的抽象，开放芯片的能力，保证完备性和兼容性。标注为ISASI（Instruction Set Architecture Special Interface，硬件体系结构相关的接口）类别的API，不能保证跨硬件版本兼容。
-  + **高阶API：** 实现一些常用的计算算法，用于提高编程开发效率，通常会调用多种基础API实现。高阶API包括数学库、Matmul、Softmax等API。高阶API可以保证兼容性。
-* Host API：
+  + 基本数据结构：Kernel API中使用到的基本数据结构，比如GlobalTensor和LocalTensor。
+  + 基础API：实现对硬件能力的抽象，开放芯片的能力，保证完备性和兼容性。标注为ISASI（Instruction Set Architecture Special Interface，硬件体系结构相关的接口）类别的API，不能保证跨硬件版本兼容。
+  + 高阶API：实现一些常用的计算算法，用于提高编程开发效率，通常会调用多种基础API实现。高阶API包括数学库、Matmul、Softmax等API。高阶API可以保证兼容性。
+* Host API：用于自定义算子的注册、Tiling数据管理及硬件平台信息获取。
 
   + 高阶API配套的Tiling API：kernel侧高阶API配套的Tiling API，方便开发者获取kernel计算时所需的Tiling参数。
   + AscendC算子原型注册与管理API：用于AscendC算子原型定义和注册的API。
@@ -25,7 +25,7 @@ AscendC提供一组类库API，开发者使用标准C++语法和类库API进行�
 
   进行AscendC算子Host侧编程时，需要使用基础数据结构和API，请参考[gert命名空间](cannkit-anchorinstanceinfo-introduction.md)，完成算子开发后，需要使用Runtime API完成算子的调用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/TJSa_syqQsWiCk4_DW5hcw/zh-cn_image_0000002589325629.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/dj-Js55wQGCoQn2mvwbWHg/zh-cn_image_0000002706675384.png)
 
 ## Kernel API-基础API
 
@@ -89,7 +89,7 @@ AscendC提供一组类库API，开发者使用标准C++语法和类库API进行�
 | [GetTPipePtr](cannkit-gettpipeptr.md) | 获取框架当前管理全局内存的TPipe指针，开发者获取指针后，可进行TPipe相关的操作。 |
 | [TBufPool](cannkit-tbufpool-overview.md) | TPipe可以管理全局内存资源，而TBufPool可以手动管理或复用Unified Buffer/L1 Buffer物理内存，主要用于多个stage计算中Unified Buffer/L1 Buffer物理内存不足的场景。 |
 | [TQue](cannkit-tque-overview.md) | 提供入队出队等接口，通过队列（Queue）完成任务间通信和同步。 |
-| [TQueBind](cannkit-overview.md) | TQueBind绑定源逻辑位置和目的逻辑位置，根据源位置和目的位置，来确定内存分配的位置 、插入对应的同步事件，帮助开发者解决内存分配和管理、同步等问题。 |
+| [TQueBind](cannkit-overview.md) | TQueBind绑定源逻辑位置和目的逻辑位置，根据源位置和目的位置，来确定内存分配的位置、插入对应的同步事件，帮助开发者解决内存分配和管理、同步等问题。 |
 | [TBuf](cannkit-tbuf-overview.md) | 使用AscendC编程的过程中，可能会用到一些临时变量。这些临时变量占用的内存可以使用TBuf数据结构来管理。 |
 | [GetUserWorkspace](cannkit-getuserworkspace.md) | 获取开发者使用的workspace指针。 |
 | [SetSysWorkSpace](cannkit-setsysworkspace.md) | 在进行融合算子编程时，由于框架通信机制需要使用到workspace，也就是系统workspace，所以在该场景下，开发者要调用该接口，设置系统workspace的指针。 |

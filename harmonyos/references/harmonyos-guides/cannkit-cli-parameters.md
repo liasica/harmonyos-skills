@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-cli-p
 title: ascendebug调测工具参数说明
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录 > 调测工具样例与参数说明 > ascendebug调测工具参数说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:eae43339ec80de48f45e32744ddf255cfc948dbd1203c80b02ef58f25c9c4055
+scraped_at: 2026-09-02T14:50:35+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:82921e89be6737b6de2d10e7898b2831296d9371983af02d2535ab8884f86c02
 ---
 
 ## 整体说明
@@ -34,7 +34,7 @@ content_hash: sha256:eae43339ec80de48f45e32744ddf255cfc948dbd1203c80b02ef58f25c9
 | --log-level | 日志级别。 | 否 | info | 支持debug 、info、warning、error级别。 |
 | --log-file | 日志文件路径。 | 否 | 缺省值为当前目录下的debug\_op.log文件（若无则会新建）。 | 根据设置的--log-level存放程序执行过程中的日志信息。 |
 | --repo-type | 算子开发场景类型。 | 否 | customize | 根据实际情况设置。  - minimalist：核函数直调工程场景。  - customize：标准自定义算子工程。 |
-| --customize-path | 自定义算子包的安装目录。 | 否 | 无 | 开发者无需关注，当前固定为${install\_path}/ddk/ tools/tools\_ascendc/custom\_op/${chip-version}。  **说明：** 仅当--repo-type为customize，该参数生效。 |
+| --customize-path | 自定义算子包的安装目录。 | 否 | 无 | 开发者无需关注，当前固定为${install\_path}/ddk/tools/tools\_ascendc/custom\_op/${chip-version}。  **说明：** 仅当--repo-type为customize，该参数生效。 |
 | --tiling-json | Tiling json文件路径（绝对路径），用于生成自定义Tiling data。 | 否 | 无 | **说明：** 预留参数项，开发者无需关注。 |
 | --repo-path | 算子源码仓所在路径（绝对路径）。 | 否 | 无 | **说明：** 预留参数项，开发者无需关注。 |
 | --recompile-tiling | 是否重新编译算子Tiling so，无需配置值。 | 否 | 无 | **说明：** 预留参数项，开发者无需关注。 |
@@ -54,7 +54,7 @@ content_hash: sha256:eae43339ec80de48f45e32744ddf255cfc948dbd1203c80b02ef58f25c9
 | --repo-type | 算子开发场景类型。 | 否 | customize | 根据实际情况设置。  - minimalist：核函数直调工程场景。  - customize：标准自定义算子工程。 |
 | --customize-path | 自定义算子包的安装目录。 | 否 | 无 | 开发者无需关注，当前固定为${install\_path}/ddk/ tools/tools\_ascendc/custom\_op/${chip-version}。  **说明：** 仅当--repo-type为customize，该参数生效。 |
 | --dump-mode | PRINTF/DumpTensor/DumpAccChkPoint/assert打印功能的模式。 | 否 | 无 | 若不设置表示关闭打印功能，若开启支持如下取值：  normal： 使能通用的打印功能。  更多打印功能说明参见[更多功能](cannkit-commissioning-function-printf.md)。  **说明：** CPU调测场景中printf采用C++自身打印功能，不受**dump-mode**参数控制。 |
-| --core-type | 算子类型。 | 否 | AiCore | 根据实际算子情况填写，可选值为AiCore、CubeCore、VectorCore  Kirin9020/KirinX90系列处理器中的算子，一般使用了AI Cube计算单元，其算子类型为AiCore。 |
+| --core-type | 算子类型。 | 否 | AiCore | 根据实际算子情况填写，可选值为AiCore、CubeCore、VectorCore  Kirin9020/Kirin9030/KirinX90系列处理器中的算子，一般使用了AI Cube计算单元，其算子类型为AiCore。 |
 | --rel-err-thd | 精度比对的相对误差阈值。 | 否 | 0.005 | 无 |
 | --abs-err-thd | 精度比对的绝对误差阈值。 | 否 | 0.005 | 无 |
 | --block-num | 设置运行的核个数。 | 否 | 无 | 如果有tiling bin文件，则使用其对应的block\_num值，否则根据实际情况自行配置。 |

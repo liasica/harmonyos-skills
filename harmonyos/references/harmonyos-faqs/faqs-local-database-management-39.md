@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 跨模块、跨进程时如何保证正常读取首选项中数据
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 跨模块、跨进程时如何保证正常读取首选项中数据
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:19+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:cf93d4e7a1c7e4c94c36e8bba29ea0dd98118b4f992bac8a67a8b04052279449
 ---
 

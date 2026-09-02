@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 以太网连接错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 以太网连接错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:40ff5f037f71adee275c57736aee9611d0ca5cac5071cab9c27c904184a7bc82
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d6343d860523966fea7d818123c92ed3939ec2ea284b57d25650b2dec5e63ee2
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 2200001 非法参数值
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -34,8 +32,6 @@ Invalid parameter value.
 
 ## 2200002 连接服务失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to connect to the service.
@@ -53,8 +49,6 @@ Failed to connect to the service.
 检查系统服务运行状态是否正常。
 
 ## 2200003 系统内部错误
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -78,8 +72,6 @@ System internal error.
 
 ## 2201005 设备信息不存在
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The device information does not exist.
@@ -94,8 +86,8 @@ The device information does not exist.
 
 **处理步骤**
 
-```
-1. > hdc shell ifconfig
+```screen
+> hdc shell ifconfig
 ```
 
 查看是否有对应的设备，比如eth0，eth1。

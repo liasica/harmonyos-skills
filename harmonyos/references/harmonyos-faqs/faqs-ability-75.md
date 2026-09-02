@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-75
 title: ApplicationContext、UIAbilityContext、Context的区别是什么
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > ApplicationContext、UIAbilityContext、Context的区别是什么
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:48+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:a789d210bfa17ff94b02132b0a7d7b79795c8b204e9681be14b14a40fa3851b9
 ---
 

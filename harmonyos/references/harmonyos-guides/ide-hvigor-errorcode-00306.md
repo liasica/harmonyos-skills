@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 规格错误码
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 规格错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f62e6cb58b60e4597a04a4b0746c0445693736c32194c24b0db79def8a25a33d
+scraped_at: 2026-09-02T14:50:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:afd74e6eca26457ab290201025e1883b60db266db3ad5a4d85ff19554a596ff3
 ---
 
 ## 00306001 文件路径长度超过最大限制
@@ -107,7 +107,7 @@ Failed to build the app due to duplicate customized output names: XXX. At file: 
 
 检查模块级build-profile.json5文件的targets配置，确保每个output名称都是唯一的。
 
-## 00306006 API 12及以上支持TargetESVersion
+## 00306006 API 12及以上版本支持TargetESVersion
 
 **错误信息**
 
@@ -292,7 +292,7 @@ Atomic service development does not support Native development. At file: XXX.
 
 **错误信息**
 
-Atomic service development only supported arkTS widget. At file: XXX.
+Atomic service development only supported ArkTS widget. At file: XXX.
 
 **错误描述**
 
@@ -479,7 +479,7 @@ Stage model module XXX does not allow Harmony library packages or modules in FA 
 
 **错误描述**
 
-XXX为Stage模型模块，不能依赖FA模型的Harmony库或模块，否则会导致构建任务无法执行，资源无法打包。
+XXX为Stage模型模块，不能依赖FA模型的Harmony库或模块，否则构建任务无法执行，资源无法打包。
 
 **可能原因**
 
@@ -533,7 +533,7 @@ FA model module XXX does not allow Harmony library packages or modules in Stage 
 
 **错误描述**
 
-XXX为FA模型模块，不能依赖Stage模型的Harmony库或模块，否则会导致构建任务无法执行，资源无法打包。
+XXX为FA模型模块，不能依赖Stage模型的Harmony库或模块，否则构建任务无法执行，资源无法打包。
 
 **可能原因**
 
@@ -547,22 +547,37 @@ FA模型的模块依赖了Stage模型的库或模块。
 
 **错误信息**
 
-In HarmonyOS configuration mode, the value of compileSdkVersion/compatibleSdkVersion/targetSdkVersion must be M.S.F when API level is 10 or later, Example: '4.0.0(10)'; In OpenHarmony configuration mode, the value of compileSdkVersion/compatibleSdkVersion/targetSdkVersion must be a number when API level is 10 or later, Example: 10.
+In HarmonyOS configuration:
+
+- For API versions 10 to 25, the value of compatibleSdkVersion/targetSdkVersion must be a string (for example, '5.0.0(12)').
+
+- For API version 26 and later, the value of compatibleSdkVersion/targetSdkVersion must be a string (for example, '26.0.0').
+
+In OpenHarmony configuration:
+
+- For API versions 10 to 25, the value of compileSdkVersion/compatibleSdkVersion/targetSdkVersion must be a numeric value (for example, 12).
+
+- For API version 26 and later, the value of compileSdkVersion/compatibleSdkVersion/targetSdkVersion must be a string (for example,'26.0.0').
 
 **错误描述**
 
-当API版本为10或以上时，compileSdkVersion/compatibleSdkVersion/targetSdkVersion的格式要求：
+在HarmonyOS配置中：
 
-* 在HarmonyOS配置模式下，必须使用M.S.F格式，例如 '4.0.0(10)'。
-* 在OpenHarmony配置模式下，必须使用数值格式，例如10。
+* 当API版本为10~25时，compatibleSdkVersion/targetSdkVersion是字符串类型，例如 '5.0.0(12)'。
+* 当API版本为26及以上时，compatibleSdkVersion/targetSdkVersion是字符串类型，例如'26.0.0'。
+
+在OpenHarmony配置中：
+
+* 当API版本为10~25时，compileSdkVersion/compatibleSdkVersion/targetSdkVersion是数值类型，例如12。
+* 当API版本为26及以上时，compileSdkVersion/compatibleSdkVersion/targetSdkVersion是字符串类型，例如'26.0.0'。
 
 **可能原因**
 
-compileSdkVersion/compatibleSdkVersion/targetSdkVersion字段的格式不符合要求。
+compileSdkVersion/compatibleSdkVersion/targetSdkVersion字段的值类型不符合要求。
 
 **处理步骤**
 
-检查工程级build-profile.json5文件，确保以上字段的格式符合要求。
+检查工程级build-profile.json5文件，确保以上字段的值类型符合要求。
 
 ## 00306043 JS模块不允许依赖ArkTS库
 
@@ -778,7 +793,7 @@ Task XXX was not found in the project XXX. Invalid command to execute the build 
 
 **错误描述**
 
-在工程中找不到任务，执行构建任务的命令无效，请检查命令行中的参数并重试。
+在工程中找不到任务，构建命令无效，请检查命令行中的参数并重试。
 
 **可能原因**
 
@@ -826,3 +841,77 @@ hvigor守护进程异常退出，可在XXX文件中查看日志。
 
 1. 修改hvigor-config.json5中nodeOptions下的maxOldSpaceSize，增加守护进程的内存。
 2. [关闭守护进程](ide-hvigor-daemon.md)后重新编译，验证该问题是否与守护进程有关。
+
+## 00306057 executableBinaryPaths-path的值应该是相对路径
+
+**错误信息**
+
+The executableBinaryPaths-path XXX should be a relative path. At file: YYY.
+
+**错误描述**
+
+executableBinaryPaths-path的值应该是相对路径。
+
+**可能原因**
+
+配置的executableBinaryPaths-path的值不是相对路径。
+
+**处理步骤**
+
+确保executableBinaryPaths-path的值是相对路径。
+
+## 00306058 应用skill的skillProfiles仅在bundleType为app或atomicService时可配置
+
+**错误信息**
+
+skillProfiles can be configured only when bundleType is set to app or atomicService. However, the current value of bundleType is XXX. At file: YYY.
+
+**错误描述**
+
+应用skill的skillProfiles仅在bundleType为app或atomicService时可配置。
+
+**可能原因**
+
+模块的module.json5中配置了skillProfiles，但是app.json5的bundleType不是app或atomicService。
+
+**处理步骤**
+
+* 删除module.json5中的skillProfiles。
+* 将app.json5文件中的bundleType修改为app或atomicService。
+
+## 00306059 integratedHsp模块不支持skillProfiles配置
+
+**错误信息**
+
+The integratedHsp module does not support skillProfiles. At file: XXX.
+
+**错误描述**
+
+integratedHsp模块不支持skillProfiles配置。
+
+**可能原因**
+
+integratedHsp模块不支持skillProfiles配置。
+
+**处理步骤**
+
+* 删除module.json5中的skillProfiles。
+* 在模块的build-profile.json5中将buildOption.arkOptions.integratedHsp设置为false。
+
+## 00306060 无法获取依赖的版本号和名称
+
+**错误信息**
+
+Unable to get dependency 'XXX''s version and name at file: XXX.
+
+**错误描述**
+
+无法获取依赖的版本号和名称。
+
+**可能原因**
+
+so依赖不支持通过parameterFile参数化配置版本号。
+
+**处理步骤**
+
+通过相对路径的方式配置so依赖。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-share-ov
 title: 跨应用数据共享概述
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 跨应用数据共享 > 跨应用数据共享概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:22+08:00
+scraped_at: 2026-09-02T14:59:12+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:00fc20e289d17e96e5c0c896c25ac244604a1b00e02fd4c236dcf4b38bb78450
 ---

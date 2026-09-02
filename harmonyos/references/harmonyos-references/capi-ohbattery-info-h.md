@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohba
 title: ohbattery_info.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > ohbattery_info.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:48+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b731cd3cb8665fdbed15d772adb0913375463c5398a899462a8896c000027abb
+scraped_at: 2026-09-02T15:02:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cbf2fa48e83434387ae983111ba143c4aeecb3bd1ff766a64b3ab7d12d521ba5
 ---
 
 ## 概述
-
-PhonePC/2in1TabletWearable
 
 声明电池API以获取当前电池容量和电源类型的信息，定义电池相应常见事件。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
-
 ### 枚举
-
-PhonePC/2in1TabletWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,16 +32,12 @@ PhonePC/2in1TabletWearable
 
 ### 函数
 
-PhonePC/2in1TabletWearable
-
 | 名称 | 描述 |
 | --- | --- |
-| [int32\_t OH\_BatteryInfo\_GetCapacity()](capi-ohbattery-info-h.md#oh_batteryinfo_getcapacity) | 返回当前电池容量。 |
+| [int32\_t OH\_BatteryInfo\_GetCapacity()](capi-ohbattery-info-h.md#oh_batteryinfo_getcapacity) | 返回当前电池容量百分比。 |
 | [BatteryInfo\_BatteryPluggedType OH\_BatteryInfo\_GetPluggedType()](capi-ohbattery-info-h.md#oh_batteryinfo_getpluggedtype) | 返回当前插入的类型。 |
 
 ### 变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -57,14 +47,10 @@ PhonePC/2in1TabletWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletWearable
-
 ### BatteryInfo\_BatteryPluggedType
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum BatteryInfo_BatteryPluggedType
+```c
+enum BatteryInfo_BatteryPluggedType
 ```
 
 **描述**
@@ -79,23 +65,19 @@ PhonePC/2in1TabletWearable
 | PLUGGED\_TYPE\_AC = 1 | 电源是交流充电。 |
 | PLUGGED\_TYPE\_USB = 2 | 电源是USB DC充电。 |
 | PLUGGED\_TYPE\_WIRELESS = 3 | 电源为无线充电。 |
-| PLUGGED\_TYPE\_BUTT = 4 | 预留枚举 |
+| PLUGGED\_TYPE\_BUTT = 4 | 未知类型。 |
 
 ## 函数说明
 
-PhonePC/2in1TabletWearable
-
 ### OH\_BatteryInfo\_GetCapacity()
 
-PhonePC/2in1TabletWearable
-
-```
-1. int32_t OH_BatteryInfo_GetCapacity()
+```c
+int32_t OH_BatteryInfo_GetCapacity()
 ```
 
 **描述**
 
-返回当前电池容量。
+返回当前电池容量百分比。
 
 **系统能力：** SystemCapability.PowerManager.BatteryManager.Core
 
@@ -109,10 +91,8 @@ PhonePC/2in1TabletWearable
 
 ### OH\_BatteryInfo\_GetPluggedType()
 
-PhonePC/2in1TabletWearable
-
-```
-1. BatteryInfo_BatteryPluggedType OH_BatteryInfo_GetPluggedType()
+```c
+BatteryInfo_BatteryPluggedType OH_BatteryInfo_GetPluggedType()
 ```
 
 **描述**

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-42
 title: 在使用Canvas的场景中，如何主动控制组件刷新UI
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 在使用Canvas的场景中，如何主动控制组件刷新UI
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 在使用Canvas的场景中，如何主动控制组件刷新UI
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:07+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:49+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:cb9b564c8ff93b2eae13ba8ccbc148e3036208a288b6a4a6a901cf9d263d1bc5
 ---
 

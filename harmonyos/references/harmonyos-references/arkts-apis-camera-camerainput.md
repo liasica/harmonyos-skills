@@ -3,30 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (CameraInput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (CameraInput)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4f62458b559c77e432924134d2777d2986b7877720cceebbf9111a6fbbbbc100
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c46738eb7da16e0da503872f7efa1308bc1f22b90fbd0dd6cfecf5f4fa59924f
 ---
 
 相机设备输入对象。
 
 会话中[Session](arkts-apis-camera-session.md)使用的相机信息。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## open
-
-PhonePC/2in1TabletTVWearable
 
 open(callback: AsyncCallback<void>): void
 
@@ -54,23 +50,21 @@ open(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function openCameraInput(cameraInput: camera.CameraInput): void {
-4. cameraInput.open((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to open the camera, error code: ${err.code}.`);
-7. return;
-8. }
-9. console.info('Callback returned with camera opened.');
-10. });
-11. }
+function openCameraInput(cameraInput: camera.CameraInput): void {
+  cameraInput.open((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to open camera, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Callback returned with camera opened.');
+  });
+}
 ```
 
 ## open
-
-PhonePC/2in1TabletTVWearable
 
 open(): Promise<void>
 
@@ -99,21 +93,19 @@ open(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function openCameraInput(cameraInput: camera.CameraInput): void {
-4. cameraInput.open().then(() => {
-5. console.info('Promise returned with camera opened.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to open the camera, error code: ${error.code}.`);
-8. });
-9. }
+function openCameraInput(cameraInput: camera.CameraInput): void {
+  cameraInput.open().then(() => {
+    console.info('Promise returned with camera opened.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to open camera, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## open12+
-
-PhonePC/2in1TabletTVWearable
 
 open(isSecureEnabled: boolean): Promise<bigint>
 
@@ -147,21 +139,19 @@ open(isSecureEnabled: boolean): Promise<bigint>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function openCameraInput(cameraInput: camera.CameraInput): void {
-4. cameraInput.open(true).then(() => {
-5. console.info('Promise returned with camera opened.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to open the camera, error code: ${error.code}.`);
-8. });
-9. }
+function openCameraInput(cameraInput: camera.CameraInput): void {
+  cameraInput.open(true).then(() => {
+    console.info('Promise returned with camera opened.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to open camera, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## open18+
-
-PhonePC/2in1TabletTVWearable
 
 open(type: CameraConcurrentType): Promise<void>
 
@@ -196,21 +186,19 @@ open(type: CameraConcurrentType): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function openCameraInput(cameraInput: camera.CameraInput): void {
-4. cameraInput.open(0).then(() => {
-5. console.info('Promise returned with camera opened.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to open the camera, error code: ${error.code}.`);
-8. });
-9. }
+function openCameraInput(cameraInput: camera.CameraInput): void {
+  cameraInput.open(0).then(() => {
+    console.info('Promise returned with camera opened.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to open camera, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## close
-
-PhonePC/2in1TabletTVWearable
 
 close(callback: AsyncCallback<void>): void
 
@@ -236,23 +224,21 @@ close(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function closeCameraInput(cameraInput: camera.CameraInput): void {
-4. cameraInput.close((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to close the cameras, error code: ${err.code}.`);
-7. return;
-8. }
-9. console.info('Callback returned with camera closed.');
-10. });
-11. }
+function closeCameraInput(cameraInput: camera.CameraInput): void {
+  cameraInput.close((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to close the cameras, error code: ${err.code}.`);
+      return;
+    }
+    console.info('Callback returned with camera closed.');
+  });
+}
 ```
 
 ## close
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -278,27 +264,25 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function closeCameraInput(cameraInput: camera.CameraInput): void {
-4. cameraInput.close().then(() => {
-5. console.info('Promise returned with camera closed.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to close the cameras, error code: ${error.code}.`);
-8. });
-9. }
+function closeCameraInput(cameraInput: camera.CameraInput): void {
+  cameraInput.close().then(() => {
+    console.info('Promise returned with camera closed.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to close the cameras, error code: ${error.code}.`);
+  });
+}
 ```
 
 ## on('error')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', camera: CameraDevice, callback: ErrorCallback): void
 
 监听CameraInput的错误事件，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -316,21 +300,19 @@ on(type: 'error', camera: CameraDevice, callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. console.error(`Camera input error code: ${err.code}`);
-5. }
+function callback(err: BusinessError): void {
+  console.error(`Camera input error code: ${err.code}`);
+}
 
-7. function registerCameraInputError(cameraInput: camera.CameraInput, camera: camera.CameraDevice): void {
-8. cameraInput.on('error', camera, callback);
-9. }
+function registerCameraInputError(cameraInput: camera.CameraInput, camera: camera.CameraDevice): void {
+  cameraInput.on('error', camera, callback);
+}
 ```
 
 ## off('error')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', camera: CameraDevice, callback?: ErrorCallback): void
 
@@ -350,15 +332,13 @@ off(type: 'error', camera: CameraDevice, callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. function unregisterCameraInputError(cameraInput: camera.CameraInput, camera: camera.CameraDevice): void {
-2. cameraInput.off('error', camera);
-3. }
+```ts
+function unregisterCameraInputError(cameraInput: camera.CameraInput, camera: camera.CameraDevice): void {
+  cameraInput.off('error', camera);
+}
 ```
 
 ## isPhysicalCameraOrientationVariable22+
-
-PhonePC/2in1TabletTVWearable
 
 isPhysicalCameraOrientationVariable(): boolean
 
@@ -376,16 +356,14 @@ isPhysicalCameraOrientationVariable(): boolean
 
 **示例：**
 
-```
-1. function isPhysicalCameraOrientationVariable(cameraInput: camera.CameraInput): boolean {
-2. let isVariable: boolean = cameraInput.isPhysicalCameraOrientationVariable();
-3. return isVariable;
-4. }
+```ts
+function isPhysicalCameraOrientationVariable(cameraInput: camera.CameraInput): boolean {
+  let isVariable: boolean = cameraInput.isPhysicalCameraOrientationVariable();
+  return isVariable;
+}
 ```
 
 ## getPhysicalCameraOrientation22+
-
-PhonePC/2in1TabletTVWearable
 
 getPhysicalCameraOrientation(): number
 
@@ -399,20 +377,18 @@ getPhysicalCameraOrientation(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回设备当前折叠状态下的物理镜头角度。 |
+| number | 返回设备当前折叠状态下的物理镜头角度。  单位为度数（degree），取值范围为[0, 360]。 |
 
 **示例：**
 
-```
-1. function getPhysicalCameraOrientation(cameraInput: camera.CameraInput): number {
-2. let physicalCameraOrientation: number = cameraInput.getPhysicalCameraOrientation();
-3. return physicalCameraOrientation;
-4. }
+```ts
+function getPhysicalCameraOrientation(cameraInput: camera.CameraInput): number {
+  let physicalCameraOrientation: number = cameraInput.getPhysicalCameraOrientation();
+  return physicalCameraOrientation;
+}
 ```
 
 ## usePhysicalCameraOrientation22+
-
-PhonePC/2in1TabletTVWearable
 
 usePhysicalCameraOrientation(isUsed: boolean): void
 
@@ -439,28 +415,26 @@ usePhysicalCameraOrientation(isUsed: boolean): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function usePhysicalCameraOrientation(cameraInput: camera.CameraInput, isUsed: boolean): void {
-4. try {
-5. cameraInput.usePhysicalCameraOrientation(isUsed);
-6. } catch (error) {
-7. let err = error as BusinessError;
-8. console.error(`The usePhysicalCameraOrientation call failed. error code: ${err.code}`);
-9. }
-10. }
+function usePhysicalCameraOrientation(cameraInput: camera.CameraInput, isUsed: boolean): void {
+  try {
+    cameraInput.usePhysicalCameraOrientation(isUsed);
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`The usePhysicalCameraOrientation call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## on('cameraOcclusionDetection')23+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'cameraOcclusionDetection', callback: AsyncCallback<CameraOcclusionDetectionResult>): void
 
 监听CameraInput的镜头遮挡或脏污事件，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -477,30 +451,28 @@ on(type: 'cameraOcclusionDetection', callback: AsyncCallback<CameraOcclusionDete
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, result: camera.CameraOcclusionDetectionResult): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error('cameraOcclusionDetection with errorCode = ' + err.code);
-6. return;
-7. }
-8. if (!result) {
-9. console.error(`cameraOcclusionDetection result: undefined`);
-10. return;
-11. }
-12. console.info(`onCameraOcclusionDetection isCameraOccluded: ${result.isCameraOccluded}`);
-13. console.info(`onCameraOcclusionDetection isCameraLensDirty: ${result.isCameraLensDirty}`);
-14. }
+function callback(err: BusinessError, result: camera.CameraOcclusionDetectionResult): void {
+  if (err !== undefined && err.code !== 0) {
+      console.error('cameraOcclusionDetection with errorCode = ' + err.code);
+      return;
+  }
+  if (!result) {
+      console.error(`cameraOcclusionDetection result: undefined`);
+      return;
+  }
+  console.info(`onCameraOcclusionDetection isCameraOccluded: ${result.isCameraOccluded}`);
+  console.info(`onCameraOcclusionDetection isCameraLensDirty: ${result.isCameraLensDirty}`);
+}
 
-16. function registerCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
-17. cameraInput.on('cameraOcclusionDetection', callback);
-18. }
+function registerCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
+  cameraInput.on('cameraOcclusionDetection', callback);
+}
 ```
 
 ## off('cameraOcclusionDetection')23+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'cameraOcclusionDetection', callback?: AsyncCallback<CameraOcclusionDetectionResult>): void
 
@@ -519,25 +491,25 @@ off(type: 'cameraOcclusionDetection', callback?: AsyncCallback<CameraOcclusionDe
 
 **示例：**
 
-```
-1. function callback(err: BusinessError, result: camera.CameraOcclusionDetectionResult): void {
-2. if (err !== undefined && err.code !== 0) {
-3. console.error('cameraOcclusionDetection with errorCode = ' + err.code);
-4. return;
-5. }
-6. if (!result) {
-7. console.error(`cameraOcclusionDetection result: undefined`);
-8. return;
-9. }
-10. console.info(`onCameraOcclusionDetection isCameraOccluded: ${result.isCameraOccluded}`);
-11. console.info(`onCameraOcclusionDetection isCameraLensDirty: ${result.isCameraLensDirty}`);
-12. }
+```ts
+function callback(err: BusinessError, result: camera.CameraOcclusionDetectionResult): void {
+  if (err !== undefined && err.code !== 0) {
+      console.error('cameraOcclusionDetection with errorCode = ' + err.code);
+      return;
+  }
+  if (!result) {
+      console.error(`cameraOcclusionDetection result: undefined`);
+      return;
+  }
+  console.info(`onCameraOcclusionDetection isCameraOccluded: ${result.isCameraOccluded}`);
+  console.info(`onCameraOcclusionDetection isCameraLensDirty: ${result.isCameraLensDirty}`);
+}
 
-14. function unregisterCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
-15. cameraInput.off('cameraOcclusionDetection', callback);
-16. }
+function unregisterCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
+    cameraInput.off('cameraOcclusionDetection', callback);
+}
 
-18. function unregisterAllCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
-19. cameraInput.off('cameraOcclusionDetection');
-20. }
+function unregisterAllCameraOcclusionDetection(cameraInput: camera.CameraInput): void {
+    cameraInput.off('cameraOcclusionDetection');
+}
 ```

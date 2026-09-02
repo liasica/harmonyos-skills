@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-developme
 title: NDK开发导读
 breadcrumb: 指南 > NDK开发 > NDK开发导读
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1cd62d123d7b6f24c130614462d30821a57f72ca9deb191f12adeb80badd8a87
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:cfcbdf8d33713fa025e409d3fdc2724c890d75ad90f67259bb1fc36ec021aa53
 ---
 
 NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编译脚本和编译工具链的集合，方便开发者使用C或C++语言实现应用的关键功能。NDK只覆盖了HarmonyOS一些基础的底层能力，如C运行时基础库libc、图形库、窗口系统、多媒体、压缩库、面向ArkTS/JS与C跨语言的Node-API等，没有提供ArkTS/JS API的完整能力。
@@ -33,13 +33,13 @@ NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编�
 
 * **Linux C语言编程知识**
 
-  内核、libc基础库基于POSIX等标准扩展而来，掌握基本的Linux C编程知识能够更好的帮助理解HarmonyOS NDK开发。
+  内核、libc基础库基于POSIX等标准扩展而来，掌握基本的Linux C编程知识能够更好地帮助理解HarmonyOS NDK开发。
 * **CMake使用知识**
 
   CMake是HarmonyOS默认支持的构建系统。请先通过[CMake官方文档](https://cmake.org/cmake/help/v3.16/guide/tutorial/)了解基础用法。
 * **Node Addons开发知识**
 
-  ArkTS采用Node-API作为跨语言调用接口，熟悉基本的[Node Addons开发模式](https://nodejs.org/api/addons.html)，可以更好理解NDK中Node-API的使用。
+  ArkTS采用Node-API作为跨语言调用接口，熟悉基本的[Node Addons开发模式](https://nodejs.org/api/addons.html)，可以更好地理解NDK中Node-API的使用。
 * **Clang/LLVM编译器使用知识**
 
   具备一定的Clang/LLVM编译器基础知识，能够帮助开发者编译出更优的Native动态库。
@@ -53,21 +53,21 @@ NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编�
 
 * build目录：放置预定义的toolchain脚本文件[hmos.toolchain.cmake](build-with-ndk-overview.md#hmostoolchaincmake简介)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/d7BlKi7DQ_avcmMOkfpT1A/zh-cn_image_0000002589245665.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/9lU5JgKYTWSt6F8qRrtyCw/zh-cn_image_0000002706675494.png)
 
   CMake编译时需要读取该文件中的默认值，比如编译器架构、C++库链接方式等，因此在编译时会通过CMAKE\_TOOLCHAIN\_FILE指出该文件的路径，便于CMake在编译时定位到该文件。
 * build-tools文件夹：放置NDK提供的编译工具
 
-  ```
-  1. # 键入下一行命令查看CMake的版本
-  2. cmake -version
-  3. # 结果
-  4. cmake version 3.16.5
-  5. CMake suite maintained and supported by Kitware (kitware.com/cmake).
+  ```shell
+  # 键入下一行命令查看CMake的版本
+  cmake -version
+  # 结果
+  cmake version 3.16.5
+  CMake suite maintained and supported by Kitware (kitware.com/cmake).
   ```
 * llvm文件夹：放置NDK提供的编译器
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/-GoIavSIQMm-aNBaqTWFBw/zh-cn_image_0000002558765856.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/SuKTTOYaSNyR-iyiafve1w/zh-cn_image_0000002736434581.png)
 
 ## NDK常用模块
 

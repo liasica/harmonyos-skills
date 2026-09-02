@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 区划选择
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 区划选择
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:801bd7f53927430ed72f261141c449f83e70472305da462b2b8bca42e860fe9c
+scraped_at: 2026-09-02T14:50:29+08:00
+doc_updated_at: 2026-07-09
+content_hash: sha256:274daa90dcf2dc9adca6479a2ba4303f0b29cf63a149ab86e934b1ac3c4b224c
 ---
 
 ## 场景介绍
 
-本章节将介绍如何集成区划选择控件。该控件不支持在智能表设备中调用。
+从6.1.1(24)开始，支持区划选择控件最大显示层级。
+
+本章节将介绍如何集成区划选择控件。该控件不支持在Wearable设备中调用。
 
 区划选择控件可加载全球或指定国家的区划信息，支持以树状结构化选择，支持功能：
 
@@ -20,25 +22,25 @@ content_hash: sha256:801bd7f53927430ed72f261141c449f83e70472305da462b2b8bca42e86
 
 **图1** 选择国家
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/PFvB3fyGSXa8qxFbGKXY7A/zh-cn_image_0000002589325421.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/gDZ2dX0hTXuBiZxXSNFeXw/zh-cn_image_0000002736434223.jpg "点击放大")
 
 **图2** 选择省市
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/AcK91eAJTBWcTMTLd6YO6A/zh-cn_image_0000002589245359.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/_toiF6vsQ_aUs0HtAWfLHA/zh-cn_image_0000002706835072.jpg "点击放大")
 
 **图3** 搜索地区
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/AAMP0revTN-bnJOs6KvZWQ/zh-cn_image_0000002558765552.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/uOaOkO4cRhaVaiG5eVESjQ/zh-cn_image_0000002736314179.jpg "点击放大")
 
 **图4** 子窗拉起区划控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/sAb2cUFjQTC26Nl8xKMg6w/zh-cn_image_0000002558605896.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/YQqK3JB9SBaWw8Q6JsBgaw/zh-cn_image_0000002706675136.jpg "点击放大")
 
 ## 约束与限制
 
 使用该功能需满足以下条件：
 
-* 仅支持手机、平板和2in1设备。
+* 仅支持手机、平板和PC/2in1设备。
 
 ## 接口说明
 
@@ -54,22 +56,24 @@ content_hash: sha256:801bd7f53927430ed72f261141c449f83e70472305da462b2b8bca42e86
 
 1. 导入相关模块。
 
-   ```
-   1. import { sceneMap } from '@kit.MapKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { sceneMap } from '@kit.MapKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 创建区划选择请求参数，调用[selectDistrict](../harmonyos-references/map-scenemap.md#selectdistrict)方法拉起区划选择页。
 
-   ```
-   1. let districtSelectOptions: sceneMap.DistrictSelectOptions = {
-   2. countryCode: "CN",
-   3. // 使用子窗拉起方式
-   4. subWindowEnabled: true
-   5. };
-   6. // 拉起区划选择页
-   7. sceneMap.selectDistrict(this.getUIContext().getHostContext(), districtSelectOptions).then((data) => {
-   8. console.info("SelectDistrict", "Succeeded in selecting district.");
-   9. }).catch((err: BusinessError) => {
-   10. console.error("SelectDistrict", `Failed to select district, code: ${err.code}, message: ${err.message}`);
-   11. });
+   ```typescript
+   let districtSelectOptions: sceneMap.DistrictSelectOptions = {
+     countryCode: "CN",
+     // 使用子窗拉起方式
+     subWindowEnabled: true,
+     // 区划选择控件的最大显示层级
+     maxAdminLevel: 3
+   };
+   // 拉起区划选择页
+   sceneMap.selectDistrict(this.getUIContext().getHostContext(), districtSelectOptions).then((data) => {
+     console.info("SelectDistrict", "Succeeded in selecting district.");
+   }).catch((err: BusinessError) => {
+     console.error("SelectDistrict", `Failed to select district, code: ${err.code}, message: ${err.message}`);
+   });
    ```

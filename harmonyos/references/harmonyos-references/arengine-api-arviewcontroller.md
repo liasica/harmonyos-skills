@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arViewController（AR场景管理能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arViewController（AR场景管理能力）
 category: harmonyos-references
-scraped_at: 2026-04-29T14:05:04+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:3b0b2ace092b311df95c711980835287ee4f6173d4590b2c72ace757f6ed42c3
+scraped_at: 2026-09-02T15:02:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3260cbc661ac12a520c766813f2659a268a30d44b2797bbb6e5f394a7301bff2
 ---
 
 本模块提供AR Engine（AR引擎服务）的arViewController（AR场景管理能力）相关接口。
@@ -20,15 +20,11 @@ content_hash: sha256:3b0b2ace092b311df95c711980835287ee4f6173d4590b2c72ace757f6e
 
 ## 导入模块
 
-PhoneTabletTV
-
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
 ```
 
 ## LandmarkType
-
-PhoneTabletTV
 
 人脸关键点类别。
 
@@ -49,8 +45,6 @@ PhoneTabletTV
 
 ## ARViewContext
 
-PhoneTabletTV
-
 ARView上下文，用于AR场景管理，包括初始化、暂停、恢复及销毁。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -62,8 +56,6 @@ ARView上下文，用于AR场景管理，包括初始化、暂停、恢复及销
 **起始版本：** 5.1.0(18)
 
 ### ARViewContext.init
-
-PhoneTabletTV
 
 init(): Promise<void>
 
@@ -87,7 +79,7 @@ init(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -106,17 +98,14 @@ init(): Promise<void>
 
 **示例：**
 
-```
-1. import { arViewController } from '@kit.AREngine';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { arViewController } from '@kit.AREngine';
 
-4. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-5. await context.init();
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+await context.init();
 ```
 
 ### ARViewContext.pause
-
-PhoneTabletTV
 
 pause(): void
 
@@ -132,7 +121,7 @@ pause(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -142,16 +131,14 @@ pause(): void
 
 **示例：**
 
-```
-1. import { arViewController } from '@kit.AREngine';
+```typescript
+import { arViewController } from '@kit.AREngine';
 
-3. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-4. context.pause();
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.pause();
 ```
 
 ### ARViewContext.destroy
-
-PhoneTabletTV
 
 destroy(): Promise<void>
 
@@ -173,7 +160,7 @@ destroy(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -183,16 +170,14 @@ destroy(): Promise<void>
 
 **示例：**
 
-```
-1. import { arViewController } from '@kit.AREngine';
+```typescript
+import { arViewController } from '@kit.AREngine';
 
-3. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-4. context.destroy();
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.destroy();
 ```
 
 ### ARViewContext.resume
-
-PhoneTabletTV
 
 resume(): void
 
@@ -208,7 +193,7 @@ resume(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -219,16 +204,14 @@ resume(): void
 
 **示例：**
 
-```
-1. import { arViewController } from '@kit.AREngine';
+```typescript
+import { arViewController } from '@kit.AREngine';
 
-3. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-4. context.resume();
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.resume();
 ```
 
 ### ARViewContext.scene
-
-PhoneTabletTV
 
 set scene(scene: Scene)
 
@@ -250,7 +233,7 @@ set scene(scene: Scene)
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -258,21 +241,19 @@ set scene(scene: Scene)
 
 **示例：**
 
-```
-1. import { Scene } from '@kit.ArkGraphics3D';
-2. import { arViewController } from '@kit.AREngine';
+```typescript
+import { Scene } from '@kit.ArkGraphics3D';
+import { arViewController } from '@kit.AREngine';
 
-4. Scene.load().then((scene: Scene) => {
-5. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-6. context.scene = scene;
-7. }).catch((err: BusinessError) => {
-8. console.error(`Failed to load scene. Code is ${err.code}, message is ${err.message}.`);
-9. });
+Scene.load().then((scene: Scene) => {
+  let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+  context.scene = scene;
+}).catch((err: BusinessError) => {
+  console.error(`Failed to load scene. Code is ${err.code}, message is ${err.message}.`);
+});
 ```
 
 ### ARViewContext.scene
-
-PhoneTabletTV
 
 get scene(): Scene
 
@@ -294,7 +275,7 @@ get scene(): Scene
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -302,17 +283,15 @@ get scene(): Scene
 
 **示例：**
 
-```
-1. import { Scene } from '@kit.ArkGraphics3D';
-2. import { arViewController } from '@kit.AREngine';
+```typescript
+import { Scene } from '@kit.ArkGraphics3D';
+import { arViewController } from '@kit.AREngine';
 
-4. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-5. context.scene;
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.scene;
 ```
 
 ### ARViewContext.session
-
-PhoneTabletTV
 
 get session(): arEngine.ARSession | undefined
 
@@ -334,16 +313,14 @@ get session(): arEngine.ARSession | undefined
 
 **示例：**
 
-```
-1. import { arViewController } from '@kit.AREngine';
+```typescript
+import { arViewController } from '@kit.AREngine';
 
-3. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-4. context.session;
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.session;
 ```
 
 ### ARViewContext.config
-
-PhoneTabletTV
 
 set config(conf: arEngine.ARConfig)
 
@@ -365,7 +342,7 @@ set config(conf: arEngine.ARConfig)
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -373,21 +350,19 @@ set config(conf: arEngine.ARConfig)
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
 
-3. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-4. context.config = {
-5. type: arEngine.ARType.WORLD,
-6. poseMode: arEngine.ARPoseMode.GRAVITY_AND_HEADING,
-7. powerMode: arEngine.ARPowerMode.POWER_SAVING,
-8. depthMode: arEngine.ARDepthMode.AUTOMATIC
-9. };
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.config = {
+  type: arEngine.ARType.WORLD,
+  poseMode: arEngine.ARPoseMode.GRAVITY_AND_HEADING,
+  powerMode: arEngine.ARPowerMode.POWER_SAVING,
+  depthMode: arEngine.ARDepthMode.AUTOMATIC
+};
 ```
 
 ### ARViewContext.loadAsset
-
-PhoneTabletTV
 
 loadAsset(resourcePath: ResourceStr, landmark: LandmarkType): Promise<void>
 
@@ -416,7 +391,7 @@ loadAsset(resourcePath: ResourceStr, landmark: LandmarkType): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -424,18 +399,16 @@ loadAsset(resourcePath: ResourceStr, landmark: LandmarkType): Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
 
-3. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-4. // 此处为用户本地存放模型路径
-5. let resourcePath:ResourceStr = $rawfile('xxxx/xxxx');
-6. context.loadAsset(resourcePath, arViewController.LandmarkType.LEFT_EYE);
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+// 此处为用户本地存放模型路径
+let resourcePath:ResourceStr = $rawfile('xxxx/xxxx');
+context.loadAsset(resourcePath, arViewController.LandmarkType.LEFT_EYE);
 ```
 
 ### ARViewContext.removeAsset
-
-PhoneTabletTV
 
 removeAsset(landmark: LandmarkType):Promise<void>
 
@@ -463,7 +436,7 @@ removeAsset(landmark: LandmarkType):Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -471,16 +444,14 @@ removeAsset(landmark: LandmarkType):Promise<void>
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
 
-3. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-4. context.removeAsset(arViewController.LandmarkType.LEFT_EYE);
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.removeAsset(arViewController.LandmarkType.LEFT_EYE);
 ```
 
 ### ARViewContext.clearResource
-
-PhoneTabletTV
 
 clearResource():Promise<void>
 
@@ -496,7 +467,7 @@ clearResource():Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -510,16 +481,14 @@ clearResource():Promise<void>
 
 **示例：**
 
-```
-1. import { arViewController } from '@kit.AREngine';
+```typescript
+import { arViewController } from '@kit.AREngine';
 
-3. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-4. context.clearResource();
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.clearResource();
 ```
 
 ### ARViewContext.setBlendShapeWeight
-
-PhoneTabletTV
 
 setBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType, weight: number): boolean
 
@@ -545,11 +514,11 @@ setBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType, weight: number)
 
 | **类型** | **说明** |
 | --- | --- |
-| boolean | 微表情权重设置结果。true代表成功，false代表失败 |
+| boolean | 返回微表情权重设置结果。返回值true表示成功，false表示失败。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -557,18 +526,16 @@ setBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType, weight: number)
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
-2. import { Node } from '@kit.ArkGraphics3D';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
+import { Node } from '@kit.ArkGraphics3D';
 
-4. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-5. ctx.setBlendShapeWeight(node, arEngine.ARBlendShapeType.EYE_BLINK_LEFT, 0.1);
-6. }
+onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    ctx.setBlendShapeWeight(node, arEngine.ARBlendShapeType.EYE_BLINK_LEFT, 0.1);
+  }
 ```
 
 ### ARViewContext.getBlendShapeWeight
-
-PhoneTabletTV
 
 getBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType): number | null
 
@@ -597,7 +564,7 @@ getBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType): number | null
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -605,22 +572,20 @@ getBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType): number | null
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
-2. import { Node } from '@kit.ArkGraphics3D';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
+import { Node } from '@kit.ArkGraphics3D';
 
-4. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-5. ctx.getBlendShapeWeight(node, arEngine.ARBlendShapeType.EYE_BLINK_LEFT);
-6. }
+onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    ctx.getBlendShapeWeight(node, arEngine.ARBlendShapeType.EYE_BLINK_LEFT);
+  }
 ```
 
 ### ARViewContext.transformPose
 
-PhoneTabletTV
-
 transformPose(position: Vec3, rotation: Quaternion): arEngine.ARPose | null
 
-将位姿信息从AR坐标系转换为AGP渲染引擎坐标系。
+将位姿信息从AR坐标系转换为AGP渲染引擎坐标系，返回转换后的位姿信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -645,24 +610,121 @@ transformPose(position: Vec3, rotation: Quaternion): arEngine.ARPose | null
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
-2. import { Vec3, Quaternion } from '@kit.ArkGraphics3D';
+```typescript
+import { arViewController } from '@kit.AREngine';
+import { Vec3, Quaternion } from '@kit.ArkGraphics3D';
 
-4. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-5. let pose: Vec3 = { x: 1.0, y: -1.0, z: -0.5 };
-6. let rot: Quaternion = {
-7. x: -0.1,
-8. y: 0.2,
-9. z: -0.3,
-10. w: 0.5
-11. };
-12. context.transformPose(pose, rot);
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+let pose: Vec3 = { x: 1.0, y: -1.0, z: -0.5 };
+let rot: Quaternion = {
+  x: -0.1,
+  y: 0.2,
+  z: -0.3,
+  w: 0.5
+};
+context.transformPose(pose, rot);
+```
+
+### ARViewContext.loadGSModel
+
+loadGSModel(resourcePath: spatialRender.GSImportSettings, location: arEngine.ARPose): Promise<number>
+
+加载3DGS模型。每次会话只能加载一个模型。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.AREngine.Core
+
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| resourcePath | [spatialRender.GSImportSettings](spatial-recon-spatialrender.md#gsimportsettings) | 是 | 存储模型的路径。 |
+| location | [arEngine.ARPose](arengine-api-arengine.md#arpose) | 是 | 指定模型的放置位姿。 |
+
+**返回值：**
+
+| **类型** | **说明** |
+| --- | --- |
+| Promise<number> | Promise对象，返回3DGS模型的ID。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1009200201 | ARView invalid operation. |
+
+**示例：**
+
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
+import { Vec3, Quaternion } from '@kit.ArkGraphics3D';
+import { spatialRender } from '@kit.SpatialReconKit';
+
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+// 此处为用户本地存放模型路径
+let resourcePath: spatialRender.GSImportSettings = { uri: 'OhosRawFile://assets/gltf/model.glb', offset: 0 };
+let r: Quaternion = {
+  x: 0,
+  y: 0,
+  z: 0,
+  w: 0
+};
+let t: Vec3 = { x: 0, y: 0, z: 0 };
+let location: arEngine.ARPose = arEngine.createARPose(r, t);
+await context.loadGSModel(resourcePath, location);
+```
+
+### ARViewContext.removeGSModel
+
+removeGSModel(modelID: number):Promise<boolean>
+
+根据模型ID移除已放置的模型。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.AREngine.Core
+
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| modelID | number | 是 | 指定想要移除模型的模型ID。 |
+
+**返回值：**
+
+| **类型** | **说明** |
+| --- | --- |
+| Promise<boolean> | Promise对象，返回模型移除结果，true代表移除成功，false代表移除失败。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1009200201 | ARView invalid operation. |
+
+**示例：**
+
+```typescript
+import { arViewController } from '@kit.AREngine';
+
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+await context.removeGSModel(1);
 ```
 
 ### ARViewContext.callback
-
-PhoneTabletTV
 
 set callback(callback: ARViewCallback)
 
@@ -672,7 +734,7 @@ set callback(callback: ARViewCallback)
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -684,7 +746,7 @@ set callback(callback: ARViewCallback)
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -692,49 +754,47 @@ set callback(callback: ARViewCallback)
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
-2. import { Node } from '@kit.ArkGraphics3D';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
+import { Node } from '@kit.ArkGraphics3D';
 
-4. class ARViewCallbackImpl extends arViewController.ARViewCallback {
+class ARViewCallbackImpl extends arViewController.ARViewCallback {
 
-6. onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-7. console.info('onAnchorAdd');
-8. console.info(`add anchor id = ${String(anchor.id)}`);
-9. console.info(`add anchor translation = ${anchor.getPose().translation}`);
-10. console.info(`add node pose = ${node.position}`);
-11. }
+  onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    console.info('onAnchorAdd');
+    console.info(`add anchor id = ${String(anchor.id)}`);
+    console.info(`add anchor translation = ${anchor.getPose().translation}`);
+    console.info(`add node pose = ${node.position}`);
+  }
 
-13. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-14. console.info('onAnchorUpdate');
-15. console.info(`update anchor id = ${String(anchor.id)}`);
-16. console.info(`update anchor translation = ${anchor.getPose().translation}`);
-17. console.info(`update node pose = ${node.position}`);
-18. }
+  onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+    console.info('onAnchorUpdate');
+    console.info(`update anchor id = ${String(anchor.id)}`);
+    console.info(`update anchor translation = ${anchor.getPose().translation}`);
+    console.info(`update node pose = ${node.position}`);
+  }
 
-20. async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
-21. let arSession: arEngine.ARSession | undefined = ctx.session;
-22. if (arSession) {
-23. let frame: arEngine.ARFrame = arSession.getFrame();
-24. if (!frame) {
-25. console.error('Failed to get arSession.frame, it is undefined or null');
-26. } else {
-27. console.info(`Succeeded in getting arSession.frame = ${frame.timestamp}`);
-28. await frame.release();
-29. }
-30. } else {
-31. console.error('Failed to get arSession, arSession is undefined');
-32. }
-33. }
-34. }
+  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+    let arSession: arEngine.ARSession | undefined = ctx.session;
+    if (arSession) {
+      let frame: arEngine.ARFrame = arSession.getFrame();
+      if (!frame) {
+        console.error('Failed to get arSession.frame, it is undefined or null');
+      } else {
+        console.info(`Succeeded in getting arSession.frame = ${frame.timestamp}`);
+        await frame.release();
+      }
+    } else {
+      console.error('Failed to get arSession, arSession is undefined');
+    }
+  }
+}
 
-36. let context: arViewController.ARViewContext = new arViewController.ARViewContext();
-37. context.callback = new ARViewCallbackImpl();
+let context: arViewController.ARViewContext = new arViewController.ARViewContext();
+context.callback = new ARViewCallbackImpl();
 ```
 
 ## ARViewCallback
-
-PhoneTabletTV
 
 ARViewCallback抽象类，声明ARView的回调接口。使用callback方式异步返回结果。
 
@@ -744,13 +804,11 @@ ARViewCallback抽象类，声明ARView的回调接口。使用callback方式异�
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
 ### ARViewCallback.onAnchorAdd
-
-PhoneTabletTV
 
 abstract onAnchorAdd(ctx: ARViewContext, node: Node, anchor: arEngine.ARAnchor): void
 
@@ -760,7 +818,7 @@ abstract onAnchorAdd(ctx: ARViewContext, node: Node, anchor: arEngine.ARAnchor):
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -774,19 +832,17 @@ abstract onAnchorAdd(ctx: ARViewContext, node: Node, anchor: arEngine.ARAnchor):
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
-2. import { Node } from '@kit.ArkGraphics3D';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
+import { Node } from '@kit.ArkGraphics3D';
 
-4. // 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
-5. onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-6. // 其他操作
-7. }
+// 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
+onAnchorAdd(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  // 其他操作
+}
 ```
 
 ### ARViewCallback.onAnchorUpdate
-
-PhoneTabletTV
 
 abstract onAnchorUpdate(ctx: ARViewContext, node: Node, anchor: arEngine.ARAnchor): void
 
@@ -796,7 +852,7 @@ abstract onAnchorUpdate(ctx: ARViewContext, node: Node, anchor: arEngine.ARAncho
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -810,19 +866,17 @@ abstract onAnchorUpdate(ctx: ARViewContext, node: Node, anchor: arEngine.ARAncho
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
-2. import { Node } from '@kit.ArkGraphics3D';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
+import { Node } from '@kit.ArkGraphics3D';
 
-4. // 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
-5. onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
-6. // 其他操作
-7. }
+// 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
+onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
+  // 其他操作
+}
 ```
 
 ### ARViewCallback.onFrameUpdate
-
-PhoneTabletTV
 
 abstract onFrameUpdate(ctx: ARViewContext, sysBootTs: number): void
 
@@ -832,7 +886,7 @@ AR场景每帧刷新前会自动触发该回调，开发者可以基于此回调
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -845,29 +899,27 @@ AR场景每帧刷新前会自动触发该回调，开发者可以基于此回调
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
 
-3. // 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
-4. onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
-5. let arSession: arEngine.ARSession | undefined = ctx.session;
-6. if (arSession) {
-7. let frame: arEngine.ARFrame = arSession.getFrame();
-8. if (!frame){
-9. console.error('Failed to get arSession.frame, it is undefined or null');
-10. } else {
-11. console.info(`Succeeded in getting arSession.frame = ${frame.timestamp}`);
-12. await frame.release();
-13. }
-14. } else {
-15. console.error('Failed to get arSession, arSession is undefined');
-16. }
-17. }
+// 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
+onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
+  let arSession: arEngine.ARSession | undefined = ctx.session;
+  if (arSession) {
+    let frame: arEngine.ARFrame = arSession.getFrame();
+    if (!frame){
+      console.error('Failed to get arSession.frame, it is undefined or null');
+    } else {
+      console.info(`Succeeded in getting arSession.frame = ${frame.timestamp}`);
+      await frame.release();
+    }
+  } else {
+    console.error('Failed to get arSession, arSession is undefined');
+  }
+}
 ```
 
 ## arViewController.isARTypeSupported
-
-PhoneTabletTV
 
 isARTypeSupported(type: arEngine.ARFeatureType): boolean
 
@@ -893,7 +945,7 @@ isARTypeSupported(type: arEngine.ARFeatureType): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[AR Engine错误码](arengine-error-code.md)。
+以下错误码的详细介绍请参见[AR Engine错误码](errorcode-ar-engine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -901,8 +953,8 @@ isARTypeSupported(type: arEngine.ARFeatureType): boolean
 
 **示例：**
 
-```
-1. import { arEngine, arViewController } from '@kit.AREngine';
+```typescript
+import { arEngine, arViewController } from '@kit.AREngine';
 
-3. arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
+arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
 ```

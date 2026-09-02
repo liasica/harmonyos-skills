@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-in
 title: 文本概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 文本概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3858568862ad3f99f5af13c4eb8a1f24e044079482788d6f13fef539393db215
+scraped_at: 2026-09-02T14:49:49+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:4dc4a7582c14c63ae1140bdcb7f291461d8c938c866d430c2149d02d89a588b0
 ---
 
 文本包含用户输入的信息、呈现的文本内容和小图标，这些元素共同构建了用户与系统间的交互界面，提升了操作的便捷性与信息展示的直观性。
@@ -20,7 +20,7 @@ content_hash: sha256:3858568862ad3f99f5af13c4eb8a1f24e044079482788d6f13fef539393
 
 当需要在单行输入框（TextInput）或多行输入框（TextArea）中输入纯文本时，应优先考虑使用此文本组件。参考[文本输入 (TextInput/TextArea/Search)](arkts-common-components-text-input.md)章节。
 
-## 富文本
+## 富文本编辑
 
 当需要在编辑框内插入图片或者自定义图标等需求时，应优先考虑使用此文本组件。参考[富文本编辑 (RichEditor)](arkts-common-components-richeditor.md)章节。
 
@@ -34,7 +34,7 @@ content_hash: sha256:3858568862ad3f99f5af13c4eb8a1f24e044079482788d6f13fef539393
 
 ## 图文混排
 
-当需要图片和文字混排的场景，可以使用Span和ImageSpan实现。若需要样式多样的混排效果，可以选择属性字符串实现。参考[图文混排](arkts-text-image-layout.md)章节。
+当需要图片和文字混排的场景，可以使用[Span](../harmonyos-references/ts-basic-components-span.md)和[ImageSpan](../harmonyos-references/ts-basic-components-imagespan.md)实现。若需要样式多样的混排效果，可以选择属性字符串实现。参考[图文混排](arkts-text-image-layout.md)章节。
 
 ## 管理软键盘
 

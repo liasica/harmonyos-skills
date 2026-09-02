@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: CSS语法参考
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 语法 > CSS语法参考
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:146551b291610daa44700d77210aac637735f577d2b2c6fc5bf13bbdc4b04824
+scraped_at: 2026-09-02T14:59:20+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:6f74e6b006226be2215c6181a3b090d5180d84fa4300a9471bb856b901033309
 ---
 
 CSS是描述[HML](js-framework-syntax-hml.md)页面结构的样式语言。所有组件均存在系统默认样式，也可在页面CSS样式文件中对组件、页面自定义不同的样式。请参考[通用样式](../harmonyos-references/js-components-common-styles.md)了解兼容JS的类Web开发范式支持的组件样式。
@@ -28,34 +28,34 @@ CSS是描述[HML](js-framework-syntax-hml.md)页面结构的样式语言。所�
 
 1. 内部样式，支持使用style、class属性来控制组件的样式。例如：
 
-   ```
-   1. <!-- index.hml -->
-   2. <div class="container">
-   3. <text style="color: red">Hello World</text>
-   4. </div>
+   ```html
+   <!-- index.hml -->
+   <div class="container">
+     <text style="color: red">Hello World</text>
+   </div>
    ```
 
-   ```
-   1. /* index.css */
-   2. .container {
-   3. justify-content: center;
-   4. }
+   ```css
+   /* index.css */
+   .container {
+     justify-content: center;
+   }
    ```
 2. 文件导入，合并外部样式文件。例如，在common目录中定义样式文件style.css，并在index.css文件首行中进行导入：
 
-   ```
-   1. /* style.css */
-   2. .title {
-   3. font-size: 50px;
-   4. }
+   ```css
+   /* style.css */
+   .title {
+     font-size: 50px;
+   }
    ```
 
-   ```
-   1. /* index.css */
-   2. @import '../../common/style.css';
-   3. .container {
-   4. justify-content: center;
-   5. }
+   ```css
+   /* index.css */
+   @import '../../common/style.css';
+   .container {
+     justify-content: center;
+   }
    ```
 
 ## 选择器
@@ -72,55 +72,55 @@ css选择器用于选择需要添加样式的元素，支持的选择器如下�
 
 示例：
 
-```
-1. <!-- 页面布局xxx.hml -->
-2. <div id="containerId" class="container">
-3. <text id="titleId" class="title">标题</text>
-4. <div class="content">
-5. <text id="contentId">内容</text>
-6. </div>
-7. </div>
+```html
+<!-- 页面布局xxx.hml -->
+<div id="containerId" class="container">
+  <text id="titleId" class="title">标题</text>
+  <div class="content">
+    <text id="contentId">内容</text>
+  </div>
+</div>
 ```
 
-```
-1. /* 页面样式xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. justify-content: center;
-6. align-items: center;
-7. }
-8. /* 对所有div组件设置样式 */
-9. div {
-10. flex-direction: column;
-11. }
-12. /* 对class="title"的组件设置样式 */
-13. .title {
-14. font-size: 30px;
-15. }
-16. /* 对id="contentId"的组件设置样式 */
-17. #contentId {
-18. font-size: 20px;
-19. }
-20. /* 对所有class="title"以及class="content"的组件都设置padding为5px */
-21. .title, .content {
-22. padding: 5px;
-23. }
-24. /* 对class="container"的组件下的所有text设置样式 */
-25. .container text {
-26. color: #007dff;
-27. }
-28. /* 对class="container"的组件下的直接后代text设置样式 */
-29. .container > text {
-30. color: #fa2a2d;
-31. }
+```css
+/* 页面样式xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+/* 对所有div组件设置样式 */
+div {
+  flex-direction: column;
+}
+/* 对class="title"的组件设置样式 */
+.title {
+  font-size: 30px;
+}
+/* 对id="contentId"的组件设置样式 */
+#contentId {
+  font-size: 20px;
+}
+/* 对所有class="title"以及class="content"的组件都设置padding为5px */
+.title, .content {
+  padding: 5px;
+}
+/* 对class="container"的组件下的所有text设置样式 */
+.container text {
+  color: #007dff;
+}
+/* 对class="container"的组件下的直接后代text设置样式 */
+.container > text {
+  color: #fa2a2d;
+}
 ```
 
 以上样式运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/cuQUeH-NSn2GwqurH5-Yug/zh-cn_image_0000002589244377.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/7amtJ2tsRzm2_djqLmEOhQ/zh-cn_image_0000002706673974.png)
 
-其中“.container text”将“标题”和“内容”设置为蓝色，而“.container > text”直接后代选择器将“标题”设置为红色。2者优先级相同，但直接后代选择器声明顺序靠后，将前者样式覆盖（优先级计算见[选择器优先级](js-framework-syntax-css.md#选择器优先级)）。
+其中“.container text”将“标题”和“内容”设置为蓝色，而“.container > text”直接后代选择器将“标题”设置为红色。两者优先级相同，但直接后代选择器声明顺序靠后，将前者样式覆盖（优先级计算见[选择器优先级](js-framework-syntax-css.md#选择器优先级)）。
 
 ## 选择器优先级
 
@@ -143,28 +143,28 @@ css伪类是选择器中的关键字，用于指定要选择元素的特殊状�
 
 伪类示例如下，设置按钮的:active伪类可以控制被用户按下时的样式：
 
-```
-1. <!-- index.hml -->
-2. <div class="container">
-3. <input type="button" class="button" value="Button"></input>
-4. </div>
-```
-
-```
-1. /* index.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. justify-content: center;
-6. align-items: center;
-7. }
-
-9. .button:active {
-10. background-color: #888888;/*按钮被激活时，背景颜色变为#888888 */
-11. }
+```html
+<!-- index.hml -->
+<div class="container">
+  <input type="button" class="button" value="Button"></input>
+</div>
 ```
 
-说明
+```css
+/* index.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:active {
+  background-color: #888888;/*按钮被激活时，背景颜色变为#888888 */
+}
+```
+
+**说明** 
 
 针对弹窗类组件及其子元素不支持伪类效果，包括popup、dialog、menu、option、picker。
 
@@ -174,34 +174,34 @@ css伪类是选择器中的关键字，用于指定要选择元素的特殊状�
 
 * 当前文件使用样式预编译，例如将原index.css改为index.less：
 
-  ```
-  1. /* index.less */
-  2. /* 定义变量 */
-  3. @colorBackground: #000000;
-  4. .container {
-  5. background-color: @colorBackground; /* 使用当前less文件中定义的变量 */
-  6. }
+  ```less
+  /* index.less */
+  /* 定义变量 */
+  @colorBackground: #000000;
+  .container {
+    background-color: @colorBackground; /* 使用当前less文件中定义的变量 */
+  }
   ```
 * 引用预编译文件，例如common中存在style.scss文件，将原index.css改为index.scss，并引入style.scss：
 
-  ```
-  1. /* style.scss */
-  2. /* 定义变量 */
-  3. $colorBackground: #000000;
+  ```scss
+  /* style.scss */
+  /* 定义变量 */
+  $colorBackground: #000000;
   ```
 
   在index.scss中引用：
 
-  ```
-  1. /* index.scss */
-  2. /* 引入外部scss文件 */
-  3. @import '../../common/style.scss';
-  4. .container {
-  5. background-color: $colorBackground; /* 使用style.scss中定义的变量 */
-  6. }
+  ```scss
+  /* index.scss */
+  /* 引入外部scss文件 */
+  @import '../../common/style.scss';
+  .container {
+    background-color: $colorBackground; /* 使用style.scss中定义的变量 */
+  }
   ```
 
-  说明
+  **说明** 
 
   引用的预编译文件建议放在common目录进行管理。
 

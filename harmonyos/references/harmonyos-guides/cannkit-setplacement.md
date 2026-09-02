@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setpl
 title: SetPlacement
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > SetPlacement
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:13+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:deb0e72abcbe3b9561aad0c1a1014db11eaad5cde2d26876dc1b303cc1d6a941
+content_hash: sha256:2491b2a71a1217ba4d4250da67a2ce37e26b61b8ec78df117ccd84e60d11b1cb
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:deb0e72abcbe3b9561aad0c1a1014db11eaad5cde2d26876dc1b303cc1d
 
 ## 函数原型
 
-```
-1. void SetPlacement(const TensorPlacement placement)
+```cpp
+void SetPlacement(const TensorPlacement placement)
 ```
 
 ## 参数说明
@@ -34,8 +34,8 @@ content_hash: sha256:deb0e72abcbe3b9561aad0c1a1014db11eaad5cde2d26876dc1b303cc1d
 
 ## 调用示例
 
-```
-1. auto addr = reinterpret_cast<void *>(0x10);
-2. TensorData td(addr, nullptr);
-3. auto td_place = td.SetPlacement(kOnHost);
+```cpp
+auto addr = reinterpret_cast<void *>(0x10);
+TensorData td(addr, nullptr);
+auto td_place = td.SetPlacement(kOnHost);
 ```

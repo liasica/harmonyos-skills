@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > toggle
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f7d14fa53945373503d2f2d6470a7283fc9f0f3335b22c1f132c95ddcdee0a78
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:637e7365d3610cbde4f8310142ebc7483bee8ea48c8bde2997413b15228b2fda
 ---
 
-说明
+**说明** 
 
 从API version 5开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:f7d14fa53945373503d2f2d6470a7283fc9f0f3335b22c1f132c95ddcde
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | checked | boolean | false | 否 | 状态按钮是否被选中。true表示选中，false表示未选中。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
@@ -54,95 +46,89 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
-| change | { checked：isChecked } | 组件选中状态发生变化时触发。 |
+| change | { checked: isChecked } | 组件选中状态发生变化时触发。 |
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div style="flex-direction: column;">
-3. <text class="margin">1. Multiple choice example</text>
-4. <div style="flex-wrap: wrap">
-5. <toggle class="margin" for="{{toggles}}">{{$item}}</toggle>
-6. </div>
-7. <text class="margin">2. Single choice example</text>
-8. <div style="flex-wrap: wrap">
-9. <toggle class="margin" for="{{toggle_list}}" id="{{$item.id}}" checked="{{$item.checked}}"
-10. value="{{$item.name}}" @change="allchange" @click="allclick({{$item.id}})"></toggle>
-11. </div>
-12. </div>
+```html
+<!-- xxx.hml -->
+<div style="flex-direction: column;">
+  <text class="margin">1. Multiple choice example</text>
+  <div style="flex-wrap: wrap">
+    <toggle class="margin" for="{{toggles}}">{{$item}}</toggle>
+  </div>
+  <text class="margin">2. Single choice example</text>
+  <div style="flex-wrap: wrap">
+    <toggle class="margin" for="{{toggle_list}}" id="{{$item.id}}" checked="{{$item.checked}}"
+      value="{{$item.name}}" @change="allchange" @click="allclick({{$item.id}})"></toggle>
+  </div>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .margin {
-3. margin: 7px;
-4. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. toggle_list: [
-5. {
-6. "id": "1001", "name": "Living room", "checked": true
-7. },
-8. {
-9. "id": "1002", "name": "Bedroom", "checked": false
-10. },
-11. {
-12. "id": "1003", "name": "Second bedroom", "checked": false
-13. },
-14. {
-15. "id": "1004", "name": "Kitchen", "checked": false
-16. },
-17. {
-18. "id": "1005", "name": "Study", "checked": false
-19. },
-20. {
-21. "id": "1006", "name": "Garden", "checked": false
-22. },
-23. {
-24. "id": "1007", "name": "Bathroom", "checked": false
-25. },
-26. {
-27. "id": "1008", "name": "Balcony", "checked": false
-28. },
-29. ],
-30. toggles: ["Living room", "Bedroom", "Kitchen", "Study"],
-31. idx: ""
-32. },
-33. allclick(arg) {
-34. this.idx = arg;
-35. },
-36. allchange(e) {
-37. if (e.checked != true) {
-38. return;
-39. }
-40. for (var i = 0; i < this.toggle_list.length; i++) {
-41. if (this.toggle_list[i].id === this.idx) {
-42. this.toggle_list[i].checked = true;
-43. } else {
-44. this.toggle_list[i].checked = false;
-45. }
-46. }
-47. }
-48. }
+```css
+/* xxx.css */
+.margin {
+  margin: 7px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/5soaElyaTzyX62Ltviu5Cg/zh-cn_image_0000002589246537.png)
+```js
+// xxx.js
+export default {
+    data: {
+        toggle_list: [
+            {
+                "id": "1001", "name": "Living room", "checked": true
+            },
+            {
+                "id": "1002", "name": "Bedroom", "checked": false
+            },
+            {
+                "id": "1003", "name": "Second bedroom", "checked": false
+            },
+            {
+                "id": "1004", "name": "Kitchen", "checked": false
+            },
+            {
+                "id": "1005", "name": "Study", "checked": false
+            },
+            {
+                "id": "1006", "name": "Garden", "checked": false
+            },
+            {
+                "id": "1007", "name": "Bathroom", "checked": false
+            },
+            {
+                "id": "1008", "name": "Balcony", "checked": false
+            },
+        ],
+        toggles: ["Living room", "Bedroom", "Kitchen", "Study"],
+        idx: ""
+    },
+    allclick(arg) {
+        this.idx = arg;
+    },
+    allchange(e) {
+        if (e.checked != true) {
+            return;
+        }
+        for (var i = 0; i < this.toggle_list.length; i++) {
+            if (this.toggle_list[i].id === this.idx) {
+                this.toggle_list[i].checked = true;
+            } else {
+                this.toggle_list[i].checked = false;
+            }
+        }
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/UDkhpsrrRm-0Tt0nSYy-tA/zh-cn_image_0000002706836394.png)

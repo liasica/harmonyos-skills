@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nfc.tag (标准NFC-Tag)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.tag (标准NFC-Tag)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:58:33+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:c9e4f884594aafb5c1e67de39dfffb6a38a9398c33ded5d53be9e9909a55b2b6
+scraped_at: 2026-09-02T15:01:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eb6ff90ed3df99ff4de99c0a2e82ebadc32e84b64fc705f7e9d2fb0192f5c3d9
 ---
 
 本模块主要用于操作及管理NFC Tag，提供后台读卡和前台应用优先分发两种读卡模式。
@@ -14,94 +14,88 @@ content_hash: sha256:c9e4f884594aafb5c1e67de39dfffb6a38a9398c33ded5d53be9e9909a5
 
 前台读卡是指提前打开应用程序，并进入对应的NFC读卡页面后读卡，只会把读到的标签卡片信息分发给前台应用程序。
 
-说明
+**说明** 
 
 1. 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-2. 调用本模块接口和常量时请使用canIUse("SystemCapability.Communication.NFC.Tag")判断设备是否支持NFC能力，否则可能导致应用运行稳定性问题，参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-access-guide.md)。
+2. API版本26.0.0前请使用[canIUse("SystemCapability.Communication.NFC.Tag")](syscap__ndk_8h.md#caniuse) && [nfcController.isNfcAvailable](js-apis-nfccontroller.md#nfccontrollerisnfcsupported)判断设备是否支持NFC能力。从API版本26.0.0开始请使用[canIUse("SystemCapability.Communication.NFC.Tag")](syscap__ndk_8h.md#caniuse) && [nfcController.isNfcSupported](js-apis-nfccontroller.md#nfccontrollerisnfcsupported)共同判断设备是否支持NFC能力更加准确，否则可能导致应用运行稳定性问题，参考[nfc-tag开发指南](../harmonyos-guides/nfc-tag-access-guide.md)。
 3. 导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md)。
 
 ## **导入模块**
 
-PhoneWearable
-
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 ```
 
-## **tag.TagInfo**
-
-PhoneWearable
+## **tag.TagInfo示例**
 
 在对相关Tag类型卡片进行读写之前，必须先获取[TagInfo](js-apis-nfctag.md#taginfo)相关属性值，以确认设备读取到的Tag卡片支持哪些技术类型。这样Tag应用程序才能调用正确的接口和所读取到的Tag卡片进行通信。
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want : Want, launchParam: AbilityConstant.LaunchParam) {
-6. // 添加其他功能代码...
+export default class EntryAbility extends UIAbility {
+    onCreate(want : Want, launchParam: AbilityConstant.LaunchParam) {
+        // 添加其他功能代码...
 
-8. // want由nfc服务初始化，包含找到的tag
-9. let tagInfo : tag.TagInfo | null = null;
-10. try {
-11. tagInfo = tag.getTagInfo(want);
-12. } catch (error) {
-13. console.error("tag.getTagInfo catch error: " + error);
-14. }
-15. if (tagInfo == null) {
-16. console.error("no TagInfo to be created, ignore it.");
-17. return;
-18. }
+        // want由nfc服务初始化，包含找到的tag
+        let tagInfo : tag.TagInfo | null = null;
+        try {
+            tagInfo = tag.getTagInfo(want);
+        } catch (error) {
+            console.error("tag.getTagInfo catch error: " + error);
+        }
+        if (tagInfo == null) {
+            console.error("no TagInfo to be created, ignore it.");
+            return;
+        }
 
-20. // 获取发现标签的支持技术
-21. let isNfcATag =  false;
-22. let isIsoDepTag =  false;
-23. for (let i = 0; i < tagInfo.technology.length; i++) {
-24. if (tagInfo.technology[i] == tag.NFC_A) {
-25. isNfcATag = true;
-26. }
-27. if (tagInfo.technology[i] == tag.ISO_DEP) {
-28. isIsoDepTag = true;
-29. }
-30. // 检查其他技术类型: tag.NFC_B/NFC_F/NFC_V/NDEF/MIFARE_CLASSIC/MIFARE_ULTRALIGHT/NDEF_FORMATABLE
-31. }
+        // 获取发现标签的支持技术
+        let isNfcATag =  false;
+        let isIsoDepTag =  false;
+        for (let i = 0; i < tagInfo.technology.length; i++) {
+            if (tagInfo.technology[i] == tag.NFC_A) {
+                isNfcATag = true;
+            }
+            if (tagInfo.technology[i] == tag.ISO_DEP) {
+                isIsoDepTag = true;
+            }
+        // 检查其他技术类型：tag.NFC_B/NFC_F/NFC_V/NDEF/MIFARE_CLASSIC/MIFARE_ULTRALIGHT/NDEF_FORMATABLE
+        }
 
-33. // 使用 NfcA APIs 去访问发现的标签
-34. if (isNfcATag) {
-35. let nfcA : tag.NfcATag | null = null;
-36. try {
-37. nfcA = tag.getNfcA(tagInfo);
-38. } catch (error) {
-39. console.error("tag.getNfcA catch error: " + error);
-40. }
-41. // 其他代码：对发现的标签执行读取或写入
-42. }
+        // 使用 NfcA APIs 去访问发现的标签
+        if (isNfcATag) {
+            let nfcA : tag.NfcATag | null = null;
+            try {
+                nfcA = tag.getNfcA(tagInfo);
+            } catch (error) {
+                console.error("tag.getNfcA catch error: " + error);
+            }
+            // 其他代码：对发现的标签执行读取或写入
+        }
 
-44. // 使用 IsoDep APIs 去访问发现的标签
-45. if (isIsoDepTag) {
-46. let isoDep : tag.IsoDepTag | null = null;
-47. try {
-48. isoDep = tag.getIsoDep(tagInfo);
-49. } catch (error) {
-50. console.error("tag.getIsoDep catch error: " + error);
-51. }
-52. // 其他代码：对发现的标签执行读取或写入
-53. }
-54. // 使用相同的代码来处理 "NfcA/NfcB/NfcF/NfcV/Ndef/MifareClassic/MifareUL/NdefFormatable".
-55. }
-56. }
+        // 使用 IsoDep APIs 去访问发现的标签
+        if (isIsoDepTag) {
+            let isoDep : tag.IsoDepTag | null = null;
+            try {
+                isoDep = tag.getIsoDep(tagInfo);
+            } catch (error) {
+                console.error("tag.getIsoDep catch error: " + error);
+            }
+            // 其他代码：对发现的标签执行读取或写入
+        }
+        // 使用相同的代码来处理 "NfcA/NfcB/NfcF/NfcV/Ndef/MifareClassic/MifareUL/NdefFormatable"。
+    }
+}
 ```
 
 ## tag.getNfcATag(deprecated)
-
-PhoneWearable
 
 getNfcATag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcATag](js-apis-nfctech.md#nfcatag)
 
 获取NFC A类型Tag对象，通过该对象可访问NfcA技术类型的Tag。
 
-说明
+**说明** 
 
 从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[tag.getNfcA](js-apis-nfctag.md#taggetnfca9)替代。
 
@@ -120,8 +114,6 @@ getNfcATag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcATag](js-apis-nfc
 | [NfcATag](js-apis-nfctech.md#nfcatag) | NFC A类型Tag对象。 |
 
 ## tag.getNfcA9+
-
-PhoneWearable
 
 getNfcA(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcATag](js-apis-nfctech.md#nfcatag)
 
@@ -155,13 +147,11 @@ getNfcA(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcATag](js-apis-nfctec
 
 ## tag.getNfcBTag(deprecated)
 
-PhoneWearable
-
 getNfcBTag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcBTag](js-apis-nfctech.md#nfcbtag)
 
 获取NFC B类型Tag对象，通过该对象可访问NfcB技术类型的Tag。
 
-说明
+**说明** 
 
 从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[tag.getNfcB](js-apis-nfctag.md#taggetnfcb9)替代。
 
@@ -180,8 +170,6 @@ getNfcBTag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcBTag](js-apis-nfc
 | [NfcBTag](js-apis-nfctech.md#nfcbtag) | NFC B类型Tag对象。 |
 
 ## tag.getNfcB9+
-
-PhoneWearable
 
 getNfcB(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcBTag](js-apis-nfctech.md#nfcbtag)
 
@@ -215,13 +203,11 @@ getNfcB(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcBTag](js-apis-nfctec
 
 ## tag.getNfcFTag(deprecated)
 
-PhoneWearable
-
 getNfcFTag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcFTag](js-apis-nfctech.md#nfcftag)
 
 获取NFC F类型Tag对象，通过该对象可访问NfcF技术类型的Tag。
 
-说明
+**说明** 
 
 从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[tag.getNfcF](js-apis-nfctag.md#taggetnfcf9)替代。
 
@@ -240,8 +226,6 @@ getNfcFTag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcFTag](js-apis-nfc
 | [NfcFTag](js-apis-nfctech.md#nfcftag) | NFC F类型Tag对象。 |
 
 ## tag.getNfcF9+
-
-PhoneWearable
 
 getNfcF(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcFTag](js-apis-nfctech.md#nfcftag)
 
@@ -275,13 +259,11 @@ getNfcF(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcFTag](js-apis-nfctec
 
 ## tag.getNfcVTag(deprecated)
 
-PhoneWearable
-
 getNfcVTag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcVTag](js-apis-nfctech.md#nfcvtag)
 
 获取NFC V类型Tag对象，通过该对象可访问NfcV技术类型的Tag。
 
-说明
+**说明** 
 
 从 API version 7 开始支持，从 API version 9 开始废弃，建议使用[tag.getNfcV](js-apis-nfctag.md#taggetnfcv9)替代。
 
@@ -300,8 +282,6 @@ getNfcVTag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcVTag](js-apis-nfc
 | [NfcVTag](js-apis-nfctech.md#nfcvtag) | NFC V类型Tag对象。 |
 
 ## tag.getNfcV9+
-
-PhoneWearable
 
 getNfcV(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcVTag](js-apis-nfctech.md#nfcvtag)
 
@@ -335,8 +315,6 @@ getNfcV(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NfcVTag](js-apis-nfctec
 
 ## tag.getIsoDep9+
 
-PhoneWearable
-
 getIsoDep(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [IsoDepTag](js-apis-nfctech.md#isodeptag9)
 
 获取IsoDep类型Tag对象，通过该对象可访问支持IsoDep技术类型的Tag。
@@ -368,8 +346,6 @@ getIsoDep(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [IsoDepTag](js-apis-nf
 | 3100201 | The tag running state is abnormal in the service. |
 
 ## tag.getNdef9+
-
-PhoneWearable
 
 getNdef(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NdefTag](js-apis-nfctech.md#ndeftag9)
 
@@ -403,8 +379,6 @@ getNdef(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NdefTag](js-apis-nfctec
 
 ## tag.getMifareClassic9+
 
-PhoneWearable
-
 getMifareClassic(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [MifareClassicTag](js-apis-nfctech.md#mifareclassictag9)
 
 获取MIFARE Classic类型Tag对象，通过该对象访问支持MIFARE Classic技术类型的Tag。
@@ -436,8 +410,6 @@ getMifareClassic(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [MifareClassicT
 | 3100201 | The tag running state is abnormal in the service. |
 
 ## tag.getMifareUltralight9+
-
-PhoneWearable
 
 getMifareUltralight(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [MifareUltralightTag](js-apis-nfctech.md#mifareultralighttag9)
 
@@ -471,8 +443,6 @@ getMifareUltralight(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [MifareUltra
 
 ## tag.getNdefFormatable9+
 
-PhoneWearable
-
 getNdefFormatable(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NdefFormatableTag](js-apis-nfctech.md#ndefformatabletag9)
 
 获取NDEF Formatable类型Tag对象，通过该对象可访问支持NDEF Formatable技术类型的Tag。
@@ -504,8 +474,6 @@ getNdefFormatable(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [NdefFormatabl
 | 3100201 | The tag running state is abnormal in the service. |
 
 ## tag.getBarcodeTag18+
-
-PhoneWearable
 
 getBarcodeTag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [BarcodeTag](js-apis-nfctech.md#barcodetag18)
 
@@ -539,8 +507,6 @@ getBarcodeTag(tagInfo: [TagInfo](js-apis-nfctag.md#taginfo)): [BarcodeTag](js-ap
 
 ## tag.getTagInfo9+
 
-PhoneWearable
-
 getTagInfo(want: [Want](js-apis-app-ability-want.md#want)): [TagInfo](js-apis-nfctag.md#taginfo)
 
 从Want中获取TagInfo，Want是被NFC服务初始化，包含了TagInfo所需的属性值。
@@ -572,8 +538,6 @@ getTagInfo(want: [Want](js-apis-app-ability-want.md#want)): [TagInfo](js-apis-nf
 
 ## tag.registerForegroundDispatch10+
 
-PhoneWearable
-
 registerForegroundDispatch(elementName: [ElementName](js-apis-bundlemanager-elementname.md), discTech: number[], callback: AsyncCallback<[TagInfo](js-apis-nfctag.md#taginfo)>): void
 
 注册对NFC Tag读卡事件的监听，实现前台应用优先分发的目的。通过discTech设置支持的读卡技术类型，通过callback方式获取读取到Tag的[TagInfo](js-apis-nfctag.md#taginfo)信息。应用必须在前台才能调用。需要与取消监听接口[tag.unregisterForegroundDispatch](js-apis-nfctag.md#tagunregisterforegrounddispatch10)成对使用。如果已注册事件监听，需要在页面退出前台或页面销毁前调用取消注册。使用callback异步回调。
@@ -589,7 +553,7 @@ registerForegroundDispatch(elementName: [ElementName](js-apis-bundlemanager-elem
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | elementName | [ElementName](js-apis-bundlemanager-elementname.md) | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值），不可以为空。 |
-| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，不可以为空，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含[NFC\_A](js-apis-nfctag.md#常量), [NFC\_B](js-apis-nfctag.md#常量), [NFC\_F](js-apis-nfctag.md#常量), [NFC\_V](js-apis-nfctag.md#常量)中的一种或多种）。 |
+| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，不可以为空，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值类型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含[NFC\_A](js-apis-nfctag.md#常量), [NFC\_B](js-apis-nfctag.md#常量), [NFC\_F](js-apis-nfctag.md#常量), [NFC\_V](js-apis-nfctag.md#常量)中的一种或多种）。 |
 | callback | AsyncCallback<[TagInfo](js-apis-nfctag.md#taginfo)> | 是 | 前台读卡监听回调函数，返回读到的Tag信息，不可以为空。 |
 
 **错误码：**
@@ -609,8 +573,6 @@ registerForegroundDispatch(elementName: [ElementName](js-apis-bundlemanager-elem
 示例请参见[tag.unregisterForegroundDispatch](js-apis-nfctag.md#tagunregisterforegrounddispatch10)接口的示例。
 
 ## tag.unregisterForegroundDispatch10+
-
-PhoneWearable
 
 unregisterForegroundDispatch(elementName: [ElementName](js-apis-bundlemanager-elementname.md)): void
 
@@ -641,71 +603,69 @@ unregisterForegroundDispatch(elementName: [ElementName](js-apis-bundlemanager-el
 
 **示例：**
 
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { AbilityConstant, UIAbility, Want, bundleManager } from '@kit.AbilityKit';
+
+let discTech : number[] = [tag.NFC_A, tag.NFC_B]; // 用前台ability时所需要的技术代替
+let elementName : bundleManager.ElementName;
+function foregroundCb(err : BusinessError, tagInfo : tag.TagInfo) {
+    if (!err) {
+        console.info("foreground callback: tag found tagInfo = ", JSON.stringify(tagInfo));
+    } else {
+        console.error("foreground callback err: " + err.message);
+        return;
+    }
+  // taginfo的其他操作
+}
+
+export default class MainAbility extends UIAbility {
+    OnCreate(want : Want, launchParam : AbilityConstant.LaunchParam) {
+        console.info("OnCreate");
+        elementName = {
+            bundleName: want.bundleName as string,
+            abilityName: want.abilityName as string,
+            moduleName: want.moduleName as string
+        }
+    }
+
+    onForeground() {
+        console.info("onForeground");
+        try {
+            tag.registerForegroundDispatch(elementName, discTech, foregroundCb);
+        } catch (e) {
+            console.error("registerForegroundDispatch error: " + (e as BusinessError).message);
+        }
+    }
+
+    onBackground() {
+        console.info("onBackground");
+        try {
+            tag.unregisterForegroundDispatch(elementName);
+        } catch (e) {
+            console.error("unregisterForegroundDispatch error: " + (e as BusinessError).message);
+        }
+    }
+
+    onWindowStageDestroy() {
+        console.info("onWindowStageDestroy");
+        try {
+            tag.unregisterForegroundDispatch(elementName);
+        } catch (e) {
+            console.error("unregisterForegroundDispatch error: " + (e as BusinessError).message);
+        }
+    }
+
+  // ability生命周期内的其他功能
+}
 ```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { AbilityConstant, UIAbility, Want, bundleManager } from '@kit.AbilityKit';
 
-5. let discTech : number[] = [tag.NFC_A, tag.NFC_B]; // 用前台ability时所需要的技术代替
-6. let elementName : bundleManager.ElementName;
-7. function foregroundCb(err : BusinessError, tagInfo : tag.TagInfo) {
-8. if (!err) {
-9. console.info("foreground callback: tag found tagInfo = ", JSON.stringify(tagInfo));
-10. } else {
-11. console.error("foreground callback err: " + err.message);
-12. return;
-13. }
-14. // taginfo的其他操作
-15. }
-
-17. export default class MainAbility extends UIAbility {
-18. OnCreate(want : Want, launchParam : AbilityConstant.LaunchParam) {
-19. console.info("OnCreate");
-20. elementName = {
-21. bundleName: want.bundleName as string,
-22. abilityName: want.abilityName as string,
-23. moduleName: want.moduleName as string
-24. }
-25. }
-
-27. onForeground() {
-28. console.info("onForeground");
-29. try {
-30. tag.registerForegroundDispatch(elementName, discTech, foregroundCb);
-31. } catch (e) {
-32. console.error("registerForegroundDispatch error: " + (e as BusinessError).message);
-33. }
-34. }
-
-36. onBackground() {
-37. console.info("onBackground");
-38. try {
-39. tag.unregisterForegroundDispatch(elementName);
-40. } catch (e) {
-41. console.error("unregisterForegroundDispatch error: " + (e as BusinessError).message);
-42. }
-43. }
-
-45. onWindowStageDestroy() {
-46. console.info("onWindowStageDestroy");
-47. try {
-48. tag.unregisterForegroundDispatch(elementName);
-49. } catch (e) {
-50. console.error("unregisterForegroundDispatch error: " + (e as BusinessError).message);
-51. }
-52. }
-
-54. // ability生命周期内的其他功能
-55. }
-```
-
-## tag.on11+
-
-PhoneWearable
+## tag.on('readerMode')11+
 
 on(type: 'readerMode', elementName: [ElementName](js-apis-bundlemanager-elementname.md), discTech: number[], callback: AsyncCallback<[TagInfo](js-apis-nfctag.md#taginfo)>): void
 
-订阅NFC Tag读卡事件，实现前台应用优先分发。设备会进入读卡器模式，同时关闭卡模拟。通过discTech设置支持的读卡技术类型，通过callback方式获取到Tag的[TagInfo](js-apis-nfctag.md#taginfo)信息。需要与取消读卡器模式的[tag.off](js-apis-nfctag.md#tagoff11)成对使用，如果已通过on进行设置，需要在页面退出前台或页面销毁时调用[tag.off](js-apis-nfctag.md#tagoff11)。使用callback异步回调。
+订阅NFC Tag读卡事件，实现前台应用优先分发。设备会进入读卡器模式，同时关闭卡模拟。通过discTech设置支持的读卡技术类型，通过callback方式获取到Tag的[TagInfo](js-apis-nfctag.md#taginfo)信息。需要与取消读卡器模式的[tag.off](js-apis-nfctag.md#tagoffreadermode11)成对使用，如果已通过on进行设置，需要在页面退出前台或页面销毁时调用[tag.off](js-apis-nfctag.md#tagoffreadermode11)。使用callback异步回调。与注册读卡器模式的[tag.on](js-apis-nfctag.md#tagonreadermodewithinterval23)互斥使用。
 
 **需要权限：** ohos.permission.NFC\_TAG
 
@@ -719,7 +679,7 @@ on(type: 'readerMode', elementName: [ElementName](js-apis-bundlemanager-elementn
 | --- | --- | --- | --- |
 | type | string | 是 | 要注册的回调类型，固定填"readerMode"字符串。 |
 | elementName | [ElementName](js-apis-bundlemanager-elementname.md) | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值），不可以为空。 |
-| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，不可以为空，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含[NFC\_A](js-apis-nfctag.md#常量), [NFC\_B](js-apis-nfctag.md#常量), [NFC\_F](js-apis-nfctag.md#常量), [NFC\_V](js-apis-nfctag.md#常量)中的一种或多种）。 |
+| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，不可以为空，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值类型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含[NFC\_A](js-apis-nfctag.md#常量), [NFC\_B](js-apis-nfctag.md#常量), [NFC\_F](js-apis-nfctag.md#常量), [NFC\_V](js-apis-nfctag.md#常量), [SKIP\_NDEF](js-apis-nfctag.md#常量)中的一种或多种）。 |
 | callback | AsyncCallback<[TagInfo](js-apis-nfctag.md#taginfo)> | 是 | 读卡器模式监听回调函数，返回读到的Tag信息，不可以为空。 |
 
 **错误码：**
@@ -736,15 +696,13 @@ on(type: 'readerMode', elementName: [ElementName](js-apis-bundlemanager-elementn
 
 **示例：**
 
-示例请参见[tag.off](js-apis-nfctag.md#tagoff11)接口的示例。
+示例请参见[tag.off](js-apis-nfctag.md#tagoffreadermode11)接口的示例。
 
-## tag.off11+
-
-PhoneWearable
+## tag.off('readerMode')11+
 
 off(type: 'readerMode', elementName: [ElementName](js-apis-bundlemanager-elementname.md), callback?: AsyncCallback<[TagInfo](js-apis-nfctag.md#taginfo)>): void
 
-取消订阅NFC Tag读卡事件。设备退出读卡模式，并恢复卡模拟。如果已通过[tag.on](js-apis-nfctag.md#tagon11)设置NFC的读卡器模式，需要在页面退出前台或页面销毁时调用off进行取消。
+取消订阅NFC Tag读卡事件。设备退出读卡模式，并恢复卡模拟。如果已通过[tag.on](js-apis-nfctag.md#tagonreadermode11)设置NFC的读卡器模式，需要在页面退出前台或页面销毁时调用off进行取消。
 
 **需要权限：** ohos.permission.NFC\_TAG
 
@@ -758,7 +716,7 @@ off(type: 'readerMode', elementName: [ElementName](js-apis-bundlemanager-element
 | --- | --- | --- | --- |
 | type | string | 是 | 要注销的回调类型，固定填"readerMode"字符串。 |
 | elementName | [ElementName](js-apis-bundlemanager-elementname.md) | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值），不可以为空。 |
-| callback | AsyncCallback<[TagInfo](js-apis-nfctag.md#taginfo)> | 否 | 前台读卡监听回调函数，返回读到的Tag信息。 |
+| callback | AsyncCallback<[TagInfo](js-apis-nfctag.md#taginfo)> | 否 | 前台读卡监听回调函数，返回读到的Tag信息。不填该参数则取消订阅该type对应的读卡回调。 |
 
 **错误码：**
 
@@ -774,68 +732,66 @@ off(type: 'readerMode', elementName: [ElementName](js-apis-bundlemanager-element
 
 **示例：**
 
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { AbilityConstant, UIAbility, Want, bundleManager } from '@kit.AbilityKit';
+
+let discTech : number[] = [tag.NFC_A, tag.NFC_B]; // 用前台ability时所需要的技术代替
+let elementName : bundleManager.ElementName;
+
+function readerModeCb(err : BusinessError, tagInfo : tag.TagInfo) {
+    if (!err) {
+        console.info("offCallback: tag found tagInfo = ", JSON.stringify(tagInfo));
+    } else {
+        console.error("offCallback err: " + err.message);
+        return;
+    }
+  // taginfo的其他操作
+}
+
+export default class MainAbility extends UIAbility {
+    OnCreate(want : Want, launchParam : AbilityConstant.LaunchParam) {
+        console.info("OnCreate");
+        elementName = {
+            bundleName: want.bundleName as string,
+            abilityName: want.abilityName as string,
+            moduleName: want.moduleName as string
+        }
+    }
+
+    onForeground() {
+        console.info("on start");
+        try {
+            tag.on('readerMode', elementName, discTech, readerModeCb);
+        } catch (e) {
+            console.error("tag.on error: " + (e as BusinessError).message);
+        }
+    }
+
+    onBackground() {
+        console.info("onBackground");
+        try {
+            tag.off('readerMode', elementName, readerModeCb);
+        } catch (e) {
+            console.error("tag.off error: " + (e as BusinessError).message);
+        }
+    }
+
+    onWindowStageDestroy() {
+        console.info("onWindowStageDestroy");
+        try {
+            tag.off('readerMode', elementName, readerModeCb);
+        } catch (e) {
+            console.error("tag.off error: " + (e as BusinessError).message);
+        }
+    }
+
+  // ability生命周期内的其他功能
+}
 ```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { AbilityConstant, UIAbility, Want, bundleManager } from '@kit.AbilityKit';
 
-5. let discTech : number[] = [tag.NFC_A, tag.NFC_B]; // 用前台ability时所需要的技术代替
-6. let elementName : bundleManager.ElementName;
-
-8. function readerModeCb(err : BusinessError, tagInfo : tag.TagInfo) {
-9. if (!err) {
-10. console.info("offCallback: tag found tagInfo = ", JSON.stringify(tagInfo));
-11. } else {
-12. console.error("offCallback err: " + err.message);
-13. return;
-14. }
-15. // taginfo的其他操作
-16. }
-
-18. export default class MainAbility extends UIAbility {
-19. OnCreate(want : Want, launchParam : AbilityConstant.LaunchParam) {
-20. console.info("OnCreate");
-21. elementName = {
-22. bundleName: want.bundleName as string,
-23. abilityName: want.abilityName as string,
-24. moduleName: want.moduleName as string
-25. }
-26. }
-
-28. onForeground() {
-29. console.info("on start");
-30. try {
-31. tag.on('readerMode', elementName, discTech, readerModeCb);
-32. } catch (e) {
-33. console.error("tag.on error: " + (e as BusinessError).message);
-34. }
-35. }
-
-37. onBackground() {
-38. console.info("onBackground");
-39. try {
-40. tag.off('readerMode', elementName, readerModeCb);
-41. } catch (e) {
-42. console.error("tag.off error: " + (e as BusinessError).message);
-43. }
-44. }
-
-46. onWindowStageDestroy() {
-47. console.info("onWindowStageDestroy");
-48. try {
-49. tag.off('readerMode', elementName, readerModeCb);
-50. } catch (e) {
-51. console.error("tag.off error: " + (e as BusinessError).message);
-52. }
-53. }
-
-55. // ability生命周期内的其他功能
-56. }
-```
-
-## tag.on23+
-
-PhoneWearable
+## tag.on('readerModeWithInterval')23+
 
 on(type: 'readerModeWithInterval', elementName: ElementName, discTech: number[], callback: Callback<TagInfo>, interval: number): void
 
@@ -843,7 +799,8 @@ on(type: 'readerModeWithInterval', elementName: ElementName, discTech: number[],
 
 * 设备会进入读卡器模式，同时关闭卡模拟。
 * 通过discTech设置支持的读卡技术类型，通过callback方式获取到Tag的[TagInfo](js-apis-nfctag.md#taginfo)信息，通过interval设置卡在位检测间隔。
-* 需要与取消读卡器模式的[tag.off](js-apis-nfctag.md#tagoff23)成对使用，如果已通过on进行设置，需要在页面退出前台或页面销毁时调用[tag.off](js-apis-nfctag.md#tagoff23)。
+* 需要与取消读卡器模式的[tag.off](js-apis-nfctag.md#tagoffreadermodewithinterval23)成对使用，如果已通过on进行设置，需要在页面退出前台或页面销毁时调用[tag.off](js-apis-nfctag.md#tagoffreadermodewithinterval23)。
+* 与注册读卡器模式的[tag.on](js-apis-nfctag.md#tagonreadermode11)互斥使用。
 
 **需要权限：** ohos.permission.NFC\_TAG
 
@@ -857,9 +814,9 @@ on(type: 'readerModeWithInterval', elementName: ElementName, discTech: number[],
 | --- | --- | --- | --- |
 | type | string | 是 | 要注册的回调类型，固定填"readerModeWithInterval"字符串。 |
 | elementName | [ElementName](js-apis-bundlemanager-elementname.md) | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值）。 |
-| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含[NFC\_A](js-apis-nfctag.md#常量), [NFC\_B](js-apis-nfctag.md#常量), [NFC\_F](js-apis-nfctag.md#常量), [NFC\_V](js-apis-nfctag.md#常量)中的一种或多种）。 |
+| discTech | number[] | 是 | 前台应用指定的NFC读卡技术类型，至少指定一种读卡技术类型。每个number值表示所支持技术类型的常量值类型，根据number值设置NFC读卡轮询的Tag技术类型（仅包含[NFC\_A](js-apis-nfctag.md#常量), [NFC\_B](js-apis-nfctag.md#常量), [NFC\_F](js-apis-nfctag.md#常量), [NFC\_V](js-apis-nfctag.md#常量), [SKIP\_NDEF](js-apis-nfctag.md#常量)中的一种或多种）。 |
 | callback | Callback<[TagInfo](js-apis-nfctag.md#taginfo)> | 是 | 读卡器模式监听回调函数，返回读到的Tag信息。 |
-| interval | number | 是 | 设置卡在位检测间隔，单位为ms。 |
+| interval | number | 是 | 设置卡在位检测间隔，单位为ms。推荐范围100-2000，若传入负值则不生效，系统会使用默认卡在位间隔（150ms）。 |
 
 **错误码：**
 
@@ -874,15 +831,13 @@ on(type: 'readerModeWithInterval', elementName: ElementName, discTech: number[],
 
 **示例：**
 
-示例请参见[tag.off](js-apis-nfctag.md#tagoff23)接口的示例。
+示例请参见[tag.off](js-apis-nfctag.md#tagoffreadermodewithinterval23)接口的示例。
 
-## tag.off23+
-
-PhoneWearable
+## tag.off('readerModeWithInterval')23+
 
 off(type: 'readerModeWithInterval', elementName: ElementName, callback?: Callback<TagInfo>): void
 
-取消订阅NFC Tag读卡事件。设备退出读卡模式，并恢复卡模拟。如果已通过[tag.on](js-apis-nfctag.md#tagon23)设置NFC的读卡器模式，需要在页面退出前台或页面销毁时调用off进行取消。使用callback异步回调。
+取消订阅NFC Tag读卡事件。设备退出读卡模式，并恢复卡模拟。如果已通过[tag.on](js-apis-nfctag.md#tagonreadermodewithinterval23)设置NFC的读卡器模式，需要在页面退出前台或页面销毁时调用[tag.off](js-apis-nfctag.md#tagoffreadermodewithinterval23)进行取消。使用callback异步回调。
 
 **需要权限：** ohos.permission.NFC\_TAG
 
@@ -896,7 +851,7 @@ off(type: 'readerModeWithInterval', elementName: ElementName, callback?: Callbac
 | --- | --- | --- | --- |
 | type | string | 是 | 要注销的回调类型，固定填"readerModeWithInterval"字符串。 |
 | elementName | [ElementName](js-apis-bundlemanager-elementname.md) | 是 | 所属应用读卡的页面信息（至少包含bundleName、abilityName这两项的赋值）。 |
-| callback | Callback<[TagInfo](js-apis-nfctag.md#taginfo)> | 否 | 前台读卡监听回调函数，返回读到的Tag信息。 |
+| callback | Callback<[TagInfo](js-apis-nfctag.md#taginfo)> | 否 | 前台读卡监听回调函数，返回读到的Tag信息。不填该参数则取消订阅该type对应的读卡回调。 |
 
 **错误码：**
 
@@ -911,69 +866,66 @@ off(type: 'readerModeWithInterval', elementName: ElementName, callback?: Callbac
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { AbilityConstant, UIAbility, Want, bundleManager } from '@kit.AbilityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { AbilityConstant, UIAbility, Want, bundleManager } from '@kit.AbilityKit';
 
-5. let discTech : number[] = [tag.NFC_A, tag.NFC_B]; // 用前台ability时所需要的技术代替
-6. let elementName : bundleManager.ElementName;
-7. let interval : number = 200;
+let discTech : number[] = [tag.NFC_A, tag.NFC_B]; // 用前台ability时所需要的技术代替
+let elementName : bundleManager.ElementName;
+let interval : number = 200;
 
-9. function readerModeCb(err : BusinessError, tagInfo : tag.TagInfo) {
-10. if (!err) {
-11. console.info("offCallback: tag found tagInfo = ", JSON.stringify(tagInfo));
-12. } else {
-13. console.error("offCallback err: " + err.message);
-14. return;
-15. }
-16. // taginfo的其他操作
-17. }
+function readerModeCb(tagInfo: tag.TagInfo) {
+    if (tagInfo == null) {
+      console.error('readerModeWithInterval tagInfo is invalid');
+      return;
+    }
+    console.info("readerModeWithInterval: tag found tagInfo = ", JSON.stringify(tagInfo));
+  // taginfo的其他操作
+}
 
-19. export default class MainAbility extends UIAbility {
-20. OnCreate(want : Want, launchParam : AbilityConstant.LaunchParam) {
-21. console.info("OnCreate");
-22. elementName = {
-23. bundleName: want.bundleName as string,
-24. abilityName: want.abilityName as string,
-25. moduleName: want.moduleName as string
-26. }
-27. }
+export default class MainAbility extends UIAbility {
+    OnCreate(want : Want, launchParam : AbilityConstant.LaunchParam) {
+        console.info("OnCreate");
+        elementName = {
+            bundleName: want.bundleName as string,
+            abilityName: want.abilityName as string,
+            moduleName: want.moduleName as string
+        }
+    }
 
-29. onForeground() {
-30. console.info("on start");
-31. try {
-32. tag.on('readerModeWithInterval', elementName, discTech, readerModeCb, interval);
-33. } catch (e) {
-34. console.error("tag.on error: " + (e as BusinessError).message);
-35. }
-36. }
+    onForeground() {
+        console.info("on start");
+        try {
+            tag.on('readerModeWithInterval', elementName, discTech, readerModeCb, interval);
+        } catch (e) {
+            console.error("tag.on error: " + (e as BusinessError).message);
+        }
+    }
 
-38. onBackground() {
-39. console.info("onBackground");
-40. try {
-41. tag.off('readerModeWithInterval', elementName, readerModeCb);
-42. } catch (e) {
-43. console.error("tag.off error: " + (e as BusinessError).message);
-44. }
-45. }
+    onBackground() {
+        console.info("onBackground");
+        try {
+            tag.off('readerModeWithInterval', elementName, readerModeCb);
+        } catch (e) {
+            console.error("tag.off error: " + (e as BusinessError).message);
+        }
+    }
 
-47. onWindowStageDestroy() {
-48. console.info("onWindowStageDestroy");
-49. try {
-50. tag.off('readerModeWithInterval', elementName, readerModeCb);
-51. } catch (e) {
-52. console.error("tag.off error: " + (e as BusinessError).message);
-53. }
-54. }
+    onWindowStageDestroy() {
+        console.info("onWindowStageDestroy");
+        try {
+            tag.off('readerModeWithInterval', elementName, readerModeCb);
+        } catch (e) {
+            console.error("tag.off error: " + (e as BusinessError).message);
+        }
+    }
 
-56. // ability生命周期内的其他功能
-57. }
+  // ability生命周期内的其他功能
+}
 ```
 
 ## tag.ndef.makeUriRecord9+
-
-PhoneWearable
 
 makeUriRecord(uri: string): NdefRecord
 
@@ -1005,30 +957,28 @@ makeUriRecord(uri: string): NdefRecord
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. try {
-4. let uri = "https://www.example.com"; // 修改为正确可用的uri
-5. let ndefRecord : tag.NdefRecord = tag.ndef.makeUriRecord(uri);
-6. if (ndefRecord != undefined) {
-7. console.info("ndefMessage makeUriRecord rtdType: " + ndefRecord.rtdType);
-8. console.info("ndefMessage makeUriRecord payload: " + ndefRecord.payload);
-9. } else {
-10. console.error("ndefMessage makeUriRecord ndefRecord: " + ndefRecord);
-11. }
-12. } catch (businessError) {
-13. console.error("ndefMessage makeUriRecord catch businessError: " + businessError);
-14. }
+try {
+    let uri = "https://www.example.com"; // 修改为正确可用的uri
+    let ndefRecord : tag.NdefRecord = tag.ndef.makeUriRecord(uri);
+    if (ndefRecord != undefined) {
+        console.info("ndefMessage makeUriRecord rtdType: " + ndefRecord.rtdType);
+        console.info("ndefMessage makeUriRecord payload: " + ndefRecord.payload);
+    } else {
+        console.error("ndefMessage makeUriRecord ndefRecord: " + ndefRecord);
+    }
+} catch (businessError) {
+    console.error("ndefMessage makeUriRecord catch businessError: " + businessError);
+}
 ```
 
 ## tag.ndef.makeTextRecord9+
 
-PhoneWearable
-
 makeTextRecord(text: string, locale: string): NdefRecord
 
-根据输入的文本数据和编码类型，构建NDEF标签的Record。
+根据输入的文本数据和语言类型，构建NDEF标签的Record。
 
 **系统能力：** SystemCapability.Communication.NFC.Tag
 
@@ -1038,8 +988,8 @@ makeTextRecord(text: string, locale: string): NdefRecord
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| text | string | 是 | 写入到NDEF Record里面的文本数据内容。 |
-| locale | string | 是 | 文本数据内容的编码方式。 |
+| text | string | 是 | 写入到NDEF Record里面的文本数据内容。长度小于待写入的NFC标签容量。 |
+| locale | string | 是 | Record中记录文本的语言类型。长度小于待写入的NFC标签容量。 |
 
 **返回值：**
 
@@ -1057,27 +1007,25 @@ makeTextRecord(text: string, locale: string): NdefRecord
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. try {
-4. let text = "Hello World";   // 修改为想要写入的文本
-5. let locale = "en"; // 修改为预期的编码格式
-6. let ndefRecord : tag.NdefRecord = tag.ndef.makeTextRecord(text, locale);
-7. if (ndefRecord != undefined) {
-8. console.info("ndefMessage makeTextRecord rtdType: " + ndefRecord.rtdType);
-9. console.info("ndefMessage makeTextRecord payload: " + ndefRecord.payload);
-10. } else {
-11. console.error("ndefMessage makeTextRecord ndefRecord: " + ndefRecord);
-12. }
-13. } catch (businessError) {
-14. console.error("ndefMessage makeTextRecord catch businessError: " + businessError);
-15. }
+try {
+    let text = "Hello World";   // 修改为想要写入的文本
+    let locale = "en"; // 修改为预期的编码格式
+    let ndefRecord : tag.NdefRecord = tag.ndef.makeTextRecord(text, locale);
+    if (ndefRecord != undefined) {
+        console.info("ndefMessage makeTextRecord rtdType: " + ndefRecord.rtdType);
+        console.info("ndefMessage makeTextRecord payload: " + ndefRecord.payload);
+    } else {
+        console.error("ndefMessage makeTextRecord ndefRecord: " + ndefRecord);
+    }
+} catch (businessError) {
+    console.error("ndefMessage makeTextRecord catch businessError: " + businessError);
+}
 ```
 
 ## tag.ndef.makeApplicationRecord18+
-
-PhoneWearable
 
 makeApplicationRecord(bundleName: string): NdefRecord
 
@@ -1109,26 +1057,24 @@ makeApplicationRecord(bundleName: string): NdefRecord
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. try {
-4. let bundleName: string = 'com.demo.test';
-5. let ndefRecord : tag.NdefRecord = tag.ndef.makeApplicationRecord(bundleName);
-6. if (ndefRecord != undefined) {
-7. console.info("ndefMessage makeApplicationRecord rtdType: " + ndefRecord.rtdType);
-8. console.info("ndefMessage makeApplicationRecord payload: " + ndefRecord.payload);
-9. } else {
-10. console.error("ndefMessage makeApplicationRecord ndefRecord: " + ndefRecord);
-11. }
-12. } catch (businessError) {
-13. console.error("ndefMessage makeApplicationRecord catch businessError: " + businessError);
-14. }
+try {
+    let bundleName: string = 'com.demo.test';
+    let ndefRecord : tag.NdefRecord = tag.ndef.makeApplicationRecord(bundleName);
+    if (ndefRecord != undefined) {
+        console.info("ndefMessage makeApplicationRecord rtdType: " + ndefRecord.rtdType);
+        console.info("ndefMessage makeApplicationRecord payload: " + ndefRecord.payload);
+    } else {
+        console.error("ndefMessage makeApplicationRecord ndefRecord: " + ndefRecord);
+    }
+} catch (businessError) {
+    console.error("ndefMessage makeApplicationRecord catch businessError: " + businessError);
+}
 ```
 
 ## tag.ndef.makeMimeRecord9+
-
-PhoneWearable
 
 makeMimeRecord(mimeType: string, mimeData: number[]): NdefRecord
 
@@ -1161,27 +1107,25 @@ makeMimeRecord(mimeType: string, mimeData: number[]): NdefRecord
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. try {
-4. let mimeType = "text/plain";   // 修改为预期的符合规则的MIME类型
-5. let mimeData = [0x01, 0x02, 0x03, 0x04]; // 修改为预期的符合格式的数据
-6. let ndefRecord : tag.NdefRecord = tag.ndef.makeMimeRecord(mimeType, mimeData);
-7. if (ndefRecord != undefined) {
-8. console.info("ndefMessage makeMimeRecord rtdType: " + ndefRecord.rtdType);
-9. console.info("ndefMessage makeMimeRecord payload: " + ndefRecord.payload);
-10. } else {
-11. console.error("ndefMessage makeMimeRecord ndefRecord: " + ndefRecord);
-12. }
-13. } catch (businessError) {
-14. console.error("ndefMessage makeMimeRecord catch businessError: " + businessError);
-15. }
+try {
+    let mimeType = "text/plain";   // 修改为预期的符合规则的MIME类型
+    let mimeData = [0x01, 0x02, 0x03, 0x04]; // 修改为预期的符合格式的数据
+    let ndefRecord : tag.NdefRecord = tag.ndef.makeMimeRecord(mimeType, mimeData);
+    if (ndefRecord != undefined) {
+        console.info("ndefMessage makeMimeRecord rtdType: " + ndefRecord.rtdType);
+        console.info("ndefMessage makeMimeRecord payload: " + ndefRecord.payload);
+    } else {
+        console.error("ndefMessage makeMimeRecord ndefRecord: " + ndefRecord);
+    }
+} catch (businessError) {
+    console.error("ndefMessage makeMimeRecord catch businessError: " + businessError);
+}
 ```
 
 ## tag.ndef.makeExternalRecord9+
-
-PhoneWearable
 
 makeExternalRecord(domainName: string, type: string, externalData: number[]): NdefRecord
 
@@ -1215,28 +1159,26 @@ makeExternalRecord(domainName: string, type: string, externalData: number[]): Nd
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. try {
-4. let domainName = "ohos.nfc.application"; // 修改为符合规范的包名
-5. let type = "test"; // 修改为正确的数据类型
-6. let externalData = [0x01, 0x02, 0x03, 0x04]; // 修改为正确的外部数据内容
-7. let ndefRecord : tag.NdefRecord = tag.ndef.makeExternalRecord(domainName, type, externalData);
-8. if (ndefRecord != undefined) {
-9. console.info("ndefMessage makeExternalRecord rtdType: " + ndefRecord.rtdType);
-10. console.info("ndefMessage makeExternalRecord payload: " + ndefRecord.payload);
-11. } else {
-12. console.error("ndefMessage makeExternalRecord ndefRecord: " + ndefRecord);
-13. }
-14. } catch (businessError) {
-15. console.error("ndefMessage makeExternalRecord catch businessError: " + businessError);
-16. }
+try {
+    let domainName = "ohos.nfc.application"; // 修改为符合规范的包名
+    let type = "test"; // 修改为正确的数据类型
+    let externalData = [0x01, 0x02, 0x03, 0x04]; // 修改为正确的外部数据内容
+    let ndefRecord : tag.NdefRecord = tag.ndef.makeExternalRecord(domainName, type, externalData);
+    if (ndefRecord != undefined) {
+        console.info("ndefMessage makeExternalRecord rtdType: " + ndefRecord.rtdType);
+        console.info("ndefMessage makeExternalRecord payload: " + ndefRecord.payload);
+    } else {
+        console.error("ndefMessage makeExternalRecord ndefRecord: " + ndefRecord);
+    }
+} catch (businessError) {
+    console.error("ndefMessage makeExternalRecord catch businessError: " + businessError);
+}
 ```
 
 ## tag.ndef.messageToBytes9+
-
-PhoneWearable
 
 messageToBytes(ndefMessage: [NdefMessage](js-apis-nfctech.md#ndefmessage9)): number[]
 
@@ -1268,23 +1210,21 @@ messageToBytes(ndefMessage: [NdefMessage](js-apis-nfctech.md#ndefmessage9)): num
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]; // 必须符合NDEF格式的数据
-4. try {
-5. let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(rawData);
-6. console.info("ndef createNdefMessage, ndefMessage: " + ndefMessage);
-7. let rawData2 : number[] = tag.ndef.messageToBytes(ndefMessage);
-8. console.info("ndefMessage messageToBytes rawData2: " + rawData2);
-9. } catch (businessError) {
-10. console.error("ndef createNdefMessage businessError: " + businessError);
-11. }
+let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43]; // 必须符合NDEF格式的数据
+try {
+    let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(rawData);
+    console.info("ndef createNdefMessage, ndefMessage: " + ndefMessage);
+    let rawData2 : number[] = tag.ndef.messageToBytes(ndefMessage);
+    console.info("ndefMessage messageToBytes rawData2: " + rawData2);
+} catch (businessError) {
+    console.error("ndef createNdefMessage businessError: " + businessError);
+}
 ```
 
 ## tag.ndef.createNdefMessage9+
-
-PhoneWearable
 
 createNdefMessage(data: number[]): [NdefMessage](js-apis-nfctech.md#ndefmessage9)
 
@@ -1316,21 +1256,19 @@ createNdefMessage(data: number[]): [NdefMessage](js-apis-nfctech.md#ndefmessage9
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];  //必须是可以被解析的NDEF记录
-4. try {
-5. let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(rawData);
-6. console.info("ndef createNdefMessage, ndefMessage: " + ndefMessage);
-7. } catch (businessError) {
-8. console.error("ndef createNdefMessage businessError: " + businessError);
-9. }
+let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];  // 必须是可以被解析的NDEF记录
+try {
+    let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(rawData);
+    console.info("ndef createNdefMessage, ndefMessage: " + ndefMessage);
+} catch (businessError) {
+    console.error("ndef createNdefMessage businessError: " + businessError);
+}
 ```
 
 ## tag.ndef.createNdefMessage9+
-
-PhoneWearable
 
 createNdefMessage(ndefRecords: NdefRecord[]): [NdefMessage](js-apis-nfctech.md#ndefmessage9)
 
@@ -1362,23 +1300,21 @@ createNdefMessage(ndefRecords: NdefRecord[]): [NdefMessage](js-apis-nfctech.md#n
 
 **示例：**
 
-```
-1. import { tag } from '@kit.ConnectivityKit';
+```js
+import { tag } from '@kit.ConnectivityKit';
 
-3. let uriRecord : tag.NdefRecord = tag.ndef.makeUriRecord("https://www.example.com");
-4. let textRecord : tag.NdefRecord = tag.ndef.makeTextRecord("Hello World", "en");
-5. let ndefRecords : tag.NdefRecord[] = [uriRecord, textRecord];
-6. try {
-7. let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(ndefRecords);
-8. console.info("ndef createNdefMessage ndefMessage: " + ndefMessage);
-9. } catch (businessError) {
-10. console.error("ndef createNdefMessage businessError: " + businessError);
-11. }
+let uriRecord : tag.NdefRecord = tag.ndef.makeUriRecord("https://www.example.com");
+let textRecord : tag.NdefRecord = tag.ndef.makeTextRecord("Hello World", "en");
+let ndefRecords : tag.NdefRecord[] = [uriRecord, textRecord];
+try {
+    let ndefMessage : tag.NdefMessage = tag.ndef.createNdefMessage(ndefRecords);
+    console.info("ndef createNdefMessage ndefMessage: " + ndefMessage);
+} catch (businessError) {
+    console.error("ndef createNdefMessage businessError: " + businessError);
+}
 ```
 
 ## TagInfo
-
-PhoneWearable
 
 NFC服务在读取到标签时给出的对象，通过该对象属性，应用知道该标签支持哪些技术类型，并使用匹配的技术类型来调用相关接口。
 
@@ -1394,8 +1330,6 @@ NFC服务在读取到标签时给出的对象，通过该对象属性，应用�
 
 ## NdefRecord9+
 
-PhoneWearable
-
 NDEF标签Record属性的定义，参考NDEF标签技术规范《NFCForum-TS-NDEF\_1.0》的定义细节。
 
 **系统能力：** SystemCapability.Communication.NFC.Tag
@@ -1410,8 +1344,6 @@ NDEF标签Record属性的定义，参考NDEF标签技术规范《NFCForum-TS-NDE
 | payload | number[] | 否 | 否 | NDEF Record的PAYLOAD，每个number十六进制表示，范围是0x00~0xFF。 |
 
 ## 常量
-
-PhoneWearable
 
 NFC Tag有多种不同的技术类型，定义常量描述不同的技术类型。
 
@@ -1429,12 +1361,11 @@ NFC Tag有多种不同的技术类型，定义常量描述不同的技术类型�
 | MIFARE\_CLASSIC | number | 8 | MIFARE Classic技术。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | MIFARE\_ULTRALIGHT | number | 9 | MIFARE Ultralight技术。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | NFC\_BARCODE18+ | number | 10 | BARCODE技术。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| SKIP\_NDEF | number | 11 | 跳过NDEF检查的技术。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | RTD\_TEXT9+ | number[] | [0x54] | 文本类型的NDEF Record，参考NDEF标签技术规范《NFCForum-TS-NDEF\_1.0》的定义细节。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | RTD\_URI9+ | number[] | [0x55] | URI类型的NDEF Record，参考NDEF标签技术规范《NFCForum-TS-NDEF\_1.0》的定义细节。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## TnfType9+
-
-PhoneWearable
 
 NDEF Record的TNF(Type Name Field)类型值，参考NDEF标签技术规范《NFCForum-TS-NDEF\_1.0》的定义细节。
 
@@ -1454,8 +1385,6 @@ NDEF Record的TNF(Type Name Field)类型值，参考NDEF标签技术规范《NFC
 
 ## NfcForumType9+
 
-PhoneWearable
-
 NFC Forum标准里面Tag类型的定义。
 
 **系统能力：** SystemCapability.Communication.NFC.Tag
@@ -1472,8 +1401,6 @@ NFC Forum标准里面Tag类型的定义。
 
 ## MifareClassicType9+
 
-PhoneWearable
-
 MIFARE Classic标签类型的定义。
 
 **系统能力：** SystemCapability.Communication.NFC.Tag
@@ -1488,8 +1415,6 @@ MIFARE Classic标签类型的定义。
 | TYPE\_PRO | 3 | MIFARE Pro类型。 |
 
 ## MifareClassicSize9+
-
-PhoneWearable
 
 MIFARE Classic标签存储大小的定义。
 
@@ -1506,8 +1431,6 @@ MIFARE Classic标签存储大小的定义。
 
 ## MifareUltralightType9+
 
-PhoneWearable
-
 MIFARE Ultralight标签类型的定义。
 
 **系统能力：** SystemCapability.Communication.NFC.Tag
@@ -1521,8 +1444,6 @@ MIFARE Ultralight标签类型的定义。
 | TYPE\_ULTRALIGHT\_C | 2 | MIFARE UltralightC 类型。 |
 
 ## NfcATag
-
-PhoneWearable
 
 type NfcATag = \_NfcATag
 
@@ -1538,8 +1459,6 @@ type NfcATag = \_NfcATag
 
 ## NfcBTag
 
-PhoneWearable
-
 type NfcBTag = \_NfcBTag
 
 获取NfcBTag。
@@ -1553,8 +1472,6 @@ type NfcBTag = \_NfcBTag
 | [\_NfcBTag](js-apis-nfctech.md#nfcbtag) | NfcBTag 提供 NFC-B(ISO 14443-3B)技术的属性和I/O操作的访问。 |
 
 ## NfcFTag
-
-PhoneWearable
 
 type NfcFTag = \_NfcFTag
 
@@ -1570,8 +1487,6 @@ type NfcFTag = \_NfcFTag
 
 ## NfcVTag
 
-PhoneWearable
-
 type NfcVTag = \_NfcVTag
 
 获取NfcVTag。
@@ -1585,8 +1500,6 @@ type NfcVTag = \_NfcVTag
 | [\_NfcVTag](js-apis-nfctech.md#nfcvtag) | NfcVTag 提供对 NFC-V(ISO 15693)技术的属性和I/O操作的访问。 |
 
 ## IsoDepTag9+
-
-PhoneWearable
 
 type IsoDepTag = \_IsoDepTag
 
@@ -1602,8 +1515,6 @@ type IsoDepTag = \_IsoDepTag
 
 ## NdefTag9+
 
-PhoneWearable
-
 type NdefTag = \_NdefTag
 
 获取NdefTag。
@@ -1617,8 +1528,6 @@ type NdefTag = \_NdefTag
 | [\_NdefTag](js-apis-nfctech.md#ndeftag9) | 提供对已格式化为NDEF的NFC标签的数据和操作的访问。 |
 
 ## MifareClassicTag9+
-
-PhoneWearable
 
 type MifareClassicTag = \_MifareClassicTag
 
@@ -1634,8 +1543,6 @@ type MifareClassicTag = \_MifareClassicTag
 
 ## MifareUltralightTag9+
 
-PhoneWearable
-
 type MifareUltralightTag = \_MifareUltralightTag;
 
 获取MifareUltralightTag。
@@ -1649,8 +1556,6 @@ type MifareUltralightTag = \_MifareUltralightTag;
 | [\_MifareUltralightTag](js-apis-nfctech.md#mifareultralighttag9) | MifareUltralightTag 提供对MIFARE Ultralight属性和I/O操作的访问。 |
 
 ## NdefFormatableTag9+
-
-PhoneWearable
 
 type NdefFormatableTag = \_NdefFormatableTag
 
@@ -1666,8 +1571,6 @@ type NdefFormatableTag = \_NdefFormatableTag
 
 ## BarcodeTag18+
 
-PhoneWearable
-
 type BarcodeTag = \_BarcodeTag
 
 获取BarcodeTag。
@@ -1682,8 +1585,6 @@ type BarcodeTag = \_BarcodeTag
 
 ## NdefMessage9+
 
-PhoneWearable
-
 type NdefMessage = \_NdefMessage
 
 获取NdefMessage。
@@ -1697,8 +1598,6 @@ type NdefMessage = \_NdefMessage
 | [\_NdefMessage](js-apis-nfctech.md#ndefmessage9) | 获取NDEF消息中的所有记录。 |
 
 ## TagSession
-
-PhoneWearable
 
 type TagSession = \_TagSession
 

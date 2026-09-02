@@ -3,30 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.hid (蓝牙hid模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.hid (蓝牙hid模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6bc572ecb2d466dde2fd733c624183e335d30c7e5e5626c5fe39e8fed92001cf
+scraped_at: 2026-09-02T15:01:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3b7f6c2f68695ab31d7a6402323281fe8b359eef5fd88e4fd58b4ae67990548d
 ---
 
 本模块提供基于人机接口协议（Human Interface Device Profile，[HID](../harmonyos-guides/terminology.md#hid)）技术的蓝牙人机交互能力，支持获取连接状态等方法。
 
 当本端设备被注册为HID设备的角色时，可以使用[HidDeviceProfile](js-apis-bluetooth-hid.md#hiddeviceprofile23)相关接口，且仅支持与传统蓝牙类型设备连接和交互。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { hid } from '@kit.ConnectivityKit';
+```js
+import { hid } from '@kit.ConnectivityKit';
 ```
 
 ## BaseProfile
-
-PhonePC/2in1TabletTVWearable
 
 type BaseProfile = baseProfile.BaseProfile
 
@@ -39,8 +35,6 @@ type BaseProfile = baseProfile.BaseProfile
 | [baseProfile.BaseProfile](js-apis-bluetooth-baseprofile.md#baseprofile) | 基础Profile接口定义。 |
 
 ## BluetoothAddress23+
-
-PhonePC/2in1TabletTVWearable
 
 type BluetoothAddress = common.BluetoothAddress
 
@@ -55,8 +49,6 @@ type BluetoothAddress = common.BluetoothAddress
 | [common.BluetoothAddress](js-apis-bluetooth-common.md#bluetoothaddress) | 蓝牙设备的地址信息。 |
 
 ## hid.createHidHostProfile
-
-PhonePC/2in1TabletTVWearable
 
 createHidHostProfile(): HidHostProfile
 
@@ -81,18 +73,16 @@ createHidHostProfile(): HidHostProfile
 
 **示例：**
 
-```
-1. try {
-2. let hidHostProfile = hid.createHidHostProfile();
-3. console.info('hidHost success');
-4. } catch (err) {
-5. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-6. }
+```js
+try {
+    let hidHostProfile = hid.createHidHostProfile();
+    console.info('hidHost success');
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ## hid.createHidDeviceProfile23+
-
-PhonePC/2in1TabletTVWearable
 
 createHidDeviceProfile(): HidDeviceProfile
 
@@ -118,33 +108,29 @@ createHidDeviceProfile(): HidDeviceProfile
 
 **示例：**
 
-```
-1. try {
-2. let hidDeviceProfile = hid.createHidDeviceProfile();
-3. console.info('hidDevice success');
-4. } catch (err) {
-5. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-6. }
+```js
+try {
+    let hidDeviceProfile = hid.createHidDeviceProfile();
+    console.info('hidDevice success');
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ## HidDeviceProfile23+
-
-PhonePC/2in1TabletTVWearable
 
 该实例表示蓝牙HID通信中的[HID Device](../harmonyos-guides/terminology.md#hid-device)角色。
 
 * 该类继承于[BaseProfile](js-apis-bluetooth-hid.md#baseprofile)，因此可以使用其父类中的方法。
 * 使用该类的方法前，需通过[createHidDeviceProfile](js-apis-bluetooth-hid.md#hidcreatehiddeviceprofile23)方法构造该类的实例。
-* 通过该实例可以操作设备端的行为，如注册HID设备([registerHidDevice](js-apis-bluetooth-hid.md#registerhiddevice23))，发送报告([sendReport](js-apis-bluetooth-hid.md#sendreport23))等。
+* 通过该实例可以操作设备端的行为，如注册HID设备（[registerHidDevice](js-apis-bluetooth-hid.md#registerhiddevice23)），发送报告（[sendReport](js-apis-bluetooth-hid.md#sendreport23)）等。
 * 和该实例角色相对应的是[HID Host](../harmonyos-guides/terminology.md#hid-host)。
 
 ### registerHidDevice23+
 
-PhonePC/2in1TabletTVWearable
-
 registerHidDevice(sdp: HidDeviceSdp, inQos: HidDeviceQos, outQos: HidDeviceQos, callback: Callback<boolean>): void
 
-应用注册HID设备能力，以便与HID主机(如电脑、手机)进行通信。使用callback异步回调。
+应用注册HID设备能力，以便与HID主机（如电脑、手机）进行通信。使用callback异步回调。
 
 * 当应用调用该接口并注册成功后，可以通过调用[connect](js-apis-bluetooth-hid.md#connect23)接口连接HID主机。
 * 同一时间仅允许一个应用成功注册HID设备能力，同一应用重复注册将失败，注册成功后其他应用注册也将失败。
@@ -182,58 +168,56 @@ registerHidDevice(sdp: HidDeviceSdp, inQos: HidDeviceQos, outQos: HidDeviceQos, 
 
 **示例：**
 
-```
-1. let descriptors: Uint8Array = new Uint8Array([
-2. // 描述符示例，需要遵循USB HID规范
-3. 0x05, 0x01,        // 指定设备类别为通用桌面控制
-4. 0x09, 0x06,        // 具体设备为键盘
-5. 0xA1, 0x01,        // 应用集合开始
+```js
+let descriptors: Uint8Array = new Uint8Array([
+    // 描述符示例，需要遵循USB HID规范
+    0x05, 0x01,        // 指定设备类别为通用桌面控制
+    0x09, 0x06,        // 具体设备为键盘
+    0xA1, 0x01,        // 应用集合开始
 
-7. // 按键字段定义
-8. 0x05, 0x07,        // 切换到键盘/键区
-9. 0x19, 0x00,        // 定义最小按键码为0（无按键）
-10. 0x29, 0x01,        // 定义最大按键码为1（只支持2个值）
-11. 0x15, 0x00,        // 逻辑最小值0（数据范围下限）
-12. 0x25, 0x01,        // 逻辑最大值1（数据范围上限）
-13. 0x75, 0x08,        // 每个字段八位
-14. 0x95, 0x01,        // 只有一个字段
-15. 0x81, 0x00,        // 定义输入字段：数据字段，值为按键数组
+    // 按键字段定义
+    0x05, 0x07,        // 切换到键盘/键区
+    0x19, 0x00,        // 定义最小按键码为0（无按键）
+    0x29, 0x01,        // 定义最大按键码为1（只支持2个值）
+    0x15, 0x00,        // 逻辑最小值0（数据范围下限）
+    0x25, 0x01,        // 逻辑最大值1（数据范围上限）
+    0x75, 0x08,        // 每个字段八位
+    0x95, 0x01,        // 只有一个字段
+    0x81, 0x00,        // 定义输入字段：数据字段，值为按键数组
 
-17. // 结束设备定义
-18. 0xC0               // 应用集合结束
-19. ]);
-20. // 以键盘为例
-21. let sdp: hid.HidDeviceSdp = {
-22. "name": "testName",
-23. "description": "testDescription",
-24. "provider": "testProvider",
-25. "subclass": hid.Subclass.SUBCLASS_KEYBOARD,
-26. "descriptors": descriptors,
-27. };
-28. let inqos: hid.HidDeviceQos = {
-29. "serviceType": hid.ServiceType.SERVICE_BEST_EFFORT,
-30. "tokenRate": 0,
-31. "tokenBucketSize": 0,
-32. "peakBandwidth": 0,
-33. "latency": -1,
-34. "delayVariation": -1,
-35. };
-36. let outqos: hid.HidDeviceQos = {};
-37. function registerStateCallback(callback: boolean) {
-38. console.info(`state: ${callback}`);
-39. }
+    // 结束设备定义
+    0xC0               // 应用集合结束
+]);
+// 以键盘为例
+let sdp: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvider",
+    "subclass": hid.Subclass.SUBCLASS_KEYBOARD,
+    "descriptors": descriptors,
+};
+let inqos: hid.HidDeviceQos = {
+    "serviceType": hid.ServiceType.SERVICE_BEST_EFFORT,
+    "tokenRate": 0,
+    "tokenBucketSize": 0,
+    "peakBandwidth": 0,
+    "latency": -1,
+    "delayVariation": -1,
+};
+let outqos: hid.HidDeviceQos = {};
+function registerStateCallback(callback: boolean) {
+    console.info(`state: ${callback}`);
+}
 
-41. try {
-42. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-43. hidDevice.registerHidDevice(sdp, inqos, outqos, registerStateCallback)
-44. } catch (err) {
-45. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-46. }
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.registerHidDevice(sdp, inqos, outqos, registerStateCallback)
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### unregisterHidDevice23+
-
-PhonePC/2in1TabletTVWearable
 
 unregisterHidDevice(): void
 
@@ -260,18 +244,16 @@ unregisterHidDevice(): void
 
 **示例：**
 
-```
-1. try {
-2. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-3. hidDevice.unregisterHidDevice();
-4. } catch (err) {
-5. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-6. }
+```js
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.unregisterHidDevice();
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### connect23+
-
-PhonePC/2in1TabletTVWearable
 
 connect(deviceId: BluetoothAddress): void
 
@@ -279,7 +261,7 @@ connect(deviceId: BluetoothAddress): void
 
 * 调用该接口前需要先调用[registerHidDevice](js-apis-bluetooth-hid.md#registerhiddevice23)完成HID设备能力注册。
 * 可通过订阅[on('connectionStateChange')](js-apis-bluetooth-baseprofile.md#baseprofileonconnectionstatechange)事件来感知连接是否成功。
-* 当不需要连接时需调用[disconnect](js-apis-bluetooth-hid.md#disconnect23)断开连接。
+* 当不需要连接时需调用[disconnect](js-apis-bluetooth-hid.md#disconnect23)断开连接。此外，调用[unregisterHidDevice](js-apis-bluetooth-hid.md#unregisterhiddevice23)解除注册也会断开已有的HID主机连接。
 
 **需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
@@ -308,24 +290,22 @@ connect(deviceId: BluetoothAddress): void
 
 **示例：**
 
-```
-1. import { common } from '@kit.ConnectivityKit';
+```js
+import { common } from '@kit.ConnectivityKit';
 
-3. let device: common.BluetoothAddress = {
-4. "address": "11:22:33:44:55:66",
-5. "addressType": common.BluetoothAddressType.REAL,
-6. }
-7. try {
-8. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-9. hidDevice.connect(device);
-10. } catch (err) {
-11. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-12. }
+let device: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": common.BluetoothAddressType.REAL,
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.connect(device);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### disconnect23+
-
-PhonePC/2in1TabletTVWearable
 
 disconnect(): void
 
@@ -353,18 +333,16 @@ disconnect(): void
 
 **示例：**
 
-```
-1. try {
-2. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-3. hidDevice.disconnect();
-4. } catch (err) {
-5. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-6. }
+```js
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.disconnect();
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### sendReport23+
-
-PhonePC/2in1TabletTVWearable
 
 sendReport(id: number, reportData: Uint8Array): void
 
@@ -401,20 +379,18 @@ sendReport(id: number, reportData: Uint8Array): void
 
 **示例：**
 
-```
-1. let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
-2. let id: number = 0;
-3. try {
-4. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-5. hidDevice.sendReport(id, reportData);
-6. } catch (err) {
-7. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-8. }
+```js
+let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+let id: number = 0;
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.sendReport(id, reportData);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### replyReport23+
-
-PhonePC/2in1TabletTVWearable
 
 replyReport(type: ReportType, id: number, reportData: Uint8Array): void
 
@@ -433,7 +409,7 @@ replyReport(type: ReportType, id: number, reportData: Uint8Array): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | [ReportType](js-apis-bluetooth-hid.md#reporttype23) | 是 | 回复的报告类型。 |
+| type | [ReportType](js-apis-bluetooth-hid.md#reporttype23) | 是 | 回复的报告类型，应与[onGetReport](js-apis-bluetooth-hid.md#ongetreport23)回调中收到的type保持一致。 |
 | id | number | 是 | 对应HID设备注册时通过[HidDeviceSdp](js-apis-bluetooth-hid.md#hiddevicesdp23)提供的描述符中定义的报告ID，用于标识报告类型，对于不带ID的简单设备，此参数应设置为0。对于定义了多个报告ID的设备，此处应传入对应的ID值，该ID值必须与描述符中定义的值保持一致。 |
 | reportData | Uint8Array | 是 | 报告数据。其内容长度和解析方式必须严格匹配描述符中为该报告ID定义的格式。 |
 
@@ -452,25 +428,23 @@ replyReport(type: ReportType, id: number, reportData: Uint8Array): void
 
 **示例：**
 
-```
-1. let type = hid.ReportType.REPORT_TYPE_INPUT;
-2. let id: number = 0;
-3. let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.replyReport(type, id, reportData);
-7. } catch (err) {
-8. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-9. }
+```js
+let type = hid.ReportType.REPORT_TYPE_INPUT;
+let id: number = 0;
+let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.replyReport(type, id, reportData);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### reportError23+
 
-PhonePC/2in1TabletTVWearable
-
 reportError(error: ErrorReason): void
 
-向已连接的HID主机报告特定的错误类型。
+向已连接的HID主机报告特定的错误类型。常用于在收到[onGetReport](js-apis-bluetooth-hid.md#ongetreport23)或[onSetReport](js-apis-bluetooth-hid.md#onsetreport23)回调后，当数据不符合预期时进行错误回复。
 
 * 调用该接口前必须已调用[registerHidDevice](js-apis-bluetooth-hid.md#registerhiddevice23)完成注册，并通过[connect](js-apis-bluetooth-hid.md#connect23)建立与HID主机的连接。
 
@@ -501,19 +475,17 @@ reportError(error: ErrorReason): void
 
 **示例：**
 
-```
-1. let error = hid.ErrorReason.RSP_SUCCESS;
-2. try {
-3. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-4. hidDevice.reportError(error);
-5. } catch (err) {
-6. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-7. }
+```js
+let error = hid.ErrorReason.RSP_SUCCESS;
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.reportError(error);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### onGetReport23+
-
-PhonePC/2in1TabletTVWearable
 
 onGetReport(callback: Callback<GetReportData>): void
 
@@ -542,21 +514,19 @@ onGetReport(callback: Callback<GetReportData>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(callback: hid.GetReportData) {
-2. console.info(`type: ${callback.type}, id: ${callback.id}, bufferSize: ${callback.bufferSize}`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onGetReport(onReceiveEvent);
-7. } catch (err) {
-8. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-9. }
+```js
+function onReceiveEvent(callback: hid.GetReportData) {
+    console.info(`type: ${callback.type}, id: ${callback.id}, bufferSize: ${callback.bufferSize}`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onGetReport(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### offGetReport23+
-
-PhonePC/2in1TabletTVWearable
 
 offGetReport(callback?: Callback<GetReportData>): void
 
@@ -585,22 +555,20 @@ offGetReport(callback?: Callback<GetReportData>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(callback: hid.GetReportData) {
-2. console.info(`type: ${callback.type}, id: ${callback.id}, bufferSize: ${callback.bufferSize}`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onGetReport(onReceiveEvent);
-7. hidDevice.offGetReport(onReceiveEvent);
-8. } catch (err) {
-9. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-10. }
+```js
+function onReceiveEvent(callback: hid.GetReportData) {
+    console.info(`type: ${callback.type}, id: ${callback.id}, bufferSize: ${callback.bufferSize}`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onGetReport(onReceiveEvent);
+    hidDevice.offGetReport(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### onSetReport23+
-
-PhonePC/2in1TabletTVWearable
 
 onSetReport(callback: Callback<SetReportData>): void
 
@@ -629,21 +597,19 @@ onSetReport(callback: Callback<SetReportData>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(callback: hid.SetReportData) {
-2. console.info(`type: ${callback.type}, id: ${callback.id}, dataSize: ${callback.data.length}`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onSetReport(onReceiveEvent);
-7. } catch (err) {
-8. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-9. }
+```js
+function onReceiveEvent(callback: hid.SetReportData) {
+    console.info(`type: ${callback.type}, id: ${callback.id}, dataSize: ${callback.data.length}`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onSetReport(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### offSetReport23+
-
-PhonePC/2in1TabletTVWearable
 
 offSetReport(callback?: Callback<SetReportData>): void
 
@@ -672,26 +638,24 @@ offSetReport(callback?: Callback<SetReportData>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(callback: hid.SetReportData) {
-2. console.info(`type: ${callback.type}, id: ${callback.id}, dataSize: ${callback.data.length}`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onSetReport(onReceiveEvent);
-7. hidDevice.offSetReport(onReceiveEvent);
-8. } catch (err) {
-9. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-10. }
+```js
+function onReceiveEvent(callback: hid.SetReportData) {
+    console.info(`type: ${callback.type}, id: ${callback.id}, dataSize: ${callback.data.length}`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onSetReport(onReceiveEvent);
+    hidDevice.offSetReport(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### onInterruptDataReceived23+
 
-PhonePC/2in1TabletTVWearable
-
 onInterruptDataReceived(callback: Callback<InterruptData>): void
 
-订阅HID主机通过中断传输通道发送数据的事件的回调，使用callback异步回调。
+订阅HID主机通过中断传输通道发送数据的事件的回调，使用callback异步回调。收到中断数据后，应用可根据报告ID解析并处理相应数据，例如处理主机下发的输出报告（如键盘LED状态指示等）。
 
 **需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
@@ -716,21 +680,19 @@ onInterruptDataReceived(callback: Callback<InterruptData>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(callback: hid.InterruptData) {
-2. console.info(`id: ${callback.id}, dataSize: ${callback.data.length}`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onInterruptDataReceived(onReceiveEvent);
-7. } catch (err) {
-8. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-9. }
+```js
+function onReceiveEvent(callback: hid.InterruptData) {
+    console.info(`id: ${callback.id}, dataSize: ${callback.data.length}`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onInterruptDataReceived(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### offInterruptDataReceived23+
-
-PhonePC/2in1TabletTVWearable
 
 offInterruptDataReceived(callback?: Callback<InterruptData>): void
 
@@ -759,22 +721,20 @@ offInterruptDataReceived(callback?: Callback<InterruptData>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(callback: hid.InterruptData) {
-2. console.info(`id: ${callback.id}, dataSize: ${callback.data.length}`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onInterruptDataReceived(onReceiveEvent);
-7. hidDevice.offInterruptDataReceived(onReceiveEvent);
-8. } catch (err) {
-9. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-10. }
+```js
+function onReceiveEvent(callback: hid.InterruptData) {
+    console.info(`id: ${callback.id}, dataSize: ${callback.data.length}`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onInterruptDataReceived(onReceiveEvent);
+    hidDevice.offInterruptDataReceived(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### onSetProtocol23+
-
-PhonePC/2in1TabletTVWearable
 
 onSetProtocol(callback: Callback<ProtocolData>): void
 
@@ -803,21 +763,19 @@ onSetProtocol(callback: Callback<ProtocolData>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(callback: hid.ProtocolData) {
-2. console.info(`protocol: ${callback.protocol}`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onSetProtocol(onReceiveEvent);
-7. } catch (err) {
-8. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-9. }
+```js
+function onReceiveEvent(callback: hid.ProtocolData) {
+    console.info(`protocol: ${callback.protocol}`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onSetProtocol(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### offSetProtocol23+
-
-PhonePC/2in1TabletTVWearable
 
 offSetProtocol(callback?: Callback<ProtocolData>): void
 
@@ -846,22 +804,20 @@ offSetProtocol(callback?: Callback<ProtocolData>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(callback: hid.ProtocolData) {
-2. console.info(`protocol: ${callback.protocol}`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onSetProtocol(onReceiveEvent);
-7. hidDevice.offSetProtocol(onReceiveEvent);
-8. } catch (err) {
-9. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-10. }
+```js
+function onReceiveEvent(callback: hid.ProtocolData) {
+    console.info(`protocol: ${callback.protocol}`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onSetProtocol(onReceiveEvent);
+    hidDevice.offSetProtocol(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### onVirtualCableUnplug23+
-
-PhonePC/2in1TabletTVWearable
 
 onVirtualCableUnplug(callback: Callback<void>): void
 
@@ -890,21 +846,19 @@ onVirtualCableUnplug(callback: Callback<void>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent() {
-2. console.info(`onVirtualCableUnplug`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onVirtualCableUnplug(onReceiveEvent);
-7. } catch (err) {
-8. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-9. }
+```js
+function onReceiveEvent() {
+    console.info(`onVirtualCableUnplug`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onVirtualCableUnplug(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ### offVirtualCableUnplug23+
-
-PhonePC/2in1TabletTVWearable
 
 offVirtualCableUnplug(callback?: Callback<void>): void
 
@@ -933,24 +887,22 @@ offVirtualCableUnplug(callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent() {
-2. console.info(`onVirtualCableUnplug`);
-3. }
-4. try {
-5. let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
-6. hidDevice.onVirtualCableUnplug(onReceiveEvent);
-7. hidDevice.offVirtualCableUnplug(onReceiveEvent);
-8. } catch (err) {
-9. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-10. }
+```js
+function onReceiveEvent() {
+    console.info(`onVirtualCableUnplug`);
+}
+try {
+    let hidDevice: hid.HidDeviceProfile = hid.createHidDeviceProfile();
+    hidDevice.onVirtualCableUnplug(onReceiveEvent);
+    hidDevice.offVirtualCableUnplug(onReceiveEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ## HidDeviceSdp23+
 
-PhonePC/2in1TabletTVWearable
-
-描述HID设备在服务发现协议([SDP](../harmonyos-guides/terminology.md#sdp))中的服务注册配置。该结构定义了HID设备的身份标识、能力描述和协议特征，是HID主机发现、识别和连接HID设备的关键参数。
+描述HID设备在服务发现协议（[SDP](../harmonyos-guides/terminology.md#sdp)）中的服务注册配置。该结构定义了HID设备的身份标识、能力描述和协议特征，是HID主机发现、识别和连接HID设备的关键参数。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -962,13 +914,11 @@ PhonePC/2in1TabletTVWearable
 | description | string | 否 | 否 | HID设备的描述信息，要求长度范围：[1, 50]，单位：Byte。 |
 | provider | string | 否 | 否 | 描述HID设备的制造商信息，要求长度范围：[1, 50]，单位：Byte。 |
 | subclass | [Subclass](js-apis-bluetooth-hid.md#subclass23) | 否 | 否 | 表示HID设备具体类型。 |
-| descriptors | Uint8Array | 否 | 否 | 标识与蓝牙HID设备功能定义描述符。描述符会为每个支持的报告分配一个唯一的ID， 并详细定义该ID下报告的长度、结构与各字段含义。填写时需要遵循[USB HID](https://www.usb.org/hid)规范。 |
+| descriptors | Uint8Array | 否 | 否 | 用于标识蓝牙HID设备功能定义的描述符。描述符会为每个支持的报告分配一个唯一的ID， 并详细定义该ID下报告的长度、结构与各字段含义。填写时需要遵循[USB HID](https://www.usb.org/hid)规范。 |
 
 ## HidDeviceQos23+
 
-PhonePC/2in1TabletTVWearable
-
-描述HID设备服务质量(Qos)参数。该结构定义了HID数据传输通道的流量控制、延迟保证和可靠性策略，用于优化蓝牙传输性能，确保设备的实时响应性。
+描述HID设备服务质量（Qos）参数。该结构定义了HID数据传输通道的流量控制、延迟保证和可靠性策略，用于优化蓝牙传输性能，确保设备的实时响应性。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
@@ -978,14 +928,12 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | serviceType | [ServiceType](js-apis-bluetooth-hid.md#servicetype23) | 否 | 是 | 服务类型，默认为SERVICE\_BEST\_EFFORT。 |
 | tokenRate | number | 否 | 是 | 单位时间内允许传输的平均数据量，单位为Byte/s，默认为0，表示没有平均数据量限制。 |
-| tokenBucketSize | number | 否 | 是 | 允许短时间内超过tokenRate的最大数据量，默认为0，表示没有最大数据量限制。 |
-| peakBandwidth | number | 否 | 是 | 最大传输速率限制，单位为Byte/s，默认为0，表示没有传输速率限制。 |
+| tokenBucketSize | number | 否 | 是 | 允许短时间内超过tokenRate的最大数据量，单位为Byte，默认为0，表示没有最大数据量限制。 |
+| peakBandwidth | number | 否 | 是 | 最大传输速率限制，单位为Byte/s。默认为0，表示没有传输速率限制。 |
 | latency | number | 否 | 是 | 最大允许延迟时间，单位为μs，默认为-1，表示没有延迟限制。 |
 | delayVariation | number | 否 | 是 | 允许的延迟波动范围，单位为μs，默认为-1，表示没有延迟波动范围限制。 |
 
 ## GetReportData23+
-
-PhonePC/2in1TabletTVWearable
 
 描述HID主机向HID设备发送的[GET\_REPORT](../harmonyos-guides/terminology.md#hid)传输请求事件的信息。
 
@@ -1001,8 +949,6 @@ PhonePC/2in1TabletTVWearable
 
 ## SetReportData23+
 
-PhonePC/2in1TabletTVWearable
-
 描述HID主机向HID设备发送的[SET\_REPORT](../harmonyos-guides/terminology.md#hid)传输请求事件的信息。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
@@ -1017,8 +963,6 @@ PhonePC/2in1TabletTVWearable
 
 ## InterruptData23+
 
-PhonePC/2in1TabletTVWearable
-
 描述从主机收到的中断数据。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
@@ -1032,8 +976,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ProtocolData23+
 
-PhonePC/2in1TabletTVWearable
-
 描述从HID主机接收的通信协议数据。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
@@ -1045,8 +987,6 @@ PhonePC/2in1TabletTVWearable
 | protocol | [ProtocolType](js-apis-bluetooth-hid.md#protocoltype23) | 否 | 否 | 主机的不同通信协议类型。 |
 
 ## Subclass23+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，HID设备的具体类型。
 
@@ -1069,8 +1009,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ReportType23+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，报告类型。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
@@ -1080,12 +1018,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | REPORT\_TYPE\_INPUT | 1 | 输入报告，表示由本端向HID主机发送的数据。 |
-| REPORT\_TYPE\_OUTPUT | 2 | 输出报告，表示HID这几向本端发送的数据。 |
+| REPORT\_TYPE\_OUTPUT | 2 | 输出报告，表示HID主机向本端发送的数据。 |
 | REPORT\_TYPE\_FEATURE | 3 | 特征报告，表示双向传输的配置数据。 |
 
 ## ServiceType23+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，描述HID设备与主机之间连接的服务类型。
 
@@ -1100,8 +1036,6 @@ PhonePC/2in1TabletTVWearable
 | SERVICE\_GUARANTEED | 2 | 可靠模式，传输速度稍慢，但是保证数据正确送达，适用于文件传输等场景。 |
 
 ## ErrorReason23+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，描述错误原因。
 
@@ -1119,8 +1053,6 @@ PhonePC/2in1TabletTVWearable
 | RSP\_UNKNOWN | 14 | 未知错误原因。建议主机记录错误上下文并重试。 |
 
 ## ProtocolType23+
-
-PhonePC/2in1TabletTVWearable
 
 枚举，HID设备与主机的通信协议类型。
 

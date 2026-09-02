@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610
 title: OS新增和增强特性
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > OS新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8cd70c78f9748f20257c21d42c0d1f83c78842d0973286bdeae1b8e375919d7f
+scraped_at: 2026-09-02T14:58:34+08:00
+doc_updated_at: 2026-08-06
+content_hash: sha256:fd8e69c97c718af26c360c0932cd5b86d21bbb7e424458a15ef26c2f859dc06b
 ---
 
 ## 6.1.0(23) Release新增关键特性
@@ -22,7 +22,7 @@ BundleInfo新增buildVersion。（[API参考](../harmonyos-references/js-apis-bu
 
 * 新增支持设置自定义键盘在输入框之间切换时是否接续（即不收回）。（[API参考](../harmonyos-references/arkts-apis-uicontext-uicontext.md#setcustomkeyboardcontinuefeature23)）
 * 跑马灯ArkTS API的初始化参数新增两轮跑马灯之间的间距“spacing”和每次滚动的时间间隔“delay”。（[API参考](../harmonyos-references/ts-basic-components-marquee.md#marqueeoptions18对象说明)）
-* 跑马灯C API新增[设置](../harmonyos-references/capi-native-type-h.md#oh_arkui_textmarqueeoptions_setspacing)和[获取](../harmonyos-references/capi-native-type-h.md#oh_arkui_textmarqueeoptions_getspacing)间距、[设置](../harmonyos-references/capi-native-type-h.md#oh_arkui_textmarqueeoptions_setloop)和[获取](../harmonyos-references/capi-native-type-h.md#oh_arkui_textmarqueeoptions_getloop)重复滚动次数、[设置](../harmonyos-references/capi-native-type-h.md#oh_arkui_textmarqueeoptions_setfromstart)和[获取](../harmonyos-references/capi-native-type-h.md#oh_arkui_textmarqueeoptions_getfromstart)运行方向、[设置](../harmonyos-references/capi-native-type-h.md#oh_arkui_textmarqueeoptions_setdelay)和[获取](../harmonyos-references/capi-native-type-h.md#oh_arkui_textmarqueeoptions_getdelay)滚动时间间隔的能力。
+* 跑马灯C API新增[设置](../harmonyos-references/capi-text-h.md#oh_arkui_textmarqueeoptions_setspacing)和[获取](../harmonyos-references/capi-text-h.md#oh_arkui_textmarqueeoptions_getspacing)间距、[设置](../harmonyos-references/capi-text-h.md#oh_arkui_textmarqueeoptions_setloop)和[获取](../harmonyos-references/capi-text-h.md#oh_arkui_textmarqueeoptions_getloop)重复滚动次数、[设置](../harmonyos-references/capi-text-h.md#oh_arkui_textmarqueeoptions_setfromstart)和[获取](../harmonyos-references/capi-text-h.md#oh_arkui_textmarqueeoptions_getfromstart)运行方向、[设置](../harmonyos-references/capi-text-h.md#oh_arkui_textmarqueeoptions_setdelay)和[获取](../harmonyos-references/capi-text-h.md#oh_arkui_textmarqueeoptions_getdelay)滚动时间间隔的能力。
 * 组件布局位置设置新增定义在相对容器中子组件在[水平方向](../harmonyos-references/ts-universal-attributes-location.md#horizontalalignparam23对象说明)和[垂直方向](../harmonyos-references/ts-universal-attributes-location.md#verticalalignparam23对象说明)上的对齐规则。
 * 滚动组件新增模拟拖拽功能，支持开启/关闭模拟拖拽功能、设置模拟拖拽距离以及获取是否处于模拟拖拽状态的能力。（[ArkTS API参考](../harmonyos-references/ts-container-swiper.md#startfakedrag23)、[C API参考](../harmonyos-references/capi-native-node-h.md#oh_arkui_swiper_startfakedrag)）
 
@@ -33,7 +33,7 @@ BundleInfo新增buildVersion。（[API参考](../harmonyos-references/js-apis-bu
 
 ### Connectivity Kit
 
-新增支持带有卡在位状态周期性检测的NFC Tag读卡事件订阅能力。（[API参考](../harmonyos-references/js-apis-nfctag.md#tagon23)）
+新增支持带有卡在位状态周期性检测的NFC Tag读卡事件订阅能力。（[API参考](../harmonyos-references/js-apis-nfctag.md#tagonreadermodewithinterval23)）
 
 ### Graphics Accelerate Kit
 
@@ -104,7 +104,7 @@ util模块新增接口ArkTSVM.setMultithreadingDetectionEnabled，支持开启�
 
 ### AVCodec Kit
 
-AVCodec新增支持AV1/VP9/VP8/RV30/RV40/WVC1/DVVIDEO/RAWVIDEO/MPEG1格式的视频软解码能力。（[指南](../harmonyos-guides/avcodec-support-formats.md#媒体编解码)）
+AVCodec新增支持AV1/VP9/VP8/RV30/RV40/WVC1/DVVIDEO/RAWVIDEO/MPEG1格式的视频软解码能力。（[指南](../harmonyos-guides/avcodec-support-formats.md#视频解码)）
 
 ### Basic Service Kit
 
@@ -113,7 +113,7 @@ AVCodec新增支持AV1/VP9/VP8/RV30/RV40/WVC1/DVVIDEO/RAWVIDEO/MPEG1格式的视
 ### Call Service Kit
 
 * 新增支持查询应用是否有企业来电显示权限以及获取陌生号码与信息识别开关状态、应用号码识别开关状态。（[API参考](../harmonyos-references/callservicekit-numberldentify.md)）
-* 新增支持跳转陌生号码和信息识别设置页面能力。（[指南](../harmonyos-guides/callservice-enterprise-contact-display.md#应用跳转陌生号码和信息识别页面)）
+* 新增支持跳转陌生号码和信息识别设置页面能力。（[指南](../harmonyos-guides/callservice-enterprise-app-redirection.md)）
 
 ### Camera Kit
 
@@ -182,7 +182,7 @@ ArkTS卡片开发支持V2装饰器语法。（[指南](../harmonyos-guides/arkts
 
 * 新增支持根据给定的bundleInfoGetFlag获取设备指定用户下已安装应用列表。（[API参考](../harmonyos-references/js-apis-enterprise-bundlemanager.md#bundlemanagergetinstalledbundlelist23)）
 * 应用管理模块新增支持设置UIAbility组件禁用策略。（[API参考](../harmonyos-references/js-apis-enterprise-applicationmanager.md#applicationmanagersetabilitydisabled23)）
-* MDM应用支持在后台访问context和启动应用的功能。（[API参考](../harmonyos-references/s-apis-application-enterpriseadminextensioncontext.md)）
+* MDM应用支持在后台访问context和启动应用的功能。（[API参考](../harmonyos-references/js-apis-application-enterpriseadminextensioncontext.md)）
 
 ### Media Kit
 
@@ -261,7 +261,7 @@ AppFreeze日志中调用栈的堆栈信息增加线程状态信息。（[指南]
 * 底部页签和导航组件新增支持沉浸式材质效果。（[API参考-底部页签材质参数](../harmonyos-references/ui-design-hdstabs.md#systemmaterialparams)、[API参考-导航组件材质参数](../harmonyos-references/ui-design-hdsnavigation.md#systemmaterialparams)）
 * 列表卡片新增支持无障碍相关能力，包括无障碍分组、聚合播报等。（[API参考](../harmonyos-references/ui-design-hdslistitemcard.md#accessibilitygroupoptions)）
 * 新增支持设置列表的预览菜单样式、横滑删除触发类型以及拦截无障碍事件等能力。（[API参考](../harmonyos-references/ui-design-hdslistitem.md#menustyle)）
-* 侧边栏新增支持通过横滑手势打开/关闭侧边栏。（[API参考](../harmonyos-references/ui-design-hdssidebar.md#接口)）
+* 侧边栏新增支持通过横滑手势打开/关闭侧边栏。（[API参考](../harmonyos-references/ui-design-hdssidebar.md#hdssidebar-1)）
 * 操作栏新增支持设置操作栏上下边距。（[API参考](../harmonyos-references/ui-design-hdsactionbar.md#actionbarstyle)）
 * 即时消息栏新增支持高度随组件文本内容自适应变化。（[API参考](../harmonyos-references/ui-design-hdssnackbar.md#snackbarstyleoptions)）
 * 新增材质模块，支持设置材质类型和等级，实现组件的沉浸式材质效果。（[API参考](../harmonyos-references/ui-design-hdsmaterial.md)）

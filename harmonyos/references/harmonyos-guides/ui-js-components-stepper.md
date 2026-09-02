@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: stepper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > stepper开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:46+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9157cae52a53ac4c2996da4c8ee9a772e10181d0df4c4a9713adbdf03fbbd992
+scraped_at: 2026-09-02T14:49:53+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:d4950c04c3f1581263b589e226e35be78aeeb4effbab8f0aafa325139236e0db
 ---
 
 当一个任务需要多个步骤时，可以使用stepper组件展示当前进展。具体用法请参考[stepper API](../harmonyos-references/js-components-container-stepper.md)。
@@ -14,181 +14,181 @@ content_hash: sha256:9157cae52a53ac4c2996da4c8ee9a772e10181d0df4c4a9713adbdf03fb
 
 在pages/index目录下的hml文件中创建一个stepper组件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <stepper>
-4. <stepper-item>
-5. <text>Step 1</text>
-6. </stepper-item>
-7. <stepper-item>
-8. <text>Step 2</text>
-9. </stepper-item>
-10. </stepper>
-11. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width:100%;
-4. height:100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-10. text{
-11. width: 100%;
-12. height: 100%;
-13. text-align: center;
-14. }
+```html
+<!-- xxx.hml -->
+<div class="container"> 
+ <stepper>    
+   <stepper-item>     
+     <text>Step 1</text>
+   </stepper-item> 
+   <stepper-item>     
+     <text>Step 2</text>
+   </stepper-item> 
+ </stepper> 
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yqwnn6XzRRmlVGPIhxFfBw/zh-cn_image_0000002558764582.gif)
+```css
+/* xxx.css */
+.container {
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+text{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+```
 
-## 设置index属性
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/sfEFGmeKSK2qhn861eaf3Q/zh-cn_image_0000002736433077.gif)
+
+## 设置index和label属性
 
 页面默认显示索引值为index的步骤。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <stepper index="2">
-4. <stepper-item>
-5. <text>stepper-item1</text>
-6. </stepper-item>
-7. <stepper-item>
-8. <text>stepper-item2</text>
-9. </stepper-item>
-10. <stepper-item>
-11. <text>stepper-item3</text>
-12. </stepper-item>
-13. </stepper>
-14. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width:100%;
-4. height:100%;
-5. flex-direction: column;
-6. background-color: #F1F3F5;
-7. }
-8. text{
-9. width: 100%;
-10. height: 100%;
-11. text-align: center;
-12. }
+```html
+<!-- xxx.hml -->
+<div class="container"> 
+ <stepper index="2">    
+   <stepper-item>     
+     <text>stepper-item1</text>
+   </stepper-item> 
+   <stepper-item>     
+     <text>stepper-item2</text>
+   </stepper-item> 
+   <stepper-item>     
+     <text>stepper-item3</text>
+   </stepper-item> 
+  </stepper> 
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/z89Duq5CQIyipGrz3YmRkQ/zh-cn_image_0000002558604926.gif)
+```css
+/* xxx.css */
+.container {
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  background-color: #F1F3F5;
+}
+text{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/jSRkPRyCRYOL-K3vIW5rWg/zh-cn_image_0000002706833922.gif)
 
 通过设置label属性，自定义stepper-item的提示按钮。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <stepper index="1">
-4. <stepper-item label="{{label_1}}">
-5. <text>stepper-item1</text>
-6. </stepper-item>
-7. <stepper-item label="{{label_2}}">
-8. <text>stepper-item2</text>
-9. </stepper-item>
-10. <stepper-item label="{{label_3}}">
-11. <text>stepper-item3</text>
-12. </stepper-item>
-13. <stepper-item>
-14. <text>stepper-item4</text>
-15. </stepper-item>
-16. </stepper>
-17. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width:100%;
-4. height:100%;
-5. flex-direction: column;
-6. background-color: #F1F3F5;
-7. }
-8. text{
-9. width: 100%;
-10. height: 100%;
-11. text-align: center;
-12. }
+```html
+<!-- xxx.hml -->
+<div class="container"> 
+ <stepper index="1">    
+   <stepper-item label="{{label_1}}">     
+     <text>stepper-item1</text>
+   </stepper-item> 
+   <stepper-item label="{{label_2}}">     
+     <text>stepper-item2</text>
+   </stepper-item> 
+   <stepper-item label="{{label_3}}">     
+     <text>stepper-item3</text>
+   </stepper-item>
+   <stepper-item>     
+     <text>stepper-item4</text>
+   </stepper-item> 
+ </stepper> 
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. label_1:{
-5. nextLabel: 'NEXT',
-6. status: 'normal'
-7. },
-8. label_2:{
-9. prevLabel: 'BACK',
-10. nextLabel: 'NEXT',
-11. status: 'normal'
-12. },
-13. label_3:{
-14. prevLabel: 'BACK',
-15. nextLabel: 'END',
-16. status: 'disabled'
-17. },
-18. },
-19. }
+```css
+/* xxx.css */
+.container {
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  background-color: #F1F3F5;
+}
+text{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7hD6jfYeQv-TZyKJseyPUQ/zh-cn_image_0000002589324451.gif)
+```js
+// xxx.js
+export default {
+  data: {
+    label_1:{
+      nextLabel: 'NEXT',
+      status: 'normal'
+    },
+    label_2:{
+      prevLabel: 'BACK',
+      nextLabel: 'NEXT',
+      status: 'normal'
+    },
+    label_3:{
+      prevLabel: 'BACK',
+      nextLabel: 'END',
+      status: 'disabled'
+    },
+  },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/_HfNFfrDTB2IFenxybrA4A/zh-cn_image_0000002736313029.gif)
 
 ## 设置样式
 
 stepper组件默认填充父容器，通过border和background-color设置边框、背景色。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container" >
-3. <div class="stepperContent">
-4. <stepper class="stepperClass">
-5. <stepper-item>
-6. <text>stepper-item1</text>
-7. </stepper-item>
-8. </stepper>
-9. </div>
-10. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width:100%;
-4. height:100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. background-color:#F1F3F5;
-9. }
-10. .stepperContent{
-11. width: 300px;
-12. height: 300px;
-13. }
-14. .stepperClass{
-15. border:1px solid silver ;
-16. background-color: white;
-17. }
-18. text{
-19. width: 100%;
-20. height: 100%;
-21. text-align: center;
-22. }
+```html
+<!-- xxx.hml -->
+<div class="container" > 
+  <div class="stepperContent">
+    <stepper class="stepperClass">    
+      <stepper-item>     
+        <text>stepper-item1</text>
+      </stepper-item> 
+    </stepper> 
+  </div>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/fehPHHvOQOOCbMiOrrqesQ/zh-cn_image_0000002589244391.png)
+```css
+/* xxx.css */
+.container {
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:#F1F3F5;
+}
+.stepperContent{
+  width: 300px;
+  height: 300px;
+}
+.stepperClass{
+  border:1px solid silver ;
+  background-color: white;
+}
+text{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/SlQj_oP0Sbqoc7-cFTvX0w/zh-cn_image_0000002706673988.png)
 
 ## 添加事件
 
@@ -197,95 +197,95 @@ stepper分别添加finish，change，next，back，skip事件。
 * 当change与next或back同时存在时，会先执行next或back事件再去执行change事件。
 * 重新设置index属性值时要先清除index的值再重新设置，否则检测不到值的改变。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container"  style="background-color:#F1F3F5;">
-3. <div >
-4. <stepper onfinish="stepperFinish" onchange="stepperChange" onnext="stepperNext" onback="stepperBack" onskip="stepperSkip" id="stepperId" index="{{index}}">
-5. <stepper-item>
-6. <text>stepper-item1</text>
-7. <button value="skip" onclick="skipClick"></button>
-8. </stepper-item>
-9. <stepper-item>
-10. <text>stepper-item2</text>
-11. <button value="skip" onclick="skipClick"></button>
-12. </stepper-item>
-13. <stepper-item>
-14. <text>stepper-item3</text>
-15. </stepper-item>
-16. </stepper>
-17. </div>
-18. </div>
-```
-
-```
-1. /* xxx.css */
-2. .doc-page {
-3. width:100%;
-4. height:100%;
-5. flex-direction: column;
-6. align-items: center;
-7. justify-content: center;
-8. }
-9. stepper-item{
-10. width: 100%;
-11. flex-direction: column;
-12. align-self: center;
-13. justify-content: center;
-14. }
-15. text{
-16. margin-top: 45%;
-17. justify-content: center;
-18. align-self: center;
-19. margin-bottom: 50px;
-20. }
-21. button{
-22. width: 80%;
-23. height: 60px;
-24. margin-top: 20px;
-25. }
+```html
+<!-- xxx.hml -->
+<div class="container"  style="background-color:#F1F3F5;">
+  <div >
+    <stepper onfinish="stepperFinish" onchange="stepperChange" onnext="stepperNext" onback="stepperBack" onskip="stepperSkip" id="stepperId" index="{{index}}">
+      <stepper-item>
+        <text>stepper-item1</text>
+        <button value="skip" onclick="skipClick"></button>
+      </stepper-item>
+      <stepper-item>
+         <text>stepper-item2</text>
+         <button value="skip" onclick="skipClick"></button>
+      </stepper-item>
+      <stepper-item>
+        <text>stepper-item3</text>
+      </stepper-item>
+    </stepper>
+  </div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. data: {
-5. index:0,
-6. },
-7. stepperSkip(){
-8. this.index=2;
-9. },
-10. skipClick(){
-11. this.$element('stepperId').setNextButtonStatus({status: 'skip', label: 'SKIP'});
-12. },
-13. stepperFinish(){
-14. promptAction.showToast({
-15. message: 'All Finished'
-16. })
-17. },
-18. stepperChange(e){
-19. console.info("stepperChange"+e.index)
-20. promptAction.showToast({
-21. // index表示当前步骤的序号
-22. message: 'Previous step: '+e.prevIndex+"-------Current step:"+e.index
-23. })
-24. },
-25. stepperNext(e){
-26. console.info("stepperNext"+e.index)
-27. promptAction.showToast({
-28. // pendingIndex表示将要跳转的序号
-29. message: 'Current step:'+e.index+"-------Next step:"+e.pendingIndex
-30. })
-31. var index = {pendingIndex:e.pendingIndex }
-32. return index;
-33. },
-34. stepperBack(e){
-35. console.info("stepperBack"+e.index)
-36. var index = {pendingIndex: e.pendingIndex }
-37. return index;
-38. }
-39. }
+```css
+/* xxx.css */
+.container {
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+stepper-item{
+  width: 100%;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+text{
+  margin-top: 45%;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 50px;
+}
+button{
+  width: 80%;
+  height: 60px;
+  margin-top: 20px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/kpp_kOlYS528AIKyARvOxQ/zh-cn_image_0000002558764584.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+  data: {
+    index:0,
+  },
+   stepperSkip(){
+    this.index=2;
+  },
+   skipClick(){
+    this.$element('stepperId').setNextButtonStatus({status: 'skip', label: 'SKIP'});
+  },
+  stepperFinish(){
+    promptAction.showToast({
+      message: 'All Finished'
+    })
+  },
+  stepperChange(e){
+    console.info("stepperChange"+e.index)
+    promptAction.showToast({
+      // index表示当前步骤的序号
+      message: 'Previous step: '+e.prevIndex+"-------Current step:"+e.index
+    })
+  },
+  stepperNext(e){
+    console.info("stepperNext"+e.index)
+    promptAction.showToast({
+      // pendingIndex表示将要跳转的序号
+      message: 'Current step:'+e.index+"-------Next step:"+e.pendingIndex
+    })
+    var index = {pendingIndex:e.pendingIndex }
+    return index;
+  },
+  stepperBack(e){
+    console.info("stepperBack"+e.index)
+    var index = {pendingIndex: e.pendingIndex }
+    return index;
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/neYyNwVDTMyVof0KSu9QNg/zh-cn_image_0000002736433079.gif)

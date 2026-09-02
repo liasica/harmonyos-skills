@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: 预览窗口顶部和底部出现白边
 breadcrumb: FAQ > DevEco Studio > 界面预览 > 预览窗口顶部和底部出现白边
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:19+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:0feaf2e607059e6cb8c65c3cc23ad729d06565abfd4c7b2f074c0dd3aa02d9e2
+scraped_at: 2026-09-02T14:54:53+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:323cf302f63ad151b4f008c60522b2ccbe58bd05ff28b20ed6c9941d4ce35b76
 ---
 
 **问题现象**
 
 预览窗口顶部和底部出现白边。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/zmKSdQosQJCjvC94aERxHA/zh-cn_image_0000002229603709.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ip10c5GeTfeHaEWN2p415Q/zh-cn_image_0000002654837771.png)
 
 **解决措施**
 
@@ -20,53 +20,49 @@ content_hash: sha256:0feaf2e607059e6cb8c65c3cc23ad729d06565abfd4c7b2f074c0dd3aa0
 
 * 方法一：预览场景下，使用[expandSafeArea()](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)扩展安全区域属性。
 
-  ```
-  1. //Index.ets
-  2. @Entry
-  3. @Component
-  4. struct Index {
-  5. @State message: string = 'Hello World';
+  ```typescript
+  // Index.ets
+  @Entry
+  @Component
+  struct Index {
+    @State message: string = 'Hello World';
 
-  8. build() {
-  9. RelativeContainer() {
-  10. Text(this.message)
-  11. .id('HelloWorld')
-  12. .fontSize(50)
-  13. .fontWeight(FontWeight.Bold)
-  14. .alignRules({
-  15. center: { anchor: '__container__', align: VerticalAlign.Center },
-  16. middle: { anchor: '__container__', align: HorizontalAlign.Center }
-  17. })
-  18. }
-  19. .height('100%')
-  20. .width('100%')
-  21. .backgroundColor('#008000')
-  22. .expandSafeArea([SafeAreaType.SYSTEM])
-  23. }
-  24. }
+    build() {
+      RelativeContainer() {
+        Text(this.message)
+          .id('HelloWorld')
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+          .alignRules({
+            center: { anchor: '__container__', align: VerticalAlign.Center },
+            middle: { anchor: '__container__', align: HorizontalAlign.Center }
+          })
+      }
+      .height('100%')
+      .width('100%')
+      .backgroundColor('#008000')
+      .expandSafeArea([SafeAreaType.SYSTEM])
+    }
+  }
   ```
-
-  [ExpandSafeArea.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/PreviewerOperating/entry/src/main/ets/pages/ExpandSafeArea.ets#L3-L26)
 
 * 方法二：预览调试时，调用[setWindowLayoutFullScreen()](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)接口设置窗口全屏。
 
+  ```typescript
+  // EntryAbility.ets
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // Main window is created, set main page for this ability
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    windowStage.loadContent('pages/Index', (err) => {
+      // ...
+    });
+    windowStage.getMainWindow((err, data) => {
+      if (!err.code) {
+        data.setWindowLayoutFullScreen(true)
+      }
+    });
+  }
   ```
-  1. // EntryAbility.ets
-  2. onWindowStageCreate(windowStage: window.WindowStage): void {
-  3. // Main window is created, set main page for this ability
-  4. hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-  5. windowStage.loadContent('pages/Index', (err) => {
-  6. // ...
-  7. });
-  8. windowStage.getMainWindow((err, data) => {
-  9. if (!err.code) {
-  10. data.setWindowLayoutFullScreen(true)
-  11. }
-  12. });
-  13. }
-  ```
-
-  [EntryAbility.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/PreviewerOperating/entry/src/main/ets/entryability/EntryAbility.ets#L22-L40)
 
 **参考链接**
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 上传下载错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 上传下载错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ac3ceb324656e0461732b61492aaf8de0d4daa489002caaeb6aee56dbf3d28a7
+scraped_at: 2026-09-02T15:02:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:52a0d0e5b6b1fc363a7da9708e5d9071748dd62c8312725249029ae4ebae966d
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 13400001 文件操作异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -26,15 +24,13 @@ Invalid file or file system error.
 
 **可能原因**
 
-该错误码表示文件操作异常，可能原因是文件权限不足。具体原因可参考[BusinessError](js-apis-base.md#businesserror)中的错误信息message。
+该错误码表示文件操作异常，可能原因是文件权限不足。具体原因可参考[BusinessError](js-apis-base.md#businesserror)中的错误信息message以及[13400001错误的处理方法](../harmonyos-faqs/faq-basics-service-kit-20.md)。
 
 **处理步骤**
 
 请检查文件权限是否合理。
 
 ## 13400002 文件路径异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -53,8 +49,6 @@ File path not supported or invalid.
 请检查上传下载的文件路径是否正确。
 
 ## 13400003 服务异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -92,8 +86,6 @@ Other error.
 
 ## 21900004 应用任务队列已满
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The application task queue is full.
@@ -114,8 +106,6 @@ The application task queue is full.
 
 ## 21900005 任务模式错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Operation with wrong task mode.
@@ -134,8 +124,6 @@ Operation with wrong task mode.
 2. 这是接口限制，按接口说明使用即可。
 
 ## 21900006 操作不存在的任务错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -156,8 +144,6 @@ Task removed or not found.
 3. 使用正确的任务编号重新操作。
 
 ## 21900007 在不支持的状态上的操作
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -181,8 +167,6 @@ Operation with wrong task state.
 2. 执行当前任务状态支持的操作。
 
 ## 21900008 任务分组不存在或已移除
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

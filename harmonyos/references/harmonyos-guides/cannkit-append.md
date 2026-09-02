@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-appen
 title: Append
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingData > Append
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:22+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8e778df243c049fd1946f7544a79ffca87d0291215d54a98914541ecff0770cb
+content_hash: sha256:9d307c8eb9af17adbca2c9e2b21fa076076f0c06bde71c3f4941d8cf6462bb9a
 ---
 
 ## 函数功能
@@ -14,9 +14,9 @@ content_hash: sha256:8e778df243c049fd1946f7544a79ffca87d0291215d54a98914541ecff0
 
 ## 函数原型
 
-```
-1. template<typename T, typename std::enable_if<std::is_standard_layout<T>::value, int>::type = 0>  ge::graphStatus Append(const T &data);
-2. template<typename T, typename std::enable_if<std::is_standard_layout<T>::value, int>::type = 0>  ge::graphStatus Append(const T *data, size_t append_num);
+```cpp
+template<typename T, typename std::enable_if<std::is_standard_layout<T>::value, int>::type = 0>  ge::graphStatus Append(const T &data);
+template<typename T, typename std::enable_if<std::is_standard_layout<T>::value, int>::type = 0>  ge::graphStatus Append(const T *data, size_t append_num);
 ```
 
 ## 参数说明
@@ -39,25 +39,25 @@ content_hash: sha256:8e778df243c049fd1946f7544a79ffca87d0291215d54a98914541ecff0
 
 ## 调用示例
 
-```
-1. auto td_buf = TilingData::CreateCap(100U);
-2. auto td = reinterpret_cast<TilingData *>(td_buf.get());
-
-4. // 1
-5. struct AppendData{
-6. int a = 10;
-7. int b = 100;
-8. };
-9. AppendData ad;
-10. auto ret = td->Append<AppendData>(ad); // ge::GRAPH_SUCCESS
-
-12. // 2
-13. size_t append_num = 10;
-14. int32_t *td = new int32_t[append_num];
-15. auto ret = td->Append<int32_t>(td, append_num); // ge::GRAPH_SUCCESS
-
-17. // 3
-18. size_t append_num = 50;
-19. int32_t *td = new int32_t[append_num];
-20. auto ret = td->Append<int32_t>(td, append_num); // ge::GRAPH_FAILED
+```cpp
+auto td_buf = TilingData::CreateCap(100U);
+auto td = reinterpret_cast<TilingData *>(td_buf.get());
+ 
+// 1
+struct AppendData{
+  int a = 10;
+  int b = 100;
+};
+AppendData ad;
+auto ret = td->Append<AppendData>(ad); // ge::GRAPH_SUCCESS
+ 
+// 2
+size_t append_num = 10;
+int32_t *td = new int32_t[append_num];
+auto ret = td->Append<int32_t>(td, append_num); // ge::GRAPH_SUCCESS
+ 
+// 3
+size_t append_num = 50;
+int32_t *td = new int32_t[append_num];
+auto ret = td->Append<int32_t>(td, append_num); // ge::GRAPH_FAILED
 ```

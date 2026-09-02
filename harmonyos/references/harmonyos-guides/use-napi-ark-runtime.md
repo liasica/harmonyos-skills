@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-ark-
 title: 使用Node-API接口创建ArkTS运行时环境
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口创建ArkTS运行时环境
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:15912eeb467eb0f2f9892890020addb7a7fdc9cf0eec2083becbcce1bccfa557
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:25d69af7dcf5aaf5b3b8934de2185060501058609602be60e045936397c15b5b
 ---
 
 ## 场景介绍
@@ -20,153 +20,155 @@ content_hash: sha256:15912eeb467eb0f2f9892890020addb7a7fdc9cf0eec2083becbcce1bcc
 
 * 接口声明
 
-  ```
-  1. // index.d.ts
-  2. export const createArkRuntime: () => object;
+  ```typescript
+  // index.d.ts
+  export const createArkRuntime: () => object;
   ```
 * 编译配置
 
-  ```
-  1. # the minimum version of CMake.
-  2. cmake_minimum_required(VERSION 3.5.0)
-  3. project(MyApplication3)
+  ```txt
+  # the minimum version of CMake.
+  cmake_minimum_required(VERSION 3.5.0)
+  project(MyApplication3)
 
-  5. set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
-  6. if(DEFINED PACKAGE_FIND_FILE)
-  7. include(${PACKAGE_FIND_FILE})
-  8. endif()
-  9. add_definitions( "-DLOG_TAG=\"LOG_TAG\"" )
-  10. include_directories(${NATIVERENDER_ROOT_PATH}
-  11. ${NATIVERENDER_ROOT_PATH}/include)
+  set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+  if(DEFINED PACKAGE_FIND_FILE)
+      include(${PACKAGE_FIND_FILE})
+  endif()
+  add_definitions( "-DLOG_TAG=\"LOG_TAG\"" )
+  include_directories(${NATIVERENDER_ROOT_PATH}
+                      ${NATIVERENDER_ROOT_PATH}/include)
 
-  13. add_library(entry SHARED napi_init.cpp)
-  14. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+  add_library(entry SHARED napi_init.cpp)
+  target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
   ```
 
   在当前模块的build-profile.json5文件中进行以下配置：
 
-  ```
-  1. "buildOption": {
-  2. "arkOptions" : {
-  3. "runtimeOnly" : {
-  4. "sources": [
-  5. "./src/main/ets/pages/ObjectUtils.ets"
-  6. ]
-  7. }
-  8. },
+  ```json5
+    "buildOption": {
+      "arkOptions" : {
+        "runtimeOnly" : {
+          "sources": [
+            "./src/main/ets/pages/ObjectUtils.ets"
+          ]
+        }
+      },
+  // ...
+    },
   ```
 * 模块注册
 
-  ```
-  1. // create_ark_runtime.cpp
-  2. EXTERN_C_START
-  3. static napi_value Init(napi_env env, napi_value exports)
-  4. {
-  5. napi_property_descriptor desc[] = {
-  6. { "createArkRuntime", nullptr, CreateArkRuntime, nullptr, nullptr, nullptr, napi_default, nullptr }
-  7. };
-  8. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-  9. return exports;
-  10. }
-  11. EXTERN_C_END
+  ```cpp
+  // create_ark_runtime.cpp
+  EXTERN_C_START
+  static napi_value Init(napi_env env, napi_value exports)
+  {
+      napi_property_descriptor desc[] = {
+          { "createArkRuntime", nullptr, CreateArkRuntime, nullptr, nullptr, nullptr, napi_default, nullptr }
+      };
+      napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+      return exports;
+  }
+  EXTERN_C_END
 
-  13. static napi_module nativeModule = {
-  14. .nm_version = 1,
-  15. .nm_flags = 0,
-  16. .nm_filename = nullptr,
-  17. .nm_register_func = Init,
-  18. .nm_modname = "entry",
-  19. .nm_priv = nullptr,
-  20. .reserved = { 0 },
-  21. };
+  static napi_module nativeModule = {
+      .nm_version = 1,
+      .nm_flags = 0,
+      .nm_filename = nullptr,
+      .nm_register_func = Init,
+      .nm_modname = "entry",
+      .nm_priv = nullptr,
+      .reserved = { 0 },
+  };
 
-  23. extern "C" __attribute__((constructor)) void RegisterQueueWorkModule()
-  24. {
-  25. napi_module_register(&nativeModule);
-  26. }
+  extern "C" __attribute__((constructor)) void RegisterQueueWorkModule()
+  {
+      napi_module_register(&nativeModule);
+  }
   ```
 * 功能实现
 
   新建线程并创建ArkTS基础运行时环境，加载自定义模块请参考[napi\_load\_module\_with\_info](use-napi-load-module-with-info.md)。
 
   ```
-  1. #include "napi/native_api.h"
-  2. #include <pthread.h>
-  3. // ...
-  4. static void *CreateArkRuntimeFunc(void *arg)
-  5. {
-  6. // 1. 创建基础运行环境
-  7. napi_env env = nullptr;
-  8. napi_status ret = napi_create_ark_runtime(&env);
-  9. if (ret != napi_ok) {
-  10. return nullptr;
-  11. }
+  #include "napi/native_api.h"
+  #include <pthread.h>
+  // ...
+  static void *CreateArkRuntimeFunc(void *arg)
+  {
+      // 1. 创建基础运行环境
+      napi_env env = nullptr;
+      napi_status ret = napi_create_ark_runtime(&env);
+      if (ret != napi_ok) {
+          return nullptr;
+      }
 
-  13. napi_handle_scope scope = nullptr;
-  14. if (napi_open_handle_scope(env, &scope) != napi_ok) {
-  15. napi_destroy_ark_runtime(&env);
-  16. return nullptr;
-  17. }
+      napi_handle_scope scope = nullptr;
+      if (napi_open_handle_scope(env, &scope) != napi_ok) {
+          napi_destroy_ark_runtime(&env);
+          return nullptr;
+      }
 
-  19. // 2. 加载自定义模块
-  20. napi_value objUtils = nullptr;
-  21. ret = napi_load_module_with_info(env, "entry/src/main/ets/pages/ObjectUtils", "com.example.myapplication/entry",
-  22. &objUtils);
-  23. if (ret != napi_ok) {
-  24. OH_LOG_INFO(LOG_APP, "Failed to load module");
-  25. napi_close_handle_scope(env, scope);
-  26. napi_destroy_ark_runtime(&env);
-  27. return nullptr;
-  28. }
+      // 2. 加载自定义模块
+      napi_value objUtils = nullptr;
+      ret = napi_load_module_with_info(env, "entry/src/main/ets/pages/ObjectUtils", "com.example.myapplication/entry",
+                                       &objUtils);
+      if (ret != napi_ok) {
+          OH_LOG_INFO(LOG_APP, "Failed to load module");
+          napi_close_handle_scope(env, scope);
+          napi_destroy_ark_runtime(&env);
+          return nullptr;
+      }
 
-  30. // 3. 使用ArkTS中的logger
-  31. napi_value logger = nullptr;
-  32. ret = napi_get_named_property(env, objUtils, "Logger", &logger);
-  33. if (ret != napi_ok) {
-  34. napi_close_handle_scope(env, scope);
-  35. napi_destroy_ark_runtime(&env);
-  36. return nullptr;
-  37. }
-  38. ret = napi_call_function(env, objUtils, logger, 0, nullptr, nullptr);
-  39. if (ret != napi_ok) {
-  40. napi_close_handle_scope(env, scope);
-  41. napi_destroy_ark_runtime(&env);
-  42. return nullptr;
-  43. }
+      // 3. 使用ArkTS中的logger
+      napi_value logger = nullptr;
+      ret = napi_get_named_property(env, objUtils, "Logger", &logger);
+      if (ret != napi_ok) {
+          napi_close_handle_scope(env, scope);
+          napi_destroy_ark_runtime(&env);
+          return nullptr;
+      }
+      ret = napi_call_function(env, objUtils, logger, 0, nullptr, nullptr);
+      if (ret != napi_ok) {
+          napi_close_handle_scope(env, scope);
+          napi_destroy_ark_runtime(&env);
+          return nullptr;
+      }
 
-  45. napi_close_handle_scope(env, scope);
+      napi_close_handle_scope(env, scope);
 
-  47. // 4. 销毁ArkTS环境
-  48. ret = napi_destroy_ark_runtime(&env);
-  49. if (ret != napi_ok) {
-  50. OH_LOG_INFO(LOG_APP, "Failed to destroy ark runtime");
-  51. }
+      // 4. 销毁ArkTS环境
+      ret = napi_destroy_ark_runtime(&env);
+      if (ret != napi_ok) {
+          OH_LOG_INFO(LOG_APP, "Failed to destroy ark runtime");
+      }
 
-  53. return nullptr;
-  54. }
+      return nullptr;
+  }
 
-  56. static napi_value CreateArkRuntime(napi_env env, napi_callback_info info)
-  57. {
-  58. pthread_t tid;
-  59. pthread_create(&tid, nullptr, CreateArkRuntimeFunc, nullptr);
-  60. pthread_join(tid, nullptr);
-  61. return nullptr;
-  62. }
+  static napi_value CreateArkRuntime(napi_env env, napi_callback_info info)
+  {
+      pthread_t tid;
+      pthread_create(&tid, nullptr, CreateArkRuntimeFunc, nullptr);
+      pthread_join(tid, nullptr);
+      return nullptr;
+  }
   ```
 * ArkTS导入头文件
 
-  ```
-  1. import testNapi from 'libentry.so';
+  ```typescript
+  import testNapi from 'libentry.so';
   ```
 * ArkTS代码示例
 
-  ```
-  1. export function Logger() {
-  2. console.info('print log');
-  3. }
+  ```typescript
+  export function Logger() {
+    console.info('print log');
+  }
   ```
 
-  ```
-  1. // index.ets
-  2. testNapi.createArkRuntime();
+  ```typescript
+  // index.ets
+  testNapi.createArkRuntime();
   ```

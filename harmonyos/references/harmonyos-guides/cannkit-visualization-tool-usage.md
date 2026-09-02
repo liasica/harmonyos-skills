@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-visua
 title: 可视化工具
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 附录 > 可视化工具
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:05+08:00
+scraped_at: 2026-09-02T15:00:14+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:660a44a55b9ad385244bdc17fed2fef72a985a90535c421c2eb1acf892cad5f9
+content_hash: sha256:230e3b28963bc776dc1626572d2a7a1ed672e54732dc2d3efedce090cb6d28c2
 ---
 
 ## 概述
 
 [Netron](https://github.com/lutzroeder/netron/tags)是一个神经网络模型可视化工具，支持许多主流AI框架模型的可视化。[Netron](https://github.com/lutzroeder/netron/tags) 5.1.6版本开始支持.om模型可视化。如下图所示，使用Netron工具加载.om模型后，可以展示模型的拓扑结构、图、节点的信息等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/UIKiw0EnRZm-htILNi-uAA/zh-cn_image_0000002589325675.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Ab90bD_hRvex2uL6N_WqHg/zh-cn_image_0000002706835370.png)
 
 ## 功能描述
 
@@ -44,10 +44,10 @@ content_hash: sha256:660a44a55b9ad385244bdc17fed2fef72a985a90535c421c2eb1acf892c
 1. 将编译后的模型拖入[Netron](https://netron.app/)工具，即可打开。
 2. 点击子图节点，在右侧查找"ATTRIBUTES->subgraph"，点击"subgraph"的属性值。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/AzP5tJLgRyOSW50OOrnR7Q/zh-cn_image_0000002589245615.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/L30WdhstTziTZPN1pJa2WQ/zh-cn_image_0000002736314475.png)
 3. 查看子图节点的NODE PROPERTIES、ATTRIBUTES、INPUTS和OUTPUTS等信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/nEfsWAHuT_K8d7AXFi-Qzw/zh-cn_image_0000002558765806.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/cu9NKKbrRJaaz8saNddjag/zh-cn_image_0000002706675432.png)
 4. 点击左上角箭头，返回主图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/muzgcMBJTe2v_AJeiVWUdQ/zh-cn_image_0000002558606150.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/5-dwOXLrR4CipuzXKqYcBw/zh-cn_image_0000002736434519.png)

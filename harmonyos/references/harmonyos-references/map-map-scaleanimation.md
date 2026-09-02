@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-scaleanimation
-title: ScaleAnimation
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > ScaleAnimation
+title: Class (ScaleAnimation)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (ScaleAnimation)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:15+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:9f49a4117af866761228f53c87f1f3c7d02e8741ccae9959c0b917bc4309f480
+scraped_at: 2026-09-02T15:02:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2d64aa70cabafb476ef032e7b62d747c611731e1e2317fae42f17d7f517d812f
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map } from '@kit.MapKit';
+```typescript
+import { map } from '@kit.MapKit';
 ```
 
 ## ScaleAnimation
-
-PhonePC/2in1TabletWearable
 
 控制缩放的动画类，继承[Animation](map-map-animation.md)。
 
@@ -32,13 +28,11 @@ PhonePC/2in1TabletWearable
 
 ### constructor
 
-PhonePC/2in1TabletWearable
-
 constructor(fromX: number, toX: number, fromY: number, toY: number)
 
 构造器，构造控制缩放的动画实例。
 
-说明
+**说明** 
 
 0表示动画缩小消失。
 
@@ -67,6 +61,6 @@ constructor(fromX: number, toX: number, fromY: number, toY: number)
 
 **示例：**
 
-```
-1. let animation: map.ScaleAnimation = new map.ScaleAnimation(1, 3, 1, 3);
+```typescript
+let animation: map.ScaleAnimation = new map.ScaleAnimation(1, 3, 1, 3);
 ```

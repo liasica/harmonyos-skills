@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: SecurityAudit_Filter
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > C API > 结构体 > SecurityAudit_Filter
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d9b45c14546322d88f7929ddb09b1c779e9c33309fe47fa935a5d04099afc70d
+scraped_at: 2026-09-02T15:01:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9d2a8b0d1ef0fa453a0492378d489ed442388dc02a21f19ea5ea69cdcaa9b208
 ---
 
 ## 概述
-
-PC/2in1
 
 提供过滤条件。
 
@@ -22,11 +20,7 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 成员变量
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
@@ -37,14 +31,10 @@ PC/2in1
 
 ## 结构体成员变量说明
 
-PC/2in1
-
 ### isInclude
 
-PC/2in1
-
-```
-1. bool SecurityAudit_Filter::isInclude
+```cpp
+bool SecurityAudit_Filter::isInclude
 ```
 
 **描述**
@@ -53,10 +43,8 @@ TRUE: 符合条件的事件被返回给客户端。 FALSE: 符合条件的事件
 
 ### type
 
-PC/2in1
-
-```
-1. SecurityAudit_FilterType SecurityAudit_Filter::type
+```cpp
+SecurityAudit_FilterType SecurityAudit_Filter::type
 ```
 
 **描述**
@@ -65,10 +53,8 @@ PC/2in1
 
 ### value
 
-PC/2in1
-
-```
-1. const char** SecurityAudit_Filter::value
+```cpp
+const char** SecurityAudit_Filter::value
 ```
 
 **描述**
@@ -77,10 +63,8 @@ PC/2in1
 
 ### valueCount
 
-PC/2in1
-
-```
-1. uint64_t SecurityAudit_Filter::valueCount
+```cpp
+uint64_t SecurityAudit_Filter::valueCount
 ```
 
 **描述**

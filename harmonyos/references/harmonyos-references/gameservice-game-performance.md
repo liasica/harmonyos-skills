@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: GamePerformance
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > C API > 模块 > GamePerformance
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:44d9bc20c1f820ae960d704b5dabad71d56308529b1f9bccb81c836f1e9ad520
+scraped_at: 2026-09-02T15:02:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f7404871c8055fa084ad63dc7b7fc921570a434277d2a4d1ab387a00f3d68d20
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 为游戏场景感知模块提供C接口的定义。
 
@@ -20,19 +18,13 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 文件
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
 | [game\_performance.h](gameservice-game-performance-h.md) | 声明游戏场景感知的基本概念。 |
 
 ### 类型定义
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -61,8 +53,6 @@ PhonePC/2in1Tablet
 
 ### 枚举
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
 | [GamePerformance\_EngineType](gameservice-game-performance.md#gameperformance_enginetype-1) {  GAME\_PERFORMANCE\_ENGINE\_TYPE\_UNITY = 1,  GAME\_PERFORMANCE\_ENGINE\_TYPE\_UNREAL = 2,  GAME\_PERFORMANCE\_ENGINE\_TYPE\_MESSIAH = 3,  GAME\_PERFORMANCE\_ENGINE\_TYPE\_COCOS = 4,  GAME\_PERFORMANCE\_ENGINE\_TYPE\_OTHERS = 200  } | 此枚举描述引擎类型。 |
@@ -77,8 +67,6 @@ PhonePC/2in1Tablet
 | [GamePerformance\_DeviceInfoType](gameservice-game-performance.md#gameperformance_deviceinfotype-1) {  GAME\_PERFORMANCE\_DEVICEINFO\_TYPE\_THERMAL = 0,  GAME\_PERFORMANCE\_DEVICEINFO\_TYPE\_GPU = 1,  GAME\_PERFORMANCE\_DEVICEINFO\_TYPE\_CPU = 2  } | 此枚举描述设备性能信息类型。  GAME\_PERFORMANCE\_DEVICEINFO\_TYPE\_CPU 从6.0.2(22)开始支持。 |
 
 ### 函数
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -155,7 +143,7 @@ PhonePC/2in1Tablet
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_DestroyThermalInfoQueryParameters](gameservice-game-performance.md#hms_gameperformance_destroythermalinfoqueryparameters) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*\*parameters) | 当[GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters)实例不再使用，销毁该实例。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_ThermalInfoQueryParameters\_SetNeedsPrediction](gameservice-game-performance.md#hms_gameperformance_thermalinfoqueryparameters_setneedsprediction) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*parameters, const bool needsPrediction) | 为[GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters)实例设置是否需要预测温升趋势。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_ThermalInfoQueryParameters\_SetTargetThermalLevel](gameservice-game-performance.md#hms_gameperformance_thermalinfoqueryparameters_settargetthermallevel) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*parameters, const int32\_t targetThermalLevel) | 为[GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters)实例设置预测温升趋势的目标温度等级。 |
-| [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_QueryThermalInfo](gameservice-game-performance.md#hms_gameperformance_querythermalinfo) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*parameters，[GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo) \*\*thermalInfo) | 查询温度信息。 |
+| [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_QueryThermalInfo](gameservice-game-performance.md#hms_gameperformance_querythermalinfo) ([GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters) \*parameters, [GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo) \*\*thermalInfo) | 查询温度信息。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_DestroyThermalInfo](gameservice-game-performance.md#hms_gameperformance_destroythermalinfo) ([GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo) \*\*thermalInfo) | 当[GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo)实例不再使用，销毁该实例。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_QueryGpuInfo](gameservice-game-performance.md#hms_gameperformance_querygpuinfo) ([GamePerformance\_GpuInfo](gameservice-game-performance.md#gameperformance_gpuinfo) \*\*gpuInfo) | 查询GPU性能信息。 |
 | [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) [HMS\_GamePerformance\_DestroyGpuInfo](gameservice-game-performance.md#hms_gameperformance_destroygpuinfo) ([GamePerformance\_GpuInfo](gameservice-game-performance.md#gameperformance_gpuinfo) \*\*gpuInfo) | 当[GamePerformance\_GpuInfo](gameservice-game-performance.md#gameperformance_gpuinfo)实例不再使用，销毁该实例。 |
@@ -182,14 +170,10 @@ PhonePC/2in1Tablet
 
 ## 类型定义说明
 
-PhonePC/2in1Tablet
-
 ### GamePerformance\_ConfigInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_ConfigInfo GamePerformance_ConfigInfo
+```c
+typedef struct GamePerformance_ConfigInfo GamePerformance_ConfigInfo
 ```
 
 **描述**
@@ -200,10 +184,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_CpuInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_CpuInfo GamePerformance_CpuInfo
+```c
+typedef struct GamePerformance_CpuInfo GamePerformance_CpuInfo
 ```
 
 **描述**
@@ -214,10 +196,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_CpuLevel
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_CpuLevel GamePerformance_CpuLevel
+```c
+typedef enum GamePerformance_CpuLevel GamePerformance_CpuLevel
 ```
 
 **描述**
@@ -228,10 +208,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_DdrLevel
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_DdrLevel GamePerformance_DdrLevel
+```c
+typedef enum GamePerformance_DdrLevel GamePerformance_DdrLevel
 ```
 
 **描述**
@@ -242,10 +220,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_DeviceInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_DeviceInfo GamePerformance_DeviceInfo
+```c
+typedef struct GamePerformance_DeviceInfo GamePerformance_DeviceInfo
 ```
 
 **描述**
@@ -256,10 +232,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_DeviceInfoType
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_DeviceInfoType GamePerformance_DeviceInfoType
+```c
+typedef enum GamePerformance_DeviceInfoType GamePerformance_DeviceInfoType
 ```
 
 **描述**
@@ -270,10 +244,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_EngineType
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_EngineType GamePerformance_EngineType
+```c
+typedef enum GamePerformance_EngineType GamePerformance_EngineType
 ```
 
 **描述**
@@ -284,10 +256,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_ErrorCode
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_ErrorCode GamePerformance_ErrorCode
+```c
+typedef enum GamePerformance_ErrorCode GamePerformance_ErrorCode
 ```
 
 **描述**
@@ -298,10 +268,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_GameType
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_GameType GamePerformance_GameType
+```c
+typedef enum GamePerformance_GameType GamePerformance_GameType
 ```
 
 **描述**
@@ -312,10 +280,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_GpuInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_GpuInfo GamePerformance_GpuInfo
+```c
+typedef struct GamePerformance_GpuInfo GamePerformance_GpuInfo
 ```
 
 **描述**
@@ -326,10 +292,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_GpuLevel
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_GpuLevel GamePerformance_GpuLevel
+```c
+typedef enum GamePerformance_GpuLevel GamePerformance_GpuLevel
 ```
 
 **描述**
@@ -340,10 +304,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_InitParameters
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_InitParameters GamePerformance_InitParameters
+```c
+typedef struct GamePerformance_InitParameters GamePerformance_InitParameters
 ```
 
 **描述**
@@ -354,10 +316,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_NetInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_NetInfo GamePerformance_NetInfo
+```c
+typedef struct GamePerformance_NetInfo GamePerformance_NetInfo
 ```
 
 **描述**
@@ -368,10 +328,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_NetLoad
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_NetLoad GamePerformance_NetLoad
+```c
+typedef enum GamePerformance_NetLoad GamePerformance_NetLoad
 ```
 
 **描述**
@@ -382,24 +340,20 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_PackageInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_PackageInfo GamePerformance_PackageInfo
+```c
+typedef struct GamePerformance_PackageInfo GamePerformance_PackageInfo
 ```
 
 **描述**
 
-定义包信息。
+定义游戏包信息。
 
 **起始版本：** 5.0.2(14)
 
 ### GamePerformance\_PictureQualityLevel
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_PictureQualityLevel GamePerformance_PictureQualityLevel
+```c
+typedef enum GamePerformance_PictureQualityLevel GamePerformance_PictureQualityLevel
 ```
 
 **描述**
@@ -410,10 +364,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_PlayerInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_PlayerInfo GamePerformance_PlayerInfo
+```c
+typedef struct GamePerformance_PlayerInfo GamePerformance_PlayerInfo
 ```
 
 **描述**
@@ -424,10 +376,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_SceneImportanceLevel
 
-PhonePC/2in1Tablet
-
-```
-1. typedef enum GamePerformance_SceneImportanceLevel GamePerformance_SceneImportanceLevel
+```c
+typedef enum GamePerformance_SceneImportanceLevel GamePerformance_SceneImportanceLevel
 ```
 
 **描述**
@@ -438,10 +388,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_SceneInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_SceneInfo GamePerformance_SceneInfo
+```c
+typedef struct GamePerformance_SceneInfo GamePerformance_SceneInfo
 ```
 
 **描述**
@@ -452,10 +400,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_ThermalInfo
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_ThermalInfo GamePerformance_ThermalInfo
+```c
+typedef struct GamePerformance_ThermalInfo GamePerformance_ThermalInfo
 ```
 
 **描述**
@@ -466,10 +412,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_ThermalInfoQueryParameters
 
-PhonePC/2in1Tablet
-
-```
-1. typedef struct GamePerformance_ThermalInfoQueryParameters GamePerformance_ThermalInfoQueryParameters
+```c
+typedef struct GamePerformance_ThermalInfoQueryParameters GamePerformance_ThermalInfoQueryParameters
 ```
 
 **描述**
@@ -480,19 +424,17 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_ThermalLevelChangedCallback
 
-PhonePC/2in1Tablet
-
-```
-1. typedef void(*GamePerformance_ThermalLevelChangedCallback) (GamePerformance_DeviceInfo *deviceInfo, void *userData)
+```c
+typedef void(*GamePerformance_ThermalLevelChangedCallback) (GamePerformance_DeviceInfo *deviceInfo, void *userData)
 ```
 
 **描述**
 
-[HMS\_GamePerformance\_RegisterThermalLevelChangedCallback](gameservice-game-performance.md#hms_gameperformance_registerthermallevelchangedcallback)中使用的回调函数。当温度等级改变并且温度等级小于3时，该函数将被调用一次。当温度等级大于或等于3级时，该函数将每10秒调用一次。
+[HMS\_GamePerformance\_RegisterThermalLevelChangedCallback](gameservice-game-performance.md#hms_gameperformance_registerthermallevelchangedcallback)中使用的回调函数。当温度等级改变并且温度等级小于3档时，该函数将被调用一次。当温度等级大于或等于3档时，该函数将每10秒调用一次。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -501,14 +443,10 @@ PhonePC/2in1Tablet
 
 ## 枚举类型说明
 
-PhonePC/2in1Tablet
-
 ### GamePerformance\_CpuLevel
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_CpuLevel
+```c
+enum GamePerformance_CpuLevel
 ```
 
 **描述**
@@ -525,10 +463,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_DdrLevel
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_DdrLevel
+```c
+enum GamePerformance_DdrLevel
 ```
 
 **描述**
@@ -545,10 +481,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_DeviceInfoType
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_DeviceInfoType
+```c
+enum GamePerformance_DeviceInfoType
 ```
 
 **描述**
@@ -565,10 +499,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_EngineType
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_EngineType
+```c
+enum GamePerformance_EngineType
 ```
 
 **描述**
@@ -587,10 +519,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_ErrorCode
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_ErrorCode
+```c
+enum GamePerformance_ErrorCode
 ```
 
 **描述**
@@ -605,15 +535,13 @@ PhonePC/2in1Tablet
 | GAME\_PERFORMANCE\_PARAM\_INVALID | 无效参数。 |
 | GAME\_PERFORMANCE\_INTERNAL\_ERROR | 系统内部错误。 |
 | GAME\_PERFORMANCE\_AUTH\_FAILED | 鉴权失败。 |
-| GAME\_PERFORMANCE\_INVALID\_REQUEST | 非法请求。 |
+| GAME\_PERFORMANCE\_INVALID\_REQUEST | 无效请求。 |
 | GAME\_PERFORMANCE\_PARAM\_ERROR | 参数错误。  起始版本：6.0.2(22) |
 
 ### GamePerformance\_GameType
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_GameType
+```c
+enum GamePerformance_GameType
 ```
 
 **描述**
@@ -633,10 +561,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_GpuLevel
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_GpuLevel
+```c
+enum GamePerformance_GpuLevel
 ```
 
 **描述**
@@ -653,10 +579,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_NetLoad
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_NetLoad
+```c
+enum GamePerformance_NetLoad
 ```
 
 **描述**
@@ -673,10 +597,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_PictureQualityLevel
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_PictureQualityLevel
+```c
+enum GamePerformance_PictureQualityLevel
 ```
 
 **描述**
@@ -695,10 +617,8 @@ PhonePC/2in1Tablet
 
 ### GamePerformance\_SceneImportanceLevel
 
-PhonePC/2in1Tablet
-
-```
-1. enum GamePerformance_SceneImportanceLevel
+```c
+enum GamePerformance_SceneImportanceLevel
 ```
 
 **描述**
@@ -717,14 +637,10 @@ PhonePC/2in1Tablet
 
 ## 函数说明
 
-PhonePC/2in1Tablet
-
 ### HMS\_GamePerformance\_ConfigInfo\_SetAntiAliasingEnabled()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled (GamePerformance_ConfigInfo *configInfo, const bool antiAliasingEnabled)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled (GamePerformance_ConfigInfo *configInfo, const bool antiAliasingEnabled)
 ```
 
 **描述**
@@ -733,7 +649,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -748,10 +664,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetCurrentFrameRate()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate (GamePerformance_ConfigInfo *configInfo, const int64_t currentFrameRate)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate (GamePerformance_ConfigInfo *configInfo, const int64_t currentFrameRate)
 ```
 
 **描述**
@@ -760,12 +674,12 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向[GamePerformance\_ConfigInfo](gameservice-game-performance.md#gameperformance_configinfo)实例。该值不可以为空，否则将返回错误码401。 |
-| currentFrameRate | 当前帧率。取值范围为[1, 144]。 |
+| currentFrameRate | 当前帧率，单位：fps。取值范围为[1, 144]。 |
 
 **返回：**
 
@@ -775,10 +689,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetCurrentPictureQualityLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualityLevel (GamePerformance_ConfigInfo *configInfo, const GamePerformance_PictureQualityLevel currentPictureQualityLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualityLevel (GamePerformance_ConfigInfo *configInfo, const GamePerformance_PictureQualityLevel currentPictureQualityLevel)
 ```
 
 **描述**
@@ -787,7 +699,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -802,10 +714,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetCurrentResolution()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentResolution (GamePerformance_ConfigInfo *configInfo, const char *currentResolution)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetCurrentResolution (GamePerformance_ConfigInfo *configInfo, const char *currentResolution)
 ```
 
 **描述**
@@ -814,7 +724,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -829,10 +739,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetHdModeEnabled()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetHdModeEnabled (GamePerformance_ConfigInfo *configInfo, const bool hdModeEnabled)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetHdModeEnabled (GamePerformance_ConfigInfo *configInfo, const bool hdModeEnabled)
 ```
 
 **描述**
@@ -841,7 +749,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -856,10 +764,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetMaxFrameRate()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxFrameRate (GamePerformance_ConfigInfo *configInfo, const int64_t maxFrameRate)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxFrameRate (GamePerformance_ConfigInfo *configInfo, const int64_t maxFrameRate)
 ```
 
 **描述**
@@ -868,12 +774,12 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
 | configInfo | 指针指向[GamePerformance\_ConfigInfo](gameservice-game-performance.md#gameperformance_configinfo)实例。该值不可以为空，否则将返回错误码401。 |
-| maxFrameRate | 最大帧率。 |
+| maxFrameRate | 最大帧率，单位：fps。 |
 
 **返回：**
 
@@ -883,10 +789,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetMaxPictureQualityLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLevel (GamePerformance_ConfigInfo *configInfo, const GamePerformance_PictureQualityLevel maxPictureQualityLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLevel (GamePerformance_ConfigInfo *configInfo, const GamePerformance_PictureQualityLevel maxPictureQualityLevel)
 ```
 
 **描述**
@@ -895,7 +799,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -910,10 +814,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetMaxResolution()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxResolution (GamePerformance_ConfigInfo *configInfo, const char *maxResolution)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMaxResolution (GamePerformance_ConfigInfo *configInfo, const char *maxResolution)
 ```
 
 **描述**
@@ -922,7 +824,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -937,10 +839,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetMultithreadingEnabled()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMultithreadingEnabled (GamePerformance_ConfigInfo *configInfo, const bool multithreadingEnabled)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetMultithreadingEnabled (GamePerformance_ConfigInfo *configInfo, const bool multithreadingEnabled)
 ```
 
 **描述**
@@ -949,7 +849,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -964,10 +864,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetParticleEnabled()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetParticleEnabled (GamePerformance_ConfigInfo *configInfo, const bool particleEnabled)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetParticleEnabled (GamePerformance_ConfigInfo *configInfo, const bool particleEnabled)
 ```
 
 **描述**
@@ -976,7 +874,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -991,10 +889,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ConfigInfo\_SetShadowEnabled()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetShadowEnabled (GamePerformance_ConfigInfo *configInfo, const bool shadowEnabled)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ConfigInfo_SetShadowEnabled (GamePerformance_ConfigInfo *configInfo, const bool shadowEnabled)
 ```
 
 **描述**
@@ -1003,7 +899,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1018,10 +914,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CpuInfo\_GetCpuLoadLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetCpuLoadLevel (GamePerformance_CpuInfo *cpuInfo, int32_t *cpuLoadLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetCpuLoadLevel (GamePerformance_CpuInfo *cpuInfo, int32_t *cpuLoadLevel)
 ```
 
 **描述**
@@ -1030,7 +924,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 6.0.2(22)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1045,10 +939,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CpuInfo\_GetSingleThreadLoadLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel (GamePerformance_CpuInfo *cpuInfo, int32_t *singleThreadLoadLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CpuInfo_GetSingleThreadLoadLevel (GamePerformance_CpuInfo *cpuInfo, int32_t *singleThreadLoadLevel)
 ```
 
 **描述**
@@ -1057,7 +949,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 6.0.2(22)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1072,10 +964,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CreateConfigInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CreateConfigInfo (GamePerformance_ConfigInfo **configInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CreateConfigInfo (GamePerformance_ConfigInfo **configInfo)
 ```
 
 **描述**
@@ -1084,7 +974,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1098,10 +988,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CreateInitParameters()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CreateInitParameters (GamePerformance_InitParameters **initParameters)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CreateInitParameters (GamePerformance_InitParameters **initParameters)
 ```
 
 **描述**
@@ -1110,7 +998,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1124,10 +1012,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CreateNetInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CreateNetInfo (GamePerformance_NetInfo **netInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CreateNetInfo (GamePerformance_NetInfo **netInfo)
 ```
 
 **描述**
@@ -1136,7 +1022,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1150,10 +1036,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CreatePackageInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CreatePackageInfo (GamePerformance_PackageInfo **packageInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CreatePackageInfo (GamePerformance_PackageInfo **packageInfo)
 ```
 
 **描述**
@@ -1162,7 +1046,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1176,10 +1060,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CreatePlayerInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CreatePlayerInfo (GamePerformance_PlayerInfo **playerInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CreatePlayerInfo (GamePerformance_PlayerInfo **playerInfo)
 ```
 
 **描述**
@@ -1188,7 +1070,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1202,10 +1084,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CreateSceneInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CreateSceneInfo (GamePerformance_SceneInfo **sceneInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CreateSceneInfo (GamePerformance_SceneInfo **sceneInfo)
 ```
 
 **描述**
@@ -1214,7 +1094,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1228,10 +1108,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_CreateThermalInfoQueryParameters()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_CreateThermalInfoQueryParameters (GamePerformance_ThermalInfoQueryParameters **parameters)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_CreateThermalInfoQueryParameters (GamePerformance_ThermalInfoQueryParameters **parameters)
 ```
 
 **描述**
@@ -1240,7 +1118,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1254,10 +1132,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyConfigInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyConfigInfo (GamePerformance_ConfigInfo **configInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyConfigInfo (GamePerformance_ConfigInfo **configInfo)
 ```
 
 **描述**
@@ -1266,7 +1142,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1280,10 +1156,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyCpuInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyCpuInfo (GamePerformance_CpuInfo **cpuInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyCpuInfo (GamePerformance_CpuInfo **cpuInfo)
 ```
 
 **描述**
@@ -1292,7 +1166,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 6.0.2(22)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1306,10 +1180,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyDeviceInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyDeviceInfo (GamePerformance_DeviceInfo **deviceInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyDeviceInfo (GamePerformance_DeviceInfo **deviceInfo)
 ```
 
 **描述**
@@ -1318,7 +1190,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1332,10 +1204,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyGpuInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyGpuInfo (GamePerformance_GpuInfo **gpuInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyGpuInfo (GamePerformance_GpuInfo **gpuInfo)
 ```
 
 **描述**
@@ -1344,7 +1214,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1358,10 +1228,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyInitParameters()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyInitParameters (GamePerformance_InitParameters **initParameters)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyInitParameters (GamePerformance_InitParameters **initParameters)
 ```
 
 **描述**
@@ -1370,7 +1238,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1384,10 +1252,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyNetInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyNetInfo (GamePerformance_NetInfo **netInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyNetInfo (GamePerformance_NetInfo **netInfo)
 ```
 
 **描述**
@@ -1396,7 +1262,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1410,10 +1276,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyPackageInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyPackageInfo (GamePerformance_PackageInfo **packageInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyPackageInfo (GamePerformance_PackageInfo **packageInfo)
 ```
 
 **描述**
@@ -1422,7 +1286,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1436,10 +1300,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyPlayerInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyPlayerInfo (GamePerformance_PlayerInfo **playerInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyPlayerInfo (GamePerformance_PlayerInfo **playerInfo)
 ```
 
 **描述**
@@ -1448,7 +1310,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1462,10 +1324,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroySceneInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroySceneInfo (GamePerformance_SceneInfo **sceneInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroySceneInfo (GamePerformance_SceneInfo **sceneInfo)
 ```
 
 **描述**
@@ -1474,7 +1334,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1488,10 +1348,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyThermalInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfo (GamePerformance_ThermalInfo **thermalInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfo (GamePerformance_ThermalInfo **thermalInfo)
 ```
 
 **描述**
@@ -1500,7 +1358,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1514,10 +1372,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DestroyThermalInfoQueryParameters()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfoQueryParameters (GamePerformance_ThermalInfoQueryParameters **parameters)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DestroyThermalInfoQueryParameters (GamePerformance_ThermalInfoQueryParameters **parameters)
 ```
 
 **描述**
@@ -1526,7 +1382,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1540,10 +1396,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DeviceInfo\_GetCpuInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetCpuInfo (GamePerformance_DeviceInfo *deviceInfo, GamePerformance_CpuInfo **cpuInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetCpuInfo (GamePerformance_DeviceInfo *deviceInfo, GamePerformance_CpuInfo **cpuInfo)
 ```
 
 **描述**
@@ -1552,7 +1406,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 6.0.2(22)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1567,10 +1421,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DeviceInfo\_GetGpuInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetGpuInfo (GamePerformance_DeviceInfo *deviceInfo, GamePerformance_GpuInfo **gpuInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetGpuInfo (GamePerformance_DeviceInfo *deviceInfo, GamePerformance_GpuInfo **gpuInfo)
 ```
 
 **描述**
@@ -1579,7 +1431,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1594,10 +1446,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_DeviceInfo\_GetThermalInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetThermalInfo (GamePerformance_DeviceInfo *deviceInfo, GamePerformance_ThermalInfo **thermalInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_DeviceInfo_GetThermalInfo (GamePerformance_DeviceInfo *deviceInfo, GamePerformance_ThermalInfo **thermalInfo)
 ```
 
 **描述**
@@ -1606,7 +1456,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1621,10 +1471,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_GpuInfo\_GetBandwidthLoadLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *bandwidthLoadLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetBandwidthLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *bandwidthLoadLevel)
 ```
 
 **描述**
@@ -1633,7 +1481,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1648,10 +1496,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_GpuInfo\_GetCurrentFrequency()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetCurrentFrequency (GamePerformance_GpuInfo *gpuInfo, int32_t *currentFrequency)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetCurrentFrequency (GamePerformance_GpuInfo *gpuInfo, int32_t *currentFrequency)
 ```
 
 **描述**
@@ -1660,7 +1506,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1675,10 +1521,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_GpuInfo\_GetFragmentLoadLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *fragmentLoadLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetFragmentLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *fragmentLoadLevel)
 ```
 
 **描述**
@@ -1687,7 +1531,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1702,10 +1546,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_GpuInfo\_GetGpuLoadLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetGpuLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *gpuLoadLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetGpuLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *gpuLoadLevel)
 ```
 
 **描述**
@@ -1714,7 +1556,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1729,10 +1571,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_GpuInfo\_GetTextureLoadLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetTextureLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *textureLoadLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetTextureLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *textureLoadLevel)
 ```
 
 **描述**
@@ -1741,7 +1581,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1756,10 +1596,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_GpuInfo\_GetVertexLoadLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetVertexLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *vertexLoadLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_GpuInfo_GetVertexLoadLevel (GamePerformance_GpuInfo *gpuInfo, int32_t *vertexLoadLevel)
 ```
 
 **描述**
@@ -1768,7 +1606,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1783,23 +1621,21 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_Init()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_Init (GamePerformance_InitParameters *initParameters)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_Init (GamePerformance_InitParameters *initParameters)
 ```
 
 **描述**
 
 初始化游戏场景感知。
 
-说明
+**说明** 
 
 调用HMS\_GamePerformance\_Init前，必须已调用[HMS\_GamePerformance\_InitParameters\_SetBundleName](gameservice-game-performance.md#hms_gameperformance_initparameters_setbundlename)接口和[HMS\_GamePerformance\_InitParameters\_SetAppVersion](gameservice-game-performance.md#hms_gameperformance_initparameters_setappversion)接口，分别设置bundleName和appVersion。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1809,14 +1645,12 @@ PhonePC/2in1Tablet
 
 | 类型 | 说明 |
 | --- | --- |
-| [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) | GAME\_PERFORMANCE\_SUCCESS：成功。  GAME\_PERFORMANCE\_PARAM\_INVALID：无效参数。  GAME\_PERFORMANCE\_INTERNAL\_ERROR：系统内部错误。  GAME\_PERFORMANCE\_AUTH\_FAILED：认证失败。 |
+| [GamePerformance\_ErrorCode](gameservice-game-performance.md#gameperformance_errorcode-1) | GAME\_PERFORMANCE\_SUCCESS：成功。  GAME\_PERFORMANCE\_PARAM\_INVALID：无效参数。  GAME\_PERFORMANCE\_INTERNAL\_ERROR：系统内部错误。  GAME\_PERFORMANCE\_AUTH\_FAILED：鉴权失败。 |
 
 ### HMS\_GamePerformance\_InitParameters\_SetAppVersion()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetAppVersion (GamePerformance_InitParameters *initParameters,const char *appVersion)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetAppVersion (GamePerformance_InitParameters *initParameters,const char *appVersion)
 ```
 
 **描述**
@@ -1825,7 +1659,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1840,10 +1674,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_InitParameters\_SetBundleName()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetBundleName (GamePerformance_InitParameters *initParameters, const char *bundleName)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_InitParameters_SetBundleName (GamePerformance_InitParameters *initParameters, const char *bundleName)
 ```
 
 **描述**
@@ -1852,7 +1684,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1867,10 +1699,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_NetInfo\_SetDownlinkLatency()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetDownlinkLatency (GamePerformance_NetInfo *netInfo, const int64_t down)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetDownlinkLatency (GamePerformance_NetInfo *netInfo, const int64_t down)
 ```
 
 **描述**
@@ -1879,7 +1709,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1894,10 +1724,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_NetInfo\_SetNetLoad()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetNetLoad (GamePerformance_NetInfo *netInfo, const GamePerformance_NetLoad netLoad)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetNetLoad (GamePerformance_NetInfo *netInfo, const GamePerformance_NetLoad netLoad)
 ```
 
 **描述**
@@ -1906,7 +1734,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1921,10 +1749,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_NetInfo\_SetServerLatency()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetServerLatency (GamePerformance_NetInfo *netInfo, const int64_t server)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetServerLatency (GamePerformance_NetInfo *netInfo, const int64_t server)
 ```
 
 **描述**
@@ -1933,7 +1759,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1948,10 +1774,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_NetInfo\_SetTotalLatency()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetTotalLatency (GamePerformance_NetInfo *netInfo, const int64_t total)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetTotalLatency (GamePerformance_NetInfo *netInfo, const int64_t total)
 ```
 
 **描述**
@@ -1960,7 +1784,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1975,10 +1799,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_NetInfo\_SetUplinkLatency()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetUplinkLatency (GamePerformance_NetInfo *netInfo, const int64_t up)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_NetInfo_SetUplinkLatency (GamePerformance_NetInfo *netInfo, const int64_t up)
 ```
 
 **描述**
@@ -1987,7 +1809,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2002,10 +1824,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PackageInfo\_SetAppVersion()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetAppVersion (GamePerformance_PackageInfo *packageInfo, const char *appVersion)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetAppVersion (GamePerformance_PackageInfo *packageInfo, const char *appVersion)
 ```
 
 **描述**
@@ -2014,7 +1834,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2029,10 +1849,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PackageInfo\_SetBundleName()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetBundleName (GamePerformance_PackageInfo *packageInfo, const char *bundleName)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetBundleName (GamePerformance_PackageInfo *packageInfo, const char *bundleName)
 ```
 
 **描述**
@@ -2041,7 +1859,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2056,10 +1874,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PackageInfo\_SetEngineType()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineType (GamePerformance_PackageInfo *packageInfo, const GamePerformance_EngineType engineType)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineType (GamePerformance_PackageInfo *packageInfo, const GamePerformance_EngineType engineType)
 ```
 
 **描述**
@@ -2068,7 +1884,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2083,10 +1899,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PackageInfo\_SetEngineVersion()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineVersion (GamePerformance_PackageInfo *packageInfo, const char *engineVersion)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetEngineVersion (GamePerformance_PackageInfo *packageInfo, const char *engineVersion)
 ```
 
 **描述**
@@ -2095,7 +1909,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2110,10 +1924,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PackageInfo\_SetGameType()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetGameType (GamePerformance_PackageInfo *packageInfo, const GamePerformance_GameType gameType)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetGameType (GamePerformance_PackageInfo *packageInfo, const GamePerformance_GameType gameType)
 ```
 
 **描述**
@@ -2122,7 +1934,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2137,10 +1949,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PackageInfo\_SetVulkanSupported()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetVulkanSupported (GamePerformance_PackageInfo *packageInfo, const bool vulkanSupported)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PackageInfo_SetVulkanSupported (GamePerformance_PackageInfo *packageInfo, const bool vulkanSupported)
 ```
 
 **描述**
@@ -2149,7 +1959,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2164,23 +1974,21 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PlayerInfo\_SetGamePlayerId()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetGamePlayerId (GamePerformance_PlayerInfo *playerInfo, const char *gamePlayerId)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetGamePlayerId (GamePerformance_PlayerInfo *playerInfo, const char *gamePlayerId)
 ```
 
 **描述**
 
 为[GamePerformance\_PlayerInfo](gameservice-game-performance.md#gameperformance_playerinfo)实例设置游戏玩家ID。
 
-说明
+**说明** 
 
 调用[HMS\_GamePerformance\_PlayerInfo\_SetGamePlayerId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setgameplayerid)设置的gamePlayerId、[HMS\_GamePerformance\_PlayerInfo\_SetTeamPlayerId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setteamplayerid)设置的teamPlayerId和[HMS\_GamePerformance\_PlayerInfo\_SetThirdOpenId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setthirdopenid)设置的thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2195,23 +2003,21 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PlayerInfo\_SetTeamPlayerId()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetTeamPlayerId (GamePerformance_PlayerInfo *playerInfo, const char *teamPlayerId)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetTeamPlayerId (GamePerformance_PlayerInfo *playerInfo, const char *teamPlayerId)
 ```
 
 **描述**
 
 为[GamePerformance\_PlayerInfo](gameservice-game-performance.md#gameperformance_playerinfo)实例设置团队玩家ID。
 
-说明
+**说明** 
 
 调用[HMS\_GamePerformance\_PlayerInfo\_SetGamePlayerId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setgameplayerid)设置的gamePlayerId、[HMS\_GamePerformance\_PlayerInfo\_SetTeamPlayerId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setteamplayerid)设置的teamPlayerId和[HMS\_GamePerformance\_PlayerInfo\_SetThirdOpenId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setthirdopenid)设置的thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2226,23 +2032,21 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_PlayerInfo\_SetThirdOpenId()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetThirdOpenId (GamePerformance_PlayerInfo *playerInfo, const char *thirdOpenId)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_PlayerInfo_SetThirdOpenId (GamePerformance_PlayerInfo *playerInfo, const char *thirdOpenId)
 ```
 
 **描述**
 
 为[GamePerformance\_PlayerInfo](gameservice-game-performance.md#gameperformance_playerinfo)实例设置游戏官方账号。
 
-说明
+**说明** 
 
 调用[HMS\_GamePerformance\_PlayerInfo\_SetGamePlayerId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setgameplayerid)设置的gamePlayerId、[HMS\_GamePerformance\_PlayerInfo\_SetTeamPlayerId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setteamplayerid)设置的teamPlayerId和[HMS\_GamePerformance\_PlayerInfo\_SetThirdOpenId](gameservice-game-performance.md#hms_gameperformance_playerinfo_setthirdopenid)设置的thirdOpenId不能同时为空。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2257,10 +2061,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_QueryCpuInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_QueryCpuInfo (GamePerformance_CpuInfo **cpuInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_QueryCpuInfo (GamePerformance_CpuInfo **cpuInfo)
 ```
 
 **描述**
@@ -2269,7 +2071,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 6.0.2(22)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2283,23 +2085,21 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_QueryGpuInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_QueryGpuInfo (GamePerformance_GpuInfo **gpuInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_QueryGpuInfo (GamePerformance_GpuInfo **gpuInfo)
 ```
 
 **描述**
 
 查询GPU性能信息。当[GamePerformance\_GpuInfo](gameservice-game-performance.md#gameperformance_gpuinfo)实例不再使用，必须调用[HMS\_GamePerformance\_DestroyGpuInfo](gameservice-game-performance.md#hms_gameperformance_destroygpuinfo)销毁该实例。
 
-说明
+**说明** 
 
 Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2313,10 +2113,8 @@ Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息�
 
 ### HMS\_GamePerformance\_QueryThermalInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_QueryThermalInfo (GamePerformance_ThermalInfoQueryParameters *parameters, GamePerformance_ThermalInfo **thermalInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_QueryThermalInfo (GamePerformance_ThermalInfoQueryParameters *parameters, GamePerformance_ThermalInfo **thermalInfo)
 ```
 
 **描述**
@@ -2325,7 +2123,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2340,10 +2138,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_RegisterThermalLevelChangedCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_RegisterThermalLevelChangedCallback (GamePerformance_DeviceInfoType *types[], size_t size, GamePerformance_ThermalLevelChangedCallback callback, void *userData)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_RegisterThermalLevelChangedCallback (GamePerformance_DeviceInfoType *types[], size_t size, GamePerformance_ThermalLevelChangedCallback callback, void *userData)
 ```
 
 **描述**
@@ -2352,17 +2148,17 @@ PhonePC/2in1Tablet
 
 当温度等级改变并且温度等级小于3档时，该函数将被调用一次。当温度等级大于或等于3档时，该函数将每10秒调用一次。
 
-说明
+**说明** 
 
 Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
-| types[] | 注册回调的设备性能信息类型[GamePerformance\_DeviceInfoType](gameservice-game-performance.md#gameperformance_deviceinfotype-1)。 |
+| types | 注册回调的设备性能信息类型[GamePerformance\_DeviceInfoType](gameservice-game-performance.md#gameperformance_deviceinfotype-1)。 |
 | size | types数组的长度。 |
 | callback | 回调函数[GamePerformance\_ThermalLevelChangedCallback](gameservice-game-performance.md#gameperformance_thermallevelchangedcallback)。 |
 | userData | 用户指定数据。用户自定义任意类型，callback透传返回。 |
@@ -2375,10 +2171,8 @@ Mali系列GPU不支持采集GPU性能信息，无法获取设备GPU性能信息�
 
 ### HMS\_GamePerformance\_SceneInfo\_SetChannelCount()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetChannelCount (GamePerformance_SceneInfo *sceneInfo, const int64_t channelCount)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetChannelCount (GamePerformance_SceneInfo *sceneInfo, const int64_t channelCount)
 ```
 
 **描述**
@@ -2387,7 +2181,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2402,10 +2196,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetCurrentFrameRate()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetCurrentFrameRate (GamePerformance_SceneInfo *sceneInfo, const int64_t currentFrameRate)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetCurrentFrameRate (GamePerformance_SceneInfo *sceneInfo, const int64_t currentFrameRate)
 ```
 
 **描述**
@@ -2414,12 +2206,12 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向[GamePerformance\_SceneInfo](gameservice-game-performance.md#gameperformance_sceneinfo)实例。该值不可以为空，否则将返回错误码401。 |
-| currentFrameRate | 场景当前帧率。 |
+| currentFrameRate | 场景当前帧率，单位：fps。 |
 
 **返回：**
 
@@ -2429,10 +2221,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetDescription()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDescription (GamePerformance_SceneInfo *sceneInfo, const char *description)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDescription (GamePerformance_SceneInfo *sceneInfo, const char *description)
 ```
 
 **描述**
@@ -2441,7 +2231,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2456,10 +2246,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetDrawCallCount()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDrawCallCount (GamePerformance_SceneInfo *sceneInfo, const int64_t drawCallCount)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetDrawCallCount (GamePerformance_SceneInfo *sceneInfo, const int64_t drawCallCount)
 ```
 
 **描述**
@@ -2468,7 +2256,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2483,10 +2271,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetImportanceLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetImportanceLevel (GamePerformance_SceneInfo *sceneInfo, const GamePerformance_SceneImportanceLevel importanceLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetImportanceLevel (GamePerformance_SceneInfo *sceneInfo, const GamePerformance_SceneImportanceLevel importanceLevel)
 ```
 
 **描述**
@@ -2495,7 +2281,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2510,10 +2296,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetKeyThread()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetKeyThread (GamePerformance_SceneInfo *sceneInfo, const char *keyThread)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetKeyThread (GamePerformance_SceneInfo *sceneInfo, const char *keyThread)
 ```
 
 **描述**
@@ -2522,7 +2306,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2537,10 +2321,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetMaxFrameRate()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMaxFrameRate (GamePerformance_SceneInfo *sceneInfo, const int64_t maxFrameRate)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMaxFrameRate (GamePerformance_SceneInfo *sceneInfo, const int64_t maxFrameRate)
 ```
 
 **描述**
@@ -2549,12 +2331,12 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
 | sceneInfo | 指针指向[GamePerformance\_SceneInfo](gameservice-game-performance.md#gameperformance_sceneinfo)实例。该值不可以为空，否则将返回错误码401。 |
-| maxFrameRate | 场景最大帧率。 |
+| maxFrameRate | 场景最大帧率，单位：fps。 |
 
 **返回：**
 
@@ -2564,10 +2346,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetMeshCount()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMeshCount (GamePerformance_SceneInfo *sceneInfo, const int64_t meshCount)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetMeshCount (GamePerformance_SceneInfo *sceneInfo, const int64_t meshCount)
 ```
 
 **描述**
@@ -2576,7 +2356,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2591,10 +2371,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetParticipantCount()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetParticipantCount (GamePerformance_SceneInfo *sceneInfo, const int64_t participantCount)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetParticipantCount (GamePerformance_SceneInfo *sceneInfo, const int64_t participantCount)
 ```
 
 **描述**
@@ -2603,7 +2381,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2618,10 +2396,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetRecommendedCpuLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel (GamePerformance_SceneInfo *sceneInfo, const GamePerformance_CpuLevel recommendedCpuLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedCpuLevel (GamePerformance_SceneInfo *sceneInfo, const GamePerformance_CpuLevel recommendedCpuLevel)
 ```
 
 **描述**
@@ -2630,7 +2406,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2645,10 +2421,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetRecommendedDdrLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel (GamePerformance_SceneInfo *sceneInfo, const GamePerformance_DdrLevel recommendedDdrLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedDdrLevel (GamePerformance_SceneInfo *sceneInfo, const GamePerformance_DdrLevel recommendedDdrLevel)
 ```
 
 **描述**
@@ -2657,7 +2431,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2672,10 +2446,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetRecommendedGpuLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel (GamePerformance_SceneInfo *sceneInfo, const GamePerformance_GpuLevel recommendedGpuLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetRecommendedGpuLevel (GamePerformance_SceneInfo *sceneInfo, const GamePerformance_GpuLevel recommendedGpuLevel)
 ```
 
 **描述**
@@ -2684,7 +2456,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2699,10 +2471,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetSceneFrequency()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneFrequency (GamePerformance_SceneInfo *sceneInfo, const int64_t sceneFrequency)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneFrequency (GamePerformance_SceneInfo *sceneInfo, const int64_t sceneFrequency)
 ```
 
 **描述**
@@ -2711,7 +2481,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2726,10 +2496,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetSceneID()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneID (GamePerformance_SceneInfo *sceneInfo, const int64_t sceneID)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneID (GamePerformance_SceneInfo *sceneInfo, const int64_t sceneID)
 ```
 
 **描述**
@@ -2738,7 +2506,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2753,10 +2521,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetSceneTime()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneTime (GamePerformance_SceneInfo *sceneInfo, const int64_t sceneTime)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSceneTime (GamePerformance_SceneInfo *sceneInfo, const int64_t sceneTime)
 ```
 
 **描述**
@@ -2765,7 +2531,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2780,10 +2546,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetShaderCount()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetShaderCount (GamePerformance_SceneInfo *sceneInfo, const int64_t shaderCount)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetShaderCount (GamePerformance_SceneInfo *sceneInfo, const int64_t shaderCount)
 ```
 
 **描述**
@@ -2792,7 +2556,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2807,10 +2571,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetSubDescription()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubDescription (GamePerformance_SceneInfo *sceneInfo, const char *subDescription)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubDescription (GamePerformance_SceneInfo *sceneInfo, const char *subDescription)
 ```
 
 **描述**
@@ -2819,7 +2581,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2834,10 +2596,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetSubSceneID()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubSceneID (GamePerformance_SceneInfo *sceneInfo, const char *subSceneID)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetSubSceneID (GamePerformance_SceneInfo *sceneInfo, const char *subSceneID)
 ```
 
 **描述**
@@ -2846,7 +2606,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2861,10 +2621,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetTextureCount()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTextureCount (GamePerformance_SceneInfo *sceneInfo, const int64_t textureCount)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTextureCount (GamePerformance_SceneInfo *sceneInfo, const int64_t textureCount)
 ```
 
 **描述**
@@ -2873,7 +2631,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2888,10 +2646,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetTriangleCount()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTriangleCount (GamePerformance_SceneInfo *sceneInfo, const int64_t triangleCount)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetTriangleCount (GamePerformance_SceneInfo *sceneInfo, const int64_t triangleCount)
 ```
 
 **描述**
@@ -2900,7 +2656,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2915,10 +2671,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_SceneInfo\_SetVertexCount()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetVertexCount (GamePerformance_SceneInfo *sceneInfo, const int64_t vertexCount)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_SceneInfo_SetVertexCount (GamePerformance_SceneInfo *sceneInfo, const int64_t vertexCount)
 ```
 
 **描述**
@@ -2927,7 +2681,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2942,10 +2696,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ThermalInfo\_GetNowNormalizedCurrent()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *nowCurrent)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetNowNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *nowCurrent)
 ```
 
 **描述**
@@ -2956,7 +2708,7 @@ PhonePC/2in1Tablet
 
 **设备行为差异：** 该接口在Phone中可正常调用，在其他设备类型中无返回值。
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2971,10 +2723,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ThermalInfo\_GetRecommendMaxNormalizedCurrent()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *recommendMaxCurrent)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendMaxNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *recommendMaxCurrent)
 ```
 
 **描述**
@@ -2985,7 +2735,7 @@ PhonePC/2in1Tablet
 
 **设备行为差异：** 该接口在Phone中可正常调用，在其他设备类型中无返回值。
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3000,10 +2750,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ThermalInfo\_GetRecommendNormalizedCurrent()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *recommendCurrent)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetRecommendNormalizedCurrent (GamePerformance_ThermalInfo *thermalInfo, int32_t *recommendCurrent)
 ```
 
 **描述**
@@ -3014,7 +2762,7 @@ PhonePC/2in1Tablet
 
 **设备行为差异：** 该接口在Phone中可正常调用，在其他设备类型中无返回值。
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3029,10 +2777,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ThermalInfo\_GetThermalLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalLevel (GamePerformance_ThermalInfo *thermalInfo, int32_t *thermalLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalLevel (GamePerformance_ThermalInfo *thermalInfo, int32_t *thermalLevel)
 ```
 
 **描述**
@@ -3041,12 +2787,12 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
 | thermalInfo | 指针指向[GamePerformance\_ThermalInfo](gameservice-game-performance.md#gameperformance_thermalinfo)实例。该值不可以为空，否则将返回错误码401。 |
-| thermalLevel | 温度等级，即温控档位，档位越高表示温度越高。不同档位及其建议如下：  1：无需处理。  2：建议降低无感知业务规格，例如后台更新降速或延迟运行。  3：建议暂停无感知业务，降低游戏非核心业务的规格，例如前台更新降速。  4：建议减少游戏特效，降低分辨率，画质。  5：建议降低全场景规格，进一步降低分辨率、画质等。  6：建议游戏降至最低规格。 |
+| thermalLevel | 温度等级，即温控档位。不同档位及其建议如下：  1：无需处理。  2：建议降低无感知业务规格，例如后台更新降速或延迟运行。  3：建议暂停无感知业务，降低游戏非核心业务的规格，例如前台更新降速。  4：建议减少游戏特效，降低分辨率，画质。  5：建议降低全场景规格，进一步降低分辨率、画质等。  6：建议游戏降至最低规格。 |
 
 **返回：**
 
@@ -3056,10 +2802,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ThermalInfo\_GetThermalMargin()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalMargin (GamePerformance_ThermalInfo *thermalInfo, int32_t *thermalMargin)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalMargin (GamePerformance_ThermalInfo *thermalInfo, int32_t *thermalMargin)
 ```
 
 **描述**
@@ -3068,7 +2812,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3083,10 +2827,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ThermalInfo\_GetThermalTrend()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalTrend (GamePerformance_ThermalInfo *thermalInfo, int32_t *thermalTrend)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfo_GetThermalTrend (GamePerformance_ThermalInfo *thermalInfo, int32_t *thermalTrend)
 ```
 
 **描述**
@@ -3095,7 +2837,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3110,10 +2852,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ThermalInfoQueryParameters\_SetNeedsPrediction()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetNeedsPrediction (GamePerformance_ThermalInfoQueryParameters *parameters, const bool needsPrediction)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetNeedsPrediction (GamePerformance_ThermalInfoQueryParameters *parameters, const bool needsPrediction)
 ```
 
 **描述**
@@ -3122,7 +2862,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3137,10 +2877,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_ThermalInfoQueryParameters\_SetTargetThermalLevel()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetTargetThermalLevel (GamePerformance_ThermalInfoQueryParameters *parameters, const int32_t targetThermalLevel)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_ThermalInfoQueryParameters_SetTargetThermalLevel (GamePerformance_ThermalInfoQueryParameters *parameters, const int32_t targetThermalLevel)
 ```
 
 **描述**
@@ -3149,12 +2887,12 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
 | parameters | 指针指向[GamePerformance\_ThermalInfoQueryParameters](gameservice-game-performance.md#gameperformance_thermalinfoqueryparameters)实例。该值不可以为空，否则将返回错误码401。 |
-| targetThermalLevel | 预测温升趋势的目标温度等级。如果需要预测温升趋势，将根据该目标温度等级计算返回温度时间裕量和温度趋势。取值请参见[温度等级](gameservice-game-performance.md#hms_gameperformance_thermalinfo_getthermallevel)。 |
+| targetThermalLevel | 预测温升趋势的目标温度等级。如果needsPrediction为true，即需要预测温升趋势，将根据该目标温度等级计算返回温度时间裕量和温度趋势。取值请参见[温度等级](gameservice-game-performance.md#hms_gameperformance_thermalinfo_getthermallevel)。 |
 
 **返回：**
 
@@ -3164,10 +2902,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_UnregisterAllThermalLevelChangedCallbacks()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_UnregisterAllThermalLevelChangedCallbacks (void)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_UnregisterAllThermalLevelChangedCallbacks (void)
 ```
 
 **描述**
@@ -3184,10 +2920,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_UnregisterThermalLevelChangedCallback()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_UnregisterThermalLevelChangedCallback (GamePerformance_ThermalLevelChangedCallback callback)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_UnregisterThermalLevelChangedCallback (GamePerformance_ThermalLevelChangedCallback callback)
 ```
 
 **描述**
@@ -3196,7 +2930,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3210,10 +2944,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_UpdateConfigInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_UpdateConfigInfo (GamePerformance_ConfigInfo *configInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_UpdateConfigInfo (GamePerformance_ConfigInfo *configInfo)
 ```
 
 **描述**
@@ -3222,7 +2954,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3236,23 +2968,21 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_UpdateNetInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_UpdateNetInfo (GamePerformance_NetInfo *netInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_UpdateNetInfo (GamePerformance_NetInfo *netInfo)
 ```
 
 **描述**
 
 更新游戏网络信息。
 
-说明
+**说明** 
 
 调用HMS\_GamePerformance\_UpdateNetInfo前，必须已调用[HMS\_GamePerformance\_NetInfo\_SetTotalLatency](gameservice-game-performance.md#hms_gameperformance_netinfo_settotallatency)设置totalLatency。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3266,23 +2996,21 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_UpdatePackageInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_UpdatePackageInfo (GamePerformance_PackageInfo *packageInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_UpdatePackageInfo (GamePerformance_PackageInfo *packageInfo)
 ```
 
 **描述**
 
 更新游戏包信息。
 
-说明
+**说明** 
 
 调用HMS\_GamePerformance\_UpdatePackageInfo前，必须已调用[HMS\_GamePerformance\_InitParameters\_SetBundleName](gameservice-game-performance.md#hms_gameperformance_initparameters_setbundlename)接口和[HMS\_GamePerformance\_InitParameters\_SetAppVersion](gameservice-game-performance.md#hms_gameperformance_initparameters_setappversion)接口，分别设置bundleName和appVersion。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3296,10 +3024,8 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_UpdatePlayerInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_UpdatePlayerInfo (GamePerformance_PlayerInfo *playerInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_UpdatePlayerInfo (GamePerformance_PlayerInfo *playerInfo)
 ```
 
 **描述**
@@ -3308,7 +3034,7 @@ PhonePC/2in1Tablet
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3322,23 +3048,21 @@ PhonePC/2in1Tablet
 
 ### HMS\_GamePerformance\_UpdateSceneInfo()
 
-PhonePC/2in1Tablet
-
-```
-1. GamePerformance_ErrorCode HMS_GamePerformance_UpdateSceneInfo (GamePerformance_SceneInfo *sceneInfo)
+```c
+GamePerformance_ErrorCode HMS_GamePerformance_UpdateSceneInfo (GamePerformance_SceneInfo *sceneInfo)
 ```
 
 **描述**
 
 更新游戏场景信息。
 
-说明
+**说明** 
 
 调用HMS\_GamePerformance\_UpdateSceneInfo前，必须已调用[HMS\_GamePerformance\_SceneInfo\_SetSceneID](gameservice-game-performance.md#hms_gameperformance_sceneinfo_setsceneid)接口和[HMS\_GamePerformance\_SceneInfo\_SetImportanceLevel](gameservice-game-performance.md#hms_gameperformance_sceneinfo_setimportancelevel)接口，分别设置sceneID和importanceLevel。
 
 **起始版本：** 5.0.2(14)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |

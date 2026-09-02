@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 配置错误码
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 配置错误码
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:25+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:c9169435bb0232e0a9bb8806dc9dd4b022642d39eb5ecb23fab799268e00bd7b
+scraped_at: 2026-09-02T15:00:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:303e03391d5990d5a81d47696fa9affc5bb508236ce7f59b5fe891784e102303
 ---
 
 ## 00303002 找不到某个任务对应的模块
@@ -1128,24 +1128,23 @@ config.json中不允许js和abilities存在name字段相同的配置。
 
 确保两者之间name字段的值唯一。
 
-## 00303082 找不到对应的SDK
+## 00303082 SDK版本号不支持
 
 **错误信息**
 
-Unable to find the XXX in SDK Manager.
+XXX is not supported. Change it to a valid version in the available list.或Unable to find the XXX in SDK Manager.
 
 **错误描述**
 
-找不到compatibleSdkVersion/compileSdkVersion/targetSdkVersion对应的SDK。
+SDK版本号不支持。
 
 **可能原因**
 
-Hvigor和SDK版本不配套**。**
+配置的SDK版本号不存在。
 
 **处理步骤**
 
-1. 从NEXT Developer Beta1开始，DevEco Studio提供了开箱即用的开发体验，将SDK、Node.js、Hvigor、Ohpm等工具链打包在一起，简化了DevEco Studio的安装和配置过程，并提供历史工程迁移的能力，帮助您快速完成工程转换。
-2. [下载](https://developer.huawei.com/consumer/cn/download/)一体化DevEco Studio工具。
+支持的SDK版本请查看[所有HarmonyOS开发套件版本](../harmonyos-releases/overview-allversion.md)。
 
 ## 00303083 SDK版本号配置错误
 
@@ -1163,7 +1162,7 @@ build-profile.json5的ZZZ字段的XXX和API 版本YYY不匹配。
 
 **处理步骤**
 
-创建新工程时，在工程配置页面查看**Compatible SDK**，点击下拉框可查看所有支持的SDK版本号。
+支持的SDK版本请查看[所有HarmonyOS开发套件版本](../harmonyos-releases/overview-allversion.md)。
 
 ## 00303087 不允许动态导入工程外模块
 
@@ -1232,7 +1231,7 @@ Invalid dynamic import configurations in current module XXX.
 
 **可能原因**
 
-配置的动态导入的路径未在oh-package.json5的dependencies中定义，不支持配置三方包内的某个文件路径。
+动态导入的路径未在oh-package.json5的dependencies中定义，不支持配置三方包内的某个文件路径。
 
 **处理步骤**
 
@@ -1796,9 +1795,9 @@ hvigor依赖于npmrc文件，当前用户目录下不存在.npmrc文件。
 
 在用户目录下创建.npmrc文件，配置信息如下：
 
-```
-1. registry=https://repo.huaweicloud.com/repository/npm/
-2. @ohos:registry=https://repo.harmonyos.com/npm/
+```txt
+registry=https://repo.huaweicloud.com/repository/npm/
+@ohos:registry=https://repo.harmonyos.com/npm/
 ```
 
 ## 00303138 模块名称不能为空字符串
@@ -2150,7 +2149,7 @@ buildOptionSet下的XXX配置，copyFrom路径存在循环依赖。
 
 **错误信息**
 
-SDK component missing. Please verify the integrity of your SDK.
+Missing SDK components. SDK path: XXX, missing components: YYY.
 
 **错误描述**
 
@@ -2158,11 +2157,11 @@ SDK组件缺失。
 
 **可能原因**
 
-配置了错误的SDK。
+SDK组件缺失。
 
 **处理步骤**
 
-* 确保SDK路径正确：$DevEco Studio安装目录/sdk/default。
+* 确保SDK路径下组件完整，默认路径：$DevEco Studio安装目录/sdk/default。
 * 重新[下载DevEco Studio](https://developer.huawei.com/consumer/cn/download/)。
 
 ## 00303169 har模块中找不到对应的target
@@ -2543,7 +2542,7 @@ The project-level build-profile.json5 file does not comply with the schema.
 **处理步骤**
 
 1. 检查工程级build-profile.json5文件，移除从其他模块直接复制的字段，确保字段符合规范。
-2. 检查模块级hvigorfile文件，根据模块类型选择以下插件进行配置：hapTasks/hspTasks/harTasks。
+2. 检查模块级hvigorfile.ts文件，根据模块类型选择以下插件进行配置：hapTasks/hspTasks/harTasks。
 
 ## 00303199 build-profile.json5中找不到product信息
 
@@ -2719,7 +2718,7 @@ Unable to find XXX in local.properties or YYY in the system environment path. Ch
 
 **错误描述**
 
-系统未能找到XXX，导致SDK配置异常。
+找不到SDK目录。
 
 **可能原因**
 
@@ -2729,7 +2728,7 @@ Unable to find XXX in local.properties or YYY in the system environment path. Ch
 **处理步骤**
 
 1. 确保local.properties中已正确配置SDK路径，运行hvigorw--stop-daemon停止守护进程后重试。
-2. 将YYY添加到系统环境变量路径中。
+2. 将YYY添加到系统环境变量中。
 
 ## 00303209 FA的entry模块缺少Target
 
@@ -2875,6 +2874,8 @@ The reason and usedScene attributes are mandatory for user\_grant permissions.
 
 **处理步骤**
 
+具体配置方式请参考[声明权限](declare-permissions.md)，需要满足以下条件：
+
 1. 对于HAP模块，在module.json5文件的requestPermissions中添加reason和usedScene字段。
 2. 对于HAR/HSP模块，在module.json5文件的requestPermissions中添加reason字段。
 
@@ -2949,6 +2950,8 @@ The reason attribute are mandatory for user\_grant permissions.
 在module.json5文件中配置user\_grant类型的权限缺少reason属性。
 
 **处理步骤**
+
+具体配置方式请参考[声明权限](declare-permissions.md)，需要满足以下条件：
 
 1. 对于HAP模块，在module.json5文件的requestPermissions中添加reason和usedScene字段。
 2. 对于HAR/HSP模块，在module.json5文件的requestPermissions中添加reason字段。
@@ -3226,7 +3229,7 @@ build-profile.json5中签名字段信息不完整或者签名材料损坏。
 **处理步骤**
 
 1. 点击**File > Project Structure > Project > Signing Configs**重新签名。
-2. 如果构建还是报错，说明您的material文件已经损坏，请访问C:\Users\用户名\.ohos\config （macOS路径为/Users/用户名/.ohos/config）删除material文件夹，然后点击**File > Project Structure > Project > Signing Configs**重新签名。
+2. 如果执行构建还是报错，说明您的material文件已经损坏，请访问C:\Users\用户名\.ohos\config （macOS路径为/Users/用户名/.ohos/config）删除material文件夹，然后点击**File > Project Structure > Project > Signing Configs**重新签名。
 
 ## 00303243 ability名称无效
 
@@ -3787,12 +3790,12 @@ Unable to get plugin in hvigorfile.ts of module 'XXX'. At file: YYY.
 **可能原因**
 
 1. 模块下的hvigorfile.ts中使用了未定义的属性或方法。
-2. 模块下的hvigorfile.ts中导出的deafult对象的system字段值和本模块module.json5中的type字段值不匹配。
+2. 模块下的hvigorfile.ts中导出的default对象的system字段值和本模块module.json5中的type字段值不匹配。
 
 **处理步骤**
 
 1. 检查模块下的hvigorfile.ts中是否使用了未定义的属性或方法。
-2. 确保模块下的hvigorfile.ts中导出的deafult对象的system字段值和本模块module.json5中的type字段相匹配，匹配规则如下图。
+2. 确保模块下的hvigorfile.ts中导出的default对象的system字段值和本模块module.json5中的type字段相匹配，匹配规则如下。
 
    | type字段 | system字段 |
    | --- | --- |
@@ -3891,24 +3894,616 @@ hvigor命令行参数buildVersion不符合要求。
 
 确保buildVersion是一个有效值，具体要求请参考[app.json5的buildVersion](app-configuration-file.md#配置文件标签)。
 
-## 00303287 -DOHOS\_COMPATIBLE\_SDK\_VERSION和compatibleSdkVersion不一致
+## 00303286 executableBinaryPaths-path的值不是文件
 
 **错误信息**
 
-The '-DOHOS\_COMPATIBLE\_SDK\_VERSION=XXX' parameter configured under externalNativeOptions in the current module's build-profile.json5 is inconsistent with the 'compatibleSdkVersion=YYY' set in the project-level build-profile.json5, which will cause unexpected runtime and build behaviors. At file: ZZZ.
+The executableBinaryPaths-path XXX is not a file. At file: YYY.
 
 **错误描述**
 
-当前模块build-profile.json5的externalNativeOptions下配置的-DOHOS\_COMPATIBLE\_SDK\_VERSION和工程级build-profile.json5中的compatibleSdkVersion不一致。
+executableBinaryPaths-path的值不是文件。
 
 **可能原因**
 
--DOHOS\_COMPATIBLE\_SDK\_VERSION配置错误。
+executableBinaryPaths-path的值是目录，不是文件。
 
 **处理步骤**
 
-详细处理步骤请参考[C API兼容性保护](../harmonyos-releases/c-api-compatibility-warning-elim.md)，需要满足以下几个条件：
+确保executableBinaryPaths-path的值是一个文件。
 
-1. 修改 '-DOHOS\_COMPATIBLE\_SDK\_VERSION=XXX' 参数，使其符合x.x.x格式。
-2. 确保 '-DOHOS\_COMPATIBLE\_SDK\_VERSION=XXX' 与compatibleSdkVersion转换的值保持一致。
-3. 若编译过程中使用了其他非Hvigor构建工具（如Bazel、GN等），需要手动添加对应的编译器构建参数。
+## 00303288 executableBinaryPaths-path的值不在libs目录下
+
+**错误信息**
+
+The executableBinaryPaths-path XXX is not found in allowed libs directories. At file: YYY.
+
+**错误描述**
+
+executableBinaryPaths-path的值不在libs目录下。
+
+**可能原因**
+
+executableBinaryPaths-path的值不在libs目录下。
+
+**处理步骤**
+
+1. 将文件移动到libs/{abi}目录下，其中{abi}为设备CPU架构类型（如arm64-v8a、x86\_64、armeabi-v7a）。
+2. 检查文件路径是否正确。
+
+## 00303289 Agent extensionAbility的metadata.name必须是ohos.extension.agent
+
+**错误信息**
+
+The value of the name attribute in the metadata of an extensionAbility of the agent type must be 'ohos.extension.agent'. At file: XXX.
+
+**错误描述**
+
+Agent extensionAbility的metadata下的name属性值必须是ohos.extension.agent。
+
+**可能原因**
+
+Agent extensionAbility的metadata下的name属性值不是ohos.extension.agent。
+
+**处理步骤**
+
+确保Agent extensionAbility的metadata下的name属性值是ohos.extension.agent。
+
+## 00303290 Agent extensionAbility的metadata.resource配置不合法
+
+**错误信息**
+
+The value of the metadata.resource configuration 'XXX' for the extensionAbility with the name set to 'YYY' is invalid. At file: ZZZ.
+
+**错误描述**
+
+name为YYY的extensionAbility的metadata下的resource属性值XXX配置不合法。
+
+**可能原因**
+
+name为YYY的extensionAbility的metadata下的resource属性值XXX格式错误。
+
+**处理步骤**
+
+确保extensionAbility的metadata下的resource属性值格式正确，建议使用推荐的格式，例如：'$profile:agent\_config'。
+
+## 00303291 Agent extensionAbility的metadata.resource配置文件不存在
+
+**错误信息**
+
+The agentConfig resource file 'XXX' with the target 'YYY' for the module 'WWW' does not exist!. At file: ZZZ.
+
+**错误描述**
+
+模块WWW的target YYY配置的Agent extensionAbility配置文件XXX不存在。
+
+**可能原因**
+
+模块WWW的Agent extensionAbility的metadata下的resource对应的配置文件XXX不存在。
+
+**处理步骤**
+
+1. 检查模块WWW的target YYY是否配置了自定义资源路径，具体配置方式请参考[定义产物的资源](ide-customized-multi-targets-and-products-guides.md#section1853511169480)。
+2. 确保模块WWW的target YYY配置的Agent extensionAbility配置文件XXX存在。
+
+## 00303292 Agent extensionAbility的配置文件中的agentId不能重复
+
+**错误信息**
+
+The agentId value 'XXX' is duplicated in all agentConfig configuration files under the module 'YYY'. At file: ZZZ.
+
+**错误描述**
+
+模块YYY的Agent extensionAbility的配置文件中值为XXX的agentId有重复。
+
+**可能原因**
+
+1. 同一个Agent extensionAbility的配置文件中agentId值重复。
+2. 模块YYY下的不同Agent extensionAbility的配置文件中agentId值重复。
+
+**处理步骤**
+
+1. 确保同一个Agent extensionAbility的配置文件中的agentId值唯一。
+2. 确保本模块所有的Agent extensionAbility的配置文件中agentId值唯一。
+
+## 00303293 deviceTypes有交集的Hap不能存在重复的agentId
+
+**错误信息**
+
+Module ['XXX'] target ['YYY'] and module ['ZZZ'] target ['MMM'] have same deviceTypes, and they share the same agentIds: ['NNN'].
+
+**错误描述**
+
+模块[XXX]的target [YYY] 和模块[ZZZ]的target [MMM]有相同的deviceTypes，并且他们存在相同的agentId [NNN]。
+
+**可能原因**
+
+在打包App时，模块[XXX] target [YYY] 的Hap包和模块[ZZZ] target [MMM]的Hap包的deviceTypes存在交集，同时他们的Agent extensionAbility的配置文件中存在相同的agentId [NNN]。
+
+**处理步骤**
+
+有两种处理方式：
+
+1. 确保模块[XXX] target [YYY] 和模块[ZZZ] target [MMM]的Agent extensionAbility配置文件中不存在相同的agentId。
+2. 确保模块[XXX] target [YYY] 和模块[ZZZ] target [MMM]的deviceTypes不存在交集。
+
+## 00303294 多个Agent extensionAbility不能配置相同的配置文件
+
+**错误信息**
+
+The resource 'XXX' of extensionAbility 'YYY' has the same configuration value as the resource of extensionAbility 'ZZZ'. At file: MMM.
+
+**错误描述**
+
+name为YYY的extensionAbility的resource配置值XXX和name为ZZZ的extensionAbility的resource配置值相同。
+
+**可能原因**
+
+name为YYY和ZZZ的extensionAbility的resource配置值相同。
+
+**处理步骤**
+
+确保name为YYY和ZZZ的extensionAbility的resource配置值不同。
+
+## 00303295 HAR模块中extensionAbility的srcEntry不支持配置so文件
+
+**错误信息**
+
+Invalid configuration of XXX field. At file: YYY.
+
+**错误描述**
+
+YYY文件中XXX字段无效。
+
+**可能原因**
+
+HAR模块中extensionAbility的srcEntry不支持配置so文件。
+
+**处理步骤**
+
+移除HAR模块中extensionAbility的srcEntry下的so文件。
+
+## 00303296 srcEntry的so文件路径配置错误
+
+**错误信息**
+
+Invalid configuration of XXX field. At file: YYY.
+
+**错误描述**
+
+YYY文件中XXX字段无效。
+
+**可能原因**
+
+srcEntry配置so文件时，不支持配置绝对路径，不能以/开头，不能包含./ 、 ../ 、 \。
+
+**处理步骤**
+
+srcEntry的so文件路径是相对于libs/{abi}的路径，其中{abi}为设备CPU架构类型（如arm64-v8a），例如so文件路径是libs/arm64-v8a/ole/liboleEntry.so，则srcEntry配置为"ole/liboleEntry.so"。
+
+## 00303297 开启bundledAllDependencies的HAR不支持配置动态共享包依赖
+
+**错误信息**
+
+You can not configure shared type dependency. At file: YYY.
+
+**错误描述**
+
+不支持配置动态共享包依赖。
+
+**可能原因**
+
+模块级build-profile.json5的bundledAllDependencies为true时，不支持配置动态共享包依赖。
+
+**处理步骤**
+
+删除动态共享包依赖。
+
+## 00303298 不能同时配置bundledDependencies字段和bundle字段
+
+**错误信息**
+
+The configs of bundledDependencies and bundle cannot be set at the same time. At file: YYY.
+
+**错误描述**
+
+不能同时配置bundledDependencies字段和bundle字段。
+
+**可能原因**
+
+YYY文件中同时配置了bundledDependencies字段和bundle字段。
+
+**处理步骤**
+
+bundledDependencies字段和bundle字段只能配置一个。
+
+## 00303299 bundledAllDependencies和bundledDeclare必须同时配置为true
+
+**错误信息**
+
+The bundledAllDependencies is set to true, but the bundledDeclare is set to false. At file: YYY.
+
+**错误描述**
+
+bundledAllDependencies配置为true，但bundledDeclare配置为false。
+
+**可能原因**
+
+bundledAllDependencies配置为true，但bundledDeclare未配置或配置为false。
+
+**处理步骤**
+
+如果配置了bundledAllDependencies为true，则bundledDeclare也必须配置为true。
+
+## 00303300 C++模块构建失败
+
+**错误信息**
+
+One or more native C++ modules failed to build. Failed modules: XXX. Error details: YYY.
+
+**错误描述**
+
+C++模块构建失败。
+
+**可能原因**
+
+Cmake/Ninja配置文件报错。
+
+**处理步骤**
+
+根据报错信息YYY检查模块XXX，常见的报错信息及处理步骤如下。
+
+### .so文件和目标CPU架构不兼容
+
+**错误信息**
+
+xxx.so is incompatible with elf\_x86\_64.
+
+**错误描述**
+
+在Native C++工程编译过程中，链接阶段失败，提示xxx.so与elf\_x86\_64不兼容。
+
+**可能原因**
+
+链接器试图将xxx.so链接到一个期望为x86\_64架构的目标文件中，但xxx.so本身不是x86\_64架构，它可能是arm64-v8a、armeabi-v7a或其他架构。
+
+**处理步骤**
+
+1. 明确指定CPU架构，避免同时编译所有架构，有两种方式。
+   * 在模块级build-profile.json5中配置abiFilters，示例如下。
+
+     ```screen
+     "buildOption": {
+       "externalNativeOptions": { 
+         "abiFilters": ["arm64-v8a"]
+       },
+     }
+     ```
+   * 在CMakeLists.txt中增加架构判断分支，根据OHOS\_ARCH变量动态链接不同架构的库，确保链接的库与当前编译架构一致。
+2. 修改配置后，清理缓存并重新构建。
+
+### 编码异常导致解析失败
+
+**错误信息**
+
+包含以下一个或多个错误信息。
+
+* unknown type name XXX
+* expected unqualified-id
+* expected identifier
+* source file is not valid UTF-8
+
+**错误描述**
+
+编码异常导致解析失败，如类型未定义、语法错误等。
+
+**可能原因**
+
+可能是安全软件（加密软件、杀毒软件）对源文件进行了加密或篡改导致的。
+
+**处理步骤**
+
+将工程目录/文件添加到安全软件白名单，恢复相应文件内容，确认文件完整无损坏。
+
+## 00303303 skillProfiles的abilityName仅支持UIAbility或service类型的ExtensionAbility
+
+**错误信息**
+
+XXX configured for abilityName is invalid in skillProfiles[name='YYY']. Only UIAbilities or service-type extensionAbilities are supported. At file: ZZZ.
+
+**错误描述**
+
+skillProfiles的abilityName仅支持[abilities标签](module-configuration-file.md#abilities标签)下的UIAbility或[extensionAbilities标签](module-configuration-file.md#extensionabilities标签)下type为service的ExtensionAbility。
+
+**可能原因**
+
+name为YYY的skillProfiles的abilityName XXX不是UIAbility或service类型的ExtensionAbility。
+
+**处理步骤**
+
+将abilityName修改为UIAbility或service类型的ExtensionAbility。
+
+## 00303304 skillProfiles的srcEntries只能配置ets文件
+
+**错误信息**
+
+The suffix of srcEntry value XXX is invalid in skillProfiles[name='YYY']. Only .ets source code files are supported. At file: ZZZ.
+
+**错误描述**
+
+skillProfiles的srcEntries只能配置ets文件。
+
+**可能原因**
+
+name为YYY的skillProfiles的srcEntries中的XXX后缀不是.ets。
+
+**处理步骤**
+
+将srcEntries中的XXX改成后缀为.ets的文件。
+
+## 00303305 skillProfiles的srcEntries只能以./或../开头
+
+**错误信息**
+
+srcEntry value XXX must start with ./ or ../ in skillProfiles[name='YYY']. At file: ZZZ.
+
+**错误描述**
+
+skillProfiles的srcEntries的值只能以./或../开头。
+
+**可能原因**
+
+name为YYY的skillProfiles的srcEntries中的XXX不是以./或../开头。
+
+**处理步骤**
+
+将srcEntries中的XXX改为以./或../开头。
+
+## 00303306 技能包应用中只能有一个类型为skill的模块
+
+**错误信息**
+
+When bundleType is 'skill', only one skill module is allowed, but XXX skill modules are found: YYY.
+
+**错误描述**
+
+当app.json5的bundleType配置为skill类型时，只允许创建一个类型为skill的模块。
+
+**可能原因**
+
+项目里配置了多个类型为skill的模块。
+
+**处理步骤**
+
+删除多余的类型为skill的模块，只保留一个。
+
+## 00303307 技能包应用中配置了非skill类型的模块
+
+**错误信息**
+
+When bundleType is 'skill', only one skill module is allowed and moduleType must be of type 'skill'. However, the following non-skill modules are found: XXX.
+
+**错误描述**
+
+当app.json5的bundleType配置为skill类型时，应用只允许包含1个模块，且模块的type必须配置为skill，即module.json5中的type字段需配置为skill。
+
+**可能原因**
+
+项目里配置了一个或多个类型非skill的模块。
+
+**处理步骤**
+
+删除非skill类型的模块，只保留一个类型为skill的模块。
+
+## 00303308 技能包应用中skillProfiles配置下只能有一个skillProfile
+
+**错误信息**
+
+A skill module supports only one skill profile, but XXX skill profiles are detected in module 'YYY'. At file: ZZZ.
+
+**错误描述**
+
+skill类型的模块的module.json5文件中skillProfiles配置项下只能有一个skillProfile，即skillProfiles数组只能有一个元素。
+
+**可能原因**
+
+skill类型模块的skillProfiles配置项下有多个skillProfile。
+
+**处理步骤**
+
+删除多余的skillProfile，只保留一个。
+
+## 00303309 Bundle类型和模块类型不匹配
+
+**错误信息**
+
+When bundleType is 'XXX', the skill module is not allowed. Remove module 'YYY' or change bundleType to 'skill'. At file: ZZZ.
+
+**错误描述**
+
+当app.json5的bundleType不是skill时，模块类型不允许为skill。
+
+**可能原因**
+
+项目中Bundle类型和模块类型不匹配。
+
+**处理步骤**
+
+移除类型为skill的模块，或者修改bundleType为skill。
+
+## 00303310 homePage与relatedPage必须指向不同的页面
+
+**错误信息**
+
+homePage and relatedPage must refer to different pages.
+
+**错误描述**
+
+homePage与relatedPage必须指向不同的页面。
+
+**可能原因**
+
+homePage与relatedPage配置值相同。
+
+**处理步骤**
+
+homePage与relatedPage配置不同的页面。
+
+## 00303311 fullScreenPages不能包含homePage或relatedPage
+
+**错误信息**
+
+fullScreenPages cannot contain homePage or relatedPage.
+
+**错误描述**
+
+fullScreenPages不能包含homePage或relatedPage。
+
+**可能原因**
+
+fullScreenPages的配置值包含了homePage或relatedPage。
+
+**处理步骤**
+
+fullScreenPages的配置值不能包含homePage或relatedPage。
+
+## 00303312 SDK路径下找不到与当前DevEco Studio配套的SDK
+
+**错误信息**
+
+The corresponding version cannot be found in the SDK path. SDK path: XXX.
+
+**错误描述**
+
+SDK路径下找不到对应版本的SDK。
+
+**可能原因**
+
+1. idea.properties中配置了SDK路径，但是实际没有SDK，或与当前DevEco Studio版本不配套。
+2. 系统中配置了环境变量DEVECO\_SDK\_HOME，但是路径下实际没有SDK，或与当前DevEco Studio版本不配套。
+3. hvigor-config.json5文件的dependencies配置了@ohos/hvigor-ohos-plugin或@ohos/hvigor依赖，与当前DevEco Studio版本不配套。
+
+**处理步骤**
+
+1. 点击**Help > Edit Custom Properties**打开idea.properties，检查是否配置了SDK路径，如果需要配置请确保指向正确的路径，并且与DevEco Studio内置的SDK版本一致，或者删除自定义路径。
+2. 确保DEVECO\_SDK\_HOME环境变量指向的SDK路径正确，并且与DevEco Studio内置的SDK版本一致。
+3. 检查hvigor-config.json5的dependencies中是否配置了@ohos/hvigor-ohos-plugin或@ohos/hvigor依赖，如果配置请删除，当前DevEco Studio一体化安装，默认使用内置的hvigor插件，无需额外配置。
+
+## 00303313 compileSdkVersion的值与当前DevEco Studio版本不配套
+
+**错误信息**
+
+compileSdkVersion is incompatible with the current DevEco Studio version. configured version: XXX, DevEco Studio version: YYY.
+
+**错误描述**
+
+compileSdkVersion的值与当前DevEco Studio版本不配套。
+
+**可能原因**
+
+工程级build-profile.json5中配置了compileSdkVersion，但是与当前DevEco Studio版本不配套。
+
+**处理步骤**
+
+HarmonyOS工程的compileSdkVersion字段不需要显性配置，编译时默认使用DevEco Studio内置的SDK版本。请移除build-profile.json5中的compileSdkVersion字段，或配置为当前DevEco Studio配套的SDK版本，不允许配置为其他SDK版本。
+
+## 00303314 SDK版本错误，需要升级SDK
+
+**错误信息**
+
+Your local SDK version is outdated. Please update the SDK version.
+
+**错误描述**
+
+SDK版本错误，需要升级SDK。
+
+**可能原因**
+
+当前是API 23的OpenHarmony工程，并且SDK版本低于6.1.0.32。
+
+**处理步骤**
+
+1. 在DevEco Studio中，点击错误信息中的**open SDK Manager**打开OpenHarmony SDK页面，将SDK版本升级到6.1.0.32或以上。
+2. 流水线场景，将SDK版本升级到6.1.0.32或以上。
+
+## 00303315 OpenHarmony工程的modelVersion小于6.0.0时，不支持将targetSdkVersion、compatibleSdkVersion、compileSdkVersion配置为字符串
+
+**错误信息**
+
+The current modelVersion does not support setting targetSdkVersion, compatibleSdkVersion, or compileSdkVersion as strings.
+
+**错误描述**
+
+当前modelVersion不支持将targetSdkVersion、compatibleSdkVersion、compileSdkVersion设置为字符串。
+
+**可能原因**
+
+当前是OpenHarmony工程，并且配置的modelVersion小于6.0.0。
+
+**处理步骤**
+
+1. 当API版本为10~25时，将build-profile.json5中的targetSdkVersion、compatibleSdkVersion、compileSdkVersion设置为数字。
+2. 当API版本为26.0.0及以上时，将hvigor-config.json5和工程级oh-package.json5中的modelVersion升级至6.0.0或以上。
+
+## 00303316 校验shareFiles文件错误
+
+**错误信息**
+
+An error occurred when verifying the shareFiles configuration item: XXX. At file: YYY.
+
+**错误描述**
+
+校验shareFiles文件配置项时发生错误。
+
+**可能原因**
+
+1. scopes中的path存在包含关系或者路径重复。
+2. sharingOSPath不是string类型。
+3. 配置了sharingOSPath，但是sharingOSSubpath或sharingOSPermission为空。
+4. sharingOSPath取值不是scopes列表中已配置的path值。
+5. sharingOSPermission不是scopes中对应路径permission的子集。
+
+**处理步骤**
+
+1. 确保scopes中的path不存在包含关系，并且路径不重复。
+2. 确保sharingOSPath是string类型。
+3. 配置sharingOSPath后，sharingOSSubpath和sharingOSPermission是必填字段。
+4. 确保sharingOSPath取值是scopes列表中已配置的path值。
+5. 确保sharingOSPermission是scopes中对应路径permission的子集。
+
+## 00303318 SDK版本与JDK版本不匹配，需要使用低版本的JDK
+
+**错误信息**
+
+The current SDK version does not match the Java environment. Please configure JDK 24 or earlier.
+
+**错误描述**
+
+当前的SDK版本与JDK版本不匹配，需要使用24或更低版本的JDK。
+
+**可能原因**
+
+当前是API 22的OpenHarmony工程，并且当前环境的JDK版本是25。
+
+**处理步骤**
+
+1. 在DevEco Studio中，在Terminal执行java -version，如果当前JDK版本是25，需要关闭DevEco Studio内置的JDK环境变量，点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings** ） **> Tools > Terminal > Application Settings**，将**Add deveco's embedded java path to %PATH%**选项去勾选，并在系统中配置环境变量JAVA\_HOME为24或更低的版本。
+2. 流水线场景，使用24或更低版本的JDK。
+
+## 00303319 OpenHarmony工程不允许配置deduplicateSo字段
+
+**错误信息**
+
+The 'runtimeOS' field of product: 'XXX' is set to 'OpenHarmony', which does not support the 'deduplicateSo' field. At file: YYY
+
+**错误描述**
+
+当前是OpenHarmony工程，不支持配置deduplicateSo字段。
+
+**可能原因**
+
+当前product XXX的runtimeOS字段设置为OpenHarmony，同时配置了deduplicateSo字段。
+
+**处理步骤**
+
+如果product XXX的runtimeOS字段设置为OpenHarmony，请删除deduplicateSo字段。或者将runtimeOS字段设置为HarmonyOS。

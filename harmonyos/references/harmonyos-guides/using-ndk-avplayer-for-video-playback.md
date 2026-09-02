@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放视频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放视频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:27+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:31cfb24051a9f288a9cf1e0ab1d22cab3421690f4e75c04d9c99ec23deca408b
+scraped_at: 2026-09-02T14:50:18+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:50c5f294a179813b0b5cca84cfa0b89f72d0316716cc422533bddcad634491db
 ---
 
 使用[AVPlayer](../harmonyos-references/capi-avplayer.md)可以实现端到端播放原始媒体资源，本开发指导将以完整地播放一个视频作为示例，向开发者讲解AVPlayer视频播放相关功能。
@@ -14,11 +14,11 @@ content_hash: sha256:31cfb24051a9f288a9cf1e0ab1d22cab3421690f4e75c04d9c99ec23dec
 
 在进行应用开发的过程中，开发者可以通过AVPlayer的信息监听回调函数[OH\_AVPlayerOnInfoCallback](../harmonyos-references/capi-avplayer-base-h.md#oh_avplayeroninfocallback)和错误监听回调函数[OH\_AVPlayerOnErrorCallback](../harmonyos-references/capi-avplayer-base-h.md#oh_avplayeronerrorcallback)主动获取播放过程信息。如果应用在视频播放器处于错误状态时执行操作，系统可能会抛出异常或生成其他未定义的行为。
 
-**图1** 播放状态变化示意图
+**播放状态变化示意图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/mLXqWSt0QsuDX3x4StK3yQ/zh-cn_image_0000002558605442.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/XPSfxgRET02YpgzHRmtMuQ/zh-cn_image_0000002736433743.png)
 
-状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于prepared / playing / paused / completed状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
+状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于AV\_PREPARED/AV\_PLAYING/AV\_PAUSED/AV\_COMPLETED状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 
 ## 开发建议
 
@@ -35,25 +35,25 @@ content_hash: sha256:31cfb24051a9f288a9cf1e0ab1d22cab3421690f4e75c04d9c99ec23dec
 在CMake脚本中链接动态库：
 
 ```
-1. target_link_libraries(sample PUBLIC libavplayer.so)
+target_link_libraries(sample PUBLIC libavplayer.so)
 ```
 
 使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)、[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，需要在 CMake 脚本中链接如下动态库：
 
 ```
-1. target_link_libraries(sample PUBLIC libnative_media_core.so)
+target_link_libraries(sample PUBLIC libnative_media_core.so)
 ```
 
 开发者使用系统日志能力时，需引入如下头文件：
 
 ```
-1. #include <hilog/log.h>
+#include <hilog/log.h>
 ```
 
-并需要在CMake脚本中链接如下动态库:
+并需要在CMake脚本中链接如下动态库：
 
 ```
-1. target_link_libraries(sample PUBLIC libhilog_ndk.z.so)
+target_link_libraries(sample PUBLIC libhilog_ndk.z.so)
 ```
 
 开发者通过引入[avplayer.h](../harmonyos-references/capi-avplayer-h.md)、[avplayer\_base.h](../harmonyos-references/capi-avplayer-base-h.md)和[native\_averrors.h](../harmonyos-references/capi-native-averrors-h.md)头文件，使用视频播放相关API。
@@ -61,18 +61,18 @@ content_hash: sha256:31cfb24051a9f288a9cf1e0ab1d22cab3421690f4e75c04d9c99ec23dec
 详细的API说明请参考[AVPlayer API](../harmonyos-references/capi-avplayer.md)。
 
 1. 创建AVPlayer实例：调用[OH\_AVPlayer\_Create()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_create)，AVPlayer初始化为[AV\_IDLE](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)状态。
-2. 设置回调监听函数：使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)、[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，搭配全流程场景使用。支持的监听事件包括：
+2. 设置回调监听函数：使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)、[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，搭配全流程场景使用。支持的监听回调函数包括：
 
-   | 事件类型 | 说明 |
+   | 回调函数类型 | 说明 |
    | --- | --- |
-   | OH\_AVPlayerOnInfoCallback | 必要事件，监听播放器的过程信息。  需要播放器在AV\_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的OH\_AVPlayerOnInfoCallback事件。 |
-   | OH\_AVPlayerOnErrorCallback | 必要事件，监听播放器的错误信息。  需要播放器在AV\_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的OH\_AVPlayerOnErrorCallback事件。 |
+   | OH\_AVPlayerOnInfoCallback | 必要回调函数，监听播放器的过程信息。  需要播放器在AV\_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的信息事件。 |
+   | OH\_AVPlayerOnErrorCallback | 必要回调函数，监听播放器的错误信息。  需要播放器在AV\_IDLE状态下、未调用设置资源接口前完成设置监听，若在调用设置资源接口后再设置监听，可能导致无法收到资源设置过程中上报的信息事件。 |
 
    应用使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)、[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，可以获取更多信息，还可以通过设置 userData 区分不同播放实例。
 3. 设置资源：调用[OH\_AVPlayer\_SetURLSource()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_seturlsource)，设置属性url，AVPlayer进入[AV\_INITIALIZED](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)状态。
 4. （可选）设置音频流类型：调用[OH\_AVPlayer\_SetAudioRendererInfo()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setaudiorendererinfo)，设置AVPlayer音频流类型。
 5. （可选）设置音频打断模式：调用[OH\_AVPlayer\_SetAudioInterruptMode()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setaudiointerruptmode)，设置AVPlayer音频流打断模式。
-6. 设置播放画面窗口：调用[OH\_AVPlayer\_SetVideoSurface()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setvideosurface)设置播放画面窗口。此函数必须在SetSource之后，Prepare之前调用。
+6. 设置播放画面窗口：调用[OH\_AVPlayer\_SetVideoSurface()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setvideosurface)设置播放画面窗口。此函数必须在OH\_AVPlayer\_SetURLSource()之后，OH\_AVPlayer\_Prepare()之前调用。
 7. 准备播放：调用[OH\_AVPlayer\_Prepare()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_prepare)，AVPlayer进入[AV\_PREPARED](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)状态，此时可以获取时长，设置音量。
 8. （可选）设置音频音效模式：调用[OH\_AVPlayer\_SetAudioEffectMode()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setaudioeffectmode)，设置AVPlayer音频音效模式。
 9. 视频播控：播放[OH\_AVPlayer\_Play()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_play)，暂停[OH\_AVPlayer\_Pause()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_pause)，跳转[OH\_AVPlayer\_Seek()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_seek)，停止[OH\_AVPlayer\_Stop()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_stop)等操作。
@@ -83,28 +83,28 @@ content_hash: sha256:31cfb24051a9f288a9cf1e0ab1d22cab3421690f4e75c04d9c99ec23dec
 
 1. 新建工程，下载[示例工程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/AVPlayer/AVPlayerNDKVideo)，并将示例工程的以下资源复制到对应目录。
 
-   ```
-   1. AVPlayerNDKVideo
-   2. entry/src/main/ets/
-   3. └── pages
-   4. └── Index.ets (播放界面)
-   5. entry/src/main/
-   6. ├── cpp
-   7. │   ├── types
-   8. │   │   └── libentry
-   9. │   │       └── Index.d.ts (NDK函数对应的js映射)
-   10. │   ├── CMakeLists.txt (CMake脚本)
-   11. │   └── napi_init.cpp  (NDK函数)
-   12. └── resources
-   13. ├── base
-   14. │   ├── element
-   15. │   │   ├── color.json
-   16. │   │   ├── float.json
-   17. │   │   └── string.json
-   18. │   └── media
-   19. │       ├── ic_video_play.svg  (播放键图片资源)
-   20. │       └── ic_video_pause.svg (暂停键图片资源)
-   21. └── rawfile
-   22. └── test1.mp4 （视频资源）
+   ```txt
+   AVPlayerNDKVideo
+   entry/src/main/ets/
+   └── pages
+       └── Index.ets (播放界面)
+   entry/src/main/
+   ├── cpp
+   │   ├── types
+   │   │   └── libentry
+   │   │       └── Index.d.ts (NDK函数对应的js映射)
+   │   ├── CMakeLists.txt (CMake脚本)
+   │   └── napi_init.cpp  (NDK函数)
+   └── resources
+       ├── base
+       │   ├── element
+       │   │   ├── color.json
+       │   │   ├── float.json
+       │   │   └── string.json
+       │   └── media
+       │       ├── ic_video_play.svg  (播放键图片资源)
+       │       └── ic_video_pause.svg (暂停键图片资源)
+       └── rawfile
+           └── test1.mp4 （视频资源）
    ```
 2. 编译新建工程并运行。

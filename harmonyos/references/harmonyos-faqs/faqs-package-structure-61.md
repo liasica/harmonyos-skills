@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何判断当前应用程序是Debug包还是Release包
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何判断当前应用程序是Debug包还是Release包
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:37+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:3530eea5e91c381151816347dcc2906758c2214e8e4a2ed0162997e02ef4e678
 ---
 

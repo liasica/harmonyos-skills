@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.networkManager（网络管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.networkManager（网络管理）
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:12+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:870f13f3df94629412d42a6da46cffb66d475f7dfb30ec3b6e91b71c0a0705f6
+scraped_at: 2026-09-02T15:02:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6a8ccbc379c4e71f5981e18d5c35fc99023979acaebd88d84f510f2891da502c
 ---
 
-本模块提供设备网络管理能力，包括查询设备IP地址、MAC地址信息等。
+本模块提供设备网络管理能力，包括查询设备IP地址、MAC地址信息、管理网络接口状态、配置网络全局代理、管理防火墙规则和域名过滤规则、控制移动数据网络、管理APN配置、配置以太网网络等。适用于企业IT管理员对设备网络进行集中管理和安全管控，帮助企业实现网络访问策略统一管理、防止网络攻击和数据泄露、降低网络管理成本。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -20,19 +20,15 @@ content_hash: sha256:870f13f3df94629412d42a6da46cffb66d475f7dfb30ec3b6e91b71c0a0
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { networkManager } from '@kit.MDMKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
 ```
 
 ## networkManager.getAllNetworkInterfacesSync
 
-PhonePC/2in1Tablet
-
 getAllNetworkInterfacesSync(admin: Want): Array<string>
 
-获取所有激活的有线网络接口。
+获取所有激活的有线网络接口。适用于企业网络管理场景，例如查看当前设备可用的网络连接、审计网络接口状态、为后续网络配置操作做准备，帮助企业了解设备网络连接状态，便于集中管理网络资源和排查网络问题。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -65,31 +61,29 @@ getAllNetworkInterfacesSync(admin: Want): Array<string>
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. try {
-11. let result: Array<string> = networkManager.getAllNetworkInterfacesSync(wantTemp);
-12. console.info(`Succeeded in getting all network interfaces, result : ${JSON.stringify(result)}`);
-13. } catch (err) {
-14. console.error(`Failed to get all network interfaces. Code: ${err.code}, message: ${err.message}`);
-15. }
+try {
+  let result: Array<string> = networkManager.getAllNetworkInterfacesSync(wantTemp);
+  console.info(`Succeeded in getting all network interfaces, result : ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get all network interfaces. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.getIpAddressSync
 
-PhonePC/2in1Tablet
-
 getIpAddressSync(admin: Want, networkInterface: string): string
 
-根据网络接口获取设备IP地址。
+根据网络接口获取设备IP地址。适用于企业网络管理场景，例如网络审计、设备定位、网络连接问题排查、IP地址分配管理，帮助企业IT管理员了解设备网络配置，便于网络管理和故障诊断。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -123,32 +117,30 @@ getIpAddressSync(admin: Want, networkInterface: string): string
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. try {
-11. // 参数需根据实际情况进行替换
-12. let result: string = networkManager.getIpAddressSync(wantTemp, 'eth0');
-13. console.info(`Succeeded in getting ip address, result : ${result}`);
-14. } catch (err) {
-15. console.error(`Failed to get ip address. Code: ${err.code}, message: ${err.message}`);
-16. }
+try {
+  // 参数需根据实际情况进行替换
+  let result: string = networkManager.getIpAddressSync(wantTemp, 'eth0');
+  console.info(`Succeeded in getting ip address, result : ${result}`);
+} catch (err) {
+  console.error(`Failed to get ip address. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.getMacSync
 
-PhonePC/2in1Tablet
-
 getMacSync(admin: Want, networkInterface: string): string
 
-根据网络接口获取设备MAC地址。
+根据网络接口获取设备MAC地址。适用于企业网络管理场景，例如设备识别、网络准入控制、MAC地址审计、设备资产管理，帮助企业识别和追踪设备，实现精细化的网络访问控制。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -182,32 +174,32 @@ getMacSync(admin: Want, networkInterface: string): string
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. try {
-11. // 参数需根据实际情况进行替换
-12. let result: string = networkManager.getMacSync(wantTemp, 'eth0');
-13. console.info(`Succeeded in getting mac, result : ${result}`);
-14. } catch (err) {
-15. console.error(`Failed to get mac. Code: ${err.code}, message: ${err.message}`);
-16. }
+try {
+  // 参数需根据实际情况进行替换
+  let result: string = networkManager.getMacSync(wantTemp, 'eth0');
+  console.info(`Succeeded in getting mac, result : ${result}`);
+} catch (err) {
+  console.error(`Failed to get mac. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.isNetworkInterfaceDisabledSync
 
-PhonePC/2in1Tablet
-
 isNetworkInterfaceDisabledSync(admin: Want, networkInterface: string): boolean
 
-查询指定网络接口是否被禁用。
+查询指定网络接口是否被禁用。适用于企业网络管理场景，例如检查网络接口状态、审计网络接口使用情况、验证网络策略执行效果，帮助企业确认网络接口管理策略是否生效，便于策略调整和问题排查。
+
+本接口通过传入Want查询对应企业设备管理应用设置的策略，如需查询实际生效的策略，请使用[networkManager.isNetworkInterfaceDisabledSync](js-apis-enterprise-networkmanager.md#networkmanagerisnetworkinterfacedisabledsync-1)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -241,32 +233,83 @@ isNetworkInterfaceDisabledSync(admin: Want, networkInterface: string): boolean
 
 **示例：**
 
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+
+try {
+  // 参数需根据实际情况进行替换
+  let result: boolean = networkManager.isNetworkInterfaceDisabledSync(wantTemp, 'eth0');
+  console.info(`Succeeded in querying network interface is disabled or not, result : ${result}`);
+} catch (err) {
+  console.error(`Failed to query network interface is disabled or not. Code: ${err.code}, message: ${err.message}`);
+}
 ```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+## networkManager.isNetworkInterfaceDisabledSync
 
-10. try {
-11. // 参数需根据实际情况进行替换
-12. let result: boolean = networkManager.isNetworkInterfaceDisabledSync(wantTemp, 'eth0');
-13. console.info(`Succeeded in querying network interface is disabled or not, result : ${result}`);
-14. } catch (err) {
-15. console.error(`Failed to query network interface is disabled or not. Code: ${err.code}, message: ${err.message}`);
-16. }
+isNetworkInterfaceDisabledSync(admin: Want | null, networkInterface: string): boolean
+
+查询指定网络接口是否被禁用。适用于企业网络管理场景，例如检查网络接口状态、审计网络接口使用情况、验证网络策略执行效果，帮助企业确认网络接口管理策略是否生效，便于策略调整和问题排查。
+
+**起始版本：** 26.0.0
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。  当设备存在多个MDM应用时，传入Want时查询对应企业设备管理应用设置的策略，传入null时查询实际生效的策略。 |
+| networkInterface | string | 是 | 指定网络接口。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回指定网络接口是否被禁用，true表示该网络接口被禁用，false表示该网络接口未被禁用。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例：**
+
+```ts
+import { networkManager } from '@kit.MDMKit';
+
+try {
+  // 参数需根据实际情况进行替换
+  // 参数需根据实际情况进行替换
+  let result: boolean = networkManager.isNetworkInterfaceDisabledSync(null, 'eth0');
+  console.info(`Succeeded in querying network interface is disabled or not, result : ${result}`);
+} catch (err) {
+  console.error(`Failed to query network interface is disabled or not. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.setNetworkInterfaceDisabledSync
 
-PhonePC/2in1Tablet
-
 setNetworkInterfaceDisabledSync(admin: Want, networkInterface: string, isDisabled: boolean): void
 
-禁止设备使用指定网络接口。
+禁止设备使用指定网络接口。适用于企业网络安全管控场景，例如禁用高风险网络接口、限制设备使用特定网络连接、防止通过网络接口进行数据泄露，帮助企业降低网络安全风险，防止通过特定网络接口进行的攻击或数据外泄。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -297,32 +340,30 @@ setNetworkInterfaceDisabledSync(admin: Want, networkInterface: string, isDisable
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. try {
-11. // 参数需根据实际情况进行替换
-12. networkManager.setNetworkInterfaceDisabledSync(wantTemp, 'eth0', true);
-13. console.info(`Succeeded in setting network interface disabled`);
-14. } catch (err) {
-15. console.error(`Failed to set network interface disabled. Code: ${err.code}, message: ${err.message}`);
-16. }
+try {
+  // 参数需根据实际情况进行替换
+  networkManager.setNetworkInterfaceDisabledSync(wantTemp, 'eth0', true);
+  console.info(`Succeeded in setting network interface disabled`);
+} catch (err) {
+  console.error(`Failed to set network interface disabled. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.setGlobalProxySync
 
-PhonePC/2in1Tablet
-
 setGlobalProxySync(admin: Want, httpProxy: connection.HttpProxy): void
 
-设置网络全局代理。
+设置网络全局代理。适用于企业网络管理场景，例如设置企业统一的网络代理、实现网络访问审计、控制网络访问路径、优化网络性能，帮助企业集中管理网络访问，实现网络访问的可审计和可控制。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -337,7 +378,7 @@ setGlobalProxySync(admin: Want, httpProxy: connection.HttpProxy): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| httpProxy | [connection.HttpProxy](js-apis-net-connection.md#httpproxy10) | 是 | 网络全局Http代理配置信息。 |
+| httpProxy | [connection.HttpProxy](js-apis-net-connection.md#httpproxy10) | 是 | 网络全局HTTP代理配置信息。 |
 
 **错误码**：
 
@@ -352,41 +393,39 @@ setGlobalProxySync(admin: Want, httpProxy: connection.HttpProxy): void
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { connection } from '@kit.NetworkKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+import { connection } from '@kit.NetworkKit';
 
-5. let wantTemp: Want = {
-6. // 需根据实际情况进行替换
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EnterpriseAdminAbility'
-9. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-11. // 需根据实际情况进行替换
-12. let exclusionStr: string = "192.168,baidu.com";
-13. let exclusionArray: Array<string> = exclusionStr.split(',');
-14. let httpProxy: connection.HttpProxy = {
-15. host: "192.168.xx.xxx",
-16. port: 8080,
-17. exclusionList: exclusionArray
-18. };
+// 需根据实际情况进行替换
+let exclusionStr: string = "192.168,baidu.com";
+let exclusionArray: Array<string> = exclusionStr.split(',');
+let httpProxy: connection.HttpProxy = {
+  host: "192.168.xx.xxx",
+  port: 8080,
+  exclusionList: exclusionArray
+};
 
-20. try {
-21. networkManager.setGlobalProxySync(wantTemp, httpProxy);
-22. console.info(`Succeeded in setting network global proxy.`);
-23. } catch (err) {
-24. console.error(`Failed to set network global proxy. Code: ${err.code}, message: ${err.message}`);
-25. }
+try {
+  networkManager.setGlobalProxySync(wantTemp, httpProxy);
+  console.info(`Succeeded in setting network global proxy.`);
+} catch (err) {
+  console.error(`Failed to set network global proxy. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.setGlobalProxyForAccount15+
 
-PhonePC/2in1Tablet
-
 setGlobalProxyForAccount(admin: Want, httpProxy: connection.HttpProxy, accountId: number): void
 
-设置指定用户下的网络代理。
+设置指定用户下的网络代理。适用于企业多用户环境下的网络管理场景，例如为不同用户设置不同的网络代理策略、实现用户级网络访问控制、满足不同用户的网络访问需求，帮助企业实现精细化的用户级网络管理。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -420,40 +459,38 @@ setGlobalProxyForAccount(admin: Want, httpProxy: connection.HttpProxy, accountId
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { connection } from '@kit.NetworkKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+import { connection } from '@kit.NetworkKit';
 
-5. let wantTemp: Want = {
-6. // 需根据实际情况进行替换
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EnterpriseAdminAbility'
-9. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-11. let httpProxy: connection.HttpProxy = {
-12. // 需根据实际情况进行替换
-13. host: '192.168.xx.xxx',
-14. port: 8080,
-15. exclusionList: ['192.168', 'baidu.com']
-16. };
+let httpProxy: connection.HttpProxy = {
+  // 需根据实际情况进行替换
+  host: '192.168.xx.xxx',
+  port: 8080,
+  exclusionList: ['192.168', 'baidu.com']
+};
 
-18. try {
-19. // 参数需根据实际情况进行替换
-20. networkManager.setGlobalProxyForAccount(wantTemp, httpProxy, 100);
-21. console.info(`Succeeded in setting network global proxy.`);
-22. } catch (err) {
-23. console.error(`Failed to set network global proxy. Code: ${err.code}, message: ${err.message}`);
-24. }
+try {
+  // 参数需根据实际情况进行替换
+  networkManager.setGlobalProxyForAccount(wantTemp, httpProxy, 100);
+  console.info(`Succeeded in setting network global proxy.`);
+} catch (err) {
+  console.error(`Failed to set network global proxy. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.getGlobalProxySync
 
-PhonePC/2in1Tablet
-
 getGlobalProxySync(admin: Want): connection.HttpProxy
 
-获取网络全局代理。
+获取网络全局代理。适用于企业网络管理场景，例如审计当前网络代理配置、验证代理策略是否生效、排查网络访问问题，帮助企业检查网络代理设置，确保网络访问策略正确执行。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -486,32 +523,34 @@ getGlobalProxySync(admin: Want): connection.HttpProxy
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { connection } from '@kit.NetworkKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+import { connection } from '@kit.NetworkKit';
 
-5. let wantTemp: Want = {
-6. // 需根据实际情况进行替换
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EnterpriseAdminAbility'
-9. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-11. try {
-12. let result: connection.HttpProxy = networkManager.getGlobalProxySync(wantTemp);
-13. console.info(`Succeeded in getting network global proxy, result : ${JSON.stringify(result)}`);
-14. } catch (err) {
-15. console.error(`Failed to get network global proxy. Code: ${err.code}, message: ${err.message}`);
-16. }
+try {
+  let result: connection.HttpProxy = networkManager.getGlobalProxySync(wantTemp);
+  console.info(`Succeeded in getting network global proxy, result : ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get network global proxy. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.getGlobalProxyForAccount15+
 
-PhonePC/2in1Tablet
-
 getGlobalProxyForAccount(admin: Want | null, accountId: number): connection.HttpProxy
 
-获取指定用户下的网络代理。
+获取指定用户下的网络代理。适用于企业多用户环境下的网络管理场景，例如审计用户级网络代理配置、验证用户网络访问策略、排查用户网络访问问题，帮助企业检查和验证用户级网络管理策略。
+
+**说明** 
+
+本接口用于获取通过setGlobalProxyForAccount设置的、指定用户的代理配置。如果需要获取应用于所有用户的全局代理配置，建议使用[getGlobalProxySync](js-apis-enterprise-networkmanager.md#networkmanagergetglobalproxysync)接口。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -525,7 +564,7 @@ getGlobalProxyForAccount(admin: Want | null, accountId: number): connection.Http
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
+| admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。API version 20之前，调用本接口获取指定用户下的网络代理。当设备存在多个MDM应用时，传入admin查询对应admin设置的策略。从API version 20开始，admin新增支持传入null，传入null时查询整机实际生效的策略。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过@ohos.account.osAccount中的[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
 
 **返回值：**
@@ -543,45 +582,47 @@ getGlobalProxyForAccount(admin: Want | null, accountId: number): connection.Http
 | 9200001 | The application is not an administrator application of the device. |
 | 9200002 | The administrator application does not have permission to manage the device. |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
-| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities.  适用版本：20+ |
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
-3. import { connection } from '@kit.NetworkKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
+import { connection } from '@kit.NetworkKit';
 
-5. let wantTemp: Want = {
-6. // 需根据实际情况进行替换
-7. bundleName: 'com.example.myapplication',
-8. abilityName: 'EnterpriseAdminAbility'
-9. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-11. try {
-12. // 参数需根据实际情况进行替换
-13. let result: connection.HttpProxy = networkManager.getGlobalProxyForAccount(wantTemp, 100);
-14. console.info(`Succeeded in getting network global proxy, result : ${JSON.stringify(result)}`);
-15. } catch (err) {
-16. console.error(`Failed to get network global proxy. Code: ${err.code}, message: ${err.message}`);
-17. }
+try {
+  // 参数需根据实际情况进行替换
+  let result: connection.HttpProxy = networkManager.getGlobalProxyForAccount(wantTemp, 100);
+  console.info(`Succeeded in getting network global proxy, result : ${JSON.stringify(result)}`);
+} catch (err) {
+  console.error(`Failed to get network global proxy. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.addFirewallRule
 
-PhonePC/2in1Tablet
-
 addFirewallRule(admin: Want, firewallRule: FirewallRule): void
 
-为设备添加防火墙过滤规则。
+为设备添加防火墙过滤规则。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。适用于企业网络安全管控场景，例如限制特定IP地址的网络访问、防止恶意网络攻击、控制应用程序的网络通信、实现网络访问的允许名单或禁用名单管理，帮助企业精细化控制网络访问，防止网络攻击和数据泄露。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
 从API version 23开始，支持[LogType](js-apis-enterprise-networkmanager.md#logtype23)。
 
-添加了[Action](js-apis-enterprise-networkmanager.md#action)为ALLOW规则后，将会默认添加DENY规则，不在ALLOW规则之内的网络数据包将会被丢弃或拦截。
+**说明** 
 
-设备重启，将会清空防火墙过滤规则。
+* 添加了[Action](js-apis-enterprise-networkmanager.md#action)为ALLOW规则后，将会默认添加DENY规则，不在ALLOW规则之内的网络数据包将会被丢弃或拦截。
+* 设备重启，将会清空防火墙过滤规则。
+* 规则匹配顺序：先匹配域名过滤规则（由[addDomainFilterRule](js-apis-enterprise-networkmanager.md#networkmanageradddomainfilterrule)添加），再匹配本接口添加的IP防火墙规则；在域名规则或IP规则中，均按[Action](js-apis-enterprise-networkmanager.md#action)为ALLOW、DENY、REJECT的顺序进行匹配。
+* 若规则配置了appUid，仅允许或禁止该应用的防火墙访问权限。若未配置appUid，则对所有应用生效。
+* 若设备同时支持IPv4和IPv6，需要分别添加对应的IPv4和IPv6防火墙过滤规则。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -611,44 +652,42 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. let firewallRule: networkManager.FirewallRule = {
-10. // 需根据实际情况进行替换
-11. "srcAddr": "192.168.1.1-192.168.22.66",
-12. "destAddr": "10.1.1.1",
-13. "srcPort": "8080",
-14. "destPort": "8080",
-15. "appUid": "9696",
-16. "direction": networkManager.Direction.OUTPUT,
-17. "action": networkManager.Action.DENY,
-18. "protocol": networkManager.Protocol.UDP,
-19. "family": 1,
-20. "logType": networkManager.LogType.NFLOG
-21. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let firewallRule: networkManager.FirewallRule = {
+  // 需根据实际情况进行替换
+  "srcAddr": "192.168.1.1-192.168.22.66",
+  "destAddr": "10.1.1.1",
+  "srcPort": "8080",
+  "destPort": "8080",
+  "appUid": "9696",
+  "direction": networkManager.Direction.OUTPUT,
+  "action": networkManager.Action.DENY,
+  "protocol": networkManager.Protocol.UDP,
+  "family": 1,
+  "logType": networkManager.LogType.NFLOG
+};
 
-23. try {
-24. networkManager.addFirewallRule(wantTemp, firewallRule);
-25. console.info('Succeeded in adding firewall rule.');
-26. } catch (err) {
-27. console.error(`Failed to add firewall rule. Code: ${err.code}, message: ${err.message}`);
-28. }
+try {
+  networkManager.addFirewallRule(wantTemp, firewallRule);
+  console.info('Succeeded in adding firewall rule.');
+} catch (err) {
+  console.error(`Failed to add firewall rule. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.removeFirewallRule
 
-PhonePC/2in1Tablet
-
 removeFirewallRule(admin: Want, firewallRule?: FirewallRule): void
 
-移除设备防火墙过滤规则。
+移除设备防火墙过滤规则。适用于企业网络安全策略调整场景，例如取消某些网络访问限制、调整防火墙策略、清理过时或无效的规则，帮助企业灵活调整网络安全策略，确保网络访问控制策略与实际需求保持一致。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
@@ -684,54 +723,52 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. let firewallRule: networkManager.FirewallRule = {
-11. // 需根据实际情况进行替换
-12. "srcAddr": "192.168.1.1-192.168.22.66",
-13. "destAddr": "10.1.1.1",
-14. "srcPort": "8080",
-15. "destPort": "8080",
-16. "appUid": "9696",
-17. "direction": networkManager.Direction.OUTPUT,
-18. "action": networkManager.Action.DENY,
-19. "protocol": networkManager.Protocol.UDP,
-20. "family": 1,
-21. "logType": networkManager.LogType.NFLOG
-22. };
+let firewallRule: networkManager.FirewallRule = {
+  // 需根据实际情况进行替换
+  "srcAddr": "192.168.1.1-192.168.22.66",
+  "destAddr": "10.1.1.1",
+  "srcPort": "8080",
+  "destPort": "8080",
+  "appUid": "9696",
+  "direction": networkManager.Direction.OUTPUT,
+  "action": networkManager.Action.DENY,
+  "protocol": networkManager.Protocol.UDP,
+  "family": 1,
+  "logType": networkManager.LogType.NFLOG
+};
 
-24. // 移除指定的规则
-25. try {
-26. networkManager.removeFirewallRule(wantTemp, firewallRule);
-27. console.info('Succeeded in removing firewall rule.');
-28. } catch (err) {
-29. console.error(`Failed to remove firewall rule. Code: ${err.code}, message: ${err.message}`);
-30. }
+// 移除指定的规则
+try {
+  networkManager.removeFirewallRule(wantTemp, firewallRule);
+  console.info('Succeeded in removing firewall rule.');
+} catch (err) {
+  console.error(`Failed to remove firewall rule. Code: ${err.code}, message: ${err.message}`);
+}
 
-32. // 清空所有规则
-33. try {
-34. networkManager.removeFirewallRule(wantTemp);
-35. console.info('Succeeded in removing all firewall rule.');
-36. } catch (err) {
-37. console.error(`Failed to remove all firewall rule. Code: ${err.code}, message: ${err.message}`);
-38. }
+// 清空IP协议版本为IPv4的所有规则
+try {
+  networkManager.removeFirewallRule(wantTemp);
+  console.info('Succeeded in removing all firewall rule.');
+} catch (err) {
+  console.error(`Failed to remove all firewall rule. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.getFirewallRules
 
-PhonePC/2in1Tablet
-
 getFirewallRules(admin: Want): Array<FirewallRule>
 
-查询设备防火墙过滤规则。
+查询设备防火墙过滤规则。适用于企业网络安全审计场景，例如检查当前防火墙策略配置、审计网络访问控制规则、验证防火墙规则是否正确执行、排查网络访问问题，帮助企业审核和验证网络安全策略，确保网络访问控制符合安全要求。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
@@ -768,43 +805,42 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. let firewallRule: Array<networkManager.FirewallRule>;
-10. try {
-11. firewallRule = networkManager.getFirewallRules(wantTemp);
-12. console.info('Succeeded in getting firewall rules');
-13. } catch (err) {
-14. console.error(`Failed to get firewall rules. Code: ${err.code}, message: ${err.message}`);
-15. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let firewallRule: Array<networkManager.FirewallRule>;
+try {
+  firewallRule = networkManager.getFirewallRules(wantTemp);
+  console.info('Succeeded in getting firewall rules');
+} catch (err) {
+  console.error(`Failed to get firewall rules. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.addDomainFilterRule
 
-PhonePC/2in1Tablet
-
 addDomainFilterRule(admin: Want, domainFilterRule: DomainFilterRule): void
 
-为设备添加域名过滤规则。
+为设备添加域名过滤规则。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
 从API version 23开始，支持[LogType](js-apis-enterprise-networkmanager.md#logtype23)。
 
-添加了[Action](js-apis-enterprise-networkmanager.md#action)为ALLOW规则后，将会默认添加DENY规则，不在ALLOW规则之内的域名解析数据包将会被丢弃或拦截。
+**说明** 
 
-设备重启，将会清空域名过滤规则。
-
-说明
-
-为避免DNS缓存导致拦截规则失效，建议系统启动后立即配置域名过滤规则。若已因DNS缓存导致拦截失效，重启系统可清除缓存，恢复拦截功能。
+* 添加[Action](js-apis-enterprise-networkmanager.md#action)为ALLOW规则后会自动添加默认DENY规则，不在ALLOW规则之内的域名解析数据包将被丢弃或拦截。
+* 添加的规则在设备重启后会被清空。
+* 为避免DNS缓存导致拦截规则失效，建议系统启动后立即配置域名过滤规则。若已因DNS缓存导致拦截失效，重启系统可清除缓存，恢复拦截功能。
+* 规则匹配顺序：先匹配本接口添加的域名过滤规则，再匹配IP防火墙规则（由[addFirewallRule](js-apis-enterprise-networkmanager.md#networkmanageraddfirewallrule)添加）；在域名规则或IP规则中，均按[Action](js-apis-enterprise-networkmanager.md#action)为ALLOW、DENY、REJECT的顺序进行匹配。
+* 若规则配置了appUid，仅允许或禁止该应用的域名访问权限。若未配置appUid，则对所有应用生效。
+* 若设备同时支持IPv4和IPv6，需要分别添加对应的IPv4和IPv6域名过滤规则。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -819,7 +855,7 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| domainFilterRule | [DomainFilterRule](js-apis-enterprise-networkmanager.md#domainfilterrule) | 是 | 添加域名过滤规则。 |
+| domainFilterRule | [DomainFilterRule](js-apis-enterprise-networkmanager.md#domainfilterrule) | 是 | 域名过滤规则对象，包含域名、应用UID、IP协议版本等配置项。 |
 
 **错误码**：
 
@@ -834,39 +870,37 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. let domainFilterRule: networkManager.DomainFilterRule = {
-10. // 需根据实际情况进行替换
-11. "domainName": "www.example.com",
-12. "appUid": "9696",
-13. "action": networkManager.Action.DENY,
-14. "family": 1,
-15. "logType": networkManager.LogType.NFLOG
-16. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let domainFilterRule: networkManager.DomainFilterRule = {
+  // 需根据实际情况进行替换
+  "domainName": "www.example.com",
+  "appUid": "9696",
+  "action": networkManager.Action.DENY,
+  "family": 1,
+  "logType": networkManager.LogType.NFLOG
+};
 
-18. try {
-19. networkManager.addDomainFilterRule(wantTemp, domainFilterRule);
-20. console.info('Succeeded in adding domain filter rules');
-21. } catch (err) {
-22. console.error(`Failed to add domain filter rules. Code: ${err.code}, message: ${err.message}`);
-23. }
+try {
+  networkManager.addDomainFilterRule(wantTemp, domainFilterRule);
+  console.info('Succeeded in adding domain filter rules');
+} catch (err) {
+  console.error(`Failed to add domain filter rules. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.removeDomainFilterRule
 
-PhonePC/2in1Tablet
-
 removeDomainFilterRule(admin: Want, domainFilterRule?: DomainFilterRule): void
 
-移除设备域名过滤规则。
+移除设备域名过滤规则。适用于企业网络安全策略调整场景，例如取消某些域名访问限制、调整域名过滤策略、清理过时或无效的规则、解决误拦截问题，帮助企业灵活调整域名访问策略，确保网络访问控制策略符合实际需求。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
@@ -902,49 +936,47 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
 
-10. let domainFilterRule: networkManager.DomainFilterRule = {
-11. // 需根据实际情况进行替换
-12. "domainName": "www.example.com",
-13. "appUid": "9696",
-14. "action": networkManager.Action.DENY,
-15. "family": 1,
-16. "logType": networkManager.LogType.NFLOG
-17. };
+let domainFilterRule: networkManager.DomainFilterRule = {
+  // 需根据实际情况进行替换
+  "domainName": "www.example.com",
+  "appUid": "9696",
+  "action": networkManager.Action.DENY,
+  "family": 1,
+  "logType": networkManager.LogType.NFLOG
+};
 
-19. // 移除指定的规则
-20. try {
-21. networkManager.removeDomainFilterRule(wantTemp, domainFilterRule);
-22. console.info('Succeeded in removing domain filter rules');
-23. } catch (err) {
-24. console.error(`Failed to remove domain filter rules. Code: ${err.code}, message: ${err.message}`);
-25. }
+// 移除指定的规则
+try {
+  networkManager.removeDomainFilterRule(wantTemp, domainFilterRule);
+  console.info('Succeeded in removing domain filter rules');
+} catch (err) {
+  console.error(`Failed to remove domain filter rules. Code: ${err.code}, message: ${err.message}`);
+}
 
-27. // 清空所有规则
-28. try {
-29. networkManager.removeDomainFilterRule(wantTemp);
-30. console.info('Succeeded in removing all domain filter rules');
-31. } catch (err) {
-32. console.error(`Failed to remove all domain filter rules. Code: ${err.code}, message: ${err.message}`);
-33. }
+// 清空IP协议版本为IPv4的所有规则
+try {
+  networkManager.removeDomainFilterRule(wantTemp);
+  console.info('Succeeded in removing all domain filter rules');
+} catch (err) {
+  console.error(`Failed to remove all domain filter rules. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.getDomainFilterRules
 
-PhonePC/2in1Tablet
-
 getDomainFilterRules(admin: Want): Array<DomainFilterRule>
 
-查询设备域名过滤规则。
+查询设备域名过滤规则。适用于企业网络安全审计场景，例如检查当前域名过滤策略配置、审计域名访问控制规则、验证域名过滤规则是否正确执行、排查域名访问问题，帮助企业审核和验证域名访问控制策略，确保网络访问控制符合安全要求。
 
 API version 21及之前版本，仅支持IPv4。从API version 22开始，支持IPv4和IPv6。
 
@@ -981,27 +1013,25 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. let domainFilterRule: Array<networkManager.DomainFilterRule>;
-10. try {
-11. domainFilterRule = networkManager.getDomainFilterRules(wantTemp);
-12. console.info('Succeeded in getting  domain filter rules');
-13. } catch (err) {
-14. console.error(`Failed to get domain filter rules. Code: ${err.code}, message: ${err.message}`);
-15. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let domainFilterRule: Array<networkManager.DomainFilterRule>;
+try {
+  domainFilterRule = networkManager.getDomainFilterRules(wantTemp);
+  console.info('Succeeded in getting domain filter rules');
+} catch (err) {
+  console.error(`Failed to get domain filter rules. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.turnOnMobileData20+
-
-PhonePC/2in1Tablet
 
 turnOnMobileData(admin: Want, isForce: boolean): void
 
@@ -1013,14 +1043,14 @@ turnOnMobileData(admin: Want, isForce: boolean): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**冲突规则：** 任意MDM应用通过[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)接口禁用了移动数据网络，则无法通过本接口直接开启移动数据网络。
+**冲突规则：** 任意MDM应用通过[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)接口禁用了移动数据网络，则无法通过本接口直接开启移动数据网络。
 
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| isForce | boolean | 是 | 是否强制打开移动数据网络。true表示强制开启，强制开启后不支持用户在设备上手动关闭，必须采用[turnOffMobileData](js-apis-enterprise-networkmanager.md#networkmanagerturnoffmobiledata20)接口关闭。false表示非强制开启，此时用户可以在设备上手动操作关闭移动数据网络。 |
+| isForce | boolean | 是 | 是否强制打开移动数据网络。true表示强制开启，强制开启后不支持用户在设备上手动关闭，必须采用[turnOffMobileData](js-apis-enterprise-networkmanager.md#networkmanagerturnoffmobiledata20)接口关闭。false表示非强制开启，此时用户可以在设备上手动操作关闭移动数据网络。适用于企业网络安全管控场景，例如防止通过移动数据网络进行数据泄露、控制网络连接方式、降低通信成本、确保设备仅使用企业网络，帮助企业控制设备网络访问方式，防止通过移动数据网络的安全风险和数据外泄。 |
 
 **错误码**：
 
@@ -1034,26 +1064,24 @@ turnOnMobileData(admin: Want, isForce: boolean): void
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. try {
-10. networkManager.turnOnMobileData(wantTemp, true);
-11. console.info(`Turn on mobile data succeeded`);
-12. } catch (err) {
-13. console.error(`Failed to turn on mobile data. Code: ${err.code}, message: ${err.message}`);
-14. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+try {
+  networkManager.turnOnMobileData(wantTemp, true);
+  console.info(`Turn on mobile data succeeded`);
+} catch (err) {
+  console.error(`Failed to turn on mobile data. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.turnOffMobileData20+
-
-PhonePC/2in1Tablet
 
 turnOffMobileData(admin: Want): void
 
@@ -1065,7 +1093,7 @@ turnOffMobileData(admin: Want): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**冲突规则：** 任意MDM应用通过[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicy)接口禁用了移动数据网络，则无法通过本接口直接关闭移动数据网络。
+**冲突规则：** 任意MDM应用通过[setDisallowedPolicy](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicydeprecated)接口禁用了移动数据网络，则无法通过本接口直接关闭移动数据网络。
 
 **参数：**
 
@@ -1085,26 +1113,24 @@ turnOffMobileData(admin: Want): void
 
 **示例：**
 
-```
-1. import { networkManager } from '@kit.MDMKit';
-2. import { Want } from '@kit.AbilityKit';
+```ts
+import { networkManager } from '@kit.MDMKit';
+import { Want } from '@kit.AbilityKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility'
-8. };
-9. try {
-10. networkManager.turnOffMobileData(wantTemp);
-11. console.info(`Turn off mobile data succeeded`);
-12. } catch (err) {
-13. console.error(`Failed to turn off mobile data. Code: ${err.code}, message: ${err.message}`);
-14. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+try {
+  networkManager.turnOffMobileData(wantTemp);
+  console.info(`Turn off mobile data succeeded`);
+} catch (err) {
+  console.error(`Failed to turn off mobile data. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.addApn20+
-
-PhonePC/2in1Tablet
 
 addApn(admin: Want, apnInfo: Record<string, string>): void
 
@@ -1123,7 +1149,7 @@ addApn(admin: Want, apnInfo: Record<string, string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnInfo | Record<string, string> | 是 | 需要添加的APN参数信息。  - apnName：APN配置的名称标识符，必选。  - mcc：3位数字的移动国家代码，必选。  - mnc：2-3位数字的移动网络代码，必选。  - apn：接入点名称，必选。  - type：APN的服务类型，可选。  - user：APN身份验证的用户名，可选。  - password：APN身份验证的密码，可选。  - proxy：普通数据连接的代理服务器地址，可选。  - mmsproxy：彩信服务的专用代理地址，可选。  - authType：APN的认证协议类型，可选。 |
+| apnInfo | Record<string, string> | 是 | 需要添加的APN参数信息。设置后系统将使用这些参数配置移动数据网络的接入点，影响网络连接方式和数据传输路径。  - apnName：APN配置的名称标识符，必选。  - mcc：3位数字的移动国家代码，必选。  - mnc：2-3位数字的移动网络代码，必选。  - apn：接入点名称，必选。  - type：APN的服务类型，可选。  - user：APN身份验证的用户名，可选。  - password：APN身份验证的密码，可选。  - proxy：普通数据连接的代理服务器地址，可选。  - mmsproxy：彩信服务的专用代理地址，可选。  - authType：APN的认证协议类型，可选。 |
 
 **错误码**：
 
@@ -1137,37 +1163,35 @@ addApn(admin: Want, apnInfo: Record<string, string>): void
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { networkManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { networkManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility',
-8. };
-9. let apnInfo: Record<string, string> = {
-10. // 需根据实际情况进行替换
-11. "apnName": "CTNET",
-12. "apn": "CTNET",
-13. "mnc": "11",
-14. "mcc": "460",
-15. };
-16. try {
-17. networkManager.addApn(wantTemp, apnInfo);
-18. console.info(`Succeeded in adding apn.`);
-19. } catch (err) {
-20. console.error(`Failed to add apn. Code: ${err.code}, message: ${err.message}`);
-21. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let apnInfo: Record<string, string> = {
+  // 需根据实际情况进行替换
+  "apnName": "CTNET",
+  "apn": "CTNET",
+  "mnc": "11",
+  "mcc": "460"
+};
+try {
+  networkManager.addApn(wantTemp, apnInfo);
+  console.info(`Succeeded in adding apn.`);
+} catch (err) {
+  console.error(`Failed to add apn. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.deleteApn20+
 
-PhonePC/2in1Tablet
-
 deleteApn(admin: Want, apnId: string): void
 
-删除APN。
+删除APN。适用于企业移动网络配置管理场景，例如清理无效的APN配置、调整移动网络接入点配置、防止使用错误的APN配置，帮助企业维护正确的移动网络配置，确保设备使用正确的接入点连接移动网络。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_APN
 
@@ -1182,7 +1206,7 @@ deleteApn(admin: Want, apnId: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnId | string | 是 | 需要删除的APN ID。可以通过[networkManager.queryApn](js-apis-enterprise-networkmanager.md#networkmanagerqueryapn20)获取设备信息。 |
+| apnId | string | 是 | 需要删除的APN ID。设置后系统将移除该APN配置，对应的接入点将不再可用。可以通过[networkManager.queryApn](js-apis-enterprise-networkmanager.md#networkmanagerqueryapn20)获取设备APN信息。 |
 
 **错误码**：
 
@@ -1196,31 +1220,29 @@ deleteApn(admin: Want, apnId: string): void
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { networkManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { networkManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility',
-8. };
-9. let apnId: string = "1"; // 需根据实际情况进行替换
-10. try {
-11. networkManager.deleteApn(wantTemp, apnId);
-12. console.info(`Succeeded in deleting apn.`);
-13. } catch (err) {
-14. console.error(`Failed to delete apn. Code: ${err.code}, message: ${err.message}`);
-15. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let apnId: string = "1"; // 需根据实际情况进行替换
+try {
+  networkManager.deleteApn(wantTemp, apnId);
+  console.info(`Succeeded in deleting apn.`);
+} catch (err) {
+  console.error(`Failed to delete apn. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.updateApn20+
 
-PhonePC/2in1Tablet
-
 updateApn(admin: Want, apnInfo: Record<string, string>, apnId: string): void
 
-更新APN。
+更新APN。适用于企业移动网络配置管理场景，例如修改APN配置参数、调整运营商设置、优化移动网络连接性能，帮助企业灵活调整移动网络配置，确保设备移动网络连接参数符合实际需求。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_APN
 
@@ -1235,8 +1257,8 @@ updateApn(admin: Want, apnInfo: Record<string, string>, apnId: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnInfo | Record<string, string> | 是 | 需要更新的APN参数信息。  - apnName：APN配置的名称标识符，可选。  - mcc：3位数字的移动国家代码，可选。  - mnc：2-3位数字的移动网络代码，可选。  - APN：接入点名称，可选。  - type：APN的服务类型，可选。  - user：APN身份验证的用户名，可选。  - password：APN身份验证的密码，可选。  - proxy：普通数据连接的代理服务器地址，可选。  - mmsproxy：彩信服务的专用代理地址，可选。  - authType：APN的认证协议类型，可选。 |
-| apnId | string | 是 | 需要更新的APN ID。可以通过[networkManager.queryApn](js-apis-enterprise-networkmanager.md#networkmanagerqueryapn20)获取设备信息。 |
+| apnInfo | Record<string, string> | 是 | 需要更新的APN参数信息。设置后系统将使用更新后的参数修改对应APN配置，影响网络连接方式和数据传输路径。  - apnName：APN配置的名称标识符，可选。  - mcc：3位数字的移动国家代码，可选。  - mnc：2-3位数字的移动网络代码，可选。  - APN：接入点名称，可选。  - type：APN的服务类型，可选。  - user：APN身份验证的用户名，可选。  - password：APN身份验证的密码，可选。  - proxy：普通数据连接的代理服务器地址，可选。  - mmsproxy：彩信服务的专用代理地址，可选。  - authType：APN的认证协议类型，可选。 |
+| apnId | string | 是 | 需要更新的APN ID。可以通过[networkManager.queryApn](js-apis-enterprise-networkmanager.md#networkmanagerqueryapn20)获取设备APN信息。 |
 
 **错误码**：
 
@@ -1250,34 +1272,32 @@ updateApn(admin: Want, apnInfo: Record<string, string>, apnId: string): void
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { networkManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { networkManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility',
-8. };
-9. let apnInfo: Record<string, string> = {
-10. // 需根据实际情况进行替换
-11. "apnName": "CTNET",
-12. "apn": "CTNET",
-13. "mnc": "11",
-14. "mcc": "460",
-15. };
-16. let apnId: string = "1"; // 需根据实际情况进行替换
-17. try {
-18. networkManager.updateApn(wantTemp, apnInfo, apnId);
-19. console.info(`Succeeded in updating apn.`);
-20. } catch (err) {
-21. console.error(`Failed to update apn. Code: ${err.code}, message: ${err.message}`);
-22. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let apnInfo: Record<string, string> = {
+  // 需根据实际情况进行替换
+  "apnName": "CTNET",
+  "apn": "CTNET",
+  "mnc": "11",
+  "mcc": "460"
+};
+let apnId: string = "1"; // 需根据实际情况进行替换
+try {
+  networkManager.updateApn(wantTemp, apnInfo, apnId);
+  console.info(`Succeeded in updating apn.`);
+} catch (err) {
+  console.error(`Failed to update apn. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.setPreferredApn20+
-
-PhonePC/2in1Tablet
 
 setPreferredApn(admin: Want, apnId: string): void
 
@@ -1296,7 +1316,7 @@ setPreferredApn(admin: Want, apnId: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnId | string | 是 | 需要设置成优选的APN ID。可以通过[networkManager.queryApn](js-apis-enterprise-networkmanager.md#networkmanagerqueryapn20)获取设备信息。 |
+| apnId | string | 是 | 需要设置成优选的APN ID。可以通过[networkManager.queryApn](js-apis-enterprise-networkmanager.md#networkmanagerqueryapn20)获取设备APN信息。 |
 
 **错误码**：
 
@@ -1310,31 +1330,29 @@ setPreferredApn(admin: Want, apnId: string): void
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { networkManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { networkManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility',
-8. };
-9. let apnId: string = "1"; // 需根据实际情况进行替换
-10. try {
-11. networkManager.setPreferredApn(wantTemp, apnId);
-12. console.info(`Succeeded in setting preferred apn.`);
-13. } catch (err) {
-14. console.error(`Failed to set preferred apn. Code: ${err.code}, message: ${err.message}`);
-15. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let apnId: string = "1"; // 需根据实际情况进行替换
+try {
+  networkManager.setPreferredApn(wantTemp, apnId);
+  console.info(`Succeeded in setting preferred apn.`);
+} catch (err) {
+  console.error(`Failed to set preferred apn. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.queryApn20+
 
-PhonePC/2in1Tablet
-
 queryApn(admin: Want, apnInfo: Record<string, string>): Array<string>
 
-查询符合特定APN信息的APN ID。
+查询符合特定APN信息的APN ID。适用于企业移动网络配置审计场景，例如查找特定配置的APN、验证APN配置是否存在、为APN管理操作提供APN ID参数，帮助企业查找和管理APN配置，为APN的更新和删除操作提供必要的参数信息。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_APN
 
@@ -1347,7 +1365,7 @@ queryApn(admin: Want, apnInfo: Record<string, string>): Array<string>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnInfo | Record<string, string> | 是 | APN的查询条件。  - apnName：APN配置的名称标识符，可选。  - mcc：3位数字的移动国家代码，可选。  - mnc：2-3位数字的移动网络代码，可选。  - apn：接入点名称，可选。  - type：APN的服务类型，可选。  - user：APN身份验证的用户名，可选。  - proxy：普通数据连接的代理服务器地址，可选。  - mmsproxy：彩信服务的专用代理地址，可选。  - authType：APN的认证协议类型，可选。 |
+| apnInfo | Record<string, string> | 是 | APN的查询条件。设置后系统将根据这些条件筛选匹配的APN配置，返回符合条件的APN ID列表。  - apnName：APN配置的名称标识符，可选。  - mcc：3位数字的移动国家代码，可选。  - mnc：2-3位数字的移动网络代码，可选。  - apn：接入点名称，可选。  - type：APN的服务类型，可选。  - user：APN身份验证的用户名，可选。  - proxy：普通数据连接的代理服务器地址，可选。  - mmsproxy：彩信服务的专用代理地址，可选。  - authType：APN的认证协议类型，可选。 |
 
 **返回值：**
 
@@ -1367,37 +1385,35 @@ queryApn(admin: Want, apnInfo: Record<string, string>): Array<string>
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { networkManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { networkManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility',
-8. };
-9. let apnInfo: Record<string, string> = {
-10. // 需根据实际情况进行替换
-11. "apnName": "CTNET",
-12. "apn": "CTNET",
-13. "mnc": "11",
-14. "mcc": "460",
-15. };
-16. try {
-17. let queryResult: Array<string> = networkManager.queryApn(wantTemp, apnInfo);
-18. console.info(`Succeeded in querying apn, result : ${JSON.stringify(queryResult)}`);
-19. } catch (err) {
-20. console.error(`Failed to query apn. Code: ${err.code}, message: ${err.message}`);
-21. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let apnInfo: Record<string, string> = {
+  // 需根据实际情况进行替换
+  "apnName": "CTNET",
+  "apn": "CTNET",
+  "mnc": "11",
+  "mcc": "460"
+};
+try {
+  let queryResult: Array<string> = networkManager.queryApn(wantTemp, apnInfo);
+  console.info(`Succeeded in querying apn, result : ${JSON.stringify(queryResult)}`);
+} catch (err) {
+  console.error(`Failed to query apn. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.queryApn20+
 
-PhonePC/2in1Tablet
-
 queryApn(admin: Want, apnId: string): Record<string, string>
 
-查询特定APN的APN参数信息。
+查询特定APN的APN参数信息。适用于企业移动网络配置审计场景，例如检查特定APN的配置参数、验证APN配置是否正确、审计移动网络接入点配置，帮助企业审核和验证APN配置，确保移动网络配置符合要求。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_APN
 
@@ -1410,7 +1426,7 @@ queryApn(admin: Want, apnId: string): Record<string, string>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| apnId | string | 是 | 指定的APN ID。可以通过[networkManager.queryApn](js-apis-enterprise-networkmanager.md#networkmanagerqueryapn20)获取设备信息。 |
+| apnId | string | 是 | 指定的APN ID。设置后将查询该APN ID对应的详细参数配置信息。可以通过[networkManager.queryApn](js-apis-enterprise-networkmanager.md#networkmanagerqueryapn20)获取设备信息。 |
 
 **返回值：**
 
@@ -1430,31 +1446,29 @@ queryApn(admin: Want, apnId: string): Record<string, string>
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { networkManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { networkManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility',
-8. };
-9. let apnId: string = "1"; // 需根据实际情况进行替换
-10. try {
-11. let queryResult: Record<string, string> = networkManager.queryApn(wantTemp, apnId);
-12. console.info(`Succeeded in querying apn, result : ${JSON.stringify(queryResult)}`);
-13. } catch (err) {
-14. console.error(`Failed to query apn. Code: ${err.code}, message: ${err.message}`);
-15. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let apnId: string = "1"; // 需根据实际情况进行替换
+try {
+  let queryResult: Record<string, string> = networkManager.queryApn(wantTemp, apnId);
+  console.info(`Succeeded in querying apn, result : ${JSON.stringify(queryResult)}`);
+} catch (err) {
+  console.error(`Failed to query apn. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## networkManager.setEthernetConfig23+
 
-PhonePC/2in1Tablet
-
 setEthernetConfig(admin: Want, networkInterface: string, config: InterfaceConfig): void
 
-设置特定以太网网络接口的IP地址。
+设置特定以太网网络接口的IP地址。适用于企业网络管理场景，例如配置设备静态IP地址、统一管理企业网络设备IP分配、设置网络参数，帮助企业集中管理网络配置，确保设备网络参数符合企业网络管理策略。
 
 **需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_NETWORK
 
@@ -1468,7 +1482,7 @@ setEthernetConfig(admin: Want, networkInterface: string, config: InterfaceConfig
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。 |
+| admin | [Want](js-apis-app-ability-want.md) | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
 | networkInterface | string | 是 | 要设置的网络接口名。 |
 | config | [InterfaceConfig](js-apis-enterprise-networkmanager.md#interfaceconfig23) | 是 | 要设置的网络接口配置信息。 |
 
@@ -1486,35 +1500,33 @@ setEthernetConfig(admin: Want, networkInterface: string, config: InterfaceConfig
 
 **示例：**
 
-```
-1. import { Want } from '@kit.AbilityKit';
-2. import { networkManager } from '@kit.MDMKit';
+```ts
+import { Want } from '@kit.AbilityKit';
+import { networkManager } from '@kit.MDMKit';
 
-4. let wantTemp: Want = {
-5. // 需根据实际情况进行替换
-6. bundleName: 'com.example.myapplication',
-7. abilityName: 'EnterpriseAdminAbility',
-8. };
-9. let config: networkManager.InterfaceConfig = {
-10. // 需根据实际情况进行替换
-11. "ipSetMode": networkManager.IpSetMode.STATIC,
-12. "ipAddress": "192.168.1.121",
-13. "gateway": "192.168.1.1",
-14. "netMask": "255.255.255.0",
-15. "dnsServers": "192.168.1.1"
-16. }
-17. let networkInterface: string = "eth0"; // 需根据实际情况进行替换
-18. try {
-19. networkManager.setEthernetConfig(wantTemp, networkInterface, config);
-20. console.info('Succeeded in setting ethernet config.');
-21. } catch (err) {
-22. console.error(`Failed to set ethernet config. Code: ${err.code}, message: ${err.message}`);
-23. }
+let wantTemp: Want = {
+  // 需根据实际情况进行替换
+  bundleName: 'com.example.myapplication',
+  abilityName: 'EnterpriseAdminAbility'
+};
+let config: networkManager.InterfaceConfig = {
+  // 需根据实际情况进行替换
+  "ipSetMode": networkManager.IpSetMode.STATIC,
+  "ipAddress": "192.168.1.121",
+  "gateway": "192.168.1.1",
+  "netMask": "255.255.255.0",
+  "dnsServers": "192.168.1.1"
+};
+let networkInterface: string = "eth0"; // 需根据实际情况进行替换
+try {
+  networkManager.setEthernetConfig(wantTemp, networkInterface, config);
+  console.info('Succeeded in setting ethernet config.');
+} catch (err) {
+  console.error(`Failed to set ethernet config. Code: ${err.code}, message: ${err.message}`);
+}
 ```
 
 ## FirewallRule
-
-PhonePC/2in1Tablet
 
 防火墙过滤规则。
 
@@ -1524,13 +1536,15 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| srcAddr | string | 否 | 是 | ip源地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
-| destAddr | string | 否 | 是 | ip目标地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
+| srcAddr | string | 否 | 是 | IP源地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
+| destAddr | string | 否 | 是 | IP目标地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
 | srcPort | string | 否 | 是 | 源端口。 |
 | destPort | string | 否 | 是 | 目标端口。 |
-| appUid | string | 否 | 是 | 应用uid。 |
+| appUid | string | 否 | 是 | 应用uid，可以通过接口[bundleManager.getInstalledBundleList](js-apis-enterprise-bundlemanager.md#bundlemanagergetinstalledbundlelist20)获取bundleInfo.appInfo.uid。 |
 | direction | [Direction](js-apis-enterprise-networkmanager.md#direction) | 否 | 是 | 规则链。  添加防火墙过滤规则时必填；  移除防火墙时非必填，当值为空时，表示清空所有的[Direction](js-apis-enterprise-networkmanager.md#direction)链，且srcAddr，destAddr，srcPort，destPort，appUid也必须传入空值。 |
 | action | [Action](js-apis-enterprise-networkmanager.md#action) | 否 | 是 | 接收或者丢弃数据包。  添加防火墙过滤规则时必填；  移除防火墙时非必填，当值为空时，表示清空所有的匹配[Action](js-apis-enterprise-networkmanager.md#action)规则的链，且srcAddr，destAddr，srcPort，destPort，appUid也必须传入空值。 |
 | protocol | [Protocol](js-apis-enterprise-networkmanager.md#protocol) | 否 | 是 | 网络协议。当值为ALL或者ICMP时，设置srcPort与destPort无效。 |
@@ -1538,8 +1552,6 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 | logType23+ | [LogType](js-apis-enterprise-networkmanager.md#logtype23) | 否 | 是 | 日志类型，当前仅支持配置NFLOG类型，该参数仅支持PC/2in1设备。  添加防火墙过滤规则时，此参数非必填。若填写，仅在丢弃或拒绝数据包时生效。生效后，在访问被过滤目的地址时，会记录网络数据包日志，并向上层提供可查询的日志信息，可以通过[订阅安全审计数据](devicesecurity-securityaudit-api.md#onauditeventoccur)获取。  移除防火墙过滤规则时，当清空某条链时非必填，不影响整条链的清空；当移除单条规则时，是否填写必须与该规则一致，否则可能导致过滤规则已经移除，但是日志还在记录的问题；相同过滤规则移除时必须按添加时的顺序移除。  获取防火墙过滤规则时，仅日志生效的场景可以获取到logType字段。 |
 
 ## DomainFilterRule
-
-PhonePC/2in1Tablet
 
 域名过滤规则。
 
@@ -1549,22 +1561,24 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| domainName | string | 否 | 是 | 域名。添加域名过滤规则时必填。支持域名分段匹配，例如，domainName传入"example.com"，那么"example.com"、"[www.example.com"、"www.test.example.com"会被匹配，"linkexample.com"不会被匹配。](http://www.example.com) |
-| appUid | string | 否 | 是 | 应用uid。 |
+| domainName | string | 否 | 是 | 域名。添加域名过滤规则时必填。支持域名分段匹配，例如，domainName传入example.com，那么example.com、www.example.com、www.test.example.com会被匹配，linkexample.com不会被匹配。 |
+| appUid | string | 否 | 是 | 应用uid，可以通过接口[bundleManager.getInstalledBundleList](js-apis-enterprise-bundlemanager.md#bundlemanagergetinstalledbundlelist20)获取bundleInfo.appInfo.uid。 |
 | action | [Action](js-apis-enterprise-networkmanager.md#action) | 否 | 是 | 接收或者丢弃数据包。  添加域名过滤规则时必填；  移除域名过滤规则时非必填，当值为空时，表示清空所有的匹配[Action](js-apis-enterprise-networkmanager.md#action)规则的链，且domainName，appUid也必须传入空值。 |
-| direction15+ | [Direction](js-apis-enterprise-networkmanager.md#direction) | 否 | 是 | 规则链。  添加域名过滤规则时非必填；当值设为输出链或输入链时，实际效果为输出链。设为转发链时，appUid需设置为空，否则会报401错误码。  移除域名过滤规则时非必填，当值为空时，表示清空所有的[Direction](js-apis-enterprise-networkmanager.md#direction)链，且domainName，appUid也必须传入空值。 |
+| direction15+ | [Direction](js-apis-enterprise-networkmanager.md#direction) | 否 | 是 | 规则链。  添加域名过滤规则时非必填；当值为空，以及设为输出链或输入链时，实际效果为输出链。设为转发链时，appUid需设置为空，否则会报401错误码。  移除域名过滤规则时非必填，当值为空时，表示清空所有的[Direction](js-apis-enterprise-networkmanager.md#direction)链，且domainName，appUid也必须传入空值。 |
 | family22+ | number | 否 | 是 | IP协议版本。支持取值为1或2，取值为1表示IPv4，取值为2表示IPv6。 |
 | logType23+ | [LogType](js-apis-enterprise-networkmanager.md#logtype23) | 否 | 是 | 日志类型，当前仅支持配置NFLOG类型，该参数仅支持PC/2in1设备。  添加域名过滤规则时，此参数非必填。若填写，仅在丢弃或拒绝数据包时生效。生效后，在访问被过滤域名时，会记录网络数据包日志，并向上层提供可查询的日志信息，可以通过[订阅安全审计数据](devicesecurity-securityaudit-api.md#onauditeventoccur)获取。  移除域名过滤规则时，当清空某条链时非必填，不影响整条链的清空；当移除单条规则时，是否填写必须与该规则一致，否则可能导致过滤规则已经移除，但是日志还在记录的问题；相同过滤规则移除时必须按添加时的顺序移除。  获取域名过滤规则时，仅日志生效的场景可以获取到logType字段。 |
 
 ## Direction
 
-PhonePC/2in1Tablet
-
 规则链。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1574,11 +1588,11 @@ PhonePC/2in1Tablet
 
 ## Action
 
-PhonePC/2in1Tablet
-
 数据包的行为。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1588,11 +1602,11 @@ PhonePC/2in1Tablet
 
 ## Protocol
 
-PhonePC/2in1Tablet
-
 网络协议。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1603,11 +1617,11 @@ PhonePC/2in1Tablet
 
 ## LogType23+
 
-PhonePC/2in1Tablet
-
 日志类型。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1615,11 +1629,11 @@ PhonePC/2in1Tablet
 
 ## InterfaceConfig23+
 
-PhonePC/2in1Tablet
-
 以太网的网络接口配置。仅支持IPv4。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -1631,11 +1645,11 @@ PhonePC/2in1Tablet
 
 ## IpSetMode23+
 
-PhonePC/2in1Tablet
-
 以太网连接模式。
 
 **系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

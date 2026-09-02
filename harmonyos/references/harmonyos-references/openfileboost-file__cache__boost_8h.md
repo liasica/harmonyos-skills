@@ -1,15 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileboost-file__cache__boost_8h
 title: file_cache_boost.h
+breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > C API > 头文件和结构体 > 头文件 > file_cache_boost.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f45a2ac5f2b6de455a631b2723c2e2c9c7c85104b990b800b6c7185110e7271a
+scraped_at: 2026-09-02T15:03:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:66a1d70416fa89154f810ec221ede703b8487527eb40746f2617fc60dbc22126
 ---
 
 ## 概述
-
-PC/2in1
 
 声明通用文件缓存加速的API集合。
 
@@ -25,11 +24,7 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 类型定义
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
@@ -41,8 +36,6 @@ PC/2in1
 
 ### 枚举
 
-PC/2in1
-
 | 名称 | 描述 |
 | --- | --- |
 | [FileCacheBoost\_ErrCode](openfileboost_preview.md#filecacheboost_errcode) {  FILE\_CACHE\_BOOST\_SUCCESS = 0,  FILE\_CACHE\_BOOST\_ERROR\_INVALID\_PARAM = 401,  FILE\_CACHE\_BOOST\_ERROR\_NOT\_SUPPORTED = 801,  FILE\_CACHE\_BOOST\_ERROR\_NOMEM = 1017220001,  FILE\_CACHE\_BOOST\_ERROR\_INTERNAL\_ERROR = 1017220002, FILE\_CACHE\_BOOST\_ERROR\_KEY\_NOT\_FOUND = 1017220003, FILE\_CACHE\_BOOST\_ERROR\_KEY\_EXIST = 1017220004, FILE\_CACHE\_BOOST\_ERROR\_NOT\_DIR = 1017220005,  FILE\_CACHE\_BOOST\_ERROR\_IO = 1017220006, FILE\_CACHE\_BOOST\_ERROR\_IO\_CANCELED = 1017220007, FILE\_CACHE\_BOOST\_ERROR\_NOT\_INITIALIZED = 1017220008, FILE\_CACHE\_BOOST\_ERROR\_EXCEED\_LIMIT = 1017220009，  FILE\_CACHE\_BOOST\_ERROR\_IO\_CANCEL\_FAILED = 1017220010  } | 文件缓存加速相关的错误码定义。 |
@@ -50,11 +43,10 @@ PC/2in1
 
 ### 函数
 
-PC/2in1
-
 | 名称 | 描述 |
 | --- | --- |
-| [FileCacheBoost\_ErrCode](openfileboost_preview.md#filecacheboost_errcode) [HMS\_FileCacheBoost\_Init](openfileboost_preview.md) (const char \*path, size\_t pathLen, uint32\_t cacheUpperLimitMb, const char \*dbName, size\_t dbNameLen) | 初始化缓存路径、缓存容量上限、数据库名称。系统保证了线程并发安全控制，如需支持多进程并发场景，建议各进程使用不同的数据库文件名以保证访问安全性。 |
+| bool [HMS\_Preview\_FileCacheBoost\_IsSupported](openfileboost_preview.md#hms_preview_filecacheboost_issupported) (void) | 查询当前设备是否支持文件缓存加速功能。建议开发者在使用文件缓存加速功能之前，先调用本接口检查当前设备是否支持文件缓存加速功能。确认支持后再使用其他文件缓存加速接口如[HMS\_FileCacheBoost\_Init](openfileboost_preview.md#hms_filecacheboost_init)等。 |
+| [FileCacheBoost\_ErrCode](openfileboost_preview.md#filecacheboost_errcode) [HMS\_FileCacheBoost\_Init](openfileboost_preview.md#hms_filecacheboost_init) (const char \*path, size\_t pathLen, uint32\_t cacheUpperLimitMb, const char \*dbName, size\_t dbNameLen) | 初始化缓存路径、缓存容量上限、数据库名称。系统保证了线程并发安全控制，如需支持多进程并发场景，建议各进程使用不同的数据库文件名以保证访问安全性。 |
 | [FileCacheBoost\_ErrCode](openfileboost_preview.md#filecacheboost_errcode) [HMS\_FileCacheBoost\_AddObjectByKey](openfileboost_preview.md#hms_filecacheboost_addobjectbykey) (const uint8\_t \*key, size\_t keyLen, const uint8\_t \*data, size\_t dataLen, uint32\_t weight) | 创建并添加一个缓存对象至文件缓存。  系统通过key管理缓存，建议开发者合理设计和管理key值，确保其在不同上下文中的唯一性和准确性。 当不再需要缓存时，推荐开发者主动调用[HMS\_FileCacheBoost\_RemoveObjectByKey](openfileboost_preview.md#hms_filecacheboost_removeobjectbykey)删除对应的缓存项，以避免资源浪费。 若不主动删除，系统将在缓存容量不足时，依据系统策略进行清除。  开发者若想要对key对应的缓存内容做修改，需要先调用[HMS\_FileCacheBoost\_RemoveObjectByKey](openfileboost_preview.md#hms_filecacheboost_removeobjectbykey)删除之前的key，再重新创建和添加。 |
 | [FileCacheBoost\_ErrCode](openfileboost_preview.md#filecacheboost_errcode) [HMS\_FileCacheBoost\_GetObjectByKey](openfileboost_preview.md#hms_filecacheboost_getobjectbykey) (const uint8\_t \*key, size\_t keyLen, uint8\_t \*\*data, size\_t \*dataLen) | 根据指定的key查询缓存对象。若缓存对象存在，则从磁盘中加载缓存对象的内容。调用该函数，系统会分配一段内存用于存储缓存数据，作为出参返回给开发者。开发者需在使用完毕后调用[HMS\_FileCacheBoost\_FreeObject](openfileboost_preview.md#hms_filecacheboost_freeobject)显式释放该内存。 |
 | void [HMS\_FileCacheBoost\_FreeObject](openfileboost_preview.md#hms_filecacheboost_freeobject) (uint8\_t \*data) | 释放调用[HMS\_FileCacheBoost\_GetObjectByKey](openfileboost_preview.md#hms_filecacheboost_getobjectbykey)或[HMS\_FileCacheBoost\_GetSerialObjectByKey](openfileboost_preview.md#hms_filecacheboost_getserialobjectbykey)分配的内存，建议开发者不再使用该内存时，及时调用此函数进行释放，避免造成内存泄漏。 |

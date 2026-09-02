@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 流水线场景使用命令行工具sdkmgr下载Linux SDK失败
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 流水线场景使用命令行工具sdkmgr下载Linux SDK失败
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:05+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:bae4bb4a3da64db1eb31e219d8de0760bc12754514a4b563c6b77f24a2fd76ee
+scraped_at: 2026-09-02T14:54:52+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:71ea021d77556cffd20701ddbd3c642103c414d7630f13e314e376c4e82e877c
 ---
 
 **问题现象**
 
 在Linux上使用命令行工具sdkmgr时，如果提示“Failed to request URL https://devecostudio-dre.op.hicloud.com/sdkmanager/v5/hos/getSdkList”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Beg2Y-J4SvaQ38g29RaSRA/zh-cn_image_0000002194158336.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/AjnIfudNSAy95oEzggNtYA/zh-cn_image_0000002624638308.png)
 
 **解决措施**
 
@@ -20,19 +20,19 @@ content_hash: sha256:bae4bb4a3da64db1eb31e219d8de0760bc12754514a4b563c6b77f24a2f
 
 1. 进入sdkmgr所在的目录。
 
-   ```
-   1. cd ${命令行工具根目录}/sdkmanager/bin
+   ```powershell
+   cd ${命令行工具根目录}/sdkmanager/bin
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/eVwcojcZTvaOmjq6v2MOZw/zh-cn_image_0000002229603729.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/ezJgvRdCQI-FVI6YQSpCxg/zh-cn_image_0000002654837717.png)
 2. 打开sdkmgr文件。
 
-   ```
-   1. vim sdkmgr
+   ```powershell
+   vim sdkmgr
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/f_8ldZGxT2G6-NbQUG_hMQ/zh-cn_image_0000002229758205.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/DGLSSh0aTv2BumsWx4yJFg/zh-cn_image_0000002624478404.png)
 3. 在sdkmgr文件的最后一行“-Dfile.encoding=UTF-8”后添加国家码“-Duser.country=CN”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/42WaguAOTWiJghtanNHfiQ/zh-cn_image_0000002194317952.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/taQjHFrjS2WPrv4MfPQX1g/zh-cn_image_0000002654797771.png)
 4. ​保存修改后，再次执行sdkmgr相关命令即可正常下载Linux SDK。

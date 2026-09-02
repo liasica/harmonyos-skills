@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 原子布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 组件通用信息 > 原子布局
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:07398399d7efd3faba22a95462f9d80b6ef66c48797764c3f722437e1d4c19b7
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99247a75adbd9d061007326bcf6b9fc2de5c5ecddf98c8344db47d59cc42508f
 ---
 
 在屏幕形态和规格不同等情况下，布局效果需要实现自适应，因此系统提供了面向不同屏幕尺寸的自适应布局能力，称为原子布局。设计师可以考虑使用原子能力，定义元素在不同形态的尺寸界面上体现的自适应规则。开发者可以使用原子布局能力，快速实现让应用在多形态屏幕上有与设计效果相匹配的自适应效果。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 隐藏能力
-
-PhonePC/2in1TabletTVWearable
 
 在非折行flex布局基础上，增加了显示优先级标记，可以调整组件内元素水平/垂直方向的显示优先级，根据当前组件容器的可用空间来显示内容。
 
@@ -26,8 +24,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 占比能力
 
-PhonePC/2in1TabletTVWearable
-
 在非折行的flex布局中，定义了占比能力的组件，保证指定元素始终在容器的某一个比例空间中进行布局。
 
 | 样式 | 类型 | 默认值 | 说明 |
@@ -35,8 +31,6 @@ PhonePC/2in1TabletTVWearable
 | flex-weight | number | - | 指明当前元素在flex主轴方向上尺寸权值，当且仅当容器组件中所有节点均设置此属性时生效，当前元素尺寸为： 容器主轴尺寸 \* 当前权值 / 所有子元素权值和。 |
 
 ## 固定比例
-
-PhonePC/2in1TabletTVWearable
 
 定义了组件固定比例调整尺寸的能力。
 

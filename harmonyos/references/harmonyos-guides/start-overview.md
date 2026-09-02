@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-overvie
 title: 开发准备
 breadcrumb: 指南 > 基础入门 > 快速入门 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:df6e6ab8ddc5f68bee8e425575284ceeba392fb70143a70a0241af704a6e0507
+scraped_at: 2026-09-02T14:59:07+08:00
+doc_updated_at: 2026-06-16
+content_hash: sha256:f79de0b47c03bd4d14dd681db31f158ab49cddcec92b5291fa54581291697b0b
 ---
 
 本文档适用于HarmonyOS应用开发的初学者。通过构建一个简单的具有页面跳转/返回功能的应用（如下图所示），快速了解工程目录的主要文件，熟悉HarmonyOS应用开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/WLUPFVvkTsyPATIwzQEHaw/zh-cn_image_0000002589243765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/jivJAS2dS4yt_c9O0V22tw/zh-cn_image_0000002736432139.png)
 
 在开始之前，您需要了解有关HarmonyOS应用的一些基本概念：UI框架的简单说明、应用模型的基本概念。
 
@@ -35,10 +35,8 @@ HarmonyOS提供了一套UI开发框架，即方舟开发框架（ArkUI框架）�
 
 随着系统的演进发展，HarmonyOS先后提供了两种应用模型：
 
-* **FA（Feature Ability）模型：** HarmonyOS API 7开始支持的模型，已经不再主推。FA模型开发可见[FA模型开发概述](fa-model-development-overview.md)。**快速入门章节不再详细说明此模型**。
+* **FA（Feature Ability）模型：** HarmonyOS API 7开始支持的模型，已经不再主推。FA模型开发可见[FA模型开发概述](../lite-wearable-guides/fa-model-development-overview.md)。**快速入门章节不再详细说明此模型**。
 * **Stage模型：** HarmonyOS API 9开始新增的模型，是目前主推且会长期演进的模型。在该模型中，由于提供了AbilityStage、WindowStage等类作为应用组件和Window窗口的“舞台”，因此称这种应用模型为Stage模型。Stage模型开发可见[Stage模型开发概述](stage-model-development-overview.md)。**快速入门以此为例提供开发指导。**
-
-FA模型和Stage模型的整体架构和设计思想等更多区别，请见[应用模型](application-models.md)。
 
 快速入门提供了一个含有两个页面的开发实例，并基于Stage模型构建第一个ArkTS应用，以便开发者理解以上基本概念及应用开发流程。
 

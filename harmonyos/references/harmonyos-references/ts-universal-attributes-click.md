@@ -3,26 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 已停止维护的组件与接口 > 点击控制
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:13+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c1bbaec608833301476f82b6359f57788c1c6d4f29f83e6f6e56bcaafbbe8723
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4900825b58b47f5f1c37a7933fd314ac99af034ec148ed6285190b8a02ebf94d
 ---
 
-设置组件是否可以响应点击事件、触摸事件等手指交互事件。
+用于根据交互需求设置组件是否可以响应点击事件、触摸事件等手指交互事件，满足不同场景下对组件交互响应的控制需求。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## touchable(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 touchable(value: boolean): T
 
-设置当前组件是否可以响应点击事件、触摸事件等手指交互事件。
+设置当前组件的交互响应能力。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[hitTestBehavior](ts-universal-attributes-hit-test-behavior.md#hittestbehavior)替代。
 
@@ -42,34 +40,32 @@ touchable(value: boolean): T
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TouchableExample {
+  @State text1: string = '';
+  @State text2: string = '';
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct TouchAbleExample {
-5. @State text1: string = ''
-6. @State text2: string = ''
-
-8. build() {
-9. Stack() {
-10. Rect()
-11. .fill(Color.Gray).width(150).height(150)
-12. .onClick(() => {
-13. console.info(this.text1 = 'Rect Clicked')
-14. })
-15. .overlay(this.text1, { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-16. Ellipse()
-17. .fill(Color.Pink).width(150).height(80)
-18. .touchable(false) // 点击Ellipse区域，不会打印 “Ellipse Clicked”
-19. .onClick(() => {
-20. console.info(this.text2 = 'Ellipse Clicked')
-21. })
-22. .overlay(this.text2, { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-23. }.margin(100)
-24. }
-25. }
+  build() {
+    Stack() {
+      Rect()
+        .fill(Color.Gray).width(150).height(150)
+        .onClick(() => {
+          console.info(this.text1 = 'Rect Clicked');
+        })
+        .overlay(this.text1, { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
+      Ellipse()
+        .fill(Color.Pink).width(150).height(80)
+        .touchable(false) // 点击Ellipse区域，不会打印 “Ellipse Clicked”
+        .onClick(() => {
+          console.info(this.text2 = 'Ellipse Clicked');
+        })
+        .overlay(this.text2, { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
+    }.margin(100);
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/cL-VbhY6SbeA_Lyz8p6SZQ/zh-cn_image_0000002558607032.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/HPhuJtBpRYCFKE_jADG0SA/zh-cn_image_0000002706676422.gif)

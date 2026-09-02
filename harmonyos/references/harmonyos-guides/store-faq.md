@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-faq
 title: AppGallery Kit常见问题
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > AppGallery Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ba1ec772489475bef9df7779e0666720a13179eb4fc1834da77c01617328d464
+scraped_at: 2026-09-02T14:50:24+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:1cc103a83c499570370240916b5bdf49e0d4eaa543e13d5d2163c20f07c11e27
 ---
 
 * **[AppGallery Connect中可以配置多个订阅关键事件回调地址吗？](store-faq-9.md)**
@@ -30,6 +30,8 @@ content_hash: sha256:ba1ec772489475bef9df7779e0666720a13179eb4fc1834da77c0161732
 * **[按需加载场景中，用户在加载指定模块后是否可以卸载，然后重新发起请求？](store-faq-30.md)**
 * **[按需加载场景中，是否支持依赖模块同步加载?](appgallery-faq-33.md)**
 * **[按需加载场景中，是否支持同时存在多个任务？](store-faq-34.md)**
+* **[按需加载成功后，再通过应用市场更新应用，是否需要再次触发按需加载？](appgallery-faq-35.md)**
+* **[按需加载成功后，跳转动态模块页面失败？](appgallery-faq-36.md)**
 * **[未上架应用市场的应用，如何快速接入调试产品特性按需分发功能？](store-faq-26.md)**
 * **[生态查询服务场景中获取自身场景值为空](store-faq-3.md)**
 * **[应用市场更新功能抛出不在前台异常](store-faq-4.md)**

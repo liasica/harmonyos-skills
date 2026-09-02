@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 地点选取
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 地点选取
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b8cabc45ef1fc42f1d440742520b8cf51f5f091b3d2d7b07380250cb9b689bf2
+scraped_at: 2026-09-02T14:50:29+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:e47e7c460c22db057a87a7c5c666755d028c445c1345aaad73ca570242724741
 ---
 
 ## 场景介绍
@@ -14,17 +14,17 @@ content_hash: sha256:b8cabc45ef1fc42f1d440742520b8cf51f5f091b3d2d7b07380250cb9b6
 
 **图1** 地点选取页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/NpDBbyC3QhK2h_XNzMEkew/zh-cn_image_0000002558765550.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/JQg3ejgbS2qYtlB-9le3qQ/zh-cn_image_0000002736314177.jpg "点击放大")
 
 **图2** 地点选取
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/MDPFUh46R_S0KJLPcT1Row/zh-cn_image_0000002558605894.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/Kq9hBC6LRqW2sTQJ3y4Puw/zh-cn_image_0000002706675134.jpg "点击放大")
 
 ## 约束与限制
 
 使用该功能需满足以下条件：
 
-* 仅支持手机、平板和2in1设备。
+* 仅支持手机、平板和PC/2in1设备。
 
 ## 接口说明
 
@@ -40,30 +40,30 @@ content_hash: sha256:b8cabc45ef1fc42f1d440742520b8cf51f5f091b3d2d7b07380250cb9b6
 
 1. 导入相关模块。
 
-   ```
-   1. import { sceneMap } from '@kit.MapKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { common } from '@kit.AbilityKit';
+   ```typescript
+   import { sceneMap } from '@kit.MapKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { common } from '@kit.AbilityKit';
    ```
 2. 创建地点选取参数，调用[chooseLocation](../harmonyos-references/map-scenemap.md#chooselocation)方法拉起地点选取页。
 
-   ```
-   1. let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
-   2. // 地图中心点坐标
-   3. location: {
-   4. latitude: 39.91804051376904,
-   5. longitude: 116.3970536796932
-   6. },
-   7. // 展示搜索控件
-   8. searchEnabled: true,
-   9. // 展示附近POI
-   10. showNearbyPoi: true
-   11. };
-   12. // 拉起地点选取页
-   13. sceneMap.chooseLocation(this.getUIContext().getHostContext() as common.UIAbilityContext,
-   14. locationChoosingOptions).then((data) => {
-   15. console.info("ChooseLocation", "Succeeded in choosing location.");
-   16. }).catch((err: BusinessError) => {
-   17. console.error("ChooseLocation", `Failed to choose location, code: ${err.code}, message: ${err.message}`);
-   18. });
+   ```typescript
+   let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
+     // 地图中心点坐标
+     location: {
+       latitude: 39.91804051376904,
+       longitude: 116.3970536796932
+     },
+     // 展示搜索控件
+     searchEnabled: true,
+     // 展示附近POI
+     showNearbyPoi: true
+   };
+   // 拉起地点选取页
+   sceneMap.chooseLocation(this.getUIContext().getHostContext() as common.UIAbilityContext,
+     locationChoosingOptions).then((data) => {
+     console.info('ChooseLocation', 'Succeeded in choosing location.');
+   }).catch((err: BusinessError) => {
+     console.error('ChooseLocation', `Failed to choose location, code: ${err.code}, message: ${err.message}`);
+   });
    ```

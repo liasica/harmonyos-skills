@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getwo
 title: GetWorkspaceNum
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingContext > GetWorkspaceNum
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:20+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c0cfe4e27d41ae1dd4eaa16a225d8a0fecd3bce3453ccd365cf932d4bd04ca9f
+content_hash: sha256:42d743d71041dd07a37bad4c04a78318cbe140d1d28c0ef42fd18d8c9a642d50
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:c0cfe4e27d41ae1dd4eaa16a225d8a0fecd3bce3453ccd365cf932d4bd0
 
 ## 函数原型
 
-```
-1. size_t GetWorkspaceNum() const;
+```cpp
+size_t GetWorkspaceNum() const;
 ```
 
 ## 参数说明
@@ -32,9 +32,9 @@ workspace的个数。
 
 ## 调用示例
 
-```
-1. ge::graphStatus Tiling4XXX(TilingContext* context) {
-2. auto ws_num = context->GetWorkspaceNum();
-3. // ...
-4. }
+```cpp
+ge::graphStatus Tiling4XXX(TilingContext* context) {
+  auto ws_num = context->GetWorkspaceNum();
+  // ...
+}
 ```

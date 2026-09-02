@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-refund
 title: 退款
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 售后 > 退款
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f6438d0e31b162c212989775b3c5249e787c09a4e5782111f04784837009b409
+scraped_at: 2026-09-02T14:59:57+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:2ac51c9a66416dfc168905354a8c0fcdf3c5ba5cf09472452752025f4bd92b97
 ---
 
 当[用户申请退款](iap-refund.md#用户申请退款)时，对于非游戏类应用，开发者可以在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上审核退款订单，实现用户的退款。
 
-说明
+**说明** 
 
 * 退款只能由用户发起，具体参见[用户申请退款](iap-refund.md#用户申请退款)。
 * 对于游戏类应用，[用户申请退款](iap-refund.md#用户申请退款)后，由华为游戏运营人员审核退款，开发者可跳过此章节。
@@ -23,27 +23,27 @@ content_hash: sha256:f6438d0e31b162c212989775b3c5249e787c09a4e5782111f0478483700
 
 1. 开发者登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“APP”。 在应用列表中点击待处理退款订单的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/C7sybL8cRrybwrWwOWArmw/zh-cn_image_0000002558605782.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/rIutQu28Rci8zoTqzntTLA/zh-cn_image_0000002736314061.png)
 2. 在“运营”页签下，点击“产品运营 > 退款管理”，查看用户提交的退款申请，处理退款订单。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/hRj-aih7T7ifsU70Ci2jzw/zh-cn_image_0000002589325309.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/8hOLSQYZREWZa4gaWuIdVA/zh-cn_image_0000002706675018.png)
 3. 审核或查询退款订单。
 
    **同意退款**：如果开发者同意退款，可在 “退款金额“下输入可退款金额，点击“同意”。在弹窗中点击“确认”，即可完成退款。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/oMoGuvpLTICIRvP0PvIjbA/zh-cn_image_0000002589245245.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/V-pt46F7QIOlwc9PPn-OYQ/zh-cn_image_0000002736434107.png)
 
    **驳回退款**：开发者不同意退款，可点击“驳回”，输入驳回原因，点击“确认”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/v1mvlnxISi2ocQLyrQ9ObQ/zh-cn_image_0000002558765440.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/MVlIPkTZSbuOFaq4Uv7rwg/zh-cn_image_0000002706834956.png)
 
    **退款详情页面审核退款**：开发者也可以在退款详情页面审核退款，输入退款金额后选择“同意”或“驳回”，点击提交，完成审核。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/rUpEZZ9xS1C9PLvA53JOJQ/zh-cn_image_0000002558605784.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/PytAzJMMS5yzl43jap3TyA/zh-cn_image_0000002736314063.png)
 
    **查询退款订单**：点击“已完成”页签，开发者可以查看所有已处理的退款订单。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/GGERJM5TQJCxmmxX4gy8yw/zh-cn_image_0000002589325311.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/GqrNNjnFSPSm3MR7oSusQA/zh-cn_image_0000002706675020.png)
 
    退款订单状态如下：
 
@@ -57,7 +57,7 @@ content_hash: sha256:f6438d0e31b162c212989775b3c5249e787c09a4e5782111f0478483700
 
 ## 用户申请退款
 
-说明
+**说明** 
 
 * 生态应用订单退款最低系统版本要求为6.16.10（检查版本可参考以下路径“系统设置-华为账号-付款与账单-更多设置-关于”）。
 * 退款申请后到退款完成非实时，一般从发起申请退款到完成需要7个工作日左右。
@@ -68,18 +68,18 @@ content_hash: sha256:f6438d0e31b162c212989775b3c5249e787c09a4e5782111f0478483700
 
 1. 在“手机设置 > 华为账号 > 付款与账单 > 购买记录”中点击待退款的订单，跳转至详情页面，点击“对订单有疑问”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/xhfVd1oHQ4q5P0yiEi6jQQ/zh-cn_image_0000002589245247.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/AMCXuNfzSrWYI-bI4Gs3EQ/zh-cn_image_0000002558765442.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/CYnuNzdbTM2RCGIYAXfI3g/zh-cn_image_0000002736434109.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/UHbzX2MKR-K9DcMO48kcXA/zh-cn_image_0000002706834958.png)
 2. 在“对订单有疑问”页面，点击“申请退款”，选择退款原因后，提交退款申请，提交后等待应用审核。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/KhzLbwCMQQmwpm0bKVAScg/zh-cn_image_0000002558605786.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/1D6c-be3Rf662OeGWXJ4rQ/zh-cn_image_0000002589325313.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/zsqzlRHjTV-Uz0FZoIVXtA/zh-cn_image_0000002736314065.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/tsMY3jwPRFuoNFv7hEkQpg/zh-cn_image_0000002706675022.png)
 
    用户提交退款后，可点击“查看退款记录”，在“退款记录”查看所有退款订单的退款状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/NKCx5K0ZRkOqnzB5lFZSMw/zh-cn_image_0000002589245249.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/n_HcWJ_qSVaU1mCrqUQy3A/zh-cn_image_0000002558765444.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/V3m1roVOR6u8YfAm9zjHXA/zh-cn_image_0000002736434111.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/1Li2AHIXT7yGc6ybLIOxkA/zh-cn_image_0000002706834960.png)
 
 ## 应用内接入退款入口
 
-说明
+**说明** 
 
 * 仅支持非游戏类应用接入。
 * 该退款入口仅支持应用本身所产生的订单的退款。
@@ -90,32 +90,29 @@ content_hash: sha256:f6438d0e31b162c212989775b3c5249e787c09a4e5782111f0478483700
 
 **代码示例**
 
-```
-1. import { iap } from '@kit.IAPKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
-
-5. @Entry
-6. @Component
-7. struct Index {
-
-9. /**
-10. * 拉起退款界面
-11. */
-12. createRefundRequest(context: common.UIAbilityContext) {
-13. // 调用iap.createRefundRequest拉起退款，传入context和purchaseOrderId
-14. let purchaseOrderId = '';
-15. iap.createRefundRequest(context, purchaseOrderId).then(() => {
-16. // 退款成功
-17. console.info('Succeeded in creating refund request.');
-18. // ...
-19. }).catch((err: BusinessError) => {
-20. // 退款失败
-21. console.error(`Failed to create refund request. Code is ${err.code}, message is ${err.message}`);
-22. // ...
-23. });
-24. }
-
-26. build() {}
-27. }
+```typescript
+import { iap } from '@kit.IAPKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+import Logger from '../common/Logger';
+// ...
+  /**
+   * 拉起退款界面
+   */
+  async createRefundRequest() {
+    if (!this.purchaseOrderId) {
+      Logger.error(TAG, `Failed to create refund request. Error params`);
+      return;
+    }
+    const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    await iap.createRefundRequest(context, this.purchaseOrderId).then(() => {
+      // 退款成功
+      Logger.info(TAG, 'Succeeded in create refund request.');
+      // ...
+    }).catch((err: BusinessError) => {
+      // 退款失败
+      Logger.error(TAG, `Failed to create refund request. Code is ${err.code}, message is ${err.message}`);
+      // ...
+    });
+  }
 ```

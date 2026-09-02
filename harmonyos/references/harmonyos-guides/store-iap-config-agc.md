@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-con
 title: 开通相关服务和配置参数
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 启用数字商品服务 > 开通相关服务和配置参数
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:08+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:5443b82cfbeca9c8dc0e3cb3aeb260c6ce439642b7cf7c59dd4b684aeb76f3a3
+scraped_at: 2026-09-02T14:59:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:35a411e58651dba0dfe7d98273b19b5ab4019e0530294a642b323ac20d28ed3f
 ---
 
 请先参考“[应用开发准备](application-dev-overview.md)”完成基本准备工作及指纹配置，再继续进行以下开发活动。
 
-说明
+**说明** 
 
 [配置签名信息](application-dev-overview.md#配置签名信息)时，请使用手动签名方式。
 
@@ -36,11 +36,11 @@ content_hash: sha256:5443b82cfbeca9c8dc0e3cb3aeb260c6ce439642b7cf7c59dd4b684aeb7
 
 开启应用内购买服务(HarmonyOS NEXT) 开关后，开发者需进一步激活应用内购买服务 (HarmonyOS NEXT)，具体请参见[激活服务和配置事件通知](../app/parameters-0000001931995692.md)。
 
-说明
+**说明** 
 
 * 用户购买商品后，服务器会在订单/订阅场景的某些关键事件发生时通知您配置的事件通知地址，具体可参见[服务端关键事件通知](../harmonyos-references/iap-key-event-notifications.md)。
-* 调试阶段必须[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[注册设备](../app/agc-help-add-device-0000002283189937.md)、开启和激活“应用内购买服务”后需要重新[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)，并完成[手动签名](ide-signing.md#section297715173233)。
-* 发布阶段必须[申请发布证书](../app/agc-help-release-cert-0000002283336729.md)、开启和激活“应用内购买服务”后需要重新[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)，并完成[手动签名](ide-signing.md#section297715173233)。
+* 调试阶段必须[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[注册设备](../app/agc-help-add-device-0000002283189937.md)、开启和激活“应用内购买服务”后需要重新[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)，并完成[手动签名](ide-signing-manual.md)。
+* 发布阶段必须[申请发布证书](../app/agc-help-release-cert-0000002283336729.md)、开启和激活“应用内购买服务”后需要重新[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)，并完成[手动签名](ide-signing-manual.md)。
 
 ## 服务端密钥管理
 

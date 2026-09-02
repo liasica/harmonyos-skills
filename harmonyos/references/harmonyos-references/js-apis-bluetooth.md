@@ -3,36 +3,32 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth (蓝牙)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 已停止维护的接口 > @ohos.bluetooth (蓝牙)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:44dad960e0fb60a6b9f040c0fd5bdfac4d0d7759957902fce0cd0e3136e7fc8d
+scraped_at: 2026-09-02T15:01:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6c16c8018ca9d32d554b61130a764d2c65cb40bf2a8d7385356c7887e944ca8a
 ---
 
-蓝牙模块提供了基础的传统蓝牙能力以及BLE的扫描、广播等功能。
+蓝牙模块提供了基础的传统蓝牙能力以及[BLE](../harmonyos-guides/terminology.md#ble)的扫描、广播等功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-从API Version 9 开始，该接口不再维护，推荐使用[@ohos.bluetooth.ble](js-apis-bluetooth-ble.md)等相关profile接口。
+从API Version 9 开始，该接口不再维护，推荐使用[@ohos.bluetooth.ble (蓝牙ble模块)](js-apis-bluetooth-ble.md)等相关Profile接口。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import bluetooth from '@ohos.bluetooth';
+```js
+import bluetooth from '@ohos.bluetooth';
 ```
 
 ## bluetooth.enableBluetooth(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 enableBluetooth(): boolean
 
 开启蓝牙。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.enableBluetooth](js-apis-bluetoothmanager.md#bluetoothmanagerenablebluetoothdeprecated)替代。
 
@@ -48,19 +44,17 @@ enableBluetooth(): boolean
 
 **示例：**
 
-```
-1. let enable : boolean = bluetooth.enableBluetooth();
+```js
+let enable : boolean = bluetooth.enableBluetooth();
 ```
 
 ## bluetooth.disableBluetooth(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 disableBluetooth(): boolean
 
 关闭蓝牙。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.disableBluetooth](js-apis-bluetoothmanager.md#bluetoothmanagerdisablebluetoothdeprecated)替代。
 
@@ -76,19 +70,17 @@ disableBluetooth(): boolean
 
 **示例：**
 
-```
-1. let disable : boolean = bluetooth.disableBluetooth();
+```js
+let disable : boolean = bluetooth.disableBluetooth();
 ```
 
 ## bluetooth.getLocalName(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getLocalName(): string
 
 获取蓝牙本地设备名称。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getLocalName](js-apis-bluetoothmanager.md#bluetoothmanagergetlocalnamedeprecated)替代。
 
@@ -104,19 +96,17 @@ getLocalName(): string
 
 **示例：**
 
-```
-1. let localName : string = bluetooth.getLocalName();
+```js
+let localName : string = bluetooth.getLocalName();
 ```
 
 ## bluetooth.getState(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getState(): BluetoothState
 
 获取蓝牙开关状态。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getState](js-apis-bluetoothmanager.md#bluetoothmanagergetstatedeprecated)替代。
 
@@ -132,19 +122,17 @@ getState(): BluetoothState
 
 **示例：**
 
-```
-1. let state : bluetooth.BluetoothState = bluetooth.getState();
+```js
+let state : bluetooth.BluetoothState = bluetooth.getState();
 ```
 
 ## bluetooth.getBtConnectionState(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getBtConnectionState(): ProfileConnectionState
 
 获取蓝牙本端的Profile连接状态，例如：任意一个支持的Profile连接状态为已连接，则此接口返回状态为已连接。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getBtConnectionState](js-apis-bluetoothmanager.md#bluetoothmanagergetbtconnectionstatedeprecated)替代。
 
@@ -160,19 +148,17 @@ getBtConnectionState(): ProfileConnectionState
 
 **示例：**
 
-```
-1. let connectionState : bluetooth.ProfileConnectionState = bluetooth.getBtConnectionState();
+```js
+let connectionState : bluetooth.ProfileConnectionState = bluetooth.getBtConnectionState();
 ```
 
 ## bluetooth.setLocalName(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setLocalName(name: string): boolean
 
 设置蓝牙本地设备名称。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.setLocalName](js-apis-bluetoothmanager.md#bluetoothmanagersetlocalnamedeprecated)替代。
 
@@ -194,19 +180,17 @@ setLocalName(name: string): boolean
 
 **示例：**
 
-```
-1. let ret : boolean = bluetooth.setLocalName('device_name');
+```js
+let ret : boolean = bluetooth.setLocalName('device_name');
 ```
 
 ## bluetooth.pairDevice(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 pairDevice(deviceId: string): boolean
 
 发起蓝牙配对。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.pairDevice](js-apis-bluetoothmanager.md#bluetoothmanagerpairdevicedeprecated)替代。
 
@@ -228,20 +212,18 @@ pairDevice(deviceId: string): boolean
 
 **示例：**
 
-```
-1. // 实际的地址可由扫描流程获取
-2. let result : boolean = bluetooth.pairDevice("XX:XX:XX:XX:XX:XX");
+```js
+// 实际的地址可由扫描流程获取
+let result : boolean = bluetooth.pairDevice("XX:XX:XX:XX:XX:XX");
 ```
 
 ## bluetooth.getProfileConnState(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getProfileConnState(profileId: ProfileId): ProfileConnectionState
 
 依据ProfileId获取指定profile的连接状态。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getProfileConnectionState](js-apis-bluetoothmanager.md#bluetoothmanagergetprofileconnectionstatedeprecated)替代。
 
@@ -263,19 +245,17 @@ getProfileConnState(profileId: ProfileId): ProfileConnectionState
 
 **示例：**
 
-```
-1. let result : bluetooth.ProfileConnectionState = bluetooth.getProfileConnState(bluetooth.ProfileId.PROFILE_A2DP_SOURCE);
+```js
+let result : bluetooth.ProfileConnectionState = bluetooth.getProfileConnState(bluetooth.ProfileId.PROFILE_A2DP_SOURCE);
 ```
 
 ## bluetooth.getRemoteDeviceName(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteDeviceName(deviceId: string): string
 
 获取对端蓝牙设备的名称。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getRemoteDeviceName](js-apis-bluetoothmanager.md#bluetoothmanagergetremotedevicenamedeprecated)替代。
 
@@ -297,19 +277,17 @@ getRemoteDeviceName(deviceId: string): string
 
 **示例：**
 
-```
-1. let remoteDeviceName : string = bluetooth.getRemoteDeviceName("XX:XX:XX:XX:XX:XX");
+```js
+let remoteDeviceName : string = bluetooth.getRemoteDeviceName("XX:XX:XX:XX:XX:XX");
 ```
 
 ## bluetooth.getRemoteDeviceClass(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteDeviceClass(deviceId: string): DeviceClass
 
 获取对端蓝牙设备的类别。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getRemoteDeviceClass](js-apis-bluetoothmanager.md#bluetoothmanagergetremotedeviceclassdeprecated)替代。
 
@@ -331,19 +309,17 @@ getRemoteDeviceClass(deviceId: string): DeviceClass
 
 **示例：**
 
-```
-1. let remoteDeviceClass : bluetooth.DeviceClass = bluetooth.getRemoteDeviceClass("XX:XX:XX:XX:XX:XX");
+```js
+let remoteDeviceClass : bluetooth.DeviceClass = bluetooth.getRemoteDeviceClass("XX:XX:XX:XX:XX:XX");
 ```
 
 ## bluetooth.getPairedDevices(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getPairedDevices(): Array<string>
 
 获取蓝牙配对列表。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getPairedDevices](js-apis-bluetoothmanager.md#bluetoothmanagergetpaireddevicesdeprecated)替代。
 
@@ -359,19 +335,17 @@ getPairedDevices(): Array<string>
 
 **示例：**
 
-```
-1. let devices : Array<string> = bluetooth.getPairedDevices();
+```js
+let devices : Array<string> = bluetooth.getPairedDevices();
 ```
 
 ## bluetooth.setBluetoothScanMode(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setBluetoothScanMode(mode: ScanMode, duration: number): boolean
 
 设置蓝牙扫描模式，可以被远端设备发现。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.setBluetoothScanMode](js-apis-bluetoothmanager.md#bluetoothmanagersetbluetoothscanmodedeprecated)替代。
 
@@ -394,21 +368,19 @@ setBluetoothScanMode(mode: ScanMode, duration: number): boolean
 
 **示例：**
 
-```
-1. // 设置为可连接可发现才可被远端设备扫描到，可以连接。
-2. let result : boolean = bluetooth.setBluetoothScanMode(bluetooth.ScanMode
-3. .SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 100);
+```js
+// 设置为可连接可发现才可被远端设备扫描到，可以连接。
+let result : boolean = bluetooth.setBluetoothScanMode(bluetooth.ScanMode
+    .SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 100);
 ```
 
 ## bluetooth.getBluetoothScanMode(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getBluetoothScanMode(): ScanMode
 
 获取蓝牙扫描模式。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getBluetoothScanMode](js-apis-bluetoothmanager.md#bluetoothmanagergetbluetoothscanmodedeprecated)替代。
 
@@ -424,19 +396,17 @@ getBluetoothScanMode(): ScanMode
 
 **示例：**
 
-```
-1. let scanMode : bluetooth.ScanMode = bluetooth.getBluetoothScanMode();
+```js
+let scanMode : bluetooth.ScanMode = bluetooth.getBluetoothScanMode();
 ```
 
 ## bluetooth.startBluetoothDiscovery(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 startBluetoothDiscovery(): boolean
 
 开启蓝牙扫描，可以发现远端设备。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.startBluetoothDiscovery](js-apis-bluetoothmanager.md#bluetoothmanagerstartbluetoothdiscoverydeprecated)替代。
 
@@ -452,24 +422,22 @@ startBluetoothDiscovery(): boolean
 
 **示例：**
 
-```
-1. let deviceId : Array<string>;
-2. function onReceiveEvent(data : Array<string>) {
-3. deviceId = data;
-4. }
-5. bluetooth.on('bluetoothDeviceFind', onReceiveEvent);
-6. let result : boolean = bluetooth.startBluetoothDiscovery();
+```js
+let deviceId : Array<string>;
+function onReceiveEvent(data : Array<string>) {
+    deviceId = data;
+}
+bluetooth.on('bluetoothDeviceFind', onReceiveEvent);
+let result : boolean = bluetooth.startBluetoothDiscovery();
 ```
 
 ## bluetooth.stopBluetoothDiscovery(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stopBluetoothDiscovery(): boolean
 
 关闭蓝牙扫描。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.stopBluetoothDiscovery](js-apis-bluetoothmanager.md#bluetoothmanagerstopbluetoothdiscoverydeprecated)替代。
 
@@ -485,19 +453,17 @@ stopBluetoothDiscovery(): boolean
 
 **示例：**
 
-```
-1. let result : boolean = bluetooth.stopBluetoothDiscovery();
+```js
+let result : boolean = bluetooth.stopBluetoothDiscovery();
 ```
 
 ## bluetooth.setDevicePairingConfirmation(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setDevicePairingConfirmation(device: string, accept: boolean): boolean
 
 设置设备配对请求确认。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.setDevicePairingConfirmation](js-apis-bluetoothmanager.md#bluetoothmanagersetdevicepairingconfirmationdeprecated)替代。
 
@@ -520,24 +486,22 @@ setDevicePairingConfirmation(device: string, accept: boolean): boolean
 
 **示例：**
 
-```
-1. // 订阅“pinRequired”配对请求事件，收到远端配对请求后设置配对确认
-2. function onReceivePinRequiredEvent(data : bluetooth.PinRequiredParam) { // data为配对请求的入参，配对请求参数
-3. console.info('pin required  = '+ JSON.stringify(data));
-4. bluetooth.setDevicePairingConfirmation(data.deviceId, true);
-5. }
-6. bluetooth.on("pinRequired", onReceivePinRequiredEvent);
+```js
+// 订阅“pinRequired”配对请求事件，收到远端配对请求后设置配对确认
+function onReceivePinRequiredEvent(data : bluetooth.PinRequiredParam) { // data为配对请求的入参，配对请求参数
+    console.info('pin required  = '+ JSON.stringify(data));
+    bluetooth.setDevicePairingConfirmation(data.deviceId, true);
+}
+bluetooth.on("pinRequired", onReceivePinRequiredEvent);
 ```
 
 ## bluetooth.on('bluetoothDeviceFind')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bluetoothDeviceFind', callback: Callback<Array<string>>): void
 
 订阅蓝牙设备发现上报事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.on('bluetoothDeviceFind')](js-apis-bluetoothmanager.md#bluetoothmanageronbluetoothdevicefinddeprecated)替代。
 
@@ -558,22 +522,20 @@ on(type: 'bluetoothDeviceFind', callback: Callback<Array<string>>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : Array<string>) { // data为蓝牙设备地址集合
-2. console.info('bluetooth device find = '+ JSON.stringify(data));
-3. }
-4. bluetooth.on('bluetoothDeviceFind', onReceiveEvent);
+```js
+function onReceiveEvent(data : Array<string>) { // data为蓝牙设备地址集合
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+}
+bluetooth.on('bluetoothDeviceFind', onReceiveEvent);
 ```
 
 ## bluetooth.off('bluetoothDeviceFind')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'bluetoothDeviceFind', callback?: Callback<Array<string>>): void
 
 取消订阅蓝牙设备发现上报事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.off('bluetoothDeviceFind')](js-apis-bluetoothmanager.md#bluetoothmanageroffbluetoothdevicefinddeprecated)替代。
 
@@ -594,23 +556,21 @@ off(type: 'bluetoothDeviceFind', callback?: Callback<Array<string>>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : Array<string>) {
-2. console.info('bluetooth device find = '+ JSON.stringify(data));
-3. }
-4. bluetooth.on('bluetoothDeviceFind', onReceiveEvent);
-5. bluetooth.off('bluetoothDeviceFind', onReceiveEvent);
+```js
+function onReceiveEvent(data : Array<string>) {
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+}
+bluetooth.on('bluetoothDeviceFind', onReceiveEvent);
+bluetooth.off('bluetoothDeviceFind', onReceiveEvent);
 ```
 
 ## bluetooth.on('pinRequired')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'pinRequired', callback: Callback<PinRequiredParam>): void
 
 订阅远端蓝牙设备的配对请求事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.on('pinRequired')](js-apis-bluetoothmanager.md#bluetoothmanageronpinrequireddeprecated)替代。
 
@@ -631,22 +591,20 @@ on(type: 'pinRequired', callback: Callback<PinRequiredParam>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.PinRequiredParam) { // data为配对请求参数
-2. console.info('pin required = '+ JSON.stringify(data));
-3. }
-4. bluetooth.on('pinRequired', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.PinRequiredParam) { // data为配对请求参数
+    console.info('pin required = '+ JSON.stringify(data));
+}
+bluetooth.on('pinRequired', onReceiveEvent);
 ```
 
 ## bluetooth.off('pinRequired')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'pinRequired', callback?: Callback<PinRequiredParam>): void
 
 取消订阅远端蓝牙设备的配对请求事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.off('pinRequired')](js-apis-bluetoothmanager.md#bluetoothmanageroffpinrequireddeprecated)替代。
 
@@ -667,23 +625,21 @@ off(type: 'pinRequired', callback?: Callback<PinRequiredParam>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.PinRequiredParam) {
-2. console.info('pin required = '+ JSON.stringify(data));
-3. }
-4. bluetooth.on('pinRequired', onReceiveEvent);
-5. bluetooth.off('pinRequired', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.PinRequiredParam) {
+    console.info('pin required = '+ JSON.stringify(data));
+}
+bluetooth.on('pinRequired', onReceiveEvent);
+bluetooth.off('pinRequired', onReceiveEvent);
 ```
 
 ## bluetooth.on('bondStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bondStateChange', callback: Callback<BondStateParam>): void
 
 订阅蓝牙配对状态改变事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.on('bondStateChange')](js-apis-bluetoothmanager.md#bluetoothmanageronbondstatechangedeprecated)替代。
 
@@ -704,22 +660,20 @@ on(type: 'bondStateChange', callback: Callback<BondStateParam>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.BondStateParam) { // data为回调函数入参，表示配对的状态
-2. console.info('pair state = '+ JSON.stringify(data));
-3. }
-4. bluetooth.on('bondStateChange', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.BondStateParam) { // data为回调函数入参，表示配对的状态
+    console.info('pair state = '+ JSON.stringify(data));
+}
+bluetooth.on('bondStateChange', onReceiveEvent);
 ```
 
 ## bluetooth.off('bondStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'bondStateChange', callback?: Callback<BondStateParam>): void
 
 取消订阅蓝牙配对状态改变事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.off('bondStateChange')](js-apis-bluetoothmanager.md#bluetoothmanageroffbondstatechangedeprecated)替代。
 
@@ -740,23 +694,21 @@ off(type: 'bondStateChange', callback?: Callback<BondStateParam>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.BondStateParam) {
-2. console.info('bond state = '+ JSON.stringify(data));
-3. }
-4. bluetooth.on('bondStateChange', onReceiveEvent);
-5. bluetooth.off('bondStateChange', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.BondStateParam) {
+    console.info('bond state = '+ JSON.stringify(data));
+}
+bluetooth.on('bondStateChange', onReceiveEvent);
+bluetooth.off('bondStateChange', onReceiveEvent);
 ```
 
 ## bluetooth.on('stateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'stateChange', callback: Callback<BluetoothState>): void
 
 订阅蓝牙连接状态改变事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.on('stateChange')](js-apis-bluetoothmanager.md#bluetoothmanageronstatechangedeprecated)替代。
 
@@ -777,22 +729,20 @@ on(type: 'stateChange', callback: Callback<BluetoothState>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.BluetoothState) {
-2. console.info('bluetooth state = '+ JSON.stringify(data));
-3. }
-4. bluetooth.on('stateChange', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.BluetoothState) {
+    console.info('bluetooth state = '+ JSON.stringify(data));
+}
+bluetooth.on('stateChange', onReceiveEvent);
 ```
 
 ## bluetooth.off('stateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'stateChange', callback?: Callback<BluetoothState>): void
 
 取消订阅蓝牙连接状态改变事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.off('stateChange')](js-apis-bluetoothmanager.md#bluetoothmanageroffstatechangedeprecated)替代。
 
@@ -813,23 +763,21 @@ off(type: 'stateChange', callback?: Callback<BluetoothState>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.BluetoothState) {
-2. console.info('bluetooth state = '+ JSON.stringify(data));
-3. }
-4. bluetooth.on('stateChange', onReceiveEvent);
-5. bluetooth.off('stateChange', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.BluetoothState) {
+    console.info('bluetooth state = '+ JSON.stringify(data));
+}
+bluetooth.on('stateChange', onReceiveEvent);
+bluetooth.off('stateChange', onReceiveEvent);
 ```
 
 ## bluetooth.sppListen(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sppListen(name: string, option: SppOption, callback: AsyncCallback<number>): void
 
 创建一个服务端监听Socket。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.sppListen](js-apis-bluetoothmanager.md#bluetoothmanagerspplistendeprecated)替代。
 
@@ -847,30 +795,28 @@ sppListen(name: string, option: SppOption, callback: AsyncCallback<number>): voi
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let serverNumber = -1;
-3. function serverSocket(code : BusinessError, number : number) {
-4. console.info(`bluetooth error code: ${code.code}`);
-5. if (code.code == 0) {
-6. console.info(`bluetooth serverSocket Number: ${number}`);
-7. serverNumber = number;
-8. }
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let serverNumber = -1;
+function serverSocket(code : BusinessError, number : number) {
+  console.info(`bluetooth error code: ${code.code}`);
+  if (code.code == 0) {
+    console.info(`bluetooth serverSocket Number: ${number}`);
+    serverNumber = number;
+  }
+}
 
-11. let sppOption : bluetooth.SppOption = {uuid: '00001810-0000-1000-8000-00805F9B34FB', secure: false, type: 0};
-12. bluetooth.sppListen('server1', sppOption, serverSocket);
+let sppOption : bluetooth.SppOption = {uuid: '00001810-0000-1000-8000-00805F9B34FB', secure: false, type: 0};
+bluetooth.sppListen('server1', sppOption, serverSocket);
 ```
 
 ## bluetooth.sppAccept(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sppAccept(serverSocket: number, callback: AsyncCallback<number>): void
 
 服务端监听socket等待客户端连接。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.sppAccept](js-apis-bluetoothmanager.md#bluetoothmanagersppacceptdeprecated)替代。
 
@@ -885,37 +831,35 @@ sppAccept(serverSocket: number, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let serverNumber = -1;
-3. function serverSocket(code : BusinessError, number : number) {
-4. console.info(`bluetooth error code: ${code.code}`);
-5. if (code.code == 0) {
-6. console.info(`bluetooth serverSocket Number: ${number}`);
-7. serverNumber = number;
-8. }
-9. }
-10. let clientNumber = -1;
-11. function acceptClientSocket(code : BusinessError, number : number) {
-12. console.info(`bluetooth error code: ${code.code}`);
-13. if (code.code == 0) {
-14. console.info(`bluetooth clientSocket Number: ${number}`);
-15. // 获取的clientNumber用作服务端后续读/写操作socket的id。
-16. clientNumber = number;
-17. }
-18. }
-19. bluetooth.sppAccept(serverNumber, acceptClientSocket);
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let serverNumber = -1;
+function serverSocket(code : BusinessError, number : number) {
+  console.info(`bluetooth error code: ${code.code}`);
+  if (code.code == 0) {
+    console.info(`bluetooth serverSocket Number: ${number}`);
+    serverNumber = number;
+  }
+}
+let clientNumber = -1;
+function acceptClientSocket(code : BusinessError, number : number) {
+  console.info(`bluetooth error code: ${code.code}`);
+  if (code.code == 0) {
+    console.info(`bluetooth clientSocket Number: ${number}`);
+    // 获取的clientNumber用作服务端后续读/写操作socket的id。
+    clientNumber = number;
+  }
+}
+bluetooth.sppAccept(serverNumber, acceptClientSocket);
 ```
 
 ## bluetooth.sppConnect(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sppConnect(device: string, option: SppOption, callback: AsyncCallback<number>): void
 
 客户端向远端设备发起spp连接。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.sppConnect](js-apis-bluetoothmanager.md#bluetoothmanagersppconnectdeprecated)替代。
 
@@ -933,30 +877,28 @@ sppConnect(device: string, option: SppOption, callback: AsyncCallback<number>): 
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let clientNumber = -1;
-3. function clientSocket(code : BusinessError, number : number) {
-4. if (code == null || code.code != 0) {
-5. return;
-6. }
-7. console.info(`bluetooth serverSocket Number: ${number}`);
-8. // 获取的clientNumber用作客户端后续读/写操作socket的id。
-9. clientNumber = number;
-10. }
-11. let sppOption : bluetooth.SppOption = {uuid: '00001810-0000-1000-8000-00805F9B34FB', secure: false, type: 0};
-12. bluetooth.sppConnect('XX:XX:XX:XX:XX:XX', sppOption, clientSocket);
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let clientNumber = -1;
+function clientSocket(code : BusinessError, number : number) {
+  if (code == null || code.code != 0) {
+    return;
+  }
+  console.info(`bluetooth serverSocket Number: ${number}`);
+  // 获取的clientNumber用作客户端后续读/写操作socket的id。
+  clientNumber = number;
+}
+let sppOption : bluetooth.SppOption = {uuid: '00001810-0000-1000-8000-00805F9B34FB', secure: false, type: 0};
+bluetooth.sppConnect('XX:XX:XX:XX:XX:XX', sppOption, clientSocket);
 ```
 
 ## bluetooth.sppCloseServerSocket(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sppCloseServerSocket(socket: number): void
 
 关闭服务端监听Socket，入参socket由sppListen接口返回。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.sppCloseServerSocket](js-apis-bluetoothmanager.md#bluetoothmanagersppcloseserversocketdeprecated)替代。
 
@@ -970,28 +912,26 @@ sppCloseServerSocket(socket: number): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let serverNumber = -1;
-3. function serverSocket(code : BusinessError, number : number) {
-4. console.info(`bluetooth error code: ${code.code}`);
-5. if (code.code == 0) {
-6. console.info(`bluetooth serverSocket Number: ${number}`);
-7. serverNumber = number;
-8. }
-9. }
-10. bluetooth.sppCloseServerSocket(serverNumber);
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let serverNumber = -1;
+function serverSocket(code : BusinessError, number : number) {
+  console.info(`bluetooth error code: ${code.code}`);
+  if (code.code == 0) {
+    console.info(`bluetooth serverSocket Number: ${number}`);
+    serverNumber = number;
+  }
+}
+bluetooth.sppCloseServerSocket(serverNumber);
 ```
 
 ## bluetooth.sppCloseClientSocket(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sppCloseClientSocket(socket: number): void
 
 关闭客户端socket，入参socket由sppAccept或sppConnect接口获取。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.sppCloseClientSocket](js-apis-bluetoothmanager.md#bluetoothmanagersppcloseclientsocketdeprecated)替代。
 
@@ -1005,29 +945,27 @@ sppCloseClientSocket(socket: number): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let clientNumber = -1;
-3. function clientSocket(code : BusinessError, number : number) {
-4. if (code == null || code.code != 0) {
-5. return;
-6. }
-7. console.info(`bluetooth serverSocket Number: ${number}`);
-8. // 获取的clientNumber用作客户端后续读/写操作socket的id。
-9. clientNumber = number;
-10. }
-11. bluetooth.sppCloseClientSocket(clientNumber);
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let clientNumber = -1;
+function clientSocket(code : BusinessError, number : number) {
+  if (code == null || code.code != 0) {
+    return;
+  }
+  console.info(`bluetooth serverSocket Number: ${number}`);
+  // 获取的clientNumber用作客户端后续读/写操作socket的id。
+  clientNumber = number;
+}
+bluetooth.sppCloseClientSocket(clientNumber);
 ```
 
 ## bluetooth.sppWrite(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sppWrite(clientSocket: number, data: ArrayBuffer): boolean
 
 通过socket向远端发送数据，入参clientSocket由sppAccept或sppConnect接口获取 。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.sppWrite](js-apis-bluetoothmanager.md#bluetoothmanagersppwritedeprecated)替代。
 
@@ -1048,35 +986,33 @@ sppWrite(clientSocket: number, data: ArrayBuffer): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let clientNumber = -1;
-3. function clientSocket(code : BusinessError, number : number) {
-4. if (code == null || code.code != 0) {
-5. return;
-6. }
-7. console.info(`bluetooth serverSocket Number: ${number}`);
-8. // 获取的clientNumber用作客户端后续读/写操作socket的id。
-9. clientNumber = number;
-10. }
-11. let arrayBuffer = new ArrayBuffer(8);
-12. let data = new Uint8Array(arrayBuffer);
-13. data[0] = 123;
-14. let ret : boolean = bluetooth.sppWrite(clientNumber, arrayBuffer);
-15. if (ret) {
-16. console.info('spp write successfully');
-17. } else {
-18. console.error('spp write failed');
-19. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let clientNumber = -1;
+function clientSocket(code : BusinessError, number : number) {
+  if (code == null || code.code != 0) {
+    return;
+  }
+  console.info(`bluetooth serverSocket Number: ${number}`);
+  // 获取的clientNumber用作客户端后续读/写操作socket的id。
+  clientNumber = number;
+}
+let arrayBuffer = new ArrayBuffer(8);
+let data = new Uint8Array(arrayBuffer);
+data[0] = 123;
+let ret : boolean = bluetooth.sppWrite(clientNumber, arrayBuffer);
+if (ret) {
+  console.info('spp write successfully');
+} else {
+  console.error('spp write failed');
+}
 ```
 
 ## bluetooth.on('sppRead')(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'sppRead', clientSocket: number, callback: Callback<ArrayBuffer>): void
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.on('sppRead')](js-apis-bluetoothmanager.md#bluetoothmanageronsppreaddeprecated)替代。
 
@@ -1098,32 +1034,30 @@ on(type: 'sppRead', clientSocket: number, callback: Callback<ArrayBuffer>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let clientNumber = -1;
-3. function clientSocket(code : BusinessError, number : number) {
-4. if (code == null || code.code != 0) {
-5. return;
-6. }
-7. console.info(`bluetooth serverSocket Number: ${number}`);
-8. // 获取的clientNumber用作客户端后续读/写操作socket的id。
-9. clientNumber = number;
-10. }
-11. function dataRead(dataBuffer : ArrayBuffer) {
-12. let data = new Uint8Array(dataBuffer);
-13. }
-14. bluetooth.on('sppRead', clientNumber, dataRead);
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let clientNumber = -1;
+function clientSocket(code : BusinessError, number : number) {
+  if (code == null || code.code != 0) {
+    return;
+  }
+  console.info(`bluetooth serverSocket Number: ${number}`);
+  // 获取的clientNumber用作客户端后续读/写操作socket的id。
+  clientNumber = number;
+}
+function dataRead(dataBuffer : ArrayBuffer) {
+  let data = new Uint8Array(dataBuffer);
+}
+bluetooth.on('sppRead', clientNumber, dataRead);
 ```
 
 ## bluetooth.off('sppRead')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'sppRead', clientSocket: number, callback?: Callback<ArrayBuffer>): void
 
 取消订阅spp读请求事件，入参clientSocket由sppAccept或sppConnect接口获取。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.off('sppRead')](js-apis-bluetoothmanager.md#bluetoothmanageroffsppreaddeprecated)替代。
 
@@ -1143,29 +1077,27 @@ off(type: 'sppRead', clientSocket: number, callback?: Callback<ArrayBuffer>): vo
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let clientNumber = -1;
-3. function clientSocket(code : BusinessError, number : number) {
-4. if (code == null || code.code != 0) {
-5. return;
-6. }
-7. console.info(`bluetooth serverSocket Number: ${number}`);
-8. // 获取的clientNumber用作客户端后续读/写操作socket的id。
-9. clientNumber = number;
-10. }
-11. bluetooth.off('sppRead', clientNumber);
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let clientNumber = -1;
+function clientSocket(code : BusinessError, number : number) {
+  if (code == null || code.code != 0) {
+    return;
+  }
+  console.info(`bluetooth serverSocket Number: ${number}`);
+  // 获取的clientNumber用作客户端后续读/写操作socket的id。
+  clientNumber = number;
+}
+bluetooth.off('sppRead', clientNumber);
 ```
 
 ## bluetooth.getProfile(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getProfile(profileId: ProfileId): A2dpSourceProfile | HandsFreeAudioGatewayProfile
 
 通过ProfileId，获取profile的对象实例。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.getProfileInstance](js-apis-bluetoothmanager.md#bluetoothmanagergetprofileinstancedeprecated)替代。
 
@@ -1185,23 +1117,19 @@ getProfile(profileId: ProfileId): A2dpSourceProfile | HandsFreeAudioGatewayProfi
 
 **示例：**
 
-```
-1. let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
+```js
+let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
 ```
 
 ## BLE
 
-PhonePC/2in1TabletTVWearable
-
 ### createGattServer(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createGattServer(): GattServer
 
 创建一个可使用的GattServer实例。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLE.createGattServer](js-apis-bluetoothmanager.md#creategattserverdeprecated)替代。
 
@@ -1215,19 +1143,17 @@ createGattServer(): GattServer
 
 **示例：**
 
-```
-1. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+```js
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
 ```
 
 ### createGattClientDevice(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createGattClientDevice(deviceId: string): GattClientDevice
 
 创建一个可使用的GattClientDevice实例。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLE.createGattClientDevice](js-apis-bluetoothmanager.md#creategattclientdevicedeprecated)替代。
 
@@ -1247,19 +1173,17 @@ createGattClientDevice(deviceId: string): GattClientDevice
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
 ```
 
 ### getConnectedBLEDevices(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getConnectedBLEDevices(): Array<string>
 
 获取和当前设备连接的BLE设备。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLE.getConnectedBLEDevices](js-apis-bluetoothmanager.md#getconnectedbledevicesdeprecated)替代。
 
@@ -1275,19 +1199,17 @@ getConnectedBLEDevices(): Array<string>
 
 **示例：**
 
-```
-1. let result : Array<string> = bluetooth.BLE.getConnectedBLEDevices();
+```js
+let result : Array<string> = bluetooth.BLE.getConnectedBLEDevices();
 ```
 
 ### startBLEScan(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 startBLEScan(filters: Array<ScanFilter>, options?: ScanOptions): void
 
 发起BLE扫描流程。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLE.startBLEScan](js-apis-bluetoothmanager.md#startblescandeprecated)替代。
 
@@ -1308,36 +1230,34 @@ startBLEScan(filters: Array<ScanFilter>, options?: ScanOptions): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : Array<bluetooth.ScanResult>) {
-2. console.info('BLE scan device find result = '+ JSON.stringify(data));
-3. }
-4. bluetooth.BLE.on("BLEDeviceFind", onReceiveEvent);
-5. let scanOptions : bluetooth.ScanOptions = {
-6. interval: 500,
-7. dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
-8. matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
-9. }
+```js
+function onReceiveEvent(data : Array<bluetooth.ScanResult>) {
+    console.info('BLE scan device find result = '+ JSON.stringify(data));
+}
+bluetooth.BLE.on("BLEDeviceFind", onReceiveEvent);
+let scanOptions : bluetooth.ScanOptions = {
+    interval: 500,
+    dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+    matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+}
 
-11. let scanFilter : bluetooth.ScanFilter = {
-12. deviceId:"XX:XX:XX:XX:XX:XX",
-13. name:"test",
-14. serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
-15. }
-16. bluetooth.BLE.startBLEScan(
-17. [scanFilter], scanOptions
-18. );
+let scanFilter : bluetooth.ScanFilter = {
+    deviceId:"XX:XX:XX:XX:XX:XX",
+    name:"test",
+    serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+}
+bluetooth.BLE.startBLEScan(
+    [scanFilter], scanOptions
+);
 ```
 
 ### stopBLEScan(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stopBLEScan(): void
 
 停止BLE扫描流程。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLE.stopBLEScan](js-apis-bluetoothmanager.md#stopblescandeprecated)替代。
 
@@ -1351,19 +1271,17 @@ stopBLEScan(): void
 
 **示例：**
 
-```
-1. bluetooth.BLE.stopBLEScan();
+```js
+bluetooth.BLE.stopBLEScan();
 ```
 
 ### on('BLEDeviceFind')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'BLEDeviceFind', callback: Callback<Array<ScanResult>>): void
 
 订阅BLE设备发现上报事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLE.on('BLEDeviceFind')](js-apis-bluetoothmanager.md#onbledevicefinddeprecated)替代。
 
@@ -1384,22 +1302,20 @@ on(type: 'BLEDeviceFind', callback: Callback<Array<ScanResult>>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : Array<bluetooth.ScanResult>) {
-2. console.info('bluetooth device find = '+ JSON.stringify(data));
-3. }
-4. bluetooth.BLE.on('BLEDeviceFind', onReceiveEvent);
+```js
+function onReceiveEvent(data : Array<bluetooth.ScanResult>) {
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+}
+bluetooth.BLE.on('BLEDeviceFind', onReceiveEvent);
 ```
 
 ### off('BLEDeviceFind')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'BLEDeviceFind', callback?: Callback<Array<ScanResult>>): void
 
 取消订阅BLE设备发现上报事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLE.off('BLEDeviceFind')](js-apis-bluetoothmanager.md#offbledevicefinddeprecated)替代。
 
@@ -1420,29 +1336,25 @@ off(type: 'BLEDeviceFind', callback?: Callback<Array<ScanResult>>): void
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : Array<bluetooth.ScanResult>) {
-2. console.info('bluetooth device find = '+ JSON.stringify(data));
-3. }
-4. bluetooth.BLE.on('BLEDeviceFind', onReceiveEvent);
-5. bluetooth.BLE.off('BLEDeviceFind', onReceiveEvent);
+```js
+function onReceiveEvent(data : Array<bluetooth.ScanResult>) {
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+}
+bluetooth.BLE.on('BLEDeviceFind', onReceiveEvent);
+bluetooth.BLE.off('BLEDeviceFind', onReceiveEvent);
 ```
 
 ## BaseProfile
-
-PhonePC/2in1TabletTVWearable
 
 profile基类。
 
 ### getConnectionDevices(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 getConnectionDevices(): Array<string>
 
 获取已连接设备列表。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BaseProfile.getConnectionDevices](js-apis-bluetoothmanager.md#getconnectiondevicesdeprecated)替代。
 
@@ -1458,20 +1370,18 @@ getConnectionDevices(): Array<string>
 
 **示例：**
 
-```
-1. let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
-2. let retArray : Array<string> = a2dpSrc.getConnectionDevices();
+```js
+let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
+let retArray : Array<string> = a2dpSrc.getConnectionDevices();
 ```
 
 ### getDeviceState(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceState(device: string): ProfileConnectionState
 
 获取设备profile的连接状态。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BaseProfile.getDeviceState](js-apis-bluetoothmanager.md#getdevicestatedeprecated)替代。
 
@@ -1493,26 +1403,22 @@ getDeviceState(device: string): ProfileConnectionState
 
 **示例：**
 
-```
-1. let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
-2. let ret : bluetooth.ProfileConnectionState = a2dpSrc.getDeviceState('XX:XX:XX:XX:XX:XX');
+```js
+let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
+let ret : bluetooth.ProfileConnectionState = a2dpSrc.getDeviceState('XX:XX:XX:XX:XX:XX');
 ```
 
 ## A2dpSourceProfile
-
-PhonePC/2in1TabletTVWearable
 
 使用A2dpSourceProfile方法之前需要创建该类的实例进行操作，通过getProfile()方法构造此实例。
 
 ### connect(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 connect(device: string): boolean
 
 发起设备的A2dp服务连接请求。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.A2dpSourceProfile.connect](js-apis-bluetoothmanager.md#connectdeprecated)替代。
 
@@ -1534,20 +1440,18 @@ connect(device: string): boolean
 
 **示例：**
 
-```
-1. let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
-2. let ret : boolean = a2dpSrc.connect('XX:XX:XX:XX:XX:XX');
+```js
+let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
+let ret : boolean = a2dpSrc.connect('XX:XX:XX:XX:XX:XX');
 ```
 
 ### disconnect(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 disconnect(device: string): boolean
 
 断开设备的a2dp服务连接。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.A2dpSourceProfile.disconnect](js-apis-bluetoothmanager.md#disconnectdeprecated)替代。
 
@@ -1569,20 +1473,18 @@ disconnect(device: string): boolean
 
 **示例：**
 
-```
-1. let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
-2. let ret : boolean = a2dpSrc.disconnect('XX:XX:XX:XX:XX:XX');
+```js
+let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
+let ret : boolean = a2dpSrc.disconnect('XX:XX:XX:XX:XX:XX');
 ```
 
 ### on('connectionStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connectionStateChange', callback: Callback<[StateChangeParam](js-apis-bluetooth.md#statechangeparamdeprecated)>): void
 
 订阅a2dp连接状态变化事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.A2dpSourceProfile.on('connectionStateChange')](js-apis-bluetoothmanager.md#onconnectionstatechangedeprecated)替代。
 
@@ -1601,23 +1503,21 @@ on(type: 'connectionStateChange', callback: Callback<[StateChangeParam](js-apis-
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.StateChangeParam) {
-2. console.info('a2dp state = '+ JSON.stringify(data));
-3. }
-4. let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
-5. a2dpSrc.on('connectionStateChange', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.StateChangeParam) {
+    console.info('a2dp state = '+ JSON.stringify(data));
+}
+let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
+a2dpSrc.on('connectionStateChange', onReceiveEvent);
 ```
 
 ### off('connectionStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](js-apis-bluetooth.md#statechangeparamdeprecated)>): void
 
 取消订阅a2dp连接状态变化事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.A2dpSourceProfile.off('connectionStateChange')](js-apis-bluetoothmanager.md#offconnectionstatechangedeprecated)替代。
 
@@ -1636,24 +1536,22 @@ off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](js-api
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.StateChangeParam) {
-2. console.info('a2dp state = '+ JSON.stringify(data));
-3. }
-4. let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
-5. a2dpSrc.on('connectionStateChange', onReceiveEvent);
-6. a2dpSrc.off('connectionStateChange', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.StateChangeParam) {
+    console.info('a2dp state = '+ JSON.stringify(data));
+}
+let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
+a2dpSrc.on('connectionStateChange', onReceiveEvent);
+a2dpSrc.off('connectionStateChange', onReceiveEvent);
 ```
 
 ### getPlayingState(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getPlayingState(device: string): PlayingState
 
 获取设备的播放状态。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.A2dpSourceProfile.getPlayingState](js-apis-bluetoothmanager.md#getplayingstatedeprecated)替代。
 
@@ -1673,26 +1571,22 @@ getPlayingState(device: string): PlayingState
 
 **示例：**
 
-```
-1. let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
-2. let state : bluetooth.PlayingState = a2dpSrc.getPlayingState('XX:XX:XX:XX:XX:XX');
+```js
+let a2dpSrc : bluetooth.A2dpSourceProfile = bluetooth.getProfile(bluetooth.ProfileId.PROFILE_A2DP_SOURCE) as bluetooth.A2dpSourceProfile;
+let state : bluetooth.PlayingState = a2dpSrc.getPlayingState('XX:XX:XX:XX:XX:XX');
 ```
 
 ## HandsFreeAudioGatewayProfile
-
-PhonePC/2in1TabletTVWearable
 
 使用HandsFreeAudioGatewayProfile方法之前需要创建该类的实例进行操作，通过getProfile()方法构造此实例。
 
 ### connect(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 connect(device: string): boolean
 
 连接设备的HFP服务。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.HandsFreeAudioGatewayProfile.connect](js-apis-bluetoothmanager.md#connectdeprecated-1)替代。
 
@@ -1714,21 +1608,19 @@ connect(device: string): boolean
 
 **示例：**
 
-```
-1. let hfpAg : bluetooth.HandsFreeAudioGatewayProfile= bluetooth.getProfile(bluetooth.ProfileId
-2. .PROFILE_HANDS_FREE_AUDIO_GATEWAY);
-3. let ret : boolean = hfpAg.connect('XX:XX:XX:XX:XX:XX');
+```js
+let hfpAg : bluetooth.HandsFreeAudioGatewayProfile= bluetooth.getProfile(bluetooth.ProfileId
+    .PROFILE_HANDS_FREE_AUDIO_GATEWAY);
+let ret : boolean = hfpAg.connect('XX:XX:XX:XX:XX:XX');
 ```
 
 ### disconnect(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 disconnect(device: string): boolean
 
 断开连接设备的HFP服务。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.HandsFreeAudioGatewayProfile.disconnect](js-apis-bluetoothmanager.md#disconnectdeprecated-1)替代。
 
@@ -1750,21 +1642,19 @@ disconnect(device: string): boolean
 
 **示例：**
 
-```
-1. let hfpAg : bluetooth.HandsFreeAudioGatewayProfile = bluetooth.getProfile(bluetooth.ProfileId
-2. .PROFILE_HANDS_FREE_AUDIO_GATEWAY);
-3. let ret : boolean = hfpAg.disconnect('XX:XX:XX:XX:XX:XX');
+```js
+let hfpAg : bluetooth.HandsFreeAudioGatewayProfile = bluetooth.getProfile(bluetooth.ProfileId
+    .PROFILE_HANDS_FREE_AUDIO_GATEWAY);
+let ret : boolean = hfpAg.disconnect('XX:XX:XX:XX:XX:XX');
 ```
 
 ### on('connectionStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connectionStateChange', callback: Callback<[StateChangeParam](js-apis-bluetooth.md#statechangeparamdeprecated)>): void
 
 订阅HFP连接状态变化事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.HandsFreeAudioGatewayProfile.on('connectionStateChange')](js-apis-bluetoothmanager.md#onconnectionstatechangedeprecated-1)替代。
 
@@ -1783,24 +1673,22 @@ on(type: 'connectionStateChange', callback: Callback<[StateChangeParam](js-apis-
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.StateChangeParam) {
-2. console.info('hfp state = '+ JSON.stringify(data));
-3. }
-4. let hfpAg : bluetooth.HandsFreeAudioGatewayProfile= bluetooth.getProfile(bluetooth.ProfileId
-5. .PROFILE_HANDS_FREE_AUDIO_GATEWAY);
-6. hfpAg.on('connectionStateChange', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.StateChangeParam) {
+    console.info('hfp state = '+ JSON.stringify(data));
+}
+let hfpAg : bluetooth.HandsFreeAudioGatewayProfile= bluetooth.getProfile(bluetooth.ProfileId
+    .PROFILE_HANDS_FREE_AUDIO_GATEWAY);
+hfpAg.on('connectionStateChange', onReceiveEvent);
 ```
 
 ### off('connectionStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](js-apis-bluetooth.md#statechangeparamdeprecated)>): void
 
 取消订阅HFP连接状态变化事件。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.HandsFreeAudioGatewayProfile.off('connectionStateChange')](js-apis-bluetoothmanager.md#offconnectionstatechangedeprecated-1)替代。
 
@@ -1819,31 +1707,27 @@ off(type: 'connectionStateChange', callback?: Callback<[StateChangeParam](js-api
 
 **示例：**
 
-```
-1. function onReceiveEvent(data : bluetooth.StateChangeParam) {
-2. console.info('hfp state = '+ JSON.stringify(data));
-3. }
-4. let hfpAg : bluetooth.HandsFreeAudioGatewayProfile= bluetooth.getProfile(bluetooth.ProfileId
-5. .PROFILE_HANDS_FREE_AUDIO_GATEWAY);
-6. hfpAg.on('connectionStateChange', onReceiveEvent);
-7. hfpAg.off('connectionStateChange', onReceiveEvent);
+```js
+function onReceiveEvent(data : bluetooth.StateChangeParam) {
+    console.info('hfp state = '+ JSON.stringify(data));
+}
+let hfpAg : bluetooth.HandsFreeAudioGatewayProfile= bluetooth.getProfile(bluetooth.ProfileId
+    .PROFILE_HANDS_FREE_AUDIO_GATEWAY);
+hfpAg.on('connectionStateChange', onReceiveEvent);
+hfpAg.off('connectionStateChange', onReceiveEvent);
 ```
 
 ## GattServer
-
-PhonePC/2in1TabletTVWearable
 
 server端类，使用server端方法之前需要创建该类的实例进行操作，通过createGattServer()方法构造此实例。
 
 ### startAdvertising(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse?: AdvertiseData): void
 
 开始发送BLE广播。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.startAdvertising](js-apis-bluetoothmanager.md#startadvertisingdeprecated)替代。
 
@@ -1865,60 +1749,58 @@ startAdvertising(setting: AdvertiseSetting, advData: AdvertiseData, advResponse?
 
 **示例：**
 
-```
-1. let manufactureValueBuffer = new Uint8Array(4);
-2. manufactureValueBuffer[0] = 1;
-3. manufactureValueBuffer[1] = 2;
-4. manufactureValueBuffer[2] = 3;
-5. manufactureValueBuffer[3] = 4;
+```js
+let manufactureValueBuffer = new Uint8Array(4);
+manufactureValueBuffer[0] = 1;
+manufactureValueBuffer[1] = 2;
+manufactureValueBuffer[2] = 3;
+manufactureValueBuffer[3] = 4;
 
-7. let serviceValueBuffer = new Uint8Array(4);
-8. serviceValueBuffer[0] = 4;
-9. serviceValueBuffer[1] = 6;
-10. serviceValueBuffer[2] = 7;
-11. serviceValueBuffer[3] = 8;
-12. console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
-13. console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
-14. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-15. let setting : bluetooth.AdvertiseSetting = {
-16. interval:150,
-17. txPower:60,
-18. connectable:true,
-19. }
+let serviceValueBuffer = new Uint8Array(4);
+serviceValueBuffer[0] = 4;
+serviceValueBuffer[1] = 6;
+serviceValueBuffer[2] = 7;
+serviceValueBuffer[3] = 8;
+console.info('manufactureValueBuffer = '+ JSON.stringify(manufactureValueBuffer));
+console.info('serviceValueBuffer = '+ JSON.stringify(serviceValueBuffer));
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+let setting : bluetooth.AdvertiseSetting = {
+    interval:150,
+    txPower:60,
+    connectable:true,
+}
 
-21. let manufactureData : bluetooth.ManufactureData = {
-22. manufactureId:4567,
-23. manufactureValue:manufactureValueBuffer.buffer
-24. }
+let manufactureData : bluetooth.ManufactureData = {
+    manufactureId:4567,
+    manufactureValue:manufactureValueBuffer.buffer
+}
 
-26. let serviceData : bluetooth.ServiceData = {
-27. serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
-28. serviceValue:serviceValueBuffer.buffer
-29. }
+let serviceData : bluetooth.ServiceData = {
+    serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+    serviceValue:serviceValueBuffer.buffer
+}
 
-31. let advData : bluetooth.AdvertiseData = {
-32. serviceUuids:["00001889-0000-1000-8000-00805f9b34fb"],
-33. manufactureData:[manufactureData],
-34. serviceData:[serviceData],
-35. }
+let advData : bluetooth.AdvertiseData = {
+    serviceUuids:["00001889-0000-1000-8000-00805f9b34fb"],
+    manufactureData:[manufactureData],
+    serviceData:[serviceData],
+}
 
-37. let advResponse : bluetooth.AdvertiseData = {
-38. serviceUuids:["00001889-0000-1000-8000-00805f9b34fb"],
-39. manufactureData:[manufactureData],
-40. serviceData:[serviceData],
-41. }
-42. gattServer.startAdvertising(setting, advData, advResponse);
+let advResponse : bluetooth.AdvertiseData = {
+    serviceUuids:["00001889-0000-1000-8000-00805f9b34fb"],
+    manufactureData:[manufactureData],
+    serviceData:[serviceData],
+}
+gattServer.startAdvertising(setting, advData, advResponse);
 ```
 
 ### stopAdvertising(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 stopAdvertising(): void
 
 停止发送BLE广播。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.stopAdvertising](js-apis-bluetoothmanager.md#stopadvertisingdeprecated)替代。
 
@@ -1932,20 +1814,18 @@ stopAdvertising(): void
 
 **示例：**
 
-```
-1. let server : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-2. server.stopAdvertising();
+```js
+let server : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+server.stopAdvertising();
 ```
 
 ### addService(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 addService(service: GattService): boolean
 
 server端添加服务。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.addService](js-apis-bluetoothmanager.md#addservicedeprecated)替代。
 
@@ -1967,49 +1847,47 @@ server端添加服务。
 
 **示例：**
 
-```
-1. // 创建descriptors
-2. let descriptors : Array<bluetooth.BLEDescriptor> = [];
-3. let arrayBuffer = new ArrayBuffer(8);
-4. let descV = new Uint8Array(arrayBuffer);
-5. descV[0] = 11;
-6. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-7. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-8. descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
-9. descriptors[0] = descriptor;
+```js
+// 创建descriptors
+let descriptors : Array<bluetooth.BLEDescriptor> = [];
+let arrayBuffer = new ArrayBuffer(8);
+let descV = new Uint8Array(arrayBuffer);
+descV[0] = 11;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+  descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
+descriptors[0] = descriptor;
 
-11. // 创建characteristics
-12. let characteristics : Array<bluetooth.BLECharacteristic> = [];
-13. let arrayBufferC = new ArrayBuffer(8);
-14. let cccV = new Uint8Array(arrayBufferC);
-15. cccV[0] = 1;
-16. let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-17. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors:descriptors};
-18. let characteristicN : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-19. characteristicUuid: '00001821-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors:descriptors};
-20. characteristics[0] = characteristic;
+// 创建characteristics
+let characteristics : Array<bluetooth.BLECharacteristic> = [];
+let arrayBufferC = new ArrayBuffer(8);
+let cccV = new Uint8Array(arrayBufferC);
+cccV[0] = 1;
+let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors:descriptors};
+let characteristicN : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001821-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors:descriptors};
+characteristics[0] = characteristic;
 
-22. // 创建gattService
-23. let gattService : bluetooth.GattService = {serviceUuid:'00001810-0000-1000-8000-00805F9B34FB', isPrimary: true, characteristics:characteristics, includeServices:[]};
+// 创建gattService
+let gattService : bluetooth.GattService = {serviceUuid:'00001810-0000-1000-8000-00805F9B34FB', isPrimary: true, characteristics:characteristics, includeServices:[]};
 
-25. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-26. let ret : boolean = gattServer.addService(gattService);
-27. if (ret) {
-28. console.info("add service successfully");
-29. } else {
-30. console.error("add service failed");
-31. }
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+let ret : boolean = gattServer.addService(gattService);
+if (ret) {
+   console.info("add service successfully");
+} else {
+   console.error("add service failed");
+}
 ```
 
 ### removeService(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 removeService(serviceUuid: string): boolean
 
 删除已添加的服务。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.removeService](js-apis-bluetoothmanager.md#removeservicedeprecated)替代。
 
@@ -2031,20 +1909,18 @@ removeService(serviceUuid: string): boolean
 
 **示例：**
 
-```
-1. let server : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-2. server.removeService('00001810-0000-1000-8000-00805F9B34FB');
+```js
+let server : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+server.removeService('00001810-0000-1000-8000-00805F9B34FB');
 ```
 
 ### close(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 close(): void
 
-关闭服务端功能，去注册server在协议栈的注册，调用该接口后[GattServer](js-apis-bluetooth.md#gattserver)实例将不能再使用。
+关闭服务端功能，注销server在协议栈的注册，调用该接口后[GattServer](js-apis-bluetooth.md#gattserver)实例将不能再使用。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.close](js-apis-bluetoothmanager.md#closedeprecated)替代。
 
@@ -2054,20 +1930,18 @@ close(): void
 
 **示例：**
 
-```
-1. let server : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-2. server.close();
+```js
+let server : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+server.close();
 ```
 
 ### notifyCharacteristicChanged(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 notifyCharacteristicChanged(deviceId: string, notifyCharacteristic: NotifyCharacteristic): boolean
 
 server端特征值发生变化时，主动通知已连接的client设备。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.notifyCharacteristicChanged](js-apis-bluetoothmanager.md#notifycharacteristicchangeddeprecated)替代。
 
@@ -2090,34 +1964,32 @@ server端特征值发生变化时，主动通知已连接的client设备。
 
 **示例：**
 
-```
-1. // 创建descriptors
-2. let descriptors : Array<bluetooth.BLEDescriptor> = [];
-3. let arrayBuffer = new ArrayBuffer(8);
-4. let descV = new Uint8Array(arrayBuffer);
-5. descV[0] = 11;
-6. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-7. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-8. descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
-9. descriptors[0] = descriptor;
-10. let arrayBufferC = new ArrayBuffer(8);
-11. let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-12. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors:descriptors};
-13. let notifyCharacteristic : bluetooth.NotifyCharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-14. characteristicUuid: '00001821-0000-1000-8000-00805F9B34FB', characteristicValue: characteristic.characteristicValue, confirm: false};
-15. let server : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-16. server.notifyCharacteristicChanged('XX:XX:XX:XX:XX:XX', notifyCharacteristic);
+```js
+// 创建descriptors
+let descriptors : Array<bluetooth.BLEDescriptor> = [];
+let arrayBuffer = new ArrayBuffer(8);
+let descV = new Uint8Array(arrayBuffer);
+descV[0] = 11;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+  descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
+descriptors[0] = descriptor;
+let arrayBufferC = new ArrayBuffer(8);
+let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors:descriptors};
+let notifyCharacteristic : bluetooth.NotifyCharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001821-0000-1000-8000-00805F9B34FB', characteristicValue: characteristic.characteristicValue, confirm: false};
+let server : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+server.notifyCharacteristicChanged('XX:XX:XX:XX:XX:XX', notifyCharacteristic);
 ```
 
 ### sendResponse(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 sendResponse(serverResponse: ServerResponse): boolean
 
 server端回复client端的读写请求。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.sendResponse](js-apis-bluetoothmanager.md#sendresponsedeprecated)替代。
 
@@ -2139,37 +2011,35 @@ server端回复client端的读写请求。
 
 **示例：**
 
-```
-1. /* send response */
-2. let arrayBufferCCC = new ArrayBuffer(8);
-3. let cccValue = new Uint8Array(arrayBufferCCC);
-4. cccValue[0] = 1;
-5. let serverResponse : bluetooth.ServerResponse = {
-6. "deviceId": "XX:XX:XX:XX:XX:XX",
-7. "transId": 0,
-8. "status": 0,
-9. "offset": 0,
-10. "value": arrayBufferCCC,
-11. };
+```js
+/* send response */
+let arrayBufferCCC = new ArrayBuffer(8);
+let cccValue = new Uint8Array(arrayBufferCCC);
+cccValue[0] = 1;
+let serverResponse : bluetooth.ServerResponse = {
+    "deviceId": "XX:XX:XX:XX:XX:XX",
+    "transId": 0,
+    "status": 0,
+    "offset": 0,
+    "value": arrayBufferCCC,
+};
 
-13. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-14. let ret : boolean = gattServer.sendResponse(serverResponse);
-15. if (ret) {
-16. console.info('bluetooth sendResponse successfully');
-17. } else {
-18. console.error('bluetooth sendResponse failed');
-19. }
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+let ret : boolean = gattServer.sendResponse(serverResponse);
+if (ret) {
+  console.info('bluetooth sendResponse successfully');
+} else {
+  console.error('bluetooth sendResponse failed');
+}
 ```
 
 ### on('characteristicRead')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'characteristicRead', callback: Callback<CharacteristicReadReq>): void
 
 server端订阅特征值读请求事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.on('characteristicRead')](js-apis-bluetoothmanager.md#oncharacteristicreaddeprecated)替代。
 
@@ -2190,40 +2060,38 @@ server端订阅特征值读请求事件。
 
 **示例：**
 
-```
-1. let arrayBufferCCC = new ArrayBuffer(8);
-2. let cccValue = new Uint8Array(arrayBufferCCC);
-3. cccValue[0] = 1;
-4. function ReadCharacteristicReq(CharacteristicReadReq : bluetooth.CharacteristicReadReq) {
-5. let deviceId : string = CharacteristicReadReq.deviceId;
-6. let transId : number = CharacteristicReadReq.transId;
-7. let offset : number = CharacteristicReadReq.offset;
-8. let characteristicUuid : string = CharacteristicReadReq.characteristicUuid;
+```js
+let arrayBufferCCC = new ArrayBuffer(8);
+let cccValue = new Uint8Array(arrayBufferCCC);
+cccValue[0] = 1;
+function ReadCharacteristicReq(CharacteristicReadReq : bluetooth.CharacteristicReadReq) {
+  let deviceId : string = CharacteristicReadReq.deviceId;
+  let transId : number = CharacteristicReadReq.transId;
+  let offset : number = CharacteristicReadReq.offset;
+  let characteristicUuid : string = CharacteristicReadReq.characteristicUuid;
 
-10. let serverResponse : bluetooth.ServerResponse = {deviceId: deviceId, transId: transId, status: 0,
-11. offset: offset, value:arrayBufferCCC};
+  let serverResponse : bluetooth.ServerResponse = {deviceId: deviceId, transId: transId, status: 0,
+  offset: offset, value:arrayBufferCCC};
 
-13. let ret : boolean = gattServer.sendResponse(serverResponse);
-14. if (ret) {
-15. console.info('bluetooth sendResponse successfully');
-16. } else {
-17. console.error('bluetooth sendResponse failed');
-18. }
-19. }
+  let ret : boolean = gattServer.sendResponse(serverResponse);
+  if (ret) {
+    console.info('bluetooth sendResponse successfully');
+  } else {
+    console.error('bluetooth sendResponse failed');
+  }
+}
 
-21. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-22. gattServer.on("characteristicRead", ReadCharacteristicReq);
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.on("characteristicRead", ReadCharacteristicReq);
 ```
 
 ### off('characteristicRead')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'characteristicRead', callback?: Callback<CharacteristicReadReq>): void
 
 server端取消订阅特征值读请求事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.off('characteristicRead')](js-apis-bluetoothmanager.md#offcharacteristicreaddeprecated)替代。
 
@@ -2244,20 +2112,18 @@ server端取消订阅特征值读请求事件。
 
 **示例：**
 
-```
-1. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-2. gattServer.off("characteristicRead");
+```js
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.off("characteristicRead");
 ```
 
 ### on('characteristicWrite')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'characteristicWrite', callback: Callback<CharacteristicWriteReq>): void
 
 server端订阅特征值写请求事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.on('characteristicWrite')](js-apis-bluetoothmanager.md#oncharacteristicwritedeprecated)替代。
 
@@ -2278,43 +2144,41 @@ server端订阅特征值写请求事件。
 
 **示例：**
 
-```
-1. let arrayBufferCCC = new ArrayBuffer(8);
-2. let cccValue = new Uint8Array(arrayBufferCCC);
-3. function WriteCharacteristicReq(CharacteristicWriteReq : bluetooth.CharacteristicWriteReq) {
-4. let deviceId : string = CharacteristicWriteReq.deviceId;
-5. let transId : number = CharacteristicWriteReq.transId;
-6. let offset : number = CharacteristicWriteReq.offset;
-7. let isPrep : boolean = CharacteristicWriteReq.isPrep;
-8. let needRsp : boolean = CharacteristicWriteReq.needRsp;
-9. let value =  new Uint8Array(arrayBufferCCC);
-10. let characteristicUuid : string = CharacteristicWriteReq.characteristicUuid;
+```js
+let arrayBufferCCC = new ArrayBuffer(8);
+let cccValue = new Uint8Array(arrayBufferCCC);
+function WriteCharacteristicReq(CharacteristicWriteReq : bluetooth.CharacteristicWriteReq) {
+  let deviceId : string = CharacteristicWriteReq.deviceId;
+  let transId : number = CharacteristicWriteReq.transId;
+  let offset : number = CharacteristicWriteReq.offset;
+  let isPrep : boolean = CharacteristicWriteReq.isPrep;
+  let needRsp : boolean = CharacteristicWriteReq.needRsp;
+  let value =  new Uint8Array(arrayBufferCCC);
+  let characteristicUuid : string = CharacteristicWriteReq.characteristicUuid;
 
-12. cccValue.set(new Uint8Array(value));
-13. let serverResponse : bluetooth.ServerResponse = {deviceId: deviceId, transId: transId, status: 0,
-14. offset: offset, value:arrayBufferCCC};
+  cccValue.set(new Uint8Array(value));
+  let serverResponse : bluetooth.ServerResponse = {deviceId: deviceId, transId: transId, status: 0,
+  offset: offset, value:arrayBufferCCC};
 
-16. let ret : boolean = gattServer.sendResponse(serverResponse);
-17. if (ret) {
-18. console.info('bluetooth sendResponse successfully');
-19. } else {
-20. console.error('bluetooth sendResponse failed');
-21. }
-22. }
+  let ret : boolean = gattServer.sendResponse(serverResponse);
+  if (ret) {
+    console.info('bluetooth sendResponse successfully');
+  } else {
+    console.error('bluetooth sendResponse failed');
+  }
+}
 
-24. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-25. gattServer.on("characteristicWrite", WriteCharacteristicReq);
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.on("characteristicWrite", WriteCharacteristicReq);
 ```
 
 ### off('characteristicWrite')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'characteristicWrite', callback?: Callback<CharacteristicWriteReq>): void
 
 server端取消订阅特征值写请求事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.off('characteristicWrite')](js-apis-bluetoothmanager.md#offcharacteristicwritedeprecated)替代。
 
@@ -2335,20 +2199,18 @@ server端取消订阅特征值写请求事件。
 
 **示例：**
 
-```
-1. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-2. gattServer.off("characteristicWrite");
+```js
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.off("characteristicWrite");
 ```
 
 ### on('descriptorRead')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'descriptorRead', callback: Callback<DescriptorReadReq>): void
 
 server端订阅描述符读请求事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.on('descriptorRead')](js-apis-bluetoothmanager.md#ondescriptorreaddeprecated)替代。
 
@@ -2369,40 +2231,38 @@ server端订阅描述符读请求事件。
 
 **示例：**
 
-```
-1. let arrayBufferDesc = new ArrayBuffer(8);
-2. let descValue = new Uint8Array(arrayBufferDesc);
-3. descValue[0] = 1;
-4. function ReadDescriptorReq(DescriptorReadReq : bluetooth.DescriptorReadReq) {
-5. let deviceId : string = DescriptorReadReq.deviceId;
-6. let transId : number = DescriptorReadReq.transId;
-7. let offset : number = DescriptorReadReq.offset;
-8. let descriptorUuid : string = DescriptorReadReq.descriptorUuid;
+```js
+let arrayBufferDesc = new ArrayBuffer(8);
+let descValue = new Uint8Array(arrayBufferDesc);
+descValue[0] = 1;
+function ReadDescriptorReq(DescriptorReadReq : bluetooth.DescriptorReadReq) {
+  let deviceId : string = DescriptorReadReq.deviceId;
+  let transId : number = DescriptorReadReq.transId;
+  let offset : number = DescriptorReadReq.offset;
+  let descriptorUuid : string = DescriptorReadReq.descriptorUuid;
 
-10. let serverResponse : bluetooth.ServerResponse = {deviceId: deviceId, transId: transId, status: 0,
-11. offset: offset, value:arrayBufferDesc};
+  let serverResponse : bluetooth.ServerResponse = {deviceId: deviceId, transId: transId, status: 0,
+  offset: offset, value:arrayBufferDesc};
 
-13. let ret : boolean = gattServer.sendResponse(serverResponse);
-14. if (ret) {
-15. console.info('bluetooth sendResponse successfully');
-16. } else {
-17. console.error('bluetooth sendResponse failed');
-18. }
-19. }
+  let ret : boolean = gattServer.sendResponse(serverResponse);
+  if (ret) {
+    console.info('bluetooth sendResponse successfully');
+  } else {
+    console.error('bluetooth sendResponse failed');
+  }
+}
 
-21. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-22. gattServer.on("descriptorRead", ReadDescriptorReq);
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.on("descriptorRead", ReadDescriptorReq);
 ```
 
 ### off('descriptorRead')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'descriptorRead', callback?: Callback<DescriptorReadReq>): void
 
 server端取消订阅描述符读请求事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.off('descriptorRead')](js-apis-bluetoothmanager.md#offdescriptorreaddeprecated)替代。
 
@@ -2423,20 +2283,18 @@ server端取消订阅描述符读请求事件。
 
 **示例：**
 
-```
-1. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-2. gattServer.off("descriptorRead");
+```js
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.off("descriptorRead");
 ```
 
 ### on('descriptorWrite')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'descriptorWrite', callback: Callback<DescriptorWriteReq>): void
 
 server端订阅描述符写请求事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.on('descriptorWrite')](js-apis-bluetoothmanager.md#ondescriptorwritedeprecated)替代。
 
@@ -2457,42 +2315,40 @@ server端订阅描述符写请求事件。
 
 **示例：**
 
-```
-1. let arrayBufferDesc = new ArrayBuffer(8);
-2. let descValue = new Uint8Array(arrayBufferDesc);
-3. function WriteDescriptorReq(DescriptorWriteReq : bluetooth.DescriptorWriteReq) {
-4. let deviceId : string = DescriptorWriteReq.deviceId;
-5. let transId : number = DescriptorWriteReq.transId;
-6. let offset : number = DescriptorWriteReq.offset;
-7. let isPrep : boolean = DescriptorWriteReq.isPrep;
-8. let needRsp : boolean = DescriptorWriteReq.needRsp;
-9. let value = new Uint8Array(arrayBufferDesc);
-10. let descriptorUuid : string = DescriptorWriteReq.descriptorUuid;
+```js
+let arrayBufferDesc = new ArrayBuffer(8);
+let descValue = new Uint8Array(arrayBufferDesc);
+function WriteDescriptorReq(DescriptorWriteReq : bluetooth.DescriptorWriteReq) {
+  let deviceId : string = DescriptorWriteReq.deviceId;
+  let transId : number = DescriptorWriteReq.transId;
+  let offset : number = DescriptorWriteReq.offset;
+  let isPrep : boolean = DescriptorWriteReq.isPrep;
+  let needRsp : boolean = DescriptorWriteReq.needRsp;
+  let value = new Uint8Array(arrayBufferDesc);
+  let descriptorUuid : string = DescriptorWriteReq.descriptorUuid;
 
-12. descValue.set(new Uint8Array(value));
-13. let serverResponse : bluetooth.ServerResponse = {deviceId: deviceId, transId: transId, status: 0, offset: offset, value:arrayBufferDesc};
+  descValue.set(new Uint8Array(value));
+  let serverResponse : bluetooth.ServerResponse = {deviceId: deviceId, transId: transId, status: 0, offset: offset, value:arrayBufferDesc};
 
-15. let ret : boolean = gattServer.sendResponse(serverResponse);
-16. if (ret) {
-17. console.info('bluetooth sendResponse successfully');
-18. } else {
-19. console.error('bluetooth sendResponse failed');
-20. }
-21. }
+  let ret : boolean = gattServer.sendResponse(serverResponse);
+  if (ret) {
+    console.info('bluetooth sendResponse successfully');
+  } else {
+    console.error('bluetooth sendResponse failed');
+  }
+}
 
-23. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-24. gattServer.on("descriptorWrite", WriteDescriptorReq);
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.on("descriptorWrite", WriteDescriptorReq);
 ```
 
 ### off('descriptorWrite')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'descriptorWrite', callback?: Callback<DescriptorWriteReq>): void
 
 server端取消订阅描述符写请求事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.off('descriptorWrite')](js-apis-bluetoothmanager.md#offdescriptorwritedeprecated)替代。
 
@@ -2513,20 +2369,18 @@ server端取消订阅描述符写请求事件。
 
 **示例：**
 
-```
-1. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-2. gattServer.off("descriptorWrite");
+```js
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.off("descriptorWrite");
 ```
 
 ### on('connectStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connectStateChange', callback: Callback<BLEConnectChangedState>): void
 
 server端订阅BLE连接状态变化事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.on('connectStateChange')](js-apis-bluetoothmanager.md#onconnectstatechangedeprecated)替代。
 
@@ -2547,25 +2401,23 @@ server端订阅BLE连接状态变化事件。
 
 **示例：**
 
-```
-1. function Connected(BLEConnectChangedState : bluetooth.BLEConnectChangedState) {
-2. let deviceId : string = BLEConnectChangedState.deviceId;
-3. let status : bluetooth.ProfileConnectionState = BLEConnectChangedState.state;
-4. }
+```js
+function Connected(BLEConnectChangedState : bluetooth.BLEConnectChangedState) {
+  let deviceId : string = BLEConnectChangedState.deviceId;
+  let status : bluetooth.ProfileConnectionState = BLEConnectChangedState.state;
+}
 
-6. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-7. gattServer.on("connectStateChange", Connected);
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.on("connectStateChange", Connected);
 ```
 
 ### off('connectStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connectStateChange', callback?: Callback<BLEConnectChangedState>): void
 
 server端取消订阅BLE连接状态变化事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattServer.off('connectStateChange')](js-apis-bluetoothmanager.md#offconnectstatechangedeprecated)替代。
 
@@ -2586,26 +2438,22 @@ server端取消订阅BLE连接状态变化事件。
 
 **示例：**
 
-```
-1. let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
-2. gattServer.off("connectStateChange");
+```js
+let gattServer : bluetooth.GattServer = bluetooth.BLE.createGattServer();
+gattServer.off("connectStateChange");
 ```
 
 ## GattClientDevice
-
-PhonePC/2in1TabletTVWearable
 
 client端类，使用client端方法之前需要创建该类的实例进行操作，通过createGattClientDevice(deviceId: string)方法构造此实例。
 
 ### connect(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 connect(): boolean
 
 client端发起连接远端蓝牙低功耗设备。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.connect](js-apis-bluetoothmanager.md#connectdeprecated-1)替代。
 
@@ -2621,20 +2469,18 @@ client端发起连接远端蓝牙低功耗设备。
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. let ret : boolean = device.connect();
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let ret : boolean = device.connect();
 ```
 
 ### disconnect(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 disconnect(): boolean
 
 client端断开与远端蓝牙低功耗设备的连接。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.disconnect](js-apis-bluetoothmanager.md#disconnectdeprecated-2)替代。
 
@@ -2650,20 +2496,18 @@ client端断开与远端蓝牙低功耗设备的连接。
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. let ret : boolean = device.disconnect();
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let ret : boolean = device.disconnect();
 ```
 
 ### close(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 close(): boolean
 
 关闭客户端功能，注销client在协议栈的注册，调用该接口后[GattClientDevice](js-apis-bluetooth.md#gattclientdevice)实例将不能再使用。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.close](js-apis-bluetoothmanager.md#closedeprecated-1)替代。
 
@@ -2679,20 +2523,18 @@ close(): boolean
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. let ret : boolean = device.close();
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let ret : boolean = device.close();
 ```
 
 ### getServices(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getServices(callback: AsyncCallback<Array<GattService>>): void
 
 client端获取蓝牙低功耗设备的所有服务，即服务发现 。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.getServices](js-apis-bluetoothmanager.md#getservicesdeprecated)替代。
 
@@ -2712,34 +2554,32 @@ client端获取蓝牙低功耗设备的所有服务，即服务发现 。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // callback 模式
-3. function getServices(code : BusinessError, gattServices : Array<bluetooth.GattService>) {
-4. if (code.code == 0) {
-5. console.info(`bluetooth code is ${code.code}`);
-6. console.info(`bluetooth services size is ${gattServices.length}`);
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// callback 模式
+function getServices(code : BusinessError, gattServices : Array<bluetooth.GattService>) {
+  if (code.code == 0) {
+      console.info(`bluetooth code is ${code.code}`);
+      console.info(`bluetooth services size is ${gattServices.length}`);
 
-8. for (let i = 0; i < gattServices.length; i++) {
-9. console.info(`bluetooth serviceUuid is ${gattServices[i].serviceUuid}`);
-10. }
-11. }
-12. }
+      for (let i = 0; i < gattServices.length; i++) {
+        console.info(`bluetooth serviceUuid is ${gattServices[i].serviceUuid}`);
+      }
+  }
+}
 
-14. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-15. device.connect();
-16. device.getServices(getServices);
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+device.connect();
+device.getServices(getServices);
 ```
 
 ### getServices(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getServices(): Promise<Array<GattService>>
 
 client端获取蓝牙低功耗设备的所有服务，即服务发现。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.getServices](js-apis-bluetoothmanager.md#getservicesdeprecated-1)替代。
 
@@ -2755,24 +2595,22 @@ client端获取蓝牙低功耗设备的所有服务，即服务发现。
 
 **示例：**
 
-```
-1. // Promise 模式
-2. let device : bluetooth.GattClientDevice= bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-3. device.connect();
-4. device.getServices().then((result : Array<bluetooth.GattService>) => {
-5. console.info("getServices successfully:" + JSON.stringify(result));
-6. });
+```js
+// Promise 模式
+let device : bluetooth.GattClientDevice= bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+device.connect();
+device.getServices().then((result : Array<bluetooth.GattService>) => {
+    console.info("getServices successfully:" + JSON.stringify(result));
+});
 ```
 
 ### readCharacteristicValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 readCharacteristicValue(characteristic: BLECharacteristic, callback: AsyncCallback<BLECharacteristic>): void
 
 client端读取蓝牙低功耗设备特定服务的特征值。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.readCharacteristicValue](js-apis-bluetoothmanager.md#readcharacteristicvaluedeprecated)替代。
 
@@ -2793,45 +2631,43 @@ client端读取蓝牙低功耗设备特定服务的特征值。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function readCcc(code : BusinessError, BLECharacteristic : bluetooth.BLECharacteristic) {
-3. if (code.code != 0) {
-4. return;
-5. }
-6. console.info(`bluetooth characteristic uuid: ${BLECharacteristic.characteristicUuid}`);
-7. let value = new Uint8Array(BLECharacteristic.characteristicValue);
-8. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function readCcc(code : BusinessError, BLECharacteristic : bluetooth.BLECharacteristic) {
+  if (code.code != 0) {
+      return;
+  }
+  console.info(`bluetooth characteristic uuid: ${BLECharacteristic.characteristicUuid}`);
+  let value = new Uint8Array(BLECharacteristic.characteristicValue);
+}
 
-10. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-11. let descriptors : Array<bluetooth.BLEDescriptor> = [];
-12. let bufferDesc : ArrayBuffer = new ArrayBuffer(8);
-13. let descV : Uint8Array = new Uint8Array(bufferDesc);
-14. descV[0] = 11;
-15. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-16. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-17. descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
-18. descriptors[0] = descriptor;
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let descriptors : Array<bluetooth.BLEDescriptor> = [];
+let bufferDesc : ArrayBuffer = new ArrayBuffer(8);
+let descV : Uint8Array = new Uint8Array(bufferDesc);
+descV[0] = 11;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
+descriptors[0] = descriptor;
 
-20. let bufferCCC = new ArrayBuffer(8);
-21. let cccV = new Uint8Array(bufferCCC);
-22. cccV[0] = 1;
-23. let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-24. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-25. characteristicValue: bufferCCC, descriptors:descriptors};
+let bufferCCC = new ArrayBuffer(8);
+let cccV = new Uint8Array(bufferCCC);
+cccV[0] = 1;
+let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+characteristicValue: bufferCCC, descriptors:descriptors};
 
-27. device.readCharacteristicValue(characteristic, readCcc);
+device.readCharacteristicValue(characteristic, readCcc);
 ```
 
 ### readCharacteristicValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 readCharacteristicValue(characteristic: BLECharacteristic): Promise<BLECharacteristic>
 
 client端读取蓝牙低功耗设备特定服务的特征值。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.readCharacteristicValue](js-apis-bluetoothmanager.md#readcharacteristicvaluedeprecated-1)替代。
 
@@ -2853,36 +2689,34 @@ client端读取蓝牙低功耗设备特定服务的特征值。
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. let descriptors : Array<bluetooth.BLEDescriptor> = [];
-3. let bufferDesc = new ArrayBuffer(8);
-4. let descV = new Uint8Array(bufferDesc);
-5. descV[0] = 11;
-6. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-7. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-8. descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
-9. descriptors[0] = descriptor;
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let descriptors : Array<bluetooth.BLEDescriptor> = [];
+let bufferDesc = new ArrayBuffer(8);
+let descV = new Uint8Array(bufferDesc);
+descV[0] = 11;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
+descriptors[0] = descriptor;
 
-11. let bufferCCC = new ArrayBuffer(8);
-12. let cccV = new Uint8Array(bufferCCC);
-13. cccV[0] = 1;
-14. let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-15. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-16. characteristicValue: bufferCCC, descriptors:descriptors};
+let bufferCCC = new ArrayBuffer(8);
+let cccV = new Uint8Array(bufferCCC);
+cccV[0] = 1;
+let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+characteristicValue: bufferCCC, descriptors:descriptors};
 
-18. device.readCharacteristicValue(characteristic);
+device.readCharacteristicValue(characteristic);
 ```
 
 ### readDescriptorValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 readDescriptorValue(descriptor: BLEDescriptor, callback: AsyncCallback<BLEDescriptor>): void
 
 client端读取蓝牙低功耗设备特定的特征包含的描述符。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.readDescriptorValue](js-apis-bluetoothmanager.md#readdescriptorvaluedeprecated)替代。
 
@@ -2903,35 +2737,33 @@ client端读取蓝牙低功耗设备特定的特征包含的描述符。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function readDesc(code : BusinessError, BLEDescriptor : bluetooth.BLEDescriptor) {
-3. if (code.code != 0) {
-4. return;
-5. }
-6. console.info(`bluetooth descriptor uuid: ${BLEDescriptor.descriptorUuid}`);
-7. let value = new Uint8Array(BLEDescriptor.descriptorValue);
-8. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function readDesc(code : BusinessError, BLEDescriptor : bluetooth.BLEDescriptor) {
+  if (code.code != 0) {
+      return;
+  }
+  console.info(`bluetooth descriptor uuid: ${BLEDescriptor.descriptorUuid}`);
+  let value = new Uint8Array(BLEDescriptor.descriptorValue);
+}
 
-10. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-11. let bufferDesc = new ArrayBuffer(8);
-12. let descV = new Uint8Array(bufferDesc);
-13. descV[0] = 11;
-14. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-15. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-16. descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
-17. device.readDescriptorValue(descriptor, readDesc);
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let bufferDesc = new ArrayBuffer(8);
+let descV = new Uint8Array(bufferDesc);
+descV[0] = 11;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+  descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
+device.readDescriptorValue(descriptor, readDesc);
 ```
 
 ### readDescriptorValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 readDescriptorValue(descriptor: BLEDescriptor): Promise<BLEDescriptor>
 
 client端读取蓝牙低功耗设备特定的特征包含的描述符。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.readDescriptorValue](js-apis-bluetoothmanager.md#readdescriptorvaluedeprecated-1)替代。
 
@@ -2953,26 +2785,24 @@ client端读取蓝牙低功耗设备特定的特征包含的描述符。
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. let bufferDesc = new ArrayBuffer(8);
-3. let descV = new Uint8Array(bufferDesc);
-4. descV[0] = 11;
-5. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-6. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-7. descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
-8. device.readDescriptorValue(descriptor);
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let bufferDesc = new ArrayBuffer(8);
+let descV = new Uint8Array(bufferDesc);
+descV[0] = 11;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+  descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
+device.readDescriptorValue(descriptor);
 ```
 
 ### writeCharacteristicValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 writeCharacteristicValue(characteristic: BLECharacteristic): boolean
 
 client端向低功耗蓝牙设备写入特定的特征值。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.writeCharacteristicValue](js-apis-bluetoothmanager.md#writecharacteristicvaluedeprecated)替代。
 
@@ -2994,40 +2824,38 @@ client端向低功耗蓝牙设备写入特定的特征值。
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. let descriptors : Array<bluetooth.BLEDescriptor> = [];
-3. let bufferDesc = new ArrayBuffer(8);
-4. let descV = new Uint8Array(bufferDesc);
-5. descV[0] = 11;
-6. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-7. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-8. descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
-9. descriptors[0] = descriptor;
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let descriptors : Array<bluetooth.BLEDescriptor> = [];
+let bufferDesc = new ArrayBuffer(8);
+let descV = new Uint8Array(bufferDesc);
+descV[0] = 11;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+  descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
+descriptors[0] = descriptor;
 
-11. let bufferCCC = new ArrayBuffer(8);
-12. let cccV = new Uint8Array(bufferCCC);
-13. cccV[0] = 1;
-14. let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-15. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-16. characteristicValue: bufferCCC, descriptors:descriptors};
-17. let retWriteCcc : boolean = device.writeCharacteristicValue(characteristic);
-18. if (retWriteCcc) {
-19. console.info('write characteristic successfully');
-20. } else {
-21. console.error('write characteristic failed');
-22. }
+let bufferCCC = new ArrayBuffer(8);
+let cccV = new Uint8Array(bufferCCC);
+cccV[0] = 1;
+let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+  characteristicValue: bufferCCC, descriptors:descriptors};
+let retWriteCcc : boolean = device.writeCharacteristicValue(characteristic);
+if (retWriteCcc) {
+  console.info('write characteristic successfully');
+} else {
+  console.error('write characteristic failed');
+}
 ```
 
 ### writeDescriptorValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 writeDescriptorValue(descriptor: BLEDescriptor): boolean
 
 client端向低功耗蓝牙设备特定的描述符写入二进制数据。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.writeDescriptorValue](js-apis-bluetoothmanager.md#writedescriptorvaluedeprecated)替代。
 
@@ -3049,31 +2877,29 @@ client端向低功耗蓝牙设备特定的描述符写入二进制数据。
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. let bufferDesc = new ArrayBuffer(8);
-3. let descV = new Uint8Array(bufferDesc);
-4. descV[0] = 22;
-5. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-6. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-7. descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
-8. let retWriteDesc : boolean = device.writeDescriptorValue(descriptor);
-9. if (retWriteDesc) {
-10. console.info('bluetooth write descriptor successfully');
-11. } else {
-12. console.error('bluetooth write descriptor failed');
-13. }
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+let bufferDesc = new ArrayBuffer(8);
+let descV = new Uint8Array(bufferDesc);
+descV[0] = 22;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+  descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc};
+let retWriteDesc : boolean = device.writeDescriptorValue(descriptor);
+if (retWriteDesc) {
+  console.info('bluetooth write descriptor successfully');
+} else {
+  console.error('bluetooth write descriptor failed');
+}
 ```
 
 ### setBLEMtuSize(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setBLEMtuSize(mtu: number): boolean
 
 client协商远端蓝牙低功耗设备的最大传输单元（Maximum Transmission Unit, MTU），调用[connect](js-apis-bluetooth.md#connectdeprecated)接口连接成功后才能使用。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.setBLEMtuSize](js-apis-bluetoothmanager.md#setblemtusizedeprecated)替代。
 
@@ -3095,20 +2921,18 @@ client协商远端蓝牙低功耗设备的最大传输单元（Maximum Transmiss
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. device.setBLEMtuSize(128);
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+device.setBLEMtuSize(128);
 ```
 
 ### setNotifyCharacteristicChanged(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setNotifyCharacteristicChanged(characteristic: BLECharacteristic, enable: boolean): boolean
 
 向服务端发送设置通知此特征值请求。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.setNotifyCharacteristicChanged](js-apis-bluetoothmanager.md#setnotifycharacteristicchangeddeprecated)替代。
 
@@ -3131,32 +2955,30 @@ setNotifyCharacteristicChanged(characteristic: BLECharacteristic, enable: boolea
 
 **示例：**
 
-```
-1. // 创建descriptors
-2. let descriptors : Array<bluetooth.BLEDescriptor> = [];
-3. let arrayBuffer = new ArrayBuffer(8);
-4. let descV = new Uint8Array(arrayBuffer);
-5. descV[0] = 11;
-6. let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-7. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
-8. descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
-9. descriptors[0] = descriptor;
-10. let arrayBufferC = new ArrayBuffer(8);
-11. let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-12. characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors:descriptors};
-13. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-14. device.setNotifyCharacteristicChanged(characteristic, false);
+```js
+// 创建descriptors
+let descriptors : Array<bluetooth.BLEDescriptor> = [];
+let arrayBuffer = new ArrayBuffer(8);
+let descV = new Uint8Array(arrayBuffer);
+descV[0] = 11;
+let descriptor : bluetooth.BLEDescriptor = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+  descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer};
+descriptors[0] = descriptor;
+let arrayBufferC = new ArrayBuffer(8);
+let characteristic : bluetooth.BLECharacteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+  characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors:descriptors};
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+device.setNotifyCharacteristicChanged(characteristic, false);
 ```
 
 ### on('BLECharacteristicChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'BLECharacteristicChange', callback: Callback<BLECharacteristic>): void
 
 订阅蓝牙低功耗设备的特征值变化事件。需要先调用setNotifyCharacteristicChanged接口才能接收server端的通知。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.on('BLECharacteristicChange')](js-apis-bluetoothmanager.md#onblecharacteristicchangedeprecated)替代。
 
@@ -3177,25 +2999,23 @@ on(type: 'BLECharacteristicChange', callback: Callback<BLECharacteristic>): void
 
 **示例：**
 
-```
-1. function CharacteristicChange(CharacteristicChangeReq : bluetooth.BLECharacteristic) {
-2. let serviceUuid : string = CharacteristicChangeReq.serviceUuid;
-3. let characteristicUuid : string = CharacteristicChangeReq.characteristicUuid;
-4. let value = new Uint8Array(CharacteristicChangeReq.characteristicValue);
-5. }
-6. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-7. device.on('BLECharacteristicChange', CharacteristicChange);
+```js
+function CharacteristicChange(CharacteristicChangeReq : bluetooth.BLECharacteristic) {
+  let serviceUuid : string = CharacteristicChangeReq.serviceUuid;
+  let characteristicUuid : string = CharacteristicChangeReq.characteristicUuid;
+  let value = new Uint8Array(CharacteristicChangeReq.characteristicValue);
+}
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+device.on('BLECharacteristicChange', CharacteristicChange);
 ```
 
 ### off('BLECharacteristicChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'BLECharacteristicChange', callback?: Callback<BLECharacteristic>): void
 
 取消订阅蓝牙低功耗设备的特征值变化事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.off('BLECharacteristicChange')](js-apis-bluetoothmanager.md#offblecharacteristicchangedeprecated)替代。
 
@@ -3216,20 +3036,18 @@ off(type: 'BLECharacteristicChange', callback?: Callback<BLECharacteristic>): vo
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. device.off('BLECharacteristicChange');
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+device.off('BLECharacteristicChange');
 ```
 
 ### on('BLEConnectionStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'BLEConnectionStateChange', callback: Callback<BLEConnectChangedState>): void
 
 client端订阅蓝牙低功耗设备的连接状态变化事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.on('BLEConnectionStateChange')](js-apis-bluetoothmanager.md#onbleconnectionstatechangedeprecated)替代。
 
@@ -3250,24 +3068,22 @@ client端订阅蓝牙低功耗设备的连接状态变化事件。
 
 **示例：**
 
-```
-1. function ConnectStateChanged(state : bluetooth.BLEConnectChangedState) {
-2. console.info('bluetooth connect state changed');
-3. let connectState : bluetooth.ProfileConnectionState = state.state;
-4. }
-5. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-6. device.on('BLEConnectionStateChange', ConnectStateChanged);
+```js
+function ConnectStateChanged(state : bluetooth.BLEConnectChangedState) {
+  console.info('bluetooth connect state changed');
+  let connectState : bluetooth.ProfileConnectionState = state.state;
+}
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+device.on('BLEConnectionStateChange', ConnectStateChanged);
 ```
 
 ### off('BLEConnectionStateChange')(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'BLEConnectionStateChange', callback?: Callback<BLEConnectChangedState>): void
 
 取消订阅蓝牙低功耗设备的连接状态变化事件。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.off('BLEConnectionStateChange')](js-apis-bluetoothmanager.md#offbleconnectionstatechangedeprecated)替代。
 
@@ -3288,20 +3104,18 @@ off(type: 'BLEConnectionStateChange', callback?: Callback<BLEConnectChangedState
 
 **示例：**
 
-```
-1. let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
-2. device.off('BLEConnectionStateChange');
+```js
+let device : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice('XX:XX:XX:XX:XX:XX');
+device.off('BLEConnectionStateChange');
 ```
 
 ### getDeviceName(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceName(callback: AsyncCallback<string>): void
 
 client获取远端蓝牙低功耗设备名。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.getDeviceName](js-apis-bluetoothmanager.md#getdevicenamedeprecated)替代。
 
@@ -3321,25 +3135,23 @@ client获取远端蓝牙低功耗设备名。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. // callback
-3. let gattClient : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice("XX:XX:XX:XX:XX:XX");
-4. let deviceName : void = gattClient.getDeviceName((err : BusinessError, data : string)=> {
-5. console.info('device name err ' + JSON.stringify(err));
-6. console.info('device name' + JSON.stringify(data));
-7. })
+```js
+import { BusinessError } from '@ohos.base';
+// callback
+let gattClient : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice("XX:XX:XX:XX:XX:XX");
+let deviceName : void = gattClient.getDeviceName((err : BusinessError, data : string)=> {
+    console.info('device name err ' + JSON.stringify(err));
+    console.info('device name' + JSON.stringify(data));
+})
 ```
 
 ### getDeviceName(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDeviceName(): Promise<string>
 
 client获取远端蓝牙低功耗设备名。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.getDeviceName](js-apis-bluetoothmanager.md#getdevicenamedeprecated-1)替代。
 
@@ -3355,23 +3167,21 @@ client获取远端蓝牙低功耗设备名。
 
 **示例：**
 
-```
-1. // promise
-2. let gattClient : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice("XX:XX:XX:XX:XX:XX");
-3. gattClient.getDeviceName().then((data) => {
-4. console.info('device name' + JSON.stringify(data));
-5. })
+```js
+// promise
+let gattClient : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice("XX:XX:XX:XX:XX:XX");
+gattClient.getDeviceName().then((data) => {
+    console.info('device name' + JSON.stringify(data));
+})
 ```
 
 ### getRssiValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRssiValue(callback: AsyncCallback<number>): void
 
 client获取远端蓝牙低功耗设备的信号强度 (Received Signal Strength Indication, RSSI)，调用[connect](js-apis-bluetooth.md#connectdeprecated)接口连接成功后才能使用。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.getRssiValue](js-apis-bluetoothmanager.md#getrssivaluedeprecated)替代。
 
@@ -3391,26 +3201,24 @@ client获取远端蓝牙低功耗设备的信号强度 (Received Signal Strength
 
 **示例：**
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. // callback
-3. let gattClient : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice("XX:XX:XX:XX:XX:XX");
-4. let ret : boolean = gattClient.connect();
-5. gattClient.getRssiValue((err : BusinessError, data : number)=> {
-6. console.info('rssi err ' + JSON.stringify(err));
-7. console.info('rssi value' + JSON.stringify(data));
-8. })
+```js
+import { BusinessError } from '@ohos.base';
+// callback
+let gattClient : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice("XX:XX:XX:XX:XX:XX");
+let ret : boolean = gattClient.connect();
+gattClient.getRssiValue((err : BusinessError, data : number)=> {
+    console.info('rssi err ' + JSON.stringify(err));
+    console.info('rssi value' + JSON.stringify(data));
+})
 ```
 
 ### getRssiValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRssiValue(): Promise<number>
 
 client获取远端蓝牙低功耗设备的信号强度 (Received Signal Strength Indication, RSSI)，调用[connect](js-apis-bluetooth.md#connectdeprecated)接口连接成功后才能使用。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattClientDevice.getRssiValue](js-apis-bluetoothmanager.md#getrssivaluedeprecated-1)替代。
 
@@ -3426,21 +3234,19 @@ client获取远端蓝牙低功耗设备的信号强度 (Received Signal Strength
 
 **示例：**
 
-```
-1. // promise
-2. let gattClient : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice("XX:XX:XX:XX:XX:XX");
-3. gattClient.getRssiValue().then((data : number) => {
-4. console.info('rssi' + JSON.stringify(data));
-5. })
+```js
+// promise
+let gattClient : bluetooth.GattClientDevice = bluetooth.BLE.createGattClientDevice("XX:XX:XX:XX:XX:XX");
+gattClient.getRssiValue().then((data : number) => {
+    console.info('rssi' + JSON.stringify(data));
+})
 ```
 
 ## ScanMode(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，扫描模式。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ScanMode](js-apis-bluetoothmanager.md#scanmodedeprecated)替代。
 
@@ -3457,11 +3263,9 @@ PhonePC/2in1TabletTVWearable
 
 ## BondState(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，配对状态。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BondState](js-apis-bluetoothmanager.md#bondstatedeprecated)替代。
 
@@ -3475,11 +3279,9 @@ PhonePC/2in1TabletTVWearable
 
 ## SppOption(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述spp的配置参数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.SppOption](js-apis-bluetoothmanager.md#sppoptiondeprecated)替代。
 
@@ -3487,17 +3289,15 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| uuid | string | 否 | 否 | spp单据的uuid。 |
+| uuid | string | 否 | 否 | 套接字链路类型的服务UUID。 |
 | secure | boolean | 否 | 否 | 是否是安全通道。 |
 | type | [SppType](js-apis-bluetooth.md#spptypedeprecated) | 否 | 否 | Spp链路类型。 |
 
 ## SppType(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，Spp链路类型。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.SppType](js-apis-bluetoothmanager.md#spptypedeprecated)替代。
 
@@ -3509,11 +3309,9 @@ PhonePC/2in1TabletTVWearable
 
 ## GattService(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述service的接口参数定义。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.GattService](js-apis-bluetoothmanager.md#gattservicedeprecated)替代。
 
@@ -3528,11 +3326,9 @@ PhonePC/2in1TabletTVWearable
 
 ## BLECharacteristic(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述characteristic的接口参数定义 。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLECharacteristic](js-apis-bluetoothmanager.md#blecharacteristicdeprecated)替代。
 
@@ -3547,11 +3343,9 @@ PhonePC/2in1TabletTVWearable
 
 ## BLEDescriptor(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述descriptor的接口参数定义 。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLEDescriptor](js-apis-bluetoothmanager.md#bledescriptordeprecated)替代。
 
@@ -3566,11 +3360,9 @@ PhonePC/2in1TabletTVWearable
 
 ## NotifyCharacteristic(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述server端特征值变化时发送的特征通知参数定义。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.NotifyCharacteristic](js-apis-bluetoothmanager.md#notifycharacteristicdeprecated)替代。
 
@@ -3585,11 +3377,9 @@ PhonePC/2in1TabletTVWearable
 
 ## CharacteristicReadReq(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述server端订阅后收到的特征值读请求事件参数结构。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.CharacteristicReadRequest](js-apis-bluetoothmanager.md#characteristicreadrequestdeprecated)替代。
 
@@ -3605,11 +3395,9 @@ PhonePC/2in1TabletTVWearable
 
 ## CharacteristicWriteReq(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述server端订阅后收到的特征值写请求事件参数结构。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.CharacteristicWriteRequest](js-apis-bluetoothmanager.md#characteristicwriterequestdeprecated)替代。
 
@@ -3628,11 +3416,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DescriptorReadReq(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述server端订阅后收到的描述符读请求事件参数结构。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.DescriptorReadRequest](js-apis-bluetoothmanager.md#descriptorreadrequestdeprecated)替代。
 
@@ -3649,11 +3435,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DescriptorWriteReq(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述server端订阅后收到的描述符写请求事件参数结构。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.DescriptorWriteRequest](js-apis-bluetoothmanager.md#descriptorwriterequestdeprecated)替代。
 
@@ -3673,11 +3457,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ServerResponse(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述server端回复client端读/写请求的响应参数结构。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ServerResponse](js-apis-bluetoothmanager.md#serverresponsedeprecated)替代。
 
@@ -3693,11 +3475,9 @@ PhonePC/2in1TabletTVWearable
 
 ## BLEConnectChangedState(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述Gatt profile连接状态 。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BLEConnectChangedState](js-apis-bluetoothmanager.md#bleconnectchangedstatedeprecated)替代。
 
@@ -3710,11 +3490,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ProfileConnectionState(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，蓝牙设备的profile连接状态。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ProfileConnectionState](js-apis-bluetoothmanager.md#profileconnectionstatedeprecated)替代。
 
@@ -3729,11 +3507,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ScanFilter(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 扫描过滤参数。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ScanFilter](js-apis-bluetoothmanager.md#scanfilterdeprecated)替代。
 
@@ -3747,11 +3523,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ScanOptions(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 扫描的配置参数。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ScanOptions](js-apis-bluetoothmanager.md#scanoptionsdeprecated)替代。
 
@@ -3765,11 +3539,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ScanDuty(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，扫描模式。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ScanDuty](js-apis-bluetoothmanager.md#scandutydeprecated)替代。
 
@@ -3783,11 +3555,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MatchMode(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，硬件过滤匹配模式。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.MatchMode](js-apis-bluetoothmanager.md#matchmodedeprecated)替代。
 
@@ -3800,11 +3570,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ScanResult(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 扫描结果上报数据。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ScanResult](js-apis-bluetoothmanager.md#scanresultdeprecated)替代。
 
@@ -3818,11 +3586,9 @@ PhonePC/2in1TabletTVWearable
 
 ## BluetoothState(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，蓝牙开关状态。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BluetoothState](js-apis-bluetoothmanager.md#bluetoothstatedeprecated)替代。
 
@@ -3840,11 +3606,9 @@ PhonePC/2in1TabletTVWearable
 
 ## AdvertiseSetting(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述蓝牙低功耗设备发送广播的参数。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.AdvertiseSetting](js-apis-bluetoothmanager.md#advertisesettingdeprecated)替代。
 
@@ -3853,16 +3617,14 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | interval | number | 否 | 是 | 表示广播间隔，最小值设置32个slot表示20ms，最大值设置16384个slot，默认值设置为1600个slot表示1s。 |
-| txPower | number | 否 | 是 | 表示发送功率，最小值设置-127，最大值设置1，默认值设置-7，单位dbm。 |
+| txPower | number | 否 | 是 | 表示发送功率，最小值设置-127，最大值设置1，默认值设置-7，单位dBm。 |
 | connectable | boolean | 否 | 是 | 表示是否是可连接广播，默认值设置为true。 |
 
 ## AdvertiseData(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述BLE广播数据包的内容。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.AdvertiseData](js-apis-bluetoothmanager.md#advertisedatadeprecated)替代。
 
@@ -3876,11 +3638,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ManufactureData(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述BLE广播数据包的内容。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ManufactureData](js-apis-bluetoothmanager.md#manufacturedatadeprecated)替代。
 
@@ -3893,11 +3653,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ServiceData(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述广播包中服务数据内容。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ServiceData](js-apis-bluetoothmanager.md#servicedatadeprecated)替代。
 
@@ -3910,11 +3668,9 @@ PhonePC/2in1TabletTVWearable
 
 ## PinRequiredParam(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述配对请求参数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.PinRequiredParam](js-apis-bluetoothmanager.md#pinrequiredparamdeprecated)替代。
 
@@ -3927,11 +3683,9 @@ PhonePC/2in1TabletTVWearable
 
 ## BondStateParam(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述配对状态参数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.BondStateParam](js-apis-bluetoothmanager.md#bondstateparamdeprecated)替代。
 
@@ -3944,11 +3698,9 @@ PhonePC/2in1TabletTVWearable
 
 ## StateChangeParam(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述profile状态改变参数。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.StateChangeParam](js-apis-bluetoothmanager.md#statechangeparamdeprecated)替代。
 
@@ -3961,11 +3713,9 @@ PhonePC/2in1TabletTVWearable
 
 ## DeviceClass(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 描述蓝牙设备的类别。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.DeviceClass](js-apis-bluetoothmanager.md#deviceclassdeprecated)替代。
 
@@ -3979,11 +3729,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MajorClass(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，蓝牙设备主要类别。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.MajorClass](js-apis-bluetoothmanager.md#majorclassdeprecated)替代。
 
@@ -4005,11 +3753,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MajorMinorClass(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，主要次要蓝牙设备类别。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.MajorMinorClass](js-apis-bluetoothmanager.md#majorminorclassdeprecated)替代。
 
@@ -4095,9 +3841,9 @@ PhonePC/2in1TabletTVWearable
 | HEALTH\_PULSE\_OXIMETER | 0x0914 | 表示脉搏血氧仪健康设备。 |
 | HEALTH\_PULSE\_RATE | 0x0918 | 表示脉搏率健康设备。 |
 | HEALTH\_DATA\_DISPLAY | 0x091C | 表示数据显示健康设备。 |
-| HEALTH\_STEP\_COUNTER | 0x0920 | 表示阶梯计数器健康设备。 |
+| HEALTH\_STEP\_COUNTER | 0x0920 | 表示计步器健康设备。 |
 | HEALTH\_BODY\_COMPOSITION\_ANALYZER | 0x0924 | 表示身体成分分析仪健康设备。 |
-| HEALTH\_PEAK\_FLOW\_MOITOR | 0x0928 | 表示湿度计健康设备。 |
+| HEALTH\_PEAK\_FLOW\_MOITOR | 0x0928 | 表示峰值流量监控仪健康设备。 |
 | HEALTH\_MEDICATION\_MONITOR | 0x092C | 表示药物监视仪健康设备。 |
 | HEALTH\_KNEE\_PROSTHESIS | 0x0930 | 表示膝盖假肢健康设备。 |
 | HEALTH\_ANKLE\_PROSTHESIS | 0x0934 | 表示脚踝假肢健康设备。 |
@@ -4106,11 +3852,9 @@ PhonePC/2in1TabletTVWearable
 
 ## PlayingState(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 枚举，蓝牙A2DP 播放状态。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.PlayingState](js-apis-bluetoothmanager.md#playingstatedeprecated)替代。
 
@@ -4118,16 +3862,14 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| STATE\_NOT\_PLAYING | 0x0000 | 表示未播放。 |
-| STATE\_PLAYING | 0x0001 | 表示正在播放。 |
+| STATE\_NOT\_PLAYING | 0 | 表示未播放。 |
+| STATE\_PLAYING | 1 | 表示正在播放。 |
 
 ## ProfileId(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 蓝牙profile枚举，API9新增PROFILE\_HID\_HOST，PROFILE\_PAN\_NETWORK。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃。建议使用[bluetoothManager.ProfileId](js-apis-bluetoothmanager.md#profileiddeprecated)替代。
 

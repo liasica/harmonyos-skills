@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_RTShadowAOCreateInfo
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_RTShadowAOCreateInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:877e0d6cf7447285312f741b8af0a5e250898a240412ffb370ab259249f60d0a
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7b151f532987cf6ebe2bc6304c1d9c0238fc9dc1ec8caea114ab0d52e5d82211
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述创建支持光线追踪阴影和环境光遮蔽效果[XEG\_RTVisibleMask](xengine-kit-xengine.md#xeg_rtvisiblemask)实例的初始化信息。当结构体中的信息变化时，需要创建新的[XEG\_RTVisibleMask](xengine-kit-xengine.md#xeg_rtvisiblemask)对象。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -43,14 +37,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### aoOnlyInShadow
 
-PhonePC/2in1TabletTV
-
-```
-1. bool XEG_RTShadowAOCreateInfo::aoOnlyInShadow
+```cpp
+bool XEG_RTShadowAOCreateInfo::aoOnlyInShadow
 ```
 
 **描述**
@@ -59,10 +49,8 @@ PhonePC/2in1TabletTV
 
 ### denoiseMode
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_DenoiseQualityMode XEG_RTShadowAOCreateInfo::denoiseMode
+```cpp
+XEG_DenoiseQualityMode XEG_RTShadowAOCreateInfo::denoiseMode
 ```
 
 **描述**
@@ -71,10 +59,8 @@ PhonePC/2in1TabletTV
 
 ### enableRTAO
 
-PhonePC/2in1TabletTV
-
-```
-1. bool XEG_RTShadowAOCreateInfo::enableRTAO
+```cpp
+bool XEG_RTShadowAOCreateInfo::enableRTAO
 ```
 
 **描述**
@@ -83,10 +69,8 @@ PhonePC/2in1TabletTV
 
 ### enableRTShadow
 
-PhonePC/2in1TabletTV
-
-```
-1. bool XEG_RTShadowAOCreateInfo::enableRTShadow
+```cpp
+bool XEG_RTShadowAOCreateInfo::enableRTShadow
 ```
 
 **描述**
@@ -95,10 +79,8 @@ PhonePC/2in1TabletTV
 
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_RTShadowAOCreateInfo::pNext
+```cpp
+const void* XEG_RTShadowAOCreateInfo::pNext
 ```
 
 **描述**
@@ -107,10 +89,8 @@ PhonePC/2in1TabletTV
 
 ### reverseZ
 
-PhonePC/2in1TabletTV
-
-```
-1. bool XEG_RTShadowAOCreateInfo::reverseZ
+```cpp
+bool XEG_RTShadowAOCreateInfo::reverseZ
 ```
 
 **描述**
@@ -119,10 +99,8 @@ PhonePC/2in1TabletTV
 
 ### rtInputGbufferSize
 
-PhonePC/2in1TabletTV
-
-```
-1. VkExtent2D XEG_RTShadowAOCreateInfo::rtInputGbufferSize
+```cpp
+VkExtent2D XEG_RTShadowAOCreateInfo::rtInputGbufferSize
 ```
 
 **描述**
@@ -131,10 +109,8 @@ PhonePC/2in1TabletTV
 
 ### rtShadowAOSize
 
-PhonePC/2in1TabletTV
-
-```
-1. VkExtent2D XEG_RTShadowAOCreateInfo::rtShadowAOSize
+```cpp
+VkExtent2D XEG_RTShadowAOCreateInfo::rtShadowAOSize
 ```
 
 **描述**
@@ -143,10 +119,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_RTShadowAOCreateInfo::sType
+```cpp
+XEG_StructureType XEG_RTShadowAOCreateInfo::sType
 ```
 
 **描述**
@@ -155,10 +129,8 @@ PhonePC/2in1TabletTV
 
 ### traversalMode
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_TraversalMode XEG_RTShadowAOCreateInfo::traversalMode
+```cpp
+XEG_TraversalMode XEG_RTShadowAOCreateInfo::traversalMode
 ```
 
 **描述**

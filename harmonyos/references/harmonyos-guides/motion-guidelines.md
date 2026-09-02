@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/motion-guidel
 title: 获取用户动作开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 获取用户动作开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c64999675c5da42a933e95ef5dce74e7ecc29e204731ca74440ada48de3e8d96
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c31cec8b70bcb1c7016875f59fffdc455bd18466d5bab5267c7f4619dc412d4c
 ---
 
 ## 场景介绍
@@ -30,15 +30,23 @@ content_hash: sha256:c64999675c5da42a933e95ef5dce74e7ecc29e204731ca74440ada48de3
 
 使用motion模块获取用户操作手时，需要权限：ohos.permission.ACTIVITY\_MOTION 或 ohos.permission.DETECT\_GESTURE，具体申请方式请参考[声明权限](declare-permissions.md)。
 
-```
-1. "requestPermissions":[
-2. {
-3. "name" : "ohos.permission.ACTIVITY_MOTION"
-4. },
-5. {
-6. "name" : "ohos.permission.DETECT_GESTURE"
-7. }
-8. ]
+```json5
+"requestPermissions":[
+    {
+      "name" : "ohos.permission.ACTIVITY_MOTION",
+      // reason和usedScene按需填写
+      "reason" : "", // 用于应用上架校验
+      "usedScene" : {
+         "abilities" : [
+            "" // 使用权限的名称
+         ],
+         "when" : "" // 调用时机
+      },
+    },
+    {
+      "name" : "ohos.permission.DETECT_GESTURE"
+    }
+  ]
 ```
 
 ### 约束与限制
@@ -54,49 +62,55 @@ content_hash: sha256:c64999675c5da42a933e95ef5dce74e7ecc29e204731ca74440ada48de3
 
 1. 导入模块。
 
-   ```
-   1. import { motion } from '@kit.MultimodalAwarenessKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { motion } from '@kit.MultimodalAwarenessKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 定义回调函数接收操作手结果
 
-   ```
-   1. let callback:Callback<motion.OperatingHandStatus> = (data:motion.OperatingHandStatus) => {
-   2. console.info('callback succeeded' + data);
-   3. };
+   ```ts
+   let callback:Callback<motion.OperatingHandStatus> = (data:motion.OperatingHandStatus) => {
+     console.info('callback succeeded' + data);
+   };
    ```
 3. 订阅操作手感知
 
-   ```
-   1. try {
-   2. motion.on('operatingHandChanged', callback);
-   3. console.info("on succeeded");
-   4. } catch (err) {
-   5. let error = err as BusinessError;
-   6. console.error("Failed on and err code is " + error.code);
-   7. }
+   ```typescript
+   try {
+     motion.on('operatingHandChanged', callback);
+     console.info('on succeeded');
+     // ...
+   } catch (err) {
+     let error = err as BusinessError;
+     console.error('Failed on and err code is ' + error.code);
+     // ...
+   }
    ```
 4. 取消订阅操作手感知
 
-   ```
-   1. try {
-   2. motion.off('operatingHandChanged');
-   3. console.info("off succeeded");
-   4. } catch (err) {
-   5. let error = err as BusinessError;
-   6. console.error("Failed off and err code is " + error.code);
-   7. }
+   ```typescript
+   try {
+     motion.off('operatingHandChanged');
+     console.info('off succeeded');
+     // ...
+   } catch (err) {
+     let error = err as BusinessError;
+     console.error('Failed off and err code is ' + error.code);
+     // ...
+   }
    ```
 5. 获取最新操作手状态
 
-   ```
-   1. try {
-   2. let data:motion.OperatingHandStatus = motion.getRecentOperatingHandStatus();
-   3. console.info('get succeeded' + data);
-   4. } catch (err) {
-   5. let error = err as BusinessError;
-   6. console.error("Failed get and err code is " + error.code);
-   7. }
+   ```typescript
+   try {
+     let data:motion.OperatingHandStatus = motion.getRecentOperatingHandStatus();
+     console.info('get succeeded' + data);
+     // ...
+   } catch (err) {
+     let error = err as BusinessError;
+     console.error('Failed get and err code is ' + error.code);
+     // ...
+   }
    ```
 
 ## 获取握持手状态开发指导
@@ -112,12 +126,12 @@ content_hash: sha256:c64999675c5da42a933e95ef5dce74e7ecc29e204731ca74440ada48de3
 
 使用motion模块获取用户握持手时，需要权限： ohos.permission.DETECT\_GESTURE，具体申请方式请参考[声明权限](declare-permissions.md)。
 
-```
-1. "requestPermissions":[
-2. {
-3. "name" : "ohos.permission.DETECT_GESTURE"
-4. }
-5. ]
+```json5
+"requestPermissions":[
+    {
+      "name" : "ohos.permission.DETECT_GESTURE"
+    }
+  ]
 ```
 
 ### 约束与限制
@@ -138,36 +152,40 @@ content_hash: sha256:c64999675c5da42a933e95ef5dce74e7ecc29e204731ca74440ada48de3
 
 1. 导入模块。
 
-   ```
-   1. import { motion } from '@kit.MultimodalAwarenessKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { motion } from '@kit.MultimodalAwarenessKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 定义回调函数接收握持手结果
 
-   ```
-   1. let callback:Callback<motion.HoldingHandStatus> = (data:motion.HoldingHandStatus) => {
-   2. console.info('callback succeeded' + data);
-   3. };
+   ```typescript
+   let callback:Callback<motion.HoldingHandStatus> = (data:motion.HoldingHandStatus) => {
+     console.info('callback succeeded' + data);
+   };
    ```
 3. 订阅握持手感知
 
-   ```
-   1. try {
-   2. motion.on('holdingHandChanged', callback);
-   3. console.info("on succeeded");
-   4. } catch (err) {
-   5. let error = err as BusinessError;
-   6. console.error("Failed on and err code is " + error.code);
-   7. }
+   ```typescript
+   try {
+     motion.on('holdingHandChanged', callback);
+     console.info('on succeeded');
+     // ...
+   } catch (err) {
+     let error = err as BusinessError;
+     console.error('Failed on and err code is ' + error.code);
+     // ...
+   }
    ```
 4. 取消订阅握持手感知
 
-   ```
-   1. try {
-   2. motion.off('holdingHandChanged');
-   3. console.info("off succeeded");
-   4. } catch (err) {
-   5. let error = err as BusinessError;
-   6. console.error("Failed off and err code is " + error.code);
-   7. }
+   ```typescript
+   try {
+     motion.off('holdingHandChanged');
+     console.info('off succeeded');
+     // ...
+   } catch (err) {
+     let error = err as BusinessError;
+     console.error('Failed off and err code is ' + error.code);
+     // ...
+   }
    ```

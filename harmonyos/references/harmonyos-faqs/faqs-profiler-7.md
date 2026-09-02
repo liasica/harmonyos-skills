@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler-7
 title: Profiler工具对Wearable设备开启泳道录制时会存在概率异常
 breadcrumb: FAQ > DevEco Studio > 性能分析 > Profiler工具对Wearable设备开启泳道录制时会存在概率异常
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:14+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:17+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f4d859a2c552d669be7fe0bf50f76035bdc94886ebeeede873ac970d1974b2b7
 ---
 

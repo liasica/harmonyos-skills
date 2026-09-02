@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-range
 title: operator==
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > Range > operator==
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:06+08:00
+scraped_at: 2026-09-02T14:50:39+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:20cf81ba1b52cd01061e78494290c4e539d666218c7936507155920c0efb4c7a
+content_hash: sha256:41e910b376c2e58ec8535b82a2ff7ae5a27848bcf6235028edd3e1c3677015ca
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:20cf81ba1b52cd01061e78494290c4e539d666218c7936507155920c0ef
 
 ## 函数原型
 
-```
-1. bool operator==(const Range<T>&rht) const
+```cpp
+bool operator==(const Range<T>&rht) const
 ```
 
 ## 参数说明
@@ -36,14 +36,14 @@ false：不相等。
 
 ## 调用示例
 
-```
-1. int min = 0;
-2. int max = 1024;
-3. int max2 = 1024;
-4. Range<int> range1(&min, &max); // 上界为1024Bytes，下界为0
-5. Range<int> range2(&min, &max); // 上界为1024Bytes，下界为0
-6. Range<int> range3(&min, &max2); // 上界为1024Bytes，下界为0
-
-8. auto ret1 = range1 == range2; // true
-9. auto ret2 = range1 == range3; // true
+```cpp
+int min = 0;
+int max = 1024;
+int max2 = 1024;
+Range<int> range1(&min, &max); // 上界为1024Bytes，下界为0
+Range<int> range2(&min, &max); // 上界为1024Bytes，下界为0
+Range<int> range3(&min, &max2); // 上界为1024Bytes，下界为0
+ 
+auto ret1 = range1 == range2; // true
+auto ret2 = range1 == range3; // true
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (LiteResultSet)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Class (LiteResultSet)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fd5ed7fc75301aa7b4e6c54e0129c38fb86dbae840f71105b48169b656671efe
+scraped_at: 2026-09-02T15:00:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:356991e18c84e67588e64af0370321912cfb7df5b1cfd904d11dde99fbd1c511
 ---
 
 提供通过查询数据库生成的数据库结果集的访问方法。结果集是指用户调用关系型数据库查询接口之后返回的结果集合，提供了多种灵活的数据访问方式，以便用户获取各项数据。
@@ -14,22 +14,18 @@ LiteResultSet实例不会实时刷新。使用结果集后，如果数据库中�
 
 下列API示例中，都需先使用[queryWithoutRowCount](arkts-apis-data-relationalstore-rdbstore.md#querywithoutrowcount23)、[querySqlWithoutRowCount](arkts-apis-data-relationalstore-rdbstore.md#querysqlwithoutrowcount23)等query类方法中任一方法获取到LiteResultSet实例，再通过此实例调用对应方法。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本class首批接口从API version 23开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { relationalStore } from '@kit.ArkData';
+```ts
+import { relationalStore } from '@kit.ArkData';
 ```
 
 ## getColumnNames23+
-
-PhonePC/2in1TabletTVWearable
 
 getColumnNames(): Array<string>
 
@@ -64,24 +60,23 @@ getColumnNames(): Array<string>
 
 **示例：**
 
-```
-1. async function getColumnNamesExample(store : relationalStore.RdbStore){
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. // 联表查询EMPLOYEE1和EMPLOYEE2，并获取重名的列名。store为获取到的RdbStore实例。
-5. resultSet = await store.querySqlWithoutRowCount("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
-6. if (resultSet != undefined) {
-7. const names = resultSet.getColumnNames();
-8. }
-9. } catch (err) {
-10. console.error(`Failed to get column names: code:${err.code}, message:${err.message}`);
-11. }
-12. }
+```ts
+async function getColumnNamesExample(store : relationalStore.RdbStore){
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    // 联表查询EMPLOYEE1和EMPLOYEE2，并获取重名的列名。store为获取到的RdbStore实例。
+    resultSet = await store.querySqlWithoutRowCount("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+    if (resultSet != undefined) {
+      const names = resultSet.getColumnNames();
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`Failed to get column names: code:${err.code}, message:${err.message}`);
+  }
+}
 ```
 
 ## getColumnIndex23+
-
-PhonePC/2in1TabletTVWearable
 
 getColumnIndex(columnName: string): number
 
@@ -95,13 +90,13 @@ getColumnIndex(columnName: string): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| columnName | string | 是 | 表示结果集中指定列的名称。当结果集中包含重名列时，返回值会不符合预期。 |
+| columnName | string | 是 | 表示结果集中指定列的名称。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回指定列的索引。 |
+| number | 返回指定列的索引。当结果集中包含重名列时，返回值会不符合预期。 |
 
 **错误码：**
 
@@ -120,26 +115,25 @@ getColumnIndex(columnName: string): number
 
 **示例：**
 
-```
-1. async function getColumnIndexExample(store : relationalStore.RdbStore){
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. const idIndex = resultSet.getColumnIndex("ID");
-7. const nameIndex = resultSet.getColumnIndex("NAME");
-8. const ageIndex = resultSet.getColumnIndex("AGE");
-9. const salaryIndex = resultSet.getColumnIndex("SALARY");
-10. }
-11. } catch (err) {
-12. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-13. }
-14. }
+```ts
+async function getColumnIndexExample(store : relationalStore.RdbStore){
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      const idIndex = resultSet.getColumnIndex("ID");
+      const nameIndex = resultSet.getColumnIndex("NAME");
+      const ageIndex = resultSet.getColumnIndex("AGE");
+      const salaryIndex = resultSet.getColumnIndex("SALARY");
+    }
+    resultSet!.close();
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getColumnName23+
-
-PhonePC/2in1TabletTVWearable
 
 getColumnName(columnIndex: number): string
 
@@ -179,26 +173,25 @@ getColumnName(columnIndex: number): string
 
 **示例：**
 
-```
-1. async function getColumnNameExample(store : relationalStore.RdbStore){
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. const id = resultSet.getColumnName(0);
-7. const name = resultSet.getColumnName(1);
-8. const age = resultSet.getColumnName(2);
-9. const salary = resultSet.getColumnName(3);
-10. }
-11. } catch (err) {
-12. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-13. }
-14. }
+```ts
+async function getColumnNameExample(store : relationalStore.RdbStore){
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      const id = resultSet.getColumnName(0);
+      const name = resultSet.getColumnName(1);
+      const age = resultSet.getColumnName(2);
+      const salary = resultSet.getColumnName(3);
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getColumnType23+
-
-PhonePC/2in1TabletTVWearable
 
 getColumnType(columnIdentifier: number | string): Promise<ColumnType>
 
@@ -239,34 +232,33 @@ getColumnType(columnIdentifier: number | string): Promise<ColumnType>
 
 **示例：**
 
-```
-1. async function getColumnTypeExample(store : relationalStore.RdbStore){
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. // 方式一：通过列名获取列数据类型
-8. let idType = await resultSet.getColumnType("ID");
-9. let nameType = await resultSet.getColumnType("NAME");
-10. let ageType = await resultSet.getColumnType("AGE");
-11. let salaryType = await resultSet.getColumnType("SALARY");
-12. let codesType = await resultSet.getColumnType("CODES");
-13. // 方式二：通过列索引获取列数据类型
-14. let identityType = await resultSet.getColumnType(5);
-15. let assetDataType = await resultSet.getColumnType(6);
-16. let assetsDataType = await resultSet.getColumnType(7);
-17. let floatArrayType = await resultSet.getColumnType(8);
-18. }
-19. } catch (err) {
-20. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-21. }
-22. }
+```ts
+async function getColumnTypeExample(store : relationalStore.RdbStore){
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      // 方式一：通过列名获取列数据类型
+      let idType = await resultSet.getColumnType("ID");
+      let nameType = await resultSet.getColumnType("NAME");
+      let ageType = await resultSet.getColumnType("AGE");
+      let salaryType = await resultSet.getColumnType("SALARY");
+      let codesType = await resultSet.getColumnType("CODES");
+      // 方式二：通过列索引获取列数据类型
+      let identityType = await resultSet.getColumnType(5);
+      let assetDataType = await resultSet.getColumnType(6);
+      let assetsDataType = await resultSet.getColumnType(7);
+      let floatArrayType = await resultSet.getColumnType(8);
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getColumnTypeSync23+
-
-PhonePC/2in1TabletTVWearable
 
 getColumnTypeSync(columnIdentifier: number | string): ColumnType
 
@@ -307,34 +299,33 @@ getColumnTypeSync(columnIdentifier: number | string): ColumnType
 
 **示例：**
 
-```
-1. async function getColumnTypeSyncExample(store : relationalStore.RdbStore){
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. // 方式一：通过列名获取列数据类型
-8. let idType = resultSet.getColumnTypeSync("ID");
-9. let nameType = resultSet.getColumnTypeSync("NAME");
-10. let ageType = resultSet.getColumnTypeSync("AGE");
-11. let salaryType = resultSet.getColumnTypeSync("SALARY");
-12. let codesType = resultSet.getColumnTypeSync("CODES");
-13. // 方式二：通过列索引获取列数据类型
-14. let identityType = resultSet.getColumnTypeSync(5);
-15. let assetDataType = resultSet.getColumnTypeSync(6);
-16. let assetsDataType = resultSet.getColumnTypeSync(7);
-17. let floatArrayType = resultSet.getColumnTypeSync(8);
-18. }
-19. } catch (err) {
-20. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-21. }
-22. }
+```ts
+async function getColumnTypeSyncExample(store : relationalStore.RdbStore){
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      // 方式一：通过列名获取列数据类型
+      let idType = resultSet.getColumnTypeSync("ID");
+      let nameType = resultSet.getColumnTypeSync("NAME");
+      let ageType = resultSet.getColumnTypeSync("AGE");
+      let salaryType = resultSet.getColumnTypeSync("SALARY");
+      let codesType = resultSet.getColumnTypeSync("CODES");
+      // 方式二：通过列索引获取列数据类型
+      let identityType = resultSet.getColumnTypeSync(5);
+      let assetDataType = resultSet.getColumnTypeSync(6);
+      let assetsDataType = resultSet.getColumnTypeSync(7);
+      let floatArrayType = resultSet.getColumnTypeSync(8);
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## goToNextRow23+
-
-PhonePC/2in1TabletTVWearable
 
 goToNextRow(): boolean
 
@@ -369,23 +360,22 @@ goToNextRow(): boolean
 
 **示例：**
 
-```
-1. async function goToNextRowExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. }
-8. } catch (err) {
-9. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-10. }
-11. }
+```ts
+async function goToNextRowExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getValue23+
-
-PhonePC/2in1TabletTVWearable
 
 getValue(columnIndex: number): ValueType
 
@@ -421,24 +411,23 @@ getValue(columnIndex: number): ValueType
 
 **示例：**
 
-```
-1. async function getValueExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const name = resultSet.getValue(resultSet.getColumnIndex("NAME"));
-8. }
-9. } catch (err) {
-10. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-11. }
-12. }
+```ts
+async function getValueExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const name = resultSet.getValue(resultSet.getColumnIndex("NAME"));
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getBlob23+
-
-PhonePC/2in1TabletTVWearable
 
 getBlob(columnIndex: number): Uint8Array
 
@@ -477,24 +466,23 @@ getBlob(columnIndex: number): Uint8Array
 
 **示例：**
 
-```
-1. async function getBlobExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const name = resultSet.getBlob(resultSet.getColumnIndex("CODES"));
-8. }
-9. } catch (err) {
-10. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-11. }
-12. }
+```ts
+async function getBlobExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const name = resultSet.getBlob(resultSet.getColumnIndex("CODES"));
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getString23+
-
-PhonePC/2in1TabletTVWearable
 
 getString(columnIndex: number): string
 
@@ -535,24 +523,23 @@ getString(columnIndex: number): string
 
 **示例：**
 
-```
-1. async function getStringExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
-8. }
-9. } catch (err) {
-10. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-11. }
-12. }
+```ts
+async function getStringExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const name = resultSet.getString(resultSet.getColumnIndex("NAME"));
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getLong23+
-
-PhonePC/2in1TabletTVWearable
 
 getLong(columnIndex: number): number
 
@@ -595,24 +582,23 @@ getLong(columnIndex: number): number
 
 **示例：**
 
-```
-1. async function getLongExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
-8. }
-9. } catch (err) {
-10. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-11. }
-12. }
+```ts
+async function getLongExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const age = resultSet.getLong(resultSet.getColumnIndex("AGE"));
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getDouble23+
-
-PhonePC/2in1TabletTVWearable
 
 getDouble(columnIndex: number): number
 
@@ -651,24 +637,23 @@ getDouble(columnIndex: number): number
 
 **示例：**
 
-```
-1. async function getDoubleExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
-8. }
-9. } catch (err) {
-10. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-11. }
-12. }
+```ts
+async function getDoubleExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const salary = resultSet.getDouble(resultSet.getColumnIndex("SALARY"));
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getAsset23+
-
-PhonePC/2in1TabletTVWearable
 
 getAsset(columnIndex: number): Asset
 
@@ -705,24 +690,23 @@ getAsset(columnIndex: number): Asset
 
 **示例：**
 
-```
-1. async function getAssetExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const doc = resultSet.getAsset(resultSet.getColumnIndex("DOC"));
-8. }
-9. } catch (err) {
-10. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-11. }
-12. }
+```ts
+async function getAssetExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const doc = resultSet.getAsset(resultSet.getColumnIndex("DOC"));
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getAssets23+
-
-PhonePC/2in1TabletTVWearable
 
 getAssets(columnIndex: number): Assets
 
@@ -759,24 +743,23 @@ getAssets(columnIndex: number): Assets
 
 **示例：**
 
-```
-1. async function getAssetsExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const name = resultSet.getAssets(resultSet.getColumnIndex("DOCS"));
-8. }
-9. } catch (err) {
-10. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-11. }
-12. }
+```ts
+async function getAssetsExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const name = resultSet.getAssets(resultSet.getColumnIndex("DOCS"));
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getRow23+
-
-PhonePC/2in1TabletTVWearable
 
 getRow(): ValuesBucket
 
@@ -810,25 +793,24 @@ getRow(): ValuesBucket
 
 **示例：**
 
-```
-1. async function getRowExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const rowData = resultSet.getRow();
-8. console.info(`rowData: ${JSON.stringify(rowData)}`);
-9. }
-10. } catch (err) {
-11. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-12. }
-13. }
+```ts
+async function getRowExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const rowData = resultSet.getRow();
+      console.info(`rowData: ${JSON.stringify(rowData)}`);
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getCurrentRowData23+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentRowData(): RowData
 
@@ -862,26 +844,25 @@ getCurrentRowData(): RowData
 
 **示例：**
 
-```
-1. async function getCurrentRowDataExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. // 联表查询EMPLOYEE1和EMPLOYEE2，并获取当前行包含重名列名的值。store为获取到的RdbStore实例。
-5. resultSet = await store.querySqlWithoutRowCount("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
-6. if (resultSet != undefined) {
-7. resultSet.goToNextRow();
-8. const rowData = resultSet.getCurrentRowData();
-9. console.info(`rowData: ${JSON.stringify(rowData)}`);
-10. }
-11. } catch (err) {
-12. console.error(`Failed to get row data: code:${err.code}, message:${err.message}`);
-13. }
-14. }
+```ts
+async function getCurrentRowDataExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    // 联表查询EMPLOYEE1和EMPLOYEE2，并获取当前行包含重名列名的值。store为获取到的RdbStore实例。
+    resultSet = await store.querySqlWithoutRowCount("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const rowData = resultSet.getCurrentRowData();
+      console.info(`rowData: ${JSON.stringify(rowData)}`);
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`Failed to get row data: code:${err.code}, message:${err.message}`);
+  }
+}
 ```
 
 ## getRows23+
-
-PhonePC/2in1TabletTVWearable
 
 getRows(maxCount: number, position?: number): Promise<Array<ValuesBucket>>
 
@@ -923,42 +904,41 @@ getRows(maxCount: number, position?: number): Promise<Array<ValuesBucket>>
 
 **示例：**
 
-```
-1. async function getRowsExample(store : relationalStore.RdbStore) {
-2. // 以查到100条数据为例
-3. try {
-4. let resultSet: relationalStore.LiteResultSet | undefined;
-5. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-6. // 示例1：仅指定maxCount
-7. if (resultSet != undefined) {
-8. let rows: Array<relationalStore.ValuesBucket>;
-9. let maxCount: number = 50;
-10. // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
-11. // getRows会自动移动结果集当前行到上次getRows获取结束位置的下一行，goToNextRow等接口移动
-12. while ((rows = await resultSet.getRows(maxCount)).length != 0) {
-13. console.info(JSON.stringify(rows[0]));
-14. }
-15. }
-
-17. // 示例2：指定maxCount和起始的position
-18. if (resultSet != undefined) {
-19. let rows: Array<relationalStore.ValuesBucket>;
-20. let maxCount: number = 50;
-21. let position: number = 50;
-22. while ((rows = await resultSet.getRows(maxCount, position)).length != 0) {
-23. console.info(JSON.stringify(rows[0]));
-24. position += rows.length;
-25. }
-26. }
-27. } catch (err) {
-28. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-29. }
-30. }
+```ts
+async function getRowsExample(store : relationalStore.RdbStore) {
+  // 以查到100条数据为例
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    // 示例1：仅指定maxCount
+    if (resultSet != undefined) {
+      let rows: Array<relationalStore.ValuesBucket>;
+      let maxCount: number = 50;
+      // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
+      // getRows会自动移动结果集当前行到上次getRows获取结束位置的下一行，goToNextRow等接口移动
+      while ((rows = await resultSet.getRows(maxCount)).length != 0) {
+        console.info(JSON.stringify(rows[0]));
+      }
+    }
+  
+    // 示例2：指定maxCount和起始的position
+    if (resultSet != undefined) {
+      let rows: Array<relationalStore.ValuesBucket>;
+      let maxCount: number = 50;
+      let position: number = 50;
+      while ((rows = await resultSet.getRows(maxCount, position)).length != 0) {
+        console.info(JSON.stringify(rows[0]));
+        position += rows.length;
+      }
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## getRowsData23+
-
-PhonePC/2in1TabletTVWearable
 
 getRowsData(maxCount: number, position?: number): Promise<RowsData>
 
@@ -1000,51 +980,50 @@ getRowsData(maxCount: number, position?: number): Promise<RowsData>
 
 **示例：**
 
-```
-1. async function getRowsDataExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. // 联表查询EMPLOYEE1和EMPLOYEE2，并获取多行包含重名列名的值。store为获取到的RdbStore实例。
-5. resultSet = await store.querySqlWithoutRowCount("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
-6. // 以查到50条数据为例
-7. // 示例1：仅指定maxCount
-8. if (resultSet != undefined) {
-9. let rowsData: relationalStore.RowsData;
-10. // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
-11. // getRowsData会自动移动结果集当前行到上次getRowsData获取结束位置的下一行，无需使用goToNextRow接口移动
-12. let maxCount: number = 50;
-13. let rowCount: number = 0;
-14. while ((rowsData = await resultSet.getRowsData(maxCount)).length != 0) {
-15. rowsData.forEach((rowData, index) => {
-16. // 第rowCount + index + 1行的查询结果
-17. console.info(`${rowCount + index + 1}：${rowData}`);
-18. });
-19. rowCount += rowsData.length;
-20. }
-21. }
-
-23. // 示例2：指定maxCount和起始的position
-24. if (resultSet != undefined) {
-25. let rowsData: relationalStore.RowsData;
-26. let maxCount: number = 50;
-27. let position: number = 50;
-28. while ((rowsData = await resultSet.getRowsData(maxCount, position)).length != 0) {
-29. rowsData.forEach((rowData, index) => {
-30. // 第position + index + 1行的查询结果
-31. console.info(`${position + index + 1}：${rowData}`);
-32. });
-33. position += rowsData.length;
-34. }
-35. }
-36. } catch (err) {
-37. console.error(`Failed to get rows data: code:${err.code}, message:${err.message}`);
-38. }
-39. }
+```ts
+async function getRowsDataExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    // 联表查询EMPLOYEE1和EMPLOYEE2，并获取多行包含重名列名的值。store为获取到的RdbStore实例。
+    resultSet = await store.querySqlWithoutRowCount("SELECT e1.NAME, e2.NAME, e1.AGE, e2.AGE FROM EMPLOYEE1 e1 LEFT JOIN EMPLOYEE2 e2 ON e1.SALARY=e2.SALARY");
+    // 以查到50条数据为例
+    // 示例1：仅指定maxCount
+    if (resultSet != undefined) {
+      let rowsData: relationalStore.RowsData;
+      // 从结果集的当前行（默认首次获取数据时为当前结果集的第一行，后续为上次获取数据结束位置的下一行）开始获取数据
+      // getRowsData会自动移动结果集当前行到上次getRowsData获取结束位置的下一行，无需使用goToNextRow接口移动
+      let maxCount: number = 50;
+      let rowCount: number = 0;
+      while ((rowsData = await resultSet.getRowsData(maxCount)).length != 0) {
+        rowsData.forEach((rowData, index) => {
+          // 第rowCount + index + 1行的查询结果
+          console.info(`${rowCount + index + 1}：${rowData}`);
+        });
+        rowCount += rowsData.length;
+      }
+    }
+  
+    // 示例2：指定maxCount和起始的position
+    if (resultSet != undefined) {
+      let rowsData: relationalStore.RowsData;
+      let maxCount: number = 50;
+      let position: number = 50;
+      while ((rowsData = await resultSet.getRowsData(maxCount, position)).length != 0) {
+        rowsData.forEach((rowData, index) => {
+          // 第position + index + 1行的查询结果
+          console.info(`${position + index + 1}：${rowData}`);
+        });
+        position += rowsData.length;
+      }
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`Failed to get rows data: code:${err.code}, message:${err.message}`);
+  }
+}
 ```
 
 ## isColumnNull23+
-
-PhonePC/2in1TabletTVWearable
 
 isColumnNull(columnIndex: number): boolean
 
@@ -1085,24 +1064,23 @@ isColumnNull(columnIndex: number): boolean
 
 **示例：**
 
-```
-1. async function isColumnNullExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.goToNextRow();
-7. const name = resultSet.isColumnNull(resultSet.getColumnIndex("NAME"));
-8. }
-9. } catch (err) {
-10. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-11. }
-12. }
+```ts
+async function isColumnNullExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.goToNextRow();
+      const name = resultSet.isColumnNull(resultSet.getColumnIndex("NAME"));
+      resultSet!.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```
 
 ## close23+
-
-PhonePC/2in1TabletTVWearable
 
 close(): void
 
@@ -1114,16 +1092,16 @@ close(): void
 
 **示例：**
 
-```
-1. async function closeExample(store : relationalStore.RdbStore) {
-2. try {
-3. let resultSet: relationalStore.LiteResultSet | undefined;
-4. resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
-5. if (resultSet != undefined) {
-6. resultSet.close();
-7. }
-8. } catch (err) {
-9. console.error(`failed, code is ${err.code}, message is ${err.message}`);
-10. }
-11. }
+```ts
+async function closeExample(store : relationalStore.RdbStore) {
+  try {
+    let resultSet: relationalStore.LiteResultSet | undefined;
+    resultSet = await store.querySqlWithoutRowCount('select * from EMPLOYEE where name = ?', ["Rose"]);
+    if (resultSet != undefined) {
+      resultSet.close();
+    }
+  } catch (err) {
+    console.error(`failed, code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```

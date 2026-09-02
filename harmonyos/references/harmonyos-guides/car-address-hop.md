@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-address-h
 title: 地址流转至车机
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 实现车机导航流转 > 地址流转至车机
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:3fa8cfd69b1571102cc88f41e68f92081369653f6248af6cb2d1b03897c510bf
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:968633de8e9ec59f3f57795ae4ab9b466ede1a397df8f5901743d7f0fd89642c
 ---
 
 将手机应用的地址文本流转至车机指定地图应用的能力。
@@ -14,7 +14,7 @@ content_hash: sha256:3fa8cfd69b1571102cc88f41e68f92081369653f6248af6cb2d1b03897c
 
 碰一碰地址流转：用户在手机地址文本页面与车机中控屏指定区域碰一碰后，将手机上的地址数据流转至车机的地图应用，发起地址搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/xLnCBQkrSAWCHRU4nRcPrQ/zh-cn_image_0000002558605312.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/kQfRVpS_TfyqDYa1nA__tA/zh-cn_image_0000002706834402.png)
 
 ## 接口说明
 
@@ -40,38 +40,38 @@ value是一个Json格式的字符串，具体属性说明如下：
 
    碰一碰地址流转场景下，metadata的name取值为carHopCapability，value取值应为**carHopAddress**，具体配置请参考[配置能力](car-preparations.md#配置能力)。示例代码如下所示：
 
-   ```
-   1. "metadata": [
-   2. {
-   3. "name": "carHopCapability",
-   4. "value": "carHopAddress"
-   5. }
-   6. ]
+   ```typescript
+   "metadata": [
+     {
+       "name": "carHopCapability",
+       "value": "carHopAddress"
+     }
+   ]
    ```
 2. 定义accessibilityTextHint的value值。
 
-   ```
-   1. const hintContentValue = JSON.stringify({
-   2. type: 'location', // 类型，必须是 'location'
-   3. groupId: 1, // 分组id
-   4. index: 2, // 索引
-   5. });
+   ```typescript
+   const hintContentValue = JSON.stringify({
+     type: 'location', // 类型，必须是 'location'
+     groupId: 1, // 分组id
+     index: 2 // 索引
+   });
    ```
 3. 给地址文本设置accessibilityTextHint属性。
 
-   ```
-   1. Text('xxx一路')
-   2. .fontSize(20)
-   3. .fontWeight(FontWeight.Bold)
-   4. .accessibilityTextHint(hintContentValue)
+   ```typescript
+   Text('xxx一路')
+     .fontSize(20)
+     .fontWeight(FontWeight.Bold)
+     .accessibilityTextHint(hintContentValue)
 
-   6. // 单地址场景
-   7. Text('xxx二路')
-   8. .accessibilityTextHint(JSON.stringify({ type: 'location' }))
+   // 单地址场景
+   Text('xxx二路')
+     .accessibilityTextHint(JSON.stringify({ type: 'location' }))
 
-   10. // 多地址场景
-   11. Text('xxx商场')
-   12. .accessibilityTextHint(JSON.stringify({ type: 'location', groupId: 1, index: 1, }))
-   13. Text('xxx街')
-   14. .accessibilityTextHint(JSON.stringify({ type: 'location', groupId: 1, index: 0, }))
+   // 多地址场景
+   Text('xxx商场')
+     .accessibilityTextHint(JSON.stringify({ type: 'location', groupId: 1, index: 1, }))
+   Text('xxx街')
+     .accessibilityTextHint(JSON.stringify({ type: 'location', groupId: 1, index: 0, }))
    ```

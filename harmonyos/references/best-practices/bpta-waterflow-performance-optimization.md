@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:32+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:aaff4f1843d3b6400406c1cee17b4707df9f7a4f792094a0794c0fe6a8988098
+scraped_at: 2026-09-02T14:53:44+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:e99a0c5480b1b347241b1b2f00d8d84160fee9f5d1758fb4b99c775503ecae4b
 ---
 
 ## 概述
@@ -20,36 +20,34 @@ content_hash: sha256:aaff4f1843d3b6400406c1cee17b4707df9f7a4f792094a0794c0fe6a89
 
 先看一下组件示例代码中瀑布流的基本用法：
 
+```typescript
+build() {
+  Column({ space: 2 }) {
+    WaterFlow({ footer: this.itemFoot() }) {
+      LazyForEach(this.dataSource, (item: number) => {
+        FlowItem() {
+          Column() {
+            Text("N" + item).fontSize(12).height('16')
+            Image('res/waterFlowTest(' + item % 5 + ').jpg')
+              .objectFit(ImageFit.Fill)
+              .width('100%')
+              .layoutWeight(1)
+          }
+        }
+        .width('100%')
+        .height(this.itemHeightArray[item % 100])
+        .backgroundColor(this.colors[item % 5])
+      }, (item: string) => item)
+    }
+    .columnsTemplate("1fr 1fr")
+    .columnsGap(10)
+    .rowsGap(5)
+    .backgroundColor(0xFAEEE0)
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. build() {
-2. Column({ space: 2 }) {
-3. WaterFlow({ footer: this.itemFoot() }) {
-4. LazyForEach(this.dataSource, (item: number) => {
-5. FlowItem() {
-6. Column() {
-7. Text("N" + item).fontSize(12).height('16')
-8. Image('res/waterFlowTest(' + item % 5 + ').jpg')
-9. .objectFit(ImageFit.Fill)
-10. .width('100%')
-11. .layoutWeight(1)
-12. }
-13. }
-14. .width('100%')
-15. .height(this.itemHeightArray[item % 100])
-16. .backgroundColor(this.colors[item % 5])
-17. }, (item: string) => item)
-18. }
-19. .columnsTemplate("1fr 1fr")
-20. .columnsGap(10)
-21. .rowsGap(5)
-22. .backgroundColor(0xFAEEE0)
-23. .width('100%')
-24. .height('100%')
-25. }
-26. }
-```
-
-[WaterFlowPage.ets](https://gitcode.com/harmonyos_samples/PageSlip/blob/master/entry/src/main/ets/pages/WaterFlowPage.ets#L76-L101)
 
 示例代码使用LazyForEach进行数据懒加载，WaterFlow布局按需创建FlowItem组件，并在FlowItem滑出可视区域时回收，以降低内存占用。
 
@@ -84,47 +82,43 @@ content_hash: sha256:aaff4f1843d3b6400406c1cee17b4707df9f7a4f792094a0794c0fe6a89
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/toykN91oSxWXY9X8NPSaUw/zh-cn_image_0000002194010900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/rmCk1ZQ1SKqeJCOqtXZlyA/zh-cn_image_0000002194010900.png)
 
 示例如下：
 
+```screen
+WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
+  LazyForEach(this.waterFlowListData.getData(), (item: WaterFlowData, index: number) => {
+    FlowItem() {
+      // ...
+    }
+    .height(item.waterFlowHead.height / item.waterFlowHead.width * this.waterFlowItemWidth +
+    this.getTitleHeight(item.waterFlowDescription.title))
+    .backgroundColor(Color.White)
+    // ...
+  }, (item: WaterFlowData) => {
+    return item.waterFlowDescription.index.toString();
+  });
+}
+.edgeEffect(EdgeEffect.Spring)
+.flingSpeedLimit(SPEED_LIMIT)
+.onReachEnd(() => {
+  if (this.netConnectState === NetConnectionState.FAIL_STATE) {
+    this.getUIContext().getPromptAction().showToast({
+      message: $r('app.string.net_connection_description'),
+      bottom: CommonConstants.TOAST_SHOW_MARGIN_BOTTOM,
+      duration: CommonConstants.TOAST_SHOW_TIME
+    });
+  }
+  if (this.waterFlowListData.dataSource.totalCount() < CommonConstants.WATER_FLOW_MAX_COUNT) {
+    // There are only 500 analog data, so the limit here is pageNo less than 25
+    this.pageNo = this.pageNo + NUM_1 > NUM_25 ? this.pageNo - NUM_24 : this.pageNo + NUM_1;
+    this.waterFlowListData.addData(CommonConstants.MOCK_INTERFACE_WATER_FLOW_FILE_NAME, this.pageNo,
+      this.pageSize);
+  }
+  this.listDataCount = this.waterFlowListData.dataSource.totalCount();
+})
 ```
-1. WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
-2. LazyForEach(this.waterFlowListData.getData(), (item: WaterFlowData, index: number) => {
-3. FlowItem() {
-4. // ...
-5. }
-6. .height(item.waterFlowHead.height / item.waterFlowHead.width * this.waterFlowItemWidth +
-7. this.getTitleHeight(item.waterFlowDescription.title))
-8. .backgroundColor(Color.White)
-9. // ...
-10. }, (item: WaterFlowData) => {
-11. return item.waterFlowDescription.index.toString();
-12. });
-13. }
-14. .flingSpeedLimit(4800)
-15. .onScroll((scrollOffset: number, scrollState: ScrollState) => {
-16. if (scrollOffset < this.lastScrollOffset) {
-17. this.isOnReachEnd = false;
-18. }
-19. if (scrollOffset === 0 && this.isOnReachEnd) {
-20. this.listenNetworkEvent();
-21. }
-22. })
-23. .onReachEnd(() => {
-24. this.isOnReachEnd = true;
-25. this.listenNetworkEvent();
-26. if (this.waterFlowListData.dataSource.totalCount() < CommonConstants.WATER_FLOW_MAX_COUNT) {
-27. // There are only 500 analog data, so the limit here is pageNo less than 25
-28. this.pageNo = this.pageNo + 1 > 25 ? this.pageNo - 24 : this.pageNo + 1;
-29. this.waterFlowListData.addData(CommonConstants.MOCK_INTERFACE_WATER_FLOW_FILE_NAME, this.pageNo,
-30. this.pageSize);
-31. }
-32. this.listDataCount = this.waterFlowListData.dataSource.totalCount();
-33. })
-```
-
-[WaterFlowView.ets](https://gitcode.com/harmonyos_samples/PageSlip/blob/master/entry/src/main/ets/view/WaterFlowView.ets#L129-L226)
 
 ## 固定宽高
 
@@ -134,11 +128,11 @@ content_hash: sha256:aaff4f1843d3b6400406c1cee17b4707df9f7a4f792094a0794c0fe6a89
 
 Image组件异步加载，提前设定FlowItem高度，避免图片加载后高度变化触发布局刷新。
 
-详细内容请参考：[利用布局边界减少布局计算](bpta-improve-layout-performance.md#section151587885316)
+详细内容请参考：[利用布局边界减少布局计算](../harmonyos-guides/arkts-layout-optimization-guidance.md#利用布局边界减少布局计算)。
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/cyjxG_AZRxuzw8nhD5k5iA/zh-cn_image_0000002194010908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/mOKCl8X4QEW1QttD-uiGRA/zh-cn_image_0000002194010908.png "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -146,18 +140,16 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 瀑布流卡片中描述性的高度titleHeight根据标题长度不同需设置不同的高度，其计算逻辑如下代码所示：
 
+```screen
+getTitleHeight(title: string): number {
+  let textWidth: number = this.getUIContext().getMeasureUtils().measureText({
+    textContent: title,
+    fontSize: 14
+  });
+  return textWidth > (this.waterFlowItemWidth - CommonConstants.DESCRIPTION_MARGIN_LEFT * NUM_2) ?
+    CommonConstants.DESCRIPTION_THREE_LINES_HEIGHT : CommonConstants.DESCRIPTION_TWO_LINES_HEIGHT;
+}
 ```
-1. getTitleHeight(title: string) {
-2. let textWidth: number = this.getUIContext().getMeasureUtils().measureText({
-3. textContent: title,
-4. fontSize: 14
-5. });
-6. return textWidth > (this.waterFlowItemWidth - CommonConstants.DESCRIPTION_MARGIN_LEFT * 2) ?
-7. CommonConstants.DESCRIPTION_THREE_LINES_HEIGHT : CommonConstants.DESCRIPTION_TWO_LINES_HEIGHT;
-8. }
-```
-
-[WaterFlowView.ets](https://gitcode.com/harmonyos_samples/PageSlip/blob/master/entry/src/main/ets/view/WaterFlowView.ets#L98-L106)
 
 瀑布流卡片的高度 = imageHeight + titleHeight。
 
@@ -167,7 +159,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/mKpdoKfLTx6csYuwuGV6-w/zh-cn_image_0000002194010904.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/TOlIs6ezQImXZEtEu_iRAg/zh-cn_image_0000002194010904.png "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 
@@ -190,8 +182,8 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 | 懒加载 | 适用于瀑布流场景，解决一次性加载并渲染大量数据造成的性能瓶颈。 | [长列表加载性能优化](bpta-best-practices-long-list.md)、  [使用懒加载优化性能](bpta-lazyforeach-optimization.md)、  [数据懒加载](../harmonyos-guides/arkts-rendering-control-lazyforeach.md) |
 | 缓存列表项 | 适用于加载列表项数据请求耗时的场景。比如，瀑布流列表中含有短视频、高清图片等数据量比较大的资源。 | [长列表加载性能优化](bpta-best-practices-long-list.md) |
 | 组件复用 | 适用于瀑布流中存在大量结构相同的组件频繁创建与销毁导致性能瓶颈的场景。 | [组件复用最佳实践](bpta-component-reuse.md) |
-| 固定宽高 | 适用于瀑布流页面组件高度不一的场景。 | [利用布局边界减少布局计算](bpta-improve-layout-performance.md#section151587885316) |
-| 布局优化 | 错误的布局方式可能会导致组件树和嵌套层数过多，在创建和布局绘制阶段产生较大的性能开销，所以可以通过布局优化提升性能。 | [合理使用布局](bpta-improve-layout-performance.md) |
+| 固定宽高 | 适用于瀑布流页面组件高度不一的场景。 | [利用布局边界减少布局计算](../harmonyos-guides/arkts-layout-optimization-guidance.md#利用布局边界减少布局计算) |
+| 布局优化 | 错误的布局方式可能会导致组件树和嵌套层数过多，在创建和布局绘制阶段产生较大的性能开销，所以可以通过布局优化提升性能。 | [合理使用布局](../harmonyos-guides/arkts-layout-optimization-guidance.md#合理使用布局组件) |
 | 状态管理 | 在ArkUI的开发过程中，如果没有选择合适的装饰器或合理的控制状态更新范围，会导致非必要的UI视图刷新，造成性能浪费。 | [状态管理最佳实践](bpta-status-management.md) |
 
 ## 示例代码

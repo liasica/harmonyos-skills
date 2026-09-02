@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: security_antivirus.h
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > C API > 头文件 > security_antivirus.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:18+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4aef63c91529996767469897f522500c7d82b065738d3d75f63b299b30b9ee74
+scraped_at: 2026-09-02T15:01:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1742e61c63749828e069643496ec96db8fd06b7df6347048690ef6275369f53e
 ---
 
 ## 概述
-
-PC/2in1
 
 文件中定义了与病毒防护服务管理相关的函数。
 
@@ -26,11 +24,7 @@ PC/2in1
 
 ## 汇总
 
-PC/2in1
-
 ### 结构体
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,15 +32,11 @@ PC/2in1
 
 ### 枚举
 
-PC/2in1
-
 | 名称 | 描述 |
 | --- | --- |
 | [SecurityAntivirus\_ErrCode](devicesecurity-capi-securityantivirus.md#securityantivirus_errcode){  SECURITY\_ANTIVIRUS\_SUCCESS = 0,  SECURITY\_ANTIVIRUS\_PERMISSION\_NOT\_GRANTED = 201,  SECURITY\_ANTIVIRUS\_PARAM\_INVALID = 1019900001,  SECURITY\_ANTIVIRUS\_NO\_REGISTER = 1019900002,  SECURITY\_ANTIVIRUS\_INNER\_ERROR = 1019900003  } | 定义病毒防护服务管理错误码。 |
 
 ### 函数
-
-PC/2in1
 
 | 名称 | 描述 |
 | --- | --- |

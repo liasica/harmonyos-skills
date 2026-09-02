@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_PlaceholderSpan
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_PlaceholderSpan
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:70d8b9caa57f421e9b7f654b0f2fcf2c9ba41c0a10f195e885a04fdd6a7632e0
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6177c400d1df0cee58199ec69798645928dd58c0c197f65c79b020fb7001fb71
 ---
 
-```
-1. typedef struct {...} OH_Drawing_PlaceholderSpan
+```c
+typedef struct {...} OH_Drawing_PlaceholderSpan
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于描述占位符跨度的结构体。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

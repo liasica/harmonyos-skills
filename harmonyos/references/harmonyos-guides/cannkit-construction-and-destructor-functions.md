@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-const
 title: 构造函数与析构函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > 构造函数与析构函数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:13+08:00
+scraped_at: 2026-09-02T15:00:10+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:cd7feaab84dbda1921e71d3280fa197ffc0aaaec0ef20acc683fdb00011fac3b
+content_hash: sha256:9c161f1f0d19b4e4fbe422ec699588424be4a12078ba1081d090a57cda23c6e7
 ---
 
 ## 函数功能
@@ -16,7 +16,7 @@ content_hash: sha256:cd7feaab84dbda1921e71d3280fa197ffc0aaaec0ef20acc683fdb00011
 * 构造方式2：指定了tensor数据的地址、用于管理tensor数据的函数manager、tensor数据所占内存大小、tensor数据所在的位置（host、device）。
 * 构造方式3：移动构造形式。
 
-说明
+**说明** 
 
 若manager为nullptr，则认为addr就是tensor的数据地址。否则，tensor数据的地址由manager给出。
 
@@ -24,16 +24,16 @@ content_hash: sha256:cd7feaab84dbda1921e71d3280fa197ffc0aaaec0ef20acc683fdb00011
 
 * 构造函数
 
-  ```
-  1. TensorData(TensorAddress addr = nullptr, const TensorAddrManager manager = nullptr)
-  2. TensorData(TensorAddress addr, const TensorAddrManager manager, size_t size, TensorPlacement placement)
-  3. TensorData(TensorData &&other) noexcept
-  4. TensorData(const TensorData &) = delete;
+  ```cpp
+  TensorData(TensorAddress addr = nullptr, const TensorAddrManager manager = nullptr)
+  TensorData(TensorAddress addr, const TensorAddrManager manager, size_t size, TensorPlacement placement)
+  TensorData(TensorData &&other) noexcept
+  TensorData(const TensorData &) = delete;
   ```
 * 析构函数
 
-  ```
-  1. ~TensorData()
+  ```cpp
+  ~TensorData()
   ```
 
 ## 参数说明
@@ -55,7 +55,7 @@ content_hash: sha256:cd7feaab84dbda1921e71d3280fa197ffc0aaaec0ef20acc683fdb00011
 
 ## 调用示例
 
-```
-1. auto addr = reinterpret_cast<void *>(0x10);
-2. TensorData td(addr, HostAddrManager, 100U, kOnHost);
+```cpp
+auto addr = reinterpret_cast<void *>(0x10);
+TensorData td(addr, HostAddrManager, 100U, kOnHost);
 ```

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b106
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Beta3引入的行为变更 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Beta3引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:23:53+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:3e9c4331ef48d3a40e6ed950d172009aead897a1d4cad46fc26decf12d59cd8c
+scraped_at: 2026-09-02T14:58:52+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:f5afdde77301ed278bc6a8325f8e2717eb3f1cc715aabf5bc9a224ccc9971f4c
 ---
 
 ## Ability Kit
@@ -48,7 +48,7 @@ convertXml模块未实现parentKey属性，生成的object中不具有parentKey�
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.1(13)时生效。
 
@@ -74,41 +74,41 @@ convertToJSObject(xml: string, options?: ConvertOptions): Object;
 
 变更：convertToJSObject接口对xml字符串的入参进行解析时，可以正确设置parentKey属性的值。
 
-```
-1. import { convertxml } from '@kit.ArkTS';
+```ts
+import { convertxml } from '@kit.ArkTS';
 
-3. let xml =
-4. '<?xml version="1.0" encoding="utf-8"?>' +
-5. '<note importance="high" logged="true">' +
-6. '    <title>Happy</title>' +
-7. '    <todo>Work</todo>' +
-8. '    <todo>Play</todo>' +
-9. '</note>';
-10. let conv = new convertxml.ConvertXML()
-11. let options: convertxml.ConvertOptions = {
-12. trim: false,
-13. declarationKey: "_declaration",
-14. instructionKey: "_instruction",
-15. attributesKey: "_attributes",
-16. textKey: "_text",
-17. cdataKey: "_cdata",
-18. doctypeKey: "_doctype",
-19. commentKey: "_comment",
-20. parentKey: "_parent",
-21. typeKey: "_type",
-22. nameKey: "_name",
-23. elementsKey: "_elements"
-24. }
-25. let result: ESObject = conv.convertToJSObject(xml, options);
+let xml =
+  '<?xml version="1.0" encoding="utf-8"?>' +
+    '<note importance="high" logged="true">' +
+    '    <title>Happy</title>' +
+    '    <todo>Work</todo>' +
+    '    <todo>Play</todo>' +
+    '</note>';
+let conv = new convertxml.ConvertXML()
+let options: convertxml.ConvertOptions = {
+  trim: false,
+  declarationKey: "_declaration",
+  instructionKey: "_instruction",
+  attributesKey: "_attributes",
+  textKey: "_text",
+  cdataKey: "_cdata",
+  doctypeKey: "_doctype",
+  commentKey: "_comment",
+  parentKey: "_parent",
+  typeKey: "_type",
+  nameKey: "_name",
+  elementsKey: "_elements"
+}
+let result: ESObject = conv.convertToJSObject(xml, options);
 
-27. // 变更前：result的值实际为： {"_declaration":{"_attributes":{"version":"1.0","encoding":"utf-8"}},"_elements":[{"_type":"element","_name":"note","_attributes":{"importance":"high","logged":"true"},"_elements":[{"_type":"element","_name":"title","_elements":[{"_type":"text","_text":"Happy"}]},{"_type":"element","_name":"todo","_elements":[{"_type":"text","_text":"Work"}]},{"_type":"element","_name":"todo","_elements":[{"_type":"text","_text":"Play"}]}]}]}
+// 变更前：result的值实际为： {"_declaration":{"_attributes":{"version":"1.0","encoding":"utf-8"}},"_elements":[{"_type":"element","_name":"note","_attributes":{"importance":"high","logged":"true"},"_elements":[{"_type":"element","_name":"title","_elements":[{"_type":"text","_text":"Happy"}]},{"_type":"element","_name":"todo","_elements":[{"_type":"text","_text":"Work"}]},{"_type":"element","_name":"todo","_elements":[{"_type":"text","_text":"Play"}]}]}]}
 
-29. // 变更后：result的值实际为（新增parentKey属性）： {"_declaration":{"_attributes":{"version":"1.0","encoding":"utf-8"}},"_elements":[{"_type":"element","_name":"note","_attributes":{"importance":"high","logged":"true"},"_elements":[{"_type":"element","_name":"title","_parent":"note","_elements":[{"_type":"text","_text":"Happy"}]},{"_type":"element","_name":"todo","_parent":"note","_elements":[{"_type":"text","_text":"Work"}]},{"_type":"element","_name":"todo","_parent":"note","_elements":[{"_type":"text","_text":"Play"}]}]}]}
+// 变更后：result的值实际为（新增parentKey属性）： {"_declaration":{"_attributes":{"version":"1.0","encoding":"utf-8"}},"_elements":[{"_type":"element","_name":"note","_attributes":{"importance":"high","logged":"true"},"_elements":[{"_type":"element","_name":"title","_parent":"note","_elements":[{"_type":"text","_text":"Happy"}]},{"_type":"element","_name":"todo","_parent":"note","_elements":[{"_type":"text","_text":"Work"}]},{"_type":"element","_name":"todo","_parent":"note","_elements":[{"_type":"text","_text":"Play"}]}]}]}
 
-31. // 对于开发者使用场景来说，不影响开发者使用。
-32. // 获取title标签的parentKey属性的方法是：result1["_elements"][0]["_elements"][0]._parent
-33. // 变更前：获取title标签的parentKey属性为：undefined
-34. // 变更后：获取title标签的parentKey属性为实际值：note
+// 对于开发者使用场景来说，不影响开发者使用。
+// 获取title标签的parentKey属性的方法是：result1["_elements"][0]["_elements"][0]._parent 
+// 变更前：获取title标签的parentKey属性为：undefined
+// 变更后：获取title标签的parentKey属性为实际值：note
 ```
 
 ## ArkUI
@@ -131,19 +131,19 @@ convertToJSObject(xml: string, options?: ConvertOptions): Object;
 
 当开发者使用的是源码HAR时使用router.getState()方法获取的是**相对路径**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/SqXjFLW3RnS_Mt_j9xS53g/zh-cn_image_0000002082259974.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/J5ciHpGnQAisDJ_ShH75iA/zh-cn_image_0000002082259974.png)
 
 通过router.getState()方法获取的path信息为"../../../../library/src/main/ets/components/"。
 
 当开发者把源码HAR升级为字节码HAR时，通过router.getState()方法获取的path信息为"/\_\_harDefaultPagePath\_\_"，不能获取正确的name和path值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/W301q5mLQAe6UuWt00Kmhw/zh-cn_image_0000002082105210.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/dw1ytUGWS9-pVAFS3tJEuQ/zh-cn_image_0000002082105210.png)
 
 变更后：
 
 当开发者把源码HAR升级为字节码HAR时使用router.getState()方法获取的是**绝对路径**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/gNAOMUrPSR-L2bD8CSdOVg/zh-cn_image_0000002117819161.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/IM9KkhrTTKeMQMg6OXvZGg/zh-cn_image_0000002117819161.png)
 
 通过router.getState()方法获取的path信息为"library/src/main/ets/components/"。
 
@@ -153,19 +153,19 @@ convertToJSObject(xml: string, options?: ConvertOptions): Object;
 
 当开发者使用的是中间码HAR时使用router.getState()方法获取的是**相对路径**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/u0kSU6PZRXiD2ZTpAp9xlg/zh-cn_image_0000002117784217.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/04peDJkrQnKRiwmRMjs_LA/zh-cn_image_0000002117784217.png)
 
 通过router.getState()方法获取的path信息为"../../../../ + 哈希值 + library/src/main/ets/components/"。
 
 当开发者把中间码HAR升级为字节码HAR时，通过router.getState()方法获取的path信息为"/\_\_harDefaultPagePath\_\_"，不能获取正确的name和path值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/KG14Xr6LROCkP7AibMlRZQ/zh-cn_image_0000002082105210.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/2HgiseNUR_qOaWcFacrTcg/zh-cn_image_0000002082105210.png)
 
 变更后：
 
 当开发者把中间码HAR升级为字节码HAR时使用router.getState()方法获取的是**绝对路径**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/IUpUVHKFSpO0AwNTEeucug/zh-cn_image_0000002117819161.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/HjG3BKSxTg68S17avH3DjA/zh-cn_image_0000002117819161.png)
 
 通过router.getState()方法获取的path信息为"library/src/main/ets/components/"。
 
@@ -187,34 +187,34 @@ router.getState()
 
 在转场动画过程中改变正在消失节点的属性，可能造成数据访问异常，产生crash。例如，动画过程中将data置为undefined，Text组件增加默认转场不会立即被删除，在更新状态时，数据访问异常产生crash。因此，需要变更为在转场动画过程中，禁止更新消失节点的属性。
 
-```
-1. class Mydata {
-2. str: string;
-3. constructor(str: string) {
-4. this.str = str;
-5. }
-6. }
-7. @State data: Mydata|undefined = new MyData("branch");
-8. if (this.data) {
-9. // 对于删除时增加的默认转场，会延长组件生命周期。Text没有立即被删除，而是等转场动画结束后才被删除
-10. Text(this.data.str)
-11. }
-12. Button("play with animation")
-13. .onClick(()=>{
-14. animateTo({},()=>{
-15. if (this.data) {
-16. // 在动画过程中，会给if下的第一层组件增加默认转场
-17. this.data = undefined;
-18. }
-19. })
-20. })
+```ts
+class Mydata {
+  str: string;
+  constructor(str: string) {
+    this.str = str;
+  }
+}
+@State data: Mydata|undefined = new MyData("branch");
+if (this.data) {
+  // 对于删除时增加的默认转场，会延长组件生命周期。Text没有立即被删除，而是等转场动画结束后才被删除
+  Text(this.data.str)
+}
+Button("play with animation")
+  .onClick(()=>{
+    animateTo({},()=>{
+      if (this.data) {
+        // 在动画过程中，会给if下的第一层组件增加默认转场
+        this.data = undefined;
+      }
+    }) 
+  })
 ```
 
 **变更影响**
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.1(13)时生效。
 
@@ -236,42 +236,42 @@ transition属性
 
 示例：
 
-```
-1. @Entry
-2. @Component
-3. struct Index {
-4. @State flag: Boolean = true;
-5. @State color: Color = Color.Red;
-6. build() {
-7. Column(){
-8. if (this.flag) {
-9. Text('abc')
-10. .transition(TransitionEffect.OPACITY)
-11. .backgroundColor(this.color)
-12. }
+```ts
+@Entry
+@Component
+struct Index {
+  @State flag: Boolean = true;
+  @State color: Color = Color.Red;
+  build() {
+    Column(){
+      if (this.flag) {
+        Text('abc')
+          .transition(TransitionEffect.OPACITY)
+          .backgroundColor(this.color)
+      }
 
-14. Button("play with animation")
-15. .onClick(()=>{
-16. // 变更前，消失过程中的节点可以更新属性，Text组件的颜色在消失过程中变为蓝色
-17. // animateTo({},()=>{
-18. //   this.flag ? this.color = Color.Blue : this.color = Color.Red;
-19. //   this.flag = !this.flag;
-20. // })
+      Button("play with animation")
+        .onClick(()=>{
+          // 变更前，消失过程中的节点可以更新属性，Text组件的颜色在消失过程中变为蓝色
+          // animateTo({},()=>{
+          //   this.flag ? this.color = Color.Blue : this.color = Color.Red;
+          //   this.flag = !this.flag;
+          // })
 
-22. // 变更后，消失过程中的节点无法更新属性，Text组件的颜色在消失过程中一直为红色
-23. // 如果需要更新属性，使Text组件的颜色在消失过程中变为蓝色，应当在节点下树之前更新
-24. animateTo({},()=>{
-25. this.flag ? this.color = Color.Blue : this.color = Color.Red;
-26. }) // 节点下树前改变颜色属性
-27. animateTo({},()=>{
-28. this.flag = !this.flag;
-29. })
-30. })
-31. .width("100%")
-32. .padding(10)
-33. }
-34. }
-35. }
+          // 变更后，消失过程中的节点无法更新属性，Text组件的颜色在消失过程中一直为红色
+          // 如果需要更新属性，使Text组件的颜色在消失过程中变为蓝色，应当在节点下树之前更新
+          animateTo({},()=>{
+            this.flag ? this.color = Color.Blue : this.color = Color.Red;
+          }) // 节点下树前改变颜色属性
+          animateTo({},()=>{
+            this.flag = !this.flag;
+          })
+        })
+        .width("100%")
+        .padding(10)
+    }
+  }
+}
 ```
 
 ### 优化getWindowProperties，增加返回值中drawableRect的实时性，调用行为变更
@@ -406,7 +406,7 @@ RichEditor
 
 在用户执行删除操作，但实际未删除内容时（例如在aboutToDelete接口中拦截了删除操作），也回调了OnDidChange接口，不符合接口行为定义。
 
-说明
+**说明** 
 
 该变更在11月19日更新的ROM版本引入，ROM版本号为5.0.0.107。
 
@@ -440,7 +440,7 @@ RichEditor
 
 开发者在aboutToDelete回调中设置光标/选中区后，删除完成后，光标位置异常。
 
-说明
+**说明** 
 
 该变更在11月19日更新的ROM版本引入，ROM版本号为5.0.0.107。
 
@@ -510,7 +510,7 @@ i18n.System.getDisplayCountry
 
 参考业界标准，农历中“十一月”应该显示为“冬月”。
 
-说明
+**说明** 
 
 该变更在11月19日更新的ROM版本引入，ROM版本号为5.0.0.107。
 
@@ -592,7 +592,7 @@ i18n.PhoneNumberFormat.getLocationName
 
 不丹当前不在系统支持的国家地区列表中。
 
-说明
+**说明** 
 
 该变更在11月19日更新的ROM版本引入，ROM版本号为5.0.0.107。
 
@@ -624,7 +624,7 @@ i18n.System.getSystemCountries
 
 bm命令行工具未对sh调用方用户身份做校验，用户A可以通过bm命令安装、卸载其他用户空间下的应用，并且可以通过bm命令嗅探其他空间下已安装的应用，违反安全规范。
 
-说明
+**说明** 
 
 该变更在11月19日更新的ROM版本引入，ROM版本号为5.0.0.107。
 

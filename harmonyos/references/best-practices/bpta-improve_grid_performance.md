@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve_gr
 title: Grid组件加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > Grid组件加载丢帧优化
 category: best-practices
-scraped_at: 2026-04-29T14:13:32+08:00
+scraped_at: 2026-09-02T15:03:21+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:c4dc20caad26a1afcc885f7fb24c454e4deb234f14753260e198b51882937319
+content_hash: sha256:ea8a881d1d1ee9fb1c467eb4346df05fd14fc74ec07d582190f10b1b9eb05144
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:c4dc20caad26a1afcc885f7fb24c454e4deb234f14753260e198b518829
 在实现如下图所示可滚动布局效果时，可能会通过columnStart/columnEnd[设置子组件所占行列数](../harmonyos-guides/arkts-layout-development-create-grid.md#设置子组件所占行列数)，实现不规则的布局效果。
 
 **图1** columnStart/columnEnd实现不规则网格布局  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/XYBDLIhxTvuw6fuD7x82bA/zh-cn_image_0000002194010632.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/R70yp1nHRsSoQeRKOHfxNw/zh-cn_image_0000002194010632.png)
 
 在以下使用场景中，使用columnStart或columnEnd可能会导致性能问题：
 
@@ -34,197 +34,193 @@ content_hash: sha256:c4dc20caad26a1afcc885f7fb24c454e4deb234f14753260e198b518829
 
 **反例：**使用columnStart/columnEnd设置GridItem大小。
 
+```typescript
+// Import performance dot modules
+import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+
+@Component
+struct TextItem {
+  @State item: string = '';
+
+  build() {
+    Text(this.item)
+      .fontSize(16)
+      .backgroundColor(0xF9CF93)
+      .width('100%')
+      .height(80)
+      .textAlign(TextAlign.Center)
+  }
+
+  aboutToAppear() {
+    // Finish the task
+    hiTraceMeter.finishTrace('useColumnStartColumnEnd', 1);
+  }
+}
+
+class MyDataSource implements IDataSource {
+  private dataArray: string[] = [];
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+  }
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+  }
+}
+
+@Entry
+@Component
+struct GridExample {
+  private datasource: MyDataSource = new MyDataSource();
+  scroller: Scroller = new Scroller();
+
+  aboutToAppear() {
+    for (let i = 1; i <= 2000; i++) {
+      this.datasource.pushData(i + '');
+    }
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Text('使用columnStart,columnEnd设置GridItem大小').fontColor(0xCCCCCC).fontSize(9).width('90%')
+      Grid(this.scroller) {
+        LazyForEach(this.datasource, (item: string, index: number) => {
+          if ((index % 4) === 0) {
+            GridItem() {
+              TextItem({ item: item })
+            }
+            .columnStart(0).columnEnd(2)
+          } else {
+            GridItem() {
+              TextItem({ item: item })
+            }
+          }
+        }, (item: string) => item)
+      }
+      .columnsTemplate('1fr 1fr 1fr')
+      .columnsGap(10)
+      .rowsGap(10)
+      .width('90%')
+      .height('40%')
+
+      Button('scrollToIndex:1900').onClick(() => {
+        // Start some tasks.
+        hiTraceMeter.startTrace('useColumnStartColumnEnd', 1);
+        this.scroller.scrollToIndex(1900);
+      })
+    }.width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. // Import performance dot modules
-2. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-
-4. @Component
-5. struct TextItem {
-6. @State item: string = '';
-
-8. build() {
-9. Text(this.item)
-10. .fontSize(16)
-11. .backgroundColor(0xF9CF93)
-12. .width('100%')
-13. .height(80)
-14. .textAlign(TextAlign.Center)
-15. }
-
-17. aboutToAppear() {
-18. // Finish the task
-19. hiTraceMeter.finishTrace('useColumnStartColumnEnd', 1);
-20. }
-21. }
-
-23. class MyDataSource implements IDataSource {
-24. private dataArray: string[] = [];
-
-26. public pushData(data: string): void {
-27. this.dataArray.push(data);
-28. }
-
-30. public totalCount(): number {
-31. return this.dataArray.length;
-32. }
-
-34. public getData(index: number): string {
-35. return this.dataArray[index];
-36. }
-
-38. registerDataChangeListener(listener: DataChangeListener): void {
-39. }
-
-41. unregisterDataChangeListener(listener: DataChangeListener): void {
-42. }
-43. }
-
-45. @Entry
-46. @Component
-47. struct GridExample {
-48. private datasource: MyDataSource = new MyDataSource();
-49. scroller: Scroller = new Scroller();
-
-51. aboutToAppear() {
-52. for (let i = 1; i <= 2000; i++) {
-53. this.datasource.pushData(i + '');
-54. }
-55. }
-
-57. build() {
-58. Column({ space: 5 }) {
-59. Text('使用columnStart,columnEnd设置GridItem大小').fontColor(0xCCCCCC).fontSize(9).width('90%')
-60. Grid(this.scroller) {
-61. LazyForEach(this.datasource, (item: string, index: number) => {
-62. if ((index % 4) === 0) {
-63. GridItem() {
-64. TextItem({ item: item })
-65. }
-66. .columnStart(0).columnEnd(2)
-67. } else {
-68. GridItem() {
-69. TextItem({ item: item })
-70. }
-71. }
-72. }, (item: string) => item)
-73. }
-74. .columnsTemplate('1fr 1fr 1fr')
-75. .columnsGap(10)
-76. .rowsGap(10)
-77. .width('90%')
-78. .height('40%')
-
-80. Button('scrollToIndex:1900').onClick(() => {
-81. // Start some tasks.
-82. hiTraceMeter.startTrace('useColumnStartColumnEnd', 1);
-83. this.scroller.scrollToIndex(1900);
-84. })
-85. }.width('100%')
-86. .margin({ top: 5 })
-87. }
-88. }
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/GridComponentLoadSlow/entry/src/main/ets/pages/Index.ets#L17-L104)
 
 **正例：**使用GridLayoutOptions设置GridItem大小，布局效果和反例保持一致。
 
+```screen
+// Import performance dot modules
+import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
+
+@Component
+struct TextItem {
+  @State item: string = '';
+
+  build() {
+    Text(this.item)
+      .fontSize(16)
+      .backgroundColor(0xF9CF93)
+      .width('100%')
+      .height(80)
+      .textAlign(TextAlign.Center)
+  }
+
+  aboutToAppear() {
+    // Finish the task
+    hiTraceMeter.finishTrace('useGridLayoutOptions', 1);
+  }
+}
+
+class MyDataSource implements IDataSource {
+  private dataArray: string[] = [];
+
+  public pushData(data: string): void {
+    this.dataArray.push(data);
+  }
+
+  public totalCount(): number {
+    return this.dataArray.length;
+  }
+
+  public getData(index: number): string {
+    return this.dataArray[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+  }
+}
+
+@Entry
+@Component
+struct GridExample2 {
+  private datasource: MyDataSource = new MyDataSource();
+  scroller: Scroller = new Scroller();
+  private irregularData: number[] = [];
+  layoutOptions: GridLayoutOptions = {
+    regularSize: [1, 1],
+    irregularIndexes: this.irregularData,
+  };
+
+  aboutToAppear() {
+    for (let i = 1; i <= 2000; i++) {
+      this.datasource.pushData(i + '');
+      if ((i - 1) % 4 === 0) {
+        this.irregularData.push(i - 1);
+      }
+    }
+  }
+
+  build() {
+    Column({ space: 5 }) {
+      Text('使用GridLayoutOptions设置GridItem大小')
+        .fontColor(0xCCCCCC)
+        .fontSize(9)
+        .width('90%')
+      Grid(this.scroller, this.layoutOptions) {
+        LazyForEach(this.datasource, (item: string, index: number) => {
+          GridItem() {
+            TextItem({ item: item })
+          }
+        }, (item: string) => item)
+      }
+      .columnsTemplate('1fr 1fr 1fr')
+      .columnsGap(10)
+      .rowsGap(10)
+      .width('90%')
+      .height('40%')
+
+      Button('scrollToIndex:1900').onClick(() => {
+        // Start some tasks.
+        hiTraceMeter.startTrace('useGridLayoutOptions', 1);
+        this.scroller.scrollToIndex(1900);
+      })
+    }.width('100%')
+    .margin({ top: 5 })
+  }
+}
 ```
-1. // Import performance dot modules
-2. import { hiTraceMeter } from '@kit.PerformanceAnalysisKit';
-
-4. @Component
-5. struct TextItem {
-6. @State item: string = '';
-
-8. build() {
-9. Text(this.item)
-10. .fontSize(16)
-11. .backgroundColor(0xF9CF93)
-12. .width('100%')
-13. .height(80)
-14. .textAlign(TextAlign.Center)
-15. }
-
-17. aboutToAppear() {
-18. // Finish the task
-19. hiTraceMeter.finishTrace('useGridLayoutOptions', 1);
-20. }
-21. }
-
-23. class MyDataSource implements IDataSource {
-24. private dataArray: string[] = [];
-
-26. public pushData(data: string): void {
-27. this.dataArray.push(data);
-28. }
-
-30. public totalCount(): number {
-31. return this.dataArray.length;
-32. }
-
-34. public getData(index: number): string {
-35. return this.dataArray[index];
-36. }
-
-38. registerDataChangeListener(listener: DataChangeListener): void {
-39. }
-
-41. unregisterDataChangeListener(listener: DataChangeListener): void {
-42. }
-43. }
-
-45. @Entry
-46. @Component
-47. struct GridExample2 {
-48. private datasource: MyDataSource = new MyDataSource();
-49. scroller: Scroller = new Scroller();
-50. private irregularData: number[] = [];
-51. layoutOptions: GridLayoutOptions = {
-52. regularSize: [1, 1],
-53. irregularIndexes: this.irregularData,
-54. };
-
-56. aboutToAppear() {
-57. for (let i = 1; i <= 2000; i++) {
-58. this.datasource.pushData(i + '');
-59. if ((i - 1) % 4 === 0) {
-60. this.irregularData.push(i - 1);
-61. }
-62. }
-63. }
-
-65. build() {
-66. Column({ space: 5 }) {
-67. Text('使用GridLayoutOptions设置GridItem大小')
-68. .fontColor(0xCCCCCC)
-69. .fontSize(9)
-70. .width('90%')
-71. Grid(this.scroller, this.layoutOptions) {
-72. LazyForEach(this.datasource, (item: string, index: number) => {
-73. GridItem() {
-74. TextItem({ item: item })
-75. }
-76. }, (item: string) => item)
-77. }
-78. .columnsTemplate('1fr 1fr 1fr')
-79. .columnsGap(10)
-80. .rowsGap(10)
-81. .width('90%')
-82. .height('40%')
-
-84. Button('scrollToIndex:1900').onClick(() => {
-85. // Start some tasks.
-86. hiTraceMeter.startTrace('useGridLayoutOptions', 1);
-87. this.scroller.scrollToIndex(1900);
-88. })
-89. }.width('100%')
-90. .margin({ top: 5 })
-91. }
-92. }
-```
-
-[RightIndex.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/GridComponentLoadSlow/entry/src/main/ets/pages/RightIndex.ets#L17-L108)
 
 ### 分析步骤
 
@@ -232,16 +228,16 @@ content_hash: sha256:c4dc20caad26a1afcc885f7fb24c454e4deb234f14753260e198b518829
 
 1. 打开Profiler工具，连接设备，选择对应的应用进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/_zk7A6wwSPqOKZG69jfEGw/zh-cn_image_0000002229450913.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/wG6w368sTPOKABXxGYjCFQ/zh-cn_image_0000002229450913.png)
 2. 选择Frame，点击Create Session以开始数据测量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/6dyxNkWVSemDyQ8LDvRMTQ/zh-cn_image_0000002194010628.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/v1QI09mETSe74rTEOaenNQ/zh-cn_image_0000002194010628.png)
 3. 通过点击按钮，先使用startTrace开始性能打点跟踪，再调用scrollToIndex。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/epupdTLWRpet6d6Xhd1NLA/zh-cn_image_0000002194010644.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/F6uVsuAlTTS2iaGmWPQfZQ/zh-cn_image_0000002194010644.png "点击放大")
 4. 查看对应应用进程下的自定义打点事件，包括反例代码中定义的“useColumnStartColumnEnd”和正例代码中的“useGridLayoutOptions”下的trace图。
 
-   说明
+   **说明** 
 
    **打点事件说明**：Grid查找到指定GridItem位置，准备渲染节点前，进入GridItem组件的生命周期回调aboutToAppear，使用finishTrace停止性能打点。通过startTrace标记调用scrollToIndex，finishTrace标记查找到指定位置后准备渲染首个GridItem节点，对比正反例场景下的耗时数据。关于性能打点的介绍，请参考[@ohos.hiTraceMeter (性能打点)](../harmonyos-references/js-apis-hitracemeter.md)
 
@@ -251,22 +247,22 @@ content_hash: sha256:c4dc20caad26a1afcc885f7fb24c454e4deb234f14753260e198b518829
 
 **图2** 使用columnStart，columnEnd的打点信息
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/unBN65hcQe2P4cD93Yuaxg/zh-cn_image_0000002194010648.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/H0fdjIHoROap293PspmBZg/zh-cn_image_0000002194010648.png "点击放大")
 
 如图3所示，使用GridLayoutOptions设置GridItem大小的布局方式。从自定义打点标签“H:useGridLayoutOptions”可以看出，从调用scrollToIndex到查找到指定Index并准备构建GridItem节点耗时12ms。
 
 **图3** 使用GridLayoutOptions的打点信息
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/c0CRJKlNQTGpPNFBJTq-ig/zh-cn_image_0000002194010620.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/7EgwPW5XQym8Sf6wgHCORg/zh-cn_image_0000002194010620.png "点击放大")
 
 通过详细的trace分析可以发现，在“H:useColumnStartColumnEndGrid”打点标签时间段中，存在大量“H:Builder:BuildLazyItem”标签。这表明Grid在查找指定的Index 1900时，是通过依次遍历Index来实现的。
 
 **图4** 使用columnStart，columnEnd的放大trace标签信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/G7Sb59JAQcCdlqp6M7OZGg/zh-cn_image_0000002229450897.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/IVBUKorLR-qhhMxZpkdZFg/zh-cn_image_0000002229450897.png "点击放大")
 
 在使用GridLayoutOptions的示例中，“H:useGridLayoutOptions”打点标签时间段内仅出现一个“H:Builder:BuildLazyItem”标签。这表明Grid在查找指定索引1900时，能够直接一次性找到指定索引。
 
 **图5** 使用GridLayoutOptions的放大trace标签信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/B0hX16UdTR6O7HzmdbHJhg/zh-cn_image_0000002229450909.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/KwW3xe6KTNml7SKJDukXIw/zh-cn_image_0000002229450909.png "点击放大")
 
 在相同布局情况下，使用columnStart和columnEnd设置GridItem大小时，Grid在使用scrollToIndex查找指定索引时，会依次遍历GridItem节点，导致查找过程耗时较长。而使用GridLayoutOptions设置GridItem大小时，直接一次性计算找到指定索引，查找过程耗时较短。因此，使用GridLayoutOptions设置GridItem大小可以显著减少Grid加载时间，提升应用性能。

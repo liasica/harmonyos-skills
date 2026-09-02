@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-simul
 title: Simulator性能仿真功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > Simulator性能仿真功能
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fa95a20224d44602ae93bdcd2486f54b8976c4faed3542a2b530813337356001
+scraped_at: 2026-09-02T15:00:05+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:35362ccfb6c6d714bfdd441f2f03e427fe2c6e78b9457951636fa0bb65084a46
 ---
 
 ## CAModel性能仿真
@@ -14,7 +14,7 @@ content_hash: sha256:fa95a20224d44602ae93bdcd2486f54b8976c4faed3542a2b5308133373
 
 算子可以在仿真器上进行性能仿真，目前主要支持CAModel仿真器。
 
-说明
+**说明** 
 
 * 由于model本身存在准确性问题，CAModel建议只跑单核，仿真性能会比较准，多核一块跑比较慢，误差也大很多。
 
@@ -22,11 +22,11 @@ content_hash: sha256:fa95a20224d44602ae93bdcd2486f54b8976c4faed3542a2b5308133373
 
 通过命令行进行性能仿真的关键步骤如下。
 
-1. 完成环境搭建，并准备好输入/标杆数据文件。
+1. [完成环境搭建](cannkit-environment-preparation.md)，并准备好输入/标杆数据文件。
 2. 执行如下命令进行CAModel性能仿真，仅提供关键参数项示例，其他参数请参考[Simulator仿真参数](cannkit-cli-parameters.md#simulator仿真参数)按需设置。
 
-   ```
-   1. ascendebug kernel --backend simulator --repo-type customize --json-file ${op_config_json_file} --core-type ${core_type} –chip-version ${chip_version} --work-dir ${work_dir} --block-num 1 --timeout 1200 ... {其他参数}
+   ```shell
+   ascendebug kernel --backend simulator --repo-type customize --json-file ${op_config_json_file} --core-type ${core_type} --chip-version ${chip_version} --work-dir ${work_dir} --block-num 1 --timeout 1200 ... {其他参数}
    ```
 
    一般情况下，CAModel仿真时运行比较慢，--timeout一般设置为1200秒，--block-num一般设置为1，开发者需按实际情况设置。
@@ -36,33 +36,33 @@ content_hash: sha256:fa95a20224d44602ae93bdcd2486f54b8976c4faed3542a2b5308133373
 
 CAModel仿真结果存放在${root}/${work\_dir}/simulator路径下，其中${root}表示当前操作路径，${work\_dir}表示调测工作空间，默认为/debug\_workspace/${op\_type}目录，${op\_type}为算子名。目录结构示例如下。
 
-```
-1. ├ ${op_type}                           // 算子名
-2. ├── simulator
-3. │   ├── build                          // 存放NPU编译生成的中间文件
-4. │   │   ├── launch_args.so
-5. │   │   └── run_Makefile_0.sh
-6. │   ├── dump
-7. │   │   ├── camodel
-8. │   │   │   ├── log                   // model执行日志
-9. │   │   └── dump_data
-10. │   │       ├── 0                     // core number
-11. │   │       │   └── index_0           // index是dump接口的desc唯一标识值
-12. │   │       └── index_dtype.json
-13. │   ├── output                        // 存放NPU编译运行的输出文件
-14. │   │   ├── z.bin                     // 运行输出原始数据
-15. │   │   └── z.txt                     // 精度比对结果文件
-16. │   └── src                           // 存放NPU编译生成的临时代码文件
-17. │       └── _gen_args_${op_type}.cpp
+```text
+├ ${op_type} // 算子名
+├── simulator
+│   ├── build // 存放NPU编译生成的中间文件
+│   │   ├── launch_args.so
+│   │   └── run_Makefile_0.sh
+│   ├── dump
+│   │   ├── camodel
+│   │   │   ├── log // model执行日志
+│   │   └── dump_data
+│   │       ├── 0 // 核心编号
+│   │       │   └── index_0 // index是dump接口的desc唯一标识值
+│   │       └── index_dtype.json
+│   ├── output // 存放NPU编译运行的输出文件
+│   │   ├── z.bin // 运行输出原始数据
+│   │   └── z.txt // 精度比对结果文件
+│   └── src // 存放NPU编译生成的临时代码文件
+│       └── _gen_args_${op_type}.cpp
 ```
 
 * **查看性能仿真数据**
 
   1. 在执行ascendebug命令的目录下，会生成执行日志debug\_op.log。
-  2. 查看该日志，搜索"block finish"，可以看到类似如下日志，其中block\_idx为芯片的核心序号，total tick为核函数执行的circle数，该值越大代表耗时越长。
+  2. 查看该日志，搜索"block finish"，可以看到类似如下日志，其中block\_idx为芯片的核心序号，total tick为核函数执行的cycle数，该值越大代表耗时越长。
 
-     ```
-     1. block finish -> block_idx: 0 total tick: 4153
+     ```plaintext
+     block finish -> block_idx: 0 total tick: 4153
      ```
 * **查看精度比对结果**
 
@@ -71,33 +71,33 @@ CAModel仿真结果存放在${root}/${work\_dir}/simulator路径下，其中${ro
 
      精度比对结果输出样例如下，主要展示两份数据的均值、部分误差对比以及成功/失败的最终比对结论。若结果是失败，会将最大误差的部分数据展示出来。
 
-     ```
-     1. data_cmp mean is -1.41e-05 data_gd mean is -1.41e-05
-     2. split_count:2359296.0; max_diff_hd:0.1;
-     3. ---------------------------------------------------------------------------------------
-     4. Loop           ExpectOut        RealOut         FpDiff         RateDiff
-     5. ---------------------------------------------------------------------------------------
-     6. 00000001         0.0395813       0.0395813       0.0000000       0.0000000
-     7. 00000002         0.0160980       0.0160980       0.0000000       0.0000000
-     8. 00000003         -0.0443420      -0.0443420      0.0000000       0.0000000
-     9. 00000004         -0.0847778      -0.0847778      0.0000000       0.0000000
-     10. 00000005         -0.0066605      -0.0066605      0.0000000       0.0000000
-     11. 00000006         0.0880737       0.0880737       0.0000000       0.0000000
-     12. 00000007         0.0848389       0.0848389       0.0000000       0.0000000
-     13. 00000008         0.1083374       0.1083374       0.0000000       0.0000000
-     14. 00000009         0.0838623       0.0838623       0.0000000       0.0000000
-     15. 00000010         0.0887451       0.0887451       0.0000000       0.0000000
-     16. 00000011         0.0572205       0.0572205       0.0000000       0.0000000
-     17. 00000012         0.0741577       0.0741577       0.0000000       0.0000000
-     18. 00000013         -0.0762329      -0.0762329      0.0000000       0.0000000
-     19. 00000014         -0.0957642      -0.0957642      0.0000000       0.0000000
-     20. 00000015         0.0102234       0.0102234       0.0000000       0.0000000
-     21. ...               ...             ...             ...             ...
-     22. ---------------------------------------------------------------------------------------
-     23. DiffThd           PctThd          PctRlt          Result
-     24. ---------------------------------------------------------------------------------------
-     25. 0.0050            99.50%          100.000000%     Pass
-     26. Success Success Success Success Success
+     ```text
+     data_cmp mean is -1.41e-05 data_gd mean is -1.41e-05
+      split_count:2359296.0; max_diff_hd:0.1;
+      ---------------------------------------------------------------------------------------
+        Loop           ExpectOut        RealOut         FpDiff         RateDiff
+      ---------------------------------------------------------------------------------------
+      00000001         0.0395813       0.0395813       0.0000000       0.0000000
+      00000002         0.0160980       0.0160980       0.0000000       0.0000000
+      00000003         -0.0443420      -0.0443420      0.0000000       0.0000000
+      00000004         -0.0847778      -0.0847778      0.0000000       0.0000000
+      00000005         -0.0066605      -0.0066605      0.0000000       0.0000000
+      00000006         0.0880737       0.0880737       0.0000000       0.0000000
+      00000007         0.0848389       0.0848389       0.0000000       0.0000000
+      00000008         0.1083374       0.1083374       0.0000000       0.0000000
+      00000009         0.0838623       0.0838623       0.0000000       0.0000000
+      00000010         0.0887451       0.0887451       0.0000000       0.0000000
+      00000011         0.0572205       0.0572205       0.0000000       0.0000000
+      00000012         0.0741577       0.0741577       0.0000000       0.0000000
+      00000013         -0.0762329      -0.0762329      0.0000000       0.0000000
+      00000014         -0.0957642      -0.0957642      0.0000000       0.0000000
+      00000015         0.0102234       0.0102234       0.0000000       0.0000000
+        ...               ...             ...             ...             ...
+      ---------------------------------------------------------------------------------------
+      DiffThd           PctThd          PctRlt          Result
+      ---------------------------------------------------------------------------------------
+      0.0050            99.50%          100.000000%     Pass
+      Success Success Success Success Success
      ```
 
   **表1** 精度比对结果说明
@@ -121,18 +121,18 @@ CAModel仿真结果存放在${root}/${work\_dir}/simulator路径下，其中${ro
 
 算子进行CAModel仿真时，可对算子任意运行阶段进行打点，从而分析不同指令的流水图，以便进一步性能调优。
 
-说明
+**说明** 
 
-Kirin9020/KirinX90暂不支持使用该方法进行调优。
+Kirin9020/Kirin9030/KirinX90暂不支持使用该方法进行调优。
 
 ### 使用方法
 
 1. 先在Kernel代码中的目标指令位置分别打上TRACE\_START/TRACE\_STOP，示例如下，起始/终止接口的说明详见[Trace接口说明](cannkit-simulator-performance-simulation.md#trace接口说明)。
 
-   ```
-   1. TRACE_START(0x1);
-   2. DataCopy(zGm, zLocal, this->totalLength);
-   3. TRACE_STOP(0x1);
+   ```shell
+   TRACE_START(0x1);
+   DataCopy(zGm, zLocal, this->totalLength);
+   TRACE_STOP(0x1);
    ```
 2. 参考[使用方法（命令行）](cannkit-simulator-performance-simulation.md#使用方法命令行)中的命令行方式，执行算子仿真流程。
 3. 在CAModel仿真结果trace图上查看打点结果。
@@ -141,7 +141,7 @@ Kirin9020/KirinX90暂不支持使用该方法进行调优。
 
    **图1** 仿真打点示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/JC2iuUXkTXqO2nLseKdbXQ/zh-cn_image_0000002589325621.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/0QBtQepvRgSnkp85zIRdnA/zh-cn_image_0000002706675376.png)
 
 ### Trace接口说明
 
@@ -169,10 +169,10 @@ TRACE\_START接口说明如下。
   + 不支持跨核使用，例如TRACE\_START在AI Cube打点，则TRACE\_STOP打点也需要在AI Cube上，不能在AI Vector上。
 * **调用示例：**
 
-  ```
-  1. TRACE_START(0x2);
-  2. Add(zLocal, xLocal, yLocal, dataSize);
-  3. TRACE_STOP(0x2);
+  ```shell
+  TRACE_START(0x2);
+  Add(zLocal, xLocal, yLocal, dataSize);
+  TRACE_STOP(0x2);
   ```
 
 TRACE\_STOP接口说明如下。
@@ -188,8 +188,8 @@ TRACE\_STOP接口说明如下。
   + 不支持跨核使用，例如TRACE\_START在AI Cube打点，则TRACE\_STOP打点也需要在AI Cube上，不能在AI Vector上。
 * **调用示例：**
 
-  ```
-  1. TRACE_START(0x2);
-  2. Add(zLocal, xLocal, yLocal, dataSize);
-  3. TRACE_STOP(0x2);
+  ```shell
+  TRACE_START(0x2);
+  Add(zLocal, xLocal, yLocal, dataSize);
+  TRACE_STOP(0x2);
   ```

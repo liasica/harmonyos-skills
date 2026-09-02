@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/syscap
 title: 系统能力SystemCapability使用指南
 breadcrumb: API参考 > API参考概述 > 系统能力SystemCapability使用指南
 category: harmonyos-references
-scraped_at: 2026-04-29T13:48:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9fd6bebb30a4552e0739f5e6a8ef28e28564524161256f09b8206b0f7610e2c4
+scraped_at: 2026-09-02T15:00:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c051d328090ef1120c9de6776ddf63fecf47ada64ec3c7a766342b607ff78668
 ---
 
 本文将系统阐述SystemCapability（SysCap）的定义、用途，以及在单设备与多设备应用开发场景下的适配开发策略。
@@ -14,7 +14,7 @@ content_hash: sha256:9fd6bebb30a4552e0739f5e6a8ef28e28564524161256f09b8206b0f761
 
 SystemCapability，下文统一简称为SysCap，用于标识一组实现特定开放能力的API集合，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/vw5eaZTMQXqhOedUK-n1wQ/zh-cn_image_0000002589325779.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xJjlWUPwQm6uNAApf5aPcw/zh-cn_image_0000002736434649.png)
 
 以名为SystemCapability.Communication.Bluetooth.Core的蓝牙SysCap为例，它代表了一组蓝牙能力相关的API，包括：
 
@@ -36,7 +36,7 @@ SysCap的用途：
 
    每个SysCap所代表的开放能力API集合，对应操作系统中一个独立的功能特性。例如上述蓝牙SysCap标识的API集合，逻辑上均属于“蓝牙核心通信能力”。
 
-注意
+**注意** 
 
 同一设备类型下不同的产品型号，软硬件规格可能不一致，所以需要开发者通过canIUse和能力查询接口判断，以达到先查询后使用的目的。例如部分手机不支持POI功能，所以需要开发者先使用canIUse判断SystemCapability.Location.Location.Core在手机上是否可调用，接着还需使用[geoLocationManager.isPoiServiceSupported](js-apis-geolocationmanager.md#geolocationmanagerispoiservicesupported20)查询系统（即软件）是否支持POI服务，全部支持之后开发者才可正常使用POI相关接口。详情请参见[SysCap适配应用开发](syscap.md#syscap适配应用开发)。
 
@@ -44,7 +44,7 @@ SysCap的用途：
 
 SysCap与SDK、Kit形成结构化、层级化结构，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/xRilhFoIROGxuEtSFoIEKg/zh-cn_image_0000002589245721.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/aADl0h_rRa-KkB3YBYl5iw/zh-cn_image_0000002706835502.png)
 
 1. SDK由多个功能独立的Kit组成；
 2. 每个Kit包含一个或多个SysCap，且每个SysCap仅属于一个 Kit；
@@ -54,25 +54,29 @@ SysCap与SDK、Kit形成结构化、层级化结构，如下图所示：
 
 以Tablet设备为例，如果开发者在.ets文件上导入以“a”开头的某个模块的具体内容（例如：接口、类、函数、变量、对象等），DevEco Studio会联想出所有支持在Tablet上可用的某个模块的具体内容，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/8UeiOLeKSz2qUTG9Oe3l6w/zh-cn_image_0000002558765910.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/UC6znL8MRWGF54UsCwDrSA/zh-cn_image_0000002736314607.png)
 
 ## SysCap与Device type的关系
 
-在SDK的“device-define”文件夹下，以json文件定义了各设备类型支持的SysCap集合。例如：tablet.json文件定义了Tablet设备支持SystemCapability.ArkUI.ArkUI.Full、SystemCapability.Communication.NFC.Core等SysCap。如下图所示：
+在SDK的“device-define”文件夹下，以json文件定义了各设备类型支持的SysCap集合。例如：tablet.json文件定义了Tablet设备支持SystemCapability.ArkUI.ArkUI.Full、SystemCapability.Communication.NFC.Core等SysCap。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d4-G5JaZSSauEU2HlA8NQA/zh-cn_image_0000002558606254.png)
+SDK的“device-define”文件夹可在DevEco Studio左侧项目栏的“外部库（External Libraries） > ArkTS-HarmonyOS-{版本号}(hms) > api > device-define”中查看。
+
+如下图所示：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/-HOJLk5qQ2CVfHO0UVGpaQ/zh-cn_image_0000002706675564.png)
 
 开发者在DevEco Studio创建工程时，需要选择应用的设备类型Device type：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/eXVtydZqR8yjLxlkmYy67w/zh-cn_image_0000002589325781.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/O-MNF63sQBu7Vi4Y9OKFMw/zh-cn_image_0000002736434651.png)
 
 也可在新建工程后，通过修改module.json5文件中的[deviceTypes](../harmonyos-guides/module-configuration-file.md#devicetypes标签)指定应用支持的设备类型：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/_LMB8pkxSvWvNxjA8t-XFg/zh-cn_image_0000002589245723.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/qtsSF4ynTCGY7Bpr0owDRg/zh-cn_image_0000002706835504.png)
 
 DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”下对应的SysCap集合，进而提取该设备支持的API，用于智能提示与自动联想，助力开发者精准、高效地调用所需接口。
 
-注意
+**注意** 
 
 当设备类型为多个时，此时DevEco Studio识别的SysCap集合是这几个设备类型的并集。
 
@@ -93,55 +97,55 @@ DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”
 
 **ArkTS API使用示例**
 
-```
-1. if (canIUse("SystemCapability.Location.Location.Core")) {
-2. console.info("The device supports SystemCapability.Location.Location.Core");
-3. } else {
-4. console.info("The device does not support SystemCapability.Location.Location.Core");
-5. }
+```js
+if (canIUse("SystemCapability.Location.Location.Core")) {
+ console.info("The device supports SystemCapability.Location.Location.Core");
+} else {
+ console.info("The device does not support SystemCapability.Location.Location.Core");
+}
 ```
 
 **Native API使用示例**
 
 ```
-1. #include <stdio.h>
-2. #include <stdlib.h>
-3. #include "syscap_ndk.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "syscap_ndk.h"
 
-5. char syscap[] = "SystemCapability.ArkUI.ArkUI.Full";
-6. bool result = canIUse(syscap);
-7. if (result) {
-8. printf("SysCap: %s is supported!\n", syscap);
-9. } else {
-10. printf("SysCap: %s is not supported!\n", syscap);
-11. }
+char syscap[] = "SystemCapability.ArkUI.ArkUI.Full";
+bool result = canIUse(syscap);
+if (result) {
+ printf("SysCap: %s is supported!\n", syscap);
+} else {
+ printf("SysCap: %s is not supported!\n", syscap);
+}
 ```
 
 ### 使用能力查询接口判断API是否可用
 
 使用系统侧的isXXXAvailable()、isXXXSupported()、canMakeXXX()等接口判断API是否可用。
 
-说明
+**说明** 
 
 并不是所有API都会有能力查询接口，若需要验证的API没有能力查询接口，可通过主动监听或错误码异常处理来判断API是否可用。
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit';
+```javascript
+import { geoLocationManager } from '@kit.LocationKit';
 
-3. if (!canIUse("SystemCapability.Location.Location.Core")) { // 首先对能力集进行可用性判断，该步骤仅适用于多设备应用开发，单设备应用开发可忽略该步骤。
-4. return;
-5. }
-6. try {
-7. if (geoLocationManager.isPoiServiceSupported()) { // 然后进行POI服务能力的查询
-8. geoLocationManager.getPoiInfo().then((poiInfo) => { // 判断能力支持后，进行位置信息的获取接口调用
-9. if (poiInfo !== undefined) {
-10. console.info("get PoiInfo:" + JSON.stringify(poiInfo));
-11. }
-12. })
-13. }
-14. } catch (error) {
-15. console.error("getPoiInfo errCode:" + error.code + ", errMessage:" + error.message);
-16. }
+if (!canIUse("SystemCapability.Location.Location.Core")) { // 首先对能力集进行可用性判断，该步骤仅适用于多设备应用开发，单设备应用开发可忽略该步骤。
+  return;
+}
+try {
+  if (geoLocationManager.isPoiServiceSupported()) { // 然后进行POI服务能力的查询
+    geoLocationManager.getPoiInfo().then((poiInfo) => { // 判断能力支持后，进行位置信息的获取接口调用
+      if (poiInfo !== undefined) {
+        console.info("get PoiInfo:" + JSON.stringify(poiInfo));
+      }
+    })
+  }
+} catch (error) {
+  console.error("getPoiInfo errCode:" + error.code + ", errMessage:" + error.message);
+}
 ```
 
 ### 主动监听扩展能力变化
@@ -150,20 +154,20 @@ DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”
 
 例如：对于USB类型的Camera，存在动态插拔的场景，系统侧提供了on的监听接口，支持开发者处理摄像头设备的动态变化。
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { camera } from '@kit.CameraKit';
+```javascript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { camera } from '@kit.CameraKit';
 
-4. callback(err: BusinessError, cameraStatusInfo: camera.CameraStatusInfo): void {
-5. if (err !== undefined && err.code !== 0) {
-6. console.error('cameraStatus with errorCode = ' + err.code);
-7. return;
-8. }
-9. console.info(`camera : ${cameraStatusInfo.camera.cameraId}, status: ${cameraStatusInfo.status}`);
-10. }
-11. registerCameraStatus(cameraManager: camera.CameraManager): void {
-12. cameraManager.on('cameraStatus', this.callback); // 开发者通过监听Camera的状态，处理动态硬件设备
-13. }
+callback(err: BusinessError, cameraStatusInfo: camera.CameraStatusInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error('cameraStatus with errorCode = ' + err.code);
+    return;
+  }
+  console.info(`camera : ${cameraStatusInfo.camera.cameraId}, status: ${cameraStatusInfo.status}`);
+}
+registerCameraStatus(cameraManager: camera.CameraManager): void {
+  cameraManager.on('cameraStatus', this.callback); // 开发者通过监听Camera的状态，处理动态硬件设备
+}
 ```
 
 ### 错误码异常处理
@@ -172,42 +176,42 @@ DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”
 
 1. 同步接口必须使用try...catch处理异常，避免应用功能崩溃。
 
-   ```
-   1. import { omapi } from '@kit.ConnectivityKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. let seService : omapi.SEService;
-   4. let seReaders : omapi.Reader[];
+   ```javascript
+   import { omapi } from '@kit.ConnectivityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   let seService : omapi.SEService;
+   let seReaders : omapi.Reader[];
 
-   6. // 在使用seService之前，需要对seService进行初始化
-   7. function secureElementDemo() {
-   8. // 获取readers
-   9. try {
-   10. seReaders = seService.getReaders();
-   11. } catch (error) {
-   12. if(error.code=== 801) {
-   13. console.error('This device does not support this capability');
-   14. }
-   15. }
-   16. }
+   // 在使用seService之前，需要对seService进行初始化
+   function secureElementDemo() {
+     // 获取readers
+     try {
+       seReaders = seService.getReaders();
+     } catch (error) {
+      if(error.code=== 801) {
+       console.error('This device does not support this capability');
+      }
+     }
+   }
    ```
 2. 异步接口使用.catch的方式捕获异步的异常，开发者也可以不处理异常，应用不会崩溃。
 
-   ```
-   1. import { media } from '@kit.MediaKit';
+   ```javascript
+   import { media } from '@kit.MediaKit';
 
-   3. let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
-   4. media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
-   5. // 执行正常业务
-   6. if (captureRecorder != null) {
-   7. avScreenCaptureRecorder = captureRecorder;
-   8. console.info('Succeeded in creating avScreenCaptureRecorder');
-   9. } else {
-   10. console.error('Failed to create avScreenCaptureRecorder');
-   11. }
-   12. }).catch((error: BusinessError) => {
-   13. // 处理业务逻辑错误
-   14. console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-   15. });
+   let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
+   media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
+     // 执行正常业务
+     if (captureRecorder != null) {
+       avScreenCaptureRecorder = captureRecorder;
+       console.info('Succeeded in creating avScreenCaptureRecorder');
+     } else {
+       console.error('Failed to create avScreenCaptureRecorder');
+     }
+   }).catch((error: BusinessError) => {
+     // 处理业务逻辑错误
+     console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+   });
    ```
 3. 使用全局捕获，在全局添加异常捕获监听，能够捕获未被try...catch的异常，添加后应用抛出异常后不会主动退出，详情可参考[errorManager.on('error')](js-apis-app-ability-errormanager.md#errormanageronerror)。
 
@@ -215,14 +219,14 @@ DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”
 
 应用开发可分为：
 
-1. 单设备应用开发：指应用工程的Device type只配置1个设备类型。
+1. 单设备应用开发：指应用工程的Device type只配置1个设备类型；
 2. 多设备应用开发：指应用工程的Device type配置多个设备类型。
 
 ### 单设备应用开发场景下的适配开发
 
 单设备应用开发时，DevEco Studio只识别到一种设备类型，适配开发过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/HxcWrlgeQWWFsm57vex-ww/zh-cn_image_0000002558765912.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/rx182Km-StyiLIWc1UWD4g/zh-cn_image_0000002736314609.png)
 
 1. 如果存在API在同一设备类型下的不同设备型号存在能力不一致的情况，需使用能力查询接口判断接口能力可用性（注意：此处的能力查询机制并非canIUse，请参见[使用能力查询接口判断API是否可用](syscap.md#使用能力查询接口判断api是否可用)）；
 2. 为了避免调用接口出现的异常情况，需要开发者进行错误码异常处理。
@@ -231,7 +235,7 @@ DevEco Studio自动识别项目中的设备类型，定位SDK“device-define”
 
 多设备应用开发时，DevEco Studio需同时识别多种设备类型，适配开发过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/ZXU0oquOT7eDi5vAFGsXCA/zh-cn_image_0000002558606256.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/PoQhmF1dQqG71N-3GemUZg/zh-cn_image_0000002706675566.png)
 
 1. 使用canIUse判断并集内交集外的SysCap集合是否可用；
 

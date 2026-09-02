@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 业务模块HAR如何获取宿主HAP的数据
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 业务模块HAR如何获取宿主HAP的数据
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:280334ea5df524b5778974076c05cbacab6e32bd9a9a6dd6779802523c2454ba
 ---
 

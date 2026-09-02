@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > button
 category: harmonyos-references
-scraped_at: 2026-04-29T13:54:00+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:28276e9db3251d2a98d778a419f04c12a38e9888162ec4d2aa08f967d594d0aa
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7e9be86de68f4e3f9df3a3afa9b3931a86f4727ffbca626874cf3c46d38b4e0c
 ---
 
 按钮组件，包括胶囊按钮、圆形按钮和文本按钮。
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-service-widget-common-attributes.md)外，还支持如下属性。
 
@@ -32,17 +28,13 @@ PhonePC/2in1TabletTVWearable
 | value | string | - | 否 | button的文本值，circle类型不生效。 |
 | icon | string | - | 否 | button的图标路径，图标格式为jpg，png和svg。 |
 | placement | string | end | 否 | 仅在type属性为缺省时生效，设置图标位于文本的位置，可选值为：  - "start"：图标位于文本起始处。  - "end"：图标位于文本结束处。  - "top"：图标位于文本上方。  - "bottom"：图标位于文本下方。 |
-| waiting | boolean | false | 否 | 是否处于waiting状态，值为true时展现等待中转圈效果，位于文本左侧。值为false时，不展示等待中效果。类型为download时不生效。 |
+| waiting | boolean | false | 否 | 是否处于waiting状态，值为true时展现等待中转圈效果，位于文本左侧。值为false时，不展示等待中效果。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用事件](js-service-widget-common-events.md)。
 
 ## 样式
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用样式](js-service-widget-common-styles.md)外，还支持如下样式：
 
@@ -57,7 +49,7 @@ PhonePC/2in1TabletTVWearable
 | icon-height | <length> | - | 否 | 设置圆形按钮内部图标的高，默认填满整个圆形按钮。  icon使用svg图源时必须设置该样式。 |
 | radius | <length> | - | 否 | 圆形按钮半径或者胶囊按钮圆角半径。在圆形按钮类型下该样式优先于通用样式的width和height样式。 |
 
-说明
+**说明** 
 
 * 胶囊按钮（type=capsule）时，不支持border相关样式。
 * 圆形按钮（type=circle）时，不支持文本相关样式。
@@ -65,41 +57,39 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="div-button">
-3. <button class="button" type="capsule" value="Capsule button"></button>
-4. <button class="button circle" type="circle" icon="common/ic_add_default.png"></button>
-5. <button class="button text" type="text">Text button</button>
-6. </div>
+```html
+<!-- xxx.hml -->
+<div class="div-button">
+  <button class="button" type="capsule" value="Capsule button"></button>
+  <button class="button circle" type="circle" icon="common/ic_add_default.png"></button>
+  <button class="button text" type="text">Text button</button>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .div-button {
-3. flex-direction: column;
-4. align-items: center;
-5. }
-6. .button {
-7. margin-top: 15px;
-8. }
-9. .circle {
-10. background-color: #007dff;
-11. radius: 72px;
-12. icon-width: 72px;
-13. icon-height: 72px;
-14. }
-15. .text {
-16. text-color: red;
-17. font-size: 40px;
-18. font-weight: 900;
-19. font-family: sans-serif;
-20. font-style: normal;
-21. }
+```css
+/* xxx.css */
+.div-button {
+  flex-direction: column;
+  align-items: center;
+}
+.button {
+  margin-top: 15px;
+}
+.circle {
+  background-color: #007dff;
+  radius: 72px;
+  icon-width: 72px;
+  icon-height: 72px;
+}
+.text {
+  text-color: red;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: sans-serif;
+  font-style: normal;
+}
 ```
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/eS_NLnWdS2uohH0T3-Zgjg/zh-cn_image_0000002589246761.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/dcpkOcDsSVSs8dRCz1vCOA/zh-cn_image_0000002736435773.jpg)

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: VideoOutput_Callbacks
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > VideoOutput_Callbacks
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0198b6634e8d5ad83bcec047987d2c60908f7eb2e2aec702bf2e6a827bc7dd15
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0ec8ddc3bf08cb1ae733d25174c4c1830f0850fd3d4b1d80d31ee36552a638f9
 ---
 
-```
-1. typedef struct VideoOutput_Callbacks {...} VideoOutput_Callbacks
+```c
+typedef struct VideoOutput_Callbacks {...} VideoOutput_Callbacks
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于录像输出的回调。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

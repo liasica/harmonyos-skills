@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ColorFilter)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (ColorFilter)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4f86bb2f7db925d15faff23fcb458499b5bcc3140ada9be7b3de50152fad2ef8
+scraped_at: 2026-09-02T15:02:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2241e9af8ebc07d6a42388572c3062fb3ad31e8ba190e7b10aa2954d6d0283d8
 ---
 
 颜色滤波器。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块使用屏幕物理像素单位px。
@@ -18,15 +18,11 @@ content_hash: sha256:4f86bb2f7db925d15faff23fcb458499b5bcc3140ada9be7b3de50152fa
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 ```
 
 ## createBlendModeColorFilter
-
-PhonePC/2in1TabletTVWearable
 
 createBlendModeColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
 
@@ -57,16 +53,14 @@ createBlendModeColorFilter(color: common2D.Color, mode: BlendMode) : ColorFilter
 
 **示例：**
 
-```
-1. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-3. const color : common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
-4. let colorFilter = drawing.ColorFilter.createBlendModeColorFilter(color, drawing.BlendMode.SRC);
+const color : common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
+let colorFilter = drawing.ColorFilter.createBlendModeColorFilter(color, drawing.BlendMode.SRC);
 ```
 
 ## createBlendModeColorFilter18+
-
-PhonePC/2in1TabletTVWearable
 
 static createBlendModeColorFilter(color: common2D.Color | number, mode: BlendMode) : ColorFilter
 
@@ -97,15 +91,13 @@ static createBlendModeColorFilter(color: common2D.Color | number, mode: BlendMod
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let colorFilter = drawing.ColorFilter.createBlendModeColorFilter(0xffff0000, drawing.BlendMode.SRC);
+let colorFilter = drawing.ColorFilter.createBlendModeColorFilter(0xffff0000, drawing.BlendMode.SRC);
 ```
 
 ## createComposeColorFilter
-
-PhonePC/2in1TabletTVWearable
 
 createComposeColorFilter(outer: ColorFilter, inner: ColorFilter) : ColorFilter
 
@@ -136,18 +128,16 @@ createComposeColorFilter(outer: ColorFilter, inner: ColorFilter) : ColorFilter
 
 **示例：**
 
-```
-1. import { common2D, drawing } from '@kit.ArkGraphics2D';
+```ts
+import { common2D, drawing } from '@kit.ArkGraphics2D';
 
-3. const color : common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
-4. let colorFilter1 = drawing.ColorFilter.createBlendModeColorFilter(color, drawing.BlendMode.SRC);
-5. let colorFilter2 = drawing.ColorFilter.createBlendModeColorFilter(color, drawing.BlendMode.DST);
-6. let colorFilter = drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
+const color : common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
+let colorFilter1 = drawing.ColorFilter.createBlendModeColorFilter(color, drawing.BlendMode.SRC);
+let colorFilter2 = drawing.ColorFilter.createBlendModeColorFilter(color, drawing.BlendMode.DST);
+let colorFilter = drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
 ```
 
 ## createLinearToSRGBGamma
-
-PhonePC/2in1TabletTVWearable
 
 createLinearToSRGBGamma() : ColorFilter
 
@@ -163,15 +153,13 @@ createLinearToSRGBGamma() : ColorFilter
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let colorFilter = drawing.ColorFilter.createLinearToSRGBGamma();
+let colorFilter = drawing.ColorFilter.createLinearToSRGBGamma();
 ```
 
 ## createSRGBGammaToLinear
-
-PhonePC/2in1TabletTVWearable
 
 createSRGBGammaToLinear() : ColorFilter
 
@@ -187,15 +175,13 @@ createSRGBGammaToLinear() : ColorFilter
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let colorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
+let colorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
 ```
 
 ## createLumaColorFilter
-
-PhonePC/2in1TabletTVWearable
 
 createLumaColorFilter() : ColorFilter
 
@@ -211,15 +197,13 @@ createLumaColorFilter() : ColorFilter
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let colorFilter = drawing.ColorFilter.createLumaColorFilter();
+let colorFilter = drawing.ColorFilter.createLumaColorFilter();
 ```
 
 ## createMatrixColorFilter12+
-
-PhonePC/2in1TabletTVWearable
 
 static createMatrixColorFilter(matrix: Array<number>): ColorFilter
 
@@ -249,21 +233,19 @@ static createMatrixColorFilter(matrix: Array<number>): ColorFilter
 
 **示例：**
 
-```
-1. import { drawing } from '@kit.ArkGraphics2D';
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
 
-3. let matrix: Array<number> = [
-4. 1, 0, 0, 0, 0,
-5. 0, 1, 0, 0, 0,
-6. 0, 0, 100, 0, 0,
-7. 0, 0, 0, 1, 0
-8. ];
-9. let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix);
+let matrix: Array<number> = [
+  1, 0, 0, 0, 0,
+  0, 1, 0, 0, 0,
+  0, 0, 100, 0, 0,
+  0, 0, 0, 1, 0
+];
+let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix);
 ```
 
 ## createLightingColorFilter20+
-
-PhonePC/2in1TabletTVWearable
 
 static createLightingColorFilter(mutColor: common2D.Color | number, addColor: common2D.Color | number): ColorFilter
 
@@ -286,9 +268,9 @@ static createLightingColorFilter(mutColor: common2D.Color | number, addColor: co
 
 **示例：**
 
-```
-1. import { common2D, drawing } from '@kit.ArkGraphics2D';
-2. let mulColor : common2D.Color = { alpha: 0, red: 0, green: 0, blue: 20 };
-3. let addColor : common2D.Color = { alpha: 0, red: 0, green: 0, blue: 125 };
-4. let colorFilter = drawing.ColorFilter.createLightingColorFilter(mulColor, addColor);
+```ts
+import { common2D, drawing } from '@kit.ArkGraphics2D';
+let mulColor : common2D.Color = { alpha: 0, red: 0, green: 0, blue: 20 };
+let addColor : common2D.Color = { alpha: 0, red: 0, green: 0, blue: 125 };
+let colorFilter = drawing.ColorFilter.createLightingColorFilter(mulColor, addColor);
 ```

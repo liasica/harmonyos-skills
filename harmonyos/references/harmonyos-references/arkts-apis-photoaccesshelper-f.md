@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Functions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f8dbed32f45939b0a754928ead1070ca47c253325ab3e500605cd8ab74e2b2d3
+scraped_at: 2026-09-02T15:02:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:920078c86839b17e0563bc29e457ee81441100d09d5387fe6d0841e1e4075ae6
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```ts
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 ```
 
 ## photoAccessHelper.getPhotoAccessHelper
-
-PhonePC/2in1TabletTV
 
 getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
@@ -56,22 +52,23 @@ getPhotoAccessHelper(context: Context): PhotoAccessHelper
 
 **示例：**
 
-```
-1. // 此处获取的phAccessHelper实例为全局对象，后续使用到phAccessHelper的地方默认为使用此处获取的对象，如未添加此段代码报phAccessHelper未定义的错误请自行添加。
-2. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
-3. import { common } from '@kit.AbilityKit';
+```ts
+// phAccessHelper为全局对象，后续使用时请确保已获取该实例。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+import { common } from '@kit.AbilityKit';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. build() {
-9. Row() {
-10. Button("example").onClick(async () => {
-11. let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-12. let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-13. }).width('100%')
-14. }
-15. .height('90%')
-16. }
-17. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+        Button('example').onClick(async () => {
+        let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+        let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+      }).width('100%')
+    }
+    .height('90%')
+  }
+}
 ```

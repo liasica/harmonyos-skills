@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: CryptoAsymKeyApi
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 模块 > CryptoAsymKeyApi
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ac705561d3ceb18f6d699ac340903491ea2cb9ddc441e655db84dc83f890f7e4
+scraped_at: 2026-09-02T14:52:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b307c24d46e76925f98bbe2e9654f12cfda29a997c718e348d4ca0334a6de15b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 为应用提供非对称密钥生成和转换算法接口。
 
 **起始版本：** 12
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API进行扩展能力功能开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API进行扩展能力功能开发
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c6524e8cbb56a37514591b95fca878b0306f487081658fa617dbad62a9c7344e
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:454788fe20527f24feef8889b66c5b579dc4056f45c44ecdffa22776ce740456
 ---
 
 ## 简介
@@ -16,21 +16,21 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 
 本文cpp部分代码所需引用的头文件如下：
 
-```
-1. #include "napi/native_api.h"
-2. #include <bits/alltypes.h>
-3. #include <mutex>
-4. #include <unordered_set>
-5. #include <uv.h>
-6. #include "hilog/log.h"
+```cpp
+#include "napi/native_api.h"
+#include <bits/alltypes.h>
+#include <mutex>
+#include <unordered_set>
+#include <uv.h>
+#include "hilog/log.h"
 ```
 
 本文ArkTS侧示例代码所需的模块导入如下：
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
-3. import { taskpool } from '@kit.ArkTS';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
+import { taskpool } from '@kit.ArkTS';
 ```
 
 ## 模块加载
@@ -60,71 +60,73 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+// 模块加载
+static napi_value Add(napi_env env, napi_callback_info info)
+{
+    // 接受传入两个参数
+    size_t requireArgc = 2;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-3. // 此模块是一个Node-API的回调函数
-4. static napi_value Add(napi_env env, napi_callback_info info)
-5. {
-6. // 接受传入两个参数
-7. size_t requireArgc = 2;
-8. size_t argc = 2;
-9. napi_value args[2] = {nullptr};
-10. napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
+    // 将传入的napi_value类型的参数转化为double类型
+    double valueLeft;
+    double valueRight;
+    napi_get_value_double(env, args[0], &valueLeft);
+    napi_get_value_double(env, args[1], &valueRight);
 
-12. // 将传入的napi_value类型的参数转化为double类型
-13. double valueLeft;
-14. double valueRight;
-15. napi_get_value_double(env, args[0], &valueLeft);
-16. napi_get_value_double(env, args[1], &valueRight);
+    // 将转化后的double值相加并转成napi_value返回给ArkTS代码使用
+    napi_value sum;
+    napi_create_double(env, valueLeft + valueRight, &sum);
 
-18. // 将转化后的double值相加并转成napi_value返回给ArkTS代码使用
-19. napi_value sum;
-20. napi_create_double(env, valueLeft + valueRight, &sum);
+    return sum;
+}
 
-22. return sum;
-23. }
+// ...
 
-25. // C++函数Init用于初始化插件，用于将ArkTS层的函数或属性与C++层的函数进行关联
-26. EXTERN_C_START
-27. static napi_value Init(napi_env env, napi_value exports)
-28. {
-29. // 通过napi_property_descriptor结构体，可以定义需要导出的属性，并在Node-API模块中使用。napi_define_properties将属性与实际的C++函数进行关联，使其可以被ArkTS层访问和调用
-30. napi_property_descriptor desc[] = {
-31. { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr }
-32. };
-33. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-34. return exports;
-35. }
-36. EXTERN_C_END
+// C++函数Init用于初始化插件，用于将ArkTS层的函数或属性与C++层的函数进行关联
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    // 通过napi_property_descriptor结构体，可以定义需要导出的属性，并在Node-API模块中使用。napi_define_properties将属性与实际的C++函数进行关联，使其可以被ArkTS层访问和调用
+    napi_property_descriptor desc[] = {
+        {"add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr},
+        // ...
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    // ...
+    return exports;
+}
+EXTERN_C_END
 
-38. // 插件的初始化被定义在一个名为demoModule的结构体中，其中包含了模块的基本信息，比如模块的版本号、注册函数等
-39. static napi_module demoModule = {
-40. .nm_version =1,
-41. .nm_flags = 0,
-42. .nm_filename = nullptr,
-43. .nm_register_func = Init,
-44. .nm_modname = "entry",
-45. .nm_priv = ((void*)0),
-46. .reserved = { 0 },
-47. };
+// 插件的初始化被定义在一个名为demoModule的结构体中，其中包含了模块的基本信息，比如模块的版本号、注册函数等
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
 
-49. // 在RegisterEntryModule函数中，使用napi_module_register函数注册并导出了这个插件
-50. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-51. {
-52. napi_module_register(&demoModule);
-53. }
+// 在RegisterEntryModule函数中，使用napi_module_register函数注册并导出了这个插件
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 接口声明
 
-```
-1. export const add: (a: number, b: number) => number; // 模块加载
+```typescript
+export const add: (a: number, b: number) => number; // 模块加载
 ```
 
 ArkTS侧示例代码
 
-```
-1. hilog.info(0x0000, 'testTag', 'Test Node-API 2 + 3 = %{public}d', testNapi.add(2, 3));
+```typescript
+hilog.info(0x0000, 'testTag', 'Test Node-API 2 + 3 = %{public}d', testNapi.add(2, 3));
 ```
 
 ## ArkTS Object相关
@@ -145,40 +147,40 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // ArkTS Object相关 napi_create_object_with_properties
-2. static napi_value CreateObjectWithProperties(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value argv[1] = {nullptr};
-6. // 获取解析传递的参数
-7. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-8. // 声明了一个napi_property_descriptor数组desc，其中包含了一个名为"name"的属性，其值为传入的第一个参数argv[0]。
-9. napi_property_descriptor desc[] = {
-10. {"name", nullptr, nullptr, nullptr, nullptr, argv[0], napi_default_jsproperty, nullptr}};
-11. napi_value object = nullptr;
-12. // 调用napi_create_object_with_properties来创建一个新的ArkTS对象，并将属性值添加到该对象中。
-13. napi_create_object_with_properties(env, &object, sizeof(desc) / sizeof(desc[0]), desc);
-14. napi_valuetype valueType;
-15. napi_typeof(env, object, &valueType);
-16. if (valueType == napi_object) {
-17. return object;
-18. }
-19. }
+// ArkTS Object相关 napi_create_object_with_properties
+static napi_value CreateObjectWithProperties(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    // 获取解析传递的参数
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    // 声明了一个napi_property_descriptor数组desc，其中包含了一个名为"name"的属性，其值为传入的第一个参数argv[0]。
+    napi_property_descriptor desc[] = {
+        {"name", nullptr, nullptr, nullptr, nullptr, argv[0], napi_default_jsproperty, nullptr}};
+    napi_value object = nullptr;
+    // 调用napi_create_object_with_properties来创建一个新的ArkTS对象，并将属性值添加到该对象中。
+    napi_create_object_with_properties(env, &object, sizeof(desc) / sizeof(desc[0]), desc);
+    napi_valuetype valueType;
+    napi_typeof(env, object, &valueType);
+    if (valueType == napi_object) {
+        return object;
+    }
+}
 ```
 
 接口声明
 
-```
-1. export const createObjectWithProperties: (data: string) => {name:string}; // ArkTS Object相关 napi_create_object_with_properties
+```typescript
+export const createObjectWithProperties: (data: string) => {name:string}; // ArkTS Object相关 napi_create_object_with_properties
 ```
 
 ArkTS侧示例代码
 
-```
-1. // ArkTS Object相关 napi_create_object_with_properties
-2. let value1 = testNapi.createObjectWithProperties('createObject');
-3. hilog.info(0x0000, 'testTag', 'Node-API napi_create_object_with_properties:%{public}s',
-4. JSON.stringify(value1));
+```typescript
+// ArkTS Object相关 napi_create_object_with_properties
+let value1 = testNapi.createObjectWithProperties('createObject');
+hilog.info(0x0000, 'testTag', 'Node-API napi_create_object_with_properties:%{public}s',
+  JSON.stringify(value1));
 ```
 
 **napi\_create\_object\_with\_named\_properties**
@@ -188,48 +190,48 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // ArkTS Object相关 napi_create_object_with_named_properties
-2. static napi_value CreateObjectWithNameProperties(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value argv[1] = {nullptr};
-6. // 获取解析传递的参数
-7. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-8. napi_value obj = nullptr;
-9. const char *key[] = {
-10. "name",
-11. };
-12. const napi_value values[] = {
-13. argv[0],
-14. };
-15. napi_property_descriptor desc[] = {{"name", nullptr, nullptr,
-16. nullptr, nullptr, nullptr, napi_default, nullptr}};
-17. napi_status status = napi_create_object_with_named_properties(
-18. env, &obj, sizeof(desc) / sizeof(desc[0]), key, values
-19. );
-20. if (status != napi_ok) {
-21. return nullptr;
-22. }
-23. return obj;
-24. }
+// ArkTS Object相关 napi_create_object_with_named_properties
+static napi_value CreateObjectWithNameProperties(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    // 获取解析传递的参数
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_value obj = nullptr;
+    const char *key[] = {
+        "name",
+    };
+    const napi_value values[] = {
+        argv[0],
+    };
+    napi_property_descriptor desc[] = {{"name", nullptr, nullptr,
+                                        nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_status status = napi_create_object_with_named_properties(
+        env, &obj, sizeof(desc) / sizeof(desc[0]), key, values
+    );
+    if (status != napi_ok) {
+        return nullptr;
+    }
+    return obj;
+}
 ```
 
 接口声明
 
-```
-1. export const createObjectWithNameProperties: (data: string) => undefined | { name: string }; // ArkTS Object相关 napi_create_object_with_named_properties
+```typescript
+export const createObjectWithNameProperties: (data: string) => undefined | { name: string }; // ArkTS Object相关 napi_create_object_with_named_properties
 ```
 
 ArkTS侧示例代码
 
-```
-1. // ArkTS Object相关 napi_create_object_with_named_properties
-2. let value2 = testNapi.createObjectWithNameProperties('ls');
-3. try {
-4. hilog.info(0x0000, 'testTag', 'Node-API napi_create_object_with_named_properties:%{public}s', JSON.stringify(value2));
-5. } catch (error) {
-6. hilog.error(0x0000, 'testTag', 'Node-API napi_create_object_with_named_properties: %{public}s', error.message);
-7. }
+```typescript
+// ArkTS Object相关 napi_create_object_with_named_properties
+let value2 = testNapi.createObjectWithNameProperties('ls');
+try {
+  hilog.info(0x0000, 'testTag', 'Node-API napi_create_object_with_named_properties:%{public}s', JSON.stringify(value2));
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Node-API napi_create_object_with_named_properties: %{public}s', error.message);
+}
 ```
 
 ## 运行指定abc文件
@@ -246,51 +248,51 @@ ArkTS侧示例代码
 
 在Node-API模块中运行abc文件。
 
-注意
+**注意** 
 
 在信号函数中调用不安全，直接调用可能导致栈溢出。
 
 cpp部分代码
 
 ```
-1. // 运行指定abc文件 napi_run_script_path
-2. static napi_value RunScriptPath(napi_env env, napi_callback_info info)
-3. {
-4. napi_value value = nullptr;
-5. // 注意：记得在应用rawfile目录下放置.abc文件
-6. const char *scriptPath = "/entry/resources/rawfile/test.abc";
-7. // 使用napi_run_script_path函数执行指定路径中的文件
-8. napi_status status = napi_run_script_path(env, scriptPath, &value);
-9. // 检查是否执行成功，如果失败，返回false
-10. napi_value returnValue = nullptr;
-11. if (value == nullptr || status != napi_ok) {
-12. napi_get_boolean(env, false, &returnValue);
-13. } else {
-14. napi_get_boolean(env, true, &returnValue);
-15. }
-16. return returnValue;
-17. }
+// 运行指定abc文件 napi_run_script_path
+static napi_value RunScriptPath(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    // 注意：记得在应用rawfile目录下放置.abc文件
+    const char *scriptPath = "/entry/resources/rawfile/test.abc";
+    // 使用napi_run_script_path函数执行指定路径中的文件
+    napi_status status = napi_run_script_path(env, scriptPath, &value);
+    // 检查是否执行成功，如果失败，返回false
+    napi_value returnValue = nullptr;
+    if (value == nullptr || status != napi_ok) {
+        napi_get_boolean(env, false, &returnValue);
+    } else {
+        napi_get_boolean(env, true, &returnValue);
+    }
+    return returnValue;
+}
 ```
 
 接口声明
 
-```
-1. export const runScriptPath: () => boolean; // 运行指定abc文件 napi_run_script_path
+```typescript
+export const runScriptPath: () => boolean; // 运行指定abc文件 napi_run_script_path
 ```
 
 ArkTS侧示例代码
 
-```
-1. // 运行指定abc文件 napi_run_script_path
-2. try { // 在此处执行错误返回false，成功就返回true
-3. hilog.info(0x0000, 'testTag', 'Test Node-API napi_run_script_path: %{public}s',
-4. testNapi.runScriptPath());
-5. // ···
-6. } catch (error) {
-7. hilog.error(0x0000, 'testTag', 'Test Node-API napi_run_script_path errorMessage: %{public}s',
-8. error.message);
-9. // ···
-10. }
+```typescript
+// 运行指定abc文件 napi_run_script_path
+try { // 在此处执行错误返回false，成功就返回true
+  hilog.info(0x0000, 'testTag', 'Test Node-API napi_run_script_path: %{public}s',
+    testNapi.runScriptPath());
+  // ···
+} catch (error) {
+  hilog.error(0x0000, 'testTag', 'Test Node-API napi_run_script_path errorMessage: %{public}s',
+    error.message);
+  // ···
+}
 ```
 
 test.js代码，将JS代码编译为.abc文件，步骤如下：
@@ -300,11 +302,11 @@ test.js代码，将JS代码编译为.abc文件，步骤如下：
 
 放入指定路径中：/entry/resources/rawfile
 
-```
-1. function add(a, b) {
-2. return a + b;
-3. }
-4. add(1, 2);
+```js
+function add(a, b) {
+  return a + b;
+}
+add(1, 2);
 ```
 
 ## 异步工作对象加入队列并指定优先级
@@ -337,309 +339,309 @@ test.js代码，将JS代码编译为.abc文件，步骤如下：
 
 cpp部分代码
 
-```
-1. #include <hilog/log.h>
-2. #include <mutex>
-3. #include <unordered_set>
-4. #include "napi/native_api.h"
+```cpp
+#include <hilog/log.h>
+#include <mutex>
+#include <unordered_set>
+#include "napi/native_api.h"
 
-6. class Object {
-7. public:
-8. Object() = default;
-9. ~Object() = default;
+class Object {
+public:
+    Object() = default;
+    ~Object() = default;
 
-11. static Object* GetInstance()
-12. {
-13. Object* instance = new Object();
-14. return instance;
-15. }
+    static Object* GetInstance()
+    {
+        Object* instance = new Object();
+        return instance;
+    }
 
-17. static napi_value GetAddress(napi_env env, napi_callback_info info)
-18. {
-19. napi_value thisVar = nullptr;
-20. napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
-21. if (thisVar == nullptr) {
-22. return nullptr;
-23. }
-24. void* object = nullptr;
-25. napi_unwrap(env, thisVar, &object);
-26. if (object == nullptr) {
-27. return nullptr;
-28. }
-29. uint64_t addressVal = reinterpret_cast<uint64_t>(object);
-30. napi_value address = nullptr;
-31. napi_create_bigint_uint64(env, addressVal, &address);
-32. return address;
-33. }
+    static napi_value GetAddress(napi_env env, napi_callback_info info)
+    {
+        napi_value thisVar = nullptr;
+        napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+        if (thisVar == nullptr) {
+            return nullptr;
+        }
+        void* object = nullptr;
+        napi_unwrap(env, thisVar, &object);
+        if (object == nullptr) {
+            return nullptr;
+        }
+        uint64_t addressVal = reinterpret_cast<uint64_t>(object);
+        napi_value address = nullptr;
+        napi_create_bigint_uint64(env, addressVal, &address);
+        return address;
+    }
 
-35. // 获取数组大小
-36. static napi_value GetSetSize(napi_env env, napi_callback_info info)
-37. {
-38. napi_value thisVar = nullptr;
-39. napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
-40. if (thisVar == nullptr) {
-41. return nullptr;
-42. }
-43. void* object = nullptr;
-44. napi_unwrap(env, thisVar, &object);
-45. if (object == nullptr) {
-46. return nullptr;
-47. }
-48. std::lock_guard<std::mutex> lock(reinterpret_cast<Object*>(object)->numberSetMutex_);
-49. uint32_t setSize = reinterpret_cast<Object*>(object)->numberSet_.size();
-50. napi_value napiSize = nullptr;
-51. napi_create_uint32(env, setSize, &napiSize);
-52. return napiSize;
-53. }
+    // 获取数组大小
+    static napi_value GetSetSize(napi_env env, napi_callback_info info)
+    {
+        napi_value thisVar = nullptr;
+        napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+        if (thisVar == nullptr) {
+            return nullptr;
+        }
+        void* object = nullptr;
+        napi_unwrap(env, thisVar, &object);
+        if (object == nullptr) {
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(reinterpret_cast<Object*>(object)->numberSetMutex_);
+        uint32_t setSize = reinterpret_cast<Object*>(object)->numberSet_.size();
+        napi_value napiSize = nullptr;
+        napi_create_uint32(env, setSize, &napiSize);
+        return napiSize;
+    }
 
-55. // 往数组里插入元素
-56. static napi_value Store(napi_env env, napi_callback_info info)
-57. {
-58. size_t argc = 1;
-59. napi_value args[1] = {nullptr};
-60. napi_value thisVar = nullptr;
-61. napi_get_cb_info(env, info, &argc, args, &thisVar, nullptr);
-62. if (argc != 1) {
-63. napi_throw_error(env, nullptr, "Store args number must be one.");
-64. return nullptr;
-65. }
-66. napi_valuetype type = napi_undefined;
-67. napi_typeof(env, args[0], &type);
-68. if (type != napi_number) {
-69. napi_throw_error(env, nullptr, "Store args is not number.");
-70. return nullptr;
-71. }
-72. if (thisVar == nullptr) {
-73. return nullptr;
-74. }
-75. uint32_t value = 0;
-76. napi_get_value_uint32(env, args[0], &value);
-77. void* object = nullptr;
-78. napi_unwrap(env, thisVar, &object);
-79. if (object == nullptr) {
-80. return nullptr;
-81. }
-82. std::lock_guard<std::mutex> lock(reinterpret_cast<Object*>(object)->numberSetMutex_);
-83. reinterpret_cast<Object *>(object)-> numberSet_.insert(value);
-84. return nullptr;
-85. }
+    // 往数组里插入元素
+    static napi_value Store(napi_env env, napi_callback_info info)
+    {
+        size_t argc = 1;
+        napi_value args[1] = {nullptr};
+        napi_value thisVar = nullptr;
+        napi_get_cb_info(env, info, &argc, args, &thisVar, nullptr);
+        if (argc != 1) {
+            napi_throw_error(env, nullptr, "Store args number must be one.");
+            return nullptr;
+        }
+        napi_valuetype type = napi_undefined;
+        napi_typeof(env, args[0], &type);
+        if (type != napi_number) {
+            napi_throw_error(env, nullptr, "Store args is not number.");
+            return nullptr;
+        }
+        if (thisVar == nullptr) {
+            return nullptr;
+        }
+        uint32_t value = 0;
+        napi_get_value_uint32(env, args[0], &value);
+        void* object = nullptr;
+        napi_unwrap(env, thisVar, &object);
+        if (object == nullptr) {
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(reinterpret_cast<Object*>(object)->numberSetMutex_);
+        reinterpret_cast<Object *>(object)-> numberSet_.insert(value);
+        return nullptr;
+    }
 
-87. // 删除数组元素
-88. static napi_value Erase(napi_env env, napi_callback_info info)
-89. {
-90. size_t argc = 1;
-91. napi_value args[1] = {nullptr};
-92. napi_value thisVar = nullptr;
-93. napi_get_cb_info(env, info, &argc, args, &thisVar, nullptr);
-94. if (argc != 1) {
-95. napi_throw_error(env, nullptr, "Erase args number must be one.");
-96. return nullptr;
-97. }
-98. napi_valuetype type = napi_undefined;
-99. napi_typeof(env, args[0], &type);
-100. if (type != napi_number) {
-101. napi_throw_error(env, nullptr, "Erase args is not number.");
-102. return nullptr;
-103. }
-104. if (thisVar == nullptr) {
-105. return nullptr;
-106. }
-107. uint32_t value = 0;
-108. napi_get_value_uint32(env, args[0], &value);
-109. void* object = nullptr;
-110. napi_unwrap(env, thisVar, &object);
-111. if (object == nullptr) {
-112. return nullptr;
-113. }
-114. std::lock_guard<std::mutex> lock(reinterpret_cast<Object*>(object)->numberSetMutex_);
-115. reinterpret_cast<Object *>(object)->numberSet_.erase(value);
-116. return nullptr;
-117. }
+    // 删除数组元素
+    static napi_value Erase(napi_env env, napi_callback_info info)
+    {
+        size_t argc = 1;
+        napi_value args[1] = {nullptr};
+        napi_value thisVar = nullptr;
+        napi_get_cb_info(env, info, &argc, args, &thisVar, nullptr);
+        if (argc != 1) {
+            napi_throw_error(env, nullptr, "Erase args number must be one.");
+            return nullptr;
+        }
+        napi_valuetype type = napi_undefined;
+        napi_typeof(env, args[0], &type);
+        if (type != napi_number) {
+            napi_throw_error(env, nullptr, "Erase args is not number.");
+            return nullptr;
+        }
+        if (thisVar == nullptr) {
+            return nullptr;
+        }
+        uint32_t value = 0;
+        napi_get_value_uint32(env, args[0], &value);
+        void* object = nullptr;
+        napi_unwrap(env, thisVar, &object);
+        if (object == nullptr) {
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(reinterpret_cast<Object*>(object)->numberSetMutex_);
+        reinterpret_cast<Object *>(object)->numberSet_.erase(value);
+        return nullptr;
+    }
 
-119. // 清空数组
-120. static napi_value Clear(napi_env env, napi_callback_info info)
-121. {
-122. napi_value thisVar = nullptr;
-123. napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
-124. if (thisVar == nullptr) {
-125. return nullptr;
-126. }
-127. void* object = nullptr;
-128. napi_unwrap(env, thisVar, &object);
-129. if (object == nullptr) {
-130. return nullptr;
-131. }
-132. std::lock_guard<std::mutex> lock(reinterpret_cast<Object*>(object)->numberSetMutex_);
-133. reinterpret_cast<Object *>(object)->numberSet_.clear();
-134. return nullptr;
-135. }
+    // 清空数组
+    static napi_value Clear(napi_env env, napi_callback_info info)
+    {
+        napi_value thisVar = nullptr;
+        napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+        if (thisVar == nullptr) {
+            return nullptr;
+        }
+        void* object = nullptr;
+        napi_unwrap(env, thisVar, &object);
+        if (object == nullptr) {
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(reinterpret_cast<Object*>(object)->numberSetMutex_);
+        reinterpret_cast<Object *>(object)->numberSet_.clear();
+        return nullptr;
+    }
 
-137. private:
-138. Object(const Object &) = delete;
-139. Object &operator=(const Object &) = delete;
+private:
+    Object(const Object &) = delete;
+    Object &operator=(const Object &) = delete;
 
-141. std::unordered_set<uint32_t> numberSet_{};
-142. std::mutex numberSetMutex_{};
-143. };
+    std::unordered_set<uint32_t> numberSet_{};
+    std::mutex numberSetMutex_{};
+};
 
-145. void FinalizerCallback(napi_env env, void *data, void *hint)
-146. {
-147. return;
-148. }
+void FinalizerCallback(napi_env env, void *data, void *hint)
+{
+    return;
+}
 
-150. // 解绑回调，在序列化时调用，可在对象解绑时执行一些清理操作
-151. void* DetachCallback(napi_env env, void *value, void *hint)
-152. {
-153. return value;
-154. }
+// 解绑回调，在序列化时调用，可在对象解绑时执行一些清理操作
+void* DetachCallback(napi_env env, void *value, void *hint)
+{
+    return value;
+}
 
-156. // 绑定回调，在反序列化时调用
-157. napi_value AttachCallback(napi_env env, void* value, void* hint)
-158. {
-159. napi_value object = nullptr;
-160. napi_create_object(env, &object);
-161. napi_property_descriptor desc[] = {
-162. {"getAddress", nullptr, Object::GetAddress, nullptr, nullptr, nullptr, napi_default, nullptr},
-163. {"getSetSize", nullptr, Object::GetSetSize, nullptr, nullptr, nullptr, napi_default, nullptr},
-164. {"store", nullptr, Object::Store, nullptr, nullptr, nullptr, napi_default, nullptr},
-165. {"erase", nullptr, Object::Erase, nullptr, nullptr, nullptr, napi_default, nullptr},
-166. {"clear", nullptr, Object::Clear, nullptr, nullptr, nullptr, napi_default, nullptr}};
-167. napi_define_properties(env, object, sizeof(desc) / sizeof(desc[0]), desc);
-168. // 将JS对象object和native对象value生命周期进行绑定
-169. napi_status status = napi_wrap(env, object, value, FinalizerCallback, nullptr, nullptr);
-170. if (status != napi_ok) {
-171. OH_LOG_INFO(LOG_APP, "Node-API attachCallback is failed.");
-172. }
-173. // JS对象携带native信息
-174. napi_coerce_to_native_binding_object(env, object, DetachCallback, AttachCallback, value, hint);
-175. return object;
-176. }
+// 绑定回调，在反序列化时调用
+napi_value AttachCallback(napi_env env, void* value, void* hint)
+{
+    napi_value object = nullptr;
+    napi_create_object(env, &object);
+    napi_property_descriptor desc[] = {
+        {"getAddress", nullptr, Object::GetAddress, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getSetSize", nullptr, Object::GetSetSize, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"store", nullptr, Object::Store, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"erase", nullptr, Object::Erase, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clear", nullptr, Object::Clear, nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, object, sizeof(desc) / sizeof(desc[0]), desc);
+    // 将JS对象object和native对象value生命周期进行绑定
+    napi_status status = napi_wrap(env, object, value, FinalizerCallback, nullptr, nullptr);
+    if (status != napi_ok) {
+        OH_LOG_INFO(LOG_APP, "Node-API attachCallback is failed.");
+    }
+    // JS对象携带native信息
+    napi_coerce_to_native_binding_object(env, object, DetachCallback, AttachCallback, value, hint);
+    return object;
+}
 
-178. EXTERN_C_START
-179. static napi_value Init(napi_env env, napi_value exports)
-180. {
-181. napi_property_descriptor desc[] = {
-182. {"getAddress", nullptr, Object::GetAddress, nullptr, nullptr, nullptr, napi_default, nullptr},
-183. {"getSetSize", nullptr, Object::GetSetSize, nullptr, nullptr, nullptr, napi_default, nullptr},
-184. {"store", nullptr, Object::Store, nullptr, nullptr, nullptr, napi_default, nullptr},
-185. {"erase", nullptr, Object::Erase, nullptr, nullptr, nullptr, napi_default, nullptr},
-186. {"clear", nullptr, Object::Clear, nullptr, nullptr, nullptr, napi_default, nullptr}};
-187. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-188. auto object = Object::GetInstance();
-189. napi_status status = napi_wrap(env, exports, reinterpret_cast<void*>(object), FinalizerCallback, nullptr, nullptr);
-190. if (status != napi_ok) {
-191. OH_LOG_INFO(LOG_APP, "Node-API napi_wrap is failed.");
-192. }
-193. napi_coerce_to_native_binding_object(env, exports, DetachCallback, AttachCallback, reinterpret_cast<void*>(object),
-194. nullptr);
-195. return exports;
-196. }
-197. EXTERN_C_END
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"getAddress", nullptr, Object::GetAddress, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getSetSize", nullptr, Object::GetSetSize, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"store", nullptr, Object::Store, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"erase", nullptr, Object::Erase, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clear", nullptr, Object::Clear, nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    auto object = Object::GetInstance();
+    napi_status status = napi_wrap(env, exports, reinterpret_cast<void*>(object), FinalizerCallback, nullptr, nullptr);
+    if (status != napi_ok) {
+        OH_LOG_INFO(LOG_APP, "Node-API napi_wrap is failed.");
+    }
+    napi_coerce_to_native_binding_object(env, exports, DetachCallback, AttachCallback, reinterpret_cast<void*>(object),
+                                         nullptr);
+    return exports;
+}
+EXTERN_C_END
 
-199. static napi_module demoModule = {
-200. .nm_version = 1,
-201. .nm_flags = 0,
-202. .nm_filename = nullptr,
-203. .nm_register_func = Init,
-204. .nm_modname = "entry",
-205. .nm_priv = ((void*)0),
-206. .reserved = { 0 },
-207. };
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void*)0),
+    .reserved = { 0 },
+};
 
-209. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-210. {
-211. napi_module_register(&demoModule);
-212. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 接口声明
 
-```
-1. // 给ArkTS对象绑定回调和回调所需的参数 napi_coerce_to_native_binding_object
-2. export const getAddress: () => number;
+```typescript
+// 给ArkTS对象绑定回调和回调所需的参数 napi_coerce_to_native_binding_object
+export const getAddress: () => number;
 
-4. export const getSetSize: () => number;
+export const getSetSize: () => number;
 
-6. export const store: (a: number) => void;
+export const store: (a: number) => void;
 
-8. export const erase: (a: number) => void;
+export const erase: (a: number) => void;
 
-10. export const clear: () => void;
+export const clear: () => void;
 ```
 
 ArkTS侧示例代码
 
-```
-1. // index.ets
-2. import testNapi from 'libentry.so';
-3. import { taskpool } from '@kit.ArkTS';
+```ts
+// index.ets
+import testNapi from 'libentry.so';
+import { taskpool } from '@kit.ArkTS';
 
-5. @Concurrent
-6. function getAddress() {
-7. let address: number = testNapi.getAddress();
-8. console.info("taskpool:: address is " + address);
-9. }
+@Concurrent
+function getAddress() {
+  let address: number = testNapi.getAddress();
+  console.info("taskpool:: address is " + address);
+}
 
-11. @Concurrent
-12. function store(a:number, b:number, c:number) {
-13. let size:number = testNapi.getSetSize();
-14. console.info("set size is " + size + " before store");
-15. testNapi.store(a);
-16. testNapi.store(b);
-17. testNapi.store(c);
-18. size = testNapi.getSetSize();
-19. console.info("set size is " + size + " after store");
-20. }
+@Concurrent
+function store(a:number, b:number, c:number) {
+  let size:number = testNapi.getSetSize();
+  console.info("set size is " + size + " before store");
+  testNapi.store(a);
+  testNapi.store(b);
+  testNapi.store(c);
+  size = testNapi.getSetSize();
+  console.info("set size is " + size + " after store");
+}
 
-22. @Concurrent
-23. function erase(a:number) {
-24. let size:number = testNapi.getSetSize();
-25. console.info("set size is " + size + " before erase");
-26. testNapi.erase(a);
-27. size = testNapi.getSetSize();
-28. console.info("set size is " + size + " after erase");
-29. }
+@Concurrent
+function erase(a:number) {
+  let size:number = testNapi.getSetSize();
+  console.info("set size is " + size + " before erase");
+  testNapi.erase(a);
+  size = testNapi.getSetSize();
+  console.info("set size is " + size + " after erase");
+}
 
-31. @Concurrent
-32. function clear() {
-33. let size:number = testNapi.getSetSize();
-34. console.info("set size is " + size + " before clear");
-35. testNapi.clear();
-36. size = testNapi.getSetSize();
-37. console.info("set size is " + size + " after clear");
-38. }
+@Concurrent
+function clear() {
+  let size:number = testNapi.getSetSize();
+  console.info("set size is " + size + " before clear");
+  testNapi.clear();
+  size = testNapi.getSetSize();
+  console.info("set size is " + size + " after clear");
+}
 
-40. async function test01(): Promise<void> {
-41. let address:number = testNapi.getAddress();
-42. console.info("host thread address is " + address);
+async function test01(): Promise<void> {
+    let address:number = testNapi.getAddress();
+    console.info("host thread address is " + address);
 
-44. let task1 = new taskpool.Task(getAddress);
-45. await taskpool.execute(task1);
+    let task1 = new taskpool.Task(getAddress);
+    await taskpool.execute(task1);
 
-47. let task2 = new taskpool.Task(store, 1, 2, 3);
-48. await taskpool.execute(task2);
+    let task2 = new taskpool.Task(store, 1, 2, 3);
+    await taskpool.execute(task2);
 
-50. let task3 = new taskpool.Task(store, 4, 5, 6);
-51. await taskpool.execute(task3);
+    let task3 = new taskpool.Task(store, 4, 5, 6);
+    await taskpool.execute(task3);
 
-53. let task4 = new taskpool.Task(erase, 3);
-54. await taskpool.execute(task4);
+    let task4 = new taskpool.Task(erase, 3);
+    await taskpool.execute(task4);
 
-56. let task5 = new taskpool.Task(erase, 5);
-57. await taskpool.execute(task5);
+    let task5 = new taskpool.Task(erase, 5);
+    await taskpool.execute(task5);
 
-59. let task6 = new taskpool.Task(clear);
-60. await taskpool.execute(task6);
-61. }
+    let task6 = new taskpool.Task(clear);
+    await taskpool.execute(task6);
+}
 
-63. test01();
+test01();
 ```
 
 **注意事项**
 
 对ArkTS对象A调用napi\_coerce\_to\_native\_binding\_object将开发者实现的detach/attach回调和native对象信息加到A上，再将A跨线程传递。跨线程传递需要对A进行序列化和反序列化。此处的序列化与反序列化是人为控制的，需要调用后文介绍的napi\_serialize、napi\_deserialize接口。过程如下图所示：在当前线程thread1序列化A得到数据data，序列化阶段执行detach回调。然后将data传给目标线程thread2，在thread2中反序列化data，执行attach回调，最终得到ArkTS对象A。此处的detach/attach是告知开发者序列化与反序列化执行完毕的回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Lv5w-FXtRRGIYOQMBot03g/zh-cn_image_0000002558765872.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Q68XigzFSVmPKX8eW0DZFA/zh-cn_image_0000002736314559.png)
 
 ## 事件循环
 
@@ -690,61 +692,61 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // 序列化和反序列化
-2. static napi_value AboutSerialize(napi_env env, napi_callback_info info)
-3. {
-4. // 获取传入的ts的一个对象作为参数
-5. size_t argc = 1;
-6. napi_value args[1] = {nullptr};
-7. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-8. napi_value undefined = nullptr;
-9. // 构造napi_serialize方法所需参数
-10. napi_get_undefined(env, &undefined);
-11. void *data = nullptr;
-12. // 调用napi_serialize方法将ts对象转化为native数据
-13. napi_status status = napi_serialize(env, args[0], undefined, undefined, &data);
-14. if (status != napi_ok || data == nullptr) {
-15. napi_throw_error(env, nullptr, "Node-API napi_serialize fail");
-16. return nullptr;
-17. }
-18. // 构造napi_value类型的数据，用于接收将native数据转化为ts对象后的数据
-19. napi_value result = nullptr;
-20. napi_deserialize(env, data, &result);
-21. napi_value number = nullptr;
-22. // 获取native数据转化为ts对象后的数据中的numKey属性的值
-23. napi_get_named_property(env, result, "numKey", &number);
-24. // 判断获取到的属性值是否为number类型
-25. napi_valuetype valuetype;
-26. napi_typeof(env, number, &valuetype);
-27. if (valuetype != napi_number) {
-28. napi_throw_error(env, nullptr, "Node-API Wrong type of argument. Expects a number.");
-29. return nullptr;
-30. }
-31. // 调用napi_delete_serialization_data方法删除序列化数据
-32. napi_delete_serialization_data(env, data);
-33. // 返回获取到的属性值
-34. return number;
-35. }
+// 序列化和反序列化
+static napi_value AboutSerialize(napi_env env, napi_callback_info info)
+{
+    // 获取传入的ts的一个对象作为参数
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value undefined = nullptr;
+    // 构造napi_serialize方法所需参数
+    napi_get_undefined(env, &undefined);
+    void *data = nullptr;
+    // 调用napi_serialize方法将ts对象转化为native数据
+    napi_status status = napi_serialize(env, args[0], undefined, undefined, &data);
+    if (status != napi_ok || data == nullptr) {
+        napi_throw_error(env, nullptr, "Node-API napi_serialize fail");
+        return nullptr;
+    }
+    // 构造napi_value类型的数据，用于接收将native数据转化为ts对象后的数据
+    napi_value result = nullptr;
+    napi_deserialize(env, data, &result);
+    napi_value number = nullptr;
+    // 获取native数据转化为ts对象后的数据中的numKey属性的值
+    napi_get_named_property(env, result, "numKey", &number);
+    // 判断获取到的属性值是否为number类型
+    napi_valuetype valuetype;
+    napi_typeof(env, number, &valuetype);
+    if (valuetype != napi_number) {
+        napi_throw_error(env, nullptr, "Node-API Wrong type of argument. Expects a number.");
+        return nullptr;
+    }
+    // 调用napi_delete_serialization_data方法删除序列化数据
+    napi_delete_serialization_data(env, data);
+    // 返回获取到的属性值
+    return number;
+}
 ```
 
 接口声明
 
-```
-1. export const aboutSerialize: (obj: {numKey:number}) => number | undefined; // 序列化和反序列化
+```typescript
+export const aboutSerialize: (obj: {numKey:number}) => number | undefined; // 序列化和反序列化
 ```
 
 ArkTS侧示例代码
 
-```
-1. class Obj {
-2. numKey: number = 0;
-3. }
+```typescript
+class Obj {
+  numKey: number = 0;
+}
 ```
 
-```
-1. // 序列化和反序列化
-2. let obj: Obj = { numKey: 500 };
-3. hilog.info(0x0000, 'testTag', ' Node-API aboutSerialize: %{public}d', testNapi.aboutSerialize(obj));
+```typescript
+// 序列化和反序列化
+let obj: Obj = { numKey: 500 };
+hilog.info(0x0000, 'testTag', ' Node-API aboutSerialize: %{public}d', testNapi.aboutSerialize(obj));
 ```
 
 ## 根据任务指定的优先级和入队方式进行处理异步线程向ArkTS线程投递的任务
@@ -759,7 +761,7 @@ ArkTS侧示例代码
 
 **napi\_call\_threadsafe\_function\_with\_priority**
 
-[使用Node-API接口从异步线程向ArkTS线程投递指定优先级和入队方式的的任务](use-call-threadsafe-function-with-priority.md)
+[使用Node-API接口从异步线程向ArkTS线程投递指定优先级和入队方式的任务](use-call-threadsafe-function-with-priority.md)
 
 ## Sendable相关
 
@@ -777,7 +779,7 @@ ArkTS侧示例代码
 | napi\_wrap\_sendable | 包裹一个native实例到ArkTS对象中。 |
 | napi\_wrap\_sendable\_with\_size | 包裹一个native实例到ArkTS对象中并指定大小。 |
 | napi\_unwrap\_sendable | 获取ArkTS对象包裹的native实例。 |
-| napi\_remove\_wrap\_sendable | 移除并获取ArkTS对象包裹的native实例，移除后回调将不再触发，需手动delete释放内存。 |
+| napi\_remove\_wrap\_sendable | 移除并获取ArkTS对象包裹的native实例，移除后回调后续会被自动触发，需注意避免出现重复释放问题。 |
 
 ### 使用示例
 
@@ -788,32 +790,32 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // Sendable相关 napi_is_sendable
-2. static napi_value IsSendable(napi_env env, napi_callback_info info)
-3. {
-4. size_t argc = 1;
-5. napi_value args[1] = {nullptr};
-6. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-7. bool isSendable = false;
-8. napi_is_sendable(env, args[0], &isSendable);
-9. napi_value result;
-10. napi_get_boolean(env, isSendable, &result);
-11. return result;
-12. }
+// Sendable相关 napi_is_sendable
+static napi_value IsSendable(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    bool isSendable = false;
+    napi_is_sendable(env, args[0], &isSendable);
+    napi_value result;
+    napi_get_boolean(env, isSendable, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const isSendable: <T>(a: T) => boolean; // Sendable相关 napi_is_sendable
+```typescript
+export const isSendable: <T>(a: T) => boolean; // Sendable相关 napi_is_sendable
 ```
 
 ArkTS侧示例代码
 
-```
-1. // Sendable相关 napi_is_sendable
-2. let value = testNapi.isSendable('createObject');
-3. hilog.info(0x0000, 'testTag', 'Node-API napi_is_sendable: %{public}s', JSON.stringify(value));
+```typescript
+// Sendable相关 napi_is_sendable
+let value = testNapi.isSendable('createObject');
+hilog.info(0x0000, 'testTag', 'Node-API napi_is_sendable: %{public}s', JSON.stringify(value));
 ```
 
 **napi\_define\_sendable\_class**
@@ -822,94 +824,94 @@ ArkTS侧示例代码
 
 cpp部分代码
 
-```
-1. #include "napi/native_api.h"
+```cpp
+#include "napi/native_api.h"
 
-3. static napi_value func(napi_env env, napi_callback_info info) {
-4. napi_value val;
-5. napi_create_string_utf8(env, "func result", NAPI_AUTO_LENGTH, &val);
-6. return val;
-7. }
+static napi_value func(napi_env env, napi_callback_info info) {
+    napi_value val;
+    napi_create_string_utf8(env, "func result", NAPI_AUTO_LENGTH, &val);
+    return val;
+}
 
-9. static napi_value DefineSendableClass(napi_env env) {
-10. napi_value str;
-11. napi_create_string_utf8(env, "str", NAPI_AUTO_LENGTH, &str);
+static napi_value DefineSendableClass(napi_env env) {
+    napi_value str;
+    napi_create_string_utf8(env, "str", NAPI_AUTO_LENGTH, &str);
 
-13. napi_property_descriptor props[] = {
-14. {"staticStr", nullptr, nullptr, nullptr, nullptr, str,
-15. static_cast<napi_property_attributes>(napi_static | napi_writable), nullptr},
-16. {"staticFunc", nullptr, func, nullptr, nullptr, nullptr, napi_static, nullptr},
-17. {"str", nullptr, nullptr, nullptr, nullptr, str, static_cast<napi_property_attributes>(1 << 9 | napi_writable),
-18. nullptr},
-19. {"func", nullptr, nullptr, nullptr, nullptr, nullptr,
-20. static_cast<napi_property_attributes>(1 << 11 | napi_writable), nullptr},
-21. };
+    napi_property_descriptor props[] = {
+        {"staticStr", nullptr, nullptr, nullptr, nullptr, str,
+         static_cast<napi_property_attributes>(napi_static | napi_writable), nullptr},
+        {"staticFunc", nullptr, func, nullptr, nullptr, nullptr, napi_static, nullptr},
+        {"str", nullptr, nullptr, nullptr, nullptr, str, static_cast<napi_property_attributes>(1 << 9 | napi_writable),
+         nullptr},
+        {"func", nullptr, nullptr, nullptr, nullptr, nullptr,
+         static_cast<napi_property_attributes>(1 << 11 | napi_writable), nullptr},
+    };
 
-23. napi_value sendableClass = nullptr;
-24. napi_define_sendable_class(
-25. env, "SendableClass", NAPI_AUTO_LENGTH,
-26. [](napi_env env, napi_callback_info info) -> napi_value {
-27. napi_value thisVar = nullptr;
-28. napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
-29. napi_value str;
-30. napi_create_string_utf8(env, "instance str", NAPI_AUTO_LENGTH, &str);
-31. napi_property_descriptor props[] = {
-32. {"str", nullptr, nullptr, nullptr, nullptr, str, napi_default, nullptr},
-33. {"func", nullptr, func, nullptr, nullptr, nullptr, napi_default, nullptr},
-34. };
-35. napi_define_properties(env, thisVar, sizeof(props) / sizeof(props[0]), props);
-36. return thisVar;
-37. },
-38. nullptr, sizeof(props) / sizeof(props[0]), props, nullptr, &sendableClass);
+    napi_value sendableClass = nullptr;
+    napi_define_sendable_class(
+        env, "SendableClass", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            napi_value thisVar = nullptr;
+            napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+            napi_value str;
+            napi_create_string_utf8(env, "instance str", NAPI_AUTO_LENGTH, &str);
+            napi_property_descriptor props[] = {
+                {"str", nullptr, nullptr, nullptr, nullptr, str, napi_default, nullptr},
+                {"func", nullptr, func, nullptr, nullptr, nullptr, napi_default, nullptr},
+            };
+            napi_define_properties(env, thisVar, sizeof(props) / sizeof(props[0]), props);
+            return thisVar;
+        },
+        nullptr, sizeof(props) / sizeof(props[0]), props, nullptr, &sendableClass);
 
-40. return sendableClass;
-41. }
+    return sendableClass;
+}
 
-43. EXTERN_C_START
-44. static napi_value Init(napi_env env, napi_value exports)
-45. {
-46. napi_property_descriptor desc[] = {};
-47. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-48. napi_value cons = DefineSendableClass(env);
-49. napi_set_named_property(env, exports, "SendableClass", cons);
-50. return exports;
-51. }
-52. EXTERN_C_END
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    napi_value cons = DefineSendableClass(env);
+    napi_set_named_property(env, exports, "SendableClass", cons);
+    return exports;
+}
+EXTERN_C_END
 
-54. static napi_module demoModule = {
-55. .nm_version = 1,
-56. .nm_flags = 0,
-57. .nm_filename = nullptr,
-58. .nm_register_func = Init,
-59. .nm_modname = "entry",
-60. .nm_priv = ((void*)0),
-61. .reserved = { 0 },
-62. };
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void*)0),
+    .reserved = { 0 },
+};
 
-64. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-65. {
-66. napi_module_register(&demoModule);
-67. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 接口声明
 
-```
-1. @Sendable
-2. export class SendableClass {
-3. static staticStr: string;
-4. static staticFunc(): string;
-5. str: string;
-6. func(): string;
-7. } // Sendable相关 napi_define_sendable_class
+```typescript
+@Sendable
+export class SendableClass {
+  static staticStr: string;
+  static staticFunc(): string;
+  str: string;
+  func(): string;
+} // Sendable相关 napi_define_sendable_class
 ```
 
 ArkTS侧示例代码
 
-```
-1. // Sendable相关 napi_define_sendable_class
-2. let value = new testNapi.SendableClass();
-3. hilog.info(0x0000, 'testTag', 'Node-API napi_define_sendable_class: %{public}s', value.str);
+```typescript
+// Sendable相关 napi_define_sendable_class
+let value = new testNapi.SendableClass();
+hilog.info(0x0000, 'testTag', 'Node-API napi_define_sendable_class: %{public}s', value.str);
 ```
 
 **napi\_create\_sendable\_object\_with\_properties**
@@ -919,33 +921,33 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // Sendable相关 napi_create_sendable_object_with_properties
-2. static napi_value GetSendableObject(napi_env env, napi_callback_info info)
-3. {
-4. napi_value val_true;
-5. napi_get_boolean(env, true, &val_true);
-6. napi_property_descriptor desc1[] = {
-7. {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
-8. };
-9. napi_value obj;
-10. napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
-11. return obj;
-12. }
+// Sendable相关 napi_create_sendable_object_with_properties
+static napi_value GetSendableObject(napi_env env, napi_callback_info info)
+{
+    napi_value val_true;
+    napi_get_boolean(env, true, &val_true);
+    napi_property_descriptor desc1[] = {
+        {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
+    };
+    napi_value obj;
+    napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
+    return obj;
+}
 ```
 
 接口声明
 
-```
-1. export const getSendableObject: () => { x: true }; // Sendable相关 napi_create_sendable_object_with_properties
+```typescript
+export const getSendableObject: () => { x: true }; // Sendable相关 napi_create_sendable_object_with_properties
 ```
 
 ArkTS侧示例代码
 
-```
-1. // Sendable相关 napi_create_sendable_object_with_properties
-2. let value = testNapi.getSendableObject();
-3. hilog.info(0x0000, 'testTag', 'Node-API napi_create_sendable_object_with_properties: %{public}s',
-4. JSON.stringify(value));
+```typescript
+// Sendable相关 napi_create_sendable_object_with_properties
+let value = testNapi.getSendableObject();
+hilog.info(0x0000, 'testTag', 'Node-API napi_create_sendable_object_with_properties: %{public}s',
+  JSON.stringify(value));
 ```
 
 **napi\_create\_sendable\_array**
@@ -955,28 +957,28 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // Sendable相关 napi_create_sendable_array
-2. static napi_value GetSendableArray(napi_env env, napi_callback_info info)
-3. {
-4. napi_value result = nullptr;
-5. napi_create_sendable_array(env, &result);
-6. return result;
-7. }
+// Sendable相关 napi_create_sendable_array
+static napi_value GetSendableArray(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_sendable_array(env, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const getSendableArray: () => []; // Sendable相关 napi_create_sendable_array
+```typescript
+export const getSendableArray: () => []; // Sendable相关 napi_create_sendable_array
 ```
 
 ArkTS侧示例代码
 
-```
-1. // Sendable相关 napi_create_sendable_array
-2. let value = testNapi.getSendableArray();
-3. hilog.info(0x0000, 'testTag', 'Node-API napi_create_sendable_array: %{public}s',
-4. JSON.stringify(value));
+```typescript
+// Sendable相关 napi_create_sendable_array
+let value = testNapi.getSendableArray();
+hilog.info(0x0000, 'testTag', 'Node-API napi_create_sendable_array: %{public}s',
+  JSON.stringify(value));
 ```
 
 **napi\_create\_sendable\_array\_with\_length**
@@ -986,27 +988,28 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. // Sendable相关 napi_create_sendable_array_with_length
-2. static napi_value GetSendableArrayWithLength(napi_env env, napi_callback_info info)
-3. {
-4. napi_value result = nullptr;
-5. napi_create_sendable_array_with_length(env, 1, &result);
-6. return result;
-7. }
+// Sendable相关 napi_create_sendable_array_with_length
+static napi_value GetSendableArrayWithLength(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_sendable_array_with_length(env, 1, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const getSendableArrayWithLength: () => [];
+```typescript
+export const getSendableArrayWithLength: () => []; // Sendable相关 napi_create_sendable_array_with_length
 ```
 
 ArkTS侧示例代码
 
-```
-1. let value = testNapi.getSendableArrayWithLength();
-2. hilog.info(0x0000, 'testTag', 'Node-API napi_create_sendable_array_with_length: %{public}s', JSON.stringify(value.length));
+```typescript
+// Sendable相关 napi_create_sendable_array_with_length
+let value = testNapi.getSendableArrayWithLength();
+hilog.info(0x0000, 'testTag', 'Node-API napi_create_sendable_array_with_length: %{public}s',
+  JSON.stringify(value.length));
 ```
 
 **napi\_create\_sendable\_arraybuffer**
@@ -1016,29 +1019,31 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. static napi_value GetSendableArrayBuffer(napi_env env, napi_callback_info info) {
-2. static size_t LENGTH = 1024;
-3. void *data;
-4. napi_value result = nullptr;
-5. napi_create_sendable_arraybuffer(env, LENGTH, &data, &result);
-6. bool isArrayBuffer = false;
-7. napi_is_arraybuffer(env, result, &isArrayBuffer);
-8. OH_LOG_INFO(LOG_APP, "isArrayBuffer: %{public}d", isArrayBuffer);
-9. return result;
-10. }
+// Sendable相关 napi_create_sendable_arraybuffer
+static napi_value GetSendableArrayBuffer(napi_env env, napi_callback_info info)
+{
+    static size_t length = 1024;
+    void *data;
+    napi_value result = nullptr;
+    napi_create_sendable_arraybuffer(env, length, &data, &result);
+    bool isArrayBuffer = false;
+    napi_is_arraybuffer(env, result, &isArrayBuffer);
+    OH_LOG_INFO(LOG_APP, "isArrayBuffer: %{public}d", isArrayBuffer);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const getSendableArrayBuffer: () => ArrayBuffer;
+```typescript
+export const getSendableArrayBuffer: () => ArrayBuffer; // Sendable相关 napi_create_sendable_arraybuffer
 ```
 
 ArkTS侧示例代码
 
-```
-1. testNapi.getSendableArrayBuffer();
+```typescript
+// Sendable相关 napi_create_sendable_arraybuffer
+testNapi.getSendableArrayBuffer();
 ```
 
 **napi\_create\_sendable\_typedarray**
@@ -1048,36 +1053,35 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. static napi_value GetSendableTypedArray(napi_env env, napi_callback_info info) {
-2. static size_t LENGTH = 1024;
-3. static size_t OFFSET = 0;
-4. void *data;
-5. napi_value arraybuffer = nullptr;
-6. napi_create_sendable_arraybuffer(env, LENGTH, &data, &arraybuffer);
+// Sendable相关 napi_create_sendable_typedarray
+static napi_value GetSendableTypedArray(napi_env env, napi_callback_info info)
+{
+    static size_t length = 1024;
+    static size_t offset = 0;
+    void *data;
+    napi_value arraybuffer = nullptr;
+    napi_create_sendable_arraybuffer(env, length, &data, &arraybuffer);
 
-8. napi_value result = nullptr;
-9. napi_create_sendable_typedarray(env, napi_uint8_array, LENGTH, arraybuffer, OFFSET, &result);
-10. bool isTypedArray = false;
-11. napi_is_typedarray(env, result, &isTypedArray);
-12. OH_LOG_INFO(LOG_APP, "isTypedArray: %{public}d", isTypedArray);
-13. return result;
-14. }
+    napi_value result = nullptr;
+    napi_create_sendable_typedarray(env, napi_uint8_array, length, arraybuffer, offset, &result);
+    bool isTypedArray = false;
+    napi_is_typedarray(env, result, &isTypedArray);
+    OH_LOG_INFO(LOG_APP, "isTypedArray: %{public}d", isTypedArray);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const getSendableTypedArray: () => void;
+```typescript
+export const getSendableTypedArray: () => Uint8Array; // Sendable相关 napi_create_sendable_typedarray
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
-
-4. testNapi.getSendableTypedArray();
+```typescript
+// Sendable相关 napi_create_sendable_typedarray
+testNapi.getSendableTypedArray();
 ```
 
 **napi\_wrap\_sendable**
@@ -1087,38 +1091,36 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+// Sendable相关 napi_wrap_sendable
+static napi_value WrapSendable(napi_env env, napi_callback_info info)
+{
+    napi_value val_true;
+    napi_get_boolean(env, true, &val_true);
+    napi_property_descriptor desc1[] = {
+        {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
+    };
+    napi_value obj;
+    napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
 
-3. static napi_value WrapSendable(napi_env env, napi_callback_info info) {
-4. napi_value val_true;
-5. napi_get_boolean(env, true, &val_true);
-6. napi_property_descriptor desc1[] = {
-7. {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
-8. };
-9. napi_value obj;
-10. napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
+    const char *testStr = "test";
+    napi_wrap_sendable(
+        env, obj, (void *)testStr, [](napi_env env, void *data, void *hint) {}, nullptr);
 
-12. const char* testStr = "test";
-13. napi_wrap_sendable(env, obj, (void*)testStr, [](napi_env env, void* data, void* hint) {}, nullptr);
-
-15. return nullptr;
-16. }
+    return nullptr;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const wrapSendable: () => void;
+```typescript
+export const wrapSendable: () => void; // Sendable相关 napi_wrap_sendable
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
-
-4. testNapi.wrapSendable();
+```typescript
+// Sendable相关 napi_wrap_sendable
+testNapi.wrapSendable();
 ```
 
 **napi\_wrap\_sendable\_with\_size**
@@ -1128,38 +1130,38 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+static constexpr int INT_ARG_100 = 100; // 入参索引
 
-3. static napi_value WrapSendableWithSize(napi_env env, napi_callback_info info) {
-4. napi_value val_true;
-5. napi_get_boolean(env, true, &val_true);
-6. napi_property_descriptor desc1[] = {
-7. {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
-8. };
-9. napi_value obj;
-10. napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
+// Sendable相关 napi_wrap_sendable_with_size
+static napi_value WrapSendableWithSize(napi_env env, napi_callback_info info)
+{
+    napi_value val_true;
+    napi_get_boolean(env, true, &val_true);
+    napi_property_descriptor desc1[] = {
+        {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
+    };
+    napi_value obj;
+    napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
 
-12. const char* testStr = "test";
-13. napi_wrap_sendable_with_size(env, obj, (void*)testStr, [](napi_env env, void* data, void* hint) {}, nullptr, 100);
+    const char *testStr = "test";
+    napi_wrap_sendable_with_size(
+        env, obj, (void *)testStr, [](napi_env env, void *data, void *hint) {}, nullptr, INT_ARG_100);
 
-15. return nullptr;
-16. }
+    return nullptr;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const wrapSendableWithSize: () => void;
+```typescript
+export const wrapSendableWithSize: () => void; // Sendable相关 napi_wrap_sendable_with_size
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
-
-4. testNapi.wrapSendableWithSize();
+```typescript
+// Sendable相关 napi_wrap_sendable_with_size
+testNapi.wrapSendableWithSize();
 ```
 
 **napi\_unwrap\_sendable**
@@ -1169,95 +1171,91 @@ ArkTS侧示例代码
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+// Sendable相关 napi_unwrap_sendable
+static napi_value UnwrapSendable(napi_env env, napi_callback_info info)
+{
+    napi_value val_true;
+    napi_get_boolean(env, true, &val_true);
+    napi_property_descriptor desc1[] = {
+        {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
+    };
+    napi_value obj;
+    napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
 
-3. static napi_value UnwrapSendable(napi_env env, napi_callback_info info) {
-4. napi_value val_true;
-5. napi_get_boolean(env, true, &val_true);
-6. napi_property_descriptor desc1[] = {
-7. {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
-8. };
-9. napi_value obj;
-10. napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
+    const char *testStr = "test";
+    napi_wrap_sendable(
+        env, obj, (void *)testStr, [](napi_env env, void *data, void *hint) {}, nullptr);
 
-12. const char* testStr = "test";
-13. napi_wrap_sendable(env, obj, (void*)testStr, [](napi_env env, void* data, void* hint) {}, nullptr);
+    char *tmpTestStr = nullptr;
+    napi_unwrap_sendable(env, obj, (void **)&tmpTestStr);
+    OH_LOG_INFO(LOG_APP, "native value is %{public}s", tmpTestStr);
 
-15. char* tmpTestStr = nullptr;
-16. napi_unwrap_sendable(env, obj, (void**)&tmpTestStr);
-17. OH_LOG_INFO(LOG_APP, "native value is %{public}s", tmpTestStr);
-
-19. return nullptr;
-20. }
+    return nullptr;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const unwrapSendable: () => void;
+```typescript
+export const unwrapSendable: () => void; // Sendable相关 napi_unwrap_sendable
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
-
-4. testNapi.unwrapSendable();
+```typescript
+// Sendable相关 napi_unwrap_sendable
+testNapi.unwrapSendable();
 ```
 
 **napi\_remove\_wrap\_sendable**
 
-移除并获取ArkTS对象包裹的native实例，移除后回调将不再触发，需手动delete释放内存。
+移除并获取ArkTS对象包裹的native实例，移除后回调后续会被自动触发，需注意避免出现重复释放问题。
 
 cpp部分代码
 
 ```
-1. #include "napi/native_api.h"
+// Sendable相关 napi_remove_wrap_sendable
+static napi_value RemoveWrapSendable(napi_env env, napi_callback_info info)
+{
+    napi_value val_true;
+    napi_get_boolean(env, true, &val_true);
+    napi_property_descriptor desc1[] = {
+        {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
+    };
+    napi_value obj;
+    napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
 
-3. static napi_value RemoveWrapSendable(napi_env env, napi_callback_info info) {
-4. napi_value val_true;
-5. napi_get_boolean(env, true, &val_true);
-6. napi_property_descriptor desc1[] = {
-7. {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
-8. };
-9. napi_value obj;
-10. napi_create_sendable_object_with_properties(env, 1, desc1, &obj);
+    const char *testStr = "test";
+    napi_wrap_sendable(
+        env, obj, (void *)testStr, [](napi_env env, void *data, void *hint) {}, nullptr);
 
-12. const char* testStr = "test";
-13. napi_wrap_sendable(env, obj, (void*)testStr, [](napi_env env, void* data, void* hint) {}, nullptr);
+    char *tmpTestStr = nullptr;
+    napi_remove_wrap_sendable(env, obj, (void **)&tmpTestStr);
+    OH_LOG_INFO(LOG_APP, "native value is %{public}s", tmpTestStr);
 
-15. char* tmpTestStr = nullptr;
-16. napi_remove_wrap_sendable(env, obj, (void**)&tmpTestStr);
-17. OH_LOG_INFO(LOG_APP, "native value is %{public}s", tmpTestStr);
-
-19. return nullptr;
-20. }
+    return nullptr;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const removeWrapSendable: () => void;
+```typescript
+export const removeWrapSendable: () => void; // Sendable相关 napi_remove_wrap_sendable
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
-
-4. testNapi.removeWrapSendable();
+```typescript
+// Sendable相关 napi_remove_wrap_sendable
+testNapi.removeWrapSendable();
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. target_compile_definitions(entry PRIVATE LOG_DOMAIN=0xd0d0 LOG_TAG="testTag")
-3. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+target_compile_definitions(entry PRIVATE LOG_DOMAIN=0xd0d0 LOG_TAG="testTag")
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```
 
 ## napi\_wrap接口增强
@@ -1276,44 +1274,44 @@ ArkTS侧示例代码
 
 cpp部分代码
 
-```
-1. #include "napi/native_api.h"
+```cpp
+#include "napi/native_api.h"
 
-3. static napi_value TestNapiWrapEnhance(napi_env env, napi_callback_info info)
-4. {
-5. napi_value testClass = nullptr;
-6. napi_define_class(
-7. env, "TestClass", NAPI_AUTO_LENGTH,
-8. [](napi_env env, napi_callback_info info) -> napi_value {
-9. napi_value thisVar = nullptr;
-10. napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
-11. return thisVar;
-12. },
-13. nullptr, 0, nullptr, &testClass);
+static napi_value TestNapiWrapEnhance(napi_env env, napi_callback_info info)
+{
+    napi_value testClass = nullptr;
+    napi_define_class(
+        env, "TestClass", NAPI_AUTO_LENGTH,
+        [](napi_env env, napi_callback_info info) -> napi_value {
+            napi_value thisVar = nullptr;
+            napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
+            return thisVar;
+        },
+        nullptr, 0, nullptr, &testClass);
 
-15. napi_value obj = nullptr;
-16. napi_new_instance(env, testClass, 0, nullptr, &obj);
-17. const char* testStr = "test";
-18. napi_ref wrappedRef = nullptr;
-19. napi_wrap_enhance(env, obj, (void*)testStr, [](napi_env env, void* data, void* hint) {}, false, nullptr, sizeof(testStr), &wrappedRef);
-20. return nullptr;
-21. }
+    napi_value obj = nullptr;
+    napi_new_instance(env, testClass, 0, nullptr, &obj);
+    const char* testStr = "test";
+    napi_ref wrappedRef = nullptr;
+    napi_wrap_enhance(env, obj, (void*)testStr, [](napi_env env, void* data, void* hint) {}, false, nullptr, sizeof(testStr) + 1, &wrappedRef);
+    return nullptr;
+}
 ```
 
 接口声明
 
-```
-1. // index.d.ts
-2. export const testNapiWrapEnhance: () => void;
+```ts
+// index.d.ts
+export const testNapiWrapEnhance: () => void;
 ```
 
 ArkTS侧示例代码
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so';
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so';
 
-4. testNapi.testNapiWrapEnhance();
+testNapi.testNapiWrapEnhance();
 ```
 
 ## napi提供多上下文环境能力
@@ -1373,7 +1371,7 @@ ArkTS侧示例代码
 
 ### 使用示例
 
-**napi\_create\_strong\_reference、napi\_delete\_strong\_reference、napi\_get\_value\_strong\_reference**
+**napi\_create\_strong\_reference、napi\_delete\_strong\_reference、napi\_get\_strong\_reference\_value**
 
 [使用扩展的Node-API接口创建、销毁和使用强引用对象](use-napi-about-strong-reference.md)
 
@@ -1406,3 +1404,20 @@ ArkTS侧示例代码
 **napi\_throw\_business\_error**
 
 [使用扩展的Node-API接口抛出ArkTS异常](use-napi-about-error.md)
+
+## napi支持基于调用点内联缓存的快速属性访问
+
+### 接口描述
+
+| 接口 | 描述 |
+| --- | --- |
+| napi\_create\_callsite\_info | 创建调用点信息句柄，用于缓存属性访问的内联缓存信息。 |
+| napi\_delete\_callsite\_info | 删除调用点信息句柄，释放关联的缓存资源。 |
+| napi\_get\_property\_with\_callsite\_info | 使用调用点信息快速获取对象属性值，在缓存命中时跳过常规属性查找流程。 |
+| napi\_set\_property\_with\_callsite\_info | 使用调用点信息快速设置对象属性值，在缓存命中时跳过常规属性设置流程。 |
+
+### 使用示例
+
+**napi\_create\_callsite\_info、napi\_delete\_callsite\_info、napi\_get\_property\_with\_callsite\_info、napi\_set\_property\_with\_callsite\_info**
+
+[使用扩展的Node-API接口加速属性访问](use-napi-about-fast-property-access.md)

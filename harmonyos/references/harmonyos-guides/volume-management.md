@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/volume-manage
 title: 播放音量管理
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 播放音量管理
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:476d93e2d07b4bd5637fa147f0db6629f94e57e4cd8eefe409869a9eb365a871
+scraped_at: 2026-09-02T14:59:42+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:9ba53426688da9b3f36a38f7897cea63432e459fd6aad481aebf436e22051f89
 ---
 
 本模块提供播放音量管理能力，包括对**系统音量**、**应用音量**和**音频流音量**的管理。
 
 **系统音量**是由HarmonyOS系统全局管理的音量设置，适用于所有应用程序和设备。HarmonyOS系统将音频分为不同的流类型，每种流类型有独立的系统音量控制。
 
-说明
+**说明** 
 
 系统音量可以通过物理音量按键或系统设置界面调节。在设置界面中，用户可以单独调整上述每种系统音量的大小。
 
@@ -38,7 +38,7 @@ content_hash: sha256:476d93e2d07b4bd5637fa147f0db6629f94e57e4cd8eefe409869a9eb36
 
 HarmonyOS通过系统音量，应用音量和音频流音量协同的方式实现应用对音量的精确控制。
 
-以下各步骤示例为片段代码，可通过示例代码右下方链接获取[完整示例](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/Media/Audio/AudioRendererSampleJS)。
+以下各步骤示例为片段代码，可通过示例代码右下方链接获取[完整示例](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/Audio/AudioRoutingAndVolumeSample)。
 
 ## 系统音量
 
@@ -46,56 +46,84 @@ HarmonyOS通过系统音量，应用音量和音频流音量协同的方式实�
 
 通过AudioVolumeManager只能获取音量信息及监听音量变化，不能主动调节系统音量。如果应用需要调节系统音量，可以[使用音量面板调节系统音量](volume-management.md#使用音量面板调节系统音量)。
 
-```
-1. import { audio } from '@kit.AudioKit';
-2. // ...
-3. let audioManager = audio.getAudioManager();
-4. let audioVolumeManager = audioManager.getVolumeManager();
+```typescript
+import { audio } from '@kit.AudioKit';
+// ...
+
+let audioManager = audio.getAudioManager();
+let audioVolumeManager = audioManager.getVolumeManager();
 ```
 
 ### 获取音量信息
-
-管理系统音量的接口由AudioVolumeManager提供，在使用之前，需要使用[getVolumeManager](../harmonyos-references/arkts-apis-audio-audiomanager.md#getvolumemanager9)获取AudioVolumeManager实例。
-
-```
-1. import { audio } from '@kit.AudioKit';
-2. // ...
-3. let audioManager = audio.getAudioManager();
-4. let audioVolumeManager = audioManager.getVolumeManager();
-```
 
 使用[AudioVolumeManager](../harmonyos-references/arkts-apis-audio-audiovolumemanager.md)获取指定流类型的音量信息。
 
 示例代码如下所示：
 
-```
-1. import { audio } from '@kit.AudioKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. // ...
-4. // 获取指定流的音量。
-5. audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
-6. // ...
-7. // 获取指定流的最小音量。
-8. audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+```typescript
+import { audio } from '@kit.AudioKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// ...
 
-10. // 获取指定流的最大音量。
-11. audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+  try {
+    // 获取指定音频流的音量。
+    let volume = audioVolumeManager.getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+    console.info(`Succeeded in getting volume by stream. Volume: ${volume}`);
+    // ...
+  } catch (err) {
+    let error = err as BusinessError;
+    console.error(`Failed to get volume by stream. Code: ${error.code}, message: ${error.message}`);
+    // ...
+  }
+  // ...
+
+  try {
+    // 获取指定音频流的最小音量。
+    let volume = audioVolumeManager.getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+    console.info(`Succeeded in getting min volume by stream. Volume: ${volume}`);
+    // ...
+  } catch (err) {
+    let error = err as BusinessError;
+    console.error(`Failed to get min volume by stream. Code: ${error.code}, message: ${error.message}`);
+    // ...
+  }
+  // ...
+
+  try {
+    // 获取指定音频流的最大音量。
+    let volume = audioVolumeManager.getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+    console.info(`Succeeded in getting max volume by stream. Volume: ${volume}`);
+    // ...
+  } catch (err) {
+    let error = err as BusinessError;
+    console.error(`Failed to get max volume by stream. Code: ${error.code}, message: ${error.message}`);
+    // ...
+  }
 ```
 
 ### 监听系统音量变化
 
 通过设置监听事件，可以监听系统音量的变化：
 
-```
-1. import { audio } from '@kit.AudioKit';
-2. // ...
-3. audioVolumeManager.on('streamVolumeChange', audio.StreamUsage.STREAM_USAGE_MUSIC,
-4. (streamVolumeEvent: audio.StreamVolumeEvent) => {
-5. console.info(`StreamUsagem: ${streamVolumeEvent.streamUsage} `);
-6. console.info(`Volume level: ${streamVolumeEvent.volume} `);
-7. console.info(`Whether to updateUI: ${streamVolumeEvent.updateUi} `);
-8. // ...
-9. });
+**说明** 
+
+不同输出设备的系统音量相互独立。当音频流的输出设备发生变更时，当前设备上该流类型的系统音量可能与原设备不同，应用可[监听最高优先级输出设备变化](audio-output-device-management.md#监听最高优先级输出设备变化)，在设备变化后通过系统音量查询接口[getVolumeByStream](../harmonyos-references/arkts-apis-audio-audiovolumemanager.md#getvolumebystream20)重新获取音量值，以更新应用侧维护的音量状态。
+
+```typescript
+import { audio } from '@kit.AudioKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// ...
+
+  try {
+    audioVolumeManager.on('streamVolumeChange', audio.StreamUsage.STREAM_USAGE_MUSIC, (streamVolumeEvent: audio.StreamVolumeEvent) => {
+      console.info(`Succeeded in using on function. StreamVolumeEvent: ${JSON.stringify(streamVolumeEvent)}`);
+      // ...
+    });
+  } catch (err) {
+    let error = err as BusinessError;
+    console.error(`Failed to use on function. Code: ${error.code}, message: ${error.message}`);
+    // ...
+  }
 ```
 
 ### 使用音量面板调节系统音量
@@ -112,68 +140,81 @@ HarmonyOS通过系统音量，应用音量和音频流音量协同的方式实�
 
 ### 调节应用音量
 
-```
-1. import { audio } from '@kit.AudioKit';
-2. // ...
-3. let audioManager = audio.getAudioManager();
-4. let audioVolumeManager = audioManager.getVolumeManager();
-5. // ...
-6. // 设置应用的音量（范围为0到100）。
-7. audioVolumeManager.setAppVolumePercentage(20).then(() => {
-8. console.info(`set app volume success.`);
-9. // ...
-10. });
+```typescript
+import { audio } from '@kit.AudioKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// ...
 
-12. // 查询应用音量。
-13. audioVolumeManager.getAppVolumePercentage().then((value: number) => {
-14. console.info(`app volume is ${value}.`);
-15. // ...
-16. });
+let audioManager = audio.getAudioManager();
+let audioVolumeManager = audioManager.getVolumeManager();
 
-18. // 监听应用音量变化，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-19. let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
-20. console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
-21. console.info(`Volume level: ${volumeEvent.volume} `);
-22. console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
-23. // ...
-24. };
-25. audioVolumeManager.on('appVolumeChange', appVolumeChangeCallback);
-26. audioVolumeManager.off('appVolumeChange', appVolumeChangeCallback);
+let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
+  console.info(`Succeeded in using on function. VolumeEvent: ${JSON.stringify(volumeEvent)}`);
+  // ...
+};
+// ...
+
+  try {
+    // 监听应用音量变化。
+    audioVolumeManager.on('appVolumeChange', appVolumeChangeCallback);
+  } catch (err) {
+    let error = err as BusinessError;
+    console.error(`Failed to use on function. Code: ${error.code}, message: ${error.message}`);
+    // ...
+  }
+  // ...
+
+  // 设置应用的音量（范围为0到100）。
+  audioVolumeManager.setAppVolumePercentage(20).then(() => {
+    console.info('Succeeded in setting app volume percentage.');
+    // ...
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to set app volume percentage. Code: ${err.code}, message: ${err.message}`);
+    // ...
+  });
+  // ...
+
+  // 查询应用音量。
+  audioVolumeManager.getAppVolumePercentage().then((volume: number) => {
+    console.info(`Succeeded in getting app volume percentage. Volume: ${volume}`);
+    // ...
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to get app volume percentage. Code: ${err.code}, message: ${err.message}`);
+    // ...
+  });
 ```
 
 ## 音频流音量
 
-管理音频流音量的接口是AVPlayer或AudioRenderer的setVolume()方法，使用[AVPlayer](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)设置音频流音量的示例代码如下：
-
-```
-1. let volume = 1.0;  // 指定的音量大小，取值范围为[0.00-1.00]，1表示最大音量。
-2. avPlayer.setVolume(volume);
-```
+应用可使用[AVPlayer](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)的[setVolume](../harmonyos-references/arkts-apis-media-avplayer.md#setvolume9)或[AudioRenderer](../harmonyos-references/arkts-apis-audio-f.md#audiocreateaudiorenderer8)的[setVolume](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setvolume9)设置音频流音量。
 
 使用[AudioRenderer](../harmonyos-references/arkts-apis-audio-f.md#audiocreateaudiorenderer8)的[setVolume](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setvolume9)和[getVolume](../harmonyos-references/arkts-apis-audio-audiorenderer.md#getvolume12)接口分别完成音频流音量的设置和获取。
 
 示例代码如下所示：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // ...
-3. // 设置音频流音量。
-4. audioRenderer.setVolume(0.5).then(() => {  // 音量范围为[0.0-1.0]。
-5. console.info('Invoke setVolume succeeded.');
-6. // ...
-7. }).catch((err: BusinessError) => {
-8. console.error(`Invoke setVolume failed, code is ${err.code}, message is ${err.message}`);
-9. // ...
-10. });
+```typescript
+import { audio } from '@kit.AudioKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+// ...
 
-12. // 获取音频流音量。
-13. try {
-14. let value: number = audioRenderer.getVolume();
-15. console.info(`Indicate that the volume is obtained ${value}.`);
-16. // ...
-17. } catch (err) {
-18. let error = err as BusinessError;
-19. console.error(`Failed to obtain the volume, error ${error}.`);
-20. // ...
-21. }
+    // 设置音频流音量，音量范围为[0.0-1.0]。
+    audioRenderer.setVolume(0.1).then(() => {
+      console.info('Succeeded in setting volume.');
+      // ...
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to set volume. Code: ${err.code}, message: ${err.message}`);
+      // ...
+    });
+    // ...
+
+    try {
+      // 获取音频流音量。
+      let volume: number = audioRenderer.getVolume();
+      console.info(`Succeeded in getting volume. Volume: ${volume}`);
+      // ...
+    } catch (err) {
+      let error = err as BusinessError;
+      console.error(`Failed to get volume. Code: ${error.code}, message: ${error.message}`);
+      // ...
+    }
 ```

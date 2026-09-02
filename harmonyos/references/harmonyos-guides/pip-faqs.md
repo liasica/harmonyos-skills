@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pip-faqs
 title: 画中画常见问题
-breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 在应用程序中使用画中画功能 > 画中画常见问题
+breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 画中画开发指导 > 画中画常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:43+08:00
+scraped_at: 2026-09-02T15:17:09+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:8a58a5a9a2479fe335457f1de8858302ce2a22537fdba77ee2bafac094dd4fa1
 ---

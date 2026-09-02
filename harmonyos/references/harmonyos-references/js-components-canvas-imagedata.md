@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: ImageData对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > ImageData对象
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:12+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4913302b0907ee5f1d13c6cae3c231024d0303425b1fa3014ab045807c6bcd1b
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bc790f414a47fe2d3c76b9118e4b18969d81cd0654c881b301745b1ab8eed1d6
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ImageData对象可以存储[canvas组件](js-components-canvas-canvas.md)渲染的像素数据。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 | 属性 | 类型 | 描述 |
 | --- | --- | --- |
@@ -26,28 +24,26 @@ PhonePC/2in1TabletTVWearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
-4. </div>
+```html
+<!-- xxx.hml -->
+<div>
+  <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. onShow() {
-5. const el =this.$refs.canvas;
-6. const ctx = el.getContext('2d');
-7. ctx.fillRect(0,0,200,200);
-8. var imageData = ctx.createImageData(1,1);
-9. promptAction.showToast({
-10. message:imageData,
-11. duration:5000
-12. })
-13. }
-14. }
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    ctx.fillRect(0, 0, 200, 200);
+    var imageData = ctx.createImageData(1, 1);
+    promptAction.showToast({
+      message: imageData,
+      duration: 5000
+    })
+  }
+}
 ```

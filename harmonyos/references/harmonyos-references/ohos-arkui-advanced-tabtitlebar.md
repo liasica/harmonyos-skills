@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: TabTitleBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > TabTitleBar
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:05+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:4ad1f5dfa6e66216848fa6d9cf91436bdae6cd2c6d1fddbf04271947c05583ce
+scraped_at: 2026-09-02T15:01:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ba3eafcf9711f1fbdd0ef487c88bde716d16e832bb5ede8dd434fd5402b64b85
 ---
 
 页签型标题栏，用于页面之间的切换。仅一级页面适用。
 
-说明
+**说明** 
 
 * 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件仅可在Stage模型下使用。
@@ -18,21 +18,15 @@ content_hash: sha256:4ad1f5dfa6e66216848fa6d9cf91436bdae6cd2c6d1fddbf04271947c05
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { TabTitleBar } from '@kit.ArkUI';
+```ts
+import { TabTitleBar } from '@kit.ArkUI';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## TabTitleBar
-
-PhonePC/2in1TabletTVWearable
 
 TabTitleBar({tabItems: Array<TabTitleBarTabItem>, menuItems?: Array<TabTitleBarMenuItem>, swiperContent: () => void})
 
@@ -50,13 +44,11 @@ TabTitleBar({tabItems: Array<TabTitleBarTabItem>, menuItems?: Array<TabTitleBarM
 | menuItems | Array<[TabTitleBarMenuItem](ohos-arkui-advanced-tabtitlebar.md#tabtitlebarmenuitem)> | 否 | - | 右侧菜单项目列表，定义标题栏右侧的菜单项目。若不传，则不显示右侧菜单项。 |
 | swiperContent | () => void | 是 | @BuilderParam | 页签列表关联的页面内容构造器。 |
 
-说明
+**说明** 
 
 入参对象不可为undefined，即TabTitleBar(undefined)。
 
 ## TabTitleBarMenuItem
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -65,7 +57,7 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | [ResourceStr](ts-types.md#resourcestr) | 否 | 否 | 图标资源。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| symbolStyle18+ | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | Symbol图标资源，优先级大于value。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| symbolStyle18+ | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | Symbol图标资源，优先级大于value。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | label13+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 图标标签描述。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。 |
 | isEnabled | boolean | 否 | 是 | 是否启用。true：启用，false：禁用。  默认值：false  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | action | () => void | 否 | 是 | 触发时的动作闭包。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -75,8 +67,6 @@ PhonePC/2in1TabletTVWearable
 
 ## TabTitleBarTabItem
 
-PhonePC/2in1TabletTVWearable
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
@@ -85,332 +75,328 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | title | [ResourceStr](ts-types.md#resourcestr) | 否 | 否 | 文字页签。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | icon | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 图片页签资源。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| symbolStyle18+ | [SymbolGlyphModifier](universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | Symbol图片页签资源，优先级大于icon。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| symbolStyle18+ | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | 否 | 是 | Symbol图片页签资源，优先级大于icon。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 不支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（简单的页签型标题栏）
 
 该示例实现了带有左侧页签和右侧菜单列表的页签型标题栏。
 
+```ts
+import { TabTitleBar, Prompt, TabTitleBarTabItem, TabTitleBarMenuItem } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @Builder
+  // 定义页签列表关联的页面
+  componentBuilder() {
+    Text("#1ABC9C\nTURQUOISE")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#1ABC9C")
+    Text("#16A085\nGREEN SEA")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#16A085")
+    Text("#2ECC71\nEMERALD")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#2ECC71")
+    Text("#27AE60\nNEPHRITIS")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#27AE60")
+    Text("#3498DB\nPETER RIVER")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#3498DB")
+  }
+
+  // 定义几个左侧的页签项目
+  private readonly tabItems: Array<TabTitleBarTabItem> =
+    [
+      { title: '页签1' },
+      { title: '页签2' },
+      { title: '页签3' },
+      { title: 'icon', icon: $r('sys.media.ohos_app_icon') },
+      { title: '页签4' },
+    ]
+  // 定义几个右侧的菜单项目
+  private readonly menuItems: Array<TabTitleBarMenuItem> = [
+    {
+      value: $r('sys.media.ohos_save_button_filled'),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 0" })
+    },
+    {
+      value: $r('sys.media.ohos_ic_public_copy'),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 1" })
+    },
+    {
+      value: $r('sys.media.ohos_ic_public_edit'),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 2" })
+    },
+  ]
+
+  // TabTitleBar效果展示
+  build() {
+    Row() {
+      Column() {
+        TabTitleBar({
+          swiperContent: this.componentBuilder,
+          tabItems: this.tabItems,
+          menuItems: this.menuItems,
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
-1. import { TabTitleBar, Prompt, TabTitleBarTabItem, TabTitleBarMenuItem } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @Builder
-7. // 定义页签列表关联的页面
-8. componentBuilder() {
-9. Text("#1ABC9C\nTURQUOISE")
-10. .fontWeight(FontWeight.Bold)
-11. .fontSize(14)
-12. .width("100%")
-13. .textAlign(TextAlign.Center)
-14. .fontColor("#CCFFFFFF")
-15. .backgroundColor("#1ABC9C")
-16. Text("#16A085\nGREEN SEA")
-17. .fontWeight(FontWeight.Bold)
-18. .fontSize(14)
-19. .width("100%")
-20. .textAlign(TextAlign.Center)
-21. .fontColor("#CCFFFFFF")
-22. .backgroundColor("#16A085")
-23. Text("#2ECC71\nEMERALD")
-24. .fontWeight(FontWeight.Bold)
-25. .fontSize(14)
-26. .width("100%")
-27. .textAlign(TextAlign.Center)
-28. .fontColor("#CCFFFFFF")
-29. .backgroundColor("#2ECC71")
-30. Text("#27AE60\nNEPHRITIS")
-31. .fontWeight(FontWeight.Bold)
-32. .fontSize(14)
-33. .width("100%")
-34. .textAlign(TextAlign.Center)
-35. .fontColor("#CCFFFFFF")
-36. .backgroundColor("#27AE60")
-37. Text("#3498DB\nPETER RIVER")
-38. .fontWeight(FontWeight.Bold)
-39. .fontSize(14)
-40. .width("100%")
-41. .textAlign(TextAlign.Center)
-42. .fontColor("#CCFFFFFF")
-43. .backgroundColor("#3498DB")
-44. }
-
-46. // 定义几个左侧的页签项目
-47. private readonly tabItems: Array<TabTitleBarTabItem> =
-48. [
-49. { title: '页签1' },
-50. { title: '页签2' },
-51. { title: '页签3' },
-52. { title: 'icon', icon: $r('sys.media.ohos_app_icon') },
-53. { title: '页签4' },
-54. ]
-55. // 定义几个右侧的菜单项目
-56. private readonly menuItems: Array<TabTitleBarMenuItem> = [
-57. {
-58. value: $r('sys.media.ohos_save_button_filled'),
-59. isEnabled: true,
-60. action: () => Prompt.showToast({ message: "on item click! index 0" })
-61. },
-62. {
-63. value: $r('sys.media.ohos_ic_public_copy'),
-64. isEnabled: true,
-65. action: () => Prompt.showToast({ message: "on item click! index 1" })
-66. },
-67. {
-68. value: $r('sys.media.ohos_ic_public_edit'),
-69. isEnabled: true,
-70. action: () => Prompt.showToast({ message: "on item click! index 2" })
-71. },
-72. ]
-
-74. // TabTitleBar效果展示
-75. build() {
-76. Row() {
-77. Column() {
-78. TabTitleBar({
-79. swiperContent: this.componentBuilder,
-80. tabItems: this.tabItems,
-81. menuItems: this.menuItems,
-82. })
-83. }.width('100%')
-84. }.height('100%')
-85. }
-86. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ea5VohlFTzmPhqdu_kRPqw/zh-cn_image_0000002558607002.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/26qfgXPORfWLhyoepLqX-Q/zh-cn_image_0000002706676388.png)
 
 ### 示例2（右侧自定义按钮播报）
 
 从API version 18开始，该示例通过设置标题栏右侧自定义按钮属性accessibilityText、accessibilityDescription、accessibilityLevel自定义屏幕朗读播报文本。
 
+```ts
+import { TabTitleBar, Prompt, TabTitleBarTabItem, TabTitleBarMenuItem } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @Builder
+  // 定义页签列表关联的页面
+  componentBuilder() {
+    Text("#1ABC9C\nTURQUOISE")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#1ABC9C")
+    Text("#16A085\nGREEN SEA")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#16A085")
+    Text("#2ECC71\nEMERALD")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#2ECC71")
+    Text("#27AE60\nNEPHRITIS")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#27AE60")
+    Text("#3498DB\nPETER RIVER")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#3498DB")
+  }
+
+  // 定义几个左侧的页签项目
+  private readonly tabItems: Array<TabTitleBarTabItem> =
+    [
+      { title: '页签1' },
+      { title: '页签2' },
+      { title: '页签3' },
+      { title: 'icon', icon: $r('sys.media.ohos_app_icon') },
+      { title: '页签4' },
+    ]
+  // 定义几个右侧的菜单项目
+  private readonly menuItems: Array<TabTitleBarMenuItem> = [
+    {
+      value: $r('sys.media.ohos_save_button_filled'),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 0" }),
+      accessibilityText: '保存',
+      // 此处为no，屏幕朗读不聚焦
+      accessibilityLevel: 'no',
+      accessibilityDescription: '点击操作保存图标'
+    },
+    {
+      value: $r('sys.media.ohos_ic_public_copy'),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 1" }),
+      accessibilityText: '复制',
+      accessibilityLevel: 'yes',
+      accessibilityDescription: '点击操作复制图标'
+    },
+    {
+      value: $r('sys.media.ohos_ic_public_edit'),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 2" }),
+      // 屏幕朗读播报文本，优先级比label高
+      accessibilityText: '编辑',
+      // 屏幕朗读是否可以聚焦到
+      accessibilityLevel: 'yes',
+      // 屏幕朗读最后播报的描述文本
+      accessibilityDescription: '点击操作编辑图标'
+    },
+  ]
+
+  // TabTitleBar效果展示
+  build() {
+    Row() {
+      Column() {
+        TabTitleBar({
+          swiperContent: this.componentBuilder,
+          tabItems: this.tabItems,
+          menuItems: this.menuItems,
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
-1. import { TabTitleBar, Prompt, TabTitleBarTabItem, TabTitleBarMenuItem } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @Builder
-7. // 定义页签列表关联的页面
-8. componentBuilder() {
-9. Text("#1ABC9C\nTURQUOISE")
-10. .fontWeight(FontWeight.Bold)
-11. .fontSize(14)
-12. .width("100%")
-13. .textAlign(TextAlign.Center)
-14. .fontColor("#CCFFFFFF")
-15. .backgroundColor("#1ABC9C")
-16. Text("#16A085\nGREEN SEA")
-17. .fontWeight(FontWeight.Bold)
-18. .fontSize(14)
-19. .width("100%")
-20. .textAlign(TextAlign.Center)
-21. .fontColor("#CCFFFFFF")
-22. .backgroundColor("#16A085")
-23. Text("#2ECC71\nEMERALD")
-24. .fontWeight(FontWeight.Bold)
-25. .fontSize(14)
-26. .width("100%")
-27. .textAlign(TextAlign.Center)
-28. .fontColor("#CCFFFFFF")
-29. .backgroundColor("#2ECC71")
-30. Text("#27AE60\nNEPHRITIS")
-31. .fontWeight(FontWeight.Bold)
-32. .fontSize(14)
-33. .width("100%")
-34. .textAlign(TextAlign.Center)
-35. .fontColor("#CCFFFFFF")
-36. .backgroundColor("#27AE60")
-37. Text("#3498DB\nPETER RIVER")
-38. .fontWeight(FontWeight.Bold)
-39. .fontSize(14)
-40. .width("100%")
-41. .textAlign(TextAlign.Center)
-42. .fontColor("#CCFFFFFF")
-43. .backgroundColor("#3498DB")
-44. }
-
-46. // 定义几个左侧的页签项目
-47. private readonly tabItems: Array<TabTitleBarTabItem> =
-48. [
-49. { title: '页签1' },
-50. { title: '页签2' },
-51. { title: '页签3' },
-52. { title: 'icon', icon: $r('sys.media.ohos_app_icon') },
-53. { title: '页签4' },
-54. ]
-55. // 定义几个右侧的菜单项目
-56. private readonly menuItems: Array<TabTitleBarMenuItem> = [
-57. {
-58. value: $r('sys.media.ohos_save_button_filled'),
-59. isEnabled: true,
-60. action: () => Prompt.showToast({ message: "on item click! index 0" }),
-61. accessibilityText: '保存',
-62. // 此处为no，屏幕朗读不聚焦
-63. accessibilityLevel: 'no',
-64. accessibilityDescription: '点击操作保存图标'
-65. },
-66. {
-67. value: $r('sys.media.ohos_ic_public_copy'),
-68. isEnabled: true,
-69. action: () => Prompt.showToast({ message: "on item click! index 1" }),
-70. accessibilityText: '复制',
-71. accessibilityLevel: 'yes',
-72. accessibilityDescription: '点击操作复制图标'
-73. },
-74. {
-75. value: $r('sys.media.ohos_ic_public_edit'),
-76. isEnabled: true,
-77. action: () => Prompt.showToast({ message: "on item click! index 2" }),
-78. // 屏幕朗读播报文本，优先级比label高
-79. accessibilityText: '编辑',
-80. // 屏幕朗读是否可以聚焦到
-81. accessibilityLevel: 'yes',
-82. // 屏幕朗读最后播报的描述文本
-83. accessibilityDescription: '点击操作编辑图标'
-84. },
-85. ]
-
-87. // TabTitleBar效果展示
-88. build() {
-89. Row() {
-90. Column() {
-91. TabTitleBar({
-92. swiperContent: this.componentBuilder,
-93. tabItems: this.tabItems,
-94. menuItems: this.menuItems,
-95. })
-96. }.width('100%')
-97. }.height('100%')
-98. }
-99. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/nDNvy-T1R6eq0S13D9qKmw/zh-cn_image_0000002589326529.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Q-YweBxSSxOLbRSFy7kSSw/zh-cn_image_0000002736435475.png)
 
 ### 示例3（设置Symbol类型图标）
 
 从API version 18开始，该示例通过设置TabTitleBarTabItem、TabTitleBarMenuItem的属性symbolStyle，展示了自定义Symbol类型图标。
 
+```ts
+import { TabTitleBar, Prompt, TabTitleBarTabItem, TabTitleBarMenuItem, SymbolGlyphModifier } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct Index {
+  @Builder
+  // 定义页签列表关联的页面
+  componentBuilder() {
+    Text("#1ABC9C\nTURQUOISE")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#1ABC9C")
+    Text("#16A085\nGREEN SEA")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#16A085")
+    Text("#2ECC71\nEMERALD")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#2ECC71")
+    Text("#27AE60\nNEPHRITIS")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#27AE60")
+    Text("#3498DB\nPETER RIVER")
+      .fontWeight(FontWeight.Bold)
+      .fontSize(14)
+      .width("100%")
+      .textAlign(TextAlign.Center)
+      .fontColor("#CCFFFFFF")
+      .backgroundColor("#3498DB")
+  }
+
+  // 定义几个左侧的页签项目
+  private readonly tabItems: Array<TabTitleBarTabItem> =
+    [
+      { title: '页签1' },
+      { title: '页签2' },
+      { title: '页签3' },
+      {
+        title: 'icon',
+        icon: $r('sys.media.ohos_app_icon'),
+        symbolStyle: new SymbolGlyphModifier($r('sys.symbol.car'))
+      },
+      { title: '页签4' },
+    ]
+  // 定义几个右侧的菜单项目
+  private readonly menuItems: Array<TabTitleBarMenuItem> = [
+    {
+      value: $r('sys.media.ohos_save_button_filled'),
+      symbolStyle: new SymbolGlyphModifier($r('sys.symbol.save')),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 0" }),
+      accessibilityText: '保存',
+      // 此处为no，屏幕朗读不聚焦
+      accessibilityLevel: 'no',
+      accessibilityDescription: '点击操作保存图标'
+    },
+    {
+      value: $r('sys.media.ohos_ic_public_copy'),
+      symbolStyle: new SymbolGlyphModifier($r('sys.symbol.car')),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 1" }),
+      accessibilityText: '复制',
+      accessibilityLevel: 'yes',
+      accessibilityDescription: '点击操作复制图标'
+    },
+    {
+      value: $r('sys.media.ohos_ic_public_edit'),
+      symbolStyle: new SymbolGlyphModifier($r('sys.symbol.ai_edit')),
+      isEnabled: true,
+      action: () => Prompt.showToast({ message: "on item click! index 2" }),
+      // 屏幕朗读播报文本，优先级比label高
+      accessibilityText: '编辑',
+      // 屏幕朗读是否可以聚焦到
+      accessibilityLevel: 'yes',
+      // 屏幕朗读最后播报的描述文本
+      accessibilityDescription: '点击操作编辑图标'
+    },
+  ]
+
+  // TabTitleBar效果展示
+  build() {
+    Row() {
+      Column() {
+        TabTitleBar({
+          swiperContent: this.componentBuilder,
+          tabItems: this.tabItems,
+          menuItems: this.menuItems,
+        })
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
-1. import { TabTitleBar, Prompt, TabTitleBarTabItem, TabTitleBarMenuItem, SymbolGlyphModifier } from '@kit.ArkUI';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @Builder
-7. // 定义页签列表关联的页面
-8. componentBuilder() {
-9. Text("#1ABC9C\nTURQUOISE")
-10. .fontWeight(FontWeight.Bold)
-11. .fontSize(14)
-12. .width("100%")
-13. .textAlign(TextAlign.Center)
-14. .fontColor("#CCFFFFFF")
-15. .backgroundColor("#1ABC9C")
-16. Text("#16A085\nGREEN SEA")
-17. .fontWeight(FontWeight.Bold)
-18. .fontSize(14)
-19. .width("100%")
-20. .textAlign(TextAlign.Center)
-21. .fontColor("#CCFFFFFF")
-22. .backgroundColor("#16A085")
-23. Text("#2ECC71\nEMERALD")
-24. .fontWeight(FontWeight.Bold)
-25. .fontSize(14)
-26. .width("100%")
-27. .textAlign(TextAlign.Center)
-28. .fontColor("#CCFFFFFF")
-29. .backgroundColor("#2ECC71")
-30. Text("#27AE60\nNEPHRITIS")
-31. .fontWeight(FontWeight.Bold)
-32. .fontSize(14)
-33. .width("100%")
-34. .textAlign(TextAlign.Center)
-35. .fontColor("#CCFFFFFF")
-36. .backgroundColor("#27AE60")
-37. Text("#3498DB\nPETER RIVER")
-38. .fontWeight(FontWeight.Bold)
-39. .fontSize(14)
-40. .width("100%")
-41. .textAlign(TextAlign.Center)
-42. .fontColor("#CCFFFFFF")
-43. .backgroundColor("#3498DB")
-44. }
-
-46. // 定义几个左侧的页签项目
-47. private readonly tabItems: Array<TabTitleBarTabItem> =
-48. [
-49. { title: '页签1' },
-50. { title: '页签2' },
-51. { title: '页签3' },
-52. {
-53. title: 'icon',
-54. icon: $r('sys.media.ohos_app_icon'),
-55. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.car'))
-56. },
-57. { title: '页签4' },
-58. ]
-59. // 定义几个右侧的菜单项目
-60. private readonly menuItems: Array<TabTitleBarMenuItem> = [
-61. {
-62. value: $r('sys.media.ohos_save_button_filled'),
-63. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.save')),
-64. isEnabled: true,
-65. action: () => Prompt.showToast({ message: "on item click! index 0" }),
-66. accessibilityText: '保存',
-67. // 此处为no，屏幕朗读不聚焦
-68. accessibilityLevel: 'no',
-69. accessibilityDescription: '点击操作保存图标'
-70. },
-71. {
-72. value: $r('sys.media.ohos_ic_public_copy'),
-73. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.car')),
-74. isEnabled: true,
-75. action: () => Prompt.showToast({ message: "on item click! index 1" }),
-76. accessibilityText: '复制',
-77. accessibilityLevel: 'yes',
-78. accessibilityDescription: '点击操作复制图标'
-79. },
-80. {
-81. value: $r('sys.media.ohos_ic_public_edit'),
-82. symbolStyle: new SymbolGlyphModifier($r('sys.symbol.ai_edit')),
-83. isEnabled: true,
-84. action: () => Prompt.showToast({ message: "on item click! index 2" }),
-85. // 屏幕朗读播报文本，优先级比label高
-86. accessibilityText: '编辑',
-87. // 屏幕朗读是否可以聚焦到
-88. accessibilityLevel: 'yes',
-89. // 屏幕朗读最后播报的描述文本
-90. accessibilityDescription: '点击操作编辑图标'
-91. },
-92. ]
-
-94. // TabTitleBar效果展示
-95. build() {
-96. Row() {
-97. Column() {
-98. TabTitleBar({
-99. swiperContent: this.componentBuilder,
-100. tabItems: this.tabItems,
-101. menuItems: this.menuItems,
-102. })
-103. }.width('100%')
-104. }.height('100%')
-105. }
-106. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/wjgnUINIRoqa_qbQyp0-0A/zh-cn_image_0000002589246471.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/46WYNuYyTHi6FuKt_aK88A/zh-cn_image_0000002706836324.png)

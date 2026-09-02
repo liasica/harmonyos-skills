@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-gette
 title: GetTensorDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Tensor > GetTensorDesc
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:05+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3e76c7a0abaee1e3d96962e106e78cbdaa531626c09ac1815720467f415d463c
+content_hash: sha256:387003bd6384e3421db001e7b85d03f360992adbcd042cd4a5a30fc7e1935713
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:3e76c7a0abaee1e3d96962e106e78cbdaa531626c09ac1815720467f415
 
 ## 函数原型
 
-```
-1. TensorDesc GetTensorDesc() const;
+```cpp
+TensorDesc GetTensorDesc() const;
 ```
 
 ## 参数说明

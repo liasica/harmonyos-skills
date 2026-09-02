@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-27
 title: TaskPool和Worker的异同点
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > TaskPool和Worker的异同点
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:23+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d52d2fd74c094adf73a1b4e73d038709ea25d1703ac38ce93202ce67bcb3e77e
 ---
 

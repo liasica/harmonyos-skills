@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-event
 title: 开发者测试
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 事件推荐方案 > 开发者测试
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:23aa55247f74836080f7b48708f5879016560f75601fac25ba0900e36f73b8d8
+scraped_at: 2026-09-02T14:50:44+08:00
+doc_updated_at: 2026-05-26
+content_hash: sha256:64206abeb8d48769a9ca0b930ee916867e76a29c7fe14fb541ecd5319ac005b0
 ---
 
 Intents Kit向开发者提供真机测试能力，即开发者可连接设备进行调测。开发者完成代码开发之后，功能正式上架应用市场前，可以在HarmonyOS NEXT设备上面进行自验证，打磨体验。真机测试分为三个步骤：基础信息提供，环境准备，联调验证。
 
 ## 基础信息提供
 
-达成开发意向后，开发者发送邮件到邮箱（hagservice@huawei.com）或者联系华为意图框架接口同事，向华为提供测试应用的信息。
+开发者在AppGallery Connect平台上提交的事件推荐方案能力申请审核成功后，可根据审核成功的反馈提示，提供测试应用的信息。能力申请的步骤参考[Intents Kit接入流程](intents-access-flow.md)。
 
 | **序号** | **基础信息** | **描述** |
 | --- | --- | --- |
@@ -31,19 +31,19 @@ Intents Kit向开发者提供真机测试能力，即开发者可连接设备进
 1. 保持设备联网，并且设备时间和实际北京时间保持一致。
 2. 点击桌面的小艺建议卡片。此时卡片显示的是“欢迎使用小艺建议”，点击卡片打开小艺的隐私页面，并选择“同意”。如果此前已经同意过小艺的隐私协议，此步骤可以跳过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/5mxg8eGZRzKYX9G5hW9hXg/zh-cn_image_0000002589245623.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/52ANbwuUTbiPz9VOEWed8w/zh-cn_image_0000002736434529.png)
 3. 打开开发者调试模式：进入设置 > 机型 > 关于手机，连续点击软件版本7次，弹出“开启“开发者模式””，点击“确认开启”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/FczEKaqfQSGPtwIhjCw8cw/zh-cn_image_0000002558765814.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/u0mToZYVTFqU2Q7U5sL0Gg/zh-cn_image_0000002706835382.png)
 4. 长按电源键唤醒小艺，将半屏态小艺向上拉升至全屏态，点击左上角返回上层，返回后点击右上角的头像，进入“设置”，找到并进入应用网络设置，打开“WLAN下自动更新”开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/-EDCO9k3SKKVobGOOyVNjw/zh-cn_image_0000002558606158.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zjHHmiM9SX2Yc2RhjRghOg/zh-cn_image_0000002736314487.png)
 5. 在上一步页面中下滑，点击“个性化推荐”，进入后打开“个性化推荐”的开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/IzkqeFmlQw2R_ejkAuP8Hw/zh-cn_image_0000002589325685.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/EcgpLu8xQea5FE9S-pFAlg/zh-cn_image_0000002706675444.png)
 6. 进入设置 > 系统 > 开发者选项 > 意图框架调试，打开意图框架调试开关，如果下方显示已切换至真机模式并且测试应用包名在“本设备支持测试应用”下，则代表真机模式切换成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/-7OYmdNwQvKRQ1aHXyijDQ/zh-cn_image_0000002589245625.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/kHH6CQV8S-W1N6Z5Wl5e7g/zh-cn_image_0000002736434531.png)
 
    【提示】如果出现意图框架调试打开后，设备长时间无法出现“已切换至真机模式”或者出现“已切换至真机模式”但没有包名的时候，可以尝试以下操作：
 

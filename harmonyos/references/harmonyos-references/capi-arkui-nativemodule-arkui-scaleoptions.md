@@ -3,39 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_ScaleOptions
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_ScaleOptions
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:24+08:00
-doc_updated_at: 2026-03-23
-content_hash: sha256:e55a1d332b6a4e50b7ad7e9e202b06c8d3a74631e992aa98d0a5f13f0c3929ac
+scraped_at: 2026-09-02T15:01:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f1cdce73ef54fcddc7face715ddccf0cbaaa44d2fc95642aef368cef69488fdc
 ---
 
-```
-1. typedef struct {...} ArkUI_ScaleOptions
+```c
+typedef struct {...} ArkUI_ScaleOptions
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义组件转场时的缩放效果对象。
+定义组件转场时的缩放选项。
 
 **起始版本：** 12
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [native\_type\_visual.h](capi-native-type-visual-h.md)
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
-| float x | x轴的缩放倍数。x>1时以x轴方向放大，0<x<1时以x轴方向缩小，x=0时表示在x轴方向缩小成0，x=1时表示在x轴方向缩放倍数是1，x<0时沿x轴反向并缩放。 |
-| float y | y轴的缩放倍数。y>1时以y轴方向放大，0<y<1时以y轴方向缩小，y=0时表示在y轴方向缩小成0，y=1时表示在y轴方向缩放倍数是1，y<0时沿y轴反向并缩放。 |
-| float z | 当前为二维显示，该参数无效。 |
-| float centerX | 变换中心点x轴坐标。表示组件变换中心点（即锚点）的x方向坐标，单位为vp。 |
-| float centerY | 变换中心点y轴坐标。表示组件变换中心点（即锚点）的y方向坐标，单位为vp。 |
+| float x | x轴的缩放倍数，默认值1.0。x>1时沿x轴方向放大，0<x<1时沿x轴方向缩小，x<0时沿x轴方向反向，缩放倍数为|x|。缩放以centerX为锚点进行。注意：x=0时组件在x轴方向完全消失，使用时需留意特殊值的影响。 |
+| float y | y轴的缩放倍数，默认值1.0。y>1时沿y轴方向放大，0<y<1时沿y轴方向缩小，y<0时沿y轴方向反向，缩放倍数为|y|。注意：y=0时组件在y轴方向完全消失，使用时需留意特殊值的影响。 |
+| float z | z轴的缩放倍数，默认值1.0。在二维显示模式下，该参数无效。 |
+| float centerX | 组件变换中心点（即锚点）的x轴坐标，单位为百分比，0表示组件左边缘，1表示组件右边缘，0.5表示组件水平中心。默认值0.5。x轴缩放效果以该点为锚点进行，不同centerX值决定缩放锚点的x方向位置。取值为0时缩放从组件左边缘展开，取值为0.5时缩放从水平中心展开，取值为1时缩放从右边缘展开。 |
+| float centerY | 组件变换中心点（即锚点）的y轴坐标，单位为百分比，0表示组件顶部边缘，1表示组件底部边缘，0.5表示组件垂直中心。默认值0.5。y轴缩放效果以该点为锚点进行，不同centerY值决定缩放锚点的y方向位置。取值为0时缩放从组件顶部边缘展开，取值为0.5时缩放从垂直中心展开，取值为1时缩放从底部边缘展开。 |

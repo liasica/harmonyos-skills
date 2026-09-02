@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serializable-
 title: 线程间通信对象概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > 线程间通信对象概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f1d04b42dce5039dba3a2000e2f041938cf318660130a2e87b0329754c3387e3
+scraped_at: 2026-09-02T14:59:13+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:0b829190d498f9d4c019d6aa7b32da9c14e278be1cf97823e4a64f8b845e540e
 ---
 
 在多线程并发场景中，例如通过TaskPool或Worker创建后台线程，不同线程间需要进行数据交互。由于线程间内存隔离，线程间通信对象必须通过序列化实现值拷贝或内存共享。
 
-说明
+**说明** 
 
 * 单次序列化传输的数据量大小限制为16MB。
 * 序列化不支持使用[@State装饰器](arkts-state.md)、[@Prop装饰器](arkts-prop.md)、[@Link装饰器](arkts-link.md)等装饰器修饰的复杂类型。
@@ -22,4 +22,4 @@ content_hash: sha256:f1d04b42dce5039dba3a2000e2f041938cf318660130a2e87b0329754c3
 * [ArrayBuffer对象](arraybuffer-object.md)：用于二进制数据的高效传递，适用于大段连续内存数据（如图片、音频原始数据）。
 * [SharedArrayBuffer对象](shared-arraybuffer-object.md)：支持多线程共享内存，允许线程间直接访问同一块内存区域，提升数据传递效率。
 * [Transferable对象（NativeBinding对象）](transferabled-object.md)：支持跨线程转移对象所有权（如文件描述符、图形资源等），转移后原线程不再拥有访问权限。
-* [Sendable对象](arkts-sendable.md)：符合ArkTS语言规范的可共享对象，需通过[@Sendable装饰器](arkts-sendable.md#sendable装饰器)标记，并且满足Sendable约束，详情可查[Sendable使用规则与约束](sendable-constraints.md)。
+* [Sendable对象](arkts-sendable.md)：符合ArkTS语言规范的可共享对象，支持的数据类型详见[Sendable支持的数据类型](arkts-sendable.md#sendable支持的数据类型)，需要满足Sendable约束，详情可查[Sendable使用规则与约束](sendable-constraints.md)。

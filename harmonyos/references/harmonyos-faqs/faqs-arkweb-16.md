@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-16
-title: 注册的自定义字体在webview中无效
-breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 注册的自定义字体在webview中无效
+title: 注册的自定义字体在 webview 中无效
+breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 注册的自定义字体在 webview 中无效
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:37+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:4e5307a6e36462bdf4c08c348b51709a2a24fbb58095a6fb814ab51a256c6b6c
+scraped_at: 2026-09-02T14:54:31+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:e0620c7dee7b1335125e7a5a207218cdadb21e78146861a1189c084de5fb9530
 ---
 
 **问题现象**
@@ -18,27 +18,25 @@ content_hash: sha256:4e5307a6e36462bdf4c08c348b51709a2a24fbb58095a6fb814ab51a256
 
 H5侧：
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: 'MaoKenWangXingYuan';src: url('./MaoKenWangXingYuan.ttf');
+    }
+    #title {
+      font-family: 'MaoKenWangXingYuan';
+    }
+  </style>
+</head>
+<body>
+<h1 id="title">猫啃忘形圆</h1>
+</body>
+</html>
 ```
-1. <!DOCTYPE html>
-2. <html lang="en">
-3. <head>
-4. <meta charset="UTF-8"/>
-5. <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-6. <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-7. <title>Document</title>
-8. <style>
-9. @font-face {
-10. font-family: 'MaoKenWangXingYuan';src: url('./MaoKenWangXingYuan.ttf');
-11. }
-12. #title {
-13. font-family: 'MaoKenWangXingYuan';
-14. }
-15. </style>
-16. </head>
-17. <body>
-18. <h1 id="title">猫啃忘形圆</h1>
-19. </body>
-20. </html>
-```
-
-[registerFont.txt](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkWebKit/entry/src/main/ets/pages/registerFont.txt#L6-L25)

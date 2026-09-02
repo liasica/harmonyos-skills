@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-menu-ov
 title: 菜单概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 菜单 > 菜单概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:45+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:836c172405550c25228fb35bdd919763f1a23f8e58fd4636e84e7007bd48bcb1
+scraped_at: 2026-09-02T14:49:50+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:0d6d88f3225300fad9115de175eeb4c545976d9e6c0d75da090d08b039ec4250
 ---
 
 菜单是一种用于给用户提供可执行的操作的弹窗，一般用于鼠标右键弹窗、点击弹窗等。
@@ -33,7 +33,7 @@ content_hash: sha256:836c172405550c25228fb35bdd919763f1a23f8e58fd4636e84e7007bd4
 | onAppear | () => void | 菜单弹出后的事件回调。 |
 | aboutToDisappear | () => void | 菜单退出动效前的事件回调。 |
 | onDisappear | () => void | 菜单消失后的事件回调。 |
-| onWillAppear | [Callback<void>](../harmonyos-references/ts-types.md#callback12) | 菜单显示动效前的事件回调。  **说明：** aboutToAppear是初始化时触发调用，onWillAppear是在动画执行前触发调用，onWillAppear在aboutToAppear之后执行。 |
-| onDidAppear | [Callback<void>](../harmonyos-references/ts-types.md#callback12) | 菜单弹出后的事件回调。  **说明：**  1. 快速点击按钮时，菜单会快速弹出、消失，此时onWillDisappear可能会在onDidAppear前生效。  2. 当菜单入场动效未完成时关闭菜单，该回调不会触发。  3. onAppear和onDidAppear触发时机相同，onDidAppear在onAppear后生效。 |
-| onWillDisappear | [Callback<void>](../harmonyos-references/ts-types.md#callback12) | 菜单退出动效前的事件回调。  **说明：**  1. 快速点击按钮时，菜单会快速弹出、消失，此时onWillDisappear可能会在onDidAppear前生效。  2. aboutToDisappear和onWillDisappear触发时机相同，onWillDisappear在aboutToDisappear后生效。 |
-| onDidDisappear | [Callback<void>](../harmonyos-references/ts-types.md#callback12) | 菜单消失后的事件回调。  **说明：** onDisappear和onDidDisappear触发时机相同，onDidDisappear在onDisappear后生效。 |
+| onWillAppear | [Callback](../harmonyos-references/ts-types.md#callback12)<void> | 菜单显示动效前的事件回调。  **说明：** aboutToAppear是初始化时触发调用，onWillAppear是在动画执行前触发调用，onWillAppear在aboutToAppear之后执行。 |
+| onDidAppear | [Callback](../harmonyos-references/ts-types.md#callback12)<void> | 菜单弹出后的事件回调。  **说明：**  1. 快速点击按钮时，菜单会快速弹出、消失，此时onWillDisappear可能会在onDidAppear前生效。  2. 当菜单入场动效未完成时关闭菜单，该回调不会触发。  3. onAppear和onDidAppear触发时机相同，onDidAppear在onAppear后生效。 |
+| onWillDisappear | [Callback](../harmonyos-references/ts-types.md#callback12)<void> | 菜单退出动效前的事件回调。  **说明：**  1. 快速点击按钮时，菜单会快速弹出、消失，此时onWillDisappear可能会在onDidAppear前生效。  2. aboutToDisappear和onWillDisappear触发时机相同，onWillDisappear在aboutToDisappear后生效。 |
+| onDidDisappear | [Callback](../harmonyos-references/ts-types.md#callback12)<void> | 菜单消失后的事件回调。  **说明：** onDisappear和onDidDisappear触发时机相同，onDidDisappear在onDisappear后生效。 |

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.reminderAgent (后台代理提醒)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > 已停止维护的接口 > @ohos.reminderAgent (后台代理提醒)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:37+08:00
-doc_updated_at: 2026-03-26
-content_hash: sha256:269e5ff43df334d11390fb90b6de7f9f246214101b6d1175f0ed78a5d5f432c9
+scraped_at: 2026-09-02T15:01:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ab732c7fba034c462041d7bd544f96dc9f1c712d76433d88b6aa31a93cba734c
 ---
 
 本模块提供后台代理提醒的能力。
 
 开发应用时，开发者可以调用相关接口创建定时提醒，包括倒计时、日历、闹钟这三类提醒类型。使用后台代理提醒能力后，应用被冻结或退出后，计时和弹出提醒的功能将被后台系统服务代理。
 
-说明
+**说明** 
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[@ohos.reminderAgentManager (后台代理提醒)](js-apis-reminderagentmanager.md)替代。
 
@@ -20,21 +20,17 @@ content_hash: sha256:269e5ff43df334d11390fb90b6de7f9f246214101b6d1175f0ed78a5d5f
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import reminderAgent from'@ohos.reminderAgent';
+```ts
+import reminderAgent from '@ohos.reminderAgent';
 ```
 
 ## reminderAgent.publishReminder(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback<number>): void
 
 发布一个后台代理提醒，使用回调的方式实现异步调用，该方法需要申请通知弹窗权限[Notification.requestEnableNotification](js-apis-notification.md#notificationrequestenablenotification8)后才能调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder)替代。
 
@@ -51,28 +47,27 @@ publishReminder(reminderReq: ReminderRequest, callback: AsyncCallback<number>): 
 
 **示例**：
 
-```
-1. import { BusinessError } from '@ohos.base';
+```ts
+import { BusinessError } from '@ohos.base';
+import reminderAgent from '@ohos.reminderAgent';
 
-3. let timer:reminderAgent.ReminderRequestTimer = {
-4. reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
-5. triggerTimeInSeconds: 10
-6. }
+let timer:reminderAgent.ReminderRequestTimer = {
+  reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+  triggerTimeInSeconds: 10
+}
 
-8. reminderAgent.publishReminder(timer, (err: BusinessError, reminderId: number) => {
-9. console.info("callback, reminderId = " + reminderId);
-10. });
+reminderAgent.publishReminder(timer, (err: BusinessError, reminderId: number) => {
+  console.info("callback, reminderId = " + reminderId);
+});
 ```
 
 ## reminderAgent.publishReminder(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 publishReminder(reminderReq: ReminderRequest): Promise<number>
 
 发布一个后台代理提醒，使用Promise方式实现异步调用，该方法需要申请通知弹窗权限[Notification.requestEnableNotification](js-apis-notification.md#notificationrequestenablenotification8)后才能调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.publishReminder](js-apis-reminderagentmanager.md#reminderagentmanagerpublishreminder-1)替代。
 
@@ -94,26 +89,26 @@ publishReminder(reminderReq: ReminderRequest): Promise<number>
 
 **示例**：
 
-```
-1. let timer:reminderAgent.ReminderRequestTimer = {
-2. reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
-3. triggerTimeInSeconds: 10
-4. }
+```ts
+import reminderAgent from '@ohos.reminderAgent';
 
-6. reminderAgent.publishReminder(timer).then((reminderId: number) => {
-7. console.info("promise, reminderId = " + reminderId);
-8. });
+let timer:reminderAgent.ReminderRequestTimer = {
+  reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+  triggerTimeInSeconds: 10
+}
+
+reminderAgent.publishReminder(timer).then((reminderId: number) => {
+  console.info("promise, reminderId = " + reminderId);
+});
 ```
 
 ## reminderAgent.cancelReminder(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 cancelReminder(reminderId: number, callback: AsyncCallback<void>): void
 
 取消指定id的提醒，使用回调的方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.cancelReminder](js-apis-reminderagentmanager.md#reminderagentmanagercancelreminder)替代。
 
@@ -128,23 +123,22 @@ cancelReminder(reminderId: number, callback: AsyncCallback<void>): void
 
 **示例**：
 
-```
-1. import { BusinessError } from '@ohos.base';
+```ts
+import { BusinessError } from '@ohos.base';
+import reminderAgent from '@ohos.reminderAgent';
 
-3. reminderAgent.cancelReminder(1, (err: BusinessError, data: void) => {
-4. console.info("cancelReminder callback");
-5. });
+reminderAgent.cancelReminder(1, (err: BusinessError, data: void) => {
+  console.info("cancelReminder callback");
+});
 ```
 
 ## reminderAgent.cancelReminder(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 cancelReminder(reminderId: number): Promise<void>
 
 取消指定id的提醒，使用Promise方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.cancelReminder](js-apis-reminderagentmanager.md#reminderagentmanagercancelreminder-1)替代。
 
@@ -164,21 +158,21 @@ cancelReminder(reminderId: number): Promise<void>
 
 **示例**：
 
-```
-1. reminderAgent.cancelReminder(1).then(() => {
-2. console.info("cancelReminder promise");
-3. });
+```ts
+import reminderAgent from '@ohos.reminderAgent';
+
+reminderAgent.cancelReminder(1).then(() => {
+    console.info("cancelReminder promise");
+});
 ```
 
 ## reminderAgent.getValidReminders(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getValidReminders(callback: AsyncCallback<Array<ReminderRequest>>): void
 
 获取当前应用已设置的所有有效（未过期）的提醒，使用回调的方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.getValidReminders](js-apis-reminderagentmanager.md#reminderagentmanagergetvalidreminders)替代。
 
@@ -192,43 +186,42 @@ getValidReminders(callback: AsyncCallback<Array<ReminderRequest>>): void
 
 **示例**：
 
-```
-1. import { BusinessError } from '@ohos.base';
+```ts
+import { BusinessError } from '@ohos.base';
+import reminderAgent from '@ohos.reminderAgent';
 
-3. reminderAgent.getValidReminders((err: BusinessError, reminders: Array<reminderAgent.ReminderRequest>) => {
-4. console.info("callback, getValidReminders length = " + reminders.length);
-5. for (let i = 0; i < reminders.length; i++) {
-6. console.info("getValidReminders = " + reminders[i]);
-7. console.info("getValidReminders, reminderType = " + reminders[i].reminderType);
-8. const actionButton = reminders[i].actionButton || [];
-9. for (let j = 0; j < actionButton.length; j++) {
-10. console.info("getValidReminders, actionButton.title = " + actionButton[j]?.title);
-11. console.info("getValidReminders, actionButton.type = " + actionButton[j]?.type);
-12. }
-13. console.info("getValidReminders, wantAgent.pkgName = " + reminders[i].wantAgent?.pkgName);
-14. console.info("getValidReminders, wantAgent.abilityName = " + reminders[i].wantAgent?.abilityName);
-15. console.info("getValidReminders, ringDuration = " + reminders[i].ringDuration);
-16. console.info("getValidReminders, snoozeTimes = " + reminders[i].snoozeTimes);
-17. console.info("getValidReminders, timeInterval = " + reminders[i].timeInterval);
-18. console.info("getValidReminders, title = " + reminders[i].title);
-19. console.info("getValidReminders, content = " + reminders[i].content);
-20. console.info("getValidReminders, expiredContent = " + reminders[i].expiredContent);
-21. console.info("getValidReminders, snoozeContent = " + reminders[i].snoozeContent);
-22. console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
-23. console.info("getValidReminders, slotType = " + reminders[i].slotType);
-24. }
-25. })
+reminderAgent.getValidReminders((err: BusinessError, reminders: Array<reminderAgent.ReminderRequest>) => {
+  console.info("callback, getValidReminders length = " + reminders.length);
+  for (let i = 0; i < reminders.length; i++) {
+    console.info("getValidReminders = " + reminders[i]);
+    console.info("getValidReminders, reminderType = " + reminders[i].reminderType);
+    const actionButton = reminders[i].actionButton || [];
+    for (let j = 0; j < actionButton.length; j++) {
+      console.info("getValidReminders, actionButton.title = " + actionButton[j]?.title);
+      console.info("getValidReminders, actionButton.type = " + actionButton[j]?.type);
+    }
+    console.info("getValidReminders, wantAgent.pkgName = " + reminders[i].wantAgent?.pkgName);
+    console.info("getValidReminders, wantAgent.abilityName = " + reminders[i].wantAgent?.abilityName);
+    console.info("getValidReminders, ringDuration = " + reminders[i].ringDuration);
+    console.info("getValidReminders, snoozeTimes = " + reminders[i].snoozeTimes);
+    console.info("getValidReminders, timeInterval = " + reminders[i].timeInterval);
+    console.info("getValidReminders, title = " + reminders[i].title);
+    console.info("getValidReminders, content = " + reminders[i].content);
+    console.info("getValidReminders, expiredContent = " + reminders[i].expiredContent);
+    console.info("getValidReminders, snoozeContent = " + reminders[i].snoozeContent);
+    console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
+    console.info("getValidReminders, slotType = " + reminders[i].slotType);
+  }
+})
 ```
 
 ## reminderAgent.getValidReminders(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getValidReminders(): Promise<Array<ReminderRequest>>
 
 获取当前应用已设置的所有有效（未过期）的提醒，使用Promise方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.getValidReminders](js-apis-reminderagentmanager.md#reminderagentmanagergetvalidreminders-1)替代。
 
@@ -242,41 +235,41 @@ getValidReminders(): Promise<Array<ReminderRequest>>
 
 **示例**：
 
-```
-1. reminderAgent.getValidReminders().then((reminders: Array<reminderAgent.ReminderRequest>) => {
-2. console.info("promise, getValidReminders length = " + reminders.length);
-3. for (let i = 0; i < reminders.length; i++) {
-4. console.info("getValidReminders = " + reminders[i]);
-5. console.info("getValidReminders, reminderType = " + reminders[i].reminderType);
-6. const actionButton = reminders[i].actionButton || [];
-7. for (let j = 0; j < actionButton.length; j++) {
-8. console.info("getValidReminders, actionButton.title = " + actionButton[j]?.title);
-9. console.info("getValidReminders, actionButton.type = " + actionButton[j]?.type);
-10. }
-11. console.info("getValidReminders, wantAgent.pkgName = " + reminders[i].wantAgent?.pkgName);
-12. console.info("getValidReminders, wantAgent.abilityName = " + reminders[i].wantAgent?.abilityName);
-13. console.info("getValidReminders, ringDuration = " + reminders[i].ringDuration);
-14. console.info("getValidReminders, snoozeTimes = " + reminders[i].snoozeTimes);
-15. console.info("getValidReminders, timeInterval = " + reminders[i].timeInterval);
-16. console.info("getValidReminders, title = " + reminders[i].title);
-17. console.info("getValidReminders, content = " + reminders[i].content);
-18. console.info("getValidReminders, expiredContent = " + reminders[i].expiredContent);
-19. console.info("getValidReminders, snoozeContent = " + reminders[i].snoozeContent);
-20. console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
-21. console.info("getValidReminders, slotType = " + reminders[i].slotType);
-22. }
-23. })
+```ts
+import reminderAgent from '@ohos.reminderAgent';
+
+reminderAgent.getValidReminders().then((reminders: Array<reminderAgent.ReminderRequest>) => {
+  console.info("promise, getValidReminders length = " + reminders.length);
+  for (let i = 0; i < reminders.length; i++) {
+    console.info("getValidReminders = " + reminders[i]);
+    console.info("getValidReminders, reminderType = " + reminders[i].reminderType);
+    const actionButton = reminders[i].actionButton || [];
+    for (let j = 0; j < actionButton.length; j++) {
+      console.info("getValidReminders, actionButton.title = " + actionButton[j]?.title);
+      console.info("getValidReminders, actionButton.type = " + actionButton[j]?.type);
+    }
+    console.info("getValidReminders, wantAgent.pkgName = " + reminders[i].wantAgent?.pkgName);
+    console.info("getValidReminders, wantAgent.abilityName = " + reminders[i].wantAgent?.abilityName);
+    console.info("getValidReminders, ringDuration = " + reminders[i].ringDuration);
+    console.info("getValidReminders, snoozeTimes = " + reminders[i].snoozeTimes);
+    console.info("getValidReminders, timeInterval = " + reminders[i].timeInterval);
+    console.info("getValidReminders, title = " + reminders[i].title);
+    console.info("getValidReminders, content = " + reminders[i].content);
+    console.info("getValidReminders, expiredContent = " + reminders[i].expiredContent);
+    console.info("getValidReminders, snoozeContent = " + reminders[i].snoozeContent);
+    console.info("getValidReminders, notificationId = " + reminders[i].notificationId);
+    console.info("getValidReminders, slotType = " + reminders[i].slotType);
+  }
+})
 ```
 
 ## reminderAgent.cancelAllReminders(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 cancelAllReminders(callback: AsyncCallback<void>): void
 
 取消当前应用所有的提醒，使用回调的方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.cancelAllReminders](js-apis-reminderagentmanager.md#reminderagentmanagercancelallreminders)替代。
 
@@ -290,23 +283,22 @@ cancelAllReminders(callback: AsyncCallback<void>): void
 
 **示例**：
 
-```
-1. import { BusinessError } from '@ohos.base';
+```ts
+import { BusinessError } from '@ohos.base';
+import reminderAgent from '@ohos.reminderAgent';
 
-3. reminderAgent.cancelAllReminders((err: BusinessError, data: void) =>{
-4. console.info("cancelAllReminders callback")
-5. })
+reminderAgent.cancelAllReminders((err: BusinessError, data: void) =>{
+  console.info("cancelAllReminders callback")
+})
 ```
 
 ## reminderAgent.cancelAllReminders(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 cancelAllReminders(): Promise<void>
 
 取消当前应用所有的提醒，使用Promise方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.cancelAllReminders](js-apis-reminderagentmanager.md#reminderagentmanagercancelallreminders-1)替代。
 
@@ -320,21 +312,21 @@ cancelAllReminders(): Promise<void>
 
 **示例**：
 
-```
-1. reminderAgent.cancelAllReminders().then(() => {
-2. console.info("cancelAllReminders promise")
-3. })
+```ts
+import reminderAgent from '@ohos.reminderAgent';
+
+reminderAgent.cancelAllReminders().then(() => {
+    console.info("cancelAllReminders promise")
+})
 ```
 
 ## reminderAgent.addNotificationSlot(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback<void>): void
 
 添加一个NotificationSlot，使用回调的方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.addNotificationSlot](js-apis-reminderagentmanager.md#reminderagentmanageraddnotificationslot)替代。
 
@@ -349,27 +341,27 @@ addNotificationSlot(slot: NotificationSlot, callback: AsyncCallback<void>): void
 
 **示例**：
 
-```
-1. import notification from '@ohos.notificationManager'
-2. import { BusinessError } from '@ohos.base';
+```ts
+import { BusinessError } from '@ohos.base';
+import notification from '@ohos.notification';
+import reminderAgent from '@ohos.reminderAgent';
+import { NotificationSlot } from './notification/notificationSlot';
 
-4. let mySlot:notification.NotificationSlot = {
-5. type: notification.SlotType.SOCIAL_COMMUNICATION
-6. }
-7. reminderAgent.addNotificationSlot(mySlot, (err: BusinessError, data: void) => {
-8. console.info("addNotificationSlot callback");
-9. });
+let mySlot:NotificationSlot = {
+  type: notification.SlotType.SOCIAL_COMMUNICATION
+}
+reminderAgent.addNotificationSlot(mySlot, (err: BusinessError, data: void) => {
+  console.info("addNotificationSlot callback");
+});
 ```
 
 ## reminderAgent.addNotificationSlot(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 addNotificationSlot(slot: NotificationSlot): Promise<void>
 
 添加一个NotificationSlot，使用Promise方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.addNotificationSlot](js-apis-reminderagentmanager.md#reminderagentmanageraddnotificationslot-1)替代。
 
@@ -389,26 +381,26 @@ addNotificationSlot(slot: NotificationSlot): Promise<void>
 
 **示例**：
 
-```
-1. import notification from '@ohos.notificationManager'
+```ts
+import notification from '@ohos.notification';
+import reminderAgent from '@ohos.reminderAgent';
+import { NotificationSlot } from './notification/notificationSlot';
 
-3. let mySlot:notification.NotificationSlot = {
-4. type: notification.SlotType.SOCIAL_COMMUNICATION
-5. }
-6. reminderAgent.addNotificationSlot(mySlot).then(() => {
-7. console.info("addNotificationSlot promise");
-8. });
+let mySlot:NotificationSlot = {
+  type: notification.SlotType.SOCIAL_COMMUNICATION
+}
+reminderAgent.addNotificationSlot(mySlot).then(() => {
+  console.info("addNotificationSlot promise");
+});
 ```
 
 ## reminderAgent.removeNotificationSlot(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback<void>): void
 
 删除目标NotificationSlot，使用callback方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.removeNotificationSlot](js-apis-reminderagentmanager.md#reminderagentmanagerremovenotificationslot)替代。
 
@@ -423,24 +415,23 @@ removeNotificationSlot(slotType: notification.SlotType, callback: AsyncCallback<
 
 **示例**：
 
-```
-1. import notification from '@ohos.notification'
-2. import { BusinessError } from '@ohos.base';
+```ts
+import { BusinessError } from '@ohos.base';
+import notification from '@ohos.notification';
+import reminderAgent from '@ohos.reminderAgent';
 
-4. reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION, (err: BusinessError, data: void) => {
-5. console.info("removeNotificationSlot callback");
-6. });
+reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION, (err: BusinessError, data: void) => {
+  console.info("removeNotificationSlot callback");
+});
 ```
 
 ## reminderAgent.removeNotificationSlot(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 removeNotificationSlot(slotType: notification.SlotType): Promise<void>
 
 删除目标NotificationSlot，使用Promise方式实现异步调用。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.removeNotificationSlot](js-apis-reminderagentmanager.md#reminderagentmanagerremovenotificationslot-1)替代。
 
@@ -460,21 +451,20 @@ removeNotificationSlot(slotType: notification.SlotType): Promise<void>
 
 **示例**：
 
-```
-1. import notification from '@ohos.notification'
+```ts
+import notification from '@ohos.notification';
+import reminderAgent from '@ohos.reminderAgent';
 
-3. reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).then(() => {
-4. console.info("removeNotificationSlot promise");
-5. });
+reminderAgent.removeNotificationSlot(notification.SlotType.CONTENT_INFORMATION).then(() => {
+  console.info("removeNotificationSlot promise");
+});
 ```
 
 ## ActionButtonType(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 按钮的类型。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.ActionButtonType](js-apis-reminderagentmanager.md#actionbuttontype)替代。
 
@@ -487,11 +477,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ReminderType(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 提醒的类型。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.ReminderType](js-apis-reminderagentmanager.md#remindertype)替代。
 
@@ -505,11 +493,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ActionButton(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 用于设置弹出的提醒通知信息上显示的按钮类型和标题。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.ActionButton](js-apis-reminderagentmanager.md#actionbutton)替代。
 
@@ -522,11 +508,9 @@ PhonePC/2in1TabletTVWearable
 
 ## WantAgent(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 点击提醒通知后跳转的目标ability信息。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.WantAgent](js-apis-reminderagentmanager.md#wantagent)替代。
 
@@ -539,11 +523,9 @@ PhonePC/2in1TabletTVWearable
 
 ## MaxScreenWantAgent(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 全屏显示提醒到达时自动拉起的目标ability信息，该接口预留。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.MaxScreenWantAgent](js-apis-reminderagentmanager.md#maxscreenwantagent)替代。
 
@@ -556,11 +538,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ReminderRequest(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 提醒实例对象，用于设置提醒类型、响铃时长等具体信息。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.ReminderRequest](js-apis-reminderagentmanager.md#reminderrequest)替代。
 
@@ -572,9 +552,9 @@ PhonePC/2in1TabletTVWearable
 | actionButton | [[ActionButton](js-apis-reminderagent.md#actionbuttondeprecated)?, [ActionButton](js-apis-reminderagent.md#actionbuttondeprecated)?] | 否 | 是 | 弹出的提醒通知栏中显示的按钮（参数可选，支持0/1/2个按钮）。 |
 | wantAgent | WantAgent | 否 | 是 | 点击通知后需要跳转的目标ability信息。 |
 | maxScreenWantAgent | [MaxScreenWantAgent](js-apis-reminderagent.md#maxscreenwantagentdeprecated) | 否 | 是 | 提醒到达时跳转的目标包。如果设备正在使用中，则弹出一个通知框。 |
-| ringDuration | number | 否 | 是 | 指明响铃时长（单位：秒），默认1秒。 |
+| ringDuration | number | 否 | 是 | 指明响铃时长。  单位：s，默认1秒。 |
 | snoozeTimes | number | 否 | 是 | 指明延迟提醒次数，默认0次。 |
-| timeInterval | number | 否 | 是 | 执行延迟提醒间隔（单位：秒），默认0秒。 |
+| timeInterval | number | 否 | 是 | 执行延迟提醒间隔。  单位：s，默认0秒。 |
 | title | string | 否 | 是 | 指明提醒标题。 |
 | content | string | 否 | 是 | 指明提醒内容。 |
 | expiredContent | string | 否 | 是 | 指明提醒过期后需要显示的内容。 |
@@ -584,11 +564,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ReminderRequestCalendar(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 日历实例对象，用于设置提醒的时间。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.ReminderRequestCalendar](js-apis-reminderagentmanager.md#reminderrequestcalendar)替代。
 
@@ -602,11 +580,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ReminderRequestAlarm(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 闹钟实例对象，用于设置提醒的时间。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.ReminderRequestAlarm](js-apis-reminderagentmanager.md#reminderrequestalarm)替代。
 
@@ -620,11 +596,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ReminderRequestTimer(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 倒计时实例对象，用于设置提醒的时间。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.ReminderRequestTimer](js-apis-reminderagentmanager.md#reminderrequesttimer)替代。
 
@@ -632,15 +606,13 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| triggerTimeInSeconds | number | 否 | 否 | 指明倒计时的秒数。 |
+| triggerTimeInSeconds | number | 否 | 否 | 指明倒计时的秒数。  单位：s |
 
 ## LocalDateTime(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 用于日历类提醒设置时指定时间信息。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃。建议使用[reminderAgentManager.LocalDateTime](js-apis-reminderagentmanager.md#localdatetime)替代。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faqs-usb
 title: 常见问题
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:20+08:00
+scraped_at: 2026-09-02T14:59:36+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:103d728bb5d41644819909d2260114c563e6e7f150995eb56c9d1ef2ec95c058
 ---

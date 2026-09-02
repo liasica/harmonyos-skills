@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/desktop-q
 title: quickBarManager（快捷栏管理服务）
 breadcrumb: API参考 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓展服务） > ArkTS API > quickBarManager（快捷栏管理服务）
 category: harmonyos-references
-scraped_at: 2026-04-29T14:00:43+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:605b1c25be222a3ebf2e43e3efab9ddfaac6aee24c5360f933632bdfa52578e3
+scraped_at: 2026-09-02T14:52:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9a2039b1905f63c2567cc6329f3e37255258e1111d9ad3be0df9a4ed6c4b5083
 ---
 
 本模块为应用提供接入快捷栏能力。应用可以通过接入相应的API，可自定义应用在快捷栏右键菜单。
@@ -14,17 +14,15 @@ content_hash: sha256:605b1c25be222a3ebf2e43e3efab9ddfaac6aee24c5360f933632bdfa52
 
 ## 导入模块
 
-PC/2in1
-
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 ```
 
-## quickBarManager.QuickTaskInfo
-
-PC/2in1
+## QuickTaskInfo
 
 快捷栏菜单任务的详细参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -36,14 +34,14 @@ PC/2in1
 | abilityName | string | 否 | 否 | 点击菜单任务拉起的应用的Ability名称。  字符串长度范围：[1, 512]，且内容不为空。 |
 | moduleName | string | 否 | 是 | 点击菜单项任务拉起的应用的Ability所在的模块名称。  字符串长度范围：[1, 512]，且内容不为空。  默认值：''。 |
 | taskIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 快捷栏图标菜单任务的图片信息，支持JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG等图片类型。  默认值：undefined。  **说明：** 建议使用512vp \* 512vp大小的图片，若不传入图片信息，则使用应用图标作为任务图标。 |
-| taskDetail | string | 否 | 是 | 快捷栏图标菜单任务的描述信息。  默认值：''。 |
-| parameters | [ParameterItem](desktop-quickbar-extension-manager.md#quickbarmanagerparameteritem)[] | 否 | 是 | 快捷栏图标菜单任务的自定义参数。  数组大小范围：小于等于64。  默认值：undefined。 |
+| taskDetail | string | 否 | 是 | 快捷栏图标菜单任务的描述信息。  字符串长度范围：[1, 512]，且内容不为空。  默认值：''。 |
+| parameters | [ParameterItem](desktop-quickbar-extension-manager.md#parameteritem)[] | 否 | 是 | 快捷栏图标菜单任务的自定义参数。  数组大小范围：小于等于64。  默认值：undefined。 |
 
-## quickBarManager.QuickTask
-
-PC/2in1
+## QuickTask
 
 应用的快捷栏菜单任务的信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -53,13 +51,13 @@ PC/2in1
 | --- | --- | --- | --- | --- |
 | taskId | number | 是 | 否 | 快捷栏图标菜单任务的任务Id。 |
 | categoryId | number | 是 | 否 | 快捷栏图标菜单分组的分组Id。 |
-| taskInfo | [QuickTaskInfo](desktop-quickbar-extension-manager.md#quickbarmanagerquicktaskinfo) | 否 | 否 | 接入快捷栏的任务信息。 |
+| taskInfo | [QuickTaskInfo](desktop-quickbar-extension-manager.md#quicktaskinfo) | 否 | 否 | 接入快捷栏的任务信息。 |
 
-## quickBarManager.ParameterItem
-
-PC/2in1
+## ParameterItem
 
 快捷栏菜单任务的自定义参数，表示WantParams，由开发者自行决定传入的键值对。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -70,11 +68,11 @@ PC/2in1
 | key | string | 否 | 否 | 自定义参数的key值。  字符串长度范围：[1, 512]，且内容不为空。 |
 | value | string | 否 | 否 | 自定义参数的value值。  字符串长度范围：[1, 512]，且内容不为空。 |
 
-## quickBarManager.CustomCategory
-
-PC/2in1
+## CustomCategory
 
 应用的快捷栏菜单分组的信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -85,11 +83,11 @@ PC/2in1
 | categoryId | number | 是 | 否 | 快捷栏图标菜单分组的分组Id。 |
 | categoryName | string | 否 | 否 | 快捷栏图标菜单分组的分组名称。  字符串长度范围：[1, 512]，且内容不为空。 |
 
-## quickBarManager.QuickBarGroup
-
-PC/2in1
+## QuickBarGroup
 
 快捷栏分组信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -102,11 +100,11 @@ PC/2in1
 
 ## quickBarManager.addCustomCategory
 
-PC/2in1
-
 addCustomCategory(context: common.Context, categoryName: string): Promise<CustomCategory>
 
 添加快捷栏分组。添加一个分组后才可以往分组里添加任务，最多可以添加三个分组。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -123,11 +121,11 @@ addCustomCategory(context: common.Context, categoryName: string): Promise<Custom
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[CustomCategory](desktop-quickbar-extension-manager.md#quickbarmanagercustomcategory)> | Promise对象，返回菜单分组信息。 |
+| Promise<[CustomCategory](desktop-quickbar-extension-manager.md#customcategory)> | Promise对象，返回菜单分组信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -137,33 +135,33 @@ addCustomCategory(context: common.Context, categoryName: string): Promise<Custom
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. /**
-4. * 可以通过自定义组件的内置方法获取Context信息
-5. * 具体方法：this.getUIContext().getHostContext();
-6. */
-7. async function addCustomCategory(context: Context) {
-8. if (context === undefined) {
-9. return;
-10. }
-11. try {
-12. const res = await quickBarManager.addCustomCategory(context, '最近任务');
-13. console.info(`customCategory info: ${JSON.stringify(res)}`);
-14. } catch (error) {
-15. console.error(`addCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
-16. }
-17. }
+/**
+ * 可以通过自定义组件的内置方法获取Context信息
+ * 具体方法：this.getUIContext().getHostContext();
+ */
+async function addCustomCategory(context: Context) {
+  if (context === undefined) {
+    return;
+  }
+  try {
+    const res = await quickBarManager.addCustomCategory(context, '最近任务');
+    console.info(`customCategory info: ${JSON.stringify(res)}`);
+  } catch (error) {
+    console.error(`addCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
 ## quickBarManager.addQuickTask
 
-PC/2in1
-
 addQuickTask(context: common.Context, categoryId: number, taskInfo: QuickTaskInfo): Promise<QuickTask>
 
 添加快捷栏任务。打开应用图标在快捷栏的右键菜单，即可看到添加后对应的菜单项。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -175,17 +173,17 @@ addQuickTask(context: common.Context, categoryId: number, taskInfo: QuickTaskInf
 | --- | --- | --- | --- |
 | context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
 | categoryId | number | 是 | 快捷栏图标菜单分组的分组Id。 |
-| taskInfo | [QuickTaskInfo](desktop-quickbar-extension-manager.md#quickbarmanagerquicktaskinfo) | 是 | 快捷栏图标菜单任务的详细信息。 |
+| taskInfo | [QuickTaskInfo](desktop-quickbar-extension-manager.md#quicktaskinfo) | 是 | 快捷栏图标菜单任务的详细信息。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[QuickTask](desktop-quickbar-extension-manager.md#quickbarmanagerquicktask)> | Promise对象，返回菜单任务信息。 |
+| Promise<[QuickTask](desktop-quickbar-extension-manager.md#quicktask)> | Promise对象，返回菜单任务信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -195,60 +193,60 @@ addQuickTask(context: common.Context, categoryId: number, taskInfo: QuickTaskInf
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
-2. import { resourceManager } from '@kit.LocalizationKit';
-3. import { image } from '@kit.ImageKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { image } from '@kit.ImageKit';
 
-5. /**
-6. * 可以通过自定义组件的内置方法获取Context信息
-7. * 具体方法：this.getUIContext().getHostContext();
-8. */
-9. async function addQuickTask(context: Context) {
-10. if (context === undefined) {
-11. return;
-12. }
-13. // 获取resourceManager资源管理器
-14. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-15. // 创建任务的pixelMap，需在资源rawfile文件夹中预置testImage.png图片
-16. const whiteFileData = resourceMgr.getRawFileContentSync('testImage.png');
-17. const whiteImageSource = image.createImageSource(whiteFileData.buffer);
-18. const imagePixelMap = await whiteImageSource.createPixelMap();
-19. // 构建parameters信息
-20. let parameters: quickBarManager.ParameterItem = {
-21. key: 'testKey',
-22. value: 'testValue'
-23. }
-24. // 构建QuickTaskInfo信息
-25. let task: quickBarManager.QuickTaskInfo = {
-26. taskName: '测试任务名称',
-27. abilityName: 'TestAbility1',
-28. moduleName: 'entry',
-29. // 参数可选
-30. taskIcon: imagePixelMap,
-31. // 参数可选
-32. taskDetail: '任务的描述',
-33. parameters: [parameters]
-34. }
-35. try {
-36. // 获取所有的分组信息，将任务添加到想要的分组中
-37. const categoryList = await quickBarManager.getCustomCategories(context);
-38. // 选择添加任务到第一个分组中
-39. let res = await quickBarManager.addQuickTask(context, categoryList[0].categoryId, task);
-40. console.info(`quickTask info: ${JSON.stringify(res)}`);
-41. } catch (error) {
-42. console.error(`addQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
-43. }
-44. }
+/**
+ * 可以通过自定义组件的内置方法获取Context信息
+ * 具体方法：this.getUIContext().getHostContext();
+ */
+async function addQuickTask(context: Context) {
+  if (context === undefined) {
+    return;
+  }
+  // 获取resourceManager资源管理器
+  const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+  // 创建任务的pixelMap，需在资源rawfile文件夹中预置testImage.png图片
+  const whiteFileData = resourceMgr.getRawFileContentSync('testImage.png');
+  const whiteImageSource = image.createImageSource(whiteFileData.buffer);
+  const imagePixelMap = await whiteImageSource.createPixelMap();
+  // 构建parameters信息
+  let parameters: quickBarManager.ParameterItem = {
+    key: 'testKey',
+    value: 'testValue'
+  }
+  // 构建QuickTaskInfo信息
+  let task: quickBarManager.QuickTaskInfo = {
+    taskName: '测试任务名称',
+    abilityName: 'TestAbility1',
+    moduleName: 'entry',
+    // 参数可选
+    taskIcon: imagePixelMap,
+    // 参数可选
+    taskDetail: '任务的描述',
+    parameters: [parameters]
+  }
+  try {
+    // 获取所有的分组信息，将任务添加到想要的分组中
+    const categoryList = await quickBarManager.getCustomCategories(context);
+    // 选择添加任务到第一个分组中
+    let res = await quickBarManager.addQuickTask(context, categoryList[0].categoryId, task);
+    console.info(`quickTask info: ${JSON.stringify(res)}`);
+  } catch (error) {
+    console.error(`addQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
 ## quickBarManager.getCustomCategories
 
-PC/2in1
-
 getCustomCategories(context: common.Context): Promise<CustomCategory[]>
 
 获取在快捷栏定义的所有分组。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -264,11 +262,11 @@ getCustomCategories(context: common.Context): Promise<CustomCategory[]>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[CustomCategory](desktop-quickbar-extension-manager.md#quickbarmanagercustomcategory)[]> | Promise对象，返回所有菜单分组信息。 |
+| Promise<[CustomCategory](desktop-quickbar-extension-manager.md#customcategory)[]> | Promise对象，返回所有菜单分组信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -276,33 +274,33 @@ getCustomCategories(context: common.Context): Promise<CustomCategory[]>
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. /**
-4. * 可以通过自定义组件的内置方法获取Context信息
-5. * 具体方法：this.getUIContext().getHostContext();
-6. */
-7. async function getCustomCategories(context: Context) {
-8. if (context === undefined) {
-9. return;
-10. }
-11. try {
-12. const res = await quickBarManager.getCustomCategories(context);
-13. console.info(`customCategoryList info: ${JSON.stringify(res)}`);
-14. } catch (error) {
-15. console.error(`getCustomCategories failed. error code: ${error.code}, error message: ${error.message}`);
-16. }
-17. }
+/**
+ * 可以通过自定义组件的内置方法获取Context信息
+ * 具体方法：this.getUIContext().getHostContext();
+ */
+async function getCustomCategories(context: Context) {
+  if (context === undefined) {
+    return;
+  }
+  try {
+    const res = await quickBarManager.getCustomCategories(context);
+    console.info(`customCategoryList info: ${JSON.stringify(res)}`);
+  } catch (error) {
+    console.error(`getCustomCategories failed. error code: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
 ## quickBarManager.getTasksFromCategory
 
-PC/2in1
-
 getTasksFromCategory(context: common.Context, categoryId: number): Promise<QuickTask[]>
 
 获取某个快捷栏分组下的所有任务信息。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -319,11 +317,11 @@ getTasksFromCategory(context: common.Context, categoryId: number): Promise<Quick
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[QuickTask](desktop-quickbar-extension-manager.md#quickbarmanagerquicktask)[]> | Promise对象，返回一个分组下的所有任务信息。 |
+| Promise<[QuickTask](desktop-quickbar-extension-manager.md#quicktask)[]> | Promise对象，返回一个分组下的所有任务信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -332,36 +330,36 @@ getTasksFromCategory(context: common.Context, categoryId: number): Promise<Quick
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. /**
-4. * 可以通过自定义组件的内置方法获取Context信息
-5. * 具体方法：this.getUIContext().getHostContext();
-6. */
-7. async function getTasksFromCategory(context: Context) {
-8. if (context === undefined) {
-9. return;
-10. }
-11. try {
-12. // 获取所有的分组信息，用于获取分组下所有的任务
-13. const category = await quickBarManager.getCustomCategories(context);
-14. // 选择获取第一个分组下的所有任务
-15. const res = await quickBarManager.getTasksFromCategory(context, category[0].categoryId)
-16. console.info(`quickTaskList info: ${JSON.stringify(res)}`);
-17. } catch (error) {
-18. console.error(`getTasksFromCategory failed. error code: ${error.code}, error message: ${error.message}`);
-19. }
-20. }
+/**
+ * 可以通过自定义组件的内置方法获取Context信息
+ * 具体方法：this.getUIContext().getHostContext();
+ */
+async function getTasksFromCategory(context: Context) {
+  if (context === undefined) {
+    return;
+  }
+  try {
+    // 获取所有的分组信息，用于获取分组下所有的任务
+    const category = await quickBarManager.getCustomCategories(context);
+    // 选择获取第一个分组下的所有任务
+    const res = await quickBarManager.getTasksFromCategory(context, category[0].categoryId)
+    console.info(`quickTaskList info: ${JSON.stringify(res)}`);
+  } catch (error) {
+    console.error(`getTasksFromCategory failed. error code: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
 ## quickBarManager.updateCustomCategory
 
-PC/2in1
-
 updateCustomCategory(context: common.Context, category: CustomCategory): Promise<void>
 
 更新快捷栏分组。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -372,7 +370,7 @@ updateCustomCategory(context: common.Context, category: CustomCategory): Promise
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
-| category | [CustomCategory](desktop-quickbar-extension-manager.md#quickbarmanagercustomcategory) | 是 | 快捷栏图标的菜单分组信息。 |
+| category | [CustomCategory](desktop-quickbar-extension-manager.md#customcategory) | 是 | 快捷栏图标的菜单分组信息。 |
 
 **返回值：**
 
@@ -382,7 +380,7 @@ updateCustomCategory(context: common.Context, category: CustomCategory): Promise
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -392,36 +390,36 @@ updateCustomCategory(context: common.Context, category: CustomCategory): Promise
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. /**
-4. * 可以通过自定义组件的内置方法获取Context信息
-5. * 具体方法：this.getUIContext().getHostContext();
-6. */
-7. async function updateCustomCategory(context: Context) {
-8. if (context === undefined) {
-9. return;
-10. }
-11. const category: quickBarManager.CustomCategory = {
-12. categoryId: 1,
-13. categoryName: 'demo'
-14. }
-15. try {
-16. await quickBarManager.updateCustomCategory(context, category);
-17. } catch (error) {
-18. console.error(`updateCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
-19. }
-20. }
+/**
+ * 可以通过自定义组件的内置方法获取Context信息
+ * 具体方法：this.getUIContext().getHostContext();
+ */
+async function updateCustomCategory(context: Context) {
+  if (context === undefined) {
+    return;
+  }
+  const category: quickBarManager.CustomCategory = {
+    categoryId: 1,
+    categoryName: 'demo'
+  }
+  try {
+    await quickBarManager.updateCustomCategory(context, category);
+  } catch (error) {
+    console.error(`updateCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
 ## quickBarManager.updateQuickTask
 
-PC/2in1
-
 updateQuickTask(context: common.Context, task: QuickTask): Promise<void>
 
 更新快捷栏任务。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -432,7 +430,7 @@ updateQuickTask(context: common.Context, task: QuickTask): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
-| task | [QuickTask](desktop-quickbar-extension-manager.md#quickbarmanagerquicktask) | 是 | 快捷栏图标的菜单任务信息。 |
+| task | [QuickTask](desktop-quickbar-extension-manager.md#quicktask) | 是 | 快捷栏图标的菜单任务信息。 |
 
 **返回值：**
 
@@ -442,7 +440,7 @@ updateQuickTask(context: common.Context, task: QuickTask): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -452,63 +450,63 @@ updateQuickTask(context: common.Context, task: QuickTask): Promise<void>
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
-2. import { resourceManager } from '@kit.LocalizationKit';
-3. import { image } from '@kit.ImageKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { image } from '@kit.ImageKit';
 
-5. /**
-6. * 可以通过自定义组件的内置方法获取Context信息
-7. * 具体方法：this.getUIContext().getHostContext();
-8. */
-9. async function updateQuickTask(context: Context) {
-10. if (context === undefined) {
-11. return;
-12. }
-13. // 获取resourceManager资源管理器
-14. const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
-15. // 创建任务的pixelMap，需在资源rawfile文件夹中预置testUpdateImage.png图片
-16. const fileData = resourceMgr.getRawFileContentSync('testUpdateImage.png');
-17. const imageSource = image.createImageSource(fileData.buffer);
-18. const imagePixelMap = await imageSource.createPixelMap();
-19. // 构建parameters
-20. let parameters: quickBarManager.ParameterItem = {
-21. key: 'testKey',
-22. value: 'testValue'
-23. }
-24. let taskInfo: quickBarManager.QuickTaskInfo = {
-25. taskName: 'newTaskName',
-26. abilityName: 'newEntryAbility',
-27. moduleName: 'newModuleName',
-28. // 参数可选
-29. taskIcon: imagePixelMap,
-30. // 参数可选
-31. taskDetail: '任务的描述',
-32. // 参数可选
-33. parameters: [parameters]
-34. }
+/**
+ * 可以通过自定义组件的内置方法获取Context信息
+ * 具体方法：this.getUIContext().getHostContext();
+ */
+async function updateQuickTask(context: Context) {
+  if (context === undefined) {
+    return;
+  }
+  // 获取resourceManager资源管理器
+  const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+  // 创建任务的pixelMap，需在资源rawfile文件夹中预置testUpdateImage.png图片
+  const fileData = resourceMgr.getRawFileContentSync('testUpdateImage.png');
+  const imageSource = image.createImageSource(fileData.buffer);
+  const imagePixelMap = await imageSource.createPixelMap();
+  // 构建parameters
+  let parameters: quickBarManager.ParameterItem = {
+    key: 'testKey',
+    value: 'testValue'
+  }
+  let taskInfo: quickBarManager.QuickTaskInfo = {
+    taskName: 'newTaskName',
+    abilityName: 'newEntryAbility',
+    moduleName: 'newModuleName',
+    // 参数可选
+    taskIcon: imagePixelMap,
+    // 参数可选
+    taskDetail: '任务的描述',
+    // 参数可选
+    parameters: [parameters]
+  }
 
-36. const task: quickBarManager.QuickTask = {
-37. taskId: 1,
-38. categoryId: 1,
-39. taskInfo: taskInfo
-40. }
+  const task: quickBarManager.QuickTask = {
+    taskId: 1,
+    categoryId: 1,
+    taskInfo: taskInfo
+  }
 
-42. try {
-43. await quickBarManager.updateQuickTask(context,task);
-44. } catch (error) {
-45. console.error(`updateQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
-46. }
-47. }
+  try {
+    await quickBarManager.updateQuickTask(context,task);
+  } catch (error) {
+    console.error(`updateQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
 ## quickBarManager.deleteQuickTask
 
-PC/2in1
-
 deleteQuickTask(context: common.Context, taskId: number): Promise<void>
 
 删除快捷栏任务。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -529,7 +527,7 @@ deleteQuickTask(context: common.Context, taskId: number): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -537,33 +535,33 @@ deleteQuickTask(context: common.Context, taskId: number): Promise<void>
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. /**
-4. * 可以通过自定义组件的内置方法获取Context信息
-5. * 具体方法：this.getUIContext().getHostContext();
-6. */
-7. async function deleteQuickTask(context: Context) {
-8. if (context === undefined) {
-9. return;
-10. }
-11. try {
-12. // 删除任务id为1的任务
-13. await quickBarManager.deleteQuickTask(context, 1);
-14. } catch (error) {
-15. console.error(`deleteQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
-16. }
-17. }
+/**
+ * 可以通过自定义组件的内置方法获取Context信息
+ * 具体方法：this.getUIContext().getHostContext();
+ */
+async function deleteQuickTask(context: Context) {
+  if (context === undefined) {
+    return;
+  }
+  try {
+    // 删除任务id为1的任务
+    await quickBarManager.deleteQuickTask(context, 1);
+  } catch (error) {
+    console.error(`deleteQuickTask failed. error code: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
 ## quickBarManager.deleteCustomCategory
 
-PC/2in1
-
 deleteCustomCategory(context: common.Context, categoryId: number): Promise<void>
 
 删除快捷栏分组，其下的所有任务也会随着一起删除。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -584,7 +582,7 @@ deleteCustomCategory(context: common.Context, categoryId: number): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -592,33 +590,33 @@ deleteCustomCategory(context: common.Context, categoryId: number): Promise<void>
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. /**
-4. * 可以通过自定义组件的内置方法获取Context信息
-5. * 具体方法：this.getUIContext().getHostContext();
-6. */
-7. async function deleteCustomCategory(context: Context) {
-8. if (context === undefined) {
-9. return;
-10. }
-11. try {
-12. // 删除分组id为1的分组
-13. await quickBarManager.deleteCustomCategory(context, 1);
-14. } catch (error) {
-15. console.error(`deleteCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
-16. }
-17. }
+/**
+ * 可以通过自定义组件的内置方法获取Context信息
+ * 具体方法：this.getUIContext().getHostContext();
+ */
+async function deleteCustomCategory(context: Context) {
+  if (context === undefined) {
+    return;
+  }
+  try {
+    // 删除分组id为1的分组
+    await quickBarManager.deleteCustomCategory(context, 1);
+  } catch (error) {
+    console.error(`deleteCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
 ## quickBarManager.addQuickBarGroup
 
-PC/2in1
-
 addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise<void>
 
 增加快捷栏分组。增加分组后才能设置分组的窗口信息。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -629,7 +627,7 @@ addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
-| group | [QuickBarGroup](desktop-quickbar-extension-manager.md#quickbarmanagerquickbargroup) | 是 | 快捷栏分组信息。 |
+| group | [QuickBarGroup](desktop-quickbar-extension-manager.md#quickbargroup) | 是 | 快捷栏分组信息。 |
 
 **返回值：**
 
@@ -639,7 +637,7 @@ addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -648,35 +646,41 @@ addQuickBarGroup(context: common.Context, group: QuickBarGroup): Promise<void>
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
-2. import { image } from '@kit.ImageKit';
-3. import { resourceManager } from '@kit.LocalizationKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
+import { image } from '@kit.ImageKit';
+import { resourceManager } from '@kit.LocalizationKit';
 
-5. // 获取资源管理器
-6. const resourceMgr: resourceManager.ResourceManager = getContext().resourceManager;
-7. // 从rawfile目录中获取图片
-8. const whiteFileData = resourceMgr.getRawFileContentSync('icon.png');
-9. const whiteImageSource = image.createImageSource(whiteFileData.buffer);
-10. const imagePixelMap = await whiteImageSource.createPixelMap();
-11. try {
-12. // 增加分组
-13. await quickBarManager.addQuickBarGroup(getContext(), {
-14. groupKey: 'group_one', // 分组名
-15. groupIcon: imagePixelMap // 分组图标
-16. });
-17. } catch (error) {
-18. console.error(`error code: ${error.code}, error message: ${error.message}`);
-19. }
+// 获取资源管理器
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (!context) {
+  console.error('context is null');
+  return;
+}
+const resourceMgr: resourceManager.ResourceManager = context!.resourceManager;
+
+// 从rawfile目录中获取图片
+const whiteFileData = resourceMgr.getRawFileContentSync('icon.png');
+const whiteImageSource = image.createImageSource(whiteFileData.buffer);
+const imagePixelMap = await whiteImageSource.createPixelMap();
+try {
+  // 增加分组
+  await quickBarManager.addQuickBarGroup(context, {
+    groupKey: 'group_one', // 分组名
+    groupIcon: imagePixelMap // 分组图标
+  });
+} catch (error) {
+  console.error(`error code: ${error.code}, error message: ${error.message}`);
+}
 ```
 
 ## quickBarManager.deleteQuickBarGroup
 
-PC/2in1
-
 deleteQuickBarGroup(context: common.Context, groupKey: string): Promise<void>
 
 删除快捷栏分组。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -697,7 +701,7 @@ deleteQuickBarGroup(context: common.Context, groupKey: string): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -705,24 +709,30 @@ deleteQuickBarGroup(context: common.Context, groupKey: string): Promise<void>
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. try {
-4. // 删除分组名为group_one的分组
-5. await quickBarManager.deleteQuickBarGroup(getContext(), 'group_one');
-6. } catch (error) {
-7. console.error(`error code: ${error.code}, error message: ${error.message}`);
-8. }
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (!context) {
+  console.error('context is null');
+  return;
+}
+
+try {
+  // 删除分组名为group_one的分组
+  await quickBarManager.deleteQuickBarGroup(context, 'group_one');
+} catch (error) {
+  console.error(`error code: ${error.code}, error message: ${error.message}`);
+}
 ```
 
 ## quickBarManager.getQuickBarGroups
 
-PC/2in1
-
 getQuickBarGroups(context: common.Context): Promise<QuickBarGroup[]>
 
 获取所有分组信息。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -738,11 +748,11 @@ getQuickBarGroups(context: common.Context): Promise<QuickBarGroup[]>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[QuickBarGroup](desktop-quickbar-extension-manager.md#quickbarmanagerquickbargroup)[]> | Promise对象，返回所有分组信息。 |
+| Promise<[QuickBarGroup](desktop-quickbar-extension-manager.md#quickbargroup)[]> | Promise对象，返回所有分组信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -750,24 +760,30 @@ getQuickBarGroups(context: common.Context): Promise<QuickBarGroup[]>
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. try {
-4. // 获取所有分组
-5. const groups = await quickBarManager.getQuickBarGroups(getContext());
-6. } catch (error) {
-7. console.error(`error code: ${error.code}, error message: ${error.message}`);
-8. }
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (!context) {
+  console.error('context is null');
+  return;
+}
+
+try {
+  // 获取所有分组
+  const groups = await quickBarManager.getQuickBarGroups(context);
+} catch (error) {
+  console.error(`error code: ${error.code}, error message: ${error.message}`);
+}
 ```
 
 ## quickBarManager.setWindowToGroup
 
-PC/2in1
-
 setWindowToGroup(context: common.Context, windowid: string, groupKey?: string): Promise<void>
 
 设置分组的窗口信息。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.PCService.QuickBarManager
 
@@ -789,7 +805,7 @@ setWindowToGroup(context: common.Context, windowid: string, groupKey?: string): 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](statusbar-extension-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -798,13 +814,337 @@ setWindowToGroup(context: common.Context, windowid: string, groupKey?: string): 
 
 **示例：**
 
-```
-1. import { quickBarManager } from '@kit.DeskTopExtensionKit';
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
 
-3. try {
-4. // 将id为80的窗口，增加到分组名为 group_one 的分组
-5. await quickBarManager.setWindowToGroup(getContext(), '80', 'group_one');
-6. } catch (error) {
-7. console.error(`deleteCustomCategory failed. error code: ${error.code}, error message: ${error.message}`);
-8. }
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (!context) {
+  console.error('context is null');
+  return;
+}
+
+try {
+  // 将id为80的窗口，增加到分组名为 group_one 的分组
+  await quickBarManager.setWindowToGroup(context, '80', 'group_one');
+} catch (error) {
+  console.error(`setWindowToGroup failed. error code: ${error.code}, error message: ${error.message}`);
+}
+```
+
+## ProgressState
+
+快捷栏进度状态。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.PCService.QuickBarManager
+
+**起始版本：** 26.0.0
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NO\_PROGRESS | 0 | 无进度状态。 |
+| NORMAL | 1 | 正常状态。 |
+| PAUSED | 2 | 暂停状态。 |
+| ERROR | 3 | 错误状态。 |
+
+## quickBarManager.setQuickBarCombineIcon
+
+setQuickBarCombineIcon(context: common.Context, combineIcon: image.PixelMap): Promise<void>
+
+设置快捷栏融合图标。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_ABILITY\_INSTANCE\_INFO
+
+**系统能力：** SystemCapability.PCService.QuickBarManager
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
+| combineIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 快捷栏图标信息，支持JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG等图片类型。  **说明：** 建议使用512vp \* 512vp大小的图片。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回值。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-statusbar-extension.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 1020210009 | Invalid parameter. |
+| 1020210010 | Quick bar icon not found. |
+| 1020210011 | The API is called too frequently. |
+
+**示例：**
+
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { image } from '@kit.ImageKit';
+
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (context === undefined) {
+  return;
+}
+// 获取resourceManager资源管理器
+const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+// 创建图标的pixelMap，需在资源rawfile文件夹中预置icon.png图片
+const fileData = resourceMgr.getRawFileContentSync('icon.png');
+const imageSource = image.createImageSource(fileData.buffer);
+const imagePixelMap = await imageSource.createPixelMap();
+
+try {
+  await quickBarManager.setQuickBarCombineIcon(context, imagePixelMap);
+  console.info('setQuickBarCombineIcon success');
+} catch (error) {
+  console.error(`setQuickBarCombineIcon failed. error code: ${error.code}, error message: ${error.message}`);
+}
+```
+
+## quickBarManager.setQuickBarLayeredIcon
+
+setQuickBarLayeredIcon(context: common.Context, foregroundIcon: image.PixelMap, backgroundIcon: image.PixelMap): Promise<void>
+
+设置快捷栏分层图标。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_ABILITY\_INSTANCE\_INFO
+
+**系统能力：** SystemCapability.PCService.QuickBarManager
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
+| foregroundIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 快捷栏前景图标信息，支持JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG等图片类型。  **说明：** 建议使用512vp \* 512vp大小的图片。 |
+| backgroundIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 快捷栏背景图标信息，支持JPEG、PNG、GIF、WebP、BMP、SVG、ICO、DNG等图片类型。  **说明：** 建议使用512vp \* 512vp大小的图片。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回值。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-statusbar-extension.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 1020210009 | Invalid parameter. |
+| 1020210010 | Quick bar icon not found. |
+| 1020210011 | The API is called too frequently. |
+
+**示例：**
+
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
+import { resourceManager } from '@kit.LocalizationKit';
+import { image } from '@kit.ImageKit';
+
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (context === undefined) {
+  return;
+}
+// 获取resourceManager资源管理器
+const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+// 创建前景图的pixelMap，需在资源rawfile文件夹中预置foreground.png图片
+const foregroundFileData = resourceMgr.getRawFileContentSync('foreground.png');
+const foregroundImageSource = image.createImageSource(foregroundFileData.buffer);
+const foregroundPixelMap = await foregroundImageSource.createPixelMap();
+
+// 创建背景图的pixelMap，需在资源rawfile文件夹中预置background.png图片
+const backgroundFileData = resourceMgr.getRawFileContentSync('background.png');
+const backgroundImageSource = image.createImageSource(backgroundFileData.buffer);
+const backgroundPixelMap = await backgroundImageSource.createPixelMap();
+
+try {
+  await quickBarManager.setQuickBarLayeredIcon(context, foregroundPixelMap, backgroundPixelMap);
+  console.info('setQuickBarLayeredIcon success');
+} catch (error) {
+  console.error(`setQuickBarLayeredIcon failed. error code: ${error.code}, error message: ${error.message}`);
+}
+```
+
+## quickBarManager.setProgressState
+
+setProgressState(context: common.Context, state: ProgressState): Promise<void>
+
+在快捷栏图标上设置进度条状态。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_ABILITY\_INSTANCE\_INFO
+
+**系统能力：** SystemCapability.PCService.QuickBarManager
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
+| state | [ProgressState](desktop-quickbar-extension-manager.md#progressstate) | 是 | 快捷栏图标上显示的进度状态。  取值范围如下：  - NO\_PROGRESS (0)：无进度状态。  - NORMAL (1)：正常状态。  - PAUSED (2)：暂停状态。  - ERROR (3)：错误状态。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回值。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-statusbar-extension.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 1020210009 | Invalid parameter. |
+| 1020210010 | Quick bar icon not found. |
+| 1020210011 | The API is called too frequently. |
+
+**示例：**
+
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
+
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (context === undefined) {
+  return;
+}
+
+try {
+  // 设置进度状态为NORMAL
+  await quickBarManager.setProgressState(context, quickBarManager.ProgressState.NORMAL);
+  console.info('setProgressState success');
+} catch (error) {
+  console.error(`setProgressState failed. error code: ${error.code}, error message: ${error.message}`);
+}
+```
+
+## quickBarManager.setProgressValue
+
+setProgressValue(context: common.Context, completed: number, total: number): Promise<void>
+
+在快捷栏图标上设置进度条。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_ABILITY\_INSTANCE\_INFO
+
+**系统能力：** SystemCapability.PCService.QuickBarManager
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
+| completed | number | 是 | 已完成的进度值。  取值范围：[0, 100]，且小于等于total的值。 |
+| total | number | 是 | 总进度值。  取值范围：(0, 100]，且大于等于completed的值。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回值。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-statusbar-extension.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 1020210009 | Invalid parameter. |
+| 1020210010 | Quick bar icon not found. |
+| 1020210011 | The API is called too frequently. |
+
+**示例：**
+
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
+
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (context === undefined) {
+  return;
+}
+
+const completed: number = 50;
+const total: number = 100;
+
+try {
+  await quickBarManager.setProgressValue(context, completed, total);
+  console.info('setProgressValue success');
+} catch (error) {
+  console.error(`setProgressValue failed. error code: ${error.code}, error message: ${error.message}`);
+}
+```
+
+## quickBarManager.isQuickBarCapabilitySupported
+
+isQuickBarCapabilitySupported(context: common.Context): Promise<boolean>
+
+检查是否支持快捷栏功能。使用promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.PCService.QuickBarManager
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [common.Context](js-apis-inner-application-context.md#context) | 是 | 上下文信息。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象，返回**true**表示支持快捷栏功能，返回**false**表示不支持。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-statusbar-extension.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1020210011 | The API is called too frequently. |
+
+**示例：**
+
+```typescript
+import { quickBarManager } from '@kit.DeskTopExtensionKit';
+
+const context: Context | undefined = this.getUIContext().getHostContext();
+if (context === undefined) {
+  return;
+}
+
+try {
+  const isSupported: boolean = await quickBarManager.isQuickBarCapabilitySupported(context);
+  console.info(`isQuickBarCapabilitySupported result: ${isSupported}`);
+} catch (error) {
+  console.error(`isQuickBarCapabilitySupported failed. error code: ${error.code}, error message: ${error.message}`);
+}
 ```

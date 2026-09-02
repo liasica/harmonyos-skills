@@ -3,32 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Span
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Span
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:11+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e2969f686ae7e273b945b35ce0d5eb7ad72ca117b70128e5bb56b8026e4a8c25
+scraped_at: 2026-09-02T15:01:03+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:34469fcc0ac079b796353c7cca81fe3aafdb9670972d7a0469fb8136609be62d
 ---
 
-作为[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于显示行内文本的组件。
+作为[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于显示行内文本，支持对文本的字体、颜色、大小等样式进行细粒度设置。适用于在同一行文本中混合显示不同样式的场景，如不同字体颜色的文本、添加装饰线或阴影效果等。
 
-说明
+**说明** 
 
-该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-
-该组件从API version 10开始支持继承父组件Text的属性，即如果子组件未设置属性且父组件设置属性，则继承父组件设置的属性。支持继承的属性仅包括：fontColor、fontSize、fontStyle、fontWeight、decoration、letterSpacing、textCase、fontFamily、textShadow。
-
-不支持[通用属性](ts-component-general-attributes.md)。若需设置通用属性，应使用[Text](ts-basic-components-text.md)进行设置，或改用[属性字符串](ts-universal-styled-string.md)中的[CustomSpan](ts-universal-styled-string.md#customspan)自行绘制。
-
-[通用事件](ts-component-general-events.md)只支持点击事件[onClick](ts-universal-events-click.md#onclick)和悬浮事件[onHover](ts-universal-events-hover.md#onhover)。
+* 该组件从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 该组件从API version 10开始支持继承父组件Text的属性，即如果子组件未设置属性且父组件设置属性，则继承父组件设置的属性。支持继承的属性仅包括：fontColor、fontSize、fontStyle、fontWeight、decoration、letterSpacing、textCase、fontFamily、textShadow。
+* 支持[通用属性](ts-component-general-attributes.md)中的[无障碍属性](ts-universal-attributes-accessibility.md)（[accessibilityText](ts-universal-attributes-accessibility.md#accessibilitytext)）、[组件标识](ts-universal-attributes-component-id.md)（[id](ts-universal-attributes-component-id.md#id)、[key](ts-universal-attributes-component-id.md#key12)）和[禁用反色能力](ts-allow-force-dark.md)（[allowForceDark](ts-allow-force-dark.md#allowforcedark)），不支持其他通用属性。若需设置其他通用属性，应使用[Text](ts-basic-components-text.md)进行设置，或改用[属性字符串](ts-universal-styled-string.md)中的[CustomSpan](ts-universal-styled-string.md#customspan)自行绘制。
+* [accessibilityText](ts-universal-attributes-accessibility.md#accessibilitytext)仅在Span设置了[onClick](ts-universal-events-click.md#onclick)事件时生效，配置的文本只会体现在无障碍服务识别到的内嵌链接弹窗中。直接播报时，仍播报Span的内容，不会替换为accessibilityText配置的文本。
+* [通用事件](ts-component-general-events.md)只支持点击事件[onClick](ts-universal-events-click.md#onclick)和悬浮事件[onHover](ts-universal-events-hover.md#onhover)。
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 Span(value: string | Resource)
 
@@ -46,17 +40,13 @@ Span(value: string | Resource)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 属性继承自[BaseSpan](ts-basic-components-span.md#basespan)。
 
 ### decoration
 
-PhonePC/2in1TabletTVWearable
-
 decoration(value: DecorationStyleInterface)
 
-设置文本装饰线样式及其颜色。
+设置文本装饰线样式及其颜色。未通过该接口设置时，默认装饰线类型为TextDecorationType.None（无装饰线），颜色为Color.Black（黑色），样式为TextDecorationStyle.SOLID（实线）。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -68,9 +58,9 @@ decoration(value: DecorationStyleInterface)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [DecorationStyleInterface12+](ts-universal-styled-string.md#decorationstyleinterface) | 是 | 文本装饰线样式对象。  默认值：  {  type: TextDecorationType.None,  color: Color.Black,  style: TextDecorationStyle.SOLID  }  **说明：**  style参数不支持卡片能力。 |
+| value | [DecorationStyleInterface12+](ts-universal-styled-string.md#decorationstyleinterface) | 是 | 文本装饰线样式对象。  **说明：**  style参数不支持卡片能力。 |
 
-说明
+**说明** 
 
 当文字的下边缘轮廓与装饰线位置相交时，会触发下划线避让规则，下划线将在这些字符处避让文字。常见“gjyqp”等英文字符。
 
@@ -78,11 +68,9 @@ decoration(value: DecorationStyleInterface)
 
 ### letterSpacing
 
-PhonePC/2in1TabletTVWearable
-
 letterSpacing(value: number | ResourceStr)
 
-设置文本字符间距。取值小于0，字符聚集重叠，取值大于0且随着数值变大，字符间距越来越大，稀疏分布。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
+设置文本字符间距。取值小于0，字符聚集重叠，取值大于0且随着数值变大，字符间距越来越大，稀疏分布。适用于标题排版、标签文字等需要调整字符紧凑度或稀疏度的场景。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -94,15 +82,13 @@ letterSpacing(value: number | ResourceStr)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本字符间距。  单位：[fp](ts-pixel-units.md)  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
+| value | number | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本字符间距。  单位：[fp](ts-pixel-units.md#基本像素单位)  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
 
 ### textCase
 
-PhonePC/2in1TabletTVWearable
-
 textCase(value: TextCase)
 
-设置文本大小写。
+设置文本大小写。未通过该接口设置时，默认文本大小写为TextCase.Normal（正常大小写）。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -114,15 +100,13 @@ textCase(value: TextCase)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [TextCase](ts-appendix-enums.md#textcase) | 是 | 文本大小写。  默认值：TextCase.Normal |
+| value | [TextCase](ts-appendix-enums.md#textcase) | 是 | 文本大小写。 |
 
 ### fontColor
 
-PhonePC/2in1TabletTVWearable
-
 fontColor(value: ResourceColor)
 
-设置字体颜色。
+设置字体颜色。未通过该接口设置时，默认字体颜色为'#FF182431'（深灰色），Wearable设备上默认为'#C5FFFFFF'（白色，不透明度约为77%）。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -134,15 +118,13 @@ fontColor(value: ResourceColor)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 字体颜色。  默认值：'e6182431'  Wearable设备上默认值为：'#c5ffffff' |
+| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 字体颜色。 |
 
 ### fontSize
 
-PhonePC/2in1TabletTVWearable
-
 fontSize(value: number | string | Resource)
 
-设置字体大小。
+设置字体大小。未通过该接口设置时，默认字体大小为16fp，Wearable设备上默认为15fp。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -154,15 +136,13 @@ fontSize(value: number | string | Resource)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | [Resource](ts-types.md#resource) | 是 | 字体大小。fontSize为number类型时，使用fp单位。字体默认大小16fp。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"，不支持设置百分比字符串。  Wearable设备上默认值为：15fp |
+| value | number | string | [Resource](ts-types.md#resource) | 是 | 字体大小。fontSize为number类型时，使用fp单位。string类型支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"，不支持设置百分比字符串。  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
 
 ### fontStyle
 
-PhonePC/2in1TabletTVWearable
-
 fontStyle(value: FontStyle)
 
-设置字体样式。
+设置字体样式。未通过该接口设置时，默认字体样式为FontStyle.Normal（正常样式）。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -174,15 +154,17 @@ fontStyle(value: FontStyle)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [FontStyle](ts-appendix-enums.md#fontstyle) | 是 | 字体样式。  默认值：FontStyle.Normal |
+| value | [FontStyle](ts-appendix-enums.md#fontstyle) | 是 | 字体样式。 |
 
 ### fontWeight
 
-PhonePC/2in1TabletTVWearable
-
 fontWeight(value: number | FontWeight | ResourceStr)
 
-设置文本的字体粗细，设置过大可能会在不同字体下有截断。
+设置文本的字体粗细，设置过大可能会在不同字体下有截断。未通过该接口设置时，默认字体粗细为FontWeight.Normal（正常粗细，对应数值400）。
+
+**说明** 
+
+当同时设置[fontVariations属性](ts-basic-components-span.md#fontvariations)时，fontVariations属性的优先级更高。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -194,15 +176,38 @@ fontWeight(value: number | FontWeight | ResourceStr)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本的字体粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。  默认值：FontWeight.Normal  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
+| value | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本的字体粗细。  number类型取值[100, 900]，取值间隔为100，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。传入超出取值范围或不符合间隔要求的值时取默认值。  从API version 20开始，支持[Resource](ts-types.md#resource)类型。 |
+
+### fontWeight24+
+
+fontWeight(weight: number | FontWeight | ResourceStr, fontWeightConfigs?: FontWeightConfigs)
+
+设置文本的字体粗细。未通过该接口设置时，默认字体粗细为FontWeight.Normal（正常粗细，对应数值400）。
+
+**说明** 
+
+当同时设置fontVariations属性时，fontVariations属性的优先级更高。
+
+**卡片能力：** 从API version 24开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| weight | number | [FontWeight](ts-appendix-enums.md#fontweight) | [ResourceStr](ts-types.md#resourcestr) | 是 | 文本的字体粗细。  number类型取值[100, 900]，取值间隔为100，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如“400”，以及“bold”、“bolder”、“lighter”、“regular”、“medium”，分别对应FontWeight中相应的枚举值。设置过大可能会在不同字体下有截断。  传入超出取值范围的值时取默认值。传入不符合间隔要求的值时，若设置fontWeightConfigs的enableVariableFontWeight为true，使用传入值；若设置为false，使用默认值。 |
+| fontWeightConfigs | [FontWeightConfigs](ts-text-common.md#fontweightconfigs24对象说明) | 否 | 字体粗细配置对象，用于配置可变字体字重等选项。默认值继承[FontWeightConfigs](ts-text-common.md#fontweightconfigs24对象说明)。 |
 
 ### fontFamily
 
-PhonePC/2in1TabletTVWearable
-
 fontFamily(value: string | Resource)
 
-设置字体列表。
+设置字体列表。未通过该接口设置时，默认字体为'HarmonyOS Sans'。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -214,21 +219,21 @@ fontFamily(value: string | Resource)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | [Resource](ts-types.md#resource) | 是 | 字体列表。  默认字体'HarmonyOS Sans'。  使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。 |
+| value | string | [Resource](ts-types.md#resource) | 是 | 字体列表。  使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。 |
 
-说明
+**说明** 
 
 可以使用[loadFontSync](js-apis-graphics-text.md#loadfontsync)注册自定义字体。
 
 ### lineHeight10+
 
-PhonePC/2in1TabletTVWearable
-
 lineHeight(value: Length)
 
-设置文本行高。
+设置文本行高。未通过该接口设置时，默认由系统根据字体大小自动计算行高。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -236,17 +241,21 @@ lineHeight(value: Length)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](ts-types.md#length) | 是 | 文本行高。  number类型时单位为fp。设置string类型时，支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"。 |
+| value | [Length](ts-types.md#length) | 是 | 文本行高。  number类型时单位为fp。设置string类型时，支持number类型取值的字符串形式，可以附带单位，例如"10"、"10fp"，不支持设置百分比字符串。 |
 
 ### font10+
-
-PhonePC/2in1TabletTVWearable
 
 font(value: Font)
 
 设置文本样式。包括字体大小、字体粗细、字体族和字体风格。
 
+**说明** 
+
+fontWeight设置过大可能会在不同字体下有截断。
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -254,17 +263,36 @@ font(value: Font)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Font](ts-types.md#font) | 是 | 文本样式。 |
+| value | [Font](ts-types.md#font) | 是 | 文本样式，包括字体大小、字体粗细、字体族和字体风格。 |
+
+### font24+
+
+font(value: Font, fontConfigs?: FontConfigs)
+
+设置文本样式。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [Font](ts-types.md#font) | 是 | 文本样式，包括字体大小、字体粗细、字体族和字体风格。 |
+| fontConfigs | [FontConfigs](ts-text-common.md#fontconfigs24对象说明) | 否 | 字体配置，用于自定义字体渲染行为（如配置可变字体属性）。当需要对字体进行高级配置时传入此参数，不传入时继承[FontConfigs](ts-text-common.md#fontconfigs24对象说明)的默认配置。 |
 
 ### textShadow11+
 
-PhonePC/2in1TabletTVWearable
-
 textShadow(value: ShadowOptions | Array<ShadowOptions>)
 
-设置文字阴影效果。该接口支持以数组形式入参，实现多重文字阴影。不支持fill字段, 不支持智能取色模式。
+设置文字阴影效果。该接口支持以数组形式入参，实现多重文字阴影。不支持fill字段，不支持智能取色模式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -272,21 +300,37 @@ textShadow(value: ShadowOptions | Array<ShadowOptions>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | Array<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)> | 是 | 文字阴影效果。 |
+| value | [ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明) | Array<[ShadowOptions](ts-universal-attributes-image-effect.md#shadowoptions对象说明)> | 是 | 文字阴影效果。可设置阴影的模糊半径(radius)、颜色(color)、偏移距离(offsetX/offsetY)等参数，支持数组形式实现多重阴影。 |
+
+### fontVariations
+
+fontVariations(fontVariations: Array<FontVariation>)
+
+设置可变字体的属性，适用于需要动态调整字体粗细、宽度等可变维度参数的场景。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| fontVariations | Array<[FontVariation](js-apis-graphics-text.md#fontvariation)> | 是 | 可变字体的属性数组，每个数组元素包含axis（属性轴名称）和value（属性值）两个字段。fontVariations属性的优先级高于[fontWeight](ts-basic-components-span.md#fontweight24)。 |
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 通用事件支持[点击事件onClick](ts-universal-events-click.md#onclick)、[悬浮事件onHover](ts-universal-events-hover.md#onhover)。
 
-说明
+**说明** 
 
 由于Span组件无尺寸信息，因此点击事件返回的ClickEvent对象的target属性无效。
 
 ## BaseSpan
-
-PhonePC/2in1TabletTVWearable
 
 定义BaseSpan基础类，包含Span的通用属性。
 
@@ -296,13 +340,13 @@ PhonePC/2in1TabletTVWearable
 
 ### textBackgroundStyle11+
 
-PhonePC/2in1TabletTVWearable
-
 textBackgroundStyle(style: TextBackgroundStyle): T
 
-设置背景样式。作为[ContainerSpan](ts-basic-components-containerspan.md)的子组件时可以继承它的此属性值，优先使用其自身的此属性。
+设置文本背景样式。作为[ContainerSpan](ts-basic-components-containerspan.md)的子组件时可继承该属性值，优先使用自身的设置。未通过该接口设置时，默认背景颜色为Color.Transparent（透明），圆角弧度为0。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -310,23 +354,23 @@ textBackgroundStyle(style: TextBackgroundStyle): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| style | [TextBackgroundStyle](ts-basic-components-span.md#textbackgroundstyle11对象说明) | 是 | 背景样式。  默认值:  {  color: Color.Transparent,  radius: 0  } |
+| style | [TextBackgroundStyle](ts-basic-components-span.md#textbackgroundstyle11对象说明) | 是 | 文本背景样式。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前Span的属性。 |
+| T | 返回当前Span的属性对象。 |
 
 ### baselineOffset12+
 
-PhonePC/2in1TabletTVWearable
-
 baselineOffset(value: LengthMetrics): T
 
-设置Span基线的偏移量。此属性与父组件的baselineOffset是共存的。
+设置Span基线的偏移量，适用于上下标排版、混合字号文本对齐微调等场景。此属性与父组件的baselineOffset是共存的。未通过该接口设置时，默认偏移量为0。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -334,282 +378,346 @@ baselineOffset(value: LengthMetrics): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 是 | 设置Span基线的偏移量，设置该值为百分比时，按默认值显示。  正数内容向上偏移，负数向下偏移。  默认值：0  在ImageSpan中，设置为非0时，[verticalAlign](ts-basic-components-imagespan.md#verticalalign)将固定为ImageSpanAlignment.BASELINE对齐；设置为0时，要使基线对齐策略生效，需同时设置[verticalAlign](ts-basic-components-imagespan.md#verticalalign)为ImageSpanAlignment.BASELINE。 |
+| value | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 是 | 设置Span基线的偏移量，设置该值为百分比时，按默认值显示。  正数内容向上偏移，负数向下偏移。  在ImageSpan中，设置为非0时，[verticalAlign](ts-basic-components-imagespan.md#verticalalign)将固定为ImageSpanAlignment.BASELINE对齐；设置为0时，要使基线对齐策略生效，需同时设置[verticalAlign](ts-basic-components-imagespan.md#verticalalign)为ImageSpanAlignment.BASELINE。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前Span的属性。 |
+| T | 返回当前Span的属性对象，用于链式调用。 |
 
 ## TextBackgroundStyle11+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| color | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 文本背景色。 |
-| radius | [Dimension](ts-types.md#dimension10) | [BorderRadiuses](ts-types.md#borderradiuses9) | 否 | 是 | 文本背景圆角。 |
+| color | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 文本背景色。默认为透明，无背景色。 |
+| radius | [Dimension](ts-types.md#dimension10) | [BorderRadiuses](ts-types.md#borderradiuses9) | 否 | 是 | 文本背景圆角。默认无圆角。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 ### 示例1（设置文本样式）
 
-该示例展示了设置不同样式的文本效果以及span配置点击事件。
+该示例展示了设置不同样式的文本效果以及Span配置点击事件。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct SpanExample {
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start }) {
+      Text('Basic Usage').fontSize(9).fontColor(0xCCCCCC)
+      Text() {
+        Span('In Line')
+        Span(' Component')
+        Span(' !')
+      }
+
+      Text() {
+        Span('This is the Span component').fontSize(12).textCase(TextCase.Normal)
+          .decoration({ type: TextDecorationType.None, color: Color.Red })
+          .fontFamily('HarmonyOS Sans')
+      }.margin({ top: 12 })
+
+      // 文本横线添加
+      Text('Text Decoration').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('I am Underline-WAVY-span')
+          .decoration({ type: TextDecorationType.Underline, color: Color.Red, style: TextDecorationStyle.WAVY })
+          .fontSize(12)
+      }
+
+      Text() {
+        Span('I am LineThrough-DOTTED-span')
+          .decoration({ type: TextDecorationType.LineThrough, color: Color.Red, style: TextDecorationStyle.DOTTED })
+          .fontSize(12)
+      }
+
+      Text() {
+        Span('I am Overline-DASHED-span')
+          .decoration({ type: TextDecorationType.Overline, color: Color.Red, style: TextDecorationStyle.DASHED })
+          .fontSize(12)
+      }
+
+      // 文本字符间距
+      Text('LetterSpacing').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('span letter spacing')
+          .letterSpacing(0)
+          .fontSize(12)
+      }
+
+      Text() {
+        Span('span letter spacing')
+          .letterSpacing(-2)
+          .fontSize(12)
+      }
+
+      Text() {
+        Span('span letter spacing')
+          .letterSpacing(3)
+          .fontSize(12)
+      }
+
+      // 文本大小写展示设置
+      Text('Text Case').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('I am Lower-span').fontSize(12)
+          .textCase(TextCase.LowerCase)
+          .decoration({ type: TextDecorationType.None })
+      }
+
+      Text() {
+        Span('I am Upper-span').fontSize(12)
+          .textCase(TextCase.UpperCase)
+          .decoration({ type: TextDecorationType.None })
+      }
+
+      // 文本字体样式设置
+      Text('FontStyle').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('I am FontStyle-Normal').fontSize(12)
+          .fontStyle(FontStyle.Normal)
+      }
+
+      Text() {
+        Span('I am FontStyle-Italic').fontSize(12)
+          .fontStyle(FontStyle.Italic)
+      }
+
+      // 文本字体粗细设置
+      Text('FontWeight').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('I am FontWeight-Lighter').fontSize(12)
+          .fontWeight(FontWeight.Lighter)
+      }
+
+      Text() {
+        Span('I am FontWeight-Bold').fontSize(12)
+          .fontWeight(FontWeight.Bold)
+      }
+
+      // 文本行高设置
+      Text('LineHeight').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('I am lineHeight default\n').fontSize(12)
+          .fontWeight(FontWeight.Lighter)
+        Span('I am lineHeight 30').fontSize(12)
+          .lineHeight(30)
+      }
+      .backgroundColor(Color.Gray)
+
+      // 文本样式设置
+      Text('Font').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('span font 12 Bolder Italic')
+          .font({
+            size: 12,
+            weight: FontWeight.Bolder,
+            style: FontStyle.Italic,
+            family: "HarmonyOS Sans"
+          })
+      }
+
+      // 文本字体配置设置。从API version 24开始新增支持fontConfigs属性。
+      Text('Font with FontConfigs').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('span font with configs')
+          .font({
+            size: 14,
+            weight: 550,
+            style: FontStyle.Normal,
+            family: "HarmonyOS Sans"
+          }, {
+            fontWeightConfigs: {
+              enableVariableFontWeight: true
+            }
+          })
+      }
+
+      // 文本字体粗细配置设置。从API version 24开始新增支持fontWeightConfigs属性。
+      Text('FontWeight with FontWeightConfigs').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('span fontWeight 850 with configs')
+          .fontWeight(850, {
+            enableVariableFontWeight: true,
+            enableDeviceFontWeightCategory: false
+          })
+      }
+      Text() {
+        Span('span fontWeight 600 with configs')
+          .fontWeight(600, {
+            enableVariableFontWeight: false,
+            enableDeviceFontWeightCategory: true
+          })
+      }
+
+      // span点击事件设置
+      Text('span click event').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
+      Text() {
+        Span('Span default ').fontSize(12)
+        Span('Span click')
+          .onClick((event) => {
+            console.info("span onClick")
+          })
+      }
+    }.width('100%').padding({ left: 35, right: 35, top: 35 })
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct SpanExample {
-5. build() {
-6. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start }) {
-7. Text('Basic Usage').fontSize(9).fontColor(0xCCCCCC)
-8. Text() {
-9. Span('In Line')
-10. Span(' Component')
-11. Span(' !')
-12. }
 
-14. Text() {
-15. Span('This is the Span component').fontSize(12).textCase(TextCase.Normal)
-16. .decoration({ type: TextDecorationType.None, color: Color.Red })
-17. .fontFamily('HarmonyOS Sans')
-18. }.margin({ top: 12 })
-
-20. // 文本横线添加
-21. Text('Text Decoration').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
-22. Text() {
-23. Span('I am Underline-WAVY-span')
-24. .decoration({ type: TextDecorationType.Underline, color: Color.Red, style: TextDecorationStyle.WAVY })
-25. .fontSize(12)
-26. }
-
-28. Text() {
-29. Span('I am LineThrough-DOTTED-span')
-30. .decoration({ type: TextDecorationType.LineThrough, color: Color.Red, style: TextDecorationStyle.DOTTED })
-31. .fontSize(12)
-32. }
-
-34. Text() {
-35. Span('I am Overline-DASHED-span')
-36. .decoration({ type: TextDecorationType.Overline, color: Color.Red, style: TextDecorationStyle.DASHED })
-37. .fontSize(12)
-38. }
-
-40. // 文本字符间距
-41. Text('LetterSpacing').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
-42. Text() {
-43. Span('span letter spacing')
-44. .letterSpacing(0)
-45. .fontSize(12)
-46. }
-
-48. Text() {
-49. Span('span letter spacing')
-50. .letterSpacing(-2)
-51. .fontSize(12)
-52. }
-
-54. Text() {
-55. Span('span letter spacing')
-56. .letterSpacing(3)
-57. .fontSize(12)
-58. }
-
-60. // 文本大小写展示设置
-61. Text('Text Case').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
-62. Text() {
-63. Span('I am Lower-span').fontSize(12)
-64. .textCase(TextCase.LowerCase)
-65. .decoration({ type: TextDecorationType.None })
-66. }
-
-68. Text() {
-69. Span('I am Upper-span').fontSize(12)
-70. .textCase(TextCase.UpperCase)
-71. .decoration({ type: TextDecorationType.None })
-72. }
-
-74. // 文本字体样式设置
-75. Text('FontStyle').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
-76. Text() {
-77. Span('I am FontStyle-Normal').fontSize(12)
-78. .fontStyle(FontStyle.Normal)
-79. }
-
-81. Text() {
-82. Span('I am FontStyle-Italic').fontSize(12)
-83. .fontStyle(FontStyle.Italic)
-84. }
-
-86. // 文本字体粗细设置
-87. Text('FontWeight').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
-88. Text() {
-89. Span('I am FontWeight-Lighter').fontSize(12)
-90. .fontWeight(FontWeight.Lighter)
-91. }
-
-93. Text() {
-94. Span('I am FontWeight-Bold').fontSize(12)
-95. .fontWeight(FontWeight.Bold)
-96. }
-
-98. // 文本行高设置
-99. Text('LineHeight').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
-100. Text() {
-101. Span('I am lineHeight default\n').fontSize(12)
-102. .fontWeight(FontWeight.Lighter)
-103. Span('I am lineHeight 30').fontSize(12)
-104. .lineHeight(30)
-105. }
-106. .backgroundColor(Color.Gray)
-
-108. // 文本样式设置
-109. Text('Font').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
-110. Text() {
-111. Span('span font 12 Bolder Italic')
-112. .font({
-113. size: 12,
-114. weight: FontWeight.Bolder,
-115. style: FontStyle.Italic,
-116. family: "HarmonyOS Sans"
-117. })
-118. }
-
-120. // span点击事件设置
-121. Text('span click event').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
-122. Text() {
-123. Span('Span default ').fontSize(12)
-124. Span('Span click')
-125. .onClick((event) => {
-126. console.info("span onClick")
-127. })
-128. }
-129. }.width('100%').padding({ left: 35, right: 35, top: 35 })
-130. }
-131. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/yU8Bt3p5QpCkmDKHoVJZOA/zh-cn_image_0000002589246141.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/N9HyNy4lRRSwdeNCxbp11A/zh-cn_image_0000002736315089.png)
 
 ### 示例2（设置文本阴影）
 
 从API version 11开始，该示例通过[textShadow](ts-basic-components-span.md#textshadow11)属性展示了文本设置阴影的效果。
 
+```ts
+// xxx.ets
+@Entry
+@Component
+struct SpanExample {
+  @State textShadows: ShadowOptions | Array<ShadowOptions> = [{
+    radius: 10,
+    color: Color.Red,
+    offsetX: 10,
+    offsetY: 0
+  }, {
+    radius: 10,
+    color: Color.Orange,
+    offsetX: 20,
+    offsetY: 0
+  },
+    {
+      radius: 10,
+      color: Color.Yellow,
+      offsetX: 30,
+      offsetY: 0
+    }, {
+      radius: 10,
+      color: Color.Green,
+      offsetX: 40,
+      offsetY: 0
+    },
+    {
+      radius: 10,
+      color: Color.Blue,
+      offsetX: 100,
+      offsetY: 0
+    }]
+
+  build() {
+    Column({ space: 8 }) {
+      Text() {
+        Span('123456789').fontSize(50).textShadow(this.textShadows).fontColor(Color.Pink)
+      }
+
+      Text() {
+        Span('123456789') // span can inherit text shadow & font size from outer text
+      }.fontSize(50).textShadow(this.textShadows).fontColor(Color.Pink)
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct SpanExample {
-5. @State textShadows: ShadowOptions | Array<ShadowOptions> = [{
-6. radius: 10,
-7. color: Color.Red,
-8. offsetX: 10,
-9. offsetY: 0
-10. }, {
-11. radius: 10,
-12. color: Color.Orange,
-13. offsetX: 20,
-14. offsetY: 0
-15. },
-16. {
-17. radius: 10,
-18. color: Color.Yellow,
-19. offsetX: 30,
-20. offsetY: 0
-21. }, {
-22. radius: 10,
-23. color: Color.Green,
-24. offsetX: 40,
-25. offsetY: 0
-26. },
-27. {
-28. radius: 10,
-29. color: Color.Blue,
-30. offsetX: 100,
-31. offsetY: 0
-32. }]
 
-34. build() {
-35. Column({ space: 8 }) {
-36. Text() {
-37. Span('123456789').fontSize(50).textShadow(this.textShadows).fontColor(Color.Pink)
-38. }
-
-40. Text() {
-41. Span('123456789') // span can inherit text shadow & font size from outer text
-42. }.fontSize(50).textShadow(this.textShadows).fontColor(Color.Pink)
-43. }
-44. }
-45. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/8S0snUZaRzanK92oucpblw/zh-cn_image_0000002558766332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ianp_ICZR-urZLW4hSZDGw/zh-cn_image_0000002706676046.png)
 
 ### 示例3（设置背景样式）
 
 从API version 11开始，该示例通过[textBackgroundStyle](ts-basic-components-span.md#textbackgroundstyle11)属性展示了文本设置背景样式的效果。
 
-```
-1. // xxx.ets
-2. @Component
-3. @Entry
-4. struct SpanExample {
-5. build() {
-6. Column() {
-7. Text() {
-8. Span('   Hello World !   ')
-9. .fontSize('20fp')
-10. .textBackgroundStyle({ color: "#7F007DFF", radius: "5vp" })
-11. .fontColor(Color.White)
-12. }
-13. }.width('100%').margin({ bottom: '5vp' }).alignItems(HorizontalAlign.Center)
-14. }
-15. }
+```ts
+// xxx.ets
+@Component
+@Entry
+struct SpanExample {
+  build() {
+    Column() {
+      Text() {
+        Span('   Hello World !   ')
+          .fontSize('20fp')
+          .textBackgroundStyle({ color: '#7F007DFF', radius: '5vp' })
+          .fontColor(Color.White)
+      }
+    }.width('100%').margin({ bottom: '5vp' }).alignItems(HorizontalAlign.Center)
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/JzeEFpJoTNi4d10127KKVQ/zh-cn_image_0000002558606674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/lyc5xqdoTECdvzv2YiZNTQ/zh-cn_image_0000002736435133.png)
 
 ### 示例4（设置文本基线偏移量）
 
 从API version 12开始，该示例通过[baselineOffset](ts-basic-components-span.md#baselineoffset12)属性展示了文本设置不同基线偏移量的效果。
 
-```
-1. // xxx.ets
-2. import { LengthUnit, LengthMetrics } from '@kit.ArkUI';
+```ts
+// xxx.ets
+import { LengthUnit, LengthMetrics } from '@kit.ArkUI';
 
-4. @Entry
-5. @Component
-6. struct SpanExample {
-7. build() {
-8. Row() {
-9. Column() {
-10. Text() {
-11. Span('SpanOne')
-12. .fontSize(10)
-13. .baselineOffset(new LengthMetrics(20, LengthUnit.VP))
-14. Span('SpanTwo')
-15. .fontSize(10)
-16. .baselineOffset(new LengthMetrics(0, LengthUnit.VP))
-17. // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
-18. ImageSpan($r("app.media.sky"))
-19. .width('80px')
-20. .baselineOffset(new LengthMetrics(-20, LengthUnit.VP))
-21. }
-22. .backgroundColor('#7F007DFF')
-23. }
-24. .width('100%')
-25. }
-26. .height('100%')
-27. }
-28. }
+@Entry
+@Component
+struct SpanExample {
+  build() {
+    Row() {
+      Column() {
+        Text() {
+          Span('SpanOne')
+            .fontSize(10)
+            .baselineOffset(new LengthMetrics(20, LengthUnit.VP))
+          Span('SpanTwo')
+            .fontSize(10)
+            .baselineOffset(new LengthMetrics(0, LengthUnit.VP))
+          // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
+          ImageSpan($r("app.media.sky"))
+            .width('80px')
+            .baselineOffset(new LengthMetrics(-20, LengthUnit.VP))
+        }
+        .backgroundColor('#7F007DFF')
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/3wq2_C_ZSWGRQ0ktNhijtw/zh-cn_image_0000002589326201.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/t8o8UzHJSCOaeX7BobPpRQ/zh-cn_image_0000002706835986.png)
+
+### 示例5（设置文本可变字体的属性）
+
+该示例通过[fontVariations](ts-basic-components-span.md#fontvariations)属性设置可变字体的属性。
+
+从API版本26.0.0开始，新增[fontVariations](ts-basic-components-span.md#fontvariations)接口。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct SpanExample {
+  @State weightValue: number = 400;
+
+  build() {
+    Column() {
+      Text() {
+        Span('Hello World !')
+          // wght代表可变字体的字重属性
+          .fontVariations([{ axis: 'wght', value: this.weightValue }])
+      }
+
+      Button('字重: ' + this.weightValue)
+        .margin(10)
+        .onClick(() => {
+          this.weightValue += 100;
+        })
+    }.width('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/0VdIG7bMQDKorYxB-V2dzw/zh-cn_image_0000002706835910.gif)

@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (CameraOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (CameraOutput)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:50cae5b93e0720db4b09c89f09bc666f2ff28ea3f8a3d61ff4303357ca79b6c5
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2dc574f869ded7cf8407d72dd964b1e6818593edf63bc1332d992ff3da865a9a
 ---
 
 会话中[Session](arkts-apis-camera-session.md)使用的输出信息，output的基类。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## release
-
-PhonePC/2in1TabletTVWearable
 
 release(callback: AsyncCallback<void>): void
 
@@ -50,33 +46,31 @@ release(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function releasePreviewOutput(previewOutput: camera.PreviewOutput): void {
-4. previewOutput.release((err: BusinessError) => {
-5. if (err) {
-6. console.error(`Failed to release the Preview output instance ${err.code}`);
-7. return;
-8. }
-9. console.info('Callback invoked to indicate that the preview output instance is released successfully.');
-10. });
-11. }
+function releasePreviewOutput(previewOutput: camera.PreviewOutput): void {
+  previewOutput.release((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to release the Preview output instance ${err.code}`);
+      return;
+    }
+    console.info('Callback invoked to indicate that the preview output instance is released successfully.');
+  });
+}
 
-13. function releaseVideoOutput(videoOutput: camera.VideoOutput): void {
-14. videoOutput.release((err: BusinessError) => {
-15. if (err) {
-16. console.error(`Failed to release the video output instance ${err.code}`);
-17. return;
-18. }
-19. console.info('Callback invoked to indicate that the video output instance is released successfully.');
-20. });
-21. }
+function releaseVideoOutput(videoOutput: camera.VideoOutput): void {
+  videoOutput.release((err: BusinessError) => {
+    if (err) {
+      console.error(`Failed to release the video output instance ${err.code}`);
+      return;
+    }
+    console.info('Callback invoked to indicate that the video output instance is released successfully.');
+  });
+}
 ```
 
 ## release
-
-PhonePC/2in1TabletTVWearable
 
 release(): Promise<void>
 
@@ -102,22 +96,22 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function releasePreviewOutput(previewOutput: camera.PreviewOutput): void {
-4. previewOutput.release().then(() => {
-5. console.info('Promise returned to indicate that the preview output instance is released successfully.');
-6. }).catch((error: BusinessError) => {
-7. console.error(`Failed to preview output release, error code: ${error.code}`);
-8. });
-9. }
+function releasePreviewOutput(previewOutput: camera.PreviewOutput): void {
+  previewOutput.release().then(() => {
+    console.info('Promise returned to indicate that the preview output instance is released successfully.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to preview output release, error code: ${error.code}`);
+  });
+}
 
-11. function releaseVideoOutput(videoOutput: camera.VideoOutput): void {
-12. videoOutput.release().then(() => {
-13. console.info('Promise returned to indicate that the video output instance is released successfully.');
-14. }).catch((error: BusinessError) => {
-15. console.error(`Failed to video output release, error code: ${error.code}`);
-16. });
-17. }
+function releaseVideoOutput(videoOutput: camera.VideoOutput): void {
+  videoOutput.release().then(() => {
+    console.info('Promise returned to indicate that the video output instance is released successfully.');
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to video output release, error code: ${error.code}`);
+  });
+}
 ```

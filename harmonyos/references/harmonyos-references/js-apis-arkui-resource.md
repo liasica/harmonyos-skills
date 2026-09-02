@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: Resource
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > Resource
 category: harmonyos-references
-scraped_at: 2026-04-29T13:50:54+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:95609eb4ab67f51a9f7e128d66bda283ef67001d70b73e76ea879d5d2c45b4ab
+scraped_at: 2026-09-02T15:00:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f43ed9059700f275b26fb4e0cda5c57b9e2b96346aefbd41e450e3ba6be06eec
 ---
 
 提供获取应用资源或系统资源信息的接口。应用资源及系统资源的介绍及使用方法可参考[资源分类与访问](../harmonyos-guides/resource-categories-and-access.md)。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## $r
-
-PhonePC/2in1TabletTVWearable
 
 $r(value: string, ...params: any[]): Resource
 
@@ -43,31 +41,29 @@ $r(value: string, ...params: any[]): Resource
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct Page {
-4. build() {
-5. Row() {
-6. Column() {
-7. Text($r('app.string.app_name'))
-8. }
-9. .width('100%')
-10. }
-11. .height('100%')
-12. }
-13. }
+```ts
+@Entry
+@Component
+struct Page {
+  build() {
+    Row() {
+      Column() {
+        Text($r('app.string.app_name'))
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 访问HSP包的资源示例可参考[访问跨HAP/HSP包资源](../harmonyos-guides/resource-categories-and-access.md#访问跨haphsp包资源)。
 
 ## $rawfile
 
-PhonePC/2in1TabletTVWearable
-
 $rawfile(value: string): Resource
 
-获取工程rawfile目录下的资源信息。$rawfile会在编译期由工具链转换为[Resource](js-apis-resource-manager.md#resource9)对象。通过$rawfile访问应用资源或系统资源，可参考[资源分类与访问](../harmonyos-guides/resource-categories-and-access.md)。
+获取工程rawfile目录下的资源信息。$rawfile会在编译期由工具链转换为[Resource](js-apis-resource-manager.md#resource9)对象。通过$rawfile访问rawfile目录下的资源，可参考[资源分类与访问](../harmonyos-guides/resource-categories-and-access.md)。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -79,7 +75,7 @@ $rawfile(value: string): Resource
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | string | 是 | rawfile目录下的相对路径。文件名需要包含后缀，路径开头不可以"/"开头。 |
+| value | string | 是 | rawfile目录下的相对路径。文件名需要包含后缀，路径不可以以"/"开头。 |
 
 **返回值：**
 
@@ -87,22 +83,22 @@ $rawfile(value: string): Resource
 | --- | --- |
 | [Resource](js-apis-resource-manager.md#resource9) | 资源相关信息，包括应用包名、应用模块名、资源id等。 |
 
-```
-1. // src/main/resources/rawfile目录下添加startIcon.png。
+```ts
+// src/main/resources/rawfile目录下添加startIcon.png。
 
-3. @Entry
-4. @Component
-5. struct Page {
-6. build() {
-7. Row() {
-8. Column() {
-9. Image($rawfile("startIcon.png"))
-10. }
-11. .width('100%')
-12. }
-13. .height('100%')
-14. }
-15. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Row() {
+      Column() {
+        Image($rawfile("startIcon.png"))
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
-访问HSP包资源示例可参考[跨HAP/HSP包应用资源](../harmonyos-guides/resource-categories-and-access.md#访问跨haphsp包资源)。
+访问HSP包资源示例可参考[访问跨HAP/HSP包资源](../harmonyos-guides/resource-categories-and-access.md#访问跨haphsp包资源)。

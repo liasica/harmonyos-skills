@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-me
 title: 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:31+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:d381459ec6c8373262e59c42d9ff6829ed5d530c07e1a96a9683a975f3cb863d
+scraped_at: 2026-09-02T14:59:23+08:00
+doc_updated_at: 2026-08-14
+content_hash: sha256:ac7aff476a391877c4e535292fd6c842c1aecb783badfeade835f22dd669340d
 ---
 
 ## 概述
@@ -16,9 +16,9 @@ content_hash: sha256:d381459ec6c8373262e59c42d9ff6829ed5d530c07e1a96a9683a975f3c
 
 浏览器扩展通过[WebExtensions runtime API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/API/runtime)连接WebNativeMessagingExtensionAbility，双方通信是通过共享pipe文件描述符后调用IO接口实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/JsFYnZqSTsSjptRtTJZWLw/zh-cn_image_0000002558605084.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/UYp0hNA-RMCLpQzO3SU6nQ/zh-cn_image_0000002706674162.png)
 
-说明
+**说明** 
 
 本文将浏览器扩展调用WebExtension接口runtime.connectNative建立的连接称为NativeMessaging连接。
 
@@ -30,7 +30,7 @@ NativeMessaging面向两类开发者：应用开发者和浏览器应用开发�
 
 ### 设备限制
 
-WebNativeMessagingExtensionAbility组件当前仅支持2in1设备。
+对于API版本21-23，WebNativeMessagingExtensionAbility组件仅支持2in1设备；从API版本24开始，增加支持在平板上使用。
 
 ### 规格限制
 
@@ -38,12 +38,13 @@ WebNativeMessagingExtensionAbility组件当前仅支持2in1设备。
 * WebNativeMessagingExtensionAbility组件内不支持调用[Window](../harmonyos-references/arkts-apis-window.md)相关API。
 * WebNativeMessagingExtensionAbility仅支持拉起本应用的[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)，不支持拉起其他应用UIAbility或者其他类型ExtensionAbility。
 * WebNativeMessagingExtensionAbility仅用于浏览器扩展与应用通信场景，不支持如后台服务等其他场景使用。
+* 应用包名仅允许使用小写英文字母、数字、下划线（\_）、点（.）。
 
 ## 运作机制
 
 ### 整体流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/VzeK4dOyTx6oAxnv7-j4gw/zh-cn_image_0000002589324609.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/e0OGaJD1SLGMlAiVTmBgHQ/zh-cn_image_0000002736433253.png)
 
 * **流程：**
 
@@ -54,7 +55,7 @@ WebNativeMessagingExtensionAbility组件当前仅支持2in1设备。
 5. **应用**监听读端的文件描述符，获取浏览器扩展发过来的消息指令，并通过写端的文件描述符发送回去。
 6. **应用**使用[WebNativeMessagingExtensionContext.startAbility](../harmonyos-references/arkts-apis-web-webnativemessagingextensioncontext.md#startability)拉起本应用的UIAbility图形界面。
 
-说明
+**说明** 
 
 WebNativeMessagingExtensionAbility为单实例独立进程，多次调用connectNative接口仅拉起一个实例，同时触发多次onConnectNative回调，需要**应用**管理多会话场景。
 
@@ -69,24 +70,24 @@ extension配置采用json字符串格式
 
 extension配置格式：
 
-```
-1. {
-2. // 应用包名
-3. "name": "com.example.myapplication",
-4. // 具体描述
-5. "description": "Send message to native app.",
-6. /*
-7. * WebNativeMessagingExtensionAbility名称，用于元能力want填充abilityName，一个应用应只有一个
-8. * WebNativeMessagingExtensionAbility
-9. */
-10. "abilityName": "webExtensionAbility",
-11. /*
-12. * 允许访问该WebNativeMessagingExtensionAbility的浏览器扩展url信息，不同的浏览器的扩展有不同的scheme协议，华为浏览器使用chrome-extension协议头
-13. */
-14. "allowed_origins":[
-15. "chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/"
-16. ]
-17. }
+```json5
+{
+  // 应用包名
+  "name": "com.example.myapplication",
+  // 具体描述
+  "description": "Send message to native app.",
+  /*
+   * WebNativeMessagingExtensionAbility名称，用于元能力want填充abilityName，一个应用应只有一个
+   * WebNativeMessagingExtensionAbility
+   */
+  "abilityName": "webExtensionAbility",
+  /*
+   * 允许访问该WebNativeMessagingExtensionAbility的浏览器扩展url信息，不同的浏览器的扩展有不同的scheme协议，华为浏览器使用chrome-extension协议头
+   */
+  "allowed_origins":[
+    "chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/"
+  ]
+}
 ```
 
 extension配置通过[dataShare配置项](share-config.md#modulejson5-配置)向浏览器应用暴露，具体的配置方式可参考下方[实现一个WebNativeMessagingExtensionAbility（应用开发者）](web-native-messaging.md#实现一个webnativemessagingextensionability应用开发者)中步骤6。其中，uri为固定格式：datashareproxy://[包名]/browserNativeMessagingHosts，value字段填写上述extension配置的JSON字符串，allowList字段填写允许访问该配置的浏览器应用的appIdentifier。
@@ -105,7 +106,7 @@ NativeMessaging连接使用的具体格式，每个消息都使用JSON进行序�
 
 ### 实现一个connectNative的扩展（应用开发者）
 
-说明
+**说明** 
 
 需按w3c标准配置manifest.json和background.js实现通信。
 
@@ -115,89 +116,89 @@ NativeMessaging连接使用的具体格式，每个消息都使用JSON进行序�
 
 **实现配置manifest.json**
 
-```
-1. {
-2. "name": "com.example.myapplication",
-3. "version": "1.0.1",
-4. "description": "Launch APP",
-5. "manifest_version": 3,
-6. "permissions": ["nativeMessaging", "tabs", "scripting"], // 根据实际场景是否需要进行选择
-7. "host_permissions": ["http://*/*", "https://*/*", "ftp://*/*", "file://*/*"], // 根据实际场景选择
-8. "background": {
-9. "service_worker": "background.js" // 用于运行插件runtime命令
-10. },
-11. "content_scripts": [
-12. {
-13. "matches": ["http://*/*", "https://*/*", "ftp://*/*", "file://*/*"], // 根据实际场景选择
-14. "js": ["main.js"] // 用于运行插件js命令
-15. }
-16. ],
-17. "action": {
-18. "default_popup": "index.html" // 插件页面展示
-19. }
-20. }
+```json5
+{
+  "name": "com.example.myapplication",
+  "version": "1.0.1",
+  "description": "Launch APP",
+  "manifest_version": 3,
+  "permissions": ["nativeMessaging", "tabs", "scripting"], // 根据实际场景是否需要进行选择
+  "host_permissions": ["http://*/*", "https://*/*", "ftp://*/*", "file://*/*"], // 根据实际场景选择
+  "background": {
+    "service_worker": "background.js" // 用于运行插件runtime命令
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "ftp://*/*", "file://*/*"], // 根据实际场景选择
+      "js": ["main.js"] // 用于运行插件js命令
+    }
+  ],
+  "action": {
+    "default_popup": "index.html" // 插件页面展示
+  }
+}
 ```
 
 **实现main.js**
 
-```
-1. // 从html中触发调用
-2. function sendMessageToNative() {
-3. var message = "ping"; // 发送ping
-4. chrome.runtime.sendMessage({
-5. type: "sendMessage",
-6. message: message
-7. }, function (response) {});
-8. }
+```js
+// 从html中触发调用
+function sendMessageToNative() {
+  var message = "ping"; // 发送ping
+  chrome.runtime.sendMessage({
+    type: "sendMessage",
+    message: message
+  }, function (response) {});
+}
 ```
 
 **实现配置background.js**
 
 1. 使用chrome.runtime.connectNative连接
 
-   ```
-   1. var port = null;
-   2. // 监听来自main.js的信息
-   3. chrome.runtime.onMessage.addListener(
-   4. function (request, sender, sendResponse) {
-   5. if (request.type == "sendMessage") {
-   6. if (port == null) {
-   7. connectToNativeHost();
-   8. }
-   9. port.postMessage(request.message); // 向应用程序发送信息
-   10. }
-   11. return true; // 保持消息通道开放
-   12. });
-   13. function connectToNativeHost() {
-   14. var bundleName = "com.example.app"; // 插件对应应用的bundleName
-   15. port = chrome.runtime.connectNative(bundleName); // 根据bundleName名得到通信端口port
-   16. port.onMessage.addListener(onNativeMessage); // 监听native应用程序是否发来消息
-   17. port.onDisconnect.addListener(onDisconnected); // 监听是否断开连接
-   18. }
-   19. // 接收到来自native程序的消息时触发
-   20. async function onNativeMessage(message) {
-   21. console.info('接收到从本地应用程序发送来的消息：' + JSON.stringify(message)); // 示例中的pong
-   22. }
-   23. // 断开连接时触发
-   24. function onDisconnected() {
-   25. port = null;
-   26. }
+   ```ts
+   var port = null;
+   // 监听来自main.js的信息
+   chrome.runtime.onMessage.addListener(
+     function (request, sender, sendResponse) {
+       if (request.type == "sendMessage") {
+         if (port == null) {
+           connectToNativeHost();
+         }
+         port.postMessage(request.message); // 向应用程序发送信息
+       }
+       return true; // 保持消息通道开放
+   });
+   function connectToNativeHost() {
+     var bundleName = "com.example.app"; // 插件对应应用的bundleName
+     port = chrome.runtime.connectNative(bundleName); // 根据bundleName名得到通信端口port
+     port.onMessage.addListener(onNativeMessage); // 监听native应用程序是否发来消息
+     port.onDisconnect.addListener(onDisconnected); // 监听是否断开连接
+   }
+    // 接收到来自native程序的消息时触发
+   async function onNativeMessage(message) {
+     console.info('接收到从本地应用程序发送来的消息：' + JSON.stringify(message)); // 示例中的pong
+   }
+   // 断开连接时触发
+   function onDisconnected() {
+     port = null;
+   }
    ```
 2. 使用chrome.runtime.sendNativeMessage连接
 
-   ```
-   1. function sendNativeMessage() {
-   2. var bundleName = "com.example.app"; // 插件对应应用的bundleName
-   3. var nativeMessage = "ping"; // 插件要发给应用的内容
-   4. chrome.runtime.sendNativeMessage(
-   5. bundleName,
-   6. {message: nativeMessage},
-   7. function(response) {
-   8. // 收到一次应用回复的信息后断开连接
-   9. console.info("sendNativeMessage收到应用程序响应:", JSON.stringify (response));
-   10. }
-   11. )
-   12. }
+   ```ts
+   function sendNativeMessage() {
+     var bundleName = "com.example.app"; // 插件对应应用的bundleName
+     var nativeMessage = "ping"; // 插件要发给应用的内容
+     chrome.runtime.sendNativeMessage(
+       bundleName,
+       {message: nativeMessage},
+       function(response) {
+       // 收到一次应用回复的信息后断开连接
+       console.info("sendNativeMessage收到应用程序响应:", JSON.stringify(response));
+       }
+     )
+   }
    ```
 
 ### 实现一个WebNativeMessagingExtensionAbility（应用开发者）
@@ -209,226 +210,226 @@ NativeMessaging连接使用的具体格式，每个消息都使用JSON进行序�
 
    其目录结构如下所示：
 
-   ```
-   1. ├── ets
-   2. │ ├── MyWebNativeMessageExtAbility
-   3. │ │   ├── MyWebNativeMessageExtAbility.ets
-   4. └
+   ```yml
+    ├── ets
+    │ ├── MyWebNativeMessageExtAbility
+    │ │   ├── MyWebNativeMessageExtAbility.ets
+    └
    ```
 3. 在MyWebNativeMessageExtAbility.ets文件中，增加导入[WebNativeMessagingExtensionAbility](../harmonyos-references/arkts-apis-web-webnativemessagingextensionability.md)的依赖包，自定义类继承WebNativeMessagingExtensionAbility组件并实现生命周期回调。
 
-   ```
-   1. import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import {buffer, util} from '@kit.ArkTS';
-   4. import { fileIo } from '@kit.CoreFileKit';
+   ```ts
+   import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import {buffer, util} from '@kit.ArkTS';
+   import { fileIo } from '@kit.CoreFileKit';
 
-   6. const TAG: string = '[MyWebNativeMessageExtAbility]';
-   7. const DOMAIN_NUMBER: number = 0xFF00;
+   const TAG: string = '[MyWebNativeMessageExtAbility]';
+   const DOMAIN_NUMBER: number = 0xFF00;
 
-   9. export default class MyWebNativeMessageExtAbility extends WebNativeMessagingExtensionAbility {
-   10. // 读取扩展发来的消息，并回复
-   11. async ReadAsync(fdRead:number, fdWrite:number) : Promise<void> {
-   12. try {
-   13. // read
-   14. let arrayBuffer = new ArrayBuffer(1024);
-   15. let readLen = await fileIo.read(fdRead, arrayBuffer);
-   16. if (readLen <= 4) {
-   17. hilog.error(DOMAIN_NUMBER, TAG, 'read pipe length failed');
-   18. return;
-   19. }
-   20. hilog.info(DOMAIN_NUMBER, TAG, 'read pipe %{public}s', buffer.from(arrayBuffer, 4, readLen - 4).toString());
+   export default class MyWebNativeMessageExtAbility extends WebNativeMessagingExtensionAbility {
+     // 读取扩展发来的消息，并回复
+     async ReadAsync(fdRead:number, fdWrite:number) : Promise<void> {
+       try {
+         // read
+         let arrayBuffer = new ArrayBuffer(1024);
+         let readLen = await fileIo.read(fdRead, arrayBuffer);
+         if (readLen <= 4) {
+           hilog.error(DOMAIN_NUMBER, TAG, 'read pipe length failed');
+           return;
+         }
+         hilog.info(DOMAIN_NUMBER, TAG, 'read pipe %{public}s', buffer.from(arrayBuffer, 4, readLen - 4).toString());
 
-   22. // write
-   23. let strResponse : string = "pong";
-   24. const encoder = new util.TextEncoder("utf-8");
-   25. const strBytes = encoder.encodeInto(strResponse);
-   26. let bufferLen = strBytes.length;
-   27. const lenBytes = new Uint8Array(4);
-   28. lenBytes[0] = (bufferLen >> 0) & 0xFF;
-   29. lenBytes[1] = (bufferLen >> 8) & 0xFF;
-   30. lenBytes[2] = (bufferLen >> 16) & 0xFF;
-   31. lenBytes[3] = (bufferLen >> 24) & 0xFF;
-   32. const writeBuffer = new Uint8Array(4 + bufferLen);
-   33. writeBuffer.set(lenBytes, 0);
-   34. writeBuffer.set(strBytes, 4);
-   35. let writeLen = await fileIo.write(fdWrite, writeBuffer.buffer);
-   36. hilog.info(DOMAIN_NUMBER, TAG, 'write pipe length %{public}d', writeLen);
-   37. } catch (err) {
-   38. hilog.error(DOMAIN_NUMBER, TAG, 'fileIo failed, error code: ' + err.code + " message: " + err.code);
-   39. }
-   40. }
+         // write
+         let strResponse : string = "pong";
+         const encoder = new util.TextEncoder("utf-8");
+         const strBytes = encoder.encodeInto(strResponse);
+         let bufferLen = strBytes.length;
+         const lenBytes = new Uint8Array(4);
+         lenBytes[0] = (bufferLen >> 0) & 0xFF;
+         lenBytes[1] = (bufferLen >> 8) & 0xFF;
+         lenBytes[2] = (bufferLen >> 16) & 0xFF;
+         lenBytes[3] = (bufferLen >> 24) & 0xFF;
+         const writeBuffer = new Uint8Array(4 + bufferLen);
+         writeBuffer.set(lenBytes, 0);
+         writeBuffer.set(strBytes, 4);
+         let writeLen = await fileIo.write(fdWrite, writeBuffer.buffer);
+         hilog.info(DOMAIN_NUMBER, TAG, 'write pipe length %{public}d', writeLen);
+       } catch (err) {
+         hilog.error(DOMAIN_NUMBER, TAG, 'fileIo failed, error code: ' + err.code + " message: " + err.message);
+       }
+     }
 
-   42. onConnectNative(info: ConnectionInfo): void {
-   43. hilog.info(DOMAIN_NUMBER, TAG,
-   44. `onConnectNative, connectionId ${info.connectionId} caller bundle: ${info.bundleName}, extension origin: ${info.extensionOrigin}, pipe Read: ${info.fdRead}, pipe write ${info.fdWrite}  `);
-   45. this.ReadAsync(info.fdRead, info.fdWrite)
-   46. }
+     onConnectNative(info: ConnectionInfo): void {
+       hilog.info(DOMAIN_NUMBER, TAG,
+         `onConnectNative, connectionId ${info.connectionId} caller bundle: ${info.bundleName}, extension origin: ${info.extensionOrigin}, pipe Read: ${info.fdRead}, pipe write ${info.fdWrite}  `);
+       this.ReadAsync(info.fdRead, info.fdWrite)
+     }
 
-   48. onDisconnectNative(info: ConnectionInfo): void {
-   49. hilog.info(DOMAIN_NUMBER, TAG, `onDisconnectNative, connectionId: ${info.connectionId}`);
-   50. }
+     onDisconnectNative(info: ConnectionInfo): void {
+       hilog.info(DOMAIN_NUMBER, TAG, `onDisconnectNative, connectionId: ${info.connectionId}`);
+     }
 
-   52. onDestroy(): void {
-   53. hilog.info(DOMAIN_NUMBER, TAG, 'onDestroy');
-   54. }
-   55. };
+     onDestroy(): void {
+       hilog.info(DOMAIN_NUMBER, TAG, 'onDestroy');
+     }
+   };
    ```
 4. 在工程Module的[module.json5配置文件](module-configuration-file.md)中注册WebNativeMessagingExtensionAbility组件。设置type标签为“webNativeMessaging”，srcEntry标签指向组件代码路径。
 
-   ```
-   1. {
-   2. "module": {
-   3. // ...
-   4. "extensionAbilities": [
-   5. {
-   6. "name": "MyWebNativeMessageExtAbility",
-   7. "description": "webNativeMessaging",
-   8. "type": "webNativeMessaging",
-   9. "exported": true,
-   10. "srcEntry": "./ets/MyWebNativeMessageExtAbility/MyWebNativeMessageExtAbility.ets"
-   11. }
-   12. ]
-   13. }
-   14. }
+   ```json5
+   {
+     "module": {
+       // ...
+       "extensionAbilities": [
+         {
+           "name": "MyWebNativeMessageExtAbility",
+           "description": "webNativeMessaging",
+           "type": "webNativeMessaging",
+           "exported": true,
+           "srcEntry": "./ets/MyWebNativeMessageExtAbility/MyWebNativeMessageExtAbility.ets"
+         }
+       ]
+     }
+   }
    ```
 5. 在工程Module对应的[module.json5配置文件](module-configuration-file.md)中配置crossAppSharedConfig，定义共享配置项，共享配置文件需放置在工程resources/base/profile目录下，并通过$资源访问方式引用。
 
-   ```
-   1. {
-   2. "module": {
-   3. "crossAppSharedConfig": "$profile:shared_config"
-   4. }
-   5. }
+   ```json
+   {
+     "module": {
+       "crossAppSharedConfig": "$profile:shared_config"
+     }
+   }
    ```
 
 6.在shared\_config.json添加[extension配置](web-native-messaging.md#datashare存放应用extension配置信息)。
 
-```
-1. {
-2. "crossAppSharedConfig": [
-3. // ...
-4. {
-5. // uri固定格式，datashareproxy://[包名]/browserNativeMessagingHosts，浏览器应用通过该uri获取的value，即extension配置。
-6. "uri": "datashareproxy://com.example.app/browserNativeMessagingHosts",
-7. // extension配置，格式参考extension配置章节的格式，注意转义字符
-8. "value": "{\"name\": \"com.example.myapplication\",\"description\": \"Send message to native app.\",\"abilityName\": \"MyWebNativeMessageExtAbility\", \"allowed_origins\":[\"chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/\"]}",
-9. "allowList": [
-10. // 允许访问的应用appIdentifier, 这里加入具体浏览器的appIdentifier
-11. "1234567890123456789"
-12. ]
-13. }
-14. ]
-15. }
+```json5
+{
+  "crossAppSharedConfig": [
+    // ...
+    {
+      // uri固定格式，datashareproxy://[包名]/browserNativeMessagingHosts，浏览器应用通过该uri获取的value，即extension配置。
+      "uri": "datashareproxy://com.example.app/browserNativeMessagingHosts",
+      // extension配置，格式参考extension配置章节的格式，注意转义字符
+      "value": "{\"name\": \"com.example.myapplication\",\"description\": \"Send message to native app.\",\"abilityName\": \"MyWebNativeMessageExtAbility\", \"allowed_origins\":[\"chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/\"]}",
+      "allowList": [
+        // 允许访问的应用appIdentifier, 这里加入具体浏览器的appIdentifier
+        "1234567890123456789"
+      ]
+    }
+  ]
+}
 ```
 
 ### 实现拉起WebNativeMessagingExtensionAbility（浏览器开发者）
 
 浏览器负责实现扩展runtime接口，拉起WebNativeMessagingExtensionAbility，建立和管理NativeMessaging连接。需要申请权限：ohos.permission.WEB\_NATIVE\_MESSAGING。
 
-1. 当接收到创建NativeMessaging连接时，先通过[应用间配置共享接口](../harmonyos-references/js-apis-data-datashare.md#get20)获取目标应用的extension配置。然后读取WebNativeMessagingExtensionAbility名称和允许访问的扩展列表。最后校验是否允许访问。
+1. 当接收到创建NativeMessaging连接时，先通过[get20](../harmonyos-references/js-apis-data-datashare.md#get20)获取目标应用的extension配置。然后读取WebNativeMessagingExtensionAbility名称和允许访问的扩展列表。最后校验是否允许访问。
 
-   ```
-   1. import { dataShare } from '@kit.ArkData';
+   ```ts
+   import { dataShare } from '@kit.ArkData';
 
-   3. interface ExtensionConfig {
-   4. abilityName:string;
-   5. allowed_origins:string[];
-   6. }
+   interface ExtensionConfig {
+     abilityName:string;
+     allowed_origins:string[];
+   }
 
-   8. async function getManifestData(bundleName:string, connectExtensionOrigin:string) {
-   9. try {
-   10. // 调用dataShare接口获取extension配置
-   11. const dsProxyHelper = await dataShare.createDataProxyHandle();
-   12. const urisToGet = [`datashareproxy://${bundleName}/browserNativeMessagingHosts`];
-   13. const config : dataShare.DataProxyConfig = {
-   14. type: dataShare.DataProxyType.SHARED_CONFIG,
-   15. };
-   16. const results = await dsProxyHelper.get(urisToGet, config);
-   17. let foundValid = false;
-   18. for (let i = 0; i < results.length; i++) {
-   19. try {
-   20. const result = results[i];
-   21. const json = result.value;
-   22. if (typeof json !== "string") {
-   23. continue;
-   24. }
-   25. let jsonStr:string = json as string;
-   26. let info:ExtensionConfig = JSON.parse(jsonStr);
-   27. if (info.abilityName) {
-   28. console.info('Native message json info is ok');
-   29. if (!Array.isArray(info.allowed_origins)) {
-   30. info.allowed_origins = [info.allowed_origins];
-   31. }
-   32. if (!info.allowed_origins.includes(connectExtensionOrigin)) {
-   33. console.error('Origin not allowed, continue searching');
-   34. continue;
-   35. }
-   36. foundValid = true;
-   37. break;
-   38. }
-   39. } catch (error) {
-   40. console.error('NativeMessage JSON parse error:', error);
-   41. }
-   42. }
-   43. if (!foundValid) {
-   44. console.error('NativeMessage JSON no valid manifest found');
-   45. } else {
-   46. console.info('NativeMessage allowed_origins match ok');
-   47. }
-   48. } catch (error) {
-   49. console.error('Error getting config:', error);
-   50. }
-   51. }
+   async function getManifestData(bundleName:string, connectExtensionOrigin:string) {
+     try {
+      // 调用dataShare接口获取extension配置
+       const dsProxyHelper = await dataShare.createDataProxyHandle();
+       const urisToGet = [`datashareproxy://${bundleName}/browserNativeMessagingHosts`];
+       const config : dataShare.DataProxyConfig = {
+         type: dataShare.DataProxyType.SHARED_CONFIG,
+       };
+       const results = await dsProxyHelper.get(urisToGet, config);
+       let foundValid = false;
+       for (let i = 0; i < results.length; i++) {
+         try {
+           const result = results[i];
+           const json = result.value;
+           if (typeof json !== "string") {
+             continue;
+           }
+           let jsonStr:string = json as string;
+           let info:ExtensionConfig = JSON.parse(jsonStr);
+           if (info.abilityName) {
+             console.info('Native message json info is ok');
+             if (!Array.isArray(info.allowed_origins)) {
+               info.allowed_origins = [info.allowed_origins];
+             }
+             if (!info.allowed_origins.includes(connectExtensionOrigin)) {
+               console.error('Origin not allowed, continue searching');
+               continue;
+             }
+             foundValid = true;
+             break;
+           }
+         } catch (error) {
+           console.error('NativeMessage JSON parse error:', error);
+         }
+       }
+       if (!foundValid) {
+         console.error('NativeMessage JSON no valid manifest found');
+       } else {
+         console.info('NativeMessage allowed_origins match ok');
+       }
+     } catch (error) {
+       console.error('Error getting config:', error);
+     }
+   }
    ```
 2. 调用[webNativeMessagingExtensionManager.connectNative](../harmonyos-references/arkts-apis-web-webnativemessagingextensionmanager.md#webnativemessagingextensionmanagerconnectnative)创建NativeMessaging连接，如WebNativeMessagingExtensionAbility尚未运行，该接口则会拉起ExtensionAbility并触发。
 
-   ```
-   1. import { UIAbility, Want, common } from '@kit.AbilityKit';
-   2. import { webNativeMessagingExtensionManager } from '@kit.ArkWeb'
+   ```ts
+   import { UIAbility, Want, common } from '@kit.AbilityKit';
+   import { webNativeMessagingExtensionManager } from '@kit.ArkWeb'
 
-   4. class ConnectionCallback implements webNativeMessagingExtensionManager.WebExtensionConnectionCallback {
-   5. onConnect(connection:webNativeMessagingExtensionManager.ConnectionNativeInfo) {
-   6. // connected
-   7. console.error(`onConnect id ${connection.connectionId} is connected`);
-   8. }
-   9. onDisconnect(connection:webNativeMessagingExtensionManager.ConnectionNativeInfo) {
-   10. // disconnect
-   11. console.error(`onDisconnect id ${connection.connectionId} is connected`);
-   12. }
-   13. onFailed(code:webNativeMessagingExtensionManager.NmErrorCode, errMsg:string) {
-   14. console.error(`onFailed error code is ${code}, errMsg is ${errMsg}`);
-   15. }
-   16. }
+   class ConnectionCallback implements webNativeMessagingExtensionManager.WebExtensionConnectionCallback {
+     onConnect(connection:webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+       // connected
+       console.error(`onConnect id ${connection.connectionId} is connected`);
+     }
+     onDisconnect(connection:webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+       // disconnect
+       console.error(`onDisconnect id ${connection.connectionId} is disconnected`);
+     }
+     onFailed(code:webNativeMessagingExtensionManager.NmErrorCode, errMsg:string) {
+       console.error(`onFailed error code is ${code}, errMsg is ${errMsg}`);
+     }
+   }
 
-   18. function connectNative(abilityContext: common.UIAbilityContext, bundleName: string, abilityName: string,
-   19. connectExtensionOrigin: string, readPipe: number, writePipe: number) : void {
-   20. try {
-   21. let wantInfo:Want = {
-   22. bundleName: bundleName,
-   23. abilityName: abilityName,
-   24. parameters: {
-   25. 'ohos.arkweb.messageReadPipe': { 'type': 'FD', 'value': readPipe },
-   26. 'ohos.arkweb.messageWritePipe': { 'type': 'FD', 'value': writePipe },
-   27. 'ohos.arkweb.extensionOrigin': connectExtensionOrigin
-   28. },
-   29. };
+   function connectNative(abilityContext: common.UIAbilityContext, bundleName: string, abilityName: string,
+     connectExtensionOrigin: string, readPipe: number, writePipe: number) : void {
+     try {
+       let wantInfo:Want = {
+         bundleName: bundleName,
+         abilityName: abilityName,
+         parameters: {
+           'ohos.arkweb.messageReadPipe': { 'type': 'FD', 'value': readPipe },
+           'ohos.arkweb.messageWritePipe': { 'type': 'FD', 'value': writePipe },
+           'ohos.arkweb.extensionOrigin': connectExtensionOrigin
+         },
+       };
 
-   31. let options : ConnectionCallback = new ConnectionCallback;
-   32. let connectId = webNativeMessagingExtensionManager.connectNative(abilityContext, wantInfo, options);
-   33. console.info(`innerWebNativeMessageManager  connectionId : ${connectId}` );
-   34. } catch (error) {
-   35. console.info(`inner callback error Message: ${JSON.stringify(error)}`);
-   36. }
-   37. }
+       let options : ConnectionCallback = new ConnectionCallback;
+       let connectId = webNativeMessagingExtensionManager.connectNative(abilityContext, wantInfo, options);
+       console.info(`innerWebNativeMessageManager  connectionId : ${connectId}` );
+     } catch (error) {
+       console.info(`inner callback error Message: ${JSON.stringify(error)}`);
+     }
+   }
    ```
 3. 需要销毁NativeMessaging连接时，调用[webNativeMessagingExtensionManager.disconnectNative](../harmonyos-references/arkts-apis-web-webnativemessagingextensionmanager.md#webnativemessagingextensionmanagerdisconnectnative)。
 
-   ```
-   1. import { webNativeMessagingExtensionManager } from '@kit.ArkWeb'
+   ```ts
+   import { webNativeMessagingExtensionManager } from '@kit.ArkWeb'
 
-   3. function disconnectNative(connectId: number) : void {
-   4. console.info(`NativeMessageDisconnect start connectionId is ${connectId}`);
-   5. webNativeMessagingExtensionManager.disconnectNative(connectId);
-   6. }
+   function disconnectNative(connectId: number) : void {
+     console.info(`NativeMessageDisconnect start connectionId is ${connectId}`);
+     webNativeMessagingExtensionManager.disconnectNative(connectId);
+   }
    ```

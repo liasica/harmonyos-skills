@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-termi
 title: Ability Kit术语
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Ability Kit术语
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ab93ef0189506a8aab1bc4c9f3f925ee62995e7eadf6a2aea12d2301ec28aa0d
+scraped_at: 2026-09-02T14:59:11+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:87988298b7289f25f722dc17ddc46a973eaddc3c76a8dca1379b2cbd423450a5
 ---
 
 ## A
@@ -48,7 +48,7 @@ Deep Linking是一种通过链接拉起指定应用的技术，其特点是支�
 
 ### FA模型
 
-FA模型是早期的应用模型，为应用程序提供必备的组件与运行机制。在该模型中每个应用组件独享一个ArkTS引擎实例，适用于简单应用的开发。
+FA模型是早期的应用模型，为应用程序提供必备的组件与运行机制。在该模型中每个应用组件独享一个ArkTS引擎实例，适用于简单应用的开发。目前该模型已不再主推，建议使用新的Stage模型进行开发。
 
 ## I
 
@@ -89,6 +89,16 @@ PageAbility是FA模型下的包含UI、提供展示UI能力的应用组件，主
 Stage模型是当前系统主推的应用模型，为应用程序提供必备的组件与运行机制。该模型提供了AbilityStage组件管理器和WindowStage窗口管理器，分别作为应用组件与窗口的“舞台”，故得名"Stage模型"。
 
 Stage模型支持多个应用组件共享同一个ArkTS引擎实例，以及应用组件间的状态共享与对象调用，可以降低内存开销、提升开发效率，适用于复杂应用的开发。
+
+## T
+
+### Taihe
+
+一种跨语言API编程模型，开发者通过编写IDL文件（以ohidl为扩展名）定义业务接口，并使用Taihe编译器工具自动生成目标语言的接口胶水层代码，简化开发流程。
+
+### taihec
+
+Taihe的编译器工具，用于解析ohidl文件并生成目标代码。
 
 ## U
 

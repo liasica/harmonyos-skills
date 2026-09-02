@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: ExtensionAbilityInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > ExtensionAbilityInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:47+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:99eba8aecc2d09be4a1ee2f53ac834810fb0e3c6a5423c14519d08d3f2c6a0be
+scraped_at: 2026-09-02T15:00:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4fc98935790229714024b8d0a36a3ce0a54d2aa79201a071374457700a8ca5b7
 ---
 
 ExtensionAbility信息，可以通过[bundleManager.getBundleInfoForSelf](js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)获取自身的ExtensionAbility信息，其中参数[bundleFlags](js-apis-bundlemanager.md#bundleflag)至少包含GET\_BUNDLE\_INFO\_WITH\_HAP\_MODULE和GET\_BUNDLE\_INFO\_WITH\_EXTENSION\_ABILITY。
 
-说明
+**说明** 
 
-本模块首批接口从API version 9 开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { bundleManager } from '@kit.AbilityKit';
+```ts
+import { bundleManager } from '@kit.AbilityKit';
 ```
 
 ## ExtensionAbilityInfo
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**: SystemCapability.BundleManager.BundleFramework.Core
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: OH_Drawing_TextStyle
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_Drawing_TextStyle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:291955a359d3d182008386a7c3c54fec253d14e510d163763a005011c214e331
+scraped_at: 2026-09-02T14:53:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6980aee7135ee9fb326764ae90f3ab47ff3045e3762bc8aea2a6d8752c7d9775
 ---
 
-```
-1. typedef struct OH_Drawing_TextStyle OH_Drawing_TextStyle
+```c
+typedef struct OH_Drawing_TextStyle OH_Drawing_TextStyle
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于管理字体颜色、装饰等。
 

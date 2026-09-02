@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mind
 title: MindSpore
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 模块 > MindSpore
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:149e64ec901975470ca1537a00077ea18ef8a7fa25dcd3e4fc8b17662d69f9ff
+scraped_at: 2026-09-02T14:53:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:188c8c1cc6561905ada50bf401cc4b8c7f1df22fe04e3d548cf0b244245d1c61
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供MindSpore Lite的模型推理相关接口，该模块下的接口是非线程安全的。
 
@@ -19,8 +17,6 @@ PhonePC/2in1TabletTVWearable
 **起始版本：** 9
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

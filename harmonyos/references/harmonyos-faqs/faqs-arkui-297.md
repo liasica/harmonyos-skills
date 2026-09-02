@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-297
 title: 如何进行截屏并获取截屏内容
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何进行截屏并获取截屏内容
+breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何进行截屏并获取截屏内容
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:16+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:50+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:0773ea5b1a83c5fbc9a4b05bdc98eae4ccd07fe50c9fa7cf86b7888c26155055
 ---
 

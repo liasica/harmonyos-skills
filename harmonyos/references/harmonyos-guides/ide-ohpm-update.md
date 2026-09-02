@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-upda
 title: ohpm update
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm update
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:43+08:00
-doc_updated_at: 2026-04-22
-content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c327ae
+scraped_at: 2026-09-02T15:00:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bd9b05805cd402971881f6d753e01e309df0fc45f3c6feca77dd0038696944b3
 ---
 
 更新三方库。
 
 ## 命令格式
 
-```
-1. ohpm update [options] [[<@group>/]<pkg>] ...
-2. alias: up
+```screen
+ohpm update [options] [[<@group>/]<pkg>] ...
+alias: up
 ```
 
-说明
+**说明** 
 
 * @group：三方库的命名空间，可选。
 * pkg：三方库名称，可选。
@@ -30,23 +30,25 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 
 ### install\_all
 
-* 默认值：false
+* 默认值：true
 * 类型：Boolean
 * 别名：all
 
-您可以在 update 命令后面配置 --all或者--install\_all 参数，表示更新当前模块指定依赖成功后同时安装当前工程下的所有模块的依赖。
+您可以在 update 命令后面配置 --all或者--install\_all参数，表示更新当前模块指定依赖成功后同时安装当前工程下的所有模块的依赖。
+
+从ohpm 26.0.0.630版本开始，如无需安装，可配置--no-install\_all参数。
 
 ### prefix
 
 * 默认值：""
-* 类型： string
+* 类型：string
 
 可以在 update 命令后面配置 --prefix <string> 参数，用来指定包的根目录，该目录下必须存在 oh-package.json5 文件。
 
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型：Number
 * 别名：ft
 
 可以在 update 命令后面配置 --ft <number>或者 --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为 60000 ms。
@@ -54,7 +56,7 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 ### max\_concurrent
 
 * 默认值：50
-* 类型： Number
+* 类型：Number
 * 别名：mc
 
 可以在 update 命令后面配置 --mc <number> 或者 --max\_concurrent <number> 参数，设置最大活动并发请求数（即 ohpm 操作期间任何时间的最大网络请求数），如果没有指定，默认最大并发请求数为 50 次。
@@ -62,7 +64,7 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 ### retry\_times
 
 * 默认值：1
-* 类型： Number
+* 类型：Number
 * 别名：rt
 
 可以在 update 命令后面配置 --rt <number> 或者 --retry\_times <number> 参数，设置操作失败前的最大重试次数，如果没有指定，默认最大重试次数为 1 次。
@@ -70,7 +72,7 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 ### retry\_interval
 
 * 默认值：1000
-* 类型： Number
+* 类型：Number
 * 别名：ri
 
 可以在 update 命令后面配置 --ri <number> 或者 --retry\_interval <number> 参数，设置重试失败前的等待时间，如果没有指定，默认等待时间为 1000 ms。
@@ -78,9 +80,11 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 ### strict\_ssl
 
 * 默认值：true
-* 类型： Boolean
+* 类型：Boolean
 
-可以在 update 命令后面配置 --strict\_ssl true 参数，校验 https 证书；配置 --strict\_ssl false 参数，不校验 https 证书。
+可以在update命令后面不配置参数、配置--strict\_ssl或--strict\_ssl true参数时，开启校验HTTPS证书。
+
+从ohpm 26.0.0.630版本开始，如需关闭校验，可配置--no-strict\_ssl或--strict\_ssl false参数，推荐使用--no-strict\_ssl参数。
 
 ### registry
 
@@ -91,7 +95,7 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 
 ### all-modules
 
-* 默认值：""
+* 默认值：false
 * 类型：Boolean
 
 可以在 update 命令后面配置 --all-modules 参数，表示同步更新所有模块的依赖关系。
@@ -108,19 +112,19 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 * 默认值：true
 * 类型：Boolean
 
-可以在 update 命令后面配置 --experimental-concurrently-safe 参数，并发安全地安装依赖。这是一个实验性选项。
+可以在 update 命令后面配置 --experimental-concurrently-safe 参数，并发安全地安装依赖。这是一个实验性选项。如无需并发地安装依赖时，配置--no-experimental-concurrently-safe 参数。
 
 ### log\_level
 
 * 默认值：无
-* 类型： String
+* 类型：String
 
 从ohpm 6.0.2.636版本开始，可以在 update 命令后配置--log\_level <string>参数，指定执行当前命令的日志级别（info、debug、warn、error），如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
 ### debug
 
 * 默认值：false
-* 类型： Boolean
+* 类型：Boolean
 
 从ohpm 6.0.2.636版本开始，可以在命令后配置--debug参数，指定执行当前命令的日志级别为debug，该配置仅在当前命令行生效，不修改.ohpmrc中的日志级别，如果未指定该值则日志级别为.ohpmrc中配置的log\_level的级别。
 
@@ -147,10 +151,12 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 
 ### resolve\_conflict
 
-* 默认值：false
+* 默认值：true
 * 类型：Boolean
 
-从ohpm 6.0.2.636版本开始，可以在 update 命令后面配置 --resolve\_conflict 参数，ohpm会自动处理依赖版本冲突，详情参见[resolve\_conflict](ide-ohpmrc.md#section368717475562)。
+从ohpm 6.0.2.636版本开始，可以在update命令后面配置--resolve\_conflict参数，ohpm会自动处理依赖版本冲突，详情参见[resolve\_conflict](ide-ohpmrc.md#section368717475562)。
+
+从ohpm 26.0.0.630版本开始，如无需自动处理时，配置--no-resolve\_conflict参数。
 
 ### cache
 
@@ -163,31 +169,31 @@ content_hash: sha256:0c323a3a955827cf524707743b20e7b545e17fb421a5851f2dcf5e3104c
 
 若当前三方库是 APP，且它的依赖项为：dep1 ( dep2，...)，dep1 已发布的版本有：
 
-```
-1. {
-2. "dist-tags": { "latest": "1.2.2", "release": "1.2.0" },
-3. "versions": [
-4. "1.2.2",
-5. "1.2.1",
-6. "1.2.0",
-7. "1.1.2",
-8. "1.1.1",
-9. "1.0.0",
-10. "0.4.1",
-11. "0.4.0",
-12. "0.2.0"
-13. ]
-14. }
+```screen
+{
+  "dist-tags": { "latest": "1.2.2", "release": "1.2.0" },
+  "versions": [
+    "1.2.2",
+    "1.2.1",
+    "1.2.0",
+    "1.1.2",
+    "1.1.1",
+    "1.0.0",
+    "0.4.1",
+    "0.4.0",
+    "0.2.0"
+  ]
+}
 ```
 
 ### ^ 依赖项
 
 使用^符号会更新到版本 x.y.z 中 y 和 z 的最新版本。如果 APP 中 oh-package.json5 文件中 dep1 的版本号为：
 
-```
-1. "dependencies": {
-2. "dep1": "^1.1.1"
-3. }
+```screen
+"dependencies": {
+  "dep1": "^1.1.1"
+}
 ```
 
 ohpm update 则安装 dep1@1.2.2，因为最新版本指向 1.2.2，且1.2.2 满足 ^1.1.1。
@@ -196,22 +202,22 @@ ohpm update 则安装 dep1@1.2.2，因为最新版本指向 1.2.2，且1.2.2 满
 
 使用~符号会更新到版本 x.y.z 中 z 的最新版本。如果 APP 中 oh-package.json5 文件中 dep1 的版本号为：
 
-```
-1. "dependencies": {
-2. "dep1": "~1.1.1"
-3. }
+```screen
+"dependencies": {
+  "dep1": "~1.1.1"
+}
 ```
 
-ohpm update 则安装 dep1@1.1.2，尽管最新版本指向 1.2.2，但 1.2.2 不满足 ~1.1.1（版本号须 1.1.1 ≤ version < 1.2.0），所以 ~1.1.1 使用满足最高排序版本，即1.1.2 ，进行更新。
+ohpm update 则安装 dep1@1.1.2，尽管最新版本指向 1.2.2，但 1.2.2 不满足 ~1.1.1（版本号须 1.1.1 ≤ version < 1.2.0），所以 ~1.1.1 使用满足最高排序版本，即1.1.2，进行更新。
 
 ### tag 依赖项
 
 使用 tag 会更新到 tag 对应的版本。如果 APP 中 oh-package.json5 文件中 dep1 的版本号为：
 
-```
-1. "dependencies": {
-2. "dep1": "tag:release"
-3. }
+```screen
+"dependencies": {
+  "dep1": "tag:release"
+}
 ```
 
 如果此时 release 标签对应版本被变更为 1.2.2，ohpm update --tag-filter ^r 则会将 dep1@1.2.0 更新为 dep1@1.2.2，因为 dep1 是通过 release 标签引入，release 符合 --tag-filter 指定的 ^r 正则表达式，所以会重新获取 release 标签对应的版本 1.2.2。
@@ -220,19 +226,19 @@ ohpm update 则安装 dep1@1.1.2，尽管最新版本指向 1.2.2，但 1.2.2 �
 
 * 如果 APP 中 dep1 依赖版本号低于 1.0.0 且带有 ^，例如：
 
-  ```
-  1. "dependencies": {
-  2. "dep1": "^0.2.0"
-  3. }
+  ```screen
+  "dependencies": {
+    "dep1": "^0.2.0"
+  }
   ```
 
   ohpm update 则安装 dep1@0.2.0，因为没有其他版本满足 ^0.2.0。
 * 但是 dep1 依赖版本号是 ^0.4.0：
 
-  ```
-  1. "dependencies": {
-  2. "dep1": "^0.4.0"
-  3. }
+  ```screen
+  "dependencies": {
+    "dep1": "^0.4.0"
+  }
   ```
 
   ohpm update 则安装 dep1@0.4.1，因为它是满足 ^0.4.0（版本号须 0.4.0 ≤ version < 0.5.0）的最高排序版本。

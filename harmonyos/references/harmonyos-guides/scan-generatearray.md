@@ -3,12 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-generate
 title: 通过字节数组生成码图
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 码图生成 > 通过字节数组生成码图
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:42+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:abd3479b9946cfcc369fbfece6cc95d733a2092528f7219e73e748899cb7318a
+scraped_at: 2026-09-02T14:50:19+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:bcdeaea9dbe7ea9398805fc46631429e08d767433b377409285d68ba223c1c8f
 ---
-
-## 基本概念
 
 码图生成能力支持将字节数组转换为自定义格式的码图。
 
@@ -20,12 +18,12 @@ content_hash: sha256:abd3479b9946cfcc369fbfece6cc95d733a2092528f7219e73e748899cb
 
 ## 约束与限制
 
-* 码图生成能力支持Phone、Tablet、Wearable、2in1、TV（从5.1.0(18)版本开始支持Wearable、从5.1.1(19)版本开始支持2in1、TV）。
+* 码图生成能力支持Phone、Tablet、Wearable、PC/2in1、TV（从API版本5.1.0(18)开始支持Wearable，从API版本5.1.1(19)开始支持PC/2in1、TV）。
 * 若Scan Kit识别某码图内容显示内容为乱码，则该码图的字节数组需要通过专门的解码器解析，例如地铁闸机。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/toF2t2cBQ6C3Dtkz6lgkFg/zh-cn_image_0000002589324985.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/yddOl4xHT0SVKtF2fM2_tg/zh-cn_image_0000002706834610.png)
 
 1. 用户向应用发起生成码图请求后，传入需要生成的码图信息，包括码图的类型、宽高等。
 2. 应用通过调用Scan Kit的createBarcode接口启动码图生成能力。
@@ -38,7 +36,7 @@ content_hash: sha256:abd3479b9946cfcc369fbfece6cc95d733a2092528f7219e73e748899cb
 
 | 接口名 | 接口描述 |
 | --- | --- |
-| [createBarcode](../harmonyos-references/scan-generatebarcode.md#generatebarcodecreatebarcode-2)(content: ArrayBuffer, options: [CreateOptions](../harmonyos-references/scan-generatebarcode.md#createoptions)): Promise<image.[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)> | 码图生成接口，返回生成的码图，类型为image.PixelMap，可以使用Image组件渲染成图片。使用Promise异步回调。 |
+| [createBarcode](../harmonyos-references/scan-generatebarcode.md#createbarcode-2)(content: ArrayBuffer, options: [CreateOptions](../harmonyos-references/scan-generatebarcode.md#createoptions)): Promise<image.[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)> | 码图生成接口，返回生成的码图，类型为image.PixelMap，可以使用Image组件渲染成图片。使用Promise异步回调。 |
 
 ## 开发步骤
 
@@ -50,62 +48,68 @@ content_hash: sha256:abd3479b9946cfcc369fbfece6cc95d733a2092528f7219e73e748899cb
 
 1. 导入码图生成接口模块，该模块提供了码图生成的参数和方法，导入方法如下。
 
-   ```
-   1. // 导入码图生成需要的图片模块、错误码模块
-   2. import { scanCore, generateBarcode } from '@kit.ScanKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { image } from '@kit.ImageKit';
-   5. import { hilog } from '@kit.PerformanceAnalysisKit';
-   6. import { buffer } from '@kit.ArkTS';
+   ```typescript
+   // 导入码图生成需要的图片模块、错误码模块
+   import { scanCore, generateBarcode } from '@kit.ScanKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { image } from '@kit.ImageKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { buffer } from '@kit.ArkTS';
    ```
 2. 调用码图生成能力的createBarcode接口实现码图生成。
 
    * 通过Promise方式回调，获取生成的码图。
 
-     ```
-     1. const TAG: string = 'Create barcode';
+     ```typescript
+     const TAG: string = 'Create barcode';
 
-     3. @Entry
-     4. @Component
-     5. struct Index {
-     6. @State pixelMap: image.PixelMap | undefined = undefined;
+     @Entry
+     @Component
+     struct Index {
+       @State pixelMap: image.PixelMap | undefined = undefined;
 
-     8. build() {
-     9. Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-     10. Button('generateBarcode Promise').onClick(() => {
-     11. this.pixelMap = undefined;
-     12. let content: string =
-     13. '0177C10DD10F7768600202312110000063458FD14112345678FFFFD381012610b746365409210201b66636540ad0200020000000000110e617003201000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006645fbec664358ECF657CB40693c92da';
-     14. let contentBuffer: ArrayBuffer = buffer.from(content, 'hex').buffer; // 将包含十六进制字符的字符串转换成ArrayBuffer
-     15. let options: generateBarcode.CreateOptions = {
-     16. scanType: scanCore.ScanType.QR_CODE,
-     17. height: 400,
-     18. width: 400
-     19. };
-     20. try {
-     21. // 码图生成接口，成功返回PixelMap格式图片
-     22. generateBarcode.createBarcode(contentBuffer, options).then((pixelMap: image.PixelMap) => {
-     23. this.pixelMap = pixelMap;
-     24. hilog.info(0x0001, TAG, 'Succeeded in creating barCode.');
-     25. }).catch((err: BusinessError) => {
-     26. hilog.error(0x0001, TAG, `Failed to createBarCode. Code: ${err.code}, message: ${err.message}`);
-     27. });
-     28. } catch (err) {
-     29. hilog.error(0x0001, TAG,
-     30. `Failed to createBarcode by Promise with options. Code: ${err.code}, message: ${err.message}`);
-     31. }
-     32. })
-     33. // 获取生成码图后显示
-     34. if (this.pixelMap) {
-     35. Image(this.pixelMap).width(300).height(300).objectFit(ImageFit.Contain)
-     36. }
-     37. }
-     38. .width('100%')
-     39. .height('100%')
-     40. }
-     41. }
+       build() {
+         Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+           Button('generateBarcode')
+             .backgroundColor($r('sys.color.ohos_id_color_button_normal'))
+             .fontColor($r('sys.color.ohos_id_color_text_primary_activated'))
+             .align(Alignment.Center)
+             .type(ButtonType.Capsule)
+             .width('90%')
+             .margin({ bottom: 12 })
+             .onClick(() => {
+               const content: string =
+                 '0177C10DD10F7768600202312110000063458FD14112345678FFFFD381012610b746365409210201b66636540ad0200020000000000110e617003201000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006645fbec664358ECF657CB40693c92da';
+               const contentBuffer: ArrayBuffer = buffer.from(content, 'hex').buffer; // 将包含十六进制字符的字符串转换成ArrayBuffer
+               const options: generateBarcode.CreateOptions = {
+                 scanType: scanCore.ScanType.QR_CODE,
+                 height: 400,
+                 width: 400
+               };
+               try {
+                 // 码图生成接口，成功返回PixelMap格式图片
+                 generateBarcode.createBarcode(contentBuffer, options).then((pixelMap: image.PixelMap) => {
+                   this.pixelMap = pixelMap;
+                   hilog.info(0x0001, TAG, 'Succeeded in creating barCode.');
+                 }).catch((err: BusinessError) => {
+                   hilog.error(0x0001, TAG, `Failed to createBarCode. Code: ${err.code}, message: ${err.message}`);
+                 });
+               } catch (err) {
+                 hilog.error(0x0001, TAG,
+                   `Failed to createBarcode by Promise with options. Code: ${err.code}, message: ${err.message}`);
+               }
+             })
+           // 获取生成码图后显示
+           if (this.pixelMap) {
+             Image(this.pixelMap).width(300).height(300).objectFit(ImageFit.Contain)
+           }
+         }
+         .width('100%')
+         .height('100%')
+       }
+     }
      ```
 
 ## 模拟器开发
 
-暂不支持模拟器开发，调用接口会返回错误信息“Emulator is not supported.”
+暂不支持模拟器开发，调用接口会返回错误信息“The capability is not supported on the emulator at this time.”

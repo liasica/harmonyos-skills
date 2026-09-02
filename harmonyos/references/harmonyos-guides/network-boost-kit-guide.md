@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-boost
 title: Network Boost Kit（网络加速服务）
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:54+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:28707980fefcfe469d5241a5462838c6b3003ee201e5333449d1feef3d8b90d5
+scraped_at: 2026-09-02T14:50:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d64ec929187cd875aee6da901c949a85770955a80e1e787036300164b959f9bf
 ---
 
 * **[Network Boost Kit简介](networkboost-introduction.md)**
@@ -17,3 +17,4 @@ content_hash: sha256:28707980fefcfe469d5241a5462838c6b3003ee201e5333449d1feef3d8
 * **[连接迁移(多网切换) (C/C++)](networkboost-nethandoverguide-c.md)**
 * **[连接迁移(多网并发)（C/C++）](networkboost-netmultipathguide-c.md)**
 * **[Network Boost Kit常见问题](networkboost-faq.md)**
+* **[Network Boost Kit术语](networkboost-glossary.md)**

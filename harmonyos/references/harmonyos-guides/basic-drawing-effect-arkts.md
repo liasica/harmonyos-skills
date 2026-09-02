@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-drawing
 title: 基础绘制效果（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 基础绘制效果（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5dbebe4ece36c61f8317ed2cf087ca34ba99c5f73a69823428c5804582f79e9d
+scraped_at: 2026-09-02T14:59:49+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:67afd7e4a4dae99e8463c6ae318ef650d1ce660eafa7564bf95593d28114a056
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:5dbebe4ece36c61f8317ed2cf087ca34ba99c5f73a69823428c5804582f
 
 ### 接口说明
 
-使用画刷（Brush）设置绘制效果的常用接口如下表所示，详细的使用和参数请见[drawing.Brush](../harmonyos-references/arkts-apis-graphics-drawing-brush.md)。
+使用画刷（Brush）设置绘制效果的常用接口如下表所示，详细的使用和参数请见[drawing.Brush](../harmonyos-references/arkts-apis-graphics-drawing-brush.md)和[drawing.Canvas](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md)。
 
 | 接口 | 描述 |
 | --- | --- |
@@ -33,48 +33,38 @@ content_hash: sha256:5dbebe4ece36c61f8317ed2cf087ca34ba99c5f73a69823428c5804582f
 
 1. 创建画刷Brush对象。
 
+   ```typescript
+   // 创建画刷
+   const brush = new drawing.Brush();
    ```
-   1. // 设置画刷
-   2. const brush = new drawing.Brush();
-   ```
-
-   [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L21-L24)
 2. 使用画刷设置基础绘制效果，例如设置填充颜色、开启抗锯齿效果等。
 
    可使用setColor()接口设置填充颜色。
 
+   ```typescript
+   // 填充颜色设为红色
+   brush.setColor(0xFF, 0xFF, 0x00, 0x00);
    ```
-   1. // 填充颜色设为红色
-   2. brush.setColor(0xFF, 0xFF, 0x00, 0x00);
-   ```
-
-   [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L25-L28)
 
    可使用setAntiAlias()接口开启抗锯齿效果，以使图形边缘更加平滑。
 
+   ```typescript
+   // 开启抗锯齿效果
+   brush.setAntiAlias(true);
    ```
-   1. // 开启抗锯齿效果
-   2. brush.setAntiAlias(true);
-   ```
-
-   [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L29-L32)
 3. 使用attachBrush()接口给Canvas画布设置画刷。
 
+   ```typescript
+   // 为画布设置画刷
+   canvas.attachBrush(brush);
    ```
-   1. // 为画布设置画刷
-   2. canvas.attachBrush(brush);
-   ```
-
-   [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L33-L36)
 4. 按需绘制图元，具体可见[图元绘制](primitive-drawing-overview.md)一节。
 5. 当不需要填充效果时，可以使用detachBrush()接口去除画布中的画刷。
 
+   ```typescript
+   // 去除画刷
+   canvas.detachBrush();
    ```
-   1. // 去除画刷
-   2. canvas.detachBrush();
-   ```
-
-   [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L39-L42)
 
 ## 描边效果
 
@@ -82,7 +72,7 @@ content_hash: sha256:5dbebe4ece36c61f8317ed2cf087ca34ba99c5f73a69823428c5804582f
 
 ### 接口说明
 
-使用画笔（Pen）设置绘制效果的常用接口如下表所示，详细的使用和参数请见[drawing.Pen](../harmonyos-references/arkts-apis-graphics-drawing-pen.md)。
+使用画笔（Pen）设置绘制效果的常用接口如下表所示，详细的使用和参数请见[drawing.Pen](../harmonyos-references/arkts-apis-graphics-drawing-pen.md)和[drawing.Canvas](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md)。
 
 | 接口 | 描述 |
 | --- | --- |
@@ -92,60 +82,42 @@ content_hash: sha256:5dbebe4ece36c61f8317ed2cf087ca34ba99c5f73a69823428c5804582f
 | setAntiAlias(aa: boolean) : void | 用于设置画笔的抗锯齿属性，设置为true则画笔在绘制图形时会对图形的边缘像素进行半透明的模糊处理。 |
 | setCapStyle(style: CapStyle): void | 用于设置画笔线帽样式。 |
 | setJoinStyle(style: JoinStyle): void | 用于设置画笔绘制转角的样式。 |
-| detachPen(): void | 用于去除画布中的画笔，执行后画布将不去绘制图形形状的轮廓，恢复到默认的填充效果。 |
+| detachPen(): void | 用于去除画布中的画笔，执行后画布将不去绘制图形形状的轮廓，恢复到默认的描边效果。 |
 
 ### 开发步骤
 
 1. 创建画笔Pen对象。
 
+   ```typescript
+   // 创建画笔
+   let pen = new drawing.Pen();
    ```
-   1. // 创建画笔
-   2. let pen = new drawing.Pen();
-   ```
-
-   [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L46-L49)
-2. 使用attachPen()接口给Canvas画布设置画笔。画布将会使用设置的画笔样式和颜色等绘制图形轮廓。
-
-   ```
-   1. // 为画布设置画笔
-   2. canvas.attachPen(pen);
-   ```
-
-   [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L70-L73)
-3. 使用画笔设置具体的描边效果（可选以下的一个或者多个效果）。
+2. 使用画笔设置具体的描边效果（可选以下的一个或者多个效果）。
 
    * 可使用setColor()接口设置画笔颜色，对应为绘制图形轮廓时使用的颜色。
 
+     ```typescript
+     // 设置颜色为红色
+     pen.setColor(0xFF, 0xFF, 0x00, 0x00);
      ```
-     1. // 设置颜色为红色
-     2. pen.setColor(0xFF, 0xFF, 0x00, 0x00);
-     ```
-
-     [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L50-L53)
    * 可使用setStrokeWidth()接口设置画笔的线宽。
 
+     ```typescript
+     // 设置线宽
+     pen.setStrokeWidth(15);
      ```
-     1. // 设置线宽
-     2. pen.setStrokeWidth(15);
-     ```
-
-     [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L54-L57)
    * 可使用setAntiAlias()接口设置画笔抗锯齿，以使图形绘制边缘更平滑。
 
+     ```typescript
+     // 设置抗锯齿效果
+     pen.setAntiAlias(true);
      ```
-     1. // 设置抗锯齿效果
-     2. pen.setAntiAlias(true);
-     ```
-
-     [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L58-L61)
    * 可使用setCapStyle()接口设置画笔线帽样式。
 
+     ```typescript
+     // 设置画笔线帽样式
+     pen.setCapStyle(drawing.CapStyle.SQUARE_CAP);
      ```
-     1. // 设置画笔线帽样式
-     2. pen.setCapStyle(drawing.CapStyle.SQUARE_CAP);
-     ```
-
-     [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L62-L65)
 
      CapStyle线帽样式可选分类对应如下：
 
@@ -156,29 +128,31 @@ content_hash: sha256:5dbebe4ece36c61f8317ed2cf087ca34ba99c5f73a69823428c5804582f
      | ROUND\_CAP | 线帽的样式为圆弧，线条的头尾端点处多出一个半圆弧，半圆的直径与线段宽度一致。 |  |
    * 可使用setJoinStyle()接口设置画笔转角样式。
 
+     ```typescript
+     // 设置画笔转角样式
+     pen.setJoinStyle(drawing.JoinStyle.ROUND_JOIN);
      ```
-     1. // 设置画笔转角样式
-     2. pen.setJoinStyle(drawing.JoinStyle.ROUND_JOIN);
-     ```
-
-     [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L66-L69)
 
      JoinStyle转角样式可选分类对应如下：
 
      | 转角样式 | 说明 | 示意图 |
      | --- | --- | --- |
      | MITER\_JOIN | 转角类型为尖角 |  |
-     | ROUND\_JOIN | 转角类型为圆头 |  |
-     | BEVEL\_JOIN | 转角类型为平头 |  |
+     | ROUND\_JOIN | 转角类型为圆角 |  |
+     | BEVEL\_JOIN | 转角类型为平角 |  |
+3. 使用attachPen()接口给Canvas画布设置画笔。画布将会使用设置的画笔样式和颜色等绘制图形轮廓。
+
+   ```typescript
+   // 为画布设置画笔
+   canvas.attachPen(pen);
+   ```
 4. 按需绘制图元，具体可见[图元绘制](primitive-drawing-overview.md)一节。
 5. 当不需要描边效果时，可以使用detachPen()接口去除画布中的画笔。
 
+   ```typescript
+   // 去除描边效果
+   canvas.detachPen();
    ```
-   1. // 去除描边效果
-   2. canvas.detachPen();
-   ```
-
-   [BasicEffect.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/Drawing/ArkTSGraphicsDraw/entry/src/main/ets/drawing/pages/BasicEffect.ets#L90-L93)
 
 ## 示例代码
 

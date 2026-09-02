@@ -3,22 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (PermissionRequest)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (PermissionRequest)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:55:48+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:d6761a5a2f9443f785f57086f5e72c4e6431f7d218434acc0359cf63fa5c10db
+scraped_at: 2026-09-02T15:01:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4656f8dda5beec41f45c212008f3a2d14ef67736c44a53d160227176936a6a7e
 ---
 
-Web组件返回授权或拒绝权限功能的对象。示例代码参考[onPermissionRequest事件](arkts-basic-components-web-events.md#onpermissionrequest9)。
+PermissionRequest是Web组件用于授权或拒绝权限请求的对象。当网页尝试访问受保护的系统资源（如摄像头、麦克风、地理位置等）时，ArkWeb内核会通过[onPermissionRequest](arkts-basic-components-web-events.md#onpermissionrequest9)事件回调向应用发送权限请求，应用通过PermissionRequest对象来决定是否授权这些请求。该对象适用于需要在应用中管理网页对敏感资源的访问权限、保护用户隐私、确保资源访问安全可控等场景，帮助开发者灵活处理网页权限请求。
 
-说明
+**说明** 
 
-* 该组件首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-* 本Class首批接口从API version 9开始支持。
+* 该组件从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 本Class从API version 9开始支持。
 * 示例效果请以真机运行为准。
+* [grant](arkts-basic-components-web-permissionrequest.md#grant9)()与[deny](arkts-basic-components-web-permissionrequest.md#deny9)() 方法互斥，对于同一个PermissionRequest对象，只能调用其中一个方法。
+* 调用grant()或deny()后，该PermissionRequest对象已完成响应，不允许重复调用。
+* 未调用任何方法响应的PermissionRequest对象会导致权限请求超时。
+* grant()方法的resources参数通常使用getAccessibleResource()方法的返回值。
+* 典型使用流程：调用getAccessibleResource()获取请求的资源列表，选择需要授权的资源后调用grant()进行授权。
 
 ## constructor9+
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -28,8 +31,6 @@ PermissionRequest的构造函数。
 
 ## deny9+
 
-PhonePC/2in1TabletTVWearable
-
 deny(): void
 
 拒绝网页所请求的权限。
@@ -37,8 +38,6 @@ deny(): void
 **系统能力：** SystemCapability.Web.Webview.Core
 
 ## getOrigin9+
-
-PhonePC/2in1TabletTVWearable
 
 getOrigin(): string
 
@@ -54,11 +53,9 @@ getOrigin(): string
 
 ## getAccessibleResource9+
 
-PhonePC/2in1TabletTVWearable
-
 getAccessibleResource(): Array<string>
 
-获取网页所请求的权限资源列表，资源列表类型参考[ProtectedResourceType](arkts-basic-components-web-e.md#protectedresourcetype9)。
+获取网页所请求的权限资源列表，类型参考[ProtectedResourceType](arkts-basic-components-web-e.md#protectedresourcetype9)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -70,8 +67,6 @@ getAccessibleResource(): Array<string>
 
 ## grant9+
 
-PhonePC/2in1TabletTVWearable
-
 grant(resources: Array<string>): void
 
 对网页所请求的权限进行授权。
@@ -82,4 +77,4 @@ grant(resources: Array<string>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| resources | Array<string> | 是 | 授予网页请求的权限的资源列表。 |
+| resources | Array<string> | 是 | 网页被授予的权限资源列表，需通过getAccessibleResource()获取，类型参考[ProtectedResourceType](arkts-basic-components-web-e.md#protectedresourcetype9)。传入该参数后，网页将获得对指定资源的访问权限，若传入空列表，则表示拒绝所有权限请求。 |

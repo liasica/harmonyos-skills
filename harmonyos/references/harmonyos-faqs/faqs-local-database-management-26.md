@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-database-management-26
-title: 分布式对象必须将默认对象的每个属性值初始化为undefined，以防止数据倒灌
-breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 分布式对象必须将默认对象的每个属性值初始化为undefined，以防止数据倒灌
+title: 分布式对象必须要把默认obj的属性的每一个项值都设置undefined否则都会倒灌
+breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 分布式对象必须要把默认obj的属性的每一个项值都设置undefined否则都会倒灌
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:16+08:00
-doc_updated_at: 2026-03-25
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:314807ecdac7d66333b4ff0f2c40839c1979ca36f1bd397d2a3f02dc77995179
 ---
 

@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-configuration-file-overview-stage
-title: 应用配置文件概述（Stage模型）
-breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件（Stage模型） > 应用配置文件概述（Stage模型）
+title: 应用配置文件概述
+breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件 > 应用配置文件概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:28+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0cd70fafc86300b109bffef60d393363d43fe2f48566e5047dafbca3659e49cc
+scraped_at: 2026-09-02T14:59:08+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:9c9dbaf885d635ff66c9b9522fba742c666d6af69486927edab28066594157c6
 ---
 
 每个应用项目的代码目录下必须包含应用配置文件，这些配置文件会向编译工具、操作系统和应用市场提供应用的基本信息。
 
-在基于Stage模型开发的应用项目代码下，都存在一个app.json5配置文件、以及一个或多个module.json5配置文件。
+在基于[Stage模型](ability-terminology.md#stage模型)开发的应用项目代码下，都存在一个app.json5配置文件、以及一个或多个module.json5配置文件。
 
-说明
+**说明** 
 
 编译后，单个模块的编译产物中，app.json5和module.json5的内容会合并到一个module.json文件中，详情参考[编译态包结构](application-package-structure-stage.md#编译态包结构)的编译打包后的视图。
 

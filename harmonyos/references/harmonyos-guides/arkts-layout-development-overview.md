@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 布局概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 布局概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:38+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:f6cec6582c97972769f2ef6367391d2ab59ce628e40b6a65e38f1d5f75c6ea58
+scraped_at: 2026-09-02T14:49:49+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:921cd4fb80807954b125d218a60accaf4b373cb1e4641c3c378e67d40faf839d
 ---
 
 组件按照布局的要求依次排列，构成应用的页面。在声明式UI中，所有的页面都是由自定义组件构成，开发者可以根据自己的需求，选择合适的布局进行页面开发。
@@ -22,7 +22,7 @@ content_hash: sha256:f6cec6582c97972769f2ef6367391d2ab59ce628e40b6a65e38f1d5f75c
 
 **图1** 常见页面结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/mbtFaLg8QimQd1mnykN9Hg/zh-cn_image_0000002589243991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ybaWoIrjRS-9zGpjbPGSZg/zh-cn_image_0000002736312503.png)
 
 为实现上述效果，开发者需要在页面中声明对应的元素。其中，Page表示页面的根节点，[Column](../harmonyos-references/ts-container-column.md)/[Row](../harmonyos-references/ts-container-row.md)等元素为系统组件。针对不同的页面结构，ArkUI提供了不同的布局组件来帮助开发者实现对应布局的效果，例如Row用于实现线性布局。
 
@@ -32,7 +32,7 @@ content_hash: sha256:f6cec6582c97972769f2ef6367391d2ab59ce628e40b6a65e38f1d5f75c
 
 **图2** 布局元素组成图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pUKnUp8URRqR2dacxdsGqw/zh-cn_image_0000002558764184.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/GCBRQekPRkiUqHLuzUi6Hg/zh-cn_image_0000002706673460.png)
 
 * 组件区域（蓝色方块）：组件区域表示组件的大小，[width](../harmonyos-references/ts-universal-attributes-size.md#width)、[height](../harmonyos-references/ts-universal-attributes-size.md#height)属性用于设置组件区域的大小。
 * 组件内容区（黄色方块）：组件内容区大小为组件区域大小减去组件的[border](../harmonyos-references/ts-universal-attributes-border.md#border)值，组件内容区大小会作为组件内容（或者子组件）进行大小测算时的布局测算限制。
@@ -50,6 +50,8 @@ content_hash: sha256:f6cec6582c97972769f2ef6367391d2ab59ce628e40b6a65e38f1d5f75c
 | [弹性布局](arkts-layout-development-flex-layout.md)（Flex） | 弹性布局是与线性布局类似的布局方式。区别在于弹性布局默认能够使子组件压缩或拉伸。在子组件需要计算拉伸或压缩比例时优先使用此布局，可使得多个容器内子组件能有更好的视觉上的填充效果。 |
 | [相对布局](arkts-layout-development-relative-layout.md)（RelativeContainer） | 相对布局是在二维空间中的布局方式，不需要遵循线性布局的规则，布局方式更为自由。通过在子组件上设置锚点规则（[AlignRules](../harmonyos-references/ts-universal-attributes-location.md#alignrules9)）使子组件能够将自己在横轴、纵轴中的位置与容器或容器内其他子组件的位置对齐。设置的锚点规则可以天然支持子元素压缩、拉伸、堆叠或形成多行效果。在页面元素分布复杂或通过线性布局会使容器嵌套层数过深时推荐使用。 |
 | [栅格布局](arkts-layout-development-grid-layout.md)（GridRow、GridCol） | 栅格是多设备场景下通用的辅助定位工具，可将空间分割为有规律的栅格。栅格不同于网格布局固定的空间划分，可以实现不同设备下不同的布局，空间划分更随心所欲，从而显著降低适配不同屏幕尺寸的设计及开发成本，使得整体设计和开发流程更有秩序和节奏感，同时也保证多设备上应用显示的协调性和一致性，提升用户体验。推荐内容相同但布局不同时使用。 |
+| [动态布局](arkts-layout-development-dynamiclayout.md)（DynamicLayout） | DynamicLayout支持动态切换布局算法，同时保持子组件的状态不变（如输入框内容、滚动位置等），适合响应式布局的场景（如横竖屏切换）。当UI页面需要在运行时切换为不同的布局效果（如列表、网格、堆叠等）时优先考虑此布局。当需要实现如瀑布流、标签云等自定义不规则的布局效果时，优先使用DynamicLayout组件的自定义布局能力。从API version 24开始，支持动态布局。 |
+| [容器断点](arkts-layout-development-container-reader.md)（ContainerReader） | ContainerReader是容器断点组件，用于在动态场景下根据容器尺寸获取断点信息并进行响应式布局。该组件通过双向绑定实时返回容器的尺寸和断点，使开发者能够基于容器大小进行差异化的组件创建和布局。 |
 | [选项卡](arkts-navigation-tabs.md)（Tabs） | 选项卡可以在一个页面内快速实现视图内容的切换，一方面提升查找信息的效率，另一方面精简用户单次获取到的信息量。 |
 
 ## 布局位置

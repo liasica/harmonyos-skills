@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-developm
 title: Function Flow Runtime开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:23+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6c81b994520d476ecfc9f68c2a6e3d9a15aaac0783784c1b0964c5a29c54222e
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-07
+content_hash: sha256:fdc518dbcce2a51b83d56e614423f3fd48958b2b861d0a4e75c8ddbdeb419838
 ---
 
 ## 介绍
@@ -25,7 +25,7 @@ FFRT提供开发者队列级和任务级超时维测机制，用来监控用户�
 * 当队列中任务发生超时，FFRT打印告警日志并通过回调接口通知到业务。
 * 当任务发生超时，FFRT打印告警日志并调用进程级回调函数。
 
-注意
+**注意** 
 
 任务超时时执行的回调函数进程范围内唯一，需要在任务提交之前由业务方配置到FFRT中，不支持在提交任务或任务超时检测过程中配置。
 
@@ -47,19 +47,19 @@ FFRT提供开发者队列级和任务级超时维测机制，用来监控用户�
 
 在对应进程日志中搜索RecordSymbolAndBacktrace关键字，对应的日志示例如下：
 
-```
-1. W C01719/ffrt: 60500:RecordSymbolAndBacktrace:159 Tid[16579] function occupies worker for more than [1]s.
-2. W C01719/ffrt: 60501:RecordSymbolAndBacktrace:164 Backtrace:
-3. W C01719/ffrt: #00 pc 00000000000075f0 /system/lib64/module/file/libhash.z.so
-4. W C01719/ffrt: #01 pc 0000000000008758 /system/lib64/module/file/libhash.z.so
-5. W C01719/ffrt: #02 pc 0000000000012b98 /system/lib64/module/file/libhash.z.so
-6. W C01719/ffrt: #03 pc 000000000002aaa0 /system/lib64/platformsdk/libfilemgmt_libn.z.so
-7. W C01719/ffrt: #04 pc 0000000000054b2c /system/lib64/platformsdk/libace_napi.z.so
-8. W C01719/ffrt: #05 pc 00000000000133a8 /system/lib64/platformsdk/libuv.so
-9. W C01719/ffrt: #06 pc 00000000000461a0 /system/lib64/chipset-sdk/libffrt.so
-10. W C01719/ffrt: #07 pc 0000000000046d44 /system/lib64/chipset-sdk/libffrt.so
-11. W C01719/ffrt: #08 pc 0000000000046a6c /system/lib64/chipset-sdk/libffrt.so
-12. W C01719/ffrt: #09 pc 00000000000467b0 /system/lib64/chipset-sdk/libffrt.so
+```txt
+W C01719/ffrt: 60500:RecordSymbolAndBacktrace:159 Tid[16579] function occupies worker for more than [1]s.
+W C01719/ffrt: 60501:RecordSymbolAndBacktrace:164 Backtrace:
+W C01719/ffrt: #00 pc 00000000000075f0 /system/lib64/module/file/libhash.z.so
+W C01719/ffrt: #01 pc 0000000000008758 /system/lib64/module/file/libhash.z.so
+W C01719/ffrt: #02 pc 0000000000012b98 /system/lib64/module/file/libhash.z.so
+W C01719/ffrt: #03 pc 000000000002aaa0 /system/lib64/platformsdk/libfilemgmt_libn.z.so
+W C01719/ffrt: #04 pc 0000000000054b2c /system/lib64/platformsdk/libace_napi.z.so
+W C01719/ffrt: #05 pc 00000000000133a8 /system/lib64/platformsdk/libuv.so
+W C01719/ffrt: #06 pc 00000000000461a0 /system/lib64/chipset-sdk/libffrt.so
+W C01719/ffrt: #07 pc 0000000000046d44 /system/lib64/chipset-sdk/libffrt.so
+W C01719/ffrt: #08 pc 0000000000046a6c /system/lib64/chipset-sdk/libffrt.so
+W C01719/ffrt: #09 pc 00000000000467b0 /system/lib64/chipset-sdk/libffrt.so
 ```
 
 该维测会打印出Worker上执行时间超过阈值的任务堆栈、Worker线程号、执行时间，请自行根据堆栈找对应组件确认阻塞原因。
@@ -83,37 +83,37 @@ FFRT提供一个对外的接口ffrt\_dump以便转储FFRT子系统运行时的�
 
 **样例**
 
-```
-1. ready task ptr: qos 0 readptr 79 writeptr 79
-2. ready task ptr: qos 1 readptr 360 writeptr 360
-3. ready task ptr: qos 2 readptr 19 writeptr 19
-4. ready task ptr: qos 3 readptr 0 writeptr 0
-5. ready task ptr: qos 4 readptr 0 writeptr 0
-6. ready task ptr: qos 5 readptr 65 writeptr 65
-7. ready task ptr: qos 6 readptr 0 writeptr 0
-8. ready task ptr: qos 7 readptr 0 writeptr 0
-9. submit queue: readptr 24 writeptr 24
-10. intr wake: status 255
-11. proc status: taskCnt 23 vercnt 0sigCnt0
-12. |-> worker count
-13. qos 0: worker num:1 tid:31676
-14. qos 2: worker num:3 tid:51349, 28769, 28565
-15. qos 5: worker num:1 tid:30605
-16. |-> worker status
-17. qos 0: worker tid 31676 is running nothing
-18. qos 2: worker tid 51349 is running nothing
-19. qos 2: worker tid 28769 is running, task id 24591 name sq_CesSrvMain_12_PublishCommonEventDetailed_24591 fromTid 43928 createTime 2024-11-27 02:52:27.325248 executeTime 2024-11-27 02:52:27.326150
-20. qos 2: worker tid 28565 is running, task id 24611 name sq_dfx_freeze_task_queue_16_NotifyAppFaultTask_24611 fromTid 43833 createTime 2024-11-27 02:52:38.114787 executeTime 2024-11-27 02:52:38.115424
-21. qos 5: worker tid 30605 is running, task id 24595 name sq_AbilityManagerService_19_SubmitTaskInner_24595 fromTid 43610 createTime 2024-11-27 02:52:27.844237 executeTime 2024-11-27 02:52:27.844573
-22. |-> ready queue status
-23. |-> blocked by task dependence
-24. <1/1>stack: task id 3,qos 2,name AgingTask fromTid 43417 createTime 2024-11-27 01:21:39.641673 executeTime 2024-11-27 01:21:39.642290
-25. #00 pc 0000000000065c5c /system/lib64/ndk/libffrt.so(CoYield()+560)(22be57f01a789a03813d26a19c3a4042)
-26. #01 pc 00000000000a3268 /system/lib64/ndk/libffrt.so(ffrt::this_task::SleepUntilImpl(std::__h::chrono::time_point<std::__h::chrono::steady_clock, std::__h::chrono::duration<long long, std::__h::ratio<1l, 1000000000l>>> const&)+356)(22be57f01a789a03813d26a19c3a4042)
-27. #02 pc 00000000000a39b4 /system/lib64/ndk/libffrt.so(ffrt_usleep+60)(22be57f01a789a03813d26a19c3a4042)
-28. #03 pc 0000000000420de0 /system/lib64/libbms.z.so(2eb52bd03af1b9a31e14ffe60bfc39da)
-29. #04 pc 00000000000a6a2c /system/lib64/ndk/libffrt.so(ffrt::CPUEUTask::Execute()+300)(22be57f01a789a03813d26a19c3a4042)
-30. #05 pc 0000000000066d18 /system/lib64/ndk/libffrt.so(22be57f01a789a03813d26a19c3a4042)
+```txt
+ready task ptr: qos 0 readptr 79 writeptr 79
+ready task ptr: qos 1 readptr 360 writeptr 360
+ready task ptr: qos 2 readptr 19 writeptr 19
+ready task ptr: qos 3 readptr 0 writeptr 0
+ready task ptr: qos 4 readptr 0 writeptr 0
+ready task ptr: qos 5 readptr 65 writeptr 65
+ready task ptr: qos 6 readptr 0 writeptr 0
+ready task ptr: qos 7 readptr 0 writeptr 0
+submit queue: readptr 24 writeptr 24
+intr wake: status 255
+proc status: taskCnt 23 vercnt 0sigCnt0
+    |-> worker count
+        qos 0: worker num:1 tid:31676
+        qos 2: worker num:3 tid:51349, 28769, 28565
+        qos 5: worker num:1 tid:30605
+    |-> worker status
+        qos 0: worker tid 31676 is running nothing
+        qos 2: worker tid 51349 is running nothing
+        qos 2: worker tid 28769 is running, task id 24591 name sq_CesSrvMain_12_PublishCommonEventDetailed_24591 fromTid 43928 createTime 2024-11-27 02:52:27.325248 executeTime 2024-11-27 02:52:27.326150
+        qos 2: worker tid 28565 is running, task id 24611 name sq_dfx_freeze_task_queue_16_NotifyAppFaultTask_24611 fromTid 43833 createTime 2024-11-27 02:52:38.114787 executeTime 2024-11-27 02:52:38.115424
+        qos 5: worker tid 30605 is running, task id 24595 name sq_AbilityManagerService_19_SubmitTaskInner_24595 fromTid 43610 createTime 2024-11-27 02:52:27.844237 executeTime 2024-11-27 02:52:27.844573
+    |-> ready queue status
+    |-> blocked by task dependence
+        <1/1>stack: task id 3,qos 2,name AgingTask fromTid 43417 createTime 2024-11-27 01:21:39.641673 executeTime 2024-11-27 01:21:39.642290
+#00 pc 0000000000065c5c /system/lib64/ndk/libffrt.so(CoYield()+560)(22be57f01a789a03813d26a19c3a4042)
+#01 pc 00000000000a3268 /system/lib64/ndk/libffrt.so(ffrt::this_task::SleepUntilImpl(std::__h::chrono::time_point<std::__h::chrono::steady_clock, std::__h::chrono::duration<long long, std::__h::ratio<1l, 1000000000l>>> const&)+356)(22be57f01a789a03813d26a19c3a4042)
+#02 pc 00000000000a39b4 /system/lib64/ndk/libffrt.so(ffrt_usleep+60)(22be57f01a789a03813d26a19c3a4042)
+#03 pc 0000000000420de0 /system/lib64/libbms.z.so(2eb52bd03af1b9a31e14ffe60bfc39da)
+#04 pc 00000000000a6a2c /system/lib64/ndk/libffrt.so(ffrt::CPUEUTask::Execute()+300)(22be57f01a789a03813d26a19c3a4042)
+#05 pc 0000000000066d18 /system/lib64/ndk/libffrt.so(22be57f01a789a03813d26a19c3a4042)
 ```
 
 **注意事项**
@@ -128,22 +128,22 @@ FFRT提供一个对外的接口ffrt\_dump以便转储FFRT子系统运行时的�
 
 **样例**
 
-```
-1. C01719/CameraDaemon/ffrt: 9986:operator():254 <<<=== ffrt black box(BBOX) start ===>>>
-2. C01719/CameraDaemon/ffrt: 9987:SaveCurrent:63 <<<=== current status ===>>>
-3. C01719/CameraDaemon/ffrt: 9988:SaveCurrent:68 signal SIGABRT triggered: source tid 5962, task id 17, qos 2, name SvrWatchdog
-4. C01719/CameraDaemon/ffrt: 9989:SaveWorkerStatus:94 <<<=== worker status ===>>>
-5. C01719/CameraDaemon/ffrt: 9990:SaveWorkerStatus:100 qos 0: worker tid 6410 is running nothing
-6. C01719/CameraDaemon/ffrt: 9991:SaveWorkerStatus:100 qos 2: worker tid 5968 is running nothing
-7. C01719/CameraDaemon/ffrt: 9992:SaveWorkerStatus:100 qos 2: worker tid 5964 is running nothing
-8. C01719/CameraDaemon/ffrt: 9993:SaveWorkerStatus:100 qos 2: worker tid 5963 is running nothing
-9. C01719/CameraDaemon/ffrt: 9994:SaveWorkerStatus:105 qos 2: worker tid 5962 is running task id 17 name SvrWatchdog
-10. C01719/CameraDaemon/ffrt: 9995:SaveWorkerStatus:100 qos 2: worker tid 5967 is running nothing
-11. C01719/CameraDaemon/ffrt: 9996:SaveWorkerStatus:100 qos 2: worker tid 5965 is running nothing
-12. C01719/CameraDaemon/ffrt: 9997:SaveWorkerStatus:100 qos 2: worker tid 5961 is running nothing
-13. C01719/CameraDaemon/ffrt: 9998:SaveWorkerStatus:100 qos 2: worker tid 1146 is running nothing
-14. C01719/CameraDaemon/ffrt: 9999:SaveWorkerStatus:100 qos 2: worker tid 1145 is running nothing
-15. C01719/CameraDaemon/ffrt: 10000:SaveWorkerStatus:100 qos 2: worker tid 5966 is running nothing
+```txt
+C01719/CameraDaemon/ffrt: 9986:operator():254 <<<=== ffrt black box(BBOX) start ===>>>
+C01719/CameraDaemon/ffrt: 9987:SaveCurrent:63 <<<=== current status ===>>>
+C01719/CameraDaemon/ffrt: 9988:SaveCurrent:68 signal SIGABRT triggered: source tid 5962, task id 17, qos 2, name SvrWatchdog
+C01719/CameraDaemon/ffrt: 9989:SaveWorkerStatus:94 <<<=== worker status ===>>>
+C01719/CameraDaemon/ffrt: 9990:SaveWorkerStatus:100 qos 0: worker tid 6410 is running nothing
+C01719/CameraDaemon/ffrt: 9991:SaveWorkerStatus:100 qos 2: worker tid 5968 is running nothing
+C01719/CameraDaemon/ffrt: 9992:SaveWorkerStatus:100 qos 2: worker tid 5964 is running nothing
+C01719/CameraDaemon/ffrt: 9993:SaveWorkerStatus:100 qos 2: worker tid 5963 is running nothing
+C01719/CameraDaemon/ffrt: 9994:SaveWorkerStatus:105 qos 2: worker tid 5962 is running task id 17 name SvrWatchdog
+C01719/CameraDaemon/ffrt: 9995:SaveWorkerStatus:100 qos 2: worker tid 5967 is running nothing
+C01719/CameraDaemon/ffrt: 9996:SaveWorkerStatus:100 qos 2: worker tid 5965 is running nothing
+C01719/CameraDaemon/ffrt: 9997:SaveWorkerStatus:100 qos 2: worker tid 5961 is running nothing
+C01719/CameraDaemon/ffrt: 9998:SaveWorkerStatus:100 qos 2: worker tid 1146 is running nothing
+C01719/CameraDaemon/ffrt: 9999:SaveWorkerStatus:100 qos 2: worker tid 1145 is running nothing
+C01719/CameraDaemon/ffrt: 10000:SaveWorkerStatus:100 qos 2: worker tid 5966 is running nothing
 ```
 
 **注意事项**
@@ -160,11 +160,11 @@ FFRT任务的调度和执行过程中，利用了OH系统的Trace打点能力，
 
 1. 启动Trace抓取
 
-   ```
-   1. hdc shell "hitrace -t 10 -b 20480 -o /data/local/tmp/in_systrace.ftrace sched freq idle ffrt"
-   2. # -t：指定trace采集时长，在采集过程中所有的trace记录会落盘保存
-   3. # -b：指定trace记录缓存大小，buffer不足的情况下可能导致部分记录被覆盖没有落盘
-   4. # -o：指定trace落盘存储路径
+   ```shell
+   hdc shell "hitrace -t 10 -b 20480 -o /data/local/tmp/in_systrace.ftrace sched freq idle ffrt"
+   # -t：指定trace采集时长，在采集过程中所有的trace记录会落盘保存
+   # -b：指定trace记录缓存大小，buffer不足的情况下可能导致部分记录被覆盖没有落盘
+   # -o：指定trace落盘存储路径
    ```
 2. 图形化工具呈现
 
@@ -181,20 +181,20 @@ FFRT任务的调度和执行过程中，利用了OH系统的Trace打点能力，
 * FFRT默认不开启Debug级别的日志，用户可以通过命令的方式打开，以获取更丰富的维测信息支撑开发阶段的问题定位。
 * 打开FFRT Debug日志开关：
 
-  ```
-  1. hdc shell hilog -b DEBUG -D 0xD001719
+  ```shell
+  hdc shell hilog -b DEBUG -D 0xD001719
   ```
 * 恢复默认FFRT INFO日志级别:
 
-  ```
-  1. hdc shell hilog -b INFO -D 0xD001719
+  ```shell
+  hdc shell hilog -b INFO -D 0xD001719
   ```
 
 **样例**
 
-```
-1. 4190  5631 D C01719/neboard:EngineServiceAbility:1/ffrt: 275337:Detach:147 qos 3 thread not joinable
-2. 3257  6075 D C01719/com.ohos.sceneboard/ffrt: 513070:SetDefaultThreadAttr:148 qos apply tid[6075] level[3]
+```txt
+4190  5631 D C01719/neboard:EngineServiceAbility:1/ffrt: 275337:Detach:147 qos 3 thread not joinable
+3257  6075 D C01719/com.ohos.sceneboard/ffrt: 513070:SetDefaultThreadAttr:148 qos apply tid[6075] level[3]
 ```
 
 **注意事项**
@@ -207,199 +207,199 @@ FFRT任务的调度和执行过程中，利用了OH系统的Trace打点能力，
 
 1. 在项目CMakeLists.txt中添加动态链接库：
 
-   ```
-   1. libffrt.z.so
+   ```txt
+   libffrt.z.so
    ```
 2. 在项目中包含对应的头文件：
 
-   ```
-   1. #include "ffrt/task.h"
-   2. #include "ffrt/mutex.h"
-   3. #include "ffrt/shared_mutex.h"
-   4. #include "ffrt/condition_variable.h"
-   5. #include "ffrt/sleep.h"
-   6. #include "ffrt/queue.h"
-   7. #include "ffrt/loop.h"
-   8. #include "ffrt/timer.h"
+   ```cpp
+   #include "ffrt/task.h"
+   #include "ffrt/mutex.h"
+   #include "ffrt/shared_mutex.h"
+   #include "ffrt/condition_variable.h"
+   #include "ffrt/sleep.h"
+   #include "ffrt/queue.h"
+   #include "ffrt/loop.h"
+   #include "ffrt/timer.h"
    ```
 3. 对执行的函数进行封装：
 
-   ```
-   1. // 第一种使用模板，支持C++
-   2. template<class T>
-   3. struct function {
-   4. ffrt_function_header_t header;
-   5. T closure;
-   6. };
+   ```cpp
+   // 第一种使用模板，支持C++
+   template<class T>
+   struct function {
+       ffrt_function_header_t header;
+       T closure;
+   };
 
-   8. template<class T>
-   9. void exec_function_wrapper(void* t)
-   10. {
-   11. auto f = reinterpret_cast<function<std::decay_t<T>>*>(t);
-   12. f->closure();
-   13. }
+   template<class T>
+   void exec_function_wrapper(void* t)
+   {
+       auto f = reinterpret_cast<function<std::decay_t<T>>*>(t);
+       f->closure();
+   }
 
-   15. template<class T>
-   16. void destroy_function_wrapper(void* t)
-   17. {
-   18. auto f = reinterpret_cast<function<std::decay_t<T>>*>(t);
-   19. f->closure = nullptr;
-   20. }
+   template<class T>
+   void destroy_function_wrapper(void* t)
+   {
+       auto f = reinterpret_cast<function<std::decay_t<T>>*>(t);
+       f->closure = nullptr;
+   }
 
-   22. template<class T>
-   23. inline ffrt_function_header_t* create_function_wrapper(T&& func,
-   24. ffrt_function_kind_t kind = ffrt_function_kind_general)
-   25. {
-   26. using function_type = function<std::decay_t<T>>;
-   27. static_assert(sizeof(function_type) <= ffrt_auto_managed_function_storage_size,
-   28. "size of function must be less than ffrt_auto_managed_function_storage_size");
+   template<class T>
+   inline ffrt_function_header_t* create_function_wrapper(T&& func,
+       ffrt_function_kind_t kind = ffrt_function_kind_general)
+   {
+       using function_type = function<std::decay_t<T>>;
+       static_assert(sizeof(function_type) <= ffrt_auto_managed_function_storage_size,
+           "size of function must be less than ffrt_auto_managed_function_storage_size");
 
-   30. auto p = ffrt_alloc_auto_managed_function_storage_base(kind);
-   31. auto f = new (p)function_type;
-   32. f->header.exec = exec_function_wrapper<T>;
-   33. f->header.destroy = destroy_function_wrapper<T>;
-   34. f->closure = std::forward<T>(func);
-   35. return reinterpret_cast<ffrt_function_header_t*>(f);
-   36. }
+       auto p = ffrt_alloc_auto_managed_function_storage_base(kind);
+       auto f = new (p)function_type;
+       f->header.exec = exec_function_wrapper<T>;
+       f->header.destroy = destroy_function_wrapper<T>;
+       f->closure = std::forward<T>(func);
+       return reinterpret_cast<ffrt_function_header_t*>(f);
+   }
 
-   38. // 第二种创建方式
-   39. typedef struct {
-   40. ffrt_function_header_t header;
-   41. ffrt_function_t func;
-   42. ffrt_function_t after_func;
-   43. void* arg;
-   44. } ffrt_function_wrapper_t;
+   // 第二种创建方式
+   typedef struct {
+       ffrt_function_header_t header;
+       ffrt_function_t func;
+       ffrt_function_t after_func;
+       void* arg;
+   } ffrt_function_wrapper_t;
 
-   46. static inline void ffrt_exec_function_wrapper(void* t)
-   47. {
-   48. ffrt_function_wrapper_t* f = (ffrt_function_wrapper_t *)t;
-   49. if (f->func) {
-   50. f->func(f->arg);
-   51. }
-   52. }
+   static inline void ffrt_exec_function_wrapper(void* t)
+   {
+      ffrt_function_wrapper_t* f = (ffrt_function_wrapper_t *)t;
+      if (f->func) {
+          f->func(f->arg);
+      }
+   }
 
-   54. static inline void ffrt_destroy_function_wrapper(void* t)
-   55. {
-   56. ffrt_function_wrapper_t* f = (ffrt_function_wrapper_t *)t;
-   57. if (f->after_func) {
-   58. f->after_func(f->arg);
-   59. }
-   60. }
+   static inline void ffrt_destroy_function_wrapper(void* t)
+   {
+       ffrt_function_wrapper_t* f = (ffrt_function_wrapper_t *)t;
+       if (f->after_func) {
+           f->after_func(f->arg);
+       }
+   }
 
-   62. #define FFRT_STATIC_ASSERT(cond, msg) int x(int static_assertion_##msg[(cond) ? 1 : -1])
-   63. static inline ffrt_function_header_t *ffrt_create_function_wrapper(ffrt_function_t func,
-   64. ffrt_function_t after_func, void* arg, ffrt_function_kind_t kind)
-   65. {
-   66. FFRT_STATIC_ASSERT(sizeof(ffrt_function_wrapper_t) <= ffrt_auto_managed_function_storage_size,
-   67. size_of_function_must_be_less_than_ffrt_auto_managed_function_storage_size);
+   #define FFRT_STATIC_ASSERT(cond, msg) int x(int static_assertion_##msg[(cond) ? 1 : -1])
+   static inline ffrt_function_header_t *ffrt_create_function_wrapper(ffrt_function_t func,
+       ffrt_function_t after_func, void* arg, ffrt_function_kind_t kind)
+   {
+       FFRT_STATIC_ASSERT(sizeof(ffrt_function_wrapper_t) <= ffrt_auto_managed_function_storage_size,
+           size_of_function_must_be_less_than_ffrt_auto_managed_function_storage_size);
 
-   69. ffrt_function_wrapper_t* f = (ffrt_function_wrapper_t *)ffrt_alloc_auto_managed_function_storage_base(kind);
-   70. f->header.exec = ffrt_exec_function_wrapper;
-   71. f->header.destroy = ffrt_destroy_function_wrapper;
-   72. f->func = func;
-   73. f->after_func = after_func;
-   74. f->arg = arg;
-   75. return (ffrt_function_header_t *)f;
-   76. }
+       ffrt_function_wrapper_t* f = (ffrt_function_wrapper_t *)ffrt_alloc_auto_managed_function_storage_base(kind);
+       f->header.exec = ffrt_exec_function_wrapper;
+       f->header.destroy = ffrt_destroy_function_wrapper;
+       f->func = func;
+       f->after_func = after_func;
+       f->arg = arg;
+       return (ffrt_function_header_t *)f;
+   }
 
-   78. // 样例：待提交执行的函数
-   79. void OnePlusForTest(void* arg)
-   80. {
-   81. (*static_cast<int*>(arg)) += 1;
-   82. }
+   // 样例：待提交执行的函数
+   void OnePlusForTest(void* arg)
+   {
+       (*static_cast<int*>(arg)) += 1;
+   }
    ```
 4. 设置任务属性值，包括QoS等级、任务名称等。
 
-   ```
-   1. // ******初始化并行任务属性******
-   2. ffrt_task_attr_t attr;
-   3. ffrt_task_attr_init(&attr);
+   ```cpp
+   // ******初始化并行任务属性******
+   ffrt_task_attr_t attr;
+   ffrt_task_attr_init(&attr);
 
-   5. // ******创建串行队列******
+   // ******创建串行队列******
 
-   7. // 创建串行队列的属性
-   8. ffrt_queue_attr_t queue_attr;
-   9. // 创建串行队列的handle
-   10. ffrt_queue_t queue_handle;
+   // 创建串行队列的属性
+   ffrt_queue_attr_t queue_attr;
+   // 创建串行队列的handle
+   ffrt_queue_t queue_handle;
 
-   12. // 初始化队列属性
-   13. (void)ffrt_queue_attr_init(&queue_attr);
+   // 初始化队列属性
+   (void)ffrt_queue_attr_init(&queue_attr);
 
-   15. // 如有需要，设置指定QoS等级
-   16. ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt_qos_inherit));
-   17. // 如有需要，设置超时时间(ms)
-   18. ffrt_queue_attr_set_timeout(&queue_attr, 10000);
-   19. // 如有需要，设置超时回调
-   20. int x = 0;
-   21. ffrt_queue_attr_set_callback(&queue_attr, ffrt_create_function_wrapper(OnePlusForTest, NULL, &x,
-   22. ffrt_function_kind_queue));
+   // 如有需要，设置指定QoS等级
+   ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt_qos_inherit));
+   // 如有需要，设置超时时间(ms)
+   ffrt_queue_attr_set_timeout(&queue_attr, 10000);
+   // 如有需要，设置超时回调
+   int x = 0;
+   ffrt_queue_attr_set_callback(&queue_attr, ffrt_create_function_wrapper(OnePlusForTest, NULL, &x,
+       ffrt_function_kind_queue));
 
-   24. // 基于属性，初始化队列
-   25. queue_handle = ffrt_queue_create(ffrt_queue_serial, "test_queue", &queue_attr);
+   // 基于属性，初始化队列
+   queue_handle = ffrt_queue_create(ffrt_queue_serial, "test_queue", &queue_attr);
    ```
 5. 提交任务。
 
-   ```
-   1. int a = 0;
-   2. // ******并行任务******
-   3. // 提交不带handle返回值的并行任务
-   4. ffrt_submit_base(
-   5. ffrt_create_function_wrapper(OnePlusForTest, NULL, &a, ffrt_function_kind_general), NULL, NULL, &attr);
-   6. // 提交带handle返回值的并行任务
-   7. ffrt_task_handle_t task = ffrt_submit_h_base(
-   8. ffrt_create_function_wrapper(OnePlusForTest, NULL, &a, ffrt_function_kind_general), NULL, NULL, &attr);
+   ```cpp
+   int a = 0;
+   // ******并行任务******
+   // 提交不带handle返回值的并行任务
+   ffrt_submit_base(
+       ffrt_create_function_wrapper(OnePlusForTest, NULL, &a, ffrt_function_kind_general), NULL, NULL, &attr);
+   // 提交带handle返回值的并行任务
+   ffrt_task_handle_t task = ffrt_submit_h_base(
+       ffrt_create_function_wrapper(OnePlusForTest, NULL, &a, ffrt_function_kind_general), NULL, NULL, &attr);
 
-   10. // ******串行任务******
-   11. // 提交不返回handle的串行队列任务
-   12. ffrt_queue_submit(queue_handle,
-   13. ffrt_create_function_wrapper(OnePlusForTest, NULL, &a, ffrt_function_kind_queue), NULL);
-   14. // 提交带handle的串行队列任务
-   15. ffrt_task_handle_t handle = ffrt_queue_submit_h(queue_handle,
-   16. ffrt_create_function_wrapper(OnePlusForTest, NULL, &a, ffrt_function_kind_queue), NULL);
+   // ******串行任务******
+   // 提交不返回handle的串行队列任务
+   ffrt_queue_submit(queue_handle,
+       ffrt_create_function_wrapper(OnePlusForTest, NULL, &a, ffrt_function_kind_queue), NULL);
+   // 提交带handle的串行队列任务
+   ffrt_task_handle_t handle = ffrt_queue_submit_h(queue_handle,
+       ffrt_create_function_wrapper(OnePlusForTest, NULL, &a, ffrt_function_kind_queue), NULL);
 
-   18. // 如果需要等待执行结果，则调用wait
-   19. const std::vector<ffrt_dependence_t> wait_deps = {{ffrt_dependence_task, task}};
-   20. ffrt_deps_t wait{static_cast<uint32_t>(wait_deps.size()), wait_deps.data()};
-   21. ffrt_wait_deps(&wait);
+   // 如果需要等待执行结果，则调用wait
+   const std::vector<ffrt_dependence_t> wait_deps = {{ffrt_dependence_task, task}};
+   ffrt_deps_t wait{static_cast<uint32_t>(wait_deps.size()), wait_deps.data()};
+   ffrt_wait_deps(&wait);
 
-   23. ffrt_queue_wait(handle);
+   ffrt_queue_wait(handle);
    ```
 6. 在任务不需要任何销毁动作时可以通过简化接口提交任务（可选）。
 
-   ```
-   1. int a = 0;
-   2. // 在步骤3场景中的after_func函数指针为NULL时，可以使用简化接口提交任务，避免冗余的任务结构封装。
-   3. // ******并行任务******
-   4. // 通过简化接口提交不带handle返回值的并行任务
-   5. ffrt_submit_f(OnePlusForTest, &a, NULL, NULL, &attr);
-   6. // 通过简化接口提交带handle返回值的并行任务
-   7. ffrt_task_handle_t task = ffrt_submit_h_f(OnePlusForTest, &a, NULL, NULL, &attr);
+   ```cpp
+   int a = 0;
+   // 在步骤3场景中的after_func函数指针为NULL时，可以使用简化接口提交任务，避免冗余的任务结构封装。
+   // ******并行任务******
+   // 通过简化接口提交不带handle返回值的并行任务
+   ffrt_submit_f(OnePlusForTest, &a, NULL, NULL, &attr);
+   // 通过简化接口提交带handle返回值的并行任务
+   ffrt_task_handle_t task = ffrt_submit_h_f(OnePlusForTest, &a, NULL, NULL, &attr);
 
-   9. // ******串行任务******
-   10. // 通过简化接口提交不返回handle的串行队列任务
-   11. ffrt_queue_submit_f(queue_handle, OnePlusForTest, &a, NULL);
-   12. // 通过简化接口提交带handle的串行队列任务
-   13. ffrt_task_handle_t handle = ffrt_queue_submit_h_f(queue_handle, OnePlusForTest, &a, NULL);
+   // ******串行任务******
+   // 通过简化接口提交不返回handle的串行队列任务
+   ffrt_queue_submit_f(queue_handle, OnePlusForTest, &a, NULL);
+   // 通过简化接口提交带handle的串行队列任务
+   ffrt_task_handle_t handle = ffrt_queue_submit_h_f(queue_handle, OnePlusForTest, &a, NULL);
 
-   15. // 如果需要等待执行结果，则调用wait
-   16. const std::vector<ffrt_dependence_t> wait_deps = {{ffrt_dependence_task, task}};
-   17. ffrt_deps_t wait{static_cast<uint32_t>(wait_deps.size()), wait_deps.data()};
-   18. ffrt_wait_deps(&wait);
+   // 如果需要等待执行结果，则调用wait
+   const std::vector<ffrt_dependence_t> wait_deps = {{ffrt_dependence_task, task}};
+   ffrt_deps_t wait{static_cast<uint32_t>(wait_deps.size()), wait_deps.data()};
+   ffrt_wait_deps(&wait);
 
-   20. ffrt_queue_wait(handle);
+   ffrt_queue_wait(handle);
    ```
 7. 任务提交完成后销毁相应资源。
 
-   ```
-   1. // ******销毁并行任务******
-   2. ffrt_task_attr_destroy(&attr);
-   3. ffrt_task_handle_destroy(task);
+   ```cpp
+   // ******销毁并行任务******
+   ffrt_task_attr_destroy(&attr);
+   ffrt_task_handle_destroy(task);
 
-   5. // ******销毁串行队列任务******
-   6. // 先销毁任务handle，再销毁队列
-   7. ffrt_queue_attr_destroy(&queue_attr);
-   8. ffrt_task_handle_destroy(handle);
-   9. ffrt_queue_destroy(queue_handle);
+   // ******销毁串行队列任务******
+   // 先销毁任务handle，再销毁队列
+   ffrt_queue_attr_destroy(&queue_attr);
+   ffrt_task_handle_destroy(handle);
+   ffrt_queue_destroy(queue_handle);
    ```
 
 ## 使用建议
@@ -497,50 +497,50 @@ FFRT任务中使用标准库的递归互斥锁可能发生死锁，需要更换�
 * 为保证较高的性能，FFRT的C API中内部不包含对对象的销毁状态的标记，用户需要合理地进行资源的释放，重复调用各个对象的销毁操作，其结果是未定义的。
 * 错误示例1，重复调用销毁函数可能造成不可预知的数据损坏：
 
-  ```
-  1. #include <stdio.h>
-  2. #include "ffrt/cpp/task.h"
+  ```cpp
+  #include <stdio.h>
+  #include "ffrt/cpp/task.h"
 
-  4. void abnormal_case_1()
-  5. {
-  6. ffrt_task_handle_t h = ffrt_submit_h_base(
-  7. ffrt::create_function_wrapper(std::function<void()>([](){ printf("Test task running...\n"); })),
-  8. NULL, NULL, NULL);
-  9. // ...
-  10. ffrt_task_handle_destroy(h);
-  11. ffrt_task_handle_destroy(h); // 重复释放
-  12. }
+  void abnormal_case_1()
+  {
+      ffrt_task_handle_t h = ffrt_submit_h_base(
+          ffrt::create_function_wrapper(std::function<void()>([](){ printf("Test task running...\n"); })),
+          NULL, NULL, NULL);
+      // ...
+      ffrt_task_handle_destroy(h);
+      ffrt_task_handle_destroy(h); // 重复释放
+  }
   ```
 * 错误示例2，未调用销毁函数会造成内存泄漏：
 
-  ```
-  1. #include <stdio.h>
-  2. #include "ffrt/cpp/task.h"
+  ```cpp
+  #include <stdio.h>
+  #include "ffrt/cpp/task.h"
 
-  4. void abnormal_case_2()
-  5. {
-  6. ffrt_task_handle_t h = ffrt_submit_h_base(
-  7. ffrt::create_function_wrapper(std::function<void()>([](){ printf("Test task running...\n"); })),
-  8. NULL, NULL, NULL);
-  9. // ...
-  10. // 内存泄露
-  11. }
+  void abnormal_case_2()
+  {
+      ffrt_task_handle_t h = ffrt_submit_h_base(
+          ffrt::create_function_wrapper(std::function<void()>([](){ printf("Test task running...\n"); })),
+          NULL, NULL, NULL);
+      // ...
+      // 内存泄漏
+  }
   ```
 * 建议示例，仅调用一次销毁函数，如有必要可进行置空：
 
-  ```
-  1. #include <stdio.h>
-  2. #include "ffrt/cpp/task.h"
+  ```cpp
+  #include <stdio.h>
+  #include "ffrt/cpp/task.h"
 
-  4. void normal_case()
-  5. {
-  6. ffrt_task_handle_t h = ffrt_submit_h_base(
-  7. ffrt::create_function_wrapper(std::function<void()>([](){ printf("Test task running...\n"); })),
-  8. NULL, NULL, NULL);
-  9. // ...
-  10. ffrt_task_handle_destroy(h);
-  11. h = nullptr; // 必要时置空任务句柄变量
-  12. }
+  void normal_case()
+  {
+      ffrt_task_handle_t h = ffrt_submit_h_base(
+          ffrt::create_function_wrapper(std::function<void()>([](){ printf("Test task running...\n"); })),
+          NULL, NULL, NULL);
+      // ...
+      ffrt_task_handle_destroy(h);
+      h = nullptr; // 必要时置空任务句柄变量
+  }
   ```
 
 ### 变量生命周期错误
@@ -548,92 +548,92 @@ FFRT任务中使用标准库的递归互斥锁可能发生死锁，需要更换�
 * FFRT提交任务中应注意对象或资源在其生命周期内可能出现的误用，这些错误会导致程序崩溃、数据损坏或者难以调试的问题。
 * 错误示例1，变量生命周期已结束导致的UAF问题：
 
-  ```
-  1. #include <unistd.h>
-  2. #include "ffrt/cpp/task.h"
+  ```cpp
+  #include <unistd.h>
+  #include "ffrt/cpp/task.h"
 
-  4. void abnormal_case_3()
-  5. {
-  6. int x = 0;
-  7. ffrt::submit([&] {
-  8. usleep(1000); // 模拟业务处理逻辑
-  9. x++;          // 此时变量生命周期可能已结束，对变量的访问会发生UAF问题
-  10. });
-  11. }
+  void abnormal_case_3()
+  {
+      int x = 0;
+      ffrt::submit([&] {
+          usleep(1000); // 模拟业务处理逻辑
+          x++;          // 此时变量生命周期可能已结束，对变量的访问会发生UAF问题
+      });
+  }
   ```
 * 错误示例2，互斥锁生命周期已结束继续使用导致功能异常：
 
+  ```cpp
+  #include <unistd.h>
+  #include "ffrt/cpp/mutex.h"
+  #include "ffrt/cpp/task.h"
+
+  void abnormal_case_4()
+  {
+      ffrt::mutex lock;
+      ffrt::submit([&] {
+          lock.lock();   // 对FFRT锁进行操作时，要保证其生命周期
+          usleep(1000);  // 模拟业务处理逻辑
+          lock.unlock(); // 对FFRT锁进行操作时，要保证其生命周期
+      });
+  }
   ```
-  1. #include <unistd.h>
-  2. #include "ffrt/cpp/mutex.h"
-  3. #include "ffrt/cpp/task.h"
 
-  5. void abnormal_case_4()
-  6. {
-  7. ffrt::mutex lock;
-  8. ffrt::submit([&] {
-  9. lock.lock();   // 对FFRT锁进行操作时，要保证其生命周期
-  10. usleep(1000);  // 模拟业务处理逻辑
-  11. lock.unlock(); // 对FFRT锁进行操作时，要保证其生命周期
-  12. });
-  13. }
-  ```
+## 在DevEco Studio中使用FFRT
 
-## Using FFRT in DevEco Studio
-
-### Using FFRT C API
+### 使用FFRT C API
 
 NDK（Native Development Kit）是系统提供的Native API的集合，方便开发者使用C或C++语言实现应用的关键功能。
 
 FFRT C API已集成在NDK中，在DevEco Studio中可以直接使用对应的接口。
 
-```
-1. #include "ffrt/task.h"
-2. #include "ffrt/mutex.h"
-3. #include "ffrt/shared_mutex.h"
-4. #include "ffrt/condition_variable.h"
-5. #include "ffrt/sleep.h"
-6. #include "ffrt/queue.h"
-7. #include "ffrt/loop.h"
-8. #include "ffrt/timer.h"
-9. #include "ffrt/type_def.h"
+```c
+#include "ffrt/task.h"
+#include "ffrt/mutex.h"
+#include "ffrt/shared_mutex.h"
+#include "ffrt/condition_variable.h"
+#include "ffrt/sleep.h"
+#include "ffrt/queue.h"
+#include "ffrt/loop.h"
+#include "ffrt/timer.h"
+#include "ffrt/type_def.h"
 ```
 
-### Using FFRT C++ API
+### 使用FFRT C++ API
 
 FFRT的部署依赖FFRT动态库libffrt.so和一组头文件，其中动态库仅导出C接口，C++接口调用C接口，并基于头文件的方式将API中的C++元素编译到用户的动态库中，从而保证了ABI兼容性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/SRchQXtZS2WJa8fSMJN-_Q/zh-cn_image_0000002589324827.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/YgwEbk4pSuqg9fkG3g0_yw/zh-cn_image_0000002736433541.png)
 
 如果要使用FFRT C++ API，需要使用FFRT C++接口三方库[@ppd/ffrt](https://ohpm.openharmony.cn/#/cn/detail/@ppd%2Fffrt)，该三方库是由FFRT官方维护的FFRT C++ API库。
 
 在模块目录下执行三方库安装命令：
 
-```
-1. ohpm install @ppd/ffrt
+```shell
+ohpm install @ppd/ffrt
 ```
 
 也可以直接在oh-package.json5文件中配置对应的依赖，由DevEco Studio自动进行三方库下载安装。
 
 在模块CMakeLists.txt文件中添加头文件搜索路径和链接依赖：
 
-```
-1. # ${MODULES_PATH}表示三方库安装位置，需要开发者自己定义或者直接替换成绝对路径或者相对路径。
-2. include_directories(${MODULES_PATH}/@ppd/ffrt/include)
-3. target_link_libraries(${TARGET_NAME} PUBLIC libffrt.z.so)
+```cmake
+# ${MODULES_PATH}表示三方库安装位置，需要开发者自己定义或者直接替换成绝对路径或者相对路径。
+include_directories(${MODULES_PATH}/@ppd/ffrt/include)
+target_link_libraries(${TARGET_NAME} PUBLIC libffrt.z.so)
 ```
 
 至此就可以在代码中使用FFRT C++接口：
 
-```
-1. // include all C or C++ header files
-2. #include "ffrt/ffrt.h"
+```cpp
+// include all C or C++ header files
+#include "ffrt/ffrt.h"
 
-4. // include specified header files
-5. #include "ffrt/cpp/task.h"
-6. #include "ffrt/cpp/mutex.h"
-7. #include "ffrt/cpp/shared_mutex.h"
-8. #include "ffrt/cpp/condition_variable.h"
-9. #include "ffrt/cpp/sleep.h"
-10. #include "ffrt/cpp/queue.h"
+// include specified header files
+#include "ffrt/cpp/task.h"
+#include "ffrt/cpp/mutex.h"
+#include "ffrt/cpp/shared_mutex.h"
+#include "ffrt/cpp/condition_variable.h"
+#include "ffrt/cpp/sleep.h"
+#include "ffrt/cpp/queue.h"
 ```

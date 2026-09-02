@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setty
 title: SetType
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > ShapeAndType > SetType
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:51+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ce6659a8d181396f9def3a1a3e98d212ee90fd0b3576e7066e3d7db96d6098a9
+content_hash: sha256:d15f61a27e3a3e0c8b206285a9c9312dd87111b0da79eade88859af35d80c928
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:ce6659a8d181396f9def3a1a3e98d212ee90fd0b3576e7066e3d7db96d6
 
 ## 函数原型
 
-```
-1. void SetType(DataType data_type)
+```cpp
+void SetType(DataType data_type)
 ```
 
 ## 参数说明

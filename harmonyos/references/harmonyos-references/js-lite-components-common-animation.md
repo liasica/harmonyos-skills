@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:45+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2a5234e43d52717f8b36e6340fa3f948b65736d539b9dcc5a14149bf04338a46
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ab73375be319b5b90c70af087611b326fd27b145251bcd1a9583c38003e90535
 ---
 
-组件支持通过style或css设置动态的旋转、平移及缩放效果。
+组件支持通过style或css设置动态的旋转及平移效果。
 
 | 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
@@ -28,35 +28,37 @@ content_hash: sha256:2a5234e43d52717f8b36e6340fa3f948b65736d539b9dcc5a14149bf043
 | translateY | <length> | Y轴方向平移动画属性 |
 | rotate | <deg> | <rad> | 旋转动画属性 |
 
-说明
+**说明** 
 
 轻量级智能穿戴仅支持原始大小的图片进行旋转。
+
+rotate仅支持在@keyframes中使用，不支持在普通样式中设置或动态绑定。
 
 **表2** @keyframes属性说明
 
 | 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| background-color | <color> | - | 动画执行后应用到组件上的背景颜色。 |
-| width | <length> | - | 动画执行后应用到组件上的宽度值。 |
-| height | <length> | - | 动画执行后应用到组件上的高度值。 |
+| background-color | <color> | - | 动画关键帧时刻应用到组件上的背景颜色。 |
+| width | <length> | - | 动画关键帧时刻应用到组件上的宽度值。 |
+| height | <length> | - | 动画关键帧时刻应用到组件上的高度值。 |
 | transform | string | - | 定义应用在组件上的变换类型，见表1。 |
 
 对于不支持起始值或终止值缺省的情况，可以通过from和to显式指定起始和结束。示例：
 
-```
-1. @keyframes Go
-2. {
-3. from {
-4. background-color: #f76160;
-5. }
-6. to {
-7. background-color: #09ba07;
-8. }
-9. }
+```css
+@keyframes Go
+{
+   from {
+     background-color: #f76160;
+   }
+   to {
+     background-color: #09ba07;
+   }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/SBesjR5GTjKfXNzijBMjmA/zh-cn_image_0000002558607270.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1uSLwTXCRRCzfRe57ReN4g/zh-cn_image_0000002736315701.gif)
 
-说明
+**说明** 
 
 @keyframes的from/to不支持动态绑定。

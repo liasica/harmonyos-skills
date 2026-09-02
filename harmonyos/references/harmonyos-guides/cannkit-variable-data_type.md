@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-varia
 title: 可变data_type
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > 可变data_type
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:21+08:00
+scraped_at: 2026-09-02T14:50:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d56633c135a5e95220375bb473e727e79b1fa7a230bdac440888d8ded612d34c
+content_hash: sha256:d008835c6395bdb89c03b74e171e4c19f21b93f4519218f650bce40c179423a8
 ---
 
 ## 概述
@@ -18,6 +18,6 @@ content_hash: sha256:d56633c135a5e95220375bb473e727e79b1fa7a230bdac440888d8ded61
 
 使用示例：
 
-```
-1. ./omg --model=./model.pb --framework=3 --output=./model --input_shape="inputs:1,512,512,1" --out_nodes="outputs:0" --input_type="inputs:FP16" --output_type="outputs:UINT8"
+```console
+./omg --model=./model.pb --framework=3 --output=./model --input_shape="inputs:1,512,512,1" --out_nodes="outputs:0" --input_type="inputs:FP16" --output_type="outputs:UINT8"
 ```

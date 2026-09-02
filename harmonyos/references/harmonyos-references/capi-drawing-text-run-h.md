@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_text_run.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_text_run.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:03+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:aa3b33780477a2d6e5054fee343f4bfd0ec30a513373cd436de6e2b79c0b1be1
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a63461a4f2738ac6457ea0bf4d1f969ac4cbc51d7c66ae8b56d10870644457f2
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 提供字体渲染单元的相关接口，比如绘制功能、获取排版边界功能等。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -57,14 +51,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_GetRunStringIndices()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Array* OH_Drawing_GetRunStringIndices(OH_Drawing_Run* run, int64_t start, int64_t length)
+```c
+OH_Drawing_Array* OH_Drawing_GetRunStringIndices(OH_Drawing_Run* run, int64_t start, int64_t length)
 ```
 
 **描述**
@@ -80,8 +70,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)\* run | 指向渲染单元[OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)对象的指针。 |
-| int64\_t start | 渲染单元内指定的开始位置，传入负数时该方法返回空指针。 |
-| int64\_t length | 渲染单元内指定的长度，length为0时获取渲染单元的所有字符索引数组，length小于0时该方法返回空指针。 |
+| int64\_t start | 渲染单元内指定的开始位置，取值范围为[0, glyphCount-1]，其中glyphCount为渲染单元字形数量。传入负数或超出渲染单元字形数量时，该方法返回空指针。 |
+| int64\_t length | 渲染单元内指定的长度。length为0时获取渲染单元的所有字符索引数组；length小于0时该方法返回空指针；start+length超出渲染单元实际范围时，获取到渲染单元末尾的有效数据。 |
 
 **返回：**
 
@@ -91,10 +81,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunStringIndicesByIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint64_t OH_Drawing_GetRunStringIndicesByIndex(OH_Drawing_Array* stringIndices, size_t index)
+```c
+uint64_t OH_Drawing_GetRunStringIndicesByIndex(OH_Drawing_Array* stringIndices, size_t index)
 ```
 
 **描述**
@@ -110,7 +98,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md)\* stringIndices | 字符索引数组。 |
-| size\_t index | 渲染单元字形的字符索引数组下标。 |
+| size\_t index | 渲染单元字形的字符索引数组下标，取值范围为[0, arrayLength-1]，其中arrayLength为stringIndices数组的元素个数，超出该取值范围时返回0。 |
 
 **返回：**
 
@@ -120,10 +108,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_DestroyRunStringIndices()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_DestroyRunStringIndices(OH_Drawing_Array* stringIndices)
+```c
+void OH_Drawing_DestroyRunStringIndices(OH_Drawing_Array* stringIndices)
 ```
 
 **描述**
@@ -142,10 +128,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunStringRange()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_GetRunStringRange(OH_Drawing_Run* run, uint64_t* location, uint64_t* length)
+```c
+void OH_Drawing_GetRunStringRange(OH_Drawing_Run* run, uint64_t* location, uint64_t* length)
 ```
 
 **描述**
@@ -161,15 +145,13 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)\* run | 指向渲染单元[OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)对象的指针。 |
-| uint64\_t\* location | 表示渲染单元字形的字符范围的开始位置，该位置是相对于整个段落的偏移。 |
-| uint64\_t\* length | 表示渲染单元字符范围的长度。 |
+| uint64\_t\* location | 表示渲染单元字形的字符范围的开始位置，该位置是相对于整个段落的偏移。作为出参使用。调用者需提供有效的指针来接收返回值。 |
+| uint64\_t\* length | 表示渲染单元字符范围的长度。作为出参使用。调用者需提供有效的指针来接收返回值。 |
 
 ### OH\_Drawing\_GetRunTypographicBounds()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. float OH_Drawing_GetRunTypographicBounds(OH_Drawing_Run* run, float* ascent, float* descent, float* leading)
+```c
+float OH_Drawing_GetRunTypographicBounds(OH_Drawing_Run* run, float* ascent, float* descent, float* leading)
 ```
 
 **描述**
@@ -185,22 +167,20 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)\* run | 指向渲染单元[OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)对象的指针。 |
-| float\* ascent | 渲染单元中最高字符到基准线的距离。 |
-| float\* descent | 渲染单元中最低字符到基准线的距离。 |
-| float\* leading | 渲染单元行间距。 |
+| float\* ascent | 渲染单元中最高字符到基准线的距离，单位为px。 |
+| float\* descent | 渲染单元中最低字符到基准线的距离，单位为px。 |
+| float\* leading | 渲染单元行间距，单位为px。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| float | 返回渲染单元排版宽度。 |
+| float | 返回渲染单元排版宽度，单位为px。 |
 
 ### OH\_Drawing\_RunPaint()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_RunPaint(OH_Drawing_Canvas* canvas, OH_Drawing_Run* run, double x, double y)
+```c
+void OH_Drawing_RunPaint(OH_Drawing_Canvas* canvas, OH_Drawing_Run* run, double x, double y)
 ```
 
 **描述**
@@ -217,15 +197,13 @@ PhonePC/2in1TabletTVWearable
 | --- | --- |
 | [OH\_Drawing\_Canvas](capi-drawing-oh-drawing-canvas.md)\* canvas | 指向画布[OH\_Drawing\_Canvas](capi-drawing-oh-drawing-canvas.md)对象的指针。 |
 | [OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)\* run | 指向渲染单元[OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)对象的指针。 |
-| double x | 渲染单元x坐标。 |
-| double y | 渲染单元y坐标。 |
+| double x | 渲染单元x坐标。单位为px。 |
+| double y | 渲染单元y坐标。单位为px。 |
 
 ### OH\_Drawing\_GetRunImageBounds()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Rect* OH_Drawing_GetRunImageBounds(OH_Drawing_Run* run)
+```c
+OH_Drawing_Rect* OH_Drawing_GetRunImageBounds(OH_Drawing_Run* run)
 ```
 
 **描述**
@@ -250,10 +228,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_DestroyRunImageBounds()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_DestroyRunImageBounds(OH_Drawing_Rect* rect)
+```c
+void OH_Drawing_DestroyRunImageBounds(OH_Drawing_Rect* rect)
 ```
 
 **描述**
@@ -272,10 +248,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunGlyphs()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Array* OH_Drawing_GetRunGlyphs(OH_Drawing_Run* run, int64_t start, int64_t length)
+```c
+OH_Drawing_Array* OH_Drawing_GetRunGlyphs(OH_Drawing_Run* run, int64_t start, int64_t length)
 ```
 
 **描述**
@@ -291,8 +265,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)\* run | 指向渲染单元[OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)对象的指针。 |
-| int64\_t start | 渲染单元内指定的开始位置，传入负数时该方法返回空指针。 |
-| int64\_t length | 渲染单元内指定的长度，length为0时获取渲染单元的所有字符索引，length小于0时该方法返回空指针。 |
+| int64\_t start | 渲染单元内指定的开始位置，取值范围为[0, glyphCount-1]，其中glyphCount为渲染单元字形数量。传入负数或超出渲染单元字形数量时，该方法返回空指针。 |
+| int64\_t length | 渲染单元内指定的长度。length为0时获取渲染单元的所有字形；length小于0时该方法返回空指针；start+length超出渲染单元实际范围时，获取到渲染单元末尾的有效数据。 |
 
 **返回：**
 
@@ -302,10 +276,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunGlyphsByIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint16_t OH_Drawing_GetRunGlyphsByIndex(OH_Drawing_Array* glyphs, size_t index)
+```c
+uint16_t OH_Drawing_GetRunGlyphsByIndex(OH_Drawing_Array* glyphs, size_t index)
 ```
 
 **描述**
@@ -321,20 +293,18 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md)\* glyphs | 指向渲染单元字形数组[OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md)对象的指针。 |
-| size\_t index | 渲染单元字形数组下标。 |
+| size\_t index | 渲染单元字形数组下标，取值范围为[0, arrayLength-1]，其中arrayLength为glyphs数组的元素个数，超出该取值范围时返回0。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| uint16\_t | 渲染单元单个字形。 |
+| uint16\_t | 返回渲染单元单个字形的字形ID。 |
 
 ### OH\_Drawing\_DestroyRunGlyphs()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_DestroyRunGlyphs(OH_Drawing_Array* glyphs)
+```c
+void OH_Drawing_DestroyRunGlyphs(OH_Drawing_Array* glyphs)
 ```
 
 **描述**
@@ -353,10 +323,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunPositions()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Array* OH_Drawing_GetRunPositions(OH_Drawing_Run* run, int64_t start, int64_t length)
+```c
+OH_Drawing_Array* OH_Drawing_GetRunPositions(OH_Drawing_Run* run, int64_t start, int64_t length)
 ```
 
 **描述**
@@ -372,8 +340,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)\* run | 指向渲染单元[OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)对象的指针。 |
-| int64\_t start | 渲染单元内指定的开始位置，传入负数时该方法返回空指针。 |
-| int64\_t length | 渲染单元内指定的长度，length为0时获取渲染单元的所有字符索引，length小于0时该方法返回空指针。 |
+| int64\_t start | 渲染单元内指定的开始位置，取值范围为[0, glyphCount-1]，其中glyphCount为渲染单元字形数量。传入负数或超出渲染单元字形数量时，该方法返回空指针。 |
+| int64\_t length | 渲染单元内指定的长度。length为0时获取渲染单元的所有字形位置；length小于0时该方法返回空指针；start+length超出渲染单元实际范围时，获取到渲染单元末尾的有效数据。 |
 
 **返回：**
 
@@ -383,10 +351,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunPositionsByIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Point* OH_Drawing_GetRunPositionsByIndex(OH_Drawing_Array* positions, size_t index)
+```c
+OH_Drawing_Point* OH_Drawing_GetRunPositionsByIndex(OH_Drawing_Array* positions, size_t index)
 ```
 
 **描述**
@@ -402,7 +368,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md)\* positions | 指向渲染单元字形位置数组[OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md)对象的指针。 |
-| size\_t index | 渲染单元字形位置数组下标。 |
+| size\_t index | 渲染单元字形位置数组下标，取值范围为[0, arrayLength-1]，其中arrayLength为positions数组的元素个数，超出该取值范围时返回空指针。 |
 
 **返回：**
 
@@ -412,10 +378,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_DestroyRunPositions()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_DestroyRunPositions(OH_Drawing_Array* positions)
+```c
+void OH_Drawing_DestroyRunPositions(OH_Drawing_Array* positions)
 ```
 
 **描述**
@@ -434,10 +398,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunGlyphCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint32_t OH_Drawing_GetRunGlyphCount(OH_Drawing_Run* run)
+```c
+uint32_t OH_Drawing_GetRunGlyphCount(OH_Drawing_Run* run)
 ```
 
 **描述**
@@ -462,10 +424,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunFont()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Font* OH_Drawing_GetRunFont(OH_Drawing_Run* run)
+```c
+OH_Drawing_Font* OH_Drawing_GetRunFont(OH_Drawing_Run* run)
 ```
 
 **描述**
@@ -490,10 +450,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunTextDirection()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_TextDirection OH_Drawing_GetRunTextDirection(OH_Drawing_Run* run)
+```c
+OH_Drawing_TextDirection OH_Drawing_GetRunTextDirection(OH_Drawing_Run* run)
 ```
 
 **描述**
@@ -518,10 +476,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunGlyphAdvances()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Array* OH_Drawing_GetRunGlyphAdvances(OH_Drawing_Run* run, uint32_t start, uint32_t length)
+```c
+OH_Drawing_Array* OH_Drawing_GetRunGlyphAdvances(OH_Drawing_Run* run, uint32_t start, uint32_t length)
 ```
 
 **描述**
@@ -537,8 +493,8 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)\* run | 指向渲染单元[OH\_Drawing\_Run](capi-drawing-oh-drawing-run.md)对象的指针。 |
-| uint32\_t start | 渲染单元内指定的开始位置，传入负数时该方法返回空指针。 |
-| uint32\_t length | 渲染单元内指定的长度，如果length是0表示从start开始获取到渲染单元结束，length小于0时该方法返回空指针。 |
+| uint32\_t start | 渲染单元内指定的开始位置，取值范围为[0, glyphCount-1]，其中glyphCount为渲染单元字形数量。传入值超出渲染单元字形数量时，该方法返回空指针。 |
+| uint32\_t length | 渲染单元内指定的长度，length为0时获取从start开始到渲染单元结束的所有字形宽度。 |
 
 **返回：**
 
@@ -548,10 +504,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_GetRunGlyphAdvanceByIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Point* OH_Drawing_GetRunGlyphAdvanceByIndex(OH_Drawing_Array* advances, size_t index)
+```c
+OH_Drawing_Point* OH_Drawing_GetRunGlyphAdvanceByIndex(OH_Drawing_Array* advances, size_t index)
 ```
 
 **描述**
@@ -567,7 +521,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md)\* advances | 指向渲染单元字形宽度数组[OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md)对象的指针。 |
-| size\_t index | 渲染单元字形宽度数组的下标。 |
+| size\_t index | 渲染单元字形宽度数组的下标，取值范围为[0, arrayLength-1]，其中arrayLength为advances数组的元素个数，超出该取值范围时返回空指针。 |
 
 **返回：**
 
@@ -577,10 +531,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_DestroyRunGlyphAdvances()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_DestroyRunGlyphAdvances(OH_Drawing_Array* advances)
+```c
+void OH_Drawing_DestroyRunGlyphAdvances(OH_Drawing_Array* advances)
 ```
 
 **描述**

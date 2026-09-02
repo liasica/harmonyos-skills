@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-lock-scree
 title: 锁屏沉浸实况窗
 breadcrumb: 最佳实践 > 应用服务 > 锁屏沉浸实况窗
 category: best-practices
-scraped_at: 2026-04-29T14:11:49+08:00
+scraped_at: 2026-09-02T15:03:18+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0615a4
+content_hash: sha256:13c04d3566181193f09b4a04de8617f5fd56578f2994347ec6789335dcf0ee01
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 **图1** 用户获取实时信息界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Lw_dIlPpQu6qjGbV992-vA/zh-cn_image_0000002484414413.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/UVkO0uz9Q_629A1UnEZ94w/zh-cn_image_0000002484414413.png "点击放大")
 
 当用户退出主界面操作后，可通过下拉通知栏或点击胶囊态实况窗快速获取导航概要；当设备进入锁屏状态时，将进一步展示沉浸式锁屏实况窗界面。这种设计可实现实时获取当前信息，既保证了核心业务流的持续可视化，又实现了用户注意力资源的智能分配。
 
@@ -24,7 +24,7 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 **图2** 在锁屏页面点击实况窗打开锁屏沉浸实况窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Bh6gjqkxTqeUuD0LLJ3HZw/zh-cn_image_0000002484415005.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/JIDVvE5zQgCRrsSg05YZUQ/zh-cn_image_0000002484415005.gif "点击放大")
 
 锁屏沉浸实况窗的创建依赖于实况窗功能，用户需要点击实况窗展开完整锁屏沉浸实况窗卡片。因此创建锁屏沉浸实况窗的应用需要申请实况窗权限和锁屏沉浸实况窗权限，详情请参考[Live View Kit（实况窗服务）开发准备](../harmonyos-guides/liveview-preparations.md)。
 
@@ -34,7 +34,7 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 **图3** 车道级导航锁屏沉浸实况窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/deAEeHSCRhKcjHs10_gtJw/zh-cn_image_0000002484291273.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/qeTsRH2URPm0kuZ3r5nQug/zh-cn_image_0000002484291273.gif "点击放大")
 
 由于锁屏状态的特殊性，锁屏沉浸实况窗通常为被动更新，因此需要有合理的更新策略。以车道级导航为例，当用户的车辆所在车道发生变化时，应更新车道信息，并定期更新导航信息，以保持锁屏沉浸实况窗内容的新鲜感和实时性，确保用户能够持续获取信息并合理分配注意力资源。
 
@@ -42,7 +42,7 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 **图****4 锁屏沉浸实况窗架构图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/KyGO6agfTbKTrWpEfC7uCg/zh-cn_image_0000002309310946.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/f0fSnqU3ST2Qda83XMGGQQ/zh-cn_image_0000002309310946.png "点击放大")
 
 锁屏沉浸实况窗的创建和更新依赖于[Live View Kit（实况窗服务）](../harmonyos-guides/live-view-kit-guide.md)，具体流程如下：
 
@@ -66,71 +66,65 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 1. 将[LiveViewLockScreenExtensionAbility](../harmonyos-references/liveview-lock-screen-ability.md)的名称写入创建实况窗时创建的liveView对象中。
 
+   ```typescript
+   import { liveViewManager } from '@kit.LiveViewKit';
+   // ...
+       // Construct live window request body.
+       let liveView: liveViewManager.LiveView = {
+         id: 0,
+         sequence: this.sequence,
+         // Application scenarios of the live window. NAVIGATION: Navigation.
+         event: 'NAVIGATION',
+         liveViewData: {
+           // Live view capsule related parameters
+           capsule: {
+             type: liveViewManager.CapsuleType.CAPSULE_TYPE_TEXT,
+             status: 1,
+             icon: 'turn_right_light_square.png',
+             backgroundColor: this.getStringSync($r('app.string.live_view_background').id),
+             title: this.getStringSync($r('app.string.live_view_title').id),
+           },
+           // Live view card related parameters
+           primary: {
+             title: this.getStringSync($r('app.string.live_view_title').id),
+             content: [{ text: this.getStringSync($r('app.string.live_view_content').id) }],
+             // Add LiveViewLockScreenExtensionAbility name to build lock screen live view
+             liveViewLockScreenAbilityName: 'LiveViewExtAbility',
+             liveViewLockScreenAbilityParameters: { liveViewParameters: '' },
+             keepTime: 0,
+             clickAction: await LiveViewUtil.buildWantAgent()
+           }
+         }
+       };
    ```
-   1. import { liveViewManager } from '@kit.LiveViewKit';
-   2. // ...
-   3. // Construct live window request body.
-   4. let liveView: liveViewManager.LiveView = {
-   5. id: 0,
-   6. sequence: this.sequence,
-   7. // Application scenarios of the live window. NAVIGATION: Navigation.
-   8. event: 'NAVIGATION',
-   9. liveViewData: {
-   10. // Live view capsule related parameters
-   11. capsule: {
-   12. type: liveViewManager.CapsuleType.CAPSULE_TYPE_TEXT,
-   13. status: 1,
-   14. icon: 'turn_right_light_square.png',
-   15. backgroundColor: this.getStringSync($r('app.string.live_view_background').id),
-   16. title: this.getStringSync($r('app.string.live_view_title').id),
-   17. },
-   18. // Live view card related parameters
-   19. primary: {
-   20. title: this.getStringSync($r('app.string.live_view_title').id),
-   21. content: [{ text: this.getStringSync($r('app.string.live_view_content').id) }],
-   22. // Add LiveViewLockScreenExtensionAbility name to build lock screen live view
-   23. liveViewLockScreenAbilityName: 'LiveViewExtAbility',
-   24. liveViewLockScreenAbilityParameters: { liveViewParameters: '' },
-   25. keepTime: 0,
-   26. clickAction: await LiveViewUtil.buildWantAgent()
-   27. }
-   28. }
-   29. };
-   ```
-
-   [LiveViewUtil.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/utils/LiveViewUtil.ets#L19-L175)
 2. 在应用module.json5中配置[LiveViewLockScreenExtensionAbility](../harmonyos-references/liveview-lock-screen-ability.md)的名称。
 
+   ```typescript
+   "extensionAbilities": [
+     {
+       // Keep it consistent with LiveViewLockScreenExtensionAbility name in live view instance
+       "name": "LiveViewExtAbility",
+       "type": "liveViewLockScreen",
+       // LiveViewLockScreenExtensionAbility location
+       "srcEntry": "./ets/liveview/LiveViewExtAbility.ets",
+       "exported": false
+     }
+   ],
    ```
-   1. "extensionAbilities": [
-   2. {
-   3. // Keep it consistent with LiveViewLockScreenExtensionAbility name in live view instance
-   4. "name": "LiveViewExtAbility",
-   5. "type": "liveViewLockScreen",
-   6. // LiveViewLockScreenExtensionAbility location
-   7. "srcEntry": "./ets/liveview/LiveViewExtAbility.ets",
-   8. "exported": false
-   9. }
-   10. ],
-   ```
-
-   [module.json5](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/module.json5#L39-L48)
 3. 在[LiveViewLockScreenExtensionAbility](../harmonyos-references/liveview-lock-screen-ability.md)的onSessionCreate()方法中完成锁屏沉浸实况窗页面的创建。
 
+   ```typescript
+   // Core logic when creating UI session.
+   onSessionCreate(_want: Want, session: UIExtensionContentSession): void {
+     // ...
+     try {
+       session.loadContent('liveview/LockScreenPage');
+     } catch (error) {
+       const err: BusinessError = error as BusinessError;
+       hilog.error(0x0000, TAG, `Session load content failed. code: ${err.code}, message: ${err.message}`);
+     }
+   }
    ```
-   1. // Core logic when creating UI session.
-   2. onSessionCreate(_want: Want, session: UIExtensionContentSession): void {
-   3. // ...
-   4. try {
-   5. session.loadContent('liveview/LockScreenPage');
-   6. } catch (error) {
-   7. const err: BusinessError = error as BusinessError;
-   8. hilog.error(0x0000, TAG, `Session load content failed. code: ${err.code}, message: ${err.message}`);
-   9. }
-   10. }
-   ```
-
-   [LiveViewExtAbility.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/liveview/LiveViewExtAbility.ets#L83-L141)
 
 ## 锁屏沉浸实况窗实时更新
 
@@ -140,7 +134,7 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 **图5** 锁屏沉浸实况窗实时更新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/DaWLEkBlS66kC0YTL8Wf9w/zh-cn_image_0000002484410785.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/WD3MnsQIQN2uO2DaDFRlwQ/zh-cn_image_0000002484410785.gif "点击放大")
 
 ### 开发步骤
 
@@ -162,145 +156,137 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 **图6** 锁屏沉浸实况窗实时更新时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/C05yk0UwTtWJ2si07KIQYw/zh-cn_image_0000002343349997.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/4y0MPwA-QAW3eQxL_8gD1w/zh-cn_image_0000002343349997.png "点击放大")
 
 1. 申请后台长时任务，确保在后台能够发布公共事件以传递更新数据。
    * 在申请后台长时任务之前，需确认应用已在module.json5中声明后台运行权限。
 
+     ```typescript
+     "requestPermissions": [
+       {
+         "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
+         "reason": "$string:reason_background",
+         "usedScene": {
+           "abilities": [
+             "EntryAbility"
+           ],
+           "when": "always"
+         }
+       },
+     ],
      ```
-     1. "requestPermissions": [
-     2. {
-     3. "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
-     4. "reason": "$string:reason_background",
-     5. "usedScene": {
-     6. "abilities": [
-     7. "EntryAbility"
-     8. ],
-     9. "when": "always"
-     10. }
-     11. },
-     12. ],
-     ```
-
-     [module.json5](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/module.json5#L51-L62)
    * 应用创建长时任务，并声明长时任务类型。
 
-     ```
-     1. import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
-     2. // ...
-     3. // Internal method to manage background tasks
-     4. private startContinuousRunningTask() {
-     5. // Configure WantAgent for background operation
-     6. let wantAgentInfo: wantAgent.WantAgentInfo = {
-     7. wants: [
-     8. {
-     9. bundleName: 'com.example.mapliveviewsample',
-     10. abilityName: 'EntryAbility'
-     11. }
-     12. ],
-     13. actionType: wantAgent.OperationType.START_ABILITY,
-     14. requestCode: 0,
-     15. actionFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-     16. };
+     ```typescript
+     import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
+     // ...
+       // Internal method to manage background tasks
+       private startContinuousRunningTask() {
+         // Configure WantAgent for background operation
+         let wantAgentInfo: wantAgent.WantAgentInfo = {
+           wants: [
+             {
+               bundleName: 'com.example.mapliveviewsample',
+               abilityName: 'EntryAbility'
+             }
+           ],
+           actionType: wantAgent.OperationType.START_ABILITY,
+           requestCode: 0,
+           actionFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+         };
 
-     18. try {
-     19. // Acquire WantAgent for background operations
-     20. wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj: WantAgent) => {
-     21. try {
-     22. hilog.info(0x0000, TAG, '%{public}s', 'Operation startBackgroundRunning begin.');
-     23. // Required background resource types
-     24. const list: string[] = ['location'];
-     25. // Request background running permission
-     26. if (canIUse('SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask')) {
-     27. backgroundTaskManager.startBackgroundRunning(this.context, list, wantAgentObj).then(() => {
-     28. hilog.info(0x0000, TAG, '%{public}s', 'Operation startBackgroundRunning succeeded.');
-     29. }).catch((error: BusinessError) => {
-     30. hilog.error(0x0000, TAG, '%{public}s',
-     31. `Failed to Operation startBackgroundRunning. code is ${error.code} message is ${error.message}`);
-     32. });
-     33. }
-     34. } catch (error) {
-     35. hilog.error(0x0000, TAG, '%{public}s',
-     36. `Failed to Operation startBackgroundRunning. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-     37. }
-     38. });
-     39. } catch (error) {
-     40. hilog.error(0x0000, TAG, '%{public}s',
-     41. `Failed to Operation getWantAgent. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-     42. }
-     43. }
+         try {
+           // Acquire WantAgent for background operations
+           wantAgent.getWantAgent(wantAgentInfo).then((wantAgentObj: WantAgent) => {
+             try {
+               hilog.info(0x0000, TAG, '%{public}s', 'Operation startBackgroundRunning begin.');
+               // Required background resource types
+               const list: string[] = ['location'];
+               // Request background running permission
+               if (canIUse('SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask')) {
+                 backgroundTaskManager.startBackgroundRunning(this.context, list, wantAgentObj).then(() => {
+                   hilog.info(0x0000, TAG, '%{public}s', 'Operation startBackgroundRunning succeeded.');
+                 }).catch((error: BusinessError) => {
+                   hilog.error(0x0000, TAG, '%{public}s',
+                     `Failed to Operation startBackgroundRunning. code is ${error.code} message is ${error.message}`);
+                 });
+               }
+             } catch (error) {
+               hilog.error(0x0000, TAG, '%{public}s',
+                 `Failed to Operation startBackgroundRunning. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+             }
+           });
+         } catch (error) {
+           hilog.error(0x0000, TAG, '%{public}s',
+             `Failed to Operation getWantAgent. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+         }
+       }
      ```
-
-     [LiveView.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/utils/LiveView.ets#L18-L178)
 2. 发布公共事件传递更新数据到锁屏沉浸实况窗。
 
    应用在主页面中通过[commonEventManager.publish()](../harmonyos-references/js-apis-commoneventmanager.md#commoneventmanagerpublish)接口发布公共事件'live\_view\_lock\_screen'，并在[CommonEventPublishData](../harmonyos-references/js-apis-inner-commonevent-commoneventpublishdata.md)的parameters属性中附带锁屏沉浸实况窗的创建和更新数据。
 
+   ```typescript
+   import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+   // ...
+               // Prepare common event data
+               let options: commonEventManager.CommonEventPublishData = {
+                 data: 'data',
+                 bundleName: 'com.example.mapliveviewsample',
+                 parameters: {
+                   'laneData': routeData.laneData
+                 }
+               };
+               // Publish system event for lock screen updates
+               commonEventManager.publish('live_view_lock_screen', options, (error: BusinessError) => {
+                 if (error) {
+                   hilog.error(0x0000, TAG, '%{public}s',
+                     `Failed to publish commonEvent. code is ${error.code} message is ${error.message}`);
+                 } else {
+                   hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in publishing commonEvent.')
+                 }
+               });
    ```
-   1. import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
-   2. // ...
-   3. // Prepare common event data
-   4. let options: commonEventManager.CommonEventPublishData = {
-   5. data: 'data',
-   6. bundleName: 'com.example.mapliveviewsample',
-   7. parameters: {
-   8. 'laneData': routeData.laneData
-   9. }
-   10. };
-   11. // Publish system event for lock screen updates
-   12. commonEventManager.publish('live_view_lock_screen', options, (error: BusinessError) => {
-   13. if (error) {
-   14. hilog.error(0x0000, TAG, '%{public}s',
-   15. `Failed to publish commonEvent. code is ${error.code} message is ${error.message}`);
-   16. } else {
-   17. hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in publishing commonEvent.')
-   18. }
-   19. });
-   ```
-
-   [LiveView.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/utils/LiveView.ets#L21-L91)
 3. 订阅公共事件更新锁屏沉浸实况窗。
 
    锁屏沉浸实况窗进程在[LiveViewLockScreenExtensionAbility](../harmonyos-references/liveview-lock-screen-ability.md)中，使用[commonEventManager.createSubscriber()](../harmonyos-references/js-apis-commoneventmanager.md#commoneventmanagercreatesubscriber)接口创建主页面创建的公共事件'live\_view\_lock\_screen'的订阅者，通过[AppStorage（应用全局的UI状态存储）](../harmonyos-guides/arkts-appstorage.md)将主页面传递的数据传入LockScreenPage.ets，以实现锁屏沉浸实况窗的创建和更新。
 
-   ```
-   1. import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
-   2. // ...
+   ```typescript
+   import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+   // ...
 
-   4. // Initialize event subscription.
-   5. let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-   6. events: ['live_view_lock_screen'],
-   7. publisherBundleName: 'com.example.mapliveviewsample',
-   8. priority: 0
-   9. };
-   10. commonEventManager.createSubscriber(subscribeInfo,
-   11. (error: BusinessError, data: commonEventManager.CommonEventSubscriber) => {
-   12. if (error) {
-   13. hilog.error(0x0000, TAG, '%{public}s',
-   14. `Failed to create subscriber. code is ${error.code} message is ${error.message}.`);
-   15. return;
-   16. }
-   17. this.subscriber = data;
-   18. hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in creating subscriber.');
-   19. // Event handling logic.
-   20. commonEventManager.subscribe(this.subscriber,
-   21. async (error: BusinessError, data: commonEventManager.CommonEventData) => {
-   22. if (error) {
-   23. hilog.error(0x0000, TAG, '%{public}s',
-   24. `Failed to subscribe commonEvent. code is ${error.code} message is ${error.message}.`);
-   25. return;
-   26. }
-   27. hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in subscribe commonEvent success.');
-   28. if (data.parameters) {
-   29. let laneData = data.parameters['laneData'] as LaneData;
-   30. AppStorage.setOrCreate('laneData', laneData);
-   31. hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in receive commonEvent.');
-   32. }
-   33. });
-   34. })
+       // Initialize event subscription.
+       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+         events: ['live_view_lock_screen'],
+         publisherBundleName: 'com.example.mapliveviewsample',
+         priority: 0
+       };
+       commonEventManager.createSubscriber(subscribeInfo,
+         (error: BusinessError, data: commonEventManager.CommonEventSubscriber) => {
+           if (error) {
+             hilog.error(0x0000, TAG, '%{public}s',
+               `Failed to create subscriber. code is ${error.code} message is ${error.message}.`);
+             return;
+           }
+           this.subscriber = data;
+           hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in creating subscriber.');
+           // Event handling logic.
+           commonEventManager.subscribe(this.subscriber,
+             async (error: BusinessError, data: commonEventManager.CommonEventData) => {
+               if (error) {
+                 hilog.error(0x0000, TAG, '%{public}s',
+                   `Failed to subscribe commonEvent. code is ${error.code} message is ${error.message}.`);
+                 return;
+               }
+               hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in subscribe commonEvent success.');
+               if (data.parameters) {
+                 let laneData = data.parameters['laneData'] as LaneData;
+                 AppStorage.setOrCreate('laneData', laneData);
+                 hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in receive commonEvent.');
+               }
+             });
+         })
    ```
-
-   [LiveViewExtAbility.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/liveview/LiveViewExtAbility.ets#L23-L131)
 
 ## 锁屏沉浸实况窗结束
 
@@ -314,57 +300,51 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 1. 停止数据源接收：关闭数据输入通道，停止数据采集。本开发实践为结束定时器任务，停止更新车道数据。
 
+   ```typescript
+   // Clear periodic updates
+   if (this.updateInterval !== undefined) {
+     clearInterval(this.updateInterval);
+     this.updateInterval = undefined;
+     hilog.info(0x0000, TAG, 'Timer has been cleared');
+   }
    ```
-   1. // Clear periodic updates
-   2. if (this.updateInterval !== undefined) {
-   3. clearInterval(this.updateInterval);
-   4. this.updateInterval = undefined;
-   5. hilog.info(0x0000, TAG, 'Timer has been cleared');
-   6. }
-   ```
-
-   [LiveView.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/utils/LiveView.ets#L107-L112)
 2. 结束界面更新：停止实况窗和沉浸实况窗的内容更新与展示。
 
+   ```typescript
+   // Close live view.
+   public async closeLiveView() {
+     // Ensure that the sequence is greater than the current live window page.
+     this.sequence++;
+     this.defaultLiveView = await this.createPrimaryLiveView();
+     await liveViewManager.stopLiveView(this.defaultLiveView).then(() => {
+       this.sequence = 0;
+       this.defaultLiveView = undefined;
+       hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in stopping liveView, result: %{public}');
+     }).catch((error: BusinessError) => {
+       hilog.error(0x0000, TAG, '%{public}s',
+         `Failed to stop liveView. Cause code: ${error.code}, message: ${error.message}`);
+     });
+     return;
+   }
    ```
-   1. // Close live view.
-   2. public async closeLiveView() {
-   3. // Ensure that the sequence is greater than the current live window page.
-   4. this.sequence++;
-   5. this.defaultLiveView = await this.createPrimaryLiveView();
-   6. await liveViewManager.stopLiveView(this.defaultLiveView).then(() => {
-   7. this.sequence = 0;
-   8. this.defaultLiveView = undefined;
-   9. hilog.info(0x0000, TAG, '%{public}s', 'Succeeded in stopping liveView, result: %{public}');
-   10. }).catch((error: BusinessError) => {
-   11. hilog.error(0x0000, TAG, '%{public}s',
-   12. `Failed to stop liveView. Cause code: ${error.code}, message: ${error.message}`);
-   13. });
-   14. return;
-   15. }
-   ```
-
-   [LiveViewUtil.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/utils/LiveViewUtil.ets#L74-L89)
 3. 清理后台任务：结束关联的后台长时运行任务。
 
+   ```typescript
+   // Stop background tasks
+   try {
+     if (canIUse('SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask')) {
+       backgroundTaskManager.stopBackgroundRunning(this.context).then(() => {
+         hilog.info(0x0000, TAG, '%{public}s', 'Operation stopBackgroundRunning succeeded');
+       }).catch((error: BusinessError) => {
+         hilog.error(0x0000, TAG, '%{public}s',
+           `Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+       });
+     }
+   } catch (error) {
+     hilog.error(0x0000, TAG, '%{public}s',
+       `Operation stopBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+   }
    ```
-   1. // Stop background tasks
-   2. try {
-   3. if (canIUse('SystemCapability.ResourceSchedule.BackgroundTaskManager.ContinuousTask')) {
-   4. backgroundTaskManager.stopBackgroundRunning(this.context).then(() => {
-   5. hilog.info(0x0000, TAG, '%{public}s', 'Operation stopBackgroundRunning succeeded');
-   6. }).catch((error: BusinessError) => {
-   7. hilog.error(0x0000, TAG, '%{public}s',
-   8. `Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
-   9. });
-   10. }
-   11. } catch (error) {
-   12. hilog.error(0x0000, TAG, '%{public}s',
-   13. `Operation stopBackgroundRunning failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-   14. }
-   ```
-
-   [LiveView.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/utils/LiveView.ets#L119-L132)
 
 ## 锁屏沉浸实况窗多设备适配
 
@@ -372,7 +352,7 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 **图7** 手机折叠态和展开态锁屏沉浸实况窗对比图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/x5Q0b5w0SyGXnV4AthE6lg/zh-cn_image_0000002451295374.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/-qfD8Y7ES0W4DM2Eimpfkg/zh-cn_image_0000002451295374.png "点击放大")
 
 为了适配不同尺寸的实况卡片和多样化的设备形态，沉浸式实况展示应采用自适应的多断点布局方案，以确保在各种产品上能够实现自适应布局。可以参考[断点](bpta-multi-device-responsive-layout.md#section1532120147301)。
 
@@ -382,94 +362,88 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 1. 在[LiveViewLockScreenExtensionAbility](../harmonyos-references/liveview-lock-screen-ability.md)中注册页面布局变化的监听器。
 
+   ```typescript
+   import { AbilityConstant, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+   import { display, window } from '@kit.ArkUI';
+   // ...
+       try {
+         // Window size listener.
+         const extensionWindow = session.getUIExtensionWindowProxy();
+         extensionWindow.on('windowSizeChange', (windowSize: window.Size) => {
+           this.updateBreakPoint(windowSize);
+         });
+       } catch (error) {
+         const err: BusinessError = error as BusinessError;
+         hilog.error(0x0000, TAG, `Session update break point failed. code: ${err.code}, message: ${err.message}`);
+       }
    ```
-   1. import { AbilityConstant, UIExtensionContentSession, Want } from '@kit.AbilityKit';
-   2. import { display, window } from '@kit.ArkUI';
-   3. // ...
-   4. try {
-   5. // Window size listener.
-   6. const extensionWindow = session.getUIExtensionWindowProxy();
-   7. extensionWindow.on('windowSizeChange', (windowSize: window.Size) => {
-   8. this.updateBreakPoint(windowSize);
-   9. });
-   10. } catch (error) {
-   11. const err: BusinessError = error as BusinessError;
-   12. hilog.error(0x0000, TAG, `Session update break point failed. code: ${err.code}, message: ${err.message}`);
-   13. }
-   ```
-
-   [LiveViewExtAbility.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/liveview/LiveViewExtAbility.ets#L17-L97)
 2. 当检测到锁屏沉浸实况窗布局发生变化时，触发纵向断点的重新计算。
 
+   ```typescript
+   import { display, window } from '@kit.ArkUI';
+   // ...
+     // Distinguish page layout using vertical breakpoints.
+     private updateBreakPoint(windowSize: window.Size): void {
+       try {
+         let windowWidthVp: number = windowSize.width / display.getDefaultDisplaySync().densityPixels;
+         let windowHeightVp: number = windowSize.height / display.getDefaultDisplaySync().densityPixels;
+         let windowRatio: number = windowWidthVp / windowHeightVp;
+         let verticalBreakpoint: string = Constants.BREAK_POINT_SM;
+         // Vertical breakpoints are distinguished by aspect ratio.
+         if (windowRatio < 0.8) {
+           verticalBreakpoint = Constants.BREAK_POINT_SM;
+         } else if (windowRatio > 1.2) {
+           verticalBreakpoint = Constants.BREAK_POINT_LG;
+         } else {
+           verticalBreakpoint = Constants.BREAK_POINT_MD;
+         }
+         if (this.verticalBreakpoint !== verticalBreakpoint) {
+           this.verticalBreakpoint = verticalBreakpoint;
+           AppStorage.setOrCreate('verticalBreakpoint', this.verticalBreakpoint);
+         }
+         hilog.info(0x0000, TAG, `updateBreakpoint ${verticalBreakpoint}`);
+       } catch (error) {
+         hilog.error(0x0000, TAG, `updateBreakpoint catch err:`, (error as BusinessError).message);
+       }
+     }
    ```
-   1. import { display, window } from '@kit.ArkUI';
-   2. // ...
-   3. // Distinguish page layout using vertical breakpoints.
-   4. private updateBreakPoint(windowSize: window.Size): void {
-   5. try {
-   6. let windowWidthVp: number = windowSize.width / display.getDefaultDisplaySync().densityPixels;
-   7. let windowHeightVp: number = windowSize.height / display.getDefaultDisplaySync().densityPixels;
-   8. let windowRatio: number = windowWidthVp / windowHeightVp;
-   9. let verticalBreakpoint: string = Constants.BREAK_POINT_SM;
-   10. // Vertical breakpoints are distinguished by aspect ratio.
-   11. if (windowRatio < 0.8) {
-   12. verticalBreakpoint = Constants.BREAK_POINT_SM;
-   13. } else if (windowRatio > 1.2) {
-   14. verticalBreakpoint = Constants.BREAK_POINT_LG;
-   15. } else {
-   16. verticalBreakpoint = Constants.BREAK_POINT_MD;
-   17. }
-   18. if (this.verticalBreakpoint !== verticalBreakpoint) {
-   19. this.verticalBreakpoint = verticalBreakpoint;
-   20. AppStorage.setOrCreate('verticalBreakpoint', this.verticalBreakpoint);
-   21. }
-   22. hilog.info(0x0000, TAG, `updateBreakpoint ${verticalBreakpoint}`);
-   23. } catch (error) {
-   24. hilog.error(0x0000, TAG, `updateBreakpoint catch err:`, (error as BusinessError).message);
-   25. }
-   26. }
-   ```
-
-   [LiveViewExtAbility.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/liveview/LiveViewExtAbility.ets#L19-L63)
 3. 在 LockScreenPage中采用纵向断点监听机制，根据窗口大小动态切换布局样式。
 
+   ```typescript
+   @StorageLink('verticalBreakpoint') verticalBreakpoint: string = Constants.BREAK_POINT_SM;
+   @StorageProp('laneData') laneData: LaneData | undefined = undefined;
+
+   build() {
+     Stack({ alignContent: Alignment.Top }) {
+       Image(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? $r('app.media.ic_lock') : $r('app.media.ic_lock_md'))
+         .width('100%')
+         .height('100%')
+
+       Row() {
+         Stack() {
+           Image($r('app.media.ic_light'))
+             .width(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 73.5 : 106)
+             .height(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 36 : 52)
+           Text(JSON.stringify(this.laneData?.lightTime ?? 90))
+             .fontColor($r('sys.color.white'))
+             .fontSize(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 24 : 30)
+             .margin({ right: this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 8 : 16 })
+         }
+         .alignContent(Alignment.End)
+       }
+       .width(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 73.5 : 106)
+       .height(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 36 : 52)
+       .position({
+         // Layout based on vertical breakpoint.
+         right: 20,
+         top: this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 32 : 25
+       })
+     }
+     .width('100%')
+     .height('100%')
+     .alignContent(Alignment.Center)
+   }
    ```
-   1. @StorageLink('verticalBreakpoint') verticalBreakpoint: string = Constants.BREAK_POINT_SM;
-   2. @StorageProp('laneData') laneData: LaneData | undefined = undefined;
-
-   4. build() {
-   5. Stack({ alignContent: Alignment.Top }) {
-   6. Image(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? $r('app.media.ic_lock') : $r('app.media.ic_lock_md'))
-   7. .width('100%')
-   8. .height('100%')
-
-   10. Row() {
-   11. Stack() {
-   12. Image($r('app.media.ic_light'))
-   13. .width(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 73.5 : 106)
-   14. .height(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 36 : 52)
-   15. Text(JSON.stringify(this.laneData?.lightTime ?? 90))
-   16. .fontColor($r('sys.color.white'))
-   17. .fontSize(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 24 : 30)
-   18. .margin({ right: this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 8 : 16 })
-   19. }
-   20. .alignContent(Alignment.End)
-   21. }
-   22. .width(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 73.5 : 106)
-   23. .height(this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 36 : 52)
-   24. .position({
-   25. // Layout based on vertical breakpoint.
-   26. right: 20,
-   27. top: this.verticalBreakpoint === Constants.BREAK_POINT_MD ? 32 : 25
-   28. })
-   29. }
-   30. .width('100%')
-   31. .height('100%')
-   32. .alignContent(Alignment.Center)
-   33. }
-   ```
-
-   [LockScreenPage.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/liveview/LockScreenPage.ets#L22-L54)
 
 ## 常见问题
 
@@ -477,24 +451,22 @@ content_hash: sha256:fa3e3c64ac52970a6b7776caa22973b31d7bae8cf0539528fc90e63c4c0
 
 当应用接入锁屏沉浸实况窗后，因需实时更新锁屏沉浸实况窗页面，可能会导致功耗上升。其优化策略是采用智能后台更新机制，仅在应用进入后台时触发实况窗的刷新及数据同步。可使用[appManager.getRunningProcessInformation()](../harmonyos-references/js-apis-app-ability-appmanager.md#appmanagergetrunningprocessinformation)接口来获取当前应用运行进程的相关信息，并通过返回的[ProcessInformation](../harmonyos-references/js-apis-inner-application-processinformation.md)模块中的state来判断当前进程的运行状态。
 
+```typescript
+// Set up periodic state checking
+this.updateInterval = setInterval(() => {
+  // Monitor application state changes
+  appManager.getRunningProcessInformation().then((data: Array<appManager.ProcessInformation>) => {
+    hilog.info(0x0000, TAG, '%{public}s', 'Success to getRunningProcessInformation');
+    // Handle background state
+    if (data[0].state === appManager.ProcessState.STATE_BACKGROUND) {
+      // ...
+    }
+  }).catch((error: BusinessError) => {
+    hilog.error(0x0000, TAG, '%{public}s',
+      `Failed to getRunningProcessInformation. code is ${error.code} message is ${error.message}`);
+  });
+}, 1000)
 ```
-1. // Set up periodic state checking
-2. this.updateInterval = setInterval(() => {
-3. // Monitor application state changes
-4. appManager.getRunningProcessInformation().then((data: Array<appManager.ProcessInformation>) => {
-5. hilog.info(0x0000, TAG, '%{public}s', 'Success to getRunningProcessInformation');
-6. // Handle background state
-7. if (data[0].state === appManager.ProcessState.STATE_BACKGROUND) {
-8. // ...
-9. }
-10. }).catch((error: BusinessError) => {
-11. hilog.error(0x0000, TAG, '%{public}s',
-12. `Failed to getRunningProcessInformation. code is ${error.code} message is ${error.message}`);
-13. });
-14. }, 1000)
-```
-
-[LiveView.ets](https://gitcode.com/harmonyos_samples/LiveViewLockScreen/blob/master/entry/src/main/ets/utils/LiveView.ets#L62-L99)
 
 ## 示例代码
 

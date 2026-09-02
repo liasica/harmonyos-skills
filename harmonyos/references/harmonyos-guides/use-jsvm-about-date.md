@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行Date相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行Date相关开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:18+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:0aa53ec2ecb61f1c9e7a44a9b6df8407a4f693bc2f3f74b2d1e472ab2e1b60ce
+scraped_at: 2026-09-02T15:00:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b17f8f241aeff15dd34155ae287f98409e2ed241de0ae5f53508d513d2be80e4
 ---
 
 ## 简介
@@ -39,50 +39,55 @@ JSVM-API接口开发流程参考[使用JSVM-API实现JS与C/C++语言交互开�
 cpp部分代码：
 
 ```
-1. #include <time.h>
-2. // OH_JSVM_CreateDate的样例方法
-3. static JSVM_Value CreateDate(JSVM_Env env, JSVM_CallbackInfo info) {
-4. // 通过c接口获取Unix纪元以来经过的秒数，并转化为毫秒数为单位
-5. double value = static_cast<double>(static_cast<uint64_t>(time(NULL)) * 1000ULL);
-6. // 调用OH_JSVM_CreateDate接口将double值转换成表示日期时间的JavaScript值返回出去
-7. JSVM_Value returnValue = nullptr;
+#include "napi/native_api.h"
+#include "hilog/log.h"
+#include "ark_runtime/jsvm.h"
+#include <ctime>
+// ...
+// OH_JSVM_CreateDate的样例方法
+static JSVM_Value CreateDate(JSVM_Env env, JSVM_CallbackInfo info)
+{
+    // 通过c接口获取Unix纪元以来经过的秒数，并转化为毫秒数为单位
+    double value = static_cast<double>(time(nullptr) * 1000);
+    // 调用OH_JSVM_CreateDate接口将double值转换成表示日期时间的JavaScript值返回出去
+    JSVM_Value returnValue = nullptr;
 
-9. JSVM_CALL(OH_JSVM_CreateDate(env, value, &returnValue));
+    JSVM_CALL(OH_JSVM_CreateDate(env, value, &returnValue));
 
-11. bool isDate = false;
-12. JSVM_CALL(OH_JSVM_IsDate(env, returnValue, &isDate));
-13. if (!isDate) {
-14. OH_LOG_ERROR(LOG_APP, "JSVM IsDate fail");
-15. return returnValue;
-16. }
+    bool isDate = false;
+    JSVM_CALL(OH_JSVM_IsDate(env, returnValue, &isDate));
+    if (!isDate) {
+        OH_LOG_ERROR(LOG_APP, "JSVM IsDate fail");
+        return returnValue;
+    }
 
-18. value = 0;
-19. JSVM_CALL(OH_JSVM_GetDateValue(env, returnValue, &value));
+    value = 0;
+    JSVM_CALL(OH_JSVM_GetDateValue(env, returnValue, &value));
 
-21. uint64_t time = static_cast<uint64_t>(value) / 1000;
-22. char *date = ctime(reinterpret_cast<time_t *>(&time));
-23. OH_LOG_INFO(LOG_APP, "JSVM CreateDate success:%{public}s", date);
+    uint64_t time = static_cast<uint64_t>(value) / 1000;
+    char *date = ctime(reinterpret_cast<time_t *>(&time));
+    OH_LOG_INFO(LOG_APP, "JSVM CreateDate success:%{public}s", date);
 
-25. return returnValue;
-26. }
+    return returnValue;
+}
 
-28. // CreateDate注册回调
-29. static JSVM_CallbackStruct param[] = {
-30. {.data = nullptr, .callback = CreateDate},
-31. };
-32. static JSVM_CallbackStruct *method = param;
-33. // CreateDate方法别名，供JS调用
-34. static JSVM_PropertyDescriptor descriptor[] = {
-35. {"createDate", nullptr, method, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-36. };
-37. // 样例测试js
-38. const char *srcCallNative = R"JS(createDate())JS";
+// CreateDate注册回调
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = CreateDate},
+};
+static JSVM_CallbackStruct *method = param;
+// CreateDate方法别名，供JS调用
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"createDate", nullptr, method, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
+// 样例测试js
+const char *SRC_CALL_NATIVE = R"JS(createDate())JS";
 ```
 
 预期结果：
 
-```
-1. JSVM CreateDate success:Mon Jul 7 10:42:34 2025
+```txt
+JSVM CreateDate success:Mon Jul 7 10:42:34 2025
 ```
 
 ### OH\_JSVM\_GetDateValue
@@ -92,43 +97,45 @@ cpp部分代码：
 cpp部分代码：
 
 ```
-1. #include <ctime>
-2. // OH_JSVM_GetDateValue的样例方法
-3. static JSVM_Value GetDateValue(JSVM_Env env, JSVM_CallbackInfo info) {
-4. size_t argc = 1;
-5. JSVM_Value args[1] = {nullptr};
-6. JSVM_CALL(OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr));
-7. // 获取传入的Unix Time Stamp时间
-8. double value = 0;
-9. JSVM_CALL(OH_JSVM_GetDateValue(env, args[0], &value));
+#include <ctime>
+// ...
+// OH_JSVM_GetDateValue的样例方法
+static JSVM_Value GetDateValue(JSVM_Env env, JSVM_CallbackInfo info)
+{
+    size_t argc = 1;
+    JSVM_Value args[1] = {nullptr};
+    JSVM_CALL(OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr));
+    // 获取传入的Unix Time Stamp时间
+    double value = 0;
+    JSVM_CALL(OH_JSVM_GetDateValue(env, args[0], &value));
 
-11. // 将获取到的Unix Time Stamp时间转化为日期字符串打印
-12. uint64_t time = static_cast<uint64_t>(value) / 1000;
-13. char *date = ctime(reinterpret_cast<time_t *>(&time));
-14. OH_LOG_INFO(LOG_APP, "JSVM GetDateValue success:%{public}s", date);
+    // 将获取到的Unix Time Stamp时间转化为日期字符串打印
+    uint64_t time = static_cast<uint64_t>(value) / 1000;
+    char *date = ctime(reinterpret_cast<time_t *>(&time));
+    OH_LOG_INFO(LOG_APP, "JSVM GetDateValue success:%{public}s", date);
 
-16. JSVM_Value returnValue = nullptr;
-17. JSVM_CALL(OH_JSVM_CreateDouble(env, value, &returnValue));
-18. return returnValue;
-19. }
+    JSVM_Value returnValue = nullptr;
+    JSVM_CALL(OH_JSVM_CreateDouble(env, value, &returnValue));
+    return returnValue;
+}
 
-21. // CreateDate注册回调
-22. static JSVM_CallbackStruct param[] = {
-23. {.data = nullptr, .callback = GetDateValue},
-24. };
-25. static JSVM_CallbackStruct *method = param;
-26. // CreateDate方法别名，供JS调用
-27. static JSVM_PropertyDescriptor descriptor[] = {
-28. {"getDateValue", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-29. };
-30. // 样例测试js
-31. const char *srcCallNative = R"JS(getDateValue(new Date(Date.now())))JS";
+// GetDateValue注册回调
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = GetDateValue},
+};
+static JSVM_CallbackStruct *method = param;
+// GetDateValue方法别名，供JS调用
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"getDateValue", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
+// 样例测试js
+const char *SRC_CALL_NATIVE = R"JS(getDateValue(new Date(Date.now())))JS";
 ```
 
 预期结果：
 
-```
-1. JSVM GetDateValue success:Mon Jul 7 10:47:08 2025
+```txt
+JSVM GetDateValue success:Mon Jul 7 10:47:08 2025
 ```
 
 ### OH\_JSVM\_IsDate
@@ -138,34 +145,35 @@ cpp部分代码：
 cpp部分代码：
 
 ```
-1. // OH_JSVM_IsDate的样例方法
-2. static JSVM_Value IsDate(JSVM_Env env, JSVM_CallbackInfo info) {
-3. size_t argc = 1;
-4. JSVM_Value args[1] = {nullptr};
-5. JSVM_CALL(OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr));
-6. bool isDate = false;
-7. JSVM_CALL(OH_JSVM_IsDate(env, args[0], &isDate));
-8. OH_LOG_INFO(LOG_APP, "JSVM IsDate success:%{public}d", isDate);
+// OH_JSVM_IsDate的样例方法
+static JSVM_Value IsDate(JSVM_Env env, JSVM_CallbackInfo info)
+{
+    size_t argc = 1;
+    JSVM_Value args[1] = {nullptr};
+    JSVM_CALL(OH_JSVM_GetCbInfo(env, info, &argc, args, nullptr, nullptr));
+    bool isDate = false;
+    JSVM_CALL(OH_JSVM_IsDate(env, args[0], &isDate));
+    OH_LOG_INFO(LOG_APP, "JSVM IsDate success:%{public}d", isDate);
 
-10. JSVM_Value result = nullptr;
-11. JSVM_CALL(OH_JSVM_GetBoolean(env, isDate, &result));
-12. return result;
-13. }
-14. // CreateDate注册回调
-15. static JSVM_CallbackStruct param[] = {
-16. {.data = nullptr, .callback = IsDate},
-17. };
-18. static JSVM_CallbackStruct *method = param;
-19. // CreateDate方法别名，供JS调用
-20. static JSVM_PropertyDescriptor descriptor[] = {
-21. {"isDate", nullptr, method, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-22. };
-23. // 样例测试js
-24. const char *srcCallNative = R"JS(isDate(new Date(Date.now())))JS";
+    JSVM_Value result = nullptr;
+    JSVM_CALL(OH_JSVM_GetBoolean(env, isDate, &result));
+    return result;
+}
+// IsDate注册回调
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = IsDate},
+};
+static JSVM_CallbackStruct *method = param;
+// IsDate方法别名，供JS调用
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"isDate", nullptr, method, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
+// 样例测试js
+const char *SRC_CALL_NATIVE = R"JS(isDate(new Date(Date.now())))JS";
 ```
 
 预期结果：
 
-```
-1. JSVM IsDate success:1
+```txt
+JSVM IsDate success:1
 ```

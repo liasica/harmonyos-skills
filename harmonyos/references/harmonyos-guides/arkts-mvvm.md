@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm
 title: MVVM模式（V1）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > MVVM模式（V1）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:10+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:a7d3fe8598cedcd13f15fc4eb794e29bd369062b11c6412a740de4b8b262c515
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:febf780e6e435f249fa0d9039ab0ab45833829178c01e6367abf4b31a655d16d
 ---
 
 当开发者掌握了状态管理的基本概念后，通常会尝试开发自己的应用，在应用开发初期，如果未能精心规划项目结构，随着项目扩展和复杂化，状态变量的增多将导致组件间关系变得错综复杂。此时，开发新功能可能引起连锁反应，维护成本也会增加。为此，本文旨在介绍MVVM模式以及ArkUI的UI开发模式与MVVM的关系，指导开发者如何设计项目结构，以便在产品迭代和升级时能更轻松地开发和维护。
@@ -31,7 +31,7 @@ ArkUI的UI开发模式就属于MVVM模式，通过对MVVM概念的基本介绍�
 
 ArkUI的UI开发模式即是MVVM模式，而状态变量在MVVM模式中扮演着ViewModel的角色，向上刷新UI，向下更新数据，整体框架如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/zEorDJXuT-yJNn2LOf5BmA/zh-cn_image_0000002558604426.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Hs78p_RaQpSqfLnyhcImHA/zh-cn_image_0000002736312289.png)
 
 ### 分层说明
 
@@ -41,7 +41,7 @@ View层通常可以分为下列组件：
 
 * 页面组件：所有应用基本都是按照页面进行分类的，比如登录页，列表页，编辑页，帮助页，版权页等。每个页面对应需要的数据可能是完全不一样的，也可能多个页面需要的数据是同一套。
 * 业务组件：本身具备本APP部分业务能力的功能组件，典型的就是这个业务组件可能关联了本项目的ViewModel中的数据，不可以被共享给其他项目使用。
-* 通用组件：像系统组件一样，这类组件不会关联本APP中ViewModel的数据，这些组件可实现跨越多个项目进行共享，来完成比较通用的功能。
+* 共享组件：像系统组件一样，这类组件不会关联本APP中ViewModel的数据，这些组件可实现跨越多个项目进行共享，来完成比较通用的功能。
 
 **Model层**
 
@@ -89,62 +89,60 @@ ViewModel层数据，是提供某个页面上使用的数据，它可能是整�
 
 * [@State](arkts-state.md)装饰器是最常用的装饰器之一，用于定义状态变量。通常，这些状态变量作为父组件的数据源，开发者点击时，触发状态变量的更新，刷新UI。
 
+```typescript
+@Entry
+@Component
+struct StateIndex {
+  @State isFinished: boolean = false;
+
+  build() {
+    Column() {
+      Row() {
+        // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
+        Text($r('app.string.all_tasks'))
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+      }
+      .width('100%')
+      .margin({ top: 10, bottom: 10 })
+
+      // 待办事项
+      Row({ space: 15 }) {
+        if (this.isFinished) {
+          // 请将$r('app.media.finished')替换为实际资源文件
+          Image($r('app.media.finished'))
+            .width(28)
+            .height(28)
+        } else {
+          // 请将$r('app.media.unfinished')替换为实际资源文件
+          Image($r('app.media.unfinished'))
+            .width(28)
+            .height(28)
+        }
+        // 请将$r('app.string.all_learn_advanced_math')替换为实际资源文件，在本示例中该资源文件的value值为"学习高数"
+        Text($r('app.string.learn_advanced_math'))
+          .fontSize(24)
+          .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
+      }
+      .height('40%')
+      .width('100%')
+      .border({ width: 5 })
+      .padding({ left: 15 })
+      .onClick(() => {
+        this.isFinished = !this.isFinished;
+      })
+    }
+    .height('100%')
+    .width('100%')
+    .margin({ top: 5, bottom: 5 })
+    .backgroundColor('#90f1f3f5')
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct StateIndex {
-4. @State isFinished: boolean = false;
-
-6. build() {
-7. Column() {
-8. Row() {
-9. // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
-10. Text($r('app.string.all_tasks'))
-11. .fontSize(30)
-12. .fontWeight(FontWeight.Bold)
-13. }
-14. .width('100%')
-15. .margin({ top: 10, bottom: 10 })
-
-17. // 待办事项
-18. Row({ space: 15 }) {
-19. if (this.isFinished) {
-20. // 请将$r('app.media.finished')替换为实际资源文件
-21. Image($r('app.media.finished'))
-22. .width(28)
-23. .height(28)
-24. } else {
-25. // 请将$r('app.media.unfinished')替换为实际资源文件
-26. Image($r('app.media.unfinished'))
-27. .width(28)
-28. .height(28)
-29. }
-30. // 请将$r('app.string.all_learn_advanced_math')替换为实际资源文件，在本示例中该资源文件的value值为"学习高数"
-31. Text($r('app.string.learn_advanced_math'))
-32. .fontSize(24)
-33. .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
-34. }
-35. .height('40%')
-36. .width('100%')
-37. .border({ width: 5 })
-38. .padding({ left: 15 })
-39. .onClick(() => {
-40. this.isFinished = !this.isFinished;
-41. })
-42. }
-43. .height('100%')
-44. .width('100%')
-45. .margin({ top: 5, bottom: 5 })
-46. .backgroundColor('#90f1f3f5')
-47. }
-48. }
-```
-
-[StateIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/pages/StateIndex.ets#L16-L66)
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/6pQRW6CeSzO7Cd94pxjoTg/zh-cn_image_0000002589323951.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/rXTHM0L4QWmEC2yX_sISOg/zh-cn_image_0000002706673246.gif)
 
 ### @Prop、@Link的作用
 
@@ -153,425 +151,418 @@ ViewModel层数据，是提供某个页面上使用的数据，它可能是整�
 * [@Prop](arkts-prop.md)是父子间单向传递，子组件会深拷贝父组件数据，可从父组件更新，也可自己更新数据，但不会同步回父组件。
 * [@Link](arkts-link.md)是父子间双向传递，父组件改变，会通知所有的@Link，同时@Link的更新也会通知父组件的数据源进行刷新。
 
+```typescript
+@Component
+struct PropLinkTodoComponent {
+  build() {
+    Row() {
+      // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
+      Text($r('app.string.all_tasks'))
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+    }
+    .width('100%')
+    .margin({ top: 10, bottom: 10 })
+  }
+}
+
+@Component
+struct PropLinkAllChooseComponent {
+  @Link isFinished: boolean;
+
+  build() {
+    Row() {
+      // 请将$r('app.string.check_all')替换为实际资源文件，在本示例中该资源文件的value值为"全选"
+      Button($r('app.string.check_all'), { type: ButtonType.Normal })
+        .onClick(() => {
+          this.isFinished = !this.isFinished;
+        })
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+        .backgroundColor('#f7f6cc74')
+    }
+    .padding({ left: 15 })
+    .width('100%')
+    .margin({ top: 10, bottom: 10 })
+  }
+}
+
+@Component
+struct ThingComponent1 {
+  @Prop isFinished: boolean;
+
+  build() {
+    // 待办事项1
+    Row({ space: 15 }) {
+      if (this.isFinished) {
+        // 请将$r('app.media.finished')替换为实际资源文件
+        Image($r('app.media.finished'))
+          .width(28)
+          .height(28)
+      } else {
+        // 请将$r('app.media.unfinished')替换为实际资源文件
+        Image($r('app.media.unfinished'))
+          .width(28)
+          .height(28)
+      }
+      // 请将$r('app.string.learn_chinese')替换为实际资源文件，在本示例中该资源文件的value值为"学习语文"
+      Text($r('app.string.learn_chinese'))
+        .fontSize(24)
+        .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
+    }
+    .height('40%')
+    .width('100%')
+    .border({ width: 5 })
+    .padding({ left: 15 })
+    .onClick(() => {
+      this.isFinished = !this.isFinished;
+    })
+  }
+}
+
+@Component
+struct ThingComponent2 {
+  @Prop isFinished: boolean;
+
+  build() {
+      // 待办事项2
+    Row({ space: 15 }) {
+      if (this.isFinished) {
+        // 请将$r('app.media.finished')替换为实际资源文件
+        Image($r('app.media.finished'))
+          .width(28)
+          .height(28)
+      } else {
+        // 请将$r('app.media.unfinished')替换为实际资源文件
+        Image($r('app.media.unfinished'))
+          .width(28)
+          .height(28)
+      }
+      // 请将$r('app.string.learn_advanced_math')替换为实际资源文件，在本示例中该资源文件的value值为"学习高数"
+      Text($r('app.string.learn_advanced_math'))
+        .fontSize(24)
+        .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
+    }
+    .height('40%')
+    .width('100%')
+    .border({ width: 5 })
+    .padding({ left: 15 })
+    .onClick(() => {
+      this.isFinished = !this.isFinished;
+    })
+  }
+}
+
+@Entry
+@Component
+struct PropLinkIndex {
+  @State isFinished: boolean = false;
+
+  build() {
+    Column() {
+      // 全部待办
+      PropLinkTodoComponent()
+
+      // 全选
+      PropLinkAllChooseComponent({ isFinished: this.isFinished })
+
+      // 待办事项1
+      ThingComponent1({ isFinished: this.isFinished })
+
+      // 待办事项2
+      ThingComponent2({ isFinished: this.isFinished })
+    }
+    .height('100%')
+    .width('100%')
+    .margin({ top: 5, bottom: 5 })
+    .backgroundColor('#90f1f3f5')
+  }
+}
 ```
-1. @Component
-2. struct PropLinkTodoComponent {
-3. build() {
-4. Row() {
-5. // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
-6. Text($r('app.string.all_tasks'))
-7. .fontSize(30)
-8. .fontWeight(FontWeight.Bold)
-9. }
-10. .width('100%')
-11. .margin({ top: 10, bottom: 10 })
-12. }
-13. }
-
-15. @Component
-16. struct PropLinkAllChooseComponent {
-17. @Link isFinished: boolean;
-
-19. build() {
-20. Row() {
-21. // 请将$r('app.string.check_all')替换为实际资源文件，在本示例中该资源文件的value值为"全选"
-22. Button($r('app.string.check_all'), { type: ButtonType.Normal })
-23. .onClick(() => {
-24. this.isFinished = !this.isFinished;
-25. })
-26. .fontSize(30)
-27. .fontWeight(FontWeight.Bold)
-28. .backgroundColor('#f7f6cc74')
-29. }
-30. .padding({ left: 15 })
-31. .width('100%')
-32. .margin({ top: 10, bottom: 10 })
-33. }
-34. }
-
-36. @Component
-37. struct ThingComponent1 {
-38. @Prop isFinished: boolean;
-
-40. build() {
-41. // 待办事项1
-42. Row({ space: 15 }) {
-43. if (this.isFinished) {
-44. // 请将$r('app.media.finished')替换为实际资源文件
-45. Image($r('app.media.finished'))
-46. .width(28)
-47. .height(28)
-48. } else {
-49. // 请将$r('app.media.unfinished')替换为实际资源文件
-50. Image($r('app.media.unfinished'))
-51. .width(28)
-52. .height(28)
-53. }
-54. // 请将$r('app.string.learn_chinese')替换为实际资源文件，在本示例中该资源文件的value值为"学习语文"
-55. Text($r('app.string.learn_chinese'))
-56. .fontSize(24)
-57. .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
-58. }
-59. .height('40%')
-60. .width('100%')
-61. .border({ width: 5 })
-62. .padding({ left: 15 })
-63. .onClick(() => {
-64. this.isFinished = !this.isFinished;
-65. })
-66. }
-67. }
-
-69. @Component
-70. struct ThingComponent2 {
-71. @Prop isFinished: boolean;
-
-73. build() {
-74. // 待办事项1
-75. Row({ space: 15 }) {
-76. if (this.isFinished) {
-77. // 请将$r('app.media.finished')替换为实际资源文件
-78. Image($r('app.media.finished'))
-79. .width(28)
-80. .height(28)
-81. } else {
-82. // 请将$r('app.media.unfinished')替换为实际资源文件
-83. Image($r('app.media.unfinished'))
-84. .width(28)
-85. .height(28)
-86. }
-87. // 请将$r('app.string.learn_advanced_math')替换为实际资源文件，在本示例中该资源文件的value值为"学习高数"
-88. Text($r('app.string.learn_advanced_math'))
-89. .fontSize(24)
-90. .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
-91. }
-92. .height('40%')
-93. .width('100%')
-94. .border({ width: 5 })
-95. .padding({ left: 15 })
-96. .onClick(() => {
-97. this.isFinished = !this.isFinished;
-98. })
-99. }
-100. }
-
-102. @Entry
-103. @Component
-104. struct PropLinkIndex {
-105. @State isFinished: boolean = false;
-
-107. build() {
-108. Column() {
-109. // 全部待办
-110. PropLinkTodoComponent()
-
-112. // 全选
-113. PropLinkAllChooseComponent({ isFinished: this.isFinished })
-
-115. // 待办事项1
-116. ThingComponent1({ isFinished: this.isFinished })
-
-118. // 待办事项2
-119. ThingComponent2({ isFinished: this.isFinished })
-120. }
-121. .height('100%')
-122. .width('100%')
-123. .margin({ top: 5, bottom: 5 })
-124. .backgroundColor('#90f1f3f5')
-125. }
-126. }
-```
-
-[PropLinkIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/pages/PropLinkIndex.ets#L16-L144)
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/dQURmpgPQlCqa7y5l0FebA/zh-cn_image_0000002589243891.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/FwuHH7PyT6Gx9lpQ51cV_A/zh-cn_image_0000002736432337.gif)
 
 ### 循环渲染组件
 
 * 上个示例虽然拆分出了子组件，但发现组件1和组件2的代码非常相似，当渲染的组件除了数据外，其他设置都相同时，此时就需要使用[ForEach循环渲染](../harmonyos-references/ts-rendering-control-foreach.md)。
 * ForEach使用之后，冗余代码变得更少，并且代码结构更加清晰。
 
+```typescript
+@Component
+struct ForEachTodoComponent {
+  build() {
+    Row() {
+      // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
+      Text($r('app.string.all_tasks'))
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+    }
+    .width('100%')
+    .margin({ top: 10, bottom: 10 })
+  }
+}
+
+@Component
+struct ForEachAllChooseComponent {
+  @Link isFinished: boolean;
+
+  build() {
+    Row() {
+      // 请将$r('app.string.check_all')替换为实际资源文件，在本示例中该资源文件的value值为"全选"
+      Button($r('app.string.check_all'), { type: ButtonType.Normal })
+        .onClick(() => {
+          this.isFinished = !this.isFinished;
+        })
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+        .backgroundColor('#f7f6cc74')
+    }
+    .padding({ left: 15 })
+    .width('100%')
+    .margin({ top: 10, bottom: 10 })
+  }
+}
+
+@Component
+struct ForEachThingComponent {
+  @Prop isFinished: boolean;
+  @Prop thing: string;
+
+  build() {
+      // 待办事项
+    Row({ space: 15 }) {
+      if (this.isFinished) {
+        // 请将$r('app.media.finished')替换为实际资源文件
+        Image($r('app.media.finished'))
+          .width(28)
+          .height(28)
+      } else {
+        // 请将$r('app.media.unfinished')替换为实际资源文件
+        Image($r('app.media.unfinished'))
+          .width(28)
+          .height(28)
+          // ...
+      }
+      Text(`${this.thing}`)
+        .fontSize(24)
+        .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
+    }
+    .height('8%')
+    .width('90%')
+    .padding({ left: 15 })
+    .opacity(this.isFinished ? 0.3 : 1)
+    .border({ width: 1 })
+    .borderColor(Color.White)
+    .borderRadius(25)
+    .backgroundColor(Color.White)
+    .onClick(() => {
+      this.isFinished = !this.isFinished;
+    })
+  }
+}
+
+@Entry
+@Component
+struct ForEachIndex {
+  @State isFinished: boolean = false;
+  @State planList: ResourceStr[] = [
+    // 请将$r('app.string.get_up')替换为实际资源文件，在本示例中该资源文件的value值为"7.30 起床"
+    $r('app.string.get_up'),
+    // 请将$r('app.string.breakfast')替换为实际资源文件，在本示例中该资源文件的value值为"8.30 早餐"
+    $r('app.string.breakfast'),
+    // 请将$r('app.string.lunch')替换为实际资源文件，在本示例中该资源文件的value值为"11.30 中餐"
+    $r('app.string.lunch'),
+    // 请将$r('app.string.dinner')替换为实际资源文件，在本示例中该资源文件的value值为"17.30 晚餐"
+    $r('app.string.dinner'),
+    // 请将$r('app.string.midnight_snack')替换为实际资源文件，在本示例中该资源文件的value值为"21.30 夜宵"
+    $r('app.string.midnight_snack'),
+    // 请将$r('app.string.bathe')替换为实际资源文件，在本示例中该资源文件的value值为"22.30 洗澡"
+    $r('app.string.bathe'),
+    // 请将$r('app.string.sleep')替换为实际资源文件，在本示例中该资源文件的value值为"1.30 睡觉"
+    $r('app.string.sleep')
+  ];
+
+  aboutToAppear(): void {
+    for (let i = 0; i < this.planList.length; i++) {
+      this.planList[i] = resource.resourceToString(this.planList[i] as Resource);
+    };
+  }
+
+  build() {
+    Column() {
+      // 全部待办
+      ForEachTodoComponent()
+
+      // 全选
+      ForEachAllChooseComponent({ isFinished: this.isFinished })
+
+      List() {
+        ForEach(this.planList, (item: string) => {
+          // 待办事项
+          ForEachThingComponent({ isFinished: this.isFinished, thing: item })
+            .margin(5)
+        })
+      }
+    }
+    .height('100%')
+    .width('100%')
+    .margin({ top: 5, bottom: 5 })
+    .backgroundColor('#90f1f3f5')
+  }
+}
 ```
-1. @Component
-2. struct ForEachTodoComponent {
-3. build() {
-4. Row() {
-5. // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
-6. Text($r('app.string.all_tasks'))
-7. .fontSize(30)
-8. .fontWeight(FontWeight.Bold)
-9. }
-10. .width('100%')
-11. .margin({ top: 10, bottom: 10 })
-12. }
-13. }
-
-15. @Component
-16. struct ForEachAllChooseComponent {
-17. @Link isFinished: boolean;
-
-19. build() {
-20. Row() {
-21. // 请将$r('app.string.check_all')替换为实际资源文件，在本示例中该资源文件的value值为"全选"
-22. Button($r('app.string.check_all'), { type: ButtonType.Normal })
-23. .onClick(() => {
-24. this.isFinished = !this.isFinished;
-25. })
-26. .fontSize(30)
-27. .fontWeight(FontWeight.Bold)
-28. .backgroundColor('#f7f6cc74')
-29. }
-30. .padding({ left: 15 })
-31. .width('100%')
-32. .margin({ top: 10, bottom: 10 })
-33. }
-34. }
-
-36. @Component
-37. struct ForEachThingComponent {
-38. @Prop isFinished: boolean;
-39. @Prop thing: string;
-
-41. build() {
-42. // 待办事项1
-43. Row({ space: 15 }) {
-44. if (this.isFinished) {
-45. // 请将$r('app.media.finished')替换为实际资源文件
-46. Image($r('app.media.finished'))
-47. .width(28)
-48. .height(28)
-49. } else {
-50. // 请将$r('app.media.unfinished')替换为实际资源文件
-51. Image($r('app.media.unfinished'))
-52. .width(28)
-53. .height(28)
-54. // ...
-55. }
-56. Text(`${this.thing}`)
-57. .fontSize(24)
-58. .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
-59. }
-60. .height('8%')
-61. .width('90%')
-62. .padding({ left: 15 })
-63. .opacity(this.isFinished ? 0.3 : 1)
-64. .border({ width: 1 })
-65. .borderColor(Color.White)
-66. .borderRadius(25)
-67. .backgroundColor(Color.White)
-68. .onClick(() => {
-69. this.isFinished = !this.isFinished;
-70. })
-71. }
-72. }
-
-74. @Entry
-75. @Component
-76. struct ForEachIndex {
-77. @State isFinished: boolean = false;
-78. @State planList: ResourceStr[] = [
-79. // 请将$r('app.string.get_up')替换为实际资源文件，在本示例中该资源文件的value值为"7.30 起床"
-80. $r('app.string.get_up'),
-81. // 请将$r('app.string.breakfast')替换为实际资源文件，在本示例中该资源文件的value值为"8.30 早餐"
-82. $r('app.string.breakfast'),
-83. // 请将$r('app.string.lunch')替换为实际资源文件，在本示例中该资源文件的value值为"11.30 中餐"
-84. $r('app.string.lunch'),
-85. // 请将$r('app.string.dinner')替换为实际资源文件，在本示例中该资源文件的value值为"17.30 晚餐"
-86. $r('app.string.dinner'),
-87. // 请将$r('app.string.midnight_snack')替换为实际资源文件，在本示例中该资源文件的value值为"21.30 夜宵"
-88. $r('app.string.midnight_snack'),
-89. // 请将$r('app.string.bathe')替换为实际资源文件，在本示例中该资源文件的value值为"22.30 洗澡"
-90. $r('app.string.bathe'),
-91. // 请将$r('app.string.sleep')替换为实际资源文件，在本示例中该资源文件的value值为"1.30 睡觉"
-92. $r('app.string.sleep')
-93. ];
-94. context1 = this.getUIContext().getHostContext();
-
-96. aboutToAppear(): void {
-97. for (let i = 0; i < this.planList.length; i++) {
-98. this.planList[i] = resource.resourceToString(this.planList[i] as Resource);
-99. };
-100. }
-
-102. build() {
-103. Column() {
-104. // 全部待办
-105. ForEachTodoComponent()
-
-107. // 全选
-108. ForEachAllChooseComponent({ isFinished: this.isFinished })
-
-110. List() {
-111. ForEach(this.planList, (item: string) => {
-112. // 待办事项1
-113. ForEachThingComponent({ isFinished: this.isFinished, thing: item })
-114. .margin(5)
-115. })
-116. }
-117. }
-118. .height('100%')
-119. .width('100%')
-120. .margin({ top: 5, bottom: 5 })
-121. .backgroundColor('#90f1f3f5')
-122. }
-123. }
-```
-
-[ForEachIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/pages/ForEachIndex.ets#L16-L143)
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/UViOtEBkQD2kUByFU26gAQ/zh-cn_image_0000002558764084.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/dKtG0tFCRgetuj1sLAghOg/zh-cn_image_0000002706833184.gif)
 
 ### @Builder方法
 
 * Builder方法用于组件内定义方法，可以使得相同代码可以在组件内进行复用。
 * 本示例不仅使用了[@Builder](arkts-builder.md)方法进行去重，还对数据进行了移除，可以看到此时代码更加清晰易读，相对于最开始的代码，@Entry组件基本只用于处理页面构建逻辑，而不处理大量与页面设计无关的内容。
 
+```typescript
+@Observed
+class TodoListData {
+  public planList: ResourceStr[] = [
+    // 请将$r('app.string.get_up')替换为实际资源文件，在本示例中该资源文件的value值为"7.30 起床"
+    $r('app.string.get_up'),
+    // 请将$r('app.string.breakfast')替换为实际资源文件，在本示例中该资源文件的value值为"8.30 早餐"
+    $r('app.string.breakfast'),
+    // 请将$r('app.string.lunch')替换为实际资源文件，在本示例中该资源文件的value值为"11.30 中餐"
+    $r('app.string.lunch'),
+    // 请将$r('app.string.dinner')替换为实际资源文件，在本示例中该资源文件的value值为"17.30 晚餐"
+    $r('app.string.dinner'),
+    // 请将$r('app.string.midnight_snack')替换为实际资源文件，在本示例中该资源文件的value值为"21.30 夜宵"
+    $r('app.string.midnight_snack'),
+    // 请将$r('app.string.bathe')替换为实际资源文件，在本示例中该资源文件的value值为"22.30 洗澡"
+    $r('app.string.bathe'),
+    // 请将$r('app.string.sleep')替换为实际资源文件，在本示例中该资源文件的value值为"1.30 睡觉"
+    $r('app.string.sleep')
+  ];
+}
+
+@Component
+struct StateTodoComponent {
+  build() {
+    Row() {
+      // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
+      Text($r('app.string.all_tasks'))
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+    }
+    .width('100%')
+    .margin({ top: 10, bottom: 10 })
+  }
+}
+
+@Component
+struct BuilderAllChooseComponent {
+  @Link isFinished: boolean;
+
+  build() {
+    Row() {
+      // 请将$r('app.string.check_all')替换为实际资源文件，在本示例中该资源文件的value值为"全选"
+      Button($r('app.string.check_all'), { type: ButtonType.Capsule })
+        .onClick(() => {
+          this.isFinished = !this.isFinished;
+        })
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+        .backgroundColor('#f7f6cc74')
+    }
+    .padding({ left: 15 })
+    .width('100%')
+    .margin({ top: 10, bottom: 10 })
+  }
+}
+
+@Component
+struct BuilderThingComponent {
+  @Prop isFinished: boolean;
+  @Prop thing: string;
+
+  @Builder
+  displayIcon(icon: Resource) {
+    Image(icon)
+      .width(28)
+      .height(28)
+      .onClick(() => {
+        this.isFinished = !this.isFinished;
+      })
+      // ...
+  }
+
+  build() {
+      // 待办事项
+    Row({ space: 15 }) {
+      if (this.isFinished) {
+        // 请将$r('app.media.finished')替换为实际资源文件
+        this.displayIcon($r('app.media.finished'));
+      } else {
+        // 请将$r('app.media.unfinished')替换为实际资源文件
+        this.displayIcon($r('app.media.unfinished'));
+      }
+      Text(`${this.thing}`)
+        .fontSize(24)
+        .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
+        .onClick(() => {
+          this.thing += 'lala';
+        })
+    }
+    .height('8%')
+    .width('90%')
+    .padding({ left: 15 })
+    .opacity(this.isFinished ? 0.3 : 1)
+    .border({ width: 1 })
+    .borderColor(Color.White)
+    .borderRadius(25)
+    .backgroundColor(Color.White)
+  }
+}
+
+@Entry
+@Component
+struct BuilderIndex {
+  @State isFinished: boolean = false;
+  @State data: TodoListData = new TodoListData(); // View绑定ViewModel的数据
+
+  aboutToAppear(): void {
+    for (let i = 0; i < this.data.planList.length; i++) {
+      this.data.planList[i] =
+        resource.resourceToString(this.data.planList[i] as Resource);
+    }
+  }
+
+  build() {
+    Column() {
+      // 全部待办
+      StateTodoComponent()
+
+      // 全选
+      BuilderAllChooseComponent({ isFinished: this.isFinished })
+
+      List() {
+        ForEach(this.data.planList, (item: string) => {
+          // 待办事项
+          BuilderThingComponent({ isFinished: this.isFinished, thing: item })
+            .margin(5)
+        })
+      }
+    }
+    .height('100%')
+    .width('100%')
+    .margin({ top: 5, bottom: 5 })
+    .backgroundColor('#90f1f3f5')
+  }
+}
 ```
-1. @Observed
-2. class TodoListData {
-3. public planList: ResourceStr[] = [
-4. // 请将$r('app.string.get_up')替换为实际资源文件，在本示例中该资源文件的value值为"7.30 起床"
-5. $r('app.string.get_up'),
-6. // 请将$r('app.string.breakfast')替换为实际资源文件，在本示例中该资源文件的value值为"8.30 早餐"
-7. $r('app.string.breakfast'),
-8. // 请将$r('app.string.lunch')替换为实际资源文件，在本示例中该资源文件的value值为"11.30 中餐"
-9. $r('app.string.lunch'),
-10. // 请将$r('app.string.dinner')替换为实际资源文件，在本示例中该资源文件的value值为"17.30 晚餐"
-11. $r('app.string.dinner'),
-12. // 请将$r('app.string.midnight_snack')替换为实际资源文件，在本示例中该资源文件的value值为"21.30 夜宵"
-13. $r('app.string.midnight_snack'),
-14. // 请将$r('app.string.bathe')替换为实际资源文件，在本示例中该资源文件的value值为"22.30 洗澡"
-15. $r('app.string.bathe'),
-16. // 请将$r('app.string.sleep')替换为实际资源文件，在本示例中该资源文件的value值为"1.30 睡觉"
-17. $r('app.string.sleep')
-18. ];
-19. }
-
-21. @Component
-22. struct StateTodoComponent {
-23. build() {
-24. Row() {
-25. // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
-26. Text($r('app.string.all_tasks'))
-27. .fontSize(30)
-28. .fontWeight(FontWeight.Bold)
-29. }
-30. .width('100%')
-31. .margin({ top: 10, bottom: 10 })
-32. }
-33. }
-
-35. @Component
-36. struct BuilderAllChooseComponent {
-37. @Link isFinished: boolean;
-
-39. build() {
-40. Row() {
-41. // 请将$r('app.string.check_all')替换为实际资源文件，在本示例中该资源文件的value值为"全选"
-42. Button($r('app.string.check_all'), { type: ButtonType.Capsule })
-43. .onClick(() => {
-44. this.isFinished = !this.isFinished;
-45. })
-46. .fontSize(30)
-47. .fontWeight(FontWeight.Bold)
-48. .backgroundColor('#f7f6cc74')
-49. }
-50. .padding({ left: 15 })
-51. .width('100%')
-52. .margin({ top: 10, bottom: 10 })
-53. }
-54. }
-
-56. @Component
-57. struct BuilderThingComponent {
-58. @Prop isFinished: boolean;
-59. @Prop thing: string;
-
-61. @Builder
-62. displayIcon(icon: Resource) {
-63. Image(icon)
-64. .width(28)
-65. .height(28)
-66. .onClick(() => {
-67. this.isFinished = !this.isFinished;
-68. })
-69. // ...
-70. }
-
-72. build() {
-73. // 待办事项1
-74. Row({ space: 15 }) {
-75. if (this.isFinished) {
-76. // 请将$r('app.media.finished')替换为实际资源文件
-77. this.displayIcon($r('app.media.finished'));
-78. } else {
-79. // 请将$r('app.media.unfinished')替换为实际资源文件
-80. this.displayIcon($r('app.media.unfinished'));
-81. }
-82. Text(`${this.thing}`)
-83. .fontSize(24)
-84. .decoration({ type: this.isFinished ? TextDecorationType.LineThrough : TextDecorationType.None })
-85. .onClick(() => {
-86. this.thing += 'lala';
-87. })
-88. }
-89. .height('8%')
-90. .width('90%')
-91. .padding({ left: 15 })
-92. .opacity(this.isFinished ? 0.3 : 1)
-93. .border({ width: 1 })
-94. .borderColor(Color.White)
-95. .borderRadius(25)
-96. .backgroundColor(Color.White)
-97. }
-98. }
-
-100. @Entry
-101. @Component
-102. struct BuilderIndex {
-103. @State isFinished: boolean = false;
-104. @State data: TodoListData = new TodoListData(); // View绑定ViewModel的数据
-
-106. aboutToAppear(): void {
-107. for (let i = 0; i < this.data.planList.length; i++) {
-108. this.data.planList[i] =
-109. resource.resourceToString(this.data.planList[i] as Resource);
-110. }
-111. }
-
-113. build() {
-114. Column() {
-115. // 全部待办
-116. StateTodoComponent()
-
-118. // 全选
-119. BuilderAllChooseComponent({ isFinished: this.isFinished })
-
-121. List() {
-122. ForEach(this.data.planList, (item: string) => {
-123. // 待办事项1
-124. BuilderThingComponent({ isFinished: this.isFinished, thing: item })
-125. .margin(5)
-126. })
-127. }
-128. }
-129. .height('100%')
-130. .width('100%')
-131. .margin({ top: 5, bottom: 5 })
-132. .backgroundColor('#90f1f3f5')
-133. }
-134. }
-```
-
-[BuilderIndex.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/pages/BuilderIndex.ets#L16-L155)
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/SWGOMExzSJabi05yVcNwCQ/zh-cn_image_0000002558604428.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Qkt9rYNDQH-UhWClrtV9kQ/zh-cn_image_0000002736312291.gif)
 
 ### 总结
 
@@ -583,25 +574,11 @@ ViewModel层数据，是提供某个页面上使用的数据，它可能是整�
 
 上一章节展示了非MVVM模式下的代码组织方式。随着主页面代码的增加，应该采取合理的分层策略，使项目结构清晰，组件之间不互相引用，避免后期维护时牵一发而动全身，增加功能更新的困难。本章将通过对MVVM的核心文件组织模式，向开发者展示如何使用MVVM来重构上一章节的代码。
 
-### MVVM文件结构说明
-
-```
-1. ├── src
-2. │   ├── ets
-3. │   │   ├── pages 存放页面组件。
-4. │   │   ├── views 存放业务组件。
-5. │   │   ├── shares 存放通用组件。
-6. │   │   └── viewmodel 数据服务。
-7. │   │   │   ├── LoginViewModel.ets 登录页ViewModel。
-8. │   │   │   └── xxxViewModel.ets 其他页ViewModel。
-9. │
-```
-
 ### 分层设计技巧
 
 **Model层**
 
-* model层存放本应用核心数据结构，这层本身和UI开发关系不大，让用户按照自己的业务逻辑进行封装。
+* Model层存放本应用核心数据结构，这层本身和UI开发关系不大，让用户按照自己的业务逻辑进行封装。
 
 **ViewModel层**
 
@@ -615,7 +592,7 @@ ViewModel层不只是存放数据，它同时需要提供数据的服务及处�
 
 **View层**
 
-View层根据需要来组织，但View层需要区分一下三种组件：
+View层根据需要来组织，但View层需要区分以下三种组件：
 
 * 页面组件：提供整体页面布局，实现多页面之间的跳转，前后台事件处理等页面内容。
 * 业务组件：被页面引用，构建出页面。
@@ -631,344 +608,327 @@ View层根据需要来组织，但View层需要区分一下三种组件：
 
 按MVVM模式组织结构，重构如下：
 
-```
-1. ├── src
-2. │   ├── ets
-3. │   │   ├── model
-4. │   │   │   ├── ThingModel.ets
-5. │   │   │   └── TodoListModel.ets
-6. │   │   ├── pages
-7. │   │   │   ├── Index.ets
-8. │   │   ├── views
-9. │   │   │   ├── AllChooseComponent.ets
-10. │   │   │   ├── ThingComponent.ets
-11. │   │   │   ├── TodoComponent.ets
-12. │   │   │   └── TodoListComponent.ets
-13. │   │   ├── viewmodel
-14. │   │   │   ├── ThingViewModel.ets
-15. │   │   │   └── TodoListViewModel.ets
-16. │   └── resources
-17. │   │   ├── rawfile
-18. │   │   │   ├── default_tasks.json
-19. │
+```txt
+├── src
+│   ├── ets
+│   │   ├── model // 存放数据结构
+│   │   │   ├── ThingModel.ets
+│   │   │   └── TodoListModel.ets
+│   │   ├── pages // 存放页面组件
+│   │   │   ├── Index.ets
+│   │   ├── views // 存放业务组件
+│   │   │   ├── AllChooseComponent.ets
+│   │   │   ├── ThingComponent.ets
+│   │   │   ├── TodoComponent.ets
+│   │   │   └── TodoListComponent.ets
+│   │   ├── viewmodel // 存放数据服务
+│   │   │   ├── ThingViewModel.ets
+│   │   │   └── TodoListViewModel.ets
+│   └── resources
+│   │   ├── rawfile
+│   │   │   ├── default_tasks.json
+│
 ```
 
 文件代码如下：
 
 * ThingModel.ets
 
+```typescript
+export default class ThingModel {
+  public thingName: string = 'Todo';
+  public isFinish: boolean = false;
+}
 ```
-1. export default class ThingModel {
-2. public thingName: string = 'Todo';
-3. public isFinish: boolean = false;
-4. }
-```
-
-[ThingModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/model/ThingModel.ets#L16-L21)
 
 * TodoListModel.ets
 
+```typescript
+import { common } from '@kit.AbilityKit';
+import { util } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import ThingModel from './ThingModel';
+
+const DOMAIN = 0x0001;
+const TAG = 'TodoListModel';
+
+export default class TodoListModel {
+  public things: Array<ThingModel> = [];
+
+  constructor(things: Array<ThingModel>) {
+    this.things = things;
+  }
+
+  async loadTasks(context: common.UIAbilityContext) {
+    try {
+      let getJson = await context.resourceManager.getRawFileContent('default_tasks.json');
+      let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
+      let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+      let result = textDecoder.decodeToString(getJson, { stream: false });
+      this.things = JSON.parse(result);
+    } catch (error) {
+      // 任务加载失败，输出error信息，便于排查失败原因
+      hilog.error(DOMAIN, TAG, 'Failed to load tasks. Cause: %{public}s', JSON.stringify(error.message));
+    }
+  }
+}
 ```
-1. import { common } from '@kit.AbilityKit';
-2. import { util } from '@kit.ArkTS';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import ThingModel from './ThingModel';
-
-6. const DOMAIN = 0x0001;
-7. const TAG = 'TodoListModel';
-
-9. export default class TodoListModel {
-10. public things: Array<ThingModel> = [];
-
-12. constructor(things: Array<ThingModel>) {
-13. this.things = things;
-14. }
-
-16. async loadTasks(context: common.UIAbilityContext) {
-17. try {
-18. let getJson = await context.resourceManager.getRawFileContent('default_tasks.json');
-19. let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
-20. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-21. let result = textDecoder.decodeToString(getJson, { stream: false });
-22. this.things = JSON.parse(result);
-23. } catch (error) {
-24. // 任务加载失败，输出error信息，便于排查失败原因
-25. hilog.error(DOMAIN, TAG, 'Failed to load tasks. Cause: %{public}s', JSON.stringify(error.message));
-26. }
-27. }
-28. }
-```
-
-[TodoListModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/model/TodoListModel.ets#L16-L36)
 
 * Index.ets
 
+```typescript
+import { common } from '@kit.AbilityKit';
+// import ViewModel
+import TodoListViewModel from '../viewmodel/TodoListViewModel';
+
+// import View
+import { TodoComponent } from '../views/TodoComponent';
+import { AllChooseComponent } from '../views/AllChooseComponent';
+import { TodoListComponent } from '../views/TodoListComponent';
+
+@Entry
+@Component
+struct TodoList {
+  @State todoListViewModel: TodoListViewModel = new TodoListViewModel(); // View绑定ViewModel的数据
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+  async aboutToAppear() {
+    await this.todoListViewModel.loadTasks(this.context);
+  }
+
+  build() {
+    Column() {
+      Row({ space: 40 }) {
+        // 全部待办
+        TodoComponent()
+        // 全选
+        AllChooseComponent({ todoListViewModel: this.todoListViewModel })
+      }
+
+      Column() {
+        TodoListComponent({ thingViewModelArray: this.todoListViewModel.things })
+      }
+    }
+    .height('100%')
+    .width('100%')
+    .margin({ top: 5, bottom: 5 })
+    .backgroundColor('#90f1f3f5')
+  }
+}
 ```
-1. import { common } from '@kit.AbilityKit';
-2. // import ViewModel
-3. import TodoListViewModel from '../viewmodel/TodoListViewModel';
-
-5. // import View
-6. import { TodoComponent } from '../views/TodoComponent';
-7. import { AllChooseComponent } from '../views/AllChooseComponent';
-8. import { TodoListComponent } from '../views/TodoListComponent';
-
-10. @Entry
-11. @Component
-12. struct TodoList {
-13. @State todoListViewModel: TodoListViewModel = new TodoListViewModel(); // View绑定ViewModel的数据
-14. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-16. async aboutToAppear() {
-17. await this.todoListViewModel.loadTasks(this.context);
-18. }
-
-20. build() {
-21. Column() {
-22. Row({ space: 40 }) {
-23. // 全部待办
-24. TodoComponent()
-25. // 全选
-26. AllChooseComponent({ todoListViewModel: this.todoListViewModel })
-27. }
-
-29. Column() {
-30. TodoListComponent({ thingViewModelArray: this.todoListViewModel.things })
-31. }
-32. }
-33. .height('100%')
-34. .width('100%')
-35. .margin({ top: 5, bottom: 5 })
-36. .backgroundColor('#90f1f3f5')
-37. }
-38. }
-```
-
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/pages/Index.ets#L16-L55)
 
 * AllChooseComponent.ets
 
+```typescript
+import TodoListViewModel from '../viewmodel/TodoListViewModel';
+import { common } from '@kit.AbilityKit';
+
+@Component
+export struct AllChooseComponent {
+  context1 = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  // 请在resources\base\element\string.json文件中配置name为'check_all'，value为非空字符串的资源
+  @State titleName: ResourceStr = this.context1.resourceManager.getStringSync($r('app.string.check_all').id);
+  @Link todoListViewModel: TodoListViewModel;
+
+  build() {
+    Row() {
+      Button(`${this.titleName}`, { type: ButtonType.Capsule })
+        .onClick(() => {
+          this.todoListViewModel.chooseAll(); // View层点击事件发生时，调用ViewModel层方法chooseAll处理逻辑
+          this.titleName = this.todoListViewModel.isChosen ?
+            // 请在resources\base\element\string.json文件中配置name为'check_all'，value为非空字符串的资源
+            this.context1.resourceManager.getStringSync($r('app.string.check_all').id)
+            // 请在resources\base\element\string.json文件中配置name为'deselect_all'，value为非空字符串的资源
+            : this.context1.resourceManager.getStringSync($r('app.string.deselect_all').id);
+        })
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+        .backgroundColor('#f7f6cc74')
+    }
+    .padding({ left: this.todoListViewModel.isChosen ? 15 : 0 })
+    .width('100%')
+    .margin({ top: 10, bottom: 10 })
+  }
+}
 ```
-1. import TodoListViewModel from '../viewmodel/TodoListViewModel';
-2. import { common } from '@kit.AbilityKit';
-
-4. @Component
-5. export struct AllChooseComponent {
-6. context1 = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. // 请在resources\base\element\string.json文件中配置name为'check_all'，value为非空字符串的资源
-8. @State titleName: ResourceStr = this.context1.resourceManager.getStringSync($r('app.string.check_all').id);
-9. @Link todoListViewModel: TodoListViewModel;
-
-11. build() {
-12. Row() {
-13. Button(`${this.titleName}`, { type: ButtonType.Capsule })
-14. .onClick(() => {
-15. this.todoListViewModel.chooseAll(); // View层点击事件发生时，调用ViewModel层方法chooseAll处理逻辑
-16. this.titleName = this.todoListViewModel.isChosen ?
-17. // 请在resources\base\element\string.json文件中配置name为'check_all'，value为非空字符串的资源
-18. this.context1.resourceManager.getStringSync($r('app.string.check_all').id)
-19. // 请在resources\base\element\string.json文件中配置name为'deselect_all'，value为非空字符串的资源
-20. : this.context1.resourceManager.getStringSync($r('app.string.deselect_all').id);
-21. })
-22. .fontSize(30)
-23. .fontWeight(FontWeight.Bold)
-24. .backgroundColor('#f7f6cc74')
-25. }
-26. .padding({ left: this.todoListViewModel.isChosen ? 15 : 0 })
-27. .width('100%')
-28. .margin({ top: 10, bottom: 10 })
-29. }
-30. }
-```
-
-[AllChooseComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/views/AllChooseComponent.ets#L16-L48)
 
 * ThingComponent.ets
 
+```typescript
+import ThingViewModel from '../viewmodel/ThingViewModel';
+
+@Component
+export struct ThingComponent {
+  @ObjectLink thing: ThingViewModel;
+
+  @Builder
+  displayIcon(icon: Resource) {
+    Image(icon)
+      .width(28)
+      .height(28)
+      .onClick(() => {
+        this.thing.updateIsFinish(); // View层点击事件发生时，调用ViewModel层方法updateIsFinish处理逻辑
+      })
+      .id(this.thing.thingName)
+  }
+
+  build() {
+    // 待办事项
+    Row({ space: 15 }) {
+      if (this.thing.isFinish) {
+        // 请将$r('app.media.finished')替换为实际资源文件
+        this.displayIcon($r('app.media.finished'));
+      } else {
+        // 请将$r('app.media.unfinished')替换为实际资源文件
+        this.displayIcon($r('app.media.unfinished'));
+      }
+
+      Text(`${this.thing.thingName}`)
+        .fontSize(24)
+        .decoration({ type: this.thing.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+        .onClick(() => {
+          this.thing.addSuffixes(); // View层点击事件发生时，调用ViewModel层方法addSuffixes处理逻辑
+        })
+    }
+    .height('8%')
+    .width('90%')
+    .padding({ left: 15 })
+    .opacity(this.thing.isFinish ? 0.3 : 1)
+    .border({ width: 1 })
+    .borderColor(Color.White)
+    .borderRadius(25)
+    .backgroundColor(Color.White)
+  }
+}
 ```
-1. import ThingViewModel from '../viewmodel/ThingViewModel';
-
-3. @Component
-4. export struct ThingComponent {
-5. @ObjectLink thing: ThingViewModel;
-
-7. @Builder
-8. displayIcon(icon: Resource) {
-9. Image(icon)
-10. .width(28)
-11. .height(28)
-12. .onClick(() => {
-13. this.thing.updateIsFinish(); // View层点击事件发生时，调用ViewModel层方法updateIsFinish处理逻辑
-14. })
-15. .id(this.thing.thingName)
-16. }
-
-18. build() {
-19. // 待办事项
-20. Row({ space: 15 }) {
-21. if (this.thing.isFinish) {
-22. // 请将$r('app.media.finished')替换为实际资源文件
-23. this.displayIcon($r('app.media.finished'));
-24. } else {
-25. // 请将$r('app.media.unfinished')替换为实际资源文件
-26. this.displayIcon($r('app.media.unfinished'));
-27. }
-
-29. Text(`${this.thing.thingName}`)
-30. .fontSize(24)
-31. .decoration({ type: this.thing.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-32. .onClick(() => {
-33. this.thing.addSuffixes(); // View层点击事件发生时，调用ViewModel层方法addSuffixes处理逻辑
-34. })
-35. }
-36. .height('8%')
-37. .width('90%')
-38. .padding({ left: 15 })
-39. .opacity(this.thing.isFinish ? 0.3 : 1)
-40. .border({ width: 1 })
-41. .borderColor(Color.White)
-42. .borderRadius(25)
-43. .backgroundColor(Color.White)
-44. }
-45. }
-```
-
-[ThingComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/views/ThingComponent.ets#L16-L64)
 
 * TodoComponent.ets
 
+```typescript
+@Component
+export struct TodoComponent {
+  build() {
+    Row() {
+      // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
+      Text($r('app.string.all_tasks'))
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+    }
+    .padding({ left: 15 })
+    .width('50%')
+    .margin({ top: 10, bottom: 10 })
+  }
+}
 ```
-1. @Component
-2. export struct TodoComponent {
-3. build() {
-4. Row() {
-5. // 请将$r('app.string.all_tasks')替换为实际资源文件，在本示例中该资源文件的value值为"全部待办"
-6. Text($r('app.string.all_tasks'))
-7. .fontSize(30)
-8. .fontWeight(FontWeight.Bold)
-9. }
-10. .padding({ left: 15 })
-11. .width('50%')
-12. .margin({ top: 10, bottom: 10 })
-13. }
-14. }
-```
-
-[TodoComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/views/TodoComponent.ets#L16-L31)
 
 * TodoListComponent.ets
 
+```typescript
+import ThingViewModel from '../viewmodel/ThingViewModel';
+import { ThingViewModelArray } from '../viewmodel/TodoListViewModel'
+import { ThingComponent } from './ThingComponent';
+
+@Component
+export struct TodoListComponent {
+  @ObjectLink thingViewModelArray: ThingViewModelArray;
+
+  build() {
+    Column() {
+      List() {
+        ForEach(this.thingViewModelArray, (item: ThingViewModel) => {
+          // 待办事项
+          ListItem() {
+            ThingComponent({ thing: item })
+              .margin(5)
+          }
+        }, (item: ThingViewModel) => {
+          return item.thingName;
+        })
+      }
+    }
+  }
+}
 ```
-1. import ThingViewModel from '../viewmodel/ThingViewModel';
-2. import { ThingViewModelArray } from '../viewmodel/TodoListViewModel'
-3. import { ThingComponent } from './ThingComponent';
-
-5. @Component
-6. export struct TodoListComponent {
-7. @ObjectLink thingViewModelArray: ThingViewModelArray;
-
-9. build() {
-10. Column() {
-11. List() {
-12. ForEach(this.thingViewModelArray, (item: ThingViewModel) => {
-13. // 待办事项
-14. ListItem() {
-15. ThingComponent({ thing: item })
-16. .margin(5)
-17. }
-18. }, (item: ThingViewModel) => {
-19. return item.thingName;
-20. })
-21. }
-22. }
-23. }
-24. }
-```
-
-[TodoListComponent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/views/TodoListComponent.ets#L16-L41)
 
 * ThingViewModel.ets
 
+```typescript
+import ThingModel from '../model/ThingModel';
+
+@Observed
+export default class ThingViewModel {
+  @Track public thingName: string = 'Todo';
+  @Track public isFinish: boolean = false;
+  public context: Context = AppStorage.get('context')!;
+
+  updateTask(thing: ThingModel) {
+    this.thingName = thing.thingName;
+    this.isFinish = thing.isFinish;
+  }
+
+  updateIsFinish(): void {
+    this.isFinish = !this.isFinish;
+  }
+
+  addSuffixes(): void {
+    // 请将$r('app.string.la_la')替换为实际资源文件，在本示例中该资源文件的value值为"啦"
+    this.thingName += resource.resourceToString($r('app.string.la_la'));
+  }
+}
 ```
-1. import ThingModel from '../model/ThingModel';
-
-3. @Observed
-4. export default class ThingViewModel {
-5. @Track public thingName: string = 'Todo';
-6. @Track public isFinish: boolean = false;
-7. public context: Context = AppStorage.get('context')!;
-
-9. updateTask(thing: ThingModel) {
-10. this.thingName = thing.thingName;
-11. this.isFinish = thing.isFinish;
-12. }
-
-14. updateIsFinish(): void {
-15. this.isFinish = !this.isFinish;
-16. }
-
-18. addSuffixes(): void {
-19. this.thingName += 'lala';
-20. }
-21. }
-```
-
-[ThingViewModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/viewmodel/ThingViewModel.ets#L16-L40)
 
 * TodoListViewModel.ets
 
+```typescript
+import ThingViewModel from './ThingViewModel';
+import { common } from '@kit.AbilityKit';
+import TodoListModel from '../model/TodoListModel';
+
+@Observed
+export class ThingViewModelArray extends Array<ThingViewModel> {
+}
+
+@Observed
+export default class TodoListViewModel {
+  @Track public isChosen: boolean = true;
+  @Track public things: ThingViewModelArray = new ThingViewModelArray();
+
+  async loadTasks(context: common.UIAbilityContext) {
+    let todoList = new TodoListModel([]);
+    await todoList.loadTasks(context);
+    for (let thing of todoList.things) {
+      let todoListViewModel = new ThingViewModel();
+      todoListViewModel.updateTask(thing);
+      this.things.push(todoListViewModel);
+    }
+  }
+
+  chooseAll(): void {
+    // 遍历所有待办事项，设置其完成状态
+    for (let thing of this.things) {
+      thing.isFinish = this.isChosen;
+    }
+    this.isChosen = !this.isChosen;
+  }
+}
 ```
-1. import ThingViewModel from './ThingViewModel';
-2. import { common } from '@kit.AbilityKit';
-3. import TodoListModel from '../model/TodoListModel';
-
-5. @Observed
-6. export class ThingViewModelArray extends Array<ThingViewModel> {
-7. }
-
-9. @Observed
-10. export default class TodoListViewModel {
-11. @Track public isChosen: boolean = true;
-12. @Track public things: ThingViewModelArray = new ThingViewModelArray();
-
-14. async loadTasks(context: common.UIAbilityContext) {
-15. let todoList = new TodoListModel([]);
-16. await todoList.loadTasks(context);
-17. for (let thing of todoList.things) {
-18. let todoListViewModel = new ThingViewModel();
-19. todoListViewModel.updateTask(thing);
-20. this.things.push(todoListViewModel);
-21. }
-22. }
-
-24. chooseAll(): void {
-25. // 遍历所有待办事项，设置其完成状态
-26. for (let thing of this.things) {
-27. thing.isFinish = this.isChosen;
-28. }
-29. this.isChosen = !this.isChosen;
-30. }
-31. }
-```
-
-[TodoListViewModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ArktsMvvmSample/entry/src/main/ets/viewmodel/TodoListViewModel.ets#L16-L47)
 
 * default\_tasks.json
 
-```
-1. [
-2. {"thingName": "7.30起床", "isFinish": false},
-3. {"thingName": "8.30早餐", "isFinish": false},
-4. {"thingName": "11.30中餐", "isFinish": false},
-5. {"thingName": "17.30晚餐", "isFinish": false},
-6. {"thingName": "21.30夜宵", "isFinish": false},
-7. {"thingName": "22.30洗澡", "isFinish": false},
-8. {"thingName": "1.30睡觉", "isFinish": false}
-9. ]
+```typescript
+[
+  {"thingName": "7.30起床", "isFinish": false},
+  {"thingName": "8.30早餐", "isFinish": false},
+  {"thingName": "11.30中餐", "isFinish": false},
+  {"thingName": "17.30晚餐", "isFinish": false},
+  {"thingName": "21.30夜宵", "isFinish": false},
+  {"thingName": "22.30洗澡", "isFinish": false},
+  {"thingName": "1.30睡觉", "isFinish": false}
+]
 ```
 
 MVVM模式拆分后的代码结构更加清晰，模块职责更明确。新页面需要使用事件组件，比如TodoListComponent组件，只需导入组件。
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/chJUKj_-TBOs0rA9K1zcUA/zh-cn_image_0000002589323953.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/fBoNghdWSO2CndI14-hhpw/zh-cn_image_0000002706673248.gif)

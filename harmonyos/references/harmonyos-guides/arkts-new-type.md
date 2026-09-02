@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-typ
 title: "@Type装饰器：标记类属性的类型"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Type装饰器：标记类属性的类型
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2520dcce167790350c2c77db853f09b39277f2531b32949e0e303b27673cc7fc
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:73361deb64720d1ce0457fb5e5a50dd76d9f35c2e282654434da6886b35bc823
 ---
 
-为了实现序列化类时不丢失属性的复杂类型，开发者可以使用@Type装饰器装饰类属性。
+为了实现序列化类时不丢失属性的复杂类型，开发者可以使用[@Type](../harmonyos-references/ts-state-management-type.md#type)装饰器装饰类属性。
 
-@Type的目的是标记类属性，配合PersistenceV2使用，防止序列化时类丢失。在阅读本文档前，建议提前阅读：[PersistenceV2](arkts-new-persistencev2.md)。
+@Type的目的是标记类属性，配合PersistenceV2使用，防止序列化时类型信息丢失。在阅读本文档前，建议提前阅读：[PersistenceV2](arkts-new-persistencev2.md)。
 
-说明
+**说明** 
 
 @Type从API version 12开始支持。
 
@@ -33,35 +33,33 @@ content_hash: sha256:2520dcce167790350c2c77db853f09b39277f2531b32949e0e303b27673
 
 1. 只能用在[@ObservedV2](arkts-new-observedv2-and-trace.md)装饰的类中，不能用在自定义组件中。
 
-   ```
-   1. class Sample {
-   2. private data: number = 0;
-   3. }
-   4. @ObservedV2
-   5. class Info {
-   6. @Type(Sample)
-   7. @Trace public sample: Sample = new Sample(); // 正确用法
-   8. }
+   ```typescript
+   class Sample {
+     private data: number = 0;
+   }
+   @ObservedV2
+   class Info {
+     @Type(Sample)
+     @Trace public sample: Sample = new Sample(); // 正确用法
+   }
    ```
 
-   [DataModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NewType/entry/src/main/ets/pages/DataModel.ets#L16-L25)
-
-   ```
-   1. @Observed
-   2. class Info2 {
-   3. @Type(Sample)
-   4. sample: Sample = new Sample(); // 错误用法，不能用在@Observed装饰的类中，编译时报错
-   5. }
-   6. @ComponentV2
-   7. struct Index {
-   8. @Type(Sample)
-   9. sample: Sample = new Sample(); // 错误用法，不能用在自定义组件中，编译时报错
-   10. build() {
-   11. }
-   12. }
+   ```ts
+    @Observed
+    class Info2 {
+      @Type(Sample)
+      sample: Sample = new Sample(); // 错误用法，不能用在@Observed装饰的类中，编译时报错
+    }
+    @ComponentV2
+    struct Index {
+      @Type(Sample)
+      sample: Sample = new Sample(); // 错误用法，不能用在自定义组件中，编译时报错
+      build() {
+      }
+    }
    ```
 2. 不支持collections.Set、collections.Map等类型。
-3. 不支持非built-in类型。如[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)、NativePointer、[ArrayList](../harmonyos-references/js-apis-arraylist.md)等Native类型。
+3. 不支持非built-in类型。如[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)、NativePointer等Native类型，以及[ArrayList](../harmonyos-references/js-apis-arraylist.md)等ArkTS容器类型。
 4. 不支持简单类型。如string、number、boolean等。
 5. 不支持构造函数含参的类。
 
@@ -69,40 +67,119 @@ content_hash: sha256:2520dcce167790350c2c77db853f09b39277f2531b32949e0e303b27673
 
 ### 持久化数据
 
+```typescript
+import { PersistenceV2, Type } from '@kit.ArkUI';
+
+@ObservedV2
+class SampleChild {
+  @Trace childNumber: number = 1;
+}
+
+@ObservedV2
+class Sample {
+  // 对于复杂对象需要@Type修饰，确保反序列化成功，去掉@Type会反序列化值失败。
+  @Type(SampleChild)
+  // 对于没有初值的类属性，经过@Type修饰后，需要手动保存，否则持久化失败。
+  // 无法使用@Type修饰的类属性，必须要有初值才能持久化。
+  @Trace sampleChild?: SampleChild = undefined;
+}
+
+@Entry
+@ComponentV2
+struct TestCase {
+  @Local sample: Sample = PersistenceV2.connect(Sample, () => new Sample)!;
+
+  build() {
+    Column() {
+      Text('childNumber value:' + this.sample.sampleChild?.childNumber)
+        .fontSize(30)
+        .margin(10)
+        .onClick(() => {
+          this.sample.sampleChild = new SampleChild();
+          this.sample.sampleChild.childNumber = 2;
+          PersistenceV2.save(Sample);
+        })
+    }
+    .width('100%')
+  }
+}
 ```
-1. import { PersistenceV2, Type } from '@kit.ArkUI';
 
-3. @ObservedV2
-4. class SampleChild {
-5. @Trace childNumber: number = 1;
-6. }
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/KV334BuCRCKMjr9V0sM7QQ/zh-cn_image_0000002736432435.gif)
 
-8. @ObservedV2
-9. class Sample {
-10. // 对于复杂对象需要@Type修饰，确保反序列化成功，去掉@Type会反序列化值失败。
-11. @Type(SampleChild)
-12. // 对于没有初值的类属性，经过@Type修饰后，需要手动保存，否则持久化失败。
-13. // 无法使用@Type修饰的类属性，必须要有初值才能持久化。
-14. @Trace sampleChild?: SampleChild = undefined;
-15. }
+## 常见问题
 
-17. @Entry
-18. @ComponentV2
-19. struct TestCase {
-20. @Local sample: Sample = PersistenceV2.connect(Sample, () => new Sample)!;
+### @Type传入容器泛型而非元素类型
 
-22. build() {
-23. Column() {
-24. Text('childNumber value:' + this.sample.sampleChild?.childNumber)
-25. .onClick(() => {
-26. this.sample.sampleChild = new SampleChild();
-27. this.sample.sampleChild.childNumber = 2;
-28. PersistenceV2.save(Sample);
-29. })
-30. .fontSize(30)
-31. }
-32. }
-33. }
+@Type装饰Array<T>、Set<T>、Map<string, T>等容器类型的属性时，应传入元素类型T对应的类，不应传入Array<T>等容器泛型。泛型参数在运行时会被擦除，@Type(Array<T>)等同于@Type(Array)，@Type(Set<T>)等同于@Type(Set)，框架无法从中获知元素类型为T。
+
+| 属性类型 | @Type应传入 | 不应传入 |
+| --- | --- | --- |
+| Array<T> | T | Array<T>、Array |
+| Set<T> | T | Set<T>、Set |
+| Map<string, T> | T | Map<string, T>、Map |
+
+当T为基本类型、Date、Array、Set、Map等非自定义类时，框架原生支持反序列化，@Type参数不影响结果。当T为自定义类时，首次运行数据可正常保存，但应用重启从磁盘恢复数据时，反序列化创建空容器实例（如new Array()）而非new T()，T的构造函数不执行，T的属性未被初始化。反序列化结果取决于T的属性序列化后的值类型：值为基本类型或对象时被隐式转换为undefined，值为数组时打印Error日志，错误码为140107。具体如下：
+
+| T的属性类型 | 序列化后的值 | 反序列化结果 |
+| --- | --- | --- |
+| number、string、boolean | 基本类型 | 隐式转换为undefined，无报错 |
+| Date | 字符串 | 隐式转换为undefined，无报错 |
+| Array、Set、Map | 数组 | 打印Error日志，错误码为140107 |
+| 自定义类 | 对象 | 隐式转换为undefined，无报错 |
+
+以下示例中，元素类型ItemModel包含基本类型属性和容器类型属性，使用@Type(Array<ItemModel>)后应用重启将触发上述问题：
+
+```typescript
+import { PersistenceV2, Type } from '@kit.ArkUI';
+
+@ObservedV2
+class ItemModel {
+  @Trace num: number = 1;
+  @Trace arr: Array<number> = [1, 2, 3];
+  @Trace set: Set<number> = new Set([1, 2, 3]);
+}
+
+@ObservedV2
+class Data {
+  @Type(Array<ItemModel>)
+  // 错误用法：运行时退化为@Type(Array)，传入容器类型而非元素类型
+  // 反序列化时创建new Array()而非new ItemModel()，ItemModel的构造函数不执行，num、arr、set属性均未初始化
+  // num序列化后为基本类型，反序列化时被隐式转换为undefined；arr、set序列化后为数组，反序列化时打印Error日志，错误码为140107
+  // Set<T>、Map<string, T>场景传入@Type(Set<T>)或@Type(Map<string, T>)同理
+  @Trace items: Array<ItemModel> = new Array();
+}
+
+@Entry
+@ComponentV2
+struct TestCase {
+  @Local data: Data = PersistenceV2.connect(Data, () => new Data())!;
+
+  build() {
+    Column() {
+      Button('push and save')
+        .onClick(() => {
+          this.data.items.push(new ItemModel());
+          // 手动持久化数据到磁盘
+          PersistenceV2.save(Data);
+        })
+    }
+  }
+}
 ```
 
-[Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/NewType/entry/src/main/ets/pages/Index.ets#L15-L49)
+上述示例中，首次点击按钮将ItemModel实例存入数组并保存到磁盘后，结束进程，第二次重新启动时，执行反序列化失败，打印如下Error日志：
+
+```text
+FIX THIS APPLICATION ERROR: For PersistenceV2 'Data' key has error, error code: 140107, message: The type of target 'undefined' mismatches the type of source 'object'
+```
+
+正确写法是将@Type参数改为元素类型T对应的类，对Array<T>、Set<T>、Map<string, T>均适用：
+
+```typescript
+@ObservedV2
+class Data {
+  @Type(ItemModel) // 正确用法：传入元素类型ItemModel对应的类
+  @Trace items: Array<ItemModel> = new Array();
+}
+```

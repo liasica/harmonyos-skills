@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-share
 title: ShareFrom
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > ShareFrom
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:17+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:737aacd963d111c5e01f03155b9dc00da0bd8d62b93101de6434a191bd453adc
+content_hash: sha256:b39aad170a8a605532980ed1f02634528480e8eaaeec4e850683a4658ac9a7cf
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:737aacd963d111c5e01f03155b9dc00da0bd8d62b93101de6434a191bd4
 
 ## 函数原型
 
-```
-1. ge::graphStatus ShareFrom(const TensorData &other)
+```cpp
+ge::graphStatus ShareFrom(const TensorData &other)
 ```
 
 ## 参数说明
@@ -34,10 +34,10 @@ content_hash: sha256:737aacd963d111c5e01f03155b9dc00da0bd8d62b93101de6434a191bd4
 
 ## 调用示例
 
-```
-1. std::vector<int> a = {10};
-2. auto addr = reinterpret_cast<void *>(a.data());
-3. TensorData td1(addr, HostAddrManager, 100U, kOnHost);
-4. TensorData td2(addr, nullptr);
-5. td2.ShareFrom(td1);
+```cpp
+std::vector<int> a = {10};
+auto addr = reinterpret_cast<void *>(a.data());
+TensorData td1(addr, HostAddrManager, 100U, kOnHost);
+TensorData td2(addr, nullptr);
+td2.ShareFrom(td1);
 ```

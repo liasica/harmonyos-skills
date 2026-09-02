@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-p
 title: 应用程序包概述
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:25:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9b1b514e331a9ae547a544a4d33c38338ca0af60e7708e7b1ac235d974debf60
+scraped_at: 2026-09-02T14:59:08+08:00
+doc_updated_at: 2026-08-14
+content_hash: sha256:c465218becb951d4bac2a4a0d5e7a52b5d041e001be82cecb7ddd4707ba0b2f3
 ---
 
-在基于[Stage模型](application-configuration-file-overview-stage.md)开发应用之前，开发者需要了解应用的设计机制、应用程序包结构等基础知识。
+在开发应用之前，开发者需要了解应用的设计机制、应用程序包结构等基础知识。
 
 ## 应用与应用程序包
 
@@ -34,7 +34,7 @@ Module按照使用场景可以分为两种类型：
   + Static Library：静态共享库。编译后生成一个以.har为后缀的文件，即静态共享包HAR（Harmony Archive）。
   + Shared Library：动态共享库。编译后生成一个以.hsp为后缀的文件，即动态共享包HSP（Harmony Shared Package）。
 
-  说明
+  **说明** 
 
   实际上，Shared Library编译后除了会生成一个.hsp文件，还会生成一个.har文件。这个.har文件中包含了HSP对外导出的接口，应用中的其他模块需要通过.har文件来引用HSP的功能。为了表述方便，通常认为编译Shared Library后会生成HSP。
 
@@ -47,7 +47,7 @@ Module按照使用场景可以分为两种类型：
 
   **图1** HAR和HSP在APP包中的形态示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/hGX_cnEGQ9OmTFWAoWnwCA/zh-cn_image_0000002589323833.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/XvEr133nS2KQi_s4tZIR2Q/zh-cn_image_0000002706673054.png)
 
 ## 选择合适的包类型
 
@@ -73,8 +73,8 @@ HAP、HSP、HAR支持的规格对比如下，其中“√”表示是，“×”
 | 支持依赖其他HSP文件 | √ | √ | √ |
 | 支持在设备上独立安装运行 | √ | × | √ |
 
-说明
+**说明** 
 
 * 如果HAR支持声明pages页面，那么当HAR被打包到HAP或HSP中时，其内部声明的pages页面可能会与HAP/HSP中的pages页面存在相对路径上的重复，这将导致无法根据相对路径识别特定的路由页面。因此，HAR不支持在配置文件中声明pages页面，但可以包含pages页面，并通过[Navigation跳转](arkts-navigation-jump.md#路由操作)的方式进行跳转。
-* 由于HSP仅支持应用内共享，如果HAR依赖了HSP，则该HAR文件仅支持应用内共享，不支持发布到二方仓或三方仓供其他应用使用，否则会导致编译失败。
+* 由于HSP仅支持应用内共享，如果HAR依赖了HSP，则该HAR文件仅支持应用内共享，不支持发布到二方库或三方库供其他应用使用，否则会导致编译失败。
 * HAR和HSP均不支持循环依赖，也不支持依赖传递，详情说明可以参考[HAR](har-package.md#约束限制)或者[HSP](in-app-hsp.md#约束限制)中约束限制说明。

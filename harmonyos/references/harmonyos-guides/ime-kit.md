@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ime-kit
 title: IME Kit（输入法开发服务）
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8ee44efb11e7db8562ede4b9e8eb065d71def0955787c1b51e182fb4c2bda5e5
+scraped_at: 2026-09-02T14:49:57+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:94210ec2d1cb9c4d377e07eaf9c5c03ec20f481e2c5628b3ea586c025cf265fa
 ---
 
 * **[IME Kit简介](ime-kit-intro.md)**
@@ -18,3 +18,4 @@ content_hash: sha256:8ee44efb11e7db8562ede4b9e8eb065d71def0955787c1b51e182fb4c2b
 * **[输入法应用沉浸模式](inputmethod-immersive-mode-guide.md)**
 * **[Ime工具](inputmethod-hdc-commands-guide.md)**
 * **[不可获焦窗口中输入框与输入法交互指南](use-inputmethod-in-not-focusable-window.md)**
+* **[输入法开发服务术语](ime-kit-glossary.md)**

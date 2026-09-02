@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/game-controll
 title: 监听游戏手柄的轴和按键事件（C/C++）
 breadcrumb: 指南 > 应用服务 > Game Controller Kit（游戏控制器服务） > 监听游戏手柄的轴和按键事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:38:06+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bab44bc066fd5ccbcc28b73801645c33e7677a99411b23550fdee394e32a27b1
+scraped_at: 2026-09-02T14:59:55+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:c0aaf1edcd177398a73774e124110fa19d32e97cc4ae7bdfd9b20b1dc9ef4948
 ---
 
-说明
+**说明** 
 
 须先完成[监听设备上下线](game-controller-monitor-device.md)功能的开发后，才能进行游戏手柄轴事件和按键事件的监听注册。
 
@@ -20,11 +20,11 @@ Game Controller Kit提供游戏手柄轴事件和按键事件的监听能力。�
 
 Game Controller Kit支持的手柄键位参考图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/aptWQERiTOq4Qqm_mLJzhg/zh-cn_image_0000002589325253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/H6HenNiHSKCwxxqxQAwQ1g/zh-cn_image_0000002706834902.png)
 
 ## 接口说明
 
-接口详细介绍请参考[API参考](../harmonyos-references/capi-game-controller.md)。
+接口详细介绍请参考[GameController](../harmonyos-references/capi-gamecontroller.md)。
 
 | 接口名 | 描述 |
 | --- | --- |
@@ -55,14 +55,14 @@ Game Controller Kit支持的手柄键位参考图如下：
 
 ### 链接动态库
 
-```
-1. target_link_libraries(entry PUBLIC libohgame_controller.z.so)
+```c
+target_link_libraries(entry PUBLIC libohgame_controller.z.so)
 ```
 
 ### 导入模块
 
-```
-1. #include <GameControllerKit/game_pad.h>
+```c
+#include <GameControllerKit/game_pad.h>
 ```
 
 ### 注册和取消注册轴事件的监听
@@ -73,52 +73,54 @@ Game Controller Kit支持的手柄键位参考图如下：
 
 | 物理轴 | 轴值获取接口 |
 | --- | --- |
-| LeftThumbstick | 通过OH\_GamePad\_AxisEvent\_GetXAxisValue获取X轴的轴值。  通过OH\_GamePad\_AxisEvent\_GetYAxisValue获取Y轴的轴值。 |
-| RightThumbstick | 通过OH\_GamePad\_AxisEvent\_GetZAxisValue获取Z轴的轴值。  通过OH\_GamePad\_AxisEvent\_GetRZAxisValue获取RZ轴的轴值。 |
-| DPAD | 通过OH\_GamePad\_AxisEvent\_GetHatXAxisValue获取HatX轴的轴值。  通过OH\_GamePad\_AxisEvent\_GetHatYAxisValue获取HatY轴的轴值。 |
-| LeftTrigger | 通过OH\_GamePad\_AxisEvent\_GetBrakeAxisValue获取Brake轴的轴值。 |
-| RightTrigger | 通过OH\_GamePad\_AxisEvent\_GetGasAxisValue获取Gas轴的轴值。 |
+| LeftThumbstick | 通过[OH\_GamePad\_AxisEvent\_GetXAxisValue](../harmonyos-references/capi-game-pad-event-h.md#oh_gamepad_axisevent_getxaxisvalue)获取X轴的轴值。  通过[OH\_GamePad\_AxisEvent\_GetYAxisValue](../harmonyos-references/capi-game-pad-event-h.md#oh_gamepad_axisevent_getyaxisvalue)获取Y轴的轴值。 |
+| RightThumbstick | 通过[OH\_GamePad\_AxisEvent\_GetZAxisValue](../harmonyos-references/capi-game-pad-event-h.md#oh_gamepad_axisevent_getzaxisvalue)获取Z轴的轴值。  通过[OH\_GamePad\_AxisEvent\_GetRZAxisValue](../harmonyos-references/capi-game-pad-event-h.md#oh_gamepad_axisevent_getrzaxisvalue)获取RZ轴的轴值。 |
+| DPAD | 通过[OH\_GamePad\_AxisEvent\_GetHatXAxisValue](../harmonyos-references/capi-game-pad-event-h.md#oh_gamepad_axisevent_gethatxaxisvalue)获取HatX轴的轴值。  通过[OH\_GamePad\_AxisEvent\_GetHatYAxisValue](../harmonyos-references/capi-game-pad-event-h.md#oh_gamepad_axisevent_gethatyaxisvalue)获取HatY轴的轴值。 |
+| LeftTrigger | 通过[OH\_GamePad\_AxisEvent\_GetBrakeAxisValue](../harmonyos-references/capi-game-pad-event-h.md#oh_gamepad_axisevent_getbrakeaxisvalue)获取Brake轴的轴值。 |
+| RightTrigger | 通过[OH\_GamePad\_AxisEvent\_GetGasAxisValue](../harmonyos-references/capi-game-pad-event-h.md#oh_gamepad_axisevent_getgasaxisvalue)获取Gas轴的轴值。 |
 
 以LeftThumbstick轴事件为例。
 
-```
-1. napi_value GamePad::LeftThumbstick_RegisterAxisInputMonitor(napi_env env, napi_callback_info info) {
-2. napi_value result;
-3. GameController_ErrorCode errorCode =
-4. OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor(GamePad::LeftThumbstick_OnAxisEvent);
-5. if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
-6. OH_LOG_ERROR(LOG_APP, "LeftThumbstick_RegisterAxisInputMonitor Failed, %{public}d", errorCode);
-7. napi_create_double(env, errorCode, &result);
-8. return result;
-9. }
-10. OH_LOG_INFO(LOG_APP, "LeftThumbstick_RegisterAxisInputMonitor Success");
-11. napi_create_double(env, 0, &result);
-12. return result;
-13. }
+```c
+// 注册LeftThumbstick轴事件监听
+napi_value GamePad::LeftThumbstick_RegisterAxisInputMonitor(napi_env env, napi_callback_info info) {
+    napi_value result;
+    GameController_ErrorCode errorCode =
+        OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor(GamePad::LeftThumbstick_OnAxisEvent);
+    if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "LeftThumbstick_RegisterAxisInputMonitor Failed, %{public}d", errorCode);
+        napi_create_double(env, errorCode, &result);
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "LeftThumbstick_RegisterAxisInputMonitor Success");
+    napi_create_double(env, 0, &result);
+    return result;
+}
 
-15. napi_value GamePad::LeftThumbstick_UnregisterAxisInputMonitor(napi_env env, napi_callback_info info) {
-16. napi_value result;
-17. GameController_ErrorCode errorCode = OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor();
-18. if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
-19. OH_LOG_ERROR(LOG_APP, "LeftThumbstick_UnregisterAxisInputMonitor Failed, %{public}d", errorCode);
-20. napi_create_double(env, errorCode, &result);
-21. return result;
-22. }
-23. OH_LOG_INFO(LOG_APP, "LeftThumbstick_UnregisterAxisInputMonitor Success");
-24. napi_create_double(env, 0, &result);
-25. return result;
-26. }
+// 取消注册LeftThumbstick轴事件监听
+napi_value GamePad::LeftThumbstick_UnregisterAxisInputMonitor(napi_env env, napi_callback_info info) {
+    napi_value result;
+    GameController_ErrorCode errorCode = OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor();
+    if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "LeftThumbstick_UnregisterAxisInputMonitor Failed, %{public}d", errorCode);
+        napi_create_double(env, errorCode, &result);
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "LeftThumbstick_UnregisterAxisInputMonitor Success");
+    napi_create_double(env, 0, &result);
+    return result;
+}
 
-28. void GamePad::LeftThumbstick_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent) {
-29. std::string val = "X";
-30. double xAxisValue;
-31. OH_GamePad_AxisEvent_GetXAxisValue(axisEvent, &xAxisValue);
-32. val.append(std::to_string(xAxisValue)).append("_Y");
-33. double yAxisValue;
-34. OH_GamePad_AxisEvent_GetYAxisValue(axisEvent, &yAxisValue);
-35. val.append(std::to_string(yAxisValue));
-36. OnAxisEvent(axisEvent, "LeftThumbstick_OnAxisEvent", val);
-37. }
+void GamePad::LeftThumbstick_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent) {
+    std::string val = "X";
+    double xAxisValue;
+    OH_GamePad_AxisEvent_GetXAxisValue(axisEvent, &xAxisValue);
+    val.append(std::to_string(xAxisValue)).append("_Y");
+    double yAxisValue;
+    OH_GamePad_AxisEvent_GetYAxisValue(axisEvent, &yAxisValue);
+    val.append(std::to_string(yAxisValue));
+    OnAxisEvent(axisEvent, "LeftThumbstick_OnAxisEvent", val);
+}
 ```
 
 ### 注册按键事件的监听和取消注册
@@ -149,78 +151,80 @@ Game Controller Kit支持的手柄键位参考图如下：
 
 以LeftShoulder按键事件为例。
 
-```
-1. napi_value GamePad::LeftShoulder_RegisterButtonInputMonitor(napi_env env, napi_callback_info info) {
-2. napi_value result;
-3. GameController_ErrorCode errorCode =
-4. OH_GamePad_LeftShoulder_RegisterButtonInputMonitor(GamePad::LeftShoulder_OnButtonEvent);
-5. if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
-6. OH_LOG_ERROR(LOG_APP, "LeftShoulder_RegisterButtonInputMonitor Failed, %{public}d", errorCode);
-7. napi_create_double(env, errorCode, &result);
-8. return result;
-9. }
-10. OH_LOG_INFO(LOG_APP, "LeftShoulder_RegisterButtonInputMonitor Success");
-11. napi_create_double(env, 0, &result);
-12. return result;
-13. }
+```c
+// 注册LeftShoulder按键事件监听
+napi_value GamePad::LeftShoulder_RegisterButtonInputMonitor(napi_env env, napi_callback_info info) {
+    napi_value result;
+    GameController_ErrorCode errorCode =
+        OH_GamePad_LeftShoulder_RegisterButtonInputMonitor(GamePad::LeftShoulder_OnButtonEvent);
+    if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "LeftShoulder_RegisterButtonInputMonitor Failed, %{public}d", errorCode);
+        napi_create_double(env, errorCode, &result);
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "LeftShoulder_RegisterButtonInputMonitor Success");
+    napi_create_double(env, 0, &result);
+    return result;
+}
 
-15. napi_value GamePad::LeftShoulder_UnregisterButtonInputMonitor(napi_env env, napi_callback_info info) {
-16. napi_value result;
-17. GameController_ErrorCode errorCode = OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor();
-18. if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
-19. OH_LOG_ERROR(LOG_APP, "LeftShoulder_UnregisterButtonInputMonitor Failed, %{public}d", errorCode);
-20. napi_create_double(env, errorCode, &result);
-21. return result;
-22. }
-23. OH_LOG_INFO(LOG_APP, "LeftShoulder_UnregisterButtonInputMonitor Success");
-24. napi_create_double(env, 0, &result);
-25. return result;
-26. }
+// 取消注册LeftShoulder按键事件监听
+napi_value GamePad::LeftShoulder_UnregisterButtonInputMonitor(napi_env env, napi_callback_info info) {
+    napi_value result;
+    GameController_ErrorCode errorCode = OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor();
+    if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "LeftShoulder_UnregisterButtonInputMonitor Failed, %{public}d", errorCode);
+        napi_create_double(env, errorCode, &result);
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "LeftShoulder_UnregisterButtonInputMonitor Success");
+    napi_create_double(env, 0, &result);
+    return result;
+}
 
-28. void GamePad::LeftShoulder_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent) {
-29. OnButtonEvent(buttonEvent, "LeftShoulder_OnButtonEvent");
-30. }
+void GamePad::LeftShoulder_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent) {
+    OnButtonEvent(buttonEvent, "LeftShoulder_OnButtonEvent");
+}
 
-32. void GamePad::OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const std::string &buttonName) {
-33. std::string temp;
-34. temp.append("OnButtonEvent:").append(buttonName);
-35. char *deviceId;
-36. OH_GamePad_ButtonEvent_GetDeviceId(buttonEvent, &deviceId);
-37. temp.append(" ,deviceId:").append(deviceId);
-38. free(deviceId);
-39. GamePad_Button_ActionType action;
-40. OH_GamePad_ButtonEvent_GetButtonAction(buttonEvent, &action);
-41. temp.append(" ,action:").append(std::to_string(action));
-42. std::int32_t buttonCode;
-43. OH_GamePad_ButtonEvent_GetButtonCode(buttonEvent, &buttonCode);
-44. temp.append(" ,code:").append(std::to_string(buttonCode));
-45. char *buttonCodeName;
-46. OH_GamePad_ButtonEvent_GetButtonCodeName(buttonEvent, &buttonCodeName);
-47. temp.append(" ,codeName:").append(buttonCodeName);
-48. free(buttonCodeName);
-49. std::int64_t actionTime;
-50. OH_GamePad_ButtonEvent_GetActionTime(buttonEvent, &actionTime);
-51. temp.append(" ,actionTime:").append(std::to_string(actionTime));
-52. std::int32_t count;
-53. OH_GamePad_PressedButtons_GetCount(buttonEvent, &count);
-54. temp.append(" ,count:").append(std::to_string(count));
-55. std::string pressedButtonCodes;
-56. for (std::int32_t idx = 0; idx < count; idx++) {
-57. GamePad_PressedButton *pressedButton;
-58. OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, idx, &pressedButton);
-59. int code;
-60. OH_GamePad_PressedButton_GetButtonCode(pressedButton, &code);
-61. char *name;
-62. OH_GamePad_PressedButton_GetButtonCodeName(pressedButton, &name);
-63. if (idx != 0) {
-64. pressedButtonCodes = pressedButtonCodes.append(";");
-65. }
-66. pressedButtonCodes = pressedButtonCodes.append(std::to_string(code) + "|").append(name);
-67. free(name);
-68. OH_GamePad_DestroyPressedButton(&pressedButton);
-69. }
-70. temp.append(" ,pressedButtonCodes:").append(pressedButtonCodes);
-71. OH_LOG_INFO(LOG_APP, "%{public}s", temp.c_str());
-72. Log::GetInstance()->PrintLog(temp);
-73. }
+void GamePad::OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const std::string &buttonName) {
+    std::string temp;
+    temp.append("OnButtonEvent:").append(buttonName);
+    char *deviceId;
+    OH_GamePad_ButtonEvent_GetDeviceId(buttonEvent, &deviceId);
+    temp.append(" ,deviceId:").append(deviceId);
+    free(deviceId);
+    GamePad_Button_ActionType action;
+    OH_GamePad_ButtonEvent_GetButtonAction(buttonEvent, &action);
+    temp.append(" ,action:").append(std::to_string(action));
+    std::int32_t buttonCode;
+    OH_GamePad_ButtonEvent_GetButtonCode(buttonEvent, &buttonCode);
+    temp.append(" ,code:").append(std::to_string(buttonCode));
+    char *buttonCodeName;
+    OH_GamePad_ButtonEvent_GetButtonCodeName(buttonEvent, &buttonCodeName);
+    temp.append(" ,codeName:").append(buttonCodeName);
+    free(buttonCodeName);
+    std::int64_t actionTime;
+    OH_GamePad_ButtonEvent_GetActionTime(buttonEvent, &actionTime);
+    temp.append(" ,actionTime:").append(std::to_string(actionTime));
+    std::int32_t count;
+    OH_GamePad_PressedButtons_GetCount(buttonEvent, &count);
+    temp.append(" ,count:").append(std::to_string(count));
+    std::string pressedButtonCodes;
+    for (std::int32_t idx = 0; idx < count; idx++) {
+        GamePad_PressedButton *pressedButton;
+        OH_GamePad_PressedButtons_GetButtonInfo(buttonEvent, idx, &pressedButton);
+        int code;
+        OH_GamePad_PressedButton_GetButtonCode(pressedButton, &code);
+        char *name;
+        OH_GamePad_PressedButton_GetButtonCodeName(pressedButton, &name);
+        if (idx != 0) {
+            pressedButtonCodes = pressedButtonCodes.append(";");
+        }
+        pressedButtonCodes = pressedButtonCodes.append(std::to_string(code) + "|").append(name);
+        free(name);
+        OH_GamePad_DestroyPressedButton(&pressedButton);
+    }
+    temp.append(" ,pressedButtonCodes:").append(pressedButtonCodes);
+    OH_LOG_INFO(LOG_APP, "%{public}s", temp.c_str());
+    Log::GetInstance()->PrintLog(temp);
+}
 ```

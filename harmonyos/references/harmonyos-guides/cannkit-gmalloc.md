@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-gmall
 title: GmAlloc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 算子调测API > GmAlloc
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:73cbdf3fbce31ce1ae447b99fc3e1df8138bf82c33b5eca7dee166499d7b5b45
+scraped_at: 2026-09-02T14:50:38+08:00
+doc_updated_at: 2026-08-18
+content_hash: sha256:5cace6dca61e1dc7acb8e3a64aa81e6618d96f8b6eb7b23b8e88e4bd60a69a2b
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:73cbdf3fbce31ce1ae447b99fc3e1df8138bf82c33b5eca7dee166499d7
 
 ## 函数原型
 
-```
-1. void *GmAlloc(size_t size)
+```cpp
+void *GmAlloc(size_t size)
 ```
 
 ## 参数说明
@@ -32,6 +32,8 @@ content_hash: sha256:73cbdf3fbce31ce1ae447b99fc3e1df8138bf82c33b5eca7dee166499d7
 
 Kirin9020系列处理器
 
+Kirin9030系列处理器
+
 KirinX90系列处理器
 
 ## 约束说明
@@ -40,7 +42,7 @@ KirinX90系列处理器
 
 ## 调用示例
 
-```
-1. constexpr int32_t len = 8 * 32 * 1024 * 8;
-2. half* x = (half*) GmAlloc(len*sizeof(half));
+```cpp
+constexpr int32_t len = 8 * 32 * 1024 * 8;
+half* x = (half*) GmAlloc(len*sizeof(half));
 ```

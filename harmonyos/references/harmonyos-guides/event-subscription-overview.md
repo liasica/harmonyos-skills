@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/event-subscri
 title: 事件订阅简介
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 事件订阅简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:68f819046a323d19ba4f2c22278738fc698affaef926a1ca9afcd6ac55e08e9d
+scraped_at: 2026-09-02T14:59:39+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:5bd3fcc2c4555d478520455ac8f4c15439f2dc7cdba3b85514569f0b4a349d5b
 ---
 
 ## 事件介绍
@@ -25,6 +25,8 @@ HiAppEvent能够订阅应用事件和系统事件。
 [崩溃事件介绍](hiappevent-watcher-crash-events.md)
 
 [应用冻屏事件介绍](hiappevent-watcher-freeze-events.md)
+
+[应用冻屏告警事件介绍](hiappevent-watcher-appfreezewarning-events.md)
 
 [资源泄漏事件介绍](hiappevent-watcher-resourceleak-events.md)
 
@@ -56,7 +58,7 @@ HiAppEvent通过[addWatcher](../harmonyos-references/js-apis-hiviewdfx-hiappeven
 
 方式二：未设置回调条件参数，使用事件订阅返回的holder对象主动获取监听的事件。
 
-说明
+**说明** 
 
 主动获取监听的事件时，如果事件未生成或者日志信息未捕获完成，查询结果可能为空。此时，建议多次调用查询接口。
 

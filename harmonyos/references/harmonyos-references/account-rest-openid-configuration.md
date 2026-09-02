@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-r
 title: 获取OpenID Connect配置公开信息
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力 > 获取OpenID Connect配置公开信息
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:89efa78ada014c4f78a4fa0257e9c73b437a62a21336e714ac4e1d243368cb7b
+scraped_at: 2026-09-02T15:02:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9461bd104c9a9e5ec456644d7c8082bf403677540bc86c1e32b4a32798e142fc
 ---
 
-注意
+**注意** 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
@@ -43,16 +43,16 @@ content_hash: sha256:89efa78ada014c4f78a4fa0257e9c73b437a62a21336e714ac4e1d24336
 
 请通过POST方式调用，示例如下：
 
-```
-1. POST /.well-known/openid-configuration HTTP/1.1
-2. Host: oauth-login.cloud.huawei.com
+```http
+POST /.well-known/openid-configuration HTTP/1.1
+Host: oauth-login.cloud.huawei.com
 ```
 
 请通过GET方式调用，示例如下：
 
-```
-1. GET /.well-known/openid-configuration HTTP/1.1
-2. Host: oauth-login.cloud.huawei.com
+```http
+GET /.well-known/openid-configuration HTTP/1.1
+Host: oauth-login.cloud.huawei.com
 ```
 
 ## 响应参数
@@ -83,105 +83,105 @@ content_hash: sha256:89efa78ada014c4f78a4fa0257e9c73b437a62a21336e714ac4e1d24336
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-4. {
-5. "issuer": "https://accounts.huawei.com",
-6. "authorization_endpoint": "https://oauth-login.cloud.huawei.com/oauth2/v3/authorize",
-7. "token_endpoint": "https://oauth-login.cloud.huawei.com/oauth2/v3/token",
-8. "revocation_endpoint": "https://oauth-login.cloud.huawei.com/oauth2/v3/revoke",
-9. "jwks_uri": "https://oauth-login.cloud.huawei.com/oauth2/v3/certs",
-10. "response_modes_supported": [
-11. "form_post"
-12. ],
-13. "response_types_supported": [
-14. "code"
-15. ],
-16. "subject_types_supported": [
-17. "pairwise"
-18. ],
-19. "id_token_signing_alg_values_supported": [
-20. "RS256",
-21. "PS256"
-22. ],
-23. "scopes_supported": [
-24. "openid",
-25. "email",
-26. "profile"
-27. ],
-28. "token_endpoint_auth_methods_supported": [
-29. "client_secret_post"
-30. ],
-31. "claims_supported": [
-32. "aud",
-33. "email",
-34. "email_verified",
-35. "exp",
-36. "family_name",
-37. "given_name",
-38. "iat",
-39. "iss",
-40. "locale",
-41. "name",
-42. "picture",
-43. "sub",
-44. "display_name"
-45. ],
-46. "code_challenge_methods_supported": [
-47. "S256"
-48. ]
-49. }
+{
+   "issuer": "https://accounts.huawei.com",
+   "authorization_endpoint": "https://oauth-login.cloud.huawei.com/oauth2/v3/authorize",
+   "token_endpoint": "https://oauth-login.cloud.huawei.com/oauth2/v3/token",
+   "revocation_endpoint": "https://oauth-login.cloud.huawei.com/oauth2/v3/revoke",
+   "jwks_uri": "https://oauth-login.cloud.huawei.com/oauth2/v3/certs",
+   "response_modes_supported": [
+      "form_post"
+   ],
+   "response_types_supported": [
+      "code"
+   ],
+   "subject_types_supported": [
+      "pairwise"
+   ],
+   "id_token_signing_alg_values_supported": [
+      "RS256",
+      "PS256"
+   ],
+   "scopes_supported": [
+      "openid",
+      "email",
+      "profile"
+   ],
+   "token_endpoint_auth_methods_supported": [
+      "client_secret_post"
+   ],
+   "claims_supported": [
+       "aud",
+       "email",
+       "email_verified",
+       "exp",
+       "family_name",
+       "given_name",
+       "iat",
+       "iss",
+       "locale",
+       "name",
+       "picture",
+       "sub",
+       "display_name"
+    ],
+    "code_challenge_methods_supported": [
+        "S256"
+    ]
+}
 ```
 
 ## 示例代码
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](account-api-common.md#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
-```
-1. import com.alibaba.fastjson2.JSONArray;
-2. import com.alibaba.fastjson2.JSONObject;
-3. import org.apache.http.client.methods.HttpGet;
-4. import java.io.IOException;
+```java
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
+import org.apache.http.client.methods.HttpGet;
+import java.io.IOException;
 
-6. /**
-7. * 获取OpenID Connect配置公开信息
-8. */
-9. public class GetOpenIdConnect {
-10. public static void main(String[] args) throws IOException {
-11. // 获取OpenID Connect配置公开信息的接口URL
-12. String url = "https://oauth-login.cloud.huawei.com/.well-known/openid-configuration";
-13. HttpGet httpGet = new HttpGet(url);
-14. JSONObject result = CallUtils.toJsonObject(CallUtils.remoteCallOAuth(httpGet));
-15. // 解析获取issuer
-16. String issuer = result.getString("issuer");
-17. // 解析获取authorization_endpoint
-18. String authorizationEndpoint = result.getString("authorization_endpoint");
-19. // 解析获取token_endpoint
-20. String tokenEndpoint = result.getString("token_endpoint");
-21. // 解析获取revocation_endpoint
-22. String revocationEndpoint = result.getString("revocation_endpoint");
-23. // 解析获取jwks_uri
-24. String jwksUri = result.getString("jwks_uri");
-25. // 解析获取response_modes_supported
-26. JSONArray responseModesSupported = result.getJSONArray("response_modes_supported");
-27. // 解析获取response_types_supported
-28. JSONArray responseTypesSupported = result.getJSONArray("response_types_supported");
-29. // 解析获取subject_types_supported
-30. JSONArray subjectTypesSupported = result.getJSONArray("subject_types_supported");
-31. // 解析获取id_token_signing_alg_values_supported
-32. JSONArray idTokenSigningAlgValuesSupported = result.getJSONArray("id_token_signing_alg_values_supported");
-33. // 解析获取scopes_supported
-34. JSONArray scopesSupported = result.getJSONArray("scopes_supported");
-35. // 解析获取token_endpoint_auth_methods_supported
-36. JSONArray tokenEndpointAuthMethodsSupported = result.getJSONArray("token_endpoint_auth_methods_supported");
-37. // 解析获取claims_supported
-38. JSONArray claimsSupported = result.getJSONArray("claims_supported");
-39. // 解析获取code_challenge_methods_supported
-40. JSONArray codeChallengeMethodsSupported = result.getJSONArray("code_challenge_methods_supported");
-41. }
-42. }
+/**
+ * 获取OpenID Connect配置公开信息
+ */
+public class GetOpenIdConnect {
+    public static void main(String[] args) throws IOException {
+        // 获取OpenID Connect配置公开信息的接口URL
+        String url = "https://oauth-login.cloud.huawei.com/.well-known/openid-configuration";
+        HttpGet httpGet = new HttpGet(url);
+        JSONObject result = CallUtils.toJsonObject(CallUtils.remoteCallOAuth(httpGet));
+        // 解析获取issuer
+        String issuer = result.getString("issuer");
+        // 解析获取authorization_endpoint
+        String authorizationEndpoint = result.getString("authorization_endpoint");
+        // 解析获取token_endpoint
+        String tokenEndpoint = result.getString("token_endpoint");
+        // 解析获取revocation_endpoint
+        String revocationEndpoint = result.getString("revocation_endpoint");
+        // 解析获取jwks_uri
+        String jwksUri = result.getString("jwks_uri");
+        // 解析获取response_modes_supported
+        JSONArray responseModesSupported = result.getJSONArray("response_modes_supported");
+        // 解析获取response_types_supported
+        JSONArray responseTypesSupported = result.getJSONArray("response_types_supported");
+        // 解析获取subject_types_supported
+        JSONArray subjectTypesSupported = result.getJSONArray("subject_types_supported");
+        // 解析获取id_token_signing_alg_values_supported
+        JSONArray idTokenSigningAlgValuesSupported = result.getJSONArray("id_token_signing_alg_values_supported");
+        // 解析获取scopes_supported
+        JSONArray scopesSupported = result.getJSONArray("scopes_supported");
+        // 解析获取token_endpoint_auth_methods_supported
+        JSONArray tokenEndpointAuthMethodsSupported = result.getJSONArray("token_endpoint_auth_methods_supported");
+        // 解析获取claims_supported
+        JSONArray claimsSupported = result.getJSONArray("claims_supported");
+        // 解析获取code_challenge_methods_supported
+        JSONArray codeChallengeMethodsSupported = result.getJSONArray("code_challenge_methods_supported");
+    }
+}
 ```
 
 ## 错误码

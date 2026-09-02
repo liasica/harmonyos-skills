@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 返回退款审核结果
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 退款申请通知与处理 > 返回退款审核结果
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4b8479dab875bb0e92b6dbd97fbd9c98e15f52d007a1e21d027a1344cb97a638
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6a4b118fc399f9a54b2ea80822784f2a84ceaf09c18b55952f6bb12b76c0c58a
 ---
 
 ## 功能介绍
@@ -64,26 +64,26 @@ content_hash: sha256:4b8479dab875bb0e92b6dbd97fbd9c98e15f52d007a1e21d027a1344cb9
 
 ## 请求示例
 
-```
-1. POST /post-sales/harmony/v1/transactions/refund/result
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
-5. {
-6. "refundBatchNo": "***",
-7. "reviewType": 1,
-8. "notifyTime": 1741085489609,
-9. "applicationId": "***",
-10. "totalRefundAmount": 1290,
-11. "currency": "CNY",
-12. "reviewResultList": [
-13. {
-14. "purchaseOrderId": "***",
-15. "payMoney": 1290,
-16. "refundMoney": 1290
-17. }
-18. ]
-19. }
+```javascript
+POST /post-sales/harmony/v1/transactions/refund/result
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
+{
+  "refundBatchNo": "***",
+  "reviewType": 1,
+  "notifyTime": 1741085489609,
+  "applicationId": "***",
+  "totalRefundAmount": 1290,
+  "currency": "CNY",
+  "reviewResultList": [
+    {
+      "purchaseOrderId": "***",
+      "payMoney": 1290,
+      "refundMoney": 1290
+    }
+  ]
+}
 ```
 
 ## 响应参数
@@ -104,11 +104,11 @@ content_hash: sha256:4b8479dab875bb0e92b6dbd97fbd9c98e15f52d007a1e21d027a1344cb9
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "returnCode": "0",
-5. "returnDesc": "success"
-6. }
+```javascript
+HTTP/1.2 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "returnCode": "0",
+  "returnDesc": "success"
+}
 ```

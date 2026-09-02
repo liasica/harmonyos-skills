@@ -3,39 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: DataAbilityHelper
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > ability > DataAbilityHelper
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e504fc4ed1dc2112c7838bde65c73c63eb1ac945d392e6f3ac9e2a5f779659ce
+scraped_at: 2026-09-02T15:00:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f5bcd9d245bba9909929c55b65e7094c760a12d63938d349ebdf595c18623fd3
 ---
 
 可以通过[acquireDataAbilityHelper](js-apis-ability-featureability.md#featureabilityacquiredataabilityhelper7)接口获取DataAbilityHelper对象。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import ability from '@ohos.ability.ability';
+```ts
+import ability from '@ohos.ability.ability';
 ```
 
 ## 使用说明
 
-PhonePC/2in1TabletTVWearable
-
 使用前根据具体情况引入如下模块
 
-```
-1. import ohos_data_ability from '@ohos.data.dataAbility';
-2. import relationalStore from '@ohos.data.relationalStore';
+```ts
+import ohos_data_ability from '@ohos.data.dataAbility';
+import relationalStore from '@ohos.data.relationalStore';
 ```
 
 ## DataAbilityHelper.openFile
-
-PhonePC/2in1TabletTVWearable
 
 openFile(uri: string, mode: string, callback: AsyncCallback<number>): void
 
@@ -55,26 +49,24 @@ openFile(uri: string, mode: string, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. let mode = 'rw';
-8. DAHelper.openFile('dataability:///com.example.DataAbility', mode, (error, data) => {
-9. if (error && error.code !== 0) {
-10. console.error(`openFile fail, error: ${JSON.stringify(error)}`);
-11. } else {
-12. console.info(`openFile success, data: ${JSON.stringify(data)}`);
-13. }
-14. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let mode = 'rw';
+DAHelper.openFile('dataability:///com.example.DataAbility', mode, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`openFile fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`openFile success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.openFile
-
-PhonePC/2in1TabletTVWearable
 
 openFile(uri: string, mode: string): Promise<number>
 
@@ -95,26 +87,24 @@ openFile(uri: string, mode: string): Promise<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<number> | Promise对象，返回文件说明符。 |
+| Promise<number> | Promise对象，返回文件描述符。 |
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. let mode = 'rw';
-8. DAHelper.openFile('dataability:///com.example.DataAbility', mode).then((data) => {
-9. console.info(`openFile data: ${JSON.stringify(data)}`);
-10. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let mode = 'rw';
+DAHelper.openFile('dataability:///com.example.DataAbility', mode).then((data) => {
+    console.info(`openFile data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.on('dataChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'dataChange', uri: string, callback: AsyncCallback<void>): void
 
@@ -134,26 +124,24 @@ on(type: 'dataChange', uri: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. function onChangeNotify() {
-8. console.info('onChangeNotify call back');
-9. };
-10. DAHelper.on(
-11. 'dataChange',
-12. 'dataability:///com.example.DataAbility',
-13. onChangeNotify
-14. );
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+function onChangeNotify() {
+    console.info('onChangeNotify call back');
+};
+DAHelper.on(
+    'dataChange',
+    'dataability:///com.example.DataAbility',
+    onChangeNotify
+);
 ```
 
 ## DataAbilityHelper.off('dataChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'dataChange', uri: string, callback?: AsyncCallback<void>): void
 
@@ -173,30 +161,28 @@ off(type: 'dataChange', uri: string, callback?: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. function onChangeNotify() {
-8. console.info('onChangeNotify call back');
-9. };
-10. DAHelper.off(
-11. 'dataChange',
-12. 'dataability:///com.example.DataAbility',
-13. onChangeNotify
-14. );
-15. DAHelper.off(
-16. 'dataChange',
-17. 'dataability:///com.example.DataAbility',
-18. );
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+function onChangeNotify() {
+    console.info('onChangeNotify call back');
+};
+DAHelper.off(
+    'dataChange',
+    'dataability:///com.example.DataAbility',
+    onChangeNotify
+);
+DAHelper.off(
+    'dataChange',
+    'dataability:///com.example.DataAbility',
+);
 ```
 
 ## DataAbilityHelper.getType
-
-PhonePC/2in1TabletTVWearable
 
 getType(uri: string, callback: AsyncCallback<string>): void
 
@@ -215,25 +201,23 @@ getType(uri: string, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.getType('dataability:///com.example.DataAbility', (error, data) => {
-8. if (error && error.code !== 0) {
-9. console.error(`getType fail, error: ${JSON.stringify(error)}`);
-10. } else {
-11. console.info(`getType success, data: ${JSON.stringify(data)}`);
-12. }
-13. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.getType('dataability:///com.example.DataAbility', (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`getType fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`getType success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.getType
-
-PhonePC/2in1TabletTVWearable
 
 getType(uri: string): Promise<string>
 
@@ -257,21 +241,19 @@ getType(uri: string): Promise<string>
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.getType('dataability:///com.example.DataAbility').then((data) => {
-8. console.info(`getType data: ${JSON.stringify(data)}`);
-9. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.getType('dataability:///com.example.DataAbility').then((data) => {
+    console.info(`getType data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.getFileTypes
-
-PhonePC/2in1TabletTVWearable
 
 getFileTypes(uri: string, mimeTypeFilter: string, callback: AsyncCallback<Array<string>>): void
 
@@ -291,25 +273,23 @@ getFileTypes(uri: string, mimeTypeFilter: string, callback: AsyncCallback<Array<
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.getFileTypes( 'dataability:///com.example.DataAbility', 'image/*', (error, data) => {
-8. if (error && error.code !== 0) {
-9. console.error(`getFileTypes fail, error: ${JSON.stringify(error)}`);
-10. } else {
-11. console.info(`getFileTypes success, data: ${JSON.stringify(data)}`);
-12. }
-13. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.getFileTypes( 'dataability:///com.example.DataAbility', 'image/*', (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`getFileTypes fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`getFileTypes success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.getFileTypes
-
-PhonePC/2in1TabletTVWearable
 
 getFileTypes(uri: string, mimeTypeFilter: string): Promise<Array<string>>
 
@@ -334,21 +314,19 @@ getFileTypes(uri: string, mimeTypeFilter: string): Promise<Array<string>>
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.getFileTypes('dataability:///com.example.DataAbility', 'image/*').then((data) => {
-8. console.info(`getFileTypes data: ${JSON.stringify(data)}`);
-9. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.getFileTypes('dataability:///com.example.DataAbility', 'image/*').then((data) => {
+    console.info(`getFileTypes data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.normalizeUri
-
-PhonePC/2in1TabletTVWearable
 
 normalizeUri(uri: string, callback: AsyncCallback<string>): void
 
@@ -367,25 +345,23 @@ normalizeUri(uri: string, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.normalizeUri('dataability:///com.example.DataAbility', (error, data) => {
-8. if (error && error.code !== 0) {
-9. console.error(`normalizeUri fail, error: ${JSON.stringify(error)}`);
-10. } else {
-11. console.info(`normalizeUri success, data: ${JSON.stringify(data)}`);
-12. }
-13. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.normalizeUri('dataability:///com.example.DataAbility', (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`normalizeUri fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`normalizeUri success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.normalizeUri
-
-PhonePC/2in1TabletTVWearable
 
 normalizeUri(uri: string): Promise<string>
 
@@ -409,21 +385,19 @@ normalizeUri(uri: string): Promise<string>
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.normalizeUri('dataability:///com.example.DataAbility').then((data) => {
-8. console.info(`normalizeUri data: ${JSON.stringify(data)}`);
-9. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.normalizeUri('dataability:///com.example.DataAbility').then((data) => {
+    console.info(`normalizeUri data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.denormalizeUri
-
-PhonePC/2in1TabletTVWearable
 
 denormalizeUri(uri: string, callback: AsyncCallback<string>): void
 
@@ -442,25 +416,23 @@ denormalizeUri(uri: string, callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.denormalizeUri('dataability:///com.example.DataAbility', (error, data) => {
-8. if (error && error.code !== 0) {
-9. console.error(`denormalizeUri fail, error: ${JSON.stringify(error)}`);
-10. } else {
-11. console.info(`denormalizeUri success, data: ${JSON.stringify(data)}`);
-12. }
-13. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.denormalizeUri('dataability:///com.example.DataAbility', (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`denormalizeUri fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`denormalizeUri success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.denormalizeUri
-
-PhonePC/2in1TabletTVWearable
 
 denormalizeUri(uri: string): Promise<string>
 
@@ -474,7 +446,7 @@ denormalizeUri(uri: string): Promise<string>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示要规范化的uri对象。 |
+| uri | string | 是 | 表示要反规范化的uri对象。 |
 
 **返回值：**
 
@@ -484,21 +456,19 @@ denormalizeUri(uri: string): Promise<string>
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.denormalizeUri('dataability:///com.example.DataAbility').then((data) => {
-8. console.info(`denormalizeUri data: ${JSON.stringify(data)}`);
-9. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.denormalizeUri('dataability:///com.example.DataAbility').then((data) => {
+    console.info(`denormalizeUri data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.notifyChange
-
-PhonePC/2in1TabletTVWearable
 
 notifyChange(uri: string, callback: AsyncCallback<void>): void
 
@@ -517,25 +487,23 @@ notifyChange(uri: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.notifyChange('dataability:///com.example.DataAbility', (error) => {
-8. if (error && error.code !== 0) {
-9. console.error(`notifyChange fail, error: ${JSON.stringify(error)}`);
-10. } else {
-11. console.info('notifyChange success');
-12. }
-13. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.notifyChange('dataability:///com.example.DataAbility', (error) => {
+    if (error && error.code !== 0) {
+        console.error(`notifyChange fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info('notifyChange success');
+    }
+});
 ```
 
 ## DataAbilityHelper.notifyChange
-
-PhonePC/2in1TabletTVWearable
 
 notifyChange(uri: string): Promise<void>
 
@@ -559,21 +527,19 @@ notifyChange(uri: string): Promise<void>
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.notifyChange('dataability:///com.example.DataAbility').then(() => {
-8. console.info('================>notifyChangeCallback================>');
-9. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.notifyChange('dataability:///com.example.DataAbility').then(() => {
+    console.info('================>notifyChangeCallback================>');
+});
 ```
 
 ## DataAbilityHelper.insert
-
-PhonePC/2in1TabletTVWearable
 
 insert(uri: string, valuesBucket: [rdb.ValuesBucket](js-apis-data-rdb.md#valuesbucket), callback: AsyncCallback<number>): void
 
@@ -593,32 +559,30 @@ insert(uri: string, valuesBucket: [rdb.ValuesBucket](js-apis-data-rdb.md#valuesb
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import rdb from '@ohos.data.rdb';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import rdb from '@ohos.data.rdb';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. const valueBucket: rdb.ValuesBucket = {
-9. 'name': 'rose',
-10. 'age': 22,
-11. 'salary': 200.5,
-12. 'blobType': 'u8',
-13. };
-14. DAHelper.insert('dataability:///com.example.DataAbility', valueBucket, (error, data) => {
-15. if (error && error.code !== 0) {
-16. console.error(`insert fail, error: ${JSON.stringify(error)}`);
-17. } else {
-18. console.info(`insert success, data: ${JSON.stringify(data)}`);
-19. }
-20. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+const valueBucket: rdb.ValuesBucket = {
+    'name': 'rose',
+    'age': 22,
+    'salary': 200.5,
+    'blobType': 'u8',
+};
+DAHelper.insert('dataability:///com.example.DataAbility', valueBucket, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`insert fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`insert success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.insert
-
-PhonePC/2in1TabletTVWearable
 
 insert(uri: string, valuesBucket: [rdb.ValuesBucket](js-apis-data-rdb.md#valuesbucket)): Promise<number>
 
@@ -643,28 +607,26 @@ insert(uri: string, valuesBucket: [rdb.ValuesBucket](js-apis-data-rdb.md#valuesb
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import rdb from '@ohos.data.rdb';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import rdb from '@ohos.data.rdb';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. const valueBucket: rdb.ValuesBucket = {
-9. 'name': 'rose1',
-10. 'age': 221,
-11. 'salary': 20.5,
-12. 'blobType': 'u8',
-13. };
-14. DAHelper.insert('dataability:///com.example.DataAbility', valueBucket).then((data) => {
-15. console.info(`insert data: ${JSON.stringify(data)}`);
-16. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+const valueBucket: rdb.ValuesBucket = {
+    'name': 'rose1',
+    'age': 221,
+    'salary': 20.5,
+    'blobType': 'u8',
+};
+DAHelper.insert('dataability:///com.example.DataAbility', valueBucket).then((data) => {
+    console.info(`insert data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.batchInsert
-
-PhonePC/2in1TabletTVWearable
 
 batchInsert(uri: string, valuesBuckets: Array<rdb.ValuesBucket>, callback: AsyncCallback<number>): void
 
@@ -684,29 +646,27 @@ batchInsert(uri: string, valuesBuckets: Array<rdb.ValuesBucket>, callback: Async
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import rdb from '@ohos.data.rdb';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import rdb from '@ohos.data.rdb';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. let cars = new Array({'name': 'roe11', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket,
-9. {'name': 'roe12', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket,
-10. {'name': 'roe13', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket);
-11. DAHelper.batchInsert('dataability:///com.example.DataAbility', cars, (error, data) => {
-12. if (error && error.code !== 0) {
-13. console.error(`batchInsert fail, error: ${JSON.stringify(error)}`);
-14. } else {
-15. console.info(`batchInsert success, data: ${JSON.stringify(data)}`);
-16. }
-17. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let cars = new Array({'name': 'roe11', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket,
+                     {'name': 'roe12', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket,
+                     {'name': 'roe13', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket);
+DAHelper.batchInsert('dataability:///com.example.DataAbility', cars, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`batchInsert fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`batchInsert success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.batchInsert
-
-PhonePC/2in1TabletTVWearable
 
 batchInsert(uri: string, valuesBuckets: Array<rdb.ValuesBucket>): Promise<number>
 
@@ -731,25 +691,23 @@ batchInsert(uri: string, valuesBuckets: Array<rdb.ValuesBucket>): Promise<number
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import rdb from '@ohos.data.rdb';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import rdb from '@ohos.data.rdb';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. let cars = new Array({'name': 'roe11', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket,
-9. {'name': 'roe12', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket,
-10. {'name': 'roe13', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket);
-11. DAHelper.batchInsert('dataability:///com.example.DataAbility', cars).then((data) => {
-12. console.info(`batchInsert data: ${JSON.stringify(data)}`);
-13. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let cars = new Array({'name': 'roe11', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket,
+                     {'name': 'roe12', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket,
+                     {'name': 'roe13', 'age': 21, 'salary': 20.5, 'blobType': 'u8',} as rdb.ValuesBucket);
+DAHelper.batchInsert('dataability:///com.example.DataAbility', cars).then((data) => {
+    console.info(`batchInsert data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(uri: string, predicates: dataAbility.DataAbilityPredicates, callback: AsyncCallback<number>): void
 
@@ -769,27 +727,25 @@ delete(uri: string, predicates: dataAbility.DataAbilityPredicates, callback: Asy
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import ohos_data_ability from '@ohos.data.dataAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import ohos_data_ability from '@ohos.data.dataAbility';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. let da = new ohos_data_ability.DataAbilityPredicates();
-9. DAHelper.delete('dataability:///com.example.DataAbility', da, (error, data) => {
-10. if (error && error.code !== 0) {
-11. console.error(`delete fail, error: ${JSON.stringify(error)}`);
-12. } else {
-13. console.info(`delete success, data: ${JSON.stringify(data)}`);
-14. }
-15. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let da = new ohos_data_ability.DataAbilityPredicates();
+DAHelper.delete('dataability:///com.example.DataAbility', da, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`delete fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`delete success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(uri: string, predicates?: dataAbility.DataAbilityPredicates): Promise<number>
 
@@ -814,23 +770,21 @@ delete(uri: string, predicates?: dataAbility.DataAbilityPredicates): Promise<num
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import ohos_data_ability from '@ohos.data.dataAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import ohos_data_ability from '@ohos.data.dataAbility';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. let da = new ohos_data_ability.DataAbilityPredicates();
-9. DAHelper.delete('dataability:///com.example.DataAbility', da).then((data) => {
-10. console.info(`delete data: ${JSON.stringify(data)}`);
-11. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let da = new ohos_data_ability.DataAbilityPredicates();
+DAHelper.delete('dataability:///com.example.DataAbility', da).then((data) => {
+    console.info(`delete data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(uri: string, callback: AsyncCallback<number>): void
 
@@ -849,25 +803,23 @@ predicates筛选条件为空，自定义数据库删除数据记录的处理逻�
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.delete('dataability:///com.example.DataAbility', (error, data) => {
-8. if (error && error.code !== 0) {
-9. console.error(`delete fail, error: ${JSON.stringify(error)}`);
-10. } else {
-11. console.info(`delete success, data: ${JSON.stringify(data)}`);
-12. }
-13. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.delete('dataability:///com.example.DataAbility', (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`delete fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`delete success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.update
-
-PhonePC/2in1TabletTVWearable
 
 update(uri: string, valuesBucket: rdb.ValuesBucket, predicates: dataAbility.DataAbilityPredicates, callback: AsyncCallback<number>): void
 
@@ -888,34 +840,32 @@ update(uri: string, valuesBucket: rdb.ValuesBucket, predicates: dataAbility.Data
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import ohos_data_ability from '@ohos.data.dataAbility';
-4. import rdb from '@ohos.data.rdb';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import ohos_data_ability from '@ohos.data.dataAbility';
+import rdb from '@ohos.data.rdb';
 
-6. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-7. 'dataability:///com.example.DataAbility'
-8. );
-9. const va: rdb.ValuesBucket = {
-10. 'name': 'roe1',
-11. 'age': 21,
-12. 'salary': 20.5,
-13. 'blobType': 'u8',
-14. };
-15. let da = new ohos_data_ability.DataAbilityPredicates();
-16. DAHelper.update('dataability:///com.example.DataAbility', va, da, (error, data) => {
-17. if (error && error.code !== 0) {
-18. console.error(`update fail, error: ${JSON.stringify(error)}`);
-19. } else {
-20. console.info(`update success, data: ${JSON.stringify(data)}`);
-21. }
-22. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+const va: rdb.ValuesBucket = {
+    'name': 'roe1',
+    'age': 21,
+    'salary': 20.5,
+    'blobType': 'u8',
+};
+let da = new ohos_data_ability.DataAbilityPredicates();
+DAHelper.update('dataability:///com.example.DataAbility', va, da, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`update fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`update success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.update
-
-PhonePC/2in1TabletTVWearable
 
 update(uri: string, valuesBucket: rdb.ValuesBucket, predicates?: dataAbility.DataAbilityPredicates): Promise<number>
 
@@ -941,30 +891,28 @@ update(uri: string, valuesBucket: rdb.ValuesBucket, predicates?: dataAbility.Dat
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import ohos_data_ability from '@ohos.data.dataAbility';
-4. import rdb from '@ohos.data.rdb';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import ohos_data_ability from '@ohos.data.dataAbility';
+import rdb from '@ohos.data.rdb';
 
-6. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-7. 'dataability:///com.example.DataAbility'
-8. );
-9. const va: rdb.ValuesBucket = {
-10. 'name': 'roe1',
-11. 'age': 21,
-12. 'salary': 20.5,
-13. 'blobType': 'u8',
-14. };
-15. let da = new ohos_data_ability.DataAbilityPredicates();
-16. DAHelper.update('dataability:///com.example.DataAbility', va, da).then((data) => {
-17. console.info(`update data: ${JSON.stringify(data)}`);
-18. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+const va: rdb.ValuesBucket = {
+    'name': 'roe1',
+    'age': 21,
+    'salary': 20.5,
+    'blobType': 'u8',
+};
+let da = new ohos_data_ability.DataAbilityPredicates();
+DAHelper.update('dataability:///com.example.DataAbility', va, da).then((data) => {
+    console.info(`update data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.update
-
-PhonePC/2in1TabletTVWearable
 
 update(uri: string, valuesBucket: rdb.ValuesBucket, callback: AsyncCallback<number>): void
 
@@ -984,32 +932,30 @@ predicates筛选条件为空，自定义更新数据库的处理逻辑。使用c
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import rdb from '@ohos.data.rdb';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import rdb from '@ohos.data.rdb';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. const va: rdb.ValuesBucket = {
-9. 'name': 'roe1',
-10. 'age': 21,
-11. 'salary': 20.5,
-12. 'blobType': 'u8',
-13. };
-14. DAHelper.update('dataability:///com.example.DataAbility', va, (error, data) => {
-15. if (error && error.code !== 0) {
-16. console.error(`update fail, error: ${JSON.stringify(error)}`);
-17. } else {
-18. console.info(`update success, data: ${JSON.stringify(data)}`);
-19. }
-20. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+const va: rdb.ValuesBucket = {
+    'name': 'roe1',
+    'age': 21,
+    'salary': 20.5,
+    'blobType': 'u8',
+};
+DAHelper.update('dataability:///com.example.DataAbility', va, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`update fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`update success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.query
-
-PhonePC/2in1TabletTVWearable
 
 query(uri: string, columns: Array<string>, predicates: dataAbility.DataAbilityPredicates, callback: AsyncCallback<ResultSet>): void
 
@@ -1030,28 +976,26 @@ query(uri: string, columns: Array<string>, predicates: dataAbility.DataAbilityPr
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import ohos_data_ability from '@ohos.data.dataAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import ohos_data_ability from '@ohos.data.dataAbility';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. let cars=new Array('value1', 'value2', 'value3', 'value4');
-9. let da = new ohos_data_ability.DataAbilityPredicates();
-10. DAHelper.query('dataability:///com.example.DataAbility', cars, da, (error, data) => {
-11. if (error && error.code !== 0) {
-12. console.error(`query fail, error: ${JSON.stringify(error)}`);
-13. } else {
-14. console.info(`query success, data: ${JSON.stringify(data)}`);
-15. }
-16. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let cars=new Array('value1', 'value2', 'value3', 'value4');
+let da = new ohos_data_ability.DataAbilityPredicates();
+DAHelper.query('dataability:///com.example.DataAbility', cars, da, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`query fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`query success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.query
-
-PhonePC/2in1TabletTVWearable
 
 query(uri: string, callback: AsyncCallback<ResultSet>): void
 
@@ -1070,25 +1014,23 @@ query(uri: string, callback: AsyncCallback<ResultSet>): void
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. DAHelper.query('dataability:///com.example.DataAbility', (error, data) => {
-8. if (error && error.code !== 0) {
-9. console.error(`query fail, error: ${JSON.stringify(error)}`);
-10. } else {
-11. console.info(`query success, data: ${JSON.stringify(data)}`);
-12. }
-13. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+DAHelper.query('dataability:///com.example.DataAbility', (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`query fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`query success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.query
-
-PhonePC/2in1TabletTVWearable
 
 query(uri: string, columns: Array<string>, callback: AsyncCallback<ResultSet>): void
 
@@ -1108,26 +1050,24 @@ query(uri: string, columns: Array<string>, callback: AsyncCallback<ResultSet>): 
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.DataAbility'
-6. );
-7. let cars = new Array('value1', 'value2', 'value3', 'value4');
-8. DAHelper.query('dataability:///com.example.DataAbility', cars, (error, data) => {
-9. if (error && error.code !== 0) {
-10. console.error(`query fail, error: ${JSON.stringify(error)}`);
-11. } else {
-12. console.info(`query success, data: ${JSON.stringify(data)}`);
-13. }
-14. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let cars = new Array('value1', 'value2', 'value3', 'value4');
+DAHelper.query('dataability:///com.example.DataAbility', cars, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`query fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`query success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.query
-
-PhonePC/2in1TabletTVWearable
 
 query(uri: string, predicates: dataAbility.DataAbilityPredicates, callback: AsyncCallback<ResultSet>): void
 
@@ -1147,27 +1087,25 @@ query(uri: string, predicates: dataAbility.DataAbilityPredicates, callback: Asyn
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import ohos_data_ability from '@ohos.data.dataAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import ohos_data_ability from '@ohos.data.dataAbility';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. let da = new ohos_data_ability.DataAbilityPredicates();
-9. DAHelper.query('dataability:///com.example.DataAbility', da, (error, data) => {
-10. if (error && error.code !== 0) {
-11. console.error(`query fail, error: ${JSON.stringify(error)}`);
-12. } else {
-13. console.info(`query success, data: ${JSON.stringify(data)}`);
-14. }
-15. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let da = new ohos_data_ability.DataAbilityPredicates();
+DAHelper.query('dataability:///com.example.DataAbility', da, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`query fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`query success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.query
-
-PhonePC/2in1TabletTVWearable
 
 query(uri: string, columns?: Array<string>, predicates?: dataAbility.DataAbilityPredicates): Promise<ResultSet>
 
@@ -1193,24 +1131,22 @@ query(uri: string, columns?: Array<string>, predicates?: dataAbility.DataAbility
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import ohos_data_ability from '@ohos.data.dataAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import ohos_data_ability from '@ohos.data.dataAbility';
 
-5. let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.DataAbility'
-7. );
-8. let cars = new Array('value1', 'value2', 'value3', 'value4');
-9. let da = new ohos_data_ability.DataAbilityPredicates();
-10. DAHelper.query('dataability:///com.example.DataAbility', cars, da).then((data) => {
-11. console.info(`query data: ${JSON.stringify(data)}`);
-12. });
+let DAHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.DataAbility'
+);
+let cars = new Array('value1', 'value2', 'value3', 'value4');
+let da = new ohos_data_ability.DataAbilityPredicates();
+DAHelper.query('dataability:///com.example.DataAbility', cars, da).then((data) => {
+    console.info(`query data: ${JSON.stringify(data)}`);
+});
 ```
 
 ## DataAbilityHelper.call
-
-PhonePC/2in1TabletTVWearable
 
 call(uri: string, method: string, arg: string, extras: PacMap, callback: AsyncCallback<PacMap>): void
 
@@ -1232,26 +1168,24 @@ call(uri: string, method: string, arg: string, extras: PacMap, callback: AsyncCa
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. let dataAbilityHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-5. 'dataability:///com.example.jsapidemo.UserDataAbility'
-6. );
-7. dataAbilityHelper.call('dataability:///com.example.jsapidemo.UserDataAbility',
-8. 'method', 'arg', {'key1':'value1'}, (error, data) => {
-9. if (error && error.code !== 0) {
-10. console.error(`call fail, error: ${JSON.stringify(error)}`);
-11. } else {
-12. console.info(`call success, data: ${JSON.stringify(data)}`);
-13. }
-14. });
+let dataAbilityHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.jsapidemo.UserDataAbility'
+);
+dataAbilityHelper.call('dataability:///com.example.jsapidemo.UserDataAbility',
+    'method', 'arg', {'key1':'value1'}, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`call fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`call success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.call
-
-PhonePC/2in1TabletTVWearable
 
 call(uri: string, method: string, arg: string, extras: PacMap): Promise<PacMap>
 
@@ -1278,25 +1212,23 @@ call(uri: string, method: string, arg: string, extras: PacMap): Promise<PacMap>
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import { BusinessError } from '@ohos.base';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import { BusinessError } from '@ohos.base';
 
-5. let dataAbilityHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-6. 'dataability:///com.example.jsapidemo.UserDataAbility'
-7. );
-8. dataAbilityHelper.call('dataability:///com.example.jsapidemo.UserDataAbility',
-9. 'method', 'arg', {'key1':'value1'}).then((data) => {
-10. console.info(`call success, data: ${data}`);
-11. }).catch((error: BusinessError) => {
-12. console.error(`call failed, error: ${error}`);
-13. });
+let dataAbilityHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.jsapidemo.UserDataAbility'
+);
+dataAbilityHelper.call('dataability:///com.example.jsapidemo.UserDataAbility',
+    'method', 'arg', {'key1':'value1'}).then((data) => {
+    console.info(`call success, data: ${data}`);
+}).catch((error: BusinessError) => {
+    console.error(`call failed, error: ${error}`);
+});
 ```
 
 ## DataAbilityHelper.executeBatch
-
-PhonePC/2in1TabletTVWearable
 
 executeBatch(uri: string, operations: Array<DataAbilityOperation>, callback: AsyncCallback<Array<DataAbilityResult>>): void
 
@@ -1316,27 +1248,25 @@ executeBatch(uri: string, operations: Array<DataAbilityOperation>, callback: Asy
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
 
-4. // 根据DataAbilityOperation列表选择要对数据库做的操作
-5. let op: Array<ability.DataAbilityOperation> = new Array();
-6. let dataAbilityHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-7. 'dataability:///com.example.jsapidemo.UserDataAbility'
-8. );
-9. dataAbilityHelper.executeBatch('dataability:///com.example.jsapidemo.UserDataAbility', op, (error, data) => {
-10. if (error && error.code !== 0) {
-11. console.error(`executeBatch fail, error: ${JSON.stringify(error)}`);
-12. } else {
-13. console.info(`executeBatch success, data: ${JSON.stringify(data)}`);
-14. }
-15. });
+// 根据DataAbilityOperation列表选择要对数据库做的操作
+let op: Array<ability.DataAbilityOperation> = new Array();
+let dataAbilityHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.jsapidemo.UserDataAbility'
+);
+dataAbilityHelper.executeBatch('dataability:///com.example.jsapidemo.UserDataAbility', op, (error, data) => {
+    if (error && error.code !== 0) {
+        console.error(`executeBatch fail, error: ${JSON.stringify(error)}`);
+    } else {
+        console.info(`executeBatch success, data: ${JSON.stringify(data)}`);
+    }
+});
 ```
 
 ## DataAbilityHelper.executeBatch
-
-PhonePC/2in1TabletTVWearable
 
 executeBatch(uri: string, operations: Array<DataAbilityOperation>): Promise<Array<DataAbilityResult>>
 
@@ -1361,26 +1291,24 @@ executeBatch(uri: string, operations: Array<DataAbilityOperation>): Promise<Arra
 
 **示例：**
 
-```
-1. import ability from '@ohos.ability.ability';
-2. import featureAbility from '@ohos.ability.featureAbility';
-3. import { BusinessError } from '@ohos.base';
+```ts
+import ability from '@ohos.ability.ability';
+import featureAbility from '@ohos.ability.featureAbility';
+import { BusinessError } from '@ohos.base';
 
-5. // 根据DataAbilityOperation列表选择要对数据库做的操作
-6. let op: Array<ability.DataAbilityOperation> = new Array();
-7. let dataAbilityHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
-8. 'dataability:///com.example.jsapidemo.UserDataAbility'
-9. );
-10. dataAbilityHelper.executeBatch('dataability:///com.example.jsapidemo.UserDataAbility', op).then((data) => {
-11. console.info(`executeBatch success, data: ${data}`);
-12. }).catch((error: BusinessError) => {
-13. console.error(`executeBatch failed, error: ${error}`);
-14. });
+// 根据DataAbilityOperation列表选择要对数据库做的操作
+let op: Array<ability.DataAbilityOperation> = new Array();
+let dataAbilityHelper: ability.DataAbilityHelper = featureAbility.acquireDataAbilityHelper(
+    'dataability:///com.example.jsapidemo.UserDataAbility'
+);
+dataAbilityHelper.executeBatch('dataability:///com.example.jsapidemo.UserDataAbility', op).then((data) => {
+    console.info(`executeBatch success, data: ${data}`);
+}).catch((error: BusinessError) => {
+    console.error(`executeBatch failed, error: ${error}`);
+});
 ```
 
 ## PacMap
-
-PhonePC/2in1TabletTVWearable
 
 用于存储数据的PacMap类型。
 

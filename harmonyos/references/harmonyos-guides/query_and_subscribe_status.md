@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/query_and_sub
 title: 状态查询与订阅
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 状态查询与订阅
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:df869fa7bc02f27f43507e8709710b1d18b4158ba89f3a5d4d3d26c9fbde498c
+scraped_at: 2026-09-02T14:59:38+08:00
+doc_updated_at: 2026-05-12
+content_hash: sha256:01e81b644332fbb9717751f8c841700bf69de6b23dc4415548397cab5fd56bf9
 ---
 
-说明
+**说明** 
 
 该接口的调用需要在开发者联盟申请设备基础信息权限与穿戴用户状态权限（请参考[申请接入Wear Engine服务](wearengine_apply.md)），穿戴用户状态权限还需获得用户授权。
 
@@ -35,7 +35,7 @@ content_hash: sha256:df869fa7bc02f27f43507e8709710b1d18b4158ba89f3a5d4d3d26c9fbd
 | 佩戴状态 | - 1：佩戴中  - 2：未佩戴 | - 1：将穿戴设备戴在手腕上  - 2：将穿戴设备由手腕摘下 | - 1：佩戴  - 2：未佩戴 |
 | 心率告警 | N/A | - 1：静态心率连续10分钟高于上限值  - 2：静态心率连续10分钟低于下限值  - 3：运动心率过高  - 4：运动心率过低  备注：打开运动健康App 设备，在应用和服务列表中，点击心率，设置相应的心率提醒。 | - 1：静态心率过高  - 2：静态心率过低  - 3：运动心率过高  - 4：运动心率过低 |
 
-说明
+**说明** 
 
 * 穿戴设备侧无对应的应用，手机侧应用也可以使用该能力获取穿戴设备状态。
 * 在查询或订阅穿戴设备电量、充电、佩戴、心率告警状态时，请确保穿戴设备和华为运动健康App处于连接状态。用户可进入App“设备”界面查看设备是否在线。开发者可调用[getConnectedDevices](../harmonyos-references/wearengine_api.md#getconnecteddevices)或根据返回错误码了解设备是否已连接手机，如果设备未连接则提醒用户重新连接设备。
@@ -58,18 +58,18 @@ content_hash: sha256:df869fa7bc02f27f43507e8709710b1d18b4158ba89f3a5d4d3d26c9fbd
      + “可用内存”字段：AVAILABLE\_STORAGE\_SPACE
    * 通过[MonitorData](../harmonyos-references/wearengine_api.md#monitordata)对象，返回指定指标状态的查询结果。
 
-     ```
-     1. // 步骤3 获取MonitorClient对象
-     2. let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
+     ```typescript
+     // 步骤3 获取MonitorClient对象
+     let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
 
-     4. // 步骤4 查询指定指标状态（以佩戴状态为例）
-     5. monitorClient.queryStatus(targetDevice.randomId, wearEngine.MonitorItem.WEAR_STATUS).then((result: wearEngine.MonitorData) => {
-     6. // 获取到所查状态的状态值，处理对应业务逻辑
-     7. console.info(`Succeeded in querying wear status, result is ${result.code}.`);
-     8. }).catch((error: BusinessError) => {
-     9. // 处理调用失败时捕获到的异常
-     10. console.error(`Failed to query wear status. Code is ${error.code}, message is ${error.message}.`);
-     11. })
+     // 步骤4 查询指定指标状态（以佩戴状态为例）
+     monitorClient.queryStatus(targetDevice.randomId, wearEngine.MonitorItem.WEAR_STATUS).then((result: wearEngine.MonitorData) => {
+       // 获取到所查状态的状态值，处理对应业务逻辑
+       console.info(`Succeeded in querying wear status, result is ${result.code}.`);
+     }).catch((error: BusinessError) => {
+       // 处理调用失败时捕获到的异常
+       console.error(`Failed to query wear status. Code is ${error.code}, message is ${error.message}.`);
+     });
      ```
 
 ## 订阅设备状态
@@ -89,30 +89,38 @@ content_hash: sha256:df869fa7bc02f27f43507e8709710b1d18b4158ba89f3a5d4d3d26c9fbd
      + “设备模式”字段：EVENT\_POWER\_MODE\_CHANGED。
    * 通过[Callback](../harmonyos-references/js-apis-base.md#callback)<[MonitorEventData](../harmonyos-references/wearengine_api.md#monitoreventdata)>对象，返回设备状态的订阅结果。
 
-   ```
-   1. // 步骤3 获取MonitorClient对象
-   2. let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
+   ```typescript
+   // 步骤3 获取MonitorClient对象
+   let monitorClient: wearEngine.MonitorClient = wearEngine.getMonitorClient(this.getUIContext().getHostContext());
 
-   4. // 步骤4 定义回调函数
-   5. let callback = (monitorEventData: wearEngine.MonitorEventData) => {
-   6. // 处理监听到状态变化后的业务逻辑
-   7. console.info(`Succeeded in listening change of ${monitorEventData.event}, the new status is ${monitorEventData.data}.`)
-   8. }
+   // 步骤4 定义回调函数
+   let callback = (monitorEventData: wearEngine.MonitorEventData) => {
+     // 处理监听到状态变化后的业务逻辑
+     console.info(`Succeeded in listening change of ${monitorEventData.event}, the new status is ${monitorEventData.data}.`);
+   };
 
-   10. // 步骤5 调用订阅方法
-   11. monitorClient.subscribeEvent(targetDevice.randomId, wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED, callback).then(() => {
-   12. console.info(`Succeeded in subscribing wear status.`);
-   13. }).catch((error: BusinessError) => {
-   14. console.error(`Failed to subscribe wear status. Code is ${error.code}, message is ${error.message}.`);
-   15. })
+   // 步骤5 调用订阅方法
+   monitorClient.subscribeEvent(
+     targetDevice.randomId,
+     wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED,
+     callback
+   ).then(() => {
+     console.info(`Succeeded in subscribing wear status.`);
+   }).catch((error: BusinessError) => {
+     console.error(`Failed to subscribe wear status. Code is ${error.code}, message is ${error.message}.`);
+   });
    ```
 6. 调用[unsubscribeEvent](../harmonyos-references/wearengine_api.md#unsubscribeevent)方法，解除穿戴设备状态变化的订阅。（需要传入订阅时使用的回调函数对象）
 
-   ```
-   1. // 步骤6 取消订阅，取消订阅时需要传入与订阅时相同的回调函数对象才可正常取消订阅
-   2. monitorClient.unsubscribeEvent(targetDevice.randomId, wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED, callback).then(() => {
-   3. console.info(`Succeeded in unsubscribing wear status`);
-   4. }).catch((error: BusinessError) => {
-   5. console.error(`Failed to unsubscribe wear status. Code is ${error.code}, message is ${error.message}.`);
-   6. })
+   ```typescript
+   // 步骤6 取消订阅，取消订阅时需要传入与订阅时相同的回调函数对象才可正常取消订阅
+   monitorClient.unsubscribeEvent(
+     targetDevice.randomId,
+     wearEngine.MonitorEvent.EVENT_WEAR_STATUS_CHANGED,
+     callback
+   ).then(() => {
+     console.info(`Succeeded in unsubscribing wear status`);
+   }).catch((error: BusinessError) => {
+     console.error(`Failed to unsubscribe wear status. Code is ${error.code}, message is ${error.message}.`);
+   });
    ```

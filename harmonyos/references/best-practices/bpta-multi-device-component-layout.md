@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 组件布局场景
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面布局响应式变化 > 组件布局场景
 category: best-practices
-scraped_at: 2026-04-28T08:21:05+08:00
-doc_updated_at: 2026-03-12
+scraped_at: 2026-09-02T15:21:03+08:00
+doc_updated_at: 2026-06-12
 content_hash: sha256:85f746f1a02c39cafc234bc7ac80f8de6f5db9310e34d736f81e242ff3f491a7
 ---
 

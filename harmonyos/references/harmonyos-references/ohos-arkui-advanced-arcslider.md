@@ -3,62 +3,52 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ArcSlider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > ArcSlider
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:69061415b2f8b54dac6f22431debff55d1f5360414847a94ac409783426620bf
+scraped_at: 2026-09-02T15:01:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4816b2fce2d211546f3c57ac0e17c29c646e6252a0d80eb6a59bf4b747194970
 ---
 
 弧形滑动条组件，通常用于在圆形屏幕的穿戴设备中快速调节设置值，如音量调节、亮度调节等应用场景。
 
-说明
+**说明** 
 
 * 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件支持在Phone、PC/2in1、Tablet、TV、Wearable设备上使用。API version 22及以前版本，在Phone、PC/2in1、Tablet、TV上使用会编译告警，但可以正常运行。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import {
-2. ArcSlider,
-3. ArcSliderPosition,
-4. ArcSliderOptions,
-5. ArcSliderValueOptions,
-6. ArcSliderLayoutOptions,
-7. ArcSliderStyleOptions,
-8. ArcSliderValueOptionsConstructorOptions,
-9. ArcSliderLayoutOptionsConstructorOptions,
-10. ArcSliderStyleOptionsConstructorOptions,
-11. ArcSliderOptionsConstructorOptions
-12. } from '@kit.ArkUI';
+```ts
+import {
+  ArcSlider,
+  ArcSliderPosition,
+  ArcSliderOptions,
+  ArcSliderValueOptions,
+  ArcSliderLayoutOptions,
+  ArcSliderStyleOptions,
+  ArcSliderValueOptionsConstructorOptions,
+  ArcSliderLayoutOptionsConstructorOptions,
+  ArcSliderStyleOptionsConstructorOptions,
+  ArcSliderOptionsConstructorOptions
+} from '@kit.ArkUI';
 ```
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用属性](ts-component-general-attributes.md)。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 不支持[通用事件](ts-component-general-events.md)。
 
 ## ArcSlider
 
-PhonePC/2in1TabletTVWearable
-
 ArcSlider({ options: ArcSliderOptions })
 
-创建ArcSlider实例，入参是弧形进度条配置选项。
+创建ArcSlider实例，入参是弧形滑动条配置选项。
 
 **装饰器类型：**@Component
 
@@ -73,8 +63,6 @@ ArcSlider({ options: ArcSliderOptions })
 | options | [ArcSliderOptions](ohos-arkui-advanced-arcslider.md#arcslideroptions) | 是 | 配置弧形滑动条的参数。  默认值：[ArcSliderOptions](ohos-arkui-advanced-arcslider.md#arcslideroptions)的各项子属性均取其默认值。 |
 
 ## ArcSliderOptions
-
-PhonePC/2in1TabletTVWearable
 
 配置弧形Slider的信息。
 
@@ -92,13 +80,11 @@ PhonePC/2in1TabletTVWearable
 | layoutOptions | [ArcSliderLayoutOptions](ohos-arkui-advanced-arcslider.md#arcsliderlayoutoptions) | 否 | 是 | 配置弧形Slider的布局信息。  默认值：[ArcSliderLayoutOptions](ohos-arkui-advanced-arcslider.md#arcsliderlayoutoptions)的各项子属性均取其默认值。  **装饰器类型：** @Trace |
 | styleOptions | [ArcSliderStyleOptions](ohos-arkui-advanced-arcslider.md#arcsliderstyleoptions) | 否 | 是 | 配置弧形Slider的样式信息。  默认值：[ArcSliderStyleOptions](ohos-arkui-advanced-arcslider.md#arcsliderstyleoptions)的各项子属性均取其默认值。  **装饰器类型：** @Trace |
 | digitalCrownSensitivity | [CrownSensitivity](ts-appendix-enums.md#crownsensitivity18) | 否 | 是 | 设置旋转表冠的灵敏度。  默认值：CrownSensitivity.MEDIUM  **装饰器类型：** @Trace |
-| onTouch | [ArcSliderTouchHandler](ohos-arkui-advanced-arcslider.md#arcslidertouchhandler) | 否 | 是 | 弧形Slider被触摸时，告知应用。  默认值：不传入的情况，无回调。  **装饰器类型：** @Trace |
-| onChange | [ArcSliderChangeHandler](ohos-arkui-advanced-arcslider.md#arcsliderchangehandler) | 否 | 是 | 弧形Slider的进度值发生变化时，告知应用。  默认值：不传入的情况，无回调。  **装饰器类型：** @Trace |
-| onEnlarge | [ArcSliderEnlargeHandler](ohos-arkui-advanced-arcslider.md#arcsliderenlargehandler) | 否 | 是 | 弧形Slider放大或缩小时，告知应用。  默认值：不传入的情况，无回调。  **装饰器类型：** @Trace |
+| onTouch | [ArcSliderTouchHandler](ohos-arkui-advanced-arcslider.md#arcslidertouchhandler) | 否 | 是 | 弧形Slider被触摸时触发回调。  默认值：不传入时，无回调。  **装饰器类型：** @Trace |
+| onChange | [ArcSliderChangeHandler](ohos-arkui-advanced-arcslider.md#arcsliderchangehandler) | 否 | 是 | 弧形Slider的进度值发生变化时触发回调。  默认值：不传入时，无回调。  **装饰器类型：** @Trace |
+| onEnlarge | [ArcSliderEnlargeHandler](ohos-arkui-advanced-arcslider.md#arcsliderenlargehandler) | 否 | 是 | 弧形Slider放大或缩小时触发回调。  默认值：不传入时，无回调。  **装饰器类型：** @Trace |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ArcSliderOptionsConstructorOptions)
 
@@ -112,11 +98,9 @@ ArcSliderOptions的构造函数。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ArcSliderOptionsConstructorOptions](ohos-arkui-advanced-arcslider.md#arcslideroptionsconstructoroptions) | 否 | ArcSliderOptions的构造信息。 |
+| options | [ArcSliderOptionsConstructorOptions](ohos-arkui-advanced-arcslider.md#arcslideroptionsconstructoroptions) | 否 | ArcSliderOptions的构造信息。不传入时，ArcSliderOptions的各项子属性均取其默认值。 |
 
 ## ArcSliderValueOptions
-
-PhonePC/2in1TabletTVWearable
 
 配置弧形Slider的数值信息。
 
@@ -132,11 +116,9 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | progress | number | 否 | 是 | 设置当前进度值。  默认值：与参数min的取值一致  **装饰器类型：** @Trace |
 | min | number | 否 | 是 | 设置最小值。  默认值：0  **装饰器类型：** @Trace |
-| max | number | 否 | 是 | 设置最大值。  默认值：100  **说明：**  当出现异常情况min >= max时，min取默认值0，max取默认值100。  progress不在[min, max]范围之内，取min或者max，靠近min取min，靠近max取max。  **装饰器类型：** @Trace |
+| max | number | 否 | 是 | 设置最大值。  默认值：100  **说明：**  当出现异常情况min >= max时，min取默认值0，max取默认值100。  progress不在[min, max]范围之内时，取距离最近的边界值：若progress小于min则取min，若progress大于max则取max。  **装饰器类型：** @Trace |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ArcSliderValueOptionsConstructorOptions)
 
@@ -150,11 +132,9 @@ ArcSliderValueOptions的构造函数。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ArcSliderValueOptionsConstructorOptions](ohos-arkui-advanced-arcslider.md#arcslidervalueoptionsconstructoroptions) | 否 | ArcSliderValueOptions的构造信息。 |
+| options | [ArcSliderValueOptionsConstructorOptions](ohos-arkui-advanced-arcslider.md#arcslidervalueoptionsconstructoroptions) | 否 | ArcSliderValueOptions的构造信息。不传入时，ArcSliderValueOptions的各项子属性均取其默认值。 |
 
 ## ArcSliderLayoutOptions
-
-PhonePC/2in1TabletTVWearable
 
 配置弧形Slider的布局信息。
 
@@ -168,12 +148,10 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| reverse | boolean | 否 | 是 | 设置弧形Slider取值范围是否反向。值为false时表示从上往下滑。  默认值：true，表示从下往上滑动。  **装饰器类型：** @Trace |
+| reverse | boolean | 否 | 是 | 设置弧形Slider的滑动方向。值为false时表示从上往下滑。  默认值：true，表示从下往上滑动。  **装饰器类型：** @Trace |
 | position | [ArcSliderPosition](ohos-arkui-advanced-arcslider.md#arcsliderposition) | 否 | 是 | 弧形Slider的屏幕显示位置。  默认值：ArcSliderPosition.RIGHT  **装饰器类型：** @Trace |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ArcSliderLayoutOptionsConstructorOptions)
 
@@ -187,11 +165,9 @@ ArcSliderLayoutOptions的构造函数。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ArcSliderLayoutOptionsConstructorOptions](ohos-arkui-advanced-arcslider.md#arcsliderlayoutoptionsconstructoroptions) | 否 | ArcSliderLayoutOptions的构造信息。 |
+| options | [ArcSliderLayoutOptionsConstructorOptions](ohos-arkui-advanced-arcslider.md#arcsliderlayoutoptionsconstructoroptions) | 否 | ArcSliderLayoutOptions的构造信息。不传入时，ArcSliderLayoutOptions的各项子属性均取其默认值。 |
 
 ## ArcSliderStyleOptions
-
-PhonePC/2in1TabletTVWearable
 
 配置弧形Slider的样式信息。
 
@@ -209,11 +185,9 @@ PhonePC/2in1TabletTVWearable
 | activeTrackThickness | number | 否 | 是 | 放大状态下弧形Slider的描边粗细，单位：vp。  默认值：24  取值范围：[24, 36]，异常值按默认值处理。  **装饰器类型：** @Trace |
 | trackColor | string | 否 | 是 | 设置描边背景色。  默认值：#33FFFFFF  **装饰器类型：** @Trace |
 | selectedColor | string | 否 | 是 | 设置描边高亮色。  默认值：#FF5EA1FF  **装饰器类型：** @Trace |
-| trackBlur | number | 否 | 是 | 设置描边背景模糊值，单位：vp。  默认值：20  设置小于0的值时，按照默认值处理。  **装饰器类型：** @Trace |
+| trackBlur | number | 否 | 是 | 设置描边背景模糊值，单位：vp。  默认值：20  取值范围：[0, +∞)，异常值按默认值处理。  **装饰器类型：** @Trace |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(options?: ArcSliderStyleOptionsConstructorOptions)
 
@@ -227,11 +201,9 @@ ArcSliderStyleOptions的构造函数。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [ArcSliderStyleOptionsConstructorOptions](ohos-arkui-advanced-arcslider.md#arcsliderstyleoptionsconstructoroptions) | 否 | ArcSliderStyleOptions的构造信息。 |
+| options | [ArcSliderStyleOptionsConstructorOptions](ohos-arkui-advanced-arcslider.md#arcsliderstyleoptionsconstructoroptions) | 否 | ArcSliderStyleOptions的构造信息。不传入时，ArcSliderStyleOptions的各项子属性均取其默认值。 |
 
 ## ArcSliderPosition
-
-PhonePC/2in1TabletTVWearable
 
 配置弧形Slider的屏幕显示位置。
 
@@ -246,11 +218,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ArcSliderTouchHandler
 
-PhonePC/2in1TabletTVWearable
-
 type ArcSliderTouchHandler = (event: TouchEvent) => void
 
-弧形Slider被触摸时，告知应用。
+弧形Slider被触摸时触发回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -264,11 +234,9 @@ type ArcSliderTouchHandler = (event: TouchEvent) => void
 
 ## ArcSliderChangeHandler
 
-PhonePC/2in1TabletTVWearable
-
 type ArcSliderChangeHandler = (progress: number) => void
 
-弧形Slider的进度值发生变化时，告知应用。
+弧形Slider的进度值发生变化时触发回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -282,11 +250,9 @@ type ArcSliderChangeHandler = (progress: number) => void
 
 ## ArcSliderEnlargeHandler
 
-PhonePC/2in1TabletTVWearable
-
 type ArcSliderEnlargeHandler = (isEnlarged: boolean) => void
 
-弧形Slider放大或缩小时，告知应用。
+弧形Slider放大或缩小时触发回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -300,8 +266,6 @@ type ArcSliderEnlargeHandler = (isEnlarged: boolean) => void
 
 ## ArcSliderOptionsConstructorOptions
 
-PhonePC/2in1TabletTVWearable
-
 ArcSliderOptions的构造信息。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
@@ -314,13 +278,11 @@ ArcSliderOptions的构造信息。
 | layoutOptions | [ArcSliderLayoutOptions](ohos-arkui-advanced-arcslider.md#arcsliderlayoutoptions) | 否 | 是 | 配置弧形Slider的布局信息。  默认值：[ArcSliderLayoutOptions](ohos-arkui-advanced-arcslider.md#arcsliderlayoutoptions)的各项子属性均取其默认值。 |
 | styleOptions | [ArcSliderStyleOptions](ohos-arkui-advanced-arcslider.md#arcsliderstyleoptions) | 否 | 是 | 配置弧形Slider的样式信息。  默认值：[ArcSliderStyleOptions](ohos-arkui-advanced-arcslider.md#arcsliderstyleoptions)的各项子属性均取其默认值。 |
 | digitalCrownSensitivity | [CrownSensitivity](ts-appendix-enums.md#crownsensitivity18) | 否 | 是 | 设置旋转表冠的灵敏度。  默认值：CrownSensitivity.MEDIUM |
-| onTouch | [ArcSliderTouchHandler](ohos-arkui-advanced-arcslider.md#arcslidertouchhandler) | 否 | 是 | 弧形Slider被触摸时，告知应用。  默认值：不传入的情况，无回调。 |
-| onChange | [ArcSliderChangeHandler](ohos-arkui-advanced-arcslider.md#arcsliderchangehandler) | 否 | 是 | 弧形Slider的进度值发生变化时，告知应用。  默认值：不传入的情况，无回调。 |
-| onEnlarge | [ArcSliderEnlargeHandler](ohos-arkui-advanced-arcslider.md#arcsliderenlargehandler) | 否 | 是 | 弧形Slider放大或缩小时，告知应用。  默认值：不传入的情况，无回调。 |
+| onTouch | [ArcSliderTouchHandler](ohos-arkui-advanced-arcslider.md#arcslidertouchhandler) | 否 | 是 | 弧形Slider被触摸时触发回调。  默认值：不传入时，无回调。 |
+| onChange | [ArcSliderChangeHandler](ohos-arkui-advanced-arcslider.md#arcsliderchangehandler) | 否 | 是 | 弧形Slider的进度值发生变化时触发回调。  默认值：不传入时，无回调。 |
+| onEnlarge | [ArcSliderEnlargeHandler](ohos-arkui-advanced-arcslider.md#arcsliderenlargehandler) | 否 | 是 | 弧形Slider放大或缩小时触发回调。  默认值：不传入时，无回调。 |
 
 ## ArcSliderValueOptionsConstructorOptions
-
-PhonePC/2in1TabletTVWearable
 
 ArcSliderValueOptions的构造信息。
 
@@ -332,13 +294,11 @@ ArcSliderValueOptions的构造信息。
 | --- | --- | --- | --- | --- |
 | progress | number | 否 | 是 | 设置当前进度值。  默认值：与参数min的取值一致。 |
 | min | number | 否 | 是 | 设置最小值。  默认值：0 |
-| max | number | 否 | 是 | 设置最大值。  默认值：100  **说明：**  当出现异常情况min >= max时，min取默认值0，max取默认值100。  progress不在[min, max]范围之内，取min或者max，靠近min取min，靠近max取max。 |
+| max | number | 否 | 是 | 设置最大值。  默认值：100  **说明：**  当出现异常情况min >= max时，min取默认值0，max取默认值100。  progress不在[min, max]范围之内时，取距离最近的边界值：若progress小于min则取min，若progress大于max则取max。 |
 
 ## ArcSliderLayoutOptionsConstructorOptions
 
-PhonePC/2in1TabletTVWearable
-
-ArcSliderLayoutValueOptions的构造信息。
+ArcSliderLayoutOptions的构造信息。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -346,12 +306,10 @@ ArcSliderLayoutValueOptions的构造信息。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| reverse | boolean | 否 | 是 | 设置弧形Slider取值范围是否反向。  默认值：true。表示从下往上滑动。 |
+| reverse | boolean | 否 | 是 | 设置弧形Slider的滑动方向。值为false时表示从上往下滑。  默认值：true，表示从下往上滑动。 |
 | position | [ArcSliderPosition](ohos-arkui-advanced-arcslider.md#arcsliderposition) | 否 | 是 | 弧形Slider的屏幕显示位置。  默认值：ArcSliderPosition.RIGHT |
 
 ## ArcSliderStyleOptionsConstructorOptions
-
-PhonePC/2in1TabletTVWearable
 
 ArcSliderStyleOptions的构造信息。
 
@@ -365,72 +323,76 @@ ArcSliderStyleOptions的构造信息。
 | activeTrackThickness | number | 否 | 是 | 放大状态下弧形Slider的描边粗细，单位：vp。  默认值：24  取值范围：[24, 36]，异常值按默认值处理。 |
 | trackColor | string | 否 | 是 | 设置描边背景色。  默认值：#33FFFFFF |
 | selectedColor | string | 否 | 是 | 设置描边高亮色。  默认值：#FF5EA1FF |
-| trackBlur | number | 否 | 是 | 设置描边背景模糊值，单位：vp。  默认值：20  设置小于0的值时，按照默认值处理。 |
+| trackBlur | number | 否 | 是 | 设置描边背景模糊值，单位：vp。  默认值：20  取值范围：[0, +∞)，异常值按默认值处理。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 从API version 18开始，该示例展示了ArcSlider组件的基本用法。
 
+```ts
+// xxx.ets
+import {
+  ArcSlider,
+  ArcSliderPosition,
+  ArcSliderOptions,
+  ArcSliderValueOptions,
+  ArcSliderLayoutOptions,
+  ArcSliderStyleOptions,
+  ArcSliderValueOptionsConstructorOptions,
+  ArcSliderLayoutOptionsConstructorOptions,
+  ArcSliderStyleOptionsConstructorOptions,
+  ArcSliderOptionsConstructorOptions
+} from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct ArcSliderExample {
+  valueOptionsConstructorOptions: ArcSliderValueOptionsConstructorOptions = {
+    progress: 60,
+    min: 10,
+    max: 110
+  };
+
+  layoutOptionsConstructorOptions: ArcSliderLayoutOptionsConstructorOptions = {
+    reverse: true,
+    position: ArcSliderPosition.RIGHT
+  };
+  styleOptionsConstructorOptions: ArcSliderStyleOptionsConstructorOptions = {
+    trackThickness: 8,
+    activeTrackThickness: 30,
+    trackColor: '#ffd5d5d5',
+    selectedColor: '#ff2787d9',
+    trackBlur: 20
+  };
+  valueOptions: ArcSliderValueOptions = new ArcSliderValueOptions(this.valueOptionsConstructorOptions);
+  layoutOptions: ArcSliderLayoutOptions = new ArcSliderLayoutOptions(this.layoutOptionsConstructorOptions);
+  styleOptions: ArcSliderStyleOptions = new ArcSliderStyleOptions(this.styleOptionsConstructorOptions);
+  // 配置ArcSlider完整选项：数值、布局、样式、表冠灵敏度以及触摸/变化/放大事件回调
+  arcSliderOptionsConstructorOptions: ArcSliderOptionsConstructorOptions = {
+    valueOptions: this.valueOptions,
+    layoutOptions: this.layoutOptions,
+    styleOptions: this.styleOptions,
+    digitalCrownSensitivity: CrownSensitivity.LOW,
+    onTouch: (event: TouchEvent) => {
+      // ...
+    },
+    onChange: (progress: number) => {
+      // ...
+    },
+    onEnlarge: (isEnlarged: boolean) => {
+      // ...
+    }
+  };
+  arcSliderOptions: ArcSliderOptions = new ArcSliderOptions(this.arcSliderOptionsConstructorOptions);
+
+  build() {
+    Column() {
+      // 创建ArcSlider组件，传入配置选项
+      ArcSlider({ options: this.arcSliderOptions })
+    }
+    .width('100%')
+  }
+}
 ```
-1. // xxx.ets
-2. import {
-3. ArcSlider,
-4. ArcSliderPosition,
-5. ArcSliderOptions,
-6. ArcSliderValueOptions,
-7. ArcSliderLayoutOptions,
-8. ArcSliderStyleOptions,
-9. ArcSliderValueOptionsConstructorOptions,
-10. ArcSliderLayoutOptionsConstructorOptions,
-11. ArcSliderStyleOptionsConstructorOptions,
-12. ArcSliderOptionsConstructorOptions
-13. } from '@kit.ArkUI';
 
-15. @Entry
-16. @ComponentV2
-17. struct ArcSliderExample {
-18. valueOptionsConstructorOptions: ArcSliderValueOptionsConstructorOptions = {
-19. progress: 60,
-20. min: 10,
-21. max: 110
-22. };
-
-24. layoutOptionsConstructorOptions: ArcSliderLayoutOptionsConstructorOptions = {
-25. reverse: true,
-26. position: ArcSliderPosition.RIGHT
-27. };
-28. styleOptionsConstructorOptions: ArcSliderStyleOptionsConstructorOptions = {
-29. trackThickness: 8,
-30. activeTrackThickness: 30,
-31. trackColor: '#ffd5d5d5',
-32. selectedColor: '#ff2787d9',
-33. trackBlur: 20
-34. };
-35. valueOptions: ArcSliderValueOptions = new ArcSliderValueOptions(this.valueOptionsConstructorOptions);
-36. layoutOptions: ArcSliderLayoutOptions = new ArcSliderLayoutOptions(this.layoutOptionsConstructorOptions);
-37. styleOptions: ArcSliderStyleOptions = new ArcSliderStyleOptions(this.styleOptionsConstructorOptions);
-38. arcSliderOptionsConstructorOptions: ArcSliderOptionsConstructorOptions = {
-39. valueOptions: this.valueOptions,
-40. layoutOptions: this.layoutOptions,
-41. styleOptions: this.styleOptions,
-42. digitalCrownSensitivity:CrownSensitivity.LOW,
-43. onTouch: (event: TouchEvent) => {
-44. },
-45. onChange: (progress: number) => {
-46. },
-47. onEnlarge: (isEnlarged: boolean) => {
-48. }
-49. };
-50. arcSliderOptions: ArcSliderOptions = new ArcSliderOptions(this.arcSliderOptionsConstructorOptions);
-
-52. build() {
-53. Column() {
-54. ArcSlider({ options: this.arcSliderOptions })}
-55. .width('100%')
-56. }
-57. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/FXYH_KTtQqCMa1tX0g7FHA/zh-cn_image_0000002558606596.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/PB0qxfdDRvOYRkoB4pC0QQ/zh-cn_image_0000002706675956.gif)

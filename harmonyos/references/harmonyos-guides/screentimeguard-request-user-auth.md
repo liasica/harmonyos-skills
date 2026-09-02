@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 请求用户授权
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 请求用户授权
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5c02fd18c56598a21b089c538a3959508f3fa21b5648128f3ed4912647166817
+scraped_at: 2026-09-02T15:00:02+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:92ac722fff1d1cf9f7f5ebcdd8dcb1e3b10bc168527f5164356c4d52651eae50
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ Screen Time Guard Kit支持对用户设备的时间管理和应用限制，因�
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/LrWZqq3USwKApDe99xsUSg/zh-cn_image_0000002589325535.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/7Fz2VwaTQX-kZ_qmP5EqnQ/zh-cn_image_0000002736434341.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/QDk--hLWQRa8pXpWq-Jxag/zh-cn_image_0000002589245473.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/clwaDHACQKe5X9eBVFZZuw/zh-cn_image_0000002706835192.png)
 
 流程说明：
 
@@ -33,60 +33,48 @@ Screen Time Guard Kit支持对用户设备的时间管理和应用限制，因�
 | 接口名 | 描述 |
 | --- | --- |
 | [requestUserAuth](../harmonyos-references/screentimeguard-guardservice.md#requestuserauth)(context: [common.UIAbilityContext](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md)): Promise<void> | 请求用户授权访问Screen Time Guard Kit的相关管控接口。 |
+| [requestUserAuth](../harmonyos-references/screentimeguard-guardservice.md#requestuserauth-1)(context: [common.UIAbilityContext](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md), appConfig: [AppConfig](../harmonyos-references/screentimeguard-guardservice.md#appconfig)): Promise<void> | 请求用户授权访问Screen Time Guard Kit的相关管控接口，同时设置授权应用相关配置。 |
 | [getUserAuthStatus](../harmonyos-references/screentimeguard-guardservice.md#getuserauthstatus)(): Promise<[AuthStatus](../harmonyos-references/screentimeguard-guardservice.md#authstatus)> | 获取用户授权状态。 |
+
+**说明** 
+
+若需更改授权应用配置信息，需要[取消用户授权](screentimeguard-revoke-user-auth.md)后，重新调用接口请求用户授权，同时设置授权应用相关配置。
 
 ## 开发步骤
 
 1. 导入相关模块。
 
-   ```
-   1. import { guardService } from '@kit.ScreenTimeGuardKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { common } from '@kit.AbilityKit';
+   ```typescript
+   import { guardService } from '@kit.ScreenTimeGuardKit';
+   // ...
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 调用requestUserAuth，请求用户授权。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct TestPage {
-   4. build() {
-   5. Column() {
-   6. Button("TestRequestUserAuth")
-   7. .onClick(async () => {
-   8. try {
-   9. await guardService.requestUserAuth(this.getUIContext().getHostContext() as common.UIAbilityContext);
-   10. } catch (err) {
-   11. const message = (err as BusinessError).message;
-   12. const code = (err as BusinessError).code;
-   13. hilog.error(0x0000, `ScreenTimeGuard:requestUserAuth`, `requestUserAuth failed with error code: ${code}, message: ${message}`);
-   14. }
-   15. })
-   16. }
-   17. }
-   18. }
+   ```typescript
+   const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+   // this.isUninstallable为boolean型变量，通过该变量设置此应用是否可卸载
+   guardService.requestUserAuth(context, { isSupportAppUninstall: this.isUninstallable })
+     .then(async () => {
+       // ...
+     })
+     .catch((error: BusinessError) => {
+       hilog.error(0x0000, 'GuardService',
+         `requestUserAuth fail, errCode is ${error.code}, errMessage is ${error.message}`);
+     })
    ```
 3. 获取用户授权状态。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct TestPage {
-   4. build() {
-   5. Column() {
-   6. Button("TestGetUserAuthStatus")
-   7. .onClick(async () => {
-   8. try {
-   9. const status = await guardService.getUserAuthStatus();
-   10. hilog.info(0x0000, `ScreenTimeGuard:getUserAuthStatus`, `user auth status: ${status}`);
-   11. } catch (err) {
-   12. const message = (err as BusinessError).message;
-   13. const code = (err as BusinessError).code;
-   14. hilog.error(0x0000, `ScreenTimeGuard:getUserAuthStatus`, `getUserAuthStatus failed with error code: ${code}, message: ${message}`);
-   15. }
-   16. })
-   17. }
-   18. }
-   19. }
+   ```typescript
+   public async getUserAuthStatus(): Promise<void> {
+     try {
+       const status = await guardService.getUserAuthStatus();
+       hilog.info(0x0000, 'GuardService', `user auth status: ${status}`);
+     } catch (error) {
+       let err: BusinessError = error as BusinessError;
+       hilog.error(0x0000, 'GuardService',
+         `getUserAuthStatus failed, errCode is ${err.code}, errMessage is ${err.message}`);
+     }
+   }
    ```

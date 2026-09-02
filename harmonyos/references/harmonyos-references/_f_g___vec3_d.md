@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_f_g___ve
 title: FG_Vec3D
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体 > FG_Vec3D
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0366404ac5eaab0c13b88243e4f9b9a4742eed9d45fb6d0b04fa42394d2462d2
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f77df3811d250bf72c7079ee4fa4f7a366202d0831c23979b956bb5b9c693096
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 此结构体描述超帧三维向量。
 
@@ -22,11 +20,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 成员变量
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhoneTabletTV
 
 ## 结构体成员变量说明
 
-PhoneTabletTV
-
 ### x
 
-PhoneTabletTV
-
-```
-1. float FG_Vec3D::x
+```c
+float FG_Vec3D::x
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhoneTabletTV
 
 ### y
 
-PhoneTabletTV
-
-```
-1. float FG_Vec3D::y
+```c
+float FG_Vec3D::y
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhoneTabletTV
 
 ### z
 
-PhoneTabletTV
-
-```
-1. float FG_Vec3D::z
+```c
+float FG_Vec3D::z
 ```
 
 **描述**

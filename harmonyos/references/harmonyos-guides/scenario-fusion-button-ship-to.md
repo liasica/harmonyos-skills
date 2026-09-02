@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 选择收货地址Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 选择收货地址Button
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cf4e7dba9b3cd668d61ece7d017766496e5a4eda0931a86de27b57f9383361f6
+scraped_at: 2026-09-02T15:00:01+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:859c9cd42c7303866d32375c47d96a32796f11a91278d3a6e9f16c14d3e908f2
 ---
 
 ## 场景介绍
@@ -14,75 +14,81 @@ content_hash: sha256:cf4e7dba9b3cd668d61ece7d017766496e5a4eda0931a86de27b57f9383
 
 运行示例代码单击“选择收货地址”按钮，拉起选择地址页面选择已保存的地址，也可单击“管理/新增收货地址”进入添加收货地址页面（完整场景可参考[获取收货地址](account-choose-address-dev.md)）。
 
+## 约束与限制
+
+选择收货地址Button支持Phone、Tablet和PC/2in1设备，并且从API版本26.0.0开始，新增支持TV设备。
+
 ## 前提条件
 
-参见[开发前提](account-choose-address-dev.md#开发前提)。
+应用开发前提条件，参见[开发前提](account-choose-address-dev.md#开发前提)。
+
+元服务应用开发前提条件，参见[开发前提](../atomic-guides/account-guide-atomic-choose-address.md#开发前提)。
 
 ## 开发步骤
 
 1. 导入Scenario Fusion Kit模块以及相关公共模块。
 
-   ```
-   1. import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { FunctionalButton, functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 在容器中声明FunctionalButton，指定Button的openType，并设置对应的回调函数，代码如下：
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. build() {
-   5. Row() {
-   6. Column() {
-   7. // 构建FunctionalButton组件实例。
-   8. FunctionalButton({
-   9. params: {
-   10. // OpenType.CHOOSE_ADDRESS表示该按钮用于选择收货地址。
-   11. openType: functionalButtonComponentManager.OpenType.CHOOSE_ADDRESS,
-   12. label: '选择收货地址',
-   13. // 调整按钮样式。
-   14. styleOption: {
-   15. bgColor: functionalButtonComponentManager.ColorType.DEFAULT,
-   16. size: functionalButtonComponentManager.SizeType.DEFAULT,
-   17. plain: false,
-   18. disabled: false,
-   19. loading: false,
-   20. hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
-   21. hoverStartTime: 0,
-   22. hoverStayTime: 0,
-   23. styleConfig: new functionalButtonComponentManager.ButtonConfig()
-   24. .fontSize(20)
-   25. },
-   26. },
-   27. // 当OpenType设置为CHOOSE_ADDRESS时，回调必须为onChooseAddress。
-   28. controller: new functionalButtonComponentManager.FunctionalButtonController()
-   29. .onChooseAddress((err, data) => {
-   30. if (err) {
-   31. // 错误日志处理。
-   32. hilog.error(0x0000, "testTag", "error: %{public}d %{public}s", err.code, err.message);
-   33. return;
-   34. }
-   35. // 成功日志处理。
-   36. hilog.info(0x0000, "testTag", "succeeded in choosing address");
-   37. // 获取地址信息。
-   38. let userName: string = data.userName;
-   39. let mobileNumber: string = data.mobileNumber as string;
-   40. let countryCode: string = data.countryCode as string;
-   41. let provinceName: string = data.provinceName as string;
-   42. let cityName: string = data.cityName as string;
-   43. let districtName: string = data.districtName as string;
-   44. let streetName: string = data.streetName as string;
-   45. let detailedAddress: string = data.detailedAddress;
-   46. })
-   47. })
-   48. }.width('100%')
-   49. }.height('100%')
-   50. }
-   51. }
+   ```typescript
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       Row() {
+         Column() {
+           // 构建FunctionalButton组件实例。
+           FunctionalButton({
+             params: {
+               // OpenType.CHOOSE_ADDRESS表示该按钮用于选择收货地址。
+               openType: functionalButtonComponentManager.OpenType.CHOOSE_ADDRESS,
+               label: '选择收货地址',
+               // 调整按钮样式。
+               styleOption: {
+                 bgColor: functionalButtonComponentManager.ColorType.DEFAULT,
+                 size: functionalButtonComponentManager.SizeType.DEFAULT,
+                 plain: false,
+                 disabled: false,
+                 loading: false,
+                 hoverClass: functionalButtonComponentManager.HoverClassType.HOVER_CLASS,
+                 hoverStartTime: 0,
+                 hoverStayTime: 0,
+                 styleConfig: new functionalButtonComponentManager.ButtonConfig()
+                   .fontSize(20)
+               }
+             },
+             // 当OpenType设置为CHOOSE_ADDRESS时，回调必须为onChooseAddress。
+             controller: new functionalButtonComponentManager.FunctionalButtonController()
+               .onChooseAddress((err, data) => {
+                 if (err) {
+                   // 错误日志处理。
+                   hilog.error(0x0000, 'testTag', 'Failed to choose address, error: %{public}d %{public}s', err.code, err.message);
+                   return;
+                 }
+                 // 成功日志处理。
+                 hilog.info(0x0000, 'testTag', 'succeeded in choosing address');
+                 // 获取地址信息。
+                 let userName: string = data.userName;
+                 let mobileNumber: string = data.mobileNumber as string;
+                 let countryCode: string = data.countryCode as string;
+                 let provinceName: string = data.provinceName as string;
+                 let cityName: string = data.cityName as string;
+                 let districtName: string = data.districtName as string;
+                 let streetName: string = data.streetName as string;
+                 let detailedAddress: string = data.detailedAddress;
+               })
+           })
+         }.width('100%')
+       }.height('100%')
+     }
+   }
    ```
 
-   说明
+   **说明** 
 
    * openType参数填写"functionalButtonComponentManager.OpenType.CHOOSE\_ADDRESS"指定Button为选择收货地址类型。
    * controller参数必须对应填写"new functionalButtonComponentManager.FunctionalButtonController().onChooseAddress"。

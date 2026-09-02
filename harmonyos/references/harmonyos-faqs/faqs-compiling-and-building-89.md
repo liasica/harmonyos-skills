@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何提高代码混淆率
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何提高代码混淆率
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:26+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:26b2ca6b21ca4fcc1dd78c3e4817a51a4cc54ec9cbe5d34d21e594da2ec656e3
 ---
 

@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.connection (蓝牙connection模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.connection (蓝牙connection模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:54+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0ec0b78ccf26fecfdb7eb809d9d785e2130bfc5f8f347cc28e3b47050a6f3cd5
+scraped_at: 2026-09-02T15:01:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:01eb0e1edc133fd5bdaef65c5fb629fa6f1133f030b1aec3d8c5ee92dff37a76
 ---
 
-connection模块提供了蓝牙设备的配对、连接及状态查询等能力。
+connection模块提供了蓝牙设备的配对、连接、状态查询、设备扫描发现、扫描模式设置、电量信息获取及事件订阅等能力，适用于需要在应用中实现蓝牙设备发现、配对、连接和信息查询的场景。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { connection } from '@kit.ConnectivityKit';
+```js
+import { connection } from '@kit.ConnectivityKit';
 ```
 
 ## ProfileConnectionState
-
-PhonePC/2in1TabletTVWearable
 
 type ProfileConnectionState = constant.ProfileConnectionState
 
@@ -32,13 +28,13 @@ type ProfileConnectionState = constant.ProfileConnectionState
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 | 类型 | 说明 |
 | --- | --- |
 | [constant.ProfileConnectionState](js-apis-bluetooth-constant.md#profileconnectionstate) | 蓝牙设备的Profile协议连接状态。 |
 
 ## ProfileId
-
-PhonePC/2in1TabletTVWearable
 
 type ProfileId = constant.ProfileId
 
@@ -46,13 +42,13 @@ type ProfileId = constant.ProfileId
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 | 类型 | 说明 |
 | --- | --- |
 | [constant.ProfileId](js-apis-bluetooth-constant.md#profileid) | 蓝牙Profile协议的枚举。 |
 
 ## ProfileUuids12+
-
-PhonePC/2in1TabletTVWearable
 
 type ProfileUuids = constant.ProfileUuids
 
@@ -60,13 +56,13 @@ type ProfileUuids = constant.ProfileUuids
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 | 类型 | 说明 |
 | --- | --- |
 | [constant.ProfileUuids](js-apis-bluetooth-constant.md#profileuuids12) | 蓝牙Profile协议的UUID。 |
 
 ## MajorClass
-
-PhonePC/2in1TabletTVWearable
 
 type MajorClass = constant.MajorClass
 
@@ -74,13 +70,13 @@ type MajorClass = constant.MajorClass
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 | 类型 | 说明 |
 | --- | --- |
 | [constant.MajorClass](js-apis-bluetooth-constant.md#majorclass) | 蓝牙设备的主要类型。 |
 
 ## MajorMinorClass
-
-PhonePC/2in1TabletTVWearable
 
 type MajorMinorClass = constant.MajorMinorClass
 
@@ -88,13 +84,13 @@ type MajorMinorClass = constant.MajorMinorClass
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 | 类型 | 说明 |
 | --- | --- |
 | [constant.MajorMinorClass](js-apis-bluetooth-constant.md#majorminorclass) | 蓝牙设备的子类型。 |
 
 ## BluetoothAddress21+
-
-PhonePC/2in1TabletTVWearable
 
 type BluetoothAddress = common.BluetoothAddress
 
@@ -102,13 +98,13 @@ type BluetoothAddress = common.BluetoothAddress
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 | 类型 | 说明 |
 | --- | --- |
 | [common.BluetoothAddress](js-apis-bluetooth-common.md#bluetoothaddress) | 蓝牙设备的地址信息。 |
 
 ## connection.pairDevice
-
-PhonePC/2in1TabletTVWearable
 
 pairDevice(deviceId: string, callback: AsyncCallback<void>): void
 
@@ -123,7 +119,9 @@ pairDevice(deviceId: string, callback: AsyncCallback<void>): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -143,23 +141,21 @@ pairDevice(deviceId: string, callback: AsyncCallback<void>): void
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // callback
-3. try {
-4. connection.pairDevice('11:22:33:44:55:66', (err: BusinessError) => {
-5. console.info('pairDevice, device name err:' + JSON.stringify(err));
-6. });
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// callback
+try {
+    connection.pairDevice('11:22:33:44:55:66', (err: BusinessError) => {
+        console.info('pairDevice, device name err:' + JSON.stringify(err));
+    });
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.pairDevice
-
-PhonePC/2in1TabletTVWearable
 
 pairDevice(deviceId: string): Promise<void>
 
@@ -174,13 +170,15 @@ pairDevice(deviceId: string): Promise<void>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 需要配对的对端蓝牙设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -199,26 +197,24 @@ pairDevice(deviceId: string): Promise<void>
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // promise
-3. try {
-4. connection.pairDevice('11:22:33:44:55:66').then(() => {
-5. console.info('pairDevice');
-6. }, (error: BusinessError) => {
-7. console.error('pairDevice: errCode:' + error.code + ',errMessage' + error.message);
-8. })
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// promise
+try {
+    connection.pairDevice('11:22:33:44:55:66').then(() => {
+        console.info('pairDevice');
+    }, (error: BusinessError) => {
+        console.error('pairDevice: errCode:' + error.code + ',errMessage' + error.message);
+    })
 
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.pairDevice21+
-
-PhonePC/2in1TabletTVWearable
 
 pairDevice(deviceId: BluetoothAddress): Promise<void>
 
@@ -231,13 +227,15 @@ pairDevice(deviceId: BluetoothAddress): Promise<void>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | [BluetoothAddress](js-apis-bluetooth-common.md#bluetoothaddress) | 是 | 需要配对的对端蓝牙设备地址信息，包括地址与地址类型。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -255,30 +253,28 @@ pairDevice(deviceId: BluetoothAddress): Promise<void>
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.ConnectivityKit';
-3. // promise
-4. try {
-5. let btAddr: common.BluetoothAddress = {
-6. "address": '11:22:33:44:55:66', // 目标设备的实际MAC地址或虚拟MAC地址
-7. "addressType": common.BluetoothAddressType.REAL, // 相应的地址类型
-8. }
-9. connection.pairDevice(btAddr).then(() => {
-10. console.info('pairDevice');
-11. }, (error: BusinessError) => {
-12. console.error('errCode: ' + error.code + ', errMessage' + error.message);
-13. });
-14. } catch (err) {
-15. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-16. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.ConnectivityKit';
+// promise
+try {
+    let btAddr: common.BluetoothAddress = {
+        "address": '11:22:33:44:55:66', // 目标设备的实际MAC地址或虚拟MAC地址
+        "addressType": common.BluetoothAddressType.REAL, // 相应的地址类型
+    }
+    connection.pairDevice(btAddr).then(() => {
+        console.info('pairDevice');
+    }, (error: BusinessError) => {
+        console.error('errCode: ' + error.code + ', errMessage' + error.message);
+    });
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getRemoteDeviceName
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteDeviceName(deviceId: string): string
 
@@ -292,13 +288,15 @@ getRemoteDeviceName(deviceId: string): string
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端设备的地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -317,20 +315,18 @@ getRemoteDeviceName(deviceId: string): string
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let remoteDeviceName: string = connection.getRemoteDeviceName('XX:XX:XX:XX:XX:XX');
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let remoteDeviceName: string = connection.getRemoteDeviceName('XX:XX:XX:XX:XX:XX');
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getRemoteDeviceName16+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteDeviceName(deviceId: string, alias?: boolean): string
 
@@ -344,14 +340,16 @@ getRemoteDeviceName(deviceId: string, alias?: boolean): string
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端设备的地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | alias | boolean | 否 | 表示是否获取对端蓝牙设备别名。  - 如果携带alias，则根据alias判断是否获取对端蓝牙设备别名：true表示获取对端蓝牙设备别名，false表示获取对端蓝牙设备原始名称。  - 如果未携带alias，则默认值为true，返回对端蓝牙设备别名。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -370,20 +368,18 @@ getRemoteDeviceName(deviceId: string, alias?: boolean): string
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Failed to obtain the name or alias of the peer Bluetooth device. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let remoteDeviceName: string = connection.getRemoteDeviceName('XX:XX:XX:XX:XX:XX', true);
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let remoteDeviceName: string = connection.getRemoteDeviceName('XX:XX:XX:XX:XX:XX', true);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getRemoteDeviceClass
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteDeviceClass(deviceId: string): DeviceClass
 
@@ -394,13 +390,15 @@ getRemoteDeviceClass(deviceId: string): DeviceClass
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端设备的地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -412,26 +410,25 @@ getRemoteDeviceClass(deviceId: string): DeviceClass
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied.  适用版本：10-17 |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let remoteDeviceClass: connection.DeviceClass = connection.getRemoteDeviceClass('XX:XX:XX:XX:XX:XX');
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let remoteDeviceClass: connection.DeviceClass = connection.getRemoteDeviceClass('XX:XX:XX:XX:XX:XX');
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getRemoteDeviceTransport20+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteDeviceTransport(deviceId: string): BluetoothTransport
 
@@ -441,13 +438,15 @@ getRemoteDeviceTransport(deviceId: string): BluetoothTransport
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端设备的地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -464,20 +463,18 @@ getRemoteDeviceTransport(deviceId: string): BluetoothTransport
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Get transport failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let transport: connection.BluetoothTransport = connection.getRemoteDeviceTransport('XX:XX:XX:XX:XX:XX');
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let transport: connection.BluetoothTransport = connection.getRemoteDeviceTransport('XX:XX:XX:XX:XX:XX');
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getRemoteProfileUuids12+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteProfileUuids(deviceId: string, callback: AsyncCallback<Array<ProfileUuids>>): void
 
@@ -490,7 +487,9 @@ getRemoteProfileUuids(deviceId: string, callback: AsyncCallback<Array<ProfileUui
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -510,22 +509,20 @@ getRemoteProfileUuids(deviceId: string, callback: AsyncCallback<Array<ProfileUui
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. connection.getRemoteProfileUuids('XX:XX:XX:XX:XX:XX', (err: BusinessError, data: Array<connection.ProfileUuids>) => {
-4. console.info('getRemoteProfileUuids, err: ' + JSON.stringify(err) + ', data: ' + JSON.stringify(data));
-5. });
-6. } catch (err) {
-7. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-8. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    connection.getRemoteProfileUuids('XX:XX:XX:XX:XX:XX', (err: BusinessError, data: Array<connection.ProfileUuids>) => {
+        console.info('getRemoteProfileUuids, err: ' + JSON.stringify(err) + ', data: ' + JSON.stringify(data));
+    });
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getRemoteProfileUuids12+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteProfileUuids(deviceId: string): Promise<Array<ProfileUuids>>
 
@@ -538,13 +535,15 @@ getRemoteProfileUuids(deviceId: string): Promise<Array<ProfileUuids>>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -563,24 +562,22 @@ getRemoteProfileUuids(deviceId: string): Promise<Array<ProfileUuids>>
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. connection.getRemoteProfileUuids('XX:XX:XX:XX:XX:XX').then(() => {
-4. console.info('getRemoteProfileUuids');
-5. }, (err: BusinessError) => {
-6. console.error('getRemoteProfileUuids: errCode' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. });
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    connection.getRemoteProfileUuids('XX:XX:XX:XX:XX:XX').then(() => {
+        console.info('getRemoteProfileUuids');
+    }, (err: BusinessError) => {
+        console.error('getRemoteProfileUuids: errCode' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+    });
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getLocalName
-
-PhonePC/2in1TabletTVWearable
 
 getLocalName(): string
 
@@ -590,7 +587,9 @@ getLocalName(): string
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**返回值：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -607,32 +606,35 @@ getLocalName(): string
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let localName: string = connection.getLocalName();
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let localName: string = connection.getLocalName();
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getPairedDevices
-
-PhonePC/2in1TabletTVWearable
 
 getPairedDevices(): Array<string>
 
 获取已配对蓝牙设备的地址集合。
 
-**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：
+
+* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**返回值：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -650,20 +652,18 @@ getPairedDevices(): Array<string>
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let devices: Array<string> = connection.getPairedDevices();
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let devices: Array<string> = connection.getPairedDevices();
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getPairState11+
-
-PhonePC/2in1TabletTVWearable
 
 getPairState(deviceId: string): BondState
 
@@ -677,13 +677,15 @@ getPairState(deviceId: string): BondState
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端设备的地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -702,21 +704,19 @@ getPairState(deviceId: string): BondState
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let res: connection.BondState = connection.getPairState("XX:XX:XX:XX:XX:XX");
-4. console.info('getPairState: ' + res);
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let res: connection.BondState = connection.getPairState("XX:XX:XX:XX:XX:XX");
+    console.info('getPairState: ' + res);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getProfileConnectionState
-
-PhonePC/2in1TabletTVWearable
 
 getProfileConnectionState(profileId?: ProfileId): ProfileConnectionState
 
@@ -726,13 +726,15 @@ getProfileConnectionState(profileId?: ProfileId): ProfileConnectionState
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | profileId | [ProfileId](js-apis-bluetooth-constant.md#profileid) | 否 | 表示Profile协议的枚举值。如果携带ProfileId，则返回指定Profile协议的连接状态。如果未携带ProfileId，则检查所有支持的Profile连接状态，按如下优先级顺序检查并返回：  - 存在已连接的Profile协议，则返回[STATE\_CONNECTED](js-apis-bluetooth-constant.md#profileconnectionstate)。  - 存在正在连接的Profile协议，则返回[STATE\_CONNECTING](js-apis-bluetooth-constant.md#profileconnectionstate)。  - 存在正在断连的Profile协议，则返回[STATE\_DISCONNECTING](js-apis-bluetooth-constant.md#profileconnectionstate)。  - 以上条件均不满足，则返回[STATE\_DISCONNECTED](js-apis-bluetooth-constant.md#profileconnectionstate)。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -752,21 +754,19 @@ getProfileConnectionState(profileId?: ProfileId): ProfileConnectionState
 | 2900004 | Profile not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { constant } from '@kit.ConnectivityKit';
-3. try {
-4. let result: connection.ProfileConnectionState = connection.getProfileConnectionState(constant.ProfileId.PROFILE_A2DP_SOURCE);
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+import { constant } from '@kit.ConnectivityKit';
+try {
+    let result: connection.ProfileConnectionState = connection.getProfileConnectionState(constant.ProfileId.PROFILE_A2DP_SOURCE);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.setDevicePairingConfirmation
-
-PhonePC/2in1TabletTVWearable
 
 setDevicePairingConfirmation(deviceId: string, accept: boolean): void
 
@@ -778,7 +778,9 @@ setDevicePairingConfirmation(deviceId: string, accept: boolean): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -798,25 +800,23 @@ setDevicePairingConfirmation(deviceId: string, accept: boolean): void
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // 订阅“pinRequired”配对请求事件，收到对端配对请求后设置配对确认。
-3. function onReceivePinRequiredEvent(data: connection.PinRequiredParam) { // data为配对请求的入参，配对请求参数。
-4. console.info('pin required  = '+ JSON.stringify(data));
-5. connection.setDevicePairingConfirmation(data.deviceId, true);
-6. }
-7. try {
-8. connection.on('pinRequired', onReceivePinRequiredEvent);
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// 订阅“pinRequired”配对请求事件，收到对端配对请求后设置配对确认。
+function onReceivePinRequiredEvent(data: connection.PinRequiredParam) { // data为配对请求的入参，配对请求参数。
+    console.info('pin required  = '+ JSON.stringify(data));
+    connection.setDevicePairingConfirmation(data.deviceId, true);
+}
+try {
+    connection.on('pinRequired', onReceivePinRequiredEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.setDevicePinCode
-
-PhonePC/2in1TabletTVWearable
 
 setDevicePinCode(deviceId: string, code: string, callback: AsyncCallback<void>): void
 
@@ -826,7 +826,9 @@ setDevicePinCode(deviceId: string, code: string, callback: AsyncCallback<void>):
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -847,40 +849,40 @@ setDevicePinCode(deviceId: string, code: string, callback: AsyncCallback<void>):
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // callback
-3. try {
-4. connection.setDevicePinCode('11:22:33:44:55:66', '12345', (err: BusinessError) => {
-5. console.info('setDevicePinCode,device name err: ' + JSON.stringify(err));
-6. });
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// callback
+try {
+    connection.setDevicePinCode('11:22:33:44:55:66', '12345', (err: BusinessError) => {
+        console.info('setDevicePinCode,device name err: ' + JSON.stringify(err));
+    });
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.setDevicePinCode
 
-PhonePC/2in1TabletTVWearable
-
 setDevicePinCode(deviceId: string, code: string): Promise<void>
 
-蓝牙配对时，弹框提示用户输入PIN码，调用此接口请求用户输入PIN码，完成蓝牙配对。使用Promise异步回调。
+蓝牙配对时，弹框提示用户输入PIN码，调用此接口设置PIN码，完成蓝牙配对。使用Promise异步回调。
 
 **需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端设备MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | code | string | 是 | 用户输入的PIN码，该字符串的字符个数范围为(0, 16]，例如："12345"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -899,32 +901,30 @@ setDevicePinCode(deviceId: string, code: string): Promise<void>
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // promise
-3. try {
-4. connection.setDevicePinCode('11:22:33:44:55:66', '12345').then(() => {
-5. console.info('setDevicePinCode');
-6. }, (error: BusinessError) => {
-7. console.error('setDevicePinCode: errCode:' + error.code + ',errMessage' + error.message);
-8. })
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// promise
+try {
+    connection.setDevicePinCode('11:22:33:44:55:66', '12345').then(() => {
+        console.info('setDevicePinCode');
+    }, (error: BusinessError) => {
+        console.error('setDevicePinCode: errCode:' + error.code + ',errMessage' + error.message);
+    })
 
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.setLocalName(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setLocalName(name: string): void
 
 设置本机蓝牙设备名称，不能设置为空字符串。如果设为空字符串会失败。
 
-说明
+**说明** 
 
 从API version 10开始支持，从API version 12开始废弃，不再提供替代接口。
 
@@ -932,7 +932,9 @@ setLocalName(name: string): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -951,20 +953,18 @@ setLocalName(name: string): void
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. connection.setLocalName('device_name');
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    connection.setLocalName('device_name');
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.setBluetoothScanMode
-
-PhonePC/2in1TabletTVWearable
 
 setBluetoothScanMode(mode: ScanMode, duration: number): void
 
@@ -974,11 +974,13 @@ setBluetoothScanMode(mode: ScanMode, duration: number): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| mode | [ScanMode](js-apis-bluetooth-connection.md#scanmode) | 是 | 蓝牙扫描模式。当扫描模式为SCAN\_MODE\_GENERAL\_DISCOVERABLE时，超出duration持续时间(不为0)，扫描模式会重新设置为SCAN\_MODE\_CONNECTABLE。 |
+| mode | [ScanMode](js-apis-bluetooth-connection.md#scanmode) | 是 | 蓝牙扫描模式。当扫描模式为SCAN\_MODE\_GENERAL\_DISCOVERABLE时，超出duration持续时间（不为0），扫描模式会重新设置为SCAN\_MODE\_CONNECTABLE。 |
 | duration | number | 是 | 设备可被发现的持续时间，单位：ms。设置为0则表示持续可发现。 |
 
 **错误码**：
@@ -994,21 +996,19 @@ setBluetoothScanMode(mode: ScanMode, duration: number): void
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. // 设置为可连接可发现才可被对端设备扫描到，可以连接。
-4. connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 100);
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    // 设置为可连接可发现才可被对端设备扫描到，可以连接。
+    connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 100);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getBluetoothScanMode
-
-PhonePC/2in1TabletTVWearable
 
 getBluetoothScanMode(): ScanMode
 
@@ -1018,7 +1018,9 @@ getBluetoothScanMode(): ScanMode
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**返回值：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1036,20 +1038,18 @@ getBluetoothScanMode(): ScanMode
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let scanMode: connection.ScanMode = connection.getBluetoothScanMode();
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let scanMode: connection.ScanMode = connection.getBluetoothScanMode();
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.startBluetoothDiscovery
-
-PhonePC/2in1TabletTVWearable
 
 startBluetoothDiscovery(): void
 
@@ -1066,6 +1066,8 @@ startBluetoothDiscovery(): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 **错误码**：
 
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
@@ -1078,24 +1080,22 @@ startBluetoothDiscovery(): void
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function onReceiveEvent(data: Array<string>) {
-3. console.info('data length' + data.length);
-4. }
-5. try {
-6. connection.on('bluetoothDeviceFind', onReceiveEvent);
-7. connection.startBluetoothDiscovery();
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function onReceiveEvent(data: Array<string>) {
+    console.info('data length' + data.length);
+}
+try {
+    connection.on('bluetoothDeviceFind', onReceiveEvent);
+    connection.startBluetoothDiscovery();
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.stopBluetoothDiscovery
-
-PhonePC/2in1TabletTVWearable
 
 stopBluetoothDiscovery(): void
 
@@ -1111,6 +1111,8 @@ stopBluetoothDiscovery(): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 **错误码**：
 
 以下错误码的详细介绍请参见[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
@@ -1123,20 +1125,18 @@ stopBluetoothDiscovery(): void
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. connection.stopBluetoothDiscovery();
-4. } catch (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    connection.stopBluetoothDiscovery();
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.isBluetoothDiscovering11+
-
-PhonePC/2in1TabletTVWearable
 
 isBluetoothDiscovering(): boolean
 
@@ -1146,7 +1146,9 @@ isBluetoothDiscovering(): boolean
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**返回值：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1164,21 +1166,19 @@ isBluetoothDiscovering(): boolean
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. let res: boolean = connection.isBluetoothDiscovering();
-4. console.info('isBluetoothDiscovering: ' + res);
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let res: boolean = connection.isBluetoothDiscovering();
+    console.info('isBluetoothDiscovering: ' + res);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.setRemoteDeviceName12+
-
-PhonePC/2in1TabletTVWearable
 
 setRemoteDeviceName(deviceId: string, name: string): Promise<void>
 
@@ -1193,14 +1193,16 @@ setRemoteDeviceName(deviceId: string, name: string): Promise<void>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端设备MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | name | string | 是 | 修改对端设备名称，名称长度范围：(0, 64]，单位：Byte。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1217,25 +1219,23 @@ setRemoteDeviceName(deviceId: string, name: string): Promise<void>
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // promise
-3. try {
-4. connection.setRemoteDeviceName('11:22:33:44:55:66', 'RemoteDeviceName').then(() => {
-5. console.info('setRemoteDeviceName success');
-6. }, (error: BusinessError) => {
-7. console.error('setRemoteDeviceName: errCode: ' + error.code + ',errMessage' + error.message);
-8. })
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// promise
+try {
+    connection.setRemoteDeviceName('11:22:33:44:55:66', 'RemoteDeviceName').then(() => {
+        console.info('setRemoteDeviceName success');
+    }, (error: BusinessError) => {
+        console.error('setRemoteDeviceName: errCode: ' + error.code + ',errMessage' + error.message);
+    })
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.getRemoteDeviceBatteryInfo12+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteDeviceBatteryInfo(deviceId: string): Promise<BatteryInfo>
 
@@ -1248,13 +1248,15 @@ getRemoteDeviceBatteryInfo(deviceId: string): Promise<BatteryInfo>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 表示对端蓝牙设备的MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1271,23 +1273,21 @@ getRemoteDeviceBatteryInfo(deviceId: string): Promise<BatteryInfo>
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // promise
-3. try {
-4. connection.getRemoteDeviceBatteryInfo('11:22:33:AA:BB:FF').then((data: connection.BatteryInfo) => {
-5. console.info('getRemoteDeviceBatteryInfo success, DeviceType:' + JSON.stringify(data));
-6. });
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// promise
+try {
+    connection.getRemoteDeviceBatteryInfo('11:22:33:AA:BB:FF').then((data: connection.BatteryInfo) => {
+        console.info('getRemoteDeviceBatteryInfo success, DeviceType:' + JSON.stringify(data));
+    });
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.on('batteryChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'batteryChange', callback: Callback<BatteryInfo>): void
 
@@ -1297,7 +1297,9 @@ on(type: 'batteryChange', callback: Callback<BatteryInfo>): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1313,23 +1315,21 @@ on(type: 'batteryChange', callback: Callback<BatteryInfo>): void
 | 201 | Permission denied. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let onReceiveEvent: (data: connection.BatteryInfo) => void = (data: connection.BatteryInfo) => {
-3. console.info('BatteryInfo = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('batteryChange', onReceiveEvent);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let onReceiveEvent: (data: connection.BatteryInfo) => void = (data: connection.BatteryInfo) => {
+    console.info('BatteryInfo = '+ JSON.stringify(data));
+}
+try {
+    connection.on('batteryChange', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.off('batteryChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'batteryChange', callback?: Callback<BatteryInfo>): void
 
@@ -1339,7 +1339,9 @@ off(type: 'batteryChange', callback?: Callback<BatteryInfo>): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1355,24 +1357,22 @@ off(type: 'batteryChange', callback?: Callback<BatteryInfo>): void
 | 201 | Permission denied. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let onReceiveEvent: (data: connection.BatteryInfo) => void = (data: connection.BatteryInfo) => {
-3. console.info('BatteryInfo = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('batteryChange', onReceiveEvent);
-7. connection.off('batteryChange', onReceiveEvent);
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let onReceiveEvent: (data: connection.BatteryInfo) => void = (data: connection.BatteryInfo) => {
+    console.info('BatteryInfo = '+ JSON.stringify(data));
+}
+try {
+    connection.on('batteryChange', onReceiveEvent);
+    connection.off('batteryChange', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.on('bluetoothDeviceFind')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bluetoothDeviceFind', callback: Callback<Array<string>>): void
 
@@ -1382,13 +1382,18 @@ on(type: 'bluetoothDeviceFind', callback: Callback<Array<string>>): void
 * 该上报方式只支持获取设备地址信息。
 * 推荐使用API version 18开始支持的[connection.on('discoveryResult')](js-apis-bluetooth-connection.md#connectionondiscoveryresult18)扫描上报方式，可获取到更多设备信息，包括设备地址、设备信号强度、设备名称和设备类型。
 
-**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：
+
+* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1402,27 +1407,25 @@ on(type: 'bluetoothDeviceFind', callback: Callback<Array<string>>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.  适用版本：10-24 |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function onReceiveEvent(data: Array<string>) { // data为蓝牙设备地址集合。
-3. console.info('bluetooth device find = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('bluetoothDeviceFind', onReceiveEvent);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function onReceiveEvent(data: Array<string>) { // data为蓝牙设备地址集合。
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+}
+try {
+    connection.on('bluetoothDeviceFind', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.off('bluetoothDeviceFind')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'bluetoothDeviceFind', callback?: Callback<Array<string>>): void
 
@@ -1434,7 +1437,9 @@ off(type: 'bluetoothDeviceFind', callback?: Callback<Array<string>>): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1451,34 +1456,37 @@ off(type: 'bluetoothDeviceFind', callback?: Callback<Array<string>>): void
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function onReceiveEvent(data: Array<string>) {
-3. console.info('bluetooth device find = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('bluetoothDeviceFind', onReceiveEvent);
-7. connection.off('bluetoothDeviceFind', onReceiveEvent);
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function onReceiveEvent(data: Array<string>) {
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+}
+try {
+    connection.on('bluetoothDeviceFind', onReceiveEvent);
+    connection.off('bluetoothDeviceFind', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.on('bondStateChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'bondStateChange', callback: Callback<BondStateParam>): void
 
 订阅蓝牙配对状态变化事件。使用Callback异步回调。
 
-**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：
+
+* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1492,27 +1500,25 @@ on(type: 'bondStateChange', callback: Callback<BondStateParam>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.  适用版本：10-24 |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function onReceiveEvent(data: connection.BondStateParam) { // data为回调函数入参，表示配对的状态。
-3. console.info('pair state = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('bondStateChange', onReceiveEvent);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function onReceiveEvent(data: connection.BondStateParam) { // data为回调函数入参，表示配对的状态。
+    console.info('pair state = '+ JSON.stringify(data));
+}
+try {
+    connection.on('bondStateChange', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.off('bondStateChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'bondStateChange', callback?: Callback<BondStateParam>): void
 
@@ -1522,7 +1528,9 @@ off(type: 'bondStateChange', callback?: Callback<BondStateParam>): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1540,38 +1548,41 @@ off(type: 'bondStateChange', callback?: Callback<BondStateParam>): void
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function onReceiveEvent(data: connection.BondStateParam) {
-3. console.info('bond state = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('bondStateChange', onReceiveEvent);
-7. connection.off('bondStateChange', onReceiveEvent);
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function onReceiveEvent(data: connection.BondStateParam) {
+    console.info('bond state = '+ JSON.stringify(data));
+}
+try {
+    connection.on('bondStateChange', onReceiveEvent);
+    connection.off('bondStateChange', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.on('pinRequired')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'pinRequired', callback: Callback<PinRequiredParam>): void
 
 订阅配对请求事件。使用Callback异步回调。
 
-**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：
+
+* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+* API版本10-24：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'pinRequired'，表示配对请求事件。  当调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起主动配对，或者本机设备收到其他设备的配对请求时，触发该事件。 |
+| type | string | 是 | 事件回调类型，支持的事件为'pinRequired'，表示配对请求事件。当调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起主动配对，或者本机设备收到其他设备的配对请求时，触发该事件。收到配对请求后，可调用[connection.setDevicePairingConfirmation](js-apis-bluetooth-connection.md#connectionsetdevicepairingconfirmation)确认或拒绝配对请求。 |
 | callback | Callback<[PinRequiredParam](js-apis-bluetooth-connection.md#pinrequiredparam)> | 是 | 指定订阅的回调函数，会携带配对请求。 |
 
 **错误码**：
@@ -1581,27 +1592,25 @@ on(type: 'pinRequired', callback: Callback<PinRequiredParam>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.  适用版本：10-24 |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function onReceiveEvent(data: connection.PinRequiredParam) { // data为配对请求参数。
-3. console.info('pin required = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('pinRequired', onReceiveEvent);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function onReceiveEvent(data: connection.PinRequiredParam) { // data为配对请求参数。
+    console.info('pin required = '+ JSON.stringify(data));
+}
+try {
+    connection.on('pinRequired', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.off('pinRequired')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'pinRequired', callback?: Callback<PinRequiredParam>): void
 
@@ -1611,7 +1620,9 @@ off(type: 'pinRequired', callback?: Callback<PinRequiredParam>): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1629,24 +1640,22 @@ off(type: 'pinRequired', callback?: Callback<PinRequiredParam>): void
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. function onReceiveEvent(data: connection.PinRequiredParam) {
-3. console.info('pin required = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('pinRequired', onReceiveEvent);
-7. connection.off('pinRequired', onReceiveEvent);
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+function onReceiveEvent(data: connection.PinRequiredParam) {
+    console.info('pin required = '+ JSON.stringify(data));
+}
+try {
+    connection.on('pinRequired', onReceiveEvent);
+    connection.off('pinRequired', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.on('discoveryResult')18+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'discoveryResult', callback: Callback<Array<DiscoveryResult>>): void
 
@@ -1655,11 +1664,16 @@ on(type: 'discoveryResult', callback: Callback<Array<DiscoveryResult>>): void
 * 可扫描到的设备类型包括传统蓝牙设备和低功耗蓝牙设备。
 * 该上报方式支持获取设备地址、设备信号强度、设备名称和设备类型。
 
-**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：
+
+* API版本26.0.0+：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+* API版本18-24：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1673,37 +1687,37 @@ on(type: 'discoveryResult', callback: Callback<Array<DiscoveryResult>>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.  适用版本：18-24 |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let onReceiveEvent: (data: Array<connection.DiscoveryResult>) => void = (data: Array<connection.DiscoveryResult>) => { // data为蓝牙设备扫描结果集合。
-3. console.info('bluetooth device find = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('discoveryResult', onReceiveEvent);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let onReceiveEvent: (data: Array<connection.DiscoveryResult>) => void = (data: Array<connection.DiscoveryResult>) => { // data为蓝牙设备扫描结果集合。
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+}
+try {
+    connection.on('discoveryResult', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.off('discoveryResult')18+
 
-PhonePC/2in1TabletTVWearable
-
 off(type: 'discoveryResult', callback?: Callback<Array<DiscoveryResult>>): void
 
-取消订阅蓝牙设备发现上报事件。
+取消订阅蓝牙设备扫描结果上报事件。
 
 **需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1720,24 +1734,22 @@ off(type: 'discoveryResult', callback?: Callback<Array<DiscoveryResult>>): void
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. let onReceiveEvent: (data: Array<connection.DiscoveryResult>) => void = (data: Array<connection.DiscoveryResult>) => { // data为蓝牙设备扫描结果集合。
-3. console.info('bluetooth device find = '+ JSON.stringify(data));
-4. }
-5. try {
-6. connection.on('discoveryResult', onReceiveEvent);
-7. connection.off('discoveryResult', onReceiveEvent);
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+let onReceiveEvent: (data: Array<connection.DiscoveryResult>) => void = (data: Array<connection.DiscoveryResult>) => { // data为蓝牙设备扫描结果集合。
+    console.info('bluetooth device find = '+ JSON.stringify(data));
+}
+try {
+    connection.on('discoveryResult', onReceiveEvent);
+    connection.off('discoveryResult', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.onScanModeChange23+
-
-PhonePC/2in1TabletTVWearable
 
 onScanModeChange(callback: Callback<ScanMode>): void
 
@@ -1747,7 +1759,9 @@ onScanModeChange(callback: Callback<ScanMode>): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1763,22 +1777,20 @@ onScanModeChange(callback: Callback<ScanMode>): void
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. function ScanModeChangeEvent(scanMode: connection.ScanMode) {
-2. console.info(`Scan mode has changed, new mode: ${scanMode}`);
-3. }
-4. try {
-5. connection.onScanModeChange(ScanModeChangeEvent);
-6. } catch (err) {
-7. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-8. }
+```js
+function ScanModeChangeEvent(scanMode: connection.ScanMode) {
+    console.info(`Scan mode has changed, new mode: ${scanMode}`);
+}
+try {
+    connection.onScanModeChange(ScanModeChangeEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ## connection.offScanModeChange23+
-
-PhonePC/2in1TabletTVWearable
 
 offScanModeChange(callback?: Callback<ScanMode>): void
 
@@ -1788,7 +1800,9 @@ offScanModeChange(callback?: Callback<ScanMode>): void
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -1804,22 +1818,20 @@ offScanModeChange(callback?: Callback<ScanMode>): void
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. function ScanModeChangeEvent(scanMode: connection.ScanMode) {
-2. console.info(`Scan mode has changed, new mode: ${scanMode}`);
-3. }
-4. try {
-5. connection.offScanModeChange(ScanModeChangeEvent);
-6. } catch (err) {
-7. console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
-8. }
+```js
+function ScanModeChangeEvent(scanMode: connection.ScanMode) {
+    console.info(`Scan mode has changed, new mode: ${scanMode}`);
+}
+try {
+    connection.offScanModeChange(ScanModeChangeEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ## connection.getLastConnectionTime15+
-
-PhonePC/2in1TabletTVWearable
 
 getLastConnectionTime(deviceId: string): Promise<number>
 
@@ -1829,13 +1841,15 @@ getLastConnectionTime(deviceId: string): Promise<number>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceId | string | 是 | 表示远端设备MAC地址。例如："XX:XX:XX:XX:XX:XX"。 |
+| deviceId | string | 是 | 表示对端设备MAC地址。例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -1847,50 +1861,52 @@ getLastConnectionTime(deviceId: string): Promise<number>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. // promise
-3. try {
-4. connection.getLastConnectionTime('11:22:33:44:55:66').then((time: number) => {
-5. console.info(`connectionTime: ${time}`);
-6. });
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+// promise
+try {
+    connection.getLastConnectionTime('11:22:33:44:55:66').then((time: number) => {
+        console.info(`connectionTime: ${time}`);
+    });
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.connectAllowedProfiles16+
-
-PhonePC/2in1TabletTVWearable
 
 connectAllowedProfiles(deviceId: string, callback: AsyncCallback<void>): void
 
-连接对端设备支持的profile（只包括A2DP、HFP和HID）。使用Callback异步回调。
+连接对端设备支持的Profile（只包括A2DP、HFP和HID）。使用Callback异步回调。
 
-* 需先调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对，且仅允许在每次发起配对后30s内调用此接口一次。
-* 当配对成功后，建议先调用[getRemoteProfileUuids](js-apis-bluetooth-connection.md#connectiongetremoteprofileuuids12)主动查询目标设备支持的profile能力。若存在应用需要的能力，才调用此接口。
-* 从API version 21开始，此接口支持使用对端设备的实际MAC地址进行profile连接。
+* API版本26.0.0之前，需先调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对，且仅允许在每次发起配对后30秒内调用此接口一次。
+* 从API版本26.0.0开始，针对A2DP和HFP，调用接口无时间限制，可以在调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对后任意时间内进行调用。针对HID，仍需在每次发起配对后30秒内调用此接口。
+* 当配对成功后，建议先调用[getRemoteProfileUuids](js-apis-bluetooth-connection.md#connectiongetremoteprofileuuids12)主动查询目标设备支持的Profile能力。若存在应用需要的能力，才调用此接口。
+* 需要与接口[connection.disconnectAllowedProfiles](js-apis-bluetooth-connection.md#connectiondisconnectallowedprofiles)配合使用。
+* 从API version 21开始，此接口支持使用对端设备的实际MAC地址进行Profile连接。
 
-**需要权限：**: ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
-**系统能力：**: SystemCapability.Communication.Bluetooth.Core
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceId | string | 是 | 表示需要连接的对端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
+| deviceId | string | 是 | 表示需要连接的对端设备MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当发起连接成功，err为undefined，否则为错误对象。 |
 
-**错误码：**
+**错误码**：
 
 以下错误码的详细介绍请参见 [通用错误码说明文档](errorcode-universal.md)和[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
 
@@ -1903,52 +1919,54 @@ connectAllowedProfiles(deviceId: string, callback: AsyncCallback<void>): void
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. connection.connectAllowedProfiles('68:13:24:79:4C:8C', (err: BusinessError) => {
-4. if (err) {
-5. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-6. return;
-7. }
-8. console.info('connectAllowedProfiles');
-9. });
-10. } catch (err) {
-11. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-12. }
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+  connection.connectAllowedProfiles('68:13:24:79:4C:8C', (err: BusinessError) => {
+    if (err) {
+      console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+      return;
+    }
+    console.info('connectAllowedProfiles');
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## connection.connectAllowedProfiles16+
 
-PhonePC/2in1TabletTVWearable
-
 connectAllowedProfiles(deviceId: string): Promise<void>
 
-连接对端设备支持的profile（只包括A2DP、HFP和HID）。使用Promise异步回调。
+连接对端设备支持的Profile（只包括A2DP、HFP和HID）。使用Promise异步回调。
 
-* 需先调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对，且仅允许在每次发起配对后30s内调用此接口一次。
-* 当配对成功后，建议先调用[getRemoteProfileUuids](js-apis-bluetooth-connection.md#connectiongetremoteprofileuuids12)主动查询目标设备支持的profile能力。若存在应用需要的能力，才调用此接口。
-* 从API version 21开始，此接口支持使用对端设备的实际MAC地址进行profile连接。
+* API版本26.0.0之前，需先调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对，且仅允许在每次发起配对后30秒内调用此接口一次。
+* 从API版本26.0.0开始，针对A2DP和HFP，调用接口无时间限制，可以在调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对后任意时间内进行调用。针对HID，仍需在每次发起配对后30秒内调用此接口。
+* 当配对成功后，建议先调用[getRemoteProfileUuids](js-apis-bluetooth-connection.md#connectiongetremoteprofileuuids12)主动查询目标设备支持的Profile能力。若存在应用需要的能力，才调用此接口。
+* 需要与接口[connection.disconnectAllowedProfiles](js-apis-bluetooth-connection.md#connectiondisconnectallowedprofiles)配合使用。
+* 从API version 21开始，此接口支持使用对端设备的实际MAC地址进行Profile连接。
 
-**需要权限：**: ohos.permission.ACCESS\_BLUETOOTH
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 
-**系统能力：**: SystemCapability.Communication.Bluetooth.Core
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| deviceId | string | 是 | 表示需要连接的对端设备地址，例如："XX:XX:XX:XX:XX:XX"。 |
+| deviceId | string | 是 | 表示需要连接的对端设备MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象。无返回结果的Promise对象。 |
+| Promise<void> | Promise对象。无返回结果。 |
 
-**错误码：**
+**错误码**：
 
 以下错误码的详细介绍请参见 [通用错误码说明文档](errorcode-universal.md)和[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
 
@@ -1961,42 +1979,233 @@ connectAllowedProfiles(deviceId: string): Promise<void>
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+  connection.connectAllowedProfiles('68:13:24:79:4C:8C').then(() => {
+      console.info('connectAllowedProfiles');
+    }, (err: BusinessError) => {
+      console.error('connectAllowedProfiles:errCode' + err.code + ', errMessage: ' + err.message);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. try {
-3. connection.connectAllowedProfiles('68:13:24:79:4C:8C').then(() => {
-4. console.info('connectAllowedProfiles');
-5. }, (err: BusinessError) => {
-6. console.error('connectAllowedProfiles:errCode' + err.code + ', errMessage: ' + err.message);
-7. });
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+
+## connection.disconnectAllowedProfiles
+
+disconnectAllowedProfiles(deviceId: string): Promise<void>
+
+断开对端设备支持的Profile（只包括A2DP和HFP）。
+
+* 需要与接口[connection.connectAllowedProfiles](js-apis-bluetooth-connection.md#connectionconnectallowedprofiles16)配合使用。
+
+**起始版本**：26.0.0
+
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceId | string | 是 | 表示需要断开连接的对端设备MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象。无返回结果。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见 [通用错误码说明文档](errorcode-universal.md)和[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. Failed to call the API when the short-range chip is not inserted on 2in1 device. |
+| 2900001 | Service stopped. |
+| 2900003 | Bluetooth disabled. |
+| 2900099 | Operation failed. |
+
+**示例**：
+
+```js
+try {
+  await connection.disconnectAllowedProfiles('68:13:24:79:4C:8C');
+} catch (err) {
+  console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
+```
+
+## connection.getVirtualAddressByHash24+
+
+getVirtualAddressByHash(algorithmType: HashAlgorithmType, hashValue: string): string
+
+根据已配对设备[实际MAC地址](../harmonyos-guides/bluetooth-overview.md#蓝牙设备地址类型)的哈希值获取对应的[虚拟MAC地址](../harmonyos-guides/bluetooth-overview.md#蓝牙设备地址类型)。
+
+当[HashAlgorithmType](js-apis-bluetooth-connection.md#hashalgorithmtype24)为HASH\_ALGORITHM\_SHA256时，应使用大写实际MAC地址通过SHA256算法生成对应的哈希值（十六进制64位），取后32位作为输入，哈希值字母不区分大小写。
+
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| algorithmType | [HashAlgorithmType](js-apis-bluetooth-connection.md#hashalgorithmtype24) | 是 | 哈希算法类型。 |
+| hashValue | string | 是 | 哈希值，例如："c10b57deb2e1aafd255596e0d4fd6789"。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回与哈希值相对应的设备虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"，返回地址为大写。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见 [通用错误码说明文档](errorcode-universal.md)和[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. Failed to call the API when the short-range chip is not inserted on 2in1 device. |
+| 2900003 | Bluetooth disabled. |
+| 2900015 | Parameter format mismatch with specification. |
+| 2900016 | Device unpaired. |
+| 2900099 | Internal system error. For example, IPC error. Detailed error messages can be used to assist in locating the problem. |
+
+**示例**：
+
+```js
+// 若查询的真实地址为11:22:33:44:55:AA,
+// 对应的64位哈希值为 d2204cb9b6d3d3962cc90fa54130efb4c10b57deb2e1aafd255596e0d4fd6789,
+// 当HashAlgorithmType为HASH_ALGORITHM_SHA256时取后32位哈希值
+let hashValue: string = "c10b57deb2e1aafd255596e0d4fd6789";
+try {
+  let addr: string = connection.getVirtualAddressByHash(connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue);
+} catch (err) {
+  console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
+```
+
+## connection.onAclStateChange
+
+onAclStateChange(callback: Callback<AclStateResult>): void
+
+订阅蓝牙ACL链路连接状态变化事件。当触发蓝牙ACL链路连接或断开时，如订阅此事件，则会收到携带对应设备的地址与连接状态的回调函数。
+
+**起始版本**：26.0.0
+
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[AclStateResult](js-apis-bluetooth-connection.md#aclstateresult)> | 是 | 回调函数，返回蓝牙ACL链路连接状态 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见 [通用错误码说明文档](errorcode-universal.md)和[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported.  Failed to call the API when the short-range chip is not inserted on 2in1 device. |
+| 2900099 | Internal system error.  For example, IPC error. Detailed error messages can be used to assist in locating the problem. |
+
+**示例**：
+
+```js
+function AclStateChangeEvent(aclStateResult: connection.AclStateResult) {
+    console.info('acl state changed:'+ JSON.stringify(aclStateResult));
+}
+try {
+    connection.onAclStateChange(AclStateChangeEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
+```
+
+## connection.offAclStateChange
+
+offAclStateChange(callback?: Callback<AclStateResult>): void
+
+取消订阅蓝牙ACL链路连接状态变化事件。
+
+**起始版本**：26.0.0
+
+**需要权限**：ohos.permission.ACCESS\_BLUETOOTH 或 （ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.GET\_BLUETOOTH\_PEERS\_MAC）
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[AclStateResult](js-apis-bluetooth-connection.md#aclstateresult)> | 否 | 指定取消订阅的回调函数通知。  若传参，则需与[connection.onAclStateChange](js-apis-bluetooth-connection.md#connectiononaclstatechange)中的回调函数一致；若无传参，则取消订阅所有蓝牙ACL连接状态变更的回调函数通知。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见 [通用错误码说明文档](errorcode-universal.md)和[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported.  Failed to call the API when the short-range chip is not inserted on 2in1 device. |
+| 2900099 | Internal system error.  For example, IPC error. Detailed error messages can be used to assist in locating the problem. |
+
+**示例**：
+
+```js
+function AclStateChangeEvent(aclStateResult: connection.AclStateResult) {
+    console.info('acl state changed:'+ JSON.stringify(aclStateResult));
+}
+try {
+    connection.offAclStateChange(AclStateChangeEvent);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ## BondStateParam
 
-PhonePC/2in1TabletTVWearable
-
 描述配对状态结果的参数结构。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | deviceId | string | 否 | 否 | 配对中的对端设备地址。 |
 | state | [BondState](js-apis-bluetooth-connection.md#bondstate) | 否 | 否 | 配对状态。 |
 | cause12+ | [UnbondCause](js-apis-bluetooth-connection.md#unbondcause12) | 否 | 否 | 配对失败的原因。 |
+| causeMessage | string | 否 | 是 | 配对失败的具体原因，例如：本端业务主动删除配对时，返回：USER\_REMOVED。  **起始版本**：26.0.0 |
 
 ## PinRequiredParam
-
-PhonePC/2in1TabletTVWearable
 
 描述配对请求的参数结构。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2005,45 +2214,45 @@ PhonePC/2in1TabletTVWearable
 
 ## DeviceClass
 
-PhonePC/2in1TabletTVWearable
-
 描述蓝牙设备的类型。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | majorClass | [MajorClass](js-apis-bluetooth-constant.md#majorclass) | 否 | 否 | 主要类型。是蓝牙标准协议中定义的类型字段。 |
-| majorMinorClass | [MajorMinorClass](js-apis-bluetooth-constant.md#majorminorclass) | 否 | 否 | 子类型，是在主要类型上基础上进一步细分的类型。是蓝牙标准协议中定义的类型字段。 |
+| majorMinorClass | [MajorMinorClass](js-apis-bluetooth-constant.md#majorminorclass) | 否 | 否 | 子类型，是在主要类型基础上进一步细分的类型。是蓝牙标准协议中定义的类型字段。 |
 | classOfDevice | number | 否 | 否 | 设备类型。是蓝牙标准协议中定义的类型字段，包含了[MajorClass](js-apis-bluetooth-constant.md#majorclass)、[MajorMinorClass](js-apis-bluetooth-constant.md#majorminorclass)和支持的主要服务这三种设备信息。 |
 
 ## BatteryInfo12+
 
-PhonePC/2in1TabletTVWearable
-
 描述设备的电量信息。
 
-只有支持蓝牙标准协议定义的电量信息AT（Attention）命令（包括：+XEVENT和IPHONEACCEV）的设备才支持上报有效的电量信息。
+只有支持特定电量信息AT（Attention）命令（包括：+XEVENT和IPHONEACCEV）的设备才支持上报有效的电量信息。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
+**模型约束**：此接口仅可在Stage模型下使用。
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| batteryLevel | number | 否 | 否 | 表示设备的电量值。  如果该值为-1，表示没有电量信息。 |
-| leftEarBatteryLevel | number | 否 | 否 | 若是蓝牙耳机设备类型，表示左侧耳机的电量值。  如果该值为-1，表示没有电量信息。 |
+| batteryLevel | number | 否 | 否 | 表示设备的电量值，有效取值范围[0, 100]，单位：%，表示电量百分比；如果该值为-1，表示没有电量信息。 |
+| leftEarBatteryLevel | number | 否 | 否 | 若是蓝牙耳机设备类型，表示左侧耳机的电量值，有效取值范围[0, 100]，单位：%，表示电量百分比；如果该值为-1，表示没有电量信息。 |
 | leftEarChargeState | [DeviceChargeState](js-apis-bluetooth-connection.md#devicechargestate12) | 否 | 否 | 若是蓝牙耳机设备类型，表示左侧耳机的充电状态。 |
-| rightEarBatteryLevel | number | 否 | 否 | 若是蓝牙耳机设备类型，表示右侧耳机的电量值。  如果该值为-1，表示没有电量信息。 |
+| rightEarBatteryLevel | number | 否 | 否 | 若是蓝牙耳机设备类型，表示右侧耳机的电量值，有效取值范围[0, 100]，单位：%，表示电量百分比；如果该值为-1，表示没有电量信息。 |
 | rightEarChargeState | [DeviceChargeState](js-apis-bluetooth-connection.md#devicechargestate12) | 否 | 否 | 若是蓝牙耳机设备类型，表示右侧耳机的充电状态。 |
-| boxBatteryLevel | number | 否 | 否 | 若是蓝牙耳机设备类型，表示耳机仓的电量值。  如果值该为-1，表示没有电量信息。 |
+| boxBatteryLevel | number | 否 | 否 | 若是蓝牙耳机设备类型，表示耳机仓的电量值，有效取值范围[0, 100]，单位：%，表示电量百分比；如果该值为-1，表示没有电量信息。 |
 | boxChargeState | [DeviceChargeState](js-apis-bluetooth-connection.md#devicechargestate12) | 否 | 否 | 若是蓝牙耳机设备类型，表示耳机仓的充电状态。 |
 
 ## BluetoothTransport
 
-PhonePC/2in1TabletTVWearable
-
 枚举，表示设备传输类型。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2054,11 +2263,11 @@ PhonePC/2in1TabletTVWearable
 
 ## ScanMode
 
-PhonePC/2in1TabletTVWearable
-
 枚举，表示扫描模式。该模式决定设备是否可被发现或可被连接。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2071,13 +2280,13 @@ PhonePC/2in1TabletTVWearable
 
 ## BondState
 
-PhonePC/2in1TabletTVWearable
-
 枚举，配对状态。
 
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2087,11 +2296,11 @@ PhonePC/2in1TabletTVWearable
 
 ## UnbondCause12+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，配对失败原因。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2103,11 +2312,11 @@ PhonePC/2in1TabletTVWearable
 
 ## DeviceChargeState12+
 
-PhonePC/2in1TabletTVWearable
-
 枚举，表示设备当前的充电状态。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -2118,11 +2327,11 @@ PhonePC/2in1TabletTVWearable
 
 ## DiscoveryResult18+
 
-PhonePC/2in1TabletTVWearable
-
 扫描到设备后，上报的扫描结果。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -2130,3 +2339,47 @@ PhonePC/2in1TabletTVWearable
 | rssi | number | 否 | 否 | 扫描到的设备信号强度，单位：dBm。 |
 | deviceName | string | 否 | 否 | 扫描到的设备名称。 |
 | deviceClass | [DeviceClass](js-apis-bluetooth-connection.md#deviceclass) | 否 | 否 | 扫描到的设备类型。 |
+
+## HashAlgorithmType24+
+
+枚举，表示哈希算法类型。
+
+哈希算法是一种数学函数，通过对输入数据进行复杂计算，生成一个唯一且固定长度的字符串（即哈希值）。常用于数据完整性校验、数字签名等场景。
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| HASH\_ALGORITHM\_SHA256 | 0 | SHA256哈希算法。 |
+
+## AclStateResult
+
+描述ACL连接状态的参数结构。
+
+**起始版本**：26.0.0
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| deviceId | string | 否 | 否 | 表示对端设备的地址，例如："XX:XX:XX:XX:XX:XX"。 |
+| state | [AclState](js-apis-bluetooth-connection.md#aclstate) | 否 | 否 | 连接状态。 |
+
+## AclState
+
+枚举，表示ACL连接状态。
+
+**起始版本**：26.0.0
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STATE\_CONNECTED | 0 | ACL链路已连接。 |
+| STATE\_DISCONNECTED | 1 | ACL链路已断开连接。 |

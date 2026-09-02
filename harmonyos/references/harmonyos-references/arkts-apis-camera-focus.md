@@ -3,31 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Focus)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Focus)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c078d68587ec2d967a8394325a0f7e8bccdaaf906bbe077b72a9aa0f3b43ba14
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c6784c1354534cf5b268d177712a7f50391c87ed07f07762f740b573e56f407d
 ---
 
-Focus 继承自 [FocusQuery](arkts-apis-camera-focusquery.md)。
+Focus继承自[FocusQuery](arkts-apis-camera-focusquery.md)。
 
 对焦类，对设备对焦操作。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 11开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## setFocusMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setFocusMode(afMode: FocusMode): void
 
@@ -55,23 +51,21 @@ setFocusMode(afMode: FocusMode): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function setFocusMode(photoSession: camera.PhotoSession): void {
-4. try {
-5. photoSession.setFocusMode(camera.FocusMode.FOCUS_MODE_AUTO);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The setFocusMode call failed. error code: ${err.code}`);
-10. }
-11. }
+function setFocusMode(photoSession: camera.PhotoSession): void {
+  try {
+    photoSession.setFocusMode(camera.FocusMode.FOCUS_MODE_AUTO);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setFocusMode call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## getFocusMode11+
-
-PhonePC/2in1TabletTVWearable
 
 getFocusMode(): FocusMode
 
@@ -97,25 +91,23 @@ getFocusMode(): FocusMode
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getFocusMode(photoSession: camera.PhotoSession): camera.FocusMode | undefined {
-4. let afMode: camera.FocusMode | undefined = undefined;
-5. try {
-6. afMode = photoSession.getFocusMode();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The getFocusMode call failed. error code: ${err.code}`);
-11. }
-12. return afMode;
-13. }
+function getFocusMode(photoSession: camera.PhotoSession): camera.FocusMode | undefined {
+  let afMode: camera.FocusMode | undefined = undefined;
+  try {
+    afMode = photoSession.getFocusMode();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getFocusMode call failed. error code: ${err.code}`);
+  }
+  return afMode;
+}
 ```
 
 ## setFocusPoint11+
-
-PhonePC/2in1TabletTVWearable
 
 setFocusPoint(point: Point): void
 
@@ -143,24 +135,22 @@ setFocusPoint(point: Point): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function setFocusPoint(photoSession: camera.PhotoSession): void {
-4. const focusPoint: camera.Point = {x: 1, y: 1};
-5. try {
-6. photoSession.setFocusPoint(focusPoint);
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The setFocusPoint call failed. error code: ${err.code}`);
-11. }
-12. }
+function setFocusPoint(photoSession: camera.PhotoSession): void {
+  const focusPoint: camera.Point = {x: 1, y: 1};
+  try {
+    photoSession.setFocusPoint(focusPoint);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setFocusPoint call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## getFocusPoint11+
-
-PhonePC/2in1TabletTVWearable
 
 getFocusPoint(): Point
 
@@ -186,25 +176,23 @@ getFocusPoint(): Point
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getFocusPoint(photoSession: camera.PhotoSession): camera.Point | undefined {
-4. let point: camera.Point | undefined = undefined;
-5. try {
-6. point = photoSession.getFocusPoint();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The getFocusPoint call failed. error code: ${err.code}`);
-11. }
-12. return point;
-13. }
+function getFocusPoint(photoSession: camera.PhotoSession): camera.Point | undefined {
+  let point: camera.Point | undefined = undefined;
+  try {
+    point = photoSession.getFocusPoint();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getFocusPoint call failed. error code: ${err.code}`);
+  }
+  return point;
+}
 ```
 
 ## getFocalLength11+
-
-PhonePC/2in1TabletTVWearable
 
 getFocalLength(): number
 
@@ -230,19 +218,104 @@ getFocalLength(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getFocalLength(photoSession: camera.PhotoSession): number {
-4. const invalidValue: number = -1;
-5. let focalLength: number = invalidValue;
-6. try {
-7. focalLength = photoSession.getFocalLength();
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The getFocalLength call failed. error code: ${err.code}`);
-12. }
-13. return focalLength;
-14. }
+function getFocalLength(photoSession: camera.PhotoSession): number {
+  const invalidValue: number = -1;
+  let focalLength: number = invalidValue;
+  try {
+    focalLength = photoSession.getFocalLength();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The getFocalLength call failed. error code: ${err.code}`);
+  }
+  return focalLength;
+}
+```
+
+## lockFocusTracking
+
+lockFocusTracking(focusPoint: Point): void
+
+锁定焦点跟踪，使对焦持续追踪指定的物体。通过focusPoint参数指定追踪目标。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| focusPoint | [Point](arkts-apis-camera-i.md#point) | 是 | 锁定对焦跟踪点。x、y的取值范围均为 [0, 1]，超出范围则设置不生效。(0, 0)表示画面左上角，(1, 1)表示画面右下角。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
+| 7400201 | Camera service fatal error. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function lockFocusTracking(photoSession: camera.PhotoSession): void {
+  try {
+    const focusPoint: camera.Point = {x: 0, y: 0};
+    photoSession.lockFocusTracking(focusPoint);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The lockFocusTrack call failed. error code: ${err.code}`);
+  }
+}
+```
+
+## unlockFocusTracking
+
+unlockFocusTracking(): void
+
+解锁焦点跟踪。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400103 | Session not config, only throw in session usage. |
+| 7400201 | Camera service fatal error. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function unlockFocusTracking(photoSession: camera.PhotoSession): void {
+  try {
+    photoSession.unlockFocusTracking();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The unlockFocusTrack call failed. error code: ${err.code}`);
+  }
+}
 ```

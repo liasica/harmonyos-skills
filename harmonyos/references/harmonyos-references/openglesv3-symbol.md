@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openglesv
 title: Native api中导出的OpenGL ES 3.2符号列表
 breadcrumb: API参考 > 标准库 > 附录 > Native api中导出的OpenGL ES 3.2符号列表
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:40+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-02T15:21:00+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:0ddf55c412a08f5a1f3e52c08d8634c2ed9137e83a1312f574b15275695a90bc
 ---
 

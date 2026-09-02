@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-heade
 title: native_gcp_api.h
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > C API > 头文件和结构体 > 头文件 > native_gcp_api.h
 category: harmonyos-references
-scraped_at: 2026-04-29T14:01:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ee83d617b8839487e20bf5d9b73982c264fa703f0fea3c3b1d8a32cca6551ba8
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5496a46ba951421ed02932b2ac89ed059e87f617c7949ff924cc9025d52f76b9
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 声明用于对外提供全局取色能力。
 
@@ -26,11 +24,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 结构体
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,15 +33,11 @@ PhonePC/2in1Tablet
 
 ### 类型定义
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
-| typedef void(\* [HMS\_GCP\_OnResult](pen-imagefeaturepicker-c.md#hms_gcp_onresult)) (void \*userData, [HMS\_GCP\_PickedColorInfo](pen-imagefeaturepicker-struct-colorinfo.md) colorInfo, const int32\_t code) | 此回调用于接收拾取的颜色结果。 |
+| typedef void(\* [HMS\_GCP\_OnResult](pen-imagefeaturepicker-c.md#hms_gcp_onresult)) (void \*userData, [HMS\_GCP\_PickedColorInfo](pen-imagefeaturepicker-struct-colorinfo.md) colorInfo, const int32\_t code) | 当用户完成取色操作后，系统将调用此回调函数，并传入颜色信息和操作结果码。 |
 
 ### 枚举
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -55,9 +45,7 @@ PhonePC/2in1Tablet
 
 ### 函数
 
-PhonePC/2in1Tablet
-
 | 名称 | 描述 |
 | --- | --- |
-| int32\_t [HMS\_GCP\_StartColorPicker](pen-imagefeaturepicker-c.md#hms_gcp_startcolorpicker) (int32\_t initialPosX, int32\_t initialPosY, [HMS\_GCP\_OnResult](pen-imagefeaturepicker-c.md#hms_gcp_onresult) onResultCallback, void \*userData) | 启动全局取色器。 |
-| int32\_t [HMS\_GCP\_StartColorPickerWithColorValue](pen-imagefeaturepicker-c.md#hms_gcp_startcolorpickerwithcolorvalue) (int32\_t initialPosX, int32\_t initialPosY, [HMS\_GCP\_OnResult](pen-imagefeaturepicker-c.md#hms_gcp_onresult) onResultCallback, void \*userData) | 启动全局取色器。 |
+| int32\_t [HMS\_GCP\_StartColorPicker](pen-imagefeaturepicker-c.md#hms_gcp_startcolorpicker) (int32\_t initialPosX, int32\_t initialPosY, [HMS\_GCP\_OnResult](pen-imagefeaturepicker-c.md#hms_gcp_onresult) onResultCallback, void \*userData) | 启动全局取色器。此API用于启动取色器，在取色器移动时不显示值。 |
+| int32\_t [HMS\_GCP\_StartColorPickerWithColorValue](pen-imagefeaturepicker-c.md#hms_gcp_startcolorpickerwithcolorvalue) (int32\_t initialPosX, int32\_t initialPosY, [HMS\_GCP\_OnResult](pen-imagefeaturepicker-c.md#hms_gcp_onresult) onResultCallback, void \*userData) | 启动全局取色器。此API用于启动取色器，在取色器移动时显示值。 |

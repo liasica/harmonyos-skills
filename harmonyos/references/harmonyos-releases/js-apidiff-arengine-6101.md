@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arengine-6101
 title: AR Engine
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > AR Engine
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > AR Engine
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:23+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:21+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:e54caf865b92ba5d351a42359b8023662f11119218b746f4cc7e5e429fd4f5ea
 ---
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___ce
 title: Rcp_CertificateAuthority
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_CertificateAuthority
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:126e4a85d5792ea73374998655cf61d51ea02864e07095b45c175e6f92c6835d
+scraped_at: 2026-09-02T15:01:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b2b5833342ea8c4e91ce47a7ab01d779b2b18428cbe8293a6f2bac9ce92071d9
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 用于验证远程服务器标识的证书颁发机构（CA）。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### content
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_CertificateAuthority::content
+```cpp
+char* Rcp_CertificateAuthority::content
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhonePC/2in1TabletTVWearable
 
 ### filePath
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_CertificateAuthority::filePath
+```cpp
+char* Rcp_CertificateAuthority::filePath
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhonePC/2in1TabletTVWearable
 
 ### folderPath
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_CertificateAuthority::folderPath
+```cpp
+char* Rcp_CertificateAuthority::folderPath
 ```
 
 **描述**

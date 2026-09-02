@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-kit-gui
 title: AppGallery Kit（应用市场服务）
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a5394b96635d6179b7153e67c4d274b970dafc543dd7b6cbde863df502672530
+scraped_at: 2026-09-02T14:50:23+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:50681b479d2441a0ddd6e6150e4318ead1a78199d4a78506c9dcd3986adfcbfc
 ---
 
 * **[AppGallery Kit简介](store-introduction.md)**
@@ -20,3 +20,4 @@ content_hash: sha256:a5394b96635d6179b7153e67c4d274b970dafc543dd7b6cbde863df5026
 * **[应用评论服务](appgallery-comment.md)**
 * **[AppGallery Kit常见问题](store-faq.md)**
 * **[附录](store-attribution-appendix.md)**
+* **[AppGallery Kit术语](appgallery-glossary.md)**

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: NN_TensorDesc
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 结构体 > NN_TensorDesc
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5e44a850fe3d123419f3aa82033d5aef09541be25d676e5b0638581de2e446f8
+scraped_at: 2026-09-02T14:53:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b2b9188b38647d8e9fae56d13c14de5c78128562ff085ef9b06e0225bbbb0794
 ---
 
-```
-1. typedef struct NN_TensorDesc NN_TensorDesc
+```c
+typedef struct NN_TensorDesc NN_TensorDesc
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 Tensor描述的句柄。
 

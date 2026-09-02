@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setre
 title: SetRealDimCnt
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > SetRealDimCnt
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:00+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:246d2898fc334383020f344d37453be68b58b9b3ea807e27b1ccf8be4155be67
+content_hash: sha256:2b443ff61a4c58d071031f588504990074e6e5183be1939cbc2697799a0fc9d7
 ---
 
 ## 函数功能
@@ -16,8 +16,8 @@ content_hash: sha256:246d2898fc334383020f344d37453be68b58b9b3ea807e27b1ccf8be415
 
 ## 函数原型
 
-```
-1. void SetRealDimCnt(const int64_t real_dim_cnt);
+```cpp
+void SetRealDimCnt(const int64_t real_dim_cnt);
 ```
 
 ## 参数说明

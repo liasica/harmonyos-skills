@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getdi
 title: GetDim
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > Shape > GetDim
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:09+08:00
+scraped_at: 2026-09-02T14:50:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:87e0255dc6d2446371949113e7bd91729633497cccb011fbcb28af1034bab55c
+content_hash: sha256:0b6214a0b55d5ef43a760d1626d8466ff584c490cd0b17c84f2c5810299ddea0
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:87e0255dc6d2446371949113e7bd91729633497cccb011fbcb28af1034b
 
 ## 函数原型
 
-```
-1. int64_t GetDim(const size_t idx) const
+```cpp
+int64_t GetDim(const size_t idx) const
 ```
 
 ## 参数说明
@@ -34,8 +34,8 @@ dim值，在idx>=kMaxDimNum时，返回kInvalidDimValue。
 
 ## 调用示例
 
-```
-1. Shape shape0({3, 256, 256});
-2. auto dim0 = shape0.GetDim(0); // 3
-3. auto invalid_dim = shape0.GetDim(kMaxDimNum); // kInvalidDimValue
+```cpp
+Shape shape0({3, 256, 256});
+auto dim0 = shape0.GetDim(0); // 3
+auto invalid_dim = shape0.GetDim(kMaxDimNum); // kInvalidDimValue
 ```

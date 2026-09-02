@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: JS Crash类问题优化建议
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 应用异常退出类问题优化建议 > JS Crash类问题优化建议
 category: best-practices
-scraped_at: 2026-04-28T08:23:03+08:00
+scraped_at: 2026-09-02T15:03:24+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:bbfcd11a19fc80094c2556d318bbd5d0b269977e44d55bb6e8df6665e132b573
+content_hash: sha256:f5ae6b3028e5e17deb2238724bd33f1f3b9492bc62d2c8c0f81d27d145a6b919
 ---
 
 ## 优化建议1：Source Maps归档保存
 
 生产环境归档SourceMap便于后续源码还原，遇到JS Crash应先进行[堆栈轨迹分析](../harmonyos-guides-V5/ide-release-app-stack-analysis-V5.md)。
 
-说明
+**说明** 
 
 编译时SourceMap的获取位置详见：[sourceMap归档位置介绍](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section666114451518)。
 

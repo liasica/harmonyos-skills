@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-82
 title: 在onInterceptRequest接口中，如何异步处理响应数据
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 在onInterceptRequest接口中，如何异步处理响应数据
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:47+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:bdf7bee55e20aa2bcaa657ba41524d942a2d4d77590034cc2f5e770c4898faa3
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/simple-text-a
 title: 简单文本绘制与显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 简单文本绘制与显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:70babee9eb88ea015f1d8b88253683680a76f500e51976267bab1898a0711687
+scraped_at: 2026-09-02T14:50:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4f93ebe50b282bf5c519cdba7142ad75d0f1e8edff43879b1fc7d4e46886f703
 ---
 
 ## 场景介绍
@@ -23,63 +23,53 @@ content_hash: sha256:70babee9eb88ea015f1d8b88253683680a76f500e51976267bab1898a07
 
 1. 通过context获取到Canvas画布对象。
 
+   ```typescript
+   let canvas = context.canvas;
    ```
-   1. let canvas = context.canvas;
-   ```
+2. 初始化文本样式，此处设置字体颜色为红色，字体大小为100px。
 
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/SimpleTextDrawing/entry/src/main/ets/pages/Index.ets#L26-L28)
-2. 初始化文本样式，此处设置字体颜色为红色，字体大小为50。
-
+   ```typescript
+   // 初始化文本样式
+   let myTextStyle: text.TextStyle = {
+     // 文本颜色
+     color: {
+       alpha: 255,
+       red: 255,
+       green: 0,
+       blue: 0
+     },
+     // 文本大小
+     fontSize: 100
+   };
    ```
-   1. // 获取文本样式
-   2. let myTextStyle: text.TextStyle = {
-   3. // 文本颜色
-   4. color: {
-   5. alpha: 255,
-   6. red: 255,
-   7. green: 0,
-   8. blue: 0
-   9. },
-   10. // 文本大小
-   11. fontSize: 100
-   12. };
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/SimpleTextDrawing/entry/src/main/ets/pages/Index.ets#L29-L42)
 3. 初始化段落样式。
 
+   ```typescript
+   let myParagraphStyle: text.ParagraphStyle = {
+     textStyle: myTextStyle,
+   };
    ```
-   1. let myParagraphStyle: text.ParagraphStyle = {
-   2. textStyle: myTextStyle,
-   3. };
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/SimpleTextDrawing/entry/src/main/ets/pages/Index.ets#L44-L48)
 4. 初始化段落对象，并添加文本。
 
+   ```typescript
+   let fontCollection = text.FontCollection.getGlobalInstance();
+   let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+   // 更新文本样式
+   paragraphBuilder.pushStyle(myTextStyle);
+   // 添加文本
+   paragraphBuilder.addText("Hello World");
    ```
-   1. let fontCollection = text.FontCollection.getGlobalInstance();
-   2. let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-   3. // 更新文本样式
-   4. ParagraphGraphBuilder.pushStyle(myTextStyle);
-   5. // 添加文本
-   6. ParagraphGraphBuilder.addText("Hello World");
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/SimpleTextDrawing/entry/src/main/ets/pages/Index.ets#L49-L56)
 5. 排版段落并进行文本绘制。
 
+   ```typescript
+   // 生成段落
+   let paragraph = paragraphBuilder.build();
+   // 布局
+   paragraph.layoutSync(1250);
+   // 绘制文本
+   paragraph.paint(canvas, 0, 100);
    ```
-   1. // 生成段落
-   2. let paragraph = ParagraphGraphBuilder.build();
-   3. // 布局
-   4. paragraph.layoutSync(1250);
-   5. // 绘制文本
-   6. paragraph.paint(canvas, 0, 100);
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkGraphics2D/TextEngine/SimpleTextDrawing/entry/src/main/ets/pages/Index.ets#L58-L65)
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/86pe_KI5QCa8pju5wQXfjg/zh-cn_image_0000002589325045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/hwDcIp3DQx6V81WNdsr3Zw/zh-cn_image_0000002736313777.png)

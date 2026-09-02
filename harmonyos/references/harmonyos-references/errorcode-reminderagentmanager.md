@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: reminderAgentManager错误码
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 错误码 > reminderAgentManager错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a5c60ab504439a071f865104ebf1d16cacf2f059cc64d3ff8181346cb9b57b87
+scraped_at: 2026-09-02T15:01:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3529612525f4040d437683f6bfb77df2e682c7a5509f7e54127b23bc5ce6f8e1
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 1700001 通知使能未开启
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -36,8 +34,6 @@ Notification is not enabled.
 
 ## 1700002 提醒数量超出限制
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The number of reminders exceeds the limit.
@@ -48,18 +44,18 @@ The number of reminders exceeds the limit.
 
 **可能原因**
 
-1. 因管控限制，普通应用如果没有代理提醒的使用权限，提醒数量为0。
-2. 单个普通应用提醒数量不超过30个。
+1. 因管控限制，普通应用如果没有代理提醒的使用权限，视为这个普通应用提醒数量上限为0。
+2. 应用数量上限因API版本而异：
+   * API版本26.0.0及以上，单个普通应用最多支持64个提醒。
+   * API version 25及以下，单个普通应用最多支持30个提醒。
 3. 从API version 10开始，所有应用提醒数量总和不超过12000个。API version 9及之前的版本，提醒数量总和不超过2000个。
 
 **处理步骤**
 
-1. 首先，确认是否[申请了代理提醒的使用权限](../harmonyos-guides/agent-powered-reminder.md#约束与限制)。
-2. 然后，在申请通过情况下，检查提醒数量是否超过规定数量，及时删除不必要的提醒。
+1. 首先，确认是否[申请了代理提醒的使用权限](../harmonyos-guides/agent-powered-reminder.md#约束与限制)。由于系统限制且HarmonyOS 5.1.1(19)及其之前版本存量设备较少，新申请的权限在HarmonyOS 5.1.1(19)及其之前版本不再生效，建议升级至HarmonyOS 6.0.0(20)及以上版本。
+2. 然后，在申请通过情况下，优先检查签名是否配置正确，如果配置不正确，需要重新生成Profile文件并使用[手动签名](../harmonyos-guides/ide-signing-manual.md)；其次检查提醒数量是否超过规定数量，及时删除不必要的提醒。
 
 ## 1700003 提醒不存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -81,8 +77,6 @@ The reminder does not exist.
 
 ## 1700004 包名不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The bundle name does not exist.
@@ -101,8 +95,6 @@ The bundle name does not exist.
 检查应用包名是否存在。
 
 ## 1700007 参数错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

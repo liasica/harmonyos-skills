@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: SysCap (系统能力)
 breadcrumb: API参考 > 公共基础能力 > ArkTS API > SysCap (系统能力)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:17+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f67b03c836c0382153b55749374c09dc00d706f5f77ae532e4a2396bca674ecc
+scraped_at: 2026-09-02T15:03:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8de8d4f55542cb2e3b08717d285be0aca757166171f9e5be565da002dda4e00d
 ---
 
 系统能力（SystemCapability，简称SysCap），指操作系统中每一个相对独立的特性。不同的设备对应不同的系统能力集，每个系统能力对应一个或多个API。开发者可根据系统能力来判断是否可以使用某接口。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## canIUse
-
-PhonePC/2in1TabletTVWearable
 
 canIUse(syscap: string): boolean
 
@@ -40,21 +38,21 @@ canIUse(syscap: string): boolean
 
 **示例：**
 
-```
-1. import { geoLocationManager } from '@kit.LocationKit'
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { geoLocationManager } from '@kit.LocationKit'
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. const isLocationAvailable = canIUse('SystemCapability.Location.Location.Core');
-5. if (isLocationAvailable) {
-6. geoLocationManager.getCurrentLocation((err: BusinessError, location: geoLocationManager.Location) => {
-7. if (err) {
-8. console.error('err=' + JSON.stringify(err));
-9. }
-10. if (location) {
-11. console.info('location=' + JSON.stringify(location));
-12. }
-13. });
-14. } else {
-15. console.info('Location not by this device.');
-16. }
+const isLocationAvailable = canIUse('SystemCapability.Location.Location.Core');
+if (isLocationAvailable) {
+    geoLocationManager.getCurrentLocation((err: BusinessError, location: geoLocationManager.Location) => {
+        if (err) {
+            console.error('err=' + JSON.stringify(err));
+        }
+        if (location) {
+            console.info('location=' + JSON.stringify(location));
+        }
+    });
+} else {
+    console.info('Location not by this device.');
+}
 ```

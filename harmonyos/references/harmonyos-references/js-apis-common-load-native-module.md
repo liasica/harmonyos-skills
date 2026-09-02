@@ -3,34 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: loadNativeModule (同步动态加载系统库接口)
 breadcrumb: API参考 > 公共基础能力 > ArkTS API > loadNativeModule (同步动态加载系统库接口)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:17+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:7d1822f1ea7b3ecaa2a1cb420d00fce89dfae15b402aebac3cb7444540d2c7b4
+scraped_at: 2026-09-02T15:03:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5a464d30dc36fe172f4c82d3cf3675815debcfaaac10f20f315627d65d2ca771
 ---
 
 本模块提供了同步动态加载系统库接口的能力。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
-本模块接口仅可在Stage模型下使用。
-
 ## loadNativeModule
-
-PhonePC/2in1TabletTVWearable
 
 loadNativeModule(moduleName: string): Object
 
-loadNativeModule接口用于同步动态加载native模块，目的是按需加载所需要的模块。使用该接口会增加加载so文件的时间，开发者需评估其对功能的影响。
-
-说明
-
-loadNativeModule加载的模块名指的是依赖方oh-package.json5文件的dependencies字段内的名称。
-
-loadNativeModule接口仅支持在UI主线程中加载native模块。
-
-该接口在使用常量字符串或变量表达式作为参数时，都需要配置依赖。
+loadNativeModule接口用于同步动态加载native模块，目的是按需加载所需要的模块。
 
 **系统能力**：SystemCapability.Utils.Lang
 
@@ -44,7 +32,7 @@ loadNativeModule接口仅支持在UI主线程中加载native模块。
 
 | 类型 | 说明 |
 | --- | --- |
-| Object | native模块的默认导出。 |
+| Object | native模块的默认导出，需使用ArkTS的ESObject类型去接收。 |
 
 **错误码：**
 
@@ -62,51 +50,60 @@ loadNativeModule接口仅支持在UI主线程中加载native模块。
 | 系统库模块 | 加载@ohos.或@system. |
 | 应用内native模块 | 加载libNativeLibrary.so |
 
+### 使用注意事项
+
+* loadNativeModule仅支持在Stage模型的UI主线程中加载native模块。
+* 使用该接口会增加so文件的加载时间，使用前需评估其对应用性能和功能的影响。
+* 无论moduleName参数使用常量字符串还是变量表达式，都需要在依赖方模块级oh-package.json5文件的dependencies字段中配置依赖。moduleName的值为dependencies字段中声明的依赖名称。
+* 加载应用内native模块时，还需要在依赖方模块级build-profile.json5文件的buildOption.arkOptions.runtimeOnly.packages字段中配置模块名称。该名称需与oh-package.json5文件中的依赖名称及loadNativeModule的入参保持一致。
+* 接口声明的返回值类型为Object。调用时需使用ESObject类型的变量接收返回值，才能调用native模块导出的方法；使用Object类型接收返回值时，调用其中的方法可能会产生编译错误。
+
+以加载libentry.so为例，需要完成以下配置。
+
+1. 在模块级oh-package.json5文件中配置dependencies字段。配置说明见[模块级oh-package.json5](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_oh-packagejson5-字段说明)。
+
+   ```json
+   {
+     "dependencies": {
+       "libentry.so": "file:./src/main/cpp/types/libentry"
+     }
+   }
+   ```
+2. 在模块级build-profile.json5文件中配置runtimeOnly.packages字段。配置说明见[模块级build-profile.json5文件](../harmonyos-guides/ide-hvigor-build-profile.md)。
+
+   ```json
+   {
+     "buildOption": {
+       "arkOptions": {
+         "runtimeOnly": {
+           "packages": [
+             "libentry.so"
+           ]
+         }
+       }
+     }
+   }
+   ```
+
 **示例1**：HAP加载系统库模块
 
-```
-1. let hilog: ESObject = loadNativeModule("@ohos.hilog");
-2. hilog.info(0, "testTag", "loadNativeModule ohos.hilog success");
+```js
+let hilog: ESObject = loadNativeModule("@ohos.hilog");
+hilog.info(0, "testTag", "loadNativeModule ohos.hilog success");
 ```
 
 **示例2**：HAP加载Native库
 
 libentry.so的index.d.ts文件内容如下：
 
-```
-1. //index.d.ts
-2. export const add: (a: number, b: number) => number;
-```
-
-1.在加载本地so库时，配置模块级oh-package.json5文件的dependencies项。配置说明见[模块级oh-package.json5](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_oh-packagejson5-字段说明)。
-
-```
-1. {
-2. "dependencies": {
-3. "libentry.so": "file:./src/main/cpp/types/libentry"
-4. }
-5. }
+```javascript
+//index.d.ts
+export const add: (a: number, b: number) => number;
 ```
 
-2.在模块级build-profile.json5中进行配置。配置说明见[模块级build-profile.json5文件](../harmonyos-guides/ide-hvigor-build-profile.md)。
+完成[使用注意事项](js-apis-common-load-native-module.md#使用注意事项)中的依赖配置后，使用loadNativeModule加载libentry.so并调用add函数。
 
-```
-1. {
-2. "buildOption": {
-3. "arkOptions": {
-4. "runtimeOnly": {
-5. "packages": [
-6. "libentry.so"
-7. ]
-8. }
-9. }
-10. }
-11. }
-```
-
-3.使用loadNativeModule加载libentry.so，调用add函数。
-
-```
-1. let module: ESObject = loadNativeModule("libentry.so");
-2. let sum: number = module.add(1, 2);
+```js
+let module: ESObject = loadNativeModule("libentry.so");
+let sum: number = module.add(1, 2);
 ```

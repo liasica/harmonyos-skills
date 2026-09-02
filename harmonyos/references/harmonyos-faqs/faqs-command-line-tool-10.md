@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: ohpm publish在本地Git bash环境下一直报错“the content of private key in the key_path error”
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > ohpm publish在本地Git bash环境下一直报错“the content of private key in the key_path error”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:23+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:18+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d6ba53dd9c25ac7b201bb2f94be911dc0af8112fdd5243c530747a25bf9a664d
 ---
 

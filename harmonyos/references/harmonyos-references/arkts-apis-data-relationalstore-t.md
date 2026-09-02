@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Types
 category: harmonyos-references
-scraped_at: 2026-04-29T13:49:31+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:6e5c54504ba932e02a572634efa95bb0932590de4771d76f42450ffdecb834b6
+scraped_at: 2026-09-02T15:00:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c8d6927cf16b33c432a4aeb20725a4082b8142f33de43f916e2128bbca22f630
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## Assets10+
-
-PhonePC/2in1TabletTVWearable
 
 type Assets = Asset[]
 
@@ -27,8 +25,6 @@ type Assets = Asset[]
 | [Asset](arkts-apis-data-relationalstore-i.md#asset10)[] | 表示Asset类型的数组。 |
 
 ## ValueType
-
-PhonePC/2in1TabletTVWearable
 
 type ValueType = null | number | string | boolean | Uint8Array | Asset | Assets | Float32Array | bigint
 
@@ -50,8 +46,6 @@ type ValueType = null | number | string | boolean | Uint8Array | Asset | Assets 
 
 ## ValuesBucket
 
-PhonePC/2in1TabletTVWearable
-
 type ValuesBucket = Record<string, ValueType>
 
 用于存储键值对的类型。不支持Sendable跨线程传递。
@@ -63,8 +57,6 @@ type ValuesBucket = Record<string, ValueType>
 | Record<string, [ValueType](arkts-apis-data-relationalstore-t.md#valuetype)> | 表示键值对类型。键的类型为string，值的类型为[ValueType](arkts-apis-data-relationalstore-t.md#valuetype)。 |
 
 ## PRIKeyType10+
-
-PhonePC/2in1TabletTVWearable
 
 type PRIKeyType = number | string
 
@@ -79,11 +71,9 @@ type PRIKeyType = number | string
 
 ## UTCTime10+
 
-PhonePC/2in1TabletTVWearable
-
 type UTCTime = Date
 
-用于表示UTC类型时间的数据类型。
+用于表示UTC时间的数据类型。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
@@ -93,8 +83,6 @@ type UTCTime = Date
 
 ## ModifyTime10+
 
-PhonePC/2in1TabletTVWearable
-
 type ModifyTime = Map<PRIKeyType, UTCTime>
 
 用于存储数据库表的主键和修改时间的数据类型。
@@ -103,11 +91,9 @@ type ModifyTime = Map<PRIKeyType, UTCTime>
 
 | 类型 | 说明 |
 | --- | --- |
-| Map<[PRIKeyType](arkts-apis-data-relationalstore-t.md#prikeytype10), [UTCTime](arkts-apis-data-relationalstore-t.md#utctime10)> | 键表示是数据库表某一行的主键，值表示该行的最后修改时间，用UTC格式表示。 |
+| Map<[PRIKeyType](arkts-apis-data-relationalstore-t.md#prikeytype10), [UTCTime](arkts-apis-data-relationalstore-t.md#utctime10)> | 键是数据库表某一行的主键，值表示该行的最后修改时间，用UTC格式表示。 |
 
 ## RowData23+
-
-PhonePC/2in1TabletTVWearable
 
 type RowData = Array<ValueType>
 
@@ -122,8 +108,6 @@ type RowData = Array<ValueType>
 | Array<[ValueType](arkts-apis-data-relationalstore-t.md#valuetype)> | 表示[ValueType](arkts-apis-data-relationalstore-t.md#valuetype)类型的数组。 |
 
 ## RowsData23+
-
-PhonePC/2in1TabletTVWearable
 
 type RowsData = Array<RowData>
 

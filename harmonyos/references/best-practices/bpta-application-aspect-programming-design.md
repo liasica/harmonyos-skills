@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用切面编程设计
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用切面编程设计
 category: best-practices
-scraped_at: 2026-04-29T14:10:46+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:92fc2f4d803117f55efc2742fbcced2b568ab6d7f9409b482e61548eeb01e37e
+scraped_at: 2026-09-02T15:03:16+08:00
+doc_updated_at: 2026-07-31
+content_hash: sha256:06a9ab00031c3557d94c24d887aedc2e3abb65fab766cd2e97edf94696872572
 ---
 
 ## 概述
@@ -32,80 +32,74 @@ HarmonyOS主要通过插桩机制来实现切面编程，并提供了[Aspect类]
 addBefore()、addAfter()、replace()接口的原理基于class的ECMAScript语义，即类的静态方法是类的属性，类的实例方法是类的原型对象(prototype)的属性。
 
 **图1** class的ECMAScript语义示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/f1cKGw5bRYS5M4aOfvQKsw/zh-cn_image_0000002380185801.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/DPqeEbrbQBCD0PKOmObpZQ/zh-cn_image_0000002380185801.png "点击放大")
 
 ### 原理解析
 
 类的实例有一个属性\_\_proto\_\_（称为原型），它是指向类的prototype的引用，如图2所示。实例调用方法时，会通过\_\_proto\_\_找到类的prototype，再在prototype中找到方法并执行。类的原型对象prototype被所有实例共享，因此修改原型对象中的方法会影响所有实例。
 
 **图2** 类的实例化示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ANaqYStfS0KaXC-cagecLg/zh-cn_image_0000002346386188.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/cTlcAkqYTEaOiGReqAap9w/zh-cn_image_0000002346386188.png "点击放大")
 
 原型对象也有原型\_proto\_。类的继承通过原型实现。实例方法调用时，会在原型链上查找方法，找到后执行调用。具体如图3所示。
 
 **图3** 类的原型与继承  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/fYiagsl7QJyLJzTA4KmoTQ/zh-cn_image_0000002346386564.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/RWfEHCQmRoW0FhaOf7hbng/zh-cn_image_0000002346386564.png "点击放大")
 
 插桩和替换的操作是将回调参数与原方法组合成新函数，再用新函数替换原方法。具体如图4所示。
 
 **图4** 插桩和替换原理示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vZk_34gISD6AIZt5D_xHwA/zh-cn_image_0000002346546400.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Sp6QB36vQ7aAVjKQSJa2og/zh-cn_image_0000002346546400.png "点击放大")
 
 ### 接口原理的伪代码示例
 
 **addBefore: 类方法前插桩**
 
+```typescript
+// Instrument before class method execution
+static addBefore(targetClass, methodName, isStatic, before): void {
+  let target =  isStatic ? targetClass : targetClass.prototype;
+  let origin = target[methodName];
+  // Define a new function that first executes "before" and then executes the old method.
+  let newFunc = function (...args) {
+    before(this, ...args);
+    return origin.bind(this)(...args);
+  }
+  // Replace the method with a new function
+  target[methodName] = newFunc;
+}
 ```
-1. // Instrument before class method execution
-2. static addBefore(targetClass, methodName, isStatic, before): void {
-3. let target =  isStatic ? targetClass : targetClass.prototype;
-4. let origin = target[methodName];
-5. // Define a new function that first executes "before" and then executes the old method.
-6. let newFunc = function (...args) {
-7. before(this, ...args);
-8. return origin.bind(this)(...args);
-9. }
-10. // Replace the method with a new function
-11. target[methodName] = newFunc;
-12. }
-```
-
-[MethodDecorator.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/MethodDecorator.ts#L25-L36)
 
 **addAfter: 类方法后插桩**
 
+```typescript
+// Instrument after class method execution
+static addAfter(targetClass, methodName, isStatic, after) : void {
+  let target =  isStatic ? targetClass : targetClass.prototype;
+  let origin = target[methodName];
+  // Define a new function that first executes the old method, then executes after.
+  let newFunc = function (...args) {
+    let ret = origin.bind(this)(...args);
+    return after(this, ret, ...args);
+  }
+  // Replace the method with a new function
+  target[methodName] = newFunc;
+}
 ```
-1. // Instrument after class method execution
-2. static addAfter(targetClass, methodName, isStatic, after) : void {
-3. let target =  isStatic ? targetClass : targetClass.prototype;
-4. let origin = target[methodName];
-5. // Define a new function that first executes the old method, then executes after.
-6. let newFunc = function (...args) {
-7. let ret = origin.bind(this)(...args);
-8. return after(this, ret, ...args);
-9. }
-10. // Replace the method with a new function
-11. target[methodName] = newFunc;
-12. }
-```
-
-[MethodDecorator.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/MethodDecorator.ts#L40-L51)
 
 **replace: 替换类方法**
 
+```typescript
+static replace(targetClass, methodName, isStatic, instead) : void {
+  let target =  isStatic ? targetClass : targetClass.prototype;
+  // Define a new function that only executes "instead" inside.
+  let newFunc = function (...args) {
+    return instead(this, ...args);
+  }
+  // Replace the method with a new function
+  target[methodName] = newFunc;
+}
 ```
-1. static replace(targetClass, methodName, isStatic, instead) : void {
-2. let target =  isStatic ? targetClass : targetClass.prototype;
-3. // Define a new function that only executes "instead" inside.
-4. let newFunc = function (...args) {
-5. return instead(this, ...args);
-6. }
-7. // Replace the method with a new function
-8. target[methodName] = newFunc;
-9. }
-```
-
-[MethodDecorator.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/MethodDecorator.ts#L55-L63)
 
 ## 场景1：方法参数校验
 
@@ -121,53 +115,49 @@ addBefore()、addAfter()、replace()接口的原理基于class的ECMAScript语�
 
 1. 在class A中，封装其基础能力，此处为获取数组指定下标的元素。
 
+   ```typescript
+   // baseAbility.ts
+   export class A {
+     getElementByIndex<T>(arr: Array<T>, idx: number): T {
+       return arr[idx];
+     }
+   }
    ```
-   1. // baseAbility.ts
-   2. export class A {
-   3. getElementByIndex<T>(arr: Array<T>, idx: number): T {
-   4. return arr[idx];
-   5. }
-   6. }
-   ```
-
-   [baseAbility.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/baseAbility.ts#L21-L26)
 2. 在主界面中集成基础能力，并校验参数类型、判断下标是否越界。
 
+   ```typescript
+   // index.ets
+   import { util } from '@kit.ArkTS';
+   import { A } from '../components/baseAbility';
+
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       // UI code
+     }
+   }
+
+   util.Aspect.addBefore(A, 'getElementByIndex', false,
+     // Check the parameters
+     (instance: A, arr: Object, idx: number) => {
+       if (!(arr instanceof Array)) {
+         throw Error('arg arr is expected to be an array');
+       }
+       if (!(Number.isInteger(idx) && idx >= 0)) {
+         throw Error('arg idx is expected to be a non-negative integer');
+       }
+       if (idx >= arr.length) {
+         throw Error('arg idx is expected to be smaller than arr.length');
+       }
+     });
+   // The original method is executed
+   let buffer: Array<number> = [1, 2, 3, 5];
+   let that = new A();
+   that.getElementByIndex(buffer, -1);
+   that.getElementByIndex(buffer, 5);
+   that.getElementByIndex(123 as Object as Array<number>, 5)
    ```
-   1. // index.ets
-   2. import { util } from '@kit.ArkTS';
-   3. import { A } from '../components/baseAbility';
-
-   5. @Entry
-   6. @Component
-   7. struct Index {
-   8. build() {
-   9. // UI code
-   10. }
-   11. }
-
-   13. util.Aspect.addBefore(A, 'getElementByIndex', false,
-   14. // Check the parameters
-   15. (instance: A, arr: Object, idx: number) => {
-   16. if (!(arr instanceof Array)) {
-   17. throw Error('arg arr is expected to be an array');
-   18. }
-   19. if (!(Number.isInteger(idx) && idx >= 0)) {
-   20. throw Error('arg idx is expected to be a non-negative integer');
-   21. }
-   22. if (idx >= arr.length) {
-   23. throw Error('arg idx is expected to be smaller than arr.length');
-   24. }
-   25. });
-   26. // The original method is executed
-   27. let buffer: Array<number> = [1, 2, 3, 5];
-   28. let that = new A();
-   29. that.getElementByIndex(buffer, -1);
-   30. that.getElementByIndex(buffer, 5);
-   31. that.getElementByIndex(123 as Object as Array<number>, 5)
-   ```
-
-   [Index.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/Index.ets#L20-L50)
 
 ## 场景2：统计方法执行次数、时间
 
@@ -183,106 +173,98 @@ addBefore()、addAfter()、replace()接口的原理基于class的ECMAScript语�
 
 1. 统计执行次数。
 
-   ```
-   1. // somePackage.ets
-   2. export class Test {
-   3. foo(){}
-   4. }
-   ```
-
-   [somePackage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/somePackage.ets#L21-L24)
-
-   ```
-   1. // index.ets
-   2. import { util } from '@kit.ArkTS';
-   3. import { Test } from '../components/somePackage';
-
-   5. @Entry
-   6. @Component
-   7. struct Index {
-   8. build() {
-   9. // UI code
-   10. }
-   11. }
-   12. util.TextDecoder.toString();
-   13. // increment call count
-   14. let countFoo = 0;
-   15. util.Aspect.addBefore(Test, 'foo', false, () => {
-   16. countFoo++;
-   17. });
-   18. // Invoke and print logs
-   19. new Test().foo();
-   20. console.log('countFoo = ', countFoo);
-   21. // [LOG]: "countFoo = ", 1
-   22. let a = new Test();
-   23. a.foo()
-   24. console.log('countFoo = ', countFoo);
-   25. // [LOG]: "countFoo = ", 2
-   26. function bar(a: Test) {
-   27. a.foo();
-   28. console.log('countFoo = ', countFoo);
-   29. new Test().foo();
-   30. console.log('countFoo = ', countFoo);
-   31. }
-   32. bar(a);
-   33. // [LOG]: "countFoo = ", 3
-   34. // [LOG]: "countFoo = ", 4
-   35. console.log('countFoo = ', countFoo);
-   36. // [LOG]: "countFoo = ", 4
+   ```typescript
+   // somePackage.ets
+   export class Test {
+     foo(){}
+   }
    ```
 
-   [Index1.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/Index1.ets#L22-L57)
+   ```typescript
+   // index.ets
+   import { util } from '@kit.ArkTS';
+   import { Test } from '../components/somePackage';
+
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       // UI code
+     }
+   }
+   util.TextDecoder.toString();
+   // increment call count
+   let countFoo = 0;
+   util.Aspect.addBefore(Test, 'foo', false, () => {
+     countFoo++;
+   });
+   // Invoke and print logs
+   new Test().foo();
+   console.log('countFoo = ', countFoo);
+   // [LOG]: "countFoo = ", 1
+   let a = new Test();
+   a.foo()
+   console.log('countFoo = ', countFoo);
+   // [LOG]: "countFoo = ", 2
+   function bar(a: Test) {
+     a.foo();
+     console.log('countFoo = ', countFoo);
+     new Test().foo();
+     console.log('countFoo = ', countFoo);
+   }
+   bar(a);
+   // [LOG]: "countFoo = ", 3
+   // [LOG]: "countFoo = ", 4
+   console.log('countFoo = ', countFoo);
+   // [LOG]: "countFoo = ", 4
+   ```
 2. 统计执行时间。
 
-   ```
-   1. // somePackage1.ets
-   2. export class Test1 {
-   3. doSomething() { // instance method
-   4. // ...
-   5. }
-   6. static test() { // static method
-   7. // ...
-   8. }
-   9. }
-   ```
-
-   [somePackage1.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/somePackage1.ets#L21-L29)
-
-   ```
-   1. // index2.ets
-   2. import {util} from '@kit.ArkTS';
-   3. import { Test1 } from '../components/somePackage1';
-
-   5. @Entry
-   6. @Component
-   7. struct Index {
-   8. build() {
-   9. // UI code
-   10. }
-   11. }
-   12. // Print the time before and after the insertion, and encapsulate the insertion action into an interface
-   13. function addTimePrinter(targetClass: Object, methodName: string, isStatic: boolean) {
-   14. let t1 = 0;
-   15. let t2 = 0;
-   16. util.Aspect.addBefore(targetClass, methodName, isStatic, () => {
-   17. t1 = new Date().getTime();
-   18. });
-   19. util.Aspect.addAfter(targetClass, methodName, isStatic, () => {
-   20. t2 = new Date().getTime();
-   21. console.log("t2---t1 = " + (t2 - t1).toString());
-   22. });
-   23. }
-   24. // Add the logic for printing the execution time to the doSomething instance method of Test
-   25. addTimePrinter(Test1, 'doSomething', false);
-   26. new Test1().doSomething()
-   27. // Add the logic for printing the execution time to the test static method of the test
-   28. addTimePrinter(Test1, 'test', true);
-   29. Test1.test()
+   ```typescript
+   // somePackage1.ets
+   export class Test1 {
+     doSomething() { // instance method
+       // ...
+     }
+     static test() { // static method
+       // ...
+     }
+   }
    ```
 
-   [Index2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/Index2.ets#L21-L49)
+   ```typescript
+   // index2.ets
+   import {util} from '@kit.ArkTS';
+   import { Test1 } from '../components/somePackage1';
 
-说明
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       // UI code
+     }
+   }
+   // Print the time before and after the insertion, and encapsulate the insertion action into an interface
+   function addTimePrinter(targetClass: Object, methodName: string, isStatic: boolean) {
+     let t1 = 0;
+     let t2 = 0;
+     util.Aspect.addBefore(targetClass, methodName, isStatic, () => {
+       t1 = new Date().getTime();
+     });
+     util.Aspect.addAfter(targetClass, methodName, isStatic, () => {
+       t2 = new Date().getTime();
+       console.log("t2---t1 = " + (t2 - t1).toString());
+     });
+   }
+   // Add the logic for printing the execution time to the doSomething instance method of Test
+   addTimePrinter(Test1, 'doSomething', false);
+   new Test1().doSomething()
+   // Add the logic for printing the execution time to the test static method of the test
+   addTimePrinter(Test1, 'test', true);
+   Test1.test()
+   ```
+
+**说明** 
 
 不推荐使用该方式统计多个线程执行的函数，以免造成方法次数变量或执行时间变量的写冲突。
 
@@ -294,7 +276,7 @@ addBefore()、addAfter()、replace()接口的原理基于class的ECMAScript语�
 
 在addAfter的回调参数中，第二个参数为原方法的返回值，可校验该返回值。
 
-说明
+**说明** 
 
 addAfter回调返回值会代替原方法的返回值。
 
@@ -302,42 +284,38 @@ addAfter回调返回值会代替原方法的返回值。
 
 1. 对三方库方法返回的网址进行校验，校验不通过的抛出异常。
 
-   ```
-   1. // someThirdParty.ets
-   2. export class WebHandler {
-   3. getWebAddrHttps(): string {
-   4. let ret = 'http';
-   5. // ...
-   6. return ret;
-   7. }
-   8. }
-   ```
-
-   [someThirdParty.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/someThirdParty.ets#L21-L28)
-
-   ```
-   1. // index.ets
-   2. import {util} from '@kit.ArkTS';
-   3. import { WebHandler } from '../components/someThirdParty';
-
-   5. @Entry
-   6. @Component
-   7. struct Index {
-   8. build() {
-   9. // UI code
-   10. }
-   11. }
-   12. util.Aspect.addAfter(WebHandler, 'getWebAddrHttps', false, (instance: WebHandler, ret: string) => {
-   13. if (!ret.startsWith('https')) {
-   14. throw Error('Handler\'s method \'getWebAddrHttps\': return value does not start with \'https\'');
-   15. }
-   16. // Verification is correct, remember to return the original method's return value.
-   17. return ret;
-   18. });
-   19. new WebHandler().getWebAddrHttps();
+   ```typescript
+   // someThirdParty.ets
+   export class WebHandler {
+     getWebAddrHttps(): string {
+       let ret = 'http';
+       // ...
+       return ret;
+     }
+   }
    ```
 
-   [Index3.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/Index3.ets#L21-L39)
+   ```typescript
+   // index.ets
+   import {util} from '@kit.ArkTS';
+   import { WebHandler } from '../components/someThirdParty';
+
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       // UI code
+     }
+   }
+   util.Aspect.addAfter(WebHandler, 'getWebAddrHttps', false, (instance: WebHandler, ret: string) => {
+     if (!ret.startsWith('https')) {
+       throw Error('Handler\'s method \'getWebAddrHttps\': return value does not start with \'https\'');
+     }
+     // Verification is correct, remember to return the original method's return value.
+     return ret;
+   });
+   new WebHandler().getWebAddrHttps();
+   ```
 
 ## 场景4：在方法中校验成员变量
 
@@ -351,48 +329,44 @@ addAfter回调返回值会代替原方法的返回值。
 
 1. 在getInfo()方法中校验Person类的name和age属性是否正常。
 
-   ```
-   1. // somePackage.ets
-   2. export class Person {
-   3. name: string;
-   4. age: number;
-   5. constructor(n: string, a: number) {
-   6. this.name = n;
-   7. this.age = a;
-   8. }
-   9. getInfo(): string {
-   10. return 'name: ' + this.name + ', ' + 'age: ' + this.age.toString();
-   11. }
-   12. }
-   ```
-
-   [somePackage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/somePackage.ets#L28-L39)
-
-   ```
-   1. // index.ets
-   2. import {util} from '@kit.ArkTS';
-   3. import { Person } from '../components/somePackage';
-
-   5. @Entry
-   6. @Component
-   7. struct Index {
-   8. build() {
-   9. // UI code
-   10. }
-   11. }
-   12. // Verify the name and age members
-   13. util.Aspect.addBefore(Person, 'getInfo', false, (instance: Person) => {
-   14. if (instance.name.length == 0) {
-   15. throw Error('empty name');
-   16. }
-   17. if (instance.age < 0) {
-   18. throw Error('invalid age');
-   19. }
-   20. });
-   21. new Person('c', -1).getInfo();
+   ```typescript
+   // somePackage.ets
+   export class Person {
+     name: string;
+     age: number;
+     constructor(n: string, a: number) {
+       this.name = n;
+       this.age = a;
+     }
+     getInfo(): string {
+       return 'name: ' + this.name + ', ' + 'age: ' + this.age.toString();
+     }
+   }
    ```
 
-   [Index4.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/Index4.ets#L21-L41)
+   ```typescript
+   // index.ets
+   import {util} from '@kit.ArkTS';
+   import { Person } from '../components/somePackage';
+
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       // UI code
+     }
+   }
+   // Verify the name and age members
+   util.Aspect.addBefore(Person, 'getInfo', false, (instance: Person) => {
+     if (instance.name.length == 0) {
+       throw Error('empty name');
+     }
+     if (instance.age < 0) {
+       throw Error('invalid age');
+     }
+   });
+   new Person('c', -1).getInfo();
+   ```
 
 ## 场景5：替换方法实现
 
@@ -406,39 +380,35 @@ replace()的第四个参数是回调函数，该回调函数会代替原方法�
 
 1. 修改foo()方法中的打印日志。
 
-   ```
-   1. export class Test2 {
-   2. foo(arg: string) {
-   3. console.log(arg);
-   4. }
-   5. }
-   ```
-
-   [somePackage.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/somePackage.ets#L43-L47)
-
-   ```
-   1. // index.ets
-   2. import {util} from '@kit.ArkTS';
-   3. import { Test2 } from '../components/somePackage';
-
-   5. @Entry
-   6. @Component
-   7. struct Index {
-   8. build() {
-   9. // UI code
-   10. }
-   11. }
-   12. new Test2().foo('123');
-   13. // [LOG]: "123"
-   14. // replace the original method
-   15. util.Aspect.replace(Test2, 'foo', false, (instance: Test2, arg: string) => {
-   16. console.log(arg + ' __replaced implementation');
-   17. });
-   18. new Test2().foo('123');
-   19. // [LOG]: "123 __replaced implementation"
+   ```typescript
+   export class Test2 {
+     foo(arg: string) {
+       console.log(arg);
+     }
+   }
    ```
 
-   [Index5.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/Index5.ets#L21-L39)
+   ```typescript
+   // index.ets
+   import {util} from '@kit.ArkTS';
+   import { Test2 } from '../components/somePackage';
+
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       // UI code
+     }
+   }
+   new Test2().foo('123');
+   // [LOG]: "123"
+   // replace the original method
+   util.Aspect.replace(Test2, 'foo', false, (instance: Test2, arg: string) => {
+     console.log(arg + ' __replaced implementation');
+   });
+   new Test2().foo('123');
+   // [LOG]: "123 __replaced implementation"
+   ```
 
 ## 场景6：替换子类继承的方法实现
 
@@ -454,91 +424,79 @@ replace()的第四个参数是回调函数，该回调函数会代替原方法�
 
 1. Base有两个子类Child1和Child2，两个子类都继承了foo()方法。需要修改Child1的foo()的实现，但不影响Base和Child2的foo()方法。
 
-   ```
-   1. // base.ets
-   2. export class Base {
-   3. foo() {
-   4. console.log('hello');
-   5. }
-   6. }
-   ```
-
-   [base.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/base.ts#L24-L29)
-
-   ```
-   1. // child1
-   2. import {Base} from './base';
-   3. export class Child1 extends Base {}
+   ```typescript
+   // base.ets
+   export class Base {
+     foo() {
+       console.log('hello');
+     }
+   }
    ```
 
-   [child1.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/child1.ts#L20-L22)
-
-   ```
-   1. // child.ets
-   2. import {Base} from './base';
-   3. export class Child extends Base {
-   4. // Inherit the getCurrentLocation method of the parent class
-   5. }
+   ```typescript
+   // child1
+   import {Base} from './base';
+   export class Child1 extends Base {}
    ```
 
-   [child2.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/child2.ts#L20-L24)
+   ```typescript
+   // child.ets
+   import {Base} from './base';
+   export class Child extends Base {
+     // Inherit the getCurrentLocation method of the parent class
+   }
+   ```
 
 ### 案例二：获取实时位置信息
 
 1. Child类继承了Base类的获取实时位置方法，但测试发现Child类的getCurrentLocation()方法在实际场景中调用非常频繁，需要控制调用频率。采取的措施是修改Child类的getCurrentLocation()方法的实现，通过缓存位置信息来减少系统接口的调用次数。具体实现为：如果从上次调用到现在的时间不足60秒，则直接返回缓存的位置信息；否则，调用系统接口获取新的位置信息并更新缓存。
 
-   ```
-   1. import { geoLocationManager } from "@kit.LocationKit";
-   2. export class Base1 {
-   3. getCurrentLocation() {
-   4. return geoLocationManager.getCurrentLocation();
-   5. }
-   6. }
-   ```
-
-   [base.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/base.ts#L21-L38)
-
-   ```
-   1. // child.ets
-   2. import {Base1} from "./base";
-   3. export class Child extends Base1 {
-   4. // inherit the getCurrentLocation method from the parent class
-   5. }
+   ```typescript
+   import { geoLocationManager } from "@kit.LocationKit";
+   export class Base1 {
+     getCurrentLocation() {
+       return geoLocationManager.getCurrentLocation();
+     }
+   }
    ```
 
-   [child.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/child.ts#L21-L25)
-
-   ```
-   1. // index.ets
-   2. import { util } from '@kit.ArkTS';
-   3. import { geoLocationManager } from "@kit.LocationKit";
-   4. import { Child } from '../components/child';
-
-   6. @Entry
-   7. @Component
-   8. struct Index {
-   9. build() {
-   10. // UIcode
-   11. }
-   12. }
-   13. let cached_location: Object | undefined;
-   14. let time: number | undefined;
-   15. util.Aspect.replace(Child, 'getCurrentLocation', false, () => {
-   16. let newTime = new Date().getTime();
-   17. // Real-time location can be called at most once per minute.
-   18. if (!cached_location || !time || newTime - time > 60000) {
-   19. time = newTime;
-   20. cached_location = geoLocationManager.getCurrentLocation();
-   21. }
-   22. // Return cached location information
-   23. return cached_location;
-   24. });
-   25. new Child().getCurrentLocation()
+   ```typescript
+   // child.ets
+   import {Base1} from "./base";
+   export class Child extends Base1 {
+     // inherit the getCurrentLocation method from the parent class
+   }
    ```
 
-   [Index7.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/Index7.ets#L21-L45)
+   ```typescript
+   // index.ets
+   import { util } from '@kit.ArkTS';
+   import { geoLocationManager } from "@kit.LocationKit";
+   import { Child } from '../components/child';
 
-说明
+   @Entry
+   @Component
+   struct Index {
+     build() {
+       // UIcode
+     }
+   }
+   let cached_location: Object | undefined;
+   let time: number | undefined;
+   util.Aspect.replace(Child, 'getCurrentLocation', false, () => {
+     let newTime = new Date().getTime();
+     // Real-time location can be called at most once per minute.
+     if (!cached_location || !time || newTime - time > 60000) {
+       time = newTime;
+       cached_location = geoLocationManager.getCurrentLocation();
+     }
+     // Return cached location information
+     return cached_location;
+   });
+   new Child().getCurrentLocation()
+   ```
+
+**说明** 
 
 访问设备的位置信息，必须申请以下权限，并且获得用户授权：
 
@@ -559,27 +517,25 @@ replace()的第四个参数是回调函数，该回调函数会代替原方法�
 
 1. 通过类实例的constructor属性获取类对象。
 
+   ```typescript
+   // EntryAbility.ets
+   import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { util } from '@kit.ArkTS';
+   // Obtain the target package name
+   export default class EntryAbility extends UIAbility {
+     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+       hilog.info(0x0000, 'testTag', '%{public}s', ' onCreate');
+       util.Aspect.addBefore(this.context.constructor, 'startAbility', false,
+         (instance: Object, wantParam: Want) => {
+           console.info('UIAbilityContext startAbility: want.bundleName is ' + wantParam.bundleName);
+         });
+       this.context.startAbility(want, () => {})
+     }
+     // Other related configurations
+     // ...
+   }
    ```
-   1. // EntryAbility.ets
-   2. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. import { util } from '@kit.ArkTS';
-   5. // Obtain the target package name
-   6. export default class EntryAbility extends UIAbility {
-   7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-   8. hilog.info(0x0000, 'testTag', '%{public}s', ' onCreate');
-   9. util.Aspect.addBefore(this.context.constructor, 'startAbility', false,
-   10. (instance: Object, wantParam: Want) => {
-   11. console.info('UIAbilityContext startAbility: want.bundleName is ' + wantParam.bundleName);
-   12. });
-   13. this.context.startAbility(want, () => {})
-   14. }
-   15. // Other related configurations
-   16. // ...
-   17. }
-   ```
-
-   [EntryAbility.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/entryability/EntryAbility.ets#L21-L37)
 
 ## 场景8： 对系统SDK的接口插桩
 
@@ -594,45 +550,129 @@ replace()的第四个参数是回调函数，该回调函数会代替原方法�
 
 对于第一种场景，可以接将类名、类方法名传给util.Aspect。如果类未导出，仅有类的示例，可参考场景7，通过实例的构造方法返回传参。
 
-对于第二种场景，应用可以将该接口自行包装成类，再使用util.Aspect进行插桩。
+对于第二种场景，应用可以将该接口自行包装成类，再使用util.Aspect进行插桩。也可以自行封装入参为namespace的Aspect接口供插桩使用。
 
 ### 开发步骤
 
-1. 对于场景2，以window.createWindow()插桩为例，可以将window的相关需要插桩的方法封装成包装类，再对包装类进行插桩。
+* 对于场景2，以window.createWindow()插桩为例，可以将window的相关需要插桩的方法封装成包装类，再对包装类进行插桩。
 
-   ```
-   1. // WindowWrap.ets
+  ```typescript
+  // WindowWrap.ets
 
-   3. import { window } from '@kit.ArkUI';
-   4. import { util } from '@kit.ArkTS';
+  import { window } from '@kit.ArkUI';
+  import { util } from '@kit.ArkTS';
 
-   6. export class WindowWrap {
-   7. private static instance: WindowWrap = new WindowWrap();
+  export class WindowWrap {
+    private static instance: WindowWrap = new WindowWrap();
 
-   9. private constructor() {
-   10. }
+    private constructor() {
+    }
 
-   12. public static getInstance() {
-   13. return WindowWrap.instance;
-   14. }
+    public static getInstance() {
+      return WindowWrap.instance;
+    }
 
-   16. public createWindow() {
-   17. let config: window.Configuration = {
-   18. name: 'test',
-   19. windowType: window.WindowType.TYPE_DIALOG
-   20. }
-   21. window.createWindow(config, () => {
-   22. // do something
-   23. })
-   24. }
-   25. }
+    public createWindow() {
+      let config: window.Configuration = {
+        name: 'test',
+        windowType: window.WindowType.TYPE_DIALOG
+      }
+      window.createWindow(config, () => {
+        // do something
+      })
+    }
+  }
 
-   27. util.Aspect.addBefore(WindowWrap, 'createWindow', false, (instance: WindowWrap): void => {
-   28. console.info('addBefore createWindow');
-   29. })
-   ```
+  util.Aspect.addBefore(WindowWrap, 'createWindow', false, (instance: WindowWrap): void => {
+    console.info('addBefore createWindow');
+  })
+  ```
+* 对于场景2，以window.createWindow()插桩为例，也可以自行封装入参为namespace的Aspect接口供插桩使用。
 
-   [WindowWrap.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/components/WindowWrap.ets#L21-L50)
+  ```screen
+  // NameSpaceAspect.ts
+
+  type AnyType = Object | null | undefined;
+
+  export class NameSpaceAspect {
+    static addBefore(namespace: ESObject, methodName: string, before: Function): void {
+      let oldFunc = (namespace as Record<string, Function>)[methodName];
+      let isAsync = oldFunc.constructor.name === 'AsyncFunction';
+      if (!isAsync) {
+        let newFunc = function (...args: AnyType[]): AnyType {
+          before(...args);
+          return oldFunc.bind(this)(...args);
+        };
+        (namespace as Record<string, Function>)[methodName] = newFunc;
+      } else {
+        let newFunc = async function (...args: AnyType[]): Promise<AnyType> {
+          before(...args);
+          return await oldFunc.bind(this)(...args);
+        };
+        (namespace as Record<string, Function>)[methodName] = newFunc;
+      }
+    }
+
+    static addAfter(namespace: ESObject, methodName: string, after: Function): void {
+      let oldFunc = (namespace as Record<string, Function>)[methodName];
+      let isAsync = oldFunc.constructor.name === 'AsyncFunction';
+      if (!isAsync) {
+        let newFunc = function (...args: AnyType[]): AnyType {
+          let ret1 = oldFunc.bind(this)(...args);
+          let ret2 = after(this, ret1, ...args);
+          return ret2;
+        };
+        (namespace as Record<string, Function>)[methodName] = newFunc;
+      } else {
+        let newFunc = async function (...args: AnyType[]): Promise<AnyType> {
+          let ret1 = oldFunc.bind(this)(...args);
+          let ret2 = after(this, ret1, ...args);
+          return ret2;
+        };
+        (namespace as Record<string, Function>)[methodName] = newFunc;
+      }
+    }
+
+    static replace(namespace: ESObject, methodName: string, instead: Function): void {
+      let oldFunc = (namespace as Record<string, Function>)[methodName];
+      let isAsync = oldFunc.constructor.name === 'AsyncFunction';
+      if (!isAsync) {
+        let newFunc = function (...args: AnyType[]): AnyType {
+          return instead(...args);
+        };
+        (namespace as Record<string, Function>)[methodName] = newFunc;
+      } else {
+        let newFunc = async function (...args: AnyType[]): Promise<AnyType> {
+          return await instead(...args);
+        };
+        (namespace as Record<string, Function>)[methodName] = newFunc;
+      }
+    }
+  }
+  ```
+
+  ```screen
+  // WindowAop.ts
+
+  import { window } from '@kit.ArkUI';
+  import { NameSpaceAspect } from './NameSpaceAspect';
+
+  NameSpaceAspect.addBefore(window, 'createWindow', () => {
+    console.info('addBefore createWindow');
+  });
+  ```
+
+  **说明** 
+
+  如使用Aspect接口报以下错误信息：
+
+  Error name:TypeError
+
+  Error message:Cannot assign to read only property
+
+  原因为被插桩方法的**属性描述符的writable字段设置为false**，该方法无法进行插桩。
+
+  HarmonyOS 7.0版本开始，系统SDK接口的属性描述符的writable字段默认设置为true。
 
 ## 附录：接口使用注意事项
 
@@ -641,83 +681,79 @@ replace()的第四个参数是回调函数，该回调函数会代替原方法�
 3. 对父类进行插桩会影响所有子类；对子类进行插桩不会影响父类（无论方法是否继承自父类），但会影响该子类的所有子类。
 4. 接口的第四个参数是回调函数，回调函数的第一个参数是执行方法调用的this对象。如果通过该对象调用原方法且没有退出机制，容易导致无限递归。若需调用原方法，建议在接口调用前将其存储起来。不推荐的用法如下示例。
 
-   ```
-   1. class Test {
-   2. foo() {}
-   3. }
-   4. util.Aspect.addBefore(Test, 'foo', false, (instance: Test) => {
-   5. instance.foo();
-   6. });
-   7. // Infinite recursion
-   8. new Test().foo();
+   ```typescript
+   class Test {
+     foo() {}
+   }
+   util.Aspect.addBefore(Test, 'foo', false, (instance: Test) => {
+     instance.foo();
+   });
+   // Infinite recursion
+   new Test().foo();
    ```
 
    如果有需要调用原方法的场景，实现方法参考如下示例。
 
+   ```typescript
+   class Test {
+     foo() {}
+   }
+   // Save the original method implementation first
+   let originalFoo = new Test().foo;
+   util.Aspect.addBefore(Test, 'foo', false, (instance: Test) => {
+     // If the original method does not use this, you can directly call the originalFoo () method.
+     // If this is used in the original method, bind should be used to bind the instance, but there will be a compilation warning originalFoo.bind (instance);
+   });
    ```
-   1. class Test {
-   2. foo() {}
-   3. }
-   4. // Save the original method implementation first
-   5. let originalFoo = new Test().foo;
-   6. util.Aspect.addBefore(Test, 'foo', false, (instance: Test) => {
-   7. // If the original method does not use this, you can directly call the originalFoo () method.
-   8. // If this is used in the original method, bind should be used to bind the instance, but there will be a compilation warning originalFoo.bind (instance);
-   9. });
-   ```
-
-   [index9.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/index9.ets#L4-L12)
 
 5. 不推荐对ArkUI的struct进行方法插桩、替换。因为ArkUI的struct从设计上是一种介于函数和类之间的特殊存在，在编译时会进行中间码的转换，该转换可能会导致开发态的对象、方法在运行时并不存在，导致插桩、替换失败。虽然目前struct底层实现是类，使用接口可能也不会导致编译报错，但是仍然不推荐对struct的方法插桩/替换实现，因为可能随着ArkUI的演进，底层实现会改变，从而导致一些难以预料的问题。以下代码是错误示例。
 
-   ```
-   1. // Counterexample
-   2. @Component
-   3. struct Index {
-   4. foo() {}
-   5. build() {};
-   6. }
+   ```typescript
+   // Counterexample
+   @Component
+   struct Index {
+     foo() {}
+     build() {};
+   }
 
-   8. util.Aspect.replace(Index, 'foo', false, () => {
-   9. // ...
-   10. });
-   11. util.Aspect.replace(Index, 'build', false, () => {
-   12. // ...
-   13. });
+   util.Aspect.replace(Index, 'foo', false, () => {
+     // ...
+   });
+   util.Aspect.replace(Index, 'build', false, () => {
+     // ...
+   });
    ```
 
 6. 由于addAfter()的回调参数的返回值会劫持原方法的返回值，因此需要在回调参数中返回与原方法匹配的返回值。如果不修改返回值，请直接返回原方法的返回值（即回调参数的第二个参数）。
 
+   ```typescript
+   // Example of unrecommended usage:
+   class Test {
+     foo(): string {
+       return 'hello';
+     }
+   }
+
+   util.Aspect.addAfter(Test, 'foo', false, () => {
+     console.log('execute foo');
+   });
+
+   // The correct usage example is as follows:
+   class Test1 {
+     foo(): string {
+       return 'hello';
+     }
+   }
+
+   util.Aspect.addAfter(Test1, 'foo', false, (instance: Test, ret: string) => {
+     console.log('execute foo');
+     return ret; // Return the return value of the original method
+   })
    ```
-   1. // Example of unrecommended usage:
-   2. class Test {
-   3. foo(): string {
-   4. return 'hello';
-   5. }
-   6. }
-
-   8. util.Aspect.addAfter(Test, 'foo', false, () => {
-   9. console.log('execute foo');
-   10. });
-
-   12. // The correct usage example is as follows:
-   13. class Test1 {
-   14. foo(): string {
-   15. return 'hello';
-   16. }
-   17. }
-
-   19. util.Aspect.addAfter(Test1, 'foo', false, (instance: Test, ret: string) => {
-   20. console.log('execute foo');
-   21. return ret; // Return the return value of the original method
-   22. })
-   ```
-
-   [index10.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/AppAspectProgrammingDesign/entry/src/main/ets/pages/index10.ets#L21-L42)
 
 7. 接口不限制对系统提供的类方法进行插桩。只要类和方法在运行时是实际存在的对象，并且方法的属性描述符的writable字段为true，就可以使用对应接口进行插桩和替换。
 
-   说明
+   **说明** 
 
    如果类方法的属性描述符的writable字段为false，比如冻结(freeze) 的场景， 则不能调用接口操作这个类方法。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: 验证deviceToken
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > REST API > 验证deviceToken
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:45f81ac622377ce87a988918905d1d05713fda5aacf289e52afa7b750860256b
+scraped_at: 2026-09-02T15:01:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5e6f9474603b453fc53496dc5a4394cb7b20fd2f7dab9ebf51611414c0b02152
 ---
 
 ## 功能介绍
@@ -48,7 +48,7 @@ content_hash: sha256:45f81ac622377ce87a988918905d1d05713fda5aacf289e52afa7b75086
 | Authorization | 是 | String | 服务账号令牌 |
 | bundleName | 是 | String | 开发者APP包名 |
 
-说明
+**说明** 
 
 Authorization格式：Bearer后面拼接空格，再拼接获取的鉴权信息。令牌生成[示例代码](../harmonyos-guides/devicesecurity-deviceverify-token.md#示例代码)。
 
@@ -56,24 +56,24 @@ Authorization格式：Bearer后面拼接空格，再拼接获取的鉴权信息�
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| deviceToken | 是 | String | 客户端调用[getDeviceToken](devicesecurity-deviceverify-api.md#getdevicetoken)获取的设备临时标识。 |
+| deviceToken | 是 | String | 客户端调用[getDeviceToken](devicesecurity-deviceverify-api.md#devicecertificategetdevicetoken)获取的设备临时标识。 |
 | transactionId | 否 | String | 应用服务的唯一事务标识，关联业务上下文消息。 |
 | timestamp | 是 | Long | 应用服务器上的UTC时间。单位，毫秒。 |
 
-说明
+**说明** 
 
 开发者在构造消息体时，消息体需要在外层包一层data结构，详情参考如下调用示例。
 
 ## 请求示例
 
-```
-1. post /api/rms/v1/deviceVerify/checkDeviceToken HTTP/1.1
-2. Host: xxx
-3. Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
-4. bundleName: com.huawei.xxx
-5. Content-Type: application/json;charset=utf-8
+```json
+post /api/rms/v1/deviceVerify/checkDeviceToken HTTP/1.1
+Host: xxx
+Authorization: Bearer eyJr*****OiIx---****.eyJh*****iJodHR--***.QRod*****4Gp---****
+bundleName: com.huawei.xxx
+Content-Type: application/json;charset=utf-8
 
-7. {"data":{ "deviceToken":"xxx", "transactionId":"xxx", "timestamp":1704038400}}
+{"data":{ "deviceToken":"xxx", "transactionId":"xxx", "timestamp":1704038400}}
 ```
 
 ## 响应参数
@@ -87,11 +87,11 @@ Authorization格式：Bearer后面拼接空格，再拼接获取的鉴权信息�
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
 
-4. {"bundleName":"xxx","errorCodes":"OK"}
+{"bundleName":"xxx","errorCodes":"OK"}
 ```
 
 ## 错误码

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: Media Library Kit（媒体文件管理服务）
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7d989c0de544665c4a1f1849b6e98bccf78fc487e39e9b088623cfdd185c7766
+scraped_at: 2026-09-02T14:50:19+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:d7bbf7bd1ddb970781f57100bdb90412899170b3853c06b438fa79f9ca09eb8b
 ---
 
 * **[Media Library Kit 简介](photoaccesshelper-overview.md)**
@@ -19,4 +19,6 @@ content_hash: sha256:7d989c0de544665c4a1f1849b6e98bccf78fc487e39e9b088623cfdd185
 * **[动态照片](movingphoto.md)**
 * **[设备升级继承媒体文件访问权限](medialibrary-request-photouris-permission.md)**
 * **[受限开放能力](restricted-open-capabilities.md)**
+* **[图片获取与保存实践](images-get-preservation-practice.md)**
 * **[Media Library Kit常见问题](media-library-kit-frequently-asked-questions.md)**
+* **[Media Library Kit术语](medialibrary-glossary.md)**

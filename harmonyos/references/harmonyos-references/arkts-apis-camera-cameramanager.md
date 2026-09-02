@@ -3,32 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (CameraManager)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (CameraManager)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b8f57d041fbece826e2ec5b4e5119e7af667e6c28a92e4ce56591a7e601fd9bb
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fe4baa3fab81752b33d083e220dedec19ae509377f375018824386f0d30dcbff
 ---
 
 相机管理器类，使用前需要通过[getCameraManager](arkts-apis-camera-f.md#cameragetcameramanager)接口获取相机管理实例。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## getSupportedCameras
 
-PhonePC/2in1TabletTVWearable
-
 getSupportedCameras(): Array<CameraDevice>
 
-获取支持的相机设备对象，同步返回结果。
+获取支持的基础相机设备对象（如获取CameraType为CAMERA\_TYPE\_DEFAULT的默认相机），同步返回结果。
+
+如果需要获取额外的相机设备对象（如获取CameraType为CAMERA\_TYPE\_TELEPHOTO的长焦相机），可通过[getCameraDevices](arkts-apis-camera-cameramanager.md#getcameradevices23)接口获取。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -42,24 +40,22 @@ getSupportedCameras(): Array<CameraDevice>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getSupportedCameras(cameraManager: camera.CameraManager): Array<camera.CameraDevice> {
-4. let cameras: Array<camera.CameraDevice> = [];
-5. try {
-6. cameras = cameraManager.getSupportedCameras();
-7. } catch (error) {
-8. let err = error as BusinessError;
-9. console.error(`The getSupportedCameras call failed. error code: ${err.code}`);
-10. }
-11. return cameras;
-12. }
+function getSupportedCameras(cameraManager: camera.CameraManager): Array<camera.CameraDevice> {
+  let cameras: Array<camera.CameraDevice> = [];
+  try {
+    cameras = cameraManager.getSupportedCameras();
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`The getSupportedCameras call failed. error code: ${err.code}`);
+  }
+  return cameras;
+}
 ```
 
 ## getSupportedSceneModes11+
-
-PhonePC/2in1TabletTVWearable
 
 getSupportedSceneModes(camera: CameraDevice): Array<SceneMode>
 
@@ -83,24 +79,22 @@ getSupportedSceneModes(camera: CameraDevice): Array<SceneMode>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function getSupportedSceneModes(cameraManager: camera.CameraManager, camera: camera.CameraDevice): Array<camera.SceneMode> {
-4. let modes: Array<camera.SceneMode> = [];
-5. try {
-6. modes = cameraManager.getSupportedSceneModes(camera);
-7. } catch (error) {
-8. let err = error as BusinessError;
-9. console.error(`The getSupportedSceneModes call failed. error code: ${err.code}`);
-10. }
-11. return modes;
-12. }
+function getSupportedSceneModes(cameraManager: camera.CameraManager, camera: camera.CameraDevice): Array<camera.SceneMode> {
+  let modes: Array<camera.SceneMode> = [];
+  try {
+    modes = cameraManager.getSupportedSceneModes(camera);
+  } catch (error) {
+    let err = error as BusinessError;
+    console.error(`The getSupportedSceneModes call failed. error code: ${err.code}`);
+  }
+  return modes;
+}
 ```
 
 ## getSupportedOutputCapability11+
-
-PhonePC/2in1TabletTVWearable
 
 getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutputCapability
 
@@ -125,22 +119,20 @@ getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutpu
 
 **示例：**
 
-```
-1. function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability {
-2. let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, sceneMode);
-3. return cameraOutputCapability;
-4. }
+```ts
+function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability {
+  let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, sceneMode);
+  return cameraOutputCapability;
+}
 ```
 
 ## getSupportedFullOutputCapability23+
 
-PhonePC/2in1TabletTVWearable
-
 getSupportedFullOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutputCapability
 
-查询指定相机在指定模式下支持的完整输出能力，包括未压缩图（YUV）、HEIF和HDR等能力。
+查询指定相机在指定模式下支持的完整输出能力，包括未压缩图像（YUV）、HEIF和HDR等能力。
 
-说明
+**说明** 
 
 使用YUV，HEIF或HDR等能力前，需要先显式调用此方法确保获取完整输出能力。
 
@@ -165,18 +157,16 @@ getSupportedFullOutputCapability(camera: CameraDevice, mode: SceneMode): CameraO
 
 **示例：**
 
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 
-3. function getSupportedFullOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability {
-4. let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedFullOutputCapability(camera, sceneMode);
-5. return cameraOutputCapability;
-6. }
+function getSupportedFullOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability {
+  let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedFullOutputCapability(camera, sceneMode);
+  return cameraOutputCapability;
+}
 ```
 
 ## isCameraMuted
-
-PhonePC/2in1TabletTVWearable
 
 isCameraMuted(): boolean
 
@@ -194,16 +184,14 @@ isCameraMuted(): boolean
 
 **示例：**
 
-```
-1. function isCameraMuted(cameraManager: camera.CameraManager): boolean {
-2. let isMuted: boolean = cameraManager.isCameraMuted();
-3. return isMuted;
-4. }
+```ts
+function isCameraMuted(cameraManager: camera.CameraManager): boolean {
+  let isMuted: boolean = cameraManager.isCameraMuted();
+  return isMuted;
+}
 ```
 
 ## createCameraInput
-
-PhonePC/2in1TabletTVWearable
 
 createCameraInput(camera: CameraDevice): CameraInput
 
@@ -236,30 +224,28 @@ createCameraInput(camera: CameraDevice): CameraInput
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
-| 7400102 | Operation not allowed. |
-| 7400201 | Camera service fatal error. |
+| 7400102 | Operation not allowed.  适用版本：12+ |
+| 7400201 | Camera service fatal error.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraInput | undefined {
-4. let cameraInput: camera.CameraInput | undefined = undefined;
-5. try {
-6. cameraInput = cameraManager.createCameraInput(camera);
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The createCameraInput call failed. error code: ${err.code}`);
-11. }
-12. return cameraInput;
-13. }
+function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraInput | undefined {
+  let cameraInput: camera.CameraInput | undefined = undefined;
+  try {
+    cameraInput = cameraManager.createCameraInput(camera);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createCameraInput call failed. error code: ${err.code}`);
+  }
+  return cameraInput;
+}
 ```
 
 ## createCameraInput
-
-PhonePC/2in1TabletTVWearable
 
 createCameraInput(position: CameraPosition, type: CameraType): CameraInput
 
@@ -293,32 +279,30 @@ createCameraInput(position: CameraPosition, type: CameraType): CameraInput
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
-| 7400102 | Operation not allowed. |
-| 7400201 | Camera service fatal error. |
+| 7400102 | Operation not allowed.  适用版本：12+ |
+| 7400201 | Camera service fatal error.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraInput | undefined {
-4. let position: camera.CameraPosition = camera.cameraPosition;
-5. let type: camera.CameraType = camera.cameraType;
-6. let cameraInput: camera.CameraInput | undefined = undefined;
-7. try {
-8. cameraInput = cameraManager.createCameraInput(position, type);
-9. } catch (error) {
-10. // 失败返回错误码error.code并处理。
-11. let err = error as BusinessError;
-12. console.error(`The createCameraInput call failed. error code: ${err.code}`);
-13. }
-14. return cameraInput;
-15. }
+function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraInput | undefined {
+  let position: camera.CameraPosition = camera.cameraPosition;
+  let type: camera.CameraType = camera.cameraType;
+  let cameraInput: camera.CameraInput | undefined = undefined;
+  try {
+    cameraInput = cameraManager.createCameraInput(position, type);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createCameraInput call failed. error code: ${err.code}`);
+  }
+  return cameraInput;
+}
 ```
 
 ## createPreviewOutput
-
-PhonePC/2in1TabletTVWearable
 
 createPreviewOutput(profile: Profile, surfaceId: string): PreviewOutput
 
@@ -348,30 +332,28 @@ createPreviewOutput(profile: Profile, surfaceId: string): PreviewOutput
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
-| 7400201 | Camera service fatal error. |
+| 7400201 | Camera service fatal error.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createPreviewOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.PreviewOutput | undefined {
-4. let profile: camera.Profile = cameraOutputCapability.previewProfiles[0];
-5. let previewOutput: camera.PreviewOutput | undefined = undefined;
-6. try {
-7. previewOutput = cameraManager.createPreviewOutput(profile, surfaceId);
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The createPreviewOutput call failed. error code: ${err.code}`);
-12. }
-13. return previewOutput;
-14. }
+function createPreviewOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.PreviewOutput | undefined {
+  let profile: camera.Profile = cameraOutputCapability.previewProfiles[0];
+  let previewOutput: camera.PreviewOutput | undefined = undefined;
+  try {
+    previewOutput = cameraManager.createPreviewOutput(profile, surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPreviewOutput call failed. error code: ${err.code}`);
+  }
+  return previewOutput;
+}
 ```
 
 ## createPreviewOutput12+
-
-PhonePC/2in1TabletTVWearable
 
 createPreviewOutput(surfaceId: string): PreviewOutput
 
@@ -404,25 +386,73 @@ createPreviewOutput(surfaceId: string): PreviewOutput
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createPreviewOutput(cameraManager: camera.CameraManager, surfaceId: string): camera.PreviewOutput | undefined {
-4. let previewOutput: camera.PreviewOutput | undefined = undefined;
-5. try {
-6. previewOutput = cameraManager.createPreviewOutput(surfaceId);
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The createPreviewOutput call failed. error code: ${err.code}`);
-11. }
-12. return previewOutput;
-13. }
+function createPreviewOutput(cameraManager: camera.CameraManager, surfaceId: string): camera.PreviewOutput | undefined {
+  let previewOutput: camera.PreviewOutput | undefined = undefined;
+  try {
+    previewOutput = cameraManager.createPreviewOutput(surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPreviewOutput call failed. error code: ${err.code}`);
+  }
+  return previewOutput;
+}
+```
+
+## createDeferredPreviewOutput24+
+
+createDeferredPreviewOutput(profile: Profile): PreviewOutput
+
+创建延迟预览输出对象，在配流时替代普通的预览输出对象加入数据流。
+
+**元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| profile | [Profile](arkts-apis-camera-i.md#profile) | 是 | 支持的预览配置信息，通过[getSupportedOutputCapability](arkts-apis-camera-cameramanager.md#getsupportedoutputcapability11)接口获取。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [PreviewOutput](arkts-apis-camera-previewoutput.md) | PreviewOutput实例。接口调用失败会返回相应错误码，错误码类型[CameraErrorCode](arkts-apis-camera-e.md#cameraerrorcode)。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400101 | Parameter missing or parameter type incorrect. |
+| 7400201 | Camera service fatal error. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function createPreviewOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager): camera.PreviewOutput | undefined {
+  let profile: camera.Profile = cameraOutputCapability.previewProfiles[0];
+  let previewOutput: camera.PreviewOutput | undefined = undefined;
+  try {
+    previewOutput = cameraManager.createDeferredPreviewOutput(profile);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPreviewOutput call failed. error code: ${err.code}`);
+  }
+  return previewOutput;
+}
 ```
 
 ## createPhotoOutput11+
-
-PhonePC/2in1TabletTVWearable
 
 createPhotoOutput(profile?: Profile): PhotoOutput
 
@@ -451,30 +481,28 @@ createPhotoOutput(profile?: Profile): PhotoOutput
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
-| 7400201 | Camera service fatal error. |
+| 7400201 | Camera service fatal error.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager): camera.PhotoOutput | undefined {
-4. let profile: camera.Profile = cameraOutputCapability.photoProfiles[0];
-5. let photoOutput: camera.PhotoOutput | undefined = undefined;
-6. try {
-7. photoOutput = cameraManager.createPhotoOutput(profile);
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The createPhotoOutput call failed. error code: ${err.code}`);
-12. }
-13. return photoOutput;
-14. }
+function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager): camera.PhotoOutput | undefined {
+  let profile: camera.Profile = cameraOutputCapability.photoProfiles[0];
+  let photoOutput: camera.PhotoOutput | undefined = undefined;
+  try {
+    photoOutput = cameraManager.createPhotoOutput(profile);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPhotoOutput call failed. error code: ${err.code}`);
+  }
+  return photoOutput;
+}
 ```
 
 ## createVideoOutput
-
-PhonePC/2in1TabletTVWearable
 
 createVideoOutput(profile: VideoProfile, surfaceId: string): VideoOutput
 
@@ -511,30 +539,28 @@ createVideoOutput(profile: VideoProfile, surfaceId: string): VideoOutput
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
-| 7400201 | Camera service fatal error. |
+| 7400201 | Camera service fatal error.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createVideoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.VideoOutput | undefined {
-4. let profile: camera.VideoProfile = cameraOutputCapability.videoProfiles[0];
-5. let videoOutput: camera.VideoOutput | undefined = undefined;
-6. try {
-7. videoOutput = cameraManager.createVideoOutput(profile, surfaceId);
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The createVideoOutput call failed. error code: ${err.code}`);
-12. }
-13. return videoOutput;
-14. }
+function createVideoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.VideoOutput | undefined {
+  let profile: camera.VideoProfile = cameraOutputCapability.videoProfiles[0];
+  let videoOutput: camera.VideoOutput | undefined = undefined;
+  try {
+    videoOutput = cameraManager.createVideoOutput(profile, surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createVideoOutput call failed. error code: ${err.code}`);
+  }
+  return videoOutput;
+}
 ```
 
 ## createVideoOutput12+
-
-PhonePC/2in1TabletTVWearable
 
 createVideoOutput(surfaceId: string): VideoOutput
 
@@ -567,25 +593,23 @@ createVideoOutput(surfaceId: string): VideoOutput
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createVideoOutput(cameraManager: camera.CameraManager, surfaceId: string): camera.VideoOutput | undefined {
-4. let videoOutput: camera.VideoOutput | undefined = undefined;
-5. try {
-6. videoOutput = cameraManager.createVideoOutput(surfaceId);
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`The createVideoOutput call failed. error code: ${err.code}`);
-11. }
-12. return videoOutput;
-13. }
+function createVideoOutput(cameraManager: camera.CameraManager, surfaceId: string): camera.VideoOutput | undefined {
+  let videoOutput: camera.VideoOutput | undefined = undefined;
+  try {
+    videoOutput = cameraManager.createVideoOutput(surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createVideoOutput call failed. error code: ${err.code}`);
+  }
+  return videoOutput;
+}
 ```
 
 ## createMetadataOutput
-
-PhonePC/2in1TabletTVWearable
 
 createMetadataOutput(metadataObjectTypes: Array<MetadataObjectType>): MetadataOutput
 
@@ -614,29 +638,27 @@ createMetadataOutput(metadataObjectTypes: Array<MetadataObjectType>): MetadataOu
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
-| 7400201 | Camera service fatal error. |
+| 7400201 | Camera service fatal error.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createMetadataOutput(cameraManager: camera.CameraManager, cameraOutputCapability: camera.CameraOutputCapability): void {
-4. let metadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCapability.supportedMetadataObjectTypes;
-5. let metadataOutput: camera.MetadataOutput | undefined = undefined;
-6. try {
-7. metadataOutput = cameraManager.createMetadataOutput(metadataObjectTypes);
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`createMetadataOutput error. error code: ${err.code}`);
-12. }
-13. }
+function createMetadataOutput(cameraManager: camera.CameraManager, cameraOutputCapability: camera.CameraOutputCapability): void {
+  let metadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCapability.supportedMetadataObjectTypes;
+  let metadataOutput: camera.MetadataOutput | undefined = undefined;
+  try {
+    metadataOutput = cameraManager.createMetadataOutput(metadataObjectTypes);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`createMetadataOutput error. error code: ${err.code}`);
+  }
+}
 ```
 
 ## createSession11+
-
-PhonePC/2in1TabletTVWearable
 
 createSession<T extends Session>(mode: SceneMode): T
 
@@ -664,36 +686,34 @@ createSession<T extends Session>(mode: SceneMode): T
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 7400101 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3.Parameter verification failed. |
+| 7400101 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3.Parameter verification failed.  适用版本：19+ |
 | 7400201 | Camera service fatal error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createSession(cameraManager: camera.CameraManager, mode: camera.SceneMode): camera.Session | undefined {
-4. let photoSession: camera.PhotoSession | undefined = undefined;
-5. try {
-6. photoSession = cameraManager.createSession(mode) as camera.PhotoSession;
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`createCaptureSession error. error code: ${err.code}`);
-11. }
-12. return photoSession;
-13. }
+function createSession(cameraManager: camera.CameraManager, mode: camera.SceneMode): camera.Session | undefined {
+  let photoSession: camera.PhotoSession | undefined = undefined;
+  try {
+    photoSession = cameraManager.createSession(mode) as camera.PhotoSession;
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`createCaptureSession error. error code: ${err.code}`);
+  }
+  return photoSession;
+}
 ```
 
 ## on('cameraStatus')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'cameraStatus', callback: AsyncCallback<CameraStatusInfo>): void
 
 相机设备状态回调，通过注册回调函数获取相机的状态变化。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -710,26 +730,24 @@ on(type: 'cameraStatus', callback: AsyncCallback<CameraStatusInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, cameraStatusInfo: camera.CameraStatusInfo): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error('cameraStatus with errorCode = ' + err.code);
-6. return;
-7. }
-8. console.info(`camera : ${cameraStatusInfo.camera.cameraId}`);
-9. console.info(`status: ${cameraStatusInfo.status}`);
-10. }
+function callback(err: BusinessError, cameraStatusInfo: camera.CameraStatusInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error('cameraStatus with errorCode = ' + err.code);
+    return;
+  }
+  console.info(`camera : ${cameraStatusInfo.camera.cameraId}`);
+  console.info(`status: ${cameraStatusInfo.status}`);
+}
 
-12. function registerCameraStatus(cameraManager: camera.CameraManager): void {
-13. cameraManager.on('cameraStatus', callback);
-14. }
+function registerCameraStatus(cameraManager: camera.CameraManager): void {
+  cameraManager.on('cameraStatus', callback);
+}
 ```
 
 ## off('cameraStatus')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'cameraStatus', callback?: AsyncCallback<CameraStatusInfo>): void
 
@@ -748,21 +766,19 @@ off(type: 'cameraStatus', callback?: AsyncCallback<CameraStatusInfo>): void
 
 **示例：**
 
-```
-1. function unregisterCameraStatus(cameraManager: camera.CameraManager): void {
-2. cameraManager.off('cameraStatus');
-3. }
+```ts
+function unregisterCameraStatus(cameraManager: camera.CameraManager): void {
+  cameraManager.off('cameraStatus');
+}
 ```
 
 ## on('foldStatusChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'foldStatusChange', callback: AsyncCallback<FoldStatusInfo>): void
 
 注册折叠设备折叠状态变化的监听。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -779,26 +795,24 @@ on(type: 'foldStatusChange', callback: AsyncCallback<FoldStatusInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, foldStatusInfo: camera.FoldStatusInfo): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error('foldStatusChange with errorCode = ' + err.code);
-6. return;
-7. }
-8. console.info(`camera length: ${foldStatusInfo.supportedCameras.length}`);
-9. console.info(`foldStatus: ${foldStatusInfo.foldStatus}`);
-10. }
+function callback(err: BusinessError, foldStatusInfo: camera.FoldStatusInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error('foldStatusChange with errorCode = ' + err.code);
+    return;
+  }
+  console.info(`camera length: ${foldStatusInfo.supportedCameras.length}`);
+  console.info(`foldStatus: ${foldStatusInfo.foldStatus}`);
+}
 
-12. function registerFoldStatusChange(cameraManager: camera.CameraManager): void {
-13. cameraManager.on('foldStatusChange', callback);
-14. }
+function registerFoldStatusChange(cameraManager: camera.CameraManager): void {
+  cameraManager.on('foldStatusChange', callback);
+}
 ```
 
 ## off('foldStatusChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'foldStatusChange', callback?: AsyncCallback<FoldStatusInfo>): void
 
@@ -817,15 +831,13 @@ off(type: 'foldStatusChange', callback?: AsyncCallback<FoldStatusInfo>): void
 
 **示例：**
 
-```
-1. function unregisterFoldStatusChange(cameraManager: camera.CameraManager): void {
-2. cameraManager.off('foldStatusChange');
-3. }
+```ts
+function unregisterFoldStatusChange(cameraManager: camera.CameraManager): void {
+  cameraManager.off('foldStatusChange');
+}
 ```
 
 ## isTorchSupported11+
-
-PhonePC/2in1TabletTVWearable
 
 isTorchSupported(): boolean
 
@@ -839,20 +851,18 @@ isTorchSupported(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 表示设备是否支持手电筒，true表示设备支持手电筒，false表示设备不支持手电。  如果返回false，则[isTorchModeSupported](arkts-apis-camera-cameramanager.md#istorchmodesupported11)、[getTorchMode](arkts-apis-camera-cameramanager.md#gettorchmode11)、[setTorchMode](arkts-apis-camera-cameramanager.md#settorchmode11)都不会生效。  若接口调用失败，返回undefined。 |
+| boolean | 表示设备是否支持手电筒，true表示设备支持手电筒，false表示设备不支持手电。  如果返回false，则[isTorchModeSupported](arkts-apis-camera-cameramanager.md#istorchmodesupported11)、[getTorchMode](arkts-apis-camera-cameramanager.md#gettorchmode11)、[setTorchMode](arkts-apis-camera-cameramanager.md#settorchmode11)、[isTorchLevelControlSupported](arkts-apis-camera-cameramanager.md#istorchlevelcontrolsupported)和[setTorchModeOnWithLevel](arkts-apis-camera-cameramanager.md#settorchmodeonwithlevel)都不会生效。  若接口调用失败，返回undefined。 |
 
 **示例：**
 
-```
-1. function isTorchSupported(cameraManager: camera.CameraManager): boolean {
-2. let isSupported = cameraManager.isTorchSupported();
-3. return isSupported;
-4. }
+```ts
+function isTorchSupported(cameraManager: camera.CameraManager): boolean {
+  let isSupported = cameraManager.isTorchSupported();
+  return isSupported;
+}
 ```
 
 ## isTorchModeSupported11+
-
-PhonePC/2in1TabletTVWearable
 
 isTorchModeSupported(mode: TorchMode): boolean
 
@@ -876,16 +886,14 @@ isTorchModeSupported(mode: TorchMode): boolean
 
 **示例：**
 
-```
-1. function isTorchModeSupported(cameraManager: camera.CameraManager, torchMode: camera.TorchMode): boolean {
-2. let isSupported = cameraManager.isTorchModeSupported(torchMode);
-3. return isSupported;
-4. }
+```ts
+function isTorchModeSupported(cameraManager: camera.CameraManager, torchMode: camera.TorchMode): boolean {
+  let isSupported = cameraManager.isTorchModeSupported(torchMode);
+  return isSupported;
+}
 ```
 
 ## getTorchMode11+
-
-PhonePC/2in1TabletTVWearable
 
 getTorchMode(): TorchMode
 
@@ -903,17 +911,15 @@ getTorchMode(): TorchMode
 
 **示例：**
 
-```
-1. function getTorchMode(cameraManager: camera.CameraManager): camera.TorchMode | undefined {
-2. let torchMode: camera.TorchMode | undefined = undefined;
-3. torchMode = cameraManager.getTorchMode();
-4. return torchMode;
-5. }
+```ts
+function getTorchMode(cameraManager: camera.CameraManager): camera.TorchMode | undefined {
+  let torchMode: camera.TorchMode | undefined = undefined;
+  torchMode = cameraManager.getTorchMode();
+  return torchMode;
+}
 ```
 
 ## setTorchMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setTorchMode(mode: TorchMode): void
 
@@ -935,34 +941,33 @@ setTorchMode(mode: TorchMode): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 7400102 | Operation not allowed. |
-| 7400201 | Camera service fatal error. |
+| 7400101 | Parameter missing or parameter type incorrect.  适用版本：11-17 |
+| 7400102 | Operation not allowed.  适用版本：12+ |
+| 7400201 | Camera service fatal error.  适用版本：12+ |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function setTorchMode(cameraManager: camera.CameraManager, torchMode: camera.TorchMode): void {
-4. try {
-5. cameraManager.setTorchMode(torchMode);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The setTorchMode call failed. error code: ${err.code}`);
-10. }
-11. }
+function setTorchMode(cameraManager: camera.CameraManager, torchMode: camera.TorchMode): void {
+  try {
+    cameraManager.setTorchMode(torchMode);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setTorchMode call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## on('torchStatusChange')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'torchStatusChange', callback: AsyncCallback<TorchStatusInfo>): void
 
 手电筒状态变化回调，通过注册回调函数获取手电筒状态变化。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -979,25 +984,23 @@ on(type: 'torchStatusChange', callback: AsyncCallback<TorchStatusInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, torchStatusInfo: camera.TorchStatusInfo): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`onTorchStatusChange, isTorchAvailable: ${torchStatusInfo.isTorchAvailable}, isTorchActive: ${torchStatusInfo.isTorchActive}, level: ${torchStatusInfo.torchLevel}`);
-9. }
+function callback(err: BusinessError, torchStatusInfo: camera.TorchStatusInfo): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`onTorchStatusChange, isTorchAvailable: ${torchStatusInfo.isTorchAvailable}, isTorchActive: ${torchStatusInfo.isTorchActive}, level: ${torchStatusInfo.torchLevel}`);
+}
 
-11. function registerTorchStatusChange(cameraManager: camera.CameraManager): void {
-12. cameraManager.on('torchStatusChange', callback);
-13. }
+function registerTorchStatusChange(cameraManager: camera.CameraManager): void {
+  cameraManager.on('torchStatusChange', callback);
+}
 ```
 
 ## off('torchStatusChange')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'torchStatusChange', callback?: AsyncCallback<TorchStatusInfo>): void
 
@@ -1016,15 +1019,80 @@ off(type: 'torchStatusChange', callback?: AsyncCallback<TorchStatusInfo>): void
 
 **示例：**
 
+```ts
+function unregisterTorchStatusChange(cameraManager: camera.CameraManager): void {
+  cameraManager.off('torchStatusChange');
+}
 ```
-1. function unregisterTorchStatusChange(cameraManager: camera.CameraManager): void {
-2. cameraManager.off('torchStatusChange');
-3. }
+
+## isTorchLevelControlSupported
+
+isTorchLevelControlSupported(): boolean
+
+检测设备是否支持手电筒亮度调节功能。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 表示设备是否支持手电筒亮度调节功能。返回true表示支持，返回false表示不支持。若接口调用失败，返回undefined。 |
+
+**示例：**
+
+```ts
+function isTorchLevelControlSupported(cameraManager: camera.CameraManager): boolean {
+  let isSupported = cameraManager.isTorchLevelControlSupported();
+  return isSupported;
+}
+```
+
+## setTorchModeOnWithLevel
+
+setTorchModeOnWithLevel(torchLevel: number): void
+
+手电筒设置指定亮度级别。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| torchLevel | number | 是 | 手电筒亮度级别。通常范围是[0.0, 1.0]（0.0为最暗，1.0为最亮）。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400201 | Camera service fatal error. |
+| 7400102 | Operation not allowed. |
+
+**示例：**
+
+```ts
+function SetTorchModeOnWithLevel(cameraManager: camera.CameraManager, torchLevel: number): void {
+  cameraManager.setTorchModeOnWithLevel(torchLevel);
+  return ;
+}
 ```
 
 ## getCameraDevice18+
-
-PhonePC/2in1TabletTVWearable
 
 getCameraDevice(position: CameraPosition, type: CameraType): CameraDevice
 
@@ -1059,25 +1127,23 @@ getCameraDevice(position: CameraPosition, type: CameraType): CameraDevice
 
 **示例：**
 
-```
-1. import { camera } from '@kit.CameraKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { camera } from '@kit.CameraKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. function getCameraDevice(cameraManager: camera.CameraManager, position: camera.CameraPosition, type: camera.CameraType): void {
-5. try {
-6. let curCameraDev: camera.CameraDevice | undefined = undefined;
-7. curCameraDev = cameraManager.getCameraDevice(position, type);
-8. } catch (error) {
-9. // 失败返回错误码并处理。
-10. let err = error as BusinessError;
-11. console.error(`The getCameraDevice call failed. error code: ${err.code}`);
-12. }
-13. }
+function getCameraDevice(cameraManager: camera.CameraManager, position: camera.CameraPosition, type: camera.CameraType): void {
+  try {
+    let curCameraDev: camera.CameraDevice | undefined = undefined;
+    curCameraDev = cameraManager.getCameraDevice(position, type);
+  } catch (error) {
+    // 失败返回错误码并处理。
+    let err = error as BusinessError;
+    console.error(`The getCameraDevice call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## getCameraDevices23+
-
-PhonePC/2in1TabletTVWearable
 
 getCameraDevices(position: CameraPosition, types: Array<CameraType>, connectType: ConnectionType): Array<CameraDevice>
 
@@ -1111,25 +1177,23 @@ getCameraDevices(position: CameraPosition, types: Array<CameraType>, connectType
 
 **示例：**
 
-```
-1. import { camera } from '@kit.CameraKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { camera } from '@kit.CameraKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. function getCameraDevices(cameraManager: camera.CameraManager, position: camera.CameraPosition, types: Array<camera.CameraType>, connectType: camera.ConnectionType): void {
-5. try {
-6. let cameraDevs: Array<camera.CameraDevice> = [];
-7. cameraDevs = cameraManager.getCameraDevices(position, types, connectType);
-8. } catch (error) {
-9. // 失败返回错误码并处理。
-10. let err = error as BusinessError;
-11. console.error(`The getCameraDevices call failed. error code: ${err.code}`);
-12. }
-13. }
+function getCameraDevices(cameraManager: camera.CameraManager, position: camera.CameraPosition, types: Array<camera.CameraType>, connectType: camera.ConnectionType): void {
+  try {
+    let cameraDevs: Array<camera.CameraDevice> = [];
+    cameraDevs = cameraManager.getCameraDevices(position, types, connectType);
+  } catch (error) {
+    // 失败返回错误码并处理。
+    let err = error as BusinessError;
+    console.error(`The getCameraDevices call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## getCameraConcurrentInfos18+
-
-PhonePC/2in1TabletTVWearable
 
 getCameraConcurrentInfos(cameras: Array<CameraDevice>): Array<CameraConcurrentInfo>
 
@@ -1161,33 +1225,31 @@ getCameraConcurrentInfos(cameras: Array<CameraDevice>): Array<CameraConcurrentIn
 
 **示例：**
 
-```
-1. import { camera } from '@kit.CameraKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { camera } from '@kit.CameraKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. function getCameraConcurrentInfos(cameraManager: camera.CameraManager,
-5. cameraDeviceArray: Array<camera.CameraDevice>): Array<camera.CameraConcurrentInfo> {
-6. let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = [];
-7. try {
-8. cameraConcurrentInfos = cameraManager.getCameraConcurrentInfos(cameraDeviceArray);
-9. } catch (error) {
-10. // 失败返回错误码并处理。
-11. let err = error as BusinessError;
-12. console.error(`The getCameraConcurrentInfos call failed. error code: ${err.code}`);
-13. }
-14. return cameraConcurrentInfos;
-15. }
+function getCameraConcurrentInfos(cameraManager: camera.CameraManager,
+  cameraDeviceArray: Array<camera.CameraDevice>): Array<camera.CameraConcurrentInfo> {
+  let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = [];
+  try {
+    cameraConcurrentInfos = cameraManager.getCameraConcurrentInfos(cameraDeviceArray);
+  } catch (error) {
+    // 失败返回错误码并处理。
+    let err = error as BusinessError;
+    console.error(`The getCameraConcurrentInfos call failed. error code: ${err.code}`);
+  }
+  return cameraConcurrentInfos;
+}
 ```
 
 ## getSupportedOutputCapability(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSupportedOutputCapability(camera: CameraDevice): CameraOutputCapability
 
 查询相机设备支持的输出能力，同步返回结果。
 
-说明
+**说明** 
 
 从 API version 10开始支持，从API version 11开始废弃。建议使用[getSupportedOutputCapability](arkts-apis-camera-cameramanager.md#getsupportedoutputcapability11)替代。
 
@@ -1207,22 +1269,20 @@ getSupportedOutputCapability(camera: CameraDevice): CameraOutputCapability
 
 **示例：**
 
-```
-1. function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraOutputCapability {
-2. let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedOutputCapability(camera);
-3. return cameraOutputCapability;
-4. }
+```ts
+function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraOutputCapability {
+  let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedOutputCapability(camera);
+  return cameraOutputCapability;
+}
 ```
 
 ## createPhotoOutput(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createPhotoOutput(profile: Profile, surfaceId: string): PhotoOutput
 
 创建拍照输出对象，同步返回结果。
 
-说明
+**说明** 
 
 * 从API version 10开始支持，从API version 11开始废弃。建议使用[createPhotoOutput](arkts-apis-camera-cameramanager.md#createphotooutput11)替代。
 * 该接口只支持创建JPEG格式的拍照输出对象。
@@ -1250,32 +1310,30 @@ createPhotoOutput(profile: Profile, surfaceId: string): PhotoOutput
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.PhotoOutput | undefined {
-4. let profile: camera.Profile = cameraOutputCapability.photoProfiles[0];
-5. let photoOutput: camera.PhotoOutput | undefined = undefined;
-6. try {
-7. photoOutput = cameraManager.createPhotoOutput(profile, surfaceId);
-8. } catch (error) {
-9. // 失败返回错误码error.code并处理。
-10. let err = error as BusinessError;
-11. console.error(`The createPhotoOutput call failed. error code: ${err.code}`);
-12. }
-13. return photoOutput;
-14. }
+function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.PhotoOutput | undefined {
+  let profile: camera.Profile = cameraOutputCapability.photoProfiles[0];
+  let photoOutput: camera.PhotoOutput | undefined = undefined;
+  try {
+    photoOutput = cameraManager.createPhotoOutput(profile, surfaceId);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The createPhotoOutput call failed. error code: ${err.code}`);
+  }
+  return photoOutput;
+}
 ```
 
 ## createCaptureSession(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 createCaptureSession(): CaptureSession
 
 创建CaptureSession实例，同步返回结果。
 
-说明
+**说明** 
 
 从 API version 10开始支持，从API version 11开始废弃。建议使用[createSession](arkts-apis-camera-cameramanager.md#createsession11)替代。
 
@@ -1297,18 +1355,18 @@ createCaptureSession(): CaptureSession
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function createCaptureSession(cameraManager: camera.CameraManager): camera.CaptureSession | undefined {
-4. let captureSession: camera.CaptureSession | undefined = undefined;
-5. try {
-6. captureSession = cameraManager.createCaptureSession();
-7. } catch (error) {
-8. // 失败返回错误码error.code并处理。
-9. let err = error as BusinessError;
-10. console.error(`createCaptureSession error. error code: ${err.code}`);
-11. }
-12. return captureSession;
-13. }
+function createCaptureSession(cameraManager: camera.CameraManager): camera.CaptureSession | undefined {
+  let captureSession: camera.CaptureSession | undefined = undefined;
+  try {
+    captureSession = cameraManager.createCaptureSession();
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`createCaptureSession error. error code: ${err.code}`);
+  }
+  return captureSession;
+}
 ```

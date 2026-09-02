@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-derivation-using-pbkdf2
 title: 使用PBKDF2进行密钥派生(ArkTS)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生 > 使用PBKDF2进行密钥派生(ArkTS)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生介绍及算法规格 > 使用PBKDF2进行密钥派生(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:34a4e320cf69d9b98a2d5c82c7355f1fde5b8e26d53088568d94a3aa3038bf55
+scraped_at: 2026-09-02T14:50:01+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:049d0db9935145d8c482d7bef2504839b30f08ea1960bba98809059c84458cf8
 ---
 
 对应的算法规格请查看[密钥派生算法规格：PBKDF2](crypto-key-derivation-overview.md#pbkdf2算法)。
@@ -36,66 +36,60 @@ content_hash: sha256:34a4e320cf69d9b98a2d5c82c7355f1fde5b8e26d53088568d94a3aa303
 
 * 通过await返回结果：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-  3. async function kdfAwait() {
-  4. let spec: cryptoFramework.PBKDF2Spec = {
-  5. algName: 'PBKDF2',
-  6. password: '123456',
-  7. salt: new Uint8Array(16),
-  8. iterations: 10000,
-  9. keySize: 32
-  10. };
-  11. let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
-  12. let secret = await kdf.generateSecret(spec);
-  13. console.info('key derivation output: ' + secret.data);
-  14. }
+  async function kdfAwait() {
+    let spec: cryptoFramework.PBKDF2Spec = {
+      algName: 'PBKDF2',
+      password: '123456',
+      salt: new Uint8Array(16),
+      iterations: 10000,
+      keySize: 32
+    };
+    let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
+    let secret = await kdf.generateSecret(spec);
+    console.info('key derivation output: ' + secret.data);
+  }
   ```
-
-  [Await.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/KeyDerivation/PBKDF2Derivation/entry/src/main/ets/pages/Await.ets#L15-L31)
 * 通过Promise返回结果：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
-  2. import { BusinessError } from '@kit.BasicServicesKit';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
-  4. function kdfPromise() {
-  5. let spec: cryptoFramework.PBKDF2Spec = {
-  6. algName: 'PBKDF2',
-  7. password: '123456',
-  8. salt: new Uint8Array(16),
-  9. iterations: 10000,
-  10. keySize: 32
-  11. };
-  12. let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
-  13. let kdfPromise = kdf.generateSecret(spec);
-  14. kdfPromise.then((secret) => {
-  15. console.info('key derivation output: ' + secret.data);
-  16. }).catch((error: BusinessError) => {
-  17. console.error(`key derivation failed: errCode: ${error.code}, message: ${error.message}`);
-  18. });
-  19. }
+  function kdfPromise() {
+    let spec: cryptoFramework.PBKDF2Spec = {
+      algName: 'PBKDF2',
+      password: '123456',
+      salt: new Uint8Array(16),
+      iterations: 10000,
+      keySize: 32
+    };
+    let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
+    let kdfPromise = kdf.generateSecret(spec);
+    kdfPromise.then((secret) => {
+      console.info('key derivation output: ' + secret.data);
+    }).catch((error: BusinessError) => {
+      console.error(`key derivation failed: errCode: ${error.code}, message: ${error.message}`);
+    });
+  }
   ```
-
-  [Promise.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/KeyDerivation/PBKDF2Derivation/entry/src/main/ets/pages/Promise.ets#L15-L35)
 * 通过同步方式返回结果：
 
-  ```
-  1. import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  ```typescript
+  import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-  3. function kdfSync() {
-  4. let spec: cryptoFramework.PBKDF2Spec = {
-  5. algName: 'PBKDF2',
-  6. password: '123456',
-  7. salt: new Uint8Array(16),
-  8. iterations: 10000,
-  9. keySize: 32
-  10. };
-  11. let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
-  12. let secret = kdf.generateSecretSync(spec);
-  13. console.info('[Sync]key derivation output: ' + secret.data);
-  14. }
+  function kdfSync() {
+    let spec: cryptoFramework.PBKDF2Spec = {
+      algName: 'PBKDF2',
+      password: '123456',
+      salt: new Uint8Array(16),
+      iterations: 10000,
+      keySize: 32
+    };
+    let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
+    let secret = kdf.generateSecretSync(spec);
+    console.info('[Sync]key derivation output: ' + secret.data);
+  }
   ```
-
-  [Sync.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Security/CryptoArchitectureKit/KeyDerivation/PBKDF2Derivation/entry/src/main/ets/pages/Sync.ets#L15-L31)

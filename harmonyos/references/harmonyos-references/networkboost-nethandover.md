@@ -3,36 +3,36 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/networkbo
 title: netHandover（连接迁移）
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > ArkTS API > netHandover（连接迁移）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5bdb1315f41c611cefb208c24c63e73249029b94ed85be515c4f5c8b53ee53f8
+scraped_at: 2026-09-02T14:52:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e805af5bffb67ea34b456578ae9e9deabc247dde5d5bc7ef2eec9120faf7a749
 ---
 
-本模块提供网络连接迁移能力，以便在弱网环境下，系统发起多网迁移（WiFi<->蜂窝，主卡<->副卡等）的过程中，给应用提供连接迁移开始和完成通知，应用根据连接迁移通知的建议进行重建，快速恢复业务，给用户带来平滑、高速、低时延的上网体验。
+本模块提供网络连接迁移能力，以便在弱网环境下，系统发起多网迁移（Wi-Fi与蜂窝网络切换，主卡与副卡切换等）的过程中，给应用提供连接迁移开始和完成通知，应用根据连接迁移通知的建议进行重建，快速恢复业务，给用户带来平滑、高速、低时延的上网体验。
 
 **起始版本：** 5.0.0(12)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { netHandover } from '@kit.NetworkBoostKit';
+```typescript
+import { netHandover } from '@kit.NetworkBoostKit';
 ```
 
-## netHandover.on( 'handoverChange')
-
-PhonePC/2in1Tablet
+## netHandover.on('handoverChange')
 
 on(type: 'handoverChange', callback: Callback<HandoverInfo>): void
 
 订阅连接迁移信息。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.GET\_NETWORK\_INFO
 
-**系统能力:** SystemCapability.Communication.NetworkBoost.Core
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
-**起始版本:** 5.0.0(12)
+**系统能力：** SystemCapability.Communication.NetworkBoost.Core
+
+**起始版本：** 5.0.0(12)
 
 **参数：**
 
@@ -43,43 +43,45 @@ on(type: 'handoverChange', callback: Callback<HandoverInfo>): void
 
 **错误码：**
 
-涉及错误码均为通用错误码，[通用错误码详细描述查看](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. |
+| 401 | Invalid parameter. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. netHandover.on('handoverChange', (info: netHandover.HandoverInfo) => {
-5. if (info.handoverStart) {
-6. // 连接迁移开始回调，应用按照HandoverStart的建议调整数传策略
-7. console.info('handover start');
-8. } else if (info.handoverComplete) {
-9. // 连接迁移完成回调，应用按照HandoverComplete的建议进行调速和重建恢复
-10. console.info('handover complete');
-11. }
-12. });
-13. } catch (err) {
-14. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-15. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  netHandover.on('handoverChange', (info: netHandover.HandoverInfo) => {
+    if (info.handoverStart) {
+      // 连接迁移开始回调，应用按照HandoverStart的建议调整数传策略
+      console.info('handover start');
+    } else if (info.handoverComplete) {
+      // 连接迁移完成回调，应用按照HandoverComplete的建议进行调速和重建恢复
+      console.info('handover complete');
+    }
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
-## netHandover.off( 'handoverChange')
-
-PhonePC/2in1Tablet
+## netHandover.off('handoverChange')
 
 off(type: 'handoverChange', callback?: Callback<HandoverInfo>): void
 
 取消订阅连接迁移信息。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.GET\_NETWORK\_INFO
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -94,35 +96,37 @@ off(type: 'handoverChange', callback?: Callback<HandoverInfo>): void
 
 **错误码：**
 
-涉及错误码均为通用错误码，[通用错误码详细描述查看](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. |
+| 401 | Invalid parameter. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. netHandover.off('handoverChange');
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  netHandover.off('handoverChange');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netHandover.setHandoverMode
-
-PhonePC/2in1Tablet
 
 setHandoverMode(mode: HandoverMode): void
 
 应用可通过该接口变更连接迁移模式，包括委托模式由系统发起连接迁移，和自主模式由应用发起连接迁移，默认为委托模式。设置失败，接口会抛出异常。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.GET\_NETWORK\_INFO
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -136,35 +140,35 @@ setHandoverMode(mode: HandoverMode): void
 
 **错误码：**
 
-涉及错误码均为通用错误码，[通用错误码详细描述查看](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | Parameter error. |
+| 401 | Invalid parameter. |
 | 801 | Capability not supported. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. // 设置为自主模式，由应用发起连接迁移
-5. let mode: netHandover.HandoverMode = netHandover.HandoverMode.DISCRETION;
-6. netHandover.setHandoverMode(mode);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  // 设置为自主模式，由应用发起连接迁移
+  let mode: netHandover.HandoverMode = netHandover.HandoverMode.DISCRETION;
+  netHandover.setHandoverMode(mode);
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netHandover.getMultiPathQuotaStats
 
-PhonePC/2in1Tablet
-
 getMultiPathQuotaStats(): MultiPathQuota
 
 获取当前应用多网使用的配额，包括已使用的配额信息和剩余配额信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.LINKTURBO
 
@@ -180,37 +184,37 @@ getMultiPathQuotaStats(): MultiPathQuota
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](networkboost-arkts-errorcode.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-networkboost.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 1013600001 | Internal error. For example, the internal management state machine is abnormal, or the internal message queue processing is blocked. |
-| 1013600002 | System service error. For example, IPC call processes fails, or the network management service failed to start. |
+| 1013600001 | Internal error. |
+| 1013600002 | System service error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. let multiquota : netHandover.MultiPathQuota = netHandover.getMultiPathQuotaStats();
-5. console.info('getMultiPathQuotaStats multiPathQuota.used.count is:' + multiquota.used.count)
-6. console.info('getMultiPathQuotaStats multiPathQuota.used.duration is:' + multiquota.used.duration)
-7. console.info('getMultiPathQuotaStats multiPathQuota.remaining.count is:' + multiquota.remaining.count)
-8. console.info('getMultiPathQuotaStats multiPathQuota.remaining.durationis:' + multiquota.remaining.duration)
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  let multiquota : netHandover.MultiPathQuota = netHandover.getMultiPathQuotaStats();
+  console.info('getMultiPathQuotaStats multiPathQuota.used.count is:' + multiquota.used.count)
+  console.info('getMultiPathQuotaStats multiPathQuota.used.duration is:' + multiquota.used.duration)
+  console.info('getMultiPathQuotaStats multiPathQuota.remaining.count is:' + multiquota.remaining.count)
+  console.info('getMultiPathQuotaStats multiPathQuota.remaining.duration is:' + multiquota.remaining.duration)
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netHandover.requestMultiPath
 
-PhonePC/2in1Tablet
-
 requestMultiPath(callback: Callback<MultiPathRequestResult>): void
 
 发起多网请求。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.LINKTURBO
 
@@ -226,13 +230,13 @@ requestMultiPath(callback: Callback<MultiPathRequestResult>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](networkboost-arkts-errorcode.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-networkboost.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 1013600001 | Internal error. For example, the internal management state machine is abnormal, or the internal message queue processing is blocked. |
-| 1013600002 | System service error. For example, IPC call processes fails, or the network management service failed to start. |
+| 1013600001 | Internal error. |
+| 1013600002 | System service error. |
 | 1013620000 | Multi-path capability is disabled. |
 | 1013620001 | Multi-path links are already active or in the process of being established. |
 | 1013620002 | App request limit reached. |
@@ -246,25 +250,25 @@ requestMultiPath(callback: Callback<MultiPathRequestResult>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. netHandover.requestMultiPath((data: netHandover.MultiPathRequestResult) => {
-5. console.info(` requestMultiPath result:` + JSON.stringify(data));
-6. });
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  netHandover.requestMultiPath((data: netHandover.MultiPathRequestResult) => {
+   console.info(` requestMultiPath result:` + JSON.stringify(data));
+  });
+ } catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netHandover.releaseMultiPath
 
-PhonePC/2in1Tablet
-
 releaseMultiPath(): void
 
 释放多网请求。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.LINKTURBO
 
@@ -274,35 +278,35 @@ releaseMultiPath(): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](networkboost-arkts-errorcode.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-networkboost.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 1013600001 | Internal error. For example, the internal management state machine is abnormal, or the internal message queue processing is blocked. |
-| 1013600002 | System service error. For example, IPC call processes fails, or the network management service failed to start. |
+| 1013600001 | Internal error. |
+| 1013600002 | System service error. |
 | 1013620100 | Release request mismatch. |
 | 1013620101 | Multi-path not activated. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. netHandover.releaseMultiPath();
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  netHandover.releaseMultiPath();
+ } catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netHandover.on('multiPathStateChange')
 
-PhonePC/2in1Tablet
-
 on(type: 'multiPathStateChange', callback: Callback<MultiPathStateInfo>): void
 
 订阅多网状态变化事件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.LINKTURBO
 
@@ -319,36 +323,40 @@ on(type: 'multiPathStateChange', callback: Callback<MultiPathStateInfo>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](networkboost-arkts-errorcode.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-networkboost.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 1013600001 | Internal error. For example, the internal management state machine is abnormal, or the internal message queue processing is blocked. |
-| 1013600002 | System service error. For example, IPC call processes fails, or the network management service failed to start. |
+| 1013600001 | Internal error. |
+| 1013600002 | System service error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. netHandover.on('multiPathStateChange', (data: netHandover.MultiPathStateInfo) => {
-5. // 回调信息处理
-6. console.info("on multiPathStateChange: " + JSON.stringify(data));
-7. });
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  netHandover.on('multiPathStateChange', (data: netHandover.MultiPathStateInfo) => {
+    // 回调信息处理
+    console.info('on multiPathStateChange multiPathState:', data.multiPathState);
+    console.info('on multiPathStateChange cause:', data.cause);
+    console.info('on multiPathStateChange netHandle:', data.netHandle.netId);
+    console.info('on multiPathStateChange pathState:', data.pathState);
+    console.info('on multiPathStateChange pathType:', data.pathType);
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netHandover.off('multiPathStateChange')
 
-PhonePC/2in1Tablet
-
 off(type: 'multiPathStateChange', callback?: Callback<MultiPathStateInfo>): void
 
 取消订阅多网状态变化事件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.LINKTURBO
 
@@ -365,33 +373,33 @@ off(type: 'multiPathStateChange', callback?: Callback<MultiPathStateInfo>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](networkboost-arkts-errorcode.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-networkboost.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 1013600001 | Internal error. For example, the internal management state machine is abnormal, or the internal message queue processing is blocked. |
-| 1013600002 | System service error. For example, IPC call processes fails, or the network management service failed to start. |
+| 1013600001 | Internal error. |
+| 1013600002 | System service error. |
 
 **示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. netHandover.off('multiPathStateChange');
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  netHandover.off('multiPathStateChange');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netHandover.on('multiPathRecommendation')
 
-PhonePC/2in1Tablet
-
 on(type: 'multiPathRecommendation', callback: Callback<MultiPathRecommendationInfo>): void
 
 订阅系统多网建议变化事件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.LINKTURBO
 
@@ -408,36 +416,36 @@ on(type: 'multiPathRecommendation', callback: Callback<MultiPathRecommendationIn
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](networkboost-arkts-errorcode.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-networkboost.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 1013600001 | Internal error. For example, the internal management state machine is abnormal, or the internal message queue processing is blocked. |
-| 1013600002 | System service error. For example, IPC call processes fails, or the network management service failed to start. |
+| 1013600001 | Internal error. |
+| 1013600002 | System service error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. netHandover.on('multiPathRecommendation', (data: netHandover.MultiPathRecommendationInfo) => {
-5. // 回调信息处理
-6. console.info("on multiPathRecommendation: " + JSON.stringify(data));
-7. });
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  netHandover.on('multiPathRecommendation', (data: netHandover.MultiPathRecommendationInfo) => {
+    // 回调信息处理
+    console.info("on multiPathRecommendation: " + JSON.stringify(data));
+  });
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## netHandover.off('multiPathRecommendation')
 
-PhonePC/2in1Tablet
-
 off(type: 'multiPathRecommendation', callback?: Callback<MultiPathRecommendationInfo>): void
 
 取消订阅系统多网建议变化事件。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.LINKTURBO
 
@@ -454,31 +462,33 @@ off(type: 'multiPathRecommendation', callback?: Callback<MultiPathRecommendation
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](networkboost-arkts-errorcode.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-networkboost.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 1013600001 | Internal error. For example, the internal management state machine is abnormal, or the internal message queue processing is blocked. |
-| 1013600002 | System service error. For example, IPC call processes fails, or the network management service failed to start. |
+| 1013600001 | Internal error. |
+| 1013600002 | System service error. |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { netHandover } from '@kit.NetworkBoostKit';
-3. try {
-4. netHandover.off('multiPathRecommendation');
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { netHandover } from '@kit.NetworkBoostKit';
+try {
+  netHandover.off('multiPathRecommendation');
+} catch (err) {
+  console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## HandoverInfo
 
-PhonePC/2in1Tablet
-
 连接迁移回调信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -491,9 +501,11 @@ PhonePC/2in1Tablet
 
 ## HandoverStart
 
-PhonePC/2in1Tablet
-
 连接迁移开始信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -501,14 +513,16 @@ PhonePC/2in1Tablet
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| expires | number | 否 | 否 | 连接迁移全流程的超时时间，单位为秒，取值为任意正整数或者0。 |
+| expires | number | 否 | 否 | 连接迁移全流程的超时时间，单位为s，取值为任意正整数或者0。 |
 | dataSpeedAction | [DataSpeedAction](networkboost-nethandover.md#dataspeedaction) | 否 | 否 | 老链路的发包建议。 |
 
 ## HandoverComplete
 
-PhonePC/2in1Tablet
-
 连接迁移完成信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -518,18 +532,20 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | result | [ErrorResult](networkboost-nethandover.md#errorresult) | 否 | 否 | 连接迁移结果。 |
 | handoverContinue | boolean | 否 | 否 | 是否还有HandoverComplete消息。  true表示还有新链路待激活，系统还会上报HandoverComplete消息，一般发生在连接迁移到多个网络的场景。  false表示当前已经是最后一个HandoverComplete消息，连接迁移流程完成。 |
-| oldPathLifetime | number | 否 | 否 | 老链路的剩余生存时长，单位为秒，取值为任意正整数或0。 |
+| oldPathLifetime | number | 否 | 否 | 老链路的剩余生存时长，单位为s，取值为任意正整数或0。 |
 | oldDataSpeedAction | [DataSpeedAction](networkboost-nethandover.md#dataspeedaction) | 否 | 否 | 老链路发包建议。 |
-| pathTypeChanged | boolean | 否 | 否 | 新老链路类型是否发生变更。true表示发生变化，如WiFi<->蜂窝。false表示没有发生变化。 |
-| newNetHandle | [connection.NetHandle](js-apis-net-connection.md#nethandle) | 否 | 是 | 新链路的NetHandle信息。 |
+| pathTypeChanged | boolean | 否 | 否 | 新老链路类型是否发生变更。true表示发生变化，如Wi-Fi切换到蜂窝。false表示没有发生变化。 |
+| newNetHandle | [connection.NetHandle](js-apis-net-connection.md#nethandle) | 否 | 是 | 若连接迁移成功，newNetHandle为新链路的NetHandle信息，若连接迁移失败，则不返回该信息，此时视为无新链路，新链路NetHandle中的netdId默认为0。 |
 | reEstAction | [ReEstAction](networkboost-nethandover.md#reestaction) | 否 | 否 | 链路重建类型。 |
 | newDataSpeedAction | [DataSpeedAction](networkboost-nethandover.md#dataspeedaction) | 否 | 否 | 新链路发包建议。 |
 
 ## DataSpeedAction
 
-PhonePC/2in1Tablet
-
 发包速率建议。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -543,9 +559,9 @@ PhonePC/2in1Tablet
 
 ## MultiPathStateInfo
 
-PhonePC/2in1Tablet
-
 多网状态信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -561,9 +577,9 @@ PhonePC/2in1Tablet
 
 ## MultiPathRecommendationInfo
 
-PhonePC/2in1Tablet
-
 多网推荐信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -575,9 +591,9 @@ PhonePC/2in1Tablet
 
 ## MultiPathQuota
 
-PhonePC/2in1Tablet
-
 应用配额使用信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -590,9 +606,9 @@ PhonePC/2in1Tablet
 
 ## MultiPathQuotaInfo
 
-PhonePC/2in1Tablet
-
 配额信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -601,13 +617,13 @@ PhonePC/2in1Tablet
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 否 | 配额次数信息。 |
-| duration | number | 否 | 否 | 配额时长信息，单位为秒。 |
+| duration | number | 否 | 否 | 配额时长信息，单位为s。 |
 
 ## MultiPathRequestResult
 
-PhonePC/2in1Tablet
-
 多网请求结果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -619,9 +635,9 @@ PhonePC/2in1Tablet
 
 ## MultiPathAction
 
-PhonePC/2in1Tablet
-
 多网推荐动作的枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -634,9 +650,9 @@ PhonePC/2in1Tablet
 
 ## MultiPathErrorResult
 
-PhonePC/2in1Tablet
-
 多网建立结果的枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -651,9 +667,9 @@ PhonePC/2in1Tablet
 
 ## MultiPathState
 
-PhonePC/2in1Tablet
-
 多网状态。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -668,9 +684,9 @@ PhonePC/2in1Tablet
 
 ## PathState
 
-PhonePC/2in1Tablet
-
 多网链路状态。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -684,9 +700,9 @@ PhonePC/2in1Tablet
 
 ## MultiPathChangeCause
 
-PhonePC/2in1Tablet
-
 多网变化原因的枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -710,9 +726,11 @@ PhonePC/2in1Tablet
 
 ## HandoverMode
 
-PhonePC/2in1Tablet
-
 表示连接迁移模式枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -725,9 +743,11 @@ PhonePC/2in1Tablet
 
 ## ReEstAction
 
-PhonePC/2in1Tablet
-
 表示重建枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 
@@ -736,16 +756,18 @@ PhonePC/2in1Tablet
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 表示应用需要使用同样的远端IP，进行重建链路。 |
-| QUERY\_DNS | 1 | 表示数据链路类型发生变化，比如WiFi <-> CELL，或者是数据链路所在的运营商信息等变化。 |
+| QUERY\_DNS | 1 | 表示数据链路类型发生变化，比如Wi-Fi切换到蜂窝，或者是数据链路所在的运营商信息等变化。 |
 | CHANGE\_REMOTE\_IP | 2 | 表示应用需要使用不同的远端IP进行重建。 |
-| CHANGE\_IP\_VERSION | 3 | 表示应用需要修改IP类型进行重建，比如IPV4 <-> IPV6。 |
+| CHANGE\_IP\_VERSION | 3 | 表示应用需要修改IP类型进行重建，比如IPv4修改为IPv6或者IPv6修改为IPv4。 |
 | NO\_EST | 4 | 表示应用应该在老链路进行立即重试，再次发起网络资源请求和交互，无需重建链路。 |
 
 ## ErrorResult
 
-PhonePC/2in1Tablet
-
 表示连接迁移结果枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Communication.NetworkBoost.Core
 

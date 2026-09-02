@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 调用函数
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > 开发云函数 > 调用函数
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4aac693bb46aa2764df8ca33b3551cdbfebee50ff6696c48daee7423f531b7df
+scraped_at: 2026-09-02T14:50:25+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:6b8cf3b03127e27f13f53105e33197daae1da3d339aa177b9592d773011d4f52
 ---
 
 ## 约束与限制
@@ -16,87 +16,71 @@ content_hash: sha256:4aac693bb46aa2764df8ca33b3551cdbfebee50ff6696c48daee7423f53
 
 在“entry/src/main/module.json5”文件中添加网络权限。
 
-```
-1. "requestPermissions": [
-2. {
-3. "name": "ohos.permission.INTERNET"
-4. }
-5. ]
+```typescript
+"requestPermissions": [
+  {
+    "name": "ohos.permission.INTERNET"
+  }
+]
 ```
 
 ## 查询函数名和版本
 
 在函数的触发器页面点击“HTTP触发器”，查看“触发URL”的后缀，获取触发器的标识，格式为“函数名-版本号”。如下图所示，“myhandlerxxxx-$latest”即为HTTP触发器标识，其中“myhandlerxxxx”为函数名，“$latest”为版本号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/APEpB-lDQfaiCmsJtcMaFw/zh-cn_image_0000002558765360.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/9nmi3n4pSD6XPj9zZdVLlw/zh-cn_image_0000002706674940.png)
 
 ## 在应用中调用函数
 
-1. 在项目中导入cloudFunction组件。
+1. 导入相关模块。
 
-   ```
-   1. import { cloudFunction } from '@kit.CloudFoundationKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { cloudFunction } from '@kit.CloudFoundationKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 调用[call()](../harmonyos-references/cloudfoundation-cloudfunction.md#call)方法设置函数，在方法中传入函数名称，返回调用结果。
 
-   * （可选）通过设置timeout属性对云函数设置超时时长，单位为毫秒。
+   * （可选）通过设置timeout属性对云函数设置超时时长，单位为ms。
    * （可选）通过设置version属性对云函数设置函数版本号，默认为最新版本'$latest'。
    * （可选）如果函数有入参，可以将data参数转化为JSON对象或JSON字符串传入，如果没有参数则不传。
 
    使用Promise异步回调：
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { cloudFunction } from '@kit.CloudFoundationKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-
-   5. function callFunction() {
-   6. cloudFunction.call({
-   7. name: 'functionName', // functionName需替换为实际的函数名
-   8. version: '$latest',   // 如果不传入版本号，默认为“$latest”。
-   9. timeout: 10 * 1000,   // 单位为毫秒，默认为70*1000毫秒。
-   10. data: {               // data为函数请求体
-   11. param1: 'val1',
-   12. param2: 'val2'
-   13. }
-   14. }).then((value: cloudFunction.FunctionResult) => {
-   15. hilog.info(0x0000, 'testTag', `Succeeded in calling the function, result: ${JSON.stringify(value.result)}`);
-   16. }).catch((err: BusinessError) => {
-   17. hilog.error(0x0000, 'testTag', `Failed to call the function, code: ${err.code}, message: ${err.message}`);
-   18. })
-   19. }
+   ```typescript
+   cloudFunction.call({
+     name: 'sort', // sort需替换为实际的函数名
+     version: '$latest', // 如果不传入版本号，默认为“$latest”。
+     timeout: 10 * 1000, // 单位为ms，默认为70*1000ms。
+     data: {
+       // data为函数请求体
+       param1: 'val1',
+       param2: 'val2'
+     }
+   }).then((res: cloudFunction.FunctionResult) => {
+     hilog.info(0x0000, 'function', `Succeeded in calling the function, result: ${JSON.stringify(res.result)}`);
+   }).catch((err: BusinessError) => {
+     hilog.error(0x0000, 'function', `Failed to call function , code: ${err.code}, message: ${err.message}`);
+   });
    ```
 
    或者，使用callback异步回调：
 
+   ```typescript
+   cloudFunction.call({
+     name: 'sort-id', // sort-id需替换为实际的函数名
+     version: '$latest', // 如果不传入版本号，默认为“$latest”。
+     timeout: 10 * 1000, // 单位为ms，默认为70*1000ms。
+     data: {
+       // data为函数请求体
+       param1: 'val1',
+       param2: 'val2'
+     }
+   }, (err: BusinessError, res: cloudFunction.FunctionResult) => {
+     hilog.info(0x0000, 'function', `Succeeded in calling the function, result: ${JSON.stringify(res.result)}`);
+     if (err) {
+       hilog.error(0x0000, 'function', `Failed to call function , code: ${err.code}, message: ${err.message}`);
+       return;
+     }
+   });
    ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { cloudFunction } from '@kit.CloudFoundationKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-
-   5. function callFunction() {
-   6. cloudFunction.call({
-   7. name: 'functionName', // functionName需替换成实际的函数名
-   8. version: '$latest',  // 如果不传入版本号，默认为“$latest”。
-   9. timeout: 10 * 1000,  // 单位为毫秒，默认为70*1000毫秒。
-   10. data: {              // data为函数请求体
-   11. param1: 'val1',
-   12. param2: 'val2'
-   13. }
-   14. }, (err: BusinessError, value: cloudFunction.FunctionResult) => {
-   15. if (err) {
-   16. hilog.error(0x0000, 'testTag', `Failed to call the function, code: ${err.code}, message: ${err.message}`);
-   17. return;
-   18. }
-   19. hilog.info(0x0000, 'testTag', `Succeeded in calling the function, result: ${JSON.stringify(value.result)}`);
-   20. })
-   21. }
-   ```
-3. 如果需要关注函数的返回值，可调用result属性获取。
-
-   ```
-   1. let returnValue = value.result;
-   ```
-
-   value为步骤2中调用call()方法返回的cloudFunction.FunctionResult对象，返回值为云函数body返回的值，以[测试函数](cloudfoundation-test-function.md)时返回的结果为例，value.result = {"simple":"example"}。

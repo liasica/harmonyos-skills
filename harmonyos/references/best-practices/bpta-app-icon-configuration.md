@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-icon-c
 title: 应用图标配置与开发
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 应用图标配置与开发
 category: best-practices
-scraped_at: 2026-04-29T14:10:48+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3512a7
+scraped_at: 2026-09-02T15:03:16+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:f2a54686684c8a4ad94a827e010e74c8d26de03ec43117329a68ef035935125f
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3
 
 根据组成结构的不同，应用图标可分为单层图标和分层图标。
 
-* 单层图标：支持解码为[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)的图片。
+* 单层图标：支持解码为PixelMap的图片。
 * 分层图标：由前景图和背景图组成的JSON格式图标资源。
   + 前景图：通常是应用图标的主体部分，例如应用的主要图形、Logo或文字，需为透明的PNG格式。
   + 背景图：用于与前景图叠加形成完整的应用图标，需为纯色，不能含有透明像素。
@@ -28,7 +28,7 @@ content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3
 
 在开始阅读之前，建议开发者先了解[应用图标](../design-guides/application-icon-0000001953444009.md)和[应用开发准备](../harmonyos-guides/application-dev-overview.md)。
 
-注意
+**须知** 
 
 在应用图标设计阶段，建议开发者依据[通用应用UX体验标准](../design-guides/ux-guidelines-general-0000001760708152.md)与[上架AppGallery Connect时的图标规范](bpta-app-icon-configuration.md#section1470095312575)，准备相应格式的图标资源。
 
@@ -38,7 +38,7 @@ content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3
 
 若开发者需将分层图标生成为单层图标，可使用DevEco Studio的Image Asset功能，具体操作可参考[生成单层图标](../harmonyos-guides/ide-apply-generated-icon.md)。
 
-说明
+**说明** 
 
 发布应用时，phone-xxxldpi/media（设备类型为phone时生成）目录下的icon.png（216\*216px）图片可用于在AppGallery Connect上传应用图标。
 
@@ -62,19 +62,19 @@ content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3
 | --- | --- | --- |
 |  |  |  |
 
-应用图标可通过配置单层图标或配置分层图标两种方式进行配置，具体操作可参考[配置单层图标和应用名称](../harmonyos-guides/layered-image.md#配置单层图标和应用名称)与[配置分层图标和应用名称](../harmonyos-guides/layered-image.md#配置分层图标和应用名称)。
+应用图标可通过单层图标或分层图标两种方式进行配置，具体操作可参考[配置单层图标和应用名称](../harmonyos-guides/layered-image.md#配置单层图标和应用名称)与[配置分层图标和应用名称](../harmonyos-guides/layered-image.md#配置分层图标和应用名称)。
 
-注意
+**须知** 
 
 轻量级智能穿戴应用在entry/src/main/config.json文件的abilities标签下配置icon和label字段。相关要求请查看[轻量级智能穿戴应用配置应用图标](bpta-app-icon-configuration.md#li15169114820415)。
 
 ### 配置启动页图标
 
-启动页是在应用进程没有运行或应用内容没有加载完成前展示的页面，承载了应用展示品牌特性的功能，用于向用户展示产品独特的标识，并加强用户对产品的认知。启动页主要使用场景如下：
+启动页是在应用进程没有运行或应用内容没有加载完成前展示的页面，承载了应用展示品牌特性的功能。启动页主要用于以下场景：
 
 * 应用在没有后台进程的情况下启动，会先展示启动页。
 * 应用仍处于启动页阶段时退出到后台，多任务中会展示该应用的启动页。
-* 应用主动销毁且系统未生成快照时，会在退出动效展示启动页。例如：使用[killAllProcesses()](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextkillallprocesses14)接口终止应用的所有进程。
+* 应用主动销毁且系统未生成快照时，会在退出动效展示启动页。例如：使用[ApplicationContext.killAllProcesses()](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextkillallprocesses14)接口终止应用的所有进程。
 
 | 应用冷启动 | 启动页阶段退出到后台 | 应用主动销毁 |
 | --- | --- | --- |
@@ -86,9 +86,9 @@ content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3
 
   在module.json5文件的[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下配置startWindowIcon（启动页图标）和startWindowBackground（启动页背景颜色）字段。[生成单层图标](bpta-app-icon-configuration.md#section1982161535013)时，会生成icon.png和icon\_startwindow.png图标，其中icon\_startwindow.png图标可用于配置startWindowIcon字段，startWindowBackground字段的值建议在resources/base/element目录下的color.json文件中配置。
 
-  ```
-  1. "startWindowIcon": "$media:icon_startwindow",
-  2. "startWindowBackground": "$color:start_window_background",
+  ```json
+  "startWindowIcon": "$media:icon_startwindow",
+  "startWindowBackground": "$color:start_window_background",
   ```
 * 配置增强启动页
 
@@ -101,22 +101,22 @@ content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3
      4. bgImage.png：增强启动页的背景图片资源文件。
   2. 在resources/base/profile目录下创建start\_window.json文件。
 
-     ```
-     1. {
-     2. "startWindowType": "REQUIRED_SHOW",
-     3. "startWindowColorModeType": "FOLLOW_SYSTEM",
-     4. "startWindowAppIcon": "$media:icon_startwindow",
-     5. "startWindowIllustration": "$media:illustration",
-     6. "startWindowBrandingImage": "$media:brand",
-     7. "startWindowBackgroundColor": "$color:start_window_background",
-     8. "startWindowBackgroundImage": "$media:bgImage",
-     9. "startWindowBackgroundImageFit": "Contain"
-     10. }
+     ```json
+     {
+       "startWindowType": "REQUIRED_SHOW",
+       "startWindowColorModeType": "FOLLOW_SYSTEM",
+       "startWindowAppIcon": "$media:icon_startwindow",
+       "startWindowIllustration": "$media:illustration",
+       "startWindowBrandingImage": "$media:brand",
+       "startWindowBackgroundColor": "$color:start_window_background",
+       "startWindowBackgroundImage": "$media:bgImage",
+       "startWindowBackgroundImageFit": "Contain"
+     }
      ```
   3. 在module.json5文件的abilities标签下配置startWindow字段。
 
-     ```
-     1. "startWindow": "$profile:start_window",
+     ```json
+     "startWindow": "$profile:start_window",
      ```
 
   若开发者需要了解相关字段配置要求和增强启动页示意图，请查看[配置增强启动页](../harmonyos-guides/launch-page-config.md#配置增强启动页)。
@@ -125,22 +125,22 @@ content_hash: sha256:db4ed937a7d3f1a23ee49acb610f99f5b76b4b3e10193633a52979f24e3
 
 ### 动态切换应用图标
 
-通过图标管理服务，开发者可以在不升级应用版本的情况下，在应用侧实现动态切换应用图标。例如：元宵节、中秋节、圣诞节等节日时，在应用图标中加入对应节日元素（如灯笼、月饼、圣诞树）。开发步骤可分为两步：
+通过图标管理服务，开发者可以在不升级应用版本的情况下动态切换应用图标。例如在元宵节、中秋节等节日时加入对应节日元素。开发步骤可分为两步：
 
 * 在AppGallery Connect动态管理应用图标
-  1. 使用图标管理服务前，请向运营人员发送邮件[申请开通服务](../harmonyos-guides/appgallery-appinfo-manage.md#section474611326316)。
+  1. 使用图标管理服务前，请向运营人员发送邮件[申请开通服务](../harmonyos-guides/appgallery-appinfo-manage.md#申请开通服务)。
   2. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“APP与元服务”查看已上架应用列表，在应用列表选择已开通图标管理服务的应用进入应用信息页面，选择“分发>服务>图标管理”进入图标管理页面。
-  3. 在图标管理页面可进行[创建图标](../harmonyos-guides/appgallery-appinfo-manage.md#section1680884411110)、[编辑和更新图标](../harmonyos-guides/appgallery-appinfo-manage.md#section1080916448112)和[删除图标](../harmonyos-guides/appgallery-appinfo-manage.md#section15809944141118)。
+  3. 在图标管理页面可进行[创建图标](../harmonyos-guides/appgallery-appinfo-manage.md#创建图标)、[编辑和更新图标](../harmonyos-guides/appgallery-appinfo-manage.md#编辑和更新图标)和[删除图标](../harmonyos-guides/appgallery-appinfo-manage.md#删除图标)。
 * 使用AppGallery Kit实现应用图标动态切换
-  1. 调用[queryDynamicIcons()](../harmonyos-references/appgallery-appinfomanager.md#section887383520415)接口查询动态图标信息。
-  2. 调用[selectDynamicIcon()](../harmonyos-references/appgallery-appinfomanager.md#section16502191111574)接口通过图标ID切换动态图标。
-  3. 调用[disableDynamicIcon()](../harmonyos-references/appgallery-appinfomanager.md#section984175210392)接口恢复默认图标。
+  1. 调用[appInfoManager.queryDynamicIcons()](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerquerydynamicicons)接口查询动态图标信息。
+  2. 调用[appInfoManager.selectDynamicIcon()](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerselectdynamicicon)接口通过图标ID切换动态图标。
+  3. 调用[appInfoManager.disableDynamicIcon()](../harmonyos-references/appgallery-appinfomanager.md#appinfomanagerdisabledynamicicon)接口恢复默认图标。
 
   详细开发步骤可参考[实现应用图标动态切换](../harmonyos-guides/appgallery-appinfo-use.md)。
 
 ### 应用内展示应用图标
 
-UI Design Kit提供了应用图标处理能力，支持单层图标和双层图标，开发者可使用[hdsDrawable](../harmonyos-references/ui-design-hdsdrawable.md)模块处理应用图标并获取处理后的图标数据对象。以下是一些典型的应用场景：
+UI Design Kit提供了应用图标处理能力，支持单层图标和分层图标，开发者可使用[hdsDrawable](../harmonyos-references/ui-design-hdsdrawable.md)模块处理应用图标并获取处理后的图标数据对象。以下是一些典型的应用场景：
 
 * 在应用列表中展示应用图标。例如：设置应用的应用列表。
 * 在应用详情页展示应用图标。例如：应用版本信息页面。
@@ -148,27 +148,27 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和双层图�
 下面以在应用列表中展示应用图标为例介绍应用内展示应用图标的开发步骤。
 
 * 展示分层图标
-  1. 在entry/src/main/resources/base/media目录下添加前景图和背景图，并在该目录下配置分层图标资源文件（如drawable.json）。
+  1. 在entry/src/main/resources/base/media目录下添加前景图和背景图（icon\_foreground.png和icon\_\_background.png），并在该目录下配置分层图标资源文件（如drawable.json）。
 
+     ```json
+     {
+       "layered-image":
+       {
+         "background" : "$media:icon_background",
+         "foreground" : "$media:icon_foreground"
+       }
+     }
      ```
-     1. {
-     2. "layered-image":
-     3. {
-     4. "background" : "$media:background",
-     5. "foreground" : "$media:foreground"
-     6. }
-     7. }
-     ```
-  2. 通过[getDrawableDescriptor()](../harmonyos-references/js-apis-resource-manager.md#getdrawabledescriptor10)接口获取原始分层图标信息，并调用[getHdsLayeredIcon()](../harmonyos-references/ui-design-hdsdrawable.md#section156601033183215)接口、[getHdsLayeredIconAsync()](../harmonyos-references/ui-design-hdsdrawable.md#section5196826193012)接口或[getHdsLayeredIcons()](../harmonyos-references/ui-design-hdsdrawable.md#section712131324710)接口获取处理后的PixelMap对象。
+  2. 通过[getDrawableDescriptor()](../harmonyos-references/js-apis-resource-manager.md#getdrawabledescriptor10)接口获取原始分层图标信息，并调用[hdsDrawable.getHdsLayeredIcon()](../harmonyos-references/ui-design-hdsdrawable.md#hdsdrawablegethdslayeredicon)接口、[hdsDrawable.getHdsLayeredIconAsync()](../harmonyos-references/ui-design-hdsdrawable.md#hdsdrawablegethdslayerediconasync)接口或[hdsDrawable.getHdsLayeredIcons()](../harmonyos-references/ui-design-hdsdrawable.md#hdsdrawablegethdslayeredicons)接口获取处理后的PixelMap对象。
   3. 使用[List](../harmonyos-references/ts-container-list.md)组件和[Image](../harmonyos-references/ts-basic-components-image.md)组件展示带图标的应用列表。
 
-  示例代码可参考[分层图标处理开发实例](../harmonyos-guides/ui-design-layered-process.md#section1817964534718)。
+  示例代码可参考[（推荐）分层图标处理](../harmonyos-guides/ui-design-layered-process.md)。
 * 展示单层图标
   1. 在entry/src/main/resources/base/media目录下配置单层图标资源文件（如normal\_icon.png）。
-  2. 通过[getDrawableDescriptor()](../harmonyos-references/js-apis-resource-manager.md#getdrawabledescriptor10)接口获取原始单层图标信息，并调用[getHdsIcon()](../harmonyos-references/ui-design-hdsdrawable.md#section11716322123212)接口、[getHdsIconAsync()](../harmonyos-references/ui-design-hdsdrawable.md#section343192618556)接口或[getHdsIcons()](../harmonyos-references/ui-design-hdsdrawable.md#section12429174135913)接口获取处理后的PixelMap对象。
+  2. 通过[getDrawableDescriptor()](../harmonyos-references/js-apis-resource-manager.md#getdrawabledescriptor10)接口获取原始单层图标信息，并调用[hdsDrawable.getHdsIcon()](../harmonyos-references/ui-design-hdsdrawable.md#hdsdrawablegethdsicon)接口、[hdsDrawable.getHdsIconAsync()](../harmonyos-references/ui-design-hdsdrawable.md#hdsdrawablegethdsiconasync)接口或[hdsDrawable.getHdsIcons()](../harmonyos-references/ui-design-hdsdrawable.md#hdsdrawablegethdsicons)接口获取处理后的PixelMap对象。
   3. 使用[List](../harmonyos-references/ts-container-list.md)组件和[Image](../harmonyos-references/ts-basic-components-image.md)组件展示带图标的应用列表。
 
-  示例代码可参考[单层图标处理开发实例](../harmonyos-guides/ui-design-normal-process.md#section048218555616)。
+  示例代码可参考[单层图标处理](../harmonyos-guides/ui-design-normal-process.md)。
 
 ## 上架AppGallery Connect时的图标规范
 
@@ -187,7 +187,7 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和双层图�
 * AppGallery Connect平台规范
   + 上传至AppGallery Connect的应用图标资源需满足[素材规范](../app/agc-help-app-visual-asset-spec-0000002277607976.md)。
   + 上传的应用图标必须与软件包中的应用图标一致。
-  + 应用图标应符合实际功能、用途，不能包含误导性、不相关、不恰当的信息。详细介绍请查看[应用信息](../app/50104-01.md)。
+  + 应用图标应符合实际功能、用途，不能包含误导性、不相关、不恰当的信息。详细介绍请查看[应用信息](../app/50104.md#section1729024510210)。
 
 ## 常见问题
 
@@ -195,12 +195,7 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和双层图�
 
 开发者可使用以下三种方法验证应用图标是否符合规范：
 
-* 使用DevEco Testing进行[UX基础质量测试](../harmonyos-guides/specialized-testing.md#section189671819225)。
-  1. 参考[DevEco Testing快速上手](../harmonyos-guides/get-familiar.md)下载最新版本的DevEco Testing并完成相关环境准备。
-  2. 打开DevEco Testing，选择专项测试的UX基础质量测试。
-  3. 在测试规则中选择应用图标，并选择测试时长后创建测试任务。
-
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/FJYXCuBfRkKk0vcNNbv7qg/zh-cn_image_0000002548106143.png)
+* 使用DevEco Testing进行[UX测试](../harmonyos-guides/ux-testing.md)。
 * 使用DevEco Testing的[上架预检](../harmonyos-guides/publish-testing.md)服务。
 * 使用AppGallery Connect平台的云测试服务进行[UX测试](../app/agc-help-cloudtest-uxtest-0000002289534109.md)。
 
@@ -214,7 +209,7 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和双层图�
 **可能原因**
 
 1. 当module.json5文件中未配置UIAbility或skills标签下的entities未配置“entity.system.home”或actions未配置“ohos.want.action.home”时，app.json5文件中配置的应用图标生效。
-2. 当AppScope/resource目录与entry/src/main/resources目录存在同名文件时，在编译构建过程中，AppScope下的资源会与entry模块下的资源合并，且entry/src/main/resources目录下的同名资源文件会被覆盖。此时会显示module.json5文件中配置的被覆盖后的应用图标。
+2. 当AppScope/resources目录与entry/src/main/resources目录存在同名文件时，在编译构建过程中，entry/src/main/resources目录下的同名资源文件会被AppScope/resources目录下的资源覆盖。此时会显示module.json5文件中配置的被覆盖后的应用图标。
 3. 当module.json5文件中正确配置UIAbility且模块中的图标资源文件与AppScope中的图标资源文件名称不同时，根据[配置优先级和生成策略](../harmonyos-guides/layered-image.md#配置优先级和生成策略)，将显示module.json5文件中配置的应用图标。
 
 **解决方案**
@@ -224,8 +219,8 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和双层图�
 
    app.json5文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/pD0-SirySjWAitmkd80MbA/zh-cn_image_0000002548066135.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/P6_fTtPARACWfwqkof9XqA/zh-cn_image_0000002548066135.png)
 
    module.json5文件的abilities标签：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/DDQXGFQLTqicL0u6pc52Sw/zh-cn_image_0000002516546242.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/dHE5DvbwT8ay9Zj0oCyMzQ/zh-cn_image_0000002516546242.png)

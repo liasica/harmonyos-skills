@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建列表 (List)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建列表 (List)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0c1179e93fd9253b85115cab0ce66470a64b03b80497775e0400cdb34debda62
+scraped_at: 2026-09-02T14:59:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:86404d9f018b42772735b8fff5574797ab96c7162e5ebc743e3969fdb9cda87c
 ---
 
 ## 概述
@@ -15,6 +15,8 @@ content_hash: sha256:0c1179e93fd9253b85115cab0ce66470a64b03b80497775e0400cdb34de
 使用列表可以轻松高效地显示结构化、可滚动的信息。通过在[List](../harmonyos-references/ts-container-list.md)组件中按垂直或者水平方向线性排列子组件[ListItemGroup](../harmonyos-references/ts-container-listitemgroup.md)或[ListItem](../harmonyos-references/ts-container-listitem.md)，为列表中的行或列提供单个视图，或使用[循环渲染](arkts-rendering-control-foreach.md)迭代一组行或列，或混合任意数量的单个视图和ForEach结构，构建一个列表。List组件支持使用[条件渲染](arkts-rendering-control-ifelse.md)、循环渲染、[懒加载](arkts-rendering-control-lazyforeach.md)等[渲染控制](arkts-rendering-control-overview.md)方式生成子组件。
 
 在圆形屏幕设备上，推荐使用[ArcList](../harmonyos-references/ts-container-arclist.md)组件，使用方式可参考[创建弧形列表 (ArcList)](arkts-layout-development-create-arclist.md)。
+
+以下各步骤示例为片段代码，可通过点击示例代码右下方的链接获取完整示例。
 
 ## 布局与约束
 
@@ -26,9 +28,9 @@ ListItemGroup用于列表数据的分组展示，其子组件也是ListItem。Li
 
 **图1** List、ListItemGroup和ListItem组件关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/1e7H03vaRwm15IWHKTc2bA/zh-cn_image_0000002558764256.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Rw-ExSIrQ52SET546ouOpg/zh-cn_image_0000002706673554.png)
 
-说明
+**说明** 
 
 List的子组件必须是ListItemGroup或ListItem，ListItem和ListItemGroup必须配合List来使用。
 
@@ -40,13 +42,13 @@ List除了提供垂直和水平布局能力、超出屏幕时可以滚动的自�
 
 **图2** 垂直滚动列表（左：单列；右：多列）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/NLf0F1YzRVmoXQNfNT5bQQ/zh-cn_image_0000002558764254.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/e0mcFTLnTlmZ3t3cHjHsbw/zh-cn_image_0000002736312595.png)
 
 利用水平布局能力可以构建单行或多行水平滚动列表，如下图所示。
 
 **图3** 水平滚动列表（左：单行；右：多行）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/TptLvPiqRcWOyJNET_MQsw/zh-cn_image_0000002558604600.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/8W6JEQSeQxS5py2ucKVQsQ/zh-cn_image_0000002736432645.png)
 
 Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽，且不需要跨行跨列布局，相比Grid和WaterFlow，则更推荐使用List。
 
@@ -58,7 +60,7 @@ Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽�
 
 **图4** 列表的主轴与交叉轴
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/obhJ2V7HRl-yiHbnfEvj3w/zh-cn_image_0000002589324125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/zgOwfxl2R6uK7y7T7feYvQ/zh-cn_image_0000002706833490.png)
 
 如果List组件主轴或交叉轴方向设置了尺寸，则其对应方向上的尺寸为设置值。
 
@@ -68,7 +70,7 @@ Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽�
 
 **图5** 列表主轴高度约束示例1（**A**: List的父组件; **B**: List组件; **C**: List的所有子组件）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/lQnyHcw4TW-uflrPyL0Yew/zh-cn_image_0000002589244065.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/TPQCiJXHRbO1MMh8t3_UEQ/zh-cn_image_0000002736312599.png)
 
 如果子组件主轴方向总尺寸超过List父组件尺寸时，List主轴方向尺寸适应List的父组件尺寸。
 
@@ -76,7 +78,7 @@ Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽�
 
 **图6** 列表主轴高度约束示例2（**A**: List的父组件; **B**: List组件; **C**: List的所有子组件）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/9JtRbriqQiGN-mDs0EBEIQ/zh-cn_image_0000002558764258.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/1lGfQsEOSFWwjzDcJjGblg/zh-cn_image_0000002706673556.png)
 
 List组件交叉轴方向在没有设置尺寸时，其尺寸默认自适应父组件尺寸。
 
@@ -88,16 +90,14 @@ List组件主轴默认是垂直方向，即默认情况下不需要手动设置L
 
 若是水平滚动列表场景，将List的[listDirection](../harmonyos-references/ts-container-list.md#listdirection)属性设置为Axis.Horizontal即可实现。listDirection默认为Axis.Vertical，即主轴默认是垂直方向。
 
+```typescript
+List(
+  // ···
+) {
+  // ···
+}
+.listDirection(Axis.Horizontal)
 ```
-1. List(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. .listDirection(Axis.Horizontal)
-```
-
-[ListLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ListLayout.ets#L27-L44)
 
 ### 设置交叉轴布局
 
@@ -105,38 +105,34 @@ List组件的交叉轴布局可以通过[lanes](../harmonyos-references/ts-conta
 
 List组件的lanes属性通常用于在不同尺寸的设备自适应构建不同行数或列数的列表，即一次开发、多端部署的场景。lanes属性的取值类型是"number | [LengthConstrain](../harmonyos-references/ts-types.md#lengthconstrain)"，即整数或者LengthConstrain类型。以垂直列表为例，如果将lanes属性设为2，表示构建的是一个两列的垂直列表，如图2中右图所示。lanes的默认值为1，即默认情况下，垂直列表的列数是1。
 
+```typescript
+List(
+  // ···
+) {
+  // ···
+}
+.lanes(2)
 ```
-1. List(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. .lanes(2)
-```
-
-[ListLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ListLayout.ets#L77-L103)
 
 当其取值为LengthConstrain类型时，表示会根据LengthConstrain与List组件的尺寸自适应决定行或列数。
 
+```typescript
+@Entry
+@Component
+export struct ListLayout {
+  @State egLanes: LengthConstrain = { minLength: 200, maxLength: 300 };
+  build() {
+    // ···
+          List(
+            // ···
+          ) {
+            // ···
+          }
+          .lanes(this.egLanes)
+        // ···
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct ListLayout {
-4. @State egLanes: LengthConstrain = { minLength: 200, maxLength: 300 };
-5. build() {
-6. // ···
-7. List(
-8. // ···
-9. ) {
-10. // ···
-11. }
-12. .lanes(this.egLanes)
-13. // ···
-14. }
-15. }
-```
-
-[ListLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ListLayout.ets#L17-L119)
 
 例如，假设在垂直列表中设置了lanes的值为{ minLength: 200, maxLength: 300 }。此时：
 
@@ -145,17 +141,15 @@ List组件的lanes属性通常用于在不同尺寸的设备自适应构建不�
 
 同样以垂直列表为例，当alignListItem属性设置为ListItemAlign.Center表示列表项在水平方向上居中对齐。alignListItem的默认值是ListItemAlign.Start，即列表项在列表交叉轴方向上默认按首部对齐。
 
+```typescript
+List(
+  // ···
+) {
+  // ···
+}
+// ···
+.alignListItem(ListItemAlign.Center)
 ```
-1. List(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. // ···
-7. .alignListItem(ListItemAlign.Center)
-```
-
-[ListLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ListLayout.ets#L76-L107)
 
 ## ListItem生命周期
 
@@ -167,7 +161,7 @@ List组件创建时，所有ListItem将会被创建。显示区域内的ListItem
 
 **图7** ForEach创建ListItem的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/30nZhXWvSe6Kk8pzv9G0yQ/zh-cn_image_0000002558604602.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/uTnY5Hl0Td2kI_wkHJoRHg/zh-cn_image_0000002736432647.png)
 
 ### 使用LazyForEach创建ListItem
 
@@ -177,7 +171,7 @@ List组件创建时，显示区域中的ListItem会被创建与布局。预加�
 
 **图8** LazyForEach创建ListItem的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/E4ZRQLx6T4Gu_fZACY07nA/zh-cn_image_0000002589324127.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ay2wpHG8TzWHsDqjDPKvIQ/zh-cn_image_0000002706833492.png)
 
 ### 使用Repeat创建ListItem
 
@@ -189,7 +183,7 @@ List组件创建时，使用设置了[virtualScroll](../harmonyos-references/ts-
 
 **图9** Repeat使用virtualScroll创建ListItem的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/cggjFrjkQwm_WVTfEAIXew/zh-cn_image_0000002589244067.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/vvxIPninQmC_BY0pOpBQrA/zh-cn_image_0000002736312601.png)
 
 **不使用virtualScroll**
 
@@ -199,7 +193,7 @@ List组件创建时，所有ListItem均被创建。显示区域内的ListItem在
 
 **图10** Repeat不使用virtualScroll创建ListItem的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/RUg3kpR8STG7cWSbWPDGaA/zh-cn_image_0000002558764260.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Md5ICHjdSo23LDvFWJffOg/zh-cn_image_0000002706673558.png)
 
 ## 在列表中显示数据
 
@@ -207,83 +201,79 @@ List组件创建时，所有ListItem均被创建。显示区域内的ListItem在
 
 **图11** 城市列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/zBDL5pQ4QwWqdH9oJyNebA/zh-cn_image_0000002558604604.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/484u9lVAQhC7RSeudMMUDw/zh-cn_image_0000002736432649.png)
 
+```typescript
+@Entry
+@Component
+export struct DataInList {
+  build() {
+    // ···
+          List() {
+            ListItem() {
+              // app.string.city_beijing 资源文件中的value值为'北京'
+              Text($r('app.string.city_beijing'))
+                .fontSize(24)
+            }
+
+            ListItem() {
+              // app.string.city_hangzhou 资源文件中的value值为'杭州'
+              Text($r('app.string.city_hangzhou'))
+                .fontSize(24)
+            }
+
+            ListItem() {
+              // app.string.city_shanghai 资源文件中的value值为'上海'
+              Text($r('app.string.city_shanghai'))
+                .fontSize(24)
+            }
+          }
+          .backgroundColor('#FFF1F3F5')
+          .alignListItem(ListItemAlign.Center)
+        // ···
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct DataInList {
-4. build() {
-5. // ···
-6. List() {
-7. ListItem() {
-8. // app.string.city_beijing 资源文件中的value值为'北京'
-9. Text($r('app.string.city_beijing'))
-10. .fontSize(24)
-11. }
-
-13. ListItem() {
-14. // app.string.city_hangzhou 资源文件中的value值为'杭州'
-15. Text($r('app.string.city_hangzhou'))
-16. .fontSize(24)
-17. }
-
-19. ListItem() {
-20. // app.string.city_shanghai 资源文件中的value值为'上海'
-21. Text($r('app.string.city_shanghai'))
-22. .fontSize(24)
-23. }
-24. }
-25. .backgroundColor('#FFF1F3F5')
-26. .alignListItem(ListItemAlign.Center)
-27. // ···
-28. }
-29. }
-```
-
-[DataInList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DataInList.ets#L19-L96)
 
 由于在ListItem中只能有一个根节点组件，不支持以平铺形式使用多个组件。因此，若列表项是由多个组件元素组成的，则需要将这多个元素组合到一个容器组件内或组成一个自定义组件。
 
 **图12** 联系人列表项示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/hluO9wPnQnOxGvTVFm-XyQ/zh-cn_image_0000002589324129.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/J1jvlYchQkKtdZssoKTYMQ/zh-cn_image_0000002706833494.png)
 
 如上图所示，联系人列表的列表项中，每个联系人都有头像和名称。此时，需要将Image和Text封装到一个Row容器内。
 
+```typescript
+List() {
+  ListItem() {
+    Row() {
+      // app.media.iconE为自定义资源
+      Image($r('app.media.iconE'))
+        .width(40)
+        .height(40)
+        .margin(10)
+
+      // app.string.peopleOne 资源文件中的value值为'小明'
+      Text($r('app.string.peopleOne'))
+        .fontSize(20)
+    }
+  }
+
+  ListItem() {
+    Row() {
+      // app.media.iconF为自定义资源
+      Image($r('app.media.iconF'))
+        .width(40)
+        .height(40)
+        .margin(10)
+
+      // app.string.peopleTwo 资源文件中的value值为'小红'
+      Text($r('app.string.peopleTwo'))
+        .fontSize(20)
+    }
+  }
+}
 ```
-1. List() {
-2. ListItem() {
-3. Row() {
-4. // app.media.iconE为自定义资源
-5. Image($r('app.media.iconE'))
-6. .width(40)
-7. .height(40)
-8. .margin(10)
-
-10. // app.string.peopleOne 资源文件中的value值为'小明'
-11. Text($r('app.string.peopleOne'))
-12. .fontSize(20)
-13. }
-14. }
-
-16. ListItem() {
-17. Row() {
-18. // app.media.iconF为自定义资源
-19. Image($r('app.media.iconF'))
-20. .width(40)
-21. .height(40)
-22. .margin(10)
-
-24. // app.string.peopleTwo 资源文件中的value值为'小红'
-25. Text($r('app.string.peopleTwo'))
-26. .fontSize(20)
-27. }
-28. }
-29. }
-```
-
-[DataInList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DataInList.ets#L54-L84)
 
 ## 迭代列表内容
 
@@ -291,55 +281,53 @@ List组件创建时，所有ListItem均被创建。显示区域内的ListItem在
 
 ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环渲染能力。以简单形式的联系人列表为例，将联系人名称和头像数据以Contact类结构存储到contacts数组，使用ForEach中嵌套ListItem的形式来代替多个平铺的、内容相似的ListItem，从而减少重复代码。
 
+```typescript
+import { util } from '@kit.ArkTS';
+
+class Contact {
+  public key: string = util.generateRandomUUID(true);
+  public name: ResourceStr;
+  public icon: Resource;
+
+  constructor(name: ResourceStr, icon: Resource) {
+    this.name = name;
+    this.icon = icon;
+  }
+}
+
+@Entry
+@Component
+export struct ListIteration {
+  private contacts: Array<Contact> = [
+
+    // app.string.peopleOne 资源文件中的value值为'小明'，app.media.iconA为自定义资源
+    new Contact($r('app.string.peopleOne'), $r('app.media.iconA')),
+    // app.string.peopleTwo 资源文件中的value值为'小红'，app.media.iconB为自定义资源
+    new Contact($r('app.string.peopleTwo'), $r('app.media.iconB'))
+  ];
+
+  build() {
+    // ...
+          List() {
+            ForEach(this.contacts, (item: Contact) => {
+              ListItem() {
+                Row() {
+                  Image(item.icon)
+                    .width(40)
+                    .height(40)
+                    .margin(10)
+                  Text(item.name).fontSize(20)
+                }
+                .width('100%')
+                .justifyContent(FlexAlign.Start)
+              }
+            }, (item: Contact) => JSON.stringify(item))
+          }
+          .width('100%')
+          // ...
+  }
+}
 ```
-1. import { util } from '@kit.ArkTS';
-
-3. class Contact {
-4. public key: string = util.generateRandomUUID(true);
-5. public name: ResourceStr;
-6. public icon: Resource;
-
-8. constructor(name: ResourceStr, icon: Resource) {
-9. this.name = name;
-10. this.icon = icon;
-11. }
-12. }
-
-14. @Entry
-15. @Component
-16. export struct ListIteration {
-17. private contacts: Array<Contact> = [
-
-19. // app.string.peopleOne 资源文件中的value值为'小明'，app.media.iconA为自定义资源
-20. new Contact($r('app.string.peopleOne'), $r('app.media.iconA')),
-21. // app.string.peopleTwo 资源文件中的value值为'小红'，app.media.iconB为自定义资源
-22. new Contact($r('app.string.peopleTwo'), $r('app.media.iconB'))
-23. ];
-
-25. build() {
-26. // ...
-27. List() {
-28. ForEach(this.contacts, (item: Contact) => {
-29. ListItem() {
-30. Row() {
-31. Image(item.icon)
-32. .width(40)
-33. .height(40)
-34. .margin(10)
-35. Text(item.name).fontSize(20)
-36. }
-37. .width('100%')
-38. .justifyContent(FlexAlign.Start)
-39. }
-40. }, (item: Contact) => JSON.stringify(item))
-41. }
-42. .width('100%')
-43. // ...
-44. }
-45. }
-```
-
-[ListIteration.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ListIteration.ets#L17-L76)
 
 在List组件中，ForEach除了可以用来循环渲染ListItem，也可以用来循环渲染ListItemGroup。ListItemGroup的循环渲染详细使用请参见[支持分组列表](arkts-layout-development-create-list.md#支持分组列表)。
 
@@ -349,69 +337,65 @@ ArkTS通过[ForEach](arkts-rendering-control-foreach.md)提供了组件的循环
 
 在初始化列表时，如需在列表项之间添加间距，可以使用[ListOptions](../harmonyos-references/ts-container-list.md#listoptions18对象说明)的space参数。例如，在每个列表项之间沿主轴方向添加10vp的间距。
 
+```typescript
+List({ space: 10 }) {
+  // ···
+}
 ```
-1. List({ space: 10 }) {
-2. // ···
-3. }
-```
-
-[CustomListStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CustomListStyle.ets#L49-L61)
 
 ### 添加分隔线
 
-分隔线用来将界面元素隔开，使单个元素更加容易识别。以系统设置场景为例（如下图所示），列表项左侧为图标（如蓝牙图标），右侧为文字描述且分割线在文字下方。
+分隔线用来将界面元素隔开，使单个元素更加容易识别。以系统设置场景为例（如下图所示），列表项左侧为图标（如蓝牙图标），右侧为文字描述且分隔线在文字下方。
 
 **图13** 设置列表分隔线样式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/6lIVBcFPQLCIv92rOaWXcQ/zh-cn_image_0000002589244069.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ABavFNhZSeK99NIrQf-IEg/zh-cn_image_0000002736312603.png)
 
 List提供了[divider](../harmonyos-references/ts-container-list.md#divider)属性用于给列表项之间添加分隔线。在设置divider属性时，可以通过strokeWidth和color属性设置分隔线的粗细和颜色。
 
 startMargin和endMargin属性分别用于设置分隔线距离列表侧边起始端的距离和距离列表侧边结束端的距离。
 
+```typescript
+class DividerTmp {
+  public strokeWidth: Length = 1;
+  public startMargin: Length = 60;
+  public endMargin: Length = 10;
+  public color: ResourceColor = '#ffe9f0f0';
+
+  constructor(strokeWidth: Length, startMargin: Length, endMargin: Length, color: ResourceColor) {
+    this.strokeWidth = strokeWidth;
+    this.startMargin = startMargin;
+    this.endMargin = endMargin;
+    this.color = color;
+  }
+}
+
+@Entry
+@Component
+export struct CustomListStyle {
+  @State egDivider: DividerTmp = new DividerTmp(1, 60, 10, '#ffe9f0f0');
+
+// ···
+
+  build() {
+    // ···
+          List(
+            // ···
+          ) {
+            // ···
+          }
+          .divider(this.egDivider)
+        // ···
+  }
+}
 ```
-1. class DividerTmp {
-2. public strokeWidth: Length = 1;
-3. public startMargin: Length = 60;
-4. public endMargin: Length = 10;
-5. public color: ResourceColor = '#ffe9f0f0';
 
-7. constructor(strokeWidth: Length, startMargin: Length, endMargin: Length, color: ResourceColor) {
-8. this.strokeWidth = strokeWidth;
-9. this.startMargin = startMargin;
-10. this.endMargin = endMargin;
-11. this.color = color;
-12. }
-13. }
+此示例表示从距离列表侧边起始端60vp开始到距离结束端10vp的位置，画一条粗细为1vp的分隔线，可以实现图13设置列表分隔线的样式。
 
-15. @Entry
-16. @Component
-17. export struct CustomListStyle {
-18. @State egDivider: DividerTmp = new DividerTmp(1, 60, 10, '#ffe9f0f0');
-
-20. // ···
-
-22. build() {
-23. // ···
-24. List(
-25. // ···
-26. ) {
-27. // ···
-28. }
-29. .divider(this.egDivider)
-30. // ···
-31. }
-32. }
-```
-
-[CustomListStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CustomListStyle.ets#L18-L159)
-
-此示例表示从距离列表侧边起始端60vp开始到距离结束端10vp的位置，画一条粗细为1vp的分割线，可以实现图9设置列表分隔线的样式。
-
-说明
+**说明** 
 
 1. 分隔线的宽度会使ListItem之间存在一定间隔，当List设置的内容间距小于分隔线宽度时，ListItem之间的间隔会使用分隔线的宽度。
-2. 当List存在多列时，分割线的startMargin和endMargin作用于每一列上。
+2. 当List存在多列时，分隔线的startMargin和endMargin作用于每一列上。
 3. List组件的分隔线画在两个ListItem之间，第一个ListItem上方和最后一个ListItem下方不会绘制分隔线。
 
 ### 添加滚动条
@@ -420,23 +404,21 @@ startMargin和endMargin属性分别用于设置分隔线距离列表侧边起始
 
 **图14** 列表的滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Ily2jP9KQ-WrGG0zfO8asQ/zh-cn_image_0000002558764262.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/OeDLzmo5TZG_dOYnUs53EA/zh-cn_image_0000002706673560.gif)
 
 在使用List组件时，可通过scrollBar属性控制列表滚动条的显示。scrollBar的取值类型为[BarState](../harmonyos-references/ts-appendix-enums.md#barstate)，当取值为BarState.Auto表示按需显示滚动条。此时，当触摸到滚动条区域时显示控件，可上下拖拽滚动条快速浏览内容，拖拽时会变粗。若不进行任何操作，2秒后滚动条自动消失。
 
 scrollBar属性API version 9及以下版本默认值为BarState.Off，从API version 10版本开始默认值为BarState.Auto。
 
+```typescript
+List(
+  // ···
+) {
+  // ···
+}
+// ···
+.scrollBar(BarState.Auto)
 ```
-1. List(
-2. // ···
-3. ) {
-4. // ···
-5. }
-6. // ···
-7. .scrollBar(BarState.Auto)
-```
-
-[CustomListStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CustomListStyle.ets#L89-L113)
 
 ## 添加外置滚动条
 
@@ -444,35 +426,29 @@ scrollBar属性API version 9及以下版本默认值为BarState.Off，从API ver
 
 1. 首先，需要创建一个[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)类型的对象listScroller。
 
+   ```typescript
+   private listScroller: Scroller = new Scroller();
    ```
-   1. private listScroller: Scroller = new Scroller();
-   ```
-
-   [CustomListStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CustomListStyle.ets#L39-L41)
 2. 然后，列表通过[scroller](../harmonyos-references/ts-container-list.md#listoptions18对象说明)参数绑定滚动控制器。
 
+   ```typescript
+   // listScroller初始化List组件的scroller参数，绑定listScroller与列表。
+   List({ scroller: this.listScroller }) {
+   // ···
+   }
    ```
-   1. // listScroller初始化List组件的scroller参数，绑定listScroller与列表。
-   2. List({ scroller: this.listScroller }) {
-   3. // ···
-   4. }
-   ```
-
-   [CustomListStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CustomListStyle.ets#L120-L137)
 3. 最后，滚动条通过[scroller](../harmonyos-references/ts-basic-components-scrollbar.md#scrollbaroptions对象说明)参数绑定滚动控制器。
 
+   ```typescript
+   // listScroller初始化ScrollBar组件的scroller参数，绑定listScroller与列表。
+   ScrollBar({ scroller: this.listScroller})
    ```
-   1. // listScroller初始化ScrollBar组件的scroller参数，绑定listScroller与列表。
-   2. ScrollBar({ scroller: this.listScroller})
-   ```
-
-   [CustomListStyle.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CustomListStyle.ets#L141-L144)
 
 **图15** 列表的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/M-5RRZprQKW3Gq4-XCQzcw/zh-cn_image_0000002558604606.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/gKtfeV3PTJ6AWRmWNnSxeQ/zh-cn_image_0000002736432651.gif)
 
-说明
+**说明** 
 
 * 滚动条组件[ScrollBar](../harmonyos-references/ts-basic-components-scrollbar.md)，还可配合其他可滚动组件使用，如[ArcList](../harmonyos-references/ts-container-arclist.md)、[Grid](../harmonyos-references/ts-container-grid.md)、[Scroll](../harmonyos-references/ts-container-scroll.md)、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)。
 * 在圆形屏幕设备上，[List](../harmonyos-references/ts-container-list.md)可以与弧形滚动条组件[ArcScrollBar](../harmonyos-references/ts-basic-components-arcscrollbar.md)配合使用为列表添加弧形外置滚动条，使用方式可参考[创建弧形列表 (ArcList)](arkts-layout-development-create-arclist.md)的[添加外置滚动条ArcScrollBar](arkts-layout-development-create-arclist.md#添加外置滚动条arcscrollbar)章节。
@@ -483,47 +459,45 @@ scrollBar属性API version 9及以下版本默认值为BarState.Off，从API ver
 
 **图16** 联系人分组列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/6VZ3cmJhSxyeysSye5LkYQ/zh-cn_image_0000002589324131.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/M_Yk5wVOQ8m3mUzkLSU_xg/zh-cn_image_0000002706833496.png)
 
 在List组件中使用ListItemGroup对项目进行分组，可以构建二维列表。
 
 在List组件中可以直接使用一个或者多个ListItemGroup组件，ListItemGroup的宽度默认充满List组件。在初始化ListItemGroup时，可通过header参数设置列表分组的头部组件。
 
+```typescript
+@Entry
+@Component
+export struct GroupedList {
+  @Builder
+  itemHead(text: string) {
+    // 列表分组的头部组件，对应联系人分组A、B等位置的组件
+    Text(text)
+      .fontSize(20)
+      .backgroundColor('#fff1f3f5')
+      .width('100%')
+      .padding(5)
+  }
+
+  build() {
+    // ···
+          List(
+            // ···
+          ) {
+            ListItemGroup({ header: this.itemHead('A') }) {
+              // 循环渲染分组A的ListItem
+            // ···
+            }
+
+            ListItemGroup({ header: this.itemHead('B') }) {
+              // 循环渲染分组B的ListItem
+            // ···
+            }
+          }
+        // ···
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct GroupedList {
-4. @Builder
-5. itemHead(text: string) {
-6. // 列表分组的头部组件，对应联系人分组A、B等位置的组件
-7. Text(text)
-8. .fontSize(20)
-9. .backgroundColor('#fff1f3f5')
-10. .width('100%')
-11. .padding(5)
-12. }
-
-14. build() {
-15. // ···
-16. List(
-17. // ···
-18. ) {
-19. ListItemGroup({ header: this.itemHead('A') }) {
-20. // 循环渲染分组A的ListItem
-21. // ···
-22. }
-
-24. ListItemGroup({ header: this.itemHead('B') }) {
-25. // 循环渲染分组B的ListItem
-26. // ···
-27. }
-28. }
-29. // ···
-30. }
-31. }
-```
-
-[GroupedList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/GroupedList.ets#L18-L81)
 
 如果多个ListItemGroup结构类似，可以将多个分组的数据组成数组，然后使用ForEach对多个分组进行循环渲染。例如在联系人列表中，将每个分组的联系人数据contacts（可参考[迭代列表内容](arkts-layout-development-create-list.md#迭代列表内容)章节）和对应分组的标题title数据进行组合，定义为数组contactsGroups。然后在ForEach中对contactsGroups进行循环渲染，即可实现多个分组的联系人列表。可参考[添加粘性标题](arkts-layout-development-create-list.md#添加粘性标题)章节示例代码。
 
@@ -535,121 +509,119 @@ scrollBar属性API version 9及以下版本默认值为BarState.Off，从API ver
 
 **图17** 粘性标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/96_ytxNXRryjhNneTLe_lw/zh-cn_image_0000002589244071.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/IDGWFm_0T1Gk4z71ia-lLg/zh-cn_image_0000002736312605.gif)
 
 List组件的[sticky](../harmonyos-references/ts-container-list.md#sticky9)属性配合ListItemGroup组件使用，用于设置ListItemGroup中的头部组件是否呈现吸顶效果或者尾部组件是否呈现吸底效果。
 
 通过给List组件设置sticky属性为StickyStyle.Header，即可实现列表的粘性标题效果。如果需要支持吸底效果，可以通过footer参数初始化ListItemGroup的底部组件，并将sticky属性设置为StickyStyle.Footer。
 
+```typescript
+import { util } from '@kit.ArkTS';
+
+class Contact {
+  public key: string = util.generateRandomUUID(true);
+  public name: string | Resource;
+  public icon: Resource;
+
+  constructor(name: string | Resource, icon: Resource) {
+    this.name = name;
+    this.icon = icon;
+  }
+}
+
+class ContactsGroup {
+  public title: string = '';
+  public contacts: Array<object> | null = null;
+  public key: string = '';
+}
+
+export class ContactsGroupDataSource implements IDataSource {
+  private list: object[] = [];
+
+  constructor(list: object[]) {
+    this.list = list;
+  }
+
+  totalCount(): number {
+    return this.list.length;
+  }
+
+  getData(index: number): object {
+    return this.list[index];
+  }
+
+  registerDataChangeListener(listener: DataChangeListener): void {
+  }
+
+  unregisterDataChangeListener(listener: DataChangeListener): void {
+  }
+}
+
+export let contactsGroups: object[] = [
+  {
+    title: 'A',
+    contacts: [
+      // app.string.contacts_A_one 资源文件中的value值为'艾佳'，app.media.iconA为自定义资源
+      new Contact($r('app.string.contacts_A_one'), $r('app.media.iconA')),
+      // app.string.contacts_A_two 资源文件中的value值为'安安'，app.media.iconB为自定义资源
+      new Contact($r('app.string.contacts_A_two'), $r('app.media.iconB')),
+      // app.media.iconC为自定义资源
+      new Contact('Angela', $r('app.media.iconC')),
+    ],
+    key: util.generateRandomUUID(true)
+  } as ContactsGroup,
+  {
+    title: 'B',
+    contacts: [
+      // app.string.contacts_B_one 资源文件中的value值为'白叶'，app.media.iconD为自定义资源
+      new Contact($r('app.string.contacts_B_one'), $r('app.media.iconD')),
+      // app.string.contacts_B_three 资源文件中的value值为'伯明'，app.media.iconE为自定义资源
+      new Contact($r('app.string.contacts_B_three'), $r('app.media.iconE'))
+    ],
+    key: util.generateRandomUUID(true)
+  } as ContactsGroup
+];
+export let contactsGroupsDataSource: ContactsGroupDataSource = new ContactsGroupDataSource(contactsGroups);
+
+@Entry
+@Component
+export struct StickyHeaderList {
+  // 定义分组联系人数据集合contactsGroups数组
+  @Builder
+  itemHead(text: string) {
+    // 列表分组的头部组件，对应联系人分组A、B等位置的组件
+    Text(text)
+      .fontSize(20)
+      .backgroundColor('#fff1f3f5')
+      .width('100%')
+      .padding(5)
+  }
+
+  build() {
+    // ...
+          List() {
+            // 懒加载ListItemGroup，contactsGroups为多个分组联系人contacts和标题title的数据集合
+            LazyForEach(contactsGroupsDataSource, (itemGroup: ContactsGroup) => {
+              ListItemGroup({ header: this.itemHead(itemGroup.title) }) {
+                // 循环渲染ListItem
+                if (itemGroup.contacts) {
+                  LazyForEach(new ContactsGroupDataSource(itemGroup.contacts), (item: Contact) => {
+                    ListItem() {
+                      Row() {
+                        Image(item.icon).width(40).height(40).margin(10)
+                        Text(item.name).fontSize(20)
+                      }.width('100%').justifyContent(FlexAlign.Start)
+                    }
+                  }, (item: Contact) => JSON.stringify(item))
+                }
+              }
+            }, (itemGroup: ContactsGroup) => JSON.stringify(itemGroup))
+          }
+          .sticky(StickyStyle.Header) // 设置吸顶，实现粘性标题效果
+          // ...
+  }
+}
 ```
-1. import { util } from '@kit.ArkTS';
-
-3. class Contact {
-4. public key: string = util.generateRandomUUID(true);
-5. public name: string | Resource;
-6. public icon: Resource;
-
-8. constructor(name: string | Resource, icon: Resource) {
-9. this.name = name;
-10. this.icon = icon;
-11. }
-12. }
-
-14. class ContactsGroup {
-15. public title: string = '';
-16. public contacts: Array<object> | null = null;
-17. public key: string = '';
-18. }
-
-20. export class ContactsGroupDataSource implements IDataSource {
-21. private list: object[] = [];
-
-23. constructor(list: object[]) {
-24. this.list = list;
-25. }
-
-27. totalCount(): number {
-28. return this.list.length;
-29. }
-
-31. getData(index: number): object {
-32. return this.list[index];
-33. }
-
-35. registerDataChangeListener(listener: DataChangeListener): void {
-36. }
-
-38. unregisterDataChangeListener(listener: DataChangeListener): void {
-39. }
-40. }
-
-42. export let contactsGroups: object[] = [
-43. {
-44. title: 'A',
-45. contacts: [
-46. // app.string.contacts_A_one 资源文件中的value值为'艾佳'，app.media.iconA为自定义资源
-47. new Contact($r('app.string.contacts_A_one'), $r('app.media.iconA')),
-48. // app.string.contacts_A_two 资源文件中的value值为'安安'，app.media.iconB为自定义资源
-49. new Contact($r('app.string.contacts_A_two'), $r('app.media.iconB')),
-50. // app.media.iconC为自定义资源
-51. new Contact('Angela', $r('app.media.iconC')),
-52. ],
-53. key: util.generateRandomUUID(true)
-54. } as ContactsGroup,
-55. {
-56. title: 'B',
-57. contacts: [
-58. // app.string.contacts_B_one 资源文件中的value值为'白叶'，app.media.iconD为自定义资源
-59. new Contact($r('app.string.contacts_B_one'), $r('app.media.iconD')),
-60. // app.string.contacts_B_three 资源文件中的value值为'伯明'，app.media.iconE为自定义资源
-61. new Contact($r('app.string.contacts_B_three'), $r('app.media.iconE'))
-62. ],
-63. key: util.generateRandomUUID(true)
-64. } as ContactsGroup
-65. ];
-66. export let contactsGroupsDataSource: ContactsGroupDataSource = new ContactsGroupDataSource(contactsGroups);
-
-68. @Entry
-69. @Component
-70. export struct StickyHeaderList {
-71. // 定义分组联系人数据集合contactsGroups数组
-72. @Builder
-73. itemHead(text: string) {
-74. // 列表分组的头部组件，对应联系人分组A、B等位置的组件
-75. Text(text)
-76. .fontSize(20)
-77. .backgroundColor('#fff1f3f5')
-78. .width('100%')
-79. .padding(5)
-80. }
-
-82. build() {
-83. // ...
-84. List() {
-85. // 懒加载ListItemGroup，contactsGroups为多个分组联系人contacts和标题title的数据集合
-86. LazyForEach(contactsGroupsDataSource, (itemGroup: ContactsGroup) => {
-87. ListItemGroup({ header: this.itemHead(itemGroup.title) }) {
-88. // 循环渲染ListItem
-89. if (itemGroup.contacts) {
-90. LazyForEach(new ContactsGroupDataSource(itemGroup.contacts), (item: Contact) => {
-91. ListItem() {
-92. Row() {
-93. Image(item.icon).width(40).height(40).margin(10)
-94. Text(item.name).fontSize(20)
-95. }.width('100%').justifyContent(FlexAlign.Start)
-96. }
-97. }, (item: Contact) => JSON.stringify(item))
-98. }
-99. }
-100. }, (itemGroup: ContactsGroup) => JSON.stringify(itemGroup))
-101. }
-102. .sticky(StickyStyle.Header) // 设置吸顶，实现粘性标题效果
-103. // ...
-104. }
-105. }
-```
-
-[StickyHeaderList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/StickyHeaderList.ets#L17-L139)
 
 ## 控制滚动位置
 
@@ -657,39 +629,35 @@ List组件的[sticky](../harmonyos-references/ts-container-list.md#sticky9)属�
 
 **图18** 返回列表顶部
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/pHHDRPZfQN-Lq0aIJO_JEw/zh-cn_image_0000002558764264.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Nf0gr7vGR2ujGQkM1sXSPw/zh-cn_image_0000002706673562.gif)
 
 List组件初始化时，可以通过scroller参数绑定一个[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)对象，进行列表的滚动控制。例如，用户在新闻应用中，点击新闻页面底部的返回顶部按钮时，就可以通过Scroller对象的scrollToIndex方法使列表滚动到指定的列表项索引位置。
 
 首先，需要创建一个Scroller的对象listScroller。
 
+```typescript
+private listScroller: Scroller = new Scroller();
 ```
-1. private listScroller: Scroller = new Scroller();
-```
-
-[ControlledScrollPositionList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ControlledScrollPositionList.ets#L22-L24)
 
 然后，通过将listScroller用于初始化List组件的scroller参数，完成listScroller与列表的绑定。在需要跳转的位置指定scrollToIndex的参数为0，表示返回列表顶部。
 
-```
-1. Stack({ alignContent: Alignment.Bottom }) {
-2. // 将listScroller用于初始化List组件的scroller参数，完成listScroller与列表的绑定。
-3. List({ space: 20, scroller: this.listScroller }) {
-4. // ...
-5. }
+```typescript
+Stack({ alignContent: Alignment.Bottom }) {
+  // 将listScroller用于初始化List组件的scroller参数，完成listScroller与列表的绑定。
+  List({ space: 20, scroller: this.listScroller }) {
+    // ...
+  }
 
-7. Button() {
-8. // ...
-9. }
-10. // ...
-11. .onClick(() => {
-12. // 点击按钮时，指定跳转位置，返回列表顶部
-13. this.listScroller.scrollToIndex(0);
-14. })
-15. }
+  Button() {
+    // ...
+  }
+  // ...
+  .onClick(() => {
+    // 点击按钮时，指定跳转位置，返回列表顶部
+    this.listScroller.scrollToIndex(0);
+  })
+}
 ```
-
-[ControlledScrollPositionList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ControlledScrollPositionList.ets#L32-L66)
 
 ## 响应滚动位置
 
@@ -699,53 +667,51 @@ List组件初始化时，可以通过scroller参数绑定一个[Scroller](../har
 
 **图19** 字母索引响应联系人列表滚动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/9AIYf2MLTfecuvDZEQnFBA/zh-cn_image_0000002558604608.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/GrdBkjKkRg6yshiKyAiqNQ/zh-cn_image_0000002736432653.gif)
 
 如上图所示，当联系人列表从A滚动到B时，右侧索引栏也需要同步从选中A状态变成选中B状态。此场景可以通过监听List组件的[onScrollIndex](../harmonyos-references/ts-container-list.md#onscrollindex)事件来实现，右侧索引栏需要使用字母表索引组件[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)。
 
 在列表滚动时，根据列表此时所在的索引值位置firstIndex，重新计算字母索引栏对应字母的位置selectedIndex。由于AlphabetIndexer组件通过selected属性设置了选中项索引值，当selectedIndex变化时会触发AlphabetIndexer组件重新渲染，从而显示为选中对应字母的状态。
 
+```typescript
+const alphabets = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+  'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+// ...
+
+@Entry
+@Component
+export struct ResponsiveScrollPositionList {
+  @State selectedIndex: number = 0;
+  private listScroller: Scroller = new Scroller();
+  // ...
+
+  build() {
+    // ...
+          Stack({ alignContent: Alignment.End }) {
+            // 此为响应滚动位置示例List容器
+            // listScroller初始化List组件的scroller参数，绑定listScroller与列表。
+            List({ scroller: this.listScroller }) {
+              // ...
+            }
+            .onScrollIndex((firstIndex: number) => {
+              // 根据列表滚动到的索引值，重新计算对应联系人索引栏的位置this.selectedIndex
+              // ...
+            })
+
+            // 字母表索引组件
+            AlphabetIndexer({ arrayValue: alphabets, selected: 0 })
+              .selected(this.selectedIndex)
+              .onSelect((index: number) => {
+                this.listScroller.scrollToIndex(index);
+              })
+          }
+          // ...
+  }
+}
 ```
-1. const alphabets = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
-2. 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-4. // ...
-
-6. @Entry
-7. @Component
-8. export struct ResponsiveScrollPositionList {
-9. @State selectedIndex: number = 0;
-10. private listScroller: Scroller = new Scroller();
-11. // ...
-
-13. build() {
-14. // ...
-15. Stack({ alignContent: Alignment.End }) {
-16. // 此为响应滚动位置示例List容器
-17. // listScroller初始化List组件的scroller参数，绑定listScroller与列表。
-18. List({ scroller: this.listScroller }) {
-19. // ...
-20. }
-21. .onScrollIndex((firstIndex: number) => {
-22. // 根据列表滚动到的索引值，重新计算对应联系人索引栏的位置this.selectedIndex
-23. // ...
-24. })
-
-26. // 字母表索引组件
-27. AlphabetIndexer({ arrayValue: alphabets, selected: 0 })
-28. .selected(this.selectedIndex)
-29. .onSelect((index: number) => {
-30. this.listScroller.scrollToIndex(index);
-31. })
-32. }
-33. // ...
-34. }
-35. }
-```
-
-[ResponsiveScrollPositionList.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ResponsiveScrollPositionList.ets#L19-L198)
-
-说明
+**说明** 
 
 计算索引值时，ListItemGroup作为一个整体占一个索引值，不计算ListItemGroup内部ListItem的索引值。
 
@@ -755,50 +721,46 @@ List组件初始化时，可以通过scroller参数绑定一个[Scroller](../har
 
 **图20** 侧滑删除列表项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dafNJFgTQ-2XdZFnxat-9Q/zh-cn_image_0000002589324133.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/M2LcX2rIR_KjcwRdDmIO5A/zh-cn_image_0000002706833498.gif)
 
-ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#swipeaction9)可用于实现列表项的左右滑动功能。swipeAction属性方法初始化时有必填参数SwipeActionOptions，其中，start参数表示设置列表项右滑时起始端滑出的组件，end参数表示设置列表项左滑时尾端滑出的组件。
+ListItem的[swipeAction](../harmonyos-references/ts-container-listitem.md#swipeaction9)属性可用于实现列表项的左右滑动功能。swipeAction属性方法初始化时有必填参数SwipeActionOptions，其中，start参数表示设置列表项右滑时起始端滑出的组件，end参数表示设置列表项左滑时尾端滑出的组件。
 
-在消息列表中，end参数表示设置ListItem左滑时尾端划出自定义组件，即删除按钮。在初始化end方法时，将滑动列表项的索引传入删除按钮组件，当用户点击删除按钮时，可以根据索引值来删除列表项对应的数据，从而实现侧滑删除功能。
+在消息列表中，end参数表示设置ListItem左滑时尾端滑出自定义组件，即删除按钮。在初始化end方法时，将滑动列表项的索引传入删除按钮组件，当用户点击删除按钮时，可以根据索引值来删除列表项对应的数据，从而实现侧滑删除功能。
 
 1. 实现尾端滑出组件的构建。
 
+   ```typescript
+   @Builder
+   itemEnd(index: number) {
+     // 构建尾端滑出组件
+     Button({ type: ButtonType.Circle }) {
+       Image($r('sys.media.ohos_ic_bottomsheet_close'))
+         .width(40)
+         .height(40)
+     }
+     // ...
+     .onClick(() => {
+       // this.arr为列表数据源，可根据实际场景构造。点击后从数据源删除指定数据项。
+       this.arr.splice(index, 1);
+     })
+   }
    ```
-   1. @Builder
-   2. itemEnd(index: number) {
-   3. // 构建尾端滑出组件
-   4. Button({ type: ButtonType.Circle }) {
-   5. Image($r('sys.media.ohos_ic_bottomsheet_close'))
-   6. .width(40)
-   7. .height(40)
-   8. }
-   9. // ...
-   10. .onClick(() => {
-   11. // this.arr为列表数据源，可根据实际场景构造。点击后从数据源删除指定数据项。
-   12. this.arr.splice(index, 1);
-   13. })
-   14. }
-   ```
-
-   [SwipeableListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/SwipeableListItem.ets#L24-L41)
 2. 绑定swipeAction属性到可左滑的ListItem上。
 
+   ```typescript
+   // 构建List时，通过ForEach基于数据源this.messages循环渲染ListItem。
+   ListItem() {
+     // ···
+   }.swipeAction({
+     end: {
+       // index为该ListItem在List中的索引值。
+       builder: () => {
+         // ···
+         this.itemEnd(this.index);
+       },
+     }
+   }) // 设置侧滑属性.
    ```
-   1. // 构建List时，通过ForEach基于数据源this.messages循环渲染ListItem。
-   2. ListItem() {
-   3. // ···
-   4. }.swipeAction({
-   5. end: {
-   6. // index为该ListItem在List中的索引值。
-   7. builder: () => {
-   8. // ···
-   9. this.itemEnd(this.index);
-   10. },
-   11. }
-   12. }) // 设置侧滑属性.
-   ```
-
-   [SwipeableListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/SwipeableListItem.ets#L49-L72)
 
 ## 给列表项添加标记
 
@@ -806,7 +768,7 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
 **图21** 给列表项添加标记
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/7_FOPBW6RuatKQRKcry6nQ/zh-cn_image_0000002589244073.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/5SK9OcKVSq2006BpQz95Jg/zh-cn_image_0000002736312607.png)
 
 在ListItem中使用[Badge](../harmonyos-references/ts-container-badge.md)组件可实现给列表项添加标记功能。Badge是可以附加在单个组件上用于信息标记的容器组件。
 
@@ -814,20 +776,18 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
 在Badge组件中，count和position参数用于设置需要展示的消息数量和提示点显示位置，还可以通过style参数灵活设置标记的样式。
 
+```typescript
+ListItem() {
+  // Badge组件实现消息右上角添加标记功能
+  Badge({
+    count: 1,
+    position: BadgePosition.RightTop,
+    style: { badgeSize: 16, badgeColor: '#FA2A2D' }
+  }) {
+    // ...
+  }
+}
 ```
-1. ListItem() {
-2. // Badge组件实现消息右上角添加标记功能
-3. Badge({
-4. count: 1,
-5. position: BadgePosition.RightTop,
-6. style: { badgeSize: 16, badgeColor: '#FA2A2D' }
-7. }) {
-8. // ...
-9. }
-10. }
-```
-
-[TaggedListItems.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/TaggedListItems.ets#L31-L51)
 
 ## 下拉刷新与上拉加载
 
@@ -839,7 +799,7 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 2. 监听手指按压移动事件，记录并计算当前移动的位置与初始值的差值，大于0表示向下移动，同时设置一个允许移动的最大值。
 3. 监听手指抬起事件，若此时移动达到最大值，则触发数据加载并显示刷新视图，加载完成后将此视图隐藏。
 
-说明
+**说明** 
 
 页面的下拉刷新操作推荐使用[Refresh](../harmonyos-references/ts-container-refresh.md)组件实现。
 
@@ -857,152 +817,170 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
 **图22** 新增待办
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/en9TrLNAQXG0T_U_-IvuKA/zh-cn_image_0000002558764266.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/qYHEiEoETwWdtjCEnvc9vg/zh-cn_image_0000002706673564.gif)
 
 添加列表项功能实现主要流程如下：
 
 1. 定义列表项数据结构，以待办事项管理为例，首先定义待办数据结构。
 
+   ```typescript
+   // ToDo.ets
+   import { util } from '@kit.ArkTS';
+
+   export class ToDo {
+     public key: string = util.generateRandomUUID(true);
+     public name: string;
+
+     constructor(name: string) {
+       this.name = name;
+     }
+   }
    ```
-   1. // ToDo.ets
-   2. import { util } from '@kit.ArkTS';
-
-   4. export class ToDo {
-   5. public key: string = util.generateRandomUUID(true);
-   6. public name: string;
-
-   8. constructor(name: string) {
-   9. this.name = name;
-   10. }
-   11. }
-   ```
-
-   [ToDo.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ToDo.ets#L16-L28)
 2. 构建列表整体布局和列表项。
 
+   ```typescript
+   import { ToDo } from './ToDo';
+
+   @Component
+   export struct ToDoListItem {
+     @Link isEditMode: boolean;
+     @Link selectedItems: ToDo[];
+     private toDoItem: ToDo = new ToDo('');
+
+     build() {
+       Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
+       // ···
+       }
+       // ···
+       .width('100%')
+       .height(80)
+       // .padding() 根据具体使用场景设置
+       .borderRadius(24)
+       // .linearGradient() 根据具体使用场景设置
+       .gesture(
+         GestureGroup(GestureMode.Exclusive,
+           LongPressGesture()
+             .onAction(() => {
+             })
+         )
+       )
+     }
+   }
    ```
-   1. import { ToDo } from './ToDo';
-
-   3. @Component
-   4. export struct ToDoListItem {
-   5. @Link isEditMode: boolean;
-   6. @Link selectedItems: ToDo[];
-   7. private toDoItem: ToDo = new ToDo('');
-
-   9. build() {
-   10. Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
-   11. // ···
-   12. }
-   13. // ···
-   14. .width('100%')
-   15. .height(80)
-   16. // .padding() 根据具体使用场景设置
-   17. .borderRadius(24)
-   18. // .linearGradient() 根据具体使用场景设置
-   19. .gesture(
-   20. GestureGroup(GestureMode.Exclusive,
-   21. LongPressGesture()
-   22. .onAction(() => {
-   23. })
-   24. )
-   25. )
-   26. }
-   27. }
-   ```
-
-   [ToDoListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ToDoListItem.ets#L16-L51)
 3. 初始化待办列表数据和可选事项，最后，构建列表布局和列表项。
 
+   ```typescript
+   import { ToDo } from './ToDo';
+   import { ToDoListItem } from './ToDoListItem';
+
+   @Entry
+   @Component
+   export struct AddListItem {
+     @State toDoData: ToDo[] = [];
+     @Watch('onEditModeChange') @State isEditMode: boolean = false;
+     @State selectedItems: ToDo[] = [];
+     private availableThings: string [] = [];
+
+     aboutToAppear(): void {
+       const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+       try {
+         const reading = context.resourceManager.getStringByNameSync('Reading')
+         this.availableThings.push(reading)
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', 'Failed to get Reading: %{public}s', JSON.stringify(e) ?? '');
+       }
+       try {
+         const exercise = context.resourceManager.getStringByNameSync('Exercise')
+         this.availableThings.push(exercise)
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', 'Failed to get Exercise: %{public}s', JSON.stringify(e) ?? '');
+       }
+       try {
+         const travel = context.resourceManager.getStringByNameSync('Travel')
+         this.availableThings.push(travel)
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', 'Failed to get Travel: %{public}s', JSON.stringify(e) ?? '');
+       }
+       try {
+         const listening = context.resourceManager.getStringByNameSync('Listening_Music')
+         this.availableThings.push(listening)
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', 'Failed to get Listening_Music: %{public}s', JSON.stringify(e) ?? '');
+       }
+       try {
+         const watching = context.resourceManager.getStringByNameSync('Watching_Films')
+         this.availableThings.push(watching)
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', 'Failed to get Watching_Films: %{public}s', JSON.stringify(e) ?? '');
+       }
+       try {
+         const singing = context.resourceManager.getStringByNameSync('Singing')
+         this.availableThings.push(singing)
+       } catch (e) {
+         hilog.error(0x0000, 'testTag', 'Failed to get Singing: %{public}s', JSON.stringify(e) ?? '');
+       }
+     }
+
+     onEditModeChange() {
+       if (!this.isEditMode) {
+         this.selectedItems = [];
+       }
+     }
+
+     build() {
+       // ...
+         Column(
+           // ...
+         ) {
+           // ...
+               Row() {
+                 if (this.isEditMode) {
+                   Text('X')
+                     .fontSize(20)
+                     .onClick(() => {
+                       this.isEditMode = false;
+                     })
+                     .margin({ left: 20, right: 20 })
+                 } else {
+                   // app.string.TodoItem 资源文件中的value值为'待办'
+                   Text($r('app.string.TodoItem'))
+                     .fontSize(36)
+                     .margin({ left: 40 })
+                   Blank()
+                   Text('+')// 提供新增列表项入口，即给新增按钮添加点击事件
+                   // ...
+                     .onClick(() => {
+                       this.getUIContext().showTextPickerDialog({
+                         range: this.availableThings,
+                         onAccept: (value: TextPickerResult) => {
+                           let arr = Array.isArray(value.index) ? value.index : [value.index];
+                           for (let i = 0; i < arr.length; i++) {
+                             this.toDoData.push(new ToDo(this.availableThings[arr[i]])); // 新增列表项数据toDoData(可选事项)
+                           }
+                         },
+                       })
+                     })
+                 }
+                 // ...
+
+               List({ space: 10 }) {
+                 ForEach(this.toDoData, (toDoItem: ToDo) => {
+                   ListItem() {
+                     // 将toDoData的每个数据放入到以model的形式放进ListItem里
+                     ToDoListItem({
+                       isEditMode: this.isEditMode,
+                       toDoItem: toDoItem,
+                       selectedItems: this.selectedItems
+                     })
+                   }
+                 }, (toDoItem: ToDo) => toDoItem.name.toString())
+               }
+             }
+           }
+           // ...
+     }
+   }
    ```
-   1. import { ToDo } from './ToDo';
-   2. import { ToDoListItem } from './ToDoListItem';
-
-   4. @Entry
-   5. @Component
-   6. export struct AddListItem {
-   7. @State toDoData: ToDo[] = [];
-   8. @Watch('onEditModeChange') @State isEditMode: boolean = false;
-   9. @State selectedItems: ToDo[] = [];
-   10. private availableThings: string [] = [];
-
-   12. aboutToAppear(): void {
-   13. const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   14. const reading = context.resourceManager.getStringByNameSync('Reading')
-   15. this.availableThings.push(reading)
-   16. const exercise = context.resourceManager.getStringByNameSync('Exercise')
-   17. this.availableThings.push(exercise)
-   18. const travel = context.resourceManager.getStringByNameSync('Travel')
-   19. this.availableThings.push(travel)
-   20. const listening = context.resourceManager.getStringByNameSync('Listening_Music')
-   21. this.availableThings.push(listening)
-   22. const watching = context.resourceManager.getStringByNameSync('Watching_Films')
-   23. this.availableThings.push(watching)
-   24. const singing = context.resourceManager.getStringByNameSync('Singing')
-   25. this.availableThings.push(singing)
-   26. }
-
-   28. onEditModeChange() {
-   29. if (!this.isEditMode) {
-   30. this.selectedItems = [];
-   31. }
-   32. }
-
-   34. build() {
-   35. // ...
-   36. Column(
-   37. // ...
-   38. ) {
-   39. // ...
-   40. Row() {
-   41. if (this.isEditMode) {
-   42. Text('X')
-   43. .fontSize(20)
-   44. .onClick(() => {
-   45. this.isEditMode = false;
-   46. })
-   47. .margin({ left: 20, right: 20 })
-   48. } else {
-   49. // app.string.TodoItem 资源文件中的value值为'待办'
-   50. Text($r('app.string.TodoItem'))
-   51. .fontSize(36)
-   52. .margin({ left: 40 })
-   53. Blank()
-   54. Text('+')// 提供新增列表项入口，即给新增按钮添加点击事件
-   55. // ...
-   56. .onClick(() => {
-   57. this.getUIContext().showTextPickerDialog({
-   58. range: this.availableThings,
-   59. onAccept: (value: TextPickerResult) => {
-   60. let arr = Array.isArray(value.index) ? value.index : [value.index];
-   61. for (let i = 0; i < arr.length; i++) {
-   62. this.toDoData.push(new ToDo(this.availableThings[arr[i]])); // 新增列表项数据toDoData(可选事项)
-   63. }
-   64. },
-   65. })
-   66. })
-   67. }
-   68. // ...
-
-   70. List({ space: 10 }) {
-   71. ForEach(this.toDoData, (toDoItem: ToDo) => {
-   72. ListItem() {
-   73. // 将toDoData的每个数据放入到以model的形式放进ListItem里
-   74. ToDoListItem({
-   75. isEditMode: this.isEditMode,
-   76. toDoItem: toDoItem,
-   77. selectedItems: this.selectedItems
-   78. })
-   79. }
-   80. }, (toDoItem: ToDo) => toDoItem.name.toString())
-   81. }
-   82. }
-   83. }
-   84. // ...
-   85. }
-   86. }
-   ```
-
-   [AddListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/AddListItem.ets#L19-L133)
 
 ### 删除列表项
 
@@ -1010,7 +988,7 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
 **图23** 长按删除待办事项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/-a8wJdxgSkiDA67zcjKTtg/zh-cn_image_0000002558604610.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/8kg_HOEtRHuO7COyxzFOJA/zh-cn_image_0000002736432655.gif)
 
 删除列表项功能实现主要流程如下：
 
@@ -1018,117 +996,105 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
    以待办列表为例，通过监听列表项的长按事件，当用户长按列表项时，进入编辑模式。
 
+   ```typescript
+   import { util } from '@kit.ArkTS';
+
+   // 结构参考
+   export class ToDo {
+     public key: string = util.generateRandomUUID(true);
+     public name: string;
+     public toDoData: ToDo[] = [];
+
+     constructor(name: string) {
+       this.name = name;
+     }
+   }
    ```
-   1. import { util } from '@kit.ArkTS';
-
-   3. // 结构参考
-   4. export class ToDo {
-   5. public key: string = util.generateRandomUUID(true);
-   6. public name: string;
-   7. public toDoData: ToDo[] = [];
-
-   9. constructor(name: string) {
-   10. this.name = name;
-   11. }
-   12. }
-   ```
-
-   [DeleteListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DeleteListItem.ets#L18-L31)
 
    实现参考：
 
+   ```typescript
+   Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
+     // ...
+   }
+   // ...
+   .gesture(
+     GestureGroup(GestureMode.Exclusive,
+       LongPressGesture()
+         .onAction(() => {
+           if (!this.isEditMode) {
+             this.isEditMode = true; // 进入编辑模式
+           }
+         })
+     )
+   )
    ```
-   1. Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
-   2. // ...
-   3. }
-   4. // ...
-   5. .gesture(
-   6. GestureGroup(GestureMode.Exclusive,
-   7. LongPressGesture()
-   8. .onAction(() => {
-   9. if (!this.isEditMode) {
-   10. this.isEditMode = true; // 进入编辑模式
-   11. }
-   12. })
-   13. )
-   14. )
-   ```
-
-   [DeleteListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DeleteListItem.ets#L40-L80)
 2. 需要响应用户的选择交互，记录要删除的列表项数据。
 
    在待办列表中，通过勾选框的勾选或取消勾选，响应用户勾选列表项变化，记录所有选择的列表项。
 
+   ```typescript
+   import { util } from '@kit.ArkTS';
+
+   // 结构参考
+   export class ToDo {
+     public key: string = util.generateRandomUUID(true);
+     public name: string;
+     public toDoData: ToDo[] = [];
+
+     constructor(name: string) {
+       this.name = name;
+     }
+   }
    ```
-   1. import { util } from '@kit.ArkTS';
-
-   3. // 结构参考
-   4. export class ToDo {
-   5. public key: string = util.generateRandomUUID(true);
-   6. public name: string;
-   7. public toDoData: ToDo[] = [];
-
-   9. constructor(name: string) {
-   10. this.name = name;
-   11. }
-   12. }
-   ```
-
-   [DeleteListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DeleteListItem.ets#L18-L31)
 
    实现参考：
 
+   ```typescript
+   if (this.isEditMode) {
+     Checkbox()
+       .onChange((isSelected) => {
+         if (isSelected) {
+           this.selectedItems.push(new ToDo(this.toDoItem.name)); // this.selectedItems为勾选时，记录选中的列表项，可根据实际场景构造
+         } else {
+            let index = this.selectedItems.findIndex(selectedItem => selectedItem.name === this.toDoItem.name);
+            if (index !== -1) {
+             this.selectedItems.splice(index, 1); // 取消勾选时，则将此项从selectedItems中删除
+           }
+         }
+       })
+   }
    ```
-   1. if (this.isEditMode) {
-   2. Checkbox()
-   3. .onChange((isSelected) => {
-   4. if (isSelected) {
-   5. this.selectedItems.push(new ToDo(this.toDoItem.name)); // this.selectedItems为勾选时，记录选中的列表项，可根据实际场景构造
-   6. } else {
-   7. let index = this.selectedItems.indexOf(new ToDo(this.toDoItem.name));
-   8. if (index !== -1) {
-   9. this.selectedItems.splice(index, 1); // 取消勾选时，则将此项从selectedItems中删除
-   10. }
-   11. }
-   12. })
-   13. }
-   ```
-
-   [DeleteListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DeleteListItem.ets#L47-L61)
 3. 需要响应用户点击删除按钮事件，删除列表中对应的选项。
 
+   ```typescript
+   import { util } from '@kit.ArkTS';
+
+   // 结构参考
+   export class ToDo {
+     public key: string = util.generateRandomUUID(true);
+     public name: string;
+     public toDoData: ToDo[] = [];
+
+     constructor(name: string) {
+       this.name = name;
+     }
+   }
    ```
-   1. import { util } from '@kit.ArkTS';
-
-   3. // 结构参考
-   4. export class ToDo {
-   5. public key: string = util.generateRandomUUID(true);
-   6. public name: string;
-   7. public toDoData: ToDo[] = [];
-
-   9. constructor(name: string) {
-   10. this.name = name;
-   11. }
-   12. }
-   ```
-
-   [DeleteListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DeleteListItem.ets#L18-L31)
 
    实现参考：
 
+   ```typescript
+   // app.string.delete 资源文件中的value值为'删除'
+   Button($r('app.string.delete'))
+   // ···
+     .onClick(() => {
+       // this.toDoData为待办的列表项，可根据实际场景构造。点击后删除选中的列表项对应的toDoData数据
+       this.toDoData = this.toDoData.filter(toDoItem =>
+       !this.selectedItems.some(selectedItem => selectedItem.name === toDoItem.name));
+       this.isEditMode = false;
+     })
    ```
-   1. // app.string.delete 资源文件中的value值为'删除'
-   2. Button($r('app.string.delete'))
-   3. // ···
-   4. .onClick(() => {
-   5. // this.toDoData为待办的列表项，可根据实际场景构造。点击后删除选中的列表项对应的toDoData数据
-   6. this.toDoData = this.toDoData.filter(toDoItem =>
-   7. !this.selectedItems.some(selectedItem => selectedItem.name === toDoItem.name));
-   8. this.isEditMode = false;
-   9. })
-   ```
-
-   [DeleteListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DeleteListItem.ets#L192-L205)
 
 ## 长列表的处理
 
@@ -1138,22 +1104,20 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
 当使用懒加载方式渲染列表时，为了更好的列表滚动体验，减少列表滑动时出现白块，List组件提供了[cachedCount](../harmonyos-references/ts-container-list.md#cachedcount)参数用于设置列表项缓存数，懒加载方式只会预加载List显示区域外cachedCount的内容，而非懒加载会全部加载。无论懒加载还是非懒加载都只布局List显示区域+List显示区域外cachedCount的内容。
 
+```typescript
+List(
+// ···
+) {
+// ···
+}.cachedCount(3)
 ```
-1. List(
-2. // ···
-3. ) {
-4. // ···
-5. }.cachedCount(3)
-```
-
-[DeleteListItem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/DeleteListItem.ets#L162-L181)
 
 以垂直列表为例：
 
 * List设置cachedCount后，显示区域外上下各会预加载并布局cachedCount行ListItem。计算ListItem行数时，会计算ListItemGroup内部的ListItem行数。如果ListItemGroup内没有ListItem，则整个ListItemGroup算一行。
 * List下嵌套使用LazyForEach，并且LazyForEach下嵌套使用ListItemGroup时，LazyForEach会在List显示区域外上下各会创建cachedCount个ListItemGroup。
 
-说明
+**说明** 
 
 1. cachedCount的增加会增大UI的CPU、内存开销。使用时需要根据实际情况，综合性能和用户体验进行调整。
 2. 列表使用数据懒加载时，除了显示区域的列表项和前后缓存的列表项，其他列表项会被销毁。
@@ -1164,273 +1128,264 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
 **图24** 列表项的折叠与展开
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/q3MCXjneQoKlGcQIYjKyhA/zh-cn_image_0000002589324135.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/TYhI6SKURz2LgdhlmmfPgw/zh-cn_image_0000002706833500.gif)
 
 列表项折叠与展开效果实现主要流程如下：
 
 1. 定义列表项数据结构。
 
+   ```typescript
+   import { curves } from '@kit.ArkUI';
+
+   interface ItemInfo {
+     index: number,
+     name: ResourceStr,
+     label: ResourceStr,
+     type?: string,
+   }
+
+   interface ItemGroupInfo extends ItemInfo {
+     children: ItemInfo[]
+   }
    ```
-   1. import { curves } from '@kit.ArkUI';
-
-   3. interface ItemInfo {
-   4. index: number,
-   5. name: ResourceStr,
-   6. label: ResourceStr,
-   7. type?: string,
-   8. }
-
-   10. interface ItemGroupInfo extends ItemInfo {
-   11. children: ItemInfo[]
-   12. }
-   ```
-
-   [CollapseAndExpand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CollapseAndExpand.ets#L18-L31)
 2. 构造列表结构。
 
+   ```typescript
+     @State routes: ItemGroupInfo[] = [
+       {
+         index: 0,
+         name: 'basicInfo',
+         // app.string.Personal_Basic_Information 资源文件中的value值为'个人基本资料'
+         label: $r('app.string.Personal_Basic_Information'),
+         children: [
+           {
+             index: 0,
+             // app.string.nick_name 资源文件中的value值为'昵称'
+             name: $r('app.string.nick_name'),
+             label: 'xxxx',
+             type: 'Text'
+           },
+           {
+             index: 1,
+             // app.string.avatar 资源文件中的value值为'头像'
+             name: $r('app.string.avatar'),
+             label: $r('sys.media.ohos_user_auth_icon_face'),
+             type: 'Image'
+           },
+           {
+             index: 2,
+             // app.string.age 资源文件中的value值为'年龄'
+             name: $r('app.string.age'),
+             label: 'xxxx',
+             type: 'Text'
+           },
+           {
+             index: 3,
+             // app.string.birthday 资源文件中的value值为'生日'
+             name: $r('app.string.birthday'),
+             label: 'xxxxxxxxx',
+             type: 'Text'
+           },
+           {
+             index: 4,
+             // app.string.gender 资源文件中的value值为'性别'
+             name: $r('app.string.gender'),
+             label: 'xxxxxxxx',
+             type: 'Text'
+           },
+         ]
+       },
+       {
+         index: 1,
+         name: 'equipInfo',
+         // app.string.Device_Information 资源文件中的value值为'设备信息'
+         label: $r('app.string.Device_Information'),
+         children: []
+       },
+       {
+         index: 2,
+         name: 'appInfo',
+         // app.string.Application_usage_information 资源文件中的value值为'应用使用信息'
+         label: $r('app.string.Application_usage_information'),
+         children: []
+       },
+       {
+         index: 3,
+         name: 'uploadInfo',
+         // app.string.data_you_voluntarily_uploaded 资源文件中的value值为'您主动上传的数据'
+         label: $r('app.string.data_you_voluntarily_uploaded'),
+         children: []
+       },
+       {
+         index: 4,
+         name: 'tradeInfo',
+         // app.string.Trading_and_asset_information 资源文件中的value值为'交易与资产信息'
+         label: $r('app.string.Trading_and_asset_information'),
+         children: []
+       },
+       {
+         index: 5,
+         name: 'otherInfo',
+         // app.string.Other_materials 资源文件中的value值为'其他资料'
+         label: $r('app.string.Other_materials'),
+         children: []
+       },
+     ];
+     @State expandedItems: boolean[] = Array(this.routes.length).fill(false);
+     @State selection: string | null = null;
+
+     // ...
+
+     build() {
+       // ...
+             Column() {
+               List({ space: 10 }) {
+                 ForEach(this.routes, (itemGroup: ItemGroupInfo) => {
+                   ListItemGroup({
+                     header: this.ListItemGroupHeader(itemGroup),
+                     style: ListItemGroupStyle.CARD,
+                   }) {
+                     if (this.expandedItems[itemGroup.index] && itemGroup.children) {
+                       ForEach(itemGroup.children, (item: ItemInfo) => {
+                         ListItem({ style: ListItemStyle.CARD }) {
+                           Row() {
+                             Text(item.name)
+                             Blank()
+                             if (item.type === 'Image') {
+                               Image(item.label)
+                                 .height(20)
+                                 .width(20)
+                             } else {
+                               Text(item.label)
+                             }
+                             Image($r('sys.media.ohos_ic_public_arrow_right'))
+                               .fillColor($r('sys.color.ohos_id_color_fourth'))
+                               .height(30)
+                               .width(30)
+                           }
+                           .width('100%')
+                         }
+                         .width('100%')
+                         .animation({ curve: curves.interpolatingSpring(0, 1, 528, 39) })
+                       })
+                     }
+                   }.clip(true)
+                 })
+               }
+               .width('100%')
+             }
+             .width('100%')
+             .height('100%')
+             .justifyContent(FlexAlign.Start)
+             .backgroundColor($r('sys.color.ohos_id_color_sub_background'))
+             // ...
+     }
+   }
    ```
-   1. @State routes: ItemGroupInfo[] = [
-   2. {
-   3. index: 0,
-   4. name: 'basicInfo',
-   5. // app.string.Personal_Basic_Information 资源文件中的value值为'个人基本资料'
-   6. label: $r('app.string.Personal_Basic_Information'),
-   7. children: [
-   8. {
-   9. index: 0,
-   10. // app.string.nick_name 资源文件中的value值为'昵称'
-   11. name: $r('app.string.nick_name'),
-   12. label: 'xxxx',
-   13. type: 'Text'
-   14. },
-   15. {
-   16. index: 1,
-   17. // app.string.avatar 资源文件中的value值为'头像'
-   18. name: $r('app.string.avatar'),
-   19. label: $r('sys.media.ohos_user_auth_icon_face'),
-   20. type: 'Image'
-   21. },
-   22. {
-   23. index: 2,
-   24. // app.string.age 资源文件中的value值为'年龄'
-   25. name: $r('app.string.age'),
-   26. label: 'xxxx',
-   27. type: 'Text'
-   28. },
-   29. {
-   30. index: 3,
-   31. // app.string.birthday 资源文件中的value值为'性别'
-   32. name: $r('app.string.birthday'),
-   33. label: 'xxxxxxxxx',
-   34. type: 'Text'
-   35. },
-   36. {
-   37. index: 4,
-   38. // app.string.gender 资源文件中的value值为''
-   39. name: $r('app.string.gender'),
-   40. label: 'xxxxxxxx',
-   41. type: 'Text'
-   42. },
-   43. ]
-   44. },
-   45. {
-   46. index: 1,
-   47. name: 'equipInfo',
-   48. // app.string.Device_Information 资源文件中的value值为'设备信息'
-   49. label: $r('app.string.Device_Information'),
-   50. children: []
-   51. },
-   52. {
-   53. index: 2,
-   54. name: 'appInfo',
-   55. // app.string.Application_usage_information 资源文件中的value值为'应用使用信息'
-   56. label: $r('app.string.Application_usage_information'),
-   57. children: []
-   58. },
-   59. {
-   60. index: 3,
-   61. name: 'uploadInfo',
-   62. // app.string.data_you_voluntarily_uploaded 资源文件中的value值为'您主动上传的数据'
-   63. label: $r('app.string.data_you_voluntarily_uploaded'),
-   64. children: []
-   65. },
-   66. {
-   67. index: 4,
-   68. name: 'tradeInfo',
-   69. // app.string.Trading_and_asset_information 资源文件中的value值为'交易与资产信息'
-   70. label: $r('app.string.Trading_and_asset_information'),
-   71. children: []
-   72. },
-   73. {
-   74. index: 5,
-   75. name: 'otherInfo',
-   76. // app.string.Other_materials 资源文件中的value值为'其他资料'
-   77. label: $r('app.string.Other_materials'),
-   78. children: []
-   79. },
-   80. ];
-   81. @State expandedItems: boolean[] = Array(this.routes.length).fill(false);
-   82. @State selection: string | null = null;
-
-   84. // ...
-
-   86. build() {
-   87. // ...
-   88. Column() {
-   89. List({ space: 10 }) {
-   90. ForEach(this.routes, (itemGroup: ItemGroupInfo) => {
-   91. ListItemGroup({
-   92. header: this.ListItemGroupHeader(itemGroup),
-   93. style: ListItemGroupStyle.CARD,
-   94. }) {
-   95. if (this.expandedItems[itemGroup.index] && itemGroup.children) {
-   96. ForEach(itemGroup.children, (item: ItemInfo) => {
-   97. ListItem({ style: ListItemStyle.CARD }) {
-   98. Row() {
-   99. Text(item.name)
-   100. Blank()
-   101. if (item.type === 'Image') {
-   102. Image(item.label)
-   103. .height(20)
-   104. .width(20)
-   105. } else {
-   106. Text(item.label)
-   107. }
-   108. Image($r('sys.media.ohos_ic_public_arrow_right'))
-   109. .fillColor($r('sys.color.ohos_id_color_fourth'))
-   110. .height(30)
-   111. .width(30)
-   112. }
-   113. .width('100%')
-   114. }
-   115. .width('100%')
-   116. .animation({ curve: curves.interpolatingSpring(0, 1, 528, 39) })
-   117. })
-   118. }
-   119. }.clip(true)
-   120. })
-   121. }
-   122. .width('100%')
-   123. }
-   124. .width('100%')
-   125. .height('100%')
-   126. .justifyContent(FlexAlign.Start)
-   127. .backgroundColor($r('sys.color.ohos_id_color_sub_background'))
-   128. // ...
-   129. }
-   130. }
-   ```
-
-   [CollapseAndExpand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CollapseAndExpand.ets#L36-L208)
 3. 通过改变ListItem的状态，来控制每个列表项是否展开，并通过[animation](../harmonyos-references/ts-animatorproperty.md#animation)和[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)来实现展开与折叠过程中的动效效果。
 
+   ```typescript
+   @Builder
+   ListItemGroupHeader(itemGroup: ItemGroupInfo) {
+     Row() {
+       Text(itemGroup.label)
+       Blank()
+       Image($r('sys.media.ohos_ic_public_arrow_down'))
+         .fillColor($r('sys.color.ohos_id_color_fourth'))
+         .height(30)
+         .width(30)
+         .rotate({ angle: !!itemGroup.children.length ? (this.expandedItems[itemGroup.index] ? 180 : 0) : 180 })
+         .animation({ curve: curves.interpolatingSpring(0, 1, 228, 22) })
+     }
+     .width('100%')
+     .padding(10)
+     .animation({ curve: curves.interpolatingSpring(0, 1, 528, 39) })
+     .onClick(() => {
+       if (itemGroup.children.length) {
+         this.getUIContext()?.animateTo({ curve: curves.interpolatingSpring(0, 1, 528, 39) }, () => {
+           this.expandedItems[itemGroup.index] = !this.expandedItems[itemGroup.index];
+         })
+       }
+     })
+   }
    ```
-   1. @Builder
-   2. ListItemGroupHeader(itemGroup: ItemGroupInfo) {
-   3. Row() {
-   4. Text(itemGroup.label)
-   5. Blank()
-   6. Image($r('sys.media.ohos_ic_public_arrow_down'))
-   7. .fillColor($r('sys.color.ohos_id_color_fourth'))
-   8. .height(30)
-   9. .width(30)
-   10. .rotate({ angle: !!itemGroup.children.length ? (this.expandedItems[itemGroup.index] ? 180 : 0) : 180 })
-   11. .animation({ curve: curves.interpolatingSpring(0, 1, 228, 22) })
-   12. }
-   13. .width('100%')
-   14. .padding(10)
-   15. .animation({ curve: curves.interpolatingSpring(0, 1, 528, 39) })
-   16. .onClick(() => {
-   17. if (itemGroup.children.length) {
-   18. this.getUIContext()?.animateTo({ curve: curves.interpolatingSpring(0, 1, 528, 39) }, () => {
-   19. this.expandedItems[itemGroup.index] = !this.expandedItems[itemGroup.index];
-   20. })
-   21. }
-   22. })
-   23. }
-   ```
-
-   [CollapseAndExpand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/CollapseAndExpand.ets#L121-L145)
 
 ## 切换布局方向
 
-部分业务场景需要列表底部插入数据时，自动向上滚动，把新插入的节点展示出来。例如，直播评论、即时聊天等应用场景。而List组件正常布局时, 在内容下方增加节点，内容是保持不变的。此时，可以通过切换布局方向来实现所需效果。
+部分业务场景需要列表底部插入数据时，自动向上滚动，把新插入的节点展示出来。例如，直播评论、即时聊天等应用场景。而List组件正常布局时，在内容下方增加节点，内容是保持不变的。此时，可以通过切换布局方向来实现所需效果。
 
 **图25** 实时消息滚动显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/avfCld7wT_KakvWhzX3g2w/zh-cn_image_0000002589244075.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/SvYRARvfRtiIkK390jW9fQ/zh-cn_image_0000002736312609.gif)
 
 1. 定义列表项数据结构。
 
+   ```typescript
+   interface Message {
+     id: number
+     content: ResourceStr
+     sender: ResourceStr
+   }
    ```
-   1. interface Message {
-   2. id: number
-   3. content: ResourceStr
-   4. sender: ResourceStr
-   5. }
-   ```
-
-   [ListChatRoom.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ListChatRoom.ets#L19-L25)
 2. 构造列表结构，同时把[stackFromEnd](../harmonyos-references/ts-container-list.md#stackfromend19)接口参数值设置为true，即可实现List列表在底部插入数据时，内容向上滚动。
 
+   ```typescript
+   @State messages: Message[] = [];
+
+   aboutToAppear(): void {
+     const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     let welcomeLiveRoom = '';
+     let system = '';
+     let helloEveryone = '';
+     let anchors = '';
+     try {
+       welcomeLiveRoom = context.resourceManager.getStringByNameSync('welcome_live_room');
+     } catch (e) {
+       hilog.error(0x0000, 'testTag', 'Failed to get welcome_live_room: %{public}s', JSON.stringify(e) ?? '');
+     }
+     try {
+       system = context.resourceManager.getStringByNameSync('system');
+     } catch (e) {
+       hilog.error(0x0000, 'testTag', 'Failed to get system: %{public}s', JSON.stringify(e) ?? '');
+     }
+     try {
+       helloEveryone = context.resourceManager.getStringByNameSync('hello_everyone');
+     } catch (e) {
+       hilog.error(0x0000, 'testTag', 'Failed to get hello_everyone: %{public}s', JSON.stringify(e) ?? '');
+     }
+     try {
+       anchors = context.resourceManager.getStringByNameSync('anchors');
+     } catch (e) {
+       hilog.error(0x0000, 'testTag', 'Failed to get anchors: %{public}s', JSON.stringify(e) ?? '');
+     }
+     this.messages = [
+       { id: 1, content: welcomeLiveRoom, sender: system },
+       { id: 2, content: helloEveryone, sender: anchors }
+     ];
+   }
+
+   build() {
+     // ...
+           Column() {
+             // 聊天消息区域
+             List({ space: 10 }) {
+               ForEach(this.messages, (item: Message) => {
+                 ListItem() {
+                   this.MessageItem(item)
+                 }
+               }, (item: Message) => item.id.toString())
+             }
+             .stackFromEnd(true)
+             .layoutWeight(1)  // 占据剩余空间
+             .alignListItem(ListItemAlign.Center)
+
+             // ...
+           }
+           .width('100%')
+           .height('100%')
+           // ...
+   }
    ```
-   1. @Builder
-   2. MessageItem(message: Message) {
-   3. Column() {
-   4. Text(`${message.sender}: ${message.content}`)
-   5. .fontSize(16)
-   6. .textAlign(TextAlign.Start)
-   7. .padding(10)
-   8. .backgroundColor(message.sender === 'system' ? '#F0F0F0' : '#E6F3FF')
-   9. .borderRadius(8)
-   10. }
-   11. .width('100%')
-   12. .alignItems(HorizontalAlign.Start)
-   13. .margin({ bottom: 8 })
-   14. }
-
-   16. @State messages: Message[] = [];
-
-   18. aboutToAppear(): void {
-   19. const context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   20. // app.string.welcome_live_room资源文件中的value值为'欢迎来到直播间'
-   21. const welcomeLiveRoom = context.resourceManager.getStringByNameSync('welcome_live_room');
-   22. // app.string.system资源文件中的value值为'系统'
-   23. const system = context.resourceManager.getStringByNameSync('system');
-   24. // app.string.hello_everyone资源文件中的value值为'大家好啊~'
-   25. const helloEveryone = context.resourceManager.getStringByNameSync('hello_everyone');
-   26. // app.string.anchors资源文件中的value值为'主播'
-   27. const anchors = context.resourceManager.getStringByNameSync('anchors');
-   28. this.messages = [
-   29. { id: 1, content: welcomeLiveRoom, sender: system },
-   30. { id: 2, content: helloEveryone, sender: anchors }
-   31. ];
-   32. }
-
-   34. build() {
-   35. // ...
-   36. Column() {
-   37. // 聊天消息区域
-   38. List({ space: 10 }) {
-   39. ForEach(this.messages, (item: Message) => {
-   40. ListItem() {
-   41. this.MessageItem(item)
-   42. }
-   43. }, (item: Message) => item.id.toString())
-   44. }
-   45. .stackFromEnd(true)
-   46. .layoutWeight(1)  // 占据剩余空间
-   47. .alignListItem(ListItemAlign.Center)
-
-   49. // ...
-   50. }
-   51. .width('100%')
-   52. .height('100%')
-   53. // ...
-   54. }
-   ```
-
-   [ListChatRoom.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/ListChatRoom.ets#L61-L137)
 
 ## 支持滑动离手事件
 
@@ -1438,107 +1393,95 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
 **图26** 自定义限位滚动效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/-yyWXKJjSsq6QT5s-PuBdA/zh-cn_image_0000002558764268.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/HBlq-aFEQaaPfO9QiNkYHg/zh-cn_image_0000002706673566.gif)
 
 1. 定义新闻条目数据结构。
 
-   ```
-   1. class News {
-   2. public id: string;
-   3. public title: ResourceStr;
-   4. public content: ResourceStr;
-   5. public type: string;
+   ```typescript
+   class News {
+     public id: string;
+     public title: ResourceStr;
+     public content: ResourceStr;
+     public type: string;
 
-   7. constructor(id: string, title: ResourceStr, content: ResourceStr, type: string) {
-   8. this.id = id;
-   9. this.title = title;
-   10. this.content = content;
-   11. this.type = type;
-   12. }
-   13. }
+     constructor(id: string, title: ResourceStr, content: ResourceStr, type: string) {
+       this.id = id;
+       this.title = title;
+       this.content = content;
+       this.type = type;
+     }
+   }
    ```
-
-   [SupportSlidingHand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/SupportSlidingHand.ets#L18-L32)
 2. 构造新闻条目结构，通过type属性来区分长新闻，短新闻。
 
+   ```typescript
+   @State newsData: Array<News> = [
+     // app.string.new_title 资源文件中的value值为'新闻标题'
+     // app.string.new_short 资源文件中的value值为'这是第一条短新闻，内容较少，快速滑动切换'
+     new News('1', $r('app.string.new_title'), $r('app.string.new_short'), 'short'),
+     new News('2', $r('app.string.new_title'), $r('app.string.new_short'), 'short'),
+     // app.string.new_long 资源文件中的value值为'这是第二条长新闻，内容较多，可以自由滑动查看完整内容。'
+     new News('3', $r('app.string.new_title'), $r('app.string.new_long'), 'long'),
+     new News('4', $r('app.string.new_title'), $r('app.string.new_short'), 'short'),
+     new News('5', $r('app.string.new_title'), $r('app.string.new_long'), 'long'),
+   ];
    ```
-   1. @State newsData: Array<News> = [
-   2. // app.string.new_title 资源文件中的value值为'新闻标题'
-   3. // app.string.new_short 资源文件中的value值为'这是第一条短新闻，内容较少，快速滑动切换'
-   4. new News('1', $r('app.string.new_title'), $r('app.string.new_short'), 'short'),
-   5. new News('2', $r('app.string.new_title'), $r('app.string.new_short'), 'short'),
-   6. // app.string.new_long 资源文件中的value值为'这是第二条长新闻，内容较多，可以自由滑动查看完整内容。'
-   7. new News('3', $r('app.string.new_title'), $r('app.string.new_long'), 'long'),
-   8. new News('4', $r('app.string.new_title'), $r('app.string.new_short'), 'short'),
-   9. new News('5', $r('app.string.new_title'), $r('app.string.new_long'), 'long'),
-   10. ];
-   ```
-
-   [SupportSlidingHand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/SupportSlidingHand.ets#L40-L51)
 3. 滑动离手事件onWillStopDragging及新闻处理逻辑：
 
    * 上报离手瞬间滑动速度，支持正负方向速度检测，向上滑动为正，向下滑动为负。
 
+     ```typescript
+     .onWillStopDragging((velocity: number) => {
+       if (velocity < 0) {
+         // 向下滑动处理
+       } else {
+         // 向上滑动处理
+       }
+       // ...
+     })
      ```
-     1. .onWillStopDragging((velocity: number) => {
-     2. if (velocity < 0) {
-     3. // 向下滑动处理
-     4. } else {
-     5. // 向上滑动处理
-     6. }
-     7. // ...
-     8. })
-     ```
-
-     [SupportSlidingHand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/SupportSlidingHand.ets#L100-L150)
    * 通过[getItemRect](../harmonyos-references/ts-container-scroll.md#getitemrect11)接口方法获取当前项位置信息。
 
+     ```typescript
+     let rect = this.scrollerForList.getItemRect(this.currentIndex);
      ```
-     1. let rect = this.scrollerForList.getItemRect(this.currentIndex);
-     ```
-
-     [SupportSlidingHand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/SupportSlidingHand.ets#L121-L123)
    * 处理短新闻：直接跳转相邻项。
 
+     ```typescript
+     if (velocity > 10) {
+       this.scrollerForList.scrollToIndex(this.currentIndex, true, ScrollAlign.START)
+     } else if (velocity < -10) {
+       this.scrollerForList.scrollToIndex(this.currentIndex + 1, true, ScrollAlign.START)
+     }
      ```
-     1. if (velocity > 10) {
-     2. this.scrollerForList.scrollToIndex(this.currentIndex, true, ScrollAlign.START)
-     3. } else if (velocity < -10) {
-     4. this.scrollerForList.scrollToIndex(this.currentIndex + 1, true, ScrollAlign.START)
-     5. }
-     ```
-
-     [SupportSlidingHand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/SupportSlidingHand.ets#L110-L116)
    * 处理长新闻：计算剩余显示范围决定滚动终点。
 
+     ```typescript
+     let rect = this.scrollerForList.getItemRect(this.currentIndex);
+     if (velocity < -30) {
+       if (rect) {
+         // 当前节点在页面内的剩余显示范围
+         let leftRect = rect.y + rect.height;
+         // 终点位置
+         let mainPosition = -velocity * DEFAULT_FRICTION / FRICTION_SCALE;
+         if (leftRect + mainPosition > 0.75 * this.listHeight) {
+           this.scrollerForList.scrollToIndex(this.currentIndex + 1, true, ScrollAlign.START);
+           return;
+         } else if (leftRect + mainPosition < 0.25 * this.listHeight) {
+           this.scrollerForList.scrollToIndex(this.currentIndex, true, ScrollAlign.END,
+             { extraOffset: LengthMetrics.vp(this.listHeight * 0.3) })
+           return;
+         }
+       }
+     } else if (velocity > 30) {
+       let leftRect = rect?.y + rect?.height;
+       let mainPosition = velocity * DEFAULT_FRICTION / FRICTION_SCALE;
+       if (leftRect + mainPosition > 0.75 * this.listHeight) {
+         this.scrollerForList.scrollToIndex(this.currentIndex, true, ScrollAlign.START);
+         return;
+       }
+     }
      ```
-     1. let rect = this.scrollerForList.getItemRect(this.currentIndex);
-     2. if (velocity < -30) {
-     3. if (rect) {
-     4. // 当前节点在页面内的剩余显示范围
-     5. let leftRect = rect.y + rect.height;
-     6. // 终点位置
-     7. let mainPosition = -velocity * DEFAULT_FRICTION / FRICTION_SCALE;
-     8. if (leftRect + mainPosition > 0.75 * this.listHeight) {
-     9. this.scrollerForList.scrollToIndex(this.currentIndex + 1, true, ScrollAlign.START);
-     10. return;
-     11. } else if (leftRect + mainPosition < 0.25 * this.listHeight) {
-     12. this.scrollerForList.scrollToIndex(this.currentIndex, true, ScrollAlign.END,
-     13. { extraOffset: LengthMetrics.vp(this.listHeight * 0.3) })
-     14. return;
-     15. }
-     16. }
-     17. } else if (velocity > 30) {
-     18. let leftRect = rect?.y + rect?.height;
-     19. let mainPosition = velocity * DEFAULT_FRICTION / FRICTION_SCALE;
-     20. if (leftRect + mainPosition > 0.75 * this.listHeight) {
-     21. this.scrollerForList.scrollToIndex(this.currentIndex, true, ScrollAlign.START);
-     22. return;
-     23. }
-     24. }
-     ```
-
-     [SupportSlidingHand.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/list/SupportSlidingHand.ets#L120-L147)
 
 ## 设置边缘滑动效果
 
@@ -1548,21 +1491,88 @@ ListItem的[swipeAction属性](../harmonyos-references/ts-container-listitem.md#
 
 **图27** 边缘回弹效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/YoTp2lycRtmW-FRg9vprnQ/zh-cn_image_0000002558604612.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Vgs5FHh-RYezFd4UKdxU0g/zh-cn_image_0000002736432657.gif)
 
 设置.edgeEffect(EdgeEffect.None)时，List无边缘滑动效果，如下图所示。
 
 **图28** 无边缘滑动效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Zac6FXTnRDSDd9YjmH7yig/zh-cn_image_0000002589324137.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/OBVvprx8RjaBpXHy-nb_OQ/zh-cn_image_0000002706833502.gif)
 
 从API version 18开始，List还支持只设置单边的边缘滑动效果，如设置.edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true, effectEdge: EffectEdge.START })来实现起始边有边缘回弹效果，末尾边无效果，如下图所示。
 
 **图29** 单边边缘滑动效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/e3K7FhT3Q2ua8ZGuHkij-Q/zh-cn_image_0000002589244077.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/G_gtz9AURO-uuWbS7pK5RQ/zh-cn_image_0000002736312611.gif)
 
 需要注意的是，当List组件的内容区小于一屏时，List默认无边缘滑动效果。若要启用边缘回弹效果，可以通过设置.edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true })来实现。
+
+## 手指滑动多选
+
+从API版本26.0.0开始，[List](../harmonyos-references/ts-container-list.md)支持在编辑模式下实现手指滑动多选能力。进入编辑模式后，用户可以滑动经过多个[ListItem](../harmonyos-references/ts-container-listitem.md)，批量选择或取消选择列表项。应用可以在ListItem上设置是否允许被选择，并根据回调记录已选择的列表项。该能力适用于文件管理、消息列表、待办列表等需要连续批量选择列表项的场景。
+
+**List手指滑动多选示例效果图**
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/kKxf9tqXRVWDnp8eQ09h5w/zh-cn_image_0000002706673568.gif)
+
+### 设置编辑模式
+
+通过[enableEditMode](../harmonyos-references/ts-container-list.md#enableeditmode)设置是否进入编辑模式。设置为true时，List进入编辑模式，用户可以单指滑动经过多个ListItem进行批量选择或取消选择；设置为false时，List退出编辑模式。通过[onEditModeChange](../harmonyos-references/ts-container-list.md#oneditmodechange)监听编辑模式变化，将系统返回、侧滑返回或双指滑动触发的编辑模式变化同步到业务状态。
+
+通过[editModeOptions](../harmonyos-references/ts-container-list.md#editmodeoptions23)配置编辑模式下的多选行为。editModeOptions中有两个滑动多选相关参数，分别是useDefaultMultiSelectStyle和enableTwoFingerMultiSelect，默认值均为true。前者控制是否显示ListItem右侧的系统复选框，后者控制是否允许用户通过双指滑动自动进入编辑模式并进行多选。开发者需要自定义样式时，可将useDefaultMultiSelectStyle设置为false。开发者需要关闭双指滑动自动进入编辑模式时，可将enableTwoFingerMultiSelect设置为false。
+
+```typescript
+List({ space: 10 }) {
+  // ...
+}
+.enableEditMode(this.enableEditMode)
+.onEditModeChange((enabled: boolean) => {
+  this.setEditMode(enabled);
+})
+.editModeOptions({ useDefaultMultiSelectStyle: true, enableTwoFingerMultiSelect: true })
+```
+
+### 自定义多选样式
+
+如果默认多选样式不满足业务视觉要求，可关闭默认样式，并在ListItem内容中自行绘制复选框、图标、背景色等编辑态样式。
+
+1. 在List的editModeOptions中将useDefaultMultiSelectStyle设置为false，关闭ListItem右侧默认复选框。
+2. 在ListItem内容中根据编辑模式状态显示自定义选择控件，例如Checkbox、SymbolGlyph或自定义图片。
+3. 自定义选择控件和ListItem使用同一份选择结果数据。ListItem仍需配置selectable、selected和onSelect，用于在手指滑动多选过程中同步最新选择结果。
+4. 关闭了默认编辑样式以后，开发者需要通过[onGestureRecognizerJudgeBegin](../harmonyos-references/ts-gesture-blocking-enhancement.md#ongesturerecognizerjudgebegin)进行手势裁决，来决定滑动哪块区域能够进行滑动多选。开发者可根据编辑模式状态、手势类型、手势tag或触摸区域返回GestureJudgeResult.REJECT或GestureJudgeResult.CONTINUE，决定当前业务手势是否继续参与识别。
+
+```typescript
+.onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
+  recognizers: Array<GestureRecognizer>) => {
+  // ...
+  // 以滑动多选的判定热区在列表左边，且宽度为48vp为例
+  if (current.getTag() !== 'SWIPESELECT' && this.enableEditMode && event.fingerList[0].localX < 48) {
+    return GestureJudgeResult.REJECT;
+  }
+  return GestureJudgeResult.CONTINUE;
+})
+```
+
+### 记录列表项选择结果
+
+在ListItem上配置[selectable](../harmonyos-references/ts-container-listitem.md#selectable8)、[selected](../harmonyos-references/ts-container-listitem.md#selected10)和[onSelect](../harmonyos-references/ts-container-listitem.md#onselect8)。selectable用于设置列表项是否允许被选择，selected用于设置列表项当前是否被选中。滑动多选过程中，组件会触发onSelect回调，应用可以在回调中记录每个列表项的最新选择结果。
+
+```typescript
+ListItem() {
+  this.ItemContent(item, index)
+}
+.selectable(true)
+.selected(this.isSelected(item.id))
+.onSelect((selected: boolean) => {
+  this.updateSelected(item.id, selected);
+})
+```
+
+**说明** 
+
+* 建议使用列表项数据中不会随位置变化的唯一标识（例如消息ID）记录选择结果，不建议仅使用当前下标，避免动态增删数据后选中项错位。
+* 当业务需要在退出编辑模式后保留选择结果时，可在[onEditModeChange](../harmonyos-references/ts-container-list.md#oneditmodechange)回调中保存选择结果。
+* 使用[LazyForEach](arkts-rendering-control-lazyforeach.md)时，数据源发生变化后应通过[DataChangeListener](../harmonyos-references/ts-rendering-control-lazyforeach.md#datachangelistener)通知组件刷新，确保滑动多选过程中列表项状态与数据源一致。
 
 ## 示例代码
 

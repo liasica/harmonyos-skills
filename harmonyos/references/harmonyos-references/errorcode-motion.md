@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 动作感知错误码
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 错误码 > 动作感知错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:10:56+08:00
-doc_updated_at: 2026-04-03
-content_hash: sha256:53dee881c20b7a84cb050f137fb4dd6140fd0524e27e196658043e4ba33fd6e9
+scraped_at: 2026-09-02T15:02:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8ae6e9cf2d820e91a154a5cfb6d780407d430032ad633d92f085fd09983bb653
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
 
 ## 31500001 服务异常
-
-Phone
 
 **错误信息**
 
@@ -35,8 +33,6 @@ Service exception. Possible causes: 1. A system error, such as null pointer, con
 
 ## 31500002 订阅失败
 
-Phone
-
 **错误信息**
 
 Subscription failed. Possible causes: 1. Callback registration failure; 2. Failed to bind native object to js wrapper; 3. N-API invocation exception, invalid N-API status; 4. IPC request exception.
@@ -55,8 +51,6 @@ Subscription failed. Possible causes: 1. Callback registration failure; 2. Faile
 2. 连续重试3次不可用则停止尝试。
 
 ## 31500003 取消订阅失败
-
-Phone
 
 **错误信息**
 

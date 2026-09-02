@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-system-l
 title: 系统语言与区域
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 语言与用户偏好 > 系统语言与区域
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9e2b7bb728670c47d20393a74624f830051c044a10d76dbdbbf083895bbdbf90
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0e3d73b0a496cb5edcc0a1a69aa176b5c66a48161471d2ef0073ef4f7552b3f3
 ---
 
 ## 实现原理
@@ -22,47 +22,43 @@ content_hash: sha256:9e2b7bb728670c47d20393a74624f830051c044a10d76dbdbbf083895bb
 
 1. 导入模块。
 
+   ```typescript
+   import { i18n } from '@kit.LocalizationKit';
+   import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
    ```
-   1. import { i18n } from '@kit.LocalizationKit';
-   2. import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
-   ```
-
-   [LanguagePreferenceSetting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/LanguagePreferenceSetting.ets#L18-L21)
 2. 使用场景。
 
 * 获取系统语言、系统地区、系统区域。
 
+  ```typescript
+  // 获取系统语言
+  let systemLanguage = i18n.System.getSystemLanguage();  // systemLanguage为当前系统语言
+
+  // 获取系统地区
+  let systemRegion = i18n.System.getSystemRegion();  // systemRegion为当前系统地区
+
+  // 获取系统区域
+  let systemLocale: Intl.Locale = i18n.System.getSystemLocaleInstance();  // systemLocale为当前系统区域
+
+  // 通过监听公共事件COMMON_EVENT_LOCALE_CHANGED可以感知系统语言、系统地区或系统区域变化
+  let subscriber: commonEventManager.CommonEventSubscriber; // 用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
+  let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+    events: [commonEventManager.Support.COMMON_EVENT_LOCALE_CHANGED]
+  };
+  // 创建订阅者
+  commonEventManager.createSubscriber(subscribeInfo)
+    .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+      console.info('CreateSubscriber');
+      subscriber = commonEventSubscriber;
+      commonEventManager.subscribe(subscriber, (err, data) => {
+        if (err) {
+          console.error(`Failed to subscribe common event. error code: ${err.code}, message: ${err.message}.`);
+          return;
+        }
+        console.info('The subscribed event has occurred.'); // 系统语言、系统地区或系统区域变化时执行
+      })
+    })
+    .catch((err: BusinessError) => {
+      console.error(`CreateSubscriber failed, code is ${err.code}, message is ${err.message}`);
+    });
   ```
-  1. // 获取系统语言
-  2. let systemLanguage = i18n.System.getSystemLanguage();  // systemLanguage为当前系统语言
-
-  4. // 获取系统地区
-  5. let systemRegion = i18n.System.getSystemRegion();  // systemRegion为当前系统地区
-
-  7. // 获取系统区域
-  8. let systemLocale: Intl.Locale = i18n.System.getSystemLocaleInstance();  // systemLocale为当前系统区域
-
-  10. // 通过监听公共事件COMMON_EVENT_LOCALE_CHANGED可以感知系统语言、系统地区或系统区域变化
-  11. let subscriber: commonEventManager.CommonEventSubscriber; // 用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-  12. let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-  13. events: [commonEventManager.Support.COMMON_EVENT_LOCALE_CHANGED]
-  14. };
-  15. // 创建订阅者
-  16. commonEventManager.createSubscriber(subscribeInfo)
-  17. .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
-  18. console.info('CreateSubscriber');
-  19. subscriber = commonEventSubscriber;
-  20. commonEventManager.subscribe(subscriber, (err, data) => {
-  21. if (err) {
-  22. console.error(`Failed to subscribe common event. error code: ${err.code}, message: ${err.message}.`);
-  23. return;
-  24. }
-  25. console.info('The subscribed event has occurred.'); // 系统语言、系统地区或系统区域变化时执行
-  26. })
-  27. })
-  28. .catch((err: BusinessError) => {
-  29. console.error(`CreateSubscriber failed, code is ${err.code}, message is ${err.message}`);
-  30. });
-  ```
-
-  [LanguagePreferenceSetting.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/International/Internationalization/entry/src/main/ets/i18napplication/LanguagePreferenceSetting.ets#L23-L54)

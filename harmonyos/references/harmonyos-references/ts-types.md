@@ -3,20 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types
 title: 基础类型定义
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 基础类型定义
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b2d320441c717e454101067bad29857e57c788828fab2f08086d6116d3afd79f
+scraped_at: 2026-09-02T15:01:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d6c7bc9ee22121f5bbc73ff32da4094067add434340b1b613f8cc3d0226ae582
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持，后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## Resource
 
-PhonePC/2in1TabletTVWearable
+type Resource = import('../api/global/resource').Resource
 
 资源引用类型，用于设置组件属性的值。各类资源文件，需要放入特定子目录中存储管理，资源目录的示例请参考[资源分类](../harmonyos-guides/resource-categories-and-access.md#资源分类)。
+
+| 类型 | 说明 |
+| --- | --- |
+| import('../api/global/resource').[Resource](js-apis-resource.md#resource-1) | 资源引用类型。 |
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -37,15 +41,15 @@ PhonePC/2in1TabletTVWearable
 
   filename：工程中resources/rawfile目录下的文件名称。
 
-说明
+**说明** 
 
-引用资源类型时，需确保资源类型对象内的数据类型与当前以资源类型作为参数的属性方法本身的类型一致。例如某个属性方法支持设置string | Resource，那么在使用Resource引用类型时，其数据类型也应当为string。
-
-引用资源类型时，需确保资源类型对象用法为当前支持的用法，否则当前以资源类型作为参数的属性效果将和不设置该属性相同。
+* 引用资源类型时，需确保资源类型对象内的数据类型与当前以资源类型作为参数的属性方法本身的类型一致。例如某个属性方法支持设置string | Resource，那么在使用Resource引用类型时，其数据类型也应当为string。
+* 引用资源类型时，需确保资源类型对象用法为当前支持的用法，否则当前以资源类型作为参数的属性效果将和不设置该属性相同。
+* $rawfile不支持通过[预览器](../harmonyos-guides/ide-previewer-arkts-js.md)预览。
 
 ## Length
 
-PhonePC/2in1TabletTVWearable
+type Length = string | number | Resource
 
 长度类型，用于描述尺寸单位。
 
@@ -61,9 +65,63 @@ PhonePC/2in1TabletTVWearable
 | number | 默认单位vp。 |
 | [Resource](ts-types.md#resource) | 资源引用类型，引入系统资源或者应用资源中的尺寸。 |
 
+## LengthMetricsUnit12+
+
+type LengthMetricsUnit = import('../api/arkui/Graphics').LengthMetricsUnit
+
+定义长度属性单位。
+
+**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 类型 | 说明 |
+| --- | --- |
+| import('../api/arkui/Graphics').[LengthMetricsUnit](js-apis-arkui-graphics.md#lengthmetricsunit12) | 长度属性单位。 |
+
+## LengthMetrics12+
+
+type LengthMetrics = import('../api/arkui/Graphics').LengthMetrics
+
+定义长度属性。
+
+**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 类型 | 说明 |
+| --- | --- |
+| import('../api/arkui/Graphics').[LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 长度属性。 |
+
+## ColorMetrics12+
+
+declare type ColorMetrics = import('../api/arkui/Graphics').ColorMetrics
+
+定义混合颜色。
+
+**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 类型 | 说明 |
+| --- | --- |
+| import('../api/arkui/Graphics').[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 混合颜色。 |
+
 ## ResourceStr
 
-PhonePC/2in1TabletTVWearable
+type ResourceStr = string | Resource
 
 字符串类型，用于描述字符串入参可以使用的类型。
 
@@ -80,9 +138,11 @@ PhonePC/2in1TabletTVWearable
 
 ## Padding
 
-PhonePC/2in1TabletTVWearable
+type Padding = { top?: Length; right?: Length; bottom?: Length; left?: Length; }
 
 内边距类型，用于描述组件不同方向的内边距。
+
+引入该对象时，至少传入一个参数。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -90,22 +150,22 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| top | [Length](ts-types.md#length) | 否 | 是 | 上内边距，组件内元素距组件顶部的尺寸。 |
-| right | [Length](ts-types.md#length) | 否 | 是 | 右内边距，组件内元素距组件右边界的尺寸。 |
-| bottom | [Length](ts-types.md#length) | 否 | 是 | 下内边距，组件内元素距组件底部的尺寸。 |
-| left | [Length](ts-types.md#length) | 否 | 是 | 左内边距，组件内元素距组件左边界的尺寸。 |
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| top | [Length](ts-types.md#length) | 否 | 上内边距，组件内元素距组件顶部的尺寸。 |
+| right | [Length](ts-types.md#length) | 否 | 右内边距，组件内元素距组件右边界的尺寸。 |
+| bottom | [Length](ts-types.md#length) | 否 | 下内边距，组件内元素距组件底部的尺寸。 |
+| left | [Length](ts-types.md#length) | 否 | 左内边距，组件内元素距组件左边界的尺寸。 |
 
 ## LocalizedPadding12+
-
-PhonePC/2in1TabletTVWearable
 
 内边距类型，用于描述组件不同方向的内边距。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -118,9 +178,11 @@ PhonePC/2in1TabletTVWearable
 
 ## Margin
 
-PhonePC/2in1TabletTVWearable
+type Margin = Padding
 
 外边距类型，用于描述组件不同方向的外边距。
+
+引入该对象时，至少传入一个参数。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -128,35 +190,33 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| top | [Length](ts-types.md#length) | 否 | 是 | 上外边距，组件顶部距组件外元素的尺寸。 |
-| right | [Length](ts-types.md#length) | 否 | 是 | 右外边距，组件右边界距组件外元素的尺寸。 |
-| bottom | [Length](ts-types.md#length) | 否 | 是 | 下外边距，组件底部距组件外元素的尺寸。 |
-| left | [Length](ts-types.md#length) | 否 | 是 | 左外边距，组件左边界距组件外元素的尺寸。 |
+| 类型 | 说明 |
+| --- | --- |
+| [Padding](ts-types.md#padding) | 外边距类型，用于描述组件不同方向的外边距，其类型与内边距类型一致。 |
 
 ## LocalizedMargin12+
 
-PhonePC/2in1TabletTVWearable
+type LocalizedMargin = LocalizedPadding
 
 外边距类型，用于描述组件不同方向的外边距。
+
+引入该对象时，至少传入一个参数。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| top | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)12+ | 否 | 是 | 上外边距，组件顶部距组件外元素的尺寸。 |
-| end | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)12+ | 否 | 是 | 右外边距，组件右边界距组件外元素的尺寸。  从右至左显示语言模式下为  左外边距，组件左边界距组件外元素的尺寸。 |
-| bottom | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)12+ | 否 | 是 | 下外边距，组件底部距组件外元素的尺寸。 |
-| start | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)12+ | 否 | 是 | 左外边距，组件左边界距组件外元素的尺寸。  从右至左显示语言模式下为  右外边距，组件右边界距组件外元素的尺寸。 |
+| 类型 | 说明 |
+| --- | --- |
+| [LocalizedPadding](ts-types.md#localizedpadding12) | 外边距类型，用于描述组件不同方向的外边距，其类型与内边距类型一致。 |
 
 ## EdgeWidths9+
 
-PhonePC/2in1TabletTVWearable
+type EdgeWidths = { top?: Length; right?: Length; bottom?: Length; left?: Length; }
 
 边框宽度类型，用于描述组件边框不同方向的宽度。
 
@@ -168,16 +228,32 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| top | [Length](ts-types.md#length) | 否 | 是 | 组件上边框宽度。 |
-| right | [Length](ts-types.md#length) | 否 | 是 | 组件右边框宽度。 |
-| bottom | [Length](ts-types.md#length) | 否 | 是 | 组件下边框宽度。 |
-| left | [Length](ts-types.md#length) | 否 | 是 | 组件左边框宽度。 |
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| top | [Length](ts-types.md#length) | 否 | 组件上边框宽度。 |
+| right | [Length](ts-types.md#length) | 否 | 组件右边框宽度。 |
+| bottom | [Length](ts-types.md#length) | 否 | 组件下边框宽度。 |
+| left | [Length](ts-types.md#length) | 否 | 组件左边框宽度。 |
+
+## EdgeWidth10+
+
+type EdgeWidth = EdgeWidths
+
+边框宽度类型，用于描述组件边框不同方向的宽度。
+
+引入该对象时，至少传入一个参数。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 类型 | 说明 |
+| --- | --- |
+| [EdgeWidths](ts-types.md#edgewidths9) | 组件边框不同方向的宽度。 |
 
 ## LocalizedEdgeWidths12+
-
-PhonePC/2in1TabletTVWearable
 
 边框宽度类型，用于描述组件边框不同方向的宽度。
 
@@ -186,6 +262,8 @@ PhonePC/2in1TabletTVWearable
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -198,7 +276,7 @@ PhonePC/2in1TabletTVWearable
 
 ## BorderRadiuses9+
 
-PhonePC/2in1TabletTVWearable
+type BorderRadiuses = { topLeft?: Length; topRight?: Length; bottomLeft?: Length; bottomRight?: Length; }
 
 圆角类型，用于描述组件边框圆角半径。
 
@@ -210,16 +288,14 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| topLeft | [Length](ts-types.md#length) | 否 | 是 | 组件左上角圆角半径。 |
-| topRight | [Length](ts-types.md#length) | 否 | 是 | 组件右上角圆角半径。 |
-| bottomLeft | [Length](ts-types.md#length) | 否 | 是 | 组件左下角圆角半径。 |
-| bottomRight | [Length](ts-types.md#length) | 否 | 是 | 组件右下角圆角半径。 |
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| topLeft | [Length](ts-types.md#length) | 否 | 组件左上角圆角半径。 |
+| topRight | [Length](ts-types.md#length) | 否 | 组件右上角圆角半径。 |
+| bottomLeft | [Length](ts-types.md#length) | 否 | 组件左下角圆角半径。 |
+| bottomRight | [Length](ts-types.md#length) | 否 | 组件右下角圆角半径。 |
 
 ## LocalizedBorderRadiuses12+
-
-PhonePC/2in1TabletTVWearable
 
 圆角类型，用于描述组件边框圆角半径。
 
@@ -228,6 +304,8 @@ PhonePC/2in1TabletTVWearable
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -240,7 +318,7 @@ PhonePC/2in1TabletTVWearable
 
 ## EdgeColors9+
 
-PhonePC/2in1TabletTVWearable
+type EdgeColors = { top?: ResourceColor; right?: ResourceColor; bottom?: ResourceColor; left?: ResourceColor; }
 
 边框颜色，用于描述组件边框四条边的颜色。
 
@@ -252,16 +330,14 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| top | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 组件上边框颜色。 |
-| right | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 组件右边框颜色。 |
-| bottom | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 组件下边框颜色。 |
-| left | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 组件左边框颜色。 |
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| top | [ResourceColor](ts-types.md#resourcecolor) | 否 | 组件上边框颜色。 |
+| right | [ResourceColor](ts-types.md#resourcecolor) | 否 | 组件右边框颜色。 |
+| bottom | [ResourceColor](ts-types.md#resourcecolor) | 否 | 组件下边框颜色。 |
+| left | [ResourceColor](ts-types.md#resourcecolor) | 否 | 组件左边框颜色。 |
 
 ## LocalizedEdgeColors12+
-
-PhonePC/2in1TabletTVWearable
 
 边框颜色，用于描述组件边框四条边的颜色。
 
@@ -270,6 +346,8 @@ PhonePC/2in1TabletTVWearable
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -282,7 +360,7 @@ PhonePC/2in1TabletTVWearable
 
 ## EdgeStyles9+
 
-PhonePC/2in1TabletTVWearable
+type EdgeStyles = { top?: BorderStyle; right?: BorderStyle; bottom?: BorderStyle; left?: BorderStyle; }
 
 边框样式，用于描述组件边框四条边的样式。
 
@@ -294,16 +372,16 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| top | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 是 | 组件上边框样式。 |
-| right | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 是 | 组件右边框样式。 |
-| bottom | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 是 | 组件下边框样式。 |
-| left | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 是 | 组件左边框样式。 |
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| top | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 组件上边框样式。 |
+| right | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 组件右边框样式。 |
+| bottom | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 组件下边框样式。 |
+| left | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 组件左边框样式。 |
 
 ## Offset
 
-PhonePC/2in1TabletTVWearable
+type Offset = { dx: Length; dy: Length; }
 
 相对布局完成位置坐标偏移量。
 
@@ -311,31 +389,12 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| dx | [Length](ts-types.md#length) | 否 | 否 | 水平方向偏移量。 |
-| dy | [Length](ts-types.md#length) | 否 | 否 | 竖直方向偏移量。 |
-
-## RectResult10+
-
-PhonePC/2in1TabletTVWearable
-
-位置和尺寸类型，用于描述组件的位置和宽高。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| x | number | 否 | 否 | 水平方向横坐标。 |
-| y | number | 否 | 否 | 竖直方向纵坐标。 |
-| width | number | 否 | 否 | 内容宽度大小。 |
-| height | number | 否 | 否 | 内容高度大小。 |
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dx | [Length](ts-types.md#length) | 是 | 水平方向偏移量。 |
+| dy | [Length](ts-types.md#length) | 是 | 竖直方向偏移量。 |
 
 ## ResourceColor
-
-PhonePC/2in1TabletTVWearable
 
 type ResourceColor = [Color](ts-appendix-enums.md#color) | number | string | [Resource](ts-types.md#resource)
 
@@ -356,7 +415,7 @@ type ResourceColor = [Color](ts-appendix-enums.md#color) | number | string | [Re
 
 ## LengthConstrain
 
-PhonePC/2in1TabletTVWearable
+type LengthConstrain = { minLength: Length; maxLength: Length; }
 
 长度约束，用于对组件最大、最小长度做限制。
 
@@ -366,18 +425,16 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 说明 |
-| --- | --- | --- | --- | --- |
-| minLength | [Length](ts-types.md#length) | 否 | 否 | 组件最小长度。 |
-| maxLength | [Length](ts-types.md#length) | 否 | 否 | 组件最大长度。 |
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| minLength | [Length](ts-types.md#length) | 是 | 组件最小长度。 |
+| maxLength | [Length](ts-types.md#length) | 是 | 组件最大长度。 |
 
 ## Font
 
-PhonePC/2in1TabletTVWearable
-
 设置文本样式。
 
-说明
+**说明** 
 
 可以使用[loadFontSync](js-apis-graphics-text.md#loadfontsync)注册自定义字体。
 
@@ -394,8 +451,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Area8+
 
-PhonePC/2in1TabletTVWearable
-
 区域类型，用于存储元素所占的区域信息。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
@@ -404,16 +459,14 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 说明 |
-| --- | --- | --- |
-| width | [Length](ts-types.md#length) | 目标元素的宽度。  单位：vp |
-| height | [Length](ts-types.md#length) | 目标元素的高度。  单位：vp |
-| position | [Position](ts-types.md#position) | 目标元素左上角在以父元素为基准的[组件坐标系](../harmonyos-guides/arkui-glossary.md#组件坐标系)中的位置。 |
-| globalPosition | [Position](ts-types.md#position) | 目标元素左上角在当前窗口坐标系中的位置。 |
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| width | [Length](ts-types.md#length) | 否 | 否 | 目标元素的宽度。  单位：vp |
+| height | [Length](ts-types.md#length) | 否 | 否 | 目标元素的高度。  单位：vp |
+| position | [Position](ts-types.md#position) | 否 | 否 | 目标元素左上角在以父元素为基准的[组件坐标系](../harmonyos-guides/arkui-glossary.md#组件坐标系)中的位置。 |
+| globalPosition | [Position](ts-types.md#position) | 否 | 否 | 目标元素左上角在当前窗口坐标系中的位置。 |
 
 ## Position
-
-PhonePC/2in1TabletTVWearable
 
 位置类型，用于表示一个坐标点。
 
@@ -430,11 +483,11 @@ PhonePC/2in1TabletTVWearable
 
 ## LocalizedPosition12+
 
-PhonePC/2in1TabletTVWearable
-
 位置类型，用于表示一个坐标点。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -445,13 +498,13 @@ PhonePC/2in1TabletTVWearable
 
 ## Edges12+
 
-PhonePC/2in1TabletTVWearable
-
 位置类型，表示相对四边的偏移量。同时设置top和bottom，仅top生效；同时设置left和right，仅left生效。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -464,11 +517,11 @@ PhonePC/2in1TabletTVWearable
 
 ## LocalizedEdges12+
 
-PhonePC/2in1TabletTVWearable
-
 位置类型，表示相对四边的偏移量。同时设置top和bottom，仅top生效；同时设置start和end，仅start生效。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -480,8 +533,6 @@ PhonePC/2in1TabletTVWearable
 | end | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | LTR模式时相对右边的偏移量，RTL模式时相对左边的偏移量。 |
 
 ## ConstraintSizeOptions
-
-PhonePC/2in1TabletTVWearable
 
 约束尺寸类型，用于描述组件布局时对尺寸大小的范围限制。
 
@@ -498,13 +549,11 @@ PhonePC/2in1TabletTVWearable
 | minHeight | [Length](ts-types.md#length) | 否 | 是 | 元素最小高度。 |
 | maxHeight | [Length](ts-types.md#length) | 否 | 是 | 元素最大高度。 |
 
-说明
+**说明** 
 
 在[Row](ts-container-row.md)、[Column](ts-container-column.md)、[RelativeContainer](ts-container-relativecontainer.md)组件中，width、height设置auto表示自适应子组件。在[TextInput](ts-basic-components-textinput.md)组件中，width设置auto表示自适应文本宽度。
 
 ## SizeOptions
-
-PhonePC/2in1TabletTVWearable
 
 宽高尺寸类型，用于描述组件布局时的宽高尺寸大小。
 
@@ -521,8 +570,6 @@ PhonePC/2in1TabletTVWearable
 
 ## BorderOptions
 
-PhonePC/2in1TabletTVWearable
-
 边框属性集合，用于描述边框相关信息。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -533,12 +580,10 @@ PhonePC/2in1TabletTVWearable
 | color | [EdgeColors](ts-types.md#edgecolors9)9+ | [ResourceColor](ts-types.md#resourcecolor) | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)12+ | 否 | 是 | 设置边框颜色。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
 | radius | [BorderRadiuses](ts-types.md#borderradiuses9)9+ | [Length](ts-types.md#length) | [LocalizedBorderRadiuses](ts-types.md#localizedborderradiuses12)12+ | 否 | 是 | 设置边框圆角半径。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
 | style | [EdgeStyles](ts-types.md#edgestyles9)9+ | [BorderStyle](ts-appendix-enums.md#borderstyle) | 否 | 是 | 设置边框样式。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
-| dashGap12+ | [EdgeWidths](ts-types.md#edgewidths9) | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | [LocalizedEdgeWidths](ts-types.md#localizededgewidths12) | 否 | 是 | 设置虚线的线段间距，仅在边框样式为虚线时生效。  不支持设置百分比。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **卡片能力：** 该接口不支持在ArkTS卡片中使用。 |
-| dashWidth12+ | [EdgeWidths](ts-types.md#edgewidths9) | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | [LocalizedEdgeWidths](ts-types.md#localizededgewidths12) | 否 | 是 | 设置虚线的线段长度，仅在边框样式为虚线时生效。  不支持设置百分比。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **卡片能力：** 该接口不支持在ArkTS卡片中使用。 |
+| dashGap12+ | [EdgeWidths](ts-types.md#edgewidths9) | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | [LocalizedEdgeWidths](ts-types.md#localizededgewidths12) | 否 | 是 | 设置虚线的线段间距，仅在边框样式为虚线时生效。  不支持设置百分比。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。  **卡片能力：** 该接口不支持在ArkTS卡片中使用。 |
+| dashWidth12+ | [EdgeWidths](ts-types.md#edgewidths9) | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | [LocalizedEdgeWidths](ts-types.md#localizededgewidths12) | 否 | 是 | 设置虚线的线段长度，仅在边框样式为虚线时生效。  不支持设置百分比。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。  **卡片能力：** 该接口不支持在ArkTS卡片中使用。 |
 
 ## ColorFilter9+
-
-PhonePC/2in1TabletTVWearable
 
 创建具有4\*5矩阵的颜色过滤器。
 
@@ -548,13 +593,25 @@ PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 必填 | 描述 |
+### constructor9+
+
+constructor(value: number[])
+
+ColorFilter的构造函数，创建具有4\*5矩阵的颜色过滤器。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| constructor | number[] | 是 | 创建具有4\*5矩阵的颜色过滤器，入参为[m\*n]位于m行和n列中矩阵值，矩阵是行优先的。 |
+| value | number[] | 是 | 4\*5颜色矩阵的值，[m\*n]位于m行和n列中矩阵值，矩阵是行优先的。 |
 
 ## CustomBuilder8+
-
-PhonePC/2in1TabletTVWearable
 
 组件属性方法参数可使用CustomBuilder类型来自定义UI描述。
 
@@ -564,8 +621,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CustomBuilderT<T>23+
 
-PhonePC/2in1TabletTVWearable
-
 type CustomBuilderT<T> = (t: T) => void
 
 自定义UI描述，相比于CustomBuilder，本接口支持传入一个参数。
@@ -573,6 +628,8 @@ type CustomBuilderT<T> = (t: T) => void
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -584,25 +641,25 @@ type CustomBuilderT<T> = (t: T) => void
 
 ## MarkStyle10+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 | 只读 | 可选 | 默认值 | 描述 |
-| --- | --- | --- | --- | --- | --- |
-| strokeColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Color.White | 内部图标颜色。 |
-| size | [Length](ts-types.md#length) | 否 | 是 | - | 内部图标大小，单位vp。默认大小与多选框组件宽度相同。  不支持百分比形式设置。设置为非法值时，按照默认值处理。 |
-| strokeWidth | [Length](ts-types.md#length) | 否 | 是 | 2 | 内部图标粗细，单位vp。不支持设置百分比。设置为非法值时，按照默认值处理。 |
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| strokeColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 内部图标颜色。默认值：Color.White |
+| size | [Length](ts-types.md#length) | 否 | 是 | 内部图标大小，单位vp。默认大小与多选框组件宽度相同。  不支持百分比形式设置。设置为非法值时，按照默认值处理。 |
+| strokeWidth | [Length](ts-types.md#length) | 否 | 是 | 内部图标粗细，单位vp。不支持设置百分比。设置为非法值时，按照默认值处理。默认值：2 |
 
 ## ModalTransition10+
-
-PhonePC/2in1TabletTVWearable
 
 全屏模态转场方式枚举类型，用于设置全屏模态转场类型。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -614,30 +671,32 @@ PhonePC/2in1TabletTVWearable
 
 ## OutlineOptions11+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 外描边选项设置。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| width | [Dimension](ts-types.md#dimension10) | [EdgeOutlineWidths](ts-types.md#edgeoutlinewidths11对象说明) | 否 | 是 | 设置外描边宽度，不支持百分比。  默认值：0，外描边效果中width为必设项，否则不显示外描边。 |
-| color | [ResourceColor](ts-types.md#resourcecolor) | [EdgeColors](ts-types.md#edgecolors9) | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)12+ | 否 | 是 | 设置外描边颜色。  默认值：Color.Black |
-| radius | [Dimension](ts-types.md#dimension10) | [OutlineRadiuses](ts-types.md#outlineradiuses11对象说明) | 否 | 是 | 设置外描边圆角半径，不支持百分比。  默认值：0  最大生效值：组件width/2 + outlineWidth或组件height/2 + outlineWidth。 |
-| style | [OutlineStyle](ts-universal-attributes-outline.md#outlinestyle枚举说明) | [EdgeOutlineStyles](ts-types.md#edgeoutlinestyles11对象说明) | 否 | 是 | 设置外描边样式。  默认值：OutlineStyle.SOLID |
+| width | [EdgeOutlineWidths](ts-types.md#edgeoutlinewidths11对象说明) | [Dimension](ts-types.md#dimension10) | 否 | 是 | 设置外描边宽度，不支持百分比。  默认值：0，外描边效果中width为必设项，否则不显示外描边。 |
+| color | [EdgeColors](ts-types.md#edgecolors9) | [ResourceColor](ts-types.md#resourcecolor) | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)12+ | 否 | 是 | 设置外描边颜色。  默认值：Color.Black |
+| radius | [OutlineRadiuses](ts-types.md#outlineradiuses11对象说明) | [Dimension](ts-types.md#dimension10) | 否 | 是 | 设置外描边圆角半径，不支持百分比。  默认值：0  最大生效值：组件width/2 + outlineWidth或组件height/2 + outlineWidth。 |
+| style | [EdgeOutlineStyles](ts-types.md#edgeoutlinestyles11对象说明) | [OutlineStyle](ts-universal-attributes-outline.md#outlinestyle枚举说明) | 否 | 是 | 设置外描边样式。  默认值：OutlineStyle.SOLID |
 
 ## EdgeOutlineWidths11+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 引入该对象时，至少传入一个参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -648,13 +707,13 @@ PhonePC/2in1TabletTVWearable
 
 ## OutlineRadiuses11+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 引用该对象时，至少传入一个参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -667,13 +726,13 @@ PhonePC/2in1TabletTVWearable
 
 ## EdgeOutlineStyles11+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 引入该对象时，至少传入一个参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -686,13 +745,15 @@ PhonePC/2in1TabletTVWearable
 
 ## Dimension10+
 
-PhonePC/2in1TabletTVWearable
+type Dimension = PX | VP | FP | LPX | Percentage | Resource
 
 长度类型，用于描述尺寸单位。
 
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -702,155 +763,179 @@ PhonePC/2in1TabletTVWearable
 | [VP](ts-types.md#vp10) | 需要指定数字或vp像素单位，如10或'10vp'。 |
 | [FP](ts-types.md#fp10) | 需要指定以fp像素单位，如'10fp'。 |
 | [LPX](ts-types.md#lpx10) | 需要指定以lpx像素单位，如'10lpx'。 |
-| [Percentage](ts-types.md#percentage10) | 需要指定以%像素单位，如'10%'。 |
+| [Percentage](ts-types.md#percentage10) | 需要指定以百分比单位，如'10%'。 |
 | [Resource](ts-types.md#resource) | 资源引用类型，引入系统资源或者应用资源中的尺寸。 |
 
 ## PX10+
 
-PhonePC/2in1TabletTVWearable
+type PX = { number }px
 
 长度类型，用于描述以px像素单位为单位的长度。
 
+**卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| {number}px | 需要指定以px像素单位，如'10px'。 |
+| { number }px | 需要指定以px像素单位，如'10px'。 |
 
 ## VP10+
 
-PhonePC/2in1TabletTVWearable
+type VP = { number }vp | number
 
-长度类型，用于描述以vp像素单位为单位的长度。
+长度类型，用于描述以vp为单位的长度。
+
+**卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| {number}vp|number | 需要指定数字或vp像素单位，如10或'10vp'。 |
+| { number }vp | number | 需要指定数字或vp像素单位，如10或'10vp'。 |
 
 ## FP10+
 
-PhonePC/2in1TabletTVWearable
+type FP = { number }fp
 
 长度类型，用于描述以fp像素单位为单位的长度。
 
+**卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| {number}fp | 需要指定以fp像素单位，如'10fp'。 |
+| { number }fp | 需要指定以fp像素单位，如'10fp'。 |
 
 ## LPX10+
 
-PhonePC/2in1TabletTVWearable
+type LPX = { number }lpx
 
 长度类型，用于描述以lpx像素单位为单位的长度。
 
+**卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
+
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| {number}lpx | 需要指定以lpx像素单位，如'10lpx'。 |
+| { number }lpx | 需要指定以lpx像素单位，如'10lpx'。 |
 
 ## Percentage10+
 
-PhonePC/2in1TabletTVWearable
+type Percentage = { number }%
 
-长度类型，用于描述以%像素单位为单位的长度。
+长度类型，用于描述以百分比单位为单位的长度。
+
+**卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| {number}% | 需要指定以%像素单位，如'10%'。 |
+| { number }% | 需要指定以百分比单位，如'10%'。 |
 
 ## Degree10+
 
-PhonePC/2in1TabletTVWearable
+type Degree = ${number}deg
 
-角度类型，用于描述以deg像素单位为单位的长度。
+角度类型，用于描述以deg为单位的角度。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
-| {number}deg | 需要指定以deg像素单位，如'10deg'。 |
+| { number }deg | 需要指定以deg为单位，如'10deg'。 |
 
 ## TouchPoint11+
-
-PhonePC/2in1TabletTVWearable
 
 配置跟手点坐标，不配置时，默认居中。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-| 名称 | 类型定义 | 描述 |
-| --- | --- | --- |
-| X | [Dimension](ts-types.md#dimension10) | 跟手点X轴坐标。 |
-| Y | [Dimension](ts-types.md#dimension10) | 跟手点Y轴坐标。 |
-
-## VoidCallback12+
-
-PhonePC/2in1TabletTVWearable
-
-type VoidCallback：() => void;
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-## Callback12+
-
-PhonePC/2in1TabletTVWearable
-
-Callback<T,V = void> = (data: T) => V;
-
-带参数的函数回调。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-## DividerStyleOptions12+
-
-PhonePC/2in1TabletTVWearable
-
-分割线样式属性集合, 用于描述分割线相关信息。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| strokeWidth | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)12+ | 否 | 是 | 分割线的线宽。 |
+| x | [Dimension](ts-types.md#dimension10) | 否 | 否 | 跟手点X轴坐标。 |
+| y | [Dimension](ts-types.md#dimension10) | 否 | 否 | 跟手点Y轴坐标。 |
+
+## VoidCallback12+
+
+type VoidCallback = () => void
+
+无参数、无返回值的函数回调类型，用于定义不需要传递数据且不返回结果的回调场景。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+## Callback12+
+
+type Callback<T, V = void> = (data: T) => V;
+
+带参数的函数回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+## DividerStyleOptions12+
+
+分割线样式属性集合, 用于描述分割线相关信息。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| strokeWidth | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线的线宽。 |
 | color | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 分割线的颜色。 |
-| startMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)12+ | 否 | 是 | 分割线与菜单侧边起始端的距离。 |
-| endMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12)12+ | 否 | 是 | 分割线与菜单侧边结束端的距离。 |
-| mode | [DividerMode](ts-appendix-enums.md#dividermode19枚举说明)19+ | 否 | 是 | 设置分割线模式。 |
+| startMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线与菜单侧边起始端的距离。 |
+| endMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线与菜单侧边结束端的距离。 |
+| mode19+ | [DividerMode](ts-appendix-enums.md#dividermode19枚举说明) | 否 | 是 | 设置分割线模式。 |
 
 ## ChainWeightOptions14+对象说明
-
-PhonePC/2in1TabletTVWearable
 
 链中组件的布局权重。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -860,8 +945,6 @@ PhonePC/2in1TabletTVWearable
 | vertical | number | 否 | 是 | 组件在竖直方向的布局权重，设置大于0的数字时生效。  默认值：0  异常值：0 |
 
 ## Configuration
-
-PhonePC/2in1TabletTVWearable
 
 数据类型。用于设置颜色模式和字体缩放倍数。
 
@@ -878,7 +961,7 @@ PhonePC/2in1TabletTVWearable
 
 ## AccessibilityOptions14+对象说明
 
-PhonePC/2in1TabletTVWearable
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -892,11 +975,11 @@ PhonePC/2in1TabletTVWearable
 
 ## ScrollBarMargin20+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 滚动条边距。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -907,13 +990,13 @@ PhonePC/2in1TabletTVWearable
 
 ## ResponsiveFillType22+
 
-PhonePC/2in1TabletTVWearable
-
 type ResponsiveFillType = PresetFillType
 
-响应式布局填充模式，用于WaterFlow、Grid、List和Swiper组件。
+响应式布局填充模式，用于WaterFlow、Grid、List、Swiper和LazyVWaterFlowLayout组件。LazyVWaterFlowLayout组件从API版本26.0.0开始支持。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -923,11 +1006,11 @@ type ResponsiveFillType = PresetFillType
 
 ## ItemFillPolicy22+
 
-PhonePC/2in1TabletTVWearable
-
-定义一个适用于WaterFlow、Grid、List和Swiper组件的响应式布局策略。
+定义一个适用于WaterFlow、Grid、List、Swiper和LazyVWaterFlowLayout组件的响应式布局策略。LazyVWaterFlowLayout组件从API版本26.0.0开始支持。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -937,13 +1020,13 @@ PhonePC/2in1TabletTVWearable
 
 ## DirectionalEdgesT<T>12+
 
-PhonePC/2in1TabletTVWearable
-
 边缘宽度类型，用于描述组件边缘不同方向的宽度。支持全球化。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -954,21 +1037,23 @@ PhonePC/2in1TabletTVWearable
 | top | T | 否 | 否 | 顶部边缘的属性。 |
 | bottom | T | 否 | 否 | 底部边缘的属性。 |
 
-## Bias对象说明
-
-PhonePC/2in1TabletTVWearable
+## Bias11+对象说明
 
 设置组件在锚点约束下的偏移参数。
 
 以水平方向Bias为例，其值为组件到左锚点的距离 Dstart与组件到水平方向锚点间总距离 Dstart + Dend的比值。镜像语言下，Dstart为组件到右锚点的距离。下图中Dwidth表示组件宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/eKvt3FWuT9SVAaehuGLAsg/zh-cn_image_0000002558607008.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/dXVBDDV4RN6nT2jRRKjw6w/zh-cn_image_0000002706676398.png)
 
 竖直方向同理，其值为组件到上锚点的距离Dtop与组件到竖直方向锚点间总距离Dtop + Dbottom的比值。下图中Dheight表示组件高度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/kPByJW77TQGhzxSSd0e3Kw/zh-cn_image_0000002589326535.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/QpQlWfeOR8ibRSBrlgz2qQ/zh-cn_image_0000002736435485.png)
+
+**卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -979,11 +1064,11 @@ PhonePC/2in1TabletTVWearable
 
 ## CacheCountInfo22+对象说明
 
-PhonePC/2in1TabletTVWearable
-
 缓存数量信息。
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -992,9 +1077,24 @@ PhonePC/2in1TabletTVWearable
 | minCount | number | 否 | 否 | 最小缓存数，当实际缓存数小于最小缓存数时，在滚动动画帧间空闲时隙加载缓存。  取值范围：[0, +∞)，小于0时按1处理。 |
 | maxCount | number | 否 | 否 | 最大缓存数，当实际缓存数大于最大缓存数时，缓存内容会回收或释放，当UI空闲时（无动画或用户操作），会加载缓存到最大缓存数。  取值范围：[minCount, +∞)，小于minCount时按minCount处理。 |
 
-## AccessibilityActionOptions23+对象说明
+## Coordinate2D
 
-PhonePC/2in1TabletTVWearable
+描述一个二维坐标系。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| x | number | 否 | 否 | x轴坐标，单位vp。 |
+| y | number | 否 | 否 | y轴坐标，单位vp。 |
+
+## AccessibilityActionOptions23+对象说明
 
 设置组件的无障碍操作的可选参数，用于限制或修改屏幕朗读等辅助应用发起的操作行为。仅[Slider](ts-basic-components-slider.md)组件支持使用。在其他组件使用该接口时，编译环节可正常通过，但接口功能不生效。
 
@@ -1002,8 +1102,47 @@ PhonePC/2in1TabletTVWearable
 
 **卡片能力：** 从API version 23开始，该接口支持在ArkTS卡片中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scrollStep | number | 否 | 是 | 无障碍手势触发的无障碍滚动操作中的组件操作步数。默认值基于组件默认值。  不支持的组件配置不生效。  当前支持组件：[slider](ts-basic-components-slider.md)，用于slider组件聚焦后通过手势上下扫动触发slider组件的滑动操作。滑动距离：scrollStep\*[step](ts-basic-components-slider.md#slideroptions对象说明)。取值范围：[1, ([max](ts-basic-components-slider.md#slideroptions对象说明) - [min](ts-basic-components-slider.md#slideroptions对象说明))/[step](ts-basic-components-slider.md#slideroptions对象说明)]，默认值为1。超出取值范围时取默认值1；在取值范围内，scrollStep为非整数时向下取整。 |
+
+## AccessibilityNextFocusParams
+
+定义无障碍自定义下一个焦点处理过程中可使用的详细参数对象。
+
+**起始版本：** 26.0.0
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isConsiderDescendants | boolean | 否 | 是 | 是否在无障碍自定义下一个焦点处理过程中查找后代节点中的焦点。  true表示在无障碍自定义下一个焦点处理过程中查找后代节点中的焦点；false表示在无障碍自定义下一个焦点处理过程中不查找后代节点中的焦点。  默认值：false |
+
+## AccessibilityCustomAction
+
+自定义无障碍操作接口。
+
+**起始版本：** 26.0.0
+
+**卡片能力：** 从API版本26.0.0开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | [ResourceStr](ts-types.md#resourcestr) | 否 | 否 | 自定义操作的名称，用于标识和绑定操作回调。  **说明：**  名称的文本长度需在128字节以内，超出部分将被截断。 |
+| onAction | [VoidCallback](ts-types.md#voidcallback12) | 否 | 否 | 处理自定义操作的回调。 |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-quality-te
 title: 应用上架预检测试问题定位，可以参考哪些资料
 breadcrumb: FAQ > DevEco Testing > 上架预检 > 应用上架预检测试问题定位，可以参考哪些资料
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:34+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9dfed7c938a7bd7b619257c480e19b13f0e8995174a7bdb0ab35f178c0b43f54
 ---
 

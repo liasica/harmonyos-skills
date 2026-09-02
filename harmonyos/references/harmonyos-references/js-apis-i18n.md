@@ -3,43 +3,37 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.i18n (国际化-I18n)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.i18n (国际化-I18n)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d8319393481d69021e07d69e12d304a589b44cad5cee33d160f018ca5ed17ac1
+scraped_at: 2026-09-02T15:01:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:49a8829105bfbfc2ada78b01f4650d65f27d164673be0979276f08080364755a
 ---
 
-本模块提供系统相关的以及增强的[国际化](../harmonyos-guides/i18n-l10n.md)能力，包括区域管理、电话号码处理、日历等，相关接口为[ECMA 402](https://dev.ecma-international.org/publications-and-standards/standards/ecma-402/)标准中未定义的补充接口。[Intl模块](js-apis-intl.md)提供了ECMA 402标准定义的基础国际化接口，与本模块共同使用可提供完整地国际化能力。接口中使用的名词定义如下：
+本模块提供系统相关的以及增强的[国际化](../harmonyos-guides/i18n-l10n.md)能力，包括区域管理、电话号码处理、日历等，相关接口为[ECMA 402](https://dev.ecma-international.org/publications-and-standards/standards/ecma-402/)标准中未定义的补充接口。[国际化-Intl](js-apis-intl.md)模块提供了ECMA 402标准定义的基础国际化接口，与本模块共同使用可提供完整的国际化能力。接口中使用的名词定义如下：
 
 * 模式字符串：由[Unicode日期字段符号](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)和单引号包裹的自定义文本自由组合而成的字符串。
 * 框架字符串：由[Unicode日期字段符号](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)自由组合而成的字符串，不支持自定义文本。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-* 本模块接口基于[CLDR](https://cldr.unicode.org)国际化数据库实现，随着CLDR标准的迭代演进，接口处理结果可能会相应调整。例如[时间日期格式化接口](js-apis-i18n.md#simplenumberformat18)，其返回值仅适用于界面展示场景，开发者请勿对返回格式进行硬编码或假设性判断，否则可能导致版本兼容问题。其中，API version 12 对应[CLDR 42](https://cldr.unicode.org/index/downloads/cldr-42)版本，具体数据变更详情可查阅CLDR官方文档。
+* 本模块接口基于[CLDR](https://cldr.unicode.org)国际化数据库实现，随着CLDR标准的迭代演进，接口处理结果可能会相应调整。例如时间日期格式化接口，其返回值仅适用于界面展示场景，开发者请勿对返回格式进行硬编码或假设性判断，否则可能导致版本兼容问题。其中，API version 12 对应[CLDR 42](https://cldr.unicode.org/downloads/cldr-42)版本，具体数据变更详情可查阅[CLDR官方文档](https://cldr.unicode.org/)。
 * 从API version 11开始，本模块部分接口支持在ArkTS卡片中使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 ```
 
 ## System9+
 
-PhonePC/2in1TabletTVWearable
-
 提供系统属性相关的能力，包括语言地区名称翻译、支持的语言地区列表获取和系统语言地区获取等。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Global.I18n
 
 ### getDisplayCountry9+
-
-PhonePC/2in1TabletTVWearable
 
 static getDisplayCountry(country: string, locale: string, sentenceCase?: boolean): string
 
@@ -72,27 +66,25 @@ static getDisplayCountry(country: string, locale: string, sentenceCase?: boolean
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 890001 | Invalid parameter. Possible causes: Parameter verification failed. |
 
-说明
+**说明** 
 
 890001的报错信息请以接口的实际报错为准。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let displayCountry: string = i18n.System.getDisplayCountry('CN', 'en-GB'); // displayCountry = 'China'
-6. } catch (error) {
-7. let err: BusinessError = error as BusinessError;
-8. console.error(`call System.getDisplayCountry failed, error code: ${err.code}, message: ${err.message}.`);
-9. }
+try {
+  let displayCountry: string = i18n.System.getDisplayCountry('CN', 'en-GB'); // displayCountry = 'China'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call System.getDisplayCountry failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getDisplayLanguage9+
-
-PhonePC/2in1TabletTVWearable
 
 static getDisplayLanguage(language: string, locale: string, sentenceCase?: boolean): string
 
@@ -127,28 +119,24 @@ static getDisplayLanguage(language: string, locale: string, sentenceCase?: boole
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. // 获取“中文”在英文下的翻译
-6. let displayLanguage: string = i18n.System.getDisplayLanguage('zh', 'en-GB'); // displayLanguage = 'Chinese'
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call System.getDisplayLanguage failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  // 获取“中文”在英文下的翻译
+  let displayLanguage: string = i18n.System.getDisplayLanguage('zh', 'en-GB'); // displayLanguage = 'Chinese'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call System.getDisplayLanguage failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getSystemLanguages9+
 
-PhonePC/2in1TabletTVWearable
-
 static getSystemLanguages(): Array<string>
 
 获取系统支持的语言列表。
-
-从API version 11开始，该类型支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -162,16 +150,14 @@ static getSystemLanguages(): Array<string>
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // systemLanguages = [ 'ug', 'bo', 'zh-Hant', 'en-Latn-US', 'zh-Hans' ]
-4. let systemLanguages: Array<string> = i18n.System.getSystemLanguages();
+// systemLanguages = [ 'ug', 'bo', 'zh-Hant', 'en-Latn-US', 'zh-Hans' ]
+let systemLanguages: Array<string> = i18n.System.getSystemLanguages();
 ```
 
 ### getSystemCountries9+
-
-PhonePC/2in1TabletTVWearable
 
 static getSystemCountries(language: string): Array<string>
 
@@ -191,7 +177,7 @@ static getSystemCountries(language: string): Array<string>
 
 | 类型 | 说明 |
 | --- | --- |
-| Array<string> | 某种特定语言下系统支持的国家地区列表。 |
+| Array<string> | language参数指定的语言下，系统支持的国家/地区列表。 |
 
 **错误码：**
 
@@ -202,28 +188,26 @@ static getSystemCountries(language: string): Array<string>
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 890001 | Invalid parameter. Possible causes: Parameter verification failed. |
 
-说明
+**说明** 
 
 890001的报错信息请以接口的实际报错为准。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. // systemCountries = [ 'ZW', 'YT', 'YE', ..., 'ER', 'CN', 'DE' ]
-6. let systemCountries: Array<string> = i18n.System.getSystemCountries('zh');
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call System.getSystemCountries failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  // systemCountries = [ 'ZW', 'YT', 'YE', ..., 'ER', 'CN', 'DE' ]
+  let systemCountries: Array<string> = i18n.System.getSystemCountries('zh');
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call System.getSystemCountries failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### isSuggested9+
-
-PhonePC/2in1TabletTVWearable
 
 static isSuggested(language: string, region?: string): boolean
 
@@ -255,28 +239,26 @@ static isSuggested(language: string, region?: string): boolean
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 890001 | Invalid parameter. Possible causes: Parameter verification failed. |
 
-说明
+**说明** 
 
 890001的报错信息请以接口的实际报错为准。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let isSuggestedCountry: boolean = i18n.System.isSuggested('zh', 'CN'); // isSuggestedCountry = true
-6. isSuggestedCountry = i18n.System.isSuggested('en'); // 结果和系统当前地区相关
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call System.isSuggested failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let isSuggestedCountry: boolean = i18n.System.isSuggested('zh', 'CN'); // isSuggestedCountry = true
+  isSuggestedCountry = i18n.System.isSuggested('en'); // 结果和系统当前地区相关
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call System.isSuggested failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getSystemLanguage9+
-
-PhonePC/2in1TabletTVWearable
 
 static getSystemLanguage(): string
 
@@ -296,15 +278,13 @@ static getSystemLanguage(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let systemLanguage: string = i18n.System.getSystemLanguage(); // 如果系统语言为简体中文，systemLanguage = 'zh-Hans'
+let systemLanguage: string = i18n.System.getSystemLanguage(); // 如果系统语言为简体中文，systemLanguage = 'zh-Hans'
 ```
 
 ### getSystemRegion9+
-
-PhonePC/2in1TabletTVWearable
 
 static getSystemRegion(): string
 
@@ -322,15 +302,13 @@ static getSystemRegion(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let systemRegion: string = i18n.System.getSystemRegion(); // 如果系统地区为中国，systemRegion = 'CN'
+let systemRegion: string = i18n.System.getSystemRegion(); // 如果系统地区为中国，systemRegion = 'CN'
 ```
 
 ### getSystemLocale(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 static getSystemLocale(): string
 
@@ -350,15 +328,13 @@ static getSystemLocale(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let systemLocale: string = i18n.System.getSystemLocale(); // 如果系统语言为简体中文、地区为中国，systemLocale = 'zh-Hans-CN'
+let systemLocale: string = i18n.System.getSystemLocale(); // 如果系统语言为简体中文、地区为中国，systemLocale = 'zh-Hans-CN'
 ```
 
 ### getSystemLocaleInstance20+
-
-PhonePC/2in1TabletTVWearable
 
 static getSystemLocaleInstance(): Intl.Locale
 
@@ -376,15 +352,13 @@ static getSystemLocaleInstance(): Intl.Locale
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let systemLocale: Intl.Locale = i18n.System.getSystemLocaleInstance();
+let systemLocale: Intl.Locale = i18n.System.getSystemLocaleInstance();
 ```
 
 ### is24HourClock9+
-
-PhonePC/2in1TabletTVWearable
 
 static is24HourClock(): boolean
 
@@ -404,15 +378,13 @@ static is24HourClock(): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let is24HourClock: boolean = i18n.System.is24HourClock(); // 如果系统时制是24小时制，is24HourClock = true
+let is24HourClock: boolean = i18n.System.is24HourClock(); // 如果系统时制是24小时制，is24HourClock = true
 ```
 
 ### getPreferredLanguageList9+
-
-PhonePC/2in1TabletTVWearable
 
 static getPreferredLanguageList(): Array<string>
 
@@ -430,15 +402,13 @@ static getPreferredLanguageList(): Array<string>
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let preferredLanguageList: Array<string> = i18n.System.getPreferredLanguageList();
+let preferredLanguageList: Array<string> = i18n.System.getPreferredLanguageList();
 ```
 
 ### getFirstPreferredLanguage9+
-
-PhonePC/2in1TabletTVWearable
 
 static getFirstPreferredLanguage(): string
 
@@ -456,15 +426,13 @@ static getFirstPreferredLanguage(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let firstPreferredLanguage: string = i18n.System.getFirstPreferredLanguage();
+let firstPreferredLanguage: string = i18n.System.getFirstPreferredLanguage();
 ```
 
 ### setAppPreferredLanguage11+
-
-PhonePC/2in1TabletTVWearable
 
 static setAppPreferredLanguage(language: string): void
 
@@ -491,21 +459,19 @@ static setAppPreferredLanguage(language: string): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. i18n.System.setAppPreferredLanguage('zh');
-6. } catch (error) {
-7. let err: BusinessError = error as BusinessError;
-8. console.error(`call System.setAppPreferredLanguage failed, error code: ${err.code}, message: ${err.message}.`);
-9. }
+try {
+  i18n.System.setAppPreferredLanguage('zh');
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call System.setAppPreferredLanguage failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getAppPreferredLanguage9+
-
-PhonePC/2in1TabletTVWearable
 
 static getAppPreferredLanguage(): string
 
@@ -523,15 +489,13 @@ static getAppPreferredLanguage(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let appPreferredLanguage: string = i18n.System.getAppPreferredLanguage();
+let appPreferredLanguage: string = i18n.System.getAppPreferredLanguage();
 ```
 
 ### getUsingLocalDigit9+
-
-PhonePC/2in1TabletTVWearable
 
 static getUsingLocalDigit(): boolean
 
@@ -549,15 +513,13 @@ static getUsingLocalDigit(): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let usingLocalDigit: boolean = i18n.System.getUsingLocalDigit();
+let usingLocalDigit: boolean = i18n.System.getUsingLocalDigit();
 ```
 
 ### getSimplifiedLanguage15+
-
-PhonePC/2in1TabletTVWearable
 
 static getSimplifiedLanguage(language?: string): string
 
@@ -590,24 +552,22 @@ static getSimplifiedLanguage(language?: string): string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. // simplifiedLanguage = 'zh'
-6. let simplifiedLanguage: string = i18n.System.getSimplifiedLanguage('zh-Hans-CN');
-7. // 获取当前系统语言的简化表示
-8. let simplifiedSystemLanguage: string = i18n.System.getSimplifiedLanguage();
-9. } catch (error) {
-10. let err: BusinessError = error as BusinessError;
-11. console.error(`call System.getSimplifiedLanguage failed, error code: ${err.code}, message: ${err.message}.`);
-12. }
+try {
+  // simplifiedLanguage = 'zh'
+  let simplifiedLanguage: string = i18n.System.getSimplifiedLanguage('zh-Hans-CN');
+  // 获取当前系统语言的简化表示
+  let simplifiedSystemLanguage: string = i18n.System.getSimplifiedLanguage();
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call System.getSimplifiedLanguage failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getTemperatureType18+
-
-PhonePC/2in1TabletTVWearable
 
 static getTemperatureType(): TemperatureType
 
@@ -625,15 +585,13 @@ static getTemperatureType(): TemperatureType
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let temperatureType: i18n.TemperatureType = i18n.System.getTemperatureType();
+let temperatureType: i18n.TemperatureType = i18n.System.getTemperatureType();
 ```
 
 ### getTemperatureName18+
-
-PhonePC/2in1TabletTVWearable
 
 static getTemperatureName(type: TemperatureType): string
 
@@ -663,28 +621,26 @@ static getTemperatureName(type: TemperatureType): string
 | --- | --- |
 | 890001 | Invalid parameter. Possible causes: Parameter verification failed. |
 
-说明
+**说明** 
 
 890001的报错信息请以接口的实际报错为准。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. // temperatureName = 'celsius'
-6. let temperatureName: string = i18n.System.getTemperatureName(i18n.TemperatureType.CELSIUS);
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call System.getTemperatureName failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  // temperatureName = 'celsius'
+  let temperatureName: string = i18n.System.getTemperatureName(i18n.TemperatureType.CELSIUS);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call System.getTemperatureName failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getFirstDayOfWeek18+
-
-PhonePC/2in1TabletTVWearable
 
 static getFirstDayOfWeek(): WeekDay
 
@@ -702,15 +658,13 @@ static getFirstDayOfWeek(): WeekDay
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let firstDayOfWeek: i18n.WeekDay = i18n.System.getFirstDayOfWeek();
+let firstDayOfWeek: i18n.WeekDay = i18n.System.getFirstDayOfWeek();
 ```
 
 ## TemperatureType18+
-
-PhonePC/2in1TabletTVWearable
 
 温度单位的枚举。
 
@@ -725,8 +679,6 @@ PhonePC/2in1TabletTVWearable
 | KELVIN | 3 | 开尔文。 |
 
 ## WeekDay18+
-
-PhonePC/2in1TabletTVWearable
 
 周起始日的枚举，取值范围为周一至周日。
 
@@ -745,8 +697,6 @@ PhonePC/2in1TabletTVWearable
 | SUN | 7 | 周日。 |
 
 ## i18n.isRTL
-
-PhonePC/2in1TabletTVWearable
 
 isRTL(locale: string): boolean
 
@@ -770,49 +720,14 @@ isRTL(locale: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isZhRTL: boolean = i18n.isRTL('zh-CN'); // 中文不是镜像语言，返回false
-4. let isArRTL: boolean = i18n.isRTL('ar-EG'); // 阿语是镜像语言，返回true
-```
-
-## i18n.getCalendar8+
-
-PhonePC/2in1TabletTVWearable
-
-getCalendar(locale: string, type? : string): Calendar
-
-获取指定区域和历法的日历对象。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Global.I18n
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| locale | string | 是 | [表示区域ID的字符串](../harmonyos-guides/i18n-locale-culture.md#实现原理)，由语言、脚本、国家地区组成，例如zh-Hans-CN。 |
-| type | string | 否 | 表示历法，取值包括：buddhist, chinese, coptic, ethiopic, hebrew, gregory, indian, islamic\_civil, islamic\_tbla, islamic\_umalqura, japanese, persian。  默认值：区域默认的历法。不同取值代表的含义和使用场景请参考[设置日历和历法](../harmonyos-guides/i18n-calendar.md)。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [Calendar](js-apis-i18n.md#calendar8) | 日历对象。 |
-
-**示例：**
-
-```
-1. import { i18n } from '@kit.LocalizationKit';
-
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans', 'chinese'); // 获取中国农历日历对象
+let isZhRTL: boolean = i18n.isRTL('zh-CN'); // 中文不是镜像语言，返回false
+let isArRTL: boolean = i18n.isRTL('ar-EG'); // 阿语是镜像语言，返回true
 ```
 
 ## EntityRecognizer11+
-
-PhonePC/2in1TabletTVWearable
 
 提供实体识别相关的能力，可以获取文本中实体的类型和起止位置。当前支持识别的实体包括电话号码和时间日期。
 
@@ -821,8 +736,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### constructor11+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(locale?: string)
 
@@ -849,21 +762,19 @@ constructor(locale?: string)
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer('zh-CN');
-6. } catch (error) {
-7. let err: BusinessError = error as BusinessError;
-8. console.error(`call new i18n.EntityRecognizer failed, error code: ${err.code}, message: ${err.message}.`);
-9. }
+try {
+  let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer('zh-CN');
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call new i18n.EntityRecognizer failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### findEntityInfo11+
-
-PhonePC/2in1TabletTVWearable
 
 findEntityInfo(text: string): Array<EntityInfoItem>
 
@@ -895,27 +806,25 @@ findEntityInfo(text: string): Array<EntityInfoItem>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer('zh-CN');
-6. let phoneNumberText: string = '如有疑问，请联系158****2312';
-7. // phoneNumberEntity[0].type = 'phone_number', phoneNumberEntity[0].begin = 8, phoneNumberEntity[0].end = 19
-8. let phoneNumberEntity: Array<i18n.EntityInfoItem> = entityRecognizer.findEntityInfo(phoneNumberText);
-9. let dateText: string = '我们2023年12月1日一起吃饭吧。';
-10. // dateEntity[0].type = 'date', dateEntity[0].begin = 2, dateEntity[0].end = 12
-11. let dateEntity: Array<i18n.EntityInfoItem> = entityRecognizer.findEntityInfo(dateText);
-12. } catch (error) {
-13. let err: BusinessError = error as BusinessError;
-14. console.error(`call EntityRecognizer.findEntityInfo failed, error code: ${err.code}, message: ${err.message}.`);
-15. }
+try {
+  let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer('zh-CN');
+  let phoneNumberText: string = '如有疑问，请联系158****2312';
+  // phoneNumberEntity[0].type = 'phone_number', phoneNumberEntity[0].begin = 8, phoneNumberEntity[0].end = 19
+  let phoneNumberEntity: Array<i18n.EntityInfoItem> = entityRecognizer.findEntityInfo(phoneNumberText);
+  let dateText: string = '我们2023年12月1日一起吃饭吧。';
+  // dateEntity[0].type = 'date', dateEntity[0].begin = 2, dateEntity[0].end = 12
+  let dateEntity: Array<i18n.EntityInfoItem> = entityRecognizer.findEntityInfo(dateText);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call EntityRecognizer.findEntityInfo failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## EntityInfoItem11+
-
-PhonePC/2in1TabletTVWearable
 
 实体信息属性。
 
@@ -929,23 +838,11 @@ PhonePC/2in1TabletTVWearable
 | begin | number | 否 | 否 | 实体在输入字符串中的起始位置。 |
 | end | number | 否 | 否 | 实体在输入字符串中的终止位置。 |
 
-## Calendar8+
+## i18n.getCalendar8+
 
-PhonePC/2in1TabletTVWearable
+getCalendar(locale: string, type? : string): Calendar
 
-提供历法相关的能力，包括历法名称获取和日期计算等。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Global.I18n
-
-### setTime8+
-
-PhonePC/2in1TabletTVWearable
-
-setTime(date: Date): void
-
-基于传入的Date对象，设置日历对象内部的时间、日期。
+获取指定区域和历法的日历对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -955,25 +852,60 @@ setTime(date: Date): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | Date | 是 | 时间、日期。说明：月份从0开始计数，例如0表示一月。 |
+| locale | string | 是 | [表示区域ID的字符串](../harmonyos-guides/i18n-locale-culture.md#实现原理)，由语言、脚本、国家地区组成，例如zh-Hans-CN。 |
+| type | string | 否 | 表示历法，取值包括：buddhist, chinese, coptic, ethiopic, hebrew, gregory, indian, islamic\_civil, islamic\_tbla, islamic\_umalqura, japanese, persian。  默认值：区域默认的历法。不同取值代表的含义和使用场景请参考[设置日历和历法](../harmonyos-guides/i18n-calendar.md)。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Calendar](js-apis-i18n.md#calendar) | 日历对象。 |
 
 **示例：**
 
+```ts
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans', 'chinese'); // 获取中国农历日历对象
 ```
-1. import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('en-US', 'gregory');
-4. let date: Date = new Date(2021, 10, 7, 8, 0, 0); // 时间日期为2021.11.07 08:00:00
-5. calendar.setTime(date);
+## Calendar
+
+提供历法相关的能力，包括历法名称获取和日期计算等。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+### setTime8+
+
+setTime(date: Date): void
+
+基于传入的Date对象，设置日历对象内部的时间日期。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| date | Date | 是 | 时间日期。  **说明：**  月份从0开始计数，0表示一月。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let calendar: i18n.Calendar = i18n.getCalendar('en-US', 'gregory');
+let date: Date = new Date(2021, 10, 7, 8, 0, 0); // 时间日期为2021.11.07 08:00:00
+calendar.setTime(date);
 ```
 
 ### setTime8+
 
-PhonePC/2in1TabletTVWearable
-
 setTime(time: number): void
 
-基于传入的时间戳，设置日历对象内部的时间、日期。
+基于传入的时间戳，设置日历对象内部的时间日期。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -987,16 +919,14 @@ setTime(time: number): void
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('en-US', 'gregory');
-4. calendar.setTime(10540800000);
+let calendar: i18n.Calendar = i18n.getCalendar('en-US', 'gregory');
+calendar.setTime(10540800000);
 ```
 
 ### set8+
-
-PhonePC/2in1TabletTVWearable
 
 set(year: number, month: number, date:number, hour?: number, minute?: number, second?: number): void
 
@@ -1011,24 +941,22 @@ set(year: number, month: number, date:number, hour?: number, minute?: number, se
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | year | number | 是 | 设置的年。 |
-| month | number | 是 | 设置的月。说明：月份从0开始计数，例如0表示一月。 |
+| month | number | 是 | 设置的月。  **说明：**  月份从0开始计数，0表示一月。 |
 | date | number | 是 | 设置的日。 |
-| hour | number | 否 | 设置的小时。默认值：系统当前时间。 |
-| minute | number | 否 | 设置的分钟。默认值：系统当前时间。 |
-| second | number | 否 | 设置的秒。默认值：系统当前时间。 |
+| hour | number | 否 | 设置的小时。默认值：系统时间。 |
+| minute | number | 否 | 设置的分钟。默认值：系统时间。 |
+| second | number | 否 | 设置的秒。默认值：系统时间。 |
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. calendar.set(2021, 10, 1, 8, 0, 0); // 设置时间日期为2021.11.1 08:00:00
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+calendar.set(2021, 10, 1, 8, 0, 0); // 设置时间日期为2021.11.1 08:00:00
 ```
 
 ### setTimeZone8+
-
-PhonePC/2in1TabletTVWearable
 
 setTimeZone(timezone: string): void
 
@@ -1046,16 +974,14 @@ setTimeZone(timezone: string): void
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. calendar.setTimeZone('Asia/Shanghai');
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+calendar.setTimeZone('Asia/Shanghai');
 ```
 
 ### getTimeZone8+
-
-PhonePC/2in1TabletTVWearable
 
 getTimeZone(): string
 
@@ -1073,17 +999,15 @@ getTimeZone(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. calendar.setTimeZone('Asia/Shanghai');
-5. let timezone: string = calendar.getTimeZone(); // timezone = 'Asia/Shanghai'
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+calendar.setTimeZone('Asia/Shanghai');
+let timezone: string = calendar.getTimeZone(); // timezone = 'Asia/Shanghai'
 ```
 
 ### getFirstDayOfWeek8+
-
-PhonePC/2in1TabletTVWearable
 
 getFirstDayOfWeek(): number
 
@@ -1101,16 +1025,14 @@ getFirstDayOfWeek(): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('en-US', 'gregory');
-4. let firstDayOfWeek: number = calendar.getFirstDayOfWeek(); // firstDayOfWeek = 1
+let calendar: i18n.Calendar = i18n.getCalendar('en-US', 'gregory');
+let firstDayOfWeek: number = calendar.getFirstDayOfWeek(); // firstDayOfWeek = 1
 ```
 
 ### setFirstDayOfWeek8+
-
-PhonePC/2in1TabletTVWearable
 
 setFirstDayOfWeek(value: number): void
 
@@ -1128,17 +1050,15 @@ setFirstDayOfWeek(value: number): void
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. calendar.setFirstDayOfWeek(3);
-5. let firstDayOfWeek: number = calendar.getFirstDayOfWeek(); // firstDayOfWeek = 3
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+calendar.setFirstDayOfWeek(3);
+let firstDayOfWeek: number = calendar.getFirstDayOfWeek(); // firstDayOfWeek = 3
 ```
 
 ### getMinimalDaysInFirstWeek8+
-
-PhonePC/2in1TabletTVWearable
 
 getMinimalDaysInFirstWeek(): number
 
@@ -1156,16 +1076,14 @@ getMinimalDaysInFirstWeek(): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. let minimalDaysInFirstWeek: number = calendar.getMinimalDaysInFirstWeek(); // minimalDaysInFirstWeek = 1
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+let minimalDaysInFirstWeek: number = calendar.getMinimalDaysInFirstWeek(); // minimalDaysInFirstWeek = 1
 ```
 
 ### setMinimalDaysInFirstWeek8+
-
-PhonePC/2in1TabletTVWearable
 
 setMinimalDaysInFirstWeek(value: number): void
 
@@ -1183,17 +1101,15 @@ setMinimalDaysInFirstWeek(value: number): void
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. calendar.setMinimalDaysInFirstWeek(3);
-5. let minimalDaysInFirstWeek: number = calendar.getMinimalDaysInFirstWeek(); // minimalDaysInFirstWeek = 3
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+calendar.setMinimalDaysInFirstWeek(3);
+let minimalDaysInFirstWeek: number = calendar.getMinimalDaysInFirstWeek(); // minimalDaysInFirstWeek = 3
 ```
 
 ### get8+
-
-PhonePC/2in1TabletTVWearable
 
 get(field: string): number
 
@@ -1207,32 +1123,7 @@ get(field: string): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| field | string | 是 | 指定的日历属性，目前支持的属性值请参考下表。 |
-
-| 属性名称 | 说明 |
-| --- | --- |
-| era | 纪元，例如公历中的公元前或者公元后。 |
-| year | 年。 |
-| month | 月。说明：月份从0开始计数，例如0表示一月。 |
-| date | 日。 |
-| hour | 挂钟小时数。 |
-| hour\_of\_day | 一天中的第几小时。 |
-| minute | 分。 |
-| second | 秒。 |
-| millisecond | 毫秒。 |
-| week\_of\_year | 一年中的第几周，按照星期计算周，注意：第一周的归属算法各地有区别。 |
-| year\_woy | 一年中的第几周，按照数值计算周，例如一年中前1~7日属于第一周。 |
-| week\_of\_month | 一个月中的第几周，按照星期计算周。 |
-| day\_of\_week\_in\_month | 一月中的第几周，按照数值计算周，例如1-7日属于第一周。 |
-| day\_of\_year | 一年中的第几天。 |
-| day\_of\_week | 一周中的第几天(星期)。 |
-| milliseconds\_in\_day | 一天中的第几毫秒。 |
-| zone\_offset | 以毫秒计时的时区固定偏移量（不含夏令时）。 |
-| dst\_offset | 以毫秒计时的夏令时偏移量。 |
-| dow\_local | 本地星期。 |
-| extended\_year | 扩展的年份数值，支持负数。 |
-| julian\_day | 儒略日,与当前时区相关。 |
-| is\_leap\_month | 是否为闰月。 |
+| field | string | 是 | 指定的日历属性，取值包括：  "era"：纪元，例如公历中的公元前或者公元后。  "year"：年。  "month"：月，从0开始计数，0表示一月。  "date"：日。  "hour"：挂钟小时数。  "hour\_of\_day"：一天中的第几小时。  "minute"：分。  "second"：秒。  "millisecond"：毫秒。  "week\_of\_year"：一年中的第几周，按照星期计算周，第一周的归属各地有区别。  "year\_woy"：一年中的第几周，按照数值计算周，例如一年中前1~7日属于第一周。  "week\_of\_month"：一个月中的第几周，按照星期计算周。  "day\_of\_week\_in\_month"：一月中的第几周，按照数值计算周，例如1-7日属于第一周。  "day\_of\_year"：一年中的第几天。  "day\_of\_week"：一周中的第几天(星期)。  "milliseconds\_in\_day"：一天中的第几毫秒。  "zone\_offset"：以毫秒计时的时区固定偏移量（不含夏令时）。  "dst\_offset"：以毫秒计时的夏令时偏移量。  "dow\_local"：本地星期。  "extended\_year"：扩展的年份数值，支持负数。  "julian\_day"：儒略日，与当前时区相关。  "is\_leap\_month"：返回1表示是闰月，返回0表示不是闰月。 |
 
 **返回值：**
 
@@ -1242,17 +1133,15 @@ get(field: string): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. calendar.set(2021, 10, 1, 8, 0, 0); // 设置时间日期为2021.11.1 08:00:00
-5. let hourOfDay: number = calendar.get('hour_of_day'); // hourOfDay = 8
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+calendar.set(2021, 10, 1, 8, 0, 0); // 设置时间日期为2021.11.1 08:00:00
+let hourOfDay: number = calendar.get('hour_of_day'); // hourOfDay = 8
 ```
 
 ### getDisplayName8+
-
-PhonePC/2in1TabletTVWearable
 
 getDisplayName(locale: string): string
 
@@ -1276,16 +1165,14 @@ getDisplayName(locale: string): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('en-US', 'buddhist');
-4. let calendarName: string = calendar.getDisplayName('zh'); // calendarName = '佛历'
+let calendar: i18n.Calendar = i18n.getCalendar('en-US', 'buddhist');
+let calendarName: string = calendar.getDisplayName('zh'); // calendarName = '佛历'
 ```
 
 ### isWeekend8+
-
-PhonePC/2in1TabletTVWearable
 
 isWeekend(date?: Date): boolean
 
@@ -1299,7 +1186,7 @@ isWeekend(date?: Date): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | Date | 否 | 时间、日期。说明：月份从0开始计数，例如0表示一月。  默认值：日历对象的当前日期。 |
+| date | Date | 否 | 时间日期。  **说明：**  月份从0开始计数，0表示一月。  默认值：日历对象的当前日期。 |
 
 **返回值：**
 
@@ -1309,19 +1196,17 @@ isWeekend(date?: Date): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. calendar.set(2021, 11, 11, 8, 0, 0); // 设置时间为2021.12.11 08:00:00
-5. let isWeekend: boolean = calendar.isWeekend(); // isWeekend = true
-6. let date: Date = new Date(2011, 11, 6, 9, 0, 0); // 时间日期为2011.12.06 09:00:00
-7. isWeekend = calendar.isWeekend(date); // isWeekend = false
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+calendar.set(2021, 11, 11, 8, 0, 0); // 设置时间为2021.12.11 08:00:00
+let isWeekend: boolean = calendar.isWeekend(); // isWeekend = true
+let date: Date = new Date(2011, 11, 6, 9, 0, 0); // 时间日期为2011.12.06 09:00:00
+isWeekend = calendar.isWeekend(date); // isWeekend = false
 ```
 
 ### add11+
-
-PhonePC/2in1TabletTVWearable
 
 add(field: string, amount: number): void
 
@@ -1349,24 +1234,22 @@ add(field: string, amount: number): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-6. calendar.set(2021, 11, 11, 8, 0, 0); // 设置时间日期为2021.12.11 08:00:00
-7. calendar.add('year', 8); // 2021 + 8
-8. let year: number = calendar.get('year'); // year = 2029
-9. } catch (error) {
-10. let err: BusinessError = error as BusinessError;
-11. console.error(`call Calendar.add failed, error code: ${err.code}, message: ${err.message}.`);
-12. }
+try {
+  let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+  calendar.set(2021, 11, 11, 8, 0, 0); // 设置时间日期为2021.12.11 08:00:00
+  calendar.add('year', 8); // 2021 + 8
+  let year: number = calendar.get('year'); // year = 2029
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call Calendar.add failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getTimeInMillis11+
-
-PhonePC/2in1TabletTVWearable
 
 getTimeInMillis(): number
 
@@ -1384,17 +1267,15 @@ getTimeInMillis(): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-4. calendar.setTime(5000);
-5. let millisecond: number = calendar.getTimeInMillis(); // millisecond = 5000
+let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+calendar.setTime(5000);
+let millisecond: number = calendar.getTimeInMillis(); // millisecond = 5000
 ```
 
 ### compareDays11+
-
-PhonePC/2in1TabletTVWearable
 
 compareDays(date: Date): number
 
@@ -1408,7 +1289,7 @@ compareDays(date: Date): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | Date | 是 | 时间、日期。说明：月份从0开始计数，例如0表示一月。 |
+| date | Date | 是 | 时间日期。  **说明：**  月份从0开始计数，0表示一月。 |
 
 **返回值：**
 
@@ -1426,24 +1307,157 @@ compareDays(date: Date): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
-6. calendar.setTime(5000);
-7. let date: Date = new Date(6000);
-8. let diff: number = calendar.compareDays(date); // diff = 1
-9. } catch (error) {
-10. let err: BusinessError = error as BusinessError;
-11. console.error(`call Calendar.compareDays failed, error code: ${err.code}, message: ${err.message}.`);
-12. }
+try {
+  let calendar: i18n.Calendar = i18n.getCalendar('zh-Hans');
+  calendar.setTime(5000);
+  let date: Date = new Date(6000);
+  let diff: number = calendar.compareDays(date); // diff = 1
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call Calendar.compareDays failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
+
+## i18n.getChineseCalendar
+
+getChineseCalendar(locale?: Intl.Locale): ChineseCalendar
+
+获取指定区域的农历对象。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| locale | [Intl.Locale](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) | 否 | 区域对象，默认值：系统区域对象。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ChineseCalendar](js-apis-i18n.md#chinesecalendar) | 农历对象。 |
+
+**示例：**
+
+```ts
+let locale: Intl.Locale = i18n.System.getSystemLocaleInstance();
+let calendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+```
+
+## ChineseCalendar
+
+提供农历相关的能力，包括设置农历时间、判断指定年份某月是否存在闰月。继承自[Calendar](js-apis-i18n.md#calendar)，支持[Calendar](js-apis-i18n.md#calendar)的方法。
+
+### setChineseCalendarTime
+
+setChineseCalendarTime(chineseCalendarTime: ChineseCalendarTime): void
+
+设置农历对象的时间日期。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| chineseCalendarTime | [ChineseCalendarTime](js-apis-i18n.md#chinesecalendar) | 是 | 农历时间对象。 |
+
+**示例：**
+
+```ts
+let locale: Intl.Locale = i18n.System.getSystemLocaleInstance();
+let calendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+calendar.setChineseCalendarTime({
+  gregorianYear: 2026,
+  cyclicalYear: 43,
+  month: 1,
+  date: 15
+});
+```
+
+### checkLeapMonth
+
+static checkLeapMonth(gregorianYear: number, cyclicalYear: number, month: number): boolean
+
+判断指定年份某月是否存在闰月。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| gregorianYear | number | 是 | 公历的年。  取值范围：[1900, 2100]。 |
+| cyclicalYear | number | 是 | 农历的干支年。  取值范围：[1, 60]。 |
+| month | number | 是 | 农历的月。  **说明：**  月份从0开始计数，0表示一月。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否存在闰月。true表示该月存在闰月，false表示该月不存在闰月。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ohos.i18n错误码](errorcode-i18n.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8900001 | Invalid parameter. Possible causes: Parameter verification failed. |
+
+**示例：**
+
+```ts
+let isExist = i18n.ChineseCalendar.checkLeapMonth(2026, 43, 2);
+```
+
+## ChineseCalendarTime
+
+农历时间对象。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| gregorianYear | number | 否 | 否 | 公历的年。  取值范围：[1900, 2100]。 |
+| cyclicalYear | number | 否 | 否 | 农历的干支年。  取值范围：[1, 60]。 |
+| month | number | 否 | 否 | 农历的月。  **说明：**  月份从0开始计数，0表示一月。 |
+| date | number | 否 | 否 | 农历的日。 |
+| isLeapMonth | boolean | 否 | 是 | 是否是闰月。默认值：false。 |
+| hour | number | 否 | 是 | 农历的时。默认值：0。 |
+| minute | number | 否 | 是 | 农历的分。默认值：0。 |
+| second | number | 否 | 是 | 农历的秒。默认值：0。 |
 
 ## PhoneNumberFormat8+
-
-PhonePC/2in1TabletTVWearable
 
 提供电话号码相关的能力，包括电话号码有效性判断、格式化和归属地获取。
 
@@ -1452,8 +1466,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### constructor8+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(country: string, options?: PhoneNumberFormatOptions)
 
@@ -1467,21 +1479,19 @@ constructor(country: string, options?: PhoneNumberFormatOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| country | string | 是 | 表示电话号码所属的国家地区代码。 |
+| country | string | 是 | 表示电话号码所属的国家地区代码，要求是[合法的国家地区码](../harmonyos-guides/i18n-locale-culture.md#实现原理)。 |
 | options | [PhoneNumberFormatOptions](js-apis-i18n.md#phonenumberformatoptions8) | 否 | 电话号码格式化时设置的配置项。默认值：NATIONAL。 |
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let option: i18n.PhoneNumberFormatOptions = { type: 'E164' };
-4. let phoneNumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', option);
+let option: i18n.PhoneNumberFormatOptions = { type: 'E164' };
+let phoneNumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', option);
 ```
 
 ### isValidNumber8+
-
-PhonePC/2in1TabletTVWearable
 
 isValidNumber(phoneNumber: string): boolean
 
@@ -1505,22 +1515,20 @@ isValidNumber(phoneNumber: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let formatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
-4. let isValidNumber: boolean = formatter.isValidNumber('158****2312'); // isValidNumber = true
+let formatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
+let isValidNumber: boolean = formatter.isValidNumber('158****2312'); // isValidNumber = true
 ```
 
 ### format8+
-
-PhonePC/2in1TabletTVWearable
 
 format(phoneNumber: string): string
 
 对电话号码进行格式化。
 
-说明
+**说明** 
 
 从API version 12开始，支持对拨号中的电话号码进行格式化。
 
@@ -1542,33 +1550,31 @@ format(phoneNumber: string): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let formatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
-4. // formattedPhoneNumber = '158 **** 2312'
-5. let formattedPhoneNumber: string = formatter.format('158****2312');
+let formatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
+// formattedPhoneNumber = '158 **** 2312'
+let formattedPhoneNumber: string = formatter.format('158****2312');
 
-7. // 拨号中的电话号码格式化
-8. let option: i18n.PhoneNumberFormatOptions = { type: 'TYPING' };
-9. let typingFormatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', option);
-10. let phoneNumber: string = '130493';
-11. let formatResult: string = '';
-12. for (let i = 0; i < phoneNumber.length; i++) {
-13. formatResult += phoneNumber.charAt(i);
-14. formatResult = typingFormatter.format(formatResult); // formatResult = '130 493'
-15. }
+// 拨号中的电话号码格式化
+let option: i18n.PhoneNumberFormatOptions = { type: 'TYPING' };
+let typingFormatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', option);
+let phoneNumber: string = '130493';
+let formatResult: string = '';
+for (let i = 0; i < phoneNumber.length; i++) {
+  formatResult += phoneNumber.charAt(i);
+  formatResult = typingFormatter.format(formatResult); // formatResult = '130 493'
+}
 ```
 
 ### getLocationName9+
-
-PhonePC/2in1TabletTVWearable
 
 getLocationName(phoneNumber: string, locale: string): string
 
 获取电话号码归属地。
 
-说明
+**说明** 
 
 从API version 23开始，支持对拨号中的电话号码实时获取归属地。
 
@@ -1591,28 +1597,26 @@ getLocationName(phoneNumber: string, locale: string): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // 完整电话号码的归属地获取
-4. let phonenumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
-5. let locationName: string = phonenumberFormat.getLocationName('158****2345', 'zh-CN'); // locationName = '广东省湛江市'
-6. let locName: string = phonenumberFormat.getLocationName('0039312****789', 'zh-CN'); // locName = '意大利'
+// 完整电话号码的归属地获取
+let phonenumberFormat: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
+let locationName: string = phonenumberFormat.getLocationName('158****2345', 'zh-CN'); // locationName = '广东省湛江市'
+let locName: string = phonenumberFormat.getLocationName('0039312****789', 'zh-CN'); // locName = '意大利'
 
-8. // 拨号中的电话号码归属地获取
-9. let option: i18n.PhoneNumberFormatOptions = { type: 'TYPING' };
-10. let typingFormatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', option);
-11. let formatResult = typingFormatter.getLocationName('1', 'en'); // formatResult = ''
-12. formatResult = typingFormatter.getLocationName('13', 'en'); // formatResult = 'China'
-13. formatResult = typingFormatter.getLocationName('133', 'en'); // formatResult = 'China'
-14. formatResult = typingFormatter.getLocationName('1334', 'en'); // formatResult = 'China'
-15. formatResult = typingFormatter.getLocationName('13342', 'en'); // formatResult = 'China'
-16. formatResult = typingFormatter.getLocationName('133426', 'en'); // formatResult = 'Dongguan, Guangdong'
+// 拨号中的电话号码归属地获取
+let option: i18n.PhoneNumberFormatOptions = { type: 'TYPING' };
+let typingFormatter: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN', option);
+let formatResult = typingFormatter.getLocationName('1', 'en'); // formatResult = ''
+formatResult = typingFormatter.getLocationName('13', 'en'); // formatResult = 'China'
+formatResult = typingFormatter.getLocationName('133', 'en'); // formatResult = 'China'
+formatResult = typingFormatter.getLocationName('1334', 'en'); // formatResult = 'China'
+formatResult = typingFormatter.getLocationName('13342', 'en'); // formatResult = 'China'
+formatResult = typingFormatter.getLocationName('133426', 'en'); // formatResult = 'Dongguan, Guangdong'
 ```
 
 ## PhoneNumberFormatOptions8+
-
-PhonePC/2in1TabletTVWearable
 
 电话号码格式化时可设置的配置项。
 
@@ -1626,8 +1630,6 @@ PhonePC/2in1TabletTVWearable
 
 ## UnitInfo8+
 
-PhonePC/2in1TabletTVWearable
-
 度量衡单位信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -1640,8 +1642,6 @@ PhonePC/2in1TabletTVWearable
 | measureSystem | string | 否 | 否 | 单位的度量体系，取值包括：'SI', 'US', 'UK'。 |
 
 ## i18n.getInstance8+
-
-PhonePC/2in1TabletTVWearable
 
 getInstance(locale?: string): IndexUtil
 
@@ -1665,15 +1665,13 @@ getInstance(locale?: string): IndexUtil
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
+let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
 ```
 
 ## IndexUtil8+
-
-PhonePC/2in1TabletTVWearable
 
 提供索引相关的能力，包括区域索引列表和文本索引值获取。
 
@@ -1682,8 +1680,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### getIndexList8+
-
-PhonePC/2in1TabletTVWearable
 
 getIndexList(): Array<string>
 
@@ -1701,18 +1697,16 @@ getIndexList(): Array<string>
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
-4. // indexList = [ '...', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
-5. // 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '...' ]
-6. let indexList: Array<string> = indexUtil.getIndexList();
+let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
+// indexList = [ '...', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+// 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '...' ]
+let indexList: Array<string> = indexUtil.getIndexList();
 ```
 
 ### addLocale8+
-
-PhonePC/2in1TabletTVWearable
 
 addLocale(locale: string): void
 
@@ -1730,16 +1724,14 @@ addLocale(locale: string): void
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
-4. indexUtil.addLocale('en-US');
+let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
+indexUtil.addLocale('en-US');
 ```
 
 ### getIndex8+
-
-PhonePC/2in1TabletTVWearable
 
 getIndex(text: string): string
 
@@ -1763,20 +1755,18 @@ getIndex(text: string): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
-4. let index: string = indexUtil.getIndex('hi'); // index = 'H'
+let indexUtil: i18n.IndexUtil = i18n.getInstance('zh-CN');
+let index: string = indexUtil.getIndex('hi'); // index = 'H'
 ```
 
 ## i18n.getLineInstance8+
 
-PhonePC/2in1TabletTVWearable
-
 getLineInstance(locale: string): BreakIterator
 
-获取用于获取可换行点的BreakIterator对象。BreakIterator对象内部维护一个换行迭代器，可以用于访问各个可换行点。
+获取用于定位文本可换行点的BreakIterator对象。该对象内部维护一个换行迭代器，可以用于访问各个可换行点。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1796,15 +1786,13 @@ getLineInstance(locale: string): BreakIterator
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
 ```
 
 ## BreakIterator8+
-
-PhonePC/2in1TabletTVWearable
 
 提供文本换行相关的能力，包括可换行点的获取、移动和识别等。
 
@@ -1813,8 +1801,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### setLineBreakText8+
-
-PhonePC/2in1TabletTVWearable
 
 setLineBreakText(text: string): void
 
@@ -1832,16 +1818,14 @@ setLineBreakText(text: string): void
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.'); // 设置处理文本
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.'); // 设置处理文本
 ```
 
 ### getLineBreakText8+
-
-PhonePC/2in1TabletTVWearable
 
 getLineBreakText(): string
 
@@ -1859,17 +1843,15 @@ getLineBreakText(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.');
-5. let breakText: string = iterator.getLineBreakText(); // breakText = 'Apple is my favorite fruit.'
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.');
+let breakText: string = iterator.getLineBreakText(); // breakText = 'Apple is my favorite fruit.'
 ```
 
 ### current8+
-
-PhonePC/2in1TabletTVWearable
 
 current(): number
 
@@ -1887,17 +1869,15 @@ current(): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.');
-5. let currentPos: number = iterator.current(); // currentPos = 0
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.');
+let currentPos: number = iterator.current(); // currentPos = 0
 ```
 
 ### first8+
-
-PhonePC/2in1TabletTVWearable
 
 first(): number
 
@@ -1915,17 +1895,15 @@ first(): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.');
-5. let firstPos: number = iterator.first(); // firstPos = 0
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.');
+let firstPos: number = iterator.first(); // firstPos = 0
 ```
 
 ### last8+
-
-PhonePC/2in1TabletTVWearable
 
 last(): number
 
@@ -1943,17 +1921,15 @@ last(): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.');
-5. let lastPos: number = iterator.last(); // lastPos = 27
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.');
+let lastPos: number = iterator.last(); // lastPos = 27
 ```
 
 ### next8+
-
-PhonePC/2in1TabletTVWearable
 
 next(index?: number): number
 
@@ -1977,19 +1953,17 @@ next(index?: number): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.');
-5. let pos: number = iterator.first(); // pos = 0
-6. pos = iterator.next(); // pos = 6
-7. pos = iterator.next(10); // pos = -1
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.');
+let pos: number = iterator.first(); // pos = 0
+pos = iterator.next(); // pos = 6
+pos = iterator.next(10); // pos = -1
 ```
 
 ### previous8+
-
-PhonePC/2in1TabletTVWearable
 
 previous(): number
 
@@ -2007,19 +1981,17 @@ previous(): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.');
-5. let pos: number = iterator.first(); // pos = 0
-6. pos = iterator.next(3); // pos = 12
-7. pos = iterator.previous(); // pos = 9
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.');
+let pos: number = iterator.first(); // pos = 0
+pos = iterator.next(3); // pos = 12
+pos = iterator.previous(); // pos = 9
 ```
 
 ### following8+
-
-PhonePC/2in1TabletTVWearable
 
 following(offset: number): number
 
@@ -2043,19 +2015,17 @@ following(offset: number): number
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.');
-5. let pos: number = iterator.following(0); // pos = 6
-6. pos = iterator.following(100); // pos = -1
-7. pos = iterator.current(); // pos = 27
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.');
+let pos: number = iterator.following(0); // pos = 6
+pos = iterator.following(100); // pos = -1
+pos = iterator.current(); // pos = 27
 ```
 
 ### isBoundary8+
-
-PhonePC/2in1TabletTVWearable
 
 isBoundary(offset: number): boolean
 
@@ -2079,18 +2049,16 @@ isBoundary(offset: number): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
-4. iterator.setLineBreakText('Apple is my favorite fruit.');
-5. let isBoundary: boolean = iterator.isBoundary(0); // isBoundary = true;
-6. isBoundary = iterator.isBoundary(5); // isBoundary = false;
+let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+iterator.setLineBreakText('Apple is my favorite fruit.');
+let isBoundary: boolean = iterator.isBoundary(0); // isBoundary = true;
+isBoundary = iterator.isBoundary(5); // isBoundary = false;
 ```
 
 ## i18n.getTimeZone
-
-PhonePC/2in1TabletTVWearable
 
 getTimeZone(zoneID?: string): TimeZone
 
@@ -2114,15 +2082,13 @@ getTimeZone(zoneID?: string): TimeZone
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
 ```
 
 ## TimeZone
-
-PhonePC/2in1TabletTVWearable
 
 提供时区相关的能力，包括时区名称翻译、偏移量获取和跳变规则获取等。
 
@@ -2131,8 +2097,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### getID
-
-PhonePC/2in1TabletTVWearable
 
 getID(): string
 
@@ -2150,16 +2114,14 @@ getID(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
-4. let timezoneID: string = timezone.getID(); // timezoneID = 'Asia/Shanghai'
+let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+let timezoneID: string = timezone.getID(); // timezoneID = 'Asia/Shanghai'
 ```
 
 ### getDisplayName
-
-PhonePC/2in1TabletTVWearable
 
 getDisplayName(locale?: string, isDST?: boolean): string
 
@@ -2184,16 +2146,14 @@ getDisplayName(locale?: string, isDST?: boolean): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
-4. let timezoneName: string = timezone.getDisplayName('zh-CN', false); // timezoneName = '中国标准时间'
+let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+let timezoneName: string = timezone.getDisplayName('zh-CN', false); // timezoneName = '中国标准时间'
 ```
 
 ### getRawOffset
-
-PhonePC/2in1TabletTVWearable
 
 getRawOffset(): number
 
@@ -2207,20 +2167,18 @@ getRawOffset(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 时区的原始偏移量，单位是毫秒。 |
+| number | 时区的原始偏移量，单位为毫秒（ms）。 |
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
-4. let offset: number = timezone.getRawOffset(); // offset = 28800000
+let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+let offset: number = timezone.getRawOffset(); // offset = 28800000
 ```
 
 ### getOffset
-
-PhonePC/2in1TabletTVWearable
 
 getOffset(date?: number): number
 
@@ -2234,26 +2192,24 @@ getOffset(date?: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | number | 否 | 待计算时区偏移量的时刻，单位是毫秒。默认值：系统时间。 |
+| date | number | 否 | 待计算时区偏移量的时刻，单位为毫秒（ms）。默认值：系统时间。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 时区的偏移量，单位是毫秒。当处于夏令时时，时区偏移量为时区原始偏移量加夏令时偏移量。 |
+| number | 时区的偏移量，单位为毫秒（ms）。当处于夏令时时，时区偏移量为时区原始偏移量加夏令时偏移量。 |
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
-4. let offset: number = timezone.getOffset(1234567890); // offset = 28800000
+let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+let offset: number = timezone.getOffset(1234567890); // offset = 28800000
 ```
 
 ### getAvailableIDs9+
-
-PhonePC/2in1TabletTVWearable
 
 static getAvailableIDs(): Array<string>
 
@@ -2271,16 +2227,14 @@ static getAvailableIDs(): Array<string>
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // ids = ['America/Adak', 'America/Anchorage', 'America/Bogota', 'America/Denver', 'America/Los_Angeles', 'America/Montevideo', 'America/Santiago', 'America/Sao_Paulo', 'Asia/Ashgabat', 'Asia/Hovd', 'Asia/Jerusalem', 'Asia/Magadan', 'Asia/Omsk', 'Asia/Shanghai', 'Asia/Tokyo', 'Asia/Yerevan', 'Atlantic/Cape_Verde', 'Australia/Lord_Howe', 'Europe/Dublin', 'Europe/London', 'Europe/Moscow', 'Pacific/Auckland', 'Pacific/Easter', 'Pacific/Pago-Pago']
-4. let ids: Array<string> = i18n.TimeZone.getAvailableIDs();
+// ids = ['America/Adak', 'America/Anchorage', 'America/Bogota', 'America/Denver', 'America/Los_Angeles', 'America/Montevideo', 'America/Santiago', 'America/Sao_Paulo', 'Asia/Ashgabat', 'Asia/Hovd', 'Asia/Jerusalem', 'Asia/Magadan', 'Asia/Omsk', 'Asia/Shanghai', 'Asia/Tokyo', 'Asia/Yerevan', 'Atlantic/Cape_Verde', 'Australia/Lord_Howe', 'Europe/Dublin', 'Europe/London', 'Europe/Moscow', 'Pacific/Auckland', 'Pacific/Easter', 'Pacific/Pago-Pago']
+let ids: Array<string> = i18n.TimeZone.getAvailableIDs();
 ```
 
 ### getAvailableZoneCityIDs9+
-
-PhonePC/2in1TabletTVWearable
 
 static getAvailableZoneCityIDs(): Array<string>
 
@@ -2298,16 +2252,14 @@ static getAvailableZoneCityIDs(): Array<string>
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // cityIDs = ['Auckland', 'Magadan', 'Lord Howe Island', 'Tokyo', 'Shanghai', 'Hovd', 'Omsk', 'Ashgabat', 'Yerevan', 'Moscow', 'Tel Aviv', 'Dublin', 'London', 'Praia', 'Montevideo', 'Brasília', 'Santiago', 'Bogotá', 'Easter Island', 'Salt Lake City', 'Los Angeles', 'Anchorage', 'Adak', 'Pago Pago']
-4. let cityIDs: Array<string> = i18n.TimeZone.getAvailableZoneCityIDs();
+// cityIDs = ['Auckland', 'Magadan', 'Lord Howe Island', 'Tokyo', 'Shanghai', 'Hovd', 'Omsk', 'Ashgabat', 'Yerevan', 'Moscow', 'Tel Aviv', 'Dublin', 'London', 'Praia', 'Montevideo', 'Brasília', 'Santiago', 'Bogotá', 'Easter Island', 'Salt Lake City', 'Los Angeles', 'Anchorage', 'Adak', 'Pago Pago']
+let cityIDs: Array<string> = i18n.TimeZone.getAvailableZoneCityIDs();
 ```
 
 ### getCityDisplayName9+
-
-PhonePC/2in1TabletTVWearable
 
 static getCityDisplayName(cityID: string, locale: string): string
 
@@ -2332,15 +2284,13 @@ static getCityDisplayName(cityID: string, locale: string): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let displayName: string = i18n.TimeZone.getCityDisplayName('Shanghai', 'zh-CN'); // displayName = '上海 (中国)'
+let displayName: string = i18n.TimeZone.getCityDisplayName('Shanghai', 'zh-CN'); // displayName = '上海 (中国)'
 ```
 
 ### getTimezoneFromCity9+
-
-PhonePC/2in1TabletTVWearable
 
 static getTimezoneFromCity(cityID: string): TimeZone
 
@@ -2364,15 +2314,13 @@ static getTimezoneFromCity(cityID: string): TimeZone
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timezone: i18n.TimeZone = i18n.TimeZone.getTimezoneFromCity('Shanghai');
+let timezone: i18n.TimeZone = i18n.TimeZone.getTimezoneFromCity('Shanghai');
 ```
 
 ### getTimezonesByLocation10+
-
-PhonePC/2in1TabletTVWearable
 
 static getTimezonesByLocation(longitude: number, latitude: number): Array<TimeZone>
 
@@ -2404,27 +2352,25 @@ static getTimezonesByLocation(longitude: number, latitude: number): Array<TimeZo
 | 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. |
 | 890001 | Invalid parameter. Possible causes: Parameter verification failed. |
 
-说明
+**说明** 
 
 890001的报错信息请以接口的实际报错为准。
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let timezoneArray: Array<i18n.TimeZone> = i18n.TimeZone.getTimezonesByLocation(-118.1, 34.0);
-6. } catch (error) {
-7. let err: BusinessError = error as BusinessError;
-8. console.error(`call TimeZone.getTimezonesByLocation failed, error code: ${err.code}, message: ${err.message}.`);
-9. }
+try {
+  let timezoneArray: Array<i18n.TimeZone> = i18n.TimeZone.getTimezonesByLocation(-118.1, 34.0);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call TimeZone.getTimezonesByLocation failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getZoneRules20+
-
-PhonePC/2in1TabletTVWearable
 
 getZoneRules(): ZoneRules
 
@@ -2442,32 +2388,150 @@ getZoneRules(): ZoneRules
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let tzId: string = 'America/Tijuana';
-4. let timeZone: i18n.TimeZone = i18n.getTimeZone(tzId);
-5. let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
-6. let date = new Date(2025, 4, 13);
-7. let zoneOffsetTransition: i18n.ZoneOffsetTransition =
-8. zoneRules.nextTransition(date.getTime()); // 获取2025年5月13日以后的下一个时区跳变对象
-9. zoneOffsetTransition.getMilliseconds(); // 跳变点的时间戳: 1762074000000
-10. zoneOffsetTransition.getOffsetAfter(); // 跳变后的偏移量: -28800000
-11. zoneOffsetTransition.getOffsetBefore(); // 跳变前的偏移量: -25200000
-12. // 将跳变点时间格式化
-13. let dateTimeFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('en-US', {
-14. timeZone: tzId,
-15. dateStyle: 'long',
-16. timeStyle: 'long',
-17. hour12: false
-18. });
-19. let dateFormat: string =
-20. dateTimeFormat.format(new Date(zoneOffsetTransition.getMilliseconds())); // November 2, 2025, 1:00:00 PST
+let tzId: string = 'America/Tijuana';
+let timeZone: i18n.TimeZone = i18n.getTimeZone(tzId);
+let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
+let date = new Date(2025, 4, 13);
+let zoneOffsetTransition: i18n.ZoneOffsetTransition =
+    zoneRules.nextTransition(date.getTime()); // 获取2025年5月13日以后的下一个时区跳变对象
+zoneOffsetTransition.getMilliseconds(); // 跳变点的时间戳: 1762074000000
+zoneOffsetTransition.getOffsetAfter(); // 跳变后的偏移量: -28800000
+zoneOffsetTransition.getOffsetBefore(); // 跳变前的偏移量: -25200000
+// 将跳变点时间格式化
+let dateTimeFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('en-US', {
+  timeZone: tzId,
+  dateStyle: 'long',
+  timeStyle: 'long',
+  hour12: false
+});
+let dateFormat: string =
+  dateTimeFormat.format(new Date(zoneOffsetTransition.getMilliseconds())); // November 2, 2025, 1:00:00 PST
+```
+
+### isDaylightSavingTime
+
+isDaylightSavingTime(date: Date): boolean
+
+判断指定的时间日期是否处于夏令时。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| date | Date | 是 | 时间日期。  **说明：**  月份从0开始计数，0表示一月。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 是否处于夏令时。true表示处于夏令时，false表示不处于夏令时。 |
+
+**示例：**
+
+```ts
+let timezone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+let isDST = timezone.isDaylightSavingTime(new Date(2026, 3, 15));
+```
+
+### setAppDefaultTimeZoneById
+
+static setAppDefaultTimeZoneById(zoneID: string): void
+
+设置当前应用的默认时区，在应用运行时生命周期内有效。
+
+**说明** 
+
+进行日期时间格式化时，若未指定时区，会优先使用应用设置的默认时区。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| zoneID | string | 是 | 应用设置默认的时区ID，如："Asia/Shanghai"。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ohos.i18n错误码](errorcode-i18n.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8900001 | Invalid parameter. Possible causes: Parameter verification failed. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
+
+try {
+  let zoneID: string = 'Asia/Shanghai';
+  i18n.TimeZone.setAppDefaultTimeZoneById(zoneID);
+  console.info('setAppDefaultTimeZoneById success.');
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call TimeZone.setAppDefaultTimeZoneById failed, error code: ${err.code}, message: ${err.message}.`);
+}
+```
+
+### getAppDefaultTimeZone
+
+static getAppDefaultTimeZone(): TimeZone
+
+获取应用使用的默认时区对象。若调用[setAppDefaultTimeZoneById](js-apis-i18n.md#setappdefaulttimezonebyid)设置了默认时区，则返回设置的默认时区对象；否则，返回系统时区对象。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| TimeZone | 应用使用的默认时区对象。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
+
+try {
+  let zoneID: string = 'Asia/Shanghai';
+  i18n.TimeZone.setAppDefaultTimeZoneById(zoneID);
+  console.info('setAppDefaultTimeZoneById success.');
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call TimeZone.setAppDefaultTimeZoneById failed, error code: ${err.code}, message: ${err.message}.`);
+}
+let timeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+let id: string = timeZone.getID();
+console.info(`getAppDefaultTimeZone success, time zone id: ${id}`);
 ```
 
 ## ZoneRules20+
-
-PhonePC/2in1TabletTVWearable
 
 提供查询时区跳变规则的能力。
 
@@ -2476,8 +2540,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### nextTransition20+
-
-PhonePC/2in1TabletTVWearable
 
 nextTransition(date?: number): ZoneOffsetTransition
 
@@ -2491,7 +2553,7 @@ nextTransition(date?: number): ZoneOffsetTransition
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | number | 否 | 从1970年1月1日0时0分0秒到指定时间之间的毫秒数，默认到当前系统时间之间的毫秒数，单位：毫秒。 |
+| date | number | 否 | 从1970年1月1日0时0分0秒到指定时间之间的毫秒数。  默认值：系统时间。 |
 
 **返回值：**
 
@@ -2501,21 +2563,19 @@ nextTransition(date?: number): ZoneOffsetTransition
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // 获取蒂华纳时区对象
-4. let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
-5. // 获取蒂华纳时区跳变规则
-6. let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
-7. let date = new Date(2025, 4, 13);
-8. // 获取蒂华纳时区2025年5月13日后的下一个跳变对象
-9. let zoneOffsetTransition: i18n.ZoneOffsetTransition = zoneRules.nextTransition(date.getTime());
+// 获取蒂华纳时区对象
+let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
+// 获取蒂华纳时区跳变规则
+let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
+let date = new Date(2025, 4, 13);
+// 获取蒂华纳时区2025年5月13日后的下一个跳变对象
+let zoneOffsetTransition: i18n.ZoneOffsetTransition = zoneRules.nextTransition(date.getTime());
 ```
 
 ## ZoneOffsetTransition20+
-
-PhonePC/2in1TabletTVWearable
 
 提供解析时区跳变规则的能力。
 
@@ -2524,8 +2584,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### getMilliseconds20+
-
-PhonePC/2in1TabletTVWearable
 
 getMilliseconds(): number
 
@@ -2539,24 +2597,22 @@ getMilliseconds(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 从1970年1月1日0时0分0秒到时区跳变点之间的毫秒数，例如：1762074000000，单位：毫秒。如果当前时区[原始偏移量](js-apis-i18n.md#getrawoffset)保持不变并且不使用夏令时，则返回0。 |
+| number | 从1970年1月1日0时0分0秒到时区跳变点之间的毫秒数，例如：1762074000000，单位为毫秒（ms）。如果当前时区[原始偏移量](js-apis-i18n.md#getrawoffset)保持不变并且不使用夏令时，则返回0。 |
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
-4. let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
-5. let date = new Date(2025, 4, 13);
-6. let zoneOffsetTransition: i18n.ZoneOffsetTransition =
-7. zoneRules.nextTransition(date.getTime()); // 获取2025年5月13日以后的下一个时区跳变对象
-8. zoneOffsetTransition.getMilliseconds(); // 跳变点的时间戳: 1762074000000
+let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
+let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
+let date = new Date(2025, 4, 13);
+let zoneOffsetTransition: i18n.ZoneOffsetTransition =
+    zoneRules.nextTransition(date.getTime()); // 获取2025年5月13日以后的下一个时区跳变对象
+zoneOffsetTransition.getMilliseconds(); // 跳变点的时间戳: 1762074000000
 ```
 
 ### getOffsetAfter20+
-
-PhonePC/2in1TabletTVWearable
 
 getOffsetAfter(): number
 
@@ -2570,24 +2626,22 @@ getOffsetAfter(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 时区跳变后的偏移量，表示跳变后的时间相对于标准时间（协调世界时UTC）的时间差，单位：毫秒。例如：-28800000表示跳变后的时间比标准时间慢28800000毫秒（8小时）。 |
+| number | 时区跳变后的偏移量，表示跳变后的时间相对于标准时间（协调世界时UTC）的时间差，单位为毫秒（ms）。例如：-28800000表示跳变后的时间比标准时间慢28800000毫秒（8小时）。 |
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
-4. let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
-5. let date = new Date(2025, 4, 13);
-6. let zoneOffsetTransition: i18n.ZoneOffsetTransition =
-7. zoneRules.nextTransition(date.getTime()); // 获取2025年5月13日以后的下一个时区跳变对象
-8. zoneOffsetTransition.getOffsetAfter(); // 跳变后的偏移量: -28800000
+let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
+let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
+let date = new Date(2025, 4, 13);
+let zoneOffsetTransition: i18n.ZoneOffsetTransition =
+    zoneRules.nextTransition(date.getTime()); // 获取2025年5月13日以后的下一个时区跳变对象
+zoneOffsetTransition.getOffsetAfter(); // 跳变后的偏移量: -28800000
 ```
 
 ### getOffsetBefore20+
-
-PhonePC/2in1TabletTVWearable
 
 getOffsetBefore(): number
 
@@ -2601,24 +2655,22 @@ getOffsetBefore(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 时区跳变前的偏移量，表示跳变前的时间相对于标准时间（协调世界时UTC）的时间差，单位：毫秒。例如：-25200000表示跳变前的时间比标准时间慢25200000毫秒（7小时）。 |
+| number | 时区跳变前的偏移量，表示跳变前的时间相对于标准时间（协调世界时UTC）的时间差，单位为毫秒（ms）。例如：-25200000表示跳变前的时间比标准时间慢25200000毫秒（7小时）。 |
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
-4. let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
-5. let date = new Date(2025, 4, 13);
-6. let zoneOffsetTransition: i18n.ZoneOffsetTransition =
-7. zoneRules.nextTransition(date.getTime()); // 获取2025年5月13日以后的下一个时区跳变对象
-8. zoneOffsetTransition.getOffsetBefore(); // 跳变前的偏移量: -25200000
+let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
+let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
+let date = new Date(2025, 4, 13);
+let zoneOffsetTransition: i18n.ZoneOffsetTransition =
+    zoneRules.nextTransition(date.getTime()); // 获取2025年5月13日以后的下一个时区跳变对象
+zoneOffsetTransition.getOffsetBefore(); // 跳变前的偏移量: -25200000
 ```
 
 ## Transliterator9+
-
-PhonePC/2in1TabletTVWearable
 
 提供文本音译相关的能力，包括音译支持范围获取和文本音译等。
 
@@ -2627,8 +2679,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### getAvailableIDs9+
-
-PhonePC/2in1TabletTVWearable
 
 static getAvailableIDs(): string[]
 
@@ -2646,17 +2696,15 @@ static getAvailableIDs(): string[]
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // 共支持742个ID。每一个ID由使用中划线分割的两部分组成，格式为 source-destination。例如ids = ['Han-Latin','Latin-ASCII', 'Amharic-Latin/BGN','Accents-Any', ...]，Han-Latin表示汉语转为译拉丁文，Amharic-Latin表示阿姆哈拉语转为拉丁文。
-4. // 更多使用信息可以参考ISO-15924。
-5. let ids: string[] = i18n.Transliterator.getAvailableIDs();
+// 共支持742个ID。每一个ID由短横线分隔的两部分组成，格式为 source-destination。例如ids = ['Han-Latin','Latin-ASCII', 'Amharic-Latin/BGN','Accents-Any', ...]，Han-Latin表示汉语转为拉丁文，Amharic-Latin表示阿姆哈拉语转为拉丁文。
+// 更多使用信息可以参考ISO-15924。
+let ids: string[] = i18n.Transliterator.getAvailableIDs();
 ```
 
 ### getInstance9+
-
-PhonePC/2in1TabletTVWearable
 
 static getInstance(id: string): Transliterator
 
@@ -2680,15 +2728,13 @@ static getInstance(id: string): Transliterator
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let transliterator: i18n.Transliterator = i18n.Transliterator.getInstance('Any-Latn');
+let transliterator: i18n.Transliterator = i18n.Transliterator.getInstance('Any-Latn');
 ```
 
 ### transform9+
-
-PhonePC/2in1TabletTVWearable
 
 transform(text: string): string
 
@@ -2712,29 +2758,27 @@ transform(text: string): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let transliterator: i18n.Transliterator = i18n.Transliterator.getInstance('Any-Latn');
-4. let wordArray: string[] = ['中国', '德国', '美国', '法国']
-5. for (let i = 0; i < wordArray.length; i++) {
-6. let transliterateLatn: string =
-7. transliterator.transform(wordArray[i]); // transliterateLatn依次为：'zhōng guó', 'dé guó', 'měi guó', 'fǎ guó'
-8. }
+let transliterator: i18n.Transliterator = i18n.Transliterator.getInstance('Any-Latn');
+let wordArray: string[] = ['中国', '德国', '美国', '法国']
+for (let i = 0; i < wordArray.length; i++) {
+  let transliterateLatn: string =
+    transliterator.transform(wordArray[i]); // transliterateLatn依次为：'zhōng guó', 'dé guó', 'měi guó', 'fǎ guó'
+}
 
-10. // 汉语音译去声调
-11. transliterator = i18n.Transliterator.getInstance('Any-Latn;Latin-Ascii');
-12. let transliterateAscii: string = transliterator.transform('中国'); // transliterateAscii = 'zhong guo'
+// 汉语音译去声调
+transliterator = i18n.Transliterator.getInstance('Any-Latn;Latin-Ascii');
+let transliterateAscii: string = transliterator.transform('中国'); // transliterateAscii = 'zhong guo'
 
-14. // 汉语姓氏读音
-15. transliterator = i18n.Transliterator.getInstance('Han-Latin/Names');
-16. let transliterateNames: string = transliterator.transform('单老师'); // transliterateNames = 'shàn lǎo shī'
-17. transliterateNames = transliterator.transform('长孙无忌'); // transliterateNames = 'zhǎng sūn wú jì'
+// 汉语姓氏读音
+transliterator = i18n.Transliterator.getInstance('Han-Latin/Names');
+let transliterateNames: string = transliterator.transform('单老师'); // transliterateNames = 'shàn lǎo shī'
+transliterateNames = transliterator.transform('长孙无忌'); // transliterateNames = 'zhǎng sūn wú jì'
 ```
 
 ## Unicode9+
-
-PhonePC/2in1TabletTVWearable
 
 提供字符属性相关的能力，包括判断字符是否为空格、数字和字母等。
 
@@ -2743,8 +2787,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### isDigit9+
-
-PhonePC/2in1TabletTVWearable
 
 static isDigit(ch: string): boolean
 
@@ -2768,15 +2810,13 @@ static isDigit(ch: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isDigit: boolean = i18n.Unicode.isDigit('1'); // isDigit = true
+let isDigit: boolean = i18n.Unicode.isDigit('1'); // isDigit = true
 ```
 
 ### isSpaceChar9+
-
-PhonePC/2in1TabletTVWearable
 
 static isSpaceChar(ch: string): boolean
 
@@ -2800,15 +2840,13 @@ static isSpaceChar(ch: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isSpacechar: boolean = i18n.Unicode.isSpaceChar('a'); // isSpacechar = false
+let isSpacechar: boolean = i18n.Unicode.isSpaceChar('a'); // isSpacechar = false
 ```
 
 ### isWhitespace9+
-
-PhonePC/2in1TabletTVWearable
 
 static isWhitespace(ch: string): boolean
 
@@ -2832,15 +2870,13 @@ static isWhitespace(ch: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isWhitespace: boolean = i18n.Unicode.isWhitespace('a'); // isWhitespace = false
+let isWhitespace: boolean = i18n.Unicode.isWhitespace('a'); // isWhitespace = false
 ```
 
 ### isRTL9+
-
-PhonePC/2in1TabletTVWearable
 
 static isRTL(ch: string): boolean
 
@@ -2864,15 +2900,13 @@ static isRTL(ch: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isRtl: boolean = i18n.Unicode.isRTL('a'); // isRtl = false
+let isRtl: boolean = i18n.Unicode.isRTL('a'); // isRtl = false
 ```
 
 ### isIdeograph9+
-
-PhonePC/2in1TabletTVWearable
 
 static isIdeograph(ch: string): boolean
 
@@ -2896,15 +2930,13 @@ static isIdeograph(ch: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isIdeograph: boolean = i18n.Unicode.isIdeograph('a'); // isIdeograph = false
+let isIdeograph: boolean = i18n.Unicode.isIdeograph('a'); // isIdeograph = false
 ```
 
 ### isLetter9+
-
-PhonePC/2in1TabletTVWearable
 
 static isLetter(ch: string): boolean
 
@@ -2928,15 +2960,13 @@ static isLetter(ch: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isLetter: boolean = i18n.Unicode.isLetter('a'); // isLetter = true
+let isLetter: boolean = i18n.Unicode.isLetter('a'); // isLetter = true
 ```
 
 ### isLowerCase9+
-
-PhonePC/2in1TabletTVWearable
 
 static isLowerCase(ch: string): boolean
 
@@ -2960,15 +2990,13 @@ static isLowerCase(ch: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isLowercase: boolean = i18n.Unicode.isLowerCase('a'); // isLowercase = true
+let isLowercase: boolean = i18n.Unicode.isLowerCase('a'); // isLowercase = true
 ```
 
 ### isUpperCase9+
-
-PhonePC/2in1TabletTVWearable
 
 static isUpperCase(ch: string): boolean
 
@@ -2992,15 +3020,13 @@ static isUpperCase(ch: string): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let isUppercase: boolean = i18n.Unicode.isUpperCase('a'); // isUppercase = false
+let isUppercase: boolean = i18n.Unicode.isUpperCase('a'); // isUppercase = false
 ```
 
 ### getType9+
-
-PhonePC/2in1TabletTVWearable
 
 static getType(ch: string): string
 
@@ -3020,55 +3046,69 @@ static getType(ch: string): string
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 输入字符的一般类别值。 |
-
-一般类别值如下，更详细的介绍可以参考Unicode标准。
-
-| 名称 | 值 | 说明 |
-| --- | --- | --- |
-| U\_UNASSIGNED | U\_UNASSIGNED | 表示未分配和非字符代码点对应类别。 |
-| U\_GENERAL\_OTHER\_TYPES | U\_GENERAL\_OTHER\_TYPES | 与 U\_UNASSIGNED 一致。 |
-| U\_UPPERCASE\_LETTER | U\_UPPERCASE\_LETTER | 表示大写字母。 |
-| U\_LOWERCASE\_LETTER | U\_LOWERCASE\_LETTER | 表示小写字母。 |
-| U\_TITLECASE\_LETTER | U\_TITLECASE\_LETTER | 表示首字母大写。 |
-| U\_MODIFIER\_LETTER | U\_MODIFIER\_LETTER | 表示字母修饰符。 |
-| U\_OTHER\_LETTER | U\_OTHER\_LETTER | 表示其它字母，不属于大写字母、小写字母、首字母大写或修饰符字母的字母。 |
-| U\_NON\_SPACING\_MARK | U\_NON\_SPACING\_MARK | 表示非间距标记，例如重音符号'，变音符号#。 |
-| U\_ENCLOSING\_MARK | U\_ENCLOSING\_MARK | 表示封闭标记和能围住其它字符的标记，如圆圈、方框等。 |
-| U\_COMBINING\_SPACING\_MARK | U\_COMBINING\_SPACING\_MARK | 表示间距标记，例如元音符号[ ]。 |
-| U\_DECIMAL\_DIGIT\_NUMBER | U\_DECIMAL\_DIGIT\_NUMBER | 表示十进制数字。 |
-| U\_LETTER\_NUMBER | U\_LETTER\_NUMBER | 表示字母数字，罗马数字。 |
-| U\_OTHER\_NUMBER | U\_OTHER\_NUMBER | 表示其它作为加密符号和记号的数字，非阿拉伯数字的数字表示符，例如@、#、（1）、①等。 |
-| U\_SPACE\_SEPARATOR | U\_SPACE\_SEPARATOR | 表示空白分隔符，如空格符、不间断空格、固定宽度的空白符。 |
-| U\_LINE\_SEPARATOR | U\_LINE\_SEPARATOR | 表示行分隔符。 |
-| U\_PARAGRAPH\_SEPARATOR | U\_PARAGRAPH\_SEPARATOR | 表示段落分割符。 |
-| U\_CONTROL\_CHAR | U\_CONTROL\_CHAR | 表示控制字符。 |
-| U\_FORMAT\_CHAR | U\_FORMAT\_CHAR | 表示格式字符。 |
-| U\_PRIVATE\_USE\_CHAR | U\_PRIVATE\_USE\_CHAR | 表示私人使用区代码点类别，例如公司 logo。 |
-| U\_SURROGATE | U\_SURROGATE | 表示代理项，在UTF-16中用来表示补充字符的方法。 |
-| U\_DASH\_PUNCTUATION | U\_DASH\_PUNCTUATION | 表示短划线标点。 |
-| U\_START\_PUNCTUATION | U\_START\_PUNCTUATION | 表示开始标点，如左括号。 |
-| U\_END\_PUNCTUATION | U\_END\_PUNCTUATION | 表示结束标点，如右括号。 |
-| U\_INITIAL\_PUNCTUATION | U\_INITIAL\_PUNCTUATION | 表示前引号，例如左双引号、左单引号。 |
-| U\_FINAL\_PUNCTUATION | U\_FINAL\_PUNCTUATION | 表示后引号，例如右双引号、右单引号。 |
-| U\_CONNECTOR\_PUNCTUATION | U\_CONNECTOR\_PUNCTUATION | 表示连接符标点。 |
-| U\_OTHER\_PUNCTUATION | U\_OTHER\_PUNCTUATION | 表示其他标点。 |
-| U\_MATH\_SYMBOL | U\_MATH\_SYMBOL | 表示数学符号。 |
-| U\_CURRENCY\_SYMBOL | U\_CURRENCY\_SYMBOL | 表示货币符号。 |
-| U\_MODIFIER\_SYMBOL | U\_MODIFIER\_SYMBOL | 表示修饰符号。 |
-| U\_OTHER\_SYMBOL | U\_OTHER\_SYMBOL | 表示其它符号。 |
+| string | 输入字符的一般类别值。取值包括：  U\_UNASSIGNED： 表示未分配和非字符代码点对应类别。  U\_GENERAL\_OTHER\_TYPES： 与 U\_UNASSIGNED 一致。  U\_UPPERCASE\_LETTER： 表示大写字母。  U\_LOWERCASE\_LETTER： 表示小写字母。  U\_TITLECASE\_LETTER： 表示首字母大写。  U\_MODIFIER\_LETTER： 表示字母修饰符。  U\_OTHER\_LETTER： 表示其它字母，不属于大写字母、小写字母、首字母大写或修饰符字母的字母。  U\_NON\_SPACING\_MARK： 表示非间距标记，例如重音符号'，变音符号#。  U\_ENCLOSING\_MARK： 表示封闭标记和能围住其它字符的标记，如圆圈、方框等。  U\_COMBINING\_SPACING\_MARK： 表示间距标记，例如元音符号[ ]。  U\_DECIMAL\_DIGIT\_NUMBER： 表示十进制数字。  U\_LETTER\_NUMBER： 表示字母数字，罗马数字。  U\_OTHER\_NUMBER： 表示其它作为加密符号和记号的数字，非阿拉伯数字的数字表示符，例如@、#、（1）、①等。  U\_SPACE\_SEPARATOR： 表示空白分隔符，如空格符、不间断空格、固定宽度的空白符。  U\_LINE\_SEPARATOR： 表示行分隔符。  U\_PARAGRAPH\_SEPARATOR： 表示段落分隔符。  U\_CONTROL\_CHAR： 表示控制字符。  U\_FORMAT\_CHAR： 表示格式字符。  U\_PRIVATE\_USE\_CHAR： 表示私人使用区代码点类别，例如公司 logo。  U\_SURROGATE： 表示代理项，在UTF-16中用来表示补充字符的方法。  U\_DASH\_PUNCTUATION： 表示短划线标点。  U\_START\_PUNCTUATION： 表示开始标点，如左括号。  U\_END\_PUNCTUATION： 表示结束标点，如右括号。  U\_INITIAL\_PUNCTUATION： 表示前引号，例如左双引号、左单引号。  U\_FINAL\_PUNCTUATION： 表示后引号，例如右双引号、右单引号。  U\_CONNECTOR\_PUNCTUATION： 表示连接符标点。  U\_OTHER\_PUNCTUATION： 表示其他标点。  U\_MATH\_SYMBOL： 表示数学符号。  U\_CURRENCY\_SYMBOL： 表示货币符号。  U\_MODIFIER\_SYMBOL： 表示修饰符号。  U\_OTHER\_SYMBOL： 表示其它符号。  更详细的介绍可以参考Unicode标准。 |
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let unicodeType: string = i18n.Unicode.getType('a'); // unicodeType = 'U_LOWERCASE_LETTER'
+let unicodeType: string = i18n.Unicode.getType('a'); // unicodeType = 'U_LOWERCASE_LETTER'
 ```
+
+### detectEncoding
+
+static detectEncoding(bytes: Uint8Array): EncodingInfo
+
+识别输入字节流的编码信息。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bytes | Uint8Array | 是 | 输入字节流。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [EncodingInfo](js-apis-i18n.md#encodinginfo) | 编码信息，包含编码名称和置信度。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let uint8Array = new Uint8Array([0xEF, 0xBB, 0xBF, 0xE4, 0xB8, 0xAD]);
+let info = i18n.Unicode.detectEncoding(uint8Array); // info.encodingName = 'UTF-8', info.confidence = 100
+```
+
+## EncodingInfo
+
+编码信息。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| encodingName | string | 否 | 否 | 编码名称，取值包括：UTF-8，UTF-16BE，UTF-16LE，UTF-32BE，UTF-32LE，Shift\_JIS，ISO-2022-JP，ISO-2022-CN，ISO-2022-KR，GB18030，Big5，EUC-JP，EUC-KR，ISO-8859-1，ISO-8859-2，ISO-8859-5，ISO-8859-6，ISO-8859-7，ISO-8859-8，ISO-8859-9，windows-1250，windows-1251，windows-1252，windows-1253，windows-1254，windows-1255，windows-1256，KOI8-R，IBM420，IBM424。 |
+| confidence | number | 否 | 否 | 识别结果的置信度，范围是0-100。值越大，识别结果越可靠。 |
 
 ## I18NUtil9+
-
-PhonePC/2in1TabletTVWearable
 
 国际化工具类，提供单位转换、获取日期顺序、获取时段名称、区域匹配和路径本地化等能力。
 
@@ -3077,8 +3117,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### unitConvert9+
-
-PhonePC/2in1TabletTVWearable
 
 static unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: string, style?: string): string
 
@@ -3106,18 +3144,16 @@ static unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: 
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let fromUnit: i18n.UnitInfo = { unit: 'cup', measureSystem: 'US' };
-4. let toUnit: i18n.UnitInfo = { unit: 'liter', measureSystem: 'SI' };
-5. let convertResult: string =
-6. i18n.I18NUtil.unitConvert(fromUnit, toUnit, 1000, 'en-US', 'long'); // convertResult = '236.588 liters'
+let fromUnit: i18n.UnitInfo = { unit: 'cup', measureSystem: 'US' };
+let toUnit: i18n.UnitInfo = { unit: 'liter', measureSystem: 'SI' };
+let convertResult: string =
+  i18n.I18NUtil.unitConvert(fromUnit, toUnit, 1000, 'en-US', 'long'); // convertResult = '236.588 liters'
 ```
 
 ### getDateOrder9+
-
-PhonePC/2in1TabletTVWearable
 
 static getDateOrder(locale: string): string
 
@@ -3141,15 +3177,13 @@ static getDateOrder(locale: string): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let order: string = i18n.I18NUtil.getDateOrder('zh-CN'); // order = 'y-L-d'
+let order: string = i18n.I18NUtil.getDateOrder('zh-CN'); // order = 'y-L-d'
 ```
 
 ### getTimePeriodName11+
-
-PhonePC/2in1TabletTVWearable
 
 static getTimePeriodName(hour:number, locale?: string): string
 
@@ -3183,21 +3217,19 @@ static getTimePeriodName(hour:number, locale?: string): string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let name: string = i18n.I18NUtil.getTimePeriodName(2, 'zh-CN'); // name = '凌晨'
-6. } catch (error) {
-7. let err: BusinessError = error as BusinessError;
-8. console.error(`call I18NUtil.getTimePeriodName failed, error code: ${err.code}, message: ${err.message}.`);
-9. }
+try {
+  let name: string = i18n.I18NUtil.getTimePeriodName(2, 'zh-CN'); // name = '凌晨'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call I18NUtil.getTimePeriodName failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getBestMatchLocale12+
-
-PhonePC/2in1TabletTVWearable
 
 static getBestMatchLocale(locale: string, localeList: string[]): string
 
@@ -3231,22 +3263,20 @@ static getBestMatchLocale(locale: string, localeList: string[]): string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let matchedLocaleId: string = i18n.I18NUtil.getBestMatchLocale('zh-Hans-CN',
-6. ['en-Latn-US', 'en-GB', 'zh-Hant-CN', 'zh-Hans-MO']); // matchedLocaleId = 'zh-Hans-MO'
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call I18NUtil.getBestMatchLocale failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let matchedLocaleId: string = i18n.I18NUtil.getBestMatchLocale('zh-Hans-CN',
+    ['en-Latn-US', 'en-GB', 'zh-Hant-CN', 'zh-Hans-MO']); // matchedLocaleId = 'zh-Hans-MO'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call I18NUtil.getBestMatchLocale failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getThreeLetterLanguage12+
-
-PhonePC/2in1TabletTVWearable
 
 static getThreeLetterLanguage(locale: string): string
 
@@ -3281,21 +3311,19 @@ static getThreeLetterLanguage(locale: string): string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let language: string = i18n.I18NUtil.getThreeLetterLanguage('zh') // language = 'zho'
-6. } catch (error) {
-7. let err: BusinessError = error as BusinessError;
-8. console.error(`call I18NUtil.getThreeLetterLanguage failed, error code: ${err.code}, message: ${err.message}.`);
-9. }
+try {
+  let language: string = i18n.I18NUtil.getThreeLetterLanguage('zh') // language = 'zho'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call I18NUtil.getThreeLetterLanguage failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getThreeLetterRegion12+
-
-PhonePC/2in1TabletTVWearable
 
 static getThreeLetterRegion(locale: string): string
 
@@ -3330,21 +3358,19 @@ static getThreeLetterRegion(locale: string): string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let region: string = i18n.I18NUtil.getThreeLetterRegion('CN') // region = 'CHN'
-6. } catch (error) {
-7. let err: BusinessError = error as BusinessError;
-8. console.error(`call I18NUtil.getThreeLetterRegion failed, error code: ${err.code}, message: ${err.message}.`);
-9. }
+try {
+  let region: string = i18n.I18NUtil.getThreeLetterRegion('CN') // region = 'CHN'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call I18NUtil.getThreeLetterRegion failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getUnicodeWrappedFilePath20+
-
-PhonePC/2in1TabletTVWearable
 
 static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: Intl.Locale): string
 
@@ -3380,25 +3406,102 @@ static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: Intl
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let path: string = '/data/out/tmp';
-6. let delimiter: string = '/';
-7. let locale: Intl.Locale = new Intl.Locale('ar');
-8. let mirrorPath: string =
-9. i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale); // mirrorPath显示为: 'tmp/out/data/'
-10. } catch (error) {
-11. let err: BusinessError = error as BusinessError;
-12. console.error(`call I18NUtil.getUnicodeWrappedFilePath failed, error code: ${err.code}, message: ${err.message}.`);
-13. }
+try {
+  let path: string = '/data/out/tmp';
+  let delimiter: string = '/';
+  let locale: Intl.Locale = new Intl.Locale('ar');
+  let mirrorPath: string =
+    i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale); // mirrorPath显示为: 'tmp/out/data/'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call I18NUtil.getUnicodeWrappedFilePath failed, error code: ${err.code}, message: ${err.message}.`);
+}
+```
+
+### setUnicodeWrappedBidiDirection
+
+static setUnicodeWrappedBidiDirection(text: string, direction: 'RTL' | 'LTR'): string
+
+设置整段文本中部分文本方向，包括RTL、LTR。
+
+**说明** 
+
+在强字符（指具有明确书写方向的字符）中不生效。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 需要设置方向的文本。 |
+| direction | 'RTL' | 'LTR' | 是 | 'RTL'表示从右到左，'LTR'表示从左到右。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 设置方向后的文本。 |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
+
+try {
+  let text: string = '(012) 345-6789';
+  let result: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(text, 'LTR');
+  console.info(`setUnicodeWrappedBidiDirection, result: ${result}`);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call I18NUtil.setUnicodeWrappedBidiDirection failed, error code: ${err.code}, message: ${err.message}.`);
+}
+```
+
+### convertCanonicalLocaleIdentifier
+
+static convertCanonicalLocaleIdentifier(locale: string): string
+
+将区域ID调整成符合[BCP47](https://www.rfc-editor.org/info/bcp47/)标准的格式。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| locale | string | 是 | 区域ID。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 有效的区域ID会返回符合[BCP47](https://www.rfc-editor.org/info/bcp47/)标准格式的区域ID。无效的区域ID会返回空字符串。 |
+
+**示例：**
+
+```ts
+let result: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('zh-cn'); // result = 'zh-CN'
 ```
 
 ### getUnicodeWrappedFilePath(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: intl.Locale): string
 
@@ -3436,25 +3539,23 @@ static getUnicodeWrappedFilePath(path: string, delimiter?: string, locale?: intl
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n, intl } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n, intl } from '@kit.LocalizationKit';
 
-4. try {
-5. let path: string = '/data/out/tmp';
-6. let delimiter: string = '/';
-7. let locale: intl.Locale = new intl.Locale('ar');
-8. let mirrorPath: string =
-9. i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale); // mirrorPath显示为: 'tmp/out/data/'
-10. } catch (error) {
-11. let err: BusinessError = error as BusinessError;
-12. console.error(`call I18NUtil.getUnicodeWrappedFilePath failed, error code: ${err.code}, message: ${err.message}.`);
-13. }
+try {
+  let path: string = '/data/out/tmp';
+  let delimiter: string = '/';
+  let locale: intl.Locale = new intl.Locale('ar');
+  let mirrorPath: string =
+    i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, locale); // mirrorPath显示为: 'tmp/out/data/'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call I18NUtil.getUnicodeWrappedFilePath failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## Normalizer10+
-
-PhonePC/2in1TabletTVWearable
 
 提供文本标准化的能力。
 
@@ -3463,8 +3564,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### getInstance10+
-
-PhonePC/2in1TabletTVWearable
 
 static getInstance(mode: NormalizerMode): Normalizer
 
@@ -3496,21 +3595,19 @@ static getInstance(mode: NormalizerMode): Normalizer
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let normalizer: i18n.Normalizer = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
-6. } catch (error) {
-7. let err: BusinessError = error as BusinessError;
-8. console.error(`call Normalizer.getInstance failed, error code: ${err.code}, message: ${err.message}.`);
-9. }
+try {
+  let normalizer: i18n.Normalizer = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call Normalizer.getInstance failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### normalize10+
-
-PhonePC/2in1TabletTVWearable
 
 normalize(text: string): string
 
@@ -3542,22 +3639,20 @@ normalize(text: string): string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let normalizer: i18n.Normalizer = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
-6. let normalizedText: string = normalizer.normalize('\u1E9B\u0323'); // normalizedText = 'ẛ̣'
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call Normalizer.getInstance failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let normalizer: i18n.Normalizer = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
+  let normalizedText: string = normalizer.normalize('\u1E9B\u0323'); // normalizedText = 'ẛ̣'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call Normalizer.getInstance failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## NormalizerMode10+
-
-PhonePC/2in1TabletTVWearable
 
 文本标准化范式的枚举。
 
@@ -3574,8 +3669,6 @@ PhonePC/2in1TabletTVWearable
 
 ## HolidayManager11+
 
-PhonePC/2in1TabletTVWearable
-
 提供解析节假日数据的能力，包括节假日判断和指定年份节假日列表获取等。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -3583,8 +3676,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### constructor11+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(icsPath: String)
 
@@ -3611,22 +3702,20 @@ constructor(icsPath: String)
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. // 需要将'/system/lib/US.ics'替换为实际ics文件路径
-6. let holidayManager = new i18n.HolidayManager('/system/lib/US.ics');
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call i18n.HolidayManager failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  // 需要将'/system/lib/US.ics'替换为实际ics文件路径
+  let holidayManager = new i18n.HolidayManager('/system/lib/US.ics');
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call i18n.HolidayManager failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### isHoliday11+
-
-PhonePC/2in1TabletTVWearable
 
 isHoliday(date?: Date): boolean
 
@@ -3640,7 +3729,7 @@ isHoliday(date?: Date): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | Date | 否 | 时间、日期。说明：月份从0开始计数，例如0表示一月。  默认值：当前日期。 |
+| date | Date | 否 | 时间日期。  **说明：**  月份从0开始计数，0表示一月。  默认值：当前日期。 |
 
 **返回值：**
 
@@ -3658,24 +3747,22 @@ isHoliday(date?: Date): boolean
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. // 需要将'/system/lib/US.ics'替换为实际ics文件路径
-6. let holidayManager: i18n.HolidayManager = new i18n.HolidayManager('/system/lib/US.ics');
-7. let isHoliday: boolean = holidayManager.isHoliday();
-8. isHoliday = holidayManager.isHoliday(new Date(2023, 5, 25)); // 时间日期为2023.06.25
-9. } catch (error) {
-10. let err: BusinessError = error as BusinessError;
-11. console.error(`call holidayManager.isHoliday failed, error code: ${err.code}, message: ${err.message}.`);
-12. }
+try {
+  // 需要将'/system/lib/US.ics'替换为实际ics文件路径
+  let holidayManager: i18n.HolidayManager = new i18n.HolidayManager('/system/lib/US.ics');
+  let isHoliday: boolean = holidayManager.isHoliday();
+  isHoliday = holidayManager.isHoliday(new Date(2023, 5, 25)); // 时间日期为2023.06.25
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call holidayManager.isHoliday failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### getHolidayInfoItemArray11+
-
-PhonePC/2in1TabletTVWearable
 
 getHolidayInfoItemArray(year?: number): Array<[HolidayInfoItem](js-apis-i18n.md#holidayinfoitem11)>
 
@@ -3708,23 +3795,21 @@ getHolidayInfoItemArray(year?: number): Array<[HolidayInfoItem](js-apis-i18n.md#
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. // 需要将'/system/lib/US.ics'替换为实际ics文件路径
-6. let holidayManager: i18n.HolidayManager = new i18n.HolidayManager('/system/lib/US.ics');
-7. let holidayInfoItemArray: Array<i18n.HolidayInfoItem> = holidayManager.getHolidayInfoItemArray(2023);
-8. } catch (error) {
-9. let err: BusinessError = error as BusinessError;
-10. console.error(`call holidayManager.getHolidayInfoItemArray failed, error code: ${err.code}, message: ${err.message}.`);
-11. }
+try {
+  // 需要将'/system/lib/US.ics'替换为实际ics文件路径
+  let holidayManager: i18n.HolidayManager = new i18n.HolidayManager('/system/lib/US.ics');
+  let holidayInfoItemArray: Array<i18n.HolidayInfoItem> = holidayManager.getHolidayInfoItemArray(2023);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call holidayManager.getHolidayInfoItemArray failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## HolidayInfoItem11+
-
-PhonePC/2in1TabletTVWearable
 
 节假日信息。
 
@@ -3742,8 +3827,6 @@ PhonePC/2in1TabletTVWearable
 
 ## HolidayLocalName11+
 
-PhonePC/2in1TabletTVWearable
-
 节假日名称在不同语言下的翻译。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
@@ -3756,8 +3839,6 @@ PhonePC/2in1TabletTVWearable
 | name | string | 否 | 否 | 节假日的本地名称，例如Sacrifice Feast（宰牲节）的土耳其语名称为Kurban Bayrami。 |
 
 ## i18n.getSimpleDateTimeFormatByPattern20+
-
-PhonePC/2in1TabletTVWearable
 
 getSimpleDateTimeFormatByPattern(pattern: string, locale?: Intl.Locale): SimpleDateTimeFormat
 
@@ -3790,22 +3871,20 @@ getSimpleDateTimeFormatByPattern(pattern: string, locale?: Intl.Locale): SimpleD
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
-6. let formatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("'month('M')'", locale);
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call i18n.getSimpleDateTimeFormatByPattern failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+  let formatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("'month('M')'", locale);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call i18n.getSimpleDateTimeFormatByPattern failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## i18n.getSimpleDateTimeFormatByPattern(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSimpleDateTimeFormatByPattern(pattern: string, locale?: intl.Locale): SimpleDateTimeFormat
 
@@ -3840,22 +3919,20 @@ getSimpleDateTimeFormatByPattern(pattern: string, locale?: intl.Locale): SimpleD
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n, intl } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n, intl } from '@kit.LocalizationKit';
 
-4. try {
-5. let locale: intl.Locale = new intl.Locale('zh-Hans-CN');
-6. let formatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("'month('M')'", locale);
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call i18n.getSimpleDateTimeFormatByPattern failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let locale: intl.Locale = new intl.Locale('zh-Hans-CN');
+  let formatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("'month('M')'", locale);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call i18n.getSimpleDateTimeFormatByPattern failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## i18n.getSimpleDateTimeFormatBySkeleton20+
-
-PhonePC/2in1TabletTVWearable
 
 getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: Intl.Locale): SimpleDateTimeFormat
 
@@ -3888,22 +3965,20 @@ getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: Intl.Locale): Simpl
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
-6. let formatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMd', locale);
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call i18n.getSimpleDateTimeFormatBySkeleton failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+  let formatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMd', locale);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call i18n.getSimpleDateTimeFormatBySkeleton failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## i18n.getSimpleDateTimeFormatBySkeleton(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: intl.Locale): SimpleDateTimeFormat
 
@@ -3938,22 +4013,20 @@ getSimpleDateTimeFormatBySkeleton(skeleton: string, locale?: intl.Locale): Simpl
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n, intl } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n, intl } from '@kit.LocalizationKit';
 
-4. try {
-5. let locale: intl.Locale = new intl.Locale('zh-Hans-CN');
-6. let formatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMd', locale);
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call i18n.getSimpleDateTimeFormatBySkeleton failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let locale: intl.Locale = new intl.Locale('zh-Hans-CN');
+  let formatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMd', locale);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call i18n.getSimpleDateTimeFormatBySkeleton failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## SimpleDateTimeFormat18+
-
-PhonePC/2in1TabletTVWearable
 
 提供时间日期格式化的能力。
 
@@ -3963,11 +4036,9 @@ PhonePC/2in1TabletTVWearable
 
 ### format18+
 
-PhonePC/2in1TabletTVWearable
-
 format(date: Date): string
 
-对时间、日期进行格式化。
+对时间日期进行格式化。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -3977,42 +4048,359 @@ format(date: Date): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | Date | 是 | 时间、日期。说明：月份从0开始计数，例如0表示一月。 |
+| date | Date | 是 | 时间日期。  **说明：**  月份从0开始计数，0表示一月。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| string | 格式化后的时间、日期字符串。 |
+| string | 格式化后的时间日期字符串。 |
 
 **示例：**
 
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
+
+try {
+  let locale : Intl.Locale = new Intl.Locale("zh-Hans-CN");
+  let date : Date = new Date(2024, 11, 13); // 时间日期为2024.12.13
+
+  let formatterWithText: i18n.SimpleDateTimeFormat =
+    i18n.getSimpleDateTimeFormatByPattern("'month('M')'", locale);
+  let formattedDate: string = formatterWithText.format(date); // formattedDate = 'month(12)'
+
+  let patternFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern('yMd', locale);
+  formattedDate = patternFormatter.format(date); // formattedDate = '20241213'
+
+  let skeletonFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMd', locale);
+  formattedDate = skeletonFormatter.format(date); // formattedDate = '2024/12/13'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call SimpleDateTimeFormat.format failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let locale : Intl.Locale = new Intl.Locale("zh-Hans-CN");
-6. let date : Date = new Date(2024, 11, 13); // 时间日期为2024.12.13
+## SymbolDateTimeFormat
 
-8. let formatterWithText: i18n.SimpleDateTimeFormat =
-9. i18n.getSimpleDateTimeFormatByPattern("'month('M')'", locale);
-10. let formattedDate: string = formatterWithText.format(date); // formattedDate = 'month(12)'
+提供自定义时间日期符号的能力。继承自[Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)，支持[Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)的方法。
 
-12. let patternFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern('yMd', locale);
-13. formattedDate = patternFormatter.format(date); // formattedDate = '20241213'
+### constructor
 
-15. let skeletonFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMd', locale);
-16. formattedDate = skeletonFormatter.format(date); // formattedDate = '2024/12/13'
-17. } catch (error) {
-18. let err: BusinessError = error as BusinessError;
-19. console.error(`call SimpleDateTimeFormat.format failed, error code: ${err.code}, message: ${err.message}.`);
-20. }
+constructor(locale?: Intl.Locale, options?: SymbolDateTimeFormatOptions)
+
+创建使用自定义符号的时间日期格式化对象。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| locale | [Intl.Locale](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) | 否 | 区域对象。默认值：系统区域对象。 |
+| options | [SymbolDateTimeFormatOptions](js-apis-i18n.md#symboldatetimeformatoptions) | 否 | 自定义符号时间日期格式化的配置项。默认值：区域对象默认的符号。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ohos.i18n错误码](errorcode-i18n.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8900001 | Invalid parameter. Possible causes: Parameter verification failed. |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolDateTimeFormat(locale, {
+  timeStyle: 'short',
+  amPMSymbol: ['早', '晚']
+});
 ```
+
+### format
+
+format(date?: Date | number): string
+
+对时间日期进行格式化，返回使用自定义符号的时间日期字符串。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| date | Date | number | 否 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。  默认值：系统时间。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 使用自定义符号的时间日期字符串。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolDateTimeFormat(locale, {
+  timeStyle: 'short',
+  amPMSymbol: ['早', '晚']
+});
+let result = formatter.format(new Date(2026, 3, 26, 14, 20, 0)); // result = '晚2:20'
+```
+
+### formatToParts
+
+formatToParts(date?: Date | number): Intl.DateTimeFormatPart[]
+
+对时间日期进行格式化，返回使用自定义符号的时间日期元素数组。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| date | Date | number | 否 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。  默认值：系统时间。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Intl.DateTimeFormatPart[] | 使用自定义符号的时间日期元素数组。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolDateTimeFormat(locale, {
+  timeStyle: 'short',
+  amPMSymbol: ['早', '晚']
+});
+let parts = formatter.formatToParts(new Date(2026, 3, 26, 14, 20, 0)); // parts[0].type = 'dayPeriod'
+```
+
+### formatRange
+
+formatRange(startDate: Date | number | bigint, endDate: Date | number | bigint): string
+
+对时间日期范围进行格式化。自定义符号在该接口上暂不生效。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startDate | Date | number | bigint | 是 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。 |
+| endDate | Date | number | bigint | 是 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 格式化后的时间日期范围字符串。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolDateTimeFormat(locale, {
+  timeStyle: 'short',
+  amPMSymbol: ['早', '晚']
+});
+let startDate = new Date(2026, 3, 27, 14, 20, 0);
+let endDate = new Date(2026, 3, 27, 18, 20, 0);
+let result = formatter.formatRange(startDate, endDate); // result = '下午2:20至6:20'
+```
+
+### formatRangeToParts
+
+formatRangeToParts(startDate: Date | number | bigint, endDate: Date | number | bigint): Intl.DateTimeRangeFormatPart[]
+
+把时间日期范围格式化成时间日期元素数组。自定义符号在该接口上暂不生效。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startDate | Date | number | bigint | 是 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。 |
+| endDate | Date | number | bigint | 是 | 时间日期对象或时间日期对应的毫秒值。时间日期对象中月份从0开始计数，0表示一月。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Intl.DateTimeRangeFormatPart[] | 时间日期范围元素数组。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolDateTimeFormat(locale, {
+  timeStyle: 'short',
+  amPMSymbol: ['早', '晚']
+});
+let startDate = new Date(2026, 3, 27, 14, 20, 0);
+let endDate = new Date(2026, 3, 27, 18, 20, 0);
+let parts = formatter.formatRangeToParts(startDate, endDate); // parts[0].type = 'dayPeriod'
+```
+
+### parse
+
+parse(text: string, lenientMode: boolean): number
+
+解析本地化时间日期字符串，返回对应的时间戳。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 待解析的本地化时间日期字符串。 |
+| lenientMode | boolean | 是 | 是否采用宽松模式，true表示采用宽松模式，false表示不采用宽松模式。  宽松模式下，能够处理不符合常规逻辑的时间日期值，如"5月32日"会自动转换成"6月1日"进行解析。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 时间日期字符串解析后对应的时间戳，单位为毫秒（ms）。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ohos.i18n错误码](errorcode-i18n.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8900001 | Invalid parameter. Possible causes: Parameter verification failed. |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolDateTimeFormat(locale, {
+  dateStyle: 'full'
+});
+let result = formatter.parse('2026年5月10日星期日', false); // result = 1778342400000
+```
+
+### resolvedOptions
+
+resolvedOptions(): ResolvedSymbolDateTimeFormatOptions
+
+解析自定义时间日期符号的配置项。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ResolvedSymbolDateTimeFormatOptions](js-apis-i18n.md#resolvedsymboldatetimeformatoptions) | 自定义符号时间日期格式化对象配置项的解析结果。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolDateTimeFormat(locale, {
+  timeStyle: 'short',
+  amPMSymbol: ['早', '晚']
+});
+let options = formatter.resolvedOptions(); // options.timeStyle = 'short', options.amPMSymbol = ['早', '晚']
+```
+
+### SymbolDateTimeFormatOptions
+
+创建自定义符号时间日期格式化对象时的可选配置项。继承自Intl.DateTimeFormatOptions，支持Intl.DateTimeFormatOptions的所有配置项，并且功能与其一致。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| amPMSymbol | string[] | undefined | 否 | 是 | 指定的上午和下午符号，要求数组长度不小于2，其中第一个元素为上午符号，第二个元素为下午符号。默认值：区域默认的符号。 |
+
+### ResolvedSymbolDateTimeFormatOptions
+
+自定义符号时间日期格式化对象配置项的解析结果。继承自Intl.ResolvedDateTimeFormatOptions，支持Intl.ResolvedDateTimeFormatOptions的所有配置项，并且功能与其一致。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| amPMSymbol | string[] | 否 | 是 | 指定的上午和下午符号，其中第一个元素为上午符号，第二个元素为下午符号。默认值：区域默认的符号。 |
 
 ## StyledDateTimeFormat23+
-
-PhonePC/2in1TabletTVWearable
 
 提供富文本时间日期格式化的能力。
 
@@ -4021,8 +4409,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### constructor23+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(dateTimeFormat: Intl.DateTimeFormat | SimpleDateTimeFormat, options?: StyledDateTimeFormatOptions)
 
@@ -4041,48 +4427,46 @@ constructor(dateTimeFormat: Intl.DateTimeFormat | SimpleDateTimeFormat, options?
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let yearTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
-6. let monthTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
-7. let dayTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
+try {
+  let yearTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
+  let monthTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
+  let dayTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
 
-9. // 通过Intl.DateTimeFormat创建StyledDateTimeFormat对象
-10. let dateFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-Hans-CN', { dateStyle: 'full' });
-11. let styledDateFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(dateFormat, {
-12. year: yearTextStyle,
-13. month: monthTextStyle,
-14. day: dayTextStyle
-15. });
+  // 通过Intl.DateTimeFormat创建StyledDateTimeFormat对象
+  let dateFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-Hans-CN', { dateStyle: 'full' });
+  let styledDateFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(dateFormat, {
+    year: yearTextStyle,
+    month: monthTextStyle,
+    day: dayTextStyle
+  });
 
-17. let hourTextStyle: TextStyle = new TextStyle({ fontColor: Color.Yellow });
-18. let minuteTextStyle: TextStyle = new TextStyle({ fontColor: Color.Orange });
-19. let secondTextStyle: TextStyle = new TextStyle({ fontColor: Color.Pink });
+  let hourTextStyle: TextStyle = new TextStyle({ fontColor: Color.Yellow });
+  let minuteTextStyle: TextStyle = new TextStyle({ fontColor: Color.Orange });
+  let secondTextStyle: TextStyle = new TextStyle({ fontColor: Color.Pink });
 
-21. // 通过SimpleDateTimeFormat创建StyledDateTimeFormat对象
-22. let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
-23. let simpleTimeFormat: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('hhmmss', locale);
-24. let styledTimeFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(simpleTimeFormat, {
-25. hour: hourTextStyle,
-26. minute: minuteTextStyle,
-27. second: secondTextStyle
-28. });
-29. } catch (error) {
-30. let err: BusinessError = error as BusinessError;
-31. console.error(`call i18n.StyledDateTimeFormat failed, error code: ${err.code}, message: ${err.message}.`);
-32. }
+  // 通过SimpleDateTimeFormat创建StyledDateTimeFormat对象
+  let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+  let simpleTimeFormat: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('hhmmss', locale);
+  let styledTimeFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(simpleTimeFormat, {
+    hour: hourTextStyle,
+    minute: minuteTextStyle,
+    second: secondTextStyle
+  });
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call i18n.StyledDateTimeFormat failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### format23+
 
-PhonePC/2in1TabletTVWearable
-
 format(date: Date): StyledString
 
-使对时间日期进行格式化，返回富文本对象。
+对时间日期进行格式化，返回富文本对象。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
@@ -4092,7 +4476,7 @@ format(date: Date): StyledString
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| date | Date | 是 | 需要格式化的时间日期。 |
+| date | Date | 是 | 时间日期。  **说明：**  月份从0开始计数，0表示一月。 |
 
 **返回值：**
 
@@ -4102,34 +4486,32 @@ format(date: Date): StyledString
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let yearTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
-6. let monthTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
-7. let dayTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
+try {
+  let yearTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
+  let monthTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
+  let dayTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
 
-9. // 通过Intl.DateTimeFormat创建StyledDateTimeFormat对象
-10. let dateFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-Hans-CN', { dateStyle: 'full' });
-11. let styledDateFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(dateFormat, {
-12. year: yearTextStyle,
-13. month: monthTextStyle,
-14. day: dayTextStyle
-15. });
-16. let date: Date = new Date(2025, 11, 1);
-17. // formattedDate.getString() 为 '2025年12月1日星期一'。显示formattedDate时'2025'是红色，'12'是绿色，'1'是蓝色
-18. let formattedDate: StyledString = styledDateFormat.format(date);
-19. } catch (error) {
-20. let err: BusinessError = error as BusinessError;
-21. console.error(`call StyledNumberFormat.format failed, error code: ${err.code}, message: ${err.message}.`);
-22. }
+  // 通过Intl.DateTimeFormat创建StyledDateTimeFormat对象
+  let dateFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-Hans-CN', { dateStyle: 'full' });
+  let styledDateFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(dateFormat, {
+    year: yearTextStyle,
+    month: monthTextStyle,
+    day: dayTextStyle
+  });
+  let date: Date = new Date(2025, 11, 1);
+  // formattedDate.getString() 为 '2025年12月1日星期一'。显示formattedDate时'2025'是红色，'12'是绿色，'1'是蓝色
+  let formattedDate: StyledString = styledDateFormat.format(date);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call StyledNumberFormat.format failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## StyledDateTimeFormatOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 创建富文本显示的时间日期格式化对象时的可选配置项。
 
@@ -4150,9 +4532,98 @@ PhonePC/2in1TabletTVWearable
 | era | [TextStyle](ts-universal-styled-string.md#textstyle) | 否 | 是 | 指定纪元的文本样式。默认值：StyledString默认的文本样式。 |
 | timeZoneName | [TextStyle](ts-universal-styled-string.md#textstyle) | 否 | 是 | 指定时区名称的文本样式。默认值：StyledString默认的文本样式。 |
 
-## i18n.getSimpleNumberFormatBySkeleton20+
+## ISO8601DateTimeFormat
 
-PhonePC/2in1TabletTVWearable
+符合ISO 8601标准的日期格式化对象。
+
+### constructor
+
+constructor(options?: ISO8601DateTimeFormatOptions)
+
+创建符合ISO 8601标准的日期格式化对象。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| options | [ISO8601DateTimeFormatOptions](js-apis-i18n.md#iso8601datetimeformatoptions) | 否 | 符合ISO 8601标准的日期格式化对象创建时的配置项。默认值：所有属性都取默认值时的配置项。 |
+
+**示例：**
+
+```ts
+let formatter = new i18n.ISO8601DateTimeFormat({
+  dateFormat: 'calendar',
+  timePrecision: 'minutes',
+  separatorStyle: 'extended'
+});
+```
+
+### format
+
+format(date: Date): string
+
+对时间日期进行格式化，返回符合ISO 8601标准的时间日期字符串。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| date | Date | 是 | 时间日期。  **说明：**  月份从0开始计数，0表示一月。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 符合ISO8601标准的时间日期字符串。 |
+
+**示例：**
+
+```ts
+let formatter = new i18n.ISO8601DateTimeFormat({
+  dateFormat: 'calendar',
+  timePrecision: 'minutes',
+  separatorStyle: 'extended'
+});
+let result = formatter.format(new Date(2026, 2, 15, 12, 0, 0));
+```
+
+## ISO8601DateTimeFormatOptions
+
+符合ISO 8601标准的日期格式化对象创建时的配置项。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| dateFormat | 'calendar' | 'ordinal' | 'week' | 否 | 是 | 日期格式。取值包括：  **calendar**：日期模式为**YYYY-MM-DD**。  **ordinal**：日期模式为**YYYY-DDD**。  **week**：日期模式为**YYYY-Www-D**。  默认值：**calendar**。模式中字符含义参考[日期字段符号表](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)。 |
+| timePrecision | 'dateOnly' | 'hours' | 'minutes' | 'seconds' | 'milliSeconds' | 否 | 是 | 时间精度。取值包括：  **dateOnly**：只显示日期。  **hours**：显示小时。  **minutes**：显示时分。  **seconds**：显示时分秒。  **milliSeconds**：显示时分秒毫秒。  默认值：**seconds**。 |
+| separatorStyle | 'extended' | 'basic' | 否 | 是 | 分隔符风格。取值包括：  **extended**：显示日期和时间分隔符。  **basic**：不显示日期和时间分隔符。  默认值：**extended**。 |
+| timeZone | [TimeZone](js-apis-i18n.md#timezone) | 否 | 是 | 时区。默认值：**UTC**。 |
+| displayTimeZone | boolean | 否 | 是 | 是否显示时区，true表示显示时区，false表示不显示时区。默认值：true。 |
+
+## i18n.getSimpleNumberFormatBySkeleton20+
 
 getSimpleNumberFormatBySkeleton(skeleton: string, locale?: Intl.Locale): SimpleNumberFormat
 
@@ -4185,22 +4656,20 @@ getSimpleNumberFormatBySkeleton(skeleton: string, locale?: Intl.Locale): SimpleN
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
-6. let formatter: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('%', locale);
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call SimpleDateTimeFormat.getSimpleNumberFormatBySkeleton failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+  let formatter: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('%', locale);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call SimpleDateTimeFormat.getSimpleNumberFormatBySkeleton failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## i18n.getSimpleNumberFormatBySkeleton(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSimpleNumberFormatBySkeleton(skeleton: string, locale?: intl.Locale): SimpleNumberFormat
 
@@ -4235,22 +4704,20 @@ getSimpleNumberFormatBySkeleton(skeleton: string, locale?: intl.Locale): SimpleN
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n, intl } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n, intl } from '@kit.LocalizationKit';
 
-4. try {
-5. let locale: intl.Locale = new intl.Locale('zh-Hans-CN');
-6. let formatter: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('%', locale);
-7. } catch (error) {
-8. let err: BusinessError = error as BusinessError;
-9. console.error(`call SimpleDateTimeFormat.getSimpleNumberFormatBySkeleton failed, error code: ${err.code}, message: ${err.message}.`);
-10. }
+try {
+  let locale: intl.Locale = new intl.Locale('zh-Hans-CN');
+  let formatter: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('%', locale);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call SimpleDateTimeFormat.getSimpleNumberFormatBySkeleton failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## SimpleNumberFormat18+
-
-PhonePC/2in1TabletTVWearable
 
 基于框架字符串提供数字格式化的能力。
 
@@ -4259,8 +4726,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### format18+
-
-PhonePC/2in1TabletTVWearable
 
 format(value: number): string
 
@@ -4284,23 +4749,342 @@ format(value: number): string
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
-6. let formatter: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('%', locale);
-7. let formattedNumber: string = formatter.format(10); // formattedNumber = '10%'
-8. } catch (error) {
-9. let err: BusinessError = error as BusinessError;
-10. console.error(`call SimpleNumberFormat.format failed, error code: ${err.code}, message: ${err.message}.`);
-11. }
+try {
+  let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+  let formatter: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('%', locale);
+  let formattedNumber: string = formatter.format(10); // formattedNumber = '10%'
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call SimpleNumberFormat.format failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
+
+## SymbolNumberFormat
+
+提供自定义数字符号的能力。继承自[Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)，支持[Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)的方法。
+
+### constructor
+
+constructor(locale?: Intl.Locale, options?: SymbolNumberFormatOptions)
+
+创建使用自定义符号的数字格式化对象。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| locale | [Intl.Locale](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) | 否 | 区域对象。默认值：系统区域对象。 |
+| options | [SymbolNumberFormatOptions](js-apis-i18n.md#symbolnumberformatoptions) | 否 | 自定义数字格式化符号的配置项。默认值：区域默认的符号。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolNumberFormat(locale, {
+  style: 'unit',
+  unit: 'day',
+  zero: '(0)'
+});
+```
+
+### format
+
+format(value: number | bigint): string
+
+对数字进行格式化，返回使用自定义符号的数字字符串。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | bigint | 是 | 待格式化的数字。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 使用自定义符号的数字字符串。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolNumberFormat(locale, {
+  style: 'unit',
+  unit: 'day',
+  zero: '(0)'
+});
+let result = formatter.format(10); // result = '1(0)天'
+```
+
+### formatToParts
+
+formatToParts(value?: number | bigint): Intl.NumberFormatPart[]
+
+对数字进行格式化，返回使用自定义符号的数字元素数组。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | number | bigint | 否 | 待格式化的数字。默认值：NaN。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Intl.NumberFormatPart[] | 使用自定义符号的数字元素数组。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolNumberFormat(locale, {
+  style: 'unit',
+  unit: 'day',
+  zero: '(0)'
+});
+let result = formatter.formatToParts(10); // result[0].type = 'integer'
+```
+
+### formatRange
+
+formatRange(startRange: number, endRange: number): string
+
+对数字范围进行格式化，返回使用自定义符号的数字范围字符串。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startRange | number | 是 | 起始数字。 |
+| endRange | number | 是 | 终止数字。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 使用自定义符号的数字范围字符串。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolNumberFormat(locale, {
+  style: 'unit',
+  unit: 'day',
+  zero: '(0)'
+});
+let result = formatter.formatRange(10, 20); // result = '1(0)-2(0)天'
+```
+
+### formatRangeToParts
+
+formatRangeToParts(startRange: number, endRange: number): Intl.NumberFormatPart[]
+
+对数字范围进行格式化，返回使用自定义符号的数字元素数组。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| startRange | number | 是 | 起始数字。 |
+| endRange | number | 是 | 终止数字。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Intl.NumberFormatPart[] | 使用自定义符号的数字元素数组。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolNumberFormat(locale, {
+  style: 'unit',
+  unit: 'day',
+  zero: '(0)'
+});
+let result = formatter.formatRangeToParts(10, 20); // result[0].type = 'integer'
+```
+
+### parse
+
+parse(text: string, lenientMode: boolean): number
+
+解析本地化数字字符串，返回对应的数字。无法正确解析使用自定义符号的本地化数字字符串。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 待解析的本地化数字字符串。 |
+| lenientMode | boolean | 是 | 是否采用宽松模式，true表示采用宽松模式，false表示不采用宽松模式。  宽松模式下，能够识别错误的千分符，如"1,23,456"可以正确解析为"123456"。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 本地化数字字符串解析后的数字。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ohos.i18n错误码](errorcode-i18n.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 8900001 | Invalid parameter. Possible causes: Parameter verification failed. |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolNumberFormat(locale);
+let result = formatter.parse('125 米', false); // result = 125
+```
+
+### resolvedOptions
+
+resolvedOptions(): ResolvedSymbolNumberFormatOptions
+
+解析自定义数字符号的配置项。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ResolvedSymbolNumberFormatOptions](js-apis-i18n.md#resolvedsymbolnumberformatoptions) | 自定义符号数字格式化对象配置项的解析结果。 |
+
+**示例：**
+
+```ts
+import { i18n } from '@kit.LocalizationKit';
+
+let locale = new Intl.Locale('zh-Hans-CN');
+let formatter = new i18n.SymbolNumberFormat(locale, {
+  style: 'unit',
+  unit: 'day',
+  zero: '(0)'
+});
+let result = formatter.resolvedOptions(); // result.style = 'unit', result.unit = 'day', result.zero = '(0)'
+```
+
+### SymbolNumberFormatOptions
+
+创建自定义符号数字格式化对象时的可选配置项。继承自Intl.NumberFormatOptions，支持Intl.NumberFormatOptions的所有配置项，并且功能与其一致。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| zero | string | undefined | 否 | 是 | 零符号。默认值：区域默认的符号。 |
+| nan | string | undefined | 否 | 是 | NaN符号。默认值：区域默认的符号。 |
+| minusSign | string | undefined | 否 | 是 | 减符号。默认值：区域默认的符号。 |
+| plusSign | string | undefined | 否 | 是 | 加符号。默认值：区域默认的符号。 |
+| infinity | string | undefined | 否 | 是 | 无穷符号。默认值：区域默认的符号。 |
+| groupingSeparator | string | undefined | 否 | 是 | 分组符号。默认值：区域默认的符号。 |
+
+### ResolvedSymbolNumberFormatOptions
+
+自定义符号数字格式化对象配置项的解析结果。继承自Intl.ResolvedNumberFormatOptions，支持Intl.ResolvedNumberFormatOptions的所有配置项，并且功能与其一致。
+
+**起始版本：** 26.0.0
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Global.I18n
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| zero | string | 否 | 是 | 零符号。默认值：区域默认的符号。 |
+| nan | string | 否 | 是 | NaN符号。默认值：区域默认的符号。 |
+| minusSign | string | 否 | 是 | 减符号。默认值：区域默认的符号。 |
+| plusSign | string | 否 | 是 | 加符号。默认值：区域默认的符号。 |
+| infinity | string | 否 | 是 | 无穷符号。默认值：区域默认的符号。 |
+| groupingSeparator | string | 否 | 是 | 分组符号。默认值：区域默认的符号。 |
 
 ## StyledNumberFormat18+
-
-PhonePC/2in1TabletTVWearable
 
 提供富文本数字格式化的能力。
 
@@ -4309,8 +5093,6 @@ PhonePC/2in1TabletTVWearable
 **系统能力：** SystemCapability.Global.I18n
 
 ### constructor(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 constructor(numberFormat: intl.NumberFormat | SimpleNumberFormat, options?: StyledNumberFormatOptions)
 
@@ -4331,43 +5113,41 @@ constructor(numberFormat: intl.NumberFormat | SimpleNumberFormat, options?: Styl
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n, intl } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n, intl } from '@kit.LocalizationKit';
 
-4. try {
-5. let integerTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
-6. let decimalTextStyle: TextStyle = new TextStyle({ fontColor: Color.Brown });
-7. let fractionTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
-8. let unitTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
+try {
+  let integerTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
+  let decimalTextStyle: TextStyle = new TextStyle({ fontColor: Color.Brown });
+  let fractionTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
+  let unitTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
 
-10. // 通过intl.NumberFormat创建StyledNumberFormat对象
-11. let numFmt: intl.NumberFormat = new intl.NumberFormat('zh', { style: 'unit', unit: 'percent' });
-12. let styledNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(numFmt, {
-13. integer: integerTextStyle,
-14. decimal: decimalTextStyle,
-15. fraction: fractionTextStyle,
-16. unit: unitTextStyle
-17. });
+  // 通过intl.NumberFormat创建StyledNumberFormat对象
+  let numFmt: intl.NumberFormat = new intl.NumberFormat('zh', { style: 'unit', unit: 'percent' });
+  let styledNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(numFmt, {
+    integer: integerTextStyle,
+    decimal: decimalTextStyle,
+    fraction: fractionTextStyle,
+    unit: unitTextStyle
+  });
 
-19. // 通过SimpleNumberFormat创建StyledNumberFormat对象
-20. let locale: intl.Locale = new intl.Locale('zh');
-21. let simpleNumFmt: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('percent', locale);
-22. let styledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
-23. integer: integerTextStyle,
-24. decimal: decimalTextStyle,
-25. fraction: fractionTextStyle,
-26. unit: unitTextStyle
-27. });
-28. } catch (error) {
-29. let err: BusinessError = error as BusinessError;
-30. console.error(`call i18n.StyledNumberFormat failed, error code: ${err.code}, message: ${err.message}.`);
-31. }
+  // 通过SimpleNumberFormat创建StyledNumberFormat对象
+  let locale: intl.Locale = new intl.Locale('zh');
+  let simpleNumFmt: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('percent', locale);
+  let styledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
+    integer: integerTextStyle,
+    decimal: decimalTextStyle,
+    fraction: fractionTextStyle,
+    unit: unitTextStyle
+  });
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call i18n.StyledNumberFormat failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### constructor20+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(numberFormat: Intl.NumberFormat | SimpleNumberFormat, options?: StyledNumberFormatOptions)
 
@@ -4386,43 +5166,41 @@ constructor(numberFormat: Intl.NumberFormat | SimpleNumberFormat, options?: Styl
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let integerTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
-6. let decimalTextStyle: TextStyle = new TextStyle({ fontColor: Color.Brown });
-7. let fractionTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
-8. let unitTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
+try {
+  let integerTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
+  let decimalTextStyle: TextStyle = new TextStyle({ fontColor: Color.Brown });
+  let fractionTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
+  let unitTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
 
-10. // 通过Intl.NumberFormat创建StyledNumberFormat对象
-11. let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh', { style: 'unit', unit: 'percent' });
-12. let styledNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(numFmt, {
-13. integer: integerTextStyle,
-14. decimal: decimalTextStyle,
-15. fraction: fractionTextStyle,
-16. unit: unitTextStyle
-17. });
+  // 通过Intl.NumberFormat创建StyledNumberFormat对象
+  let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh', { style: 'unit', unit: 'percent' });
+  let styledNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(numFmt, {
+    integer: integerTextStyle,
+    decimal: decimalTextStyle,
+    fraction: fractionTextStyle,
+    unit: unitTextStyle
+  });
 
-19. // 通过SimpleNumberFormat创建StyledNumberFormat对象
-20. let locale: Intl.Locale = new Intl.Locale('zh');
-21. let simpleNumFmt: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('percent', locale);
-22. let styledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
-23. integer: integerTextStyle,
-24. decimal: decimalTextStyle,
-25. fraction: fractionTextStyle,
-26. unit: unitTextStyle
-27. });
-28. } catch (error) {
-29. let err: BusinessError = error as BusinessError;
-30. console.error(`call i18n.StyledNumberFormat failed, error code: ${err.code}, message: ${err.message}.`);
-31. }
+  // 通过SimpleNumberFormat创建StyledNumberFormat对象
+  let locale: Intl.Locale = new Intl.Locale('zh');
+  let simpleNumFmt: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('percent', locale);
+  let styledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
+    integer: integerTextStyle,
+    decimal: decimalTextStyle,
+    fraction: fractionTextStyle,
+    unit: unitTextStyle
+  });
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call i18n.StyledNumberFormat failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ### format18+
-
-PhonePC/2in1TabletTVWearable
 
 format(value: number): StyledString
 
@@ -4446,47 +5224,45 @@ format(value: number): StyledString
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { i18n } from '@kit.LocalizationKit';
 
-4. try {
-5. let integerTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
-6. let decimalTextStyle: TextStyle = new TextStyle({ fontColor: Color.Brown });
-7. let fractionTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
-8. let unitTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
+try {
+  let integerTextStyle: TextStyle = new TextStyle({ fontColor: Color.Red });
+  let decimalTextStyle: TextStyle = new TextStyle({ fontColor: Color.Brown });
+  let fractionTextStyle: TextStyle = new TextStyle({ fontColor: Color.Blue });
+  let unitTextStyle: TextStyle = new TextStyle({ fontColor: Color.Green });
 
-10. // 通过Intl.NumberFormat创建StyledNumberFormat对象
-11. let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh', { style: 'unit', unit: 'percent' });
-12. let styledNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(numFmt, {
-13. integer: integerTextStyle,
-14. decimal: decimalTextStyle,
-15. fraction: fractionTextStyle,
-16. unit: unitTextStyle
-17. });
-18. // formattedNumber.getString() 为 '1,234.568%'。显示formattedNumber时'1,234'是红色，'.'是棕色，'568'是蓝色，'%'是绿色
-19. let formattedNumber: StyledString = styledNumFmt.format(1234.5678);
+  // 通过Intl.NumberFormat创建StyledNumberFormat对象
+  let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh', { style: 'unit', unit: 'percent' });
+  let styledNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(numFmt, {
+    integer: integerTextStyle,
+    decimal: decimalTextStyle,
+    fraction: fractionTextStyle,
+    unit: unitTextStyle
+  });
+  // formattedNumber.getString() 为 '1,234.568%'。显示formattedNumber时'1,234'是红色，'.'是棕色，'568'是蓝色，'%'是绿色
+  let formattedNumber: StyledString = styledNumFmt.format(1234.5678);
 
-21. // 通过SimpleNumberFormat创建StyledNumberFormat对象
-22. let locale: Intl.Locale = new Intl.Locale('zh');
-23. let simpleNumFmt: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('percent', locale);
-24. let styledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
-25. integer: integerTextStyle,
-26. decimal: decimalTextStyle,
-27. fraction: fractionTextStyle,
-28. unit: unitTextStyle
-29. });
-30. // formattedSimpleNumber.getString() 为 '1,234.5678%'。显示formattedSimpleNumber时'1,234'是红色，'.'是棕色，'5678'是蓝色，'%'是绿色
-31. let formattedSimpleNumber: StyledString = styledSimpleNumFmt.format(1234.5678);
-32. } catch (error) {
-33. let err: BusinessError = error as BusinessError;
-34. console.error(`call StyledNumberFormat.format failed, error code: ${err.code}, message: ${err.message}.`);
-35. }
+  // 通过SimpleNumberFormat创建StyledNumberFormat对象
+  let locale: Intl.Locale = new Intl.Locale('zh');
+  let simpleNumFmt: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('percent', locale);
+  let styledSimpleNumFmt: i18n.StyledNumberFormat = new i18n.StyledNumberFormat(simpleNumFmt, {
+    integer: integerTextStyle,
+    decimal: decimalTextStyle,
+    fraction: fractionTextStyle,
+    unit: unitTextStyle
+  });
+  // formattedSimpleNumber.getString() 为 '1,234.5678%'。显示formattedSimpleNumber时'1,234'是红色，'.'是棕色，'5678'是蓝色，'%'是绿色
+  let formattedSimpleNumber: StyledString = styledSimpleNumFmt.format(1234.5678);
+} catch (error) {
+  let err: BusinessError = error as BusinessError;
+  console.error(`call StyledNumberFormat.format failed, error code: ${err.code}, message: ${err.message}.`);
+}
 ```
 
 ## StyledNumberFormatOptions18+
-
-PhonePC/2in1TabletTVWearable
 
 创建富文本显示的数字格式化对象时的可选配置项。
 
@@ -4503,9 +5279,7 @@ PhonePC/2in1TabletTVWearable
 
 ## AdvancedMeasureFormat23+
 
-PhonePC/2in1TabletTVWearable
-
-提供数字格式化能力。
+提供数字格式化能力，支持根据单位使用场景自动转换合适的单位。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
@@ -4514,8 +5288,6 @@ PhonePC/2in1TabletTVWearable
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 ### constructor23+
-
-PhonePC/2in1TabletTVWearable
 
 constructor(numberFormat: Intl.NumberFormat, options?: AdvancedMeasureFormatOptions)
 
@@ -4536,18 +5308,16 @@ constructor(numberFormat: Intl.NumberFormat, options?: AdvancedMeasureFormatOpti
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', { style: 'unit', unit: 'fahrenheit' });
-4. let advancedMeasureFormat: i18n.AdvancedMeasureFormat = new i18n.AdvancedMeasureFormat(numFmt, {
-5. unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON
-6. });
+let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', { style: 'unit', unit: 'fahrenheit' });
+let advancedMeasureFormat: i18n.AdvancedMeasureFormat = new i18n.AdvancedMeasureFormat(numFmt, {
+  unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON
+});
 ```
 
 ### format23+
-
-PhonePC/2in1TabletTVWearable
 
 format(num: number): string
 
@@ -4573,19 +5343,17 @@ format(num: number): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', { style: 'unit', unit: 'fahrenheit' });
-4. let advancedMeasureFormat: i18n.AdvancedMeasureFormat = new i18n.AdvancedMeasureFormat(numFmt, {
-5. unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON
-6. });
-7. let result = advancedMeasureFormat.format(100); // result = '37.778°C'
+let numFmt: Intl.NumberFormat = new Intl.NumberFormat('zh-Hans-CN', { style: 'unit', unit: 'fahrenheit' });
+let advancedMeasureFormat: i18n.AdvancedMeasureFormat = new i18n.AdvancedMeasureFormat(numFmt, {
+  unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON
+});
+let result = advancedMeasureFormat.format(100); // result = '37.778°C'
 ```
 
 ## AdvancedMeasureFormatOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 创建数字格式化对象时的可选配置项。
 
@@ -4600,8 +5368,6 @@ PhonePC/2in1TabletTVWearable
 | unitUsage | [UnitUsage](js-apis-i18n.md#unitusage23) | 否 | 是 | 单位格式化使用场景的枚举。 |
 
 ## UnitUsage23+
-
-PhonePC/2in1TabletTVWearable
 
 单位格式化使用场景的枚举。
 
@@ -4639,8 +5405,6 @@ PhonePC/2in1TabletTVWearable
 
 ## i18n.getDisplayCountry(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 getDisplayCountry(country: string, locale: string, sentenceCase?: boolean): string
 
 从API version 7开始支持，从API version 9开始废弃，建议使用[System.getDisplayCountry](js-apis-i18n.md#getdisplaycountry9)替代。
@@ -4665,16 +5429,14 @@ getDisplayCountry(country: string, locale: string, sentenceCase?: boolean): stri
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let countryName: string = i18n.getDisplayCountry('zh-CN', 'en-GB', true); // countryName = 'China'
-4. countryName = i18n.getDisplayCountry('zh-CN', 'en-GB'); // countryName = 'China'
+let countryName: string = i18n.getDisplayCountry('zh-CN', 'en-GB', true); // countryName = 'China'
+countryName = i18n.getDisplayCountry('zh-CN', 'en-GB'); // countryName = 'China'
 ```
 
 ## i18n.getDisplayLanguage(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getDisplayLanguage(language: string, locale: string, sentenceCase?: boolean): string
 
@@ -4700,16 +5462,14 @@ getDisplayLanguage(language: string, locale: string, sentenceCase?: boolean): st
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let languageName: string = i18n.getDisplayLanguage('zh', 'en-GB', true); // languageName = 'Chinese'
-4. languageName = i18n.getDisplayLanguage('zh', 'en-GB'); // languageName = 'Chinese'
+let languageName: string = i18n.getDisplayLanguage('zh', 'en-GB', true); // languageName = 'Chinese'
+languageName = i18n.getDisplayLanguage('zh', 'en-GB'); // languageName = 'Chinese'
 ```
 
 ## i18n.getSystemLanguage(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSystemLanguage(): string
 
@@ -4727,15 +5487,13 @@ getSystemLanguage(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let systemLanguage: string = i18n.getSystemLanguage();
+let systemLanguage: string = i18n.getSystemLanguage();
 ```
 
 ## i18n.getSystemRegion(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getSystemRegion(): string
 
@@ -4753,19 +5511,17 @@ getSystemRegion(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let region: string = i18n.getSystemRegion();
+let region: string = i18n.getSystemRegion();
 ```
 
 ## i18n.getSystemLocale(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 getSystemLocale(): string
 
-从API version 7开始支持，从API version 9开始废弃，建议使用[System.getSystemLocale](js-apis-i18n.md#getsystemlocaledeprecated)代替。
+从API version 7开始支持，从API version 9开始废弃，建议使用[System.getSystemLocale](js-apis-i18n.md#getsystemlocaleinstance20)代替。
 
 获取系统区域ID。
 
@@ -4779,15 +5535,13 @@ getSystemLocale(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let locale: string = i18n.getSystemLocale();
+let locale: string = i18n.getSystemLocale();
 ```
 
 ## i18n.is24HourClock(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 is24HourClock(): boolean
 
@@ -4805,15 +5559,13 @@ is24HourClock(): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let is24HourClock: boolean = i18n.is24HourClock();
+let is24HourClock: boolean = i18n.is24HourClock();
 ```
 
 ## i18n.set24HourClock(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 set24HourClock(option: boolean): boolean
 
@@ -4839,16 +5591,14 @@ set24HourClock(option: boolean): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // 将系统时间设置为24小时制
-4. let success: boolean = i18n.set24HourClock(true);
+// 将系统时间设置为24小时制
+let success: boolean = i18n.set24HourClock(true);
 ```
 
 ## i18n.addPreferredLanguage(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 addPreferredLanguage(language: string, index?: number): boolean
 
@@ -4875,18 +5625,16 @@ addPreferredLanguage(language: string, index?: number): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // 将语言zh-CN添加到系统偏好语言列表中
-4. let language: string = 'zh-CN';
-5. let index: number = 0;
-6. let success: boolean = i18n.addPreferredLanguage(language, index);
+// 将语言zh-CN添加到系统偏好语言列表中
+let language: string = 'zh-CN';
+let index: number = 0;
+let success: boolean = i18n.addPreferredLanguage(language, index);
 ```
 
 ## i18n.removePreferredLanguage(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 removePreferredLanguage(index: number): boolean
 
@@ -4912,17 +5660,15 @@ removePreferredLanguage(index: number): boolean
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. // 移除系统偏好语言列表中的第一个偏好语言
-4. let index: number = 0;
-5. let success: boolean = i18n.removePreferredLanguage(index);
+// 移除系统偏好语言列表中的第一个偏好语言
+let index: number = 0;
+let success: boolean = i18n.removePreferredLanguage(index);
 ```
 
 ## i18n.getPreferredLanguageList(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getPreferredLanguageList(): Array<string>
 
@@ -4940,15 +5686,13 @@ getPreferredLanguageList(): Array<string>
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let preferredLanguageList: Array<string> = i18n.getPreferredLanguageList();
+let preferredLanguageList: Array<string> = i18n.getPreferredLanguageList();
 ```
 
 ## i18n.getFirstPreferredLanguage(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getFirstPreferredLanguage(): string
 
@@ -4966,19 +5710,15 @@ getFirstPreferredLanguage(): string
 
 **示例：**
 
-```
-1. import { i18n } from '@kit.LocalizationKit';
+```ts
+import { i18n } from '@kit.LocalizationKit';
 
-3. let firstPreferredLanguage: string = i18n.getFirstPreferredLanguage();
+let firstPreferredLanguage: string = i18n.getFirstPreferredLanguage();
 ```
 
 ## Util(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 ### unitConvert(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: string, style?: string): string
 
@@ -5006,11 +5746,7 @@ unitConvert(fromUnit: UnitInfo, toUnit: UnitInfo, value: number, locale: string,
 
 ## Character(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 ### isDigit(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isDigit(ch: string): boolean
 
@@ -5034,8 +5770,6 @@ isDigit(ch: string): boolean
 
 ### isSpaceChar(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 isSpaceChar(ch: string): boolean
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[isSpaceChar](js-apis-i18n.md#isspacechar9)替代。
@@ -5057,8 +5791,6 @@ isSpaceChar(ch: string): boolean
 | boolean | true表示输入的字符是空格符，false表示输入的字符不是空格符。 |
 
 ### isWhitespace(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isWhitespace(ch: string): boolean
 
@@ -5082,8 +5814,6 @@ isWhitespace(ch: string): boolean
 
 ### isRTL(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 isRTL(ch: string): boolean
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[isRTL](js-apis-i18n.md#isrtl9)替代。
@@ -5105,8 +5835,6 @@ isRTL(ch: string): boolean
 | boolean | true表示输入的字符是从右到左语言的字符，false表示输入的字符不是从右到左语言的字符。 |
 
 ### isIdeograph(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isIdeograph(ch: string): boolean
 
@@ -5130,8 +5858,6 @@ isIdeograph(ch: string): boolean
 
 ### isLetter(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 isLetter(ch: string): boolean
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[isLetter](js-apis-i18n.md#isletter9)替代。
@@ -5153,8 +5879,6 @@ isLetter(ch: string): boolean
 | boolean | true表示输入的字符是字母，false表示输入的字符不是字母。 |
 
 ### isLowerCase(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 isLowerCase(ch: string): boolean
 
@@ -5178,8 +5902,6 @@ isLowerCase(ch: string): boolean
 
 ### isUpperCase(deprecated)
 
-PhonePC/2in1TabletTVWearable
-
 isUpperCase(ch: string): boolean
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[isUpperCase](js-apis-i18n.md#isuppercase9)替代。
@@ -5201,8 +5923,6 @@ isUpperCase(ch: string): boolean
 | boolean | true表示输入的字符是大写字母，false表示输入的字符不是大写字母。 |
 
 ### getType(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getType(ch: string): string
 

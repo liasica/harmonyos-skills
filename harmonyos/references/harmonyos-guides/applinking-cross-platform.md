@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-cr
 title: 通过聚合链接按指定方式跳转至应用
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过聚合链接按指定方式跳转至应用
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b95a9d5
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:e7fc0958130a75083b33ef1f7abd0292d3cecb98b52fcdfcad003997e52c7716
 ---
 
 ## 场景介绍
@@ -40,13 +40,13 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
 2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
 3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“链接前缀”页签，点击“添加链接前缀”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/zkk1bV2TRU6sSsKEg1zinA/zh-cn_image_0000002558605650.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/o2MlFaJ5TIq7PT2uFHlYBg/zh-cn_image_0000002736313929.png)
 4. 在AGC提供的免费域名（例如中国站点的域名：drcn.agconnect.link）前再设置一个前缀字符串，前缀字符串仅支持小写字母和数字，且必须确保此前缀唯一。设置完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/N3Xof0r8Rky8ayUrSYFoZg/zh-cn_image_0000002589325177.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/HL_25VOGReC6TO-nObsQCg/zh-cn_image_0000002706674886.png)
 5. 等待域名地址验证通过后，页面将显示完整域名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/3xAkxIUnR3yhK427kTU-9A/zh-cn_image_0000002589245113.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/F6dezCRtS6WouzQekZagwA/zh-cn_image_0000002736433973.png)
 
 ### 添加网址允许清单
 
@@ -56,10 +56,10 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
 2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
 3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“网址允许清单”页签，点击“添加允许清单规则”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/pQJS4mqSSEeZ8wJ8F5uPmA/zh-cn_image_0000002558765308.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/b5JS32tIQQe49xFocIAHMw/zh-cn_image_0000002706834824.png)
 4. 使用正则表达式设置允许清单规则，设置完成后点击右上角的“发布”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/jR_LNksBQty3t_vXnZCFpg/zh-cn_image_0000002558605652.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/k7aG-ySwQuW3e5e2XJGZzQ/zh-cn_image_0000002736313931.png)
 
 ### 创建聚合链接
 
@@ -69,10 +69,10 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
 2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
 3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“聚合链接”页签，点击“创建聚合链接”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/rnn657wxT0GuqGMj1jPkIA/zh-cn_image_0000002589325179.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/1XiEL5iFS7aZ2MqPbmhfaA/zh-cn_image_0000002706674888.png)
 4. 设置短链接，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/izo6_KhlTBOe4T4-yopc5A/zh-cn_image_0000002589245115.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/MCDlNIFZR9C8N1wgWXTPcg/zh-cn_image_0000002736433975.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -83,7 +83,7 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
    * 深度链接地址中使用的域名需满足“网址允许清单”要求。
    * 深度链接地址不允许设置为可执行文件格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/WIlzq0sdTjO1OiuWPY76Tw/zh-cn_image_0000002558765310.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/B7Mkn6RbRzqN5z9NU4drsg/zh-cn_image_0000002706834826.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -92,7 +92,7 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
    | （可选）HarmonyOS深度链接地址(api>=12) | 如果设置了HarmonyOS深度链接地址(api>=12)，则在HarmonyOS平台优先打开此链接。 |
 6. 设置聚合链接在HarmonyOS系统的链接行为，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/t5wL0vmtSnie6ZrLsfEKXA/zh-cn_image_0000002558605654.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/icawz2_hRc6NwW5tcQAW1w/zh-cn_image_0000002736313933.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -100,7 +100,7 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
    | 未安装应用时，则重定向到 | 如果用户未安装HarmonyOS应用，可通过此选项将用户引导到“华为应用市场页面详情页”或“自定义网址”。  **说明：** 如果选择“自定义网址”，链接不允许设置为可执行文件格式。 |
 7. （可选）在“设置跟踪参数”页面，设置广告跟踪参数，可用于广告、流量跟踪。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/_knbocJDTku9xyBtNXWfHQ/zh-cn_image_0000002589325181.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ahQn9ZjxRZ2rmdBz-Y8ivA/zh-cn_image_0000002706674890.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -109,11 +109,11 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
    | 广告系列名称 | 特定的推广活动描述，如“双11推广”。 |
 8. （可选）设置社交分享标识，可用于社交软件之间的分享，设置完成后点击“下一步”。
 
-   说明
+   **说明** 
 
    设置了社交分享标识参数后，可通过[社交分享标识说明](../AppGallery-connect-Guides/agc-applinking-socialdescription-0000001055261926.md)了解设置效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/5VJ1l5efQIm9pYuPDL7KJQ/zh-cn_image_0000002589245117.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/vUYmTWO_SdyfOGJnaX6mkA/zh-cn_image_0000002736433977.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -122,7 +122,7 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
    | 描述说明 | 聚合链接在社交平台上分享时展示的说明信息。 |
 9. （可选）设置预览页，可以将用户引导至合适的目标位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/xLe2ffC1Q0aHfCm1LlH91w/zh-cn_image_0000002558765312.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/MnpgPulRRuSsHrHfZZYs4A/zh-cn_image_0000002706834828.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
@@ -132,11 +132,11 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
 
 * 点击网址中的二维码图标，或对应操作栏下方的“二维码下载”，可以下载该聚合链接的二维码图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/_iD9kaSLQ1CvwAkot3u37w/zh-cn_image_0000002558605656.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/5phDGxgOQiesoyqdBS3DDg/zh-cn_image_0000002736313935.png)
 
   点击对应操作栏下方的“链接详情”，可以查看该聚合链接的详情，包括深度链接地址、HarmonyOS应用包名、短链接地址等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/23PcVGLQTB6g7LRLM8BBdQ/zh-cn_image_0000002589325183.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Vts0ArQFRIK9ME-GF1OsCQ/zh-cn_image_0000002706674892.png)
 
 ### （可选）归档聚合链接
 
@@ -154,12 +154,12 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
 
    * 单条归档：在聚合链接列表，选择待归档聚合链接对应“操作”列下方的“归档”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/_A1S7D-OSuyP5tqm0wSvfg/zh-cn_image_0000002589245119.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/uKjxNnYBT-a3lYT4mWV-3A/zh-cn_image_0000002736433979.png)
    * 批量归档：在列表，勾选多条待归档，选择右上角“批量操作”的下拉选项中的“归档”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/__BR_-ugTfaZWVdE3upjNg/zh-cn_image_0000002558765314.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vKj4_BkeQneTY2dDAB1M_w/zh-cn_image_0000002706834830.png)
 
-   说明
+   **说明** 
 
    可以通过时间筛选，选择查看“7天内已归档”的聚合链接。还可以点击“操作”列下方的“撤销归档”，将已归档的聚合链接恢复原状。
 
@@ -172,7 +172,7 @@ content_hash: sha256:54701110c17dab8d2a25796a6b599e76dc3c778bb7eacb220294c9c87b9
 * "uris"列表中必须包含"scheme"为"https"且"host"为域名地址的元素，可选属性包含"path"、"pathStartWith"和"pathRegex"，具体请参见“[uris标签说明](app-uri-config.md#uris标签说明)”。
 * "domainVerify"设置为true，表示开启域名校验开关。
 
-说明
+**说明** 
 
 skills标签下默认包含一个skill对象，用于标识应用入口。应用跳转链接不能在该skill对象中配置，需要创建独立的skill对象。
 
@@ -180,85 +180,90 @@ skills标签下默认包含一个skill对象，用于标识应用入口。应用
 
 例如，聚合链接的域名是example.drcn.agconnect.link，则需进行如下配置。
 
-```
-1. {
-2. "module": {
-3. "abilities": [
-4. {
-5. "name": "EntryAbility",
-6. "srcEntry": "./ets/entryability/EntryAbility.ets",
-7. "icon": "$media:icon",
-8. "label": "$string:EntryAbility_label",
-9. // 请将exported配置为true；如果exported为false，仅具有权限的系统应用能够拉起该应用，否则无法拉起应用
-10. "exported": true,
-11. "startWindowIcon": "$media:icon",
-12. "startWindowBackground": "$color:start_window_background",
-13. "skills": [
-14. {
-15. "entities": [
-16. "entity.system.home"
-17. ],
-18. "actions": [
-19. "ohos.want.action.home"
-20. ]
-21. },
-22. {
-23. "entities": [
-24. // entities必须包含"entity.system.browsable"
-25. "entity.system.browsable"
-26. ],
-27. "actions": [
-28. // actions必须包含"ohos.want.action.viewData"
-29. "ohos.want.action.viewData"
-30. ],
-31. "uris": [
-32. {
-33. // scheme须配置为https
-34. "scheme": "https",
-35. // host须配置为聚合链接的域名
-36. "host": "example.drcn.agconnect.link",
-37. // path可选，表示聚合链接的短链接后缀字符串，例如example.drcn.agconnect.link/AIYx中的AIYx
-38. // 如果应用只能处理部分特定的path，则此处应该配置应用所支持的path，避免出现应用不能处理的path链接也被引流到应用中的问题
-39. "path": "AIYx"
-40. }
-41. ],
-42. // domainVerify须设置为true
-43. "domainVerify": true
-44. }
-45. // 若有其他跳转能力，如推送消息跳转、NFC跳转，可新增一个skill对象，防止与App Linking业务冲突
-46. ]
-47. }
-48. ]
-49. }
-50. }
+```typescript
+{
+  "module": {
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "icon": "$media:icon",
+        "label": "$string:EntryAbility_label",
+        // 请将exported配置为true；如果exported为false，仅具有权限的系统应用能够拉起该应用，否则无法拉起应用
+        "exported": true,
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "ohos.want.action.home"
+            ]
+          },
+          {
+            "entities": [
+              // entities必须包含"entity.system.browsable"
+              "entity.system.browsable"
+            ],
+            "actions": [
+              // actions必须包含"ohos.want.action.viewData"
+              "ohos.want.action.viewData"
+            ],
+            "uris": [
+              {
+                // scheme须配置为https
+                "scheme": "https",
+                // host须配置为聚合链接的域名
+                "host": "example.drcn.agconnect.link",
+                // path可选，表示聚合链接的短链接后缀字符串，例如example.drcn.agconnect.link/AIYx中的AIYx
+                // 如果应用只能处理部分特定的path，则此处应该配置应用所支持的path，避免出现应用不能处理的path链接也被引流到应用中的问题
+                "path": "AIYx"
+              }
+            ],
+            // domainVerify须设置为true
+           "domainVerify": true
+          }
+          // 若有其他跳转能力，如推送消息跳转、NFC跳转，可新增一个skill对象，防止与App Linking业务冲突
+        ]
+      }
+    ]
+  }
+}
 ```
 
 ### 处理拉起方应用传入的链接
 
 在HarmonyOS应用的Ability（如EntryAbility）的[onCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)或者[onNewWant()](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)生命周期回调中添加如下代码，以处理传入的链接。
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { url } from '@kit.ArkTS';
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-6. // 从want中获取传入的链接信息。
-7. // 如传入的url为：https://example.drcn.agconnect.link/AIYx，开发者可根据自己的业务需求进行后续的处理。
-8. let uri = want?.uri;
-9. if (uri) {
-10. try {
-11. let urlObject = url.URL.parseURL(want?.uri);
-12. if (urlObject.toString() === "https://example.drcn.agconnect.link/AIYx"){
-13. // ...
-14. }
-15. // ...
-16. } catch (error) {
-17. hilog.error(0x0000, 'testTag', `Failed to parse url.`);
-18. }
-19. }
-20. }
-21. }
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { url } from '@kit.ArkTS';
+// ...
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    // ...
+    // 从want中获取传入的链接信息。
+    // 如传入的url为：https://example.drcn.agconnect.link/AIYx?action=showall，开发者可根据自己的业务需求进行后续的处理。
+    let uri = want?.uri;
+    if (uri) {
+      // ...
+      try {
+        let urlObject = url.URL.parseURL(uri);
+        if (urlObject.toString() === 'https://example.drcn.agconnect.link/AIYx?action=showall'){
+          // ...
+        }
+        // ...
+      } catch (error) {
+        hilog.error(0x0000, 'testTag', 'Failed to parse url.');
+      }
+    }
+  }
+  // ...
+}
 ```
 
 若要根据链接参数启动UIAbility的指定页面组件，请参考“[启动UIAbility的指定页面](uiability-intra-device-interaction.md#启动uiability的指定页面)”。
@@ -274,51 +279,58 @@ skills标签下默认包含一个skill对象，用于标识应用入口。应用
 
 1. 在“entry/src/main/ets/common”目录下添加GlobalContext.ets文件，开发初始化和获取应用上下文的接口。
 
-   ```
-   1. import { common } from '@kit.AbilityKit';
+   ```typescript
+   import { common } from '@kit.AbilityKit';
 
-   3. export class GlobalContext {
-   4. private static context: common.UIAbilityContext;
+   export class GlobalContext {
+     private static context: common.UIAbilityContext;
 
-   6. public static initContext(context: common.UIAbilityContext): void {
-   7. GlobalContext.context = context;
-   8. }
+     public static initContext(context: common.UIAbilityContext): void {
+       GlobalContext.context = context;
+     }
 
-   10. public static getContext(): common.UIAbilityContext {
-   11. return GlobalContext.context;
-   12. }
-   13. }
+     public static getContext(): common.UIAbilityContext {
+       return GlobalContext.context;
+     }
+   }
    ```
 2. 在“entry/src/main/ets/entryability/EntryAbility.ets”文件中导入GlobalContext，在onCreate方法中使用GlobalContext.initContext(this.context)初始化全局应用上下文。
 3. 在“entry/src/main/ets/pages/Index.ets”文件中，使用[UIAbilityContext.openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口配置聚合链接。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { GlobalContext } from '../common/GlobalContext';
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { GlobalContext } from '../common/GlobalContext';
+   // ...
 
-   5. @Entry
-   6. @Component
-   7. struct Index {
-   8. build() {
-   9. Button('start link', { type: ButtonType.Capsule, stateEffect: true })
-   10. .width('87%')
-   11. .height('5%')
-   12. .margin({ bottom: '12vp' })
-   13. .onClick(() => {
-   14. let context = GlobalContext.getContext();
-   15. // 如下link请填写开发者实际跳转的url
-   16. let link: string = "https://example.drcn.agconnect.link/AIYx";
-   17. context.openLink(link, { appLinkingOnly: false })
-   18. .then(() => {
-   19. hilog.info(0x0000, 'testTag', `Succeeded in opening link.`);
-   20. })
-   21. .catch((error: BusinessError) => {
-   22. hilog.error(0x0000, 'testTag', `Failed to open link, code: ${error.code}, message: ${error.message}`);
-   23. })
-   24. })
-   25. }
-   26. }
+   @Entry
+   @Component
+   struct Index {
+     // ...
+
+     build() {
+       // ...
+         Button('start link union', { type: ButtonType.Capsule, stateEffect: true })
+           .width('100%')
+           .height(40)
+           .margin({ top: '20vp' })
+           .onClick(() => {
+             let context = GlobalContext.getContext();
+             // 如下link请填写开发者实际跳转的url
+             let link: string = 'https://example.drcn.agconnect.link/AIYx';
+             context.openLink(link, { appLinkingOnly: false })
+               .then(() => {
+                 hilog.info(0x0000, 'testTag', `Succeeded in opening link.`);
+               })
+               .catch((error: BusinessError) => {
+                 hilog.error(0x0000, 'testTag', `Failed to open link, code: ${error.code}, message: ${error.message}`);
+               })
+           })
+         // ...
+     }
+
+     // ...
+   }
    ```
 4. 安装拉起方应用，点击拉起方应用中的跳转按钮。
 

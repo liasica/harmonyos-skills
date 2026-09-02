@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-mallo
 title: MallocAdvise
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Allocator > MallocAdvise
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:25+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5d59e70ac17975bfcd8f3ccfe33260bb282853249a04f3000473e42d86d9b0a3
+content_hash: sha256:557a36ac1abdfaa1d22794ccdf7dc5873e312023af3e2f5a2b8deb9429bdb4f7
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:5d59e70ac17975bfcd8f3ccfe33260bb282853249a04f3000473e42d86d
 
 ## 函数原型
 
-```
-1. virtual MemBlock *MallocAdvise(size_t size, void *addr)
+```cpp
+virtual MemBlock *MallocAdvise(size_t size, void *addr)
 ```
 
 ## 参数说明

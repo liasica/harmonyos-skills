@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioFormat
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioFormat
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4372d5f7bc11174631f8be35a92c369b3921f430a92e5e61f88be4e416ff74ae
+scraped_at: 2026-09-02T15:02:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c3596a7bed53a6f0320d07bbbd3f175afd56d048ed5ad6b3c1b64750c0f82c9d
 ---
 
-```
-1. typedef struct {...} OH_AudioFormat
+```c
+typedef struct {...} OH_AudioFormat
 ```
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 定义音频编创的音频流信息，用于描述基本音频格式。
 
@@ -26,16 +24,12 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
 | [OH\_Audio\_SampleRate](capi-native-audio-suite-base-h.md#oh_audio_samplerate) samplingRate | 音频流采样率。 |
-| OH\_AudioChannelLayout channelLayout | 音频流声道布局，当前只支持CH\_LAYOUT\_MONO 和 CH\_LAYOUT\_STEREO。 |
-| uint32\_t channelCount | 音频流声道个数，当前只支持1声道和2声道。 |
+| [OH\_AudioChannelLayout](capi-native-audio-channel-layout-h.md#oh_audiochannellayout) channelLayout | 音频流声道布局。  在API版本26.0.0之前，仅支持CH\_LAYOUT\_MONO和CH\_LAYOUT\_STEREO。  在API版本26.0.0及以后，支持CH\_LAYOUT\_MONO、CH\_LAYOUT\_STEREO、CH\_LAYOUT\_STEREO\_DOWNMIX、CH\_LAYOUT\_2POINT1、CH\_LAYOUT\_3POINT0、CH\_LAYOUT\_SURROUND、CH\_LAYOUT\_3POINT1、CH\_LAYOUT\_4POINT0、CH\_LAYOUT\_QUAD\_SIDE、CH\_LAYOUT\_QUAD、CH\_LAYOUT\_2POINT0POINT2、CH\_LAYOUT\_4POINT1、CH\_LAYOUT\_5POINT0、CH\_LAYOUT\_5POINT0\_BACK、CH\_LAYOUT\_2POINT1POINT2、CH\_LAYOUT\_3POINT0POINT2、CH\_LAYOUT\_5POINT1、CH\_LAYOUT\_5POINT1\_BACK、CH\_LAYOUT\_6POINT0、CH\_LAYOUT\_3POINT1POINT2、CH\_LAYOUT\_6POINT0\_FRONT、CH\_LAYOUT\_HEXAGONAL、CH\_LAYOUT\_6POINT1、CH\_LAYOUT\_6POINT1\_BACK、CH\_LAYOUT\_6POINT1\_FRONT、CH\_LAYOUT\_7POINT0、CH\_LAYOUT\_7POINT0\_FRONT、CH\_LAYOUT\_7POINT1、CH\_LAYOUT\_OCTAGONAL、CH\_LAYOUT\_5POINT1POINT2、CH\_LAYOUT\_7POINT1\_WIDE、CH\_LAYOUT\_7POINT1\_WIDE\_BACK、CH\_LAYOUT\_AMB\_ORDER1\_ACN\_N3D、CH\_LAYOUT\_AMB\_ORDER1\_ACN\_SN3D、CH\_LAYOUT\_AMB\_ORDER1\_FUMA、CH\_LAYOUT\_AMB\_ORDER2\_ACN\_N3D、CH\_LAYOUT\_AMB\_ORDER2\_ACN\_SN3D、CH\_LAYOUT\_AMB\_ORDER2\_FUMA、CH\_LAYOUT\_AMB\_ORDER3\_ACN\_N3D、CH\_LAYOUT\_AMB\_ORDER3\_ACN\_SN3D、CH\_LAYOUT\_AMB\_ORDER3\_FUMA。 |
+| uint32\_t channelCount | 音频流声道数。  在API版本26.0.0之前，仅支持1声道和2声道。  在API版本26.0.0及以后，支持1至9声道及16声道。 |
 | [OH\_Audio\_EncodingType](capi-native-audio-suite-base-h.md#oh_audio_encodingtype) encodingType | 音频流编码类型。 |
 | [OH\_Audio\_SampleFormat](capi-native-audio-suite-base-h.md#oh_audio_sampleformat) sampleFormat | 音频流采样格式。 |

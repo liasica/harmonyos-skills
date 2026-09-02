@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: 运行配置错误码
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 调试错误码 > 运行配置错误码
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:46:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8d484e2bb35690056461e9403c1e8086ce4bac924e0d75b8d4ce02f6de53ce86
+scraped_at: 2026-09-02T14:50:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:81b1eede91c4d73487849d794526a5be0d93fd721df58b46bc8cabf70511962d
 ---
 
 ## 00401000 获取包名信息失败
@@ -24,7 +24,7 @@ app.json5文件的bundleName为空或者缺少bundleName配置。
 
 **处理步骤**
 
-检查下app.json5文件的bundleName是否正确。
+检查app.json5文件的bundleName是否正确。
 
 ## 00401001 attach调试获取不到product
 
@@ -78,7 +78,7 @@ Failed to start debugging. Click the Debug button again to retry.
 
 **处理步骤**
 
-重新点击Debug按钮启动调试。
+点击Debug按钮重新启动调试。
 
 ## 00401004 SysCap能力校验不通过
 
@@ -101,18 +101,18 @@ Please try to match the API version of the device and the app. The current devic
 
   以SystemCapability.Security.DeviceAuth为例：
 
-  ```
-  1. // entry/src/main/syscap.json
-  2. {
-  3. "devices": {
-  4. "general": ["phone"]  // 同module.json5中的deviceTypes
-  5. },
-  6. "production": {
-  7. "removedSysCaps": [
-  8. "SystemCapability.Security.DeviceAuth"
-  9. ]
-  10. }
-  11. }
+  ```json5
+  // entry/src/main/syscap.json
+  {
+    "devices": {
+      "general": ["phone"]  // 同module.json5中的deviceTypes
+    },
+    "production": {
+      "removedSysCaps": [
+        "SystemCapability.Security.DeviceAuth"
+      ]
+    }
+  }
   ```
 
 ## 00401005 未指定Ability
@@ -131,9 +131,9 @@ Error running entry : Ability not specified.
 
 **处理步骤**
 
-打开运行/调试配置面板，在Specified Ability下面设置Ability。
+打开运行/调试配置面板，在Specified Ability下设置Ability。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/MtDrtZmTTLCUo8hW2nuaRw/zh-cn_image_0000002530752686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/pCDYga5KRCer2V-3u7ZFGw/zh-cn_image_0000002701822542.png)
 
 ## 00401006 预览器不支持以release构建模式进行调试
 
@@ -187,7 +187,7 @@ No module found. Make sure the project sync is completed successfully and the mo
 
 **处理步骤**
 
-重新同步下工程并确保同步成功。
+重新同步工程并确保同步成功。
 
 ## 00401009 运行获取不到target
 
@@ -261,7 +261,7 @@ Debugging with Previewer does not support the ExtensionAbility type.
 
 请在运行/调试配置面板中的“启动选项”下指定一个Ability（default或指定一个非ExtensionAbility），然后重试。
 
-## 00401013 预览不支持此应用
+## 00401013 预览器调试不支持此应用
 
 **错误信息**
 
@@ -269,7 +269,7 @@ Previewer does not support this app.
 
 **错误描述**
 
-预览不支持此应用。
+预览器调试不支持此应用。
 
 **可能原因**
 
@@ -278,8 +278,8 @@ Previewer does not support this app.
 
 **处理步骤**
 
-1. 使用预览器运行API 10及以上Stage工程。
-2. 重新选择其他设备/仿真器运行。
+1. 使用预览器运行调试API 10及以上Stage工程。
+2. 重新选择其他设备/仿真器运行调试。
 
 ## 00401014 仿真器不支持此应用
 
@@ -334,7 +334,7 @@ Some exceptions occurred in this operation, please re-run.
 
 **处理步骤**
 
-拔插下设备再重新运行。
+重新连接设备再运行。
 
 ## 00401017 安装Hap包失败
 
@@ -395,9 +395,9 @@ compatibleSdkVersion and releaseType of the app do not match the apiVersion and 
 
 方法一：请升级设备系统版本以匹配当前工程版本。在系统设置界面升级设备系统。
 
-方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/qOmJqK1MRdinFrMXNhD03A/zh-cn_image_0000002561752623.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
+方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/qHU6iFN1RbWF3q_GwlQuLg/zh-cn_image_0000002701662622.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/5enyf9GjRROh03u5XnJxzw/zh-cn_image_0000002561752625.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/Td0k9oxNT66pIT0AzfAXBQ/zh-cn_image_0000002701662624.png)
 
 ## 00401020 没有可用的端口号
 
@@ -457,7 +457,7 @@ The local package does not exist.
 1. 点击菜单栏**Build > Clean Project**清理缓存，再重新运行。
 2. 检查运行配置是否取消了构建任务，如果取消就重新添加构建任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/lJcffSD_TUGVLTMnBIaAkA/zh-cn_image_0000002530752688.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/bWigSIlTTqKvWLyKk9da4w/zh-cn_image_0000002731381847.png)
 3. 点击菜单栏**File > Sync and Refresh Project**重新同步工程，等待同步成功后再运行。
 
 ## 00401023 hap包中config.json或module.json文件不存在
@@ -494,7 +494,7 @@ HAP文件数量不要超过1,000,000。
 
 **处理步骤**
 
-排查并精简下工程资源文件再重新打包。
+排查并精简工程资源文件再重新打包。
 
 ## 00401025 hap包中config.json或module.json文件内容为空
 
@@ -550,7 +550,7 @@ The current device cannot be empty.
 
 **处理步骤**
 
-重新拔插下设备再启动调试。
+重新连接设备再启动调试。
 
 ## 00401028 FA模型工程不支持DebugLine
 
@@ -676,7 +676,7 @@ Main module is null.
 
 **处理步骤**
 
-点击菜单栏**File > Sync and Refresh Project**重新同步下工程，确保工程同步成功再运行工程。
+点击菜单栏**File > Sync and Refresh Project**重新同步工程，确保工程同步成功后再运行工程。
 
 ## 00401035 当前设备不支持线程检测
 

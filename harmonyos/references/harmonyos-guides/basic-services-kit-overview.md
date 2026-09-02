@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-service
 title: Basic Services Kit简介
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > Basic Services Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:14+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:a6d4450577e896b58654ce64181c43ddb55b982a70597b372fdfdd783c955873
+scraped_at: 2026-09-02T14:50:07+08:00
+doc_updated_at: 2026-04-30
+content_hash: sha256:71c4921c16946f720cd847b70bcd03d2c84a6a8cae716f67ebf60892324e314c
 ---
 
 Basic Services Kit（基础服务）作为基础服务套件，为应用开发者提供常用的基础能力。比如常用的剪贴板读写、文件上传下载、文件压缩、文件打印、进程间/线程间通信、设备管理、应用账号管理等能力都由本Kit提供。
@@ -39,6 +39,7 @@ Basic Services Kit为开发者提供了多种基础能力，满足开发者不�
   + [压缩](../harmonyos-references/js-apis-zlib.md)：提供文件压缩解压缩的能力。
   + [打印](../harmonyos-references/js-apis-print.md)：提供基础文件打印的能力，比如传入文件进行打印、设置打印参数等。
   + [上传下载](../harmonyos-references/js-apis-request.md)：提供文件上传下载、后台传输代理的基础能力。
+  + [划词服务](../harmonyos-references/js-apis-selectioninput-selectionmanager.md)：提供划词信息监听、划词窗口管理能力。
 * 进程间/线程间通信：
 
   + [公共事件](../harmonyos-references/js-apis-commoneventmanager.md)：提供进程间通信的能力，包括订阅、发布、退订公共事件等，相关开发指南请参考[公共事件简介](common-event-overview.md)。

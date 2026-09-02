@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-wearengine-b031
 title: Wear Engine
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > Wear Engine
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > API变更清单 > HarmonyOS NEXT Developer Beta2引入的API > Wear Engine
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:47+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:45+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:f671d43be7c1686984cae50be2bc8cc05bae15441c8a10339d9abac7465da2f6
 ---
 

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: neural_network_runtime.h
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 头文件 > neural_network_runtime.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:09+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8b970ad85aba1ef84c7f8908281699fb76254c96ff954e048f58953b6030fb7e
+scraped_at: 2026-09-02T15:03:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6f8c9b322825c8c2d675e27bb83d9c822aca720c0a186382cc009baa6c3aa7d1
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 Neural Network Runtime模块接口定义，AI推理框架使用Neural Network Runtime提供的Native接口，完成模型构建。
 
@@ -28,11 +26,7 @@ Neural Network Runtime的接口目前均不支持多线程并发调用。
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -64,21 +58,17 @@ PhonePC/2in1TabletTV
 
 ## 函数说明
 
-PhonePC/2in1TabletTV
-
 ### OH\_NNQuantParam\_Create()
 
-PhonePC/2in1TabletTV
-
-```
-1. NN_QuantParam *OH_NNQuantParam_Create()
+```c
+NN_QuantParam *OH_NNQuantParam_Create()
 ```
 
 **描述**
 
 创建一个[NN\_QuantParam](capi-neuralnetworkruntime-nn-quantparam.md)量化参数实例。
 
-创建[NN\_QuantParam](capi-neuralnetworkruntime-nn-quantparam.md)量化参数实例后，调用[OH\_NNQuantParam\_SetScales](capi-neural-network-runtime-h.md#oh_nnquantparam_setscales)、[OH\_NNQuantParam\_SetZeroPoints](capi-neural-network-runtime-h.md#oh_nnquantparam_setzeropoints)或[OH\_NNQuantParam\_SetNumBits](capi-neural-network-runtime-h.md#oh_nnquantparam_setnumbits)设置它的属性值，并调用[OH\_NNModel\_SetTensorQuantParams](capi-neural-network-runtime-h.md#oh_nnmodel_settensorquantparams)将它设置到[NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)中。最后再调用[OH\_NNQuantParam\_Destroy](capi-neural-network-runtime-h.md#oh_nnquantparam_destroy)销毁它，以避免内存泄露。
+创建[NN\_QuantParam](capi-neuralnetworkruntime-nn-quantparam.md)量化参数实例后，调用[OH\_NNQuantParam\_SetScales](capi-neural-network-runtime-h.md#oh_nnquantparam_setscales)、[OH\_NNQuantParam\_SetZeroPoints](capi-neural-network-runtime-h.md#oh_nnquantparam_setzeropoints)或[OH\_NNQuantParam\_SetNumBits](capi-neural-network-runtime-h.md#oh_nnquantparam_setnumbits)设置它的属性值，并调用[OH\_NNModel\_SetTensorQuantParams](capi-neural-network-runtime-h.md#oh_nnmodel_settensorquantparams)将它设置到[NN\_Tensor](capi-neuralnetworkruntime-nn-tensor.md)中。最后再调用[OH\_NNQuantParam\_Destroy](capi-neural-network-runtime-h.md#oh_nnquantparam_destroy)销毁它，以避免内存泄漏。
 
 **起始版本：** 11
 
@@ -90,10 +80,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNQuantParam\_SetScales()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNQuantParam_SetScales(NN_QuantParam *quantParams, const double *scales, size_t quantCount)
+```c
+OH_NN_ReturnCode OH_NNQuantParam_SetScales(NN_QuantParam *quantParams, const double *scales, size_t quantCount)
 ```
 
 **描述**
@@ -120,10 +108,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNQuantParam\_SetZeroPoints()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNQuantParam_SetZeroPoints(NN_QuantParam *quantParams, const int32_t *zeroPoints, size_t quantCount)
+```c
+OH_NN_ReturnCode OH_NNQuantParam_SetZeroPoints(NN_QuantParam *quantParams, const int32_t *zeroPoints, size_t quantCount)
 ```
 
 **描述**
@@ -150,10 +136,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNQuantParam\_SetNumBits()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNQuantParam_SetNumBits(NN_QuantParam *quantParams, const uint32_t *numBits, size_t quantCount)
+```c
+OH_NN_ReturnCode OH_NNQuantParam_SetNumBits(NN_QuantParam *quantParams, const uint32_t *numBits, size_t quantCount)
 ```
 
 **描述**
@@ -180,10 +164,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNQuantParam\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNQuantParam_Destroy(NN_QuantParam **quantParams)
+```c
+OH_NN_ReturnCode OH_NNQuantParam_Destroy(NN_QuantParam **quantParams)
 ```
 
 **描述**
@@ -210,10 +192,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_Construct()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NNModel *OH_NNModel_Construct(void)
+```c
+OH_NNModel *OH_NNModel_Construct(void)
 ```
 
 **描述**
@@ -234,10 +214,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_AddTensorToModel()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_AddTensorToModel(OH_NNModel *model, const NN_TensorDesc *tensorDesc)
+```c
+OH_NN_ReturnCode OH_NNModel_AddTensorToModel(OH_NNModel *model, const NN_TensorDesc *tensorDesc)
 ```
 
 **描述**
@@ -267,10 +245,8 @@ Neural Network Runtime支持动态形状的输入和输出张量。在添加动�
 
 ### OH\_NNModel\_SetTensorData()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_SetTensorData(OH_NNModel *model, uint32_t index, const void *dataBuffer, size_t length)
+```c
+OH_NN_ReturnCode OH_NNModel_SetTensorData(OH_NNModel *model, uint32_t index, const void *dataBuffer, size_t length)
 ```
 
 **描述**
@@ -298,10 +274,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_SetTensorQuantParams()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_SetTensorQuantParams(OH_NNModel *model, uint32_t index, NN_QuantParam *quantParam)
+```c
+OH_NN_ReturnCode OH_NNModel_SetTensorQuantParams(OH_NNModel *model, uint32_t index, NN_QuantParam *quantParam)
 ```
 
 **描述**
@@ -326,10 +300,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_SetTensorType()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_SetTensorType(OH_NNModel *model, uint32_t index, OH_NN_TensorType tensorType)
+```c
+OH_NN_ReturnCode OH_NNModel_SetTensorType(OH_NNModel *model, uint32_t index, OH_NN_TensorType tensorType)
 ```
 
 **描述**
@@ -354,10 +326,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_AddOperation()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_AddOperation(OH_NNModel *model,OH_NN_OperationType op,const OH_NN_UInt32Array *paramIndices,const OH_NN_UInt32Array *inputIndices,const OH_NN_UInt32Array *outputIndices)
+```c
+OH_NN_ReturnCode OH_NNModel_AddOperation(OH_NNModel *model,OH_NN_OperationType op,const OH_NN_UInt32Array *paramIndices,const OH_NN_UInt32Array *inputIndices,const OH_NN_UInt32Array *outputIndices)
 ```
 
 **描述**
@@ -396,10 +366,8 @@ paramIndices、inputIndices和outputIndices中存储的是张量的索引值，�
 
 ### OH\_NNModel\_SpecifyInputsAndOutputs()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_SpecifyInputsAndOutputs(OH_NNModel *model,const OH_NN_UInt32Array *inputIndices,const OH_NN_UInt32Array *outputIndices)
+```c
+OH_NN_ReturnCode OH_NNModel_SpecifyInputsAndOutputs(OH_NNModel *model,const OH_NN_UInt32Array *inputIndices,const OH_NN_UInt32Array *outputIndices)
 ```
 
 **描述**
@@ -428,10 +396,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_Finish()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_Finish(OH_NNModel *model)
+```c
+OH_NN_ReturnCode OH_NNModel_Finish(OH_NNModel *model)
 ```
 
 **描述**
@@ -460,10 +426,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_Destroy()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_NNModel_Destroy(OH_NNModel **model)
+```c
+void OH_NNModel_Destroy(OH_NNModel **model)
 ```
 
 **描述**
@@ -484,10 +448,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_GetAvailableOperations()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_GetAvailableOperations(OH_NNModel *model,size_t deviceID,const bool **isSupported,uint32_t *opCount)
+```c
+OH_NN_ReturnCode OH_NNModel_GetAvailableOperations(OH_NNModel *model,size_t deviceID,const bool **isSupported,uint32_t *opCount)
 ```
 
 **描述**
@@ -519,10 +481,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNModel\_AddTensor()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNModel_AddTensor(OH_NNModel *model, const OH_NN_Tensor *tensor)
+```c
+OH_NN_ReturnCode OH_NNModel_AddTensor(OH_NNModel *model, const OH_NN_Tensor *tensor)
 ```
 
 **描述**
@@ -558,10 +518,8 @@ Neural Network Runtime支持动态形状输入和输出。
 
 ### OH\_NNExecutor\_SetInput()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_SetInput(OH_NNExecutor *executor,uint32_t inputIndex,const OH_NN_Tensor *tensor,const void *dataBuffer,size_t length)
+```c
+OH_NN_ReturnCode OH_NNExecutor_SetInput(OH_NNExecutor *executor,uint32_t inputIndex,const OH_NN_Tensor *tensor,const void *dataBuffer,size_t length)
 ```
 
 **描述**
@@ -603,10 +561,8 @@ inputIndex指定设置的输入，tensor用于设置输入张量的形状、数�
 
 ### OH\_NNExecutor\_SetOutput()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_SetOutput(OH_NNExecutor *executor,uint32_t outputIndex,void *dataBuffer,size_t length)
+```c
+OH_NN_ReturnCode OH_NNExecutor_SetOutput(OH_NNExecutor *executor,uint32_t outputIndex,void *dataBuffer,size_t length)
 ```
 
 **描述**
@@ -643,10 +599,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_Run()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_Run(OH_NNExecutor *executor)
+```c
+OH_NN_ReturnCode OH_NNExecutor_Run(OH_NNExecutor *executor)
 ```
 
 **描述**
@@ -673,10 +627,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_AllocateInputMemory()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_Memory *OH_NNExecutor_AllocateInputMemory(OH_NNExecutor *executor, uint32_t inputIndex, size_t length)
+```c
+OH_NN_Memory *OH_NNExecutor_AllocateInputMemory(OH_NNExecutor *executor, uint32_t inputIndex, size_t length)
 ```
 
 **描述**
@@ -709,10 +661,8 @@ Neural Network Runtime 提供主动申请硬件共享内存的方法。
 
 ### OH\_NNExecutor\_AllocateOutputMemory()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_Memory *OH_NNExecutor_AllocateOutputMemory(OH_NNExecutor *executor, uint32_t outputIndex, size_t length)
+```c
+OH_NN_Memory *OH_NNExecutor_AllocateOutputMemory(OH_NNExecutor *executor, uint32_t outputIndex, size_t length)
 ```
 
 **描述**
@@ -745,10 +695,8 @@ Neural Network Runtime 提供主动申请硬件共享内存的方法。
 
 ### OH\_NNExecutor\_DestroyInputMemory()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_NNExecutor_DestroyInputMemory(OH_NNExecutor *executor, uint32_t inputIndex, OH_NN_Memory **memory)
+```c
+void OH_NNExecutor_DestroyInputMemory(OH_NNExecutor *executor, uint32_t inputIndex, OH_NN_Memory **memory)
 ```
 
 **描述**
@@ -775,10 +723,8 @@ inputIndex和memory的对应关系需要和创建内存实例时保持一致。 
 
 ### OH\_NNExecutor\_DestroyOutputMemory()
 
-PhonePC/2in1TabletTV
-
-```
-1. void OH_NNExecutor_DestroyOutputMemory(OH_NNExecutor *executor, uint32_t outputIndex, OH_NN_Memory **memory)
+```c
+void OH_NNExecutor_DestroyOutputMemory(OH_NNExecutor *executor, uint32_t outputIndex, OH_NN_Memory **memory)
 ```
 
 **描述**
@@ -807,10 +753,8 @@ outputIndex和memory的对应关系需要和创建内存实例时保持一致。
 
 ### OH\_NNExecutor\_SetInputWithMemory()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_SetInputWithMemory(OH_NNExecutor *executor,uint32_t inputIndex,const OH_NN_Tensor *tensor,const OH_NN_Memory *memory)
+```c
+OH_NN_ReturnCode OH_NNExecutor_SetInputWithMemory(OH_NNExecutor *executor,uint32_t inputIndex,const OH_NN_Tensor *tensor,const OH_NN_Memory *memory)
 ```
 
 **描述**
@@ -846,10 +790,8 @@ PhonePC/2in1TabletTV
 
 ### OH\_NNExecutor\_SetOutputWithMemory()
 
-PhonePC/2in1TabletTV
-
-```
-1. OH_NN_ReturnCode OH_NNExecutor_SetOutputWithMemory(OH_NNExecutor *executor,uint32_t outputIndex,const OH_NN_Memory *memory)
+```c
+OH_NN_ReturnCode OH_NNExecutor_SetOutputWithMemory(OH_NNExecutor *executor,uint32_t outputIndex,const OH_NN_Memory *memory)
 ```
 
 **描述**

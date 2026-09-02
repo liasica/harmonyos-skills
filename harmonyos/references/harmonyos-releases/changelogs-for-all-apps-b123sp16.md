@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b123sp16
 title: OS平台API行为的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.2(14) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:23:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d1c2361d080f7e38044666ba152bf26ae0026b7fed18c210cfa43ef515dd5dc3
+scraped_at: 2026-09-02T14:58:51+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:3a5d0f520814e773ac368264223f8e6bf54bd6b9b84ff890171c5b9222a84ebe
 ---
 
 ## Ability
@@ -48,7 +48,7 @@ AbilityInfo.d.ts中新增必选属性orientationId。
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -73,49 +73,49 @@ AbilityInfo.d.ts中新增必选属性orientationId。
 
 变更后，接口的调用方式没有发生变化。开发者需要关注，在blob类型的列里插入长度为0的Uint8Array后，调用getRow或getValue获取到的值发生了变化。
 
-```
-1. import { relationalStore } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { UIAbility } from '@kit.AbilityKit';
-4. import { window } from '@kit.ArkUI';
+```ts
+import { relationalStore } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-6. const STORE_CONFIG: relationalStore.StoreConfig = {
-7. name: "RdbTest.db",
-8. securityLevel: relationalStore.SecurityLevel.S3
-9. };
-10. const CREATE_TABLE_TEST =
-11. "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL, age INTEGER, salary REAL, blobType BLOB)";
+const STORE_CONFIG: relationalStore.StoreConfig = {
+  name: "RdbTest.db",
+  securityLevel: relationalStore.SecurityLevel.S3
+};
+const CREATE_TABLE_TEST =
+  "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL, age INTEGER, salary REAL, blobType BLOB)";
 
-13. let store: relationalStore.RdbStore | undefined = undefined;
-14. relationalStore.getRdbStore(this.context, STORE_CONFIG, (err: BusinessError, rdbStore: relationalStore.RdbStore) => {
-15. store = rdbStore;
-16. store.executeSql(CREATE_TABLE_TEST);
-17. if (err) {
-18. console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
-19. return;
-20. }
-21. console.info('Get RdbStore successfully.');
-22. })
-23. //在ValuesBucket的blob类型插入长度为0的Uint8Array，并查询该数据。
-24. let resultSet: relationalStore.ResultSet | undefined = undefined;
-25. let predicates = new relationalStore.RdbPredicates("EMPLOYEE");
-26. if (store != undefined) {
-27. (store as relationalStore.RdbStore).query(predicates).then((result: relationalStore.ResultSet) => {
-28. resultSet = result;
-29. });
-30. }
-31. if (resultSet != undefined) {
-32. //blobType是数据类型为blob的列名
-33. const codes = (resultSet as relationalStore.ResultSet).getValue((resultSet as relationalStore.ResultSet).getColumnIndex("blobType"));
-34. }
-35. //变更前 codes为null。
-36. //变更后 codes为长度为0的Uint8Array。
+let store: relationalStore.RdbStore | undefined = undefined;
+relationalStore.getRdbStore(this.context, STORE_CONFIG, (err: BusinessError, rdbStore: relationalStore.RdbStore) => {
+  store = rdbStore;
+  store.executeSql(CREATE_TABLE_TEST);
+  if (err) {
+    console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
+    return;
+  }
+  console.info('Get RdbStore successfully.');
+})
+//在ValuesBucket的blob类型插入长度为0的Uint8Array，并查询该数据。
+let resultSet: relationalStore.ResultSet | undefined = undefined;
+let predicates = new relationalStore.RdbPredicates("EMPLOYEE");
+if (store != undefined) {
+  (store as relationalStore.RdbStore).query(predicates).then((result: relationalStore.ResultSet) => {
+    resultSet = result;
+  });
+}
+if (resultSet != undefined) {
+  //blobType是数据类型为blob的列名
+  const codes = (resultSet as relationalStore.ResultSet).getValue((resultSet as relationalStore.ResultSet).getColumnIndex("blobType"));
+}
+//变更前 codes为null。
+//变更后 codes为长度为0的Uint8Array。
 
-38. if (resultSet != undefined) {
-39. const row = (resultSet as relationalStore.ResultSet).getRow();
-40. }
-41. //变更前 row.blobType为null。
-42. //变更后 row.blobType为长度为0的Uint8Array。
+if (resultSet != undefined) {
+  const row = (resultSet as relationalStore.ResultSet).getRow();
+}
+//变更前 row.blobType为null。
+//变更后 row.blobType为长度为0的Uint8Array。
 ```
 
 ### 关系型数据管理@ohos.data.relationalStore.d.ts中getRdbStore接口新增错误码14800020，用于业务侧进行恢复重建数据库
@@ -126,7 +126,7 @@ AbilityInfo.d.ts中新增必选属性orientationId。
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -149,32 +149,32 @@ AbilityInfo.d.ts中新增必选属性orientationId。
 
 异常处理：在调用getRdbStore方法后，检查返回的错误码。如果错误码为14800020，表示数据库根密钥与工作密钥不匹配，需要进行重新建库。
 
-```
-1. import { relationalStore } from '@kit.ArkData';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { UIAbility } from '@kit.AbilityKit';
-4. import { window } from '@kit.ArkUI';
+```ts
+import { relationalStore } from '@kit.ArkData';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-6. const STORE_CONFIG: relationalStore.StoreConfig = {
-7. name: "RdbTest.db",
-8. securityLevel: relationalStore.SecurityLevel.S3,
-9. encrypt: true
-10. };
-11. const CREATE_TABLE_TEST =
-12. "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL, age INTEGER, salary REAL, blobType BLOB)";
+const STORE_CONFIG: relationalStore.StoreConfig = {
+  name: "RdbTest.db",
+  securityLevel: relationalStore.SecurityLevel.S3,
+  encrypt: true
+};
+const CREATE_TABLE_TEST =
+  "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL, age INTEGER, salary REAL, blobType BLOB)";
 
-14. let store: relationalStore.RdbStore | undefined = undefined;
-15. relationalStore.getRdbStore(this.context, STORE_CONFIG, (err: BusinessError, rdbStore: relationalStore.RdbStore) => {
-16. store = rdbStore;
-17. store.executeSql(CREATE_TABLE_TEST);
-18. if (err) {
-19. console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
-20. //业务侧需要进行数据库恢复。
-21. //err.code为14800020业务侧需要进行数据库恢复。
-22. return;
-23. }
-24. console.info('Get RdbStore successfully.');
-25. })
+let store: relationalStore.RdbStore | undefined = undefined;
+relationalStore.getRdbStore(this.context, STORE_CONFIG, (err: BusinessError, rdbStore: relationalStore.RdbStore) => {
+  store = rdbStore;
+  store.executeSql(CREATE_TABLE_TEST);
+  if (err) {
+    console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
+    //业务侧需要进行数据库恢复。
+    //err.code为14800020业务侧需要进行数据库恢复。
+    return;
+  }
+  console.info('Get RdbStore successfully.');
+})
 ```
 
 ## ArkTS
@@ -207,48 +207,48 @@ AbilityInfo.d.ts中新增必选属性orientationId。
 
 例如：
 
-```
-1. // myLog.ets
-2. export class MyLog {
-3. static log(s:string) {
-4. console.log(s);
-5. }
-6. }
+```typescript
+// myLog.ets
+export class MyLog {
+    static log(s:string) {
+        console.log(s);
+    }
+}
 
-8. // test.ets
-9. import lazy { MyLog } from './myLog'
+// test.ets
+import lazy { MyLog } from './myLog'
 
-11. async function asyncFunc(f?:string): Promise<number> {
-12. MyLog.log("asyncFunc start");
-13. return new Promise(resolve => {
-14. resolve(0);
-15. });
-16. }
-17. export async function taskTest() {
-18. MyLog.log("taskTest start");
-19. asyncFunc().then((res) => {
-20. MyLog.log("asyncFunc then");
-21. });
-22. MyLog.log("taskTest end");
-23. }
+async function asyncFunc(f?:string): Promise<number> {
+    MyLog.log("asyncFunc start");
+    return new Promise(resolve => {
+        resolve(0);
+    });
+}
+export async function taskTest() {
+    MyLog.log("taskTest start");
+    asyncFunc().then((res) => {
+        MyLog.log("asyncFunc then");
+    });
+    MyLog.log("taskTest end");
+}
 ```
 
 【提示】修改之前，lazy import会影响异步任务的运行时序，该用例的输出为：
 
-```
-1. taskTest start
-2. asyncFunc start
-3. asyncFunc then
-4. taskTest end
+```screen
+taskTest start
+asyncFunc start
+asyncFunc then
+taskTest end
 ```
 
 修复问题之后，该用例的输出为：
 
-```
-1. taskTest start
-2. asyncFunc start
-3. taskTest end
-4. asyncFunc then
+```screen
+taskTest start
+asyncFunc start
+taskTest end
+asyncFunc then
 ```
 
 本变更修复该问题，使得lazy import不会影响异步任务运行时序。
@@ -281,23 +281,23 @@ ArkTS执行幂运算时，当底数为1，指数为NaN或ToNumber之后是NaN，
 
 例如：
 
-```
-1. console.log((1 ** NaN).toString())
+```typescript
+console.log((1 ** NaN).toString())
 ```
 
 未变更前该用例输出为：
 
-```
-1. 1
+```screen
+1
 ```
 
 变更后该用例输出为:
 
-```
-1. NaN
+```screen
+NaN
 ```
 
-说明
+**说明** 
 
 对于类似 1 \*\* "test" 的用法，在ets文件中不能使用，但是可能在三方库中有使用，该行为同样会变化。
 
@@ -331,20 +331,20 @@ String.prototype.lastIndexOf
 
 例如：
 
-```
-1. console.log("abcde".lastIndexOf("").toString())
+```typescript
+console.log("abcde".lastIndexOf("").toString())
 ```
 
 未变更前该用例输出为：
 
-```
-1. -1
+```screen
+-1
 ```
 
 变更后该用例输出为:
 
-```
-1. 5
+```screen
+5
 ```
 
 本变更修复该问题，String.prototype.lastIndexOf查找空串的结果是最后一个字符的位置加1。
@@ -361,7 +361,7 @@ ImageAttributeModifier不支持new方式创建ColorFilter对象传入colorFilter
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -381,32 +381,32 @@ ImageAttributeModifier的colorFilter接口。
 
 已知bug修复，无需适配。使用ImageAttributeModifier的colorFilter接口时，已经支持new方式创建ColorFilter对象传入接口中。示例如下:
 
-```
-1. import { ImageModifier } from '@kit.ArkUI'
+```screen
+import { ImageModifier } from '@kit.ArkUI'
 
-3. class SelfImageModifier extends ImageModifier {
-4. applyNormalAttribute(instance: ImageAttribute): void {
-5. let colorFilter = new ColorFilter([0.5, 0.5, 0.5, 0, 0.1, 0.2, 0.2, 0.2, 0, 0.1, 0.1, 0.1, 0.1, 0, 0.1, 0.8, 0.8, 0.8, 0, 0.3])
-6. instance.colorFilter(colorFilter)
-7. }
-8. }
+class SelfImageModifier extends ImageModifier {
+  applyNormalAttribute(instance: ImageAttribute): void {
+    let colorFilter = new ColorFilter([0.5, 0.5, 0.5, 0, 0.1, 0.2, 0.2, 0.2, 0, 0.1, 0.1, 0.1, 0.1, 0, 0.1, 0.8, 0.8, 0.8, 0, 0.3])
+    instance.colorFilter(colorFilter)
+  }
+}
 
-10. @Entry
-11. @Component
-12. struct ColorFilters {
-13. @State modifier: ImageModifier = new SelfImageModifier()
+@Entry
+@Component
+struct ColorFilters {
+  @State modifier: ImageModifier = new SelfImageModifier()
 
-15. build() {
-16. Column() {
-17. Image($r('app.media.startIcon'))
-18. .width(100)
-19. .height(100)
-20. .attributeModifier(this.modifier)
-21. }
-22. .height('100%')
-23. .width('100%')
-24. }
-25. }
+  build() {
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(100)
+        .height(100)
+        .attributeModifier(this.modifier)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 ### 轴事件分发机制变更
@@ -445,7 +445,7 @@ ImageAttributeModifier的colorFilter接口。
 
 **变更原因**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -489,7 +489,7 @@ List组件的initialIndex接口和Scroller控制器的跳转接口（scrollToInd
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -501,31 +501,31 @@ List组件的initialIndex接口和Scroller控制器的跳转接口（scrollToInd
 | --- | --- |
 |  |  |
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. @State borderRadiusValue: number = 10;
-6. build() {
-7. Column() {
-8. Text("BorderRadiusValue = " + this.borderRadiusValue)
-9. .height(100)
-10. .width(200)
-11. .fontSize(FontWeight.Bold)
-12. Image($r("app.media.sky"))
-13. .height(300)
-14. .width(300)
-15. .borderRadius(this.borderRadiusValue)
-16. Button("增加BorderRadius")
-17. .onClick(()=>{
-18. this.borderRadiusValue += 10
-19. })
-20. }
-21. .height('100%')
-22. .width('100%')
-23. }
-24. }
+```ts
+// xxx.ets
+@Entry
+@Component
+struct Index {
+  @State borderRadiusValue: number = 10;
+  build() {
+    Column() {
+      Text("BorderRadiusValue = " + this.borderRadiusValue)
+        .height(100)
+        .width(200)
+        .fontSize(FontWeight.Bold)
+      Image($r("app.media.sky"))
+        .height(300)
+        .width(300)
+        .borderRadius(this.borderRadiusValue)
+      Button("增加BorderRadius")
+        .onClick(()=>{
+          this.borderRadiusValue += 10
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
 ```
 
 **起始API Level**
@@ -554,7 +554,7 @@ RichEditorStyledStringController构造的富文本：光标位于文本起始位
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -585,7 +585,7 @@ zIndex接口在3D变换场景与translateZ耦合，导致zIndex值的改变会�
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -611,38 +611,38 @@ zIndex接口
 
 如仍需要实现变更前近大远小的透视效果，可以使用translate接口并设置z向平移实现近大远小的透视效果，示例代码如下：
 
-```
-1. @Entry
-2. @Preview
-3. @Component
-4. struct zIndexTest {
-5. build() {
-6. Column() {
-7. Stack() {
-8. Column()
-9. .backgroundColor("rgb(213, 213, 213)")
-10. .width('600px')
-11. .height('600px')
-12. Column()
-13. .backgroundColor("rgb(0, 74, 175)")
-14. .width('600px')
-15. .height('600px')
-16. .rotate({
-17. y: 1,
-18. angle: 45
-19. })
-20. .translate({ x: 0, y: 0, z: 66 })    // 使用translate接口并设置Z向移动，实现3D变换中的近大远小透视效果
-21. }.margin({ top: 80 })
-22. }
-23. .width('100%')
-24. .height('100%')
-25. }
-26. }
+```ts
+@Entry
+@Preview
+@Component
+struct zIndexTest {
+  build() {
+    Column() {
+      Stack() {
+        Column()
+          .backgroundColor("rgb(213, 213, 213)")
+          .width('600px')
+          .height('600px')
+        Column()
+          .backgroundColor("rgb(0, 74, 175)")
+          .width('600px')
+          .height('600px')
+          .rotate({
+            y: 1,
+            angle: 45
+          })
+          .translate({ x: 0, y: 0, z: 66 })    // 使用translate接口并设置Z向移动，实现3D变换中的近大远小透视效果
+      }.margin({ top: 80 })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/EKVrQdbyStaUPKOkfzz38A/zh-cn_image_0000002300492512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/AgBSL0UKRO6z0XHdeAcWcw/zh-cn_image_0000002300492512.png)
 
 ### 屏幕Display对象rotation和orientation属性变更
 
@@ -654,7 +654,7 @@ zIndex接口
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -728,9 +728,9 @@ WindowProxy的properties属性
 
 由于NavigationMenuItem变量类型变更为 string | Resource，不再与单一变量类型string相匹配，因此将NavigationMenuItem赋值给一个string类型变量，程序会编译报错。
 
-```
-1. const myIcon: NavigationMenuItem = { value: "图标", icon: "https://example.png"}
-2. const myString: string = myIcon.value
+```screen
+const myIcon: NavigationMenuItem = { value: "图标", icon: "https://example.png"}
+const myString: string = myIcon.value
 ```
 
 **起始API Level**
@@ -743,60 +743,60 @@ Navigation的menus接口、NavDestination的title和menus接口
 
 **适配指导**
 
-```
-1. // navigation.ets
-2. // 使用resource类型资源赋值给Navigation/NavDestination的title及menu接口
-3. Navigation() {
-4. // xxx
-5. }
-6. // $r('app.string.MyTestNavigationTitle')需要替换为开发者所需的资源文件
-7. .title($r('app.string.MyTestNavigationTitle'))  // 可直接将resource类型资源传递给title接口
-8. // menus内的item设置可直接支持resource类型资源
-9. .menus([
-10. {
-11. // $r("app.string.MyTestMenuValue1")和$r("app.media.1")需要替换为开发者所需的资源文件
-12. value: $r("app.string.MyTestMenuValue1"),
-13. icon: $r("app.media.1")
-14. },
-15. {
-16. // $r("app.string.MyTestMenuValue2")和$r("app.media.2")需要替换为开发者所需的资源文件
-17. value: $r("app.string.MyTestMenuValue2"),
-18. icon: $r("app.media.2")
-19. },
-20. {
-21. // $r("app.string.MyTestMenuValue3")和$r("app.media.3")需要替换为开发者所需的资源文件
-22. value: $r("app.string.MyTestMenuValue3"),
-23. icon: $r("app.media.3")
-24. }
-25. ])
+```screen
+// navigation.ets
+// 使用resource类型资源赋值给Navigation/NavDestination的title及menu接口
+Navigation() {
+    // xxx
+}
+// $r('app.string.MyTestNavigationTitle')需要替换为开发者所需的资源文件
+.title($r('app.string.MyTestNavigationTitle'))  // 可直接将resource类型资源传递给title接口
+// menus内的item设置可直接支持resource类型资源
+.menus([
+  {
+    // $r("app.string.MyTestMenuValue1")和$r("app.media.1")需要替换为开发者所需的资源文件
+    value: $r("app.string.MyTestMenuValue1"),
+    icon: $r("app.media.1")
+  },
+  {
+    // $r("app.string.MyTestMenuValue2")和$r("app.media.2")需要替换为开发者所需的资源文件
+    value: $r("app.string.MyTestMenuValue2"),
+    icon: $r("app.media.2")
+  },
+  {
+    // $r("app.string.MyTestMenuValue3")和$r("app.media.3")需要替换为开发者所需的资源文件
+    value: $r("app.string.MyTestMenuValue3"),
+    icon: $r("app.media.3")
+  }
+])
 ```
 
-```
-1. // navDestination.ets
-2. // Navigation及NavDestination的CommonTitle类型，支持设置resource资源
-3. // 需要替换为开发者所需的资源文件
-4. @State commonTitle: NavDestinationCommonTitle = { main: $r('app.string.MyTestNavigationTitle'), sub: $r('app.string.MyTestNavigationTitle')}
-5. NavDestination() {
-6. // xxx
-7. }
-8. .menus([
-9. {
-10. // $r("app.string.MyTestMenuValue1")和$r("app.media.4")需要替换为开发者所需的资源文件
-11. value: $r("app.string.MyTestMenuValue1"),
-12. icon: $r("app.media.4")
-13. },
-14. {
-15. // $r("app.string.MyTestMenuValue2")和$r("app.media.5")需要替换为开发者所需的资源文件
-16. value: $r("app.string.MyTestMenuValue2"),
-17. icon: $r("app.media.5")
-18. },
-19. {
-20. // $r("app.string.MyTestMenuValue3")和$r("app.media.6")需要替换为开发者所需的资源文件
-21. value: $r("app.string.MyTestMenuValue3"),
-22. icon: $r("app.media.6")
-23. }
-24. ])
-25. .title(this.commonTitle)
+```screen
+// navDestination.ets
+// Navigation及NavDestination的CommonTitle类型，支持设置resource资源
+// 需要替换为开发者所需的资源文件
+@State commonTitle: NavDestinationCommonTitle = { main: $r('app.string.MyTestNavigationTitle'), sub: $r('app.string.MyTestNavigationTitle')}
+NavDestination() {
+    // xxx
+}
+.menus([
+  {
+    // $r("app.string.MyTestMenuValue1")和$r("app.media.4")需要替换为开发者所需的资源文件
+    value: $r("app.string.MyTestMenuValue1"),
+    icon: $r("app.media.4")
+  },
+  {
+    // $r("app.string.MyTestMenuValue2")和$r("app.media.5")需要替换为开发者所需的资源文件
+    value: $r("app.string.MyTestMenuValue2"),
+    icon: $r("app.media.5")
+  },
+  {
+    // $r("app.string.MyTestMenuValue3")和$r("app.media.6")需要替换为开发者所需的资源文件
+    value: $r("app.string.MyTestMenuValue3"),
+    icon: $r("app.media.6")
+  }
+])
+.title(this.commonTitle)
 ```
 
 ### 在PC/2in1设备上getWindowStatus和on('windowStatusChange')接口在窗口最大化状态返回值变更
@@ -809,7 +809,7 @@ getWindowStatus和on('windowStatusChange')接口在最大化状态返回值为Wi
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -844,86 +844,86 @@ getWindowStatus：12
 
 API version 13及之前版本区分最大化状态示例：
 
-```
-1. // EntryAbility.ets
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// EntryAbility.ets
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. // ...
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. console.info('onWindowStageCreate');
-8. try {
-9. let windowClass = windowStage.getMainWindowSync();
-10. windowClass?.on("windowStatusChange", (windowStatusType: window.WindowStatusType) => {
-11. if (windowStatusType == window.WindowStatusType.FULL_SCREEN) {
-12. // isFullScreen 为true 表示全屏，为false 表示最大化
-13. let isFullScreen: boolean = windowClass.getImmersiveModeEnabledState();
-14. } else {
-15. // ...
-16. }
-17. })
-18. } catch (exception) {
-19. console.error(`Failed to obtain the main window. Cause code: ${exception.code}, message: ${exception.message}`);
-20. }
-21. }
-22. }
+export default class EntryAbility extends UIAbility {
+  // ...
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    console.info('onWindowStageCreate');
+    try {
+      let windowClass = windowStage.getMainWindowSync();
+      windowClass?.on("windowStatusChange", (windowStatusType: window.WindowStatusType) => {
+        if (windowStatusType == window.WindowStatusType.FULL_SCREEN) {
+          // isFullScreen 为true 表示全屏，为false 表示最大化
+          let isFullScreen: boolean = windowClass.getImmersiveModeEnabledState();
+        } else {
+          // ...
+        }
+      })
+    } catch (exception) {
+      console.error(`Failed to obtain the main window. Cause code: ${exception.code}, message: ${exception.message}`);
+    }
+  }
+}
 ```
 
 API version 14版本区分最大化状态示例：
 
-```
-1. // EntryAbility.ets
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// EntryAbility.ets
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. // ...
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. console.info('onWindowStageCreate');
-8. try {
-9. let windowClass = windowStage.getMainWindowSync();
-10. windowClass?.on("windowStatusChange", (windowStatusType: window.WindowStatusType) => {
-11. // 应用对于窗口全屏和最大化状态的处理逻辑不同，新增window.WindowStatusType.MAXIMIZE的判断分支
-12. if (windowStatusType == window.WindowStatusType.FULL_SCREEN) {
-13. // ....
-14. } else if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
-15. // ...
-16. } else {
-17. // ...
-18. }
-19. })
-20. } catch (exception) {
-21. console.error(`Failed to obtain the main window. Cause code: ${exception.code}, message: ${exception.message}`);
-22. }
-23. }
-24. }
+export default class EntryAbility extends UIAbility {
+  // ...
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    console.info('onWindowStageCreate');
+    try {
+      let windowClass = windowStage.getMainWindowSync();
+      windowClass?.on("windowStatusChange", (windowStatusType: window.WindowStatusType) => {
+        // 应用对于窗口全屏和最大化状态的处理逻辑不同，新增window.WindowStatusType.MAXIMIZE的判断分支
+        if (windowStatusType == window.WindowStatusType.FULL_SCREEN) {
+          // ....
+        } else if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
+          // ...
+        } else {
+          // ...
+        }
+      })
+    } catch (exception) {
+      console.error(`Failed to obtain the main window. Cause code: ${exception.code}, message: ${exception.message}`);
+    }
+  }
+}
 ```
 
 API version 14版本不区分最大化状态示例：
 
-```
-1. // EntryAbility.ets
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// EntryAbility.ets
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. // ...
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. console.info('onWindowStageCreate');
-8. try {
-9. let windowClass = windowStage.getMainWindowSync();
-10. windowClass?.on("windowStatusChange", (windowStatusType: window.WindowStatusType) => {
-11. // 应用对于窗口全屏和最大化状态的处理逻辑相同，直接在判断时新增针对window.WindowStatusType.MAXIMIZE的或条件
-12. if (windowStatusType == window.WindowStatusType.FULL_SCREEN ||
-13. windowStatusType == window.WindowStatusType.MAXIMIZE) {
-14. // ....
-15. } else {
-16. // ...
-17. }
-18. })
-19. } catch (exception) {
-20. console.error(`Failed to obtain the main window. Cause code: ${exception.code}, message: ${exception.message}`);
-21. }
-22. }
-23. }
+export default class EntryAbility extends UIAbility {
+  // ...
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    console.info('onWindowStageCreate');
+    try {
+      let windowClass = windowStage.getMainWindowSync();
+      windowClass?.on("windowStatusChange", (windowStatusType: window.WindowStatusType) => {
+        // 应用对于窗口全屏和最大化状态的处理逻辑相同，直接在判断时新增针对window.WindowStatusType.MAXIMIZE的或条件
+        if (windowStatusType == window.WindowStatusType.FULL_SCREEN ||
+            windowStatusType == window.WindowStatusType.MAXIMIZE) {
+          // ....
+        } else {
+          // ...
+        }
+      })
+    } catch (exception) {
+      console.error(`Failed to obtain the main window. Cause code: ${exception.code}, message: ${exception.message}`);
+    }
+  }
+}
 ```
 
 ### setWindowLayoutFullScreen、setImmersiveModeEnabledState接口在PC/2in1设备的自由多窗模式上禁用
@@ -961,85 +961,85 @@ PC/2in1设备的自由多窗模式上需要调用[maximize](../harmonyos-referen
 
 示例：
 
+```ts
+// EntryAbility.ets
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends UIAbility {
+  // ...
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    console.info('onWindowStageCreate');
+    let windowClass: window.Window | undefined = undefined;
+    windowStage.getMainWindow((err: BusinessError, data) => {
+      const errCode: number = err.code;
+      if (errCode) {
+        console.error(`Failed to obtain the main window. Cause code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      windowClass = data;
+      let isLayoutFullScreen = true;
+      try {
+        let promise = windowClass.setWindowLayoutFullScreen(isLayoutFullScreen);
+        promise.then(() => {
+          console.info('Succeeded in setting the window layout to full-screen mode.');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to set the window layout to full-screen mode. Cause code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (exception) {
+        console.error(`Failed to set the window layout to full-screen mode. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
+
+      try {
+        let promise = windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+        promise.then(() => {
+          console.info('Succeeded in maximizing the window.');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (exception) {
+        console.error(`Failed to maximize the window. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
+    });
+  }
+}
 ```
-1. // EntryAbility.ets
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. // ...
-6. onWindowStageCreate(windowStage: window.WindowStage): void {
-7. console.info('onWindowStageCreate');
-8. let windowClass: window.Window | undefined = undefined;
-9. windowStage.getMainWindow((err: BusinessError, data) => {
-10. const errCode: number = err.code;
-11. if (errCode) {
-12. console.error(`Failed to obtain the main window. Cause code: ${err.code}, message: ${err.message}`);
-13. return;
-14. }
-15. windowClass = data;
-16. let isLayoutFullScreen = true;
-17. try {
-18. let promise = windowClass.setWindowLayoutFullScreen(isLayoutFullScreen);
-19. promise.then(() => {
-20. console.info('Succeeded in setting the window layout to full-screen mode.');
-21. }).catch((err: BusinessError) => {
-22. console.error(`Failed to set the window layout to full-screen mode. Cause code: ${err.code}, message: ${err.message}`);
-23. });
-24. } catch (exception) {
-25. console.error(`Failed to set the window layout to full-screen mode. Cause code: ${exception.code}, message: ${exception.message}`);
-26. }
+```ts
+// EntryAbility.ets
+import { BusinessError } from '@kit.BasicServicesKit';
 
-28. try {
-29. let promise = windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
-30. promise.then(() => {
-31. console.info('Succeeded in maximizing the window.');
-32. }).catch((err: BusinessError) => {
-33. console.error(`Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
-34. });
-35. } catch (exception) {
-36. console.error(`Failed to maximize the window. Cause code: ${exception.code}, message: ${exception.message}`);
-37. }
-38. });
-39. }
-40. }
-```
+export default class EntryAbility extends UIAbility {
+  // ...
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    console.info('onWindowStageCreate');
+    let windowClass: window.Window | undefined = undefined;
+    windowStage.getMainWindow((err: BusinessError, data) => {
+      const errCode: number = err.code;
+      if (errCode) {
+        console.error(`Failed to obtain the main window. Cause code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      windowClass = data;
+      try {
+        let enabled = true;
+        windowClass.setImmersiveModeEnabledState(enabled);
+      } catch (exception) {
+        console.error(`Failed to set the window immersive mode enabled status. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
 
-```
-1. // EntryAbility.ets
-2. import { BusinessError } from '@kit.BasicServicesKit';
-
-4. export default class EntryAbility extends UIAbility {
-5. // ...
-6. onWindowStageCreate(windowStage: window.WindowStage): void {
-7. console.info('onWindowStageCreate');
-8. let windowClass: window.Window | undefined = undefined;
-9. windowStage.getMainWindow((err: BusinessError, data) => {
-10. const errCode: number = err.code;
-11. if (errCode) {
-12. console.error(`Failed to obtain the main window. Cause code: ${err.code}, message: ${err.message}`);
-13. return;
-14. }
-15. windowClass = data;
-16. try {
-17. let enabled = true;
-18. windowClass.setImmersiveModeEnabledState(enabled);
-19. } catch (exception) {
-20. console.error(`Failed to set the window immersive mode enabled status. Cause code: ${exception.code}, message: ${exception.message}`);
-21. }
-
-23. try {
-24. let promise = windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
-25. promise.then(() => {
-26. console.info('Succeeded in maximizing the window.');
-27. }).catch((err: BusinessError) => {
-28. console.error(`Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
-29. });
-30. } catch (exception) {
-31. console.error(`Failed to maximize the window. Cause code: ${exception.code}, message: ${exception.message}`);
-32. }
-33. });
-34. }
-35. }
+      try {
+        let promise = windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+        promise.then(() => {
+          console.info('Succeeded in maximizing the window.');
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
+        });
+      } catch (exception) {
+        console.error(`Failed to maximize the window. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
+    });
+  }
+}
 ```
 
 ### setWindowBrightness在PC/2in1设备的行为变更
@@ -1099,25 +1099,25 @@ setWindowBrightness接口
 
 调用setAppAccess接口新增12400005错误码,示例如下:
 
-```
-1. import { BusinessError } from '@ohos.base';
-2. import account_appAccount from '@ohos.account.appAccount';
+```ts
+import { BusinessError } from '@ohos.base';
+import account_appAccount from '@ohos.account.appAccount';
 
-4. let appAccountManager: account_appAccount.AppAccountManager = account_appAccount.createAppAccountManager();
+let appAccountManager: account_appAccount.AppAccountManager = account_appAccount.createAppAccountManager();
 
-6. try {
-7. appAccountManager.setAppAccess('ZhangSan', 'com.example.accountjsdemo', true, (err: BusinessError) => {
-8. if (err.code === 12400005) {
-9. //处理授权应用数量超过上限异常，比如对之前已授权的应用取消授权
-10. } else if (err) {
-11. console.log('setAppAccess failed: ' + JSON.stringify(err));
-12. } else {
-13. console.log('setAppAccess successfully');
-14. }
-15. });
-16. } catch (err) {
-17. console.log('setAppAccess exception: ' + JSON.stringify(err));
-18. }
+try {
+  appAccountManager.setAppAccess('ZhangSan', 'com.example.accountjsdemo', true, (err: BusinessError) => {
+    if (err.code === 12400005) {
+      //处理授权应用数量超过上限异常，比如对之前已授权的应用取消授权
+    } else if (err) {
+      console.log('setAppAccess failed: ' + JSON.stringify(err));
+    } else {
+      console.log('setAppAccess successfully');
+    }
+  });
+} catch (err) {
+  console.log('setAppAccess exception: ' + JSON.stringify(err));
+}
 ```
 
 ## Call Service Kit
@@ -1303,7 +1303,7 @@ FormLink
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -1325,37 +1325,37 @@ FormLink
 
 设置辅助图信息时，如果将存储像素字节数变大，则设置不成功，返回错误码401。
 
-```
-1. import { image } from '@kit.ImageKit';
-2. import { colorSpaceManager } from '@kit.ArkGraphics2D';
-3. async function setAuxiliaryPitcutreInfo() {
-4. const array: ArrayBuffer = new ArrayBuffer(100);
-5. let imageSource: image.ImageSource = image.createImageSource(array);
-6. let options: image.DecodingOptionsForPicture = {
-7. desiredAuxiliaryPictures: [image.AuxiliaryPictureType.FRAGMENT_MAP]
-8. };
-9. try {
-10. let picture: image.Picture = await imageSource.createPicture(options);
-11. let auxiliaryPicture = picture.getAuxiliaryPicture(image.AuxiliaryPictureType.FRAGMENT_MAP);
-12. let originInfo = auxiliaryPicture?.getAuxiliaryPictureInfo();
-13. console.info("CreatePicture", 'originInfo = ' + JSON.stringify(originInfo));
-14. let changedInfo: image.AuxiliaryPictureInfo = {
-15. auxiliaryPictureType: image.AuxiliaryPictureType.FRAGMENT_MAP,
-16. size: { height: 410, width: 3072 },
-17. rowStride: 3072 * 8,
-18. pixelFormat: image.PixelMapFormat.RGBA_F16,
-19. colorSpace: colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3),
-20. };
-21. try {
-22. auxiliaryPicture?.setAuxiliaryPictureInfo(changedInfo);
-23. console.info("CreatePicture", `changedInfo us ${changedInfo}`);
-24. } catch (error) {
-25. console.error("CreatePicture", `setAuxiliaryPictureInfo, error.code is ${error.code}, error.message is ${error.message}`);
-26. }
-27. } catch (err) {
-28. console.error("CreatePicture", ' decode Picture failed !!!');
-29. }
-30. }
+```screen
+import { image } from '@kit.ImageKit';
+import { colorSpaceManager } from '@kit.ArkGraphics2D';
+async function setAuxiliaryPitcutreInfo() {
+  const array: ArrayBuffer = new ArrayBuffer(100);
+  let imageSource: image.ImageSource = image.createImageSource(array);
+  let options: image.DecodingOptionsForPicture = {
+    desiredAuxiliaryPictures: [image.AuxiliaryPictureType.FRAGMENT_MAP]
+  };
+  try {
+    let picture: image.Picture = await imageSource.createPicture(options);
+    let auxiliaryPicture = picture.getAuxiliaryPicture(image.AuxiliaryPictureType.FRAGMENT_MAP);
+    let originInfo = auxiliaryPicture?.getAuxiliaryPictureInfo();
+    console.info("CreatePicture", 'originInfo = ' + JSON.stringify(originInfo));
+    let changedInfo: image.AuxiliaryPictureInfo = {
+      auxiliaryPictureType: image.AuxiliaryPictureType.FRAGMENT_MAP,
+      size: { height: 410, width: 3072 },
+      rowStride: 3072 * 8,
+      pixelFormat: image.PixelMapFormat.RGBA_F16,
+      colorSpace: colorSpaceManager.create(colorSpaceManager.ColorSpace.DCI_P3),
+    };
+    try {
+      auxiliaryPicture?.setAuxiliaryPictureInfo(changedInfo);
+      console.info("CreatePicture", `changedInfo us ${changedInfo}`);
+    } catch (error) {
+      console.error("CreatePicture", `setAuxiliaryPictureInfo, error.code is ${error.code}, error.message is ${error.message}`);
+    }
+  } catch (err) {
+    console.error("CreatePicture", ' decode Picture failed !!!');
+  }
+}
 ```
 
 ### image.Component.OH\_AuxiliaryPictureNative\_SetInfo()接口行为变更
@@ -1368,7 +1368,7 @@ FormLink
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -1390,46 +1390,46 @@ FormLink
 
 设置辅助图信息时，如果将存储像素字节数变大，则设置不成功，返回错误码401。
 
-```
-1. #include <hilog/log.h>
-2. #include <multimedia/image_framework/image/image_native.h>
-3. #include <multimedia/image_framework/image/image_packer_native.h>
-4. #include <multimedia/image_framework/image/image_source_native.h>
-5. #include <multimedia/image_framework/image/picture_native.h>
-6. Image_ErrorCode SetAuxiliaryPictureInfoTest() {
-7. size_t filePathSize = 1024;
-8. OH_ImageSourceNative* imageSource = nullptr;
-9. Image_ErrorCode image_ErrorCode = OH_ImageSourceNative_CreateFromUri("test.jpg", filePathSize, &imageSource);
-10. if (image_ErrorCode != Image_ErrorCode::IMAGE_SUCCESS || imageSource == nullptr) {
-11. OH_LOG_ERROR(LOG_APP, "OH_ImageSourceNative_CreateFromUri failed.");
-12. }
-13. OH_DecodingOptionsForPicture *opts = nullptr;
-14. OH_DecodingOptionsForPicture_Create(&opts);
-15. OH_PictureNative *picture = nullptr;
-16. image_ErrorCode = OH_ImageSourceNative_CreatePicture(imageSource, opts, &picture);
-17. OH_ImageSourceNative_Release(imageSource);
-18. OH_DecodingOptionsForPicture_Release(opts);
-19. if (image_ErrorCode != Image_ErrorCode::IMAGE_SUCCESS || picture == nullptr) {
-20. OH_LOG_ERROR(LOG_APP, "OH_ImageSourceNative_CreatePicture failed. image_ErrorCode=%{public}d", image_ErrorCode);
-21. }
-22. OH_AuxiliaryPictureNative *auxiliaryPicture = nullptr;
-23. image_ErrorCode = OH_PictureNative_GetAuxiliaryPicture(
-24. picture, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_FRAGMENT_MAP, &auxiliaryPicture);
-25. if (image_ErrorCode != Image_ErrorCode::IMAGE_SUCCESS || auxiliaryPicture == nullptr) {
-26. OH_LOG_ERROR(LOG_APP, "OH_PictureNative_GetAuxiliaryPicture failed. image_ErrorCode=%{public}d", image_ErrorCode);
-27. }
-28. OH_AuxiliaryPictureInfo *auxInfo = nullptr;
-29. image_ErrorCode = OH_AuxiliaryPictureNative_GetInfo(auxiliaryPicture, &auxInfo);
-30. PIXEL_FORMAT newPixelFormat = PIXEL_FORMAT_RGBA_F16;
-31. OH_AuxiliaryPictureInfo_SetPixelFormat(auxInfo, newPixelFormat);
-32. image_ErrorCode = OH_AuxiliaryPictureNative_SetInfo(auxiliaryPicture, auxInfo);
-33. if (image_ErrorCode != Image_ErrorCode::IMAGE_SUCCESS || auxInfo == nullptr) {
-34. OH_LOG_ERROR(LOG_APP, "OH_AuxiliaryPictureNative_SetInfo failed. image_ErrorCode=%{public}d", image_ErrorCode);
-35. }
-36. OH_AuxiliaryPictureInfo_Release(auxInfo);
-37. OH_AuxiliaryPictureNative_Release(auxiliaryPicture);
-38. return IMAGE_SUCCESS;
-39. }
+```screen
+#include <hilog/log.h>
+#include <multimedia/image_framework/image/image_native.h>
+#include <multimedia/image_framework/image/image_packer_native.h>
+#include <multimedia/image_framework/image/image_source_native.h>
+#include <multimedia/image_framework/image/picture_native.h>
+Image_ErrorCode SetAuxiliaryPictureInfoTest() {
+    size_t filePathSize = 1024;
+    OH_ImageSourceNative* imageSource = nullptr;
+    Image_ErrorCode image_ErrorCode = OH_ImageSourceNative_CreateFromUri("test.jpg", filePathSize, &imageSource);
+    if (image_ErrorCode != Image_ErrorCode::IMAGE_SUCCESS || imageSource == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_ImageSourceNative_CreateFromUri failed.");
+    }
+    OH_DecodingOptionsForPicture *opts = nullptr;
+    OH_DecodingOptionsForPicture_Create(&opts);
+    OH_PictureNative *picture = nullptr;
+    image_ErrorCode = OH_ImageSourceNative_CreatePicture(imageSource, opts, &picture);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptionsForPicture_Release(opts);
+    if (image_ErrorCode != Image_ErrorCode::IMAGE_SUCCESS || picture == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_ImageSourceNative_CreatePicture failed. image_ErrorCode=%{public}d", image_ErrorCode);
+    }
+    OH_AuxiliaryPictureNative *auxiliaryPicture = nullptr;
+    image_ErrorCode = OH_PictureNative_GetAuxiliaryPicture(
+        picture, Image_AuxiliaryPictureType::AUXILIARY_PICTURE_TYPE_FRAGMENT_MAP, &auxiliaryPicture);
+    if (image_ErrorCode != Image_ErrorCode::IMAGE_SUCCESS || auxiliaryPicture == nullptr) {
+       OH_LOG_ERROR(LOG_APP, "OH_PictureNative_GetAuxiliaryPicture failed. image_ErrorCode=%{public}d", image_ErrorCode);
+    }
+    OH_AuxiliaryPictureInfo *auxInfo = nullptr;
+    image_ErrorCode = OH_AuxiliaryPictureNative_GetInfo(auxiliaryPicture, &auxInfo);
+    PIXEL_FORMAT newPixelFormat = PIXEL_FORMAT_RGBA_F16;
+    OH_AuxiliaryPictureInfo_SetPixelFormat(auxInfo, newPixelFormat);
+    image_ErrorCode = OH_AuxiliaryPictureNative_SetInfo(auxiliaryPicture, auxInfo);
+    if (image_ErrorCode != Image_ErrorCode::IMAGE_SUCCESS || auxInfo == nullptr) {
+       OH_LOG_ERROR(LOG_APP, "OH_AuxiliaryPictureNative_SetInfo failed. image_ErrorCode=%{public}d", image_ErrorCode);
+    }
+    OH_AuxiliaryPictureInfo_Release(auxInfo);
+    OH_AuxiliaryPictureNative_Release(auxiliaryPicture);
+    return IMAGE_SUCCESS;
+}
 ```
 
 ### image接口Heif格式类型变更
@@ -1440,7 +1440,7 @@ FormLink
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -1511,7 +1511,7 @@ FormLink
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -1555,7 +1555,7 @@ FormLink
 
 此变更涉及应用适配。
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -1587,7 +1587,7 @@ customScan模块下接口：
 
 **变更影响**
 
-说明
+**说明** 
 
 此变更已做版本隔离，变更仅在应用的targetSdkVersion设置为大于等于5.0.2(14)时生效。
 
@@ -1643,15 +1643,15 @@ hdc命令行工具
 
 1. 通过mediatool recv命令将指定uri对应的媒体库资源的源文件内容导出到定的设备路径下（/data/local/tmp），具体操作说明可阅读[mediatool参考文档](../harmonyos-guides/mediatool.md#导出命令mediatool-recv)。
 
-   ```
-   1. > mediatool recv file://media/Photo/3 /data/local/tmp/out.jpg
-   2. Table Name: Photos
-   3. /data/local/tmp/out.jpg
+   ```shell
+   > mediatool recv file://media/Photo/3 /data/local/tmp/out.jpg
+   Table Name: Photos
+   /data/local/tmp/out.jpg
    ```
 2. 通过hdc file recv命令将媒体文件从远端设备接收文件至本地。
 
-   ```
-   1. > hdc file recv /data/local/tmp/out.jpg ./out.jpg
+   ```bash
+   > hdc file recv /data/local/tmp/out.jpg ./out.jpg
    ```
 
 ### hdc的file recv命令及shell读取权限变更
@@ -1702,19 +1702,19 @@ hdc命令行工具
 
 变更前：内存较大时，相邻的两列数据中间无空格
 
-```
-1. hidumper --mem `pidof render_service_`
+```screen
+hidumper --mem `pidof render_service_`
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/k6kprOTVTGqiE0pZcGaqlQ/zh-cn_image_0000002334331997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/n1l2368uSo-lkVNsH2KonQ/zh-cn_image_0000002334331997.png)
 
 变更后：每一列数据后新增一个空格
 
-```
-1. hidumper --mem `pidof render_service_`
+```screen
+hidumper --mem `pidof render_service_`
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5slBazDaToiOrlwBnnA4Iw/zh-cn_image_0000002334372173.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/pt_0GHWVTOqXSmiOgBApCg/zh-cn_image_0000002334372173.png)
 
 其中hidumper、hidumper --mem、hidumper -c [system]变更效果与hidumper --mem [pid]命令效果一致。
 

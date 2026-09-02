@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-dataf
 title: DataFormatToFormat
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TypeUtils > DataFormatToFormat
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:11+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6ed41be98beb921f8b0c914ee8b8256a2e67ca29ecd344659a9be3828f85cc83
+content_hash: sha256:488e23da46fc8a5ddb1eb812f114fe77726a863a9fa59af3930a06121973d85f
 ---
 
 ## 函数功能
@@ -14,15 +14,15 @@ content_hash: sha256:6ed41be98beb921f8b0c914ee8b8256a2e67ca29ecd344659a9be3828f8
 
 使用该接口需要包含type\_utils.h头文件。
 
-```
-1. #include "graph/utils/type_utils.h"
+```cpp
+#include "graph/utils/type_utils.h"
 ```
 
 ## 函数原型
 
-```
-1. static Format DataFormatToFormat(const AscendString &str);
-2. Format DataFormatToFormat(const std::string &str);
+```cpp
+static Format DataFormatToFormat(const AscendString &str);
+Format DataFormatToFormat(const std::string &str);
 ```
 
 ## 参数说明
@@ -47,12 +47,12 @@ content_hash: sha256:6ed41be98beb921f8b0c914ee8b8256a2e67ca29ecd344659a9be3828f8
 
 ## 调用示例
 
-```
-1. // 如果使用的是AscendString入参的接口(建议使用)
-2. ge::AscendString format_str = "NHWC";
-3. auto format = DataFormatToFormat(format_str); // 1
-
-5. // 如果使用的是std::string入参的接口(不建议使用)
-6. std::string format_str = "NHWC";
-7. auto format = DataFormatToFormat(format_str); // 1
+```cpp
+// 如果使用的是AscendString入参的接口(建议使用)
+ge::AscendString format_str = "NHWC";
+auto format = DataFormatToFormat(format_str); // 1
+ 
+// 如果使用的是std::string入参的接口(不建议使用)
+std::string format_str = "NHWC";
+auto format = DataFormatToFormat(format_str); // 1
 ```

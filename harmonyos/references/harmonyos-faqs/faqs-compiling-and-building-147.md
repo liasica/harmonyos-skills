@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“File 'string.json' is missing the required property 'string'.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“File 'string.json' is missing the required property 'string'.”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:40+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:5328186dc76784d862768db2a7c5d7bdc72557950e791e51dcaca18f87e6aa11
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:4069b248022c2944627059da298d3af38d41a22950824099b6a6c8b95537e38e
 ---
 
 **错误描述**
@@ -22,13 +22,13 @@ hap模块依赖的hsp或har包中的资源文件string.json缺少必需的属性
 
 示例：
 
-```
-1. {
-2. "string": [
-3. {
-4. "name": "shared_desc",
-5. "value": "description"
-6. }
-7. ]
-8. }
+```json
+{
+  "string": [
+    {
+      "name": "shared_desc",
+      "value": "description"
+    }
+  ]
+}
 ```

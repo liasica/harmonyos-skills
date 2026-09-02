@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-tran
 title: transient_task_type.h
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > C API > 头文件 > transient_task_type.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:39+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:d32dfbb9cc6f9354eee4069f31a178515a1e1a9b19d85fa199168fc029785127
+scraped_at: 2026-09-02T15:01:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b6ab1b219fbaa66fb13ba3408b85b3d41e5ab942edac5df96d619f410dc2e795
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义短时任务的错误码和结构体。
 
@@ -26,20 +24,14 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [TransientTask\_DelaySuspendInfo](capi-transienttask-transienttask-delaysuspendinfo.md) | TransientTask\_DelaySuspendInfo | 定义短时任务返回信息结构体。用于返回当前短时任务的任务ID和剩余时间。 |
-| [TransientTask\_TransientTaskInfo](capi-transienttask-transienttask-transienttaskinfo.md) | TransientTask\_TransientTaskInfo | 定义所有短时任务信息结构体。用于返回当日剩余总配额和已申请的所有短时任务信息。 |
+| [TransientTask\_TransientTaskInfo](capi-transienttask-transienttask-transienttaskinfo.md) | TransientTask\_TransientTaskInfo | 定义所有短时任务信息结构体。 用于返回当日剩余总配额和已申请的所有短时任务信息。 |
 
 ### 宏定义
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -47,15 +39,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 枚举
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [TransientTask\_ErrorCode](capi-transient-task-type-h.md#transienttask_errorcode) | TransientTask\_ErrorCode | 定义短时任务错误码。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -63,14 +51,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### TransientTask\_ErrorCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum TransientTask_ErrorCode
+```c
+enum TransientTask_ErrorCode
 ```
 
 **描述**
@@ -93,14 +77,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### TransientTask\_Callback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*TransientTask_Callback)(void)
+```c
+typedef void (*TransientTask_Callback)(void)
 ```
 
 **描述**

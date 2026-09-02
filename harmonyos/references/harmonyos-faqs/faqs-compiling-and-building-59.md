@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-59
-title: 如何处理include <stddef.h>编译报错
-breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何处理include <stddef.h>编译报错
+title: 如何处理 include <stddef.h> 编译报错
+breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何处理 include <stddef.h> 编译报错
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:20+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:14+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:025229c1d229a6560dd1efbb39d3dea325ab3845148a391fbdf5a80db88e55ef
 ---
 

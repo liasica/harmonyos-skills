@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 查询设备安全模式(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 查询设备安全模式(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:01+08:00
+scraped_at: 2026-09-02T14:59:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f2d30510bd9977fdf6e45718ba8e51b8051b8edba5c470f47a72559f5b64a9bb
+content_hash: sha256:22ddb6d7d8f35ccdcce3e5d12d08e4ffa36ee34fd62315b3c6c34bf7c1ef3495
 ---
 
 ## 场景介绍
@@ -23,25 +23,25 @@ Device Security Kit提供了系统安全模式的查询能力。通过调用Devi
 
 1. 在CMakeLists.txt中导入设备安全模式共享库，并链接该库。
 
-   ```
-   1. find_library(dsm-lib libdevice_security_mode.z.so)
-   2. target_link_libraries(entry PUBLIC libace_napi.z.so ${dsm-lib})
+   ```cmake
+   find_library(dsm-lib libdevice_security_mode.z.so)
+   target_link_libraries(entry PUBLIC libace_napi.z.so ${dsm-lib})
    ```
 2. 导入设备安全模式的头文件。
 
-   ```
-   1. #include <DeviceSecurityKit/device_security_mode.h>
+   ```cpp
+   #include <DeviceSecurityKit/device_security_mode.h>
    ```
 3. 调用接口查询设备当前的安全模式。
 
-   ```
-   1. int32_t IsSecureShieldModeOn(void)
-   2. {
-   3. DSM_DeviceSecurityMode mode = HMS_DSM_GetDeviceSecurityMode();
-   4. return mode & DSM_SECURE_SHIELD_MODE;
-   5. }
+   ```cpp
+   int32_t IsSecureShieldModeOn(void)
+   {
+       DSM_DeviceSecurityMode mode = HMS_DSM_GetDeviceSecurityMode();
+       return mode & DSM_SECURE_SHIELD_MODE;
+   }
    ```
 
-说明
+**说明** 
 
 若应用使用到ArkWeb组件，需进一步参考[说明](web-secure-shield-mode.md)，进行Web特性的兼容性评估。

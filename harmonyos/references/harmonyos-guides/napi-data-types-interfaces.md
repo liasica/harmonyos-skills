@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-data-typ
 title: Node-API支持的数据类型和接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API支持的数据类型和接口
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:28f7216cb0c9f7c16eed1be579a1efb9a427b2f424bc03d2c7a6a2d589f2a245
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:456ae52e6ad42647296527d257879e381688b436791886084fb048728b6f8654
 ---
 
 ## Node-API的数据类型
@@ -16,46 +16,46 @@ content_hash: sha256:28f7216cb0c9f7c16eed1be579a1efb9a427b2f424bc03d2c7a6a2d589f
 
 每当调用一个Node-API函数，都会返回该值，表示操作成功与否的相关信息。
 
-```
-1. typedef enum {
-2. napi_ok,
-3. napi_invalid_arg,
-4. napi_object_expected,
-5. napi_string_expected,
-6. napi_name_expected,
-7. napi_function_expected,
-8. napi_number_expected,
-9. napi_boolean_expected,
-10. napi_array_expected,
-11. napi_generic_failure,
-12. napi_pending_exception,
-13. napi_cancelled,
-14. napi_escape_called_twice,
-15. napi_handle_scope_mismatch,
-16. napi_callback_scope_mismatch,
-17. napi_queue_full,
-18. napi_closing,
-19. napi_bigint_expected,
-20. napi_date_expected,
-21. napi_arraybuffer_expected,
-22. napi_detachable_arraybuffer_expected,
-23. napi_would_deadlock, /* unused */
-24. napi_no_external_buffers_allowed,
-25. napi_cannot_run_js
-26. } napi_status;
+```c
+typedef enum {
+    napi_ok,
+    napi_invalid_arg,
+    napi_object_expected,
+    napi_string_expected,
+    napi_name_expected,
+    napi_function_expected,
+    napi_number_expected,
+    napi_boolean_expected,
+    napi_array_expected,
+    napi_generic_failure,
+    napi_pending_exception,
+    napi_cancelled,
+    napi_escape_called_twice,
+    napi_handle_scope_mismatch,
+    napi_callback_scope_mismatch,
+    napi_queue_full,
+    napi_closing,
+    napi_bigint_expected,
+    napi_date_expected,
+    napi_arraybuffer_expected,
+    napi_detachable_arraybuffer_expected,
+    napi_would_deadlock, /* unused */
+    napi_no_external_buffers_allowed,
+    napi_cannot_run_js
+} napi_status;
 ```
 
 ### napi\_extended\_error\_info
 
 一个结构体，在调用Node-API接口不成功时存储了较为详细的错误信息。
 
-```
-1. typedef struct {
-2. const char *error_message;
-3. void *engine_reserved;
-4. uint32_t engine_error_code;
-5. napi_status error_code;
-6. } napi_extended_error_info;
+```c
+typedef struct {
+    const char *error_message;
+    void *engine_reserved;
+    uint32_t engine_error_code;
+    napi_status error_code;
+} napi_extended_error_info;
 ```
 
 ### napi\_value
@@ -76,18 +76,18 @@ napi\_value是一个C的结构体指针，表示一个ArkTS/JS对象的引用。
 
 该枚举类型定义了两个常量，用于指定以哪一种方式来释放线程安全函数。
 
-```
-1. typedef enum {
-2. napi_tsfn_release,
-3. napi_tsfn_abort
-4. } napi_threadsafe_function_release_mode;
+```c
+typedef enum {
+  napi_tsfn_release,
+  napi_tsfn_abort
+} napi_threadsafe_function_release_mode;
 ```
 
 该值会传给napi\_release\_threadsafe\_function。
 
-```
-1. napi_release_threadsafe_function(napi_threadsafe_function func,
-2. napi_threadsafe_function_release_mode mode);
+```cpp
+napi_release_threadsafe_function(napi_threadsafe_function func,
+                                 napi_threadsafe_function_release_mode mode);
 ```
 
 * mode值为napi\_tsfn\_release时：表示将tsfn中持有的线程数减一，当线程数减到0时，线程安全函数tsfn将被销毁。
@@ -101,11 +101,11 @@ napi\_value是一个C的结构体指针，表示一个ArkTS/JS对象的引用。
 
 数据结构如下所示：
 
-```
-1. typedef enum {
-2. napi_tsfn_nonblocking,
-3. napi_tsfn_blocking
-4. } napi_threadsafe_function_call_mode;
+```c
+typedef enum {
+  napi_tsfn_nonblocking,
+  napi_tsfn_blocking
+} napi_threadsafe_function_call_mode;
 ```
 
 * napi\_tsfn\_nonblocking：napi\_call\_threadsafe\_function是非阻塞的，如果队列已满，则返回napi\_queue\_full，从而阻止数据添加到队列中。
@@ -133,11 +133,11 @@ napi\_handle\_scope数据类型是用来管理ArkTS/JS对象的生命周期的�
 
 该结构体定义了一个包含两个无符号64位整数的类型标签，用于标识一个Node-API值的类型信息。
 
-```
-1. typedef struct {
-2. uint64_t lower;
-3. uint64_t upper;
-4. } napi_type_tag;
+```c
+typedef struct {
+  uint64_t lower;
+  uint64_t upper;
+} napi_type_tag;
 ```
 
 * 存储了两个无符号64位整数的128位值，用它来标记ArkTS/JS对象，确保它们属于某种类型。
@@ -160,6 +160,10 @@ napi\_critical\_scope是Node-API中，用于创建临界接口执行环境的机
 
 **提示：** napi\_strong\_ref与napi\_ref相比，具有更高的创建效率，但支持的功能受限（如：不支持强弱引用转换等）。
 
+**napi\_callsite\_info（扩展能力）**
+
+调用点信息句柄，用于缓存属性访问的对象结构信息以加速后续属性读写。每个不同的调用点应创建独立的napi\_callsite\_info句柄，同一句柄可跨多次调用复用，但不可跨线程使用。
+
 **napi\_sendable\_ref（扩展能力）**
 
 指向napi\_value，允许调用者管理Sendable ArkTS对象的生命周期，并支持跨ArkTS线程操作napi\_sendable\_ref。
@@ -180,8 +184,8 @@ Native侧获取JS侧参数信息，传递给napi\_get\_cb\_info，用于获取JS
 
 基本用法如下：
 
-```
-1. typedef napi_value (*napi_callback)(napi_env, napi_callback_info);
+```c
+typedef napi_value (*napi_callback)(napi_env, napi_callback_info);
 ```
 
 **napi\_finalize**
@@ -216,13 +220,13 @@ napi\_async\_complete\_callback用于异步操作完成后的回调。当需要�
 
 QoS决定了线程调度的优先级，等级定义如下：
 
-```
-1. typedef enum {
-2. napi_qos_background = 0,
-3. napi_qos_utility = 1,
-4. napi_qos_default = 2,
-5. napi_qos_user_initiated = 3,
-6. } napi_qos_t;
+```c
+typedef enum {
+    napi_qos_background = 0,
+    napi_qos_utility = 1,
+    napi_qos_default = 2,
+    napi_qos_user_initiated = 3,
+} napi_qos_t;
 ```
 
 | QoS等级 | 适用场景 |
@@ -234,31 +238,31 @@ QoS决定了线程调度的优先级，等级定义如下：
 
 ### 事件循环模式
 
-napi提供了运行底层事件循环的两种模式, 其定义如下：
+napi提供了运行底层事件循环的两种模式，其定义如下：
 
-```
-1. typedef enum {
-2. napi_event_mode_default = 0,
-3. napi_event_mode_nowait = 1,
-4. } napi_event_mode;
+```c
+typedef enum {
+    napi_event_mode_default = 0,
+    napi_event_mode_nowait = 1,
+} napi_event_mode;
 ```
 
 | 事件循环运行模式 | 解释说明 |
 | --- | --- |
-| napi\_event\_mode\_default | 阻塞式的运行底层事件循环，直到循环中没有或活跃的uv\_handle句柄时退出事件循环。 |
+| napi\_event\_mode\_default | 阻塞式的运行底层事件循环，直到循环中没有活跃的uv\_handle句柄时退出事件循环。 |
 | napi\_event\_mode\_nowait | 非阻塞式的运行底层事件循环，尝试去处理一个任务，处理完之后退出事件循环；如果事件循环中没有任务，立刻退出事件循环。 |
 
 ### 线程安全任务优先级
 
-napi提供了线程安全任务的优先级, 底层任务队列中的任务会根据其优先级被依次执行, 优先级的定义如下：
+napi提供了线程安全任务的优先级，底层任务队列中的任务会根据其优先级被依次执行，优先级的定义如下：
 
-```
-1. typedef enum {
-2. napi_priority_immediate = 0,
-3. napi_priority_high = 1,
-4. napi_priority_low = 2,
-5. napi_priority_idle = 3,
-6. } napi_task_priority;
+```c
+typedef enum {
+    napi_priority_immediate = 0,
+    napi_priority_high = 1,
+    napi_priority_low = 2,
+    napi_priority_idle = 3,
+} napi_task_priority;
 ```
 
 | 任务优先级 | 解释说明 |
@@ -525,7 +529,7 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 
 ### 扩展能力
 
-[Node-API组件扩展的符号列表](../harmonyos-references/napi.md#node-api组件扩展的符号列表)
+[Node-API组件扩展的接口](../harmonyos-references/napi.md#node-api组件扩展的接口)
 
 | 接口 | 功能说明 |
 | --- | --- |
@@ -554,7 +558,7 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 | napi\_wrap\_sendable | 包裹一个native实例到ArkTS对象中。 |
 | napi\_wrap\_sendable\_with\_size | 包裹一个native实例到ArkTS对象中并指定大小。 |
 | napi\_unwrap\_sendable | 获取ArkTS对象包裹的native实例。 |
-| napi\_remove\_wrap\_sendable | 移除并获取ArkTS对象包裹的native实例，移除后回调将不再触发，需手动delete释放内存。 |
+| napi\_remove\_wrap\_sendable | 移除并获取ArkTS对象包裹的native实例，移除后回调后续会被自动触发，需注意避免出现重复释放问题。 |
 | napi\_wrap\_enhance | 在ArkTS对象上绑定一个native对象实例并指定实例大小，运行时会统计传入的实例大小并将其累加，当累计大小达到GC触发阈值时，运行时会启动垃圾回收流程。开发者可以指定绑定的回调函数是否异步执行，如果是异步执行，回调函数必须保证是线程安全的。 |
 | napi\_create\_ark\_context | 创建一个新的上下文环境。 |
 | napi\_switch\_ark\_context | 切换到指定的运行时上下文环境。 |
@@ -569,336 +573,374 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 | napi\_delete\_strong\_sendable\_reference | 删除Sendable强引用。 |
 | napi\_get\_strong\_sendable\_reference\_value | 根据Sendable强引用获取其关联的ArkTS对象值。 |
 | napi\_throw\_business\_error | 抛出一个带文本信息的ArkTS Error, 其错误对象的code属性类型为number。 |
+| napi\_create\_callsite\_info | 创建调用点信息句柄，用于缓存属性访问信息。 |
+| napi\_delete\_callsite\_info | 删除调用点信息句柄，释放关联的缓存资源。 |
+| napi\_get\_property\_with\_callsite\_info | 使用调用点信息快速获取对象属性值。 |
+| napi\_set\_property\_with\_callsite\_info | 使用调用点信息快速设置对象属性值。 |
 
 **napi\_queue\_async\_work\_with\_qos**
 
-```
-1. napi_status napi_queue_async_work_with_qos(napi_env env,
-2. napi_async_work work,
-3. napi_qos_t qos);
+```c
+napi_status napi_queue_async_work_with_qos(napi_env env,
+                                           napi_async_work work,
+                                           napi_qos_t qos);
 ```
 
 用法同napi\_queue\_async\_work，但可以指定QoS等级。napi\_queue\_async\_work\_with\_qos使用方法可参考指定异步任务调度优先级。QoS详细介绍可参考[QoS 开发指导](qos-guidelines.md)。
 
 **napi\_run\_script\_path**
 
-```
-1. napi_status napi_run_script_path(napi_env env,
-2. const char* abcPath,
-3. napi_value* result);
+```c
+napi_status napi_run_script_path(napi_env env,
+                                 const char* abcPath,
+                                 napi_value* result);
 ```
 
 \*\*注：\*\*使用限制说明文档：[使用napi\_run\_script\_path接口执行包内abc文件的使用限制](../harmonyos-faqs/faqs-ndk-65.md)
 
 **napi\_load\_module**
 
-```
-1. napi_status napi_load_module(napi_env env,
-2. const char* path,
-3. napi_value* result);
+```c
+napi_status napi_load_module(napi_env env,
+                             const char* path,
+                             napi_value* result);
 ```
 
 **napi\_create\_object\_with\_properties**
 
-```
-1. napi_status napi_create_object_with_properties(napi_env env,
-2. napi_value* result,
-3. size_t property_count,
-4. const napi_property_descriptor* properties);
+```c
+napi_status napi_create_object_with_properties(napi_env env,
+                                               napi_value* result,
+                                               size_t property_count,
+                                               const napi_property_descriptor* properties);
 ```
 
 **napi\_create\_object\_with\_named\_properties**
 
-```
-1. napi_status napi_create_object_with_named_properties(napi_env env,
-2. napi_value* result,
-3. size_t property_count,
-4. const char** keys,
-5. const napi_value* values);
+```c
+napi_status napi_create_object_with_named_properties(napi_env env,
+                                                     napi_value* result,
+                                                     size_t property_count,
+                                                     const char** keys,
+                                                     const napi_value* values);
 ```
 
 **napi\_coerce\_to\_native\_binding\_object**
 
-```
-1. napi_status napi_coerce_to_native_binding_object(napi_env env,
-2. napi_value js_object,
-3. napi_native_binding_detach_callback detach_cb,
-4. napi_native_binding_attach_callback attach_cb,
-5. void* native_object,
-6. void* hint);
+```c
+napi_status napi_coerce_to_native_binding_object(napi_env env,
+                                                 napi_value js_object,
+                                                 napi_native_binding_detach_callback detach_cb,
+                                                 napi_native_binding_attach_callback attach_cb,
+                                                 void* native_object,
+                                                 void* hint);
 ```
 
 **napi\_create\_ark\_runtime**
 
-```
-1. napi_status napi_create_ark_runtime(napi_env *env);
+```c
+napi_status napi_create_ark_runtime(napi_env *env);
 ```
 
 [使用napi\_create\_ark\_runtime、napi\_destroy\_ark\_runtime接口创建ArkTS运行时环境](use-napi-ark-runtime.md)。
 
 **napi\_destroy\_ark\_runtime**
 
-```
-1. napi_status napi_destroy_ark_runtime(napi_env *env);
+```c
+napi_status napi_destroy_ark_runtime(napi_env *env);
 ```
 
 **napi\_run\_event\_loop**
 
-```
-1. napi_status napi_run_event_loop(napi_env env, napi_event_mode mode);
+```c
+napi_status napi_run_event_loop(napi_env env, napi_event_mode mode);
 ```
 
 开发者只能在自己通过napi\_create\_ark\_runtime创建的ArkTS运行环境中调用napi\_run\_event\_loop与napi\_stop\_event\_loop接口，使用方法可参考[使用扩展的Node-API接口在异步线程中运行和停止事件循环](use-napi-event-loop.md)。
 
 **napi\_stop\_event\_loop**
 
-```
-1. napi_status napi_stop_event_loop(napi_env env);
+```c
+napi_status napi_stop_event_loop(napi_env env);
 ```
 
 **napi\_serialize**
 
-```
-1. napi_status napi_serialize(napi_env env,
-2. napi_value object,
-3. napi_value transfer_list,
-4. napi_value clone_list,
-5. void** result);
+```c
+napi_status napi_serialize(napi_env env,
+                           napi_value object,
+                           napi_value transfer_list,
+                           napi_value clone_list,
+                           void** result);
 ```
 
 **napi\_deserialize**
 
-```
-1. napi_status napi_deserialize(napi_env env, void* buffer, napi_value* object);
+```c
+napi_status napi_deserialize(napi_env env, void* buffer, napi_value* object);
 ```
 
 **napi\_delete\_serialization\_data**
 
-```
-1. napi_status napi_delete_serialization_data(napi_env env, void* buffer);
+```c
+napi_status napi_delete_serialization_data(napi_env env, void* buffer);
 ```
 
 **napi\_call\_threadsafe\_function\_with\_priority**
 
-```
-1. napi_status napi_call_threadsafe_function_with_priority(napi_threadsafe_function func,
-2. void *data,
-3. napi_task_priority priority,
-4. bool isTail);
+```c
+napi_status napi_call_threadsafe_function_with_priority(napi_threadsafe_function func,
+                                                        void *data,
+                                                        napi_task_priority priority,
+                                                        bool isTail);
 ```
 
 **napi\_is\_sendable**
 
-```
-1. napi_status napi_is_sendable(napi_env env, napi_value value, bool* result);
+```c
+napi_status napi_is_sendable(napi_env env, napi_value value, bool* result);
 ```
 
 **napi\_define\_sendable\_class**
 
-```
-1. napi_status napi_define_sendable_class(napi_env env,
-2. const char* utf8name,
-3. size_t length,
-4. napi_callback constructor,
-5. void* data,
-6. size_t property_count,
-7. const napi_property_descriptor* properties,
-8. napi_value parent,
-9. napi_value* result);
+```c
+napi_status napi_define_sendable_class(napi_env env,
+                                       const char* utf8name,
+                                       size_t length,
+                                       napi_callback constructor,
+                                       void* data,
+                                       size_t property_count,
+                                       const napi_property_descriptor* properties,
+                                       napi_value parent,
+                                       napi_value* result);
 ```
 
 **napi\_create\_sendable\_object\_with\_properties**
 
-```
-1. napi_status napi_create_sendable_object_with_properties(napi_env env,
-2. size_t property_count,
-3. const napi_property_descriptor* properties,
-4. napi_value* result);
+```c
+napi_status napi_create_sendable_object_with_properties(napi_env env,
+                                                        size_t property_count,
+                                                        const napi_property_descriptor* properties,
+                                                        napi_value* result);
 ```
 
 **napi\_create\_sendable\_array**
 
-```
-1. napi_status napi_create_sendable_array(napi_env env, napi_value* result);
+```c
+napi_status napi_create_sendable_array(napi_env env, napi_value* result);
 ```
 
 **napi\_create\_sendable\_array\_with\_length**
 
-```
-1. napi_status napi_create_sendable_array_with_length(napi_env env, size_t length, napi_value* result);
+```c
+napi_status napi_create_sendable_array_with_length(napi_env env, size_t length, napi_value* result);
 ```
 
 **napi\_create\_sendable\_arraybuffer**
 
-```
-1. napi_status napi_create_sendable_arraybuffer(napi_env env, size_t byte_length, void** data, napi_value* result);
+```c
+napi_status napi_create_sendable_arraybuffer(napi_env env, size_t byte_length, void** data, napi_value* result);
 ```
 
 **napi\_create\_sendable\_typedarray**
 
-```
-1. napi_status napi_create_sendable_typedarray(napi_env env,
-2. napi_typedarray_type type,
-3. size_t length,
-4. napi_value arraybuffer,
-5. size_t byte_offset,
-6. napi_value* result);
+```c
+napi_status napi_create_sendable_typedarray(napi_env env,
+                                            napi_typedarray_type type,
+                                            size_t length,
+                                            napi_value arraybuffer,
+                                            size_t byte_offset,
+                                            napi_value* result);
 ```
 
 **napi\_wrap\_sendable**
 
-```
-1. napi_status napi_wrap_sendable(napi_env env,
-2. napi_value js_object,
-3. void* native_object,
-4. napi_finalize finalize_cb,
-5. void* finalize_hint);
+```c
+napi_status napi_wrap_sendable(napi_env env,
+                               napi_value js_object,
+                               void* native_object,
+                               napi_finalize finalize_cb,
+                               void* finalize_hint);
 ```
 
 **napi\_wrap\_sendable\_with\_size**
 
-```
-1. napi_status napi_wrap_sendable_with_size(napi_env env,
-2. napi_value js_object,
-3. void* native_object,
-4. napi_finalize finalize_cb,
-5. void* finalize_hint,
-6. size_t native_binding_size);
+```c
+napi_status napi_wrap_sendable_with_size(napi_env env,
+                                         napi_value js_object,
+                                         void* native_object,
+                                         napi_finalize finalize_cb,
+                                         void* finalize_hint,
+                                         size_t native_binding_size);
 ```
 
 **napi\_unwrap\_sendable**
 
-```
-1. napi_status napi_unwrap_sendable(napi_env env, napi_value js_object, void** result);
+```c
+napi_status napi_unwrap_sendable(napi_env env, napi_value js_object, void** result);
 ```
 
 **napi\_remove\_wrap\_sendable**
 
-```
-1. napi_status napi_remove_wrap_sendable(napi_env env, napi_value js_object, void** result);
+```c
+napi_status napi_remove_wrap_sendable(napi_env env, napi_value js_object, void** result);
 ```
 
 **napi\_wrap\_enhance**
 
-```
-1. napi_status napi_wrap_enhance(napi_env env,
-2. napi_value js_object,
-3. void* native_object,
-4. napi_finalize finalize_cb,
-5. bool async_finalizer,
-6. void* finalize_hint,
-7. size_t native_binding_size,
-8. napi_ref* result);
+```c
+napi_status napi_wrap_enhance(napi_env env,
+                              napi_value js_object,
+                              void* native_object,
+                              napi_finalize finalize_cb,
+                              bool async_finalizer,
+                              void* finalize_hint,
+                              size_t native_binding_size,
+                              napi_ref* result);
 ```
 
 **napi\_create\_ark\_context**
 
-```
-1. napi_status napi_create_ark_context(napi_env env,
-2. napi_env* newEnv);
+```c
+napi_status napi_create_ark_context(napi_env env,
+                                    napi_env* newEnv);
 ```
 
 **napi\_switch\_ark\_context**
 
-```
-1. napi_status napi_switch_ark_context(napi_env env);
+```c
+napi_status napi_switch_ark_context(napi_env env);
 ```
 
 **napi\_destroy\_ark\_context**
 
-```
-1. napi_status napi_destroy_ark_context(napi_env env);
+```c
+napi_status napi_destroy_ark_context(napi_env env);
 ```
 
 **napi\_open\_critical\_scope**
 
-```
-1. napi_status napi_open_critical_scope(napi_env env, napi_critical_scope* scope);
+```c
+napi_status napi_open_critical_scope(napi_env env, napi_critical_scope* scope);
 ```
 
 **napi\_close\_critical\_scope**
 
-```
-1. napi_status napi_close_critical_scope(napi_env env, napi_critical_scope scope);
+```c
+napi_status napi_close_critical_scope(napi_env env, napi_critical_scope scope);
 ```
 
 **napi\_get\_buffer\_string\_utf16\_in\_critical\_scope**
 
-```
-1. napi_status napi_get_buffer_string_utf16_in_critical_scope(napi_env env,
-2. napi_value value,
-3. const char16_t** buffer,
-4. size_t* length);
+```c
+napi_status napi_get_buffer_string_utf16_in_critical_scope(napi_env env,
+                                                           napi_value value,
+                                                           const char16_t** buffer,
+                                                           size_t* length);
 ```
 
 **napi\_create\_strong\_reference**
 
-```
-1. napi_status napi_create_strong_reference(napi_env env, napi_value value, napi_strong_ref* result);
+```c
+napi_status napi_create_strong_reference(napi_env env, napi_value value, napi_strong_ref* result);
 ```
 
 **napi\_delete\_strong\_reference**
 
-```
-1. napi_status napi_delete_strong_reference(napi_env env, napi_strong_ref ref)
+```c
+napi_status napi_delete_strong_reference(napi_env env, napi_strong_ref ref)
 ```
 
 **napi\_get\_strong\_reference\_value**
 
-```
-1. napi_status napi_get_strong_reference_value(napi_env env, napi_strong_ref ref, napi_value* result)
+```c
+napi_status napi_get_strong_reference_value(napi_env env, napi_strong_ref ref, napi_value* result)
 ```
 
 **napi\_create\_external\_string\_utf16**
 
-```
-1. napi_status napi_create_external_string_utf16(napi_env env,
-2. const char16_t* str,
-3. size_t length,
-4. napi_finalize_callback finalize_callback,
-5. void* finalize_hint,
-6. napi_value* result);
+```cpp
+napi_status napi_create_external_string_utf16(napi_env env,
+                                              const char16_t* str,
+                                              size_t length,
+                                              napi_finalize_callback finalize_callback,
+                                              void* finalize_hint,
+                                              napi_value* result);
 ```
 
 **napi\_create\_external\_string\_ascii**
 
-```
-1. napi_status napi_create_external_string_ascii(napi_env env,
-2. const char* str,
-3. size_t length,
-4. napi_finalize_callback finalize_callback,
-5. void* finalize_hint,
-6. napi_value* result);
+```cpp
+napi_status napi_create_external_string_ascii(napi_env env,
+                                              const char* str,
+                                              size_t length,
+                                              napi_finalize_callback finalize_callback,
+                                              void* finalize_hint,
+                                              napi_value* result);
 ```
 
 **napi\_create\_strong\_sendable\_reference**
 
-```
-1. napi_status napi_create_strong_sendable_reference(napi_env env,
-2. napi_value value,
-3. napi_sendable_ref* result);
+```c
+napi_status napi_create_strong_sendable_reference(napi_env env,
+                                                  napi_value value,
+                                                  napi_sendable_ref* result);
 ```
 
 **napi\_delete\_strong\_sendable\_reference**
 
-```
-1. napi_status napi_delete_strong_sendable_reference(napi_env env, napi_sendable_ref ref);
+```c
+napi_status napi_delete_strong_sendable_reference(napi_env env, napi_sendable_ref ref);
 ```
 
 **napi\_get\_strong\_sendable\_reference\_value**
 
-```
-1. napi_status napi_get_strong_sendable_reference_value(napi_env env,
-2. napi_sendable_ref ref,
-3. napi_value* result);
+```c
+napi_status napi_get_strong_sendable_reference_value(napi_env env,
+                                                     napi_sendable_ref ref,
+                                                     napi_value* result);
 ```
 
 **napi\_throw\_business\_error**
 
+```c
+napi_status napi_throw_business_error(napi_env env,
+                                      int32_t errorCode,
+                                      const char* msg);
 ```
-1. napi_status napi_throw_business_error(napi_env env,
-2. int32_t errorCode,
-3. const char* msg);
+
+**napi\_create\_callsite\_info**
+
+```c
+napi_status napi_create_callsite_info(napi_env env, napi_callsite_info* result);
+```
+
+**napi\_delete\_callsite\_info**
+
+```c
+napi_status napi_delete_callsite_info(napi_env env, napi_callsite_info info);
+```
+
+**napi\_get\_property\_with\_callsite\_info**
+
+```c
+napi_status napi_get_property_with_callsite_info(napi_env env,
+                                                 napi_value object,
+                                                 napi_value key,
+                                                 napi_callsite_info info,
+                                                 napi_value* result,
+                                                 bool* hit);
+```
+
+**napi\_set\_property\_with\_callsite\_info**
+
+```c
+napi_status napi_set_property_with_callsite_info(napi_env env,
+                                                 napi_value object,
+                                                 napi_value key,
+                                                 napi_value value,
+                                                 napi_callsite_info info,
+                                                 bool* hit);
 ```
 
 ### 其他实用工具

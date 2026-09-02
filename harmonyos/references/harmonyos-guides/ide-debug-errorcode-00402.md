@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: 热重载和增量调试错误码
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 调试错误码 > 热重载和增量调试错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:56+08:00
-doc_updated_at: 2026-03-11
-content_hash: sha256:5b2f9f243414c1e73e4f3e29cd949e047f3b995e0911f32e902e769c6bade3d0
+scraped_at: 2026-09-02T14:50:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e17355ba58bdd51b5220db24bf4f02ecc92b5aa4ebb989b43efa279779070d1d
 ---
 
 ## 00402001 找不到SDK
@@ -26,11 +26,11 @@ Install the SDK first.
 
 检查DevEco Studio安装目录下sdk/default/openharmony路径下面是否有ets目录，如果不存在，在官网上重新[下载DevEco Studio](https://developer.huawei.com/consumer/cn/download/deveco-studio)。
 
-## 00402002 热重载只支持STAGE模型工程
+## 00402002 热重载仅支持Stage模型工程
 
 **错误信息**
 
-Hot Reload Feature is only supported in STAGE and esmodule project.
+Hot Reload Feature is only supported in Stage and esmodule project.
 
 **错误描述**
 
@@ -243,7 +243,7 @@ Apply Changes时执行hdc命令超时，可能hdc异常或者设备连接异常�
 
 **处理步骤**
 
-拔插设备，或者执行hdc kill -r重启hdc后再重试。
+重新连接设备，或者执行hdc kill -r重启hdc后再重试。
 
 ## 00402014 构建hqf增量包失败
 
@@ -443,7 +443,7 @@ Apply change fail.
 
 **处理步骤**
 
-重新拔插设备，或者执行hdc kill -r再重试。
+重新连接设备，或者执行hdc kill -r再重试。
 
 ## 00402027 设备处于锁屏状态
 

@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PdfData)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (PdfData)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:55:30+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:d9151b0bef717f510a25a5df7d61e7793fee2ac5db523f627e7169b913344f99
+scraped_at: 2026-09-02T15:01:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2ef2b069880c237105b65fae7a3d872a017e59f3e1574e519b494b0a89cf8009
 ---
 
-PdfData类用于封装createPdf函数输出的数据流。
+PdfData是Web组件用于封装网页生成的PDF数据流的类。当应用需要将Web组件加载的网页内容以PDF格式保存时，通过[WebviewController](arkts-apis-webview-webviewcontroller.md)的[createPdf](arkts-apis-webview-webviewcontroller.md#createpdf14)方法将网页内容转换为PDF数据流，该方法在回调或Promise中以PdfData对象返回。应用再通过PdfData的pdfArrayBuffer方法获取Uint8Array格式的数据流，结合文件IO接口将数据写入本地PDF文件。
 
-说明
+PdfData适用于需要离线保存网页内容、生成网页PDF报告等场景。使用时需先加载Web组件并确保网页内容已渲染完成，再调用createPdf生成PDF数据流。
+
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Class首批接口从API version 14开始支持。
@@ -18,8 +20,6 @@ PdfData类用于封装createPdf函数输出的数据流。
 * 在网页生成PDF过程中，返回的是数据流，由PdfData类封装。
 
 ## pdfArrayBuffer14+
-
-PhonePC/2in1TabletTVWearable
 
 pdfArrayBuffer(): Uint8Array
 
@@ -31,4 +31,4 @@ pdfArrayBuffer(): Uint8Array
 
 | 类型 | 说明 |
 | --- | --- |
-| Uint8Array | 数据流。 |
+| Uint8Array | 网页生成的PDF数据流，可结合文件IO接口将数据写入本地PDF文件。 |

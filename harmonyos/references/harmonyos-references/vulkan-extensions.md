@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-ex
 title: Vulkan扩展能力
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan扩展能力
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5aeba369b4a475effac4303ad83457aa4a3b82c53d01e7361d9310cd71aafd5c
+scraped_at: 2026-09-02T14:53:37+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:d322186a017ea3959ff8c38675ba4474e9b864b03ec4a68a5926463eb6c374d7
 ---
 
 * **[Vulkan](capi-vulkan.md)**
@@ -13,7 +13,7 @@ content_hash: sha256:5aeba369b4a475effac4303ad83457aa4a3b82c53d01e7361d9310cd71a
 * **[VkSurfaceCreateInfoOHOS](capi-vulkan-vksurfacecreateinfoohos.md)**
 * **[VkNativeBufferOHOS](capi-vulkan-vknativebufferohos.md)**
 * **[VkSwapchainImageCreateInfoOHOS](capi-vulkan-vkswapchainimagecreateinfoohos.md)**
-* **[VkPhysicalDevicePresentationPropertiesOHOS](-vulkan-vkphysicaldevicepresentationpropertiesohos.md)**
+* **[VkPhysicalDevicePresentationPropertiesOHOS](capi-vulkan-vkphysicaldevicepresentationpropertiesohos.md)**
 * **[VkNativeBufferUsageOHOS](capi-vulkan-vknativebufferusageohos.md)**
 * **[VkNativeBufferPropertiesOHOS](capi-vulkan-vknativebufferpropertiesohos.md)**
 * **[VkNativeBufferFormatPropertiesOHOS](capi-vulkan-vknativebufferformatpropertiesohos.md)**

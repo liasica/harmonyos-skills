@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-attr
 title: Attr
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 原型注册与管理 > OpDef > Attr
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:33+08:00
+scraped_at: 2026-09-02T14:50:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:aadb847f4ca632e494c0b5b193b6fdec079440b605c9cad33a09f39b78f8e037
+content_hash: sha256:22aa57e22576fbcb8b845fe48a8068574d909b3d64014098d905d58483ac3c8f
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:aadb847f4ca632e494c0b5b193b6fdec079440b605c9cad33a09f39b78f
 
 ## 函数原型
 
-```
-1. OpAttrDef &Attr(const char *name);
+```cpp
+OpAttrDef &Attr(const char *name);
 ```
 
 ## 参数说明

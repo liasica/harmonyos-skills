@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 组件通用信息 > 通用属性
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9f9a3b4074a51398dcc5e9bda47bd782e94c9d2150d31603964f44abe36c3011
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f6f270a1ffc455e799a02d3c8de4083d0e078bf24e97adf89f9c010125d70c0d
 ---
 
-说明
+**说明** 
 
 从API version 8 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 常规属性
-
-PhonePC/2in1TabletTVWearable
 
 常规属性指的是组件普遍支持的用来设置组件基本标识和外观显示特征的属性。
 
@@ -29,8 +27,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 渲染属性
 
-PhonePC/2in1TabletTVWearable
-
 组件普遍支持的用来设置组件是否渲染的属性。
 
 | 名称 | 类型 | 默认值 | 描述 |
@@ -39,6 +35,6 @@ PhonePC/2in1TabletTVWearable
 | if | boolean | - | 根据设置的boolean值，添加或移除当前元素。为true时，添加元素。为false时，移除元素。 |
 | show | boolean | - | 根据设置的boolean值，显示或隐藏当前元素。为true时，显示元素。为false时，隐藏元素。 |
 
-说明
+**说明** 
 
 属性和样式不能混用，不能在属性字段中进行样式设置。

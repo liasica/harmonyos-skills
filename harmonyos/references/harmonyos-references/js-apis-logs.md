@@ -1,22 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-logs
-title: Console (控制台)
-breadcrumb: API参考 > 公共基础能力 > ArkTS API > Console (控制台)
+title: Class (Console)
+breadcrumb: API参考 > 公共基础能力 > ArkTS API > Class (Console)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:16+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:229ba6564cf686fb9e4f09eb3162078bf6a9b0c2737aba0b6c29a25203adead9
+scraped_at: 2026-09-02T15:03:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c56bb1e480f1ccae6fb01f697e767365021812fc72726f7ca7d0633d407b46e8
 ---
 
 本模块提供了一个简单的调试控制台，类似于浏览器提供的JavaScript控制台机制。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## console.debug
-
-PhonePC/2in1TabletTVWearable
 
 static debug(message: string, ...arguments: any[]): void
 
@@ -37,19 +35,17 @@ static debug(message: string, ...arguments: any[]): void
 
 **示例：**
 
-```
-1. const number = 5;
-2. console.debug('count: %d', number);  // 格式化输出替换message中的文本。
-3. // count: 5
-4. console.debug('count:', number);  // 打印message以及其余信息
-5. // count: 5
-6. console.debug('count:'); // 仅打印message
-7. // count:
+```js
+const number = 5;
+console.debug('count: %d', number);  // 格式化输出替换message中的文本。
+// count: 5
+console.debug('count:', number);  // 打印message以及其余信息
+// count: 5
+console.debug('count:'); // 仅打印message
+// count:
 ```
 
 ## console.log
-
-PhonePC/2in1TabletTVWearable
 
 static log(message: string, ...arguments: any[]): void
 
@@ -70,23 +66,21 @@ static log(message: string, ...arguments: any[]): void
 
 **示例：**
 
-```
-1. const number = 5;
-2. console.log('count: %d', number);  // 格式化输出替换message中的文本。
-3. // count: 5
-4. console.log('count:', number);  // 打印message以及其余信息
-5. // count: 5
-6. console.log('count:'); // 仅打印message
-7. // count:
+```js
+const number = 5;
+console.log('count: %d', number);  // 格式化输出替换message中的文本。
+// count: 5
+console.log('count:', number);  // 打印message以及其余信息
+// count: 5
+console.log('count:'); // 仅打印message
+// count:
 ```
 
 ## console.info
 
-PhonePC/2in1TabletTVWearable
-
 static info(message: string, ...arguments: any[]): void
 
-以格式化输出方式打印日志信息。(console.log()的别名）。
+以格式化输出方式打印日志信息（console.log()的别名）。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -103,19 +97,17 @@ static info(message: string, ...arguments: any[]): void
 
 **示例：**
 
-```
-1. const number = 5;
-2. console.info('count: %d', number);  // 格式化输出替换message中的文本。
-3. // count: 5
-4. console.info('count:', number);  // 打印message以及其余信息
-5. // count: 5
-6. console.info('count:'); // 仅打印message
-7. // count:
+```js
+const number = 5;
+console.info('count: %d', number);  // 格式化输出替换message中的文本。
+// count: 5
+console.info('count:', number);  // 打印message以及其余信息
+// count: 5
+console.info('count:'); // 仅打印message
+// count:
 ```
 
 ## console.warn
-
-PhonePC/2in1TabletTVWearable
 
 static warn(message: string, ...arguments: any[]): void
 
@@ -136,19 +128,17 @@ static warn(message: string, ...arguments: any[]): void
 
 **示例：**
 
-```
-1. const str = "name should be string";
-2. console.warn('warn: %d', str);  // 格式化输出替换message中的文本。
-3. // warn: name should be string
-4. console.warn('warn:', str);  // 打印message以及其余信息
-5. // warn: name should be string
-6. console.warn('warn:'); // 仅打印message
-7. // warn:
+```js
+const str = "name should be string";
+console.warn('warn: %d', str);  // 格式化输出替换message中的文本。
+// warn: name should be string
+console.warn('warn:', str);  // 打印message以及其余信息
+// warn: name should be string
+console.warn('warn:'); // 仅打印message
+// warn:
 ```
 
 ## console.error
-
-PhonePC/2in1TabletTVWearable
 
 static error(message: string, ...arguments: any[]): void
 
@@ -169,19 +159,17 @@ static error(message: string, ...arguments: any[]): void
 
 **示例：**
 
-```
-1. const str = "value is not defined";
-2. console.error('error: %d', str);  // 格式化输出替换message中的文本。
-3. // error: value is not defined
-4. console.error('error:', str);  // 打印message以及其余信息
-5. // error: value is not defined
-6. console.error('error:'); // 仅打印message
-7. // error:
+```js
+const str = "value is not defined";
+console.error('error: %d', str);  // 格式化输出替换message中的文本。
+// error: value is not defined
+console.error('error:', str);  // 打印message以及其余信息
+// error: value is not defined
+console.error('error:'); // 仅打印message
+// error:
 ```
 
 ## console.assert10+
-
-PhonePC/2in1TabletTVWearable
 
 static assert(value?: Object, ...arguments: Object[]): void
 
@@ -208,20 +196,18 @@ static assert(value?: Object, ...arguments: Object[]): void
 
 **示例：**
 
-```
-1. console.assert(true, 'does nothing');  // 表达式结果值为true, 无打印。
-2. console.assert(2 % 1 == 0, 'does nothing');  // 表达式结果值为true, 无打印。
+```js
+console.assert(true, 'does nothing');  // 表达式结果值为true, 无打印。
+console.assert(2 % 1 == 0, 'does nothing');  // 表达式结果值为true, 无打印。
 
-4. console.assert(false, 'console %s work', 'didn\'t');
-5. // Assertion failed: console didn't work
+console.assert(false, 'console %s work', 'didn\'t');
+// Assertion failed: console didn't work
 
-7. console.assert();
-8. // Assertion failed
+console.assert();
+// Assertion failed
 ```
 
 ## console.count10+
-
-PhonePC/2in1TabletTVWearable
 
 static count(label?: string): void
 
@@ -247,24 +233,22 @@ static count(label?: string): void
 
 **示例：**
 
-```
-1. console.count()
-2. // default: 1
-3. console.count('default')
-4. // default: 2
-5. console.count('abc')
-6. // abc: 1
-7. console.count('xyz')
-8. // xyz: 1
-9. console.count('abc')
-10. // abc: 2
-11. console.count()
-12. // default: 3
+```js
+console.count()
+// default: 1
+console.count('default')
+// default: 2
+console.count('abc')
+// abc: 1
+console.count('xyz')
+// xyz: 1
+console.count('abc')
+// abc: 2
+console.count()
+// default: 3
 ```
 
 ## console.countReset10+
-
-PhonePC/2in1TabletTVWearable
 
 static countReset(label?: string): void
 
@@ -290,17 +274,15 @@ static countReset(label?: string): void
 
 **示例：**
 
-```
-1. console.count('abc');
-2. // abc: 1
-3. console.countReset('abc');
-4. console.count('abc');
-5. // abc: 1
+```js
+console.count('abc');
+// abc: 1
+console.countReset('abc');
+console.count('abc');
+// abc: 1
 ```
 
 ## console.dir10+
-
-PhonePC/2in1TabletTVWearable
 
 static dir(dir?: Object): void
 
@@ -318,28 +300,26 @@ static dir(dir?: Object): void
 
 **示例：**
 
-```
-1. class bar {
-2. baz: boolean = true;
-3. }
-4. let b: bar = {baz: true}
-5. class foo{
-6. bar: bar = b;
-7. }
-8. let c: foo = {bar: b}
-9. class  c1{
-10. foo: foo = c;
-11. }
-12. let a: c1 = {foo: c}
-13. console.dir(a);
-14. // Object: {"foo":{"bar":{"baz":true}}}
+```js
+class bar {
+  baz: boolean = true;
+}
+let b: bar = {baz: true}
+class foo{
+  bar: bar = b;
+}
+let c: foo = {bar: b}
+class  c1{
+  foo: foo = c;
+}
+let a: c1 = {foo: c}
+console.dir(a);
+// Object: {"foo":{"bar":{"baz":true}}}
 
-16. console.dir(); // 无打印
+console.dir(); // 无打印
 ```
 
 ## console.dirxml10+
-
-PhonePC/2in1TabletTVWearable
 
 static dirxml(...arguments: Object[]): void
 
@@ -357,19 +337,17 @@ static dirxml(...arguments: Object[]): void
 
 **示例：**
 
-```
-1. const number = 5;
-2. console.dirxml('count: %d', number);
-3. // count: 5
-4. console.dirxml('count:', number);
-5. // count: 5
-6. console.dirxml('count:');
-7. // count:
+```js
+const number = 5;
+console.dirxml('count: %d', number);
+// count: 5
+console.dirxml('count:', number);
+// count: 5
+console.dirxml('count:');
+// count:
 ```
 
 ## console.group10+
-
-PhonePC/2in1TabletTVWearable
 
 static group(...arguments: Object[]): void
 
@@ -389,21 +367,21 @@ static group(...arguments: Object[]): void
 
 **示例：**
 
-```
-1. console.info("outer");
-2. // outer
-3. console.group();
-4. console.info("level 1");
-5. //   level 1
-6. console.group("in level1");
-7. //   in level1
-8. console.info("level 2");
-9. //     level 2
+```js
+console.info("outer");
+console.group();
+console.info("level 1");
+console.group("in level1");
+console.info("level 2");
+/**
+ * outer
+ *   level 1
+ *   in level1
+ *     level 2
+ */
 ```
 
 ## console.groupCollapsed10+
-
-PhonePC/2in1TabletTVWearable
 
 static groupCollapsed(...arguments: Object[]): void
 
@@ -421,21 +399,21 @@ static groupCollapsed(...arguments: Object[]): void
 
 **示例：**
 
-```
-1. console.groupCollapsed("outer");
-2. // outer
-3. console.groupCollapsed();
-4. console.info("level 1");
-5. //   level 1
-6. console.groupCollapsed("in level1");
-7. //   in level1
-8. console.info("level 2");
-9. //     level 2
+```js
+console.groupCollapsed("outer");
+console.groupCollapsed();
+console.info("level 1");
+console.groupCollapsed("in level1");
+console.info("level 2");
+/**
+ * outer
+ *   level 1
+ *   in level1
+ *     level 2
+ */
 ```
 
 ## console.groupEnd10+
-
-PhonePC/2in1TabletTVWearable
 
 static groupEnd(): void
 
@@ -447,20 +425,20 @@ static groupEnd(): void
 
 **示例：**
 
-```
-1. console.info("outer");
-2. // outer
-3. console.group();
-4. console.info("level 1");
-5. //   level 1
-6. console.groupEnd();
-7. console.info("outer");
-8. // outer
+```js
+console.info("outer");
+console.group();
+console.info("level 1");
+console.groupEnd();
+console.info("outer");
+/**
+ * outer
+ *   level 1
+ * outer
+ */
 ```
 
 ## console.table10+
-
-PhonePC/2in1TabletTVWearable
 
 static table(tableData?: Object): void
 
@@ -478,30 +456,28 @@ static table(tableData?: Object): void
 
 **示例：**
 
-```
-1. console.table([1, 2, 3]);
-2. // ┌─────────┬────────┐
-3. // │ (index) │ Values │
-4. // ├─────────┼────────┤
-5. // │    0    │   1    │
-6. // │    1    │   2    │
-7. // │    2    │   3    │
-8. // └─────────┴────────┘
+```js
+console.table([1, 2, 3]);
+// ┌─────────┬────────┐
+// │ (index) │ Values │
+// ├─────────┼────────┤
+// │    0    │   1    │
+// │    1    │   2    │
+// │    2    │   3    │
+// └─────────┴────────┘
 
-10. console.table({ a: [1, 2, 3, 4, 5], b: 5, c: { e: 5 } });
+console.table({ a: [1, 2, 3, 4, 5], b: 5, c: { e: 5 } });
 
-12. // ┌─────────┬───┬───┬───┬───┬───┬───┬────────┐
-13. // │ (index) │ 0 │ 1 │ 2 │ 3 │ 4 │ e │ Values │
-14. // ├─────────┼───┼───┼───┼───┼───┼───┼────────┤
-15. // │    a    │ 1 │ 2 │ 3 │ 4 │ 5 │   │        │
-16. // │    b    │   │   │   │   │   │   │   5    │
-17. // │    c    │   │   │   │   │   │ 5 │        │
-18. // └─────────┴───┴───┴───┴───┴───┴───┴────────┘
+// ┌─────────┬───┬───┬───┬───┬───┬───┬────────┐
+// │ (index) │ 0 │ 1 │ 2 │ 3 │ 4 │ e │ Values │
+// ├─────────┼───┼───┼───┼───┼───┼───┼────────┤
+// │    a    │ 1 │ 2 │ 3 │ 4 │ 5 │   │        │
+// │    b    │   │   │   │   │   │   │   5    │
+// │    c    │   │   │   │   │   │ 5 │        │
+// └─────────┴───┴───┴───┴───┴───┴───┴────────┘
 ```
 
 ## console.time10+
-
-PhonePC/2in1TabletTVWearable
 
 static time(label?: string): void
 
@@ -527,13 +503,11 @@ static time(label?: string): void
 
 **示例：**
 
-```
-1. console.time('abc');
+```js
+console.time('abc');
 ```
 
 ## console.timeEnd10+
-
-PhonePC/2in1TabletTVWearable
 
 static timeEnd(label?: string): void
 
@@ -559,15 +533,13 @@ static timeEnd(label?: string): void
 
 **示例：**
 
-```
-1. console.time('abc');
-2. console.timeEnd('abc');
-3. // abc: 225.438ms
+```js
+console.time('abc');
+console.timeEnd('abc');
+// abc: 225.438ms
 ```
 
 ## console.timeLog10+
-
-PhonePC/2in1TabletTVWearable
 
 static timeLog(label?: string, ...arguments: Object[]): void
 
@@ -594,17 +566,15 @@ static timeLog(label?: string, ...arguments: Object[]): void
 
 **示例：**
 
-```
-1. console.time('timer1');
-2. console.timeLog('timer1', 17);
-3. // timer1: 365.227ms 17
-4. console.timeEnd('timer1');
-5. // timer1: 513.22ms
+```js
+console.time('timer1');
+console.timeLog('timer1', 17);
+// timer1: 365.227ms 17
+console.timeEnd('timer1');
+// timer1: 513.22ms
 ```
 
 ## console.trace10+
-
-PhonePC/2in1TabletTVWearable
 
 static trace(...arguments: Object[]): void
 
@@ -622,18 +592,18 @@ static trace(...arguments: Object[]): void
 
 **示例：**
 
-```
-1. console.trace();
-2. // Trace:
-3. //     xxxxxxxxxx(当前堆栈信息)
-4. console.trace("Show the trace");
-5. // Trace: Show the trace
-6. //     xxxxxxxxxx(当前堆栈信息)
+```js
+console.trace();
+console.trace("Show the trace");
+/**
+ * Trace:
+ *     xxxxxxxxxx(当前堆栈信息)
+ * Trace: Show the trace
+ *     xxxxxxxxxx(当前堆栈信息)
+ */
 ```
 
 ## console.traceHybridStack12+
-
-PhonePC/2in1TabletTVWearable
 
 static traceHybridStack(): void
 
@@ -645,8 +615,10 @@ static traceHybridStack(): void
 
 **示例：**
 
-```
-1. console.traceHybridStack();
-2. // TraceHybridStack:
-3. //     xxxxxxxxxx(当前线程混合堆栈信息)
+```ts
+console.traceHybridStack();
+/**
+ * TraceHybridStack:
+ *     xxxxxxxxxx(当前线程混合堆栈信息)
+ */
 ```

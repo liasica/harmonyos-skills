@@ -3,40 +3,40 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决自定义组件struct内不支持定义成员变量get/set方法的问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决自定义组件struct内不支持定义成员变量get/set方法的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:31+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:a88ecef3b58b87379fe974eba245a4e184435aba50ecbe96e0a66d81b51d61e6
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:b880d2bc81e411e62787b6b4271c95c6f3f8b58832d433dfbb00fbab2cd546f8
 ---
 
 **问题现象**
 
 运行DevEco Studio的build编译构建功能后，产物中不会生成get/set方法的代码逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FL9_BnmTTJa8soA9nN_DwQ/zh-cn_image_0000002229758625.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/5J438BqfQkq7-UEoSsixkg/zh-cn_image_0000002654837825.png)
 
 错误示例如下：
 
-```
-1. @Entry
-2. @Component
-3. struct GetSetDemo {
-4. private get value(): string {
-5. return "Hello";
-6. }
-7. private set value(value: string) {
-8. this.value = value;
-9. }
+```typescript
+@Entry
+@Component
+struct GetSetDemo {
+  private get value(): string {
+    return "Hello";
+  }
+  private set value(value: string) {
+    this.value = value;
+  }
 
-11. build() {
-12. Row() {
-13. Column() {
-14. Text("Hello World")
-15. .fontSize(50)
-16. .fontWeight(FontWeight.Bold)
-17. }
-18. }
-19. }
-20. }
+  build() {
+    Row() {
+      Column() {
+        Text("Hello World")
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+      }
+    }
+  }
+}
 ```
 
 **解决措施**

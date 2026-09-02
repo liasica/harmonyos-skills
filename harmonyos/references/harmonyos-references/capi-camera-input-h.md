@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-came
 title: camera_input.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > camera_input.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:5795a11bbb2cede252c4b337655f2798bdb78236d18a7f19731c57f4b71201da
+scraped_at: 2026-09-02T15:02:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7628c5611045cb1dba285ff832eff77bc0dc808f933deeacf6ccfb45ea20f132
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明相机输入概念。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [Camera\_Input](capi-oh-camera-camera-input.md) | Camera\_Input | 相机输入对象。可以使用[OH\_CameraManager\_CreateCameraInput](capi-camera-manager-h.md#oh_cameramanager_createcamerainput)方法创建指针。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -60,14 +52,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_CameraInput\_OnError()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_CameraInput_OnError)(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
+```c
+typedef void (*OH_CameraInput_OnError)(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
 ```
 
 **描述**
@@ -95,10 +83,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_RegisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_RegisterCallback(Camera_Input* cameraInput, CameraInput_Callbacks* callback)
+```c
+Camera_ErrorCode OH_CameraInput_RegisterCallback(Camera_Input* cameraInput, CameraInput_Callbacks* callback)
 ```
 
 **描述**
@@ -122,10 +108,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_UnregisterCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_UnregisterCallback(Camera_Input* cameraInput, CameraInput_Callbacks* callback)
+```c
+Camera_ErrorCode OH_CameraInput_UnregisterCallback(Camera_Input* cameraInput, CameraInput_Callbacks* callback)
 ```
 
 **描述**
@@ -149,10 +133,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_Open()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_Open(Camera_Input* cameraInput)
+```c
+Camera_ErrorCode OH_CameraInput_Open(Camera_Input* cameraInput)
 ```
 
 **描述**
@@ -175,10 +157,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_OpenSecureCamera()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_OpenSecureCamera(Camera_Input* cameraInput, uint64_t* secureSeqId)
+```c
+Camera_ErrorCode OH_CameraInput_OpenSecureCamera(Camera_Input* cameraInput, uint64_t* secureSeqId)
 ```
 
 **描述**
@@ -202,10 +182,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_OpenConcurrentCameras()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_OpenConcurrentCameras(Camera_Input* cameraInput, Camera_ConcurrentType type)
+```c
+Camera_ErrorCode OH_CameraInput_OpenConcurrentCameras(Camera_Input* cameraInput, Camera_ConcurrentType type)
 ```
 
 **描述**
@@ -229,10 +207,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_Close()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_Close(Camera_Input* cameraInput)
+```c
+Camera_ErrorCode OH_CameraInput_Close(Camera_Input* cameraInput)
 ```
 
 **描述**
@@ -255,10 +231,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_Release(Camera_Input* cameraInput)
+```c
+Camera_ErrorCode OH_CameraInput_Release(Camera_Input* cameraInput)
 ```
 
 **描述**
@@ -283,10 +257,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_IsPhysicalCameraOrientationVariable()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_IsPhysicalCameraOrientationVariable(Camera_Input* cameraInput, bool* isVariable)
+```c
+Camera_ErrorCode OH_CameraInput_IsPhysicalCameraOrientationVariable(Camera_Input* cameraInput, bool* isVariable)
 ```
 
 **描述**
@@ -310,10 +282,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_GetPhysicalCameraOrientation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_GetPhysicalCameraOrientation(Camera_Input* cameraInput, uint32_t* orientation)
+```c
+Camera_ErrorCode OH_CameraInput_GetPhysicalCameraOrientation(Camera_Input* cameraInput, uint32_t* orientation)
 ```
 
 **描述**
@@ -337,10 +307,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_UsePhysicalCameraOrientation()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_UsePhysicalCameraOrientation(Camera_Input* cameraInput, bool isUsed)
+```c
+Camera_ErrorCode OH_CameraInput_UsePhysicalCameraOrientation(Camera_Input* cameraInput, bool isUsed)
 ```
 
 **描述**
@@ -364,10 +332,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_OnOcclusionDetectionCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*OH_CameraInput_OnOcclusionDetectionCallback)(const Camera_Input* cameraInput, Camera_OcclusionDetectionResult occlusionDetectionResult)
+```c
+typedef void (*OH_CameraInput_OnOcclusionDetectionCallback)(const Camera_Input* cameraInput, Camera_OcclusionDetectionResult occlusionDetectionResult)
 ```
 
 **描述**
@@ -385,10 +351,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_RegisterOcclusionDetectionCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_RegisterOcclusionDetectionCallback(Camera_Input* cameraInput, OH_CameraInput_OnOcclusionDetectionCallback occlusionDetectionCallback)
+```c
+Camera_ErrorCode OH_CameraInput_RegisterOcclusionDetectionCallback(Camera_Input* cameraInput, OH_CameraInput_OnOcclusionDetectionCallback occlusionDetectionCallback)
 ```
 
 **描述**
@@ -412,10 +376,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_CameraInput\_UnregisterOcclusionDetectionCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Camera_ErrorCode OH_CameraInput_UnregisterOcclusionDetectionCallback(Camera_Input* cameraInput, OH_CameraInput_OnOcclusionDetectionCallback occlusionDetectionCallback)
+```c
+Camera_ErrorCode OH_CameraInput_UnregisterOcclusionDetectionCallback(Camera_Input* cameraInput, OH_CameraInput_OnOcclusionDetectionCallback occlusionDetectionCallback)
 ```
 
 **描述**

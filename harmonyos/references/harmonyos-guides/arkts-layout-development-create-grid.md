@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建网格 (Grid/GridItem)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建网格 (Grid/GridItem)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:44+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:a93a3475ec7438bbeefada3cd69978a419dae740dc39fe11c7976f2d1ff0f407
+scraped_at: 2026-09-02T14:59:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8025b3439e9534adf74c9124e81ffff8f22dbe7e56e4c3c969ea8f5d5ff998f4
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:a93a3475ec7438bbeefada3cd69978a419dae740dc39fe11c7976f2d1ff
 
 ArkUI提供了[Grid](../harmonyos-references/ts-container-grid.md)容器组件和子组件[GridItem](../harmonyos-references/ts-container-griditem.md)，用于构建网格布局。Grid用于设置网格布局相关参数，GridItem定义子组件相关特征。Grid组件支持使用[条件渲染](arkts-rendering-control-ifelse.md)、[循环渲染](arkts-rendering-control-foreach.md)、[懒加载](arkts-rendering-control-lazyforeach.md)等方式生成子组件。
 
-说明
+**说明** 
 
 本文仅展示关键代码片段，可运行的完整代码请参考[创建网格代码](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid)。
 
@@ -24,9 +24,9 @@ Grid组件为网格容器，其中容器内各条目对应一个GridItem组件�
 
 **图1** Grid与GridItem组件关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Gz-qEOGSRDmqTBX-xZg-lQ/zh-cn_image_0000002558764274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/NYh-_zD4RJK1LkhwRCWjhg/zh-cn_image_0000002736432663.png)
 
-说明
+**说明** 
 
 Grid的子组件必须是GridItem组件。
 
@@ -34,7 +34,7 @@ Grid的子组件必须是GridItem组件。
 
 **图2** 网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DPPLOk85RMqCYEFK3tWXXQ/zh-cn_image_0000002558604598.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/81vJRwepRXWIJ1eLFMEhuw/zh-cn_image_0000002706673552.png)
 
 如果Grid组件设置了宽高属性，则其尺寸为设置值。如果没有设置宽高属性，Grid组件的尺寸默认适应其父组件的尺寸。
 
@@ -50,27 +50,25 @@ Grid组件根据行列数量与占比属性的设置，可以分为三种布局�
 
 通过设置行列数量与尺寸占比可以确定网格布局的整体排列方式。Grid组件提供了[rowsTemplate](../harmonyos-references/ts-container-grid.md#rowstemplate)和[columnsTemplate](../harmonyos-references/ts-container-grid.md#columnstemplate)属性用于设置网格布局行列数量与尺寸占比。
 
-rowsTemplate和columnsTemplate属性值是一个由多个空格和'数字+fr'间隔拼接的字符串，fr的个数即网格布局的行或列数，fr前面的数值大小，用于计算该行或列在网格布局宽度上的占比，最终决定该行或列宽度。
+rowsTemplate和columnsTemplate属性值是一个由多个空格和'数字+fr'间隔拼接的字符串，fr的个数即网格布局的行或列数，fr前面的数值大小，用于计算该行或列在网格布局对应方向上的尺寸占比，最终决定该行的高度或列的宽度。
 
 **图3** 行列数量占比示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/FapDs9NfQOilbtAG9Cg_vg/zh-cn_image_0000002558604618.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/TLJ7q7MsR5SvwMloBMGF8g/zh-cn_image_0000002706833508.png)
 
 如上图所示，构建的是一个三行三列的网格布局，其在垂直方向上分为三等份，每行占一份；在水平方向上分为四等份，第一列占一份，第二列占两份，第三列占一份。
 
 只要将rowsTemplate设置为'1fr 1fr 1fr'，同时将columnsTemplate设置为'1fr 2fr 1fr'，即可实现上述网格布局。
 
-```
-1. Grid() {
-2. // ···
-3. }
-4. .rowsTemplate('1fr 1fr 1fr')
-5. .columnsTemplate('1fr 2fr 1fr')
+```typescript
+Grid() {
+  // ···
+}
+.rowsTemplate('1fr 1fr 1fr')
+.columnsTemplate('1fr 2fr 1fr')
 ```
 
-[GridLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/GridLayout.ets#L40-L73)
-
-说明
+**说明** 
 
 当Grid组件设置了rowsTemplate或columnsTemplate时，Grid的layoutDirection、maxCount、minCount、cellLength属性不生效，属性说明可参考[Grid-属性](../harmonyos-references/ts-container-grid.md#属性)。
 
@@ -80,41 +78,39 @@ rowsTemplate和columnsTemplate属性值是一个由多个空格和'数字+fr'间
 
 **图4** 不均匀网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Ips9i0XmRMm0YXSOY6NZEw/zh-cn_image_0000002589324143.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/9_eIo8e8QAKl11Iy4-nxHA/zh-cn_image_0000002736312617.png)
 
-例如计算器的按键布局就是常见的不均匀网格布局场景。如下图，计算器中的按键“0”和“=”，按键“0”横跨第一、二两列，按键“=”横跨第五、六两行。使用Grid构建的网格布局，其行列标号从0开始，依次编号。
+例如计算器的按键布局就是常见的不均匀网格布局场景。如下图，计算器中的按键“0”和“=”，按键“0”横跨第一、二两列，按键“=”横跨第六、七两行。使用Grid构建的网格布局，其行列标号从0开始，依次编号。
 
 **图5** 计算器
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/QD-jD6ycS6m_8FJcZLRjpw/zh-cn_image_0000002589244083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/hvCpUjjsTUyVs-_pj0lYhw/zh-cn_image_0000002706673574.png)
 
 在网格中，可以通过onGetRectByIndex返回的[rowStart,columnStart,rowSpan,columnSpan]来实现跨行跨列布局，其中rowStart和columnStart属性表示指定当前元素起始行号和起始列号，rowSpan和columnSpan属性表示指定当前元素的占用行数和占用列数。
 
-所以“0”按键横跨第一列和第二列，“=”按键横跨第五行和第六行，只要将“0”对应onGetRectByIndex的rowStart和columnStart设为6和0，rowSpan和columnSpan设为1和2，将“=”对应onGetRectByIndex的rowStart和columnStart设为5和3，rowSpan和columnSpan设为2和1即可。
+所以“0”按键横跨第一列和第二列，“=”按键横跨第六行和第七行，只要将“0”对应onGetRectByIndex的rowStart和columnStart设为6和0，rowSpan和columnSpan设为1和2，将“=”对应onGetRectByIndex的rowStart和columnStart设为5和3，rowSpan和columnSpan设为2和1即可。
 
+```typescript
+layoutOptions: GridLayoutOptions = {
+  regularSize: [1, 1],
+  onGetRectByIndex: (index: number) => {
+  // ···
+    if (index == key1) { // key1是“0”按键对应的index
+      return [6, 0, 1, 2];
+    } else if (index == key2) { // key2是“=”按键对应的index
+      return [5, 3, 2, 1];
+    }
+    // ···
+    // 这里需要根据具体布局返回其他item的位置
+  }
+}
+// ···
+Grid(undefined, this.layoutOptions) {
+  // ···
+}
+.columnsTemplate('1fr 1fr 1fr 1fr')
+.rowsTemplate('1fr 1fr 1fr 1fr 1fr 1fr 1fr')
 ```
-1. layoutOptions: GridLayoutOptions = {
-2. regularSize: [1, 1],
-3. onGetRectByIndex: (index: number) => {
-4. // ···
-5. if (index == key1) { // key1是“0”按键对应的index
-6. return [6, 0, 1, 2];
-7. } else if (index == key2) { // key2是“=”按键对应的index
-8. return [5, 3, 2, 1];
-9. }
-10. // ···
-11. // 这里需要根据具体布局返回其他item的位置
-12. }
-13. }
-14. // ···
-15. Grid(undefined, this.layoutOptions) {
-16. // ···
-17. }
-18. .columnsTemplate('1fr 1fr 1fr 1fr')
-19. .rowsTemplate('1fr 1fr 1fr 1fr 1fr 1fr 1fr')
-```
-
-[GridCalculator.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/GridCalculator.ets#L24-L107)
 
 ### 设置主轴方向
 
@@ -122,21 +118,19 @@ rowsTemplate和columnsTemplate属性值是一个由多个空格和'数字+fr'间
 
 **图6** 主轴方向示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/hLX6NSZrRzqSW2FkM4Hj1w/zh-cn_image_0000002558764276.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/cFGhEyPvRrqXsklWL3vBgA/zh-cn_image_0000002736432665.png)
 
 当前layoutDirection设置为Row时，先从左到右排列，排满一行再排下一行。当前layoutDirection设置为Column时，先从上到下排列，排满一列再排下一列，如上图所示。此时，将maxCount属性设为3，表示主轴方向上最大显示的网格单元数量为3。
 
-```
-1. Grid() {
-2. // ···
-3. }
-4. .maxCount(3)
-5. .layoutDirection(GridDirection.Row)
+```typescript
+Grid() {
+  // ···
+}
+.maxCount(3)
+.layoutDirection(GridDirection.Row)
 ```
 
-[GridLayout.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/GridLayout.ets#L101-L143)
-
-说明
+**说明** 
 
 * layoutDirection属性仅在不设置rowsTemplate和columnsTemplate时生效，此时元素在layoutDirection方向上排列。
 * 仅设置rowsTemplate时，Grid主轴为水平方向，交叉轴为垂直方向。
@@ -148,85 +142,81 @@ rowsTemplate和columnsTemplate属性值是一个由多个空格和'数字+fr'间
 
 **图7** 通用办公服务
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/yhZTuVPyQz67DKVdJ3xFlw/zh-cn_image_0000002558604620.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/MUyYOHiUQdKpJALQ0qLSow/zh-cn_image_0000002706833510.png)
 
 Grid组件可以通过二维布局的方式显示一组GridItem子组件。
 
+```typescript
+Grid() {
+  GridItem() {
+    // app.string.Meeting资源文件中的value值为‘会议’
+    Text($r('app.string.Meeting'))
+    // ...
+  }
+
+  GridItem() {
+    // app.string.Check_in资源文件中的value值为‘签到’
+    Text($r('app.string.Check_in'))
+    // ...
+  }
+
+  GridItem() {
+    // app.string.Voting资源文件中的value值为‘投票’
+    Text($r('app.string.Voting'))
+    // ...
+  }
+
+  GridItem() {
+    // app.string.Printing资源文件中的value值为‘打印’
+    Text($r('app.string.Printing'))
+    // ...
+  }
+}
+// ...
+.rowsTemplate('1fr 1fr')
+.columnsTemplate('1fr 1fr')
 ```
-1. Grid() {
-2. GridItem() {
-3. // app.string.Meeting资源文件中的value值为‘会议’
-4. Text($r('app.string.Meeting'))
-5. // ...
-6. }
-
-8. GridItem() {
-9. // app.string.Check_in资源文件中的value值为‘签到’
-10. Text($r('app.string.Check_in'))
-11. // ...
-12. }
-
-14. GridItem() {
-15. // app.string.Voting资源文件中的value值为‘投票’
-16. Text($r('app.string.Voting'))
-17. // ...
-18. }
-
-20. GridItem() {
-21. // app.string.Printing资源文件中的value值为‘打印’
-22. Text($r('app.string.Printing'))
-23. // ...
-24. }
-25. }
-26. // ...
-27. .rowsTemplate('1fr 1fr')
-28. .columnsTemplate('1fr 1fr')
-```
-
-[DataInGrid.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/DataInGrid.ets#L58-L101)
 
 对于内容结构相似的多个GridItem，通常更推荐使用ForEach语句中嵌套GridItem的形式，来减少重复代码。
 
+```typescript
+@Entry
+@Component
+export struct DataInGrid {
+  // ...
+
+  @State services: Array<string> = [
+    // app.string.Meeting资源文件中的value值为‘会议’
+    this.context!.resourceManager.getStringSync($r('app.string.Meeting').id),
+    // app.string.Check_in资源文件中的value值为‘签到’
+    this.context!.resourceManager.getStringSync($r('app.string.Check_in').id),
+    // app.string.Voting资源文件中的value值为‘投票’
+    this.context!.resourceManager.getStringSync($r('app.string.Voting').id),
+    // app.string.Printing资源文件中的value值为‘打印’
+    this.context!.resourceManager.getStringSync($r('app.string.Printing').id)
+  ];
+  // ...
+
+  build() {
+    // ...
+      Column() {
+        // ...
+          Grid() {
+            ForEach(this.services, (service: string) => {
+              GridItem() {
+                Text(service)
+              }
+              // ...
+            }, (service: string): string => service)
+          }
+          .rowsTemplate(('1fr 1fr') as string)
+          .columnsTemplate(('1fr 1fr') as string)
+          // ...
+      }
+      // ...
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. export struct DataInGrid {
-4. // ...
-
-6. @State services: Array<string> = [
-7. // app.string.Meeting资源文件中的value值为‘会议’
-8. this.context!.resourceManager.getStringSync($r('app.string.Meeting').id),
-9. // app.string.Check_in资源文件中的value值为‘签到’
-10. this.context!.resourceManager.getStringSync($r('app.string.Check_in').id),
-11. // app.string.Voting资源文件中的value值为‘投票’
-12. this.context!.resourceManager.getStringSync($r('app.string.Voting').id),
-13. // app.string.Printing资源文件中的value值为‘打印’
-14. this.context!.resourceManager.getStringSync($r('app.string.Printing').id)
-15. ];
-16. // ...
-
-18. build() {
-19. // ...
-20. Column() {
-21. // ...
-22. Grid() {
-23. ForEach(this.services, (service: string) => {
-24. GridItem() {
-25. Text(service)
-26. }
-27. // ...
-28. }, (service: string): string => service)
-29. }
-30. .rowsTemplate(('1fr 1fr') as string)
-31. .columnsTemplate(('1fr 1fr') as string)
-32. // ...
-33. }
-34. // ...
-35. }
-36. }
-```
-
-[DataInGrid.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/DataInGrid.ets#L18-L138)
 
 ## 设置行列间距
 
@@ -234,19 +224,17 @@ Grid组件可以通过二维布局的方式显示一组GridItem子组件。
 
 **图8** 网格的行列间距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/nuCITbTGRS6fZwR2CJb3wQ/zh-cn_image_0000002589324145.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/H9SojppfQiCepBUJBLoQWw/zh-cn_image_0000002736312619.png)
 
 通过Grid的[rowsGap](../harmonyos-references/ts-container-grid.md#rowsgap)和[columnsGap](../harmonyos-references/ts-container-grid.md#columnsgap)可以设置网格布局的行列间距。在图5所示的计算器中，行间距为15vp，列间距为10vp。
 
+```typescript
+Grid() {
+  // ···
+}
+.columnsGap(10)
+.rowsGap(15)
 ```
-1. Grid() {
-2. // ···
-3. }
-4. .columnsGap(10)
-5. .rowsGap(15)
-```
-
-[GridColumnsGap.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/GridColumnsGap.ets#L39-L72)
 
 ## 构建可滚动的网格布局
 
@@ -254,50 +242,48 @@ Grid组件可以通过二维布局的方式显示一组GridItem子组件。
 
 **图9** 横向可滚动网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/YPEYSqNMSbSFRIUiGwnCaw/zh-cn_image_0000002589244085.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/pYldM-PLQCaMydgS6Dob-g/zh-cn_image_0000002706673576.gif)
 
 如果设置的是columnsTemplate，Grid的滚动方向为垂直方向；如果设置的是rowsTemplate，Grid的滚动方向为水平方向。
 
 如上图所示的横向可滚动网格布局，只要设置rowsTemplate属性的值且不设置columnsTemplate属性，当内容超出Grid组件宽度时，Grid可横向滚动进行内容展示。
 
+```typescript
+@Entry
+@Component
+export struct ScrollableGrid {
+  // ...
+  @State services: Array<string> = [
+    // 请将$r('app.string.Live_Streaming')替换为实际资源文件，在本示例中该资源文件的value值为"直播"
+    this.context!.resourceManager.getStringSync($r('app.string.Live_Streaming').id),
+    // 请将$r('app.string.Imported')替换为实际资源文件，在本示例中该资源文件的value值为"进口"
+    this.context!.resourceManager.getStringSync($r('app.string.Imported').id)
+    ];
+  // ...
+  build() {
+    // ...
+
+      Column({ space: 5 }) {
+        // ...
+
+          Grid() {
+            ForEach(this.services, (service: string, index: number) => {
+              GridItem() {
+                // ...
+              }
+              .width('25%')
+              // ...
+            }, (service: string): string => service)
+          }
+          .rowsTemplate('1fr 1fr') // 只设置rowsTemplate属性，当内容超出Grid区域时，可水平滚动。
+          .rowsGap(15)
+
+          // ...
+        }
+      }
+      // ...
+}
 ```
-1. @Entry
-2. @Component
-3. export struct ScrollableGrid {
-4. // ...
-5. @State services: Array<string> = [
-6. // 请将$r('app.string.Live_Streaming')替换为实际资源文件，在本示例中该资源文件的value值为"直播"
-7. this.context!.resourceManager.getStringSync($r('app.string.Live_Streaming').id),
-8. // 请将$r('app.string.Imported')替换为实际资源文件，在本示例中该资源文件的value值为"进口"
-9. this.context!.resourceManager.getStringSync($r('app.string.Imported').id)
-10. ];
-11. // ...
-12. build() {
-13. // ...
-
-15. Column({ space: 5 }) {
-16. // ...
-
-18. Grid() {
-19. ForEach(this.services, (service: string, index: number) => {
-20. GridItem() {
-21. // ...
-22. }
-23. .width('25%')
-24. // ...
-25. }, (service: string): string => service)
-26. }
-27. .rowsTemplate('1fr 1fr') // 只设置rowsTemplate属性，当内容超出Grid区域时，可水平滚动。
-28. .rowsGap(15)
-
-30. // ...
-31. }
-32. }
-33. // ...
-34. }
-```
-
-[ScrollableGrid.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/ScrollableGrid.ets#L18-L99)
 
 ## 控制滚动位置
 
@@ -305,45 +291,41 @@ Grid组件可以通过二维布局的方式显示一组GridItem子组件。
 
 **图10** 日历翻页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/KIX0mZJLR5qm8Gny4jbR1g/zh-cn_image_0000002558764278.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/hRkE_3qwR36DraQjyyUzCA/zh-cn_image_0000002736432667.gif)
 
 Grid组件初始化时，可以绑定一个[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)对象，用于进行滚动控制，例如通过Scroller对象的[scrollPage](../harmonyos-references/ts-container-scroll.md#scrollpage9)方法进行翻页。
 
+```typescript
+private scroller: Scroller = new Scroller();
 ```
-1. private scroller: Scroller = new Scroller();
-```
-
-[ScrollPositionGrid.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/ScrollPositionGrid.ets#L23-L25)
 
 在日历页面中，用户在点击“下一页”按钮时，应用响应点击事件，通过指定scrollPage方法的参数next为true，滚动到下一页。
 
+```typescript
+Column({ space: 5 }){
+  Grid(this.scroller) {
+    // ...
+  }
+  .columnsTemplate('1fr 1fr 1fr 1fr 1fr 1fr 1fr')
+  // ...
+  Row({ space: 20 }) {
+    // 请将$r('app.string.Previous_Page')替换为实际资源文件，在本示例中该资源文件的value值为"上一页"
+    Button($r('app.string.Previous_Page'))
+      .onClick(() => {
+        this.scroller.scrollPage({
+          next: false
+        });
+      })
+    // 请将$r('app.string.Next_page')替换为实际资源文件，在本示例中该资源文件的value值为"下一页"
+    Button($r('app.string.Next_page'))
+      .onClick(() => {
+        this.scroller.scrollPage({
+          next: true
+        });
+      })
+  }
+}
 ```
-1. Column({ space: 5 }){
-2. Grid(this.scroller) {
-3. // ...
-4. }
-5. .columnsTemplate('1fr 1fr 1fr 1fr 1fr 1fr 1fr')
-6. // ...
-7. Row({ space: 20 }) {
-8. // 请将$r('app.string.Previous_Page')替换为实际资源文件，在本示例中该资源文件的value值为"上一页"
-9. Button($r('app.string.Previous_Page'))
-10. .onClick(() => {
-11. this.scroller.scrollPage({
-12. next: false
-13. });
-14. })
-15. // 请将$r('app.string.Next_page')替换为实际资源文件，在本示例中该资源文件的value值为"下一页"
-16. Button($r('app.string.Next_page'))
-17. .onClick(() => {
-18. this.scroller.scrollPage({
-19. next: true
-20. });
-21. })
-22. }
-23. }
-```
-
-[GridSideToSide.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/GridSideToSide.ets#L46-L87)
 
 ## 添加外置滚动条
 
@@ -351,38 +333,78 @@ Grid组件初始化时，可以绑定一个[Scroller](../harmonyos-references/ts
 
 1. 首先，需要创建一个[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)类型的对象gridScroller。
 
+   ```typescript
+   private gridScroller: Scroller = new Scroller();
    ```
-   1. private gridScroller: Scroller = new Scroller();
-   ```
-
-   [GridScrollbar.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/GridScrollbar.ets#L23-L25)
 2. 然后，通过[scroller](../harmonyos-references/ts-container-grid.md#接口)参数绑定滚动控制器。
 
+   ```typescript
+   // gridScroller初始化Grid组件的scroller参数，绑定gridScroller与网格。
+   Grid( this.gridScroller) {
+   // ···
+   }
    ```
-   1. // gridScroller初始化Grid组件的scroller参数，绑定gridScroller与网格。
-   2. Grid( this.gridScroller) {
-   3. // ···
-   4. }
-   ```
-
-   [GridScrollbar.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/GridScrollbar.ets#L44-L60)
 3. 最后，滚动条通过[scroller](../harmonyos-references/ts-basic-components-scrollbar.md#scrollbaroptions对象说明)参数绑定滚动控制器。
 
+   ```typescript
+   // gridScroller初始化ScrollBar组件的scroller参数，绑定gridScroller与滚动条。
+   ScrollBar({ scroller: this.gridScroller })
    ```
-   1. // gridScroller初始化ScrollBar组件的scroller参数，绑定gridScroller与滚动条。
-   2. ScrollBar({ scroller: this.gridScroller })
-   ```
-
-   [GridScrollbar.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/GridScrollbar.ets#L76-L79)
 
 **图11** 网格的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/uGIHoORaSDWxko7tMaYN5g/zh-cn_image_0000002558604622.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/LaZ7b_iSSDG5aYlu6FdHPw/zh-cn_image_0000002706833512.gif)
 
-说明
+**说明** 
 
 * 滚动条组件[ScrollBar](../harmonyos-references/ts-basic-components-scrollbar.md)，还可配合其他可滚动组件使用，如[ArcList](../harmonyos-references/ts-container-arclist.md)、[List](../harmonyos-references/ts-container-list.md)、[Scroll](../harmonyos-references/ts-container-scroll.md)、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)。
 * 在圆形屏幕设备上，[Grid](../harmonyos-references/ts-container-grid.md)可以与弧形滚动条组件[ArcScrollBar](../harmonyos-references/ts-basic-components-arcscrollbar.md)配合使用为网格添加弧形外置滚动条，使用方式可参考[创建弧形列表 (ArcList)](arkts-layout-development-create-arclist.md)的[添加外置滚动条ArcScrollBar](arkts-layout-development-create-arclist.md#添加外置滚动条arcscrollbar)章节。
+
+## 手指滑动多选
+
+从API版本26.0.0开始，[Grid](../harmonyos-references/ts-container-grid.md)支持在编辑模式下实现手指滑动多选能力。进入编辑模式后，用户可以通过手指滑动经过多个[GridItem](../harmonyos-references/ts-container-griditem.md)，批量选择或取消选择网格项。应用可以在GridItem上设置是否允许被选择，并根据回调记录已选择的网格项。该能力适用于相册、文件管理、视频列表等需要连续批量选择网格项的场景。
+
+**Grid手指滑动多选示例效果图**
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ip4pXHXpSe6byB_pHJKUhQ/zh-cn_image_0000002736312621.gif)
+
+### 设置编辑模式
+
+通过[enableEditMode](../harmonyos-references/ts-container-grid.md#enableeditmode)设置是否进入编辑模式。设置为true，Grid进入编辑模式，用户可以单指滑动经过多个GridItem进行批量选择或取消选择；设置为false，Grid退出编辑模式。通过[onEditModeChange](../harmonyos-references/ts-container-grid.md#oneditmodechange)监听编辑模式变化，将系统返回、侧滑返回或双指滑动触发的编辑模式变化同步到业务状态。
+
+通过[editModeOptions](../harmonyos-references/ts-container-grid.md#editmodeoptions23)配置编辑模式下的多选行为。editModeOptions中有两个滑动多选相关参数，分别是useDefaultMultiSelectStyle和enableTwoFingerMultiSelect，默认值均为true。前者控制是否显示GridItem右下角的系统复选框，后者控制是否允许用户通过双指滑动自动进入编辑模式并进行多选。开发者需要自定义样式时，可将useDefaultMultiSelectStyle设置为false。开发者需要关闭双指滑动自动进入编辑模式时，可将enableTwoFingerMultiSelect设置为false。
+
+```typescript
+Grid() {
+  // ...
+}
+.enableEditMode(this.enableEditMode)
+.onEditModeChange((enabled: boolean) => {
+  this.setEditMode(enabled);
+})
+.editModeOptions({ useDefaultMultiSelectStyle: true, enableTwoFingerMultiSelect: true })
+```
+
+### 记录网格项选择结果
+
+在GridItem上配置[selectable](../harmonyos-references/ts-container-griditem.md#selectable8)、[selected](../harmonyos-references/ts-container-griditem.md#selected10)和[onSelect](../harmonyos-references/ts-container-griditem.md#onselect8)。selectable用于设置网格项是否允许被选择，selected用于设置网格项当前是否被选中。滑动多选过程中，组件会触发onSelect回调，应用可以在回调中记录每个网格项的最新选择结果。
+
+```typescript
+GridItem() {
+  this.GridCard(item, index)
+}
+.selectable(true)
+.selected(this.isSelected(item.id))
+.onSelect((selected: boolean) => {
+  this.updateSelected(item.id, selected);
+})
+```
+
+**说明** 
+
+* 建议使用网格项数据中不会随位置变化的唯一标识（例如文件ID）记录选择结果，不建议仅使用当前下标，避免动态增删数据后选中项错位。
+* 当业务需要在退出编辑模式后保留选择结果时，可在[onEditModeChange](../harmonyos-references/ts-container-grid.md#oneditmodechange)回调中保存选择结果。
+* 使用[LazyForEach](arkts-rendering-control-lazyforeach.md)时，数据源发生变化后应通过[DataChangeListener](../harmonyos-references/ts-rendering-control-lazyforeach.md#datachangelistener)通知组件刷新，确保滑动多选过程中网格项状态与数据源一致。
 
 ## 性能优化
 
@@ -394,19 +416,17 @@ Grid组件初始化时，可以绑定一个[Scroller](../harmonyos-references/ts
 
 设置预加载数量后，会在Grid显示区域前后各缓存cachedCount\*列数个GridItem，超出显示和缓存范围的GridItem会被释放。
 
-```
-1. Grid() {
-2. LazyForEach(this.dataSource, () => {
-3. GridItem() {
-4. }
-5. })
-6. }
-7. .cachedCount(3)
+```typescript
+Grid() {
+  LazyForEach(this.dataSource, () => {
+    GridItem() {
+    }
+  })
+}
+.cachedCount(3)
 ```
 
-[LongGrid.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ScrollableComponent/entry/src/main/ets/pages/grid/LongGrid.ets#L41-L49)
-
-说明
+**说明** 
 
 cachedCount的增加会增大UI的CPU、内存开销。使用时需要根据实际情况，综合性能和用户体验进行调整。
 

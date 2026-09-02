@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/work-schedule
 title: 延迟任务(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 延迟任务(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:29:33+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6aa9fc9b08c9f289b2126f2041dcbad9cfb70500308c0d0e25658414fcbfb5e3
+scraped_at: 2026-09-02T14:59:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:718ae0c2a1b599aca6d897c0388d1df3d143f7dbd759b0cc953901d1fac42f55
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:6aa9fc9b08c9f289b2126f2041dcbad9cfb70500308c0d0e25658414fcb
 
 **图1** 延迟任务实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gO47eFgoSTOsrJ-LKhHB1g/zh-cn_image_0000002558605094.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/i7lStN4oQaiJtr0_3zW2_g/zh-cn_image_0000002706674172.png)
 
 应用调用延迟任务接口添加、删除、查询延迟任务，延迟任务管理模块会根据任务设置的条件（通过[WorkInfo](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workinfo)参数设置，包括网络类型、充电类型、存储状态等）和系统状态（包括内存、功耗、设备温度、用户使用习惯等）统一决策调度时机。
 
@@ -41,17 +41,7 @@ content_hash: sha256:6aa9fc9b08c9f289b2126f2041dcbad9cfb70500308c0d0e25658414fcb
   | 从未使用分组 | 禁止 |
 * **超时**：WorkSchedulerExtensionAbility单次回调最长运行2分钟。如果超时不取消，系统会终止对应的Extension进程。
 * **调度延迟**：系统会根据内存、功耗、设备温度、用户使用习惯等统一调度，如当系统内存资源不足或温度达到一定档位时，系统将延迟调度该任务。
-* **WorkSchedulerExtensionAbility接口调用限制**：为保障系统安全性和稳定性，防止延迟任务滥用系统资源，对WorkSchedulerExtensionAbility能力进行管控，在WorkSchedulerExtensionAbility中限制以下接口的调用：
-
-  [@ohos.resourceschedule.backgroundTaskManager (后台任务管理)](../harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager.md)
-
-  [@ohos.backgroundTaskManager (后台任务管理)](../harmonyos-references/js-apis-backgroundtaskmanager.md)
-
-  [@ohos.multimedia.camera (相机管理)](../harmonyos-references/arkts-apis-camera.md)
-
-  [@ohos.multimedia.audio (音频管理)](../harmonyos-references/arkts-apis-audio.md)
-
-  [@ohos.multimedia.media (媒体服务)](../harmonyos-references/arkts-apis-media.md)
+* 针对[WorkSchedulerExtensionAbility](../harmonyos-references/js-apis-workschedulerextensionability.md)接口调用限制，详细请参考API中的[约束限制](../harmonyos-references/js-apis-workschedulerextensionability.md#约束限制)。
 
 ## 接口说明
 
@@ -91,99 +81,96 @@ content_hash: sha256:6aa9fc9b08c9f289b2126f2041dcbad9cfb70500308c0d0e25658414fcb
 
 1. 新建工程目录。
 
-   在工程entry Module对应的ets目录(./entry/src/main/ets)下，新建目录及ArkTS文件，例如新建一个目录并命名为WorkSchedulerExtension。在WorkSchedulerExtension目录下，新建一个ArkTS文件并命名为WorkSchedulerExtension.ets，用以实现延迟任务回调接口。
-2. 导入模块。
+   在工程entry Module对应的ets目录(./entry/src/main/ets)下，新建目录及ArkTS文件，例如新建一个目录并命名为WorkSchedulerAbility。在WorkSchedulerAbility目录下，新建一个ArkTS文件并命名为WorkSchedulerAbility.ets，用以实现延迟任务回调接口。
+2. 导入模块，无需配置权限。
 
-   ```
-   1. import { WorkSchedulerExtensionAbility, workScheduler } from '@kit.BackgroundTasksKit';
+   ```typescript
+   import {workScheduler, WorkSchedulerExtensionAbility} from '@kit.BackgroundTasksKit';
    ```
 3. 实现WorkSchedulerExtension生命周期接口。
 
-   ```
-   1. export default class WorkSchedulerAbility extends WorkSchedulerExtensionAbility {
-   2. // 延迟任务开始回调
-   3. onWorkStart(workInfo: workScheduler.WorkInfo) {
-   4. console.info(`onWorkStart, workInfo = ${JSON.stringify(workInfo)}`);
-   5. // 打印 parameters中的参数，如：参数key1
-   6. console.info(`work info parameters: ${JSON.parse(workInfo.parameters?.toString()).key1}`);
-   7. }
+   ```typescript
+   export default class WorkSchedulerAbility extends WorkSchedulerExtensionAbility {
+     // 延迟任务开始回调
+     onWorkStart(workInfo: workScheduler.WorkInfo) {
+       // ...
+       console.info(`onWorkStart, workInfo = ${JSON.stringify(workInfo)}`);
+       // 打印 parameters中的参数，如：参数key1
+       console.info(`work info parameters: ${JSON.parse(workInfo.parameters?.toString()).key1}`);
+     }
 
-   9. // 延迟任务结束回调。当延迟任务2分钟超时或应用调用stopWork接口取消任务时，触发该回调。
-   10. onWorkStop(workInfo: workScheduler.WorkInfo) {
-   11. console.info(`onWorkStop, workInfo is ${JSON.stringify(workInfo)}`);
-   12. }
-   13. }
+     // 延迟任务结束回调。当延迟任务2分钟超时或应用调用stopWork接口取消任务时，触发该回调。
+     onWorkStop(workInfo: workScheduler.WorkInfo) {
+       console.info(`onWorkStop, workInfo is ${JSON.stringify(workInfo)}`);
+     }
+   }
    ```
-
-   [WorkSchedulerAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/BackGroundTasksKit/WorkScheduler/entry/src/main/ets/WorkSchedulerAbility/WorkSchedulerAbility.ets#L28-L71)
 4. 在[module.json5配置文件](module-configuration-file.md)中注册WorkSchedulerExtensionAbility，并设置如下标签：
 
    * type标签设置为“workScheduler”。
    * srcEntry标签设置为当前ExtensionAbility组件所对应的代码路径。
 
-   ```
-   1. {
-   2. "module": {
-   3. "extensionAbilities": [
-   4. {
-   5. "name": "MyWorkSchedulerExtensionAbility",
-   6. "srcEntry": "./ets/WorkSchedulerExtension/WorkSchedulerExtension.ets",
-   7. "type": "workScheduler"
-   8. }
-   9. ]
-   10. }
-   11. }
+   ```json5
+   {
+     "module": {
+       // ...
+       "extensionAbilities": [
+         {
+           "name": "WorkSchedulerAbility",
+           "srcEntry": "./ets/WorkSchedulerAbility/WorkSchedulerAbility.ets",
+           "type": "workScheduler",
+           // ...
+         }
+       ]
+     }
+   }
    ```
 
 ### 实现延迟任务调度
 
 1. 导入模块。
 
-   ```
-   1. import { workScheduler } from '@kit.BackgroundTasksKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { workScheduler } from '@kit.BackgroundTasksKit';
    ```
 2. 申请延迟任务。
 
-   ```
-   1. let workInfo: workScheduler.WorkInfo = {
-   2. workId: 1,
-   3. networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
-   4. bundleName: 'ohos.samples.workschedulerextensionability',
-   5. abilityName: 'WorkSchedulerAbility',
-   6. // ...
-   7. }
+   ```typescript
+   let workInfo: workScheduler.WorkInfo = {
+     workId: 1,
+     networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+     bundleName: 'ohos.samples.workschedulerextensionability',
+     abilityName: 'WorkSchedulerAbility',
+     // ...
+   }
 
-   9. try {
-   10. workScheduler.startWork(workInfo);
-   11. console.info(`startWork success`);
-   12. }
-   13. catch (error) {
-   14. console.error(`startWork failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-   15. }
+   try {
+     workScheduler.startWork(workInfo);
+     console.info(`startWork success`);
+   }
+   catch (error) {
+     console.error(`startWork failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+   }
    ```
-
-   [WorkSchedulerSystem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/BackGroundTasksKit/WorkScheduler/entry/src/main/ets/feature/WorkSchedulerSystem.ets#L124-L149)
 3. 取消延迟任务。
 
+   ```typescript
+   // 创建workInfo
+   let workInfo: workScheduler.WorkInfo = {
+     workId: 1,
+     networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+     bundleName: 'ohos.samples.workschedulerextensionability',
+     abilityName: 'WorkSchedulerAbility',
+     // ...
+   }
+   try {
+     workScheduler.stopWork(workInfo);
+     console.info(`stopWork success`);
+   } catch (error) {
+     console.error(`stopWork failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+   }
    ```
-   1. // 创建workinfo
-   2. let workInfo: workScheduler.WorkInfo = {
-   3. workId: 1,
-   4. networkType: workScheduler.NetworkType.NETWORK_TYPE_WIFI,
-   5. bundleName: 'ohos.samples.workschedulerextensionability',
-   6. abilityName: 'WorkSchedulerAbility',
-   7. }
-
-   9. try {
-   10. workScheduler.stopWork(workInfo);
-   11. console.info(`stopWork success`);
-   12. } catch (error) {
-   13. console.error(`stopWork failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-   14. }
-   ```
-
-   [WorkSchedulerSystem.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/BackGroundTasksKit/WorkScheduler/entry/src/main/ets/feature/WorkSchedulerSystem.ets#L125-L160)
 
 ### 延迟任务调度功能验证
 
@@ -191,10 +178,16 @@ content_hash: sha256:6aa9fc9b08c9f289b2126f2041dcbad9cfb70500308c0d0e25658414fcb
 
 延迟任务申请成功之后，需要等到条件满足后才可以执行延迟任务回调，为了快速验证延迟任务回调功能是否正确，可以通过以下[hidumper命令](hidumper.md)手动触发延迟任务执行回调。
 
-```
-1. $ hidumper -s 1904 -a '-t com.example.application MyWorkSchedulerExtensionAbility'
+**说明** 
 
-3. -------------------------------[ability]-------------------------------
+* -s 1904：指向WorkScheduler系统服务发送命令（1904为该服务ID）。
+* -a：携带附加参数，需用引号包裹。
+* -t：指定目标应用包名和 ExtensionAbility 名称，示例中的 com.example.application 和 MyWorkSchedulerExtensionAbility 需替换为实际值。
 
-6. ----------------------------------WorkSchedule----------------------------------
+```ts
+$ hidumper -s 1904 -a '-t com.example.application MyWorkSchedulerExtensionAbility'
+
+-------------------------------[ability]-------------------------------
+
+----------------------------------WorkSchedule----------------------------------
 ```

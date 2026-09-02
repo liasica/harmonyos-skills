@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决编译报错“ The inferred type of 'xxx' cannot be named without a reference to 'xxx'. This is likely not portable. A type annotation is necessary.”的问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决编译报错“ The inferred type of 'xxx' cannot be named without a reference to 'xxx'. This is likely not portable. A type annotation is necessary.”的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:49+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:955148a5ee064850bacf46385db222500907c7edaaf7d541059472b20ee71d79
+scraped_at: 2026-09-02T14:54:55+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:c1bbee8d9d8645f2ee59bcdc1852d8cf1d4ab5ac116b8e411460442b657b3c93
 ---
 
 **问题现象**
@@ -16,7 +16,7 @@ content_hash: sha256:955148a5ee064850bacf46385db222500907c7edaaf7d541059472b20ee
 
 HSP生成的.d.ts声明文件缺少类型注解，因为原始文件中未注明类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/uHiT9QliTouP1x9Cg-tzPw/zh-cn_image_0000002229758869.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Xz-j8JvSQfqKam6A0iaLzg/zh-cn_image_0000002654797967.png "点击放大")
 
 **解决方案**
 

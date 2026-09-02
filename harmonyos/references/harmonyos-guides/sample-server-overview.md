@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sample-server
 title: 示例服务器开发概述
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 升级服务 > 示例服务器开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:21+08:00
+scraped_at: 2026-09-02T14:50:07+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1420da1d5b6b24e5a6f2ab46ce1ef6a90b67d74c70a779c9493df9ea46b3f26c
+content_hash: sha256:130880377e3cad704f341b1ab8e15b3d0a7f21870919f3f6816238990e74d8fd
 ---
 
 示例服务器提供一个简易的升级包部署的服务器实例参考，用于搭建升级服务子系统的辅助验证环境。
@@ -30,22 +30,22 @@ content_hash: sha256:1420da1d5b6b24e5a6f2ab46ce1ef6a90b67d74c70a779c9493df9ea46b
 
 * 服务器返回报文格式json示例，注意verifyInfo字段是升级包的sha256值，size字段是升级包的大小，单位为字节。
 
-```
-1. {
-2. "searchStatus": 0,
-3. "errMsg": "success",
-4. "checkResults": [{
-5. "versionName": "versionNameSample",
-6. "versionCode": "versionCodeSample",
-7. "verifyInfo": "verifyInfoSHA256Value1234567",
-8. "size": 1234567,
-9. "packageType": 1,
-10. "url": "http://serverAddressSample/packageNameSample.fileTypeSample",
-11. "descriptPackageId": "abcdefg1234567ABCDEFG"
-12. }],
-13. "descriptInfo": [{
-14. "descriptionType": 0,
-15. "content": "This package is used for update."
-16. }]
-17. }
+```json
+{
+    "searchStatus": 0,
+    "errMsg": "success",
+    "checkResults": [{
+        "versionName": "versionNameSample",
+        "versionCode": "versionCodeSample",
+        "verifyInfo": "verifyInfoSHA256Value1234567",
+        "size": 1234567,
+        "packageType": 1,
+        "url": "http://serverAddressSample/packageNameSample.fileTypeSample",
+        "descriptPackageId": "abcdefg1234567ABCDEFG"
+    }],
+    "descriptInfo": [{
+        "descriptionType": 0,
+        "content": "This package is used for update."
+    }]
+}
 ```

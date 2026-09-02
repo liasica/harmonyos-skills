@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-add-backg
 title: 添加、删除背景
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 添加、删除背景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:46+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:e8be0a7f2b37d2806ca436bb30d64b749216e8e052668954dd52288fc555dd19
+scraped_at: 2026-09-02T15:00:00+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:d6652f3d1f7a15dae95fa58069f2f6ce6b6f89d2acf970441bd0957a104bc9b7
 ---
 
 对指定页面添加背景图片或背景颜色，并设置大小、旋转、透明度和位置等属性，支持图片格式：PNG、BMP、JPEG。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/9uB7J9H8Q0K9zhYil7OJTA/zh-cn_image_0000002589325475.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ShFpeDDSS9WrgLbK7aokpQ/zh-cn_image_0000002706675190.png)
 
 ## 接口说明
 
@@ -19,7 +19,7 @@ content_hash: sha256:e8be0a7f2b37d2806ca436bb30d64b749216e8e052668954dd52288fc55
 | [addBackground](../harmonyos-references/pdf-arkts-pdfservice.md#addbackground)(info: BackgroundInfo, startIndex: number, endIndex: number, oddPages: boolean, evenPages: boolean): void | 插入PDF文档背景。 |
 | [removeBackground](../harmonyos-references/pdf-arkts-pdfservice.md#removebackground)(): boolean | 删除PDF文档背景。 |
 
-注意
+**注意** 
 
 [addBackground](../harmonyos-references/pdf-arkts-pdfservice.md#addbackground)方法属于耗时业务，需要遍历每一页去添加背景，添加页面较多时建议放到线程里去处理。
 
@@ -38,56 +38,58 @@ content_hash: sha256:e8be0a7f2b37d2806ca436bb30d64b749216e8e052668954dd52288fc55
 2. 调用removeBackground方法，去除背景。
 3. 保存PDF文档到应用沙箱。
 
-```
-1. import { pdfService } from '@kit.PDFKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { pdfService } from '@kit.PDFKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+ // ...
+@Entry
+@Component
+struct BackgroundPage {
+  private pdfDocument: pdfService.PdfDocument = new pdfService.PdfDocument();
+  private context = this.getUIContext().getHostContext() as Context;
 
-4. @Entry
-5. @Component
-6. struct PdfPage {
-7. private pdfDocument: pdfService.PdfDocument = new pdfService.PdfDocument();
-8. private context = this.getUIContext().getHostContext() as Context;
-
-10. build() {
-11. Column() {
-12. Button('addBackground').onClick(async () => {
-13. // 确保在工程目录src/main/resources/resfile里有input.pdf文档
-14. let filePath = this.context.resourceDir + '/input.pdf';
-15. let res = this.pdfDocument.loadDocument(filePath);
-16. if (res === pdfService.ParseResult.PARSE_SUCCESS) {
-17. let bginfo: pdfService.BackgroundInfo = new pdfService.BackgroundInfo();
-18. // 确保在工程目录src/main/resources/resfile里有img.jpg文件
-19. bginfo.imagePath = this.context.resourceDir + '/img.jpg';
-20. bginfo.backgroundColor = 50;
-21. bginfo.isOnTop = true;
-22. bginfo.rotation = 45;
-23. bginfo.scale = 0.5;
-24. bginfo.opacity = 0.3;
-25. bginfo.verticalAlignment = pdfService.BackgroundAlignment.BACKGROUND_ALIGNMENT_TOP;
-26. bginfo.horizontalAlignment = pdfService.BackgroundAlignment.BACKGROUND_ALIGNMENT_LEFT;
-27. bginfo.horizontalSpace = 1.0;
-28. bginfo.verticalSpace = 1.0;
-29. this.pdfDocument.addBackground(bginfo, 0, 2, true, true);
-30. let outPdfPath = this.context.filesDir + '/testAddBackground.pdf';
-31. let result = this.pdfDocument.saveDocument(outPdfPath);
-32. hilog.info(0x0000, 'PdfPage', 'addBackground %{public}s!', result ? 'success' : 'fail');
-33. }
-34. this.pdfDocument.releaseDocument();
-35. })
-36. Button('removeBackground').onClick(async () => {
-37. let filePath = this.context.filesDir + '/testAddBackground.pdf';
-38. let res = this.pdfDocument.loadDocument(filePath);
-39. if (res === pdfService.ParseResult.PARSE_SUCCESS && this.pdfDocument.hasBackground()) {
-40. let removeResult = this.pdfDocument.removeBackground();
-41. if (removeResult) {
-42. let outPdfPath = this.context.filesDir + '/removeBackground.pdf';
-43. let result = this.pdfDocument.saveDocument(outPdfPath);
-44. hilog.info(0x0000, 'PdfPage', 'removeBackground %{public}s!', result ? 'success' : 'fail');
-45. }
-46. }
-47. this.pdfDocument.releaseDocument();
-48. })
-49. }
-50. }
-51. }
+  build() {
+    Column() {
+     // ...
+        Button('addBackground').onClick(async () => {
+            // 确保在工程目录src/main/resources/resfile里有input.pdf文档
+          let filePath = this.context.resourceDir + '/input.pdf';
+          let res = this.pdfDocument.loadDocument(filePath);
+          if (res === pdfService.ParseResult.PARSE_SUCCESS) {
+            let bginfo: pdfService.BackgroundInfo = new pdfService.BackgroundInfo();
+            // 确保在工程目录src/main/resources/resfile里有img.jpg文件
+            bginfo.imagePath = this.context.resourceDir + '/img.jpg';
+            bginfo.backgroundColor = 50;
+            bginfo.isOnTop = true;
+            bginfo.rotation = 45;
+            bginfo.scale = 0.5;
+            bginfo.opacity = 0.3;
+            bginfo.verticalAlignment = pdfService.BackgroundAlignment.BACKGROUND_ALIGNMENT_TOP;
+            bginfo.horizontalAlignment = pdfService.BackgroundAlignment.BACKGROUND_ALIGNMENT_LEFT;
+            bginfo.horizontalSpace = 1.0;
+            bginfo.verticalSpace = 1.0;
+            this.pdfDocument.addBackground(bginfo, 0, 2, true, true);
+            let outPdfPath = this.context.filesDir + '/testAddBackground.pdf';
+            let result = this.pdfDocument.saveDocument(outPdfPath);
+            hilog.info(0x0000, 'BackgroundPage', 'addBackground %{public}s!', result ? 'success' : 'fail');
+          }
+          this.pdfDocument.releaseDocument();
+        })
+        Button('removeBackground').onClick(async () => {
+          let filePath = this.context.filesDir + '/testAddBackground.pdf';
+          let res = this.pdfDocument.loadDocument(filePath);
+          if (res === pdfService.ParseResult.PARSE_SUCCESS && this.pdfDocument.hasBackground()) {
+            let removeResult = this.pdfDocument.removeBackground();
+            if (removeResult) {
+              let outPdfPath = this.context.filesDir + '/removeBackground.pdf';
+              let result = this.pdfDocument.saveDocument(outPdfPath);
+              hilog.info(0x0000, 'BackgroundPage', 'removeBackground %{public}s!', result ? 'success' : 'fail');
+            }
+          }
+          this.pdfDocument.releaseDocument();
+        })
+           // ...
+    }
+  }
+}
 ```

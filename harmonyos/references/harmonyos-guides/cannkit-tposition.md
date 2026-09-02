@@ -3,37 +3,37 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tposi
 title: TPosition
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 内存管理与同步控制 > TPosition
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:30819e30a1db4ba095bf81386a2dcb83ea38466155c20921a14345e24a3bcd53
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-07-03
+content_hash: sha256:8c51fd1da1174a93220240404f50c3fab23c7320817e403a3370078e84a8b549
 ---
 
-AscendC管理不同层级的物理内存时，用一种抽象的逻辑位置（TPosition）来表达各级别的存储，代替了片上物理存储的概念，达到隐藏硬件架构的目的。主要的TPosition类型包括：VECIN、VECOUT、VECCALC、A1、A2、B1、B2、CO1、CO2，其中VECIN、VECCALC、VECOUT主要用于矢量编程，A1、A2、B1、B2、C1、C2、CO1、CO2用于矩阵编程。开发者可以参考了解TPosition的基础概念，通过[通用约束](cannkit-general-constraints.md)表1了解TPosition和物理存储的映射关系。
+AscendC管理不同层级的物理内存时，用一种抽象的逻辑位置（TPosition）来表达各级别的存储，代替了片上物理存储的概念，达到隐藏硬件架构的目的。主要的TPosition类型包括：VECIN、VECOUT、VECCALC、A1、A2、B1、B2、C1、C2、CO1、CO2，其中VECIN、VECCALC、VECOUT主要用于矢量编程，A1、A2、B1、B2、C1、C2、CO1、CO2用于矩阵编程。开发者可以参考了解TPosition的基础概念，通过[通用约束](cannkit-general-constraints.md)表1了解TPosition和物理存储的映射关系。
 
 TPosition定义如下。
 
-```
-1. enum class TPosition : uint8_t {
-2. GM,
-3. A1,
-4. A2,
-5. B1,
-6. B2,
-7. C1,
-8. C2,
-9. CO1,
-10. CO2,
-11. VECIN,
-12. VECOUT,
-13. VECCALC,
-14. LCM = VECCALC,
-15. SPM,
-16. SHM = SPM,
-17. TSCM,
-18. C2PIPE2GM,
-19. C2PIPE2LOCAL,
-20. MAX,
-21. };
+```cpp
+enum class TPosition : uint8_t {
+    GM,
+    A1,
+    A2,
+    B1,
+    B2,
+    C1,
+    C2,
+    CO1,
+    CO2,
+    VECIN,
+    VECOUT,
+    VECCALC,
+    LCM = VECCALC,
+    SPM,
+    SHM = SPM,
+    TSCM,
+    C2PIPE2GM,
+    C2PIPE2LOCAL,
+    MAX,
+};
 ```
 
 TPosition枚举值的具体定义如下。

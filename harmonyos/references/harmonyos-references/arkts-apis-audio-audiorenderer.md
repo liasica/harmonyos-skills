@@ -3,31 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioRenderer)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioRenderer)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:bf8e031aa2874f322b6f38ed97e44cc1d04bf4d7a6d9b9ea1913bc91becaf28e
+scraped_at: 2026-09-02T15:02:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:afda854f174abbf377e062c22168799f20c853e229a6985f5a5f524f326473a2
 ---
 
 提供音频渲染的相关接口。
 
 在使用AudioRenderer的接口之前，需先通过[createAudioRenderer](arkts-apis-audio-f.md#audiocreateaudiorenderer8)获取AudioRenderer实例。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 8开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
@@ -37,15 +33,13 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 
-3. let state: audio.AudioState = audioRenderer.state;
+let state: audio.AudioState = audioRenderer.state;
 ```
 
 ## getRendererInfo8+
-
-PhonePC/2in1TabletTVWearable
 
 getRendererInfo(callback: AsyncCallback<AudioRendererInfo>): void
 
@@ -61,21 +55,19 @@ getRendererInfo(callback: AsyncCallback<AudioRendererInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getRendererInfo((err: BusinessError, audioRendererInfo: audio.AudioRendererInfo) => {
-4. if (err) {
-5. console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
-6. } else {
-7. console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
-8. }
-9. });
+audioRenderer.getRendererInfo((err: BusinessError, audioRendererInfo: audio.AudioRendererInfo) => {
+  if (err) {
+    console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
+  } else {
+    console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
+  }
+});
 ```
 
 ## getRendererInfo8+
-
-PhonePC/2in1TabletTVWearable
 
 getRendererInfo(): Promise<AudioRendererInfo>
 
@@ -91,19 +83,17 @@ getRendererInfo(): Promise<AudioRendererInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getRendererInfo().then((audioRendererInfo: audio.AudioRendererInfo) => {
-4. console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
-7. });
+audioRenderer.getRendererInfo().then((audioRendererInfo: audio.AudioRendererInfo) => {
+  console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## getRendererInfoSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getRendererInfoSync(): AudioRendererInfo
 
@@ -119,21 +109,19 @@ getRendererInfoSync(): AudioRendererInfo
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let audioRendererInfo = audioRenderer.getRendererInfoSync();
-5. console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to get renderer info. Code: ${error.code}, message: ${error.message}`);
-9. }
+try {
+  let audioRendererInfo = audioRenderer.getRendererInfoSync();
+  console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to get renderer info. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## getStreamInfo8+
-
-PhonePC/2in1TabletTVWearable
 
 getStreamInfo(callback: AsyncCallback<AudioStreamInfo>): void
 
@@ -149,21 +137,19 @@ getStreamInfo(callback: AsyncCallback<AudioStreamInfo>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getStreamInfo((err: BusinessError, streamInfo: audio.AudioStreamInfo) => {
-4. console.info('Renderer GetStreamInfo:');
-5. console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
-6. console.info(`Renderer channel: ${streamInfo.channels}`);
-7. console.info(`Renderer format: ${streamInfo.sampleFormat}`);
-8. console.info(`Renderer encoding type: ${streamInfo.encodingType}`);
-9. });
+audioRenderer.getStreamInfo((err: BusinessError, streamInfo: audio.AudioStreamInfo) => {
+  console.info('Renderer GetStreamInfo:');
+  console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
+  console.info(`Renderer channel: ${streamInfo.channels}`);
+  console.info(`Renderer format: ${streamInfo.sampleFormat}`);
+  console.info(`Renderer encoding type: ${streamInfo.encodingType}`);
+});
 ```
 
 ## getStreamInfo8+
-
-PhonePC/2in1TabletTVWearable
 
 getStreamInfo(): Promise<AudioStreamInfo>
 
@@ -179,23 +165,21 @@ getStreamInfo(): Promise<AudioStreamInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getStreamInfo().then((streamInfo: audio.AudioStreamInfo) => {
-4. console.info('Renderer GetStreamInfo:');
-5. console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
-6. console.info(`Renderer channel: ${streamInfo.channels}`);
-7. console.info(`Renderer format: ${streamInfo.sampleFormat}`);
-8. console.info(`Renderer encoding type: ${streamInfo.encodingType}`);
-9. }).catch((err: BusinessError) => {
-10. console.error(`ERROR: ${err}`);
-11. });
+audioRenderer.getStreamInfo().then((streamInfo: audio.AudioStreamInfo) => {
+  console.info('Renderer GetStreamInfo:');
+  console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
+  console.info(`Renderer channel: ${streamInfo.channels}`);
+  console.info(`Renderer format: ${streamInfo.sampleFormat}`);
+  console.info(`Renderer encoding type: ${streamInfo.encodingType}`);
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## getStreamInfoSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getStreamInfoSync(): AudioStreamInfo
 
@@ -211,24 +195,22 @@ getStreamInfoSync(): AudioStreamInfo
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let streamInfo: audio.AudioStreamInfo = audioRenderer.getStreamInfoSync();
-5. console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
-6. console.info(`Renderer channel: ${streamInfo.channels}`);
-7. console.info(`Renderer format: ${streamInfo.sampleFormat}`);
-8. console.info(`Renderer encoding type: ${streamInfo.encodingType}`);
-9. } catch (err) {
-10. let error = err as BusinessError;
-11. console.error(`ERROR: ${error}`);
-12. }
+try {
+  let streamInfo: audio.AudioStreamInfo = audioRenderer.getStreamInfoSync();
+  console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
+  console.info(`Renderer channel: ${streamInfo.channels}`);
+  console.info(`Renderer format: ${streamInfo.sampleFormat}`);
+  console.info(`Renderer encoding type: ${streamInfo.encodingType}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`ERROR: ${error}`);
+}
 ```
 
 ## getAudioStreamId9+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioStreamId(callback: AsyncCallback<number>): void
 
@@ -244,17 +226,15 @@ getAudioStreamId(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getAudioStreamId((err: BusinessError, streamId: number) => {
-4. console.info(`Renderer GetStreamId: ${streamId}`);
-5. });
+audioRenderer.getAudioStreamId((err: BusinessError, streamId: number) => {
+  console.info(`Renderer GetStreamId: ${streamId}`);
+});
 ```
 
 ## getAudioStreamId9+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioStreamId(): Promise<number>
 
@@ -270,19 +250,17 @@ getAudioStreamId(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getAudioStreamId().then((streamId: number) => {
-4. console.info(`Renderer getAudioStreamId: ${streamId}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.getAudioStreamId().then((streamId: number) => {
+  console.info(`Renderer getAudioStreamId: ${streamId}`);
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## getAudioStreamIdSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioStreamIdSync(): number
 
@@ -298,21 +276,19 @@ getAudioStreamIdSync(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let streamId: number = audioRenderer.getAudioStreamIdSync();
-5. console.info(`Renderer getAudioStreamIdSync: ${streamId}`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`ERROR: ${error}`);
-9. }
+try {
+  let streamId: number = audioRenderer.getAudioStreamIdSync();
+  console.info(`Renderer getAudioStreamIdSync: ${streamId}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`ERROR: ${error}`);
+}
 ```
 
 ## setAudioEffectMode10+
-
-PhonePC/2in1TabletTVWearable
 
 setAudioEffectMode(mode: AudioEffectMode, callback: AsyncCallback<void>): void
 
@@ -338,21 +314,19 @@ setAudioEffectMode(mode: AudioEffectMode, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT, (err: BusinessError) => {
-4. if (err) {
-5. console.error('Failed to set params');
-6. } else {
-7. console.info('Callback invoked to indicate a successful audio effect mode setting.');
-8. }
-9. });
+audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT, (err: BusinessError) => {
+  if (err) {
+    console.error('Failed to set params');
+  } else {
+    console.info('Callback invoked to indicate a successful audio effect mode setting.');
+  }
+});
 ```
 
 ## setAudioEffectMode10+
-
-PhonePC/2in1TabletTVWearable
 
 setAudioEffectMode(mode: AudioEffectMode): Promise<void>
 
@@ -383,19 +357,17 @@ setAudioEffectMode(mode: AudioEffectMode): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT).then(() => {
-4. console.info('setAudioEffectMode SUCCESS');
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT).then(() => {
+  console.info('setAudioEffectMode SUCCESS');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## getAudioEffectMode10+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioEffectMode(callback: AsyncCallback<AudioEffectMode>): void
 
@@ -411,21 +383,19 @@ getAudioEffectMode(callback: AsyncCallback<AudioEffectMode>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getAudioEffectMode((err: BusinessError, effectMode: audio.AudioEffectMode) => {
-4. if (err) {
-5. console.error('Failed to get params');
-6. } else {
-7. console.info(`getAudioEffectMode: ${effectMode}`);
-8. }
-9. });
+audioRenderer.getAudioEffectMode((err: BusinessError, effectMode: audio.AudioEffectMode) => {
+  if (err) {
+    console.error('Failed to get params');
+  } else {
+    console.info(`getAudioEffectMode: ${effectMode}`);
+  }
+});
 ```
 
 ## getAudioEffectMode10+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioEffectMode(): Promise<AudioEffectMode>
 
@@ -441,19 +411,17 @@ getAudioEffectMode(): Promise<AudioEffectMode>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getAudioEffectMode().then((effectMode: audio.AudioEffectMode) => {
-4. console.info(`getAudioEffectMode: ${effectMode}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.getAudioEffectMode().then((effectMode: audio.AudioEffectMode) => {
+  console.info(`getAudioEffectMode: ${effectMode}`);
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## start8+
-
-PhonePC/2in1TabletTVWearable
 
 start(callback: AsyncCallback<void>): void
 
@@ -469,21 +437,19 @@ start(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.start((err: BusinessError) => {
-4. if (err) {
-5. console.error('Renderer start failed.');
-6. } else {
-7. console.info('Renderer start success.');
-8. }
-9. });
+audioRenderer.start((err: BusinessError) => {
+  if (err) {
+    console.error('Renderer start failed.');
+  } else {
+    console.info('Renderer start success.');
+  }
+});
 ```
 
 ## start8+
-
-PhonePC/2in1TabletTVWearable
 
 start(): Promise<void>
 
@@ -499,19 +465,17 @@ start(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.start().then(() => {
-4. console.info('Renderer started');
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.start().then(() => {
+  console.info('Renderer started');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## pause8+
-
-PhonePC/2in1TabletTVWearable
 
 pause(callback: AsyncCallback<void>): void
 
@@ -527,21 +491,19 @@ pause(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.pause((err: BusinessError) => {
-4. if (err) {
-5. console.error('Renderer pause failed');
-6. } else {
-7. console.info('Renderer paused.');
-8. }
-9. });
+audioRenderer.pause((err: BusinessError) => {
+  if (err) {
+    console.error('Renderer pause failed');
+  } else {
+    console.info('Renderer paused.');
+  }
+});
 ```
 
 ## pause8+
-
-PhonePC/2in1TabletTVWearable
 
 pause(): Promise<void>
 
@@ -557,19 +519,17 @@ pause(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.pause().then(() => {
-4. console.info('Renderer paused');
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.pause().then(() => {
+  console.info('Renderer paused');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## drain8+
-
-PhonePC/2in1TabletTVWearable
 
 drain(callback: AsyncCallback<void>): void
 
@@ -585,21 +545,19 @@ drain(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.drain((err: BusinessError) => {
-4. if (err) {
-5. console.error('Renderer drain failed');
-6. } else {
-7. console.info('Renderer drained.');
-8. }
-9. });
+audioRenderer.drain((err: BusinessError) => {
+  if (err) {
+    console.error('Renderer drain failed');
+  } else {
+    console.info('Renderer drained.');
+  }
+});
 ```
 
 ## drain8+
-
-PhonePC/2in1TabletTVWearable
 
 drain(): Promise<void>
 
@@ -615,19 +573,17 @@ drain(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.drain().then(() => {
-4. console.info('Renderer drained successfully');
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.drain().then(() => {
+  console.info('Renderer drained successfully');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## flush11+
-
-PhonePC/2in1TabletTVWearable
 
 flush(): Promise<void>
 
@@ -651,19 +607,17 @@ flush(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.flush().then(() => {
-4. console.info('Renderer flushed successfully');
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.flush().then(() => {
+  console.info('Renderer flushed successfully');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## stop8+
-
-PhonePC/2in1TabletTVWearable
 
 stop(callback: AsyncCallback<void>): void
 
@@ -679,21 +633,19 @@ stop(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.stop((err: BusinessError) => {
-4. if (err) {
-5. console.error('Renderer stop failed');
-6. } else {
-7. console.info('Renderer stopped.');
-8. }
-9. });
+audioRenderer.stop((err: BusinessError) => {
+  if (err) {
+    console.error('Renderer stop failed');
+  } else {
+    console.info('Renderer stopped.');
+  }
+});
 ```
 
 ## stop8+
-
-PhonePC/2in1TabletTVWearable
 
 stop(): Promise<void>
 
@@ -709,19 +661,17 @@ stop(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.stop().then(() => {
-4. console.info('Renderer stopped successfully');
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.stop().then(() => {
+  console.info('Renderer stopped successfully');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## release8+
-
-PhonePC/2in1TabletTVWearable
 
 release(callback: AsyncCallback<void>): void
 
@@ -737,21 +687,19 @@ release(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.release((err: BusinessError) => {
-4. if (err) {
-5. console.error('Renderer release failed');
-6. } else {
-7. console.info('Renderer released.');
-8. }
-9. });
+audioRenderer.release((err: BusinessError) => {
+  if (err) {
+    console.error('Renderer release failed');
+  } else {
+    console.info('Renderer released.');
+  }
+});
 ```
 
 ## release8+
-
-PhonePC/2in1TabletTVWearable
 
 release(): Promise<void>
 
@@ -767,19 +715,17 @@ release(): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.release().then(() => {
-4. console.info('Renderer released successfully');
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.release().then(() => {
+  console.info('Renderer released successfully');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## getAudioTime8+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioTime(callback: AsyncCallback<number>): void
 
@@ -795,17 +741,15 @@ getAudioTime(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getAudioTime((err: BusinessError, timestamp: number) => {
-4. console.info(`Current timestamp: ${timestamp}`);
-5. });
+audioRenderer.getAudioTime((err: BusinessError, timestamp: number) => {
+  console.info(`Current timestamp: ${timestamp}`);
+});
 ```
 
 ## getAudioTime8+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioTime(): Promise<number>
 
@@ -821,19 +765,17 @@ getAudioTime(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getAudioTime().then((timestamp: number) => {
-4. console.info(`Current timestamp: ${timestamp}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.getAudioTime().then((timestamp: number) => {
+  console.info(`Current timestamp: ${timestamp}`);
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## getAudioTimeSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioTimeSync(): number
 
@@ -849,31 +791,38 @@ getAudioTimeSync(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let timestamp: number = audioRenderer.getAudioTimeSync();
-5. console.info(`Current timestamp: ${timestamp}`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`ERROR: ${error}`);
-9. }
+try {
+  let timestamp: number = audioRenderer.getAudioTimeSync();
+  console.info(`Current timestamp: ${timestamp}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`ERROR: ${error}`);
+}
 ```
 
 ## getAudioTimestampInfo19+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioTimestampInfo(): Promise<AudioTimestampInfo>
 
 获取输出音频流时间戳和位置信息，适配倍速接口。使用Promise异步回调。
 
-获取输出音频流时间戳和位置信息，通常用于进行音画同步对齐。
+获取输出音频流时间戳和位置信息，通常用于进行音画同步对齐，播放位置单位为采样数（samples），时间戳单位为纳秒（nanosecond，ns）。
 
-注意，当实际播放位置（framePosition）为0时，时间戳（timestamp）是固定值，直到流真正跑起来时才会更新。当调用Flush接口时实际播放位置也会被重置。
+当设备切换或暂停恢复时，由于播放通路本身需要一段时间恢复，调用该接口获取的播放位置和时间戳会短暂地保持在切换或暂停前的状态。
 
-当音频流路由（route）变化时，例如设备变化或者输出类型变化时，播放位置也会被重置，但此时时间戳仍会持续增长。推荐当实际播放位置和时间戳的变化稳定后再使用该接口获取的值。该接口适配倍速接口，例如当播放速度设置为2倍时，播放位置的增长速度也会返回为正常的2倍。
+该接口通常用来实现音画同步，调用频率建议高于200ms一次，推荐频率为每分钟一次。在能保证音画同步效果的情况下，不需要频繁地查询时间戳，避免出现功耗问题。
+
+**说明** 
+
+* 当实际播放位置（framePosition）为0时，时间戳（timestamp）是固定值，直到流真正跑起来时才会更新。
+* 播放位置（framePosition）单位为采样数，采样数计算方式为采样率乘以时间（例如，当采样率为48000Hz时，20ms音频数据对应的采样数为48000\*0.02，即采样点为960）。
+* 当调用Flush接口时实际播放位置也会被重置。
+* 在调用此函数之前，确保音频流处于运行状态，并且至少已成功播放一帧数据。
+* 当音频流路由（route）变化时，例如设备变化或者输出类型变化时，播放位置可能也会被重置，但此时时间戳仍会持续增长。推荐当实际播放位置和时间戳的变化稳定后再使用该接口获取的值。
+* 该接口适配倍速接口，例如当播放速度设置为2倍时，播放位置的增长速度也会返回为正常的2倍。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
@@ -893,19 +842,17 @@ getAudioTimestampInfo(): Promise<AudioTimestampInfo>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getAudioTimestampInfo().then((audioTimestampInfo: audio.AudioTimestampInfo) => {
-4. console.info(`Current timestamp: ${audioTimestampInfo.timestamp}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.getAudioTimestampInfo().then((audioTimestampInfo: audio.AudioTimestampInfo) => {
+  console.info(`Current timestamp: ${audioTimestampInfo.timestamp}`);
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## getAudioTimestampInfoSync19+
-
-PhonePC/2in1TabletTVWearable
 
 getAudioTimestampInfoSync(): AudioTimestampInfo
 
@@ -929,27 +876,25 @@ getAudioTimestampInfoSync(): AudioTimestampInfo
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let audioTimestampInfo: audio.AudioTimestampInfo = audioRenderer.getAudioTimestampInfoSync();
-5. console.info(`Current timestamp: ${audioTimestampInfo.timestamp}`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`ERROR: ${error}`);
-9. }
+try {
+  let audioTimestampInfo: audio.AudioTimestampInfo = audioRenderer.getAudioTimestampInfoSync();
+  console.info(`Current timestamp: ${audioTimestampInfo.timestamp}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`ERROR: ${error}`);
+}
 ```
 
 ## getLatency23+
-
-PhonePC/2in1TabletTVWearable
 
 getLatency(type: AudioLatencyType): number
 
 获取当前音频路由的预估时延。
 
-说明
+**说明** 
 
 * 无线连接的音频设备，时延估算会存在误差，结果仅供参考。
 * 由于时延未计入实时缓冲区，建议仅在音频播放开始时获取，避免频繁调用，否则可能因路由切换而阻塞该接口调用。
@@ -983,21 +928,19 @@ getLatency(type: AudioLatencyType): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. const latency: number = audioRenderer.getLatency(audio.AudioLatencyType.LATENCY_TYPE_ALL);
-5. console.info(`Current audio latency: ${latency}ms`);
-6. } catch (err) {
-7. const error = err as BusinessError;
-8. console.error(`Failed to get latency. Code: ${error.code}, message: ${error.message}`);
-9. }
+try {
+  const latency: number = audioRenderer.getLatency(audio.AudioLatencyType.LATENCY_TYPE_ALL);
+  console.info(`Current audio latency: ${latency}ms`);
+} catch (err) {
+  const error = err as BusinessError;
+  console.error(`Failed to get latency. Code: ${error.code}, message: ${error.message}`);
+}
 ```
 
 ## getBufferSize8+
-
-PhonePC/2in1TabletTVWearable
 
 getBufferSize(callback: AsyncCallback<number>): void
 
@@ -1013,24 +956,22 @@ getBufferSize(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let bufferSize: number;
+let bufferSize: number;
 
-5. audioRenderer.getBufferSize((err: BusinessError, data: number) => {
-6. if (err) {
-7. console.error('getBufferSize error');
-8. } else {
-9. console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${data}`);
-10. bufferSize = data;
-11. }
-12. });
+audioRenderer.getBufferSize((err: BusinessError, data: number) => {
+  if (err) {
+    console.error('getBufferSize error');
+  } else {
+    console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${data}`);
+    bufferSize = data;
+  }
+});
 ```
 
 ## getBufferSize8+
-
-PhonePC/2in1TabletTVWearable
 
 getBufferSize(): Promise<number>
 
@@ -1046,22 +987,20 @@ getBufferSize(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let bufferSize: number;
+let bufferSize: number;
 
-5. audioRenderer.getBufferSize().then((data: number) => {
-6. console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${data}`);
-7. bufferSize = data;
-8. }).catch((err: BusinessError) => {
-9. console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${err}`);
-10. });
+audioRenderer.getBufferSize().then((data: number) => {
+  console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${data}`);
+  bufferSize = data;
+}).catch((err: BusinessError) => {
+  console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${err}`);
+});
 ```
 
 ## getBufferSizeSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getBufferSizeSync(): number
 
@@ -1077,23 +1016,21 @@ getBufferSizeSync(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let bufferSize: number = 0;
+let bufferSize: number = 0;
 
-5. try {
-6. bufferSize = audioRenderer.getBufferSizeSync();
-7. console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${bufferSize}`);
-8. } catch (err) {
-9. let error = err as BusinessError;
-10. console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${error}`);
-11. }
+try {
+  bufferSize = audioRenderer.getBufferSizeSync();
+  console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${bufferSize}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${error}`);
+}
 ```
 
 ## setSpeed11+
-
-PhonePC/2in1TabletTVWearable
 
 setSpeed(speed: number): void
 
@@ -1118,13 +1055,11 @@ setSpeed(speed: number): void
 
 **示例：**
 
-```
-1. audioRenderer.setSpeed(1.5);
+```ts
+audioRenderer.setSpeed(1.5);
 ```
 
 ## getSpeed11+
-
-PhonePC/2in1TabletTVWearable
 
 getSpeed(): number
 
@@ -1140,13 +1075,11 @@ getSpeed(): number
 
 **示例：**
 
-```
-1. let speed = audioRenderer.getSpeed();
+```ts
+let speed = audioRenderer.getSpeed();
 ```
 
 ## setInterruptMode9+
-
-PhonePC/2in1TabletTVWearable
 
 setInterruptMode(mode: InterruptMode): Promise<void>
 
@@ -1168,21 +1101,19 @@ setInterruptMode(mode: InterruptMode): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let mode = 0;
+let mode = 0;
 
-5. audioRenderer.setInterruptMode(mode).then(() => {
-6. console.info('setInterruptMode Success!');
-7. }).catch((err: BusinessError) => {
-8. console.error(`setInterruptMode Fail: ${err}`);
-9. });
+audioRenderer.setInterruptMode(mode).then(() => {
+  console.info('setInterruptMode Success!');
+}).catch((err: BusinessError) => {
+  console.error(`setInterruptMode Fail: ${err}`);
+});
 ```
 
 ## setInterruptMode9+
-
-PhonePC/2in1TabletTVWearable
 
 setInterruptMode(mode: InterruptMode, callback: AsyncCallback<void>): void
 
@@ -1199,22 +1130,20 @@ setInterruptMode(mode: InterruptMode, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let mode = 1;
+let mode = 1;
 
-5. audioRenderer.setInterruptMode(mode, (err: BusinessError) => {
-6. if(err){
-7. console.error(`setInterruptMode Fail: ${err}`);
-8. }
-9. console.info('setInterruptMode Success!');
-10. });
+audioRenderer.setInterruptMode(mode, (err: BusinessError) => {
+  if(err){
+    console.error(`setInterruptMode Fail: ${err}`);
+  }
+  console.info('setInterruptMode Success!');
+});
 ```
 
 ## setInterruptModeSync10+
-
-PhonePC/2in1TabletTVWearable
 
 setInterruptModeSync(mode: InterruptMode): void
 
@@ -1239,21 +1168,19 @@ setInterruptModeSync(mode: InterruptMode): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. audioRenderer.setInterruptModeSync(0);
-5. console.info('setInterruptMode Success!');
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`setInterruptMode Fail: ${error}`);
-9. }
+try {
+  audioRenderer.setInterruptModeSync(0);
+  console.info('setInterruptMode Success!');
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`setInterruptMode Fail: ${error}`);
+}
 ```
 
 ## setVolume9+
-
-PhonePC/2in1TabletTVWearable
 
 setVolume(volume: number): Promise<void>
 
@@ -1275,19 +1202,17 @@ setVolume(volume: number): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.setVolume(0.5).then(() => {
-4. console.info('setVolume Success!');
-5. }).catch((err: BusinessError) => {
-6. console.error(`setVolume Fail: ${err}`);
-7. });
+audioRenderer.setVolume(0.5).then(() => {
+  console.info('setVolume Success!');
+}).catch((err: BusinessError) => {
+  console.error(`setVolume Fail: ${err}`);
+});
 ```
 
 ## setVolume9+
-
-PhonePC/2in1TabletTVWearable
 
 setVolume(volume: number, callback: AsyncCallback<void>): void
 
@@ -1304,21 +1229,19 @@ setVolume(volume: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.setVolume(0.5, (err: BusinessError) => {
-4. if(err){
-5. console.error(`setVolume Fail: ${err}`);
-6. return;
-7. }
-8. console.info('setVolume Success!');
-9. });
+audioRenderer.setVolume(0.5, (err: BusinessError) => {
+  if(err){
+    console.error(`setVolume Fail: ${err}`);
+    return;
+  }
+  console.info('setVolume Success!');
+});
 ```
 
 ## getVolume12+
-
-PhonePC/2in1TabletTVWearable
 
 getVolume(): number
 
@@ -1334,21 +1257,19 @@ getVolume(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let value: number = audioRenderer.getVolume();
-5. console.info(`Indicate that the volume is obtained ${value}.`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Failed to obtain the volume, error ${error}.`);
-9. }
+try {
+  let value: number = audioRenderer.getVolume();
+  console.info(`Indicate that the volume is obtained ${value}.`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to obtain the volume, error ${error}.`);
+}
 ```
 
 ## getMinStreamVolume10+
-
-PhonePC/2in1TabletTVWearable
 
 getMinStreamVolume(callback: AsyncCallback<number>): void
 
@@ -1364,21 +1285,19 @@ getMinStreamVolume(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getMinStreamVolume((err: BusinessError, minVolume: number) => {
-4. if (err) {
-5. console.error(`getMinStreamVolume error: ${err}`);
-6. } else {
-7. console.info(`getMinStreamVolume Success! ${minVolume}`);
-8. }
-9. });
+audioRenderer.getMinStreamVolume((err: BusinessError, minVolume: number) => {
+  if (err) {
+    console.error(`getMinStreamVolume error: ${err}`);
+  } else {
+    console.info(`getMinStreamVolume Success! ${minVolume}`);
+  }
+});
 ```
 
 ## getMinStreamVolume10+
-
-PhonePC/2in1TabletTVWearable
 
 getMinStreamVolume(): Promise<number>
 
@@ -1394,19 +1313,17 @@ getMinStreamVolume(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getMinStreamVolume().then((value: number) => {
-4. console.info(`Get min stream volume Success! ${value}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Get min stream volume Fail: ${err}`);
-7. });
+audioRenderer.getMinStreamVolume().then((value: number) => {
+  console.info(`Get min stream volume Success! ${value}`);
+}).catch((err: BusinessError) => {
+  console.error(`Get min stream volume Fail: ${err}`);
+});
 ```
 
 ## getMinStreamVolumeSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getMinStreamVolumeSync(): number
 
@@ -1422,21 +1339,19 @@ getMinStreamVolumeSync(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let value: number = audioRenderer.getMinStreamVolumeSync();
-5. console.info(`Get min stream volume Success! ${value}`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Get min stream volume Fail: ${error}`);
-9. }
+try {
+  let value: number = audioRenderer.getMinStreamVolumeSync();
+  console.info(`Get min stream volume Success! ${value}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Get min stream volume Fail: ${error}`);
+}
 ```
 
 ## getMaxStreamVolume10+
-
-PhonePC/2in1TabletTVWearable
 
 getMaxStreamVolume(callback: AsyncCallback<number>): void
 
@@ -1452,21 +1367,19 @@ getMaxStreamVolume(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getMaxStreamVolume((err: BusinessError, maxVolume: number) => {
-4. if (err) {
-5. console.error(`getMaxStreamVolume Fail: ${err}`);
-6. } else {
-7. console.info(`getMaxStreamVolume Success! ${maxVolume}`);
-8. }
-9. });
+audioRenderer.getMaxStreamVolume((err: BusinessError, maxVolume: number) => {
+  if (err) {
+    console.error(`getMaxStreamVolume Fail: ${err}`);
+  } else {
+    console.info(`getMaxStreamVolume Success! ${maxVolume}`);
+  }
+});
 ```
 
 ## getMaxStreamVolume10+
-
-PhonePC/2in1TabletTVWearable
 
 getMaxStreamVolume(): Promise<number>
 
@@ -1482,19 +1395,17 @@ getMaxStreamVolume(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getMaxStreamVolume().then((value: number) => {
-4. console.info(`Get max stream volume Success! ${value}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Get max stream volume Fail: ${err}`);
-7. });
+audioRenderer.getMaxStreamVolume().then((value: number) => {
+  console.info(`Get max stream volume Success! ${value}`);
+}).catch((err: BusinessError) => {
+  console.error(`Get max stream volume Fail: ${err}`);
+});
 ```
 
 ## getMaxStreamVolumeSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getMaxStreamVolumeSync(): number
 
@@ -1510,21 +1421,19 @@ getMaxStreamVolumeSync(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let value: number = audioRenderer.getMaxStreamVolumeSync();
-5. console.info(`Get max stream volume Success! ${value}`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Get max stream volume Fail: ${error}`);
-9. }
+try {
+  let value: number = audioRenderer.getMaxStreamVolumeSync();
+  console.info(`Get max stream volume Success! ${value}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Get max stream volume Fail: ${error}`);
+}
 ```
 
 ## getUnderflowCount10+
-
-PhonePC/2in1TabletTVWearable
 
 getUnderflowCount(callback: AsyncCallback<number>): void
 
@@ -1540,21 +1449,19 @@ getUnderflowCount(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getUnderflowCount((err: BusinessError, underflowCount: number) => {
-4. if (err) {
-5. console.error(`getUnderflowCount Fail: ${err}`);
-6. } else {
-7. console.info(`getUnderflowCount Success! ${underflowCount}`);
-8. }
-9. });
+audioRenderer.getUnderflowCount((err: BusinessError, underflowCount: number) => {
+  if (err) {
+    console.error(`getUnderflowCount Fail: ${err}`);
+  } else {
+    console.info(`getUnderflowCount Success! ${underflowCount}`);
+  }
+});
 ```
 
 ## getUnderflowCount10+
-
-PhonePC/2in1TabletTVWearable
 
 getUnderflowCount(): Promise<number>
 
@@ -1570,19 +1477,17 @@ getUnderflowCount(): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getUnderflowCount().then((value: number) => {
-4. console.info(`Get underflow count Success! ${value}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`Get underflow count Fail: ${err}`);
-7. });
+audioRenderer.getUnderflowCount().then((value: number) => {
+  console.info(`Get underflow count Success! ${value}`);
+}).catch((err: BusinessError) => {
+  console.error(`Get underflow count Fail: ${err}`);
+});
 ```
 
 ## getUnderflowCountSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getUnderflowCountSync(): number
 
@@ -1598,21 +1503,19 @@ getUnderflowCountSync(): number
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let value: number = audioRenderer.getUnderflowCountSync();
-5. console.info(`Get underflow count Success! ${value}`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`Get underflow count Fail: ${error}`);
-9. }
+try {
+  let value: number = audioRenderer.getUnderflowCountSync();
+  console.info(`Get underflow count Success! ${value}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Get underflow count Fail: ${error}`);
+}
 ```
 
 ## getCurrentOutputDevices10+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentOutputDevices(callback: AsyncCallback<AudioDeviceDescriptors>): void
 
@@ -1628,30 +1531,28 @@ getCurrentOutputDevices(callback: AsyncCallback<AudioDeviceDescriptors>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getCurrentOutputDevices((err: BusinessError, deviceInfo: audio.AudioDeviceDescriptors) => {
-4. if (err) {
-5. console.error(`getCurrentOutputDevices Fail: ${err}`);
-6. } else {
-7. for (let i = 0; i < deviceInfo.length; i++) {
-8. console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
-9. console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
-10. console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
-11. console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
-12. console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
-13. console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
-14. console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
-15. console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
-16. }
-17. }
-18. });
+audioRenderer.getCurrentOutputDevices((err: BusinessError, deviceInfo: audio.AudioDeviceDescriptors) => {
+  if (err) {
+    console.error(`getCurrentOutputDevices Fail: ${err}`);
+  } else {
+    for (let i = 0; i < deviceInfo.length; i++) {
+      console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
+      console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
+      console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
+      console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
+      console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
+      console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
+      console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
+      console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
+    }
+  }
+});
 ```
 
 ## getCurrentOutputDevices10+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentOutputDevices(): Promise<AudioDeviceDescriptors>
 
@@ -1667,28 +1568,26 @@ getCurrentOutputDevices(): Promise<AudioDeviceDescriptors>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getCurrentOutputDevices().then((deviceInfo: audio.AudioDeviceDescriptors) => {
-4. for (let i = 0; i < deviceInfo.length; i++) {
-5. console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
-6. console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
-7. console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
-8. console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
-9. console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
-10. console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
-11. console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
-12. console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
-13. }
-14. }).catch((err: BusinessError) => {
-15. console.error(`Get current output devices Fail: ${err}`);
-16. });
+audioRenderer.getCurrentOutputDevices().then((deviceInfo: audio.AudioDeviceDescriptors) => {
+  for (let i = 0; i < deviceInfo.length; i++) {
+    console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
+    console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
+    console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
+    console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
+    console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
+    console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
+    console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
+    console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
+  }
+}).catch((err: BusinessError) => {
+  console.error(`Get current output devices Fail: ${err}`);
+});
 ```
 
 ## getCurrentOutputDevicesSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getCurrentOutputDevicesSync(): AudioDeviceDescriptors
 
@@ -1704,30 +1603,28 @@ getCurrentOutputDevicesSync(): AudioDeviceDescriptors
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let deviceInfo: audio.AudioDeviceDescriptors = audioRenderer.getCurrentOutputDevicesSync();
-5. for (let i = 0; i < deviceInfo.length; i++) {
-6. console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
-7. console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
-8. console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
-9. console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
-10. console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
-11. console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
-12. console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
-13. console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
-14. }
-15. } catch (err) {
-16. let error = err as BusinessError;
-17. console.error(`Get current output devices Fail: ${error}`);
-18. }
+try {
+  let deviceInfo: audio.AudioDeviceDescriptors = audioRenderer.getCurrentOutputDevicesSync();
+  for (let i = 0; i < deviceInfo.length; i++) {
+    console.info(`DeviceInfo id: ${deviceInfo[i].id}`);
+    console.info(`DeviceInfo type: ${deviceInfo[i].deviceType}`);
+    console.info(`DeviceInfo role: ${deviceInfo[i].deviceRole}`);
+    console.info(`DeviceInfo name: ${deviceInfo[i].name}`);
+    console.info(`DeviceInfo address: ${deviceInfo[i].address}`);
+    console.info(`DeviceInfo samplerate: ${deviceInfo[i].sampleRates[0]}`);
+    console.info(`DeviceInfo channelcount: ${deviceInfo[i].channelCounts[0]}`);
+    console.info(`DeviceInfo channelmask: ${deviceInfo[i].channelMasks[0]}`);
+  }
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Get current output devices Fail: ${error}`);
+}
 ```
 
 ## setChannelBlendMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setChannelBlendMode(mode: ChannelBlendMode): void
 
@@ -1753,16 +1650,14 @@ setChannelBlendMode(mode: ChannelBlendMode): void
 
 **示例：**
 
-```
-1. let mode = audio.ChannelBlendMode.MODE_DEFAULT;
+```ts
+let mode = audio.ChannelBlendMode.MODE_DEFAULT;
 
-3. audioRenderer.setChannelBlendMode(mode);
-4. console.info(`BlendMode: ${mode}`);
+audioRenderer.setChannelBlendMode(mode);
+console.info(`BlendMode: ${mode}`);
 ```
 
 ## setVolumeWithRamp11+
-
-PhonePC/2in1TabletTVWearable
 
 setVolumeWithRamp(volume: number, duration: number): void
 
@@ -1788,17 +1683,15 @@ setVolumeWithRamp(volume: number, duration: number): void
 
 **示例：**
 
-```
-1. let volume = 0.5;
-2. let duration = 1000;
+```ts
+let volume = 0.5;
+let duration = 1000;
 
-4. audioRenderer.setVolumeWithRamp(volume, duration);
-5. console.info(`setVolumeWithRamp: ${volume}`);
+audioRenderer.setVolumeWithRamp(volume, duration);
+console.info(`setVolumeWithRamp: ${volume}`);
 ```
 
 ## setSilentModeAndMixWithOthers12+
-
-PhonePC/2in1TabletTVWearable
 
 setSilentModeAndMixWithOthers(on: boolean): void
 
@@ -1816,13 +1709,11 @@ setSilentModeAndMixWithOthers(on: boolean): void
 
 **示例：**
 
-```
-1. audioRenderer.setSilentModeAndMixWithOthers(true);
+```ts
+audioRenderer.setSilentModeAndMixWithOthers(true);
 ```
 
 ## getSilentModeAndMixWithOthers12+
-
-PhonePC/2in1TabletTVWearable
 
 getSilentModeAndMixWithOthers(): boolean
 
@@ -1838,22 +1729,21 @@ getSilentModeAndMixWithOthers(): boolean
 
 **示例：**
 
-```
-1. let on = audioRenderer.getSilentModeAndMixWithOthers();
+```ts
+let on = audioRenderer.getSilentModeAndMixWithOthers();
 ```
 
 ## setDefaultOutputDevice12+
-
-PhonePC/2in1TabletTVWearable
 
 setDefaultOutputDevice(deviceType: DeviceType): Promise<void>
 
 设置默认发声设备。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 本接口仅适用于[StreamUsage](arkts-apis-audio-e.md#streamusage)为语音消息、VoIP语音通话或者VoIP视频通话的场景，支持听筒、扬声器和系统默认设备。
 * 本接口允许在AudioRenderer创建后随时调用，系统会记录应用设置的默认本机内置发声设备。应用启动播放时，若外接设备如蓝牙耳机或有线耳机已接入，系统优先从外接设备发声；否则，系统遵循应用设置的默认本机内置发声设备。
+* 本接口优先级低于AudioSessionManager的[setDefaultOutputDevice](arkts-apis-audio-audiosessionmanager.md#setdefaultoutputdevice20)。如果使用AudioSessionManager的setDefaultOutputDevice设置了默认音频输出设备，本接口的设置将不会生效。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
@@ -1883,22 +1773,20 @@ setDefaultOutputDevice(deviceType: DeviceType): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. // 本接口允许在AudioRenderer创建以后的任何时间被调用。
-4. // 未播放时调用，系统会记录应用设置的默认本机内置发声设备，当应用启动播放时从设置的默认本机内置发声设备发声。
-5. // 正在播放时调用，在没有外接设备如蓝牙耳机/有线耳机，系统会立即切换到设置的默认本机内置发声设备发声；否则系统会先记录应用设置的默认本机内置发声设备，等外接设备移除后再切换到设置的默认本机内置发声设备发声。
-6. audioRenderer.setDefaultOutputDevice(audio.DeviceType.SPEAKER).then(() => {
-7. console.info('setDefaultOutputDevice Success!');
-8. }).catch((err: BusinessError) => {
-9. console.error(`setDefaultOutputDevice Fail: ${err}`);
-10. });
+// 本接口允许在AudioRenderer创建以后的任何时间被调用。
+// 未播放时调用，系统会记录应用设置的默认本机内置发声设备，当应用启动播放时从设置的默认本机内置发声设备发声。
+// 正在播放时调用，在没有外接设备如蓝牙耳机/有线耳机，系统会立即切换到设置的默认本机内置发声设备发声；否则系统会先记录应用设置的默认本机内置发声设备，等外接设备移除后再切换到设置的默认本机内置发声设备发声。
+audioRenderer.setDefaultOutputDevice(audio.DeviceType.SPEAKER).then(() => {
+  console.info('setDefaultOutputDevice Success!');
+}).catch((err: BusinessError) => {
+  console.error(`setDefaultOutputDevice Fail: ${err}`);
+});
 ```
 
 ## on('audioInterrupt')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'audioInterrupt', callback: Callback<InterruptEvent>): void
 
@@ -1928,64 +1816,62 @@ AudioRenderer对象在start事件时获取焦点，在pause、stop等事件时�
 
 **示例：**
 
-```
-1. import { audio } from '@kit.AudioKit';
+```ts
+import { audio } from '@kit.AudioKit';
 
-3. let isPlaying: boolean = false; // 标识符，表示是否正在渲染。
-4. let isDucked: boolean = false; // 标识符，表示是否被降低音量。
+let isPlaying: boolean = false; // 标识符，表示是否正在渲染。
+let isDucked: boolean = false; // 标识符，表示是否被降低音量。
 
-6. audioRenderer.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
-7. // 在发生音频打断事件时，audioRenderer收到interruptEvent回调，此处根据其内容做相应处理。
-8. // 1. 可选：读取interruptEvent.forceType的类型，判断系统是否已强制执行相应操作。
-9. // 注意：默认焦点策略下，INTERRUPT_HINT_RESUME为INTERRUPT_SHARE类型，其余hintType均为INTERRUPT_FORCE类型。因此对forceType可不做判断。
-10. // 2. 必选：读取interruptEvent.hintType的类型，做出相应的处理。
-11. if (interruptEvent.forceType == audio.InterruptForceType.INTERRUPT_FORCE) {
-12. // 音频焦点事件已由系统强制执行，应用需更新自身状态及显示内容等。
-13. switch (interruptEvent.hintType) {
-14. case audio.InterruptHint.INTERRUPT_HINT_PAUSE:
-15. // 音频流已被暂停，临时失去焦点，待可重获焦点时会收到resume对应的interruptEvent。
-16. console.info('Force paused. Update playing status and stop writing');
-17. isPlaying = false; // 简化处理，代表应用切换至暂停状态的若干操作。
-18. break;
-19. case audio.InterruptHint.INTERRUPT_HINT_STOP:
-20. // 音频流已被停止，永久失去焦点，若想恢复渲染，需用户主动触发。
-21. console.info('Force stopped. Update playing status and stop writing');
-22. isPlaying = false; // 简化处理，代表应用切换至暂停状态的若干操作。
-23. break;
-24. case audio.InterruptHint.INTERRUPT_HINT_DUCK:
-25. // 音频流已被降低音量渲染。
-26. console.info('Force ducked. Update volume status');
-27. isDucked = true; // 简化处理，代表应用更新音量状态的若干操作。
-28. break;
-29. case audio.InterruptHint.INTERRUPT_HINT_UNDUCK:
-30. // 音频流已被恢复正常音量渲染。
-31. console.info('Force unducked. Update volume status');
-32. isDucked = false; // 简化处理，代表应用更新音量状态的若干操作。
-33. break;
-34. default:
-35. console.info('Invalid interruptEvent');
-36. break;
-37. }
-38. } else if (interruptEvent.forceType == audio.InterruptForceType.INTERRUPT_SHARE) {
-39. // 音频焦点事件需由应用进行操作，应用可以自主选择如何处理该事件，建议应用遵从InterruptHint提示处理。
-40. switch (interruptEvent.hintType) {
-41. case audio.InterruptHint.INTERRUPT_HINT_RESUME:
-42. // 建议应用继续渲染（说明音频流此前被强制暂停，临时失去焦点，现在可以恢复渲染）。
-43. // 由于INTERRUPT_HINT_RESUME操作需要应用主动执行，系统无法强制，故INTERRUPT_HINT_RESUME事件一定为INTERRUPT_SHARE类型。
-44. console.info('Resume force paused renderer or ignore');
-45. // 若选择继续渲染，需在此处主动执行开始渲染的若干操作。
-46. break;
-47. default:
-48. console.info('Invalid interruptEvent');
-49. break;
-50. }
-51. }
-52. });
+audioRenderer.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+  // 在发生音频打断事件时，audioRenderer收到interruptEvent回调，此处根据其内容做相应处理。
+  // 1. 可选：读取interruptEvent.forceType的类型，判断系统是否已强制执行相应操作。
+  // 注意：默认焦点策略下，INTERRUPT_HINT_RESUME为INTERRUPT_SHARE类型，其余hintType均为INTERRUPT_FORCE类型。因此对forceType可不做判断。
+  // 2. 必选：读取interruptEvent.hintType的类型，做出相应的处理。
+  if (interruptEvent.forceType == audio.InterruptForceType.INTERRUPT_FORCE) {
+    // 音频焦点事件已由系统强制执行，应用需更新自身状态及显示内容等。
+    switch (interruptEvent.hintType) {
+      case audio.InterruptHint.INTERRUPT_HINT_PAUSE:
+        // 音频流已被暂停，临时失去焦点，待可重获焦点时会收到resume对应的interruptEvent。
+        console.info('Force paused. Update playing status and stop writing');
+        isPlaying = false; // 简化处理，代表应用切换至暂停状态的若干操作。
+        break;
+      case audio.InterruptHint.INTERRUPT_HINT_STOP:
+        // 音频流已被停止，永久失去焦点，若想恢复渲染，需用户主动触发。
+        console.info('Force stopped. Update playing status and stop writing');
+        isPlaying = false; // 简化处理，代表应用切换至暂停状态的若干操作。
+        break;
+      case audio.InterruptHint.INTERRUPT_HINT_DUCK:
+        // 音频流已被降低音量渲染。
+        console.info('Force ducked. Update volume status');
+        isDucked = true; // 简化处理，代表应用更新音量状态的若干操作。
+        break;
+      case audio.InterruptHint.INTERRUPT_HINT_UNDUCK:
+        // 音频流已被恢复正常音量渲染。
+        console.info('Force unducked. Update volume status');
+        isDucked = false; // 简化处理，代表应用更新音量状态的若干操作。
+        break;
+      default:
+        console.info('Invalid interruptEvent');
+        break;
+    }
+  } else if (interruptEvent.forceType == audio.InterruptForceType.INTERRUPT_SHARE) {
+    // 音频焦点事件需由应用进行操作，应用可以自主选择如何处理该事件，建议应用遵从InterruptHint提示处理。
+    switch (interruptEvent.hintType) {
+      case audio.InterruptHint.INTERRUPT_HINT_RESUME:
+        // 建议应用继续渲染（说明音频流此前被强制暂停，临时失去焦点，现在可以恢复渲染）。
+        // 由于INTERRUPT_HINT_RESUME操作需要应用主动执行，系统无法强制，故INTERRUPT_HINT_RESUME事件一定为INTERRUPT_SHARE类型。
+        console.info('Resume force paused renderer or ignore');
+        // 若选择继续渲染，需在此处主动执行开始渲染的若干操作。
+        break;
+      default:
+        console.info('Invalid interruptEvent');
+        break;
+    }
+  }
+});
 ```
 
 ## off('audioInterrupt')18+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'audioInterrupt', callback?: Callback<InterruptEvent>): void
 
@@ -2010,70 +1896,68 @@ off(type: 'audioInterrupt', callback?: Callback<InterruptEvent>): void
 
 **示例：**
 
-```
-1. // 取消该事件的所有监听。
-2. audioRenderer.off('audioInterrupt');
+```ts
+// 取消该事件的所有监听。
+audioRenderer.off('audioInterrupt');
 
-4. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-5. let isPlaying: boolean; // 标识符，表示是否正在渲染。
-6. let isDucked: boolean; // 标识符，表示是否被降低音量。
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+let isPlaying: boolean; // 标识符，表示是否正在渲染。
+let isDucked: boolean; // 标识符，表示是否被降低音量。
 
-8. let audioInterruptCallback = (interruptEvent: audio.InterruptEvent) => {
-9. // 在发生音频打断事件时，audioRenderer收到interruptEvent回调，此处根据其内容做相应处理。
-10. // 1. 可选：读取interruptEvent.forceType的类型，判断系统是否已强制执行相应操作。
-11. // 注意：默认焦点策略下，INTERRUPT_HINT_RESUME为INTERRUPT_SHARE类型，其余hintType均为INTERRUPT_FORCE类型。因此对forceType可不做判断。
-12. // 2. 必选：读取interruptEvent.hintType的类型，做出相应的处理。
-13. if (interruptEvent.forceType == audio.InterruptForceType.INTERRUPT_FORCE) {
-14. // 音频焦点事件已由系统强制执行，应用需更新自身状态及显示内容等。
-15. switch (interruptEvent.hintType) {
-16. case audio.InterruptHint.INTERRUPT_HINT_PAUSE:
-17. // 音频流已被暂停，临时失去焦点，待可重获焦点时会收到resume对应的interruptEvent。
-18. console.info('Force paused. Update playing status and stop writing');
-19. isPlaying = false; // 简化处理，代表应用切换至暂停状态的若干操作。
-20. break;
-21. case audio.InterruptHint.INTERRUPT_HINT_STOP:
-22. // 音频流已被停止，永久失去焦点，若想恢复渲染，需用户主动触发。
-23. console.info('Force stopped. Update playing status and stop writing');
-24. isPlaying = false; // 简化处理，代表应用切换至暂停状态的若干操作。
-25. break;
-26. case audio.InterruptHint.INTERRUPT_HINT_DUCK:
-27. // 音频流已被降低音量渲染。
-28. console.info('Force ducked. Update volume status');
-29. isDucked = true; // 简化处理，代表应用更新音量状态的若干操作。
-30. break;
-31. case audio.InterruptHint.INTERRUPT_HINT_UNDUCK:
-32. // 音频流已被恢复正常音量渲染。
-33. console.info('Force unducked. Update volume status');
-34. isDucked = false; // 简化处理，代表应用更新音量状态的若干操作。
-35. break;
-36. default:
-37. console.info('Invalid interruptEvent');
-38. break;
-39. }
-40. } else if (interruptEvent.forceType == audio.InterruptForceType.INTERRUPT_SHARE) {
-41. // 音频焦点事件需由应用进行操作，应用可以自主选择如何处理该事件，建议应用遵从InterruptHint提示处理。
-42. switch (interruptEvent.hintType) {
-43. case audio.InterruptHint.INTERRUPT_HINT_RESUME:
-44. // 建议应用继续渲染（说明音频流此前被强制暂停，临时失去焦点，现在可以恢复渲染）。
-45. // 由于INTERRUPT_HINT_RESUME操作需要应用主动执行，系统无法强制，故INTERRUPT_HINT_RESUME事件一定为INTERRUPT_SHARE类型。
-46. console.info('Resume force paused renderer or ignore');
-47. // 若选择继续渲染，需在此处主动执行开始渲染的若干操作。
-48. break;
-49. default:
-50. console.info('Invalid interruptEvent');
-51. break;
-52. }
-53. }
-54. };
+let audioInterruptCallback = (interruptEvent: audio.InterruptEvent) => {
+  // 在发生音频打断事件时，audioRenderer收到interruptEvent回调，此处根据其内容做相应处理。
+  // 1. 可选：读取interruptEvent.forceType的类型，判断系统是否已强制执行相应操作。
+  // 注意：默认焦点策略下，INTERRUPT_HINT_RESUME为INTERRUPT_SHARE类型，其余hintType均为INTERRUPT_FORCE类型。因此对forceType可不做判断。
+  // 2. 必选：读取interruptEvent.hintType的类型，做出相应的处理。
+  if (interruptEvent.forceType == audio.InterruptForceType.INTERRUPT_FORCE) {
+    // 音频焦点事件已由系统强制执行，应用需更新自身状态及显示内容等。
+    switch (interruptEvent.hintType) {
+      case audio.InterruptHint.INTERRUPT_HINT_PAUSE:
+        // 音频流已被暂停，临时失去焦点，待可重获焦点时会收到resume对应的interruptEvent。
+        console.info('Force paused. Update playing status and stop writing');
+        isPlaying = false; // 简化处理，代表应用切换至暂停状态的若干操作。
+        break;
+      case audio.InterruptHint.INTERRUPT_HINT_STOP:
+        // 音频流已被停止，永久失去焦点，若想恢复渲染，需用户主动触发。
+        console.info('Force stopped. Update playing status and stop writing');
+        isPlaying = false; // 简化处理，代表应用切换至暂停状态的若干操作。
+        break;
+      case audio.InterruptHint.INTERRUPT_HINT_DUCK:
+        // 音频流已被降低音量渲染。
+        console.info('Force ducked. Update volume status');
+        isDucked = true; // 简化处理，代表应用更新音量状态的若干操作。
+        break;
+      case audio.InterruptHint.INTERRUPT_HINT_UNDUCK:
+        // 音频流已被恢复正常音量渲染。
+        console.info('Force unducked. Update volume status');
+        isDucked = false; // 简化处理，代表应用更新音量状态的若干操作。
+        break;
+      default:
+        console.info('Invalid interruptEvent');
+        break;
+    }
+  } else if (interruptEvent.forceType == audio.InterruptForceType.INTERRUPT_SHARE) {
+    // 音频焦点事件需由应用进行操作，应用可以自主选择如何处理该事件，建议应用遵从InterruptHint提示处理。
+    switch (interruptEvent.hintType) {
+      case audio.InterruptHint.INTERRUPT_HINT_RESUME:
+        // 建议应用继续渲染（说明音频流此前被强制暂停，临时失去焦点，现在可以恢复渲染）。
+        // 由于INTERRUPT_HINT_RESUME操作需要应用主动执行，系统无法强制，故INTERRUPT_HINT_RESUME事件一定为INTERRUPT_SHARE类型。
+        console.info('Resume force paused renderer or ignore');
+        // 若选择继续渲染，需在此处主动执行开始渲染的若干操作。
+        break;
+      default:
+        console.info('Invalid interruptEvent');
+        break;
+    }
+  }
+};
 
-56. audioRenderer.on('audioInterrupt', audioInterruptCallback);
+audioRenderer.on('audioInterrupt', audioInterruptCallback);
 
-58. audioRenderer.off('audioInterrupt', audioInterruptCallback);
+audioRenderer.off('audioInterrupt', audioInterruptCallback);
 ```
 
 ## on('markReach')8+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'markReach', frame: number, callback: Callback<number>): void
 
@@ -2093,17 +1977,15 @@ on(type: 'markReach', frame: number, callback: Callback<number>): void
 
 **示例：**
 
-```
-1. audioRenderer.on('markReach', 1000, (position: number) => {
-2. if (position == 1000) {
-3. console.info('ON Triggered successfully');
-4. }
-5. });
+```ts
+audioRenderer.on('markReach', 1000, (position: number) => {
+  if (position == 1000) {
+    console.info('ON Triggered successfully');
+  }
+});
 ```
 
 ## off('markReach')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'markReach', callback?: Callback<number>): void
 
@@ -2120,25 +2002,23 @@ off(type: 'markReach', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. // 取消该事件的所有监听。
-2. audioRenderer.off('markReach');
+```ts
+// 取消该事件的所有监听。
+audioRenderer.off('markReach');
 
-4. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-5. let markReachCallback = (position: number) => {
-6. if (position == 1000) {
-7. console.info('ON Triggered successfully');
-8. }
-9. };
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+let markReachCallback = (position: number) => {
+  if (position == 1000) {
+    console.info('ON Triggered successfully');
+  }
+};
 
-11. audioRenderer.on('markReach', 1000, markReachCallback);
+audioRenderer.on('markReach', 1000, markReachCallback);
 
-13. audioRenderer.off('markReach', markReachCallback);
+audioRenderer.off('markReach', markReachCallback);
 ```
 
 ## on('periodReach')8+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'periodReach', frame: number, callback: Callback<number>): void
 
@@ -2158,17 +2038,15 @@ on(type: 'periodReach', frame: number, callback: Callback<number>): void
 
 **示例：**
 
-```
-1. audioRenderer.on('periodReach', 1000, (position: number) => {
-2. if (position == 1000) {
-3. console.info('ON Triggered successfully');
-4. }
-5. });
+```ts
+audioRenderer.on('periodReach', 1000, (position: number) => {
+  if (position == 1000) {
+    console.info('ON Triggered successfully');
+  }
+});
 ```
 
 ## off('periodReach')8+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'periodReach', callback?: Callback<number>): void
 
@@ -2185,25 +2063,23 @@ off(type: 'periodReach', callback?: Callback<number>): void
 
 **示例：**
 
-```
-1. // 取消该事件的所有监听。
-2. audioRenderer.off('periodReach');
+```ts
+// 取消该事件的所有监听。
+audioRenderer.off('periodReach');
 
-4. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-5. let periodReachCallback = (position: number) => {
-6. if (position == 1000) {
-7. console.info('ON Triggered successfully');
-8. }
-9. };
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+let periodReachCallback = (position: number) => {
+  if (position == 1000) {
+    console.info('ON Triggered successfully');
+  }
+};
 
-11. audioRenderer.on('periodReach', 1000, periodReachCallback);
+audioRenderer.on('periodReach', 1000, periodReachCallback);
 
-13. audioRenderer.off('periodReach', periodReachCallback);
+audioRenderer.off('periodReach', periodReachCallback);
 ```
 
 ## on('stateChange')8+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'stateChange', callback: Callback<AudioState>): void
 
@@ -2220,20 +2096,18 @@ on(type: 'stateChange', callback: Callback<AudioState>): void
 
 **示例：**
 
-```
-1. audioRenderer.on('stateChange', (state: audio.AudioState) => {
-2. if (state == 1) {
-3. console.info('audio renderer state is: STATE_PREPARED');
-4. }
-5. if (state == 2) {
-6. console.info('audio renderer state is: STATE_RUNNING');
-7. }
-8. });
+```ts
+audioRenderer.on('stateChange', (state: audio.AudioState) => {
+  if (state == 1) {
+    console.info('audio renderer state is: STATE_PREPARED');
+  }
+  if (state == 2) {
+    console.info('audio renderer state is: STATE_RUNNING');
+  }
+});
 ```
 
 ## off('stateChange')18+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'stateChange', callback?: Callback<AudioState>): void
 
@@ -2258,28 +2132,26 @@ off(type: 'stateChange', callback?: Callback<AudioState>): void
 
 **示例：**
 
-```
-1. // 取消该事件的所有监听。
-2. audioRenderer.off('stateChange');
+```ts
+// 取消该事件的所有监听。
+audioRenderer.off('stateChange');
 
-4. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-5. let stateChangeCallback = (state: audio.AudioState) => {
-6. if (state == 1) {
-7. console.info('audio renderer state is: STATE_PREPARED');
-8. }
-9. if (state == 2) {
-10. console.info('audio renderer state is: STATE_RUNNING');
-11. }
-12. };
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+let stateChangeCallback = (state: audio.AudioState) => {
+  if (state == 1) {
+    console.info('audio renderer state is: STATE_PREPARED');
+  }
+  if (state == 2) {
+    console.info('audio renderer state is: STATE_RUNNING');
+  }
+};
 
-14. audioRenderer.on('stateChange', stateChangeCallback);
+audioRenderer.on('stateChange', stateChangeCallback);
 
-16. audioRenderer.off('stateChange', stateChangeCallback);
+audioRenderer.off('stateChange', stateChangeCallback);
 ```
 
 ## on('outputDeviceChange')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'outputDeviceChange', callback: Callback<AudioDeviceDescriptors>): void
 
@@ -2305,17 +2177,15 @@ on(type: 'outputDeviceChange', callback: Callback<AudioDeviceDescriptors>): void
 
 **示例：**
 
-```
-1. audioRenderer.on('outputDeviceChange', (deviceInfo: audio.AudioDeviceDescriptors) => {
-2. console.info(`DeviceInfo id: ${deviceInfo[0].id}`);
-3. console.info(`DeviceInfo name: ${deviceInfo[0].name}`);
-4. console.info(`DeviceInfo address: ${deviceInfo[0].address}`);
-5. });
+```ts
+audioRenderer.on('outputDeviceChange', (deviceInfo: audio.AudioDeviceDescriptors) => {
+  console.info(`DeviceInfo id: ${deviceInfo[0].id}`);
+  console.info(`DeviceInfo name: ${deviceInfo[0].name}`);
+  console.info(`DeviceInfo address: ${deviceInfo[0].address}`);
+});
 ```
 
 ## off('outputDeviceChange')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'outputDeviceChange', callback?: Callback<AudioDeviceDescriptors>): void
 
@@ -2341,25 +2211,23 @@ off(type: 'outputDeviceChange', callback?: Callback<AudioDeviceDescriptors>): vo
 
 **示例：**
 
-```
-1. // 取消该事件的所有监听。
-2. audioRenderer.off('outputDeviceChange');
+```ts
+// 取消该事件的所有监听。
+audioRenderer.off('outputDeviceChange');
 
-4. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-5. let outputDeviceChangeCallback = (deviceInfo: audio.AudioDeviceDescriptors) => {
-6. console.info(`DeviceInfo id: ${deviceInfo[0].id}`);
-7. console.info(`DeviceInfo name: ${deviceInfo[0].name}`);
-8. console.info(`DeviceInfo address: ${deviceInfo[0].address}`);
-9. };
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+let outputDeviceChangeCallback = (deviceInfo: audio.AudioDeviceDescriptors) => {
+  console.info(`DeviceInfo id: ${deviceInfo[0].id}`);
+  console.info(`DeviceInfo name: ${deviceInfo[0].name}`);
+  console.info(`DeviceInfo address: ${deviceInfo[0].address}`);
+};
 
-11. audioRenderer.on('outputDeviceChange', outputDeviceChangeCallback);
+audioRenderer.on('outputDeviceChange', outputDeviceChangeCallback);
 
-13. audioRenderer.off('outputDeviceChange', outputDeviceChangeCallback);
+audioRenderer.off('outputDeviceChange', outputDeviceChangeCallback);
 ```
 
 ## on('outputDeviceChangeWithInfo')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'outputDeviceChangeWithInfo', callback: Callback<AudioStreamDeviceChangeInfo>): void
 
@@ -2385,18 +2253,16 @@ on(type: 'outputDeviceChangeWithInfo', callback: Callback<AudioStreamDeviceChang
 
 **示例：**
 
-```
-1. audioRenderer.on('outputDeviceChangeWithInfo', (deviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
-2. console.info(`DeviceInfo id: ${deviceChangeInfo.devices[0].id}`);
-3. console.info(`DeviceInfo name: ${deviceChangeInfo.devices[0].name}`);
-4. console.info(`DeviceInfo address: ${deviceChangeInfo.devices[0].address}`);
-5. console.info(`Device change reason: ${deviceChangeInfo.changeReason}`);
-6. });
+```ts
+audioRenderer.on('outputDeviceChangeWithInfo', (deviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
+  console.info(`DeviceInfo id: ${deviceChangeInfo.devices[0].id}`);
+  console.info(`DeviceInfo name: ${deviceChangeInfo.devices[0].name}`);
+  console.info(`DeviceInfo address: ${deviceChangeInfo.devices[0].address}`);
+  console.info(`Device change reason: ${deviceChangeInfo.changeReason}`);
+});
 ```
 
 ## off('outputDeviceChangeWithInfo')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'outputDeviceChangeWithInfo', callback?: Callback<AudioStreamDeviceChangeInfo>): void
 
@@ -2422,32 +2288,33 @@ off(type: 'outputDeviceChangeWithInfo', callback?: Callback<AudioStreamDeviceCha
 
 **示例：**
 
-```
-1. // 取消该事件的所有监听。
-2. audioRenderer.off('outputDeviceChangeWithInfo');
+```ts
+// 取消该事件的所有监听。
+audioRenderer.off('outputDeviceChangeWithInfo');
 
-4. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-5. let outputDeviceChangeWithInfoCallback = (deviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
-6. console.info(`DeviceInfo id: ${deviceChangeInfo.devices[0].id}`);
-7. console.info(`DeviceInfo name: ${deviceChangeInfo.devices[0].name}`);
-8. console.info(`DeviceInfo address: ${deviceChangeInfo.devices[0].address}`);
-9. console.info(`Device change reason: ${deviceChangeInfo.changeReason}`);
-10. };
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+let outputDeviceChangeWithInfoCallback = (deviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
+  console.info(`DeviceInfo id: ${deviceChangeInfo.devices[0].id}`);
+  console.info(`DeviceInfo name: ${deviceChangeInfo.devices[0].name}`);
+  console.info(`DeviceInfo address: ${deviceChangeInfo.devices[0].address}`);
+  console.info(`Device change reason: ${deviceChangeInfo.changeReason}`);
+};
 
-12. audioRenderer.on('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallback);
+audioRenderer.on('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallback);
 
-14. audioRenderer.off('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallback);
+audioRenderer.off('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallback);
 ```
 
 ## on('writeData')11+
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'writeData', callback: AudioRendererWriteDataCallback): void
 
-监听音频数据写入回调事件（当需要写入音频数据时触发），使用 callback 方式返回结果。
+监听音频数据写入回调事件（当需要写入音频数据时触发）。使用callback异步回调。
 
-回调函数仅用来写入音频数据，请勿在回调函数中调用AudioRenderer相关接口。
+**说明** 
+
+* 回调函数仅用来写入音频数据，请勿在回调函数中调用AudioRenderer相关接口。
+* 为避免音频播放启动和停止时数据不连续可能出现的杂音，系统通常会在启动和停止时对音频数据做20ms以内的淡入淡出处理。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
@@ -2469,52 +2336,50 @@ on(type: 'writeData', callback: AudioRendererWriteDataCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import {fileIo as fs} from '@kit.CoreFileKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import {fileIo as fs} from '@kit.CoreFileKit';
+import { common } from '@kit.AbilityKit';
 
-5. class Options {
-6. offset?: number;
-7. length?: number;
-8. }
+class Options {
+  offset?: number;
+  length?: number;
+}
 
-10. let bufferSize: number = 0;
-11. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-12. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-13. let path = context.cacheDir;
-14. // 此处仅作示例，实际使用时需要将文件替换为应用要播放的PCM文件。
-15. let filePath = path + '/StarWars10s-2C-48000-4SW.pcm';
-16. let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
-17. let writeDataCallback = (buffer: ArrayBuffer) => {
-18. let options: Options = {
-19. offset: bufferSize,
-20. length: buffer.byteLength
-21. };
+let bufferSize: number = 0;
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let path = context.cacheDir;
+// 此处仅作示例，实际使用时需要将文件替换为应用要播放的PCM文件。
+let filePath = path + '/StarWars10s-2C-48000-4SW.pcm';
+let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+let writeDataCallback = (buffer: ArrayBuffer) => {
+  let options: Options = {
+    offset: bufferSize,
+    length: buffer.byteLength
+  };
 
-23. try {
-24. fs.readSync(file.fd, buffer, options);
-25. bufferSize += buffer.byteLength;
-26. // API version 11 不支持返回回调结果，从 API version 12 开始支持返回回调结果。
-27. return audio.AudioDataCallbackResult.VALID;
-28. } catch (error) {
-29. console.error('Error reading file:', error);
-30. // API version 11 不支持返回回调结果，从 API version 12 开始支持返回回调结果。
-31. return audio.AudioDataCallbackResult.INVALID;
-32. }
-33. };
+  try {
+    fs.readSync(file.fd, buffer, options);
+    bufferSize += buffer.byteLength;
+    // API version 11 不支持返回回调结果，从 API version 12 开始支持返回回调结果。
+    return audio.AudioDataCallbackResult.VALID;
+  } catch (error) {
+    console.error('Error reading file:', error);
+    // API version 11 不支持返回回调结果，从 API version 12 开始支持返回回调结果。
+    return audio.AudioDataCallbackResult.INVALID;
+  }
+};
 
-35. audioRenderer.on('writeData', writeDataCallback);
-36. audioRenderer.start().then(() => {
-37. console.info('Renderer started');
-38. }).catch((err: BusinessError) => {
-39. console.error(`ERROR: ${err}`);
-40. });
+audioRenderer.on('writeData', writeDataCallback);
+audioRenderer.start().then(() => {
+  console.info('Renderer started');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## off('writeData')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'writeData', callback?: AudioRendererWriteDataCallback): void
 
@@ -2540,29 +2405,27 @@ off(type: 'writeData', callback?: AudioRendererWriteDataCallback): void
 
 **示例：**
 
-```
-1. // 取消该事件的所有监听。
-2. audioRenderer.off('writeData');
+```ts
+// 取消该事件的所有监听。
+audioRenderer.off('writeData');
 
-4. // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
-5. let writeDataCallback = (data: ArrayBuffer) => {
-6. console.info(`write data: ${data}`);
-7. };
+// 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+let writeDataCallback = (data: ArrayBuffer) => {
+    console.info(`write data: ${data}`);
+};
 
-9. audioRenderer.on('writeData', writeDataCallback);
+audioRenderer.on('writeData', writeDataCallback);
 
-11. audioRenderer.off('writeData', writeDataCallback);
+audioRenderer.off('writeData', writeDataCallback);
 ```
 
 ## write(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 write(buffer: ArrayBuffer, callback: AsyncCallback<number>): void
 
 写入缓冲区。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 11开始废弃，建议使用[on('writeData')](arkts-apis-audio-audiorenderer.md#onwritedata11)替代。
 
@@ -2577,60 +2440,58 @@ write(buffer: ArrayBuffer, callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo as fs } from '@kit.CoreFileKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo as fs } from '@kit.CoreFileKit';
+import { common } from '@kit.AbilityKit';
 
-5. let bufferSize: number;
-6. class Options {
-7. offset?: number;
-8. length?: number;
-9. }
-10. audioRenderer.getBufferSize().then((data: number)=> {
-11. console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${data}`);
-12. bufferSize = data;
-13. console.info(`Buffer size: ${bufferSize}`);
-14. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-15. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-16. let path = context.cacheDir;
-17. // 此处仅作示例，实际使用时需要将文件替换为应用要播放的PCM文件。
-18. let filePath = path + '/StarWars10s-2C-48000-4SW.pcm';
-19. let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
-20. fs.stat(filePath).then(async (stat: fs.Stat) => {
-21. let buf = new ArrayBuffer(bufferSize);
-22. let len = stat.size % bufferSize == 0 ? Math.floor(stat.size / bufferSize) : Math.floor(stat.size / bufferSize + 1);
-23. for (let i = 0;i < len; i++) {
-24. let options: Options = {
-25. offset: i * bufferSize,
-26. length: bufferSize
-27. };
-28. await fs.read(file.fd, buf, options);
-29. await new Promise((resolve,reject)=>{
-30. audioRenderer.write(buf,(err: BusinessError, writeSize: number)=>{
-31. if(err){
-32. reject(err)
-33. }else{
-34. resolve(writeSize)
-35. }
-36. })
-37. })
-38. }
-39. });
-40. }).catch((err: BusinessError) => {
-41. console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${err}`);
-42. });
+let bufferSize: number;
+class Options {
+  offset?: number;
+  length?: number;
+}
+audioRenderer.getBufferSize().then((data: number)=> {
+  console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${data}`);
+  bufferSize = data;
+  console.info(`Buffer size: ${bufferSize}`);
+  // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+  let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  let path = context.cacheDir;
+  // 此处仅作示例，实际使用时需要将文件替换为应用要播放的PCM文件。
+  let filePath = path + '/StarWars10s-2C-48000-4SW.pcm';
+  let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+  fs.stat(filePath).then(async (stat: fs.Stat) => {
+    let buf = new ArrayBuffer(bufferSize);
+    let len = stat.size % bufferSize == 0 ? Math.floor(stat.size / bufferSize) : Math.floor(stat.size / bufferSize + 1);
+    for (let i = 0;i < len; i++) {
+      let options: Options = {
+        offset: i * bufferSize,
+        length: bufferSize
+      };
+      await fs.read(file.fd, buf, options);
+      await new Promise((resolve,reject)=>{
+        audioRenderer.write(buf,(err: BusinessError, writeSize: number)=>{
+          if(err){
+            reject(err)
+          }else{
+            resolve(writeSize)
+          }
+        })
+      })
+    }
+  });
+  }).catch((err: BusinessError) => {
+    console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${err}`);
+});
 ```
 
 ## write(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 write(buffer: ArrayBuffer): Promise<number>
 
 写入缓冲区。使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 11开始废弃，建议使用[on('writeData')](arkts-apis-audio-audiorenderer.md#onwritedata11)替代。
 
@@ -2650,57 +2511,55 @@ write(buffer: ArrayBuffer): Promise<number>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { fileIo as fs } from '@kit.CoreFileKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileIo as fs } from '@kit.CoreFileKit';
+import { common } from '@kit.AbilityKit';
 
-5. let bufferSize: number;
-6. class Options {
-7. offset?: number;
-8. length?: number;
-9. }
-10. audioRenderer.getBufferSize().then((data: number) => {
-11. console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${data}`);
-12. bufferSize = data;
-13. console.info(`BufferSize: ${bufferSize}`);
-14. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-15. let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-16. let path = context.cacheDir;
-17. // 此处仅作示例，实际使用时需要将文件替换为应用要播放的PCM文件。
-18. let filePath = path + '/StarWars10s-2C-48000-4SW.pcm';
-19. let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
-20. fs.stat(filePath).then(async (stat: fs.Stat) => {
-21. let buf = new ArrayBuffer(bufferSize);
-22. let len = stat.size % bufferSize == 0 ? Math.floor(stat.size / bufferSize) : Math.floor(stat.size / bufferSize + 1);
-23. for (let i = 0;i < len; i++) {
-24. let options: Options = {
-25. offset: i * bufferSize,
-26. length: bufferSize
-27. };
-28. await fs.read(file.fd, buf, options);
-29. try{
-30. await audioRenderer.write(buf);
-31. } catch(err) {
-32. let error = err as BusinessError;
-33. console.error(`audioRenderer.write err: ${error}`);
-34. }
-35. }
-36. });
-37. }).catch((err: BusinessError) => {
-38. console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${err}`);
-39. });
+let bufferSize: number;
+class Options {
+  offset?: number;
+  length?: number;
+}
+audioRenderer.getBufferSize().then((data: number) => {
+  console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${data}`);
+  bufferSize = data;
+  console.info(`BufferSize: ${bufferSize}`);
+  // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+  let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  let path = context.cacheDir;
+  // 此处仅作示例，实际使用时需要将文件替换为应用要播放的PCM文件。
+  let filePath = path + '/StarWars10s-2C-48000-4SW.pcm';
+  let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
+  fs.stat(filePath).then(async (stat: fs.Stat) => {
+    let buf = new ArrayBuffer(bufferSize);
+    let len = stat.size % bufferSize == 0 ? Math.floor(stat.size / bufferSize) : Math.floor(stat.size / bufferSize + 1);
+    for (let i = 0;i < len; i++) {
+      let options: Options = {
+        offset: i * bufferSize,
+        length: bufferSize
+      };
+      await fs.read(file.fd, buf, options);
+      try{
+        await audioRenderer.write(buf);
+      } catch(err) {
+        let error = err as BusinessError;
+        console.error(`audioRenderer.write err: ${error}`);
+      }
+    }
+  });
+}).catch((err: BusinessError) => {
+  console.error(`AudioFrameworkRenderLog: getBufferSize: ERROR: ${err}`);
+});
 ```
 
 ## setRenderRate(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setRenderRate(rate: AudioRendererRate, callback: AsyncCallback<void>): void
 
 设置音频渲染速率。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 11开始废弃，建议使用[setSpeed](arkts-apis-audio-audiorenderer.md#setspeed11)替代。
 
@@ -2715,27 +2574,25 @@ setRenderRate(rate: AudioRendererRate, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL, (err: BusinessError) => {
-4. if (err) {
-5. console.error('Failed to set params');
-6. } else {
-7. console.info('Callback invoked to indicate a successful render rate setting.');
-8. }
-9. });
+audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL, (err: BusinessError) => {
+  if (err) {
+    console.error('Failed to set params');
+  } else {
+    console.info('Callback invoked to indicate a successful render rate setting.');
+  }
+});
 ```
 
 ## setRenderRate(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setRenderRate(rate: AudioRendererRate): Promise<void>
 
 设置音频渲染速率。使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 11开始废弃，建议使用[setSpeed](arkts-apis-audio-audiorenderer.md#setspeed11)替代。
 
@@ -2755,25 +2612,23 @@ setRenderRate(rate: AudioRendererRate): Promise<void>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL).then(() => {
-4. console.info('setRenderRate SUCCESS');
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_NORMAL).then(() => {
+  console.info('setRenderRate SUCCESS');
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## getRenderRate(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRenderRate(callback: AsyncCallback<AudioRendererRate>): void
 
 获取音频渲染速率。使用callback异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 11开始废弃，建议使用[getSpeed](arkts-apis-audio-audiorenderer.md#getspeed11)替代。
 
@@ -2787,23 +2642,21 @@ getRenderRate(callback: AsyncCallback<AudioRendererRate>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getRenderRate((err: BusinessError, renderRate: audio.AudioRendererRate) => {
-4. console.info(`getRenderRate: ${renderRate}`);
-5. });
+audioRenderer.getRenderRate((err: BusinessError, renderRate: audio.AudioRendererRate) => {
+  console.info(`getRenderRate: ${renderRate}`);
+});
 ```
 
 ## getRenderRate(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRenderRate(): Promise<AudioRendererRate>
 
 获取音频渲染速率。使用Promise异步回调。
 
-说明
+**说明** 
 
 从API version 8开始支持，从API version 11开始废弃，建议使用[getSpeed](arkts-apis-audio-audiorenderer.md#getspeed11)替代。
 
@@ -2817,25 +2670,23 @@ getRenderRate(): Promise<AudioRendererRate>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. audioRenderer.getRenderRate().then((renderRate: audio.AudioRendererRate) => {
-4. console.info(`getRenderRate: ${renderRate}`);
-5. }).catch((err: BusinessError) => {
-6. console.error(`ERROR: ${err}`);
-7. });
+audioRenderer.getRenderRate().then((renderRate: audio.AudioRendererRate) => {
+  console.info(`getRenderRate: ${renderRate}`);
+}).catch((err: BusinessError) => {
+  console.error(`ERROR: ${err}`);
+});
 ```
 
 ## getRenderRateSync(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getRenderRateSync(): AudioRendererRate
 
 获取音频渲染速率。同步返回结果。
 
-说明
+**说明** 
 
 从API version 10开始支持，从API version 11开始废弃，建议使用[getSpeed](arkts-apis-audio-audiorenderer.md#getspeed11)替代。
 
@@ -2849,27 +2700,25 @@ getRenderRateSync(): AudioRendererRate
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let renderRate: audio.AudioRendererRate = audioRenderer.getRenderRateSync();
-5. console.info(`getRenderRate: ${renderRate}`);
-6. } catch (err) {
-7. let error = err as BusinessError;
-8. console.error(`ERROR: ${error}`);
-9. }
+try {
+  let renderRate: audio.AudioRendererRate = audioRenderer.getRenderRateSync();
+  console.info(`getRenderRate: ${renderRate}`);
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`ERROR: ${error}`);
+}
 ```
 
 ## setLoudnessGain20+
-
-PhonePC/2in1TabletTVWearable
 
 setLoudnessGain(loudnessGain: number): Promise<void>
 
 设置播放响度。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 该接口仅支持类型为[STREAM\_USAGE\_MUSIC](arkts-apis-audio-e.md#streamusage)、[STREAM\_USAGE\_MOVIE](arkts-apis-audio-e.md#streamusage)或[STREAM\_USAGE\_AUDIOBOOK](arkts-apis-audio-e.md#streamusage)的音频流。
 * 该接口不支持高清通路的响度设置。
@@ -2901,13 +2750,11 @@ setLoudnessGain(loudnessGain: number): Promise<void>
 
 **示例：**
 
-```
-1. audioRenderer.setLoudnessGain(1.0);
+```ts
+audioRenderer.setLoudnessGain(1.0);
 ```
 
 ## getLoudnessGain20+
-
-PhonePC/2in1TabletTVWearable
 
 getLoudnessGain(): number
 
@@ -2923,6 +2770,46 @@ getLoudnessGain(): number
 
 **示例：**
 
+```ts
+let loudnessGain = audioRenderer.getLoudnessGain();
 ```
-1. let loudnessGain = audioRenderer.getLoudnessGain();
+
+## setIndependentAudioSessionStrategy24+
+
+setIndependentAudioSessionStrategy(strategy: AudioSessionStrategy, behavior: number): void
+
+设置独立的音频会话策略和行为参数。
+
+**说明** 
+
+当音频渲染器在运行状态时调用此接口后，必须重新调用接口[start](arkts-apis-audio-audiorenderer.md#start8)使其生效。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Audio.Renderer
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| strategy | [AudioSessionStrategy](arkts-apis-audio-i.md#audiosessionstrategy12) | 是 | 音频会话策略。 |
+| behavior | number | 是 | 用于设置音频会话行为。  该参数可以是单个标志，也可以是多个标志的按位OR组合。  当前支持的音频会话行为详见[AudioSessionBehaviorFlags](arkts-apis-audio-e.md#audiosessionbehaviorflags24)中定义的标志。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Audio错误码](errorcode-audio.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 6800101 | Parameter verification failed. |
+| 6800103 | Operation not permit at current state. |
+
+**示例：**
+
+```ts
+let strategy: audio.AudioSessionStrategy = {
+  concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+};
+let behavior: number = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+audioRenderer.setIndependentAudioSessionStrategy(strategy, behavior);
 ```

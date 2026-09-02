@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk_FailedList
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体 > CloudDisk_FailedList
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:30fe3521a1bdaa965134232acbf33021c8063b28d096d41aac1bc3c11aa170f1
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:99d792375a0099ead32662c65ad9fcbd3166cf97244fa7810937b0227090f63a
 ---
 
-```
-1. typedef struct CloudDisk_FailedList {...} CloudDisk_FailedList
+```c
+typedef struct CloudDisk_FailedList {...} CloudDisk_FailedList
 ```
 
 ## 概述
-
-PC/2in1Tablet
 
 同步操作中失败的文件列表信息。该结构包含文件路径信息以及失败的具体错误原因。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 成员变量
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

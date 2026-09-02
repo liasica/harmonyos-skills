@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-430
 title: NavPathStack清空页面栈或者按返回键，为什么显示的是导航栏，如何实现退出Navigation所在的页面
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > NavPathStack清空页面栈或者按返回键，为什么显示的是导航栏，如何实现退出Navigation所在的页面
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > NavPathStack清空页面栈或者按返回键，为什么显示的是导航栏，如何实现退出Navigation所在的页面
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:52+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:fe6075d10024c5d2845592659a3299e8a3f5b5a8668165af032d1f02e7e062fa
+scraped_at: 2026-09-02T14:54:00+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:2eeb6d6103b9093d589b9346a9fa03ba38a018c138bca93f9a72d08bb78a5b1f
 ---
 
 **问题描述**
@@ -21,78 +21,76 @@ NavPathStack清空页面栈或者按返回键，为什么没有退出Navigation�
 * 设置Navigation属性[hideNavBar](../harmonyos-references/ts-basic-components-navigation.md#hidenavbar9)为true，隐藏返回导航栏。
 * 使用[onBackPressed()](../harmonyos-references/ts-basic-components-navdestination.md#onbackpressed10)方法重写返回键逻辑，通过[router.back()](../harmonyos-references/arkts-apis-uicontext-router.md#back)退出Navigation所在的页面。
 
+  ```ts
+  @Entry
+  @Component
+  struct NavPathStackExitsTheNavigationPage {
+    @Provide('pathInfos') pathInfos: NavPathStack = new NavPathStack();
+
+    @Builder
+    myRouter(name: string) {
+      if (name === 'PageOne') {
+        PageOne()
+      }
+    }
+
+    aboutToAppear(): void {
+      this.pathInfos.pushPath({ name: 'PageOne' });
+    }
+
+    build() {
+      Navigation(this.pathInfos) {
+        Column() {
+          Button('Jump to PageOne')
+            .width('100%')
+            .borderRadius(20)
+            .margin({ bottom: 16 })
+            .backgroundColor('#0A59F7')
+            .onClick(() => {
+              this.pathInfos.pushPath({ name: 'PageOne' });
+            })
+        }
+        .width('100%')
+        .height('100%')
+        .padding({
+          left: 16,
+          right: 16
+        })
+        .justifyContent(FlexAlign.End)
+        .alignItems(HorizontalAlign.Center)
+      }
+      .width('100%')
+      .mode(NavigationMode.Auto)
+      .title('title')
+      .titleMode(NavigationTitleMode.Mini)
+      .navDestination(this.myRouter)
+      .hideBackButton(true)
+      .hideNavBar(true) // Set the Navigation property's hideNavBar to true.
+    }
+  }
+
+  @Component
+  export struct PageOne {
+    @Consume('pathInfos') pathInfos: NavPathStack;
+
+    build() {
+      NavDestination() {
+        Column() {
+          Text('PageOne')
+            .width('100%')
+            .fontSize(20)
+            .fontColor(0x333333)
+            .textAlign(TextAlign.Center)
+        }
+        .size({ width: '100%', height: '100%' })
+        .alignItems(HorizontalAlign.Center)
+        .justifyContent(FlexAlign.Center)
+      }
+      .title('PageOne')
+      .onBackPressed(() => {
+        this.getUIContext().getRouter().back(); // Override the return button logic to exit the navigation page.
+        return true;
+      })
+    }
+  }
   ```
-  1. @Entry
-  2. @Component
-  3. struct NavPathStackExitsTheNavigationPage {
-  4. @Provide('pathInfos') pathInfos: NavPathStack = new NavPathStack();
-
-  6. @Builder
-  7. myRouter(name: string) {
-  8. if (name === 'PageOne') {
-  9. PageOne()
-  10. }
-  11. }
-
-  13. aboutToAppear(): void {
-  14. this.pathInfos.pushPath({ name: 'PageOne' });
-  15. }
-
-  17. build() {
-  18. Navigation(this.pathInfos) {
-  19. Column() {
-  20. Button('Jump to PageOne')
-  21. .width('100%')
-  22. .borderRadius(20)
-  23. .margin({ bottom: 16 })
-  24. .backgroundColor('#0A59F7')
-  25. .onClick(() => {
-  26. this.pathInfos.pushPath({ name: 'PageOne' });
-  27. })
-  28. }
-  29. .width('100%')
-  30. .height('100%')
-  31. .padding({
-  32. left: 16,
-  33. right: 16
-  34. })
-  35. .justifyContent(FlexAlign.End)
-  36. .alignItems(HorizontalAlign.Center)
-  37. }
-  38. .width('100%')
-  39. .mode(NavigationMode.Auto)
-  40. .title('title')
-  41. .titleMode(NavigationTitleMode.Mini)
-  42. .navDestination(this.myRouter)
-  43. .hideBackButton(true)
-  44. .hideNavBar(true) // Set the Navigation property's hideNavBar to true.
-  45. }
-  46. }
-
-  48. @Component
-  49. export struct PageOne {
-  50. @Consume('pathInfos') pathInfos: NavPathStack;
-
-  52. build() {
-  53. NavDestination() {
-  54. Column() {
-  55. Text('PageOne')
-  56. .width('100%')
-  57. .fontSize(20)
-  58. .fontColor(0x333333)
-  59. .textAlign(TextAlign.Center)
-  60. }
-  61. .size({ width: '100%', height: '100%' })
-  62. .alignItems(HorizontalAlign.Center)
-  63. .justifyContent(FlexAlign.Center)
-  64. }
-  65. .title('PageOne')
-  66. .onBackPressed(() => {
-  67. this.getUIContext().getRouter().back(); // Override the return button logic to exit the navigation page.
-  68. return true;
-  69. })
-  70. }
-  71. }
-  ```
-
-  [NavPathStackExitsTheNavigationPage.ets](https://gitcode.com/harmonyos_samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/NavPathStackExitsTheNavigationPage.ets#L21-L92)

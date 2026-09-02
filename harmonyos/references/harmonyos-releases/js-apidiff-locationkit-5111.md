@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-locationkit-5111
 title: Location Kit
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.1.1(19) > OS平台能力 > API变更清单 > 5.1.1(19) Beta1引入的API > Location Kit
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.1(19) > OS平台能力 > API变更清单 > 5.1.1(19) Beta1引入的API > Location Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:54+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T15:16:32+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:7e79f6fba389cb1e45841412221c6eaae1e3ef3bc2b216527402f0d2d549e676
 ---
 

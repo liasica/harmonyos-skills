@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-erro
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:4e8d8fa1a619fdd66a4bc1e3ea854e1fb259c48b6c2cb9e79fe6d3a1e7cabc36
+scraped_at: 2026-09-02T15:03:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:455948830414e06f9268d53e37c89c6244b7251192eb7a07054a2282324d3e29
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 1000900001 系统错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -31,8 +29,7 @@ System internal error.
 **处理步骤**
 
 1. 请进行重试操作。
-2. [pushService.on('tokenUpdate')](push-pushservice.md#pushserviceontokenupdate)接口返回1000900001，优先排查是否重复注册。请进行重试操作。
-3. 若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+2. [pushService.on('tokenUpdate')](push-pushservice.md#pushserviceontokenupdate)接口返回1000900001，优先排查是否重复注册。
 
 ## 1000900002 Extension不存在
 
@@ -90,8 +87,6 @@ ExtensionAbility回调执行超时。
 
 ## 1000900005 不允许重复注册相同的场景化消息
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Messages of the same push type cannot be received repeatedly.
@@ -110,8 +105,6 @@ Messages of the same push type cannot be received repeatedly.
 
 ## 1000900006 连接AAID服务失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to connect to the AAID service.
@@ -126,12 +119,9 @@ PushService运行异常。
 
 **处理步骤**
 
-1. 请进行重试操作。
-2. 若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+请进行重试操作。
 
 ## 1000900007 AAID服务内部错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -147,12 +137,9 @@ PushService内部处理超时或异常。
 
 **处理步骤**
 
-1. 请进行重试操作。
-2. 若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+请进行重试操作。
 
 ## 1000900008 连接Push服务失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -168,12 +155,9 @@ PushService运行异常。
 
 **处理步骤**
 
-1. 请进行重试操作。
-2. 若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+请进行重试操作。
 
 ## 1000900009 推送服务内部错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -192,12 +176,9 @@ PushService内部处理任务时发生异常，将返回该错误码。
 **处理步骤**
 
 1. 请尝试重启设备。
-2. 切换到新网络或您的热点网络重试。
-3. 若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+2. 切换到新网络重试。
 
 ## 1000900010 APP身份验证失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -222,11 +203,8 @@ Illegal application identity.
 
 1. 请确认应用配置是否正确。
 2. 请检查您的网络，确保网络正常可用。
-3. 若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1000900011 网络不可用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -244,11 +222,8 @@ The network is unavailable.
 
 1. 网络异常，请稍后重试，或重连网络。
 2. 终端设备连接的推送服务器的IP是动态分配的，无法通过配置IP白名单方式放行。建议连接不受限的网络或放通5223、443端口重试。
-3. 若您的问题仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1000900012 未开通推送服务权益
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -268,8 +243,6 @@ Push rights are not activated.
 
 ## 1000900013 不允许跨区申请Token
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Cross-location application is not allowed to obtain the token.
@@ -287,8 +260,6 @@ Cross-location application is not allowed to obtain the token.
 请检查设备所在地与AGC上设置的[数据处理位置](../harmonyos-guides/push-config-setting.md#可选设置数据处理位置)是否匹配。
 
 ## 1000900014 设备不支持申请Token
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -308,8 +279,6 @@ The device does not support getting token.
 
 ## 1000900015 绑定的应用内账号数量达到上限
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The number of bound profile-app relationships exceeds the maximum.
@@ -327,8 +296,6 @@ The number of bound profile-app relationships exceeds the maximum.
 请调用pushService.[unbindAppProfileId](push-pushservice.md#pushserviceunbindappprofileid-1)()解绑若干账号后重试，推荐的绑定和解绑时机请参见[开发通知消息账号校验](../harmonyos-guides/push-send-alert.md#开发通知消息账号校验)。
 
 ## 1000900016 华为账号未登录
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -348,8 +315,6 @@ The os distributed account is not logged in.
 
 ## 1000900017 不支持当前操作
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The device does not support current operation.
@@ -360,15 +325,13 @@ The device does not support current operation.
 
 **可能原因**
 
-元服务基于账号订阅时，该设备非Phone、Tablet，或者订阅时元服务不在前台。
+元服务基于账号订阅时，该设备非Phone、Tablet、PC/2in1，或者订阅时元服务不在前台。
 
 **处理步骤**
 
-元服务基于账号订阅时，检查订阅时应用是否处于前台。检查设备订阅设备是否为Phone或Tablet。
+元服务基于账号订阅时，检查订阅时应用是否处于前台。检查设备订阅设备是否为Phone或Tablet或PC/2in1。
 
 ## 1000900018 请求频次超限
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -384,11 +347,9 @@ Number of calls exceeded.
 
 **处理步骤**
 
-请调整接口调用频次。
+请降低接口调用频率，确保调用间隔大于1秒。
 
 ## 1000900019 模板ID非法
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -408,8 +369,6 @@ Illegal entity id.
 
 ## 1000900020 应用的推送服务Token为空
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 App token is empty.
@@ -428,8 +387,6 @@ App token is empty.
 
 ## 1000900021 应用未在AGC上注册
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 App is not available or not registered.
@@ -441,16 +398,14 @@ App is not available or not registered.
 **可能原因**
 
 1. 应用或元服务未在AGC上注册。
-2. 订阅类型[type](push-servicenotification.md#servicenotificationrequestsubscribenotification-1)与应用类型不匹配。
+2. 订阅类型[type](push-servicenotification.md#servicenotificationrequestsubscribenotification)与应用类型不匹配。
 
 **处理步骤**
 
 1. 检查应用或元服务是否在AGC上完成注册，详情请参见[应用开发准备](../harmonyos-guides/application-dev-overview.md)。
-2. 检查订阅类型[type](push-servicenotification.md#servicenotificationrequestsubscribenotification-1)与应用类型是否匹配，仅元服务支持通过华为账号订阅。
+2. 检查订阅类型[type](push-servicenotification.md#servicenotificationrequestsubscribenotification-1)与应用类型是否匹配，其中元服务支持通过华为账号订阅，应用支持Push Token订阅。
 
 ## 1000900022 通知开关状态为关闭
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -470,8 +425,6 @@ Notification switch off.
 
 ## 1000900023 模板ID数量超过上限
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Number of entity ids exceed the upper limit.
@@ -489,8 +442,6 @@ Number of entity ids exceed the upper limit.
 请检查传入的模板ID数量是否超过3个。
 
 ## 1000900024 展示订阅通知授权弹窗失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -510,8 +461,6 @@ Failed to display subscription UI.
 
 ## 1000900025 没有使用该模板ID的权益
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 No rights to access entity id.
@@ -529,8 +478,6 @@ No rights to access entity id.
 元服务基于账号订阅时，请参见[开通服务通知并选用订阅模板](../atomic-guides/push-as-service-noti.md)。
 
 ## 1000900026 模板ID的类型非法
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -550,8 +497,6 @@ Illegal entity type.
 
 ## 1000900030 用户未登录华为账号
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The user has not logged in with HUAWEI ID.
@@ -570,8 +515,6 @@ The user has not logged in with HUAWEI ID.
 
 ## 1000900031 同类型的回调只能注册一次
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The same type of callback can be registered only once.
@@ -587,3 +530,21 @@ The same type of callback can be registered only once.
 **处理步骤**
 
 排查是否调用[pushService.on('distributedMessageReceive')](push-pushservice.md#pushserviceondistributedmessagereceive)接口重复注册。
+
+## 1000900032 服务通知设置不存在
+
+**错误信息**
+
+The service notification setting does not exist.
+
+**错误描述**
+
+服务通知设置不存在。
+
+**可能原因**
+
+该元服务在当前账号下不存在订阅关系。
+
+**处理步骤**
+
+请引导用户订阅元服务通知。详情见[发起基于账号的订阅请求](../atomic-guides/push-as-request-sub.md)。

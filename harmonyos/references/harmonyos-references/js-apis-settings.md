@@ -3,35 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.settings (设置数据项名称)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.settings (设置数据项名称)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9e567b0754a545363383e9c184c286f6d8470dc68f92a75a43208552c30b8673
+scraped_at: 2026-09-02T15:02:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:72d63ffd244a27dc8722f73178deea14848fbd5d6994f05057acf259498dadca
 ---
 
 本模块提供访问设置数据项的能力。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 如果访问的数据项没有获取到值，表示当前系统应用没有将该数据项的值添加到数据库。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { settings } from '@kit.BasicServicesKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
 ```
 
 ## domainName
 
-PhonePC/2in1TabletTVWearable
-
 提供查询的域名。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -42,13 +36,9 @@ PhonePC/2in1TabletTVWearable
 
 ## date
 
-PhonePC/2in1TabletTVWearable
-
 提供设置时间和日期格式的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -61,13 +51,9 @@ PhonePC/2in1TabletTVWearable
 
 ## display
 
-PhonePC/2in1TabletTVWearable
-
 提供设置显示效果的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -87,13 +73,9 @@ PhonePC/2in1TabletTVWearable
 
 ## general
 
-PhonePC/2in1TabletTVWearable
-
 提供设置设备常规信息的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -118,13 +100,9 @@ PhonePC/2in1TabletTVWearable
 
 ## input
 
-PhonePC/2in1TabletTVWearable
-
 提供设置有关输入法信息的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -141,13 +119,9 @@ PhonePC/2in1TabletTVWearable
 
 ## network
 
-PhonePC/2in1TabletTVWearable
-
 提供设置网络信息的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -159,13 +133,9 @@ PhonePC/2in1TabletTVWearable
 
 ## phone
 
-PhonePC/2in1TabletTVWearable
-
 提供设置来电和去电接听方式的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -175,13 +145,9 @@ PhonePC/2in1TabletTVWearable
 
 ## sound
 
-PhonePC/2in1TabletTVWearable
-
 提供设置声音效果的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -201,13 +167,9 @@ PhonePC/2in1TabletTVWearable
 
 ## TTS
 
-PhonePC/2in1TabletTVWearable
-
 提供设置文本到语音(TTS)转换信息的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -220,13 +182,9 @@ PhonePC/2in1TabletTVWearable
 
 ## wireless
 
-PhonePC/2in1TabletTVWearable
-
 提供设置无线网络信息的数据项。
 
 ### 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.Applications.Settings.Core
 
@@ -247,8 +205,6 @@ PhonePC/2in1TabletTVWearable
 | WIFI\_WATCHDOG\_STATUS(deprecated21) | string | 是 | Wi-Fi的WatchDog是否可用。  - 值为true，表示可用。  - 值为false，表示不可用（该常量不支持使用）。 |
 
 ## settings.setValue10+
-
-PhonePC/2in1TabletTVWearable
 
 setValue(context: Context, name: string, value: string, callback: AsyncCallback<boolean>): void
 
@@ -271,21 +227,19 @@ setValue(context: Context, name: string, value: string, callback: AsyncCallback<
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 更新数据项亮度的值(该数据项在数据库中已存在，故setValue方法将更新该数据项的值)。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', (status) => {
-8. console.info('Callback return whether value is set.');
-9. });
+// 更新数据项亮度的值(该数据项在数据库中已存在，故setValue方法将更新该数据项的值)。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', (status) => {
+  console.info('Callback return whether value is set.');
+});
 ```
 
 ## settings.setValue10+
-
-PhonePC/2in1TabletTVWearable
 
 setValue(context: Context, name: string, value: string): Promise<boolean>
 
@@ -313,21 +267,19 @@ setValue(context: Context, name: string, value: string): Promise<boolean>
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 更新数据项亮度的值(该数据项在数据库中已存在，故setValue方法将更新该数据项的值)。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100').then((status) => {
-8. console.info('Callback return whether value is set.');
-9. });
+// 更新数据项亮度的值(该数据项在数据库中已存在，故setValue方法将更新该数据项的值)。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100').then((status) => {
+  console.info('Callback return whether value is set.');
+});
 ```
 
 ## settings.setValue11+
-
-PhonePC/2in1TabletTVWearable
 
 setValue(context: Context, name: string, value: string, domainName: string): Promise<boolean>
 
@@ -367,21 +319,19 @@ setValue(context: Context, name: string, value: string, domainName: string): Pro
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 更新数据项亮度的值(该数据项在数据库中已存在，故setValue方法将更新该数据项的值)。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', settings.domainName.DEVICE_SHARED).then((status) => {
-8. console.info(`callback:return whether value is set.`)
-9. });
+// 更新数据项亮度的值(该数据项在数据库中已存在，故setValue方法将更新该数据项的值)。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.setValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', settings.domainName.DEVICE_SHARED).then((status) => {
+  console.info(`callback:return whether value is set.`)
+});
 ```
 
 ## settings.getValue10+
-
-PhonePC/2in1TabletTVWearable
 
 getValue(context: Context, name: string, callback: AsyncCallback<string>): void
 
@@ -401,24 +351,22 @@ getValue(context: Context, name: string, callback: AsyncCallback<string>): void
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-5. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, (err, value) => {
-7. if (err) {
-8. console.error(`Failed to get the setting. ${err.message} `);
-9. return;
-10. }
-11. console.info(`callback:value -> ${value}`)
-12. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, (err, value) => {
+  if (err) {
+    console.error(`Failed to get the setting. ${err.message} `);
+    return;
+  }
+  console.info(`callback:value -> ${value}`)
+});
 ```
 
 ## settings.getValue10+
-
-PhonePC/2in1TabletTVWearable
 
 getValue(context: Context, name: string): Promise<string>
 
@@ -443,20 +391,18 @@ getValue(context: Context, name: string): Promise<string>
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-5. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS).then((value) => {
-7. console.info(`promise:value -> ${value}`)
-8. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS).then((value) => {
+  console.info(`promise:value -> ${value}`)
+});
 ```
 
 ## settings.getValue11+
-
-PhonePC/2in1TabletTVWearable
 
 getValue(context: Context, name: string, domainName: string): Promise<string>
 
@@ -486,21 +432,19 @@ getValue(context: Context, name: string, domainName: string): Promise<string>
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 更新数据项亮度的值(该数据项在数据库中已存在，故getValue方法将更新该数据项的值)。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, settings.domainName.DEVICE_SHARED).then((value) => {
-8. console.info(`Promise:value -> ${value}`);
-9. });
+// 更新数据项亮度的值(该数据项在数据库中已存在，故getValue方法将更新该数据项的值)。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, settings.domainName.DEVICE_SHARED).then((value) => {
+  console.info(`Promise:value -> ${value}`);
+});
 ```
 
 ## settings.getValueSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getValueSync(context: Context, name: string, defValue: string): string
 
@@ -526,19 +470,17 @@ getValueSync(context: Context, name: string, defValue: string): string
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 获取数据项亮度的值(该数据项在数据库中已存在)。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let value = settings.getValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '10');
+// 获取数据项亮度的值(该数据项在数据库中已存在)。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let value = settings.getValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '10');
 ```
 
 ## settings.getValueSync11+
-
-PhonePC/2in1TabletTVWearable
 
 getValueSync(context: Context, name: string, defValue: string, domainName: string): string
 
@@ -569,19 +511,17 @@ getValueSync(context: Context, name: string, defValue: string, domainName: strin
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 更新数据项亮度的值(该数据项在数据库中已存在)。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let value = settings.getValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100',  settings.domainName.DEVICE_SHARED);
+// 更新数据项亮度的值(该数据项在数据库中已存在)。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let value = settings.getValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100',  settings.domainName.DEVICE_SHARED);
 ```
 
 ## settings.setValueSync10+
-
-PhonePC/2in1TabletTVWearable
 
 setValueSync(context: Context, name: string, value: string): boolean
 
@@ -612,19 +552,17 @@ setValueSync(context: Context, name: string, value: string): boolean
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 更新数据项亮度的值(该数据项在数据库中已存在，故setValueSync方法将更新该数据项的值)。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let ret = settings.setValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100');
+// 更新数据项亮度的值(该数据项在数据库中已存在，故setValueSync方法将更新该数据项的值)。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let ret = settings.setValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100');
 ```
 
 ## settings.setValueSync11+
-
-PhonePC/2in1TabletTVWearable
 
 setValueSync(context: Context, name: string, value: string, domainName: string): boolean
 
@@ -667,19 +605,17 @@ setValueSync(context: Context, name: string, value: string, domainName: string):
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 更新数据项亮度的值(该数据项在数据库中已存在，故setValueSync方法将更新该数据项的值)。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let ret = settings.setValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', settings.domainName.DEVICE_SHARED);
+// 更新数据项亮度的值(该数据项在数据库中已存在，故setValueSync方法将更新该数据项的值)。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let ret = settings.setValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '100', settings.domainName.DEVICE_SHARED);
 ```
 
 ## settings.registerKeyObserver11+
-
-PhonePC/2in1TabletTVWearable
 
 registerKeyObserver(context: Context, name: string, domainName: string, observer:AsyncCallback<void>): boolean
 
@@ -706,21 +642,19 @@ registerKeyObserver(context: Context, name: string, domainName: string, observer
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-5. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. settings.registerKeyObserver(context, settings.display.SCREEN_BRIGHTNESS_STATUS, settings.domainName.DEVICE_SHARED, () => {
-7. let value:string = settings.getValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '10');
-8. console.info(`Promise:value -> ${value}`);
-9. });
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.registerKeyObserver(context, settings.display.SCREEN_BRIGHTNESS_STATUS, settings.domainName.DEVICE_SHARED, () => {
+  let value:string = settings.getValueSync(context, settings.display.SCREEN_BRIGHTNESS_STATUS, '10');
+  console.info(`Promise:value -> ${value}`);
+});
 ```
 
 ## settings.unregisterKeyObserver11+
-
-PhonePC/2in1TabletTVWearable
 
 unregisterKeyObserver(context: Context, name: string, domainName: string): boolean
 
@@ -746,18 +680,16 @@ unregisterKeyObserver(context: Context, name: string, domainName: string): boole
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-5. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let ret = settings.unregisterKeyObserver(context, settings.display.SCREEN_BRIGHTNESS_STATUS,  settings.domainName.DEVICE_SHARED);
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let ret = settings.unregisterKeyObserver(context, settings.display.SCREEN_BRIGHTNESS_STATUS,  settings.domainName.DEVICE_SHARED);
 ```
 
 ## settings.openNetworkManagerSettings18+
-
-PhonePC/2in1TabletTVWearable
 
 openNetworkManagerSettings(context: Context): Promise<boolean>
 
@@ -773,7 +705,7 @@ openNetworkManagerSettings(context: Context): Promise<boolean>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+| context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
 
 **返回值**：
 
@@ -792,25 +724,27 @@ openNetworkManagerSettings(context: Context): Promise<boolean>
 
 **示例**：
 
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 跳转网络管理器设置页面。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.openNetworkManagerSettings(context).then((status) => {
+  console.info(`callback:return whether settings is open.`);
+});
 ```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
 
-4. // 跳转网络管理器设置页面。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. settings.openNetworkManagerSettings(context).then((status) => {
-8. console.info(`callback:return whether settings is open.`);
-9. });
-```
-
-## settings.enableAirplaneMode
-
-PhonePC/2in1TabletTVWearable
+## settings.enableAirplaneMode(deprecated)
 
 enableAirplaneMode(enable: boolean, callback: AsyncCallback<void>): void
 
 启用或禁用飞行模式。使用callback异步回调（暂不支持）。
+
+**说明** 
+
+从 API version 7开始支持，从API version 26.0.0开始废弃，此接口不再提供替代接口。
 
 **系统能力**：SystemCapability.Applications.Settings.Core
 
@@ -823,24 +757,26 @@ enableAirplaneMode(enable: boolean, callback: AsyncCallback<void>): void
 
 **示例**：
 
-```
-1. let isEnabled :boolean = true;
-2. settings.enableAirplaneMode(isEnabled, (err:Error) => {
-3. if (err) {
-4. console.error('Failed to enable AirplaneMode.');
-5. return;
-6. }
-7. console.info('Return true if enable.');
-8. })
+```js
+let isEnabled :boolean = true;
+settings.enableAirplaneMode(isEnabled, (err:Error) => {
+    if (err) {
+        console.error('Failed to enable AirplaneMode.');
+        return;
+    }
+    console.info('Return true if enable.');
+})
 ```
 
-## settings.enableAirplaneMode
-
-PhonePC/2in1TabletTVWearable
+## settings.enableAirplaneMode(deprecated)
 
 enableAirplaneMode(enable: boolean): Promise<void>
 
 启用或禁用飞行模式。使用Promise异步回调（暂不支持）。
+
+**说明** 
+
+从 API version 7开始支持，从API version 26.0.0开始废弃，此接口不再提供替代接口。
 
 **系统能力**：SystemCapability.Applications.Settings.Core
 
@@ -858,22 +794,24 @@ enableAirplaneMode(enable: boolean): Promise<void>
 
 **示例**：
 
-```
-1. let isEnabled :boolean = true;
-2. settings.enableAirplaneMode(isEnabled).then(() => {
-3. console.info('Succeeded in enabling AirplaneMode.');
-4. }).catch((err:Error) => {
-5. console.error(`Failed to enable AirplaneMode. Cause: ${err}`);
-6. })
+```js
+let isEnabled :boolean = true;
+settings.enableAirplaneMode(isEnabled).then(() => {
+  console.info('Succeeded in enabling AirplaneMode.');
+}).catch((err:Error) => {
+  console.error(`Failed to enable AirplaneMode. Cause: ${err}`);
+})
 ```
 
-## settings.canShowFloating
-
-PhonePC/2in1TabletTVWearable
+## settings.canShowFloating(deprecated)
 
 canShowFloating(callback: AsyncCallback<boolean>): void
 
 检查应用是否能够以悬浮窗形式显示。使用callback异步回调（暂不支持）。
+
+**说明** 
+
+从 API version 7开始支持，从API version 26.0.0开始废弃，此接口不再提供替代接口。
 
 **系统能力**：SystemCapability.Applications.Settings.Core
 
@@ -885,23 +823,25 @@ canShowFloating(callback: AsyncCallback<boolean>): void
 
 **示例**：
 
-```
-1. settings.canShowFloating((err:Error, status: boolean) => {
-2. if (err) {
-3. console.error(`Failed to Checks whether a specified application can show as float window ${err.message} `);
-4. return;
-5. }
-6. console.info('Checks whether a specified application can show as float window.');
-7. });
+```js
+settings.canShowFloating((err:Error, status: boolean) => {
+  if (err) {
+    console.error(`Failed to Checks whether a specified application can show as float window ${err.message} `);
+    return;
+  }
+  console.info('Checks whether a specified application can show as float window.');
+});
 ```
 
-## settings.canShowFloating
-
-PhonePC/2in1TabletTVWearable
+## settings.canShowFloating(deprecated)
 
 canShowFloating(): Promise<boolean>
 
 检查应用是否能够以悬浮窗形式显示。使用Promise异步回调（暂不支持）。
+
+**说明** 
+
+从 API version 7开始支持，从API version 26.0.0开始废弃，此接口不再提供替代接口。
 
 **系统能力**：SystemCapability.Applications.Settings.Core
 
@@ -913,19 +853,21 @@ canShowFloating(): Promise<boolean>
 
 **示例**：
 
-```
-1. settings.canShowFloating().then((status:boolean) => {
-2. console.info('Checks whether a specified application can show as float window.');
-3. });
+```js
+settings.canShowFloating().then((status:boolean) => {
+    console.info('Checks whether a specified application can show as float window.');
+});
 ```
 
-## settings.getUriSync8+
-
-PhonePC/2in1TabletTVWearable
+## settings.getUriSync(deprecated)
 
 getUriSync(name: string): string
 
 获取数据项的URI（暂不支持）。
+
+**说明** 
+
+从 API version 8开始支持，从API version 26.0.0开始废弃，此接口不再提供替代接口。
 
 **系统能力**：SystemCapability.Applications.Settings.Core
 
@@ -943,22 +885,20 @@ getUriSync(name: string): string
 
 **示例**：
 
-```
-1. // 获取数据项的URI。
-2. let uriVar:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
+```js
+// 获取数据项的URI。
+let uriVar:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
 ```
 
 ## settings.getURI(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getURI(name: string, callback: AsyncCallback<object>): void
 
 获取数据项的URI。使用callback异步回调（暂不支持）。
 
-说明
+**说明** 
 
-从 API version 7开始支持，从API version 9开始废弃，此接口不再提供代替接口。
+从 API version 7开始支持，从API version 9开始废弃，此接口不再提供替代接口。
 
 **系统能力**：SystemCapability.Applications.Settings.Core
 
@@ -971,23 +911,21 @@ getURI(name: string, callback: AsyncCallback<object>): void
 
 **示例**：
 
-```
-1. settings.getURI(settings.display.SCREEN_BRIGHTNESS_STATUS, (uri:string) => {
-2. console.info(`callback:uri -> ${JSON.stringify(uri)}`)
-3. })
+```js
+settings.getURI(settings.display.SCREEN_BRIGHTNESS_STATUS, (uri:string) => {
+    console.info(`callback:uri -> ${JSON.stringify(uri)}`)
+})
 ```
 
 ## settings.getURI(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getURI(name: string): Promise<object>
 
 获取数据项的URI。使用Promise异步回调（暂不支持）。
 
-说明
+**说明** 
 
-从 API version 7开始支持，从API version 9开始废弃，此接口不再提供代替接口。
+从 API version 7开始支持，从API version 9开始废弃，此接口不再提供替代接口。
 
 **系统能力**：SystemCapability.Applications.Settings.Core
 
@@ -1005,21 +943,19 @@ getURI(name: string): Promise<object>
 
 **示例**：
 
-```
-1. settings.getURI(settings.display.SCREEN_BRIGHTNESS_STATUS).then((uri:string) => {
-2. console.info(`promise:uri -> ${JSON.stringify(uri)}`)
-3. })
+```js
+settings.getURI(settings.display.SCREEN_BRIGHTNESS_STATUS).then((uri:string) => {
+    console.info(`promise:uri -> ${JSON.stringify(uri)}`)
+})
 ```
 
 ## settings.getValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getValue(dataAbilityHelper: DataAbilityHelper, name: string, callback: AsyncCallback<object>): void
 
 获取数据库中DEVICE\_SHARD域指定数据项的值。使用callback异步回调。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃，建议使用[getValue()](js-apis-settings.md#settingsgetvalue10)替代。
 
@@ -1037,29 +973,27 @@ getValue(dataAbilityHelper: DataAbilityHelper, name: string, callback: AsyncCall
 
 **示例**：
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let uri:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
-4. let helper = featureAbility.acquireDataAbilityHelper(uri);
-5. settings.getValue(helper, settings.display.SCREEN_BRIGHTNESS_STATUS, (err:Error, value:string) => {
-6. if (err) {
-7. console.error(`Failed to get the setting. ${err.message} `);
-8. return;
-9. }
-10. console.info(`callback:value -> ${JSON.stringify(value)}`)
-11. });
+let uri:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
+let helper = featureAbility.acquireDataAbilityHelper(uri);
+settings.getValue(helper, settings.display.SCREEN_BRIGHTNESS_STATUS, (err:Error, value:string) => {
+    if (err) {
+        console.error(`Failed to get the setting. ${err.message} `);
+        return;
+    }
+    console.info(`callback:value -> ${JSON.stringify(value)}`)
+});
 ```
 
 ## settings.getValue(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getValue(dataAbilityHelper: DataAbilityHelper, name: string): Promise<object>
 
 获取数据库中DEVICE\_SHARD域指定数据项的值。使用Promise异步回调。
 
-说明
+**说明** 
 
 从 API version 7开始支持，从API version 9开始废弃，建议使用[getValue()](js-apis-settings.md#settingsgetvalue10-1)替代。
 
@@ -1082,25 +1016,23 @@ getValue(dataAbilityHelper: DataAbilityHelper, name: string): Promise<object>
 
 **示例**：
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let uri:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
-4. let helper = featureAbility.acquireDataAbilityHelper(uri);
-5. settings.getValue(helper, settings.display.SCREEN_BRIGHTNESS_STATUS).then((value:string) => {
-6. console.info(`promise:value -> ${JSON.stringify(value)}`)
-7. });
+let uri:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
+let helper = featureAbility.acquireDataAbilityHelper(uri);
+settings.getValue(helper, settings.display.SCREEN_BRIGHTNESS_STATUS).then((value:string) => {
+    console.info(`promise:value -> ${JSON.stringify(value)}`)
+});
 ```
 
 ## settings.getValueSync(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 getValueSync(dataAbilityHelper: DataAbilityHelper, name: string, defValue: string): string
 
 获取数据项的值。此方法相较getValue为同步方法。
 
-说明
+**说明** 
 
 从 API version 8开始支持，从API version 9开始废弃，建议使用[getValueSync()](js-apis-settings.md#settingsgetvaluesync10)替代。
 
@@ -1124,18 +1056,16 @@ getValueSync(dataAbilityHelper: DataAbilityHelper, name: string, defValue: strin
 
 **示例**：
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. // 获取数据项亮度的值(该数据项在数据库中已存在)。
-4. let uri:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
-5. let helper = featureAbility.acquireDataAbilityHelper(uri);
-6. let value:string = settings.getValueSync(helper, settings.display.SCREEN_BRIGHTNESS_STATUS, '10');
+// 获取数据项亮度的值(该数据项在数据库中已存在)。
+let uri:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
+let helper = featureAbility.acquireDataAbilityHelper(uri);
+let value:string = settings.getValueSync(helper, settings.display.SCREEN_BRIGHTNESS_STATUS, '10');
 ```
 
 ## settings.setValueSync(deprecated)
-
-PhonePC/2in1TabletTVWearable
 
 setValueSync(dataAbilityHelper: DataAbilityHelper, name: string, value: string): boolean
 
@@ -1144,7 +1074,7 @@ setValueSync(dataAbilityHelper: DataAbilityHelper, name: string, value: string):
 * 如果数据库中已经存在该数据项，setValueSync方法将更新该数据项的值。
 * 如果数据库中不存在该数据项，setValueSync方法将向数据库中插入该数据项。
 
-说明
+**说明** 
 
 从 API version 8开始支持，从API version 9开始废弃，建议使用[setValueSync()](js-apis-settings.md#settingssetvaluesync10)替代。
 
@@ -1170,18 +1100,16 @@ setValueSync(dataAbilityHelper: DataAbilityHelper, name: string, value: string):
 
 **示例**：
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. // 更新数据项亮度的值(该数据项在数据库中已存在，故setValueSync方法将更新该数据项的值)。
-4. let uri:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
-5. let helper = featureAbility.acquireDataAbilityHelper(uri);
-6. let ret:string = settings.setValueSync(helper, settings.display.SCREEN_BRIGHTNESS_STATUS, '100');
+// 更新数据项亮度的值(该数据项在数据库中已存在，故setValueSync方法将更新该数据项的值)。
+let uri:string = settings.getUriSync(settings.display.SCREEN_BRIGHTNESS_STATUS);
+let helper = featureAbility.acquireDataAbilityHelper(uri);
+let ret:string = settings.setValueSync(helper, settings.display.SCREEN_BRIGHTNESS_STATUS, '100');
 ```
 
 ## settings.openInputMethodSettings23+
-
-PhonePC/2in1TabletTVWearable
 
 openInputMethodSettings(context: Context): void
 
@@ -1197,7 +1125,7 @@ openInputMethodSettings(context: Context): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+| context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
 
 **错误码**：
 
@@ -1209,19 +1137,17 @@ openInputMethodSettings(context: Context): void
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 跳转输入法设置页面。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. settings.openInputMethodSettings(context);
+// 跳转输入法设置页面。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+settings.openInputMethodSettings(context);
 ```
 
 ## settings.openInputMethodDetail23+
-
-PhonePC/2in1TabletTVWearable
 
 openInputMethodDetail(context: Context, bundleName: string, inputMethodId: string): void
 
@@ -1237,7 +1163,7 @@ openInputMethodDetail(context: Context, bundleName: string, inputMethodId: strin
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | Context | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+| context | Context | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
 | bundleName | string | 是 | 拉起输入法的对应包名 |
 | inputMethodId | string | 是 | 输入法扩展在应用内唯一标识[id](js-apis-inputmethod.md#inputmethodproperty8)。 |
 
@@ -1251,14 +1177,434 @@ openInputMethodDetail(context: Context, bundleName: string, inputMethodId: strin
 
 **示例**：
 
-```
-1. import { settings } from '@kit.BasicServicesKit';
-2. import { common } from '@kit.AbilityKit';
+```js
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-4. // 跳转输入法详情页面。
-5. // 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
-6. const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let bundleName: string = "target inputMethod bundle name";
-8. let inputMethodId: string = "target inputMethod id";
-9. settings.openInputMethodDetail(context, bundleName, inputMethodId);
+// 跳转输入法详情页面。
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let bundleName: string = "target inputMethod bundle name";
+let inputMethodId: string = "target inputMethod id";
+settings.openInputMethodDetail(context, bundleName, inputMethodId);
+```
+
+## settings.openBiometricsSettingsPage24+
+
+openBiometricsSettingsPage(context: Context): void
+
+打开生物识别和密码设置页面。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口在Phone、Tablet、PC/2in1、Wearable设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | Parameter error. |
+| 16900020 | Failed to open the settings page via redirection. |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openBiometricsSettingsPage(context);
+} catch (err) {
+  console.error(`Failed to open the biometrics and password settings page. code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## settings.openNfcSettingsPage24+
+
+openNfcSettingsPage(context: Context): void
+
+打开NFC设置页面。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口在Phone、Tablet、Wearable设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | Parameter error. |
+| 16900020 | Failed to open the settings page via redirection. |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openNfcSettingsPage(context);
+} catch (err) {
+  console.error(`Failed to open the NFC settings page. code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## settings.openDoubleClickSettingsPage24+
+
+openDoubleClickSettingsPage(context: Context): void
+
+打开按键设置-双击下按键页面。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口仅在Wearable设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和ExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | 1. The parameter is incorrect.  2. The parameter is not transferred or the transferred parameter is invalid. |
+| 16900020 | 1. The setting page cannot be opened through redirection.  2. Internal error |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openDoubleClickSettingsPage(context);
+} catch (err) {
+  console.error(`Failed to open the DoubleClick settings page. code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## settings.isDoubleClickAppForSelf24+
+
+isDoubleClickAppForSelf(): Promise<boolean>
+
+判断双击下按键的默认启动应用是否为本应用。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口仅在Wearable设备中可正常调用，在其他设备调用不生效。
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示是当前应用，返回false表示非当前应用。 |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+
+settings.isDoubleClickAppForSelf().then((result: boolean) => {
+  console.info(`isDoubleClickAppForSelf result: ${result}`);
+})
+```
+
+## settings.openMobileNetworkSettingsPage
+
+openMobileNetworkSettingsPage(context: Context): void
+
+打开移动网络设置页面。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口在Phone、Tablet设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | Parameter error. |
+| 16900020 | Failed to open the settings page via redirection. |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openMobileNetworkSettingsPage(context);
+} catch (err) {
+  console.error(`Failed to open the mobile network settings page. code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## settings.openDisplaySettingsPage
+
+openDisplaySettingsPage(context: Context): void
+
+打开显示和亮度设置页面。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口在Phone、Tablet、PC/2in1设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | Parameter error. |
+| 16900020 | Failed to open the settings page via redirection. |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openDisplaySettingsPage(context);
+} catch (err) {
+  console.error(`Failed to open the display settings page. code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## settings.openScreenRefreshRateSettingsPage
+
+openScreenRefreshRateSettingsPage(context: Context): void
+
+打开屏幕刷新率设置页面。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口在Phone、Tablet、PC/2in1设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | Parameter error. |
+| 16900020 | Failed to open the settings page via redirection. |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openScreenRefreshRateSettingsPage(context);
+} catch (err) {
+  console.error(`Failed to open the screen refresh rate settings page. code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## settings.openSoundSettingsPage
+
+openSoundSettingsPage(context: Context): void
+
+打开声音和振动设置页面。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口在Phone、Tablet设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | Parameter error. |
+| 16900020 | Failed to open the settings page via redirection. |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openSoundSettingsPage(context);
+} catch (err) {
+  console.error(`Failed to open the sound settings page. code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## settings.openAboutDeviceSettingsPage
+
+openAboutDeviceSettingsPage(context: Context): void
+
+打开关于本机设置页面。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口在Phone、Tablet、PC/2in1设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | Parameter error. |
+| 16900020 | Failed to open the settings page via redirection. |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openAboutDeviceSettingsPage(context);
+} catch (err) {
+  console.error(`Failed to open the about device settings page. code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## settings.openAppDetailSettingsPage
+
+openAppDetailSettingsPage(context: Context, bundleName: string, appIndex?: number): void
+
+打开应用详情设置页面。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Applications.Settings.Core
+
+**设备行为差异**：该接口在Phone、Tablet、PC/2in1设备中可正常调用，在其他设备调用不生效。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 应用上下文（仅支持UIAbilityContext和UIExtensionContext）。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
+| bundleName | string | 是 | 应用包名 |
+| appIndex | number | 否 | 应用分身的索引 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[设置数据项错误码](errorcode-settings.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16900010 | Parameter error. |
+| 16900020 | Failed to open the settings page via redirection. |
+
+**示例**：
+
+```ts
+import { settings } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext。
+const context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+try {
+  settings.openAppDetailSettingsPage(context, 'com.example');
+} catch (err) {
+  console.error(`Failed to open the app detail settings page. code: ${err?.code}, message: ${err?.message}`);
+}
 ```

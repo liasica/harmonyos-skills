@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全图像压缩、裁剪场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全图像压缩、裁剪场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b2442b26202aac647c1f62b553e3010028899405f9843e1b587ff022947d7857
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:e9681d5194ca8e0e910873eb599837f801880fa08f1b1374401133a31aaa92db
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:b2442b26202aac647c1f62b553e3010028899405f9843e1b587ff022947
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/y1UcAYIeT9iTP01JswFSXQ/zh-cn_image_0000002589324755.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/B0woPPcFSRK6qAt6pr_f4w/zh-cn_image_0000002706834288.jpg)
 
 ## 接口说明
 
@@ -34,154 +34,195 @@ content_hash: sha256:b2442b26202aac647c1f62b553e3010028899405f9843e1b587ff022947
 
 ## 开发步骤
 
-1. 参考[安全摄像头开发指导](devicesecurity-taas-securecamera.md)，获取安全图像。
-2. 创建证明密钥和初始化证明会话。
+1. 导入trustedAppService模块和相关依赖模块。
 
-   说明
+   ```typescript
+   import { trustedAppService } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import hilog from '@ohos.hilog';
+   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+   import { util } from '@kit.ArkTS';
+   import { cert } from '@kit.DeviceCertificateKit';
+   ```
+2. 参考[安全摄像头开发指导](devicesecurity-taas-securecamera.md)，获取安全图像。
+3. 创建证明密钥和初始化证明会话。
+
+   **说明** 
 
    * 只有创建证明密钥成功后，才能初始化证明会话。
    * 证明密钥的有效期为7天，为了避免反复创建证明密钥，建议先调用初始化证明会话，如果初始化失败，再去销毁、创建证明密钥，然后重新初始化证明密钥。
    * 调用initializeAttestContext初始化证明会话时，userData的长度必须在16到127 Bytes之间。
 
-   ```
-   1. // 创建证明密钥的参数
-   2. const createProperties: Array<trustedAppService.AttestParam> = [
-   3. {
-   4. tag: trustedAppService.AttestTag.ATTEST_TAG_ALGORITHM,
-   5. value: trustedAppService.AttestKeyAlg.ATTEST_ALG_ECC
-   6. },
-   7. {
-   8. tag: trustedAppService.AttestTag.ATTEST_TAG_KEY_SIZE,
-   9. value: trustedAppService.AttestKeySize.ATTEST_ECC_KEY_SIZE_256
-   10. }
-   11. ];
-   12. const createOptions: trustedAppService.AttestOptions = {
-   13. properties: createProperties
-   14. };
-   15. // 初始化证明会话的参数
-   16. const userData = "trusted_app_service_demo"; // 示例值，实际值请自行生成，长度在16到127 Bytes之间
-   17. const initProperties: Array<trustedAppService.AttestParam> = [
-   18. {
-   19. tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
-   20. value: trustedAppService.AttestType.ATTEST_TYPE_SECIMAGE_PROCESS
-   21. },
-   22. {
-   23. tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_ID,
-   24. value: BigInt(0) // 此参数在安全图像压缩、裁剪场景下不生效
-   25. }
-   26. ];
-   27. const initOptions: trustedAppService.AttestOptions = {
-   28. properties: initProperties
-   29. };
+   * 创建安全图像压缩、裁剪场景的证明密钥：
 
-   31. let certChainList: Array<string>;
-   32. try {
-   33. // 创建证明密钥
-   34. await trustedAppService.createAttestKey(createOptions);
-   35. // 初始化证明会话
-   36. const result = await trustedAppService.initializeAttestContext(userData, initOptions);
-   37. certChainList = result.certChains;
-   38. } catch (err) {
-   39. const error = err as BusinessError;
-   40. console.error(`Failed to initialize attest context, message:${error.message}, code:${error.code}`);
-   41. }
-   ```
-3. 请求对安全图像进行压缩、裁剪处理
+     ```typescript
+     private async creatSecureImageProcAttestKey(): Promise<void> {
+       // 创建证明密钥的参数
+       const createProperties: Array<trustedAppService.AttestParam> = [
+         {
+           tag: trustedAppService.AttestTag.ATTEST_TAG_ALGORITHM,
+           value: trustedAppService.AttestKeyAlg.ATTEST_ALG_ECC
+         },
+         {
+           tag: trustedAppService.AttestTag.ATTEST_TAG_KEY_SIZE,
+           value: trustedAppService.AttestKeySize.ATTEST_ECC_KEY_SIZE_256
+         }
+       ];
+       const createOptions: trustedAppService.AttestOptions = {
+         properties: createProperties
+       };
+       // 创建证明密钥
+       try {
+         await trustedAppService.createAttestKey(createOptions);
+         hilog.info(0x0000, 'TrustedAppService', 'createAttestKey successfully');
+       } catch (error) {
+         const err = error as BusinessError;
+         hilog.error(0x0000, 'trustedappservice', `createattestkey failed, errCode: ${err.code}, errMsg: ${err.message}`);
+         throw new Error(err.message);
+       }
+     }
+     ```
+   * 初始化安全图像压缩、裁剪场景的证明会话：
+
+     ```typescript
+     private async initSecureImageProcAttestContext(): Promise<number> {
+       try {
+         // 初始化证明会话的参数
+         const deviceId = 0;
+         const initProperties: Array<trustedAppService.AttestParam> = [
+           {
+             tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
+             value: trustedAppService.AttestType.ATTEST_TYPE_SECIMAGE_PROCESS
+           },
+           {
+             tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_ID,
+             value: BigInt(deviceId) // 此参数在安全图像压缩、裁剪场景下不生效
+           }
+         ];
+         const initOptions: trustedAppService.AttestOptions = {
+           properties: initProperties
+         };
+         let userData = 'trusted_app_service_default_userdata'; // 示例值，实际值请自行生成，长度在16到127 Bytes之间
+         // 初始化话证明会话
+         const certChainResult = await trustedAppService.initializeAttestContext(userData, initOptions);
+         if (certChainResult.certChains.length < 1) {
+           throw new Error('empty returned cert chain');
+         }
+         // ...
+         return 0;
+       } catch (err) {
+         const businessError = err as BusinessError;
+         hilog.error(0x0000, 'TrustedAppService',
+           `initializeAttestContext failed. errCode: ${businessError.code}, errMsg: ${businessError.message}`);
+         const finalNumericCode = Number(String(businessError.code ?? '').replace('n', '').trim());
+         return Number.isNaN(finalNumericCode) ? -1 : finalNumericCode;
+       }
+     }
+     ```
+4. 请求对安全图像进行压缩、裁剪处理
 
    * 以压缩场景为例：
 
-     ```
-     1. const srcSecImageBuffer = new  ArrayBuffer(461844);// 实际使用请替换为Camera Kit获取到的安全图像buffer
-
-     3. let properties: Array<trustedAppService.SecImageProcParams> = [
-     4. {
-     5. tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_PROC_OPERATION,
-     6. value: trustedAppService.SecImageProcOperation.SECIMAGE_COMPRESSION,
-     7. },
-     8. {
-     9. tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_SRC_IMAGE_FORMAT,
-     10. value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像压缩、裁剪命令输入的原始图像格式都为：YUV420 NV21 格式
-     11. },
-     12. {
-     13. tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_DEST_IMAGE_FORMAT,
-     14. value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_JPEG, // 安全图像压缩命令返回的图像格式为：JPEG 格式
-     15. },
-     16. {
-     17. tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_COMPRESSION_QUALITY,
-     18. value: 90, // 实际使用请替换为业务场景需要的压缩质量
-     19. },
-     20. ];
-     21. let procParams: trustedAppService.SecImageProcParamsArray = {
-     22. properties: properties,
-     23. };
-     24. await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).then(
-     25. (returnResult: trustedAppService.SecImageBuffer): void => {
-     26. let returnSecImageBuffer = returnResult.secImage;
-     27. }
-     28. ).catch(
-     29. (error: BusinessError): void => {
-     30. let err = error as BusinessError;
-     31. hilog.error(0x0000, 'testTag', `Failed to process secureImage cropping, code:${err.code}, message:${err.message}`);
-     32. }
-     33. );
+     ```typescript
+     private async procSecImageCompression(compressQuality: number, srcSecureImage: ArrayBuffer): Promise<ArrayBuffer> {
+       try {
+         let properties: Array<trustedAppService.SecImageProcParams> = [
+           {
+             tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_PROC_OPERATION,
+             value: trustedAppService.SecImageProcOperation.SECIMAGE_COMPRESSION,
+           },
+           {
+             tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_SRC_IMAGE_FORMAT,
+             value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像压缩、裁剪命令输入的原始图像格式都为：YUV420 NV21 格式
+           },
+           {
+             tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_DEST_IMAGE_FORMAT,
+             value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_JPEG, // 安全图像压缩命令返回的图像格式为：JPEG 格式
+           },
+           {
+             tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_COMPRESSION_QUALITY,
+             value: compressQuality, // 实际使用请替换为业务场景需要的压缩质量
+           },
+         ];
+         const procParams: trustedAppService.SecImageProcParamsArray = {
+           properties: properties
+         };
+         // srcSecureImage：实际使用请替换为Camera Kit获取到的安全图像buffer
+         return (await trustedAppService.procSecImageTransform(srcSecureImage, procParams)).secImage;
+       } catch (err) {
+         const businessError = err as BusinessError;
+         hilog.error(0x0000, 'TrustedAppService',
+           `procSecImageTransform failed, code: ${businessError.code}, msg: ${businessError.message}`);
+         throw new Error(businessError.message);
+       }
+     }
      ```
    * 以裁剪场景为例：
 
+     ```typescript
+     private async procSecImageCropping(cropRegion: trustedAppService.CropRegion,
+       srcSecureImage: ArrayBuffer): Promise<ArrayBuffer> {
+       try {
+         let properties: Array<trustedAppService.SecImageProcParams> = [
+           {
+             tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_PROC_OPERATION,
+             value: trustedAppService.SecImageProcOperation.SECIMAGE_CROPPING,
+           },
+           {
+             tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_SRC_IMAGE_FORMAT,
+             value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像压缩、裁剪命令输入的原始图像格式都为：YUV420 NV21 格式
+           },
+           {
+             tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_DEST_IMAGE_FORMAT,
+             value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像裁剪命令返回的图像格式为：YUV420 NV21 格式
+           },
+           {
+             tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_CROP_REGION,
+             value: {
+               // 实际使用请替换为业务场景需要的裁剪区域范围
+               x: cropRegion.x,
+               y: cropRegion.y,
+               width: cropRegion.width,
+               height: cropRegion.height
+             },
+           },
+         ];
+         let procParams: trustedAppService.SecImageProcParamsArray = {
+           properties: properties,
+         };
+         // srcSecureImage：实际使用请替换为Camera Kit获取到的安全图像buffer
+         return (await trustedAppService.procSecImageTransform(srcSecureImage, procParams)).secImage;
+       } catch (err) {
+         const businessError = err as BusinessError;
+         hilog.error(0x0000, 'TrustedAppService',
+           `procSecImageTransform failed, code: ${businessError.code}, msg: ${businessError.message}`);
+         throw new Error(businessError.message);
+       }
+     }
      ```
-     1. const srcSecImageBuffer = new  ArrayBuffer(461844);// 实际使用请替换为Camera Kit获取到的安全图像buffer
+5. 结束证明会话。
 
-     3. let properties: Array<trustedAppService.SecImageProcParams> = [
-     4. {
-     5. tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_PROC_OPERATION,
-     6. value: trustedAppService.SecImageProcOperation.SECIMAGE_CROPPING,
-     7. },
-     8. {
-     9. tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_SRC_IMAGE_FORMAT,
-     10. value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像压缩、裁剪命令输入的原始图像格式都为：YUV420 NV21 格式
-     11. },
-     12. {
-     13. tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_DEST_IMAGE_FORMAT,
-     14. value: trustedAppService.SecImageProcFormat.SECIMAGE_FORMAT_YUV_NV21, // 安全图像裁剪命令返回的图像格式为：YUV420 NV21 格式
-     15. },
-     16. {
-     17. tag: trustedAppService.SecImageProcTag.SECIMAGE_TAG_CROP_REGION,
-     18. value: { x : 0, y ： 0, width : 320, height : 240 }, // 实际使用请替换为业务场景需要的裁剪区域范围
-     19. },
-     20. ];
-     21. let procParams: trustedAppService.SecImageProcParamsArray = {
-     22. properties: properties,
-     23. };
-     24. await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).then(
-     25. (returnResult: trustedAppService.SecImageBuffer): void => {
-     26. let returnSecImageBuffer = returnResult.secImage;
-     27. }
-     28. ).catch(
-     29. (error: BusinessError): void => {
-     30. let err = error as BusinessError;
-     31. hilog.error(0x0000, 'testTag', `Failed to process secureImage cropping, code:${err.code}, message:${err.message}`);
-     32. }
-     33. );
-     ```
-4. 结束证明会话。
-
-   ```
-   1. // 结束证明会话的参数
-   2. const finalProperties: Array<trustedAppService.AttestParam> = [
-   3. {
-   4. tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
-   5. value: trustedAppService.AttestType.ATTEST_TYPE_SECIMAGE_PROCESS
-   6. }
-   7. ];
-   8. const finalOptions: trustedAppService.AttestOptions = {
-   9. properties: finalProperties,
-   10. };
-   11. // 结束证明会话
-   12. try {
-   13. await trustedAppService.finalizeAttestContext(finalOptions);
-   14. } catch (err) {
-   15. const error = err as BusinessError;
-   16. console.error(`Failed to finalize attest context, message:${error.message}, code:${error.code}`);
-   17. }
+   ```typescript
+   private async finalizeSecureImageProcAttestContext(): Promise<void> {
+     // 结束证明会话的参数
+     const finalProperties: Array<trustedAppService.AttestParam> = [
+       {
+         tag: trustedAppService.AttestTag.ATTEST_TAG_DEVICE_TYPE,
+         value: trustedAppService.AttestType.ATTEST_TYPE_SECIMAGE_PROCESS
+       }
+     ];
+     const finalOptions: trustedAppService.AttestOptions = {
+       properties: finalProperties,
+     };
+     // 结束证明会话
+     try {
+       await trustedAppService.finalizeAttestContext(finalOptions);
+     } catch (err) {
+       const error = err as BusinessError;
+       hilog.error(0x0000, 'TrustedAppService',
+         'Failed to finalize attest context, code:${error.code}, message:${error.message}');
+     }
+   }
    ```
 
    如果需要销毁证明密钥，请在结束证明会话后，调用[destroyAttestKey](../harmonyos-references/devicesecurity-taas-api.md#destroyattestkey)接口。由于安全摄像头、安全地理位置和安全图像压缩、裁剪共用同一个证明密钥，销毁前需要保证其余场景功能未在使用该证明密钥。

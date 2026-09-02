@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/text-and-
 title: 文本与输入
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d67a81140faddc38d3571baeade5428a1f4c9be0f03e9659e7d811886c747a0f
+scraped_at: 2026-09-02T14:51:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:1df45c7125fcb11818a571799b234a998e958a2a7b4a630939e1a4ce81ba3ad9
 ---
 
 * **[Text](ts-basic-components-text.md)**
@@ -16,6 +16,7 @@ content_hash: sha256:d67a81140faddc38d3571baeade5428a1f4c9be0f03e9659e7d811886c7
 * **[Span](ts-basic-components-span.md)**
 * **[ImageSpan](ts-basic-components-imagespan.md)**
 * **[ContainerSpan](ts-basic-components-containerspan.md)**
+* **[SelectionContainer](ts-basic-components-selectioncontainer.md)**
 * **[SymbolSpan](ts-basic-components-symbolspan.md)**
 * **[SymbolGlyph](ts-basic-components-symbolglyph.md)**
 * **[Hyperlink](ts-container-hyperlink.md)**

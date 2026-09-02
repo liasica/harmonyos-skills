@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-background
 title: 应用退后台禁止使用传感器问题分析
 breadcrumb: 最佳实践 > 功耗 > 应用功耗分析 > 应用退后台禁止使用传感器问题分析
 category: best-practices
-scraped_at: 2026-04-29T14:13:48+08:00
-doc_updated_at: 2026-04-27
-content_hash: sha256:0d8d349c07ad10fa261f931141c80e2ebcb2c7e1a069666888e8b61b00816c6c
+scraped_at: 2026-09-02T15:03:22+08:00
+doc_updated_at: 2026-08-26
+content_hash: sha256:89998db172b0000ce624a40cef2e71ac2a633758605a16cb3c7e1f280af3e81e
 ---
 
 ## 应用退后台禁止使用传感器介绍
@@ -22,42 +22,54 @@ content_hash: sha256:0d8d349c07ad10fa261f931141c80e2ebcb2c7e1a069666888e8b61b008
    * hilogtool：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-tool
    * hilog：https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog
 2. 判断应用内所有界面退后台后，是否存在传感器没有关闭的行为
-   * 方法一：通过DevEco 软件日志栏中实时过滤：(bundleName).\*open the sensor|(bundleName).\*close the sensor
+   * 方法一：通过DevEco 软件日志栏中实时过滤(搜索栏支持正则匹配搜索)：(bundleName).\*open the sensor|(bundleName).\*close the sensor
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/gNxMXzQ2TfiGQnFJCIOnQg/zh-cn_image_0000002555614824.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/C-zb4nGVRTC0dBvwK_sAgw/zh-cn_image_0000002555614824.png "点击放大")
 
    * 方法二：本地使用命令行控制台实时过滤日志：hdc shell hilog | grep -i "(bundleName).\*open the sensor\|(bundleName).\*close the sensor"
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/NtfHOrV9SFWnZB-oGiyOzw/zh-cn_image_0000002586174413.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/GsH0Hf8EQsKRVpBdl05YNA/zh-cn_image_0000002586174413.png "点击放大")
 3. 判断应用在后台是否存在长时任务
    * 过滤关键词：suspend\_manager.\*(bundleName)
      + 应用后台不存在长时任务
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/zr7gZ4gdSLKfl5rp2dZKxw/zh-cn_image_0000002586294373.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Tf1600OvSk--KsrqDBuuog/zh-cn_image_0000002586294373.png "点击放大")
 
      + 应用后台存在长时任务
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/ldUFBlVpQ1WRd-OGqtoblw/zh-cn_image_0000002555774456.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/X4yu0t_cTdWzspMf8krUeQ/zh-cn_image_0000002555774456.png "点击放大")
 4. 如果存在应用退后台后还存在没有关闭的传感器，并且没有长时任务保活，需要进行优化，合理使用资源
    * 优化建议：在应用退后台后主动调用 sensor.off 关闭传感器
 
-   ```
-   1. import { UIAbility } from '@kit.AbilityKit';
-   2. import { sensor } from '@kit.SensorServiceKit';
-
-   4. export default class EntryAbility extends UIAbility {
-   5. onForground()：void {
-   6. sensor.on(sensor.SensorId.ACCELEROMETER, (data: sensor.AccelerometerResponse) => {
-   7. console.info("Succeededinobtainingdata.x:" + data.x + "y:" + data.y + "z:" + data.z);
-   8. },{
-   9. interval：1000000
-   10. })；
-   11. }
-
-   13. onBackground()：void {
-   14. sensor.off(sensor.SensorId.ACCELEROMETER);
-   15. }
-   16. }
+   ```typescript
+   import { UIAbility } from '@kit.AbilityKit';
+   import { sensor } from '@kit.SensorServiceKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   export default class EntryAbility extends UIAbility {
+       // ...
+       onForeground(): void {
+         try {
+           //In the foreground, listen to the required type of sensor based on the service requirements
+           sensor.on(sensor.SensorId.ACCELEROMETER, (data: sensor.AccelerometerResponse) => {
+             console.info("Succeeded in obtaining data.x:" + data.x + "y:" + data.y + "z:" + data.z);
+           }, {
+             interval: 100000000
+           });
+       } catch (error) {
+           let err = error as BusinessError;
+           hilog.warn(0x000, 'testTag', `sensor on failed, code=${err.code}, message=${err.message}`);
+       }
+   }
+     onBackground(): void {
+       try {
+         //The backstage cancels the listening
+         sensor.off(sensor.SensorId.ACCELEROMETER);
+       } catch (error) {
+         let err = error as BusinessError;
+         hilog.warn(0x000, 'testTag', `sensor off failed, code=${err.code}, message=${err.message}`);
+       }
+     }
+   }
    ```
 
 ### 应用上架问题分析
@@ -69,25 +81,37 @@ content_hash: sha256:0d8d349c07ad10fa261f931141c80e2ebcb2c7e1a069666888e8b61b008
 2. 通过所有日志查看哪些传感器在退后台后没有关闭。
    * 过滤日志关键词：(bundleName).\*open the sensor|(bundleName).\*close the sensor
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/BnydwFNmQsiDyev815c4vw/zh-cn_image_0000002555614826.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ODu_1sv1RBGXYSpvS8KarA/zh-cn_image_0000002555614826.png "点击放大")
 3. 如果存在应用退后台后还存在没有关闭的传感器，并且没有长时任务保活，需要进行优化，合理使用资源。
    * 优化建议：在应用退后台后主动调用 sensor.off 关闭传感器
 
-     ```
-     1. import { UIAbility } from '@kit.AbilityKit';
-     2. import { sensor } from '@kit.SensorServiceKit';
-
-     4. export default class EntryAbility extends UIAbility {
-     5. onForground()：void {
-     6. sensor.on(sensor.SensorId.ACCELEROMETER, (data: sensor.AccelerometerResponse) => {
-     7. console.info("Succeededinobtainingdata.x:" + data.x + "y:" + data.y + "z:" + data.z);
-     8. },{
-     9. interval：1000000
-     10. })；
-     11. }
-
-     13. onBackground()：void {
-     14. sensor.off(sensor.SensorId.ACCELEROMETER);
-     15. }
-     16. }
+     ```typescript
+     import { UIAbility } from '@kit.AbilityKit';
+     import { sensor } from '@kit.SensorServiceKit';
+     import { BusinessError } from '@kit.BasicServicesKit';
+     export default class EntryAbility extends UIAbility {
+         // ...
+         onForeground(): void {
+           try {
+             //In the foreground, listen to the required type of sensor based on the service requirements
+             sensor.on(sensor.SensorId.ACCELEROMETER, (data: sensor.AccelerometerResponse) => {
+               console.info("Succeeded in obtaining data.x:" + data.x + "y:" + data.y + "z:" + data.z);
+             }, {
+               interval: 100000000
+             });
+         } catch (error) {
+             let err = error as BusinessError;
+             hilog.warn(0x000, 'testTag', `sensor on failed, code=${err.code}, message=${err.message}`);
+         }
+     }
+       onBackground(): void {
+         try {
+           //The backstage cancels the listening
+           sensor.off(sensor.SensorId.ACCELEROMETER);
+         } catch (error) {
+           let err = error as BusinessError;
+           hilog.warn(0x000, 'testTag', `sensor off failed, code=${err.code}, message=${err.message}`);
+         }
+       }
+     }
      ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/call-introduc
 title: Call Service Kit简介
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > Call Service Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f22845b960bd06107e13b46670ad08677a5754e6d5430aa97c38daeadd7fbbdd
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:5ca246b2cea8b9be656d6696622b6b5824a48edfb4efd242567c5f4c1551e68d
 ---
 
 Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通话管理服务。
@@ -36,7 +36,7 @@ Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通�
 
 业务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/0pJ4lSCGSy6_pJufsk-nhg/zh-cn_image_0000002589325197.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/1ybSKT12S7mbWOQ9Sb6ouQ/zh-cn_image_0000002706674906.jpg)
 
 ## 约束和限制
 
@@ -46,9 +46,11 @@ Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通�
 
 | 能力 | 支持设备 |
 | --- | --- |
-| 来电场景 | Phone、Tablet，Wearable。 |
-| 去电场景 | Phone、Tablet，Wearable。 |
+| 来电场景 | Phone、Tablet、PC/2in1、Wearable。 |
+| 去电场景 | Phone、Tablet、PC/2in1、Wearable。 |
 | 企业联系人信息来去电页面显示 | Phone、Tablet、PC/2in1、Wearable。 |
+| 企业服务信息来去电页面显示 | Phone、Tablet、PC/2in1、Wearable。 |
+| 应用跳转陌生号码和信息识别页面 | Phone、Tablet、PC/2in1、Wearable。 |
 
 ### 通话数量
 
@@ -57,12 +59,12 @@ Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通�
 
 ### 支持的国家/地区
 
-Call Service Kit提供的能力当前只支持中国大陆。
+Call Service Kit提供的能力当前只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
 ### 相关Kit的约束和限制
 
 由于Call Service Kit依赖Push Kit，还需要参考[Push Kit的约束和限制](push-kit-introduction.md#约束和限制)。
 
-## 模拟器支撑情况
+## 模拟器支持情况
 
-本kit暂不支持模拟器
+本Kit暂不支持模拟器。

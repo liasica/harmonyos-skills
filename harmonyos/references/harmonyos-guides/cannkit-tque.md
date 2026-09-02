@@ -1,8 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tque
 title: TQue
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 内存管理与同步控制 > TQue
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:41+08:00
+scraped_at: 2026-09-02T15:17:52+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:92df1a4cc3eb57e19c54b6cfd0c18cc3528b12f00e4314bad5330c68968b1d16
 ---

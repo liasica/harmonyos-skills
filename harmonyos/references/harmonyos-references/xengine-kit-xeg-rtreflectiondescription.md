@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: XEG_RTReflectionDescription
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 结构体 > XEG_RTReflectionDescription
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8aa927c1f9aad906a1afc7acd34ce1afd866c7cc061179740e7935bee406d063
+scraped_at: 2026-09-02T15:02:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:96238ade2ea098e48d253b8d334a4a6d63c3b23097ca007f6fec5b8418f6db15
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 此结构体描述下发光线求交命令时的输入信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -42,14 +36,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### accelerationStructure
 
-PhonePC/2in1TabletTV
-
-```
-1. VkAccelerationStructureKHR XEG_RTReflectionDescription::accelerationStructure
+```cpp
+VkAccelerationStructureKHR XEG_RTReflectionDescription::accelerationStructure
 ```
 
 **描述**
@@ -58,10 +48,8 @@ PhonePC/2in1TabletTV
 
 ### inputRayDirectionImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_RTReflectionDescription::inputRayDirectionImage
+```cpp
+VkImageView XEG_RTReflectionDescription::inputRayDirectionImage
 ```
 
 **描述**
@@ -70,10 +58,8 @@ PhonePC/2in1TabletTV
 
 ### inputRayOriginImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_RTReflectionDescription::inputRayOriginImage
+```cpp
+VkImageView XEG_RTReflectionDescription::inputRayOriginImage
 ```
 
 **描述**
@@ -82,32 +68,28 @@ PhonePC/2in1TabletTV
 
 ### outputReflectionInfoImage
 
-PhonePC/2in1TabletTV
-
-```
-1. VkImageView XEG_RTReflectionDescription::outputReflectionInfoImage
+```cpp
+VkImageView XEG_RTReflectionDescription::outputReflectionInfoImage
 ```
 
 **描述**
 
 输出的反射光线求交结果，格式必须为R32G32B32A32\_UINT。求交结果会将光线追踪最近的命中信息打包成128bit，解析方式如下：
 
-```
-1. uint raymiss = outputReflectionInfoImage.x & 1;
-2. uint primitiveId = (outputReflectionInfoImage.x >> 1) & (0x3ffff);
-3. uint instanceId = outputReflectionInfoImage.x >> 19;
-4. vec2 barycentrics = unpackHalf2x16(outputReflectionInfoImage.z);
-5. float hitT = uintBitsToFloat(outputReflectionInfoImage.w);
-6. uint sbtOffest = (outputReflectionInfoImage.y >> 16);
-7. uint geomtryIndex = (outputReflectionInfoImage.y) & 0xffff;
+```cpp
+uint raymiss = outputReflectionInfoImage.x & 1;
+uint primitiveId = (outputReflectionInfoImage.x >> 1) & (0x3ffff);
+uint instanceId = outputReflectionInfoImage.x >> 19;
+vec2 barycentrics = unpackHalf2x16(outputReflectionInfoImage.z);
+float hitT = uintBitsToFloat(outputReflectionInfoImage.w);
+uint sbtOffset = (outputReflectionInfoImage.y >> 16);
+uint geometryIndex = (outputReflectionInfoImage.y) & 0xffff;
 ```
 
 ### pNext
 
-PhonePC/2in1TabletTV
-
-```
-1. const void* XEG_RTReflectionDescription::pNext
+```cpp
+const void* XEG_RTReflectionDescription::pNext
 ```
 
 **描述**
@@ -116,10 +98,8 @@ PhonePC/2in1TabletTV
 
 ### rayMax
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTReflectionDescription::rayMax
+```cpp
+float XEG_RTReflectionDescription::rayMax
 ```
 
 **描述**
@@ -128,10 +108,8 @@ PhonePC/2in1TabletTV
 
 ### rayMin
 
-PhonePC/2in1TabletTV
-
-```
-1. float XEG_RTReflectionDescription::rayMin
+```cpp
+float XEG_RTReflectionDescription::rayMin
 ```
 
 **描述**
@@ -140,10 +118,8 @@ PhonePC/2in1TabletTV
 
 ### reflectionCullMask
 
-PhonePC/2in1TabletTV
-
-```
-1. uint32_t XEG_RTReflectionDescription::reflectionCullMask
+```cpp
+uint32_t XEG_RTReflectionDescription::reflectionCullMask
 ```
 
 **描述**
@@ -152,10 +128,8 @@ PhonePC/2in1TabletTV
 
 ### sType
 
-PhonePC/2in1TabletTV
-
-```
-1. XEG_StructureType XEG_RTReflectionDescription::sType
+```cpp
+XEG_StructureType XEG_RTReflectionDescription::sType
 ```
 
 **描述**

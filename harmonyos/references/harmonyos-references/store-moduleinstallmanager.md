@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-mod
 title: moduleInstallManager (产品特性按需分发)
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > moduleInstallManager (产品特性按需分发)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a899fabcb5149ded02544fe0e5569c663699e6383f7e8bea9e8e1529f55dd929
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:60cc15ca6bdf17aca3397be8448045f9243e5e177dc6fb1fee32e79d3aa9d7e4
 ---
 
 借助该模块，您可以从应用的基本模块中分离特定功能和资源，并将其包含在子模块的包中。用户在使用应用过程中，可以动态下载子模块包。该模块包含判断模块是否安装、请求按需加载任务、监听模块下载进度、流量提醒弹窗、取消按需加载任务等功能。
 
-说明
+**说明** 
 
 调用接口需捕获异常。
 
@@ -18,15 +18,11 @@ content_hash: sha256:a899fabcb5149ded02544fe0e5569c663699e6383f7e8bea9e8e1529f55
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { moduleInstallManager } from '@kit.AppGalleryKit';
+```typescript
+import { moduleInstallManager } from '@kit.AppGalleryKit';
 ```
 
 ## InstalledModule
-
-PhonePC/2in1TabletTV
 
 当前模块的安装信息。
 
@@ -43,8 +39,6 @@ PhonePC/2in1TabletTV
 | installStatus | [InstallStatus](store-moduleinstallmanager.md#installstatus) | 是 | 否 | 模块安装结果。 |
 
 ## ModuleInstallSessionState
-
-PhonePC/2in1TabletTV
 
 请求、监听/注销监听接口，接口调用结果。
 
@@ -66,8 +60,6 @@ PhonePC/2in1TabletTV
 
 ## InstallStatus
 
-PhonePC/2in1TabletTV
-
 安装结果状态码类型的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -83,8 +75,6 @@ PhonePC/2in1TabletTV
 
 ## ReturnCode
 
-PhonePC/2in1TabletTV
-
 添加模块、取消下载、流量提醒弹窗接口，接口调用结果码类型的枚举。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -99,8 +89,6 @@ PhonePC/2in1TabletTV
 | FAILURE | 1 | 失败。 |
 
 ## RequestErrorCode
-
-PhonePC/2in1TabletTV
 
 请求、监听/注销监听接口，接口调用结果码类型的枚举。
 
@@ -126,8 +114,6 @@ PhonePC/2in1TabletTV
 | DOWNLOAD\_WAIT\_WIFI | 1 | 当前使用的是流量，开发者需要调用[showCellularDataConfirmation](store-moduleinstallmanager.md#moduleinstallmanagershowcellulardataconfirmation)接口，提醒用户确认是否使用流量下载。 |
 
 ## TaskStatus
-
-PhonePC/2in1TabletTV
 
 请求、监听/注销监听接口，接口返回下载任务状态码类型的枚举。
 
@@ -157,8 +143,6 @@ PhonePC/2in1TabletTV
 
 ## moduleInstallManager.getInstalledModule
 
-PhonePC/2in1TabletTV
-
 getInstalledModule(moduleName: string): InstalledModule
 
 查询模块安装信息接口。
@@ -183,7 +167,7 @@ getInstalledModule(moduleName: string): InstalledModule
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -192,42 +176,40 @@ getInstalledModule(moduleName: string): InstalledModule
 
 **示例：**
 
-```
-1. import { moduleInstallManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { moduleInstallManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. @Entry
-5. @Component
-6. struct LoadInstallService {
+@Entry
+@Component
+struct LoadInstallService {
 
-8. @State allInstalledModules: string = '';
+  @State allInstalledModules: string = '';
 
-10. private getModuleInstanceInfo() {
-11. try {
-12. // 查询模块安装信息
-13. const result: moduleInstallManager.InstalledModule = moduleInstallManager.getInstalledModule('AModulelib');
-14. this.allInstalledModules = JSON.stringify(result);
-15. hilog.info(0, 'InstantDownload', 'getModuleInstanceInfo success=' + this.allInstalledModules);
-16. } catch (error) {
-17. hilog.error(0, 'InstantDownload', `getModuleInstanceInfo error.code is ${error.code}, message is ${error.message}`);
-18. }
-19. }
+  private getModuleInstanceInfo() {
+    try {
+      // 查询模块安装信息
+      const result: moduleInstallManager.InstalledModule = moduleInstallManager.getInstalledModule('AModulelib');
+      this.allInstalledModules = JSON.stringify(result);
+      hilog.info(0, 'InstantDownload', 'getModuleInstanceInfo success=' + this.allInstalledModules);
+    } catch (error) {
+      hilog.error(0, 'InstantDownload', `getModuleInstanceInfo error.code is ${error.code}, message is ${error.message}`);
+    }
+  }
 
-21. build() {
-22. Column() {
-23. }
-24. .width('100%')
-25. .height('100%')
-26. .padding(16)
-27. }
-28. }
+  build() {
+    Column() {
+    }
+    .width('100%')
+    .height('100%')
+    .padding(16)
+  }
+}
 ```
 
 ## InstallProvider
 
-PhonePC/2in1TabletTV
-
-按需加载controller父类对象。
+按需加载controller的父类对象。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -237,9 +219,7 @@ PhonePC/2in1TabletTV
 
 ## InstallRequest
 
-PhonePC/2in1TabletTV
-
-按需加载请求父类对象。
+按需加载请求的父类对象。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -248,8 +228,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 4.1.0(11)
 
 ## ModuleInstallProvider
-
-PhonePC/2in1TabletTV
 
 实现按需加载的方法，提供创建按需加载请求对象能力，继承[InstallProvider](store-moduleinstallmanager.md#installprovider)。
 
@@ -260,8 +238,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 4.1.0(11)
 
 ### ModuleInstallProvider.createModuleInstallRequest
-
-PhonePC/2in1TabletTV
 
 createModuleInstallRequest(context: common.UIAbilityContext | common.ExtensionContext): ModuleInstallRequest
 
@@ -295,45 +271,43 @@ createModuleInstallRequest(context: common.UIAbilityContext | common.ExtensionCo
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { moduleInstallManager } from '@kit.AppGalleryKit';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { moduleInstallManager } from '@kit.AppGalleryKit';
 
-5. const TAG: string = 'createModuleInstallRequest';
+const TAG: string = 'createModuleInstallRequest';
 
-7. @Entry
-8. @Component
-9. struct CreateModuleInstallRequest {
+@Entry
+@Component
+struct CreateModuleInstallRequest {
 
-11. build() {
-12. Column() {
-13. Button("createModuleInstallRequest")
-14. .onClick(() => {
-15. try {
-16. const myModuleInstallProvider: moduleInstallManager.ModuleInstallProvider =
-17. new moduleInstallManager.ModuleInstallProvider();
-18. const context: common.UIAbilityContext | common.ExtensionContext = this.getUIContext().getHostContext()  as common.UIAbilityContext;
-19. // 创建按需加载请求对象
-20. const myModuleInstallRequest: moduleInstallManager.ModuleInstallRequest =
-21. myModuleInstallProvider.createModuleInstallRequest(context);
-22. hilog.info(0, TAG, `myModuleInstallRequest: ${JSON.stringify(myModuleInstallRequest)}`);
-23. } catch (error) {
-24. hilog.error(0, TAG, `createModuleInstallRequest onError.code is ${error.code}, message is ${error.message}`);
-25. }
-26. })
-27. .width('100%')
-28. }
-29. .margin(16)
-30. .height('100%')
-31. .justifyContent(FlexAlign.Center)
-32. }
-33. }
+  build() {
+    Column() {
+      Button("createModuleInstallRequest")
+        .onClick(() => {
+          try {
+            const myModuleInstallProvider: moduleInstallManager.ModuleInstallProvider =
+              new moduleInstallManager.ModuleInstallProvider();
+            const context: common.UIAbilityContext | common.ExtensionContext = this.getUIContext().getHostContext()  as common.UIAbilityContext;
+            // 创建按需加载请求对象
+            const myModuleInstallRequest: moduleInstallManager.ModuleInstallRequest =
+              myModuleInstallProvider.createModuleInstallRequest(context);
+            hilog.info(0, TAG, `myModuleInstallRequest: ${JSON.stringify(myModuleInstallRequest)}`);
+          } catch (error) {
+            hilog.error(0, TAG, `createModuleInstallRequest onError.code is ${error.code}, message is ${error.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## ModuleInstallRequest
-
-PhonePC/2in1TabletTV
 
 按需下载请求对象，继承[InstallRequest](store-moduleinstallmanager.md#installrequest)。
 
@@ -344,8 +318,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 4.1.0(11)
 
 ### ModuleInstallRequest.addModule
-
-PhonePC/2in1TabletTV
 
 addModule(moduleName: string): ReturnCode
 
@@ -379,52 +351,50 @@ addModule(moduleName: string): ReturnCode
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { moduleInstallManager } from '@kit.AppGalleryKit';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { moduleInstallManager } from '@kit.AppGalleryKit';
 
-5. const TAG: string = 'addModule';
+const TAG: string = 'addModule';
 
-7. @Entry
-8. @Component
-9. struct AddModule {
+@Entry
+@Component
+struct AddModule {
 
-11. build() {
-12. Column() {
-13. Button("addModule")
-14. .onClick(() => {
-15. try {
-16. const myModuleInstallProvider: moduleInstallManager.ModuleInstallProvider =
-17. new moduleInstallManager.ModuleInstallProvider();
-18. const context: common.UIAbilityContext | common.ExtensionContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-19. // 创建按需加载请求对象
-20. const myModuleInstallRequest: moduleInstallManager.ModuleInstallRequest =
-21. myModuleInstallProvider.createModuleInstallRequest(context);
-22. // 添加要按需加载的模块名
-23. const aResult: moduleInstallManager.ReturnCode = myModuleInstallRequest.addModule('AModule');
-24. const bResult: moduleInstallManager.ReturnCode = myModuleInstallRequest.addModule('BModule');
-25. hilog.info(0, TAG, 'Succeeded in getting aResult:' + aResult + ' bResult:' + bResult);
-26. } catch (error) {
-27. hilog.error(0, TAG, `addModule onError.code is ${error.code}, message is ${error.message}`);
-28. }
-29. })
-30. .width('100%')
-31. }
-32. .margin(16)
-33. .height('100%')
-34. .justifyContent(FlexAlign.Center)
-35. }
-36. }
+  build() {
+    Column() {
+      Button("addModule")
+        .onClick(() => {
+          try {
+            const myModuleInstallProvider: moduleInstallManager.ModuleInstallProvider =
+              new moduleInstallManager.ModuleInstallProvider();
+            const context: common.UIAbilityContext | common.ExtensionContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            // 创建按需加载请求对象
+            const myModuleInstallRequest: moduleInstallManager.ModuleInstallRequest =
+              myModuleInstallProvider.createModuleInstallRequest(context);
+            // 添加要按需加载的模块名
+            const aResult: moduleInstallManager.ReturnCode = myModuleInstallRequest.addModule('AModule');
+            const bResult: moduleInstallManager.ReturnCode = myModuleInstallRequest.addModule('BModule');
+            hilog.info(0, TAG, 'Succeeded in getting aResult:' + aResult + ' bResult:' + bResult);
+          } catch (error) {
+            hilog.error(0, TAG, `addModule onError.code is ${error.code}, message is ${error.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## moduleInstallManager.fetchModules
 
-PhonePC/2in1TabletTV
-
 fetchModules(moduleInstallRequest: ModuleInstallRequest): Promise<ModuleInstallSessionState>
 
-按需加载请求接口，支持调试模式，使用Promise方式异步回调。
+按需加载请求接口，支持调试模式。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -446,7 +416,7 @@ fetchModules(moduleInstallRequest: ModuleInstallRequest): Promise<ModuleInstallS
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -458,52 +428,54 @@ fetchModules(moduleInstallRequest: ModuleInstallRequest): Promise<ModuleInstallS
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { moduleInstallManager } from '@kit.AppGalleryKit';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { moduleInstallManager } from '@kit.AppGalleryKit';
 
-5. const TAG: string = 'fetchModules';
+const TAG: string = 'fetchModules';
 
-7. @Entry
-8. @Component
-9. struct FetchModules {
+@Entry
+@Component
+struct FetchModules {
 
-11. build() {
-12. Column() {
-13. Button("fetchModules")
-14. .onClick(() => {
-15. try {
-16. const myModuleInstallProvider: moduleInstallManager.ModuleInstallProvider =
-17. new moduleInstallManager.ModuleInstallProvider();
-18. const context: common.UIAbilityContext | common.ExtensionContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-19. // 创建按需加载请求对象
-20. const myModuleInstallRequest: moduleInstallManager.ModuleInstallRequest =
-21. myModuleInstallProvider.createModuleInstallRequest(context);
-22. // 添加要按需加载的模块名
-23. myModuleInstallRequest.addModule('AModule');
-24. myModuleInstallRequest.addModule('BModule');
-25. // 按需加载请求接口,返回请求、监听/注销监听调用结果
-26. moduleInstallManager.fetchModules(myModuleInstallRequest)
-27. .then(() => {
-28. hilog.info(0, TAG, 'Succeeded in fetching modules success data.' );
-29. })
-30. } catch (error) {
-31. hilog.error(0, TAG, `fetching modules onError.code is ${error.code}, message is ${error.message}`);
-32. }
-33. })
-34. .width('100%')
-35. }
-36. .margin(16)
-37. .height('100%')
-38. .justifyContent(FlexAlign.Center)
-39. }
-40. }
+  build() {
+    Column() {
+      Button("fetchModules")
+        .onClick(() => {
+          try {
+            const myModuleInstallProvider: moduleInstallManager.ModuleInstallProvider =
+              new moduleInstallManager.ModuleInstallProvider();
+            const context: common.UIAbilityContext | common.ExtensionContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            // 创建按需加载请求对象
+            const myModuleInstallRequest: moduleInstallManager.ModuleInstallRequest =
+              myModuleInstallProvider.createModuleInstallRequest(context);
+            // 添加要按需加载的模块名
+            myModuleInstallRequest.addModule('AModule');
+            myModuleInstallRequest.addModule('BModule');
+            // 按需加载请求接口,返回请求、监听/注销监听调用结果
+            moduleInstallManager.fetchModules(myModuleInstallRequest)
+              .then((result: moduleInstallManager.ModuleInstallSessionState) => {
+                if (result.code === moduleInstallManager.RequestErrorCode.SUCCESS) {
+                  hilog.info(0, TAG, 'Succeeded in fetching modules success data.' );
+                } else {
+                  hilog.info(0, TAG, 'Fetching modules failed' );
+                }
+              })
+          } catch (error) {
+            hilog.error(0, TAG, `fetching modules onError.code is ${error.code}, message is ${error.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## moduleInstallManager.cancelTask
-
-PhonePC/2in1TabletTV
 
 cancelTask(taskId: string): ReturnCode
 
@@ -529,7 +501,7 @@ cancelTask(taskId: string): ReturnCode
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -541,23 +513,21 @@ cancelTask(taskId: string): ReturnCode
 
 **示例：**
 
-```
-1. import { moduleInstallManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { moduleInstallManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. // taskId 是fetchModules返回结果ModuleInstallSessionState中的taskId字段
-6. const taskId: string = '********';
-7. const rtnCode: moduleInstallManager.ReturnCode = moduleInstallManager.cancelTask(taskId);
-8. hilog.info(0, 'TAG', "Succeeded in getting result:" + rtnCode);
-9. } catch (error) {
-10. hilog.error(0, 'TAG', `cancelTask onError.code is ${error.code}, message is ${error.message}`);
-11. }
+try {
+  // taskId 是fetchModules返回结果ModuleInstallSessionState中的taskId字段
+  const taskId: string = '********';
+  const rtnCode: moduleInstallManager.ReturnCode = moduleInstallManager.cancelTask(taskId);
+  hilog.info(0, 'TAG', "Succeeded in getting result:" + rtnCode);
+} catch (error) {
+  hilog.error(0, 'TAG', `cancelTask onError.code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ## moduleInstallManager.showCellularDataConfirmation
-
-PhonePC/2in1TabletTV
 
 showCellularDataConfirmation(context: common.UIAbilityContext | common.ExtensionContext,taskId: string): ReturnCode
 
@@ -584,7 +554,7 @@ showCellularDataConfirmation(context: common.UIAbilityContext | common.Extension
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -596,44 +566,42 @@ showCellularDataConfirmation(context: common.UIAbilityContext | common.Extension
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { moduleInstallManager } from '@kit.AppGalleryKit';
+```typescript
+import { common } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { moduleInstallManager } from '@kit.AppGalleryKit';
 
-5. const TAG: string = 'showCellularDataConfirmation';
+const TAG: string = 'showCellularDataConfirmation';
 
-7. @Entry
-8. @Component
-9. struct ShowCellularDataConfirmation {
+@Entry
+@Component
+struct ShowCellularDataConfirmation {
 
-11. build() {
-12. Column() {
-13. Button("showCellularDataConfirmation")
-14. .onClick(() => {
-15. try {
-16. // taskId 是fetchModules返回结果ModuleInstallSessionState中的taskId字段
-17. const taskId: string = '********';
-18. const context = this.getUIContext().getHostContext()  as common.UIAbilityContext;
-19. const rtnCode: moduleInstallManager.ReturnCode =
-20. moduleInstallManager.showCellularDataConfirmation(context, taskId);
-21. hilog.info(0, TAG, "Succeeded in getting result:" + rtnCode);
-22. } catch (error) {
-23. hilog.error(0, TAG, `showCellularDataConfirmation onError.code is ${error.code}, message is ${error.message}`);
-24. }
-25. })
-26. .width('100%')
-27. }
-28. .margin(16)
-29. .height('100%')
-30. .justifyContent(FlexAlign.Center)
-31. }
-32. }
+  build() {
+    Column() {
+      Button("showCellularDataConfirmation")
+        .onClick(() => {
+          try {
+            // taskId 是fetchModules返回结果ModuleInstallSessionState中的taskId字段
+            const taskId: string = '********';
+            const context = this.getUIContext().getHostContext()  as common.UIAbilityContext;
+            const rtnCode: moduleInstallManager.ReturnCode =
+              moduleInstallManager.showCellularDataConfirmation(context, taskId);
+            hilog.info(0, TAG, "Succeeded in getting result:" + rtnCode);
+          } catch (error) {
+            hilog.error(0, TAG, `showCellularDataConfirmation onError.code is ${error.code}, message is ${error.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
 
 ## moduleInstallManager.on('moduleInstallStatus')
-
-PhonePC/2in1TabletTV
 
 on(type: 'moduleInstallStatus', callback: Callback<ModuleInstallSessionState>, timeout: number): void
 
@@ -655,7 +623,7 @@ on(type: 'moduleInstallStatus', callback: Callback<ModuleInstallSessionState>, t
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -665,24 +633,22 @@ on(type: 'moduleInstallStatus', callback: Callback<ModuleInstallSessionState>, t
 
 **示例：**
 
-```
-1. import { moduleInstallManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { moduleInstallManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. const timeout = 30 * 60;
-6. moduleInstallManager.on('moduleInstallStatus', (data: moduleInstallManager.ModuleInstallSessionState) => {
-7. // 注册监听
-8. hilog.info(0, 'TAG', 'Succeeded in getting moduleInstallManager.on.' );
-9. }, timeout)
-10. } catch (error) {
-11. hilog.error(0, 'TAG', `moduleInstallManager.on onError.code is ${error.code}, message is ${error.message}`);
-12. }
+try {
+  const timeout = 30 * 60;
+  moduleInstallManager.on('moduleInstallStatus', (data: moduleInstallManager.ModuleInstallSessionState) => {
+    // 注册监听
+    hilog.info(0, 'TAG', 'Succeeded in getting moduleInstallManager.on.' );
+  }, timeout)
+} catch (error) {
+  hilog.error(0, 'TAG', `moduleInstallManager.on onError.code is ${error.code}, message is ${error.message}`);
+}
 ```
 
 ## moduleInstallManager.off('moduleInstallStatus')
-
-PhonePC/2in1TabletTV
 
 off(type: 'moduleInstallStatus', callback?: Callback<ModuleInstallSessionState>): void
 
@@ -703,7 +669,7 @@ off(type: 'moduleInstallStatus', callback?: Callback<ModuleInstallSessionState>)
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -713,16 +679,83 @@ off(type: 'moduleInstallStatus', callback?: Callback<ModuleInstallSessionState>)
 
 **示例：**
 
-```
-1. import { moduleInstallManager } from '@kit.AppGalleryKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { moduleInstallManager } from '@kit.AppGalleryKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-4. try {
-5. moduleInstallManager.off('moduleInstallStatus', (data: moduleInstallManager.ModuleInstallSessionState) => {
-6. // 取消监听
-7. hilog.info(0, 'TAG', 'Succeeded in getting moduleInstallManager.off.' );
-8. })
-9. } catch (error) {
-10. hilog.error(0, 'TAG', `moduleInstallManager.off onError.code is ${error.code}, message is ${error.message}`);
-11. }
+try {
+  moduleInstallManager.off('moduleInstallStatus', (data: moduleInstallManager.ModuleInstallSessionState) => {
+    // 取消监听
+    hilog.info(0, 'TAG', 'Succeeded in getting moduleInstallManager.off.' );
+  })
+} catch (error) {
+  hilog.error(0, 'TAG', `moduleInstallManager.off onError.code is ${error.code}, message is ${error.message}`);
+}
+```
+
+## moduleInstallManager.pauseTask
+
+pauseTask(taskId: string): ReturnCode
+
+暂停下载任务。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.AppGalleryService.Distribution.OnDemandInstall
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| taskId | string | 是 | 下载任务的taskId。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ReturnCode](store-moduleinstallmanager.md#returncode) | 接口调用结果码。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1006500012 | Internal communication error. |
+| 1006500013 | Invalid taskId. |
+
+**示例：**
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { moduleInstallManager } from '@kit.AppGalleryKit';
+
+const TAG: string = 'pauseTask';
+
+@Entry
+@Component
+struct PauseTask {
+
+  build() {
+    Column() {
+      Button("pauseTask")
+        .onClick(() => {
+          try {
+            const taskId: string = '********';
+            // 暂停下载任务
+            const rtnCode: moduleInstallManager.ReturnCode = moduleInstallManager.pauseTask(taskId);
+            hilog.info(0, 'TAG', "Succeeded in getting result:" + rtnCode);
+          } catch (error) {
+            hilog.error(0, TAG, `pauseTask onError.code is ${error.code}, message is ${error.message}`);
+          }
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```

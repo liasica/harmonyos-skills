@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_native.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f999964e2034514bbc7173b1aa440767f38c897ce15be1227e6d4ca904ef6d09
+scraped_at: 2026-09-02T15:02:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d7f35965480cb9ea22134260858948ebc205e97d33876a5940cf19b7441d3340
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 声明图像的剪辑矩形、大小和组件数据的接口函数。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,8 +32,6 @@ PhonePC/2in1TabletTVWearable
 | [OH\_ImageNative](capi-image-nativemodule-oh-imagenative.md) | OH\_ImageNative | 为图像接口定义native层图像对象的别名。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -57,14 +49,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_ImageNative\_GetImageSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetImageSize(OH_ImageNative *image, Image_Size *size)
+```c
+Image_ErrorCode OH_ImageNative_GetImageSize(OH_ImageNative *image, Image_Size *size)
 ```
 
 **描述**
@@ -92,10 +80,8 @@ OH\_ImageNative对象所存储的数据是预览流还是拍照流，取决于�
 
 ### OH\_ImageNative\_GetComponentTypes()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetComponentTypes(OH_ImageNative *image,uint32_t **types, size_t *typeSize)
+```c
+Image_ErrorCode OH_ImageNative_GetComponentTypes(OH_ImageNative *image,uint32_t **types, size_t *typeSize)
 ```
 
 **描述**
@@ -120,10 +106,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_GetByteBuffer()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetByteBuffer(OH_ImageNative *image,uint32_t componentType, OH_NativeBuffer **nativeBuffer)
+```c
+Image_ErrorCode OH_ImageNative_GetByteBuffer(OH_ImageNative *image,uint32_t componentType, OH_NativeBuffer **nativeBuffer)
 ```
 
 **描述**
@@ -148,10 +132,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_GetBufferSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetBufferSize(OH_ImageNative *image,uint32_t componentType, size_t *size)
+```c
+Image_ErrorCode OH_ImageNative_GetBufferSize(OH_ImageNative *image,uint32_t componentType, size_t *size)
 ```
 
 **描述**
@@ -176,10 +158,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_GetRowStride()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetRowStride(OH_ImageNative *image,uint32_t componentType, int32_t *rowStride)
+```c
+Image_ErrorCode OH_ImageNative_GetRowStride(OH_ImageNative *image,uint32_t componentType, int32_t *rowStride)
 ```
 
 **描述**
@@ -206,10 +186,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_GetPixelStride()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetPixelStride(OH_ImageNative *image,uint32_t componentType, int32_t *pixelStride)
+```c
+Image_ErrorCode OH_ImageNative_GetPixelStride(OH_ImageNative *image,uint32_t componentType, int32_t *pixelStride)
 ```
 
 **描述**
@@ -234,10 +212,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_GetTimestamp()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetTimestamp(OH_ImageNative *image, int64_t *timestamp)
+```c
+Image_ErrorCode OH_ImageNative_GetTimestamp(OH_ImageNative *image, int64_t *timestamp)
 ```
 
 **描述**
@@ -265,10 +241,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_Release()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_Release(OH_ImageNative *image)
+```c
+Image_ErrorCode OH_ImageNative_Release(OH_ImageNative *image)
 ```
 
 **描述**
@@ -291,10 +265,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_GetColorSpace()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetColorSpace(OH_ImageNative *image, int32_t *colorSpaceName)
+```c
+Image_ErrorCode OH_ImageNative_GetColorSpace(OH_ImageNative *image, int32_t *colorSpaceName)
 ```
 
 **描述**
@@ -318,10 +290,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_GetFormat()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetFormat(OH_ImageNative *image, OH_NativeBuffer_Format *format)
+```c
+Image_ErrorCode OH_ImageNative_GetFormat(OH_ImageNative *image, OH_NativeBuffer_Format *format)
 ```
 
 **描述**
@@ -345,10 +315,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_ImageNative\_GetBufferData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Image_ErrorCode OH_ImageNative_GetBufferData(OH_ImageNative *image, OH_ImageBufferData *imageBufferData)
+```c
+Image_ErrorCode OH_ImageNative_GetBufferData(OH_ImageNative *image, OH_ImageBufferData *imageBufferData)
 ```
 
 **描述**

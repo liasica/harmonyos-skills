@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-parse
 title: ParseParamsFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > ParseParamsFn
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:19+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6c6c7c9439dc0840a6014148f3c9a5f543145b9335a12c14d107203319074b7f
+content_hash: sha256:13cd11e93799ac591cb8d97c1d6a11ea98c2a4f5e5c23f2d050d3565392be50b
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:6c6c7c9439dc0840a6014148f3c9a5f543145b9335a12c14d1072033190
 
 ## 函数原型
 
-```
-1. OpRegistrationData &ParseParamsFn(const ParseParamFunc &parseParamFn)
+```cpp
+OpRegistrationData &ParseParamsFn(const ParseParamFunc &parseParamFn)
 ```
 
 ## 参数说明
@@ -37,8 +37,8 @@ content_hash: sha256:6c6c7c9439dc0840a6014148f3c9a5f543145b9335a12c14d1072033190
 
 开发者自定义并实现FusionParseParamFunc类函数，完成原始模型中算子属性到适配AI处理器的模型中算子属性映射，将结果填入Operator类中。
 
-```
-1. Status ParseParamFunc(const Message *op_origin, ge::Operator &op_dest)
+```cpp
+Status ParseParamFunc(const Message *op_origin, ge::Operator &op_dest)
 ```
 
 **表1** 参数说明

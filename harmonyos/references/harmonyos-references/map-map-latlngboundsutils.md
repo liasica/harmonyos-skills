@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-latlngboundsutils
-title: LatLngBoundsUtils
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > LatLngBoundsUtils
+title: Class (LatLngBoundsUtils)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (LatLngBoundsUtils)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:15+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:04735f220d8f8b81dc18334ea5354630b8723804c04b6d2222ebd863023eba10
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7d925879b6c7e9d9a931e72e7081f135a8cbdca7f27a7e06db25c16936dbdf90
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## LatLngBoundsUtils
-
-PhonePC/2in1TabletWearable
 
 LatLngBounds工具类。
 
@@ -31,8 +27,6 @@ LatLngBounds工具类。
 **起始版本：** 4.1.0(11)
 
 ### contains
-
-PhonePC/2in1TabletWearable
 
 static contains(bounds: mapCommon.LatLngBounds, position: mapCommon.LatLng): boolean
 
@@ -57,7 +51,7 @@ static contains(bounds: mapCommon.LatLngBounds, position: mapCommon.LatLng): boo
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | true：包含该位置点。  false：不包含该位置点。 |
+| boolean | true：包含该位置点（包括坐标点落在LatLngBounds边界上）。  false：不包含该位置点。 |
 
 **错误码：**
 
@@ -69,26 +63,24 @@ static contains(bounds: mapCommon.LatLngBounds, position: mapCommon.LatLng): boo
 
 **示例：**
 
-```
-1. let bounds: mapCommon.LatLngBounds = {
-2. southwest: {
-3. latitude: 31.98,
-4. longitude: 118.766
-5. },
-6. northeast: {
-7. latitude: 32.08,
-8. longitude: 118.066
-9. }
-10. };
-11. let result: boolean = map.LatLngBoundsUtils.contains(bounds, {
-12. latitude: 15,
-13. longitude: 15
-14. });
+```typescript
+let bounds: mapCommon.LatLngBounds = {
+  southwest: {
+    latitude: 31.98,
+    longitude: 118.766
+  },
+  northeast: {
+    latitude: 32.08,
+    longitude: 118.066
+  }
+};
+let result: boolean = map.LatLngBoundsUtils.contains(bounds, {
+  latitude: 15,
+  longitude: 15
+});
 ```
 
 ### contains
-
-PhonePC/2in1TabletWearable
 
 static contains(src: mapCommon.LatLngBounds, target: mapCommon.LatLngBounds): boolean
 
@@ -125,34 +117,32 @@ static contains(src: mapCommon.LatLngBounds, target: mapCommon.LatLngBounds): bo
 
 **示例：**
 
-```
-1. let src: mapCommon.LatLngBounds = {
-2. southwest: {
-3. latitude: 31.98,
-4. longitude: 118
-5. },
-6. northeast: {
-7. latitude: 31.08,
-8. longitude: 119
-9. }
-10. };
-11. let target: mapCommon.LatLngBounds = {
-12. southwest: {
-13. latitude: 33,
-14. longitude: 120
-15. },
-16. northeast: {
-17. latitude: 34,
-18. longitude: 121
-19. }
-20. };
+```typescript
+let src: mapCommon.LatLngBounds = {
+  southwest: {
+    latitude: 31.98,
+    longitude: 118
+  },
+  northeast: {
+    latitude: 31.08,
+    longitude: 119
+  }
+};
+let target: mapCommon.LatLngBounds = {
+  southwest: {
+    latitude: 33,
+    longitude: 120
+  },
+  northeast: {
+    latitude: 34,
+    longitude: 121
+  }
+};
 
-22. let result: boolean = map.LatLngBoundsUtils.contains(src, target);
+let result: boolean = map.LatLngBoundsUtils.contains(src, target);
 ```
 
 ### getCenter
-
-PhonePC/2in1TabletWearable
 
 static getCenter(bounds: mapCommon.LatLngBounds): mapCommon.LatLng
 
@@ -188,23 +178,21 @@ static getCenter(bounds: mapCommon.LatLngBounds): mapCommon.LatLng
 
 **示例：**
 
-```
-1. let bounds: mapCommon.LatLngBounds = {
-2. southwest: {
-3. latitude: 31,
-4. longitude: 118
-5. },
-6. northeast: {
-7. latitude: 33,
-8. longitude: 119
-9. }
-10. };
-11. let center: mapCommon.LatLng = map.LatLngBoundsUtils.getCenter(bounds);
+```typescript
+let bounds: mapCommon.LatLngBounds = {
+  southwest: {
+    latitude: 31,
+    longitude: 118
+  },
+  northeast: {
+    latitude: 33,
+    longitude: 119
+  }
+};
+let center: mapCommon.LatLng = map.LatLngBoundsUtils.getCenter(bounds);
 ```
 
 ### include
-
-PhonePC/2in1TabletWearable
 
 static include(position: mapCommon.LatLng, bounds?: mapCommon.LatLngBounds): mapCommon.LatLngBounds
 
@@ -223,7 +211,7 @@ static include(position: mapCommon.LatLng, bounds?: mapCommon.LatLngBounds): map
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | position | [mapCommon.LatLng](map-common.md#latlng) | 是 | 位置坐标。 |
-| bounds | [mapCommon.LatLngBounds](map-common.md#latlngbounds) | 否 | LatLngBounds对象。 |
+| bounds | [mapCommon.LatLngBounds](map-common.md#latlngbounds) | 否 | LatLngBounds对象。若为空则创建的LatLngBounds对象只包含位置坐标。 |
 
 **返回值：**
 
@@ -241,9 +229,9 @@ static include(position: mapCommon.LatLng, bounds?: mapCommon.LatLngBounds): map
 
 **示例：**
 
-```
-1. let resultBounds: mapCommon.LatLngBounds = map.LatLngBoundsUtils.include({
-2. latitude: 31,
-3. longitude: 118
-4. });
+```typescript
+let resultBounds: mapCommon.LatLngBounds = map.LatLngBoundsUtils.include({
+  latitude: 31,
+  longitude: 118
+});
 ```

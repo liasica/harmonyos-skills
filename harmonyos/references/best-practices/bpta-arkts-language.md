@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkts-lang
 title: ArkTS语言
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言
 category: best-practices
-scraped_at: 2026-04-28T08:20:02+08:00
-doc_updated_at: 2026-03-27
-content_hash: sha256:4e49de28e5381eec256a2092ee616181d782f8611888ac9ce2cb087485eaad02
+scraped_at: 2026-09-02T14:53:39+08:00
+doc_updated_at: 2026-05-09
+content_hash: sha256:c9a3f94fbac3332623df83b71e929d6ded12af491e45dcc85fde53db6f72c6f7
 ---
 
 * **[ArkTS高性能编程](bpta-arkts-high-performance.md)**
@@ -15,3 +15,4 @@ content_hash: sha256:4e49de28e5381eec256a2092ee616181d782f8611888ac9ce2cb087485e
 * **[应用切面编程设计](bpta-application-aspect-programming-design.md)**
 * **[应用埋点](bpta-application-track-practice.md)**
 * **[基于Aspect插件库实现切面编程](bpta-aspect-implements-aop.md)**
+* **[基于AbcKitTS实现字节码插桩](bpta-abckitts-implements-instrumentation.md)**

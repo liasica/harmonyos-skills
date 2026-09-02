@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkui-6101
 title: ArkUI
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > ArkUI
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta1引入的变更 > ArkUI
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:133d4000297ed9ca6281d974831fef2f8108110eb6261bf083c53fe7ff0a4676
+scraped_at: 2026-09-02T14:49:09+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:7b9bd5ab08cafafac92a6eb4cbcda85bfd5c5e9c9943164c596720520a2f63f7
 ---
 
 | 操作 | 旧版本 | 新版本 | d.ts文件 |
@@ -111,8 +111,6 @@ content_hash: sha256:133d4000297ed9ca6281d974831fef2f8108110eb6261bf083c53fe7ff0
 | API卡片权限变更 | 类名：curves；  API声明：export interface ICurve  差异内容：form | 类名：curves；  API声明：interface ICurve  差异内容：NA | api/@ohos.curves.d.ts |
 | API卡片权限变更 | 类名：ICurve；  API声明：interpolate(fraction: number): number;  差异内容：form | 类名：ICurve；  API声明：interpolate(fraction: number): number;  差异内容：NA | api/@ohos.curves.d.ts |
 | API废弃版本变更 | 类名：Router；  API声明：getLength(): string;  差异内容：NA | 类名：Router；  API声明：getLength(): string;  差异内容：23 | api/@ohos.arkui.UIContext.d.ts |
-| API废弃版本变更 | 类名：global；  API声明：declare class ActionSheet  差异内容：NA | 类名：global；  API声明：declare class ActionSheet  差异内容：26 | component/action\_sheet.d.ts |
-| API废弃版本变更 | 类名：global；  API声明：declare class AlertDialog  差异内容：NA | 类名：global；  API声明：declare class AlertDialog  差异内容：26 | component/alert\_dialog.d.ts |
 | 新增错误码 | 类名：ComponentSnapshot；  API声明：get(id: string, callback: AsyncCallback<image.PixelMap>, options?: componentSnapshot.SnapshotOptions): void;  差异内容：NA | 类名：ComponentSnapshot；  API声明：get(id: string, callback: AsyncCallback<image.PixelMap>, options?: componentSnapshot.SnapshotOptions): void;  差异内容：160003 | api/@ohos.arkui.UIContext.d.ts |
 | 新增错误码 | 类名：ComponentSnapshot；  API声明：get(id: string, options?: componentSnapshot.SnapshotOptions): Promise<image.PixelMap>;  差异内容：NA | 类名：ComponentSnapshot；  API声明：get(id: string, options?: componentSnapshot.SnapshotOptions): Promise<image.PixelMap>;  差异内容：160003 | api/@ohos.arkui.UIContext.d.ts |
 | 新增错误码 | 类名：ComponentSnapshot；  API声明：createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap>, delay?: number, checkImageStatus?: boolean, options?: componentSnapshot.SnapshotOptions): void;  差异内容：NA | 类名：ComponentSnapshot；  API声明：createFromBuilder(builder: CustomBuilder, callback: AsyncCallback<image.PixelMap>, delay?: number, checkImageStatus?: boolean, options?: componentSnapshot.SnapshotOptions): void;  差异内容：160003,160004 | api/@ohos.arkui.UIContext.d.ts |

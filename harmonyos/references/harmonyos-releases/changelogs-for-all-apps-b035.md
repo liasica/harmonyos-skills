@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-for-all-apps-b035
 title: 针对所有应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > 针对所有应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:12+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:ee6f479226c8f113a08a30093819e947d416496e0513838eebc48a593fa785f0
+scraped_at: 2026-09-02T14:58:54+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:df18cca1b69809e306fc3dc1c7387b83c110bbe7bacf9d6cd1750b3f28cba41f
 ---
 
 ## Ability Kit
@@ -60,9 +60,9 @@ TextEncoder.encodeInto编码字符串，当字符串中每多一个'\0'字符，
 
 此变更涉及应用适配。
 
-```
-1. const arr = encoder.encodeInto('\0ab');
-2. arr.length;
+```screen
+const arr = encoder.encodeInto('\0ab');
+arr.length;
 ```
 
 变更前：arr = [0x00, 0x61, 0x62, 0x00], arr.length 为4
@@ -136,32 +136,32 @@ Search/TextInput/TextArea组件的onChange回调事件参数。
 
 默认开启预上屏功能。回调唯一参数为已正式上屏文本；回调时机为输入过程中，每一次预上屏内容变更时触发。
 
-```
-1. @Entry
-2. @Component
-3. struct SearchExample {
-4. @State text: string = 'Search支持文本预上屏前...'
+```ts
+@Entry
+@Component
+struct SearchExample {
+  @State text: string = 'Search支持文本预上屏前...'
 
-6. build() {
-7. Column() {
-8. Search({
-9. value: this.text,
-10. placeholder: 'input your word...',
-11. })
-12. .placeholderFont({ size: 16, weight: 400 })
-13. .width(336)
-14. .height(56)
-15. // onChange回调唯一参数为已正式上屏文本；回调时机为输入过程中，每一次预上屏内容变更时触发
-16. .onChange((value: string) => {
-17. this.text = value
-18. console.log("===get onchange ===")
-19. console.log("body text value = " + value)
-20. })
-21. }
-22. .width("90%")
-23. .margin("5%")
-24. }
-25. }
+  build() {
+    Column() {
+      Search({
+        value: this.text,
+        placeholder: 'input your word...',
+      })
+        .placeholderFont({ size: 16, weight: 400 })
+        .width(336)
+        .height(56)
+        // onChange回调唯一参数为已正式上屏文本；回调时机为输入过程中，每一次预上屏内容变更时触发
+        .onChange((value: string) => {
+          this.text = value
+          console.log("===get onchange ===")
+          console.log("body text value = " + value)
+        })
+    }
+    .width("90%")
+    .margin("5%")
+  }
+}
 ```
 
 适配后：
@@ -170,73 +170,73 @@ Search/TextInput/TextArea组件的onChange回调事件参数。
 
 示例代码列举了预上屏状态下，用来适配各问题场景所需要的信息。
 
-```
-1. @Entry
-2. @Component
-3. struct SearchExample {
-4. @State text: string = 'Search回调预上屏信息...'
+```ts
+@Entry
+@Component
+struct SearchExample {
+  @State text: string = 'Search回调预上屏信息...'
 
-6. build() {
-7. Column() {
-8. Search({
-9. value: this.text,
-10. placeholder: 'input your word...',
-11. })
-12. .placeholderFont({ size: 16, weight: 400 })
-13. .width(336)
-14. .height(56)
-15. // onChange回调首个参数为已经存在的正式上屏文本
-16. // 第二个参数为可选参数，返回的是预上屏内容的信息
-17. .onChange((value: string, previewText: PreviewText) => {
-18. this.text = value
-19. console.log("===get onchange and get previewText info===")
-20. let bodyTextValue = value
-21. console.log("body text value = " + bodyTextValue)
-22. let previewTextValue = previewText.value
-23. console.log("previewText value = " + previewTextValue)
-24. let previewTextStart = previewText.offset
-25. let previewTextEnd = previewText.offset + previewTextValue.length
-26. console.log("previewText index range in [ " + previewTextStart + ", " + previewTextEnd + " ]")
-27. let isPreviewTextWorking = previewTextValue != "";
-28. console.log("now is inputing at previewText working= " + isPreviewTextWorking)
-29. let wholeTextValue = value + previewTextValue
-30. console.log("whole text value = " + wholeTextValue)
-31. })
-32. }
-33. .width("90%")
-34. .margin("5%")
-35. }
-36. }
+  build() {
+    Column() {
+      Search({
+        value: this.text,
+        placeholder: 'input your word...',
+      })
+        .placeholderFont({ size: 16, weight: 400 })
+        .width(336)
+        .height(56)
+        // onChange回调首个参数为已经存在的正式上屏文本
+        // 第二个参数为可选参数，返回的是预上屏内容的信息
+        .onChange((value: string, previewText: PreviewText) => {
+          this.text = value
+          console.log("===get onchange and get previewText info===")
+          let bodyTextValue = value
+          console.log("body text value = " + bodyTextValue)          
+          let previewTextValue = previewText.value
+          console.log("previewText value = " + previewTextValue)
+          let previewTextStart = previewText.offset
+          let previewTextEnd = previewText.offset + previewTextValue.length
+          console.log("previewText index range in [ " + previewTextStart + ", " + previewTextEnd + " ]")
+          let isPreviewTextWorking = previewTextValue != "";
+          console.log("now is inputing at previewText working= " + isPreviewTextWorking)
+          let wholeTextValue = value + previewTextValue
+          console.log("whole text value = " + wholeTextValue)
+        })
+    }
+    .width("90%")
+    .margin("5%")
+  }
+}
 ```
 
 在不需要预上屏功能场景时，可使用enablePreviewText属性关闭预上屏功能。
 
-```
-1. @Entry
-2. @Component
-3. struct SearchExample {
-4. @State text: string = 'Search支持关闭文本预上屏...'
+```ts
+@Entry
+@Component
+struct SearchExample {
+  @State text: string = 'Search支持关闭文本预上屏...'
 
-6. build() {
-7. Column() {
-8. Search({
-9. value: this.text,
-10. placeholder: 'input your word...',
-11. })
-12. .placeholderFont({ size: 16, weight: 400 })
-13. .width(336)
-14. .height(56)
-15. .enablePreviewText(false) // 使用该属性，可以关闭预上屏功能，使回调内容与回调时机与变更前保持一致
-16. .onChange((value: string) => {
-17. this.text = value
-18. console.log("===get onchange ===")
-19. console.log("body text value = " + value)
-20. })
-21. }
-22. .width("90%")
-23. .margin("5%")
-24. }
-25. }
+  build() {
+    Column() {
+      Search({
+        value: this.text,
+        placeholder: 'input your word...',
+      })
+        .placeholderFont({ size: 16, weight: 400 })
+        .width(336)
+        .height(56)
+        .enablePreviewText(false) // 使用该属性，可以关闭预上屏功能，使回调内容与回调时机与变更前保持一致
+        .onChange((value: string) => {
+          this.text = value
+          console.log("===get onchange ===")
+          console.log("body text value = " + value)
+        })
+    }
+    .width("90%")
+    .margin("5%")
+  }
+}
 ```
 
 ## Localization Kit
@@ -283,46 +283,46 @@ raw\_file模块引用了string头文件，string头文件是C++标准库文件�
 
 C++编译环境下开发者使用了raw\_file.h头文件，但开发者没有引用string头文件，调用了"std::string"等string库函数，可以编译成功。
 
-```
-1. #include <rawfile/raw_file_manager.h>
-2. #include <rawfile/raw_file.h>
+```cpp
+#include <rawfile/raw_file_manager.h>
+#include <rawfile/raw_file.h>
 
-4. static napi_value GetRawFileContent(napi_env env, napi_callback_info info) {
-5. size_t argc = 2;
-6. napi_value argv[2] = {NULL};
-7. napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
-8. napi_valuetype valueType;
-9. napi_typeof(env, argv[0], &valueType);
-10. NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
-11. size_t strSize;
-12. char strBuf[256];
-13. napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
-14. std::string filename(strBuf, strSize);   // 编译通过
-15. RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
-16. }
+static napi_value GetRawFileContent(napi_env env, napi_callback_info info) {
+    size_t argc = 2;
+    napi_value argv[2] = {NULL};
+    napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
+    napi_valuetype valueType;
+    napi_typeof(env, argv[0], &valueType);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    size_t strSize;
+    char strBuf[256];
+    napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+    std::string filename(strBuf, strSize);   // 编译通过
+    RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
+}
 ```
 
 变更后：
 
 C++编译环境下开发者使用了raw\_file.h头文件，但开发者没有引用string头文件，调用了"std::string"等string库函数，会编译失败。
 
-```
-1. #include <rawfile/raw_file_manager.h>
-2. #include <rawfile/raw_file.h>
+```cpp
+#include <rawfile/raw_file_manager.h>
+#include <rawfile/raw_file.h>
 
-4. static napi_value GetRawFileContent(napi_env env, napi_callback_info info) {
-5. size_t argc = 2;
-6. napi_value argv[2] = {NULL};
-7. napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
-8. napi_valuetype valueType;
-9. napi_typeof(env, argv[0], &valueType);
-10. NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
-11. size_t strSize;
-12. char strBuf[256];
-13. napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
-14. std::string filename(strBuf, strSize);   // 编译失败
-15. RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
-16. }
+static napi_value GetRawFileContent(napi_env env, napi_callback_info info) {
+    size_t argc = 2;
+    napi_value argv[2] = {NULL};
+    napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
+    napi_valuetype valueType;
+    napi_typeof(env, argv[0], &valueType);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    size_t strSize;
+    char strBuf[256];
+    napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+    std::string filename(strBuf, strSize);   // 编译失败
+    RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
+}
 ```
 
 **起始API Level**
@@ -339,24 +339,24 @@ C++编译环境下开发者使用了raw\_file.h头文件，但开发者没有引
 
 C++编译环境下开发者使用raw\_file.h头文件，但开发者没有引用string头文件，调用了"std::string"等string库函数，需要进行适配，通过include引入string头文件即可解决。
 
-```
-1. #include <rawfile/raw_file_manager.h>
-2. #include <rawfile/raw_file.h>
-3. #include <string>           // 手动引用string头文件
+```cpp
+#include <rawfile/raw_file_manager.h>
+#include <rawfile/raw_file.h>
+#include <string>           // 手动引用string头文件
 
-5. static napi_value GetRawFileContent(napi_env env, napi_callback_info info) {
-6. size_t argc = 2;
-7. napi_value argv[2] = {NULL};
-8. napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
-9. napi_valuetype valueType;
-10. napi_typeof(env, argv[0], &valueType);
-11. NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
-12. size_t strSize;
-13. char strBuf[256];
-14. napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
-15. std::string filename(strBuf, strSize);   // 编译通过
-16. RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
-17. }
+static napi_value GetRawFileContent(napi_env env, napi_callback_info info) {
+    size_t argc = 2;
+    napi_value argv[2] = {NULL};
+    napi_get_cb_info(env, info, &argc, argv, NULL, NULL);
+    napi_valuetype valueType;
+    napi_typeof(env, argv[0], &valueType);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    size_t strSize;
+    char strBuf[256];
+    napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+    std::string filename(strBuf, strSize);   // 编译通过
+    RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
+}
 ```
 
 ## Network Kit

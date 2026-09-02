@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_image_filter.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_image_filter.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:55+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a17d4940833c02921c42d7d75f940840855b4ff34015fddd98287d7fa83c253f
+scraped_at: 2026-09-02T15:02:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ccaec95fef268c8c720e1421e88053d51ee8205316cc0cfb63328b575a57bf5f
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 声明与绘图模块中的图像滤波器对象相关的函数。
+
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_image\_filter.h>
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -43,14 +39,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_ImageFilterCreateBlur()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlur(float sigmaX, float sigmaY, OH_Drawing_TileMode tileMode,OH_Drawing_ImageFilter* imageFilter)
+```c
+OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlur(float sigmaX, float sigmaY, OH_Drawing_TileMode tileMode,OH_Drawing_ImageFilter* imageFilter)
 ```
 
 **描述**
@@ -78,10 +70,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ImageFilterCreateBlurWithCrop()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlurWithCrop(float sigmaX, float sigmaY, OH_Drawing_TileMode tileMode, OH_Drawing_ImageFilter* input, const OH_Drawing_Rect* rect)
+```c
+OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateBlurWithCrop(float sigmaX, float sigmaY, OH_Drawing_TileMode tileMode, OH_Drawing_ImageFilter* input, const OH_Drawing_Rect* rect)
 ```
 
 **描述**
@@ -112,10 +102,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ImageFilterCreateFromColorFilter()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromColorFilter(OH_Drawing_ColorFilter* colorFilter,OH_Drawing_ImageFilter* imageFilter)
+```c
+OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromColorFilter(OH_Drawing_ColorFilter* colorFilter,OH_Drawing_ImageFilter* imageFilter)
 ```
 
 **描述**
@@ -141,10 +129,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ImageFilterCreateOffset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateOffset(float x, float y, OH_Drawing_ImageFilter* imageFilter)
+```c
+OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateOffset(float x, float y, OH_Drawing_ImageFilter* imageFilter)
 ```
 
 **描述**
@@ -171,10 +157,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ImageFilterCreateFromShaderEffect()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromShaderEffect(OH_Drawing_ShaderEffect* shaderEffect)
+```c
+OH_Drawing_ImageFilter* OH_Drawing_ImageFilterCreateFromShaderEffect(OH_Drawing_ShaderEffect* shaderEffect)
 ```
 
 **描述**
@@ -199,10 +183,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_ImageFilterDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_ImageFilterDestroy(OH_Drawing_ImageFilter* imageFilter)
+```c
+void OH_Drawing_ImageFilterDestroy(OH_Drawing_ImageFilter* imageFilter)
 ```
 
 **描述**

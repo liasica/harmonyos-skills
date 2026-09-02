@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usb-ddk-guide
 title: 开发适用USB协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用USB协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8153e5708de78168bfc378cf80a088f91a6bd944cb3a9902e22e29509de1cc9b
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:8dd6bc7935444df7253bb97e879e8020d22ddd05ffa280cd60fed4394a41bc8e
 ---
 
 ## 简介
@@ -31,7 +31,7 @@ UsbDdk（USB Driver Development Kit）是为开发者提供的USB驱动程序开
 
 **图1** UsbDdk调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Av3OichPRt64YLrHnMLO0w/zh-cn_image_0000002589244779.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/nH_IT7bZQl6zaKqnrIRq0g/zh-cn_image_0000002706674470.png)
 
 ## 约束与限制
 
@@ -75,15 +75,15 @@ UsbDdk（USB Driver Development Kit）是为开发者提供的USB驱动程序开
 
 CMakeLists.txt中添加以下lib。
 
-```
-1. libusb_ndk.z.so
+```txt
+libusb_ndk.z.so
 ```
 
 **头文件**
 
 ```
-1. #include <usb/usb_ddk_api.h>
-2. #include <usb/usb_ddk_types.h>
+#include <usb/usb_ddk_api.h>
+#include <usb/usb_ddk_types.h>
 ```
 
 1. 获取设备描述符。
@@ -91,153 +91,137 @@ CMakeLists.txt中添加以下lib。
    使用 **usb\_ddk\_api.h** 的 **OH\_Usb\_Init** 接口初始化DDK，并使用 **OH\_Usb\_GetDeviceDescriptor**获取到设备描述符。
 
    ```
-   1. // 初始化USB DDK
-   2. int32_t ret = OH_Usb_Init();
-   3. OH_LOG_INFO(LOG_APP, "OH_Usb_Init ret=:%{public}d\n", ret);
-   4. // ...
-   5. struct UsbDeviceDescriptor devDesc;
-   6. // 获取设备描述符
-   7. ret = OH_Usb_GetDeviceDescriptor(g_devHandle, &devDesc);
+   // 初始化USB DDK
+   int32_t ret = OH_Usb_Init();
+   OH_LOG_INFO(LOG_APP, "OH_Usb_Init ret=:%{public}d\n", ret);
+   // ...
+   struct UsbDeviceDescriptor devDesc;
+   // 获取设备描述符
+   ret = OH_Usb_GetDeviceDescriptor(g_devHandle, &devDesc);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L329-L342)
 2. 获取配置描述符及声明接口。
 
    使用 **usb\_ddk\_api.h** 的 **OH\_Usb\_GetConfigDescriptor** 接口获取配置描述符 **config**，并使用 **OH\_Usb\_ClaimInterface** 声明"认领"接口。
 
    ```
-   1. struct UsbDdkConfigDescriptor *config = nullptr;
-   2. // 获取配置描述符
-   3. auto ret = OH_Usb_GetConfigDescriptor(g_devHandle, 1, &config);
-   4. OH_LOG_INFO(LOG_APP, "OH_Usb_GetConfigDescriptor ret = %{public}d", ret);
-   5. if (ret != 0) {
-   6. OH_LOG_ERROR(LOG_APP, "get config desc failed:%{public}d", ret);
-   7. return false;
-   8. }
-   9. // 从配置描述符中找到手写板相关的接口和端点
-   10. auto [res, interface, endpoint, maxPktSize] = GetInterfaceAndEndpoint(config);
-   11. OH_LOG_INFO(LOG_APP, "OH_Usb_GetConfigDescriptor ret = %{public}d", res);
-   12. if (!res) {
-   13. OH_LOG_ERROR(LOG_APP, "GetInterfaceAndEndpoint failed");
-   14. return false;
-   15. }
-   16. // 释放配置描述符，防止内存泄露
-   17. OH_Usb_FreeConfigDescriptor(config);
-   18. g_dataEp = endpoint;
-   19. g_maxPktSize = maxPktSize;
-   20. g_interface = interface;
-   21. // 占用接口，同时也会卸载内核键盘驱动
-   22. ret = OH_Usb_ClaimInterface(g_devHandle, g_interface, &g_interfaceHandle);
+   struct UsbDdkConfigDescriptor *config = nullptr;
+   // 获取配置描述符
+   auto ret = OH_Usb_GetConfigDescriptor(g_devHandle, 1, &config);
+   OH_LOG_INFO(LOG_APP, "OH_Usb_GetConfigDescriptor ret = %{public}d", ret);
+   if (ret != 0) {
+       OH_LOG_ERROR(LOG_APP, "get config desc failed:%{public}d", ret);
+       return false;
+   }
+   // 从配置描述符中找到手写板相关的接口和端点
+   auto [res, interface, endpoint, maxPktSize] = GetInterfaceAndEndpoint(config);
+   OH_LOG_INFO(LOG_APP, "OH_Usb_GetConfigDescriptor ret = %{public}d", res);
+   if (!res) {
+       OH_LOG_ERROR(LOG_APP, "GetInterfaceAndEndpoint failed");
+       return false;
+   }
+   // 释放配置描述符，防止内存泄漏
+   OH_Usb_FreeConfigDescriptor(config);
+   g_dataEp = endpoint;
+   g_maxPktSize = maxPktSize;
+   g_interface = interface;
+   // 占用接口，同时也会卸载内核键盘驱动
+   ret = OH_Usb_ClaimInterface(g_devHandle, g_interface, &g_interfaceHandle);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L296-L319)
 3. 获取当前激活接口的备用设置及激活备用设置（可选）。
 
    使用 **usb\_ddk\_api.h** 的 **OH\_Usb\_GetCurrentInterfaceSetting** 获取备用设置，并使用 **OH\_Usb\_SelectInterfaceSetting** 激活备用设置。
 
    ```
-   1. uint8_t settingIndex = 0;
-   2. // 接口获取备用设置
-   3. int32_t ret = OH_Usb_GetCurrentInterfaceSetting(g_interfaceHandle, &settingIndex);
-   4. if (ret != USB_DDK_SUCCESS) {
-   5. OH_LOG_ERROR(LOG_APP, "OH_Usb_GetCurrentInterfaceSetting failed, ret=%{public}d", ret);
-   6. }
+   uint8_t settingIndex = 0;
+   // 接口获取备用设置
+   int32_t ret = OH_Usb_GetCurrentInterfaceSetting(g_interfaceHandle, &settingIndex);
+   if (ret != USB_DDK_SUCCESS) {
+       OH_LOG_ERROR(LOG_APP, "OH_Usb_GetCurrentInterfaceSetting failed, ret=%{public}d", ret);
+   }
 
-   8. // 激活备用设置
-   9. ret = OH_Usb_SelectInterfaceSetting(g_interfaceHandle, settingIndex);
-   10. if (ret != USB_DDK_SUCCESS) {
-   11. OH_LOG_ERROR(LOG_APP, "OH_Usb_SelectInterfaceSetting failed, ret=%{public}d", ret);
-   12. }
+   // 激活备用设置
+   ret = OH_Usb_SelectInterfaceSetting(g_interfaceHandle, settingIndex);
+   if (ret != USB_DDK_SUCCESS) {
+       OH_LOG_ERROR(LOG_APP, "OH_Usb_SelectInterfaceSetting failed, ret=%{public}d", ret);
+   }
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L202-L215)
 4. 发送控制读请求、发送控制写请求（可选）。
 
    使用 **usb\_ddk\_api.h** 的**OH\_Usb\_SendControlReadRequest**发送控制读请求，或者使用**OH\_Usb\_SendControlWriteRequest**发送控制写请求。
 
    ```
-   1. uint8_t strDesc[100] = {0};
-   2. // 获取产品字符串描述符
-   3. uint32_t len = 100;
-   4. struct UsbControlRequestSetup strDescSetup;
-   5. strDescSetup.bmRequestType = 0x80;
-   6. strDescSetup.bRequest = 0x06;
-   7. strDescSetup.wValue = (0x03 << BIT_EIGHT) | (iProduct); // desc Index
-   8. strDescSetup.wIndex = 0x409;                    // language Id
-   9. strDescSetup.wLength = len;
-   10. auto ret = OH_Usb_SendControlReadRequest(g_interfaceHandle, &strDescSetup, UINT32_MAX, strDesc, &len);
+   uint8_t strDesc[100] = {0};
+   // 获取产品字符串描述符
+   uint32_t len = 100;
+   struct UsbControlRequestSetup strDescSetup;
+   strDescSetup.bmRequestType = 0x80;
+   strDescSetup.bRequest = 0x06;
+   strDescSetup.wValue = (0x03 << BIT_EIGHT) | (iProduct); // desc Index
+   strDescSetup.wIndex = 0x409;                    // language Id
+   strDescSetup.wLength = len;
+   auto ret = OH_Usb_SendControlReadRequest(g_interfaceHandle, &strDescSetup, UINT32_MAX, strDesc, &len);
    ```
 
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L234-L245)
-
    ```
-   1. // 设置feature
-   2. uint32_t timeout = 5000;
-   3. struct UsbControlRequestSetup strDescSetup;
-   4. strDescSetup.bmRequestType = 0x21;
-   5. strDescSetup.bRequest = 0x09;
-   6. strDescSetup.wValue = ((0x03 << BIT_EIGHT) | 0x02); // desc Index
-   7. strDescSetup.wIndex = 0x0;
-   8. strDescSetup.wLength = 0x02;
-   9. uint8_t data[128] = {0x02, 0x02};
-   10. uint32_t dataLen = 2;
-   11. int32_t ret = OH_Usb_SendControlWriteRequest(g_interfaceHandle, &strDescSetup, timeout, data, dataLen);
+   // 设置feature
+   uint32_t timeout = 5000;
+   struct UsbControlRequestSetup strDescSetup;
+   strDescSetup.bmRequestType = 0x21;
+   strDescSetup.bRequest = 0x09;
+   strDescSetup.wValue = ((0x03 << BIT_EIGHT) | 0x02); // desc Index
+   strDescSetup.wIndex = 0x0;
+   strDescSetup.wLength = 0x02;
+   uint8_t data[128] = {0x02, 0x02};
+   uint32_t dataLen = 2;
+   int32_t ret = OH_Usb_SendControlWriteRequest(g_interfaceHandle, &strDescSetup, timeout, data, dataLen);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L366-L378)
 5. 创建内存映射缓冲区及发送请求（可选）。
 
    使用 **usb\_ddk\_api.h** 的**OH\_Usb\_CreateDeviceMemMap**接口创建内存映射缓冲区**devMmap**，并使用**OH\_Usb\_SendPipeRequest**发送请求。
 
    ```
-   1. // 占用接口，同时也会卸载内核键盘驱动
-   2. // 创建用于存放数据的缓冲区
-   3. int32_t ret = OH_Usb_CreateDeviceMemMap(g_devHandle, bufferLen, &devMmap);
+   // 占用接口，同时也会卸载内核键盘驱动
+   // 创建用于存放数据的缓冲区
+   int32_t ret = OH_Usb_CreateDeviceMemMap(g_devHandle, bufferLen, &devMmap);
    ```
 
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L118-L122)
-
    ```
-   1. struct UsbRequestPipe pipe;
-   2. pipe.interfaceHandle = g_interfaceHandle;
-   3. pipe.endpoint = g_dataEp;
-   4. pipe.timeout = 4; // 中断传输超时时间，保持和手写板bInterval保持一致
-   5. // 读取手写板数据
-   6. // 通过USB中断传输方式，读取键值
-   7. ret = OH_Usb_SendPipeRequest(&pipe, devMmap);
+   struct UsbRequestPipe pipe;
+   pipe.interfaceHandle = g_interfaceHandle;
+   pipe.endpoint = g_dataEp;
+   pipe.timeout = 4; // 中断传输超时时间，保持和手写板bInterval保持一致
+   // 读取手写板数据
+   // 通过USB中断传输方式，读取键值
+   ret = OH_Usb_SendPipeRequest(&pipe, devMmap);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L136-L144)
 6. 释放资源。
 
    在所有请求处理完毕，程序退出前，使用 **usb\_ddk\_api.h** 的 **OH\_Usb\_DestroyDeviceMemMap** 接口销毁缓冲区。使用**OH\_Usb\_ReleaseInterface**释放接口。使用**OH\_Usb\_Release**释放UsbDdk。
 
    ```
-   1. // 销毁缓冲区
-   2. OH_Usb_DestroyDeviceMemMap(devMmap);
-   3. // 释放接口
-   4. int32_t ret = OH_Usb_ReleaseInterface(g_interfaceHandle);
-   5. if (ret != 0) {
-   6. OH_LOG_ERROR(LOG_APP, "ReleaseInterface failed %{public}d", ret);
-   7. }
-   8. // 释放USB DDK
-   9. OH_Usb_Release();
+   // 销毁缓冲区
+   OH_Usb_DestroyDeviceMemMap(devMmap);
+   // 释放接口
+   int32_t ret = OH_Usb_ReleaseInterface(g_interfaceHandle);
+   if (ret != 0) {
+       OH_LOG_ERROR(LOG_APP, "ReleaseInterface failed %{public}d", ret);
+   }
+   // 释放USB DDK
+   OH_Usb_Release();
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L434-L444)
 7. 获取可识别的USB设备列表（独立步骤，可选）。
 
    驱动拉起后调用**OH\_Usb\_GetDevices**接口获取驱动配置信息中匹配vid（vid是设备厂商的vendor id，在驱动应用里面配置，表示驱动适配哪些设备，查询到的设备ID都需要通过vid进行过滤）的设备ID，以供后续应用开发使用。
 
    ```
-   1. constexpr size_t maxUsbDeviceNum = 128;
-   2. struct Usb_DeviceArray deviceArray;
-   3. deviceArray.deviceIds = new uint64_t[maxUsbDeviceNum];
-   4. // 获取设备列表
-   5. int32_t ret = OH_Usb_GetDevices(&deviceArray);
-   6. if (ret != USB_DDK_SUCCESS) {
-   7. OH_LOG_ERROR(LOG_APP, "OH_Usb_GetDevices failed, ret=%{public}d", ret);
-   8. }
+   constexpr size_t maxUsbDeviceNum = 128;
+   struct Usb_DeviceArray deviceArray;
+   deviceArray.deviceIds = new uint64_t[maxUsbDeviceNum];
+   // 获取设备列表
+   int32_t ret = OH_Usb_GetDevices(&deviceArray);
+   if (ret != USB_DDK_SUCCESS) {
+       OH_LOG_ERROR(LOG_APP, "OH_Usb_GetDevices failed, ret=%{public}d", ret);
+   }
+   // ... 使用 deviceArray 的逻辑 ...
+   delete[] deviceArray.deviceIds;
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbDriverDemo/entry/src/main/cpp/hello.cpp#L220-L229)

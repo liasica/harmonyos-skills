@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 关于数据库存储的位置，以及存储的区别
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 关于数据库存储的位置，以及存储的区别
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:11+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d1737cc87384ed960402c36d7abbff7a4b2ec3ffcce131ceb9f25acfa21c3f1a
 ---
 

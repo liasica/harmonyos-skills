@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: Network Boost Kit常见问题
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > Network Boost Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:01+08:00
-doc_updated_at: 2026-04-24
+scraped_at: 2026-09-02T15:17:21+08:00
+doc_updated_at: 2026-05-07
 content_hash: sha256:433aa9892808df2a29356e8c3d714decf5358491b77c8eac6929762213b3db13
 ---
 

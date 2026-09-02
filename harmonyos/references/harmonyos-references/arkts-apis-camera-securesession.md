@@ -3,33 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (SecureSession)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (SecureSession)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:999f1fcebd5945de6f007b80837e6c7d35aa2d055b18d7ad8ff9f1434eb6cc2f
+scraped_at: 2026-09-02T15:02:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5080a268d4b882df7b1b893de6f7909a383bcf464259a8aeafd9cf96778466df
 ---
 
-SecureSession 继承自 [Session](arkts-apis-camera-session.md)、[Flash](arkts-apis-camera-flash.md)、[AutoExposure](arkts-apis-camera-autoexposure.md)、[WhiteBalance](arkts-apis-camera-whitebalance.md)、[Focus](arkts-apis-camera-focus.md)、[Zoom](arkts-apis-camera-zoom.md)。
+SecureSession继承自[Session](arkts-apis-camera-session.md)、[Flash](arkts-apis-camera-flash.md)、[AutoExposure](arkts-apis-camera-autoexposure.md)、[WhiteBalance](arkts-apis-camera-whitebalance.md)、[Focus](arkts-apis-camera-focus.md)、[Zoom](arkts-apis-camera-zoom.md)。
 
 安全模式会话类，提供了对闪光灯、曝光、白平衡、对焦、变焦的操作。
 
 通过[createSession](arkts-apis-camera-cameramanager.md#createsession11)接口传入[SceneMode](arkts-apis-camera-e.md#scenemode11)为SECURE\_PHOTO模式创建一个安全模式的会话。该模式开放给人脸识别、银行等有安全诉求的应用，需要结合Device Security Kit使用，支持同时输出普通预览流和安全流的业务场景。请参考[安全相机开发指导](../harmonyos-guides/camera-secure-photo.md)。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 12开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```
 
 ## addSecureOutput12+
-
-PhonePC/2in1TabletTVWearable
 
 addSecureOutput(previewOutput: PreviewOutput): void
 
@@ -53,32 +49,31 @@ addSecureOutput(previewOutput: PreviewOutput): void
 | --- | --- |
 | 7400101 | Parameter missing or parameter type incorrect. |
 | 7400102 | Operation not allowed. |
+| 7400103 | Session not config.  适用版本：12-17 |
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function addSecureOutput(session: camera.SecureSession, previewOutput: camera.PreviewOutput): void {
-4. try {
-5. session.addSecureOutput(previewOutput);
-6. } catch (error) {
-7. // 失败返回错误码error.code并处理。
-8. let err = error as BusinessError;
-9. console.error(`The addOutput call failed. error code: ${err.code}`);
-10. }
-11. }
+function addSecureOutput(session: camera.SecureSession, previewOutput: camera.PreviewOutput): void {
+  try {
+    session.addSecureOutput(previewOutput);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The addOutput call failed. error code: ${err.code}`);
+  }
+}
 ```
 
 ## on('error')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 监听安全相机会话的错误事件，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -95,21 +90,19 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError): void {
-4. console.error(`Video session error code: ${err.code}`);
-5. }
+function callback(err: BusinessError): void {
+  console.error(`Video session error code: ${err.code}`);
+}
 
-7. function registerSessionError(secureSession: camera.SecureSession): void {
-8. secureSession.on('error', callback);
-9. }
+function registerSessionError(secureSession: camera.SecureSession): void {
+  secureSession.on('error', callback);
+}
 ```
 
 ## off('error')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -128,21 +121,19 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. function unregisterSessionError(secureSession: camera.SecureSession): void {
-2. secureSession.off('error');
-3. }
+```ts
+function unregisterSessionError(secureSession: camera.SecureSession): void {
+  secureSession.off('error');
+}
 ```
 
 ## on('focusStateChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'focusStateChange', callback: AsyncCallback<FocusState>): void
 
 监听相机聚焦的状态变化，通过注册回调函数获取结果。使用callback异步回调。
 
-说明
+**说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
 
@@ -159,25 +150,23 @@ on(type: 'focusStateChange', callback: AsyncCallback<FocusState>): void
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function callback(err: BusinessError, focusState: camera.FocusState): void {
-4. if (err !== undefined && err.code !== 0) {
-5. console.error(`Callback Error, errorCode: ${err.code}`);
-6. return;
-7. }
-8. console.info(`Focus state: ${focusState}`);
-9. }
+function callback(err: BusinessError, focusState: camera.FocusState): void {
+  if (err !== undefined && err.code !== 0) {
+    console.error(`Callback Error, errorCode: ${err.code}`);
+    return;
+  }
+  console.info(`Focus state: ${focusState}`);
+}
 
-11. function registerFocusStateChange(secureSession: camera.SecureSession): void {
-12. secureSession.on('focusStateChange', callback);
-13. }
+function registerFocusStateChange(secureSession: camera.SecureSession): void {
+  secureSession.on('focusStateChange', callback);
+}
 ```
 
 ## off('focusStateChange')12+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'focusStateChange', callback?: AsyncCallback<FocusState>): void
 
@@ -196,8 +185,8 @@ off(type: 'focusStateChange', callback?: AsyncCallback<FocusState>): void
 
 **示例：**
 
-```
-1. function unregisterFocusStateChange(secureSession: camera.SecureSession): void {
-2. secureSession.off('focusStateChange');
-3. }
+```ts
+function unregisterFocusStateChange(secureSession: camera.SecureSession): void {
+  secureSession.off('focusStateChange');
+}
 ```

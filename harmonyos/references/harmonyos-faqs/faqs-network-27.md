@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-27
 title: http请求执行的线程是否可控
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > http请求执行的线程是否可控
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:07+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:5a1901eb5530b5f40069edf7f8e7046a7fcd2283ff63928002255c7599794855
 ---
 

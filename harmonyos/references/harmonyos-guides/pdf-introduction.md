@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-introduct
 title: PDF Kit简介
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PDF Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b6282c7f5722bd2be9c24702b0f5fcd900eab9ace858a75f7a2ba4f267dc2d24
+scraped_at: 2026-09-02T15:00:00+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:6e10905462910b603f61bf2de087f6214e9b93533725efb5926d5468ea9db8a7
 ---
 
 PDF Kit（PDF服务）包含pdfService和PdfView组件。
 
-pdfService提供了加载和保存PDF文档、在PDF页面中添加文本内容、图片、批注、页眉页脚、水印、背景图片、书签、判断PDF文档是否加密及删除文档加密等相关的功能，对PDF文档的操作有更多的应用场景。
+pdfService提供了加载和保存PDF文档、在PDF页面中添加文本内容、图片、批注、页眉页脚、水印、背景图片、书签、判断PDF文档是否加密及删除文档加密等相关功能，适用于更多PDF文档操作场景。
 
-PdfView组件提供了文档预览功能，如：PDF文档预览、高亮显示、搜索关键字，批注等场景。
+PdfView组件提供了文档预览功能，如PDF文档预览、高亮显示、搜索关键字和批注等场景。
 
 PDF Kit更多的示例代码请参考[CodeLab](https://developer.huawei.com/consumer/cn/codelabsPortal/carddetails/tutorials_PDFKit-Codelab-Clientdemo-ArkTS)和[SampleCode](https://gitcode.com/harmonyos_samples/pdfkit_-sample-code_-arkts)。
 
@@ -43,7 +43,7 @@ PDF Kit更多的示例代码请参考[CodeLab](https://developer.huawei.com/cons
 
 ### 支持的设备
 
-PDF Kit相关能力支持在Phone、Tablet和PC/2in1设备上运行。
+PDF Kit相关能力支持在Phone、Tablet、PC/2in1设备上运行。
 
 ## 模拟器支持的情况
 

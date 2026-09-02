@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.multimedia.systemSoundManager (系统声音管理)"
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.systemSoundManager (系统声音管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fc131a4e8dac83d1b495c44fc3dfeaca25ebf8823edfeb4bd4244a5cad02e01f
+scraped_at: 2026-09-02T15:02:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b82016fb4981dab838ec825501e0e4fb7b8cecd03b9c2e560d422e54d08cc1b9
 ---
 
-系统声音管理提供管理系统声音的基础能力，包括对系统音效类型的定义、获取系统音效播放器等。
+本模块提供系统声音管理能力，包括系统音效类型的定义、系统音效播放器的获取等。当需要在应用内播放系统音效以统一使用系统预设音效、带来一致的用户体验时，使用本模块接口完成相关操作。
 
-说明
+**说明** 
 
 本模块首批接口从API version 23开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { systemSoundManager } from '@kit.AudioKit';
+```ts
+import { systemSoundManager } from '@kit.AudioKit';
 ```
 
 ## SystemSoundType
-
-PhonePC/2in1TabletTVWearable
 
 枚举，表示系统音效类型。
 
@@ -40,11 +36,14 @@ PhonePC/2in1TabletTVWearable
 
 ## systemSoundManager.createSystemSoundPlayer
 
-PhonePC/2in1TabletTVWearable
-
 createSystemSoundPlayer(): Promise<SystemSoundPlayer | null>
 
 创建系统音效播放器对象。使用Promise异步回调。
+
+**说明** 
+
+* 调用createSystemSoundPlayer()创建播放器后，必须在使用完毕后调用release()释放播放器资源。
+* 详细的使用说明和方法关系请参见[SystemSoundPlayer (音效播放器)](js-apis-inner-multimedia-systemsoundplayer.md)。
 
 **系统能力：** SystemCapability.Multimedia.SystemSound.Core
 
@@ -52,7 +51,7 @@ createSystemSoundPlayer(): Promise<SystemSoundPlayer | null>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[SystemSoundPlayer](js-apis-inner-multimedia-systemsoundplayer.md#systemsoundplayer) | null> | 成功返回系统音效播放器对象，失败返回null。 |
+| Promise<[SystemSoundPlayer](js-apis-inner-multimedia-systemsoundplayer.md#systemsoundplayer) | null> | 成功返回系统音效播放器对象，用于播放拍照音效、视频录制音效等系统音效；失败返回null。 |
 
 **错误码：**
 
@@ -64,26 +63,24 @@ createSystemSoundPlayer(): Promise<SystemSoundPlayer | null>
 
 **示例：**
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
+let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
 
-5. systemSoundManager.createSystemSoundPlayer().then((systemSoundPlayerInstance) => {
-6. console.info('Succeeded in creating the system sound player.');
-7. systemSoundPlayer = systemSoundPlayerInstance;
-8. }).catch((err: BusinessError) => {
-9. console.error(`Failed to create the system sound player. Code: ${err.code}, message: ${err.message}`);
-10. });
+systemSoundManager.createSystemSoundPlayer().then((systemSoundPlayerInstance) => {
+  systemSoundPlayer = systemSoundPlayerInstance;
+  console.info('Succeeded in creating the system sound player.');
+}).catch((err: BusinessError) => {
+  console.error(`Failed to create the system sound player. Code: ${err.code}, message: ${err.message}`);
+});
 ```
 
 ## SystemSoundPlayer
 
-PhonePC/2in1TabletTVWearable
-
 type SystemSoundPlayer = \_SystemSoundPlayer
 
-系统音效播放器对象。
+系统音效播放器对象，用于播放拍照音效、视频录制音效等系统音效。
 
 **系统能力：** SystemCapability.Multimedia.SystemSound.Core
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-oprec
 title: OpReceiver
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpReceiver
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:50+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8590f404f3755732c148b14c68ad8ab55b71b87e16a1a03b974bfd5ec7c05873
+content_hash: sha256:2a91018d97bfc6590ae7e9a1d2d81bfe75dec73db33dbc94bc96c97b25c351eb
 ---
 
 ## 函数功能
@@ -14,9 +14,9 @@ OpReceiver构造函数，接收自定义算子的注册信息。
 
 ## 函数原型
 
-```
-1. OpReceiver(OpRegistrationData &reg_data);
-2. ~OpReceiver();
+```cpp
+OpReceiver(OpRegistrationData &reg_data);
+~OpReceiver();
 ```
 
 ## 参数说明

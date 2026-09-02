@@ -3,11 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-networ
 title: 网络
 breadcrumb: 指南 > 系统 > 网络
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:12a9d575f2caa56fc69ce6f63cd4e7072b814a40c3b6795264dee5131f0acb53
+scraped_at: 2026-09-02T14:50:05+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:b46ca30c4bebc1c9ae573909387b6add857ee5600bc60da9829d74dd97853fad
 ---
 
+* **[Accessory Kit（配件接入服务）](accessory-kit-guide.md)**
 * **[Connectivity Kit（短距通信服务）](connectivity-kit.md)**
 * **[Distributed Service Kit（分布式管理服务）](distributed-service-kit.md)**
 * **[NearLink Kit（星闪服务）](nearlink-kit-guide.md)**

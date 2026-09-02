@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-isexi
 title: IsExistOp
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OperatorFactory > IsExistOp
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:37+08:00
+scraped_at: 2026-09-02T15:00:11+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f7121f56213dceea8f2453a03cdea74207956b0d7a25d58d229df16c0bc1e8d2
+content_hash: sha256:1ee49f85fa2f59cb5a861a7dacf091597abb61641b31ad0ab7d00d6eae47d64c
 ---
 
 ## 函数功能
@@ -14,13 +14,13 @@ content_hash: sha256:f7121f56213dceea8f2453a03cdea74207956b0d7a25d58d229df16c0bc
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. static bool IsExistOp(const std::string &operator_type)
-2. static bool IsExistOp(const char_t *const operator_type)
+```cpp
+static bool IsExistOp(const std::string &operator_type)
+static bool IsExistOp(const char_t *const operator_type)
 ```
 
 ## 参数说明

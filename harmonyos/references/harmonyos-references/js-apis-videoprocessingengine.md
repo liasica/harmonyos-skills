@@ -3,30 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-v
 title: "@ohos.multimedia.videoProcessingEngine (视频处理引擎)"
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.videoProcessingEngine (视频处理引擎)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:dd8a684475786f14afd275aa76ebdea4c4a019a073f76a8cf4174aff800c802b
+scraped_at: 2026-09-02T15:02:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f8e6d451ec67b6caad7e1d673b8ca368910f8fae91bed31121ab2130d05f1164
 ---
 
 本模块提供图片内容的清晰度增强及缩放能力。
 
 本模块包含一个基础类：[ImageProcessor](js-apis-videoprocessingengine.md#imageprocessor)类。
 
-说明
+**说明** 
 
 本模块首批接口从API version 18开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { videoProcessingEngine } from '@kit.ImageKit';
+```ts
+import { videoProcessingEngine } from '@kit.ImageKit';
 ```
 
 ## videoProcessingEngine.initializeEnvironment
-
-PhonePC/2in1TabletTV
 
 initializeEnvironment(): Promise<void>
 
@@ -44,7 +40,7 @@ initializeEnvironment(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -55,17 +51,15 @@ initializeEnvironment(): Promise<void>
 
 **示例：**
 
-```
-1. import { videoProcessingEngine } from '@kit.ImageKit';
+```ts
+import { videoProcessingEngine } from '@kit.ImageKit';
 
-3. async function initializeEnvironment() {
-4. videoProcessingEngine.initializeEnvironment();
-5. }
+async function initializeEnvironment() {
+  await videoProcessingEngine.initializeEnvironment();
+}
 ```
 
 ## videoProcessingEngine.deinitializeEnvironment
-
-PhonePC/2in1TabletTV
 
 deinitializeEnvironment(): Promise<void>
 
@@ -83,7 +77,7 @@ deinitializeEnvironment(): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[视频处理引擎错误码](errorcode-videoprocessingengine.md)
+以下错误码的详细介绍请参见[视频处理引擎错误码](errorcode-videoprocessingengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -91,18 +85,16 @@ deinitializeEnvironment(): Promise<void>
 
 **示例：**
 
-```
-1. import { videoProcessingEngine } from '@kit.ImageKit';
+```ts
+import { videoProcessingEngine } from '@kit.ImageKit';
 
-3. async function deinitializeEnvironment() {
-4. videoProcessingEngine.initializeEnvironment();
-5. videoProcessingEngine.deinitializeEnvironment();
-6. }
+async function deinitializeEnvironment() {
+  await videoProcessingEngine.initializeEnvironment();
+  await videoProcessingEngine.deinitializeEnvironment();
+}
 ```
 
 ## videoProcessingEngine.create
-
-PhonePC/2in1TabletTV
 
 create(): ImageProcessor
 
@@ -120,7 +112,7 @@ create(): ImageProcessor
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -130,18 +122,16 @@ create(): ImageProcessor
 
 **示例：**
 
-```
-1. import { videoProcessingEngine } from '@kit.ImageKit';
+```ts
+import { videoProcessingEngine } from '@kit.ImageKit';
 
-3. async function create() {
-4. videoProcessingEngine.initializeEnvironment();
-5. let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-6. }
+async function create() {
+  await videoProcessingEngine.initializeEnvironment();
+  let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+}
 ```
 
 ## ImageProcessor
-
-PhonePC/2in1TabletTV
 
 图像处理类，提供图片内容的清晰度增强及缩放能力。根据源图像的宽度和高度进行必要的缩放操作，生成目标图像。提供不同级别的缩放方法以平衡性能和图像质量。
 
@@ -151,8 +141,6 @@ PhonePC/2in1TabletTV
 * 当前支持处理RGBA、BGRA、NV12、NV21像素格式的图片，输出格式与输入格式一致。
 
 ### enhanceDetail
-
-PhonePC/2in1TabletTV
 
 enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?: QualityLevel): Promise<image.PixelMap>
 
@@ -179,7 +167,7 @@ enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -189,21 +177,19 @@ enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?
 
 **示例：**
 
-```
-1. import { image, videoProcessingEngine } from '@kit.ImageKit';
+```ts
+import { image, videoProcessingEngine } from '@kit.ImageKit';
 
-3. async function enhanceDetail(sourceImage: image.PixelMap, width: number, height: number) {
-4. videoProcessingEngine.initializeEnvironment();
-5. let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-6. // 示例：width可配置为1024，height可配置为1280。
-7. let enhancedPixelmap: Promise<image.PixelMap> =
-8. imageProcessor.enhanceDetail(sourceImage, width, height, videoProcessingEngine.QualityLevel.HIGH);
-9. }
+async function enhanceDetail(sourceImage: image.PixelMap, width: number, height: number) {
+  await videoProcessingEngine.initializeEnvironment();
+  let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+  // 示例：width可配置为1024，height可配置为1280。
+  let enhancedPixelMap: Promise<image.PixelMap> =
+    imageProcessor.enhanceDetail(sourceImage, width, height, videoProcessingEngine.QualityLevel.HIGH);
+}
 ```
 
 ### enhanceDetail
-
-PhonePC/2in1TabletTV
 
 enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel): Promise<image.PixelMap>
 
@@ -218,7 +204,7 @@ enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel):
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceImage | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](../harmonyos-guides/image-allocator-type.md#内存类型介绍)。 |
-| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]（在满足[上述分辨率范围](js-apis-videoprocessingengine.md#enhancedetail)的前提下，最高支持32倍放大）。 |
+| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]。 |
 | level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
 
 **返回值：**
@@ -229,7 +215,7 @@ enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel):
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -239,21 +225,19 @@ enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel):
 
 **示例：**
 
-```
-1. import { image, videoProcessingEngine } from '@kit.ImageKit';
+```ts
+import { image, videoProcessingEngine } from '@kit.ImageKit';
 
-3. async function enhanceDetail(sourceImage: image.PixelMap, scale: number) {
-4. videoProcessingEngine.initializeEnvironment();
-5. let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-6. // 示例：scale可配置为2.0。
-7. let enhancedPixelmap: Promise<image.PixelMap> =
-8. imageProcessor.enhanceDetail(sourceImage, scale, videoProcessingEngine.QualityLevel.HIGH);
-9. }
+async function enhanceDetail(sourceImage: image.PixelMap, scale: number) {
+  await videoProcessingEngine.initializeEnvironment();
+  let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+  // 示例：scale可配置为2.0。
+  let enhancedPixelMap: Promise<image.PixelMap> =
+    imageProcessor.enhanceDetail(sourceImage, scale, videoProcessingEngine.QualityLevel.HIGH);
+}
 ```
 
 ### enhanceDetailSync
-
-PhonePC/2in1TabletTV
 
 enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, level?: QualityLevel): image.PixelMap
 
@@ -280,7 +264,7 @@ enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, le
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -291,21 +275,19 @@ enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, le
 
 **示例：**
 
-```
-1. import { image, videoProcessingEngine } from '@kit.ImageKit';
+```ts
+import { image, videoProcessingEngine } from '@kit.ImageKit';
 
-3. async function enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number) {
-4. videoProcessingEngine.initializeEnvironment();
-5. let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-6. // 示例：width可配置为1024，height可配置为1280。
-7. let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-8. sourceImage, width, height, videoProcessingEngine.QualityLevel.HIGH);
-9. }
+function enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number) {
+  videoProcessingEngine.initializeEnvironment();
+  let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+  // 示例：width可配置为1024，height可配置为1280。
+  let enhancedPixelMap: image.PixelMap = imageProcessor.enhanceDetailSync(
+    sourceImage, width, height, videoProcessingEngine.QualityLevel.HIGH);
+}
 ```
 
 ### enhanceDetailSync
-
-PhonePC/2in1TabletTV
 
 enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLevel): image.PixelMap
 
@@ -320,7 +302,7 @@ enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLev
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sourceImage | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](../harmonyos-guides/image-allocator-type.md#内存类型介绍)。 |
-| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]（在满足[上述分辨率范围](js-apis-videoprocessingengine.md#enhancedetail)的前提下，最高支持32倍放大）。 |
+| scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]。 |
 | level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
 
 **返回值：**
@@ -331,7 +313,7 @@ enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLev
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[视频处理引擎错误码](errorcode-videoprocessingengine.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -342,21 +324,19 @@ enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLev
 
 **示例：**
 
-```
-1. import { image, videoProcessingEngine } from '@kit.ImageKit';
+```ts
+import { image, videoProcessingEngine } from '@kit.ImageKit';
 
-3. async function enhanceDetailSync(sourceImage: image.PixelMap, scale: number) {
-4. videoProcessingEngine.initializeEnvironment();
-5. let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
-6. // 示例：scale可配置为2.0。
-7. let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
-8. sourceImage, scale, videoProcessingEngine.QualityLevel.HIGH);
-9. }
+function enhanceDetailSync(sourceImage: image.PixelMap, scale: number) {
+  videoProcessingEngine.initializeEnvironment();
+  let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+  // 示例：scale可配置为2.0。
+  let enhancedPixelMap: image.PixelMap = imageProcessor.enhanceDetailSync(
+    sourceImage, scale, videoProcessingEngine.QualityLevel.HIGH);
+}
 ```
 
 ## QualityLevel
-
-PhonePC/2in1TabletTV
 
 枚举，算法档位。
 

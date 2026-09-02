@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-getsuperprivacymode
-title: 查询当前状态场景
-breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 查询当前状态场景
+title: 查询超级隐私模式状态
+breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 查询超级隐私模式状态
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:27cbcf54015ddbdc9e84f06b7f6d7291f0b2748e0199119ebbae8725341a6927
+scraped_at: 2026-09-02T14:50:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a50f61bd376d67e0267ce43f246458a1a4d75d0e3da8545339ec89b5cd090271
 ---
 
 ## 场景介绍
 
 从6.0.2(22)开始，新增了查询设备当前超级隐私模式状态的功能。
 
-超级隐私模式为用户提供一键关闭敏感器件的能力，管控范围包括位置、相机和麦克风，且随着版本演进，超级隐私模式管控的敏感器件范围会相应调整。应用可通过Device Security Kit提供的接口查询当前超级隐私模式开关状态。
+超级隐私模式支持一键关闭位置、相机和麦克风等敏感器件。该模式管控的器件范围将随版本更新动态调整。应用可通过Device Security Kit提供的接口获取超级隐私模式的状态。
 
 ## 约束与限制
 
@@ -20,13 +20,13 @@ content_hash: sha256:27cbcf54015ddbdc9e84f06b7f6d7291f0b2748e0199119ebbae8725341
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/EuOK6-e0QNeohg2Qvycv9A/zh-cn_image_0000002558605248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Da5eIkNmTNCG7vQjBRuMgQ/zh-cn_image_0000002706834308.png)
 
 **流程说明：**
 
-1. 开发者应用查询当前超级隐私模式状态。
-2. Device Security Kit接口同步返回当前超级隐私模式状态给HAP应用。
-3. 应用根据返回的超级隐私模式状态进行业务处理。
+1. 开发者应用调用[getSuperPrivacyMode](../harmonyos-references/devicesecurity-superprivacymode-api.md#getsuperprivacymode)接口查询当前超级隐私模式状态。
+2. Device Security Kit接口同步返回当前超级隐私模式状态给开发者应用。
+3. 开发者应用根据返回的超级隐私模式状态进行业务处理。
 
 ## 接口说明
 
@@ -40,21 +40,25 @@ content_hash: sha256:27cbcf54015ddbdc9e84f06b7f6d7291f0b2748e0199119ebbae8725341
 
 1. 导入超级隐私模块及相关公共模块。
 
+   ```typescript
+   import { superPrivacyMode } from '@kit.DeviceSecurityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { superPrivacyMode } from '@kit.DeviceSecurityKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-2. 查询超级隐私模式状态改变事件。
+2. 调用[getSuperPrivacyMode](../harmonyos-references/devicesecurity-superprivacymode-api.md#getsuperprivacymode)接口查询超级隐私模式的状态。
 
+   ```typescript
+   const DOMAIN = 0x0000;
+   const TAG = 'SuperPrivacyModeTest';
    ```
-   1. const DOMAIN = 0x0000;
-   2. const TAG = "SuperPrivacyModeTest";
 
-   4. let mode: superPrivacyMode.SuperPrivacyMode = superPrivacyMode.SuperPrivacyMode.OFF;
-   5. try {
-   6. mode = await superPrivacyMode.getSuperPrivacyMode();
-   7. hilog.info(DOMAIN, TAG, `Super privacy mode = ${mode}`);
-   8. } catch (err) {
-   9. hilog.error(DOMAIN, TAG, `call getSuperPrivacyMode interface failed, errCode:${err?.code}, errMessage:${err?.message}`);
-   10. }
+   ```typescript
+   let mode: superPrivacyMode.SuperPrivacyMode = superPrivacyMode.SuperPrivacyMode.OFF;
+   try {
+     mode = await superPrivacyMode.getSuperPrivacyMode();
+     hilog.info(DOMAIN, TAG, `Super privacy mode = ${mode}`);
+     // ...
+   } catch (err) {
+     hilog.error(DOMAIN, TAG, `call getSuperPrivacyMode interface failed, errCode:${err?.code}, errMessage:${err?.message}`);
+     // ...
+   }
    ```

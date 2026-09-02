@@ -3,26 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 外描边设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 外描边设置
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a202b116c2151f22e5a69f43c3bfed94b6517e01a2ec134df1e170096ca2cfa6
+scraped_at: 2026-09-02T15:00:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5513586607bbcd946ddde9146ad410f803eb18cfaeaf628bae7ec92c5492f1c9
 ---
 
 设置组件外描边（outline）样式。外描边绘制在组件的外侧，不影响布局，不会占用组件本身大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/RPBsor5vSSC7IReznr1i-Q/zh-cn_image_0000002589325911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/6Jv7jW4yTe6EwyqGuD40Pw/zh-cn_image_0000002736434803.png)
 
-说明
+**说明** 
 
-从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+* 本模块接口仅可在Stage模型下使用。
 
 ## outline
 
-PhonePC/2in1TabletTVWearable
-
 outline(value: OutlineOptions): T
 
-统一外描边样式设置接口。
+统一设置组件的外描边样式，可一次性设置外描边的宽度、颜色、圆角和样式。开发者也可通过outlineStyle、outlineWidth、outlineColor、outlineRadius方法分别设置各项外描边属性。两者同时设置时，后设置的属性生效。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -34,21 +33,19 @@ outline(value: OutlineOptions): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [OutlineOptions](ts-types.md#outlineoptions11对象说明) | 是 | 外描边样式。 |
+| value | [OutlineOptions](ts-types.md#outlineoptions11对象说明) | 是 | 外描边样式，其中width和radius不支持百分比；radius最大生效值为组件width/2 + outlineWidth或组件height/2 + outlineWidth。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## outline18+
 
-PhonePC/2in1TabletTVWearable
-
 outline(options: Optional<OutlineOptions>): T
 
-统一外描边样式设置接口。与[outline](ts-universal-attributes-outline.md#outline)相比，options参数新增了对undefined类型的支持。
+统一设置组件的外描边样式，外描边绘制在组件的外侧，不影响布局，不会占用组件本身大小。需设置outlineWidth大于0，外描边才可见。与[outline](ts-universal-attributes-outline.md#outline)相比，options参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -60,17 +57,15 @@ outline(options: Optional<OutlineOptions>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[OutlineOptions](ts-types.md#outlineoptions11对象说明)> | 是 | 外描边样式。  当options的值为undefined时，恢复为无外边框效果。 |
+| options | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[OutlineOptions](ts-types.md#outlineoptions11对象说明)> | 是 | 外描边样式。其中width和radius不支持百分比；radius最大生效值：组件width/2 + outlineWidth或组件height/2 + outlineWidth。  当options的值为undefined时，恢复为无外描边效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## OutlineStyle枚举说明
-
-PhonePC/2in1TabletTVWearable
 
 外描边样式。
 
@@ -88,11 +83,9 @@ PhonePC/2in1TabletTVWearable
 
 ## outlineStyle
 
-PhonePC/2in1TabletTVWearable
-
 outlineStyle(value: OutlineStyle | EdgeOutlineStyles): T
 
-设置元素的外描边样式。不设置该接口时，默认显示为一条实线。
+设置元素的外描边样式，未设置时默认显示为一条实线。需设置outlineWidth大于0，外描边样式才可见。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -104,21 +97,19 @@ outlineStyle(value: OutlineStyle | EdgeOutlineStyles): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [OutlineStyle](ts-universal-attributes-outline.md#outlinestyle枚举说明) | [EdgeOutlineStyles](ts-types.md#edgeoutlinestyles11对象说明) | 是 | 设置元素的外描边样式。 |
+| value | [OutlineStyle](ts-universal-attributes-outline.md#outlinestyle枚举说明) | [EdgeOutlineStyles](ts-types.md#edgeoutlinestyles11对象说明) | 是 | 设置元素的外描边样式，未设置时默认显示为一条实线。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## outlineStyle18+
 
-PhonePC/2in1TabletTVWearable
-
 outlineStyle(style: Optional<OutlineStyle | EdgeOutlineStyles>): T
 
-设置元素的外描边样式。不设置该接口时，默认显示为一条实线。与[outlineStyle](ts-universal-attributes-outline.md#outlinestyle)相比，style参数新增了对undefined类型的支持。
+设置元素的外描边样式。需设置outlineWidth大于0，外描边样式才可见。未设置时，默认显示为一条实线。与[outlineStyle](ts-universal-attributes-outline.md#outlinestyle)相比，style参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -130,21 +121,19 @@ outlineStyle(style: Optional<OutlineStyle | EdgeOutlineStyles>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| style | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[OutlineStyle](ts-universal-attributes-outline.md#outlinestyle枚举说明) | [EdgeOutlineStyles](ts-types.md#edgeoutlinestyles11对象说明)> | 是 | 设置元素的外描边样式。  当style的值为undefined时，恢复为无外描边样式的效果。 |
+| style | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[OutlineStyle](ts-universal-attributes-outline.md#outlinestyle枚举说明) | [EdgeOutlineStyles](ts-types.md#edgeoutlinestyles11对象说明)> | 是 | 设置元素的外描边样式，需设置outlineWidth大于0，外描边样式才可见。  当style的值为undefined时，恢复为外描边样式为实线的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## outlineWidth
 
-PhonePC/2in1TabletTVWearable
-
 outlineWidth(value: Dimension | EdgeOutlineWidths): T
 
-设置元素的外描边宽度。不设置该接口时，默认无变化。
+设置元素的外描边宽度。未设置时，默认值为0，即无外描边宽度。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -156,21 +145,19 @@ outlineWidth(value: Dimension | EdgeOutlineWidths): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Dimension](ts-types.md#dimension10) | [EdgeOutlineWidths](ts-types.md#edgeoutlinewidths11对象说明) | 是 | 设置元素的外描边宽度，不支持百分比。 |
+| value | [Dimension](ts-types.md#dimension10) | [EdgeOutlineWidths](ts-types.md#edgeoutlinewidths11对象说明) | 是 | 设置元素的外描边宽度，不支持百分比，未设置时默认值为0。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## outlineWidth18+
 
-PhonePC/2in1TabletTVWearable
-
 outlineWidth(width: Optional<Dimension | EdgeOutlineWidths>): T
 
-设置元素的外描边宽度。不设置该接口时，默认无变化。与[outlineWidth](ts-universal-attributes-outline.md#outlinewidth)相比，width参数新增了对undefined类型的支持。
+设置元素的外描边宽度。未设置时，默认值为0，即无外描边宽度。与[outlineWidth](ts-universal-attributes-outline.md#outlinewidth)相比，width参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -182,21 +169,19 @@ outlineWidth(width: Optional<Dimension | EdgeOutlineWidths>): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| width | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Dimension](ts-types.md#dimension10) | [EdgeOutlineWidths](ts-types.md#edgeoutlinewidths11对象说明)> | 是 | 设置元素的外描边宽度，不支持百分比。  当width的值为undefined时，恢复为无外描边宽度的效果。 |
+| width | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Dimension](ts-types.md#dimension10) | [EdgeOutlineWidths](ts-types.md#edgeoutlinewidths11对象说明)> | 是 | 设置元素的外描边宽度，不支持百分比，传入百分比时不生效。  当width的值为undefined时，恢复为外描边宽度为0的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## outlineColor
 
-PhonePC/2in1TabletTVWearable
-
 outlineColor(value: ResourceColor | EdgeColors | LocalizedEdgeColors): T
 
-设置元素的外描边颜色。不设置该接口时，默认显示为黑色。
+设置元素的外描边颜色，需设置outlineWidth大于0，外描边颜色才可见。未设置时，默认显示为黑色。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -208,21 +193,19 @@ outlineColor(value: ResourceColor | EdgeColors | LocalizedEdgeColors): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ResourceColor](ts-types.md#resourcecolor) | [EdgeColors](ts-types.md#edgecolors9) | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)12+ | 是 | 设置元素的外描边颜色。 |
+| value | [ResourceColor](ts-types.md#resourcecolor) | [EdgeColors](ts-types.md#edgecolors9) | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)12+ | 是 | 设置元素的外描边颜色，未设置时默认显示为黑色。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## outlineColor18+
 
-PhonePC/2in1TabletTVWearable
-
 outlineColor(color: Optional<ResourceColor | EdgeColors | LocalizedEdgeColors>): T
 
-设置元素的外描边颜色。不设置该接口时，默认显示为黑色。与[outlineColor](ts-universal-attributes-outline.md#outlinecolor)相比，color参数新增了对undefined类型的支持。
+设置元素的外描边颜色，需设置outlineWidth大于0，外描边颜色才可见。未设置时，默认显示为黑色。与[outlineColor](ts-universal-attributes-outline.md#outlinecolor)相比，color参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -234,21 +217,19 @@ outlineColor(color: Optional<ResourceColor | EdgeColors | LocalizedEdgeColors>):
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ResourceColor](ts-types.md#resourcecolor) | [EdgeColors](ts-types.md#edgecolors9) | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)> | 是 | 设置元素的外描边颜色。  当color的值为undefined时，恢复为描边颜色为Color.Black的效果。 |
+| color | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ResourceColor](ts-types.md#resourcecolor) | [EdgeColors](ts-types.md#edgecolors9) | [LocalizedEdgeColors](ts-types.md#localizededgecolors12)> | 是 | 设置元素的外描边颜色。  当color的值为undefined时，恢复为外描边颜色为Color.Black的效果。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## outlineRadius
 
-PhonePC/2in1TabletTVWearable
-
 outlineRadius(value: Dimension | OutlineRadiuses): T
 
-设置元素的外描边圆角半径。不设置该接口时，默认无变化。
+设置元素的外描边圆角半径。需设置outlineWidth大于0，外描边圆角半径才可见。未设置时，默认外描边圆角半径为0。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
@@ -260,21 +241,19 @@ outlineRadius(value: Dimension | OutlineRadiuses): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Dimension](ts-types.md#dimension10) | [OutlineRadiuses](ts-types.md#outlineradiuses11对象说明) | 是 | 设置元素的外描边圆角半径，不支持百分比。  最大生效值：组件width/2 + outlineWidth或组件height/2 + outlineWidth。 |
+| value | [Dimension](ts-types.md#dimension10) | [OutlineRadiuses](ts-types.md#outlineradiuses11对象说明) | 是 | 设置元素的外描边圆角半径，不支持百分比，未设置时默认值为0。  最大生效值：组件width/2 + outlineWidth或组件height/2 + outlineWidth。 |
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## outlineRadius18+
 
-PhonePC/2in1TabletTVWearable
-
 outlineRadius(radius: Optional<Dimension | OutlineRadiuses>): T
 
-设置元素的外描边圆角半径。不设置该接口时，默认无变化。与[outlineRadius](ts-universal-attributes-outline.md#outlineradius)相比，radius参数新增了对undefined类型的支持。
+设置元素的外描边圆角半径。需设置outlineWidth大于0，外描边圆角半径才可见。未设置时，默认外描边圆角半径为0。与[outlineRadius](ts-universal-attributes-outline.md#outlineradius)相比，radius参数新增了对undefined类型的支持。
 
 **卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
 
@@ -292,109 +271,108 @@ outlineRadius(radius: Optional<Dimension | OutlineRadiuses>): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，用于链式调用。 |
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 ### 示例1（使用外描边属性）
 
 该示例主要演示如何通过[outline](ts-universal-attributes-outline.md#outline)来实现组件外描边。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct OutlineExample {
-5. build() {
-6. Column() {
-7. Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-8. // 线段
-9. Text('DASHED')
-10. .backgroundColor(Color.Pink)
-11. .outlineStyle(OutlineStyle.DASHED).outlineWidth(5).outlineColor(0xAFEEEE).outlineRadius(10)
-12. .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
-13. // 点线
-14. Text('DOTTED')
-15. .backgroundColor(Color.Pink)
-16. .outline({ width: 5, color: 0x317AF7, radius: 10, style: OutlineStyle.DOTTED })
-17. .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
-18. }.width('100%').height(150)
+```ts
+// xxx.ets
+@Entry
+@Component
+struct OutlineExample {
+  build() {
+    Column() {
+      Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+        // 虚线
+        Text('DASHED')
+          .backgroundColor(Color.Pink)
+          .outlineStyle(OutlineStyle.DASHED).outlineWidth(5).outlineColor(0xAFEEEE).outlineRadius(10)
+          .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
+        // 点线
+        Text('DOTTED')
+          .backgroundColor(Color.Pink)
+          .outline({ width: 5, color: 0x317AF7, radius: 10, style: OutlineStyle.DOTTED })
+          .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
+      }.width('100%').height(150)
 
-20. Text('.outline')
-21. .backgroundColor(Color.Pink)
-22. .fontSize(50)
-23. .width(300)
-24. .height(300)
-25. .outline({
-26. width: { left: 3, right: 6, top: 10, bottom: 15 },
-27. color: { left: '#e3bbbb', right: Color.Blue, top: Color.Red, bottom: Color.Green },
-28. radius: { topLeft: 10, topRight: 20, bottomLeft: 40, bottomRight: 80 },
-29. style: {
-30. left: OutlineStyle.DOTTED,
-31. right: OutlineStyle.DOTTED,
-32. top: OutlineStyle.SOLID,
-33. bottom: OutlineStyle.DASHED
-34. }
-35. }).textAlign(TextAlign.Center)
-36. }
-37. }
-38. }
+      Text('.outline')
+        .backgroundColor(Color.Pink)
+        .fontSize(50)
+        .width(300)
+        .height(300)
+        .outline({
+          width: { left: 3, right: 6, top: 10, bottom: 15 },
+          color: { left: '#e3bbbb', right: Color.Blue, top: Color.Red, bottom: Color.Green },
+          radius: { topLeft: 10, topRight: 20, bottomLeft: 40, bottomRight: 80 },
+          style: {
+            left: OutlineStyle.DOTTED,
+            right: OutlineStyle.DOTTED,
+            top: OutlineStyle.SOLID,
+            bottom: OutlineStyle.DASHED
+          }
+        }).textAlign(TextAlign.Center)
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/voo24nPrRVGncJ6_SB8Eng/zh-cn_image_0000002589245853.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/caiiA3UlS36A8aoJWXS63w/zh-cn_image_0000002706835656.png)
 
 ### 示例2（使用LocalizedEdgeColors类型）
 
 该示例将[outline](ts-universal-attributes-outline.md#outline)属性中的color属性值设置为[LocalizedEdgeColors](ts-types.md#localizededgecolors12)类型。
 
+```ts
+// xxx.ets
+
+@Entry
+@Component
+struct OutlineExample {
+  build() {
+    Column() {
+      Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+        // 虚线
+        Text('DASHED')
+          .backgroundColor(Color.Pink)
+          .outlineStyle(OutlineStyle.DASHED).outlineWidth(5).outlineColor(0xAFEEEE).outlineRadius(10)
+          .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
+        // 点线
+        Text('DOTTED')
+          .backgroundColor(Color.Pink)
+          .outline({ width: 5, color: 0x317AF7, radius: 10, style: OutlineStyle.DOTTED })
+          .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
+      }.width('100%').height(150)
+
+      Text('.outline')
+        .backgroundColor(Color.Pink)
+        .fontSize(50)
+        .width(300)
+        .height(300)
+        .outline({
+          width: { left: 3, right: 6, top: 10, bottom: 15 },
+          // color使用LocalizedEdgeColors类型，start和end分别对应不同显示方向下的起始边和结束边颜色
+          color: { start: '#e3bbbb', end: Color.Blue, top: Color.Red, bottom: Color.Green },
+          radius: { topLeft: 10, topRight: 20, bottomLeft: 40, bottomRight: 80 },
+          style: {
+            left: OutlineStyle.DOTTED,
+            right: OutlineStyle.DOTTED,
+            top: OutlineStyle.SOLID,
+            bottom: OutlineStyle.DASHED
+          }
+        }).textAlign(TextAlign.Center)
+    }
+  }
+}
 ```
-1. // xxx.ets
 
-3. @Entry
-4. @Component
-5. struct OutlineExample {
-6. build() {
-7. Column() {
-8. Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-9. // 线段
-10. Text('DASHED')
-11. .backgroundColor(Color.Pink)
-12. .outlineStyle(OutlineStyle.DASHED).outlineWidth(5).outlineColor(0xAFEEEE).outlineRadius(10)
-13. .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
-14. // 点线
-15. Text('DOTTED')
-16. .backgroundColor(Color.Pink)
-17. .outline({ width: 5, color: 0x317AF7, radius: 10, style: OutlineStyle.DOTTED })
-18. .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
-19. }.width('100%').height(150)
+从左至右显示语言示例图。
 
-21. Text('.outline')
-22. .backgroundColor(Color.Pink)
-23. .fontSize(50)
-24. .width(300)
-25. .height(300)
-26. .outline({
-27. width: { left: 3, right: 6, top: 10, bottom: 15 },
-28. color: { start: '#e3bbbb', end: Color.Blue, top: Color.Red, bottom: Color.Green },
-29. radius: { topLeft: 10, topRight: 20, bottomLeft: 40, bottomRight: 80 },
-30. style: {
-31. left: OutlineStyle.DOTTED,
-32. right: OutlineStyle.DOTTED,
-33. top: OutlineStyle.SOLID,
-34. bottom: OutlineStyle.DASHED
-35. }
-36. }).textAlign(TextAlign.Center)
-37. }
-38. }
-39. }
-```
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/MSL9ibKmQ_ewz-NSp_Vi7g/zh-cn_image_0000002736314761.png)
 
-从左至右显示语言示例图
+从右至左显示语言示例图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Nql3Pq3NQp6yba2OeEF4GA/zh-cn_image_0000002558766044.png)
-
-从右至左显示语言示例图
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/7eOZa6EcSsmeGxm1BTfDBw/zh-cn_image_0000002558606386.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/70w3JQTRTVGfbBxBjJhR2Q/zh-cn_image_0000002706675718.png)

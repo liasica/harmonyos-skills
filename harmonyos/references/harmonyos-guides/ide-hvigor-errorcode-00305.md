@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 语法错误码
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 语法错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:27+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fc562658d1c4c26ea2ac237bc45c42c2ff66eca1a7e438ff018a6d7f67c53282
+scraped_at: 2026-09-02T14:50:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:828e6187a1866822ba74bbfa4e40f058a2f30f615bbb2c9a86bc9de156518757
 ---
 
 ## 00305001 ArkTS语法检查报错
@@ -56,11 +56,13 @@ hvigorfile.ts或hvigorconfig.ts有类型错误。
 
 **可能原因**
 
-json/json5文件存在语法错误。
+1. json/json5文件存在语法错误。
+2. 文件被安全软件加密或修改。
 
 **处理步骤**
 
-根据报错信息处理文件中的语法错误。
+1. 根据报错信息处理文件中的语法错误。
+2. 检查文件是否被安全软件加密或修改。
 
 ## 00305006 JSON/JSON5格式错误
 
@@ -74,17 +76,39 @@ XXX不是正确的JSON/JSON5格式。
 
 **可能原因**
 
-对应文件不是JSON/JSON5格式。
+1. 对应文件不是JSON/JSON5格式。
+2. 文件被安全软件加密或修改。
 
 **处理步骤**
 
-确保对应文件是JSON/JSON5格式。
+1. 确保对应文件是JSON/JSON5格式。
+2. 检查文件是否被安全软件加密或修改。
+
+## 00305007 JSON/JSON5格式错误
+
+**错误信息**
+
+XXX is not the correct JSON/JSON5 format.
+
+**错误描述**
+
+XXX不是正确的JSON/JSON5格式。
+
+**可能原因**
+
+1. 对应文件不是JSON/JSON5格式。
+2. 文件被安全软件加密或修改。
+
+**处理步骤**
+
+1. 确保对应文件是JSON/JSON5格式。
+2. 检查文件是否被安全软件加密或修改。
 
 ## 00305008 JSON/JSON5文件语法错误
 
 **错误信息**
 
-XXX at file: YYY:ZZZ".
+XXX at file: YYY:ZZZ.
 
 **错误描述**
 
@@ -92,11 +116,13 @@ XXX在文件位置YYY:ZZZ存在语法错误。
 
 **可能原因**
 
-对应文件中存在JSON/JSON5语法错误。
+1. 对应文件中存在JSON/JSON5语法错误。
+2. 文件被安全软件加密或修改。
 
 **处理步骤**
 
-根据报错的文件路径信息修复相关的JSON/JSON5语法错误。
+1. 根据报错的文件路径信息修复相关的JSON/JSON5语法错误。
+2. 检查文件是否被安全软件加密或修改。
 
 ## 00305009 CMake文件API解析失败
 
@@ -164,9 +190,7 @@ CMake任务执行失败。
 
 **可能原因**
 
-用户手动删除编译后模块的.cxx目录，并且在build-profile.json5中arguments字段下配置“--version”、“
-
---help”、“--usage”等查询类参数。
+用户手动删除编译后模块的.cxx目录，并且在build-profile.json5中arguments字段下配置“--version”、“--help”、“--usage”等查询类参数。
 
 **处理步骤**
 

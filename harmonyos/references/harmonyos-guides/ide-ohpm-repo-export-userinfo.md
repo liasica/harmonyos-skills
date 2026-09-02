@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo export_userinfo
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo export_userinfo
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:42+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:30cc91ca9d8c557af53b0e703538e39082db50230dcd6a8b485bf49e67e412c0
+scraped_at: 2026-09-02T14:50:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:101c9e3a47d4ac0cadd489ac39e74761a988c4e357dac4d967177bb523b64ecd
 ---
 
-导出用户必要的DB数据。
+导出用户的DB数据。
 
 ## 命令格式
 
-```
-1. ohpm-repo export_userinfo
+```screen
+ohpm-repo export_userinfo
 ```
 
 ## 功能描述
 
-在当前的工作目录导出记录了DB数据的export\_userInfo\_xxx.zip文件，其中包含加密组件和下面的10张数据表。
+在当前工作目录导出export\_userInfo\_xxx.zip文件，该文件记录了DB数据，包含加密组件和以下10张数据表。
 
 * user
 * group\_member
@@ -35,46 +35,46 @@ content_hash: sha256:30cc91ca9d8c557af53b0e703538e39082db50230dcd6a8b485bf49e67e
 
 执行以下命令：
 
-```
-1. ohpm-repo export_userinfo
+```screen
+ohpm-repo export_userinfo
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/8_TJEKsrSzWnpc_P3NfbKw/zh-cn_image_0000002530751298.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ExAV0jPMS5Os-Sg22-kx2Q/zh-cn_image_0000002731541409.png "点击放大")
 
-```
-1. PS D:\> ohpm-repo export_userinfo
-2. [2025-08-09T19:14:16.721] [INFO] default - initialize "file database" successfully.
-3. [2025-08-09T19:14:16.724] [INFO] default - export the "user" table done.
-4. [2025-08-09T19:14:16.726] [INFO] default - export the "group_member" table done.
-5. [2025-08-09T19:14:16.728] [INFO] default - export the "access_token" table done.
-6. [2025-08-09T19:14:16.728] [INFO] default - export the "public_key" table done.
-7. [2025-08-09T19:14:16.730] [INFO] default - export the "repo" table done.
-8. [2025-08-09T19:14:16.730] [INFO] default - export the "repo_permission" table done.
-9. [2025-08-09T19:14:16.731] [INFO] default - export the "uplink" table done.
-10. [2025-08-09T19:14:16.732] [INFO] default - export the "uplink_proxy" table done.
-11. [2025-08-09T19:14:16.733] [INFO] default - export the "validation_config" table done.
-12. [2025-08-09T19:14:16.734] [INFO] default - export the "system_security" table done.
-13. [2025-08-09T19:14:16.761] [INFO] default - userinfo exported completed, save the .zip file to : "D:\export_userInfo_1754738056722.zip".
+```screen
+PS D:\> ohpm-repo export_userinfo
+[2025-08-09T19:14:16.721] [INFO] default - initialize "file database" successfully.
+[2025-08-09T19:14:16.724] [INFO] default - export the "user" table done.
+[2025-08-09T19:14:16.726] [INFO] default - export the "group_member" table done.
+[2025-08-09T19:14:16.728] [INFO] default - export the "access_token" table done.
+[2025-08-09T19:14:16.728] [INFO] default - export the "public_key" table done.
+[2025-08-09T19:14:16.730] [INFO] default - export the "repo" table done.
+[2025-08-09T19:14:16.730] [INFO] default - export the "repo_permission" table done.
+[2025-08-09T19:14:16.731] [INFO] default - export the "uplink" table done.
+[2025-08-09T19:14:16.732] [INFO] default - export the "uplink_proxy" table done.
+[2025-08-09T19:14:16.733] [INFO] default - export the "validation_config" table done.
+[2025-08-09T19:14:16.734] [INFO] default - export the "system_security" table done.
+[2025-08-09T19:14:16.761] [INFO] default - userinfo exported completed, save the .zip file to : "D:\export_userInfo_1754738056722.zip".
 ```
 
-```
-1. export_userInfo_1754738056722.zip文件结构
+```screen
+export_userInfo_1754738056722.zip文件结构
 
-3. |   access_token.json
-4. |   group_member.json
-5. |   public_key.json
-6. |   repo.json
-7. |   repo_permission.json
-8. |   system_security.json
-9. |   uplink.json
-10. |   uplink_proxy.json
-11. |   user.json
-12. |   validation_config.json
-13. \---meta
-14. |   version.txt
-15. +---ac
-16. +---ce
-17. \---fd
+|   access_token.json
+|   group_member.json
+|   public_key.json
+|   repo.json
+|   repo_permission.json
+|   system_security.json
+|   uplink.json
+|   uplink_proxy.json
+|   user.json
+|   validation_config.json
+\---meta
+    |   version.txt
+    +---ac
+    +---ce
+    \---fd
 ```

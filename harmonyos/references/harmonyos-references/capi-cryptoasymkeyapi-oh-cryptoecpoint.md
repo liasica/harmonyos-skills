@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: OH_CryptoEcPoint
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体 > OH_CryptoEcPoint
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5d01db4187013dae4407dc7b866e8b03d8d9e7de997e73111e27ecbeac9b0c4c
+scraped_at: 2026-09-02T14:52:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e10446250292d44343b938fdc9b25a2b337e6a9dbb33322b4b9ec157dd79e931
 ---
 
-```
-1. typedef struct OH_CryptoEcPoint OH_CryptoEcPoint
+```c
+typedef struct OH_CryptoEcPoint OH_CryptoEcPoint
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义EC点结构体。
 

@@ -3,34 +3,31 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (AVCastPickerHelper)
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avsession (媒体会话管理) > Class (AVCastPickerHelper)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:15+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:f8c3a89b26ab13c59cc6b7d7cba2624365e301bc83a61cc1d62b763015a54f21
+scraped_at: 2026-09-02T15:02:23+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0757e0ba885ea0c96fa17dd7f76fea56d282c2469442c01fb265f789cbdaaa6b
 ---
 
-投播半模态对象，可拉起半模态窗口，选择投播设备。在使用前，需要创建AVCastPickerHelper实例。
+投播选择器对象，样式显示为半模态，实际会绑定全模态页面，可用于选择本地和投播设备。在使用前，需要创建AVCastPickerHelper实例。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 14开始支持。
 * AVCastPickerHelper样式显示为半模态，实际会绑定[全模态页面（bindContentCover）](ts-universal-attributes-modal-transition.md#bindcontentcover)。
+* 本模块从API版本26.0.0开始支持Wearable设备。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { avSession } from '@kit.AVSessionKit';
+```ts
+import { avSession } from '@kit.AVSessionKit';
 ```
 
 ## constructor14+
 
-PhonePC/2in1TabletTV
-
 constructor(context: Context)
 
-创建AVCastPickerHelper对象，获取context参考[getHostContext](arkts-apis-uicontext-uicontext.md#gethostcontext12)。
+创建AVCastPickerHelper对象，获取context请参考[getHostContext](arkts-apis-uicontext-uicontext.md#gethostcontext12)。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -53,39 +50,37 @@ constructor(context: Context)
 
 **示例：**
 
-```
-1. import { avSession } from '@kit.AVSessionKit';
+```ts
+import { avSession } from '@kit.AVSessionKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State message: string = 'hello world';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'hello world';
 
-8. build() {
-9. Row() {
-10. Column() {
-11. Text(this.message)
-12. .fontSize(40)
-13. .fontWeight(FontWeight.Bold)
-14. .onClick(() => {
-15. let context = this.getUIContext().getHostContext() as Context;
-16. let avCastPicker = new avSession.AVCastPickerHelper(context);
-17. })
-18. }
-19. .width('100%')
-20. }
-21. .height('100%')
-22. }
-23. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(40)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            let context = this.getUIContext().getHostContext() as Context;
+            let avCastPicker = new avSession.AVCastPickerHelper(context);
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
 ## select14+
 
-PhonePC/2in1TabletTV
-
 select(options?: AVCastPickerOptions): Promise<void>
 
-通过选择模式拉起AVCastPicker界面，用户可以选择投播设备。接口采用Promise异步返回形式，传入可选参数AVCastPickerOptions对象，无返回值。
+通过选择模式拉起AVCastPicker界面，用户可以选择投播设备。接口采用Promise异步返回形式，传入可选参数AVCastPickerOptions对象，无返回结果。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
@@ -113,36 +108,34 @@ select(options?: AVCastPickerOptions): Promise<void>
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { avSession } from '@kit.AVSessionKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { avSession } from '@kit.AVSessionKit';
 
-4. class MyPage {
-5. private avCastPicker: avSession.AVCastPickerHelper;
+class MyPage {
+  private avCastPicker: avSession.AVCastPickerHelper;
 
-7. constructor(context: common.Context) {
-8. this.avCastPicker = new avSession.AVCastPickerHelper(context);
-9. }
+  constructor(context: common.Context) {
+    this.avCastPicker = new avSession.AVCastPickerHelper(context);
+  }
 
-11. async selectCastDevice() {
-12. const avCastPickerOptions: avSession.AVCastPickerOptions = {
-13. sessionType: 'video',
-14. };
+  async selectCastDevice() {
+    const avCastPickerOptions: avSession.AVCastPickerOptions = {
+      sessionType: 'video',
+    };
 
-16. this.avCastPicker.select(avCastPickerOptions).then(() => {
-17. console.info('Succeeded in selecting.');
-18. });
-19. }
-20. }
+this.avCastPicker.select(avCastPickerOptions).then(() => {
+  console.info('Succeeded in selecting.');
+});
+  }
+}
 ```
 
 ## resetCommunicationDevice21+
 
-PhonePC/2in1TabletTV
-
 resetCommunicationDevice(): Promise<void>
 
-将应用通话设备恢复至默认设备。比如在语音通话场景下，手机设备的通话装置将恢复成听筒。使用Promise异步回调。
+将应用通话设备恢复至默认设备。例如，在语音通话场景下，手机设备的通话设备将恢复为听筒。使用Promise异步回调。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
@@ -156,21 +149,19 @@ resetCommunicationDevice(): Promise<void>
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { avSession } from '@kit.AVSessionKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { avSession } from '@kit.AVSessionKit';
 
-4. async function avCastPicker(context: common.Context) {
-5. let avCastPicker = new avSession.AVCastPickerHelper(context);
-6. avCastPicker.resetCommunicationDevice().then(() => {
-7. console.info('Succeeded in resetting communication device.');
-8. });
-9. }
+async function avCastPicker(context: common.Context) {
+  let avCastPicker = new avSession.AVCastPickerHelper(context);
+  avCastPicker.resetCommunicationDevice().then(() => {
+    console.info('Succeeded in resetting communication device.');
+  });
+}
 ```
 
 ## on('pickerStateChange')14+
-
-PhonePC/2in1TabletTV
 
 on(type: 'pickerStateChange', callback: Callback<AVCastPickerState>) : void
 
@@ -200,22 +191,20 @@ on(type: 'pickerStateChange', callback: Callback<AVCastPickerState>) : void
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { AVCastPickerState } from '@kit.AVSessionKit';
-3. import { avSession } from '@kit.AVSessionKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { AVCastPickerState } from '@kit.AVSessionKit';
+import { avSession } from '@kit.AVSessionKit';
 
-5. async function onPickerStateChange(context: common.Context) {
-6. let avCastPicker = new avSession.AVCastPickerHelper(context);
-7. avCastPicker.on('pickerStateChange', (state: AVCastPickerState) => {
-8. console.info(`picker state change : ${state}`);
-9. });
-10. }
+async function onPickerStateChange(context: common.Context) {
+  let avCastPicker = new avSession.AVCastPickerHelper(context);
+  avCastPicker.on('pickerStateChange', (state: AVCastPickerState) => {
+    console.info(`picker state change : ${state}`);
+  });
+}
 ```
 
 ## off('pickerStateChange')14+
-
-PhonePC/2in1TabletTV
 
 off(type: 'pickerStateChange', callback?: Callback<AVCastPickerState>) : void
 
@@ -229,8 +218,8 @@ off(type: 'pickerStateChange', callback?: Callback<AVCastPickerState>) : void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 取消对应的监听事件，支持事件'pickerStateChange'。 |
-| callback | Callback<[AVCastPickerState](js-apis-avcastpickerparam.md#avcastpickerstate)> | 否 | 回调函数，参数state是变化后的半模态窗口状态。  当监听事件取消成功，err为undefined，否则返回错误对象。  该参数为可选参数，若不填写该参数，则认为取消所有相关会话的事件监听。 |
+| type | string | 是 | 需要取消的监听事件类型，当前支持的事件类型为'pickerStateChange'。 |
+| callback | Callback<[AVCastPickerState](js-apis-avcastpickerparam.md#avcastpickerstate)> | 否 | 需要取消的回调函数，与on接口注册时的回调函数保持一致。如果不填写该参数，则取消所有已注册的回调。 |
 
 **错误码：**
 
@@ -243,12 +232,12 @@ off(type: 'pickerStateChange', callback?: Callback<AVCastPickerState>) : void
 
 **示例：**
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { avSession } from '@kit.AVSessionKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { avSession } from '@kit.AVSessionKit';
 
-4. async function onPickerStateChange(context: common.Context) {
-5. let avCastPicker = new avSession.AVCastPickerHelper(context);
-6. avCastPicker.off('pickerStateChange');
-7. }
+async function onPickerStateChange(context: common.Context) {
+  let avCastPicker = new avSession.AVCastPickerHelper(context);
+  avCastPicker.off('pickerStateChange');
+}
 ```

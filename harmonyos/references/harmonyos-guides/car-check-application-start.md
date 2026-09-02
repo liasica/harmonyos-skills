@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-check-app
 title: 主动获取HiCar的连接状态
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 获取HiCar连接状态 > 主动获取HiCar的连接状态
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e5a1c2b254eea198baaed8321c0a81e3edb7c3f5f6b289d8cd8e4905a57954b5
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:aec1af89f4fd30b18f49dca620ae43f63bd11197204aa92783f561dcbdec4316
 ---
 
 ## 场景介绍
 
 生态应用可以通过主动获取智慧出行连接状态接口来获取HiCar的连接状态（如：判断应用是否在HiCar上拉起）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CBrGGl-fQgenYKWfLi-xyQ/zh-cn_image_0000002558764970.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/3xwiGFe8T7mYaYKYWfpV6w/zh-cn_image_0000002736433555.png)
 
 ## 接口说明
 
@@ -51,37 +51,39 @@ SmartMobilityInfo业务数据（data）参数如下：
 
 1. 导入相关模块。
 
-   ```
-   1. import { smartMobilityCommon } from '@kit.CarKit';
-   2. import { UIAbility } from '@kit.AbilityKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { smartMobilityCommon } from '@kit.CarKit';
+   import { UIAbility } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 查询智慧出行连接状态。
 
    应用在适配HiCar时，可以实时查询接口来获取智慧出行连接状态（如：判断应用是否在HiCar上）。
 
-   ```
-   1. export default class EntryAbility extends UIAbility {
-   2. isAppOnHiCar(): boolean {
-   3. try {
-   4. // 应用所在的屏幕id
-   5. const currentDisplayId = this.context.config.displayId;
-   6. // 获取SmartMobilityAwareness实例
-   7. let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
-   8. // 获取当前智慧出行连接状态
-   9. let info: smartMobilityCommon.SmartMobilityInfo =
-   10. awareness.getSmartMobilityStatus(smartMobilityCommon.SmartMobilityType.HICAR);
-   11. const deviceDisplayId = Number(info.data["DISPLAY_ID"]);
-   12. if (currentDisplayId === deviceDisplayId) {
-   13. // 表示应用在对应的设备屏幕上
-   14. hilog.info(0x0000, 'testTag', 'app in on device screen');
-   15. return true;
-   16. }
-   17. } catch (e) {
-   18. // 捕获接口调用异常时的错误码并做相应处理
-   19. hilog.error(0x0000, 'testTag', `get smart mobility status error, error code: ${e?.code}`);
-   20. }
-   21. return false;
-   22. }
-   23. }
+   ```typescript
+   export default class EntryAbility extends UIAbility {
+     // ...
+     isAppOnHiCar(): boolean {
+       try {
+         // 应用所在的屏幕id
+         const currentDisplayId = this.context.config.displayId;
+         // 获取SmartMobilityAwareness实例
+         let awareness: smartMobilityCommon.SmartMobilityAwareness = smartMobilityCommon.getSmartMobilityAwareness();
+         // 获取当前智慧出行连接状态
+         let info: smartMobilityCommon.SmartMobilityInfo =
+           awareness.getSmartMobilityStatus(smartMobilityCommon.SmartMobilityType.HICAR);
+         const deviceDisplayId = Number(info.data['DISPLAY_ID']);
+         if (currentDisplayId === deviceDisplayId) {
+           // 表示应用在对应的设备屏幕上
+           hilog.info(0x0000, 'testTag', 'app in on device screen');
+           return true;
+         }
+       } catch (e) {
+         // 捕获接口调用异常时的错误码并做相应处理
+         hilog.error(0x0000, 'testTag', `get smart mobility status error, error code: ${e?.code}`);
+       }
+       return false;
+     }
+     // ...
+   }
    ```

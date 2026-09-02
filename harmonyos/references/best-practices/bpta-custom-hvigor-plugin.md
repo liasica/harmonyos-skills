@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-custom-hvi
 title: 定制hvigor插件
 breadcrumb: 最佳实践 > 编译构建 > 定制hvigor插件
 category: best-practices
-scraped_at: 2026-04-29T14:14:22+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:79f0b7326ad2b7684605129beee8f6df809f213bb3e342b553872f82f2382c90
+scraped_at: 2026-09-02T15:03:24+08:00
+doc_updated_at: 2026-06-02
+content_hash: sha256:ed6215d9df918e636619310e04499cd4acc7fd1ad71d93636771b81d2c63ab50
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ content_hash: sha256:79f0b7326ad2b7684605129beee8f6df809f213bb3e342b553872f82f23
 
 定制hvigor插件，就是在编译构建的过程中插入开发者需要的自定义任务，将这些自定义任务抽象后封装成可复用的部分，通过输出plugin插件的目标形式，实现编译构建个性化逻辑的复用和共享分发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/IG-sReqFS42pZ3wwxzfV4w/zh-cn_image_0000002229335981.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/hBOf2TAGQj6VS5qRQnu5nA/zh-cn_image_0000002229335981.png "点击放大")
 
 如上图所示，hvigor插件的工作原理：
 
@@ -93,71 +93,67 @@ hvigor主要提供了两种方式以实现插件的开发：
 
    插件代码示例如下：
 
+   ```typescript
+   import fs from 'fs';
+   import path from 'path';
+
+   interface OhPackage {
+     name: string;
+     version: number;
+     description: string;
+     author: string;
+   }
+
+   export function renameHarTask(str?: string) {
+     return {
+       pluginId: 'RenameHarTaskID',
+       apply(pluginContext) {
+         pluginContext.registerTask({
+           // Write custom tasks
+           name: 'renameHarTask',
+           run: (taskContext) => {
+             // Read oh-package.json5 and parse the version
+             const packageFile = path.join(taskContext.modulePath, 'oh-package.json5');
+             let fileContent = fs.readFileSync(packageFile, 'utf8');
+             const content: OhPackage = JSON.parse(fileContent);
+             const version = content.version;
+             const author = content.author;
+             const sourceFile = path.join(taskContext.modulePath, 'build/default/outputs/default', `${taskContext.moduleName}.har`);
+             const targetPath = path.join(taskContext.modulePath, 'build/default/outputs/target');
+             const targetFile = path.join(targetPath, `${taskContext.moduleName}-${version}-${author}.har`);
+
+             // Create Directory
+             fs.mkdir(targetPath, { recursive: true }, (err) => {
+               if (err) {
+                 throw err;
+               }
+               // Move and modify product file names
+               fs.rename(sourceFile, targetFile, (err) => {
+               });
+             });
+           },
+           // Confirm custom task insertion position
+           dependencies: ['default@PackageHar'],
+           postDependencies: ['assembleHar']
+         })
+       }
+     }
+   }
    ```
-   1. import fs from 'fs';
-   2. import path from 'path';
-
-   4. interface OhPackage {
-   5. name: string;
-   6. version: number;
-   7. description: string;
-   8. author: string;
-   9. }
-
-   11. export function renameHarTask(str?: string) {
-   12. return {
-   13. pluginId: 'RenameHarTaskID',
-   14. apply(pluginContext) {
-   15. pluginContext.registerTask({
-   16. // Write custom tasks
-   17. name: 'renameHarTask',
-   18. run: (taskContext) => {
-   19. // Read oh-package.json5 and parse the version
-   20. const packageFile = path.join(taskContext.modulePath, 'oh-package.json5');
-   21. let fileContent = fs.readFileSync(packageFile, 'utf8');
-   22. const content: OhPackage = JSON.parse(fileContent);
-   23. const version = content.version;
-   24. const author = content.author;
-   25. const sourceFile = path.join(taskContext.modulePath, 'build/default/outputs/default', `${taskContext.moduleName}.har`);
-   26. const targetPath = path.join(taskContext.modulePath, 'build/default/outputs/target');
-   27. const targetFile = path.join(targetPath, `${taskContext.moduleName}-${version}-${author}.har`);
-
-   29. // Create Directory
-   30. fs.mkdir(targetPath, { recursive: true }, (err) => {
-   31. if (err) {
-   32. throw err;
-   33. }
-   34. // Move and modify product file names
-   35. fs.rename(sourceFile, targetFile, (err) => {
-   36. });
-   37. });
-   38. },
-   39. // Confirm custom task insertion position
-   40. dependencies: ['default@PackageHar'],
-   41. postDependencies: ['assembleHar']
-   42. })
-   43. }
-   44. }
-   45. }
-   ```
-
-   [pure\_plugin.ts](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/customPlugin/npm_plugin/pure_plugin.ts#L17-L61)
 3. 共享插件：有两种方式可选。
    * [发布插件](../harmonyos-guides/ide-hvigor-plugin.md#section855411147)：插件遵循npm发布规范，将其打包后发布到公共或自建的镜像仓库中。
    * 共享离线包：将插件工程压缩打包后分享出去。
 4. [使用插件](../harmonyos-guides/ide-hvigor-plugin.md#section60171414358)：在工程中的hvigor/hvigor-config.json5文件"dependencies"节点下添加插件依赖，例如"@bpta/custom\_plugin": "1.0.0"，然后执行DevEco Studio菜单File -> Sync and Refresh Project进行工程同步后，在模块中的hvigorfile.ts导入并使用插件方法。参考如下：
 
-   ```
-   1. import { harTasks } from '@ohos/hvigor-ohos-plugin';
-   2. import { renameHarTask } from '@bpta/custom_plugin';
+   ```typescript
+   import { harTasks } from '@ohos/hvigor-ohos-plugin';
+   import { renameHarTask } from '@bpta/custom_plugin';
 
-   4. export default {
-   5. system: harTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
-   6. plugins: [renameHarTask()]         /* Custom plugin to extend the functionality of Hvigor. */
-   7. }
+   export default {
+     system: harTasks, /* Built-in plugin of Hvigor. It cannot be modified. */
+     plugins: [renameHarTask()]         /* Custom plugin to extend the functionality of Hvigor. */
+   }
    ```
-
-   [hvigorfile.ts](https://gitcode.com/HarmonyOS_Samples/BestPracticeSnippets/blob/master/customPlugin/library/hvigorfile.ts#L2-L8)
 5. 执行Build -> Make Module编译，编译产物的文件名被修改为“name-version-author.har”的组成形式，同时生成路径从default目录改到了target目录下。结果如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/zLzZ5V8lSKWCBPVILG8AcA/zh-cn_image_0000002229335985.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Ns1GlmzrSH2PSUOsi5bgMQ/zh-cn_image_0000002229335985.png "点击放大")

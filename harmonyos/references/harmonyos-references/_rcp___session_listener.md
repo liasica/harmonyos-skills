@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___se
 title: Rcp_SessionListener
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_SessionListener
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ac359f59d489f05bf5615324a24bb434119dca5ab8ae5bb6983ea0a980cca587
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0cf5048269e17708fa99be5a17df1e6caf83315b250e3a6b611dae837c51a3aa
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 关闭或取消会话事件的回调函数。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### onCanceled
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void(* Rcp_SessionListener::onCanceled) (void)
+```cpp
+void(* Rcp_SessionListener::onCanceled) (void)
 ```
 
 **描述**
@@ -51,10 +41,8 @@ PhonePC/2in1TabletTVWearable
 
 ### onClosed
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void(* Rcp_SessionListener::onClosed) (void)
+```cpp
+void(* Rcp_SessionListener::onClosed) (void)
 ```
 
 **描述**

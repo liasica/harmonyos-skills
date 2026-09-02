@@ -1,28 +1,55 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codegenie-releasenote
 title: 版本说明
-breadcrumb: 指南 > 使用AI智能辅助编程 > 版本说明
+breadcrumb: 指南 > 使用AI智能辅助编程（不推荐） > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:45:08+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:819f192061b39052184f37dd154f0d198d268553085deb06da3f0bafa6c326be
+scraped_at: 2026-09-02T15:00:30+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:811bbaf53b8d9d0d367dbcef6bf34d22f02d0fba90ed0b9dd6c267afb40b2753
 ---
+
+## 26.0.0.621
+
+### 新增特性
+
+* UI Verification的内置工具支持折叠和展开特性，以及支持动态效果分析。具体请参考[自定义智能体（Agent）配置和调用](ide-agent-use.md)。
+
+## 26.0.0.461
+
+### 新增特性
+
+* 使用自定义Agent和HarmonyOS Act智能体时，支持展示当前会话token的使用量。
+* 选择HarmonyOS Act智能体进行对话、代码生成、代码修改等操作后，将鼠标悬浮在对话框的时间点上，会弹出Back to This Moment，点击可回退对话。
+* 工程问答支持调用MCP Market工具，调用LSP（Language Server Protocol，语言服务器协议）工具，以及ArkTS和C++代码语义检索能力。具体请参考[工程问答](ide-project-ask.md)。
+* 编辑区对话Inline Chat支持内置模型使用快捷指令，如File Comments和Parameter Validation，进行代码文件分析和参数校验等。具体请参考[编辑区对话](ide-edit-area-code-generation.md)。
+* 自定义智能体（Agent）新增UI Verification的内置工具。具体请参考[自定义智能体（Agent）配置和调用](ide-agent-use.md)。
+* 支持创建自定义指令，该功能允许开发者将常用的提示词和工作流封装为可复用的命令，提升日常开发效率。具体请参考[自定义指令（Commands）配置](ide-commands.md)。
+
+### 变更特性
+
+* 代码续写设置入口变更为Enable Flow Editor，打开续写设置后，在代码编辑器区域，支持自动续写代码和给出代码修改建议。具体请参考[代码续写](ide-code-continuation.md)。
+
+## 6.1.1.280
+
+### 变更特性
+
+* 智能体的限制字符数为100000字符。
 
 ## 6.1.0.830
 
 ### 新增特性
 
-* 新增支持配置Skills。具体请参考[技能（Skills）配置](ide-skills.md)。
+新增支持配置Skills。具体请参考[技能（Skills）配置](ide-skills.md)。
 
 ### 变更特性
 
-* HarmonyOS Ask智能体和HarmonyOS Act智能体不再限制字符数。
+* 智能体不再限制字符数。
 
 ## 6.1.0.818
 
 ### 变更特性
 
-* HarmonyOS Ask智能体和HarmonyOS Act智能体的限制字符数放开到100000字符。
+* 智能体的限制字符数放开到100000字符。
 
 ## 6.1.0.816
 
@@ -31,7 +58,7 @@ content_hash: sha256:819f192061b39052184f37dd154f0d198d268553085deb06da3f0bafa6c
 * HarmonyOS Ask智能体支持切换模型和配置三方模型。
 * 新增工程问答能力。具体请参考[工程问答](ide-project-ask.md)。
 * 代码续写支持添加模型和提示词。具体请参考[代码续写](ide-code-continuation.md)。
-* 页面生成支持使用和切换模型，支持查看历史生成信息和生成文件信息。具体请参考[万能卡片生成](ide-codegenie-service-widget.md)。
+* 页面生成支持使用和切换模型，支持查看历史生成信息和生成文件信息。具体请参考[页面生成](ide-page-generation.md)。
 * 支持在智慧调优中使用和切换模型。具体请参考[智慧调优](ide-ai-profiler.md)。
 * 支持在MCP配置界面添加Node (npx) Path和Python (uvx) Path，支持从MCP市场添加MCP工具。具体请参考[模型上下文协议（MCP）配置](ide-agent-mcp.md)。
 * 支持通过服务提供商接入三方模型，支持接入Ollama协议的三方模型。具体请参考[模型（Model）配置](ide-agent-model.md)。
@@ -49,7 +76,7 @@ content_hash: sha256:819f192061b39052184f37dd154f0d198d268553085deb06da3f0bafa6c
 ### 新增特性
 
 * HarmonyOS Act智能体支持切换模型和配置三方模型。
-* 支持通过服务提供商接入第三方模型，URL接入时支持使用Ollama协议的三方模型。具体请参考[模型（Model）配置](ide-agent-model.md)。
+* 支持通过服务提供商接入三方模型，URL接入时支持使用Ollama协议的三方模型。具体请参考[模型（Model）配置](ide-agent-model.md)。
 * 自定义智能体（Agent）配置时，DevEco Studio内置工具新增To Do工具，智能体支持切换模型和配置三方模型。具体请参考[自定义智能体（Agent）配置和调用](ide-agent-use.md)。
 
 ### 增强特性
@@ -62,7 +89,7 @@ content_hash: sha256:819f192061b39052184f37dd154f0d198d268553085deb06da3f0bafa6c
 
 * Inline Edit入口名称变更为Inline Chat。具体请参考[编辑区对话](ide-edit-area-code-generation.md)。
 * 通过CodeGenie生成页面后，预览时支持切换亮色和暗色模式。具体请参考[页面生成](ide-page-generation.md)。
-* 智慧调优增加了Snapshot对比场景的分析能力，主要包括监听事件、动画资源、泄露次数分析等内存问题场景。具体请参考[智慧调优](ide-ai-profiler.md)。
+* 智慧调优增加了Snapshot对比场景的分析能力，主要包括监听事件、动画资源、泄漏次数分析等内存问题场景。具体请参考[智慧调优](ide-ai-profiler.md)。
 * CodeGenie页面的字体大小可通过鼠标滚轮调节，字体大小范围为8pt~24pt，以及字体大小可被记忆。
 
 ## 6.0.2.640
@@ -85,7 +112,7 @@ content_hash: sha256:819f192061b39052184f37dd154f0d198d268553085deb06da3f0bafa6c
 ### 增强特性
 
 * HarmonyOS Ask智能体可读取和修改工程代码，以及在问答区编译验证。
-* 删除对话框中用于上下文定位的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/BbHdkgx-RxCCxFPn7xtTQA/zh-cn_image_0000002530753628.png)图标，可直接对选中的代码段或代码文件分析。
+* 删除对话框中用于上下文定位的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/FrHAcZ1DQfK4OZM08CGjrw/zh-cn_image_0000002731383167.png)图标，可直接对选中的代码段或代码文件分析。
 * 智能问答和代码生成能力增强，更加高效理解用户意图。
 
 ## 6.0.1.246
@@ -100,7 +127,7 @@ content_hash: sha256:819f192061b39052184f37dd154f0d198d268553085deb06da3f0bafa6c
 ### 新增特性
 
 * 新增生成意图装饰器和添加意图插件能力，以及DevEco Studio新增内嵌的小艺智能平台。具体请参考[意图装饰器生成和智能体创建](ide-insight-intent2.md)。
-* 智能问答新增添加本地的知识库，并根据知识库进行指定风格的上下文问答功能。具体请参考[本地知识库配置](ide-ocal-knowledge.md)。
+* 智能问答新增本地的知识库，并根据知识库进行指定风格的上下文问答功能。具体请参考[本地知识库配置](ide-ocal-knowledge.md)。
 
 ## 6.0.0.828
 

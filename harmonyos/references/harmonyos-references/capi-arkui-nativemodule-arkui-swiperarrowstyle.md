@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_SwiperArrowStyle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_SwiperArrowStyle
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:32+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:e0e24c3191b4dd5b6c1a6935dba3e458e36ee41cc91c02d9d13786c683b34d03
+scraped_at: 2026-09-02T14:51:52+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:84b93bc5187d9ce0c5d56860ef66284628017151fe968d9cf8e9fd5579d71d3d
 ---
 
-```
-1. typedef struct ArkUI_SwiperArrowStyle ArkUI_SwiperArrowStyle
+```c
+typedef struct ArkUI_SwiperArrowStyle ArkUI_SwiperArrowStyle
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义 Swiper 组件的导航箭头风格。
+定义Swiper组件的导航箭头样式。
 
 **起始版本：** 19
 

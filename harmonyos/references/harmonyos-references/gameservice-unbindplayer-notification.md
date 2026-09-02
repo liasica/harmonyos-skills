@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 解绑账号通知
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 解绑账号通知
 category: harmonyos-references
-scraped_at: 2026-04-29T14:07:31+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:be2fc7287a6ffacbe93c5a17c99f8b58f96825e469589f31a6a146092393c13a
+scraped_at: 2026-09-02T15:02:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9ca87fa1816619ea283d844daced4b47a6e58189e5d073c5aa04c50111543a5e
 ---
 
 ## 功能介绍
@@ -14,9 +14,9 @@ content_hash: sha256:be2fc7287a6ffacbe93c5a17c99f8b58f96825e469589f31a6a14609239
 
 ## 场景描述
 
-在AppGallery Connect[配置回调地址](../harmonyos-guides/gameservice-address.md)后，华为游戏服务器将在玩家注销华为账号后提醒开发者解绑账号。若开发者服务器返回结果为非成功响应，华为游戏服务器将周期性发送本次关键事件的通知，建议开发者服务端在收到通知后立即返回成功响应，避免堆积通知消息。
+在AppGallery Connect[配置回调地址](../harmonyos-guides/gameservice-address.md)后，华为游戏服务器将在玩家注销华为账号后通知开发者，以便开发者解绑账号。若开发者服务器返回结果为非成功响应，华为游戏服务器将周期性发送本次关键事件的通知，建议开发者服务端在收到通知后立即返回成功响应，避免堆积通知消息。
 
-说明
+**说明** 
 
 为保证可靠性，系统具备补偿机制，所以可能出现重发的通知比预期的多。
 
@@ -49,15 +49,15 @@ content_hash: sha256:be2fc7287a6ffacbe93c5a17c99f8b58f96825e469589f31a6a14609239
 
 ## 请求示例
 
-```
-1. POST {接口url}
-2. Host: xxx
-3. Content-Type: application/json
-4. {
-5. "appIds": ["109***688", "691***237"],
-6. "teamPlayerId": "E5B*****************E9B",
-7. "sign": "J0Eslg0p***tKR37AB"
-8. }
+```java
+POST {接口url} HTTP/1.1
+Host: xxx
+Content-Type: application/json
+{
+    "appIds": ["109***688", "691***237"],
+    "teamPlayerId": "E5B*****************E9B",
+    "sign": "J0Eslg0p***tKR37AB"
+}
 ```
 
 ## 响应参数
@@ -68,12 +68,12 @@ content_hash: sha256:be2fc7287a6ffacbe93c5a17c99f8b58f96825e469589f31a6a14609239
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "result": 0
-5. }
+```java
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+    "result": 0
+}
 ```
 
 ## 验签机制
@@ -83,45 +83,45 @@ content_hash: sha256:be2fc7287a6ffacbe93c5a17c99f8b58f96825e469589f31a6a14609239
 3. 排序完成之后，将所有参与签名的参数值进行urlencode之后以“&”字符连接成字符串，例如“a=xxxxxx&b=xxxxxxx&c=xxxxxx”，此字符串便是待验签字符串。
 4. 将待验签字符串使用游戏公钥按照RSA算法（SHA256WithRSA/PSS）进行签名，并与sign参数中的签名字符串进行一致性验证。
 
-   说明
+   **说明** 
 
    游戏公钥获取请参见[获取游戏密钥](../harmonyos-guides/gameservice-key.md)。
 
    Java示例代码如下：
 
-   ```
-   1. // List、Map等基本类型的导包均由JDK自带，其它导包由业务侧自定义导入
-   2. // 组装body内的参数，此处参数值仅为示例
-   3. List<String> appIds =  Arrays.asList("appId1","appId2");
-   4. Map<String, String> paramsMap = new HashMap<>();
-   5. paramsMap.put("appIds", StringUtils.join(appIds, ","));
-   6. paramsMap.put("teamPlayerId", "teamPlayerId");
+   ```java
+   // List、Map等基本类型的导包均由JDK自带，其它导包由业务侧自定义导入
+   // 组装body内的参数，此处参数值仅为示例
+   List<String> appIds =  Arrays.asList("109***688","691***237");
+   Map<String, String> paramsMap = new HashMap<>();
+   paramsMap.put("appIds", StringUtils.join(appIds, ","));
+   paramsMap.put("teamPlayerId", "E5B***E9B");
 
-   8. // 对参数进行字典序排序
-   9. Map<String, String> tempMap = new TreeMap<>(paramsMap);
-   10. // 拼接参数
-   11. StringBuffer base = new StringBuffer();
-   12. for (Map.Entry<String, String> entry : tempMap.entrySet()) {
-   13. String key = entry.getKey();
-   14. String value = entry.getValue();
-   15. base.append(key).append('=').append(null == value ? "" : URLEncoder.encode(value, "UTF-8")).append('&');
-   16. }
-   17. String signStr = "";
-   18. if (base.length() > 0) {
-   19. signStr = base.deleteCharAt(base.length() - 1).toString();
-   20. }
+   // 对参数进行字典序排序
+   Map<String, String> tempMap = new TreeMap<>(paramsMap);
+   // 拼接参数
+   StringBuffer base = new StringBuffer();
+   for (Map.Entry<String, String> entry : tempMap.entrySet()) {
+    String key = entry.getKey();
+    String value = entry.getValue();
+    base.append(key).append('=').append(null == value ? "" : URLEncoder.encode(value, "UTF-8")).append('&');
+   }
+   String signStr = "";
+   if (base.length() > 0) {
+    signStr = base.deleteCharAt(base.length() - 1).toString();
+   }
 
-   22. // 获取验签公钥，具体实现方法由开发者自行决定，此处仅为接口示例
-   23. String publicKey = "xxx";
-   24. String sign = "sign";
+   // 获取验签公钥，具体实现方法由开发者自行决定，此处仅为接口示例
+   String publicKey = "xxx";
+   String sign = "sign";
 
-   26. // 验签
-   27. byte[] keyBytes = Base64.decodeBase64(publicKey);
-   28. X509EncodedKeySpec pkcs8KeySpec = new X509EncodedKeySpec(keyBytes);
-   29. KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-   30. PublicKey publicK = keyFactory.generatePublic(pkcs8KeySpec);
-   31. Signature signature = Signature.getInstance("SHA256WithRSA/PSS", new BouncyCastleProvider());
-   32. signature.initVerify(publicK);
-   33. signature.update(signStr.getBytes("UTF-8"));
-   34. signature.verify(Base64.decodeBase64(sign));
+   // 验签
+   byte[] keyBytes = Base64.decodeBase64(publicKey);
+   X509EncodedKeySpec pkcs8KeySpec = new X509EncodedKeySpec(keyBytes);
+   KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+   PublicKey publicK = keyFactory.generatePublic(pkcs8KeySpec);
+   Signature signature = Signature.getInstance("SHA256WithRSA/PSS", new BouncyCastleProvider());
+   signature.initVerify(publicK);
+   signature.update(signStr.getBytes("UTF-8"));
+   signature.verify(Base64.decodeBase64(sign));
    ```

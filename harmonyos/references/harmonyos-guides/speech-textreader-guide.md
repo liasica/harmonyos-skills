@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speech-textre
 title: 朗读控件
 breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > 朗读控件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:33f8982bc50f11fa7ae194d5ec38c7c9149e5164fd9761cd600ce4105ca1fac7
+scraped_at: 2026-09-02T15:00:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:220c5ad11c89cc6746849fa0e2f5641afc8dc0a6b59b5b24fe8da9eb50968e45
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:33f8982bc50f11fa7ae194d5ec38c7c9149e5164fd9761cd600ce4105ca
 
 本章节将向您介绍如何使用朗读组件，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ao9tUI0DTxOuUzOUmIZnTw/zh-cn_image_0000002558606196.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/13wl6v2qTyK4PeG1BP9XhQ/zh-cn_image_0000002706835430.png)
 
 ## 接口说明
 
@@ -30,25 +30,25 @@ content_hash: sha256:33f8982bc50f11fa7ae194d5ec38c7c9149e5164fd9761cd600ce4105ca
 
 1. 首先从项目根目录进入/src/main/ets/entryability/EntryAbility.ets文件，将WindowManager添加至工程。
 
-   ```
-   1. import { WindowManager } from '@kit.SpeechKit';
-   2. import { ConfigurationConstant } from '@kit.AbilityKit';
+   ```typescript
+   import { WindowManager } from '@kit.SpeechKit';
+   import { ConfigurationConstant } from '@kit.AbilityKit';
    ```
 2. （可选）在onWindowStageCreate(windowStage: window.WindowStage)生命周期方法中，添加setWindowStage方法设置窗口管理器。
 
-   ```
-   1. onWindowStageCreate(windowStage: window.WindowStage): void {
-   2. console.info('Ability onWindowStageCreate');
-   3. WindowManager.setWindowStage(windowStage);
-
-   5. windowStage.loadContent('pages/Index', (err, data) => {
-   6. if (err) {
-   7. console.error(`Failed to load the content. Code: ${err.code}, message: ${err.message}`);
-   8. return;
-   9. }
-   10. console.info(`Succeeded in loading the content. Data: ${JSON.stringify(data)}.` );
-   11. });
-   12. }
+   ```typescript
+   onWindowStageCreate(windowStage: window.WindowStage): void {
+     console.info('Ability onWindowStageCreate');
+     WindowManager.setWindowStage(windowStage);
+     
+     windowStage.loadContent('pages/Index', (err, data) => {
+       if (err.code) {
+         console.error(`Failed to load the content. Code: ${err.code}, message: ${err.message}`);
+         return;
+       }
+       console.info(`Succeeded in loading the content. Data: ${JSON.stringify(data)}.` );
+     });
+   }
    ```
 3. 在onCreate()生命周期方法中，设置应用的颜色模式，使控件颜色模式跟应用的颜色模式保持一致。
 
@@ -57,384 +57,538 @@ content_hash: sha256:33f8982bc50f11fa7ae194d5ec38c7c9149e5164fd9761cd600ce4105ca
 
    下面以自动跟随系统切换为例。
 
-   ```
-   1. onCreate(): void {
-   2. this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-   3. }
+   ```typescript
+   onCreate(): void {
+     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+   }
    ```
 4. 从项目根目录进入/src/main/ets/pages/Index.ets文件，在使用朗读控件前，将实现朗读控件和其他相关的类添加至工程。
 
-   ```
-   1. import { TextReader, TextReaderIcon, ReadStateCode } from '@kit.SpeechKit';
+   ```typescript
+   import { TextReader, TextReaderIcon, ReadStateCode } from '@kit.SpeechKit';
    ```
 5. 简单配置页面的布局，加入听筒图标，并且设置onClick点击事件。
 
-   ```
-   1. /**
-   2. * 播放状态
-   3. */
-   4. @State readState: ReadStateCode = ReadStateCode.WAITING;
+   ```typescript
+   /**
+    * 播放状态
+    */
+   @State readState: ReadStateCode = ReadStateCode.WAITING;
 
-   6. build() {
-   7. Column() {
-   8. TextReaderIcon({ readState: this.readState })
-   9. .margin({ right: 20 })
-   10. .width(32)
-   11. .height(32)
-   12. .onClick(() => {
-   13. // 设置点击事件
-   14. // ...
-   15. })
-   16. }
-   17. }
+   build() {
+       Column() {
+         TextReaderIcon({ readState: this.readState })
+           .margin({ right: 20 })
+           .width(32)
+           .height(32)
+           .onClick(() => {
+               // 设置点击事件
+               // ...
+           })
+       }
+   }
    ```
 6. 初始化朗读控件。
 
-   ```
-   1. // 用于显示当前页的按钮状态
-   2. @State isInit: boolean = false;
-   3. /**
-   4. * 待加载的文章
-   5. */
-   6. @State readInfoList: TextReader.ReadInfo[] = [];
-   7. @State selectedReadInfo: TextReader.ReadInfo = this.readInfoList[0];
+   ```typescript
+   // 用于显示当前页的按钮状态
+   @State isInit: boolean = false;
+   /**
+    * 待加载的文章
+    */
+   @State readInfoList: TextReader.ReadInfo[] = [];
+   @State selectedReadInfo: TextReader.ReadInfo = this.readInfoList[0];
 
-   9. async aboutToAppear() {
-   10. // ...
-   11. void this.init();
-   12. /**
-   13. * 加载数据
-   14. */
-   15. let readInfoList: TextReader.ReadInfo[] = [{
-   16. id: '001',
-   17. title: {
-   18. text:'水调歌头.明月几时有',
-   19. isClickable:true
-   20. },
-   21. author:{
-   22. text:'宋.苏轼',
-   23. isClickable:true
-   24. },
-   25. date: {
-   26. text:'2024/01/01',
-   27. isClickable:false
-   28. },
-   29. bodyInfo: '明月几时有？把酒问青天。'
-   30. }];
-   31. this.readInfoList = readInfoList;
-   32. this.selectedReadInfo = this.readInfoList[0];
-   33. // ...
-   34. }
+   async aboutToAppear() {
+     // ...
+     void this.init();
+     /**
+      * 加载数据
+      */
+     let readInfoList: TextReader.ReadInfo[] = [{
+       id: '001',
+       title: {
+         text:'水调歌头.明月几时有',
+         isClickable:true
+       },
+       author:{
+         text:'宋.苏轼',
+         isClickable:true
+       },
+       date: {
+         text:'2024/01/01',
+         isClickable:false
+       },
+       bodyInfo: '明月几时有？把酒问青天。'
+     }];
+     this.readInfoList = readInfoList;
+     this.selectedReadInfo = this.readInfoList[0];
+     // ...
+   }
 
-   36. /**
-   37. * 初始化
-   38. */
-   39. async init() {
-   40. const readerParam: TextReader.ReaderParam = {
-   41. isVoiceBrandVisible: true,
-   42. businessBrandInfo: {
-   43. panelName: '小艺朗读',
-   44. panelIcon: $r('app.media.startIcon')
-   45. }
-   46. }
-   47. try {
-   48. let context: Context | undefined = this.getUIContext().getHostContext()
-   49. if (context) {
-   50. await TextReader.init(context, readerParam);
-   51. this.isInit = true;
-   52. this.setActionListener();
-   53. }
-   54. } catch (err) {
-   55. console.error(`TextReader failed to init. Code: ${err.code}, message: ${err.message}`);
-   56. }
-   57. }
+   /**
+    * 初始化
+    */
+   async init() {
+     const readerParam: TextReader.ReaderParam = {
+       isVoiceBrandVisible: true,
+       businessBrandInfo: {
+         panelName: '小艺朗读',
+         panelIcon: $r('app.media.startIcon')
+       }
+     }
+     try {
+       let context: Context | undefined = this.getUIContext().getHostContext()
+       if (context) {
+         await TextReader.init(context, readerParam);
+         this.isInit = true;
+         this.setActionListener();
+       }
+     } catch (err) {
+       console.error(`TextReader failed to init. Code: ${err.code}, message: ${err.message}`);
+     }
+   }
 
-   59. onStateChanged = (state: TextReader.ReadState) => {
-   60. if (this.selectedReadInfo?.id === state.id) {
-   61. this.readState = state.state;
-   62. } else {
-   63. this.readState = ReadStateCode.WAITING;
-   64. }
-   65. }
+   onStateChanged = (state: TextReader.ReadState) => {
+     if (this.selectedReadInfo?.id === state.id) {
+       this.readState = state.state;
+     } else {
+       this.readState = ReadStateCode.WAITING;
+     }
+   }
 
-   67. // 设置操作监听
-   68. setActionListener() {
-   69. TextReader.on('stateChange', (state: TextReader.ReadState) => {
-   70. this.onStateChanged(state);
-   71. });
-   72. // 在列表页无更多内容时，会显示加载失败，需要设置requestMore监听，调用loadMore函数以获得正确的显示信息。
-   73. TextReader.on('requestMore', () => {
-   74. TextReader.loadMore([], true);
-   75. })
-   76. }
+   // 设置操作监听
+   setActionListener() {
+     TextReader.on('stateChange', (state: TextReader.ReadState) => {
+       this.onStateChanged(state);
+     });
+     // 在列表页无更多内容时，会显示加载失败，需要设置requestMore监听，调用loadMore函数以获得正确的显示信息。
+     TextReader.on('requestMore', () => {
+       TextReader.loadMore([], true);
+     })
+   }
 
-   78. // 注销监听，根据业务情况在合适的时机调用
-   79. releaseActionListener() {
-   80. TextReader.off('stateChange');
-   81. TextReader.off('requestMore');
-   82. }
+   // 注销监听，根据业务情况在合适的时机调用
+   releaseActionListener() {
+     TextReader.off('stateChange');
+     TextReader.off('requestMore');
+   }
    ```
 7. （可选）在setActionListener方法中设置更多监听，在用户与控件进行交互时触发回调通知开发者。注销监听，监听结束后进行释放。
 
-   ```
-   1. // 设置监听
-   2. setActionListener() {
-   3. TextReader.on('setArticle', async (id: string) => { console.info(`setArticle ${id}`) });
-   4. TextReader.on('clickArticle', (id: string) => {console.info(`onClickArticle ${id}`) });
-   5. TextReader.on('clickAuthor', (id: string) => { console.info(`onClickAuthor ${id}`) });
-   6. TextReader.on('clickNotification',  (id: string) => { console.info(`onClickNotification ${id}`) });
-   7. TextReader.on('showPanel', () => { console.info(`onShowPanel`) });
-   8. TextReader.on('hidePanel', () => { console.info(`onHidePanel`) });
-   9. // ...
-   10. }
-   11. // 注销监听
-   12. releaseActionListener() {
-   13. TextReader.off('setArticle');
-   14. TextReader.off('clickArticle');
-   15. TextReader.off('clickAuthor');
-   16. TextReader.off('clickNotification');
-   17. TextReader.off('showPanel');
-   18. TextReader.off('hidePanel');
-   19. // ...
-   20. }
+   ```typescript
+   // 设置监听
+   setActionListener() {
+     TextReader.on('setArticle', async (id: string) => { console.info(`setArticle ${id}`) });
+     TextReader.on('clickArticle', (id: string) => {console.info(`onClickArticle ${id}`) });
+     TextReader.on('clickAuthor', (id: string) => { console.info(`onClickAuthor ${id}`) });
+     TextReader.on('clickNotification',  (id: string) => { console.info(`onClickNotification ${id}`) });
+     TextReader.on('showPanel', () => { console.info(`onShowPanel`) });
+     TextReader.on('hidePanel', () => { console.info(`onHidePanel`) });
+     // ...
+   }
+   // 注销监听
+   releaseActionListener() {
+     TextReader.off('setArticle');
+     TextReader.off('clickArticle');
+     TextReader.off('clickAuthor');
+     TextReader.off('clickNotification');
+     TextReader.off('showPanel');
+     TextReader.off('hidePanel');
+     // ...
+   }
    ```
 8. 启动朗读控件。
 
-   ```
-   1. build() {
-   2. Column() {
-   3. TextReaderIcon({ readState: this.readState })
-   4. // ...
-   5. .onClick(() => {
-   6. try {
-   7. void TextReader.start(this.readInfoList, this.selectedReadInfo?.id);
-   8. } catch (err) {
-   9. console.error(`TextReader failed to start. Code: ${err.code}, message: ${err.message}`);
-   10. }
-   11. })
-   12. }
-   13. }
+   ```typescript
+   build() {
+     Column() {
+       TextReaderIcon({ readState: this.readState })
+         // ...
+         .onClick(() => {
+           try {
+             void TextReader.start(this.readInfoList, this.selectedReadInfo?.id);
+           } catch (err) {
+             console.error(`TextReader failed to start. Code: ${err.code}, message: ${err.message}`);
+           }
+         })
+     }
+   }
    ```
 9. （可选）若要配置长时任务，需要在[module.json5配置文件](module-configuration-file.md)中添加ohos.permission.KEEP\_BACKGROUND\_RUNNING权限，并且加入backgroundModes选项，然后在readerParam中将keepBackgroundRunning配置为true，确保朗读控件后台播报正常。
 
-   ```
-   1. // module.json5
-   2. {
-   3. "module": {
-   4. // ...
-   5. "requestPermissions": [
-   6. {
-   7. "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
-   8. "usedScene": {
-   9. "abilities": [
-   10. "FormAbility"
-   11. ],
-   12. "when": "inuse"
-   13. }
-   14. },
-   15. ],
-   16. "abilities": [
-   17. {
-   18. // ...
-   19. "backgroundModes": [
-   20. "audioPlayback"
-   21. ],
-   22. // ...
-   23. }
-   24. ]
-   25. }
-   26. }
+   ```json5
+   // module.json5
+   {
+     "module": {
+       // ...
+       "requestPermissions": [
+         {
+           "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
+           "usedScene": {
+             "abilities": [
+               "FormAbility"
+             ],
+             "when": "inuse"
+           }
+         },
+       ],
+       "abilities": [
+         {
+           // ...
+           "backgroundModes": [
+             "audioPlayback"
+           ],
+           // ...
+         }
+       ]
+     }
+   }
 
-   28. // Index.ets
-   29. async init() {
-   30. const readerParam: TextReader.ReaderParam = {
-   31. // ...
-   32. keepBackgroundRunning: true
-   33. }
-   34. }
+   // Index.ets
+   async init() {
+     const readerParam: TextReader.ReaderParam = {
+       // ...
+       keepBackgroundRunning: true
+     }
+   }
    ```
 10. （可选）若要在控件使用功能时切换音色，需要在[module.json5配置文件](module-configuration-file.md)中添加ohos.permission.INTERNET和ohos.permission.GET\_NETWORK\_INFO权限，确保朗读控件可以正常切换音色。
 
-```
-1. // module.json5
-2. {
-3. "module": {
-4. // ...
-5. "requestPermissions": [
-6. {
-7. "name": "ohos.permission.INTERNET",
-8. "reason": "$string:reason",
-9. "usedScene": {"abilities": []}
-10. },
-11. {
-12. "name": "ohos.permission.GET_NETWORK_INFO",
-13. "reason": "$string:reason",
-14. "usedScene": {"abilities": []}
-15. },
-16. ],
-17. }
-18. }
+```json5
+{
+  "module": {
+    // ...
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "$string:reason",
+        "usedScene": {"abilities": []}
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO",
+        "reason": "$string:reason",
+        "usedScene": {"abilities": []}
+      },
+    ],
+  }
+}
 ```
 
 ## 开发实例
 
-EntryAbility.ets
+### EntryAbility.ets
 
+```typescript
+import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
+import { WindowManager } from '@kit.SpeechKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    try {
+      this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+      let eventHub = this.context.eventHub;
+      eventHub.on('onShowPanel', this.onShowPanel);
+    } catch (err) {
+      console.error(`error code: ${err.code}, message: ${err.message}.`);
+    }
+    console.info('Ability onCreate');
+  }
+
+  onDestroy(): void {
+    console.info('Ability onDestroy');
+  }
+
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    console.info('Ability onWindowStageCreate');
+    WindowManager.setWindowStage(windowStage);
+
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        console.error(`Failed to load the content. Code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      console.info(`Succeeded in loading the content. Data: ${JSON.stringify(data)}.`);
+    });
+  }
+
+  onWindowStageDestroy(): void {
+    console.info('Ability onWindowStageDestroy');
+  }
+
+  onForeground(): void {
+    console.info('Ability onForeground');
+  }
+
+  onBackground(): void {
+    console.info('Ability onBackground');
+  }
+
+  onShowPanel = () => {
+    let context: common.UIAbilityContext = this.context;
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.speechkit', // 需替换成实际应用包名
+      abilityName: 'SubAbility',
+      parameters: {
+        info: 'From EntryAbility onShowPanel'
+      }
+    };
+    context?.startAbility(want).then(() => {
+      console.info('Succeeded in starting ability');
+    }).catch((e: BusinessError) => {
+      console.error(`Failed to start ability. Code is ${e.code}, message is ${e.message}`);
+    })
+  };
+}
 ```
-1. import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
-3. import { WindowManager } from '@kit.SpeechKit';
 
-5. export default class EntryAbility extends UIAbility {
-6. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-7. try {
-8. this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-9. } catch (err) {
-10. console.error(`error code: ${err.code}, message: ${err.message}.`)
-11. }
-12. console.info('Ability onCreate');
-13. }
+### Index.ets
 
-15. onDestroy(): void {
-16. console.info('Ability onDestroy');
-17. }
+```typescript
+import { TextReader, TextReaderIcon, ReadStateCode } from '@kit.SpeechKit';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
-19. onWindowStageCreate(windowStage: window.WindowStage): void {
-20. console.info('Ability onWindowStageCreate');
-21. WindowManager.setWindowStage(windowStage);
+@Entry
+@Component
+struct Index {
 
-23. windowStage.loadContent('pages/Index', (err, data) => {
-24. if (err.code) {
-25. console.error(`Failed to load the content. Code: ${err.code}, message: ${err.message}`);
-26. return;
-27. }
-28. console.info(`Succeeded in loading the content. Data: ${JSON.stringify(data)}.` );
-29. });
-30. }
+  /**
+   * 待加载的文章
+   */
+  @State readInfoList: TextReader.ReadInfo[] = [];
+  @State selectedReadInfo: TextReader.ReadInfo = this.readInfoList[0];
 
-32. onWindowStageDestroy(): void {
-33. console.info('Ability onWindowStageDestroy');
-34. }
+  /**
+   * 播放状态
+   */
+  @State readState: ReadStateCode = ReadStateCode.WAITING;
 
-36. onForeground(): void {
-37. console.info('Ability onForeground');
-38. }
+  /**
+   * 用于显示当前页的按钮状态
+   */
+  @State isInit: boolean = false;
 
-40. onBackground(): void {
-41. console.info('Ability onBackground');
-42. }
-43. }
+  async aboutToAppear() {
+    /**
+     * 加载数据
+     */
+    let readInfoList: TextReader.ReadInfo[] = [{
+      id: '001',
+      title: {
+        text: '水调歌头.明月几时有',
+        isClickable: true
+      },
+      author: {
+        text: '宋.苏轼',
+        isClickable: true
+      },
+      date: {
+        text: '2024/01/01',
+        isClickable: false
+      },
+      bodyInfo: '明月几时有？把酒问青天。'
+    }];
+    this.readInfoList = readInfoList;
+    this.selectedReadInfo = this.readInfoList[0];
+    void await this.init();
+    AppStorage.setOrCreate('isReadyToStart', false);
+  }
+
+  /**
+   * 初始化
+   */
+  async init() {
+    const readerParam: TextReader.ReaderParam = {
+      isVoiceBrandVisible: true,
+      businessBrandInfo: {
+        panelName: '小艺朗读',
+        panelIcon: $r('app.media.startIcon')
+      }
+    };
+    try {
+      let context: Context | undefined = this.getUIContext().getHostContext();
+      if (context) {
+        await TextReader.init(context, readerParam);
+        this.isInit = true;
+        this.setActionListener();
+      }
+    } catch (err) {
+      console.error(`TextReader failed to init. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  // 设置操作监听
+  setActionListener() {
+    TextReader.on('stateChange', (state: TextReader.ReadState) => {
+      this.onStateChanged(state);
+    });
+
+    TextReader.on('requestMore', () => {
+      TextReader.loadMore([], true);
+    });
+  }
+
+  onStateChanged = (state: TextReader.ReadState) => {
+    if (this.selectedReadInfo?.id === state.id) {
+      this.readState = state.state;
+    } else {
+      this.readState = ReadStateCode.WAITING;
+    }
+  };
+
+  build() {
+    Column() {
+      TextReaderIcon({ readState: this.readState })
+        .margin({ right: 20 })
+        .width(32)
+        .height(32)
+        .onClick(() => {
+          try {
+            if (deviceInfo.deviceType === '2in1') {
+              let context = this.getUIContext().getHostContext();
+              context?.eventHub.emit('onShowPanel');
+            }
+            void TextReader.start(this.readInfoList, this.selectedReadInfo?.id);
+            TextReader.showPanel();
+          } catch (err) {
+            console.error(`TextReader failed to start. Code: ${err.code}, message: ${err.message}`);
+          }
+        })
+    }
+    .height('100%')
+  }
+}
 ```
 
-Index.ets
+### SubAbility.ets
 
+```typescript
+import { TextReader, WindowManager } from '@kit.SpeechKit';
+import { emitter } from '@kit.BasicServicesKit';
+import { window } from '@kit.ArkUI';
+import { AbilityConstant, UIAbility,Want } from '@kit.AbilityKit';
+
+export default class SubAbility extends UIAbility {
+  private link: SubscribedAbstractProperty<boolean> = AppStorage.link('isReadyToStart');
+
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    let info = want?.parameters?.info;
+  }
+
+  onDestroy(): void {
+    console.info('Ability onDestroy');
+  }
+
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // 主窗口正在被创建，为此窗口设置主页面
+    console.info('SubAbility onWindowStageCreate');
+
+    WindowManager.setWindowStage(windowStage);
+    let eventData: emitter.EventData = {
+      data: {
+        'state': 'publish'
+      }
+    };
+    emitter.emit('onLoadSubAbility', eventData);
+    this.link.set(true);
+    console.debug(`onWindowStageCreate::isReadyToStart: ${AppStorage.get<boolean>('isReadyToStart')}`)
+  }
+
+  async onWindowStageDestroy(): Promise<void> {
+    // 主窗口正在被销毁，隐藏面板并停止播放
+    console.info('Ability onWindowStageDestroy');
+    TextReader.hidePanel();
+    await TextReader.stop();
+    this.link.set(false);
+    console.debug(`onWindowStageDestroy::isReadyToStart: ${AppStorage.get<boolean>('isReadyToStart')}`)
+  }
+
+  onForeground(): void {
+
+  }
+
+  onBackground(): void {
+
+  }
+}
 ```
-1. import { TextReader, TextReaderIcon, ReadStateCode } from '@kit.SpeechKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
+### module.json5
 
-7. /**
-8. * 待加载的文章
-9. */
-10. @State readInfoList: TextReader.ReadInfo[] = [];
-11. @State selectedReadInfo: TextReader.ReadInfo = this.readInfoList[0];
-
-13. /**
-14. * 播放状态
-15. */
-16. @State readState: ReadStateCode = ReadStateCode.WAITING;
-
-18. /**
-19. * 用于显示当前页的按钮状态
-20. */
-21. @State isInit: boolean = false;
-
-23. aboutToAppear(){
-24. /**
-25. * 加载数据
-26. */
-27. let readInfoList: TextReader.ReadInfo[] = [{
-28. id: '001',
-29. title: {
-30. text:'水调歌头.明月几时有',
-31. isClickable:true
-32. },
-33. author:{
-34. text:'宋.苏轼',
-35. isClickable:true
-36. },
-37. date: {
-38. text:'2024/01/01',
-39. isClickable:false
-40. },
-41. bodyInfo: '明月几时有？把酒问青天。'
-42. }];
-43. this.readInfoList = readInfoList;
-44. this.selectedReadInfo = this.readInfoList[0];
-45. void this.init();
-46. }
-
-48. /**
-49. * 初始化
-50. */
-51. async init() {
-52. const readerParam: TextReader.ReaderParam = {
-53. isVoiceBrandVisible: true,
-54. businessBrandInfo: {
-55. panelName: '小艺朗读',
-56. panelIcon: $r('app.media.startIcon')
-57. }
-58. }
-59. try {
-60. let context: Context | undefined = this.getUIContext().getHostContext()
-61. if (context) {
-62. await TextReader.init(context, readerParam);
-63. this.isInit = true;
-64. this.setActionListener();
-65. }
-66. } catch (err) {
-67. console.error(`TextReader failed to init. Code: ${err.code}, message: ${err.message}`);
-68. }
-69. }
-
-71. // 设置操作监听
-72. setActionListener() {
-73. TextReader.on('stateChange', (state: TextReader.ReadState) => {
-74. this.onStateChanged(state);
-75. });
-
-77. TextReader.on('requestMore', () => {
-78. TextReader.loadMore([], true);
-79. })
-80. }
-
-82. onStateChanged = (state: TextReader.ReadState) => {
-83. if (this.selectedReadInfo?.id === state.id) {
-84. this.readState = state.state;
-85. } else {
-86. this.readState = ReadStateCode.WAITING;
-87. }
-88. }
-
-90. build() {
-91. Column() {
-92. TextReaderIcon({ readState: this.readState })
-93. .margin({ right: 20 })
-94. .width(32)
-95. .height(32)
-96. .onClick(() => {
-97. try {
-98. void TextReader.start(this.readInfoList, this.selectedReadInfo?.id);
-99. } catch (err) {
-100. console.error(`TextReader failed to start. Code: ${err.code}, message: ${err.message}`);
-101. }
-102. })
-103. }
-104. .height('100%')
-105. }
-106. }
+```typescript
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "ohos.want.action.home"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SubAbility", // UIAbility组件的名称
+        "srcEntry": "./ets/entryability/SubAbility.ets", // UIAbility组件的代码路径
+        "description": "$string:EntryAbility_desc", // UIAbility组件的描述信息
+        "icon": "$media:layered_image", // UIAbility组件的图标
+        "label": "$string:EntryAbility_label", // UIAbility组件的标签
+        "startWindowIcon": "$media:startIcon", // UIAbility组件启动页面图标资源文件的索引
+        "startWindowBackground": "$color:start_window_background", // UIAbility组件启动页面背景颜色资源文件的索引
+        "supportWindowMode": ['floating'],
+        "maxWindowWidth": 1158,
+        "minWindowWidth": 750,
+        "maxWindowHeight": 772,
+        "minWindowHeight": 500,
+      }
+    ],
+    "requestPermissions": [
+      {
+           "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
+           "usedScene": {
+             "abilities": []}
+      },
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "$string:reason",
+        "usedScene": {"abilities": []}
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO",
+        "reason": "$string:reason",
+        "usedScene": {"abilities": []}
+      },
+    ]
+  }
+}
 ```
 
 ## 2in1适配步骤
@@ -443,115 +597,115 @@ Index.ets
 
 1. 在/src/main/ets/entryability下新建一个ability，用来承载2in1主窗，导入相关依赖。
 
-   ```
-   1. import { TextReader, WindowManager } from '@kit.SpeechKit';
-   2. import { commonEventManager } from '@kit.BasicServicesKit';
+   ```typescript
+   import { TextReader, WindowManager } from '@kit.SpeechKit';
+   import { commonEventManager } from '@kit.BasicServicesKit';
    ```
 2. 在新ability中声明一个应用全局的状态变量isReadyToStart，并且通过AppStorage管理此状态变量。
 
-   ```
-   1. private link: SubscribedAbstractProperty<boolean>= AppStorage.link('isReadyToStart');
+   ```typescript
+   private link: SubscribedAbstractProperty<boolean>= AppStorage.link('isReadyToStart');
    ```
 3. 在Index.ets的aboutToAppear生命周期方法中，创建全局的状态变量isReadyToStart。
 
+   ```typescript
+   aboutToAppear() {
+     AppStorage.setOrCreate('isReadyToStart', false);
+     // ...其他配置
+   }
    ```
-   1. aboutToAppear() {
-   2. AppStorage.setOrCreate('isReadyToStart', false);
-   3. // ...其他配置
-   4. }
-   ```
-4. 配置WindowStage。说明：从6.0.0(20)开始使用以下逻辑实现。对于5.1.1(19)及之前版本，使用getContext(this)接口实现。
+4. 配置WindowStage。对于5.1.1(19)及之前版本，使用getContext(this)接口实现。对于6.0.0(20)及以后版本，开始使用以下逻辑实现。
 
    * 在新ability的onWindowStageCreate生命周期方法中，发送onLoadSubAbility事件。
    * 通过WindowManager.setWindowStage(windowStage)来设置新ability的windowStage。
    * 在onWindowStageCreate中将isReadyToStart设为true。
 
-   ```
-   1. onWindowStageCreate(windowStage: window.WindowStage): void {
-   2. // Main window is created, set main page for this ability
-   3. WindowManager.setWindowStage(windowStage)
-   4. let eventData: emitter.EventData = {
-   5. data: {
-   6. 'state': 'publish'
-   7. }
-   8. }
-   9. emitter.emit("onLoadSubAbility", eventData);
-   10. this.link.set(true);
-   11. }
+   ```typescript
+   onWindowStageCreate(windowStage: window.WindowStage): void {
+     // 主窗口正在被创建，为此窗口设置主页面
+     WindowManager.setWindowStage(windowStage)
+     let eventData: emitter.EventData = {
+       data: {
+         'state': 'publish'
+       }
+     }
+     emitter.emit('onLoadSubAbility', eventData);
+     this.link.set(true);
+   };
    ```
 5. 在新ability的onWindowStageDestroy生命周期方法中，将isReadyToStart设为false，同时隐藏面板并停止播放。
 
-   ```
-   1. async onWindowStageDestroy(): Promise<void> {
-   2. try {
-   3. TextReader.hidePanel();
-   4. await TextReader.stop();
-   5. this.link.set(false);
-   6. }catch (e) {
-   7. console.error(`onWindowStageDestroy fail , msg: ${e}`)
-   8. }
-   9. }
+   ```typescript
+   async onWindowStageDestroy(): Promise<void> {
+     try {
+       TextReader.hidePanel();
+       await TextReader.stop();
+       this.link.set(false);
+     }catch (e) {
+       console.error(`onWindowStageDestroy fail , msg: ${e}`)
+     }
+   }
    ```
 6. 在entryability中，onCreate方法需要用eventHub设置'onShowPanel'回调，用来创造新的ability；onShowPanel回调中，首先构造want，然后通过context.startAbility接口创建新的ability。
 
-   ```
-   1. import { AbilityConstant, Want } from '@kit.AbilityKit';
-   2. import { common } from "@kit.AbilityKit";
-   3. import { BusinessError } from "@kit.BasicServicesKit";
+   ```typescript
+   import { AbilityConstant, Want } from '@kit.AbilityKit';
+   import { common } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
 
-   6. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-   7. // ...其他配置
-   8. let eventHub = this.context.eventHub;
-   9. eventHub.on('onShowPanel', this.onShowPanel);
-   10. }
+   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+     // ...其他配置
+     let eventHub = this.context.eventHub;
+     eventHub.on('onShowPanel', this.onShowPanel);
+   }
 
-   12. onShowPanel = () => {
-   13. let context: common.UIAbilityContext = this.context;
-   14. let want: Want = {
-   15. deviceId: '',
-   16. bundleName: 'com.example.speechkit', // 需替换成实际应用包名
-   17. abilityName: 'SubAbility',
-   18. parameters: {
-   19. info: 'From EntryAbility onShowPanel'
-   20. }
-   21. }
-   22. context?.startAbility(want).then(() => {
-   23. console.info('Succeeded in starting ability');
-   24. }).catch((e: BusinessError) => {
-   25. console.error(`Failed to start ability. Code is ${e.code}, message is ${e.message}`);
-   26. })
-   27. }
+   onShowPanel = () => {
+     let context: common.UIAbilityContext = this.context;
+     let want: Want = {
+       deviceId: '',
+       bundleName: 'com.example.speechkit', // 需替换成实际应用包名
+       abilityName: 'SubAbility',
+       parameters: {
+         info: 'From EntryAbility onShowPanel'
+       }
+     };
+     context?.startAbility(want).then(() => {
+       console.info('Succeeded in starting ability');
+     }).catch((e: BusinessError) => {
+       console.error(`Failed to start ability. Code is ${e.code}, message is ${e.message}`);
+     })
+   };
    ```
 7. 在调用start之前根据设备类型进行判断，如果是2in1需要首先发送'onShowPanel'事件构造ability。
 
-   ```
-   1. import { deviceInfo } from '@kit.BasicServicesKit';
+   ```typescript
+   import { deviceInfo } from '@kit.BasicServicesKit';
 
-   3. if (deviceInfo.deviceType === '2in1') {
-   4. let context = this.getUIContext().getHostContext();
-   5. context?.eventHub.emit('onShowPanel');
-   6. }
-   7. try {
-   8. TextReader.showPanel();
-   9. } catch (err) {
-   10. console.error(`error code: ${err.code}, message: ${err.message}.`)
-   11. }
+   if (deviceInfo.deviceType === '2in1') {
+     let context = this.getUIContext().getHostContext();
+     context?.eventHub.emit('onShowPanel');
+   }
+   try {
+     TextReader.showPanel();
+   } catch (err) {
+     console.error(`error code: ${err.code}, message: ${err.message}.`)
+   }
    ```
 8. 在module.json5中添加ability配置项，max和min的值需要保持一致，固定窗口的大小。
 
-   ```
-   1. {
-   2. "name": "SubAbility", // UIAbility组件的名称
-   3. "srcEntry": "./ets/entryability/SubAbility.ets", // UIAbility组件的代码路径
-   4. "description": "$string:SubAbility_desc", // UIAbility组件的描述信息
-   5. "icon": "$media:icon", // UIAbility组件的图标
-   6. "label": "$string:EntryAbility_label", // UIAbility组件的标签
-   7. "startWindowIcon": "$media:icon", // UIAbility组件启动页面图标资源文件的索引
-   8. "startWindowBackground": "$color:start_window_background", // UIAbility组件启动页面背景颜色资源文件的索引
-   9. "supportWindowMode": ['floating'], // 窗口支持悬浮窗显示
-   10. "maxWindowWidth": 1158,  // 最大窗口宽度
-   11. "minWindowWidth": 1158,  // 最小窗口宽度
-   12. "maxWindowHeight": 772,  // 最大窗口高度
-   13. "minWindowHeight": 772,  // 最小窗口高度
-   14. }
+   ```typescript
+   {
+     "name": "SubAbility", // UIAbility组件的名称
+     "srcEntry": "./ets/entryability/SubAbility.ets", // UIAbility组件的代码路径
+     "description": "$string:SubAbility_desc", // UIAbility组件的描述信息
+     "icon": "$media:icon", // UIAbility组件的图标
+     "label": "$string:EntryAbility_label", // UIAbility组件的标签
+     "startWindowIcon": "$media:icon", // UIAbility组件启动页面图标资源文件的索引
+     "startWindowBackground": "$color:start_window_background", // UIAbility组件启动页面背景颜色资源文件的索引
+     "supportWindowMode": ['floating'], // 窗口支持悬浮窗显示
+     "maxWindowWidth": 1158, // 最大窗口宽度
+     "minWindowWidth": 1158, // 最小窗口宽度
+     "maxWindowHeight": 772, // 最大窗口高度
+     "minWindowHeight": 772, // 最小窗口高度
+    }
    ```

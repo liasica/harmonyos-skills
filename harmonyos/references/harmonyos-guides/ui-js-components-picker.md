@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: picker开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > picker开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:48+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3416686d4fb0b052f82205a9c65d6b22d28df2e59823b66ee477c43043cd7aae
+scraped_at: 2026-09-02T14:59:21+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:b0399552ef3456130b2652357e221bc7f1fc39c4d11e64f115396b028a6251a8
 ---
 
 picker是滑动选择器组件，类型支持普通选择器、日期选择器、时间选择器、时间日期选择器和多列文本选择器。具体用法请参考[picker](../harmonyos-references/js-components-basic-picker.md)。
@@ -14,68 +14,68 @@ picker是滑动选择器组件，类型支持普通选择器、日期选择器�
 
 在pages/index目录下的hml文件中创建一个picker组件。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <picker>picker</picker>
-4. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <picker>picker</picker>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/S7miCPMZRAufXGCAD0UiEQ/zh-cn_image_0000002558604940.gif)
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/bkOGvPeMQJa28jjxfqtqaQ/zh-cn_image_0000002736433091.gif)
 
 ## 设置picker类型
 
 通过设置picker的type属性来选择滑动选择器类型，如定义picker为日期选择器。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <picker id="picker_text" type="text" value="{{textvalue}}"range="{{rangetext}}" class="pickertext" ></picker>
-4. <picker id="picker_date" type="date" value="{{datevalue}}" lunarswitch="true" start="2002-2-5" end="2030-6-5" class="pickerdate"></picker>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-10. .pickertext{
-11. margin-bottom: 30px;
-12. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <picker id="picker_text" type="text" value="{{textvalue}}"range="{{rangetext}}" class="pickertext" ></picker>
+  <picker id="picker_date" type="date" value="{{datevalue}}" lunarswitch="true" start="2002-2-5" end="2030-6-5" class="pickerdate"></picker>
+</div>
 ```
 
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. rangetext:['15', "20", "25"],
-5. textvalue:'Select text',
-6. datevalue:'Select date',
-7. }
-8. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+.pickertext{
+  margin-bottom: 30px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/zFnL4OHyQIuEH1hx1_ufsw/zh-cn_image_0000002589324465.gif)
+```js
+// xxx.js
+export default {
+  data: {
+    rangetext:['15', "20", "25"],
+    textvalue:'Select text',
+    datevalue:'Select date',
+  }
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ZaGOhpfIQvi8EvHuRXr-hw/zh-cn_image_0000002706833936.gif)
+
+**说明** 
 
 普通选择器设置取值范围时，需要使用数据绑定的方式。
 
@@ -83,34 +83,34 @@ picker是滑动选择器组件，类型支持普通选择器、日期选择器�
 
 picker组件的hours属性用于设置时间显示格式，支持12小时制和24小时制两种模式。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <picker id="picker_time" type="time" value="12-hour format" hours="12" onchange="timeonchange"  class="pickertime"></picker>
-4. <picker id="picker_time" type="time" value="24-hour format" hours="24" onchange="timeonchange"  class="pickertime"></picker>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-10. .pickertime {
-11. margin-bottom:50px;
-12. width: 300px;
-13. height: 50px;
-14. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <picker id="picker_time" type="time" value="12-hour format" hours="12" onchange="timeonchange"  class="pickertime"></picker>
+  <picker id="picker_time" type="time" value="24-hour format" hours="24" onchange="timeonchange"  class="pickertime"></picker>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gl8Uv5N4Rmq_zms02sEPFg/zh-cn_image_0000002589244405.gif)
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+.pickertime {
+  margin-bottom:50px;
+  width: 300px;
+  height: 50px;
+}
+```
 
-说明
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/kFK2u44QS7eShfxET2YfIw/zh-cn_image_0000002736313045.gif)
+
+**说明** 
 
 * hours属性为12：按照12小时制显示，用上午和下午进行区分。
 * hours属性为24：按照24小时制显示。
@@ -119,177 +119,177 @@ picker组件的hours属性用于设置时间显示格式，支持12小时制和2
 
 为picker组件添加change和cancel事件，可以处理用户的选择确定和取消操作。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <picker id="picker_multi" type="multi-text" value="{{multitextvalue}}" columns="3" range="{{multitext}}" selected="
-4. {{multitextselect}}" onchange="multitextonchange" oncancel="multitextoncancel" class="pickermuitl"></picker>
-5. </div>
-```
-
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. flex-direction: column;
-6. justify-content: center;
-7. align-items: center;
-8. background-color: #F1F3F5;
-9. }
-10. .pickermuitl {
-11. margin-bottom:20px;
-12. width: 600px;
-13. height: 50px;
-14. font-size: 25px;
-15. letter-spacing:15px;
-16. }
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <picker id="picker_multi" type="multi-text" value="{{multitextvalue}}" columns="3" range="{{multitext}}" selected="
+     {{multitextselect}}" onchange="multitextonchange" oncancel="multitextoncancel" class="pickermuitl"></picker>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. data: {
-5. multitext:[["a", "b", "c"], ["e", "f", "g"], ["h", "i"]],
-6. multitextvalue:'Select multi-line text',
-7. multitextselect:[0,0,0],
-8. },
-9. multitextonchange(e) {
-10. this.multitextvalue=e.newValue;
-11. promptAction.showToast({ message:"Multi-column text changed to:" + e.newValue })
-12. },
-13. multitextoncancel() {
-14. promptAction.showToast({ message:"multitextoncancel" })
-15. },
-16. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F5;
+}
+.pickermuitl {
+  margin-bottom:20px;
+  width: 600px;
+  height: 50px;
+  font-size: 25px;
+  letter-spacing:15px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/sDkl-Wx7TGKQR4M128O7Pw/zh-cn_image_0000002558764598.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+  data: {
+    multitext:[["a", "b", "c"], ["e", "f", "g"], ["h", "i"]],
+    multitextvalue:'Select multi-line text',
+    multitextselect:[0,0,0],
+  },
+  multitextonchange(e) {
+    this.multitextvalue=e.newValue;
+    promptAction.showToast({ message:"Multi-column text changed to:" + e.newValue })
+  },
+  multitextoncancel() {
+    promptAction.showToast({ message:"multitextoncancel" })
+  },
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/g4gtFMx5R-q1_2ZrMEl-iA/zh-cn_image_0000002706674002.gif)
 
 ## 场景示例
 
 在本场景中，开发者可以自定义填写健康情况以完成打卡。
 
-```
-1. <!-- xxx.hml -->
-2. <div class="doc-page">
-3. <text class="title">Health check-in</text>
-4. <div class="out-container">
-5. <text class="txt">Office:</text>
-6. <picker class="pick" focusable="true" type="text" value="{{pos}}" range="{{posarr}}" onchange="setPos"></picker>
-7. </div>
-8. <divider class="dvd"></divider>
-9. <div class="out-container">
-10. <text class="txt">Office hours:</text>
-11. <picker class="pick" type="date" value="{{datevalue}}"  start="2002-2-5" end="2030-6-5" selected="{{dateselect}}"
-12. lunarswitch="true" onchange="dateonchange"></picker>
-13. </div>
-14. <divider class="dvd"></divider>
-15. <div class="out-container">
-16. <text class="txt">Having fever or cold symptoms</text>
-17. <picker class="pick" type="text" value="{{yorn1}}" range="{{yesno}}" selected="1" onchange="isFever"></picker>
-18. </div>
-19. <divider class="dvd"></divider>
-20. <div class="out-container">
-21. <text class="txt">Close contact with someone with COVID-19</text>
-22. <picker class="pick" type="text" value="{{yorn2}}" range="{{yesno}}" selected="1" onchange="isTouch"></picker>
-23. </div>
-24. <div class="out-container">
-25. <button value="Submit" style="margin-top:100px;width:50%;font-color:#0000ff;height:80px" onclick="showtoast"></button>
-26. </div>
-27. </div>
-```
-
-```
-1. /* xxx.css */
-2. .doc-page {
-3. flex-direction: column;
-4. background-color: #F1F3F5;
-5. }
-6. .title {
-7. margin-top: 30px;
-8. margin-bottom: 30px;
-9. margin-left: 50px;
-10. font-weight: bold;
-11. color: #0000ff;
-12. font-size: 38px;
-13. }
-14. .out-container {
-15. flex-direction: column;
-16. align-items: center;
-17. }
-18. .pick {
-19. width: 80%;
-20. height: 76px;
-21. border: 1px solid #0000ff;
-22. border-radius: 20px;
-23. padding-left: 12px;
-24. }
-25. .txt {
-26. width: 80%;
-27. font-size: 18px;
-28. text-align: left;
-29. margin-bottom: 12px;
-30. margin-left: 12px;
-31. }
-32. .dvd {
-33. margin-top: 30px;
-34. margin-bottom: 30px;
-35. margin-left: 80px;
-36. margin-right: 80px;
-37. color: #6495ED;
-38. stroke-width: 6px;
-39. }
+```html
+<!-- xxx.hml -->
+<div class="doc-page">
+  <text class="title">Health check-in</text>
+  <div class="out-container">
+    <text class="txt">Office:</text>
+    <picker class="pick" focusable="true" type="text" value="{{pos}}" range="{{posarr}}" onchange="setPos"></picker>
+  </div>
+  <divider class="dvd"></divider>
+  <div class="out-container">
+    <text class="txt">Office hours:</text>
+    <picker class="pick" type="date" value="{{datevalue}}"  start="2002-2-5" end="2030-6-5" selected="{{dateselect}}"
+      lunarswitch="true" onchange="dateonchange"></picker>
+  </div>
+  <divider class="dvd"></divider>
+  <div class="out-container">
+    <text class="txt">Having fever or cold symptoms</text>
+    <picker class="pick" type="text" value="{{yorn1}}" range="{{yesno}}" selected="1" onchange="isFever"></picker>
+  </div>
+  <divider class="dvd"></divider>
+  <div class="out-container">
+    <text class="txt">Close contact with someone with COVID-19</text>
+    <picker class="pick" type="text" value="{{yorn2}}" range="{{yesno}}" selected="1" onchange="isTouch"></picker>
+  </div>
+  <div class="out-container">
+    <button value="Submit" style="margin-top:100px;width:50%;font-color:#0000ff;height:80px" onclick="showtoast"></button>
+  </div>
+</div>
 ```
 
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction'
-3. export default {
-4. data: {
-5. yorn1:'No',
-6. yorn2:'No',
-7. pos:'Home',
-8. yesno:['Yes', 'No'],
-9. posarr:['Home', 'Company'],
-10. datevalue:'Select time',
-11. datetimeselect:'2012-5-6-11-25',
-12. dateselect:'2021-9-17',
-13. showbuild:true
-14. },
-15. onInit() {
-16. },
-17. isFever(e) {
-18. this.yorn1 = e.newValue
-19. },
-20. isTouch(e) {
-21. this.yorn2 = e.newValue
-22. },
-23. setPos(e) {
-24. this.pos = e.newValue
-25. if (e.newValue === 'Non-research center') {
-26. this.showbuild = false
-27. } else {
-28. this.showbuild = true
-29. }
-30. },
-31. setbuild(e) {
-32. this.build = e.newValue
-33. },
-34. dateonchange(e) {
-35. e.month=e.month+1;
-36. this.datevalue = e.year + "-" + e.month + "-" + e.day;
-37. promptAction.showToast({ message:"date:"+e.year+"-"+e.month+"-"+e.day })
-38. },
-39. showtoast() {
-40. promptAction.showToast({
-41. message: 'Submitted.',
-42. duration: 2000,
-43. gravity: 'center'
-44. })
-45. }
-46. }
+```css
+/* xxx.css */
+.doc-page {
+  flex-direction: column;
+  background-color: #F1F3F5;
+}
+.title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  font-weight: bold;
+  color: #0000ff;
+  font-size: 38px;
+}
+.out-container {
+  flex-direction: column;
+  align-items: center;
+}
+.pick {
+  width: 80%;
+  height: 76px;
+  border: 1px solid #0000ff;
+  border-radius: 20px;
+  padding-left: 12px;
+}
+.txt {
+  width: 80%;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 12px;
+  margin-left: 12px;
+}
+.dvd {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+  color: #6495ED;
+  stroke-width: 6px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/qzfZVktGSoGyNEsqAhTufQ/zh-cn_image_0000002558604942.gif)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction'
+export default {
+  data: {
+    yorn1:'No',
+    yorn2:'No',
+    pos:'Home',
+    yesno:['Yes', 'No'],
+    posarr:['Home', 'Company'],
+    datevalue:'Select time',
+    datetimeselect:'2012-5-6-11-25',
+    dateselect:'2021-9-17',
+    showbuild:true
+  },
+  onInit() {
+  },
+  isFever(e) {
+    this.yorn1 = e.newValue
+  },
+  isTouch(e) {
+    this.yorn2 = e.newValue
+  },
+  setPos(e) {
+    this.pos = e.newValue
+    if (e.newValue === 'Company') {
+      this.showbuild = false
+    } else {
+      this.showbuild = true
+    }
+  },
+  setbuild(e) {
+    this.build = e.newValue
+  },
+  dateonchange(e) {
+    e.month=e.month+1;
+    this.datevalue = e.year + "-" + e.month + "-" + e.day;
+    promptAction.showToast({ message:"date:"+e.year+"-"+e.month+"-"+e.day })
+  },
+  showtoast() {
+    promptAction.showToast({
+      message: 'Submitted.',
+      duration: 2000,
+      gravity: 'center'
+    })
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/9UR5VOJMSm-Z-vGXuRFn-A/zh-cn_image_0000002736433093.gif)

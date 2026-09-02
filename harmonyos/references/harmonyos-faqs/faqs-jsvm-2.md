@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-2
 title: 如何自排查_Bool类型没有找到的编译问题
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > 如何自排查_Bool类型没有找到的编译问题
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:16:05+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:2c4230d655bdfef930993cfd095d8c00657dd84daeea0aa95fd7060f59ff3a4d
+scraped_at: 2026-09-02T14:53:58+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:adf3ffb6e7caaaf7efb6624e74b3a3ee00371ecca4c9ba74deed92a106a7cdd0
 ---
 
 **问题现象**
 
 构建HAP工程时，编译工具报错：“error: unknown type name '\_Bool'”，找不到\_Bool类型错误，如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/G0VpZIXhQASMo1moL0BwFg/zh-cn_image_0000002229603937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/JzkZdI7GSWyGb8SD6CE0dw/zh-cn_image_0000002624475910.png "点击放大")
 
 **可能原因**
 

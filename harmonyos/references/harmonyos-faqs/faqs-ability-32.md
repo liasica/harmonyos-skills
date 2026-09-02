@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-32
 title: Extension类进程崩溃是否会导致主进程崩溃
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > Extension类进程崩溃是否会导致主进程崩溃
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:43+08:00
-doc_updated_at: 2026-03-20
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:44183943c4c7e4f214e6946f92d553e032fa86e903ec0b7d5a05803a408691f0
 ---
 

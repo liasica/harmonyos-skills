@@ -3,22 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Enums
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a3820f65de40a594b3190929a87a9b228039e58386a3e1cfca0622a560c158b4
+scraped_at: 2026-09-02T15:00:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b4eb27f5e319180cd1c9f5db96f3aa94e342440e0e4f1d9212081cfb0f8814a4
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## SecurityLevel
 
-PhonePC/2in1TabletTVWearable
-
 数据库的安全级别枚举。请使用枚举名称而非枚举值。数据库的安全等级仅支持由低向高设置，不支持由高向低设置。
 
-说明
+**说明** 
 
 若需要进行同步操作，数据库安全等级应不高于对端设备安全等级，具体可见[跨设备同步访问控制机制](../harmonyos-guides/sync-app-data-across-devices-overview.md#跨设备同步访问控制机制)。
 
@@ -33,8 +31,6 @@ PhonePC/2in1TabletTVWearable
 
 ## EncryptionAlgo14+
 
-PhonePC/2in1TabletTVWearable
-
 数据库的加密方式枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -46,8 +42,6 @@ PhonePC/2in1TabletTVWearable
 | PLAIN\_TEXT22+ | 2 | 数据库不进行加密。 |
 
 ## HmacAlgo14+
-
-PhonePC/2in1TabletTVWearable
 
 数据库的HMAC算法枚举。请使用枚举名称而非枚举值。
 
@@ -61,8 +55,6 @@ PhonePC/2in1TabletTVWearable
 
 ## KdfAlgo14+
 
-PhonePC/2in1TabletTVWearable
-
 数据库的PBKDF2算法枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -75,8 +67,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Tokenizer17+
 
-PhonePC/2in1TabletTVWearable
-
 描述fts（全文搜索）场景下使用的分词器枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -84,10 +74,10 @@ PhonePC/2in1TabletTVWearable
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE\_TOKENIZER | 0 | 不使用分词器。 |
-| ICU\_TOKENIZER | 1 | 表示使用icu分词器，支持中文以及多国语言。指定icu分词器时，可指定使用哪种语言，例如zh\_CN表示中文，tr\_TR表示土耳其语等。详细支持的语言种类，请查阅[ICU分词器](https://gitcode.com/openharmony/third_party_icu/blob/master/icu4c/source/data/lang/zh.txt)。详细的语言缩写，请查阅该目录（[ICU支持的语言缩写](https://gitcode.com/openharmony/third_party_icu/tree/master/icu4c/source/data/locales)）下的文件名。 |
+| ICU\_TOKENIZER | 1 | 表示使用icu分词器，支持中文以及多国语言。指定icu分词器时，可指定使用哪种语言，例如zh\_CN表示中文，tr\_TR表示土耳其语等。支持的语言种类，请查阅[ICU分词器](https://gitcode.com/openharmony/third_party_icu/blob/master/icu4c/source/data/lang/zh.txt)。语言缩写请查阅该目录（[ICU支持的语言缩写](https://gitcode.com/openharmony/third_party_icu/tree/master/icu4c/source/data/locales)）下的文件名。 |
 | CUSTOM\_TOKENIZER18+ | 2 | 表示使用自研分词器，可支持中文（简体、繁体）、英文、阿拉伯数字。CUSTOM\_TOKENIZER相比ICU\_TOKENIZER在分词准确率、常驻内存占用上更有优势。自研分词器支持默认分词模式和短词分词模式（short\_words）两种，使用参数cut\_mode可指定模式，不指定模式时使用默认模式。 |
 
-在使用不同的分词器时，使用的创表语句会有所区别。
+在使用不同的分词器时，使用的建表语句会有所区别。
 
 **示例：**
 
@@ -95,111 +85,109 @@ PhonePC/2in1TabletTVWearable
 
 使用ICU\_TOKENIZER分词器时，创建表的示例：
 
-```
-1. import { relationalStore } from '@kit.ArkData'; // 导入模块
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { relationalStore } from '@kit.ArkData'; // 导入模块
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-5. // 此处示例在Stage模式、Ability中实现，使用者也可以在其他合理场景中使用
-6. class EntryAbility extends UIAbility {
-7. async onWindowStageCreate(windowStage: window.WindowStage) {
-8. let store: relationalStore.RdbStore | undefined = undefined;
-9. const STORE_CONFIG: relationalStore.StoreConfig = {
-10. name: "MyStore.db",
-11. securityLevel: relationalStore.SecurityLevel.S3,
-12. tokenizer: relationalStore.Tokenizer.ICU_TOKENIZER
-13. };
-14. store = await relationalStore.getRdbStore(this.context, STORE_CONFIG);
+// 此处示例在Stage模式、Ability中实现，使用者也可以在其他合理场景中使用
+class EntryAbility extends UIAbility {
+  async onWindowStageCreate(windowStage: window.WindowStage) {
+    let store: relationalStore.RdbStore | undefined = undefined;
+    const STORE_CONFIG: relationalStore.StoreConfig = {
+      name: "MyStore.db",
+      securityLevel: relationalStore.SecurityLevel.S3,
+      tokenizer: relationalStore.Tokenizer.ICU_TOKENIZER
+    };
+    store = await relationalStore.getRdbStore(this.context, STORE_CONFIG);
 
-16. const SQL_CREATE_TABLE = "CREATE VIRTUAL TABLE example USING fts4(name, content, tokenize=icu zh_CN)";
-17. if (store != undefined) {
-18. (store as relationalStore.RdbStore).executeSql(SQL_CREATE_TABLE, (err) => {
-19. if (err) {
-20. console.error(`ExecuteSql failed, code is ${err.code},message is ${err.message}`);
-21. return;
-22. }
-23. console.info('create virtual table done.');
-24. });
-25. }
-26. }
-27. }
+    const SQL_CREATE_TABLE = "CREATE VIRTUAL TABLE example USING fts4(name, content, tokenize=icu zh_CN)";
+    if (store != undefined) {
+      (store as relationalStore.RdbStore).executeSql(SQL_CREATE_TABLE, (err) => {
+        if (err) {
+          console.error(`ExecuteSql failed, code is ${err.code},message is ${err.message}`);
+          return;
+        }
+        console.info('create virtual table done.');
+      });
+    }
+  }
+}
 ```
 
 使用CUSTOM\_TOKENIZER分词器时，创建表的示例：
 
-```
-1. import { relationalStore } from '@kit.ArkData'; // 导入模块
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { relationalStore } from '@kit.ArkData'; // 导入模块
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-5. // 此处示例在Stage模式、Ability中实现，使用者也可以在其他合理场景中使用
-6. class EntryAbility extends UIAbility {
-7. async onWindowStageCreate(windowStage: window.WindowStage) {
-8. let store: relationalStore.RdbStore | undefined = undefined;
-9. const STORE_CONFIG: relationalStore.StoreConfig = {
-10. name: "MyStore.db",
-11. securityLevel: relationalStore.SecurityLevel.S3,
-12. tokenizer: relationalStore.Tokenizer.CUSTOM_TOKENIZER
-13. };
-14. store = await relationalStore.getRdbStore(this.context, STORE_CONFIG);
+// 此处示例在Stage模式、Ability中实现，使用者也可以在其他合理场景中使用
+class EntryAbility extends UIAbility {
+  async onWindowStageCreate(windowStage: window.WindowStage) {
+    let store: relationalStore.RdbStore | undefined = undefined;
+    const STORE_CONFIG: relationalStore.StoreConfig = {
+      name: "MyStore.db",
+      securityLevel: relationalStore.SecurityLevel.S3,
+      tokenizer: relationalStore.Tokenizer.CUSTOM_TOKENIZER
+    };
+    store = await relationalStore.getRdbStore(this.context, STORE_CONFIG);
 
-16. const SQL_CREATE_TABLE = "CREATE VIRTUAL TABLE example USING fts5(name, content, tokenize='customtokenizer')";
-17. if (store != undefined) {
-18. (store as relationalStore.RdbStore).executeSql(SQL_CREATE_TABLE, (err) => {
-19. if (err) {
-20. console.error(`ExecuteSql failed, code is ${err.code},message is ${err.message}`);
-21. return;
-22. }
-23. console.info('create virtual table done.');
-24. });
-25. }
-26. }
-27. }
+    const SQL_CREATE_TABLE = "CREATE VIRTUAL TABLE example USING fts5(name, content, tokenize='customtokenizer')";
+    if (store != undefined) {
+      (store as relationalStore.RdbStore).executeSql(SQL_CREATE_TABLE, (err) => {
+        if (err) {
+          console.error(`ExecuteSql failed, code is ${err.code},message is ${err.message}`);
+          return;
+        }
+        console.info('create virtual table done.');
+      });
+    }
+  }
+}
 ```
 
 使用CUSTOM\_TOKENIZER分词器，并指定分词模式时，创建表的示例：
 
-```
-1. import { relationalStore } from '@kit.ArkData'; // 导入模块
-2. import { UIAbility } from '@kit.AbilityKit';
-3. import { window } from '@kit.ArkUI';
+```ts
+import { relationalStore } from '@kit.ArkData'; // 导入模块
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-5. export default class EntryAbility extends UIAbility {
-6. async onWindowStageCreate(windowStage: window.WindowStage) {
-7. console.info('custom tokenizer example: window stage create begin.');
-8. let store: relationalStore.RdbStore | undefined = undefined;
-9. const storeConfig: relationalStore.StoreConfig = {
-10. name: "MyStore.db",
-11. securityLevel: relationalStore.SecurityLevel.S3
-12. };
-13. let customType = relationalStore.Tokenizer.CUSTOM_TOKENIZER;
-14. let customTypeSupported = relationalStore.isTokenizerSupported(customType);
-15. if (customTypeSupported) {
-16. storeConfig.tokenizer = customType;
-17. } else {
-18. console.info('custom tokenizer example: not support custom tokenizer.');
-19. return;
-20. }
-21. store = await relationalStore.getRdbStore(this.context, storeConfig);
+export default class EntryAbility extends UIAbility {
+  async onWindowStageCreate(windowStage: window.WindowStage) {
+    console.info('custom tokenizer example: window stage create begin.');
+    let store: relationalStore.RdbStore | undefined = undefined;
+    const storeConfig: relationalStore.StoreConfig = {
+      name: "MyStore.db",
+      securityLevel: relationalStore.SecurityLevel.S3
+    };
+    let customType = relationalStore.Tokenizer.CUSTOM_TOKENIZER;
+    let customTypeSupported = relationalStore.isTokenizerSupported(customType);
+    if (customTypeSupported) {
+      storeConfig.tokenizer = customType;
+    } else {
+      console.info('custom tokenizer example: not support custom tokenizer.');
+      return;
+    }
+    store = await relationalStore.getRdbStore(this.context, storeConfig);
 
-23. const sqlCreateTable =
-24. "CREATE VIRTUAL TABLE example USING fts5(name, content, tokenize='customtokenizer cut_mode short_words')";
-25. if (store != undefined) {
-26. (store as relationalStore.RdbStore).executeSql(sqlCreateTable, (err) => {
-27. if (err) {
-28. console.error(`custom tokenizer example: ExecuteSql failed, code is ${err.code},message is ${err.message}`);
-29. return;
-30. }
-31. console.info('custom tokenizer example: create virtual table done.');
-32. });
-33. }
-34. }
-35. }
+    const sqlCreateTable =
+      "CREATE VIRTUAL TABLE example USING fts5(name, content, tokenize='customtokenizer cut_mode short_words')";
+    if (store != undefined) {
+      (store as relationalStore.RdbStore).executeSql(sqlCreateTable, (err) => {
+        if (err) {
+          console.error(`custom tokenizer example: ExecuteSql failed, code is ${err.code},message is ${err.message}`);
+          return;
+        }
+        console.info('custom tokenizer example: create virtual table done.');
+      });
+    }
+  }
+}
 ```
 
 ## AssetStatus10+
-
-PhonePC/2in1TabletTVWearable
 
 描述资产附件的状态枚举。请使用枚举名称而非枚举值。
 
@@ -213,10 +201,9 @@ PhonePC/2in1TabletTVWearable
 | ASSET\_DELETE | 4 | 表示资产需要在云端删除。 |
 | ASSET\_ABNORMAL | 5 | 表示资产状态异常。 |
 | ASSET\_DOWNLOADING | 6 | 表示资产正在下载到本地设备。 |
+| ASSET\_TO\_DOWNLOAD | 7 | 表示资产待下载。  **起始版本**：26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## SyncMode
-
-PhonePC/2in1TabletTVWearable
 
 指数据库同步模式。请使用枚举名称而非枚举值。
 
@@ -230,8 +217,6 @@ PhonePC/2in1TabletTVWearable
 
 ## Origin11+
 
-PhonePC/2in1TabletTV
-
 表示数据来源。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client
@@ -243,8 +228,6 @@ PhonePC/2in1TabletTV
 | REMOTE | 2 | 表示端端同步的数据。 |
 
 ## Field11+
-
-PhonePC/2in1TabletTV
 
 用于谓词查询条件的特殊字段。请使用枚举名称而非枚举值。
 
@@ -262,20 +245,16 @@ PhonePC/2in1TabletTV
 
 ## SubscribeType
 
-PhonePC/2in1TabletTVWearable
-
 描述订阅类型。请使用枚举名称而非枚举值。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUBSCRIBE\_TYPE\_REMOTE | 0 | 订阅远程数据更改。  **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core |
-| SUBSCRIBE\_TYPE\_CLOUD10+ | 1 | 订阅云端数据更改。  **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client |
-| SUBSCRIBE\_TYPE\_CLOUD\_DETAILS10+ | 2 | 订阅云端数据更改详情。  **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client |
+| SUBSCRIBE\_TYPE\_CLOUD10+ | 1 | 订阅云端数据更改。  **需要权限：**  - API版本12+：N/A  - API版本10-11：ohos.permission.DISTRIBUTED\_DATASYNC  **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client |
+| SUBSCRIBE\_TYPE\_CLOUD\_DETAILS10+ | 2 | 订阅云端数据更改详情。  **需要权限：**  - API版本12+：N/A  - API版本10-11：ohos.permission.DISTRIBUTED\_DATASYNC  **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client |
 | SUBSCRIBE\_TYPE\_LOCAL\_DETAILS12+ | 3 | 订阅本地数据更改详情。  **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core |
 
 ## RebuildType12+
-
-PhonePC/2in1TabletTVWearable
 
 描述数据库重建类型的枚举。请使用枚举名称而非枚举值。
 
@@ -289,31 +268,25 @@ PhonePC/2in1TabletTVWearable
 
 ## ChangeType10+
 
-PhonePC/2in1TabletTVWearable
-
 描述数据变更类型的枚举。请使用枚举名称而非枚举值。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DATA\_CHANGE | 0 | 表示是数据发生变更。 |
-| ASSET\_CHANGE | 1 | 表示是资产附件发生了变更。 |
+| DATA\_CHANGE | 0 | 表示是数据发生变更。  **需要权限：**  - API版本12+：N/A  - API版本10-11：ohos.permission.DISTRIBUTED\_DATASYNC |
+| ASSET\_CHANGE | 1 | 表示是资产附件发生了变更。  **需要权限：**  - API版本12+：N/A  - API版本10-11：ohos.permission.DISTRIBUTED\_DATASYNC |
 
 ## DistributedType10+
-
-PhonePC/2in1TabletTVWearable
 
 描述表的分布式类型的枚举。请使用枚举名称而非枚举值。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DISTRIBUTED\_DEVICE | 0 | 表示在不同设备之间分布式的数据库表。  **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core |
-| DISTRIBUTED\_CLOUD | 1 | 表示在设备和云端之间分布式的数据库表。  **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client |
+| DISTRIBUTED\_CLOUD | 1 | 表示在设备和云端之间分布式的数据库表。  **需要权限：**  - API版本12+：N/A  - API版本10-11：ohos.permission.DISTRIBUTED\_DATASYNC  **系统能力：** SystemCapability.DistributedDataManager.CloudSync.Client |
 
 ## ConflictResolution10+
-
-PhonePC/2in1TabletTVWearable
 
 插入和修改接口的冲突解决模式。请使用枚举名称而非枚举值。
 
@@ -328,9 +301,23 @@ PhonePC/2in1TabletTVWearable
 | ON\_CONFLICT\_IGNORE | 4 | 表示当冲突发生时，跳过包含违反约束的行并继续处理 SQL 语句的后续行。 |
 | ON\_CONFLICT\_REPLACE | 5 | 表示当冲突发生时，在插入或更新当前行之前删除导致约束违例的预先存在的行，并且命令会继续正常执行。 |
 
-## Progress10+
+## AssetConflictPolicy
 
-PhonePC/2in1TabletTVWearable
+资产冲突策略枚举。请使用枚举名称而非枚举值。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| CONFLICT\_POLICY\_DEFAULT | 0 | 默认冲突策略，按照端云同步模式[SyncMode](arkts-apis-data-relationalstore-e.md#syncmode)执行。 |
+| CONFLICT\_POLICY\_TIME\_FIRST | 1 | 基于时间优先的冲突策略。 |
+| CONFLICT\_POLICY\_TEMP\_PATH | 2 | 基于临时路径的冲突策略。 |
+
+## Progress10+
 
 描述端云同步过程的枚举。请使用枚举名称而非枚举值。
 
@@ -343,8 +330,6 @@ PhonePC/2in1TabletTVWearable
 | SYNC\_FINISH | 2 | 表示端云同步过程已完成。 |
 
 ## ProgressCode10+
-
-PhonePC/2in1TabletTVWearable
 
 表示端云同步过程的状态。请使用枚举名称而非枚举值。
 
@@ -360,10 +345,9 @@ PhonePC/2in1TabletTVWearable
 | RECORD\_LIMIT\_EXCEEDED | 5 | 表示本次端云同步需要同步的条目或大小超出最大值。由云端配置最大值。 |
 | NO\_SPACE\_FOR\_ASSET | 6 | 表示云空间剩余空间小于待同步的资产大小。 |
 | BLOCKED\_BY\_NETWORK\_STRATEGY12+ | 7 | 表示端云同步被网络策略限制。 |
+| STOP\_CLOUD\_SYNC | 8 | 表示端云同步被停止。  **起始版本**：26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## TransactionType14+
-
-PhonePC/2in1TabletTVWearable
 
 描述创建事务对象的枚举。请使用枚举名称而非枚举值。
 
@@ -376,8 +360,6 @@ PhonePC/2in1TabletTVWearable
 | EXCLUSIVE | 2 | 表示创建一个EXCLUSIVE类型的事务对象，该类型的事务在WAL模式下和IMMEDIATE相同，但在其他日志模式下能够防止事务期间有其他连接读取数据库。 |
 
 ## ColumnType18+
-
-PhonePC/2in1TabletTVWearable
 
 描述数据库列存储类型的枚举。请使用枚举名称而非枚举值。
 
@@ -397,8 +379,6 @@ PhonePC/2in1TabletTVWearable
 
 ## DistributedTableType23+
 
-PhonePC/2in1TabletTVWearable
-
 分布式表类型的枚举。请使用枚举名称而非枚举值。此配置项为数据库级配置，如果数据库中有多张分布式表，则所有表必须使用相同的分布式表类型，且不支持切换升级。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
@@ -409,3 +389,28 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- |
 | DEVICE\_COLLABORATION | 0 | 多设备协同表，各设备的数据将被隔离存储在独立的分布式表中，而非写入本地表，分布式表名为在原来表名前拼接对端设备的DeviceID标识符。 |
 | SINGLE\_VERSION | 1 | 单版本表，数据通过分布式数据管理框架直接写入对端设备的本地表中。 |
+
+## SyncResultCode
+
+描述设备同步状态的枚举。请使用枚举名称而非枚举值。
+
+**起始版本：** 26.0.0
+
+**系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
+
+**模型约束：** 此接口仅在Stage模型下可用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SUCCESS | 0 | 表示同步成功。 |
+| FAIL | 1 | 表示同步失败。 |
+| OFFLINE | 2 | 表示远端设备离线。 |
+| INVALID\_ARGS | 3 | 表示参数无效。 |
+| DISTRIBUTED\_TABLE\_NOT\_SET | 4 | 表示本端设备或远端设备未设置分布式表。 |
+| TABLE\_FIELD\_MISMATCH | 5 | 表示对端设备与本端设备本地表的同步字段不一致。 |
+| DISTRIBUTED\_SCHEMA\_MISMATCH | 6 | 表示对端设备与本端设备分布式表的Schema字段不一致，或者存在一个分布式表没有配置Schema。 |
+| BUSY | 7 | 表示数据库繁忙。 |
+| CORRUPTED | 8 | 表示数据库损坏。 |
+| TIMEOUT | 9 | 表示同步操作因超时失败。常见原因包括：对端设备数据库未创建、连接中断或网络抖动导致丢包。 |
+| SCHEMA\_CHANGED | 10 | 表示在同步过程中表结构已更改。 |
+| CONSTRAINT\_VIOLATION | 11 | 表示同步数据时违反约束条件。 |

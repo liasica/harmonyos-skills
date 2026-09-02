@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.util.PlainArray (非线性容器PlainArray)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.PlainArray (非线性容器PlainArray)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:10+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:a10ee11a32dd3a8d9a509a896893dc5bc6b8561bbe774adc6111475280e95d00
+scraped_at: 2026-09-02T15:00:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:72da7b60f8094c2b143a832e47be695a2ceb78635d377d172e2ca61c45660ddd
 ---
 
 PlainArray可用于存储具有关联关系的key-value键值对集合，其中key值唯一且类型为number，每个key对应一个value。
@@ -16,11 +16,11 @@ PlainArray和[LightWeightMap](js-apis-lightweightmap.md)都是用来存储键值
 
 **推荐使用场景：** 当需要存储key值为number类型的键值对时，可以使用PlainArray。
 
-文档中使用了泛型，涉及以下泛型标记符：
+文档中使用了泛型，涉及以下泛型类型参数：
 
-* T：Type，类
+* T：Type，泛型类型参数，可以是任意类型
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -28,19 +28,13 @@ PlainArray和[LightWeightMap](js-apis-lightweightmap.md)都是用来存储键值
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { PlainArray } from '@kit.ArkTS';
+```ts
+import { PlainArray } from '@kit.ArkTS';
 ```
 
 ## PlainArray
 
-PhonePC/2in1TabletTVWearable
-
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -51,8 +45,6 @@ PhonePC/2in1TabletTVWearable
 | length | number | 是 | 否 | PlainArray的元素个数。 |
 
 ### constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor()
 
@@ -72,13 +64,11 @@ PlainArray的构造函数。
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
+```ts
+let plainArray = new PlainArray<string>();
 ```
 
 ### isEmpty
-
-PhonePC/2in1TabletTVWearable
 
 isEmpty(): boolean
 
@@ -104,15 +94,13 @@ isEmpty(): boolean
 
 **示例：**
 
-```
-1. const plainArray = new PlainArray<string>();
-2. let result = plainArray.isEmpty();
-3. console.info("result = ", result); // result =  true
+```ts
+let plainArray = new PlainArray<string>();
+let result = plainArray.isEmpty();
+console.info("result:", result); // result: true
 ```
 
 ### has
-
-PhonePC/2in1TabletTVWearable
 
 has(key: number): boolean
 
@@ -126,7 +114,7 @@ has(key: number): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | number | 是 | 指定key。需要小于等于int32\_max即2147483647。 |
+| key | number | 是 | 指定key。取值范围为[-2147483648, 2147483647]，即int32范围。 |
 
 **返回值：**
 
@@ -136,25 +124,22 @@ has(key: number): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The has method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. let result = plainArray.has(1);
-4. console.info("result = ", result); // result = true
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+let result = plainArray.has(1);
+console.info("result:", result); // result: true
 ```
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(key: number): T
 
@@ -168,7 +153,7 @@ get(key: number): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | number | 是 | 查找的指定key。需要小于等于int32\_max即2147483647。 |
+| key | number | 是 | 查找的指定key。取值范围为[-2147483648, 2147483647]，即int32范围。 |
 
 **返回值：**
 
@@ -178,26 +163,23 @@ get(key: number): T
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The get method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.get(1);
-5. console.info("result:", result);  // result: squirrel
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let result = plainArray.get(1);
+console.info("result:", result);  // result: squirrel
 ```
 
 ### getIndexOfKey
-
-PhonePC/2in1TabletTVWearable
 
 getIndexOfKey(key: number): number
 
@@ -221,26 +203,23 @@ getIndexOfKey(key: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The getIndexOfKey method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.getIndexOfKey(2);
-5. console.info("result = ", result); // result = 1
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let result = plainArray.getIndexOfKey(2);
+console.info("result:", result); // result: 1
 ```
 
 ### getIndexOfValue
-
-PhonePC/2in1TabletTVWearable
 
 getIndexOfValue(value: T): number
 
@@ -272,17 +251,15 @@ getIndexOfValue(value: T): number
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.getIndexOfValue("squirrel");
-5. console.info("result:", result);  // result: 0
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let result = plainArray.getIndexOfValue("squirrel");
+console.info("result:", result);  // result: 0
 ```
 
 ### getKeyAt
-
-PhonePC/2in1TabletTVWearable
 
 getKeyAt(index: number): number
 
@@ -302,34 +279,31 @@ getKeyAt(index: number): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回该下标元素键值对中的key值，失败返回-1。 |
+| number | 返回该下标元素键值对中的key值，失败返回undefined。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The getKeyAt method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.getKeyAt(1);
-5. console.info("result = ", result); // result = 2
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let result = plainArray.getKeyAt(1);
+console.info("result:", result); // result: 2
 ```
 
 ### getValueAt
 
-PhonePC/2in1TabletTVWearable
-
 getValueAt(index: number): T
 
-查找指定下标元素键值对中的Value值，失败则返回undefined。
+查找指定下标元素键值对中的value值，失败则返回undefined。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -349,27 +323,24 @@ getValueAt(index: number): T
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of index is out of range. |
 | 10200011 | The getValueAt method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.getValueAt(1);
-5. console.info("result:", result);  // result: sparrow
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let result = plainArray.getValueAt(1);
+console.info("result:", result);  // result: sparrow
 ```
 
 ### clone
-
-PhonePC/2in1TabletTVWearable
 
 clone(): PlainArray<T>
 
@@ -383,7 +354,7 @@ clone(): PlainArray<T>
 
 | 类型 | 说明 |
 | --- | --- |
-| PlainArray<T> | 返回新的对象实例。 |
+| PlainArray<T> | 返回新的对象的克隆实例。 |
 
 **错误码：**
 
@@ -395,21 +366,19 @@ clone(): PlainArray<T>
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let newPlainArray = plainArray.clone();
-5. console.info("result:", newPlainArray.get(1));  // result: squirrel
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let newPlainArray = plainArray.clone();
+console.info("result:", newPlainArray.get(1));  // result: squirrel
 ```
 
 ### add
 
-PhonePC/2in1TabletTVWearable
-
 add(key: number, value: T): void
 
-向容器中添加一组数据。
+向容器中添加一组数据。若指定的key不存在，则新增键值对，且length增加；若指定的key存在，则替换该key对应的value值。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -419,33 +388,30 @@ add(key: number, value: T): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| key | number | 是 | 添加成员数据的键名。需要小于等于int32\_max即2147483647。 |
+| key | number | 是 | 添加成员数据的键名。取值范围为[-2147483648, 2147483647]，即int32范围。 |
 | value | T | 是 | 添加成员数据的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The add method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. console.info("result:", plainArray.get(1));  // result: squirrel
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+console.info("result:", plainArray.get(1));  // result: squirrel
 ```
 
 ### remove
 
-PhonePC/2in1TabletTVWearable
-
 remove(key: number): T
 
-删除指定key对应的键值对。
+删除指定key对应的键值对。指定key不存在时，返回undefined。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -461,34 +427,31 @@ remove(key: number): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回所删除的键值对中的Value值。 |
+| T | 返回所删除的键值对中的value值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The remove method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.remove(2);
-5. console.info("result:", result);  // result: sparrow
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let result = plainArray.remove(2);
+console.info("result:", result);  // result: sparrow
 ```
 
 ### removeAt
 
-PhonePC/2in1TabletTVWearable
-
 removeAt(index: number): T
 
-删除指定下标对应的元素。
+删除指定下标对应的元素。指定[0, PlainArray.length-1]以外的值时会返回undefined。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -508,26 +471,23 @@ removeAt(index: number): T
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The removeAt method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.removeAt(1);
-5. console.info("result:", result);  // result: sparrow
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let result = plainArray.removeAt(1);
+console.info("result:", result);  // result: sparrow
 ```
 
 ### removeRangeFrom
-
-PhonePC/2in1TabletTVWearable
 
 removeRangeFrom(index: number, size: number): number
 
@@ -541,8 +501,8 @@ removeRangeFrom(index: number, size: number): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 删除元素的起始下标。需要小于等于int32\_max即2147483647。 |
-| size | number | 是 | 期望删除元素个数。需要小于等于int32\_max即2147483647。 |
+| index | number | 是 | 删除元素的起始下标。取值范围为[0, PlainArray.length-1]，且需要小于等于int32\_max即2147483647。 |
+| size | number | 是 | 期望删除元素个数。需要大于0，小于等于int32\_max即2147483647。 |
 
 **返回值：**
 
@@ -552,31 +512,29 @@ removeRangeFrom(index: number, size: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of index is out of range. |
 | 10200011 | The removeRangeFrom method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.removeRangeFrom(1, 3);
-5. console.info("result:", result);  // result: 1
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+// 从下标1开始删除元素
+let result = plainArray.removeRangeFrom(1, 3);
+console.info("result:", result);  // result: 1
 ```
 
 ### setValueAt
 
-PhonePC/2in1TabletTVWearable
-
 setValueAt(index: number, value: T): void
 
-替换容器中指定下标对应键值对中的键值。
+替换容器中指定下标对应键值对中的value值。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -586,33 +544,32 @@ setValueAt(index: number, value: T): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 指定替换数据下标。需要小于等于int32\_max即2147483647。 |
+| index | number | 是 | 指定替换数据下标。取值范围为[0, PlainArray.length-1]，且需要小于等于int32\_max即2147483647。 |
 | value | T | 是 | 替换键值对中的值。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200001 | The value of index is out of range. |
 | 10200011 | The setValueAt method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string | number>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. plainArray.setValueAt(1, 3546);
-5. let result = plainArray.getValueAt(1);
-6. console.info("result:", result);  // result: 3546
+```ts
+let plainArray = new PlainArray<string | number>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+// 替换plainArray中下标为1的键值对中的value值为3546
+plainArray.setValueAt(1, 3546);
+// 获取并打印plainArray中下标为1的键值对中的value值
+let result = plainArray.getValueAt(1);
+console.info("result:", result);  // result: 3546
 ```
 
 ### toString
-
-PhonePC/2in1TabletTVWearable
 
 toString(): String
 
@@ -638,17 +595,15 @@ toString(): String
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. let result = plainArray.toString();
-5. console.info("result:", result);  // result: 1:squirrel,2:sparrow
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+let result = plainArray.toString();
+console.info("result:", result);  // result: 1:squirrel,2:sparrow
 ```
 
 ### clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(): void
 
@@ -668,18 +623,16 @@ clear(): void
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. plainArray.clear();
-5. let result = plainArray.isEmpty();
-6. console.info("result:", result);  // result: true
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+plainArray.clear();
+let result = plainArray.isEmpty();
+console.info("result:", result);  // result: true
 ```
 
 ### forEach
-
-PhonePC/2in1TabletTVWearable
 
 forEach(callbackFn: (value: T, index?: number, PlainArray?: PlainArray<T>) => void, thisArg?: Object): void
 
@@ -706,41 +659,38 @@ callbackFn的参数说明：
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 10200011 | The forEach method cannot be bound. |
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
-4. plainArray.forEach((value: string, index: number) => {
-5. console.info("value:" + value, "index:" + index);
-6. });
-7. // value:squirrel index:1
-8. // value:sparrow index:2
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
+plainArray.forEach((value: string, index: number) => {
+  console.info("value:" + value, "index:" + index);
+});
+// value:squirrel index:1
+// value:sparrow index:2
 ```
 
-```
-1. // 不建议在forEach中使用add、remove、removeAt方法，因其可能导致迭代过程中的状态异常，建议使用for循环来进行安全的插入与删除操作。
-2. let plainArray = new PlainArray<string>();
-3. for(let i = 0; i < 10; i++) {
-4. plainArray.add(i,"123");
-5. }
+```ts
+// 不建议在forEach中使用add、remove、removeAt方法，因其可能导致迭代过程中的状态异常，建议使用for循环来进行安全的插入与删除操作。
+let plainArray = new PlainArray<string>();
+for (let i = 0; i < 10; i++) {
+  plainArray.add(i, "123");
+}
 
-7. for(let i = 0; i < 10; i++) {
-8. plainArray.remove(i);
-9. }
+for (let i = 0; i < 10; i++) {
+  plainArray.remove(i);
+}
 ```
 
 ### [Symbol.iterator]
-
-PhonePC/2in1TabletTVWearable
 
 [Symbol.iterator](): IterableIterator<[number, T]>
 
@@ -766,26 +716,26 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let plainArray = new PlainArray<string>();
-2. plainArray.add(1, "squirrel");
-3. plainArray.add(2, "sparrow");
+```ts
+let plainArray = new PlainArray<string>();
+plainArray.add(1, "squirrel");
+plainArray.add(2, "sparrow");
 
-5. for (let item of plainArray) {
-6. console.info("value:" + item[1], "index:" + item[0]);
-7. }
-8. // value:squirrel index:1
-9. // value:sparrow index:2
+for (let item of plainArray) {
+  console.info("value:" + item[1], "index:" + item[0]);
+}
+// value:squirrel index:1
+// value:sparrow index:2
 ```
 
-```
-1. // 不建议在Symbol.iterator中使用add、remove、removeAt方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
-2. let plainArray = new PlainArray<string>();
-3. for(let i = 0; i < 10; i++) {
-4. plainArray.add(i,"123");
-5. }
+```ts
+// 不建议在Symbol.iterator中使用add、remove、removeAt方法，会导致死循环等不可预知的风险，可使用for循环来进行插入和删除。
+let plainArray = new PlainArray<string>();
+for(let i = 0; i < 10; i++) {
+  plainArray.add(i,"123");
+}
 
-7. for(let i = 0; i < 10; i++) {
-8. plainArray.remove(i);
-9. }
+for(let i = 0; i < 10; i++) {
+  plainArray.remove(i);
+}
 ```

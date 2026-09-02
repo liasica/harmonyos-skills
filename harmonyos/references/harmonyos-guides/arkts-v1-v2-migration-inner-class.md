@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 数据对象状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 数据对象状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:26+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:e0937d4cb66d3c11f27ac18f1537096d7579bbfd6232f2aab16cab94a13c80eb
+scraped_at: 2026-09-02T14:59:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4300009b1459eb5a02e5291e7fac8eb28fb064875127d000d0dce3cd05637b57
 ---
 
 本文档主要介绍数据对象内的状态变量的迁移场景，包含以下场景：
@@ -35,104 +35,100 @@ content_hash: sha256:e0937d4cb66d3c11f27ac18f1537096d7579bbfd6232f2aab16cab94a13
 
 V1实现：
 
+```typescript
+@Observed
+class Address {
+  public city: string;
+
+  constructor(city: string) {
+    this.city = city;
+  }
+}
+
+@Observed
+class User {
+  public name: string;
+  public address: Address;
+
+  constructor(name: string, address: Address) {
+    this.name = name;
+    this.address = address;
+  }
+}
+
+@Component
+struct AddressView {
+  // 子组件中@ObjectLink装饰的address从父组件初始化，接收被@Observed装饰的Address实例
+  @ObjectLink address: Address;
+
+  build() {
+    Column() {
+      Text(`City: ${this.address.city}`)
+      Button('city +a')
+        .onClick(() => {
+          this.address.city += 'a';
+        })
+    }
+  }
+}
+
+@Entry
+@Component
+struct UserProfile {
+  @State user: User = new User('Alice', new Address('New York'));
+
+  build() {
+    Column() {
+      Text(`Name: ${this.user.name}`)
+      // 无法直接观察嵌套对象的属性变化，例如this.user.address.city
+      // 只能观察到对象第一层属性变化，所以需要将嵌套的对象Address抽取到自定义组件AddressView
+      AddressView({ address: this.user.address })
+    }
+  }
+}
 ```
-1. @Observed
-2. class Address {
-3. public city: string;
-
-5. constructor(city: string) {
-6. this.city = city;
-7. }
-8. }
-
-10. @Observed
-11. class User {
-12. public name: string;
-13. public address: Address;
-
-15. constructor(name: string, address: Address) {
-16. this.name = name;
-17. this.address = address;
-18. }
-19. }
-
-21. @Component
-22. struct AddressView {
-23. // 子组件中@ObjectLink装饰的address从父组件初始化，接收被@Observed装饰的Address实例
-24. @ObjectLink address: Address;
-
-26. build() {
-27. Column() {
-28. Text(`City: ${this.address.city}`)
-29. Button('city +a')
-30. .onClick(() => {
-31. this.address.city += 'a';
-32. })
-33. }
-34. }
-35. }
-
-37. @Entry
-38. @Component
-39. struct UserProfile {
-40. @State user: User = new User('Alice', new Address('New York'));
-
-42. build() {
-43. Column() {
-44. Text(`Name: ${this.user.name}`)
-45. // 无法直接观察嵌套对象的属性变化，例如this.user.address.city
-46. // 只能观察到对象第一层属性变化，所以需要将嵌套的对象Address抽取到自定义组件AddressView
-47. AddressView({ address: this.user.address })
-48. }
-49. }
-50. }
-```
-
-[MigrationNestedObjectPropertiesV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/migrationDataObjectVariables/MigrationNestedObjectPropertiesV1.ets#L29-L80)
 
 V2迁移策略：使用@ObservedV2和@Trace。
 
+```typescript
+@ObservedV2
+class Address {
+  @Trace public city: string;
+
+  constructor(city: string) {
+    this.city = city;
+  }
+}
+
+@ObservedV2
+class User {
+  @Trace public name: string;
+  @Trace public address: Address;
+
+  constructor(name: string, address: Address) {
+    this.name = name;
+    this.address = address;
+  }
+}
+
+@Entry
+@ComponentV2
+struct UserProfile {
+  @Local user: User = new User('Alice', new Address('New York'));
+
+  build() {
+    Column() {
+      Text(`Name: ${this.user.name}`)
+      // 通过@ObservedV2和@Trace可以直接观察嵌套属性
+      Text(`City: ${this.user.address.city}`)
+      Button('city +a')
+        .onClick(() => {
+          this.user.address.city += 'a';
+        })
+    }
+  }
+}
 ```
-1. @ObservedV2
-2. class Address {
-3. @Trace public city: string;
-
-5. constructor(city: string) {
-6. this.city = city;
-7. }
-8. }
-
-10. @ObservedV2
-11. class User {
-12. @Trace public name: string;
-13. @Trace public address: Address;
-
-15. constructor(name: string, address: Address) {
-16. this.name = name;
-17. this.address = address;
-18. }
-19. }
-
-21. @Entry
-22. @ComponentV2
-23. struct UserProfile {
-24. @Local user: User = new User('Alice', new Address('New York'));
-
-26. build() {
-27. Column() {
-28. Text(`Name: ${this.user.name}`)
-29. // 通过@ObservedV2和@Trace可以直接观察嵌套属性
-30. Text(`City: ${this.user.address.city}`)
-31. Button('city +a')
-32. .onClick(() => {
-33. this.user.address.city += 'a';
-34. })
-35. }
-36. }
-37. }
-```
-
-[MigrationNestedObjectPropertiesV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/migrationDataObjectVariables/MigrationNestedObjectPropertiesV2.ets#L29-L67)
 
 **类属性变化观测**
 
@@ -140,71 +136,67 @@ V2迁移策略：使用@ObservedV2和@Trace。
 
 V1实现：
 
+```typescript
+@Observed
+class User {
+  @Track public name: string;
+  @Track public age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+@Entry
+@Component
+struct UserProfile {
+  @State user: User = new User('Alice', 30);
+
+  build() {
+    Column() {
+      Text(`Name: ${this.user.name}`)
+      Text(`Age: ${this.user.age}`)
+      // 点击Button更新user.age，触发UI刷新
+      Button('increase age')
+        .onClick(() => {
+          this.user.age++;
+        })
+    }
+  }
+}
 ```
-1. @Observed
-2. class User {
-3. @Track public name: string;
-4. @Track public age: number;
-
-6. constructor(name: string, age: number) {
-7. this.name = name;
-8. this.age = age;
-9. }
-10. }
-
-12. @Entry
-13. @Component
-14. struct UserProfile {
-15. @State user: User = new User('Alice', 30);
-
-17. build() {
-18. Column() {
-19. Text(`Name: ${this.user.name}`)
-20. Text(`Age: ${this.user.age}`)
-21. // 点击Button更新user.age，触发UI刷新
-22. Button('increase age')
-23. .onClick(() => {
-24. this.user.age++;
-25. })
-26. }
-27. }
-28. }
-```
-
-[MigrationClassAttributeV1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/migrationDataObjectVariables/MigrationClassAttributeV1.ets#L29-L57)
 
 V2迁移策略：使用@ObservedV2和@Trace。
 
+```typescript
+// V2使用@ObservedV2代替V1的@Observed
+@ObservedV2
+class User {
+  // V2使用@Trace代替V1的@Track
+  @Trace public name: string;
+  @Trace public age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+@Entry
+@ComponentV2
+struct UserProfile {
+  @Local user: User = new User('Alice', 30);
+
+  build() {
+    Column() {
+      Text(`Name: ${this.user.name}`)
+      Text(`Age: ${this.user.age}`)
+      Button('Increase age')
+        .onClick(() => {
+          this.user.age++;
+        })
+    }
+  }
+}
 ```
-1. // V2使用@ObservedV2代替V1的@Observed
-2. @ObservedV2
-3. class User {
-4. // V2使用@Trace代替V1的@Track
-5. @Trace public name: string;
-6. @Trace public age: number;
-
-8. constructor(name: string, age: number) {
-9. this.name = name;
-10. this.age = age;
-11. }
-12. }
-
-14. @Entry
-15. @ComponentV2
-16. struct UserProfile {
-17. @Local user: User = new User('Alice', 30);
-
-19. build() {
-20. Column() {
-21. Text(`Name: ${this.user.name}`)
-22. Text(`Age: ${this.user.age}`)
-23. Button('Increase age')
-24. .onClick(() => {
-25. this.user.age++;
-26. })
-27. }
-28. }
-29. }
-```
-
-[MigrationClassAttributeV2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ParadigmStateManagement/entry/src/main/ets/pages/migrationDataObjectVariables/MigrationClassAttributeV2.ets#L29-L57)

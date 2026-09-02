@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-customize
 title: 实践说明
 breadcrumb: 指南 > 构建应用 > 配置构建流程 > 配置多目标产物 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c036bb9537251d9759e135e17639a892105e8a26b50d27111099732d90dd4973
+scraped_at: 2026-09-02T14:50:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f4869d281a067165a18a6db7dafcb4910c7aa84c243b8ddd067b56225722966b
 ---
 
 某对外发布应用共有两个版本：
@@ -16,150 +16,150 @@ content_hash: sha256:c036bb9537251d9759e135e17639a892105e8a26b50d27111099732d90d
 
 可以看出在Community版本与Ultimate版本之间，部分功能存在重合，同时也存在某些特定功能，所以期望通过一次开发以实现差异化，根据不同配置完成多种特定运行环境的开发、预览、打包、调试等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/DOMMLGaKQTa_0wtB6emTmw/zh-cn_image_0000002530913126.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/GaZxPI7mTwChpHJNoqRTbg/zh-cn_image_0000002731382293.png)
 
 1. 两个不同版本的软件，可能存在差异：如不同的应用标题、应用图标、版本声明。我们可以在工程级build-profile.json5->app{}->products[]中，可以对两种不同的外发版本进行差异化定制，新增两个product：Community和Ultimate。根据已支持的字段进行定制修改。
 
-```
-1. {
-2. "name": "Ultimate",
-3. // ultimate版本签名
-4. "signingConfig": "Ultimate",
-5. // ultimate版本包名
-6. "bundleName": "com.example.ultimate.app",
-7. // ultimate版本应用图标
-8. "icon": "$media:app_icon",
-9. // ultimate版本应用标签
-10. "label": "$string:app_name",
-11. "versionCode": 10000,
-12. "versionName": "1.0.0",
-13. // ultimate版本指定资源目录
-14. "resource": {
-15. "directories": [
-16. "./AppScope/ultimateRes"
-17. ]
-18. },
-19. // ultimate版本指定输出产物名
-20. "output": {
-21. "artifactName": "ultimate_version"
-22. },
-23. "bundleType": "app",
-24. "compatibleSdkVersion": "6.1.0(23)",
-25. "runtimeOS": "HarmonyOS"
-26. },
-27. {
-28. "name": "Community",
-29. "signingConfig": "Community",
-30. // community版本签名
-31. "bundleName": "com.example.community.app",
-32. // community版本包名
-33. "icon": "$media:app_icon",
-34. // community版本应用图标
-35. "label": "$string:app_name",
-36. // community版本应用标签
-37. "versionCode": 10000,
-38. "versionName": "1.0.0",
-39. // community版本指定资源目录
-40. "resource": {
-41. "directories": [
-42. "./AppScope/communityRes"
-43. ]
-44. },
-45. // community版本指定输出产物名
-46. "output": {
-47. "artifactName": "community_version"
-48. },
-49. "bundleType": "app",
-50. "compatibleSdkVersion": "6.1.0(23)",
-51. "runtimeOS": "HarmonyOS",
-52. }
+```json5
+{
+  "name": "Ultimate",
+  // Ultimate版本签名
+  "signingConfig": "Ultimate",
+  // Ultimate版本包名
+  "bundleName": "com.example.ultimate.app",
+  // Ultimate版本应用图标
+  "icon": "$media:app_icon",
+  // Ultimate版本应用标签
+  "label": "$string:app_name",
+  "versionCode": 10000,
+  "versionName": "1.0.0",
+  // Ultimate版本指定资源目录
+  "resource": {
+    "directories": [
+      "./AppScope/ultimateRes"
+    ]
+  },
+  // Ultimate版本指定输出产物名
+  "output": {
+    "artifactName": "ultimate_version"
+  },
+  "bundleType": "app",
+  "compatibleSdkVersion": "26.0.0",
+  "runtimeOS": "HarmonyOS"
+},
+{
+  "name": "Community",
+  "signingConfig": "Community",
+  // Community版本签名
+  "bundleName": "com.example.community.app",
+  // Community版本包名
+  "icon": "$media:app_icon",
+  // Community版本应用图标
+  "label": "$string:app_name",
+  // Community版本应用标签
+  "versionCode": 10000,
+  "versionName": "1.0.0",
+  // Community版本指定资源目录
+  "resource": {
+    "directories": [
+      "./AppScope/communityRes"
+    ]
+  },
+  // Community版本指定输出产物名
+  "output": {
+    "artifactName": "community_version"
+  },
+  "bundleType": "app",
+  "compatibleSdkVersion": "26.0.0",
+  "runtimeOS": "HarmonyOS",
+}
 ```
 
-2. 应用软件部分功能可能针对特定场景存在定制场景：如ultimate版本的功能A在phone设备类型上免费，在TV设备类型上需要收费；再如community版本的功能B在2in1设备类型上的启动页与在wearable设备类型上呈现效果存在差异。在模块级build-profile.json5->targets[]中新增2个 target：vip和free。
+2. 应用软件部分功能可能针对特定场景存在定制场景：如Ultimate版本的功能A在phone设备类型上免费，在TV设备类型上需要收费；再如Community版本的功能B在2in1设备类型上的启动页与在wearable设备类型上呈现效果存在差异。在模块级build-profile.json5->targets[]中新增2个 target：vip和free。
 
-```
-1. {
-2. "name": "vip",
-3. // 定制vip包输出产物名
-4. "output": {
-5. "artifactName": "vipVersion"
-6. },
-7. // 定制vip包源码指定页面
-8. "source": {
-9. "pages": [
-10. "pages/vipIndex"
-11. ]
-12. },
-13. // 指定vip包资源目录
-14. "resource": {
-15. "directories": [
-16. "./src/main/ultimateRes"
-17. ]
-18. },
-19. "config": {
-20. // 指定vip包适用设备类型
-21. "deviceType": [
-22. "phone",
-23. "tablet",
-24. "2in1"
-25. ]
-26. }
-27. },
-28. {
-29. "name": "free",
-30. // 定制free包输出产物名
-31. "output": {
-32. "artifactName": "freeVersion"
-33. },
-34. // 定制free包源码指定页面
-35. "source": {
-36. "pages": [
-37. "pages/freeIndex"
-38. ]
-39. },
-40. // 指定free包资源目录
-41. "resource": {
-42. "directories": [
-43. "./src/main/communityRes"
-44. ]
-45. },
-46. "config": {
-47. // 指定free包适用设备类型
-48. "deviceType": [
-49. "phone",
-50. "tablet"
-51. ]
-52. }
-53. }
+```json5
+{
+  "name": "vip",
+  // 定制vip包输出产物名
+  "output": {
+    "artifactName": "vipVersion"
+  },
+  // 定制vip包源码指定页面
+  "source": {
+    "pages": [
+      "pages/vipIndex"
+    ]
+  },
+  // 指定vip包资源目录
+  "resource": {
+    "directories": [
+      "./src/main/ultimateRes"
+    ]
+  },
+  "config": {
+    // 指定vip包适用设备类型
+    "deviceType": [
+      "phone",
+      "tablet",
+      "2in1"
+    ]
+  }
+},
+{
+  "name": "free",
+  // 定制free包输出产物名
+  "output": {
+    "artifactName": "freeVersion"
+  },
+  // 定制free包源码指定页面
+  "source": {
+    "pages": [
+      "pages/freeIndex"
+    ]
+  },
+  // 指定free包资源目录
+  "resource": {
+    "directories": [
+      "./src/main/communityRes"
+    ]
+  },
+  "config": {
+    // 指定free包适用设备类型
+    "deviceType": [
+      "phone",
+      "tablet"
+    ]
+  }
+}
 ```
 
 3. 新增product、target后，需要在工程级build-profile.json5->modules[]->targets[]->applyToProducts中，指定关联关系。此处表示当前模块的target具体应用到工程product的配置。
 
-```
-1. "targets": [
-2. {
-3. "name": "default",
-4. "applyToProducts": [
-5. "default",
-6. "Community",
-7. "Ultimate"
-8. ]
-9. },
-10. {
-11. "name": "free",
-12. "applyToProducts": [
-13. "default",
-14. "Community"
-15. ]
-16. },
-17. {
-18. "name": "vip",
-19. "applyToProducts": [
-20. "default",
-21. "Ultimate"
-22. ]
-23. }
-24. ]
+```json5
+"targets": [
+  {
+    "name": "default",
+    "applyToProducts": [
+      "default",
+      "Community",
+      "Ultimate"
+    ]
+  },
+  {
+    "name": "free",
+    "applyToProducts": [
+      "default",
+      "Community"
+    ]
+  },
+  {
+    "name": "vip",
+    "applyToProducts": [
+      "default",
+      "Ultimate"
+    ]
+  }
+]
 ```
 
 由上配置：
@@ -172,8 +172,8 @@ content_hash: sha256:c036bb9537251d9759e135e17639a892105e8a26b50d27111099732d90d
 
 例：用户需要构建Ultimate版本的且具有vip特性的应用，可以选择product：Ultimate，target：vip，apply之后执行构建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Z3J56G7zTzCK2E4HzwsrIw/zh-cn_image_0000002561753063.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/fPVO1PYNSHyuoX6cwVQC6g/zh-cn_image_0000002731542265.png)
 
 查看构建产物
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Clq62gtAQBi82BObeQHtTw/zh-cn_image_0000002561753065.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/tPFWrw9FQ9uWW1JaaE5Z5g/zh-cn_image_0000002701822992.png)

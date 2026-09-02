@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-targ
 title: 多目标产物构建
 breadcrumb: 最佳实践 > 编译构建 > 多目标产物构建
 category: best-practices
-scraped_at: 2026-04-29T14:14:30+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:834ff8beec10d641a1ead412b77f0c3c1acf21782729af0da64b73595259bf33
+scraped_at: 2026-09-02T15:03:25+08:00
+doc_updated_at: 2026-06-02
+content_hash: sha256:26a4d8ebde4e40ec5017954963daacac38a104738cf25d970ded292352fe7e90
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ HarmonyOS多目标产物支持[HAP](../harmonyos-guides/hap-package.md)（应用
 
 ### 构建原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/Vfng891ESKibOJDHnvpGYQ/zh-cn_image_0000002523454541.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/CZZgAVQdQ--Pp_D9OonsFg/zh-cn_image_0000002523454541.png "点击放大")
 
 如图所示，在HarmonyOS应用开发过程中，一个应用通常包含多个HAR/HAP/HSP模块。每个HAR/HAP/HSP模块可以通过配置模块级的build-profile.json文件定义多个target，每个target可以定制不同的资源（具体可参考上文定制项介绍）。因此形成了具有差异性的target，如：Module A通过定制生成了TargetA-1、TargetA-2；Module B通过定制生成了TargetB-1、TargetB-2、TargetB-3；Module C通过定制生成了TargetC-1、TargetC-2。然后通过配置工程级的build-profile.json定义多个product，每个product可以依赖不同的Target并且配置不同的App产物定制项。因此形成了具有差异的product，如：依赖TargetA-1、TargetB-1、TargetC-1构建出App-product1；依赖TargetB-3、TargetC-2构建出App-product2。最终在构建工程时选择相应的product就可以显示出对应的定制效果。
 
@@ -102,217 +102,211 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 
    HAP模块：在模块级build-profile.json5文件中配置。
 
-   ```
-   1. "targets": [
-   2. {
-   3. "name": "official",
-   4. "source": {
-   5. "pages": [
-   6. "pages/Index"
-   7. ],
-   8. "sourceRoots": [
-   9. "./src/official_pages"
-   10. ]
-   11. },
-   12. "resource": {
-   13. "directories": [
-   14. "./src/main/official/resources",
-   15. "./src/main/resources"
-   16. ]
-   17. }
-   18. },
-   19. {
-   20. "name": "test",
-   21. "source": {
-   22. "pages": [
-   23. "pages/Index"
-   24. ],
-   25. "sourceRoots": [
-   26. "./src/test_pages"
-   27. ]
-   28. },
-   29. "resource": {
-   30. "directories": [
-   31. "./src/main/test/resources",
-   32. "./src/main/resources"
-   33. ]
-   34. }
-   35. },
-   36. ]
+   ```json
+   "targets": [
+     {
+       "name": "official",
+       "source": {
+         "pages": [
+           "pages/Index"
+         ],
+         "sourceRoots": [
+           "./src/official_pages"
+         ]
+       },
+       "resource": {
+         "directories": [
+           "./src/main/official/resources",
+           "./src/main/resources"
+         ]
+       }
+     },
+     {
+       "name": "test",
+       "source": {
+         "pages": [
+           "pages/Index"
+         ],
+         "sourceRoots": [
+           "./src/test_pages"
+         ]
+       },
+       "resource": {
+         "directories": [
+           "./src/main/test/resources",
+           "./src/main/resources"
+         ]
+       }
+     },
+   ]
    ```
 
-   [build-profile.json5](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/entry/build-profile.json5#L21-L56)
-
-   上述配置文件代码中，配置了official版本与test版本的target名称、source源码集-pages、source源码集-sourceRoots以及资源文件路径，因此我们需要在对应的目录结构下创建我们配置的文件以及目录。针对以上配置信息，我们需要创建pages目录下的Index.ets文件、src目录下的test\_pages和official\_pages目录以及src/main目录下的resource\_test和resource\_official目录。
+   上述配置文件代码中，配置了official版本与test版本的target名称、source源码集-pages、source源码集-sourceRoots以及资源文件路径，因此我们需要在对应的目录结构下创建我们配置的文件以及目录。针对以上配置信息，我们需要创建pages目录下的Index.ets文件、src目录下的test\_pages和official\_pages目录以及src/main目录下的test/resources和official/resources目录。
 
    在配置不同target的资源文件目录时，可以配置多个资源文件目录，建议将共有的资源文件放置到默认的资源文件目录中，将有差异的资源部分放置到定制的资源文件目录中，然后在配置资源目录时将默认的资源目录和定制的资源目录都加上。例如：案例中即给不同版本配置了两个资源目录，一个用于存放共有资源，一个存放不同target的差异性资源。
 
-   如果target引用的多个资源文件目录下，存在同名的资源，则在构建打包过程中，将按照配置的资源文件目录顺序进行选择。例如，上述official版target引用的资源中，resource\_official和resource中存在同名的资源文件，则resource\_official中的资源会被打包到HAP中。
+   如果target引用的多个资源文件目录下，存在同名的资源，则在构建打包过程中，将按照配置的资源文件目录顺序进行选择。例如，上述official版target引用的资源中，official/resources和resources中存在同名的资源文件，则official/resources中的资源会被打包到HAP中。
 
    \* 配置文件中，default为创建工程时默认生成的target，一般无需特殊处理。
 
    HAR模块：在模块级build-profile.json5文件中配置。
 
-   ```
-   1. "targets": [
-   2. {
-   3. "name": "official",
-   4. "config": {
-   5. "buildOption": {
-   6. "arkOptions": {
-   7. "buildProfileFields": {
-   8. "productName": "official"
-   9. }
-   10. },
-   11. "nativeLib": {
-   12. "filter": {
-   13. "excludes": [
-   14. "../libs/arm64-v8a/libentry.so"
-   15. ]
-   16. }
-   17. }
-   18. }
-   19. },
-   20. "runtimeOS": "HarmonyOS",
-   21. "output": {
-   22. "artifactName": "official"
-   23. },
-   24. "source": {
-   25. "sourceRoots": [
-   26. "./src/official_pages"
-   27. ]
-   28. },
-   29. "resource": {
-   30. "directories": [
-   31. "./src/main/official/resources",
-   32. "./src/main/resources"
-   33. ]
-   34. }
-   35. },
-   36. {
-   37. "name": "test",
-   38. "config": {
-   39. "buildOption": {
-   40. "arkOptions": {
-   41. "buildProfileFields": {
-   42. "productName": "test"
-   43. }
-   44. }
-   45. }
-   46. },
-   47. "runtimeOS": "HarmonyOS",
-   48. "output": {
-   49. "artifactName": "test"
-   50. },
-   51. "source": {
-   52. "sourceRoots": [
-   53. "./src/test_pages"
-   54. ]
-   55. },
-   56. "resource": {
-   57. "directories": [
-   58. "./src/main/test/resources",
-   59. "./src/main/resources"
-   60. ]
-   61. }
-   62. }
-   63. ]
+   ```json
+   "targets": [
+     {
+       "name": "official",
+       "config": {
+         "buildOption": {
+           "arkOptions": {
+             "buildProfileFields": {
+               "productName": "official"
+             }
+           },
+           "nativeLib": {
+             "filter": {
+               "excludes": [
+                 "../libs/arm64-v8a/libentry.so"
+               ]
+             }
+           }
+         }
+       },
+       "runtimeOS": "HarmonyOS",
+       "output": {
+         "artifactName": "official"
+       },
+       "source": {
+         "sourceRoots": [
+           "./src/official_pages"
+         ]
+       },
+       "resource": {
+         "directories": [
+           "./src/main/official/resources",
+           "./src/main/resources"
+         ]
+       }
+     },
+     {
+       "name": "test",
+       "config": {
+         "buildOption": {
+           "arkOptions": {
+             "buildProfileFields": {
+               "productName": "test"
+             }
+           }
+         }
+       },
+       "runtimeOS": "HarmonyOS",
+       "output": {
+         "artifactName": "test"
+       },
+       "source": {
+         "sourceRoots": [
+           "./src/test_pages"
+         ]
+       },
+       "resource": {
+         "directories": [
+           "./src/main/test/resources",
+           "./src/main/resources"
+         ]
+       }
+     }
+   ]
    ```
 
-   [build-profile.json5](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/myhar/build-profile.json5#L22-L84)
-
-   上述配置文件代码中，配置了official版本与test版本的target名称、buildProFields自定义参数、产物名称、source源码集-sourceRoots以及资源文件目录，并且在official版本中剔除了无需打包的.so文件。同样的，我们也需要创建我们需要的文件目录，因此我们需要在该HAR模块的src/main/目录下创建resources\_test和resources\_official文件夹，在src/目录下创建official\_pages和test\_pages文件夹。
+   上述配置文件代码中，配置了official版本与test版本的target名称、buildProFields自定义参数、产物名称、source源码集-sourceRoots以及资源文件目录，并且在official版本中剔除了无需打包的.so文件。同样的，我们也需要创建我们需要的文件目录，因此我们需要在该HAR模块的src/main/目录下创建test/resources和official/resources文件夹，在src/目录下创建official\_pages和test\_pages文件夹。
 3. 定制product内容。
 
    App工程：在工程级build-profile.json5文件中配置。
 
+   ```json
+   {
+     "app": {
+       "signingConfigs": [],
+       "products": [
+         {
+           "name": "official",
+           "compatibleSdkVersion": "5.0.5(17)",
+           "targetSdkVersion": "5.0.5(17)",
+           "runtimeOS": "HarmonyOS",
+           "buildOption": {
+             "strictMode": {
+               "caseSensitiveCheck": true,
+               "useNormalizedOHMUrl": true
+             }
+           },
+           "bundleName": "com.official.com",
+           "bundleType": "app",
+           "icon": "$media:startIcon",
+           "label": "$string:official_app_name"
+         },
+         {
+           "name": "test",
+           "compatibleSdkVersion": "5.0.5(17)",
+           "targetSdkVersion": "5.0.5(17)",
+           "runtimeOS": "HarmonyOS",
+           "buildOption": {
+             "strictMode": {
+               "caseSensitiveCheck": true,
+               "useNormalizedOHMUrl": true
+             }
+           },
+           "bundleName": "com.test.com",
+           "bundleType": "app",
+           "icon": "$media:app_icon",
+           "label": "$string:test_app_name"
+         },
+         {
+           "name": "default",
+           "compatibleSdkVersion": "5.0.5(17)",
+           "targetSdkVersion": "5.0.5(17)",
+           "runtimeOS": "HarmonyOS",
+         }
+       ],
+       "buildModeSet": [
+         {
+           "name": "debug",
+         },
+         {
+           "name": "release"
+         }
+       ]
+     },
+     "modules": [
+       {
+         "name": "entry",
+         "srcPath": "./entry",
+         "targets": [
+           {
+             "name": "official",
+             "applyToProducts": [
+               "official"
+             ]
+           },
+           {
+             "name": "test",
+             "applyToProducts": [
+               "test"
+             ]
+           }
+         ]
+       },
+       {
+         "name": "myhar",
+         "srcPath": "./myhar"
+       }
+     ]
+   }
    ```
-   1. {
-   2. "app": {
-   3. "signingConfigs": [],
-   4. "products": [
-   5. {
-   6. "name": "official",
-   7. "compatibleSdkVersion": "5.0.5(17)",
-   8. "targetSdkVersion": "5.0.5(17)",
-   9. "runtimeOS": "HarmonyOS",
-   10. "buildOption": {
-   11. "strictMode": {
-   12. "caseSensitiveCheck": true,
-   13. "useNormalizedOHMUrl": true
-   14. }
-   15. },
-   16. "bundleName": "com.official.com",
-   17. "bundleType": "app",
-   18. "icon": "$media:startIcon",
-   19. "label": "$string:official_app_name"
-   20. },
-   21. {
-   22. "name": "test",
-   23. "compatibleSdkVersion": "5.0.5(17)",
-   24. "targetSdkVersion": "5.0.5(17)",
-   25. "runtimeOS": "HarmonyOS",
-   26. "buildOption": {
-   27. "strictMode": {
-   28. "caseSensitiveCheck": true,
-   29. "useNormalizedOHMUrl": true
-   30. }
-   31. },
-   32. "bundleName": "com.test.com",
-   33. "bundleType": "app",
-   34. "icon": "$media:app_icon",
-   35. "label": "$string:test_app_name"
-   36. },
-   37. {
-   38. "name": "default",
-   39. "compatibleSdkVersion": "5.0.5(17)",
-   40. "targetSdkVersion": "5.0.5(17)",
-   41. "runtimeOS": "HarmonyOS",
-   42. }
-   43. ],
-   44. "buildModeSet": [
-   45. {
-   46. "name": "debug",
-   47. },
-   48. {
-   49. "name": "release"
-   50. }
-   51. ]
-   52. },
-   53. "modules": [
-   54. {
-   55. "name": "entry",
-   56. "srcPath": "./entry",
-   57. "targets": [
-   58. {
-   59. "name": "official",
-   60. "applyToProducts": [
-   61. "official"
-   62. ]
-   63. },
-   64. {
-   65. "name": "test",
-   66. "applyToProducts": [
-   67. "test"
-   68. ]
-   69. }
-   70. ]
-   71. },
-   72. {
-   73. "name": "myhar",
-   74. "srcPath": "./myhar"
-   75. }
-   76. ]
-   77. }
-   ```
-
-   [build-profile.json5](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/build-profile.json5#L2-L78)
 
    在该配置文件中，配置了product名称、产物bundleName、签名配置信息、应用图标、依赖的target信息。这里需要注意的是，依赖的HAR模块需要在引用他的模块内配置依赖关系。我们的案例是在entry模块里调用的HAR包，所以需要在其对应的oh-package.json5文件中配置dependencies依赖。
 4. 实现不同目标产物需要定制的业务逻辑。
    * 通过[source源码集-sourceRoots配置](../harmonyos-guides/ide-customized-multi-targets-and-products-guides.md#section18668905913)的差异性代码空间，实现标题（代码文件）多目标效果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/CWU4jbxHSWebQ1_pZoUoNw/zh-cn_image_0000002229335589.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Q0P7Br13TMOf3pU7S_VmFg/zh-cn_image_0000002193850196.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Bn3QWjIOQC619om3tiVIyA/zh-cn_image_0000002229335589.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/P76nuPURSH-tqwTxmquw3Q/zh-cn_image_0000002193850196.png)
 
      在上述配置文件中，配置了HAP模块的source源码集-sourceRoots目录，official版本与test版本分别对应src/official\_pages和src/test\_pages。
 
@@ -320,77 +314,71 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 
      src/official\_pages/VersionInfo.ets
 
+     ```typescript
+     export const getName = () => "This is official version."
+     export const getTitleName = () => $r('app.string.title')
      ```
-     1. export const getName = () => "This is official version."
-     2. export const getTitleName = () => $r('app.string.title')
-     ```
-
-     [VersionInfo.ets](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/entry/src/official_pages/VersionInfo.ets#L16-L17)
 
      src/test\_pages/VersionInfo.ets
 
+     ```typescript
+     export const getName = () => "This is test version."
+     export const getTitleName = () => $r('app.string.title')
      ```
-     1. export const getName = () => "This is test version."
-     2. export const getTitleName = () => $r('app.string.title')
-     ```
-
-     [VersionInfo.ets](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/entry/src/test_pages/VersionInfo.ets#L16-L17)
 
      在Index.ets文件中，通过import packageName的方式，省略sourceRoot，可以实现不同target下的差异化构建（ import xxx from '<packageName>/sourceFileName'）。该能力具体可参考：[source源码集-sourceRoots配置](../harmonyos-guides/ide-customized-multi-targets-and-products-guides.md#section18668905913)。
 
+     ```typescript
+     import { MainPage } from 'myhar'
+     import { getName, getTitleName } from 'entry/VersionInfo'
+
+     @Entry
+     @Component
+     struct Index {
+       @State message: string = getName();
+       @State titleMessage: Resource = getTitleName();
+
+       build() {
+         Column() {
+           Column() {
+             Text(this.titleMessage)
+               .height(40)
+               .fontSize(30)
+               .fontWeight(FontWeight.Medium)
+             Text(this.message)
+               .fontSize(14)
+               .fontWeight(FontWeight.Normal)
+               .fontColor(Color.Black)
+               .opacity(0.6)
+               .height(19)
+               .margin({ top: 2 })
+           }
+           .height(78)
+           .width('100%')
+           .alignItems(HorizontalAlign.Start)
+           .padding({
+             left: 12,
+             right: 12,
+             top: 8,
+             bottom: 12
+           })
+
+           Row() {
+             MainPage()
+               .backgroundColor('#F1F3F5')
+           }
+           .layoutWeight(1)
+         }
+         .width('100%')
+         .height('100%')
+         .backgroundColor('#F1F3F5')
+         .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
+       }
+     }
      ```
-     1. import { MainPage } from 'myhar'
-     2. import { getName, getTitleName } from 'entry/VersionInfo'
-
-     4. @Entry
-     5. @Component
-     6. struct Index {
-     7. @State message: string = getName();
-     8. @State titleMessage: Resource = getTitleName();
-
-     10. build() {
-     11. Column() {
-     12. Column() {
-     13. Text(this.titleMessage)
-     14. .height(40)
-     15. .fontSize(30)
-     16. .fontWeight(FontWeight.Medium)
-     17. Text(this.message)
-     18. .fontSize(14)
-     19. .fontWeight(FontWeight.Normal)
-     20. .fontColor(Color.Black)
-     21. .opacity(0.6)
-     22. .height(19)
-     23. .margin({ top: 2 })
-     24. }
-     25. .height(78)
-     26. .width('100%')
-     27. .alignItems(HorizontalAlign.Start)
-     28. .padding({
-     29. left: 12,
-     30. right: 12,
-     31. top: 8,
-     32. bottom: 12
-     33. })
-
-     35. Row() {
-     36. MainPage()
-     37. .backgroundColor('#F1F3F5')
-     38. }
-     39. .layoutWeight(1)
-     40. }
-     41. .width('100%')
-     42. .height('100%')
-     43. .backgroundColor('#F1F3F5')
-     44. .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
-     45. }
-     46. }
-     ```
-
-     [Index.ets](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/entry/src/main/ets/pages/Index.ets#L16-L61)
    * 在HAR模块引用差异性资源，实现页面中资源多目标效果。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/nD9bXVNxSqOQrRRRxof_kA/zh-cn_image_0000002194009792.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NN0depcgQmGYfGY1v3dWow/zh-cn_image_0000002194009796.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/tJRIIs_fSiyk8e7XxVkFOg/zh-cn_image_0000002194009792.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/tIybtt7ARQSi3XOHnyX6lQ/zh-cn_image_0000002194009796.png)
 
      在上述配置文件中，我们配置了HAR模块的资源文件路径，official版本和test版本分别对应src/main/official/resources和src/main/test/resources文件。
 
@@ -398,30 +386,28 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 
      在页面中直接引用对应同名资源即可，代码如下：
 
+     ```typescript
+     TextArea({ text: $r('app.string.title_description') })
+       .fontSize(16)
+       .width('100%')
+       .fontColor('#e6000000')
+       .fontWeight(FontWeight.Normal)
+       .borderRadius(16)
+       .focusable(false)
+     Image($r('app.media.HarImage'))
+       .width('100%')
+       .borderRadius(12)
+       .padding({ top: 16 })
      ```
-     1. TextArea({ text: $r('app.string.title_description') })
-     2. .fontSize(16)
-     3. .width('100%')
-     4. .fontColor('#e6000000')
-     5. .fontWeight(FontWeight.Normal)
-     6. .borderRadius(16)
-     7. .focusable(false)
-     8. Image($r('app.media.HarImage'))
-     9. .width('100%')
-     10. .borderRadius(12)
-     11. .padding({ top: 16 })
-     ```
-
-     [MainPage.ets](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/myhar/src/main/ets/components/MainPage.ets#L41-L51)
    * 在HAR模块中通过不同自定义参数信息跳转到不同页面，实现路由跳转多目标效果。
 
      效果对比如下：
 
      **图1** official版本  
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/W1AG4WmGRTeEYRf-9W5Ktw/zh-cn_image_0000002229335573.gif)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/wzLwIsG9Q4a7VB6TxbtkZQ/zh-cn_image_0000002229335573.gif)
 
      **图2** test版本  
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/k-jnAMX4ThyspsxPh2JsAw/zh-cn_image_0000002193850204.gif)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/RXngFRNVSjyazeP_8TKIiQ/zh-cn_image_0000002193850204.gif)
 
      在先前的案例中，已经介绍了如何在sourceRoots目录配置的差异性代码空间中实现对同名文件中的同名方法的调用。这里主要介绍在不同的target中如何调用不同名的文件中的不同方法。
 
@@ -433,55 +419,49 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 
      导入方法及组件：
 
+     ```typescript
+     import BuildProfile from '../../../../BuildProfile';
+     import { OfficialSecond } from '../../../official_pages/OfficialSecondPage';
+     import { TestSecond } from '../../../test_pages/TestSecondPage';
      ```
-     1. import BuildProfile from '../../../../BuildProfile';
-     2. import { OfficialSecond } from '../../../official_pages/OfficialSecondPage';
-     3. import { TestSecond } from '../../../test_pages/TestSecondPage';
-     ```
-
-     [MainPage.ets](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/myhar/src/main/ets/components/MainPage.ets#L16-L18)
 
      定义页面跳转逻辑：接收到不同的参数值跳转不同页面。
 
+     ```typescript
+     @Builder
+     PagesMap(name: string) {
+       if (name == 'official') {
+         OfficialSecond();
+       } else {
+         TestSecond();
+       }
+     }
      ```
-     1. @Builder
-     2. PagesMap(name: string) {
-     3. if (name == 'official') {
-     4. OfficialSecond();
-     5. } else {
-     6. TestSecond();
-     7. }
-     8. }
-     ```
-
-     [MainPage.ets](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/myhar/src/main/ets/components/MainPage.ets#L26-L33)
 
      为按钮添加点击属性，并传递自定义参数，用于实现Navigation路由跳转：
 
+     ```typescript
+     Button($r('app.string.button_describe'))
+       .fontSize(16)
+       .height(40)
+       .width('100%')
+       .onClick(() => {
+         this.pageInfos.pushPath({ name: BuildProfile.productName });
+       })
      ```
-     1. Button($r('app.string.button_describe'))
-     2. .fontSize(16)
-     3. .height(40)
-     4. .width('100%')
-     5. .onClick(() => {
-     6. this.pageInfos.pushPath({ name: BuildProfile.productName });
-     7. })
-     ```
-
-     [MainPage.ets](https://gitcode.com/HarmonyOS_Samples/MultiTarget/blob/master/myhar/src/main/ets/components/MainPage.ets#L55-L61)
 5. 选择不同的product构建出不同的目标产物。
 
    **图3** 构建图示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8ATZvCZfQW2-LqviuwsfBw/zh-cn_image_0000002229450045.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Oi1_oIPKSqa93aLa2z48Dg/zh-cn_image_0000002229450045.png)
 
    首先点击DevEco Studio工具右上角的Product按钮，即图中的1号标识处，然后在2号标识处选择对应的product工程，选择完工程之后会自动映射出我们文件中已经依赖的target，最后点击Apply应用。上述操作完成之后就可以点击运行按钮查看多目标产物效果了。本案例运行效果图如下：
 
    **图4** Official版本
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/6RR9FvRlSeWhD4CIo8npdg/zh-cn_image_0000002194009800.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/yOQ23eJPQrqH_Hs6hOjZtQ/zh-cn_image_0000002194009800.gif)
 
    **图5** Test版本  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/WqnyDnGXSJChjIWCI0ovRQ/zh-cn_image_0000002229335577.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/cAE5nF0DQ_i0vGb6HmFihQ/zh-cn_image_0000002229335577.gif)
 
 ## 常见问题
 
@@ -491,19 +471,19 @@ Test版本：工程会在首页中显示Test版的资源以及一个页面跳转
 
 首先需要在每个product下添加配置项"signingConfig"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7Q0LaCjWRC6cnYA6BP0yfw/zh-cn_image_0000002229335565.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/qXq5fQ8WRe-GSXYfHaR65Q/zh-cn_image_0000002229335565.png "点击放大")
 
 然后进入到签名配置页面，点击加号，添加签名信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/VZjjueAzSieTSDmudgdyog/zh-cn_image_0000002229450081.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/KPuDjlT7RNWMPXH5b-_PCQ/zh-cn_image_0000002229450081.png "点击放大")
 
 然后选择对应的bundle name，并填写上面配置的"signingConfig"信息（每个product产物都需要配置）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/42oudhPPSgan1h72xeCi_w/zh-cn_image_0000002193850180.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/0yYP4uDNSoiNTh7zS2wA4A/zh-cn_image_0000002193850180.png "点击放大")
 
 点击ok之后，进行签名即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/WY1EP5quQO-kdOp3DUncAQ/zh-cn_image_0000002193850208.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/TARw0AiaS2-BLE5UKbBMtA/zh-cn_image_0000002193850208.png "点击放大")
 
 ## 示例代码
 

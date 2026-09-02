@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 元能力子系统错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 元能力子系统错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ffce7afce6849aa01dee0d223161a75e8907b53c1f2abd99eeaef8a28a746a40
+scraped_at: 2026-09-02T15:00:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:15f52df852ec41f731d698431d065a6fbad110986b091a04a70bfe6ec51d4959
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 16000001 指定的Ability名称不存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -33,18 +31,16 @@ The specified ability does not exist.
 1. 检查Want中的bundleName、moduleName和abilityName是否正确。
 2. 检查传入Want中bundleName对应的应用是否安装。可使用如下命令查询已安装的应用列表，若bundleName不在查询结果中，说明应用未安装成功。
 
-   ```
-   1. hdc shell bm dump -a
+   ```bash
+   hdc shell bm dump -a
    ```
 3. 多hap应用需确认ability所属的hap是否已被安装。可使用如下命令查询应用的包信息，若安装的应用中没有对应的hap和ability，说明ability所属的hap未被安装。
 
-   ```
-   1. hdc shell bm dump -n 包名
+   ```bash
+   hdc shell bm dump -n 包名
    ```
 
 ## 16000002 接口调用Ability类型错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -67,8 +63,6 @@ Incorrect ability type.
 
 ## 16000003 指定的ID不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The specified ID does not exist.
@@ -87,8 +81,6 @@ The specified ID does not exist.
 
 ## 16000004 可见性校验失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Cannot start an invisible component.
@@ -103,12 +95,10 @@ Cannot start an invisible component.
 
 **处理步骤**
 
-1. [Stage模型](../harmonyos-guides/ability-terminology.md#stage模型)下，拉起应用时抛出16000004异常，表示被拉应用调用失败，需要检查被拉应用module.json5的Ability字段的[exported](../harmonyos-guides/module-configuration-file.md#abilities标签)配置是否为true。该配置字段为true，表示可以被其他应用调用；该配置字段为false，表示不可以被其他应用调用。
+1. [Stage模型](../harmonyos-guides/ability-terminology.md#stage模型)下，拉起应用时抛出16000004异常，表示无法启动不可见组件，需要检查被拉应用module.json5的Ability字段的[exported](../harmonyos-guides/module-configuration-file.md#abilities标签)配置是否为true。该配置字段为true，表示可以被其他应用调用；该配置字段为false，表示不可以被其他应用调用。
 2. 若应用需要拉起exported为false的ability，请申请ohos.permission.START\_INVISIBLE\_ABILITY权限（该权限仅系统应用可申请）。
 
 ## 16000005 指定的进程权限校验失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -128,8 +118,6 @@ The specified process does not have the permission.
 
 ## 16000006 不允许跨用户操作
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Cross-user operations are not allowed.
@@ -147,8 +135,6 @@ Cross-user operations are not allowed.
 确认是否进行了跨用户操作，检查接口调用时传入的userID是否与当前userID一致。
 
 ## 16000007 服务未响应
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -168,8 +154,6 @@ Service busy. There are concurrent tasks. Try again later.
 
 ## 16000008 众测应用到期
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The crowdtesting application expires.
@@ -187,8 +171,6 @@ The crowdtesting application expires.
 请检查应用是否众测到期，已过有效期的众测应用无法启动。
 
 ## 16000009 wukong模式，不允许启动/停止ability
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -208,8 +190,6 @@ wukong模式，不允许启动/停止ability。
 
 ## 16000010 不允许带迁移flag
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The call with the continuation and prepare continuation flag is forbidden.
@@ -227,8 +207,6 @@ The call with the continuation and prepare continuation flag is forbidden.
 请检查是否携带迁移flag。
 
 ## 16000011 上下文对象不存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -248,8 +226,6 @@ The context does not exist.
 
 ## 16000012 应用被管控
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The application is controlled.
@@ -267,8 +243,6 @@ The application is controlled.
 目标应用被系统管控禁止拉起，请稍后再尝试调用。
 
 ## 16000013 应用被EDM管控
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -288,8 +262,6 @@ The application is controlled by EDM.
 
 ## 16000015 服务超时
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Service timeout.
@@ -308,8 +280,6 @@ Service timeout.
 
 ## 16000018 限制API 11以上版本三方应用跳转
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Redirection to a third-party application is not allowed in API version greater than 11.
@@ -326,9 +296,7 @@ Redirection to a third-party application is not allowed in API version greater t
 
 使用隐式启动方式或通过[openLink](js-apis-inner-application-uiabilitycontext.md#openlink12)跳转其他应用。
 
-## 16000019 隐式启动未查找到匹配应用
-
-PhonePC/2in1TabletTVWearable
+## 16000019 隐式启动未查找到匹配Ability
 
 **错误信息**
 
@@ -348,9 +316,25 @@ No matching ability is found.
 1. 确保隐式启动的参数配置正确，匹配规则详见[显式Want与隐式Want匹配规则](../harmonyos-guides/explicit-implicit-want-mappings.md)。
 2. 确保对应的HAP包已安装。
 
-## 16000050 内部错误
+## 16000020 传入的Context对象不是Ability级别Context
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+The context is not ability context.
+
+**错误描述**
+
+传入的Context对象不是Ability级别Context。
+
+**可能原因**
+
+传入的Context对象既不是UIAbilityContext或ExtensionContext，也没有继承自UIAbilityContext或ExtensionContext。
+
+**处理步骤**
+
+使用UIAbilityContext或ExtensionContext对象作为入参，或者使用继承了UIAbilityContext或ExtensionContext类的对象作为入参。
+
+## 16000050 内部错误
 
 **错误信息**
 
@@ -374,9 +358,7 @@ Internal error.
 3. 确保设备上已安装应用市场App，或者在拉起应用前检查应用市场App是否已安装。
 4. 对于开发者无法处理的系统内部错误，请尝试重新调用该接口，或者重启设备。
 
-## 16000053 非顶层应用
-
-PhonePC/2in1TabletTVWearable
+## 16000053 非顶层Ability
 
 **错误信息**
 
@@ -384,21 +366,19 @@ The ability is not on the top of the UI.
 
 **错误描述**
 
-当前应用未显示在界面顶层时，方法将返回该错误码。
+当前Ability未显示在界面顶层时，方法将返回该错误码。
 
 **可能原因**
 
-用户执行免安装启动时需要确保应用在前台，但应用未显示在界面顶层。
+用户执行免安装启动时需要确保Ability在前台，但Ability未显示在界面顶层。
 
 **处理步骤**
 
-1. 请确保当前应用已启动并处于前台运行状态。
-2. 请核实应用界面是否完全显示，且未被其他应用窗口遮挡或最小化。
-3. 如设备启用了分屏或多窗口模式，请确保当前应用为焦点窗口。
+1. 请确保当前Ability已启动并处于前台运行状态。
+2. 请核实Ability界面是否完全显示，且未被其他Ability窗口遮挡或最小化。
+3. 如设备启用了分屏或多窗口模式，请确保当前Ability为焦点窗口。
 
 ## 16000055 免安装超时
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -418,8 +398,6 @@ Installation-free timed out.
 
 ## 16000061 不支持的操作
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Operation not supported.
@@ -437,8 +415,6 @@ Operation not supported.
 确认操作在当前系统版本上是否支持。
 
 ## 16000062 子进程数量超出上限
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -458,8 +434,6 @@ The number of child processes exceeds the upper limit.
 
 ## 16000063 重启应用指定组件无效
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The target to restart does not belong to the current application or is not a UIAbility.
@@ -477,8 +451,6 @@ The target to restart does not belong to the current application or is not a UIA
 确认指定组件名称为当前应用组件，且类型为UIAbility。
 
 ## 16000064 重启应用频繁
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -498,8 +470,6 @@ Restart too frequently. Try again at least 3s later.
 
 ## 16000065 接口只支持Ability在前台时调用
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The API can be called only when the ability is running in the foreground.
@@ -518,8 +488,6 @@ The API can be called only when the ability is running in the foreground.
 
 ## 16000066 wukong模式，不允许移动Ability到前台/后台
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 An ability cannot switch to the foreground or background in Wukong mode.
@@ -537,8 +505,6 @@ wukong模式，不允许移动Ability到前台/后台。
 退出wukong模式后，再尝试移动Ability到前台/后台。请勿在wukong模式下移动Ability到前台/后台。
 
 ## 16000067 Ability启动参数校验失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -559,8 +525,6 @@ The StartOptions check failed.
 
 ## 16000068 Ability已经在运行中
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The ability is already running.
@@ -578,8 +542,6 @@ The ability is already running.
 当目标Ability的launchType是singleton或者specified时，避免通过指定processMode和startupVisibility的方式重复startAbility。
 
 ## 16000069 严格模式下不允许该类型Extension启动三方应用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -600,8 +562,6 @@ The extension cannot start the third party application.
 
 ## 16000070 严格模式下不允许该类型Extension启动指定ServiceExtensionAbility
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The extension cannot start the service.
@@ -621,8 +581,6 @@ The extension cannot start the service.
 
 ## 16000071 不支持应用分身模式
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 App clone is not supported.
@@ -640,8 +598,6 @@ App clone is not supported.
 参考[应用多实例的配置方法](../harmonyos-guides/multiinstance.md)，在app.json5配置文件中配置multiAppMode标签，开启应用分身功能后，再调用[getCurrentAppCloneIndex](js-apis-inner-application-applicationcontext.md#applicationcontextgetcurrentappcloneindex12)接口。
 
 ## 16000072 不支持应用多开
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -661,8 +617,6 @@ App clone or multi-instance is not supported.
 
 ## 16000073 传入的appCloneIndex是一个无效值
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The app clone index is invalid.
@@ -673,17 +627,15 @@ The app clone index is invalid.
 
 **可能原因**
 
-1.调用startAbility时，使用ohos.extra.param.key.appCloneIndex携带的appCloneIndex是一个无效值，则返回该错误码。
-
-2.调用isAppRunning时，入参appCloneIndex是一个无效值，则返回该错误码。
+1. 调用startAbility时，使用ohos.extra.param.key.appCloneIndex携带的appCloneIndex是一个无效值，则返回该错误码。
+2. 调用isAppRunning时，入参appCloneIndex是一个无效值，则返回该错误码。
+3. 尝试连接不支持应用分身的ExtensionAbility时，返回该错误码。
 
 **处理步骤**
 
 确认appCloneIndex的约束条件是否满足。
 
 ## 16000074 返回结果时requestCode对应的调用方不存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -705,8 +657,6 @@ The caller does not exist.
 
 ## 16000075 不支持返回结果时拉起调用方
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 BackToCaller is not supported.
@@ -726,11 +676,9 @@ BackToCaller is not supported.
 
 ## 16000076 指定的APP\_INSTANCE\_KEY不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-The app instance key is invalid.
+The app instance key does not exist.
 
 **错误描述**
 
@@ -745,8 +693,6 @@ The app instance key is invalid.
 确保传入的[APP\_INSTANCE\_KEY](js-apis-app-ability-wantconstant.md#params)是一个有效值。
 
 ## 16000077 应用的实例数量已达到上限
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -765,8 +711,6 @@ The number of app instances reaches the limit.
 应用实例已达上限，如果必须要创建新的实例，可弹框提示用户删除已有实例。
 
 ## 16000078 不支持应用多实例
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -788,8 +732,6 @@ The multi-instance is not supported.
 
 ## 16000079 不支持指定APP\_INSTANCE\_KEY
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The APP\_INSTANCE\_KEY cannot be specified.
@@ -808,8 +750,6 @@ The APP\_INSTANCE\_KEY cannot be specified.
 
 ## 16000080 不支持创建新实例
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Creating a new instance is not supported.
@@ -825,6 +765,24 @@ Creating a new instance is not supported.
 **处理步骤**
 
 删除参数[CREATE\_APP\_INSTANCE\_KEY](js-apis-app-ability-wantconstant.md#params)。
+
+## 16000082 UIAbility正在启动中
+
+**错误信息**
+
+The UIAbility is being started.
+
+**错误描述**
+
+UIAbility正在启动中，onCreate或onWindowStageCreate生命周期回调尚未完成。
+
+**可能原因**
+
+UIAbility仍处于启动阶段，onCreate或onWindowStageCreate回调尚未执行完成。
+
+**处理步骤**
+
+等待UIAbility完成onCreate或onWindowStageCreate生命周期回调后再执行相关操作。
 
 ## 16000083 不允许该类型ExtensionAbility启动指定Ability
 
@@ -846,8 +804,6 @@ The ExtensionAbility cannot start the ability due to system control.
 
 ## 16000084 只允许DelegatorAbility单次调用
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Only DelegatorAbility is allowed to call this API, and only once.
@@ -868,8 +824,6 @@ Only DelegatorAbility is allowed to call this API, and only once.
 
 ## 16000085 元能力与窗口的交互流程发生错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 An error occurred during the interaction between the ability and window.
@@ -888,8 +842,6 @@ An error occurred during the interaction between the ability and window.
 
 ## 16000086 传入的context不是UIAbilityContext
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The context is not UIAbilityContext.
@@ -907,8 +859,6 @@ The context is not UIAbilityContext.
 请确保传入的参数为UIAbilityContext对象或其子类对象。
 
 ## 16000090 调用方不是元服务
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -959,8 +909,6 @@ The caller is not an atomic service.
 
 ## 16000110 当前应用不在Kiosk模式的列表内
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The current application is not in Kiosk app list and cannot enter Kiosk mode.
@@ -978,8 +926,6 @@ The current application is not in Kiosk app list and cannot enter Kiosk mode.
 需要EDM管控模块将当前应用添加到Kiosk应用列表内。
 
 ## 16000111 已经有应用进入了Kiosk模式
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -999,8 +945,6 @@ The system is already in Kiosk mode and cannot enter Kiosk mode again.
 
 ## 16000112 当前系统没有应用进入Kiosk模式
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The current application is not in Kiosk mode and cannot exit Kiosk mode.
@@ -1019,8 +963,6 @@ The current application is not in Kiosk mode and cannot exit Kiosk mode.
 
 ## 16000113 当前Ability不在前台
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Current ability is not in foreground.
@@ -1037,9 +979,61 @@ Current ability is not in foreground.
 
 检查当前Ability是否处于前台状态。
 
-## 16000130 UIAbility不属于调用方
+## 16000122 待启动的目标组件被系统管控模块拦截
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+The target component is blocked by the system module and does not support startup.
+
+**错误描述**
+
+待启动的目标组件被系统管控模块拦截，不支持启动。
+
+**可能原因**
+
+系统管控模块拦截了目标应用的启动。
+
+**处理步骤**
+
+如果无法启动目标UIAbility，可以尝试启动其他UIAbility。
+
+## 16000123 不支持隐式启动
+
+**错误信息**
+
+Implicit startup is not supported.
+
+**错误描述**
+
+不支持隐式启动。
+
+**可能原因**
+
+wantList参数中存在隐式Want。
+
+**处理步骤**
+
+检查wantList参数，确保不存在隐式Want，若存在则将其修改为显式Want。
+
+## 16000124 不支持启动分布式UIAbility
+
+**错误信息**
+
+Starting a remote UIAbility is not supported.
+
+**错误描述**
+
+不支持启动分布式UIAbility。
+
+**可能原因**
+
+Want中的deviceId不为空且非本机的设备ID。
+
+**处理步骤**
+
+将Want中的deviceId字段设为空，或配置为本机的deviceId。
+
+## 16000130 UIAbility不属于调用方
 
 **错误信息**
 
@@ -1059,11 +1053,9 @@ The UIAbility not belong to caller.
 
 ## 16000131 UIAbility已启动
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-The UIAbility is already exist, can not start again.
+The UIAbility is already exists, can not start again.
 
 **错误描述**
 
@@ -1078,8 +1070,6 @@ startSelfUIAbilityInCurrentProcess用于冷启动一个新的UIAbility实例，�
 检查UIAbility是否已启动过。
 
 ## 16000135 UIAbility的主窗不存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1099,8 +1089,6 @@ Window还未创建或已销毁的时候调用该接口。
 
 ## 16000136 不允许通过App Linking方式拉起应用自身UIAbility
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The UIAbility is prohibited from launching itself via App Linking.
@@ -1118,9 +1106,25 @@ The UIAbility is prohibited from launching itself via App Linking.
 * 如果允许使用App Linking拉起当前UIAbility，开发者需要在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)将[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)的allowSelfRedirect字段设置为true。
 * 如果不允许使用App Linking拉起当前UIAbility，开发者需要通过catch捕获该错误码并进行处理。
 
-## 16000151 无效wantAgent对象
+## 16000150 发送请求失败
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+Failed to send request to system service.
+
+**错误描述**
+
+当向系统服务发送请求失败时，方法将返回该错误码。
+
+**可能原因**
+
+设置快启使能状态或者重新初始化快启时，发送请求失败。
+
+**处理步骤**
+
+请尝试重新调用接口或者重启设备。
+
+## 16000151 无效wantAgent对象
 
 **错误信息**
 
@@ -1143,8 +1147,6 @@ Invalid wantAgent object.
 
 ## 16000200 不允许该调用方启动应用后台服务
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The caller is not in the appIdentifierAllowList of the target application.
@@ -1162,8 +1164,6 @@ The caller is not in the appIdentifierAllowList of the target application.
 将接口调用方的app-identifier配置在目标[AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)的[appIdentifierAllowList](../harmonyos-guides/module-configuration-file.md#extensionabilities标签)中。
 
 ## 16000201 目标服务还未启动
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1183,8 +1183,6 @@ The target service has not been started yet.
 2. 由当前应用拉起目标服务时，需要将接口调用方的app-identifier配置在目标[AppServiceExtensionAbility](js-apis-app-ability-appserviceextensionability.md)的[appIdentifierAllowList](../harmonyos-guides/module-configuration-file.md#extensionabilities标签)中。
 
 ## 16200001 通用组件客户端(Caller)已回收
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1206,8 +1204,6 @@ The caller has been released.
 
 ## 16200002 通用组件服务端(Callee)无效
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The callee does not exist.
@@ -1225,8 +1221,6 @@ The callee does not exist.
 请检查通用组件服务端(Callee)是否存在。
 
 ## 16200004 方法已注册
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1246,8 +1240,6 @@ The method has been registered.
 
 ## 16200005 方法未注册
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The method has not been registered.
@@ -1265,8 +1257,6 @@ The method has not been registered.
 请先在通用组件服务端(Callee)完成该方法的注册，再进行调用。
 
 ## 16300003 目标应用程序不是自身应用程序
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1286,27 +1276,23 @@ The target application is not the current application.
 
 ## 16300004 指定的observer不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The observer does not exist.
 
 **错误描述**
 
-当监听器不存在时，方法将返回该错误码。
+当observer不存在时，方法将返回该错误码。
 
 **可能原因**
 
-当前监听器不存在或者已注销。
+当前observer不存在或者已注销。
 
 **处理步骤**
 
-请检查是否有重复注销监听器。
+请检查是否有重复注销observer。
 
 ## 29600001 图片编辑内部错误
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -1325,9 +1311,7 @@ Internal error.
 1. 确认系统内存是否足够，设备使用的系统版本是否存在异常。
 2. 尝试重启设备。
 
-## 29600002 图片编辑内部错误
-
-PhonePC/2in1TabletTV
+## 29600002 图片输入错误
 
 **错误信息**
 
@@ -1346,8 +1330,6 @@ uri不存在或uri非图片类型文件。
 检查文件是否存在以及文件类型是否为图片。
 
 ## 29600003 图片大小过大
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -1368,8 +1350,6 @@ Image too big.
 
 ## 28800001 启动任务或其依赖项不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Startup task or its dependency not found.
@@ -1387,8 +1367,6 @@ Startup task or its dependency not found.
 检查启动框架配置文件是否正确编写，并确保所有配置的启动任务均已实现。
 
 ## 28800002 启动任务之间存在循环依赖关系
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1408,8 +1386,6 @@ The startup tasks have circular dependencies.
 
 ## 28800003 运行启动任务时发生错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 An error occurred while running the startup tasks.
@@ -1428,8 +1404,6 @@ An error occurred while running the startup tasks.
 
 ## 28800004 执行启动任务超时
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Running startup tasks timeout.
@@ -1447,8 +1421,6 @@ Running startup tasks timeout.
 根据需要调整超时时间。超时时间的设置可参见[设置启动参数](../harmonyos-guides/app-startup.md#设置启动参数)。
 
 ## 16000115 当前进程不支持设置为备选主控进程
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1471,8 +1443,6 @@ The current process cannot be set as a candidate master process.
 
 ## 16000116 当前进程已经是主控进程
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The current process is already a master process and does not support cancellation.
@@ -1490,8 +1460,6 @@ The current process is already a master process and does not support cancellatio
 不支持处理，当前进程已经是主控进程的情况下，不支持取消。
 
 ## 16000117 当前进程非备选主控进程
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1511,8 +1479,6 @@ The current process is not a candidate master process and does not support cance
 
 ## 16000118 当前进程非主控进程
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Not a master process.
@@ -1530,8 +1496,6 @@ Not a master process.
 不支持处理，当前进程不是主控进程，无法放弃其主控进程身份。
 
 ## 16000119 存在未完成的请求
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1553,8 +1517,6 @@ Cannot exit because there is an unfinished request.
 等待当前进程中的请求完成，然后再放弃当前进程的主控进程身份。
 
 ## 16000205 当前接口未在主线程中调用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1966,7 +1928,7 @@ Classes decorated with @InsightIntentEntity must implement InsightIntent.IntentE
 
 **处理步骤**
 
-确保类实现InsightIntent.IntentEntity或继承至其他意图实体。
+确保类实现InsightIntent.IntentEntity或继承自其他意图实体。
 
 ## 10110022 @InsightIntentForm装饰器修饰位置错误
 
@@ -2057,3 +2019,223 @@ useNormalizedOHMUrl未设置或者设置为false。
 **处理步骤**
 
 在应用级build-profile.json5中将useNormalizedOHMUrl设置为true。
+
+## 35600001 指定的agentId不存在
+
+**错误信息**
+
+The specified agentId does not exist.
+
+**错误描述**
+
+指定的agentId不存在。
+
+**可能原因**
+
+1. 目标应用中不存在指定agentId对应的AgentCard。
+
+**处理步骤**
+
+1. 检查目标应用的静态配置信息，重新传入正确的agentId。
+
+## 35600002 IPC消息发送失败
+
+**错误信息**
+
+Failed to send the IPC message.
+
+**错误描述**
+
+IPC消息发送失败。
+
+**可能原因**
+
+1. 传入的数据量超过了IPC的限制(200KB)。
+2. 服务端进程已经退出。
+
+**处理步骤**
+
+1. 检查发送的数据是否超过了规格限制，如果超过了，调整到规格限制内。
+2. 查看服务端进程是否已经退出，如果已经退出，需要重新获取代理对象。
+
+## 35600003 调用方已达到最大连接数
+
+**错误信息**
+
+Maximum connections from the same caller have been reached.
+
+**错误描述**
+
+调用方已达到最大连接数。
+
+**可能原因**
+
+调用方同时连接的AgentExtension数量已经达到5次，不允许再发起新的连接请求。
+
+**处理步骤**
+
+调用方断开一些连接后重新发起连接。
+
+## 16000161 当前进程延迟退出未处于等待状态，无法调用此API
+
+**错误信息**
+
+Delayed process exit is not pending in the current process, and this API cannot be called.
+
+**错误描述**
+
+在当前进程中，由于延迟退出进程未处于等待状态，因此无法调用此API。
+
+**可能原因**
+
+调用方在调用该API前，未启用当前进程延迟退出功能。
+
+**处理步骤**
+
+调用方先调用启用当前进程延迟退出接口，再调用该API。
+
+## 16000162 当前的进程中仍有其他UIAbility，无法调用此API
+
+**错误信息**
+
+The current process still has another UIAbility, and this API cannot be called.
+
+**错误描述**
+
+当前的进程中仍有其他UIAbility，此API无法被调用。
+
+**可能原因**
+
+调用方当前进程中还存在其他的UIAbility。
+
+**处理步骤**
+
+调用方保证当前进程中只有一个UIAbility且处于退出状态。
+
+## 16000163 文件类型错误
+
+**错误信息**
+
+The file type is incorrect.
+
+**错误描述**
+
+文件类型错误。
+
+**可能原因**
+
+1. 调用appMemoryOptimizer.evictFilePages接口时，传入的fileNames数组里的文件名未以.so、.hap或.hsp结尾。
+2. 调用appMemoryOptimizer.evictModuleFilePages接口时，memory\_optimizer.json配置文件中evictFilePages数组里的文件名未以.so、.hap或.hsp结尾。
+
+**处理步骤**
+
+1. 若调用appMemoryOptimizer.evictFilePages接口，检查传入的fileNames数组，确保所有文件名均以.so、.hap或.hsp结尾。
+2. 若调用appMemoryOptimizer.evictModuleFilePages接口，检查对应模块的memory\_optimizer.json配置文件，确保evictFilePages数组中所有文件名均以.so、.hap或.hsp结尾。
+
+## 16000164 解析配置文件失败
+
+**错误信息**
+
+Failed to parse the configuration file.
+
+**错误描述**
+
+解析配置文件失败。
+
+**可能原因**
+
+调用appMemoryOptimizer.evictModuleFilePages接口时，memory\_optimizer.json配置文件不存在、路径错误或内容格式错误。
+
+**处理步骤**
+
+检查对应模块目录下src/main/resources/rawfile/memory\_optimizer.json配置文件是否存在，并确认其内容格式是否正确。
+
+## 35600004 指定的AgentCard版本低于当前版本
+
+**错误信息**
+
+The specified AgentCard version is older than the current version.
+
+**错误描述**
+
+指定的AgentCard版本低于当前版本。
+
+**可能原因**
+
+调用updateAgentCard接口时新版本号低于旧版本号。
+
+**处理步骤**
+
+将AgentCard中的version字段进行更新。
+
+## 35600005 指定的AgentCard版本无效
+
+**错误信息**
+
+The specified AgentCard version is invalid.
+
+**错误描述**
+
+指定的AgentCard版本无效。
+
+**可能原因**
+
+AgentCard中的version字段没有遵循SemVer的版本规则。
+
+**处理步骤**
+
+更新AgentCard中的version字段并遵循SemVer的版本规则。
+
+## 35600006 指定的AgentCard已被注册
+
+**错误信息**
+
+The specified AgentCard has already been registered. Use updateAgentCard instead.
+
+**错误描述**
+
+指定的AgentCard已被注册，请使用updateAgentCard接口。
+
+**可能原因**
+
+指定的AgentCard已被注册。
+
+**处理步骤**
+
+使用updateAgentCard接口。
+
+## 35600007 指定的LOW\_CODE类型智能体已触发且尚未完成工作流
+
+**错误信息**
+
+The specified LOW\_CODE agent has already been triggered and is not yet completed.
+
+**错误描述**
+
+指定的LOW\_CODE类型智能体已触发且尚未完成工作流。
+
+**可能原因**
+
+指定的LOW\_CODE类型智能体已触发且尚未完成工作流。
+
+**处理步骤**
+
+调用notifyLowCodeAgentComplete接口结束指定的LOW\_CODE类型智能体。
+
+## 35600008 同一应用下AgentCard数量达到了上限
+
+**错误信息**
+
+The number of AgentCards in the bundle reaches the limit.
+
+**错误描述**
+
+同一应用下AgentCard数量达到了上限。
+
+**可能原因**
+
+同一应用下最多只能存在1000张AgentCard，调用agentManager.registerAgentCard接口时已达到此上限。
+
+**处理步骤**
+
+调用agentManager.deleteAgentCard删除不再需要的AgentCard。

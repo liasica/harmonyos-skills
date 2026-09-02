@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: GetPlacement
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Tensor > GetPlacement
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:04+08:00
+scraped_at: 2026-09-02T14:50:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c86d67993de29176b71ca3e9199ba7c555ffb31dd3377d2665cfe1c2015a7ed2
+content_hash: sha256:c8057f6c382d17311851483324b8235752ba979fbd2294f9a50f541b3a7a52ae
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:c86d67993de29176b71ca3e9199ba7c555ffb31dd3377d2665cfe1c2015
 
 ## 函数原型
 
-```
-1. ge::Placement GetPlacement() const;
+```cpp
+ge::Placement GetPlacement() const;
 ```
 
 ## 参数说明

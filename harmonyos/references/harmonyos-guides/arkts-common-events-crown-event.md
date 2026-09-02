@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持表冠输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持表冠输入事件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:46d926cc9fd727409df7b10a72a342386b6b1731625cb62221fa15597adfd763
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0d39de9fac446f34b682df082705432e473016f100a23ceb1d335fecd52bcc64
 ---
 
 表冠事件从API version 18开始支持，是指通过旋转表冠触发的事件，通过硬件采样频率上报旋转角度的变化。
@@ -20,7 +20,7 @@ content_hash: sha256:46d926cc9fd727409df7b10a72a342386b6b1731625cb62221fa15597ad
 
 其中，event参数提供表冠事件的时间戳、旋转角速度、旋转角度和[表冠动作](../harmonyos-references/ts-appendix-enums.md#crownaction18)信息。
 
-说明
+**说明** 
 
 * 当前仅Wearable设备支持表冠事件。
 * 组件对表冠事件的接收受自身获焦状态影响，接收到BEGIN后，如果失焦，则无法继续再接收到后续的UPDATE和END。
@@ -31,80 +31,75 @@ content_hash: sha256:46d926cc9fd727409df7b10a72a342386b6b1731625cb62221fa15597ad
 
    确保接收事件的组件获焦，可以通过使用[focusable](../harmonyos-references/ts-universal-attributes-focus.md#focusable)、[defaultFocus](../harmonyos-references/ts-universal-attributes-focus.md#defaultfocus9)、[focusOnTouch](../harmonyos-references/ts-universal-attributes-focus.md#focusontouch9)等方法来实现。如需更详细的焦点控制信息，请参考[焦点控制](../harmonyos-references/ts-universal-attributes-focus.md)文档。
 
+   ```typescript
+   Text(this.message)
+     .fontSize(20)
+     .fontColor(Color.White)
+     .backgroundColor("#262626")
+     .textAlign(TextAlign.Center)
+     .focusable(true)
+     .focusOnTouch(true)
+     .defaultFocus(true)
    ```
-   1. Text(this.message)
-   2. .fontSize(20)
-   3. .fontColor(Color.White)
-   4. .backgroundColor("#262626")
-   5. .textAlign(TextAlign.Center)
-   6. .focusable(true)
-   7. .focusOnTouch(true)
-   8. .defaultFocus(true)
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CrownEventsProject/entry/src/main/ets/pages/Index.ets#L28-L37)
 2. 注册事件回调
 
    接收表冠事件需要注册表冠事件回调，当触发表冠事件时会执行回调函数。
 
+   ```typescript
+   .onDigitalCrown((event: CrownEvent) => {
+   // ···
+   })
    ```
-   1. .onDigitalCrown((event: CrownEvent) => {
-   2. // ···
-   3. })
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CrownEventsProject/entry/src/main/ets/pages/Index.ets#L42-L54)
 3. 事件字段的含义
 
    表冠事件提供了时间戳，旋转角速度，旋转角度和表冠动作。此外表冠事件会触发事件冒泡，可通过[stopPropagation](../harmonyos-references/ts-universal-events-crown.md#crownevent对象说明)阻止事件冒泡。
 
+   ```typescript
+   event.stopPropagation();
+   this.message = "CrownEvent\n\n" + JSON.stringify(event);
+   hilog.debug(0x0000, 'Tag',
+     "action:%{public}d, angularVelocity:%{public}f, degree:%{public}f, timestamp:%{public}f",
+     event.action, event.angularVelocity, event.degree, event.timestamp);
    ```
-   1. event.stopPropagation();
-   2. this.message = "CrownEvent\n\n" + JSON.stringify(event);
-   3. hilog.debug(0x0000, 'Tag',
-   4. "action:%{public}d, angularVelocity:%{public}f, degree:%{public}f, timestamp:%{public}f",
-   5. event.action, event.angularVelocity, event.degree, event.timestamp);
-   ```
-
-   [Index.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/CrownEventsProject/entry/src/main/ets/pages/Index.ets#L45-L51)
 
 **完整示例：**
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct Index {
-5. @State message: string = 'onDigitalCrown';
+```typescript
+// xxx.ets
+import { hilog } from '@kit.PerformanceAnalysisKit';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'onDigitalCrown';
 
-7. build() {
-8. Column() {
-9. Row() {
-10. Stack() {
-11. Text(this.message)
-12. .fontSize(20)
-13. .fontColor(Color.White)
-14. .backgroundColor("#262626")
-15. .textAlign(TextAlign.Center)
-16. .focusable(true)
-17. .focusOnTouch(true)
-18. .defaultFocus(true)
-19. .borderWidth(2)
-20. .width(223)
-21. .height(223)
-22. .borderRadius(110)
-23. .onDigitalCrown((event: CrownEvent) => {
-24. event.stopPropagation();
-25. this.message = "CrownEvent\n\n" + JSON.stringify(event);
-26. hilog.debug(0x0000, 'Tag',
-27. "action:%{public}d, angularVelocity:%{public}f, degree:%{public}f, timestamp:%{public}f",
-28. event.action, event.angularVelocity, event.degree, event.timestamp);
-29. })
-30. }.width("100%").height("100%")
-31. }.width("100%").height("100%")
-32. }
-33. }
-34. }
+  build() {
+    Column() {
+      Row() {
+        Stack() {
+          Text(this.message)
+            .fontSize(20)
+            .fontColor(Color.White)
+            .backgroundColor("#262626")
+            .textAlign(TextAlign.Center)
+            .focusable(true)
+            .focusOnTouch(true)
+            .defaultFocus(true)
+            .borderWidth(2)
+            .width(223)
+            .height(223)
+            .borderRadius(110)
+            .onDigitalCrown((event: CrownEvent) => {
+              event.stopPropagation();
+              this.message = "CrownEvent\n\n" + JSON.stringify(event);
+              hilog.debug(0x0000, 'Tag',
+                "action:%{public}d, angularVelocity:%{public}f, degree:%{public}f, timestamp:%{public}f",
+                event.action, event.angularVelocity, event.degree, event.timestamp);
+            })
+        }.width("100%").height("100%")
+      }.width("100%").height("100%")
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/HiZ5a24UTRW3jNhRvfWjnA/zh-cn_image_0000002589244253.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/TFLBiPMpRMqSVj0Xs2xfwg/zh-cn_image_0000002706673810.gif)

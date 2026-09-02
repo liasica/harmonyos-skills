@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-redundancy
 title: 组件冗余刷新解决方案
 breadcrumb: 最佳实践 > 声明式语法 > 组件冗余刷新解决方案
 category: best-practices
-scraped_at: 2026-04-29T14:10:38+08:00
+scraped_at: 2026-09-02T14:53:39+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:a88a0277798041a9973e0512dc39e9b93a7ee3023ef5ae638d7cf4d4ada52056
+content_hash: sha256:3103bec8d79d318ae570aebeebb4cddb3ea4ec51792fadf5e9ea71278077e08b
 ---
 
 ## 简介
@@ -18,145 +18,143 @@ content_hash: sha256:a88a0277798041a9973e0512dc39e9b93a7ee3023ef5ae638d7cf4d4ada
 
 在以下代码中，创建了自定义组件ComponentA、SpecialImage，每个组件都拥有一些状态变量和UI组件。组件ComponentA中存在Move和Scale两个按钮，在按钮的点击回调中改变状态变量的值刷新相应的组件。
 
+```typescript
+// constant declaration
+const animationDuration: number = 500; // Move animation duration
+const opacityChangeValue: number = 0.1; // The value of each change in opacity
+const opacityChangeRange: number = 1; // Range of opacity changes
+const translateYChangeValue: number = 180; // The value of translateY each time it changes
+const translateYChangeRange: number = 250; // The range in which translateY changes
+const scaleXChangeValue: number = 0.6; // The value of scaleX for each change
+const scaleXChangeRange: number = 0.8; // The value of scaleX for each change
+
+// Style Attribute Classes
+class UIStyle {
+  public translateX: number = 0;
+  public translateY: number = 0;
+  public scaleX: number = 0.3;
+  public scaleY: number = 0.3;
+}
+
+@Component
+struct ComponentA {
+  @Link uiStyle: UIStyle; // Properties of uiStyle used by multiple components
+
+  build() {
+    Column() {
+      // Components that use state variables
+      SpecialImage({ specialImageUiStyle: this.uiStyle })
+      Column() {
+        // 需要替换为开发者所需的图像资源文件
+        Image($r('app.media.startIcon'))
+          .height('150vp')
+          .width('150vp')
+          .scale({
+            x: this.uiStyle.scaleX,
+            y: this.uiStyle.scaleY
+          })
+        Text('Hello World')
+          .fontWeight(FontWeight.Bold)
+      }
+      .translate({
+        x: this.uiStyle.translateX,
+        y: this.uiStyle.translateY
+      })
+      .width('95%')
+      .height('200vp')
+      .margin({
+        top: '10vp',
+        left: '15vp',
+        right: '15vp'
+      })
+      .borderRadius('16vp')
+      .backgroundColor(Color.White)
+      // Modify the value of a state variable via a button click callback, causing the corresponding component to refresh.
+      Column() {
+        Button('Move')
+          .width('80%')
+          .onClick(() => {
+            this.getUIContext().animateTo({ duration: animationDuration }, () => {
+              this.uiStyle.translateY = (this.uiStyle.translateY + translateYChangeValue) % translateYChangeRange;
+            })
+          })
+        Button('Scale')
+          .width('80%')
+          .onClick(() => {
+            this.uiStyle.scaleX = (this.uiStyle.scaleX + scaleXChangeValue) % scaleXChangeRange;
+          })
+          .margin({
+            top: '10vp',
+            left: '15vp',
+            right: '15vp'
+          })
+      }
+      .height('35%')
+      .justifyContent(FlexAlign.End)
+      .width('100%')
+    }
+  }
+}
+
+@Component
+struct SpecialImage {
+  @Link specialImageUiStyle: UIStyle;
+  private opacityNum: number = 0.5; // Default transparency
+
+  private isRenderSpecialImage(): number {
+    // Image transparency increases by 0.1 each time it is rendered, cycling between 0 and 1.
+    this.opacityNum = (this.opacityNum + opacityChangeValue) % opacityChangeRange;
+    return this.opacityNum;
+  }
+
+  build() {
+    Column() {
+      // 需要替换为开发者所需的图像资源文件
+      Image($r('app.media.startIcon'))
+        .size({ width: 78, height: 78 })
+        .scale({
+          x: this.specialImageUiStyle.scaleX,
+          y: this.specialImageUiStyle.scaleY
+        })
+        .opacity(this.isRenderSpecialImage())
+      Text("SpecialImage")
+        .fontWeight(FontWeight.Bold)
+    }
+    .width('95%')
+    .margin({
+      top: '10vp',
+      left: '15vp',
+      right: '15vp'
+    })
+    .borderRadius('16vp')
+    .height('200vp')
+    .backgroundColor(Color.White)
+  }
+}
+
+@Entry
+@Component
+struct DFXStateBeforeOptimization {
+  @State uiStyle: UIStyle = new UIStyle();
+
+  build() {
+    Column() {
+      ComponentA({
+        uiStyle: this.uiStyle
+      })
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xDCDCDC)
+  }
+}
 ```
-1. // constant declaration
-2. const animationDuration: number = 500; // Move animation duration
-3. const opacityChangeValue: number = 0.1; // The value of each change in opacity
-4. const opacityChangeRange: number = 1; // Range of opacity changes
-5. const translateYChangeValue: number = 180; // The value of translateY each time it changes
-6. const translateYChangeRange: number = 250; // The range in which translateY changes
-7. const scaleXChangeValue: number = 0.6; // The value of scaleX for each change
-8. const scaleXChangeRange: number = 0.8; // The value of scaleX for each change
-
-10. // Style Attribute Classes
-11. class UIStyle {
-12. public translateX: number = 0;
-13. public translateY: number = 0;
-14. public scaleX: number = 0.3;
-15. public scaleY: number = 0.3;
-16. }
-
-18. @Component
-19. struct ComponentA {
-20. @Link uiStyle: UIStyle; // Properties of uiStyle used by multiple components
-
-22. build() {
-23. Column() {
-24. // Components that use state variables
-25. SpecialImage({ specialImageUiStyle: this.uiStyle })
-26. Column() {
-27. // 需要替换为开发者所需的图像资源文件
-28. Image($r('app.media.startIcon'))
-29. .height('150vp')
-30. .width('150vp')
-31. .scale({
-32. x: this.uiStyle.scaleX,
-33. y: this.uiStyle.scaleY
-34. })
-35. Text('Hello World')
-36. .fontWeight(FontWeight.Bold)
-37. }
-38. .translate({
-39. x: this.uiStyle.translateX,
-40. y: this.uiStyle.translateY
-41. })
-42. .width('95%')
-43. .height('200vp')
-44. .margin({
-45. top: '10vp',
-46. left: '15vp',
-47. right: '15vp'
-48. })
-49. .borderRadius('16vp')
-50. .backgroundColor(Color.White)
-51. // Modify the value of a state variable via a button click callback, causing the corresponding component to refresh.
-52. Column() {
-53. Button('Move')
-54. .width('80%')
-55. .onClick(() => {
-56. this.getUIContext().animateTo({ duration: animationDuration }, () => {
-57. this.uiStyle.translateY = (this.uiStyle.translateY + translateYChangeValue) % translateYChangeRange;
-58. })
-59. })
-60. Button('Scale')
-61. .width('80%')
-62. .onClick(() => {
-63. this.uiStyle.scaleX = (this.uiStyle.scaleX + scaleXChangeValue) % scaleXChangeRange;
-64. })
-65. .margin({
-66. top: '10vp',
-67. left: '15vp',
-68. right: '15vp'
-69. })
-70. }
-71. .height('35%')
-72. .justifyContent(FlexAlign.End)
-73. .width('100%')
-74. }
-75. }
-76. }
-
-78. @Component
-79. struct SpecialImage {
-80. @Link specialImageUiStyle: UIStyle;
-81. private opacityNum: number = 0.5; // Default transparency
-
-83. private isRenderSpecialImage(): number {
-84. // Image transparency increases by 0.1 each time it is rendered, cycling between 0 and 1.
-85. this.opacityNum = (this.opacityNum + opacityChangeValue) % opacityChangeRange;
-86. return this.opacityNum;
-87. }
-
-89. build() {
-90. Column() {
-91. // 需要替换为开发者所需的图像资源文件
-92. Image($r('app.media.startIcon'))
-93. .size({ width: 78, height: 78 })
-94. .scale({
-95. x: this.specialImageUiStyle.scaleX,
-96. y: this.specialImageUiStyle.scaleY
-97. })
-98. .opacity(this.isRenderSpecialImage())
-99. Text("SpecialImage")
-100. .fontWeight(FontWeight.Bold)
-101. }
-102. .width('95%')
-103. .margin({
-104. top: '10vp',
-105. left: '15vp',
-106. right: '15vp'
-107. })
-108. .borderRadius('16vp')
-109. .height('200vp')
-110. .backgroundColor(Color.White)
-111. }
-112. }
-
-115. @Entry
-116. @Component
-117. struct DFXStateBeforeOptimization {
-118. @State uiStyle: UIStyle = new UIStyle();
-
-120. build() {
-121. Column() {
-122. ComponentA({
-123. uiStyle: this.uiStyle
-124. })
-125. }
-126. .width('100%')
-127. .height('100%')
-128. .backgroundColor(0xDCDCDC)
-129. }
-130. }
-```
-
-[segment1.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Redundancy_Refresh_Optimization/entry/src/main/ets/segment/segment1.ets#L2-L132)
 
 运行上述示例并分别点击按钮，可以看到点击Move按钮和Scale按钮时组件SpecialImage都出现了刷新，运行效果图如下。
 
 **图1** 修改代码前点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/rjMbFCdSSpOvYPYBxYcAkA/zh-cn_image_0000002229451917.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/U4noLB8aStKZhhN2RQIeAw/zh-cn_image_0000002229451917.gif "点击放大")
 
 点击Move按钮的时候SpecialImage组件却发生了旋转动画，这就造成了冗余刷新。
 
@@ -168,53 +166,53 @@ content_hash: sha256:a88a0277798041a9973e0512dc39e9b93a7ee3023ef5ae638d7cf4d4ada
 
 2. 使用以下命令获取示例应用的窗口Id。当前运行的示例应用包名为performancelibrary，可以在输出结果中找到对应窗口名performancelibrary0的WinId，即为应用的窗口Id。或者当应用正处于前台运行时，Focus window的值就是应用的窗口Id。此处示例应用的窗口Id为11，后面的流程中使用的命令都需要指定窗口Id。
 
-```
-1. hdc shell "hidumper -s WindowManagerService -a '-a'"
+```screen
+hdc shell "hidumper -s WindowManagerService -a '-a'"
 ```
 
 **图2** 命令行获取应用窗口Id运行界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/sGIHK-0zTce6UKTuKOcuag/zh-cn_image_0000002194011628.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/TUKjP5SBQ42tL5_ebXhh1Q/zh-cn_image_0000002194011628.png "点击放大")
 
 3. 基于上一步获取的窗口Id 11，使用-viewHierarchy命令携带-r 参数递归打印应用的自定义组件树。
 
-```
-1. hdc shell "hidumper -s WindowManagerService -a '-w 11 -jsdump -viewHierarchy -r'"
+```screen
+hdc shell "hidumper -s WindowManagerService -a '-w 11 -jsdump -viewHierarchy -r'"
 ```
 
 打印应用的自定义组件树结果如下：
 
-```
-1. -----------------ViewPUHierarchy-----------------
-2. [-viewHierarchy, viewId=4, isRecursive=true]
+```screen
+-----------------ViewPUHierarchy-----------------
+[-viewHierarchy, viewId=4, isRecursive=true]
 
-5. |--DFXStateBeforeOptimization[4]ViewPU {isViewActive: true, isDeleting_: false}
-6. |--ComponentA[6]ViewPU {isViewActive: true, isDeleting_: false}
-7. |--SpecialImage[8]ViewPU {isViewActive: true, isDeleting_: false}
+|--DFXStateBeforeOptimization[4]ViewPU {isViewActive: true, isDeleting_: false}
+  |--ComponentA[6]ViewPU {isViewActive: true, isDeleting_: false}
+    |--SpecialImage[8]ViewPU {isViewActive: true, isDeleting_: false}
 ```
 
 从结果中找到目标组件ComponentA，后面括号中的内容即为组件ComponentA的节点Id 6。
 
 4. 使用命令-stateVariables携带参数-viewId（参数的值为ComponentA的节点Id）获取自定义组件ComponentA中的状态变量信息。
 
-```
-1. hdc shell "hidumper -s WindowManagerService -a '-w 11 -jsdump -stateVariables -viewId=6'"
+```screen
+hdc shell "hidumper -s WindowManagerService -a '-w 11 -jsdump -stateVariables -viewId=6'"
 ```
 
 打印组件ComponentA的状态变量信息如下：
 
-```
-1. --------------ViewPUState Variables--------------
-2. [-stateVariables, viewId=6, isRecursive=false]
+```screen
+--------------ViewPUState Variables--------------
+[-stateVariables, viewId=6, isRecursive=false]
 
-4. |--ComponentA[6]
-5. @Link 'uiStyle'[-1]
-6. |--Owned by @Component 'ComponentA'[6]
-7. |--Sync peers: {
-8. @Link 'specialImageUiStyle'[-2] <@Component 'SpecialImage'[8]>
-9. }
-10. dependencies: variable assignment affects elmtIds: Column[9], Image[10]
-11. |--Dependent elements: Column[9], Image[10]; @Component 'SpecialImage'[8], Image[18]
+|--ComponentA[6]
+  @Link 'uiStyle'[-1]
+  |--Owned by @Component 'ComponentA'[6]
+  |--Sync peers: {
+    @Link 'specialImageUiStyle'[-2] <@Component 'SpecialImage'[8]>
+  }
+  dependencies: variable assignment affects elmtIds: Column[9], Image[10]
+  |--Dependent elements: Column[9], Image[10]; @Component 'SpecialImage'[8], Image[18]
 ```
 
 结果显示ComponentA拥有@Link类型的状态变量uiStyle。每条状态变量的详细信息都包含状态变量的所属组件、同步对象和关联组件。
@@ -231,183 +229,181 @@ content_hash: sha256:a88a0277798041a9973e0512dc39e9b93a7ee3023ef5ae638d7cf4d4ada
 
 由于提取后存在Class的嵌套，因此需要使用@Observed/@ObjectLink装饰器装饰相应的Class和状态变量。修改后的部分代码如下：
 
+```typescript
+// constant declaration
+const animationDuration: number = 500; // Move animation duration
+const opacityChangeValue: number = 0.1; // The value of each change in opacity
+const opacityChangeRange: number = 1; // Range of opacity changes
+const translateYChangeValue: number = 180; // The value of translateY each time it changes
+const translateYChangeRange: number = 250; // The range in which translateY changes
+const scaleXChangeValue: number = 0.6; // The value of scaleX for each change
+const scaleXChangeRange: number = 0.8; // The value of scaleX for each change
+
+// Style property class, nested ScaleStyle, TranslateStyle
+@Observed
+class UIStyle {
+  translateStyle: TranslateStyle = new TranslateStyle();
+  scaleStyle: ScaleStyle = new ScaleStyle();
+}
+
+// Zoom Property Class
+@Observed
+class ScaleStyle {
+  public scaleX: number = 0.3;
+  public scaleY: number = 0.3;
+}
+
+// Displacement Attribute Class
+@Observed
+class TranslateStyle {
+  public translateX: number = 0;
+  public translateY: number = 0;
+}
+
+@Component
+struct ComponentA {
+  @ObjectLink scaleStyle: ScaleStyle;
+  @ObjectLink translateStyle: TranslateStyle;
+
+  build() {
+    Column() {
+      SpecialImage({
+        specialImageScaleStyle: this.scaleStyle
+      })
+      // Other UI components
+        Column() {
+        // 需要替换为开发者所需的图像资源文件
+          Image($r('app.media.startIcon'))
+            .height('150vp')
+            .width('150vp')
+            .scale({
+              x: this.scaleStyle.scaleX,
+              y: this.scaleStyle.scaleY
+            })
+          Text('Hello World')
+            .fontWeight(FontWeight.Bold)
+        }
+
+      .translate({
+        x: this.translateStyle.translateX,
+        y: this.translateStyle.translateY
+      })
+      .width('95%')
+      .height('200vp')
+      .margin({
+        top: '10vp',
+        left: '15vp',
+        right: '15vp'
+      })
+      .borderRadius('16vp')
+      .backgroundColor(Color.White)
+      // Modify the value of a state variable via a button click callback, causing the corresponding component to refresh.
+      Column() {
+        Button('Move')
+          .width('80%')
+          .onClick(() => {
+            this.getUIContext().animateTo({ duration: animationDuration }, () => {
+              this.translateStyle.translateY =
+                (this.translateStyle.translateY + translateYChangeValue) % translateYChangeRange;
+            })
+          })
+        Button('Scale')
+          .width('80%')
+          .onClick(() => {
+            this.scaleStyle.scaleX = (this.scaleStyle.scaleX + scaleXChangeValue) % scaleXChangeRange;
+          })
+          .margin({
+            top: '10vp',
+            left: '15vp',
+            right: '15vp'
+          })
+      }
+      .height('35%')
+      .justifyContent(FlexAlign.End)
+      .width('100%')
+    }
+  }
+}
+
+@Component
+struct SpecialImage {
+  @Link specialImageScaleStyle: ScaleStyle;
+  private opacityNum: number = 0.5; // Default transparency
+
+  // isRenderSpecialImage function
+  private isRenderSpecialImage(): number {
+    // Image transparency increases by 0.1 each time it is rendered, cycling between 0 and 1.
+    this.opacityNum = (this.opacityNum + opacityChangeValue) % opacityChangeRange;
+    return this.opacityNum;
+  }
+
+  build() {
+    Column() {
+      // 需要替换为开发者所需的图像资源文件
+      Image($r('app.media.startIcon'))
+        .size({ width: 78, height: 78 })
+        .scale({
+          x: this.specialImageScaleStyle.scaleX,
+          y: this.specialImageScaleStyle.scaleY
+        })
+        .opacity(this.isRenderSpecialImage())
+      Text("SpecialImage")
+        .fontWeight(FontWeight.Bold)
+    }
+    .width('95%')
+    .margin({
+      top: '10vp',
+      left: '15vp',
+      right: '15vp'
+    })
+    .borderRadius('16vp')
+    .height('200vp')
+    .backgroundColor(Color.White)
+  }
+}
+
+@Entry
+@Component
+struct DFXStateAfterOptimization {
+  @State uiStyle: UIStyle = new UIStyle();
+
+  build() {
+    Stack() {
+      ComponentA({
+        scaleStyle: this.uiStyle.scaleStyle,
+        translateStyle: this.uiStyle.translateStyle,
+      })
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor(0xDCDCDC)
+  }
+}
 ```
-1. // constant declaration
-2. const animationDuration: number = 500; // Move animation duration
-3. const opacityChangeValue: number = 0.1; // The value of each change in opacity
-4. const opacityChangeRange: number = 1; // Range of opacity changes
-5. const translateYChangeValue: number = 180; // The value of translateY each time it changes
-6. const translateYChangeRange: number = 250; // The range in which translateY changes
-7. const scaleXChangeValue: number = 0.6; // The value of scaleX for each change
-8. const scaleXChangeRange: number = 0.8; // The value of scaleX for each change
-
-10. // Style property class, nested ScaleStyle, TranslateStyle
-11. @Observed
-12. class UIStyle {
-13. translateStyle: TranslateStyle = new TranslateStyle();
-14. scaleStyle: ScaleStyle = new ScaleStyle();
-15. }
-
-17. // Zoom Property Class
-18. @Observed
-19. class ScaleStyle {
-20. public scaleX: number = 0.3;
-21. public scaleY: number = 0.3;
-22. }
-
-24. // Displacement Attribute Class
-25. @Observed
-26. class TranslateStyle {
-27. public translateX: number = 0;
-28. public translateY: number = 0;
-29. }
-
-31. @Component
-32. struct ComponentA {
-33. @ObjectLink scaleStyle: ScaleStyle;
-34. @ObjectLink translateStyle: TranslateStyle;
-
-36. build() {
-37. Column() {
-38. SpecialImage({
-39. specialImageScaleStyle: this.scaleStyle
-40. })
-41. // Other UI components
-42. Column() {
-43. // 需要替换为开发者所需的图像资源文件
-44. Image($r('app.media.startIcon'))
-45. .height('150vp')
-46. .width('150vp')
-47. .scale({
-48. x: this.scaleStyle.scaleX,
-49. y: this.scaleStyle.scaleY
-50. })
-51. Text('Hello World')
-52. .fontWeight(FontWeight.Bold)
-53. }
-
-55. .translate({
-56. x: this.translateStyle.translateX,
-57. y: this.translateStyle.translateY
-58. })
-59. .width('95%')
-60. .height('200vp')
-61. .margin({
-62. top: '10vp',
-63. left: '15vp',
-64. right: '15vp'
-65. })
-66. .borderRadius('16vp')
-67. .backgroundColor(Color.White)
-68. // Modify the value of a state variable via a button click callback, causing the corresponding component to refresh.
-69. Column() {
-70. Button('Move')
-71. .width('80%')
-72. .onClick(() => {
-73. this.getUIContext().animateTo({ duration: animationDuration }, () => {
-74. this.translateStyle.translateY =
-75. (this.translateStyle.translateY + translateYChangeValue) % translateYChangeRange;
-76. })
-77. })
-78. Button('Scale')
-79. .width('80%')
-80. .onClick(() => {
-81. this.scaleStyle.scaleX = (this.scaleStyle.scaleX + scaleXChangeValue) % scaleXChangeRange;
-82. })
-83. .margin({
-84. top: '10vp',
-85. left: '15vp',
-86. right: '15vp'
-87. })
-88. }
-89. .height('35%')
-90. .justifyContent(FlexAlign.End)
-91. .width('100%')
-92. }
-93. }
-94. }
-
-96. @Component
-97. struct SpecialImage {
-98. @Link specialImageScaleStyle: ScaleStyle;
-99. private opacityNum: number = 0.5; // Default transparency
-
-101. // isRenderSpecialImage function
-102. private isRenderSpecialImage(): number {
-103. // Image transparency increases by 0.1 each time it is rendered, cycling between 0 and 1.
-104. this.opacityNum = (this.opacityNum + opacityChangeValue) % opacityChangeRange;
-105. return this.opacityNum;
-106. }
-
-108. build() {
-109. Column() {
-110. // 需要替换为开发者所需的图像资源文件
-111. Image($r('app.media.startIcon'))
-112. .size({ width: 78, height: 78 })
-113. .scale({
-114. x: this.specialImageScaleStyle.scaleX,
-115. y: this.specialImageScaleStyle.scaleY
-116. })
-117. .opacity(this.isRenderSpecialImage())
-118. Text("SpecialImage")
-119. .fontWeight(FontWeight.Bold)
-120. }
-121. .width('95%')
-122. .margin({
-123. top: '10vp',
-124. left: '15vp',
-125. right: '15vp'
-126. })
-127. .borderRadius('16vp')
-128. .height('200vp')
-129. .backgroundColor(Color.White)
-130. }
-131. }
-
-133. @Entry
-134. @Component
-135. struct DFXStateAfterOptimization {
-136. @State uiStyle: UIStyle = new UIStyle();
-
-138. build() {
-139. Stack() {
-140. ComponentA({
-141. scaleStyle: this.uiStyle.scaleStyle,
-142. translateStyle: this.uiStyle.translateStyle,
-143. })
-144. }
-145. .width('100%')
-146. .height('100%')
-147. .backgroundColor(0xDCDCDC)
-148. }
-149. }
-```
-
-[segment2.ets](https://gitcode.com/harmonyos_samples/BestPracticeSnippets/blob/master/ArkUI/Component_Redundancy_Refresh_Optimization/entry/src/main/ets/segment/segment2.ets#L2-L151)
 
 修改后的示例运行效果图如下，只有点击Scale按钮时SpecialImage产生刷新现象，点击Move按钮时SpecialImage不会刷新。
 
 **图3** 修改代码后点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/HE23RMWnSHmF-8jrpQLTAA/zh-cn_image_0000002193852044.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/U1NgG6zTT2SxVo-Gyr_-uw/zh-cn_image_0000002193852044.gif "点击放大")
 
 可以使用上文步骤再次获取ComponentA组件的状态变量信息如下，可以看到ComponentA中状态变量scaleStyle影响组件SpecialImage[8]和Image[18]，状态变量translateStyle影响组件Column[9]，translateStyle的变化不会再导致SpecialImage的刷新。
 
-```
-1. --------------ViewPUState Variables--------------
-2. [-stateVariables, viewId=6, isRecursive=false]
+```screen
+--------------ViewPUState Variables--------------
+[-stateVariables, viewId=6, isRecursive=false]
 
-4. |--ComponentA[6]
-5. @ObjectLink 'scaleStyle'[-1]
-6. |--Owned by @Component 'ComponentA'[6]
-7. |--Sync peers: {
-8. @Link 'specialImageScaleStyle'[-3] <@Component 'SpecialImage'[8]>
-9. }
-10. dependencies: variable assignment affects elmtIds: Image[10]
-11. |--Dependent elements: Image[10]; @Component 'SpecialImage'[8], Image[18]
-12. @ObjectLink 'translateStyle'[-2]
-13. |--Owned by @Component 'ComponentA'[6]
-14. |--Sync peers: none
-15. dependencies: variable assignment affects elmtIds: Column[9]
-16. |--Dependent elements: Column[9]
+|--ComponentA[6]
+  @ObjectLink 'scaleStyle'[-1]
+  |--Owned by @Component 'ComponentA'[6]
+  |--Sync peers: {
+    @Link 'specialImageScaleStyle'[-3] <@Component 'SpecialImage'[8]>
+  }
+  dependencies: variable assignment affects elmtIds: Image[10]
+  |--Dependent elements: Image[10]; @Component 'SpecialImage'[8], Image[18]
+  @ObjectLink 'translateStyle'[-2]
+  |--Owned by @Component 'ComponentA'[6]
+  |--Sync peers: none
+  dependencies: variable assignment affects elmtIds: Column[9]
+  |--Dependent elements: Column[9]
 ```

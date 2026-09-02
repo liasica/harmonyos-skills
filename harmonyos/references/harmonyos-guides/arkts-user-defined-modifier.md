@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义扩展能力概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 自定义扩展能力概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:05+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f3dbdc12d8e06070159d573ada16272bfee26141751ce234c074568405e14750
+scraped_at: 2026-09-02T14:49:51+08:00
+doc_updated_at: 2026-05-14
+content_hash: sha256:ff280fd3844c630f7612fde02be88950f59aa4bfd1cc4a86d687897d79dcd94f
 ---
 
 ArkUI框架提供一系列基于Modifier的自定义扩展能力，通过与UI分离的方式，对已有UI组件的属性、手势、内容进行扩展修改，以满足开发者在不改变UI组件底层实现的情况下，快速调整UI组件外观、行为等需求。自定义扩展包括[AttributeModifier](arkts-user-defined-extension-attributemodifier.md)、[GestureModifier](../harmonyos-references/ts-universal-attributes-gesture-modifier.md#gesturemodifier-1)、[ContentModifier](arkts-common-attributes-content-modifier.md)等。其中[AttributeModifier](arkts-user-defined-extension-attributemodifier.md)和[AttributeUpdater](arkts-user-defined-extension-attributeupdater.md)允许开发者通过自定义类设置属性，扩展了属性设置的实现方式，能够与组件属性设置方式混合使用。例如，使用自定义扩展处理特定的逻辑或复杂交互，使用组件设置方式处理简单静态属性等。
@@ -20,4 +20,4 @@ AttributeUpdater是一个特殊的AttributeModifier，除了继承AttributeModif
 
 ## ContentModifier
 
-ContentModifier提供自定义绘制组件内容区的能力。当开发者期望自定义组件的内容区时，比如CheckBox的内部显示一个五角星等场景时，可以使用此功能。
+ContentModifier提供自定义绘制组件内容区的能力。当开发者期望自定义组件的内容区时，比如[Checkbox](../harmonyos-references/ts-basic-components-checkbox.md)的内部显示一个五角星等场景时，可以使用此功能。

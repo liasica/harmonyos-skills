@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行Well-known symbols相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行Well-known symbols相关开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:25+08:00
+scraped_at: 2026-09-02T15:00:17+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:aa812c49d77ceda1d4722580e96e6f7069090ff949e96976340852714a1c3729
+content_hash: sha256:f9046a8353af6e48e9082810c957f7d42d858330fd2f3f0ec759ab658d17152b
 ---
 
 ## 简介
@@ -40,50 +40,50 @@ JSVM-API中Well-known symbols相关接口可以通过不同API直接获取对应
 
 cpp部分代码：
 
-```
-1. #include <string>
+```cpp
+#include <string>
 
-3. static JSVM_Value WellKnownSymbols(JSVM_Env env, JSVM_CallbackInfo info) {
-4. JSVM_VM vm;
-5. OH_JSVM_GetVM(env, &vm);
+static JSVM_Value WellKnownSymbols(JSVM_Env env, JSVM_CallbackInfo info) {
+    JSVM_VM vm;
+    OH_JSVM_GetVM(env, &vm);
 
-7. JSVM_HandleScope handleScope;
-8. OH_JSVM_OpenHandleScope(env, &handleScope);
-9. std::string src = R"JS(Symbol.toStringTag)JS";
-10. JSVM_Value jsSrc;
-11. JSVM_Script script;
-12. JSVM_Value result1;
+    JSVM_HandleScope handleScope;
+    OH_JSVM_OpenHandleScope(env, &handleScope);
+    std::string src = R"JS(Symbol.toStringTag)JS";
+    JSVM_Value jsSrc;
+    JSVM_Script script;
+    JSVM_Value result1;
 
-14. OH_JSVM_CreateStringUtf8(env, src.c_str(), JSVM_AUTO_LENGTH, &jsSrc);
-15. OH_JSVM_CompileScript(env, jsSrc, nullptr, 0, true, nullptr, &script);
-16. OH_JSVM_RunScript(env, script, &result1);
-17. JSVM_Value result2;
-18. OH_JSVM_GetSymbolToStringTag(env, &result2);
-19. bool is_equals = false;
-20. OH_JSVM_StrictEquals(env, result1, result2, &is_equals);
-21. OH_LOG_INFO(LOG_APP, "JSVM OH_JSVM_GetSymbolToStringTag result is correct : %{public}d\n", is_equals);
-22. OH_JSVM_CloseHandleScope(env, handleScope);
+    OH_JSVM_CreateStringUtf8(env, src.c_str(), JSVM_AUTO_LENGTH, &jsSrc);
+    OH_JSVM_CompileScript(env, jsSrc, nullptr, 0, true, nullptr, &script);
+    OH_JSVM_RunScript(env, script, &result1);
+    JSVM_Value result2;
+    OH_JSVM_GetSymbolToStringTag(env, &result2);
+    bool is_equals = false;
+    OH_JSVM_StrictEquals(env, result1, result2, &is_equals);
+    OH_LOG_INFO(LOG_APP, "JSVM OH_JSVM_GetSymbolToStringTag result is correct : %{public}d\n", is_equals);
+    OH_JSVM_CloseHandleScope(env, handleScope);
 
-24. return nullptr;
-25. }
+    return nullptr;
+}
 
-27. static JSVM_CallbackStruct param[] = {
-28. {.data = nullptr, .callback = WellKnownSymbols},
-29. };
+static JSVM_CallbackStruct param[] = {
+    {.data = nullptr, .callback = WellKnownSymbols},
+};
 
-31. static JSVM_CallbackStruct *method = param;
+static JSVM_CallbackStruct *method = param;
 
-33. // wellKnownSymbols方法别名，供JS调用
-34. static JSVM_PropertyDescriptor descriptor[] = {
-35. {"wellKnownSymbols", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-36. };
+// wellKnownSymbols方法别名，供JS调用
+static JSVM_PropertyDescriptor descriptor[] = {
+    {"wellKnownSymbols", nullptr, method++, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+};
 
-38. // 样例测试JS
-39. const char *srcCallNative = R"JS(wellKnownSymbols();)JS";
+// 样例测试JS
+const char *srcCallNative = R"JS(wellKnownSymbols();)JS";
 ```
 
 预期输出：
 
-```
-1. JSVM OH_JSVM_GetSymbolToStringTag result is correct : 1
+```txt
+JSVM OH_JSVM_GetSymbolToStringTag result is correct : 1
 ```

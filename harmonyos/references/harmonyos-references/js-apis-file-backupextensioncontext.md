@@ -3,35 +3,29 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.BackupExtensionContext (备份恢复扩展能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.BackupExtensionContext (备份恢复扩展能力)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:56:15+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:e96ade74b12b76f83c990570821ccf1e4fbc22fa2c3cab1126ce3167da19b8d1
+scraped_at: 2026-09-02T15:01:31+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0742ca08b928c79610ee76458cabdcd127fd4da64e41210b31271fc863ae5761
 ---
 
-BackupExtensionContext是BackupExtension的上下文环境，继承自ExtensionContext。
+BackupExtensionContext是BackupExtensionAbility的上下文环境，继承自ExtensionContext，用于在备份恢复过程中获取临时目录。
 
-BackupExtensionContext模块提供访问特定BackupExtension的资源的能力。对于扩展的BackupExtension，可直接将BackupExtensionContext作为上下文环境，或者定义一个继承自BackupExtensionContext的类型作为上下文环境。
+BackupExtensionContext模块提供访问特定BackupExtensionAbility资源的能力。应用实现备份恢复扩展能力时，可通过该上下文获取el1（设备级加密区）或el2（用户级加密区）对应的临时目录，用于临时保存待备份数据或读取待恢复数据，从而简化备份恢复扩展能力开发，并按数据安全等级隔离临时数据。对于扩展的BackupExtensionAbility，可直接将BackupExtensionContext作为上下文环境，或者定义一个继承自BackupExtensionContext的类型作为上下文环境。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import  { BackupExtensionContext } from '@kit.CoreFileKit';
+```ts
+import { BackupExtensionContext } from '@kit.CoreFileKit';
 ```
 
 ## BackupExtensionContext
 
-PhonePC/2in1TabletTVWearable
-
 ### 属性
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力**：SystemCapability.FileManagement.StorageService.Backup
 
@@ -45,33 +39,35 @@ BackupExtensionContext主要用于获取备份恢复过程中的临时路径。
 
 **示例：**
 
-```
-1. import { BackupExtensionAbility } from '@kit.CoreFileKit';
-2. import { contextConstant } from '@kit.AbilityKit';
+```ts
+import { BackupExtensionAbility } from '@kit.CoreFileKit';
+import { contextConstant } from '@kit.AbilityKit';
 
-4. export default class MyBackupExtAbility extends BackupExtensionAbility {
-5. async onBackup() {
-6. console.info("onBackup begin");
-7. // 使用者可通过改变 this.context.area 来进行切换el1，el2对应的沙箱路径
-8. this.context.area = contextConstant.AreaMode.EL1;
-9. // 使用者可通过 this.context.backupDir 对沙箱路径进行获取
-10. let dir = this.context.backupDir;
-11. console.info(`onBackup el1 dir: ${dir}`);
-12. this.context.area = contextConstant.AreaMode.EL2;
-13. dir = this.context.backupDir;
-14. console.info(`onBackup el2 dir: ${dir}`);
-15. console.info("onBackup end");
-16. }
+export default class MyBackupExtAbility extends BackupExtensionAbility {
+    async onBackup() {
+        console.info('onBackup begin');
+        // 设置加密区域为el1（设备级加密区）
+        this.context.area = contextConstant.AreaMode.EL1;
+        // 使用者可通过this.context.backupDir对沙箱路径进行获取
+        let dir = this.context.backupDir;
+        console.info(`onBackup el1 dir: ${dir}`);
+        this.context.area = contextConstant.AreaMode.EL2;
+        dir = this.context.backupDir;
+        console.info(`onBackup el2 dir: ${dir}`);
+        console.info('onBackup end');
+    }
 
-18. async onRestore() {
-19. console.info("onRestore begin");
-20. this.context.area = contextConstant.AreaMode.EL1;
-21. let dir = this.context.backupDir;
-22. console.info(`onRestore el1 dir: ${dir}`);
-23. this.context.area = contextConstant.AreaMode.EL2;
-24. dir = this.context.backupDir;
-25. console.info(`onRestore el2 dir: ${dir}`);
-26. console.info("onRestore end");
-27. }
-28. }
+    async onRestore() {
+        console.info('onRestore begin');
+        // 设置加密区域为el1（设备级加密区）
+        this.context.area = contextConstant.AreaMode.EL1;
+        // 使用者可通过this.context.backupDir对沙箱路径进行获取
+        let dir = this.context.backupDir;
+        console.info(`onRestore el1 dir: ${dir}`);
+        this.context.area = contextConstant.AreaMode.EL2;
+        dir = this.context.backupDir;
+        console.info(`onRestore el2 dir: ${dir}`);
+        console.info('onRestore end');
+    }
+}
 ```

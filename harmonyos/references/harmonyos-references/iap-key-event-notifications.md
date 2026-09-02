@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-key-e
 title: 服务端关键事件通知
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 服务端关键事件通知
 category: harmonyos-references
-scraped_at: 2026-04-29T14:07:43+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:dcc280d523052fb8f9ca2b5063b9551fa4afd097aa1ce58a6c8ff6f2f37e2a31
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:1a324053e5ea81c4dda3c2868663f76d787425144426c4dc91bd9bee35741947
 ---
 
 如果接入了IAP Kit订单/订阅功能，建议在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站[配置通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)，用于接收IAP服务器发送的关键事件通知。IAP关键事件通知版本只支持v3。
 
-说明
+**说明** 
 
 建议所有提供消耗型/非消耗型/自动续期订阅/非续期订阅商品的App均配置该通知接收地址，以便接收关键事件通知，为用户提供更好、更及时的服务。另外，通知接收地址必须基于HTTPS并且配置有商业域名机构颁发的证书。
 
@@ -43,7 +43,7 @@ content_hash: sha256:dcc280d523052fb8f9ca2b5063b9551fa4afd097aa1ce58a6c8ff6f2f37
 
 若开发者服务器返回结果为非成功响应（请求返回的HTTP状态码不为200），IAP服务器将对本次关键事件的通知进行周期性重发。建议在收到通知后立即返回成功响应，避免通知消息堆积。
 
-说明
+**说明** 
 
 为保证可靠性，系统具备补偿机制，所以可能出现重发的通知比预期的多。
 
@@ -57,7 +57,7 @@ content_hash: sha256:dcc280d523052fb8f9ca2b5063b9551fa4afd097aa1ce58a6c8ff6f2f37
 
 关键事件通知处理流程建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/sgV8qJh_RDqLeWziZ2Sq9Q/zh-cn_image_0000002589247233.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/z7wJJnwnSiai2WfvyFUIpA/zh-cn_image_0000002706837102.png)
 
 1. IAP服务器发送订单/订阅关键事件通知。
 2. 应用服务器收到通知请求后，从通知中获取购买Token。
@@ -71,6 +71,8 @@ content_hash: sha256:dcc280d523052fb8f9ca2b5063b9551fa4afd097aa1ce58a6c8ff6f2f37
 不允许开发者服务器设置IP允许清单用于限制华为侧的出口IP地址。IP允许清单本身并不能提高安全性且会给业务发展带来约束，在消息层面已有更安全的JWS签名机制条件下，没有存在价值。不遵守该约定而导致的后果将由开发者自行承担。
 
 必须在开发前在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置开发者服务器的回调地址，地址必须支持HTTPS协议且具有合法商用证书，出于安全考虑，cipher需要支持ECDHE-RSA-AES128-GCM-SHA256、ECDHE-ECDSA-AES128-GCM-SHA256、ECDHE-RSA-AES256-GCM-SHA384或ECDHE-ECDSA-AES256-GCM-SHA384中至少一种，否则无法正常接收通知消息。
+
+华为IAP关键事件通知仅通过IPv4链路发送，请确保回调地址支持IPv4访问。若回调地址仅支持IPv6，将无法正常接收通知消息。
 
 ## 接口原型
 
@@ -100,7 +102,11 @@ content_hash: sha256:dcc280d523052fb8f9ca2b5063b9551fa4afd097aa1ce58a6c8ff6f2f37
 | notificationRequestId | 是 | String | 通知唯一请求ID。 |
 | notificationMetaData | 是 | Object | 通知元数据，具体请参见表[NotificationMetaData](iap-key-event-notifications.md#notificationmetadata)说明。 |
 | notificationVersion | 是 | String | 通知版本：v3。 |
-| signedTime | 是 | Long | 通知签名时间，UTC时间戳，以毫秒为单位。 |
+| signedTime | 是 | Long | 通知签名时间，UTC时间戳，以ms为单位。 |
+
+**注意** 
+
+服务端关键事件通知可能会在后续版本中新增参数和取值。开发者在处理通知时应保留兼容性，避免因收到非预期的类型而导致程序异常或中断。
 
 ### NotificationType
 
@@ -108,7 +114,7 @@ content_hash: sha256:dcc280d523052fb8f9ca2b5063b9551fa4afd097aa1ce58a6c8ff6f2f37
 | --- | --- |
 | DID\_NEW\_TRANSACTION | 订单已购买/订阅已购买/订阅续订成功。 |
 | DID\_CHANGE\_RENEWAL\_STATUS | 订阅状态发生改变。 |
-| REVOKE | 订单退款/撤销订阅。 |
+| REVOKE | 消耗型/非消耗型/非续期订阅商品：订单退款。  自动续期订阅商品：撤销订阅。 |
 | RENEWAL\_TIME\_MODIFIED | 订阅过期时间调整。 |
 | EXPIRE | 订阅已过期。 |
 | TEST | 测试服务端通知，仅开发者调用[测试服务端通知](iap-server-notifications-test.md)接口才会发送此类型通知。  此场景下无notificationSubtype。 |
@@ -124,7 +130,7 @@ content_hash: sha256:dcc280d523052fb8f9ca2b5063b9551fa4afd097aa1ce58a6c8ff6f2f37
 | AUTO\_RENEW\_DISABLED | 自动续期功能关闭。  使用主类型：DID\_CHANGE\_RENEWAL\_STATUS |
 | DOWNGRADE | 用户调整自动续期订阅商品降级或跨级且在下个续订生效。  使用主类型：DID\_CHANGE\_RENEWAL\_STATUS或DID\_NEW\_TRANSACTION |
 | UPGRADE | 用户调整自动续期订阅商品升级或跨级且立即生效。  使用主类型：DID\_NEW\_TRANSACTION |
-| REFUND\_TRANSACTION | 消耗型/非消耗型/非续期订阅商品订单退款成功。  自动续期订阅商品订单退款成功。  使用主类型：REVOKE |
+| REFUND\_TRANSACTION | 消耗型/非消耗型/非续期订阅商品：订单退款成功。  自动续期订阅商品：订单退款成功且撤销对应订阅成功，订阅权益会立即取消。  使用主类型：REVOKE |
 | BILLING\_RETRY | 一个到期的自动续期订阅商品进入账号保留期。  使用主类型：EXPIRE |
 | PRICE\_INCREASE | 用户同意了涨价。  使用主类型：DID\_CHANGE\_RENEWAL\_STATUS |
 | BILLING\_RECOVERY | 订阅重试扣费成功。  使用主类型：DID\_NEW\_TRANSACTION |
@@ -150,77 +156,77 @@ content_hash: sha256:dcc280d523052fb8f9ca2b5063b9551fa4afd097aa1ce58a6c8ff6f2f37
 
 ## 请求示例
 
-```
-1. POST /notify/address
-2. Content-Type: application/json;charset=UTF-8
-3. Accept: application/json
-4. {
-5. "jwsNotification": "***"
-6. }
+```javascript
+POST /notify/address
+Content-Type: application/json;charset=UTF-8
+Accept: application/json
+{
+  "jwsNotification": "***"
+}
 ```
 
 NotificationPayload样例（消耗型/非消耗型）
 
-```
-1. {
-2. "notificationType": "DID_NEW_TRANSACTION",
-3. "notificationSubtype": "INITIAL_BUY",
-4. "notificationRequestId": "7f67e39aa72d1a55f36293047f9769c0aa47a467ffb110eaeeeb888def9f9713",
-5. "notificationMetaData": {
-6. "environment": "NORMAL",
-7. "applicationId": "***",
-8. "packageName": "***",
-9. "type": 0,
-10. "purchaseToken": "***.*.***",
-11. "purchaseOrderId": "***.***"
-12. },
-13. "notificationVersion": "v3",
-14. "signedTime": 1702607152698
-15. }
+```javascript
+{
+  "notificationType": "DID_NEW_TRANSACTION",
+  "notificationSubtype": "INITIAL_BUY",
+  "notificationRequestId": "7f67e39aa72d1a55f36293047f9769c0aa47a467ffb110eaeeeb888def9f9713",
+  "notificationMetaData": {
+    "environment": "NORMAL",
+    "applicationId": "***",
+    "packageName": "***",
+    "type": 0,
+    "purchaseToken": "***.*.***",
+    "purchaseOrderId": "***.***"
+  },
+  "notificationVersion": "v3",
+  "signedTime": 1702607152698
+}
 ```
 
 NotificationPayload样例（非续期订阅商品）
 
-```
-1. {
-2. "notificationType": "DID_NEW_TRANSACTION",
-3. "notificationSubtype": "INITIAL_BUY",
-4. "notificationRequestId": "7f67e39aa72d1a55f36293047f9769c0aa47a467ffb110eaeeeb888def9f9713",
-5. "notificationMetaData": {
-6. "environment": "NORMAL",
-7. "applicationId": "***",
-8. "packageName": "***",
-9. "type": 3,
-10. "purchaseToken": "***.*.***",
-11. "purchaseOrderId": "***.***"
-12. },
-13. "notificationVersion": "v3",
-14. "signedTime": 1702607152698
-15. }
+```javascript
+{
+  "notificationType": "DID_NEW_TRANSACTION",
+  "notificationSubtype": "INITIAL_BUY",
+  "notificationRequestId": "7f67e39aa72d1a55f36293047f9769c0aa47a467ffb110eaeeeb888def9f9713",
+  "notificationMetaData": {
+    "environment": "NORMAL",
+    "applicationId": "***",
+    "packageName": "***",
+    "type": 3,
+    "purchaseToken": "***.*.***",
+    "purchaseOrderId": "***.***"
+  },
+  "notificationVersion": "v3",
+  "signedTime": 1702607152698
+}
 ```
 
 NotificationPayload样例（自动续期订阅商品）
 
-```
-1. {
-2. "notificationType": "DID_NEW_TRANSACTION",
-3. "notificationSubtype": "INITIAL_BUY",
-4. "notificationRequestId": "6d5882d55c8e5136f2348b8e13b4aaad6d0938898b7e5efdc13f7c7130286f8c",
-5. "notificationMetaData": {
-6. "environment": "NORMAL",
-7. "applicationId": "***",
-8. "packageName": "***",
-9. "type": 2,
-10. "currentProductId": "1701072721154732",
-11. "subGroupId": "1701072721154732",
-12. "subGroupGenerationId": "f7967e2439769fbb3c155a50d2cdd6a8cc8f7750cac7bf78b6f5d65c97c34deb",
-13. "subscriptionId": "1701072722814.ADE66B39.4732",
-14. "purchaseToken": "***.*.***",
-15. "purchaseOrderId": "***.***"
-16. },
-17. "notificationVersion": "v3",
-18. "signedTime": 1701072726860
-19. }
+```javascript
+{
+  "notificationType": "DID_NEW_TRANSACTION",
+  "notificationSubtype": "INITIAL_BUY",
+  "notificationRequestId": "6d5882d55c8e5136f2348b8e13b4aaad6d0938898b7e5efdc13f7c7130286f8c",
+  "notificationMetaData": {
+    "environment": "NORMAL",
+    "applicationId": "***",
+    "packageName": "***",
+    "type": 2,
+    "currentProductId": "1701072721154732",
+    "subGroupId": "1701072721154732",
+    "subGroupGenerationId": "f7967e2439769fbb3c155a50d2cdd6a8cc8f7750cac7bf78b6f5d65c97c34deb",
+    "subscriptionId": "1701072722814.ADE66B39.4732",
+    "purchaseToken": "***.*.***",
+    "purchaseOrderId": "***.*.***"
+  },
+  "notificationVersion": "v3",
+  "signedTime": 1701072726860
+}
 ```
 
 ## 响应参数
@@ -232,6 +238,6 @@ NotificationPayload样例（自动续期订阅商品）
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
+```json
+HTTP/1.2 200 OK
 ```

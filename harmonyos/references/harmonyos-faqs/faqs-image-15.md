@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-15
 title: 如何实现PixelMap和base64的相互转换
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何实现PixelMap和base64的相互转换
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:32+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:e281a063d32dbe501bc758d39857ca33cec9322e89dba577b76f57bf88ce7d9f
+scraped_at: 2026-09-02T14:54:42+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:dd8f9eb2df91dd121b0969e42edc523794950928729c450264ef14c176aac83a
 ---
 
 PixelMap是无压缩的位图对象，包含像素数据以及基本的图片信息（如图片尺寸、像素密度、像素格式等）。
@@ -34,7 +34,7 @@ Base64编码是一种将二进制数据转换为ASCII字符串的编码方式，
 
      可以通过ImageSource实现ArrayBuffer数据到PixelMap类型的转化。首先通过Image模块的createImageSource方法从ArrayBuffer中构造出ImageSource实例，然后通过ImageSource的createPixelMap方法解码出PixelMap类型数据。
 
-**参考链接**
+## 参考链接
 
 [图片编码](../harmonyos-guides/image-encoding-arts.md)
 

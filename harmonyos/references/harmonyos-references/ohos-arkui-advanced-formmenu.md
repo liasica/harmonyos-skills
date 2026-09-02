@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: FormMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FormMenu
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:00+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f933b26758543d1bb1866738739c15e50283120b33edfa5ab2fbd95142fa8644
+scraped_at: 2026-09-02T15:01:08+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e2200ef0e4b6c5fa9fdc772ff9dacd48e15fa9f0394de4d8c5bd5f3c5519dc34
 ---
 
 本组件封装了一个“添加至桌面”菜单，用于实现应用内长按组件生成“添加至桌面”菜单，点击该菜单，触发卡片添加至桌面操作。通过桌面访问该应用快捷卡片，可以直接访问该组件功能。在应用使用过程中，该组件作为留存和复访入口，可吸引用户将功能快捷添加到桌面。
@@ -16,7 +16,7 @@ content_hash: sha256:f933b26758543d1bb1866738739c15e50283120b33edfa5ab2fbd95142f
 2. 点击事件会根据组件ID获取应用内功能组件的快照和位置，用于添加到桌面时的过渡动效。
 3. 卡片框架通过将加桌数据通知给桌面，触发卡片添加到桌面操作。
 
-说明
+**说明** 
 
 该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -24,37 +24,25 @@ content_hash: sha256:f933b26758543d1bb1866738739c15e50283120b33edfa5ab2fbd95142f
 
 卡片具体开发指导请参考[卡片开发指南](../harmonyos-guides/formkit-overview.md)。
 
+从API version 18开始，建议使用[formProvider.openFormManager](js-apis-app-form-formprovider.md#formprovideropenformmanager18)接口。
+
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { AddFormMenuItem } from '@kit.ArkUI';
+```ts
+import { AddFormMenuItem } from '@kit.ArkUI';
 ```
 
 ## 子组件
-
-PhonePC/2in1TabletTVWearable
 
 无
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 不支持[通用属性](ts-component-general-attributes.md)。
 
 ## AddFormMenuItem
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AddFormMenuItem(
-2. want: Want,
-3. componentId: string,
-4. options?: AddFormOptions
-5. ): void
-```
+AddFormMenuItem(want: Want, componentId: string, options?: AddFormOptions): void
 
 **装饰器类型：**@Builder
 
@@ -72,8 +60,6 @@ PhonePC/2in1TabletTVWearable
 
 ## AddFormOptions
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -88,8 +74,6 @@ PhonePC/2in1TabletTVWearable
 
 ## FormMenuItemStyle
 
-PhonePC/2in1TabletTVWearable
-
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -100,150 +84,146 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- | --- | --- |
 | options | [MenuItemOptions](ts-basic-components-menuitem.md#menuitemoptions对象说明) | 否 | 是 | 包含设置MenuItem的各项信息。 |
 
-说明
+**说明** 
 
 仅在 style配置为空或不配置时，使用默认的图标和menu文字。
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 支持菜单点击事件。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+```ts
+// index.ets
+import { AddFormMenuItem } from '@kit.ArkUI';
+import { formBindingData } from '@kit.FormKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-```
-1. // index.ets
-2. import { AddFormMenuItem } from '@kit.ArkUI';
-3. import { formBindingData } from '@kit.FormKit';
-4. import { hilog } from '@kit.PerformanceAnalysisKit';
+const tag = 'AddFormMenuItem';
 
-6. const tag = 'AddFormMenuItem';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Long press show menu';
+  private compId: string = 'addforms@d46313145';
 
-8. @Entry
-9. @Component
-10. struct Index {
-11. @State message: string = 'Long press show menu';
-12. private compId: string = 'addforms@d46313145';
+  @Builder
+  MyMenu() {
+    Menu() {
+      AddFormMenuItem(
+        {
+          bundleName: 'com.example.myapplication', // 包名
+          abilityName: 'EntryFormAbility', // 模块ability名称
+          parameters: {
+            'ohos.extra.param.key.form_dimension': 2, // 卡片尺寸，1代表1*2卡片，2代表2*2卡片，3代表2*4卡片，4代表4*4卡片，7代表6*4卡片
+            'ohos.extra.param.key.form_name': 'widget', // 卡片名称
+            'ohos.extra.param.key.module_name': 'entry' // 卡片所属的模块名称
+          },
+        },
+        this.compId,
+        {
+          formBindingData: formBindingData.createFormBindingData({}),
+          // formBindingData: formBindingData.createFormBindingData({ data: 'share' }),
+          callback: (error, formId) => {
+            hilog.info(0x3900, tag, `callback info：formId = ${formId}`);
+            if (error?.code === 0) {
+              hilog.info(0x3900, tag, "添加至桌面成功")
+            } else {
+              hilog.error(0x3900, tag, `添加至桌面失败，请尝试其它添加方式, error code: ${error?.code}, error message: ${error?.message}`)
+            }
+          },
+          style: {
+            options: {
+              startIcon: $r("app.media.icon"), // 菜单图标，可以自己提供。系统默认采用"sys.media.ic_public_add"
+              content: "添加到桌面",  // 菜单内容，可以自己提供。默认使用"sys.string.ohos_add_form_to_desktop"
+              endIcon: $r("app.media.icon") // 菜单图标，可以自己提供
+            }
+          }
+        }
+      )
+    }
+  }
 
-14. @Builder
-15. MyMenu() {
-16. Menu() {
-17. AddFormMenuItem(
-18. {
-19. bundleName: 'com.example.myapplication', // 包名
-20. abilityName: 'EntryFormAbility', // 模块ability名称
-21. parameters: {
-22. 'ohos.extra.param.key.form_dimension': 2, // 卡片尺寸，1代表1*2卡片，2代表2*2卡片，3代表2*4卡片，4代表4*4卡片，7代表6*4卡片
-23. 'ohos.extra.param.key.form_name': 'widget', // 卡片名称
-24. 'ohos.extra.param.key.module_name': 'entry' // 卡片所属的模块名称
-25. },
-26. },
-27. this.compId,
-28. {
-29. formBindingData: formBindingData.createFormBindingData({}),
-30. // formBindingData: formBindingData.createFormBindingData({ data: 'share' }),
-31. callback: (error, formId) => {
-32. hilog.info(0x3900, tag, `callback info：formId = ${formId}`);
-33. if (error?.code === 0) {
-34. hilog.info(0x3900, tag, "添加至桌面成功")
-35. } else {
-36. hilog.error(0x3900, tag, `添加至桌面失败，请尝试其它添加方式, error code: ${error?.code}, error message: ${error?.message}`)
-37. }
-38. },
-39. style: {
-40. // options: {
-41. //   startIcon: $r("app.media.icon"), // 菜单图标,可以自己提供。系统默认采用"sys.media.ic_public_add"
-42. //   content: "添加到桌面",  // 菜单内容，可以自己提供。默认使用"sys.string.ohos_add_form_to_desktop"
-43. //   endIcon: $r("app.media.icon") // 菜单图标，可以自己提供
-44. // }
-45. }
-46. }
-47. )
-48. }
-49. }
-
-51. build() {
-52. Row() {
-53. Column() {
-54. Image($r("app.media.startIcon"))   // 自定义图片
-55. .id(this.compId)
-56. .width(200)
-57. .height(200)
-58. .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
-59. placement: Placement.TopLeft
-60. })
-61. }
-62. .width('100%')
-63. }
-64. .height('100%')
-65. }
-66. }
+  build() {
+    Row() {
+      Column() {
+        Image($r("app.media.startIcon"))   // 自定义图片
+          .id(this.compId)
+          .width(200)
+          .height(200)
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
+            placement: Placement.TopLeft
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```
 
-```
-1. // WidgetCard.ets
-2. const local = new LocalStorage()
+```ts
+// WidgetCard.ets
+const local = new LocalStorage()
 
-4. @Entry(local)
-5. @Component
-6. struct WidgetCard {
-7. @LocalStorageProp('data') data: string = 'defaultdata'; // 定义需要刷新的卡片数据
-8. /*
-9. * The action type.
-10. */
-11. readonly ACTION_TYPE: string = 'router';
-12. /*
-13. * The ability name.
-14. */
-15. readonly ABILITY_NAME: string = 'EntryAbility';
-16. /*
-17. * The message.
-18. */
-19. readonly MESSAGE: string = 'add detail';
-20. /*
-21. * The width percentage setting.
-22. */
-23. readonly FULL_WIDTH_PERCENT: string = '100%';
-24. /*
-25. * The height percentage setting.
-26. */
-27. readonly FULL_HEIGHT_PERCENT: string = '100%';
+@Entry(local)
+@Component
+struct WidgetCard {
+  @LocalStorageProp('data') data: string = 'defaultdata'; // 定义需要刷新的卡片数据
+  /*
+   * The action type.
+   */
+  readonly ACTION_TYPE: string = 'router';
+  /*
+   * The ability name.
+   */
+  readonly ABILITY_NAME: string = 'EntryAbility';
+  /*
+   * The message.
+   */
+  readonly MESSAGE: string = 'add detail';
+  /*
+   * The width percentage setting.
+   */
+  readonly FULL_WIDTH_PERCENT: string = '100%';
+  /*
+   * The height percentage setting.
+   */
+  readonly FULL_HEIGHT_PERCENT: string = '100%';
 
-29. build() {
-30. Row() {
-31. Column() {
-32. Text(this.data)
-33. .fontSize($r('app.float.font_size'))
-34. .fontWeight(FontWeight.Medium)
-35. .fontColor($r('app.color.item_title_font'))
-36. }
-37. .width(this.FULL_WIDTH_PERCENT)
-38. }
-39. .height(this.FULL_HEIGHT_PERCENT)
-40. .backgroundImage($r('app.media.startIcon'))
-41. .backgroundImageSize({ width: '100%', height: '100%' })
-42. .onClick(() => {
-43. postCardAction(this, {
-44. action: this.ACTION_TYPE,
-45. abilityName: this.ABILITY_NAME,
-46. params: {
-47. message: this.MESSAGE
-48. }
-49. });
-50. })
-51. }
-52. }
+  build() {
+    Row() {
+      Column() {
+        Text(this.data)
+          .fontSize($r('app.float.font_size'))
+          .fontWeight(FontWeight.Medium)
+          .fontColor($r('app.color.item_title_font'))
+      }
+      .width(this.FULL_WIDTH_PERCENT)
+    }
+    .height(this.FULL_HEIGHT_PERCENT)
+    .backgroundImage($r('app.media.startIcon'))
+    .backgroundImageSize({ width: '100%', height: '100%' })
+    .onClick(() => {
+      postCardAction(this, {
+        action: this.ACTION_TYPE,
+        abilityName: this.ABILITY_NAME,
+        params: {
+          message: this.MESSAGE
+        }
+      });
+    })
+  }
+}
 ```
 
 **高级自定义控件界面**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/eH89qSo1TiCBhDh8wjUhyQ/zh-cn_image_0000002589246451.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/e-tBq43sTk2IrXOyOHYpiw/zh-cn_image_0000002706676364.jpeg)
 
 **调用高级自定义控件桌面加桌结果**
 
-左侧是formbindingdata为空加桌结果，右侧是formbindingdata为{ data: 'share' }的加桌结果。
+左侧是formBindingData为空加桌结果，右侧是formBindingData为{ data: 'share' }的加桌结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/1z9dMfWGR-KrBfo65SAKzg/zh-cn_image_0000002558766644.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/RkDwdcjVSvikWzTZOr2Z0Q/zh-cn_image_0000002736435451.jpeg)

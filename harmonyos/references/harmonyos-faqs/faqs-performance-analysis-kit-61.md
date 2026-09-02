@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: DevEco Device File Browser无法查看系统媒体文件目录
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > DevEco Device File Browser无法查看系统媒体文件目录
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:23+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:dd7bc162b5a6c114a65be44b1da21f7992e32143172102a287c7a7ae08d952ac
 ---
 

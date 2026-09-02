@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: "DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Error opening file: no such file or directory”"
 breadcrumb: "FAQ > DevEco Studio > 应用调试 > DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Error opening file: no such file or directory”"
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:26+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:8004ba7534caa34fc1e66aa822b6f2ca44bfe9046fe69d1ba39af8f9e40debca
+scraped_at: 2026-09-02T14:54:57+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:06cb519e624937b038f1502afae98c14fd68c3575e05f4ec83d794cdba2cef60
 ---
 
 **问题现象**
 
 DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Error opening file: no such file or directory”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/_8sw2kGpSriHTYjDqb5aYw/zh-cn_image_0000002356774736.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/EZfgKA-XQ-aWAU5CTszLBg/zh-cn_image_0000002624638708.png)
 
 **解决措施**
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_round_rect.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_round_rect.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:59+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2e9e0e22683c7782f1bdda00f2ba0b023f1d293a2bdd2962724eb06bd73cab06
+scraped_at: 2026-09-02T15:02:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fa77bcdfcaa23cc0f722e30fd06271b34951019eec60b292d66629232db89cf5
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 文件中定义了与圆角矩形相关的功能函数。
+
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_round\_rect.h>
 
@@ -26,19 +26,13 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [OH\_Drawing\_CornerPos](capi-drawing-round-rect-h.md#oh_drawing_cornerpos) | OH\_Drawing\_CornerPos | 用于描述圆角位置的枚举。 |
 
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -51,14 +45,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_CornerPos
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_Drawing_CornerPos
+```c
+enum OH_Drawing_CornerPos
 ```
 
 **描述**
@@ -76,14 +66,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_RoundRectCreate()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_RoundRect* OH_Drawing_RoundRectCreate(const OH_Drawing_Rect* rect, float xRad, float yRad)
+```c
+OH_Drawing_RoundRect* OH_Drawing_RoundRectCreate(const OH_Drawing_Rect* rect, float xRad, float yRad)
 ```
 
 **描述**
@@ -101,8 +87,8 @@ rect为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。
 | 参数项 | 描述 |
 | --- | --- |
 | const [OH\_Drawing\_Rect](capi-drawing-oh-drawing-rect.md)\* rect | 指向矩形对象的指针。 |
-| float xRad | X轴上的圆角半径，小于或等于0时无效。 |
-| float yRad | Y轴上的圆角半径，小于或等于0时无效。 |
+| float xRad | X轴上的圆角半径，小于或等于0时无效。单位为物理像素px。 |
+| float yRad | Y轴上的圆角半径，小于或等于0时无效。单位为物理像素px。 |
 
 **返回：**
 
@@ -112,10 +98,8 @@ rect为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。
 
 ### OH\_Drawing\_RoundRectCopy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_RoundRect* OH_Drawing_RoundRectCopy(const OH_Drawing_RoundRect* roundRect)
+```c
+OH_Drawing_RoundRect* OH_Drawing_RoundRectCopy(const OH_Drawing_RoundRect* roundRect)
 ```
 
 **描述**
@@ -130,7 +114,7 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| const [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)\* roundRect | 指向用于拷贝的圆角矩形对象[OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)的指针。 |
+| const [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)\* roundRect | 指向圆角矩形对象OH\_Drawing\_RoundRect的指针 |
 
 **返回：**
 
@@ -140,10 +124,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_RoundRectSetCorner()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_RoundRectSetCorner(OH_Drawing_RoundRect* roundRect,OH_Drawing_CornerPos pos, OH_Drawing_Corner_Radii radii)
+```c
+void OH_Drawing_RoundRectSetCorner(OH_Drawing_RoundRect* roundRect, OH_Drawing_CornerPos pos, OH_Drawing_Corner_Radii radii)
 ```
 
 **描述**
@@ -162,16 +144,14 @@ roundRect为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)\* roundRect | 指向圆角矩形对象的指针。 |
+| [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)\* roundRect | 指向圆角矩形对象的指针 |
 | [OH\_Drawing\_CornerPos](capi-drawing-round-rect-h.md#oh_drawing_cornerpos) pos | 圆角位置的枚举，支持类型可见[OH\_Drawing\_CornerPos](capi-drawing-round-rect-h.md#oh_drawing_cornerpos)。 |
-| [OH\_Drawing\_Corner\_Radii](capi-drawing-oh-drawing-point2d.md) radii | 圆角半径结构体OH\_Drawing\_Corner\_Radii，其中包含x轴方向和y轴方向上的半径，半径小于等于0时无效。 |
+| [OH\_Drawing\_Corner\_Radii](capi-drawing-oh-drawing-point2d.md) radii | 圆角半径结构体OH\_Drawing\_Corner\_Radii，其中包含x轴方向和y轴方向上的半径，单位为物理像素px，半径小于等于0时无效。 |
 
 ### OH\_Drawing\_RoundRectGetCorner()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_Corner_Radii OH_Drawing_RoundRectGetCorner(OH_Drawing_RoundRect* roundRect, OH_Drawing_CornerPos pos)
+```c
+OH_Drawing_Corner_Radii OH_Drawing_RoundRectGetCorner(OH_Drawing_RoundRect* roundRect, OH_Drawing_CornerPos pos)
 ```
 
 **描述**
@@ -190,7 +170,7 @@ roundRect为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)\* roundRect | 指向圆角矩形对象的指针。 |
+| [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)\* roundRect | 指向圆角矩形对象的指针 |
 | [OH\_Drawing\_CornerPos](capi-drawing-round-rect-h.md#oh_drawing_cornerpos) pos | 圆角位置的枚举，支持类型可见[OH\_Drawing\_CornerPos](capi-drawing-round-rect-h.md#oh_drawing_cornerpos)。 |
 
 **返回：**
@@ -201,10 +181,8 @@ roundRect为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。
 
 ### OH\_Drawing\_RoundRectDestroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. void OH_Drawing_RoundRectDestroy(OH_Drawing_RoundRect* roundRect)
+```c
+void OH_Drawing_RoundRectDestroy(OH_Drawing_RoundRect* roundRect)
 ```
 
 **描述**
@@ -223,10 +201,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_Drawing\_RoundRectOffset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. OH_Drawing_ErrorCode OH_Drawing_RoundRectOffset(OH_Drawing_RoundRect* roundRect, float dx, float dy)
+```c
+OH_Drawing_ErrorCode OH_Drawing_RoundRectOffset(OH_Drawing_RoundRect* roundRect, float dx, float dy)
 ```
 
 **描述**
@@ -241,12 +217,12 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)\* roundRect | 指向圆角矩形对象[OH\_Drawing\_Point2D](capi-drawing-oh-drawing-point2d.md)的指针。 |
-| float dx | x轴方向偏移量。 |
-| float dy | y轴方向偏移量。 |
+| [OH\_Drawing\_RoundRect](capi-drawing-oh-drawing-roundrect.md)\* roundRect | 指向圆角矩形对象的指针。 |
+| float dx | x轴方向偏移量，单位为物理像素px。正值表示向x轴正方向偏移，负值表示向x轴负方向偏移，0表示不偏移。 |
+| float dy | y轴方向偏移量，单位为物理像素px。正值表示向y轴正方向偏移，负值表示向y轴负方向偏移，0表示不偏移。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Drawing\_ErrorCode](capi-drawing-error-code-h.md#oh_drawing_errorcode) | 函数返回执行错误码。  返回OH\_DRAWING\_SUCCESS，表示执行成功。  返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER，表示参数roundRect为空。 |
+| [OH\_Drawing\_ErrorCode](capi-drawing-error-code-h.md#oh_drawing_errorcode) | 函数返回执行错误码。  返回OH\_DRAWING\_SUCCESS，表示执行成功。  返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER，表示参数roundRect为NULL。 |

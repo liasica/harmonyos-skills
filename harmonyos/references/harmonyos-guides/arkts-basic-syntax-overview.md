@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-basic-s
 title: 基本语法概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 基本语法概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:01+08:00
+scraped_at: 2026-09-02T14:59:14+08:00
 doc_updated_at: 2026-03-26
-content_hash: sha256:09923b2afec620aef2bac668e39589df92228613f4550f4f7c8f70be40787422
+content_hash: sha256:1d0d45dd484b25a81c9808b4cef46ba9c91dbbf6336191cb7c68a4cb59b2277a
 ---
 
 在初步了解ArkTS语言后，本指南将以具体的示例来说明ArkTS的基本组成。
@@ -14,15 +14,15 @@ content_hash: sha256:09923b2afec620aef2bac668e39589df92228613f4550f4f7c8f70be407
 
 **图1** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/ZqJZdkjCQw68qDlNepXTNQ/zh-cn_image_0000002558604386.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ZNErDBj-SSiDE3zcRaSVqA/zh-cn_image_0000002706673168.gif)
 
 本示例中，ArkTS的基本组成如下所示。
 
 **图2** ArkTS的基本组成
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/PKSdufFdSJSN5n3OwEnSJw/zh-cn_image_0000002589323911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/z1l-lxCMR2SgixRWrZCulw/zh-cn_image_0000002736432259.png)
 
-说明
+**说明** 
 
 自定义变量不能与基础通用属性/事件名重复。
 

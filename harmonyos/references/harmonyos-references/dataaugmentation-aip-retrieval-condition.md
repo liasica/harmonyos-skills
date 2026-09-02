@@ -1,16 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugmentation-aip-retrieval-condition
 title: aip_retrieval_condition.h
-breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件和结构体 > aip_retrieval_condition.h
+breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > C API > 头文件 > aip_retrieval_condition.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:12c81af13345d8d41790c9bd841ea3b83d83bfc4be9016aaab7bb74673bce600
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0ce24f11978f6300ac0d8780258ec9daf7bbd1694e6502327acfb3ccb09d4155
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 提供与检索条件相关的接口。
 
@@ -25,8 +23,6 @@ PhonePC/2in1Tablet
 **相关模块：** [Retrieval](dataaugmentation-capi-retrieval.md)
 
 ## 汇总
-
-PhonePC/2in1Tablet
 
 ### 类型定义
 

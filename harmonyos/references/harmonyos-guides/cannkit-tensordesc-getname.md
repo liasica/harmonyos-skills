@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: GetName
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc > GetName
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:56+08:00
+scraped_at: 2026-09-02T15:00:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:2136614ee79f304de84647608cc8ccc7bae2c58ed97ad4eaac0a320e0047fe04
+content_hash: sha256:fe5aeae22d687552d16c33c025d379003513be47cf9ca5c0b8c2d58f4e3332d1
 ---
 
 ## 函数功能
@@ -14,14 +14,14 @@ content_hash: sha256:2136614ee79f304de84647608cc8ccc7bae2c58ed97ad4eaac0a320e004
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. std::string GetName() const;
-2. graphStatus GetName(AscendString &name);
-3. graphStatus GetName(AscendString &name) const;
+```cpp
+std::string GetName() const;
+graphStatus GetName(AscendString &name);
+graphStatus GetName(AscendString &name) const;
 ```
 
 ## 参数说明

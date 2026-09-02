@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/change-description-600-beta1
 title: 变更说明
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > DevEco Studio > 变更说明
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:22:28+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:eab4ca0c09dbb22a827ffba796682b7734f579feaf92d986daa0fb8f64a33499
+scraped_at: 2026-09-02T14:58:44+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:60219129e2d3e69614bcd50612f8bb84cb90dd44e8cd575a9f4fea07245175a4
 ---
 
 ## DevEco Studio 6.0.0 Beta3引入的变更
@@ -20,41 +20,41 @@ hot reload不再支持箭头函数内this变量的首次新增或彻底删除。
 
 如用户编写如下代码：
 
-```
-1. // test.ets
-2. class Foo {
-3. str: string = "this is string"
-4. test() {
-5. let a = () => {
-6. console.log(this.str)
-7. }
-8. a()
-9. }
-10. }
-11. let foo = new Foo()
+```screen
+// test.ets
+class Foo {
+  str: string = "this is string"
+  test() {
+    let a = () => {
+      console.log(this.str)
+    }
+    a()
+  }
+}
+let foo = new Foo()
 ```
 
 使用hot reload模式进行调试。调试时，修改代码为：
 
-```
-1. class Foo {
-2. str: string = "this is string"
-3. test() {
-4. let a = () => {
-5. console.log("this is change")
-6. }
-7. a()
-8. }
-9. }
-10. let foo = new Foo()
+```screen
+class Foo {
+  str: string = "this is string"
+  test() {
+    let a = () => {
+      console.log("this is change")
+    }
+    a()
+  }
+}
+let foo = new Foo()
 ```
 
 进行hot reload则会报错，报错内容如下：
 
-```
-1. compile error: 10706001 Unsupported Change in Hot Reload
-2. compile error: Error Message: Found lexical variable added or removed in 'xxxxx', not supported!
-3. compile error: [Patch] Found unspported change in file, will not generate patch!
+```screen
+compile error: 10706001 Unsupported Change in Hot Reload 
+compile error: Error Message: Found lexical variable added or removed in 'xxxxx', not supported! 
+compile error: [Patch] Found unspported change in file, will not generate patch!
 ```
 
 **适配指导**
@@ -117,7 +117,7 @@ DevEco Studio 6.0.0 Beta1版本适配IntelliJ 2024.3.3底座升级后，语言�
 
 如果ArkUI-X工程是使用DevEco Studio 6.0.0 Beta1以下版本创建的，升级到Beta1及以上版本，编译会失败，并提示Could not open settings generic class cache for settings file。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/PT5p_etyQ5KCkoWfFhs10w/zh-cn_image_0000002391137566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/UGzziU8xST-zq1OavcTZqw/zh-cn_image_0000002391137566.png)
 
 **适配指导**
 
@@ -125,12 +125,12 @@ DevEco Studio 6.0.0 Beta1版本适配IntelliJ 2024.3.3底座升级后，语言�
 
   修改gradle-wrapper.properties中的distributionUrl，升级为8.4版本。
 
-  ```
-  1. distributionUrl=https\://repo.huaweicloud.com/gradle/gradle-8.4-bin.zip
+  ```screen
+  distributionUrl=https\://repo.huaweicloud.com/gradle/gradle-8.4-bin.zip
   ```
 
 * **方式二：指定使用jdk17**
 
   如果本地有jdk17，可以在gradle.properties中通过org.gradle.java.home变量指定使用jdk17。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/UCtfLw7ySKC0AcfIIcNI7w/zh-cn_image_0000002457140953.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/3Ok54d-4TX6oGYKDJBnD6A/zh-cn_image_0000002457140953.png)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何实现同步方式调用数据库接口
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何实现同步方式调用数据库接口
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:17+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:17e0de3c997d0616a5f808e5a879f5ef7919700befadfaf6bf139cbba3f18176
 ---
 

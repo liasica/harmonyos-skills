@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.contextConstant (Context相关常量)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.contextConstant (Context相关常量)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:18+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:78e3ed78c14128823244188fd47bf293a4fa5d81e898ba0c034796373186eb62
+scraped_at: 2026-09-02T15:00:32+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fa1236e078d52bdbc55a9d713aa353643a5e210dddd8e4b59b29ebaecb5e3a98
 ---
 
-ContextConstant提供Context相关的枚举，包含文件加密分区等级、UIAbility启动后的进程模式等。
+ContextConstant提供Context相关的枚举，包含文件加密分区等级、进程模式等。其中，文件加密分区等级用于保护应用数据安全，开发者可根据应用需求选择合适的加密等级；进程模式用于控制UIAbility的启动方式和进程行为。这些枚举帮助开发者实现更灵活的应用架构和更安全的数据管理。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,17 +18,13 @@ ContextConstant提供Context相关的枚举，包含文件加密分区等级、U
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { contextConstant } from '@kit.AbilityKit';
+```ts
+import { contextConstant } from '@kit.AbilityKit';
 ```
 
 ## AreaMode
 
-PhonePC/2in1TabletTVWearable
-
-文件加密分区等级，保证应用在不同场景下的数据安全。开发者可以根据应用的具体需求选择合适的加密等级，以保护用户的数据安全。
+文件加密分区等级，保证应用在不同场景下的数据安全。开发者可根据应用需求选择合适的加密等级。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -42,63 +38,61 @@ PhonePC/2in1TabletTVWearable
 
 ## ProcessMode12+
 
-PhonePC/2in1TabletTVWearable
-
 UIAbility启动后的进程模式。
 
 ProcessMode作为[StartOptions](js-apis-app-ability-startoptions.md)的一个属性，仅在[UIAbilityContext.startAbility](js-apis-inner-application-uiabilitycontext.md#startability-1)中生效，用来指定目标UIAbility的进程模式。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-**设备行为差异**：该功能仅在2in1和Tablet设备上生效，在其他设备中返回801错误码。
+**设备行为差异**：该功能仅在PC/2in1和Tablet设备上生效，在其他设备中返回801错误码。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| NEW\_PROCESS\_ATTACH\_TO\_PARENT | 1 | 创建一个新进程，并在该进程上启动UIAbility。该进程会跟随父进程退出。  **约束：**  使用此模式时，要求目标UIAbility跟调用方是在同一个应用。 |
+| NEW\_PROCESS\_ATTACH\_TO\_PARENT | 1 | 创建一个新进程，并在该进程上启动UIAbility。该进程会跟随父进程（调用方进程）退出，即当父进程退出时，此进程也会自动退出。  **约束：**  使用此模式时，要求目标UIAbility跟调用方是在同一个应用。 |
 | NEW\_PROCESS\_ATTACH\_TO\_STATUS\_BAR\_ITEM | 2 | 创建一个新进程，在该进程上启动UIAbility，并绑定该进程到状态栏图标上。  **约束：**  使用此模式时，要求目标UIAbility跟调用方是在同一个应用，并且应用要在状态栏中有图标。 |
 | ATTACH\_TO\_STATUS\_BAR\_ITEM | 3 | 启动UIAbility，并绑定该UIAbility所在进程到状态栏图标上。  **约束：**  使用此模式时，要求目标UIAbility跟调用方是在同一个应用，并且应用要在状态栏中有图标。 |
 
 **示例：**
 
-```
-1. import { UIAbility, Want, StartOptions, contextConstant } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { UIAbility, Want, StartOptions, contextConstant } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. let want: Want = {
-7. deviceId: '',
-8. bundleName: 'com.example.myapplication',
-9. abilityName: 'MainAbility2'
-10. };
-11. let options: StartOptions = {
-12. processMode: contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM,
-13. startupVisibility: contextConstant.StartupVisibility.STARTUP_HIDE
-14. };
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    let want: Want = {
+      deviceId: '',
+      bundleName: 'com.example.myapplication',
+      abilityName: 'MainAbility2'
+    };
+  // 创建启动选项，设置进程模式和启动可见性
+  let options: StartOptions = {
+        processMode: contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM,
+        startupVisibility: contextConstant.StartupVisibility.STARTUP_HIDE
+      };
 
-16. try {
-17. this.context.startAbility(want, options, (err: BusinessError) => {
-18. if (err.code) {
-19. // 处理业务逻辑错误
-20. console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
-21. return;
-22. }
-23. // 执行正常业务
-24. console.info('startAbility succeed');
-25. });
-26. } catch (err) {
-27. // 处理入参错误异常
-28. let code = (err as BusinessError).code;
-29. let message = (err as BusinessError).message;
-30. console.error(`startAbility failed, code is ${code}, message is ${message}`);
-31. }
-32. }
-33. }
+    try {
+      // 启动目标UIAbility
+      this.context.startAbility(want, options, (err: BusinessError) => {
+        if (err.code) {
+          // 处理业务逻辑错误
+          console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
+          return;
+        }
+        // 执行正常业务
+        console.info('startAbility succeed');
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`startAbility failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
 
 ## StartupVisibility12+
-
-PhonePC/2in1TabletTVWearable
 
 UIAbility启动后是否可见。
 
@@ -108,7 +102,7 @@ StartupVisibility作为[StartOptions](js-apis-app-ability-startoptions.md)的一
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
-**设备行为差异**：该功能仅在2in1和Tablet设备上生效，在其他设备中返回801错误码。
+**设备行为差异**：该功能仅在PC/2in1和Tablet设备上生效，在其他设备中返回801错误码。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -120,8 +114,6 @@ StartupVisibility作为[StartOptions](js-apis-app-ability-startoptions.md)的一
 参见[ContextConstant.ProcessMode](js-apis-app-ability-contextconstant.md#processmode12)。
 
 ## Scenarios20+
-
-PhonePC/2in1TabletTVWearable
 
 表示不触发[onNewWant](js-apis-app-ability-uiability.md#onnewwant)生命周期回调场景的枚举，用于[setOnNewWantSkipScenarios](js-apis-inner-application-uiabilitycontext.md#setonnewwantskipscenarios20)接口。
 
@@ -137,30 +129,66 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
+```ts
+import { AbilityConstant, contextConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    // 设置不触发onNewWant的场景，组合多个场景标志位
+    let scenarios: number = contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT |
+      contextConstant.Scenarios.SCENARIO_SHOW_ABILITY |
+      contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT;
+
+    try {
+      // 设置跳过onNewWant的场景
+      this.context.setOnNewWantSkipScenarios(scenarios).then(() => {
+        // 执行正常业务
+        console.info('setOnNewWantSkipScenarios succeed');
+      }).catch((err: BusinessError) => {
+        // 处理业务逻辑错误
+        console.error(`setOnNewWantSkipScenarios failed, code is ${err.code}, message is ${err.message}`);
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      console.error(`setOnNewWantSkipScenarios failed, code is ${code}, message is ${message}`);
+    }
+  }
+}
 ```
-1. import { AbilityConstant, contextConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-6. let scenarios: number = contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT |
-7. contextConstant.Scenarios.SCENARIO_SHOW_ABILITY |
-8. contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT;
+## ContextType
 
-10. try {
-11. this.context.setOnNewWantSkipScenarios(scenarios).then(() => {
-12. // 执行正常业务
-13. console.info('setOnNewWantSkipScenarios succeed');
-14. }).catch((err: BusinessError) => {
-15. // 处理业务逻辑错误
-16. console.error(`setOnNewWantSkipScenarios failed, code is ${err.code}, message is ${err.message}`);
-17. });
-18. } catch (err) {
-19. // 处理入参错误异常
-20. let code = (err as BusinessError).code;
-21. let message = (err as BusinessError).message;
-22. console.error(`setOnNewWantSkipScenarios failed, code is ${code}, message is ${message}`);
-23. }
-24. }
-25. }
+表示常见Context类型的枚举，用于[isContextOf](js-apis-inner-application-context.md#iscontextof)接口。
+
+**起始版本**：26.0.0
+
+**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| APPLICATION\_CONTEXT | 0 | [ApplicationContext](js-apis-inner-application-applicationcontext.md)类型。 |
+| ABILITY\_STAGE\_CONTEXT | 1 | [AbilityStageContext](js-apis-inner-application-abilitystagecontext.md)类型。 |
+| UIABILITY\_CONTEXT | 2 | [UIAbilityContext](js-apis-inner-application-uiabilitycontext.md)类型。 |
+| FORM\_EXTENSION\_CONTEXT | 3 | [FormExtensionContext](js-apis-inner-application-formextensioncontext.md)类型。 |
+| APP\_SERVICE\_EXTENSION\_CONTEXT | 4 | [AppServiceExtensionContext](js-apis-inner-application-appserviceextensioncontext.md)类型。 |
+
+**示例：**
+
+```ts
+import { UIAbility, contextConstant } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+export default class EntryAbility extends UIAbility {
+  onCreate() {
+    hilog.info(0x0000, 'testTag', `%{public}s`, 'Ability onCreate');
+    // 判断Context类型是否为UIAbilityContext
+    let result = this.context.isContextOf(contextConstant.ContextType.UIABILITY_CONTEXT);
+    hilog.info(0x0000, 'testTag', `match contextType result is:%{public}s`, JSON.stringify(result));
+  }
+}
 ```

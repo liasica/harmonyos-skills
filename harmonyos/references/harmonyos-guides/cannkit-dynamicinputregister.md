@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-dynam
 title: DynamicInputRegister
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > DynamicInputRegister
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:49+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d0c01a5ba9f7c76bbb273eb7dc065a60575e341ec1260d08d81c5d772cd81460
+content_hash: sha256:e22c25d9e559ccd149838eebf3ba5cacf43f27dbf03b3aaf2a994a5cbfd8e040
 ---
 
 ## 函数功能
@@ -14,9 +14,9 @@ content_hash: sha256:d0c01a5ba9f7c76bbb273eb7dc065a60575e341ec1260d08d81c5d772cd
 
 ## 函数原型
 
-```
-1. void DynamicInputRegister(const char_t *name, const uint32_t num, bool is_push_back = true);
-2. void DynamicInputRegister(const char_t *name, const uint32_t num, const char_t *datatype_symbol, bool is_push_back = true);
+```cpp
+void DynamicInputRegister(const char_t *name, const uint32_t num, bool is_push_back = true);
+void DynamicInputRegister(const char_t *name, const uint32_t num, const char_t *datatype_symbol, bool is_push_back = true);
 ```
 
 ## 参数说明

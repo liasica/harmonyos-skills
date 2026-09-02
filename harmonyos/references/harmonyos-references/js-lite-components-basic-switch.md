@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: switch
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > switch
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:53+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:4fde94601c2a3416ccedfeedd3f321449a564a6020994ad08f7e93f316d140fb
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b93fcaa74e0bf5b56830a64e2374ab56f19830b80f1ac0027b1d4e508cdfcb3e
 ---
 
 开关选择器，通过开关，开启或关闭某个功能。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -34,18 +30,14 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | change | { checked: checkedValue } | 选中状态改变时触发该事件。 |
 | click | - | 点击动作触发该事件。 |
 | longpress | - | 长按动作触发该事件。 |
-| swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
+| swipe5+ | [SwipeEvent](js-lite-common-events.md#swipeevent) | 组件上快速滑动后触发。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -53,7 +45,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | height | <length> | <percentage>5+ | - | 否 | 设置组件自身的高度。  未设置时组件高度默认为0。 |
 | padding | <length> | 0 | 否 | 使用简写属性设置所有的内边距属性。  该属性可以有1到4个值：  - 指定一个值时，该值指定四个边的内边距。  - 指定两个值时，第一个值指定上下两边的内边距，第二个指定左右两边的内边距。  - 指定三个值时，第一个指定上边的内边距，第二个指定左右两边的内边距，第三个指定下边的内边距。  - 指定四个值时分别为上、右、下、左边的内边距（顺时针顺序）。 |
 | padding-[left|top|right|bottom] | <length> | 0 | 否 | 设置左、上、右、下内边距属性。 |
-| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上, 第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
+| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上，第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
 | margin-[left|top|right|bottom] | <length> | <percentage>5+ | 0 | 否 | 设置左、上、右、下外边距属性。 |
 | border-width | <length> | 0 | 否 | 使用简写属性设置元素的所有边框宽度。 |
 | border-color | <color> | black | 否 | 使用简写属性设置元素的所有边框颜色。 |
@@ -64,50 +56,48 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <div class="box">
-4. <switch checked="true" @change="switchChange"></switch>
-5. <text>{{title}}</text>
-6. </div>
-7. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <div class="box">
+    <switch checked="true" @change="switchChange"></switch>
+    <text>{{title}}</text>
+  </div>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. width: 100%;
-4. height: 100%;
-5. justify-content: center;
-6. align-items: center;
-7. }
-8. .box{
-9. width: 18%;
-10. height: 25%;
-11. flex-direction:column;
-12. justify-content: center;
-13. align-items: center;
-14. }
-```
-
-```
-1. // xxx.js
-2. export default {
-3. data: {
-4. title: 'on'
-5. },
-6. switchChange(e){
-7. console.info(e.checked);
-8. if(e.checked){
-9. this.title="on"
-10. }else{
-11. this.title="off"
-12. }
-13. }
-14. }
+```css
+/* xxx.css */
+.container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+  width: 18%;
+  height: 25%;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/q6kGaxcGTtOFDyOk7sDlNQ/zh-cn_image_0000002589246747.gif)
+```javascript
+// xxx.js
+export default {
+  data: {
+      title: 'on'
+  },
+  switchChange(e){
+      console.info(e.checked);
+      if(e.checked){
+          this.title="on"
+      }else{
+          this.title="off"
+      }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/AxXEMCs4QuuK52j4Cbef-g/zh-cn_image_0000002736435759.gif)

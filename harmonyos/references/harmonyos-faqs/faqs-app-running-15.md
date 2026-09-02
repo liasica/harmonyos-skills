@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 如何在模拟器访问Mac本地HTTP服务
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 如何在模拟器访问Mac本地HTTP服务
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:57+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:45053945b641a380f38e34677c92c3f7e5aabd229003a5cf4879f1ef1bd2d71d
 ---
 

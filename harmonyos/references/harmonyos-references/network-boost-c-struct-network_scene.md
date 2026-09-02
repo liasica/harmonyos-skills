@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: NetworkBoost_NetworkScene
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 结构体 > NetworkBoost_NetworkScene
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f44dc5f8e66f766e41099e2e4d84438cfce900890e1aed934725af5f975ab949
+scraped_at: 2026-09-02T15:01:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ccd6d37e64f58a0127978c4225a434d7629ebf7254192e4e6d92f87f89c12cc7
 ---
 
 ## 概述
-
-PhonePC/2in1Tablet
 
 网络场景状态变更回调信息。
 
@@ -22,11 +20,7 @@ PhonePC/2in1Tablet
 
 ## 汇总
 
-PhonePC/2in1Tablet
-
 ### 成员变量
-
-PhonePC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -37,14 +31,10 @@ PhonePC/2in1Tablet
 
 ## 结构体成员变量说明
 
-PhonePC/2in1Tablet
-
 ### pathType
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_PathType NetworkBoost_NetworkScene::pathType
+```c
+NetworkBoost_PathType NetworkBoost_NetworkScene::pathType
 ```
 
 **描述**
@@ -53,10 +43,8 @@ PhonePC/2in1Tablet
 
 ### recommendedAction
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_RecommendedAction NetworkBoost_NetworkScene::recommendedAction
+```c
+NetworkBoost_RecommendedAction NetworkBoost_NetworkScene::recommendedAction
 ```
 
 **描述**
@@ -65,10 +53,8 @@ PhonePC/2in1Tablet
 
 ### scene
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_Scene NetworkBoost_NetworkScene::scene
+```c
+NetworkBoost_Scene NetworkBoost_NetworkScene::scene
 ```
 
 **描述**
@@ -77,10 +63,8 @@ PhonePC/2in1Tablet
 
 ### weakSignalPrediction
 
-PhonePC/2in1Tablet
-
-```
-1. NetworkBoost_WeakSignalPrediction NetworkBoost_NetworkScene::weakSignalPrediction
+```c
+NetworkBoost_WeakSignalPrediction NetworkBoost_NetworkScene::weakSignalPrediction
 ```
 
 **描述**

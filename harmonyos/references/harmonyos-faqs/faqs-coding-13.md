@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-13
 title: DevEco Studio上使用生成NAPI功能时， 提示“Unsupported parameter type.”或 “Unsupported return type.”错误
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用生成NAPI功能时， 提示“Unsupported parameter type.”或 “Unsupported return type.”错误
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:20:16+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:56c1f6fb07758df90fe441513f0c3d48c48d6c37da1678d7ef2bf501dab5fc11
+scraped_at: 2026-09-02T14:54:53+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:d63f087dc22ededdcaae58d64ef6e27ef83fd56a95c70b9a3b499e4d5e730840
 ---
 
 **问题现象**
 
 右键单击函数， 在弹出的菜单中依次选择 Generate... > NAPI， 生成胶水代码报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ZL_CzMeBTweNlukmJcVAdQ/zh-cn_image_0000002229604265.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/F4RroH6zRp-qQzcinY5S9g/zh-cn_image_0000002624478446.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/uhkzfBgJT_Gv9z2ihTxD_Q/zh-cn_image_0000002194318496.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/hMrfnBE7TMKTjMQ9Qfs_qQ/zh-cn_image_0000002654797813.png)
 
 **解决措施**
 

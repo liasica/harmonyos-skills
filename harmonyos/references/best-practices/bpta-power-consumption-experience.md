@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-power-cons
 title: 应用功耗体验
 breadcrumb: 最佳实践 > 功耗 > 应用功耗体验
 category: best-practices
-scraped_at: 2026-04-28T08:22:36+08:00
+scraped_at: 2026-09-02T15:03:22+08:00
 doc_updated_at: 2026-03-12
 content_hash: sha256:95f46adfb3775a69cfcb3bee1ac7d15fc0ab2db4948438b807f188e6787c9705
 ---

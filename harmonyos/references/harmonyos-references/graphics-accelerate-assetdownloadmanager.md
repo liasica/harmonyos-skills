@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: assetDownloadManager（资源包下载管理）
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > assetDownloadManager（资源包下载管理）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cf6929942497f7bd41a5938cf9deed18fcd2271a9d0f4068530d064cfaf691d7
+scraped_at: 2026-09-02T14:53:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:43fd6f5cc7e2dbd69dbd13bb0498251696e3c4a719ac93c2d9b080b488c1a734
 ---
 
 本模块提供资源包下载管理能力。
@@ -14,21 +14,17 @@ content_hash: sha256:cf6929942497f7bd41a5938cf9deed18fcd2271a9d0f4068530d064cfaf
 
 ## 导入模块
 
-PhoneTablet
-
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 ```
 
 ## DownloadFault
 
-PhoneTablet
-
 资源包下载失败原因的枚举。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -47,13 +43,11 @@ PhoneTablet
 
 ## State
 
-PhoneTablet
-
 资源包下载任务状态的枚举。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -68,13 +62,11 @@ PhoneTablet
 
 ## AssetDownloadConfig
 
-PhoneTablet
-
 资源包下载任务的配置信息。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -91,13 +83,11 @@ PhoneTablet
 
 ## AssetDownloadTask
 
-PhoneTablet
-
 资源包下载任务的信息。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -109,31 +99,27 @@ PhoneTablet
 
 ## DownloadProgressInfo
 
-PhoneTablet
-
 资源包下载任务的进度信息。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | downloadTask | [AssetDownloadTask](graphics-accelerate-assetdownloadmanager.md#assetdownloadtask) | 是 | 否 | 资源包下载任务的信息。 |
-| totalBytesWritten | number | 是 | 否 | 待下载的资源总大小，单位：字节。  默认值：0。 |
-| totalExpectedBytes | number | 是 | 否 | 已下载的资源总大小，单位：字节。  默认值：0。 |
+| totalBytesWritten | number | 是 | 否 | 已下载的资源总大小，单位：Byte。  默认值：0。 |
+| totalExpectedBytes | number | 是 | 否 | 待下载的资源总大小，单位：Byte。  默认值：0。 |
 
 ## DownloadCompletedInfo
 
-PhoneTablet
-
 资源包下载任务的完成信息。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -144,13 +130,11 @@ PhoneTablet
 
 ## DownloadFailedInfo
 
-PhoneTablet
-
 资源包下载任务的失败信息。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -161,15 +145,13 @@ PhoneTablet
 
 ## assetDownloadManager.on('progress')
 
-PhoneTablet
-
 on(type: 'progress', callback: Callback<DownloadProgressInfo[]>): void
 
-订阅资源包下载进度事件。使用callback形式返回结果。
-
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+订阅资源包下载进度事件。使用callback异步回调。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -182,7 +164,7 @@ on(type: 'progress', callback: Callback<DownloadProgressInfo[]>): void
 
 **错误码**：
 
-错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -192,28 +174,26 @@ on(type: 'progress', callback: Callback<DownloadProgressInfo[]>): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. let onProgressCallback = (progressArray: assetDownloadManager.DownloadProgressInfo[]) => {
-4. console.info('AssetAccelDemo', `onProgressCallback progressArray length: ${progressArray.length}`);
-5. // 添加资源包下载进度处理逻辑。
-6. };
-7. // 订阅资源包下载进度事件。
-8. assetDownloadManager.on("progress", onProgressCallback);
+let onProgressCallback = (progressArray: assetDownloadManager.DownloadProgressInfo[]) => {
+  console.info('AssetAccelDemo', `onProgressCallback progressArray length: ${progressArray.length}`);
+  // 添加资源包下载进度处理逻辑。
+};
+// 订阅资源包下载进度事件。
+assetDownloadManager.on('progress', onProgressCallback);
 ```
 
 ## assetDownloadManager.off('progress')
 
-PhoneTablet
-
 off(type: 'progress', callback?: Callback<DownloadProgressInfo[]>): void
 
-取消订阅资源包下载进度事件。使用callback形式返回结果。
-
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+取消订阅资源包下载进度事件。使用callback异步回调。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -222,11 +202,11 @@ off(type: 'progress', callback?: Callback<DownloadProgressInfo[]>): void
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消事件回调类型，固定为'progress'，表示资源包下载进度。 |
-| callback | Callback<[DownloadProgressInfo[]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-accelerate-assetdownloadmanager#downloadprogressinfo)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
+| callback | Callback<[DownloadProgressInfo[]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-accelerate-assetdownloadmanager#downloadprogressinfo)> | 否 | 回调函数。返回任务进度信息。需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
 
 **错误码**：
 
-错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -236,28 +216,26 @@ off(type: 'progress', callback?: Callback<DownloadProgressInfo[]>): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. let onProgressCallback = (progressArray: assetDownloadManager.DownloadProgressInfo[]) => {
-4. console.info('AssetAccelDemo', `onProgressCallback progressArray length: ${progressArray.length}`);
-5. // 添加资源包下载进度处理逻辑。
-6. };
-7. // 取消订阅资源包下载进度事件。
-8. assetDownloadManager.off("progress", onProgressCallback);
+let onProgressCallback = (progressArray: assetDownloadManager.DownloadProgressInfo[]) => {
+  console.info('AssetAccelDemo', `onProgressCallback progressArray length: ${progressArray.length}`);
+  // 添加资源包下载进度处理逻辑。
+};
+// 取消订阅资源包下载进度事件。
+assetDownloadManager.off('progress', onProgressCallback);
 ```
 
 ## assetDownloadManager.on('pause')
 
-PhoneTablet
-
 on(type: 'pause', callback: Callback<AssetDownloadTask>): void
 
-订阅资源包下载暂停事件。使用callback形式返回结果。
-
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+订阅资源包下载暂停事件。使用callback异步回调。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -270,7 +248,7 @@ on(type: 'pause', callback: Callback<AssetDownloadTask>): void
 
 **错误码**：
 
-错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -280,28 +258,26 @@ on(type: 'pause', callback: Callback<AssetDownloadTask>): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. let onPauseCallback = (downloadTaskInfo: assetDownloadManager.AssetDownloadTask) => {
-4. console.info('AssetAccelDemo', `task identifier = ${downloadTaskInfo.config.identifier} has paused.`);
-5. // 添加资源包下载暂停处理逻辑。
-6. };
-7. // 订阅资源包下载暂停事件。
-8. assetDownloadManager.on("pause", onPauseCallback);
+let onPauseCallback = (downloadTaskInfo: assetDownloadManager.AssetDownloadTask) => {
+  console.info('AssetAccelDemo', `task identifier = ${downloadTaskInfo.config.identifier} has paused.`);
+  // 添加资源包下载暂停处理逻辑。
+};
+// 订阅资源包下载暂停事件。
+assetDownloadManager.on('pause', onPauseCallback);
 ```
 
 ## assetDownloadManager.off('pause')
 
-PhoneTablet
-
 off(type: 'pause', callback?: Callback<AssetDownloadTask>): void
 
-取消订阅资源包下载暂停事件。使用callback形式返回结果。
-
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+取消订阅资源包下载暂停事件。使用callback异步回调。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -310,11 +286,11 @@ off(type: 'pause', callback?: Callback<AssetDownloadTask>): void
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消事件回调类型，固定为'pause'，表示资源暂停事件。 |
-| callback | Callback<[AssetDownloadTask](graphics-accelerate-assetdownloadmanager.md#assetdownloadtask)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
+| callback | Callback<[AssetDownloadTask](graphics-accelerate-assetdownloadmanager.md#assetdownloadtask)> | 否 | 回调函数。返回任务进度信息。需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
 
 **错误码**：
 
-错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -324,28 +300,26 @@ off(type: 'pause', callback?: Callback<AssetDownloadTask>): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. let onPauseCallback = (downloadTaskInfo: assetDownloadManager.AssetDownloadTask) => {
-4. console.info('AssetAccelDemo', `task identifier = ${downloadTaskInfo.config.identifier} has paused.`);
-5. // 添加资源包下载暂停处理逻辑。
-6. };
-7. // 取消订阅资源包下载暂停事件.
-8. assetDownloadManager.off("pause", onPauseCallback);
+let onPauseCallback = (downloadTaskInfo: assetDownloadManager.AssetDownloadTask) => {
+  console.info('AssetAccelDemo', `task identifier = ${downloadTaskInfo.config.identifier} has paused.`);
+  // 添加资源包下载暂停处理逻辑。
+};
+// 取消订阅资源包下载暂停事件。
+assetDownloadManager.off('pause', onPauseCallback);
 ```
 
 ## assetDownloadManager.on('complete')
 
-PhoneTablet
-
 on(type: 'complete', callback: Callback<DownloadCompletedInfo>): void
 
-订阅资源包下载成功事件。使用callback形式返回结果。
-
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+订阅资源包下载成功事件。使用callback异步回调。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -358,7 +332,7 @@ on(type: 'complete', callback: Callback<DownloadCompletedInfo>): void
 
 **错误码**：
 
-错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -368,28 +342,26 @@ on(type: 'complete', callback: Callback<DownloadCompletedInfo>): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. let onCompleteCallback = (completeInfo: assetDownloadManager.DownloadCompletedInfo) => {
-4. console.info('AssetAccelDemo', `task identifier = ${completeInfo.downloadTask.config.identifier} has completed.`);
-5. // 添加资源包下载成功处理逻辑。
-6. };
-7. // 订阅资源包下载成功事件。
-8. assetDownloadManager.on("complete", onCompleteCallback);
+let onCompleteCallback = (completeInfo: assetDownloadManager.DownloadCompletedInfo) => {
+  console.info('AssetAccelDemo', `task identifier = ${completeInfo.downloadTask.config.identifier} has completed.`);
+  // 添加资源包下载成功处理逻辑。
+};
+// 订阅资源包下载成功事件。
+assetDownloadManager.on('complete', onCompleteCallback);
 ```
 
 ## assetDownloadManager.off('complete')
 
-PhoneTablet
-
 off(type: 'complete', callback?: Callback<DownloadCompletedInfo>): void
 
-取消订阅资源包下载成功事件。使用callback形式返回结果。
-
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+取消订阅资源包下载成功事件。使用callback异步回调。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -398,11 +370,11 @@ off(type: 'complete', callback?: Callback<DownloadCompletedInfo>): void
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消事件回调类型，固定为'complete'，表示资源包下载成功事件。 |
-| callback | Callback<[DownloadCompletedInfo](graphics-accelerate-assetdownloadmanager.md#downloadcompletedinfo)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
+| callback | Callback<[DownloadCompletedInfo](graphics-accelerate-assetdownloadmanager.md#downloadcompletedinfo)> | 否 | 回调函数。返回任务进度信息。需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
 
 **错误码**：
 
-错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -412,28 +384,26 @@ off(type: 'complete', callback?: Callback<DownloadCompletedInfo>): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. let onCompleteCallback = (completeInfo: assetDownloadManager.DownloadCompletedInfo) => {
-4. console.info('AssetAccelDemo', `task identifier = ${completeInfo.downloadTask.config.identifier} has completed.`);
-5. // 添加资源包下载成功处理逻辑。
-6. };
-7. // 取消订阅资源包下载成功事件。
-8. assetDownloadManager.off("complete", onCompleteCallback);
+let onCompleteCallback = (completeInfo: assetDownloadManager.DownloadCompletedInfo) => {
+  console.info('AssetAccelDemo', `task identifier = ${completeInfo.downloadTask.config.identifier} has completed.`);
+  // 添加资源包下载成功处理逻辑。
+};
+// 取消订阅资源包下载成功事件。
+assetDownloadManager.off('complete', onCompleteCallback);
 ```
 
 ## assetDownloadManager.on('fail')
 
-PhoneTablet
-
 on(type: 'fail', callback: Callback<DownloadFailedInfo>): void
 
-订阅资源包下载失败事件。使用callback形式返回结果。
-
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+订阅资源包下载失败事件。使用callback异步回调。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -446,7 +416,7 @@ on(type: 'fail', callback: Callback<DownloadFailedInfo>): void
 
 **错误码**：
 
-错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -456,28 +426,26 @@ on(type: 'fail', callback: Callback<DownloadFailedInfo>): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. let onFailedCallback = (failedInfo: assetDownloadManager.DownloadFailedInfo) => {
-4. console.info('AssetAccelDemo', `task identifier = ${failedInfo.downloadTask.config.identifier} has failed.`);
-5. // 添加资源包下载失败处理逻辑。
-6. };
-7. // 订阅资源包下载失败事件。
-8. assetDownloadManager.on("fail", onFailedCallback);
+let onFailedCallback = (failedInfo: assetDownloadManager.DownloadFailedInfo) => {
+  console.info('AssetAccelDemo', `task identifier = ${failedInfo.downloadTask.config.identifier} has failed.`);
+  // 添加资源包下载失败处理逻辑。
+};
+// 订阅资源包下载失败事件。
+assetDownloadManager.on('fail', onFailedCallback);
 ```
 
 ## assetDownloadManager.off('fail')
 
-PhoneTablet
-
 off(type: 'fail', callback?: Callback<DownloadFailedInfo>): void
 
-取消订阅资源包下载失败事件。使用callback形式返回结果。
-
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+取消订阅资源包下载失败事件。使用callback异步回调。
 
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -486,11 +454,11 @@ off(type: 'fail', callback?: Callback<DownloadFailedInfo>): void
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
 | type | string | 是 | 取消事件回调类型，固定为'fail'，表示资源包下载失败事件。 |
-| callback | Callback<[DownloadFailedInfo](graphics-accelerate-assetdownloadmanager.md#downloadfailedinfo)> | 否 | 需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
+| callback | Callback<[DownloadFailedInfo](graphics-accelerate-assetdownloadmanager.md#downloadfailedinfo)> | 否 | 回调函数。返回任务进度信息。需要取消监听的回调函数，需与订阅时传入的回调函数一致。若不填，则取消当前监听该事件的所有回调函数。 |
 
 **错误码**：
 
-错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -500,30 +468,28 @@ off(type: 'fail', callback?: Callback<DownloadFailedInfo>): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. let onFailedCallback = (failedInfo: assetDownloadManager.DownloadFailedInfo) => {
-4. console.info('AssetAccelDemo', `task identifier = ${failedInfo.downloadTask.config.identifier} has failed.`);
-5. // 添加资源包下载失败处理逻辑。
-6. };
-7. // 取消订阅资源包下载失败事件。
-8. assetDownloadManager.off("fail", onFailedCallback);
+let onFailedCallback = (failedInfo: assetDownloadManager.DownloadFailedInfo) => {
+  console.info('AssetAccelDemo', `task identifier = ${failedInfo.downloadTask.config.identifier} has failed.`);
+  // 添加资源包下载失败处理逻辑。
+};
+// 取消订阅资源包下载失败事件。
+assetDownloadManager.off('fail', onFailedCallback);
 ```
 
 ## assetDownloadManager.fetchManifestUrl
-
-PhoneTablet
 
 fetchManifestUrl(): Promise<string>
 
 获取资源包下载列表。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -535,7 +501,7 @@ fetchManifestUrl(): Promise<string>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -544,34 +510,32 @@ fetchManifestUrl(): Promise<string>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
 
-3. async fetchManifestUrl() {
-4. let manifestUrl : string = '';
-5. try {
-6. manifestUrl = await assetDownloadManager.fetchManifestUrl();
-7. console.info('AssetAccelDemo', `Succeeded in fetching manifestUrl, manifestUrl = ${manifestUrl}`);
-8. } catch (error) {
-9. console.error('AssetAccelDemo', `Failed to fetch manifestUrl, errCode: ${error.code}, errMessage: ${error.message}`);
-10. return;
-11. }
-12. }
+async fetchManifestUrl() {
+  let manifestUrl : string = '';
+  try {
+    manifestUrl = await assetDownloadManager.fetchManifestUrl();
+    console.info('AssetAccelDemo', `Succeeded in fetching manifestUrl, manifestUrl = ${manifestUrl}`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to fetch manifestUrl, errCode: ${error.code}, errMessage: ${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.addAssetDownloadTask
-
-PhoneTablet
 
 addAssetDownloadTask(context: common.BaseContext, downloadConfig: AssetDownloadConfig): Promise<string>
 
 新增资源包下载任务。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -590,7 +554,7 @@ addAssetDownloadTask(context: common.BaseContext, downloadConfig: AssetDownloadC
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -603,43 +567,41 @@ addAssetDownloadTask(context: common.BaseContext, downloadConfig: AssetDownloadC
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async addAssetDownloadTask() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. try {
-14. // 添加资源包下载任务。
-15. // 根据实际代码上下文自行传入合适的context。
-16. const taskId: string = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-17. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-18. } catch (error) {
-19. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-20. }
-21. }
+async addAssetDownloadTask() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    const taskId: string = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+  }
+}
 ```
 
 ## assetDownloadManager.pauseAssetDownloadTask
-
-PhoneTablet
 
 pauseAssetDownloadTask(taskId: string): Promise<void>
 
 暂停资源包下载任务。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -657,7 +619,7 @@ pauseAssetDownloadTask(taskId: string): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -670,53 +632,51 @@ pauseAssetDownloadTask(taskId: string): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async pauseAssetDownloadTask() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. try {
-24. // 根据taskId暂停资源包下载任务
-25. await assetDownloadManager.pauseAssetDownloadTask(taskId);
-26. console.info('AssetAccelDemo', `Succeeded in pausing assetDownloadTask`);
-27. } catch (error) {
-28. console.error('AssetAccelDemo', `Failed to pause assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-29. return;
-30. }
-31. }
+async pauseAssetDownloadTask() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 根据taskId暂停资源包下载任务。
+    await assetDownloadManager.pauseAssetDownloadTask(taskId);
+    console.info('AssetAccelDemo', `Succeeded in pausing assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to pause assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.resumeAssetDownloadTask
-
-PhoneTablet
 
 resumeAssetDownloadTask(taskId: string): Promise<void>
 
 恢复资源包下载任务。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -734,7 +694,7 @@ resumeAssetDownloadTask(taskId: string): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -747,59 +707,57 @@ resumeAssetDownloadTask(taskId: string): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async resumeAssetDownloadTask() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. try {
-24. // 根据taskId暂停资源包下载任务
-25. assetDownloadManager.pauseAssetDownloadTask(taskId);
-26. console.info('AssetAccelDemo', `Succeeded in pausing assetDownloadTask`);
-27. } catch (error) {
-28. console.error('AssetAccelDemo', `Failed to pause assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-29. return;
-30. }
-31. try {
-32. // 根据taskId恢复资源包下载任务
-33. await assetDownloadManager.resumeAssetDownloadTask(taskId);
-34. console.info('AssetAccelDemo', `Succeeded in resuming assetDownloadTask`);
-35. } catch (error) {
-36. console.error('AssetAccelDemo', `Failed to resume assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-37. return;
-38. }
-39. }
+async resumeAssetDownloadTask() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 根据taskId暂停资源包下载任务。
+    assetDownloadManager.pauseAssetDownloadTask(taskId);
+    console.info('AssetAccelDemo', `Succeeded in pausing assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to pause assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 根据taskId恢复资源包下载任务。
+    await assetDownloadManager.resumeAssetDownloadTask(taskId);
+    console.info('AssetAccelDemo', `Succeeded in resuming assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to resume assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.removeAssetDownloadTask
-
-PhoneTablet
 
 removeAssetDownloadTask(taskId: string): Promise<void>
 
 移除资源包下载任务。使用Promise异步回调。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -817,7 +775,7 @@ removeAssetDownloadTask(taskId: string): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -827,51 +785,49 @@ removeAssetDownloadTask(taskId: string): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async removeAssetDownloadTask() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. try {
-24. // 根据taskId删除资源包下载任务
-25. await assetDownloadManager.removeAssetDownloadTask(taskId);
-26. console.info('AssetAccelDemo', `Succeeded in removing assetDownloadTask`);
-27. } catch (error) {
-28. console.error('AssetAccelDemo', `Failed to remove assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-29. return;
-30. }
-31. }
+async removeAssetDownloadTask() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 根据taskId删除资源包下载任务。
+    await assetDownloadManager.removeAssetDownloadTask(taskId);
+    console.info('AssetAccelDemo', `Succeeded in removing assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to remove assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.fetchAllAssetDownloadTasks
-
-PhoneTablet
 
 fetchAllAssetDownloadTasks(): Promise<AssetDownloadTask[]>
 
 获取所有资源包下载任务，已下载完成的任务除外。使用Promise异步回调。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -883,7 +839,7 @@ fetchAllAssetDownloadTasks(): Promise<AssetDownloadTask[]>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -891,54 +847,52 @@ fetchAllAssetDownloadTasks(): Promise<AssetDownloadTask[]>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async fetchAllAssetDownloadTasks() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. let downloadTaskArr: Array<assetDownloadManager.AssetDownloadTask>;
-24. try {
-25. // 获取所有资源包下载任务信息。
-26. downloadTaskArr = await assetDownloadManager.fetchAllAssetDownloadTasks();
-27. console.info('AssetAccelDemo', `Succeeded in fetching allAssetDownloadTasks success, downloadTaskArr length:${downloadTaskArr.length}.`);
-28. } catch (error) {
-29. console.error('AssetAccelDemo', `Failed to fetch allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-30. return;
-31. }
-32. }
+async fetchAllAssetDownloadTasks() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  let downloadTaskArr: Array<assetDownloadManager.AssetDownloadTask>;
+  try {
+    // 获取所有资源包下载任务信息。
+    downloadTaskArr = await assetDownloadManager.fetchAllAssetDownloadTasks();
+    console.info('AssetAccelDemo', `Succeeded in fetching allAssetDownloadTasks success, downloadTaskArr length:${downloadTaskArr.length}.`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to fetch allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.pauseAllAssetDownloadTasks
-
-PhoneTablet
 
 pauseAllAssetDownloadTasks(): Promise<void>
 
 暂停所有资源包下载任务。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -950,7 +904,7 @@ pauseAllAssetDownloadTasks(): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -960,53 +914,51 @@ pauseAllAssetDownloadTasks(): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async pauseAllAssetDownloadTasks() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. try {
-24. // 暂停所有资源包下载任务。
-25. await assetDownloadManager.pauseAllAssetDownloadTasks();
-26. console.info('AssetAccelDemo', `Succeeded in pausing allAssetDownloadTasks`);
-27. } catch (error) {
-28. console.error('AssetAccelDemo', `Failed to pause allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-29. return;
-30. }
-31. }
+async pauseAllAssetDownloadTasks() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 暂停所有资源包下载任务。
+    await assetDownloadManager.pauseAllAssetDownloadTasks();
+    console.info('AssetAccelDemo', `Succeeded in pausing allAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to pause allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.resumeAllAssetDownloadTasks
-
-PhoneTablet
 
 resumeAllAssetDownloadTasks(): Promise<void>
 
 恢复所有资源包下载任务。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限：** ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -1018,7 +970,7 @@ resumeAllAssetDownloadTasks(): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1028,59 +980,57 @@ resumeAllAssetDownloadTasks(): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async resumeAllAssetDownloadTasks() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. try {
-24. // 暂停所有资源包下载任务。
-25. await assetDownloadManager.pauseAllAssetDownloadTasks();
-26. console.info('AssetAccelDemo', `Succeeded in pausing allAssetDownloadTasks`);
-27. } catch (error) {
-28. console.error('AssetAccelDemo', `Failed to pause allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-29. return;
-30. }
-31. try {
-32. // 恢复所有资源包下载任务。
-33. await assetDownloadManager.resumeAllAssetDownloadTasks();
-34. console.info('AssetAccelDemo', `Succeeded in resuming allAssetDownloadTasks`);
-35. } catch (error) {
-36. console.error('AssetAccelDemo', `Failed to resume allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-37. return;
-38. }
-39. }
+async resumeAllAssetDownloadTasks() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 暂停所有资源包下载任务。
+    await assetDownloadManager.pauseAllAssetDownloadTasks();
+    console.info('AssetAccelDemo', `Succeeded in pausing allAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to pause allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 恢复所有资源包下载任务。
+    await assetDownloadManager.resumeAllAssetDownloadTasks();
+    console.info('AssetAccelDemo', `Succeeded in resuming allAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to resume allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.removeAllAssetDownloadTasks
-
-PhoneTablet
 
 removeAllAssetDownloadTasks(): Promise<void>
 
 移除所有资源包下载任务。使用Promise异步回调。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -1092,7 +1042,7 @@ removeAllAssetDownloadTasks(): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1100,51 +1050,49 @@ removeAllAssetDownloadTasks(): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async removeAllAssetDownloadTasks() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. try {
-24. // 移除所有资源包下载任务。
-25. await assetDownloadManager.removeAllAssetDownloadTasks();
-26. console.info('AssetAccelDemo', `Succeeded in removing allAssetDownloadTasks`);
-27. } catch (error) {
-28. console.error('AssetAccelDemo', `Failed to remove allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-29. return;
-30. }
-31. }
+async removeAllAssetDownloadTasks() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 移除所有资源包下载任务。
+    await assetDownloadManager.removeAllAssetDownloadTasks();
+    console.info('AssetAccelDemo', `Succeeded in removing allAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to remove allAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.fetchGroupAssetDownloadTasks
-
-PhoneTablet
 
 fetchGroupAssetDownloadTasks(groupId: string): Promise<AssetDownloadTask[]>
 
 获取同一组的资源包下载任务。使用Promise异步回调。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -1162,7 +1110,7 @@ fetchGroupAssetDownloadTasks(groupId: string): Promise<AssetDownloadTask[]>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1172,55 +1120,53 @@ fetchGroupAssetDownloadTasks(groupId: string): Promise<AssetDownloadTask[]>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async fetchGroupAssetDownloadTasks() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. let groupId = 'groupId';
-24. let downloadTaskArr: Array<assetDownloadManager.AssetDownloadTask>;
-25. try {
-26. // 获取同一groupId下的资源包下载任务信息。
-27. downloadTaskArr = await assetDownloadManager.fetchGroupAssetDownloadTasks(groupId);
-28. console.info('AssetAccelDemo', `Succeeded in fetching groupAssetDownloadTasks`);
-29. } catch (error) {
-30. console.error('AssetAccelDemo', `Failed to fetch groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-31. return;
-32. }
-33. }
+async fetchGroupAssetDownloadTasks() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  let groupId = 'groupId';
+  let downloadTaskArr: Array<assetDownloadManager.AssetDownloadTask>;
+  try {
+    // 获取同一groupId下的资源包下载任务信息。
+    downloadTaskArr = await assetDownloadManager.fetchGroupAssetDownloadTasks(groupId);
+    console.info('AssetAccelDemo', `Succeeded in fetching groupAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to fetch groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.pauseGroupAssetDownloadTasks
-
-PhoneTablet
 
 pauseGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 暂停同一组的资源包下载任务。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -1238,7 +1184,7 @@ pauseGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1250,54 +1196,52 @@ pauseGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async pauseGroupAssetDownloadTasks() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. let groupId = 'groupId';
-24. try {
-25. // 暂停同一groupId下的资源包下载任务。
-26. await assetDownloadManager.pauseGroupAssetDownloadTasks(groupId);
-27. console.info('AssetAccelDemo', `Succeeded in pausing groupAssetDownloadTasks`);
-28. } catch (error) {
-29. console.error('AssetAccelDemo', `Failed to pause groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-30. return;
-31. }
-32. }
+async pauseGroupAssetDownloadTasks() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  let groupId = 'groupId';
+  try {
+    // 暂停同一groupId下的资源包下载任务。
+    await assetDownloadManager.pauseGroupAssetDownloadTasks(groupId);
+    console.info('AssetAccelDemo', `Succeeded in pausing groupAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to pause groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.resumeGroupAssetDownloadTasks
-
-PhoneTablet
 
 resumeGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 恢复同一组的资源包下载任务。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -1315,7 +1259,7 @@ resumeGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1327,60 +1271,58 @@ resumeGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async resumeGroupAssetDownloadTasks() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. let groupId = 'groupId';
-24. try {
-25. // 暂停同一groupId下的资源包下载任务。
-26. await assetDownloadManager.pauseGroupAssetDownloadTasks(groupId);
-27. console.info('AssetAccelDemo', `Succeeded in pausing groupAssetDownloadTasks`);
-28. } catch (error) {
-29. console.error('AssetAccelDemo', `Failed to pause groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-30. return;
-31. }
-32. try {
-33. // 恢复同一groupId下的资源包下载任务。
-34. await assetDownloadManager.resumeGroupAssetDownloadTasks(groupId);
-35. console.info('AssetAccelDemo', `Succeeded in resuming groupAssetDownloadTasks`);
-36. } catch (error) {
-37. console.error('AssetAccelDemo', `Failed to resume groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-38. return;
-39. }
-40. }
+async resumeGroupAssetDownloadTasks() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  let groupId = 'groupId';
+  try {
+    // 暂停同一groupId下的资源包下载任务。
+    await assetDownloadManager.pauseGroupAssetDownloadTasks(groupId);
+    console.info('AssetAccelDemo', `Succeeded in pausing groupAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to pause groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    // 恢复同一groupId下的资源包下载任务。
+    await assetDownloadManager.resumeGroupAssetDownloadTasks(groupId);
+    console.info('AssetAccelDemo', `Succeeded in resuming groupAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to resume groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## assetDownloadManager.removeGroupAssetDownloadTasks
-
-PhoneTablet
 
 removeGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 移除同一组的资源包下载任务。使用Promise异步回调。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -1398,7 +1340,7 @@ removeGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1408,50 +1350,48 @@ removeGroupAssetDownloadTasks(groupId: string): Promise<void>
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async removeGroupAssetDownloadTasks() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. let groupId = 'groupId';
-24. try {
-25. // 移除同一groupId下的资源包下载任务。
-26. await assetDownloadManager.removeGroupAssetDownloadTasks(groupId);
-27. console.info('AssetAccelDemo', `Succeeded in removing groupAssetDownloadTasks`);
-28. } catch (error) {
-29. console.error('AssetAccelDemo', `Failed to remove groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
-30. return;
-31. }
-32. }
+async removeGroupAssetDownloadTasks() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  let groupId = 'groupId';
+  try {
+    // 移除同一groupId下的资源包下载任务。
+    await assetDownloadManager.removeGroupAssetDownloadTasks(groupId);
+    console.info('AssetAccelDemo', `Succeeded in removing groupAssetDownloadTasks`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to remove groupAssetDownloadTasks, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## NetSpeedLevel
 
-PhoneTablet
-
 网络限速等级的枚举。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.0(18)
 
@@ -1463,17 +1403,15 @@ PhoneTablet
 
 ## assetDownloadManager.limitDownloadTaskSpeed
 
-PhoneTablet
-
 limitDownloadTaskSpeed(taskIds: string[], speedLimit: NetSpeedLevel): Promise<void>
 
 限制资源包下载的速度。使用Promise异步回调。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **需要权限**：ohos.permission.INTERNET
 
 **系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
-**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.1.0(18)
 
@@ -1492,7 +1430,7 @@ limitDownloadTaskSpeed(taskIds: string[], speedLimit: NetSpeedLevel): Promise<vo
 
 **错误码**：
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1502,50 +1440,48 @@ limitDownloadTaskSpeed(taskIds: string[], speedLimit: NetSpeedLevel): Promise<vo
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { common } from '@kit.AbilityKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { common } from '@kit.AbilityKit';
 
-4. async limitDownloadTaskSpeed() {
-5. // 构造资源包下载配置信息。
-6. let assetDownload: assetDownloadManager.AssetDownloadConfig = {
-7. fileName: 'fileName', // 下载资源的文件名。
-8. url: 'url', // 下载资源url。
-9. isEssential: false, // 是否是必要下载资源。
-10. identifier: 'identifier', // 下载资源标识信息。
-11. groupId: 'groupId' // 组ID，用于标识资源的版本信息。
-12. }
-13. let taskId: string = '';
-14. try {
-15. // 添加资源包下载任务。
-16. // 根据实际代码上下文自行传入合适的context。
-17. taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
-18. console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
-21. return;
-22. }
-23. try {
-24. const taskIds: string[] = [taskId];
-25. // 限制资源包下载任务的下载速度。
-26. assetDownloadManager.limitDownloadTaskSpeed(taskIds, assetDownloadManager.NetSpeedLevel.LIMIT_MEDIUM);
-27. console.info('AssetAccelDemo', `Succeeded in limiting downloadTaskSpeed`);
-28. } catch (error) {
-29. console.error('AssetAccelDemo', `Failed to limit downloadTaskSpeed, errCode:${error.code}, errMessage:${error.message}`);
-30. return;
-31. }
-32. }
+async limitDownloadTaskSpeed() {
+  // 构造资源包下载配置信息。
+  let assetDownload: assetDownloadManager.AssetDownloadConfig = {
+    fileName: 'fileName', // 下载资源的文件名。
+    url: 'url', // 下载资源url。
+    isEssential: false, // 是否是必要下载资源。
+    identifier: 'identifier', // 下载资源标识信息。
+    groupId: 'groupId' // 组ID，用于标识资源的版本信息。
+  }
+  let taskId: string = '';
+  try {
+    // 添加资源包下载任务。
+    // 根据实际代码上下文自行传入合适的context。
+    taskId = await assetDownloadManager.addAssetDownloadTask(this.getUIContext().getHostContext() as common.Context, assetDownload);
+    console.info('AssetAccelDemo', `Succeeded in adding assetDownloadTask`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to add assetDownloadTask, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+  try {
+    const taskIds: string[] = [taskId];
+    // 限制资源包下载任务的下载速度。
+    assetDownloadManager.limitDownloadTaskSpeed(taskIds, assetDownloadManager.NetSpeedLevel.LIMIT_MEDIUM);
+    console.info('AssetAccelDemo', `Succeeded in limiting downloadTaskSpeed`);
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to limit downloadTaskSpeed, errCode:${error.code}, errMessage:${error.message}`);
+    return;
+  }
+}
 ```
 
 ## AppDownloadStatus
 
-PhoneTablet
-
 应用自身下载器中资源包下载状态的枚举。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.1(19)
 
@@ -1556,54 +1492,49 @@ PhoneTablet
 
 ## ResourceType
 
-PhoneTablet
-
 资源类型，影响下载完成通知的内容样式。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 6.1.0(23)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| RELEASED | 0 | 已发布的资源，即已公开发布过的资源。  完成下载后，通知栏展示“xxx 游戏资源包已更新”。 |
-| PRE\_RELEASE | 1 | 预发布的资源，即未公开发布过的资源。  完成下载后，通知栏展示“xxx 游戏资源包预下载已完成” |
+| RELEASED | 0 | 已发布的资源，即已公开发布过的资源。  完成下载后，通知栏展示“{应用包名} 资源包通过WLAN下载完成 {资源大小}”。 |
+| PRE\_RELEASE | 1 | 预发布的资源，即未公开发布过的资源。  完成下载后，通知栏展示“{应用包名} 资源包通过WLAN预下载已完成”。 |
 
 ## AppDownloadProgress
 
-PhoneTablet
-
 应用自身下载器中资源包的下载进度信息。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.1(19)
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| totalBytesWritten | number | 否 | 否 | 已下载的资源总大小，单位：字节。取值范围：大于等于0。  默认值：0。 |
-| totalExpectedBytes | number | 否 | 否 | 待下载的资源总大小，单位：字节。取值大于等于0，异常值按0处理。  默认值：0。 |
+| totalBytesWritten | number | 否 | 否 | 已下载的资源总大小，单位：Byte。取值范围：大于等于0。  默认值：0。 |
+| totalExpectedBytes | number | 否 | 否 | 待下载的资源总大小，单位：Byte。取值大于等于0，异常值按0处理。  默认值：0。 |
 | totalFiles | number | 否 | 否 | 资源文件总数。取值大于等于0，异常值按0处理。  默认值：0。 |
 | successCount | number | 否 | 否 | 已成功下载的文件数。取值大于等于0，异常值按0处理。  默认值：0。 |
 | failureCount | number | 否 | 否 | 下载失败的文件数。取值大于等于0，异常值按0处理。  默认值：0。 |
 | status | [AppDownloadStatus](graphics-accelerate-assetdownloadmanager.md#appdownloadstatus) | 否 | 否 | 当前应用自身下载器中的下载状态。 |
 | resourceType | [ResourceType](graphics-accelerate-assetdownloadmanager.md#resourcetype) | 否 | 是 | 后台正在下载的资源类型，不同的资源类型决定了后台下载通知的内容样式。  默认值为RELEASED。  **起始版本：** 6.1.0(23) |
+| resourceVersion | string | 否 | 是 | 正在下载的资源的版本标识符。  最大长度128字节。  默认值：空字符串。  **起始版本：** 26.0.0 |
 
 ## assetDownloadManager.reportDownloadProgress
-
-PhoneTablet
 
 reportDownloadProgress(progressInfo: AppDownloadProgress): void
 
 上报应用自身下载器中资源包的下载进度信息。
 
-**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
-
 **模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
 
 **起始版本：** 5.1.1(19)
 
@@ -1615,7 +1546,7 @@ reportDownloadProgress(progressInfo: AppDownloadProgress): void
 
 **错误码**：
 
-错误码的详细介绍请参见[ArkTS API错误码](graphics-accelerate-arkts-errorcode.md)。
+错误码的详细介绍请参见[ArkTS API错误码](errorcode-graphics-accelerate.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1624,26 +1555,78 @@ reportDownloadProgress(progressInfo: AppDownloadProgress): void
 
 **示例**：
 
-```
-1. import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
-2. import { deviceInfo } from '@kit.BasicServicesKit';
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
-4. try {
-5. let progressInfo: assetDownloadManager.AppDownloadProgress = {
-6. totalBytesWritten: 0,
-7. totalExpectedBytes: 0,
-8. totalFiles: 0,
-9. successCount: 0,
-10. failureCount: 0,
-11. status:assetDownloadManager.AppDownloadStatus.IN_PROGRESS
-12. }
-13. // 判断当前HarmonyOS SDK版本是否为6.1.0(23)及以上版本
-14. if (deviceInfo.sdkApiVersion >= 23) {
-15. progressInfo.resourceType = assetDownloadManager.ResourceType.RELEASED
-16. }
-17. assetDownloadManager.reportDownloadProgress(progressInfo);
-18. console.info('AssetAccelDemo', `Succeeded in reporting downloadProgress`);
-19. } catch (error) {
-20. console.error('AssetAccelDemo', `Failed to report downloadProgress, errCode:${error.code}, errMessage:${error.message}`);
-21. }
+try {
+  let progressInfo: assetDownloadManager.AppDownloadProgress = {
+    totalBytesWritten: 0,
+    totalExpectedBytes: 0,
+    totalFiles: 0,
+    successCount: 0,
+    failureCount: 0,
+    status:assetDownloadManager.AppDownloadStatus.IN_PROGRESS
+  }
+  // 判断当前HarmonyOS SDK版本是否为6.1.0(23)及以上版本。
+  if (deviceInfo.sdkApiVersion >= 23) {
+    progressInfo.resourceType = assetDownloadManager.ResourceType.RELEASED
+  }
+  assetDownloadManager.reportDownloadProgress(progressInfo);
+  console.info('AssetAccelDemo', `Succeeded in reporting downloadProgress`);
+} catch (error) {
+  console.error('AssetAccelDemo', `Failed to report downloadProgress, errCode:${error.code}, errMessage:${error.message}`);
+}
+```
+
+## assetDownloadManager.isAssetDownloadSupported
+
+isAssetDownloadSupported(): Promise<boolean>
+
+查询用户的当前设备类型是否支持资源包下载能力。使用Promise异步回调。
+
+**模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回是否支持资源包下载能力的结果信息。  返回false：不支持。  返回true：支持。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-graphics-accelerate.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1016600094 | Task service ability error. |
+
+**示例**：
+
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+import { deviceInfo } from '@kit.BasicServicesKit';
+
+async IsAssetDownloadSupported() {
+  // 判断当前HarmonyOS SDK版本是否为26.0.0及以上版本。
+  if (deviceInfo.sdkApiVersion >= 26) {
+    try {
+      const supportResult: boolean = await assetDownloadManager.isAssetDownloadSupported();
+      console.info('AssetAccelDemo', 'Succeeded in testing isAssetDownloadSupported');
+      if (supportResult) {
+        // 用户当前设备类型支持资源包下载能力。
+        console.info('AssetAccelDemo', 'The device supports assetDownload');
+      } else {
+        // 用户当前设备类型不支持资源包下载能力。
+        console.info('AssetAccelDemo', 'The device does not support assetDownload');
+      }
+    } catch (error) {
+      console.error('AssetAccelDemo', `Failed to test isAssetDownloadSupported, errCode:${error.code}, errMessage:${error.message}`);
+    }
+  }
+}
 ```

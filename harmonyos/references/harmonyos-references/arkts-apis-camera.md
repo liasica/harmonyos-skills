@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 模块描述
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > 模块描述
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:32+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2176b81506ca6c9b24d9b8c5e68a69f7aded76cfe8b443057709dd00604df67c
+scraped_at: 2026-09-02T15:02:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a8308ea236f93abea9c7106f2e66a5f438f6c124bddd7419f549db830601a788
 ---
 
 本模块为开发者提供了一套简单易懂的相机服务接口。通过调用这些接口，开发者可以开发相机应用，访问和操作相机硬件，实现基础功能如预览、拍照和录像。此外，还可以通过接口组合完成更多操作，如控制闪光灯、曝光时间和对焦等。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,6 +18,8 @@ content_hash: sha256:2176b81506ca6c9b24d9b8c5e68a69f7aded76cfe8b443057709dd00604
 
 * [AutoDeviceSwitch](arkts-apis-camera-autodeviceswitch.md)类，用于查询设备是否支持自动切换镜头，使能或去使能自动切换镜头。
 * [AutoExposure](arkts-apis-camera-autoexposure.md)类，针对设备的自动曝光特性提供了一系列查询功能，支持设置或查询当前曝光值、曝光区域中心点以及曝光补偿。
+* [Aperture](arkts-apis-camera-aperture.md)类，提供物理光圈相关功能的能力。
+* [ApertureQuery](arkts-apis-camera-aperturequery.md)类，提供物理光圈查询相关功能的能力。
 * [CameraInput](arkts-apis-camera-camerainput.md)类，提供开关相机，以及监听输入流异常的能力。
 * [CameraManager](arkts-apis-camera-cameramanager.md)类，提供获取相机设备对象、创建输入/输出流以及会话Session、注册/解注册监听相机相关状态等能力。
 * [ColorManagement](arkts-apis-camera-colormanagement.md)类，提供查询是否支持色彩空间，设置以及获取色彩空间参数的能力。
@@ -25,7 +27,15 @@ content_hash: sha256:2176b81506ca6c9b24d9b8c5e68a69f7aded76cfe8b443057709dd00604
 * [Flash](arkts-apis-camera-flash.md)类，提供查询是否支持闪光灯功能，以及具有对闪光灯设备操作的能力。
 * [Focus](arkts-apis-camera-focus.md)类，提供查询对焦模式在设备上是否支持的接口，以及设置对焦相关功能的能力。
 * [Macro](arkts-apis-camera-macro.md)类，提供查询是否支持微距，以及使能微距的能力。
+* [ManualExposure](arkts-apis-camera-manualexposure.md)类，提供手动曝光相关功能的能力。
+* [ManualExposureQuery](arkts-apis-camera-manualexposurequery.md)类，提供手动曝光查询相关功能的能力。
+* [ManualFocusQuery](arkts-apis-camera-manualfocusquery.md)类，提供手动对焦查询相关功能的能力。
+* [ManualFocus](arkts-apis-camera-manualfocus.md)类，提供手动对焦相关功能的能力。
+* [ManualIso](arkts-apis-camera-manualiso.md)类，提供手动ISO相关功能的能力。
+* [ManualIsoQuery](arkts-apis-camera-manualisoquery.md)类，提供手动ISO查询相关功能的能力。
 * [MetadataOutput](arkts-apis-camera-metadataoutput.md)类，用于注册/解注册监听meta数据以及启动/停止meta流。
+* [OIS](arkts-apis-camera-ois.md)类，提供光学防抖（OIS）相关功能的能力。
+* [OISQuery](arkts-apis-camera-oisquery.md)类，提供光学防抖（OIS）查询相关功能的能力。
 * [Photo](arkts-apis-camera-photo.md)类，全质量图对象，包含一张图片的完整信息。
 * [PhotoOutput](arkts-apis-camera-photooutput.md)类，拍照会话中使用的输出信息，提供拍照相关的能力，如拍照、使能动态拍照和获取拍照旋转角度等。
 * [PhotoSession](arkts-apis-camera-photosession.md)类，普通拍照模式会话类，提供了预配置以及会话状态监听相关的能力。
@@ -42,6 +52,6 @@ content_hash: sha256:2176b81506ca6c9b24d9b8c5e68a69f7aded76cfe8b443057709dd00604
 
 ## 导入模块
 
-```
-1. import { camera } from '@kit.CameraKit';
+```ts
+import { camera } from '@kit.CameraKit';
 ```

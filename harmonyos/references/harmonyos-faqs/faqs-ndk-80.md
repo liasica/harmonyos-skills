@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-80
 title: Native侧如何合理管控对象的生命周期
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > Native侧如何合理管控对象的生命周期
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:53+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:82327b9328313a709afc451dbbddc96de481c99b6974189cee070844c255798c
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/attestation-s
 title: 应用端开发
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明 > 签名验签识别真实请求 > 应用端开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:10bb262730547a81f73accf4785929ce4b0a4ea21d0c59565e6181d3c206c4eb
+scraped_at: 2026-09-02T14:59:32+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:68af1407b00010e92f2aad045eca69c68abbbdb943b68c42f4ab7de26bf43d2d
 ---
 
 ## 接口说明
@@ -17,8 +17,9 @@ content_hash: sha256:10bb262730547a81f73accf4785929ce4b0a4ea21d0c59565e6181d3c20
 * [查询密钥是否存在(C/C++)](huks-check-key-ndk.md)
 * [生成密钥(ArkTS)](huks-key-generation-arkts.md)
 * [生成密钥(C/C++)](huks-key-generation-ndk.md)
-* [匿名密钥证明(ArkTS)](huks-key-anon-attestation-arkts.md)
-* [匿名密钥证明(C/C++)](huks-key-anon-attestation-ndk.md)
+* [在线匿名密钥证明(ArkTS)](huks-key-anon-attestation-arkts.md)
+* [在线匿名密钥证明(C/C++)](huks-key-anon-attestation-ndk.md)
+* [离线匿名密钥证明(ArkTS)](huks-offline-anon-attestation-arkts.md)
 * [签名/验签(ArkTS)](huks-signing-signature-verification-arkts.md)
 * [签名/验签(C/C++)](huks-signing-signature-verification-ndk.md)
 
@@ -36,75 +37,75 @@ content_hash: sha256:10bb262730547a81f73accf4785929ce4b0a4ea21d0c59565e6181d3c20
 
 应用可以调用Universal Keystore Kit的签名接口，使用应用私钥对业务请求数据（如HTTP请求的Body）进行签名，然后把签名结果数据添加到请求消息中（如HTTP的Header字段）。为了方便应用服务器查找应用公钥用于验签，应用应该在业务请求中携带应用公钥ID。
 
-说明
+**说明** 
 
 安全建议：为了在发送业务请求时能够防重放攻击，建议应用先从应用服务器获取一次性的挑战值Challenge。应用服务器采用安全随机数生成挑战值Challenge，并缓存到服务器中。
 
 **示例：**
 
-```
-1. import { huks } from '@kit.UniversalKeystoreKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { huks } from '@kit.UniversalKeystoreKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let keyAlias = 'serviceKey_user01'; //业务密钥别名
-6. let handle: number;
-7. let plaintext = '123456'; //待签名的明文数据，建议包含服务器端返回的Challenge。
-8. let signature: Uint8Array; //存储签名结果数据的变量
+let keyAlias = 'serviceKey_user01'; // 业务密钥别名
+let handle: number;
+let plaintext = '123456'; // 待签名的明文数据，建议包含服务器端返回的Challenge。
+let signature: Uint8Array; // 存储签名结果数据的变量
 
-10. function StringToUint8Array(str: String) {
-11. let arr: number[] = new Array();
-12. for (let i = 0, j = str.length; i < j; ++i) {
-13. arr.push(str.charCodeAt(i));
-14. }
-15. return new Uint8Array(arr);
-16. }
+function StringToUint8Array(str: String) {
+  let arr: number[] = new Array();
+  for (let i = 0, j = str.length; i < j; ++i) {
+    arr.push(str.charCodeAt(i));
+  }
+  return new Uint8Array(arr);
+}
 
-18. function GetSignProperties() {
-19. let properties: Array<huks.HuksParam> = new Array();
-20. let index = 0;
-21. properties[index++] = {
-22. tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
-23. value: huks.HuksKeyAlg.HUKS_ALG_ECC
-24. };
-25. properties[index++] = {
-26. tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
-27. value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_256
-28. };
-29. properties[index++] = {
-30. tag: huks.HuksTag.HUKS_TAG_PURPOSE,
-31. value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN
-32. };
-33. properties[index++] = {
-34. tag: huks.HuksTag.HUKS_TAG_DIGEST,
-35. value: huks.HuksKeyDigest.HUKS_DIGEST_SHA256
-36. }
-37. return properties;
-38. }
+function GetSignProperties() {
+  let properties: Array<huks.HuksParam> = new Array();
+  let index = 0;
+  properties[index++] = {
+    tag: huks.HuksTag.HUKS_TAG_ALGORITHM,
+    value: huks.HuksKeyAlg.HUKS_ALG_ECC
+  };
+  properties[index++] = {
+    tag: huks.HuksTag.HUKS_TAG_KEY_SIZE,
+    value: huks.HuksKeySize.HUKS_AES_KEY_SIZE_256
+  };
+  properties[index++] = {
+    tag: huks.HuksTag.HUKS_TAG_PURPOSE,
+    value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN
+  };
+  properties[index++] = {
+    tag: huks.HuksTag.HUKS_TAG_DIGEST,
+    value: huks.HuksKeyDigest.HUKS_DIGEST_SHA256
+  }
+  return properties;
+}
 
-40. async function Sign(keyAlias: string, plaintext: string) {
-41. let signProperties = GetSignProperties();
-42. let options: huks.HuksOptions = {
-43. properties: signProperties,
-44. inData: StringToUint8Array(plaintext)
-45. }
-46. await huks.initSession(keyAlias, options)
-47. .then((data) => {
-48. handle = data.handle;
-49. }).catch((err: BusinessError) => {
-50. console.error(`promise: init sign failed, error: ` + err.message);
-51. })
-52. await huks.finishSession(handle, options)
-53. .then((data) => {
-54. signature = data.outData as Uint8Array;
-
-56. let base64 = new util.Base64Helper();
-57. let signatureBase64 = base64.encodeToStringSync(signature);
-58. //todo：把签名结果的Base64编码（signatureBase64变量）发送到云侧的服务器。如下示例代码把签名结果打印到日志中，供调测使用，商用代码不需要打印。
-59. console.info(`sign success, result:` + signatureBase64);
-
-61. }).catch((err: BusinessError) => {
-62. console.error(`promise: sign failed, error: ` + err.message);
-63. })
-64. }
+async function Sign(keyAlias: string, plaintext: string) {
+  let signProperties = GetSignProperties();
+  let options: huks.HuksOptions = {
+    properties: signProperties,
+    inData: StringToUint8Array(plaintext)
+  }
+  await huks.initSession(keyAlias, options)
+    .then((data) => {
+      handle = data.handle;
+    }).catch((err: BusinessError) => {
+      console.error(`promise: init sign failed, error: ` + err.message);
+    })
+  await huks.finishSession(handle, options)
+    .then((data) => {
+      signature = data.outData as Uint8Array;
+  
+      let base64 = new util.Base64Helper();
+      let signatureBase64 = base64.encodeToStringSync(signature);
+      // todo：把签名结果的Base64编码（signatureBase64变量）发送到云侧的服务器。如下示例代码把签名结果打印到日志中，供调测使用，商用代码不需要打印。
+      console.info(`sign success, result:` + signatureBase64);
+  
+    }).catch((err: BusinessError) => {
+      console.error(`promise: sign failed, error: ` + err.message);
+    })
+}
 ```

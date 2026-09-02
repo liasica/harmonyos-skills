@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-compile-b
 title: 构建产物说明
 breadcrumb: 指南 > 构建应用 > 概述 > 构建产物说明
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:10+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:270b5c362589fbb022e803c9c96818ccc0377be168a60e87dcc1018211340577
+scraped_at: 2026-09-02T15:00:26+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:600bc2b1ff79aee1cdebc39d85a9eee19be9804dbe8cd78db4e59743296c0934
 ---
 
 ## HAP/HSP构建产物说明
 
 以HAP为例，release模式的构建产物一般包含以下文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/3Kqr7Be9Rpa79pZ6s1SbFg/zh-cn_image_0000002561832711.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/z9lvkuPNTv-JD3aXXRbi0Q/zh-cn_image_0000002701662784.png)
 
 * resources：构建产物中的资源文件目录，如图片、媒体资源、配置文件等。
 * modules.abc：构建产物中通过源码编译出的字节码文件。
@@ -21,9 +21,9 @@ content_hash: sha256:270b5c362589fbb022e803c9c96818ccc0377be168a60e87dcc10182113
 * pack.info：构建产物中的包内容描述文件，在安装升级时提供相关信息。
 * pkgContextInfo.json：构建产物中的语境信息表文件，用于运行时查找依赖库信息。
 
-注意
+**注意** 
 
-* resources.index文件中可以看到明文信息，为防止泄漏，请勿将敏感信息直接明文配置在如string.json等资源文件中。
+* resources.index文件中可以看到明文信息，为防止泄露，请勿将敏感信息直接明文配置在如string.json等资源文件中。
 * 模块的src/main/ets目录，编译时仅处理.ets/.ts/.js文件，其他文件会被当作资源文件打包进产物中，不会进行混淆或加密，因此请勿将敏感信息存放在该目录下。
 * 以debug模式构建的HAP/HSP包中的ets目录下存在sourceMaps.map文件，此文件包含源码映射等信息。sourceMaps.map文件格式及解析流程请参考[ArkTS堆栈解析原理](ide-exception-stack-parsing-principle.md#section5924954297)。
 * LiteWearable设备使用标准JS运行时，因此对应的应用开发在release模式下的构建产物中包含JS源码，请注意代码资产保护。
@@ -36,9 +36,9 @@ content_hash: sha256:270b5c362589fbb022e803c9c96818ccc0377be168a60e87dcc10182113
 
 APP构建产物如下，其中包名取决于个人项目中的模块名，与下图可能不同：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/e0fDfq72QS6_JwDosM_hEg/zh-cn_image_0000002530912788.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/lCPqohwvRKqc-fVioXD-mw/zh-cn_image_0000002731541977.png)
 
-* entry-default.hap：由字节码、资源、三方库、配置文件等打包生成的entry类型的hap包，是App应用安装和运行的基本单元，application-default.hap是feature类型的hap。
+* entry-default.hap：由字节码、资源、三方库、配置文件等打包生成的entry类型的hap包，是App应用安装和运行的基本单元，application-default.hap是feature类型的hap包。
 * library-default.hsp：由字节码、资源、三方库、配置文件等打包生成的动态共享包，可实现代码和资源共享。
 * pack.info：应用App构建产物中的包内容描述文件，提供应用市场发布上架所需信息。
 * pac.json：应用App构建产物中的隐私清单文件，文件中可配置的字段请参考[pac.json5隐私清单文件](agc-pac.md)，用于提供应用市场发布上架所需信息。

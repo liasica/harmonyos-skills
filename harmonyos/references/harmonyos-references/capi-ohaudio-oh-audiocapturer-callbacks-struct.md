@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioCapturer_Callbacks_Struct
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioCapturer_Callbacks_Struct
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:54+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:23ff170e89be2a8b8776eead0988af46413d553f78c8ec642bc6d5cd0cfa0a8a
+scraped_at: 2026-09-02T15:02:21+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ffd4e4a632bc8c82af902183c63a890b09874b4bbdce9c46305a79097d237dbd
 ---
 
-```
-1. typedef struct OH_AudioCapturer_Callbacks_Struct {...} OH_AudioCapturer_Callbacks
+```c
+typedef struct OH_AudioCapturer_Callbacks_Struct {...} OH_AudioCapturer_Callbacks;
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-声明输入音频流的回调函数指针。
+声明用于音频采集器的回调函数指针。
 
 为了避免不可预期的行为，在设置音频回调函数时，请确保该结构体的每一个成员变量都被自定义的回调方法或空指针初始化。可参考[推荐使用OHAudio开发音频录制功能(C/C++)](../harmonyos-guides/using-ohaudio-for-recording.md)。
 
@@ -28,7 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 请分别使用以下回调类型替代：
 
-[OH\_AudioCapturer\_OnReadDataCallback](capi-native-audiocapturer-h.md#oh_audiocapturer_onreaddatacallback)、 [OH\_AudioCapturer\_OnDeviceChangeCallback](capi-native-audiocapturer-h.md#oh_audiocapturer_ondevicechangecallback)、 [OH\_AudioCapturer\_OnInterruptCallback](capi-native-audiocapturer-h.md#oh_audiocapturer_oninterruptcallback) 以及 [OH\_AudioCapturer\_OnErrorCallback](capi-native-audiocapturer-h.md#oh_audiocapturer_onerrorcallback)。
+[OH\_AudioCapturer\_OnReadDataCallback](capi-native-audiocapturer-h.md#oh_audiocapturer_onreaddatacallback)、[OH\_AudioCapturer\_OnDeviceChangeCallback](capi-native-audiocapturer-h.md#oh_audiocapturer_ondevicechangecallback)、[OH\_AudioCapturer\_OnInterruptCallback](capi-native-audiocapturer-h.md#oh_audiocapturer_oninterruptcallback) 以及 [OH\_AudioCapturer\_OnErrorCallback](capi-native-audiocapturer-h.md#oh_audiocapturer_onerrorcallback)。
 
 **相关模块：** [OHAudio](capi-ohaudio.md)
 
@@ -36,11 +34,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -51,18 +45,14 @@ PhonePC/2in1TabletTVWearable
 
 ## 成员函数说明
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 以下回调接口的返回值没有枚举定义，当前版本实现并不按返回值区分处理，但为保证后续版本可扩展，默认使用0。
 
 ### OH\_AudioCapturer\_OnReadData()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*OH_AudioCapturer_OnReadData)(OH_AudioCapturer* capturer,void* userData,void* buffer,int32_t length)
+```c
+int32_t (*OH_AudioCapturer_OnReadData)(OH_AudioCapturer* capturer,void* userData,void* buffer,int32_t length)
 ```
 
 **描述**
@@ -88,10 +78,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCapturer\_OnStreamEvent()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*OH_AudioCapturer_OnStreamEvent)(OH_AudioCapturer* capturer,void* userData,OH_AudioStream_Event event)
+```c
+int32_t (*OH_AudioCapturer_OnStreamEvent)(OH_AudioCapturer* capturer,void* userData,OH_AudioStream_Event event)
 ```
 
 **描述**
@@ -114,10 +102,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCapturer\_OnInterruptEvent()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*OH_AudioCapturer_OnInterruptEvent)(OH_AudioCapturer* capturer,void* userData,OH_AudioInterrupt_ForceType type,OH_AudioInterrupt_Hint hint)
+```c
+int32_t (*OH_AudioCapturer_OnInterruptEvent)(OH_AudioCapturer* capturer,void* userData,OH_AudioInterrupt_ForceType type,OH_AudioInterrupt_Hint hint)
 ```
 
 **描述**
@@ -141,10 +127,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AudioCapturer\_OnError()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int32_t (*OH_AudioCapturer_OnError)(OH_AudioCapturer* capturer, void* userData, OH_AudioStream_Result error)
+```c
+int32_t (*OH_AudioCapturer_OnError)(OH_AudioCapturer* capturer, void* userData, OH_AudioStream_Result error)
 ```
 
 **描述**

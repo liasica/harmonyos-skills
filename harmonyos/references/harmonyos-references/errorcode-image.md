@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Image错误码
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > 错误码 > Image错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:874fe23822e158f0ad9e052170e868e990dfc3e0b3adf2d3f083812cb6e1881c
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4e4fa7c50be9fd5246820a425f6701f54c714882f6a3b55bb1869f57d1a52055
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 501 无法调用接口
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -33,8 +31,6 @@ Resource unavailable.
 请检查图片并按指示操作重新解码。
 
 ## 62980096 操作失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -56,9 +52,7 @@ The operation failed. Possible cause: 1.Image upload exception. 2. Decoding proc
 
 请检查图片并按指示操作重新解码。
 
-## 62980097 pixelmap序列化传输失败
-
-PhonePC/2in1TabletTVWearable
+## 62980097 Pixelmap序列化传输失败
 
 **错误信息**
 
@@ -66,7 +60,7 @@ IPC error. Possible cause: 1.IPC communication failed. 2. Image upload exception
 
 **错误描述**
 
-pixelmap序列化传输失败。
+Pixelmap序列化传输失败。
 
 **可能原因**
 
@@ -100,8 +94,6 @@ Shared memory does not exist.
 请检查内存使用情况或重启。
 
 ## 62980099 共享内存数据异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -144,8 +136,6 @@ Image decoding abnormal.
 
 ## 62980101 图片输入数据错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The image data is abnormal.
@@ -184,8 +174,6 @@ Image malloc abnormal. This status code is thrown when an error occurs during th
 
 ## 62980103 图片类型不支持
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The image data is not supported.
@@ -204,11 +192,9 @@ The image data is not supported.
 
 ## 62980104 图片初始化错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty pixelmap.
+Image initialization abnormal. This status code is thrown when an error occurs during the process of creating empty Pixelmap.
 
 **错误描述**
 
@@ -225,8 +211,6 @@ Image initialization abnormal. This status code is thrown when an error occurs d
 请重新输入正确的参数或更换图片。
 
 ## 62980105 图片获取数据错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -246,8 +230,6 @@ Failed to get the data.
 请输入新的图片或检查图片数据。
 
 ## 62980106 图片数据太大
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -286,8 +268,6 @@ Image conversion abnormal.
 
 ## 62980108 图片颜色转换错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to convert the color space.
@@ -306,8 +286,6 @@ Failed to convert the color space.
 重试或者更换图片类型。
 
 ## 62980109 裁剪错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -328,8 +306,6 @@ Failed to crop the image.
 
 ## 62980110 图片源数据错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The image source data is incorrect.
@@ -347,8 +323,6 @@ The image source data is incorrect.
 检查操作步骤或更换图片。
 
 ## 62980111 图片源数据不完整
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -368,8 +342,6 @@ The image source data is incomplete.
 
 ## 62980112 图片格式不匹配
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The image format does not match.
@@ -387,8 +359,6 @@ The image format does not match.
 更换匹配类型的图片。
 
 ## 62980113 图片未知格式
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -426,8 +396,6 @@ Image source not parsed.
 
 ## 62980115 图片无效参数
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid image parameter.
@@ -445,8 +413,6 @@ Invalid image parameter.
 重新输入正确的参数。
 
 ## 62980116 解码失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -487,8 +453,6 @@ Failed to register the plugin.
 
 ## 62980118 创建插件失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to create the image plugin.
@@ -507,8 +471,6 @@ Failed to create the image plugin.
 更换图片或检查传入数据。
 
 ## 62980119 图片编码失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -529,11 +491,9 @@ Failed to encode the image.
 
 ## 62980120 图片添加像素映射失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Add pixelmap out of range.
+Add Pixelmap out of range.
 
 **错误描述**
 
@@ -568,8 +528,6 @@ Image hardware decoding is not supported.
 
 ## 62980122 解码图片头异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to decode the image header.
@@ -588,8 +546,6 @@ Failed to decode the image header.
 更换图片或检查图片数据。
 
 ## 62980123 图片不支持exif解码
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -628,8 +584,6 @@ The image property does not exist.
 
 ## 62980133 图片属性赋值超出范围
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The EXIF data is out of range.
@@ -647,8 +601,6 @@ The EXIF data is out of range.
 更换图片或检查所设置图片属性值的长度。
 
 ## 62980135 图片属性值无效
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -668,8 +620,6 @@ The EXIF value is invalid.
 
 ## 62980137 图片操作无效
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid media operation.
@@ -687,8 +637,6 @@ Invalid media operation.
 更换图片。
 
 ## 62980146 图片属性值写入文件失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -708,8 +656,6 @@ The EXIF data failed to be written to the file.
 
 ## 62980149 图片参数无效
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid MIME type for the image source.
@@ -728,8 +674,6 @@ Invalid MIME type for the image source.
 
 ## 62980172 编码ICC失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to encode icc.
@@ -747,8 +691,6 @@ Failed to encode icc.
 检查图片数据或更换图片。
 
 ## 62980173 DMA内存空间错误
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -770,8 +712,6 @@ DMA内存空间错误。
 
 ## 62980174 DMA内存数据异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The DMA memory data is abnormal.
@@ -792,8 +732,6 @@ DMA内存数据异常。
 
 ## 62980177 API环境异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Abnormal API environment.
@@ -811,8 +749,6 @@ API使用环境存在问题。
 检查SDK版本。
 
 ## 62980178 PixelMap创建失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -833,8 +769,6 @@ PixelMap创建失败。
 
 ## 62980179 缓冲区大小异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Abnormal buffer size.
@@ -853,8 +787,6 @@ Abnormal buffer size.
 
 ## 62980180 文件描述符映射失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 FD mapping failed.
@@ -872,8 +804,6 @@ FD mapping failed.
 检查是否传入了正确的文件描述符。
 
 ## 62980246 读取PixelMap失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -913,8 +843,6 @@ Failed to write the pixel map.
 
 ## 62980248 PixelMap不允许修改
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 PixelMap does not allow modification.
@@ -932,8 +860,6 @@ PixelMap不允许修改。
 停止对PixelMap的修改。
 
 ## 62980252 创建surface失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -971,8 +897,6 @@ Configuration error.
 
 ## 62980274 图片转换失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The conversion failed.
@@ -992,8 +916,6 @@ The conversion failed.
 
 ## 62980276 不支持图片转换目标类型
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The type to be converted is an unsupported target pixel format.
@@ -1012,8 +934,6 @@ The type to be converted is an unsupported target pixel format.
 
 ## 62980286 PixelMap设置内存标识符失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Memory format not supported.
@@ -1030,11 +950,9 @@ PixelMap设置内存标识符失败。
 
 **处理步骤**
 
-检查是否已释放pixelmap实例。检查内存类型是否匹配。
+检查是否已释放Pixelmap实例。检查内存类型是否匹配。
 
 ## 62980302 内存拷贝失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1110,8 +1028,6 @@ Too large data or image.
 
 ## 7600104 获取图像数据失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to get the data from Surface.
@@ -1128,6 +1044,42 @@ Failed to get the data from Surface.
 **处理步骤**
 
 检查图像数据来源或使用新的图像数据。
+
+## 7600105 PixelMap已被释放
+
+**错误信息**
+
+PixelMap has been released.
+
+**错误描述**
+
+PixelMap已被释放。
+
+**可能原因**
+
+PixelMap对象已被释放，其关联的native对象已不存在。
+
+**处理步骤**
+
+检查该PixelMap对象是否存在被提前释放的风险（例如，在异步任务或另一个线程中意外释放），需确保该对象在使用结束前及所有异步方法执行完成前不被释放。
+
+## 7600106 PixelMap已被传递至另一个线程
+
+**错误信息**
+
+PixelMap has been passed to another thread.
+
+**错误描述**
+
+PixelMap已被传递至另一个线程。
+
+**可能原因**
+
+PixelMap对象已被传递至另一个线程，原线程的对象无法继续调用接口。
+
+**处理步骤**
+
+不要在PixelMap对象被传递到另一个线程后仍在原线程调用该对象的接口。
 
 ## 7600173 DMA内存不存在
 
@@ -1167,8 +1119,6 @@ DMA内存操作失败。
 
 ## 7600201 不支持的操作
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unsupported operation, e.g. on cross-platform.
@@ -1186,8 +1136,6 @@ Unsupported operation, e.g. on cross-platform.
 使用支持的操作。
 
 ## 7600202 不支持的元数据读写
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1225,8 +1173,6 @@ PixelMap的格式不支持转换。
 
 ## 7600204 无效的区域
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid region.
@@ -1244,8 +1190,6 @@ Region中设置的顶点位置、宽度或高度超出图片尺寸范围。
 检查Region中设置的顶点位置、宽度或高度，确保在图片尺寸范围之内。
 
 ## 7600205 不支持的内存格式或像素格式
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1265,8 +1209,6 @@ Unsupported memory format or pixel format.
 
 ## 7600206 无效参数
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid parameter.
@@ -1283,9 +1225,45 @@ Invalid parameter.
 
 检查并重新输入正确的参数。
 
-## 7600301 申请内存失败
+## 7600207 不支持的数据格式
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+Unsupported data format.
+
+**错误描述**
+
+不支持的数据格式。
+
+**可能原因**
+
+1. 接口不支持传入的像素数据格式。
+2. 对象中的数据格式不支持特定的操作。
+
+**处理步骤**
+
+查看接口文档并使用接口支持的数据格式。
+
+## 7600208 HDR图片分解失败
+
+**错误信息**
+
+HDR image decomposition failed. Possible causes: 1. Decomposition processing is not supported. 2. Processing error occurs.
+
+**错误描述**
+
+HDR图片分解失败。
+
+**可能原因**
+
+1. 分解处理不被支持。
+2. HDR图片处理过程中发生错误。
+
+**处理步骤**
+
+检查HDR PixelMap的像素格式是否支持分解，或更换图片后重试。
+
+## 7600301 申请内存失败
 
 **错误信息**
 
@@ -1304,8 +1282,6 @@ Memory alloc failed.
 清理内存后重试。
 
 ## 7600302 内存拷贝失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1343,8 +1319,6 @@ PixelMap或内存地址无效。
 
 ## 7600305 创建PixelMap失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to create the PixelMap.
@@ -1361,6 +1335,26 @@ Failed to create the PixelMap.
 **处理步骤**
 
 检查函数入参或检查是否提前释放了实例。
+
+## 7600306 数据转换失败
+
+**错误信息**
+
+Data conversion failed.
+
+**错误描述**
+
+数据转换失败。
+
+**可能原因**
+
+1. 传入的像素数据缓冲区的大小不符合预期。
+2. PixelMap内部的像素数据损坏。
+
+**处理步骤**
+
+1. 如果传入了一个缓冲区，检查缓冲区的大小是否符合预期。
+2. 检查PixelMap的像素数据和元数据是否正常。
 
 ## 7600501 不支持的分配器模式
 
@@ -1382,8 +1376,6 @@ Unsupported allocator mode, e.g., use share memory to create a HDR image as only
 
 ## 7600901 未知错误
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unknown error.
@@ -1401,8 +1393,6 @@ Unknown error.
 通过日志查找原因。
 
 ## 7700101 图片源存在问题
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1424,8 +1414,6 @@ Bad source.
 
 ## 7700102 不支持的MIME类型
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unsupported MIME type.
@@ -1443,8 +1431,6 @@ Unsupported MIME type.
 检查图片数据或更换图片。
 
 ## 7700103 图片太大
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1464,8 +1450,6 @@ Image too large.
 
 ## 7700201 不支持的内存分配类型
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Unsupported allocator type, e.g., use share memory to decode a HDR image as only DMA supported hdr metadata.
@@ -1483,8 +1467,6 @@ Unsupported allocator type, e.g., use share memory to decode a HDR image as only
 使用正确的内存分配类型。
 
 ## 7700202 不支持的元数据
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1505,11 +1487,9 @@ Unsupported metadata.
 
 ## 7700203 不支持的选项
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
-Unsupported options, e.g, cannot convert image into desired pixel format.
+Unsupported options, e.g., cannot convert image into desired pixel format.
 
 **错误描述**
 
@@ -1524,8 +1504,6 @@ Unsupported options, e.g, cannot convert image into desired pixel format.
 检查选项参数配置。
 
 ## 7700204 无效参数
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1544,8 +1522,6 @@ Invalid parameter.
 检查并重新输入正确的参数。
 
 ## 7700301 解码失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -1567,8 +1543,6 @@ Decode failed.
 
 ## 7700302 内存分配失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Memory allocation failed.
@@ -1586,9 +1560,45 @@ Memory allocation failed.
 
 检查设备内存或检查传入数据。
 
-## 7700304 图片信息写入文件失败
+## 7700303 图片不包含缩略图数据
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+Image does not carry thumbnail data.
+
+**错误描述**
+
+图片不包含缩略图数据。
+
+**可能原因**
+
+图片文件中不包含缩略图数据，且未开启缩略图生成功能。
+
+**处理步骤**
+
+检查图片文件是否包含缩略图数据，或开启缩略图生成功能后重试。
+
+## 7700305 缩略图生成失败
+
+**错误信息**
+
+Thumbnail generation failed.
+
+**错误描述**
+
+缩略图生成失败。
+
+**可能原因**
+
+1. 输入图片数据异常。
+2. 缩略图生成参数不合理。
+3. 设备资源不足。
+
+**处理步骤**
+
+检查输入图片数据和缩略图生成参数，必要时释放系统资源后重试。
+
+## 7700304 图片信息写入文件失败
 
 **错误信息**
 
@@ -1645,8 +1655,6 @@ Invalid parameter for ImagePacker.
 
 ## 7800301 编码失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Encode failed.
@@ -1665,8 +1673,6 @@ Encode failed.
 更换图片或检查传入数据。
 
 ## 7900201 无效参数
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

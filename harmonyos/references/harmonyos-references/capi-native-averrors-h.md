@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_averrors.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_averrors.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:04+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:060f2d0919bd511ea70d79e0fd0553d52f6c6050c6b4de846cc0ebb260ca2058
+scraped_at: 2026-09-02T15:02:22+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:16d9344a9644ed4914f3b8181a930d93d116a7b668e4a575174541d2925b653e
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 媒体框架错误码。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -38,14 +32,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVErrCode
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AVErrCode
+```c
+enum OH_AVErrCode
 ```
 
 **描述**
@@ -87,7 +77,7 @@ PhonePC/2in1TabletTVWearable
 | AV\_ERR\_IO\_SSL\_SERVER\_CERT\_UNTRUSTED = 5411010 | SSL服务器证书不受信任。  **起始版本：** 14 |
 | AV\_ERR\_IO\_UNSUPPORTED\_REQUEST = 5411011 | 网络协议不支持该请求。  **起始版本：** 14 |
 | AV\_ERR\_IO\_CLEARTEXT\_NOT\_PERMITTED = 5411012 | 不允许HTTP明文访问。  **起始版本：** 23 |
-| AV\_ERR\_STREAM\_CHANGED = 5410005 | 同步模式下流格式发生变更。可以通过调用接口[OH\_VideoEncoder\_GetOutputDescription](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_getoutputdescription)（视频编码）、[OH\_VideoDecoder\_GetOutputDescription](capi-native-avcodec-videodecoder-h.md#oh_videodecoder_getoutputdescription)（视频解码）、[OH\_AudioCodec\_GetOutputDescription](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_getoutputdescription)（音频编解码）来获取更新后流的配置信息。  **起始版本：** 20 |
+| AV\_ERR\_STREAM\_CHANGED = 5410005 | 同步模式下流格式发生变更。可以调用接口[OH\_VideoEncoder\_GetOutputDescription](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_getoutputdescription)（视频编码）、[OH\_VideoDecoder\_GetOutputDescription](capi-native-avcodec-videodecoder-h.md#oh_videodecoder_getoutputdescription)（视频解码）、[OH\_AudioCodec\_GetOutputDescription](capi-native-avcodec-audiocodec-h.md#oh_audiocodec_getoutputdescription)（音频编解码）获取更新后流的配置信息。  **起始版本：** 20 |
 | AV\_ERR\_TRY\_AGAIN\_LATER = 5410006 | 同步模式下临时缓冲区查询失败，建议等待短暂间隔后重试操作。  **起始版本：** 20 |
 | AV\_ERR\_SUPER\_RESOLUTION\_UNSUPPORTED = 5410003 | 该媒体源或者当前设备不支持超分。  **起始版本：** 23 |
 | AV\_ERR\_SUPER\_RESOLUTION\_NOT\_ENABLED = 5410004 | 未使能超分。  **起始版本：** 23 |

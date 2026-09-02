@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebMessageExt)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebMessageExt)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:09+08:00
-doc_updated_at: 2026-04-13
-content_hash: sha256:dbcc82a6a123fc4781d649d327fb940ab9d9e62a4e76c5dd4f65a383831e9400
+scraped_at: 2026-09-02T15:01:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5572caf9ed379440843d7f1aeea8afc05ac3a75055afa3dd4ff760aeeb8e3f32
 ---
 
-[WebMessagePort](arkts-apis-webview-webmessageport.md)接口接收、发送的数据对象。
+WebMessageExt是[WebMessagePort](arkts-apis-webview-webmessageport.md)接口中用于接收和发送的拓展数据对象，支持多种数据类型：字符串（STRING）、数值（NUMBER）、布尔值（BOOLEAN）、二进制数据（ARRAY\_BUFFER）、数组（ARRAY）和错误对象（ERROR）。该类为ArkTS侧与HTML5侧之间的跨语言消息通信提供了结构化的数据载体，通过setType/getType设置和获取数据类型，再通过对应的setter/getter方法读写具体数据。
 
-说明
+WebMessageExt与WebMessagePort配合使用：WebMessagePort负责消息通道的建立和消息的收发，WebMessageExt作为消息的有效载荷在不同语言运行时之间传递。使用扩展接口[postMessageEventExt](arkts-apis-webview-webmessageport.md#postmessageeventext10)/[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)时，消息载体即为WebMessageExt对象。
+
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Class首批接口从API version 10开始支持。
 * 示例效果请以真机运行为准。
 
 ## getType10+
-
-PhonePC/2in1TabletTVWearable
 
 getType(): WebMessageType
 
@@ -33,8 +33,6 @@ getType(): WebMessageType
 | [WebMessageType](arkts-apis-webview-e.md#webmessagetype10) | [WebMessagePort](arkts-apis-webview-webmessageport.md)接口所支持的数据类型。 |
 
 ## getString10+
-
-PhonePC/2in1TabletTVWearable
 
 getString(): string
 
@@ -58,8 +56,6 @@ getString(): string
 
 ## getNumber10+
 
-PhonePC/2in1TabletTVWearable
-
 getNumber(): number
 
 获取数据对象的数值类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
@@ -81,8 +77,6 @@ getNumber(): number
 | 17100014 | The type and value of the message do not match. |
 
 ## getBoolean10+
-
-PhonePC/2in1TabletTVWearable
 
 getBoolean(): boolean
 
@@ -106,8 +100,6 @@ getBoolean(): boolean
 
 ## getArrayBuffer10+
 
-PhonePC/2in1TabletTVWearable
-
 getArrayBuffer(): ArrayBuffer
 
 获取数据对象的原始二进制数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
@@ -129,8 +121,6 @@ getArrayBuffer(): ArrayBuffer
 | 17100014 | The type and value of the message do not match. |
 
 ## getArray10+
-
-PhonePC/2in1TabletTVWearable
 
 getArray(): Array<string | number | boolean>
 
@@ -154,8 +144,6 @@ getArray(): Array<string | number | boolean>
 
 ## getError10+
 
-PhonePC/2in1TabletTVWearable
-
 getError(): Error
 
 获取数据对象的错误类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
@@ -177,8 +165,6 @@ getError(): Error
 | 17100014 | The type and value of the message do not match. |
 
 ## setType10+
-
-PhonePC/2in1TabletTVWearable
 
 setType(type: WebMessageType): void
 
@@ -203,8 +189,6 @@ setType(type: WebMessageType): void
 
 ## setString10+
 
-PhonePC/2in1TabletTVWearable
-
 setString(message: string): void
 
 设置数据对象的字符串类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
@@ -227,8 +211,6 @@ setString(message: string): void
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 ## setNumber10+
-
-PhonePC/2in1TabletTVWearable
 
 setNumber(message: number): void
 
@@ -253,8 +235,6 @@ setNumber(message: number): void
 
 ## setBoolean10+
 
-PhonePC/2in1TabletTVWearable
-
 setBoolean(message: boolean): void
 
 设置数据对象的布尔类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
@@ -277,8 +257,6 @@ setBoolean(message: boolean): void
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 ## setArrayBuffer10+
-
-PhonePC/2in1TabletTVWearable
 
 setArrayBuffer(message: ArrayBuffer): void
 
@@ -303,8 +281,6 @@ setArrayBuffer(message: ArrayBuffer): void
 
 ## setArray10+
 
-PhonePC/2in1TabletTVWearable
-
 setArray(message: Array<string | number | boolean>): void
 
 设置数据对象的数组类型数据。完整示例代码参考[onMessageEventExt](arkts-apis-webview-webmessageport.md#onmessageeventext10)。
@@ -327,8 +303,6 @@ setArray(message: Array<string | number | boolean>): void
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 ## setError10+
-
-PhonePC/2in1TabletTVWearable
 
 setError(message: Error): void
 

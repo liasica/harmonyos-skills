@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/command-line-
 title: SDK命令行工具简介
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > SDK命令行工具简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:23+08:00
+scraped_at: 2026-09-02T14:59:40+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:82dfedafc81fadc871ebf7f10e3c02b15890c406475e95730c50caf80d257db7
+content_hash: sha256:4b11d51c36db8ae52212e5bb1ea0dcc98764b240ed2d85aab492c7efb15c41f6
 ---
 
 当前SDK中包含了开发者在开发应用过程中需要使用的多种工具，可以实现日志查看、应用安装、启动测试等功能。
@@ -17,7 +17,7 @@ content_hash: sha256:82dfedafc81fadc871ebf7f10e3c02b15890c406475e95730c50caf80d2
 
 如需获取最新版本工具，请更新DevEco Studio或Command Line Tools。
 
-说明
+**说明** 
 
 各命令行工具存放位置有差异，详见各工具文档介绍。
 

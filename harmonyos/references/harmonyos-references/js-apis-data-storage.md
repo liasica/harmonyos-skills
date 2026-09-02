@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.storage (轻量级存储)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > @ohos.data.storage (轻量级存储)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:075334c37a597345d3b6b791529edbf9b2981afad510be8b20a99f1f00641ad4
+scraped_at: 2026-09-02T15:00:41+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:694191db43aa9777d66ae4e34906e409175fcd4f4e3b060e478679e432aae94d
 ---
 
 轻量级存储为应用提供key-value键值型的文件数据处理能力，支持应用对数据进行轻量级存储及查询。数据存储形式为键值对，键的类型为字符串型，值的存储数据类型包括数字型、字符型、布尔型。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 从API version 9开始，该接口不再维护，推荐使用新接口[@ohos.data.preferences](js-apis-data-preferences.md)。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import data_storage from '@ohos.data.storage';
+```js
+import data_storage from '@ohos.data.storage';
 ```
 
 ## 常量
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** 以下各项对应的系统能力均为SystemCapability.DistributedDataManager.Preferences.Core
 
@@ -35,8 +31,6 @@ PhonePC/2in1TabletTVWearable
 | MAX\_VALUE\_LENGTH | number | 是 | 否 | value的最大长度限制为16MB。 |
 
 ## data\_storage.getStorageSync
-
-PhonePC/2in1TabletTVWearable
 
 getStorageSync(path: string): Storage
 
@@ -58,24 +52,22 @@ getStorageSync(path: string): Storage
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+  path = filePath;
+  console.info("======================>getFilesDirPromise====================>");
 
-9. let storage = data_storage.getStorageSync(path + '/mystore');
-10. storage.putSync('startup', 'auto');
-11. storage.flushSync();
-12. });
+  let storage = data_storage.getStorageSync(path + '/mystore');
+  storage.putSync('startup', 'auto');
+  storage.flushSync();
+});
 ```
 
 ## data\_storage.getStorage
-
-PhonePC/2in1TabletTVWearable
 
 getStorage(path: string, callback: AsyncCallback<Storage>): void
 
@@ -92,29 +84,27 @@ getStorage(path: string, callback: AsyncCallback<Storage>): void
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+  path = filePath;
+  console.info("======================>getFilesDirPromise====================>");
 
-9. data_storage.getStorage(path + '/mystore', function (err, storage) {
-10. if (err) {
-11. console.info("Failed to get the storage. path: " + path + '/mystore');
-12. return;
-13. }
-14. storage.putSync('startup', 'auto');
-15. storage.flushSync();
-16. })
-17. });
+  data_storage.getStorage(path + '/mystore', function (err, storage) {
+    if (err) {
+      console.info("Failed to get the storage. path: " + path + '/mystore');
+      return;
+    }
+    storage.putSync('startup', 'auto');
+    storage.flushSync();
+  })
+});
 ```
 
 ## data\_storage.getStorage
-
-PhonePC/2in1TabletTVWearable
 
 getStorage(path: string): Promise<Storage>
 
@@ -136,28 +126,26 @@ getStorage(path: string): Promise<Storage>
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+  path = filePath;
+  console.info("======================>getFilesDirPromise====================>");
 
-9. let getPromise = data_storage.getStorage(path + '/mystore');
-10. getPromise.then((storage) => {
-11. storage.putSync('startup', 'auto');
-12. storage.flushSync();
-13. }).catch((err) => {
-14. console.info("Failed to get the storage. path: " + path + '/mystore');
-15. })
-16. });
+  let getPromise = data_storage.getStorage(path + '/mystore');
+  getPromise.then((storage) => {
+    storage.putSync('startup', 'auto');
+    storage.flushSync();
+  }).catch((err) => {
+    console.info("Failed to get the storage. path: " + path + '/mystore');
+  })
+});
 ```
 
 ## data\_storage.deleteStorageSync
-
-PhonePC/2in1TabletTVWearable
 
 deleteStorageSync(path: string): void
 
@@ -173,22 +161,20 @@ deleteStorageSync(path: string): void
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+    path = filePath;
+    console.info("======================>getFilesDirPromise====================>");
 
-9. data_storage.deleteStorageSync(path + '/mystore');
-10. });
+    data_storage.deleteStorageSync(path + '/mystore');
+});
 ```
 
 ## data\_storage.deleteStorage
-
-PhonePC/2in1TabletTVWearable
 
 deleteStorage(path: string, callback: AsyncCallback<void>): void
 
@@ -205,32 +191,30 @@ deleteStorage(path: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+  path = filePath;
+  console.info("======================>getFilesDirPromise====================>");
 
-9. data_storage.deleteStorage(path + '/mystore', function (err) {
-10. if (err) {
-11. console.info("Failed to delete the storage with err: " + err);
-12. return;
-13. }
-14. console.info("Succeeded in deleting the storage.");
-15. })
-16. });
+  data_storage.deleteStorage(path + '/mystore', function (err) {
+    if (err) {
+      console.info("Failed to delete the storage with err: " + err);
+      return;
+    }
+    console.info("Succeeded in deleting the storage.");
+  })
+});
 ```
 
 ## data\_storage.deleteStorage
 
-PhonePC/2in1TabletTVWearable
-
 deleteStorage(path: string): Promise<void>
 
-从内存中移除指定文件对应的Storage单实例，并删除指定文件及其备份文件、损坏文件。删除指定文件时，应用不允许再使用该实例进行数据操作，否则会出现数据一致性问题，使用promise方式返回结果，此方法为异步方法。
+从内存中移除指定文件对应的Storage单实例，并删除指定文件及其备份文件、损坏文件。删除指定文件时，应用不允许再使用该实例进行数据操作，否则会出现数据一致性问题，使用Promise方式返回结果，此方法为异步方法。
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
@@ -248,27 +232,25 @@ deleteStorage(path: string): Promise<void>
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+  path = filePath;
+  console.info("======================>getFilesDirPromise====================>");
 
-9. let promisedelSt = data_storage.deleteStorage(path + '/mystore');
-10. promisedelSt.then(() => {
-11. console.info("Succeeded in deleting the storage.");
-12. }).catch((err) => {
-13. console.info("Failed to delete the storage with err: " + err);
-14. })
-15. });
+  let promisedelSt = data_storage.deleteStorage(path + '/mystore');
+  promisedelSt.then(() => {
+    console.info("Succeeded in deleting the storage.");
+  }).catch((err) => {
+    console.info("Failed to delete the storage with err: " + err);
+  })
+});
 ```
 
 ## data\_storage.removeStorageFromCacheSync
-
-PhonePC/2in1TabletTVWearable
 
 removeStorageFromCacheSync(path: string): void
 
@@ -284,22 +266,20 @@ removeStorageFromCacheSync(path: string): void
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+    path = filePath;
+    console.info("======================>getFilesDirPromise====================>");
 
-9. data_storage.removeStorageFromCacheSync(path + '/mystore');
-10. });
+    data_storage.removeStorageFromCacheSync(path + '/mystore');
+});
 ```
 
 ## data\_storage.removeStorageFromCache
-
-PhonePC/2in1TabletTVWearable
 
 removeStorageFromCache(path: string, callback: AsyncCallback<void>): void
 
@@ -316,28 +296,26 @@ removeStorageFromCache(path: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+  path = filePath;
+  console.info("======================>getFilesDirPromise====================>");
 
-9. data_storage.removeStorageFromCache(path + '/mystore', function (err) {
-10. if (err) {
-11. console.info("Failed to remove storage from cache with err: " + err);
-12. return;
-13. }
-14. console.info("Succeeded in removing storage from cache.");
-15. })
-16. });
+  data_storage.removeStorageFromCache(path + '/mystore', function (err) {
+    if (err) {
+      console.info("Failed to remove storage from cache with err: " + err);
+      return;
+    }
+    console.info("Succeeded in removing storage from cache.");
+  })
+});
 ```
 
 ## data\_storage.removeStorageFromCache
-
-PhonePC/2in1TabletTVWearable
 
 removeStorageFromCache(path: string): Promise<void>
 
@@ -359,35 +337,31 @@ removeStorageFromCache(path: string): Promise<void>
 
 **示例：**
 
-```
-1. import featureAbility from '@ohos.ability.featureAbility';
+```js
+import featureAbility from '@ohos.ability.featureAbility';
 
-3. let path;
-4. let context = featureAbility.getContext();
-5. context.getFilesDir().then((filePath) => {
-6. path = filePath;
-7. console.info("======================>getFilesDirPromise====================>");
+let path;
+let context = featureAbility.getContext();
+context.getFilesDir().then((filePath) => {
+  path = filePath;
+  console.info("======================>getFilesDirPromise====================>");
 
-9. let promiserevSt = data_storage.removeStorageFromCache(path + '/mystore')
-10. promiserevSt.then(() => {
-11. console.info("Succeeded in removing storage from cache.");
-12. }).catch((err) => {
-13. console.info("Failed to remove storage from cache with err: " + err);
-14. })
-15. });
+  let promiserevSt = data_storage.removeStorageFromCache(path + '/mystore')
+  promiserevSt.then(() => {
+    console.info("Succeeded in removing storage from cache.");
+  }).catch((err) => {
+    console.info("Failed to remove storage from cache with err: " + err);
+  })
+});
 ```
 
 ## Storage
-
-PhonePC/2in1TabletTVWearable
 
 提供获取和修改存储数据的接口。
 
 下列接口都需先使用[data\_storage.getStorage](js-apis-data-storage.md#data_storagegetstorage)或[data\_storage.getStorageSync](js-apis-data-storage.md#data_storagegetstoragesync)获取到Storage实例，再通过此实例调用对应接口。
 
 ### getSync
-
-PhonePC/2in1TabletTVWearable
 
 getSync(key: string, defValue: ValueType): ValueType
 
@@ -410,14 +384,12 @@ getSync(key: string, defValue: ValueType): ValueType
 
 **示例：**
 
-```
-1. let value = storage.getSync('startup', 'default');
-2. console.info("The value of startup is " + value);
+```js
+let value = storage.getSync('startup', 'default');
+console.info("The value of startup is " + value);
 ```
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(key: string, defValue: ValueType, callback: AsyncCallback<ValueType>): void
 
@@ -435,19 +407,17 @@ get(key: string, defValue: ValueType, callback: AsyncCallback<ValueType>): void
 
 **示例：**
 
-```
-1. storage.get('startup', 'default', function(err, value) {
-2. if (err) {
-3. console.info("Failed to get the value of startup with err: " + err);
-4. return;
-5. }
-6. console.info("The value of startup is " + value);
-7. })
+```js
+storage.get('startup', 'default', function(err, value) {
+    if (err) {
+        console.info("Failed to get the value of startup with err: " + err);
+        return;
+      }
+    console.info("The value of startup is " + value);
+})
 ```
 
 ### get
-
-PhonePC/2in1TabletTVWearable
 
 get(key: string, defValue: ValueType): Promise<ValueType>
 
@@ -470,18 +440,16 @@ get(key: string, defValue: ValueType): Promise<ValueType>
 
 **示例：**
 
-```
-1. let promiseget = storage.get('startup', 'default');
-2. promiseget.then((value) => {
-3. console.info("The value of startup is " + value)
-4. }).catch((err) => {
-5. console.info("Failed to get the value of startup with err: " + err);
-6. })
+```js
+let promiseget = storage.get('startup', 'default');
+promiseget.then((value) => {
+    console.info("The value of startup is " + value)
+}).catch((err) => {
+    console.info("Failed to get the value of startup with err: " + err);
+})
 ```
 
 ### putSync
-
-PhonePC/2in1TabletTVWearable
 
 putSync(key: string, value: ValueType): void
 
@@ -498,13 +466,11 @@ putSync(key: string, value: ValueType): void
 
 **示例：**
 
-```
-1. storage.putSync('startup', 'auto');
+```js
+storage.putSync('startup', 'auto');
 ```
 
 ### put
-
-PhonePC/2in1TabletTVWearable
 
 put(key: string, value: ValueType, callback: AsyncCallback<void>): void
 
@@ -522,19 +488,17 @@ put(key: string, value: ValueType, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. storage.put('startup', 'auto', function (err) {
-2. if (err) {
-3. console.info("Failed to put the value of startup with err: " + err);
-4. return;
-5. }
-6. console.info("Succeeded in putting the value of startup.");
-7. })
+```js
+storage.put('startup', 'auto', function (err) {
+    if (err) {
+        console.info("Failed to put the value of startup with err: " + err);
+        return;
+    }
+    console.info("Succeeded in putting the value of startup.");
+})
 ```
 
 ### put
-
-PhonePC/2in1TabletTVWearable
 
 put(key: string, value: ValueType): Promise<void>
 
@@ -557,18 +521,16 @@ put(key: string, value: ValueType): Promise<void>
 
 **示例：**
 
-```
-1. let promiseput = storage.put('startup', 'auto');
-2. promiseput.then(() => {
-3. console.info("Succeeded in putting the value of startup.");
-4. }).catch((err) => {
-5. console.info("Failed to put the value of startup with err: " + err);
-6. })
+```js
+let promiseput = storage.put('startup', 'auto');
+promiseput.then(() => {
+    console.info("Succeeded in putting the value of startup.");
+}).catch((err) => {
+    console.info("Failed to put the value of startup with err: " + err);
+})
 ```
 
 ### hasSync
-
-PhonePC/2in1TabletTVWearable
 
 hasSync(key: string): boolean
 
@@ -590,16 +552,14 @@ hasSync(key: string): boolean
 
 **示例：**
 
-```
-1. let isExist = storage.hasSync('startup');
-2. if (isExist) {
-3. console.info("The key of startup is contained.");
-4. }
+```js
+let isExist = storage.hasSync('startup');
+if (isExist) {
+    console.info("The key of startup is contained.");
+}
 ```
 
 ### has
-
-PhonePC/2in1TabletTVWearable
 
 has(key: string, callback: AsyncCallback<boolean>): boolean
 
@@ -622,21 +582,19 @@ has(key: string, callback: AsyncCallback<boolean>): boolean
 
 **示例：**
 
-```
-1. storage.has('startup', function (err, isExist) {
-2. if (err) {
-3. console.info("Failed to check the key of startup with err: " + err);
-4. return;
-5. }
-6. if (isExist) {
-7. console.info("The key of startup is contained.");
-8. }
-9. })
+```js
+storage.has('startup', function (err, isExist) {
+    if (err) {
+        console.info("Failed to check the key of startup with err: " + err);
+        return;
+    }
+    if (isExist) {
+        console.info("The key of startup is contained.");
+    }
+})
 ```
 
 ### has
-
-PhonePC/2in1TabletTVWearable
 
 has(key: string): Promise<boolean>
 
@@ -658,20 +616,18 @@ has(key: string): Promise<boolean>
 
 **示例：**
 
-```
-1. let promisehas = storage.has('startup')
-2. promisehas.then((isExist) => {
-3. if (isExist) {
-4. console.info("The key of startup is contained.");
-5. }
-6. }).catch((err) => {
-7. console.info("Failed to check the key of startup with err: " + err);
-8. })
+```js
+let promisehas = storage.has('startup')
+promisehas.then((isExist) => {
+    if (isExist) {
+        console.info("The key of startup is contained.");
+    }
+}).catch((err) => {
+    console.info("Failed to check the key of startup with err: " + err);
+})
 ```
 
 ### deleteSync
-
-PhonePC/2in1TabletTVWearable
 
 deleteSync(key: string): void
 
@@ -687,13 +643,11 @@ deleteSync(key: string): void
 
 **示例：**
 
-```
-1. storage.deleteSync('startup');
+```js
+ storage.deleteSync('startup');
 ```
 
 ### delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(key: string, callback: AsyncCallback<void>): void
 
@@ -710,19 +664,17 @@ delete(key: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. storage.delete('startup', function (err) {
-2. if (err) {
-3. console.info("Failed to delete startup key failed err: " + err);
-4. return;
-5. }
-6. console.info("Succeeded in deleting startup key.");
-7. })
+```js
+storage.delete('startup', function (err) {
+    if (err) {
+        console.info("Failed to delete startup key failed err: " + err);
+        return;
+    }
+    console.info("Succeeded in deleting startup key.");
+})
 ```
 
 ### delete
-
-PhonePC/2in1TabletTVWearable
 
 delete(key: string): Promise<void>
 
@@ -744,18 +696,16 @@ delete(key: string): Promise<void>
 
 **示例：**
 
-```
-1. let promisedel = storage.delete('startup')
-2. promisedel.then(() => {
-3. console.info("Succeeded in deleting startup key.");
-4. }).catch((err) => {
-5. console.info("Failed to delete startup key failed err: " + err);
-6. })
+```js
+let promisedel = storage.delete('startup')
+promisedel.then(() => {
+    console.info("Succeeded in deleting startup key.");
+}).catch((err) => {
+    console.info("Failed to delete startup key failed err: " + err);
+})
 ```
 
 ### flushSync
-
-PhonePC/2in1TabletTVWearable
 
 flushSync(): void
 
@@ -765,13 +715,11 @@ flushSync(): void
 
 **示例：**
 
-```
-1. storage.flushSync();
+```js
+storage.flushSync();
 ```
 
 ### flush
-
-PhonePC/2in1TabletTVWearable
 
 flush(callback: AsyncCallback<void>): void
 
@@ -787,19 +735,17 @@ flush(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. storage.flush(function (err) {
-2. if (err) {
-3. console.info("Failed to flush to file with err: " + err);
-4. return;
-5. }
-6. console.info("Succeeded in flushing to file.");
-7. })
+```js
+storage.flush(function (err) {
+    if (err) {
+        console.info("Failed to flush to file with err: " + err);
+        return;
+    }
+    console.info("Succeeded in flushing to file.");
+})
 ```
 
 ### flush
-
-PhonePC/2in1TabletTVWearable
 
 flush(): Promise<void>
 
@@ -815,18 +761,16 @@ flush(): Promise<void>
 
 **示例：**
 
-```
-1. let promiseflush = storage.flush();
-2. promiseflush.then(() => {
-3. console.info("Succeeded in flushing to file.");
-4. }).catch((err) => {
-5. console.info("Failed to flush to file with err: " + err);
-6. })
+```js
+let promiseflush = storage.flush();
+promiseflush.then(() => {
+    console.info("Succeeded in flushing to file.");
+}).catch((err) => {
+    console.info("Failed to flush to file with err: " + err);
+})
 ```
 
 ### clearSync
-
-PhonePC/2in1TabletTVWearable
 
 clearSync(): void
 
@@ -836,13 +780,11 @@ clearSync(): void
 
 **示例：**
 
-```
-1. storage.clearSync();
+```js
+storage.clearSync();
 ```
 
 ### clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(callback: AsyncCallback<void>): void
 
@@ -858,19 +800,17 @@ clear(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. storage.clear(function (err) {
-2. if (err) {
-3. console.info("Failed to clear the storage with err: " + err);
-4. return;
-5. }
-6. console.info("Succeeded in clearing the storage.");
-7. })
+```js
+storage.clear(function (err) {
+    if (err) {
+        console.info("Failed to clear the storage with err: " + err);
+        return;
+    }
+    console.info("Succeeded in clearing the storage.");
+})
 ```
 
 ### clear
-
-PhonePC/2in1TabletTVWearable
 
 clear(): Promise<void>
 
@@ -886,18 +826,16 @@ clear(): Promise<void>
 
 **示例：**
 
-```
-1. let promiseclear = storage.clear();
-2. promiseclear.then(() => {
-3. console.info("Succeeded in clearing the storage.");
-4. }).catch((err) => {
-5. console.info("Failed to clear the storage with err: " + err);
-6. })
+```js
+let promiseclear = storage.clear();
+promiseclear.then(() => {
+    console.info("Succeeded in clearing the storage.");
+}).catch((err) => {
+    console.info("Failed to clear the storage with err: " + err);
+})
 ```
 
 ### on('change')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'change', callback: Callback<StorageObserver>): void
 
@@ -914,18 +852,16 @@ on(type: 'change', callback: Callback<StorageObserver>): void
 
 **示例：**
 
-```
-1. let observer = function (key) {
-2. console.info("The key of " + key + " changed.");
-3. }
-4. storage.on('change', observer);
-5. storage.putSync('startup', 'auto');
-6. storage.flushSync();  // observer will be called.
+```js
+let observer = function (key) {
+    console.info("The key of " + key + " changed.");
+}
+storage.on('change', observer);
+storage.putSync('startup', 'auto');
+storage.flushSync();  // observer will be called.
 ```
 
 ### off('change')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'change', callback: Callback<StorageObserver>): void
 
@@ -942,16 +878,14 @@ off(type: 'change', callback: Callback<StorageObserver>): void
 
 **示例：**
 
-```
-1. let observer = function (key) {
-2. console.info("The key of " + key + " changed.");
-3. }
-4. storage.off('change', observer);
+```js
+let observer = function (key) {
+    console.info("The key of " + key + " changed.");
+}
+storage.off('change', observer);
 ```
 
 ## StorageObserver
-
-PhonePC/2in1TabletTVWearable
 
 **系统能力：** SystemCapability.DistributedDataManager.Preferences.Core
 
@@ -960,8 +894,6 @@ PhonePC/2in1TabletTVWearable
 | key | string | 是 | 变更的数据内容。 |
 
 ## ValueType
-
-PhonePC/2in1TabletTVWearable
 
 type ValueType = number | string | boolean
 
@@ -972,5 +904,5 @@ type ValueType = number | string | boolean
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值类型为数字。 |
-| string | 表示值类型为字符。 |
+| string | 表示值类型为字符串。 |
 | boolean | 表示值类型为布尔值。 |

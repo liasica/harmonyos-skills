@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-rdb-
 title: OH_Cursor
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体 > OH_Cursor
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:f368b14abf315653b88205cb602b65f9261c3e8d6146dc4c7fe9f70f6b7ae9f7
+scraped_at: 2026-09-02T15:00:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4c9134cb22eebf29a76f96ddd901b34c3ad6a302b6bb8080010fb2302255662d
 ---
 
-```
-1. typedef struct {...} OH_Cursor
+```c
+typedef struct {...} OH_Cursor
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 表示结果集。提供通过查询数据库生成的数据库结果集的访问方法。
 
@@ -26,15 +24,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 成员变量
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | int64\_t id | OH\_Cursor结构体的唯一标识符。 |
 
 ### 成员函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -56,14 +50,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 成员函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### getColumnCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getColumnCount)(OH_Cursor *cursor, int *count)
+```c
+int (*getColumnCount)(OH_Cursor *cursor, int *count)
 ```
 
 **描述**
@@ -76,8 +66,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| OH\_Cursor \*cursor | 表示指向OH\_Cursor实例的指针 |
-| int \*count | 该参数是输出参数，结果集中的列数会写入该变量 |
+| OH\_Cursor \*cursor | 表示指向OH\_Cursor实例的指针。 |
+| int \*count | 该参数是输出参数，结果集中的列数会写入该变量。 |
 
 **返回：**
 
@@ -87,10 +77,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getColumnType()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getColumnType)(OH_Cursor *cursor, int32_t columnIndex, OH_ColumnType *columnType)
+```c
+int (*getColumnType)(OH_Cursor *cursor, int32_t columnIndex, OH_ColumnType *columnType)
 ```
 
 **描述**
@@ -115,10 +103,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getColumnIndex()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getColumnIndex)(OH_Cursor *cursor, const char *name, int *columnIndex)
+```c
+int (*getColumnIndex)(OH_Cursor *cursor, const char *name, int *columnIndex)
 ```
 
 **描述**
@@ -143,10 +129,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getColumnName()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getColumnName)(OH_Cursor *cursor, int32_t columnIndex, char *name, int length)
+```c
+ int (*getColumnName)(OH_Cursor *cursor, int32_t columnIndex, char *name, int length)
 ```
 
 **描述**
@@ -172,10 +156,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getRowCount()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getRowCount)(OH_Cursor *cursor, int *count)
+```c
+int (*getRowCount)(OH_Cursor *cursor, int *count)
 ```
 
 **描述**
@@ -188,8 +170,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| OH\_Cursor \*cursor | 表示指向OH\_Cursor实例的指针 |
-| int \*count | 该参数是输出参数，结果集中的列数会写入该变量 |
+| OH\_Cursor \*cursor | 表示指向OH\_Cursor实例的指针。 |
+| int \*count | 该参数是输出参数，结果集中的行数会写入该变量。 |
 
 **返回：**
 
@@ -199,10 +181,8 @@ PhonePC/2in1TabletTVWearable
 
 ### goToNextRow()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*goToNextRow)(OH_Cursor *cursor)
+```c
+ int (*goToNextRow)(OH_Cursor *cursor)
 ```
 
 **描述**
@@ -225,10 +205,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getSize()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getSize)(OH_Cursor *cursor, int32_t columnIndex, size_t *size)
+```c
+int (*getSize)(OH_Cursor *cursor, int32_t columnIndex, size_t *size)
 ```
 
 **描述**
@@ -253,10 +231,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getText()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getText)(OH_Cursor *cursor, int32_t columnIndex, char *value, int length)
+```c
+int (*getText)(OH_Cursor *cursor, int32_t columnIndex, char *value, int length)
 ```
 
 **描述**
@@ -269,8 +245,8 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| OH\_Cursor \*cursor | 表示指向OH\_Cursor实例的指针 |
-| int32\_t columnIndex | 该表示结果集中指定列的索引，索引值从0开始。 |
+| OH\_Cursor \*cursor | 表示指向OH\_Cursor实例的指针。 |
+| int32\_t columnIndex | 表示结果集中指定列的索引，索引值从0开始。 |
 | char \*value | 该参数是输出参数，结果集中指定列的值会以字符串形式写入该变量。 |
 | int length | 该参数是输入参数，表示value的长度，该值可通过getSize获取。 |
 
@@ -282,10 +258,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getInt64()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getInt64)(OH_Cursor *cursor, int32_t columnIndex, int64_t *value)
+```c
+int (*getInt64)(OH_Cursor *cursor, int32_t columnIndex, int64_t *value)
 ```
 
 **描述**
@@ -310,10 +284,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getReal()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getReal)(OH_Cursor *cursor, int32_t columnIndex, double *value)
+```c
+int (*getReal)(OH_Cursor *cursor, int32_t columnIndex, double *value)
 ```
 
 **描述**
@@ -338,10 +310,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getBlob()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getBlob)(OH_Cursor *cursor, int32_t columnIndex, unsigned char *value, int length)
+```c
+int (*getBlob)(OH_Cursor *cursor, int32_t columnIndex, unsigned char *value, int length)
 ```
 
 **描述**
@@ -367,10 +337,8 @@ PhonePC/2in1TabletTVWearable
 
 ### isNull()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*isNull)(OH_Cursor *cursor, int32_t columnIndex, bool *isNull)
+```c
+int (*isNull)(OH_Cursor *cursor, int32_t columnIndex, bool *isNull)
 ```
 
 **描述**
@@ -395,10 +363,8 @@ PhonePC/2in1TabletTVWearable
 
 ### destroy()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*destroy)(OH_Cursor *cursor)
+```c
+int (*destroy)(OH_Cursor *cursor)
 ```
 
 **描述**
@@ -421,10 +387,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getAsset()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getAsset)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset *value)
+```c
+int (*getAsset)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset *value)
 ```
 
 **描述**
@@ -449,10 +413,8 @@ PhonePC/2in1TabletTVWearable
 
 ### getAssets()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. int (*getAssets)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset **value, uint32_t *length)
+```c
+int (*getAssets)(OH_Cursor *cursor, int32_t columnIndex, Data_Asset **value, uint32_t *length)
 ```
 
 **描述**

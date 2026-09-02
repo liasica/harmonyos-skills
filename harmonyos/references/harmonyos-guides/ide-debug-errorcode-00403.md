@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: 调试失败错误码
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 调试错误码 > 调试失败错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:56+08:00
-doc_updated_at: 2026-02-12
-content_hash: sha256:c037f0a17db7fc163e39ef4d2d8daaa2bea118e8b13a66698acb0e1bc9054962
+scraped_at: 2026-09-02T14:50:55+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:56af6eed9f8b57e8301f63e41b4807b9e2a1bd2ae54cecada5877cb233603608
 ---
 
 ## 00403001 离线日志解析失败
@@ -48,7 +48,7 @@ Failed to parse the HiLog file: XXX.
 
 **错误信息**
 
-App have been shutdown unexpectedly.
+App has been shutdown unexpectedly.
 
 **错误描述**
 

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: 录屏常见问题
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture录屏取码流(C/C++) > 录屏常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cbe3dbf747a2d06619ec989642d95dfcbb5c8c80f40b406784c4691c2311f3dc
+scraped_at: 2026-09-02T14:50:18+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:7c01a4f15651cbd50264fd3481f7d8a5dffa4c42265d7f643beb60a3e3ffa10e
 ---
 
-## 录屏启动报错AV\_SCREEN\_CAPTURE\_ERR\_OPERATE\_NOT\_PERMIT
+## 实例数量超出限制时，录屏启动报错AV\_SCREEN\_CAPTURE\_ERR\_OPERATE\_NOT\_PERMIT
 
 实例数量超出规格限制，当前规格为每种数据格式最多两个实例。建议释放多余实例后再使用新实例。
 
@@ -21,6 +21,6 @@ content_hash: sha256:cbe3dbf747a2d06619ec989642d95dfcbb5c8c80f40b406784c4691c231
 1. 客户端应用数量上限4个，比如会议屏幕共享、会议投屏、后台听歌识曲、系统录屏同时存在。
 2. 单应用单模式（存为文件或存为码流）可创建实例上限2个，典型场景：在线上会议共享屏幕时，需要同步录制会议内容。
 
-## 通话中无法启动录屏报错AV\_SCREEN\_CAPTURE\_ERR\_OPERATE\_NOT\_PERMIT
+## 通话中未设置保持录屏策略时，无法启动录屏报错AV\_SCREEN\_CAPTURE\_ERR\_OPERATE\_NOT\_PERMIT
 
-从API version 20开始，如需在通话中开启录屏，可使用[OH\_AVScreenCapture\_StrategyForKeepCaptureDuringCall()](../harmonyos-references/capi-native-avscreen-capture-h.md#oh_avscreencapture_strategyforkeepcaptureduringcall)设置“蜂窝通话时保持录屏”状态。
+从API version 20开始，如需在通话中保持录屏，可使用[OH\_AVScreenCapture\_StrategyForKeepCaptureDuringCall()](../harmonyos-references/capi-native-avscreen-capture-h.md#oh_avscreencapture_strategyforkeepcaptureduringcall)设置“蜂窝通话时保持录屏”策略。

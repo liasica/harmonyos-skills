@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口处理异步操作
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口处理异步操作
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:df85814934cc3a863c79e36c341edc559ac3ba9d369f2f610cd65fad1a0ae0e7
+scraped_at: 2026-09-02T15:00:16+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:42d0a291fed7d74134749059fd62758b2aee2daee46e6cfa658b5d83b2f010c7
 ---
 
 ## 简介
@@ -47,42 +47,42 @@ Node-API接口开发流程参考[使用Node-API实现跨语言交互开发流程
 cpp部分代码
 
 ```
-1. // napi_is_promise
-2. static napi_value IsPromise(napi_env env, napi_callback_info info)
-3. {
-4. napi_value argv[1] = {nullptr};
-5. size_t argc = 1;
-6. napi_status status;
-7. // 获取传入的参数
-8. napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
-9. bool isPromise = false;
-10. // 检查给定的入参是否为Promise对象，将结果保存在isPromise变量中
-11. status = napi_is_promise(env, argv[0], &isPromise);
-12. if (status != napi_ok) {
-13. napi_throw_error(env, nullptr, "Node-API napi_is_promise failed");
-14. return nullptr;
-15. }
-16. napi_value result = nullptr;
-17. // 将isPromise的值转换为napi_value中的类型返回
-18. napi_get_boolean(env, isPromise, &result);
-19. return result;
-20. }
+// napi_is_promise
+static napi_value IsPromise(napi_env env, napi_callback_info info)
+{
+    napi_value argv[1] = {nullptr};
+    size_t argc = 1;
+    napi_status status;
+    // 获取传入的参数
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    bool isPromise = false;
+    // 检查给定的入参是否为Promise对象，将结果保存在isPromise变量中
+    status = napi_is_promise(env, argv[0], &isPromise);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_is_promise failed");
+        return nullptr;
+    }
+    napi_value result = nullptr;
+    // 将isPromise的值转换为napi_value中的类型返回
+    napi_get_boolean(env, isPromise, &result);
+    return result;
+}
 ```
 
 接口声明
 
-```
-1. export const isPromise: <T>(value: T) => boolean; // napi_is_promise
+```typescript
+export const isPromise: <T>(value: T) => boolean; // napi_is_promise
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_is_promise
-2. let value = Promise.resolve();
-3. // 传入的对象为Promise时，返回true，否则返回false
-4. hilog.info(0x0000, 'Node-API', 'napi_is_promise %{public}s', testNapi.isPromise(value));
-5. hilog.info(0x0000, 'Node-API', 'napi_is_promise string %{public}s', testNapi.isPromise(''));
+```typescript
+// napi_is_promise
+let value = Promise.resolve();
+// 传入的对象为Promise时，返回true，否则返回false
+hilog.info(0x0000, 'Node-API', 'napi_is_promise %{public}s', testNapi.isPromise(value));
+hilog.info(0x0000, 'Node-API', 'napi_is_promise string %{public}s', testNapi.isPromise(''));
 ```
 
 ### napi\_create\_promise
@@ -95,21 +95,21 @@ napi\_create\_promise用于创建一个Promise对象。
 2. 使用napi\_create\_promise后未判断返回值是否为napi\_ok，之后使用了无效的deferred和promise会导致应用崩溃。
 
 ```
-1. napi_value NapiPromiseDemo(napi_env env, napi_callback_info info)
-2. {
-3. napi_deferred deferred = nullptr;
-4. napi_value promise = nullptr;
-5. napi_status status = napi_ok;
+napi_value NapiPromiseDemo(napi_env env, napi_callback_info info)
+{
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    napi_status status = napi_ok;
 
-7. napi_throw_error(env, "500", "common error");
+    napi_throw_error(env, "500", "common error");
 
-9. status = napi_create_promise(env, &deferred, &promise); // 有异常返回napi_pending_exception，且deferred、promise都为nullptr
-10. if (status == napi_ok) {
-11. // do something
-12. }
+    status = napi_create_promise(env, &deferred, &promise); // 有异常返回napi_pending_exception，且deferred、promise都为nullptr
+    if (status == napi_ok) {
+        // do something
+    }
 
-14. return nullptr;
-15. }
+    return nullptr;
+}
 ```
 
 ### napi\_resolve\_deferred & napi\_reject\_deferred
@@ -121,106 +121,106 @@ napi\_create\_promise用于创建一个Promise对象。
 CPP部分代码
 
 ```
-1. // napi_resolve_deferred & napi_reject_deferred
-2. static napi_value CreatePromise(napi_env env, napi_callback_info info)
-3. {
-4. // deferred是与Promise对象关联的对象，用于控制Promise的状态 (resolve或reject)
-5. napi_deferred deferred = nullptr;
-6. napi_value promise = nullptr;
-7. // 调用接口创建Promise对象
-8. napi_status status = napi_create_promise(env, &deferred, &promise);
-9. if (status != napi_ok) {
-10. napi_throw_error(env, nullptr, "Create promise failed");
-11. return nullptr;
-12. }
-13. // 调用napi_is_promise判断napi_create_promise接口创建的是不是Promise对象
-14. bool isPromise = false;
-15. napi_value returnIsPromise = nullptr;
-16. status = napi_is_promise(env, promise, &isPromise);
-17. if (status != napi_ok) {
-18. napi_throw_error(env, nullptr, "napi_is_promise failed");
-19. return nullptr;
-20. }
-21. // 将布尔值转为可以返回的napi_value
-22. napi_get_boolean(env, isPromise, &returnIsPromise);
-23. return returnIsPromise;
-24. }
+// napi_resolve_deferred & napi_reject_deferred
+static napi_value CreatePromise(napi_env env, napi_callback_info info)
+{
+    // deferred是与Promise对象关联的对象，用于控制Promise的状态 (resolve或reject)
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    // 调用接口创建Promise对象
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Create promise failed");
+        return nullptr;
+    }
+    // 调用napi_is_promise判断napi_create_promise接口创建的是不是Promise对象
+    bool isPromise = false;
+    napi_value returnIsPromise = nullptr;
+    status = napi_is_promise(env, promise, &isPromise);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_is_promise failed");
+        return nullptr;
+    }
+    // 将布尔值转为可以返回的napi_value
+    napi_get_boolean(env, isPromise, &returnIsPromise);
+    return returnIsPromise;
+}
 
-26. static napi_value ResolveRejectDeferred(napi_env env, napi_callback_info info)
-27. {
-28. // 获得并解析参数
-29. size_t argc = 3;
-30. napi_value args[3] = {nullptr};
-31. napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-32. // 第一个参数为向resolve传入的信息，第二个参数为向reject传入的信息，第三个参数为Promise的状态
-33. bool promiseStatus;
-34. napi_status status = napi_get_value_bool(env, args[INT_ARG_2], &promiseStatus);
-35. if (status != napi_ok) {
-36. napi_throw_error(env, nullptr, "napi_get_value_bool failed");
-37. return nullptr;
-38. }
+static napi_value ResolveRejectDeferred(napi_env env, napi_callback_info info)
+{
+    // 获得并解析参数
+    size_t argc = 3;
+    napi_value args[3] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 第一个参数为向resolve传入的信息，第二个参数为向reject传入的信息，第三个参数为Promise的状态
+    bool promiseStatus;
+    napi_status status = napi_get_value_bool(env, args[INT_ARG_2], &promiseStatus);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "napi_get_value_bool failed");
+        return nullptr;
+    }
 
-40. // 创建Promise对象
-41. napi_deferred deferred = nullptr;
-42. napi_value promise = nullptr;
-43. status = napi_create_promise(env, &deferred, &promise);
-44. if (status != napi_ok) {
-45. napi_throw_error(env, nullptr, "Create promise failed");
-46. return nullptr;
-47. }
-48. // 根据第三个参数设置resolve或reject
-49. if (promiseStatus) {
-50. napi_resolve_deferred(env, deferred, args[INT_ARG_0]);
-51. } else {
-52. napi_reject_deferred(env, deferred, args[INT_ARG_1]);
-53. }
-54. // 返回设置了resolve或reject的Promise对象
-55. return promise;
-56. }
+    // 创建Promise对象
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    status = napi_create_promise(env, &deferred, &promise);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Create promise failed");
+        return nullptr;
+    }
+    // 根据第三个参数设置resolve或reject
+    if (promiseStatus) {
+        napi_resolve_deferred(env, deferred, args[INT_ARG_0]);
+    } else {
+        napi_reject_deferred(env, deferred, args[INT_ARG_1]);
+    }
+    // 返回设置了resolve或reject的Promise对象
+    return promise;
+}
 ```
 
 接口声明示例
 
-```
-1. export const createPromise: () => boolean | undefined; // napi_resolve_deferred & napi_reject_deferred
+```typescript
+export const createPromise: () => boolean | undefined; // napi_resolve_deferred & napi_reject_deferred
 
-3. export const resolveRejectDeferred: (resolve: string, reject: string, status: boolean) => Promise<string> | undefined;
+export const resolveRejectDeferred: (resolve: string, reject: string, status: boolean) => Promise<string> | undefined;
 ```
 
 ArkTS侧示例代码
 
-```
-1. // napi_resolve_deferred & napi_reject_deferred
-2. // 创建promise如果创建成功返回true，创建失败返回false
-3. hilog.info(0x0000, 'Node-API', 'napi_create_promise %{public}s', testNapi.createPromise());
-4. // 调用resolveRejectDeferred函数设置resolve和reject的返回结果以及Promise状态
-5. // Promise状态为true时设置resolve，返回结果在then函数中获得
-6. let promiseSuccess: Promise<string> =
-7. testNapi.resolveRejectDeferred('success', 'fail', true) as Promise<string>;
-8. promiseSuccess.then((res) => {
-9. hilog.info(0x0000, 'Node-API', 'get_resolve_deferred resolve %{public}s', res);
-10. // ...
-11. }).catch((err: Error) => {
-12. hilog.info(0x0000, 'Node-API', 'get_resolve_deferred reject %{public}s', err);
-13. // ...
-14. })
-15. // Promise状态为false时设置reject，返回结果在catch函数中获得
-16. let promiseFail: Promise<string> =
-17. testNapi.resolveRejectDeferred('success', 'fail', false) as Promise<string>;
-18. promiseFail.then((res) => {
-19. hilog.info(0x0000, 'Node-API', 'get_resolve_deferred resolve %{public}s', res);
-20. // ...
-21. }).catch((err: Error) => {
-22. hilog.info(0x0000, 'Node-API', 'get_resolve_deferred reject %{public}s', err);
-23. // ...
-24. })
+```typescript
+// napi_resolve_deferred & napi_reject_deferred
+// 创建promise如果创建成功返回true，创建失败返回false
+hilog.info(0x0000, 'Node-API', 'napi_create_promise %{public}s', testNapi.createPromise());
+// 调用resolveRejectDeferred函数设置resolve和reject的返回结果以及Promise状态
+// Promise状态为true时设置resolve，返回结果在then函数中获得
+let promiseSuccess: Promise<string> =
+  testNapi.resolveRejectDeferred('success', 'fail', true) as Promise<string>;
+promiseSuccess.then((res) => {
+  hilog.info(0x0000, 'Node-API', 'get_resolve_deferred resolve %{public}s', res);
+  // ...
+}).catch((err: Error) => {
+  hilog.info(0x0000, 'Node-API', 'get_resolve_deferred reject %{public}s', err);
+  // ...
+})
+// Promise状态为false时设置reject，返回结果在catch函数中获得
+let promiseFail: Promise<string> =
+  testNapi.resolveRejectDeferred('success', 'fail', false) as Promise<string>;
+promiseFail.then((res) => {
+  hilog.info(0x0000, 'Node-API', 'get_resolve_deferred resolve %{public}s', res);
+  // ...
+}).catch((err: Error) => {
+  hilog.info(0x0000, 'Node-API', 'get_resolve_deferred reject %{public}s', err);
+  // ...
+})
 ```
 
 以上代码如果要在native cpp中打印日志，需在CMakeLists.txt文件中添加以下配置信息（并添加头文件：#include "hilog/log.h"）：
 
-```
-1. // CMakeLists.txt
-2. add_definitions( "-DLOG_DOMAIN=0xd0d0" )
-3. add_definitions( "-DLOG_TAG=\"testTag\"" )
-4. target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+```text
+// CMakeLists.txt
+add_definitions( "-DLOG_DOMAIN=0xd0d0" )
+add_definitions( "-DLOG_TAG=\"testTag\"" )
+target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 ```

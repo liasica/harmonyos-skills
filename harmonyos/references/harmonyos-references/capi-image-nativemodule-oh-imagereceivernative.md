@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OH_ImageReceiverNative
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OH_ImageReceiverNative
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5b4b08d90bf25e679682d4a2d033c847917555a4c43f8daf4e8babf283b36355
+scraped_at: 2026-09-02T14:52:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:383586e9ff47cc85690572fbe2f1c6469805bbf004960c88087c79a44cc22e39
 ---
 
-```
-1. struct OH_ImageReceiverNative
+```c
+struct OH_ImageReceiverNative
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 OH\_ImageReceiverNative是native层封装的图片接收器结构体，OH\_ImageReceiverNative结构体不可直接操作，而是采用函数调用方式创建、释放结构体以及操作具体字段。
 

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 媒体会话管理错误码
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > 错误码 > 媒体会话管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c1fec3f4573ebdef1f4dba235c2f78faaf6a35bc7cd2e342bda4939d9e9f1d0a
+scraped_at: 2026-09-02T15:02:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:25e6cef3a16d2fee6e09c43df2e1b60199900c7c6c05004fe9630a49033722bd
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 6600101 会话服务端异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -35,15 +33,13 @@ Session service exception.
 
 ## 6600102 会话不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The session does not exist.
 
 **错误描述**
 
-会话对象不存在时，向该会话设置参数或者发送命令。
+会话对象不存在时，向该会话设置属性或者发送命令。
 
 **可能原因**
 
@@ -55,8 +51,6 @@ The session does not exist.
 2. 如果在会话管理端产生该错误，请重新查询系统当前会话记录，在创建控制器时传入正确的会话ID。
 
 ## 6600103 会话控制器不存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -76,8 +70,6 @@ The session controller does not exist.
 
 ## 6600105 无效会话命令
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Invalid session command.
@@ -96,8 +88,6 @@ Invalid session command.
 
 ## 6600106 会话未激活
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The session is not activated.
@@ -112,11 +102,11 @@ The session is not activated.
 
 **处理步骤**
 
-停止发送该命令或事件，监听会话的激活状态，会话激活后恢复发送该命令或事件。
+1. 停止发送该命令或事件。
+2. 监听会话的激活状态。
+3. 会话激活后恢复发送该命令或事件。
 
 ## 6600107 命令&消息过载
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -136,15 +126,13 @@ Too many commands or events.
 
 ## 6600109 远端会话不存在
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The remote connection is not established.
 
 **错误描述**
 
-查看的远端会话不存在，对应相关的接口调用失败返回。
+查看的远端会话不存在，对应接口调用失败返回。
 
 **可能原因**
 
@@ -156,8 +144,6 @@ The remote connection is not established.
 
 ## 6600110 应用程序的桌面歌词功能未开启
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The desktop lyrics feature of this application is not enabled.
@@ -168,7 +154,7 @@ The desktop lyrics feature of this application is not enabled.
 
 **可能原因**
 
-应用程序的桌面歌词功能未开启。
+未先调用enableDesktopLyric接口就启用该功能。
 
 **处理步骤**
 
@@ -176,7 +162,7 @@ The desktop lyrics feature of this application is not enabled.
 
 ## 6600111 当前设备不支持桌面歌词功能
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
 
 The desktop lyrics feature is not supported.
 
@@ -190,11 +176,9 @@ The desktop lyrics feature is not supported.
 
 **处理步骤**
 
-建议使用[isDesktopLyricSupported](arkts-apis-avsession-f.md#avsessionisdesktoplyricsupported23)接口查询当前设备是否支持桌面歌词功能。
+使用[isDesktopLyricSupported](arkts-apis-avsession-f.md#avsessionisdesktoplyricsupported23)接口查询当前设备是否支持桌面歌词功能。
 
 ## 6611000 投播控制器出现未知错误
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -216,8 +200,6 @@ The error code for cast control is unspecified.
 
 ## 6611001 远端设备出现未知错误
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 An unspecified error occurs in the remote player.
@@ -236,15 +218,13 @@ An unspecified error occurs in the remote player.
 
 ## 6611002 加载位置超过投播视频的总进度
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The playback position falls behind the live window.
 
 **错误描述**
 
-加载位置超过投播视频的总进度导致。
+加载位置超过投播视频的总进度。
 
 **可能原因**
 
@@ -255,8 +235,6 @@ The playback position falls behind the live window.
 对设置的进度进行检查避免超过总进度。
 
 ## 6611003 投播控制器加载超时
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -275,8 +253,6 @@ The process of cast control times out.
 当前会话已超时，请重新发起会话。
 
 ## 6611004 运行时检查失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -297,8 +273,6 @@ The runtime check failed.
 
 ## 6611100 跨设备数据传输被锁定
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Cross-device data transmission is locked.
@@ -317,15 +291,13 @@ Cross-device data transmission is locked.
 
 ## 6611101 不支持当前进度条模式
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The specified seek mode is not supported.
 
 **错误描述**
 
-不支持当前进度条模式
+不支持当前进度条模式。
 
 **可能原因**
 
@@ -336,8 +308,6 @@ The specified seek mode is not supported.
 对设置的进度条模式进行校验。
 
 ## 6611102 非法seek目标
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -357,8 +327,6 @@ The position to seek to is out of the range of the media asset or the specified 
 
 ## 6611103 不支持当前播放模式
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The specified playback mode is not supported.
@@ -376,8 +344,6 @@ The specified playback mode is not supported.
 对设置的播放模式进行校验。
 
 ## 6611104 不支持当前播放速度
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -397,8 +363,6 @@ The specified playback speed is not supported.
 
 ## 6611105 设备吊销
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The action failed because either the media source device or the media sink device has been revoked.
@@ -417,8 +381,6 @@ The action failed because either the media source device or the media sink devic
 
 ## 6611106 传入非法参数
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The parameter is invalid, for example, the url is illegal to play.
@@ -436,8 +398,6 @@ The parameter is invalid, for example, the url is illegal to play.
 对接口入参，按照API要求进行校验，避免异常。
 
 ## 6611107 内存分配失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -458,8 +418,6 @@ Allocation of memory failed.
 
 ## 6611108 不允许进行当前操作
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Operation is not allowed.
@@ -470,15 +428,13 @@ Operation is not allowed.
 
 **可能原因**
 
-不允许当前操作。
+当前设备状态不允许执行此操作。
 
 **处理步骤**
 
 检查当前远端设备状态，在状态运行时进行操作。
 
 ## 6612000 未知的输入/输出错误
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -490,15 +446,14 @@ An unspecified input/output error occurs.
 
 **可能原因**
 
-对端设备回复的消息不符合标准、解析失败等。
+1. 本端设备发送的消息不符合标准、解析失败等。
+2. 对端设备回复的消息不符合标准、解析失败等。
 
 **处理步骤**
 
-当前远端设备异常，先重启远端设备，再重新发起会话。
+检查本端设备发送参数，重启异常的远端设备，再重新发起会话。
 
 ## 6612001 网络连接失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -518,8 +473,6 @@ Network connection failure.
 
 ## 6612002 网络超时
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Network timeout.
@@ -537,8 +490,6 @@ Network timeout.
 当前网络异常，先重新连接网络，再重新发起会话。
 
 ## 6612003 无效“Content-Type”HTTP头
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -558,8 +509,6 @@ Invalid "Content-Type" HTTP header.
 
 ## 6612004 HTTP服务器返回异常的HTTP响应状态码
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The HTTP server returns an unexpected HTTP response status code.
@@ -577,8 +526,6 @@ The HTTP server returns an unexpected HTTP response status code.
 当前网络异常，先重新连接网络，再重新发起会话。
 
 ## 6612005 文件不存在
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -598,8 +545,6 @@ The file does not exist.
 
 ## 6612006 缺少执行IO操作的权限
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 No permission is granted to perform the IO operation.
@@ -617,8 +562,6 @@ No permission is granted to perform the IO operation.
 检查是否授予文件读取的权限。
 
 ## 6612007 网络安全配置不允许此操作
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -638,8 +581,6 @@ Access to cleartext HTTP traffic is not allowed by the app's network security co
 
 ## 6612008 读取数据超出数据范围
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Reading data out of the data bound.
@@ -656,9 +597,7 @@ Reading data out of the data bound.
 
 检查自身设置的资源是否可用，更换资源后，再重新发起会话。
 
-## 6612100 缺少可播放的媒体资源。
-
-PhonePC/2in1TabletTV
+## 6612100 缺少可播放的媒体资源
 
 **错误信息**
 
@@ -678,8 +617,6 @@ The media does not contain any contents that can be played.
 
 ## 6612101 媒体资源无法被读取
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The media cannot be read.
@@ -697,8 +634,6 @@ The media cannot be read.
 提供方校验文件的完整性。
 
 ## 6612102 资源正在使用
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -718,8 +653,6 @@ This resource is already in use.
 
 ## 6612103 内容使用有效期已过
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The content using the validity interval has expired.
@@ -737,8 +670,6 @@ The content using the validity interval has expired.
 检查自身设置的资源是否可用，更换资源后，再重新发起会话。
 
 ## 6612104 不允许使用请求的内容
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -758,8 +689,6 @@ Using the requested content to play is not allowed.
 
 ## 6612105 无法验证允许使用的内容
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The use of the allowed content cannot be verified.
@@ -778,8 +707,6 @@ The use of the allowed content cannot be verified.
 
 ## 6612106 资源使用频繁
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The number of times this content has been used as requested has reached the maximum allowed number of uses.
@@ -790,15 +717,13 @@ The number of times this content has been used as requested has reached the maxi
 
 **可能原因**
 
-请求使用此内容的次数已达到允许使用的最大次数。
+内容使用次数达到授权上限。
 
 **处理步骤**
 
 检查自身命令发送是否过于频繁，控制自身查询和命令的发送频率。
 
 ## 6612107 本端向远端发送资源包失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -818,8 +743,6 @@ An error occurs when sending packet from source device to sink device.
 
 ## 6613000 未知解析错误
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Unspecified error related to content parsing.
@@ -838,15 +761,13 @@ Unspecified error related to content parsing.
 
 ## 6613001 非法类型
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Parsing error associated with media container format bit streams.
 
 **错误描述**
 
-非法类型。
+与媒体容器格式比特流相关的解析错误。
 
 **可能原因**
 
@@ -857,8 +778,6 @@ Parsing error associated with media container format bit streams.
 可更换其他类型的资源，再重新发起会话。
 
 ## 6613002 相关媒体清单的解析错误
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -878,8 +797,6 @@ Parsing error associated with the media manifest.
 
 ## 6613003 不支持该媒体格式
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 An error occurs when attempting to extract a file with an unsupported media container format or an unsupported media container feature.
@@ -897,8 +814,6 @@ An error occurs when attempting to extract a file with an unsupported media cont
 检查设置的资源格式是否正常，可更换其他格式的资源，重新发起会话。
 
 ## 6613004 媒体清单中不支持此功能
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -918,8 +833,6 @@ Unsupported feature in the media manifest.
 
 ## 6614000 未知的解码错误
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Unspecified decoding error.
@@ -937,8 +850,6 @@ Unspecified decoding error.
 当前远端设备异常，先重启远端设备，再重新发起会话。
 
 ## 6614001 解码器初始化失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -958,8 +869,6 @@ Decoder initialization failed.
 
 ## 6614002 解码器查询失败
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Decoder query failed.
@@ -977,8 +886,6 @@ Decoder query failed.
 检查文件格式，确保是支持该媒体文件的格式。
 
 ## 6614003 解码媒体样本时失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -998,15 +905,13 @@ Decoding the media samples failed.
 
 ## 6614004 所需解码的内容格式超出设备能力
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The format of the content to decode exceeds the capabilities of the device.
 
 **错误描述**
 
-所需解码的内容格式超出设备能力而导致失败。
+所需解码的内容格式超出设备能力导致失败。
 
 **可能原因**
 
@@ -1017,8 +922,6 @@ The format of the content to decode exceeds the capabilities of the device.
 检查文件格式，确保是支持该媒体文件的格式。
 
 ## 6614005 解码不支持的内容格式
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -1038,8 +941,6 @@ The format of the content to decode is not supported.
 
 ## 6615000 音频渲染器相关的未知错误
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 Unspecified errors related to the audio renderer.
@@ -1057,8 +958,6 @@ Unspecified errors related to the audio renderer.
 检查文件格式，确保是支持该媒体文件的格式。
 
 ## 6615001 音频渲染器初始化异常
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -1078,8 +977,6 @@ AudioTrack初始化失败。
 
 ## 6615002 音频渲染器写数据异常
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The audio renderer fails to write data.
@@ -1097,8 +994,6 @@ AudioTrack写操作失败。
 当前远端设备异常，先重启远端设备，再重新发起会话。
 
 ## 6616000 DRM相关的未知错误
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -1118,8 +1013,6 @@ DRM相关的未知错误。
 
 ## 6616001 设备不支持所选的DRM保护方案
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The chosen DRM protection scheme is not supported by the device.
@@ -1137,8 +1030,6 @@ The chosen DRM protection scheme is not supported by the device.
 当前远端设备的DRM出现异常，更新DRM组件之后重新发起会话。
 
 ## 6616002 调配设备时出现故障
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -1158,8 +1049,6 @@ Device provisioning failed.
 
 ## 6616003 尝试播放不兼容的DRM保护内容
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The DRM-protected content to play is incompatible.
@@ -1177,8 +1066,6 @@ The DRM-protected content to play is incompatible.
 当前远端设备的DRM出现异常，更新DRM组件之后重新发起会话。
 
 ## 6616004 许可证获取失败
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -1198,8 +1085,6 @@ Failed to obtain a license.
 
 ## 6616005 许可证策略不允许的操作
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The operation is disallowed by the license policy.
@@ -1217,8 +1102,6 @@ The operation is disallowed by the license policy.
 检查文件的DRM格式，确保是支持该媒体文件的DRM格式。
 
 ## 6616006 DRM系统错误
-
-PhonePC/2in1TabletTV
 
 **错误信息**
 
@@ -1238,8 +1121,6 @@ DRM系统错误导致。
 
 ## 6616007 设备已吊销DRM权限
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The device has revoked DRM privileges.
@@ -1258,8 +1139,6 @@ The device has revoked DRM privileges.
 
 ## 6616008 已过期的DRM许可证被加载到打开的DRM会话中
 
-PhonePC/2in1TabletTV
-
 **错误信息**
 
 The DRM license being loaded into the open DRM session has expired.
@@ -1276,9 +1155,7 @@ DRM许可证已过期。
 
 当前远端设备的DRM出现异常，更新DRM组件之后重新发起会话。
 
-## 6616100 DRM进程秘钥响应错误
-
-PhonePC/2in1TabletTV
+## 6616100 DRM进程密钥响应错误
 
 **错误信息**
 
@@ -1286,11 +1163,11 @@ An error occurs when the DRM processes the key response.
 
 **错误描述**
 
-DRM进程秘钥响应错误。
+DRM进程密钥响应错误。
 
 **可能原因**
 
-DRM秘钥响应的处理过程出现了问题。
+DRM密钥响应的处理过程出现了问题。
 
 **处理步骤**
 

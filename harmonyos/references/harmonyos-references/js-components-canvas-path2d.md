@@ -3,22 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: Path2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > Path2D对象
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:34+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:6018b2de1cd5a301f159d87c17ecdf8b8ff32aacaa72331b934f61ddcd544af7
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b73087a7dc5c3b1d262c8e7c32dd21de459ced560c966d5ec1f1ff241b13fa58
 ---
 
 路径对象，支持通过对象的接口进行路径的描述，并通过Canvas的[stroke](js-components-canvas-canvasrenderingcontext2d.md#stroke)接口进行绘制。
 
-说明
+**说明** 
 
 本模块首批接口从API version 4开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## addPath
 
-PhonePC/2in1TabletTVWearable
-
-addPath(path: Object): void
+addPath(path: Path2D): void
 
 将另一个路径添加到当前的路径对象中。
 
@@ -26,36 +24,34 @@ addPath(path: Object): void
 
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
-| path | Object | 需要添加到当前路径的路径对象。 |
+| path | Path2D | 需要添加到当前路径的路径对象。 |
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path1 = ctx.createPath2D("M250 150 L150 350 L350 350 Z");
-7. var path2 = ctx.createPath2D();
-8. path2.addPath(path1);
-9. ctx.stroke(path2);
-10. }
-11. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/tlEWxyPcRn-Djvza4kAaYg/zh-cn_image_0000002558766758.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path1 = ctx.createPath2D("M250 150 L150 350 L350 350 Z");
+    var path2 = ctx.createPath2D();
+    path2.addPath(path1);
+    ctx.stroke(path2);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/rRhoy2TwRq2TP1J8eOOHtw/zh-cn_image_0000002736315527.png)
 
 ## setTransform
-
-PhonePC/2in1TabletTVWearable
 
 setTransform(scaleX: number, skewX: number, skewY: number, scaleY: number, translateX: number, translateY: number): void
 
@@ -74,31 +70,29 @@ setTransform(scaleX: number, skewX: number, skewY: number, scaleY: number, trans
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D("M250 150 L150 350 L350 350 Z");
-7. path.setTransform(0.8, 0, 0, 0.4, 0, 0);
-8. ctx.stroke(path);
-9. }
-10. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/i3Q_SpGTRVif3j2aKeVQzg/zh-cn_image_0000002558607098.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D("M250 150 L150 350 L350 350 Z");
+    path.setTransform(0.8, 0, 0, 0.4, 0, 0);
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7InB07tbSm-am0QEeT6DHQ/zh-cn_image_0000002706676488.png)
 
 ## closePath
-
-PhonePC/2in1TabletTVWearable
 
 closePath(): void
 
@@ -106,34 +100,32 @@ closePath(): void
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.moveTo(200, 100);
-8. path.lineTo(300, 100);
-9. path.lineTo(200, 200);
-10. path.closePath();
-11. ctx.stroke(path);
-12. }
-13. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 500px; height: 500px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/4V2TcH6QQnaPF3cGf7Qx3g/zh-cn_image_0000002589326625.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.moveTo(200, 100);
+    path.lineTo(300, 100);
+    path.lineTo(200, 200);
+    path.closePath();
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/pa0iz7XmRwuUPr_SuOcMAw/zh-cn_image_0000002736435575.png)
 
 ## moveTo
-
-PhonePC/2in1TabletTVWearable
 
 moveTo(x: number, y: number): void
 
@@ -148,34 +140,32 @@ moveTo(x: number, y: number): void
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.moveTo(50, 100);
-8. path.lineTo(250, 100);
-9. path.lineTo(150, 200);
-10. path.closePath();
-11. ctx.stroke(path);
-12. }
-13. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/kXFfBABdSVGJDDrngfoqhg/zh-cn_image_0000002589246567.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.moveTo(50, 100);
+    path.lineTo(250, 100);
+    path.lineTo(150, 200);
+    path.closePath();
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/iiF6uBvfS_a9s4b9A80ypw/zh-cn_image_0000002706836424.png)
 
 ## lineTo
-
-PhonePC/2in1TabletTVWearable
 
 lineTo(x: number, y: number): void
 
@@ -190,35 +180,33 @@ lineTo(x: number, y: number): void
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 400px; height: 450px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.moveTo(100, 100);
-8. path.lineTo(100, 200);
-9. path.lineTo(200, 200);
-10. path.lineTo(200, 100);
-11. path.closePath();
-12. ctx.stroke(path);
-13. }
-14. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 400px; height: 450px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/NH04Ro0ATgiClHYiUoqZsw/zh-cn_image_0000002558766760.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.moveTo(100, 100);
+    path.lineTo(100, 200);
+    path.lineTo(200, 200);
+    path.lineTo(200, 100);
+    path.closePath();
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/9lxromvYSyS6p-WEzV3u0Q/zh-cn_image_0000002736315529.png)
 
 ## bezierCurveTo
-
-PhonePC/2in1TabletTVWearable
 
 bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number, y: number): void
 
@@ -237,32 +225,30 @@ bezierCurveTo(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number,
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.moveTo(10, 10);
-8. path.bezierCurveTo(20, 100, 200, 100, 200, 20);
-9. ctx.stroke(path);
-10. }
-11. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/CR1JuAhXTTSECO_o0N3uIw/zh-cn_image_0000002558607100.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.moveTo(10, 10);
+    path.bezierCurveTo(20, 100, 200, 100, 200, 20);
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/JraqbpENSWeClEkegbmE-g/zh-cn_image_0000002706676490.png)
 
 ## quadraticCurveTo
-
-PhonePC/2in1TabletTVWearable
 
 quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void
 
@@ -279,32 +265,30 @@ quadraticCurveTo(cpx: number, cpy: number, x: number, y: number): void
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.moveTo(10, 10);
-8. path.quadraticCurveTo(100, 100, 200, 20);
-9. ctx.stroke(path);
-10. }
-11. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/WJpoC9neSaGt7onRWEJB4A/zh-cn_image_0000002589326627.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.moveTo(10, 10);
+    path.quadraticCurveTo(100, 100, 200, 20);
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/T8fcCdvdQLGdOGfy_54yIg/zh-cn_image_0000002736435577.png)
 
 ## arc
-
-PhonePC/2in1TabletTVWearable
 
 arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, counterclockwise?: boolean): void
 
@@ -323,77 +307,73 @@ arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, 
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.arc(100, 75, 50, 0, 6.28);
-8. ctx.stroke(path);
-9. }
-10. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/5R9J9EuqQjGEnLeS7CJmNQ/zh-cn_image_0000002589246569.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.arc(100, 75, 50, 0, 6.28);
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/-VT9ro6LTUqWLQ9HgmUoCg/zh-cn_image_0000002706836426.png)
 
 ## arcTo
 
-PhonePC/2in1TabletTVWearable
-
 arcTo(x1: number, y1: number, x2: number, y2: number, radius: number): void
 
-依据圆弧经过的点和圆弧半径创建圆弧路径。
+依据圆弧控制的点和圆弧半径创建圆弧路径。
 
 **参数：**
 
 | 参数 | 类型 | 描述 |
 | --- | --- | --- |
-| x1 | number | 圆弧经过的第一个点的x坐标值。 |
-| y1 | number | 圆弧经过的第一个点的y坐标值。 |
-| x2 | number | 圆弧经过的第二个点的x坐标值。 |
-| y2 | number | 圆弧经过的第二个点的y坐标值。 |
+| x1 | number | 圆弧控制的第一个点的x坐标值。 |
+| y1 | number | 圆弧控制的第一个点的y坐标值。 |
+| x2 | number | 圆弧控制的第二个点的x坐标值。 |
+| y2 | number | 圆弧控制的第二个点的y坐标值。 |
 | radius | number | 圆弧的圆半径值。 |
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.arcTo(150, 20, 150, 70, 50);
-8. ctx.stroke(path);
-9. }
-10. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 300px; height: 250px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/wS6aB0INRq2yQ3IncNs0qg/zh-cn_image_0000002558766762.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.arcTo(150, 20, 150, 70, 50);
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_hDyyPlsS8WkrOGv1dJclg/zh-cn_image_0000002736315531.png)
 
 ## ellipse
 
-PhonePC/2in1TabletTVWearable
-
 ellipse(x: number, y: number, radiusX: number, radiusY: number, rotation: number, startAngle: number, endAngle: number, counterclockwise?: number): void
 
-在规定的矩形区域绘制一个椭圆。
+在规定的区域绘制一个椭圆。
 
 **参数：**
 
@@ -410,31 +390,29 @@ ellipse(x: number, y: number, radiusX: number, radiusY: number, rotation: number
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 500px; height: 450px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.ellipse(200, 200, 50, 100, Math.PI * 0.25, Math.PI * 0.5, Math.PI, 1);
-8. ctx.stroke(path);
-9. }
-10. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 500px; height: 450px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/IcYApuzYT8muUB4nP0TJ_g/zh-cn_image_0000002558607102.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.ellipse(200, 200, 50, 100, Math.PI * 0.25, Math.PI * 0.5, Math.PI, 1);
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/VYR244QZTdiaPlXJSbxjCg/zh-cn_image_0000002706676492.png)
 
 ## rect
-
-PhonePC/2in1TabletTVWearable
 
 rect(x: number, y: number, width: number, height: number): void
 
@@ -451,24 +429,24 @@ rect(x: number, y: number, width: number, height: number): void
 
 **示例：**
 
-```
-1. <!-- xxx.hml -->
-2. <div>
-3. <canvas ref="canvas" style="width: 500px; height: 450px; background-color: #ffff00;"></canvas>
-4. </div>
-```
-
-```
-1. // xxx.js
-2. export default {
-3. onShow() {
-4. const el = this.$refs.canvas;
-5. const ctx = el.getContext('2d');
-6. var path = ctx.createPath2D();
-7. path.rect(20, 20, 100, 100);
-8. ctx.stroke(path);
-9. }
-10. }
+```html
+<!-- xxx.hml -->
+<div>
+    <canvas ref="canvas" style="width: 500px; height: 450px; background-color: #ffff00;"></canvas>
+</div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/OlGhkv4-TSW-J5vADUuZOg/zh-cn_image_0000002589326629.png)
+```js
+// xxx.js
+export default {
+  onShow() {
+    const el = this.$refs.canvas;
+    const ctx = el.getContext('2d');
+    var path = ctx.createPath2D();
+    path.rect(20, 20, 100, 100);
+    ctx.stroke(path);
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/MIWZusQARnqX15YlcsBVag/zh-cn_image_0000002736435579.png)

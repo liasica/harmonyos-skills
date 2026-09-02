@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-vector
 title: 通过向量数据库实现数据持久化 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过向量数据库实现数据持久化 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:cb1d84c6de7ffb484ca85c77976956f0481f602f7835d35ec678f355910c18da
+scraped_at: 2026-09-02T14:59:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7cb95705857f70d651f2794e20a363da82111b305cb1c32d9c93efb4f160c931
 ---
 
 ## 场景介绍
@@ -53,242 +53,221 @@ content_hash: sha256:cb1d84c6de7ffb484ca85c77976956f0481f602f7835d35ec678f355910
 
 CMakeLists.txt中添加以下lib。
 
-```
-1. libnative_rdb_ndk.z.so
+```txt
+libnative_rdb_ndk.z.so
 ```
 
 **头文件**
 
 ```
-1. #include <hilog/log.h>
-2. #include <database/data/oh_data_values.h>
-3. #include <database/rdb/oh_cursor.h>
-4. #include <database/rdb/relational_store.h>
+#include <hilog/log.h>
+#include <database/data/oh_data_values.h>
+#include <database/rdb/oh_cursor.h>
+#include <database/rdb/relational_store.h>
+#include <database/rdb/relational_store_error_code.h>
 ```
-
-[napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L19-L25)
 
 1. 判断当前系统是否支持向量数据库，若不支持，则表示当前系统不具备向量数据库能力。示例代码如下：
 
    ```
-   1. int numType = 0;
-   2. // 如果numType为2则支持向量数据库，为1则不支持向量数据库
-   3. OH_Rdb_GetSupportedDbType(&numType);
+   int numType = 0;
+   // 如果numType为2则支持向量数据库，为1则不支持向量数据库
+   OH_Rdb_GetSupportedDbType(&numType);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L212-L216)
 2. 当前系统支持向量数据库时，获取OH\_Rdb\_Store实例。示例代码如下：
 
    ```
-   1. // 创建OH_Rdb_Config对象
-   2. OH_Rdb_ConfigV2 *config = OH_Rdb_CreateConfig();
-   3. // 该路径为应用沙箱路径
-   4. // 数据库文件创建位置位于沙箱路径 /data/storage/el2/database/rdb/rdb_vector_test.db
-   5. OH_Rdb_SetDatabaseDir(config, "/data/storage/el2/database");
-   6. // 数据库文件名
-   7. OH_Rdb_SetStoreName(config, "rdb_vector_test.db");
-   8. // 应用包名
-   9. OH_Rdb_SetBundleName(config, "com.samples.vectorStore");
-   10. // 数据库是否加密
-   11. OH_Rdb_SetEncrypted(config, false);
-   12. // 数据库文件安全等级
-   13. OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S1);
-   14. // 数据库文件存放的安全区域
-   15. OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
-   16. // 数据库类型
-   17. OH_Rdb_SetDbType(config, RDB_CAYLEY);
-
-   19. // 获取OH_Rdb_Store实例
-   20. int errCode = 0;
-   21. OH_Rdb_Store *store_ = OH_Rdb_CreateOrOpen(config, &errCode);
+   // 创建OH_Rdb_Config对象
+   OH_Rdb_ConfigV2 *config = OH_Rdb_CreateConfig();
+   // 该路径为应用沙箱路径
+   // 数据库文件创建位置位于沙箱路径 /data/storage/el2/database/rdb/rdb_vector_test.db
+   OH_Rdb_SetDatabaseDir(config, "/data/storage/el2/database");
+   // 数据库文件名
+   OH_Rdb_SetStoreName(config, "rdb_vector_test.db");
+   // 应用包名
+   OH_Rdb_SetBundleName(config, "com.samples.vectorStore");
+   // 数据库是否加密
+   OH_Rdb_SetEncrypted(config, false);
+   // 数据库文件安全等级
+   OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S1);
+   // 数据库文件存放的安全区域
+   OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
+   // 数据库类型
+   OH_Rdb_SetDbType(config, RDB_CAYLEY);
+       
+   // 获取OH_Rdb_Store实例
+   int errCode = 0;
+   OH_Rdb_Store *store_ = OH_Rdb_CreateOrOpen(config, &errCode);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L220-L242)
 3. 获取到OH\_Rdb\_Store后，建表并插入数据。
 
-   说明
+   **说明** 
 
    向量数据库没有显式的flush操作实现持久化，数据插入即保存在持久化文件。
 
    示例代码如下：
 
    ```
-   1. char createTableSql[] =
-   2. "CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY AUTOINCREMENT, data1 floatvector(2));";
-   3. // 执行建表语句
-   4. OH_Rdb_ExecuteByTrxId(store_, 0, createTableSql);
-
-   6. // 不使用参数绑定插入数据
-   7. OH_Rdb_ExecuteV2(store_, "INSERT INTO test (id, data1) VALUES (0, '[3.4, 4.5]');", nullptr, nullptr);
-   8. // 使用参数绑定插入数据
-   9. OH_Data_Values *values = OH_Values_Create();
-   10. OH_Values_PutInt(values, 1);
-   11. float test[] = { 1.2, 2.3 };
-   12. size_t len = sizeof(test) / sizeof(test[0]);
-   13. OH_Values_PutFloatVector(values, test, len);
-   14. char insertSql[] = "INSERT INTO test (id, data1) VALUES (?, ?);";
-   15. OH_Rdb_ExecuteV2(store_, insertSql, values, nullptr);
-   16. OH_Values_Destroy(values);
+   char createTableSql[] =
+       "CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY AUTOINCREMENT, data1 floatvector(2));";
+   // 执行建表语句
+   OH_Rdb_ExecuteByTrxId(store_, 0, createTableSql);
+       
+   // 不使用参数绑定插入数据
+   OH_Rdb_ExecuteV2(store_, "INSERT INTO test (id, data1) VALUES (0, '[3.4, 4.5]');", nullptr, nullptr);
+   // 使用参数绑定插入数据
+   OH_Data_Values *values = OH_Values_Create();
+   OH_Values_PutInt(values, 1);
+   float test[] = { 1.2, 2.3 };
+   size_t len = sizeof(test) / sizeof(test[0]);
+   OH_Values_PutFloatVector(values, test, len);
+   char insertSql[] = "INSERT INTO test (id, data1) VALUES (?, ?);";
+   OH_Rdb_ExecuteV2(store_, insertSql, values, nullptr);
+   OH_Values_Destroy(values);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L165-L182)
 4. 获取到OH\_Rdb\_Store后，修改或删除数据。示例代码如下：
 
    ```
-   1. // 不使用参数绑定修改数据
-   2. OH_Rdb_ExecuteV2(store_, "update test set data1 = '[5.1, 6.1]' where id = 0;", nullptr, nullptr);
-
-   4. // 使用参数绑定修改数据
-   5. float test1[2] = { 5.5, 6.6 };
-   6. OH_Data_Values *values1 = OH_Values_Create();
-   7. size_t len1 = sizeof(test1) / sizeof(test1[0]);
-   8. OH_Values_PutFloatVector(values1, test1, len1);
-   9. OH_Values_PutInt(values1, 1);
-   10. OH_Rdb_ExecuteV2(store_, "update test set data1 = ? where id = ?", values1, nullptr);
-   11. OH_Values_Destroy(values1);
-
-   13. // 不使用参数绑定删除数据
-   14. OH_Rdb_ExecuteV2(store_, "delete from test where id = 0", nullptr, nullptr);
-
-   16. // 使用参数绑定删除数据
-   17. OH_Data_Values *values2 = OH_Values_Create();
-   18. OH_Values_PutInt(values2, 1);
-   19. OH_Rdb_ExecuteV2(store_, "delete from test where id = ?", values2, nullptr);
-   20. OH_Values_Destroy(values2);
+   // 不使用参数绑定修改数据
+   OH_Rdb_ExecuteV2(store_, "update test set data1 = '[5.1, 6.1]' where id = 0;", nullptr, nullptr);
+       
+   // 使用参数绑定修改数据
+   float test1[2] = { 5.5, 6.6 };
+   OH_Data_Values *values1 = OH_Values_Create();
+   size_t len1 = sizeof(test1) / sizeof(test1[0]);
+   OH_Values_PutFloatVector(values1, test1, len1);
+   OH_Values_PutInt(values1, 1);
+   OH_Rdb_ExecuteV2(store_, "update test set data1 = ? where id = ?", values1, nullptr);
+   OH_Values_Destroy(values1);
+       
+   // 不使用参数绑定删除数据
+   OH_Rdb_ExecuteV2(store_, "delete from test where id = 0", nullptr, nullptr);
+       
+   // 使用参数绑定删除数据
+   OH_Data_Values *values2 = OH_Values_Create();
+   OH_Values_PutInt(values2, 1);
+   OH_Rdb_ExecuteV2(store_, "delete from test where id = ?", values2, nullptr);
+   OH_Values_Destroy(values2);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L184-L205)
 5. 获取到OH\_Rdb\_Store后，查询数据。
 
-   说明
+   **说明** 
 
    当应用完成查询数据操作，不再使用结果集（OH\_Cursor）时，请及时调用destroy方法关闭结果集，释放系统为其分配的内存。
 
    示例代码如下：
 
    ```
-   1. // 不使用参数绑定查询数据
-   2. OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, "select * from test where id = 1;", nullptr);
-   3. if (cursor == NULL) {
-   4. OH_LOG_ERROR(LOG_APP, "Query failed.");
-   5. return;
-   6. }
-   7. // getRowCount会遍历全表获取行数，存在性能开销。请根据实际场景合理使用。
-   8. int rowCount = 0;
-   9. cursor->getRowCount(cursor, &rowCount);
-   10. while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
-   11. size_t count = 0;
-   12. // floatvector数组是第二列数据，1表示列下标索引
-   13. OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
-   14. float test[count];
-   15. size_t outLen;
-   16. OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
-   17. }
-   18. cursor->destroy(cursor);
+   // 不使用参数绑定查询数据
+   OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, "select * from test where id = 1;", nullptr);
+   if (cursor == NULL) {
+       OH_LOG_ERROR(LOG_APP, "Query failed.");
+       return;
+   }
+   // getRowCount会遍历全表获取行数，存在性能开销。请根据实际场景合理使用。
+   int rowCount = 0;
+   cursor->getRowCount(cursor, &rowCount);
+   while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
+       size_t count = 0;
+       // floatvector数组是第二列数据，1表示列下标索引
+       OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
+       float test[count];
+       size_t outLen;
+       OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
+   }
+   cursor->destroy(cursor);
    ```
 
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L36-L55)
-
    ```
-   1. // 使用参数绑定查询数据
-   2. char querySql[] = "select * from test where id = ?;";
-   3. OH_Data_Values *values = OH_Values_Create();
-   4. OH_Values_PutInt(values, 1);
-   5. OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, querySql, values);
-   6. if (cursor == NULL) {
-   7. OH_LOG_ERROR(LOG_APP, "Query failed.");
-   8. return;
-   9. }
-   10. while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
-   11. size_t count = 0;
-   12. // floatvector数组是第二列数据，1表示列下标索引
-   13. OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
-   14. float test[count];
-   15. size_t outLen;
-   16. OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
-   17. }
-   18. OH_Values_Destroy(values);
-   19. cursor->destroy(cursor);
+   // 使用参数绑定查询数据
+   char querySql[] = "select * from test where id = ?;";
+   OH_Data_Values *values = OH_Values_Create();
+   OH_Values_PutInt(values, 1);
+   OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, querySql, values);
+   if (cursor == NULL) {
+       OH_LOG_ERROR(LOG_APP, "Query failed.");
+       return;
+   }
+   while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
+       size_t count = 0;
+       // floatvector数组是第二列数据，1表示列下标索引
+       OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
+       float test[count];
+       size_t outLen;
+       OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
+   }
+   OH_Values_Destroy(values);
+   cursor->destroy(cursor);
    ```
 
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L60-L83)
-
    ```
-   1. // 子查询，创建第二张表
-   2. OH_Rdb_ExecuteV2(store_, "CREATE TABLE IF NOT EXISTS example(id text PRIMARY KEY);", nullptr, nullptr);
-   3. char querySql[] = "select * from test where id in (select id from example);";
-   4. OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, querySql, nullptr);
-   5. if (cursor == NULL) {
-   6. OH_LOG_ERROR(LOG_APP, "Query failed.");
-   7. return;
-   8. }
-   9. while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
-   10. size_t count = 0;
-   11. // floatvector数组是第二列数据，1表示列下标索引
-   12. OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
-   13. float test[count];
-   14. size_t outLen;
-   15. OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
-   16. }
-   17. cursor->destroy(cursor);
+   // 子查询，创建第二张表
+   OH_Rdb_ExecuteV2(store_, "CREATE TABLE IF NOT EXISTS example(id text PRIMARY KEY);", nullptr, nullptr);
+   char querySql[] = "select * from test where id in (select id from example);";
+   OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, querySql, nullptr);
+   if (cursor == NULL) {
+       OH_LOG_ERROR(LOG_APP, "Query failed.");
+       return;
+   }
+   while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
+       size_t count = 0;
+       // floatvector数组是第二列数据，1表示列下标索引
+       OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
+       float test[count];
+       size_t outLen;
+       OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
+   }
+   cursor->destroy(cursor);
    ```
 
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L88-L106)
-
    ```
-   1. // 聚合查询
-   2. OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_,
-   3. "select * from test where data1 <-> '[1.0, 1.0]' > 0 group by id having max(data1 <=> '[1.0, 1.0]');", nullptr);
-   4. if (cursor == NULL) {
-   5. OH_LOG_ERROR(LOG_APP, "Query failed.");
-   6. return;
-   7. }
-   8. while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
-   9. size_t count = 0;
-   10. // floatvector数组是第二列数据，1表示列下标索引
-   11. OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
-   12. float test[count];
-   13. size_t outLen;
-   14. OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
-   15. }
-   16. cursor->destroy(cursor);
+   // 聚合查询
+   OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_,
+       "select * from test where data1 <-> '[1.0, 1.0]' > 0 group by id having max(data1 <=> '[1.0, 1.0]');", nullptr);
+   if (cursor == NULL) {
+       OH_LOG_ERROR(LOG_APP, "Query failed.");
+       return;
+   }
+   while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
+       size_t count = 0;
+       // floatvector数组是第二列数据，1表示列下标索引
+       OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
+       float test[count];
+       size_t outLen;
+       OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
+   }
+   cursor->destroy(cursor);
    ```
 
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L111-L128)
-
    ```
-   1. // 多表查询
-   2. OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, "select id, data1 <-> '[1.5, 5.6]' as distance from test "
-   3. "union select id, data1 <-> '[1.5, 5.6]' as distance from test order by distance limit 5;", nullptr);
-   4. if (cursor == NULL) {
-   5. OH_LOG_ERROR(LOG_APP, "Query failed.");
-   6. return;
-   7. }
-   8. while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
-   9. size_t count = 0;
-   10. // floatvector数组是第二列数据，1表示列下标索引
-   11. OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
-   12. float test[count];
-   13. size_t outLen;
-   14. OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
-   15. }
-   16. cursor->destroy(cursor);
+   // 多表查询
+   OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, "select id, data1 <-> '[1.5, 5.6]' as distance from test "
+       "union select id, data1 <-> '[1.5, 5.6]' as distance from test order by distance limit 5;", nullptr);
+   if (cursor == NULL) {
+       OH_LOG_ERROR(LOG_APP, "Query failed.");
+       return;
+   }
+   while (cursor->goToNextRow(cursor) == OH_Rdb_ErrCode::RDB_OK) {
+       size_t count = 0;
+       // floatvector数组是第二列数据，1表示列下标索引
+       OH_Cursor_GetFloatVectorCount(cursor, 1, &count);
+       float test[count];
+       size_t outLen;
+       OH_Cursor_GetFloatVector(cursor, 1, test, count, &outLen);
+   }
+   cursor->destroy(cursor);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L133-L150)
 6. 创建视图并执行查询。示例代码如下：
 
    ```
-   1. OH_Rdb_ExecuteV2(store_, "CREATE VIEW v1 as select * from test where id > 0;", nullptr, nullptr);
-   2. OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, "select * from v1;", nullptr);
-   3. if (cursor == NULL) {
-   4. OH_LOG_ERROR(LOG_APP, "Query failed.");
-   5. return;
-   6. }
-   7. cursor->destroy(cursor);
+   OH_Rdb_ExecuteV2(store_, "CREATE VIEW v1 as select * from test where id > 0;", nullptr, nullptr);
+   OH_Cursor *cursor = OH_Rdb_ExecuteQueryV2(store_, "select * from v1;", nullptr);
+   if (cursor == NULL) {
+       OH_LOG_ERROR(LOG_APP, "Query failed.");
+       return;
+   }
+   cursor->destroy(cursor);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L247-L255)
 7. ‌使用向量索引进行查询，提升查询效率。
 
    向量数据库索引‌是一种以向量作为键的索引机制，旨在提供高效且快速的搜索能力。
@@ -297,16 +276,16 @@ CMakeLists.txt中添加以下lib。
 
    * 基础语法如下：
 
-     ```
-     1. // index_name为索引名称，index_type是索引类型，dist_function是索引距离度量类型
-     2. CREATE INDEX [IF NOT EXISTS] index_name ON table_name USING index_type (column_name dist_function);
+     ```sql
+     // index_name为索引名称，index_type是索引类型，dist_function是索引距离度量类型
+     CREATE INDEX [IF NOT EXISTS] index_name ON table_name USING index_type (column_name dist_function);
 
-     4. DROP INDEX table_name.index_name;
+     DROP INDEX table_name.index_name;
      ```
    * 扩展语法如下：
 
-     ```
-     1. CREATE INDEX [基础语法] [WITH(parameter = value [, ...])];
+     ```sql
+     CREATE INDEX [基础语法] [WITH(parameter = value [, ...])];
      ```
 
    **表1** 索引类型(index\_type)
@@ -319,7 +298,7 @@ CMakeLists.txt中添加以下lib。
 
    | 类型 | 计算符号 | 备注说明 |
    | --- | --- | --- |
-   | L2 | <-> | 欧式距离。 |
+   | L2 | <-> | 欧氏距离。 |
    | COSINE | <=> | 余弦距离。 |
 
    **表3** 扩展语法参数(parameter)
@@ -329,7 +308,7 @@ CMakeLists.txt中添加以下lib。
    | QUEUE\_SIZE | 设置范围是[10, 1000]，默认值 20。 | 代表创建索引搜索近邻的时候候选队列的长度，queue\_size越大，构建速度降低，召回率有略微提升。 |
    | OUT\_DEGREE | 设置范围是[1, 1200] ，默认值 60。 | 邻居节点出度数量。out\_degree与pageSize也有关系，out\_degree的数量超过pageSize的存储范围将报错GRD\_INVALID\_ARGS。 |
 
-   说明
+   **说明** 
 
    * 删除索引的时候需要指定表名称，即Drop Index table.index\_name。
    * 随表一起创建的索引不能删除，如建表时创建的主键。
@@ -338,24 +317,22 @@ CMakeLists.txt中添加以下lib。
    示例代码如下：
 
    ```
-   1. // 基础用法，创建的索引名称为diskann_l2_idx，索引列为data1，类型为gsdiskann，距离度量类型为L2
-   2. OH_Rdb_ExecuteV2(store_, "CREATE INDEX diskann_l2_idx ON test USING GSDISKANN(data1 L2);", nullptr, nullptr);
+   // 基础用法，创建的索引名称为diskann_l2_idx，索引列为data1，类型为gsdiskann，距离度量类型为L2
+   OH_Rdb_ExecuteV2(store_, "CREATE INDEX diskann_l2_idx ON test USING GSDISKANN(data1 L2);", nullptr, nullptr);
 
-   4. // 删除表test中的diskann_l2_idx索引
-   5. OH_Rdb_ExecuteV2(store_, "DROP INDEX test.diskann_l2_idx;", nullptr, nullptr);
+   // 删除表test中的diskann_l2_idx索引
+   OH_Rdb_ExecuteV2(store_, "DROP INDEX test.diskann_l2_idx;", nullptr, nullptr);
 
-   7. // 扩展语法，设置QUEUE_SIZE为20，OUT_DEGREE为50
-   8. OH_Rdb_ExecuteV2(store_, "CREATE INDEX diskann_l2_idx ON test USING GSDISKANN(data1 L2) WITH "
-   9. "(queue_size=20, out_degree=50);", nullptr, nullptr);
+   // 扩展语法，设置QUEUE_SIZE为20，OUT_DEGREE为50
+   OH_Rdb_ExecuteV2(store_, "CREATE INDEX diskann_l2_idx ON test USING GSDISKANN(data1 L2) WITH "
+       "(queue_size=20, out_degree=50);", nullptr, nullptr);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L257-L267)
 8. 配置数据老化功能。当应用的数据需要定期清理时，可以按时间或空间配置数据老化策略，从而实现数据的自动化清理。
 
    语法如下所示：
 
-   ```
-   1. CREATE TABLE table_name(column_name type [, ...]) [WITH(parameter = value [, ...])];
+   ```sql
+   CREATE TABLE table_name(column_name type [, ...]) [WITH(parameter = value [, ...])];
    ```
 
    其中，parameter为可配置的参数，value为对应取值，具体情况见下表。
@@ -384,20 +361,18 @@ CMakeLists.txt中添加以下lib。
    示例代码如下：
 
    ```
-   1. // 每隔五分钟执行写操作后，会触发数据老化任务
-   2. OH_Rdb_ExecuteV2(store_,"CREATE TABLE test2(rec_time integer not null) WITH "
-   3. "(time_col = 'rec_time', interval = '5 minute');", nullptr, nullptr);
+   // 每隔五分钟执行写操作后，会触发数据老化任务
+   OH_Rdb_ExecuteV2(store_,"CREATE TABLE test2(rec_time integer not null) WITH "
+       "(time_col = 'rec_time', interval = '5 minute');", nullptr, nullptr);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L269-L273)
 9. 配置数据压缩功能。该功能在建表时配置，可以压缩数据类型为text的列数据。
 
    从API version 20开始，支持数据压缩功能。
 
    语法如下所示：
 
-   ```
-   1. CREATE TABLE table_name(content text [, ...]) [WITH(compress_col = 'content')];
+   ```sql
+   CREATE TABLE table_name(content text [, ...]) [WITH(compress_col = 'content')];
    ```
 
    其中，compress\_col为必填参数，value是类型为text的数据列名，可以与数据老化功能同时配置。
@@ -405,17 +380,13 @@ CMakeLists.txt中添加以下lib。
    示例代码如下：
 
    ```
-   1. // content列配置了数据压缩，并且配置了数据老化。
-   2. OH_Rdb_ExecuteV2(store_,"CREATE TABLE IF NOT EXISTS test3 (time integer not null, content text) with "
-   3. "(time_col = 'time', interval = '5 minute', compress_col = 'content');", nullptr, nullptr);
+   // content列配置了数据压缩，并且配置了数据老化。
+   OH_Rdb_ExecuteV2(store_,"CREATE TABLE IF NOT EXISTS test3 (time integer not null, content text) with "
+       "(time_col = 'time', interval = '5 minute', compress_col = 'content');", nullptr, nullptr);
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L275-L279)
 10. 删除数据库。示例代码如下：
 
     ```
-    1. OH_Rdb_CloseStore(store_);
-    2. OH_Rdb_DeleteStoreV2(config);
+    OH_Rdb_CloseStore(store_);
+    OH_Rdb_DeleteStoreV2(config);
     ```
-
-    [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/VectorStore/entry/src/main/cpp/napi_init.cpp#L281-L284)

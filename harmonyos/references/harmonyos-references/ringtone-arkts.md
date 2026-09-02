@@ -3,10 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ringtone-
 title: ArkTS API
 breadcrumb: API参考 > 媒体 > Ringtone Kit（铃声服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2f6ebf398965cf8e06bc23dec62259db1839ae8e95ab2ba91e2587c85d1db4cb
+scraped_at: 2026-09-02T14:53:03+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:f5200d3601f12652a801aa76bcf4be91182896293b8e9149f4d8e72730722894
 ---
 
 * **[ringtone（铃声服务）](ringtone-ringtone.md)**
-* **[ArkTS API 错误码](ringtone-error-code.md)**
+* **[ArkTS API 错误码](errorcode-ringtone.md)**

@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: Camera_AutoDeviceSwitchStatusInfo
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体 > Camera_AutoDeviceSwitchStatusInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:53+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ef579e57162283ff3b18feb3e80576ee4f345e92d29291ccdb848a423940821e
+scraped_at: 2026-09-02T15:02:28+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:65b81569504f2608b7ed56da59f77aa4f5a148d0e8ade2e47c0b23ca5cf61c22
 ---
 
-```
-1. typedef struct Camera_AutoDeviceSwitchStatusInfo {...} Camera_AutoDeviceSwitchStatusInfo
+```c
+typedef struct Camera_AutoDeviceSwitchStatusInfo {...} Camera_AutoDeviceSwitchStatusInfo
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 自动设备切换状态信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

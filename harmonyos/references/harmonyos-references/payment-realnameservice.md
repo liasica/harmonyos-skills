@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-r
 title: realNameService(身份验证服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > realNameService(身份验证服务)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:08:21+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:959878050cff26d5dd82ec5830170bfe65d3cb8287a65437ae6df27d64856647
+scraped_at: 2026-09-02T14:53:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4c7467104af1d3c84f2191ed3e94ac37bfb37e70005c1069a4d00c5048ad234d
 ---
 
 本模块提供身份验证服务，包括“实名信息验证”、“实名信息授权”和“人脸核身实人验证”三种功能。
@@ -20,19 +20,15 @@ content_hash: sha256:959878050cff26d5dd82ec5830170bfe65d3cb8287a65437ae6df27d648
 
 ## 导入模块
 
-PhoneTablet
-
-```
-1. import { realNameService } from '@kit.PaymentKit';
+```typescript
+import { realNameService } from '@kit.PaymentKit';
 ```
 
 ## startRealNameVerification
 
-PhoneTablet
-
 startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionContext, preVerifyId: string): Promise<string>
 
-该方法提供实名信息验证功能，调用该方法后会拉起实名信息验证授权组件，验证完成后使用Promise异步返回。调用该方法前请确保网络已连接。
+该方法提供实名信息验证功能，调用该方法后会拉起实名信息验证授权组件，验证完成后使用Promise异步回调。调用该方法前请确保网络已连接。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -57,10 +53,11 @@ startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionC
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](payment-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-payment.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1020100000 | The application does not have the required capability. |
 | 1020100001 | The user did not accept the agreement. |
 | 1020100002 | The user canceled the operation. |
@@ -74,48 +71,45 @@ startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionC
 
 示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { realNameService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { realNameService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestStartRealNameVerificationPromise() {
-10. // 请使用开发者真实的预验证ID（preVerifyId）
-11. let preVerifyId = '';
-12. realNameService.startRealNameVerification(this.context, preVerifyId)
-13. .then((verifyResultId: string) => {
-14. // 验证成功
-15. console.info(`succeeded in verifying, verifyResultId: ${verifyResultId}`);
-16. })
-17. }
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestStartRealNameVerificationPromise() {
+    // 请使用开发者真实的预验证ID（preVerifyId）
+    let preVerifyId = 'your_pre_verify_id';
+    realNameService.startRealNameVerification(this.context, preVerifyId)
+      .then((verifyResultId: string) => {
+        // 验证成功
+        console.info(`succeeded in verifying, verifyResultId: ${verifyResultId}`);
+      })
+  }
 
-19. build() {
-20. Column() {
-21. Button('requestStartRealNameVerificationPromise')
-22. .type(ButtonType.Capsule)
-23. .width('50%')
-24. .margin(20)
-25. .onClick(() => {
-26. this.requestStartRealNameVerificationPromise();
-27. })
-28. }
-29. .width('100%')
-30. .height('100%')
-31. }
-32. }
+  build() {
+    Column() {
+      Button('requestStartRealNameVerificationPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestStartRealNameVerificationPromise();
+        });
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## startRealNameAuth
 
-PhoneTablet
-
 startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext): Promise<string>
 
-该方法提供实名信息授权功能，调用该方法后会拉起实名信息授权组件，授权完成后使用Promise异步返回。调用该方法前请确保网络已连接。
+该方法提供实名信息授权功能，调用该方法后会拉起实名信息授权组件，授权完成后使用Promise异步回调。调用该方法前请确保网络已连接。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -139,10 +133,11 @@ startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext):
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](payment-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-payment.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1020100000 | The application does not have the required capability. |
 | 1020100001 | The user did not accept the agreement. |
 | 1020100002 | The user canceled the operation. |
@@ -153,46 +148,43 @@ startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext):
 
 示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { realNameService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { realNameService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestStartRealNameAuthPromise() {
-10. realNameService.startRealNameAuth(this.context)
-11. .then((realNameAuthId: string) => {
-12. // 授权成功
-13. console.info(`succeeded in authorizing, realNameAuthId: ${realNameAuthId}`);
-14. })
-15. }
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestStartRealNameAuthPromise() {
+    realNameService.startRealNameAuth(this.context)
+      .then((realNameAuthId: string) => {
+        // 授权成功
+        console.info(`succeeded in authorizing, realNameAuthId: ${realNameAuthId}`);
+      })
+  }
 
-17. build() {
-18. Column() {
-19. Button('requestStartRealNameAuthPromise')
-20. .type(ButtonType.Capsule)
-21. .width('50%')
-22. .margin(20)
-23. .onClick(() => {
-24. this.requestStartRealNameAuthPromise();
-25. })
-26. }
-27. .width('100%')
-28. .height('100%')
-29. }
-30. }
+  build() {
+    Column() {
+      Button('requestStartRealNameAuthPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestStartRealNameAuthPromise();
+        });
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## startFaceVerification
 
-PhoneTablet
-
 startFaceVerification(context: common.UIAbilityContext | common.UIExtensionContext, preVerifyId: string): Promise<string>
 
-该方法提供人脸核身实人验证功能，调用该方法后会拉起人脸核身实人验证组件，验证完成后使用Promise异步返回。调用该方法前请确保网络已连接。
+该方法提供人脸核身实人验证功能，调用该方法后会拉起人脸核身实人验证组件，验证完成后使用Promise异步回调。调用该方法前请确保网络已连接。
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
@@ -217,10 +209,11 @@ startFaceVerification(context: common.UIAbilityContext | common.UIExtensionConte
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](payment-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-payment.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1020100000 | The application does not have the required capability. |
 | 1020100001 | The user did not accept the agreement. |
 | 1020100002 | The user canceled the operation. |
@@ -236,37 +229,36 @@ startFaceVerification(context: common.UIAbilityContext | common.UIExtensionConte
 
 示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { realNameService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
+```typescript
+import { realNameService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestStartFaceVerificationPromise() {
-10. // 请使用开发者真实的预验证ID（preVerifyId）
-11. let preVerifyId = '';
-12. realNameService.startFaceVerification(this.context, preVerifyId)
-13. .then((verifyResultId:string ) => {
-14. // 人脸验证成功
-15. console.info(`succeeded in face verifying, verifyResultId: ${verifyResultId}`);
-16. })
-17. }
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestStartFaceVerificationPromise() {
+    // 请使用开发者真实的预验证ID（preVerifyId）
+    let preVerifyId = 'your_pre_verify_id';
+    realNameService.startFaceVerification(this.context, preVerifyId)
+      .then((verifyResultId:string) => {
+        // 人脸验证成功
+        console.info(`succeeded in face verifying, verifyResultId: ${verifyResultId}`);
+      });
+  }
 
-19. build() {
-20. Column() {
-21. Button('requestStartFaceVerificationPromise')
-22. .type(ButtonType.Capsule)
-23. .width('50%')
-24. .margin(20)
-25. .onClick(() => {
-26. this.requestStartFaceVerificationPromise();
-27. })
-28. }
-29. .width('100%')
-30. .height('100%')
-31. }
-32. }
+  build() {
+    Column() {
+      Button('requestStartFaceVerificationPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestStartFaceVerificationPromise();
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```

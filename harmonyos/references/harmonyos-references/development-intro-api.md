@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/developme
 title: 开发说明
 breadcrumb: API参考 > API参考概述 > 开发说明
 category: harmonyos-references
-scraped_at: 2026-09-02T13:53:16+08:00
+scraped_at: 2026-09-02T15:00:31+08:00
 doc_updated_at: 2026-09-01
 content_hash: sha256:8e03cbef15bdf50158f829bbe0df3c57df03b7efb5cd6169491568d4344f38df
 ---

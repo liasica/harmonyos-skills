@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler
 title: 性能分析
 breadcrumb: FAQ > DevEco Studio > 性能分析
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:12+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:2986872743d2831e32a9856e2283502540cc85700f90b1fae407f198aa8a9679
+scraped_at: 2026-09-02T14:54:57+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:3ef32d42fb09bcf37b105ea975bf6c2406eb713889b1cb65b76b9bee8f8f16fa
 ---
 
 * **[Profiler分析任务录制失败](faqs-profiler-1.md)**
@@ -25,3 +25,4 @@ content_hash: sha256:2986872743d2831e32a9856e2283502540cc85700f90b1fae407f198aa8
 * **[录制Snapshot模板时，看不到taskPool线程内存信息](faqs-profiler-15.md)**
 * **[录制Allocation模板时，Memory泳道和Native Allocation泳道内存不一致](faqs-profiler-16.md)**
 * **[指标检测值无法点击拉起profiler](faqs-profiler-17.md)**
+* **[DevEco Profile的SnapShot无法抓取ArkTS snapshot数据](faqs-profiler-18.md)**

@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohav
 title: AVSession_DeviceInfo
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 结构体 > AVSession_DeviceInfo
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:30+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:83ed716d90a322b352484377881c50b7717d99d8e969e32aa827d38cde3648cf
+scraped_at: 2026-09-02T14:52:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a70ba8ee96cdd32492b62ab0a9c26cd25b02dda0e476f0a49d744be2c7deb28c
 ---
 
-```
-1. typedef struct AVSession_DeviceInfo AVSession_DeviceInfo
+```c
+typedef struct AVSession_DeviceInfo AVSession_DeviceInfo
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-设备信息的声明。该实例用于获取更多的设备信息及其详细属性。
+设备信息的结构体声明。该结构体用于存储设备的详细属性。
 
 **起始版本：** 23
 

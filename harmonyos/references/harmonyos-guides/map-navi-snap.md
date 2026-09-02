@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-navi-snap
 title: 轨迹绑路
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 路径规划 > 轨迹绑路
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:54+08:00
+scraped_at: 2026-09-02T14:59:58+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8200e655ac5c1ed2ee43a268f864be52719ad06869988ae7e7b431a298f122c5
+content_hash: sha256:9f3d46a83c478ffc7bcfcdfcd568127526a16817ad3a28f89fe531af058e6ac4
 ---
 
 ## 场景介绍
@@ -27,30 +27,30 @@ content_hash: sha256:8200e655ac5c1ed2ee43a268f864be52719ad06869988ae7e7b431a298f
 
 导入相关模块。
 
-```
-1. import { navi } from '@kit.MapKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```typescript
+import { navi } from '@kit.MapKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 ```
 
 ### 轨迹绑路
 
 根据给定的坐标点捕捉道路，将用户的轨迹纠正到道路上，从而返回用户实际驾车经过的道路坐标。
 
-```
-1. async testSnapToRoads() {
-2. let params: navi.SnapToRoadsParams = {
-3. // 道路贴合点集合，不能超过100个，且相邻两个点距离需小于等于500米
-4. points: [{
-5. latitude: 31.984410259206815,
-6. longitude: 118.76625379397866
-7. }]
-8. };
-9. try {
-10. const result = await navi.snapToRoads(params);
-11. console.info(`Succeeded in snapping to roads. result is ${JSON.stringify(result)}`);
-12. } catch (error) {
-13. const err: BusinessError = error as BusinessError;
-14. console.error(`Failed in snapping to roads. Code is ${err.code}, message is ${err.message}`);
-15. }
-16. }
+```typescript
+async testSnapToRoads() {
+  let params: navi.SnapToRoadsParams = {
+    // 道路贴合点集合，不能超过100个，且相邻两个点距离需小于等于500米
+    points: [{
+      latitude: 31.984410259206815,
+      longitude: 118.76625379397866
+    }]
+  };
+  try {
+    const result = await navi.snapToRoads(params);
+    console.info(`Succeeded in snapping to roads. result is ${JSON.stringify(result)}`);
+  } catch (error) {
+    const err: BusinessError = error as BusinessError;
+    console.error(`Failed in snapping to roads. Code is ${err.code}, message is ${err.message}`);
+  }
+}
 ```

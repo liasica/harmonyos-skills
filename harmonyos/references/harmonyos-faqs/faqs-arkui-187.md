@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-187
 title: 如何移除页面上Video组件
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何移除页面上Video组件
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何移除页面上Video组件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:49+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:a18d08d0ab9716c068c94bcf0b054711ee84f2fd448a7bee33050bcdad8ca9e3
 ---
 

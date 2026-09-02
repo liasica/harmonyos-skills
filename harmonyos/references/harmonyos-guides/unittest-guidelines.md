@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unittest-guid
 title: 单元测试框架使用指导
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自动化测试框架使用指导 > 单元测试框架使用指导
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:48:00+08:00
-doc_updated_at: 2026-04-21
-content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bca6ea1
+scraped_at: 2026-09-02T15:00:20+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2263242a7e0ffa54d4f50c7f4863c71e637c78d51c03059e80c0688e42f225ae
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
 
 **图1.单元测试框架主要功能**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/6kBtbrVlQx6EE9Tn80YCqQ/zh-cn_image_0000002581217681.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ucFmxFpYRAqwrEdxkCviwQ/zh-cn_image_0000002701641036.png)
 
 ## 单元测试框架发布方式
 
@@ -36,10 +36,10 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
 
 **配置示例**
 
-```
-1. "devDependencies": {
-2. "@ohos/hypium": "1.0.25"
-3. }
+```json
+"devDependencies": {
+    "@ohos/hypium": "1.0.25"
+  }
 ```
 
 ## 基于ArkTS编写和执行测试脚本
@@ -62,39 +62,39 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
 
 下面提供一个简单示例，测试场景：启动被测试页面，检查设备当前显示的页面是否为预期启动的页面。
 
-```
-1. import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-2. import { abilityDelegatorRegistry } from '@kit.TestKit';
-3. import { UIAbility, Want } from '@kit.AbilityKit';
+```typescript
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { UIAbility, Want } from '@kit.AbilityKit';
 
-5. const delegator = abilityDelegatorRegistry.getAbilityDelegator();
+const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 
-7. function sleep(time: number) {
-8. return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
-9. }
+function sleep(time: number) {
+  return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
+}
 
-11. export default function abilityTest() {
-12. describe('ActsAbilityTest', () => {
-13. // 测试套名称为ActsAbilityTest
-14. // 可根据此处设置的用例类型、用例规模、用例级别进行用例筛选
-15. it('testExample', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-16. // 测试用例名称为testExample
-17. await sleep(500);
-18. const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
-19. // 启动被测试Ability
-20. const want: Want = {
-21. bundleName: bundleName,
-22. abilityName: 'EntryAbility'
-23. }
-24. await delegator.startAbility(want);
-25. await sleep(500);
-26. // 获取设备上前台显示的页面并断言检查
-27. const ability: UIAbility = await delegator.getCurrentTopAbility();
-28. expect(ability.context.abilityInfo.name).assertEqual('EntryAbility');
-29. done();
-30. })
-31. })
-32. }
+export default function abilityTest() {
+  describe('ActsAbilityTest', () => {
+    // 测试套名称为ActsAbilityTest
+    // 可根据此处设置的用例类型、用例规模、用例级别进行用例筛选
+    it('testExample', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      // 测试用例名称为testExample
+      await sleep(500);
+      const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
+      // 启动被测试Ability
+      const want: Want = {
+        bundleName: bundleName,
+        abilityName: 'EntryAbility'
+      }
+      await delegator.startAbility(want);
+      await sleep(500);
+      // 获取设备上前台显示的页面并断言检查
+      const ability: UIAbility = await delegator.getCurrentTopAbility();
+      expect(ability.context.abilityInfo.name).assertEqual('EntryAbility');
+      done();
+    })
+  })
+}
 ```
 
 ### DevEco Studio执行测试脚本
@@ -108,13 +108,13 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
 
 下面给出测试类级别即测试文件执行示例，其他请参考[运行模式](ide-instrument-test.md#section1574003717165)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/dbxiE2wrSymGulvpkNDlMA/zh-cn_image_0000002550777586.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/5WMrmkoXRAe83x2F4t8s9w/zh-cn_image_0000002731360255.png)
 
 * 查看测试结果
 
 测试执行后可直接在DevEco Studio中查看测试结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/S2Rhpp8lTE2tTr4uCHnPxQ/zh-cn_image_0000002581377645.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/OdaNdS0uSXuvBh4LP30WaA/zh-cn_image_0000002701800952.png)
 
 * 查看测试用例覆盖率
 
@@ -153,7 +153,7 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
 
 * 执行测试脚本
 
-说明
+**说明** 
 
 下文参数配置和命令示例均基于Stage模型。
 
@@ -161,91 +161,91 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
 
 **示例代码1**：执行所有测试用例
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner
+```shell
+ hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner
 ```
 
 **示例代码2**：执行指定的describe测试套用例，指定多个需用逗号隔开
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s class s1,s2
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s class s1,s2
 ```
 
 **示例代码3**：执行指定测试套中指定的用例，指定多个需用逗号隔开
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s class testStop#stop_1,testStop1#stop_0
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s class testStop#stop_1,testStop1#stop_0
 ```
 
 **示例代码4**：执行除指定配置外的所有用例，设置不执行多个测试套需用逗号隔开
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s notClass testStop
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s notClass testStop
 ```
 
 **示例代码5**：执行指定it名称的所有用例，指定多个需用逗号隔开
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s itName stop_0
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s itName stop_0
 ```
 
 **示例代码6**：用例执行超时时长配置
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s timeout 15000
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s timeout 15000
 ```
 
 **示例代码7**：用例以遇错即停模式执行用例
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s breakOnError true
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s breakOnError true
 ```
 
 **示例代码8**：执行测试类型匹配的测试用例
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s testType function
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s testType function
 ```
 
 **示例代码9**：执行测试级别匹配的测试用例
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s level 0
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s level 0
 ```
 
 **示例代码10**：执行测试规模匹配的测试用例
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s size small
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s size small
 ```
 
 **示例代码11**：执行测试用例指定次数
 
-```
-1. hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s stress 1000
+```shell
+  hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s stress 1000
 ```
 
 * 查看测试结果
 
 1. 在命令行模式执行过程中，框架会打印如下日志信息。
 
-   ```
-   1. OHOS_REPORT_STATUS: class=ActsAbilityTest
-   2. OHOS_REPORT_STATUS: current=1
-   3. OHOS_REPORT_STATUS: id=JS
-   4. OHOS_REPORT_STATUS: numtests=447
-   5. OHOS_REPORT_STATUS: stream=
-   6. OHOS_REPORT_STATUS: test=testExample
-   7. OHOS_REPORT_STATUS_CODE: 1
+   ```txt
+   OHOS_REPORT_STATUS: class=ActsAbilityTest
+   OHOS_REPORT_STATUS: current=1
+   OHOS_REPORT_STATUS: id=JS
+   OHOS_REPORT_STATUS: numtests=447
+   OHOS_REPORT_STATUS: stream=
+   OHOS_REPORT_STATUS: test=testExample
+   OHOS_REPORT_STATUS_CODE: 1
 
-   9. OHOS_REPORT_STATUS: class=ActsAbilityTest
-   10. OHOS_REPORT_STATUS: current=1
-   11. OHOS_REPORT_STATUS: id=JS
-   12. OHOS_REPORT_STATUS: numtests=447
-   13. OHOS_REPORT_STATUS: stream=
-   14. OHOS_REPORT_STATUS: test=testExample
-   15. OHOS_REPORT_STATUS_CODE: 0
-   16. OHOS_REPORT_STATUS: consuming=4
+   OHOS_REPORT_STATUS: class=ActsAbilityTest
+   OHOS_REPORT_STATUS: current=1
+   OHOS_REPORT_STATUS: id=JS
+   OHOS_REPORT_STATUS: numtests=447
+   OHOS_REPORT_STATUS: stream=
+   OHOS_REPORT_STATUS: test=testExample
+   OHOS_REPORT_STATUS_CODE: 0
+   OHOS_REPORT_STATUS: consuming=4
    ```
 
    | 日志输出字段 | 日志输出字段含义 |
@@ -260,12 +260,12 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
    | OHOS\_REPORT\_STATUS: consuming | 当前用例执行消耗的时长（ms）。 |
 2. 命令行执行完成后，框架会打印如下相关日志信息。
 
-   ```
-   1. OHOS_REPORT_RESULT: stream=Tests run: 447, Failure: 0, Error: 1, Pass: 201, Ignore: 245
-   2. OHOS_REPORT_CODE: 0
+   ```txt
+   OHOS_REPORT_RESULT: stream=Tests run: 447, Failure: 0, Error: 1, Pass: 201, Ignore: 245
+   OHOS_REPORT_CODE: 0
 
-   4. OHOS_REPORT_RESULT: breakOnError model, Stopping whole test suite if one specific test case failed or error
-   5. OHOS_REPORT_STATUS: taskconsuming=16029
+   OHOS_REPORT_RESULT: breakOnError model, Stopping whole test suite if one specific test case failed or error
+   OHOS_REPORT_STATUS: taskconsuming=16029
    ```
 
    | 日志输出字段 | 日志输出字段含义 |
@@ -277,7 +277,7 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
    | Ignore | 当前未执行用例数量。 |
    | taskconsuming | 执行当前测试用例总耗时（ms）。 |
 
-   说明
+   **说明** 
 
    当按照遇错即停方式执行时，用例发生错误时，注意查看Ignore字段以及错误中断时的提示信息。
 
@@ -305,139 +305,139 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
 
 **示例代码1**：beforeAll/beforeEach/afterEach/afterAll使用示例
 
-```
-1. import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+```typescript
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 
-3. export default function exampleTest() {
+export default function exampleTest() {
 
-5. describe('order1_sample', () => {
-6. let testNumA: number = 1;
-7. let testNumB: number = 1;
+  describe('order1_sample', () => {
+    let testNumA: number = 1;
+    let testNumB: number = 1;
 
-9. beforeAll(() => {
-10. testNumA++;
-11. })
+    beforeAll(() => {
+      testNumA++;
+    })
 
-13. beforeEach(() => {
-14. testNumA++;
-15. testNumB++;
-16. })
+    beforeEach(() => {
+      testNumA++;
+      testNumB++;
+    })
 
-18. afterEach(() => {
-19. testNumA++;
-20. })
+    afterEach(() => {
+      testNumA++;
+    })
 
-22. afterAll(() => {
-23. let expectValue: number = 5;
-24. expect(testNumA).assertEqual(expectValue);
-25. })
+    afterAll(() => {
+      let expectValue: number = 5;
+      expect(testNumA).assertEqual(expectValue);
+    })
 
-27. it('testExampleA', Level.LEVEL1, async (done: Function) => {
-28. let expectA: number = 3;
-29. let expectB: number = 2;
-30. expect(testNumA).assertEqual(expectA);
-31. expect(testNumB).assertEqual(expectB);
-32. done();
-33. })
+    it('testExampleA', Level.LEVEL1, async (done: Function) => {
+      let expectA: number = 3;
+      let expectB: number = 2;
+      expect(testNumA).assertEqual(expectA);
+      expect(testNumB).assertEqual(expectB);
+      done();
+    })
 
-35. it('testExampleB', Level.LEVEL1, async (done: Function) => {
-36. let expectA: number = 5;
-37. let expectB: number = 3;
-38. expect(testNumA).assertEqual(expectA);
-39. expect(testNumB).assertEqual(expectB);
-40. done();
-41. })
-42. })
-43. }
+    it('testExampleB', Level.LEVEL1, async (done: Function) => {
+      let expectA: number = 5;
+      let expectB: number = 3;
+      expect(testNumA).assertEqual(expectA);
+      expect(testNumB).assertEqual(expectB);
+      done();
+    })
+  })
+}
 ```
 
 **示例代码2**：beforeItSpecified/afterItSpecified使用示例，从1.0.15版本开始支持
 
-```
-1. import { afterItSpecified, beforeItSpecified, describe, expect, it, Level } from '@ohos/hypium';
+```typescript
+import { afterItSpecified, beforeItSpecified, describe, expect, it, Level } from '@ohos/hypium';
 
-3. export default function exampleTest() {
+export default function exampleTest() {
 
-5. describe('order2_sample', () => {
-6. let testNumA: number = 1;
-7. let testNumB: number = 1;
+  describe('order2_sample', () => {
+    let testNumA: number = 1;
+    let testNumB: number = 1;
 
-9. beforeItSpecified(['testExampleB'], () => {
-10. testNumB++;
-11. })
-12. afterItSpecified(['testExampleA'], () => {
-13. testNumA++;
-14. })
+    beforeItSpecified(['testExampleB'], () => {
+      testNumB++;
+    })
+    afterItSpecified(['testExampleA'], () => {
+      testNumA++;
+    })
 
-16. it('testExampleA', Level.LEVEL1, async (done: Function) => {
-17. expect(testNumA).assertEqual(1);
-18. expect(testNumB).assertEqual(1);
-19. done();
-20. })
+    it('testExampleA', Level.LEVEL1, async (done: Function) => {
+      expect(testNumA).assertEqual(1);
+      expect(testNumB).assertEqual(1);
+      done();
+    })
 
-22. it('testExampleB', Level.LEVEL1, async (done: Function) => {
-23. expect(testNumA).assertEqual(2);
-24. expect(testNumB).assertEqual(2);
-25. done();
-26. })
-27. })
-28. }
+    it('testExampleB', Level.LEVEL1, async (done: Function) => {
+      expect(testNumA).assertEqual(2);
+      expect(testNumB).assertEqual(2);
+      done();
+    })
+  })
+}
 ```
 
 **示例代码3**：xit使用示例，从1.0.17版本开始支持
 
-```
-1. import { describe, it, Level, xit } from '@ohos/hypium';
+```typescript
+import { describe, it, Level, xit } from '@ohos/hypium';
 
-3. export default function describeExampleTest() {
+export default function describeExampleTest() {
 
-5. describe('order3_sample', () => {
-6. xit('testExampleA', Level.LEVEL1, async (done: Function) => {
-7. done();
-8. })
+  describe('order3_sample', () => {
+    xit('testExampleA', Level.LEVEL1, async (done: Function) => {
+      done();
+    })
 
-10. it('testExampleB', Level.LEVEL1, async (done: Function) => {
-11. done();
-12. })
-13. })
-14. }
+    it('testExampleB', Level.LEVEL1, async (done: Function) => {
+      done();
+    })
+  })
+}
 ```
 
 **示例代码4**：beforeEachIt/afterEachIt使用示例，从1.0.25版本开始支持
 
-```
-1. import { describe, beforeEach, afterEach, beforeEachIt, afterEachIt, it, expect } from '@ohos/hypium';
-2. let str = "";
-3. export default function test() {
-4. describe('test0', () => {
-5. beforeEach(async () => {
-6. str += "A"
-7. })
-8. beforeEachIt(async () => {
-9. str += "B"
-10. })
-11. afterEach(async () => {
-12. str += "C"
-13. })
-14. afterEachIt(async () => {
-15. str += "D"
-16. })
-17. it('test0000', 0, () => {
-18. expect(str).assertEqual("BA");
-19. })
-20. describe('test1', () => {
-21. beforeEach(async () => {
-22. str += "E"
-23. })
-24. beforeEachIt(async () => {
-25. str += "F"
-26. })
-27. it('test1111', 0, async () => {
-28. expect(str).assertEqual("BACDBFE");
-29. })
-30. })
-31. })
-32. }
+```typescript
+import { describe, beforeEach, afterEach, beforeEachIt, afterEachIt, it, expect } from '@ohos/hypium';
+let str = "";
+export default function test() {
+  describe('test0', () => {
+    beforeEach(async () => {
+      str += "A"
+    })
+    beforeEachIt(async () => {
+      str += "B"
+    })
+    afterEach(async () => {
+      str += "C"
+    })
+    afterEachIt(async () => {
+      str += "D"
+    })
+    it('test0000', 0, () => {
+      expect(str).assertEqual("BA");
+    })
+    describe('test1', () => {
+      beforeEach(async () => {
+        str += "E"
+      })
+      beforeEachIt(async () => {
+        str += "F"
+      })
+      it('test1111', 0, async () => {
+        expect(str).assertEqual("BACDBFE");
+      })
+    })
+  })
+}
 ```
 
 ### 断言能力
@@ -474,178 +474,178 @@ content_hash: sha256:643d401073d7a4569a5295671a7389db926edc529d34074774ef70376bc
 
 **示例代码**：
 
-```
-1. import { describe, expect, it, Level } from '@ohos/hypium';
+```typescript
+import { describe, expect, it, Level } from '@ohos/hypium';
 
-3. export default function exampleTest() {
-4. describe('ExampleTest', () => {
-5. it('assertCloseTest', Level.LEVEL1, () => {
-6. let a: number = 100;
-7. let b: number = 0.1;
-8. let c: number = 99;
-9. expect(a).assertClose(c, b);
-10. })
+export default function exampleTest() {
+  describe('ExampleTest', () => {
+    it('assertCloseTest', Level.LEVEL1, () => {
+      let a: number = 100;
+      let b: number = 0.1;
+      let c: number = 99;
+      expect(a).assertClose(c, b);
+    })
 
-12. it('assertContain_1', Level.LEVEL1, () => {
-13. let a = 'abc';
-14. expect(a).assertContain('b');
-15. })
+    it('assertContain_1', Level.LEVEL1, () => {
+      let a = 'abc';
+      expect(a).assertContain('b');
+    })
 
-17. it('assertContain_2', Level.LEVEL1, () => {
-18. let a = [1, 2, 3];
-19. expect(a).assertContain(1);
-20. })
+    it('assertContain_2', Level.LEVEL1, () => {
+      let a = [1, 2, 3];
+      expect(a).assertContain(1);
+    })
 
-22. it('assertEqualTest', Level.LEVEL1, () => {
-23. expect(3).assertEqual(3);
-24. })
+    it('assertEqualTest', Level.LEVEL1, () => {
+      expect(3).assertEqual(3);
+    })
 
-26. it('assertFailTest', Level.LEVEL1, () => {
-27. expect().assertFail(); // 用例失败
-28. })
+    it('assertFailTest', Level.LEVEL1, () => {
+      expect().assertFail(); // 用例失败
+    })
 
-30. it('assertFalseTest', Level.LEVEL1, () => {
-31. expect(false).assertFalse();
-32. })
+    it('assertFalseTest', Level.LEVEL1, () => {
+      expect(false).assertFalse();
+    })
 
-34. it('assertTrueTest', Level.LEVEL1, () => {
-35. expect(true).assertTrue();
-36. })
+    it('assertTrueTest', Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    })
 
-38. it('assertInstanceOfTest', Level.LEVEL1, () => {
-39. let a: string = 'strTest';
-40. expect(a).assertInstanceOf('String');
-41. })
+    it('assertInstanceOfTest', Level.LEVEL1, () => {
+      let a: string = 'strTest';
+      expect(a).assertInstanceOf('String');
+    })
 
-43. it('assertLargerTest', Level.LEVEL1, () => {
-44. expect(3).assertLarger(2);
-45. })
+    it('assertLargerTest', Level.LEVEL1, () => {
+      expect(3).assertLarger(2);
+    })
 
-47. it('assertLessTest', Level.LEVEL1, () => {
-48. expect(2).assertLess(3);
-49. })
+    it('assertLessTest', Level.LEVEL1, () => {
+      expect(2).assertLess(3);
+    })
 
-51. it('assertNullTest', Level.LEVEL1, () => {
-52. expect(null).assertNull();
-53. })
+    it('assertNullTest', Level.LEVEL1, () => {
+      expect(null).assertNull();
+    })
 
-55. it('assertThrowErrorTest', Level.LEVEL1, () => {
-56. expect(() => {
-57. throw new Error('test');
-58. }).assertThrowError('test');
-59. })
+    it('assertThrowErrorTest', Level.LEVEL1, () => {
+      expect(() => {
+        throw new Error('test');
+      }).assertThrowError('test');
+    })
 
-61. it('assertUndefinedTest', Level.LEVEL1, () => {
-62. expect(undefined).assertUndefined();
-63. })
+    it('assertUndefinedTest', Level.LEVEL1, () => {
+      expect(undefined).assertUndefined();
+    })
 
-65. it('assertLargerOrEqualTest', Level.LEVEL1, () => {
-66. expect(3).assertLargerOrEqual(3);
-67. })
+    it('assertLargerOrEqualTest', Level.LEVEL1, () => {
+      expect(3).assertLargerOrEqual(3);
+    })
 
-69. it('assertLessOrEqualTest', Level.LEVEL1, () => {
-70. expect(3).assertLessOrEqual(3);
-71. })
+    it('assertLessOrEqualTest', Level.LEVEL1, () => {
+      expect(3).assertLessOrEqual(3);
+    })
 
-73. it('assertNaNTest', Level.LEVEL1, () => {
-74. expect(Number.NaN).assertNaN(); // true
-75. })
+    it('assertNaNTest', Level.LEVEL1, () => {
+      expect(Number.NaN).assertNaN(); // true
+    })
 
-77. it('assertNegUnlimitedTest', Level.LEVEL1, () => {
-78. expect(Number.NEGATIVE_INFINITY).assertNegUnlimited(); // true
-79. })
+    it('assertNegUnlimitedTest', Level.LEVEL1, () => {
+      expect(Number.NEGATIVE_INFINITY).assertNegUnlimited(); // true
+    })
 
-81. it('assertPosUnlimitedTest', Level.LEVEL1, () => {
-82. expect(Number.POSITIVE_INFINITY).assertPosUnlimited(); // true
-83. })
+    it('assertPosUnlimitedTest', Level.LEVEL1, () => {
+      expect(Number.POSITIVE_INFINITY).assertPosUnlimited(); // true
+    })
 
-85. it('deepEquals_null_true', Level.LEVEL1, () => {
-86. expect(null).assertDeepEquals(null);
-87. })
+    it('deepEquals_null_true', Level.LEVEL1, () => {
+      expect(null).assertDeepEquals(null);
+    })
 
-89. it('deepEquals_array_not_have_true', Level.LEVEL1, () => {
-90. const a: Array<number> = [];
-91. const b: Array<number> = [];
-92. expect(a).assertDeepEquals(b);
-93. })
+    it('deepEquals_array_not_have_true', Level.LEVEL1, () => {
+      const a: Array<number> = [];
+      const b: Array<number> = [];
+      expect(a).assertDeepEquals(b);
+    })
 
-95. it('deepEquals_map_equal_length_success', Level.LEVEL1, () => {
-96. const a: Map<number, number> = new Map();
-97. const b: Map<number, number> = new Map();
-98. a.set(1, 100);
-99. a.set(2, 200);
-100. b.set(1, 100);
-101. b.set(2, 200);
-102. expect(a).assertDeepEquals(b);
-103. })
+    it('deepEquals_map_equal_length_success', Level.LEVEL1, () => {
+      const a: Map<number, number> = new Map();
+      const b: Map<number, number> = new Map();
+      a.set(1, 100);
+      a.set(2, 200);
+      b.set(1, 100);
+      b.set(2, 200);
+      expect(a).assertDeepEquals(b);
+    })
 
-105. it('deepEquals_obj_success_1', Level.LEVEL1, () => {
-106. const a: SampleTest = { x: 1 };
-107. const b: SampleTest = { x: 1 };
-108. expect(a).assertDeepEquals(b);
-109. })
+    it('deepEquals_obj_success_1', Level.LEVEL1, () => {
+      const a: SampleTest = { x: 1 };
+      const b: SampleTest = { x: 1 };
+      expect(a).assertDeepEquals(b);
+    })
 
-111. it('deepEquals_regExp_success_0', Level.LEVEL1, () => {
-112. const a: RegExp = new RegExp('/test/');
-113. const b: RegExp = new RegExp('/test/');
-114. expect(a).assertDeepEquals(b);
-115. })
+    it('deepEquals_regExp_success_0', Level.LEVEL1, () => {
+      const a: RegExp = new RegExp('/test/');
+      const b: RegExp = new RegExp('/test/');
+      expect(a).assertDeepEquals(b);
+    })
 
-117. it('assertPromiseIsPendingTest', Level.LEVEL1, async () => {
-118. let p: Promise<void> = new Promise<void>(() => {
-119. });
-120. await expect(p).assertPromiseIsPending();
-121. })
+    it('assertPromiseIsPendingTest', Level.LEVEL1, async () => {
+      let p: Promise<void> = new Promise<void>(() => {
+      });
+      await expect(p).assertPromiseIsPending();
+    })
 
-123. it('assertPromiseIsRejectedTest', Level.LEVEL1, async () => {
-124. let info: PromiseInfo = { res: 'no' };
-125. let p: Promise<PromiseInfo> = Promise.reject(info);
-126. await expect(p).assertPromiseIsRejected();
-127. })
+    it('assertPromiseIsRejectedTest', Level.LEVEL1, async () => {
+      let info: PromiseInfo = { res: 'no' };
+      let p: Promise<PromiseInfo> = Promise.reject(info);
+      await expect(p).assertPromiseIsRejected();
+    })
 
-129. it('assertPromiseIsRejectedWithTest', Level.LEVEL1, async () => {
-130. let info: PromiseInfo = { res: 'reject value' };
-131. let p: Promise<PromiseInfo> = Promise.reject(info);
-132. await expect(p).assertPromiseIsRejectedWith(info);
-133. })
+    it('assertPromiseIsRejectedWithTest', Level.LEVEL1, async () => {
+      let info: PromiseInfo = { res: 'reject value' };
+      let p: Promise<PromiseInfo> = Promise.reject(info);
+      await expect(p).assertPromiseIsRejectedWith(info);
+    })
 
-135. it('assertPromiseIsRejectedWithErrorTest', Level.LEVEL1, async () => {
-136. let p1: Promise<TypeError> = Promise.reject(new TypeError('number'));
-137. await expect(p1).assertPromiseIsRejectedWithError(TypeError);
-138. })
+    it('assertPromiseIsRejectedWithErrorTest', Level.LEVEL1, async () => {
+      let p1: Promise<TypeError> = Promise.reject(new TypeError('number'));
+      await expect(p1).assertPromiseIsRejectedWithError(TypeError);
+    })
 
-140. it('assertPromiseIsResolvedTest', Level.LEVEL1, async () => {
-141. let info: PromiseInfo = { res: 'result value' };
-142. let p: Promise<PromiseInfo> = Promise.resolve(info);
-143. await expect(p).assertPromiseIsResolved();
-144. })
+    it('assertPromiseIsResolvedTest', Level.LEVEL1, async () => {
+      let info: PromiseInfo = { res: 'result value' };
+      let p: Promise<PromiseInfo> = Promise.resolve(info);
+      await expect(p).assertPromiseIsResolved();
+    })
 
-146. it('assertPromiseIsResolvedWithTest', Level.LEVEL1, async () => {
-147. let info: PromiseInfo = { res: 'result value' };
-148. let p: Promise<PromiseInfo> = Promise.resolve(info);
-149. await expect(p).assertPromiseIsResolvedWith(info);
-150. })
+    it('assertPromiseIsResolvedWithTest', Level.LEVEL1, async () => {
+      let info: PromiseInfo = { res: 'result value' };
+      let p: Promise<PromiseInfo> = Promise.resolve(info);
+      await expect(p).assertPromiseIsResolvedWith(info);
+    })
 
-152. it('test_message', Level.LEVEL1, () => {
-153. expect(1).message('1 is not equal 2!').assertEqual(2); // fail
-154. })
-155. })
-156. }
+    it('test_message', Level.LEVEL1, () => {
+      expect(1).message('1 is not equal 2!').assertEqual(2); // fail
+    })
+  })
+}
 
-158. interface SampleTest {
-159. x: number;
-160. }
+interface SampleTest {
+  x: number;
+}
 
-162. interface PromiseInfo {
-163. res: string;
-164. }
+interface PromiseInfo {
+  res: string;
+}
 ```
 
 ### Mock能力
 
 从@ohos/hypium 1.0.1版本开始，单元测试框架支持Mock能力。配置方式参考上文[发布方式](unittest-guidelines.md#单元测试框架发布方式)。
 
-说明
+**说明** 
 
 仅支持Mock应用工程中自定义对象，不支持Mock系统API对象。如需Mock系统API，请参考[系统模块Mock指南](ide-test-mock.md#section8353132513310)。
 
@@ -709,7 +709,7 @@ ArgumentMatchers用于用户自定义函数参数，当开发者想基于某类�
 | --- | --- |
 | matchRegexs | 设定用户传任何符合正则表达式验证的参数，执行的结果都是预期的值，使用ArgumentMatchers.matchRegexs(Regex)方式调用。 |
 
-说明
+**说明** 
 
 使用Mock能力时必须导入Mock能力模块： MockKit，when，开发者可根据实际需求导入对应模块。
 
@@ -717,506 +717,506 @@ ArgumentMatchers用于用户自定义函数参数，当开发者想基于某类�
 
 **示例代码1**：使用afterReturn/afterReturnNothing设置预期返回值
 
-```
-1. import { describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(arg: string) {
-8. return '888888';
-9. }
-10. }
+  method_1(arg: string) {
+    return '888888';
+  }
+}
 
-12. export default function afterReturnTest() {
-13. describe('afterReturn_sample', () => {
-14. it('afterReturnTest', 0, () => {
-15. // 创建一个Mock能力的对象MockKit
-16. let mocker: MockKit = new MockKit();
-17. // 初始化ClassName的对象claser，作为被Mock的对象实例
-18. let claser: ClassName = new ClassName();
-19. // 进行Mock操作，对ClassName类的method_1函数进行Mock
-20. let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
-21. // 期望claser.method_1函数被Mock后, 以'testA'为入参时调用函数返回结果'1',以'testB''为入参时调用函数返回结果undefined
-22. when(mockfunc)('testA').afterReturn('1');
-23. when(mockfunc)('testB').afterReturnNothing();
-24. // 对Mock后的函数进行断言，看是否符合预期。分别传入参数'testA'和'testB'时，应该返回自定义的预期结果1和undefined
-25. expect(claser.method_1('testA')).assertEqual('1'); // 断言执行通过
-26. expect(claser.method_1('testB')).assertUndefined(); // 断言执行通过
-27. })
-28. })
-29. }
+export default function afterReturnTest() {
+  describe('afterReturn_sample', () => {
+    it('afterReturnTest', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser，作为被Mock的对象实例
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作，对ClassName类的method_1函数进行Mock
+      let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
+      // 期望claser.method_1函数被Mock后, 以'testA'为入参时调用函数返回结果'1',以'testB'为入参时调用函数返回结果undefined
+      when(mockfunc)('testA').afterReturn('1');
+      when(mockfunc)('testB').afterReturnNothing();
+      // 对Mock后的函数进行断言，看是否符合预期。分别传入参数'testA'和'testB'时，应该返回自定义的预期结果1和undefined
+      expect(claser.method_1('testA')).assertEqual('1'); // 断言执行通过
+      expect(claser.method_1('testB')).assertUndefined(); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码2**：使用ArgumentMatchers设定参数类型为any即接受任何参数（undefined和null除外）
 
-```
-1. import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(arg: string) {
-8. return '888888';
-9. }
-10. }
+  method_1(arg: string) {
+    return '888888';
+  }
+}
 
-12. export default function argumentMatchersAnyTest() {
-13. describe('argumentMatchersForAny_sample', () => {
-14. it('testMockfunc', 0, () => {
-15. // 创建一个Mock能力的对象MockKit
-16. let mocker: MockKit = new MockKit();
-17. // 初始化ClassName的对象claser
-18. let claser: ClassName = new ClassName();
-19. // 进行Mock操作，对ClassName类的method_1函数进行Mock
-20. let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
-21. // 期望claser.method_1函数被Mock后, 参数为任一类型在被调用时均返回结果'1'
-22. when(mockfunc)(ArgumentMatchers.any).afterReturn('1');
-23. // 传入不同参数验证是否符合预期
-24. expect(claser.method_1('test')).assertEqual('1'); // 断言执行通过
-25. expect(claser.method_1('123')).assertEqual('1'); // 断言执行通过
-26. expect(claser.method_1('true')).assertEqual('1'); // 断言执行通过
-27. })
-28. })
-29. }
+export default function argumentMatchersAnyTest() {
+  describe('argumentMatchersForAny_sample', () => {
+    it('testMockfunc', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作，对ClassName类的method_1函数进行Mock
+      let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
+      // 期望claser.method_1函数被Mock后, 参数为任一类型在被调用时均返回结果'1'
+      when(mockfunc)(ArgumentMatchers.any).afterReturn('1');
+      // 传入不同参数验证是否符合预期
+      expect(claser.method_1('test')).assertEqual('1'); // 断言执行通过
+      expect(claser.method_1('123')).assertEqual('1'); // 断言执行通过
+      expect(claser.method_1('true')).assertEqual('1'); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码3**：使用ArgumentMatchers设定参数类型为String
 
-```
-1. import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(arg: string) {
-8. return '888888';
-9. }
-10. }
+  method_1(arg: string) {
+    return '888888';
+  }
+}
 
-12. export default function argumentMatchersTest() {
-13. describe('argumentMatchersForString_sample', () => {
-14. it('testMockfunc', 0, () => {
-15. // 创建一个Mock能力的对象MockKit
-16. let mocker: MockKit = new MockKit();
-17. // 初始化ClassName的对象claser
-18. let claser: ClassName = new ClassName();
-19. // 进行Mock操作,对ClassName类的method_1函数进行Mock
-20. let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
-21. // 期望claser.method_1函数被Mock后, 以任何string类型为参数调用函数时返回结果'1'
-22. when(mockfunc)(ArgumentMatchers.anyString).afterReturn('1');
-23. // 传入不同string类型参数，验证是否符合预期
-24. expect(claser.method_1('test')).assertEqual('1'); // 断言执行通过
-25. expect(claser.method_1('abc')).assertEqual('1'); // 断言执行通过
-26. })
-27. })
-28. }
+export default function argumentMatchersTest() {
+  describe('argumentMatchersForString_sample', () => {
+    it('testMockfunc', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作,对ClassName类的method_1函数进行Mock
+      let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
+      // 期望claser.method_1函数被Mock后, 以任何string类型为参数调用函数时返回结果'1'
+      when(mockfunc)(ArgumentMatchers.anyString).afterReturn('1');
+      // 传入不同string类型参数，验证是否符合预期
+      expect(claser.method_1('test')).assertEqual('1'); // 断言执行通过
+      expect(claser.method_1('abc')).assertEqual('1'); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码4**：使用ArgumentMatchers设定参数类型为matchRegexs（Regex）即正则表达式
 
-```
-1. import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(arg: string) {
-8. return '888888';
-9. }
-10. }
+  method_1(arg: string) {
+    return '888888';
+  }
+}
 
-12. export default function matchRegexsTest() {
-13. describe('argumentMatchersForRegex_sample', () => {
-14. it('testMockfunc', 0, () => {
-15. // 创建一个Mock能力的对象MockKit
-16. let mocker: MockKit = new MockKit();
-17. // 初始化ClassName的对象claser
-18. let claser: ClassName = new ClassName();
-19. // 进行Mock操作，对ClassName类的method_1函数进行Mock
-20. let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
-21. // 期望claser.method_1函数被Mock后, 以"test"为入参调用函数时返回结果'1'
-22. when(mockfunc)(ArgumentMatchers.matchRegexs(new RegExp("test"))).afterReturn('1');
-23. // 传入test参数后验证是否符合预期
-24. expect(claser.method_1('test')).assertEqual('1'); // 断言执行通过
-25. })
-26. })
-27. }
+export default function matchRegexsTest() {
+  describe('argumentMatchersForRegex_sample', () => {
+    it('testMockfunc', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作，对ClassName类的method_1函数进行Mock
+      let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
+      // 期望claser.method_1函数被Mock后, 以"test"为入参调用函数时返回结果'1'
+      when(mockfunc)(ArgumentMatchers.matchRegexs(new RegExp("test"))).afterReturn('1');
+      // 传入test参数后验证是否符合预期
+      expect(claser.method_1('test')).assertEqual('1'); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码5**：使用verify函数验证被Mock函数在对应参数下的执行行为是否符合预期
 
-```
-1. import { describe, it, MockKit } from '@ohos/hypium';
+```typescript
+import { describe, it, MockKit } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(...arg: string[]) {
-8. return '888888';
-9. }
+  method_1(...arg: string[]) {
+    return '888888';
+  }
 
-11. method_2(...arg: string[]) {
-12. return '999999';
-13. }
-14. }
+  method_2(...arg: string[]) {
+    return '999999';
+  }
+}
 
-16. export default function verifyTest() {
-17. describe('verify_sample', () => {
-18. it('testMockfunc', 0, () => {
-19. // 创建一个Mock能力的对象MockKit
-20. let mocker: MockKit = new MockKit();
-21. // 初始化ClassName的对象claser
-22. let claser: ClassName = new ClassName();
-23. // 进行Mock操作，对ClassName类的method_1和method_2两个函数进行Mock
-24. mocker.mockFunc(claser, claser.method_1);
-25. mocker.mockFunc(claser, claser.method_2);
-26. // 函数调用
-27. claser.method_1('abc', 'ppp');
-28. claser.method_1('abc');
-29. claser.method_1('xyz');
-30. claser.method_1();
-31. claser.method_1('abc', 'xxx', 'yyy');
-32. claser.method_1();
-33. claser.method_2('111');
-34. claser.method_2('111', '222');
-35. // 对Mock后的两个函数进行验证，验证method_2,参数仅为'111'时执行过一次
-36. mocker.verify('method_2', ['111']).once(); // 断言执行通过
-37. })
-38. })
-39. }
+export default function verifyTest() {
+  describe('verify_sample', () => {
+    it('testMockfunc', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作，对ClassName类的method_1和method_2两个函数进行Mock
+      mocker.mockFunc(claser, claser.method_1);
+      mocker.mockFunc(claser, claser.method_2);
+      // 函数调用
+      claser.method_1('abc', 'ppp');
+      claser.method_1('abc');
+      claser.method_1('xyz');
+      claser.method_1();
+      claser.method_1('abc', 'xxx', 'yyy');
+      claser.method_1();
+      claser.method_2('111');
+      claser.method_2('111', '222');
+      // 对Mock后的两个函数进行验证，验证method_2,参数仅为'111'时执行过一次
+      mocker.verify('method_2', ['111']).once(); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码6**：使用ignoreMock函数还原指定被Mock函数实现
 
-```
-1. import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(...arg: number[]) {
-8. return '888888';
-9. }
+  method_1(...arg: number[]) {
+    return '888888';
+  }
 
-11. method_2(...arg: number[]) {
-12. return '999999';
-13. }
-14. }
+  method_2(...arg: number[]) {
+    return '999999';
+  }
+}
 
-16. export default function ignoreMockTest() {
-17. describe('ignoreMock_sample', () => {
-18. it('testMockfunc', 0, () => {
-19. // 创建一个Mock能力的对象MockKit
-20. let mocker: MockKit = new MockKit();
-21. // 初始化ClassName的对象claser
-22. let claser: ClassName = new ClassName();
-23. // 进行Mock操作，对ClassName类的method_1和method_2两个函数进行Mock
-24. let func_1: Function = mocker.mockFunc(claser, claser.method_1);
-25. let func_2: Function = mocker.mockFunc(claser, claser.method_2);
-26. // 期望claser.method_1函数被Mock后, 以number类型为入参时调用函数返回结果'4'
-27. when(func_1)(ArgumentMatchers.anyNumber).afterReturn('4');
-28. // 期望claser.method_2函数被Mock后, 以number类型为入参时调用函数返回结果'5'
-29. when(func_2)(ArgumentMatchers.anyNumber).afterReturn('5');
-30. // 函数调用
-31. expect(claser.method_1(123)).assertEqual("4");
-32. expect(claser.method_2(456)).assertEqual("5");
-33. // 现在对Mock后的两个函数的其中一个函数method_1进行还原处理
-34. mocker.ignoreMock(claser, claser.method_1);
-35. // 调用claser.method_1函数
-36. expect(claser.method_1(123)).assertEqual('888888'); // 断言执行通过
-37. })
-38. })
-39. }
+export default function ignoreMockTest() {
+  describe('ignoreMock_sample', () => {
+    it('testMockfunc', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作，对ClassName类的method_1和method_2两个函数进行Mock
+      let func_1: Function = mocker.mockFunc(claser, claser.method_1);
+      let func_2: Function = mocker.mockFunc(claser, claser.method_2);
+      // 期望claser.method_1函数被Mock后, 以number类型为入参时调用函数返回结果'4'
+      when(func_1)(ArgumentMatchers.anyNumber).afterReturn('4');
+      // 期望claser.method_2函数被Mock后, 以number类型为入参时调用函数返回结果'5'
+      when(func_2)(ArgumentMatchers.anyNumber).afterReturn('5');
+      // 函数调用
+      expect(claser.method_1(123)).assertEqual("4");
+      expect(claser.method_2(456)).assertEqual("5");
+      // 现在对Mock后的两个函数的其中一个函数method_1进行还原处理
+      mocker.ignoreMock(claser, claser.method_1);
+      // 调用claser.method_1函数
+      expect(claser.method_1(123)).assertEqual('888888'); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码7**：使用clear函数还原类中所有被Mock函数原有实现
 
-```
-1. import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(...arg: number[]) {
-8. return '888888';
-9. }
+  method_1(...arg: number[]) {
+    return '888888';
+  }
 
-11. method_2(...arg: number[]) {
-12. return '999999';
-13. }
-14. }
+  method_2(...arg: number[]) {
+    return '999999';
+  }
+}
 
-16. export default function clearTest() {
-17. describe('clearMock_sample', () => {
-18. it('testMockfunc', 0, () => {
-19. // 创建一个Mock能力的对象MockKit
-20. let mocker: MockKit = new MockKit();
-21. // 初始化ClassName的对象claser
-22. let claser: ClassName = new ClassName();
-23. // 进行Mock操作，对ClassName类的method_1和method_2两个函数进行Mock
-24. let func_1: Function = mocker.mockFunc(claser, claser.method_1);
-25. let func_2: Function = mocker.mockFunc(claser, claser.method_2);
-26. // 期望claser.method_1函数被Mock后, 以任何number类型为参数调用函数时返回结果'4'
-27. when(func_1)(ArgumentMatchers.anyNumber).afterReturn('4');
-28. // 期望claser.method_2函数被Mock后, 以任何number类型为参数调用函数时返回结果'5'
-29. when(func_2)(ArgumentMatchers.anyNumber).afterReturn('5');
-30. // 函数调用
-31. expect(claser.method_1(123)).assertEqual('4');
-32. expect(claser.method_2(123)).assertEqual('5');
-33. // 还原obj上所有的Mock能力
-34. mocker.clear(claser);
-35. // 调用claser.method_1,claser.method_2函数，测试结果
-36. expect(claser.method_1(123)).assertEqual('888888'); // 断言执行通过
-37. expect(claser.method_2(123)).assertEqual('999999'); // 断言执行通过
-38. })
-39. })
-40. }
+export default function clearTest() {
+  describe('clearMock_sample', () => {
+    it('testMockfunc', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作，对ClassName类的method_1和method_2两个函数进行Mock
+      let func_1: Function = mocker.mockFunc(claser, claser.method_1);
+      let func_2: Function = mocker.mockFunc(claser, claser.method_2);
+      // 期望claser.method_1函数被Mock后, 以任何number类型为参数调用函数时返回结果'4'
+      when(func_1)(ArgumentMatchers.anyNumber).afterReturn('4');
+      // 期望claser.method_2函数被Mock后, 以任何number类型为参数调用函数时返回结果'5'
+      when(func_2)(ArgumentMatchers.anyNumber).afterReturn('5');
+      // 函数调用
+      expect(claser.method_1(123)).assertEqual('4');
+      expect(claser.method_2(123)).assertEqual('5');
+      // 还原obj上所有的Mock能力
+      mocker.clear(claser);
+      // 调用claser.method_1,claser.method_2函数，测试结果
+      expect(claser.method_1(123)).assertEqual('888888'); // 断言执行通过
+      expect(claser.method_2(123)).assertEqual('999999'); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码8**：使用afterThrow函数抛出指定异常信息
 
-```
-1. import { describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(arg: string) {
-8. return '888888';
-9. }
-10. }
+  method_1(arg: string) {
+    return '888888';
+  }
+}
 
-12. export default function afterThrowTest() {
-13. describe('afterThrow_sample', () => {
-14. it('testMockfunc', 0, () => {
-15. // 创建一个Mock能力的对象MockKit
-16. let mocker: MockKit = new MockKit();
-17. // 初始化ClassName的对象claser
-18. let claser: ClassName = new ClassName();
-19. // 进行Mock操作,对ClassName类的method_1函数进行Mock
-20. let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
-21. // 期望claser.method_1函数被Mock后, 以'test'为参数调用函数时抛出error xxx异常
-22. when(mockfunc)('test').afterThrow('error xxx');
-23. // 执行Mock后的函数，捕捉异常并使用assertEqual对比msg否符合预期
-24. try {
-25. claser.method_1('test');
-26. } catch (e) {
-27. expect(e).assertEqual('error xxx'); // 断言执行通过
-28. }
-29. })
-30. })
-31. }
+export default function afterThrowTest() {
+  describe('afterThrow_sample', () => {
+    it('testMockfunc', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作,对ClassName类的method_1函数进行Mock
+      let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
+      // 期望claser.method_1函数被Mock后, 以'test'为参数调用函数时抛出error xxx异常
+      when(mockfunc)('test').afterThrow('error xxx');
+      // 执行Mock后的函数，捕捉异常并使用assertEqual对比msg是否符合预期
+      try {
+        claser.method_1('test');
+      } catch (e) {
+        expect(e).assertEqual('error xxx'); // 断言执行通过
+      }
+    })
+  })
+}
 ```
 
 **示例代码9**：Mock异步返回Promise对象
 
-```
-1. import { describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. async method_1(arg: string) {
-8. return new Promise<string>((resolve: Function, reject: Function) => {
-9. setTimeout(() => {
-10. resolve('Data conversion');
-11. }, 2000);
-12. });
-13. }
-14. }
+  async method_1(arg: string) {
+    return new Promise<string>((resolve: Function, reject: Function) => {
+      setTimeout(() => {
+        resolve('Data conversion');
+      }, 2000);
+    });
+  }
+}
 
-16. export default function mockPromiseTest() {
-17. describe('returnPromise_sample', () => {
-18. it('testMockfunc', 0, async (done: Function) => {
-19. // 创建一个Mock能力的对象MockKit
-20. let mocker: MockKit = new MockKit();
-21. // 初始化ClassName的对象claser
-22. let claser: ClassName = new ClassName();
-23. // 进行Mock操作对ClassName类的method_1函数进行Mock
-24. let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
-25. // 期望claser.method_1函数被Mock后, 以'test'为参数调用函数时返回一个Promise对象
-26. when(mockfunc)('test').afterReturn(new Promise<string>((resolve: Function, reject: Function) => {
-27. resolve('success something');
-28. }));
-29. // 执行Mock后的函数，即对定义的Promise进行后续执行
-30. let result = await claser.method_1('test');
-31. expect(result).assertEqual('success something'); // 断言执行通过
-32. done();
-33. })
-34. })
-35. }
+export default function mockPromiseTest() {
+  describe('returnPromise_sample', () => {
+    it('testMockfunc', 0, async (done: Function) => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作对ClassName类的method_1函数进行Mock
+      let mockfunc: Function = mocker.mockFunc(claser, claser.method_1);
+      // 期望claser.method_1函数被Mock后, 以'test'为参数调用函数时返回一个Promise对象
+      when(mockfunc)('test').afterReturn(new Promise<string>((resolve: Function, reject: Function) => {
+        resolve('success something');
+      }));
+      // 执行Mock后的函数，即对定义的Promise进行后续执行
+      let result = await claser.method_1('test');
+      expect(result).assertEqual('success something'); // 断言执行通过
+      done();
+    })
+  })
+}
 ```
 
 **示例代码10**：使用times/atLeast函数验证被Mock函数调用次数
 
-```
-1. import { describe, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { describe, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. method_1(...arg: string[]) {
-8. return '888888';
-9. }
-10. }
+  method_1(...arg: string[]) {
+    return '888888';
+  }
+}
 
-12. export default function verifyTimesTest() {
-13. describe('verifyTimes_sample', () => {
-14. it('test_verify_times', 0, () => {
-15. // 创建一个Mock能力的对象MockKit
-16. let mocker: MockKit = new MockKit();
-17. // 初始化ClassName的对象claser
-18. let claser: ClassName = new ClassName();
-19. // 进行Mock操作对ClassName类的method_1函数进行Mock
-20. let func_1: Function = mocker.mockFunc(claser, claser.method_1);
-21. // 期望被Mock后的函数返回结果'4'
-22. when(func_1)('123').afterReturn('4');
-23. // 函数调用
-24. claser.method_1('123', 'ppp');
-25. claser.method_1('abc');
-26. claser.method_1('xyz');
-27. claser.method_1();
-28. claser.method_1('abc', 'xxx', 'yyy');
-29. claser.method_1('abc');
-30. claser.method_1();
-31. // 验证函数method_1且参数为'abc'时，执行过的次数是否为2
-32. mocker.verify('method_1', ['abc']).times(2); // 断言执行通过
-33. // 验证函数method_1且参数为空时，是否至少执行过2次
-34. mocker.verify('method_1', []).atLeast(2); // 断言执行通过
-35. })
-36. })
-37. }
+export default function verifyTimesTest() {
+  describe('verifyTimes_sample', () => {
+    it('test_verify_times', 0, () => {
+      // 创建一个Mock能力的对象MockKit
+      let mocker: MockKit = new MockKit();
+      // 初始化ClassName的对象claser
+      let claser: ClassName = new ClassName();
+      // 进行Mock操作对ClassName类的method_1函数进行Mock
+      let func_1: Function = mocker.mockFunc(claser, claser.method_1);
+      // 期望被Mock后的函数返回结果'4'
+      when(func_1)('123').afterReturn('4');
+      // 函数调用
+      claser.method_1('123', 'ppp');
+      claser.method_1('abc');
+      claser.method_1('xyz');
+      claser.method_1();
+      claser.method_1('abc', 'xxx', 'yyy');
+      claser.method_1('abc');
+      claser.method_1();
+      // 验证函数method_1且参数为'abc'时，执行过的次数是否为2
+      mocker.verify('method_1', ['abc']).times(2); // 断言执行通过
+      // 验证函数method_1且参数为空时，是否至少执行过2次
+      mocker.verify('method_1', []).atLeast(2); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码11**：Mock静态函数（从@ohos/hypium 1.0.16版本开始支持）
 
-```
-1. import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
+```typescript
+import { ArgumentMatchers, describe, expect, it, MockKit, when } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
+class ClassName {
+  constructor() {
+  }
 
-7. static method_1() {
-8. return 'ClassName_method_1_call';
-9. }
-10. }
+  static method_1() {
+    return 'ClassName_method_1_call';
+  }
+}
 
-12. export default function staticTest() {
-13. describe('mockStatic_sample', () => {
-14. it('staticTest_001', 0, () => {
-15. let really_result = ClassName.method_1();
-16. expect(really_result).assertEqual('ClassName_method_1_call');
-17. // 创建MockKit对象
-18. let mocker: MockKit = new MockKit();
-19. // Mock类ClassName对象的某个函数method_1
-20. let func_1: Function = mocker.mockFunc(ClassName, ClassName.method_1);
-21. // 期望被mock后的函数返回结果'mock_data'
-22. when(func_1)(ArgumentMatchers.any).afterReturn('mock_data');
-23. let mock_result = ClassName.method_1();
-24. expect(mock_result).assertEqual('mock_data'); // 断言执行通过
-25. // 清除Mock能力
-26. mocker.clear(ClassName);
-27. let really_result1 = ClassName.method_1();
-28. expect(really_result1).assertEqual('ClassName_method_1_call'); // 断言执行通过
-29. })
-30. })
-31. }
+export default function staticTest() {
+  describe('mockStatic_sample', () => {
+    it('staticTest_001', 0, () => {
+      let really_result = ClassName.method_1();
+      expect(really_result).assertEqual('ClassName_method_1_call');
+      // 创建MockKit对象
+      let mocker: MockKit = new MockKit();
+      // Mock类ClassName对象的某个函数method_1
+      let func_1: Function = mocker.mockFunc(ClassName, ClassName.method_1);
+      // 期望被mock后的函数返回结果'mock_data'
+      when(func_1)(ArgumentMatchers.any).afterReturn('mock_data');
+      let mock_result = ClassName.method_1();
+      expect(mock_result).assertEqual('mock_data'); // 断言执行通过
+      // 清除Mock能力
+      mocker.clear(ClassName);
+      let really_result1 = ClassName.method_1();
+      expect(really_result1).assertEqual('ClassName_method_1_call'); // 断言执行通过
+    })
+  })
+}
 ```
 
 **示例代码12**：Mock私有函数（从@ohos/hypium 1.0.25版本开始支持）
 
-```
-1. import { describe, it, expect, MockKit, when, ArgumentMatchers } from '@ohos/hypium';
+```typescript
+import { describe, it, expect, MockKit, when, ArgumentMatchers } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
-6. method(arg: number):number {
-7. return this.method_1(arg);
-8. }
-9. private method_1(arg: number) {
-10. return arg;
-11. }
-12. }
+class ClassName {
+  constructor() {
+  }
+  method(arg: number):number {
+    return this.method_1(arg);
+  }
+  private method_1(arg: number) {
+    return arg;
+  }
+}
 
-14. export default function staticTest() {
-15. describe('privateTest', () => {
-16. it('private_001', 0, () => {
-17. let claser: ClassName = new ClassName();
-18. let really_result = claser.method(123);
-19. expect(really_result).assertEqual(123);
-20. // 1.创建MockKit对象
-21. let mocker: MockKit = new MockKit();
-22. // 2.Mock类ClassName对象的私有方法，比如method_1
-23. let func_1: Function = mocker.mockPrivateFunc(claser, "method_1");
-24. // 3.期望被Mock后的函数返回结果为456
-25. when(func_1)(ArgumentMatchers.any).afterReturn(456);
-26. let mock_result = claser.method(123);
-27. expect(mock_result).assertEqual(456);
-28. // 清除Mock能力
-29. mocker.clear(claser);
-30. let really_result1 = claser.method(123);
-31. expect(really_result1).assertEqual(123);
-32. })
-33. })
-34. }
+export default function staticTest() {
+  describe('privateTest', () => {
+    it('private_001', 0, () => {
+      let claser: ClassName = new ClassName();
+      let really_result = claser.method(123);
+      expect(really_result).assertEqual(123);
+      // 1.创建MockKit对象
+      let mocker: MockKit = new MockKit();
+      // 2.Mock类ClassName对象的私有方法，比如method_1
+      let func_1: Function = mocker.mockPrivateFunc(claser, "method_1");
+      // 3.期望被Mock后的函数返回结果为456
+      when(func_1)(ArgumentMatchers.any).afterReturn(456);
+      let mock_result = claser.method(123);
+      expect(mock_result).assertEqual(456);
+      // 清除Mock能力
+      mocker.clear(claser);
+      let really_result1 = claser.method(123);
+      expect(really_result1).assertEqual(123);
+    })
+  })
+}
 ```
 
 **示例代码13**：Mock成员变量（从@ohos/hypium 1.0.25版本开始支持）
 
-```
-1. import { describe, it, expect, MockKit, when, ArgumentMatchers } from '@ohos/hypium';
+```typescript
+import { describe, it, expect, MockKit, when, ArgumentMatchers } from '@ohos/hypium';
 
-3. class ClassName {
-4. constructor() {
-5. }
-6. data = 1;
-7. private priData = 2;
-8. method() {
-9. return this.priData;
-10. }
-11. }
+class ClassName {
+  constructor() {
+  }
+  data = 1;
+  private priData = 2;
+  method() {
+    return this.priData;
+  }
+}
 
-13. export default function staticTest() {
-14. describe('propertyTest', () => {
-15. it('property_001', 0, () => {
-16. let claser: ClassName = new ClassName();
-17. let data = claser.data;
-18. expect(data).assertEqual(1);
-19. let priData = claser.method();
-20. expect(priData).assertEqual(2);
-21. // 1.创建MockKit对象
-22. let mocker: MockKit = new MockKit();
-23. // 2.Mock类ClassName对象的成员变量data
-24. mocker.mockProperty(claser, "data", 3);
-25. mocker.mockProperty(claser, "priData", 4);
-26. // 3.期望被Mock后的成员和私有成员的值分别为3，4
-27. let mock_result = claser.data;
-28. let mock_private_result = claser.method();
-29. expect(mock_result).assertEqual(3);
-30. expect(mock_private_result).assertEqual(4);
-31. // 清除Mock能力
-32. mocker.ignoreMock(claser, "data");
-33. mocker.ignoreMock(claser, "priData");
-34. let really_result = claser.data;
-35. expect(really_result).assertEqual(1);
-36. let really_private_result = claser.method();
-37. expect(really_private_result).assertEqual(2);
-38. })
-39. })
-40. }
+export default function staticTest() {
+  describe('propertyTest', () => {
+    it('property_001', 0, () => {
+      let claser: ClassName = new ClassName();
+      let data = claser.data;
+      expect(data).assertEqual(1);
+      let priData = claser.method();
+      expect(priData).assertEqual(2);
+      // 1.创建MockKit对象
+      let mocker: MockKit = new MockKit();
+      // 2.Mock类ClassName对象的成员变量data
+      mocker.mockProperty(claser, "data", 3);
+      mocker.mockProperty(claser, "priData", 4);
+      // 3.期望被Mock后的成员和私有成员的值分别为3，4
+      let mock_result = claser.data;
+      let mock_private_result = claser.method();
+      expect(mock_result).assertEqual(3);
+      expect(mock_private_result).assertEqual(4);
+      // 清除Mock能力
+      mocker.ignoreMock(claser, "data");
+      mocker.ignoreMock(claser, "priData");
+      let really_result = claser.data;
+      expect(really_result).assertEqual(1);
+      let really_private_result = claser.method();
+      expect(really_private_result).assertEqual(2);
+    })
+  })
+}
 ```
 
 ### 数据驱动
@@ -1225,36 +1225,36 @@ ArgumentMatchers用于用户自定义函数参数，当开发者想基于某类�
 
 数据驱动能力可以根据测试数据配置来驱动测试用例的执行次数和每次执行时传入的参数，使用时依赖data.json配置文件，文件内容如下：
 
-说明
+**说明** 
 
 data.json与测试用例\*.test.js或\*.test.ets文件同目录。
 
 data.json文件中的参数配置名称需同测试用例中定义参数名称保持一致。
 
-```
-1. {
-2. "suites": [{
-3. "describe": ["paramExampleTest"],
-4. "stress": 4,
-5. "params": {
-6. "suiteParams1": "suiteParams001",
-7. "suiteParams2": "suiteParams002"
-8. },
-9. "items": [{
-10. "it": "testDataDriverAsync"
-11. },
-12. {
-13. "it": "testDataDriverParam",
-14. "stress": 2,
-15. "params":[
-16. {
-17. "ts1": "ts1",
-18. "ts2": "ts2"
-19. }
-20. ]
-21. }]
-22. }]
-23. }
+```json
+{
+  "suites": [{
+    "describe": ["paramExampleTest"],
+    "stress": 4,
+    "params": {
+      "suiteParams1": "suiteParams001",
+      "suiteParams2": "suiteParams002"
+    },
+    "items": [{
+      "it": "testDataDriverAsync"
+    },
+      {
+        "it": "testDataDriverParam",
+        "stress": 2,
+        "params":[
+          {
+            "ts1": "ts1",
+            "ts2": "ts2"
+          }
+        ]
+      }]
+  }]
+}
 ```
 
 配置参数说明：
@@ -1272,52 +1272,52 @@ data.json文件中的参数配置名称需同测试用例中定义参数名称�
 
 Stage模型在测试工程中的TestAbility目录下TestAbility.ets文件中导入data.json（FA模型在测试工程中的TestAbility目录下的app.js或app.ets文件中导入data.json），并在文件中的Hypium.hypiumTest()函数执行前设置参数数据，参考下面示例代码。
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { abilityDelegatorRegistry } from '@kit.TestKit';
-3. import { Hypium } from '@ohos/hypium';
-4. import testsuite from '../test/List.test';
-5. import data from '../test/data.json';
-6. import Logger from '../util/Logger';
-7. import { window } from '@kit.ArkUI';
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { Hypium } from '@ohos/hypium';
+import testsuite from '../test/List.test';
+import data from '../test/data.json';
+import Logger from '../util/Logger';
+import { window } from '@kit.ArkUI';
 
-9. const TAG = 'testTag';
+const TAG = 'testTag';
 
-11. export default class TestAbility extends UIAbility {
-12. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-13. Logger.info(TAG, 'TestAbility onCreate');
-14. Logger.info(TAG, 'want param:' + JSON.stringify(want));
-15. Logger.info(TAG, 'launchParam:' + JSON.stringify(launchParam));
-16. let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-17. let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
-18. Logger.info(TAG, 'start run testcase!!!');
-19. // 设置数据
-20. Hypium.setData(data);
-21. Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-22. }
-```
-
-```
-1. import { describe, it } from '@ohos/hypium';
-
-3. export default function abilityTest() {
-4. describe('AbilityTest', () => {
-5. it('testDataDriverAsync', 0, async (done: Function, data: ParamObj) => {
-6. done();
-7. });
-
-9. it('testDataDriver', 0, () => {
-10. });
-11. })
-12. }
-
-14. interface ParamObj {
-15. name: string,
-16. value: string
-17. }
+export default class TestAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    Logger.info(TAG, 'TestAbility onCreate');
+    Logger.info(TAG, 'want param:' + JSON.stringify(want));
+    Logger.info(TAG, 'launchParam:' + JSON.stringify(launchParam));
+    let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+    let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
+    Logger.info(TAG, 'start run testcase!!!');
+    // 设置数据
+    Hypium.setData(data);
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+  }
 ```
 
-说明
+```typescript
+import { describe, it } from '@ohos/hypium';
+
+export default function abilityTest() {
+  describe('AbilityTest', () => {
+    it('testDataDriverAsync', 0, async (done: Function, data: ParamObj) => {
+      done();
+    });
+
+    it('testDataDriver', 0, () => {
+    });
+  })
+}
+
+interface ParamObj {
+  name: string,
+  value: string
+}
+```
+
+**说明** 
 
 若要使用数据驱动传入参数功能，测试用例it的func必须传入两个参数：done和data，且入参顺序不可调整。若不使用数据驱动传入参数功能，func可以不传参或仅传入done。
 

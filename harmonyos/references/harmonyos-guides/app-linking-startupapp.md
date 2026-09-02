@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-s
 title: 通过App Linking应用链接拉起指定应用
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过App Linking应用链接拉起指定应用
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:829c15aec61842bdad2079470b89ba4ca6e65563cd6fbad422c019020fc0527d
+scraped_at: 2026-09-02T14:59:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9e844631386108028488d098a49fab7b5c46501bf6d9016bdaccbddf11758155
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:829c15aec61842bdad2079470b89ba4ca6e65563cd6fbad422c019020fc
 
 例如：当开发者使用App Linking应用链接接入“扫码直达”服务后，用户可通过控制中心扫一扫这类系统级扫码入口，扫描应用的二维码、条形码并跳转到应用对应服务页，实现一步直达的体验。
 
-说明
+**说明** 
 
 该能力目前仅适用于5.0.0(12)及以上版本的HarmonyOS应用，如果开发的是元服务，请参考[使用元服务链接跳转元服务](../atomic-guides/atomic-applinking.md)。
 
@@ -51,24 +51,24 @@ content_hash: sha256:829c15aec61842bdad2079470b89ba4ca6e65563cd6fbad422c019020fc
 
 1. 创建域名配置文件applinking.json，内容如下：
 
-   ```
-   1. {
-   2. "applinking": {
-   3. "apps": [
-   4. {
-   5. "appIdentifier": "1234567",
-   6. "index": 1
-   7. },
-   8. {
-   9. "appIdentifier": "7654321",
-   10. "index": 2
-   11. }
-   12. ]
-   13. }
-   14. }
+   ```typescript
+   {
+    "applinking": {
+      "apps": [
+        {
+          "appIdentifier": "1234567",
+          "index": 1
+        },
+        {
+          "appIdentifier": "7654321",
+          "index": 2
+        }
+      ]
+    }
+   }
    ```
 
-   说明
+   **说明** 
 
    同一个网站域名可以关联多个应用，只需要在"apps"列表里放置多个"appIdentifier"元素即可，其中每个"appIdentifier"元素对应每个应用。
 
@@ -88,31 +88,31 @@ content_hash: sha256:829c15aec61842bdad2079470b89ba4ca6e65563cd6fbad422c019020fc
 2. 在项目列表中点击HarmonyOS应用所在的项目。
 3. 在左侧导航栏中选择“增长 > App Linking > 应用链接”，点击“创建”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ttVy_BisSY-Y78Di1nAecw/zh-cn_image_0000002558605644.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/1UqumWkgSJW2FVPL--r7Pw/zh-cn_image_0000002736313923.png)
 4. 填写[建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)的网址域名，例如：https://www.example.com。必须输入精确的域名，不可输入包含特殊字符的模糊网址。
 
-   说明
+   **说明** 
 
    不可以在域名后面添加/，即不支持https://www.example.com/形式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/KjQx2NUsRV2s0Mb5x4cyiQ/zh-cn_image_0000002589325171.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Et6lAcYdS9eAJfKqxs_Rqg/zh-cn_image_0000002706674880.png)
 5. 设置完成后点击“发布”，AGC会对该网站域名的配置文件所包含的应用与本项目内的应用列表进行交集校验。
 
-   说明
+   **说明** 
 
    应用链接发布完成后，如果距离上次更新超过24小时，系统会去域名服务器上重新获取配置文件进行交集校验。
 
    例如：开发者在4月7日17:21创建了应用链接，系统会在4月8日17:30去域名服务器上重新获取配置文件，然后进行交集校验，更新发布状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/NKaTX7C2RgmT5Ml59-YILg/zh-cn_image_0000002589245107.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/y-u5Oj1GQJOTMyBzCIJdLQ/zh-cn_image_0000002736433967.png)
 
    * 如果域名的配置文件中存在本项目中的应用，则发布成功，点击“查看”可显示该域名关联的应用信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/GE6X9szPREyi5jAmtQWNMQ/zh-cn_image_0000002558765302.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/jlIOCAyjSWKuSbOnY06ZBQ/zh-cn_image_0000002706834818.png)
    * 如果还在校验中，则状态为“发布中”。
    * 如果配置文件中没有包含任何本项目中的应用，则发布失败，点击“查看”可显示发布失败原因。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/NcT4TENTR9yd6EXKRuGqOw/zh-cn_image_0000002558605646.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/gikTRhcSTpiiUAf3JKWmyg/zh-cn_image_0000002736313925.png)
 
 ### 在module.json5中配置关联的网址域名
 
@@ -123,7 +123,7 @@ content_hash: sha256:829c15aec61842bdad2079470b89ba4ca6e65563cd6fbad422c019020fc
 * "uris"列表中必须包含"scheme"为"https"且"host"为域名地址的元素，可选属性包含"path"、"pathStartWith"和"pathRegex"，具体请参见“[uris标签说明](app-uri-config.md#uris标签说明)”。
 * "domainVerify"设置为true，表示开启域名校验开关。
 
-说明
+**说明** 
 
 skills标签下默认包含一个skill对象，用于标识应用入口。应用跳转链接不能在该skill对象中配置，需要创建独立的skill对象。
 
@@ -131,96 +131,101 @@ skills标签下默认包含一个skill对象，用于标识应用入口。应用
 
 例如，声明应用关联的域名是www.example.com，则需进行如下配置。
 
-```
-1. {
-2. "module": {
-3. "abilities": [
-4. {
-5. "name": "EntryAbility",
-6. "srcEntry": "./ets/entryability/EntryAbility.ets",
-7. "icon": "$media:icon",
-8. "label": "$string:EntryAbility_label",
-9. // 请将exported配置为true；如果exported为false，仅具有权限的系统应用能够拉起该应用，否则无法拉起应用
-10. "exported": true,
-11. "startWindowIcon": "$media:icon",
-12. "startWindowBackground": "$color:start_window_background",
-13. "skills": [
-14. {
-15. "entities": [
-16. "entity.system.home"
-17. ],
-18. "actions": [
-19. // 从5.1.1(19)开始，须配置为"ohos.want.action.home"。对于5.1.0(18)及之前版本，请配置为"action.system.home"。
-20. "ohos.want.action.home"
-21. ]
-22. },
-23. {
-24. "entities": [
-25. // entities必须包含"entity.system.browsable"
-26. "entity.system.browsable"
-27. ],
-28. "actions": [
-29. // actions必须包含"ohos.want.action.viewData"
-30. "ohos.want.action.viewData"
-31. ],
-32. "uris": [
-33. {
-34. // scheme须配置为https
-35. "scheme": "https",
-36. // host须配置为关联的网址域名
-37. "host": "www.example.com",
-38. // path可选，表示域名服务器上的目录或文件路径，例如www.example.com/path1中的path1
-39. // 如果应用只能处理部分特定的path，则此处应该配置应用所支持的path，避免出现应用不能处理的path链接也被引流到应用中的问题
-40. "path": "path1"
-41. }
-42. ],
-43. // domainVerify须设置为true
-44. "domainVerify": true
-45. }
-46. // 若有其他跳转能力，如推送消息跳转、NFC跳转，可新增一个skill对象，防止与App Linking业务冲突
-47. ]
-48. }
-49. ]
-50. }
-51. }
+```typescript
+{
+  "module": {
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "icon": "$media:icon",
+        "label": "$string:EntryAbility_label",
+        // 请将exported配置为true；如果exported为false，仅具有权限的系统应用能够拉起该应用，否则无法拉起应用
+        "exported": true,
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              // 从5.1.1(19)开始，须配置为"ohos.want.action.home"。对于5.1.0(18)及之前版本，请配置为"action.system.home"。
+              "ohos.want.action.home"
+            ]
+          },
+          {
+            "entities": [
+              // entities必须包含"entity.system.browsable"
+              "entity.system.browsable"
+            ],
+            "actions": [
+              // actions必须包含"ohos.want.action.viewData"
+              "ohos.want.action.viewData"
+            ],
+            "uris": [
+              {
+                // scheme须配置为https
+                "scheme": "https",
+                // host须配置为关联的网址域名
+                "host": "www.example.com",
+                // path可选，表示域名服务器上的目录或文件路径，例如www.example.com/path1中的path1
+                // 如果应用只能处理部分特定的path，则此处应该配置应用所支持的path，避免出现应用不能处理的path链接也被引流到应用中的问题
+                "path": "path1"
+              }
+            ],
+            // domainVerify须设置为true
+           "domainVerify": true
+          }
+          // 若有其他跳转能力，如推送消息跳转、NFC跳转，可新增一个skill对象，防止与App Linking业务冲突
+        ]
+      }
+    ]
+  }
+}
 ```
 
 ### 处理传入的链接
 
 在应用的Ability（如EntryAbility）的onCreate()或者onNewWant()生命周期回调中添加如下代码，以处理传入的链接。
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { url } from '@kit.ArkTS';
-4. export default class EntryAbility extends UIAbility {
-5. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-6. // 从want中获取传入的链接信息。
-7. // 如传入的url为：https://www.example.com/programs?action=showall
-8. let uri = want?.uri;
-9. if (uri) {
-10. // 从链接中解析query参数，拿到参数后，开发者可根据自己的业务需求进行后续的处理。
-11. try {
-12. let urlObject = url.URL.parseURL(want?.uri);
-13. let action = urlObject.params.get('action');
-14. // 例如，当action为showall时，展示所有的节目。
-15. if (action === "showall"){
-16. // ...
-17. }
-18. // ...
-19. } catch (error) {
-20. hilog.error(0x0000, 'testTag', `Failed to parse url.`);
-21. }
-22. }
-23. }
-24. }
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { url } from '@kit.ArkTS';
+// ...
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    // ...
+    // 从want中获取传入的链接信息。
+    // 如传入的url为：https://example.drcn.agconnect.link/AIYx?action=showall，开发者可根据自己的业务需求进行后续的处理。
+    let uri = want?.uri;
+    if (uri) {
+      // 从链接中解析query参数，拿到参数后，开发者可根据自己的业务需求进行后续的处理。
+      try {
+        let urlObject = url.URL.parseURL(uri);
+        let action = urlObject.params.get('action');
+        // 例如，当action为showall时，展示所有的节目。
+        if (action === 'showall') {
+          // ...
+        }
+        // ...
+      } catch (error) {
+        hilog.error(0x0000, 'testTag', 'Failed to parse url.');
+      }
+      // ...
+    }
+  }
+  // ...
+}
 ```
 
 若要根据链接参数启动UIAbility的指定页面组件，请参考“[启动UIAbility的指定页面](uiability-intra-device-interaction.md#启动uiability的指定页面)”。
 
 ## 验证应用被拉起效果
 
-1. 对应用进行[手动签名](ide-signing.md#section297715173233)。
+1. 对应用进行[手动签名](ide-signing-manual.md)。
 
    不能使用DevEco Studio的自动签名功能，必须使用手动签名，否则无法拉起应用。
 2. 编译打包，并安装应用至调试设备。
@@ -256,51 +261,59 @@ openLink接口提供了两种拉起目标应用的方式，开发者可根据业
 
 1. 在“entry/src/main/ets/common”目录下添加GlobalContext.ets文件，开发初始化和获取应用上下文的接口。
 
-   ```
-   1. import { common } from '@kit.AbilityKit';
+   ```typescript
+   import { common } from '@kit.AbilityKit';
 
-   3. export class GlobalContext {
-   4. private static context: common.UIAbilityContext;
+   export class GlobalContext {
+     private static context: common.UIAbilityContext;
 
-   6. public static initContext(context: common.UIAbilityContext): void {
-   7. GlobalContext.context = context;
-   8. }
+     public static initContext(context: common.UIAbilityContext): void {
+       GlobalContext.context = context;
+     }
 
-   10. public static getContext(): common.UIAbilityContext {
-   11. return GlobalContext.context;
-   12. }
-   13. }
+     public static getContext(): common.UIAbilityContext {
+       return GlobalContext.context;
+     }
+   }
    ```
 2. 在“entry/src/main/ets/entryability/EntryAbility.ets”文件中导入GlobalContext，在onCreate方法中使用GlobalContext.initContext(this.context)初始化全局应用上下文。
 3. 在“entry/src/main/ets/pages/Index.ets”文件中，使用[UIAbilityContext.openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口打开应用。
 
-   ```
-   1. import { hilog } from '@kit.PerformanceAnalysisKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { GlobalContext } from '../common/GlobalContext';
+   ```typescript
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { GlobalContext } from '../common/GlobalContext';
+   // ...
 
-   5. @Entry
-   6. @Component
-   7. struct Index {
-   8. build() {
-   9. Button('start link', { type: ButtonType.Capsule, stateEffect: true })
-   10. .width('87%')
-   11. .height('5%')
-   12. .margin({ bottom: '12vp' })
-   13. .onClick(() => {
-   14. let context = GlobalContext.getContext();
-   15. let link: string = "https://www.example.com/programs?action=showall";
-   16. // 仅以App Linking的方式打开应用
-   17. context.openLink(link, { appLinkingOnly: true })
-   18. .then(() => {
-   19. hilog.info(0x0000, 'testTag', `Succeeded in opening link.`);
-   20. })
-   21. .catch((error: BusinessError) => {
-   22. hilog.error(0x0000, 'testTag', `Failed to open link, code: ${error.code}, message: ${error.message}`);
-   23. })
-   24. })
-   25. }
-   26. }
+   @Entry
+   @Component
+   struct Index {
+     // ...
+
+     build() {
+       // ...
+
+         Button('start link', { type: ButtonType.Capsule, stateEffect: true })
+           .width('100%')
+           .height(40)
+           .margin({ top: '20vp' })
+           .onClick(() => {
+             let context = GlobalContext.getContext();
+             let link: string = 'https://www.example.com/programs?action=showall';
+             // 仅以App Linking的方式打开应用
+             context.openLink(link, { appLinkingOnly: true })
+               .then(() => {
+                 hilog.info(0x0000, 'testTag', `Succeeded in opening link.`);
+               })
+               .catch((error: BusinessError) => {
+                 hilog.error(0x0000, 'testTag', `Failed to open link, code: ${error.code}, message: ${error.message}`);
+               })
+           })
+         // ...
+     }
+
+     // ...
+   }
    ```
 
 ### 通过系统浏览器或ArkWeb拉起
@@ -314,7 +327,7 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
 
 通过系统级扫码入口扫描App Linking应用链接对应的二维码，然后查看跳转效果。以“扫码直达”服务的美团单车场景为例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/SrBSYMwZTyWPLp6YkVixNQ/zh-cn_image_0000002589325173.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/aMlZX6EPSoW7QXSIO-ZdkA/zh-cn_image_0000002706674882.gif)
 
 ## FAQ
 
@@ -344,11 +357,11 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
 
 运行hidumper命令后，即可在控制台上看到success消息。
 
-```
-1. BundleName:
-2. appIdentifier:123456789
-3. domain verify status:
-4. https://www.example.com:success
+```txt
+BundleName:
+  appIdentifier:123456789
+   domain verify status:
+    https://www.example.com:success
 ```
 
 * 如果存在client-error消息，请按照以下步骤排查：

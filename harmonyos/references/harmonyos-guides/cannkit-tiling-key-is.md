@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tilin
 title: TILING_KEY_IS
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > Kernel Tiling > TILING_KEY_IS
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:31+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:676f3632dd14b306adc010e617b1cada8791820c026c6bac6430cbce5effae08
+scraped_at: 2026-09-02T14:50:37+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:6c39260b86830efc35f51ffd6cbd380e8bc0eaf9ddf52fcc0a2c27f2babc7b79
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:676f3632dd14b306adc010e617b1cada8791820c026c6bac6430cbce5ef
 
 ## 函数原型
 
-```
-1. TILING_KEY_IS(key)
+```cpp
+TILING_KEY_IS(key)
 ```
 
 ## 参数说明
@@ -32,41 +32,41 @@ content_hash: sha256:676f3632dd14b306adc010e617b1cada8791820c026c6bac6430cbce5ef
 
 ## 调用示例
 
-```
-1. extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t *x, __gm__ uint8_t *y, __gm__ uint8_t *z, __gm__ uint8_t *workspace, __gm__ uint8_t *tiling)
-2. {
-3. GET_TILING_DATA(tilingData, tiling);
-4. if (workspace == nullptr) {
-5. return;
-6. }
-7. KernelAdd op;
-8. op.Init(x, y, z, tilingData.blockDim, tilingData.totalLength, tilingData.tileNum);
-9. // 当TilingKey为1时，执行Process1；为2时，执行Process2；为3时，执行Process3
-10. if (TILING_KEY_IS(1)) {
-11. op.Process1();
-12. } else if (TILING_KEY_IS(2)) {
-13. op.Process2();
-14. } else if (TILING_KEY_IS(3)) {
-15. op.Process3();
-16. }
-17. // 其他代码逻辑
-18. // ...
-19. // 此处示例当TilingKey为3时，会执行ProcessOther
-20. if (TILING_KEY_IS(3)) {
-21. op.ProcessOther();
-22. }
-23. }
-24. // 配套的host侧tiling函数示例：
-25. ge::graphStatus TilingFunc(gert::TilingContext* context)
-26. {
-27. // 其他代码逻辑
-28. // ...
-29. if (context->GetInputShape(0) > 10) {
-30. context->SetTilingKey(1);
-31. } else if (some condition) {
-32. context->SetTilingKey(2);
-33. } else if (some condition) {
-34. context->SetTilingKey(3);
-35. }
-36. }
+```cpp
+extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t *x, __gm__ uint8_t *y, __gm__ uint8_t *z, __gm__ uint8_t *workspace, __gm__ uint8_t *tiling)
+{
+    GET_TILING_DATA(tilingData, tiling);
+    if (workspace == nullptr) {
+        return;
+    }
+    KernelAdd op;
+    op.Init(x, y, z, tilingData.blockDim, tilingData.totalLength, tilingData.tileNum);
+    // 当TilingKey为1时，执行Process1；为2时，执行Process2；为3时，执行Process3
+    if (TILING_KEY_IS(1)) {
+        op.Process1();
+    } else if (TILING_KEY_IS(2)) {
+        op.Process2();
+    } else if (TILING_KEY_IS(3)) {
+        op.Process3();
+    }
+    // 其他代码逻辑
+    // ...
+    // 此处示例当TilingKey为3时，会执行ProcessOther
+    if (TILING_KEY_IS(3)) {
+        op.ProcessOther();
+    }
+}
+// 配套的host侧tiling函数示例：
+ge::graphStatus TilingFunc(gert::TilingContext* context)
+{
+    // 其他代码逻辑
+    // ...
+    if (context->GetInputShape(0) != nullptr && context->GetInputShape(0)->GetDims().size() > 10) {
+        context->SetTilingKey(1);
+    } else if (some condition) {
+        context->SetTilingKey(2);
+    } else if (some condition) {
+        context->SetTilingKey(3);
+    }
+}
 ```

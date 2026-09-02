@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-want
 title: want.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > want.h
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a8d590f881f25db76642a3e39f62f0ceb5fd11ee592dc42201b97921f93fc048
+scraped_at: 2026-09-02T15:00:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ce9e41679fefcce6d9078df27c38d1d480c33689416cbca0088093deea518716
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 Want是对象间信息传递的载体，可以用于应用组件间的信息传递。 Want的使用场景之一是作为startAbility的参数，其包含了指定的启动目标，以及启动时需携带的相关数据，如bundleName和abilityName字段分别指明目标Ability所在应用的Bundle名称以及对应包内的Ability名称。当Ability A需要启动Ability B并传入一些数据时，可使用Want作为载体将这些数据传递给Ability B。
 
@@ -26,11 +24,7 @@ Want是对象间信息传递的载体，可以用于应用组件间的信息传�
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -39,8 +33,6 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want\* OH\_AbilityBase\_CreateWant(AbilityBase\_Element element)](capi-want-h.md#oh_abilitybase_createwant) | 创建Want。 |
@@ -48,11 +40,11 @@ PhonePC/2in1TabletTVWearable
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_SetWantElement(AbilityBase\_Want\* want, AbilityBase\_Element element)](capi-want-h.md#oh_abilitybase_setwantelement) | 设置Want中由bundleName、moduleName与abilityName组成的Element结构体。 |
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_GetWantElement(AbilityBase\_Want\* want, AbilityBase\_Element\* element)](capi-want-h.md#oh_abilitybase_getwantelement) | 获取Want中由bundleName、moduleName与abilityName组成的Element结构体。 |
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_SetWantCharParam(AbilityBase\_Want\* want, const char\* key, const char\* value)](capi-want-h.md#oh_abilitybase_setwantcharparam) | 设置Want Param参数。 |
-| [AbilityBase\_ErrorCode OH\_AbilityBase\_GetWantCharParam(AbilityBase\_Want\* want, const char\* key,char\* value, size\_t valueSize)](capi-want-h.md#oh_abilitybase_getwantcharparam) | 获取Want Param参数。 |
+| [AbilityBase\_ErrorCode OH\_AbilityBase\_GetWantCharParam(AbilityBase\_Want\* want, const char\* key, char\* value, size\_t valueSize)](capi-want-h.md#oh_abilitybase_getwantcharparam) | 获取Want Param参数。 |
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_AddWantFd(AbilityBase\_Want\* want, const char\* key, int32\_t fd)](capi-want-h.md#oh_abilitybase_addwantfd) | 添加Want文件描述符。 |
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_GetWantFd(AbilityBase\_Want\* want, const char\* key, int32\_t\* fd)](capi-want-h.md#oh_abilitybase_getwantfd) | 获取Want文件描述符。 |
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_SetWantUri(AbilityBase\_Want\* want, const char\* uri)](capi-want-h.md#oh_abilitybase_setwanturi) | 设置Want中URI字符串。 |
-| [AbilityBase\_ErrorCode OH\_AbilityBase\_GetWantUri(AbilityBase\_Want\* want, char\* uri, size\_t uriSize)](capi-want-h.md#oh_abilitybase_getwanturi) | 获取Want中URI字符串。URI可参考[Want中uri描述](js-apis-app-ability-want.md)。 |
+| [AbilityBase\_ErrorCode OH\_AbilityBase\_GetWantUri(AbilityBase\_Want\* want, char\* uri, size\_t uriSize)](capi-want-h.md#oh_abilitybase_getwanturi) | 获取Want中URI字符串。URI可参考[Want](js-apis-app-ability-want.md#want)中的uri描述。 |
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_SetWantInt32Param(AbilityBase\_Want\* want, const char\* key, int32\_t value)](capi-want-h.md#oh_abilitybase_setwantint32param) | 设置Want中int32\_t类型的值。 |
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_GetWantInt32Param(AbilityBase\_Want\* want, const char\* key, int32\_t\* value)](capi-want-h.md#oh_abilitybase_getwantint32param) | 获取Want中int32\_t类型的值。 |
 | [AbilityBase\_ErrorCode OH\_AbilityBase\_SetWantBoolParam(AbilityBase\_Want\* want, const char\* key, bool value)](capi-want-h.md#oh_abilitybase_setwantboolparam) | 设置Want中bool类型的值。 |
@@ -62,14 +54,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AbilityBase\_CreateWant()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_Want* OH_AbilityBase_CreateWant(AbilityBase_Element element)
+```c
+AbilityBase_Want* OH_AbilityBase_CreateWant(AbilityBase_Element element)
 ```
 
 **描述**
@@ -92,10 +80,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_DestroyWant()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_DestroyWant(AbilityBase_Want* want)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_DestroyWant(AbilityBase_Want* want)
 ```
 
 **描述**
@@ -118,10 +104,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_SetWantElement()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_SetWantElement(AbilityBase_Want* want, AbilityBase_Element element)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_SetWantElement(AbilityBase_Want* want, AbilityBase_Element element)
 ```
 
 **描述**
@@ -145,10 +129,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_GetWantElement()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_GetWantElement(AbilityBase_Want* want, AbilityBase_Element* element)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_GetWantElement(AbilityBase_Want* want, AbilityBase_Element* element)
 ```
 
 **描述**
@@ -172,10 +154,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_SetWantCharParam()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_SetWantCharParam(AbilityBase_Want* want, const char* key, const char* value)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_SetWantCharParam(AbilityBase_Want* want, const char* key, const char* value)
 ```
 
 **描述**
@@ -189,7 +169,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中字符串参数索引。 |
+| const char\* key | Want中字符串参数键名。 |
 | const char\* value | Want中字符串。 |
 
 **返回：**
@@ -200,10 +180,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_GetWantCharParam()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, const char* key,char* value, size_t valueSize)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_GetWantCharParam(AbilityBase_Want* want, const char* key, char* value, size_t valueSize)
 ```
 
 **描述**
@@ -217,7 +195,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中字符串参数索引。 |
+| const char\* key | Want中字符串参数键名。 |
 | char\* value | Want中字符串。 |
 | size\_t valueSize | value字符串长度。如果valueSize小于实际需要获取的value长度，则会报[ABILITY\_BASE\_ERROR\_CODE\_PARAM\_INVALID](capi-ability-base-common-h.md#abilitybase_errorcode)错误。 |
 
@@ -229,10 +207,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_AddWantFd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_AddWantFd(AbilityBase_Want* want, const char* key, int32_t fd)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_AddWantFd(AbilityBase_Want* want, const char* key, int32_t fd)
 ```
 
 **描述**
@@ -246,7 +222,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中字符串参数索引。 |
+| const char\* key | Want中字符串参数键名。 |
 | int32\_t fd | 文件描述符，可通过[fileIo.open](js-apis-file-fs.md#fileioopen)获取。 |
 
 **返回：**
@@ -257,10 +233,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_GetWantFd()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_GetWantFd(AbilityBase_Want* want, const char* key, int32_t* fd)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_GetWantFd(AbilityBase_Want* want, const char* key, int32_t* fd)
 ```
 
 **描述**
@@ -274,7 +248,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中字符串参数索引。 |
+| const char\* key | Want中字符串参数键名。 |
 | int32\_t\* fd | 文件描述符。 |
 
 **返回：**
@@ -285,10 +259,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_SetWantUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_SetWantUri(AbilityBase_Want* want, const char* uri)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_SetWantUri(AbilityBase_Want* want, const char* uri)
 ```
 
 **描述**
@@ -312,10 +284,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_GetWantUri()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_GetWantUri(AbilityBase_Want* want, char* uri, size_t uriSize)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_GetWantUri(AbilityBase_Want* want, char* uri, size_t uriSize)
 ```
 
 **描述**
@@ -340,10 +310,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_SetWantInt32Param()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_SetWantInt32Param(AbilityBase_Want* want, const char* key, int32_t value)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_SetWantInt32Param(AbilityBase_Want* want, const char* key, int32_t value)
 ```
 
 **描述**
@@ -357,7 +325,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中int32\_t类型值的参数索引。 |
+| const char\* key | Want中int32\_t类型值的参数键名。 |
 | int32\_t value | Want中int32\_t类型的值。 |
 
 **返回：**
@@ -368,10 +336,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_GetWantInt32Param()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_GetWantInt32Param(AbilityBase_Want* want, const char* key, int32_t* value)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_GetWantInt32Param(AbilityBase_Want* want, const char* key, int32_t* value)
 ```
 
 **描述**
@@ -385,7 +351,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中int32\_t类型值的参数索引。 |
+| const char\* key | Want中int32\_t类型值的参数键名。 |
 | int32\_t\* value | Want中int32\_t类型的值。 |
 
 **返回：**
@@ -396,10 +362,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_SetWantBoolParam()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_SetWantBoolParam(AbilityBase_Want* want, const char* key, bool value)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_SetWantBoolParam(AbilityBase_Want* want, const char* key, bool value)
 ```
 
 **描述**
@@ -413,7 +377,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中bool类型值的参数索引。 |
+| const char\* key | Want中bool类型值的参数键名。 |
 | bool value | Want中bool类型的值。 |
 
 **返回：**
@@ -424,10 +388,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_GetWantBoolParam()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_GetWantBoolParam(AbilityBase_Want* want, const char* key, bool* value)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_GetWantBoolParam(AbilityBase_Want* want, const char* key, bool* value)
 ```
 
 **描述**
@@ -441,7 +403,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中bool类型值的参数索引。 |
+| const char\* key | Want中bool类型值的参数键名。 |
 | bool\* value | Want中bool类型的值。 |
 
 **返回：**
@@ -452,10 +414,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_SetWantDoubleParam()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_SetWantDoubleParam(AbilityBase_Want* want, const char* key, double value)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_SetWantDoubleParam(AbilityBase_Want* want, const char* key, double value)
 ```
 
 **描述**
@@ -469,7 +429,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中double类型值的参数索引。 |
+| const char\* key | Want中double类型值的参数键名。 |
 | double value | Want中double类型的值。 |
 
 **返回：**
@@ -480,10 +440,8 @@ PhonePC/2in1TabletTVWearable
 
 ### OH\_AbilityBase\_GetWantDoubleParam()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. AbilityBase_ErrorCode OH_AbilityBase_GetWantDoubleParam(AbilityBase_Want* want, const char* key, double* value)
+```c
+AbilityBase_ErrorCode OH_AbilityBase_GetWantDoubleParam(AbilityBase_Want* want, const char* key, double* value)
 ```
 
 **描述**
@@ -497,7 +455,7 @@ PhonePC/2in1TabletTVWearable
 | 参数项 | 描述 |
 | --- | --- |
 | [AbilityBase\_Want](capi-abilitybase-want.md)\* want | Want指针。 |
-| const char\* key | Want中double类型值的参数索引。 |
+| const char\* key | Want中double类型值的参数键名。 |
 | double\* value | Want中double类型的值。 |
 
 **返回：**

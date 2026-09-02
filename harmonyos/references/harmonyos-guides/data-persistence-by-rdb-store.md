@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过关系型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过关系型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:26:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:36b7c1924cb2a87cd95261b56099de38c547277e2f034d7281a5a9e4c0afe996
+scraped_at: 2026-09-02T14:59:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:176653882ac323671ee341f15661298b84a03e04c7be380d39b8a5481f3ba840
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:36b7c1924cb2a87cd95261b56099de38c547277e2f034d7281a5a9e4c0a
 
 **图1** 关系型数据库运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/GP97p4sSQy6YsjkDCj-VqQ/zh-cn_image_0000002589243821.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FVRmDa2nS6GOSqccRHi4vg/zh-cn_image_0000002706833060.jpg)
 
 ## 约束限制
 
@@ -70,293 +70,288 @@ content_hash: sha256:36b7c1924cb2a87cd95261b56099de38c547277e2f034d7281a5a9e4c0a
 
    Stage模型示例：
 
-   ```
-   1. import { relationalStore } from '@kit.ArkData'; // 导入模块
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   4. const DOMAIN = 0x0000;
+   ```typescript
+   import { relationalStore } from '@kit.ArkData'; // 导入模块
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { UIContext } from '@kit.ArkUI';
+   import { common } from '@kit.AbilityKit';
+   const DOMAIN = 0x0000;
 
-   6. let store: relationalStore.RdbStore | undefined = undefined;
-   7. let tokenType = relationalStore.Tokenizer.ICU_TOKENIZER;
-   8. let tokenTypeSupported = relationalStore.isTokenizerSupported(tokenType);
-   9. if (!tokenTypeSupported) {
-   10. tokenType = relationalStore.Tokenizer.NONE_TOKENIZER;
-   11. hilog.error(DOMAIN, 'rdbDataPersistence', `ICU_TOKENIZER is not supported on this platform.`);
-   12. }
-   13. const STORE_CONFIG: relationalStore.StoreConfig = {
-   14. // 数据库文件名
-   15. name: 'RdbTest.db',
-   16. // 数据库安全级别
-   17. securityLevel: relationalStore.SecurityLevel.S3,
-   18. // 可选参数，指定数据库是否加密，默认不加密
-   19. encrypt: false,
-   20. // 可选参数，数据库自定义路径。默认在本应用沙箱目录下创建RdbStore实例。
-   21. customDir: 'customDir/subCustomDir',
-   22. // 可选参数，指定数据库是否以只读方式打开。默认为false，表示数据库可读可写。为true时，只允许从数据库读取数据，不允许对数据库进行写操作，否则会返回错误码801。
-   23. isReadOnly: false,
-   24. // 可选参数，指定用户在全文搜索场景(FTS)下使用哪种分词器。默认在FTS下仅支持英文分词，不支持其他语言分词。
-   25. tokenizer: tokenType,
-   26. };
-   27. // ...
-   28. // 判断数据库版本，如果不匹配则需进行升降级操作
-   29. // 假设当前数据库版本为3，表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, IDENTITY)
-   30. // 建表Sql语句, IDENTITY为bigint类型，sql中指定类型为UNLIMITED INT
-   31. const SQL_CREATE_TABLE =
-   32. 'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB, ADDRESS TEXT)';
-   33. if (store === undefined) {
-   34. try {
-   35. store = await relationalStore.getRdbStore(context, STORE_CONFIG);
-   36. } catch (e) {
-   37. const err = e as BusinessError;
-   38. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to get RdbStore. Code:${err.code}, message:${err.message}`);
-   39. return;
-   40. }
-   41. }
-   42. hilog.info(DOMAIN, 'rdbDataPersistence', 'Succeeded in getting RdbStore.');
-   43. if (store !== undefined) {
-   44. let transaction = await store.createTransaction({});
-   45. let storeVersion = await transaction.execute('PRAGMA user_version');
-   46. // 当数据库创建时，数据库默认版本为0
-   47. // 示例应用升级流程较短，所以使用单个事务。如果实际业务中升级逻辑较多，建议拆分多个独立事务串行执行。
-   48. if (storeVersion === 0) {
-   49. try {
-   50. await transaction.execute(SQL_CREATE_TABLE); // 创建数据表，以便后续调用insert接口插入数据
-   51. storeVersion = 1;
-   52. hilog.info(DOMAIN, 'rdbDataPersistence', 'Upgrade store version from 0 to 1 success.');
-   53. // 设置数据库的版本，入参为大于0的整数
-   54. } catch (e) {
-   55. const err = e as BusinessError;
-   56. await transaction.rollback();
-   57. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to execute sql. Code:${err.code}, message:${err.message}`);
-   58. return;
-   59. }
-   60. }
-   61. // 如果数据库版本不为0且和当前数据库版本不匹配，需要进行升降级操作
-   62. // 当前数据库存在并且版本为1，数据库需要从1版本升级到2版本
-   63. if (storeVersion === 1) {
-   64. // version = 1：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS)
-   65. // => version = 2：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS, IDENTITY)
-   66. try {
-   67. await transaction.execute('ALTER TABLE EMPLOYEE ADD COLUMN IDENTITY UNLIMITED INT');
-   68. storeVersion = 2;
-   69. hilog.info(DOMAIN, 'rdbDataPersistence', 'Upgrade store version from 1 to 2 success.');
-   70. } catch (e) {
-   71. const err = e as BusinessError;
-   72. await transaction.rollback();
-   73. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to execute sql. Code:${err.code}, message:${err.message}`);
-   74. return;
-   75. }
-   76. }
-   77. // 当前数据库存在并且版本为2，数据库需要从2版本升级到3版本
-   78. if (storeVersion === 2) {
-   79. // version = 2：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS, IDENTITY)
-   80. // => version = 3：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, IDENTITY)
-   81. try {
-   82. await transaction.execute('ALTER TABLE EMPLOYEE DROP COLUMN ADDRESS');
-   83. storeVersion = 3;
-   84. await transaction.execute('PRAGMA user_version = 3');
-   85. hilog.info(DOMAIN, 'rdbDataPersistence', 'Upgrade store version from 2 to 3 success.')
-   86. } catch (e) {
-   87. const err = e as BusinessError;
-   88. await transaction.rollback();
-   89. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to execute sql. Code:${err.code}, message:${err.message}`);
-   90. return;
-   91. }
-   92. }
-   93. await transaction.commit();
-   94. // 请确保获取到RdbStore实例，完成数据表创建后，再进行数据库的增、删、改、查等操作
-   95. }
+   let store: relationalStore.RdbStore | undefined = undefined;
+   let tokenType = relationalStore.Tokenizer.ICU_TOKENIZER;
+   let tokenTypeSupported = relationalStore.isTokenizerSupported(tokenType);
+   if (!tokenTypeSupported) {
+     tokenType = relationalStore.Tokenizer.NONE_TOKENIZER;
+     hilog.error(DOMAIN, 'rdbDataPersistence', `ICU_TOKENIZER is not supported on this platform.`);
+   }
+   const STORE_CONFIG: relationalStore.StoreConfig = {
+     // 数据库文件名
+     name: 'RdbTest.db',
+     // 数据库安全级别
+     securityLevel: relationalStore.SecurityLevel.S3,
+     // 可选参数，指定数据库是否加密，默认不加密
+     encrypt: false,
+     // 可选参数，数据库自定义路径。默认在本应用沙箱目录下创建RdbStore实例。
+     customDir: 'customDir/subCustomDir',
+     // 可选参数，指定数据库是否以只读方式打开。默认为false，表示数据库可读可写。为true时，只允许从数据库读取数据，不允许对数据库进行写操作，否则会返回错误码801。
+     isReadOnly: false,
+     // 可选参数，指定用户在全文搜索场景(FTS)下使用哪种分词器。默认在FTS下仅支持英文分词，不支持其他语言分词。
+     tokenizer: tokenType,
+   };
+   // ...
+     // 判断数据库版本，如果不匹配则需进行升降级操作
+     // 假设当前数据库版本为3，表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, IDENTITY)
+     // 建表Sql语句, IDENTITY为bigint类型，sql中指定类型为UNLIMITED INT
+     const SQL_CREATE_TABLE =
+       'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB, ADDRESS TEXT)';
+     if (store === undefined) {
+       try {
+         const context = new UIContext().getHostContext() as common.UIAbilityContext;
+         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+       } catch (e) {
+         const err = e as BusinessError;
+         hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to get RdbStore. Code:${err.code}, message:${err.message}`);
+         return;
+       }
+     }
+     hilog.info(DOMAIN, 'rdbDataPersistence', 'Succeeded in getting RdbStore.');
+     if (store !== undefined) {
+       let transaction = await store.createTransaction({});
+       let storeVersion = await transaction.execute('PRAGMA user_version');
+       // 当数据库创建时，数据库默认版本为0
+       // 示例应用升级流程较短，所以使用单个事务。如果实际业务中升级逻辑较多，建议拆分多个独立事务串行执行。
+       if (storeVersion === 0) {
+         try {
+           await transaction.execute(SQL_CREATE_TABLE); // 创建数据表，以便后续调用insert接口插入数据
+           storeVersion = 1;
+           hilog.info(DOMAIN, 'rdbDataPersistence', 'Upgrade store version from 0 to 1 success.');
+           // 设置数据库的版本，入参为大于0的整数
+         } catch (e) {
+           const err = e as BusinessError;
+           await transaction.rollback();
+           hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to execute sql. Code:${err.code}, message:${err.message}`);
+           return;
+         }
+       }
+       // 如果数据库版本不为0且和当前数据库版本不匹配，需要进行升降级操作
+       // 当前数据库存在并且版本为1，数据库需要从1版本升级到2版本
+       if (storeVersion === 1) {
+         // version = 1：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS)
+         // => version = 2：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS, IDENTITY)
+         try {
+           await transaction.execute('ALTER TABLE EMPLOYEE ADD COLUMN IDENTITY UNLIMITED INT');
+           storeVersion = 2;
+           hilog.info(DOMAIN, 'rdbDataPersistence', 'Upgrade store version from 1 to 2 success.');
+         } catch (e) {
+           const err = e as BusinessError;
+           await transaction.rollback();
+           hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to execute sql. Code:${err.code}, message:${err.message}`);
+           return;
+         }
+       }
+       // 当前数据库存在并且版本为2，数据库需要从2版本升级到3版本
+       if (storeVersion === 2) {
+         // version = 2：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS, IDENTITY)
+         // => version = 3：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, IDENTITY)
+         try {
+           await transaction.execute('ALTER TABLE EMPLOYEE DROP COLUMN ADDRESS');
+           storeVersion = 3;
+           await transaction.execute('PRAGMA user_version = 3');
+           hilog.info(DOMAIN, 'rdbDataPersistence', 'Upgrade store version from 2 to 3 success.')
+         } catch (e) {
+           const err = e as BusinessError;
+           await transaction.rollback();
+           hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to execute sql. Code:${err.code}, message:${err.message}`);
+           return;
+         }
+       }
+       await transaction.commit();
+       // 请确保获取到RdbStore实例，完成数据表创建后，再进行数据库的增、删、改、查等操作
+     }
    ```
-
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L16-L115)
 
    FA模型示例：
 
+   ```ts
+   import { relationalStore } from '@kit.ArkData'; // 导入模块
+   import { featureAbility } from '@kit.AbilityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+
+   let context = featureAbility.getContext();
+
+   const STORE_CONFIG: relationalStore.StoreConfig = {
+     name: 'RdbTest.db', // 数据库文件名
+     securityLevel: relationalStore.SecurityLevel.S3 // 数据库安全级别
+   };
+
+   // 假设当前数据库版本为3，表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, IDENTITY)
+   // 建表Sql语句，IDENTITY为bigint类型，sql中指定类型为UNLIMITED INT
+   const SQL_CREATE_TABLE =
+     'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB, IDENTITY UNLIMITED INT)';
+
+   relationalStore.getRdbStore(context, STORE_CONFIG, async (err, store) => {
+     if (err) {
+       console.error(`Failed to get RdbStore. Code:${err.code}, message:${err.message}`);
+       return;
+     }
+     console.info('Succeeded in getting RdbStore.');
+
+     let storeVersion = store.version;
+     // 当数据库创建时，数据库默认版本为0
+     if (storeVersion === 0) {
+       try {
+         await store.execute(SQL_CREATE_TABLE); // 创建数据表，以便后续调用insert接口插入数据
+         // 设置数据库的版本，入参为大于0的整数
+         storeVersion = 3;
+       } catch (e) {
+         const err = e as BusinessError;
+         console.error(`Failed to execute sql. Code:${err.code}, message:${err.message}`);
+       }
+     }
+
+     // 如果数据库版本不为0且和当前数据库版本不匹配，需要进行升降级操作
+     // 当前数据库存在并且版本为1，数据库需要从1版本升级到2版本
+     if (storeVersion === 1) {
+       try {
+         // version = 1：表结构：EMPLOYEE (NAME, SALARY, CODES, ADDRESS) => version = 2：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS)
+         await store.execute('ALTER TABLE EMPLOYEE ADD COLUMN AGE INTEGER');
+         storeVersion = 2;
+         console.info("Upgrade store version from 1 to 2 success.")
+       } catch (e) {
+         const err = e as BusinessError;
+         console.error(`Failed to execute sql. Code:${err.code}, message:${err.message}`);
+       }
+     }
+
+     // 当前数据库存在并且版本为2，数据库需要从2版本升级到3版本
+     if (storeVersion === 2) {
+       try {
+         // version = 2：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS) => version = 3：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES)
+         await store.execute('ALTER TABLE EMPLOYEE DROP COLUMN ADDRESS');
+         storeVersion = 3;
+         console.info("Upgrade store version from 2 to 3 success.")
+       } catch (e) {
+         const err = e as BusinessError;
+         console.error(`Failed to execute sql. Code:${err.code}, message:${err.message}`);
+       }
+     }
+     store.version = storeVersion;
+     // 请确保获取到RdbStore实例，完成数据表创建后，再进行数据库的增、删、改、查等操作
+   });
    ```
-   1. import { relationalStore } from '@kit.ArkData'; // 导入模块
-   2. import { featureAbility } from '@kit.AbilityKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
 
-   5. let context = featureAbility.getContext();
-
-   7. const STORE_CONFIG: relationalStore.StoreConfig = {
-   8. name: 'RdbTest.db', // 数据库文件名
-   9. securityLevel: relationalStore.SecurityLevel.S3 // 数据库安全级别
-   10. };
-
-   12. // 假设当前数据库版本为3，表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, IDENTITY)
-   13. // 建表Sql语句，IDENTITY为bigint类型，sql中指定类型为UNLIMITED INT
-   14. const SQL_CREATE_TABLE =
-   15. 'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB, IDENTITY UNLIMITED INT)';
-
-   17. relationalStore.getRdbStore(context, STORE_CONFIG, async (err, store) => {
-   18. if (err) {
-   19. console.error(`Failed to get RdbStore. Code:${err.code}, message:${err.message}`);
-   20. return;
-   21. }
-   22. console.info('Succeeded in getting RdbStore.');
-
-   24. let storeVersion = store.version;
-   25. // 当数据库创建时，数据库默认版本为0
-   26. if (storeVersion === 0) {
-   27. try {
-   28. await store.execute(SQL_CREATE_TABLE); // 创建数据表，以便后续调用insert接口插入数据
-   29. // 设置数据库的版本，入参为大于0的整数
-   30. storeVersion = 3;
-   31. } catch (e) {
-   32. const err = e as BusinessError;
-   33. console.error(`Failed to execute sql. Code:${err.code}, message:${err.message}`);
-   34. }
-   35. }
-
-   37. // 如果数据库版本不为0且和当前数据库版本不匹配，需要进行升降级操作
-   38. // 当前数据库存在并且版本为1，数据库需要从1版本升级到2版本
-   39. if (storeVersion === 1) {
-   40. try {
-   41. // version = 1：表结构：EMPLOYEE (NAME, SALARY, CODES, ADDRESS) => version = 2：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS)
-   42. await store.execute('ALTER TABLE EMPLOYEE ADD COLUMN AGE INTEGER');
-   43. storeVersion = 2;
-   44. console.info("Upgrade store version from 1 to 2 success.")
-   45. } catch (e) {
-   46. const err = e as BusinessError;
-   47. console.error(`Failed to execute sql. Code:${err.code}, message:${err.message}`);
-   48. }
-   49. }
-
-   51. // 当前数据库存在并且版本为2，数据库需要从2版本升级到3版本
-   52. if (storeVersion === 2) {
-   53. try {
-   54. // version = 2：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES, ADDRESS) => version = 3：表结构：EMPLOYEE (NAME, AGE, SALARY, CODES)
-   55. await store.execute('ALTER TABLE EMPLOYEE DROP COLUMN ADDRESS');
-   56. storeVersion = 3;
-   57. console.info("Upgrade store version from 2 to 3 success.")
-   58. } catch (e) {
-   59. const err = e as BusinessError;
-   60. console.error(`Failed to execute sql. Code:${err.code}, message:${err.message}`);
-   61. }
-   62. }
-   63. store.version = storeVersion;
-   64. // 请确保获取到RdbStore实例，完成数据表创建后，再进行数据库的增、删、改、查等操作
-   65. });
-   ```
-
-   说明
+   **说明** 
 
    * 应用创建的数据库与其上下文（Context）有关，即使使用同样的数据库名称，但不同的应用上下文，会产生多个数据库，例如每个UIAbility都有各自的上下文。
    * 当应用首次获取数据库（调用getRdbStore）后，在应用沙箱内会产生对应的数据库文件。使用数据库的过程中，在与数据库文件相同的目录下可能会产生以-wal和-shm结尾的临时文件。此时若开发者希望移动数据库文件到其它地方使用查看，则需要同时移动这些临时文件，当应用被卸载完成后，其在设备上产生的数据库文件及临时文件也会被移除。
    * 错误码的详细介绍请参见[通用错误码](../harmonyos-references/errorcode-universal.md)和[关系型数据库错误码](../harmonyos-references/errorcode-data-rdb.md)。
 2. 获取到RdbStore，完成数据表创建后，调用insert()接口插入数据。示例代码如下所示：
 
-   ```
-   1. // 插入数据
-   2. let value1 = 'Lisa';
-   3. let value2 = 18;
-   4. let value3 = 100.5;
-   5. let value4 = new Uint8Array([1, 2, 3, 4, 5]);
-   6. let value5 = BigInt('15822401018187971961171');
-   7. const valueBucket: relationalStore.ValuesBucket = {
-   8. NAME: value1,
-   9. AGE: value2,
-   10. SALARY: value3,
-   11. CODES: value4,
-   12. IDENTITY: value5,
-   13. };
-   14. if (store !== undefined) {
-   15. try {
-   16. const rowId = await store.insert('EMPLOYEE', valueBucket);
-   17. hilog.info(DOMAIN, 'rdbDataPersistence', `Succeeded in inserting data. rowId:${rowId}`);
-   18. } catch (error) {
-   19. const err = error as BusinessError;
-   20. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to insert data. Code:${err.code}, message:${err.message}`);
-   21. }
-   22. }
+   ```typescript
+   // 插入数据
+   let value1 = 'Lisa';
+   let value2 = 18;
+   let value3 = 100.5;
+   let value4 = new Uint8Array([1, 2, 3, 4, 5]);
+   let value5 = BigInt('15822401018187971961171');
+   const valueBucket: relationalStore.ValuesBucket = {
+     NAME: value1,
+     AGE: value2,
+     SALARY: value3,
+     CODES: value4,
+     IDENTITY: value5,
+   };
+   if (store !== undefined) {
+     try {
+       const rowId = await store.insert('EMPLOYEE', valueBucket);
+       hilog.info(DOMAIN, 'rdbDataPersistence', `Succeeded in inserting data. rowId:${rowId}`);
+     } catch (error) {
+       const err = error as BusinessError;
+       hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to insert data. Code:${err.code}, message:${err.message}`);
+     }
+   }
    ```
 
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L117-L140)
-
-   说明
+   **说明** 
 
    关系型数据库没有显式的flush操作实现持久化，数据插入即保存在持久化文件。
 3. 根据谓词指定的实例对象，对数据进行修改或删除。
 
    调用update()方法修改数据，调用delete()方法删除数据。示例代码如下所示：
 
+   ```typescript
+   // 修改数据、删除数据
+   let value6 = 'Rose';
+   let value7 = 22;
+   let value8 = 200.5;
+   let value9 = new Uint8Array([1, 2, 3, 4, 5]);
+   let value10 = BigInt('15822401018187971967863');
+   const valueBucket2: relationalStore.ValuesBucket = {
+     NAME: value6,
+     AGE: value7,
+     SALARY: value8,
+     CODES: value9,
+     IDENTITY: value10,
+   };
+
+   // 修改数据
+   let predicates1 = new relationalStore.RdbPredicates('EMPLOYEE'); // 创建表'EMPLOYEE'的predicates
+   predicates1.equalTo('NAME', 'Lisa'); // 匹配表'EMPLOYEE'中'NAME'为'Lisa'的字段
+   if (store !== undefined) {
+     (store as relationalStore.RdbStore).update(valueBucket2, predicates1, (err: BusinessError, rows: number) => {
+       if (err) {
+         hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to update data. Code:${err.code}, message:${err.message}`);
+         return;
+       }
+       hilog.info(DOMAIN, 'rdbDataPersistence', `Succeeded in updating data. row count: ${rows}`);
+     })
+   }
+
+   // 删除数据
+   predicates1 = new relationalStore.RdbPredicates('EMPLOYEE');
+   predicates1.equalTo('NAME', 'Lisa');
+   if (store !== undefined) {
+     (store as relationalStore.RdbStore).delete(predicates1, (err: BusinessError, rows: number) => {
+       if (err) {
+         hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to delete data. Code:${err.code}, message:${err.message}`);
+         return;
+       }
+       hilog.info(DOMAIN, 'rdbDataPersistence', `Delete rows: ${rows}`);
+     })
+   }
    ```
-   1. // 修改数据、删除数据
-   2. let value6 = 'Rose';
-   3. let value7 = 22;
-   4. let value8 = 200.5;
-   5. let value9 = new Uint8Array([1, 2, 3, 4, 5]);
-   6. let value10 = BigInt('15822401018187971967863');
-   7. const valueBucket2: relationalStore.ValuesBucket = {
-   8. NAME: value6,
-   9. AGE: value7,
-   10. SALARY: value8,
-   11. CODES: value9,
-   12. IDENTITY: value10,
-   13. };
-
-   15. // 修改数据
-   16. let predicates1 = new relationalStore.RdbPredicates('EMPLOYEE'); // 创建表'EMPLOYEE'的predicates
-   17. predicates1.equalTo('NAME', 'Lisa'); // 匹配表'EMPLOYEE'中'NAME'为'Lisa'的字段
-   18. if (store !== undefined) {
-   19. (store as relationalStore.RdbStore).update(valueBucket2, predicates1, (err: BusinessError, rows: number) => {
-   20. if (err) {
-   21. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to update data. Code:${err.code}, message:${err.message}`);
-   22. return;
-   23. }
-   24. hilog.info(DOMAIN, 'rdbDataPersistence', `Succeeded in updating data. row count: ${rows}`);
-   25. })
-   26. }
-
-   28. // 删除数据
-   29. predicates1 = new relationalStore.RdbPredicates('EMPLOYEE');
-   30. predicates1.equalTo('NAME', 'Lisa');
-   31. if (store !== undefined) {
-   32. (store as relationalStore.RdbStore).delete(predicates1, (err: BusinessError, rows: number) => {
-   33. if (err) {
-   34. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to delete data. Code:${err.code}, message:${err.message}`);
-   35. return;
-   36. }
-   37. hilog.info(DOMAIN, 'rdbDataPersistence', `Delete rows: ${rows}`);
-   38. })
-   39. }
-   ```
-
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L142-L182)
 4. 根据谓词指定的查询条件查找数据。
 
    调用query()方法查找数据，返回一个ResultSet结果集。示例代码如下所示：
 
-   ```
-   1. // 查找数据
-   2. let predicates2 = new relationalStore.RdbPredicates('EMPLOYEE');
-   3. predicates2.equalTo('NAME', 'Rose');
-   4. if (store !== undefined) {
-   5. (store as relationalStore.RdbStore).query(predicates2, ['ID', 'NAME', 'AGE', 'SALARY', 'CODES', 'IDENTITY'], (err: BusinessError, resultSet) => {
-   6. if (err) {
-   7. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to query data. Code:${err.code}, message:${err.message}`);
-   8. return;
-   9. }
-   10. hilog.info(DOMAIN, 'rdbDataPersistence', `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
-   11. // resultSet是一个数据集合的游标，默认指向第-1个记录，有效的数据从0开始。
-   12. while (resultSet.goToNextRow()) {
-   13. const id = resultSet.getLong(resultSet.getColumnIndex('ID'));
-   14. const name = resultSet.getString(resultSet.getColumnIndex('NAME'));
-   15. const age = resultSet.getLong(resultSet.getColumnIndex('AGE'));
-   16. const salary = resultSet.getDouble(resultSet.getColumnIndex('SALARY'));
-   17. const identity = resultSet.getValue(resultSet.getColumnIndex('IDENTITY'));
-   18. hilog.info(DOMAIN, 'rdbDataPersistence', `id=${id}, name=${name}, age=${age}, salary=${salary}, identity=${identity}`);
-   19. }
-   20. // 释放数据集的内存
-   21. resultSet.close();
-   22. })
-   23. }
+   ```typescript
+   // 查找数据
+   let predicates2 = new relationalStore.RdbPredicates('EMPLOYEE');
+   predicates2.equalTo('NAME', 'Rose');
+   if (store !== undefined) {
+     (store as relationalStore.RdbStore).query(predicates2, ['ID', 'NAME', 'AGE', 'SALARY', 'CODES', 'IDENTITY'], (err: BusinessError, resultSet) => {
+       if (err) {
+         hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to query data. Code:${err.code}, message:${err.message}`);
+         return;
+       }
+       hilog.info(DOMAIN, 'rdbDataPersistence', `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
+       // resultSet是一个数据集合的游标，默认指向第-1个记录，有效的数据从0开始。
+       while (resultSet.goToNextRow()) {
+         const id = resultSet.getLong(resultSet.getColumnIndex('ID'));
+         const name = resultSet.getString(resultSet.getColumnIndex('NAME'));
+         const age = resultSet.getLong(resultSet.getColumnIndex('AGE'));
+         const salary = resultSet.getDouble(resultSet.getColumnIndex('SALARY'));
+         const identity = resultSet.getValue(resultSet.getColumnIndex('IDENTITY'));
+         hilog.info(DOMAIN, 'rdbDataPersistence', `id=${id}, name=${name}, age=${age}, salary=${salary}, identity=${identity}`);
+       }
+       // 释放数据集的内存
+       resultSet.close();
+     })
+   }
    ```
 
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L184-L208)
-
-   说明
+   **说明** 
 
    当应用完成查询数据操作，不再使用结果集（ResultSet）时，请及时调用close方法关闭结果集，释放系统为其分配的内存。
 
@@ -364,153 +359,144 @@ content_hash: sha256:36b7c1924cb2a87cd95261b56099de38c547277e2f034d7281a5a9e4c0a
 
    以中文关键字检索为例：
 
+   ```typescript
+   // 中文关键字检索，查找数据
+   if (store !== undefined && tokenTypeSupported) {
+     // 创建全文检索表
+     const SQL_CREATE_TABLE = 'CREATE VIRTUAL TABLE IF NOT EXISTS example USING fts4(name, content, tokenize=icu zh_CN)';
+     try {
+       await store.execute(SQL_CREATE_TABLE);
+       hilog.info(DOMAIN, 'rdbDataPersistence', 'Succeeded in creating fts table.');
+     } catch (error) {
+       const err = error as BusinessError;
+       hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to create fts table. code: ${err.code}, message: ${err.message}.`);
+     }
+   }
+   if (store !== undefined) {
+     try {
+       const resultSet = await store.querySql('SELECT name FROM example WHERE example MATCH ?', ['测试']);
+       while (resultSet.goToNextRow()) {
+         const name = resultSet.getValue(resultSet.getColumnIndex('name'));
+         hilog.info(DOMAIN, 'rdbDataPersistence', `name=${name}`);
+       }
+       resultSet.close();
+     } catch (error) {
+       const err = error as BusinessError;
+       hilog.error(DOMAIN, 'rdbDataPersistence', `Query failed. code: ${err.code}, message: ${err.message}.`);
+     }
+   }
    ```
-   1. // 中文关键字检索，查找数据
-   2. if (store !== undefined && tokenTypeSupported) {
-   3. // 创建全文检索表
-   4. const SQL_CREATE_TABLE = 'CREATE VIRTUAL TABLE IF NOT EXISTS example USING fts4(name, content, tokenize=icu zh_CN)';
-   5. try {
-   6. await store.execute(SQL_CREATE_TABLE);
-   7. hilog.info(DOMAIN, 'rdbDataPersistence', 'Succeeded in creating fts table.');
-   8. } catch (error) {
-   9. const err = error as BusinessError;
-   10. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to creating fts table. code: ${err.code}, message: ${err.message}.`);
-   11. }
-   12. }
-   13. if (store !== undefined) {
-   14. try {
-   15. const resultSet = await store.querySql('SELECT name FROM example WHERE example MATCH ?', ['测试']);
-   16. while (resultSet.goToNextRow()) {
-   17. const name = resultSet.getValue(resultSet.getColumnIndex('name'));
-   18. hilog.info(DOMAIN, 'rdbDataPersistence', `name=${name}`);
-   19. }
-   20. resultSet.close();
-   21. } catch (error) {
-   22. const err = error as BusinessError;
-   23. hilog.error(DOMAIN, 'rdbDataPersistence', `Query failed. code: ${err.code}, message: ${err.message}.`);
-   24. }
-   25. }
-   ```
-
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L210-L236)
 5. 使用事务对象执行数据的插入、删除和更新操作。
 
    调用createTransaction方法创建事务对象并执行相应操作。
 
    支持配置的事务类型有DEFERRED、IMMEDIATE和EXCLUSIVE，默认为DEFERRED。
 
-   具体信息请参见[关系型数据库](../harmonyos-references/arkts-apis-data-relationalstore-rdbstore.md#createtransaction14)。
+   具体信息请参见[createTransaction](../harmonyos-references/arkts-apis-data-relationalstore-rdbstore.md#createtransaction14)。
 
+   ```typescript
+   // 使用事务对象执行数据的插入、删除和更新操作
+   if (store !== undefined) {
+     // 创建事务对象
+     try {
+       const transaction = await store.createTransaction();
+       try {
+         // 使用事务对象插入数据
+         const rowId = await transaction.insert(
+           'EMPLOYEE',
+           {
+             NAME: 'Lisa',
+             AGE: 18,
+             SALARY: 100.5,
+             CODES: new Uint8Array([1, 2, 3, 4, 5]),
+             IDENTITY: BigInt('15822401018187971967763')
+           },
+           relationalStore.ConflictResolution.ON_CONFLICT_REPLACE
+         );
+         hilog.info(DOMAIN, 'rdbDataPersistence', `Insert is successful, rowId = ${rowId}`);
+
+         const predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+         predicates.equalTo('NAME', 'Lisa');
+         // 使用事务对象更新数据
+         const rows = await transaction.update(
+           {
+             NAME: 'Rose',
+             AGE: 22,
+             SALARY: 200.5,
+             CODES: new Uint8Array([1, 2, 3, 4, 5]),
+             IDENTITY: BigInt('15822401018187971967763')
+           },
+           predicates,
+           relationalStore.ConflictResolution.ON_CONFLICT_REPLACE
+         );
+         hilog.info(DOMAIN, 'rdbDataPersistence', `Updated row count: ${rows}`);
+
+         // 使用事务对象删除数据
+         await transaction.execute('DELETE FROM EMPLOYEE WHERE age = ? OR age = ?', [21, 20]);
+         hilog.info(DOMAIN, 'rdbDataPersistence', `execute delete success`);
+
+         // 提交事务
+         await transaction.commit();
+         hilog.info(DOMAIN, 'rdbDataPersistence', 'Transaction commit success.');
+       } catch (error) {
+         const err = error as BusinessError;
+         // 执行失败回滚事务
+         await transaction.rollback();
+         hilog.error(DOMAIN, 'rdbDataPersistence', `Transaction execute failed, code is ${err.code}, message is ${err.message}`);
+       }
+     } catch (error) {
+       const err = error as BusinessError;
+       hilog.error(DOMAIN, 'rdbDataPersistence', `createTransaction failed, code is ${err.code}, message is ${err.message}`);
+     }
+   }
    ```
-   1. // 使用事务对象执行数据的插入、删除和更新操作
-   2. if (store !== undefined) {
-   3. // 创建事务对象
-   4. try {
-   5. const transaction = await store.createTransaction();
-   6. try {
-   7. // 使用事务对象插入数据
-   8. const rowId = await transaction.insert(
-   9. 'EMPLOYEE',
-   10. {
-   11. NAME: 'Lisa',
-   12. AGE: 18,
-   13. SALARY: 100.5,
-   14. CODES: new Uint8Array([1, 2, 3, 4, 5]),
-   15. IDENTITY: BigInt('15822401018187971967763')
-   16. },
-   17. relationalStore.ConflictResolution.ON_CONFLICT_REPLACE
-   18. );
-   19. hilog.info(DOMAIN, 'rdbDataPersistence', `Insert is successful, rowId = ${rowId}`);
-
-   21. const predicates = new relationalStore.RdbPredicates('EMPLOYEE');
-   22. predicates.equalTo('NAME', 'Lisa');
-   23. // 使用事务对象更新数据
-   24. const rows = await transaction.update(
-   25. {
-   26. NAME: 'Rose',
-   27. AGE: 22,
-   28. SALARY: 200.5,
-   29. CODES: new Uint8Array([1, 2, 3, 4, 5]),
-   30. IDENTITY: BigInt('15822401018187971967763')
-   31. },
-   32. predicates,
-   33. relationalStore.ConflictResolution.ON_CONFLICT_REPLACE
-   34. );
-   35. hilog.info(DOMAIN, 'rdbDataPersistence', `Updated row count: ${rows}`);
-
-   37. // 使用事务对象删除数据
-   38. await transaction.execute('DELETE FROM EMPLOYEE WHERE age = ? OR age = ?', [21, 20]);
-   39. hilog.info(DOMAIN, 'rdbDataPersistence', `execute delete success`);
-
-   41. // 提交事务
-   42. await transaction.commit();
-   43. hilog.info(DOMAIN, 'rdbDataPersistence', 'Transaction commit success.');
-   44. } catch (error) {
-   45. const err = error as BusinessError;
-   46. // 执行失败回滚事务
-   47. await transaction.rollback();
-   48. hilog.error(DOMAIN, 'rdbDataPersistence', `Transaction execute failed, code is ${err.code}, message is ${err.message}`);
-   49. }
-   50. } catch (error) {
-   51. const err = error as BusinessError;
-   52. hilog.error(DOMAIN, 'rdbDataPersistence', `createTransaction failed, code is ${err.code}, message is ${err.message}`);
-   53. }
-   54. }
-   ```
-
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L238-L293)
 6. 在同路径下备份数据库。关系型数据库支持手动备份和自动备份（仅系统应用可用）两种方式，具体可见[关系型数据库备份](data-backup-and-restore.md#关系型数据库备份)。
 
    此处以手动备份为例：
 
+   ```typescript
+   // 在同路径下备份数据库
+   if (store !== undefined) {
+     // 'Backup.db'为备份数据库文件名，默认在RdbStore同路径下备份。也可指定路径：customDir + 'Backup.db'
+     (store as relationalStore.RdbStore).backup('Backup.db', (err: BusinessError) => {
+       if (err) {
+         hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to backup RdbStore. Code:${err.code}, message:${err.message}`);
+         return;
+       }
+       hilog.info(DOMAIN, 'rdbDataPersistence', `Succeeded in backing up RdbStore.`);
+     })
+   }
    ```
-   1. // 在同路径下备份数据库
-   2. if (store !== undefined) {
-   3. // 'Backup.db'为备份数据库文件名，默认在RdbStore同路径下备份。也可指定路径：customDir + 'Backup.db'
-   4. (store as relationalStore.RdbStore).backup('Backup.db', (err: BusinessError) => {
-   5. if (err) {
-   6. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to backup RdbStore. Code:${err.code}, message:${err.message}`);
-   7. return;
-   8. }
-   9. hilog.info(DOMAIN, 'rdbDataPersistence', `Succeeded in backing up RdbStore.`);
-   10. })
-   11. }
-   ```
-
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L295-L307)
 7. 从备份数据库中恢复数据。关系型数据库支持两种方式：恢复手动备份数据和恢复自动备份数据（仅系统应用可用），具体可见[关系型数据库数据恢复](data-backup-and-restore.md#关系型数据库数据恢复)。
 
    此处以调用[restore](../harmonyos-references/arkts-apis-data-relationalstore-rdbstore.md#restore)接口恢复手动备份数据为例：
 
+   ```typescript
+   // 备份数据库中恢复数据
+   if (store !== undefined) {
+     (store as relationalStore.RdbStore).restore('Backup.db', (err: BusinessError) => {
+       if (err) {
+         hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to restore RdbStore. Code:${err.code}, message:${err.message}`);
+         return;
+       }
+       hilog.info(DOMAIN, 'rdbDataPersistence', `Succeeded in restoring RdbStore.`);
+     })
+   }
    ```
-   1. // 备份数据库中恢复数据
-   2. if (store !== undefined) {
-   3. (store as relationalStore.RdbStore).restore('Backup.db', (err: BusinessError) => {
-   4. if (err) {
-   5. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to restore RdbStore. Code:${err.code}, message:${err.message}`);
-   6. return;
-   7. }
-   8. hilog.info(DOMAIN, 'rdbDataPersistence', `Succeeded in restoring RdbStore.`);
-   9. })
-   10. }
-   ```
-
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L309-L320)
 8. 删除数据库。
 
    调用deleteRdbStore()方法，删除数据库及数据库相关文件。示例代码如下：
 
    Stage模型示例：
 
+   ```typescript
+   // 删除数据库
+   const context = new UIContext().getHostContext() as common.UIAbilityContext;
+   relationalStore.deleteRdbStore(context, 'RdbTest.db', (err: BusinessError) => {
+     if (err) {
+       hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to delete RdbStore. Code:${err.code}, message:${err.message}`);
+       return;
+     }
+     hilog.info(DOMAIN, 'rdbDataPersistence', 'Succeeded in deleting RdbStore.');
+   });
    ```
-   1. // 删除数据库
-   2. relationalStore.deleteRdbStore(context, 'RdbTest.db', (err: BusinessError) => {
-   3. if (err) {
-   4. hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to delete RdbStore. Code:${err.code}, message:${err.message}`);
-   5. return;
-   6. }
-   7. hilog.info(DOMAIN, 'rdbDataPersistence', 'Succeeded in deleting RdbStore.');
-   8. });
-   ```
-
-   [RdbDataPersistence.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/DataSyncAndPersistence/entry/src/main/ets/pages/datapersistence/RdbDataPersistence.ets#L322-L331)

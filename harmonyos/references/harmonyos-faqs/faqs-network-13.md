@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-13
 title: 如何使用网络接口获取数据库MySQL中的数据
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何使用网络接口获取数据库MySQL中的数据
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:06+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:def2c2a079cdb9622f5cd578a7ea852cbaf4ce6748709d98ade1c456f1bc018a
 ---
 

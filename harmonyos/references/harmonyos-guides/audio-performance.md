@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-perform
 title: 提升音频性能体验
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频性能调优 > 提升音频性能体验
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cf36c676e2d609decf99b5e49f96712e1a0b052d10feb446adaee10f74c9c151
+scraped_at: 2026-09-02T14:59:43+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:27da3ff5d48503860cc5a52029c46fe5855e8c120559137e45f4513953f35c7f
 ---
 
 在各种终端设备的使用过程中，对于音频相关功能的体验，用户在不同场景下，有多方面的核心性能诉求，包含流畅度、响应速度、省电等，典型的场景如下：
@@ -21,9 +21,9 @@ content_hash: sha256:cf36c676e2d609decf99b5e49f96712e1a0b052d10feb446adaee10f74c
 
 ### 了解系统音频通路
 
-不同的性能指标，由于硬件性能和电源大小的限制，往往无法兼顾。比如更短的音频响应时间，意味着要更快的进行数据处理，会导致牺牲一些功耗和效果。
+不同的性能指标，由于硬件性能和功耗的限制，往往无法兼顾。比如更短的音频响应时间，意味着要更快的进行数据处理，会导致功耗的增加和部分效果的损失。
 
-因此，系统中的音频通路也并不是一成不变的。为应对不同的用户使用场景，系统针对性的提供多种不同方向的通路选择，有的更节省功耗，有的更偏向响应速度，还有的则相对平衡。
+因此，系统中的音频通路也并不是一成不变的。为应对不同的用户使用场景，系统针对性地提供多种不同方向的通路选择，有的更节省功耗，有的更偏向响应速度，还有的则相对平衡。
 
 系统无法直接感知应用所开发音频功能对应的使用场景，因此需要开发者通过指定[StreamUsage](../harmonyos-references/arkts-apis-audio-e.md#streamusage)和[SourceType](../harmonyos-references/arkts-apis-audio-e.md#sourcetype8)来提供对应的场景信息。系统会针对场景选择，提供一套默认的音频通路配置作用于输出/输入通路，如果开发者认为默认配置还不满足需要，也可以通过独立的设置接口进行调整。
 
@@ -49,11 +49,11 @@ content_hash: sha256:cf36c676e2d609decf99b5e49f96712e1a0b052d10feb446adaee10f74c
 
 由于不同音频硬件设备通路多种多样，系统从设备获取的时间信息并无法确保准确，时间戳的计算过程也会存在一些预估值处理，因此与实际硬件数据时间并不完全对等，存在一定误差是正常的。
 
-典型的用途是音视频同步，音频时间戳在此场景的使用方式，可以参考：[音画同步最佳实践](../best-practices/bpta-audio-video-synchronization.md)。
+典型的用途是音视频同步，音频时间戳在此场景的使用方式，可以参考：[音画同步最佳实践](audio-video-synchronization.md)。
 
 ## 音频性能分析方法
 
-当开发者测试所开发应用的音频功能时，如测试出现卡顿、杂音类型的问题导致无法满足消费端的数据实时性要求，一般的流水日志较难用于定位此类问题，因为这些问题的原因通常是音频数据处理的某些环节，系统性能不足而引起underrun或overrun。
+当开发者测试所开发应用的音频功能时，如测试出现卡顿、杂音类型的问题导致无法满足消费端的数据实时性要求，一般的流水日志较难用于定位此类问题，因为这些问题的原因通常是音频数据处理的某些环节系统性能不足，从而引起underrun或overrun。
 
 本文接下来将提供一些专门用于分析音频性能的日志获取方法，并简单介绍如何通过日志，找出可能存在性能问题的地方。
 
@@ -77,35 +77,35 @@ HiSmartPerf工具完整的介绍可参考指南：[HiSmartPerf](../AppGallery-co
 
 1. 进入CPU Trace。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/miAARcakRS2w0E_oitICdg/zh-cn_image_0000002558765032.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/72gGHa4ITICKGlvZsmSflQ/zh-cn_image_0000002736433629.png)
 
    打开HiSmartPerf工具，进入游戏性能分析的CPU Trace页面。虽然标题是游戏性能分析，但分析场景并不仅限于游戏场景。
 2. 抓取配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/rp4S8RDHQA-6NrJVv2vvoA/zh-cn_image_0000002558605376.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/yRYXpM5eTi2hNmJebQ6Jaw/zh-cn_image_0000002706834478.png)
 
    配置项主要有数据文件名、缓存容量、最大文件大小、数据项和采集时间。要抓取系统音频相关的数据项，需要勾选zaudio。采集时间可以按测试场景进行调节，需要注意，测试时长和勾选的数据项数量会影响文件大小，往往需要同步调节。
 3. 开始采集。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/DJvtW1_-QYG1kz8y2s9dEw/zh-cn_image_0000002589324903.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/DvXG41cKS7WokCU33K16Aw/zh-cn_image_0000002736313585.png)
 
    采集完成后将提示文件回传，当文件较大时请耐心等待。
 4. 查看Trace。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/BmHA4Mg0ToiqW_wiDqjH3w/zh-cn_image_0000002589244839.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/RdvJP6UqQ8C4OHhseVd3Sg/zh-cn_image_0000002706674542.png)
 
    采集时间内的cpu性能分析结果。
 5. 找到音频数据处理线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/xa7sbzi0RbKVO6617s27Gw/zh-cn_image_0000002558765034.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/_jwZSMYXRumHaybnle49kw/zh-cn_image_0000002736433631.png)
 
    对于音频播放业务，可以通过OnWriteData搜索目标测试应用为系统输入播放数据的位置，进一步分析数据的生产来源的性能情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/mu7WV6VhQRORQt-0kyhIUg/zh-cn_image_0000002558605378.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/uhi_C-x8QkC1RZrzp1kTyg/zh-cn_image_0000002706834480.png)
 
-   runnable表示线程在等待调度，当存在由于过长的runnable导致数据未能被及时写入的情况，包括应用自身的数据生产线程，则需要考虑接入音频工作组，以提升线程的优先级并保障CPU资源分配。
+   Runnable表示线程在等待调度，当存在由于过长的Runnable导致数据未能被及时写入的情况，包括应用自身的数据生产线程，则需要考虑接入音频工作组，以提升线程的优先级并保障CPU资源分配。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/kAiC0U9YT4e2gxhD-8pa4A/zh-cn_image_0000002589324905.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/zBqhdFHaSAizoVTDvSJ-Ow/zh-cn_image_0000002736313587.png)
 
    在CPU Usage中可以查看每个任务的CPU占用情况。
 
@@ -117,7 +117,7 @@ HiSmartPerf工具完整的介绍可参考指南：[HiSmartPerf](../AppGallery-co
 
 播放卡顿是音频最常见的性能类问题。问题原因多样，由于音频数据的生产和播放链路较长，任一环节都可能导致最终播放卡顿。
 
-音频数据的处理，通常采用生产消费者模型，生产端生成音频数据写入公共缓冲区，消费端按需从缓冲区取数据进行下一步处理。当消费端取数据时，如发现数据不足，为了避免影响后续流程，不会阻塞等待，而是直接使用静音帧数据处理。在播放过程中，间歇性出现静音帧，听感上表现为电流杂音；大量静音帧出现时，听感表现为卡顿。
+音频数据的处理，通常采用生产者-消费者模型，生产端生成音频数据写入公共缓冲区，消费端按需从缓冲区取数据进行下一步处理。当消费端取数据时，如发现数据不足，为了避免影响后续流程，不会阻塞等待，而是直接使用静音帧数据处理。在播放过程中，间歇性出现静音帧，听感上表现为电流杂音；大量静音帧出现时，听感表现为卡顿。
 
 定位此类问题，主要从消费端逐层向上分析，某一层缓冲出现静音帧，大概率是前一层生产不及时引起。数据生产不及时的常见情况及解决思路如下：
 

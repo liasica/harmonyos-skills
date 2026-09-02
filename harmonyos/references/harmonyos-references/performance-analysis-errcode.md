@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/performan
 title: 错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:03f92ac2dd3a00705dd343c26fbb5e50b97a9760327dcddc879bf14b6457157d
+scraped_at: 2026-09-02T14:52:42+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:d4e26e7bf2c98f49dc2c028cc620ebaea35562aae4cd54e60614f3e03af0f657
 ---
 
 * **[Faultlogger 错误码](errorcode-faultlogger.md)**
@@ -15,3 +15,4 @@ content_hash: sha256:03f92ac2dd3a00705dd343c26fbb5e50b97a9760327dcddc879bf14b645
 * **[HiDebug Trace错误码](errorcode-hiviewdfx-hidebug-trace.md)**
 * **[HiCollie错误码](errorcode-hiviewdfx-hicollie.md)**
 * **[JsLeakWatcher错误码](errorcode-jsleakwatcher.md)**
+* **[应用灰度错误码](errorcode-hiviewdfx-hiretrieval.md)**

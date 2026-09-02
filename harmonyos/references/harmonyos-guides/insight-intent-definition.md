@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-intent-definition
 title: 意图开发概述
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > 意图框架开发指导 > 开发意图 > 意图开发概述
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 意图框架开发指导 > 开发意图 > 意图开发概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:53+08:00
+scraped_at: 2026-09-02T15:16:57+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:ab356d837f23e7fda44625168a1a7aaab81c35627fa83324ac2d0820de3536a3
 ---

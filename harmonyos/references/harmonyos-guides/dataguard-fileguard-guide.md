@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataguard-fil
 title: 文件分级管控
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:05+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:59fccd2e5be0bdbbd94727308b065cc1d930a2bc9b09fb8d9ca553d3878e7362
+scraped_at: 2026-09-02T14:50:02+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:041b718f8d73685f51faffcc855fec7956de04f155d19ab91a638b84110c36d4
 ---
 
 * **[启动文件扫描任务](fileguard-start-task.md)**
@@ -18,3 +18,7 @@ content_hash: sha256:59fccd2e5be0bdbbd94727308b065cc1d930a2bc9b09fb8d9ca553d3878
 * **[设置KIA文件列表](fileguard-kia-file-list.md)**
 * **[订阅或取消订阅KIA文件拷贝、重命名和压缩事件](fileguard-kia-event.md)**
 * **[设置KIA文件水印图片](fileguard-set-kia-watermark.md)**
+* **[添加、删除、获取放通应用列表](fileguard-unrestricted-app-list.md)**
+* **[设置HDC认证密钥](fileguard-set-hdc-authentication-key.md)**
+* **[订阅或取消订阅打印服务启动事件](fileguard-print-startup-event.md)**
+* **[进程管控时长管理](fileguard-managed-process-management.md)**

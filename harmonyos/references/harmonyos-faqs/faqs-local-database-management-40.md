@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 数据管理如何保证数据安全
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 数据管理如何保证数据安全
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:19+08:00
-doc_updated_at: 2026-03-25
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:2b0385fba8ab8cc9c775c79b6c79aad2d3a48d6e3dc7383ba9d752b7dd72a86f
 ---
 

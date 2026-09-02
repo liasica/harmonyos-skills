@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-local-tes
 title: 本地测试错误码
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 本地测试错误码
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:47:00+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:dc7f2401be9e6de7ee0f6b48031eb3c70dcd5944f2db88e920f1353816d2307a
+scraped_at: 2026-09-02T14:50:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:296f9c435823eb465a1ee423c12dc7e6ae07b9f7fceccb42a82131cfda0f3140
 ---
 
 ## 00521001 测试用例名称存在非法字符
@@ -155,7 +155,7 @@ The function where the method XXX is located is not registered in the 'List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/nau5cS27Rm-U9W7cI0R4hQ/zh-cn_image_0000002561833179.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/bI9NRs5YSVu5uzvAyavcTA/zh-cn_image_0000002701663356.png)
 
 ## 00522002 函数未在List.test.ets文件中注册
 
@@ -175,7 +175,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qKOrniJcQ6qSMoE-oiJWjQ/zh-cn_image_0000002530913254.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ABcL-TPWTfSjHxGZqeyh1A/zh-cn_image_0000002701663358.png)
 
 ## 00522005 文件中所有函数都没有在List.test.ets文件中注册
 
@@ -195,7 +195,7 @@ None of the functions in the file XXX have been registered in the 'List.test.ets
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/v9dkOrkmTQWxFOK2iu2Cnw/zh-cn_image_0000002561753195.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/fZOxeI7yQK2QSNZhwZDiNQ/zh-cn_image_0000002701823274.png)
 
 ## 00522006 测试文件中找不到测试用例
 
@@ -216,7 +216,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ULQJHeCRTymGYLRuEL4cYw/zh-cn_image_0000002561833175.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/4nq889teQHONya02rXBUjA/zh-cn_image_0000002731542551.png)
 
 ## 00522007 找不到任何测试用例
 
@@ -271,6 +271,28 @@ SDK中缺少必要的组件。
 **处理步骤**
 
 重新[安装DevEco Studio](https://developer.huawei.com/consumer/cn/download/deveco-studio)。
+
+## 00523003 找不到modules.abc文件
+
+**错误信息**
+
+Failed to start local test, please check the XXX path!
+
+**错误描述**
+
+找不到构建产物modules.abc，无法启动本地测试。
+
+**可能原因**
+
+1. 构建打包失败。
+2. 运行配置取消了构建任务，本地没有modules.abc文件。
+
+**处理步骤**
+
+1. 点击菜单栏**Build > Clean Project**清理缓存，再重新执行测试。
+2. 检查运行配置是否取消了构建任务，如果取消就重新添加构建任务。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/834orKvmQ5KgwY03pjv2HA/zh-cn_image_0000002731382573.png)
 
 ## 00523004 内存不足
 
@@ -342,7 +364,7 @@ No module found.
 
 **处理步骤**
 
-重新同步下工程并确保同步成功。
+重新同步工程并确保同步成功。
 
 ## 00526009 运行获取不到product
 

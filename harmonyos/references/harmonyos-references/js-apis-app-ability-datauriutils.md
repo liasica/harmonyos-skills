@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.dataUriUtils (DataUriUtils模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.dataUriUtils (DataUriUtils模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:90b6baec63032ec1faa9345a429a819a37b851f2d72310176d2ca7ce9ed2cda8
+scraped_at: 2026-09-02T15:00:34+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a17c74301ffbcabee173a5490538ab1f1d1228f6579b431f6e5159093c6a810e
 ---
 
-DataUriUtils模块提供用于处理uri对象的能力，包括获取、绑定、删除和更新指定uri对象的路径末尾的ID。
+DataUriUtils模块提供用于处理uri对象的能力，包括获取、附加、删除和更新指定uri对象的路径末尾的ID。
 
-说明
+**说明** 
 
 本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { dataUriUtils } from '@kit.AbilityKit';
+```ts
+import { dataUriUtils } from '@kit.AbilityKit';
 ```
 
 ## dataUriUtils.getId
-
-PhonePC/2in1TabletTVWearable
 
 getId(uri: string): number
 
@@ -36,7 +32,7 @@ getId(uri: string): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示uri对象。 |
+| uri | string | 是 | 表示要获取ID的uri对象。 |
 
 **返回值：**
 
@@ -54,20 +50,19 @@ getId(uri: string): number
 
 **示例：**
 
-```
-1. import { dataUriUtils } from '@kit.AbilityKit';
+```ts
+import { dataUriUtils } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let id = dataUriUtils.getId('com.example.dataUriUtils/1221');
-5. console.info(`get id: ${id}`);
-6. } catch(err) {
-7. console.error(`get id err ,check the uri ${err}`);
-8. }
+try {
+  let id = dataUriUtils.getId('com.example.dataUriUtils/1221');
+  console.info(`get id: ${id}`);
+} catch (err) {
+  console.error(`get id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
+}
 ```
 
 ## dataUriUtils.attachId
-
-PhonePC/2in1TabletTVWearable
 
 attachId(uri: string, id: number): string
 
@@ -79,7 +74,7 @@ attachId(uri: string, id: number): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示uri对象。 |
+| uri | string | 是 | 表示要附加ID的uri对象。 |
 | id | number | 是 | 表示要附加的ID。 |
 
 **返回值：**
@@ -98,25 +93,23 @@ attachId(uri: string, id: number): string
 
 **示例：**
 
-```
-1. import { dataUriUtils } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { dataUriUtils } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let id = 1122;
-5. try {
-6. let uri = dataUriUtils.attachId(
-7. 'com.example.dataUriUtils',
-8. id,
-9. );
-10. console.info(`attachId the uri is: ${uri}`);
-11. } catch (err) {
-12. console.error(`get id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
-13. }
+let id = 1122;
+try {
+  let uri = dataUriUtils.attachId(
+    'com.example.dataUriUtils',
+    id,
+  );
+  console.info(`attachId the uri is: ${uri}`);
+} catch (err) {
+  console.error(`attachId err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
+}
 ```
 
 ## dataUriUtils.deleteId
-
-PhonePC/2in1TabletTVWearable
 
 deleteId(uri: string): string
 
@@ -146,21 +139,19 @@ deleteId(uri: string): string
 
 **示例：**
 
-```
-1. import { dataUriUtils } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { dataUriUtils } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let uri = dataUriUtils.deleteId('com.example.dataUriUtils/1221');
-6. console.info(`delete id with the uri is: ${uri}`);
-7. } catch(err) {
-8. console.error(`delete id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
-9. }
+try {
+  let uri = dataUriUtils.deleteId('com.example.dataUriUtils/1221');
+  console.info(`delete id with the uri is: ${uri}`);
+} catch (err) {
+  console.error(`delete id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
+}
 ```
 
 ## dataUriUtils.updateId
-
-PhonePC/2in1TabletTVWearable
 
 updateId(uri: string, id: number): string
 
@@ -172,8 +163,8 @@ updateId(uri: string, id: number): string
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示uri对象 |
-| id | number | 是 | 表示要更新的ID |
+| uri | string | 是 | 表示要更新ID的uri对象。 |
+| id | number | 是 | 表示要更新的ID。 |
 
 **返回值：**
 
@@ -191,17 +182,18 @@ updateId(uri: string, id: number): string
 
 **示例：**
 
-```
-1. import { dataUriUtils } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { dataUriUtils } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. try {
-5. let id = 1122;
-6. let uri = dataUriUtils.updateId(
-7. 'com.example.dataUriUtils/1221',
-8. id
-9. );
-10. } catch (err) {
-11. console.error(`update id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
-12. }
+try {
+  let id = 1122;
+  let uri = dataUriUtils.updateId(
+    'com.example.dataUriUtils/1221',
+    id
+  );
+  console.info(`update id with the uri is: ${uri}`);
+} catch (err) {
+  console.error(`update id err, code: ${JSON.stringify((err as BusinessError).code)}, msg: ${JSON.stringify((err as BusinessError).message)}`);
+}
 ```

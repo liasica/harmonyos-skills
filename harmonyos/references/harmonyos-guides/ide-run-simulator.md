@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-run-simulator
-title: 使用仿真器运行轻量级穿戴应用
-breadcrumb: 指南 > 编写与调试应用 > 使用仿真器运行轻量级穿戴应用
+title: 使用仿真器运行轻量级智能穿戴应用
+breadcrumb: 指南 > 编写与调试应用 > 使用仿真器运行轻量级智能穿戴应用
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:46:34+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:7906e3b60287d3a96d67a1064290b0ee73b5fdc4a39ff0aa7aeb5d8ca73455fe
+scraped_at: 2026-09-02T15:00:24+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:851c9d4bdb78f66d25c75cbd5d88cde330ad4233a9b8cbefb9fe7c91367d185f
 ---
 
 DevEco Studio提供的**Simulator**可以运行和调试Lite Wearable设备上的HarmonyOS应用，兼容签名与不签名两种类型的HAP。
@@ -14,17 +14,17 @@ DevEco Studio提供的**Simulator**可以运行和调试Lite Wearable设备上�
 
 1. 在DevEco Studio右上角的设备框中选择**Huawei Lite Wearable Simulator。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/sG5Rw-isQcGeaDcojUYrAw/zh-cn_image_0000002561752733.png)
-2. 点击**Run** ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/VMSKUf8tRBK-Ifc9VBI4vw/zh-cn_image_0000002530752814.png)或**Debug** ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/47UziQbdSsqYoum-JVZ_MA/zh-cn_image_0000002530752808.png)按钮，在弹框中选择设备形状和分辨率，点击**OK**按钮，开始运行或调试应用。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/xahIQn5HQ2SswzxgJVu7Yg/zh-cn_image_0000002701662834.png)
+2. 点击**Run** ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/-Q_T9AFlTz2cQAQDp50WMQ/zh-cn_image_0000002731542047.png)或**Debug** ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/0nbZ58FXRL-3pHsV9vF9yw/zh-cn_image_0000002731382063.png)按钮，在弹框中选择设备形状和分辨率，点击**OK**按钮，开始运行或调试应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/3-asny3_Q8OG3Grt04Pn1Q/zh-cn_image_0000002561752739.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/vcyBPW-1T4Cwu_FjYdT_vA/zh-cn_image_0000002701822756.png "点击放大")
 3. DevEco Studio会启动编译构建和安装，完成后应用即可运行在Simulator上。
 
 ## 功能介绍
 
 在Simulator界面中，点击设备上方的**More**可展开更多功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/taB-x0wqS8WPoJTtaBdKVA/zh-cn_image_0000002530752812.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/y275nQ8TTqGrsKVB_e7IUA/zh-cn_image_0000002731542033.png)
 
 ### 屏幕
 
@@ -33,7 +33,7 @@ DevEco Studio提供的**Simulator**可以运行和调试Lite Wearable设备上�
 * **Brightness adjustment mode：**调节屏幕亮度。
   + **Manual：**手动调节，可拖动滑动条，或直接输入亮度。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/zPyCTnddQ3eK_BuiIxPWSQ/zh-cn_image_0000002530752794.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/CQ_e1bSuQb-lUSVdq3l41A/zh-cn_image_0000002701662848.png)
   + **Automatic：**自动调节。
 * **Resolution：**运行/调试模式下暂不支持调整分辨率，如需调整，请停止运行后，按照[操作步骤](ide-run-simulator.md#section1332819367496)选择分辨率。
 
@@ -47,7 +47,7 @@ DevEco Studio提供的**Simulator**可以运行和调试Lite Wearable设备上�
 * **Step count：**计步传感器用于统计行走步数，拖动滑动条，或直接输入步数。
 * **Geographic location：**输入经度、纬度，模拟设备所处的地理位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/L4mP6mgDSeOIxMka4Nny4Q/zh-cn_image_0000002530912796.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/mzYreyZ1TviOPm_n9FHn0Q/zh-cn_image_0000002701822766.png)
 
 ### 电池
 
@@ -57,19 +57,19 @@ DevEco Studio提供的**Simulator**可以运行和调试Lite Wearable设备上�
 * Charging：正在充电。
 * Wireless charging：无线充电。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/b7q-t0Z9RMuYna0K5d7_pQ/zh-cn_image_0000002530752798.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/6zSfPBrSTRSD5Xd8AcxpXQ/zh-cn_image_0000002701662838.png)
 
 ### 设备设置
 
 您可以更改设备的语言和地区，当前仅运行模式可以更改，调试模式暂不支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/oT4WctSpQaW1reAvX7f2HQ/zh-cn_image_0000002530912800.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/5AN1IV4PTYCNTND6rgjyAQ/zh-cn_image_0000002701822760.png)
 
 ### 调试
 
 * **Screen coordinate system****：**开启屏幕坐标系后，将光标移动到表盘上时，会显示屏幕坐标。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/aSOD6vKlTyyABgoX6qWEag/zh-cn_image_0000002530752806.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/0M06tVGJSgirk68shvdiXw/zh-cn_image_0000002731382069.gif "点击放大")
 * **Show device mask****：**关闭开关后，表盘周围的表冠颜色淡化。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/iOH0cgJVS1OUjjeE6dIpNg/zh-cn_image_0000002561752735.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ciLI14ikRbaehtbahgS3jg/zh-cn_image_0000002731542037.gif "点击放大")

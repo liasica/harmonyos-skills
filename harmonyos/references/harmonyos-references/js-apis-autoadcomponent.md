@@ -3,36 +3,32 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.advertising.AutoAdComponent (轮播广告展示组件)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS组件 > @ohos.advertising.AutoAdComponent (轮播广告展示组件)
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:57+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:fbc972b515be3c8e7acc9ae674fe37ab182f0d321929748adc5705d60521d6d2
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a8f318c48fae5752f24f4db623e19f361603ae7fbde3a6dd256c73e78d170304
 ---
 
 本模块提供展示轮播广告的能力。
 
-说明
+**说明** 
 
 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { AutoAdComponent } from '@kit.AdsKit';
+```typescript
+import { AutoAdComponent } from '@kit.AdsKit';
 ```
 
 ## AutoAdComponent
 
-PhonePC/2in1Tablet
-
-```
-1. AutoAdComponent({
-2. adParam: advertising.AdRequestParams,
-3. adOptions: advertising.AdOptions,
-4. displayOptions: advertising.AdDisplayOptions,
-5. interactionListener: advertising.AdInteractionListener
-6. })
+```typescript
+AutoAdComponent({
+  adParam: advertising.AdRequestParams,
+  adOptions: advertising.AdOptions,
+  displayOptions: advertising.AdDisplayOptions,
+  interactionListener: advertising.AdInteractionListener
+})
 ```
 
 用于展示轮播广告的组件。
@@ -45,7 +41,7 @@ PhonePC/2in1Tablet
 
 **参数：**
 
-| **参数名** | **类型** | 必填 | **装饰器类型** | 说明 |
+| **名称** | **类型** | 必填 | **装饰器类型** | 说明 |
 | --- | --- | --- | --- | --- |
 | adParam | advertising.[AdRequestParams](js-apis-advertising.md#adrequestparams) | 是 | - | 广告请求参数。 |
 | adOptions | advertising.[AdOptions](js-apis-advertising.md#adoptions) | 是 | - | 广告配置参数。 |
@@ -54,77 +50,71 @@ PhonePC/2in1Tablet
 
 **示例：**
 
+```typescript
+import { advertising, AutoAdComponent } from '@kit.AdsKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+struct Index {
+  // 广告请求参数
+  private adRequestParams: advertising.AdRequestParams = {
+    // 广告位ID
+    adId: 'h5xkz3mbr2',
+    // 广告类型
+    adType: 8,
+    // 广告位宽，单位vp
+    adWidth: 360,
+    // 广告位高，单位vp
+    adHeight: 57
+  };
+  // 广告配置参数
+  private adOptions: advertising.AdOptions = {};
+  // 广告展示参数
+  private adDisplayOptions: advertising.AdDisplayOptions = {
+    // 广告轮播的时间间隔，单位ms，取值范围[30000, 120000]
+    refreshTime: 30000
+  };
+  private ratio: number = -1;
+
+  aboutToAppear() {
+    if (this.adRequestParams.adWidth && this.adRequestParams.adHeight) {
+      this.ratio = this.adRequestParams.adWidth / this.adRequestParams.adHeight;
+    }
+  }
+  
+  build() {
+    Column() {
+      AutoAdComponent({
+        adParam: this.adRequestParams,
+        adOptions: this.adOptions,
+        displayOptions: this.adDisplayOptions,
+        interactionListener: {
+          onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
+            switch (status) {
+              case 'onAdOpen':
+                hilog.info(0x0000, 'testTag', 'onAdOpen');
+                break;
+              case 'onAdClick':
+                hilog.info(0x0000, 'testTag', 'onAdClick');
+                break;
+              case 'onAdClose':
+                hilog.info(0x0000, 'testTag', 'onAdClose');
+                break;
+            }
+          }
+        }
+      })
+        .width('100%')
+        .aspectRatio(this.ratio)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { advertising, AutoAdComponent } from '@kit.AdsKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. @Entry
-5. @Component
-6. struct Index {
-7. // 广告请求参数
-8. private adRequestParams: advertising.AdRequestParams = {
-9. // 广告位ID
-10. adId: 'h5xkz3mbr2',
-11. // 广告类型
-12. adType: 8,
-13. // 广告位宽，单位vp
-14. adWidth: 360,
-15. // 广告位高，单位vp
-16. adHeight: 57
-17. };
-18. // 广告配置参数
-19. private adOptions: advertising.AdOptions = {};
-20. // 广告展示参数
-21. private adDisplayOptions: advertising.AdDisplayOptions = {
-22. // 广告轮播的时间间隔，单位ms，取值范围[30000, 120000]
-23. refreshTime: 30000
-24. };
-25. private ratio: number = -1;
-
-27. aboutToAppear() {
-28. if (this.adRequestParams.adWidth && this.adRequestParams.adHeight) {
-29. this.ratio = this.adRequestParams.adWidth / this.adRequestParams.adHeight;
-30. }
-31. }
-
-33. build() {
-34. Column() {
-35. AutoAdComponent({
-36. adParam: this.adRequestParams,
-37. adOptions: this.adOptions,
-38. displayOptions: this.adDisplayOptions,
-39. interactionListener: {
-40. onStatusChanged: (status: string, ad: advertising.Advertisement, data: string) => {
-41. switch (status) {
-42. case 'onAdOpen':
-43. hilog.info(0x0000, 'testTag', 'onAdOpen');
-44. break;
-45. case 'onAdClick':
-46. hilog.info(0x0000, 'testTag', 'onAdClick');
-47. break;
-48. case 'onAdClose':
-49. hilog.info(0x0000, 'testTag', 'onAdClose');
-50. break;
-51. }
-52. }
-53. }
-54. })
-55. .width('100%')
-56. .aspectRatio(this.ratio)
-57. }
-58. .width('100%')
-59. .height('100%')
-60. }
-61. }
-```
-
-**效果图：**
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mQgIpDsYSjqDBYP2N4ASTw/zh-cn_image_0000002558605608.png)
 
 ### build
-
-PhonePC/2in1Tablet
 
 build(): void
 

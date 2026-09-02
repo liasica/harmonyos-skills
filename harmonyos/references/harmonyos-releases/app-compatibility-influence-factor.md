@@ -1,12 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compatibility-influence-factor
 title: 影响应用兼容性的关键信息
-breadcrumb: 版本说明 > 应用兼容性说明 > 影响应用兼容性的关键信息
+breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 影响应用兼容性的关键信息
 category: harmonyos-releases
-scraped_at: 2026-04-29T13:25:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:85182a050ddb3e09aa677999e29bfede66e2c55530c0d385644a356a74d7cb3a
+scraped_at: 2026-09-02T14:59:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8fc2090d6fd70096ea4eb1eb2b893a06887a2cb72216d965d8ad773016953aeb
 ---
+
+**说明** 
+
+API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说明](version-number-26.md)），不影响对API兼容性判断的基本逻辑，因此在文档的示意性描述中暂时仍保持旧版本格式的说明。
+
+近期API版本号的大小关系如下：
+
+26.0.0 > 6.1.1(24) > 6.1.0(23) > 6.0.2(22) > 6.0.1(21) > 6.0.0(20) > 5.1.1(19) > 5.1.0(18) > 5.0.5(17)
 
 ## 应用开发过程使用的SDK版本
 
@@ -24,21 +32,21 @@ content_hash: sha256:85182a050ddb3e09aa677999e29bfede66e2c55530c0d385644a356a74d
 
 作为应用开发者，使用并适配了API版本6.0.2(22)，同时希望应用能够运行到尽可能多的HarmonyOS现网设备，那么可以在应用工程的build-profile.json5 文件中进行如下配置：
 
-```
-1. "products": [
-2. {
-3. "name": "default",
-4. "signingConfig": "default",
-5. "compileSdkVersion": "6.0.2(22)",
-6. "targetSdkVersion": "6.0.2(22)",
-7. "compatibleSdkVersion": "6.0.0(20)",
-8. "runtimeOS": "HarmonyOS",
-9. ...
-10. }
-11. ]
+```screen
+"products": [
+  {
+    "name": "default",
+    "signingConfig": "default",
+    "compileSdkVersion": "6.0.2(22)",
+    "targetSdkVersion": "6.0.2(22)",
+    "compatibleSdkVersion": "6.0.0(20)",
+    "runtimeOS": "HarmonyOS",
+    ...
+  }
+]
 ```
 
-本示例中，将compatibleSdkVersion值配置为6.0.0(20)（注意：compatibleSdkVersion字段具体配置的最低值，可根据应用运营策略和[HarmonyOS现网设备API版本分布](sdk-version-percentage.md)来决定），但因为该应用升级到了6.0.2(22)，并使用了该版本的新API，考虑到新的API在6.0.2(22)版本会运行异常，所以需通过API版本判断进行保护，具体保护方式可以参考后续章节：[应用使用API兼容性保护判断的指导](app-compatibility-api-compatibility.md)。
+本示例中，将compatibleSdkVersion值配置为6.0.0(20)（注意：compatibleSdkVersion字段具体配置的最低值，可根据应用运营策略和[HarmonyOS现网设备API版本分布](sdk-version-percentage.md)来决定），但因为该应用升级到了6.0.2(22)，并使用了该版本的新API，考虑到新的API在6.0.0(20)版本会运行异常，所以需通过API版本判断进行保护，具体保护方式可以参考后续章节：[API兼容性保护和告警屏蔽](app-compatibility-apis-compatibility.md)。
 
 ## 运行应用的设备系统所搭载的API版本
 
@@ -50,48 +58,52 @@ content_hash: sha256:85182a050ddb3e09aa677999e29bfede66e2c55530c0d385644a356a74d
 
   关于本机的进入方式如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/YmgWkyr7SUu6GFNE7b8d-g/zh-cn_image_0000002379286636.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lOF-d7QbQOeEJDAUYUpzKw/zh-cn_image_0000002412806157.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/OYXOtqghQnKCmMIYGXK0Mg/zh-cn_image_0000002379126760.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/vWc72Fo4SZyoBfCvJUGEfw/zh-cn_image_0000002379286636.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/1yMSsYpcQWSRi5jw_JDzwg/zh-cn_image_0000002412806157.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hXEZrp6nSWWwN-Q47LW0dw/zh-cn_image_0000002379126760.png "点击放大")
 
   注意：上述界面的API版本的取值是从deviceInfo的distributionOSApiName和sdkApiVersion属性组合而成。
 * **【方式二】**可通过以下hdc命令来查询设备ROM的API版本号。
 
-  ```
-  1. hdc shell param get const.product.os.dist.apiname
-  2. hdc shell param get const.product.os.dist.apiversion
-  3. hdc shell param get const.ohos.apiversion
+  ```codeblock
+  hdc shell param get const.product.os.dist.apiname
+  hdc shell param get const.product.os.dist.apiversion
+  hdc shell param get const.ohos.apiversion
   ```
 
   其中：
 
-  + const.product.os.dist.apiname和const.product.os.dist.apiversion是HarmonyOS API版本前半部分的表示，即M.S.F(N)中的M.S.F。
+  + const.product.os.dist.apiname和const.product.os.dist.apiversion是HarmonyOS API版本前半部分的表示，即X.Y.Z(N)中的X.Y.Z。
 
-    const.product.os.dist.apiname是该字段的字符串表示，格式为M.S.F。
+    const.product.os.dist.apiname是该字段的字符串表示，格式为X.Y.Z。
 
-    const.product.os.dist.apiversion是该字段的数值表示，由apiname转换而来，apiversion的值=M\*10000+S\*100+F 。
+    const.product.os.dist.apiversion是该字段的数值表示，由apiname转换而来，apiversion的值=X\*10000+Y\*100+Z 。
   + const.ohos.apiversion是OpenHarmony底座的API Level。
 
   运行示例如下：
 
-  ```
-  1. > hdc shell param get const.product.os.dist.apiname
-  2. > 5.0.5
-  3. > hdc shell param get const.product.os.dist.apiversion
-  4. > 50005
-  5. > hdc shell param get const.ohos.apiversion
-  6. > 17
+  ```screen
+  > hdc shell param get const.product.os.dist.apiname
+  > 5.0.5
+  > hdc shell param get const.product.os.dist.apiversion
+  > 50005
+  > hdc shell param get const.ohos.apiversion
+  > 17
   ```
 
 * **【方式三】**可通过public API接口获取。以ArkTS语言为例，可以通过deviceinfo中的distributionOSApiVersion/sdkApiVersion接口获取，具体可以参考[deviceInfo接口参考](../harmonyos-references/js-apis-device-info.md)。
 
 ### 应用包中所记录的SDK版本信息
 
-参考上述SDK版本属性表格， 在应用包的module.json5中会记录compileSdkVersion，targetAPIVersion和minAPIVersion三个字段，其字段作用在上述表格有详细说明。
+参考上述SDK版本属性表格， 在编译后的应用包的module.json中会记录compileSdkVersion，targetAPIVersion和minAPIVersion三个字段，其字段作用在上述表格有详细说明。
+
+**说明** 
+
+应用工程在编译后，单个模块的编译产物中，会将工程文件中的app.json5和module.json5的内容合并到一个module.json文件（详见[应用配置文件概述](../harmonyos-guides/application-configuration-file-overview-stage.md)）。因此上述三个版本字段在工程文件中来自module.json5，在编译产物中来自module.json，在获取时应注意区分。
 
 应用市场分发时主要根据minAPIVersion进行分发范围的控制，该字段表示能够分发到的最小API版本的现网设备。
 
 当用户设备的API版本低于应用包中的minAPIVersion时，该应用仍可在该设备的应用市场推荐页被展示，或通过搜索被查看到。但当用户点击安装此应用时，会提示此应用“无法安装”并给出所需要的系统版本要求（如下图所示）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/tnjXdWi7QYmSGDgxiSTM5A/zh-cn_image_0000002515801291.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/x_nNCUOYTIGI8G1a59hUkA/zh-cn_image_0000002515801291.png)
 
 ### 对API的行为变更进行API版本隔离
 
@@ -107,7 +119,7 @@ API实施行为变更时进行版本隔离是一种对应用的保护机制，�
   + 如果配置的targetSdkVersion≥该API行为变更引入的版本，则应用需要关注此API行为变更，如果需在搭载更高API版本的系统（ROM搭载的API版本≥该API行为变更引入的版本）正常运行，需要应用进行适配。
 * 如果API在行为变更时未进行版本隔离，则将影响使用该API的所有应用。这些应用都必须按照变更说明中的适配指导进行调整，重新声明应用的SDK版本要求，并完成编译上架，否则在搭载更高版本SDK的系统上运行时将受到API行为变更的影响。
 
-说明
+**说明** 
 
 从2025年1月起，将对所有API行为变更是否进行版本隔离进行明确声明。
 

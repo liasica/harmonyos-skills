@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: xeg_gles_extension.h
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 头文件 > xeg_gles_extension.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b9b432b67de4391e813a1506d8402ffd5b35abe9f896dc5f50ede1d896e69df7
+scraped_at: 2026-09-02T15:02:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bb491182e7380883fe7ecfedfb93e71bd44f4d69e39b1c360cb93828d2839580
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 XEngine扩展特性查询接口（OpenGL ES）。
 
@@ -26,11 +24,7 @@ XEngine扩展特性查询接口（OpenGL ES）。
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 宏定义
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,15 +32,11 @@ PhonePC/2in1TabletTV
 
 ### 类型定义
 
-PhonePC/2in1TabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | typedef const GLubyte \*(GL\_APIENTRYP [PFN\_HMS\_XEG\_GETSTRING](xengine-kit-xengine.md#pfn_hms_xeg_getstring)) (GLenum name) | XEngine OpenGL ES扩展特性查询接口函数指针定义。 |
 
 ### 函数
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

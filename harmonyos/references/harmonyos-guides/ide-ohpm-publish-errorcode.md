@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-publ
 title: ohpm publish错误码
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm publish错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:46+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:517b6ff9372191795cc0d7f5a719528f3d7eb65c7fa0c79686580b8ecabf7dea
+scraped_at: 2026-09-02T14:50:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c7dd54292da0d1199d168b9e5a5877d4a72a990697eb4b8778435a2a6fc5a07d
 ---
 
 ## 00609001 依赖声明缺失
@@ -20,7 +20,7 @@ Dep Statements Missing.
 
 **可能原因**
 
-在oh-package.json5的dependencies/dynamicDependencies未声明。
+oh-package.json5文件中的dependencies/dynamicDependencies未声明。
 
 **处理步骤**
 
@@ -74,7 +74,7 @@ Key Path Is DirError.
 
 **可能原因**
 
-私钥路径文件错误。
+在.ohpmrc文件中，key\_path配置的是文件夹路径，不是文件路径。
 
 **处理步骤**
 
@@ -128,11 +128,11 @@ Not Support PrivateKey.
 
 **可能原因**
 
-未配置使用非空密码加密的私钥。
+.ohpmrc文件中key\_path配置的是私钥文件路径，但路径下的私钥文件不存在或被损坏。
 
 **处理步骤**
 
-在.ohpmrc文件中配置加密的私钥密码。
+确保私钥文件路径指向正确的私钥文件。
 
 ## 00609009 HSP文件为空
 
@@ -168,7 +168,7 @@ Invalid Tgz File.
 
 **处理步骤**
 
-检查tgz文件路径，确保路径对应的文件中包含.hsp文件。
+检查TGZ文件路径，确保路径对应的文件中包含.hsp文件。
 
 ## 00609011 构建tgz元数据失败
 
@@ -186,7 +186,7 @@ Build Tgz Metadata Failed.
 
 **处理步骤**
 
-检查包oh-package.json5的配置，确保各字段配置正确。
+检查包oh-package.json5文件的配置，确保各字段配置正确。
 
 ## 00609012 依赖包被锁定
 
@@ -204,7 +204,7 @@ Pkg Is Locked.
 
 **处理步骤**
 
-等待一段时间后重试，再上传。
+等待一段时间后重试上传。
 
 ## 00609013 超出最大长度限制
 
@@ -218,11 +218,11 @@ Over Maximum Length Error.
 
 **可能原因**
 
-配置的name、email、url值的长度超过了最大限制。
+模块级oh-package.json5文件中author字段的name、email、url长度超过了最大限制。
 
 **处理步骤**
 
-检查值的长度，确保其在允许的范围内。name长度范围为[1,128]，email长度范围为[1，64]，url长度范围为[1，256]。
+检查值的长度，确保其在允许的范围内，name长度范围为[1,128]，email长度范围为[1,64]，url长度范围为[1,256]。
 
 ## 00609014 解析源文件失败
 
@@ -259,21 +259,3 @@ oh-package.json5文件中未配置兼容性字段。
 **处理步骤**
 
 确保oh-package.json5文件中配置了必要的兼容性检测字段。
-
-## 00640001 系统错误
-
-**错误信息**
-
-System Error.
-
-**错误描述**
-
-系统错误。
-
-**可能原因**
-
-系统错误，例如内存错误等。
-
-**处理步骤**
-
-检查日志文件，寻找错误信息定位根源。

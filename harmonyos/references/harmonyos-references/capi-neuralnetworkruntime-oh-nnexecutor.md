@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: OH_NNExecutor
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 结构体 > OH_NNExecutor
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a0ae0a519975f2cf23a4686826ac0136286c5479dc8174d853e30285152d8087
+scraped_at: 2026-09-02T14:53:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:604eed9a252379c0e8ece1e3e8971956fe9c7c18d7f8b28d181a7ade6782c51b
 ---
 
-```
-1. typedef struct OH_NNExecutor OH_NNExecutor
+```c
+typedef struct OH_NNExecutor OH_NNExecutor
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 执行器句柄。
 

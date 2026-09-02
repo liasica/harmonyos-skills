@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: DevEco Studio修改文件后点击run，一直没成功跑起来，run按钮一直处于禁用状态（Mac环境）
 breadcrumb: FAQ > DevEco Studio > 应用运行 > DevEco Studio修改文件后点击run，一直没成功跑起来，run按钮一直处于禁用状态（Mac环境）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:58+08:00
-doc_updated_at: 2026-03-25
+scraped_at: 2026-09-02T15:22:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:d7dc32e95f0c33f845d31836d95c110cd1f7f43e276cb5b8a2a5a77f64511c44
 ---
 

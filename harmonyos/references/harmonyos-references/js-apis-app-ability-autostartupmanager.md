@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.autoStartupManager (开机自启管理能力)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.autoStartupManager (开机自启管理能力)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:58:24+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:cfe6ab2db93d414325ee40e4b670dddb76d024ff4831267182147ead22290050
+scraped_at: 2026-09-02T15:00:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ed1b7ccf763bcaab764caa6238b67bf822a96ed5b864dfd8053ce77cfda07595
 ---
 
 autoStartupManager模块提供获取自身应用的开机自启状态。
 
-说明
+**说明** 
 
 本模块首批接口从API version 21开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ autoStartupManager模块提供获取自身应用的开机自启状态。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { autoStartupManager } from '@kit.AbilityKit';
+```ts
+import { autoStartupManager } from '@kit.AbilityKit';
 ```
 
 ## autoStartupManager.getAutoStartupStatusForSelf
-
-PhonePC/2in1TabletTVWearable
 
 getAutoStartupStatusForSelf(): Promise<boolean>
 
@@ -53,23 +49,56 @@ getAutoStartupStatusForSelf(): Promise<boolean>
 
 **示例**：
 
-```
-1. import { autoStartupManager, UIAbility } from '@kit.AbilityKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { autoStartupManager, UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. export default class EntryAbility extends UIAbility {
-5. onForeground() {
-6. try {
-7. autoStartupManager.getAutoStartupStatusForSelf().then((isAutoStartup: boolean) => {
-8. console.info(`getAutoStartupStatusForSelf success, isAutoStartup: ${JSON.stringify(isAutoStartup)}.`);
-9. }).catch((err: BusinessError) => {
-10. console.error(`getAutoStartupStatusForSelf failed, err code: ${err.code}, err msg: ${err.message}.`);
-11. });
-12. } catch (err) {
-13. let code = (err as BusinessError).code;
-14. let msg = (err as BusinessError).message;
-15. console.error(`getAutoStartupStatusForSelf failed, err code: ${code}, err msg: ${msg}.`);
-16. }
-17. }
-18. }
+export default class EntryAbility extends UIAbility {
+  onForeground() {
+    try {
+      autoStartupManager.getAutoStartupStatusForSelf().then((isAutoStartup: boolean) => {
+        console.info(`getAutoStartupStatusForSelf success, isAutoStartup: ${JSON.stringify(isAutoStartup)}.`);
+      }).catch((err: BusinessError) => {
+        console.error(`getAutoStartupStatusForSelf failed, err code: ${err.code}, err msg: ${err.message}.`);
+      });
+    } catch (err) {
+      let code = (err as BusinessError).code;
+      let msg = (err as BusinessError).message;
+      console.error(`getAutoStartupStatusForSelf failed, err code: ${code}, err msg: ${msg}.`);
+    }
+  }
+}
+```
+
+## autoStartupManager.isAutoStartupSupported
+
+isAutoStartupSupported(): boolean
+
+检查当前设备是否支持开机自启动。
+
+**说明** 
+
+建议在调用[autoStartupManager.getAutoStartupStatusForSelf](js-apis-app-ability-autostartupmanager.md#autostartupmanagergetautostartupstatusforself) 之前，先调用该接口检查设备能力。如果返回false，则表明当前设备不支持开机自启动。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**起始版本：** 26.0.0
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 当前设备是否支持开机自启动。true表示支持开机自启动；false表示不支持开机自启动。 |
+
+**示例**：
+
+```ts
+import { autoStartupManager, UIAbility } from '@kit.AbilityKit';
+
+export default class EntryAbility extends UIAbility {
+  onCreate() {
+    const isSupported: boolean = autoStartupManager.isAutoStartupSupported();
+    console.info(`isAutoStartupSupported: ${isSupported}.`);
+  }
+}
 ```

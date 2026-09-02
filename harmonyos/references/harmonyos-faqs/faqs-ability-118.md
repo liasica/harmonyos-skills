@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-11
 title: UIContext与Ability的关系，列举常见UIContext、Ability、UIAbilityContext的关系
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > UIContext与Ability的关系，列举常见UIContext、Ability、UIAbilityContext的关系
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:53+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:17+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:55c256b9c195e0e4d61661cae0139da4c9c48b7224aeaac98a13d8b94497525d
 ---
 

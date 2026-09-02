@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/subscribe-system-environment-variable-changes
 title: 获取/设置环境变量
-breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > Stage模型开发指导 > Stage模型应用组件 > 获取/设置环境变量
+breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 获取/设置环境变量
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:37:46+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8f1f46163f3c70dd498f3040fda988295a75d0b376f7a2b2d0aca9cb9671b62e
+scraped_at: 2026-09-02T14:59:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1c052b22282e20e249483d26201ba46292d5d6498a20abcff6c179984de8c7b6
 ---
 
 环境变量涵盖了所有可能影响应用运行时的环境配置信息，包括应用可指定的内部环境变量（字体大小、外观、语言等）和应用可感知的外部环境变量（屏幕方向等）。
@@ -18,35 +18,33 @@ content_hash: sha256:8f1f46163f3c70dd498f3040fda988295a75d0b376f7a2b2d0aca9cb967
 | --- | --- | --- | --- |
 | [获取环境变量](subscribe-system-environment-variable-changes.md#获取环境变量) | 开发者可以使用[getConfigurationSync](../harmonyos-references/js-apis-resource-manager.md#getconfigurationsync10)主动获取当前环境变量，包括深浅色模式、屏幕方向、语言地区、屏幕密度、设备类型等。 | 当前仅支持同步获取，使用方式参考[ResourceManager.getConfigurationSync](../harmonyos-references/js-apis-resource-manager.md#getconfigurationsync10)。 | 应用运行过程中，可以主动获取当前应用深浅色模式，以更新用户界面显示。 |
 | [设置环境变量](subscribe-system-environment-variable-changes.md#设置环境变量) | 当前仅支持应用自定义字体大小、深浅色、语言。  - [设置字体大小](subscribe-system-environment-variable-changes.md#设置字体大小)  - [设置深浅色模式](subscribe-system-environment-variable-changes.md#设置深浅色模式)  - [设置应用语言](subscribe-system-environment-variable-changes.md#设置应用语言) | 当应用设置环境变量后，应用将无法通过订阅感知到对应的环境变量在系统中的变化。 | 应用自定义字体大小，以提升用户体验。 |
-| [订阅环境变量](subscribe-system-environment-variable-changes.md#订阅环境变量) | 通过订阅环境变量，及时感知系统环境变化 。支持订阅的环境变量包括语言、深浅色、屏幕方向等，详见[Configuration](../harmonyos-references/js-apis-app-ability-configuration.md)。 | - 如果开发者将环境变量配置为不跟随系统变化（即[configuration标签](app-configuration-file.md#configuration标签)中的对应字段取值为“nonFollowSystem”），应用将无法通过订阅感知对应的环境变量在系统中的变化。  - 应用订阅环境变量后，当应用处于后台时，环境变量发生变更，应用将无法实时收到订阅通知。相关通知推送会被延迟处理，待应用切换回前台时，才会收到订阅通知。 | 当用户旋转设备屏幕时，应用可以通过订阅环境变量感知环境变化重新布局用户界面，以适应屏幕方向和尺寸。 |
+| [订阅环境变量](subscribe-system-environment-variable-changes.md#订阅环境变量) | 通过订阅环境变量，及时感知系统环境变化。支持订阅的环境变量包括语言、深浅色、屏幕方向等，详见[Configuration](../harmonyos-references/js-apis-app-ability-configuration.md)。 | - 如果开发者将环境变量配置为不跟随系统变化（即[configuration标签](app-configuration-file.md#configuration标签)中的对应字段取值为“nonFollowSystem”），应用将无法通过订阅感知对应的环境变量在系统中的变化。  - 应用订阅环境变量后，当应用处于后台时，环境变量发生变更，应用将无法实时收到订阅通知。相关通知推送会被延迟处理，待应用切换回前台时，才会收到订阅通知。 | 当用户旋转设备屏幕时，应用可以通过订阅环境变量感知环境变化重新布局用户界面，以适应屏幕方向和尺寸。 |
 
 ## 获取环境变量
 
 开发者可以使用[getConfigurationSync](../harmonyos-references/js-apis-resource-manager.md#getconfigurationsync10)主动获取当前[环境变量](../harmonyos-references/js-apis-resource-manager.md#configuration)，包括深浅色模式、屏幕方向、语言地区、屏幕密度、设备类型等，对应用程序作出相应处理，提供更好的用户体验。
 
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN_NUMBER = 0xF811;
+const TAG = '[EnvAbility0]';
+
+export default class EnvAbility0 extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    try {
+      let value = this.context.resourceManager.getConfigurationSync();
+      // 屏幕方向
+      let direction = value.direction;
+      // 语言文字国家地区
+      let locale = value.locale;
+    } catch (error) {
+      hilog.error(DOMAIN_NUMBER, TAG, 'getConfigurationSync error is ' + error);
+    }
+  }
+}
 ```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. const DOMAIN_NUMBER = 0xF811;
-5. const TAG = '[EnvAbility0]';
-
-7. export default class EnvAbility0 extends UIAbility {
-8. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-9. try {
-10. let value = this.context.resourceManager.getConfigurationSync();
-11. // 屏幕方向
-12. let direction = value.direction;
-13. // 语言文字国家地区
-14. let locale = value.locale;
-15. } catch (error) {
-16. hilog.error(DOMAIN_NUMBER, TAG, 'getConfigurationSync error is ' + error);
-17. }
-18. }
-19. }
-```
-
-[EnvAbility0.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvAbility/EnvAbility0.ets#L15-L35)
 
 ## 设置环境变量
 
@@ -58,24 +56,22 @@ content_hash: sha256:8f1f46163f3c70dd498f3040fda988295a75d0b376f7a2b2d0aca9cb967
 
 开发者可以使用[setFontSizeScale](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetfontsizescale13)设置应用字体大小。设置后，应用字体将不跟随系统变化，不再支持订阅系统字体大小变化。
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { window } from '@kit.ArkUI';
+```typescript
+import { UIAbility } from '@kit.AbilityKit';
+import { window } from '@kit.ArkUI';
 
-4. export default class EnvAbility1 extends UIAbility {
-5. onWindowStageCreate(windowStage: window.WindowStage) {
-6. windowStage.loadContent('pages/Index', (err, data) => {
-7. if (err.code) {
-8. return;
-9. }
-10. });
-11. let applicationContext = this.context.getApplicationContext();
-12. applicationContext.setFontSizeScale(2);
-13. }
-14. }
+export default class EnvAbility1 extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        return;
+      }
+    });
+    let applicationContext = this.context.getApplicationContext();
+    applicationContext.setFontSizeScale(2);
+  }
+}
 ```
-
-[EnvAbility1.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvAbility/EnvAbility1.ets#L15-L30)
 
 ### 设置深浅色模式
 
@@ -85,88 +81,80 @@ content_hash: sha256:8f1f46163f3c70dd498f3040fda988295a75d0b376f7a2b2d0aca9cb967
 
 * **设置应用的深浅色模式：** 使用ApplicationContext的[setColorMode](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetcolormode11)接口，可以设置应用深浅色模式。
 
-  ```
-  1. import { UIAbility, ConfigurationConstant } from '@kit.AbilityKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { window } from '@kit.ArkUI';
+  ```typescript
+  import { UIAbility, ConfigurationConstant } from '@kit.AbilityKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { window } from '@kit.ArkUI';
 
-  5. export default class EnvAbility2 extends UIAbility {
-  6. onWindowStageCreate(windowStage: window.WindowStage) {
-  7. windowStage.loadContent('pages/Index', (err, data) => {
-  8. if (err.code) {
-  9. hilog.error(0x0000, 'testTag', 'Failed to load the content.');
-  10. return;
-  11. }
-  12. let applicationContext = this.context.getApplicationContext();
-  13. applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
-  14. });
-  15. }
-  16. }
+  export default class EnvAbility2 extends UIAbility {
+    onWindowStageCreate(windowStage: window.WindowStage) {
+      windowStage.loadContent('pages/Index', (err, data) => {
+        if (err.code) {
+          hilog.error(0x0000, 'testTag', 'Failed to load the content.');
+          return;
+        }
+        let applicationContext = this.context.getApplicationContext();
+        applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+      });
+    }
+  }
   ```
-
-  [EnvAbility2.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvAbility/EnvAbility2.ets#L15-L32)
 * **设置UIAbility的深浅色模式：** 使用UIAbilityContext的[setColorMode](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#setcolormode18)，可以设置UIAbility的深浅色模式。
 
-  ```
-  1. import { UIAbility, ConfigurationConstant } from '@kit.AbilityKit';
-  2. import { hilog } from '@kit.PerformanceAnalysisKit';
-  3. import { window } from '@kit.ArkUI';
+  ```typescript
+  import { UIAbility, ConfigurationConstant } from '@kit.AbilityKit';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+  import { window } from '@kit.ArkUI';
 
-  5. export default class EnvAbility3 extends UIAbility {
-  6. onWindowStageCreate(windowStage: window.WindowStage) {
-  7. windowStage.loadContent('pages/Index', (err, data) => {
-  8. if (err.code) {
-  9. hilog.error(0x0000, 'testTag', 'Failed to load the content.');
-  10. return;
-  11. }
-  12. let uiAbilityContext = this.context;
-  13. uiAbilityContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
-  14. });
-  15. }
-  16. }
+  export default class EnvAbility3 extends UIAbility {
+    onWindowStageCreate(windowStage: window.WindowStage) {
+      windowStage.loadContent('pages/Index', (err, data) => {
+        if (err.code) {
+          hilog.error(0x0000, 'testTag', 'Failed to load the content.');
+          return;
+        }
+        let uiAbilityContext = this.context;
+        uiAbilityContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+      });
+    }
+  }
   ```
-
-  [EnvAbility3.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvAbility/EnvAbility3.ets#L15-L32)
 * **设置UIExtensionAbility的深浅色模式：** 使用UIExtensionContext的[setColorMode](../harmonyos-references/js-apis-inner-application-uiextensioncontext.md#setcolormode18)，可以设置UIExtensionAbility的深浅色模式。
 
-  ```
-  1. // UIExtensionAbility不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
-  2. import { ShareExtensionAbility, ConfigurationConstant } from '@kit.AbilityKit';
+  ```typescript
+  // UIExtensionAbility不支持三方应用直接继承，故以派生类ShareExtensionAbility举例说明。
+  import { ShareExtensionAbility, ConfigurationConstant } from '@kit.AbilityKit';
 
-  4. export default class EnvAbility4 extends ShareExtensionAbility {
-  5. onForeground() {
-  6. let uiExtensionContext = this.context;
-  7. uiExtensionContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
-  8. }
-  9. }
+  export default class EnvAbility4 extends ShareExtensionAbility {
+    onForeground() {
+      let uiExtensionContext = this.context;
+      uiExtensionContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+    }
+  }
   ```
-
-  [EnvAbility4.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvAbility/EnvAbility4.ets#L15-L25)
 
 ### 设置应用语言
 
 应用语言默认跟随系统语言变化。开发者可以使用[setLanguage](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetlanguage11)设置应用语言。设置后，不再支持订阅系统语言变化。
 
-```
-1. import { UIAbility } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { window } from '@kit.ArkUI';
+```typescript
+import { UIAbility } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
 
-5. export default class EnvAbility5 extends UIAbility {
-6. onWindowStageCreate(windowStage: window.WindowStage) {
-7. windowStage.loadContent('pages/Index', (err, data) => {
-8. if (err.code) {
-9. hilog.error(0x0000, 'testTag', 'Failed to load the content.');
-10. return;
-11. }
-12. let applicationContext = this.context.getApplicationContext();
-13. applicationContext.setLanguage('zh-cn');
-14. });
-15. }
-16. }
+export default class EnvAbility5 extends UIAbility {
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'Failed to load the content.');
+        return;
+      }
+      let applicationContext = this.context.getApplicationContext();
+      applicationContext.setLanguage('zh-cn');
+    });
+  }
+}
 ```
-
-[EnvAbility5.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvAbility/EnvAbility5.ets#L15-L32)
 
 ## 订阅环境变量
 
@@ -185,194 +173,184 @@ content_hash: sha256:8f1f46163f3c70dd498f3040fda988295a75d0b376f7a2b2d0aca9cb967
 
 1. 使用[on](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextonenvironment)方法，应用程序可以通过在非应用组件模块中订阅环境变量的变化来动态响应这些变化。例如，使用该方法在页面中监测系统语言的变化。
 
+   ```typescript
+   import { common, EnvironmentCallback, Configuration } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+
+   const TAG: string = '[EnvAbilityPage6]';
+   const DOMAIN_NUMBER: number = 0xFF00;
+
+   @Entry
+   @Component
+   struct EnvAbilityPage6 {
+     private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     private callbackId: number = 0; // 注册订阅系统环境变化的ID
+
+     subscribeConfigurationUpdate(): void {
+       let systemLanguage: string | undefined = this.context.config.language; // 获取系统当前语言
+
+       // 1.获取ApplicationContext
+       let applicationContext = this.context.getApplicationContext();
+
+       // 2.通过applicationContext订阅环境变量变化
+       let environmentCallback: EnvironmentCallback = {
+         onConfigurationUpdated(newConfig: Configuration) {
+           hilog.info(DOMAIN_NUMBER, TAG, `onConfigurationUpdated systemLanguage is ${systemLanguage}, newConfig: ${JSON.stringify(newConfig)}`);
+           if (systemLanguage !== newConfig.language) {
+             hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage from ${systemLanguage} changed to ${newConfig.language}`);
+             systemLanguage = newConfig.language; // 将变化之后的系统语言保存，作为下一次变化前的系统语言
+           }
+         },
+         onMemoryLevel(level) {
+           hilog.info(DOMAIN_NUMBER, TAG, `onMemoryLevel level: ${level}`);
+         }
+       }
+       try {
+         this.callbackId = applicationContext.on('environment', environmentCallback);
+       } catch (err) {
+         let code = (err as BusinessError).code;
+         let message = (err as BusinessError).message;
+         hilog.error(DOMAIN_NUMBER, TAG, `Failed to register applicationContext. Code is ${code}, message is ${message}`);
+       }
+     }
+
+     // 页面展示
+     build() {
+       // ...
+     }
+   }
    ```
-   1. import { common, EnvironmentCallback, Configuration } from '@kit.AbilityKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-
-   5. const TAG: string = '[EnvAbilityPage6]';
-   6. const DOMAIN_NUMBER: number = 0xFF00;
-
-   8. @Entry
-   9. @Component
-   10. struct EnvAbilityPage6 {
-   11. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   12. private callbackId: number = 0; // 注册订阅系统环境变化的ID
-
-   14. subscribeConfigurationUpdate(): void {
-   15. let systemLanguage: string | undefined = this.context.config.language; // 获取系统当前语言
-
-   17. // 1.获取ApplicationContext
-   18. let applicationContext = this.context.getApplicationContext();
-
-   20. // 2.通过applicationContext订阅环境变量变化
-   21. let environmentCallback: EnvironmentCallback = {
-   22. onConfigurationUpdated(newConfig: Configuration) {
-   23. hilog.info(DOMAIN_NUMBER, TAG, `onConfigurationUpdated systemLanguage is ${systemLanguage}, newConfig: ${JSON.stringify(newConfig)}`);
-   24. if (systemLanguage !== newConfig.language) {
-   25. hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage from ${systemLanguage} changed to ${newConfig.language}`);
-   26. systemLanguage = newConfig.language; // 将变化之后的系统语言保存，作为下一次变化前的系统语言
-   27. }
-   28. },
-   29. onMemoryLevel(level) {
-   30. hilog.info(DOMAIN_NUMBER, TAG, `onMemoryLevel level: ${level}`);
-   31. }
-   32. }
-   33. try {
-   34. this.callbackId = applicationContext.on('environment', environmentCallback);
-   35. } catch (err) {
-   36. let code = (err as BusinessError).code;
-   37. let message = (err as BusinessError).message;
-   38. hilog.error(DOMAIN_NUMBER, TAG, `Failed to register applicationContext. Code is ${code}, message is ${message}`);
-   39. }
-   40. }
-
-   42. // 页面展示
-   43. build() {
-   44. // ...
-   45. }
-   46. }
-   ```
-
-   [EnvAbilityPage6.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/pages/EnvAbilityPage6.ets#L15-L62)
 2. 在资源使用完成之后，可以通过调用[off](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextoffenvironment-1)方法释放相关资源。
 
+   ```typescript
+   import { common } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+
+   const TAG: string = '[EnvAbilityPage7]';
+   const DOMAIN_NUMBER: number = 0xFF00;
+
+   @Entry
+   @Component
+   struct EnvAbilityPage7 {
+     private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     private callbackId: number = 0; // 注册订阅系统环境变化的ID
+
+     unsubscribeConfigurationUpdate() {
+       let applicationContext = this.context.getApplicationContext();
+       try {
+         applicationContext.off('environment', this.callbackId);
+       } catch (err) {
+         let code = (err as BusinessError).code;
+         let message = (err as BusinessError).message;
+         hilog.error(DOMAIN_NUMBER, TAG, `Failed to unregister applicationContext. Code is ${code}, message is ${message}`);
+       }
+     }
+
+     // 页面展示
+     build() {
+       // ...
+     }
+   }
    ```
-   1. import { common } from '@kit.AbilityKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-
-   5. const TAG: string = '[EnvAbilityPage7]';
-   6. const DOMAIN_NUMBER: number = 0xFF00;
-
-   8. @Entry
-   9. @Component
-   10. struct EnvAbilityPage7 {
-   11. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   12. private callbackId: number = 0; // 注册订阅系统环境变化的ID
-
-   14. unsubscribeConfigurationUpdate() {
-   15. let applicationContext = this.context.getApplicationContext();
-   16. try {
-   17. applicationContext.off('environment', this.callbackId);
-   18. } catch (err) {
-   19. let code = (err as BusinessError).code;
-   20. let message = (err as BusinessError).message;
-   21. hilog.error(DOMAIN_NUMBER, TAG, `Failed to unregister applicationContext. Code is ${code}, message is ${message}`);
-   22. }
-   23. }
-
-   25. // 页面展示
-   26. build() {
-   27. // ...
-   28. }
-   29. }
-   ```
-
-   [EnvAbilityPage7.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/pages/EnvAbilityPage7.ets#L15-L45)
 
 ### 在AbilityStage组件管理器中订阅回调
 
 使用[AbilityStage.onConfigurationUpdate()](../harmonyos-references/js-apis-app-ability-abilitystage.md#onconfigurationupdate)回调方法订阅环境变量的变化。当环境变量发生变化时，会调用该回调方法。在该方法中，通过[Configuration](../harmonyos-references/js-apis-app-ability-configuration.md)对象获取最新的环境变量信息。可以进行相应的界面适配等操作，从而提高系统的灵活性和可维护性。
 
-说明
+**说明** 
 
 * DevEco Studio默认工程中未自动生成[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)，AbilityStage文件的创建参见[AbilityStage开发步骤](abilitystage.md#开发步骤)。
 * 当使用回调方法订阅系统环境变量的变化时，该回调方法会随着AbilityStage的生命周期而存在，在Module销毁时一并销毁。
 
 例如，在[AbilityStage.onConfigurationUpdate()](../harmonyos-references/js-apis-app-ability-abilitystage.md#onconfigurationupdate)回调方法中实现监测系统语言的变化。
 
+```typescript
+import { AbilityStage, Configuration } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG: string = '[EnvAbilityStage]';
+const DOMAIN_NUMBER: number = 0xFF00;
+
+let systemLanguage: string | undefined; // 系统当前语言
+
+export default class EnvAbilityStage extends AbilityStage {
+  onCreate(): void {
+    systemLanguage = this.context.config.language; // Module首次加载时，获取系统当前语言
+    hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage is ${systemLanguage}`);
+  }
+
+  onConfigurationUpdate(newConfig: Configuration): void {
+    hilog.info(DOMAIN_NUMBER, TAG, `onConfigurationUpdate, language: ${newConfig.language}`);
+    hilog.info(DOMAIN_NUMBER, TAG, `onConfigurationUpdated systemLanguage is ${systemLanguage}, newConfig: ${JSON.stringify(newConfig)}`);
+
+    if (systemLanguage !== newConfig.language) {
+      hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage from ${systemLanguage} changed to ${newConfig.language}`);
+      systemLanguage = newConfig.language; // 将变化之后的系统语言保存，作为下一次变化前的系统语言
+    }
+  }
+}
 ```
-1. import { AbilityStage, Configuration } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. const TAG: string = '[EnvAbilityStage]';
-5. const DOMAIN_NUMBER: number = 0xFF00;
-
-7. let systemLanguage: string | undefined; // 系统当前语言
-
-9. export default class EnvAbilityStage extends AbilityStage {
-10. onCreate(): void {
-11. systemLanguage = this.context.config.language; // Module首次加载时，获取系统当前语言
-12. hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage is ${systemLanguage}`);
-13. }
-
-15. onConfigurationUpdate(newConfig: Configuration): void {
-16. hilog.info(DOMAIN_NUMBER, TAG, `onConfigurationUpdate, language: ${newConfig.language}`);
-17. hilog.info(DOMAIN_NUMBER, TAG, `onConfigurationUpdated systemLanguage is ${systemLanguage}, newConfig: ${JSON.stringify(newConfig)}`);
-
-19. if (systemLanguage !== newConfig.language) {
-20. hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage from ${systemLanguage} changed to ${newConfig.language}`);
-21. systemLanguage = newConfig.language; // 将变化之后的系统语言保存，作为下一次变化前的系统语言
-22. }
-23. }
-24. }
-```
-
-[EnvAbilityStage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvAbilityStage/EnvAbilityStage.ets#L15-L40)
 
 ### 在UIAbility组件中订阅回调
 
 [UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)组件提供了[UIAbility.onConfigurationUpdate()](../harmonyos-references/js-apis-app-ability-ability.md#abilityonconfigurationupdate)回调方法用于订阅环境变量的变化。当环境变量发生变化时，会调用该回调方法。在该方法中，通过[Configuration](../harmonyos-references/js-apis-app-ability-configuration.md)对象获取最新的环境变量信息，而无需重启UIAbility。
 
-说明
+**说明** 
 
 * 当应用通过回调方法订阅环境变量变化时，该订阅会随着所在UIAbility的生命周期持续有效。一旦UIAbility被销毁，之前注册的所有回调订阅将自动失效，同时应用将不会再收到订阅的回调信息。
 * 如果使用该接口监听屏幕方向变化，需要在module.json5配置文件的[abilities标签](module-configuration-file.md#abilities标签)中将orientation字段配置为auto\_rotation。
 
 例如，在[onConfigurationUpdate()](../harmonyos-references/js-apis-app-ability-ability.md#abilityonconfigurationupdate)回调方法中实现监测系统语言的变化。
 
+```typescript
+import { AbilityConstant, Configuration, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG: string = '[EnvAbility9]';
+const DOMAIN_NUMBER: number = 0xFF00;
+
+let systemLanguage: string | undefined; // 系统当前语言
+
+export default class EnvAbility9 extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    systemLanguage = this.context.config.language; // UIAbility实例首次加载时，获取系统当前语言
+    hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage is ${systemLanguage}`);
+  }
+
+  onConfigurationUpdate(newConfig: Configuration): void {
+    hilog.info(DOMAIN_NUMBER, TAG, `onConfigurationUpdated systemLanguage is ${systemLanguage}, newConfig: ${JSON.stringify(newConfig)}`);
+
+    if (systemLanguage !== newConfig.language) {
+      hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage from ${systemLanguage} changed to ${newConfig.language}`);
+      systemLanguage = newConfig.language; // 将变化之后的系统语言保存，作为下一次变化前的系统语言
+    }
+  }
+}
 ```
-1. import { AbilityConstant, Configuration, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. const TAG: string = '[EnvAbility9]';
-5. const DOMAIN_NUMBER: number = 0xFF00;
-
-7. let systemLanguage: string | undefined; // 系统当前语言
-
-9. export default class EnvAbility9 extends UIAbility {
-10. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-11. systemLanguage = this.context.config.language; // UIAbility实例首次加载时，获取系统当前语言
-12. hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage is ${systemLanguage}`);
-13. }
-
-15. onConfigurationUpdate(newConfig: Configuration): void {
-16. hilog.info(DOMAIN_NUMBER, TAG, `onConfigurationUpdated systemLanguage is ${systemLanguage}, newConfig: ${JSON.stringify(newConfig)}`);
-
-18. if (systemLanguage !== newConfig.language) {
-19. hilog.info(DOMAIN_NUMBER, TAG, `systemLanguage from ${systemLanguage} changed to ${newConfig.language}`);
-20. systemLanguage = newConfig.language; // 将变化之后的系统语言保存，作为下一次变化前的系统语言
-21. }
-22. }
-23. }
-```
-
-[EnvAbility9.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvAbility/EnvAbility9.ets#L15-L39)
 
 ### 在ExtensionAbility组件中订阅回调
 
 [ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)组件提供了[onConfigurationUpdate()](../harmonyos-references/js-apis-app-ability-ability.md#abilityonconfigurationupdate)回调方法用于订阅环境变量的变化。当环境变量发生变化时，会调用该回调方法。在该方法中，通过[Configuration](../harmonyos-references/js-apis-app-ability-configuration.md)对象获取最新的环境变量信息。
 
-说明
+**说明** 
 
 当应用通过回调方法订阅环境变量变化时，该订阅会随着所在ExtensionAbility的生命周期持续有效。一旦ExtensionAbility被销毁，之前注册的所有回调订阅将自动失效，同时应用将不会再收到订阅的回调信息。
 
 以[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)为例说明。例如，在[onConfigurationUpdate()](../harmonyos-references/js-apis-app-form-formextensionability.md#formextensionabilityonconfigurationupdate)回调方法中实现环境变量的变化。
 
+```typescript
+import { FormExtensionAbility } from '@kit.FormKit';
+import { Configuration } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG: string = '[EnvFormExtensionAbility]';
+const DOMAIN_NUMBER: number = 0xFF00;
+
+export default class EnvFormExtensionAbility extends FormExtensionAbility {
+  onConfigurationUpdate(newConfig: Configuration) {
+    hilog.info(DOMAIN_NUMBER, TAG, 'onConfigurationUpdate: ' + JSON.stringify(newConfig));
+  }
+}
 ```
-1. import { FormExtensionAbility } from '@kit.FormKit';
-2. import { Configuration } from '@kit.AbilityKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-5. const TAG: string = '[EnvFormExtensionAbility]';
-6. const DOMAIN_NUMBER: number = 0xFF00;
-
-8. export default class EnvFormExtensionAbility extends FormExtensionAbility {
-9. onConfigurationUpdate(newConfig: Configuration) {
-10. hilog.info(DOMAIN_NUMBER, TAG, 'onConfigurationUpdate: ' + JSON.stringify(newConfig));
-11. }
-12. }
-```
-
-[EnvFormExtensionAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/Ability/EnvConfig/entry/src/main/ets/EnvFormExtensionAbility/EnvFormExtensionAbility.ets#L15-L28)

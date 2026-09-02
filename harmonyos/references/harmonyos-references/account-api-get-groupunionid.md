@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 通过OpenID或UnionID获取GroupUnionID
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力 > 通过OpenID或UnionID获取GroupUnionID
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:15+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e0b9a48f218faf70509e6ed9ed478716058a94857edce50a5f997ae04a2abf4d
+scraped_at: 2026-09-02T15:02:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dc3b9dc2d9b81c45075dff466f6790775e2307401e4f3de3286eaf6953c0d99c
 ---
 
-注意
+**注意** 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
@@ -60,15 +60,15 @@ content_hash: sha256:e0b9a48f218faf70509e6ed9ed478716058a94857edce50a5f997ae04a2
 
 请通过POST方式调用，示例如下：
 
-```
-1. POST /oauth2/v6/groupUnionId/batchGet HTTP/1.1
-2. Host: account-api.cloud.huawei.com
-3. Content-Type: application/json; charset=utf-8
-4. Authorization：Bearer <access_token>
+```http
+POST /oauth2/v6/groupUnionId/batchGet HTTP/1.1
+Host: account-api.cloud.huawei.com
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer <access_token>
 
-6. {
-7. "openIdList": ["<open_id1>","<open_id2>"]
-8. }
+{
+  "openIdList": ["<open_id1>","<open_id2>"]
+}
 ```
 
 ## 响应参数
@@ -88,7 +88,7 @@ content_hash: sha256:e0b9a48f218faf70509e6ed9ed478716058a94857edce50a5f997ae04a2
 | openIdToGroupUnionIdList | 否 | List<[OpenIdToGroupUnionIdInfo](account-api-get-groupunionid.md#openidtogroupunionidinfo)> | 用户的OpenID转GroupUnionID的列表。当传入openIdList参数时返回。 |
 | unionIdToGroupUnionIdList | 否 | List<[UnionIdToGroupUnionIdInfo](account-api-get-groupunionid.md#unionidtogroupunionidinfo)> | 用户的UnionID转GroupUnionID的列表，当传入unionIdList参数时返回。 |
 
-说明
+**说明** 
 
 响应参数openIdToGroupUnionIdList和unionIdToGroupUnionIdList列表为去重后的结果，因此响应参数的openIdToGroupUnionIdList数量可能与请求参数的openIdList数量不一致；请求参数unionIdList与响应参数unionIdToGroupUnionIdList同理。
 
@@ -117,138 +117,138 @@ content_hash: sha256:e0b9a48f218faf70509e6ed9ed478716058a94857edce50a5f997ae04a2
 
 ### 请求成功时（入参为openIdList场景）
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
 
-4. {
-5. "openIdToGroupUnionIdList": [
-6. { "openId": "AQAxrBzThFv*****lv9tV_4rMCc", "groupUnionId": "AgAsmsA25yiLl*****8Gr-uQyoKU8rSfMEwFJiqOA" },
-7. { "openId": "AQAxsA2hHN*****lv9U8rSfq2MX", "groupUnionId": "AgAsmWRSUVq2MLl*****8Gr-uQyoKUAxrB1HNqOA" }
-8. ]
-9. }
+{
+    "openIdToGroupUnionIdList": [
+        { "openId": "AQAxrBzThFv*****lv9tV_4rMCc", "groupUnionId": "AgAsmsA25yiLl*****8Gr-uQyoKU8rSfMEwFJiqOA" },
+        { "openId": "AQAxsA2hHN*****lv9U8rSfq2MX", "groupUnionId": "AgAsmWRSUVq2MLl*****8Gr-uQyoKUAxrB1HNqOA" }
+    ]
+}
 ```
 
 ### 请求成功时（入参为unionIdList场景）
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
 
-4. {
-5. "unionIdToGroupUnionIdList": [
-6. { "unionId": "AAAsbgKRbd*****isROb9mDshln5U", "groupUnionId": "AgAsmsA25yiLl*****8Gr-uQyoKU8rSfMEwFJiqOA" },
-7. { "unionId": "AAAsbgK2ir*****Gsr-BOmDshln5U", "groupUnionId": "AgAsmWRSUVq2MLl*****8Gr-uQyoKUAxrB1HNqOA" }
-8. ]
-9. }
+{
+    "unionIdToGroupUnionIdList": [
+        { "unionId": "AAAsbgKRbd*****isROb9mDshln5U", "groupUnionId": "AgAsmsA25yiLl*****8Gr-uQyoKU8rSfMEwFJiqOA" },
+        { "unionId": "AAAsbgK2ir*****Gsr-BOmDshln5U", "groupUnionId": "AgAsmWRSUVq2MLl*****8Gr-uQyoKUAxrB1HNqOA" }
+    ]
+}
 ```
 
 ### 请求失败时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
 
-4. {
-5. "resultCode": 60010003,
-6. "resultDesc": "Authorization error."
-7. }
+{
+    "resultCode": 60010003,
+    "resultDesc": "Authorization error."
+}
 ```
 
 ## 示例代码
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](account-api-common.md#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
-```
-1. import com.alibaba.fastjson2.JSONArray;
-2. import com.alibaba.fastjson2.JSONObject;
-3. import org.apache.http.client.methods.HttpPost;
-4. import java.io.IOException;
-5. import java.util.Arrays;
-6. import java.util.HashMap;
-7. import java.util.List;
-8. import java.util.Map;
+```java
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
+import org.apache.http.client.methods.HttpPost;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-10. /**
-11. * 通过OpenID或UnionID获取GroupUnionID
-12. */
-13. public class GroupUnionIdBatchGetDemo {
-14. public static void main(String[] args) throws IOException {
-15. // 通过OpenID或UnionID获取GroupUnionID接口URL
-16. String url = "https://account-api.cloud.huawei.com/oauth2/v6/groupUnionId/batchGet";
-17. // 替换为实际获取到的应用级凭证
-18. String accessToken = "<Access Token>";
+/**
+ * 通过OpenID或UnionID获取GroupUnionID
+ */
+public class GroupUnionIdBatchGetDemo {
+    public static void main(String[] args) throws IOException {
+        // 通过OpenID或UnionID获取GroupUnionID接口URL
+        String url = "https://account-api.cloud.huawei.com/oauth2/v6/groupUnionId/batchGet";
+        // 替换为实际获取到的应用级凭证
+        String accessToken = "<Access Token>";
 
-20. // 通过OpenID或UnionID都可以获取到GroupUnionID，请根据已有的业务场景进行选择
-21. // 场景一：使用OpenID来获取GroupUnionID场景
-22. List<String> openIdList = Arrays.asList("<OpenID1>","<OpenID2>");
-23. JSONObject resultByOpenId = batchGetGroupUnionIdByOpenId(url, accessToken, openIdList);
-24. // 解析响应结果获取openIdToGroupUnionIdList
-25. JSONArray openIdToGroupUnionIdList = resultByOpenId.getJSONArray("openIdToGroupUnionIdList");
-26. // 遍历解析openIdToGroupUnionIdList，openIdToGroupUnionIdList的每个元素，都是一组OpenID和GroupUnionID
-27. for (Object openIdToGroupUnionId : openIdToGroupUnionIdList) {
-28. JSONObject openIdToGroupUnionIdJson = (JSONObject) openIdToGroupUnionId;
-29. // 解析获取openId
-30. String openId = openIdToGroupUnionIdJson.getString("openId");
-31. // 解析获取groupUnionId
-32. String groupUnionId = openIdToGroupUnionIdJson.getString("groupUnionId");
-33. }
+        // 通过OpenID或UnionID都可以获取到GroupUnionID，请根据已有的业务场景进行选择
+        // 场景一：使用OpenID来获取GroupUnionID场景
+        List<String> openIdList = Arrays.asList("<OpenID1>","<OpenID2>");
+        JSONObject resultByOpenId = batchGetGroupUnionIdByOpenId(url, accessToken, openIdList);
+        // 解析响应结果获取openIdToGroupUnionIdList
+        JSONArray openIdToGroupUnionIdList = resultByOpenId.getJSONArray("openIdToGroupUnionIdList");
+        // 遍历解析openIdToGroupUnionIdList，openIdToGroupUnionIdList的每个元素，都是一组OpenID和GroupUnionID
+        for (Object openIdToGroupUnionId : openIdToGroupUnionIdList) {
+            JSONObject openIdToGroupUnionIdJson = (JSONObject) openIdToGroupUnionId;
+            // 解析获取openId
+            String openId = openIdToGroupUnionIdJson.getString("openId");
+            // 解析获取groupUnionId
+            String groupUnionId = openIdToGroupUnionIdJson.getString("groupUnionId");
+        }
 
-35. // 场景二：使用UnionID来获取GroupUnionID场景
-36. List<String> unionIdList = Arrays.asList("<UnionID1>", "<UnionID2>");
-37. JSONObject resultByUnionId = batchGetGroupUnionIdByUnionId(url, accessToken, unionIdList);
-38. // 解析响应结果获取unionIdToGroupUnionIdList
-39. JSONArray unionIdToGroupUnionIdList = resultByUnionId.getJSONArray("unionIdToGroupUnionIdList");
-40. // 遍历解析unionIdToGroupUnionIdList，unionIdToGroupUnionIdList的每个元素，都是一组UnionID和GroupUnionID
-41. for (Object unionIdToGroupUnionId : unionIdToGroupUnionIdList) {
-42. JSONObject unionIdToGroupUnionIdJson = (JSONObject) unionIdToGroupUnionId;
-43. // 解析获取unionId
-44. String unionId = unionIdToGroupUnionIdJson.getString("unionId");
-45. // 解析获取groupUnionId
-46. String groupUnionId = unionIdToGroupUnionIdJson.getString("groupUnionId");
-47. }
-48. }
+        // 场景二：使用UnionID来获取GroupUnionID场景
+        List<String> unionIdList = Arrays.asList("<UnionID1>", "<UnionID2>");
+        JSONObject resultByUnionId = batchGetGroupUnionIdByUnionId(url, accessToken, unionIdList);
+        // 解析响应结果获取unionIdToGroupUnionIdList
+        JSONArray unionIdToGroupUnionIdList = resultByUnionId.getJSONArray("unionIdToGroupUnionIdList");
+        // 遍历解析unionIdToGroupUnionIdList，unionIdToGroupUnionIdList的每个元素，都是一组UnionID和GroupUnionID
+        for (Object unionIdToGroupUnionId : unionIdToGroupUnionIdList) {
+            JSONObject unionIdToGroupUnionIdJson = (JSONObject) unionIdToGroupUnionId;
+            // 解析获取unionId
+            String unionId = unionIdToGroupUnionIdJson.getString("unionId");
+            // 解析获取groupUnionId
+            String groupUnionId = unionIdToGroupUnionIdJson.getString("groupUnionId");
+        }
+    }
 
-50. /**
-51. * 通过UnionID获取GroupUnionID
-52. * @param url 通过OpenID或UnionID获取GroupUnionID接口URL
-53. * @param accessToken 应用级凭证
-54. * @param unionIdList UnionID列表
-55. * @return JSONObject响应结果
-56. * @throws IOException 接口调用异常
-57. */
-58. private static JSONObject batchGetGroupUnionIdByUnionId(
-59. String url, String accessToken, List<String> unionIdList) throws IOException {
-60. HttpPost httpPost = new HttpPost(url);
-61. Map<String, Object> reqBody = new HashMap<>();
-62. reqBody.put("unionIdList", unionIdList);
-63. httpPost.setEntity(CallUtils.wrapJsonEntity(reqBody));
-64. httpPost.setHeader("Content-Type", "application/json; charset=utf-8");
-65. httpPost.setHeader("Authorization", "Bearer " + accessToken);
-66. // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
-67. return CallUtils.toJsonObject(CallUtils.remoteCallAccountApi(httpPost));
-68. }
+    /**
+     * 通过UnionID获取GroupUnionID
+     * @param url 通过OpenID或UnionID获取GroupUnionID接口URL
+     * @param accessToken 应用级凭证
+     * @param unionIdList UnionID列表
+     * @return JSONObject响应结果
+     * @throws IOException 接口调用异常
+     */
+    private static JSONObject batchGetGroupUnionIdByUnionId(
+            String url, String accessToken, List<String> unionIdList) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        Map<String, Object> reqBody = new HashMap<>();
+        reqBody.put("unionIdList", unionIdList);
+        httpPost.setEntity(CallUtils.wrapJsonEntity(reqBody));
+        httpPost.setHeader("Content-Type", "application/json; charset=utf-8");
+        httpPost.setHeader("Authorization", "Bearer " + accessToken);
+        // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
+        return CallUtils.toJsonObject(CallUtils.remoteCallAccountApi(httpPost));
+    }
 
-70. /**
-71. * 通过OpenID获取GroupUnionID
-72. * @param url 通过OpenID或UnionID获取GroupUnionID接口URL
-73. * @param accessToken 应用级凭证
-74. * @param openIdList OpenID列表
-75. * @return JSONObject响应结果
-76. * @throws IOException 接口调用异常
-77. */
-78. private static JSONObject batchGetGroupUnionIdByOpenId(
-79. String url, String accessToken, List<String> openIdList) throws IOException {
-80. HttpPost httpPost = new HttpPost(url);
-81. Map<String, Object> reqBody = new HashMap<>();
-82. reqBody.put("openIdList", openIdList);
-83. httpPost.setEntity(CallUtils.wrapJsonEntity(reqBody));
-84. httpPost.setHeader("Content-Type", "application/json; charset=utf-8");
-85. httpPost.setHeader("Authorization", "Bearer " + accessToken);
-86. // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
-87. return CallUtils.toJsonObject(CallUtils.remoteCallAccountApi(httpPost));
-88. }
-89. }
+    /**
+     * 通过OpenID获取GroupUnionID
+     * @param url 通过OpenID或UnionID获取GroupUnionID接口URL
+     * @param accessToken 应用级凭证
+     * @param openIdList OpenID列表
+     * @return JSONObject响应结果
+     * @throws IOException 接口调用异常
+     */
+    private static JSONObject batchGetGroupUnionIdByOpenId(
+            String url, String accessToken, List<String> openIdList) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        Map<String, Object> reqBody = new HashMap<>();
+        reqBody.put("openIdList", openIdList);
+        httpPost.setEntity(CallUtils.wrapJsonEntity(reqBody));
+        httpPost.setHeader("Content-Type", "application/json; charset=utf-8");
+        httpPost.setHeader("Authorization", "Bearer " + accessToken);
+        // 如需要自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
+        return CallUtils.toJsonObject(CallUtils.remoteCallAccountApi(httpPost));
+    }
+}
 ```
 
 ## 错误码
@@ -256,6 +256,7 @@ Java示例代码如下，运行前需要进行[示例代码环境配置](account
 | HTTP响应码 | 描述 | 解决方法 |
 | --- | --- | --- |
 | 200 | 仅表示本次接口调用成功，实际业务处理结果需要通过**Response Body**中的**resultCode（错误码）** 进行判断。 | - |
+| 400 | 参数错误。 | 请根据文档排查请求参数是否符合规范。 |
 | 403 | 无权限访问。 | 通常是调用方网络安全策略阻止了访问，请检查网络环境配置。若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 404 | 找不到服务。 | 请检查请求URI是否正确。 |
 | 405 | 不支持的http请求method。 | 请检查http请求method是否与接口说明一致。 |

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-wrap-key
 title: 加密导出导入密钥介绍
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 加密导出导入密钥 > 加密导出导入密钥介绍
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:30+08:00
+scraped_at: 2026-09-02T14:59:32+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:40fda5b37f0126c16d990d1733274fa7fe057a1625a86ea81e7735ad10876f8b
+content_hash: sha256:c9cac59f1b12ee73ac1d0151b2afc4c7ee1407cc9920acfb132d620451715f60
 ---
 
 为支持应用在卸载后仍能保留密钥，从API 20开始，HUKS新增了加密导出密钥与加密导入密钥的功能。
 
 由于应用卸载时，其在HUKS中存储的密钥会被清除，通过加密导出导入密钥功能，开发者可在应用卸载前将密钥加密导出保存，并在应用重新安装后将加密密钥导入恢复，从而实现应用卸载后保留密钥。
 
-说明
+**说明** 
 
 * 仅在手机、平板、PC/2in1、智能穿戴上支持加密导出导入密钥功能。
 * 需要加密导出的密钥，必须在生成时就指定为允许加密导出。

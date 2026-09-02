@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-ap
 title: Reader Kit（阅读服务）
 breadcrumb: API参考 > 应用服务 > Reader Kit（阅读服务）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:34+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:20:52+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:a7e00813a42281e47566d69c93133a5f71e93efb2aaddded3877c53714c49701
 ---
 

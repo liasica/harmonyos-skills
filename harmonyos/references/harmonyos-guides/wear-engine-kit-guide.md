@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wear-engine-k
 title: Wear Engine Kit（穿戴服务）
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:59c3cdfa427cc99eafa0139cc8b32c70699e488b58965b94930f2d0338894e39
+scraped_at: 2026-09-02T14:50:09+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:609493406cf268f1c027d28ac6e8dd8e0f25a4e76eb2e4591a6004e18b2f59ad
 ---
 
 * **[Wear Engine Kit简介](wearengine_introduction.md)**
@@ -14,3 +14,4 @@ content_hash: sha256:59c3cdfa427cc99eafa0139cc8b32c70699e488b58965b94930f2d03388
 * **[调测验证](wearengine_verification.md)**
 * **[Wear Engine常见问题](wearengine_faq.md)**
 * **[个人数据处理说明](wearengine_personal_data.md)**
+* **[Wear Engine Kit术语](wearengine-kit-glossary.md)**

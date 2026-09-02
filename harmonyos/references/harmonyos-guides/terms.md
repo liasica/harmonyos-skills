@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terms
 title: 扩展外设驱动开发术语
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设驱动开发术语
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:40+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:84709bce82b24091f9e02707481fcef3edef448ea3176a8537d1aabad8899a24
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:83b3ea745f3567c6f7c30ad83ea30a7c72d2cce21e59d9c6b91789ea6f3496ad
 ---
 
 ## A
@@ -30,7 +30,7 @@ CDB（Command Descriptor Block）即命令描述块，是 SCSI协议中用于发
 
 ### DDK
 
-DDK（Driver Development Kit）是HarmonyOS基于扩展外设框架，为开发者提供的驱动应用开发的工具包，可针对非标USB串口设备，开发对应的驱动。
+DDK（Driver Development Kit）是HarmonyOS基于扩展外设框架，为开发者提供的驱动应用开发的工具包，可针对非标USB设备，开发对应的驱动。
 
 ## H
 

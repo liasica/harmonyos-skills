@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend-
 title: 组件扩展概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > 组件扩展概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:57+08:00
+scraped_at: 2026-09-02T14:59:15+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:5fe0ca22c79beded99d38969717a752772be1842a774bbeba1f49393ec9e9ba1
+content_hash: sha256:8f6d1e8c7b80d344927e46a5edb3950a357f40a6c4c8ff4ce3dca603f73e46d4
 ---
 
 ArkUI使用@Builder装饰器为开发者提供代码精简方案。该装饰器通过模块化封装简化UI开发流程，并衍生出@BuilderParam、@LocalBuilder装饰器和wrapBuilder机制，构成可复用的UI结构体系。
 
-说明
+**说明** 
 
 @Builder装饰器是@BuilderParam装饰器、@LocalBuilder装饰器和wrapBuilder机制的基石。
 

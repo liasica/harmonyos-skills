@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.ValuesBucket (数据集)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.ValuesBucket (数据集)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:49:34+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:f2c51c9140cee36c5839365ce104bfff1f7537d373236b667b6bf338759ac98c
+scraped_at: 2026-09-02T15:00:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:426fe5219d53adfbb12ff5002dbe465b3b185939a608769c3bc9bce29ff1d959
 ---
 
 **数据集（ValuesBucket）** 是开发者向数据库插入的数据集合，数据集以键值对的形式进行传输。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ content_hash: sha256:f2c51c9140cee36c5839365ce104bfff1f7537d373236b667b6bf338759
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { ValueType, ValuesBucket } from '@kit.ArkData';
+```ts
+import { ValueType, ValuesBucket } from '@kit.ArkData';
 ```
 
 ## ValueType
-
-PhonePC/2in1TabletTVWearable
 
 type ValueType = number | string | boolean
 
@@ -43,8 +39,6 @@ type ValueType = number | string | boolean
 | boolean | 表示字段类型为布尔值。 |
 
 ## ValuesBucket
-
-PhonePC/2in1TabletTVWearable
 
 type ValuesBucket = Record<string, ValueType | Uint8Array | null>
 

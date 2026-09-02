@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-autom
 title: AutoMappingFnDynamic
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > AutoMappingFnDynamic
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:25+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d81ebaace658c5a63b9201f6dfdb3077fca523a2de630020239a67c9c88eb649
+scraped_at: 2026-09-02T14:50:42+08:00
+doc_updated_at: 2026-07-17
+content_hash: sha256:e67b14d716700b0e5c8e28353e0fbdb237034a407b2eb7663967a0db6c2587c0
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:d81ebaace658c5a63b9201f6dfdb3077fca523a2de630020239a67c9c88
 
 ## 函数原型
 
-```
-1. Status AutoMappingFnDynamic(const google::protobuf::Message *op_src, ge::Operator &op, std::map<std::string, std::pair<std::string, std::string>> dynamic_name_attr_value, int32_t in_pos = -1, int32_t out_pos = -1)
+```cpp
+Status AutoMappingFnDynamic(const google::protobuf::Message *op_src, ge::Operator &op, std::map<std::string, std::pair<std::string, std::string>> dynamic_name_attr_value, int32_t in_pos = -1, int32_t out_pos = -1)
 ```
 
 ## 参数说明
@@ -26,7 +26,7 @@ content_hash: sha256:d81ebaace658c5a63b9201f6dfdb3077fca523a2de630020239a67c9c88
 | op | 输入 | 适配AI处理器的算子。 |
 | dynamic\_name\_attr\_value | 输入 | 描述动态输入输出实际个数，key表示动态端口是输入还是输出，key的取值：  - in：代表算子的输入。  - out：代表算子的输出。 |
 | in\_pos | 输入 | 动态输入的端口id。 |
-| out\_pos | 输入 | 动态输出的端口id。 |
+| out\_pos | 输出 | 动态输出的端口id。 |
 
 ## 约束说明
 
@@ -36,35 +36,35 @@ content_hash: sha256:d81ebaace658c5a63b9201f6dfdb3077fca523a2de630020239a67c9c88
 
 动态输入的代码示例：
 
-```
-1. // register MapStage op to GE
-2. Status MapStageMapping(const google::protobuf::Message* op_src, ge::Operator& op) {
-3. map<string, pair<string, string>> value;
-4. value["in"] = pair<string, string>("values", "fake_dtypes");
-5. AutoMappingFnDynamic(op_src, op, value);
-6. return SUCCESS;
-7. }
-
-9. REGISTER_CUSTOM_OP("MapStage")
-10. .FrameworkType(TENSORFLOW)
-11. .OriginOpType("MapStage")
-12. .ParseParamsFn(MapStageMapping)
-13. .ImplyType(ImplyType::AI_CPU);
+```cpp
+// 将MapStage操作注册到GE
+Status MapStageMapping(const google::protobuf::Message* op_src, ge::Operator& op) {
+  map<string, pair<string, string>> value;
+  value["in"] = pair<string, string>("values", "fake_dtypes");
+  AutoMappingFnDynamic(op_src, op, value);
+  return SUCCESS;
+}
+ 
+REGISTER_CUSTOM_OP("MapStage")
+    .FrameworkType(TENSORFLOW)
+    .OriginOpType("MapStage")
+    .ParseParamsFn(MapStageMapping)
+    .ImplyType(ImplyType::AI_CPU);
 ```
 
 动态输出的代码示例：
 
-```
-1. Status AutoMappingFnSplit(const google::protobuf::Message* op_src, ge::Operator& op) {
-2. map<string, pair<string, string>> value;
-3. value["out"] = pair<string, string>("y", "num_split");
-4. AutoMappingFnDynamic(op_src, op, value);
-5. return SUCCESS;
-6. }
-
-8. REGISTER_CUSTOM_OP("Split")
-9. .FrameworkType(TENSORFLOW)
-10. .OriginOpType("Split")
-11. .ParseParamsFn(AutoMappingFnSplit)
-12. .ImplyType(ImplyType::TVM);
+```cpp
+Status AutoMappingFnSplit(const google::protobuf::Message* op_src, ge::Operator& op) {
+  map<string, pair<string, string>> value;
+  value["out"] = pair<string, string>("y", "num_split");
+  AutoMappingFnDynamic(op_src, op, value);
+  return SUCCESS;
+}
+ 
+REGISTER_CUSTOM_OP("Split")
+    .FrameworkType(TENSORFLOW)
+    .OriginOpType("Split")
+    .ParseParamsFn(AutoMappingFnSplit)
+    .ImplyType(ImplyType::TVM);
 ```

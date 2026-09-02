@@ -1,32 +1,30 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-vision-vision-base-api
-title: VisionBase（Core Vision Kit基类）
-breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > VisionBase（Core Vision Kit基类）
+title: visionBase（Core Vision Kit基类）
+breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > visionBase（Core Vision Kit基类）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a39d401ed92f4fb2ace983af1dd1b5153890af651757f063bbe223b4036a9ee8
+scraped_at: 2026-09-02T15:03:11+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:5589cfee2683862d0fc283c8ada35c0606b9026b3a32e04d369e468979dd87fe
 ---
 
-visionBase作为一个基础的视觉能力库，封装基本资源对象，视觉能力场景常用对象，数据结构，常用方法。减少冗余代码书写简化功能接口使用，而不必重复“造轮子”。开发者可以将它理解为一个“工具箱”，里面装着一些常用的“工具”，利用visionBase基类，会更高效、更标准地实现各自的功能。visionBase提供了Core Vision Kit AI能力所需的基础设施，如数据结构、接口模型、生命周期管理等。
+visionBase作为一个基础的视觉能力库，封装了基本资源对象、数据结构、常用方法等视觉能力场景中的常用元素。减少冗余代码书写，简化功能接口使用，而不必重复“造轮子”。可以将visionBase理解为一个“工具箱”，里面装着一些常用的“工具”，利用visionBase基类，会更高效、更标准地实现各自的功能。visionBase提供了Core Vision Kit AI能力所需的基础设施，如数据结构、接口模型、生命周期管理等。
 
 **起始版本：** 5.0.0(12)
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 ```
 
 ## SceneMode
 
-PhonePC/2in1Tablet
-
-场景模式的枚举类。
+场景模式的枚举类。用于指示该请求对应的业务场景模式，引擎服务端将根据此模式设置任务优先级。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -37,11 +35,11 @@ PhonePC/2in1Tablet
 
 ## ImageData
 
-PhonePC/2in1Tablet
-
 待识别的视觉信息对象。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -51,13 +49,13 @@ PhonePC/2in1Tablet
 
 ## InputData
 
-PhonePC/2in1Tablet
-
 type InputData = ImageData | ImageData[]
 
 多个图像数据组成的数组。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -67,11 +65,11 @@ type InputData = ImageData | ImageData[]
 
 ## BoundingBox
 
-PhonePC/2in1Tablet
-
 视觉AI能力的内切框。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -79,16 +77,16 @@ PhonePC/2in1Tablet
 | --- | --- | --- | --- | --- |
 | left | number | 否 | 否 | 边界框左上角的x坐标。 |
 | top | number | 否 | 否 | 边界框左上角的y坐标。 |
-| height | number | 否 | 否 | 边界框高度，单位为像素。 |
-| width | number | 否 | 否 | 边界框宽度，单位为像素。 |
+| height | number | 否 | 否 | 边界框高度，单位：px。 |
+| width | number | 否 | 否 | 边界框宽度，单位：px。 |
 
 ## Point
-
-PhonePC/2in1Tablet
 
 二维平面上的点。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -99,11 +97,11 @@ PhonePC/2in1Tablet
 
 ## Orientation
 
-PhonePC/2in1Tablet
-
 表示三维平面上的朝向。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
@@ -115,11 +113,11 @@ PhonePC/2in1Tablet
 
 ## DownloadStartData
 
-PhonePC/2in1Tablet
-
 下载开始事件的数据结构，当AI模型开始下载时触发，告知开发者哪个资源开始下载。该字段为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -129,11 +127,11 @@ PhonePC/2in1Tablet
 
 ## DownloadCompleteData
 
-PhonePC/2in1Tablet
-
 模型下载完成时触发的下载完成事件的数据结构。该字段为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -144,11 +142,11 @@ PhonePC/2in1Tablet
 
 ## DownloadCancelData
 
-PhonePC/2in1Tablet
-
 下载过程被取消时触发的下载取消事件的数据结构。该字段为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -158,11 +156,11 @@ PhonePC/2in1Tablet
 
 ## DownloadStatusData
 
-PhonePC/2in1Tablet
-
 下载状态事件的数据结构，用于报告下载过程中的各种状态，比如网络错误、参数无效等。该字段为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -174,11 +172,11 @@ PhonePC/2in1Tablet
 
 ## DownloadProgressData
 
-PhonePC/2in1Tablet
-
 下载进度事件的数据结构，用于报告下载进度，让开发者能够实时显示下载进度。该字段为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -189,11 +187,11 @@ PhonePC/2in1Tablet
 
 ## downloadStatusCode
 
-PhonePC/2in1Tablet
-
 下载状态的枚举类。该字段为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -211,47 +209,45 @@ PhonePC/2in1Tablet
 
 ## Request
 
-PhonePC/2in1Tablet
-
 入参变量的基类。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | inputData | [InputData](core-vision-vision-base-api.md#inputdata) | 否 | 否 | 待识别的图片。可以是单个对象或多个对象的数组。 |
-| scene | [SceneMode](core-vision-vision-base-api.md#scenemode) | 否 | 是 | 请求的场景模式。  该参数为预留字段，暂未实现。 |
-| requestId | string | 否 | 是 | 请求的标识。用于开发者跟踪和管理自己的请求。  该参数为预留字段，暂未实现。 |
+| scene | [SceneMode](core-vision-vision-base-api.md#scenemode) | 否 | 是 | 请求的场景模式。默认值为SceneMode.FOREGROUND（前台模式）。  该参数为预留字段，暂未实现。 |
+| requestId | string | 否 | 是 | 请求的标识。用于开发者跟踪和管理自己的请求。默认值为空字符串。  该参数为预留字段，暂未实现。 |
 
 ## Response
-
-PhonePC/2in1Tablet
 
 响应基类，作为能力请求的返回结果。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| requestId | string | 否 | 是 | 请求的唯一标识。开发者可用来跟踪和管理自己的请求。 |
+| requestId | string | 否 | 是 | 请求的唯一标识，用于开发者跟踪和管理自己的请求，与Request请求一一对应。默认值为空字符串。 |
 
 ## Analyzer
-
-PhonePC/2in1Tablet
 
 Analyzer基类，充当能力引擎。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 ### destroy
-
-PhonePC/2in1Tablet
 
 destroy(): Promise<void>
 
@@ -259,13 +255,15 @@ destroy(): Promise<void>
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **起始版本：** 5.0.0(12)
 
 **返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | Promise对象，销毁接口无返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **示例：**
 
@@ -273,13 +271,13 @@ destroy(): Promise<void>
 
 ## on('downloadStart')
 
-PhonePC/2in1Tablet
-
 on(type: 'downloadStart', callback: Callback<DownloadStartData>): void
 
-下载开始事件监听。该方法为预留接口，当前版本暂不支持。
+订阅模型下载开始事件。当模型开始下载时触发。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -287,12 +285,12 @@ on(type: 'downloadStart', callback: Callback<DownloadStartData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadStart'。监听模型开始下载事件。 |
-| callback | [Callback](js-apis-base.md#callback)<[DownloadStartData](core-vision-vision-base-api.md#downloadstartdata)> | 是 | Callback回调返回是哪个资源开始下载。 |
+| type | string | 是 | 事件类型，值为'downloadStart'，表示模型开始下载事件。 |
+| callback | [Callback](js-apis-base.md#callback)<[DownloadStartData](core-vision-vision-base-api.md#downloadstartdata)> | 是 | 回调函数，当模型开始下载时触发，返回开始下载的资源标识信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -300,35 +298,35 @@ on(type: 'downloadStart', callback: Callback<DownloadStartData>): void
 
 **示例：**
 
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 
-3. visionBase.on('downloadStart', (data) => {
-4. console.info(`资源 ${data.resId} 开始下载`);
-5. });
+visionBase.on('downloadStart', (data) => {
+    console.info(`资源 ${data.resId} 开始下载`);
+});
 
-7. @Entry
-8. @Component
-9. struct Page {
-10. build() {
-11. Column(){
-12. Button('Button').onClick(() => {
-
-14. })
-15. }
-16. }
-17. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发下载开始事件的业务逻辑
+      })
+    }
+  }
+}
 ```
 
 ## on('downloadComplete')
 
-PhonePC/2in1Tablet
-
 on(type: 'downloadComplete', callback: Callback<DownloadCompleteData>): void
 
-下载完成事件监听。该方法为预留接口，当前版本暂不支持。
+订阅模型下载完成事件。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -336,12 +334,12 @@ on(type: 'downloadComplete', callback: Callback<DownloadCompleteData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadComplete'。监听模型下载完成事件。 |
-| callback | [Callback](js-apis-base.md#callback)<[DownloadCompleteData](core-vision-vision-base-api.md#downloadcompletedata)> | 是 | Callback回调返回完成下载的资源标识符及版本。 |
+| type | string | 是 | 事件类型，值为'downloadComplete'，表示模型下载完成事件。 |
+| callback | [Callback](js-apis-base.md#callback)<[DownloadCompleteData](core-vision-vision-base-api.md#downloadcompletedata)> | 是 | 回调函数，当模型下载完成时触发，返回完成下载的资源标识符及版本号。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -349,35 +347,35 @@ on(type: 'downloadComplete', callback: Callback<DownloadCompleteData>): void
 
 **示例：**
 
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
+
+visionBase.on('downloadComplete', (data) => {
+    console.info(`资源 ${data.resId} 下载完成，版本：${data.resVersion}`);
+});
+
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发下载完成事件的业务逻辑
+      })
+    }
+  }
+}
 ```
-1. import { visionBase } from '@kit.CoreVisionKit';
 
-3. visionBase.on('downloadComplete', (data) => {
-4. console.info(`资源 ${data.resId} 下载完成，版本：${data.resVersion}`);
-5. });
-
-7. @Entry
-8. @Component
-9. struct Page {
-10. build() {
-11. Column(){
-12. Button('Button').onClick(() => {
-
-14. })
-15. }
-16. }
-17. }
-```
-
-## on( 'downloadCancel')
-
-PhonePC/2in1Tablet
+## on('downloadCancel')
 
 on(type: 'downloadCancel', callback: Callback<DownloadCancelData>): void
 
-下载取消事件监听。该方法为预留接口，当前版本暂不支持。
+订阅模型下载取消事件。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -385,12 +383,12 @@ on(type: 'downloadCancel', callback: Callback<DownloadCancelData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadCancel'。监听模型取消下载事件。 |
-| callback | [Callback](js-apis-base.md#callback)<[DownloadCancelData](core-vision-vision-base-api.md#downloadcanceldata)> | 是 | Callback回调返回是哪个资源取消下载。 |
+| type | string | 是 | 事件类型，值为'downloadCancel'，表示模型下载取消事件。 |
+| callback | [Callback](js-apis-base.md#callback)<[DownloadCancelData](core-vision-vision-base-api.md#downloadcanceldata)> | 是 | 回调函数，当模型下载被取消时触发，返回取消下载的资源标识信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -398,35 +396,35 @@ on(type: 'downloadCancel', callback: Callback<DownloadCancelData>): void
 
 **示例：**
 
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
+
+visionBase.on('downloadCancel', (data) => {
+    console.info(`资源 ${data.resId} 下载已取消`);
+});
+
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发下载取消事件的业务逻辑
+      })
+    }
+  }
+}
 ```
-1. import { visionBase } from '@kit.CoreVisionKit';
 
-3. visionBase.on('downloadCancel', (data) => {
-4. console.info(`资源 ${data.resId} 下载已取消`);
-5. });
-
-7. @Entry
-8. @Component
-9. struct Page {
-10. build() {
-11. Column(){
-12. Button('Button').onClick(() => {
-
-14. })
-15. }
-16. }
-17. }
-```
-
-## on( 'downloadStatus')
-
-PhonePC/2in1Tablet
+## on('downloadStatus')
 
 on(type: 'downloadStatus', callback: Callback<DownloadStatusData>): void
 
-下载状态事件监听。该方法为预留接口，当前版本暂不支持。
+订阅模型下载状态事件。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -434,12 +432,12 @@ on(type: 'downloadStatus', callback: Callback<DownloadStatusData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadStatus'。监听模型下载状态事件。 |
-| callback | [Callback](js-apis-base.md#callback)<[DownloadStatusData](core-vision-vision-base-api.md#downloadstatusdata)> | 是 | Callback回调返回下载状态信息。 |
+| type | string | 是 | 事件类型，值为'downloadStatus'，表示模型下载状态事件。 |
+| callback | [Callback](js-apis-base.md#callback)<[DownloadStatusData](core-vision-vision-base-api.md#downloadstatusdata)> | 是 | 回调函数，当模型下载状态发生变化时触发，返回当前下载状态信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -447,35 +445,35 @@ on(type: 'downloadStatus', callback: Callback<DownloadStatusData>): void
 
 **示例：**
 
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 
-3. visionBase.on('downloadStatus', (data) => {
-4. console.info(`资源 ${data.resId} 下载状态：${data.statusCode}, ${data.message}`);
-5. });
+visionBase.on('downloadStatus', (data) => {
+    console.info(`资源 ${data.resId} 下载状态：${data.statusCode}, ${data.message}`);
+});
 
-7. @Entry
-8. @Component
-9. struct Page {
-10. build() {
-11. Column(){
-12. Button('Button').onClick(() => {
-
-14. })
-15. }
-16. }
-17. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发下载状态事件的业务逻辑
+      })
+    }
+  }
+}
 ```
 
 ## on('downloadProgress')
 
-PhonePC/2in1Tablet
-
 on(type: 'downloadProgress', callback: Callback<DownloadProgressData>): void
 
-下载进度事件监听。该方法为预留接口，当前版本暂不支持。
+订阅模型下载进度事件。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -483,12 +481,12 @@ on(type: 'downloadProgress', callback: Callback<DownloadProgressData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadProgress'。监听模型下载进度事件。 |
-| callback | [Callback](js-apis-base.md#callback)<[DownloadProgressData](core-vision-vision-base-api.md#downloadprogressdata)> | 是 | Callback回调返回下载进度信息。 |
+| type | string | 是 | 事件类型，值为'downloadProgress'，表示模型下载进度事件。 |
+| callback | [Callback](js-apis-base.md#callback)<[DownloadProgressData](core-vision-vision-base-api.md#downloadprogressdata)> | 是 | 回调函数，当模型下载进度更新时触发，返回当前下载进度信息。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -496,35 +494,35 @@ on(type: 'downloadProgress', callback: Callback<DownloadProgressData>): void
 
 **示例：**
 
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 
-3. visionBase.on('downloadProgress', (data) => {
-4. console.info(`资源 ${data.resId} 下载进度：${data.progressInfo}`);
-5. })
+visionBase.on('downloadProgress', (data) => {
+    console.info(`资源 ${data.resId} 下载进度：${data.progressInfo}`);
+});
 
-7. @Entry
-8. @Component
-9. struct Page {
-10. build() {
-11. Column(){
-12. Button('Button').onClick(() => {
-
-14. })
-15. }
-16. }
-17. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发下载进度事件的业务逻辑
+      })
+    }
+  }
+}
 ```
 
 ## off('downloadStart')
 
-PhonePC/2in1Tablet
-
 off(type: 'downloadStart', callback?: Callback<DownloadStartData>): void
 
-取消监听开始下载事件。该方法为预留接口，当前版本暂不支持。
+取消订阅模型下载开始事件。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -532,12 +530,12 @@ off(type: 'downloadStart', callback?: Callback<DownloadStartData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadStart'。取消开始下载事件的监听。 |
+| type | string | 是 | 事件类型，固定字符串'downloadStart'，表示取消订阅模型开始下载事件。 |
 | callback | [Callback](js-apis-base.md#callback)<[DownloadStartData](core-vision-vision-base-api.md#downloadstartdata)> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -545,40 +543,40 @@ off(type: 'downloadStart', callback?: Callback<DownloadStartData>): void
 
 **示例：**
 
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 
-3. // 定义回调函数
-4. const startCallback = (data: visionBase.DownloadStartData) => {
-5. console.info(`资源 ${data.resId} 开始下载`);
-6. };
-7. // 注册监听器
-8. visionBase.on('downloadStart', startCallback);
-9. // 移除特定的监听器
-10. visionBase.off('downloadStart', startCallback);
+// 定义回调函数
+const startCallback = (data: visionBase.DownloadStartData) => {
+  console.info(`资源 ${data.resId} 开始下载`);
+};
+// 注册监听器
+visionBase.on('downloadStart', startCallback);
+// 移除特定的监听器
+visionBase.off('downloadStart', startCallback);
 
-12. @Entry
-13. @Component
-14. struct Page {
-15. build() {
-16. Column(){
-17. Button('Button').onClick(() => {
-
-19. })
-20. }
-21. }
-22. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发取消订阅下载开始事件的业务逻辑
+      })
+    }
+  }
+}
 ```
 
 ## off('downloadComplete')
 
-PhonePC/2in1Tablet
-
 off(type: 'downloadComplete', callback?: Callback<DownloadCompleteData>): void
 
-取消监听完成下载事件。该方法为预留接口，当前版本暂不支持。
+取消注册模型下载完成事件的监听器。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -586,12 +584,12 @@ off(type: 'downloadComplete', callback?: Callback<DownloadCompleteData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadComplete'。取消下载事件完成的监听。 |
+| type | string | 是 | 事件类型，固定字符串'downloadComplete'，表示取消订阅模型下载完成事件。 |
 | callback | [Callback](js-apis-base.md#callback)<[DownloadCompleteData](core-vision-vision-base-api.md#downloadcompletedata)> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -599,40 +597,40 @@ off(type: 'downloadComplete', callback?: Callback<DownloadCompleteData>): void
 
 **示例：**
 
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 
-3. // 定义回调函数
-4. const callback = (data: visionBase.DownloadCompleteData) => {
-5. console.info(`资源 ${data.resId} 下载完成`);
-6. };
-7. // 注册监听器
-8. visionBase.on('downloadComplete', callback);
-9. // 移除特定的监听器
-10. visionBase.off('downloadComplete', callback);
+// 定义回调函数
+const callback = (data: visionBase.DownloadCompleteData) => {
+  console.info(`资源 ${data.resId} 下载完成`);
+};
+// 注册监听器
+visionBase.on('downloadComplete', callback);
+// 移除特定的监听器
+visionBase.off('downloadComplete', callback);
 
-12. @Entry
-13. @Component
-14. struct Page {
-15. build() {
-16. Column(){
-17. Button('Button').onClick(() => {
-
-19. })
-20. }
-21. }
-22. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发取消订阅下载完成事件的业务逻辑
+      })
+    }
+  }
+}
 ```
 
 ## off('downloadCancel')
 
-PhonePC/2in1Tablet
-
 off(type: 'downloadCancel', callback?: Callback<DownloadCancelData>): void
 
-取消对下载取消事件的监听。该方法为预留接口，当前版本暂不支持。
+取消订阅模型下载取消事件。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -640,12 +638,12 @@ off(type: 'downloadCancel', callback?: Callback<DownloadCancelData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadCancel'。取消对下载取消事件的监听。 |
+| type | string | 是 | 事件类型，固定字符串'downloadCancel'，表示取消订阅模型下载取消事件。 |
 | callback | [Callback](js-apis-base.md#callback)<[DownloadCancelData](core-vision-vision-base-api.md#downloadcanceldata)> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -653,40 +651,40 @@ off(type: 'downloadCancel', callback?: Callback<DownloadCancelData>): void
 
 **示例：**
 
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 
-3. // 定义回调函数
-4. const callback = (data: visionBase.DownloadCancelData) => {
-5. console.info(`资源 ${data.resId} 下载取消`);
-6. };
-7. // 注册监听器
-8. visionBase.on('downloadCancel', callback);
-9. // 移除特定的监听器
-10. visionBase.off('downloadCancel', callback);
+// 定义回调函数
+const callback = (data: visionBase.DownloadCancelData) => {
+  console.info(`资源 ${data.resId} 下载取消`);
+};
+// 注册监听器
+visionBase.on('downloadCancel', callback);
+// 移除特定的监听器
+visionBase.off('downloadCancel', callback);
 
-12. @Entry
-13. @Component
-14. struct Page {
-15. build() {
-16. Column(){
-17. Button('Button').onClick(() => {
-
-19. })
-20. }
-21. }
-22. }
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发取消订阅下载取消事件的业务逻辑
+      })
+    }
+  }
+}
 ```
 
 ## off('downloadStatus')
 
-PhonePC/2in1Tablet
-
 off(type: 'downloadStatus', callback?: Callback<DownloadStatusData>): void
 
-取消监听下载状态事件。该方法为预留接口，当前版本暂不支持。
+取消订阅模型下载状态事件。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -694,12 +692,12 @@ off(type: 'downloadStatus', callback?: Callback<DownloadStatusData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadStatus'。取消对下载状态事件的监听。 |
+| type | string | 是 | 事件类型，固定字符串'downloadStatus'，表示取消订阅模型下载状态事件。 |
 | callback | [Callback](js-apis-base.md#callback)<[DownloadStatusData](core-vision-vision-base-api.md#downloadstatusdata)> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -707,41 +705,41 @@ off(type: 'downloadStatus', callback?: Callback<DownloadStatusData>): void
 
 **示例：**
 
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 
-3. // 定义回调函数
-4. const callback = (data: visionBase.DownloadStatusData) => {
-5. console.info(`资源 ${data.resId} 下载状态`);
-6. };
-7. // 注册监听器
-8. visionBase.on('downloadStatus', callback);
-9. // 移除特定的监听器
-10. visionBase.off('downloadStatus', callback);
+// 定义回调函数
+const callback = (data: visionBase.DownloadStatusData) => {
+  console.info(`资源 ${data.resId} 下载状态`);
+};
+// 注册监听器
+visionBase.on('downloadStatus', callback);
+// 移除特定的监听器
+visionBase.off('downloadStatus', callback);
 
-12. @Entry
-13. @Component
-14. struct Page {
+@Entry
+@Component
+struct Page {
 
-16. build() {
-17. Column(){
-18. Button('Button').onClick(() => {
-
-20. })
-21. }
-22. }
-23. }
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发取消订阅下载状态事件的业务逻辑
+      })
+    }
+  }
+}
 ```
 
 ## off('downloadProgress')
 
-PhonePC/2in1Tablet
-
 off(type: 'downloadProgress', callback?: Callback<DownloadProgressData>): void
 
-取消监听下载进度事件。该方法为预留接口，当前版本暂不支持。
+取消订阅模型下载进度事件。该方法为预留接口，当前版本暂不支持。
 
 **系统能力：** SystemCapability.AI.Vision.VisionBase
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **起始版本：** 5.0.2(14)
 
@@ -749,12 +747,12 @@ off(type: 'downloadProgress', callback?: Callback<DownloadProgressData>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 固定字符串 'downloadProgress'。取消对下载进度事件的监听。 |
+| type | string | 是 | 事件类型，固定字符串'downloadProgress'，表示取消订阅模型下载进度事件。 |
 | callback | [Callback](js-apis-base.md#callback)<[DownloadProgressData](core-vision-vision-base-api.md#downloadprogressdata)> | 否 | 需要取消注册的回调函数，需与订阅时传入的回调函数是同一个。若无此参数，则取消注册所有的回调函数。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[Core Vision Kit错误码](core-vision-error-code.md)。
+以下错误码的详细介绍请参见[Core Vision Kit错误码](errorcode-core-vision.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -762,28 +760,28 @@ off(type: 'downloadProgress', callback?: Callback<DownloadProgressData>): void
 
 **示例：**
 
-```
-1. import { visionBase } from '@kit.CoreVisionKit';
+```typescript
+import { visionBase } from '@kit.CoreVisionKit';
 
-3. // 定义回调函数
-4. const callback = (data: visionBase.DownloadProgressData) => {
-5. console.info(`资源 ${data.resId} 下载进度`);
-6. };
-7. // 注册监听器
-8. visionBase.on('downloadProgress', callback);
-9. // 移除特定的监听器
-10. visionBase.off('downloadProgress', callback);
+// 定义回调函数
+const callback = (data: visionBase.DownloadProgressData) => {
+  console.info(`资源 ${data.resId} 下载进度`);
+};
+// 注册监听器
+visionBase.on('downloadProgress', callback);
+// 移除特定的监听器
+visionBase.off('downloadProgress', callback);
 
-12. @Entry
-13. @Component
-14. struct Page {
+@Entry
+@Component
+struct Page {
 
-16. build() {
-17. Column(){
-18. Button('Button').onClick(() => {
-
-20. })
-21. }
-22. }
-23. }
+  build() {
+    Column(){
+      Button('Button').onClick(() => {
+        // 触发取消订阅下载进度事件的业务逻辑
+      })
+    }
+  }
+}
 ```

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdseffect
-title: hdsEffect
-breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsEffect
+title: hdsEffect (hds高级视效)
+breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsEffect (hds高级视效)
 category: harmonyos-references
-scraped_at: 2026-04-29T13:57:10+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:461b36cb12573ecaabb7be4bbce9a0fdf46deafd83e19a8d569ece55c808eede
+scraped_at: 2026-09-02T15:01:39+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2e3f47c8958a39ec8ee1ec60a6ccbd398d4a937dc6385f744f7e645b9129ccea
 ---
 
 本模块提供组件的拓展视效能力，包括组件点光源效果、按压光效、动画控制。
@@ -14,15 +14,11 @@ content_hash: sha256:461b36cb12573ecaabb7be4bbce9a0fdf46deafd83e19a8d569ece55c80
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { hdsEffect } from '@kit.UIDesignKit';
+```typescript
+import { hdsEffect } from '@kit.UIDesignKit';
 ```
 
 ## HdsEffectBuilder
-
-PhonePC/2in1TabletTV
 
 将创建的视效参数添加到VisualEffect对象上，构建VisualEffect对象。
 
@@ -33,8 +29,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 6.0.0(20)
 
 ### constructor
-
-PhonePC/2in1TabletTV
 
 constructor()
 
@@ -47,8 +41,6 @@ HdsEffectBuilder的构造函数。
 **起始版本：** 6.0.0(20)
 
 ### pointLight
-
-PhonePC/2in1TabletTV
 
 pointLight(value: PointLightEffect): HdsEffectBuilder
 
@@ -74,72 +66,70 @@ pointLight(value: PointLightEffect): HdsEffectBuilder
 
 **示例：**
 
+```typescript
+import { hdsEffect } from '@kit.UIDesignKit';
+
+@Entry
+@Component
+struct Index {
+  @State lightSourceType: hdsEffect.PointLightSourceType = hdsEffect.PointLightSourceType.NONE;
+
+  build() {
+    Column({ space: 10 }) {
+      Row({ space: 10 }) {
+        Column() {
+          Text('illuminated').padding(10).fontColor(Color.White)
+          Text('illuminated').padding(10).fontColor(Color.White)
+          Text('illuminated').padding(10).fontColor(Color.White)
+        }
+        .visualEffect(new hdsEffect.HdsEffectBuilder()
+          .pointLight({
+            illuminatedType: hdsEffect.PointLightIlluminatedType.BORDER
+          })
+          .buildEffect())
+      }
+
+      Row({ space: 10 }) {
+        Button('lightSource')
+          .visualEffect(new hdsEffect.HdsEffectBuilder()
+            .pointLight({
+              sourceType: this.lightSourceType,
+              illuminatedType: hdsEffect.PointLightIlluminatedType.BORDER
+            })
+            .buildEffect())
+          .onTouch((event: TouchEvent) => {
+            if (event.type === TouchType.Down) {
+              this.lightSourceType = hdsEffect.PointLightSourceType.BRIGHT;
+            } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
+              this.lightSourceType = hdsEffect.PointLightSourceType.NONE;
+            }
+          })
+      }
+
+      Row({ space: 10 }) {
+        Column() {
+          Text('illuminated').padding(10).fontColor(Color.White)
+          Text('illuminated').padding(10).fontColor(Color.White)
+          Text('illuminated').padding(10).fontColor(Color.White)
+        }
+        .visualEffect(new hdsEffect.HdsEffectBuilder()
+          .pointLight({
+            illuminatedType: hdsEffect.PointLightIlluminatedType.BORDER
+          })
+          .buildEffect())
+      }
+    }
+    .backgroundColor(Color.Black)
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
+}
 ```
-1. import { hdsEffect } from '@kit.UIDesignKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State lightSourceType: hdsEffect.PointLightSourceType = hdsEffect.PointLightSourceType.NONE;
-
-8. build() {
-9. Column({ space: 10 }) {
-10. Row({ space: 10 }) {
-11. Column() {
-12. Text('illuminated').padding(10).fontColor(Color.White)
-13. Text('illuminated').padding(10).fontColor(Color.White)
-14. Text('illuminated').padding(10).fontColor(Color.White)
-15. }
-16. .visualEffect(new hdsEffect.HdsEffectBuilder()
-17. .pointLight({
-18. illuminatedType: hdsEffect.PointLightIlluminatedType.BORDER
-19. })
-20. .buildEffect())
-21. }
-
-23. Row({ space: 10 }) {
-24. Button('lightSource')
-25. .visualEffect(new hdsEffect.HdsEffectBuilder()
-26. .pointLight({
-27. sourceType: this.lightSourceType,
-28. illuminatedType: hdsEffect.PointLightIlluminatedType.BORDER
-29. })
-30. .buildEffect())
-31. .onTouch((event: TouchEvent) => {
-32. if (event.type === TouchType.Down) {
-33. this.lightSourceType = hdsEffect.PointLightSourceType.BRIGHT;
-34. } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
-35. this.lightSourceType = hdsEffect.PointLightSourceType.NONE;
-36. }
-37. })
-38. }
-
-40. Row({ space: 10 }) {
-41. Column() {
-42. Text('illuminated').padding(10).fontColor(Color.White)
-43. Text('illuminated').padding(10).fontColor(Color.White)
-44. Text('illuminated').padding(10).fontColor(Color.White)
-45. }
-46. .visualEffect(new hdsEffect.HdsEffectBuilder()
-47. .pointLight({
-48. illuminatedType: hdsEffect.PointLightIlluminatedType.BORDER
-49. })
-50. .buildEffect())
-51. }
-52. }
-53. .backgroundColor(Color.Black)
-54. .width('100%')
-55. .height('100%')
-56. .justifyContent(FlexAlign.Center)
-57. }
-58. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xZRQGyNnRvqLTLV6Pu2sUA/zh-cn_image_0000002589326913.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/dFnyp0WlTF69eBqzN9TARw/zh-cn_image_0000002736435865.jpg)
 
 ### pressShadow
-
-PhonePC/2in1TabletTV
 
 pressShadow(type: PressShadowType): HdsEffectBuilder
 
@@ -165,58 +155,56 @@ pressShadow(type: PressShadowType): HdsEffectBuilder
 
 **示例：**
 
+```typescript
+import { hdsEffect } from '@kit.UIDesignKit';
+
+@Entry
+@Component
+struct PressShadowExample {
+  @State button_blend_state: hdsEffect.PressShadowType = hdsEffect.PressShadowType.NONE;
+  @State button_gradient_state: hdsEffect.PressShadowType = hdsEffect.PressShadowType.NONE;
+
+  build() {
+    NavDestination() {
+      Column({ space: 50 }) {
+        Button("BLEND_WHITE", { buttonStyle: ButtonStyleMode.EMPHASIZED, role: ButtonRole.ERROR, stateEffect: false })
+          .visualEffect(new hdsEffect.HdsEffectBuilder()
+            .pressShadow(this.button_blend_state)
+            .buildEffect())
+          .onTouch((event: TouchEvent) => {
+            if (event.type === TouchType.Down) {
+              this.button_blend_state = hdsEffect.PressShadowType.BLEND_WHITE;
+            } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
+              this.button_blend_state = hdsEffect.PressShadowType.NONE;
+            }
+          })
+
+        Button("GRADIENT", { buttonStyle: ButtonStyleMode.NORMAL, stateEffect: false })
+          .visualEffect(new hdsEffect.HdsEffectBuilder()
+            .pressShadow(this.button_gradient_state)
+            .buildEffect())
+          .onTouch((event: TouchEvent) => {
+            if (event.type === TouchType.Down) {
+              this.button_gradient_state = hdsEffect.PressShadowType.BLEND_GRADIENT;
+            } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
+              this.button_gradient_state = hdsEffect.PressShadowType.NONE;
+            }
+          })
+      }
+      .height('70%')
+      .justifyContent(FlexAlign.Center)
+    }
+    .width('100%')
+    .height('100%')
+    .title('Button example')
+    .backgroundColor('#040404')
+  }
+}
 ```
-1. import { hdsEffect } from '@kit.UIDesignKit';
 
-3. @Entry
-4. @Component
-5. struct PressShadowExample {
-6. @State button_blend_state: hdsEffect.PressShadowType = hdsEffect.PressShadowType.NONE;
-7. @State button_gradient_state: hdsEffect.PressShadowType = hdsEffect.PressShadowType.NONE;
-
-9. build() {
-10. NavDestination() {
-11. Column({ space: 50 }) {
-12. Button("BLEND_WHITE", { buttonStyle: ButtonStyleMode.EMPHASIZED, role: ButtonRole.ERROR, stateEffect: false })
-13. .visualEffect(new hdsEffect.HdsEffectBuilder()
-14. .pressShadow(this.button_blend_state)
-15. .buildEffect())
-16. .onTouch((event: TouchEvent) => {
-17. if (event.type === TouchType.Down) {
-18. this.button_blend_state = hdsEffect.PressShadowType.BLEND_WHITE;
-19. } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
-20. this.button_blend_state = hdsEffect.PressShadowType.NONE;
-21. }
-22. })
-
-24. Button("GRADIENT", { buttonStyle: ButtonStyleMode.NORMAL, stateEffect: false })
-25. .visualEffect(new hdsEffect.HdsEffectBuilder()
-26. .pressShadow(this.button_gradient_state)
-27. .buildEffect())
-28. .onTouch((event: TouchEvent) => {
-29. if (event.type === TouchType.Down) {
-30. this.button_gradient_state = hdsEffect.PressShadowType.BLEND_GRADIENT;
-31. } else if (event.type === TouchType.Up || event.type === TouchType.Cancel) {
-32. this.button_gradient_state = hdsEffect.PressShadowType.NONE;
-33. }
-34. })
-35. }
-36. .height('70%')
-37. .justifyContent(FlexAlign.Center)
-38. }
-39. .width('100%')
-40. .height('100%')
-41. .title('Button example')
-42. .backgroundColor('#040404')
-43. }
-44. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/sjfZiupWTqud3sRJ9vgTBQ/zh-cn_image_0000002589246853.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/k6r-U35tSRCNP17tVccshg/zh-cn_image_0000002706836710.gif)
 
 ### shaderEffect
-
-PhonePC/2in1TabletTV
 
 shaderEffect(params: ShaderEffectParams): HdsEffectBuilder
 
@@ -242,63 +230,83 @@ shaderEffect(params: ShaderEffectParams): HdsEffectBuilder
 
 **示例：**
 
+```typescript
+import { hdsEffect } from '@kit.UIDesignKit';
+
+@Entry
+@Component
+struct Index {
+  @State controller: hdsEffect.ShaderEffectController = new hdsEffect.ShaderEffectController();
+
+  build() {
+    Column() {
+      Stack() {
+      }
+      .visualEffect(new hdsEffect.HdsEffectBuilder()
+        .shaderEffect({
+          effectType: hdsEffect.EffectType.DUAL_EDGE_FLOW_LIGHT,
+          animation: {
+            duration: 4000,
+            iterations: -1,
+            autoPlay: true,
+            onFinish: () => {
+              console.info('Succeeded in finishing');
+            }
+          },
+          controller: this.controller,
+          params: {
+            firstEdgeFlowLight: {
+              startPos: 0,
+              endPos: 1.0,
+              color: '#1AD0F1',
+            },
+            secondEdgeFlowLight: {
+              startPos: 0.5,
+              endPos: 1.5,
+              color: '#FFA4E5',
+            }
+          }
+        })
+        .buildEffect())
+      .width(200)
+      .borderRadius('50%')
+      .clip(true)
+      .height(200)
+      .backgroundColor('#383838')
+      Row() {
+        // 开始执行视效
+        Button('play').onClick((event: ClickEvent) => {
+          this.controller.play();
+        })
+        // 暂停视效
+        Button('pause').onClick((event: ClickEvent) => {
+          this.controller.pause();
+        })
+        // 继续执行视效
+        Button('resume').onClick((event: ClickEvent) => {
+          this.controller.resume();
+        })
+        // 反转视效
+        Button('reverse').onClick((event: ClickEvent) => {
+          this.controller.reverse();
+        })
+        // 停止视效
+        Button('stop').onClick((event: ClickEvent) => {
+          this.controller.stop();
+        })
+      }
+    }
+    .justifyContent(FlexAlign.Center)
+    .backgroundColor(Color.Black)
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { hdsEffect } from '@kit.UIDesignKit';
 
-3. @Entry
-4. @Component
-5. struct Index {
-6. @State controller: hdsEffect.ShaderEffectController = new hdsEffect.ShaderEffectController();
-
-8. build() {
-9. Column() {
-10. Stack() {
-11. }
-12. .visualEffect(new hdsEffect.HdsEffectBuilder()
-13. .shaderEffect({
-14. effectType: hdsEffect.EffectType.DUAL_EDGE_FLOW_LIGHT,
-15. animation: {
-16. duration: 4000,
-17. iterations: -1,
-18. autoPlay: true,
-19. onFinish: () => {
-20. console.info('Succeeded in finishing');
-21. }
-22. },
-23. controller: this.controller,
-24. params: {
-25. firstEdgeFlowLight: {
-26. startPos: 0,
-27. endPos: 1.0,
-28. color: '#1AD0F1',
-29. },
-30. secondEdgeFlowLight: {
-31. startPos: 0.5,
-32. endPos: 1.5,
-33. color: '#FFA4E5',
-34. }
-35. }
-36. })
-37. .buildEffect())
-38. .width(200)
-39. .borderRadius('50%')
-40. .clip(true)
-41. .height(200)
-42. .backgroundColor('#383838')
-43. }
-44. .justifyContent(FlexAlign.Center)
-45. .backgroundColor(Color.Black)
-46. .width('100%')
-47. .height('100%')
-48. }
-49. }
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/dULkOq4YRGiLYTBiU5rjUw/zh-cn_image_0000002558767046.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/NA9nQaIgTf2z3UL6b-bhaA/zh-cn_image_0000002736315819.gif)
 
 ### buildEffect
-
-PhonePC/2in1TabletTV
 
 buildEffect(): VisualEffect
 
@@ -318,8 +326,6 @@ buildEffect(): VisualEffect
 
 ## ShaderEffectParams
 
-PhonePC/2in1TabletTV
-
 shaderEffect视效配置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -337,8 +343,6 @@ shaderEffect视效配置。
 
 ## EffectType
 
-PhonePC/2in1TabletTV
-
 视效类型。
 
 **设备行为差异：** 该视效在TV中无效果，在其他设备类型中可正常显示。
@@ -355,8 +359,6 @@ PhonePC/2in1TabletTV
 | UV\_BACKGROUND\_FLOW\_LIGHT | 1 | UV背景流光。 |
 
 ## AnimationParams
-
-PhonePC/2in1TabletTV
 
 视效动画参数。
 
@@ -378,8 +380,6 @@ PhonePC/2in1TabletTV
 
 ## OnFinishCallback
 
-PhonePC/2in1TabletTV
-
 type OnFinishCallback = () => void
 
 视效结束回调函数。
@@ -391,8 +391,6 @@ type OnFinishCallback = () => void
 **起始版本：** 6.0.0(20)
 
 ## ExpectedFrameRateRange
-
-PhonePC/2in1TabletTV
 
 视效帧率配置。
 
@@ -410,8 +408,6 @@ PhonePC/2in1TabletTV
 
 ## FrameRateType
 
-PhonePC/2in1TabletTV
-
 视效帧率。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -427,8 +423,6 @@ PhonePC/2in1TabletTV
 | FRAME\_RATE\_60 | 60 | 帧率60FPS。 |
 
 ## EffectParams
-
-PhonePC/2in1TabletTV
 
 type EffectParams = DualEdgeFlowLightParam | UVFlowLightColorParam
 
@@ -447,8 +441,6 @@ type EffectParams = DualEdgeFlowLightParam | UVFlowLightColorParam
 
 ## DualEdgeFlowLightParam
 
-PhonePC/2in1TabletTV
-
 双边边缘流光视效参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -464,8 +456,6 @@ PhonePC/2in1TabletTV
 
 ## UVFlowLightColorParam
 
-PhonePC/2in1TabletTV
-
 UV流光视效参数。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -480,8 +470,6 @@ UV流光视效参数。
 | colorTarget | Array<[ResourceColor](ts-types.md#resourcecolor)> | 否 | 是 | 目标渐变颜色。默认流光颜色不渐变。 |
 
 ## EdgeFlowLightParam
-
-PhonePC/2in1TabletTV
 
 边缘流光视效参数。
 
@@ -499,8 +487,6 @@ PhonePC/2in1TabletTV
 
 ## ShaderEffectController
 
-PhonePC/2in1TabletTV
-
 视效控制器。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -510,8 +496,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 6.0.0(20)
 
 ### constructor
-
-PhonePC/2in1TabletTV
 
 constructor()
 
@@ -525,8 +509,6 @@ ShaderEffectController的构造函数。
 
 ### play
 
-PhonePC/2in1TabletTV
-
 play(): void
 
 开始执行视效。
@@ -538,8 +520,6 @@ play(): void
 **起始版本：** 6.0.0(20)
 
 ### pause
-
-PhonePC/2in1TabletTV
 
 pause(): void
 
@@ -553,8 +533,6 @@ pause(): void
 
 ### resume
 
-PhonePC/2in1TabletTV
-
 resume(): void
 
 继续执行视效。
@@ -566,8 +544,6 @@ resume(): void
 **起始版本：** 6.0.0(20)
 
 ### reverse
-
-PhonePC/2in1TabletTV
 
 reverse(): void
 
@@ -581,8 +557,6 @@ reverse(): void
 
 ### stop
 
-PhonePC/2in1TabletTV
-
 stop(): void
 
 停止视效。
@@ -594,8 +568,6 @@ stop(): void
 **起始版本：** 6.0.0(20)
 
 ### setEffectParams
-
-PhonePC/2in1TabletTV
 
 setEffectParams(params: EffectParams): void
 
@@ -613,8 +585,6 @@ setEffectParams(params: EffectParams): void
 
 ## PointLightEffect
 
-PhonePC/2in1TabletTV
-
 点光源效果属性。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -629,13 +599,11 @@ PhonePC/2in1TabletTV
 | illuminatedType | [PointLightIlluminatedType](ui-design-hdseffect.md#pointlightilluminatedtype) | 否 | 是 | 组件受光效果类型，设置当前组件是否可以被光源照亮，以及被照亮的类型。  默认值：NONE，不受光。  **说明**：受光组件如果设置了border的颜色和宽度，会覆盖掉点光源效果。 |
 | options | [PointLightOptions](ui-design-hdseffect.md#pointlightoptions) | 否 | 是 | 组件自定义发光参数选项。 |
 
-说明
+**说明** 
 
 sourceType的优先级高于options。当同时设置sourceType和options时，options自定义发光参数不会生效。
 
 ## PointLightSourceType
-
-PhonePC/2in1TabletTV
 
 组件发光效果类型。
 
@@ -652,8 +620,6 @@ PhonePC/2in1TabletTV
 | BRIGHT | 2 | 组件光源类型：明亮点光源，发光强度较高，周围照亮范围较大。 |
 
 ## PointLightIlluminatedType
-
-PhonePC/2in1TabletTV
 
 组件受光效果类型。
 
@@ -673,8 +639,6 @@ PhonePC/2in1TabletTV
 
 ## PointLightOptions
 
-PhonePC/2in1TabletTV
-
 组件自定义发光参数选项。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -691,8 +655,6 @@ PhonePC/2in1TabletTV
 | bloom | number | 否 | 是 | 设置组件的泛光效果强度，建议取值范围为0~1。数值越大，泛光范围越大。  默认值：0。 |
 
 ## PressShadowType
-
-PhonePC/2in1TabletTV
 
 组件按压阴影效果。
 

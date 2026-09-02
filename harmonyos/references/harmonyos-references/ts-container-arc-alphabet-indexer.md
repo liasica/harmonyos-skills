@@ -3,48 +3,42 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcAlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > ArcAlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-04-29T13:52:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7bb3fb552662967a33d8099785d58a37f9d4391f1d29144d28c786a7033c1464
+scraped_at: 2026-09-02T15:01:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:df44a590db9f239d2c0ac118b94a4e94810abbac214c0e9bad3ba5773edf153b
 ---
 
 弧形索引条是一种弧形的、可按字母顺序排序进行快速定位的组件，可以与容器组件联动，按逻辑结构快速定位至容器显示区域。
 
-说明
+**说明** 
 
 * 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 该组件支持在Phone、PC/2in1、Tablet、TV、Wearable设备上使用。API version 22及以前版本，在Phone、PC/2in1、Tablet、TV上使用会编译告警，但可以正常运行。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-说明
+**说明** 
 
 * ArcAlphabetIndexerAttribute是用于配置ArcAlphabetIndexer组件属性的关键接口。API version 21及之前版本，导入ArcAlphabetIndexer组件后需要开发者手动导入ArcAlphabetIndexerAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcAlphabetIndexer组件后，会自动导入ArcAlphabetIndexerAttribute，无需开发者手动导入ArcAlphabetIndexerAttribute。
 * 如果开发者手动导入ArcAlphabetIndexerAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，API version 22开始，删除对功能无影响。
 
 API version 21及之前版本：
 
-```
-1. import { ArcAlphabetIndexer, ArcAlphabetIndexerAttribute } from '@kit.ArkUI';
+```ts
+import { ArcAlphabetIndexer, ArcAlphabetIndexerAttribute } from '@kit.ArkUI';
 ```
 
 API version 22及之后版本：
 
-```
-1. import { ArcAlphabetIndexer } from '@kit.ArkUI';
+```ts
+import { ArcAlphabetIndexer } from '@kit.ArkUI';
 ```
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 接口
-
-PhonePC/2in1TabletTVWearable
 
 ArcAlphabetIndexer(info: ArcAlphabetIndexerInitInfo)
 
@@ -62,13 +56,9 @@ ArcAlphabetIndexer(info: ArcAlphabetIndexerInitInfo)
 
 ## 属性
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用属性](ts-component-general-attributes.md)外，还支持以下属性：
 
 ### color
-
-PhonePC/2in1TabletTVWearable
 
 color(color: Optional<ColorMetrics>)
 
@@ -86,8 +76,6 @@ color(color: Optional<ColorMetrics>)
 
 ### selectedColor
 
-PhonePC/2in1TabletTVWearable
-
 selectedColor(color: Optional<ColorMetrics>)
 
 设置选中项文字颜色。
@@ -103,8 +91,6 @@ selectedColor(color: Optional<ColorMetrics>)
 | color | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)> | 是 | 选中项文字颜色。  默认值：0xFFFFFF，显示为白色。 |
 
 ### popupColor
-
-PhonePC/2in1TabletTVWearable
 
 popupColor(color: Optional<ColorMetrics>)
 
@@ -122,8 +108,6 @@ popupColor(color: Optional<ColorMetrics>)
 
 ### selectedBackgroundColor
 
-PhonePC/2in1TabletTVWearable
-
 selectedBackgroundColor(color: Optional<ColorMetrics>)
 
 设置选中项背景颜色。
@@ -140,8 +124,6 @@ selectedBackgroundColor(color: Optional<ColorMetrics>)
 
 ### popupBackground
 
-PhonePC/2in1TabletTVWearable
-
 popupBackground(color: Optional<ColorMetrics>)
 
 设置提示弹窗背景色。
@@ -156,13 +138,11 @@ popupBackground(color: Optional<ColorMetrics>)
 | --- | --- | --- | --- |
 | color | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)> | 是 | 提示弹窗背景色。  默认值：0xD8404040，显示为微透明的深灰色。 |
 
-说明
+**说明** 
 
 当通过popupBackground设置弹窗气泡的背景颜色后，不建议再通过[popupBackgroundBlurStyle](ts-container-arc-alphabet-indexer.md#popupbackgroundblurstyle)设置背景模糊效果。
 
 ### usePopup
-
-PhonePC/2in1TabletTVWearable
 
 usePopup(enabled: Optional<boolean>)
 
@@ -180,8 +160,6 @@ usePopup(enabled: Optional<boolean>)
 
 ### selectedFont
 
-PhonePC/2in1TabletTVWearable
-
 selectedFont(font: Optional<Font>)
 
 设置选中项文字尺寸、粗细、字体族、倾斜等样式。
@@ -197,8 +175,6 @@ selectedFont(font: Optional<Font>)
 | font | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Font](ts-types.md#font)> | 是 | 选中项文字样式。  默认值：{  size:'13.0fp',  style:FontStyle.Normal,  weight:500,  family:'HarmonyOS Sans'  } |
 
 ### popupFont
-
-PhonePC/2in1TabletTVWearable
 
 popupFont(font: Optional<Font>)
 
@@ -216,8 +192,6 @@ popupFont(font: Optional<Font>)
 
 ### font
 
-PhonePC/2in1TabletTVWearable
-
 font(font: Optional<Font>)
 
 设置字母索引条默认字体样式。
@@ -233,8 +207,6 @@ font(font: Optional<Font>)
 | font | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[Font](ts-types.md#font)> | 是 | 字母索引条默认字体样式。  默认值：  {  size:'13.0fp',  style:FontStyle.Normal,  weight:500,  family:'HarmonyOS Sans'  } |
 
 ### itemSize
-
-PhonePC/2in1TabletTVWearable
 
 itemSize(size: Optional<LengthMetrics>)
 
@@ -252,8 +224,6 @@ itemSize(size: Optional<LengthMetrics>)
 
 ### selected
 
-PhonePC/2in1TabletTVWearable
-
 selected(index: Optional<number>)
 
 设置选中项索引值。
@@ -269,8 +239,6 @@ selected(index: Optional<number>)
 | index | Optional<number> | 是 | 选中项索引值。  默认值：0  该参数支持[!!](../harmonyos-guides/arkts-new-binding.md)双向绑定变量。 |
 
 ### autoCollapse
-
-PhonePC/2in1TabletTVWearable
 
 autoCollapse(enable: Optional<boolean>)
 
@@ -288,13 +256,11 @@ autoCollapse(enable: Optional<boolean>)
 
 ### popupBackgroundBlurStyle
 
-PhonePC/2in1TabletTVWearable
-
 popupBackgroundBlurStyle(style: Optional<BlurStyle>)
 
 设置提示弹窗的背景模糊材质。未通过该接口设置时，默认为关闭模糊，对应取值为BlurStyle中的NONE。
 
-说明
+**说明** 
 
 当通过popupBackgroundBlurStyle设置弹窗气泡的背景模糊材质时，不建议再通过[popupBackground](ts-container-arc-alphabet-indexer.md#popupbackground)设置背景色。
 
@@ -310,13 +276,9 @@ popupBackgroundBlurStyle(style: Optional<BlurStyle>)
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
 
 ### onSelect
-
-PhonePC/2in1TabletTVWearable
 
 onSelect(handler: Optional<OnSelectCallback>)
 
@@ -334,8 +296,6 @@ onSelect(handler: Optional<OnSelectCallback>)
 
 ## ArcAlphabetIndexerInitInfo对象说明
 
-PhonePC/2in1TabletTVWearable
-
 定义弧形字母索引条的初始化参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
@@ -349,8 +309,6 @@ PhonePC/2in1TabletTVWearable
 
 ## OnSelectCallback
 
-PhonePC/2in1TabletTVWearable
-
 type OnSelectCallback = (index: number) => void
 
 定义[onSelect](ts-container-arc-alphabet-indexer.md#onselect)中使用的回调类型。
@@ -363,110 +321,207 @@ type OnSelectCallback = (index: number) => void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 选中项序号。 |
+| index | number | 是 | 选中项索引值。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
+### 示例1（设置联动控制和定位）
 
 该示例实现了弧形索引条和弧形列表联动控制和定位。
 
+```ts
+// xxx.ets
+import {
+  LengthMetrics,
+  ColorMetrics,
+  ArcList,
+  ArcListItem,
+  ArcListAttribute,
+  ArcListItemAttribute,
+  ArcAlphabetIndexer,
+  ArcAlphabetIndexerAttribute
+} from '@kit.ArkUI';
+// 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
+
+@Entry
+@Component
+struct ArcListAndIndexer {
+  private fullValue: string[] = [
+    '#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+    'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+  ];
+  private arrName : string[] = [
+    '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20',
+    '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38',
+    '39','40', '41','42',
+  ];
+
+  private scrollerForList: Scroller = new Scroller();
+  @State indexerIndex: number = 0;
+
+  private watchSize: string = '466px'; // 手表默认宽高：233*233
+  private itemSize: number = 24;  // 索引项默认大小：24
+
+  build() {
+    Column() {
+      Row() {
+        Stack() {
+          ArcList({ scroller : this.scrollerForList, initialIndex: 0 }) {
+            ForEach(this.arrName, (itemName: string, index: number) => {
+              ArcListItem() {
+                Text(itemName)
+                  .width('90%')
+                  .height('92px')
+                  .fontSize(16)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(index % 2 == 0 ? 0xAFEEEE : 0x00FFFF)
+                  .borderRadius(23)
+              }
+            })
+          }
+          .scrollBar(BarState.Off)
+          .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+            this.indexerIndex = centerIndex;
+          })
+          .borderWidth(1)
+          .width(this.watchSize)
+          .height(this.watchSize)
+          .borderRadius(this.watchSize)
+          .space(LengthMetrics.px(4))
+
+          ArcAlphabetIndexer({ arrayValue: this.fullValue, selected: 0 })
+            .autoCollapse(true)
+            .width(this.watchSize)
+            .height(this.watchSize)
+            .usePopup(false)
+            .selected(this.indexerIndex)
+            .onSelect((index: number) => {
+              this.indexerIndex = index;
+              this.scrollerForList.scrollToIndex(this.indexerIndex);
+            })
+            .borderWidth(1)
+            .hitTestBehavior(HitTestMode.Transparent)
+            .selectedColor(ColorMetrics.resourceColor(0xFFFFFF))
+            .selectedBackgroundColor(ColorMetrics.resourceColor(0x1F71FF))
+            .color(ColorMetrics.resourceColor(0xFFFFFF))
+            .itemSize(LengthMetrics.px(this.itemSize))
+            .selectedFont({
+              size:'11.0fp',
+              style:FontStyle.Normal,
+              weight:500,
+              family:'HarmonyOS Sans'
+            })
+            .font({
+              size:'11.0fp',
+              style:FontStyle.Normal,
+              weight:500,
+              family:'HarmonyOS Sans'
+            })
+
+        }.width('100%').height('100%')
+        .backgroundColor(Color.Pink)
+      }.width('100%').height('100%')
+    }
+  }
+}
 ```
-1. // xxx.ets
-2. import {
-3. LengthMetrics,
-4. ColorMetrics,
-5. ArcList,
-6. ArcListItem,
-7. ArcListAttribute,
-8. ArcListItemAttribute,
-9. ArcAlphabetIndexer,
-10. ArcAlphabetIndexerAttribute
-11. } from '@kit.ArkUI';
-12. // 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
 
-14. @Entry
-15. @Component
-16. struct ArcListAndIndexer {
-17. private fullValue: string[] = [
-18. '#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
-19. 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-20. ];
-21. private arrName : string[] = [
-22. '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20',
-23. '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38',
-24. '39','40', '41','42',
-25. ];
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/57LmBaLISDOfmWD94GY7zw/zh-cn_image_0000002736435229.gif "点击放大")
 
-27. private scrollerForList: Scroller = new Scroller();
-28. @State indexerIndex: number = 0;
+### 示例2（设置弹窗显示）
 
-30. private watchSize: string = '466px'; // 手表默认宽高：233*233
-31. private itemSize: number = 24;  // 索引项默认大小：24
+该示例通过[popupColor](ts-container-arc-alphabet-indexer.md#popupcolor)和[popupBackground](ts-container-arc-alphabet-indexer.md#popupbackground)接口实现了提示弹窗的显示背景颜色和文字颜色。
 
-33. build() {
-34. Column() {
-35. Row() {
-36. Stack() {
-37. ArcList({ scroller : this.scrollerForList, initialIndex: 0 }) {
-38. ForEach(this.arrName, (itemName: string, index: number) => {
-39. ArcListItem() {
-40. Text(itemName)
-41. .width('90%')
-42. .height('92px')
-43. .fontSize(16)
-44. .textAlign(TextAlign.Center)
-45. .backgroundColor(index % 2 == 0 ? 0xAFEEEE : 0x00FFFF)
-46. .borderRadius(23)
-47. }
-48. })
-49. }
-50. .scrollBar(BarState.Off)
-51. .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
-52. this.indexerIndex = centerIndex;
-53. })
-54. .borderWidth(1)
-55. .width(this.watchSize)
-56. .height(this.watchSize)
-57. .borderRadius(this.watchSize)
-58. .space(LengthMetrics.px(4))
+从API version 18开始，支持popupColor和popupBackground接口。
 
-60. ArcAlphabetIndexer({ arrayValue: this.fullValue, selected: 0 })
-61. .autoCollapse(true)
-62. .width(this.watchSize)
-63. .height(this.watchSize)
-64. .usePopup(false)
-65. .selected(this.indexerIndex)
-66. .onSelect((index: number) => {
-67. this.indexerIndex = index;
-68. this.scrollerForList.scrollToIndex(this.indexerIndex);
-69. })
-70. .borderWidth(1)
-71. .hitTestBehavior(HitTestMode.Transparent)
-72. .selectedColor(ColorMetrics.resourceColor(0xFFFFFF))
-73. .selectedBackgroundColor(ColorMetrics.resourceColor(0x1F71FF))
-74. .color(ColorMetrics.resourceColor(0xFFFFFF))
-75. .popupColor(ColorMetrics.resourceColor(0xFFFFFF))
-76. .popupBackground(ColorMetrics.resourceColor(0xD8404040))
-77. .itemSize(LengthMetrics.px(this.itemSize))
-78. .selectedFont({
-79. size:'11.0fp',
-80. style:FontStyle.Normal,
-81. weight:500,
-82. family:'HarmonyOS Sans'
-83. })
-84. .font({
-85. size:'11.0fp',
-86. style:FontStyle.Normal,
-87. weight:500,
-88. family:'HarmonyOS Sans'
-89. })
+```ts
+// xxx.ets
+import {
+  LengthMetrics,
+  ColorMetrics,
+  ArcList,
+  ArcListItem,
+  ArcListAttribute,
+  ArcListItemAttribute,
+  ArcAlphabetIndexer,
+  ArcAlphabetIndexerAttribute
+} from '@kit.ArkUI';
+// 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
 
-91. }.width('100%').height('100%')
-92. }.width('100%').height('100%')
-93. }
-94. }
-95. }
+@Entry
+@Component
+struct ArcListAndIndexer {
+  private fullValue: string[] = [
+    '#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+    'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+  ];
+  private arrName : string[] = [
+    '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20',
+    '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38',
+    '39','40', '41','42',
+  ];
+
+  private scrollerForList: Scroller = new Scroller();
+  @State indexerIndex: number = 0;
+
+  private watchSize: string = '466px'; // 手表默认宽高：233*233
+  private itemSize: number = 24;  // 索引项默认大小：24
+
+  build() {
+    Column() {
+      Row() {
+        Stack() {
+          ArcList({ scroller : this.scrollerForList, initialIndex: 0 }) {
+            ForEach(this.arrName, (itemName: string, index: number) => {
+              ArcListItem() {
+                Text(itemName)
+                  .width('90%')
+                  .height('92px')
+                  .fontSize(16)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(index % 2 == 0 ? 0xAFEEEE : 0x00FFFF)
+                  .borderRadius(23)
+              }
+            })
+          }
+          .scrollBar(BarState.Off)
+          .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
+            this.indexerIndex = centerIndex;
+          })
+          .borderWidth(1)
+          .width(this.watchSize)
+          .height(this.watchSize)
+          .borderRadius(this.watchSize)
+          .space(LengthMetrics.px(4))
+
+          ArcAlphabetIndexer({ arrayValue: this.fullValue, selected: 0 })
+            .autoCollapse(true)
+            .width(this.watchSize)
+            .height(this.watchSize)
+            .usePopup(true)
+            .selected(this.indexerIndex)
+            .onSelect((index: number) => {
+              this.indexerIndex = index;
+              this.scrollerForList.scrollToIndex(this.indexerIndex);
+            })
+            .selectedColor(ColorMetrics.resourceColor(0xFFFFFF))
+            .selectedBackgroundColor(ColorMetrics.resourceColor(0x1F71FF))
+            .color(ColorMetrics.resourceColor(0xFFFFFF))
+            .popupColor(ColorMetrics.resourceColor(0xFFFFFF))
+            .popupBackground(ColorMetrics.resourceColor(0xD8404040))
+            .popupFont({
+              size: '11.0fp',
+              style: FontStyle.Normal,
+              weight: 500,
+              family: 'HarmonyOS Sans'
+            })
+
+        }.width('100%').height('100%')
+        .backgroundColor(Color.Pink)
+      }.width('100%').height('100%')
+    }
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/JsV_dfnwT7KAfXVcd4yVeg/zh-cn_image_0000002558606766.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/dUY7z99lRqmioma5S3ePdA/zh-cn_image_0000002706836082.gif "点击放大")

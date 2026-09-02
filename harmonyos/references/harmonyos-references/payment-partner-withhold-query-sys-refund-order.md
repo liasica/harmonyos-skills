@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 通过sysRefundOrderNo查询退款订单信息
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 签约代扣 > 查询退款订单 > 通过sysRefundOrderNo查询退款订单信息
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ac0cc2f67df1ea7938a2ca4dc80115a45c1de7e1f0411a3465fe56cf8a4c8c2c
+scraped_at: 2026-09-02T15:03:05+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:32e1b0354668f43d7a4c1b849bdb63e076cc9f36ccc508d5fce9c2a16bd0e9c0
 ---
 
 ## 功能介绍
 
 开发者可以调用该接口查询某笔退款订单详细信息。
 
-说明
+**说明** 
 
 resultCode返回“000000”表示查询退款订单成功，不代表退款成功，退款状态需根据refundOrderStatus字段判断。
 
@@ -48,16 +48,16 @@ resultCode返回“000000”表示查询退款订单成功，不代表退款成�
 
 **Request Path**
 
-| 参数 | 是否必填 | 参数类型 | 描述 |
+| 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | sysRefundOrderNo | 是 | String | 华为支付的退款订单号。 |
 
 ## 请求示例
 
-```
-1. GET /api/v1/partner/aggr/transactions/refunds/orders/{sysRefundOrderNo} HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151501075707669","time":1684134067480,"authId":"120291744647139***","headerSign":"p9e6EvvWnVW/QfTA41SgWba4MmRjn5kNUY+9******************75/UrhP0aBflpW1J8Sf8VUt6orCWk=","bodySign":"haZnDZSsB/ed+BBnXhv5lPKRtHqNULIexgpED858FUX********************3r87J20AgH8JJ+7uNwoEYO3lps="}
+```json
+GET /api/v1/partner/aggr/transactions/refunds/orders/{sysRefundOrderNo} HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151501075707669","time":1684134067480,"authId":"120291744647139***","headerSign":"p9e6EvvWnVW/QfTA41SgWba4MmRjn5kNUY+9******************75/UrhP0aBflpW1J8Sf8VUt6orCWk=","bodySign":"haZnDZSsB/ed+BBnXhv5lPKRtHqNULIexgpED858FUX********************3r87J20AgH8JJ+7uNwoEYO3lps="}
 ```
 
 ## 响应参数
@@ -78,34 +78,34 @@ resultCode返回“000000”表示查询退款订单成功，不代表退款成�
 | subDesc | 否 | String | 业务错误描述信息。 |
 | sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
 | sysRefundOrderNo | 否 | String | 华为支付退款订单号。 |
-| mercRefundOrderNo | 否 | String | 商户退款订单号。 |
+| mercRefundOrderNo | 否 | String | 商户退款订单号。最大长度64。 |
 | refundOrderStatus | 是 | String | 退款订单状态：  - REFUND\_CHL\_PROC：处理中  - REFUND\_SUCCESS：成功  - REFUND\_FAILED：失败 |
 | finishTime | 否 | String | 退款完成时间，UTC时间格式（yyyy-MM-dd'T'HH:mm:ss.SSSZ）。 |
 | promotionRefundAmount | 否 | Long | 营销退款金额，单位：分。 |
 | refundAmount | 否 | Long | 退款总金额。订单需要退款的金额，该金额不能大于订单金额，单位：分。  **说明：** 如果正向交易使用了营销，该退款金额包含营销金额，华为支付会按业务规则分配营销和买家自有资金分别退多少，默认按比例退款。如不填则默认payerRefundAmount。 |
-| mLong | 否 | Long | 退款给用户的金额，单位：分。 |
+| payerRefundAmount | 否 | Long | 退款给用户的金额，单位：分。 |
 | currency | 否 | String | 交易币种单位，最大长度为3。  CNY （默认，当前仅支持该币种单位） |
 | payload | 否 | String | 预留信息，如商户请求时传递该参数，此时会原样返回。 |
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEUCIQCEA/HVCjAFReiy59wGUp0zQ********************XbPCQAvFhpv1XIIxmlIIv2zaKH3e6YfxkL94=",
-7. "sysRefundOrderNo": "12407030900270084914518***",
-8. "mercRefundOrderNo": "czl0012024070914***",
-9. "refundOrderStatus": "REFUND_SUCCESS",
-10. "finishTime": "2023-05-15T14:42:09.000+0800",
-11. "promotionRefundAmount": 0,
-12. "refundAmount": 2,
-13. "payerRefundAmount": 2,
-14. "currency": "CNY",
-15. "payload": "example-payload"
-16. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEUCIQCEA/HVCjAFReiy59wGUp0zQ********************XbPCQAvFhpv1XIIxmlIIv2zaKH3e6YfxkL94=",
+  "sysRefundOrderNo": "12407030900270084914518***",
+  "mercRefundOrderNo": "czl0012024070914***",
+  "refundOrderStatus": "REFUND_SUCCESS",
+  "finishTime": "2023-05-15T14:42:09.000+0800",
+  "promotionRefundAmount": 0,
+  "refundAmount": 2,
+  "payerRefundAmount": 2,
+  "currency": "CNY",
+  "payload": "example-payload"
+}
 ```
 
 ## 错误码

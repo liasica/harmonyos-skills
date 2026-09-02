@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: 不同包类型的字节码混淆建议
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > 不同包类型的字节码混淆建议
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:52+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:e4b5d65dde0be2e201ea4933725918f224cab28cf2123be3ff49aa2a9d11de49
+scraped_at: 2026-09-02T14:59:14+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:f32c07731abdcff664cb5e43983389db46c1b33b9ee272095d4d40f4ad4dfb3d
 ---
 
 由于不同包类型的用途及构建流程的差异，开发者对不同包类型使用混淆有不同的注意事项。本文对[HAP](hap-package.md)、[HAR](har-package.md)和[HSP](in-app-hsp.md)三种包类型分别提供建议，帮助开发者高效使用混淆。
@@ -75,10 +75,10 @@ content_hash: sha256:e4b5d65dde0be2e201ea4933725918f224cab28cf2123be3ff49aa2a9d1
 
    * obfuscation-rules.txt中配置HAR包对外导出接口及其相关属性名称、此次构建过程不能被混淆的名称等。
    * consumer-rules.txt配置不能被二次混淆的接口、属性等名称。
-3. HAR包功能验证。需注意，在构建本模块HAR时会进行一次混淆，当发布后的HAR包被依赖时，如果使用方开启混淆，则本HAR包发布后的代码还会跟随使用方被二次混淆，因为需要充分验证使用方开启混淆时HAR包功能是否正常。
+3. HAR包功能验证。需注意，在构建本模块HAR时会进行一次混淆，当发布后的HAR包被依赖时，如果使用方开启混淆，则本HAR包发布后的代码还会跟随使用方被二次混淆，因此需要充分验证使用方开启混淆时HAR包功能是否正常。
 4. 发布HAR包。
 
-说明
+**说明** 
 
 当被其他模块依赖时，有以下两点需要注意：
 
@@ -109,6 +109,6 @@ content_hash: sha256:e4b5d65dde0be2e201ea4933725918f224cab28cf2123be3ff49aa2a9d1
 2. 对于集成态HSP包的内部混淆效果，开发者可以参阅[HAP包混淆建议](bytecode-obfuscation-practice.md#hap包混淆建议)中的所有建议。
 3. 集成态HSP包在发布后会被各方依赖，需要充分验证使用方开启混淆时HSP包接口可以被正常调用。
 
-说明
+**说明** 
 
 HSP生成obfuscation.txt的规则来源，仅来自当前模块的consumer-rules.txt文件，不包含依赖模块的consumer-rules.txt文件或obfuscation.txt文件。

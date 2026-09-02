@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: input
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > input
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:52+08:00
-doc_updated_at: 2026-04-03
-content_hash: sha256:0ebf6ad06e448c0c21ad95d0463713b711d4561535b31efdde38e4726c5e339b
+scraped_at: 2026-09-02T15:01:13+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:df6791b1cd7f671ca40e4bea8d88a71c7ce24e212d1803c587ed7b5a790c7587
 ---
 
 交互式组件，包括单选框，多选框，按钮。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -37,8 +33,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 * 当input类型为checkbox、radio时，支持如下事件：
 
   | 名称 | 参数 | 描述 |
@@ -46,18 +40,16 @@ PhonePC/2in1TabletTVWearableLite Wearable
   | change | { checked:true | false } | checkbox多选框或radio单选框的checked状态发生变化时触发该事件。 |
   | click | - | 点击动作触发该事件。 |
   | longpress | - | 长按动作触发该事件。 |
-  | swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
+  | swipe5+ | [SwipeEvent](js-lite-common-events.md#swipeevent) | 组件上快速滑动后触发的事件对象。 |
 * 当input类型为button时，支持如下事件：
 
   | 名称 | 参数 | 描述 |
   | --- | --- | --- |
   | click | - | 点击动作触发该事件。 |
   | longpress | - | 长按动作触发该事件。 |
-  | swipe5+ | [SwipeEvent](js-lite-common-events.md) | 组件上快速滑动后触发。 |
+  | swipe5+ | [SwipeEvent](js-lite-common-events.md#swipeevent) | 组件上快速滑动后触发的事件对象。 |
 
 ## 样式
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -68,7 +60,7 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | font-family | string | SourceHanSansSC-Regular | 否 | 字体。目前仅支持SourceHanSansSC-Regular 字体。 |
 | padding | <length> | 0 | 否 | 使用简写属性设置所有的内边距属性。  该属性可以有1到4个值：  - 指定一个值时，该值指定四个边的内边距。  - 指定两个值时，第一个值指定上下两边的内边距，第二个指定左右两边的内边距。  - 指定三个值时，第一个指定上边的内边距，第二个指定左右两边的内边距，第三个指定下边的内边距。  - 指定四个值时分别为上、右、下、左边的内边距（顺时针顺序）。 |
 | padding-[left|top|right|bottom] | <length> | 0 | 否 | 设置左、上、右、下内边距属性。 |
-| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上, 第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
+| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上，第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
 | margin-[left|top|right|bottom] | <length> | <percentage>5+ | 0 | 否 | 设置左、上、右、下外边距属性。 |
 | border-width | <length> | 0 | 否 | 使用简写属性设置元素的所有边框宽度。 |
 | border-color | <color> | black | 否 | 使用简写属性设置元素的所有边框颜色。 |
@@ -79,114 +71,112 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 示例
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 1. type为button
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="div-button">
-   3. <input class="button" type="button" value="Input-Button"></input>
-   4. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .div-button {
-   3. flex-direction: column;
-   4. align-items: center;
-   5. width: 100%;
-   6. height: 100%;
-   7. }
-   8. .button {
-   9. margin-top: 30px;
-   10. width: 280px;
-   11. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="div-button">
+     <input class="button" type="button" value="Input-Button"></input>
+   </div>
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/2dJo80hmShyL5h1IUzA1qQ/zh-cn_image_0000002589246743.png)
+   ```css
+   /* xxx.css */
+   .div-button {
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+     height: 100%;
+   }
+   .button {
+     margin-top: 30px;
+     width: 280px;
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/VhqkYcvVSjSY1Hvlmu1oug/zh-cn_image_0000002736435753.png)
 2. type为checkbox
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="content">
-   3. <input onchange="checkboxOnChange" checked="true" type="checkbox"></input>
-   4. <text class="text">{{text}}</text>
-   5. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .content{
-   3. width: 100%;
-   4. height: 100%;
-   5. flex-direction: column;
-   6. align-items: center;
-   7. justify-content: center;
-   8. }
-   9. .text{
-   10. font-size: 30px;
-   11. text-align: center;
-   12. width: 200px;
-   13. margin-top: 20px;
-   14. height: 100px;
-   15. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="content">
+     <input onchange="checkboxOnChange" checked="true" type="checkbox"></input>
+     <text class="text">{{text}}</text>
+   </div>
    ```
 
-   ```
-   1. // xxx.js
-   2. export default {
-   3. data: {
-   4. text: "text"
-   5. },
-   6. checkboxOnChange(e) {
-   7. this.text = e.checked;
-   8. }
-   9. }
+   ```css
+   /* xxx.css */
+   .content{
+     width: 100%;
+     height: 100%;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+   }
+   .text{
+     font-size: 30px;
+     text-align: center;
+     width: 200px;
+     margin-top: 20px;
+     height: 100px;
+   }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/KvFJkn2xRVS_o6v5YzfVvw/zh-cn_image_0000002558766936.gif)
+   ```javascript
+   // xxx.js
+   export default {
+     data: {
+       text: "text"
+     },
+     checkboxOnChange(e) {
+       this.text = e.checked;
+     }
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/j4C-JjqBSiCsuWENA5TW2g/zh-cn_image_0000002706836600.gif)
 3. type为radio
 
-   ```
-   1. <!-- xxx.hml -->
-   2. <div class="container">
-   3. <div class="item">
-   4. <input type="radio" checked="true" name="radioSample" value="radio1" onchange="onRadioChange"></input>
-   5. <text class="text">radio1</text>
-   6. </div>
-   7. <div class="item">
-   8. <input type="radio" checked="false" name="radioSample" value="radio2" onchange="onRadioChange"></input>
-   9. <text class="text">radio2</text>
-   10. </div>
-   11. <div class="item">
-   12. <input type="radio" checked="false" name="radioSample" value="radio3" onchange="onRadioChange"></input>
-   13. <text class="text">radio3</text>
-   14. </div>
-   15. </div>
-   ```
-
-   ```
-   1. /* xxx.css */
-   2. .container {
-   3. width: 100%;
-   4. height: 100%;
-   5. justify-content: center;
-   6. align-items: center;
-   7. flex-direction: column;
-   8. }
-   9. .item {
-   10. width: 50%;
-   11. height: 30%;
-   12. justify-content: center;
-   13. }
-   14. .text {
-   15. margin-top: 25%;
-   16. font-size: 30px;
-   17. text-align: center;
-   18. width: 200px;
-   19. height: 100px;
-   20. }
+   ```html
+   <!-- xxx.hml -->
+   <div class="container">
+     <div class="item">
+       <input type="radio" checked="true" name="radioSample" value="radio1" onchange="onRadioChange"></input>
+       <text class="text">radio1</text>
+     </div>
+     <div class="item">
+       <input type="radio" checked="false" name="radioSample" value="radio2" onchange="onRadioChange"></input>
+       <text class="text">radio2</text>
+     </div>
+     <div class="item">
+       <input type="radio" checked="false" name="radioSample" value="radio3" onchange="onRadioChange"></input>
+       <text class="text">radio3</text>
+     </div>
+   </div>
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_2FN7_lzTGOQJjvjdV53CQ/zh-cn_image_0000002558607276.gif)
+   ```css
+   /* xxx.css */
+   .container {
+     width: 100%;
+     height: 100%;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+   }
+   .item {
+     width: 50%;
+     height: 30%;
+     justify-content: center;
+   }
+   .text {
+     margin-top: 25%;
+     font-size: 30px;
+     text-align: center;
+     width: 200px;
+     height: 100px;
+   }
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/xSdaXj8eQkWEvhazYGs7Hw/zh-cn_image_0000002736315709.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 典型场景的视频编码配置
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 典型场景的视频编码配置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:44+08:00
-doc_updated_at: 2026-04-17
-content_hash: sha256:211eaf1a55317bbf2050758e1b50e7dc84f8991a4808e44f5fb9b224378792c2
+scraped_at: 2026-09-02T14:59:43+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:e51bbefc3c3c754182720d183d4973d136a278f3d118254e63c0483cbcd66d95
 ---
 
 此文档描述了AVCodec视频编码能力在不同应用场景下的推荐配置参数，供开发者根据实际应用场景进行视频编码应用的开发。
@@ -18,24 +18,24 @@ content_hash: sha256:211eaf1a55317bbf2050758e1b50e7dc84f8991a4808e44f5fb9b224378
 
 **在CMake脚本中链接动态库**
 
-```
-1. target_link_libraries(sample PUBLIC libnative_media_codecbase.so)
-2. target_link_libraries(sample PUBLIC libnative_media_core.so)
-3. target_link_libraries(sample PUBLIC libnative_media_venc.so)
+```cmake
+target_link_libraries(sample PUBLIC libnative_media_codecbase.so)
+target_link_libraries(sample PUBLIC libnative_media_core.so)
+target_link_libraries(sample PUBLIC libnative_media_venc.so)
 ```
 
-说明
+**说明** 
 
 上述'sample'字样仅为示例，此处由开发者根据实际工程目录自定义。
 
 **添加头文件**
 
 ```
-1. #include <multimedia/player_framework/native_avcodec_videoencoder.h>
-2. #include <multimedia/player_framework/native_avcapability.h>
-3. #include <multimedia/player_framework/native_avcodec_base.h>
-4. #include <multimedia/player_framework/native_avformat.h>
-5. #include <fstream>
+#include <multimedia/player_framework/native_avcodec_videoencoder.h>
+#include <multimedia/player_framework/native_avcapability.h>
+#include <multimedia/player_framework/native_avcodec_base.h>
+#include <multimedia/player_framework/native_avformat.h>
+#include <fstream>
 ```
 
 ## 低时延场景
@@ -69,7 +69,7 @@ content_hash: sha256:211eaf1a55317bbf2050758e1b50e7dc84f8991a4808e44f5fb9b224378
    | 640x360 | 30 | 550 | -1 | CBR |
    | 320x180 | 20 | 200 | -1 | CBR |
 
-   注意
+   **注意** 
 
    接入帧间隔-1表示只有第一帧为接入帧，开发者可以根据传输情况和画质情况，在运行过程中动态配置编码器参数，实现插入新的接入帧（IDR）功能。
 
@@ -78,48 +78,97 @@ content_hash: sha256:211eaf1a55317bbf2050758e1b50e7dc84f8991a4808e44f5fb9b224378
    videoEnc：视频编码器实例的指针。创建方式可参考[视频编码Surface模式](video-encoding.md#surface模式)“步骤-2：创建编码器实例对象”。
 
    ```
-   1. // 1. 创建AVFormat参数实例。
-   2. OH_AVFormat *format = OH_AVFormat_Create();
-   3. // 2. 填充编码参数键值对（以1080p@30fps SDR输入源为例）。
-   4. OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1920); // 必须配置，视频像素宽。
-   5. OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1080); // 必须配置，视频像素高。
-   6. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
-   7. OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI（视频可用性信息），视频YUV值域标志，0:limited range 1:full range。
-   8. OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
-   9. OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
-   10. OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
-   11. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
-   12. OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0); // 必须配置，视频帧率。
-   13. OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, -1); // 必须配置，接入帧间隔。
-   14. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_CBR); // 必须配置，码控模式配置为CBR。
-   15. OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 1500000); // 必须配置，设置码率，单位为bps。
-   16. // 3. 配置视频编码器的编码参数。
-   17. int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
-   18. if (ret != AV_ERR_OK) {
-   19. // 异常处理。
-   20. }
-   21. // 4. 配置完成后销毁AVFormat实例。
-   22. OH_AVFormat_Destroy(format);
+   // 1. 创建AVFormat参数实例。
+   OH_AVFormat *format = OH_AVFormat_Create();
+   // 2. 填充编码参数键值对（以1080p@30fps SDR输入源为例）。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1920); // 必须配置，视频像素宽。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1080); // 必须配置，视频像素高。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI（视频可用性信息），视频YUV值域标志，0:limited range 1:full range。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
+   OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0); // 必须配置，视频帧率。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, -1); // 必须配置，接入帧间隔。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_CBR); // 必须配置，码控模式配置为CBR。
+   OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 1500000); // 必须配置，设置码率，单位为bps。
+   // 3. 配置视频编码器的编码参数。
+   int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
+   if (ret != AV_ERR_OK) {
+       // 异常处理。
+   }
+   // 4. 配置完成后销毁AVFormat实例。
+   OH_AVFormat_Destroy(format);
    ```
 2. （可选）在运行过程中动态配置编码器参数。
 
    详情可参考[视频编码Surface模式](video-encoding.md#surface模式)“步骤-9：OH\_VideoEncoder\_SetParameter()在运行过程中动态配置编码器参数”。
 
    ```
-   1. // 1. 创建AVFormat参数实例。
-   2. OH_AVFormat *format = OH_AVFormat_Create();
-   3. // 2. 填充编码参数键值对（动态请求IDR帧）。
-   4. OH_AVFormat_SetIntValue(format, OH_MD_KEY_REQUEST_I_FRAME, 1);
-   5. // 3. 设置编码器参数生效。
-   6. ret = OH_VideoEncoder_SetParameter(videoEnc, format);
-   7. if (ret != AV_ERR_OK) {
-   8. // 异常处理。
-   9. }
-   10. // 4. 配置完成后销毁AVFormat实例。
-   11. OH_AVFormat_Destroy(format);
+   // 1. 创建AVFormat参数实例。
+   OH_AVFormat *format = OH_AVFormat_Create();
+   // 2. 填充编码参数键值对（动态请求IDR帧）。
+   OH_AVFormat_SetIntValue(format, OH_MD_KEY_REQUEST_I_FRAME, 1);
+   // 3. 设置编码器参数生效。
+   ret = OH_VideoEncoder_SetParameter(videoEnc, format);
+   if (ret != AV_ERR_OK) {
+       // 异常处理。
+   }
+   // 4. 配置完成后销毁AVFormat实例。
+   OH_AVFormat_Destroy(format);
    ```
 
    如果需要适配网络波动，推荐结合采用[时域可分层视频编码](video-encoding-temporal-scalability.md)配置。
+
+从API版本26.0.0开始，在支持CBRHQ（高质量恒定码率模式）的平台下，推荐使用CBRHQ码控方式替代CBR（恒定码率）码控方式。如果配置了CBRHQ但是平台不支持，会自动使用CBR码控模式替代。
+
+以视频通话场景为例，典型分辨率的编码参数（以H.265为例）推荐如下：
+
+| 分辨率（px） | 帧率（fps） | 码率（kbps） | 接入帧间隔（ms） | 码控模式 |
+| --- | --- | --- | --- | --- |
+| 1920x1080 | 30 | 1500 | -1 | CBRHQ |
+| 1280x720 | 30 | 1000 | -1 | CBRHQ |
+| 960x540 | 30 | 700 | -1 | CBRHQ |
+| 640x360 | 30 | 550 | -1 | CBRHQ |
+| 320x180 | 20 | 200 | -1 | CBRHQ |
+
+CBRHQ码控方式配置如下：
+
+```
+// 1. 创建AVFormat参数实例。
+OH_AVFormat *format = OH_AVFormat_Create();
+// 2. 填充编码参数键值对（以1080p@15fps SDR输入源为例）。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1080); // 必须配置，视频像素宽。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1920); // 必须配置，视频像素高。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
+OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 15.0); // 必须配置，视频帧率。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL,10000); // 必须配置，接入帧间隔，单位为ms。
+
+// 3. 查询CBRHQ支持情况选择合适的码控配置。
+OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
+if (cap == nullptr || !OH_AVCapability_IsEncoderBitrateModeSupported(cap, OH_BitrateMode::BITRATE_MODE_CBR_HIGH_QUALITY)) {
+    // 不支持CBRHQ，使用CBR代替。
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_CBR); // 必须配置，码控模式配置为CBR。
+} else {
+    // 支持CBRHQ，配置CBRHQ码控模式。
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_CBR_HIGH_QUALITY); // 必须配置，码控模式配置为CBRHQ。
+}
+OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 1520000); // 必须配置，设置码率，单位为bps。
+
+// 4. 配置视频编码器的编码参数。
+int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
+if (ret != AV_ERR_OK) {
+    // 异常处理。
+}
+// 5. 配置完成后销毁AVFormat实例。
+OH_AVFormat_Destroy(format);
+```
 
 ## 实时流媒体编码
 
@@ -145,28 +194,28 @@ content_hash: sha256:211eaf1a55317bbf2050758e1b50e7dc84f8991a4808e44f5fb9b224378
 | 1920x1080 | 60 | 6000 | 5000 | VBR |
 
 ```
-1. // 1. 创建AVFormat参数实例。
-2. OH_AVFormat *format = OH_AVFormat_Create();
-3. // 2. 填充编码参数键值对（以1080p@25fps SDR输入源为例）。
-4. OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1080); // 必须配置，视频像素宽。
-5. OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1920); // 必须配置，视频像素高。
-6. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
-7. OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
-8. OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
-9. OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
-10. OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
-11. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
-12. OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 25.0); // 必须配置，视频帧率。
-13. OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 2000); // 必须配置，接入帧间隔，单位为ms。
-14. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_VBR); // 必须配置，码控模式配置为VBR。
-15. OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 3000000); // 必须配置，设置码率，单位为bps。
-16. // 3. 配置视频编码器的编码参数。
-17. int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
-18. if (ret != AV_ERR_OK) {
-19. // 异常处理。
-20. }
-21. // 4. 配置完成后销毁AVFormat实例。
-22. OH_AVFormat_Destroy(format);
+// 1. 创建AVFormat参数实例。
+OH_AVFormat *format = OH_AVFormat_Create();
+// 2. 填充编码参数键值对（以1080p@25fps SDR输入源为例）。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1080); // 必须配置，视频像素宽。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1920); // 必须配置，视频像素高。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
+OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 25.0); // 必须配置，视频帧率。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 2000); // 必须配置，接入帧间隔，单位为ms。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_VBR); // 必须配置，码控模式配置为VBR。
+OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 3000000); // 必须配置，设置码率，单位为bps。
+// 3. 配置视频编码器的编码参数。
+int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
+if (ret != AV_ERR_OK) {
+    // 异常处理。
+}
+// 4. 配置完成后销毁AVFormat实例。
+OH_AVFormat_Destroy(format);
 ```
 
 从API version 20开始，在支持SQR（质量稳定码控）的平台下，推荐使用SQR码控方式替代VBR（可变码率）码控方式。
@@ -189,40 +238,40 @@ content_hash: sha256:211eaf1a55317bbf2050758e1b50e7dc84f8991a4808e44f5fb9b224378
 SQR码控方式配置如下：
 
 ```
-1. // 1. 创建AVFormat参数实例。
-2. OH_AVFormat *format = OH_AVFormat_Create();
-3. // 2. 填充编码参数键值对（以1080p@25fps SDR输入源为例）。
-4. OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1080); // 必须配置，视频像素宽。
-5. OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1920); // 必须配置，视频像素高。
-6. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
-7. OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
-8. OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
-9. OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
-10. OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
-11. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
-12. OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 25.0); // 必须配置，视频帧率。
-13. OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 2000); // 必须配置，接入帧间隔，单位为ms。
+// 1. 创建AVFormat参数实例。
+OH_AVFormat *format = OH_AVFormat_Create();
+// 2. 填充编码参数键值对（以1080p@25fps SDR输入源为例）。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1080); // 必须配置，视频像素宽。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1920); // 必须配置，视频像素高。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
+OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 25.0); // 必须配置，视频帧率。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 2000); // 必须配置，接入帧间隔，单位为ms。
 
-15. // 3. 查询SQR支持情况选择合适的码控配置。
-16. OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-17. if (cap == nullptr || !OH_AVCapability_IsEncoderBitrateModeSupported(cap, OH_BitrateMode::BITRATE_MODE_SQR)) {
-18. // 不支持SQR，使用VBR代替。
-19. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_VBR); // 必须配置，码控模式配置为VBR。
-20. OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 3000000); // 必须配置，设置码率，单位为bps。
-21. } else {
-22. // 支持SQR，配置SQR码控参数。
-23. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_SQR); // 必须配置，码控模式配置为SQR。
-24. OH_AVFormat_SetIntValue(format, OH_MD_KEY_SQR_FACTOR, 25); // 必选配置，设置SQR质量因子，取值范围为[0, 51]，数值越小画质越高。
-25. OH_AVFormat_SetLongValue(format, OH_MD_KEY_MAX_BITRATE, 3000000); // 必须配置，设置峰值码率，单位为bps。
-26. }
+// 3. 查询SQR支持情况选择合适的码控配置。
+OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
+if (cap == nullptr || !OH_AVCapability_IsEncoderBitrateModeSupported(cap, OH_BitrateMode::BITRATE_MODE_SQR)) {
+    // 不支持SQR，使用VBR代替。
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_VBR); // 必须配置，码控模式配置为VBR。
+    OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 3000000); // 必须配置，设置码率，单位为bps。
+} else {
+    // 支持SQR，配置SQR码控参数。
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_SQR); // 必须配置，码控模式配置为SQR。
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_SQR_FACTOR, 25); // 必选配置，设置SQR质量因子，取值范围为[0, 51]，数值越小画质越高。
+    OH_AVFormat_SetLongValue(format, OH_MD_KEY_MAX_BITRATE, 3000000); // 必须配置，设置峰值码率，单位为bps。
+}
 
-28. // 4. 配置视频编码器的编码参数。
-29. int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
-30. if (ret != AV_ERR_OK) {
-31. // 异常处理。
-32. }
-33. // 5. 配置完成后销毁AVFormat实例。
-34. OH_AVFormat_Destroy(format);
+// 4. 配置视频编码器的编码参数。
+int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
+if (ret != AV_ERR_OK) {
+    // 异常处理。
+}
+// 5. 配置完成后销毁AVFormat实例。
+OH_AVFormat_Destroy(format);
 ```
 
 ## 离线编码场景
@@ -254,28 +303,28 @@ SQR码控方式配置如下：
 | 854x480 | 30 | 400 | 5000 | VBR |
 
 ```
-1. // 1. 创建AVFormat参数实例。
-2. OH_AVFormat *format = OH_AVFormat_Create();
-3. // 2. 填充编码参数键值对（以1080p@30fps SDR输入源为例）。
-4. OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1920); // 必须配置，视频像素宽。
-5. OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1080); // 必须配置，视频像素高。
-6. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
-7. OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
-8. OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
-9. OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
-10. OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
-11. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
-12. OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0); // 必须配置，视频帧率。
-13. OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 5000); // 必须配置，接入帧间隔，单位为ms。
-14. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_VBR); // 必须配置，码控模式配置为VBR。
-15. OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 2100000); // 必须配置，设置码率，单位为bps。
-16. // 3. 配置视频编码器的编码参数。
-17. int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
-18. if (ret != AV_ERR_OK) {
-19. // 异常处理。
-20. }
-21. // 4. 配置完成后销毁AVFormat实例。
-22. OH_AVFormat_Destroy(format);
+// 1. 创建AVFormat参数实例。
+OH_AVFormat *format = OH_AVFormat_Create();
+// 2. 填充编码参数键值对（以1080p@30fps SDR输入源为例）。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1920); // 必须配置，视频像素宽。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1080); // 必须配置，视频像素高。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
+OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0); // 必须配置，视频帧率。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 5000); // 必须配置，接入帧间隔，单位为ms。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_VBR); // 必须配置，码控模式配置为VBR。
+OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 2100000); // 必须配置，设置码率，单位为bps。
+// 3. 配置视频编码器的编码参数。
+int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
+if (ret != AV_ERR_OK) {
+    // 异常处理。
+}
+// 4. 配置完成后销毁AVFormat实例。
+OH_AVFormat_Destroy(format);
 ```
 
 从API version 20开始，在支持SQR（质量稳定码控）的平台下，推荐使用SQR码控方式替代VBR（可变码率）码控方式。
@@ -303,40 +352,40 @@ SQR码控方式配置如下：
 SQR码控方式配置如下：
 
 ```
-1. // 1. 创建AVFormat参数实例。
-2. OH_AVFormat *format = OH_AVFormat_Create();
-3. // 2. 填充编码参数键值对（以1080p@30fps SDR输入源为例）。
-4. OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1920); // 必须配置，视频像素宽。
-5. OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1080); // 必须配置，视频像素高。
-6. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
-7. OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
-8. OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
-9. OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
-10. OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
-11. OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
-12. OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0); // 必须配置，视频帧率。
-13. OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 5000); // 必须配置，接入帧间隔，单位为ms。
+// 1. 创建AVFormat参数实例。
+OH_AVFormat *format = OH_AVFormat_Create();
+// 2. 填充编码参数键值对（以1080p@30fps SDR输入源为例）。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, 1920); // 必须配置，视频像素宽。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, 1080); // 必须配置，视频像素高。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12); // 必须配置，视频源数据排布格式。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_RANGE_FLAG, 0); // VUI，视频YUV值域标志，0:limited range 1:full range。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_COLOR_PRIMARIES, OH_ColorPrimary::COLOR_PRIMARY_BT709); // VUI，视频源色域。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_TRANSFER_CHARACTERISTICS, OH_TransferCharacteristic::TRANSFER_CHARACTERISTIC_BT709); // VUI，OETF/EOTF曲线。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_MATRIX_COEFFICIENTS, OH_MatrixCoefficient::MATRIX_COEFFICIENT_BT709); // VUI，YUV和RGB转换矩阵。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, OH_HEVCProfile::HEVC_PROFILE_MAIN); // 视频编码器profile。
+OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0); // 必须配置，视频帧率。
+OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 5000); // 必须配置，接入帧间隔，单位为ms。
 
-15. // 3. 查询SQR支持情况选择合适的码控配置。
-16. OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
-17. if (cap == nullptr || !OH_AVCapability_IsEncoderBitrateModeSupported(cap, OH_BitrateMode::BITRATE_MODE_SQR)) {
-18. // 不支持SQR，使用VBR代替。
-19. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_VBR); // 必须配置，码控模式配置为VBR。
-20. OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 2100000); // 必须配置，设置码率，单位为bps。
-21. } else {
-22. // 支持SQR，配置SQR码控参数。
-23. OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_SQR); // 必须配置，码控模式配置为SQR。
-24. OH_AVFormat_SetIntValue(format, OH_MD_KEY_SQR_FACTOR, 25); // 必选配置，设置SQR质量因子，取值范围为[0, 51]，数值越小画质越高。
-25. OH_AVFormat_SetLongValue(format, OH_MD_KEY_MAX_BITRATE, 2100000); // 必须配置，设置峰值码率，单位为bps。
-26. }
+// 3. 查询SQR支持情况选择合适的码控配置。
+OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true);
+if (cap == nullptr || !OH_AVCapability_IsEncoderBitrateModeSupported(cap, OH_BitrateMode::BITRATE_MODE_SQR)) {
+    // 不支持SQR，使用VBR代替。
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_VBR); // 必须配置，码控模式配置为VBR。
+    OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, 2100000); // 必须配置，设置码率，单位为bps。
+} else {
+    // 支持SQR，配置SQR码控参数。
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, OH_BitrateMode::BITRATE_MODE_SQR); // 必须配置，码控模式配置为SQR。
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_SQR_FACTOR, 25); // 必选配置，设置SQR质量因子，取值范围为[0, 51]，数值越小画质越高。
+    OH_AVFormat_SetLongValue(format, OH_MD_KEY_MAX_BITRATE, 2100000); // 必须配置，设置峰值码率，单位为bps。
+}
 
-28. // 4. 配置视频编码器的编码参数。
-29. int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
-30. if (ret != AV_ERR_OK) {
-31. // 异常处理。
-32. }
-33. // 5. 配置完成后销毁AVFormat实例。
-34. OH_AVFormat_Destroy(format);
+// 4. 配置视频编码器的编码参数。
+int32_t ret = OH_VideoEncoder_Configure(videoEnc, format);
+if (ret != AV_ERR_OK) {
+    // 异常处理。
+}
+// 5. 配置完成后销毁AVFormat实例。
+OH_AVFormat_Destroy(format);
 ```
 
 ## 注意事项

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-kit-intr
 title: Push Kit简介
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:50+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:54da2a1afafa64904ff9255a8419a6c0aa88aca0419d3b23729d8bc22c0935aa
+scraped_at: 2026-09-02T15:00:00+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:2e35a6b10d5e504005a72c8ebfee06daf5c49b6417dc86f247e02dacd95bad8b
 ---
 
 Push Kit（推送服务）是华为提供的消息推送平台，建立了从云端到终端的消息推送通道。所有HarmonyOS应用可通过集成Push Kit，实现向应用实时推送消息，使消息易见，构筑良好的用户关系，提升用户的感知度和活跃度。
@@ -30,7 +30,7 @@ Push Kit（推送服务）是华为提供的消息推送平台，建立了从云
 
 推送消息指的是应用**通过Push Kit发送的**，在华为终端设备上显示的通知消息。显示场景主要包括通知中心、锁屏、横幅、桌面图标角标与通知图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/UXBmcHZNQkm0etwLkesUXQ/zh-cn_image_0000002589245415.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/1L9YRQw5Sd6v_pYzTGVDAg/zh-cn_image_0000002736434281.jpg)
 
 有关各场景的详细说明请参见[通知提示场景](../design-guides/system-features-notification-0000001793074217.md#section162699204401)。
 
@@ -46,10 +46,11 @@ Push Kit支持以下消息类型：
 | [后台消息](push-background.md) | 终端设备接收到后台消息后，如果应用进程在前台则将消息内容传给应用；如果应用进程不在前台则缓存消息，等待应用启动后再传给应用。  常见场景：用于告知应用更新配置参数。 |
 | [实况窗消息](push-update-liveview.md) | 应用服务端向Push Kit服务端发送创建或更新实况窗的请求，创建实况窗，或更新实况窗内容。  常见场景：赛事比分更新，出行打车状态更新等。 |
 | [应用内通话消息](push-voip.md) | 支持应用实现网络音视频通话的能力。  常见场景：网络音视频通话。 |
+| [角标刷新消息](push-send-badge.md) | 角标刷新消息用于设置应用角标数字，提醒用户查看消息更新。  常见场景：即时通讯类应用的多端角标同步。 |
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/kB9cabESTSyn0ktRaPLrkQ/zh-cn_image_0000002558765608.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/tB6pv717SUCrz3nX9KDRXA/zh-cn_image_0000002706835130.png)
 
 使用Push Kit的主要业务流程如下：
 
@@ -74,7 +75,7 @@ Push Kit致力于提供安全可靠的系统级消息发送通道，保障消息
 
 在终端设备网络条件良好且不拥堵情况下，Push Kit将使用智能推送策略以减少推送消息的时延。
 
-说明
+**说明** 
 
 为降低对用户的打扰，系统会学习用户的行为习惯，预测用户的睡眠时间，在用户睡眠期间实施消息管控。在此期间Push Kit将暂时缓存该时间段内收到的消息（应用内通话或category=VoIP的消息除外）。用户结束睡眠后，Push Kit会将消息重新投递到对应设备。
 
@@ -92,7 +93,7 @@ Push Kit致力于提供安全可靠的系统级消息发送通道，保障消息
 * 5223
 * 443
 
-说明
+**说明** 
 
 终端设备连接的推送服务器的IP是动态分配的，无法通过配置IP白名单方式放行。建议连接不受限的网络或放通以上端口。
 
@@ -103,6 +104,10 @@ Push Kit当前[支持的设备](push-kit-introduction.md#支持的设备)中Wear
 ### 支持的设备
 
 Push Kit相关能力支持Phone、Tablet、PC/2in1、Wearable、TV设备。
+
+**说明** 
+
+Wearable设备仅在有网且独立使用场景下支持，在连接手机场景下不支持。
 
 ### 云真机说明
 

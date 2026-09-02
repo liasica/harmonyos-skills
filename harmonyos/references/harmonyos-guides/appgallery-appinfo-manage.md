@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-ap
 title: 通过AppGallery Connect动态管理应用图标
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 图标管理服务 > 通过AppGallery Connect动态管理应用图标
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:15+08:00
+scraped_at: 2026-09-02T14:59:53+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a6df4d6276da3e8c1cb36c8b2f2da0b7a036b0b2a7d0069e949118092c133800
+content_hash: sha256:8d3898e8b1ba1801c263acfb991921cc4d4f6cff46a3a828597e7e0adb62f5a6
 ---
 
 通过图标管理服务，开发者可以在不升级应用版本的情况下，通过AGC页面动态管理应用的个性化图标，并在应用侧实现应用图标动态切换。
@@ -37,9 +37,9 @@ content_hash: sha256:a6df4d6276da3e8c1cb36c8b2f2da0b7a036b0b2a7d0069e949118092c1
 
 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，点击“APP与元服务”，在应用列表中选择已经开通图标管理服务的HarmonyOS应用，选择“分发 > 服务 > 图标管理”，进入图标管理页面，就可以管理HarmonyOS应用的个性化图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/21HXQZZRQxW8RKj3XMLFZg/zh-cn_image_0000002589245097.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/CH1e3V5yS8uvMX5ZKIh73Q/zh-cn_image_0000002736433957.png)
 
-说明
+**说明** 
 
 * 只有正式发布的HarmonyOS应用支持管理个性化图标。
 * 在创建个性化图标前，您需要提前准备好需要上传的图标文件，图标文件需要满足应用市场的审核政策要求，详情参见《[应用审核指南](../app/50104.md)》。
@@ -48,10 +48,10 @@ content_hash: sha256:a6df4d6276da3e8c1cb36c8b2f2da0b7a036b0b2a7d0069e949118092c1
 
 1. 在图标管理页面点击“新增图标”按钮，进入创建图标页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/iEjkXXhXSA6vIxqTmqH3Mg/zh-cn_image_0000002558765292.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/JSoGNv4fRS6OjOREsQ40Bw/zh-cn_image_0000002706834808.png)
 2. 输入图标ID、图标名称，选择设备类型，上传图标文件，点击“保存”或者“提交”按钮，将图标保存为草稿状态或提交审核。
 
-说明
+**说明** 
 
 * 新创建的图标，需要经过应用市场审核通过，才能在客户端使用。
 * 图标审核时间为1-3个工作日，审核状态和审核意见直接展示在图标信息查看页面，不会单独通知。
@@ -60,10 +60,10 @@ content_hash: sha256:a6df4d6276da3e8c1cb36c8b2f2da0b7a036b0b2a7d0069e949118092c1
 
 1. 在图标管理页面选择一个草稿或审核不通过的图标，点击“编辑”按钮，或选择一个审核通过的图标，点击“更新”按钮，进入图标编辑页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ijGGqIBaTgmp3mSr16upmw/zh-cn_image_0000002558605636.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/kZAguVDuQSe29Bm3H5ncOA/zh-cn_image_0000002736313915.png)
 2. 输入图标ID、图标名称，选择设备类型，上传图标文件，点击“保存”或者“提交”按钮，将图标保存为草稿状态或提交审核。
 
-说明
+**说明** 
 
 * 草稿、审核不通过状态的图标支持编辑，审核中的图标不支持编辑，但是可以点击“撤销”按钮，将审核中的图标撤回草稿状态。
 * 审核通过的图标支持更新，但只支持变更图标名称和图标文件，图标ID和设备类型不支持变更，图标更新也需要审核通过才能生效。
@@ -72,9 +72,9 @@ content_hash: sha256:a6df4d6276da3e8c1cb36c8b2f2da0b7a036b0b2a7d0069e949118092c1
 
 1. 在图标管理页面选择一个图标，点击“删除”按钮，再点击提示框中的“确认”按钮，就可以删除指定图标。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Forw7MQPS6-uB5hTenmrIg/zh-cn_image_0000002589325163.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Frf7UmRqSlO9UUIk8F8ruA/zh-cn_image_0000002706674872.png)
 
-说明
+**说明** 
 
 * 图标删除不需要审批，删除之后不可恢复，请谨慎操作。
 * 如果被删除的图标正在用户设备桌面上使用，图标删除后，桌面上的图标不会自动回退，需要客户端触发图标切换。

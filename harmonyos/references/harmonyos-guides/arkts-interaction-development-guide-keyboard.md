@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持键盘输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持键盘输入事件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d1217ee0faaa7199667f954a7c3bd694914774e785290dafc5a29ea7d8719001
+scraped_at: 2026-09-02T14:59:18+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:73d576bb9ab6b1c4d8e2de2b13298772106c6d42ee06484b121551a4e8fdd71b
 ---
 
 物理按键产生的按键事件为非指向性事件，与触摸等指向性事件不同，其事件并没有坐标位置信息，所以其会按照一定次序向获焦组件进行派发，大多数文字输入场景下，按键事件都会优先派发给输入法进行处理，以便其处理文字的联想和候选词，应用可以通过[onKeyPreIme](../harmonyos-references/ts-universal-events-key.md#onkeypreime12)提前感知事件。
 
-说明
+**说明** 
 
 一些系统按键产生的事件并不会传递给UI组件，如电源键。
 
 ## 按键事件数据流
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/p_BTwHvSQluv5H7e4_YJMg/zh-cn_image_0000002558604784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/1ADNryieRdOCBNG_aPpUXA/zh-cn_image_0000002706833740.png)
 
 按键事件由外设键盘等设备触发，经驱动和多模处理转换后发送给当前获焦的窗口，窗口获取到事件后，会尝试分发三次事件。三次分发的优先顺序如下，一旦事件被消费，则跳过后续分发流程。
 
@@ -28,79 +28,77 @@ content_hash: sha256:d1217ee0faaa7199667f954a7c3bd694914774e785290dafc5a29ea7d87
 
 按键事件到ArkUI框架之后，会先找到完整的节点获焦链。从叶子节点到根节点，逐一发送按键事件，若有子组件可以处理则优先给子组件处理，若子组件无法处理，则进行冒泡寻找父组件进行处理。
 
-Web组件的KeyEvent流程与上述过程有所不同。在[onKeyPreIme](../harmonyos-references/ts-universal-events-key.md#onkeypreime12)返回false时，Web组件不会匹配快捷键。而在第三次按键派发过程中，Web组件会将未消费的[KeyEvent](../harmonyos-references/ts-universal-events-key.md#keyevent对象说明)通过ReDispatch重新派发回ArkUI，在ReDispatch中再执行匹配快捷键等操作。
+Web组件的KeyEvent流程与上述过程有所不同。在[onKeyPreIme](../harmonyos-references/ts-universal-events-key.md#onkeypreime12)返回false时，Web组件不会匹配快捷键。而在第三次按键派发过程中，Web组件会将未消费的[KeyEvent](../harmonyos-references/ts-universal-events-key.md#keyevent对象说明)重新派发回ArkUI，在重新派发过程中再执行匹配快捷键等操作。
 
-## onKeyEvent & onKeyPreIme
+## onKeyEvent、onKeyPreIme和onKeyEventDispatch
 
-```
-1. onKeyEvent(event: (event: KeyEvent) => void): T
-2. onKeyEvent(event: Callback<KeyEvent, boolean>): T
-3. onKeyPreIme(event: Callback<KeyEvent, boolean>): T
-4. onKeyEventDispatch(event: Callback<KeyEvent, boolean>): T
+```ts
+onKeyEvent(event: (event: KeyEvent) => void): T
+onKeyEvent(event: Callback<KeyEvent, boolean>): T
+onKeyPreIme(event: Callback<KeyEvent, boolean>): T
+onKeyEventDispatch(event: Callback<KeyEvent, boolean>): T
 ```
 
 上述四种方法的区别仅在于触发的时机（见[按键事件数据流](arkts-interaction-development-guide-keyboard.md#按键事件数据流)）。其中onKeyPreIme的返回值决定了该按键事件后续是否会被继续分发给页面快捷键、输入法、onKeyEventDispatch和onKeyEvent。
 
 当绑定方法的组件处于获焦状态下，外设键盘的按键事件会触发该方法，回调参数为[KeyEvent](../harmonyos-references/ts-universal-events-key.md#keyevent对象说明)，可由该参数获得当前按键事件的按键行为（[KeyType](../harmonyos-references/ts-appendix-enums.md#keytype)）、键码（[KeyCode](../harmonyos-references/js-apis-keycode.md#keycode)）、按键英文名称（keyText）、事件来源设备类型（[KeySource](../harmonyos-references/ts-appendix-enums.md#keysource)）、事件来源设备id（deviceId）、元键按压状态（metaKey）、时间戳（timestamp）、阻止冒泡设置（stopPropagation）。
 
+```typescript
+@Entry
+@Component
+struct KeyEventExample {
+  @State buttonText: string = '';
+  @State buttonType: string = '';
+  @State columnText: string = '';
+  @State columnType: string = '';
+
+  build() {
+    Column() {
+      Button('onKeyEvent')
+        .defaultFocus(true)
+        .width(140).height(70)
+        .onKeyEvent((event?: KeyEvent) => { // 给Button设置onKeyEvent事件
+          if (event) {
+            if (event.type === KeyType.Down) {
+              this.buttonType = 'Down';
+            }
+            if (event.type === KeyType.Up) {
+              this.buttonType = 'Up';
+            }
+            this.buttonText = 'Button: \n' +
+              'KeyType:' + this.buttonType + '\n' +
+              'KeyCode:' + event.keyCode + '\n' +
+              'KeyText:' + event.keyText;
+          }
+        })
+
+      Divider()
+      Text(this.buttonText).fontColor(Color.Green)
+
+      Divider()
+      Text(this.columnText).fontColor(Color.Red)
+    }.width('100%').height('100%').justifyContent(FlexAlign.Center)
+    .onKeyEvent((event?: KeyEvent) => { // 给父组件Column设置onKeyEvent事件
+      if (event) {
+        if (event.type === KeyType.Down) {
+          this.columnType = 'Down';
+        }
+        if (event.type === KeyType.Up) {
+          this.columnType = 'Up';
+        }
+        this.columnText = 'Column: \n' +
+          'KeyType:' + this.columnType + '\n' +
+          'KeyCode:' + event.keyCode + '\n' +
+          'KeyText:' + event.keyText;
+      }
+    })
+  }
+}
 ```
-1. @Entry
-2. @Component
-3. struct KeyEventExample {
-4. @State buttonText: string = '';
-5. @State buttonType: string = '';
-6. @State columnText: string = '';
-7. @State columnType: string = '';
-
-9. build() {
-10. Column() {
-11. Button('onKeyEvent')
-12. .defaultFocus(true)
-13. .width(140).height(70)
-14. .onKeyEvent((event?: KeyEvent) => { // 给Button设置onKeyEvent事件
-15. if (event) {
-16. if (event.type === KeyType.Down) {
-17. this.buttonType = 'Down';
-18. }
-19. if (event.type === KeyType.Up) {
-20. this.buttonType = 'Up';
-21. }
-22. this.buttonText = 'Button: \n' +
-23. 'KeyType:' + this.buttonType + '\n' +
-24. 'KeyCode:' + event.keyCode + '\n' +
-25. 'KeyText:' + event.keyText;
-26. }
-27. })
-
-29. Divider()
-30. Text(this.buttonText).fontColor(Color.Green)
-
-32. Divider()
-33. Text(this.columnText).fontColor(Color.Red)
-34. }.width('100%').height('100%').justifyContent(FlexAlign.Center)
-35. .onKeyEvent((event?: KeyEvent) => { // 给父组件Column设置onKeyEvent事件
-36. if (event) {
-37. if (event.type === KeyType.Down) {
-38. this.columnType = 'Down';
-39. }
-40. if (event.type === KeyType.Up) {
-41. this.columnType = 'Up';
-42. }
-43. this.columnText = 'Column: \n' +
-44. 'KeyType:' + this.columnType + '\n' +
-45. 'KeyCode:' + event.keyCode + '\n' +
-46. 'KeyText:' + event.keyText;
-47. }
-48. })
-49. }
-50. }
-```
-
-[OnKey.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKey.ets#L16-L67)
 
 上述示例中给组件Button和其父容器Column绑定onKeyEvent。应用打开页面加载后，组件树上第一个可获焦的非容器组件自动获焦，设置Button为当前页面的默认焦点，由于Button是Column的子节点，Button获焦也同时意味着Column获焦。获焦机制见[支持焦点处理](arkts-common-events-focus-event.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/_KYVvMU9SUaBDACQB6RSWA/zh-cn_image_0000002589324309.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/7cr7U44QSZe3skdKU77Ltw/zh-cn_image_0000002736312849.gif)
 
 打开应用后，依次在键盘上按这些按键：空格、回车、左Ctrl、左Shift、字母A、字母Z。
 
@@ -109,208 +107,201 @@ Web组件的KeyEvent流程与上述过程有所不同。在[onKeyPreIme](../harm
 
 如果要阻止冒泡，即仅Button响应键盘事件，Column不响应，在Button的onKeyEvent回调中加入event.stopPropagation()方法即可，如下：
 
-```
-1. @Entry
-2. @Component
-3. struct KeyEventPreventBubble {
-4. @State buttonText: string = '';
-5. @State buttonType: string = '';
-6. @State columnText: string = '';
-7. @State columnType: string = '';
+```typescript
+@Entry
+@Component
+struct KeyEventPreventBubble {
+  @State buttonText: string = '';
+  @State buttonType: string = '';
+  @State columnText: string = '';
+  @State columnType: string = '';
 
-9. build() {
-10. Column() {
-11. Button('onKeyEvent')
-12. .defaultFocus(true)
-13. .width(140).height(70)
-14. .onKeyEvent((event?: KeyEvent) => {
-15. // 通过stopPropagation阻止事件冒泡
-16. if (event) {
-17. if (event.stopPropagation) {
-18. event.stopPropagation();
-19. }
-20. if (event.type === KeyType.Down) {
-21. this.buttonType = 'Down';
-22. }
-23. if (event.type === KeyType.Up) {
-24. this.buttonType = 'Up';
-25. }
-26. this.buttonText = 'Button: \n' +
-27. 'KeyType:' + this.buttonType + '\n' +
-28. 'KeyCode:' + event.keyCode + '\n' +
-29. 'KeyText:' + event.keyText;
-30. }
-31. })
+  build() {
+    Column() {
+      Button('onKeyEvent')
+        .defaultFocus(true)
+        .width(140).height(70)
+        .onKeyEvent((event?: KeyEvent) => {
+          // 通过stopPropagation阻止事件冒泡
+          if (event) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            }
+            if (event.type === KeyType.Down) {
+              this.buttonType = 'Down';
+            }
+            if (event.type === KeyType.Up) {
+              this.buttonType = 'Up';
+            }
+            this.buttonText = 'Button: \n' +
+              'KeyType:' + this.buttonType + '\n' +
+              'KeyCode:' + event.keyCode + '\n' +
+              'KeyText:' + event.keyText;
+          }
+        })
 
-33. Divider()
-34. Text(this.buttonText).fontColor(Color.Green)
+      Divider()
+      Text(this.buttonText).fontColor(Color.Green)
 
-36. Divider()
-37. Text(this.columnText).fontColor(Color.Red)
-38. }.width('100%').height('100%').justifyContent(FlexAlign.Center)
-39. .onKeyEvent((event?: KeyEvent) => { // 给父组件Column设置onKeyEvent事件
-40. if (event) {
-41. if (event.type === KeyType.Down) {
-42. this.columnType = 'Down';
-43. }
-44. if (event.type === KeyType.Up) {
-45. this.columnType = 'Up';
-46. }
-47. this.columnText = 'Column: \n' +
-48. 'KeyType:' + this.columnType + '\n' +
-49. 'KeyCode:' + event.keyCode + '\n' +
-50. 'KeyText:' + event.keyText;
-51. }
-52. })
-53. }
-54. }
-```
-
-[OnKeyPreventBubble.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKeyPreventBubble.ets#L16-L71)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4yoiFikDS16tHSpjycvi4A/zh-cn_image_0000002589244249.gif)
-
-使用OnKeyPreIme屏蔽在输入框中使用方向左键。
-
-```
-1. import { KeyCode } from '@kit.InputKit';
-
-3. @Entry
-4. @Component
-5. struct PreImeEventExample {
-6. @State buttonText: string = '';
-7. @State buttonType: string = '';
-8. @State columnText: string = '';
-9. @State columnType: string = '';
-
-11. build() {
-12. Column() {
-13. Search({
-14. placeholder: 'Search...'
-15. })
-16. .width('80%')
-17. .height('40vp')
-18. .border({ radius: '20vp' })
-19. .onKeyPreIme((event: KeyEvent) => {
-20. if (event.keyCode == KeyCode.KEYCODE_DPAD_LEFT) {
-21. return true;
-22. }
-23. return false;
-24. })
-25. }
-26. }
-27. }
+      Divider()
+      Text(this.columnText).fontColor(Color.Red)
+    }.width('100%').height('100%').justifyContent(FlexAlign.Center)
+    .onKeyEvent((event?: KeyEvent) => { // 给父组件Column设置onKeyEvent事件
+      if (event) {
+        if (event.type === KeyType.Down) {
+          this.columnType = 'Down';
+        }
+        if (event.type === KeyType.Up) {
+          this.columnType = 'Up';
+        }
+        this.columnText = 'Column: \n' +
+          'KeyType:' + this.columnType + '\n' +
+          'KeyCode:' + event.keyCode + '\n' +
+          'KeyText:' + event.keyText;
+      }
+    })
+  }
+}
 ```
 
-[OnKeyPreIme.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKeyPreIme.ets#L16-L44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Jw421g5-Tx2HTi-a8bN59g/zh-cn_image_0000002706673806.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/A7Wx8uwqS-uqjQDT4kg1LQ/zh-cn_image_0000002558764442.gif)
+使用onKeyPreIme屏蔽在输入框中使用方向左键。
+
+```typescript
+import { KeyCode } from '@kit.InputKit';
+
+@Entry
+@Component
+struct PreImeEventExample {
+  @State buttonText: string = '';
+  @State buttonType: string = '';
+  @State columnText: string = '';
+  @State columnType: string = '';
+
+  build() {
+    Column() {
+      Search({
+        placeholder: 'Search...'
+      })
+        .width('80%')
+        .height('40vp')
+        .border({ radius: '20vp' })
+        .onKeyPreIme((event: KeyEvent) => {
+          if (event.keyCode == KeyCode.KEYCODE_DPAD_LEFT) {
+            return true;
+          }
+          return false;
+        })
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/HDw7dQqXThWYgHbXlOzlJg/zh-cn_image_0000002736432897.gif)
 
 使用onKeyEventDispatch分发按键事件到子组件，子组件使用onKeyEvent。
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-3. const TAG = '[Sample_Eventproject]';
-4. const DOMAIN = 0xF811;
-5. const BUNDLE = 'Eventproject_';
+const TAG = '[Sample_Eventproject]';
+const DOMAIN = 0xF811;
+const BUNDLE = 'Eventproject_';
 
-7. @Entry
-8. @Component
-9. struct Index {
-10. build() {
-11. Row() {
-12. Row() {
-13. Button('button1')
-14. .id('button1')
-15. .margin({ left: 70, right: 30 })
-16. .onKeyEvent((event) => {
-17. hilog.info(DOMAIN, TAG, BUNDLE + 'button1');
-18. return true;
-19. })
-20. Button('button2')
-21. .id('button2')
-22. .onKeyEvent((event) => {
-23. hilog.info(DOMAIN, TAG, BUNDLE + 'button2');
-24. return true;
-25. })
-26. }
-27. .width('100%')
-28. .height('100%')
-29. .id('Row1')
-30. .onKeyEventDispatch((event) => {
-31. let context = this.getUIContext();
-32. context.getFocusController().requestFocus('button1');
-33. return context.dispatchKeyEvent('button1', event);
-34. })
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Row() {
+        Button('button1')
+          .id('button1')
+          .margin({ left: 70, right: 30 })
+          .onKeyEvent((event) => {
+            hilog.info(DOMAIN, TAG, BUNDLE + 'button1');
+            return true;
+          })
+        Button('button2')
+          .id('button2')
+          .onKeyEvent((event) => {
+            hilog.info(DOMAIN, TAG, BUNDLE + 'button2');
+            return true;
+          })
+      }
+      .width('100%')
+      .height('100%')
+      .id('Row1')
+      .onKeyEventDispatch((event) => {
+        let context = this.getUIContext();
+        context.getFocusController().requestFocus('button1');
+        return context.dispatchKeyEvent('button1', event);
+      })
 
-36. }
-37. .height('100%')
-38. .width('100%')
-39. .onKeyEventDispatch((event) => {
-40. if (event.type == KeyType.Down) {
-41. let context = this.getUIContext();
-42. context.getFocusController().requestFocus('Row1');
-43. return context.dispatchKeyEvent('Row1', event);
-44. }
-45. return true;
-46. })
-47. }
-48. }
-```
-
-[OnKeyDistributeEvent.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKeyDistributeEvent.ets#L15-L65)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/qw989i4NQJa7ziHl9ZX_lg/zh-cn_image_0000002558604786.png)
-
-使用OnKeyPreIme实现回车提交（建议使用物理键盘）。
-
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-3. const TAG = '[Sample_Eventproject]';
-4. const DOMAIN = 0xF811;
-5. const BUNDLE = 'Eventproject_';
-
-7. @Entry
-8. @Component
-9. struct TextAreaDemo {
-10. @State content: string = '';
-11. @State text: string = '';
-12. controller: TextAreaController = new TextAreaController();
-
-14. build() {
-15. Column() {
-16. Text('Submissions: ' + this.content)
-17. TextArea({ controller: this.controller, text: this.text })
-18. .onKeyPreIme((event: KeyEvent) => {
-19. hilog.info(DOMAIN, TAG, `${BUNDLE + JSON.stringify(event)}`);
-20. if (event.keyCode === 2054 && event.type === KeyType.Down) { // 回车键物理码
-21. const hasCtrl = event?.getModifierKeyState?.(['Ctrl']);
-22. if (hasCtrl) {
-23. hilog.info(DOMAIN, TAG, BUNDLE + 'Line break');
-24. } else {
-25. hilog.info(DOMAIN, TAG, BUNDLE + 'Submissions：' + this.text);
-26. this.content = this.text;
-27. this.text = '';
-28. event.stopPropagation();
-29. }
-30. return true;
-31. }
-32. return false;
-33. })
-34. .onChange((value: string) => {
-35. this.text = value;
-36. })
-37. }
-38. }
-39. }
+    }
+    .height('100%')
+    .width('100%')
+    .onKeyEventDispatch((event) => {
+      if (event.type == KeyType.Down) {
+        let context = this.getUIContext();
+        context.getFocusController().requestFocus('Row1');
+        return context.dispatchKeyEvent('Row1', event);
+      }
+      return true;
+    })
+  }
+}
 ```
 
-[OnKeyPreImeCommit.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/EventProject/entry/src/main/ets/pages/device/OnKeyPreImeCommit.ets#L15-L55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ZGDLybsjT7uzg37bntWDCQ/zh-cn_image_0000002706833742.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/tIdJuDNzQymEtIvmS4DqdQ/zh-cn_image_0000002589324311.png)
+使用onKeyPreIme实现回车提交（建议使用物理键盘）。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { KeyCode } from '@kit.InputKit';
+
+const TAG = '[Sample_Eventproject]';
+const DOMAIN = 0xF811;
+const BUNDLE = 'Eventproject_';
+
+@Entry
+@Component
+struct TextAreaDemo {
+  @State content: string = '';
+  @State text: string = '';
+  controller: TextAreaController = new TextAreaController();
+
+  build() {
+    Column() {
+      Text('Submissions: ' + this.content)
+      TextArea({ controller: this.controller, text: this.text })
+        .onKeyPreIme((event: KeyEvent) => {
+          hilog.info(DOMAIN, TAG, `${BUNDLE + JSON.stringify(event)}`);
+          if (event.keyCode === KeyCode.KEYCODE_ENTER && event.type === KeyType.Down) { // 回车键物理码
+            const hasCtrl = event?.getModifierKeyState?.(['Ctrl']);
+            if (hasCtrl) {
+              hilog.info(DOMAIN, TAG, BUNDLE + 'Line break');
+            } else {
+              hilog.info(DOMAIN, TAG, BUNDLE + 'Submissions：' + this.text);
+              this.content = this.text;
+              this.text = '';
+              event.stopPropagation();
+            }
+            return true;
+          }
+          return false;
+        })
+        .onChange((value: string) => {
+          this.text = value;
+        })
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/oPG0_sI1QiK6OEm8hunfpA/zh-cn_image_0000002736312851.png)
 
 在输入框中输入内容后回车。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2DJyuYePRUm4XHzBJUJjeQ/zh-cn_image_0000002589244251.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/_Zx-xR5XTkixWQRmu6qx3Q/zh-cn_image_0000002706673808.png)

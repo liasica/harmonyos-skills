@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getat
 title: GetAttr
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetAttr
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:39+08:00
+scraped_at: 2026-09-02T15:00:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:736374d1302d92e1f5df6f715244e58d1df08729762984dfe2bcc65985a2ce8c
+content_hash: sha256:e2e125322236df08caf419af48a3ce102286095031e65cd7a5c12ea291a9d71e
 ---
 
 ## 函数功能
@@ -14,53 +14,53 @@ content_hash: sha256:736374d1302d92e1f5df6f715244e58d1df08729762984dfe2bcc65985a
 
 ## 函数原型
 
-说明
+**说明** 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 
-```
-1. graphStatus GetAttr(const std::string &name, int64_t &attr_value) const;
-2. graphStatus GetAttr(const std::string &name, int32_t &attr_value) const;
-3. graphStatus GetAttr(const std::string &name, uint32_t &attr_value) const;
-4. graphStatus GetAttr(const std::string &name, std::vector<int64_t> &attr_value) const;
-5. graphStatus GetAttr(const std::string &name, std::vector<int32_t> &attr_value) const;
-6. graphStatus GetAttr(const std::string &name, std::vector<uint32_t> &attr_value) const;
-7. graphStatus GetAttr(const std::string &name, float32_t &attr_value) const;
-8. graphStatus GetAttr(const std::string &name, std::vector<float32_t> &attr_value) const;
-9. graphStatus GetAttr(const std::string &name, AttrValue &attr_value) const;
-10. graphStatus GetAttr(const std::string &name, std::string &attr_value) const;
-11. graphStatus GetAttr(const std::string &name, std::vector<std::string> &attr_value) const;
-12. graphStatus GetAttr(const std::string &name, bool &attr_value) const;
-13. graphStatus GetAttr(const std::string &name, std::vector<bool> &attr_value) const;
-14. graphStatus GetAttr(const std::string &name, Tensor &attr_value) const;
-15. graphStatus GetAttr(const std::string &name, std::vector<Tensor> &attr_value) const;
-16. graphStatus GetAttr(const std::string &name, OpBytes &attr_value) const;
-17. graphStatus GetAttr(const std::string &name, std::vector<std::vector<int64_t>> &attr_value) const;
-18. graphStatus GetAttr(const std::string &name, std::vector<ge::DataType> &attr_value) const;
-19. graphStatus GetAttr(const std::string &name, ge::DataType &attr_value) const;
-20. graphStatus GetAttr(const std::string &name, ge::NamedAttrs &attr_value) const;
-21. graphStatus GetAttr(const std::string &name, std::vector<ge::NamedAttrs> &attr_value) const;
-22. graphStatus GetAttr(const char_t *name, int64_t &attr_value) const;
-23. graphStatus GetAttr(const char_t *name, int32_t &attr_value) const;
-24. graphStatus GetAttr(const char_t *name, uint32_t &attr_value) const;
-25. graphStatus GetAttr(const char_t *name, std::vector<int64_t> &attr_value) const;
-26. graphStatus GetAttr(const char_t *name, std::vector<int32_t> &attr_value) const;
-27. graphStatus GetAttr(const char_t *name, std::vector<uint32_t> &attr_value) const;
-28. graphStatus GetAttr(const char_t *name, float32_t &attr_value) const;
-29. graphStatus GetAttr(const char_t *name, std::vector<float32_t> &attr_value) const;
-30. graphStatus GetAttr(const char_t *name, AttrValue &attr_value) const;
-31. graphStatus GetAttr(const char_t *name, AscendString &attr_value) const;
-32. graphStatus GetAttr(const char_t *name, std::vector<AscendString> &attr_values) const;
-33. graphStatus GetAttr(const char_t *name, bool &attr_value) const;
-34. graphStatus GetAttr(const char_t *name, std::vector<bool> &attr_value) const;
-35. graphStatus GetAttr(const char_t *name, Tensor &attr_value) const;
-36. graphStatus GetAttr(const char_t *name, std::vector<Tensor> &attr_value) const;
-37. graphStatus GetAttr(const char_t *name, OpBytes &attr_value) const;
-38. graphStatus GetAttr(const char_t *name, std::vector<std::vector<int64_t>> &attr_value) const;
-39. graphStatus GetAttr(const char_t *name, std::vector<ge::DataType> &attr_value) const;
-40. graphStatus GetAttr(const char_t *name, ge::DataType &attr_value) const;
-41. graphStatus GetAttr(const char_t *name, ge::NamedAttrs &attr_value) const;
-42. graphStatus GetAttr(const char_t *name, std::vector<ge::NamedAttrs> &attr_value) const;
+```cpp
+graphStatus GetAttr(const std::string &name, int64_t &attr_value) const;
+graphStatus GetAttr(const std::string &name, int32_t &attr_value) const;
+graphStatus GetAttr(const std::string &name, uint32_t &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<int64_t> &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<int32_t> &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<uint32_t> &attr_value) const;
+graphStatus GetAttr(const std::string &name, float32_t &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<float32_t> &attr_value) const;
+graphStatus GetAttr(const std::string &name, AttrValue &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::string &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<std::string> &attr_value) const;
+graphStatus GetAttr(const std::string &name, bool &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<bool> &attr_value) const;
+graphStatus GetAttr(const std::string &name, Tensor &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<Tensor> &attr_value) const;
+graphStatus GetAttr(const std::string &name, OpBytes &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<std::vector<int64_t>> &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<ge::DataType> &attr_value) const;
+graphStatus GetAttr(const std::string &name, ge::DataType &attr_value) const;
+graphStatus GetAttr(const std::string &name, ge::NamedAttrs &attr_value) const;
+graphStatus GetAttr(const std::string &name, std::vector<ge::NamedAttrs> &attr_value) const;
+graphStatus GetAttr(const char_t *name, int64_t &attr_value) const;
+graphStatus GetAttr(const char_t *name, int32_t &attr_value) const;
+graphStatus GetAttr(const char_t *name, uint32_t &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<int64_t> &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<int32_t> &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<uint32_t> &attr_value) const;
+graphStatus GetAttr(const char_t *name, float32_t &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<float32_t> &attr_value) const;
+graphStatus GetAttr(const char_t *name, AttrValue &attr_value) const;
+graphStatus GetAttr(const char_t *name, AscendString &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<AscendString> &attr_values) const;
+graphStatus GetAttr(const char_t *name, bool &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<bool> &attr_value) const;
+graphStatus GetAttr(const char_t *name, Tensor &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<Tensor> &attr_value) const;
+graphStatus GetAttr(const char_t *name, OpBytes &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<std::vector<int64_t>> &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<ge::DataType> &attr_value) const;
+graphStatus GetAttr(const char_t *name, ge::DataType &attr_value) const;
+graphStatus GetAttr(const char_t *name, ge::NamedAttrs &attr_value) const;
+graphStatus GetAttr(const char_t *name, std::vector<ge::NamedAttrs> &attr_value) const;
 ```
 
 ## 参数说明

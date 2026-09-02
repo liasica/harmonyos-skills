@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 模块描述
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > 模块描述
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:41+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:30b8563fc9b019eb18c5eb227092a39dabac6e6e77306346f646fbcd92c4bfc9
+scraped_at: 2026-09-02T15:02:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:314d3f596e65386260d5d99d3d97523eb19979e490cfde6291a866908ba9467b
 ---
 
 媒体子系统为开发者提供一套简单且易于理解的接口，使得开发者能够方便接入系统并使用系统的媒体资源。
 
-说明
+**说明** 
 
 本模块首批接口从API version 6开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -25,6 +25,6 @@ content_hash: sha256:30b8563fc9b019eb18c5eb227092a39dabac6e6e77306346f646fbcd92c
 
 ## 导入模块
 
-```
-1. import { media } from '@kit.MediaKit';
+```ts
+import { media } from '@kit.MediaKit';
 ```

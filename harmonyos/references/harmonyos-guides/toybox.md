@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toybox
 title: toybox
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具 > toybox
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:34:24+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:c4e9dad810224a9fdd2782e946020ba9beb05f2ba7c7ed45ab1513284c4002c4
+scraped_at: 2026-09-02T14:59:42+08:00
+doc_updated_at: 2026-05-26
+content_hash: sha256:6f8b8d3e386225fd606e80c1d5cd747e828fbf8bab41726fba3dee5ca969f044
 ---
 
 toybox 是一个轻量级的Linux命令行工具集合，它将常用的Linux命令行工具合并到一个单独的可执行文件中。
@@ -32,7 +32,7 @@ toybox的执行方式有两种：
 
 [ARGUMENTS...] 为[COMMAND]所需要的参数。
 
-说明
+**说明** 
 
 当前版本中，不同设备对toybox的支持情况存在差异。开发者可直接执行toybox获取设备支持的全量命令。
 
@@ -64,7 +64,6 @@ toybox的执行方式有两种：
 
 | 命令 | 说明 |
 | --- | --- |
-| ascii | 显示ascii编码表。  usage: ascii |
 | factor | 分解质因数。  usage: factor [-hx] NUMBER... |
 | mcookie | 生成128位强随机数。  usage: mcookie [-vV] |
 | mkpasswd | 对密码进行加密。  usage: mkpasswd [-P FD] [-m TYPE] [-S SALT] [PASSWORD] [SALT] |
@@ -80,14 +79,12 @@ toybox的执行方式有两种：
 | nohup | 运行一个独立于终端的命令。  usage: nohup COMMAND... |
 | tty | 显示连接到标准输入设备的终端的名称。  usage: tty [-s] |
 | reset | 复位终端。  usage: reset |
-| microcom | 简单串口终端。  usage: microcom [-s SPEED] [-X] DEVICE |
 
 ### sh逻辑命令
 
 | 命令 | 说明 |
 | --- | --- |
 | false | 返回非零值。  usage: false |
-| sh | shell命令解释器。 |
 | test | 通过执行测试返回true或false。没有参数时返回false。  usage: test [-bcdefghkLprSsuwx PATH] [-nz STRING] [-t FD] [X ?? Y] |
 | true | 返回零。  usage: true |
 | yes | 反复输出行直到被杀死。如果没有参数，则输出“y”。  usage: yes [args...] |
@@ -96,30 +93,17 @@ toybox的执行方式有两种：
 
 | 命令 | 说明 |
 | --- | --- |
-| acpi | 查询电源、温度状态。  usage: acpi [-abctV] |
-| arch | 打印系统名称。  usage: arch |
 | dmesg | 显示或控制内核环形缓冲区。  usage: dmesg [-Cc] [-r | -t | -T] [-n LEVEL] [-s SIZE] [-w | -W] |
-| dnsdomainname | 显示系统的名称（与 hostname -d 一致）。  usage: dnsdomainname |
 | getconf | 获取系统配置值，部分值需要path参数。  usage: getconf -a [PATH] | -l | NAME [PATH] |
 | env | 设置命令调用的环境，或列出环境变量。  usage: env [-0i] [-e FILE] [-u NAME] [NAME=VALUE...] [COMMAND...] |
 | hostname | 获取当前主机名。  usage: hostname [-bdsf] [-F FILENAME] [newname] |
 | insmod | 加载内核模块。  usage: insmod MODULE [OPTION...] |
-| logger | 记录系统日志。  usage: logger [-s] [-t TAG] [-p [FACILITY.]PRIORITY] [MESSAGE...] |
 | lsmod | 显示当前已经加载的模块，它们的大小和依赖。  usage: lsmod |
-| mix | 显示OSS声道，或者设置音量。  usage: mix [-d DEV] [-c CHANNEL] [-l VOL] [-r RIGHT] |
-| modinfo | 显示内核模块信息。  usage: modinfo [-0] [-b basedir] [-k kernel] [-F field] [module | file...] |
 | nproc | 打印处理器数量。  usage: nproc [--all] |
-| oneit | 简单的初始化程序。  usage: oneit [-prn3] [-c CONSOLE] [COMMAND...] |
-| partprobe | 通知内核分区表已经变化。  usage: partprobe DEVICE... |
-| pivot\_root | 修改根目录。  usage: pivot\_root OLD NEW |
 | printenv | 打印环境变量。  usage: printenv [-0] [env\_var...] |
-| reboot/halt/poweroff | 重启/停止/关机。  usage: reboot/halt/poweroff [-fn] [-d DELAY] |
-| rfkill | 开启/关闭无线设备。  usage: rfkill COMMAND [DEVICE] |
 | rmmod | 卸载内核模块。  usage: rmmod [-wf] MODULE... |
-| sendevent | 发送Linux输入事件。  usage: sendevent DEVICE TYPE CODE VALUE |
 | swapoff | 停用交换空间。  usage: swapoff FILE |
 | swapon | 在指定的设备或文件上，使能内存交换。  usage: swapon [-d] [-p priority] filename |
-| switch\_root | 切换根目录，并执行新的INIT程序。  usage: switch\_root [-c /dev/console] NEW\_ROOT NEW\_INIT... |
 | uname | 打印系统信息。  usage: uname [-asnrvmo] |
 | vmstat | 打印虚拟内存信息。  usage: vmstat [-n] [DELAY [COUNT]] |
 
@@ -129,7 +113,6 @@ toybox的执行方式有两种：
 | --- | --- |
 | cal | 打印日历。  usage: cal [-h] [[[DAY] MONTH] YEAR] |
 | date | 设置/获取当前日期/时间。  usage: date [-u] [-I RES] [-r FILE] [-d DATE] [+DISPLAY\_FORMAT] [-D SET\_FORMAT] [SET] |
-| hwclock | 获取/设置硬件时钟。  usage: hwclock [-rswtlu] [-f FILE] |
 | sleep | 等待设置的时间后再退出。可以是小数。可选的后缀可以是“m”（分钟）、“h”（小时）、“d”（天）或“s”（秒，默认值）。  usage: sleep DURATION... |
 | time | 运行命令行并报告真实时间、用户时间和系统时间（以秒为单位）。(真实时间=时钟时间，用户时间=命令代码使用cpu的时间，系统时间=操作系统使用cpu的时间。)  usage: time [-pv] COMMAND... |
 | uptime | 显示当前时间，系统运行了多长时间，用户数量，以及过去1、5和15分钟的系统负载平均值。  usage: uptime [-ps] |
@@ -141,9 +124,7 @@ toybox的执行方式有两种：
 | --- | --- |
 | groups | 打印用户所在的组。  usage: groups [user] |
 | id | 打印用户和组ID。  usage: id [-Ggnru] [USER...] |
-| login | 用户登录。  usage: login [-p] [-h host] [-f USERNAME] [USERNAME] |
 | logname/whoami | 打印当前用户名。  usage: logname/whoami |
-| passwd | 更新用户的认证令牌。  usage: passwd [-a ALGO] [-dlu] [USER] |
 | who | 打印有关已登录用户的信息。  usage: who |
 | w | 显示用户登录情况和登录时间。  usage: w |
 
@@ -151,16 +132,11 @@ toybox的执行方式有两种：
 
 | 命令 | 说明 |
 | --- | --- |
-| chrt | 获取/设置一个进程的调度策略和优先级。  usage: chrt [-Rmofrbi] {-p PID [PRIORITY] | [PRIORITY COMMAND...]} |
-| iorenice | 显示/修改一个进程的IO优先级。  usage: iorenice PID [CLASS] [PRIORITY] |
 | iotop | 根据I/O对进程排序。  usage: iotop [-AaKObq] [-n NUMBER] [-d SECONDS] [-p PID,] [-u USER,] |
-| ionice | 显示/修改一个进程的IO调度优先级。  usage: ionice [-t] [-c CLASS] [-n LEVEL] [COMMAND... | -p PID] |
 | kill | 向进程发送信号。  usage: kill [-l [SIGNAL] | -s SIGNAL | -SIGNAL] pid... |
 | killall | 向具有给定名称的所有进程发送信号（默认：SIGTERM）。  usage: killall [-l] [-iqv] [-SIGNAL | -s SIGNAL] PROCESS\_NAME... |
-| killall5 | 对当前会话以外的所有进程发送信号。  usage: killall5 [-l [SIGNAL]] [-SIGNAL | -s SIGNAL] [-o PID]... |
 | pidof | 打印具有给定名称的所有进程的PID。  usage: pidof [-s] [-o omitpid[,omitpid...]] [NAME...] |
 | pkill | 按照进程名来杀死进程。  usage: pkill [-fnovx] [-SIGNAL | -l SIGNAL] [PATTERN] [-G GID,] [-g PGRP,] [-P PPID,] [-s SID,] [-t TERM,] [-U UID,] [-u EUID,] |
-| pmap | 查看进程的内存映射情况。  usage: pmap [-xq] [pids...] |
 | ps | 显示进程信息。  usage: ps [-AadefLlnwZ] [-gG GROUP,] [-k FIELD,] [-o FIELD,] [-p PID,] [-t TTY,] [-uU USER,] |
 | pwdx | 打印进程的工作目录。  usage: pwdx PID... |
 | renice | 调整进程/组/用户级别的进程优先级。  usage: renice [-gpu] -n INCREMENT ID... |
@@ -171,7 +147,6 @@ toybox的执行方式有两种：
 | nice | 以指定的优先级运行命令。  usage: nice [-n PRIORITY] COMMAND... |
 | nsenter | 在特定的命名空间中运行指令。  usage: nsenter [-t pid] [-F] [-i] [-m] [-n] [-p] [-u] [-U] COMMAND... |
 | ulimit/prlimit | 显示或者设置进程的资源限制。  usage: ulimit/prlimit [-P PID] [-SHRacdefilmnpqrstuv] [LIMIT] |
-| unshare | 给一个进程创建新的命名空间，部分属性不与父进程共享。  usage: unshare [-imnpuUr] COMMAND... |
 | watch | 每隔-n秒运行一次参数中的命令，显示执行结果。按q退出。  usage: watch [-tebx] [-n SEC] COMMAND... |
 | xargs | 运行命令行一次或多次，附加标准输入设备中的参数。  usage: xargs [-0Pprt] [-snE STR] COMMAND... |
 
@@ -179,31 +154,18 @@ toybox的执行方式有两种：
 
 | 命令 | 说明 |
 | --- | --- |
-| blkid | 打印文件系统的类型，标签和UUID等信息。  usage: blkid [-o TYPE] [-s TAG] [-UL] DEV... |
-| blockdev | 对每个命令中的块设备调用ioctl。  usage: blockdev --OPTION... BLOCKDEV... |
-| devmem | 通过 /dev/mem 读写物理地址。  usage: devmem [-f FILE] ADDR [WIDTH [DATA...]] |
 | df | 显示命令行中列出的每个文件系统的总共、已使用和空闲的磁盘空间。无参数时显示已装载的所有文件系统。  usage: df [-aHhikP] [-t TYPE] [FILE...] |
 | du | 显示磁盘使用情况，文件和目录占用的空间。  usage: du [-d N] [-abcHKkLlmsx] [FILE...] |
-| eject | 弹出设备，默认为 /dev/cdrom 。  usage: eject [-stT] [DEVICE] |
 | free | 显示物理内存和交换空间的总量、可用量和已用量。  usage: free [-bkmgt] |
 | freeramdisk | 释放特定ramdisk的所有内存。  usage: freeramdisk [RAM device] |
-| fsfreeze | 冻结或解冻一个文件系统。  usage: fsfreeze {-f | -u} MOUNTPOINT |
 | fstype | 打印文件系统的类型。  usage: fstype DEV... |
 | fsync | 将文件状态与存储设备同步。  usage: fsync [-d] [FILE...] |
-| i2cdetect | 检测 i2c 设备。  usage: i2cdetect [-aqry] BUS [FIRST LAST]  usage: i2cdetect -F BUS  usage: i2cdetect -l |
-| i2cdump | 打印所有 i2c 寄存器。  usage: i2cdump [-fy] BUS CHIP |
-| i2cget | 读取 i2c 寄存器。  usage: i2cget [-fy] BUS CHIP [ADDR] |
-| i2cset | 写 i2c 寄存器。  usage: i2cset [-fy] BUS CHIP ADDR VALUE... MODE |
-| losetup | 设置循环设备。  usage: losetup [-cdrs] [-o OFFSET] [-S SIZE] {-d DEVICE... | -j FILE | -af | {DEVICE FILE}} |
 | lspci | 显示 PCI 设备信息。  usage: lspci [-ekmn] [-i FILE ] |
 | lsusb | 显示 USB 设备信息。  usage: lsusb |
-| makedevs | 创建一系列特殊的文件，包括块设备文件，字符设备文件等。  usage: makedevs [-d device\_table] rootdir |
 | mount | 在目录上挂载新的文件系统。如果没有参数，则显示现有的挂载。  usage: mount [-afFrsvw] [-t TYPE] [-o OPTION,] [[DEVICE] DIR] |
 | mountpoint | 检查目录或者设备是否是挂载点。  usage: mountpoint [-qd] DIR  mountpoint [-qx] DEVICE |
 | sync | 将缓存的数据写到磁盘。  usage: sync |
 | sysctl | 读写 /proc/sys 下的系统控制数据。  usage: sysctl [-aAeNnqw] [-p [FILE] | KEY[=VALUE]...] |
-| tunctl | 创建或删除tun/tap虚拟以太设备。  usage: tunctl [-dtT] [-u USER] NAME |
-| vconfig | 创建或删除虚拟以太设备。  usage: vconfig COMMAND [OPTIONS] |
 | umount | 取消挂载文件系统。  usage: umount [-a [-t TYPE[,TYPE...]]] [-vrfD] [DIR...] |
 
 ### 网络操作
@@ -212,10 +174,8 @@ toybox的执行方式有两种：
 | --- | --- |
 | ftpget/ftpput | 与FTP服务器沟通，支持读、写、列举文件等操作。ftpget自带-g选项。ftpput自带-s选项。  usage: ftpget/ftpput [-cvgslLmMdD] [-p PORT] [-P PASSWORD] [-u USER] HOST [LOCAL] REMOTE |
 | ifconfig | 显示或配置网络接口。  usage: ifconfig [-aS] [INTERFACE [ACTION...]] |
-| nbd-client | 创建nbd客户端。  usage: nbd-client [-ns] [-b BLKSZ] HOST PORT DEVICE |
 | netstat | 显示网络信息。  usage: netstat [-pWrxwutneal] |
 | ping/ping6 | 检测网络连通性。ping6自带-6选项。  usage: ping/ping6 [OPTIONS] HOST |
-| sntp | SNTP客户端。  usage: sntp [-saSdDq] [-r SHIFT] [-mM[ADDRESS]] [-p PORT] [SERVER] |
 | telnet | 连接telnet服务器。  usage: telnet HOST [PORT] |
 | traceroute/traceroute6 | 跟踪报文到HOST的路径。traceroute6自带-6选项。  usage: traceroute [-46FUIldnvr] [-f 1ST\_TTL] [-m MAXTTL] [-p PORT] [-q PROBES]  [-s SRC\_IP] [-t TOS] [-w WAIT\_SEC] [-g GATEWAY] [-i IFACE] [-z PAUSE\_MSEC] HOST [BYTES]  usage: traceroute6 [-dnrv] [-m MAXTTL] [-p PORT] [-q PROBES][-s SRC\_IP] [-t TOS] [-w WAIT\_SEC]  [-i IFACE] HOST [BYTES] |
 | wget | 从网络上下载资源。  usage: wget [OPTIONS]... [URL]  [OPTIONS] = --max-redirect x -d -O filename -p data |
@@ -227,10 +187,7 @@ toybox的执行方式有两种：
 | awk | awk是一个处理文本的工具，可对文档内容进行筛选、分析。  usage: awk [-F sepstring] [-v assignment]... program [argument...]  or:  awk [-F sepstring] -f progfile [-f progfile]... [-v assignment]...  [argument...] |
 | base64 | 通过base64算法进行加密/解密。  usage: base64 [-di] [-w COLUMNS] [FILE...] |
 | basename | 返回删除后缀的路径名的非目录部分。  usage: basename [-a] [-s SUFFIX] NAME... | NAME [SUFFIX] |
-| bunzip2 | 解压bz格式的文件。  usage: bunzip2 [-cftkv] [FILE...] |
-| bzcat | 解压列举的文件到标准输出。  usage: bzcat [FILE...] |
 | cat | 复制（连接）文件到标准输出设备。如果未列出任何文件，则从标准输入设备复制。“-”代表标准输入设备。  usage: cat [-etuv] [FILE...] |
-| chattr | 修改Linux ext2文件系统的文件属性。  usage: chattr [-R] [-+=AacDdijsStTu] [-v version] [File...] |
 | chcon | 修改文件的SELinux安全上下文。  usage: chcon [-hRv] CONTEXT FILE... |
 | chgrp/chown | 修改文件的组。  usage: chgrp/chown [-RHLP] [-fvh] GROUP FILE... |
 | chmod | 更改列出的文件的模式（使用-R递归）。  usage: chmod [-R] MODE FILE... |
@@ -252,7 +209,7 @@ toybox的执行方式有两种：
 | expand | 根据输入参数将制表符展开为空格。  usage: expand [-t TABLIST] [FILE...] |
 | fallocate | 让文件系统给文件预留空间。  usage: fallocate [-o OFFSET] -l SIZE FILE |
 | file | 检查给定的文件并描述其内容类型。  usage: file [-bhLs] [FILE...] |
-| find | 在目录中搜索匹配的文件。  usage: find [-HL] [DIR...] [<options>] |
+| find | 在目录中搜索匹配的文件。  usage: find [-HL] [DIR...] [[/topic/body/section/table/tgroup/tbody/row/entry/p/options {""}) ] (options] |
 | flock | 管理文件锁（advisory lock）。  usage: flock [-sxun] fd |
 | fmt | 将输入重新格式化为给定行长的换行，保留现有的缩进级别，写入标准输出设备。  usage: fmt [-w WIDTH] [FILE...] |
 | gunzip | 解压文件。如果没有文件，则从标准输入设备解压到标准输出设备。成功后，输入文件将被删除并替换为新的没有.gz后缀的文件。  usage: gunzip [-cfkt] [FILE...] |
@@ -264,7 +221,7 @@ toybox的执行方式有两种：
 | link | 创建文件的硬链接。  usage: link FILE NEWLINK |
 | ln | 在 FROM 和 TO 之间创建软/硬链接。  usage: ln [-fnrsTv] [-t DIR] [FROM...] TO |
 | ls | 查看当前目录有哪些文件/文件夹。  usage: ls [-1ACFHLNRSUXZabcdfghilmnopqrstuwx] [--color[=auto]] [FILE...] |
-| lsattr | 列出Linux文件系统中的文件属性。标志字母在chattr帮助中定义。  usage: lsattr [-Radlv] [Files...] |
+| lsattr | 列出Linux文件系统中的文件属性。  usage: lsattr [-Radlv] [Files...] |
 | lsof | 列出属于所有活跃进程的所有打开的文件，或使用列出的FILE的进程。  usage: lsof [-lt] [-p PID1,PID2,...] [FILE...] |
 | md5sum | 计算每个输入文件的哈希，如果没有，则从标准输入设备读取。每个输入文件输出一行哈希后跟文件名。  usage: ???sum [-bcs] [FILE]... |
 | mkdir | 创建一个或多个目录。  usage: mkdir [-vp] [-m MODE] [DIR...] |

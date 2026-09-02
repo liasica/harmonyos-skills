@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-
 title: 公共事件简介
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 进程线程通信 > 使用公共事件进行进程间通信 > 公共事件简介
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:06+08:00
+scraped_at: 2026-09-02T14:50:07+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:6c179aae1c7f1b8948307297fadc3cc612eea2272e9724f069a6a2103aa1639d
+content_hash: sha256:a1dfe4386f503c60ad61e94a55af7d41120d7baf663182abd706154d3e240041
 ---
 
 CES（Common Event Service，公共事件服务）为应用程序提供订阅、发布、退订公共事件的能力。
@@ -29,7 +29,7 @@ CES（Common Event Service，公共事件服务）为应用程序提供订阅、
 
 **图1** 公共事件示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/pF4SPfPwSY-wDs5y7F0yLw/zh-cn_image_0000002558764946.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/xzhDheAeQnW0--1zLazNjg/zh-cn_image_0000002706674438.png)
 
 ## 安全注意事项
 

@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 源码混淆错误码
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > 错误码 > 源码混淆错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:15+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:8a7a46a359911e5fa07e27ead0f62c1d3976c462a913c3cde910890fc72332a3
+scraped_at: 2026-09-02T15:00:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:ea92825ac0bb0be899a8337408281858eb883e5175081783d29e55db5d7d552e
 ---
 
-说明
+从API version 18开始，提供源码混淆错误码。开发者在编译遇到此类错误时，可通过本文档查询错误码的含义、可能原因及建议的处理步骤。
 
-以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+**说明** 
+
+以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。有关源码混淆工具的说明，请参考[ArkGuard源码混淆工具概述](../harmonyos-guides/source-obfuscation-overview.md)。
 
 ## 10804001 混淆规则配置文件缺失
 
@@ -20,15 +22,15 @@ Failed to open obfuscation config file from {path}.
 
 **错误描述**
 
-无法从{path}读取混淆规则配置文件。
+{path}路径下混淆规则配置文件缺失或路径有误，无法读取。
 
 **可能原因**
 
-本模块build-profile.json5文件中的arkOptions.obfuscation.ruleOptions字段中对应的混淆规则配置文件不存在或者路径有误。
+本模块build-profile.json5文件中的arkOptions.obfuscation.ruleOptions字段所指定的混淆规则配置文件不存在或者路径有误。
 
 **处理步骤**
 
-检查{path}是否存在，路径是否有误。具体可以参考[混淆配置规则文件示例](../harmonyos-guides/source-obfuscation-guide.md#开启混淆步骤)。
+检查{path}是否存在，路径是否有误。具体可以参考[混淆规则配置文件示例](../harmonyos-guides/source-obfuscation-guide.md#混淆配置文件)。
 
 ## 10804002 nameCache.json文件内容格式错误
 
@@ -38,15 +40,15 @@ Failed to open namecache file from {nameCachePath}, Error message: SyntaxError: 
 
 **错误描述**
 
-无法从指定的名称缓存文件路径{nameCachePath}读取nameCache.json文件。
+指定的名称缓存文件路径{nameCachePath}下的JSON文件内容格式错误，不符合JSON文件格式要求。
 
 **可能原因**
 
-该路径下的JSON文件内容格式错误，不符合JSON文件格式要求。
+在混淆规则配置文件中通过-apply-namecache配置引用的nameCache.json文件内容格式错误，不符合JSON文件格式要求。
 
 **处理步骤**
 
-找到该{nameCachePath}文件，按照报错信息中提示的行号定位问题所在，并据此进行修改。
+找到该{nameCachePath}文件，按照报错信息中提示的行号定位问题所在，对照JSON格式规范修正语法错误（如缺少逗号、括号不匹配等），确保文件内容符合标准JSON格式。
 
 ## 10804003 keptNames.json文件生成失败
 
@@ -56,15 +58,15 @@ Failed to open keptNames.json from {defaultUnobfuscationPath}.
 
 **错误描述**
 
-无法从{defaultUnobfuscationPath}读取keptNames.json文件。
+{defaultUnobfuscationPath}路径下未生成keptNames.json文件。
 
 **可能原因**
 
-{defaultUnobfuscationPath}路径中没有生成keptNames.json文件。
+混淆规则配置中指定的{defaultUnobfuscationPath}路径中没有生成keptNames.json文件。
 
 **处理步骤**
 
-检查{defaultUnobfuscationPath}是否生成keptNames.json文件，若没有，清理缓存后重新编译。
+检查混淆规则配置中{defaultUnobfuscationPath}路径是否正确，确认该路径是否生成keptNames.json文件，若没有，清理缓存后重新编译。
 
 ## 10804004 nameCache.json文件不存在
 
@@ -74,17 +76,17 @@ The applied namecache file {nameCachePath} configured by {configPath} does not e
 
 **错误描述**
 
-无法从{nameCachePath}读取-apply-namecache规则配置的json文件。
+-apply-namecache规则配置的JSON文件{nameCachePath}不存在。
 
 **可能原因**
 
-在混淆规则配置文件obfuscation-rules.txt中，-apply-namecache配置的json文件不存在。
+在混淆规则配置文件obfuscation-rules.txt中，-apply-namecache配置的JSON文件不存在。-apply-namecache用于应用已有的名称缓存文件，以保持多次编译间混淆结果一致性。
 
 **处理步骤**
 
-在混淆规则配置文件obfuscation-rules.txt中，检查-apply-namecache配置的json文件路径是否正确。
+在混淆规则配置文件obfuscation-rules.txt中，检查-apply-namecache配置的JSON文件路径是否正确。若路径有误，修正为正确的JSON文件路径。
 
-## 10810001 混淆工具有误，导致文件混淆失败
+## 10810001 混淆工具内部错误
 
 **错误信息**
 
@@ -92,12 +94,12 @@ ArkTS:INTERNAL ERROR: Failed to obfuscate file 'entry/src/main/ets/entryability/
 
 **错误描述**
 
-混淆流程执行失败，无法完成文件混淆。
+ArkGuard混淆工具发生内部错误，导致文件混淆流程执行失败。
 
 **可能原因**
 
-ArkGuard源码混淆工具内部源码被未经授权的修改。
+ArkGuard源码混淆工具的核心文件被非官方途径修改或损坏。
 
 **处理步骤**
 
-请在DevEco Studio中定位路径\DevEco-Studio\sdk\default\HarmonyOS\ets\build-tools\ets-loader\node\_modules\arkguard，对比arkguard目录与其同级文件的最后修改日期。如存在差异，请重新下载安装该版本的IDE。
+在DevEco Studio中定位路径\DevEco-Studio\sdk\default\HarmonyOS\ets\build-tools\ets-loader\node\_modules\arkguard，对比arkguard目录与其同级文件的最后修改日期。如存在差异，重新下载安装该版本的DevEco Studio。

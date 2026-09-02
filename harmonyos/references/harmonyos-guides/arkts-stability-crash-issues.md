@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-stabili
 title: UI相关应用崩溃常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI稳定性故障调试 > UI相关应用崩溃常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:28:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:282f059748d5a164b846a4a115014738157dc7773999460bc01345f9fb453f49
+scraped_at: 2026-09-02T14:49:53+08:00
+doc_updated_at: 2026-06-03
+content_hash: sha256:63ef5525ccd8a7e905a71f12e9a6602ce88797e86d8346f1aa1195a37291e820
 ---
 
 本文档收集整理了一些常见的会导致应用崩溃的ArkUI API错误用法，旨在帮助开发者了解这些会导致应用崩溃问题的错误用法，从而避免在实际应用开发过程中犯类似错误。
@@ -16,22 +16,22 @@ content_hash: sha256:282f059748d5a164b846a4a115014738157dc7773999460bc01345f9fb4
 
 应用闪退并生成如下cppcrash崩溃栈：
 
-```
-1. Reason:Signal:SIGSEGV(SEGV_ACCERR)@0x0000005c5f09a280
+```cpp
+Reason:Signal:SIGSEGV(SEGV_ACCERR)@0x0000005c5f09a280
 
-3. #00 pc 0000000000ac9280 [anon:native_heap:jemalloc]
-4. #01 pc 0000000002615120 /system/lib64/platformsdk/libace_compatible.z.so(OHOS::Ace::NG::XComponentPattern::OnSurfaceDestroyed()+468)
-5. #02 pc 0000000002614b18 /system/lib64/platformsdk/libace_compatible.z.so(OHOS::Ace::NG::XComponentPattern::OnDetachFromFrameNode(OHOS::Ace::NG::FrameNode*)+88)
-6. #03 pc 0000000000875294 /system/lib64/platformsdk/libace_compatible.z.so(OHOS::Ace::NG::FrameNode::~FrameNode()+264)
+#00 pc 0000000000ac9280 [anon:native_heap:jemalloc]
+#01 pc 0000000002615120 /system/lib64/platformsdk/libace_compatible.z.so(OHOS::Ace::NG::XComponentPattern::OnSurfaceDestroyed()+468)
+#02 pc 0000000002614b18 /system/lib64/platformsdk/libace_compatible.z.so(OHOS::Ace::NG::XComponentPattern::OnDetachFromFrameNode(OHOS::Ace::NG::FrameNode*)+88)
+#03 pc 0000000000875294 /system/lib64/platformsdk/libace_compatible.z.so(OHOS::Ace::NG::FrameNode::~FrameNode()+264)
 ```
 
 其中libace\_compatible.z.so栈的最后一个调用帧为XComponentPattern类的OnSurfaceCreated、OnSurfaceChanged、OnSurfaceDestroyed、DispatchTouchEvent方法之一，且#00帧的pc是一个异常地址，通常其最后几位与Reason后面的地址内容一致，这表明某个函数指针存在问题，导致执行时跳转到异常地址。
 
 **可能原因**
 
-应用通过[OH\_NativeXComponent\_RegisterCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_nativexcomponent_registercallback)接口注册的[OH\_NativeXComponent\_Callback](../harmonyos-references/ent-native-xcomponent-oh-nativexcomponent-callback.md)回调函数对象以裸指针形式保存在XComponentPattern对象中。这些回调的生命周期由应用控制。如果应用提前销毁了OH\_NativeXComponent\_Callback回调函数对象，将导致裸指针指向非法内存，引发Use-After-Free问题。
+应用通过[OH\_NativeXComponent\_RegisterCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_nativexcomponent_registercallback)接口注册的[OH\_NativeXComponent\_Callback](../harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent-callback.md)回调函数对象以裸指针形式保存在XComponentPattern对象中。这些回调的生命周期由应用控制。如果应用提前销毁了OH\_NativeXComponent\_Callback回调函数对象，将导致裸指针指向非法内存，引发Use-After-Free问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/kzyBkRl6TlyoBBdLuxwNiA/zh-cn_image_0000002589324513.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/jICCes0-Q-aNKl5WvNLTLw/zh-cn_image_0000002706833982.png)
 
 **解决措施**
 
@@ -47,10 +47,10 @@ onSurfaceDestroy回调是XComponentPattern销毁时调用的最后一个回调�
 
 应用闪退并生成如下cppcrash崩溃栈：
 
-```
-1. #00 pc 00000000000c8b3c /system/lib64/libc++.so(std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>>::basic_string(std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>> const&)+16)
-2. #01 pc 0000000000034f64 /system/lib64/libace_ndk.z.so(OH_NativeXComponent::GetXComponentId(char*, unsigned long*)+76)
-3. #02 pc 00000000000867c0 /data/storage/el1/bundle/libs/arm64/librenderer.so
+```cpp
+#00 pc 00000000000c8b3c /system/lib64/libc++.so(std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>>::basic_string(std::__h::basic_string<char, std::__h::char_traits<char>, std::__h::allocator<char>> const&)+16)
+#01 pc 0000000000034f64 /system/lib64/libace_ndk.z.so(OH_NativeXComponent::GetXComponentId(char*, unsigned long*)+76)
+#02 pc 00000000000867c0 /data/storage/el1/bundle/libs/arm64/librenderer.so
 ```
 
 其中栈顶附近内容为libace\_ndk.z.so(OH\_NativeXComponent::XXX...)，且下一帧是应用so。
@@ -73,13 +73,13 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/GkPZHNekQKyORQHdZ4DuhA/zh-cn_image_0000002589244451.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/wbNX9eRvQleK-EHmnOZf9A/zh-cn_image_0000002736313091.png)
 
 **可能原因**
 
 报错发生在@Consume初始化阶段，原因是@Consume初始化时仅通过key匹配对应的@Provide变量。如果未找到对应的@Provide，就会出现报错（missing @Provide）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/XUMGir8mS3qCMpMJiwW_UQ/zh-cn_image_0000002558764644.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/OZsAtUe_Rcy42IrR29-2xA/zh-cn_image_0000002706674048.png)
 
 **解决措施**
 
@@ -95,17 +95,17 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UL4WJDbAQ_Wz_P2kqfc8ew/zh-cn_image_0000002558604988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/mqBdv5a5STGWvCdylDHkTg/zh-cn_image_0000002736433139.png)
 
 从API version 23开始，添加对@Link数据源错误的校验，运行时错误变为编译期报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/zT1UqPuKQWS-5FzHW5fzaQ/zh-cn_image_0000002589324515.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/XRhxComTQR215FhyP23Zsw/zh-cn_image_0000002706833984.png)
 
 **可能原因**
 
 报错发生在@Link初始化阶段，原因是@Link初始化时会注册到父组件并调用父组件的addSubscriber方法。如果此时数据源的类型与@Link不完全一致，或者使用常量初始化@Link，会导致该方法无法调用，从而引发“is not callable”错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/K5sHjKGqSLajJ39B7KxC9Q/zh-cn_image_0000002589244453.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ObrTsA0kS2GfJ6WMlmyoKA/zh-cn_image_0000002736313093.png)
 
 **解决措施**
 
@@ -121,13 +121,13 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/BH2J03RdSOSh1D6iVFNXBQ/zh-cn_image_0000002558764646.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/3xe69UZITfyjlAuJuBo0pg/zh-cn_image_0000002706674050.png)
 
 **可能原因**
 
 报错发生在@Provide初始化阶段，原因是@Provide重写需要声明allowOverride。声明后，别名和属性名都可以被覆盖。如果未声明且存在重复的别名或属性名，将导致错误（duplicate @Provide property with name xxxxx）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/lKROW1XBT0Kllv_IUQpvTQ/zh-cn_image_0000002558604990.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/C3xcxjhnQM6gnaIpqyKlNg/zh-cn_image_0000002736433141.png)
 
 **解决措施**
 

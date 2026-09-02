@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: Native调试堆栈可视化功能并行栈视图显示空白
 breadcrumb: FAQ > DevEco Studio > 应用调试 > Native调试堆栈可视化功能并行栈视图显示空白
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:27+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:2e3994ade9486161e8c3d4600119c3e5e233221c7cdc4ec382d7d9c1f0d4d6bd
+scraped_at: 2026-09-02T14:54:57+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:cbcb71acce605f94b9241e7f7d9ab37f810785b01f9bf9c665e54cec12c53959
 ---
 
 **问题现象**
@@ -18,4 +18,4 @@ content_hash: sha256:2e3994ade9486161e8c3d4600119c3e5e233221c7cdc4ec382d7d9c1f0d
 
 在DevEco Studio中**双击Shift**，在弹出的窗口中搜索**Registry**，**在Registry**页面中勾选**ide.browser.jcef.gpu.disable**项，关闭窗口并重启DevEco Studio即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/0aYQkKI3T2-aPouRJdcipw/zh-cn_image_0000002521308425.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/HBUvfqggTbeWKIT69hE-7Q/zh-cn_image_0000002624638710.png)

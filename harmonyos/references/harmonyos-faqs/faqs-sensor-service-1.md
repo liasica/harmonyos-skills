@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 如何解决振动模块接口调用报错，错误码201的问题
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 如何解决振动模块接口调用报错，错误码201的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:25+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:01+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:8f4ff3920fbdb26e4aeded7bb692f97c032e450b1d8e9fa58c03e3ac48b6572c
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-automated-
 title: 自动化测试框架开发实践
 breadcrumb: 最佳实践 > 测试框架 > 自动化测试框架开发实践
 category: best-practices
-scraped_at: 2026-04-29T14:14:25+08:00
+scraped_at: 2026-09-02T15:03:25+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18ba41e
+content_hash: sha256:34de2b4d471f1fdf85c0471700a4767fed3152ba4f198e14429f3dee1abfe322
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18
 
 本文介绍了单元测试框架和UI测试框架的实现，旨在帮助开发者了解和掌握自动化测试框架的开发流程与实现细节。关键步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/5GMiT9VfSfqo4Ilhv36kaQ/zh-cn_image_0000002515546966.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/IZb9vz3hTUC1wHNBFKRn_g/zh-cn_image_0000002515546966.png "点击放大")
 
 ## 场景案例
 
@@ -55,7 +55,7 @@ content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18
 
   UI测试流程图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/F2JstVZzSvueoZETv5fIig/zh-cn_image_0000002515387058.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/SwsXUGGgQfGUXD-ceA22Ag/zh-cn_image_0000002515387058.png "点击放大")
 
 ### 开发步骤
 
@@ -66,25 +66,25 @@ content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18
 
    Hypium是OpenHarmony上的测试框架，提供测试用例的编写、执行及结果显示功能，用于OpenHarmony系统应用接口和应用界面的测试。使用DevEco Studio打开测试项目，并按以下方案进行配置。
 
-   说明
+   **说明** 
 
    本示例使用的Hypium版本为@ohos/hypium(V1.0.24)，若开发者需使用最新版本，请查看[@ohos/hypium](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fhypium)。
 
    * 方案一：通过ohpm命令下载@ohos/hypium。
 
-     ```
-     1. ohpm install @ohos/hypium@1.0.24 --save-dev
+     ```screen
+     ohpm install @ohos/hypium@1.0.24 --save-dev
      ```
    * 方案二：在应用工程的[oh-package.json5](../harmonyos-guides/ide-oh-package-json5.md)文件的devDependencies中配置版本号，然后点击编辑器窗口上方的“Sync Now”同步工程，即可使用对应版本的框架功能。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/KyyUbunDQNmbmpdy3o5q3w/zh-cn_image_0000002554811799.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/-56QQZM6TiGlpDPDssaU_w/zh-cn_image_0000002554811799.png)
 3. 新建测试脚本
 
    参考[创建ArkTS测试用例](../harmonyos-guides/ide-instrument-test.md#section36049271219)，导入所需的[单元测试框架能力](../harmonyos-guides/unittest-guidelines.md#单元测试框架能力使用说明)及其他测试脚本中依赖的接口，[编写单元测试脚本](../harmonyos-guides/unittest-guidelines.md#编写单元测试脚本)。
 
    启动被测试页面，检查设备显示的页面是否为预期页面。流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/yWBxx8WbRKWz5CcJTGDyow/zh-cn_image_0000002547066887.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/9jpuUFPISCqrNi98oc4-wA/zh-cn_image_0000002547066887.png "点击放大")
 
    在自动化测试中，常用[基础流程能力](../harmonyos-guides/unittest-guidelines.md#基础流程能力)的it定义测试用例，其参数如下：
 
@@ -96,263 +96,247 @@ content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18
 
    使用it创建测试用例后，通过[AbilityDelegatorRegistry](../harmonyos-references/js-apis-app-ability-abilitydelegatorregistry.md)获取应用包名，构造want启动对象、调用[startAbility()](../harmonyos-references/js-apis-inner-application-abilitydelegator.md#startability9)启动应用。在应用加载完成后，调用[getCurrentTopAbility()](../harmonyos-references/js-apis-inner-application-abilitydelegator.md#getcurrenttopability9)获取设备上前台显示页面，并使用[expect()](../harmonyos-guides/unittest-guidelines.md#基础流程能力)和[assertEqual()](../harmonyos-guides/unittest-guidelines.md#断言能力)断言当前页面是否为预期启动页面。
 
+   ```screen
+   const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+
+   export default function UITest() {
+     describe('UITest', () => {
+
+       /**
+        * Start the application to be tested.
+        */
+       it('startApp', Level.LEVEL3, async (done: Function) => {
+         hilog.info(0x0000, 'testTag', '%{public}s', "UITest: TestUiExample begin");
+         // Initialize the Driver object.
+         const driver = Driver.create();
+         const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
+         // Specify the bundle name and ability name of the application to be tested.
+         const want: Want = {
+           bundleName: bundleName,
+           abilityName: 'EntryAbility'
+         }
+         // Start the application to be tested.
+         await delegator.startAbility(want);
+         // Wait until the application starts.
+         await driver.waitForIdle(4000, 5000);
+         const ability: UIAbility = await delegator.getCurrentTopAbility();
+         hilog.info(0x0000, 'testTag', '%{public}s', "get top ability");
+         // Ensure that the top ability of the application is the specified ability.
+         expect(ability.context.abilityInfo.name).assertEqual('EntryAbility');
+         done();
+       })
+       // ...
+     })
+   }
    ```
-   1. const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-
-   3. export default function UITest() {
-   4. describe('UITest', () => {
-
-   6. /**
-   7. * Start the application to be tested.
-   8. */
-   9. it('startApp', Level.LEVEL3, async (done: Function) => {
-   10. hilog.info(0x0000, 'testTag', '%{public}s', "UITest: TestUiExample begin");
-   11. // Initialize the Driver object.
-   12. const driver = Driver.create();
-   13. const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
-   14. // Specify the bundle name and ability name of the application to be tested.
-   15. const want: Want = {
-   16. bundleName: bundleName,
-   17. abilityName: 'EntryAbility'
-   18. }
-   19. // Start the application to be tested.
-   20. await delegator.startAbility(want);
-   21. // Wait until the application starts.
-   22. await driver.waitForIdle(4000, 5000);
-   23. const ability: UIAbility = await delegator.getCurrentTopAbility();
-   24. hilog.info(0x0000, 'testTag', '%{public}s', "get top ability");
-   25. // Ensure that the top ability of the application is the specified ability.
-   26. expect(ability.context.abilityInfo.name).assertEqual('EntryAbility');
-   27. done();
-   28. })
-   29. // ...
-   30. })
-   31. }
-   ```
-
-   [UITest.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/ui/UITest.test.ets#L22-L152)
 4. 编写单元测试用例
    * [基础流程能力](../harmonyos-guides/unittest-guidelines.md#基础流程能力)
 
      使用基础流程能力[beforeAll()](../harmonyos-guides/unittest-guidelines.md#基础流程能力)定义预置条件，[afterAll()](../harmonyos-guides/unittest-guidelines.md#基础流程能力)定义清理条件。预置条件在所有测试用例开始前执行一次，清理条件在所有测试用例结束后执行一次。
 
+     ```typescript
+     let success = -1;
+     let timeout = 0;
+
+     beforeAll(() => {
+       // Preset increment action before all test cases of the test suite start.
+       success++;
+       // Set a timer before all test cases of the test suite start.
+       timeout = setTimeout(() => {
+         hilog.info(0x0000, 'testTag', '%{public}s', 'setTimeout');
+       }, 1000);
+     })
+
+     beforeEach(() => {
+       // Preset increment action before each test case of the test suite starts.
+       success++;
+     })
+
+     afterEach(() => {
+       hilog.info(0x0000, 'testTag', '%{public}s', `success: ${success}`);
+     })
+
+     afterAll(() => {
+       hilog.info(0x0000, 'testTag', '%{public}s', 'AfterAll executed');
+       hilog.info(0x0000, 'testTag', '%{public}s', `success: ${success}`);
+       // Clear the timer After all test cases of the test suite end.
+       clearTimeout(timeout);
+     })
      ```
-     1. let success = -1;
-     2. let timeout = 0;
-
-     4. beforeAll(() => {
-     5. // Preset increment action before all test cases of the test suite start.
-     6. success++;
-     7. // Set a timer before all test cases of the test suite start.
-     8. timeout = setTimeout(() => {
-     9. hilog.info(0x0000, 'testTag', '%{public}s', 'setTimeout');
-     10. }, 1000);
-     11. })
-
-     13. beforeEach(() => {
-     14. // Preset increment action before each test case of the test suite starts.
-     15. success++;
-     16. })
-
-     18. afterEach(() => {
-     19. hilog.info(0x0000, 'testTag', '%{public}s', `success: ${success}`);
-     20. })
-
-     22. afterAll(() => {
-     23. hilog.info(0x0000, 'testTag', '%{public}s', 'AfterAll executed');
-     24. hilog.info(0x0000, 'testTag', '%{public}s', `success: ${success}`);
-     25. // Clear the timer After all test cases of the test suite end.
-     26. clearTimeout(timeout);
-     27. })
-     ```
-
-     [MainViewModel.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/unit/MainViewModel.test.ets#L41-L68)
    * [断言能力](../harmonyos-guides/unittest-guidelines.md#断言能力)
 
      通过[assertUndefined()](../harmonyos-guides/unittest-guidelines.md#断言能力)判断被检验的值是否为undefined，并使用[assertEqual()](../harmonyos-guides/unittest-guidelines.md#断言能力)检验实际值是否符合预期值。
 
+     ```typescript
+     it('inputAccountLength', 0, () => {
+       let inputAccountLength = CommonConstants.INPUT_ACCOUNT_LENGTH;
+       // Check if INPUT_ACCOUNT_LENGTH is not undefined.
+       expect(inputAccountLength).not().assertUndefined();
+       expect(inputAccountLength).assertEqual(11);
+     })
      ```
-     1. it('inputAccountLength', 0, () => {
-     2. let inputAccountLength = CommonConstants.INPUT_ACCOUNT_LENGTH;
-     3. // Check if INPUT_ACCOUNT_LENGTH is not undefined.
-     4. expect(inputAccountLength).not().assertUndefined();
-     5. expect(inputAccountLength).assertEqual(11);
-     6. })
-     ```
-
-     [CommonConstants.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/unit/CommonConstants.test.ets#L44-L49)
 
      检验mainViewModel类中自定义函数返回值的长度及数据类型是否符合预期。
 
+     ```typescript
+     it('getFirstGridData', 0, () => {
+       const firstGridData = mainViewModel.getFirstGridData();
+       // Verify if the return value of getFirstGridData is eight.
+       expect(firstGridData.length).assertEqual(8);
+       // Verify if the type of firstGridData[0] is 'ItemData'.
+       expect(firstGridData[0] instanceof ItemData).assertTrue();
+     })
      ```
-     1. it('getFirstGridData', 0, () => {
-     2. const firstGridData = mainViewModel.getFirstGridData();
-     3. // Verify if the return value of getFirstGridData is eight.
-     4. expect(firstGridData.length).assertEqual(8);
-     5. // Verify if the type of firstGridData[0] is 'ItemData'.
-     6. expect(firstGridData[0] instanceof ItemData).assertTrue();
-     7. })
-     ```
-
-     [MainViewModel.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/unit/MainViewModel.test.ets#L97-L105)
    * [Mock能力](../harmonyos-guides/unittest-guidelines.md#mock能力)
 
      对mainViewModel类中的getSwiperImages()函数进行Mock，并设置函数被Mock后的返回值。用例执行完毕后，恢复被Mock对象的实例。
 
+     ```typescript
+     it('getSwiperImages', 0, () => {
+       const swiperImages = mainViewModel.getSwiperImages();
+       expect(swiperImages).assertInstanceOf('Array');
+       expect(swiperImages.length).assertEqual(4);
+       // Mock the getSwiperImages function of the mainViewModel class.
+       let mocker = new MockKit();
+       let getSwiperImages = mocker.mockFunc(mainViewModel, mainViewModel.getSwiperImages);
+       // The result '[]' is returned when the function is called with any arguments passed in.
+       when(getSwiperImages)(ArgumentMatchers.any).afterReturn([]);
+       expect(mainViewModel.getSwiperImages()).assertInstanceOf('Array');
+       expect(mainViewModel.getSwiperImages().length).assertEqual(0);
+       // Restore the mocked object instances.
+       mocker.clear(mainViewModel);
+       // Verify if the mocked object instances is restored.
+       expect(mainViewModel.getSwiperImages().length).assertEqual(4);
+     })
      ```
-     1. it('getSwiperImages', 0, () => {
-     2. const swiperImages = mainViewModel.getSwiperImages();
-     3. expect(swiperImages).assertInstanceOf('Array');
-     4. expect(swiperImages.length).assertEqual(4);
-     5. // Mock the getSwiperImages function of the mainViewModel class.
-     6. let mocker = new MockKit();
-     7. let getSwiperImages = mocker.mockFunc(mainViewModel, mainViewModel.getSwiperImages);
-     8. // The result '[]' is returned when the function is called with any arguments passed in.
-     9. when(getSwiperImages)(ArgumentMatchers.any).afterReturn([]);
-     10. expect(mainViewModel.getSwiperImages()).assertInstanceOf('Array');
-     11. expect(mainViewModel.getSwiperImages().length).assertEqual(0);
-     12. // Restore the mocked object instances.
-     13. mocker.clear(mainViewModel);
-     14. // Verify if the mocked object instances is restored.
-     15. expect(mainViewModel.getSwiperImages().length).assertEqual(4);
-     16. })
-     ```
-
-     [MainViewModel.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/unit/MainViewModel.test.ets#L75-L90)
    * [数据驱动](../harmonyos-guides/unittest-guidelines.md#数据驱动)
 
      数据驱动需要使用Ability能力，可参考[自定义Ability和Resources](../harmonyos-guides/ide-instrument-test.md#section760061533)。文件内容示例可在[运行测试用例](../harmonyos-guides/ide-instrument-test.md#section14415226122419)后，在对应模块的build/{productName}/intermediates/src/ohosTest下查看。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/9PY39EHBSH6cfzMpQ1yYjA/zh-cn_image_0000002504491476.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/TXoU9EFvQDePXSQdI6ZTjQ/zh-cn_image_0000002504491476.png)
 
      定义Ability后需要在module.json5文件中补充配置字段mainElement、pages和abilities。关于字段的具体说明，请参考[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)。
 
-     ```
-     1. {
-     2. "module": {
-     3. "name": "entry_test",
-     4. "type": "feature",
-     5. "description": "$string:module_test_desc",
-     6. "mainElement": "TestAbility",            // Corresponds to the ability name in the abilities section below.
-     7. "deviceTypes": [
-     8. "phone"
-     9. ],
-     10. "deliveryWithInstall": true,
-     11. "installationFree": false,
-     12. "pages": "$profile:test_pages",          // Corresponds to the test_pages.json file under resources > base > profile.
-     13. "abilities": [                           // Configuration of the ability to add.
-     14. {
-     15. "name": "TestAbility",
-     16. "srcEntry": "./ets/testability/TestAbility.ets",
-     17. "description": "$string:TestAbility_desc",
-     18. "icon": "$media:icon",
-     19. "label": "$string:TestAbility_label",
-     20. "exported": true,
-     21. "startWindowIcon": "$media:icon",
-     22. "startWindowBackground": "$color:start_window_background"
-     23. }
-     24. ]
-     25. }
-     26. }
+     ```json
+     {
+       "module": {
+         "name": "entry_test",
+         "type": "feature",
+         "description": "$string:module_test_desc",
+         "mainElement": "TestAbility",            // Corresponds to the ability name in the abilities section below.
+         "deviceTypes": [
+           "phone"
+         ],
+         "deliveryWithInstall": true,
+         "installationFree": false,
+         "pages": "$profile:test_pages",          // Corresponds to the test_pages.json file under resources > base > profile.
+         "abilities": [                           // Configuration of the ability to add.
+           {
+             "name": "TestAbility",
+             "srcEntry": "./ets/testability/TestAbility.ets",
+             "description": "$string:TestAbility_desc",
+             "icon": "$media:icon",
+             "label": "$string:TestAbility_label",
+             "exported": true,
+             "startWindowIcon": "$media:icon",
+             "startWindowBackground": "$color:start_window_background"
+           }
+         ]
+       }
+     }
      ```
 
-     [module.json5](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/module.json5#L2-L27)
-
-     说明
+     **说明** 
 
      build/{productName}/intermediates/src/ohosTest目录下的resources不包含icon图标，需开发者自行添加。
 
      数据驱动能力依据测试数据配置，驱动测试用例的执行次数及每次执行时的参数传递，使用时依赖data.json配置文件。
 
-     ```
-     1. {
-     2. "suites": [
-     3. {
-     4. "describe": [
-     5. "MainViewModelTest"
-     6. ],
-     7. "stress": 1,
-     8. "items": [
-     9. {
-     10. "it": "testDataDriverAsync",
-     11. "stress": 2,
-     12. "params": [
-     13. {
-     14. "name": "tom",
-     15. "value": 5
-     16. },
-     17. {
-     18. "name": "jerry",
-     19. "value": 4
-     20. }
-     21. ]
-     22. },
-     23. {
-     24. "it": "testDataDriver",
-     25. "stress": 3
-     26. }
-     27. ]
-     28. }
-     29. ]
-     30. }
+     ```json
+     {
+       "suites": [
+         {
+           "describe": [
+             "MainViewModelTest"
+           ],
+           "stress": 1,
+           "items": [
+             {
+               "it": "testDataDriverAsync",
+               "stress": 2,
+               "params": [
+                 {
+                   "name": "tom",
+                   "value": 5
+                 },
+                 {
+                   "name": "jerry",
+                   "value": 4
+                 }
+               ]
+             },
+             {
+               "it": "testDataDriver",
+               "stress": 3
+             }
+           ]
+         }
+       ]
+     }
      ```
 
      Stage模型在测试工程中的TestAbility目录下TestAbility.ets文件中导入data.json，并在文件中的Hypium.hypiumTest()函数执行前设置参数数据。
 
+     ```typescript
+     export default class TestAbility extends UIAbility {
+       abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+
+       constructor() {
+         super();
+         this.abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+       }
+
+       onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onCreate');
+         hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
+         hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:' + JSON.stringify(launchParam) ?? '');
+         let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
+         abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
+         hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
+         // Set the data before Hypium.hypiumTest() is executed.
+         Hypium.setData(data);
+         Hypium.hypiumTest(this.abilityDelegator, abilityDelegatorArguments, testsuite);
+       }
+
+       // ...
+     }
      ```
-     1. export default class TestAbility extends UIAbility {
-     2. abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-
-     4. constructor() {
-     5. super();
-     6. this.abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-     7. }
-
-     9. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-     10. hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onCreate');
-     11. hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
-     12. hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:' + JSON.stringify(launchParam) ?? '');
-     13. let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
-     14. abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
-     15. hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-     16. // Set the data before Hypium.hypiumTest() is executed.
-     17. Hypium.setData(data);
-     18. Hypium.hypiumTest(this.abilityDelegator, abilityDelegatorArguments, testsuite);
-     19. }
-
-     21. // ...
-     22. }
-     ```
-
-     [TestAbility.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/testability/TestAbility.ets#L27-L77)
 
      在data.json文件配置的测试套（MainViewModelTest）中定义测试用例，测试用例名称应与配置文件中items下的it名称一致。
 
-     ```
-     1. interface ParmObj {
-     2. name: string,
-     3. value: number
-     4. }
+     ```screen
+     interface ParmObj {
+       name: string,
+       value: number
+     }
 
-     6. export default function MainViewModelTest() {
-     7. describe('MainViewModelTest', () => {
-     8. // ...
-     9. it('testDataDriverAsync', 0, async (done: Function, data: ParmObj) => {
-     10. // Use data object to receive parameters passed from data.json.
-     11. hilog.info(0x0000, 'testTag', '%{public}s', `name: ${data.name}`);
-     12. hilog.info(0x0000, 'testTag', '%{public}s', `value: ${data.value}`);
-     13. // The name passed in data.json is either 'tom' or 'jerry'.
-     14. expect(data.name === 'tom' || data.name === 'jerry').assertTrue();
-     15. // Check if the actual value and the expected value '4' are within the allowable error range '1'.
-     16. expect(data.value).assertClose(4, 1);
-     17. done();
-     18. });
-     19. // ...
-     20. })
-     21. }
+     export default function MainViewModelTest() {
+       describe('MainViewModelTest', () => {
+         // ...
+         it('testDataDriverAsync', 0, async (done: Function, data: ParmObj) => {
+           // Use data object to receive parameters passed from data.json.
+           hilog.info(0x0000, 'testTag', '%{public}s', `name: ${data.name}`);
+           hilog.info(0x0000, 'testTag', '%{public}s', `value: ${data.value}`);
+           // The name passed in data.json is either 'tom' or 'jerry'.
+           expect(data.name === 'tom' || data.name === 'jerry').assertTrue();
+           // Check if the actual value and the expected value '4' are within the allowable error range '1'.
+           expect(data.value).assertClose(4, 1);
+           done();
+         });
+         // ...
+       })
+     }
      ```
-
-     [MainViewModel.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/unit/MainViewModel.test.ets#L33-L150)
 5. 编写UI测试用例
 
    在UI测试中，开发者可以利用[UiTest](../harmonyos-references/js-apis-uitest.md)接口模拟点击、双击、长按、滑动等操作，以验证应用程序中的UI行为。
@@ -361,77 +345,69 @@ content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18
 
      通过[On](../harmonyos-references/js-apis-uitest.md#on9)对象匹配目标控件，然后使用[inputText()](../harmonyos-references/js-apis-uitest.md#inputtext9)模拟文本输入。
 
+     ```typescript
+     it('accountInputText', TestType.FUNCTION, async () => {
+       let driver = Driver.create();
+       // Match TextInput component by id.
+       let on = ON.id('account');
+       let accountInput = await driver.findComponent(on);
+       await accountInput.inputText('123456');
+       let account = await accountInput.getText();
+       expect(account).assertEqual('123456');
+     })
      ```
-     1. it('accountInputText', TestType.FUNCTION, async () => {
-     2. let driver = Driver.create();
-     3. // Match TextInput component by id.
-     4. let on = ON.id('account');
-     5. let accountInput = await driver.findComponent(on);
-     6. await accountInput.inputText('123456');
-     7. let account = await accountInput.getText();
-     8. expect(account).assertEqual('123456');
-     9. })
-     ```
-
-     [UITest.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/ui/UITest.test.ets#L56-L64)
    * 模拟触摸屏手指操作
 
      使用[click()](../harmonyos-references/js-apis-uitest.md#click9-1)模拟触摸屏手指操作以收起键盘，然后通过[findComponent()](../harmonyos-references/js-apis-uitest.md#findcomponent9)查找Button控件，点击该按钮进行登录操作。
 
+     ```typescript
+     it('loginButton', TestType.FUNCTION, async () => {
+       let driver = Driver.create();
+       // Click the location of the confirm button in the input method to collapse the input method.
+       await driver.click(1196, 2511);
+       await driver.waitForIdle(2000, 3000);
+       // Check if the button is displayed.
+       let loginButton = await driver.findComponent(ON.type('Button'));
+       await loginButton.click();
+       // Wait the application for loading to the main page.
+       await driver.waitForIdle(4000, 5000);
+     })
      ```
-     1. it('loginButton', TestType.FUNCTION, async () => {
-     2. let driver = Driver.create();
-     3. // Click the location of the confirm button in the input method to collapse the input method.
-     4. await driver.click(1196, 2511);
-     5. await driver.waitForIdle(2000, 3000);
-     6. // Check if the button is displayed.
-     7. let loginButton = await driver.findComponent(ON.type('Button'));
-     8. await loginButton.click();
-     9. // Wait the application for loading to the main page.
-     10. await driver.waitForIdle(4000, 5000);
-     11. })
-     ```
-
-     [UITest.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/ui/UITest.test.ets#L83-L93)
 
      等待Swiper控件加载完成后，使用[swipe()](../harmonyos-references/js-apis-uitest.md#swipe9)模拟触摸屏手指滑动。
 
+     ```typescript
+     it('swiper', TestType.FUNCTION, async () => {
+       let driver = Driver.create();
+       // Wait the Swiper component for displaying in the current page.
+       await driver.waitForComponent(ON.type('Swiper'), 2000);
+       // Check if the Swiper component exists.
+       await driver.assertComponentExist(ON.type('Swiper'));
+       await driver.waitForIdle(1000, 2000);
+       // Swipe the carousel from right to left.
+       await driver.swipe(1100, 700, 100, 700, 3000);
+       // Wait for the swipe operation to complete.
+       await driver.waitForIdle(1000, 2000);
+       await driver.swipe(1100, 700, 100, 700, 3000);
+       await driver.waitForIdle(1000, 2000);
+     })
      ```
-     1. it('swiper', TestType.FUNCTION, async () => {
-     2. let driver = Driver.create();
-     3. // Wait the Swiper component for displaying in the current page.
-     4. await driver.waitForComponent(ON.type('Swiper'), 2000);
-     5. // Check if the Swiper component exists.
-     6. await driver.assertComponentExist(ON.type('Swiper'));
-     7. await driver.waitForIdle(1000, 2000);
-     8. // Swipe the carousel from right to left.
-     9. await driver.swipe(1100, 700, 100, 700, 3000);
-     10. // Wait for the swipe operation to complete.
-     11. await driver.waitForIdle(1000, 2000);
-     12. await driver.swipe(1100, 700, 100, 700, 3000);
-     13. await driver.waitForIdle(1000, 2000);
-     14. })
-     ```
-
-     [UITest.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/ui/UITest.test.ets#L100-L113)
    * 页面加载等待
 
      使用[swipe()](../harmonyos-references/js-apis-uitest.md#swipe9)切换页面后，通过[waitForIdle()](../harmonyos-references/js-apis-uitest.md#waitforidle9)和[waitForComponent()](../harmonyos-references/js-apis-uitest.md#waitforcomponent9)等待Toggle控件出现来判断页面跳转是否完成。
 
+     ```typescript
+     it('setting', TestType.FUNCTION, async () => {
+       let driver = Driver.create();
+       await driver.swipe(1100, 1500, 100, 1500, 3000);
+       await driver.waitForIdle(1000, 2000);
+       // Match the Toggle component in the ListItem component.
+       let on = ON.type('Toggle').within(ON.type('ListItem'));
+       await driver.waitForComponent(on, 2000);
+       await driver.assertComponentExist(on);
+       // ...
+     })
      ```
-     1. it('setting', TestType.FUNCTION, async () => {
-     2. let driver = Driver.create();
-     3. await driver.swipe(1100, 1500, 100, 1500, 3000);
-     4. await driver.waitForIdle(1000, 2000);
-     5. // Match the Toggle component in the ListItem component.
-     6. let on = ON.type('Toggle').within(ON.type('ListItem'));
-     7. await driver.waitForComponent(on, 2000);
-     8. await driver.assertComponentExist(on);
-     9. // ...
-     10. })
-     ```
-
-     [UITest.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/ui/UITest.test.ets#L129-L147)
 6. 执行测试脚本
 
    连接目标测试设备（如手机）或模拟器后，在DevEco Studio页面点击对应按钮，或通过命令行执行测试脚本。详细可参考[DevEco Studio执行测试脚本](../harmonyos-guides/unittest-guidelines.md#deveco-studio执行测试脚本)和[命令行执行测试脚本](../harmonyos-guides/unittest-guidelines.md#命令行执行测试脚本)。
@@ -440,7 +416,7 @@ content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18
 
 自动化测试实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Kl18HpQkQ0yqq5YO9hsKAg/zh-cn_image_0000002536291283.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Z77pTzrZRUaq7m6n_nziXA/zh-cn_image_0000002536291283.gif "点击放大")
 
 ## 常见问题
 
@@ -450,7 +426,7 @@ content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18
 
 使用[assertInstanceOf()](../harmonyos-guides/unittest-guidelines.md#断言能力)检验自定义数据类型，脚本运行时报错“Error in getFirstGridData, [object Object] is [object Object]not ItemData”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/OJM63T76TzGKqlH4LFxBMA/zh-cn_image_0000002536411247.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-9ELUTiwSrqJ1jf3t07tSA/zh-cn_image_0000002536411247.png)
 
 **可能原因**
 
@@ -460,11 +436,9 @@ content_hash: sha256:1dfd5e0fe080466a12bf7227fce7ab9bee7870871c5c7e56b32afe9be18
 
 在[expect()](../harmonyos-guides/unittest-guidelines.md#基础流程能力)中进行instanceof类型判断，并使用[assertTrue()](../harmonyos-guides/unittest-guidelines.md#断言能力)进行检验。修改后示例代码如下：
 
+```typescript
+expect(firstGridData[0] instanceof ItemData).assertTrue();
 ```
-1. expect(firstGridData[0] instanceof ItemData).assertTrue();
-```
-
-[MainViewModel.test.ets](https://gitcode.com/HarmonyOS_Samples/ArkTSComponentsTest/blob/master/entry/src/ohosTest/ets/test/unit/MainViewModel.test.ets#L103-L103)
 
 ### UI测试时inputText接口无法输入字母和特殊字符
 

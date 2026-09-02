@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime图依赖并发(C)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C) > Function Flow Runtime图依赖并发(C)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:21+08:00
-doc_updated_at: 2026-04-08
-content_hash: sha256:93fabd21bcb8d5a9b19fd0ac8aaedc1a33501f80ae884510ad656e918cd89a4a
+scraped_at: 2026-09-02T14:59:36+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e480a32436588ba30bdf4a2b16a2633635a512e935e85b85cccd5321ee2e5b61
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ FFRT图依赖并发范式支持任务依赖和数据依赖两种方式构建任�
 
 ### 任务依赖
 
-说明
+**说明** 
 
 当任务句柄出现在一个任务的in\_deps中时，任务句柄对应的任务是该任务的前置任务；当任务句柄出现在一个任务的out\_deps中时，任务句柄对应的任务是该任务的后继任务。
 
@@ -31,7 +31,7 @@ FFRT图依赖并发范式支持任务依赖和数据依赖两种方式构建任�
 
 ### 数据依赖
 
-说明
+**说明** 
 
 当数据对象的签名出现在一个任务的in\_deps中时，该任务称为数据对象的消费者任务，消费者任务执行不改变其输入数据对象的内容；
 
@@ -57,15 +57,15 @@ FFRT在运行时可动态构建任务之间的基于生产者/消费者的数据
 
 例如，存在一组任务与数据A的关系表述为：
 
-```
-1. task1(OUT A);
-2. task2(IN A);
-3. task3(IN A);
-4. task4(OUT A);
-5. task5(OUT A);
+```cpp
+task1(OUT A);
+task2(IN A);
+task3(IN A);
+task4(OUT A);
+task5(OUT A);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/f5cKHMbHSR-e8xWmhjFaGA/zh-cn_image_0000002589244763.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/rVxdVdLHTr-Fbz_WopqMGg/zh-cn_image_0000002706834388.png)
 
 为表述方便，本文中的数据流图均以圆圈表示Task，方块表示数据。
 
@@ -79,93 +79,93 @@ FFRT在运行时可动态构建任务之间的基于生产者/消费者的数据
 
 用户上传视频到流媒体平台，处理步骤包含：视频解析A、视频转码B、视频缩略图生成C、视频水印添加D和视频发布E，其中步骤B和步骤C可以并行执行。任务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/JxV8OiovQKyQBVTGexOGiA/zh-cn_image_0000002558764958.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/uzWsRY62SYiAprtxifu3bg/zh-cn_image_0000002736313495.png)
 
-借助FFRT提供了图依赖并发范式，可以描述任务依赖关系，同时并行化上述视频处理流程，代码如下所示：
+借助FFRT提供的图依赖并发范式，可以描述任务依赖关系，同时并行化上述视频处理流程，代码如下所示：
+
+```c
+#include <cstdio>
+#include "hilog/log.h"
+#include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
+
+#undef LOG_TAG
+#define LOG_TAG "ParallelTag"
+```
 
 ```
-1. #include <cstdio>
-2. #include "hilog/log.h"
-3. #include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
+void FuncTaskA(void* arg)
+{
+    OH_LOG_INFO(LOG_APP, "视频解析");
+    printf("视频解析\n");
+}
 
-5. #undef LOG_TAG
-6. #define LOG_TAG "ParallelTag"
-```
+void FuncTaskB(void* arg)
+{
+    OH_LOG_INFO(LOG_APP, "视频转码");
+    printf("视频转码\n");
+}
 
-```
-1. void FuncTaskA(void* arg)
-2. {
-3. OH_LOG_INFO(LOG_APP, "视频解析");
-4. printf("视频解析\n");
-5. }
+void FuncTaskC(void* arg)
+{
+    OH_LOG_INFO(LOG_APP, "视频生成缩略图");
+    printf("视频生成缩略图\n");
+}
 
-7. void FuncTaskB(void* arg)
-8. {
-9. OH_LOG_INFO(LOG_APP, "视频转码");
-10. printf("视频转码\n");
-11. }
+void FuncTaskD(void* arg)
+{
+    OH_LOG_INFO(LOG_APP, "视频添加水印");
+    printf("视频添加水印\n");
+}
 
-13. void FuncTaskC(void* arg)
-14. {
-15. OH_LOG_INFO(LOG_APP, "视频生成缩略图");
-16. printf("视频生成缩略图\n");
-17. }
+void FuncTaskE(void* arg)
+{
+    OH_LOG_INFO(LOG_APP, "视频发布");
+    printf("视频发布\n");
+}
 
-19. void FuncTaskD(void* arg)
-20. {
-21. OH_LOG_INFO(LOG_APP, "视频添加水印");
-22. printf("视频添加水印\n");
-23. }
+int DependenceCExec()
+{
+    // 提交任务A
+    ffrt_task_handle_t hTaskA = ffrt_submit_h_f(FuncTaskA, NULL, NULL, NULL, NULL);
 
-25. void FuncTaskE(void* arg)
-26. {
-27. OH_LOG_INFO(LOG_APP, "视频发布");
-28. printf("视频发布\n");
-29. }
+    // 提交任务B和C
+    ffrt_dependence_t taskA_deps[] = {{ffrt_dependence_task, hTaskA}};
+    ffrt_deps_t dTaskA = {1, taskA_deps};
+    ffrt_task_handle_t hTaskB = ffrt_submit_h_f(FuncTaskB, NULL, &dTaskA, NULL, NULL);
+    ffrt_task_handle_t hTaskC = ffrt_submit_h_f(FuncTaskC, NULL, &dTaskA, NULL, NULL);
 
-31. int DependenceCExec()
-32. {
-33. // 提交任务A
-34. ffrt_task_handle_t hTaskA = ffrt_submit_h_f(FuncTaskA, NULL, NULL, NULL, NULL);
+    // 提交任务D
+    ffrt_dependence_t taskBC_deps[] = {{ffrt_dependence_task, hTaskB}, {ffrt_dependence_task, hTaskC}};
+    ffrt_deps_t dTaskBC = {2, taskBC_deps};
+    ffrt_task_handle_t hTaskD = ffrt_submit_h_f(FuncTaskD, NULL, &dTaskBC, NULL, NULL);
 
-36. // 提交任务B和C
-37. ffrt_dependence_t taskA_deps[] = {{ffrt_dependence_task, hTaskA}};
-38. ffrt_deps_t dTaskA = {1, taskA_deps};
-39. ffrt_task_handle_t hTaskB = ffrt_submit_h_f(FuncTaskB, NULL, &dTaskA, NULL, NULL);
-40. ffrt_task_handle_t hTaskC = ffrt_submit_h_f(FuncTaskC, NULL, &dTaskA, NULL, NULL);
+    // 提交任务E
+    ffrt_dependence_t taskD_deps[] = {{ffrt_dependence_task, hTaskD}};
+    ffrt_deps_t dTaskD = {1, taskD_deps};
+    ffrt_submit_f(FuncTaskE, NULL, &dTaskD, NULL, NULL);
 
-42. // 提交任务D
-43. ffrt_dependence_t taskBC_deps[] = {{ffrt_dependence_task, hTaskB}, {ffrt_dependence_task, hTaskC}};
-44. ffrt_deps_t dTaskBC = {2, taskBC_deps};
-45. ffrt_task_handle_t hTaskD = ffrt_submit_h_f(FuncTaskD, NULL, &dTaskBC, NULL, NULL);
+    // 等待所有任务完成
+    ffrt_wait();
 
-47. // 提交任务E
-48. ffrt_dependence_t taskD_deps[] = {{ffrt_dependence_task, hTaskD}};
-49. ffrt_deps_t dTaskD = {1, taskD_deps};
-50. ffrt_submit_f(FuncTaskE, NULL, &dTaskD, NULL, NULL);
-
-52. // 等待所有任务完成
-53. ffrt_wait();
-
-55. ffrt_task_handle_destroy(hTaskA);
-56. ffrt_task_handle_destroy(hTaskB);
-57. ffrt_task_handle_destroy(hTaskC);
-58. ffrt_task_handle_destroy(hTaskD);
-59. return 0;
-60. }
+    ffrt_task_handle_destroy(hTaskA);
+    ffrt_task_handle_destroy(hTaskB);
+    ffrt_task_handle_destroy(hTaskC);
+    ffrt_task_handle_destroy(hTaskD);
+    return 0;
+}
 ```
 
 预期的输出可能为：
 
-```
-1. 视频解析
-2. 视频转码
-3. 视频生成缩略图
-4. 视频添加水印
-5. 视频发布
+```plain
+视频解析
+视频转码
+视频生成缩略图
+视频添加水印
+视频发布
 ```
 
-说明
+**说明** 
 
 ffrt\_submit\_h\_f和ffrt\_submit\_f接口可以接收裸函数指针任务作为参数，如果任务存在前后处理可以参见[ffrt\_alloc\_auto\_managed\_function\_storage\_base](ffrt-api-guideline-c.md#ffrt_alloc_auto_managed_function_storage_base)函数查看如何构造任务结构体。
 
@@ -173,87 +173,87 @@ ffrt\_submit\_h\_f和ffrt\_submit\_f接口可以接收裸函数指针任务作�
 
 斐波那契数列中每个数字是前两个数字之和，计算斐波那契数的过程可以很好地通过数据对象来表达任务依赖关系。使用FFRT并发编程框架计算斐波那契数的代码如下所示：
 
+```c
+#include <cstdio>
+#include "hilog/log.h"
+#include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
+
+#undef LOG_TAG
+#define LOG_TAG "ParallelTag"
 ```
-1. #include <cstdio>
-2. #include "hilog/log.h"
-3. #include "ffrt/ffrt.h" // 来自 OpenHarmony 第三方库 "@ppd/ffrt"
-
-5. #undef LOG_TAG
-6. #define LOG_TAG "ParallelTag"
-```
 
 ```
-1. const int FIB_NUM = 5;
-2. typedef struct {
-3. int x;
-4. int* y;
-5. } FibFfrtS;
+const int FIB_NUM = 5;
+typedef struct {
+    int x;
+    int* y;
+} FibFfrtS;
 
-7. void FibFfrt(void* arg)
-8. {
-9. FibFfrtS* p = (FibFfrtS*)arg;
-10. int x = p->x;
-11. int* y = p->y;
+void FibFfrt(void* arg)
+{
+    FibFfrtS* p = (FibFfrtS*)arg;
+    int x = p->x;
+    int* y = p->y;
 
-13. if (x <= 1) {
-14. *y = x;
-15. } else {
-16. int y1;
-17. int y2;
-18. FibFfrtS s1 = {x - 1, &y1};
-19. FibFfrtS s2 = {x - 2, &y2};
+    if (x <= 1) {
+        *y = x;
+    } else {
+        int y1;
+        int y2;
+        FibFfrtS s1 = {x - 1, &y1};
+        FibFfrtS s2 = {x - 2, &y2};
 
-21. // 构建数据依赖
-22. ffrt_dependence_t dx_deps[] = {{ffrt_dependence_data, &x}};
-23. ffrt_deps_t dx = {1, dx_deps};
-24. ffrt_dependence_t dy1_deps[] = {{ffrt_dependence_data, &y1}};
-25. ffrt_deps_t dy1 = {1, dy1_deps};
-26. ffrt_dependence_t dy2_deps[] = {{ffrt_dependence_data, &y2}};
-27. ffrt_deps_t dy2 = {1, dy2_deps};
-28. ffrt_dependence_t dy12_deps[] = {{ffrt_dependence_data, &y1}, {ffrt_dependence_data, &y2}};
-29. ffrt_deps_t dy12 = {2, dy12_deps};
+        // 构建数据依赖
+        ffrt_dependence_t dx_deps[] = {{ffrt_dependence_data, &x}};
+        ffrt_deps_t dx = {1, dx_deps};
+        ffrt_dependence_t dy1_deps[] = {{ffrt_dependence_data, &y1}};
+        ffrt_deps_t dy1 = {1, dy1_deps};
+        ffrt_dependence_t dy2_deps[] = {{ffrt_dependence_data, &y2}};
+        ffrt_deps_t dy2 = {1, dy2_deps};
+        ffrt_dependence_t dy12_deps[] = {{ffrt_dependence_data, &y1}, {ffrt_dependence_data, &y2}};
+        ffrt_deps_t dy12 = {2, dy12_deps};
 
-31. // 分别提交任务
-32. ffrt_submit_f(FibFfrt, &s1, &dx, &dy1, NULL);
-33. ffrt_submit_f(FibFfrt, &s2, &dx, &dy2, NULL);
+        // 分别提交任务
+        ffrt_submit_f(FibFfrt, &s1, &dx, &dy1, NULL);
+        ffrt_submit_f(FibFfrt, &s2, &dx, &dy2, NULL);
 
-35. // 等待任务完成
-36. ffrt_wait_deps(&dy12);
-37. *y = y1 + y2;
-38. }
-39. }
+        // 等待任务完成
+        ffrt_wait_deps(&dy12);
+        *y = y1 + y2;
+    }
+}
 
-41. int FibCExec()
-42. {
-43. int r;
-44. FibFfrtS s = {FIB_NUM, &r};
-45. ffrt_dependence_t dr_deps[] = {{ffrt_dependence_data, &r}};
-46. ffrt_deps_t dr = {1, dr_deps};
-47. ffrt_submit_f(FibFfrt, &s, NULL, &dr, NULL);
+int FibCExec()
+{
+    int r;
+    FibFfrtS s = {FIB_NUM, &r};
+    ffrt_dependence_t dr_deps[] = {{ffrt_dependence_data, &r}};
+    ffrt_deps_t dr = {1, dr_deps};
+    ffrt_submit_f(FibFfrt, &s, NULL, &dr, NULL);
 
-49. // 等待任务完成
-50. ffrt_wait_deps(&dr);
-51. OH_LOG_INFO(LOG_APP, "Fibonacci result: %{public}d", r);
-52. printf("Fibonacci(5) is %d\n", r);
-53. return r;
-54. }
+    // 等待任务完成
+    ffrt_wait_deps(&dr);
+    OH_LOG_INFO(LOG_APP, "Fibonacci result: %{public}d", r);
+    printf("Fibonacci(5) is %d\n", r);
+    return r;
+}
 ```
 
 预期输出为：
 
-```
-1. Fibonacci(5) is 5
+```plain
+Fibonacci(5) is 5
 ```
 
 示例中将fibonacci(x-1)和fibonacci(x-2)作为两个任务提交给FFRT，在两个任务完成之后将结果进行累加。虽然单个任务只是拆分成两个子任务，但是子任务又可以继续进行拆分，因此整个计算图的并行度是非常高的。
 
-说明
+**说明** 
 
 ffrt\_submit\_f接口可以接收裸函数指针任务作为参数，如果任务存在前后处理可以参见[ffrt\_alloc\_auto\_managed\_function\_storage\_base](ffrt-api-guideline-c.md#ffrt_alloc_auto_managed_function_storage_base)函数查看如何构造任务结构体。
 
 各个任务在FFRT内部形成了一棵调用树：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/uCx2HUJlTT6zjf_eIhg6hg/zh-cn_image_0000002558605302.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/nf9Y3XxVT-2DiTEspvLrqw/zh-cn_image_0000002706674452.png)
 
 ## 接口说明
 
@@ -265,9 +265,9 @@ ffrt\_submit\_f接口可以接收裸函数指针任务作为参数，如果任�
 | [ffrt\_submit\_h\_f](ffrt-api-guideline-c.md#ffrt_submit_h_f) | 提交任务调度执行并返回任务句柄。  **说明**：从API version 20开始，支持该接口。 |
 | [ffrt\_wait\_deps](ffrt-api-guideline-c.md#ffrt_wait_deps) | 等待依赖的任务完成。 |
 
-说明
+**说明** 
 
-* 如何使用FFRT C++ API详见：[FFRT C++接口三方库使用指导](ffrt-development-guideline.md#using-ffrt-c-api-1)。
+* 如何使用FFRT C++ API详见：[FFRT C++接口三方库使用指导](ffrt-development-guideline.md#使用ffrt-c-api-1)。
 * 使用FFRT C接口或C++接口时，均可通过FFRT C++接口三方库简化头文件包含，即使用#include "ffrt/ffrt.h"头文件包含语句。
 
 ## 约束限制

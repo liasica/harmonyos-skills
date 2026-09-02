@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: OH_NativeBundle_ModuleMetadata
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 结构体 > OH_NativeBundle_ModuleMetadata
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:03+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:efa153127dc4b2e2e929145dcd5c312e261c18a14ac60b57a1fc47d8bb25c1ed
+scraped_at: 2026-09-02T15:00:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:dc223055cf7c4fb88a6f1de2189346127bc1b3a3f50418eaebc0171d334b3476
 ---
 
-```
-1. typedef struct OH_NativeBundle_ModuleMetadata {...} OH_NativeBundle_ModuleMetadata
+```c
+typedef struct OH_NativeBundle_ModuleMetadata {...} OH_NativeBundle_ModuleMetadata
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 模块元数据的信息。
 
@@ -26,14 +24,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
 | char\* moduleName | 模块名称。 |
 | [OH\_NativeBundle\_Metadata\*](capi-native-bundle-oh-nativebundle-metadata.md) metadataArray | 模块的元数据数组。 |
-| size\_t metadataArraySize | 模块的元数据数组大小。 |
+| size\_t metadataArraySize | 模块的元数据数组大小。需与metadataArray配合使用，应等于metadataArray数组的实际元素数量，设置错误可能导致数组越界或数据访问异常。 |

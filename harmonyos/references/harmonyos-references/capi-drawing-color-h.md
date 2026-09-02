@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_color.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_color.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:52+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:df276d76ce361cfc34d39709be6a63a0888ca4f45302b383d8867fc9aa0a3b51
+scraped_at: 2026-09-02T15:02:42+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:625fe45a62534a1a701df6e01c494cdc3707b5fff93a4c0b423db39f7ad39691
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
 文件中定义了与颜色相关的功能函数。
+
+本模块为单线程模型策略，需要调用方自行管理线程安全和上下文状态的切换。
 
 **引用文件：** <native\_drawing/drawing\_color.h>
 
@@ -26,11 +26,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 函数
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +34,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_Drawing\_ColorSetArgb()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. uint32_t OH_Drawing_ColorSetArgb(uint32_t alpha, uint32_t red, uint32_t green, uint32_t blue)
+```c
+uint32_t OH_Drawing_ColorSetArgb(uint32_t alpha, uint32_t red, uint32_t green, uint32_t blue)
 ```
 
 **描述**

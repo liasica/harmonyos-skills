@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hadss_dial
 title: 基于DialogHub的通用弹窗
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于DialogHub的通用弹窗
 category: best-practices
-scraped_at: 2026-04-29T14:10:32+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:f6ac0530d36e45c6e628e53ba7fc71be25506854bc4a1deda9e4340b49a265d5
+scraped_at: 2026-09-02T15:03:16+08:00
+doc_updated_at: 2026-08-10
+content_hash: sha256:51c71750c8b5fa47fc73ba15955f33c6970b025789fdbe30357b42044da4ac21
 ---
 
 ## 概述
@@ -60,11 +60,9 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
 开发者调用init()接口并传入UIContext以初始化DialogHub。
 
+```screen
+DialogHub.init(this.getUIContext());
 ```
-1. DialogHub.init(this.getUIContext());
-```
-
-[Index.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/Index.ets#L29-L29)
 
 ### 弹窗能力开发流程
 
@@ -74,52 +72,42 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
    调用 DialogHub 的 getToast()等接口，获取不同类型的弹窗构造器 DialogBuilder。
 
+   ```screen
+   DialogHub.getToast()
    ```
-   1. DialogHub.getToast()
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L23-L23)
 2. **配置弹窗内容：**
 
    调用 DialogBuilder 的 setContent()、setAnimation()等接口，配置弹窗的具体内容、动画效果、样式等。
 
+   ```screen
+   DialogHub.getToast()
+     .setContent(wrapBuilder(TextToastBuilder), new TextToastParams(CommonConstant.TOAST_TITLE))
+     .setAnimation({ dialogAnimation: AnimationType.UP_DOWN })
+     .setConfig({ dialogBehavior: { isModal: true } })
+     .setStyle({ backgroundColor: $r('sys.color.background_primary') })
    ```
-   1. DialogHub.getToast()
-   2. .setContent(wrapBuilder(TextToastBuilder), new TextToastParams(CommonConstant.TOAST_TITLE))
-   3. .setAnimation({ dialogAnimation: AnimationType.UP_DOWN })
-   4. .setConfig({ dialogBehavior: { isModal: true } })
-   5. .setStyle({ backgroundColor: Color.White })
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L27-L31)
 3. **创建弹窗实例：**
 
    调用 DialogBuilder 的 build() 接口，创建弹窗实例 InfDialog 对象。
 
+   ```screen
+   let dialog:InfToast = DialogHub.getToast()
+     // ...
+     .build()
    ```
-   1. let dialog:InfToast = DialogHub.getToast()
-   2. // ...
-   3. .build()
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L35-L42)
 4. **显示与销毁弹窗：**
 
    调用 InfDialog 对象的 show() 方法显示弹窗。
 
+   ```screen
+   dialog.show()
    ```
-   1. dialog.show()
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L46-L46)
 
    调用 InfDialog 对象的 dismiss() 方法销毁弹窗。
 
+   ```screen
+   dialog.dismiss()
    ```
-   1. dialog.dismiss()
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L50-L50)
 
 ### 模板复用能力开发流程
 
@@ -129,82 +117,68 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
    调用 DialogHub 的 createToastTemplate()等接口，创建不同类型弹窗的模板构造器 DialogTemplate。
 
+   ```screen
+   DialogHub.createToastTemplate('SimpleToast')
    ```
-   1. DialogHub.createToastTemplate('SimpleToast')
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L54-L54)
 2. **配置模板内容：**
 
    调用 DialogTemplate 的 setContent()、setAnimation()等接口，配置模板的具体内容、动画效果、样式等。
 
+   ```screen
+   DialogHub.createToastTemplate('SimpleToast')
+     .setContent(wrapBuilder(TextToastBuilder), new TextToastParams(CommonConstant.TOAST_TITLE))
+     .setAnimation({ dialogAnimation: AnimationType.UP_DOWN })
+     .setConfig({ dialogBehavior: { isModal: true } })
+     .setStyle({ backgroundColor: $r('sys.color.background_primary') })
    ```
-   1. DialogHub.createToastTemplate('SimpleToast')
-   2. .setContent(wrapBuilder(TextToastBuilder), new TextToastParams(CommonConstant.TOAST_TITLE))
-   3. .setAnimation({ dialogAnimation: AnimationType.UP_DOWN })
-   4. .setConfig({ dialogBehavior: { isModal: true } })
-   5. .setStyle({ backgroundColor: Color.White })
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L58-L62)
 3. **注册模板：**
 
    调用 DialogTemplate 的 register() 接口，将配置好的模板注册并存储。
 
+   ```screen
+   DialogHub.createToastTemplate('SimpleToast')
+     // ...
+     .register()
    ```
-   1. DialogHub.createToastTemplate('SimpleToast')
-   2. // ...
-   3. .register()
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L66-L73)
 4. **获取并使用弹窗模板：**
 
    调用 DialogHub 的 getToastTemplate()等接口，根据模板名称获取对应的 DialogBuilder。
 
    然后按照弹窗能力开发流程中的步骤2~4，使用 DialogBuilder 配置并显示弹窗。
 
-   ```
-   1. DialogHub.getToastTemplate('SimpleToast')
-   2. ?.setAnimation({dialogAnimation:AnimationType.FADE_IN_AND_OUT})
-   3. .build()
-   4. .show()
+   ```screen
+   DialogHub.getToastTemplate('SimpleToast')
+     ?.setAnimation({dialogAnimation:AnimationType.FADE_IN_AND_OUT})
+     .build()
+     .show()
    ```
 
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L77-L80)
-
-   说明
+   **说明** 
 
    获取模板后配置的属性(如动画、位置等)只针对当前弹窗对象生效，不会修改模板内容。
 5. **(可选) 更新模板：**
 
    调用 DialogHub 的 updateToastTemplate()、updatePopupTemplate() 等接口，更新对应模板名称的配置，并重新注册。
 
+   ```screen
+   DialogHub.updateToastTemplate('SimpleToast')
+     ?.setStyle({backgroundColor:Color.Blue})
+     .register()
    ```
-   1. DialogHub.updateToastTemplate('SimpleToast')
-   2. ?.setStyle({backgroundColor:Color.Blue})
-   3. .register()
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L84-L86)
 6. **(可选) 删除模板：**
 
    调用 DialogHub 的 removeTemplate() 接口，删除对应模板名称的弹窗模板。
 
+   ```screen
+   DialogHub.removeTemplate('SimpleToast')
    ```
-   1. DialogHub.removeTemplate('SimpleToast')
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L90-L90)
 7. **(可选) 判断模板是否存在：**
 
    调用 DialogHub 的 isTemplateExist() 接口，判断指定模板名称的弹窗模板是否已被注册。
 
+   ```screen
+   DialogHub.isTemplateExist('SimpleToast')
    ```
-   1. DialogHub.isTemplateExist('SimpleToast')
-   ```
-
-   [DocsCodeSteps.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/others/DocsCodeSteps.ets#L94-L94)
 
 ## 常见业务弹窗
 
@@ -212,46 +186,45 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
 一个简单的文本Toast弹窗，到达指定时间后消失。setDuration()设置Toast持续时间。
 
-```
-1. DialogHub.getToast()
-2. .setContent(wrapBuilder(TextToastBuilder))
-3. // ...
-4. .setDuration(CommonConstant.DURATION_3000)
-5. .build()
-6. .show();
+```screen
+DialogHub.getToast()
+  .setContent(wrapBuilder(TextToastBuilder))
+  // ...
+  .setDuration(CommonConstant.DURATION_3000)
+  .build()
+  .show();
 ```
 
-[CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L143-L155)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zkCJhIw0RuSewJhIBjagFQ/zh-cn_image_0000002194011644.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/c5HKIOoeRU64EUw_yhov-g/zh-cn_image_0000002656422016.png "点击放大")
 
 ### 指定位置弹窗的非模态弹窗
 
 在屏幕底部弹出SnackBar，该弹窗可以响应用户点击跳转页面或者关闭弹窗。
 
-```
-1. this.specifiedLocationDialog = this.specifiedLocationDialog ?? DialogHub.getCustomDialog()
-2. .setOperableContent(wrapBuilder(SnackbarBuilder), (action: DialogAction) => {
-3. let param = new SnackbarParams(() => {
-4. action.dismiss()
-5. }, this.pageInfos)
-6. return param
-7. })
-8. // ...
-9. .setConfig({
-10. dialogBehavior: { isModal: false, passThroughGesture: true },
-11. dialogPosition: {
-12. alignment: DialogAlignment.Bottom,
-13. offset: { dx: 0, dy: $r('app.float.specified_location_offset') }
-14. }
-15. })
-16. .build();
-17. this.specifiedLocationDialog.show();
+```screen
+this.specifiedLocationDialog = this.specifiedLocationDialog ?? DialogHub.getCustomDialog()
+  .setOperableContent(wrapBuilder(SnackbarBuilder), (action: DialogAction) => {
+    let param = new SnackbarParams(() => {
+      action.dismiss()
+    }, this.pageInfos)
+    return param
+  })
+  ?.setStyle({
+    radius: '50%',
+    backgroundColor: $r('sys.color.comp_background_gray')
+  })
+  .setConfig({
+    dialogBehavior: { isModal: false, passThroughGesture: true },
+    dialogPosition: {
+      alignment: DialogAlignment.Bottom,
+      offset: { dx: 0, dy: $r('app.float.specified_location_offset') }
+    }
+  })
+  .build();
+this.specifiedLocationDialog.show();
 ```
 
-[CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L171-L192)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/qAwFs2soSSqBhP8L2xLzLA/zh-cn_image_0000002229451969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/KAkpDaPrRHGgLP9Wu8DiNQ/zh-cn_image_0000002686503539.png "点击放大")
 
 ### 会定时消失且带弹出动效的弹窗
 
@@ -260,39 +233,42 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 * 通过setAnimation()设置弹窗弹出动效。
 * 通过dialog实例的updateContent()，定时动态刷新弹窗内容。
 
+  ```screen
+  if (!this.intervalsDisappearsDialog) {
+    this.intervalsDisappearsDialog = DialogHub.getCustomDialog()
+      .setContent(wrapBuilder(TimeToastBuilder), params)
+      ?.setStyle({
+        radius: '50%',
+        backgroundColor: $r('sys.color.comp_background_gray')
+      })
+      .setAnimation({ dialogAnimation: AnimationType.UP_DOWN })
+      .setConfig({
+        dialogBehavior: { isModal: false, passThroughGesture: true },
+        dialogPosition: {
+          alignment: DialogAlignment.Top,
+          offset: { dy: $r('app.float.popup_disappears_intervals_offset'), dx: 0 }
+        }
+      })
+      .build();
+
+    this.intervalsDisappearsDialog.show();
+    if (this.intervalID === -1) {
+      this.intervalID = setInterval(() => {
+        time -= 1;
+        params.content = `${time} ${this.getParamString($r('app.string.SecondsClose').id)}`;
+        this.intervalsDisappearsDialog?.updateContent(params)
+        if (time <= 0 && this.intervalID) {
+          clearInterval(this.intervalID);
+          this.intervalsDisappearsDialog?.dismiss();
+          this.intervalsDisappearsDialog = null;
+          this.intervalID = -1;
+        }
+      }, CommonConstant.DURATION_1000);
+    }
+  }
   ```
-  1. this.intervalsDisappearsDialog = this.intervalsDisappearsDialog ?? DialogHub.getCustomDialog()
-  2. .setContent(wrapBuilder(TimeToastBuilder), params)
-  3. .setStyle({
-  4. radius: $r('app.float.popup_disappears_intervals_radius'),
-  5. shadow: CommonConstant.CUSTOM_SAMPLE_STYLE_SHADOW
-  6. })
-  7. .setAnimation({ dialogAnimation: AnimationType.UP_DOWN })
-  8. .setConfig({
-  9. dialogBehavior: { isModal: false, passThroughGesture: true },
-  10. dialogPosition: {
-  11. alignment: DialogAlignment.Top,
-  12. offset: { dy: $r('app.float.popup_disappears_intervals_offset'), dx: 0 }
-  13. }
-  14. })
-  15. .build();
 
-  17. this.intervalsDisappearsDialog.show();
-
-  19. intervalID = setInterval(() => {
-  20. time -= 1;
-  21. params.content = time + CommonConstant.TIMED_CLOSED;
-  22. this.intervalsDisappearsDialog?.updateContent(params)
-  23. if (time <= 0 && intervalID) {
-  24. this.intervalsDisappearsDialog?.dismiss();
-  25. clearInterval(intervalID);
-  26. }
-  27. }, CommonConstant.DURATION_1000);
-  ```
-
-  [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L212-L238)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/BoVCrFypTtiOPJ1HbXeaBQ/zh-cn_image_0000002229451937.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/6pHOycM7TBCJnPCTzG9eyA/zh-cn_image_0000002686623461.png "点击放大")
 
 ### 会避让键盘的弹窗
 
@@ -300,26 +276,28 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
 requestFocusWhenShow配置为true，弹窗显示时，弹窗自动获焦。
 
-```
-1. this.avoidKeyboardDialog = this.avoidKeyboardDialog ?? DialogHub.getCustomDialog()
-2. .setContent(wrapBuilder(InputBuilder), param)
-3. // ...
-4. .setConfig({
-5. dialogBehavior: {
-6. isModal: false,
-7. passThroughGesture: true,
-8. requestFocusWhenShow: true,
-9. keyboardAvoidMode: CustomKeyboardAvoidMode.CONTENT_AVOID
-10. },
-11. dialogPosition: { alignment: DialogAlignment.Bottom }
-12. })
-13. .build();
-14. this.avoidKeyboardDialog.show();
+```screen
+this.avoidKeyboardDialog = this.avoidKeyboardDialog ?? DialogHub.getCustomDialog()
+  .setContent(wrapBuilder(InputBuilder), param)
+  // ...
+  .setConfig({
+    dialogBehavior: {
+      isModal: false,
+      passThroughGesture: true,
+      requestFocusWhenShow: true,
+      keyboardAvoidMode: CustomKeyboardAvoidMode.CONTENT_AVOID,
+      keyboardAvoidSpace: -12
+    },
+    dialogPosition: {
+      alignment: DialogAlignment.Bottom,
+      offset: { dx: 0, dy: -28 }
+    }
+  })
+  .build();
+this.avoidKeyboardDialog.show();
 ```
 
-[CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L262-L280)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KEk8Y30iTkSkga4qq2Bn8g/zh-cn_image_0000002193852076.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Dq1nNK5YRM2l1cx_1ZUYaA/zh-cn_image_0000002193852080.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vuGaylraRO6XZovVLQQXlg/zh-cn_image_0000002656424912.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/9Mg6VrGAQHi3ZhYLYHcoRw/zh-cn_image_0000002656584862.png "点击放大")
 
 ### 指向选定组件的带箭头弹窗
 
@@ -327,79 +305,70 @@ requestFocusWhenShow配置为true，弹窗显示时，弹窗自动获焦。
 
 setConfig()中preferPlacement可配置箭头偏向。
 
-说明
+**说明** 
 
 绑定组件需要调用setComponentTargetId(targetCompId)，targetCompId组件id标识确保唯一，否则会报错且弹窗位置异常。
 
-```
-1. DialogHub.getPopup()
-2. // ...
-3. .setComponentTargetId('PopupDialog1')
-4. .setStyle({
-5. radius: $r('app.float.image_popup_builder_borderRadius'),
-6. backgroundColor: Color.White,
-7. shadow: {
-8. radius: $r('app.float.image_popup_shadow_radius'),
-9. color: $r('app.color.image_popup_shadow_color')
-10. },
-11. })
-12. .setConfig({
-13. dialogPosition: {
-14. preferPlacement: Placement.Bottom
-15. }
-16. })
-17. .build()
-18. .show();
+```screen
+this.arrowPointingPopup = DialogHub.getPopup()
+// ...
+  .setComponentTargetId('PopupDialog1')
+  .setStyle({
+    edgePadding: this.edgePadding
+  })
+  .setConfig({
+    dialogPosition: {
+      preferPlacement: Placement.Bottom
+    }
+  })
+  .build();
+this.arrowPointingPopup.show();
 ```
 
-[CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L294-L318)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/o9UgOvA9ROehFFDcetIVvA/zh-cn_image_0000002194011660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/3KfQI14IQPSfmfKDIvQruw/zh-cn_image_0000002656427622.png "点击放大")
 
 ### 点击蒙层自动关闭的弹窗
 
 弹出此类型弹窗需要打开isModal蒙层开关，并将autoDismiss设置为true
 
-```
-1. this.maskCloseDialog = this.maskCloseDialog ?? DialogHub.getCustomDialog()
-2. // ...
-3. .setConfig({ dialogBehavior: { isModal: true, autoDismiss: true, passThroughGesture: false } })
-4. .build();
-5. this.maskCloseDialog.show();
+```screen
+this.maskCloseDialog = this.maskCloseDialog ?? DialogHub.getCustomDialog()
+// ...
+  .setConfig({ dialogBehavior: { isModal: true, autoDismiss: true, passThroughGesture: false } })
+  .build();
+this.maskCloseDialog.show();
 ```
 
-[CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L366-L382)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/LUIdpaZESRSekZkfDu94JQ/zh-cn_image_0000002229337453.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/D7YATg8NQ9imc25w5RNGMA/zh-cn_image_0000002657633398.png "点击放大")
 
 ### 可主动关闭的弹窗
 
 能够通过点击弹窗按钮关闭弹窗，设置弹窗Content时，调用setOperableContent()，并将DialogHub的Dismiss事件作为参数传递给Builder。
 
-```
-1. this.activelyCloseDialog = this.activelyCloseDialog ?? DialogHub.getCustomDialog()
-2. .setOperableContent(wrapBuilder(ActiveCloseBuilder), (action: DialogAction) => {
-3. let param =
-4. new ActiveCloseParams(CommonConstant.LOGOUT, CommonConstant.LOGOUT_TIPS,
-5. CommonConstant.CANCEL, CommonConstant.OUT, () => {
-6. action.dismiss();
-7. }, () => {
-8. this.activelyCloseDialog?.dismiss();
-9. })
-10. return param;
-11. })
-12. .setConfig({ dialogBehavior: { isModal: true, autoDismiss: false, passThroughGesture: false } })
-13. .setStyle({
-14. radius: $r('app.float.active_close_builder_borderRadius'),
-15. backgroundColor: Color.White,
-16. })
-17. .build();
-18. this.activelyCloseDialog.show();
+```screen
+this.activelyCloseDialog = this.activelyCloseDialog ?? DialogHub.getCustomDialog()
+  .setOperableContent(wrapBuilder(ActiveCloseBuilder), (action: DialogAction) => {
+    let param =
+      new ActiveCloseParams(
+        this.getParamString($r('app.string.LogOut').id),
+        this.getParamString($r('app.string.LogOutTips').id),
+        this.getParamString($r('app.string.Cancel').id),
+        this.getParamString($r('app.string.Exit').id),
+        () => {
+          action.dismiss();
+        },
+        () => {
+          action.dismiss();
+        }
+      )
+    return param;
+  })
+  .setConfig({ dialogBehavior: { isModal: true, autoDismiss: false, passThroughGesture: false } })
+  .build();
+this.activelyCloseDialog.show();
 ```
 
-[CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L398-L415)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Lx16Ga3RRp2Cn8b6190-6A/zh-cn_image_0000002229451961.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/7O4ImxpGQsOCu9NWSsuojw/zh-cn_image_0000002687673109.png "点击放大")
 
 ### 能够动态调整高度的底部弹窗
 
@@ -407,71 +376,71 @@ setConfig()中preferPlacement可配置箭头偏向。
 
 * 获取DialogHub的Sheet类型弹窗实例
 
+  ```screen
+  this.adjustSheetDialog = DialogHub.getSheet()
+    .setContent(wrapBuilder(SheetBuilder), { type: 0 } as SheetParams)
+    .setStyle({
+      preferType: SheetType.BOTTOM,
+      detents: [CommonConstant.SHEET_MIDDLE, CommonConstant.SHEET_LARGE],
+    })
+    .setConfig({ enableOutsideInteractive: false, scrollSizeMode: ScrollSizeMode.CONTINUOUS })
+    .setComponentTargetId(CommonConstant.ADJUST_SHEET_DIALOG_ID)
+    .build();
   ```
-  1. this.adjustSheetDialog = DialogHub.getSheet()
-  2. .setContent(wrapBuilder(SheetBuilder), sheetParams)
-  3. .setStyle({ preferType:SheetType.BOTTOM, detents: [CommonConstant.SHEET_MIDDLE, CommonConstant.SHEET_LARGE] })
-  4. .setConfig({ enableOutsideInteractive: false, scrollSizeMode: ScrollSizeMode.CONTINUOUS })
-  5. .setComponentTargetId(CommonConstant.ADJUST_SHEET_DIALOG_ID)
-  6. .build();
-  ```
-
-  [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L85-L90)
 * 弹窗实例增加Sheet高度监听onHeightDidChange()，当高度变化到一定程度，updateContent()刷新弹窗内容
 
-  ```
-  1. this.adjustSheetDialog.addLifeCycleListener({
-  2. onHeightDidChange: (h: number) => {
-  3. let vpValue = this.getUIContext().px2vp(h)
-  4. if (vpValue <= CommonConstant.SHEET_MIDDLE && sheetParams.type != 0) {
-  5. sheetParams.type = 0
-  6. this.adjustSheetDialog?.updateContent(sheetParams)
-  7. } else if (vpValue > CommonConstant.SHEET_MIDDLE && sheetParams.type != 1) {
-  8. sheetParams.type = 1
-  9. this.adjustSheetDialog?.updateContent(sheetParams)
-  10. }
-  11. },
-  12. // ...
-  13. });
-  14. this.adjustSheetDialog?.show();
+  ```screen
+  this.adjustSheetDialog.addLifeCycleListener({
+    onHeightDidChange: (h: number) => {
+      let vpValue = this.getUIContext().px2vp(h);
+      let keyboardHeight = this.mainWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD).bottomRect.height;
+      if (this.isKeyboardShow) {
+        this.getUIContext().getFocusController().clearFocus();
+      }
+      if (vpValue <= CommonConstant.SHEET_MIDDLE) {
+        this.adjustSheetDialog?.updateContent({ type: 0 } as SheetParams);
+      } else if (vpValue > CommonConstant.SHEET_MIDDLE && keyboardHeight === 0) {
+        this.adjustSheetDialog?.updateContent({ type: 1 } as SheetParams);
+      }
+    },
+    // ...
+  });
+
+              this.adjustSheetDialog?.show();
   ```
 
-  [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L94-L432)
-
-说明
+**说明** 
 
 sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级弹窗，并且保证绑定的组件id存在。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/HbFGnvpAQQGQKhdW_W9GCg/zh-cn_image_0000002229337473.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/4qFaLAysRr-MXtiyJSn8Og/zh-cn_image_0000002194011664.png "点击放大")
+当前示例主要面向直板机等窄屏场景使用。因此对于如PC、三折叠展开态等屏幕宽度大于600vp的场景，会自动隐藏对应入口。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/CNmnzjrmTP2kC6x9vtVjSg/zh-cn_image_0000002686507285.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/GGNk0XJhTR679BcOVk5XlQ/zh-cn_image_0000002656587618.png "点击放大")
 
 ### 应用感知弹窗的打开、关闭
 
 * 对弹窗实例增加生命周期，拦截弹窗的展示与销毁。
 
+  ```screen
+  this.sensorDialog?.addLifeCycleListener({
+    onWillShow: () => {
+      this.isSensorDialogShow = true
+      return true;
+    },
+    onWillDismiss: (reason: DialogDismissReason) => {
+      this.isSensorDialogShow = false
+      return true;
+    }
+  })
   ```
-  1. this.sensorDialog?.addLifeCycleListener({
-  2. onWillShow: () => {
-  3. this.isSensorDialogShow = true
-  4. return true;
-  5. },
-  6. onWillDismiss: (reason: DialogDismissReason) => {
-  7. this.isSensorDialogShow = false
-  8. return true;
-  9. }
-  10. })
-  ```
-
-  [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L65-L74)
 * 直接获取弹窗状态
 
-  ```
-  1. // SHOW: 显示，HIDE: 隐藏， DEFAULT: 默认状态
-  2. this.sensorDialog?.getStatus();
+  ```screen
+  // SHOW: 显示，HIDE: 隐藏， DEFAULT: 默认状态
+  this.sensorDialog?.getStatus();
   ```
 
-  [CommonExamples.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/CommonExamples.ets#L78-L79)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/n5pRgLpFT_inxpH9Adekag/zh-cn_image_0000002229337477.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Idb5AmTRSfabM3GleNk_KA/zh-cn_image_0000002229337469.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/o9jhJj3bQVy0NNvTWXKgvw/zh-cn_image_0000002686627183.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/2j8bcXeVTGKn_hee975_UA/zh-cn_image_0000002656587700.png "点击放大")
 
 ## 弹窗与周边的交互
 
@@ -479,123 +448,124 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 
 配置状态变量backCloseDialog，设置true表示返回手势作用于弹窗，false表示作用于页面。
 
+```screen
+@State backCloseDialog: boolean = false;
 ```
-1. @State backCloseDialog: boolean = false;
-```
-
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L54-L54)
 
 在onBackPressed()中拦截手势并选择是退出页面还是关闭最上层弹窗
 
+```screen
+.onBackPressed(() => {
+  if (this.backCloseDialog) {
+    let tmp: DialogBackPressResult = DialogHub.dispatchBackPressToDialog();
+    if (tmp !== DialogBackPressResult.NO_DIALOG) {
+      return true;
+    }
+  }
+  this.pageInfos.pop();
+  return true;
+})
 ```
-1. .onBackPressed(() => {
-2. if (this.backCloseDialog) {
-3. let tmp: DialogBackPressResult = DialogHub.dispatchBackPressToDialog();
-4. if (tmp !== DialogBackPressResult.NO_DIALOG) {
-5. return true;
-6. }
-7. }
-8. this.pageInfos.pop();
-9. return true;
-10. })
-```
-
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L581-L590)
 
 ### 用户可以透过弹窗内容操作页面
 
 弹出Toast类型的弹窗，或者主动调用setConfig()设置passThroughGesture为true，可实现弹窗内容透传手势。
 
-```
-1. this.passThroughGestureDialog = DialogHub.getToast()
-2. .setContent(wrapBuilder(IconToastBuilder))
-3. // ...
-4. .setDuration(CommonConstant.DURATION_2000)
-5. .build();
-6. this.passThroughGestureDialog.show();
+```screen
+let passThroughGestureDialog = DialogHub.getCustomDialog()
+  .setOperableContent(wrapBuilder(SimpleCustomBuilder), (action: DialogAction) => {
+    return new SimpleCustomParams(
+      this.getParamString($r('app.string.Dialog').id),
+      this.getParamString($r('app.string.passThroughDialog').id),
+      () => {
+        action.dismiss();
+      })
+  })
+  .setConfig({
+    dialogBehavior: {
+      passThroughGesture: true
+    }
+  })
+  .build();
 ```
 
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L246-L257)
-
-```
-1. DialogHub.createCustomTemplate(CommonConstant.CUSTOM_TEMPLATE_SIMPLE)
-2. .setContent(wrapBuilder(TextToastBuilder))
-3. .setStyle({ backgroundColor: Color.White })
-4. .setConfig({ dialogBehavior: { passThroughGesture: true, isModal: false } })
+```screen
+DialogHub.createCustomTemplate(CommonConstant.CUSTOM_TEMPLATE_SIMPLE)
+  .setContent(wrapBuilder(TextToastBuilder))
+  .setConfig({ dialogBehavior: { passThroughGesture: true, isModal: false } })
 ```
 
-[Index.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/Index.ets#L33-L36)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/L-c7oyYNR8WbP4J33G0tGg/zh-cn_image_0000002193852068.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/T6mksKi-QOCtyP87RHmQFQ/zh-cn_image_0000002656427846.png "点击放大")
 
 ### 需要向页面返回数据的弹窗
 
 给Builder参数传递修改页面数据的回调函数，在Builder里面进行调用。
 
-```
-1. this.returnDataDialog = DialogHub.getCustomDialog()
-2. .setOperableContent(wrapBuilder(InputCallbackBuilder), (action: DialogAction) => {
-3. let parms = new InputCallbackParams(CommonConstant.UPDATE_TAG, () => {
-4. action.dismiss();
-5. }, (value) => {
-6. this.tagName = value;
-7. })
-8. return parms;
-9. })
-10. .setStyle({
-11. radius: $r('app.float.InputCallbackBuilderBorderRadius')
-12. })
-13. .setConfig({ dialogBehavior: { isModal: true, autoDismiss: false } })
-14. .build();
-15. this.returnDataDialog.show();
+```screen
+this.returnDataDialog = DialogHub.getCustomDialog()
+  .setOperableContent(wrapBuilder(InputCallbackBuilder), (action: DialogAction) => {
+    let parms = new InputCallbackParams(CommonConstant.UPDATE_TAG, () => {
+      action.dismiss();
+    }, (value) => {
+      this.tagName = value;
+    })
+    return parms;
+  })
+  .setConfig({
+    dialogBehavior: {
+      isModal: true,
+      autoDismiss: false,
+      keyboardAvoidMode: CustomKeyboardAvoidMode.CONTENT_AVOID,
+      keyboardAvoidSpace: 16
+    }
+  })
+  .build();
+this.returnDataDialog.show();
 ```
 
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L298-L312)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/T4brIh47SFuldbXQRm5uyw/zh-cn_image_0000002193852084.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/lZlDrvq-RnG6x2o831pYfw/zh-cn_image_0000002229451965.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/KpbFeYDCRrW_K861wB5JOA/zh-cn_image_0000002686507517.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Hyx2A9ecTMmUP_cu1kxoUw/zh-cn_image_0000002656428000.png "点击放大")
 
 ### 父页面刷新正在展示的弹窗内容
 
 修改Builder参数内容，再调用updateContent()进行修改。
 
+```screen
+let params = new ProgressParams(this.getParamString($r('app.string.Uploading').id),
+  CommonConstant.progressNameStart,
+  CommonConstant.progressNameTotal);
+
+this.updateByParentDialog = DialogHub.getCustomDialog()
+  .setContent(wrapBuilder(ProgressBuilder), params)
+  .setConfig({ dialogBehavior: { isModal: true, autoDismiss: false } })
+  .build();
+this.updateByParentDialog.show();
+if (this.intervalID >= 0) {
+  clearInterval(this.intervalID);
+  this.intervalID = -1;
+}
+this.intervalID = setInterval(() => {
+  params.value += 1
+  if (params.value >= CommonConstant.progressNameTotal && this.intervalID >= 0) {
+    this.updateByParentDialog?.dismiss();
+    clearInterval(this.intervalID);
+  }
+  this.updateByParentDialog?.updateContent(params);
+}, CommonConstant.Interval_20);
 ```
-1. let params = new ProgressParams(CommonConstant.ProgressName, CommonConstant.ProgressNameStart,
-2. CommonConstant.ProgressNameTotal);
 
-4. this.updateByParentDialog = DialogHub.getCustomDialog()
-5. .setContent(wrapBuilder(ProgressBuilder), params)
-6. .setStyle({ radius: $r('app.float.ProgressBuilderProgressBorderRadius') })
-7. .setConfig({ dialogBehavior: { isModal: true, autoDismiss: false } })
-8. .build();
-9. this.updateByParentDialog.show();
-
-11. this.intervalID = setInterval(() => {
-12. params.value += 1
-13. if (params.value >= CommonConstant.ProgressNameTotal && this.intervalID >= 0) {
-14. this.updateByParentDialog?.dismiss();
-15. clearInterval(this.intervalID);
-16. }
-17. this.updateByParentDialog?.updateContent(params);
-18. }, CommonConstant.Interval_20);
-```
-
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L328-L345)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/YT7SMfXxQV-truqlTbYHwA/zh-cn_image_0000002229337481.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/OtXrK0n8Rwa_041GAqvhCw/zh-cn_image_0000002686627433.png "点击放大")
 
 ### 页面需要感知当前页面是否存在弹窗
 
 DialogHub注册页面弹窗数监听，当前页面弹窗数量发生变化会触发。
 
+```screen
+DialogHub.addEventListener({
+  OnCurentPageDialogNumberChange: (newNum: number, oldNum: number) => {
+    this.dialogNum = newNum;
+  }
+})
 ```
-1. DialogHub.addEventListener({
-2. OnCurentPageDialogNumberChange: (newNum: number, oldNum: number) => {
-3. this.dialogNum = newNum;
-4. }
-5. })
-```
-
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L87-L91)
 
 ### 存在跳转链接的弹窗
 
@@ -605,20 +575,18 @@ router：在弹窗Builder里通过router模板跳转。
 
 Navigation：将pageInfos传入弹窗Builder，然后在弹窗里进行push页面。
 
-```
-1. let parms = new SkipParams(() => {
-2. this.skipDialog?.dismiss();
-3. }, 1, this.pageInfos);
-4. this.skipDialog?.updateContent(parms);
-5. this.skipDialog?.updateConfig({
-6. dialogPosition: { offset: { dx: 0, dy: 0 } }
-7. });
-8. this.skipDialog?.show();
+```screen
+let parms = new SkipParams(() => {
+  this.skipDialog?.dismiss();
+}, 1, this.pageInfos);
+this.skipDialog?.updateContent(parms);
+this.skipDialog?.updateConfig({
+  dialogPosition: { offset: { dx: 0, dy: 0 } }
+});
+this.skipDialog?.show();
 ```
 
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L405-L412)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/VSJKnGbSSISEQcS1IhpsVw/zh-cn_image_0000002194011656.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/WxnoTY-4R12o7jbhQV-YTQ/zh-cn_image_0000002686507615.png "点击放大")
 
 ### 折叠屏展开态不同位置的弹窗
 
@@ -626,37 +594,33 @@ Navigation：将pageInfos传入弹窗Builder，然后在弹窗里进行push页�
 
 弹窗在左半屏：
 
-```
-1. let parms = new SkipParams(() => {
-2. this.skipDialog?.dismiss()
-3. }, 1, this.pageInfos);
-4. this.skipDialog?.updateContent(parms);
-5. this.skipDialog?.updateConfig({
-6. dialogPosition: { offset: CommonConstant.LEFT_DIALOG_OFFSET }
-7. });
-8. this.skipDialog?.show();
+```screen
+let parms = new SkipParams(() => {
+  this.skipDialog?.dismiss()
+}, 1, this.pageInfos);
+this.skipDialog?.updateContent(parms);
+this.skipDialog?.updateConfig({
+  dialogPosition: { offset: CommonConstant.LEFT_DIALOG_OFFSET }
+});
+this.skipDialog?.show();
 ```
 
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L532-L539)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/mCPm0K22SnqX0Z9WCDjM6g/zh-cn_image_0000002229451949.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/MHoREEr2T9qMdqUkh9kpVg/zh-cn_image_0000002656588412.png "点击放大")
 
 弹窗在右半屏：
 
-```
-1. let parms = new SkipParams(() => {
-2. this.skipDialog?.dismiss();
-3. }, 1, this.pageInfos);
-4. this.skipDialog?.updateContent(parms);
-5. this.skipDialog?.updateConfig({
-6. dialogPosition: { offset: CommonConstant.RIGHT_DIALOG_OFFSET }
-7. });
-8. this.skipDialog?.show();
+```screen
+let parms = new SkipParams(() => {
+  this.skipDialog?.dismiss();
+}, 1, this.pageInfos);
+this.skipDialog?.updateContent(parms);
+this.skipDialog?.updateConfig({
+  dialogPosition: { offset: CommonConstant.RIGHT_DIALOG_OFFSET }
+});
+this.skipDialog?.show();
 ```
 
-[OperableExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/OperableExample.ets#L555-L562)
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Eg7vQ2KFRdmSmdig6O4Fxw/zh-cn_image_0000002229337445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/DcHeLRpBThGm16o8ljrydQ/zh-cn_image_0000002656428632.png "点击放大")
 
 ## 弹窗内容复用场景
 
@@ -664,74 +628,58 @@ Navigation：将pageInfos传入弹窗Builder，然后在弹窗里进行push页�
 
 * 创建弹窗模板
 
+  ```screen
+  DialogHub.createToastTemplate(CommonConstant.MY_TEMPLATE_NAME)
+    .setTextContent(CommonConstant.TOAST_DISPLAYED_CONTENT)
+    // ...
+    .setDuration(CommonConstant.TOAST_DISPLAY_DURATION)
+    .register();
   ```
-  1. DialogHub.createToastTemplate(CommonConstant.MY_TEMPLATE_NAME)
-  2. .setTextContent(CommonConstant.TOAST_DISPLAYED_CONTENT)
-  3. // ...
-  4. .setDuration(CommonConstant.TOAST_DISPLAY_DURATION)
-  5. .register();
-  ```
-
-  [ReuseExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/ReuseExample.ets#L58-L77)
 * 直接弹出模板
 
+  ```screen
+  DialogHub.getToastTemplate(CommonConstant.MY_TEMPLATE_NAME)?.build().show();
   ```
-  1. DialogHub.getToastTemplate(CommonConstant.MY_TEMPLATE_NAME)?.build().show();
-  ```
-
-  [ReuseExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/ReuseExample.ets#L139-L139)
 * 删除弹窗模板
 
+  ```screen
+  DialogHub.removeTemplate(CommonConstant.MY_TEMPLATE_NAME);
   ```
-  1. DialogHub.removeTemplate(CommonConstant.MY_TEMPLATE_NAME);
-  ```
-
-  [ReuseExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/ReuseExample.ets#L99-L99)
 * 随机修改弹窗模板背景色
 
+  ```screen
+  let r = (Math.ceil(Math.random() * 239 + 16) % 255).toString(16).padStart(2, '0');
+  let g = (Math.ceil(Math.random() * 239 + 16) % 255).toString(16).padStart(2, '0');
+  let b = (Math.ceil(Math.random() * 239 + 16) % 255).toString(16).padStart(2, '0');
+  let color = '#ff' + r + g + b;
+  DialogHub.updateToastTemplate(CommonConstant.MY_TEMPLATE_NAME)?.setStyle({
+    backgroundColor: color
+  }).register();
   ```
-  1. let r = (Math.ceil(Math.random() * 239 + 16) % 255).toString(16);
-  2. let g = (Math.ceil(Math.random() * 239 + 16) % 255).toString(16);
-  3. let b = (Math.ceil(Math.random() * 239 + 16) % 255).toString(16);
-  4. let color = '#ff' + r + g + b;
-  5. DialogHub.updateToastTemplate(CommonConstant.MY_TEMPLATE_NAME)?.setStyle({
-  6. backgroundColor: color
-  7. }).register();
-  ```
-
-  [ReuseExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/ReuseExample.ets#L116-L122)
 * (可选)通过弹窗模板，定义本次弹出动画后弹出
 
+  ```screen
+  DialogHub.getToastTemplate(CommonConstant.MY_TEMPLATE_NAME)?.setAnimation({
+    dialogAnimation: AnimationType.UP_DOWN
+  }).build().show();
   ```
-  1. DialogHub.getToastTemplate(CommonConstant.MY_TEMPLATE_NAME)?.setAnimation({
-  2. dialogAnimation: AnimationType.UP_DOWN
-  3. }).build().show();
-  ```
-
-  [ReuseExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/ReuseExample.ets#L156-L158)
 
 ### 定义一个可复用的弹窗
 
 将弹窗实例对象记录，下次弹窗复用。
 
-```
-1. originalTemplateDialog?: InfToast;
-```
-
-[ReuseExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/ReuseExample.ets#L31-L31)
-
-```
-1. this.originalTemplateDialog =
-2. DialogHub.getToastTemplate(CommonConstant.MY_TEMPLATE_NAME)?.build();
+```screen
+originalTemplateDialog?: InfToast;
 ```
 
-[ReuseExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/ReuseExample.ets#L81-L82)
-
+```screen
+this.originalTemplateDialog =
+  DialogHub.getToastTemplate(CommonConstant.MY_TEMPLATE_NAME)?.build();
 ```
-1. this.originalTemplateDialog?.show();
-```
 
-[ReuseExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/ReuseExample.ets#L203-L203)
+```screen
+this.originalTemplateDialog?.show();
+```
 
 ## 多个弹窗并存场景
 
@@ -741,71 +689,64 @@ Navigation：将pageInfos传入弹窗Builder，然后在弹窗里进行push页�
 
   可以通过弹窗A对象的getStatus()方法获取弹窗A的状态，以判断是否允许弹窗B弹出。
 
+  ```screen
+  if (this.dialogA?.getStatus() !== DialogStatus.SHOW) {
+    this.dialogB?.show();
+  }
   ```
-  1. if (this.dialogA?.getStatus() != DialogStatus.SHOW) {
-  2. this.dialogB?.show();
-  3. }
-  ```
-
-  [MultiDialogExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/MultiDialogExample.ets#L143-L145)
 
 * **当前页面存在弹窗时抑制弹窗C的弹出**
 
   通过调用DialogHub的getCurrentPageDialogs()方法获取当前页面的弹窗数量，判断数量是否为0，并据此控制弹窗C的弹出。
 
+  ```screen
+  if (DialogHub.getCurrentPageDialogs().length === 0) {
+    this.dialogC?.show();
+  }
   ```
-  1. if (DialogHub.getCurrentPageDialogs().length === 0) {
-  2. this.dialogC?.show();
-  3. }
-  ```
-
-  [MultiDialogExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/MultiDialogExample.ets#L166-L168)
 
 ### 开发者可以控制弹窗层级实现弹窗的相互覆盖
 
 * 设置弹窗层级setLayerIndex()
 
+  ```screen
+  this.dialogF = this.dialogF ??
+    this.createMessageBuilder(`${this.getParamString($r('app.string.Dialog').id)} F`,
+      CommonConstant.DIALOG_F_CONTENT)
+      .setLayerIndex(CommonConstant.DIALOG_F_LAYER_INDEX)
+      .build();
   ```
-  1. this.dialogF = this.dialogF ??
-  2. this.createMessageBuilder(CommonConstant.DIALOG_F, CommonConstant.DIALOG_F_CONTENT)
-  3. .setLayerIndex(CommonConstant.DIALOG_F_LAYER_INDEX)
-  4. .build();
-  ```
-
-  [MultiDialogExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/MultiDialogExample.ets#L231-L234)
 
 * 设置置顶弹窗OLD\_FIRST (老置顶弹窗优先，新的置顶弹窗无法弹出)
 
+  ```screen
+  this.dialogG = this.dialogG ??
+    this.createMessageBuilder(`${this.getParamString($r('app.string.Dialog').id)} G`,
+      CommonConstant.DIALOG_G_CONTENT).setConfig({
+      dialogBehavior: {
+        layerPolicy: { alwaysTop: true, topDialogPriority: TopDialogPriority.OLD_FIRST }
+      }
+    }).build();
   ```
-  1. this.dialogG = this.dialogG ??
-  2. this.createMessageBuilder(CommonConstant.DIALOG_G, CommonConstant.DIALOG_G_CONTENT).setConfig({
-  3. dialogBehavior: {
-  4. layerPolicy: { alwaysTop: true, topDialogPriority: TopDialogPriority.OLD_FIRST }
-  5. }
-  6. }).build();
-  ```
-
-  [MultiDialogExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/MultiDialogExample.ets#L252-L257)
 
 * 设置置顶弹窗NEW\_FIRST (新弹窗优先，新的置顶弹窗弹出，老置顶弹窗被覆盖)
 
+  ```screen
+  this.dialogH = this.dialogH ??
+    this.createMessageBuilder(`${this.getParamString($r('app.string.Dialog').id)} H`,
+      CommonConstant.DIALOG_H_CONTENT).setConfig({
+      dialogBehavior: {
+        layerPolicy: { alwaysTop: true, topDialogPriority: TopDialogPriority.NEW_FIRST }
+      }
+    }).build();
   ```
-  1. this.dialogH = this.dialogH ??
-  2. this.createMessageBuilder(CommonConstant.DIALOG_H, CommonConstant.DIALOG_H_CONTENT).setConfig({
-  3. dialogBehavior: {
-  4. layerPolicy: { alwaysTop: true, topDialogPriority: TopDialogPriority.NEW_FIRST }
-  5. }
-  6. }).build();
-  ```
-
-  [MultiDialogExample.ets](https://gitcode.com/harmonyos_samples/DialogHub/blob/master/entry/src/main/ets/pages/MultiDialogExample.ets#L275-L280)
 
 ## 常见问题
 
 ### 如何处理弹窗的获焦问题
 
 * 对于Sheet类别的弹窗，弹窗弹出后的焦点行为与系统BindSheet保持一致；
-* DialogHub提供的其他类别弹窗，如CustomDialg，在弹窗弹出时父页面的焦点默认不会转移到弹窗上。
+* DialogHub提供的其他类别弹窗，如CustomDialog，在弹窗弹出时父页面的焦点默认不会转移到弹窗上。
 
   开发者可以配置弹窗的requestFocusWhenShow属性实现：弹窗弹出时，将页面的焦点转移到弹窗中。进而实现[会避让键盘的弹窗](bpta-hadss_dialoghub.md#section395448164119)的效果。
 

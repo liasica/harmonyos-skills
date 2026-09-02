@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo pack
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo pack
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:44:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:49a0b23b1c074195d37984b5556e6a7292387b9d600b0f5e40b0242443e122a9
+scraped_at: 2026-09-02T15:00:18+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:a9c172b1919bada26b08e18eebdca8c874d11152eafb066046ca6a10ca1d9610
 ---
 
 打包ohpm-repo部署目录文件。
@@ -16,8 +16,8 @@ content_hash: sha256:49a0b23b1c074195d37984b5556e6a7292387b9d600b0f5e40b0242443e
 
 ## 命令格式
 
-```
-1. ohpm-repo pack <deploy_root>
+```screen
+ohpm-repo pack <deploy_root>
 ```
 
 ## 功能描述
@@ -34,7 +34,7 @@ content_hash: sha256:49a0b23b1c074195d37984b5556e6a7292387b9d600b0f5e40b0242443e
 
 ### <deploy\_root>
 
-* 类型： String
+* 类型：String
 * 必填参数
 
 必须在pack命令后面配置<deploy\_root>参数，指定待打包的[ohpm-repo私仓部署目录](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_关于-deploy_root)。
@@ -43,10 +43,10 @@ content_hash: sha256:49a0b23b1c074195d37984b5556e6a7292387b9d600b0f5e40b0242443e
 
 执行以下命令：
 
-```
-1. ohpm-repo pack D:\ohpm-repo
+```screen
+ohpm-repo pack D:\ohpm-repo
 ```
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/vros4BYqQF6VuG9PCyb3ZA/zh-cn_image_0000002530911278.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/a18PLFd8SV2WOMVsnyW67A/zh-cn_image_0000002701661980.png "点击放大")

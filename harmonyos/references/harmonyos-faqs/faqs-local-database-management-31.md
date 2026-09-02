@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: "首选项错误码：code:\"401\" err: Error: Parameter error. The type of 'value' must be ValueType. 如何排查问题"
 breadcrumb: "FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 首选项错误码：code:\"401\" err: Error: Parameter error. The type of 'value' must be ValueType. 如何排查问题"
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:17+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:51+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:1f4102bcd71f741ffbd073cf89cae81d5fd7df1e798c5204e92e395d5c85ccd3
 ---
 

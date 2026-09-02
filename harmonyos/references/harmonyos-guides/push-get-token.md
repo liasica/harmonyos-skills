@@ -3,28 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-toke
 title: 获取Push Token
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 获取Push Token
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:54+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:8b9a6514c10262768df0a7cdcf04381761cffd6b700205c6c5f062e1c8dbd983
+scraped_at: 2026-09-02T15:00:00+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:4d961e3e8097d3c50f63d08a56e0c7e9ac856b87c4d30bf11e42974822bc7b5a
 ---
 
 ## 场景介绍
 
-说明
+**说明** 
 
 Push Kit对Push Token进行了权益校验，请在进行开发前先阅读[开通推送服务](push-config-setting.md)章节，完成相关配置。
 
-Push Token标识了每台设备上每个应用，开发者调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)()接口向Push Kit服务端请求Push Token，获取到之后使用Push Token来推送消息。
+Push Token标识了每台设备上每个应用，开发者调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)接口向Push Kit服务端请求Push Token，获取到之后使用Push Token来推送消息。
 
 Push Token一般情况不会变化，仅下列场景会导致之前的Push Token发生变化而失效：
 
 * 卸载应用后重新安装。
 * 设备恢复出厂设置。
-* 应用显式调用[deleteToken](../harmonyos-references/push-pushservice.md#pushservicedeletetoken-1)()接口后重新调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)()接口。
-* 应用显式调用[deleteAAID](../harmonyos-references/push-aaid-api.md#aaiddeleteaaid-1)()接口后重新调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)()接口。
+* 应用显式调用[deleteToken](../harmonyos-references/push-pushservice.md#pushservicedeletetoken-1)接口后重新调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)接口。
+* 应用显式调用[deleteAAID](../harmonyos-references/push-aaid-api.md#aaiddeleteaaid-1)接口后重新调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)接口。
 * 将设备（仅涉及Wearable设备）拿到海外其他国家或者地区后，系统会更新设备的token。更新后的token通过[pushService.on('tokenUpdate')](../harmonyos-references/push-pushservice.md#pushserviceontokenupdate)接口的回调返回。
 
-因此，建议您在应用启动时调用getToken()接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token，以防由于Push Token失效导致收不到消息。
+因此，建议您在应用启动时调用getToken接口，若设备的Push Token发生变化，及时上报到您的应用服务器更新Push Token，以防由于Push Token失效导致收不到消息。
 
 ## 约束与限制
 
@@ -51,139 +51,154 @@ Push Token一般情况不会变化，仅下列场景会导致之前的Push Token
 1. Push Kit对Push Token进行了权益校验，请在进行开发前先阅读[开通推送服务](push-config-setting.md)章节，完成相关配置。
 2. 导入pushService模块及相关公共模块。
 
+   ```typescript
+   import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+   import { pushService } from '@kit.PushKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
-   1. import { pushService } from '@kit.PushKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { UIAbility, AbilityConstant, Want } from '@kit.AbilityKit';
-   ```
-3. 建议在您的UIAbility（例如EntryAbility）的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)()方法中调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)()接口获取Push Token并上报到您的服务端，方便您的服务端向终端推送消息。代码示例：
+3. 建议在您的UIAbility（例如EntryAbility）的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)()方法中调用[getToken](../harmonyos-references/push-pushservice.md#pushservicegettoken-1)接口获取Push Token并上报到您的服务端，方便您的服务端向终端推送消息。代码示例：
 
-   ```
-   1. // 文件路径: src/main/ets/entryability/EntryAbility.ets
-   2. export default class EntryAbility extends UIAbility {
-   3. // 入参want与launchParam并未使用，为初始化项目时自带参数
-   4. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-   5. // 获取Push Token
-   6. pushService.getToken().then(token => {
-   7. hilog.info(0x0000, 'testTag', 'Succeeded in getting push token');
-   8. }).catch((err: BusinessError) => {
-   9. hilog.error(0x0000, 'testTag', 'Failed to get push token: %{public}d %{public}s', err.code, err.message);
-   10. })
-   11. // 上报Push Token并上报到您的服务端
-   12. }
-   13. }
+   ```typescript
+   const DOMAIN = 0x0000;
+
+   export default class EntryAbility extends UIAbility {
+     // ...
+     // 入参want与launchParam并未使用，为初始化项目时自带参数
+     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+       // ...
+       // 获取Push Token
+       pushService.getToken().then(token => {
+         hilog.info(DOMAIN, 'testTag', 'Succeeded in getting push token.');
+         // 将获取的Push Token上报至服务端
+       }).catch((err: BusinessError) => {
+         hilog.error(DOMAIN, 'testTag', 'Failed to get push token: %{public}d %{public}s', err.code, err.message);
+       });
+     }
+     // ...
+   }
    ```
 
-说明
+**说明** 
 
 若您获取Push Token时发生APP身份验证失败错误（1000900010），请参考[ArkTS API错误码](../harmonyos-references/push-error-code.md#section1000900010-app身份验证失败)排查。
 
 ## 删除Push Token
 
-说明
+**说明** 
 
-删除Push Token后，本应用下的所有Push Kit历史数据会一并删除。非必要情况，请您不要主动调用[deleteToken](../harmonyos-references/push-pushservice.md#pushservicedeletetoken-1)()接口。
+删除Push Token后，本应用下的所有Push Kit历史数据会一并删除。非必要情况，请您不要主动调用[deleteToken](../harmonyos-references/push-pushservice.md#pushservicedeletetoken-1)接口。
 
-1. 导入pushService模块。
+1. 导入pushService模块及相关公共模块。
 
+   ```typescript
+   import { pushService } from '@kit.PushKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   const DOMAIN = 0x0000;
    ```
-   1. import { pushService } from '@kit.PushKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { UIAbility } from '@kit.AbilityKit';
-   ```
-2. 调用PushService.[deleteToken](../harmonyos-references/push-pushservice.md#pushservicedeletetoken-1)()接口删除Push Token。代码示例：
+2. 调用[deleteToken](../harmonyos-references/push-pushservice.md#pushservicedeletetoken-1)接口删除Push Token。代码示例：
 
-   ```
-   1. // 文件路径: src/main/ets/entryability/EntryAbility.ets
-   2. export default class EntryAbility extends UIAbility {
-   3. async myDeletePushToken() {
-   4. try {
-   5. await pushService.deleteToken();
-   6. hilog.info(0x0000, 'testTag', 'Succeeded in deleting push token');
-   7. } catch (err) {
-   8. let e: BusinessError = err as BusinessError;
-   9. hilog.error(0x0000, 'testTag', 'Failed to delete push token: %{public}d %{public}s', e.code, e.message);
-   10. }
-   11. }
-   12. }
+   ```typescript
+   try {
+     pushService.deleteToken((err: BusinessError) => {
+       if (err) {
+         hilog.error(DOMAIN, 'testTag', 'Failed to delete push token: %{public}d %{public}s', err.code, err.message);
+       } else {
+         hilog.info(DOMAIN, 'testTag', 'Succeeded in deleting push token.');
+       }
+     });
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(DOMAIN, 'testTag', 'Failed to delete push token: %{public}d %{public}s', e.code, e.message);
+   }
    ```
 
 ## Push Token更新回调
 
-说明
+**说明** 
 
 Push Token更新回调能力支持Wearable设备。并且从6.1.0(23)版本开始，新增支持Phone、Tablet、PC/2in1设备。
 
 当设备离开当前国家或地区时，可能会触发Push Token自动更新，如果应用期望感知到Push Token更新事件，需要调用on接口进行回调注册；对应的，可以调用off接口解除回调注册，解除后当Push Token更新时，应用将不会收到回调。
 
-1. 导入pushService模块。
+1. 导入pushService模块及相关公共模块。
 
+   ```typescript
+   import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+   import { pushService } from '@kit.PushKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
-   1. import { pushService } from '@kit.PushKit';
-   ```
-2. 在您项目的ability（下以PushMessageAbility为例）内导入push模块，调用on()方法接收token更新的消息。注意，您仅能使用UIAbility接收token更新消息。代码示例：
+2. 在您项目的ability（下以PushMessageAbility为例）内调用pushService.[on](../harmonyos-references/push-pushservice.md#pushserviceontokenupdate)()方法接收token更新的消息。注意，您仅能使用UIAbility接收token更新消息。代码示例：
 
-   ```
-   1. // 文件路径: src/main/ets/abilities/PushMessageAbility.ets
-   2. import { UIAbility } from '@kit.AbilityKit';
-   3. import { pushService } from '@kit.PushKit';
-   4. import { hilog } from '@kit.PerformanceAnalysisKit';
-   5. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   const DOMAIN = 0x0000;
 
-   7. // 无需新增UIAbility，在原有UIAbility的onCreate方法中调用即可。以PushMessageAbility为例
-   8. export default class PushMessageAbility extends UIAbility {
-   9. onCreate(): void {
-   10. const callBack = (data: string) => {
-   11. try {
-   12. hilog.info(0x0000, 'testTag', 'update token: %{public}s', data);
-   13. } catch (e) {
-   14. let err: BusinessError = e as BusinessError;
-   15. hilog.error(0x0000, 'testTag', 'Failed to update data: %{public}d %{public}s', err.code, err.message);
-   16. }
-   17. }
+   export default class PushMessageAbility extends UIAbility {
+     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+       // ...
+       const callBack = (data: string) => {
+         try {
+           hilog.info(DOMAIN, 'testTag', 'update token: %{public}s', data);
+         } catch (e) {
+           let err: BusinessError = e as BusinessError;
+           hilog.error(DOMAIN, 'testTag', 'Failed to update data: %{public}d %{public}s', err.code, err.message);
+         }
+       }
 
-   19. try {
-   20. // 注册token更新回调场景
-   21. pushService.on('tokenUpdate', this, callBack);
-   22. hilog.info(0x0000, 'testTag', 'Register on success');
-   23. } catch (e) {
-   24. let err: BusinessError = e as BusinessError;
-   25. hilog.error(0x0000, 'testTag', 'Register on error: %{public}d %{public}s', err.code, err.message);
-   26. }
-   27. }
+       try {
+         // 注册token更新回调场景
+         pushService.on('tokenUpdate', this, callBack);
+         hilog.info(DOMAIN, 'testTag', 'Register on success');
+       } catch (e) {
+         let err: BusinessError = e as BusinessError;
+         hilog.error(DOMAIN, 'testTag', 'Register on error: %{public}d %{public}s', err.code, err.message);
+       }
+     }
 
-   29. onDestroy(): void {
-   30. try {
-   31. // 解除注册token更新回调场景
-   32. pushService.off('tokenUpdate');
-   33. hilog.info(0x0000, 'testTag', 'Register off success');
-   34. } catch (e) {
-   35. let err: BusinessError = e as BusinessError;
-   36. hilog.error(0x0000, 'testTag', 'Register off error: %{public}d %{public}s', err.code, err.message);
-   37. }
-   38. }
-   39. }
+     onDestroy(): void {
+       hilog.info(DOMAIN, 'testTag', '%{public}s', 'PushMessageAbility onDestroy');
+
+       try {
+         // 解除注册token更新回调场景
+         pushService.off('tokenUpdate');
+         hilog.info(DOMAIN, 'testTag', 'Register off success');
+       } catch (e) {
+         let err: BusinessError = e as BusinessError;
+         hilog.error(DOMAIN, 'testTag', 'Register off error: %{public}d %{public}s', err.code, err.message);
+       }
+     }
+     // ...
+   }
    ```
 3. 在项目工程的 src/main/module.json5文件的abilities模块的**skills**标签中配置**actions**内容为**action.ohos.push.listener**（有且只能有一个ability定义该action，**若同时添加uris参数，则uris内容需为空**）。
 
-   ```
-   1. "abilities": [
-   2. {
-   3. "name": "PushMessageAbility",
-   4. "srcEntry": "./ets/abilities/PushMessageAbility.ets",
-   5. "launchType": "singleton",
-   6. "startWindowIcon": "$media:startIcon",
-   7. "startWindowBackground": "$color:start_window_background",
-   8. "exported": false,
-   9. "skills": [
-   10. {
-   11. "actions": [
-   12. "action.ohos.push.listener"
-   13. ]
-   14. }
-   15. ]
-   16. }
-   17. ]
+   ```json5
+   {
+     "name": "PushMessageAbility",
+     "srcEntry": "./ets/abilities/PushMessageAbility.ets",
+     "description": "$string:PushMessageAbility_desc",
+     "icon": "$media:layered_image",
+     "label": "$string:PushMessageAbility_label",
+     "startWindowIcon": "$media:startIcon",
+     "startWindowBackground": "$color:start_window_background",
+     "launchType": "singleton",
+     "exported": false,
+     "skills": [
+       // 保持现有skill对象不变
+       {
+         "actions": [
+           "com.app.action"
+         ]
+       },
+       // 新增一个独立的skill对象，配置actions参数
+       {
+         "actions": [
+           "action.ohos.push.listener"
+         ]
+       }
+     ]
+   // ...
+   }
    ```

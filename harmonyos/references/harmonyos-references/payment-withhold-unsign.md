@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 申请解约
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 申请解约
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:52+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6eab3de9c721734f7a48d6b0b3006d1dbe46cfa09a45723afe75d2f6dfc121b1
+scraped_at: 2026-09-02T14:53:27+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4392562ea4e3d9df86c0922fc49b9b0a5a0b5731987738ede7efa6eb0ffddab5
 ---
 
 ## 功能介绍
@@ -47,15 +47,15 @@ content_hash: sha256:6eab3de9c721734f7a48d6b0b3006d1dbe46cfa09a45723afe75d2f6dfc
 
 ## 请求示例
 
-```
-1. POST /api/v2/contract/unsign HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151442062977847","time":1684132926969,"authId":"120291744647139***","headerSign":"BpOBa8o+gJnKG+vHVI7u********************mVuKDV8iPqNJ+Y8b4XDpSi3FHgjozsWH+uLoTSIg=","bodySign":"lHjrX3dv44zyfu+PO1G+oa9tJi2********************EatA8QTjLPsSPKfM="}
-4. Accept: application/json
-5. {
-6. "mercContractCode": "2024020316555432***",
-7. "mercNo": "10132120***"
-8. }
+```json
+POST /api/v2/contract/unsign HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151442062977847","time":1684132926969,"authId":"120291744647139***","headerSign":"BpOBa8o+gJnKG+vHVI7u********************mVuKDV8iPqNJ+Y8b4XDpSi3FHgjozsWH+uLoTSIg=","bodySign":"lHjrX3dv44zyfu+PO1G+oa9tJi2********************EatA8QTjLPsSPKfM="}
+Accept: application/json
+{
+  "mercContractCode": "2024020316555432***",
+  "mercNo": "10132120***"
+}
 ```
 
 ## 响应参数
@@ -76,22 +76,22 @@ content_hash: sha256:6eab3de9c721734f7a48d6b0b3006d1dbe46cfa09a45723afe75d2f6dfc
 | subDesc | 否 | String | 业务错误描述信息。 |
 | sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
 | mercNo | 否 | String | 解约商户号。 |
-| mercContractCode | 否 | String | 商户签约协议号。 |
+| mercContractCode | 否 | String | 商户签约协议号。开发者请求签约时传入的签约协议号，由商户生成，商户需保证字段唯一性。最大长度64。 |
 | planId | 否 | String | 协议模板ID。该模板ID是商户在向华为支付[提交代扣权限申请](../harmonyos-guides/payment-password-free-pay-overview.md)时由华为支付生成。 |
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "mercContractCode": "2024020316555432***",
-5. "resultCode": "000000",
-6. "sign": "MEUCIQCFNGKlqpBiH********************6h433eRZI9A07c9NiF91jeGRXNUtc0=",
-7. "planId": "1***",
-8. "resultDesc": "success",
-9. "mercNo": "10132120***"
-10. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "mercContractCode": "2024020316555432***",
+  "resultCode": "000000",
+  "sign": "MEUCIQCFNGKlqpBiH********************6h433eRZI9A07c9NiF91jeGRXNUtc0=",
+  "planId": "1***",
+  "resultDesc": "success",
+  "mercNo": "10132120***"
+}
 ```
 
 ## 错误码

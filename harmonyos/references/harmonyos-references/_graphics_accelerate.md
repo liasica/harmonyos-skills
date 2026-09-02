@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_graphics
 title: GraphicsAccelerate
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 模块 > GraphicsAccelerate
 category: harmonyos-references
-scraped_at: 2026-04-29T14:06:17+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:5c6ea0420807fc790edb92a74c5e36964ee9fe7f1b5faa4388289737821d3099
+scraped_at: 2026-09-02T15:02:47+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:3891d2e7bf79a08e8302e1ada16335b649ba949e7ae2fdc99c73a7790e7b2d37
 ---
 
 ## 概述
-
-PhoneTabletTV
 
 提供Graphics Accelerate Kit图形渲染加速能力的相关接口。
 
@@ -20,11 +18,7 @@ PhoneTabletTV
 
 ## 汇总
 
-PhoneTabletTV
-
 ### 文件
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -37,21 +31,19 @@ PhoneTabletTV
 
 ### 结构体
 
-PhoneTabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | struct [ABR\_Vector3](_a_b_r___vector3.md) | 此结构体描述ABR三维向量。 |
 | struct [ABR\_CameraData](_a_b_r___camera_data.md) | 此结构体描述游戏应用每帧的相机运动数据，ABR会结合相机运动数据自适应调整FrameBuffer（帧缓冲，下文简称Buffer）分辨率因子。 |
 | struct [FG\_Mat4x4](_f_g___mat4x4.md) | 此结构体描述列主序4x4矩阵。列主序是指在连续的线性内存地址中，优先按列遍历矩阵元素。 |
 | struct [FG\_AlgorithmModeInfo](_f_g___algorithm_mode_info.md) | 此结构体描述超帧算法模式信息。 |
-| struct [FG\_Dimension2D](_f_g___dimension2_d.md) | 此结构体描述2D图像分辨率，以像素为单位。 |
+| struct [FG\_Dimension2D](_f_g___dimension2_d.md) | 此结构体描述2D图像分辨率，以px为单位。 |
 | struct [FG\_ResolutionInfo](_f_g___resolution_info.md) | 此结构体描述超帧输入输出图像的分辨率。 |
 | struct [FG\_Vec3D](_f_g___vec3_d.md) | 此结构体描述超帧三维向量。 |
 | struct [FG\_PerFrameExtendedCameraInfo](_f_g___per_frame_extended_camera_info.md) | 此结构体描述相机扩展信息。当视图投影矩阵的平移分量非常大时（超过十万），可以提供更加详细的相机信息以获得更加准确的超帧预测效果。 |
 | struct [FG\_IntegrationInfo](_f_g___intergration_info.md) | 此结构体描述超帧集成的信息。包括送显模式，是否需要额外缓存深度和颜色纹理，以及是否需要翻转颜色纹理。仅在[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时生效。 |
 | struct [FG\_DispatchDescription\_GLES](_f_g___dispatch_description___g_l_e_s.md) | 此结构体描述下发帧生成命令[HMS\_FG\_Dispatch\_GLES](_graphics_accelerate.md#hms_fg_dispatch_gles)需要的参数信息，每一帧都需要进行更新。该接口仅适配OpenGL ES图形API平台。 |
-| struct [FG\_ContextDescription\_VK](_f_g___context_description___v_k.md) | 此结构体描述创建超帧上下文实例[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)所需的属性信息。 |
+| struct [FG\_ContextDescription\_VK](_f_g___context_description___v_k.md) | 此结构体描述创建超帧上下文实例[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)所需的属性信息，该接口仅适配Vulkan图形API平台。 |
 | struct [FG\_ImageFormat\_VK](_f_g___image_format___v_k.md) | 此结构体描述超帧输入输出图像的格式信息，该接口仅适配Vulkan图形API平台。 |
 | struct [FG\_ImageSync\_VK](_f_g___image_sync___v_k.md) | 此结构体描述超帧输入输出图像同步状态信息，用于创建超帧图像内存屏障。该接口仅适配Vulkan图形API平台。 |
 | struct [FG\_ImageInfo\_VK](_f_g___image_info___v_k.md) | 此结构体描述超帧输入输出图像信息，该接口仅适配Vulkan图形API平台。 |
@@ -65,8 +57,6 @@ PhoneTabletTV
 | struct [OpenGTX\_NetworkLatency](_open_g_t_x___network_latency.md) | 此结构体描述当前设备网络延迟信息，游戏应用获取到网络延迟后传递此参数。该参数通常用于针对性优化网络延迟。 |
 
 ### 类型定义
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -85,18 +75,19 @@ PhoneTabletTV
 | typedef struct [FG\_IntegrationInfo](_f_g___intergration_info.md) | 此结构体描述超帧集成的信息。包括送显模式，是否需要额外缓存深度和颜色纹理，以及是否需要翻转颜色纹理。仅在[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时生效。 |
 | typedef enum [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode) | 此枚举描述超帧接口调用错误码。 |
 | typedef enum [FG\_CvvZSemantic](_graphics_accelerate.md#fg_cvvzsemantic-1) [FG\_CvvZSemantic](_graphics_accelerate.md#fg_cvvzsemantic) | 此枚举描述经过相机投影变换后，齐次裁剪空间Z/W范围及深度测试模式。 |
-| typedef struct [FG\_Dimension2D](_f_g___dimension2_d.md) [FG\_Dimension2D](_graphics_accelerate.md#fg_dimension2d) | 此结构体描述2D图像分辨率，以像素为单位。 |
+| typedef struct [FG\_Dimension2D](_f_g___dimension2_d.md) [FG\_Dimension2D](_graphics_accelerate.md#fg_dimension2d) | 此结构体描述2D图像分辨率，以px为单位。 |
 | typedef struct [FG\_ResolutionInfo](_f_g___resolution_info.md) [FG\_ResolutionInfo](_graphics_accelerate.md#fg_resolutioninfo) | 此结构体描述超帧输入输出图像的分辨率。 |
 | typedef struct [FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles) [FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles) | 此结构体描述超帧上下文，该接口仅适配OpenGL ES图形API平台。 |
 | typedef struct [FG\_DispatchDescription\_GLES](_f_g___dispatch_description___g_l_e_s.md) [FG\_DispatchDescription\_GLES](_graphics_accelerate.md#fg_dispatchdescription_gles) | 此结构体描述下发帧生成命令[HMS\_FG\_Dispatch\_GLES](_graphics_accelerate.md#hms_fg_dispatch_gles)需要的参数信息，每一帧都需要进行更新。该接口仅适配OpenGL ES图形API平台。 |
 | typedef enum [FG\_ImageFormat\_GLES](_graphics_accelerate.md#fg_imageformat_gles-1) [FG\_ImageFormat\_GLES](_graphics_accelerate.md#fg_imageformat_gles) | 此枚举描述真实渲染帧颜色缓冲区和预测帧缓冲区的图像格式。该接口仅适配OpenGL ES图形API平台。 |
 | typedef struct [FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk) [FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk) | 此结构体描述超帧上下文，该接口仅适配Vulkan图形API平台。 |
 | typedef struct [FG\_Image\_VK](_graphics_accelerate.md#fg_image_vk) [FG\_Image\_VK](_graphics_accelerate.md#fg_image_vk) | 超帧输入输出图像结构体，该接口仅适配Vulkan图形API平台。 |
-| typedef struct [FG\_ContextDescription\_VK](_f_g___context_description___v_k.md) [FG\_ContextDescription\_VK](_graphics_accelerate.md#fg_contextdescription_vk) | 此结构体描述创建超帧上下文实例[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)所需的属性信息。 |
+| typedef struct [FG\_ContextDescription\_VK](_f_g___context_description___v_k.md) [FG\_ContextDescription\_VK](_graphics_accelerate.md#fg_contextdescription_vk) | 此结构体描述创建超帧上下文实例[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)所需的属性信息，该接口仅适配Vulkan图形API平台。 |
 | typedef struct [FG\_ImageFormat\_VK](_f_g___image_format___v_k.md) [FG\_ImageFormat\_VK](_graphics_accelerate.md#fg_imageformat_vk) | 此结构体描述超帧输入输出图像的格式信息，该接口仅适配Vulkan图形API平台。 |
 | typedef struct [FG\_ImageSync\_VK](_f_g___image_sync___v_k.md) [FG\_ImageSync\_VK](_graphics_accelerate.md#fg_imagesync_vk) | 此结构体描述超帧输入输出图像同步状态信息，用于创建超帧图像内存屏障。该接口仅适配Vulkan图形API平台。 |
 | typedef struct [FG\_ImageInfo\_VK](_f_g___image_info___v_k.md) [FG\_ImageInfo\_VK](_graphics_accelerate.md#fg_imageinfo_vk) | 此结构体描述超帧输入输出图像信息，该接口仅适配Vulkan图形API平台。 |
 | typedef struct [FG\_DispatchDescription\_VK](_f_g___dispatch_description___v_k.md) [FG\_DispatchDescription\_VK](_graphics_accelerate.md#fg_dispatchdescription_vk) | 此结构体描述下发帧生成命令[HMS\_FG\_Dispatch\_VK](_graphics_accelerate.md#hms_fg_dispatch_vk)需要的参数信息，每一帧都需要进行更新。该接口仅适配Vulkan图形API平台。 |
+| typedef enum [FG\_FeatureType](_graphics_accelerate.md#fg_featuretype-1) [FG\_FeatureType](_graphics_accelerate.md#fg_featuretype) | 此枚举定义超帧的特性类型，根据平台（OPENGL ES，Vulkan）、超帧方式（内插，外插）以及算法等因素划分不同类型。 |
 | typedef enum [OpenGTX\_ErrorCode](_graphics_accelerate.md#opengtx_errorcode-1) [OpenGTX\_ErrorCode](_graphics_accelerate.md#opengtx_errorcode) | 此枚举描述OpenGTX接口调用错误码。 |
 | typedef enum [OpenGTX\_LTPO\_Mode](_graphics_accelerate.md#opengtx_ltpo_mode-1) [OpenGTX\_LTPO\_Mode](_graphics_accelerate.md#opengtx_ltpo_mode) | 此枚举描述OpenGTX\_LTPO模式类型，以控制游戏中的帧率。 |
 | typedef enum [OpenGTX\_EngineType](_graphics_accelerate.md#opengtx_enginetype-1) [OpenGTX\_EngineType](_graphics_accelerate.md#opengtx_enginetype) | 此枚举描述游戏应用的底层游戏引擎类型。 |
@@ -116,8 +107,6 @@ PhoneTabletTV
 
 ### 枚举
 
-PhoneTabletTV
-
 | 名称 | 描述 |
 | --- | --- |
 | [ABR\_RenderAPI\_Type](_graphics_accelerate.md#abr_renderapi_type-1) {  RENDER\_API\_GLES = 0  } | 此枚举描述ABR支持的图形API类型。RENDER\_API\_GLES表示OpenGL ES API。 |
@@ -128,6 +117,7 @@ PhoneTabletTV
 | [FG\_CvvZSemantic](_graphics_accelerate.md#fg_cvvzsemantic-1) {  FG\_CVV\_Z\_SEMANTIC\_MINUS\_ONE\_TO\_ONE\_FORWARD\_Z = 0,  FG\_CVV\_Z\_SEMANTIC\_ZERO\_TO\_ONE\_REVERSE\_Z = 1,  FG\_CVV\_Z\_SEMANTIC\_MINUS\_ONE\_TO\_ONE\_REVERSE\_Z = 2,  FG\_CVV\_Z\_SEMANTIC\_ZERO\_TO\_ONE\_FORWARD\_Z = 3  } | 此枚举描述经过相机投影变换后，齐次裁剪空间Z/W范围及深度测试模式。 |
 | [FG\_ImageFormat\_GLES](_graphics_accelerate.md#fg_imageformat_gles-1) {  FG\_FORMAT\_R8G8B8A8\_UNORM = 0,  FG\_FORMAT\_R11G11B10\_SFLOAT = 1,  FG\_FORMAT\_R16G16B16A16\_SFLOAT = 2  } | 此枚举描述真实渲染帧颜色缓冲区和预测帧缓冲区的图像格式。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_PresentMode](_graphics_accelerate.md#fg_presentmode-1) {  FG\_PRESENT\_BY\_GAME = 0,  FG\_PRESENT\_BY\_SYSTEM = 1  } | 定义预测帧送显模式，该模式包括两种：游戏端预测帧送显和系统端预测帧送显。 |
+| [FG\_FeatureType](_graphics_accelerate.md#fg_featuretype-1) {  INTERPOLATION\_GPU\_GLES = 0,  INTERPOLATION\_GPU\_VULKAN = 1,  EXTRAPOLATION\_GPU\_GLES = 2,  EXTRAPOLATION\_GPU\_VULKAN = 3,  INTERPOLATION\_AI\_VULKAN = 4  } | 此枚举定义超帧的特性类型，根据平台（OPENGL ES，Vulkan）、超帧方式（内插，外插）以及算法等因素划分不同类型。 |
 | [OpenGTX\_ErrorCode](_graphics_accelerate.md#opengtx_errorcode-1) {  OPENGTX\_SUCCESS = 0,  OPENGTX\_INVALID\_PARAMETER = 401,  OPENGTX\_CONTEXT\_NOT\_CONFIG = 1009502001,  OPENGTX\_CONTEXT\_NOT\_ACTIVE = 1009502002  } | 此枚举描述OpenGTX接口调用错误码。 |
 | [OpenGTX\_LTPO\_Mode](_graphics_accelerate.md#opengtx_ltpo_mode-1) {  SCENE\_MODE = 0x0001,  TOUCH\_MODE = 0x0010,  ADAPTIVE\_MODE = 0x0100  } | 此枚举描述OpenGTX\_LTPO模式类型，以控制游戏中的帧率。 |
 | [OpenGTX\_EngineType](_graphics_accelerate.md#opengtx_enginetype-1) {  UNITY = 1,  UNREAL = 2,  MESSIAH = 3,  COCOS = 4,  OTHERS\_ENGINE = 100  } | 此枚举描述游戏应用的底层游戏引擎类型。 |
@@ -137,8 +127,6 @@ PhoneTabletTV
 | [OpenGTX\_TempLevel](_graphics_accelerate.md#opengtx_templevel-1) {  TEMP\_LEVEL1 = 1,  TEMP\_LEVEL2 = 2,  TEMP\_LEVEL3 = 3,  TEMP\_LEVEL4 = 4,  TEMP\_LEVEL5 = 5,  TEMP\_LEVEL6 = 6  } | 此枚举描述设备的温度级别。 |
 
 ### 函数
-
-PhoneTabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -153,36 +141,37 @@ PhoneTabletTV
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_GetNextScale](_graphics_accelerate.md#hms_abr_getnextscale)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, float\* scale) | 获取下一帧的ABR Buffer分辨率因子。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_DestroyContext](_graphics_accelerate.md#hms_abr_destroycontext)([ABR\_Context](_graphics_accelerate.md#abr_context)\*\* context) | 销毁ABR上下文实例并释放内存资源。 |
 | [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_MarkFrameBuffer\_GLES](_graphics_accelerate.md#hms_abr_markframebuffer_gles)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context) | 标记ABR进行自适应渲染处理的GLES Buffer，需要在GLES Buffer开始渲染前调用此接口。 |
-| [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_GetScaledTexture\_GLES](_graphics_accelerate.md#hms_abr_getscaledtexture_gles)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, uint32\_t originTexture, uint32\_t\* scaledTexture) | 根据原始分辨率的GLES纹理索引获取ABR自适应缩放后的GLES纹理索引。调用前需确认原始纹理有效、渲染上下文有效。originTexture为原始纹理ID，该值不能为0，否则无法正确获取scaledTexure，接口功能失效；scaledTexture不能为空指针，否则会返回错误码ABR\_INVALID\_PARAMETER。 |
+| [ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode-1) [HMS\_ABR\_GetScaledTexture\_GLES](_graphics_accelerate.md#hms_abr_getscaledtexture_gles)([ABR\_Context](_graphics_accelerate.md#abr_context)\* context, uint32\_t originTexture, uint32\_t\* scaledTexture) | 根据原始分辨率的GLES纹理索引获取ABR自适应缩放后的GLES纹理索引。调用前需确认原始纹理有效、渲染上下文有效。originTexture为原始纹理ID，该值不能为0，否则无法正确获取scaledTexture，接口功能失效；scaledTexture不能为空指针，否则会返回错误码ABR\_INVALID\_PARAMETER。 |
+| bool [HMS\_FG\_IsFrameGenerationSupported](_graphics_accelerate.md#hms_fg_isframegenerationsupported)([FG\_FeatureType](_graphics_accelerate.md#fg_featuretype) featureType) | 表示当前设备是否支持此类型的超帧功能，不同机型支持的超帧功能不同。以AI超帧特性为例，该接口会判断当前机型是否含有NPU及NPU算力是否满足特性要求，如果不满足则会返回false。 |
 | [FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* [HMS\_FG\_CreateContext\_GLES](_graphics_accelerate.md#hms_fg_createcontext_gles)(void) | 创建超帧上下文实例，调用成功则返回指向[FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)对象的指针，失败返回nullptr。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetAlgorithmMode\_GLES](_graphics_accelerate.md#hms_fg_setalgorithmmode_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, const [FG\_AlgorithmModeInfo](_f_g___algorithm_mode_info.md)\* predictionModeInfo) | 设置超帧预测算法模式和运动估计模式，必选。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetResolution\_GLES](_graphics_accelerate.md#hms_fg_setresolution_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, const [FG\_ResolutionInfo](_f_g___resolution_info.md)\* resolutionInfo) | 设置超帧输入输出图像分辨率，必选。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetCvvZSemantic\_GLES](_graphics_accelerate.md#hms_fg_setcvvzsemantic_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, [FG\_CvvZSemantic](_graphics_accelerate.md#fg_cvvzsemantic-1) semantic) | 设置超帧齐次裁剪空间Z/W范围及深度测试函数，可选调用，未调用则默认模式设置为FG\_CVV\_Z\_SEMANTIC\_MINUS\_ONE\_TO\_ONE\_FORWARD\_Z。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetImageFormat\_GLES](_graphics_accelerate.md#hms_fg_setimageformat_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, [FG\_ImageFormat\_GLES](_graphics_accelerate.md#fg_imageformat_gles-1) format) | 设置真实渲染帧颜色缓冲区和预测帧缓冲区的图像格式，可选调用，未调用则模式默认设置为FG\_FORMAT\_R8G8B8A8\_UNORM。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetDepthStencilYDirectionInverted\_GLES](_graphics_accelerate.md#hms_fg_setdepthstencilydirectioninverted_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, bool inverted) | 设置颜色缓冲区相对深度模板缓冲区基于y轴翻转的标志位，可选调用，未调用则默认无翻转。如果渲染管线中颜色缓冲区相对深度模板缓冲区基于y轴翻转了180度，则设为true；如果颜色缓冲区与深度模板缓冲区绘制方向一致则设为false。该接口仅适配OpenGL ES图形API平台。 |
-| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Activate\_GLES](_graphics_accelerate.md#hms_fg_activate_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context) | 激活超帧上下文实例。已激活的超帧实例可调用[HMS\_FG\_Dispatch\_GLES](_graphics_accelerate.md#hms_fg_dispatch_gles)接口生成预测帧， 激活超帧上下文实例前必须先调用[HMS\_FG\_SetAlgorithmMode\_GLES](_graphics_accelerate.md#hms_fg_setalgorithmmode_gles)和[HMS\_FG\_SetResolution\_GLES](_graphics_accelerate.md#hms_fg_setresolution_gles)接口完成配置。该接口仅适配OpenGL ES图形API平台。 |
-| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Deactivate\_GLES](_graphics_accelerate.md#hms_fg_deactivate_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context) | 去激活超帧上下文实例，可通过[HMS\_FG\_Activate\_GLES](_graphics_accelerate.md#hms_fg_activate_gles)接口重新激活。 |
+| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Activate\_GLES](_graphics_accelerate.md#hms_fg_activate_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context) | 激活超帧上下文实例。已激活的超帧实例可调用[HMS\_FG\_Dispatch\_GLES](_graphics_accelerate.md#hms_fg_dispatch_gles)接口生成预测帧，激活超帧上下文实例前必须先调用[HMS\_FG\_SetAlgorithmMode\_GLES](_graphics_accelerate.md#hms_fg_setalgorithmmode_gles)和[HMS\_FG\_SetResolution\_GLES](_graphics_accelerate.md#hms_fg_setresolution_gles)接口完成配置。该接口仅适配OpenGL ES图形API平台。 |
+| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Deactivate\_GLES](_graphics_accelerate.md#hms_fg_deactivate_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context) | 去激活超帧上下文实例，可通过[HMS\_FG\_Activate\_GLES](_graphics_accelerate.md#hms_fg_activate_gles)接口重新激活。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_IsActive\_GLES](_graphics_accelerate.md#hms_fg_isactive_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, bool\* isActive) | 查询超帧上下文实例是否处于激活状态。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Dispatch\_GLES](_graphics_accelerate.md#hms_fg_dispatch_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, const [FG\_DispatchDescription\_GLES](_f_g___dispatch_description___g_l_e_s.md)\* desc) | 配置帧预测所需的参数信息，生成预测帧，当前处于激活状态时有效，该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetExtendedCameraInfo\_GLES](_graphics_accelerate.md#hms_fg_setextendedcamerainfo_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, const [FG\_PerFrameExtendedCameraInfo](_f_g___per_frame_extended_camera_info.md)\* info) | 设置超帧相机扩展属性信息，当视图投影矩阵的平移分量非常大时，提供该信息以获得更加准确的超帧效果。可选调用，该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_DestroyContext\_GLES](_graphics_accelerate.md#hms_fg_destroycontext_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\*\* context) | 销毁超帧上下文实例并释放内存资源。该接口仅适配OpenGL ES图形API平台。 |
-| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetIntegrationMode\_GLES](_graphics_accelerate.md#hms_fg_setintegrationmode_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, const [FG\_IntegrationInfo](_f_g___intergration_info.md)\* integrationInfo) | 设置帧预测集成信息，当[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时，[FG\_IntegrationInfo](_f_g___intergration_info.md)中的presentMode、needDepthAndColorCache、needFlipColorTexture成员才会生效。其他情况下这些参数应忽略或设置为默认值。该接口仅适配OpenGL ES图形API平台。 |
+| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetIntegrationMode\_GLES](_graphics_accelerate.md#hms_fg_setintegrationmode_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, const [FG\_IntegrationInfo](_f_g___intergration_info.md)\* integrationInfo) | 设置超帧预测的集成信息，当[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时，[FG\_IntegrationInfo](_f_g___intergration_info.md)中的presentMode、textureCachedByGame、needFlipInputColor、needFlipOutputColor成员才会生效。其他情况下这些参数应忽略或设置为默认值。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetUiPredictionEnabled\_GLES](_graphics_accelerate.md#hms_fg_setuipredictionenabled_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, bool isEnabled) | 选择是否启用UI预测功能，这个功能只能在系统送显模式下启用，在游戏送显模式下无效。该接口仅适配OpenGL ES图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetTargetFps\_GLES](_graphics_accelerate.md#hms_fg_settargetfps_gles)([FG\_Context\_GLES](_graphics_accelerate.md#fg_context_gles)\* context, int targetFps) | 设置超帧后的目标帧率，这个设置仅在系统送显模式下生效，对游戏送显模式无影响。参数targetFps的取值范围[30, 144]，旨在确保在不同平台上的性能稳定性和用户体验一致性。开发者应根据实际业务场景选择合适的帧率。该接口在游戏初次上架之后生效且仅适配OpenGL ES图形API平台。 |
 | [FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* [HMS\_FG\_CreateContext\_VK](_graphics_accelerate.md#hms_fg_createcontext_vk)(const [FG\_ContextDescription\_VK](_f_g___context_description___v_k.md)\* contextDescription) | 创建超帧上下文实例，调用成功则返回指向[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)对象的指针，失败返回nullptr。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetAlgorithmMode\_VK](_graphics_accelerate.md#hms_fg_setalgorithmmode_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, const [FG\_AlgorithmModeInfo](_f_g___algorithm_mode_info.md)\* predictionModeInfo) | 设置超帧算法模式，包括预测算法模式和运动估计模式，必选。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetResolution\_VK](_graphics_accelerate.md#hms_fg_setresolution_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, const [FG\_ResolutionInfo](_f_g___resolution_info.md)\* resolutionInfo) | 设置超帧输入输出图像分辨率，必选。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetCvvZSemantic\_VK](_graphics_accelerate.md#hms_fg_setcvvzsemantic_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, [FG\_CvvZSemantic](_graphics_accelerate.md#fg_cvvzsemantic-1) semantic) | 设置超帧齐次裁剪空间Z/W范围及深度测试函数，可选调用，未调用则默认模式设置为FG\_CVV\_Z\_SEMANTIC\_ZERO\_TO\_ONE\_FORWARD\_Z。 该接口仅适配Vulkan图形API平台。 |
-| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetImageFormat\_VK](_graphics_accelerate.md#hms_fg_setimageformat_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, const [FG\_ImageFormat\_VK](_f_g___image_format___v_k.md)\* format) | 设置超帧输入输出图像格式，可选调用。未调用则真实帧颜色缓冲区和预测帧缓冲区图像格式默认为VK\_FORMAT\_R8G8B8A8\_UNORM； 深度模板缓冲区图像格式默认为VK\_FORMAT\_D24\_UNORM\_S8\_UINT。该接口仅适配Vulkan图形API平台。 |
+| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetImageFormat\_VK](_graphics_accelerate.md#hms_fg_setimageformat_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, const [FG\_ImageFormat\_VK](_f_g___image_format___v_k.md)\* format) | 设置超帧输入输出图像格式，可选调用。未调用则真实帧颜色缓冲区和预测帧缓冲区图像格式默认为VK\_FORMAT\_R8G8B8A8\_UNORM；深度模板缓冲区图像格式默认为VK\_FORMAT\_D24\_UNORM\_S8\_UINT。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetDepthStencilYDirectionInverted\_VK](_graphics_accelerate.md#hms_fg_setdepthstencilydirectioninverted_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, bool inverted) | 设置颜色缓冲区相对深度模板缓冲区是否存在y轴翻转的标志位，可选调用，未调用则默认无翻转。如果渲染管线中颜色缓冲区相对深度模板缓冲区基于y轴翻转了180度，则设为true；如果颜色缓冲区与深度模板缓冲区绘制方向一致则设为false。该接口仅适配Vulkan图形API平台。 |
-| [FG\_Image\_VK](_graphics_accelerate.md#fg_image_vk)\* [HMS\_FG\_CreateImage\_VK](_graphics_accelerate.md#hms_fg_createimage_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, VkImage image, VkImageView view) | 创建超帧输入输出图像实例。真实帧颜色缓冲区、深度模板缓冲区、预测帧缓冲区均需要通过该接口创建对应的图像实例，并传入预测帧生成接口[HMS\_FG\_Dispatch\_VK](_graphics_accelerate.md#hms_fg_dispatch_vk)进行预测帧绘制。该接口将用户提供的图像资源和超帧算法实现之间建立关联。 |
-| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_DestroyImage\_VK](_graphics_accelerate.md#hms_fg_destroyimage_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, [FG\_Image\_VK](_graphics_accelerate.md#fg_image_vk)\* image) | 销毁超帧输入输出图像实例，取消对应关联。 |
+| [FG\_Image\_VK](_graphics_accelerate.md#fg_image_vk)\* [HMS\_FG\_CreateImage\_VK](_graphics_accelerate.md#hms_fg_createimage_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, VkImage image, VkImageView view) | 创建超帧输入输出图像实例。真实帧颜色缓冲区、深度模板缓冲区、预测帧缓冲区均需要通过该接口创建对应的图像实例，并传入预测帧生成接口[HMS\_FG\_Dispatch\_VK](_graphics_accelerate.md#hms_fg_dispatch_vk)进行预测帧绘制。该接口将用户提供的图像资源和超帧算法实现之间建立关联且仅适配Vulkan图形API平台。 |
+| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_DestroyImage\_VK](_graphics_accelerate.md#hms_fg_destroyimage_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, [FG\_Image\_VK](_graphics_accelerate.md#fg_image_vk)\* image) | 销毁超帧输入输出图像实例，取消对应关联。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Activate\_VK](_graphics_accelerate.md#hms_fg_activate_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context) | 激活超帧上下文实例。已激活的超帧实例可调用[HMS\_FG\_Dispatch\_VK](_graphics_accelerate.md#hms_fg_dispatch_vk)接口生成预测帧，激活超帧上下文实例前必须先调用[HMS\_FG\_SetAlgorithmMode\_VK](_graphics_accelerate.md#hms_fg_setalgorithmmode_vk)和[HMS\_FG\_SetResolution\_VK](_graphics_accelerate.md#hms_fg_setresolution_vk)接口完成配置。该接口仅适配Vulkan图形API平台。 |
-| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Deactivate\_VK](_graphics_accelerate.md#hms_fg_deactivate_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context) | 去激活超帧上下文实例，可通过[HMS\_FG\_Activate\_VK](_graphics_accelerate.md#hms_fg_activate_vk)接口重新激活。 |
+| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Deactivate\_VK](_graphics_accelerate.md#hms_fg_deactivate_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context) | 去激活超帧上下文实例，可通过[HMS\_FG\_Activate\_VK](_graphics_accelerate.md#hms_fg_activate_vk)接口重新激活。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_IsActive\_VK](_graphics_accelerate.md#hms_fg_isactive_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, bool\* isActive) | 查询超帧上下文实例是否处于激活状态。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_Dispatch\_VK](_graphics_accelerate.md#hms_fg_dispatch_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, const [FG\_DispatchDescription\_VK](_f_g___dispatch_description___v_k.md)\* desc) | 配置帧预测所需的参数信息，生成预测帧，当前处于激活状态时有效，该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_DestroyContext\_VK](_graphics_accelerate.md#hms_fg_destroycontext_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\*\* context) | 销毁超帧上下文实例并释放内存资源，该接口仅适配Vulkan图形API平台。 |
-| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode) [HMS\_FG\_SetIntegrationMode\_VK](_graphics_accelerate.md#hms_fg_setintegrationmode_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, const [FG\_IntegrationInfo](_f_g___intergration_info.md)\* integrationInfo) | 设置帧预测集成信息，当[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时，[FG\_IntegrationInfo](_f_g___intergration_info.md)中的presentMode、needDepthAndColorCache、needFlipColorTexture成员才会生效。其他情况下这些参数应忽略或设置为默认值。该接口仅适配Vulkan图形API平台。 |
+| [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode) [HMS\_FG\_SetIntegrationMode\_VK](_graphics_accelerate.md#hms_fg_setintegrationmode_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, const [FG\_IntegrationInfo](_f_g___intergration_info.md)\* integrationInfo) | 设置超帧预测的集成信息，当[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时，[FG\_IntegrationInfo](_f_g___intergration_info.md)中的presentMode、textureCachedByGame、needFlipInputColor、needFlipOutputColor成员才会生效。其他情况下这些参数应忽略或设置为默认值。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetUiPredictionEnabled\_VK](_graphics_accelerate.md#hms_fg_setuipredictionenabled_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, bool isEnabled) | 选择是否启用UI预测功能，这个功能只能在系统送显模式下启用，在游戏送显模式下无效。该接口仅适配Vulkan图形API平台。 |
 | [FG\_ErrorCode](_graphics_accelerate.md#fg_errorcode-1) [HMS\_FG\_SetTargetFps\_VK](_graphics_accelerate.md#hms_fg_settargetfps_vk)([FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)\* context, int targetFps) | 设置超帧后的目标帧率，这个设置仅在系统送显模式下生效，对游戏送显模式无影响。参数targetFps的取值范围[30, 144]，旨在确保在不同平台上的性能稳定性和用户体验一致性。开发者应根据实际业务场景选择合适的帧率。该接口在游戏初次上架之后生效且仅适配Vulkan图形API平台。 |
 | [OpenGTX\_Context](_graphics_accelerate.md#opengtx_context)\* [HMS\_OpenGTX\_CreateContext](_graphics_accelerate.md#hms_opengtx_createcontext)([OpenGTX\_DeviceInfoCallback](_graphics_accelerate.md#opengtx_deviceinfocallback) deviceInfoCallback) | 创建OpenGTX上下文实例，每次调用会新建[OpenGTX\_Context](_graphics_accelerate.md#opengtx_context)对象，并返回指向[OpenGTX\_Context](_graphics_accelerate.md#opengtx_context)对象的指针。 |
@@ -196,14 +185,10 @@ PhoneTabletTV
 
 ## 类型定义说明
 
-PhoneTabletTV
-
 ### ABR\_CameraData
 
-PhoneTabletTV
-
-```
-1. typedef struct ABR_CameraData ABR_CameraData
+```c
+typedef struct ABR_CameraData ABR_CameraData
 ```
 
 **描述**
@@ -214,10 +199,8 @@ PhoneTabletTV
 
 ### ABR\_Context
 
-PhoneTabletTV
-
-```
-1. typedef struct ABR_Context ABR_Context
+```c
+typedef struct ABR_Context ABR_Context
 ```
 
 **描述**
@@ -228,10 +211,8 @@ PhoneTabletTV
 
 ### ABR\_ErrorCode
 
-PhoneTabletTV
-
-```
-1. typedef enum ABR_ErrorCode ABR_ErrorCode
+```c
+typedef enum ABR_ErrorCode ABR_ErrorCode
 ```
 
 **描述**
@@ -242,10 +223,8 @@ PhoneTabletTV
 
 ### ABR\_RenderAPI\_Type
 
-PhoneTabletTV
-
-```
-1. typedef enum ABR_RenderAPI_Type ABR_RenderAPI_Type
+```c
+typedef enum ABR_RenderAPI_Type ABR_RenderAPI_Type
 ```
 
 **描述**
@@ -256,10 +235,8 @@ PhoneTabletTV
 
 ### ABR\_Vector3
 
-PhoneTabletTV
-
-```
-1. typedef struct ABR_Vector3 ABR_Vector3
+```c
+typedef struct ABR_Vector3 ABR_Vector3
 ```
 
 **描述**
@@ -270,10 +247,8 @@ PhoneTabletTV
 
 ### FG\_AlgorithmModeInfo
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_AlgorithmModeInfo FG_AlgorithmModeInfo
+```c
+typedef struct FG_AlgorithmModeInfo FG_AlgorithmModeInfo
 ```
 
 **描述**
@@ -284,10 +259,8 @@ PhoneTabletTV
 
 ### FG\_Context\_GLES
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_Context_GLES FG_Context_GLES
+```c
+typedef struct FG_Context_GLES FG_Context_GLES
 ```
 
 **描述**
@@ -298,10 +271,8 @@ PhoneTabletTV
 
 ### FG\_Context\_VK
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_Context_VK FG_Context_VK
+```c
+typedef struct FG_Context_VK FG_Context_VK
 ```
 
 **描述**
@@ -312,24 +283,20 @@ PhoneTabletTV
 
 ### FG\_ContextDescription\_VK
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_ContextDescription_VK FG_ContextDescription_VK
+```c
+typedef struct FG_ContextDescription_VK FG_ContextDescription_VK
 ```
 
 **描述**
 
-此结构体描述创建超帧上下文实例[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)所需的属性信息。
+此结构体描述创建超帧上下文实例[FG\_Context\_VK](_graphics_accelerate.md#fg_context_vk)所需的属性信息，该接口仅适配Vulkan图形API平台。
 
 **起始版本：** 5.0.0(12)
 
 ### FG\_CvvZSemantic
 
-PhoneTabletTV
-
-```
-1. typedef enum FG_CvvZSemantic FG_CvvZSemantic
+```c
+typedef enum FG_CvvZSemantic FG_CvvZSemantic
 ```
 
 **描述**
@@ -340,24 +307,20 @@ PhoneTabletTV
 
 ### FG\_Dimension2D
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_Dimension2D FG_Dimension2D
+```c
+typedef struct FG_Dimension2D FG_Dimension2D
 ```
 
 **描述**
 
-此结构体描述2D图像分辨率，以像素为单位。
+此结构体描述2D图像分辨率，以px为单位。
 
 **起始版本：** 5.0.0(12)
 
 ### FG\_DispatchDescription\_GLES
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_DispatchDescription_GLES FG_DispatchDescription_GLES
+```c
+typedef struct FG_DispatchDescription_GLES FG_DispatchDescription_GLES
 ```
 
 **描述**
@@ -368,10 +331,8 @@ PhoneTabletTV
 
 ### FG\_DispatchDescription\_VK
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_DispatchDescription_VK FG_DispatchDescription_VK
+```c
+typedef struct FG_DispatchDescription_VK FG_DispatchDescription_VK
 ```
 
 **描述**
@@ -382,10 +343,8 @@ PhoneTabletTV
 
 ### FG\_ErrorCode
 
-PhoneTabletTV
-
-```
-1. typedef enum FG_ErrorCode FG_ErrorCode
+```c
+typedef enum FG_ErrorCode FG_ErrorCode
 ```
 
 **描述**
@@ -396,10 +355,8 @@ PhoneTabletTV
 
 ### FG\_Image\_VK
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_Image_VK FG_Image_VK
+```c
+typedef struct FG_Image_VK FG_Image_VK
 ```
 
 **描述**
@@ -410,10 +367,8 @@ PhoneTabletTV
 
 ### FG\_ImageFormat\_GLES
 
-PhoneTabletTV
-
-```
-1. typedef enum FG_ImageFormat_GLES FG_ImageFormat_GLES
+```c
+typedef enum FG_ImageFormat_GLES FG_ImageFormat_GLES
 ```
 
 **描述**
@@ -424,10 +379,8 @@ PhoneTabletTV
 
 ### FG\_ImageFormat\_VK
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_ImageFormat_VK FG_ImageFormat_VK
+```c
+typedef struct FG_ImageFormat_VK FG_ImageFormat_VK
 ```
 
 **描述**
@@ -438,38 +391,32 @@ PhoneTabletTV
 
 ### FG\_ImageInfo\_VK
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_ImageInfo_VK FG_ImageInfo_VK
+```c
+typedef struct FG_ImageInfo_VK FG_ImageInfo_VK
 ```
 
 **描述**
 
-此结构体描述超帧输入输出图像信息。
+此结构体描述超帧输入输出图像信息，该接口仅适配Vulkan图形API平台。
 
 **起始版本：** 5.0.0(12)
 
 ### FG\_ImageSync\_VK
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_ImageSync_VK FG_ImageSync_VK
+```c
+typedef struct FG_ImageSync_VK FG_ImageSync_VK
 ```
 
 **描述**
 
-此结构体描述超帧输入输出图像同步状态信息，用于创建超帧图像内存屏障。
+此结构体描述超帧输入输出图像同步状态信息，用于创建超帧图像内存屏障。该接口仅适配Vulkan图形API平台。
 
 **起始版本：** 5.0.0(12)
 
 ### FG\_Mat4x4
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_Mat4x4 FG_Mat4x4
+```c
+typedef struct FG_Mat4x4 FG_Mat4x4
 ```
 
 **描述**
@@ -480,10 +427,8 @@ PhoneTabletTV
 
 ### FG\_MeMode
 
-PhoneTabletTV
-
-```
-1. typedef enum FG_MeMode FG_MeMode
+```c
+typedef enum FG_MeMode FG_MeMode
 ```
 
 **描述**
@@ -494,10 +439,8 @@ PhoneTabletTV
 
 ### FG\_PredictionMode
 
-PhoneTabletTV
-
-```
-1. typedef enum FG_PredictionMode FG_PredictionMode
+```c
+typedef enum FG_PredictionMode FG_PredictionMode
 ```
 
 **描述**
@@ -508,10 +451,8 @@ PhoneTabletTV
 
 ### FG\_PresentMode
 
-PhoneTabletTV
-
-```
-1. typedef enum FG_PresentMode FG_PresentMode
+```c
+typedef enum FG_PresentMode FG_PresentMode
 ```
 
 **描述**
@@ -520,12 +461,22 @@ PhoneTabletTV
 
 **起始版本：** 5.1.0(18)
 
+### FG\_FeatureType
+
+```c
+typedef enum FG_FeatureType FG_FeatureType
+```
+
+**描述**
+
+此枚举定义超帧的特性类型，根据平台（OPENGL ES，Vulkan）、超帧方式（内插，外插）以及算法等因素划分不同类型。
+
+**起始版本：** 26.0.0
+
 ### FG\_ResolutionInfo
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_ResolutionInfo FG_ResolutionInfo
+```c
+typedef struct FG_ResolutionInfo FG_ResolutionInfo
 ```
 
 **描述**
@@ -536,10 +487,8 @@ PhoneTabletTV
 
 ### FG\_Vec3D
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_Vec3D FG_Vec3D
+```c
+typedef struct FG_Vec3D FG_Vec3D
 ```
 
 **描述**
@@ -550,10 +499,8 @@ PhoneTabletTV
 
 ### FG\_PerFrameExtendedCameraInfo
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_PerFrameExtendedCameraInfo FG_PerFrameExtendedCameraInfo
+```c
+typedef struct FG_PerFrameExtendedCameraInfo FG_PerFrameExtendedCameraInfo
 ```
 
 **描述**
@@ -564,10 +511,8 @@ PhoneTabletTV
 
 ### FG\_IntegrationInfo
 
-PhoneTabletTV
-
-```
-1. typedef struct FG_IntegrationInfo
+```c
+typedef struct FG_IntegrationInfo
 ```
 
 **描述**
@@ -578,10 +523,8 @@ PhoneTabletTV
 
 ### OpenGTX\_ConfigDescription
 
-PhoneTabletTV
-
-```
-1. typedef struct OpenGTX_ConfigDescription OpenGTX_ConfigDescription
+```c
+typedef struct OpenGTX_ConfigDescription OpenGTX_ConfigDescription
 ```
 
 **描述**
@@ -592,10 +535,8 @@ PhoneTabletTV
 
 ### OpenGTX\_Context
 
-PhoneTabletTV
-
-```
-1. typedef struct OpenGTX_Context OpenGTX_Context
+```c
+typedef struct OpenGTX_Context OpenGTX_Context
 ```
 
 **描述**
@@ -606,10 +547,8 @@ PhoneTabletTV
 
 ### OpenGTX\_DeviceInfoCallback
 
-PhoneTabletTV
-
-```
-1. typedef void(* OpenGTX_DeviceInfoCallback) (OpenGTX_TempLevel)
+```c
+typedef void(* OpenGTX_DeviceInfoCallback) (OpenGTX_TempLevel)
 ```
 
 **描述**
@@ -626,10 +565,8 @@ PhoneTabletTV
 
 ### OpenGTX\_EngineType
 
-PhoneTabletTV
-
-```
-1. typedef enum OpenGTX_EngineType OpenGTX_EngineType
+```c
+typedef enum OpenGTX_EngineType OpenGTX_EngineType
 ```
 
 **描述**
@@ -640,10 +577,8 @@ PhoneTabletTV
 
 ### OpenGTX\_ErrorCode
 
-PhoneTabletTV
-
-```
-1. typedef enum OpenGTX_ErrorCode OpenGTX_ErrorCode
+```c
+typedef enum OpenGTX_ErrorCode OpenGTX_ErrorCode
 ```
 
 **描述**
@@ -654,10 +589,8 @@ PhoneTabletTV
 
 ### OpenGTX\_FrameRenderInfo
 
-PhoneTabletTV
-
-```
-1. typedef struct OpenGTX_FrameRenderInfo OpenGTX_FrameRenderInfo
+```c
+typedef struct OpenGTX_FrameRenderInfo OpenGTX_FrameRenderInfo
 ```
 
 **描述**
@@ -668,10 +601,8 @@ PhoneTabletTV
 
 ### OpenGTX\_GameSceneInfo
 
-PhoneTabletTV
-
-```
-1. typedef struct OpenGTX_GameSceneInfo OpenGTX_GameSceneInfo
+```c
+typedef struct OpenGTX_GameSceneInfo OpenGTX_GameSceneInfo
 ```
 
 **描述**
@@ -682,10 +613,8 @@ PhoneTabletTV
 
 ### OpenGTX\_GameType
 
-PhoneTabletTV
-
-```
-1. typedef enum OpenGTX_GameType OpenGTX_GameType
+```c
+typedef enum OpenGTX_GameType OpenGTX_GameType
 ```
 
 **描述**
@@ -696,10 +625,8 @@ PhoneTabletTV
 
 ### OpenGTX\_LTPO\_Mode
 
-PhoneTabletTV
-
-```
-1. typedef enum OpenGTX_LTPO_Mode OpenGTX_LTPO_Mode
+```c
+typedef enum OpenGTX_LTPO_Mode OpenGTX_LTPO_Mode
 ```
 
 **描述**
@@ -710,10 +637,8 @@ PhoneTabletTV
 
 ### OpenGTX\_NetworkInfo
 
-PhoneTabletTV
-
-```
-1. typedef struct OpenGTX_NetworkInfo OpenGTX_NetworkInfo
+```c
+typedef struct OpenGTX_NetworkInfo OpenGTX_NetworkInfo
 ```
 
 **描述**
@@ -724,10 +649,8 @@ PhoneTabletTV
 
 ### OpenGTX\_NetworkLatency
 
-PhoneTabletTV
-
-```
-1. typedef struct OpenGTX_NetworkLatency OpenGTX_NetworkLatency
+```c
+typedef struct OpenGTX_NetworkLatency OpenGTX_NetworkLatency
 ```
 
 **描述**
@@ -738,10 +661,8 @@ PhoneTabletTV
 
 ### OpenGTX\_PictureQualityMaxLevel
 
-PhoneTabletTV
-
-```
-1. typedef enum OpenGTX_PictureQualityMaxLevel OpenGTX_PictureQualityMaxLevel
+```c
+typedef enum OpenGTX_PictureQualityMaxLevel OpenGTX_PictureQualityMaxLevel
 ```
 
 **描述**
@@ -752,10 +673,8 @@ PhoneTabletTV
 
 ### OpenGTX\_ResolutionValue
 
-PhoneTabletTV
-
-```
-1. typedef struct OpenGTX_ResolutionValue OpenGTX_ResolutionValue
+```c
+typedef struct OpenGTX_ResolutionValue OpenGTX_ResolutionValue
 ```
 
 **描述**
@@ -766,10 +685,8 @@ PhoneTabletTV
 
 ### OpenGTX\_SceneID
 
-PhoneTabletTV
-
-```
-1. typedef enum OpenGTX_SceneID OpenGTX_SceneID
+```c
+typedef enum OpenGTX_SceneID OpenGTX_SceneID
 ```
 
 **描述**
@@ -780,10 +697,8 @@ PhoneTabletTV
 
 ### OpenGTX\_TempLevel
 
-PhoneTabletTV
-
-```
-1. typedef enum OpenGTX_TempLevel OpenGTX_TempLevel
+```c
+typedef enum OpenGTX_TempLevel OpenGTX_TempLevel
 ```
 
 **描述**
@@ -794,10 +709,8 @@ PhoneTabletTV
 
 ### OpenGTX\_Vector3
 
-PhoneTabletTV
-
-```
-1. typedef struct OpenGTX_Vector3 OpenGTX_Vector3
+```c
+typedef struct OpenGTX_Vector3 OpenGTX_Vector3
 ```
 
 **描述**
@@ -808,14 +721,10 @@ PhoneTabletTV
 
 ## 枚举类型说明
 
-PhoneTabletTV
-
 ### ABR\_ErrorCode
 
-PhoneTabletTV
-
-```
-1. enum ABR_ErrorCode
+```c
+enum ABR_ErrorCode
 ```
 
 **描述**
@@ -836,10 +745,8 @@ PhoneTabletTV
 
 ### ABR\_RenderAPI\_Type
 
-PhoneTabletTV
-
-```
-1. enum ABR_RenderAPI_Type
+```c
+enum ABR_RenderAPI_Type
 ```
 
 **描述**
@@ -854,10 +761,8 @@ PhoneTabletTV
 
 ### FG\_CvvZSemantic
 
-PhoneTabletTV
-
-```
-1. enum FG_CvvZSemantic
+```c
+enum FG_CvvZSemantic
 ```
 
 **描述**
@@ -875,10 +780,8 @@ PhoneTabletTV
 
 ### FG\_ErrorCode
 
-PhoneTabletTV
-
-```
-1. enum FG_ErrorCode
+```c
+enum FG_ErrorCode
 ```
 
 **描述**
@@ -897,10 +800,8 @@ PhoneTabletTV
 
 ### FG\_ImageFormat\_GLES
 
-PhoneTabletTV
-
-```
-1. enum FG_ImageFormat_GLES
+```c
+enum FG_ImageFormat_GLES
 ```
 
 **描述**
@@ -917,10 +818,8 @@ PhoneTabletTV
 
 ### FG\_MeMode
 
-PhoneTabletTV
-
-```
-1. enum FG_MeMode
+```c
+enum FG_MeMode
 ```
 
 **描述**
@@ -932,14 +831,12 @@ PhoneTabletTV
 | 枚举值 | 描述 |
 | --- | --- |
 | FG\_ME\_MODE\_BASIC | 基础模式，即利用历史帧颜色信息、深度信息及相机矩阵信息进行运动估计。 |
-| FG\_ME\_MODE\_ENHANCED | 增强模式，即利用历史帧中的几何顶点信息进行更精准的运动估计，生成的预测帧效果更优。该模式需要开发者对绘制顶点的draw call进行标记。不传入深度图的情况下切换到AI超帧算法进行预测。 |
+| FG\_ME\_MODE\_ENHANCED | 增强模式，即利用历史帧中的几何顶点信息进行更精准的运动估计，生成的预测帧效果更优。该模式需要开发者对绘制顶点的Draw Call进行标记。不传入深度图的情况下切换到AI超帧算法进行预测。 |
 
 ### FG\_PredictionMode
 
-PhoneTabletTV
-
-```
-1. enum FG_PredictionMode
+```c
+enum FG_PredictionMode
 ```
 
 **描述**
@@ -955,10 +852,8 @@ PhoneTabletTV
 
 ### FG\_PresentMode
 
-PhoneTabletTV
-
-```
-1. enum FG_PresentMode
+```c
+enum FG_PresentMode
 ```
 
 **描述**
@@ -972,12 +867,30 @@ PhoneTabletTV
 | FG\_PRESENT\_BY\_GAME | 游戏申请和管理预测帧，并负责预测帧的送显。 |
 | FG\_PRESENT\_BY\_SYSTEM | 系统申请和管理预测帧，并负责预测帧的送显。 |
 
+### FG\_FeatureType
+
+```c
+enum FG_FeatureType
+```
+
+**描述**
+
+此枚举定义超帧的特性类型，根据平台（OPENGL ES，Vulkan）、超帧方式（内插，外插）以及算法等因素划分不同类型。
+
+**起始版本：** 26.0.0
+
+| 枚举值 | 描述 |
+| --- | --- |
+| INTERPOLATION\_GPU\_GLES | OpenGL ES平台上的GPU内插。 |
+| INTERPOLATION\_GPU\_VULKAN | Vulkan平台上的GPU内插。 |
+| EXTRAPOLATION\_GPU\_GLES | OpenGL ES平台上的GPU外插。 |
+| EXTRAPOLATION\_GPU\_VULKAN | Vulkan平台上的GPU外插。 |
+| INTERPOLATION\_AI\_VULKAN | Vulkan平台上的AI内插。 |
+
 ### OpenGTX\_EngineType
 
-PhoneTabletTV
-
-```
-1. enum OpenGTX_EngineType
+```c
+enum OpenGTX_EngineType
 ```
 
 **描述**
@@ -996,10 +909,8 @@ PhoneTabletTV
 
 ### OpenGTX\_ErrorCode
 
-PhoneTabletTV
-
-```
-1. enum OpenGTX_ErrorCode
+```c
+enum OpenGTX_ErrorCode
 ```
 
 **描述**
@@ -1017,10 +928,8 @@ PhoneTabletTV
 
 ### OpenGTX\_GameType
 
-PhoneTabletTV
-
-```
-1. enum OpenGTX_GameType
+```c
+enum OpenGTX_GameType
 ```
 
 **描述**
@@ -1039,10 +948,8 @@ PhoneTabletTV
 
 ### OpenGTX\_LTPO\_Mode
 
-PhoneTabletTV
-
-```
-1. enum OpenGTX_LTPO_Mode
+```c
+enum OpenGTX_LTPO_Mode
 ```
 
 **描述**
@@ -1059,10 +966,8 @@ PhoneTabletTV
 
 ### OpenGTX\_PictureQualityMaxLevel
 
-PhoneTabletTV
-
-```
-1. enum OpenGTX_PictureQualityMaxLevel
+```c
+enum OpenGTX_PictureQualityMaxLevel
 ```
 
 **描述**
@@ -1081,10 +986,8 @@ PhoneTabletTV
 
 ### OpenGTX\_SceneID
 
-PhoneTabletTV
-
-```
-1. enum OpenGTX_SceneID
+```c
+enum OpenGTX_SceneID
 ```
 
 **描述**
@@ -1106,10 +1009,8 @@ PhoneTabletTV
 
 ### OpenGTX\_TempLevel
 
-PhoneTabletTV
-
-```
-1. enum OpenGTX_TempLevel
+```c
+enum OpenGTX_TempLevel
 ```
 
 **描述**
@@ -1129,14 +1030,10 @@ PhoneTabletTV
 
 ## 函数说明
 
-PhoneTabletTV
-
 ### HMS\_ABR\_Activate()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_Activate(ABR_Context* context)
+```c
+ABR_ErrorCode HMS_ABR_Activate(ABR_Context* context)
 ```
 
 **描述**
@@ -1157,10 +1054,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_CreateContext()
 
-PhoneTabletTV
-
-```
-1. ABR_Context* HMS_ABR_CreateContext(ABR_RenderAPI_Type type)
+```c
+ABR_Context* HMS_ABR_CreateContext(ABR_RenderAPI_Type type)
 ```
 
 **描述**
@@ -1181,10 +1076,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_Deactivate()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_Deactivate(ABR_Context* context)
+```c
+ABR_ErrorCode HMS_ABR_Deactivate(ABR_Context* context)
 ```
 
 **描述**
@@ -1205,10 +1098,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_DestroyContext()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_DestroyContext(ABR_Context** context)
+```c
+ABR_ErrorCode HMS_ABR_DestroyContext(ABR_Context** context)
 ```
 
 **描述**
@@ -1229,10 +1120,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_GetScale()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_GetScale(ABR_Context* context, float* scale )
+```c
+ABR_ErrorCode HMS_ABR_GetScale(ABR_Context* context, float* scale )
 ```
 
 **描述**
@@ -1254,10 +1143,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_GetNextScale()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_GetNextScale(ABR_Context* context, float* scale)
+```c
+ABR_ErrorCode HMS_ABR_GetNextScale(ABR_Context* context, float* scale)
 ```
 
 **描述**
@@ -1279,10 +1166,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_IsActive()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_IsActive(ABR_Context* context, bool* isActive )
+```c
+ABR_ErrorCode HMS_ABR_IsActive(ABR_Context* context, bool* isActive )
 ```
 
 **描述**
@@ -1304,10 +1189,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_MarkFrameBuffer\_GLES()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_MarkFrameBuffer_GLES(ABR_Context* context)
+```c
+ABR_ErrorCode HMS_ABR_MarkFrameBuffer_GLES(ABR_Context* context)
 ```
 
 **描述**
@@ -1328,15 +1211,13 @@ PhoneTabletTV
 
 ### HMS\_ABR\_GetScaledTexture\_GLES()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_GetScaledTexture_GLES(ABR_Context* context, uint32_t originTexture, uint32_t* scaledTexture)
+```c
+ABR_ErrorCode HMS_ABR_GetScaledTexture_GLES(ABR_Context* context, uint32_t originTexture, uint32_t* scaledTexture)
 ```
 
 **描述**
 
-根据原始分辨率的GLES纹理索引获取ABR自适应缩放后的GLES纹理索引。调用前需确认原始纹理有效、渲染上下文有效。originTexture为原始纹理ID，该值不能为0，否则无法正确获取scaledTexure，接口功能失效；scaledTexture不能为空指针，否则会返回错误码ABR\_INVALID\_PARAMETER。
+根据原始分辨率的GLES纹理索引获取ABR自适应缩放后的GLES纹理索引。调用前需确认原始纹理有效、渲染上下文有效。originTexture为原始纹理ID，该值不能为0，否则无法正确获取scaledTexture，接口功能失效；scaledTexture不能为空指针，否则会返回错误码ABR\_INVALID\_PARAMETER。
 
 **起始版本：** 5.0.0(12)
 
@@ -1354,10 +1235,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_SetScaleRange()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_SetScaleRange(ABR_Context* context, const float minValue, const float maxValue )
+```c
+ABR_ErrorCode HMS_ABR_SetScaleRange(ABR_Context* context, const float minValue, const float maxValue )
 ```
 
 **描述**
@@ -1380,10 +1259,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_SetTargetFps()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_SetTargetFps(ABR_Context* context, const uint32_t targetFps )
+```c
+ABR_ErrorCode HMS_ABR_SetTargetFps(ABR_Context* context, const uint32_t targetFps )
 ```
 
 **描述**
@@ -1405,10 +1282,8 @@ PhoneTabletTV
 
 ### HMS\_ABR\_UpdateCameraData()
 
-PhoneTabletTV
-
-```
-1. ABR_ErrorCode HMS_ABR_UpdateCameraData(ABR_Context* context, ABR_CameraData* data )
+```c
+ABR_ErrorCode HMS_ABR_UpdateCameraData(ABR_Context* context, ABR_CameraData* data )
 ```
 
 **描述**
@@ -1428,17 +1303,37 @@ PhoneTabletTV
 
 函数执行结果状态。执行成功返回ABR\_SUCCESS；失败返回具体错误码，具体失败错误码可参考[ABR\_ErrorCode](_graphics_accelerate.md#abr_errorcode)。
 
-### HMS\_FG\_Activate\_GLES()
+### HMS\_FG\_IsFrameGenerationSupported()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_Activate_GLES(FG_Context_GLES* context)
+```c
+bool HMS_FG_IsFrameGenerationSupported(FG_FeatureType featureType)
 ```
 
 **描述**
 
-激活超帧上下文实例。已激活的超帧实例可调用[HMS\_FG\_Dispatch\_GLES](_graphics_accelerate.md#hms_fg_dispatch_gles)接口生成预测帧， 激活超帧上下文实例前必须先调用[HMS\_FG\_SetAlgorithmMode\_GLES](_graphics_accelerate.md#hms_fg_setalgorithmmode_gles)和[HMS\_FG\_SetResolution\_GLES](_graphics_accelerate.md#hms_fg_setresolution_gles)接口完成配置。该接口仅适配OpenGL ES图形API平台。
+表示当前设备是否支持此类型的超帧功能，不同机型支持的超帧功能不同。以AI超帧特性为例，该接口会判断当前机型是否含有NPU及NPU算力是否满足特性要求，如果不满足则会返回false。
+
+**起始版本：** 26.0.0
+
+**参数:**
+
+| 名称 | 描述 |
+| --- | --- |
+| featureType | 超帧的特性类型[FG\_FeatureType](_graphics_accelerate.md#fg_featuretype)。 |
+
+**返回：**
+
+如果当前设备支持此功能，则返回true，否则返回false。
+
+### HMS\_FG\_Activate\_GLES()
+
+```c
+FG_ErrorCode HMS_FG_Activate_GLES(FG_Context_GLES* context)
+```
+
+**描述**
+
+激活超帧上下文实例。已激活的超帧实例可调用[HMS\_FG\_Dispatch\_GLES](_graphics_accelerate.md#hms_fg_dispatch_gles)接口生成预测帧，激活超帧上下文实例前必须先调用[HMS\_FG\_SetAlgorithmMode\_GLES](_graphics_accelerate.md#hms_fg_setalgorithmmode_gles)和[HMS\_FG\_SetResolution\_GLES](_graphics_accelerate.md#hms_fg_setresolution_gles)接口完成配置。该接口仅适配OpenGL ES图形API平台。
 
 **起始版本：** 5.0.0(12)
 
@@ -1454,10 +1349,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_Activate\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_Activate_VK(FG_Context_VK* context)
+```c
+FG_ErrorCode HMS_FG_Activate_VK(FG_Context_VK* context)
 ```
 
 **描述**
@@ -1478,10 +1371,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_CreateContext\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_Context_GLES* HMS_FG_CreateContext_GLES(void )
+```c
+FG_Context_GLES* HMS_FG_CreateContext_GLES(void )
 ```
 
 **描述**
@@ -1496,10 +1387,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_CreateContext\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_Context_VK* HMS_FG_CreateContext_VK(const FG_ContextDescription_VK* contextDescription)
+```c
+FG_Context_VK* HMS_FG_CreateContext_VK(const FG_ContextDescription_VK* contextDescription)
 ```
 
 **描述**
@@ -1520,15 +1409,13 @@ PhoneTabletTV
 
 ### HMS\_FG\_CreateImage\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_Image_VK* HMS_FG_CreateImage_VK(FG_Context_VK* context, VkImage image, VkImageView view )
+```c
+FG_Image_VK* HMS_FG_CreateImage_VK(FG_Context_VK* context, VkImage image, VkImageView view )
 ```
 
 **描述**
 
-创建超帧输入输出图像实例。真实帧颜色缓冲区、深度模板缓冲区、预测帧缓冲区均需要通过该接口创建对应的图像实例，并传入预测帧生成接口[HMS\_FG\_Dispatch\_VK](_graphics_accelerate.md#hms_fg_dispatch_vk)进行预测帧绘制。该接口将用户提供的图像资源和超帧算法实现之间建立关联。
+创建超帧输入输出图像实例。真实帧颜色缓冲区、深度模板缓冲区、预测帧缓冲区均需要通过该接口创建对应的图像实例，并传入预测帧生成接口[HMS\_FG\_Dispatch\_VK](_graphics_accelerate.md#hms_fg_dispatch_vk)进行预测帧绘制。该接口将用户提供的图像资源和超帧算法实现之间建立关联且仅适配Vulkan图形API平台。
 
 **起始版本：** 5.0.0(12)
 
@@ -1546,15 +1433,13 @@ PhoneTabletTV
 
 ### HMS\_FG\_Deactivate\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_Deactivate_GLES(FG_Context_GLES* context)
+```c
+FG_ErrorCode HMS_FG_Deactivate_GLES(FG_Context_GLES* context)
 ```
 
 **描述**
 
-去激活超帧上下文实例，可通过[HMS\_FG\_Activate\_GLES](_graphics_accelerate.md#hms_fg_activate_gles)接口重新激活。
+去激活超帧上下文实例，可通过[HMS\_FG\_Activate\_GLES](_graphics_accelerate.md#hms_fg_activate_gles)接口重新激活。该接口仅适配OpenGL ES图形API平台。
 
 **起始版本：** 5.0.0(12)
 
@@ -1570,15 +1455,13 @@ PhoneTabletTV
 
 ### HMS\_FG\_Deactivate\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_Deactivate_VK(FG_Context_VK* context)
+```c
+FG_ErrorCode HMS_FG_Deactivate_VK(FG_Context_VK* context)
 ```
 
 **描述**
 
-去激活超帧上下文实例，可通过[HMS\_FG\_Activate\_VK](_graphics_accelerate.md#hms_fg_activate_vk)接口重新激活。
+去激活超帧上下文实例，可通过[HMS\_FG\_Activate\_VK](_graphics_accelerate.md#hms_fg_activate_vk)接口重新激活。该接口仅适配Vulkan图形API平台。
 
 **起始版本：** 5.0.0(12)
 
@@ -1594,10 +1477,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_DestroyContext\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_DestroyContext_GLES(FG_Context_GLES** context)
+```c
+FG_ErrorCode HMS_FG_DestroyContext_GLES(FG_Context_GLES** context)
 ```
 
 **描述**
@@ -1618,10 +1499,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_DestroyContext\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_DestroyContext_VK(FG_Context_VK** context)
+```c
+FG_ErrorCode HMS_FG_DestroyContext_VK(FG_Context_VK** context)
 ```
 
 **描述**
@@ -1642,15 +1521,13 @@ PhoneTabletTV
 
 ### HMS\_FG\_DestroyImage\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_DestroyImage_VK(FG_Context_VK* context, FG_Image_VK* image )
+```c
+FG_ErrorCode HMS_FG_DestroyImage_VK(FG_Context_VK* context, FG_Image_VK* image )
 ```
 
 **描述**
 
-销毁超帧输入输出图像实例，取消对应关联。
+销毁超帧输入输出图像实例，取消对应关联。该接口仅适配Vulkan图形API平台。
 
 **起始版本：** 5.0.0(12)
 
@@ -1667,10 +1544,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_Dispatch\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_Dispatch_GLES(FG_Context_GLES* context, const FG_DispatchDescription_GLES* desc )
+```c
+FG_ErrorCode HMS_FG_Dispatch_GLES(FG_Context_GLES* context, const FG_DispatchDescription_GLES* desc )
 ```
 
 **描述**
@@ -1692,10 +1567,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetExtendedCameraInfo\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetExtendedCameraInfo_GLES(FG_Context_GLES* context, const FG_PerFrameExtendedCameraInfo* info)
+```c
+FG_ErrorCode HMS_FG_SetExtendedCameraInfo_GLES(FG_Context_GLES* context, const FG_PerFrameExtendedCameraInfo* info)
 ```
 
 **描述**
@@ -1717,10 +1590,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_Dispatch\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_Dispatch_VK(FG_Context_VK* context, const FG_DispatchDescription_VK* desc )
+```c
+FG_ErrorCode HMS_FG_Dispatch_VK(FG_Context_VK* context, const FG_DispatchDescription_VK* desc )
 ```
 
 **描述**
@@ -1742,10 +1613,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_IsActive\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_IsActive_GLES(FG_Context_GLES* context, bool* isActive )
+```c
+FG_ErrorCode HMS_FG_IsActive_GLES(FG_Context_GLES* context, bool* isActive )
 ```
 
 **描述**
@@ -1767,10 +1636,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_IsActive\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_IsActive_VK(FG_Context_VK* context, bool* isActive )
+```c
+FG_ErrorCode HMS_FG_IsActive_VK(FG_Context_VK* context, bool* isActive )
 ```
 
 **描述**
@@ -1792,10 +1659,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetAlgorithmMode\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetAlgorithmMode_GLES(FG_Context_GLES* context, const FG_AlgorithmModeInfo* predictionModeInfo )
+```c
+FG_ErrorCode HMS_FG_SetAlgorithmMode_GLES(FG_Context_GLES* context, const FG_AlgorithmModeInfo* predictionModeInfo )
 ```
 
 **描述**
@@ -1817,10 +1682,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetAlgorithmMode\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetAlgorithmMode_VK(FG_Context_VK* context, const FG_AlgorithmModeInfo* predictionModeInfo )
+```c
+FG_ErrorCode HMS_FG_SetAlgorithmMode_VK(FG_Context_VK* context, const FG_AlgorithmModeInfo* predictionModeInfo )
 ```
 
 **描述**
@@ -1842,10 +1705,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetCvvZSemantic\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetCvvZSemantic_GLES(FG_Context_GLES* context, FG_CvvZSemantic semantic )
+```c
+FG_ErrorCode HMS_FG_SetCvvZSemantic_GLES(FG_Context_GLES* context, FG_CvvZSemantic semantic )
 ```
 
 **描述**
@@ -1867,10 +1728,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetCvvZSemantic\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetCvvZSemantic_VK(FG_Context_VK* context, FG_CvvZSemantic semantic )
+```c
+FG_ErrorCode HMS_FG_SetCvvZSemantic_VK(FG_Context_VK* context, FG_CvvZSemantic semantic )
 ```
 
 **描述**
@@ -1892,10 +1751,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetDepthStencilYDirectionInverted\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetDepthStencilYDirectionInverted_GLES(FG_Context_GLES* context, bool inverted )
+```c
+FG_ErrorCode HMS_FG_SetDepthStencilYDirectionInverted_GLES(FG_Context_GLES* context, bool inverted )
 ```
 
 **描述**
@@ -1917,10 +1774,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetDepthStencilYDirectionInverted\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetDepthStencilYDirectionInverted_VK(FG_Context_VK* context, bool inverted )
+```c
+FG_ErrorCode HMS_FG_SetDepthStencilYDirectionInverted_VK(FG_Context_VK* context, bool inverted )
 ```
 
 **描述**
@@ -1942,10 +1797,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetImageFormat\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetImageFormat_GLES(FG_Context_GLES* context, FG_ImageFormat_GLES format )
+```c
+FG_ErrorCode HMS_FG_SetImageFormat_GLES(FG_Context_GLES* context, FG_ImageFormat_GLES format )
 ```
 
 **描述**
@@ -1967,15 +1820,13 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetImageFormat\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetImageFormat_VK(FG_Context_VK* context, const FG_ImageFormat_VK* format )
+```c
+FG_ErrorCode HMS_FG_SetImageFormat_VK(FG_Context_VK* context, const FG_ImageFormat_VK* format )
 ```
 
 **描述**
 
-设置超帧输入输出图像格式，可选调用。未调用则真实帧颜色缓冲区和预测帧缓冲区图像格式默认为VK\_FORMAT\_R8G8B8A8\_UNORM； 深度模板缓冲区图像格式默认为VK\_FORMAT\_D24\_UNORM\_S8\_UINT。该接口仅适配Vulkan图形API平台。
+设置超帧输入输出图像格式，可选调用。未调用则真实帧颜色缓冲区和预测帧缓冲区图像格式默认为VK\_FORMAT\_R8G8B8A8\_UNORM；深度模板缓冲区图像格式默认为VK\_FORMAT\_D24\_UNORM\_S8\_UINT。该接口仅适配Vulkan图形API平台。
 
 **起始版本：** 5.0.0(12)
 
@@ -1992,10 +1843,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetResolution\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetResolution_GLES(FG_Context_GLES* context, const FG_ResolutionInfo* resolutionInfo )
+```c
+FG_ErrorCode HMS_FG_SetResolution_GLES(FG_Context_GLES* context, const FG_ResolutionInfo* resolutionInfo )
 ```
 
 **描述**
@@ -2017,10 +1866,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetResolution\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetResolution_VK(FG_Context_VK* context, const FG_ResolutionInfo* resolutionInfo )
+```c
+FG_ErrorCode HMS_FG_SetResolution_VK(FG_Context_VK* context, const FG_ResolutionInfo* resolutionInfo )
 ```
 
 **描述**
@@ -2042,15 +1889,13 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetIntegrationMode\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetIntegrationMode_GLES(FG_Context_GLES* context, const FG_IntegrationInfo* integrationInfo)
+```c
+FG_ErrorCode HMS_FG_SetIntegrationMode_GLES(FG_Context_GLES* context, const FG_IntegrationInfo* integrationInfo)
 ```
 
 **描述**
 
-设置超帧集成信息，当[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时，[FG\_IntegrationInfo](_f_g___intergration_info.md)中的presentMode、needDepthAndColorCache、needFlipColorTexture成员才会生效。其他情况下这些参数应忽略或设置为默认值。该接口仅适配OpenGL ES图形API平台。
+设置超帧预测的集成信息，当[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时，[FG\_IntegrationInfo](_f_g___intergration_info.md)中的presentMode、textureCachedByGame、needFlipInputColor、needFlipOutputColor成员才会生效。其他情况下这些参数应忽略或设置为默认值。该接口仅适配OpenGL ES图形API平台。
 
 **起始版本：** 5.1.0(18)
 
@@ -2067,15 +1912,13 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetIntegrationMode\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetIntegrationMode_VK(FG_Context_VK* context, const FG_IntegrationInfo* integrationInfo)
+```c
+FG_ErrorCode HMS_FG_SetIntegrationMode_VK(FG_Context_VK* context, const FG_IntegrationInfo* integrationInfo)
 ```
 
 **描述**
 
-设置超帧集成信息，当[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时，[FG\_IntegrationInfo](_f_g___intergration_info.md)中的presentMode、needDepthAndColorCache、needFlipColorTexture成员才会生效。其他情况下这些参数应忽略或设置为默认值。该接口仅适配Vulkan图形API平台。
+设置超帧预测的集成信息，当[FG\_PredictionMode](_graphics_accelerate.md#fg_predictionmode-1)为FG\_PREDICTION\_MODE\_INTERPOLATION时，[FG\_IntegrationInfo](_f_g___intergration_info.md)中的presentMode、textureCachedByGame、needFlipInputColor、needFlipOutputColor成员才会生效。其他情况下这些参数应忽略或设置为默认值。该接口仅适配Vulkan图形API平台。
 
 **起始版本：** 5.1.0(18)
 
@@ -2092,10 +1935,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetUiPredictionEnabled\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetUiPredictionEnabled_GLES(FG_Context_GLES* context, bool isEnabled)
+```c
+FG_ErrorCode HMS_FG_SetUiPredictionEnabled_GLES(FG_Context_GLES* context, bool isEnabled)
 ```
 
 **描述**
@@ -2117,10 +1958,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetUiPredictionEnabled\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetUiPredictionEnabled_VK(FG_Context_VK* context, bool isEnabled)
+```c
+FG_ErrorCode HMS_FG_SetUiPredictionEnabled_VK(FG_Context_VK* context, bool isEnabled)
 ```
 
 **描述**
@@ -2142,10 +1981,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetTargetFps\_GLES()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetTargetFps_GLES(FG_Context_GLES* context, int targetFps)
+```c
+FG_ErrorCode HMS_FG_SetTargetFps_GLES(FG_Context_GLES* context, int targetFps)
 ```
 
 **描述**
@@ -2167,10 +2004,8 @@ PhoneTabletTV
 
 ### HMS\_FG\_SetTargetFps\_VK()
 
-PhoneTabletTV
-
-```
-1. FG_ErrorCode HMS_FG_SetTargetFps_VK(FG_Context_VK* context, int targetFps)
+```c
+FG_ErrorCode HMS_FG_SetTargetFps_VK(FG_Context_VK* context, int targetFps)
 ```
 
 **描述**
@@ -2192,10 +2027,8 @@ PhoneTabletTV
 
 ### HMS\_OpenGTX\_Activate()
 
-PhoneTabletTV
-
-```
-1. OpenGTX_ErrorCode HMS_OpenGTX_Activate(OpenGTX_Context* context)
+```c
+OpenGTX_ErrorCode HMS_OpenGTX_Activate(OpenGTX_Context* context)
 ```
 
 **描述**
@@ -2216,10 +2049,8 @@ PhoneTabletTV
 
 ### HMS\_OpenGTX\_CreateContext()
 
-PhoneTabletTV
-
-```
-1. OpenGTX_Context* HMS_OpenGTX_CreateContext(OpenGTX_DeviceInfoCallback deviceInfoCallback)
+```c
+OpenGTX_Context* HMS_OpenGTX_CreateContext(OpenGTX_DeviceInfoCallback deviceInfoCallback)
 ```
 
 **描述**
@@ -2240,10 +2071,8 @@ PhoneTabletTV
 
 ### HMS\_OpenGTX\_Deactivate()
 
-PhoneTabletTV
-
-```
-1. OpenGTX_ErrorCode HMS_OpenGTX_Deactivate(OpenGTX_Context* context)
+```c
+OpenGTX_ErrorCode HMS_OpenGTX_Deactivate(OpenGTX_Context* context)
 ```
 
 **描述**
@@ -2264,10 +2093,8 @@ PhoneTabletTV
 
 ### HMS\_OpenGTX\_DestroyContext()
 
-PhoneTabletTV
-
-```
-1. OpenGTX_ErrorCode HMS_OpenGTX_DestroyContext(OpenGTX_Context** context)
+```c
+OpenGTX_ErrorCode HMS_OpenGTX_DestroyContext(OpenGTX_Context** context)
 ```
 
 **描述**
@@ -2288,10 +2115,8 @@ PhoneTabletTV
 
 ### HMS\_OpenGTX\_DispatchFrameRenderInfo()
 
-PhoneTabletTV
-
-```
-1. OpenGTX_ErrorCode HMS_OpenGTX_DispatchFrameRenderInfo(OpenGTX_Context* context, const OpenGTX_FrameRenderInfo* frameRenderInfo )
+```c
+OpenGTX_ErrorCode HMS_OpenGTX_DispatchFrameRenderInfo(OpenGTX_Context* context, const OpenGTX_FrameRenderInfo* frameRenderInfo )
 ```
 
 **描述**
@@ -2313,10 +2138,8 @@ PhoneTabletTV
 
 ### HMS\_OpenGTX\_DispatchGameSceneInfo()
 
-PhoneTabletTV
-
-```
-1. OpenGTX_ErrorCode HMS_OpenGTX_DispatchGameSceneInfo(OpenGTX_Context* context, const OpenGTX_GameSceneInfo* gameSceneInfo )
+```c
+OpenGTX_ErrorCode HMS_OpenGTX_DispatchGameSceneInfo(OpenGTX_Context* context, const OpenGTX_GameSceneInfo* gameSceneInfo )
 ```
 
 **描述**
@@ -2338,10 +2161,8 @@ PhoneTabletTV
 
 ### HMS\_OpenGTX\_DispatchNetworkInfo()
 
-PhoneTabletTV
-
-```
-1. OpenGTX_ErrorCode HMS_OpenGTX_DispatchNetworkInfo(OpenGTX_Context* context, const OpenGTX_NetworkInfo* networkInfo )
+```c
+OpenGTX_ErrorCode HMS_OpenGTX_DispatchNetworkInfo(OpenGTX_Context* context, const OpenGTX_NetworkInfo* networkInfo )
 ```
 
 **描述**
@@ -2363,10 +2184,8 @@ PhoneTabletTV
 
 ### HMS\_OpenGTX\_SetConfiguration()
 
-PhoneTabletTV
-
-```
-1. OpenGTX_ErrorCode HMS_OpenGTX_SetConfiguration (OpenGTX_Context* context, const OpenGTX_ConfigDescription* config )
+```c
+OpenGTX_ErrorCode HMS_OpenGTX_SetConfiguration (OpenGTX_Context* context, const OpenGTX_ConfigDescription* config )
 ```
 
 **描述**

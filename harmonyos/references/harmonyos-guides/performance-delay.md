@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/performance-d
 title: 时延
 breadcrumb: 指南 > 应用体验建议 > 应用性能体验建议 > 时延
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:58:01+08:00
-doc_updated_at: 2026-02-03
-content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2dcdc6
+scraped_at: 2026-09-02T14:51:00+08:00
+doc_updated_at: 2026-06-17
+content_hash: sha256:d85c3b130762a056a482f83f116fa1cf368b539afac449df32103802c05fd143
 ---
 
 ## 应用或元服务启动加载完成快
@@ -16,7 +16,7 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | | 规则 |
 | **适用设备** | | 手机，平板，PC/2in1，智慧屏，车机，手表 |
 | **应用形态适用性** | | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
 ## 应用或元服务冷启动过程动画/视频时延
 
@@ -26,7 +26,7 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | | 建议 |
 | **适用设备** | | 手机，平板，PC/2in1，智慧屏，车机，手表 |
 | **应用形态适用性** | | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | | 无 |
 
 ## 应用或元服务应用内点击操作响应快
 
@@ -36,7 +36,7 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | | 规则 |
 | **适用设备** | | 手机，平板，PC/2in1，智慧屏，车机，手表 |
 | **应用形态适用性** | | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
 ## 应用或元服务应用内点击操作完成快
 
@@ -46,7 +46,7 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | | 规则 |
 | **适用设备** | | 手机，平板，PC/2in1，智慧屏，车机，手表 |
 | **应用形态适用性** | | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
 ## 应用或元服务内滑动操作响应快
 
@@ -56,7 +56,7 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | | 规则 |
 | **适用设备** | | 手机，平板，PC/2in1，智慧屏，车机，手表 |
 | **应用形态适用性** | | 鸿蒙应用，鸿蒙元服务 |
-| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
 ## 在线长视频类应用播放起播快
 
@@ -66,7 +66,7 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | 规则 |
 | **适用设备** | 手机，平板，PC/2in1，智慧屏，车机 |
 | **应用形态适用性** | 鸿蒙应用 |
-| **说明** | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
 ## 在线长视频类应用Seek操作播放快
 
@@ -76,7 +76,7 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | 规则 |
 | **适用设备** | 手机，平板，PC/2in1，智慧屏，车机 |
 | **应用形态适用性** | 鸿蒙应用 |
-| **说明** | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
 ## 在线短视频类应用快速切换播放起播快
 
@@ -86,7 +86,7 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | 规则 |
 | **适用设备** | 手机，平板，PC/2in1，智慧屏，车机 |
 | **应用形态适用性** | 鸿蒙应用 |
-| **说明** | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](performance-testing.md)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
 
 ## 在线短视频类应用Seek操作播放快
 
@@ -96,4 +96,4 @@ content_hash: sha256:08972ce5f7592d1adf2c6f7271be838d170c2dee7fd9aec9ea453e9f7a2
 | **类型** | 规则 |
 | **适用设备** | 手机，平板，PC/2in1，智慧屏，车机 |
 | **应用形态适用性** | 鸿蒙应用 |
-| **说明** | [开发自测试：DevEco Studio AppAnalyzer 性能分析诊断](../best-practices/bpta-performance-detection.md#section135451444171)  [本地自测试：DevEco Testing 性能测试](specialized-testing.md#section12324184817324)  [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |
+| **说明** | [云端自测试：AppGallery Connect 云测试性能检测](../app/agc-help-cloudtest-performancetest-0000002289647209.md) |

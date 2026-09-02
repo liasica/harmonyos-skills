@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abil
 title: Ability_ChildProcessConfigs
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 结构体 > Ability_ChildProcessConfigs
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:02+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3b92d9d5aab568a2a9d8bda20cce9a335763044f1ff20b8ad8b70cfcd9255106
+scraped_at: 2026-09-02T14:51:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:229c3e1fb0fab037e0a6c9bc4803e068b23165ef96c5ef675b0c7e041a8267fd
 ---
 
-```
-1. typedef struct Ability_ChildProcessConfigs Ability_ChildProcessConfigs
+```c
+typedef struct Ability_ChildProcessConfigs Ability_ChildProcessConfigs;
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-启动子进程的配置信息，包括子进程的进程名、以及数据沙箱与网络环境的共享模式。
+启动子进程的配置信息，包括子进程的进程名、数据沙箱与网络环境的共享模式、主进程与子进程的uid是否隔离的配置。开发者可以使用[OH\_Ability\_ChildProcessConfigs\_SetProcessName](capi-native-child-process-h.md#oh_ability_childprocessconfigs_setprocessname)、[OH\_Ability\_ChildProcessConfigs\_SetIsolationMode](capi-native-child-process-h.md#oh_ability_childprocessconfigs_setisolationmode)、[OH\_Ability\_ChildProcessConfigs\_SetIsolationUid](capi-native-child-process-h.md#oh_ability_childprocessconfigs_setisolationuid)接口来修改相应的配置信息。
 
 **起始版本：** 20
 

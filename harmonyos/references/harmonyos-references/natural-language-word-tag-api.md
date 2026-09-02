@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/natural-l
 title: wordTag（词性）
 breadcrumb: API参考 > AI > Natural Language Kit（自然语言理解服务） > ArkTS API > wordTag（词性）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:59+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:20:56+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:7e722aab89260f48a22553ff1b9eba0a4c4e4c23a7c48c7d437339caac66c81d
 ---
 

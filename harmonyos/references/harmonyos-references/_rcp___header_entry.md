@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/_rcp___he
 title: Rcp_HeaderEntry
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体 > Rcp_HeaderEntry
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8aec0102069ce4538eaa36cc2b851de51a008aad53f65249e777d0347871d9b8
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:12c645dfd65f5304e5c74258484f87a53d2ca59e344959bf2f5f396ad67116bd
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 请求或响应的标头的所有键值对。
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -36,14 +30,10 @@ PhonePC/2in1TabletTVWearable
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTVWearable
-
 ### key
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. char* Rcp_HeaderEntry::key
+```cpp
+char* Rcp_HeaderEntry::key
 ```
 
 **描述**
@@ -52,10 +42,8 @@ PhonePC/2in1TabletTVWearable
 
 ### next
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. struct Rcp_HeaderEntry* Rcp_HeaderEntry::next
+```cpp
+struct Rcp_HeaderEntry* Rcp_HeaderEntry::next
 ```
 
 **描述**
@@ -64,10 +52,8 @@ PhonePC/2in1TabletTVWearable
 
 ### value
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. Rcp_HeaderValue* Rcp_HeaderEntry::value
+```cpp
+Rcp_HeaderValue* Rcp_HeaderEntry::value
 ```
 
 **描述**

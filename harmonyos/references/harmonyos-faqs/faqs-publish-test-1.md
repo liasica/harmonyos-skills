@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-publish-te
 title: 创建任务时提示“ai模型暂未启动，请稍后再试”
 breadcrumb: FAQ > DevEco Testing > 上架预检 > 创建任务时提示“ai模型暂未启动，请稍后再试”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:33+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:13253a03c76581d19a8924722cd658a8adab354a01859443e6d4649a897bad53
 ---
 

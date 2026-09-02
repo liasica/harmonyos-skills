@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverextensi
 title: 开发无UI界面基础驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设基础驱动开发 > 开发无UI界面基础驱动
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:38+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a72ab716e21087f1b2819fd8c7a96642b845f97b4a361e9667bcdfe175367e8c
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bf1ba7980757f4711befa9ba57098cdad0d07dd6217d2b00ab54f60cdf205951
 ---
 
 ## 场景介绍
@@ -33,152 +33,144 @@ content_hash: sha256:a72ab716e21087f1b2819fd8c7a96642b845f97b4a361e9667bcdfe1753
 3. 在driverextability目录，右键选择“New > ArkTS File”，新建一个文件并命名为DriverExtAbility.ets。
 4. 在文件中导入相关Kit，并定义请求Code。
 
-   ```
-   1. import { DriverExtensionAbility } from '@kit.DriverDevelopmentKit';
-   2. import { Want } from '@kit.AbilityKit';
-   3. import { rpc } from '@kit.IPCKit';
+   ```typescript
+   import { DriverExtensionAbility } from '@kit.DriverDevelopmentKit';
+   import { Want } from '@kit.AbilityKit';
+   import { rpc } from '@kit.IPCKit';
 
-   5. const REQUEST_CODE = 99; // 与扩展外设客户端约定请求码。
+   const REQUEST_CODE = 99; // 与扩展外设客户端约定请求码。
    ```
-
-   [DriverExtAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/DriverDemo/entry/src/main/ets/driverextability/DriverExtAbility.ets#L16-L22)
 5. 打开DriverExtAbility.ets文件，导入[@ohos.rpc (RPC通信)](../harmonyos-references/js-apis-rpc.md)，重载onRemoteMessageRequest()方法，接收应用传递过来的消息，并将处理的结果返回给应用。REQUEST\_CODE用于校验应用发送的服务请求码。
 
+   ```typescript
+   class StubTest extends rpc.RemoteObject {
+     // 接收应用传递过来的消息处理，以及将处理的结果返回给客户端。
+     onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
+       option: rpc.MessageOption) {
+       if (code === REQUEST_CODE) {
+         // 接收应用传递过来的数据。
+         // 应用使用多次调用data.writeString()写入多个数据时，驱动可以通过多次调用data.readString()方法接收对应的数据。
+         let optFir: string = data.readString();
+         // 驱动将数据的处理结果返回给应用。
+         // 示例中为接收了"Hello"，并将"Hello World"返回给应用。
+         reply.writeString(optFir + ` World`);
+       }
+       return true;
+     }
+   }
    ```
-   1. class StubTest extends rpc.RemoteObject {
-   2. // 接收应用传递过来的消息处理，以及将处理的结果返回给客户端。
-   3. onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence,
-   4. option: rpc.MessageOption) {
-   5. if (code === REQUEST_CODE) {
-   6. // 接收应用传递过来的数据。
-   7. // 应用使用多次调用data.writeString()写入多个数据时，驱动可以通过多次调用data.readString()方法接收对应的数据。
-   8. let optFir: string = data.readString();
-   9. // 驱动将数据的处理结果返回给应用。
-   10. // 示例中为接收了"Hello"，并将"Hello World"返回给应用。
-   11. reply.writeString(optFir + ` World`);
-   12. }
-   13. return true;
-   14. }
-   15. }
-   ```
-
-   [DriverExtAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/DriverDemo/entry/src/main/ets/driverextability/DriverExtAbility.ets#L24-L40)
 6. 在DriverExtAbility.ets文件中，增加导入[DriverExtensionAbility](../harmonyos-references/js-apis-app-ability-driverextensionability.md)的依赖包，该包提供了onInit()、onRelease()、onConnect()和onDisconnect()生命周期回调，自定义类继承[DriverExtensionAbility](../harmonyos-references/js-apis-app-ability-driverextensionability.md)并根据需要重写生命周期回调。
 
+   ```typescript
+   export default class DriverExtAbility extends DriverExtensionAbility {
+     onInit(want: Want) {
+       console.info('testTag', `onInit, want: ${want.abilityName}`);
+     }
+
+     onRelease() {
+       console.info('testTag', `onRelease`);
+     }
+
+     onConnect(want: Want) {
+       console.info('testTag', `onConnect, want: ${want.abilityName}`);
+       return new StubTest('test');
+     }
+
+     onDisconnect(want: Want) {
+       console.info('testTag', `onDisconnect, want: ${want.abilityName}`);
+     }
+
+     onDump(params: Array<string>) {
+       console.info('testTag', `onDump, params:` + JSON.stringify(params));
+       return ['params'];
+     }
+   }
    ```
-   1. export default class DriverExtAbility extends DriverExtensionAbility {
-   2. onInit(want: Want) {
-   3. console.info('testTag', `onInit, want: ${want.abilityName}`);
-   4. }
-
-   6. onRelease() {
-   7. console.info('testTag', `onRelease`);
-   8. }
-
-   10. onConnect(want: Want) {
-   11. console.info('testTag', `onConnect, want: ${want.abilityName}`);
-   12. return new StubTest('test');
-   13. }
-
-   15. onDisconnect(want: Want) {
-   16. console.info('testTag', `onDisconnect, want: ${want.abilityName}`);
-   17. }
-
-   19. onDump(params: Array<string>) {
-   20. console.info('testTag', `onDump, params:` + JSON.stringify(params));
-   21. return ['params'];
-   22. }
-   23. }
-   ```
-
-   [DriverExtAbility.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/DriverDemo/entry/src/main/ets/driverextability/DriverExtAbility.ets#L42-L66)
 7. 在工程Module对应的[module.json5配置文件](module-configuration-file.md)中注册DriverExtensionAbility，type标签需要设置为“driver”，srcEntry标签表示当前ExtensionAbility组件所对应的代码路径。
 
+   ```json5
+   {
+     "module": {
+       "name": "entry",
+       "type": "entry",
+       "description": "$string:module_desc",
+       "mainElement": "EntryAbility",
+       "deviceTypes": [
+         "default"
+       ],
+       "requestPermissions": [
+         {
+           "name": "ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER" // 此处为扩展外设相关权限，必须配置。
+         }
+       ],
+       "deliveryWithInstall": true,
+       "installationFree": false,
+       "pages": "$profile:main_pages",
+       "abilities": [
+         {
+           "name": "EntryAbility",
+           "srcEntry": "./ets/entryability/EntryAbility.ets",
+           "description": "$string:EntryAbility_desc",
+           "icon": "$media:layered_image",
+           "label": "$string:EntryAbility_label",
+           "startWindowIcon": "$media:startIcon",
+           "startWindowBackground": "$color:start_window_background",
+           "exported": true,
+           "skills": [
+             {
+               "entities": [
+                 "entity.system.home"
+               ],
+               "actions": [
+                 "ohos.want.action.home"
+               ]
+             }
+           ]
+         }
+       ],
+       "extensionAbilities": [
+         {
+           "name": "DriverExtAbility",
+           "icon": "$media:startIcon",
+           "description": "driver",
+           "type": "driver",
+           "exported": true,
+           "srcEntry": "./ets/driverextability/DriverExtAbility.ets",
+           "metadata": [
+             {
+               "name": "bus", // 必填项，所属总线。
+               "value": "USB"
+             },
+             {
+               "name": "desc", // 选填项，必要的驱动描述。
+               "value": "the sample of driverExtensionAbility"
+             },
+             {
+               "name": "vendor", // 选填项，驱动厂商名称。
+               "value": "string"
+             },
+             {
+               "name": "vid", // 支持 USB vendor id 列表，填写16进制，此处为4817的16进制。
+               "value": "0x12D1"
+             },
+             {
+               "name": "pid", // 支持的 USB product id 列表，填写16进制，此处为4258的16进制。
+               "value": "0x10A2"
+             },
+             {
+               "name": "launchOnBind", // 选填项，延迟拉起驱动。此处“true”表示延迟拉起，“false”表示即时拉起，配置错误或不配置，默认为“false”。
+               "value": "true"
+             },
+             {
+               "name": "ohos.permission.ACCESS_DDK_ALLOWED", // 选填项，允许应用访问。此处“true”表示允许访问，“false”表示不允许访问，配置错误或不配置，默认为“false”。
+               "value": "true"
+             }
+           ]
+         }
+       ]
+     }
+   }
    ```
-   1. {
-   2. "module": {
-   3. "name": "entry",
-   4. "type": "entry",
-   5. "description": "$string:module_desc",
-   6. "mainElement": "EntryAbility",
-   7. "deviceTypes": [
-   8. "default"
-   9. ],
-   10. "requestPermissions": [
-   11. {
-   12. "name": "ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER" // 此处为扩展外设相关权限，必须配置。
-   13. }
-   14. ],
-   15. "deliveryWithInstall": true,
-   16. "installationFree": false,
-   17. "pages": "$profile:main_pages",
-   18. "abilities": [
-   19. {
-   20. "name": "EntryAbility",
-   21. "srcEntry": "./ets/entryability/EntryAbility.ets",
-   22. "description": "$string:EntryAbility_desc",
-   23. "icon": "$media:layered_image",
-   24. "label": "$string:EntryAbility_label",
-   25. "startWindowIcon": "$media:startIcon",
-   26. "startWindowBackground": "$color:start_window_background",
-   27. "exported": true,
-   28. "skills": [
-   29. {
-   30. "entities": [
-   31. "entity.system.home"
-   32. ],
-   33. "actions": [
-   34. "ohos.want.action.home"
-   35. ]
-   36. }
-   37. ]
-   38. }
-   39. ],
-   40. "extensionAbilities": [
-   41. {
-   42. "name": "DriverExtAbility",
-   43. "icon": "$media:startIcon",
-   44. "description": "driver",
-   45. "type": "driver",
-   46. "exported": true,
-   47. "srcEntry": "./ets/driverextability/DriverExtAbility.ets",
-   48. "metadata": [
-   49. {
-   50. "name": "bus", // 必填项，所属总线。
-   51. "value": "USB"
-   52. },
-   53. {
-   54. "name": "desc", // 选填项，必要的驱动描述。
-   55. "value": "the sample of driverExtensionAbility"
-   56. },
-   57. {
-   58. "name": "vendor", // 选填项，驱动厂商名称。
-   59. "value": "string"
-   60. },
-   61. {
-   62. "name": "vid", // 支持 USB vendor id 列表，填写16进制，此处为4817的16进制。
-   63. "value": "0x12D1"
-   64. },
-   65. {
-   66. "name": "pid", // 支持的 USB product id 列表，填写16进制，此处为4258的16进制。
-   67. "value": "0x10A2"
-   68. },
-   69. {
-   70. "name": "launchOnBind", // 选填项，延迟拉起驱动。此处“true”表示延迟拉起，“false”表示即时拉起，配置错误或不配置，默认为“false”。
-   71. "value": "true"
-   72. },
-   73. {
-   74. "name": "ohos.permission.ACCESS_DDK_ALLOWED", // 选填项，允许应用访问。此处“true”表示允许访问，“false”表示不允许访问，配置错误或不配置，默认为“false”。
-   75. "value": "true"
-   76. }
-   77. ]
-   78. }
-   79. ]
-   80. }
-   81. }
-   ```
-
-   [module.json5](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/DriverDemo/entry/src/main/module.json5#L1-L83)
 8. 完成客户端和驱动示例代码开发后，请参考[使用本地真机运行应用/元服务](ide-run-device.md)，将Hap导入设备中，并点击hap中的Hello，查看是否会转变为Hello world，即实现ipc通信功能。
 
 ## 扩展设备能力
@@ -192,7 +184,9 @@ content_hash: sha256:a72ab716e21087f1b2819fd8c7a96642b845f97b4a361e9667bcdfe1753
 
 ## 应用签名
 
-**注意：** 先配置权限，再自动签名。
+**注意** 
+
+先配置权限，再自动签名。
 
 应用需要配置签名文件才能在设备上运行，并且扩展外设管理客户端开发，需要配置扩展外设的权限：ohos.permission.ACCESS\_EXTENSIONAL\_DEVICE\_DRIVER。
 
@@ -204,4 +198,4 @@ content_hash: sha256:a72ab716e21087f1b2819fd8c7a96642b845f97b4a361e9667bcdfe1753
   1. 在module.json5配置文件的requestPermissions标签中[声明权限](declare-permissions.md)。
   2. HarmonyAppProvision配置文件中，修改acls字段，跨级别申请权限，可参考[申请使用受限权限](declare-permissions-in-acl.md)。
 
-完成权限配置后，可参考[自动签名](ide-signing.md)对应用进行签名。
+完成权限配置后，可参考[自动签名](ide-signing-auto.md)对应用进行签名。

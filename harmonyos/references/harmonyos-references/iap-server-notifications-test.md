@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 测试服务端通知
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 测试服务端通知
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:59+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:22c97d01df1a7f710a01b119dbf8689c8a22b4f502d77a7bedf9905fe495fcb7
+scraped_at: 2026-09-02T15:02:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e8a40360184bb323d7e0423aeadb351c1871922e001cb01e5bb1d07ccd0ed86b
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:22c97d01df1a7f710a01b119dbf8689c8a22b4f502d77a7bedf9905fe49
 
 开发者调用此接口，IAP服务器向开发者服务器发送测试通知。
 
-说明
+**说明** 
 
 1. 5分钟内只允许调用一次，在开发者服务器收到测试通知后，不建议再次调用此接口。
 2. 测试通知只支持开发者的生产环境通知地址。
@@ -46,11 +46,11 @@ content_hash: sha256:22c97d01df1a7f710a01b119dbf8689c8a22b4f502d77a7bedf9905fe49
 
 ## 请求示例
 
-```
-1. POST /harmony/v1/application/notifications/test
-2. Content-Type: application/json;charset=UTF-8
-3. Authorization: Bearer ***.***.***
-4. Accept: application/json
+```javascript
+POST /harmony/v1/application/notifications/test
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer ***.***.***
+Accept: application/json
 ```
 
 ## 响应参数
@@ -71,30 +71,30 @@ content_hash: sha256:22c97d01df1a7f710a01b119dbf8689c8a22b4f502d77a7bedf9905fe49
 
 ## 响应示例
 
-```
-1. HTTP/1.2 200 OK
-2. Content-Type: application/json;charset=UTF-8
-3. {
-4. "responseCode": "0",
-5. "testNotificationId": "***"
-6. }
+```javascript
+HTTP/1.2 200 OK
+Content-Type: application/json;charset=UTF-8
+{
+  "responseCode": "0",
+  "testNotificationId": "***"
+}
 ```
 
 ## 测试服务端通知样例
 
-```
-1. {
-2. "notificationType": "TEST", // 固定为TEST
-3. "notificationRequestId": "xxx",
-4. "notificationMetaData": {
-5. "environment": "NORMAL", // 固定为NORMAL
-6. "applicationId": "xxx", // 应用ID
-7. "packageName": "testPackageName", // 固定为testPackageName
-8. "type": 0, // 固定为0
-9. "purchaseToken": "xxx", // 前缀固定为testPurchaseToken，后面为应用ID
-10. "purchaseOrderId": "xxx" // 前缀固定为testPurchaseOrderId，后面为应用ID
-11. },
-12. "notificationVersion": "v3", // 固定为v3
-13. "signedTime": 1747445946282
-14. }
+```javascript
+{
+  "notificationType": "TEST", // 固定为TEST
+  "notificationRequestId": "xxx",
+  "notificationMetaData": {
+    "environment": "NORMAL", // 固定为NORMAL
+    "applicationId": "xxx", // 应用ID
+    "packageName": "testPackageName", // 固定为testPackageName
+    "type": 0, // 固定为0
+    "purchaseToken": "xxx", // 前缀固定为testPurchaseToken，后面为应用ID
+    "purchaseOrderId": "xxx" // 前缀固定为testPurchaseOrderId，后面为应用ID
+  },
+  "notificationVersion": "v3", // 固定为v3
+  "signedTime": 1747445946282
+}
 ```

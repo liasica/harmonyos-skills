@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebResourceHandler)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebResourceHandler)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:09+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:19fa3e4ba67d6ec28a13088a922f489bece268efd58558f8121a7400f1264283
+scraped_at: 2026-09-02T15:01:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:c5a521fb566ebfb1d99ec8f2d677ce228f575b4de7b0e40391cf9561565d5d5f
 ---
 
-通过WebResourceHandler，可以提供自定义的返回头以及返回体给Web组件。
+WebResourceHandler是自定义scheme拦截场景中用于向Web组件返回拦截请求结果的处理器。当WebSchemeHandler决定拦截一个请求后，开发者通过WebResourceHandler向Web组件提供自定义的响应头（didReceiveResponse）、响应体数据（didReceiveResponseBody），并通知请求完成（didFinish）或失败（didFail）。其中didFail支持重载方法（API version 20+）以简化错误处理流程。该接口实现了应用层对网络请求的完全自定义响应。
 
-说明
+WebResourceHandler与[WebSchemeHandler](arkts-apis-webview-webschemehandler.md)、[WebSchemeHandlerResponse](arkts-apis-webview-webschemehandlerresponse.md)配合使用：WebSchemeHandler的onRequestStart回调中接收WebResourceHandler实例，开发者构造WebSchemeHandlerResponse对象，通过WebResourceHandler的didReceiveResponse和didReceiveResponseBody传入响应头和响应体数据，最后调用didFinish或didFail结束请求。
+
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Class首批接口从API version 12开始支持。
@@ -18,19 +20,15 @@ content_hash: sha256:19fa3e4ba67d6ec28a13088a922f489bece268efd58558f8121a7400f12
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { webview } from '@kit.ArkWeb';
+```ts
+import { webview } from '@kit.ArkWeb';
 ```
 
 ## didReceiveResponse12+
 
-PhonePC/2in1TabletTVWearable
-
 didReceiveResponse(response: WebSchemeHandlerResponse): void
 
-将构造的响应头传递给被拦截的请求。
+将构造的响应头传递给被拦截的请求。需在调用didFinish或didFail之前调用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -38,7 +36,7 @@ didReceiveResponse(response: WebSchemeHandlerResponse): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| response | [WebSchemeHandlerResponse](arkts-apis-webview-webschemehandlerresponse.md) | 是 | 该拦截请求的响应。 |
+| response | [WebSchemeHandlerResponse](arkts-apis-webview-webschemehandlerresponse.md) | 是 | 该拦截请求的响应，用于向Web组件传递自定义的响应头信息，包括状态码、响应头字段等。开发者需先构造此对象，然后通过didReceiveResponse方法传递给被拦截的请求。 |
 
 **错误码：**
 
@@ -55,11 +53,9 @@ didReceiveResponse(response: WebSchemeHandlerResponse): void
 
 ## didReceiveResponseBody12+
 
-PhonePC/2in1TabletTVWearable
-
 didReceiveResponseBody(data: ArrayBuffer): void
 
-将构造的响应体传递给被拦截的请求。
+将构造的响应体传递给被拦截的请求。需在调用didFinish或didFail之前调用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -67,7 +63,7 @@ didReceiveResponseBody(data: ArrayBuffer): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | ArrayBuffer | 是 | 响应体数据。 |
+| data | ArrayBuffer | 是 | ArrayBuffer类型的二进制数据，用于传递HTTP响应体内容。开发者需根据响应内容类型（如文本、图片、JSON等）构造相应格式的二进制数据。 |
 
 **错误码：**
 
@@ -84,11 +80,9 @@ didReceiveResponseBody(data: ArrayBuffer): void
 
 ## didFinish12+
 
-PhonePC/2in1TabletTVWearable
-
 didFinish(): void
 
-通知Web组件被拦截的请求已经完成，并且没有更多的数据可用，调用前需要优先调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)将构造的响应头传递给被拦截的请求。
+通知Web组件被拦截的请求已经完成，并且没有更多的数据可用，调用前需调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)传入响应头。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -106,11 +100,9 @@ didFinish(): void
 
 ## didFail12+
 
-PhonePC/2in1TabletTVWearable
-
 didFail(code: WebNetErrorList): void
 
-通知ArkWeb内核被拦截请求应该返回失败，调用前需要优先调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)将构造的响应头传递给被拦截的请求。
+通知ArkWeb内核被拦截请求将返回失败，并结束该网络请求，调用前需调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)传入响应头。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -118,7 +110,7 @@ didFail(code: WebNetErrorList): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| code | [WebNetErrorList](arkts-apis-neterrorlist.md#webneterrorlist) | 是 | 网络错误码。 |
+| code | [WebNetErrorList](arkts-apis-neterrorlist.md#webneterrorlist) | 是 | 网络错误码，用于标识请求失败的原因。 |
 
 **错误码：**
 
@@ -135,11 +127,9 @@ didFail(code: WebNetErrorList): void
 
 ## didFail20+
 
-PhonePC/2in1TabletTVWearable
-
 didFail(code: WebNetErrorList, completeIfNoResponse: boolean): void
 
-通知ArkWeb内核，被拦截请求应返回失败。若completeIfNoResponse为false，调用前需优先调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)，将构造的响应头传递给被拦截的请求。若completeIfNoResponse为true，且调用前未调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)，则自动生成一个响应头，网络错误码为-104，详情参见[WebNetErrorList](arkts-apis-neterrorlist.md#webneterrorlist)。
+通知ArkWeb内核，被拦截请求将返回失败。若completeIfNoResponse为false，调用前需调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)传入响应头。若completeIfNoResponse为true，且调用前未调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)，则自动生成一个响应头，网络错误码为-104，详情参见[WebNetErrorList](arkts-apis-neterrorlist.md#webneterrorlist)。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -147,8 +137,8 @@ didFail(code: WebNetErrorList, completeIfNoResponse: boolean): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| code | [WebNetErrorList](arkts-apis-neterrorlist.md#webneterrorlist) | 是 | 网络错误码。 |
-| completeIfNoResponse | boolean | 是 | 调用当前接口时，若之前未调用过[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)，是否完成此次网络请求；值为true时，若之前未调用过[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)，则会自动生成一个response以完成此次网络请求，网络错误码为-104；值为false时，将等待应用调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)并传入response，不会直接完成此次网络请求。 |
+| code | [WebNetErrorList](arkts-apis-neterrorlist.md#webneterrorlist) | 是 | 网络错误码，用于标识请求失败的原因。 |
+| completeIfNoResponse | boolean | 是 | 是否在未调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)时自动完成此次网络请求；值为true时自动生成响应头（网络错误码为-104）并完成请求，值为false时等待应用调用[didReceiveResponse](arkts-apis-webview-webresourcehandler.md#didreceiveresponse12)。 |
 
 **错误码：**
 
@@ -161,74 +151,74 @@ didFail(code: WebNetErrorList, completeIfNoResponse: boolean): void
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview, WebNetErrorList } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview, WebNetErrorList } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler();
 
-11. build() {
-12. Column() {
-13. Web({ src: 'https://www.example.com', controller: this.controller })
-14. .onControllerAttached(() => {
-15. try {
-16. this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
-17. console.info("[schemeHandler] onRequestStart");
-18. try {
-19. console.info("[schemeHandler] onRequestStart url:" + request.getRequestUrl());
-20. console.info("[schemeHandler] onRequestStart method:" + request.getRequestMethod());
-21. console.info("[schemeHandler] onRequestStart referrer:" + request.getReferrer());
-22. console.info("[schemeHandler] onRequestStart isMainFrame:" + request.isMainFrame());
-23. console.info("[schemeHandler] onRequestStart hasGesture:" + request.hasGesture());
-24. console.info("[schemeHandler] onRequestStart header size:" + request.getHeader().length);
-25. console.info("[schemeHandler] onRequestStart resource type:" + request.getRequestResourceType());
-26. console.info("[schemeHandler] onRequestStart frame url:" + request.getFrameUrl());
-27. let header = request.getHeader();
-28. for (let i = 0; i < header.length; i++) {
-29. console.info("[schemeHandler] onRequestStart header:" + header[i].headerKey + " " + header[i].headerValue);
-30. }
-31. let stream = request.getHttpBodyStream();
-32. if (stream) {
-33. console.info("[schemeHandler] onRequestStart has http body stream");
-34. } else {
-35. console.info("[schemeHandler] onRequestStart has no http body stream");
-36. }
-37. } catch (error) {
-38. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-39. }
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com', controller: this.controller })
+        .onControllerAttached(() => {
+          try {
+            this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+              console.info('[schemeHandler] onRequestStart');
+              try {
+                console.info('[schemeHandler] onRequestStart url:' + request.getRequestUrl());
+                console.info('[schemeHandler] onRequestStart method:' + request.getRequestMethod());
+                console.info('[schemeHandler] onRequestStart referrer:' + request.getReferrer());
+                console.info('[schemeHandler] onRequestStart isMainFrame:' + request.isMainFrame());
+                console.info('[schemeHandler] onRequestStart hasGesture:' + request.hasGesture());
+                console.info('[schemeHandler] onRequestStart header size:' + request.getHeader().length);
+                console.info('[schemeHandler] onRequestStart resource type:' + request.getRequestResourceType());
+                console.info('[schemeHandler] onRequestStart frame url:' + request.getFrameUrl());
+                let header = request.getHeader();
+                for (let i = 0; i < header.length; i++) {
+                  console.info('[schemeHandler] onRequestStart header:' + header[i].headerKey + ' ' + header[i].headerValue);
+                }
+                let stream = request.getHttpBodyStream();
+                if (stream) {
+                  console.info('[schemeHandler] onRequestStart has http body stream');
+                } else {
+                  console.info('[schemeHandler] onRequestStart has no http body stream');
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
 
-41. if (request.getRequestUrl().endsWith("example.com")) {
-42. return false;
-43. }
+              if (request.getRequestUrl().endsWith('example.com')) {
+                return false;
+              }
 
-45. try {
-46. // 直接调用didFail(WebNetErrorList.ERR_FAILED, true)，自动构造一个网络请求错误ERR_CONNECTION_FAILED
-47. resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true);
-48. } catch (error) {
-49. // 当error.code为17100101(The errorCode is either ARKWEB_NET_OK or outside the range of error codes in WebNetErrorList)
-50. // 且didFail(code: WebNetErrorList, completeIfNoResponse: boolean)的code值不为null时，接口会继续调用不会中断。
-51. console.error(`[schemeHandler] ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-52. }
-53. return true;
-54. })
+              try {
+                // 直接调用didFail(WebNetErrorList.ERR_FAILED, true)，若此前未调用didReceiveResponse，系统将自动生成响应头，网络错误码为-104（对应ERR_CONNECTION_FAILED）
+                resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true);
+              } catch (error) {
+                // 当error.code为17100101(The errorCode is either ARKWEB_NET_OK or outside the range of error codes in WebNetErrorList)
+                // 且didFail(code: WebNetErrorList, completeIfNoResponse: boolean)的code值不为null时，接口会继续调用不会中断。
+                console.error(`[schemeHandler] ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              return true;
+            })
 
-56. this.schemeHandler.onRequestStop((request: webview.WebSchemeHandlerRequest) => {
-57. console.info("[schemeHandler] onRequestStop");
-58. });
+            this.schemeHandler.onRequestStop((request: webview.WebSchemeHandlerRequest) => {
+              console.info('[schemeHandler] onRequestStop');
+            });
 
-60. this.controller.setWebSchemeHandler('https', this.schemeHandler);
-61. } catch (error) {
-62. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-63. }
-64. })
-65. .javaScriptAccess(true)
-66. .domStorageAccess(true)
-67. }
-68. }
-69. }
+            this.controller.setWebSchemeHandler('https', this.schemeHandler);
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+        .javaScriptAccess(true)
+        .domStorageAccess(true)
+    }
+  }
+}
 ```

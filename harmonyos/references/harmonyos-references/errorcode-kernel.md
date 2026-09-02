@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 内核错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 内核错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:46+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:72d91cc52e395498d548dfc077bbf722bc4afa78d0117a643d02000764b4b114
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:777830ebca5ce0d6f5a798e8b9621a6c793403cd77e45798022831d17f86d742
 ---
 
-说明
+**说明** 
 
 以下仅列出内核错误码数值及描述。
 
@@ -129,7 +129,7 @@ content_hash: sha256:72d91cc52e395498d548dfc077bbf722bc4afa78d0117a643d02000764b
 | 117 | EUCLEAN | Structure needs cleaning |
 | 118 | ENOTNAM | Not a XENIX named type file |
 | 119 | ENAVAIL | No XENIX semaphores available |
-| 120 | EREMOTEIO | Is a named type file |
+| 120 | EISNAM | Is a named type file |
 | 121 | EREMOTEIO | Remote I/O error |
 | 122 | EDQUOT | Quota exceeded |
 | 123 | ENOMEDIUM | No medium found |

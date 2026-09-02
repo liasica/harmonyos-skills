@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohav
 title: OH_AVSession_AVQueueItem
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 结构体 > OH_AVSession_AVQueueItem
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:143b4a0c9598fddfdc6ed90e969078038c22fc193109ee56807823d917a6d9b8
+scraped_at: 2026-09-02T15:02:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:adcb2ce44dfd1c1f451a732ca19640d6cbd6a79f1d0ef9e9e6267465c54c1865
 ---
 
-```
-1. typedef struct {...} OH_AVSession_AVQueueItem
+```c
+typedef struct OH_AVSession_AVQueueItem {...} OH_AVSession_AVQueueItem
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 音视频队列元素的定义。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

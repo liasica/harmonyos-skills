@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm-v2
 title: MVVM模式（V2）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > MVVM模式（V2）
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:27:11+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:76afb624e088892ddea4b238f2e4f133b2f3c11fbe27a064fc13ad4818836d37
+scraped_at: 2026-09-02T14:59:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cd11ec35cb2e88dbf2abbb382b328790984c970e220d96f026983b69f8cd0656
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:76afb624e088892ddea4b238f2e4f133b2f3c11fbe27a064fc13ad48188
 
 ## 通过状态管理V2版本实现ViewModel
 
-在MVVM模式中，ViewModel负责管理数据状态，并在数据变化时自动更新视图。ArkUI的状态管理V2版本提供了丰富的装饰器和工具，帮助开发者在自定义组件之间共享数据，确保数据变化自动同步到UI。常用的状态管理装饰器包括[@Local](arkts-new-local.md)、[@Param](arkts-new-param.md)、[@Event](arkts-new-event.md)、[@ObservedV2、@Trace](arkts-new-observedv2-and-trace.md)等等。此外，V2还提供了[AppStorageV2](arkts-new-appstoragev2.md)和[PersistenceV2](arkts-new-persistencev2.md)作为全局状态存储工具，用于应用间的状态共享和持久化存储。
+在MVVM模式中，ViewModel负责管理数据状态，并在数据变化时自动更新视图。ArkUI的状态管理V2版本提供了丰富的装饰器和工具，帮助开发者在自定义组件之间共享数据，确保数据变化自动同步到UI。常用的状态管理装饰器包括[@Local](arkts-new-local.md)、[@Param](arkts-new-param.md)、[@Event](arkts-new-event.md)、[@ObservedV2、@Trace](arkts-new-observedv2-and-trace.md)等等。此外，V2还提供了[AppStorageV2](arkts-new-appstoragev2.md)和[PersistenceV2](arkts-new-persistencev2.md)作为全局状态存储工具，用于应用内的状态共享和持久化存储。
 
 本节将通过一个简单的todolist示例，逐步引入和使用状态管理V2的装饰器及工具，从基础的静态任务列表开始，逐步扩展功能。每个步骤都基于上一步扩展，帮助开发者循序渐进地理解并掌握各个装饰器的使用方法。
 
@@ -28,25 +28,23 @@ content_hash: sha256:76afb624e088892ddea4b238f2e4f133b2f3c11fbe27a064fc13ad48188
 
 **示例1**
 
+```typescript
+// src/main/ets/pages/BasicPage.ets
+@Entry
+@ComponentV2
+struct TodoList {
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      Text('task1')
+      Text('task2')
+      Text('task3')
+    }
+  }
+}
 ```
-1. // src/main/ets/pages/BasicPage.ets
-2. @Entry
-3. @ComponentV2
-4. struct TodoList {
-5. build() {
-6. Column() {
-7. Text('To do')
-8. .fontSize(40)
-9. .margin({ bottom: 10 })
-10. Text('task1')
-11. Text('task2')
-12. Text('task3')
-13. }
-14. }
-15. }
-```
-
-[BasicPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/BasicPage.ets#L17-L33)
 
 ### 添加@Local，实现对组件内部状态观测
 
@@ -56,33 +54,31 @@ content_hash: sha256:76afb624e088892ddea4b238f2e4f133b2f3c11fbe27a064fc13ad48188
 
 **示例2**
 
-```
-1. // src/main/ets/pages/LocalPage.ets
-2. @Entry
-3. @ComponentV2
-4. struct TodoList {
-5. @Local isFinish: boolean = false;
+```typescript
+// src/main/ets/pages/LocalPage.ets
+@Entry
+@ComponentV2
+struct TodoList {
+  @Local isFinish: boolean = false;
 
-7. build() {
-8. Column() {
-9. Text('To do')
-10. .fontSize(40)
-11. .margin({ bottom: 10 })
-12. Row() {
-13. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-14. Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-15. .width(28)
-16. .height(28)
-17. Text('task1')
-18. .decoration({ type: this.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-19. }
-20. .onClick(() => this.isFinish = !this.isFinish)
-21. }
-22. }
-23. }
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      Row() {
+        // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+        Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+          .width(28)
+          .height(28)
+        Text('task1')
+          .decoration({ type: this.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+      }
+      .onClick(() => this.isFinish = !this.isFinish)
+    }
+  }
+}
 ```
-
-[LocalPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/LocalPage.ets#L17-L41)
 
 ### 添加@Param，实现组件接收外部输入
 
@@ -92,43 +88,41 @@ content_hash: sha256:76afb624e088892ddea4b238f2e4f133b2f3c11fbe27a064fc13ad48188
 
 **示例3**
 
+```typescript
+// src/main/ets/pages/ParamPage.ets
+@ComponentV2
+struct TaskItem {
+  @Param taskName: string = '';
+  @Param @Once isFinish: boolean = false;
+
+  build() {
+    Row() {
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+      Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+        .width(28)
+        .height(28)
+      Text(this.taskName)
+        .decoration({ type: this.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+    }
+    .onClick(() => this.isFinish = !this.isFinish)
+  }
+}
+
+@Entry
+@ComponentV2
+struct TodoList {
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      TaskItem({ taskName: 'Task 1', isFinish: false })
+      TaskItem({ taskName: 'Task 2', isFinish: false })
+      TaskItem({ taskName: 'Task 3', isFinish: false })
+    }
+  }
+}
 ```
-1. // src/main/ets/pages/ParamPage.ets
-2. @ComponentV2
-3. struct TaskItem {
-4. @Param taskName: string = '';
-5. @Param @Once isFinish: boolean = false;
-
-7. build() {
-8. Row() {
-9. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-10. Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-11. .width(28)
-12. .height(28)
-13. Text(this.taskName)
-14. .decoration({ type: this.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-15. }
-16. .onClick(() => this.isFinish = !this.isFinish)
-17. }
-18. }
-
-20. @Entry
-21. @ComponentV2
-22. struct TodoList {
-23. build() {
-24. Column() {
-25. Text('To do')
-26. .fontSize(40)
-27. .margin({ bottom: 10 })
-28. TaskItem({ taskName: 'Task 1', isFinish: false })
-29. TaskItem({ taskName: 'Task 2', isFinish: false })
-30. TaskItem({ taskName: 'Task 3', isFinish: false })
-31. }
-32. }
-33. }
-```
-
-[ParamPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/ParamPage.ets#L17-L51)
 
 ### 添加@Event，实现组件对外输出
 
@@ -138,71 +132,69 @@ content_hash: sha256:76afb624e088892ddea4b238f2e4f133b2f3c11fbe27a064fc13ad48188
 
 **示例4**
 
+```typescript
+// src/main/ets/pages/EventPage.ets
+@ComponentV2
+struct TaskItem {
+  @Param taskName: string = '';
+  @Param @Once isFinish: boolean = false;
+  @Event deleteTask: () => void = () => {};
+
+  build() {
+    Row() {
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+      Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+        .width(28)
+        .height(28)
+      Text(this.taskName)
+        .decoration({ type: this.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+      Button('Delete')
+        .onClick(() => {
+          this.deleteTask();
+        })
+    }
+    .onClick(() => {
+      this.isFinish = !this.isFinish;
+    })
+  }
+}
+
+@Entry
+@ComponentV2
+struct TodoList {
+  @Local tasks: string[] = ['task1', 'task2', 'task3'];
+  @Local newTaskName: string = '';
+
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      ForEach(this.tasks, (task: string) => {
+        TaskItem({
+          taskName: task,
+          isFinish: false,
+          deleteTask: () => {
+            this.tasks.splice(this.tasks.indexOf(task), 1);
+          }
+        })
+      })
+      Row() {
+        TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
+          .onChange((value) => {
+            this.newTaskName = value;
+          })
+          .width('70%')
+        Button('+')
+          .onClick(() => {
+            this.tasks.push(this.newTaskName);
+            this.newTaskName = '';
+          })
+      }
+    }
+  }
+}
 ```
-1. // src/main/ets/pages/EventPage.ets
-2. @ComponentV2
-3. struct TaskItem {
-4. @Param taskName: string = '';
-5. @Param @Once isFinish: boolean = false;
-6. @Event deleteTask: () => void = () => {};
-
-8. build() {
-9. Row() {
-10. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-11. Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-12. .width(28)
-13. .height(28)
-14. Text(this.taskName)
-15. .decoration({ type: this.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-16. Button('Delete')
-17. .onClick(() => {
-18. this.deleteTask();
-19. })
-20. }
-21. .onClick(() => {
-22. this.isFinish = !this.isFinish;
-23. })
-24. }
-25. }
-
-27. @Entry
-28. @ComponentV2
-29. struct TodoList {
-30. @Local tasks: string[] = ['task1', 'task2', 'task3'];
-31. @Local newTaskName: string = '';
-
-33. build() {
-34. Column() {
-35. Text('To do')
-36. .fontSize(40)
-37. .margin({ bottom: 10 })
-38. ForEach(this.tasks, (task: string) => {
-39. TaskItem({
-40. taskName: task,
-41. isFinish: false,
-42. deleteTask: () => {
-43. this.tasks.splice(this.tasks.indexOf(task), 1);
-44. }
-45. })
-46. })
-47. Row() {
-48. TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
-49. .onChange((value) => {
-50. this.newTaskName = value;
-51. })
-52. .width('70%')
-53. Button('+')
-54. .onClick(() => {
-55. this.tasks.push(this.newTaskName);
-56. this.newTaskName = '';
-57. })
-58. }
-59. }
-60. }
-61. }
-```
-
-[EventPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/EventPage.ets#L17-L79)
 
 ### 添加Repeat，实现子组件复用
 
@@ -217,72 +209,70 @@ Repeat支持两种场景：懒加载场景和非懒加载场景。
 
 **示例5**
 
+```typescript
+// src/main/ets/pages/RepeatPage.ets
+@ComponentV2
+struct TaskItem {
+  @Param taskName: string = '';
+  @Param @Once isFinish: boolean = false;
+  @Event deleteTask: () => void = () => {};
+
+  build() {
+    Row() {
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+      Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+        .width(28)
+        .height(28)
+      Text(this.taskName)
+        .decoration({ type: this.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+      Button('Delete')
+        .onClick(() => {
+          this.deleteTask();
+        })
+    }
+    .onClick(() => {
+      this.isFinish = !this.isFinish;
+    })
+  }
+}
+
+@Entry
+@ComponentV2
+struct TodoList {
+  @Local tasks: string[] = ['task1', 'task2', 'task3'];
+  @Local newTaskName: string = '';
+
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      Repeat<string>(this.tasks)
+        .each((obj: RepeatItem<string>) => {
+          TaskItem({
+            taskName: obj.item,
+            isFinish: false,
+            deleteTask: () => {
+              this.tasks.splice(this.tasks.indexOf(obj.item), 1);
+            }
+          })
+        })
+      Row() {
+        TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
+          .onChange((value) => {
+            this.newTaskName = value;
+          })
+          .width('70%')
+        Button('+')
+          .onClick(() => {
+            this.tasks.push(this.newTaskName);
+            this.newTaskName = '';
+          })
+      }
+    }
+  }
+}
 ```
-1. // src/main/ets/pages/RepeatPage.ets
-2. @ComponentV2
-3. struct TaskItem {
-4. @Param taskName: string = '';
-5. @Param @Once isFinish: boolean = false;
-6. @Event deleteTask: () => void = () => {};
-
-8. build() {
-9. Row() {
-10. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-11. Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-12. .width(28)
-13. .height(28)
-14. Text(this.taskName)
-15. .decoration({ type: this.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-16. Button('Delete')
-17. .onClick(() => {
-18. this.deleteTask();
-19. })
-20. }
-21. .onClick(() => {
-22. this.isFinish = !this.isFinish;
-23. })
-24. }
-25. }
-
-27. @Entry
-28. @ComponentV2
-29. struct TodoList {
-30. @Local tasks: string[] = ['task1', 'task2', 'task3'];
-31. @Local newTaskName: string = '';
-
-33. build() {
-34. Column() {
-35. Text('To do')
-36. .fontSize(40)
-37. .margin({ bottom: 10 })
-38. Repeat<string>(this.tasks)
-39. .each((obj: RepeatItem<string>) => {
-40. TaskItem({
-41. taskName: obj.item,
-42. isFinish: false,
-43. deleteTask: () => {
-44. this.tasks.splice(this.tasks.indexOf(obj.item), 1);
-45. }
-46. })
-47. })
-48. Row() {
-49. TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
-50. .onChange((value) => {
-51. this.newTaskName = value;
-52. })
-53. .width('70%')
-54. Button('+')
-55. .onClick(() => {
-56. this.tasks.push(this.newTaskName);
-57. this.newTaskName = '';
-58. })
-59. }
-60. }
-61. }
-62. }
-```
-
-[RepeatPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/RepeatPage.ets#L17-L80)
 
 ### 添加@ObservedV2，@Trace，实现类属性观测变化
 
@@ -292,101 +282,99 @@ Repeat支持两种场景：懒加载场景和非懒加载场景。
 
 **示例6**
 
+```typescript
+// src/main/ets/pages/ObservedV2TracePage.ets
+@ObservedV2
+class Task {
+  public taskName: string = '';
+  @Trace public isFinish: boolean = false;
+
+  constructor(taskName: string, isFinish: boolean) {
+    this.taskName = taskName;
+    this.isFinish = isFinish;
+  }
+}
+
+@ComponentV2
+struct TaskItem {
+  @Param task: Task = new Task('', false);
+  @Event deleteTask: () => void = () => {};
+
+  build() {
+    Row() {
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+      Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+        .width(28)
+        .height(28)
+      Text(this.task.taskName)
+        .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+      Button('Delete')
+        .onClick(() => {
+          this.deleteTask();
+        })
+    }
+    .onClick(() => {
+      this.task.isFinish = !this.task.isFinish;
+    })
+  }
+}
+
+@Entry
+@ComponentV2
+struct TodoList {
+  @Local tasks: Task[] = [
+    new Task('task1', false),
+    new Task('task2', false),
+    new Task('task3', false),
+  ];
+  @Local newTaskName: string = '';
+
+  finishAll(ifFinish: boolean) {
+    for (let task of this.tasks) {
+      task.isFinish = ifFinish;
+    }
+  }
+
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      Repeat<Task>(this.tasks)
+        .each((obj: RepeatItem<Task>) => {
+          TaskItem({
+            task: obj.item,
+            deleteTask: () => {
+              this.tasks.splice(this.tasks.indexOf(obj.item), 1);
+            }
+          })
+        })
+      Row() {
+        Button('All Completed')
+          .onClick(() => {
+            this.finishAll(true);
+          })
+        Button('All Not Completed')
+          .onClick(() => {
+            this.finishAll(false);
+          })
+      }
+      Row() {
+        TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
+          .onChange((value) => {
+            this.newTaskName = value;
+          })
+          .width('70%')
+        Button('+')
+          .onClick(() => {
+            this.tasks.push(new Task(this.newTaskName, false));
+            this.newTaskName = '';
+          })
+      }
+    }
+  }
+}
 ```
-1. // src/main/ets/pages/ObservedV2TracePage.ets
-2. @ObservedV2
-3. class Task {
-4. public taskName: string = '';
-5. @Trace public isFinish: boolean = false;
-
-7. constructor(taskName: string, isFinish: boolean) {
-8. this.taskName = taskName;
-9. this.isFinish = isFinish;
-10. }
-11. }
-
-13. @ComponentV2
-14. struct TaskItem {
-15. @Param task: Task = new Task('', false);
-16. @Event deleteTask: () => void = () => {};
-
-18. build() {
-19. Row() {
-20. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-21. Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-22. .width(28)
-23. .height(28)
-24. Text(this.task.taskName)
-25. .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-26. Button('Delete')
-27. .onClick(() => {
-28. this.deleteTask();
-29. })
-30. }
-31. .onClick(() => {
-32. this.task.isFinish = !this.task.isFinish;
-33. })
-34. }
-35. }
-
-37. @Entry
-38. @ComponentV2
-39. struct TodoList {
-40. @Local tasks: Task[] = [
-41. new Task('task1', false),
-42. new Task('task2', false),
-43. new Task('task3', false),
-44. ];
-45. @Local newTaskName: string = '';
-
-47. finishAll(ifFinish: boolean) {
-48. for (let task of this.tasks) {
-49. task.isFinish = ifFinish;
-50. }
-51. }
-
-53. build() {
-54. Column() {
-55. Text('To do')
-56. .fontSize(40)
-57. .margin({ bottom: 10 })
-58. Repeat<Task>(this.tasks)
-59. .each((obj: RepeatItem<Task>) => {
-60. TaskItem({
-61. task: obj.item,
-62. deleteTask: () => {
-63. this.tasks.splice(this.tasks.indexOf(obj.item), 1);
-64. }
-65. })
-66. })
-67. Row() {
-68. Button('All Completed')
-69. .onClick(() => {
-70. this.finishAll(true);
-71. })
-72. Button('All Not Completed')
-73. .onClick(() => {
-74. this.finishAll(false);
-75. })
-76. }
-77. Row() {
-78. TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
-79. .onChange((value) => {
-80. this.newTaskName = value;
-81. })
-82. .width('70%')
-83. Button('+')
-84. .onClick(() => {
-85. this.tasks.push(new Task(this.newTaskName, false));
-86. this.newTaskName = '';
-87. })
-88. }
-89. }
-90. }
-91. }
-```
-
-[ObservedV2TracePage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/ObservedV2TracePage.ets#L17-L109)
 
 ### 添加@Monitor，@Computed，实现监听状态变量和计算属性
 
@@ -396,114 +384,112 @@ Repeat支持两种场景：懒加载场景和非懒加载场景。
 
 **示例7**
 
+```typescript
+// src/main/ets/pages/MonitorComputedPage.ets
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Task {
+  public taskName: string = '';
+  @Trace public isFinish: boolean = false;
+
+  constructor(taskName: string, isFinish: boolean) {
+    this.taskName = taskName;
+    this.isFinish = isFinish;
+  }
+}
+
+@ComponentV2
+struct TaskItem {
+  @Param task: Task = new Task('', false);
+  @Event deleteTask: () => void = () => {};
+
+  @Monitor('task.isFinish')
+  onTaskFinished(mon: IMonitor) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
+  }
+
+  build() {
+    Row() {
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+      Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+        .width(28)
+        .height(28)
+      Text(this.task.taskName)
+        .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+      Button('Delete')
+        .onClick(() => {
+          this.deleteTask();
+        })
+    }
+    .onClick(() => {
+      this.task.isFinish = !this.task.isFinish;
+    })
+  }
+}
+
+@Entry
+@ComponentV2
+struct TodoList {
+  @Local tasks: Task[] = [
+    new Task('task1', false),
+    new Task('task2', false),
+    new Task('task3', false),
+  ];
+  @Local newTaskName: string = '';
+
+  finishAll(ifFinish: boolean) {
+    for (let task of this.tasks) {
+      task.isFinish = ifFinish;
+    }
+  }
+
+  @Computed
+  get tasksUnfinished(): number {
+    return this.tasks.filter(task => !task.isFinish).length;
+  }
+
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      Text('Unfinished task' + `：${this.tasksUnfinished}`)
+      Repeat<Task>(this.tasks)
+        .each((obj: RepeatItem<Task>) => {
+          TaskItem({
+            task: obj.item,
+            deleteTask: () => {
+              this.tasks.splice(this.tasks.indexOf(obj.item), 1);
+            }
+          })
+        })
+      Row() {
+        Button('All Completed')
+          .onClick(() => {
+            this.finishAll(true);
+          })
+        Button('All Not Completed')
+          .onClick(() => {
+            this.finishAll(false);
+          })
+      }
+      Row() {
+        TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
+          .onChange((value) => {
+            this.newTaskName = value;
+          })
+          .width('70%')
+        Button('+')
+          .onClick(() => {
+            this.tasks.push(new Task(this.newTaskName, false));
+            this.newTaskName = '';
+          })
+      }
+    }
+  }
+}
 ```
-1. // src/main/ets/pages/MonitorComputedPage.ets
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-4. @ObservedV2
-5. class Task {
-6. public taskName: string = '';
-7. @Trace public isFinish: boolean = false;
-
-9. constructor(taskName: string, isFinish: boolean) {
-10. this.taskName = taskName;
-11. this.isFinish = isFinish;
-12. }
-13. }
-
-15. @ComponentV2
-16. struct TaskItem {
-17. @Param task: Task = new Task('', false);
-18. @Event deleteTask: () => void = () => {};
-
-20. @Monitor('task.isFinish')
-21. onTaskFinished(mon: IMonitor) {
-22. hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
-23. }
-
-25. build() {
-26. Row() {
-27. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-28. Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-29. .width(28)
-30. .height(28)
-31. Text(this.task.taskName)
-32. .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-33. Button('Delete')
-34. .onClick(() => {
-35. this.deleteTask();
-36. })
-37. }
-38. .onClick(() => {
-39. this.task.isFinish = !this.task.isFinish;
-40. })
-41. }
-42. }
-
-44. @Entry
-45. @ComponentV2
-46. struct TodoList {
-47. @Local tasks: Task[] = [
-48. new Task('task1', false),
-49. new Task('task2', false),
-50. new Task('task3', false),
-51. ];
-52. @Local newTaskName: string = '';
-
-54. finishAll(ifFinish: boolean) {
-55. for (let task of this.tasks) {
-56. task.isFinish = ifFinish;
-57. }
-58. }
-
-60. @Computed
-61. get tasksUnfinished(): number {
-62. return this.tasks.filter(task => !task.isFinish).length;
-63. }
-
-65. build() {
-66. Column() {
-67. Text('To do')
-68. .fontSize(40)
-69. .margin({ bottom: 10 })
-70. Text('Unfinished task' + `：${this.tasksUnfinished}`)
-71. Repeat<Task>(this.tasks)
-72. .each((obj: RepeatItem<Task>) => {
-73. TaskItem({
-74. task: obj.item,
-75. deleteTask: () => {
-76. this.tasks.splice(this.tasks.indexOf(obj.item), 1);
-77. }
-78. })
-79. })
-80. Row() {
-81. Button('All Completed')
-82. .onClick(() => {
-83. this.finishAll(true);
-84. })
-85. Button('All Not Completed')
-86. .onClick(() => {
-87. this.finishAll(false);
-88. })
-89. }
-90. Row() {
-91. TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
-92. .onChange((value) => {
-93. this.newTaskName = value;
-94. })
-95. .width('70%')
-96. Button('+')
-97. .onClick(() => {
-98. this.tasks.push(new Task(this.newTaskName, false));
-99. this.newTaskName = '';
-100. })
-101. }
-102. }
-103. }
-104. }
-```
-
-[MonitorComputedPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/MonitorComputedPage.ets#L16-L121)
 
 ### 添加AppStorageV2，实现应用全局UI状态存储
 
@@ -513,514 +499,506 @@ Repeat支持两种场景：懒加载场景和非懒加载场景。
 
 **示例8**
 
-```
-1. // src/main/ets/pages/AppStorageV2Page.ets
-2. import { AppStorageV2 } from '@kit.ArkUI';
-3. import { common, Want } from '@kit.AbilityKit';
-4. import { Setting } from './SettingPage';
-5. import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+// src/main/ets/pages/AppStorageV2Page.ets
+import { AppStorageV2 } from '@kit.ArkUI';
+import { common, Want } from '@kit.AbilityKit';
+import { Setting } from './SettingPage';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-7. @ObservedV2
-8. class Task {
-9. public taskName: string = '';
-10. @Trace public isFinish: boolean = false;
+@ObservedV2
+class Task {
+  public taskName: string = '';
+  @Trace public isFinish: boolean = false;
 
-12. constructor(taskName: string, isFinish: boolean) {
-13. this.taskName = taskName;
-14. this.isFinish = isFinish;
-15. }
-16. }
+  constructor(taskName: string, isFinish: boolean) {
+    this.taskName = taskName;
+    this.isFinish = isFinish;
+  }
+}
 
-18. @ComponentV2
-19. struct TaskItem {
-20. @Param task: Task = new Task('', false);
-21. @Event deleteTask: () => void = () => {};
+@ComponentV2
+struct TaskItem {
+  @Param task: Task = new Task('', false);
+  @Event deleteTask: () => void = () => {};
 
-23. @Monitor('task.isFinish')
-24. onTaskFinished(mon: IMonitor) {
-25. hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
-26. }
+  @Monitor('task.isFinish')
+  onTaskFinished(mon: IMonitor) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
+  }
 
-28. build() {
-29. Row() {
-30. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-31. Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-32. .width(28)
-33. .height(28)
-34. Text(this.task.taskName)
-35. .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-36. Button('Delete')
-37. .onClick(() => {
-38. this.deleteTask();
-39. })
-40. }
-41. .onClick(() => {
-42. this.task.isFinish = !this.task.isFinish;
-43. })
-44. }
-45. }
+  build() {
+    Row() {
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+      Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+        .width(28)
+        .height(28)
+      Text(this.task.taskName)
+        .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+      Button('Delete')
+        .onClick(() => {
+          this.deleteTask();
+        })
+    }
+    .onClick(() => {
+      this.task.isFinish = !this.task.isFinish;
+    })
+  }
+}
 
-47. @Entry
-48. @ComponentV2
-49. struct TodoList {
-50. @Local tasks: Task[] = [
-51. new Task('task1', false),
-52. new Task('task2', false),
-53. new Task('task3', false),
-54. ];
-55. @Local newTaskName: string = '';
-56. @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
-57. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+@Entry
+@ComponentV2
+struct TodoList {
+  @Local tasks: Task[] = [
+    new Task('task1', false),
+    new Task('task2', false),
+    new Task('task3', false),
+  ];
+  @Local newTaskName: string = '';
+  @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-59. finishAll(ifFinish: boolean) {
-60. for (let task of this.tasks) {
-61. task.isFinish = ifFinish;
-62. }
-63. }
+  finishAll(ifFinish: boolean) {
+    for (let task of this.tasks) {
+      task.isFinish = ifFinish;
+    }
+  }
 
-65. @Computed
-66. get tasksUnfinished(): number {
-67. return this.tasks.filter(task => !task.isFinish).length;
-68. }
+  @Computed
+  get tasksUnfinished(): number {
+    return this.tasks.filter(task => !task.isFinish).length;
+  }
 
-70. build() {
-71. Column() {
-72. Text('To do')
-73. .fontSize(40)
-74. .margin({ bottom: 10 })
-75. Text('Unfinished task' + `：${this.tasksUnfinished}`)
-76. Repeat<Task>(this.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))
-77. .each((obj: RepeatItem<Task>) => {
-78. TaskItem({
-79. task: obj.item,
-80. deleteTask: () => {
-81. this.tasks.splice(this.tasks.indexOf(obj.item), 1);
-82. }
-83. })
-84. })
-85. Row() {
-86. Button('All Completed')
-87. .onClick(() => {
-88. this.finishAll(true);
-89. })
-90. Button('All Not Completed')
-91. .onClick(() => {
-92. this.finishAll(false);
-93. })
-94. Button('Setting')
-95. .onClick(() => {
-96. let wantInfo: Want = {
-97. deviceId: '', // deviceId为空表示本设备。
-98. bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
-99. abilityName: 'SettingAbility',
-100. };
-101. this.context.startAbility(wantInfo);
-102. })
-103. }
-104. Row() {
-105. TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
-106. .onChange((value) => {
-107. this.newTaskName = value;
-108. })
-109. .width('70%')
-110. Button('+')
-111. .onClick(() => {
-112. this.tasks.push(new Task(this.newTaskName, false));
-113. this.newTaskName = '';
-114. })
-115. }
-116. }
-117. }
-118. }
-```
-
-[AppStorageV2Page.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/AppStorageV2Page.ets#L17-L136)
-
-```
-1. // src/main/ets/pages/SettingPage.ets
-2. import { AppStorageV2 } from '@kit.ArkUI';
-3. import { common } from '@kit.AbilityKit';
-
-5. @ObservedV2
-6. export class Setting {
-7. @Trace public showCompletedTask: boolean = true;
-8. }
-
-10. @Entry
-11. @ComponentV2
-12. struct SettingPage {
-13. @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
-14. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-16. build() {
-17. Column() {
-18. Text('Setting')
-19. .fontSize(40)
-20. .margin({ bottom: 10 })
-21. Row() {
-22. Text('Show completed tasks')
-23. Toggle({ type: ToggleType.Switch, isOn: this.setting.showCompletedTask })
-24. .onChange((isOn) => {
-25. this.setting.showCompletedTask = isOn;
-26. })
-27. }
-28. Button('Back to To do')
-29. .onClick(() => {
-30. this.context.terminateSelf();
-31. })
-32. .margin({ top: 10 })
-33. }
-34. .alignItems(HorizontalAlign.Start)
-35. }
-36. }
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      Text('Unfinished task' + `：${this.tasksUnfinished}`)
+      Repeat<Task>(this.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))
+        .each((obj: RepeatItem<Task>) => {
+          TaskItem({
+            task: obj.item,
+            deleteTask: () => {
+              this.tasks.splice(this.tasks.indexOf(obj.item), 1);
+            }
+          })
+        })
+      Row() {
+        Button('All Completed')
+          .onClick(() => {
+            this.finishAll(true);
+          })
+        Button('All Not Completed')
+          .onClick(() => {
+            this.finishAll(false);
+          })
+        Button('Setting')
+          .onClick(() => {
+            let wantInfo: Want = {
+              deviceId: '', // deviceId为空表示本设备。
+              bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
+              abilityName: 'SettingAbility',
+            };
+            this.context.startAbility(wantInfo);
+          })
+      }
+      Row() {
+        TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
+          .onChange((value) => {
+            this.newTaskName = value;
+          })
+          .width('70%')
+        Button('+')
+          .onClick(() => {
+            this.tasks.push(new Task(this.newTaskName, false));
+            this.newTaskName = '';
+          })
+      }
+    }
+  }
+}
 ```
 
-[SettingPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/SettingPage.ets#L17-L54)
+```typescript
+// src/main/ets/pages/SettingPage.ets
+import { AppStorageV2 } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
+
+@ObservedV2
+export class Setting {
+  @Trace public showCompletedTask: boolean = true;
+}
+
+@Entry
+@ComponentV2
+struct SettingPage {
+  @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+  build() {
+    Column() {
+      Text('Setting')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      Row() {
+        Text('Show completed tasks')
+        Toggle({ type: ToggleType.Switch, isOn: this.setting.showCompletedTask })
+          .onChange((isOn) => {
+            this.setting.showCompletedTask = isOn;
+          })
+      }
+      Button('Back to To do')
+        .onClick(() => {
+          this.context.terminateSelf();
+        })
+        .margin({ top: 10 })
+    }
+    .alignItems(HorizontalAlign.Start)
+  }
+}
+```
 
 ### 添加PersistenceV2，实现持久化UI状态存储
 
 为了确保用户重新打开应用时能看到之前的任务状态，建议使用PersistenceV2进行数据持久化存储。PersistenceV2可将数据保存在设备磁盘上，与AppStorageV2的运行时内存相比，它能确保数据在应用关闭后再次启动时保持不变。
 
-在示例9中，创建了一个TaskList类，用于通过PersistenceV2持久化存储所有任务信息，键为"TaskList"，数据对应TaskList类。第一次通过connect连接TaskList时，如果没有数据，会创建一个默认tasks数组为空的新TaskList实例。在aboutToAppear生命周期函数中，连接到PersistenceV2的TaskList，若无存储任务数据，会从本地文件defaultTasks.json中加载任务并存储到PersistenceV2中。此后，每个任务的完成状态都会同步到PersistenceV2中。这样，即使应用关闭后再次打开，所有任务数据依旧保持不变，实现了持久化的应用状态存储功能。
+在示例9中，创建了一个TaskList类，用于通过PersistenceV2持久化存储所有任务信息，键为"TaskList"，数据对应TaskList类。第一次通过connect连接TaskList时，如果没有数据，会创建一个默认tasks数组为空的新TaskList实例。在aboutToAppear生命周期函数中，连接到PersistenceV2的TaskList，若无存储任务数据，会从rawfile资源文件defaultTasks.json中加载任务并存储到PersistenceV2中。此后，每个任务的完成状态都会同步到PersistenceV2中。这样，即使应用关闭后再次打开，所有任务数据依旧保持不变，实现了持久化的应用状态存储功能。
 
 **示例9**
 
+```typescript
+// src/main/ets/pages/PersistenceV2Page.ets
+import { AppStorageV2, PersistenceV2, Type } from '@kit.ArkUI';
+import { common, Want } from '@kit.AbilityKit';
+import { Setting } from './SettingPage';
+import { util } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Task {
+  // 未实现构造函数，因为@Type当前不支持带参数的构造函数。
+  @Trace public taskName: string = 'Todo';
+  @Trace public isFinish: boolean = false;
+}
+
+@ObservedV2
+class TaskList {
+  // 对于复杂对象需要@Type修饰，确保序列化成功。
+  @Type(Task)
+  @Trace public tasks: Task[] = [];
+
+  constructor(tasks: Task[]) {
+    this.tasks = tasks;
+  }
+
+  async loadTasks(context: common.UIAbilityContext) {
+    let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
+    let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
+    let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+    let result = textDecoder.decodeToString(getJson);
+    this.tasks = JSON.parse(result).map((task: Task) => {
+      let newTask = new Task();
+      newTask.taskName = task.taskName;
+      newTask.isFinish = task.isFinish;
+      return newTask;
+    });
+  }
+}
+
+@ComponentV2
+struct TaskItem {
+  @Param task: Task = new Task();
+  @Event deleteTask: () => void = () => {};
+
+  @Monitor('task.isFinish')
+  onTaskFinished(mon: IMonitor) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
+  }
+
+  build() {
+    Row() {
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+      Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+        .width(28)
+        .height(28)
+      Text(this.task.taskName)
+        .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+      Button('Delete')
+        .onClick(() => {
+          this.deleteTask();
+        })
+    }
+    .onClick(() => {
+      this.task.isFinish = !this.task.isFinish;
+    })
+  }
+}
+
+@Entry
+@ComponentV2
+struct TodoList {
+  @Local taskList: TaskList = new TaskList([]);
+  @Local newTaskName: string = '';
+  @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+  async aboutToAppear() {
+    this.taskList = PersistenceV2.connect(TaskList, 'TaskList', () => new TaskList([]))!;
+    if (this.taskList.tasks.length === 0) {
+      await this.taskList.loadTasks(this.context);
+    }
+  }
+
+  finishAll(ifFinish: boolean) {
+    for (let task of this.taskList.tasks) {
+      task.isFinish = ifFinish;
+    }
+  }
+
+  @Computed
+  get tasksUnfinished(): number {
+    return this.taskList.tasks.filter(task => !task.isFinish).length;
+  }
+
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin({ bottom: 10 })
+      Text('Unfinished task' + `：${this.tasksUnfinished}`)
+      Repeat<Task>(this.taskList.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))
+        .each((obj: RepeatItem<Task>) => {
+          TaskItem({
+            task: obj.item,
+            deleteTask: () => {
+              this.taskList.tasks.splice(this.taskList.tasks.indexOf(obj.item), 1);
+            }
+          })
+        })
+      Row() {
+        Button('All Completed')
+          .onClick(() => {
+            this.finishAll(true);
+          })
+        Button('All Not Completed')
+          .onClick(() => {
+            this.finishAll(false);
+          })
+        Button('Setting')
+          .onClick(() => {
+            let wantInfo: Want = {
+              deviceId: '', // deviceId为空表示本设备。
+              bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
+              abilityName: 'SettingAbility',
+            };
+            this.context.startAbility(wantInfo);
+          })
+      }
+      Row() {
+        TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
+          .onChange((value) => {
+            this.newTaskName = value;
+          })
+          .width('70%')
+        Button('+')
+          .onClick(() => {
+            let newTask = new Task();
+            newTask.taskName = this.newTaskName;
+            this.taskList.tasks.push(newTask);
+            this.newTaskName = '';
+          })
+      }
+    }
+  }
+}
 ```
-1. // src/main/ets/pages/PersistenceV2Page.ets
-2. import { AppStorageV2, PersistenceV2, Type } from '@kit.ArkUI';
-3. import { common, Want } from '@kit.AbilityKit';
-4. import { Setting } from './SettingPage';
-5. import { util } from '@kit.ArkTS';
-6. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-8. @ObservedV2
-9. class Task {
-10. // 未实现构造函数，因为@Type当前不支持带参数的构造函数。
-11. @Trace public taskName: string = 'Todo';
-12. @Trace public isFinish: boolean = false;
-13. }
-
-15. @ObservedV2
-16. class TaskList {
-17. // 对于复杂对象需要@Type修饰，确保序列化成功。
-18. @Type(Task)
-19. @Trace public tasks: Task[] = [];
-
-21. constructor(tasks: Task[]) {
-22. this.tasks = tasks;
-23. }
-
-25. async loadTasks(context: common.UIAbilityContext) {
-26. let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
-27. let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
-28. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-29. let result = textDecoder.decodeToString(getJson);
-30. this.tasks = JSON.parse(result).map((task: Task) => {
-31. let newTask = new Task();
-32. newTask.taskName = task.taskName;
-33. newTask.isFinish = task.isFinish;
-34. return newTask;
-35. });
-36. }
-37. }
-
-39. @ComponentV2
-40. struct TaskItem {
-41. @Param task: Task = new Task();
-42. @Event deleteTask: () => void = () => {};
-
-44. @Monitor('task.isFinish')
-45. onTaskFinished(mon: IMonitor) {
-46. hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
-47. }
-
-49. build() {
-50. Row() {
-51. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-52. Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-53. .width(28)
-54. .height(28)
-55. Text(this.task.taskName)
-56. .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-57. Button('Delete')
-58. .onClick(() => {
-59. this.deleteTask();
-60. })
-61. }
-62. .onClick(() => {
-63. this.task.isFinish = !this.task.isFinish;
-64. })
-65. }
-66. }
-
-68. @Entry
-69. @ComponentV2
-70. struct TodoList {
-71. @Local taskList: TaskList = new TaskList([]);
-72. @Local newTaskName: string = '';
-73. @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
-74. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-76. async aboutToAppear() {
-77. this.taskList = PersistenceV2.connect(TaskList, 'TaskList', () => new TaskList([]))!;
-78. if (this.taskList.tasks.length === 0) {
-79. await this.taskList.loadTasks(this.context);
-80. }
-81. }
-
-83. finishAll(ifFinish: boolean) {
-84. for (let task of this.taskList.tasks) {
-85. task.isFinish = ifFinish;
-86. }
-87. }
-
-89. @Computed
-90. get tasksUnfinished(): number {
-91. return this.taskList.tasks.filter(task => !task.isFinish).length;
-92. }
-
-94. build() {
-95. Column() {
-96. Text('To do')
-97. .fontSize(40)
-98. .margin({ bottom: 10 })
-99. Text('Unfinished task' + `：${this.tasksUnfinished}`)
-100. Repeat<Task>(this.taskList.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))
-101. .each((obj: RepeatItem<Task>) => {
-102. TaskItem({
-103. task: obj.item,
-104. deleteTask: () => {
-105. this.taskList.tasks.splice(this.taskList.tasks.indexOf(obj.item), 1);
-106. }
-107. })
-108. })
-109. Row() {
-110. Button('All Completed')
-111. .onClick(() => {
-112. this.finishAll(true);
-113. })
-114. Button('All Not Completed')
-115. .onClick(() => {
-116. this.finishAll(false);
-117. })
-118. Button('Setting')
-119. .onClick(() => {
-120. let wantInfo: Want = {
-121. deviceId: '', // deviceId为空表示本设备。
-122. bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
-123. abilityName: 'SettingAbility',
-124. };
-125. this.context.startAbility(wantInfo);
-126. })
-127. }
-128. Row() {
-129. TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
-130. .onChange((value) => {
-131. this.newTaskName = value;
-132. })
-133. .width('70%')
-134. Button('+')
-135. .onClick(() => {
-136. let newTask = new Task();
-137. newTask.taskName = this.newTaskName;
-138. this.taskList.tasks.push(newTask);
-139. this.newTaskName = '';
-140. })
-141. }
-142. }
-143. }
-144. }
-```
-
-[PersistenceV2Page.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/PersistenceV2Page.ets#L17-L162)
 
 JSON文件存放在src/main/resources/rawfile/defaultTasks.json路径下。
 
-```
-1. [
-2. {"taskName": "学习ArkTS开发", "isFinish": false},
-3. {"taskName": "健身", "isFinish": false},
-4. {"taskName": "买水果", "isFinish": true},
-5. {"taskName": "取快递", "isFinish": true},
-6. {"taskName": "刷题", "isFinish": true}
-7. ]
+```json
+[
+  {"taskName": "学习ArkTS开发", "isFinish": false},
+  {"taskName": "健身", "isFinish": false},
+  {"taskName": "买水果", "isFinish": true},
+  {"taskName": "取快递", "isFinish": true},
+  {"taskName": "刷题", "isFinish": true}
+]
 ```
 
 ### 添加@Builder，实现自定义构建函数
 
 随着应用功能逐步扩展，代码中的某些UI元素开始重复，不仅增加了代码量，也让维护变得复杂。为解决此问题，建议使用@Builder装饰器，将重复的UI组件抽象为独立的构建方法，便于复用和代码模块化。
 
-在示例10中，通过使用@Builder定义的ActionButton方法，实现了按钮文字、样式和点击事件的统一管理，提高了代码的简洁性和可维护性。同时优化了界面组件的布局和样式，包括间距、颜色和尺寸等视觉元素，最终呈现出一个功能完善且界面简洁美观的待办事项应用。
+在示例10中，通过使用@Builder定义的actionButton方法，实现了按钮文字、样式和点击事件的统一管理，提高了代码的简洁性和可维护性。同时优化了界面组件的布局和样式，包括间距、颜色和尺寸等视觉元素，最终呈现出一个功能完善且界面简洁美观的待办事项应用。
 
 **示例10**
 
+```typescript
+// src/main/ets/pages/BuilderPage.ets
+import { AppStorageV2, PersistenceV2, Type } from '@kit.ArkUI';
+import { common, Want } from '@kit.AbilityKit';
+import { Setting } from './SettingPage';
+import { util } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@ObservedV2
+class Task {
+  // 未实现构造函数，因为@Type当前不支持带参数的构造函数。
+  @Trace public taskName: string = 'Todo';
+  @Trace public isFinish: boolean = false;
+}
+
+@Builder
+function actionButton(text: string | Resource, onClick: () => void) {
+  Button(text, { buttonStyle: ButtonStyleMode.NORMAL })
+    .onClick(onClick)
+    .margin({
+      left: 10,
+      right: 10,
+      top: 5,
+      bottom: 5
+    })
+}
+
+@ObservedV2
+class TaskList {
+  // 对于复杂对象需要@Type修饰，确保序列化成功。
+  @Type(Task)
+  @Trace public tasks: Task[] = [];
+
+  constructor(tasks: Task[]) {
+    this.tasks = tasks;
+  }
+
+  async loadTasks(context: common.UIAbilityContext) {
+    let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
+    let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
+    let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+    let result = textDecoder.decodeToString(getJson);
+    this.tasks = JSON.parse(result).map((task: Task) => {
+      let newTask = new Task();
+      newTask.taskName = task.taskName;
+      newTask.isFinish = task.isFinish;
+      return newTask;
+    });
+  }
+}
+
+@ComponentV2
+struct TaskItem {
+  @Param task: Task = new Task();
+  @Event deleteTask: () => void = () => {};
+
+  @Monitor('task.isFinish')
+  onTaskFinished(mon: IMonitor) {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
+  }
+
+  build() {
+    Row() {
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+      Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+        .width(28)
+        .height(28)
+        .margin({ left: 15, right: 10 })
+      Text(this.task.taskName)
+        .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+        .fontSize(18)
+      actionButton('Delete', () => {
+        this.deleteTask();
+      })
+    }
+    .height('7%')
+    .width('90%')
+    .backgroundColor('#90f1f3f5')
+    .borderRadius(25)
+    .onClick(() => {
+      this.task.isFinish = !this.task.isFinish;
+    })
+  }
+}
+
+@Entry
+@ComponentV2
+struct TodoList {
+  @Local taskList: TaskList = PersistenceV2.connect(TaskList, 'TaskList', () => new TaskList([]))!;
+  @Local newTaskName: string = '';
+  @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+  async aboutToAppear() {
+    if (this.taskList.tasks.length === 0) {
+      await this.taskList.loadTasks(this.context);
+    }
+  }
+
+  finishAll(ifFinish: boolean) {
+    for (let task of this.taskList.tasks) {
+      task.isFinish = ifFinish;
+    }
+  }
+
+  @Computed
+  get tasksUnfinished(): number {
+    return this.taskList.tasks.filter(task => !task.isFinish).length;
+  }
+
+  build() {
+    Column() {
+      Text('To do')
+        .fontSize(40)
+        .margin(10)
+      Text('Unfinished task' + `：${this.tasksUnfinished}`)
+        .margin({ left: 10, bottom: 10 })
+      Repeat<Task>(this.taskList.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))
+        .each((obj: RepeatItem<Task>) => {
+          TaskItem({
+            task: obj.item,
+            deleteTask: () => {
+              this.taskList.tasks.splice(this.taskList.tasks.indexOf(obj.item), 1);
+            }
+          })
+            .margin(5)
+        })
+      Row() {
+        actionButton('All Completed', (): void => this.finishAll(true))
+        actionButton('All Not Completed', (): void => this.finishAll(false))
+        actionButton('Setting', (): void => {
+          let wantInfo: Want = {
+            deviceId: '', // deviceId为空表示本设备。
+            bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
+            abilityName: 'SettingAbility',
+          };
+          this.context.startAbility(wantInfo);
+        })
+      }
+      .margin({ top: 10, bottom: 5 })
+      Row() {
+        TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
+          .onChange((value) => {
+            this.newTaskName = value;
+          })
+          .width('70%')
+        actionButton('+', (): void => {
+          let newTask = new Task();
+          newTask.taskName = this.newTaskName;
+          this.taskList.tasks.push(newTask);
+          this.newTaskName = '';
+        })
+      }
+    }
+    .height('100%')
+    .width('100%')
+    .alignItems(HorizontalAlign.Start)
+    .margin({ left: 15 })
+  }
+}
 ```
-1. // src/main/ets/pages/BuilderPage.ets
-2. import { AppStorageV2, PersistenceV2, Type } from '@kit.ArkUI';
-3. import { common, Want } from '@kit.AbilityKit';
-4. import { Setting } from './SettingPage';
-5. import { util } from '@kit.ArkTS';
-6. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-8. @ObservedV2
-9. class Task {
-10. // 未实现构造函数，因为@Type当前不支持带参数的构造函数。
-11. @Trace public taskName: string = 'Todo';
-12. @Trace public isFinish: boolean = false;
-13. }
-
-15. @Builder
-16. function actionButton(text: string | Resource, onClick: () => void) {
-17. Button(text, { buttonStyle: ButtonStyleMode.NORMAL })
-18. .onClick(onClick)
-19. .margin({
-20. left: 10,
-21. right: 10,
-22. top: 5,
-23. bottom: 5
-24. })
-25. }
-
-27. @ObservedV2
-28. class TaskList {
-29. // 对于复杂对象需要@Type修饰，确保序列化成功。
-30. @Type(Task)
-31. @Trace public tasks: Task[] = [];
-
-33. constructor(tasks: Task[]) {
-34. this.tasks = tasks;
-35. }
-
-37. async loadTasks(context: common.UIAbilityContext) {
-38. let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
-39. let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
-40. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-41. let result = textDecoder.decodeToString(getJson);
-42. this.tasks = JSON.parse(result).map((task: Task) => {
-43. let newTask = new Task();
-44. newTask.taskName = task.taskName;
-45. newTask.isFinish = task.isFinish;
-46. return newTask;
-47. });
-48. }
-49. }
-
-51. @ComponentV2
-52. struct TaskItem {
-53. @Param task: Task = new Task();
-54. @Event deleteTask: () => void = () => {};
-
-56. @Monitor('task.isFinish')
-57. onTaskFinished(mon: IMonitor) {
-58. hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
-59. }
-
-61. build() {
-62. Row() {
-63. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-64. Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-65. .width(28)
-66. .height(28)
-67. .margin({ left: 15, right: 10 })
-68. Text(this.task.taskName)
-69. .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-70. .fontSize(18)
-71. actionButton('Delete', () => {
-72. this.deleteTask();
-73. })
-74. }
-75. .height('7%')
-76. .width('90%')
-77. .backgroundColor('#90f1f3f5')
-78. .borderRadius(25)
-79. .onClick(() => {
-80. this.task.isFinish = !this.task.isFinish;
-81. })
-82. }
-83. }
-
-85. @Entry
-86. @ComponentV2
-87. struct TodoList {
-88. @Local taskList: TaskList = PersistenceV2.connect(TaskList, 'TaskList', () => new TaskList([]))!;
-89. @Local newTaskName: string = '';
-90. @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
-91. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-93. async aboutToAppear() {
-94. if (this.taskList.tasks.length === 0) {
-95. await this.taskList.loadTasks(this.context);
-96. }
-97. }
-
-99. finishAll(ifFinish: boolean) {
-100. for (let task of this.taskList.tasks) {
-101. task.isFinish = ifFinish;
-102. }
-103. }
-
-105. @Computed
-106. get tasksUnfinished(): number {
-107. return this.taskList.tasks.filter(task => !task.isFinish).length;
-108. }
-
-110. build() {
-111. Column() {
-112. Text('To do')
-113. .fontSize(40)
-114. .margin(10)
-115. Text('Unfinished task' + `：${this.tasksUnfinished}`)
-116. .margin({ left: 10, bottom: 10 })
-117. Repeat<Task>(this.taskList.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))
-118. .each((obj: RepeatItem<Task>) => {
-119. TaskItem({
-120. task: obj.item,
-121. deleteTask: () => {
-122. this.taskList.tasks.splice(this.taskList.tasks.indexOf(obj.item), 1);
-123. }
-124. })
-125. .margin(5)
-126. })
-127. Row() {
-128. actionButton('All Completed', (): void => this.finishAll(true))
-129. actionButton('All Not Completed', (): void => this.finishAll(false))
-130. actionButton('Setting', (): void => {
-131. let wantInfo: Want = {
-132. deviceId: '', // deviceId为空表示本设备。
-133. bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
-134. abilityName: 'SettingAbility',
-135. };
-136. this.context.startAbility(wantInfo);
-137. })
-138. }
-139. .margin({ top: 10, bottom: 5 })
-140. Row() {
-141. TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
-142. .onChange((value) => {
-143. this.newTaskName = value;
-144. })
-145. .width('70%')
-146. actionButton('+', (): void => {
-147. let newTask = new Task();
-148. newTask.taskName = this.newTaskName;
-149. this.taskList.tasks.push(newTask);
-150. this.newTaskName = '';
-151. })
-152. }
-153. }
-154. .height('100%')
-155. .width('100%')
-156. .alignItems(HorizontalAlign.Start)
-157. .margin({ left: 15 })
-158. }
-159. }
-```
-
-[BuilderPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/BuilderPage.ets#L17-L177)
 
 ### 效果图展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/ZKxkHgGaRd-5wFKcK1_RIA/zh-cn_image_0000002589243893.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/s-3uZy9jRjy6lr9pRKS8Mg/zh-cn_image_0000002736432339.gif)
 
 ## 重构代码以符合MVVM架构
 
@@ -1028,28 +1006,28 @@ JSON文件存放在src/main/resources/rawfile/defaultTasks.json路径下。
 
 ### 重构后的代码结构
 
-```
-1. /src
-2. ├── /main
-3. │   ├── /ets
-4. │   │   ├── /entryability
-5. │   │   ├── /model
-6. │   │   │   ├── TaskListModel.ets
-7. │   │   │   └── TaskModel.ets
-8. │   │   ├── /pages
-9. │   │   │   ├── SettingPage.ets
-10. │   │   │   └── TodoListPage.ets
-11. │   │   ├── /settingability
-12. │   │   ├── /view
-13. │   │   │   ├── BottomView.ets
-14. │   │   │   ├── ListView.ets
-15. │   │   │   └── TitleView.ets
-16. │   │   ├── /viewmodel
-17. │   │   │   ├── TaskListViewModel.ets
-18. │   │   │   └── TaskViewModel.ets
-19. │   └── /resources
-20. │       ├── ...
-21. ├─── ...
+```text
+/src
+├── /main
+│   ├── /ets
+│   │   ├── /entryability
+│   │   ├── /model
+│   │   │   ├── TaskListModel.ets
+│   │   │   └── TaskModel.ets
+│   │   ├── /pages
+│   │   │   ├── SettingPage.ets
+│   │   │   └── TodoListPage.ets
+│   │   ├── /settingability
+│   │   ├── /view
+│   │   │   ├── BottomView.ets
+│   │   │   ├── ListView.ets
+│   │   │   └── TitleView.ets
+│   │   ├── /viewmodel
+│   │   │   ├── TaskListViewModel.ets
+│   │   │   └── TaskViewModel.ets
+│   └── /resources
+│       ├── ...
+├─── ...
 ```
 
 ### Model层
@@ -1058,52 +1036,48 @@ Model层负责管理应用的数据及其业务逻辑，通常与后端或数据
 
 * TaskModel：单个任务的基本数据结构，包含任务名称和完成状态。
 
+  ```typescript
+  export default class TaskModel {
+    public taskName: string = 'Todo';
+    public isFinish: boolean = false;
+  }
   ```
-  1. export default class TaskModel {
-  2. public taskName: string = 'Todo';
-  3. public isFinish: boolean = false;
-  4. }
-  ```
-
-  [TaskModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/model/TaskModel.ets#L18-L23)
 * TaskListModel：任务的集合，提供从本地加载任务数据的功能。
 
+  ```typescript
+  import { common } from '@kit.AbilityKit';
+  import { util } from '@kit.ArkTS';
+  import TaskModel from './TaskModel';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  const DOMAIN = 0x0000;
+
+  // Model层：TaskListModel负责加载任务列表
+  export default class TaskListModel {
+    public tasks: TaskModel[] = [];
+
+    constructor(tasks: TaskModel[]) {
+      this.tasks = tasks;
+    }
+
+    async loadTasks(context: common.UIAbilityContext) {
+      try {
+        let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
+        let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
+        let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+        let result = textDecoder.decodeToString(getJson);
+        this.tasks = JSON.parse(result).map((task: TaskModel) => {
+          let newTask = new TaskModel();
+          newTask.taskName = task.taskName;
+          newTask.isFinish = task.isFinish;
+          return newTask;
+        });
+      } catch (e) {
+        hilog.error(DOMAIN, 'testTag', 'Failed to getRawFileContent: %{public}s', JSON.stringify(e) ?? '');
+      }
+    }
+  }
   ```
-  1. import { common } from '@kit.AbilityKit';
-  2. import { util } from '@kit.ArkTS';
-  3. import TaskModel from './TaskModel';
-  4. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-  6. const DOMAIN = 0x0000;
-
-  8. // Model层：TaskListModel负责加载任务列表
-  9. export default class TaskListModel {
-  10. public tasks: TaskModel[] = [];
-
-  12. constructor(tasks: TaskModel[]) {
-  13. this.tasks = tasks;
-  14. }
-
-  16. async loadTasks(context: common.UIAbilityContext) {
-  17. try {
-  18. let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
-  19. let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
-  20. let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
-  21. let result = textDecoder.decodeToString(getJson);
-  22. this.tasks = JSON.parse(result).map((task: TaskModel) => {
-  23. let newTask = new TaskModel();
-  24. newTask.taskName = task.taskName;
-  25. newTask.isFinish = task.isFinish;
-  26. return newTask;
-  27. });
-  28. } catch (e) {
-  29. hilog.error(DOMAIN, 'testTag', 'Failed to getRawFileContent', JSON.stringify(e) ?? '');
-  30. }
-  31. }
-  32. }
-  ```
-
-  [TaskListModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/model/TaskListModel.ets#L18-L43)
 
 ### ViewModel层
 
@@ -1111,68 +1085,64 @@ ViewModel层管理UI状态和业务逻辑，连接Model和View。通过监控Mod
 
 * TaskViewModel：封装单个任务的数据和状态变更逻辑，通过状态装饰器监控数据的变化。
 
+  ```typescript
+  // src/main/ets/viewmodel/TaskViewModel.ets
+  import TaskModel from '../model/TaskModel';
+
+  @ObservedV2
+  export default class TaskViewModel {
+    @Trace public taskName: string = 'Todo';
+    @Trace public isFinish: boolean = false;
+
+    updateTask(task: TaskModel) {
+      this.taskName = task.taskName;
+      this.isFinish = task.isFinish;
+    }
+
+    updateIsFinish(): void {
+      this.isFinish = !this.isFinish;
+    }
+  }
   ```
-  1. // src/main/ets/viewmodel/TaskViewModel.ets
-  2. import TaskModel from '../model/TaskModel';
-
-  4. @ObservedV2
-  5. export default class TaskViewModel {
-  6. @Trace public taskName: string = 'Todo';
-  7. @Trace public isFinish: boolean = false;
-
-  9. updateTask(task: TaskModel) {
-  10. this.taskName = task.taskName;
-  11. this.isFinish = task.isFinish;
-  12. }
-
-  14. updateIsFinish(): void {
-  15. this.isFinish = !this.isFinish;
-  16. }
-  17. }
-  ```
-
-  [TaskViewModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/viewmodel/TaskViewModel.ets#L17-L35)
 * TaskListViewModel：封装了任务列表以及管理功能，包括加载任务、批量更新任务状态，以及添加和删除任务。
 
+  ```typescript
+  // src/main/ets/viewmodel/TaskListViewModel.ets
+  import { common } from '@kit.AbilityKit';
+  import { Type } from '@kit.ArkUI';
+  import TaskListModel from '../model/TaskListModel';
+  import TaskViewModel from './TaskViewModel';
+
+  @ObservedV2
+  export default class TaskListViewModel {
+    @Type(TaskViewModel)
+    @Trace public tasks: TaskViewModel[] = [];
+
+    async loadTasks(context: common.UIAbilityContext) {
+      let taskList = new TaskListModel([]);
+      await taskList.loadTasks(context);
+      for (let task of taskList.tasks) {
+        let taskViewModel = new TaskViewModel();
+        taskViewModel.updateTask(task);
+        this.tasks.push(taskViewModel);
+      }
+    }
+
+    finishAll(ifFinish: boolean): void {
+      for (let task of this.tasks) {
+        task.isFinish = ifFinish;
+      }
+    }
+
+    addTask(newTask: TaskViewModel): void {
+      this.tasks.push(newTask);
+    }
+
+    removeTask(removedTask: TaskViewModel): void {
+      this.tasks.splice(this.tasks.indexOf(removedTask), 1);
+    }
+  }
   ```
-  1. // src/main/ets/viewmodel/TaskListViewModel.ets
-  2. import { common } from '@kit.AbilityKit';
-  3. import { Type } from '@kit.ArkUI';
-  4. import TaskListModel from '../model/TaskListModel';
-  5. import TaskViewModel from './TaskViewModel';
-
-  7. @ObservedV2
-  8. export default class TaskListViewModel {
-  9. @Type(TaskViewModel)
-  10. @Trace public tasks: TaskViewModel[] = [];
-
-  12. async loadTasks(context: common.UIAbilityContext) {
-  13. let taskList = new TaskListModel([]);
-  14. await taskList.loadTasks(context);
-  15. for (let task of taskList.tasks) {
-  16. let taskViewModel = new TaskViewModel();
-  17. taskViewModel.updateTask(task);
-  18. this.tasks.push(taskViewModel);
-  19. }
-  20. }
-
-  22. finishAll(ifFinish: boolean): void {
-  23. for (let task of this.tasks) {
-  24. task.isFinish = ifFinish;
-  25. }
-  26. }
-
-  28. addTask(newTask: TaskViewModel): void {
-  29. this.tasks.push(newTask);
-  30. }
-
-  32. removeTask(removedTask: TaskViewModel): void {
-  33. this.tasks.splice(this.tasks.indexOf(removedTask), 1);
-  34. }
-  35. }
-  ```
-
-  [TaskListViewModel.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/viewmodel/TaskListViewModel.ets#L17-L53)
 
 ### View层
 
@@ -1180,231 +1150,223 @@ View层负责应用程序的UI展示和与用户的交互。它只关注如何�
 
 * TitleView：负责展示应用的标题和未完成任务的统计信息。
 
-  ```
-  1. // src/main/ets/view/TitleView.ets
-  2. @ComponentV2
-  3. export default struct TitleView {
-  4. @Param tasksUnfinished: number = 0;
+  ```typescript
+  // src/main/ets/view/TitleView.ets
+  @ComponentV2
+  export default struct TitleView {
+    @Param tasksUnfinished: number = 0;
 
-  6. build() {
-  7. Column() {
-  8. Text('To do')
-  9. .fontSize(40)
-  10. .margin(10)
-  11. Text(`All Not Completed：${this.tasksUnfinished}`)
-  12. .margin({ left: 10, bottom: 10 })
-  13. }
-  14. }
-  15. }
+    build() {
+      Column() {
+        Text('To do')
+          .fontSize(40)
+          .margin(10)
+        Text(`Unfinished task：${this.tasksUnfinished}`)
+          .margin({ left: 10, bottom: 10 })
+      }
+    }
+  }
   ```
-
-  [TitleView.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/view/TitleView.ets#L17-L33)
 * ListView：负责展示任务列表，并根据Setting中的设置筛选是否显示已完成的任务。它依赖于TaskListViewModel来获取任务数据，并通过TaskItem组件进行渲染，包括任务的名称、完成状态以及删除按钮。通过TaskViewModel和TaskListViewModel实现用户的交互，如切换任务完成状态和删除任务。
 
+  ```typescript
+  // src/main/ets/view/ListView.ets
+  import TaskViewModel from '../viewmodel/TaskViewModel';
+  import TaskListViewModel from '../viewmodel/TaskListViewModel';
+  import { Setting } from '../pages/SettingPage';
+  import { ActionButton } from './BottomView';
+  import { hilog } from '@kit.PerformanceAnalysisKit';
+
+  @ComponentV2
+  struct TaskItem {
+    @Param task: TaskViewModel = new TaskViewModel();
+    @Event deleteTask: () => void = () => {};
+
+    @Monitor('task.isFinish')
+    onTaskFinished(mon: IMonitor) {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
+    }
+
+    build() {
+      Row() {
+        // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
+        Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
+          .width(28)
+          .height(28)
+          .margin({ left: 15, right: 10 })
+        Text(this.task.taskName)
+          .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
+          .fontSize(18)
+        ActionButton('Delete', () => this.deleteTask());
+      }
+      .height('7%')
+      .width('90%')
+      .backgroundColor('#90f1f3f5')
+      .borderRadius(25)
+      .onClick(() => this.task.updateIsFinish())
+    }
+  }
+
+  @ComponentV2
+  export default struct ListView {
+    @Param taskList: TaskListViewModel = new TaskListViewModel();
+    @Param setting: Setting = new Setting();
+
+    build() {
+      Repeat<TaskViewModel>(this.taskList.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))
+        .each((obj: RepeatItem<TaskViewModel>) => {
+          TaskItem({
+            task: obj.item,
+            deleteTask: () => this.taskList.removeTask(obj.item)
+          }).margin(5)
+        })
+    }
+  }
   ```
-  1. // src/main/ets/view/ListView.ets
-  2. import TaskViewModel from '../viewmodel/TaskViewModel';
-  3. import TaskListViewModel from '../viewmodel/TaskListViewModel';
-  4. import { Setting } from '../pages/SettingPage';
-  5. import { ActionButton } from './BottomView';
-  6. import { hilog } from '@kit.PerformanceAnalysisKit';
-
-  8. @ComponentV2
-  9. struct TaskItem {
-  10. @Param task: TaskViewModel = new TaskViewModel();
-  11. @Event deleteTask: () => void = () => {};
-
-  13. @Monitor('task.isFinish')
-  14. onTaskFinished(mon: IMonitor) {
-  15. hilog.info(0x0000, 'testTag', '%{public}s', 'Task ' + this.task.taskName + ' completion status changed from ' + mon.value()?.before + ' to ' + mon.value()?.now);
-  16. }
-
-  18. build() {
-  19. Row() {
-  20. // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
-  21. Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
-  22. .width(28)
-  23. .height(28)
-  24. .margin({ left: 15, right: 10 })
-  25. Text(this.task.taskName)
-  26. .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })
-  27. .fontSize(18)
-  28. ActionButton('Delete', () => this.deleteTask());
-  29. }
-  30. .height('7%')
-  31. .width('90%')
-  32. .backgroundColor('#90f1f3f5')
-  33. .borderRadius(25)
-  34. .onClick(() => this.task.updateIsFinish())
-  35. }
-  36. }
-
-  38. @ComponentV2
-  39. export default struct ListView {
-  40. @Param taskList: TaskListViewModel = new TaskListViewModel();
-  41. @Param setting: Setting = new Setting();
-
-  43. build() {
-  44. Repeat<TaskViewModel>(this.taskList.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))
-  45. .each((obj: RepeatItem<TaskViewModel>) => {
-  46. TaskItem({
-  47. task: obj.item,
-  48. deleteTask: () => this.taskList.removeTask(obj.item)
-  49. }).margin(5)
-  50. })
-  51. }
-  52. }
-  ```
-
-  [ListView.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/view/ListView.ets#L17-L69)
 * BottomView：负责提供与任务操作相关的按钮和输入框，如"全部完成"、"全部未完成"，"设置"三个按钮，以及添加新任务的输入框。点击"全部完成"和"全部未完成"时，通过TaskListViewModel更改所有任务的状态。点击"设置"按钮时，会导航到SettingAbility的设置页面。添加新任务时，通过TaskListViewModel新增任务到任务列表中。
 
+  ```typescript
+  // src/main/ets/view/BottomView.ets
+  import { common, Want } from '@kit.AbilityKit';
+  import TaskViewModel from '../viewmodel/TaskViewModel';
+  import TaskListViewModel from '../viewmodel/TaskListViewModel';
+
+  @Builder
+  export function ActionButton(text: string | Resource, onClick: () => void) {
+    Button(text, { buttonStyle: ButtonStyleMode.NORMAL })
+      .onClick(onClick)
+      .margin({
+        left: 10,
+        right: 10,
+        top: 5,
+        bottom: 5
+      })
+  }
+
+  @ComponentV2
+  export default struct BottomView {
+    @Param taskList: TaskListViewModel = new TaskListViewModel();
+    @Local newTaskName: string = '';
+    private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+    build() {
+      Column() {
+        Row() {
+          ActionButton('All Completed', (): void => this.taskList.finishAll(true))
+          ActionButton('All Not Completed', (): void => this.taskList.finishAll(false))
+        }
+        .margin({ top: 10 })
+
+        Row() {
+          ActionButton('Setting', (): void => {
+            let wantInfo: Want = {
+              deviceId: '', // deviceId为空表示本设备。
+              bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
+              abilityName: 'SettingAbility',
+            };
+            this.context.startAbility(wantInfo);
+          })
+        }
+        .margin({ bottom: 5 })
+
+        Row() {
+          TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
+            .onChange((value) => this.newTaskName = value)
+            .width('70%')
+          ActionButton('+', (): void => {
+            let newTask = new TaskViewModel();
+            newTask.taskName = this.newTaskName;
+            this.taskList.addTask(newTask);
+            this.newTaskName = '';
+          })
+        }
+      }
+    }
+  }
   ```
-  1. // src/main/ets/view/BottomView.ets
-  2. import { common, Want } from '@kit.AbilityKit';
-  3. import TaskViewModel from '../viewmodel/TaskViewModel';
-  4. import TaskListViewModel from '../viewmodel/TaskListViewModel';
-
-  6. @Builder
-  7. export function ActionButton(text: string | Resource, onClick: () => void) {
-  8. Button(text, { buttonStyle: ButtonStyleMode.NORMAL })
-  9. .onClick(onClick)
-  10. .margin({
-  11. left: 10,
-  12. right: 10,
-  13. top: 5,
-  14. bottom: 5
-  15. })
-  16. }
-
-  18. @ComponentV2
-  19. export default struct BottomView {
-  20. @Param taskList: TaskListViewModel = new TaskListViewModel();
-  21. @Local newTaskName: string = '';
-  22. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-  24. build() {
-  25. Column() {
-  26. Row() {
-  27. ActionButton('All Completed', (): void => this.taskList.finishAll(true))
-  28. ActionButton('All Not Completed', (): void => this.taskList.finishAll(false))
-  29. }
-  30. .margin({ top: 10 })
-
-  32. Row() {
-  33. ActionButton('Setting', (): void => {
-  34. let wantInfo: Want = {
-  35. deviceId: '', // deviceId为空表示本设备。
-  36. bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
-  37. abilityName: 'SettingAbility',
-  38. };
-  39. this.context.startAbility(wantInfo);
-  40. })
-  41. }
-  42. .margin({ bottom: 5 })
-
-  44. Row() {
-  45. TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })
-  46. .onChange((value) => this.newTaskName = value)
-  47. .width('70%')
-  48. ActionButton('+', (): void => {
-  49. let newTask = new TaskViewModel();
-  50. newTask.taskName = this.newTaskName;
-  51. this.taskList.addTask(newTask);
-  52. this.newTaskName = '';
-  53. })
-  54. }
-  55. }
-  56. }
-  57. }
-  ```
-
-  [BottomView.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/view/BottomView.ets#L17-L67)
 * TodoListPage：todolist的主页面，包含以上的三个View组件（TitleView、ListView、BottomView），用于统一展示待办事项的各个部分，管理任务列表和用户设置。TodoListPage负责从ViewModel中获取数据，并将数据传递给各个子View组件进行渲染，通过PersistenceV2持久化任务数据，确保数据在应用重启后仍能保持一致。
 
+  ```typescript
+  // src/main/ets/pages/TodoListPage.ets
+  import TaskListViewModel from '../viewmodel/TaskListViewModel';
+  import { common } from '@kit.AbilityKit';
+  import { AppStorageV2, PersistenceV2 } from '@kit.ArkUI';
+  import { Setting } from '../pages/SettingPage';
+  import TitleView from '../view/TitleView';
+  import ListView from '../view/ListView';
+  import BottomView from '../view/BottomView';
+
+  @Entry
+  @ComponentV2
+  struct TodoList {
+    @Local taskList: TaskListViewModel = PersistenceV2.connect(TaskListViewModel, 'TaskList', () => new TaskListViewModel())!;
+    @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
+    private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+    async aboutToAppear() {
+      if (this.taskList.tasks.length === 0) {
+        await this.taskList.loadTasks(this.context);
+      }
+    }
+
+    @Computed
+    get tasksUnfinished(): number {
+      return this.taskList.tasks.filter(task => !task.isFinish).length;
+    }
+
+    build() {
+      Column() {
+        TitleView({ tasksUnfinished: this.tasksUnfinished })
+        ListView({ taskList: this.taskList, setting: this.setting });
+        BottomView({ taskList: this.taskList });
+      }
+      .height('100%')
+      .width('100%')
+      .alignItems(HorizontalAlign.Start)
+      .margin({ left: 15 })
+    }
+  }
   ```
-  1. // src/main/ets/pages/TodoListPage.ets
-  2. import TaskListViewModel from '../viewmodel/TaskListViewModel';
-  3. import { common } from '@kit.AbilityKit';
-  4. import { AppStorageV2, PersistenceV2 } from '@kit.ArkUI';
-  5. import { Setting } from '../pages/SettingPage';
-  6. import TitleView from '../view/TitleView';
-  7. import ListView from '../view/ListView';
-  8. import BottomView from '../view/BottomView';
-
-  10. @Entry
-  11. @ComponentV2
-  12. struct TodoList {
-  13. @Local taskList: TaskListViewModel = PersistenceV2.connect(TaskListViewModel, 'TaskList', () => new TaskListViewModel())!;
-  14. @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
-  15. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-  17. async aboutToAppear() {
-  18. if (this.taskList.tasks.length === 0) {
-  19. await this.taskList.loadTasks(this.context);
-  20. }
-  21. }
-
-  23. @Computed
-  24. get tasksUnfinished(): number {
-  25. return this.taskList.tasks.filter(task => !task.isFinish).length;
-  26. }
-
-  28. build() {
-  29. Column() {
-  30. TitleView({ tasksUnfinished: this.tasksUnfinished })
-  31. ListView({ taskList: this.taskList, setting: this.setting });
-  32. BottomView({ taskList: this.taskList });
-  33. }
-  34. .height('100%')
-  35. .width('100%')
-  36. .alignItems(HorizontalAlign.Start)
-  37. .margin({ left: 15 })
-  38. }
-  39. }
-  ```
-
-  [TodoListPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/TodoListPage.ets#L17-L57)
 * SettingPage：设置页面，负责管理是否显示已完成任务的设置。通过AppStorageV2应用全局存储用户的设置，用户通过Toggle开关切换showCompletedTask状态。
 
+  ```typescript
+  // src/main/ets/pages/SettingPage.ets
+  import { AppStorageV2 } from '@kit.ArkUI';
+  import { common } from '@kit.AbilityKit';
+
+  @ObservedV2
+  export class Setting {
+    @Trace public showCompletedTask: boolean = true;
+  }
+
+  @Entry
+  @ComponentV2
+  struct SettingPage {
+    @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
+    private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+    build() {
+      Column() {
+        Text('Setting')
+          .fontSize(40)
+          .margin({ bottom: 10 })
+        Row() {
+          Text('Show completed tasks')
+          Toggle({ type: ToggleType.Switch, isOn: this.setting.showCompletedTask })
+            .onChange((isOn) => {
+              this.setting.showCompletedTask = isOn;
+            })
+        }
+        Button('Back to To do')
+          .onClick(() => {
+            this.context.terminateSelf();
+          })
+          .margin({ top: 10 })
+      }
+      .alignItems(HorizontalAlign.Start)
+    }
+  }
   ```
-  1. // src/main/ets/pages/SettingPage.ets
-  2. import { AppStorageV2 } from '@kit.ArkUI';
-  3. import { common } from '@kit.AbilityKit';
-
-  5. @ObservedV2
-  6. export class Setting {
-  7. @Trace public showCompletedTask: boolean = true;
-  8. }
-
-  10. @Entry
-  11. @ComponentV2
-  12. struct SettingPage {
-  13. @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
-  14. private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
-  16. build(){
-  17. Column(){
-  18. Text('Setting')
-  19. .fontSize(40)
-  20. .margin({ bottom: 10 })
-  21. Row() {
-  22. Text('Show completed tasks')
-  23. Toggle({ type: ToggleType.Switch, isOn:this.setting.showCompletedTask })
-  24. .onChange((isOn) => {
-  25. this.setting.showCompletedTask = isOn;
-  26. })
-  27. }
-  28. Button('Back to To do')
-  29. .onClick(()=>this.context.terminateSelf())
-  30. .margin({ top: 10 })
-  31. }
-  32. .alignItems(HorizontalAlign.Start)
-  33. }
-  34. }
-  ```
-
-  [SettingPage.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/StateMgmtV2MVVM/entry/src/main/ets/pages/SettingPage.ets#L17-L54)
 
 ## 总结
 
@@ -1412,4 +1374,4 @@ View层负责应用程序的UI展示和与用户的交互。它只关注如何�
 
 ## 代码示例
 
-[完整源码](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/StateMgmtV2MVVM/entry)
+[完整源码](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/ArkUISample/StateMgmtV2MVVM)

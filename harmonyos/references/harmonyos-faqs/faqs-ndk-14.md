@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-14
 title: ArkTS层调用Native层接口时的线程相关问题
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime） > ArkTS层调用Native层接口时的线程相关问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:54+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:5fd3a6ed03d4e7ab49a52898781b23450fd336e2d0e803d435987b45caf7c477
 ---
 

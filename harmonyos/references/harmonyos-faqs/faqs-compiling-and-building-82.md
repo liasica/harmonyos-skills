@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: DevEco Studio日志中如何排除某一特征的日志
 breadcrumb: FAQ > DevEco Studio > 编译构建 > DevEco Studio日志中如何排除某一特征的日志
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:15+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:8423304cfa6075446067b95b15470ea6d7986287928e974983b0973ac261d9bc
 ---
 

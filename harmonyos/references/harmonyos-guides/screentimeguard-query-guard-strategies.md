@@ -1,25 +1,25 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimeguard-query-guard-strategies
-title: 查询策略
-breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 查询策略
+title: 查询策略配置数据
+breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 查询策略配置数据
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:29+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fa3d0290abcca362d270625bdcd7170fc5372d5f118db3e66b4b55378b2e7868
+scraped_at: 2026-09-02T14:50:32+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:9cb89bb00bb83831aac1071c35a64629bd1c03a97432271ba104b179cd232989
 ---
 
 ## 场景介绍
 
-当用户希望查看现有的屏幕时间守护规则时，可以调用查询管控策略的接口。通过成功调用查询策略接口，用户可以浏览已创建的所有管控策略，如查看各个应用的停用起止时间或可使用时长。
+当管控应用希望查看已添加的所有管控策略时，可以调用查询管控策略的接口。调用成功后，管控应用可以查看所有已添加管控策略的配置数据，如查看被管控应用的停用时间或可使用时长。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/vu0NptTLTbGhM2YO9cXa5A/zh-cn_image_0000002589245479.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/ia9zLH9nRZOqLy8VyAh4Bw/zh-cn_image_0000002736434347.png)
 
 流程说明：
 
 1. 应用调用查询管控策略的接口，拉起健康使用设备查询本应用是否已申请权限，以及用户是否对本应用授权。
-2. 若没有权限，则抛出相应错误码；若有权限，则返回对应应用下的所有管控策略。
+2. 若开发者没有权限或用户没有授权，则抛出相应错误码。若开发者有权限且用户已授权，则返回对应应用下的所有管控策略。
 
 ## 接口说明
 
@@ -37,24 +37,27 @@ content_hash: sha256:fa3d0290abcca362d270625bdcd7170fc5372d5f118db3e66b4b55378b2
 
 1. 导入相关模块。
 
+   ```typescript
+   import { guardService } from '@kit.ScreenTimeGuardKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
-   1. import { guardService } from '@kit.ScreenTimeGuardKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   ```
-2. 调用queryGuardStrategy，查询对应应用下的所有管控策略。
+2. 调用queryGuardStrategies，查询对应应用下的所有管控策略。
 
-   ```
-   1. async function testQueryGuardStrategies() {
-   2. try {
-   3. let guardStrategy: guardService.GuardStrategy[] = await guardService.queryGuardStrategies();
-   4. guardStrategy.forEach((element) => {
-   5. hilog.info(0x0000, `ScreenTimeGuard:queryGuardStrategies`, `${element.name}`)
-   6. })
-   7. } catch (err) {
-   8. const message = (err as BusinessError).message;
-   9. const code = (err as BusinessError).code;
-   10. hilog.error(0x0000, `ScreenTimeGuard:queryGuardStrategies`, `queryGuardStrategies failed with error code: ${code}, message: ${message}`);
-   11. }
-   12. }
+   ```typescript
+   private async isStrategyExist(strategyName: string): Promise<boolean> {
+     try {
+       let guardStrategies: guardService.GuardStrategy[] = await guardService.queryGuardStrategies();
+       for (let i = 0; i < guardStrategies.length; i++) {
+         if (guardStrategies[i].name === strategyName) {
+           return true;
+         }
+       }
+     } catch (error) {
+       let err: BusinessError = error as BusinessError;
+       hilog.error(0x0000, 'GuardService',
+         `queryGuardStrategies failed, errCode is ${err.code}, errMessage is ${err.message}`);
+     }
+     return false;
+   }
    ```

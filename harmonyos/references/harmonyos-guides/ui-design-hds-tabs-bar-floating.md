@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置页签栏的悬浮样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置页签栏的悬浮样式
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:30:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:49056726c508181481fdd4bfcba1edc96724f42565603123689fcbdb4b77469a
+scraped_at: 2026-09-02T14:49:58+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:82306638aa73bee1a6f0ca784307ad5a3e3b2bcb6b48c1dfd04120fb31aa9377
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:49056726c508181481fdd4bfcba1edc96724f42565603123689fcbdb4b7
 
 页签栏悬浮样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/tm3tn5HaS1uhNst-wuFfXw/zh-cn_image_0000002558764844.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/cO7ZK3mgSfuuvEyaU6qRmw/zh-cn_image_0000002706674304.png)
 
 ## 迷你栏
 
@@ -24,108 +24,104 @@ content_hash: sha256:49056726c508181481fdd4bfcba1edc96724f42565603123689fcbdb4b7
 
 迷你栏的折叠样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IEbNMm4nTly7DP7YYF4EXQ/zh-cn_image_0000002558605188.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/Ec-ZKYsBRYaR-e-q7A_qzg/zh-cn_image_0000002736433395.png)
 
 迷你栏的展开样式如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/O7JeWuNzRvKtIwAHZz7r6Q/zh-cn_image_0000002589324713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/3VMIXr1MQ_-sOLVliRXLOA/zh-cn_image_0000002706834240.png)
+
+## 约束条件
+
+1. 布局位置：设置[barPosition](../harmonyos-references/ui-design-hdstabs.md#barposition)为BarPosition.End且[vertical](../harmonyos-references/ui-design-hdstabs.md#vertical)为false，使页签栏置于容器底部。
+2. 层级叠加：设置[barOverlap](../harmonyos-references/ui-design-hdstabs.md#baroverlap)为true，使TabBar悬浮于TabContent。
+3. 样式限制，当前仅支持以下样式配置：
+   * [BottomTabBarStyle](../harmonyos-references/ts-container-tabcontent.md#bottomtabbarstyle9)（底部标签栏样式）
+   * [CustomBuilder](../harmonyos-references/ts-types.md#custombuilder8)（自定义构建器）
 
 ## 开发步骤
 
 1. 导入相关模块。
 
-   ```
-   1. // 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
-   2. import { hdsMaterial } from '@hms.hds.hdsMaterial'
-   3. import { HdsTabs, HdsTabsAttribute, HdsTabsController } from '@kit.UIDesignKit';
+   ```typescript
+    // 从6.0.2(22)版本开始，无需手动导入HdsTabsAttribute。具体请参考HdsTabs的导入模块说明。
+    import { HdsTabs, HdsTabsAttribute, HdsTabsController, hdsMaterial } from '@kit.UIDesignKit';
    ```
 2. 创建Hds一级容器组件，设置HdsTabs组件的barFloatingStyle样式，并设置barOverlap为true，vertical为false，barPosition为BarPosition.End，可实现页签栏的悬浮样式。若在barFloatingStyle中设置miniBar，则可实现迷你栏。
 
-   ```
-   1. @Entry
-   2. @Component
-   3. struct Index {
-   4. // 初始化HdsTabs控制器。
-   5. private controller: HdsTabsController = new HdsTabsController();
+   ```typescript
+   @Entry
+   @Component
+   struct Index {
+     // 初始化HdsTabs控制器
+     private controller: HdsTabsController = new HdsTabsController();
 
-   7. @Builder
-   8. tabContentBuilder(color: Color) {
-   9. List() {
-   10. ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (item: number) => {
-   11. ListItem() {
-   12. Column() {
-   13. Row() {
-   14. }.height(200)
-   15. .width('100%')
+     @Builder
+     miniBarBuilder() {
+       Row() {
+         Column() {
+           Image($r('app.media.alarm_stop'))
+             .width(40)
+             .height(40)
+             .borderRadius(40)
+         }.width(48).height(48).justifyContent(FlexAlign.Center).margin({left: 4, right: 4})
 
-   17. Row() {
-   18. }.width('100%')
-   19. .height(50)
-   20. .background(color)
-   21. }
-   22. }
-   23. })
-   24. }
-   25. }
+         Text('Hello')
 
-   27. @Builder
-   28. miniBarBuilder() {
-   29. Row() {
-   30. Column() {
-   31. Image($r('app.media.alarm_stop'))
-   32. .width(40)
-   33. .height(40)
-   34. .borderRadius(40)
-   35. }.width(48).height(48).justifyContent(FlexAlign.Center)
+         Column() {
+           Image($r('sys.media.ohos_ic_public_pause'))
+             .width(40)
+             .height(40)
+             .borderRadius(40)
+         }.width(48).height(48).justifyContent(FlexAlign.Center)
+       }
+     }
 
-   37. Text('Hello')
+     build() {
+       Column() {
+         HdsTabs({ controller: this.controller }) {
+           TabContent() {
+             Scroll() {
+               Column(){
+                 Image($r('app.media.ocean'))
+                 Image($r('app.media.desert'))
+                 Image($r('app.media.mountain'))
+                 Image($r('app.media.sunset'))
+               }
+             }
+           }
+           .tabBar(new BottomTabBarStyle($r('sys.media.ohos_ic_public_clock'), 'Green'))
 
-   39. Column() {
-   40. Image($r('sys.media.ohos_ic_public_pause'))
-   41. .width(40)
-   42. .height(40)
-   43. .borderRadius(40)
-   44. }.width(48).height(48).justifyContent(FlexAlign.Center)
-   45. }
-   46. }
+           TabContent() {
+             Image($r('app.media.ocean'))
+           }
+           .tabBar(new BottomTabBarStyle($r('sys.media.wifi_router_fill'), 'Blue'))
 
-   48. build() {
-   49. Column() {
-   50. HdsTabs({ controller: this.controller }) {
-   51. TabContent() {
-   52. this.tabContentBuilder(Color.Green)
-   53. }
-   54. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_ic_public_clock'), 'Green'))
-
-   56. TabContent() {
-   57. this.tabContentBuilder(Color.Blue)
-   58. }
-   59. .tabBar(new BottomTabBarStyle($r('sys.media.wifi_router_fill'), 'Blue'))
-
-   61. TabContent() {
-   62. this.tabContentBuilder(Color.Yellow)
-   63. }
-   64. .tabBar(new BottomTabBarStyle($r('sys.media.ohos_ic_public_clock'), 'Yellow'))
-   65. }
-   66. // 设置barOverlap为true，vertical为false，barPosition为BarPosition.End
-   67. .barOverlap(true)
-   68. .barPosition(BarPosition.End)
-   69. .vertical(false)
-   70. // 设置页签栏悬浮样式。
-   71. .barFloatingStyle({
-   72. barWidth: { smallWidth: 200, mediumWidth: 300, largeWidth: 400 },
-   73. barBottomMargin: 28,
-   74. gradientMask: { maskColor: '#66F1F3F5', maskHeight: 92 },
-   75. systemMaterialEffect: {
-   76. materialType: hdsMaterial.MaterialType.IMMERSIVE,
-   77. materialLevel: hdsMaterial.MaterialLevel.ADAPTIVE
-   78. },
-   79. // 设置迷你栏，若不设置，则仅有页签栏。
-   80. miniBar: {
-   81. miniBarBuilder: () => this.miniBarBuilder()
-   82. }
-   83. })
-   84. }
-   85. }
-   86. }
+           TabContent() {
+             Image($r('app.media.ocean'))
+           }
+           .tabBar(new BottomTabBarStyle($r('sys.media.ohos_ic_public_clock'), 'Yellow'))
+         }
+         // 设置barOverlap为true，vertical为false，barPosition为BarPosition.End
+         .barOverlap(true)
+         .barPosition(BarPosition.End)
+         .vertical(false)
+         // 设置页签栏悬浮样式
+         .barFloatingStyle({
+           barWidth: { smallWidth: 200, mediumWidth: 300, largeWidth: 400 },
+           barBottomMargin: 28,
+           gradientMask: { maskColor: '#66F1F3F5', maskHeight: 92 },
+           systemMaterialEffect: {
+             materialType: hdsMaterial.MaterialType.IMMERSIVE,
+             materialLevel: hdsMaterial.MaterialLevel.ADAPTIVE
+           },
+           // 设置迷你栏，若不设置，则仅有页签栏
+           miniBar: {
+             miniBarBuilder: () => this.miniBarBuilder()
+           }
+         })
+       }
+       .width('100%')
+       .height('100%')
+     }
+   }
    ```

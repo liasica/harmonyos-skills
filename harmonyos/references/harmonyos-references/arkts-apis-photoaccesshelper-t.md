@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Types
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:17+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:aa9100219bdbb5bbfb62b23d364de6d5b83447de37a764dfc12b27d6004f1d0c
+scraped_at: 2026-09-02T15:02:37+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:aa8482400c5f3a1936c59ad80e21cbaff77270c95339027e65888b854f3dbc8f
 ---
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## MemberType
-
-PhonePC/2in1TabletTV
 
 type MemberType = number | string | boolean
 
@@ -32,8 +30,6 @@ PhotoAsset的成员类型。
 
 ## PhotoAssetParams21+
 
-PhonePC/2in1TabletTV
-
 type PhotoAssetParams = Record<string, MemberType>[]
 
 文件属性名称及其值的Record类型数组。
@@ -45,8 +41,6 @@ type PhotoAssetParams = Record<string, MemberType>[]
 | Record<string, [MemberType](arkts-apis-photoaccesshelper-t.md#membertype)>[] | 文件属性名称及其值的Record类型数组。 |
 
 ## OperationValueType22+
-
-PhonePC/2in1TabletTV
 
 type OperationValueType = number | string | boolean
 

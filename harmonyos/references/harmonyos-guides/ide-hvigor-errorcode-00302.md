@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 脚本错误码
 breadcrumb: 指南 > 构建应用 > 构建报错排查 > 编译构建错误码 > 脚本错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:c70b0aaa85b3a4f62c81c85b1c741dc62177aedf829718142e7e8547b04c318e
+scraped_at: 2026-09-02T14:50:57+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:7ecf45e0c0ac4e0807834326d95307e9fb9c074679404f7b3900b15216d2861f
 ---
 
 ## 00302001 FA模型不支持单元测试
@@ -44,7 +44,7 @@ module.json5文件中的module.type字段与hvigorfile.ts文件中导出的系�
 
 确保模块下module.json5文件的module.type字段和hvigorfile.ts文件中导出的系统插件一致。
 
-## 00302013 根节点还没准备好用于构建
+## 00302013 根节点未准备好用于构建
 
 **错误信息**
 
@@ -52,17 +52,38 @@ The root node is not yet available for build.
 
 **错误描述**
 
-根节点还没准备好用于构建。
+根节点未准备好用于构建。
 
 **可能原因**
 
-在hvigorconfig.ts中调用API，该文件的执行时机比nodesInitialized更早，导致API 调用失败。
+1. 在hvigorconfig.ts中调用API，该文件的执行时机比nodesInitialized更早，导致API调用失败。
+2. DevEco Studio或Command Line Tools默认内置了hvigor插件，无需开发者配置。如果环境中存在多个hvigor插件，会导致构建时查找到多个hvigor插件，导致报错。
 
 **处理步骤**
 
-在hvigorfile.ts中调用API，确保符合[Hvigor生命周期的执行顺序](ide-hvigor-life-cycle.md#section746253616316)。
+1. 在hvigorfile.ts中调用API，确保符合[Hvigor生命周期的执行顺序](ide-hvigor-life-cycle.md#section746253616316)。
+2. 如果hvigor-config.json5的dependencies包含@ohos/hvigor或@ohos/hvigor-ohos-plugin，请将它们移除。
+3. 如果hvigor-config.json5的dependencies中某个插件的package.json中的dependencies包含@ohos/hvigor或@ohos/hvigor-ohos-plugin，请将它们移至该插件的devDependencies中。
 
-## 00302014 hvigorConfig还没准备好用于构建
+   可通过在hvigorconfig.ts或hvigorfile.ts打印以下内容找到插件的安装位置：
+
+   ```screen
+   import { hvigor } from '@ohos/hvigor';
+   console.log(hvigor.getParameter().getWorkspaceDir())
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/4CRqwM8mRxm-6NUXbGpw7A/zh-cn_image_0000002701823124.png)
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/G1Nbj6zGSKCGb4wL6tPMFw/zh-cn_image_0000002731382441.png)
+4. 在hvigorconfig.ts或hvigorfile.ts打印以下内容找到运行的hvigor的位置，如果在node\_modules下，请删除这个node\_modules。
+
+   ```screen
+   console.log(require.resolve('@ohos/hvigor'));
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/VIZienb3RJqNOYTmle8bWQ/zh-cn_image_0000002731542407.png)
+
+## 00302014 hvigorConfig未准备好用于构建
 
 **错误信息**
 
@@ -70,15 +91,34 @@ The hvigorConfig is not yet available for build.
 
 **错误描述**
 
-hvigorConfig还没准备好用于构建。
+hvigorConfig未准备好用于构建。
 
 **可能原因**
 
-未知。
+DevEco Studio或Command Line Tools默认内置了hvigor插件，无需开发者配置。如果环境中存在多个hvigor插件，会导致构建时查找到多个hvigor插件，导致报错。
 
 **处理步骤**
 
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题，华为支持人员会及时处理。
+1. 如果hvigor-config.json5的dependencies包含@ohos/hvigor或@ohos/hvigor-ohos-plugin，请将它们移除。
+2. 如果hvigor-config.json5的dependencies中某个插件的package.json中的dependencies包含@ohos/hvigor或@ohos/hvigor-ohos-plugin，请将它们移至该插件的devDependencies中。
+
+   可通过在hvigorconfig.ts或hvigorfile.ts打印以下内容找到插件的安装位置：
+
+   ```screen
+   import { hvigor } from '@ohos/hvigor';
+   console.log(hvigor.getParameter().getWorkspaceDir())
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/WvugQsiORTKon-t1w-9sSw/zh-cn_image_0000002701823132.png)
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/vKNbs8k0TmeEH_scLIBQXw/zh-cn_image_0000002701663206.png)
+3. 在hvigorconfig.ts或hvigorfile.ts打印以下内容找到运行的hvigor的位置，如果在node\_modules下，请删除这个node\_modules。
+
+   ```screen
+   console.log(require.resolve('@ohos/hvigor'));
+   ```
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/CA7qNn0OTu-3b9Eggh6oeg/zh-cn_image_0000002731542403.png)
 
 ## 00302015 调用内部hook函数时出现异常
 
@@ -122,11 +162,11 @@ Invalid exports, no system plugins were found in hvigorfile: XXX.
 
 示例如下：
 
-```
-1. export default {
-2. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-3. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-4. }
+```ts
+export default {
+    system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+    plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## 00302017 命令行中有未知的模块名
@@ -387,11 +427,11 @@ Invalid exports, no system plugins were found in hvigorfile. At file: XXX.
 
 示例如下：
 
-```
-1. export default {
-2. system: legacyAppTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-3. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-4. }
+```ts
+export default {
+    system: legacyAppTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+    plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## 00302032 Stage模型工程hvigorfile缺少系统插件
@@ -418,11 +458,11 @@ Invalid exports, no system plugins were found in hvigorfile.
 
 示例如下：
 
-```
-1. export default {
-2. system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-3. plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
-4. }
+```ts
+export default {
+    system: appTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+    plugins:[]         /* Custom plugin to extend the functionality of Hvigor. */
+}
 ```
 
 ## 00302033 hvigorfile.ts中的setProperty方法校验失败
@@ -478,7 +518,27 @@ Failed to execute function 'XXX' of the custom plugin whose pluginId is 'YYY': Z
 
 **处理步骤**
 
-1. 根据报错信息ZZZ检查自定义插件YYY的函数XXX中的代码。
+1. 根据报错信息ZZZ检查自定义插件YYY的函数XXX中的代码。ZZZ包含'The root node is not yet available for build'或'The hvigorConfig is not yet available for build'，检查以下内容：
+   1. 如果hvigor-config.json5的dependencies包含@ohos/hvigor或@ohos/hvigor-ohos-plugin，请将它们移除。
+   2. 如果hvigor-config.json5的dependencies中某个插件的package.json中的dependencies包含@ohos/hvigor或@ohos/hvigor-ohos-plugin，请将它们移至该插件的devDependencies中。
+
+      可通过在hvigorconfig.ts或hvigorfile.ts打印以下内容找到插件的安装位置：
+
+      ```screen
+      import { hvigor } from '@ohos/hvigor';
+      console.log(hvigor.getParameter().getWorkspaceDir())
+      ```
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/ouVHwHvIS8iNIQvxcA10pQ/zh-cn_image_0000002701663216.png)
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/oSMSpWgMS8SuAc9Ft8KREQ/zh-cn_image_0000002731382435.png)
+   3. 在hvigorconfig.ts或hvigorfile.ts打印以下内容找到运行的hvigor的位置，如果在node\_modules下，请删除这个node\_modules。
+
+      ```screen
+      console.log(require.resolve('@ohos/hvigor'));
+      ```
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/sNa29X0rTreZ3-2naejtQg/zh-cn_image_0000002701823128.png)
 2. 将hvigor-config.json5中的stacktrace字段设置为true，根据堆栈信息排查。
 
 ## 00302036 生命周期XXX执行失败
@@ -512,9 +572,106 @@ hvigorfile.ts文件YYY执行失败。
 
 **可能原因**
 
-hvigorfile.ts文件YYY的代码执行报错。
+hvigorfile.ts文件YYY及其依赖的文件代码执行报错。
 
 **处理步骤**
 
-1. 根据报错信息XXX检查hvigorfile.ts文件YYY的代码。
+1. 根据报错信息XXX检查hvigorfile.ts文件YYY的代码。XXX包含'The root node is not yet available for build'或'The hvigorConfig is not yet available for build'，检查以下内容：
+   1. 如果hvigor-config.json5的dependencies包含@ohos/hvigor或@ohos/hvigor-ohos-plugin，请将它们移除。
+   2. 如果hvigor-config.json5的dependencies中某个插件的package.json中的dependencies包含@ohos/hvigor或@ohos/hvigor-ohos-plugin，请将它们移至该插件的devDependencies中。
+
+      可通过在hvigorconfig.ts或hvigorfile.ts打印以下内容找到插件的安装位置：
+
+      ```screen
+      import { hvigor } from '@ohos/hvigor';
+      console.log(hvigor.getParameter().getWorkspaceDir())
+      ```
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ma2vA7p2RgiQJCFJ0vpLZQ/zh-cn_image_0000002731382433.png)
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/UjZovLRcRoS8G8ek_OhRyg/zh-cn_image_0000002731542399.png)
+   3. 在hvigorconfig.ts或hvigorfile.ts打印以下内容找到运行的hvigor的位置，如果在node\_modules下，请删除这个node\_modules。
+
+      ```screen
+      console.log(require.resolve('@ohos/hvigor'));
+      ```
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/LZVv--shQEKpHC1NTwYfSw/zh-cn_image_0000002701823134.png)
 2. 将hvigor-config.json5中的stacktrace字段设置为true，根据堆栈信息排查。
+
+## 00302038 getAllDependencyInfo接口必须在依赖收集完成后调用
+
+**错误信息**
+
+'getAllDependencyInfo()' must be called after dependencies are collected.
+
+**错误描述**
+
+依赖信息在[taskGraphResolved阶段](ide-hvigor-life-cycle.md#section746253616316)完成更新，因此getAllDependencyInfo接口需要在taskGraphResolved及之后的生命周期hook中调用。
+
+**可能原因**
+
+getAllDependencyInfo接口在taskGraphResolved之前的阶段调用。
+
+**处理步骤**
+
+参考[API示例代码](ide-build-expanding-context.md#section11559101173916)，在taskGraphResolved及之后的生命周期hook中调用该接口。
+
+## 00302039 hvigorfile.ts脚本执行失败
+
+**错误信息**
+
+Failed to load or execute hvigorfile.ts: XXX. At file: YYY.
+
+**错误描述**
+
+hvigorfile.ts脚本执行失败。
+
+**可能原因**
+
+1. 构建依赖的插件没有在hvigor-config.json5的dependencies中配置。
+2. 在hvigor-config.json5的dependencies中配置了依赖的插件，并且sync后提示对应依赖安装成功，使用时仍然报错，该场景可能是pnpm工具问题导致显示安装成功实际安装失败。
+
+**处理步骤**
+
+1. 在hvigor-config.json5的dependencies中配置依赖的插件，并且执行sync安装依赖。
+2. 如果提示安装依赖成功后仍报错，按以下步骤处理：
+   1. 修改“用户目录/.hvigor/wrapper/tools/package.json”中的pnpm版本为"10.16.1"（注意不要带^符号）。
+   2. 在Terminal中进入“用户目录/.hvigor/wrapper/tools”目录，执行命令"npm install"。
+   3. 删除“用户目录/.hvigor/project\_caches”缓存目录。
+
+## 00302041 getOhpmDependencyInfoV2接口必须在依赖收集完成后调用
+
+**错误信息**
+
+'getOhpmDependencyInfoV2()' must be called after dependencies are collected.
+
+**错误描述**
+
+依赖信息在[taskGraphResolved阶段](ide-hvigor-life-cycle.md#section746253616316)完成更新，因此getOhpmDependencyInfoV2接口需要在taskGraphResolved及之后的生命周期hook中调用。
+
+**可能原因**
+
+getOhpmDependencyInfoV2接口在taskGraphResolved之前的阶段调用。
+
+**处理步骤**
+
+参考[API示例代码](ide-build-expanding-context.md#section1897251184819)，在taskGraphResolved及之后的生命周期hook中调用该接口。
+
+## 00302042 getOhpmRemoteHspDependencyInfoV2接口必须在依赖收集完成后调用
+
+**错误信息**
+
+'getOhpmRemoteHspDependencyInfoV2()' must be called after dependencies are collected.
+
+**错误描述**
+
+依赖信息在[taskGraphResolved阶段](ide-hvigor-life-cycle.md#section746253616316)完成更新，因此getOhpmRemoteHspDependencyInfoV2接口需要在taskGraphResolved及之后的生命周期hook中调用。
+
+**可能原因**
+
+getOhpmRemoteHspDependencyInfoV2接口在taskGraphResolved之前的阶段调用。
+
+**处理步骤**
+
+参考[API示例代码](ide-build-expanding-context.md#section1697717782918)，在taskGraphResolved及之后的生命周期hook中调用该接口。

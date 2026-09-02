@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getpa
 title: GetParseOpToGraphFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > GetParseOpToGraphFn
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:42:25+08:00
+scraped_at: 2026-09-02T14:50:42+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0fe463c1ca0cd661b690de683b3db6d6efbf34575adf35a4f71c6e5ed879fa5e
+content_hash: sha256:9240b7c014bf0f2c39d919964ee4303e093397ce104f73aa704c6e5984fd429e
 ---
 
 ## 函数功能
@@ -14,8 +14,8 @@ content_hash: sha256:0fe463c1ca0cd661b690de683b3db6d6efbf34575adf35a4f71c6e5ed87
 
 ## 函数原型
 
-```
-1. ParseOpToGraphFunc GetParseOpToGraphFn() const
+```cpp
+ParseOpToGraphFunc GetParseOpToGraphFn() const
 ```
 
 ## 参数说明

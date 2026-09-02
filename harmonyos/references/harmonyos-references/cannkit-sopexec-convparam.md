@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit-s
 title: HiAI_SingleOpExecutorConvolutionParam
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API > 头文件和结构体 > 结构体 > HiAI_SingleOpExecutorConvolutionParam
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:eacb6c07c1e508bcd3fe149052bbec22bbf877e20eca5b2ad043b875dfa1acdb
+scraped_at: 2026-09-02T15:03:10+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:29db12887b0b8083e6a22b5663490189d5473c93349d7df1ba7c410d87ca8ad3
 ---
 
-## 概述
+```cpp
+typedef struct HiAI_SingleOpExecutorConvolutionParam {...} HiAI_SingleOpExecutorConvolutionParam
+```
 
-PhonePC/2in1TabletTV
+## 概述
 
 [HMS\_HiAISingleOpExecutor\_CreateConvolution](cannkit.md#hms_hiaisingleopexecutor_createconvolution)输入参数。
 
@@ -22,11 +24,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -39,14 +37,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### bias
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensor* HiAI_SingleOpExecutorConvolutionParam::bias
+```cpp
+HiAI_SingleOpTensor* HiAI_SingleOpExecutorConvolutionParam::bias
 ```
 
 **描述**
@@ -55,10 +49,8 @@ PhonePC/2in1TabletTV
 
 ### filter
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensor* HiAI_SingleOpExecutorConvolutionParam::filter
+```cpp
+HiAI_SingleOpTensor* HiAI_SingleOpExecutorConvolutionParam::filter
 ```
 
 **描述**
@@ -67,10 +59,8 @@ PhonePC/2in1TabletTV
 
 ### input
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensorDesc* HiAI_SingleOpExecutorConvolutionParam::input
+```cpp
+HiAI_SingleOpTensorDesc* HiAI_SingleOpExecutorConvolutionParam::input
 ```
 
 **描述**
@@ -79,10 +69,8 @@ PhonePC/2in1TabletTV
 
 ### opDesc
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpDescriptor* HiAI_SingleOpExecutorConvolutionParam::opDesc
+```cpp
+HiAI_SingleOpDescriptor* HiAI_SingleOpExecutorConvolutionParam::opDesc
 ```
 
 **描述**
@@ -91,10 +79,8 @@ PhonePC/2in1TabletTV
 
 ### options
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpOptions* HiAI_SingleOpExecutorConvolutionParam::options
+```cpp
+HiAI_SingleOpOptions* HiAI_SingleOpExecutorConvolutionParam::options
 ```
 
 **描述**
@@ -103,10 +89,8 @@ PhonePC/2in1TabletTV
 
 ### output
 
-PhonePC/2in1TabletTV
-
-```
-1. HiAI_SingleOpTensorDesc* HiAI_SingleOpExecutorConvolutionParam::output
+```cpp
+HiAI_SingleOpTensorDesc* HiAI_SingleOpExecutorConvolutionParam::output
 ```
 
 **描述**

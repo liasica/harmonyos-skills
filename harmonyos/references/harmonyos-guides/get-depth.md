@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-depth
 title: 深度估计
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 深度估计
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:54+08:00
-doc_updated_at: 2026-04-24
+scraped_at: 2026-09-02T15:17:35+08:00
+doc_updated_at: 2026-08-29
 content_hash: sha256:9bb699e3a16d017f2f6ac2080639e87dca87dda0ef65206a67ecced7f3993452
 ---
 

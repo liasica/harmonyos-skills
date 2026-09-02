@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-94
 title: Web页面切换软键盘意外弹出
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web页面切换软键盘意外弹出
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:50+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:54+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:606149bfd95dd3a1430fe7fdfdc52b9855e246090bde75bc1c858d93be5dcdf2
 ---
 

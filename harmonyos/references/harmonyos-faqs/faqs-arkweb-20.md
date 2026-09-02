@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-20
 title: javaScriptProxy和registerJavaScriptProxy有什么区别，能注册多少个对象
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > javaScriptProxy和registerJavaScriptProxy有什么区别，能注册多少个对象
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:39+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:53+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:cc7367e02e70a123d4e307109b061f62d49f8f340ee85298fae45ca40aab31ac
 ---
 

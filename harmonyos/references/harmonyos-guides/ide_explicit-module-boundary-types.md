@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_explicit-
 title: "@typescript-eslint/explicit-module-boundary-types"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/explicit-module-boundary-types
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:27+08:00
+scraped_at: 2026-09-02T14:50:51+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:8993f4521407254f53d013a0a185e08c9755254fa28f1a0b56ba806d3b97c305
+content_hash: sha256:40eb1904c283a0008f71c3c59df7bbcc6c401eace7a757f01712cc3accc3726d
 ---
 
 导出到外部的函数和公共类方法，需要显式的定义返回类型和参数类型。
@@ -14,13 +14,13 @@ content_hash: sha256:8993f4521407254f53d013a0a185e08c9755254fa28f1a0b56ba806d3b9
 
 ## 规则配置
 
-```
-1. // code-linter.json5
-2. {
-3. "rules": {
-4. "@typescript-eslint/explicit-module-boundary-types": "error"
-5. }
-6. }
+```screen
+// code-linter.json5
+{
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "error"
+  }
+}
 ```
 
 ## 选项
@@ -29,61 +29,61 @@ content_hash: sha256:8993f4521407254f53d013a0a185e08c9755254fa28f1a0b56ba806d3b9
 
 ## 正例
 
-```
-1. // A function with no return value (void)
-2. export function test1(): void {
-3. return;
-4. }
+```screen
+// A function with no return value (void)
+export function test1(): void {
+  return;
+}
 
-6. // A return value of type string
-7. export const arrowFn1 = (): string => 'test';
+// A return value of type string
+export const arrowFn1 = (): string => 'test';
 
-9. // All arguments should be typed
-10. export const arrowFn2 = (arg: string): string => `test ${arg}`;
+// All arguments should be typed
+export const arrowFn2 = (arg: string): string => `test ${arg}`;
 
-12. export class Test {
-13. // A class method with no return value (void)
-14. public method(): void {
-15. return;
-16. }
-17. }
+export class Test {
+  // A class method with no return value (void)
+  public method(): void {
+    return;
+  }
+}
 
-19. // The function does not apply because it is not an exported function.
-20. function test2() {
-21. return;
-22. }
+// The function does not apply because it is not an exported function.
+function test2() {
+  return;
+}
 
-24. test2();
+test2();
 ```
 
 ## 反例
 
-```
-1. // Should indicate that no value is returned (void)
-2. export function test() {
-3. return;
-4. }
+```screen
+// Should indicate that no value is returned (void)
+export function test() {
+  return;
+}
 
-6. // Should indicate that a string is returned
-7. export const arrowFn1 = () => 'test';
+// Should indicate that a string is returned
+export const arrowFn1 = () => 'test';
 
-9. // All arguments should be typed
-10. export const arrowFn2 = (arg): string => `test ${arg}`;
-11. export const arrowFn3 = (arg: any): string => `test ${arg}`;
+// All arguments should be typed
+export const arrowFn2 = (arg): string => `test ${arg}`;
+export const arrowFn3 = (arg: any): string => `test ${arg}`;
 
-13. export class Test {
-14. // Should indicate that no value is returned (void)
-15. public method() {
-16. return;
-17. }
-18. }
+export class Test {
+  // Should indicate that no value is returned (void)
+  public method() {
+    return;
+  }
+}
 ```
 
 ## 规则集
 
-```
-1. plugin:@typescript-eslint/recommended
-2. plugin:@typescript-eslint/all
+```screen
+plugin:@typescript-eslint/recommended
+plugin:@typescript-eslint/all
 ```
 
 Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。

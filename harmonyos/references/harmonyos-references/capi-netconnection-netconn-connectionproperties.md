@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netc
 title: NetConn_ConnectionProperties
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > NetConn_ConnectionProperties
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:35+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b5ba11a889c5c8264775920a08b71d56c795ccf237eac88d70310c54d86546ce
+scraped_at: 2026-09-02T15:01:56+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:634f085c3befca1943d7b48565fcfed76c86c4b59e18ced6531f2f650596dbab
 ---
 
-```
-1. typedef struct NetConn_ConnectionProperties {...} NetConn_ConnectionProperties
+```c
+typedef struct NetConn_ConnectionProperties {...} NetConn_ConnectionProperties
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 网络连接信息。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

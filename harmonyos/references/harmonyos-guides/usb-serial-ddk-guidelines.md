@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usb-serial-dd
 title: 开发适用串口协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用串口协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:32+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a3508b838c9e1e0f5ece9dab1e3856cfc49fe243808e0c4e7f8670a84f10bce0
+scraped_at: 2026-09-02T14:59:37+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:3c0be25e1ad2a1fdaef24dd1920c6358386bdb9d3a64ec2dfa5b18c84ef69558
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ content_hash: sha256:a3508b838c9e1e0f5ece9dab1e3856cfc49fe243808e0c4e7f8670a84f1
 
 **图1** USBSerialDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/QgXRJxfjR9uKbnVzSaEnmA/zh-cn_image_0000002589244779.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/DhF_g8wuT5u6NpvtX_BmYQ/zh-cn_image_0000002706674470.png)
 
 ### 约束与限制
 
@@ -66,7 +66,7 @@ content_hash: sha256:a3508b838c9e1e0f5ece9dab1e3856cfc49fe243808e0c4e7f8670a84f1
 | OH\_UsbSerial\_Read(UsbSerial\_Device \*dev, uint8\_t \*buff, uint32\_t bufferSize, uint32\_t \*bytesRead) | 从USB串口设备读取数据到缓冲区。 |
 | OH\_UsbSerial\_Write(UsbSerial\_Device \*dev, uint8\_t \*buff, uint32\_t bufferSize, uint32\_t \*bytesWritten) | 将buff中的数据写入USB串口设备。 |
 | OH\_UsbSerial\_SetBaudRate(UsbSerial\_Device \*dev, uint32\_t baudRate) | 设置USB串口设备的波特率。如果USB串口设备的参数为默认值（数据位为8，停止位为1，数据传输无校验），则只需要调用该接口设置波特率即可。 |
-| OH\_UsbSerial\_SetParams(UsbSerial\_Device \*dev, UsbSerial\_Params \*params) | 设置USB串口设备的参数，包含波特率、数据传输位、停止位、校验设置。 |
+| OH\_UsbSerial\_SetParams(UsbSerial\_Device \*dev, UsbSerial\_Params \*params) | 设置USB串口设备的参数，包含波特率、数据位、停止位、校验设置。 |
 | OH\_UsbSerial\_SetTimeout(UsbSerial\_Device \*dev, int timeout) | 设置读取USB串口设备上报数据的超时时间，默认时间为0。 |
 | OH\_UsbSerial\_SetFlowControl(UsbSerial\_Device \*dev, UsbSerial\_FlowControl flowControl) | 设置流控参数。 |
 | OH\_UsbSerial\_Flush(UsbSerial\_Device \*dev) | 写入完成后清空输入和输出缓冲区。 |
@@ -83,15 +83,15 @@ content_hash: sha256:a3508b838c9e1e0f5ece9dab1e3856cfc49fe243808e0c4e7f8670a84f1
 
 CMakeLists.txt中添加以下lib。
 
-```
-1. libusb_serial_ndk.z.so
+```txt
+libusb_serial_ndk.z.so
 ```
 
 **头文件**
 
 ```
-1. #include <usb_serial/usb_serial_api.h>
-2. #include <usb_serial/usb_serial_types.h>
+#include <usb_serial/usb_serial_api.h>
+#include <usb_serial/usb_serial_types.h>
 ```
 
 1. 初始化DDK。
@@ -99,104 +99,90 @@ CMakeLists.txt中添加以下lib。
    使用 **usb\_serial\_api.h** 的 **OH\_UsbSerial\_Init** 初始化DDK。
 
    ```
-   1. // 初始化USB Serial DDK
-   2. OH_UsbSerial_Init();
+   // 初始化USB Serial DDK
+   OH_UsbSerial_Init();
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbSerialDriverDemo/entry/src/main/cpp/hello.cpp#L201-L204)
 2. 打开USB串口设备。
 
    使用 **usb\_serial\_api.h** 的 **OH\_UsbSerial\_Open** 打开设备。
 
    ```
-   1. UsbSerial_Device *dev = NULL;
-   2. uint64_t deviceId = 1;
-   3. uint8_t interfaceIndex = 0;
-   4. // 打开deviceId和interfaceIndex指定的USB串口设备
-   5. OH_UsbSerial_Open(deviceId, interfaceIndex, &dev);
+   UsbSerial_Device *dev = NULL;
+   uint64_t deviceId = 1;
+   uint8_t interfaceIndex = 0;
+   // 打开deviceId和interfaceIndex指定的USB串口设备
+   OH_UsbSerial_Open(deviceId, interfaceIndex, &dev);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbSerialDriverDemo/entry/src/main/cpp/hello.cpp#L209-L215)
 3. 设置USB串口设备的参数（可选）。
 
    使用 **usb\_serial\_api.h** 的 **OH\_UsbSerial\_SetParams** 接口设置串口参数，或者直接调用 **OH\_UsbSerial\_SetBaudRate** 设置波特率，使用 **OH\_UsbSerial\_SetTimeout** 设置读取数据的超时时间。
 
    ```
-   1. UsbSerial_Params params;
-   2. params.baudRate = NUM_BAUDRATE;
-   3. params.nDataBits = NUM_EIGHT;
-   4. params.nStopBits = 1;
-   5. params.parity = 0;
-   6. // 设置串口参数
-   7. OH_UsbSerial_SetParams(dev, &params);
-
-   9. // 设置波特率
-   10. uint32_t baudRate = NUM_BAUDRATE;
-   11. OH_UsbSerial_SetBaudRate(dev, baudRate);
-
-   13. // 设置超时时间
-   14. int timeout = 500;
-   15. OH_UsbSerial_SetTimeout(dev, timeout);
+   UsbSerial_Params params;
+   params.baudRate = NUM_BAUDRATE;
+   params.nDataBits = NUM_EIGHT;
+   params.nStopBits = 1;
+   params.parity = USB_SERIAL_PARITY_NONE;
+   // 设置串口参数
+   OH_UsbSerial_SetParams(dev, &params);
+       
+   // 设置波特率
+   uint32_t baudRate = NUM_BAUDRATE;
+   OH_UsbSerial_SetBaudRate(dev, baudRate);
+       
+   // 设置超时时间
+   int timeout = 500;
+   OH_UsbSerial_SetTimeout(dev, timeout);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbSerialDriverDemo/entry/src/main/cpp/hello.cpp#L221-L237)
 4. 设置流控、清空缓冲区（可选）。
 
    使用 **usb\_serial\_api.h** 的 **OH\_UsbSerial\_SetFlowControl** 设置流控方式，使用 **OH\_UsbSerial\_Flush** 清空缓冲区，使用 **OH\_UsbSerial\_FlushInput** 清空输入缓冲区，使用 **OH\_UsbSerial\_FlushOutput** 清空输出缓冲区。
 
    ```
-   1. // 设置软件流控
-   2. OH_UsbSerial_SetFlowControl(dev, USB_SERIAL_SOFTWARE_FLOW_CONTROL);
-
-   4. // 清空缓冲区
-   5. OH_UsbSerial_Flush(dev);
-
-   7. // 清空输入缓冲区
-   8. OH_UsbSerial_FlushInput(dev);
-
-   10. // 清空输出缓冲区
-   11. OH_UsbSerial_FlushOutput(dev);
+   // 设置软件流控
+   OH_UsbSerial_SetFlowControl(dev, USB_SERIAL_SOFTWARE_FLOW_CONTROL);
+       
+   // 清空缓冲区
+   OH_UsbSerial_Flush(dev);
+       
+   // 清空输入缓冲区
+   OH_UsbSerial_FlushInput(dev);
+       
+   // 清空输出缓冲区
+   OH_UsbSerial_FlushOutput(dev);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbSerialDriverDemo/entry/src/main/cpp/hello.cpp#L243-L255)
 5. 向USB串口设备写入/读取数据（可选）。
 
    使用 **usb\_serial\_api.h** 的 **OH\_UsbSerial\_Write** 给设备发送数据，并使用 **OH\_UsbSerial\_Read** 读取设备发送过来的数据。
 
    ```
-   1. uint32_t bytesWritten = 0;
-   2. // 测试设备读取指令，具体指令根据设备协议而定
-   3. uint8_t writeBuff[NUM_EIGHT] = {0x01, 0x03, 0x00, 0x00, 0x00, 0x01, 0x84, 0xA};
-   4. // 发送数据
-   5. OH_UsbSerial_Write(dev, writeBuff, sizeof(writeBuff), &bytesWritten);
-
-   7. // 接收数据
-   8. uint8_t readBuff[100];
-   9. uint32_t bytesRead = 0;
-   10. OH_UsbSerial_Read(dev, readBuff, sizeof(readBuff), &bytesRead);
+   uint32_t bytesWritten = 0;
+   // 测试设备读取指令，具体指令根据设备协议而定
+   uint8_t writeBuff[NUM_EIGHT] = {0x01, 0x03, 0x00, 0x00, 0x00, 0x01, 0x84, 0xA};
+   // 发送数据
+   OH_UsbSerial_Write(dev, writeBuff, sizeof(writeBuff), &bytesWritten);
+       
+   // 接收数据
+   uint8_t readBuff[100];
+   uint32_t bytesRead = 0;
+   OH_UsbSerial_Read(dev, readBuff, sizeof(readBuff), &bytesRead);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbSerialDriverDemo/entry/src/main/cpp/hello.cpp#L260-L271)
 6. 关闭USB串口设备。
 
    在所有请求处理完毕，程序退出前，使用 **usb\_serial\_api.h** 的 **OH\_UsbSerial\_Close** 关闭设备。
 
    ```
-   1. // 关闭设备
-   2. OH_UsbSerial_Close(&dev);
+   // 关闭设备
+   OH_UsbSerial_Close(&dev);
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbSerialDriverDemo/entry/src/main/cpp/hello.cpp#L276-L279)
 7. 释放DDK。
 
    在关闭USB串口设备后，使用 **usb\_serial\_api.h** 的 **OH\_UsbSerial\_Release** 释放DDK。
 
    ```
-   1. // 释放USB Serial DDK
-   2. OH_UsbSerial_Release();
+   // 释放USB Serial DDK
+   OH_UsbSerial_Release();
    ```
-
-   [hello.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/DriverDevelopmentKit/UsbSerialDriverDemo/entry/src/main/cpp/hello.cpp#L284-L287)
 
 ### 调测验证
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-19
 title: 为什么ArkTS API接口注释中@since版本看起来比接口实际引入时间更晚
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > 为什么ArkTS API接口注释中@since版本看起来比接口实际引入时间更晚
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:04+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:820552393c965955e3e47d738d7c0a0c2326a47b69a79194f431cdaa61b761b3
+scraped_at: 2026-09-02T14:54:53+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:012a29a4af47ec751512e39326c65a2498f1df2de2762ba689e743bd37275366
 ---
 
 **问题现象**
@@ -27,27 +27,27 @@ HarmonyOS目前采用“多段式注释”策略来记录ArkTS API的变更历�
 
 以@ohos.inputMethodEngine.d.ts里inputMethodEngine.InputClient.getAttachOptions这个API为例：
 
-```
-1. declare namespace inputMethodEngine {
-2. interface InputClient {
-3. /**
-4. * Get input attachOptions.
-5. *
-6. * @returns { AttachOptions } return attach options.
-7. * @throws { BusinessError } 801 - Capability not supported.
-8. * @syscap SystemCapability.MiscServices.InputMethodFramework
-9. * @since 19
-10. */
-11. /**
-12. * Get input attachOptions.
-13. *
-14. * @returns { AttachOptions } return attach options.
-15. * @syscap SystemCapability.MiscServices.InputMethodFramework
-16. * @since 20
-17. */
-18. getAttachOptions(): AttachOptions;
-19. }
-20. }
+```screen
+declare namespace inputMethodEngine {
+    interface InputClient {
+        /**
+         * Get input attachOptions.
+         *
+         * @returns { AttachOptions } return attach options.
+         * @throws { BusinessError } 801 - Capability not supported.
+         * @syscap SystemCapability.MiscServices.InputMethodFramework
+         * @since 19
+         */
+        /**
+         * Get input attachOptions.
+         *
+         * @returns { AttachOptions } return attach options.
+         * @syscap SystemCapability.MiscServices.InputMethodFramework
+         * @since 20
+         */
+        getAttachOptions(): AttachOptions;
+    }
+}
 ```
 
 在此例中，使用两段注释说明API在19/20两个版本所出现的变化。getAttachOptions()最早在API 19引入，在部分不支持的设备上会抛出801错误码。从API 20起，所有设备均支持，不会再抛出801错误码。

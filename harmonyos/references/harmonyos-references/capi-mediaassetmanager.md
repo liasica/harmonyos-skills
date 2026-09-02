@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: MediaAssetManager
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 模块 > MediaAssetManager
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:20+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:05279f3891b70d5071a4d2ae9cfa430d8aeb816ccb603313a9023d417be6f02e
+scraped_at: 2026-09-02T14:53:02+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:aaccb92b2c68f542b0cfb23645be3fcf2cd7783c346861cf4214e63fed4d9b09
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTV
 
 提供媒体库资源请求能力的API。
 
@@ -19,8 +17,6 @@ PhonePC/2in1TabletTV
 **起始版本：** 12
 
 ## 文件汇总
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |

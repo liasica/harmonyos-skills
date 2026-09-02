@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 无线调试手表时，hdc list targets查询设备信息返回unauthorized
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 无线调试手表时，hdc list targets查询设备信息返回unauthorized
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:24+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:430891e62e3e43cda37b5705386d43ad6681eb7b58e6d81af6e6e02b6c8c9eb9
 ---
 

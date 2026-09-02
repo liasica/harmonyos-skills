@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-3
 title: http请求中response错误码返回6是什么意思
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > http请求中response错误码返回6是什么意思
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:04+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:f814a66344e9787019014d2f8cb8c217b804f96203437cd34f45d061e9984f9a
 ---
 

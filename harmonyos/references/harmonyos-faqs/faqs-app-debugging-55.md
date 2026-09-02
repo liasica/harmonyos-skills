@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 应用运行报错：hap path error
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 应用运行报错：hap path error
 category: harmonyos-faqs
-scraped_at: 2026-04-29T14:21:27+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:0c1dc993347f4fba44a9ad046ee215c869f3ce9b60c9e8603724c83200fb1a50
+scraped_at: 2026-09-02T14:54:57+08:00
+doc_updated_at: 2026-06-15
+content_hash: sha256:a8006b7eb6c31ceaa07b287bb5a4e25c7c719106fb343bb5352d946371092c32
 ---
 
 **问题现象**
@@ -16,4 +16,4 @@ content_hash: sha256:0c1dc993347f4fba44a9ad046ee215c869f3ce9b60c9e8603724c83200f
 
 如果依赖的应用包未安装，建议进入**Run/Debug Configurations > Deploy Multi Hap****/Hsp**页签，勾选**Deploy Multi Hap/Hsp Packages**，选择所需依赖的应用包，然后重新运行应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/V73fFJjZRU6TwojLxeAeNA/zh-cn_image_0000002487797922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/VjDQhbbsR9OHHNvfT2aQjQ/zh-cn_image_0000002654798169.png)

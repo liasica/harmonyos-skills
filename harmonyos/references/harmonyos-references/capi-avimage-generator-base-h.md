@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avim
 title: avimage_generator_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avimage_generator_base.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0d76aaeea98f152db93f6ac1bf115156b1996867d20bb84aaa7fd5e0e840b096
+scraped_at: 2026-09-02T15:02:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9da31a978feb38fd2ae158b54ead3d0c88fda7252e8983c171b7cb24d1ed2fcf
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义AVImageGenerator的枚举。
 
@@ -26,31 +24,23 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [OH\_AVImageGenerator\_QueryOptions](capi-avimage-generator-base-h.md#oh_avimagegenerator_queryoptions) | OH\_AVImageGenerator\_QueryOptions | 指定时间点与视频帧对应关系的枚举类型。 |
+| [OH\_AVImageGenerator\_QueryOptions](capi-avimage-generator-base-h.md#oh_avimagegenerator_queryoptions) | OH\_AVImageGenerator\_QueryOptions | 指定查询视频帧时，时间点与帧对应关系选项的枚举类型。 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### OH\_AVImageGenerator\_QueryOptions
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum OH_AVImageGenerator_QueryOptions
+```c
+enum OH_AVImageGenerator_QueryOptions
 ```
 
 **描述**
 
-指定时间点与视频帧对应关系的枚举类型。
+指定查询视频帧时，时间点与帧对应关系选项的枚举类型。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVImageGenerator
 

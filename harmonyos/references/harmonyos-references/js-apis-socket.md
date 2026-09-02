@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.net.socket (Socket连接)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.socket (Socket连接)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b4d7ef6e3c4606b9cfb73da715813fcd3b82129625116f3e9b53d0e5af1c6702
+scraped_at: 2026-09-02T15:01:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:9c1bb554fb2c3848f43e6b1fcd91b0506819bfa4e04fe668bf510fba50cc10d5
 ---
 
 本模块提供利用Socket进行数据传输的能力，支持TCPSocket、UDPSocket、WebSocket和TLSSocket。
 
-说明
+**说明** 
 
 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,15 +18,11 @@ content_hash: sha256:b4d7ef6e3c4606b9cfb73da715813fcd3b82129625116f3e9b53d0e5af1
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 ```
 
 ## socket.constructUDPSocketInstance
-
-PhonePC/2in1TabletTVWearable
 
 constructUDPSocketInstance(): UDPSocket
 
@@ -42,20 +38,16 @@ constructUDPSocketInstance(): UDPSocket
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+```ts
+import { socket } from '@kit.NetworkKit';
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
 ```
 
 ## UDPSocket
 
-PhonePC/2in1TabletTVWearable
-
 UDPSocket连接。在调用UDPSocket的方法前，需要先通过[socket.constructUDPSocketInstance](js-apis-socket.md#socketconstructudpsocketinstance)创建UDPSocket对象。
 
 ### bind
-
-PhonePC/2in1TabletTVWearable
 
 bind(address: NetAddress, callback: AsyncCallback<void>): void
 
@@ -83,27 +75,25 @@ bind(address: NetAddress, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',  // 本端地址
-7. port: 1234
-8. }
-9. udp.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',  // 本端地址
+  port: 1234
+}
+udp.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
 ```
 
 ### bind
-
-PhonePC/2in1TabletTVWearable
 
 bind(address: NetAddress): Promise<void>
 
@@ -136,25 +126,23 @@ bind(address: NetAddress): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',  // 本端地址
-7. port: 8080
-8. }
-9. udp.bind(bindAddr).then(() => {
-10. console.info('bind success');
-11. }).catch((err: BusinessError) => {
-12. console.error('bind fail');
-13. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',  // 本端地址
+  port: 8080
+}
+udp.bind(bindAddr).then(() => {
+  console.info('bind success');
+}).catch((err: BusinessError) => {
+  console.error('bind fail');
+});
 ```
 
 ### send
-
-PhonePC/2in1TabletTVWearable
 
 send(options: UDPSendOptions, callback: AsyncCallback<void>): void
 
@@ -181,99 +169,97 @@ send(options: UDPSendOptions, callback: AsyncCallback<void>): void
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server.  适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid.  适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server.  适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method.  适用版本：18+ |
+| 2301210 | Socks5 failed to send the message.  适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message.  适用版本：18+ |
+| 2301212 | Socks5 serialization error.  适用版本：18+ |
+| 2301213 | Socks5 deserialization error.  适用版本：18+ |
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',  // 本端地址
-7. port: 1234
-8. }
-9. udp.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
-16. let netAddress: socket.NetAddress = {
-17. address: '192.168.xx.xxx',  // 对端地址
-18. port: 8080
-19. }
-20. let sendOptions: socket.UDPSendOptions = {
-21. data: 'Hello, server!',
-22. address: netAddress
-23. }
-24. udp.send(sendOptions, (err: BusinessError) => {
-25. if (err) {
-26. console.error('send fail');
-27. return;
-28. }
-29. console.info('send success');
-30. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',  // 本端地址
+  port: 1234
+}
+udp.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',  // 对端地址
+  port: 8080
+}
+let sendOptions: socket.UDPSendOptions = {
+  data: 'Hello, server!',
+  address: netAddress
+}
+udp.send(sendOptions, (err: BusinessError) => {
+  if (err) {
+    console.error('send fail');
+    return;
+  }
+  console.info('send success');
+});
 ```
 
 **示例（设置socket代理）：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',  // 本端地址
-7. port: 1234
-8. }
-9. udp.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
-16. let netAddress: socket.NetAddress = {
-17. address: '192.168.xx.xxx',  // 对端地址
-18. port: 8080
-19. }
-20. let socks5Server: socket.NetAddress = {
-21. address: '192.168.xx.xxx',
-22. port: 8080
-23. }
-24. let proxyOptions: socket.ProxyOptions = {
-25. type : 1,
-26. address: socks5Server,
-27. username: "xxx",
-28. password: "xxx"
-29. }
-30. let sendOptions: socket.UDPSendOptions = {
-31. data: 'Hello, server!',
-32. address: netAddress,
-33. proxy: proxyOptions,
-34. }
-35. udp.send(sendOptions, (err: BusinessError) => {
-36. if (err) {
-37. console.error('send fail');
-38. return;
-39. }
-40. console.info('send success');
-41. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',  // 本端地址
+  port: 1234
+}
+udp.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',  // 对端地址
+  port: 8080
+}
+let socks5Server: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let proxyOptions: socket.ProxyOptions = {
+  type : 1,
+  address: socks5Server,
+  username: "xxx",
+  password: "xxx"
+}
+let sendOptions: socket.UDPSendOptions = {
+  data: 'Hello, server!',
+  address: netAddress,
+  proxy: proxyOptions,
+}
+udp.send(sendOptions, (err: BusinessError) => {
+  if (err) {
+    console.error('send fail');
+    return;
+  }
+  console.info('send success');
+});
 ```
 
 ### send
-
-PhonePC/2in1TabletTVWearable
 
 send(options: UDPSendOptions): Promise<void>
 
@@ -305,93 +291,91 @@ send(options: UDPSendOptions): Promise<void>
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server.  适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid.  适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server.  适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method.  适用版本：18+ |
+| 2301210 | Socks5 failed to send the message.  适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message.  适用版本：18+ |
+| 2301212 | Socks5 serialization error.  适用版本：18+ |
+| 2301213 | Socks5 deserialization error.  适用版本：18+ |
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx', // 本端地址
-7. port: 8080
-8. }
-9. udp.bind(bindAddr).then(() => {
-10. console.info('bind success');
-11. }).catch((err: BusinessError) => {
-12. console.error('bind fail');
-13. return;
-14. });
-15. let netAddress: socket.NetAddress = {
-16. address: '192.168.xx.xxx', // 对端地址
-17. port: 8080
-18. }
-19. let sendOptions: socket.UDPSendOptions = {
-20. data: 'Hello, server!',
-21. address: netAddress
-22. }
-23. udp.send(sendOptions).then(() => {
-24. console.info('send success');
-25. }).catch((err: BusinessError) => {
-26. console.error('send fail');
-27. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx', // 本端地址
+  port: 8080
+}
+udp.bind(bindAddr).then(() => {
+  console.info('bind success');
+}).catch((err: BusinessError) => {
+  console.error('bind fail');
+  return;
+});
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx', // 对端地址
+  port: 8080
+}
+let sendOptions: socket.UDPSendOptions = {
+  data: 'Hello, server!',
+  address: netAddress
+}
+udp.send(sendOptions).then(() => {
+  console.info('send success');
+}).catch((err: BusinessError) => {
+  console.error('send fail');
+});
 ```
 
 **示例（设置socket代理）：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx', // 本端地址
-7. port: 8080
-8. }
-9. udp.bind(bindAddr).then(() => {
-10. console.info('bind success');
-11. }).catch((err: BusinessError) => {
-12. console.error('bind fail');
-13. return;
-14. });
-15. let netAddress: socket.NetAddress = {
-16. address: '192.168.xx.xxx', // 对端地址
-17. port: 8080
-18. }
-19. let socks5Server: socket.NetAddress = {
-20. address: '192.168.xx.xxx',
-21. port: 8080
-22. }
-23. let proxyOptions: socket.ProxyOptions = {
-24. type : 1,
-25. address: socks5Server,
-26. username: "xxx",
-27. password: "xxx"
-28. }
-29. let sendOptions: socket.UDPSendOptions = {
-30. data: 'Hello, server!',
-31. address: netAddress,
-32. proxy: proxyOptions,
-33. }
-34. udp.send(sendOptions).then(() => {
-35. console.info('send success');
-36. }).catch((err: BusinessError) => {
-37. console.error('send fail');
-38. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx', // 本端地址
+  port: 8080
+}
+udp.bind(bindAddr).then(() => {
+  console.info('bind success');
+}).catch((err: BusinessError) => {
+  console.error('bind fail');
+  return;
+});
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx', // 对端地址
+  port: 8080
+}
+let socks5Server: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let proxyOptions: socket.ProxyOptions = {
+  type : 1,
+  address: socks5Server,
+  username: "xxx",
+  password: "xxx"
+}
+let sendOptions: socket.UDPSendOptions = {
+  data: 'Hello, server!',
+  address: netAddress,
+  proxy: proxyOptions,
+}
+udp.send(sendOptions).then(() => {
+  console.info('send success');
+}).catch((err: BusinessError) => {
+  console.error('send fail');
+});
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(callback: AsyncCallback<void>): void
 
@@ -417,23 +401,21 @@ close(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. udp.close((err: BusinessError) => {
-6. if (err) {
-7. console.error('close fail');
-8. return;
-9. }
-10. console.info('close success');
-11. })
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+udp.close((err: BusinessError) => {
+  if (err) {
+    console.error('close fail');
+    return;
+  }
+  console.info('close success');
+})
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -459,27 +441,25 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. udp.close().then(() => {
-6. console.info('close success');
-7. }).catch((err: BusinessError) => {
-8. console.error('close fail');
-9. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+udp.close().then(() => {
+  console.info('close success');
+}).catch((err: BusinessError) => {
+  console.error('close fail');
+});
 ```
 
 ### getState
-
-PhonePC/2in1TabletTVWearable
 
 getState(callback: AsyncCallback<SocketStateBase>): void
 
 获取UDPSocket状态。使用callback异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -503,40 +483,38 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. udp.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.error('bind success');
-15. udp.getState((err: BusinessError, data: socket.SocketStateBase) => {
-16. if (err) {
-17. console.error('getState fail');
-18. return;
-19. }
-20. console.info('getState success:' + JSON.stringify(data));
-21. })
-22. })
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+udp.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.error('bind success');
+  udp.getState((err: BusinessError, data: socket.SocketStateBase) => {
+    if (err) {
+      console.error('getState fail');
+      return;
+    }
+    console.info('getState success:' + JSON.stringify(data));
+  })
+})
 ```
 
 ### getState
-
-PhonePC/2in1TabletTVWearable
 
 getState(): Promise<SocketStateBase>
 
 获取UDPSocket状态。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -560,38 +538,36 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. udp.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. udp.getState().then((data: socket.SocketStateBase) => {
-16. console.info('getState success:' + JSON.stringify(data));
-17. }).catch((err: BusinessError) => {
-18. console.error('getState fail' + JSON.stringify(err));
-19. });
-20. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+udp.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+  udp.getState().then((data: socket.SocketStateBase) => {
+    console.info('getState success:' + JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    console.error('getState fail' + JSON.stringify(err));
+  });
+});
 ```
 
 ### getSocketFd23+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取UDPSocket的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * [bind](js-apis-socket.md#bind)方法调用成功后，才可调用此方法。
 * bind异常、Socket已关闭（如调用close后）等异常情况下调用本接口会返回-1。
@@ -617,37 +593,35 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. udp.bind(bindAddr)
-10. .then(() => {
-11. udp.getSocketFd()
-12. .then((fd: number) => {
-13. console.info(`Socket FD：${fd}`);
-14. }).catch((err: BusinessError) => {
-15. console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
-16. });
-17. }).catch((err: BusinessError) => {
-18. console.error('bind fail');
-19. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let bindAddr: socket.NetAddress = {
+    address: '192.168.xx.xxx',
+    port: 8080
+}
+udp.bind(bindAddr)
+  .then(() => {
+    udp.getSocketFd()
+      .then((fd: number) => {
+        console.info(`Socket FD：${fd}`);
+      }).catch((err: BusinessError) => {
+      console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
+    });
+  }).catch((err: BusinessError) => {
+  console.error('bind fail');
+});
 ```
 
 ### setExtraOptions
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: UDPExtraOptions, callback: AsyncCallback<void>): void
 
 设置UDPSocket连接的其他属性。使用callback异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -673,48 +647,46 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
 
-6. let bindAddr: socket.NetAddress = {
-7. address: '192.168.xx.xxx',
-8. port: 8080
-9. }
-10. udp.bind(bindAddr, (err: BusinessError) => {
-11. if (err) {
-12. console.error('bind fail');
-13. return;
-14. }
-15. console.info('bind success');
-16. let udpextraoptions: socket.UDPExtraOptions = {
-17. receiveBufferSize: 8192,
-18. sendBufferSize: 8192,
-19. reuseAddress: false,
-20. socketTimeout: 6000,
-21. broadcast: true
-22. }
-23. udp.setExtraOptions(udpextraoptions, (err: BusinessError) => {
-24. if (err) {
-25. console.error('setExtraOptions fail');
-26. return;
-27. }
-28. console.info('setExtraOptions success');
-29. })
-30. })
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+udp.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+  let udpextraoptions: socket.UDPExtraOptions = {
+    receiveBufferSize: 8192,
+    sendBufferSize: 8192,
+    reuseAddress: false,
+    socketTimeout: 6000,
+    broadcast: true
+  }
+  udp.setExtraOptions(udpextraoptions, (err: BusinessError) => {
+    if (err) {
+      console.error('setExtraOptions fail');
+      return;
+    }
+    console.info('setExtraOptions success');
+  })
+})
 ```
 
 ### setExtraOptions
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: UDPExtraOptions): Promise<void>
 
 设置UDPSocket连接的其他属性。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -745,46 +717,44 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
 
-6. let bindAddr: socket.NetAddress = {
-7. address: '192.168.xx.xxx',
-8. port: 8080
-9. }
-10. udp.bind(bindAddr, (err: BusinessError) => {
-11. if (err) {
-12. console.error('bind fail');
-13. return;
-14. }
-15. console.info('bind success');
-16. let udpextraoptions: socket.UDPExtraOptions = {
-17. receiveBufferSize: 8192,
-18. sendBufferSize: 8192,
-19. reuseAddress: false,
-20. socketTimeout: 6000,
-21. broadcast: true
-22. }
-23. udp.setExtraOptions(udpextraoptions).then(() => {
-24. console.info('setExtraOptions success');
-25. }).catch((err: BusinessError) => {
-26. console.error('setExtraOptions fail');
-27. });
-28. })
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+udp.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+  let udpextraoptions: socket.UDPExtraOptions = {
+    receiveBufferSize: 8192,
+    sendBufferSize: 8192,
+    reuseAddress: false,
+    socketTimeout: 6000,
+    broadcast: true
+  }
+  udp.setExtraOptions(udpextraoptions).then(() => {
+    console.info('setExtraOptions success');
+  }).catch((err: BusinessError) => {
+    console.error('setExtraOptions fail');
+  });
+})
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<NetAddress>
 
 获取UDP连接的本地Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -808,31 +778,29 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
 
-6. let bindAddr: socket.NetAddress = {
-7. address: '192.168.xx.xxx',
-8. port: 8080
-9. }
-10. udp.bind(bindAddr).then(() => {
-11. console.info('bind success');
-12. udp.getLocalAddress().then((localAddress: socket.NetAddress) => {
-13. console.info("UDP_Socket get SUCCESS! Address：" + JSON.stringify(localAddress));
-14. }).catch((err: BusinessError) => {
-15. console.error("UDP_Socket get FAILED! Error: " + JSON.stringify(err));
-16. })
-17. }).catch((err: BusinessError) => {
-18. console.error('bind fail');
-19. });
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+udp.bind(bindAddr).then(() => {
+  console.info('bind success');
+  udp.getLocalAddress().then((localAddress: socket.NetAddress) => {
+        console.info("UDP_Socket get SUCCESS! Address：" + JSON.stringify(localAddress));
+      }).catch((err: BusinessError) => {
+        console.error("UDP_Socket get FAILED! Error: " + JSON.stringify(err));
+      })
+}).catch((err: BusinessError) => {
+  console.error('bind fail');
+});
 ```
 
 ### on('message')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
@@ -849,28 +817,26 @@ on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
 
-6. udp.on('message', (value: socket.SocketMessageInfo) => {
-7. let messageView = '';
-8. let uint8Array = new Uint8Array(value.message);
-9. for (let i: number = 0; i < value.message.byteLength; i++) {
-10. let messages = uint8Array[i];
-11. let message = String.fromCharCode(messages);
-12. messageView += message;
-13. }
-14. console.info('on message message: ' + JSON.stringify(messageView));
-15. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-16. });
+udp.on('message', (value: socket.SocketMessageInfo) => {
+  let messageView = '';
+  let uint8Array = new Uint8Array(value.message);
+  for (let i: number = 0; i < value.message.byteLength; i++) {
+    let messages = uint8Array[i];
+    let message = String.fromCharCode(messages);
+    messageView += message;
+  }
+  console.info('on message message: ' + JSON.stringify(messageView));
+  console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+});
 ```
 
 ### off('message')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
@@ -887,31 +853,29 @@ off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let messageView = '';
-6. let callback = (value: socket.SocketMessageInfo) => {
-7. for (let i: number = 0; i < value.message.byteLength; i++) {
-8. let uint8Array = new Uint8Array(value.message)
-9. let messages = uint8Array[i]
-10. let message = String.fromCharCode(messages);
-11. messageView += message;
-12. }
-13. console.info('on message message: ' + JSON.stringify(messageView));
-14. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-15. }
-16. udp.on('message', callback);
-17. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-18. udp.off('message', callback);
-19. udp.off('message');
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let messageView = '';
+let callback = (value: socket.SocketMessageInfo) => {
+  for (let i: number = 0; i < value.message.byteLength; i++) {
+    let uint8Array = new Uint8Array(value.message)
+    let messages = uint8Array[i]
+    let message = String.fromCharCode(messages);
+    messageView += message;
+  }
+  console.info('on message message: ' + JSON.stringify(messageView));
+  console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+}
+udp.on('message', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+udp.off('message', callback);
+udp.off('message');
 ```
 
 ### on('listening' | 'close')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'listening' | 'close', callback: Callback<void>): void
 
@@ -928,22 +892,20 @@ on(type: 'listening' | 'close', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. udp.on('listening', () => {
-6. console.info("on listening success");
-7. });
-8. udp.on('close', () => {
-9. console.info("on close success");
-10. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+udp.on('listening', () => {
+  console.info("on listening success");
+});
+udp.on('close', () => {
+  console.info("on close success");
+});
 ```
 
 ### off('listening' | 'close')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'listening' | 'close', callback?: Callback<void>): void
 
@@ -960,30 +922,28 @@ off(type: 'listening' | 'close', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let callback1 = () => {
-6. console.info("on listening, success");
-7. }
-8. udp.on('listening', callback1);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. udp.off('listening', callback1);
-11. udp.off('listening');
-12. let callback2 = () => {
-13. console.info("on close, success");
-14. }
-15. udp.on('close', callback2);
-16. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-17. udp.off('close', callback2);
-18. udp.off('close');
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let callback1 = () => {
+  console.info("on listening, success");
+}
+udp.on('listening', callback1);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+udp.off('listening', callback1);
+udp.off('listening');
+let callback2 = () => {
+  console.info("on close, success");
+}
+udp.on('close', callback2);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+udp.off('close', callback2);
+udp.off('close');
 ```
 
 ### on('error')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -1000,19 +960,17 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. udp.on('error', (err: BusinessError) => {
-6. console.error("on error, err:" + JSON.stringify(err))
-7. });
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+udp.on('error', (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err))
+});
 ```
 
 ### off('error')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -1029,23 +987,21 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
-5. let callback = (err: BusinessError) => {
-6. console.error("on error, err:" + JSON.stringify(err));
-7. }
-8. udp.on('error', callback);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. udp.off('error', callback);
-11. udp.off('error');
+let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+let callback = (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err));
+}
+udp.on('error', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+udp.off('error', callback);
+udp.off('error');
 ```
 
 ## NetAddress
-
-PhonePC/2in1TabletTVWearable
 
 目标地址信息。
 
@@ -1053,13 +1009,11 @@ PhonePC/2in1TabletTVWearable
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| address11+ | string | 否 | 否 | 本地绑定的ip地址。 |
+| address11+ | string | 否 | 否 | IP地址。 |
 | port | number | 否 | 否 | 端口号 ，范围0~65535。如果不指定系统随机分配端口。 |
-| family | number | 否 | 否 | 网络协议类型，可选类型：  - 1：IPv4。默认为1。  - 2：IPv6。地址为IPV6类型，该字段必须被显式指定为2。  - 3：Domain18+。地址为Domain类型，该字段必须被显式指定为3。当前仅支持[TCPSocket.connect](js-apis-socket.md#connect)和[TLSSocket.connect](js-apis-socket.md#connect9)。 |
+| family | number | 否 | 否 | 网络协议类型，可选类型：  - 1：IPv4。默认为1。  - 2：IPv6。地址为IPv6类型，该字段必须被显式指定为2。  - 3：Domain18+。地址为Domain类型，该字段必须被显式指定为3。当前仅支持[TCPSocket.connect](js-apis-socket.md#connect)和[TLSSocket.connect](js-apis-socket.md#connect9)。 |
 
 ## ProxyOptions18+
-
-PhonePC/2in1TabletTVWearable
 
 Socket代理信息。
 
@@ -1074,8 +1028,6 @@ Socket代理信息。
 
 ## ProxyTypes18+
 
-PhonePC/2in1TabletTVWearable
-
 Socket代理类型。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -1086,8 +1038,6 @@ Socket代理类型。
 | SOCKS5 | 1 | 使用Socks5代理。 |
 
 ## UDPSendOptions
-
-PhonePC/2in1TabletTVWearable
 
 UDPSocket发送参数。
 
@@ -1101,8 +1051,6 @@ UDPSocket发送参数。
 
 ## UDPExtraOptions
 
-PhonePC/2in1TabletTVWearable
-
 UDPSocket连接的其他属性。继承自[ExtraOptionsBase](js-apis-socket.md#extraoptionsbase)。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -1112,8 +1060,6 @@ UDPSocket连接的其他属性。继承自[ExtraOptionsBase](js-apis-socket.md#e
 | broadcast | boolean | 否 | 是 | 是否可以发送广播。true表示可发送广播，false表示不可发送广播。默认为false。 |
 
 ## SocketMessageInfo11+
-
-PhonePC/2in1TabletTVWearable
 
 socket连接信息
 
@@ -1125,8 +1071,6 @@ socket连接信息
 | remoteInfo | [SocketRemoteInfo](js-apis-socket.md#socketremoteinfo) | 否 | 否 | socket连接信息。 |
 
 ## SocketStateBase
-
-PhonePC/2in1TabletTVWearable
 
 Socket的状态信息。
 
@@ -1140,30 +1084,24 @@ Socket的状态信息。
 
 ## SocketRemoteInfo
 
-PhonePC/2in1TabletTVWearable
-
 Socket的连接信息。
 
 **系统能力**：SystemCapability.Communication.NetStack
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| address | string | 否 | 否 | 本地绑定的ip地址。 |
+| address | string | 否 | 否 | 对端的IP地址。 |
 | family | 'IPv4' | 'IPv6' | 否 | 否 | 网络协议类型，可选类型：  - IPv4  - IPv6  默认为IPv4。 |
 | port | number | 否 | 否 | 端口号，范围0~65535。 |
 | size | number | 否 | 否 | 服务器响应信息的字节长度。 |
 
 ## UDP 错误码说明
 
-PhonePC/2in1TabletTVWearable
-
 UDP 其余错误码映射形式为：2301000 + Linux内核错误码。
 
 错误码的详细介绍参见[Socket错误码](errorcode-net-socket.md)。
 
 ## socket.constructMulticastSocketInstance11+
-
-PhonePC/2in1TabletTVWearable
 
 constructMulticastSocketInstance(): MulticastSocket
 
@@ -1179,26 +1117,72 @@ constructMulticastSocketInstance(): MulticastSocket
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+```ts
+import { socket } from '@kit.NetworkKit';
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
 ```
 
 ## MulticastSocket11+
 
-PhonePC/2in1TabletTVWearable
-
 MulticastSocket连接。在调用MulticastSocket的方法前，需要先通过[socket.constructMulticastSocketInstance](js-apis-socket.md#socketconstructmulticastsocketinstance11)创建MulticastSocket对象。
 
-### addMembership11+
+### setReuseAddress
 
-PhonePC/2in1TabletTVWearable
+setReuseAddress(reuse: boolean): void
+
+设置多播Socket是否支持地址复用。使用同步方式调用。
+
+**说明** 
+
+用于控制多播Socket绑定端口时是否开启地址复用能力。
+
+如需绑定已被占用的端口，确保占用方开启了地址复用能力，同时本业务也需在调用[bind](js-apis-socket.md#bind)前调用本接口以开启地址复用能力。
+
+**起始版本**：26.0.0
+
+**系统能力**：SystemCapability.Communication.NetStack
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reuse | boolean | 是 | 是否开启地址复用。true表示开启，false表示关闭。 |
+
+**示例：**
+
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+let bindAddr: socket.NetAddress = {
+  // 0.0.0.0 表示绑定本机所有IPv4网络接口上的 8080 端口，常用于多播场景接收该端口的数据。
+  address: '0.0.0.0',
+  port: 8080
+}
+
+try {
+  multicast.setReuseAddress(true);
+  multicast.bind(bindAddr).then(() => {
+    console.info('setReuseAddress success');
+  }).catch((err: BusinessError) => {
+    console.error(`bind failed, code is ${err.code}, message is ${err.message}`);
+  });
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`setReuseAddress failed, code is ${error.code}, message is ${error.message}`);
+}
+```
+
+### addMembership11+
 
 addMembership(multicastAddress: NetAddress, callback: AsyncCallback<void>): void
 
 加入多播组。使用callback异步回调。
 
-说明
+**说明** 
 
 多播使用的IP地址属于特定的范围（例如224.0.0.0到239.255.255.255）。
 
@@ -1229,32 +1213,30 @@ addMembership(multicastAddress: NetAddress, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. let addr: socket.NetAddress = {
-5. address: '239.255.0.1',
-6. port: 8080
-7. }
-8. multicast.addMembership(addr, (err: Object) => {
-9. if (err) {
-10. console.error('add membership fail, err: ' + JSON.stringify(err));
-11. return;
-12. }
-13. console.info('add membership success');
-14. })
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+let addr: socket.NetAddress = {
+  address: '239.255.0.1',
+  port: 8080
+}
+multicast.addMembership(addr, (err: Object) => {
+  if (err) {
+    console.error('add membership fail, err: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('add membership success');
+})
 ```
 
 ### addMembership11+
-
-PhonePC/2in1TabletTVWearable
 
 addMembership(multicastAddress: NetAddress): Promise<void>
 
 加入多播组。使用Promise异步回调。
 
-说明
+**说明** 
 
 多播使用的IP地址属于特定的范围（例如224.0.0.0到239.255.255.255）。
 
@@ -1289,30 +1271,28 @@ addMembership(multicastAddress: NetAddress): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. let addr: socket.NetAddress = {
-5. address: '239.255.0.1',
-6. port: 8080
-7. }
-8. multicast.addMembership(addr).then(() => {
-9. console.info('addMembership success');
-10. }).catch((err: Object) => {
-11. console.error('addMembership fail');
-12. });
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+let addr: socket.NetAddress = {
+  address: '239.255.0.1',
+  port: 8080
+}
+multicast.addMembership(addr).then(() => {
+  console.info('addMembership success');
+}).catch((err: Object) => {
+  console.error('addMembership fail');
+});
 ```
 
 ### dropMembership11+
-
-PhonePC/2in1TabletTVWearable
 
 dropMembership(multicastAddress: NetAddress, callback: AsyncCallback<void>): void
 
 退出多播组。使用callback异步回调。
 
-说明
+**说明** 
 
 多播使用的IP地址属于特定的范围（例如224.0.0.0到239.255.255.255）。
 
@@ -1342,32 +1322,30 @@ dropMembership(multicastAddress: NetAddress, callback: AsyncCallback<void>): voi
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. let addr: socket.NetAddress = {
-5. address: '239.255.0.1',
-6. port: 8080
-7. }
-8. multicast.dropMembership(addr, (err: Object) => {
-9. if (err) {
-10. console.error('drop membership fail, err: ' + JSON.stringify(err));
-11. return;
-12. }
-13. console.info('drop membership success');
-14. })
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+let addr: socket.NetAddress = {
+  address: '239.255.0.1',
+  port: 8080
+}
+multicast.dropMembership(addr, (err: Object) => {
+  if (err) {
+    console.error('drop membership fail, err: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('drop membership success');
+})
 ```
 
 ### dropMembership11+
-
-PhonePC/2in1TabletTVWearable
 
 dropMembership(multicastAddress: NetAddress): Promise<void>
 
 退出多播组。使用Promise异步回调。
 
-说明
+**说明** 
 
 多播使用的IP地址属于特定的范围（例如224.0.0.0到239.255.255.255）。
 
@@ -1402,30 +1380,28 @@ dropMembership(multicastAddress: NetAddress): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. let addr: socket.NetAddress = {
-5. address: '239.255.0.1',
-6. port: 8080
-7. }
-8. multicast.dropMembership(addr).then(() => {
-9. console.info('drop membership success');
-10. }).catch((err: Object) => {
-11. console.error('drop membership fail');
-12. });
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+let addr: socket.NetAddress = {
+  address: '239.255.0.1',
+  port: 8080
+}
+multicast.dropMembership(addr).then(() => {
+  console.info('drop membership success');
+}).catch((err: Object) => {
+  console.error('drop membership fail');
+});
 ```
 
 ### setMulticastTTL11+
-
-PhonePC/2in1TabletTVWearable
 
 setMulticastTTL(ttl: number, callback: AsyncCallback<void>): void
 
 设置多播通信时数据包在网络传输过程中路由器最大跳数。使用callback异步回调。
 
-说明
+**说明** 
 
 用于限制数据包在网络中传输时能够经过的最大路由器跳数的字段，TTL (Time to live)。
 
@@ -1456,29 +1432,27 @@ setMulticastTTL(ttl: number, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. let ttl = 8
-5. multicast.setMulticastTTL(ttl, (err: Object) => {
-6. if (err) {
-7. console.error('set ttl fail, err: ' + JSON.stringify(err));
-8. return;
-9. }
-10. console.info('set ttl success');
-11. })
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+let ttl = 8
+multicast.setMulticastTTL(ttl, (err: Object) => {
+  if (err) {
+    console.error('set ttl fail, err: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('set ttl success');
+})
 ```
 
 ### setMulticastTTL11+
-
-PhonePC/2in1TabletTVWearable
 
 setMulticastTTL(ttl: number): Promise<void>
 
 设置多播通信时数据包在网络传输过程中路由器最大跳数。使用Promise异步回调。
 
-说明
+**说明** 
 
 用于限制数据包在网络中传输时能够经过的最大路由器跳数的字段，TTL (Time to live)。
 
@@ -1514,26 +1488,24 @@ setMulticastTTL(ttl: number): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. multicast.setMulticastTTL(8).then(() => {
-5. console.info('set ttl success');
-6. }).catch((err: Object) => {
-7. console.error('set ttl failed');
-8. });
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+multicast.setMulticastTTL(8).then(() => {
+  console.info('set ttl success');
+}).catch((err: Object) => {
+  console.error('set ttl failed');
+});
 ```
 
 ### getMulticastTTL11+
-
-PhonePC/2in1TabletTVWearable
 
 getMulticastTTL(callback: AsyncCallback<number>): void
 
 获取数据包在网络传输过程中路由器最大跳数(TTL)的值。使用callback异步回调。
 
-说明
+**说明** 
 
 用于限制数据包在网络中传输时能够经过的最大路由器跳数的字段，TTL (Time to live)。
 
@@ -1562,28 +1534,26 @@ getMulticastTTL(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. multicast.getMulticastTTL((err: Object, value: Number) => {
-5. if (err) {
-6. console.error('set ttl fail, err: ' + JSON.stringify(err));
-7. return;
-8. }
-9. console.info('set ttl success, value: ' + JSON.stringify(value));
-10. })
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+multicast.getMulticastTTL((err: Object, value: Number) => {
+  if (err) {
+    console.error('set ttl fail, err: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('set ttl success, value: ' + JSON.stringify(value));
+})
 ```
 
 ### getMulticastTTL11+
-
-PhonePC/2in1TabletTVWearable
 
 getMulticastTTL(): Promise<number>
 
 获取数据包在网络传输过程中路由器最大跳数(TTL)的值。使用Promise异步回调。
 
-说明
+**说明** 
 
 用于限制数据包在网络中传输时能够经过的最大路由器跳数的字段，TTL (Time to live)。
 
@@ -1612,26 +1582,24 @@ getMulticastTTL(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. multicast.getMulticastTTL().then((value: Number) => {
-5. console.info('ttl: ', JSON.stringify(value));
-6. }).catch((err: Object) => {
-7. console.error('set ttl failed');
-8. });
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+multicast.getMulticastTTL().then((value: Number) => {
+  console.info('ttl: ', JSON.stringify(value));
+}).catch((err: Object) => {
+  console.error('set ttl failed');
+});
 ```
 
 ### setLoopbackMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setLoopbackMode(flag: boolean, callback: AsyncCallback<void>): void
 
 设置多播通信中的环回模式标志位。使用callback异步回调。
 
-说明
+**说明** 
 
 用于设置环回模式，开启或关闭两种状态，默认为开启状态。
 
@@ -1659,28 +1627,26 @@ setLoopbackMode(flag: boolean, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. multicast.setLoopbackMode(false, (err: Object) => {
-5. if (err) {
-6. console.error('set loopback mode fail, err: ' + JSON.stringify(err));
-7. return;
-8. }
-9. console.info('set loopback mode success');
-10. })
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+multicast.setLoopbackMode(false, (err: Object) => {
+  if (err) {
+    console.error('set loopback mode fail, err: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('set loopback mode success');
+})
 ```
 
 ### setLoopbackMode11+
-
-PhonePC/2in1TabletTVWearable
 
 setLoopbackMode(flag: boolean): Promise<void>
 
 设置多播通信中的环回模式标志位。使用Promise异步回调。
 
-说明
+**说明** 
 
 用于设置环回模式，开启或关闭两种状态，默认为开启状态。
 
@@ -1713,26 +1679,24 @@ setLoopbackMode(flag: boolean): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. multicast.setLoopbackMode(false).then(() => {
-5. console.info('set loopback mode success');
-6. }).catch((err: Object) => {
-7. console.error('set loopback mode failed');
-8. });
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+multicast.setLoopbackMode(false).then(() => {
+  console.info('set loopback mode success');
+}).catch((err: Object) => {
+  console.error('set loopback mode failed');
+});
 ```
 
 ### getLoopbackMode11+
-
-PhonePC/2in1TabletTVWearable
 
 getLoopbackMode(callback: AsyncCallback<boolean>): void
 
 获取多播通信中的环回模式状态。使用callback异步回调。
 
-说明
+**说明** 
 
 用于获取当前环回模式开启或关闭的状态。
 
@@ -1759,28 +1723,26 @@ getLoopbackMode(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. multicast.getLoopbackMode((err: Object, value: Boolean) => {
-5. if (err) {
-6. console.error('get loopback mode fail, err: ' + JSON.stringify(err));
-7. return;
-8. }
-9. console.info('get loopback mode success, value: ' + JSON.stringify(value));
-10. })
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+multicast.getLoopbackMode((err: Object, value: Boolean) => {
+  if (err) {
+    console.error('get loopback mode fail, err: ' + JSON.stringify(err));
+    return;
+  }
+  console.info('get loopback mode success, value: ' + JSON.stringify(value));
+})
 ```
 
 ### getLoopbackMode11+
-
-PhonePC/2in1TabletTVWearable
 
 getLoopbackMode(): Promise<boolean>
 
 获取多播通信中的环回模式状态。使用Promise异步回调。
 
-说明
+**说明** 
 
 用于获取当前环回模式开启或关闭的状态。
 
@@ -1807,26 +1769,24 @@ getLoopbackMode(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-4. multicast.getLoopbackMode().then((value: Boolean) => {
-5. console.info('loopback mode: ', JSON.stringify(value));
-6. }).catch((err: Object) => {
-7. console.error('get loopback mode failed');
-8. });
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+multicast.getLoopbackMode().then((value: Boolean) => {
+  console.info('loopback mode: ', JSON.stringify(value));
+}).catch((err: Object) => {
+  console.error('get loopback mode failed');
+});
 ```
 
 ### getSocketFd23+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取MulticastSocket的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * [bind](js-apis-socket.md#bind)方法调用成功后，才可调用此方法。
 * bind异常、Socket已关闭（如调用close后）等异常情况下调用本接口会返回-1。
@@ -1854,31 +1814,29 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. multicast.bind(bindAddr)
-10. .then(() => {
-11. console.info('bind success');
-12. multicast.getSocketFd().then((fd: number) => {
-13. console.info(`Socket FD：${fd}`);
-14. }).catch((err: BusinessError) => {
-15. console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
-16. });
-17. }).catch((err: BusinessError) => {
-18. console.error('bind fail');
-19. });
+let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+let bindAddr: socket.NetAddress = {
+    address: '192.168.xx.xxx',
+    port: 8080
+}
+multicast.bind(bindAddr)
+  .then(() => {
+    console.info('bind success');
+    multicast.getSocketFd().then((fd: number) => {
+      console.info(`Socket FD：${fd}`);
+    }).catch((err: BusinessError) => {
+      console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
+    });
+  }).catch((err: BusinessError) => {
+  console.error('bind fail');
+});
 ```
 
 ## socket.constructTCPSocketInstance
-
-PhonePC/2in1TabletTVWearable
 
 constructTCPSocketInstance(): TCPSocket
 
@@ -1894,26 +1852,22 @@ constructTCPSocketInstance(): TCPSocket
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+```ts
+import { socket } from '@kit.NetworkKit';
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
 ```
 
 ## TCPSocket
-
-PhonePC/2in1TabletTVWearable
 
 TCPSocket连接。在调用TCPSocket的方法前，需要先通过[socket.constructTCPSocketInstance](js-apis-socket.md#socketconstructtcpsocketinstance)创建TCPSocket对象。
 
 ### bind
 
-PhonePC/2in1TabletTVWearable
-
 bind(address: NetAddress, callback: AsyncCallback<void>): void
 
 绑定IP地址和端口，端口可以指定为0由系统随机分配或由用户指定为其它非0端口。使用callback异步回调。
 
-说明
+**说明** 
 
 bind方法如果因为端口冲突而执行失败，则会由系统随机分配端口号。
 
@@ -1943,33 +1897,31 @@ bind的IP为'localhost'或'127.0.0.1'时，只允许本地回环接口的连接�
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tcp.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. })
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tcp.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+})
 ```
 
 ### bind
-
-PhonePC/2in1TabletTVWearable
 
 bind(address: NetAddress): Promise<void>
 
 绑定IP地址和端口，端口可以指定为0由系统随机分配或由用户指定为其它非0端口。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind方法如果因为端口冲突而执行失败，则会由系统随机分配端口号。
 
@@ -2004,31 +1956,29 @@ bind的IP为'localhost'或'127.0.0.1'时，只允许本地回环接口的连接�
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tcp.bind(bindAddr).then(() => {
-10. console.info('bind success');
-11. }).catch((err: BusinessError) => {
-12. console.error('bind fail');
-13. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tcp.bind(bindAddr).then(() => {
+  console.info('bind success');
+}).catch((err: BusinessError) => {
+  console.error('bind fail');
+});
 ```
 
 ### connect
-
-PhonePC/2in1TabletTVWearable
 
 connect(options: TCPConnectOptions, callback: AsyncCallback<void>): void
 
 连接到指定的IP地址和端口。使用callback异步回调。
 
-说明
+**说明** 
 
 在没有执行tcp.bind的情况下，也可以直接调用该接口完成与TCP服务端的连接
 
@@ -2051,83 +2001,81 @@ connect(options: TCPConnectOptions, callback: AsyncCallback<void>): void
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server.  适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid.  适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server.  适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method.  适用版本：18+ |
+| 2301210 | Socks5 failed to send the message.  适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message.  适用版本：18+ |
+| 2301212 | Socks5 serialization error.  适用版本：18+ |
+| 2301213 | Socks5 deserialization error.  适用版本：18+ |
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
-13. tcp.connect(tcpconnectoptions, (err: BusinessError) => {
-14. if (err) {
-15. console.error('connect fail');
-16. return;
-17. }
-18. console.info('connect success');
-19. })
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions, (err: BusinessError) => {
+  if (err) {
+    console.error('connect fail');
+    return;
+  }
+  console.info('connect success');
+})
 ```
 
 **示例（设置socket代理）：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let socks5Server: socket.NetAddress = {
-10. address: '192.168.xx.xxx',
-11. port: 8080
-12. }
-13. let proxyOptions: socket.ProxyOptions = {
-14. type : 1,
-15. address: socks5Server,
-16. username: "xxx",
-17. password: "xxx"
-18. }
-19. let tcpconnectoptions: socket.TCPConnectOptions = {
-20. address: netAddress,
-21. timeout: 6000,
-22. proxy: proxyOptions,
-23. }
-24. tcp.connect(tcpconnectoptions, (err: BusinessError) => {
-25. if (err) {
-26. console.error('connect fail');
-27. return;
-28. }
-29. console.info('connect success');
-30. })
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let socks5Server: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let proxyOptions: socket.ProxyOptions = {
+  type : 1,
+  address: socks5Server,
+  username: "xxx",
+  password: "xxx"
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000,
+  proxy: proxyOptions,
+}
+tcp.connect(tcpconnectoptions, (err: BusinessError) => {
+  if (err) {
+    console.error('connect fail');
+    return;
+  }
+  console.info('connect success');
+})
 ```
 
 ### connect
 
-PhonePC/2in1TabletTVWearable
-
 connect(options: TCPConnectOptions): Promise<void>
 
-连接到指定的IP地址和端口。使用promise异步回调。
+连接到指定的IP地址和端口。使用Promise异步回调。
 
-说明
+**说明** 
 
 在没有执行tcp.bind的情况下，也可以直接调用该接口完成与TCP服务端的连接。
 
@@ -2155,79 +2103,77 @@ connect(options: TCPConnectOptions): Promise<void>
 | --- | --- |
 | 401 | Parameter error. |
 | 201 | Permission denied. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server.  适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid.  适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server.  适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method.  适用版本：18+ |
+| 2301210 | Socks5 failed to send the message.  适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message.  适用版本：18+ |
+| 2301212 | Socks5 serialization error.  适用版本：18+ |
+| 2301213 | Socks5 deserialization error.  适用版本：18+ |
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
-13. tcp.connect(tcpconnectoptions).then(() => {
-14. console.info('connect success')
-15. }).catch((err: BusinessError) => {
-16. console.error('connect fail');
-17. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions).then(() => {
+  console.info('connect success')
+}).catch((err: BusinessError) => {
+  console.error('connect fail');
+});
 ```
 
 **示例（设置socket代理）：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let socks5Server: socket.NetAddress = {
-10. address: '192.168.xx.xxx',
-11. port: 8080
-12. }
-13. let proxyOptions: socket.ProxyOptions = {
-14. type : 1,
-15. address: socks5Server,
-16. username: "xxx",
-17. password: "xxx"
-18. }
-19. let tcpconnectoptions: socket.TCPConnectOptions = {
-20. address: netAddress,
-21. timeout: 6000,
-22. proxy: proxyOptions,
-23. }
-24. tcp.connect(tcpconnectoptions).then(() => {
-25. console.info('connect success')
-26. }).catch((err: BusinessError) => {
-27. console.error('connect fail');
-28. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let socks5Server: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let proxyOptions: socket.ProxyOptions = {
+  type : 1,
+  address: socks5Server,
+  username: "xxx",
+  password: "xxx"
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000,
+  proxy: proxyOptions,
+}
+tcp.connect(tcpconnectoptions).then(() => {
+  console.info('connect success')
+}).catch((err: BusinessError) => {
+  console.error('connect fail');
+});
 ```
 
 ### send
-
-PhonePC/2in1TabletTVWearable
 
 send(options: TCPSendOptions, callback: AsyncCallback<void>): void
 
 通过TCPSocket连接发送数据。使用callback异步回调。
 
-说明
+**说明** 
 
 connect方法调用成功后，才可调用此方法。该接口为耗时操作，请在Worker线程或taskpool线程调用该接口。
 
@@ -2253,43 +2199,41 @@ connect方法调用成功后，才可调用此方法。该接口为耗时操作�
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
-13. tcp.connect(tcpconnectoptions, () => {
-14. console.info('connect success');
-15. let tcpSendOptions: socket.TCPSendOptions = {
-16. data: 'Hello, server!'
-17. }
-18. tcp.send(tcpSendOptions, (err: BusinessError) => {
-19. if (err) {
-20. console.error('send fail');
-21. return;
-22. }
-23. console.info('send success');
-24. })
-25. })
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions, () => {
+  console.info('connect success');
+  let tcpSendOptions: socket.TCPSendOptions = {
+    data: 'Hello, server!'
+  }
+  tcp.send(tcpSendOptions, (err: BusinessError) => {
+    if (err) {
+      console.error('send fail');
+      return;
+    }
+    console.info('send success');
+  })
+})
 ```
 
 ### send
-
-PhonePC/2in1TabletTVWearable
 
 send(options: TCPSendOptions): Promise<void>
 
 通过TCPSocket连接发送数据。使用Promise异步回调。
 
-说明
+**说明** 
 
 connect方法调用成功后，才可调用此方法。该接口为耗时操作，请在Worker线程或taskpool线程调用该接口。
 
@@ -2320,35 +2264,33 @@ connect方法调用成功后，才可调用此方法。该接口为耗时操作�
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
-13. tcp.connect(tcpconnectoptions, () => {
-14. console.info('connect success');
-15. let tcpSendOptions: socket.TCPSendOptions = {
-16. data: 'Hello, server!'
-17. }
-18. tcp.send(tcpSendOptions).then(() => {
-19. console.info('send success');
-20. }).catch((err: BusinessError) => {
-21. console.error('send fail');
-22. });
-23. })
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions, () => {
+  console.info('connect success');
+  let tcpSendOptions: socket.TCPSendOptions = {
+    data: 'Hello, server!'
+  }
+  tcp.send(tcpSendOptions).then(() => {
+    console.info('send success');
+  }).catch((err: BusinessError) => {
+    console.error('send fail');
+  });
+})
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(callback: AsyncCallback<void>): void
 
@@ -2374,24 +2316,22 @@ close(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
 
-6. tcp.close((err: BusinessError) => {
-7. if (err) {
-8. console.error('close fail');
-9. return;
-10. }
-11. console.info('close success');
-12. })
+tcp.close((err: BusinessError) => {
+  if (err) {
+    console.error('close fail');
+    return;
+  }
+  console.info('close success');
+})
 ```
 
 ### close
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -2417,28 +2357,26 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
 
-6. tcp.close().then(() => {
-7. console.info('close success');
-8. }).catch((err: BusinessError) => {
-9. console.error('close fail');
-10. });
+tcp.close().then(() => {
+  console.info('close success');
+}).catch((err: BusinessError) => {
+  console.error('close fail');
+});
 ```
 
 ### getRemoteAddress
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteAddress(callback: AsyncCallback<NetAddress>): void
 
 获取对端Socket地址。使用callback异步回调。
 
-说明
+**说明** 
 
 connect方法调用成功后，才可调用此方法。
 
@@ -2462,40 +2400,38 @@ connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
-13. tcp.connect(tcpconnectoptions, () => {
-14. console.info('connect success');
-15. tcp.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
-16. if (err) {
-17. console.error('getRemoteAddressfail');
-18. return;
-19. }
-20. console.info('getRemoteAddresssuccess:' + JSON.stringify(data));
-21. })
-22. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions, () => {
+  console.info('connect success');
+  tcp.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
+    if (err) {
+      console.error('getRemoteAddressfail');
+      return;
+    }
+    console.info('getRemoteAddresssuccess:' + JSON.stringify(data));
+  })
+});
 ```
 
 ### getRemoteAddress
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteAddress(): Promise<NetAddress>
 
 获取对端Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 connect方法调用成功后，才可调用此方法。
 
@@ -2519,40 +2455,38 @@ connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
-13. tcp.connect(tcpconnectoptions).then(() => {
-14. console.info('connect success');
-15. tcp.getRemoteAddress().then(() => {
-16. console.info('getRemoteAddress success');
-17. }).catch((err: BusinessError) => {
-18. console.error('getRemoteAddressfail');
-19. });
-20. }).catch((err: BusinessError) => {
-21. console.error('connect fail');
-22. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions).then(() => {
+  console.info('connect success');
+  tcp.getRemoteAddress().then(() => {
+    console.info('getRemoteAddress success');
+  }).catch((err: BusinessError) => {
+    console.error('getRemoteAddressfail');
+  });
+}).catch((err: BusinessError) => {
+  console.error('connect fail');
+});
 ```
 
 ### getState
-
-PhonePC/2in1TabletTVWearable
 
 getState(callback: AsyncCallback<SocketStateBase>): void
 
 获取TCPSocket状态。使用callback异步回调。
 
-说明
+**说明** 
 
 bind或connect方法调用成功后，才可调用此方法。
 
@@ -2576,40 +2510,38 @@ bind或connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
-13. tcp.connect(tcpconnectoptions, () => {
-14. console.info('connect success');
-15. tcp.getState((err: BusinessError, data: socket.SocketStateBase) => {
-16. if (err) {
-17. console.error('getState fail');
-18. return;
-19. }
-20. console.info('getState success:' + JSON.stringify(data));
-21. });
-22. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions, () => {
+  console.info('connect success');
+  tcp.getState((err: BusinessError, data: socket.SocketStateBase) => {
+    if (err) {
+      console.error('getState fail');
+      return;
+    }
+    console.info('getState success:' + JSON.stringify(data));
+  });
+});
 ```
 
 ### getState
-
-PhonePC/2in1TabletTVWearable
 
 getState(): Promise<SocketStateBase>
 
 获取TCPSocket状态。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind或connect方法调用成功后，才可调用此方法。
 
@@ -2633,40 +2565,38 @@ bind或connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
-13. tcp.connect(tcpconnectoptions).then(() => {
-14. console.info('connect success');
-15. tcp.getState().then(() => {
-16. console.info('getState success');
-17. }).catch((err: BusinessError) => {
-18. console.error('getState fail');
-19. });
-20. }).catch((err: BusinessError) => {
-21. console.error('connect fail');
-22. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions).then(() => {
+  console.info('connect success');
+  tcp.getState().then(() => {
+    console.info('getState success');
+  }).catch((err: BusinessError) => {
+    console.error('getState fail');
+  });
+}).catch((err: BusinessError) => {
+  console.error('connect fail');
+});
 ```
 
 ### getSocketFd10+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(callback: AsyncCallback<number>): void
 
 获取TCPSocket的文件描述符。使用callback异步回调。
 
-说明
+**说明** 
 
 * bind或connect方法调用成功后，才可调用此方法。
 * 文件描述符的生命周期由系统管理，应用可以通过[close](js-apis-socket.md#close-2)方法关闭Socket连接，避免直接操作文件描述符进行关闭。
@@ -2681,40 +2611,38 @@ getSocketFd(callback: AsyncCallback<number>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. // 绑定指定网络接口
-8. }
-9. tcp.bind(bindAddr)
-10. let netAddress: socket.NetAddress = {
-11. address: '192.168.xx.xxx',
-12. port: 8080
-13. }
-14. let tcpconnectoptions: socket.TCPConnectOptions = {
-15. address: netAddress,
-16. timeout: 6000
-17. }
-18. tcp.connect(tcpconnectoptions)
-19. tcp.getSocketFd((err: BusinessError, data: number) => {
-20. console.error("getSocketFd failed: " + err);
-21. console.info("socketFd: " + data);
-22. })
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  // 绑定指定网络接口
+}
+tcp.bind(bindAddr)
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions)
+tcp.getSocketFd((err: BusinessError, data: number) => {
+  console.error("getSocketFd failed: " + err);
+  console.info("socketFd: " + data);
+})
 ```
 
 ### getSocketFd10+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取TCPSocket的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * bind或connect方法调用成功后，才可调用此方法。
 * 文件描述符的生命周期由系统管理，应用可以通过[close](js-apis-socket.md#close-2)方法关闭Socket连接，避免直接操作文件描述符进行关闭。
@@ -2729,39 +2657,37 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. // 绑定指定网络接口
-8. }
-9. tcp.bind(bindAddr)
-10. let netAddress: socket.NetAddress = {
-11. address: '192.168.xx.xxx',
-12. port: 8080
-13. }
-14. let tcpconnectoptions: socket.TCPConnectOptions = {
-15. address: netAddress,
-16. timeout: 6000
-17. }
-18. tcp.connect(tcpconnectoptions)
-19. tcp.getSocketFd().then((data: number) => {
-20. console.info("socketFd: " + data);
-21. })
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let bindAddr: socket.NetAddress = {
+    address: '192.168.xx.xxx',
+  // 绑定指定网络接口
+}
+tcp.bind(bindAddr)
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
+tcp.connect(tcpconnectoptions)
+tcp.getSocketFd().then((data: number) => {
+  console.info("socketFd: " + data);
+})
 ```
 
 ### setExtraOptions
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback<void>): void
 
 设置TCPSocket连接的其他属性。使用callback异步回调。
 
-说明
+**说明** 
 
 bind或connect方法调用成功后，才可调用此方法。
 
@@ -2787,56 +2713,55 @@ bind或connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
 
-14. interface SocketLinger {
-15. on: boolean;
-16. linger: number;
-17. }
+interface SocketLinger {
+  on: boolean;
+  linger: number;
+}
 
-19. tcp.connect(tcpconnectoptions, () => {
-20. console.info('connect success');
-21. let tcpExtraOptions: socket.TCPExtraOptions = {
-22. keepAlive: true,
-23. OOBInline: true,
-24. TCPNoDelay: true,
-25. socketLinger: { on: true, linger: 10 } as SocketLinger,
-26. receiveBufferSize: 8192,
-27. sendBufferSize: 8192,
-28. reuseAddress: true,
-29. socketTimeout: 3000
-30. }
-31. tcp.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
-32. if (err) {
-33. console.error('setExtraOptions fail');
-34. return;
-35. }
-36. console.info('setExtraOptions success');
-37. });
-38. });
+tcp.connect(tcpconnectoptions, () => {
+  console.info('connect success');
+  let tcpExtraOptions: socket.TCPExtraOptions = {
+    keepAlive: true,
+    OOBInline: true,
+    TCPNoDelay: true,
+    socketLinger: { on: true, linger: 10 } as SocketLinger,
+    receiveBufferSize: 8192,
+    sendBufferSize: 8192,
+    reuseAddress: true,
+    socketTimeout: 3000,
+    tcpFastOpen: false
+  }
+  tcp.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
+    if (err) {
+      console.error('setExtraOptions fail');
+      return;
+    }
+    console.info('setExtraOptions success');
+  });
+});
 ```
 
 ### setExtraOptions
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: TCPExtraOptions): Promise<void>
 
 设置TCPSocket连接的其他属性。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind或connect方法调用成功后，才可调用此方法。
 
@@ -2867,54 +2792,53 @@ bind或connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
 
-14. interface SocketLinger {
-15. on: boolean;
-16. linger: number;
-17. }
+interface SocketLinger {
+  on: boolean;
+  linger: number;
+}
 
-19. tcp.connect(tcpconnectoptions, () => {
-20. console.info('connect success');
-21. let tcpExtraOptions: socket.TCPExtraOptions = {
-22. keepAlive: true,
-23. OOBInline: true,
-24. TCPNoDelay: true,
-25. socketLinger: { on: true, linger: 10 } as SocketLinger,
-26. receiveBufferSize: 8192,
-27. sendBufferSize: 8192,
-28. reuseAddress: true,
-29. socketTimeout: 3000
-30. }
-31. tcp.setExtraOptions(tcpExtraOptions).then(() => {
-32. console.info('setExtraOptions success');
-33. }).catch((err: BusinessError) => {
-34. console.error('setExtraOptions fail');
-35. });
-36. });
+tcp.connect(tcpconnectoptions, () => {
+  console.info('connect success');
+  let tcpExtraOptions: socket.TCPExtraOptions = {
+    keepAlive: true,
+    OOBInline: true,
+    TCPNoDelay: true,
+    socketLinger: { on: true, linger: 10 } as SocketLinger,
+    receiveBufferSize: 8192,
+    sendBufferSize: 8192,
+    reuseAddress: true,
+    socketTimeout: 3000,
+    tcpFastOpen: false
+  }
+  tcp.setExtraOptions(tcpExtraOptions).then(() => {
+    console.info('setExtraOptions success');
+  }).catch((err: BusinessError) => {
+    console.error('setExtraOptions fail');
+  });
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<NetAddress>
 
 获取TCPSocket的本地Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -2938,30 +2862,28 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. family: 1,
-8. port: 8080
-9. }
-10. tcp.bind(bindAddr).then(() => {
-11. tcp.getLocalAddress().then((localAddress: socket.NetAddress) => {
-12. console.info("SUCCESS! Address:" + JSON.stringify(localAddress));
-13. }).catch((err: BusinessError) => {
-14. console.error("FAILED! Error:" + JSON.stringify(err));
-15. })
-16. }).catch((err: BusinessError) => {
-17. console.error('bind fail');
-18. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  family: 1,
+  port: 8080
+}
+tcp.bind(bindAddr).then(() => {
+  tcp.getLocalAddress().then((localAddress: socket.NetAddress) => {
+    console.info("SUCCESS! Address:" + JSON.stringify(localAddress));
+  }).catch((err: BusinessError) => {
+    console.error("FAILED! Error:" + JSON.stringify(err));
+  })
+}).catch((err: BusinessError) => {
+  console.error('bind fail');
+});
 ```
 
 ### on('message')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
@@ -2978,27 +2900,25 @@ on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. tcp.on('message', (value: socket.SocketMessageInfo) => {
-6. let messageView = '';
-7. let uint8Array = new Uint8Array(value.message);
-8. for (let i: number = 0; i < value.message.byteLength; i++) {
-9. let messages = uint8Array[i];
-10. let message = String.fromCharCode(messages);
-11. messageView += message;
-12. }
-13. console.info('on message message: ' + JSON.stringify(messageView));
-14. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-15. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+tcp.on('message', (value: socket.SocketMessageInfo) => {
+  let messageView = '';
+  let uint8Array = new Uint8Array(value.message);
+  for (let i: number = 0; i < value.message.byteLength; i++) {
+    let messages = uint8Array[i];
+    let message = String.fromCharCode(messages);
+    messageView += message;
+  }
+  console.info('on message message: ' + JSON.stringify(messageView));
+  console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+});
 ```
 
 ### off('message')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
@@ -3015,31 +2935,29 @@ off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let messageView = '';
-6. let callback = (value: socket.SocketMessageInfo) => {
-7. for (let i: number = 0; i < value.message.byteLength; i++) {
-8. let uint8Array = new Uint8Array(value.message)
-9. let messages = uint8Array[i]
-10. let message = String.fromCharCode(messages);
-11. messageView += message;
-12. }
-13. console.info('on message message: ' + JSON.stringify(messageView));
-14. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-15. }
-16. tcp.on('message', callback);
-17. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-18. tcp.off('message', callback);
-19. tcp.off('message');
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let messageView = '';
+let callback = (value: socket.SocketMessageInfo) => {
+  for (let i: number = 0; i < value.message.byteLength; i++) {
+    let uint8Array = new Uint8Array(value.message)
+    let messages = uint8Array[i]
+    let message = String.fromCharCode(messages);
+    messageView += message;
+  }
+  console.info('on message message: ' + JSON.stringify(messageView));
+  console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+}
+tcp.on('message', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tcp.off('message', callback);
+tcp.off('message');
 ```
 
 ### on('connect' | 'close')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connect' | 'close', callback: Callback<void>): void
 
@@ -3056,22 +2974,20 @@ on(type: 'connect' | 'close', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. tcp.on('connect', () => {
-6. console.info("on connect success")
-7. });
-8. tcp.on('close', () => {
-9. console.info("on close success")
-10. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+tcp.on('connect', () => {
+  console.info("on connect success")
+});
+tcp.on('close', () => {
+  console.info("on close success")
+});
 ```
 
 ### off('connect' | 'close')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connect' | 'close', callback?: Callback<void>): void
 
@@ -3088,30 +3004,28 @@ off(type: 'connect' | 'close', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let callback1 = () => {
-6. console.info("on connect success");
-7. }
-8. tcp.on('connect', callback1);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. tcp.off('connect', callback1);
-11. tcp.off('connect');
-12. let callback2 = () => {
-13. console.info("on close success");
-14. }
-15. tcp.on('close', callback2);
-16. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-17. tcp.off('close', callback2);
-18. tcp.off('close');
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let callback1 = () => {
+  console.info("on connect success");
+}
+tcp.on('connect', callback1);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tcp.off('connect', callback1);
+tcp.off('connect');
+let callback2 = () => {
+  console.info("on close success");
+}
+tcp.on('close', callback2);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tcp.off('close', callback2);
+tcp.off('close');
 ```
 
 ### on('error')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -3128,19 +3042,17 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. tcp.on('error', (err: BusinessError) => {
-6. console.error("on error, err:" + JSON.stringify(err))
-7. });
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+tcp.on('error', (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err))
+});
 ```
 
 ### off('error')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -3157,23 +3069,21 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let callback = (err: BusinessError) => {
-6. console.error("on error, err:" + JSON.stringify(err));
-7. }
-8. tcp.on('error', callback);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. tcp.off('error', callback);
-11. tcp.off('error');
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let callback = (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err));
+}
+tcp.on('error', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tcp.off('error', callback);
+tcp.off('error');
 ```
 
 ## TCPConnectOptions
-
-PhonePC/2in1TabletTVWearable
 
 TCPSocket连接的参数。
 
@@ -3187,8 +3097,6 @@ TCPSocket连接的参数。
 
 ## TCPSendOptions
 
-PhonePC/2in1TabletTVWearable
-
 TCPSocket发送请求的参数。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -3196,11 +3104,9 @@ TCPSocket发送请求的参数。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | data | string| ArrayBuffer | 否 | 否 | 发送的数据。 |
-| encoding | string | 否 | 是 | 字符编码(UTF-8，UTF-16BE，UTF-16LE，UTF-16，US-AECII，ISO-8859-1)，默认为UTF-8。 |
+| encoding | string | 否 | 是 | 字符编码(UTF-8，UTF-16BE，UTF-16LE，UTF-16，US-ASCII，ISO-8859-1)，默认为UTF-8。 |
 
 ## TCPExtraOptions
-
-PhonePC/2in1TabletTVWearable
 
 TCPSocket连接的其他属性。继承自[ExtraOptionsBase](js-apis-socket.md#extraoptionsbase)。
 
@@ -3212,10 +3118,9 @@ TCPSocket连接的其他属性。继承自[ExtraOptionsBase](js-apis-socket.md#e
 | OOBInline | boolean | 否 | 是 | 是否为OOB内联。默认为false。true：是OOB内联；false：不是OOB内联。 |
 | TCPNoDelay | boolean | 否 | 是 | TCPSocket连接是否无时延。默认为false。true：无时延；false：有时延。 |
 | socketLinger | {on:boolean, linger:number} | 否 | 是 | socket是否继续逗留。  - on：是否逗留（true：逗留；false：不逗留）。  - linger：逗留时长，单位毫秒（ms），取值范围为0~65535。  当入参on设置为true时，才需要设置。 |
+| tcpFastOpen24+ | boolean | 否 | 是 | 是否在TCPSocket连接中启用TCP快速打开（TCP Fast OPen， TFO），该功能允许客户端在首次握手时携带数据，从而减少连接建立的延迟，提升高频率短连接场景下的性能表现。默认为false。true：支持快速打开属性；false：不支持快速打开属性。  当前参数只支持客户端配置。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## socket.constructTCPSocketServerInstance10+
-
-PhonePC/2in1TabletTVWearable
 
 constructTCPSocketServerInstance(): TCPSocketServer
 
@@ -3231,26 +3136,22 @@ constructTCPSocketServerInstance(): TCPSocketServer
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+```ts
+import { socket } from '@kit.NetworkKit';
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 ```
 
 ## TCPSocketServer10+
-
-PhonePC/2in1TabletTVWearable
 
 TCPSocketServer连接。在调用TCPSocketServer的方法前，需要先通过[socket.constructTCPSocketServerInstance](js-apis-socket.md#socketconstructtcpsocketserverinstance10)创建TCPSocketServer对象。
 
 ### listen10+
 
-PhonePC/2in1TabletTVWearable
-
 listen(address: NetAddress, callback: AsyncCallback<void>): void
 
 绑定IP地址和端口，端口可以指定或由系统随机分配。监听并接受与此套接字建立的TCPSocket连接。该接口使用多线程并发处理客户端的数据。使用callback异步回调。
 
-说明
+**说明** 
 
 服务端使用该方法完成bind，listen，accept操作，bind方法失败会由系统随机分配端口号。
 
@@ -3281,34 +3182,32 @@ listen(address: NetAddress, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address:  '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr, (err: BusinessError) => {
-11. if (err) {
-12. console.error("listen fail");
-13. return;
-14. }
-15. console.info("listen success");
-16. })
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+})
 ```
 
 ### listen10+
-
-PhonePC/2in1TabletTVWearable
 
 listen(address: NetAddress): Promise<void>
 
 绑定IP地址和端口，端口可以指定或由系统随机分配。监听并接受与此套接字建立的TCPSocket连接。该接口使用多线程并发处理客户端的数据。使用Promise异步回调。
 
-说明
+**说明** 
 
 服务端使用该方法完成bind，listen，accept操作，bind方法失败会由系统随机分配端口号。
 
@@ -3344,32 +3243,30 @@ listen(address: NetAddress): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address:  '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr).then(() => {
-11. console.info('listen success');
-12. }).catch((err: BusinessError) => {
-13. console.error('listen fail');
-14. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr).then(() => {
+  console.info('listen success');
+}).catch((err: BusinessError) => {
+  console.error('listen fail');
+});
 ```
 
 ### getState10+
-
-PhonePC/2in1TabletTVWearable
 
 getState(callback: AsyncCallback<SocketStateBase>): void
 
 获取TCPSocketServer状态。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -3396,41 +3293,39 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address:  '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr, (err: BusinessError) => {
-11. if (err) {
-12. console.error("listen fail");
-13. return;
-14. }
-15. console.info("listen success");
-16. })
-17. tcpServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
-18. if (err) {
-19. console.error('getState fail');
-20. return;
-21. }
-22. console.info('getState success:' + JSON.stringify(data));
-23. })
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+})
+tcpServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
+  if (err) {
+    console.error('getState fail');
+    return;
+  }
+  console.info('getState success:' + JSON.stringify(data));
+})
 ```
 
 ### getState10+
-
-PhonePC/2in1TabletTVWearable
 
 getState(): Promise<SocketStateBase>
 
 获取TCPSocketServer状态。使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -3456,39 +3351,37 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address:  '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr, (err: BusinessError) => {
-11. if (err) {
-12. console.error("listen fail");
-13. return;
-14. }
-15. console.info("listen success");
-16. })
-17. tcpServer.getState().then((data: socket.SocketStateBase) => {
-18. console.info('getState success' + JSON.stringify(data));
-19. }).catch((err: BusinessError) => {
-20. console.error('getState fail');
-21. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+})
+tcpServer.getState().then((data: socket.SocketStateBase) => {
+  console.info('getState success' + JSON.stringify(data));
+}).catch((err: BusinessError) => {
+  console.error('getState fail');
+});
 ```
 
 ### getSocketFd23+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取TCPSocketServer监听端口绑定的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * [listen](js-apis-socket.md#listen10)方法调用成功后，才可调用此方法。多次调用listen时，会获取最新监听端口绑定的文件描述符。
 * 监听异常、Socket已关闭（如调用close后）等异常情况下调用本接口会返回-1。
@@ -3514,37 +3407,35 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address:  '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr).then(() => {
-11. console.info('listen success');
-12. tcpServer.getSocketFd().then((fd: number) => {
-13. console.info(`Socket FD：${fd}`);
-14. }).catch((err: BusinessError) => {
-15. console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
-16. });
-17. }).catch((err: BusinessError) => {
-18. console.error('listen fail');
-19. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr).then(() => {
+  console.info('listen success');
+  tcpServer.getSocketFd().then((fd: number) => {
+    console.info(`Socket FD：${fd}`);
+  }).catch((err: BusinessError) => {
+    console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
+  });
+}).catch((err: BusinessError) => {
+  console.error('listen fail');
+});
 ```
 
 ### setExtraOptions10+
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback<void>): void
 
 设置TCPSocketServer连接的其他属性。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -3572,57 +3463,55 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address:  '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr, (err: BusinessError) => {
-11. if (err) {
-12. console.error("listen fail");
-13. return;
-14. }
-15. console.info("listen success");
-16. })
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+})
 
-18. interface SocketLinger {
-19. on: boolean;
-20. linger: number;
-21. }
+interface SocketLinger {
+  on: boolean;
+  linger: number;
+}
 
-23. let tcpExtraOptions: socket.TCPExtraOptions = {
-24. keepAlive: true,
-25. OOBInline: true,
-26. TCPNoDelay: true,
-27. socketLinger: { on: true, linger: 10 } as SocketLinger,
-28. receiveBufferSize: 8192,
-29. sendBufferSize: 8192,
-30. reuseAddress: true,
-31. socketTimeout: 3000
-32. }
-33. tcpServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
-34. if (err) {
-35. console.error('setExtraOptions fail');
-36. return;
-37. }
-38. console.info('setExtraOptions success');
-39. });
+let tcpExtraOptions: socket.TCPExtraOptions = {
+  keepAlive: true,
+  OOBInline: true,
+  TCPNoDelay: true,
+  socketLinger: { on: true, linger: 10 } as SocketLinger,
+  receiveBufferSize: 8192,
+  sendBufferSize: 8192,
+  reuseAddress: true,
+  socketTimeout: 3000
+}
+tcpServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
+  if (err) {
+    console.error('setExtraOptions fail');
+    return;
+  }
+  console.info('setExtraOptions success');
+});
 ```
 
 ### setExtraOptions10+
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: TCPExtraOptions): Promise<void>
 
 设置TCPSocketServer连接的其他属性。使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -3655,56 +3544,54 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address:  '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
 
-11. interface SocketLinger {
-12. on: boolean;
-13. linger: number;
-14. }
+interface SocketLinger {
+  on: boolean;
+  linger: number;
+}
 
-16. tcpServer.listen(listenAddr, (err: BusinessError) => {
-17. if (err) {
-18. console.error("listen fail");
-19. return;
-20. }
-21. console.info("listen success");
-22. })
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+})
 
-24. let tcpExtraOptions: socket.TCPExtraOptions = {
-25. keepAlive: true,
-26. OOBInline: true,
-27. TCPNoDelay: true,
-28. socketLinger: { on: true, linger: 10 } as SocketLinger,
-29. receiveBufferSize: 8192,
-30. sendBufferSize: 8192,
-31. reuseAddress: true,
-32. socketTimeout: 3000
-33. }
-34. tcpServer.setExtraOptions(tcpExtraOptions).then(() => {
-35. console.info('setExtraOptions success');
-36. }).catch((err: BusinessError) => {
-37. console.error('setExtraOptions fail');
-38. });
+let tcpExtraOptions: socket.TCPExtraOptions = {
+  keepAlive: true,
+  OOBInline: true,
+  TCPNoDelay: true,
+  socketLinger: { on: true, linger: 10 } as SocketLinger,
+  receiveBufferSize: 8192,
+  sendBufferSize: 8192,
+  reuseAddress: true,
+  socketTimeout: 3000
+}
+tcpServer.setExtraOptions(tcpExtraOptions).then(() => {
+  console.info('setExtraOptions success');
+}).catch((err: BusinessError) => {
+  console.error('setExtraOptions fail');
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<NetAddress>
 
 获取TCPSocketServer的本地Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -3728,36 +3615,34 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr).then(() => {
-11. tcpServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
-12. console.info("SUCCESS! Address:" + JSON.stringify(localAddress));
-13. }).catch((err: BusinessError) => {
-14. console.error("FerrorAILED! Error:" + JSON.stringify(err));
-15. })
-16. }).catch((err: BusinessError) => {
-17. console.error('listen fail');
-18. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr).then(() => {
+  tcpServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
+    console.info("SUCCESS! Address:" + JSON.stringify(localAddress));
+  }).catch((err: BusinessError) => {
+    console.error("FerrorAILED! Error:" + JSON.stringify(err));
+  })
+}).catch((err: BusinessError) => {
+  console.error('listen fail');
+});
 ```
 
 ### on('connect')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connect', callback: Callback<TCPSocketConnection>): void
 
 订阅TCPSocketServer的连接事件。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -3780,32 +3665,30 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 
-6. let listenAddr: socket.NetAddress = {
-7. address:  '192.168.xx.xxx',
-8. port: 8080,
-9. family: 1
-10. }
-11. tcpServer.listen(listenAddr, (err: BusinessError) => {
-12. if (err) {
-13. console.error("listen fail");
-14. return;
-15. }
-16. console.info("listen success");
-17. tcpServer.on('connect', (data: socket.TCPSocketConnection) => {
-18. console.info(JSON.stringify(data))
-19. });
-20. })
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+  tcpServer.on('connect', (data: socket.TCPSocketConnection) => {
+    console.info(JSON.stringify(data))
+  });
+})
 ```
 
 ### off('connect')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connect', callback?: Callback<TCPSocketConnection>): void
 
@@ -3830,42 +3713,40 @@ off(type: 'connect', callback?: Callback<TCPSocketConnection>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 
-6. let listenAddr: socket.NetAddress = {
-7. address:  '192.168.xx.xxx',
-8. port: 8080,
-9. family: 1
-10. }
-11. tcpServer.listen(listenAddr, (err: BusinessError) => {
-12. if (err) {
-13. console.error("listen fail");
-14. return;
-15. }
-16. console.info("listen success");
-17. let callback = (data: socket.TCPSocketConnection) => {
-18. console.info('on connect message: ' + JSON.stringify(data));
-19. }
-20. tcpServer.on('connect', callback);
-21. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-22. tcpServer.off('connect', callback);
-23. tcpServer.off('connect');
-24. })
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+  let callback = (data: socket.TCPSocketConnection) => {
+    console.info('on connect message: ' + JSON.stringify(data));
+  }
+  tcpServer.on('connect', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  tcpServer.off('connect', callback);
+  tcpServer.off('connect');
+})
 ```
 
 ### on('error')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 订阅TCPSocketServer连接的error事件。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -3888,32 +3769,30 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 
-6. let listenAddr: socket.NetAddress = {
-7. address:  '192.168.xx.xxx',
-8. port: 8080,
-9. family: 1
-10. }
-11. tcpServer.listen(listenAddr, (err: BusinessError) => {
-12. if (err) {
-13. console.error("listen fail");
-14. return;
-15. }
-16. console.info("listen success");
-17. tcpServer.on('error', (err: BusinessError) => {
-18. console.error("on error, err:" + JSON.stringify(err))
-19. });
-20. })
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+  tcpServer.on('error', (err: BusinessError) => {
+    console.error("on error, err:" + JSON.stringify(err))
+  });
+})
 ```
 
 ### off('error')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -3938,42 +3817,40 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 
-6. let listenAddr: socket.NetAddress = {
-7. address:  '192.168.xx.xxx',
-8. port: 8080,
-9. family: 1
-10. }
-11. tcpServer.listen(listenAddr, (err: BusinessError) => {
-12. if (err) {
-13. console.error("listen fail");
-14. return;
-15. }
-16. console.info("listen success");
-17. let callback = (err: BusinessError) => {
-18. console.error("on error, err:" + JSON.stringify(err));
-19. }
-20. tcpServer.on('error', callback);
-21. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-22. tcpServer.off('error', callback);
-23. tcpServer.off('error');
-24. })
+let listenAddr: socket.NetAddress = {
+  address:  '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  if (err) {
+    console.error("listen fail");
+    return;
+  }
+  console.info("listen success");
+  let callback = (err: BusinessError) => {
+    console.error("on error, err:" + JSON.stringify(err));
+  }
+  tcpServer.on('error', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  tcpServer.off('error', callback);
+  tcpServer.off('error');
+})
 ```
 
 ### close20+
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
 TCPSocketServer停止监听并释放通过[listen](js-apis-socket.md#listen10)方法绑定的端口。若多次调用[listen](js-apis-socket.md#listen10)方法，再调用此方法时会释放TCPSocketServer的所有监听端口。使用Promise异步回调。
 
-说明
+**说明** 
 
 该方法不会关闭已有连接。如需关闭，请调用[TCPSocketConnection](js-apis-socket.md#tcpsocketconnection10)的[close](js-apis-socket.md#close10)方法。
 
@@ -3998,36 +3875,34 @@ TCPSocketServer停止监听并释放通过[listen](js-apis-socket.md#listen10)�
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.on('connect', (connection: socket.TCPSocketConnection) => {
-11. console.info("connection clientId: " + connection.clientId);
-12. // 逻辑处理
-13. tcpServer.close(); // 停止监听
-14. connection.close(); // 关闭当前连接
-15. });
-16. tcpServer.listen(listenAddr).then(() => {
-17. console.info('listen success');
-18. }).catch((err: BusinessError) => {
-19. console.error('listen fail: ' + err.code);
-20. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080,
+  family: 1
+}
+tcpServer.on('connect', (connection: socket.TCPSocketConnection) => {
+  console.info("connection clientId: " + connection.clientId);
+  // 逻辑处理
+  tcpServer.close(); // 停止监听
+  connection.close(); // 关闭当前连接
+});
+tcpServer.listen(listenAddr).then(() => {
+  console.info('listen success');
+}).catch((err: BusinessError) => {
+  console.error('listen fail: ' + err.code);
+});
 ```
 
 ## TCPSocketConnection10+
 
-PhonePC/2in1TabletTVWearable
-
 TCPSocketConnection连接，即TCPSocket客户端与服务端的连接。在调用TCPSocketConnection的方法前，需要先获取TCPSocketConnection对象。
 
-说明
+**说明** 
 
 客户端与服务端成功建立连接后，才能通过返回的TCPSocketConnection对象调用相应的接口。
 
@@ -4041,13 +3916,11 @@ TCPSocketConnection连接，即TCPSocket客户端与服务端的连接。在调�
 
 ### send10+
 
-PhonePC/2in1TabletTVWearable
-
 send(options: TCPSendOptions, callback: AsyncCallback<void>): void
 
 通过TCPSocketConnection连接发送数据。使用callback异步回调。
 
-说明
+**说明** 
 
 与客户端建立连接后，才可调用此方法。
 
@@ -4074,30 +3947,28 @@ send(options: TCPSendOptions, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 
-5. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-6. let tcpSendOption: socket.TCPSendOptions = {
-7. data: 'Hello, client!'
-8. }
-9. client.send(tcpSendOption, () => {
-10. console.info('send success');
-11. });
-12. });
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  let tcpSendOption: socket.TCPSendOptions = {
+    data: 'Hello, client!'
+  }
+  client.send(tcpSendOption, () => {
+    console.info('send success');
+  });
+});
 ```
 
 ### send10+
-
-PhonePC/2in1TabletTVWearable
 
 send(options: TCPSendOptions): Promise<void>
 
 通过TCPSocketConnection连接发送数据。使用Promise异步回调。
 
-说明
+**说明** 
 
 与客户端建立连接后，才可调用此方法。
 
@@ -4129,27 +4000,25 @@ send(options: TCPSendOptions): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 
-6. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-7. let tcpSendOption: socket.TCPSendOptions = {
-8. data: 'Hello, client!'
-9. }
-10. client.send(tcpSendOption).then(() => {
-11. console.info('send success');
-12. }).catch((err: BusinessError) => {
-13. console.error('send fail');
-14. });
-15. });
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  let tcpSendOption: socket.TCPSendOptions = {
+    data: 'Hello, client!'
+  }
+  client.send(tcpSendOption).then(() => {
+    console.info('send success');
+  }).catch((err: BusinessError) => {
+    console.error('send fail');
+  });
+});
 ```
 
 ### close10+
-
-PhonePC/2in1TabletTVWearable
 
 close(callback: AsyncCallback<void>): void
 
@@ -4177,26 +4046,24 @@ close(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 
-6. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-7. client.close((err: BusinessError) => {
-8. if (err) {
-9. console.error('close fail');
-10. return;
-11. }
-12. console.info('close success');
-13. });
-14. });
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.close((err: BusinessError) => {
+    if (err) {
+      console.error('close fail');
+      return;
+    }
+    console.info('close success');
+  });
+});
 ```
 
 ### close10+
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -4223,29 +4090,27 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-6. client.close().then(() => {
-7. console.info('close success');
-8. }).catch((err: BusinessError) => {
-9. console.error('close fail');
-10. });
-11. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.close().then(() => {
+    console.info('close success');
+  }).catch((err: BusinessError) => {
+    console.error('close fail');
+  });
+});
 ```
 
 ### getRemoteAddress10+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteAddress(callback: AsyncCallback<NetAddress>): void
 
 获取对端Socket地址。使用callback异步回调。
 
-说明
+**说明** 
 
 与客户端建立连接后，才可调用此方法。
 
@@ -4272,31 +4137,29 @@ getRemoteAddress(callback: AsyncCallback<NetAddress>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-6. client.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
-7. if (err) {
-8. console.error('getRemoteAddress fail');
-9. return;
-10. }
-11. console.info('getRemoteAddress success:' + JSON.stringify(data));
-12. });
-13. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
+    if (err) {
+      console.error('getRemoteAddress fail');
+      return;
+    }
+    console.info('getRemoteAddress success:' + JSON.stringify(data));
+  });
+});
 ```
 
 ### getRemoteAddress10+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteAddress(): Promise<NetAddress>
 
 获取对端Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 与客户端建立连接后，才可调用此方法。
 
@@ -4322,23 +4185,21 @@ getRemoteAddress(): Promise<NetAddress>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-6. client.getRemoteAddress().then(() => {
-7. console.info('getRemoteAddress success');
-8. }).catch((err: BusinessError) => {
-9. console.error('getRemoteAddress fail');
-10. });
-11. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.getRemoteAddress().then(() => {
+    console.info('getRemoteAddress success');
+  }).catch((err: BusinessError) => {
+    console.error('getRemoteAddress fail');
+  });
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<NetAddress>
 
@@ -4364,52 +4225,50 @@ getLocalAddress(): Promise<NetAddress>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address: "192.168.xx.xx",
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr, (err: BusinessError) => {
-11. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-12. let netAddress: socket.NetAddress = {
-13. address: "192.168.xx.xx",
-14. port: 8080
-15. }
-16. let options: socket.TCPConnectOptions = {
-17. address: netAddress,
-18. timeout: 6000
-19. }
-20. tcp.connect(options, (err: BusinessError) => {
-21. if (err) {
-22. console.error('connect fail');
-23. return;
-24. }
-25. console.info('connect success!');
-26. })
-27. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-28. client.getLocalAddress().then((localAddress: socket.NetAddress) => {
-29. console.info("Family IP Port: " + JSON.stringify(localAddress));
-30. }).catch((err: BusinessError) => {
-31. console.error('Error:' + JSON.stringify(err));
-32. });
-33. })
-34. })
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address: "192.168.xx.xx",
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+  let netAddress: socket.NetAddress = {
+    address: "192.168.xx.xx",
+    port: 8080
+  }
+  let options: socket.TCPConnectOptions = {
+    address: netAddress,
+    timeout: 6000
+  }
+  tcp.connect(options, (err: BusinessError) => {
+    if (err) {
+      console.error('connect fail');
+      return;
+    }
+    console.info('connect success!');
+  })
+  tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+    client.getLocalAddress().then((localAddress: socket.NetAddress) => {
+      console.info("Family IP Port: " + JSON.stringify(localAddress));
+    }).catch((err: BusinessError) => {
+      console.error('Error:' + JSON.stringify(err));
+    });
+  })
+})
 ```
 
 ### getSocketFd23+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取TCPSocketConnection连接的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 与客户端建立连接后，才可调用此方法。
 * 连接断开、Socket已关闭（如调用close后）等异常情况下调用本接口会返回-1。
@@ -4435,32 +4294,30 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let listenAddr: socket.NetAddress = {
-6. address: "192.168.xx.xx",
-7. port: 8080,
-8. family: 1
-9. }
-10. tcpServer.listen(listenAddr, (err: BusinessError) => {
-11. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-12. client.getSocketFd().then((fd: number) => {
-13. console.info(`Socket FD：${fd}`);
-14. }).catch((err: BusinessError) => {
-15. console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
-16. });
-17. })
-18. }).catch((err: BusinessError) => {
-19. console.error('listen fail');
-20. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let listenAddr: socket.NetAddress = {
+  address: "192.168.xx.xx",
+  port: 8080,
+  family: 1
+}
+tcpServer.listen(listenAddr, (err: BusinessError) => {
+  tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+    client.getSocketFd().then((fd: number) => {
+      console.info(`Socket FD：${fd}`);
+    }).catch((err: BusinessError) => {
+      console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
+    });
+  })
+}).catch((err: BusinessError) => {
+  console.error('listen fail');
+});
 ```
 
 ### on('message')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
@@ -4485,30 +4342,28 @@ on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
 
-6. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-7. client.on('message', (value: socket.SocketMessageInfo) => {
-8. let messageView = '';
-9. let uint8Array = new Uint8Array(value.message);
-10. for (let i: number = 0; i < value.message.byteLength; i++) {
-11. let messages = uint8Array[i];
-12. let message = String.fromCharCode(messages);
-13. messageView += message;
-14. }
-15. console.info('on message message: ' + JSON.stringify(messageView));
-16. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-17. });
-18. });
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.on('message', (value: socket.SocketMessageInfo) => {
+    let messageView = '';
+    let uint8Array = new Uint8Array(value.message);
+    for (let i: number = 0; i < value.message.byteLength; i++) {
+      let messages = uint8Array[i];
+      let message = String.fromCharCode(messages);
+      messageView += message;
+    }
+    console.info('on message message: ' + JSON.stringify(messageView));
+    console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+  });
+});
 ```
 
 ### off('message')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
@@ -4533,33 +4388,31 @@ off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. let callback = (value: socket.SocketMessageInfo) => {
-6. let messageView = '';
-7. for (let i: number = 0; i < value.message.byteLength; i++) {
-8. let uint8Array = new Uint8Array(value.message)
-9. let messages = uint8Array[i]
-10. let message = String.fromCharCode(messages);
-11. messageView += message;
-12. }
-13. console.info('on message message: ' + JSON.stringify(messageView));
-14. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-15. }
-16. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-17. client.on('message', callback);
-18. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-19. client.off('message', callback);
-20. client.off('message');
-21. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let callback = (value: socket.SocketMessageInfo) => {
+  let messageView = '';
+  for (let i: number = 0; i < value.message.byteLength; i++) {
+    let uint8Array = new Uint8Array(value.message)
+    let messages = uint8Array[i]
+    let message = String.fromCharCode(messages);
+    messageView += message;
+  }
+  console.info('on message message: ' + JSON.stringify(messageView));
+  console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+}
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.on('message', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  client.off('message', callback);
+  client.off('message');
+});
 ```
 
 ### on('close')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'close', callback: Callback<void>): void
 
@@ -4584,21 +4437,19 @@ on(type: 'close', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-6. client.on('close', () => {
-7. console.info("on close success")
-8. });
-9. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.on('close', () => {
+    console.info("on close success")
+  });
+});
 ```
 
 ### off('close')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'close', callback?: Callback<void>): void
 
@@ -4623,24 +4474,22 @@ off(type: 'close', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-4. let callback = () => {
-5. console.info("on close success");
-6. }
-7. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-8. client.on('close', callback);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. client.off('close', callback);
-11. client.off('close');
-12. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+let callback = () => {
+  console.info("on close success");
+}
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.on('close', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  client.off('close', callback);
+  client.off('close');
+});
 ```
 
 ### on('error')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -4665,21 +4514,19 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-5. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-6. client.on('error', (err: BusinessError) => {
-7. console.error("on error, err:" + JSON.stringify(err))
-8. });
-9. });
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.on('error', (err: BusinessError) => {
+    console.error("on error, err:" + JSON.stringify(err))
+  });
+});
 ```
 
 ### off('error')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -4704,33 +4551,29 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let callback = (err: BusinessError) => {
-5. console.error("on error, err:" + JSON.stringify(err));
-6. }
-7. let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
-8. tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
-9. client.on('error', callback);
-10. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-11. client.off('error', callback);
-12. client.off('error');
-13. });
+let callback = (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err));
+}
+let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+  client.on('error', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  client.off('error', callback);
+  client.off('error');
+});
 ```
 
 ## TCP 错误码说明
-
-PhonePC/2in1TabletTVWearable
 
 TCP 其余错误码映射形式为：2301000 + Linux内核错误码。
 
 错误码的详细介绍参见[Socket错误码](errorcode-net-socket.md)。
 
 ## socket.constructLocalSocketInstance11+
-
-PhonePC/2in1TabletTVWearable
 
 constructLocalSocketInstance(): LocalSocket
 
@@ -4746,26 +4589,22 @@ constructLocalSocketInstance(): LocalSocket
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+```ts
+import { socket } from '@kit.NetworkKit';
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
 ```
 
 ## LocalSocket11+
-
-PhonePC/2in1TabletTVWearable
 
 LocalSocket连接。在调用LocalSocket的方法前，需要先通过[socket.constructLocalSocketInstance](js-apis-socket.md#socketconstructlocalsocketinstance11)创建LocalSocket对象。
 
 ### bind11+
 
-PhonePC/2in1TabletTVWearable
-
 bind(address: LocalAddress): Promise<void>;
 
-绑定本地套接字文件的路径。使用promise异步回调。
+绑定本地套接字文件的路径。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind方法可以使客户端确保有个明确的本地套接字路径，显式的绑定一个本地套接字文件。
 
@@ -4798,36 +4637,34 @@ bind方法在本地套接字通信中非必须。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let client: socket.LocalSocket = socket.constructLocalSocketInstance()
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let address : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. client.bind(address).then(() => {
-11. console.info('bind success')
-12. }).catch((err: Object) => {
-13. console.error('failed to bind: ' + JSON.stringify(err))
-14. })
+let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let address : socket.LocalAddress = {
+  address: sandboxPath
+}
+client.bind(address).then(() => {
+  console.info('bind success')
+}).catch((err: Object) => {
+  console.error('failed to bind: ' + JSON.stringify(err))
+})
 ```
 
 ### connect11+
 
-PhonePC/2in1TabletTVWearable
-
 connect(options: LocalConnectOptions): Promise<void>
 
-连接到指定的套接字文件。使用promise异步回调。
+连接到指定的套接字文件。使用Promise异步回调。
 
-说明
+**说明** 
 
 在没有执行localsocket.bind的情况下，也可以直接调用该接口完成与LocalSocket服务端的连接。
 
@@ -4859,40 +4696,38 @@ connect(options: LocalConnectOptions): Promise<void>
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let localAddress : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. let connectOpt: socket.LocalConnectOptions = {
-11. address: localAddress,
-12. timeout: 6000
-13. }
-14. client.connect(connectOpt).then(() => {
-15. console.info('connect success')
-16. }).catch((err: Object) => {
-17. console.error('connect fail: ' + JSON.stringify(err));
-18. });
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let localAddress : socket.LocalAddress = {
+  address: sandboxPath
+}
+let connectOpt: socket.LocalConnectOptions = {
+  address: localAddress,
+  timeout: 6000
+}
+client.connect(connectOpt).then(() => {
+  console.info('connect success')
+}).catch((err: Object) => {
+  console.error('connect fail: ' + JSON.stringify(err));
+});
 ```
 
 ### send11+
-
-PhonePC/2in1TabletTVWearable
 
 send(options: LocalSendOptions): Promise<void>
 
 通过LocalSocket连接发送数据。使用Promise异步回调。
 
-说明
+**说明** 
 
 connect方法调用成功后，才可调用此方法。
 
@@ -4921,42 +4756,40 @@ connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let client: socket.LocalSocket = socket.constructLocalSocketInstance()
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let localAddress : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. let connectOpt: socket.LocalConnectOptions = {
-11. address: localAddress,
-12. timeout: 6000
-13. }
-14. client.connect(connectOpt).then(() => {
-15. console.info('connect success')
-16. }).catch((err: Object) => {
-17. console.error('connect failed: ' + JSON.stringify(err))
-18. })
-19. let sendOpt: socket.LocalSendOptions = {
-20. data: 'Hello world!'
-21. }
-22. client.send(sendOpt).then(() => {
-23. console.info('send success')
-24. }).catch((err: Object) => {
-25. console.error('send fail: ' + JSON.stringify(err))
-26. })
+let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let localAddress : socket.LocalAddress = {
+  address: sandboxPath
+}
+let connectOpt: socket.LocalConnectOptions = {
+  address: localAddress,
+  timeout: 6000
+}
+client.connect(connectOpt).then(() => {
+  console.info('connect success')
+}).catch((err: Object) => {
+  console.error('connect failed: ' + JSON.stringify(err))
+})
+let sendOpt: socket.LocalSendOptions = {
+  data: 'Hello world!'
+}
+client.send(sendOpt).then(() => {
+  console.info('send success')
+}).catch((err: Object) => {
+  console.error('send fail: ' + JSON.stringify(err))
+})
 ```
 
 ### close11+
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -4980,27 +4813,25 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
 
-5. client.close().then(() => {
-6. console.info('close success');
-7. }).catch((err: Object) => {
-8. console.error('close fail: ' + JSON.stringify(err));
-9. });
+client.close().then(() => {
+  console.info('close success');
+}).catch((err: Object) => {
+  console.error('close fail: ' + JSON.stringify(err));
+});
 ```
 
 ### getState11+
-
-PhonePC/2in1TabletTVWearable
 
 getState(): Promise<SocketStateBase>
 
 获取LocalSocket状态。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind或connect方法调用成功后，才可调用此方法。
 
@@ -5014,45 +4845,43 @@ bind或connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let localAddress : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. let connectOpt: socket.LocalConnectOptions = {
-11. address: localAddress,
-12. timeout: 6000
-13. }
-14. client.connect(connectOpt).then(() => {
-15. console.info('connect success');
-16. client.getState().then(() => {
-17. console.info('getState success');
-18. }).catch((err: Object) => {
-19. console.error('getState fail: ' + JSON.stringify(err))
-20. });
-21. }).catch((err: Object) => {
-22. console.error('connect fail: ' + JSON.stringify(err));
-23. });
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let localAddress : socket.LocalAddress = {
+  address: sandboxPath
+}
+let connectOpt: socket.LocalConnectOptions = {
+  address: localAddress,
+  timeout: 6000
+}
+client.connect(connectOpt).then(() => {
+  console.info('connect success');
+  client.getState().then(() => {
+    console.info('getState success');
+  }).catch((err: Object) => {
+    console.error('getState fail: ' + JSON.stringify(err))
+  });
+}).catch((err: Object) => {
+  console.error('connect fail: ' + JSON.stringify(err));
+});
 ```
 
 ### getSocketFd11+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取LocalSocket的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * bind或connect方法调用成功后，才可调用此方法。
 * 获取由系统内核分配的唯一文件描述符，用于标识当前使用的套接字。
@@ -5068,45 +4897,43 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let localAddress : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. let connectOpt: socket.LocalConnectOptions = {
-11. address: localAddress,
-12. timeout: 6000
-13. }
-14. client.connect(connectOpt).then(() => {
-15. console.info('connect ok')
-16. }).catch((err: Object) => {
-17. console.error('connect fail: ' + JSON.stringify(err))
-18. })
-19. client.getSocketFd().then((data: number) => {
-20. console.info("fd: " + data);
-21. }).catch((err: Object) => {
-22. console.error("getSocketFd failed: " + JSON.stringify(err));
-23. })
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let localAddress : socket.LocalAddress = {
+  address: sandboxPath
+}
+let connectOpt: socket.LocalConnectOptions = {
+  address: localAddress,
+  timeout: 6000
+}
+client.connect(connectOpt).then(() => {
+  console.info('connect ok')
+}).catch((err: Object) => {
+  console.error('connect fail: ' + JSON.stringify(err))
+})
+client.getSocketFd().then((data: number) => {
+  console.info("fd: " + data);
+}).catch((err: Object) => {
+  console.error("getSocketFd failed: " + JSON.stringify(err));
+})
 ```
 
 ### setExtraOptions11+
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: ExtraOptionsBase): Promise<void>
 
 设置LocalSocket的套接字属性。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind或connect方法调用成功后，才可调用此方法。
 
@@ -5135,50 +4962,48 @@ bind或connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let localAddress : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. let connectOpt: socket.LocalConnectOptions = {
-11. address: localAddress,
-12. timeout: 6000
-13. }
-14. client.connect(connectOpt).then(() => {
-15. console.info('connect success');
-16. let options: socket.ExtraOptionsBase = {
-17. receiveBufferSize: 8192,
-18. sendBufferSize: 8192,
-19. socketTimeout: 3000
-20. }
-21. client.setExtraOptions(options).then(() => {
-22. console.info('setExtraOptions success');
-23. }).catch((err: Object) => {
-24. console.error('setExtraOptions fail: ' + JSON.stringify(err));
-25. });
-26. }).catch((err: Object) => {
-27. console.error('connect fail: ' + JSON.stringify(err));
-28. });
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let localAddress : socket.LocalAddress = {
+  address: sandboxPath
+}
+let connectOpt: socket.LocalConnectOptions = {
+  address: localAddress,
+  timeout: 6000
+}
+client.connect(connectOpt).then(() => {
+  console.info('connect success');
+  let options: socket.ExtraOptionsBase = {
+    receiveBufferSize: 8192,
+    sendBufferSize: 8192,
+    socketTimeout: 3000
+  }
+  client.setExtraOptions(options).then(() => {
+    console.info('setExtraOptions success');
+  }).catch((err: Object) => {
+    console.error('setExtraOptions fail: ' + JSON.stringify(err));
+  });
+}).catch((err: Object) => {
+  console.error('connect fail: ' + JSON.stringify(err));
+});
 ```
 
 ### getExtraOptions11+
-
-PhonePC/2in1TabletTVWearable
 
 getExtraOptions(): Promise<ExtraOptionsBase>;
 
 获取LocalSocket的套接字属性。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind或connect方法调用成功后，才可调用此方法。
 
@@ -5200,45 +5025,43 @@ bind或connect方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let localAddress : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. let connectOpt: socket.LocalConnectOptions = {
-11. address: localAddress,
-12. timeout: 6000
-13. }
-14. client.connect(connectOpt).then(() => {
-15. console.info('connect success');
-16. client.getExtraOptions().then((options : socket.ExtraOptionsBase) => {
-17. console.info('options: ' + JSON.stringify(options));
-18. }).catch((err: Object) => {
-19. console.error('setExtraOptions fail: ' + JSON.stringify(err));
-20. });
-21. }).catch((err: Object) => {
-22. console.error('connect fail: ' + JSON.stringify(err));
-23. });
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let localAddress : socket.LocalAddress = {
+  address: sandboxPath
+}
+let connectOpt: socket.LocalConnectOptions = {
+  address: localAddress,
+  timeout: 6000
+}
+client.connect(connectOpt).then(() => {
+  console.info('connect success');
+  client.getExtraOptions().then((options : socket.ExtraOptionsBase) => {
+    console.info('options: ' + JSON.stringify(options));
+  }).catch((err: Object) => {
+    console.error('setExtraOptions fail: ' + JSON.stringify(err));
+  });
+}).catch((err: Object) => {
+  console.error('connect fail: ' + JSON.stringify(err));
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<string>
 
 获取LocalSocket的本地Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -5262,36 +5085,34 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { socket } from '@kit.NetworkKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let sandboxPath: string = context.filesDir + '/testSocket';
-8. let address : socket.LocalAddress = {
-9. address: sandboxPath
-10. }
-11. client.bind(address).then(() => {
-12. console.error('bind success');
-13. client.getLocalAddress().then((localPath: string) => {
-14. console.info("SUCCESS " + JSON.stringify(localPath));
-15. }).catch((err: BusinessError) => {
-16. console.error("FAIL " + JSON.stringify(err));
-17. })
-18. }).catch((err: Object) => {
-19. console.error('failed to bind: ' + JSON.stringify(err));
-20. })
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let address : socket.LocalAddress = {
+  address: sandboxPath
+}
+client.bind(address).then(() => {
+  console.error('bind success');
+  client.getLocalAddress().then((localPath: string) => {
+    console.info("SUCCESS " + JSON.stringify(localPath));
+  }).catch((err: BusinessError) => {
+    console.error("FAIL " + JSON.stringify(err));
+  })
+}).catch((err: Object) => {
+  console.error('failed to bind: ' + JSON.stringify(err));
+})
 ```
 
 ### on('message')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'message', callback: Callback<LocalSocketMessageInfo>): void
 
@@ -5316,24 +5137,22 @@ on(type: 'message', callback: Callback<LocalSocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-4. client.on('message', (value: socket.LocalSocketMessageInfo) => {
-5. const uintArray = new Uint8Array(value.message)
-6. let messageView = '';
-7. for (let i = 0; i < uintArray.length; i++) {
-8. messageView += String.fromCharCode(uintArray[i]);
-9. }
-10. console.info('total: ' + JSON.stringify(value));
-11. console.info('message information: ' + messageView);
-12. });
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+client.on('message', (value: socket.LocalSocketMessageInfo) => {
+  const uintArray = new Uint8Array(value.message)
+  let messageView = '';
+  for (let i = 0; i < uintArray.length; i++) {
+    messageView += String.fromCharCode(uintArray[i]);
+  }
+  console.info('total: ' + JSON.stringify(value));
+  console.info('message information: ' + messageView);
+});
 ```
 
 ### off('message')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'message', callback?: Callback<LocalSocketMessageInfo>): void
 
@@ -5358,27 +5177,25 @@ off(type: 'message', callback?: Callback<LocalSocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-4. let messageView = '';
-5. let callback = (value: socket.LocalSocketMessageInfo) => {
-6. const uintArray = new Uint8Array(value.message)
-7. let messageView = '';
-8. for (let i = 0; i < uintArray.length; i++) {
-9. messageView += String.fromCharCode(uintArray[i]);
-10. }
-11. console.info('total: ' + JSON.stringify(value));
-12. console.info('message information: ' + messageView);
-13. }
-14. client.on('message', callback);
-15. client.off('message');
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let messageView = '';
+let callback = (value: socket.LocalSocketMessageInfo) => {
+  const uintArray = new Uint8Array(value.message)
+  let messageView = '';
+  for (let i = 0; i < uintArray.length; i++) {
+    messageView += String.fromCharCode(uintArray[i]);
+  }
+  console.info('total: ' + JSON.stringify(value));
+  console.info('message information: ' + messageView);
+}
+client.on('message', callback);
+client.off('message');
 ```
 
 ### on('connect')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connect', callback: Callback<void>): void
 
@@ -5403,18 +5220,16 @@ on(type: 'connect', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-4. client.on('connect', () => {
-5. console.info("on connect success")
-6. });
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+client.on('connect', () => {
+  console.info("on connect success")
+});
 ```
 
 ### off('connect')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connect', callback?: Callback<void>): void
 
@@ -5439,22 +5254,20 @@ off(type: 'connect', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-4. let callback = () => {
-5. console.info("on connect success");
-6. }
-7. client.on('connect', callback);
-8. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-9. client.off('connect', callback);
-10. client.off('connect');
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let callback = () => {
+  console.info("on connect success");
+}
+client.on('connect', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+client.off('connect', callback);
+client.off('connect');
 ```
 
 ### on('close')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'close', callback: Callback<void>): void
 
@@ -5479,19 +5292,17 @@ on(type: 'close', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-4. let callback = () => {
-5. console.info("on close success");
-6. }
-7. client.on('close', callback);
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let callback = () => {
+  console.info("on close success");
+}
+client.on('close', callback);
 ```
 
 ### off('close')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'close', callback?: Callback<void>): void
 
@@ -5516,22 +5327,20 @@ off(type: 'close', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-4. let callback = () => {
-5. console.info("on close success");
-6. }
-7. client.on('close', callback);
-8. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-9. client.off('close', callback);
-10. client.off('close');
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let callback = () => {
+  console.info("on close success");
+}
+client.on('close', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+client.off('close', callback);
+client.off('close');
 ```
 
 ### on('error')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -5556,18 +5365,16 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-4. client.on('error', (err: Object) => {
-5. console.error("on error, err:" + JSON.stringify(err))
-6. });
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+client.on('error', (err: Object) => {
+  console.error("on error, err:" + JSON.stringify(err))
+});
 ```
 
 ### off('error')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -5592,22 +5399,20 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-4. let callback = (err: Object) => {
-5. console.error("on error, err:" + JSON.stringify(err));
-6. }
-7. client.on('error', callback);
-8. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-9. client.off('error', callback);
-10. client.off('error');
+let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+let callback = (err: Object) => {
+  console.error("on error, err:" + JSON.stringify(err));
+}
+client.on('error', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+client.off('error', callback);
+client.off('error');
 ```
 
 ## LocalSocketMessageInfo11+
-
-PhonePC/2in1TabletTVWearable
 
 LocalSocket客户端与服务端通信时接收的数据。
 
@@ -5621,8 +5426,6 @@ LocalSocket客户端与服务端通信时接收的数据。
 
 ## LocalAddress11+
 
-PhonePC/2in1TabletTVWearable
-
 LocalSocket本地套接字文件路径信息，在传入套接字路径进行绑定时，会在此路径下创建套接字文件。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -5632,8 +5435,6 @@ LocalSocket本地套接字文件路径信息，在传入套接字路径进行绑
 | address | string | 否 | 否 | 本地套接字路径。 |
 
 ## LocalConnectOptions11+
-
-PhonePC/2in1TabletTVWearable
 
 LocalSocket客户端在连接服务端时传入的参数信息。
 
@@ -5646,8 +5447,6 @@ LocalSocket客户端在连接服务端时传入的参数信息。
 
 ## LocalSendOptions11+
 
-PhonePC/2in1TabletTVWearable
-
 LocalSocket发送请求的参数。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -5659,8 +5458,6 @@ LocalSocket发送请求的参数。
 
 ## ExtraOptionsBase
 
-PhonePC/2in1TabletTVWearable
-
 Socket套接字的基础属性。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -5669,12 +5466,10 @@ Socket套接字的基础属性。
 | --- | --- | --- | --- | --- |
 | receiveBufferSize | number | 否 | 是 | 接收缓冲区大小（单位：Byte），取值范围0~262144，不设置或设置的值超过取值范围则会默认为8192。 |
 | sendBufferSize | number | 否 | 是 | 发送缓冲区大小（单位：Byte），取值范围0~262144，不设置或设置的值超过取值范围则会默认为8192。 |
-| reuseAddress | boolean | 否 | 是 | 是否重用地址。true：重用地址；false：不重用地址。 |
-| socketTimeout | number | 否 | 是 | 套接字超时时间，单位毫秒（ms）。 |
+| reuseAddress | boolean | 否 | 是 | 是否重用地址。true：重用地址；false：不重用地址。默认值为false。 |
+| socketTimeout | number | 否 | 是 | 套接字超时时间，单位毫秒（ms）。默认值为0，表示不设置超时时间。 |
 
 ## socket.constructLocalSocketServerInstance11+
-
-PhonePC/2in1TabletTVWearable
 
 constructLocalSocketServerInstance(): LocalSocketServer
 
@@ -5690,26 +5485,22 @@ constructLocalSocketServerInstance(): LocalSocketServer
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+```ts
+import { socket } from '@kit.NetworkKit';
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
 ```
 
 ## LocalSocketServer11+
-
-PhonePC/2in1TabletTVWearable
 
 LocalSocketServer类。在调用LocalSocketServer的方法前，需要先通过[socket.constructLocalSocketServerInstance](js-apis-socket.md#socketconstructlocalsocketserverinstance11)创建LocalSocketServer对象。
 
 ### listen11+
 
-PhonePC/2in1TabletTVWearable
-
 listen(address: LocalAddress): Promise<void>
 
 绑定本地套接字文件，监听并接受与此套接字建立的LocalSocket连接。该接口使用多线程并发处理客户端的数据。使用Promise异步回调。
 
-说明
+**说明** 
 
 服务端使用该方法完成bind，listen，accept操作，传入套接字文件路径，调用此接口后会自动生成本地套接字文件。
 
@@ -5741,36 +5532,34 @@ listen(address: LocalAddress): Promise<void>
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let addr: socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. server.listen(addr).then(() => {
-11. console.info('listen success');
-12. }).catch((err: Object) => {
-13. console.error('listen fail: ' + JSON.stringify(err));
-14. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let addr: socket.LocalAddress = {
+  address: sandboxPath
+}
+server.listen(addr).then(() => {
+  console.info('listen success');
+}).catch((err: Object) => {
+  console.error('listen fail: ' + JSON.stringify(err));
+});
 ```
 
 ### getState11+
-
-PhonePC/2in1TabletTVWearable
 
 getState(): Promise<SocketStateBase>
 
 获取LocalSocketServer状态。使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -5784,41 +5573,39 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-5. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let sandboxPath: string = context.filesDir + '/testSocket';
-8. let listenAddr: socket.LocalAddress = {
-9. address: sandboxPath
-10. }
-11. server.listen(listenAddr).then(() => {
-12. console.info("listen success");
-13. }).catch((err: Object) => {
-14. console.error("listen fail: " + JSON.stringify(err));
-15. })
-16. server.getState().then((data: socket.SocketStateBase) => {
-17. console.info('getState success: ' + JSON.stringify(data));
-18. }).catch((err: Object) => {
-19. console.error('getState fail: ' + JSON.stringify(err));
-20. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let listenAddr: socket.LocalAddress = {
+  address: sandboxPath
+}
+server.listen(listenAddr).then(() => {
+  console.info("listen success");
+}).catch((err: Object) => {
+  console.error("listen fail: " + JSON.stringify(err));
+})
+server.getState().then((data: socket.SocketStateBase) => {
+  console.info('getState success: ' + JSON.stringify(data));
+}).catch((err: Object) => {
+  console.error('getState fail: ' + JSON.stringify(err));
+});
 ```
 
 ### setExtraOptions11+
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: ExtraOptionsBase): Promise<void>
 
 设置LocalSocketServer连接的套接字属性。使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -5847,47 +5634,45 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let listenAddr: socket.NetAddress = {
-8. address: sandboxPath
-9. }
-10. server.listen(listenAddr).then(() => {
-11. console.info("listen success");
-12. }).catch((err: Object) => {
-13. console.error("listen fail: " + JSON.stringify(err));
-14. })
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let listenAddr: socket.LocalAddress = {
+  address: sandboxPath
+}
+server.listen(listenAddr).then(() => {
+  console.info("listen success");
+}).catch((err: Object) => {
+  console.error("listen fail: " + JSON.stringify(err));
+})
 
-16. let options: socket.ExtraOptionsBase = {
-17. receiveBufferSize: 8192,
-18. sendBufferSize: 8192,
-19. socketTimeout: 3000
-20. }
-21. server.setExtraOptions(options).then(() => {
-22. console.info('setExtraOptions success');
-23. }).catch((err: Object) => {
-24. console.error('setExtraOptions fail: ' + JSON.stringify(err));
-25. });
+let options: socket.ExtraOptionsBase = {
+  receiveBufferSize: 8192,
+  sendBufferSize: 8192,
+  socketTimeout: 3000
+}
+server.setExtraOptions(options).then(() => {
+  console.info('setExtraOptions success');
+}).catch((err: Object) => {
+  console.error('setExtraOptions fail: ' + JSON.stringify(err));
+});
 ```
 
 ### getExtraOptions11+
-
-PhonePC/2in1TabletTVWearable
 
 getExtraOptions(): Promise<ExtraOptionsBase>;
 
 获取LocalSocketServer中连接的套接字的属性。使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -5909,41 +5694,39 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let listenAddr: socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. server.listen(listenAddr).then(() => {
-11. console.info("listen success");
-12. }).catch((err: Object) => {
-13. console.error("listen fail: " + JSON.stringify(err));
-14. })
-15. server.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
-16. console.info('options: ' + JSON.stringify(options));
-17. }).catch((err: Object) => {
-18. console.error('getExtraOptions fail: ' + JSON.stringify(err));
-19. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let listenAddr: socket.LocalAddress = {
+  address: sandboxPath
+}
+server.listen(listenAddr).then(() => {
+  console.info("listen success");
+}).catch((err: Object) => {
+  console.error("listen fail: " + JSON.stringify(err));
+})
+server.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
+  console.info('options: ' + JSON.stringify(options));
+}).catch((err: Object) => {
+  console.error('getExtraOptions fail: ' + JSON.stringify(err));
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<string>
 
 获取LocalSocketServer中本地Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -5967,42 +5750,40 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { socket } from '@kit.NetworkKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let sandboxPath: string = context.filesDir + '/testSocket';
-8. let listenAddr: socket.LocalAddress = {
-9. address: sandboxPath
-10. }
-11. server.listen(listenAddr).then(() => {
-12. console.info("listen success");
-13. server.getLocalAddress().then((localPath: string) => {
-14. console.info("SUCCESS " + JSON.stringify(localPath));
-15. }).catch((err: BusinessError) => {
-16. console.error("FAIL " + JSON.stringify(err));
-17. })
-18. }).catch((err: Object) => {
-19. console.error("listen fail: " + JSON.stringify(err));
-20. })
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let listenAddr: socket.LocalAddress = {
+  address: sandboxPath
+}
+server.listen(listenAddr).then(() => {
+  console.info("listen success");
+  server.getLocalAddress().then((localPath: string) => {
+    console.info("SUCCESS " + JSON.stringify(localPath));
+  }).catch((err: BusinessError) => {
+    console.error("FAIL " + JSON.stringify(err));
+  })
+}).catch((err: Object) => {
+  console.error("listen fail: " + JSON.stringify(err));
+})
 ```
 
 ### getSocketFd23+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取LocalSocketServer监听端口绑定的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * [listen](js-apis-socket.md#listen11)方法调用成功后，才可调用此方法。
 * 监听异常、Socket已关闭（如调用close后）等异常情况下调用本接口会返回-1。
@@ -6018,42 +5799,40 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let listenAddr : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let listenAddr : socket.LocalAddress = {
+  address: sandboxPath
+}
 
-11. server.listen(listenAddr).then(() => {
-12. console.info("listen success");
-13. server.getSocketFd().then((fd: number) => {
-14. console.info(`Socket FD：${fd}`);
-15. }).catch((err: Object) => {
-16. console.error(`getSocketFd fail: ${JSON.stringify(err)}`);
-17. });
-18. }).catch((err: Object) => {
-19. console.error("listen fail: " + JSON.stringify(err));
-20. })
+server.listen(listenAddr).then(() => {
+  console.info("listen success");
+  server.getSocketFd().then((fd: number) => {
+    console.info(`Socket FD：${fd}`);
+  }).catch((err: Object) => {
+    console.error(`getSocketFd fail: ${JSON.stringify(err)}`);
+  });
+}).catch((err: Object) => {
+  console.error("listen fail: " + JSON.stringify(err));
+})
 ```
 
 ### on('connect')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connect', callback: Callback<LocalSocketConnection>): void
 
 订阅LocalSocketServer的连接事件。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -6076,20 +5855,18 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. server.on('connect', (connection: socket.LocalSocketConnection) => {
-5. if (connection) {
-6. console.info('accept a client')
-7. }
-8. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  if (connection) {
+    console.info('accept a client')
+  }
+});
 ```
 
 ### off('connect')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connect', callback?: Callback<LocalSocketConnection>): void
 
@@ -6114,30 +5891,28 @@ off(type: 'connect', callback?: Callback<LocalSocketConnection>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. let callback = (connection: socket.LocalSocketConnection) => {
-5. if (connection) {
-6. console.info('accept a client')
-7. }
-8. }
-9. server.on('connect', callback);
-10. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-11. server.off('connect', callback);
-12. server.off('connect');
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let callback = (connection: socket.LocalSocketConnection) => {
+  if (connection) {
+    console.info('accept a client')
+  }
+}
+server.on('connect', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+server.off('connect', callback);
+server.off('connect');
 ```
 
 ### on('error')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 订阅LocalSocketServer连接的error事件。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -6160,18 +5935,16 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. server.on('error', (err: Object) => {
-5. console.error("on error, err:" + JSON.stringify(err))
-6. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+server.on('error', (err: Object) => {
+  console.error("on error, err:" + JSON.stringify(err))
+});
 ```
 
 ### off('error')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -6196,28 +5969,26 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. let callback = (err: Object) => {
-5. console.error("on error, err:" + JSON.stringify(err));
-6. }
-7. server.on('error', callback);
-8. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-9. server.off('error', callback);
-10. server.off('error');
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let callback = (err: Object) => {
+  console.error("on error, err:" + JSON.stringify(err));
+}
+server.on('error', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+server.off('error', callback);
+server.off('error');
 ```
 
 ### close20+
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
 LocalSocketServer停止监听并释放通过[listen](js-apis-socket.md#listen11)方法绑定的监听端口。使用Promise异步回调。
 
-说明
+**说明** 
 
 该方法不会关闭已有连接。如需关闭，请调用[LocalSocketConnection](js-apis-socket.md#localsocketconnection11)的[close](js-apis-socket.md#close11-1)方法。
 
@@ -6239,41 +6010,39 @@ LocalSocketServer停止监听并释放通过[listen](js-apis-socket.md#listen11)
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let localserver: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let sandboxPath: string = context.filesDir + '/testSocket';
-8. let addr: socket.LocalAddress = {
-9. address: sandboxPath
-10. }
-11. localserver.on('connect', (connection: socket.LocalSocketConnection) => {
-12. console.info("connection clientId: " + connection.clientId);
-13. // 逻辑处理
-14. localserver.close(); // 停止监听
-15. connection.close(); // 关闭当前连接
-16. });
-17. localserver.listen(addr).then(() => {
-18. console.info('listen success');
-19. }).catch((err: BusinessError) => {
-20. console.error('listen fail: ' + err.code);
-21. });
+let localserver: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let addr: socket.LocalAddress = {
+  address: sandboxPath
+}
+localserver.on('connect', (connection: socket.LocalSocketConnection) => {
+  console.info("connection clientId: " + connection.clientId);
+  // 逻辑处理
+  localserver.close(); // 停止监听
+  connection.close(); // 关闭当前连接
+});
+localserver.listen(addr).then(() => {
+  console.info('listen success');
+}).catch((err: BusinessError) => {
+  console.error('listen fail: ' + err.code);
+});
 ```
 
 ## LocalSocketConnection11+
 
-PhonePC/2in1TabletTVWearable
-
 LocalSocketConnection连接，即LocalSocket客户端与服务端的会话连接。在调用LocalSocketConnection的方法前，需要先获取LocalSocketConnection对象。
 
-说明
+**说明** 
 
 客户端与服务端成功建立连接后，才能通过返回的LocalSocketConnection对象调用相应的接口。
 
@@ -6287,13 +6056,11 @@ LocalSocketConnection连接，即LocalSocket客户端与服务端的会话连接
 
 ### send11+
 
-PhonePC/2in1TabletTVWearable
-
 send(options: LocalSendOptions): Promise<void>
 
 通过LocalSocketConnection连接对象发送数据。使用Promise异步回调。
 
-说明
+**说明** 
 
 服务端与客户端建立连接后，服务端通过connect事件回调得到LocalSocketConnection连接对象后，才可使用连接对象调用此方法。
 
@@ -6322,26 +6089,24 @@ send(options: LocalSendOptions): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
 
-5. server.on('connect', (connection: socket.LocalSocketConnection) => {
-6. let sendOptions: socket.LocalSendOptions = {
-7. data: 'Hello, client!'
-8. }
-9. connection.send(sendOptions).then(() => {
-10. console.info('send success');
-11. }).catch((err: Object) => {
-12. console.error('send fail: ' + JSON.stringify(err));
-13. });
-14. });
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  let sendOptions: socket.LocalSendOptions = {
+    data: 'Hello, client!'
+  }
+  connection.send(sendOptions).then(() => {
+    console.info('send success');
+  }).catch((err: Object) => {
+    console.error('send fail: ' + JSON.stringify(err));
+  });
+});
 ```
 
 ### close11+
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -6365,22 +6130,20 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. server.on('connect', (connection: socket.LocalSocketConnection) => {
-5. connection.close().then(() => {
-6. console.info('close success');
-7. }).catch((err: Object) => {
-8. console.error('close fail: ' + JSON.stringify(err));
-9. });
-10. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  connection.close().then(() => {
+    console.info('close success');
+  }).catch((err: Object) => {
+    console.error('close fail: ' + JSON.stringify(err));
+  });
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<string>
 
@@ -6406,49 +6169,47 @@ getLocalAddress(): Promise<string>
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { common } from '@kit.AbilityKit';
-2. import { socket } from '@kit.NetworkKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { common } from '@kit.AbilityKit';
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let sandboxPath: string = context.filesDir + '/testSocket';
-8. let localAddr: socket.LocalAddress = {
-9. address: sandboxPath
-10. }
-11. server.listen(localAddr).then(() => {
-12. console.info('listen success');
-13. let client: socket.LocalSocket = socket.constructLocalSocketInstance();
-14. let connectOpt: socket.LocalConnectOptions = {
-15. address: localAddr,
-16. timeout: 6000
-17. }
-18. client.connect(connectOpt).then(() => {
-19. server.getLocalAddress().then((localPath: string) => {
-20. console.info("success, localPath is" + JSON.stringify(localPath));
-21. }).catch((err: BusinessError) => {
-22. console.error("FAIL " + JSON.stringify(err));
-23. })
-24. }).catch((err: Object) => {
-25. console.error('connect fail: ' + JSON.stringify(err));
-26. });
-27. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let localAddr: socket.LocalAddress = {
+  address: sandboxPath
+}
+server.listen(localAddr).then(() => {
+  console.info('listen success');
+  let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+  let connectOpt: socket.LocalConnectOptions = {
+    address: localAddr,
+    timeout: 6000
+  }
+  client.connect(connectOpt).then(() => {
+    server.getLocalAddress().then((localPath: string) => {
+      console.info("success, localPath is" + JSON.stringify(localPath));
+    }).catch((err: BusinessError) => {
+      console.error("FAIL " + JSON.stringify(err));
+    })
+  }).catch((err: Object) => {
+    console.error('connect fail: ' + JSON.stringify(err));
+  });
+});
 ```
 
 ### getSocketFd23+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取LocalSocketConnection连接的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 成功建立连接后，才可调用此方法。
 * 连接断开、Socket已关闭（如调用close后）等异常情况下调用本接口会返回-1。
@@ -6464,37 +6225,35 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let listenAddr : socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. server.on('connect', (connection: socket.LocalSocketConnection) => {
-11. connection.getSocketFd().then((fd: number) => {
-12. console.info(`Socket FD：${fd}`);
-13. }).catch((err: Object) => {
-14. console.error(`getSocketFd fail: ${JSON.stringify(err)}`);
-15. });
-16. });
-17. server.listen(listenAddr).then(() => {
-18. console.info("listen success");
-19. }).catch((err: Object) => {
-20. console.error(`listen fail: ${JSON.stringify(err)}`);
-21. })
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let listenAddr : socket.LocalAddress = {
+  address: sandboxPath
+}
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  connection.getSocketFd().then((fd: number) => {
+    console.info(`Socket FD：${fd}`);
+  }).catch((err: Object) => {
+    console.error(`getSocketFd fail: ${JSON.stringify(err)}`);
+  });
+});
+server.listen(listenAddr).then(() => {
+  console.info("listen success");
+}).catch((err: Object) => {
+  console.error(`listen fail: ${JSON.stringify(err)}`);
+})
 ```
 
 ### on('message')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'message', callback: Callback<LocalSocketMessageInfo>): void
 
@@ -6519,41 +6278,39 @@ on(type: 'message', callback: Callback<LocalSocketMessageInfo>): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { common } from '@kit.AbilityKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { common } from '@kit.AbilityKit';
 
-4. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-6. let sandboxPath: string = context.filesDir + '/testSocket';
-7. let listenAddr: socket.LocalAddress = {
-8. address: sandboxPath
-9. }
-10. server.listen(listenAddr).then(() => {
-11. console.info("listen success");
-12. }).catch((err: Object) => {
-13. console.error("listen fail: " + JSON.stringify(err));
-14. });
-15. server.on('connect', (connection: socket.LocalSocketConnection) => {
-16. connection.on('message', (value: socket.LocalSocketMessageInfo) => {
-17. const uintArray = new Uint8Array(value.message);
-18. let messageView = '';
-19. for (let i = 0; i < uintArray.length; i++) {
-20. messageView += String.fromCharCode(uintArray[i]);
-21. }
-22. console.info('total: ' + JSON.stringify(value));
-23. console.info('message information: ' + messageView);
-24. });
-25. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let sandboxPath: string = context.filesDir + '/testSocket';
+let listenAddr: socket.LocalAddress = {
+  address: sandboxPath
+}
+server.listen(listenAddr).then(() => {
+  console.info("listen success");
+}).catch((err: Object) => {
+  console.error("listen fail: " + JSON.stringify(err));
+});
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  connection.on('message', (value: socket.LocalSocketMessageInfo) => {
+    const uintArray = new Uint8Array(value.message);
+    let messageView = '';
+    for (let i = 0; i < uintArray.length; i++) {
+      messageView += String.fromCharCode(uintArray[i]);
+    }
+    console.info('total: ' + JSON.stringify(value));
+    console.info('message information: ' + messageView);
+  });
+});
 ```
 
 ### off('message')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'message', callback?: Callback<LocalSocketMessageInfo>): void
 
@@ -6578,30 +6335,28 @@ off(type: 'message', callback?: Callback<LocalSocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. let callback = (value: socket.LocalSocketMessageInfo) => {
-5. const uintArray = new Uint8Array(value.message)
-6. let messageView = '';
-7. for (let i = 0; i < uintArray.length; i++) {
-8. messageView += String.fromCharCode(uintArray[i]);
-9. }
-10. console.info('total: ' + JSON.stringify(value));
-11. console.info('message information: ' + messageView);
-12. }
-13. server.on('connect', (connection: socket.LocalSocketConnection) => {
-14. connection.on('message', callback);
-15. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-16. connection.off('message', callback);
-17. connection.off('message');
-18. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let callback = (value: socket.LocalSocketMessageInfo) => {
+  const uintArray = new Uint8Array(value.message)
+  let messageView = '';
+  for (let i = 0; i < uintArray.length; i++) {
+    messageView += String.fromCharCode(uintArray[i]);
+  }
+  console.info('total: ' + JSON.stringify(value));
+  console.info('message information: ' + messageView);
+}
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  connection.on('message', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  connection.off('message', callback);
+  connection.off('message');
+});
 ```
 
 ### on('close')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'close', callback: Callback<void>): void
 
@@ -6626,20 +6381,18 @@ on(type: 'close', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. server.on('connect', (connection: socket.LocalSocketConnection) => {
-5. connection.on('close', () => {
-6. console.info("on close success")
-7. });
-8. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  connection.on('close', () => {
+    console.info("on close success")
+  });
+});
 ```
 
 ### off('close')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'close', callback?: Callback<void>): void
 
@@ -6664,24 +6417,22 @@ off(type: 'close', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. let callback = () => {
-5. console.info("on close success");
-6. }
-7. server.on('connect', (connection: socket.LocalSocketConnection) => {
-8. connection.on('close', callback);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. connection.off('close', callback);
-11. connection.off('close');
-12. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+let callback = () => {
+  console.info("on close success");
+}
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  connection.on('close', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  connection.off('close', callback);
+  connection.off('close');
+});
 ```
 
 ### on('error')11+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -6706,20 +6457,18 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-4. server.on('connect', (connection: socket.LocalSocketConnection) => {
-5. connection.on('error', (err: Object) => {
-6. console.error("on error, err:" + JSON.stringify(err))
-7. });
-8. });
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  connection.on('error', (err: Object) => {
+    console.error("on error, err:" + JSON.stringify(err))
+  });
+});
 ```
 
 ### off('error')11+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -6744,32 +6493,28 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let callback = (err: Object) => {
-4. console.error("on error, err: " + JSON.stringify(err));
-5. }
-6. let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
-7. server.on('connect', (connection: socket.LocalSocketConnection) => {
-8. connection.on('error', callback);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. connection.off('error', callback);
-11. connection.off('error');
-12. });
+let callback = (err: Object) => {
+  console.error("on error, err: " + JSON.stringify(err));
+}
+let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+server.on('connect', (connection: socket.LocalSocketConnection) => {
+  connection.on('error', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  connection.off('error', callback);
+  connection.off('error');
+});
 ```
 
 ## LocalSocket 错误码说明
-
-PhonePC/2in1TabletTVWearable
 
 LocalSocket 错误码映射形式为：2301000 + Linux内核错误码。
 
 错误码的详细介绍参见[Socket错误码](errorcode-net-socket.md)。
 
 ## socket.constructTLSSocketInstance9+
-
-PhonePC/2in1TabletTVWearable
 
 constructTLSSocketInstance(): TLSSocket
 
@@ -6785,21 +6530,19 @@ constructTLSSocketInstance(): TLSSocket
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
+```ts
+import { socket } from '@kit.NetworkKit';
 
-3. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
 ```
 
 ## socket.constructTLSSocketInstance12+
-
-PhonePC/2in1TabletTVWearable
 
 constructTLSSocketInstance(tcpSocket: TCPSocket): TLSSocket
 
 将TCPSocket升级为TLSSocket，创建并返回一个TLSSocket对象。
 
-说明
+**说明** 
 
 需要确保TCPSocket已连接，并且当前已经没有传输数据，再调用constructTLSSocketInstance升级TLSSocket。当升级成功后，无需对TCPSocket对象调用close方法。
 
@@ -6830,47 +6573,43 @@ constructTLSSocketInstance(tcpSocket: TCPSocket): TLSSocket
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tcpconnectoptions: socket.TCPConnectOptions = {
-10. address: netAddress,
-11. timeout: 6000
-12. }
+let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tcpconnectoptions: socket.TCPConnectOptions = {
+  address: netAddress,
+  timeout: 6000
+}
 
-14. tcp.connect(tcpconnectoptions, (err: BusinessError) => {
-15. if (err) {
-16. console.error('connect fail');
-17. return;
-18. }
-19. console.info('connect success');
+tcp.connect(tcpconnectoptions, (err: BusinessError) => {
+  if (err) {
+    console.error('connect fail');
+    return;
+  }
+  console.info('connect success');
 
-21. // 确保TCPSocket已连接后，再升级TLSSocket
-22. let tls: socket.TLSSocket = socket.constructTLSSocketInstance(tcp);
-23. })
+  // 确保TCPSocket已连接后，再升级TLSSocket
+  let tls: socket.TLSSocket = socket.constructTLSSocketInstance(tcp);
+})
 ```
 
 ## TLSSocket9+
-
-PhonePC/2in1TabletTVWearable
 
 TLSSocket连接。在调用TLSSocket的方法前，需要先通过[socket.constructTLSSocketInstance](js-apis-socket.md#socketconstructtlssocketinstance9)创建TLSSocket对象。
 
 ### bind9+
 
-PhonePC/2in1TabletTVWearable
-
 bind(address: NetAddress, callback: AsyncCallback<void>): void
 
 绑定IP地址和端口。使用callback异步回调。
 
-说明
+**说明** 
 
 如果TLSSocket对象是通过TCPSocket对象升级创建的，可以不用执行bind方法。
 
@@ -6898,33 +6637,31 @@ bind(address: NetAddress, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
 ```
 
 ### bind9+
-
-PhonePC/2in1TabletTVWearable
 
 bind(address: NetAddress): Promise<void>
 
 绑定IP地址和端口。使用Promise异步回调。
 
-说明
+**说明** 
 
 如果TLSSocket对象是通过TCPSocket对象升级创建的，可以不用执行bind方法。
 
@@ -6957,25 +6694,23 @@ bind(address: NetAddress): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr).then(() => {
-10. console.info('bind success');
-11. }).catch((err: BusinessError) => {
-12. console.error('bind fail');
-13. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr).then(() => {
+  console.info('bind success');
+}).catch((err: BusinessError) => {
+  console.error('bind fail');
+});
 ```
 
 ### getState9+
-
-PhonePC/2in1TabletTVWearable
 
 getState(callback: AsyncCallback<SocketStateBase>): void
 
@@ -7000,34 +6735,32 @@ getState(callback: AsyncCallback<SocketStateBase>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
-16. tls.getState((err: BusinessError, data: socket.SocketStateBase) => {
-17. if (err) {
-18. console.error('getState fail');
-19. return;
-20. }
-21. console.info('getState success:' + JSON.stringify(data));
-22. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+tls.getState((err: BusinessError, data: socket.SocketStateBase) => {
+  if (err) {
+    console.error('getState fail');
+    return;
+  }
+  console.info('getState success:' + JSON.stringify(data));
+});
 ```
 
 ### getState9+
-
-PhonePC/2in1TabletTVWearable
 
 getState(): Promise<SocketStateBase>
 
@@ -7052,32 +6785,30 @@ getState(): Promise<SocketStateBase>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
-16. tls.getState().then(() => {
-17. console.info('getState success');
-18. }).catch((err: BusinessError) => {
-19. console.error('getState fail');
-20. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+tls.getState().then(() => {
+  console.info('getState success');
+}).catch((err: BusinessError) => {
+  console.error('getState fail');
+});
 ```
 
 ### setExtraOptions9+
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback<void>): void
 
@@ -7104,50 +6835,49 @@ setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
 
-17. interface SocketLinger {
-18. on: boolean;
-19. linger: number;
-20. }
+interface SocketLinger {
+  on: boolean;
+  linger: number;
+}
 
-22. let tcpExtraOptions: socket.TCPExtraOptions = {
-23. keepAlive: true,
-24. OOBInline: true,
-25. TCPNoDelay: true,
-26. socketLinger: { on: true, linger: 10 } as SocketLinger,
-27. receiveBufferSize: 8192,
-28. sendBufferSize: 8192,
-29. reuseAddress: true,
-30. socketTimeout: 3000
-31. }
-32. tls.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
-33. if (err) {
-34. console.error('setExtraOptions fail');
-35. return;
-36. }
-37. console.info('setExtraOptions success');
-38. });
+let tcpExtraOptions: socket.TCPExtraOptions = {
+  keepAlive: true,
+  OOBInline: true,
+  TCPNoDelay: true,
+  socketLinger: { on: true, linger: 10 } as SocketLinger,
+  receiveBufferSize: 8192,
+  sendBufferSize: 8192,
+  reuseAddress: true,
+  socketTimeout: 3000,
+  tcpFastOpen: false
+}
+tls.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
+  if (err) {
+    console.error('setExtraOptions fail');
+    return;
+  }
+  console.info('setExtraOptions success');
+});
 ```
 
 ### setExtraOptions9+
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: TCPExtraOptions): Promise<void>
 
@@ -7179,54 +6909,53 @@ setExtraOptions(options: TCPExtraOptions): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
 
-17. interface SocketLinger {
-18. on: boolean;
-19. linger: number;
-20. }
+interface SocketLinger {
+  on: boolean;
+  linger: number;
+}
 
-22. let tcpExtraOptions: socket.TCPExtraOptions = {
-23. keepAlive: true,
-24. OOBInline: true,
-25. TCPNoDelay: true,
-26. socketLinger: { on: true, linger: 10 } as SocketLinger,
-27. receiveBufferSize: 8192,
-28. sendBufferSize: 8192,
-29. reuseAddress: true,
-30. socketTimeout: 3000
-31. }
-32. tls.setExtraOptions(tcpExtraOptions).then(() => {
-33. console.info('setExtraOptions success');
-34. }).catch((err: BusinessError) => {
-35. console.error('setExtraOptions fail');
-36. });
+let tcpExtraOptions: socket.TCPExtraOptions = {
+  keepAlive: true,
+  OOBInline: true,
+  TCPNoDelay: true,
+  socketLinger: { on: true, linger: 10 } as SocketLinger,
+  receiveBufferSize: 8192,
+  sendBufferSize: 8192,
+  reuseAddress: true,
+  socketTimeout: 3000,
+  tcpFastOpen: false
+}
+tls.setExtraOptions(tcpExtraOptions).then(() => {
+  console.info('setExtraOptions success');
+}).catch((err: BusinessError) => {
+  console.error('setExtraOptions fail');
+});
 ```
 
 ### on('message')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
 订阅TLSSocket连接的接收消息事件。使用callback异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -7237,7 +6966,7 @@ bind方法调用成功后，才可调用此方法。
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'message'：接收消息事件。 |
-| callback | Callback<[SocketMessageInfo](js-apis-socket.md#socketmessageinfo11)> | 是 | 回调函数。TLSSocket连接订阅某类接受消息事件触发的调用函数，返回TLSSocket连接信息。 |
+| callback | Callback<[SocketMessageInfo](js-apis-socket.md#socketmessageinfo11)> | 是 | 回调函数。TLSSocket连接订阅某类接收消息事件触发的调用函数，返回TLSSocket连接信息。 |
 
 **错误码：**
 
@@ -7249,38 +6978,36 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. tls.on('message', (value: socket.SocketMessageInfo) => {
-16. let messageView = '';
-17. let uint8Array = new Uint8Array(value.message);
-18. for (let i: number = 0; i < value.message.byteLength; i++) {
-19. let messages = uint8Array[i];
-20. let message = String.fromCharCode(messages);
-21. messageView += message;
-22. }
-23. console.info('on message message: ' + JSON.stringify(messageView));
-24. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-25. });
-26. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+  tls.on('message', (value: socket.SocketMessageInfo) => {
+    let messageView = '';
+    let uint8Array = new Uint8Array(value.message);
+    for (let i: number = 0; i < value.message.byteLength; i++) {
+      let messages = uint8Array[i];
+      let message = String.fromCharCode(messages);
+      messageView += message;
+    }
+    console.info('on message message: ' + JSON.stringify(messageView));
+    console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+  });
+});
 ```
 
 ### off('message')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
@@ -7293,7 +7020,7 @@ off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 订阅的事件类型。'message'：接收消息事件。 |
-| callback | Callback<[SocketMessageInfo](js-apis-socket.md#socketmessageinfo11)> | 否 | 回调函数。TLSSocket连接取消订阅某类接受消息事件触发的调用函数，返回TLSSocket连接信息。 |
+| callback | Callback<[SocketMessageInfo](js-apis-socket.md#socketmessageinfo11)> | 否 | 回调函数。TLSSocket连接取消订阅某类接收消息事件触发的调用函数，返回TLSSocket连接信息。 |
 
 **错误码：**
 
@@ -7303,36 +7030,34 @@ off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let messageView = '';
-6. let callback = (value: socket.SocketMessageInfo) => {
-7. for (let i: number = 0; i < value.message.byteLength; i++) {
-8. let uint8Array = new Uint8Array(value.message)
-9. let messages = uint8Array[i]
-10. let message = String.fromCharCode(messages);
-11. messageView += message;
-12. }
-13. console.info('on message message: ' + JSON.stringify(messageView));
-14. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-15. }
-16. tls.on('message', callback);
-17. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-18. tls.off('message', callback);
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let messageView = '';
+let callback = (value: socket.SocketMessageInfo) => {
+  for (let i: number = 0; i < value.message.byteLength; i++) {
+    let uint8Array = new Uint8Array(value.message)
+    let messages = uint8Array[i]
+    let message = String.fromCharCode(messages);
+    messageView += message;
+  }
+  console.info('on message message: ' + JSON.stringify(messageView));
+  console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+}
+tls.on('message', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tls.off('message', callback);
 ```
 
 ### on('connect' | 'close')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connect' | 'close', callback: Callback<void>): void
 
 订阅TLSSocket的连接事件或关闭事件。使用callback异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -7353,33 +7078,31 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. tls.on('connect', () => {
-16. console.info("on connect success")
-17. });
-18. tls.on('close', () => {
-19. console.info("on close success")
-20. });
-21. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+  tls.on('connect', () => {
+    console.info("on connect success")
+  });
+  tls.on('close', () => {
+    console.info("on close success")
+  });
+});
 ```
 
 ### off('connect' | 'close')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connect' | 'close', callback?: Callback<void>): void
 
@@ -7402,35 +7125,33 @@ off(type: 'connect' | 'close', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let callback1 = () => {
-6. console.info("on connect success");
-7. }
-8. tls.on('connect', callback1);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. tls.off('connect', callback1);
-11. tls.off('connect');
-12. let callback2 = () => {
-13. console.info("on close success");
-14. }
-15. tls.on('close', callback2);
-16. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-17. tls.off('close', callback2);
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let callback1 = () => {
+  console.info("on connect success");
+}
+tls.on('connect', callback1);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tls.off('connect', callback1);
+tls.off('connect');
+let callback2 = () => {
+  console.info("on close success");
+}
+tls.on('close', callback2);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tls.off('close', callback2);
 ```
 
 ### on('error')9+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 订阅TLSSocket连接的error事件。使用callback异步回调。
 
-说明
+**说明** 
 
 bind方法调用成功后，才可调用此方法。
 
@@ -7451,30 +7172,28 @@ bind方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. tls.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. tls.on('error', (err: BusinessError) => {
-16. console.error("on error, err:" + JSON.stringify(err))
-17. });
-18. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+  tls.on('error', (err: BusinessError) => {
+    console.error("on error, err:" + JSON.stringify(err))
+  });
+});
 ```
 
 ### off('error')9+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -7497,22 +7216,20 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. let callback = (err: BusinessError) => {
-6. console.error("on error, err:" + JSON.stringify(err));
-7. }
-8. tls.on('error', callback);
-9. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-10. tls.off('error', callback);
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let callback = (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err));
+}
+tls.on('error', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tls.off('error', callback);
 ```
 
 ### connect9+
-
-PhonePC/2in1TabletTVWearable
 
 connect(options: TLSConnectOptions, callback: AsyncCallback<void>): void
 
@@ -7546,170 +7263,168 @@ connect(options: TLSConnectOptions, callback: AsyncCallback<void>): void
 | 2303505 | An error occurred in the TLS system call. |
 | 2303506 | Failed to close the TLS connection. |
 | 2300002 | System internal error. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server.  适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid.  适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server.  适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method.  适用版本：18+ |
+| 2301210 | Socks5 failed to send the message.  适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message.  适用版本：18+ |
+| 2301212 | Socks5 serialization error.  适用版本：18+ |
+| 2301213 | Socks5 deserialization error.  适用版本：18+ |
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsTwoWay: socket.TLSSocket = socket.constructTLSSocketInstance();  // Two way authentication
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. // 绑定指定网络接口
-8. }
-9. tlsTwoWay.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
-16. let twoWayNetAddr: socket.NetAddress = {
-17. address: '192.168.xx.xxx',
-18. port: 8080
-19. }
-20. let twoWaySecureOptions: socket.TLSSecureOptions = {
-21. key: "xxxx",
-22. cert: "xxxx",
-23. ca: ["xxxx"],
-24. password: "xxxx",
-25. protocols: socket.Protocol.TLSv12,
-26. useRemoteCipherPrefer: true,
-27. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-28. cipherSuite: "AES256-SHA256"
-29. }
-30. let tlsConnectOptions: socket.TLSConnectOptions = {
-31. address: twoWayNetAddr,
-32. secureOptions: twoWaySecureOptions,
-33. ALPNProtocols: ["spdy/1", "http/1.1"]
-34. }
+let tlsTwoWay: socket.TLSSocket = socket.constructTLSSocketInstance();  // Two way authentication
+let bindAddr: socket.NetAddress = {
+    address: '192.168.xx.xxx',
+  // 绑定指定网络接口
+}
+tlsTwoWay.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let twoWayNetAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let twoWaySecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: twoWayNetAddr,
+  secureOptions: twoWaySecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
 
-36. tlsTwoWay.connect(tlsConnectOptions, (err: BusinessError) => {
-37. console.error("connect callback error" + err);
-38. });
+tlsTwoWay.connect(tlsConnectOptions, (err: BusinessError) => {
+  console.error("connect callback error" + err);
+});
 
-40. let tlsOneWay: socket.TLSSocket = socket.constructTLSSocketInstance(); // One way authentication
-41. tlsOneWay.bind(bindAddr, (err: BusinessError) => {
-42. if (err) {
-43. console.error('bind fail');
-44. return;
-45. }
-46. console.info('bind success');
-47. });
-48. let oneWayNetAddr: socket.NetAddress = {
-49. address: '192.168.xx.xxx',
-50. port: 8080
-51. }
-52. let oneWaySecureOptions: socket.TLSSecureOptions = {
-53. ca: ["xxxx", "xxxx"],
-54. cipherSuite: "AES256-SHA256"
-55. }
-56. let tlsOneWayConnectOptions: socket.TLSConnectOptions = {
-57. address: oneWayNetAddr,
-58. secureOptions: oneWaySecureOptions
-59. }
-60. tlsOneWay.connect(tlsOneWayConnectOptions, (err: BusinessError) => {
-61. console.error("connect callback error" + err);
-62. });
+let tlsOneWay: socket.TLSSocket = socket.constructTLSSocketInstance(); // One way authentication
+tlsOneWay.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let oneWayNetAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let oneWaySecureOptions: socket.TLSSecureOptions = {
+  ca: ["xxxx", "xxxx"],
+  cipherSuite: "AES256-SHA256"
+}
+let tlsOneWayConnectOptions: socket.TLSConnectOptions = {
+  address: oneWayNetAddr,
+  secureOptions: oneWaySecureOptions
+}
+tlsOneWay.connect(tlsOneWayConnectOptions, (err: BusinessError) => {
+  console.error("connect callback error" + err);
+});
 ```
 
 **示例（设置socket代理）：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsTwoWay: socket.TLSSocket = socket.constructTLSSocketInstance();  // 双向认证
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. // 绑定指定网络接口
-8. }
-9. tlsTwoWay.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
-16. let twoWayNetAddr: socket.NetAddress = {
-17. address: '192.168.xx.xxx',
-18. port: 8080
-19. }
-20. let socks5Server: socket.NetAddress = {
-21. address: '192.168.xx.xxx',
-22. port: 8080
-23. }
-24. let twoWaySecureOptions: socket.TLSSecureOptions = {
-25. key: "xxxx",
-26. cert: "xxxx",
-27. ca: ["xxxx"],
-28. password: "xxxx",
-29. protocols: socket.Protocol.TLSv12,
-30. useRemoteCipherPrefer: true,
-31. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-32. cipherSuite: "AES256-SHA256"
-33. }
-34. let proxyOptions: socket.ProxyOptions = {
-35. type : 1,
-36. address: socks5Server,
-37. username: "xxx",
-38. password: "xxx"
-39. }
-40. let tlsConnectOptions: socket.TLSConnectOptions = {
-41. address: twoWayNetAddr,
-42. secureOptions: twoWaySecureOptions,
-43. ALPNProtocols: ["spdy/1", "http/1.1"],
-44. proxy: proxyOptions,
-45. }
+let tlsTwoWay: socket.TLSSocket = socket.constructTLSSocketInstance();  // 双向认证
+let bindAddr: socket.NetAddress = {
+   address: '192.168.xx.xxx',
+  // 绑定指定网络接口
+}
+tlsTwoWay.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let twoWayNetAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let socks5Server: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let twoWaySecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let proxyOptions: socket.ProxyOptions = {
+  type : 1,
+  address: socks5Server,
+  username: "xxx",
+  password: "xxx"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: twoWayNetAddr,
+  secureOptions: twoWaySecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"],
+  proxy: proxyOptions,
+}
 
-47. tlsTwoWay.connect(tlsConnectOptions, (err: BusinessError) => {
-48. console.error("connect callback error" + err);
-49. });
+tlsTwoWay.connect(tlsConnectOptions, (err: BusinessError) => {
+  console.error("connect callback error" + err);
+});
 
-51. let tlsOneWay: socket.TLSSocket = socket.constructTLSSocketInstance(); // 单向认证
-52. tlsOneWay.bind(bindAddr, (err: BusinessError) => {
-53. if (err) {
-54. console.error('bind fail');
-55. return;
-56. }
-57. console.info('bind success');
-58. });
-59. let oneWayNetAddr: socket.NetAddress = {
-60. address: '192.168.xx.xxx',
-61. port: 8080
-62. }
-63. let oneWaySecureOptions: socket.TLSSecureOptions = {
-64. ca: ["xxxx", "xxxx"],
-65. cipherSuite: "AES256-SHA256"
-66. }
-67. let oneWayProxyOptions: socket.ProxyOptions = {
-68. type : 1,
-69. address: socks5Server,
-70. username: "xxx",
-71. password: "xxx"
-72. }
-73. let tlsOneWayConnectOptions: socket.TLSConnectOptions = {
-74. address: oneWayNetAddr,
-75. secureOptions: oneWaySecureOptions,
-76. proxy: oneWayProxyOptions,
-77. }
-78. tlsOneWay.connect(tlsOneWayConnectOptions, (err: BusinessError) => {
-79. console.error("connect callback error" + err);
-80. });
+let tlsOneWay: socket.TLSSocket = socket.constructTLSSocketInstance(); // 单向认证
+tlsOneWay.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let oneWayNetAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let oneWaySecureOptions: socket.TLSSecureOptions = {
+  ca: ["xxxx", "xxxx"],
+  cipherSuite: "AES256-SHA256"
+}
+let oneWayProxyOptions: socket.ProxyOptions = {
+  type : 1,
+  address: socks5Server,
+  username: "xxx",
+  password: "xxx"
+}
+let tlsOneWayConnectOptions: socket.TLSConnectOptions = {
+  address: oneWayNetAddr,
+  secureOptions: oneWaySecureOptions,
+  proxy: oneWayProxyOptions,
+}
+tlsOneWay.connect(tlsOneWayConnectOptions, (err: BusinessError) => {
+  console.error("connect callback error" + err);
+});
 ```
 
 ### connect9+
-
-PhonePC/2in1TabletTVWearable
 
 connect(options: TLSConnectOptions): Promise<void>
 
@@ -7748,178 +7463,176 @@ connect(options: TLSConnectOptions): Promise<void>
 | 2303505 | An error occurred in the TLS system call. |
 | 2303506 | Failed to close the TLS connection. |
 | 2300002 | System internal error. |
-| 2301206 | Socks5 failed to connect to the proxy server. |
-| 2301207 | Socks5 username or password is invalid. |
-| 2301208 | Socks5 failed to connect to the remote server. |
-| 2301209 | Socks5 failed to negotiate the authentication method. |
-| 2301210 | Socks5 failed to send the message. |
-| 2301211 | Socks5 failed to receive the message. |
-| 2301212 | Socks5 serialization error. |
-| 2301213 | Socks5 deserialization error. |
+| 2301206 | Socks5 failed to connect to the proxy server.  适用版本：18+ |
+| 2301207 | Socks5 username or password is invalid.  适用版本：18+ |
+| 2301208 | Socks5 failed to connect to the remote server.  适用版本：18+ |
+| 2301209 | Socks5 failed to negotiate the authentication method.  适用版本：18+ |
+| 2301210 | Socks5 failed to send the message.  适用版本：18+ |
+| 2301211 | Socks5 failed to receive the message.  适用版本：18+ |
+| 2301212 | Socks5 serialization error.  适用版本：18+ |
+| 2301213 | Socks5 deserialization error.  适用版本：18+ |
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsTwoWay: socket.TLSSocket = socket.constructTLSSocketInstance();  // Two way authentication
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. // 绑定指定网络接口
-8. }
-9. tlsTwoWay.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
-16. let twoWayNetAddr: socket.NetAddress = {
-17. address: '192.168.xx.xxx',
-18. port: 8080
-19. }
-20. let twoWaySecureOptions: socket.TLSSecureOptions = {
-21. key: "xxxx",
-22. cert: "xxxx",
-23. ca: ["xxxx"],
-24. password: "xxxx",
-25. protocols: socket.Protocol.TLSv12,
-26. useRemoteCipherPrefer: true,
-27. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-28. cipherSuite: "AES256-SHA256"
-29. }
-30. let tlsConnectOptions: socket.TLSConnectOptions = {
-31. address: twoWayNetAddr,
-32. secureOptions: twoWaySecureOptions,
-33. ALPNProtocols: ["spdy/1", "http/1.1"]
-34. }
+let tlsTwoWay: socket.TLSSocket = socket.constructTLSSocketInstance();  // Two way authentication
+let bindAddr: socket.NetAddress = {
+   address: '192.168.xx.xxx',
+  // 绑定指定网络接口
+}
+tlsTwoWay.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let twoWayNetAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let twoWaySecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: twoWayNetAddr,
+  secureOptions: twoWaySecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
 
-36. tlsTwoWay.connect(tlsConnectOptions).then(() => {
-37. console.info("connect successfully");
-38. }).catch((err: BusinessError) => {
-39. console.error("connect failed " + JSON.stringify(err));
-40. });
+tlsTwoWay.connect(tlsConnectOptions).then(() => {
+  console.info("connect successfully");
+}).catch((err: BusinessError) => {
+  console.error("connect failed " + JSON.stringify(err));
+});
 
-42. let tlsOneWay: socket.TLSSocket = socket.constructTLSSocketInstance(); // One way authentication
-43. tlsOneWay.bind(bindAddr, (err: BusinessError) => {
-44. if (err) {
-45. console.error('bind fail');
-46. return;
-47. }
-48. console.info('bind success');
-49. });
-50. let oneWayNetAddr: socket.NetAddress = {
-51. address: '192.168.xx.xxx',
-52. port: 8080
-53. }
-54. let oneWaySecureOptions: socket.TLSSecureOptions = {
-55. ca: ["xxxx", "xxxx"],
-56. cipherSuite: "AES256-SHA256"
-57. }
-58. let tlsOneWayConnectOptions: socket.TLSConnectOptions = {
-59. address: oneWayNetAddr,
-60. secureOptions: oneWaySecureOptions
-61. }
-62. tlsOneWay.connect(tlsOneWayConnectOptions).then(() => {
-63. console.info("connect successfully");
-64. }).catch((err: BusinessError) => {
-65. console.error("connect failed " + JSON.stringify(err));
-66. });
+let tlsOneWay: socket.TLSSocket = socket.constructTLSSocketInstance(); // One way authentication
+tlsOneWay.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let oneWayNetAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let oneWaySecureOptions: socket.TLSSecureOptions = {
+  ca: ["xxxx", "xxxx"],
+  cipherSuite: "AES256-SHA256"
+}
+let tlsOneWayConnectOptions: socket.TLSConnectOptions = {
+  address: oneWayNetAddr,
+  secureOptions: oneWaySecureOptions
+}
+tlsOneWay.connect(tlsOneWayConnectOptions).then(() => {
+  console.info("connect successfully");
+}).catch((err: BusinessError) => {
+  console.error("connect failed " + JSON.stringify(err));
+});
 ```
 
 **示例（设置socket代理）：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsTwoWay: socket.TLSSocket = socket.constructTLSSocketInstance();  // 双向认证
-5. let bindAddr: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. // 绑定指定网络接口
-8. }
-9. tlsTwoWay.bind(bindAddr, (err: BusinessError) => {
-10. if (err) {
-11. console.error('bind fail');
-12. return;
-13. }
-14. console.info('bind success');
-15. });
-16. let twoWayNetAddr: socket.NetAddress = {
-17. address: '192.168.xx.xxx',
-18. port: 8080
-19. }
-20. let socks5Server: socket.NetAddress = {
-21. address: '192.168.xx.xxx',
-22. port: 8080
-23. }
-24. let twoWaySecureOptions: socket.TLSSecureOptions = {
-25. key: "xxxx",
-26. cert: "xxxx",
-27. ca: ["xxxx"],
-28. password: "xxxx",
-29. protocols: socket.Protocol.TLSv12,
-30. useRemoteCipherPrefer: true,
-31. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-32. cipherSuite: "AES256-SHA256"
-33. }
-34. let proxyOptions: socket.ProxyOptions = {
-35. type : 1,
-36. address: socks5Server,
-37. username: "xxx",
-38. password: "xxx"
-39. }
-40. let tlsConnectOptions: socket.TLSConnectOptions = {
-41. address: twoWayNetAddr,
-42. secureOptions: twoWaySecureOptions,
-43. ALPNProtocols: ["spdy/1", "http/1.1"],
-44. proxy: proxyOptions,
-45. }
+let tlsTwoWay: socket.TLSSocket = socket.constructTLSSocketInstance();  // 双向认证
+let bindAddr: socket.NetAddress = {
+   address: '192.168.xx.xxx',
+  // 绑定指定网络接口
+}
+tlsTwoWay.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let twoWayNetAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let socks5Server: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let twoWaySecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let proxyOptions: socket.ProxyOptions = {
+  type : 1,
+  address: socks5Server,
+  username: "xxx",
+  password: "xxx"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: twoWayNetAddr,
+  secureOptions: twoWaySecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"],
+  proxy: proxyOptions,
+}
 
-47. tlsTwoWay.connect(tlsConnectOptions).then(() => {
-48. console.info("connect successfully");
-49. }).catch((err: BusinessError) => {
-50. console.error("connect failed " + JSON.stringify(err));
-51. });
+tlsTwoWay.connect(tlsConnectOptions).then(() => {
+  console.info("connect successfully");
+}).catch((err: BusinessError) => {
+  console.error("connect failed " + JSON.stringify(err));
+});
 
-53. let tlsOneWay: socket.TLSSocket = socket.constructTLSSocketInstance(); // 单向认证
-54. tlsOneWay.bind(bindAddr, (err: BusinessError) => {
-55. if (err) {
-56. console.error('bind fail');
-57. return;
-58. }
-59. console.info('bind success');
-60. });
-61. let oneWayNetAddr: socket.NetAddress = {
-62. address: '192.168.xx.xxx',
-63. port: 8080
-64. }
-65. let oneWaySecureOptions: socket.TLSSecureOptions = {
-66. ca: ["xxxx", "xxxx"],
-67. cipherSuite: "AES256-SHA256"
-68. }
-69. let oneWayProxyOptions: socket.ProxyOptions = {
-70. type : 1,
-71. address: socks5Server,
-72. username: "xxx",
-73. password: "xxx"
-74. }
-75. let tlsOneWayConnectOptions: socket.TLSConnectOptions = {
-76. address: oneWayNetAddr,
-77. secureOptions: oneWaySecureOptions,
-78. proxy: oneWayProxyOptions,
-79. }
-80. tlsOneWay.connect(tlsOneWayConnectOptions).then(() => {
-81. console.info("connect successfully");
-82. }).catch((err: BusinessError) => {
-83. console.error("connect failed " + JSON.stringify(err));
-84. });
+let tlsOneWay: socket.TLSSocket = socket.constructTLSSocketInstance(); // 单向认证
+tlsOneWay.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+let oneWayNetAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let oneWaySecureOptions: socket.TLSSecureOptions = {
+  ca: ["xxxx", "xxxx"],
+  cipherSuite: "AES256-SHA256"
+}
+let oneWayProxyOptions: socket.ProxyOptions = {
+  type : 1,
+  address: socks5Server,
+  username: "xxx",
+  password: "xxx"
+}
+let tlsOneWayConnectOptions: socket.TLSConnectOptions = {
+  address: oneWayNetAddr,
+  secureOptions: oneWaySecureOptions,
+  proxy: oneWayProxyOptions,
+}
+tlsOneWay.connect(tlsOneWayConnectOptions).then(() => {
+  console.info("connect successfully");
+}).catch((err: BusinessError) => {
+  console.error("connect failed " + JSON.stringify(err));
+});
 ```
 
 ### getRemoteAddress9+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteAddress(callback: AsyncCallback<NetAddress>): void
 
@@ -7942,23 +7655,21 @@ getRemoteAddress(callback: AsyncCallback<NetAddress>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
-6. if (err) {
-7. console.error('getRemoteAddress fail');
-8. return;
-9. }
-10. console.info('getRemoteAddress success:' + JSON.stringify(data));
-11. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
+  if (err) {
+    console.error('getRemoteAddress fail');
+    return;
+  }
+  console.info('getRemoteAddress success:' + JSON.stringify(data));
+});
 ```
 
 ### getRemoteAddress9+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteAddress(): Promise<NetAddress>
 
@@ -7981,21 +7692,19 @@ getRemoteAddress(): Promise<NetAddress>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getRemoteAddress().then(() => {
-6. console.info('getRemoteAddress success');
-7. }).catch((err: BusinessError) => {
-8. console.error('getRemoteAddress fail');
-9. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getRemoteAddress().then(() => {
+  console.info('getRemoteAddress success');
+}).catch((err: BusinessError) => {
+  console.error('getRemoteAddress fail');
+});
 ```
 
 ### getCertificate9+
-
-PhonePC/2in1TabletTVWearable
 
 getCertificate(callback: AsyncCallback<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>): void
 
@@ -8019,23 +7728,21 @@ getCertificate(callback: AsyncCallback<[X509CertRawData](js-apis-socket.md#x509c
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
-6. if (err) {
-7. console.error("getCertificate callback error = " + err);
-8. } else {
-9. console.info("getCertificate callback = " + data);
-10. }
-11. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
+  if (err) {
+    console.error("getCertificate callback error = " + err);
+  } else {
+    console.info("getCertificate callback = " + data);
+  }
+});
 ```
 
 ### getCertificate9+
-
-PhonePC/2in1TabletTVWearable
 
 getCertificate():Promise<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>
 
@@ -8059,24 +7766,22 @@ getCertificate():Promise<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-6. tls.getCertificate().then((data: socket.X509CertRawData) => {
-7. const decoder = util.TextDecoder.create();
-8. const str = decoder.decodeToString(data.data);
-9. console.info("getCertificate: " + str);
-10. }).catch((err: BusinessError) => {
-11. console.error("failed" + err);
-12. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getCertificate().then((data: socket.X509CertRawData) => {
+  const decoder = util.TextDecoder.create();
+  const str = decoder.decodeToString(data.data);
+  console.info("getCertificate: " + str);
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ### getRemoteCertificate9+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteCertificate(callback: AsyncCallback<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>): void
 
@@ -8099,26 +7804,24 @@ getRemoteCertificate(callback: AsyncCallback<[X509CertRawData](js-apis-socket.md
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-6. tls.getRemoteCertificate((err: BusinessError, data: socket.X509CertRawData) => {
-7. if (err) {
-8. console.error("getRemoteCertificate callback error = " + err);
-9. } else {
-10. const decoder = util.TextDecoder.create();
-11. const str = decoder.decodeToString(data.data);
-12. console.info("getRemoteCertificate callback = " + str);
-13. }
-14. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getRemoteCertificate((err: BusinessError, data: socket.X509CertRawData) => {
+  if (err) {
+    console.error("getRemoteCertificate callback error = " + err);
+  } else {
+    const decoder = util.TextDecoder.create();
+    const str = decoder.decodeToString(data.data);
+    console.info("getRemoteCertificate callback = " + str);
+  }
+});
 ```
 
 ### getRemoteCertificate9+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteCertificate():Promise<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>
 
@@ -8141,24 +7844,22 @@ getRemoteCertificate():Promise<[X509CertRawData](js-apis-socket.md#x509certrawda
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-6. tls.getRemoteCertificate().then((data: socket.X509CertRawData) => {
-7. const decoder = util.TextDecoder.create();
-8. const str = decoder.decodeToString(data.data);
-9. console.info("getRemoteCertificate:" + str);
-10. }).catch((err: BusinessError) => {
-11. console.error("failed" + err);
-12. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getRemoteCertificate().then((data: socket.X509CertRawData) => {
+  const decoder = util.TextDecoder.create();
+  const str = decoder.decodeToString(data.data);
+  console.info("getRemoteCertificate:" + str);
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ### getProtocol9+
-
-PhonePC/2in1TabletTVWearable
 
 getProtocol(callback: AsyncCallback<string>): void
 
@@ -8182,23 +7883,21 @@ getProtocol(callback: AsyncCallback<string>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getProtocol((err: BusinessError, data: string) => {
-6. if (err) {
-7. console.error("getProtocol callback error = " + err);
-8. } else {
-9. console.info("getProtocol callback = " + data);
-10. }
-11. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getProtocol((err: BusinessError, data: string) => {
+  if (err) {
+    console.error("getProtocol callback error = " + err);
+  } else {
+    console.info("getProtocol callback = " + data);
+  }
+});
 ```
 
 ### getProtocol9+
-
-PhonePC/2in1TabletTVWearable
 
 getProtocol():Promise<string>
 
@@ -8222,21 +7921,19 @@ getProtocol():Promise<string>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getProtocol().then((data: string) => {
-6. console.info(data);
-7. }).catch((err: BusinessError) => {
-8. console.error("failed" + err);
-9. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getProtocol().then((data: string) => {
+  console.info(data);
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ### getCipherSuite9+
-
-PhonePC/2in1TabletTVWearable
 
 getCipherSuite(callback: AsyncCallback<Array<string>>): void
 
@@ -8261,23 +7958,21 @@ getCipherSuite(callback: AsyncCallback<Array<string>>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getCipherSuite((err: BusinessError, data: Array<string>) => {
-6. if (err) {
-7. console.error("getCipherSuite callback error = " + err);
-8. } else {
-9. console.info("getCipherSuite callback = " + data);
-10. }
-11. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getCipherSuite((err: BusinessError, data: Array<string>) => {
+  if (err) {
+    console.error("getCipherSuite callback error = " + err);
+  } else {
+    console.info("getCipherSuite callback = " + data);
+  }
+});
 ```
 
 ### getCipherSuite9+
-
-PhonePC/2in1TabletTVWearable
 
 getCipherSuite(): Promise<Array<string>>
 
@@ -8302,21 +7997,19 @@ getCipherSuite(): Promise<Array<string>>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getCipherSuite().then((data: Array<string>) => {
-6. console.info('getCipherSuite success:' + JSON.stringify(data));
-7. }).catch((err: BusinessError) => {
-8. console.error("failed" + err);
-9. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getCipherSuite().then((data: Array<string>) => {
+  console.info('getCipherSuite success:' + JSON.stringify(data));
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ### getSignatureAlgorithms9+
-
-PhonePC/2in1TabletTVWearable
 
 getSignatureAlgorithms(callback: AsyncCallback<Array<string>>): void
 
@@ -8339,23 +8032,21 @@ getSignatureAlgorithms(callback: AsyncCallback<Array<string>>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getSignatureAlgorithms((err: BusinessError, data: Array<string>) => {
-6. if (err) {
-7. console.error("getSignatureAlgorithms callback error = " + err);
-8. } else {
-9. console.info("getSignatureAlgorithms callback = " + data);
-10. }
-11. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getSignatureAlgorithms((err: BusinessError, data: Array<string>) => {
+  if (err) {
+    console.error("getSignatureAlgorithms callback error = " + err);
+  } else {
+    console.info("getSignatureAlgorithms callback = " + data);
+  }
+});
 ```
 
 ### getSignatureAlgorithms9+
-
-PhonePC/2in1TabletTVWearable
 
 getSignatureAlgorithms(): Promise<Array<string>>
 
@@ -8378,27 +8069,25 @@ getSignatureAlgorithms(): Promise<Array<string>>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getSignatureAlgorithms().then((data: Array<string>) => {
-6. console.info("getSignatureAlgorithms success" + data);
-7. }).catch((err: BusinessError) => {
-8. console.error("failed" + err);
-9. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getSignatureAlgorithms().then((data: Array<string>) => {
+  console.info("getSignatureAlgorithms success" + data);
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<NetAddress>
 
 获取TLSSocket的本地Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 在TLSSocketServer通信连接成功之后，才可调用此方法。
 
@@ -8420,27 +8109,25 @@ getLocalAddress(): Promise<NetAddress>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.getLocalAddress().then((localAddress: socket.NetAddress) => {
-6. console.info("Get success: " + JSON.stringify(localAddress));
-7. }).catch((err: BusinessError) => {
-8. console.error("Get failed, error: " + JSON.stringify(err));
-9. })
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.getLocalAddress().then((localAddress: socket.NetAddress) => {
+  console.info("Get success: " + JSON.stringify(localAddress));
+}).catch((err: BusinessError) => {
+  console.error("Get failed, error: " + JSON.stringify(err));
+})
 ```
 
 ### getSocketFd16+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取TLSSocket的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * bind方法调用成功后，才可调用此方法。
 * 文件描述符的生命周期由系统管理，应用可以通过[close](js-apis-socket.md#close9)方法关闭Socket连接，避免直接操作文件描述符进行关闭。
@@ -8455,29 +8142,27 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-4. let bindAddr: socket.NetAddress = {
-5. address: '192.168.xx.xxx',
-6. port: 8080
-7. }
-8. tls.bind(bindAddr, (err: BusinessError) => {
-9. if (err) {
-10. console.error('bind fail');
-11. return;
-12. }
-13. console.info('bind success');
-14. });
-15. tls.getSocketFd().then((data: number) => {
-16. console.info("tls socket fd: " + data);
-17. })
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+let bindAddr: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+tls.bind(bindAddr, (err: BusinessError) => {
+  if (err) {
+    console.error('bind fail');
+    return;
+  }
+  console.info('bind success');
+});
+tls.getSocketFd().then((data: number) => {
+  console.info("tls socket fd: " + data);
+})
 ```
 
 ### send9+
-
-PhonePC/2in1TabletTVWearable
 
 send(data: string | ArrayBuffer, callback: AsyncCallback<void>): void
 
@@ -8505,23 +8190,21 @@ send(data: string | ArrayBuffer, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.send("xxxx", (err: BusinessError) => {
-6. if (err) {
-7. console.error("send callback error = " + err);
-8. } else {
-9. console.info("send success");
-10. }
-11. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.send("xxxx", (err: BusinessError) => {
+  if (err) {
+    console.error("send callback error = " + err);
+  } else {
+    console.info("send success");
+  }
+});
 ```
 
 ### send9+
-
-PhonePC/2in1TabletTVWearable
 
 send(data: string | ArrayBuffer): Promise<void>
 
@@ -8554,21 +8237,19 @@ send(data: string | ArrayBuffer): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.send("xxxx").then(() => {
-6. console.info("send success");
-7. }).catch((err: BusinessError) => {
-8. console.error("failed" + err);
-9. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.send("xxxx").then(() => {
+  console.info("send success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ### close9+
-
-PhonePC/2in1TabletTVWearable
 
 close(callback: AsyncCallback<void>): void
 
@@ -8594,23 +8275,21 @@ close(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.close((err: BusinessError) => {
-6. if (err) {
-7. console.error("close callback error = " + err);
-8. } else {
-9. console.info("close success");
-10. }
-11. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.close((err: BusinessError) => {
+  if (err) {
+    console.error("close callback error = " + err);
+  } else {
+    console.info("close success");
+  }
+});
 ```
 
 ### close9+
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -8636,21 +8315,19 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-5. tls.close().then(() => {
-6. console.info("close success");
-7. }).catch((err: BusinessError) => {
-8. console.error("failed" + err);
-9. });
+let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+tls.close().then(() => {
+  console.info("close success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ## TLSConnectOptions9+
-
-PhonePC/2in1TabletTVWearable
 
 TLS连接的操作。
 
@@ -8667,8 +8344,6 @@ TLS连接的操作。
 
 ## TLSSecureOptions9+
 
-PhonePC/2in1TabletTVWearable
-
 TLS安全相关操作。当本地证书cert和私钥key不为空时，开启双向验证模式。cert和key其中一项为空时，开启单向验证模式。
 
 **系统能力**：SystemCapability.Communication.NetStack
@@ -8676,7 +8351,7 @@ TLS安全相关操作。当本地证书cert和私钥key不为空时，开启双�
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | ca | string | Array<string> | 否 | 是 | 服务端的ca证书，用于认证校验服务端的数字证书。默认为系统预置CA证书12+。最多支持设置1000本证书。 |
-| cert | string | 否 | 是 | 本地客户端的数字证书。 |
+| cert | string | Array<string> | 否 | 是 | 本地客户端的数字证书。从API Version 24开始支持传入数组，最多支持设置1000本证书。 |
 | key | string | 否 | 是 | 本地数字证书的私钥。 |
 | password | string | 否 | 是 | 读取私钥的密码。 |
 | protocols | [Protocol](js-apis-socket.md#protocol9) |Array<[Protocol](js-apis-socket.md#protocol9)> | 否 | 是 | TLS的协议版本，默认为"TLSv1.2"。 |
@@ -8686,8 +8361,6 @@ TLS安全相关操作。当本地证书cert和私钥key不为空时，开启双�
 | isBidirectionalAuthentication12+ | boolean | 否 | 是 | 用于设置双向认证，默认为false。true：设置双向认证；false：不设置双向认证。 |
 
 ## Protocol9+
-
-PhonePC/2in1TabletTVWearable
 
 TLS通信的协议版本。
 
@@ -8700,8 +8373,6 @@ TLS通信的协议版本。
 
 ## X509CertRawData9+
 
-PhonePC/2in1TabletTVWearable
-
 type X509CertRawData = cert.EncodingBlob
 
 存储证书的数据。
@@ -8713,8 +8384,6 @@ type X509CertRawData = cert.EncodingBlob
 | cert.EncodingBlob | 提供证书编码blob类型。 |
 
 ## socket.constructTLSSocketServerInstance10+
-
-PhonePC/2in1TabletTVWearable
 
 constructTLSSocketServerInstance(): TLSSocketServer
 
@@ -8730,28 +8399,24 @@ constructTLSSocketServerInstance(): TLSSocketServer
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
 ```
 
 ## TLSSocketServer10+
-
-PhonePC/2in1TabletTVWearable
 
 TLSSocketServer连接。在调用TLSSocketServer的方法前，需要先通过[socket.constructTLSSocketServerInstance](js-apis-socket.md#socketconstructtlssocketserverinstance10)创建TLSSocketServer对象。
 
 ### listen10+
 
-PhonePC/2in1TabletTVWearable
-
 listen(options: TLSConnectOptions, callback: AsyncCallback<void>): void
 
-绑定IP地址和端口，在TLSSocketServer上bind成功之后，监听客户端的连接，创建和初始化TLS会话，实现建立连接过程，加载证书秘钥并验证，使用callback异步回调。
+绑定IP地址和端口，在TLSSocketServer上bind成功之后，监听客户端的连接，创建和初始化TLS会话，实现建立连接过程，加载证书密钥并验证，使用callback异步回调。
 
-注意
+**注意** 
 
 IP地址设置为0.0.0.0时，可以监听本机所有地址。
 
@@ -8785,43 +8450,41 @@ IP地址设置为0.0.0.0时，可以监听本机所有地址。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"],
-23. skipRemoteValidation: false
-24. }
-25. tlsServer.listen(tlsConnectOptions, (err: BusinessError) => {
-26. console.error("listen callback error" + err);
-27. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"],
+  skipRemoteValidation: false
+}
+tlsServer.listen(tlsConnectOptions, (err: BusinessError) => {
+  console.error("listen callback error" + err);
+});
 ```
 
 ### listen10+
 
-PhonePC/2in1TabletTVWearable
-
 listen(options: TLSConnectOptions): Promise<void>
 
-绑定IP地址和端口，在TLSSocketServer上bind成功之后，监听客户端的连接，并创建和初始化TLS会话，实现建立连接过程，加载证书秘钥并验证，使用Promise异步回调。
+绑定IP地址和端口，在TLSSocketServer上bind成功之后，监听客户端的连接，并创建和初始化TLS会话，实现建立连接过程，加载证书密钥并验证，使用Promise异步回调。
 
 **需要权限**：ohos.permission.INTERNET
 
@@ -8858,47 +8521,45 @@ listen(options: TLSConnectOptions): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"],
-23. skipRemoteValidation: false
-24. }
-25. tlsServer.listen(tlsConnectOptions).then(() => {
-26. console.info("listen callback success");
-27. }).catch((err: BusinessError) => {
-28. console.error("failed: " + JSON.stringify(err));
-29. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"],
+  skipRemoteValidation: false
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
 ```
 
 ### getState10+
-
-PhonePC/2in1TabletTVWearable
 
 getState(callback: AsyncCallback<SocketStateBase>): void
 
 在TLSSocketServer的listen成功之后，获取TLSSocketServer状态。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -8920,53 +8581,51 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
-29. tlsServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
-30. if (err) {
-31. console.error('getState fail');
-32. return;
-33. }
-34. console.info('getState success:' + JSON.stringify(data));
-35. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
+tlsServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
+  if (err) {
+    console.error('getState fail');
+    return;
+  }
+  console.info('getState success:' + JSON.stringify(data));
+});
 ```
 
 ### getState10+
-
-PhonePC/2in1TabletTVWearable
 
 getState(): Promise<SocketStateBase>
 
 在TLSSocketServer的listen成功之后，获取TLSSocketServer状态。使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -8987,51 +8646,49 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
-29. tlsServer.getState().then(() => {
-30. console.info('getState success');
-31. }).catch((err: BusinessError) => {
-32. console.error('getState fail');
-33. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
+tlsServer.getState().then(() => {
+  console.info('getState success');
+}).catch((err: BusinessError) => {
+  console.error('getState fail');
+});
 ```
 
 ### getSocketFd23+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取TLSSocketServer监听端口绑定的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * [listen](js-apis-socket.md#listen10-3)方法调用成功后，才可调用此方法。多次调用listen时，会获取最新监听端口绑定的文件描述符。
 * 监听异常、Socket已关闭（如调用close后）等异常情况下调用本接口会返回-1。
@@ -9057,51 +8714,49 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen success");
-26. tlsServer.getSocketFd().then((fd: number) => {
-27. console.info(`Socket FD：${fd}`);
-28. }).catch((err: BusinessError) => {
-29. console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
-30. });
-31. }).catch((err: BusinessError) => {
-32. console.error(`listen failed: ${JSON.stringify(err)}`);
-33. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen success");
+  tlsServer.getSocketFd().then((fd: number) => {
+    console.info(`Socket FD：${fd}`);
+  }).catch((err: BusinessError) => {
+    console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
+  });
+}).catch((err: BusinessError) => {
+  console.error(`listen failed: ${JSON.stringify(err)}`);
+});
 ```
 
 ### setExtraOptions10+
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: TCPExtraOptions, callback: AsyncCallback<void>): void
 
 在TLSSocketServer的listen成功之后，设置TLSSocketServer连接的其他属性。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9124,69 +8779,67 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
 
-30. interface SocketLinger {
-31. on: boolean;
-32. linger: number;
-33. }
+interface SocketLinger {
+  on: boolean;
+  linger: number;
+}
 
-35. let tcpExtraOptions: socket.TCPExtraOptions = {
-36. keepAlive: true,
-37. OOBInline: true,
-38. TCPNoDelay: true,
-39. socketLinger: { on: true, linger: 10 } as SocketLinger,
-40. receiveBufferSize: 8192,
-41. sendBufferSize: 8192,
-42. reuseAddress: true,
-43. socketTimeout: 3000
-44. }
-45. tlsServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
-46. if (err) {
-47. console.error('setExtraOptions fail');
-48. return;
-49. }
-50. console.info('setExtraOptions success');
-51. });
+let tcpExtraOptions: socket.TCPExtraOptions = {
+  keepAlive: true,
+  OOBInline: true,
+  TCPNoDelay: true,
+  socketLinger: { on: true, linger: 10 } as SocketLinger,
+  receiveBufferSize: 8192,
+  sendBufferSize: 8192,
+  reuseAddress: true,
+  socketTimeout: 3000
+}
+tlsServer.setExtraOptions(tcpExtraOptions, (err: BusinessError) => {
+  if (err) {
+    console.error('setExtraOptions fail');
+    return;
+  }
+  console.info('setExtraOptions success');
+});
 ```
 
 ### setExtraOptions10+
-
-PhonePC/2in1TabletTVWearable
 
 setExtraOptions(options: TCPExtraOptions): Promise<void>
 
 在TLSSocketServer的listen成功之后，设置TLSSocketServer连接的其他属性，使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9214,67 +8867,65 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
 
-30. interface SocketLinger {
-31. on: boolean;
-32. linger: number;
-33. }
+interface SocketLinger {
+  on: boolean;
+  linger: number;
+}
 
-35. let tcpExtraOptions: socket.TCPExtraOptions = {
-36. keepAlive: true,
-37. OOBInline: true,
-38. TCPNoDelay: true,
-39. socketLinger: { on: true, linger: 10 } as SocketLinger,
-40. receiveBufferSize: 8192,
-41. sendBufferSize: 8192,
-42. reuseAddress: true,
-43. socketTimeout: 3000
-44. }
-45. tlsServer.setExtraOptions(tcpExtraOptions).then(() => {
-46. console.info('setExtraOptions success');
-47. }).catch((err: BusinessError) => {
-48. console.error('setExtraOptions fail');
-49. });
+let tcpExtraOptions: socket.TCPExtraOptions = {
+  keepAlive: true,
+  OOBInline: true,
+  TCPNoDelay: true,
+  socketLinger: { on: true, linger: 10 } as SocketLinger,
+  receiveBufferSize: 8192,
+  sendBufferSize: 8192,
+  reuseAddress: true,
+  socketTimeout: 3000
+}
+tlsServer.setExtraOptions(tcpExtraOptions).then(() => {
+  console.info('setExtraOptions success');
+}).catch((err: BusinessError) => {
+  console.error('setExtraOptions fail');
+});
 ```
 
 ### getCertificate10+
-
-PhonePC/2in1TabletTVWearable
 
 getCertificate(callback: AsyncCallback<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>): void
 
 在TLSSocketServer通信连接成功之后，获取本地的数字证书，使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9297,56 +8948,54 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-6. let netAddress: socket.NetAddress = {
-7. address: '192.168.xx.xxx',
-8. port: 8080
-9. }
-10. let tlsSecureOptions: socket.TLSSecureOptions = {
-11. key: "xxxx",
-12. cert: "xxxx",
-13. ca: ["xxxx"],
-14. password: "xxxx",
-15. protocols: socket.Protocol.TLSv12,
-16. useRemoteCipherPrefer: true,
-17. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-18. cipherSuite: "AES256-SHA256"
-19. }
-20. let tlsConnectOptions: socket.TLSConnectOptions = {
-21. address: netAddress,
-22. secureOptions: tlsSecureOptions,
-23. ALPNProtocols: ["spdy/1", "http/1.1"]
-24. }
-25. tlsServer.listen(tlsConnectOptions).then(() => {
-26. console.info("listen callback success");
-27. }).catch((err: BusinessError) => {
-28. console.error("failed: " + JSON.stringify(err));
-29. });
-30. tlsServer.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
-31. if (err) {
-32. console.error("getCertificate callback error = " + err);
-33. } else {
-34. const decoder = util.TextDecoder.create();
-35. const str = decoder.decodeToString(data.data);
-36. console.info("getCertificate callback: " + str);
-37. }
-38. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
+tlsServer.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
+  if (err) {
+    console.error("getCertificate callback error = " + err);
+  } else {
+    const decoder = util.TextDecoder.create();
+    const str = decoder.decodeToString(data.data);
+    console.info("getCertificate callback: " + str);
+  }
+});
 ```
 
 ### getCertificate10+
-
-PhonePC/2in1TabletTVWearable
 
 getCertificate():Promise<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>
 
 在TLSSocketServer通信连接之后，获取本地的数字证书，使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9368,54 +9017,52 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-6. let netAddress: socket.NetAddress = {
-7. address: '192.168.xx.xxx',
-8. port: 8080
-9. }
-10. let tlsSecureOptions: socket.TLSSecureOptions = {
-11. key: "xxxx",
-12. cert: "xxxx",
-13. ca: ["xxxx"],
-14. password: "xxxx",
-15. protocols: socket.Protocol.TLSv12,
-16. useRemoteCipherPrefer: true,
-17. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-18. cipherSuite: "AES256-SHA256"
-19. }
-20. let tlsConnectOptions: socket.TLSConnectOptions = {
-21. address: netAddress,
-22. secureOptions: tlsSecureOptions,
-23. ALPNProtocols: ["spdy/1", "http/1.1"]
-24. }
-25. tlsServer.listen(tlsConnectOptions).then(() => {
-26. console.info("listen callback success");
-27. }).catch((err: BusinessError) => {
-28. console.error("failed: " + JSON.stringify(err));
-29. });
-30. tlsServer.getCertificate().then((data: socket.X509CertRawData) => {
-31. const decoder = util.TextDecoder.create();
-32. const str = decoder.decodeToString(data.data);
-33. console.info("getCertificate: " + str);
-34. }).catch((err: BusinessError) => {
-35. console.error("failed" + err);
-36. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
+tlsServer.getCertificate().then((data: socket.X509CertRawData) => {
+  const decoder = util.TextDecoder.create();
+  const str = decoder.decodeToString(data.data);
+  console.info("getCertificate: " + str);
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ### getProtocol10+
-
-PhonePC/2in1TabletTVWearable
 
 getProtocol(callback: AsyncCallback<string>): void
 
 在TLSSocketServer通信连接成功之后，获取通信的协议版本，使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9438,53 +9085,51 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
-29. tlsServer.getProtocol((err: BusinessError, data: string) => {
-30. if (err) {
-31. console.error("getProtocol callback error = " + err);
-32. } else {
-33. console.info("getProtocol callback = " + data);
-34. }
-35. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
+tlsServer.getProtocol((err: BusinessError, data: string) => {
+  if (err) {
+    console.error("getProtocol callback error = " + err);
+  } else {
+    console.info("getProtocol callback = " + data);
+  }
+});
 ```
 
 ### getProtocol10+
-
-PhonePC/2in1TabletTVWearable
 
 getProtocol():Promise<string>
 
 在TLSSocketServer通信连接成功之后，获取通信的协议版本，使用Promise异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9506,51 +9151,49 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
-29. tlsServer.getProtocol().then((data: string) => {
-30. console.info(data);
-31. }).catch((err: BusinessError) => {
-32. console.error("failed" + err);
-33. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
+tlsServer.getProtocol().then((data: string) => {
+  console.info(data);
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<NetAddress>
 
 获取TLSSocketServer的本地Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 在TLSSocketServer通信连接成功之后，才可调用此方法。
 
@@ -9572,27 +9215,25 @@ getLocalAddress(): Promise<NetAddress>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. tlsServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
-6. console.info("Get success: " + JSON.stringify(localAddress));
-7. }).catch((err: BusinessError) => {
-8. console.error("Get failed, error: " + JSON.stringify(err));
-9. })
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+tlsServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
+  console.info("Get success: " + JSON.stringify(localAddress));
+}).catch((err: BusinessError) => {
+  console.error("Get failed, error: " + JSON.stringify(err));
+})
 ```
 
 ### on('connect')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'connect', callback: Callback<TLSSocketConnection>): void
 
 订阅TLSSocketServer的连接事件。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9613,49 +9254,47 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. tlsServer.on('connect', (data: socket.TLSSocketConnection) => {
-27. console.info(JSON.stringify(data));
-28. });
-29. }).catch((err: BusinessError) => {
-30. console.error("failed: " + JSON.stringify(err));
-31. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+  tlsServer.on('connect', (data: socket.TLSSocketConnection) => {
+    console.info(JSON.stringify(data));
+  });
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
 ```
 
 ### off('connect')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'connect', callback?: Callback<TLSSocketConnection>): void
 
 取消订阅TLSSocketServer的连接事件。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9678,54 +9317,52 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
 
-30. let callback = (data: socket.TLSSocketConnection) => {
-31. console.info('on connect message: ' + JSON.stringify(data));
-32. }
-33. tlsServer.on('connect', callback);
-34. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-35. tlsServer.off('connect', callback);
-36. tlsServer.off('connect');
+let callback = (data: socket.TLSSocketConnection) => {
+  console.info('on connect message: ' + JSON.stringify(data));
+}
+tlsServer.on('connect', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tlsServer.off('connect', callback);
+tlsServer.off('connect');
 ```
 
 ### on('error')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
 订阅TLSSocketServer连接的error事件。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9746,49 +9383,47 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
-29. tlsServer.on('error', (err: BusinessError) => {
-30. console.error("on error, err:" + JSON.stringify(err))
-31. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
+tlsServer.on('error', (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err))
+});
 ```
 
 ### off('error')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
 取消订阅TLSSocketServer连接的error事件。使用callback异步回调。
 
-说明
+**说明** 
 
 listen方法调用成功后，才可调用此方法。
 
@@ -9811,54 +9446,52 @@ listen方法调用成功后，才可调用此方法。
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed: " + JSON.stringify(err));
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed: " + JSON.stringify(err));
+});
 
-30. let callback = (err: BusinessError) => {
-31. console.error("on error, err:" + JSON.stringify(err));
-32. }
-33. tlsServer.on('error', callback);
-34. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-35. tlsServer.off('error', callback);
-36. tlsServer.off('error');
+let callback = (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err));
+}
+tlsServer.on('error', callback);
+// 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+tlsServer.off('error', callback);
+tlsServer.off('error');
 ```
 
 ### close20+
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
 TLSSocketServer停止监听并释放通过[listen](js-apis-socket.md#listen10-2)方法绑定的端口。使用Promise异步回调。
 
-说明
+**说明** 
 
 该方法不会关闭已有连接。如需关闭，请调用[TLSSocketConnection](js-apis-socket.md#tlssocketconnection10)的[close](js-apis-socket.md#close10-2)方法。
 
@@ -9883,50 +9516,48 @@ TLSSocketServer停止监听并释放通过[listen](js-apis-socket.md#listen10-2)
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.on('connect', (connection: socket.TLSSocketConnection) => {
-25. console.info("connection clientId: " + connection.clientId);
-26. // 逻辑处理
-27. tlsServer.close(); // 停止监听
-28. connection.close(); // 关闭当前连接
-29. });
-30. tlsServer.listen(tlsConnectOptions).then(() => {
-31. console.info("listen callback success");
-32. }).catch((err: BusinessError) => {
-33. console.error("listen failed: " + err.code);
-34. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.on('connect', (connection: socket.TLSSocketConnection) => {
+  console.info("connection clientId: " + connection.clientId);
+  // 逻辑处理
+  tlsServer.close(); // 停止监听
+  connection.close(); // 关闭当前连接
+});
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("listen failed: " + err.code);
+});
 ```
 
 ## TLSSocketConnection10+
 
-PhonePC/2in1TabletTVWearable
-
 TLSSocketConnection连接，即TLSSocket客户端与服务端的连接。在调用TLSSocketConnection的方法前，需要先获取TLSSocketConnection对象。
 
-说明
+**说明** 
 
 客户端与服务端成功建立连接后，才能通过返回的TLSSocketConnection对象调用相应的接口。
 
@@ -9939,8 +9570,6 @@ TLSSocketConnection连接，即TLSSocket客户端与服务端的连接。在调�
 | clientId | number | 否 | 否 | 客户端与TLSSocketServer建立连接的id。 |
 
 ### send10+
-
-PhonePC/2in1TabletTVWearable
 
 send(data: string | ArrayBuffer, callback: AsyncCallback<void>): void
 
@@ -9968,50 +9597,48 @@ send(data: string | ArrayBuffer, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-31. client.send('Hello, client!', (err: BusinessError) => {
-32. if (err) {
-33. console.error('send fail');
-34. return;
-35. }
-36. console.info('send success');
-37. });
-38. });
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.send('Hello, client!', (err: BusinessError) => {
+    if (err) {
+      console.error('send fail');
+      return;
+    }
+    console.info('send success');
+  });
+});
 ```
 
 ### send10+
-
-PhonePC/2in1TabletTVWearable
 
 send(data: string | ArrayBuffer): Promise<void>
 
@@ -10044,48 +9671,46 @@ send(data: string | ArrayBuffer): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-31. client.send('Hello, client!').then(() => {
-32. console.info('send success');
-33. }).catch((err: BusinessError) => {
-34. console.error('send fail');
-35. });
-36. });
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.send('Hello, client!').then(() => {
+    console.info('send success');
+  }).catch((err: BusinessError) => {
+    console.error('send fail');
+  });
+});
 ```
 
 ### close10+
-
-PhonePC/2in1TabletTVWearable
 
 close(callback: AsyncCallback<void>): void
 
@@ -10111,50 +9736,48 @@ close(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-31. client.close((err: BusinessError) => {
-32. if (err) {
-33. console.error('close fail');
-34. return;
-35. }
-36. console.info('close success');
-37. });
-38. });
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.close((err: BusinessError) => {
+    if (err) {
+      console.error('close fail');
+      return;
+    }
+    console.info('close success');
+  });
+});
 ```
 
 ### close10+
-
-PhonePC/2in1TabletTVWearable
 
 close(): Promise<void>
 
@@ -10179,47 +9802,45 @@ close(): Promise<void>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
-29. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-30. client.close().then(() => {
-31. console.info('close success');
-32. }).catch((err: BusinessError) => {
-33. console.error('close fail');
-34. });
-35. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.close().then(() => {
+    console.info('close success');
+  }).catch((err: BusinessError) => {
+    console.error('close fail');
+  });
+});
 ```
 
 ### getRemoteAddress10+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteAddress(callback: AsyncCallback<NetAddress>): void
 
@@ -10243,49 +9864,47 @@ getRemoteAddress(callback: AsyncCallback<NetAddress>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
-29. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-30. client.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
-31. if (err) {
-32. console.error('getRemoteAddress fail');
-33. return;
-34. }
-35. console.info('getRemoteAddress success:' + JSON.stringify(data));
-36. });
-37. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
+    if (err) {
+      console.error('getRemoteAddress fail');
+      return;
+    }
+    console.info('getRemoteAddress success:' + JSON.stringify(data));
+  });
+});
 ```
 
 ### getRemoteAddress10+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteAddress(): Promise<NetAddress>
 
@@ -10308,47 +9927,45 @@ getRemoteAddress(): Promise<NetAddress>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
-29. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-30. client.getRemoteAddress().then((data: socket.NetAddress) => {
-31. console.info('getRemoteAddress success:' + JSON.stringify(data));
-32. }).catch((err: BusinessError) => {
-33. console.error("failed" + err);
-34. });
-35. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getRemoteAddress().then((data: socket.NetAddress) => {
+    console.info('getRemoteAddress success:' + JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    console.error("failed" + err);
+  });
+});
 ```
 
 ### getRemoteCertificate10+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteCertificate(callback: AsyncCallback<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>): void
 
@@ -10372,52 +9989,50 @@ getRemoteCertificate(callback: AsyncCallback<[X509CertRawData](js-apis-socket.md
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-6. let netAddress: socket.NetAddress = {
-7. address: '192.168.xx.xxx',
-8. port: 8080
-9. }
-10. let tlsSecureOptions: socket.TLSSecureOptions = {
-11. key: "xxxx",
-12. cert: "xxxx",
-13. ca: ["xxxx"],
-14. password: "xxxx",
-15. protocols: socket.Protocol.TLSv12,
-16. useRemoteCipherPrefer: true,
-17. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-18. cipherSuite: "AES256-SHA256"
-19. }
-20. let tlsConnectOptions: socket.TLSConnectOptions = {
-21. address: netAddress,
-22. secureOptions: tlsSecureOptions,
-23. ALPNProtocols: ["spdy/1", "http/1.1"]
-24. }
-25. tlsServer.listen(tlsConnectOptions).then(() => {
-26. console.info("listen callback success");
-27. }).catch((err: BusinessError) => {
-28. console.error("failed" + err);
-29. });
-30. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-31. client.getRemoteCertificate((err: BusinessError, data: socket.X509CertRawData) => {
-32. if (err) {
-33. console.error("getRemoteCertificate callback error: " + err);
-34. } else {
-35. const decoder = util.TextDecoder.create();
-36. const str = decoder.decodeToString(data.data);
-37. console.info("getRemoteCertificate callback: " + str);
-38. }
-39. });
-40. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getRemoteCertificate((err: BusinessError, data: socket.X509CertRawData) => {
+    if (err) {
+      console.error("getRemoteCertificate callback error: " + err);
+    } else {
+      const decoder = util.TextDecoder.create();
+      const str = decoder.decodeToString(data.data);
+      console.info("getRemoteCertificate callback: " + str);
+    }
+  });
+});
 ```
 
 ### getRemoteCertificate10+
-
-PhonePC/2in1TabletTVWearable
 
 getRemoteCertificate():Promise<[X509CertRawData](js-apis-socket.md#x509certrawdata9)>
 
@@ -10440,50 +10055,48 @@ getRemoteCertificate():Promise<[X509CertRawData](js-apis-socket.md#x509certrawda
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { util } from '@kit.ArkTS';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { util } from '@kit.ArkTS';
 
-5. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-6. let netAddress: socket.NetAddress = {
-7. address: '192.168.xx.xxx',
-8. port: 8080
-9. }
-10. let tlsSecureOptions: socket.TLSSecureOptions = {
-11. key: "xxxx",
-12. cert: "xxxx",
-13. ca: ["xxxx"],
-14. password: "xxxx",
-15. protocols: socket.Protocol.TLSv12,
-16. useRemoteCipherPrefer: true,
-17. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-18. cipherSuite: "AES256-SHA256"
-19. }
-20. let tlsConnectOptions: socket.TLSConnectOptions = {
-21. address: netAddress,
-22. secureOptions: tlsSecureOptions,
-23. ALPNProtocols: ["spdy/1", "http/1.1"]
-24. }
-25. tlsServer.listen(tlsConnectOptions).then(() => {
-26. console.info("listen callback success");
-27. }).catch((err: BusinessError) => {
-28. console.error("failed" + err);
-29. });
-30. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-31. client.getRemoteCertificate().then((data: socket.X509CertRawData) => {
-32. const decoder = util.TextDecoder.create();
-33. const str = decoder.decodeToString(data.data);
-34. console.info("getRemoteCertificate success: " + str);
-35. }).catch((err: BusinessError) => {
-36. console.error("failed" + err);
-37. });
-38. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getRemoteCertificate().then((data: socket.X509CertRawData) => {
+    const decoder = util.TextDecoder.create();
+    const str = decoder.decodeToString(data.data);
+    console.info("getRemoteCertificate success: " + str);
+  }).catch((err: BusinessError) => {
+    console.error("failed" + err);
+  });
+});
 ```
 
 ### getCipherSuite10+
-
-PhonePC/2in1TabletTVWearable
 
 getCipherSuite(callback: AsyncCallback<Array<string>>): void
 
@@ -10509,49 +10122,47 @@ getCipherSuite(callback: AsyncCallback<Array<string>>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
-29. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-30. client.getCipherSuite((err: BusinessError, data: Array<string>) => {
-31. if (err) {
-32. console.error("getCipherSuite callback error = " + err);
-33. } else {
-34. console.info("getCipherSuite callback = " + data);
-35. }
-36. });
-37. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getCipherSuite((err: BusinessError, data: Array<string>) => {
+    if (err) {
+      console.error("getCipherSuite callback error = " + err);
+    } else {
+      console.info("getCipherSuite callback = " + data);
+    }
+  });
+});
 ```
 
 ### getCipherSuite10+
-
-PhonePC/2in1TabletTVWearable
 
 getCipherSuite(): Promise<Array<string>>
 
@@ -10576,47 +10187,45 @@ getCipherSuite(): Promise<Array<string>>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
-29. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-30. client.getCipherSuite().then((data: Array<string>) => {
-31. console.info('getCipherSuite success:' + JSON.stringify(data));
-32. }).catch((err: BusinessError) => {
-33. console.error("failed" + err);
-34. });
-35. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getCipherSuite().then((data: Array<string>) => {
+    console.info('getCipherSuite success:' + JSON.stringify(data));
+  }).catch((err: BusinessError) => {
+    console.error("failed" + err);
+  });
+});
 ```
 
 ### getSignatureAlgorithms10+
-
-PhonePC/2in1TabletTVWearable
 
 getSignatureAlgorithms(callback: AsyncCallback<Array<string>>): void
 
@@ -10640,49 +10249,47 @@ getSignatureAlgorithms(callback: AsyncCallback<Array<string>>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
-29. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-30. client.getSignatureAlgorithms((err: BusinessError, data: Array<string>) => {
-31. if (err) {
-32. console.error("getSignatureAlgorithms callback error = " + err);
-33. } else {
-34. console.info("getSignatureAlgorithms callback = " + data);
-35. }
-36. });
-37. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getSignatureAlgorithms((err: BusinessError, data: Array<string>) => {
+    if (err) {
+      console.error("getSignatureAlgorithms callback error = " + err);
+    } else {
+      console.info("getSignatureAlgorithms callback = " + data);
+    }
+  });
+});
 ```
 
 ### getSignatureAlgorithms10+
-
-PhonePC/2in1TabletTVWearable
 
 getSignatureAlgorithms(): Promise<Array<string>>
 
@@ -10705,53 +10312,51 @@ getSignatureAlgorithms(): Promise<Array<string>>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
-29. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-30. client.getSignatureAlgorithms().then((data: Array<string>) => {
-31. console.info("getSignatureAlgorithms success" + data);
-32. }).catch((err: BusinessError) => {
-33. console.error("failed" + err);
-34. });
-35. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getSignatureAlgorithms().then((data: Array<string>) => {
+    console.info("getSignatureAlgorithms success" + data);
+  }).catch((err: BusinessError) => {
+    console.error("failed" + err);
+  });
+});
 ```
 
 ### getLocalAddress12+
-
-PhonePC/2in1TabletTVWearable
 
 getLocalAddress(): Promise<NetAddress>
 
 获取TLSSocketConnection连接的本地Socket地址。使用Promise异步回调。
 
-说明
+**说明** 
 
 在TLSSocketServer通信连接成功之后，才可调用此方法。
 
@@ -10773,54 +10378,52 @@ getLocalAddress(): Promise<NetAddress>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-31. client.getLocalAddress().then((localAddress: socket.NetAddress) => {
-32. console.info("Family IP Port: " + JSON.stringify(localAddress));
-33. }).catch((err: BusinessError) => {
-34. console.error("TLS Client Get Family IP Port failed, error: " + JSON.stringify(err));
-35. })
-36. });
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.getLocalAddress().then((localAddress: socket.NetAddress) => {
+    console.info("Family IP Port: " + JSON.stringify(localAddress));
+  }).catch((err: BusinessError) => {
+    console.error("TLS Client Get Family IP Port failed, error: " + JSON.stringify(err));
+  })
+});
 ```
 
 ### getSocketFd23+
-
-PhonePC/2in1TabletTVWearable
 
 getSocketFd(): Promise<number>
 
 获取TLSSocketConnection连接的文件描述符。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 在TLSSocketServer通信连接成功之后，才可调用此方法。
 * 连接断开、Socket已关闭（如调用close后）等异常情况下调用本接口会返回-1。
@@ -10846,47 +10449,45 @@ getSocketFd(): Promise<number>
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen success");
-26. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-27. client.getSocketFd().then((fd: number) => {
-28. console.info(`Socket FD：${fd}`);
-29. }).catch((err: BusinessError) => {
-30. console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
-31. })
-32. });
-33. }).catch((err: BusinessError) => {
-34. console.error(`listen failed: ${JSON.stringify(err)}`);
-35. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen success");
+  tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+    client.getSocketFd().then((fd: number) => {
+      console.info(`Socket FD：${fd}`);
+    }).catch((err: BusinessError) => {
+      console.error(`getSocketFd fail: ${err.message}, errorCode: ${err.code}`);
+    })
+  });
+}).catch((err: BusinessError) => {
+  console.error(`listen failed: ${JSON.stringify(err)}`);
+});
 ```
 
 ### on('message')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
@@ -10909,54 +10510,52 @@ on(type: 'message', callback: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-31. client.on('message', (value: socket.SocketMessageInfo) => {
-32. let messageView = '';
-33. let uint8Array = new Uint8Array(value.message);
-34. for (let i: number = 0; i < value.message.byteLength; i++) {
-35. let messages = uint8Array[i];
-36. let message = String.fromCharCode(messages);
-37. messageView += message;
-38. }
-39. console.info('on message message: ' + JSON.stringify(messageView));
-40. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-41. });
-42. });
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.on('message', (value: socket.SocketMessageInfo) => {
+    let messageView = '';
+    let uint8Array = new Uint8Array(value.message);
+    for (let i: number = 0; i < value.message.byteLength; i++) {
+      let messages = uint8Array[i];
+      let message = String.fromCharCode(messages);
+      messageView += message;
+    }
+    console.info('on message message: ' + JSON.stringify(messageView));
+    console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+  });
+});
 ```
 
 ### off('message')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
@@ -10979,58 +10578,56 @@ off(type: 'message', callback?: Callback<SocketMessageInfo>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. let callback = (value: socket.SocketMessageInfo) => {
-31. let messageView = '';
-32. for (let i: number = 0; i < value.message.byteLength; i++) {
-33. let uint8Array = new Uint8Array(value.message)
-34. let messages = uint8Array[i]
-35. let message = String.fromCharCode(messages);
-36. messageView += message;
-37. }
-38. console.info('on message message: ' + JSON.stringify(messageView));
-39. console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
-40. }
-41. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-42. client.on('message', callback);
-43. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-44. client.off('message', callback);
-45. client.off('message');
-46. });
+let callback = (value: socket.SocketMessageInfo) => {
+  let messageView = '';
+  for (let i: number = 0; i < value.message.byteLength; i++) {
+    let uint8Array = new Uint8Array(value.message)
+    let messages = uint8Array[i]
+    let message = String.fromCharCode(messages);
+    messageView += message;
+  }
+  console.info('on message message: ' + JSON.stringify(messageView));
+  console.info('remoteInfo: ' + JSON.stringify(value.remoteInfo));
+}
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.on('message', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  client.off('message', callback);
+  client.off('message');
+});
 ```
 
 ### on('close')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'close', callback: Callback<void>): void
 
@@ -11053,45 +10650,43 @@ on(type: 'close', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
-29. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-30. client.on('close', () => {
-31. console.info("on close success")
-32. });
-33. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.on('close', () => {
+    console.info("on close success")
+  });
+});
 ```
 
 ### off('close')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'close', callback?: Callback<void>): void
 
@@ -11114,50 +10709,48 @@ off(type: 'close', callback?: Callback<void>): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. let callback = () => {
-31. console.info("on close success");
-32. }
-33. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-34. client.on('close', callback);
-35. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-36. client.off('close', callback);
-37. client.off('close');
-38. });
+let callback = () => {
+  console.info("on close success");
+}
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.on('close', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  client.off('close', callback);
+  client.off('close');
+});
 ```
 
 ### on('error')10+
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'error', callback: ErrorCallback): void
 
@@ -11180,46 +10773,44 @@ on(type: 'error', callback: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-31. client.on('error', (err: BusinessError) => {
-32. console.error("on error, err:" + JSON.stringify(err))
-33. });
-34. });
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.on('error', (err: BusinessError) => {
+    console.error("on error, err:" + JSON.stringify(err))
+  });
+});
 ```
 
 ### off('error')10+
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'error', callback?: ErrorCallback): void
 
@@ -11242,43 +10833,43 @@ off(type: 'error', callback?: ErrorCallback): void
 
 **示例：**
 
-```
-1. import { socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
-5. let netAddress: socket.NetAddress = {
-6. address: '192.168.xx.xxx',
-7. port: 8080
-8. }
-9. let tlsSecureOptions: socket.TLSSecureOptions = {
-10. key: "xxxx",
-11. cert: "xxxx",
-12. ca: ["xxxx"],
-13. password: "xxxx",
-14. protocols: socket.Protocol.TLSv12,
-15. useRemoteCipherPrefer: true,
-16. signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
-17. cipherSuite: "AES256-SHA256"
-18. }
-19. let tlsConnectOptions: socket.TLSConnectOptions = {
-20. address: netAddress,
-21. secureOptions: tlsSecureOptions,
-22. ALPNProtocols: ["spdy/1", "http/1.1"]
-23. }
-24. tlsServer.listen(tlsConnectOptions).then(() => {
-25. console.info("listen callback success");
-26. }).catch((err: BusinessError) => {
-27. console.error("failed" + err);
-28. });
+let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+let netAddress: socket.NetAddress = {
+  address: '192.168.xx.xxx',
+  port: 8080
+}
+let tlsSecureOptions: socket.TLSSecureOptions = {
+  key: "xxxx",
+  cert: ["xxxx"],
+  ca: ["xxxx"],
+  password: "xxxx",
+  protocols: socket.Protocol.TLSv12,
+  useRemoteCipherPrefer: true,
+  signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+  cipherSuite: "AES256-SHA256"
+}
+let tlsConnectOptions: socket.TLSConnectOptions = {
+  address: netAddress,
+  secureOptions: tlsSecureOptions,
+  ALPNProtocols: ["spdy/1", "http/1.1"]
+}
+tlsServer.listen(tlsConnectOptions).then(() => {
+  console.info("listen callback success");
+}).catch((err: BusinessError) => {
+  console.error("failed" + err);
+});
 
-30. let callback = (err: BusinessError) => {
-31. console.error("on error, err:" + JSON.stringify(err));
-32. }
-33. tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
-34. client.on('error', callback);
-35. // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-36. client.off('error', callback);
-37. client.off('error');
-38. });
+let callback = (err: BusinessError) => {
+  console.error("on error, err:" + JSON.stringify(err));
+}
+tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+  client.on('error', callback);
+  // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+  client.off('error', callback);
+  client.off('error');
+});
 ```

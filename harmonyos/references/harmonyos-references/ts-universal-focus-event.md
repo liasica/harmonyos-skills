@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 焦点事件
 category: harmonyos-references
-scraped_at: 2026-04-29T13:51:08+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:bbd98a1b3e61ae63bf3c5eae2431e07d79e632cf796cdd01c85183c961868007
+scraped_at: 2026-09-02T15:00:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:fe66edfb77cd38255fd67897d21372628902aa7a15743834bcf0337dd4820972
 ---
 
 焦点事件指页面焦点在可获焦组件间移动时触发的事件，组件可使用焦点事件来处理相关逻辑。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 不支持嵌套滚动组件场景按键走焦。
@@ -19,8 +19,6 @@ content_hash: sha256:bbd98a1b3e61ae63bf3c5eae2431e07d79e632cf796cdd01c85183c9618
 * 焦点开发及组件获焦能力参考[支持焦点处理](../harmonyos-guides/arkts-common-events-focus-event.md)。
 
 ## onFocus
-
-PhonePC/2in1TabletTVWearable
 
 onFocus(event: () => void): T
 
@@ -40,11 +38,9 @@ onFocus(event: () => void): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，可用于链式调用。 |
 
 ## onBlur
-
-PhonePC/2in1TabletTVWearable
 
 onBlur(event:() => void): T
 
@@ -64,65 +60,60 @@ onBlur(event:() => void): T
 
 | 类型 | 说明 |
 | --- | --- |
-| T | 返回当前组件。 |
+| T | 返回当前组件，可用于链式调用。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
 该示例展示了组件获焦和失焦的情况，按钮获焦和失焦时会改变按钮的颜色。
 
-```
-1. // xxx.ets
-2. @Entry
-3. @Component
-4. struct FocusEventExample {
-5. @State oneButtonColor: string = '#0066FF'
-6. @State twoButtonColor: string = '#87CEFA'
-7. @State threeButtonColor: string = '#90EE90'
+```ts
+// xxx.ets
+@Entry
+@Component
+struct FocusEventExample {
+  @State oneButtonColor: string = '#0066FF'
+  @State twoButtonColor: string = '#87CEFA'
+  @State threeButtonColor: string = '#90EE90'
 
-9. build() {
-10. Column({ space: 20 }) {
-11. // 通过外接键盘的Tab键激活焦点，并使用上下键让焦点在三个按钮间移动，按钮获焦时颜色变化，失焦时变回原背景色
-12. Button('First Button')
-13. .backgroundColor(this.oneButtonColor)
-14. .width(260)
-15. .height(70)
-16. .fontColor(Color.Black)
-17. .focusable(true)
-18. .onFocus(() => {
-19. this.oneButtonColor = '#FFFFFF'
-20. })
-21. .onBlur(() => {
-22. this.oneButtonColor = '#0066FF'
-23. })
-24. Button('Second Button')
-25. .backgroundColor(this.twoButtonColor)
-26. .width(260)
-27. .height(70)
-28. .fontColor(Color.Black)
-29. .focusable(true)
-30. .onFocus(() => {
-31. this.twoButtonColor = '#FFFFFF'
-32. })
-33. .onBlur(() => {
-34. this.twoButtonColor = '#87CEFA'
-35. })
-36. Button('Third Button')
-37. .backgroundColor(this.threeButtonColor)
-38. .width(260)
-39. .height(70)
-40. .fontColor(Color.Black)
-41. .focusable(true)
-42. .onFocus(() => {
-43. this.threeButtonColor = '#FFFFFF'
-44. })
-45. .onBlur(() => {
-46. this.threeButtonColor = '#90EE90'
-47. })
-48. }.width('100%').margin({ top: 20 })
-49. }
-50. }
+  build() {
+    Column({ space: 20 }) {
+      // 当焦点在三个按钮间移动，按钮获焦时颜色变化，失焦时变回原背景色
+      Button('First Button')
+        .backgroundColor(this.oneButtonColor)
+        .width(260)
+        .height(70)
+        .fontColor(Color.Black)
+        .onFocus(() => {
+          this.oneButtonColor = '#FFFFFF';
+        })
+        .onBlur(() => {
+          this.oneButtonColor = '#0066FF';
+        })
+      Button('Second Button')
+        .backgroundColor(this.twoButtonColor)
+        .width(260)
+        .height(70)
+        .fontColor(Color.Black)
+        .onFocus(() => {
+          this.twoButtonColor = '#FFFFFF';
+        })
+        .onBlur(() => {
+          this.twoButtonColor = '#87CEFA';
+        })
+      Button('Third Button')
+        .backgroundColor(this.threeButtonColor)
+        .width(260)
+        .height(70)
+        .fontColor(Color.Black)
+        .onFocus(() => {
+          this.threeButtonColor = '#FFFFFF';
+        })
+        .onBlur(() => {
+          this.threeButtonColor = '#90EE90';
+        })
+    }.width('100%').margin({ top: 20 })
+  }
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/dIsz70yZTb2NEr06GcJDBQ/zh-cn_image_0000002589325859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/DbewpJ2OSkG0N50okiqB5w/zh-cn_image_0000002706675662.png)

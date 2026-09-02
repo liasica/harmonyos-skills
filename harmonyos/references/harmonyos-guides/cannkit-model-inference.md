@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: 模型推理
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 模型推理
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:40:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fa5b05a4de6beb0dba73b345d60e1b05da0ed638e5f346fd278940a53f965cdb
+scraped_at: 2026-09-02T14:50:34+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:85ea09872f6c2a5cdb2c2ab85f6f4b4cbbbbf22eb641cef7595e60ebe3511a7c
 ---
 
 ## 基本概念
@@ -16,11 +16,11 @@ content_hash: sha256:fa5b05a4de6beb0dba73b345d60e1b05da0ed638e5f346fd278940a53f9
 
 模型推理的主要开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/8SrxQ3WdSiKtY_bAxUR__w/zh-cn_image_0000002589325591.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/vmdsnoeFQn6Ta2-v4ZwLYQ/zh-cn_image_0000002706675346.png)
 
 ## 接口说明
 
-以下接口为主要流程接口，如要使用更丰富的编译、加载和执行时的配置，请参见[API参考](../harmonyos-references/cannkit.md)。
+以下接口为主要流程接口，如要使用更丰富的编译、加载和执行时的配置，请参见[API参考](../harmonyos-references/capi-neural-network-core-h.md)。
 
 **表1** CANN Kit模型推理相关接口功能介绍
 

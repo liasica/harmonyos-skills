@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asse
 title: Asset_Blob
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > C API > 结构体 > Asset_Blob
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:47+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:86f144dbc95a76d42d62ca9219f3f51ff041b3856059106b4f1d06a11565c071
+scraped_at: 2026-09-02T15:01:40+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2a524592c28ba3eafa2bb2fccc955f4faa96af0644f7fd61d9b7064c033275ea
 ---
 
-```
-1. typedef struct {...} Asset_Blob
+```c
+typedef struct {...} Asset_Blob
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 二进制数组类型，即不定长的字节数组。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

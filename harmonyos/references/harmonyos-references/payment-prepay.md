@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 预下单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 基础支付 > 预下单
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:42+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:2680305bd7a0050175e12385935e29d904750b92d7de89bb7edacc485ba81f9b
+scraped_at: 2026-09-02T14:53:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b26c4df09bb4565d109cd7634e51ebb5d2d618969596c36867fb6f57755bb503
 ---
 
 ## 功能介绍
@@ -58,22 +58,22 @@ content_hash: sha256:2680305bd7a0050175e12385935e29d904750b92d7de89bb7edacc485ba
 
 ## 请求示例
 
-```
-1. POST /api/v2/aggr/preorder/create/app HTTP/1.1
-2. Content-Type: application/json;charset=UTF-8
-3. PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+********************lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/*******************asPj10iUIFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
-4. Accept: application/json
-5. {
-6. "appId": "5765880207853***",
-7. "mercOrderNo": "czl00120240705***",
-8. "mercNo": "10132120***",
-9. "tradeSummary": "xx商城-手机",
-10. "totalAmount": 2,
-11. "currency": "CNY",
-12. "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
-13. "payload": "example-payload",
-14. "expireTime": "2023-03-28T17:50:12.000+0800"
-15. }
+```json
+POST /api/v2/aggr/preorder/create/app HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+PayMercAuth: {"callerId":"10132120***","traceId":"202305151026422776499","time":1684117602555,"authId":"120291744647139***","headerSign":"u+H1Oe3fXV9mGCES89XA7tSjp8+********************lOG7eAFfwjEWJu5JyvY5KunSeE6DiKs=","bodySign":"yWDtXOBqDoItPgHmF57L6U5G7F/*******************asPj10iUIFeaszpiRT2aQDaqLGaxvta6J5UxIUmAp+wGdV/juGEvQ="}
+Accept: application/json
+{
+  "appId": "5765880207853***",
+  "mercOrderNo": "czl00120240705***",
+  "mercNo": "10132120***",
+  "tradeSummary": "xx商城-手机",
+  "totalAmount": 2,
+  "currency": "CNY",
+  "callbackUrl": "https://www.xxxxxx.com/hw/pay/callback",
+  "payload": "example-payload",
+  "expireTime": "2023-03-28T17:50:12.000+0800"
+}
 ```
 
 ## 响应参数
@@ -98,16 +98,16 @@ content_hash: sha256:2680305bd7a0050175e12385935e29d904750b92d7de89bb7edacc485ba
 
 ## 响应示例
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: application/json; charset=UTF-8
-3. {
-4. "resultCode": "000000",
-5. "resultDesc": "Success.",
-6. "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
-7. "prepayId": "12407091401520894056950***",
-8. "mercOrderNo": "czl00120240705***"
-9. }
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+{
+  "resultCode": "000000",
+  "resultDesc": "Success.",
+  "sign": "MEQCIEIWzdpziRyTi8vhwWHFu********************0YAMabeCgTDG77e+2XJItvq/ZkIcCN5/B20pQ==",
+  "prepayId": "12407091401520894056950***",
+  "mercOrderNo": "czl00120240705***"
+}
 ```
 
 ## 错误码

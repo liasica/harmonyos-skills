@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/serviceco
 title: ServiceCollaborationCallback
 breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > C API > 头文件和结构体 > 结构体 > ServiceCollaborationCallback
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:17+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1cf807de9ead8e599b1f7a935e2e798c886f1b583af8e366701871a3f3f97925
+scraped_at: 2026-09-02T15:01:59+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e2e426c5051030812218d469abe2fb76e23cc76a7f2ed94e6de0797724e33b7d
 ---
 
 ## 概述
 
-PhonePC/2in1TabletTV
-
-传给[HMS\_ServiceCollaboration\_StartCollaboration](servicecollaboration-capi-module.md#hms_servicecollaboration_startcollaboration)的回调方法。
+传给[HMS\_ServiceCollaboration\_StartCollaboration](servicecollaboration-capi-module.md#hms_servicecollaboration_startcollaboration)或[HMS\_ServiceCollaboration\_StartCollaborationV2](servicecollaboration-capi-module.md#hms_servicecollaboration_startcollaborationv2)的回调方法，用来传递跨设备互通的状态信息。
 
 **起始版本：** 5.0.0(12)
 
@@ -22,11 +20,7 @@ PhonePC/2in1TabletTV
 
 ## 汇总
 
-PhonePC/2in1TabletTV
-
 ### 成员变量
-
-PhonePC/2in1TabletTV
 
 | 名称 | 描述 |
 | --- | --- |
@@ -35,14 +29,10 @@ PhonePC/2in1TabletTV
 
 ## 结构体成员变量说明
 
-PhonePC/2in1TabletTV
-
 ### OnDataCallback
 
-PhonePC/2in1TabletTV
-
-```
-1. int32_t(* ServiceCollaborationCallback::OnDataCallback) (ServiceCollaborationEventCode code, ServiceCollaborationDataType dataType, uint32_t dataSize, char *data)
+```c
+int32_t(* ServiceCollaborationCallback::OnDataCallback) (ServiceCollaborationEventCode code, ServiceCollaborationDataType dataType, uint32_t dataSize, char *data)
 ```
 
 **描述**
@@ -55,15 +45,13 @@ PhonePC/2in1TabletTV
 | --- | --- |
 | [ServiceCollaborationEventCode](servicecollaboration-capi-module.md#servicecollaborationeventcode-1) code | 错误码。 |
 | [ServiceCollaborationDataType](servicecollaboration-capi-module.md#servicecollaborationdatatype-1) dataType | 回传数据类型。 |
-| uint32\_t dataSize | 数据大小，单位是字节。 |
+| uint32\_t dataSize | 数据大小，单位：byte。 |
 | char \*data | 数据。 |
 
 ### OnEvent
 
-PhonePC/2in1TabletTV
-
-```
-1. int32_t(* ServiceCollaborationCallback::OnEvent) (ServiceCollaborationEventCode code, uint32_t extraCode)
+```c
+int32_t(* ServiceCollaborationCallback::OnEvent) (ServiceCollaborationEventCode code, uint32_t extraCode)
 ```
 
 **描述**

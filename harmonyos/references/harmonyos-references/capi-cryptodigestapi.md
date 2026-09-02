@@ -3,22 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: CryptoDigestApi
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 模块 > CryptoDigestApi
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:55+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:5000d8ba7829660719f9b4a80c499c3d32d5436b5b345c72bbecd8cf31f022c3
+scraped_at: 2026-09-02T14:52:07+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cf5045b7c60f11abbdb556bd500214189161ff2e9a17567f0daf82f530d1b84b
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 为应用提供摘要算法接口。
 
 **起始版本：** 12
 
 ## 文件汇总
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

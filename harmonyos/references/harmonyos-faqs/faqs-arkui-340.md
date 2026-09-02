@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-340
 title: 如何判断当前设备是手机还是折叠屏手机
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何判断当前设备是手机还是折叠屏手机
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何判断当前设备是手机还是折叠屏手机
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:26:27+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:22+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:892850fa2eb0742c451230562f1f671c68978a907e5eb5dd4ba4aa4091318703
 ---
 

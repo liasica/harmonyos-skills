@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-34
 title: 多个UIAbility是运行在一个进程还是多个进程中？三方应用是否支持应用运行在多个进程下？主进程结束了，会影响子进程的运行吗
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 多个UIAbility是运行在一个进程还是多个进程中？三方应用是否支持应用运行在多个进程下？主进程结束了，会影响子进程的运行吗
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:43+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:16+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:f1bf41d83e91cff043682bf43bea55816a7ad1bce13e30bc312e449b0deb1e95
 ---
 

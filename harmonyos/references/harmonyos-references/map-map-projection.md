@@ -1,24 +1,20 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-projection
-title: Projection
-breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Projection
+title: Interface (Projection)
+breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (Projection)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:14+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:e513cf8ddd859cf3134b3502c801f263c73a441f746d72b8ed06ab3550edcdac
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a24a376fafaae1a2c225ac70c01e6f3280ac19dbce8eed69539c668c42d3a046
 ---
 
 ## 导入模块
 
-PhonePC/2in1TabletWearable
-
-```
-1. import { map, mapCommon } from '@kit.MapKit';
+```typescript
+import { map, mapCommon } from '@kit.MapKit';
 ```
 
 ## Projection
-
-PhonePC/2in1TabletWearable
 
 用于在屏幕坐标和经纬度之间进行转换，在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[getProjection](map-map-mapcomponentcontroller.md#getprojection)方法时会返回该类型的实例。
 
@@ -32,13 +28,11 @@ PhonePC/2in1TabletWearable
 
 **示例：**
 
-```
-1. let projection: map.Projection = this.mapController?.getProjection();
+```typescript
+let projection: map.Projection = this.mapController?.getProjection();
 ```
 
 ### fromScreenLocation
-
-PhonePC/2in1TabletWearable
 
 fromScreenLocation(point: mapCommon.MapPoint): mapCommon.LatLng
 
@@ -56,7 +50,7 @@ fromScreenLocation(point: mapCommon.MapPoint): mapCommon.LatLng
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| point | [mapCommon.MapPoint](map-common.md#mappoint) | 是 | 屏幕上的坐标点，单位：px，异常值不处理。 |
+| point | [mapCommon.MapPoint](map-common.md#mappoint) | 是 | 屏幕上的坐标点，异常值不处理。 |
 
 **返回值：**
 
@@ -66,17 +60,52 @@ fromScreenLocation(point: mapCommon.MapPoint): mapCommon.LatLng
 
 **示例：**
 
+```typescript
+let point: mapCommon.MapPoint = {
+  positionX: 10,
+  positionY: 10
+};
+let latLng: mapCommon.LatLng = projection.fromScreenLocation(point);
 ```
-1. let point: mapCommon.MapPoint = {
-2. positionX: 10,
-3. positionY: 10
-4. };
-5. let latLng: mapCommon.LatLng = projection.fromScreenLocation(point);
+
+### fromScreenLocation
+
+fromScreenLocation(point: mapCommon.MapPoint, altitude: number): mapCommon.LatLng
+
+将屏幕像素点坐标转换成经纬度坐标。屏幕位置是以相对于地图界面的左上角的屏幕像素指定的。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| **参数名** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| point | [mapCommon.MapPoint](map-common.md#mappoint) | 是 | 屏幕上的坐标点，异常值不处理。 |
+| altitude | number | 是 | 相对于地面的高度，单位：m，默认值：0，异常值按默认值处理。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [mapCommon.LatLng](map-common.md#latlng) | 经纬度坐标。 |
+
+**示例：**
+
+```typescript
+let point: mapCommon.MapPoint = {
+  positionX: 10,
+  positionY: 10
+};
+let latLng: mapCommon.LatLng = projection.fromScreenLocation(point, 100);
 ```
 
 ### toScreenLocation
-
-PhonePC/2in1TabletWearable
 
 toScreenLocation(position: mapCommon.LatLng): mapCommon.MapPoint
 
@@ -100,20 +129,56 @@ toScreenLocation(position: mapCommon.LatLng): mapCommon.MapPoint
 
 | 类型 | 说明 |
 | --- | --- |
-| [mapCommon.MapPoint](map-common.md#mappoint) | 屏幕上的坐标点，单位：px。 |
+| [mapCommon.MapPoint](map-common.md#mappoint) | 屏幕上的坐标点。 |
 
 **示例：**
 
+```typescript
+let position: mapCommon.LatLng = {
+  latitude: 31.984,
+  longitude: 118.766
+}
+let mapPoint: mapCommon.MapPoint = projection.toScreenLocation(position)
 ```
-1. let position: mapCommon.MapPoint = projection.toScreenLocation({
-2. latitude: 31.984,
-3. longitude: 118.766
-4. });
+
+### toScreenLocation
+
+toScreenLocation(position: mapCommon.LatLng, altitude: number): mapCommon.MapPoint
+
+将经纬度坐标转换为屏幕上的对应点坐标。该屏幕坐标是相对于地图左上角而非整个屏幕的像素点坐标。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Map.Core
+
+**起始版本：** 26.0.0
+
+**参数：**
+
+| **参数名** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| position | [mapCommon.LatLng](map-common.md#latlng) | 是 | 经纬度坐标，异常值不处理。 |
+| altitude | number | 是 | 相对于地面的高度，单位：m，默认值：0，异常值按默认值处理。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [mapCommon.MapPoint](map-common.md#mappoint) | 屏幕上的坐标点。 |
+
+**示例：**
+
+```typescript
+let position: mapCommon.LatLng = {
+  latitude: 31.984,
+  longitude: 118.766
+}
+let mapPoint: mapCommon.MapPoint = projection.toScreenLocation(position, 100)
 ```
 
 ### getVisibleRegion
-
-PhonePC/2in1TabletWearable
 
 getVisibleRegion(): mapCommon.VisibleRegion
 
@@ -135,13 +200,11 @@ getVisibleRegion(): mapCommon.VisibleRegion
 
 **示例：**
 
-```
-1. let visibleRegion: mapCommon.VisibleRegion = projection.getVisibleRegion();
+```typescript
+let visibleRegion: mapCommon.VisibleRegion = projection.getVisibleRegion();
 ```
 
 ### getMapBounds
-
-PhonePC/2in1TabletWearable
 
 getMapBounds(center: mapCommon.LatLng, zoom: number): mapCommon.LatLngBounds
 
@@ -170,10 +233,10 @@ getMapBounds(center: mapCommon.LatLng, zoom: number): mapCommon.LatLngBounds
 
 **示例：**
 
-```
-1. let position: mapCommon.LatLng = {
-2. latitude: 31.98,
-3. longitude: 118.766
-4. };
-5. let result: mapCommon.LatLngBounds = projection.getMapBounds(position, 10);
+```typescript
+let position: mapCommon.LatLng = {
+  latitude: 31.98,
+  longitude: 118.766
+};
+let result: mapCommon.LatLngBounds = projection.getMapBounds(position, 10);
 ```

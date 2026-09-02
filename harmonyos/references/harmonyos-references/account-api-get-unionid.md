@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 通过OpenID获取UnionID
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力 > 通过OpenID获取UnionID
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1d3b36b31ba3896cff5dfeb2c9ff82a8e84183a13c849e4e3a1f2a02256e5651
+scraped_at: 2026-09-02T15:02:50+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8095e8493db76ef84bb375fb09ef8bf19e722969a6308743d813daf05db7e505
 ---
 
-注意
+**注意** 
 
 为了更安全的网络访问，请务必使用TLS1.2协议及规定内的加密套件。若使用协议是TLS1.0、TLS1.1或规定外的加密套件，可能无法正常访问华为账号服务。
 
@@ -57,12 +57,12 @@ content_hash: sha256:1d3b36b31ba3896cff5dfeb2c9ff82a8e84183a13c849e4e3a1f2a02256
 
 请通过POST方式调用，示例如下：
 
-```
-1. POST /rest.php?nsp_svc=huawei.oauth2.app.openIdToUnionId HTTP/1.1
-2. Host: oauth-login.cloud.huawei.com
-3. Content-Type: application/x-www-form-urlencoded
+```http
+POST /rest.php?nsp_svc=huawei.oauth2.app.openIdToUnionId HTTP/1.1
+Host: oauth-login.cloud.huawei.com
+Content-Type: application/x-www-form-urlencoded
 
-5. open_id=<open_id>&access_token=<access_token>
+open_id=<open_id>&access_token=<access_token>
 ```
 
 ## 响应参数
@@ -92,66 +92,66 @@ content_hash: sha256:1d3b36b31ba3896cff5dfeb2c9ff82a8e84183a13c849e4e3a1f2a02256
 
 ### 请求成功时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: text/plain;charset=utf-8
+```json
+HTTP/1.1 200 OK
+Content-Type: text/plain;charset=utf-8
 
-4. {"union_id":"AQAxrB1HNA*****n-IfWRSUVq2M7xU"}
+{"union_id":"AQAxrB1HNA*****n-IfWRSUVq2M7xU"}
 ```
 
 ### 请求失败时
 
-```
-1. HTTP/1.1 200 OK
-2. Content-Type: text/plain;charset=utf-8
-3. NSP_STATUS: 102
+```json
+HTTP/1.1 200 OK
+Content-Type: text/plain;charset=utf-8
+NSP_STATUS: 102
 
-5. {
-6. "error": "invalid session"
-7. }
+{
+    "error": "invalid session"
+}
 ```
 
 ## 示例代码
 
 Java示例代码如下，运行前需要进行[示例代码环境配置](account-api-common.md#示例代码环境配置)（请将此示例代码与工具类CallUtils放于同一路径下，如不在同一路径，请手动添加import）
 
-```
-1. import com.alibaba.fastjson2.JSONObject;
-2. import org.apache.http.NameValuePair;
-3. import org.apache.http.client.entity.UrlEncodedFormEntity;
-4. import org.apache.http.client.methods.HttpPost;
-5. import org.apache.http.message.BasicNameValuePair;
-6. import java.io.IOException;
-7. import java.util.ArrayList;
-8. import java.util.List;
+```java
+import com.alibaba.fastjson2.JSONObject;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.message.BasicNameValuePair;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-10. /**
-11. * 通过OpenID获取UnionID
-12. */
-13. public class OpenIdToUnionIdDemo {
-14. public static void main(String[] args) throws IOException {
-15. // 通过OpenID获取UnionID的接口URL
-16. String url = "https://oauth-login.cloud.huawei.com/rest.php?nsp_svc=huawei.oauth2.app.openIdToUnionId";
-17. // 替换为实际获取到的应用级凭证Access Token
-18. String accessToken = "<Access Token>";
-19. // 替换为获取到的OpenID
-20. String openId = "<OpenID>";
-21. JSONObject result = openIdToUnionId(url, accessToken, openId);
-22. // 解析获取union_id
-23. String unionId = result.getString("union_id");
-24. }
+/**
+ * 通过OpenID获取UnionID
+ */
+public class OpenIdToUnionIdDemo {
+    public static void main(String[] args) throws IOException {
+        // 通过OpenID获取UnionID的接口URL
+        String url = "https://oauth-login.cloud.huawei.com/rest.php?nsp_svc=huawei.oauth2.app.openIdToUnionId";
+        // 替换为实际获取到的应用级凭证Access Token
+        String accessToken = "<Access Token>";
+        // 替换为获取到的OpenID
+        String openId = "<OpenID>";
+        JSONObject result = openIdToUnionId(url, accessToken, openId);
+        // 解析获取union_id
+        String unionId = result.getString("union_id");
+    }
 
-26. private static JSONObject openIdToUnionId(String url, String accessToken, String openId) throws IOException {
-27. HttpPost httpPost = new HttpPost(url);
-28. List<NameValuePair> request = new ArrayList<>();
-29. request.add(new BasicNameValuePair("access_token", accessToken));
-30. request.add(new BasicNameValuePair("open_id", openId));
-31. httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-32. httpPost.setEntity(new UrlEncodedFormEntity(request));
-33. // 使用默认异常处理逻辑，自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
-34. return CallUtils.toJsonObject(CallUtils.remoteCall(httpPost));
-35. }
-36. }
+    private static JSONObject openIdToUnionId(String url, String accessToken, String openId) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        List<NameValuePair> request = new ArrayList<>();
+        request.add(new BasicNameValuePair("access_token", accessToken));
+        request.add(new BasicNameValuePair("open_id", openId));
+        httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpPost.setEntity(new UrlEncodedFormEntity(request));
+        // 使用默认异常处理逻辑，自定义异常处理请使用api CallUtils#remoteCall(HttpUriRequest, BiFunction<CloseableHttpResponse,String,E>)
+        return CallUtils.toJsonObject(CallUtils.remoteCall(httpPost));
+    }
+}
 ```
 
 ## 错误码
@@ -169,7 +169,7 @@ Java示例代码如下，运行前需要进行[示例代码环境配置](account
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 590 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 
-说明
+**说明** 
 
 Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 
@@ -182,4 +182,4 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | 501 | 服务分发异常。 | - 检查请求URL中nsp\_svc是否正确  - 若确认请求URL与文档一致，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 1302 | 接口流控。 | 业务调用频率过高，单应用调用并发请低于100TPS。 |
 | 31204 | access\_token已失效。 | 通过[获取应用级凭证](account-api-obtain-app-token.md)获取的access\_token不会出现此错误。请严格按照接口入参要求，使用[获取应用级凭证](account-api-obtain-app-token.md)方式获取access\_token并重试。 |
-| 150028 | open\_id参数为空或超长。 | 请检查open\_id是否为空或者超过256的字符长度。具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md) |
+| 150028 | open\_id参数非法。 | open\_id参数非法，可能原因：  - open\_id参数为空。  - open\_id参数格式错误，具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。 |

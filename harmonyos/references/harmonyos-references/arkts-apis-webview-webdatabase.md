@@ -3,14 +3,59 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebDataBase)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebDataBase)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:04+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c628afc47c42adf72c9926a1c2afea1833866b073bb2d76fdb7811b0b12993e8
+scraped_at: 2026-09-02T15:01:26+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:8b933ddf5cbeaeb781bfa56f0ecf14ecd1be15a6b8a70ec16d5182b46742ae61
 ---
 
 Web组件数据库管理对象。
 
-说明
+## 概述
+
+WebDataBase是Web组件提供的数据库管理类，用于管理Web组件中的HTTP身份验证凭据，包括凭据的保存、查询、判断和删除操作。适用于需要自动管理Web应用HTTP身份验证凭据的场景，能够解决用户频繁输入用户名密码的问题，提升用户体验并减少重复操作。
+
+### 基本概念
+
+* **HTTP身份验证凭据**：包含用户名和密码的认证信息，用于访问受保护的HTTP资源。
+* **主机和认证域**：凭据应用的目标主机和认证域。
+* **同步方法**：WebDataBase提供的所有方法均为同步方法，调用后立即返回结果。
+
+### 关键设计
+
+WebDataBase采用静态类设计：
+
+1. 提供静态方法管理HTTP身份验证凭据。
+2. 支持凭据的保存、查询和删除操作。
+3. 所有方法都需要先加载Web组件才能使用。
+
+### 主要方法
+
+| 方法名 | 说明 |
+| --- | --- |
+| [getHttpAuthCredentials](arkts-apis-webview-webdatabase.md#gethttpauthcredentials) | 检索给定主机和域的HTTP身份验证凭据。用于在需要重新登录或验证用户身份时获取已保存的凭据信息，例如应用重启后自动填充登录表单、访问需要身份验证的受保护网页等场景。 |
+| [saveHttpAuthCredentials](arkts-apis-webview-webdatabase.md#savehttpauthcredentials) | 保存给定主机和域的HTTP身份验证凭据。用于用户首次成功登录后保存凭据，以便下次访问相同网站时能够自动登录或无需重复输入认证信息，提升用户体验。 |
+| [existHttpAuthCredentials](arkts-apis-webview-webdatabase.md#existhttpauthcredentials) | 判断是否存在任何已保存的HTTP身份验证凭据。用于在应用启动时检查是否已保存凭据以决定是否显示登录页面，或在用户访问受保护资源前判断是否需要重新认证。 |
+| [deleteHttpAuthCredentials](arkts-apis-webview-webdatabase.md#deletehttpauthcredentials) | 清除所有已保存的HTTP身份验证凭据。用于用户退出登录、切换账户或清除应用数据时删除所有凭据信息，保护用户隐私和账户安全。 |
+
+### 使用示例
+
+```ts
+import { webview } from '@kit.ArkWeb';
+
+// 保存HTTP身份验证凭据
+webview.WebDataBase.saveHttpAuthCredentials('www.example.com', 'protected', 'username', 'password');
+
+// 检索凭据
+let credentials = webview.WebDataBase.getHttpAuthCredentials('www.example.com', 'protected');
+
+// 检查是否存在凭据
+let exists = webview.WebDataBase.existHttpAuthCredentials();
+
+// 删除所有凭据
+webview.WebDataBase.deleteHttpAuthCredentials();
+```
+
+**说明** 
 
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Class首批接口从API version 9开始支持。
@@ -19,15 +64,11 @@ Web组件数据库管理对象。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { webview } from '@kit.ArkWeb';
+```ts
+import { webview } from '@kit.ArkWeb';
 ```
 
 ## getHttpAuthCredentials
-
-PhonePC/2in1TabletTVWearable
 
 static getHttpAuthCredentials(host: string, realm: string): Array<string>
 
@@ -39,8 +80,8 @@ static getHttpAuthCredentials(host: string, realm: string): Array<string>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| host | string | 是 | HTTP身份验证凭据应用的主机。 |
-| realm | string | 是 | HTTP身份验证凭据应用的域。 |
+| host | string | 是 | HTTP身份验证凭据应用的主机地址，格式如'www.example.com'或'192.168.1.1'，不包含协议和端口号。 |
+| realm | string | 是 | HTTP身份验证凭据应用的认证域，表示在同一主机下进行身份验证的范围或保护区域，通常由服务器返回的WWW-Authenticate头指定。 |
 
 **返回值：**
 
@@ -58,39 +99,37 @@ static getHttpAuthCredentials(host: string, realm: string): Array<string>
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. host: string = "www.spincast.org";
-10. realm: string = "protected example";
-11. username_password: string[] = [];
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  host: string = 'www.spincast.org';
+  realm: string = 'protected example';
+  usernamePassword: string[] = [];
 
-13. build() {
-14. Column() {
-15. Button('getHttpAuthCredentials')
-16. .onClick(() => {
-17. try {
-18. this.username_password = webview.WebDataBase.getHttpAuthCredentials(this.host, this.realm);
-19. console.info('num: ' + this.username_password.length);
-20. } catch (error) {
-21. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-22. }
-23. })
-24. Web({ src: 'www.example.com', controller: this.controller })
-25. }
-26. }
-27. }
+  build() {
+    Column() {
+      Button('getHttpAuthCredentials')
+        .onClick(() => {
+          try {
+            this.usernamePassword = webview.WebDataBase.getHttpAuthCredentials(this.host, this.realm);
+            console.info('num: ' + this.usernamePassword.length);
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: 'www.example.com', controller: this.controller })
+    }
+  }
+}
 ```
 
 ## saveHttpAuthCredentials
-
-PhonePC/2in1TabletTVWearable
 
 static saveHttpAuthCredentials(host: string, realm: string, username: string, password: string): void
 
@@ -102,10 +141,10 @@ static saveHttpAuthCredentials(host: string, realm: string, username: string, pa
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| host | string | 是 | HTTP身份验证凭据应用的主机。 |
-| realm | string | 是 | HTTP身份验证凭据应用的域。 |
-| username | string | 是 | 用户名。 |
-| password | string | 是 | 密码。 |
+| host | string | 是 | HTTP身份验证凭据应用的主机，用于匹配凭据对应的主机。 |
+| realm | string | 是 | HTTP身份验证凭据应用的域，用于匹配凭据对应的认证域。 |
+| username | string | 是 | 用于HTTP身份验证的用户名，表示访问受保护资源的身份标识。 |
+| password | string | 是 | 用于HTTP身份验证的密码，配合用户名完成身份验证。 |
 
 **错误码：**
 
@@ -117,37 +156,35 @@ static saveHttpAuthCredentials(host: string, realm: string, username: string, pa
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
-9. host: string = "www.spincast.org";
-10. realm: string = "protected example";
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  host: string = 'www.spincast.org';
+  realm: string = 'protected example';
 
-12. build() {
-13. Column() {
-14. Button('saveHttpAuthCredentials')
-15. .onClick(() => {
-16. try {
-17. webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, "Stromgol", "Laroche");
-18. } catch (error) {
-19. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-20. }
-21. })
-22. Web({ src: 'www.example.com', controller: this.controller })
-23. }
-24. }
-25. }
+  build() {
+    Column() {
+      Button('saveHttpAuthCredentials')
+        .onClick(() => {
+          try {
+            webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, 'Stromgol', 'Laroche');
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: 'www.example.com', controller: this.controller })
+    }
+  }
+}
 ```
 
 ## existHttpAuthCredentials
-
-PhonePC/2in1TabletTVWearable
 
 static existHttpAuthCredentials(): boolean
 
@@ -163,35 +200,37 @@ static existHttpAuthCredentials(): boolean
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-10. build() {
-11. Column() {
-12. Button('existHttpAuthCredentials')
-13. .onClick(() => {
-14. try {
-15. let result = webview.WebDataBase.existHttpAuthCredentials();
-16. } catch (error) {
-17. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-18. }
-19. })
-20. Web({ src: 'www.example.com', controller: this.controller })
-21. }
-22. }
-23. }
+  build() {
+    Column() {
+      Button('existHttpAuthCredentials')
+        .onClick(() => {
+          try {
+            if (webview.WebDataBase.existHttpAuthCredentials()) {
+                console.info('HTTP auth credentials exist.');
+              } else {
+                console.info('No HTTP auth credentials found.');
+              }
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: 'www.example.com', controller: this.controller })
+    }
+  }
+}
 ```
 
 ## deleteHttpAuthCredentials
-
-PhonePC/2in1TabletTVWearable
 
 static deleteHttpAuthCredentials(): void
 
@@ -201,28 +240,28 @@ static deleteHttpAuthCredentials(): void
 
 **示例：**
 
-```
-1. // xxx.ets
-2. import { webview } from '@kit.ArkWeb';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. @Entry
-6. @Component
-7. struct WebComponent {
-8. controller: webview.WebviewController = new webview.WebviewController();
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
 
-10. build() {
-11. Column() {
-12. Button('deleteHttpAuthCredentials')
-13. .onClick(() => {
-14. try {
-15. webview.WebDataBase.deleteHttpAuthCredentials();
-16. } catch (error) {
-17. console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-18. }
-19. })
-20. Web({ src: 'www.example.com', controller: this.controller })
-21. }
-22. }
-23. }
+  build() {
+    Column() {
+      Button('deleteHttpAuthCredentials')
+        .onClick(() => {
+          try {
+            webview.WebDataBase.deleteHttpAuthCredentials();
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
+        })
+      Web({ src: 'www.example.com', controller: this.controller })
+    }
+  }
+}
 ```

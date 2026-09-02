@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.mdns (MDNS管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.mdns (MDNS管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:23+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d8df6d96e8a0ed7e5d9cd86031ab27c64faf3766e1daad4d59dede07fc612c75
+scraped_at: 2026-09-02T15:01:53+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:4347ac05c8853a7ba967974a6288a944137520ecd08a80716a6417f51306adb5
 ---
 
 MDNS即多播DNS（Multicast DNS），提供局域网内的本地服务添加、移除、发现、解析等能力。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { mdns } from '@kit.NetworkKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
 ```
 
 ## mdns.addLocalService
-
-PhonePC/2in1TabletTVWearable
 
 addLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: AsyncCallback<LocalServiceInfo>): void
 
@@ -57,39 +53,37 @@ addLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: Async
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 获取context。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+// 获取context。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-8. let localServiceInfo: mdns.LocalServiceInfo = {
-9. serviceType: "_print._tcp",
-10. serviceName: "servicename",
-11. port: 5555,
-12. host: {
-13. address: "10.14.**.***",
-14. },
-15. serviceAttribute: [{key: "111", value: [1]}]
-16. }
+let localServiceInfo: mdns.LocalServiceInfo = {
+  serviceType: "_print._tcp",
+  serviceName: "servicename",
+  port: 5555,
+  host: {
+  address: "10.14.**.***",
+  },
+  serviceAttribute: [{key: "111", value: [1]}]
+}
 
-18. mdns.addLocalService(context, localServiceInfo, (error:BusinessError, data:mdns.LocalServiceInfo) =>  {
-19. console.error(JSON.stringify(error));
-20. console.info(JSON.stringify(data));
-21. });
+mdns.addLocalService(context, localServiceInfo, (error:BusinessError, data:mdns.LocalServiceInfo) =>  {
+  console.error(JSON.stringify(error));
+  console.info(JSON.stringify(data));
+});
 ```
 
 ## mdns.addLocalService
-
-PhonePC/2in1TabletTVWearable
 
 addLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise<LocalServiceInfo>
 
@@ -127,38 +121,36 @@ addLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise<LocalS
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 获取context。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+// 获取context。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-8. let localServiceInfo: mdns.LocalServiceInfo = {
-9. serviceType: "_print._tcp",
-10. serviceName: "servicename",
-11. port: 5555,
-12. host: {
-13. address: "10.14.**.***",
-14. },
-15. serviceAttribute: [{key: "111", value: [1]}]
-16. }
+let localServiceInfo: mdns.LocalServiceInfo = {
+  serviceType: "_print._tcp",
+  serviceName: "servicename",
+  port: 5555,
+  host: {
+    address: "10.14.**.***",
+  },
+  serviceAttribute: [{key: "111", value: [1]}]
+}
 
-18. mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-19. console.info(JSON.stringify(data));
-20. });
+mdns.addLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+  console.info(JSON.stringify(data));
+});
 ```
 
 ## mdns.removeLocalService
-
-PhonePC/2in1TabletTVWearable
 
 removeLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: AsyncCallback<LocalServiceInfo>): void
 
@@ -191,39 +183,37 @@ removeLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: As
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 获取context。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+// 获取context。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-8. let localServiceInfo: mdns.LocalServiceInfo = {
-9. serviceType: "_print._tcp",
-10. serviceName: "servicename",
-11. port: 5555,
-12. host: {
-13. address: "10.14.**.***",
-14. },
-15. serviceAttribute: [{key: "111", value: [1]}]
-16. }
+let localServiceInfo: mdns.LocalServiceInfo = {
+  serviceType: "_print._tcp",
+  serviceName: "servicename",
+  port: 5555,
+  host: {
+  address: "10.14.**.***",
+  },
+  serviceAttribute: [{key: "111", value: [1]}]
+}
 
-18. mdns.removeLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) =>  {
-19. console.error(JSON.stringify(error));
-20. console.info(JSON.stringify(data));
-21. });
+mdns.removeLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) =>  {
+  console.error(JSON.stringify(error));
+  console.info(JSON.stringify(data));
+});
 ```
 
 ## mdns.removeLocalService
-
-PhonePC/2in1TabletTVWearable
 
 removeLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise<LocalServiceInfo>
 
@@ -261,37 +251,35 @@ removeLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise<Loc
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-7. let localServiceInfo: mdns.LocalServiceInfo = {
-8. serviceType: "_print._tcp",
-9. serviceName: "servicename",
-10. port: 5555,
-11. host: {
-12. address: "10.14.**.***",
-13. },
-14. serviceAttribute: [{key: "111", value: [1]}]
-15. }
+let localServiceInfo: mdns.LocalServiceInfo = {
+  serviceType: "_print._tcp",
+  serviceName: "servicename",
+  port: 5555,
+  host: {
+  address: "10.14.**.***",
+  },
+  serviceAttribute: [{key: "111", value: [1]}]
+}
 
-17. mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-18. console.info(JSON.stringify(data));
-19. });
+mdns.removeLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+  console.info(JSON.stringify(data));
+});
 ```
 
 ## mdns.createDiscoveryService
-
-PhonePC/2in1TabletTVWearable
 
 createDiscoveryService(context: Context, serviceType: string): DiscoveryService
 
@@ -324,27 +312,25 @@ createDiscoveryService(context: Context, serviceType: string): DiscoveryService
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 获取context。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+// 获取context。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-8. let serviceType = "_print._tcp";
-9. let discoveryService : Object = mdns.createDiscoveryService(context, serviceType);
+let serviceType = "_print._tcp";
+let discoveryService : Object = mdns.createDiscoveryService(context, serviceType);
 ```
 
 ## mdns.resolveLocalService
-
-PhonePC/2in1TabletTVWearable
 
 resolveLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: AsyncCallback<LocalServiceInfo>): void
 
@@ -377,39 +363,37 @@ resolveLocalService(context: Context, serviceInfo: LocalServiceInfo, callback: A
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 获取context。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+// 获取context。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-8. let localServiceInfo: mdns.LocalServiceInfo = {
-9. serviceType: "_print._tcp",
-10. serviceName: "servicename",
-11. port: 5555,
-12. host: {
-13. address: "10.14.**.***",
-14. },
-15. serviceAttribute: [{key: "111", value: [1]}]
-16. }
+let localServiceInfo: mdns.LocalServiceInfo = {
+  serviceType: "_print._tcp",
+  serviceName: "servicename",
+  port: 5555,
+  host: {
+  address: "10.14.**.***",
+  },
+  serviceAttribute: [{key: "111", value: [1]}]
+}
 
-18. mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) =>  {
-19. console.error(JSON.stringify(error));
-20. console.info(JSON.stringify(data));
-21. });
+mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) =>  {
+  console.error(JSON.stringify(error));
+  console.info(JSON.stringify(data));
+});
 ```
 
 ## mdns.resolveLocalService
-
-PhonePC/2in1TabletTVWearable
 
 resolveLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise<LocalServiceInfo>
 
@@ -447,44 +431,40 @@ resolveLocalService(context: Context, serviceInfo: LocalServiceInfo): Promise<Lo
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 获取context。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+// 获取context。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
-8. let localServiceInfo: mdns.LocalServiceInfo = {
-9. serviceType: "_print._tcp",
-10. serviceName: "servicename",
-11. port: 5555,
-12. host: {
-13. address: "10.14.**.***",
-14. },
-15. serviceAttribute: [{key: "111", value: [1]}]
-16. }
+let localServiceInfo: mdns.LocalServiceInfo = {
+  serviceType: "_print._tcp",
+  serviceName: "servicename",
+  port: 5555,
+  host: {
+  address: "10.14.**.***",
+  },
+  serviceAttribute: [{key: "111", value: [1]}]
+}
 
-18. mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
-19. console.info(JSON.stringify(data));
-20. });
+mdns.resolveLocalService(context, localServiceInfo).then((data: mdns.LocalServiceInfo) => {
+  console.info(JSON.stringify(data));
+});
 ```
 
 ## DiscoveryService
 
-PhonePC/2in1TabletTVWearable
-
 指定服务类型的发现服务对象。
 
 ### startSearchingMDNS
-
-PhonePC/2in1TabletTVWearable
 
 startSearchingMDNS(): void
 
@@ -496,27 +476,25 @@ startSearchingMDNS(): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 获取context。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 获取context。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 ```
 
 ### stopSearchingMDNS
-
-PhonePC/2in1TabletTVWearable
 
 stopSearchingMDNS(): void
 
@@ -528,27 +506,25 @@ stopSearchingMDNS(): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 Stage模型示例：
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 获取context。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.stopSearchingMDNS();
+// 获取context。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.stopSearchingMDNS();
 ```
 
 ### on('discoveryStart')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'discoveryStart', callback: Callback<DiscoveryEventInfo>): void
 
@@ -567,31 +543,29 @@ on(type: 'discoveryStart', callback: Callback<DiscoveryEventInfo>): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 参考mdns.createDiscoveryService。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 参考mdns.createDiscoveryService。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 
-11. discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
-12. console.info(JSON.stringify(data));
-13. });
+discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
+  console.info(JSON.stringify(data));
+});
 
-15. discoveryService.stopSearchingMDNS();
+discoveryService.stopSearchingMDNS();
 ```
 
 ### off('discoveryStart')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'discoveryStart', callback?: Callback<DiscoveryEventInfo>): void
 
@@ -610,35 +584,33 @@ off(type: 'discoveryStart', callback?: Callback<DiscoveryEventInfo>): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 参考mdns.createDiscoveryService。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 参考mdns.createDiscoveryService。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 
-11. discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
-12. console.info(JSON.stringify(data));
-13. });
+discoveryService.on('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
+  console.info(JSON.stringify(data));
+});
 
-15. discoveryService.stopSearchingMDNS();
+discoveryService.stopSearchingMDNS();
 
-17. discoveryService.off('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
-18. console.info(JSON.stringify(data));
-19. });
+discoveryService.off('discoveryStart', (data: mdns.DiscoveryEventInfo) => {
+  console.info(JSON.stringify(data));
+});
 ```
 
 ### on('discoveryStop')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'discoveryStop', callback: Callback<DiscoveryEventInfo>): void
 
@@ -657,31 +629,29 @@ on(type: 'discoveryStop', callback: Callback<DiscoveryEventInfo>): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 参考mdns.createDiscoveryService。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 参考mdns.createDiscoveryService。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 
-11. discoveryService.on('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
-12. console.info(JSON.stringify(data));
-13. });
+discoveryService.on('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
+  console.info(JSON.stringify(data));
+});
 
-15. discoveryService.stopSearchingMDNS();
+discoveryService.stopSearchingMDNS();
 ```
 
 ### off('discoveryStop')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'discoveryStop', callback?: Callback<[DiscoveryEventInfo](js-apis-net-mdns.md#discoveryeventinfo11)>): void
 
@@ -700,35 +670,33 @@ off(type: 'discoveryStop', callback?: Callback<[DiscoveryEventInfo](js-apis-net-
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 参考mdns.createDiscoveryService。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 参考mdns.createDiscoveryService。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 
-11. discoveryService.on('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
-12. console.info(JSON.stringify(data));
-13. });
+discoveryService.on('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
+  console.info(JSON.stringify(data));
+});
 
-15. discoveryService.stopSearchingMDNS();
+discoveryService.stopSearchingMDNS();
 
-17. discoveryService.off('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
-18. console.info(JSON.stringify(data));
-19. });
+discoveryService.off('discoveryStop', (data: mdns.DiscoveryEventInfo) => {
+  console.info(JSON.stringify(data));
+});
 ```
 
 ### on('serviceFound')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'serviceFound', callback: Callback<LocalServiceInfo>): void
 
@@ -747,34 +715,32 @@ on(type: 'serviceFound', callback: Callback<LocalServiceInfo>): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 参考mdns.createDiscoveryService。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 参考mdns.createDiscoveryService。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 
-11. discoveryService.on('serviceFound', (data: mdns.LocalServiceInfo) => {
-12. console.info('serviceFound', JSON.stringify(data));
-13. mdns.resolveLocalService(context, data, (error: BusinessError, resolveData: mdns.LocalServiceInfo) =>  {
-14. console.info('serviceFound', JSON.stringify(resolveData));
-15. });
-16. });
+discoveryService.on('serviceFound', (data: mdns.LocalServiceInfo) => {
+  console.info('serviceFound', JSON.stringify(data));
+  mdns.resolveLocalService(context, data, (error: BusinessError, resolveData: mdns.LocalServiceInfo) =>  {
+    console.info('serviceFound', JSON.stringify(resolveData));
+  });
+});
 
-18. discoveryService.stopSearchingMDNS();
+discoveryService.stopSearchingMDNS();
 ```
 
 ### off('serviceFound')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'serviceFound', callback?: Callback<LocalServiceInfo>): void
 
@@ -793,38 +759,36 @@ off(type: 'serviceFound', callback?: Callback<LocalServiceInfo>): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 参考mdns.createDiscoveryService。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 参考mdns.createDiscoveryService。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 
-11. discoveryService.on('serviceFound', (data: mdns.LocalServiceInfo) => {
-12. console.info('serviceFound', JSON.stringify(data));
-13. mdns.resolveLocalService(context, data, (error: BusinessError, resolveData: mdns.LocalServiceInfo) =>  {
-14. console.info('serviceFound', JSON.stringify(resolveData));
-15. });
-16. });
+discoveryService.on('serviceFound', (data: mdns.LocalServiceInfo) => {
+  console.info('serviceFound', JSON.stringify(data));
+  mdns.resolveLocalService(context, data, (error: BusinessError, resolveData: mdns.LocalServiceInfo) =>  {
+    console.info('serviceFound', JSON.stringify(resolveData));
+  });
+});
 
-18. discoveryService.stopSearchingMDNS();
+discoveryService.stopSearchingMDNS();
 
-20. discoveryService.off('serviceFound', (data: mdns.LocalServiceInfo) => {
-21. console.info(JSON.stringify(data));
-22. });
+discoveryService.off('serviceFound', (data: mdns.LocalServiceInfo) => {
+  console.info(JSON.stringify(data));
+});
 ```
 
 ### on('serviceLost')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'serviceLost', callback: Callback<LocalServiceInfo>): void
 
@@ -843,31 +807,29 @@ on(type: 'serviceLost', callback: Callback<LocalServiceInfo>): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 参考mdns.createDiscoveryService。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 参考mdns.createDiscoveryService。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 
-11. discoveryService.on('serviceLost', (data: mdns.LocalServiceInfo) => {
-12. console.info(JSON.stringify(data));
-13. });
+discoveryService.on('serviceLost', (data: mdns.LocalServiceInfo) => {
+  console.info(JSON.stringify(data));
+});
 
-15. discoveryService.stopSearchingMDNS();
+discoveryService.stopSearchingMDNS();
 ```
 
 ### off('serviceLost')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'serviceLost', callback?: Callback<LocalServiceInfo>): void
 
@@ -886,35 +848,33 @@ off(type: 'serviceLost', callback?: Callback<LocalServiceInfo>): void
 
 **示例：**
 
-说明
+**说明** 
 
 在本文档的示例中，通过this.context来获取UIAbilityContext，其中this代表继承自UIAbility的UIAbility实例。如需在页面中使用UIAbilityContext提供的能力，请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-```
-1. import { mdns } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { common } from '@kit.AbilityKit';
+```ts
+import { mdns } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
 
-5. // 参考mdns.createDiscoveryService。
-6. let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-7. let serviceType = "_print._tcp";
-8. let discoveryService = mdns.createDiscoveryService(context, serviceType);
-9. discoveryService.startSearchingMDNS();
+// 参考mdns.createDiscoveryService。
+let context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+let serviceType = "_print._tcp";
+let discoveryService = mdns.createDiscoveryService(context, serviceType);
+discoveryService.startSearchingMDNS();
 
-11. discoveryService.on('serviceLost', (data: mdns.LocalServiceInfo) => {
-12. console.info(JSON.stringify(data));
-13. });
+discoveryService.on('serviceLost', (data: mdns.LocalServiceInfo) => {
+  console.info(JSON.stringify(data));
+});
 
-15. discoveryService.stopSearchingMDNS();
+discoveryService.stopSearchingMDNS();
 
-17. discoveryService.off('serviceLost', (data: mdns.LocalServiceInfo) => {
-18. console.info(JSON.stringify(data));
-19. });
+discoveryService.off('serviceLost', (data: mdns.LocalServiceInfo) => {
+  console.info(JSON.stringify(data));
+});
 ```
 
 ## LocalServiceInfo
-
-PhonePC/2in1TabletTVWearable
 
 MDNS服务信息。
 
@@ -926,13 +886,11 @@ MDNS服务信息。
 | --- | --- | --- | --- | --- |
 | serviceType | string | 否 | 否 | MDNS服务的类型。格式：\_<name>.<\_tcp/\_udp>，name长度小于63字符并且不能包含字符'.'。 |
 | serviceName | string | 否 | 否 | MDNS服务的名字。 |
-| port | number | 否 | 是 | MDNS服务的端口号。取值范围[0，65535]。 |
+| port | number | 否 | 是 | MDNS服务的端口号。取值范围[0, 65535]。 |
 | host | [NetAddress](js-apis-net-connection.md#netaddress) | 否 | 是 | MDNS服务设备的IP地址。采用设备的IP，添加服务和移除服务时候不生效。 |
 | serviceAttribute | Array<[ServiceAttribute](js-apis-net-mdns.md#serviceattribute)> | 否 | 是 | MDNS服务属性信息。 |
 
 ## ServiceAttribute
-
-PhonePC/2in1TabletTVWearable
 
 MDNS服务属性信息。
 
@@ -947,8 +905,6 @@ MDNS服务属性信息。
 
 ## DiscoveryEventInfo11+
 
-PhonePC/2in1TabletTVWearable
-
 监听到的MDNS服务事件信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -961,8 +917,6 @@ PhonePC/2in1TabletTVWearable
 | errorCode | MdnsError | 否 | 是 | MDNS错误信息。 |
 
 ## MdnsError
-
-PhonePC/2in1TabletTVWearable
 
 MDNS错误信息。
 
@@ -977,8 +931,6 @@ MDNS错误信息。
 | MAX\_LIMIT | 2 | 请求超过最大限制导致操作失败。 |
 
 ## NetAddress
-
-PhonePC/2in1TabletTVWearable
 
 type NetAddress = connection.NetAddress
 

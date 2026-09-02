@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file-manager-39
-title: fileIo.write返回的长度和本身content长度不一致
-breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > fileIo.write返回的长度和本身content长度不一致
+title: fs.write返回的长度和本身content长度不一致
+breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > fs.write返回的长度和本身content长度不一致
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:29+08:00
-doc_updated_at: 2026-04-27
+scraped_at: 2026-09-02T15:21:52+08:00
+doc_updated_at: 2026-06-26
 content_hash: sha256:e9f628283b2e21d21be7597e5cc587398cc337f1c27913db46d5a229cd0b4f48
 ---
 

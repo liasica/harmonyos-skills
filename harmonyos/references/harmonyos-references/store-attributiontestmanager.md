@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-att
 title: attributionTestManager（应用归因接入调试功能）
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > attributionTestManager（应用归因接入调试功能）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:d1411d125450c2d74bac86e33ee6794bed19a86ed02576949c9c0bf4feaa3fd7
+scraped_at: 2026-09-02T15:02:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:eee472bee3aff3079fe932883d44c898a511d22272491bf799c259469d3e5ec9
 ---
 
 提供验证归因来源、设置归因结果回传、触发归因结果回传调试功能。
 
-说明
+**说明** 
 
 调用接口需捕获异常。
 
@@ -18,19 +18,15 @@ content_hash: sha256:d1411d125450c2d74bac86e33ee6794bed19a86ed02576949c9c0bf4fea
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { attributionTestManager } from '@kit.AppGalleryKit';
+```typescript
+import { attributionTestManager } from '@kit.AppGalleryKit';
 ```
 
 ## attributionTestManager.validateSource
 
-PhonePC/2in1TabletTV
-
 validateSource(adSourceInfo: AdSourceInfo, publicKey: string): Promise<void>
 
-验证媒体App/分发平台登记的归因来源信息，通过Promise异步回调。
+验证媒体App/分发平台登记的归因来源信息。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -53,7 +49,7 @@ validateSource(adSourceInfo: AdSourceInfo, publicKey: string): Promise<void>
 
 **错误码**：
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -73,75 +69,73 @@ validateSource(adSourceInfo: AdSourceInfo, publicKey: string): Promise<void>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { attributionTestManager } from '@kit.AppGalleryKit';
-3. // 参考指南附录生成签名方法部分代码
-4. import { SignUtil } from '../common/utils/SignUtil';
-5. import { util } from '@kit.ArkTS';
-6. import { deviceInfo } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { attributionTestManager } from '@kit.AppGalleryKit';
+// 参考指南附录生成签名方法部分代码
+import { SignUtil } from '../common/utils/SignUtil';
+import { util } from '@kit.ArkTS';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
-8. const TAG: string = 'AttributionTest';
+const TAG: string = 'AttributionTest';
 
-10. class  AttributionTest {
+class  AttributionTest {
 
-12. async validateSource(): Promise<void> {
-13. try {
-14. // 使用在应用归因服务云侧注册角色时，提供的公钥和对应的私钥, 验证接口， 用户可自己生成
-15. let privateKey: string = '';
-16. let publicKey: string = '';
-17. // 在应用归因云侧注册广告生态伙伴角色时，由应用归因服务分配
-18. let adTechId: string = '12345678';
-19. // 分发平台创建的营销任务id
-20. let campaignId: string = ' ';
-21. let osApiVersion: number = deviceInfo.sdkApiVersion;
-22. if (osApiVersion >= 22) {
-23. campaignId = '1*******9';
-24. } else {
-25. campaignId = '1****6';
-26. }
-27. // 开发者应用上架华为应用市场的appId，不带C
-28. let destinationId: string = '102345678';
-29. // 归因监测平台id
-30. let mmpIds: string[] = ['12345678', '23456789'];
-31. // 分发平台关注的业务信息
-32. let serviceTag: string = 'testServiceTag';
-33. // 用于计算签名的随机数，不带'-'
-34. let nonce: string = util.generateRandomUUID().replace(/-/g, '');
-35. // 时间戳
-36. let timestamp: number = Date.now()
-37. let adSourceInfo: attributionTestManager.AdSourceInfo = {
-38. adTechId: adTechId,
-39. campaignId: campaignId,
-40. destinationId: destinationId,
-41. // 归因来源类型：曝光
-42. sourceType: attributionTestManager.SourceType.IMPRESSION,
-43. mmpIds: mmpIds,
-44. serviceTag: serviceTag,
-45. nonce: nonce,
-46. timestamp: timestamp,
-47. // 签名值
-48. signature: await SignUtil.getSign(SignUtil.genSignContent(adTechId, campaignId, destinationId, mmpIds, serviceTag, nonce, timestamp), privateKey)
-49. };
+  async validateSource(): Promise<void> {
+    try {
+      // 使用在应用归因服务云侧注册角色时，提供的公钥和对应的私钥, 验证接口， 用户可自己生成
+      let privateKey: string = '';
+      let publicKey: string = '';
+      // 在应用归因云侧注册广告生态伙伴角色时，由应用归因服务分配
+      let adTechId: string = '12345678';
+      // 分发平台创建的营销任务id
+      let campaignId: string = ' ';
+      let osApiVersion: number = deviceInfo.sdkApiVersion;
+      if (osApiVersion >= 22) {
+        campaignId = '1*******9';
+      } else {
+        campaignId = '1****6';
+      }
+      // 开发者应用上架华为应用市场的appId，不带C
+      let destinationId: string = '102345678';
+      // 归因监测平台id
+      let mmpIds: string[] = ['12345678', '23456789'];
+      // 分发平台关注的业务信息
+      let serviceTag: string = 'testServiceTag';
+      // 用于计算签名的随机数，不带'-'
+      let nonce: string = util.generateRandomUUID().replace(/-/g, '');
+      // 时间戳
+      let timestamp: number = Date.now();
+      let adSourceInfo: attributionTestManager.AdSourceInfo = {
+        adTechId: adTechId,
+        campaignId: campaignId,
+        destinationId: destinationId,
+        // 归因来源类型：曝光
+        sourceType: attributionTestManager.SourceType.IMPRESSION,
+        mmpIds: mmpIds,
+        serviceTag: serviceTag,
+        nonce: nonce,
+        timestamp: timestamp,
+        // 签名值
+        signature: await SignUtil.getSign(SignUtil.genSignContent(adTechId, campaignId, destinationId, mmpIds, serviceTag, nonce, timestamp), privateKey)
+      };
 
-51. await attributionTestManager.validateSource(adSourceInfo, publicKey);
-52. hilog.info(0, TAG, 'Succeeded in validating source.');
-53. } catch (error) {
-54. hilog.error(0, TAG, `validateSource error.code is ${error.code}, message is ${error.message}`);
-55. }
-56. }
-57. }
+      await attributionTestManager.validateSource(adSourceInfo, publicKey);
+      hilog.info(0, TAG, 'Succeeded in validating source.');
+    } catch (error) {
+      hilog.error(0, TAG, `validateSource error.code is ${error.code}, message is ${error.message}`);
+    }
+  }
+}
 ```
 
 ## attributionTestManager.setPostback
 
-PhonePC/2in1TabletTV
-
 setPostback(postbackInfo: PostbackInfo): Promise<void>
 
-设置归因结果回传信息。用于验证triggerData的合法性，设置调试使用的归因结果回传信息，通过Promise异步回调。
+设置归因结果回传信息。用于验证triggerData的合法性，设置调试使用的归因结果回传信息。使用Promise异步回调。
 
-说明
+**说明** 
 
 单个adTechId下，待回传的调试postbackInfo数据量<=5。
 
@@ -167,7 +161,7 @@ setPostback(postbackInfo: PostbackInfo): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -185,77 +179,75 @@ setPostback(postbackInfo: PostbackInfo): Promise<void>
 
 **示例**：
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import { attributionTestManager } from '@kit.AppGalleryKit';
-3. import { deviceInfo } from '@kit.BasicServicesKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { attributionTestManager } from '@kit.AppGalleryKit';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
-5. const TAG: string = 'Attributiontest';
+const TAG: string = 'Attributiontest';
 
-7. @Entry
-8. @Component
-9. struct Attribution {
-10. build() {
-11. Column({ space: 20 }) {
-12. Button("set_postback")
-13. .onClick(() => {
-14. this.setPostback();
-15. })
-16. .width('100%')
-17. }
-18. .margin(16)
-19. .height('100%')
-20. .justifyContent(FlexAlign.Center)
-21. }
+@Entry
+@Component
+struct Attribution {
+  build() {
+    Column({ space: 20 }) {
+      Button("set_postback")
+        .onClick(() => {
+          this.setPostback();
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
 
-23. async setPostback(): Promise<void> {
-24. try {
-25. let postbackInfo: attributionTestManager.PostbackInfo = {
-26. // 在应用归因云侧注册广告生态伙伴角色时，由应用归因服务分配
-27. adTechId: '12345678',
-28. // 分发平台创建的营销任务id
-29. campaignId: ' ',
-30. // 媒体应用id
-31. sourceId: '112345678',
-32. // 开发者应用上架华为应用市场的appId，不带C
-33. destinationId: '102345678',
-34. // 分发平台关注的业务信息
-35. serviceTag: 'testServiceTag',
-36. // 业务场景值
-37. businessScene: 5,
-38. // 转化事件编码
-39. triggerData: 123,
-40. // 用于接收归因回传归因结果的URL地址，推荐使用HTTPS协议
-41. postbackUrl: 'https://xxx.com'
-42. };
-43. let osApiVersion: number = deviceInfo.sdkApiVersion;
-44. if (osApiVersion >= 22) {
-45. postbackInfo.campaignId = '1*******9';
-46. } else {
-47. postbackInfo.campaignId = '1****6';
-48. }
-49. // 设置归因结果回传信息
-50. attributionTestManager.setPostback(postbackInfo).then(() => {
-51. hilog.info(0, TAG, 'Succeeded in setting postback.');
-52. }).catch((error: BusinessError) => {
-53. hilog.error(0, TAG, `setPostback onError.code is ${error.code}, message is ${error.message}`);
-54. })
-55. } catch (error) {
-56. hilog.error(0, TAG, `setPostback onError.code is ${error.code}, message is ${error.message}`);
-57. }
-58. }
-59. }
+  async setPostback(): Promise<void> {
+    try {
+      let postbackInfo: attributionTestManager.PostbackInfo = {
+        // 在应用归因云侧注册广告生态伙伴角色时，由应用归因服务分配
+        adTechId: '12345678',
+        // 分发平台创建的营销任务id
+        campaignId: ' ',
+        // 媒体应用id
+        sourceId: '112345678',
+        // 开发者应用上架华为应用市场的appId，不带C
+        destinationId: '102345678',
+        // 分发平台关注的业务信息
+        serviceTag: 'testServiceTag',
+        // 业务场景值
+        businessScene: 5,
+        // 转化事件编码
+        triggerData: 123,
+        // 用于接收归因回传归因结果的URL地址，推荐使用HTTPS协议
+        postbackUrl: 'https://xxx.com'
+      };
+      let osApiVersion: number = deviceInfo.sdkApiVersion;
+      if (osApiVersion >= 22) {
+        postbackInfo.campaignId = '1*******9';
+      } else {
+        postbackInfo.campaignId = '1****6';
+      }
+      // 设置归因结果回传信息
+      attributionTestManager.setPostback(postbackInfo).then(() => {
+        hilog.info(0, TAG, 'Succeeded in setting postback.');
+      }).catch((error: BusinessError) => {
+        hilog.error(0, TAG, `setPostback onError.code is ${error.code}, message is ${error.message}`);
+      })
+    } catch (error) {
+      hilog.error(0, TAG, `setPostback onError.code is ${error.code}, message is ${error.message}`);
+    }
+  }
+}
 ```
 
 ## attributionTestManager.flushPostbacks
 
-PhonePC/2in1TabletTV
-
 flushPostbacks(adTechId: string): Promise<void>
 
-触发归因结果回传。验证开发者服务器接收及处理归因回传结果的逻辑是否正确，通过Promise异步回调。
+触发归因结果回传。验证开发者服务器接收及处理归因回传结果的逻辑是否正确。使用Promise异步回调。
 
-说明
+**说明** 
 
 单个设备上，每5秒调用次数<=1。
 
@@ -279,7 +271,7 @@ flushPostbacks(adTechId: string): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](store-error-code.md)。
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-appgallery.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -294,46 +286,44 @@ flushPostbacks(adTechId: string): Promise<void>
 
 **示例：**
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import {attributionTestManager } from '@kit.AppGalleryKit';
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import {attributionTestManager } from '@kit.AppGalleryKit';
 
-4. const TAG: string = 'AttributionTest';
+const TAG: string = 'AttributionTest';
 
-6. @Entry
-7. @Component
-8. struct Attribution {
-9. build() {
-10. Column({ space: 20 }) {
-11. Button("flush_postbacks")
-12. .id('flush_postbacks')
-13. .onClick(() => {
-14. this.flushPostbacks();
-15. })
-16. .width('100%')
-17. }
-18. .margin(16)
-19. .height('100%')
-20. .justifyContent(FlexAlign.Center)
-21. }
+@Entry
+@Component
+struct Attribution {
+  build() {
+    Column({ space: 20 }) {
+      Button("flush_postbacks")
+        .id('flush_postbacks')
+        .onClick(() => {
+          this.flushPostbacks();
+        })
+        .width('100%')
+    }
+    .margin(16)
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
 
-23. async flushPostbacks(): Promise<void> {
-24. try {
-25. // 分发平台对应的归因角色ID
-26. let adTechId: string = '1******8';
-27. // 触发归因结果回传
-28. await attributionTestManager.flushPostbacks(adTechId);
-29. hilog.info(0, TAG, 'flushPostbacks success.');
-30. } catch (error) {
-31. hilog.error(0, TAG, `flushPostbacks error. code is ${error.code}, message is ${error.message}`);
-32. }
-33. }
-34. }
+  async flushPostbacks(): Promise<void> {
+    try {
+      // 分发平台对应的归因角色ID
+      let adTechId: string = '1******8';
+      // 触发归因结果回传
+      await attributionTestManager.flushPostbacks(adTechId);
+      hilog.info(0, TAG, 'flushPostbacks success.');
+    } catch (error) {
+      hilog.error(0, TAG, `flushPostbacks error. code is ${error.code}, message is ${error.message}`);
+    }
+  }
+}
 ```
 
 ## AdSourceInfo
-
-PhonePC/2in1TabletTV
 
 媒体app/分发平台登记的归因来源信息。
 
@@ -357,8 +347,6 @@ PhonePC/2in1TabletTV
 
 ## PostbackInfo
 
-PhonePC/2in1TabletTV
-
 待回传数据信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -379,8 +367,6 @@ PhonePC/2in1TabletTV
 | postbackUrl | string | 否 | 否 | 用于接收归因回传归因结果的URL地址，推荐使用HTTPS协议。 |
 
 ## SourceType
-
-PhonePC/2in1TabletTV
 
 归因来源类型的枚举。
 

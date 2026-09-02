@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-169
 title: 键盘移动焦点对象按下enter，为什么不会触发点击事件
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 键盘移动焦点对象按下enter，为什么不会触发点击事件
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 键盘移动焦点对象按下enter，为什么不会触发点击事件
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:44+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:21+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:931d90a2f359ecc529e19edc5968a8a6a36e993832ea365cd36e907c4c4cf6ef
 ---
 

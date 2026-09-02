@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅阻断类事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 多客户端订阅场景 > 订阅阻断类事件
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:31:37+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6f230240b4e9d4fd8302aa005465a466b09daf1424fc9b8cbbc52163654a9704
+scraped_at: 2026-09-02T14:59:30+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:1357924db4cf07ec84589605afeb9be62d4d21bdd6caaace8a0c5c77ae077c10
 ---
 
 ## 场景介绍
@@ -20,16 +20,18 @@ content_hash: sha256:6f230240b4e9d4fd8302aa005465a466b09daf1424fc9b8cbbc52163654
 | 0x1C801103 | 文件删除阻断事件。 |
 | 0x1C801104 | 文件设置扩展属性的阻断事件。 |
 | 0x1C801105 | 文件删除扩展属性的阻断事件。 |
+| 0x1C801106 | 文件读结束阻断事件。  **起始版本：** 26.0.0 |
+| 0x1C801400 | 进程执行的阻断事件。  **起始版本：** 26.0.0 |
 
 ## 约束与限制
 
-1. 当前能力仅支持2in1设备。
+1. 当前能力仅支持PC/2in1设备。
 2. 一个进程最大只允许创建2个客户端实例，当前设备最多只允许创建16个客户端实例。
 3. 一个客户端实例最大只允许设置256条正过滤的过滤value和256条反过滤的过滤value。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/dGWqq8sSQwi74iMg2wHwFw/zh-cn_image_0000002558764898.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/l3O3tAQnT_6byH17uGYzzA/zh-cn_image_0000002706834300.png)
 
 **流程说明：**
 
@@ -42,7 +44,7 @@ content_hash: sha256:6f230240b4e9d4fd8302aa005465a466b09daf1424fc9b8cbbc52163654
 7. 当业务结束时，开发者可以使用步骤1中创建的实例解除过滤条件，取消订阅事件。
 8. 当业务结束时，开发者可以删除步骤1中创建的实例。
 
-   说明
+   **说明** 
 
    支持先设置过滤条件再订阅事件。
 
@@ -54,111 +56,134 @@ content_hash: sha256:6f230240b4e9d4fd8302aa005465a466b09daf1424fc9b8cbbc52163654
 
 | 接口名 | 描述 |
 | --- | --- |
-| newAuthClient(callback: Callback<AuditEvent>): AuthClient; | 创建审计阻断类事件管理对象AuthClient，AuthClient提供订阅、解订阅、增加事件过滤、移除事件过滤、阻断功能 |
-| deleteAuthClient(client: AuthClient): void; | 删除审计阻断类事件管理对象 |
-| interface AuthClient {  subscribe(events: AuthEvent[]): void;  } | 订阅审计阻断类事件 |
-| interface AuthClient {  unsubscribe(events: AuthEvent[]): void;  } | 解订阅审计阻断类事件 |
-| interface AuthClient {  addFilter(event: AuthEvent, filter: Filter): void；  } | 添加审计阻断类事件过滤条件 |
-| interface AuthClient {  removeFilter(event: AuthEvent, filter: Filter): void;  } | 移除审计阻断类事件过滤条件 |
-| interface AuthClient {  auth(auditEvent: AuditEvent, authResult: AuthResult): void;  } | 设置审计阻断类事件的阻断结果 |
+| newAuthClient(callback: Callback<AuditEvent>): AuthClient; | 创建审计阻断类事件管理对象AuthClient，AuthClient提供订阅、解订阅、增加事件过滤、移除事件过滤、阻断功能（超时默认放行）。 |
+| newAuthClient(callback: Callback<AuditEvent>, configuration: AuthClientConfiguration): AuthClient; | 创建审计阻断类事件管理对象AuthClient（可配置超时默认阻断策略），AuthClient提供订阅、解订阅、增加事件过滤、移除事件过滤、阻断功能。 |
+| deleteAuthClient(client: AuthClient): void; | 删除审计阻断类事件管理对象。 |
+| interface AuthClient {  subscribe(events: AuthEvent[]): void;  } | 订阅审计阻断类事件。 |
+| interface AuthClient {  unsubscribe(events: AuthEvent[]): void;  } | 解订阅审计阻断类事件。 |
+| interface AuthClient {  addFilter(event: AuthEvent, filter: Filter): void；  } | 添加审计阻断类事件过滤条件。 |
+| interface AuthClient {  removeFilter(event: AuthEvent, filter: Filter): void;  } | 移除审计阻断类事件过滤条件。 |
+| interface AuthClient {  auth(auditEvent: AuditEvent, authResult: AuthResult): void;  } | 设置审计阻断类事件的阻断结果。 |
 
 ## 开发步骤
 
-说明
+**说明** 
 
 * 在开发准备过程中，需要申请权限：ohos.permission.kernel.AUTH\_AUDIT\_EVENT。
-* 只允许清单内的企业类应用申请该权限，申请方式请参考：[申请使用企业类应用可用权限](permissions-for-enterprise-apps.md)。
+* 只允许清单内的企业类应用申请该权限，申请方式请参考：[企业类应用可用权限](permissions-for-enterprise-apps.md)。
 
 1. 导入Device Security Kit模块及相关公共模块。
 
+   ```typescript
+   import { securityAudit } from '@kit.DeviceSecurityKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-   1. import { securityAudit } from '@kit.DeviceSecurityKit';
-   2. import { BusinessError } from '@kit.BasicServicesKit';
-   3. import { hilog } from '@kit.PerformanceAnalysisKit';
-   ```
-2. 使用携带阻断策略的回调函数创建审计阻断类事件客户端实例。
+2. 定义携带阻断策略的回调函数。
 
+   ```typescript
+   const TAG = 'SecurityAuditAuthJsTest';
+   let authClient: securityAudit.AuthClient | undefined = undefined;
+   const allowEventCallback = (event: securityAudit.AuditEvent):void => {
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_Auth_JsApi_Func eventId= ' + event.eventId);
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_Auth_JsApi_Func content= ' + event.content);
+     hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_Auth_JsApi_Func metadata= ' + event.metadata);
+     try {
+       authClient?.auth(event, securityAudit.AuthResult.ALLOW);
+     } catch (error) {
+       let e: BusinessError = error as BusinessError;
+       hilog.error(0x0000, TAG, 'allowEventCallback', 'auth error:' + e.code);
+     }
+   };
    ```
-   1. const TAG = "SecurityAuditAuthJsTest";
-   2. let authClient: securityAudit.AuthClient | undefined = undefined;
-   3. const allowEventCallback = (event: securityAudit.AuditEvent) => {
-   4. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_Auth_JsApi_Func eventId= ' + event.eventId);
-   5. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_Auth_JsApi_Func content= ' + event.content);
-   6. hilog.info(0x0000, TAG, '%{public}s', 'Security_SecurityAudit_Auth_JsApi_Func metadata= ' + event.metadata);
-   7. try {
-   8. authClient?.auth(event, securityAudit.AuthResult.ALLOW);
-   9. } catch (error) {
-   10. let e: BusinessError = error as BusinessError;
-   11. hilog.error(0x0000, TAG, 'allowEventCallback', 'auth error:' + e.code);
-   12. }
-   13. };
-   14. try {
-   15. authClient = securityAudit.newAuthClient(allowEventCallback);
-   16. } catch (err) {
-   17. let e: BusinessError = err as BusinessError;
-   18. hilog.error(0x0000, TAG, 'newAuthClient failed: %{public}d %{public}s', e.code, e.message);
-   19. }
-   ```
-3. 订阅审计阻断类事件。
+3. 使用携带阻断策略的回调函数创建审计阻断类事件客户端实例。
 
+   ```typescript
+   try {
+     authClient = securityAudit.newAuthClient(allowEventCallback);
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'newAuthClient failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```
-   1. try {
-   2. hilog.info(0x0000, TAG, 'subscribe begin.');
-   3. authClient?.subscribe([securityAudit.AuthEvent.FILE_CREATE]);
-   4. hilog.info(0x0000, TAG, 'Succeeded in subscribe.');
-   5. } catch (err) {
-   6. let e: BusinessError = err as BusinessError;
-   7. hilog.error(0x0000, TAG, 'subscribe failed: %{public}d %{public}s', e.code, e.message);
-   8. }
-   ```
-4. 设置审计阻断类事件过滤条件。
+4. （可选）使用配置项创建可配置超时默认阻断策略的审计阻断类事件客户端实例。
 
+   ```typescript
+   // 配置超时后阻断
+   let config: securityAudit.AuthClientConfiguration = {
+     timeoutAuthResult: securityAudit.AuthResult.DENY
+   };
+   try {
+     authClient = securityAudit.newAuthClient(allowEventCallback, config);
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'newAuthClient failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```
-   1. let filter : securityAudit.Filter = {
-   2. type: securityAudit.FilterType.PROCESS_PID_EQUAL,
-   3. isInclude: true,
-   4. values : ["2"]
-   5. };
-   6. try {
-   7. hilog.info(0x0000, TAG, 'addFilter begin.');
-   8. authClient?.addFilter(securityAudit.AuthEvent.FILE_CREATE, filter);
-   9. hilog.info(0x0000, TAG, 'Succeeded in addFilter.');
-   10. } catch (err) {
-   11. let e: BusinessError = err as BusinessError;
-   12. hilog.error(0x0000, TAG, 'addFilter failed: %{public}d %{public}s', e.code, e.message);
-   13. }
-   ```
-5. 解除审计阻断类事件订阅。
 
-   ```
-   1. try {
-   2. hilog.info(0x0000, TAG, 'unsubscribe begin.');
-   3. authClient?.unsubscribe([securityAudit.AuthEvent.FILE_CREATE]);
-   4. hilog.info(0x0000, TAG, 'Succeeded in unsubscribe.');
-   5. } catch (err) {
-   6. let e: BusinessError = err as BusinessError;
-   7. hilog.error(0x0000, TAG, 'unsubscribe failed: %{public}d %{public}s', e.code, e.message);
-   8. }
-   ```
-6. 解除审计阻断类事件过滤条件。
+   **说明** 
 
-   ```
-   1. try {
-   2. hilog.info(0x0000, TAG, 'removeFilter begin.');
-   3. authClient?.removeFilter(securityAudit.AuthEvent.FILE_CREATE, filter);
-   4. hilog.info(0x0000, TAG, 'Succeeded in removeFilter.');
-   5. } catch (err) {
-   6. let e: BusinessError = err as BusinessError;
-   7. hilog.error(0x0000, TAG, 'removeFilter failed: %{public}d %{public}s', e.code, e.message);
-   8. }
-   ```
-7. 删除审计阻断类事件客户端实例。
+   此方式为创建客户端的另一种方式，与步骤2二选一执行。配置项可指定事件响应超时后的默认授权结果，若不配置默认超时放行。起始版本：26.0.0。
+5. 订阅审计阻断类事件。
 
+   ```typescript
+   try {
+     hilog.info(0x0000, TAG, 'subscribe begin.');
+     authClient?.subscribe([securityAudit.AuthEvent.FILE_CREATE]);
+     hilog.info(0x0000, TAG, 'Succeeded in subscribe.');
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'subscribe failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```
-   1. try {
-   2. securityAudit.deleteAuthClient(authClient);
-   3. } catch (err) {
-   4. let e: BusinessError = err as BusinessError;
-   5. hilog.error(0x0000, TAG, 'deleteAuthClient failed: %{public}d %{public}s', e.code, e.message);
-   6. }
+6. 设置审计阻断类事件过滤条件。
+
+   ```typescript
+   let filter : securityAudit.Filter = {
+     type: securityAudit.FilterType.PROCESS_PID_EQUAL,
+     isInclude: true,
+     values : ['2']
+   };
+   try {
+     hilog.info(0x0000, TAG, 'addFilter begin.');
+     authClient?.addFilter(securityAudit.AuthEvent.FILE_CREATE, filter);
+     hilog.info(0x0000, TAG, 'Succeeded in addFilter.');
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'addFilter failed: %{public}d %{public}s', e.code, e.message);
+   }
+   ```
+7. 解除审计阻断类事件订阅。
+
+   ```typescript
+   try {
+     hilog.info(0x0000, TAG, 'unsubscribe begin.');
+     authClient?.unsubscribe([securityAudit.AuthEvent.FILE_CREATE]);
+     hilog.info(0x0000, TAG, 'Succeeded in unsubscribe.');
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'unsubscribe failed: %{public}d %{public}s', e.code, e.message);
+   }
+   ```
+8. 解除审计阻断类事件过滤条件。
+
+   ```typescript
+   try {
+     hilog.info(0x0000, TAG, 'removeFilter begin.');
+     authClient?.removeFilter(securityAudit.AuthEvent.FILE_CREATE, filter);
+     hilog.info(0x0000, TAG, 'Succeeded in removeFilter.');
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'removeFilter failed: %{public}d %{public}s', e.code, e.message);
+   }
+   ```
+9. 删除审计阻断类事件客户端实例。
+
+   ```typescript
+   try {
+     securityAudit.deleteAuthClient(authClient);
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     hilog.error(0x0000, TAG, 'deleteAuthClient failed: %{public}d %{public}s', e.code, e.message);
+   }
    ```

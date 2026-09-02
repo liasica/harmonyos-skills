@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/libuv
 title: libuv
 breadcrumb: API参考 > 标准库 > libuv
 category: harmonyos-references
-scraped_at: 2026-04-29T14:10:06+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:f5598120dd2de526bb042da35f96f81d561f44451557efda147016105f47cea7
+scraped_at: 2026-09-02T15:03:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d4bbce61e6db84f4d105fc1391a529f0872d1c7f979eb8741c11839334a80d52
 ---
 
 ## 简介
@@ -22,14 +22,14 @@ content_hash: sha256:f5598120dd2de526bb042da35f96f81d561f44451557efda147016105f4
 
 如果开发者需要使用libuv相关功能，首先请添加头文件：
 
-```
-1. #include <uv.h>
+```c
+#include <uv.h>
 ```
 
 其次在CMakeLists.txt中添加以下动态链接库：
 
-```
-1. libuv.so
+```txt
+libuv.so
 ```
 
 ## 接口列表
@@ -66,96 +66,96 @@ HarmonyOS还将长期通过Node-API来为开发者提供和主线程交互及扩
 
 ArkTS侧:
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so'
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("test")
-11. .width('40%')
-12. .fontSize('14fp')
-13. .onClick(() => {
-14. testNapi.test();
-15. }).margin(20)
-16. }.width('100%')
-17. }.height('100%')
-18. }
-19. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("test")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+              testNapi.test();
+        }).margin(20)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 Native侧:
 
-```
-1. #include "napi/native_api.h"
-2. #include "uv.h"
-3. #define LOG_DOMAIN 0X0202
-4. #define LOG_TAG "MyTag"
-5. #include <hilog/log.h>
+```cpp
+#include "napi/native_api.h"
+#include "uv.h"
+#define LOG_DOMAIN 0X0202
+#define LOG_TAG "MyTag"
+#include <hilog/log.h>
 
-7. static void execute(uv_work_t* work)
-8. {
-9. OH_LOG_INFO(LOG_APP, "ohos in execute");
-10. }
+static void execute(uv_work_t* work)
+{
+    OH_LOG_INFO(LOG_APP, "ohos in execute");
+}
 
-12. static void complete(uv_work_t* work, int status)
-13. {
-14. OH_LOG_INFO(LOG_APP, "ohos in complete");
-15. delete work;
-16. }
-17. static napi_value Test(napi_env env, napi_callback_info info)
-18. {
-19. uv_loop_s* loop = nullptr;
-20. /* 获取应用JS主线程的uv_loop */
-21. napi_get_uv_event_loop(env, &loop);
-22. uv_work_t* work = new uv_work_t;
-23. int ret = uv_queue_work(loop, work, execute, complete);
-24. if (ret != 0) {
-25. OH_LOG_INFO(LOG_APP, "delete work");
-26. delete work;
-27. }
-28. return 0;
-29. }
+static void complete(uv_work_t* work, int status)
+{
+    OH_LOG_INFO(LOG_APP, "ohos in complete");
+    delete work;
+}
+static napi_value Test(napi_env env, napi_callback_info info)
+{
+    uv_loop_s* loop = nullptr;
+    /* 获取应用JS主线程的uv_loop */
+    napi_get_uv_event_loop(env, &loop);
+    uv_work_t* work = new uv_work_t;
+    int ret = uv_queue_work(loop, work, execute, complete);
+    if (ret != 0) {
+        OH_LOG_INFO(LOG_APP, "delete work");
+        delete work;
+    }
+    return 0;
+}
 
-31. EXTERN_C_START
-32. static napi_value Init(napi_env env, napi_value exports)
-33. {
-34. napi_property_descriptor desc[] = {{"test", nullptr, Test, nullptr, nullptr, nullptr, napi_default, nullptr}};
-35. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-36. return exports;
-37. }
-38. EXTERN_C_END
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {{"test", nullptr, Test, nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+    
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
 
-40. static napi_module demoModule = {
-41. .nm_version = 1,
-42. .nm_flags = 0,
-43. .nm_filename = nullptr,
-44. .nm_register_func = Init,
-45. .nm_modname = "entry",
-46. .nm_priv = ((void *)0),
-47. .reserved = {0},
-48. };
-
-50. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-51. {
-52. napi_module_register(&demoModule);
-53. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 在index.d.ts文件中添加如下代码：
 
-```
-1. export const test:() => number;
+```ts
+export const test:() => number;
 ```
 
 在CMakeLists.txt中添加以下动态链接库：
 
-```
-1. libhilog_ndk.z.so
+```txt
+libhilog_ndk.z.so
 ```
 
 **正确示例：**
@@ -164,94 +164,94 @@ Native侧:
 
 ArkTS侧:
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so'
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("test")
-11. .width('40%')
-12. .fontSize('14fp')
-13. .onClick(() => {
-14. testNapi.test();
-15. }).margin(20)
-16. }.width('100%')
-17. }.height('100%')
-18. }
-19. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("test")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+              testNapi.test();
+        }).margin(20)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 Native侧:
 
-```
-1. #include "napi/native_api.h"
-2. #include "uv.h"
-3. #define LOG_DOMAIN 0X0202
-4. #define LOG_TAG "MyTag"
-5. #include <hilog/log.h>
-6. uv_loop_t* loop = nullptr;
-7. napi_value jsCb;
-8. int fd = -1;
+```cpp
+#include "napi/native_api.h"
+#include "uv.h"
+#define LOG_DOMAIN 0X0202
+#define LOG_TAG "MyTag"
+#include <hilog/log.h>
+uv_loop_t* loop = nullptr;
+napi_value jsCb;
+int fd = -1;
 
-10. static napi_value Test(napi_env env, napi_callback_info info)
-11. {
-12. napi_value work_name;
-13. napi_async_work work;
-14. napi_create_string_utf8(env, "ohos", NAPI_AUTO_LENGTH, &work_name);
-15. /* 第四个参数是异步线程的work任务，第五个参数为主线程的回调 */
-16. napi_create_async_work(
-17. env, nullptr, work_name, [](napi_env env, void* data){OH_LOG_INFO(LOG_APP, "ohos in execute"); },
-18. [](napi_env env, napi_status status, void* data){
-19. /* 不关心具体实现 */
-20. OH_LOG_INFO(LOG_APP, "ohos in complete");
-21. napi_delete_async_work(env, (napi_async_work)data);
-22. },
-23. nullptr, &work);
-24. /* 通过napi_queue_async_work触发异步任务执行 */
-25. napi_queue_async_work(env, work);
-26. return 0;
-27. }
+static napi_value Test(napi_env env, napi_callback_info info)
+{
+    napi_value work_name;
+    napi_async_work work;
+    napi_create_string_utf8(env, "ohos", NAPI_AUTO_LENGTH, &work_name);
+    /* 第四个参数是异步线程的work任务，第五个参数为主线程的回调 */
+    napi_create_async_work(
+        env, nullptr, work_name, [](napi_env env, void* data){OH_LOG_INFO(LOG_APP, "ohos in execute"); },
+        [](napi_env env, napi_status status, void* data){
+            /* 不关心具体实现 */
+            OH_LOG_INFO(LOG_APP, "ohos in complete");
+            napi_delete_async_work(env, (napi_async_work)data);
+        },
+        nullptr, &work);
+    /* 通过napi_queue_async_work触发异步任务执行 */
+    napi_queue_async_work(env, work);
+    return 0;
+}
 
-29. EXTERN_C_START
-30. static napi_value Init(napi_env env, napi_value exports)
-31. {
-32. napi_property_descriptor desc[] = {{"test", nullptr, Test, nullptr, nullptr, nullptr, napi_default, nullptr}};
-33. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-34. return exports;
-35. }
-36. EXTERN_C_END
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {{"test", nullptr, Test, nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+    
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
 
-38. static napi_module demoModule = {
-39. .nm_version = 1,
-40. .nm_flags = 0,
-41. .nm_filename = nullptr,
-42. .nm_register_func = Init,
-43. .nm_modname = "entry",
-44. .nm_priv = ((void *)0),
-45. .reserved = {0},
-46. };
-
-48. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-49. {
-50. napi_module_register(&demoModule);
-51. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 在index.d.ts文件中添加如下代码：
 
 ```
-1. export const test:() => number;
+export const test:() => number;
 ```
 
 在CMakeLists.txt中添加以下动态链接库：
 
-```
-1. libhilog_ndk.z.so
+```txt
+libhilog_ndk.z.so
 ```
 
 ### 场景二、在Native侧向应用主循环抛fd事件，接口无法生效
@@ -264,118 +264,118 @@ Native侧:
 
 ArkTS侧:
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so'
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("testClose")
-11. .width('40%')
-12. .fontSize('14fp')
-13. .onClick(() => {
-14. testNapi.testClose();
-15. }).margin(20)
-16. }.width('100%')
-17. }.height('100%')
-18. }
-19. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("testClose")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+              testNapi.testClose();
+        }).margin(20)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 Native侧:
 
-```
-1. #include "napi/native_api.h"
-2. #include "uv.h"
-3. #define LOG_DOMAIN 0X0202
-4. #define LOG_TAG "MyTag"
-5. #include <hilog/log.h>
-6. #include <thread>
-7. #include <sys/eventfd.h>
+```cpp
+#include "napi/native_api.h"
+#include "uv.h"
+#define LOG_DOMAIN 0X0202
+#define LOG_TAG "MyTag"
+#include <hilog/log.h>
+#include <thread>
+#include <sys/eventfd.h>
 
-9. uv_loop_t* loop = nullptr;
-10. napi_value jsCb;
-11. int fd = -1;
+uv_loop_t* loop = nullptr;
+napi_value jsCb;
+int fd = -1;
 
-13. void poll_handler(uv_poll_t* handle,int status, int events)
-14. {
-15. OH_LOG_INFO(LOG_APP, "ohos poll print");
-16. }
+void poll_handler(uv_poll_t* handle,int status, int events)
+{
+    OH_LOG_INFO(LOG_APP, "ohos poll print");
+}
 
-18. static napi_value TestClose(napi_env env, napi_callback_info info)
-19. {
-20. std::thread::id this_id = std::this_thread::get_id();
-21. OH_LOG_INFO(LOG_APP, "ohos thread id : %{public}ld", this_id);
-22. size_t argc = 1;
-23. napi_value workBname;
+static napi_value TestClose(napi_env env, napi_callback_info info)
+{
+    std::thread::id this_id = std::this_thread::get_id();
+    OH_LOG_INFO(LOG_APP, "ohos thread id : %{public}ld", this_id);
+    size_t argc = 1;
+    napi_value workBname;
+    
+    napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &workBname);
+    
+    napi_get_cb_info(env, info, &argc, &jsCb, nullptr, nullptr);
+    // 获取事件循环
+    napi_get_uv_event_loop(env, &loop);
+    // 创建一个eventfd
+    fd = eventfd(0, 0);
+    OH_LOG_INFO(LOG_APP, "fd is %{public}d",fd);
+    uv_poll_t* poll_handle = new uv_poll_t;
+    // 初始化一个poll句柄，并将其与eventfd关联
+    uv_poll_init(loop, poll_handle, fd);
+    // 开始监听poll事件
+    uv_poll_start(poll_handle, UV_READABLE, poll_handler);
+    // 创建一个新线程，向eventfd写入数据
+    std::thread mythread([](){
+        for (int i = 0; i < 8; i++){
+            int value = 10;
+            int ret = eventfd_write(fd, value);
+            if (ret == -1){
+                OH_LOG_INFO(LOG_APP, "write failed!");
+                continue;
+            }
+        }
+    });
+    mythread.detach();
+    return 0;
+}
 
-25. napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &workBname);
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {{"testClose", nullptr, TestClose, nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+    
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
 
-27. napi_get_cb_info(env, info, &argc, &jsCb, nullptr, nullptr);
-28. // 获取事件循环
-29. napi_get_uv_event_loop(env, &loop);
-30. // 创建一个eventfd
-31. fd = eventfd(0, 0);
-32. OH_LOG_INFO(LOG_APP, "fd is %{public}d",fd);
-33. uv_poll_t* poll_handle = new uv_poll_t;
-34. // 初始化一个poll句柄，并将其与eventfd关联
-35. uv_poll_init(loop, poll_handle, fd);
-36. // 开始监听poll事件
-37. uv_poll_start(poll_handle, UV_READABLE, poll_handler);
-38. // 创建一个新线程，向eventfd写入数据
-39. std::thread mythread([](){
-40. for (int i = 0; i < 8; i++){
-41. int value = 10;
-42. int ret = eventfd_write(fd, value);
-43. if (ret == -1){
-44. OH_LOG_INFO(LOG_APP, "write failed!");
-45. continue;
-46. }
-47. }
-48. });
-49. mythread.detach();
-50. return 0;
-51. }
-
-53. EXTERN_C_START
-54. static napi_value Init(napi_env env, napi_value exports)
-55. {
-56. napi_property_descriptor desc[] = {{"testClose", nullptr, TestClose, nullptr, nullptr, nullptr, napi_default, nullptr}};
-57. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-58. return exports;
-59. }
-60. EXTERN_C_END
-
-62. static napi_module demoModule = {
-63. .nm_version = 1,
-64. .nm_flags = 0,
-65. .nm_filename = nullptr,
-66. .nm_register_func = Init,
-67. .nm_modname = "entry",
-68. .nm_priv = ((void *)0),
-69. .reserved = {0},
-70. };
-
-72. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-73. {
-74. napi_module_register(&demoModule);
-75. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 在index.d.ts添加如下代码：
 
-```
-1. export const testClose:() => number;
+```ts
+export const testClose:() => number;
 ```
 
 在CMakeLists.txt中添加以下动态链接库：
 
-```
-1. libhilog_ndk.z.so
+```txt
+libhilog_ndk.z.so
 ```
 
 在上述代码中，流程如下：
@@ -395,124 +395,124 @@ Native侧:
 
 ArkTS侧:
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so'
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("testClose")
-11. .width('40%')
-12. .fontSize('14fp')
-13. .onClick(() => {
-14. testNapi.testClose();
-15. }).margin(20)
-16. }.width('100%')
-17. }.height('100%')
-18. }
-19. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("testClose")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+              testNapi.testClose();
+        }).margin(20)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 Native侧:
 
-```
-1. #include "napi/native_api.h"
-2. #include "uv.h"
-3. #define LOG_DOMAIN 0x0202
-4. #define LOG_TAG "MyTag"
-5. #include <hilog/log.h>
-6. #include <thread>
-7. #include <sys/eventfd.h>
+```cpp
+#include "napi/native_api.h"
+#include "uv.h"
+#define LOG_DOMAIN 0x0202
+#define LOG_TAG "MyTag"
+#include <hilog/log.h>
+#include <thread>
+#include <sys/eventfd.h>
 
-9. uv_loop_t* loop = nullptr;
-10. napi_value jsCb;
-11. int fd = -1;
+uv_loop_t* loop = nullptr;
+napi_value jsCb;
+int fd = -1;
 
-13. void poll_handler(uv_poll_t* handle,int status, int events)
-14. {
-15. OH_LOG_INFO(LOG_APP, "ohos poll print");
-16. }
+void poll_handler(uv_poll_t* handle,int status, int events)
+{
+    OH_LOG_INFO(LOG_APP, "ohos poll print");
+}
 
-18. static napi_value TestClose(napi_env env, napi_callback_info info)
-19. {
-20. std::thread::id this_id = std::this_thread::get_id();
-21. OH_LOG_INFO(LOG_APP, "ohos thread id : %{public}ld", this_id);
-22. size_t argc = 1;
-23. napi_value workBName;
+static napi_value TestClose(napi_env env, napi_callback_info info)
+{
+    std::thread::id this_id = std::this_thread::get_id();
+    OH_LOG_INFO(LOG_APP, "ohos thread id : %{public}ld", this_id);
+    size_t argc = 1;
+    napi_value workBName;
+    
+    napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &workBName);
+    
+    napi_get_cb_info(env, info, &argc, &jsCb, nullptr, nullptr);
 
-25. napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &workBName);
+    napi_get_uv_event_loop(env, &loop);
 
-27. napi_get_cb_info(env, info, &argc, &jsCb, nullptr, nullptr);
+    fd = eventfd(0, 0);
+    OH_LOG_INFO(LOG_APP, "fd is %{public}d",fd);
+    uv_poll_t* poll_handle = new uv_poll_t;
+    uv_poll_init(loop, poll_handle, fd);
+    uv_poll_start(poll_handle, UV_READABLE, poll_handler);
 
-29. napi_get_uv_event_loop(env, &loop);
+    // 主动触发一次fd事件，让主线程执行一次uv_run
+    uv_async_send(&loop->wq_async);
+    
+    std::thread mythread([](){
+        for (int i = 0; i < 8; i++){
+            int value = 10;
+            int ret = eventfd_write(fd, value);
+            if (ret == -1){
+                OH_LOG_INFO(LOG_APP, "write failed!");
+                continue;
+            }
+        }
+    });
+    mythread.detach();
+    return 0;
+}
 
-31. fd = eventfd(0, 0);
-32. OH_LOG_INFO(LOG_APP, "fd is %{public}d",fd);
-33. uv_poll_t* poll_handle = new uv_poll_t;
-34. uv_poll_init(loop, poll_handle, fd);
-35. uv_poll_start(poll_handle, UV_READABLE, poll_handler);
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {{"testClose", nullptr, TestClose, nullptr, nullptr, nullptr, napi_default, nullptr}};
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+    
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
 
-37. // 主动触发一次fd事件，让主线程执行一次uv_run
-38. uv_async_send(&loop->wq_async);
-
-40. std::thread mythread([](){
-41. for (int i = 0; i < 8; i++){
-42. int value = 10;
-43. int ret = eventfd_write(fd, value);
-44. if (ret == -1){
-45. OH_LOG_INFO(LOG_APP, "write failed!");
-46. continue;
-47. }
-48. }
-49. });
-50. mythread.detach();
-51. return 0;
-52. }
-
-54. EXTERN_C_START
-55. static napi_value Init(napi_env env, napi_value exports)
-56. {
-57. napi_property_descriptor desc[] = {{"testClose", nullptr, TestClose, nullptr, nullptr, nullptr, napi_default, nullptr}};
-58. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-59. return exports;
-60. }
-61. EXTERN_C_END
-
-63. static napi_module demoModule = {
-64. .nm_version = 1,
-65. .nm_flags = 0,
-66. .nm_filename = nullptr,
-67. .nm_register_func = Init,
-68. .nm_modname = "entry",
-69. .nm_priv = ((void *)0),
-70. .reserved = {0},
-71. };
-
-73. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-74. {
-75. napi_module_register(&demoModule);
-76. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 在index.d.ts添加如下代码：
 
-```
-1. export const testClose:() => number;
+```ts
+export const testClose:() => number;
 ```
 
 在CMakeLists.txt中添加以下动态链接库：
 
-```
-1. libhilog_ndk.z.so
+```txt
+libhilog_ndk.z.so
 ```
 
 ## libuv使用指导
 
-**重要：libuv NDK中所有依赖uv\_run的接口在当前系统的应用主循环中无法及时生效，并且可能会导致卡顿掉帧的现象。因此不建议直接在JS主线程上使用libuv NDK接口，对于异步任务执行及与使用线程安全函数与主线程通信，开发者可以直接调用Node-API接口来实现相关功能。**
+**重要：libuv NDK中所有依赖uv\_run的接口在当前系统的应用主循环中无法及时生效，并且可能会导致卡顿掉帧的现象。因此不建议直接在JS主线程上使用libuv NDK接口，对于异步任务执行及使用线程安全函数与主线程通信，开发者可以直接调用Node-API接口来实现相关功能。**
 
 ### libuv接口与Node-API接口对应关系
 
@@ -526,41 +526,41 @@ Native侧:
 
 相关函数为：
 
-```
-1. /**
-2. * @brief 创建一个新的异步工作
-3. *
-4. * @param env 指向当前环境的指针
-5. * @param async_resource 可选的资源对象，用于跟踪异步操作
-6. * @param async_resource_name 可选的字符串，用于描述异步资源
-7. * @param execute 一个回调函数，它将在一个新的线程中执行异步操作
-8. * @param complete 一个回调函数，它将在异步操作完成后被调用
-9. * @param data 用户定义的数据，它将被传递给execute和complete回调函数
-10. * @param result 指向新创建的异步工作的指针
-11. */
-12. napi_status napi_create_async_work(napi_env env,
-13. napi_value async_resource,
-14. napi_value async_resource_name,
-15. napi_async_execute_callback execute,
-16. napi_async_complete_callback complete,
-17. void* data,
-18. napi_async_work* result);
+```cpp
+/**
+ * @brief 创建一个新的异步工作
+ *
+ * @param env 指向当前环境的指针
+ * @param async_resource 可选的资源对象，用于跟踪异步操作
+ * @param async_resource_name 可选的字符串，用于描述异步资源
+ * @param execute 一个回调函数，它将在一个新的线程中执行异步操作
+ * @param complete 一个回调函数，它将在异步操作完成后被调用
+ * @param data 用户定义的数据，它将被传递给execute和complete回调函数
+ * @param result 指向新创建的异步工作的指针
+ */
+napi_status napi_create_async_work(napi_env env,
+                                  napi_value async_resource,
+                                  napi_value async_resource_name,
+                                  napi_async_execute_callback execute,
+                                  napi_async_complete_callback complete,
+                                  void* data,
+                                  napi_async_work* result);
 
-20. /**
-21. * @brief 将异步工作添加到队列中
-22. *
-23. * @param env 指向当前环境的指针
-24. * @param work 指向异步工作的指针
-25. */
-26. napi_status napi_queue_async_work(napi_env env, napi_async_work work);
+/**
+ * @brief 将异步工作添加到队列中
+ *
+ * @param env 指向当前环境的指针
+ * @param work 指向异步工作的指针
+ */
+napi_status napi_queue_async_work(napi_env env, napi_async_work work);
 
-28. /**
-29. * @brief 删除异步工作
-30. *
-31. * @param env 指向当前环境的指针
-32. * @param work 指向异步工作的指针
-33. */
-34. napi_status napi_delete_async_work(napi_env env, napi_async_work work);
+/**
+ * @brief 删除异步工作
+ *
+ * @param env 指向当前环境的指针
+ * @param work 指向异步工作的指针
+ */
+napi_status napi_delete_async_work(napi_env env, napi_async_work work);
 ```
 
 **2. 跨线程共享和调用的线程安全函数**
@@ -576,58 +576,58 @@ Node-API与之对应的接口为[napi\_threadsafe\_function](../harmonyos-guides
 
 相关函数：
 
-```
-1. /**
-2. * @brief 用于创建一个线程安全的函数，该函数可以在多个线程中调用，而不需要担心数据竞争或其他线程安全问题
-3. *
-4. * @param env 指向NAPI环境的指针，用于创建和操作Javascript值
-5. * @param func 指向JavaScript函数的指针
-6. * @param async_resource 异步资源，通常是一个表示异步操作的对象
-7. * @param async_resource_name 指向资源名称的指针，这个名称将用于日志和调试
-8. * @param max_queue_size 一个整数，表示队列的最大大小，当队列满时，新的调用将被丢弃
-9. * @param initial_thread_count 无符号整数，表示在创建线程安全函数时，初始的线程数量
-10. * @param thread_finalize_data 一个指向在所有线程之前需要清理的数据
-11. * @param napi_finalize thread_finalize_cb 回调函数，当所有线程完成时被调用，用于清理资源
-12. * @param context 指向上下文的指针，这个上下文将被传递给call_js_func函数
-13. * @param call_js_cb 指向回调函数的指针，这个函数将在Javascript函数被调用时被调用
-14. * @param result 指向napi_threadsafe_function结构的指针，这个结构将被填充为新创建的线程安全函数
-15. */
-16. napi_status napi_create_threadsafe_function(napi_env env,
-17. napi_value func,
-18. napi_value async_resource,
-19. napi_value async_resource_name,
-20. size_t max_queue_size,
-21. size_t initial_thread_count,
-22. void* thread_finalize_data,
-23. napi_finalize thread_finalize_cb,
-24. void* context,
-25. napi_threadsafe_function_call_js call_js_cb,
-26. napi_threadsafe_function* result);
+```cpp
+/**
+ * @brief 用于创建一个线程安全的函数，该函数可以在多个线程中调用，而不需要担心数据竞争或其他线程安全问题
+ *
+ * @param env 指向NAPI环境的指针，用于创建和操作Javascript值
+ * @param func 指向JavaScript函数的指针
+ * @param async_resource 异步资源，通常是一个表示异步操作的对象
+ * @param async_resource_name 指向资源名称的指针，这个名称将用于日志和调试
+ * @param max_queue_size 一个整数，表示队列的最大大小，当队列满时，新的调用将被丢弃
+ * @param initial_thread_count 无符号整数，表示在创建线程安全函数时，初始的线程数量
+ * @param thread_finalize_data 一个指向在所有线程之前需要清理的数据
+ * @param napi_finalize thread_finalize_cb 回调函数，当所有线程完成时被调用，用于清理资源
+ * @param context 指向上下文的指针，这个上下文将被传递给call_js_func函数
+ * @param call_js_cb 指向回调函数的指针，这个函数将在Javascript函数被调用时被调用
+ * @param result 指向napi_threadsafe_function结构的指针，这个结构将被填充为新创建的线程安全函数
+ */
+napi_status napi_create_threadsafe_function(napi_env env,
+                                            napi_value func,
+                                            napi_value async_resource,
+                                            napi_value async_resource_name,
+                                            size_t max_queue_size,
+                                            size_t initial_thread_count,
+                                            void* thread_finalize_data,
+                                            napi_finalize thread_finalize_cb,
+                                            void* context,
+                                            napi_threadsafe_function_call_js call_js_cb,
+                                            napi_threadsafe_function* result);
 
-28. /**
-29. * @brief 获取一个线程安全的函数
-30. *
-31. * @param function 指向线程安全函数的指针
-32. */
-33. napi_status napi_acquire_threadsafe_function(napi_threadsafe_function function);
+/**
+ * @brief 获取一个线程安全的函数
+ *
+ * @param function 指向线程安全函数的指针
+ */
+napi_status napi_acquire_threadsafe_function(napi_threadsafe_function function);
 
-35. /**
-36. * @brief 调用一个线程安全的函数
-37. * @param function 指向线程安全函数的指针
-38. * @param data 用户数据
-39. * @param is_blocking 枚举值，它决定调用JavaScript函数是阻塞的还是非阻塞的
-40. */
-41. napi_status napi_call_threadsafe_function(napi_threadsafe_function function,
-42. void* data,
-43. napi_threadsafe_function_call_mode is_blocking);
-44. /**
-45. * @brief 释放一个线程安全的函数
-46. *
-47. * @param function 指向线程安全函数的指针
-48. * @param is_blocking 枚举值，它决定调用JavaScript函数是阻塞的还是非阻塞的
-49. */
-50. napi_status napi_release_threadsafe_function(napi_threadsafe_function function,
-51. napi_threadsafe_function_call_mode is_blocking);
+/**
+ * @brief 调用一个线程安全的函数
+ * @param function 指向线程安全函数的指针
+ * @param data 用户数据
+ * @param is_blocking 枚举值，它决定调用JavaScript函数是阻塞的还是非阻塞的
+ */
+napi_status napi_call_threadsafe_function(napi_threadsafe_function function,
+                                          void* data,
+                                          napi_threadsafe_function_call_mode is_blocking);
+/**
+ * @brief 释放一个线程安全的函数
+ *
+ * @param function 指向线程安全函数的指针
+ * @param is_blocking 枚举值，它决定调用JavaScript函数是阻塞的还是非阻塞的
+ */
+napi_status napi_release_threadsafe_function(napi_threadsafe_function function,
+                                             napi_threadsafe_function_call_mode is_blocking);
 ```
 
 除此之外，如果开发者需要libuv其他原生接口来实现业务功能，为了让开发者正确使用libuv提供的接口能力，避免因为错误使用而陷入到问题当中。在后续章节，我们将逐步介绍libuv的一些基本概念和HarmonyOS系统中常用函数的正确使用方法，它仅仅可以保证开发者使用libuv接口的时候不会出现应用进程崩溃等现象。另外，我们还统计了在当前应用主线程上可以正常使用的接口，以及无法在应用主线程上使用的接口。
@@ -636,21 +636,21 @@ Node-API与之对应的接口为[napi\_threadsafe\_function](../harmonyos-guides
 
 | 接口类型 | 接口汇总 |
 | --- | --- |
-| [loop概念及相关接口](libuv.md#libuv中的事件循环) | uv\_loop\_init |
-| [loop概念及相关接口](libuv.md#libuv中的事件循环) | uv\_loop\_close |
-| [loop概念及相关接口](libuv.md#libuv中的事件循环) | uv\_default\_loop |
-| [loop概念及相关接口](libuv.md#libuv中的事件循环) | uv\_run |
-| [loop概念及相关接口](libuv.md#libuv中的事件循环) | uv\_loop\_alive |
-| [loop概念及相关接口](libuv.md#libuv中的事件循环) | uv\_stop |
-| [Handle概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_poll\_\* |
-| [Handle概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_timer\_\* |
-| [Handle概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_async\_\* |
-| [Handle概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_signal\_\* |
-| [Handle概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_fs\_\* |
-| [Request概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_random |
-| [Request概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_getaddrinfo |
-| [Request概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_getnameinfo |
-| [Request概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_queue\_work |
+| [libuv中的事件循环概念及相关接口](libuv.md#libuv中的事件循环) | uv\_loop\_init |
+| [libuv中的事件循环概念及相关接口](libuv.md#libuv中的事件循环) | uv\_loop\_close |
+| [libuv中的事件循环概念及相关接口](libuv.md#libuv中的事件循环) | uv\_default\_loop |
+| [libuv中的事件循环概念及相关接口](libuv.md#libuv中的事件循环) | uv\_run |
+| [libuv中的事件循环概念及相关接口](libuv.md#libuv中的事件循环) | uv\_loop\_alive |
+| [libuv中的事件循环概念及相关接口](libuv.md#libuv中的事件循环) | uv\_stop |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_poll\_\* |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_timer\_\* |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_async\_\* |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_signal\_\* |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_fs\_\* |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_random |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_getaddrinfo |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_getnameinfo |
+| [libuv中的handles和requests概念及相关接口](libuv.md#libuv中的handles和requests) | uv\_queue\_work |
 | [线程间通信原理及相关接口](libuv.md#线程间通信) | uv\_async\_init |
 | [线程间通信原理及相关接口](libuv.md#线程间通信) | uv\_async\_send |
 | [线程池概念及相关接口](libuv.md#线程池) | uv\_queue\_work |
@@ -667,180 +667,180 @@ Node-API与之对应的接口为[napi\_threadsafe\_function](../harmonyos-guides
 
 ArkTS侧：
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so'
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("TestTimerAsync")
-11. .width('40%')
-12. .fontSize('14fp')
-13. .onClick(() => {
-14. testNapi.testTimerAsync();  // 初始化async句柄
-15. }).margin(20)
-
-17. Button("TestTimerAsyncSend")
-18. .width('40%')
-19. .fontSize('14fp')
-20. .onClick(() => {
-21. testNapi.testTimerAsyncSend();  // 子线程调用uv_async_send提交定时器任务
-22. }).margin(20)
-23. }.width('100%')
-24. }.height('100%')
-25. }
-26. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("TestTimerAsync")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+              testNapi.testTimerAsync();  // 初始化async句柄
+        }).margin(20)
+          
+          Button("TestTimerAsyncSend")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+              testNapi.testTimerAsyncSend();  // 子线程调用uv_async_send提交定时器任务
+        }).margin(20)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 Native侧：
 
-```
-1. #include <napi/native_api.h>
-2. #include <uv.h>
-3. #define LOG_DOMAIN 0x0202
-4. #define LOG_TAG "MyTag"
-5. #include "hilog/log.h"
-6. #include <thread>
+```cpp
+#include <napi/native_api.h>
+#include <uv.h>
+#define LOG_DOMAIN 0x0202
+#define LOG_TAG "MyTag"
+#include "hilog/log.h"
+#include <thread>
 
-8. uv_async_t* async = new uv_async_t;
-9. bool cond1 = false;
-10. bool cond2 = false;
+uv_async_t* async = new uv_async_t;
+bool cond1 = false;
+bool cond2 = false;
 
-12. // 使用技巧：在使用loop时, 需要特别注意uv_stop函数的使用, 开发者需要确保uv_stop前
-13. // 通知与loop相关的所有线程的handle都关闭, 参考stop_loop函数的实现
-14. int stop_loop(uv_loop_t* loop)
-15. {
-16. uv_stop(loop);
-17. auto const ensure_close = [](uv_handle_t* handle, void*) {
-18. if (uv_is_closing(handle)) {
-19. return;
-20. } else {
-21. uv_close(handle, nullptr);
-22. }
-23. };
-24. // 遍历所有句柄, 如果handle处于活跃状态, 调用ensure_close
-25. uv_walk(loop, ensure_close, nullptr);
-26. // 继续运行uv_run, 直到loop中不存在活跃的句柄和请求为止
-27. while(true) {
-28. if (uv_run(loop, UV_RUN_DEFAULT) == 0) {
-29. break;
-30. }
-31. }
+// 使用技巧：在使用loop时, 需要特别注意uv_stop函数的使用, 开发者需要确保uv_stop前
+// 通知与loop相关的所有线程的handle都关闭, 参考stop_loop函数的实现
+int stop_loop(uv_loop_t* loop)
+{
+    uv_stop(loop);
+    auto const ensure_close = [](uv_handle_t* handle, void*) {
+        if (uv_is_closing(handle)) {
+            return;
+        } else {
+            uv_close(handle, nullptr);
+        }
+    };
+    // 遍历所有句柄, 如果handle处于活跃状态, 调用ensure_close
+    uv_walk(loop, ensure_close, nullptr);
+    // 继续运行uv_run, 直到loop中不存在活跃的句柄和请求为止
+    while(true) {
+        if (uv_run(loop, UV_RUN_DEFAULT) == 0) {
+            break;
+        }
+    }
 
-33. // 最后检查loop状态
-34. if (uv_loop_alive(loop) != 0) {
-35. return -1;
-36. }
-37. return 0;
-38. }
+    // 最后检查loop状态
+    if (uv_loop_alive(loop) != 0) {
+        return -1;
+    }
+    return 0;
+}
 
-40. // 执行创建定时器操作
-41. void async_cb(uv_async_t* handle) {
-42. auto loop = handle->loop;
-43. uv_timer_t* timer = new uv_timer_t;
-44. uv_timer_init(loop, timer);
+// 执行创建定时器操作
+void async_cb(uv_async_t* handle) {
+    auto loop = handle->loop;
+    uv_timer_t* timer = new uv_timer_t;
+    uv_timer_init(loop, timer);
 
-46. // 在适当的时机关闭async句柄
-47. if (cond2) {
-48. uv_close((uv_handle_t*)handle, [](uv_handle_t* handle){
-49. delete (uv_async_t*)handle;
-50. });
-51. return;
-52. }
+    // 在适当的时机关闭async句柄
+    if (cond2) {
+        uv_close((uv_handle_t*)handle, [](uv_handle_t* handle){
+            delete (uv_async_t*)handle;
+        });
+        return;
+    }
 
-54. uv_timer_start(timer,
-55. [](uv_timer_t* timer){
-56. // do something
-57. // 在适当的时机停掉timer
-58. if (cond1) {
-59. uv_timer_stop(timer);
-60. uv_close((uv_handle_t*)timer, [](uv_handle_t* handle){
-61. delete(uv_timer_t*)handle;
-62. });
-63. }
-64. },
-65. 100, 100);
-66. }
+    uv_timer_start(timer,
+        [](uv_timer_t* timer){
+            // do something
+            // 在适当的时机停掉timer
+            if (cond1) {
+                uv_timer_stop(timer);
+                uv_close((uv_handle_t*)timer, [](uv_handle_t* handle){
+                    delete(uv_timer_t*)handle;
+                });
+            }
+        },
+        100, 100);
+}
 
-68. // 初始化async句柄, 绑定对应的回调函数
-69. static napi_value TestTimerAsync(napi_env env, napi_callback_info info) {
-70. std::thread t([](){  // A线程，loop线程
-71. uv_loop_t* loop = new uv_loop_t;
-72. // 开发者自己创建loop, 请注意维护loop的生命周期
-73. uv_loop_init(loop);
-74. // 初始化一个async句柄, 注册回调函数
-75. uv_async_init(loop, async, async_cb);
-76. // 让loop开始运行
-77. uv_run(loop, UV_RUN_DEFAULT);
-78. // 清理所有的handle
-79. stop_loop(loop);
-80. // 释放loop
-81. uv_loop_close(loop);
-82. delete loop;
-83. });
-84. t.detach();
-85. return 0;
-86. }
+// 初始化async句柄, 绑定对应的回调函数
+static napi_value TestTimerAsync(napi_env env, napi_callback_info info) {
+    std::thread t([](){  // A线程，loop线程
+        uv_loop_t* loop = new uv_loop_t;
+        // 开发者自己创建loop, 请注意维护loop的生命周期
+        uv_loop_init(loop);
+        // 初始化一个async句柄, 注册回调函数
+        uv_async_init(loop, async, async_cb);
+        // 让loop开始运行
+        uv_run(loop, UV_RUN_DEFAULT);
+        // 清理所有的handle
+        stop_loop(loop);
+        // 释放loop
+        uv_loop_close(loop);
+        delete loop;
+    });
+    t.detach();
+    return 0;
+}
 
-88. // 在另一个线程上调用uv_async_send函数
-89. static napi_value TestTimerAsyncSend(napi_env env, napi_callback_info info)
-90. {
-91. std::thread t1([](){ // B线程
-92. uv_async_send(async);  // 调用uv_async_send, 通知loop线程调用与async句柄绑定的timer_cb
-93. uv_sleep(500);
-94. // 修改cond1, 关闭timer handle
-95. cond1 = true;
-96. });
+// 在另一个线程上调用uv_async_send函数
+static napi_value TestTimerAsyncSend(napi_env env, napi_callback_info info)
+{
+    std::thread t1([](){ // B线程
+        uv_async_send(async);  // 调用uv_async_send, 通知loop线程调用与async句柄绑定的timer_cb
+        uv_sleep(500);
+        // 修改cond1, 关闭timer handle
+        cond1 = true;
+    });
 
-98. std::thread t2([](){ // B线程
-99. uv_sleep(1000);
-100. // 修改cond2, 关闭async handle
-101. cond2 = true;
-102. uv_async_send(async);
-103. });
+    std::thread t2([](){ // B线程
+        uv_sleep(1000);
+        // 修改cond2, 关闭async handle
+        cond2 = true;
+        uv_async_send(async);
+    });
 
-105. t1.detach();
-106. t2.detach();
-107. return 0;
-108. }
+    t1.detach();
+    t2.detach();
+    return 0;
+}
 
-110. EXTERN_C_START
-111. static napi_value Init(napi_env env, napi_value exports)
-112. {
-113. napi_property_descriptor desc[] = {
-114. {"testTimerAsync", nullptr, TestTimerAsync, nullptr, nullptr, nullptr, napi_default, nullptr},
-115. {"testTimerAsyncSend", nullptr, TestTimerAsyncSend, nullptr, nullptr, nullptr, napi_default, nullptr},
-116. };
-117. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-118. return exports;
-119. }
-120. EXTERN_C_END
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"testTimerAsync", nullptr, TestTimerAsync, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testTimerAsyncSend", nullptr, TestTimerAsyncSend, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+    
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
 
-122. static napi_module demoModule = {
-123. .nm_version = 1,
-124. .nm_flags = 0,
-125. .nm_filename = nullptr,
-126. .nm_register_func = Init,
-127. .nm_modname = "entry",
-128. .nm_priv = ((void *)0),
-129. .reserved = {0},
-130. };
-
-132. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-133. {
-134. napi_module_register(&demoModule);
-135. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 在index.d.ts添加如下代码：
 
-```
-1. export const testTimerAsync:() => number;
-2. export const testTimerAsyncSend:() => number;
+```ts
+export const testTimerAsync:() => number;
+export const testTimerAsyncSend:() => number;
 ```
 
 **2. 从env获取loop**
@@ -861,7 +861,7 @@ Native侧：
 
 **提示：所有形如uv\_xxx\_init的函数，即使它是以线程安全的方式实现的，但使用时要注意，避免多个线程同时调用uv\_xxx\_init，否则它依旧会引起多线程资源竞争的问题。最好的方式是在事件循环线程中调用该函数。**
 
-**注：uv\_async\_send函数被调用后，回调函数是被异步触发的。如果调用了多次uv\_async\_send，libuv只保证至少有一次回调会被执行。这就可能导致一旦对同一句柄触发了多次uv\_async\_send，libuv对回调的处理可能会违背开发者的预期。多次对同一个async句柄进行send操作，还会导致任意两次相同句柄send操作之间提交的的其他async\_cb任务丢失。** 而在Native侧，可以保证回调的执行次数和开发者调用napi\_call\_threadsafe\_function的次数保持一致。
+**注：uv\_async\_send函数被调用后，回调函数是被异步触发的。如果调用了多次uv\_async\_send，libuv只保证至少有一次回调会被执行。这就可能导致一旦对同一句柄触发了多次uv\_async\_send，libuv对回调的处理可能会违背开发者的预期。多次对同一个async句柄进行send操作，还会导致任意两次相同句柄send操作之间提交的其他async\_cb任务丢失。** 而在Native侧，可以保证回调的执行次数和开发者调用napi\_call\_threadsafe\_function的次数保持一致。
 
 非线程安全函数：
 
@@ -886,44 +886,44 @@ UV\_RUN\_NOWAIT：非阻塞模式，该模式下不会执行pending\_queue，而
 
 **2. 常用接口**
 
-```
-1. int uv_loop_init(uv_loop_t* loop);
+```cpp
+int uv_loop_init(uv_loop_t* loop);
 ```
 
 对loop进行初始化。
 
-```
-1. int uv_loop_close(uv_loop_t* loop);
+```cpp
+int uv_loop_close(uv_loop_t* loop);
 ```
 
 关闭loop，该函数只有在loop中所有的句柄和请求都关闭后才能成功返回，否则将返回UV\_EBUSY。
 
-```
-1. int uv_loop_delete(uv_loop_t* loop);
+```cpp
+int uv_loop_delete(uv_loop_t* loop);
 ```
 
 释放loop，该接口会先调用uv\_loop\_close，然后再将loop释放掉。在HarmonyOS平台上，由于assert函数不生效，因此不论uv\_loop\_close函数是否成功清理loop上的资源，都会将loop释放掉。开发者使用该接口时，请务必确保在loop线程退出时，loop上的资源可以被正确释放，即挂在loop上的handle和request均被关闭，否则会导致资源泄漏。**开发者使用该接口时务必格外谨慎，建议非必要不使用。**
 
-```
-1. uv_loop_t* uv_default_loop(void);
+```cpp
+uv_loop_t* uv_default_loop(void);
 ```
 
 该函数创建一个进程级的loop。在HarmonyOS中，由于目前的应用主循环及其他JS工作线程还存在着libuv的loop。因此我们不建议开发者使用该函数来创建loop并实现业务功能。
 
-```
-1. int uv_run(uv_loop_t* loop, uv_run_mode mode);
+```cpp
+int uv_run(uv_loop_t* loop, uv_run_mode mode);
 ```
 
 启动事件循环。运行模式可查看事件循环运行的三种方式。
 
-```
-1. int uv_loop_alive(uv_loop_t loop);
+```cpp
+int uv_loop_alive(uv_loop_t loop);
 ```
 
 判断loop是否处于活跃状态。
 
-```
-1. void uv_stop(uv_loop_t* loop);
+```cpp
+void uv_stop(uv_loop_t* loop);
 ```
 
 该函数用来停止一个事件循环，在loop的下一次迭代中才会停止。如果该函数发生在I/O操作之前，将不会阻塞而是直接跳过uv\_\_io\_poll。
@@ -936,17 +936,17 @@ request表示一个短暂性的请求，一个request只触发一次回调操作
 
 下面是HarmonyOS系统中最常用的几个Handles和Requests：
 
-```
-1. /* Handle Type */
-2. typedef struct uv_handle_s uv_handle_t;
-3. typedef struct uv_timer_s uv_timer_t;
-4. typedef struct uv_async_s uv_async_t;
-5. typedef struct uv_signal_s uv_signal_t;
+```cpp
+/* Handle Type */
+typedef struct uv_handle_s uv_handle_t;
+typedef struct uv_timer_s uv_timer_t;
+typedef struct uv_async_s uv_async_t;
+typedef struct uv_signal_s uv_signal_t;
 
-7. /* Request Type */
-8. typedef struct uv_req_s uv_req_t;
-9. typedef struct uv_work_s uv_work_t;
-10. typedef struct uv_fs_s uv_fs_t;
+/* Request Type */
+typedef struct uv_req_s uv_req_t;
+typedef struct uv_work_s uv_work_t;
+typedef struct uv_fs_s uv_fs_t;
 ```
 
 **注：在handles中，uv\_xxx\_t继承了uv\_handle\_t；在requests中，uv\_work\_t继承了uv\_req\_t。**
@@ -959,8 +959,8 @@ request表示一个短暂性的请求，一个request只触发一次回调操作
 
 在这里，需要特别说明一下uv\_close的使用方法。uv\_close被用来关闭一个handle，但是关闭handle的动作是异步的。函数原型为：
 
-```
-1. void uv_close(uv_handle_t* handle, uv_close_cb close_cb)
+```cpp
+void uv_close(uv_handle_t* handle, uv_close_cb close_cb)
 ```
 
 handle：要关闭的句柄。
@@ -971,21 +971,21 @@ close\_cb：处理该句柄的函数，用来进行内存管理等操作。
 
 **Tips**：在[libuv官方文档](http://libuv.org/)中，有个经验法则需要在此提示一下。原文翻译：如果 uv\_foo\_t 类型的句柄具有 uv\_foo\_start() 函数，则从调用该函数的那一刻起，它就处于活动状态。 同样，uv\_foo\_stop()再次停用句柄。
 
-注意
+**注意** 
 
 1. 所有的handle关闭前必须要调用uv\_close，所有的内存操作都要在uv\_close的close\_cb中执行。
 2. 所有的handle操作都不能通过获取其他线程loop的方式，在非loop线程上调用。
 
 对于libuv中的requests，开发者需要确保在进行异步任务提交时，**通过动态申请的request，要在loop所在线程执行的complete回调函数中释放**。用uv\_work\_t举例，代码可参考如下：
 
-```
-1. uv_work_t* work = new uv_work_t;
-2. uv_queue_work(loop, work, [](uv_work_t* req) {
-3. // 异步操作
-4. }, [](uv_work_t* req, int status) {
-5. // 回调操作
-6. delete req;
-7. });
+```cpp
+uv_work_t* work = new uv_work_t;
+uv_queue_work(loop, work, [](uv_work_t* req) {
+    // 异步操作
+}, [](uv_work_t* req, int status) {
+    // 回调操作
+    delete req;
+});
 ```
 
 ### libuv timer使用规范
@@ -1001,227 +1001,227 @@ close\_cb：处理该句柄的函数，用来进行内存管理等操作。
 
 ArkTS侧：
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so'
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so'
 
-4. function waitforRunner(): number {
-5. "use concurrent"
-6. hilog.info(0xff, "testTag", "executed");
-7. return 0;
-8. }
+function waitforRunner(): number {
+    "use concurrent"
+    hilog.info(0xff, "testTag", "executed");
+    return 0;
+}
 
-10. @Entry
-11. @Component
-12. struct Index {
-13. build() {
-14. Row() {
-15. Column() {
-16. Button("TimerTest")
-17. .width('40%')
-18. .fontSize('14fp')
-19. .onClick(() => {
-20. let i: number = 20;
-21. while (i--) {
-22. setTimeout(waitforRunner, 200);
-23. testNapi.testTimer();
-24. }
-25. }).margin(20)
-26. }.width('100%')
-27. }.height('100%')
-28. }
-29. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("TimerTest")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+            let i: number = 20;
+            while (i--) {
+              setTimeout(waitforRunner, 200);
+              testNapi.testTimer();
+          }
+        }).margin(20)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 Native C++侧：
 
-```
-1. #include <napi/native_api.h>
-2. #include <uv.h>
-3. #define LOG_DOMAIN 0x0202
-4. #define LOG_TAG "MyTag"
-5. #include "hilog/log.h"
-6. #include <thread>
-7. #include <unistd.h>
+```cpp
+#include <napi/native_api.h>
+#include <uv.h>
+#define LOG_DOMAIN 0x0202
+#define LOG_TAG "MyTag"
+#include "hilog/log.h"
+#include <thread>
+#include <unistd.h>
 
-9. static napi_value TestTimer(napi_env env, napi_callback_info info)
-10. {
-11. uv_loop_t* loop = nullptr;
-12. uv_timer_t* timer = new uv_timer_t;
+static napi_value TestTimer(napi_env env, napi_callback_info info)
+{
+    uv_loop_t* loop = nullptr;
+    uv_timer_t* timer = new uv_timer_t;
+    
+    napi_get_uv_event_loop(env, &loop);
+    uv_timer_init(loop, timer);
+    std::thread t1([&loop, &timer](){
+        uv_timer_start(timer, [](uv_timer_t* timer){
+            uv_timer_stop(timer);
+        }, 1000, 0);
+    });
+    
+    t1.detach();
+    return 0;
+}
 
-14. napi_get_uv_event_loop(env, &loop);
-15. uv_timer_init(loop, timer);
-16. std::thread t1([&loop, &timer](){
-17. uv_timer_start(timer, [](uv_timer_t* timer){
-18. uv_timer_stop(timer);
-19. }, 1000, 0);
-20. });
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"testTimer", nullptr, TestTimer, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+    
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
 
-22. t1.detach();
-23. return 0;
-24. }
-
-26. EXTERN_C_START
-27. static napi_value Init(napi_env env, napi_value exports)
-28. {
-29. napi_property_descriptor desc[] = {
-30. {"testTimer", nullptr, TestTimer, nullptr, nullptr, nullptr, napi_default, nullptr},
-31. };
-32. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-33. return exports;
-34. }
-35. EXTERN_C_END
-
-37. static napi_module demoModule = {
-38. .nm_version = 1,
-39. .nm_flags = 0,
-40. .nm_filename = nullptr,
-41. .nm_register_func = Init,
-42. .nm_modname = "entry",
-43. .nm_priv = ((void *)0),
-44. .reserved = {0},
-45. };
-
-47. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-48. {
-49. napi_module_register(&demoModule);
-50. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 在index.d.ts添加如下代码：
 
-```
-1. export const testTimer:() => number;
+```typescript
+export const testTimer:() => number;
 ```
 
 **2. 正确使用timer示例**
 
 **场景一：** 在上述场景中，需保证在JS主线程上进行timer的相关操作。将上述TestTimer函数的代码做如下修改，便可以避免崩溃发生。
 
-```
-1. static napi_value TestTimer(napi_env env, napi_callback_info info)
-2. {
-3. uv_loop_t* loop = nullptr;
-4. uv_timer_t* timer = new uv_timer_t;
+```cpp
+static napi_value TestTimer(napi_env env, napi_callback_info info)
+{
+    uv_loop_t* loop = nullptr;
+    uv_timer_t* timer = new uv_timer_t;
+    
+    napi_get_uv_event_loop(env, &loop);
+    uv_timer_init(loop, timer);
+    uv_timer_start(timer, [](uv_timer_t* timer){
+        uv_timer_stop(timer);
+    }, 1000, 0);
 
-6. napi_get_uv_event_loop(env, &loop);
-7. uv_timer_init(loop, timer);
-8. uv_timer_start(timer, [](uv_timer_t* timer){
-9. uv_timer_stop(timer);
-10. }, 1000, 0);
-
-12. return 0;
-13. }
+    return 0;
+}
 ```
 
 **场景二：** 如果需要在指定的子线程抛定时器，请使用线程安全函数uv\_async\_send实现。
 
 ArkTS侧：
 
-```
-1. import { hilog } from '@kit.PerformanceAnalysisKit';
-2. import testNapi from 'libentry.so'
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import testNapi from 'libentry.so'
 
-4. @Entry
-5. @Component
-6. struct Index {
-7. build() {
-8. Row() {
-9. Column() {
-10. Button("TestTimerAsync")
-11. .width('40%')
-12. .fontSize('14fp')
-13. .onClick(() => {
-14. testNapi.testTimerAsync();  // 初始化async句柄
-15. }).margin(20)
-
-17. Button("TestTimerAsyncSend")
-18. .width('40%')
-19. .fontSize('14fp')
-20. .onClick(() => {
-21. testNapi.testTimerAsyncSend();  // 子线程调用uv_async_send提交定时器任务
-22. }).margin(20)
-23. }.width('100%')
-24. }.height('100%')
-25. }
-26. }
+@Entry
+@Component
+struct Index {
+  build() {
+    Row() {
+      Column() {
+        Button("TestTimerAsync")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+              testNapi.testTimerAsync();  // 初始化async句柄
+        }).margin(20)
+          
+          Button("TestTimerAsyncSend")
+          .width('40%')
+          .fontSize('14fp')
+          .onClick(() => {
+              testNapi.testTimerAsyncSend();  // 子线程调用uv_async_send提交定时器任务
+        }).margin(20)
+      }.width('100%')
+    }.height('100%')
+  }
+}
 ```
 
 Native侧：
 
 ```
-1. #include <napi/native_api.h>
-2. #include <uv.h>
-3. #define LOG_DOMAIN 0x0202
-4. #define LOG_TAG "MyTag"
-5. #include "hilog/log.h"
-6. #include <thread>
-7. #include <unistd.h>
-8. uv_async_t* async = new uv_async_t;
+#include <napi/native_api.h>
+#include <uv.h>
+#define LOG_DOMAIN 0x0202
+#define LOG_TAG "MyTag"
+#include "hilog/log.h"
+#include <thread>
+#include <unistd.h>
+uv_async_t* async = new uv_async_t;
 
-10. // 执行创建定时器操作
-11. void async_cb(uv_async_t* handle)
-12. {
-13. auto loop = handle->loop;
-14. uv_timer_t* timer = new uv_timer_t;
-15. uv_timer_init(loop, timer);
+// 执行创建定时器操作
+void async_cb(uv_async_t* handle)
+{
+    auto loop = handle->loop;
+    uv_timer_t* timer = new uv_timer_t;
+    uv_timer_init(loop, timer);
+    
+    uv_timer_start(timer, [](uv_timer_t* timer){
+        uv_timer_stop(timer);
+    }, 1000, 0);
+}
 
-17. uv_timer_start(timer, [](uv_timer_t* timer){
-18. uv_timer_stop(timer);
-19. }, 1000, 0);
-20. }
+// 初始化async句柄，绑定对应的回调函数
+static napi_value TestTimerAsync(napi_env env, napi_callback_info info)
+{
+    uv_loop_t* loop = nullptr;
+    napi_get_uv_event_loop(env, &loop);
+    uv_async_init(loop, async, async_cb);
+    return 0;
+}
 
-22. // 初始化async句柄，绑定对应的回调函数
-23. static napi_value TestTimerAsync(napi_env env, napi_callback_info info)
-24. {
-25. uv_loop_t* loop = nullptr;
-26. napi_get_uv_event_loop(env, &loop);
-27. uv_async_init(loop, async, async_cb);
-28. return 0;
-29. }
+static napi_value TestTimerAsyncSend(napi_env env, napi_callback_info info)
+{
+    std::thread t([](){
+        uv_async_send(async);  // 在任意子线程中调用uv_async_send，通知主线程调用与async绑定的timer_cb
+    });
+    t.detach();
+    return 0;
+}
 
-31. static napi_value TestTimerAsyncSend(napi_env env, napi_callback_info info)
-32. {
-33. std::thread t([](){
-34. uv_async_send(async);  // 在任意子线程中调用uv_async_send，通知主线程调用与async绑定的timer_cb
-35. });
-36. t.detach();
-37. return 0;
-38. }
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"testTimerAsync", nullptr, TestTimerAsync, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testTimerAsyncSend", nullptr, TestTimerAsyncSend, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+    
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "entry",
+    .nm_priv = ((void *)0),
+    .reserved = {0},
+};
 
-40. EXTERN_C_START
-41. static napi_value Init(napi_env env, napi_value exports)
-42. {
-43. napi_property_descriptor desc[] = {
-44. {"testTimerAsync", nullptr, TestTimerAsync, nullptr, nullptr, nullptr, napi_default, nullptr},
-45. {"testTimerAsyncSend", nullptr, TestTimerAsyncSend, nullptr, nullptr, nullptr, napi_default, nullptr},
-46. };
-47. napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-48. return exports;
-49. }
-50. EXTERN_C_END
-
-52. static napi_module demoModule = {
-53. .nm_version = 1,
-54. .nm_flags = 0,
-55. .nm_filename = nullptr,
-56. .nm_register_func = Init,
-57. .nm_modname = "entry",
-58. .nm_priv = ((void *)0),
-59. .reserved = {0},
-60. };
-
-62. extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
-63. {
-64. napi_module_register(&demoModule);
-65. }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}
 ```
 
 在index.d.ts添加如下代码：
 
-```
-1. export const testTimerAsync:() => number;
-2. export const testTimerAsyncSend:() => number;
+```ts
+export const testTimerAsync:() => number;
+export const testTimerAsyncSend:() => number;
 ```
 
 ### 线程间通信
@@ -1230,8 +1230,8 @@ Native侧：
 
 libuv的线程间通信是通过uv\_async\_t句柄来进行的，相关函数如下：
 
-```
-1. int uv_async_init(uv_loop_t* loop, uv_async_t* handle, uv_async_cb async_cb)
+```cpp
+int uv_async_init(uv_loop_t* loop, uv_async_t* handle, uv_async_cb async_cb)
 ```
 
 loop：事件循环loop。
@@ -1242,8 +1242,8 @@ async\_cb：回调函数。
 
 返回：成功，返回0。失败，返回错误码。
 
-```
-1. int uv_async_send(uv_async_t* handle)
+```cpp
+int uv_async_send(uv_async_t* handle)
 ```
 
 handle：线程间通信句柄。
@@ -1255,46 +1255,46 @@ handle：线程间通信句柄。
 1. uv\_async\_t从调用uv\_async\_init开始后就一直处于活跃状态，除非用uv\_close将其关闭。
 2. uv\_async\_t的执行顺序严格按照uv\_async\_init的顺序，而非通过uv\_async\_send的顺序来执行的。因此按照初始化的顺序来管理好时序问题是必要的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ThTgsOu6Teeby6B-7CQQrw/zh-cn_image_0000002589247247.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/NYxgfTjYRHq5o0Ad0FeQxg/zh-cn_image_0000002736316239.jpg)
 
 示例代码：
 
-```
-1. #include <iostream>
-2. #include <thread>
-3. #include "uv.h"
+```cpp
+#include <iostream>
+#include <thread>
+#include "uv.h"
 
-5. uv_loop_t* loop = nullptr;
-6. uv_async_t* async = nullptr;
-7. int g_counter = 10;
+uv_loop_t* loop = nullptr;
+uv_async_t* async = nullptr;
+int g_counter = 10;
 
-9. void async_handler(uv_async_t* handle)
-10. {
-11. std::cout << "ohos async print" << std::endl;
-12. if (--g_counter == 0) {
-13. // 调用uv_close关闭async，在主循环中释放内存。
-14. uv_close((uv_handle_t*)async, [](uv_handle_t* handle) {
-15. std::cout << "delete async" << std::endl;
-16. delete (uv_async_t*)handle;
-17. });
-18. }
-19. }
+void async_handler(uv_async_t* handle)
+{
+    std::cout << "ohos async print" << std::endl;
+    if (--g_counter == 0) {
+        // 调用uv_close关闭async，在主循环中释放内存。
+        uv_close((uv_handle_t*)async, [](uv_handle_t* handle) {
+            std::cout << "delete async" << std::endl;
+            delete (uv_async_t*)handle;
+        });
+    }
+}
 
-21. int main()
-22. {
-23. loop = uv_default_loop();
-24. async = new uv_async_t;
-25. uv_async_init(loop, async, async_handler);
-26. std::thread subThread([]() {
-27. for (int i = 0; i < 10; i++) {
-28. usleep(100); // 避免多次调用uv_async_send只执行一次
-29. std::cout << i << "th: subThread triggered" << std::endl;
-30. uv_async_send(async);
-31. }
-32. });
-33. subThread.detach();
-34. return uv_run(loop, UV_RUN_DEFAULT);
-35. }
+int main()
+{
+    loop = uv_default_loop();
+    async = new uv_async_t;
+    uv_async_init(loop, async, async_handler);
+    std::thread subThread([]() {
+        for (int i = 0; i < 10; i++) {
+            usleep(100); // 避免多次调用uv_async_send只执行一次
+            std::cout << i << "th: subThread triggered" << std::endl;
+            uv_async_send(async);
+        }
+    });
+    subThread.detach();
+    return uv_run(loop, UV_RUN_DEFAULT);
+}
 ```
 
 该示例代码仅仅描述了一个简单的场景，步骤如下：
@@ -1305,46 +1305,46 @@ handle：线程间通信句柄。
 
 可以看到，每触发一次，主线程都会执行一次回调函数。
 
-```
-1. 0th:subThread triggered
-2. ohos async print
-3. 1th:subThread triggered
-4. ohos async print
-5. 2th:subThread triggered
-6. ohos async print
-7. 3th:subThread triggered
-8. ohos async print
-9. 4th:subThread triggered
-10. ohos async print
-11. 5th:subThread triggered
-12. ohos async print
-13. 6th:subThread triggered
-14. ohos async print
-15. 7th:subThread triggered
-16. ohos async print
-17. 8th:subThread triggered
-18. ohos async print
-19. 9th:subThread triggered
-20. ohos async print
-21. delete async
+```txt
+0th:subThread triggered
+ohos async print
+1th:subThread triggered
+ohos async print
+2th:subThread triggered
+ohos async print
+3th:subThread triggered
+ohos async print
+4th:subThread triggered
+ohos async print
+5th:subThread triggered
+ohos async print
+6th:subThread triggered
+ohos async print
+7th:subThread triggered
+ohos async print
+8th:subThread triggered
+ohos async print
+9th:subThread triggered
+ohos async print
+delete async
 ```
 
 ### 线程池
 
 线程池是libuv的一个核心功能，libuv中的线程池通过uv\_loop\_t中的成员变量wq\_async来控制工作线程与主线程的通信。核心函数如下：
 
-```
-1. int uv_queue_work(uv_loop_t* loop,
-2. uv_work_t* req,
-3. uv_work_cb work_cb,
-4. uv_after_work_cb after_work_cb)
+```cpp
+int uv_queue_work(uv_loop_t* loop,
+                  uv_work_t* req,
+                  uv_work_cb work_cb,
+                  uv_after_work_cb after_work_cb)
 ```
 
 work\_cb：提交给工作线程的任务。
 
 after\_work\_cb：loop所在线程要执行的回调函数。
 
-注意
+**注意** 
 
 work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行完，通过uv\_async\_send(loop->wq\_async)触发fd事件，loop所在线程在下一次迭代中才会执行after\_work\_cb。只有执行到after\_work\_cb时，与之相关的uv\_work\_t生命周期才算结束。
 
@@ -1352,7 +1352,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 下图为原生libuv的线程池工作流程，图中流程已简化，默认句柄的pending标志为1，worker线程个数不代表线程池中线程的真实数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/EdmJZi6dTMi-W7TvSr4zzg/zh-cn_image_0000002558767440.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/wqD7kZ81R5e0AKhYFVnISg/zh-cn_image_0000002706677194.jpg)
 
 **2. 异步任务提交注意事项**
 
@@ -1372,7 +1372,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 另外，在应用主线程中，所有的异步任务尽管最终都是通过libuv得到执行的。但是在当前系统中，libuv的线程池已经对接到了FFRT中，任何抛向libuv的异步任务都会在FFRT的线程中得到调度。应用主线程的回调函数也通过PostTask接口插入到eventhandler的队列上。这就意味着FFRT线程上的异步任务完成后不再通过uv\_async\_send的方式触发主线程的回调。过程如下图:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/dcouKpY1SgWeVFzkzoPghQ/zh-cn_image_0000002558607782.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/QW_N-RB0TOaLi_MOIIRcCA/zh-cn_image_0000002736436283.jpg)
 
 我们总结了五种类型的请求任务是直接可以按照正常用法在应用主循环中生效的：
 
@@ -1380,199 +1380,199 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
   函数原型：
 
-```
-1. /**
-2. * @brief 将一个工作请求添加到事件循环的队列中。
-3. *
-4. * @param loop 事件循环
-5. * @param req 随机数请求
-6. * @param buf 存储随机数的缓冲区
-7. * @param buflen 缓冲区的长度
-8. * @param flags 一个无符号整数，表示生成随机数的选项
-9. * @param cb  随机数生成完成后的回调函数
-10. *
-11. * @return 成功返回0，失败返回错误码
-12. */
-13. int uv_random(uv_loop_t* loop,
-14. uv_random_t* req,
-15. void* buf,
-16. size_t buflen,
-17. unsigned flags,
-18. uv_random_cb cb);
+```cpp
+/**
+ * @brief 将一个工作请求添加到事件循环的队列中。
+ *
+ * @param loop 事件循环
+ * @param req 随机数请求
+ * @param buf 存储随机数的缓冲区
+ * @param buflen 缓冲区的长度
+ * @param flags 一个无符号整数，表示生成随机数的选项
+ * @param cb  随机数生成完成后的回调函数
+ *
+ * @return 成功返回0，失败返回错误码
+ */
+int uv_random(uv_loop_t* loop,
+             uv_random_t* req,
+             void* buf,
+             size_t buflen,
+             unsigned flags,
+             uv_random_cb cb);
 ```
 
 * uv\_work\_t
 
   函数原型：
 
-```
-1. /**
-2. * @brief 将一个工作请求添加到事件循环的队列中。当事件循环在下一次迭代时，work_cb函数将会在一个新的线程中被调用。当work_cb函数完成时，after_work_cb函数将会在事件循环的线程中被调用。
-3. *
-4. * @param loop 事件循环
-5. * @param req 工作请求
-6. * @param work_cb 在新线程中被调用的函数
-7. * @param after_work_cb 在事件循环线程中被调用的函数
-8. *
-9. * @return 成功返回0，失败返回-1
-10. */
-11. int uv_queue_work(uv_loop_t* loop,
-12. uv_work_t* req,
-13. uv_work_cb work_cb,
-14. uv_after_work_cb after_work_cb);
+```cpp
+/**
+ * @brief 将一个工作请求添加到事件循环的队列中。当事件循环在下一次迭代时，work_cb函数将会在一个新的线程中被调用。当work_cb函数完成时，after_work_cb函数将会在事件循环的线程中被调用。
+ *
+ * @param loop 事件循环
+ * @param req 工作请求
+ * @param work_cb 在新线程中被调用的函数
+ * @param after_work_cb 在事件循环线程中被调用的函数
+ *
+ * @return 成功返回0，失败返回-1
+ */
+int uv_queue_work(uv_loop_t* loop,
+                  uv_work_t* req,
+                  uv_work_cb work_cb,
+                  uv_after_work_cb after_work_cb);
 ```
 
 * uv\_fs\_t
 
   文件类提供的所有异步接口，在应用主线程中都是可以生效的。主要有如下：
 
-```
-1. /**
-2. * @brief 异步读取文件
-3. *
-4. * @param loop 事件循环
-5. * @param req 文件操作请求
-6. * @param file 文件描述符
-7. * @param bufs 读取数据的缓冲区
-8. * @param nbufs 缓冲区的数量
-9. * @param off 文件的偏移量
-10. * @param cb 完成后的回调函数
-11. * @return 成功返回0，失败返回-1
-12. */
-13. int uv_fs_read(uv_loop_t* loop, uv_fs_t* req,
-14. uv_file file,
-15. const uv_buf_t bufs[],
-16. unsigned int nbufs,
-17. int64_t off,
-18. uv_fs_cb cb);
+```cpp
+/**
+ * @brief 异步读取文件
+ *
+ * @param loop 事件循环
+ * @param req 文件操作请求
+ * @param file 文件描述符
+ * @param bufs 读取数据的缓冲区
+ * @param nbufs 缓冲区的数量
+ * @param off 文件的偏移量
+ * @param cb 完成后的回调函数
+ * @return 成功返回0，失败返回-1
+ */
+int uv_fs_read(uv_loop_t* loop, uv_fs_t* req,
+              uv_file file,
+              const uv_buf_t bufs[],
+              unsigned int nbufs,
+              int64_t off,
+              uv_fs_cb cb);
 
-20. /**
-21. * @brief 异步打开文件
-22. *
-23. * @param loop 事件循环
-24. * @param req 文件操作请求
-25. * @param path 文件路径
-26. * @param flags 打开文件的方式
-27. * @param mode 文件权限
-28. * @param cb 完成后的回调函数
-29. *
-30. * @return 成功返回0，失败返回-1
-31. */
-32. int uv_fs_open(uv_loop_t* loop,
-33. uv_fs_t* req,
-34. const char* path,
-35. int flags,
-36. int mode,
-37. uv_fs_cb cb);
+/**
+ * @brief 异步打开文件
+ *
+ * @param loop 事件循环
+ * @param req 文件操作请求
+ * @param path 文件路径
+ * @param flags 打开文件的方式
+ * @param mode 文件权限
+ * @param cb 完成后的回调函数
+ *
+ * @return 成功返回0，失败返回-1
+ */
+int uv_fs_open(uv_loop_t* loop,
+               uv_fs_t* req,
+               const char* path,
+               int flags,
+               int mode,
+               uv_fs_cb cb);
 
-39. /**
-40. * @brief 异步发送文件
-41. *
-42. * @param loop 事件循环
-43. * @param req 文件操作请求
-44. * @param out_fd 输出文件描述符
-45. * @param in_fd 输入文件描述符
-46. * @param off 文件的偏移量
-47. * @param len 发送的长度
-48. * @param cb 完成后的回调函数
-49. *
-50. * @return 成功返回0，失败返回-1
-51. */
-52. int uv_fs_sendfile(uv_loop_t* loop,
-53. uv_fs_t* req,
-54. uv_file out_fd,
-55. uv_file in_fd,
-56. int64_t off,
-57. size_t len,
-58. uv_fs_cb cb);
+/**
+ * @brief 异步发送文件
+ *
+ * @param loop 事件循环
+ * @param req 文件操作请求
+ * @param out_fd 输出文件描述符
+ * @param in_fd 输入文件描述符
+ * @param off 文件的偏移量
+ * @param len 发送的长度
+ * @param cb 完成后的回调函数
+ *
+ * @return 成功返回0，失败返回-1
+ */
+int uv_fs_sendfile(uv_loop_t* loop,
+                   uv_fs_t* req,
+                   uv_file out_fd,
+                   uv_file in_fd,
+                   int64_t off,
+                   size_t len,
+                   uv_fs_cb cb);
 
-60. /**
-61. * @brief 异步写入文件
-62. *
-63. * @param loop 事件循环
-64. * @param req 文件操作请求
-65. * @param file 文件描述符
-66. * @param bufs 要写入的数据
-67. * @param nbufs 数据的数量
-68. * @param off 文件的偏移量
-69. * @param cb 完成后的回调函数
-70. *
-71. * @return 成功返回0，失败返回-1
-72. */
-73. int uv_fs_write(uv_loop_t* loop,
-74. uv_fs_t* req,
-75. uv_file file,
-76. const uv_buf_t bufs[],
-77. unsigned int nbufs,
-78. int64_t off,
-79. uv_fs_cb cb);
+/**
+ * @brief 异步写入文件
+ *
+ * @param loop 事件循环
+ * @param req 文件操作请求
+ * @param file 文件描述符
+ * @param bufs 要写入的数据
+ * @param nbufs 数据的数量
+ * @param off 文件的偏移量
+ * @param cb 完成后的回调函数
+ *
+ * @return 成功返回0，失败返回-1
+ */
+int uv_fs_write(uv_loop_t* loop,
+                uv_fs_t* req,
+                uv_file file,
+                const uv_buf_t bufs[],
+                unsigned int nbufs,
+                int64_t off,
+                uv_fs_cb cb);
 
-81. /**
-82. * @brief 异步复制文件
-83. *
-84. * @param loop 事件循环
-85. * @param req 文件操作请求
-86. * @param path 源文件路径
-87. * @param new_path 目标文件路径
-88. * @param flags 复制选项
-89. * @param cb 完成后的回调函数
-90. *
-91. * @return 成功返回0，失败返回-1
-92. */
-93. int uv_fs_copyfile(uv_loop_t* loop,
-94. uv_fs_t* req,
-95. const char* path,
-96. const char* new_path
-97. int flags,
-98. uv_fs_cb cb);
+/**
+ * @brief 异步复制文件
+ *
+ * @param loop 事件循环
+ * @param req 文件操作请求
+ * @param path 源文件路径
+ * @param new_path 目标文件路径
+ * @param flags 复制选项
+ * @param cb 完成后的回调函数
+ *
+ * @return 成功返回0，失败返回-1
+ */
+int uv_fs_copyfile(uv_loop_t* loop,
+                   uv_fs_t* req,
+                   const char* path,
+                   const char* new_path
+                   int flags,
+                   uv_fs_cb cb);
 ```
 
 * uv\_getaddrinfo\_t
 
   函数原型：
 
-```
-1. /**
-2. * @brief 异步获取地址信息
-3. *
-4. * @param loop 事件循环
-5. * @param req 地址信息请求
-6. * @param cb 完成后的回调函数
-7. * @param hostname 主机名
-8. * @param service 服务名
-9. * @param hints 地址信息提示
-10. *
-11. * @return 成功返回0，失败返回-1
-12. */
-13. int uv_getaddrinfo(uv_loop_t* loop,
-14. uv_getaddrinfo_t* req,
-15. uv_getaddrinfo_cb cb,
-16. const char* hostname,
-17. const char* service,
-18. const struct addrinfo* hints);
+```cpp
+/**
+ * @brief 异步获取地址信息
+ *
+ * @param loop 事件循环
+ * @param req 地址信息请求
+ * @param cb 完成后的回调函数
+ * @param hostname 主机名
+ * @param service 服务名
+ * @param hints 地址信息提示
+ *
+ * @return 成功返回0，失败返回-1
+ */
+int uv_getaddrinfo(uv_loop_t* loop,
+                   uv_getaddrinfo_t* req,
+                   uv_getaddrinfo_cb cb,
+                   const char* hostname,
+                   const char* service,
+                   const struct addrinfo* hints);
 ```
 
 * uv\_getnameinfo\_t
 
   函数原型：
 
-```
-1. /**
-2. * @brief 异步获取名称信息
-3. *
-4. * @param loop 事件循环
-5. * @param req 名称信息请求
-6. * @param getnameinfo_cb 完成后的回调函数
-7. * @param addr 地址
-8. * @param flags 标志
-9. *
-10. * @return 成功返回0，失败返回-1
-11. */
-12. int uv_getnameinfo(uv_loop_t* loop,
-13. uv_getnameinfo_t* req,
-14. uv_getnameinfo_cb getnameinfo_cb,
-15. const struct sockaddr* addr,
-16. int flags);
+```cpp
+/**
+ * @brief 异步获取名称信息
+ *
+ * @param loop 事件循环
+ * @param req 名称信息请求
+ * @param getnameinfo_cb 完成后的回调函数
+ * @param addr 地址
+ * @param flags 标志
+ *
+ * @return 成功返回0，失败返回-1
+ */
+int uv_getnameinfo(uv_loop_t* loop,
+                   uv_getnameinfo_t* req,
+                   uv_getnameinfo_cb getnameinfo_cb,
+                   const struct sockaddr* addr,
+                   int flags);
 ```
 
 在应用主线程上不生效的接口主要包括：

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-confi
 title: 申请账号权限
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 申请账号权限
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:47+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:25ec21045e6bfd9588bb0124d1ba1b6b5dea4197a85a75db6f8e61e3127b0d13
+scraped_at: 2026-09-02T14:59:51+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:c5a3ebe7fa7bc45071a2ac15e61ea3d5d686fb98083991f2905adb3364e051d7
 ---
 
 请参考“[应用开发准备](application-dev-overview.md)”章节，创建应用、使用DevEco Studio创建应用工程。
 
-说明
+**说明** 
 
 如需申请华为账号一键登录、获取您的手机号、获取收货地址权限，则需按照以下步骤完成权限申请，否则可跳过本章节。
 
@@ -18,7 +18,7 @@ content_hash: sha256:25ec21045e6bfd9588bb0124d1ba1b6b5dea4197a85a75db6f8e61e3127
 
 申请权限前请参考**表1**，了解账号权限支持的能力和使用条件，并根据**表2**、**表3**、**表4**完成自检，确认您的**应用类型、设备类型、开发者类型等**是否符合申请条件，不符合条件的申请将被驳回。
 
-说明
+**说明** 
 
 华为账号一键登录、获取您的手机号、获取收货地址权限，仅支持企业开发者申请，不支持个人开发者申请。个人开发者可使用[华为账号登录](account-unionid-login-button.md)或[静默登录](account-silent-login.md)实现登录。
 
@@ -28,7 +28,8 @@ content_hash: sha256:25ec21045e6bfd9588bb0124d1ba1b6b5dea4197a85a75db6f8e61e3127
 | --- | --- | --- | --- | --- |
 | 华为账号一键登录 | 支持应用获取用户的**Union ID**、**Open ID**和华为账号绑定的**手机号**。 | 非游戏类应用、非银行类应用 | 企业开发者 | Phone、Tablet、PC/2in1、TV |
 | 获取您的手机号 | 支持应用获取华为账号绑定的**手机号**或用户选择的**其他手机号**。 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV |
-| 获取收货地址 | 支持应用获取用户的**地址**，地址可以用做收货或者发货。 | 无限制 | 企业开发者 | Phone、Tablet、PC/2in1 |
+| 获取收货地址 | 支持应用获取用户的**地址**，地址可以用做收货或者发货。 | 无限制 | 企业开发者 | Phone、Tablet、PC/2in1、TV |
+| 获取您的年龄段 | 支持应用获取用户的**实名年龄段**信息 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV |
 
 **表2** 华为账号一键登录权限申请自检表
 
@@ -60,25 +61,35 @@ content_hash: sha256:25ec21045e6bfd9588bb0124d1ba1b6b5dea4197a85a75db6f8e61e3127
 | 3 | 若应用近期存在违规记录，则不予审批或有权收回权限。 |
 | 4 | 若用户举报或发现开发者不合理的使用，华为有权收回权限。 |
 
+**表5** 获取您的年龄段权限申请自检表
+
+| 序号 | 自检项内容 |
+| --- | --- |
+| 1 | 开发者必须为企业开发者。 |
+| 2 | 仅支持游戏类应用申请，其他类型应用暂不开放。 |
+| 3 | 应用是否上架应用市场，如不上架需要说明原因。 |
+| 4 | 若应用近期存在违规记录，则不予审批或有权收回权限。 |
+| 5 | 若用户举报或发现开发者不合理的使用，华为有权收回权限。 |
+
 ## 申请步骤
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择相应的项目，然后选择需要申请对应权限的HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Ivtj_IxKRxKNIlEnW_cr2g/zh-cn_image_0000002589245047.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/yEl5bn4bSzCa8s2jVb48xg/zh-cn_image_0000002736433903.png)
 2. 在“开放能力管理”中，选择想要申请的账号权限，并点击“申请”。
 
-   说明
+   **说明** 
 
    权限申请入口目前仅对企业开发者开放，个人开发者不可见。
 
    图示仅为示例，不同应用类型展示不同权限，请以实际页面显示为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/5UhCynryRA-MrQUudN9cJQ/zh-cn_image_0000002558765242.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/bu5iF9IdTjS7LwitAP_OaA/zh-cn_image_0000002706834752.png)
 3. 点击申请后，请根据应用实际情况填写“申请原因”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/OhBCwMFoQgmajMK0lZmusw/zh-cn_image_0000002558605586.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/rS6gyChYSGSe50FXPe_oaw/zh-cn_image_0000002736313859.png)
 
-   说明
+   **说明** 
 
    申请原因填写模板：
 
@@ -117,17 +128,17 @@ content_hash: sha256:25ec21045e6bfd9588bb0124d1ba1b6b5dea4197a85a75db6f8e61e3127
    | 演出票务类 | 基本功能服务为“演出购票”。 |
 4. 提交申请成功后，自动跳转到互动中心，提示等待审核。
 
-   说明
+   **说明** 
 
-   5个工作日内审核结果会通过站内消息的形式发送到[互动中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)，请注意查收。
+   3个工作日内审核结果会通过站内消息的形式发送到[互动中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)，请注意查收。
 5. 权限申请通过后最迟在25小时后生效。
 
    **（可选）** 您可通过修改应用工程 > app.json5中的versionCode触发权限生效。
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/9bHjpcb2R3KOXRQJAKBVzA/zh-cn_image_0000002589325113.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/xM606eCUQ2ybCC1gVGY4Nw/zh-cn_image_0000002706674818.png)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/NQFKNAR3QxOaaWJlPGoZww/zh-cn_image_0000002589245049.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/S99eZcctS4KetnLV14A1gw/zh-cn_image_0000002736433905.png)

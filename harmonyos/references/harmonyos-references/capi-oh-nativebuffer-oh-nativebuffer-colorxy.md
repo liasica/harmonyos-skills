@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-n
 title: OH_NativeBuffer_ColorXY
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > OH_NativeBuffer_ColorXY
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:08+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d8b47f4e565fff8b5d38255f9be9bb7bf6be9623e0bbb7336e92803c9a31b188
+scraped_at: 2026-09-02T15:02:45+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:cc88e7f1a504b198b8af7755811b09d8d61d207972aa0d5e811b3f3766aa963e
 ---
 
-```
-1. typedef struct OH_NativeBuffer_ColorXY {...} OH_NativeBuffer_ColorXY
+```c
+typedef struct OH_NativeBuffer_ColorXY {...} OH_NativeBuffer_ColorXY
 ```
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 表示基色的X和Y坐标。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 成员变量
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |

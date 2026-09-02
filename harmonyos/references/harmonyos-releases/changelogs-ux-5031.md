@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-5031
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.3(15) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.3(15) Beta1引入的行为变更 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.3(15) Beta1引入的行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:35:31+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:0bba287338c672a8b41cf5b3a48b42fbf47c3e62a39619cb5c11950b17d9900d
+scraped_at: 2026-09-02T14:58:49+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:c05ef25e3b2e166737dae63a2e4acf39a6938a077e27a170cb4566f93c194645
 ---
 
-说明
+**说明** 
 
 从HarmonyOS 5.0.3版本开始，DevEco Studio将会对涉及变更的接口进行提示，并给出链接直接跳转至变更说明对应条目。
 
@@ -40,11 +40,11 @@ bindSheet的SheetMode.EMBEDDED属性。
 
 变更后，若开发者仍不期望ESC键退出半模态，可以通过半模态的[onWillDismiss](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheetoptions)回调控制是否响应ESC和侧滑关闭半模态。
 
-```
-1. onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
-2. if (DismissSheetAction.reason == DismissReason.PRESS_BACK) {
-3. } else {
-4. DismissSheetAction.dismiss() //注册dismiss行为会关闭半模态
-5. }
-6. }),
+```ts
+onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
+    if (DismissSheetAction.reason == DismissReason.PRESS_BACK) {
+    } else {
+        DismissSheetAction.dismiss() //注册dismiss行为会关闭半模态
+    }
+}),
 ```

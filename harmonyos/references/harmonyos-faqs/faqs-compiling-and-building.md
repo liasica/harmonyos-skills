@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译构建
 breadcrumb: FAQ > DevEco Studio > 编译构建
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:07+08:00
-doc_updated_at: 2026-04-27
-content_hash: sha256:c88a547d022e59555d6b9402a0a2f70f35e5e4a9a2eb56de71b5f672afd47fed
+scraped_at: 2026-09-02T14:54:54+08:00
+doc_updated_at: 2026-07-22
+content_hash: sha256:37fe91e15dbcf0ea6c131e042e91be3bbde108d6bf49e10e06a58de447050be1
 ---
 
 * **[编译报错“JS heap out of memory”](faqs-compiling-and-building-1.md)**
@@ -35,7 +35,7 @@ content_hash: sha256:c88a547d022e59555d6b9402a0a2f70f35e5e4a9a2eb56de71b5f672afd
 * **[编译报错“(is the command line too long?)”](faqs-compiling-and-building-32.md)**
 * **[编译报错“CMake Error: The following variables are used in this project, but they are set to NOTFOUND”](faqs-compiling-and-building-33.md)**
 * **[执行sync过程中修改Hvigor及plugin版本导致build init](faqs-compiling-and-building-34.md)**
-* **[更新Hvigor版本时，配置了依赖却在build init时报未找到此依赖](faqs-compiling-and-building-35.md)**
+* **[更新hvigor版本时，配置了依赖却在build init时报未找到此依赖](faqs-compiling-and-building-35.md)**
 * **[编译报错 “Unknown resource name”](faqs-compiling-and-building-36.md)**
 * **[构建报错“ERROR: Task xxx was not found in the project xxx”](faqs-compiling-and-building-37.md)**
 * **[编译报错“The reason and usedScene attributes are mandatory for user\_grant permissions”](faqs-compiling-and-building-38.md)**
@@ -52,19 +52,18 @@ content_hash: sha256:c88a547d022e59555d6b9402a0a2f70f35e5e4a9a2eb56de71b5f672afd
 * **[应用打包成.app时其中的HAP包没有签名](faqs-compiling-and-building-51.md)**
 * **[如何给新增的module在线签名](faqs-compiling-and-building-52.md)**
 * **[如何设置DevEco Studio配置用来调试动态库](faqs-compiling-and-building-53.md)**
-* **[如何使用手动生成证书打包](faqs-compiling-and-building-54.md)**
 * **[项目工程中怎样配置Native的版本](faqs-compiling-and-building-55.md)**
 * **[静态共享包HAR如何引用另一个HAR包中的so文件](faqs-compiling-and-building-56.md)**
 * **[怎样在编译配置中设置excludes文件](faqs-compiling-and-building-57.md)**
 * **[如何在编译过程中添加自定义任务](faqs-compiling-and-building-58.md)**
-* **[如何处理include <stddef.h>编译报错](faqs-compiling-and-building-59.md)**
+* **[如何处理 include <stddef.h> 编译报错](faqs-compiling-and-building-59.md)**
 * **[如何控制编译过程的cpu使用](faqs-compiling-and-building-60.md)**
 * **[DevEco怎么导出项目的依赖树](faqs-compiling-and-building-61.md)**
 * **[如何在hvigor自定义任务中使用npm包](faqs-compiling-and-building-63.md)**
 * **[如何写har包的编译脚本](faqs-compiling-and-building-64.md)**
 * **[如何定制构建多目标产物](faqs-compiling-and-building-65.md)**
 * **[开发的插件能直接在DevEco Studio使用么](faqs-compiling-and-building-66.md)**
-* **[如何解决编译报错“Property xxx does not exist on type 'typeof BuildProfile'”](faqs-compiling-and-building-69.md)**
+* **[如何解决编译报错“Property xxx does not exist on type 'typeof BuildProfile'](faqs-compiling-and-building-69.md)**
 * **[如何进行DevEco Studio编译构建初步性能分析](faqs-compiling-and-building-70.md)**
 * **[如何解决DevEco Studio编译hsp和闭源har包的时候，生成声明文件时emit的耗时过长导致编译慢的问题](faqs-compiling-and-building-71.md)**
 * **[如何获取BuildProfile中的值](faqs-compiling-and-building-72.md)**
@@ -106,7 +105,7 @@ content_hash: sha256:c88a547d022e59555d6b9402a0a2f70f35e5e4a9a2eb56de71b5f672afd
 * **[编译报错“The path XX is not writable. please choose a new location”](faqs-compiling-and-building-118.md)**
 * **[编译报错“The useNormalizedOHMUrl settings of packages xxx and the project useNormalizedOHMUrl: xxx do not match”](faqs-compiling-and-building-119.md)**
 * **[如何解决编译报错“Could not resolve 'xxx' from”，但'xxx'目录存在的问题](faqs-compiling-and-building-120.md)**
-* **[用户目录下没有.npmrc文件](faqs-compiling-and-building-121.md)**
+* **[用户目录下没有npmrc文件](faqs-compiling-and-building-121.md)**
 * **[如何解决编译报错“ Error: 'icon' value `$media:icons` invalid value.”的问题](faqs-compiling-and-building-122.md)**
 * **[如何解决编译报错“Error: cJSON\_Parse failed, please check the JSON file.”的问题](faqs-compiling-and-building-123.md)**
 * **[如何解决编译报错“Error: the name 'XXX' can only contain [a-zA-Z0-9\_]”的问题](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-124)**
@@ -155,12 +154,12 @@ content_hash: sha256:c88a547d022e59555d6b9402a0a2f70f35e5e4a9a2eb56de71b5f672afd
 * **[如何快速关闭工程中所有字节码HAR配置](faqs-compiling-and-building-169.md)**
 * **[在.ts文件中使用“import { export } from 'xxx.so';”方式导入.so文件编译告警：“Currently module for 'xxx.so' is not verified. ”](faqs-compiling-and-building-179.md)**
 * **[构建HSP模块时报错“Ohos BundleTool [Error]: hsp has home ability;Ohos BundleTool [Error]: CompressEntrance::main exit, verify failed.”](https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-and-building-180)**
-* **[编译报错“Error: open 'xxx\libimage\_transcoder\_shared.dll' failed”](faqs-compiling-and-building-181.md)**
+* **[编译报错"Error: open 'xxx\libimage\_transcoder\_shared.dll' failed"](faqs-compiling-and-building-181.md)**
 * **[推包调试报错“Error message:cannot find record '&XXX/src/main/ets/YYY&x.y.z', please check the request path.'ZZZ.abc'.”](faqs-compiling-and-building-182.md)**
 * **[执行命令卡在起daemon的日志上或编译报错“ReferenceError, TransformStream is not defined in hvigorfile: XXX”](faqs-compiling-and-building-183.md)**
 * **[编译报错“Cannot read properties of undefined (reading 'split')”](faqs-compiling-and-building-184.md)**
 * **[升级react-native-openharmony编译出错](faqs-compiling-and-building-185.md)**
-* **[报错“ENOENT: no such file or directory, uv\_cwd”](faqs-compiling-and-building-186.md)**
+* **[报错"ENOENT: no such file or directory, uv\_cwd"](faqs-compiling-and-building-186.md)**
 * **[debug包功能正常，release包开启混淆后应用功能运行异常，页面白屏，崩溃](faqs-compiling-and-building-187.md)**
 * **[DevEco Studio 6.0.0 Beta1 及以上版本DevEco Studio ARKUI-X工程构建app报错](faqs-compiling-and-building-188.md)**
 * **[构建过程中控制台报错：“构建过程中控制台报错：EPERM: operation not permitted, symlink 'xxxxxxxx' -> 'xxxxxxx'......”](faqs-compiling-and-building-189.md)**
@@ -170,3 +169,41 @@ content_hash: sha256:c88a547d022e59555d6b9402a0a2f70f35e5e4a9a2eb56de71b5f672afd
 * **[并行编译多个大型Hap/Hsp模块可能会导致DevEco Studio闪退](faqs-compiling-and-building-193.md)**
 * **[编译报错“failed with:Exit code 0xc0000043”](faqs-compiling-and-building-194.md)**
 * **[编译报错：pnpm安装失败等问题汇总](faqs-compiling-and-building-195.md)**
+* **[DevEco Studio中Cmake编译选项的优先级说明](faqs-compiling-and-building-196.md)**
+* **[预览器触发构建，编译时发生daemon相关报错](faqs-compiling-and-building-197.md)**
+* **[通过命令行获取profile文件中的bundleName信息失败怎么办](faqs-compiling-and-building-198.md)**
+* **[如何解决编译本地依赖包失败的问题](faqs-compiling-and-building-199.md)**
+* **[编译构建项目无法排除某些目录打包怎么处理](faqs-compiling-and-building-200.md)**
+* **[IDE编译报错Invalid dependency](faqs-compiling-and-building-201.md)**
+* **[配置useNormalizedOHMUrl为true模式下常见错误](faqs-compiling-and-building-202.md)**
+* **[动态生成编译构建产物Hap和App的名称](faqs-compiling-and-building-203.md)**
+* **[打包App报错：input module vendor is different](faqs-compiling-and-building-204.md)**
+* **[基于hvigorfile.ts自定义打包文件名，如何删除同文件夹存在的安装包](faqs-compiling-and-building-205.md)**
+* **[如何动态修改oh-package.json5的内容](faqs-compiling-and-building-206.md)**
+* **[能否在编译打包时自定义版本号](faqs-compiling-and-building-207.md)**
+* **[Hvigor编译构建实现添加自定义文件至.har产物中](faqs-compiling-and-building-208.md)**
+* **[移除module.json5中label和icon字段导致photoAccessHelper接口报错](faqs-compiling-and-building-209.md)**
+* **[Index.d.ts接口定义文件中语法检查报错如何处理](faqs-compiling-and-building-210.md)**
+* **[一键编译打包所有product](faqs-compiling-and-building-211.md)**
+* **[如何在构建打包时获取云端文件新增或更新到rawfile文件夹中](faqs-compiling-and-building-212.md)**
+* **[使用Hvigor自定义不同产物的配置数据](faqs-compiling-and-building-213.md)**
+* **[如何解决直接安装与命令安装的HAP包不一致问题](faqs-compiling-and-building-214.md)**
+* **[如何解决打包时提示删除自定义字体无权限问题](faqs-compiling-and-building-215.md)**
+* **[编译报错daemon connections达到上限](faqs-compiling-and-building-216.md)**
+* **[获取Hap包的打包构建时间](faqs-compiling-and-building-217.md)**
+* **[使用HMRouter报错moduleContext is null in hvigorfile](faqs-compiling-and-building-218.md)**
+* **[如何进行App加固操作](faqs-compiling-and-building-219.md)**
+* **[如何解决编译构建时间过长问题](faqs-compiling-and-building-220.md)**
+* **[编译报错：ERROR: 00308002 Operation Error问题汇总](faqs-compiling-and-building-221.md)**
+* **[集成第三方字节码HAR包报错汇总](faqs-compiling-and-building-222.md)**
+* **[es2abc常见问题定位](faqs-compiling-and-building-223.md)**
+* **[编译构建常见报错hvigor ERROR问题](faqs-compiling-and-building-224.md)**
+* **[build-profile.json5中配置useNormalizedOHMUrl为true常见报错问题](faqs-compiling-and-building-225.md)**
+* **[编译构建时报错：资源缺失错误问题汇总](faqs-compiling-and-building-226.md)**
+* **[编译构建时报错：语法错误问题汇总](faqs-compiling-and-building-227.md)**
+* **[自定义Hvigor插件是否能进行断点调试](faqs-compiling-and-building-228.md)**
+* **[编译构建时报错：系统错误问题汇总](faqs-compiling-and-building-229.md)**
+* **[编译构建时报错：配置错误问题汇总](faqs-compiling-and-building-230.md)**
+* **[项目代码构建报错Cannot read properties of undefined (reading 'xxxx')](faqs-compiling-and-building-231.md)**
+* **[编译构建时报错：权限错误问题汇总](faqs-compiling-and-building-232.md)**
+* **[新建OpenHarmony工程仅修改打包方式未改配置导致加载so库闪退](faqs-compiling-and-building-new-00001.md)**

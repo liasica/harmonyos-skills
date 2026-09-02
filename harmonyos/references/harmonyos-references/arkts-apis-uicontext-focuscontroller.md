@@ -3,22 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (FocusController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (FocusController)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:21+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ab70dc13b7efedfb9b2a47080f91c064f023b6fd0b6803b61dfb89159868a6bc
+scraped_at: 2026-09-02T15:00:49+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:21c5382ee7255ce2963775c4b50a9633d64341fe79f7b7b42a46879ce373d3f0
 ---
 
-提供控制焦点的能力，如清除、移动和激活焦点等功能。
+提供控制焦点的能力，如清除、移动和激活焦点等功能，适用于需要管理页面或组件焦点状态、控制焦点流转的场景，可帮助开发者优化键盘等输入方式下的焦点交互体验。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Class首批接口从API version 12开始支持。
+* 本模块接口仅可在Stage模型下使用。
 * 以下API需先使用UIContext中的[getFocusController()](arkts-apis-uicontext-uicontext.md#getfocuscontroller12)方法获取FocusController实例，再通过该实例调用对应方法。
 
 ## clearFocus12+
-
-PhonePC/2in1TabletTVWearable
 
 clearFocus(): void
 
@@ -32,56 +31,53 @@ clearFocus(): void
 
 在该示例中，按钮"button2"默认获焦，点击按钮"clearFocus"后，焦点回到该页面的根容器节点"column1"，此时按下键盘TAB键，按钮"button2"重新获焦。可通过点击"button1"使该按钮获焦，点击按钮"clearFocus"后，焦点同样回到该页面的根容器节点"column1"，此时按下键盘TAB键，由按钮"button1"重新获焦。
 
-```
-1. @Entry
-2. @Component
-3. struct ClearFocusExample {
-4. @State inputValue: string = '';
-5. @State btColor: Color = Color.Blue;
+```ts
+@Entry
+@Component
+struct ClearFocusExample {
+  @State buttonColor: Color = Color.Blue;
 
-7. build() {
-8. Column({ space: 20 }) {
-9. Column({ space: 5 }) {
-10. Button('button1')
-11. .width(200)
-12. .height(70)
-13. .fontColor(Color.White)
-14. .focusOnTouch(true)
-15. .backgroundColor(Color.Blue)
-16. Button('button2')
-17. .width(200)
-18. .height(70)
-19. .fontColor(Color.White)
-20. .focusOnTouch(true)
-21. .backgroundColor(this.btColor)
-22. .defaultFocus(true)
-23. .onFocus(() => {
-24. this.btColor = Color.Red;
-25. })
-26. .onBlur(() => {
-27. this.btColor = Color.Blue;
-28. })
-29. Button('clearFocus')
-30. .width(200)
-31. .height(70)
-32. .fontColor(Color.White)
-33. .backgroundColor(Color.Blue)
-34. .onClick(() => {
-35. this.getUIContext().getFocusController().clearFocus();
-36. })
-37. }
-38. .id('column2')
-39. }
-40. .id('column1')
-41. .width('100%')
-42. .height('100%')
-43. }
-44. }
+  build() {
+    Column({ space: 20 }) {
+      Column({ space: 5 }) {
+        Button('button1')
+          .width(200)
+          .height(70)
+          .fontColor(Color.White)
+          .focusOnTouch(true)
+          .backgroundColor(Color.Blue)
+        Button('button2')
+          .width(200)
+          .height(70)
+          .fontColor(Color.White)
+          .focusOnTouch(true)
+          .backgroundColor(this.buttonColor)
+          .defaultFocus(true)
+          .onFocus(() => {
+            this.buttonColor = Color.Red;
+          })
+          .onBlur(() => {
+            this.buttonColor = Color.Blue;
+          })
+        Button('clearFocus')
+          .width(200)
+          .height(70)
+          .fontColor(Color.White)
+          .backgroundColor(Color.Blue)
+          .onClick(() => {
+            this.getUIContext().getFocusController().clearFocus();
+          })
+      }
+      .id('column2')
+    }
+    .id('column1')
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## requestFocus12+
-
-PhonePC/2in1TabletTVWearable
 
 requestFocus(key: string): void
 
@@ -109,63 +105,61 @@ requestFocus(key: string): void
 
 **示例：**
 
-```
-1. @Entry
-2. @Component
-3. struct RequestExample {
-4. @State btColor: Color = Color.Blue;
+```ts
+@Entry
+@Component
+struct RequestExample {
+  @State btColor: Color = Color.Blue;
 
-6. build() {
-7. Column({ space: 20 }) {
-8. Column({ space: 5 }) {
-9. Button('Button')
-10. .width(200)
-11. .height(70)
-12. .fontColor(Color.White)
-13. .focusOnTouch(true)
-14. .backgroundColor(this.btColor)
-15. .onFocus(() => {
-16. this.btColor = Color.Red;
-17. })
-18. .onBlur(() => {
-19. this.btColor = Color.Blue;
-20. })
-21. .id("testButton")
+  build() {
+    Column({ space: 20 }) {
+      Column({ space: 5 }) {
+        Button('Button')
+          .width(200)
+          .height(70)
+          .fontColor(Color.White)
+          .focusOnTouch(true)
+          .backgroundColor(this.btColor)
+          .onFocus(() => {
+            this.btColor = Color.Red;
+          })
+          .onBlur(() => {
+            this.btColor = Color.Blue;
+          })
+          .id('testButton')
 
-23. Divider()
-24. .vertical(false)
-25. .width("80%")
-26. .backgroundColor(Color.Black)
-27. .height(10)
+        Divider()
+          .vertical(false)
+          .width('80%')
+          .backgroundColor(Color.Black)
+          .height(10)
 
-29. Button('requestFocus')
-30. .width(200)
-31. .height(70)
-32. .onClick(() => {
-33. this.getUIContext().getFocusController().requestFocus("testButton");
-34. })
+        Button('requestFocus')
+          .width(200)
+          .height(70)
+          .onClick(() => {
+            this.getUIContext().getFocusController().requestFocus('testButton');
+          })
 
-36. Button('requestFocus fail')
-37. .width(200)
-38. .height(70)
-39. .onClick(() => {
-40. try {
-41. this.getUIContext().getFocusController().requestFocus("eee");
-42. } catch (error) {
-43. console.error(`requestFocus failed code is ${error.code} message is ${error.message}`);
-44. }
-45. })
-46. }
-47. }
-48. .width('100%')
-49. .height('100%')
-50. }
-51. }
+        Button('requestFocus fail')
+          .width(200)
+          .height(70)
+          .onClick(() => {
+            try {
+              this.getUIContext().getFocusController().requestFocus('eee');
+            } catch (error) {
+              console.error(`requestFocus failed code is ${error.code} message is ${error.message}`);
+            }
+          })
+      }
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## activate14+
-
-PhonePC/2in1TabletTVWearable
 
 activate(isActive: boolean, autoInactive?: boolean): void
 
@@ -184,44 +178,42 @@ activate(isActive: boolean, autoInactive?: boolean): void
 
 **示例：**
 
-```
-1. // 该示例表示在页面加载完成时进入焦点激活态，可按方向键在button间走焦
-2. @Entry
-3. @Component
-4. struct ActivateExample {
-5. aboutToAppear() {
-6. this.getUIContext().getFocusController().activate(true, false);
-7. }
+```ts
+// 该示例表示在页面加载完成时进入焦点激活态，可按方向键在button间走焦
+@Entry
+@Component
+struct ActivateExample {
+  aboutToAppear() {
+    this.getUIContext().getFocusController().activate(true, false);
+  }
 
-9. aboutToDisappear() {
-10. this.getUIContext().getFocusController().activate(false);
-11. }
+  aboutToDisappear() {
+    this.getUIContext().getFocusController().activate(false);
+  }
 
-13. build() {
-14. Row() {
-15. Button('Button1')
-16. .width(200)
-17. .height(70)
-18. .defaultFocus(true)
+  build() {
+    Row() {
+      Button('Button1')
+        .width(200)
+        .height(70)
+        .defaultFocus(true)
 
-20. Button('Button2')
-21. .width(200)
-22. .height(70)
+      Button('Button2')
+        .width(200)
+        .height(70)
 
-24. Button('Button3')
-25. .width(200)
-26. .height(70)
-27. }
-28. .padding(10)
-29. .justifyContent(FlexAlign.SpaceBetween)
-30. .width(800)
-31. }
-32. }
+      Button('Button3')
+        .width(200)
+        .height(70)
+    }
+    .padding(10)
+    .justifyContent(FlexAlign.SpaceBetween)
+    .width(800)
+  }
+}
 ```
 
 ## isActive20+
-
-PhonePC/2in1TabletTVWearable
 
 isActive(): boolean
 
@@ -243,56 +235,53 @@ isActive(): boolean
 
 验证isActive返回UI实例的焦点激活态。
 
-```
-1. @Entry
-2. @Component
-3. struct ClearFocusExample {
-4. @State inputValue: string = '';
-5. @State btColor: Color = Color.Blue;
+```ts
+@Entry
+@Component
+struct ClearFocusExample {
+  @State btColor: Color = Color.Blue;
 
-7. build() {
-8. Column({ space: 20 }) {
-9. Column({ space: 5 }) {
-10. Button('button1')
-11. .width(200)
-12. .height(70)
-13. .fontColor(Color.White)
-14. .focusOnTouch(true)
-15. .backgroundColor(Color.Blue)
-16. .onClick(() => {
-17. console.info("button1 onClick");
-18. this.getUIContext().getFocusController().activate(true);
-19. console.info(`focus status ${this.getUIContext().getFocusController().isActive()}`);
-20. })
-21. Button('button2')
-22. .width(200)
-23. .height(70)
-24. .fontColor(Color.White)
-25. .focusOnTouch(true)
-26. .backgroundColor(this.btColor)
-27. .defaultFocus(true)
-28. .onClick(() => {
-29. console.info("button2 onClick");
-30. this.getUIContext().getFocusController().activate(false);
-31. console.info(`focus status ${this.getUIContext().getFocusController().isActive()}`);
-32. })
-33. .onFocus(() => {
-34. this.btColor = Color.Red;
-35. })
-36. .onBlur(() => {
-37. this.btColor = Color.Blue;
-38. })
-39. }
-40. }
-41. .width('100%')
-42. .height('100%')
-43. }
-44. }
+  build() {
+    Column({ space: 20 }) {
+      Column({ space: 5 }) {
+        Button('button1')
+          .width(200)
+          .height(70)
+          .fontColor(Color.White)
+          .focusOnTouch(true)
+          .backgroundColor(Color.Blue)
+          .onClick(() => {
+            console.info('button1 onClick');
+            this.getUIContext().getFocusController().activate(true);
+            console.info(`focus status ${this.getUIContext().getFocusController().isActive()}`);
+          })
+        Button('button2')
+          .width(200)
+          .height(70)
+          .fontColor(Color.White)
+          .focusOnTouch(true)
+          .backgroundColor(this.btColor)
+          .defaultFocus(true)
+          .onClick(() => {
+            console.info('button2 onClick');
+            this.getUIContext().getFocusController().activate(false);
+            console.info(`focus status ${this.getUIContext().getFocusController().isActive()}`);
+          })
+          .onFocus(() => {
+            this.btColor = Color.Red;
+          })
+          .onBlur(() => {
+            this.btColor = Color.Blue;
+          })
+      }
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
 
 ## setAutoFocusTransfer14+
-
-PhonePC/2in1TabletTVWearable
 
 setAutoFocusTransfer(isAutoFocusTransfer: boolean): void
 
@@ -310,63 +299,61 @@ setAutoFocusTransfer(isAutoFocusTransfer: boolean): void
 
 **示例：**
 
-```
-1. @CustomDialog
-2. struct CustomDialogExample {
-3. controller?: CustomDialogController;
+```ts
+@CustomDialog
+struct CustomDialogExample {
+  controller?: CustomDialogController;
 
-5. build() {
-6. Column() {
-7. Text('这是自定义弹窗')
-8. .fontSize(30)
-9. .height(100)
-10. Text('弹窗不能主动获取焦点')
-11. .fontSize(20)
-12. .height(100)
-13. Button('点我关闭弹窗')
-14. .onClick(() => {
-15. if (this.controller != undefined) {
-16. this.getUIContext().getFocusController().setAutoFocusTransfer(true);
-17. this.controller.close();
-18. }
-19. })
-20. .margin(20)
-21. }
-22. }
-23. }
+  build() {
+    Column() {
+      Text('这是自定义弹窗')
+        .fontSize(30)
+        .height(100)
+      Text('弹窗不能主动获取焦点')
+        .fontSize(20)
+        .height(100)
+      Button('点我关闭弹窗')
+        .onClick(() => {
+          if (this.controller != undefined) {
+            this.getUIContext().getFocusController().setAutoFocusTransfer(true);
+            this.controller.close();
+          }
+        })
+        .margin(20)
+    }
+  }
+}
 
-25. @Entry
-26. @Component
-27. struct CustomDialogUser {
-28. dialogController: CustomDialogController | null = new CustomDialogController({
-29. builder: CustomDialogExample({}),
-30. });
+@Entry
+@Component
+struct CustomDialogUser {
+  dialogController: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExample({}),
+  });
 
-32. aboutToDisappear() {
-33. this.dialogController = null;
-34. }
+  aboutToDisappear() {
+    this.dialogController = null;
+  }
 
-36. build() {
-37. Column() {
-38. Button('click me')
-39. .onClick(() => {
-40. if (this.dialogController != null) {
-41. this.getUIContext().getFocusController().setAutoFocusTransfer(false);
-42. this.dialogController.open();
-43. }
-44. }).backgroundColor(0x317aff)
-45. }.width('100%').margin({ top: 5 })
-46. }
-47. }
+  build() {
+    Column() {
+      Button('click me')
+        .onClick(() => {
+          if (this.dialogController != null) {
+            this.getUIContext().getFocusController().setAutoFocusTransfer(false);
+            this.dialogController.open();
+          }
+        }).backgroundColor(0x317aff)
+    }.width('100%').margin({ top: 5 })
+  }
+}
 ```
 
 ## setKeyProcessingMode15+
 
-PhonePC/2in1TabletTVWearable
-
 setKeyProcessingMode(mode: KeyProcessingMode): void
 
-设置按键事件处理的优先级。
+设置按键事件处理的模式。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
@@ -380,46 +367,46 @@ setKeyProcessingMode(mode: KeyProcessingMode): void
 
 **示例：**
 
-```
-1. // 该示例演示了在页面加载完成后设置走焦类型的实现方式。
-2. @Entry
-3. @Component
-4. struct Index {
-5. aboutToAppear() {
-6. this.getUIContext().getFocusController().setKeyProcessingMode(KeyProcessingMode.ANCESTOR_EVENT);
-7. }
+```ts
+// 该示例演示了在页面加载完成后设置按键事件处理优先级的实现方式。
+@Entry
+@Component
+struct Index {
+  aboutToAppear() {
+    this.getUIContext().getFocusController().setKeyProcessingMode(KeyProcessingMode.ANCESTOR_EVENT);
+  }
 
-9. build() {
-10. Row() {
-11. Row() {
-12. Button('Button1').id('Button1').onKeyEvent((event) => {
-13. console.info("Button1");
-14. return true;
-15. })
-16. Button('Button2').id('Button2').onKeyEvent((event) => {
-17. console.info("Button2");
-18. return true;
-19. })
-20. }
-21. .width('100%')
-22. .height('100%')
-23. .id('Row1')
-24. .onKeyEventDispatch((event) => {
-25. let context = this.getUIContext();
-26. context.getFocusController().requestFocus('Button1');
-27. return context.dispatchKeyEvent('Button1', event);
-28. })
-29. }
-30. .height('100%')
-31. .width('100%')
-32. .onKeyEventDispatch((event) => {
-33. if (event.type == KeyType.Down) {
-34. let context = this.getUIContext();
-35. context.getFocusController().requestFocus('Row1');
-36. return context.dispatchKeyEvent('Row1', event);
-37. }
-38. return true;
-39. })
-40. }
-41. }
+  build() {
+    Row() {
+      Row() {
+        Button('Button1').id('Button1').onKeyEvent((event) => {
+          console.info('Button1');
+          return true;
+        })
+        Button('Button2').id('Button2').onKeyEvent((event) => {
+          console.info('Button2');
+          return true;
+        })
+      }
+      .width('100%')
+      .height('100%')
+      .id('Row1')
+      .onKeyEventDispatch((event) => {
+        let context = this.getUIContext();
+        context.getFocusController().requestFocus('Button1');
+        return context.dispatchKeyEvent('Button1', event);
+      })
+    }
+    .height('100%')
+    .width('100%')
+    .onKeyEventDispatch((event) => {
+      if (event.type == KeyType.Down) {
+        let context = this.getUIContext();
+        context.getFocusController().requestFocus('Row1');
+        return context.dispatchKeyEvent('Row1', event);
+      }
+      return true;
+    })
+  }
+}
 ```

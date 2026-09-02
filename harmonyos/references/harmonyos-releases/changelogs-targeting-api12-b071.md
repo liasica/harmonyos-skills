@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-targeting-api12-b071
 title: 针对API 12应用的变更
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Release引入的接口行为变更 > 针对API 12应用的变更
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Release引入的接口行为变更 > 针对API 12应用的变更
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:08+08:00
-doc_updated_at: 2026-01-21
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:a341cd945a93dc9e4315f15522a828b477a52579e06b25d4040fb593c83197ae
 ---
 

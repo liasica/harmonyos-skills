@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 账号管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 账号管理错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:58+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:0a78b200ac493d09c86a9c14f63820552f7d17f545419fe043587696d523160e
+scraped_at: 2026-09-02T15:02:06+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d464fa54cf1c7071cd3b48238f549413b2bf06156f60d9d593a23d57291798d3
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 以下错误码包括系统账号、分布式账号和应用账号错误码。
 
 ## 12300001 系统服务异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -41,8 +39,6 @@ The system service works abnormally.
 请稍后重试，或重启设备。
 
 ## 12300002 无效参数
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -83,8 +79,6 @@ Invalid parameter.
 
 ## 12300003 账号不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The account does not exist.
@@ -110,8 +104,6 @@ The account does not exist.
 请检查账号是否存在。
 
 ## 12300004 账号已存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -158,8 +150,6 @@ The account type is not supported.
 请创建其他类型的账号。
 
 ## 12300007 账号数量已达上限
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -208,8 +198,6 @@ The account has been activated.
 当前账号已激活，请勿重复操作。
 
 ## 12300010 账号服务忙碌
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -342,8 +330,6 @@ The credential is incorrect.
 
 ## 12300102 凭据不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The credential does not exist.
@@ -426,8 +412,6 @@ The authentication type is not supported.
 
 ## 12300107 认证类型不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The authentication type does not exist.
@@ -443,8 +427,6 @@ The authentication type does not exist.
 请使用存在的认证类型查询/删除。
 
 ## 12300108 认证会话不存在
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -531,8 +513,6 @@ The authentication service is busy.
 
 ## 12300113 认证服务不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The account authentication service does not exist.
@@ -554,8 +534,6 @@ The account authentication service does not exist.
 请取消操作，或向支持认证服务的应用进行认证。
 
 ## 12300114 认证服务异常
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -617,6 +595,91 @@ PIN is expired.
 
 重新设置PIN码。
 
+## 12300401 系统账号子身份资料不存在
+
+**错误信息**
+
+OS account sub-profile not found.
+
+**可能原因**
+
+未指定有效的系统账号子身份资料标识符。
+
+**处理步骤**
+
+指定合法的子身份资料。
+
+## 12300402 系统账号下的子身份资料数量已达到上限
+
+**错误信息**
+
+The number of sub-profiles under the OS account has reached limit.
+
+**可能原因**
+
+目标系统账号下创建了过多的子身份资料。
+
+**处理步骤**
+
+删除存在的子身份资料后重试，或者停止创建新的子身份资料。
+
+## 12300403 受限的系统账号子身份资料
+
+**错误信息**
+
+Restricted OS account sub-profile.
+
+**可能原因**
+
+1. 目标子身份资料不允许删除；
+2. 目标子身份资料不允许切换；
+
+**处理步骤**
+
+停止对目标子身份资料的操作。
+
+## 12300404 系统账号的前台子身份资料不允许被删除
+
+**错误信息**
+
+The foreground sub-profile of the OS account cannot be deleted.
+
+**可能原因**
+
+删除的系统账号子身份资料当前正处于前台。
+
+**处理步骤**
+
+停止删除系统账号子身份资料的操作。
+
+## 12300405 已登录分布式账号的前台子身份不可直接切换到后台
+
+**错误信息**
+
+The foreground sub-profile with a logged-in distributed account cannot be directly switched to the background.
+
+**可能原因**
+
+前台子身份资料关联的分布式账号还处在登录状态。
+
+**处理步骤**
+
+将前台子身份资料关联的分布式账号登出后，再触发切换操作。
+
+## 12300406 该分布式账号信息已经与目标系统账号的其他子身份资料绑定
+
+**错误信息**
+
+The distributed account information has already been bound to a sub-profile of the target OS account.
+
+**可能原因**
+
+该分布式账号信息已经与目标系统账号的其他子身份资料绑定。
+
+**处理步骤**
+
+停止绑定操作，或者在目标系统账号下触发解绑后再执行绑定操作。
+
 ## 12400001 应用不存在
 
 **错误信息**
@@ -636,8 +699,6 @@ The application does not exist.
 
 ## 12400002 自定义数据不存在
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The custom data does not exist.
@@ -651,8 +712,6 @@ The custom data does not exist.
 请使用存在的自定义数据的键名查询。
 
 ## 12400003 自定义数据的数量已达上限
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -668,8 +727,6 @@ The number of custom data records reaches the upper limit.
 
 ## 12400004 令牌数量已达上限
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The number of tokens reaches the upper limit.
@@ -683,8 +740,6 @@ The number of tokens reaches the upper limit.
 请取消添加操作，或者删除已存在的令牌后再添加。
 
 ## 12400005 授权列表已达上限
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

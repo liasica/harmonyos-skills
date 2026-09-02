@@ -3,28 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.access (蓝牙access模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.access (蓝牙access模块)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:a0b2eb0903f763368471f4a8504258347f3b7d16bdcb8d074b39d105f1bbcd98
+scraped_at: 2026-09-02T15:01:48+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:24da69912a2b4e25996d00a29ef7a92cc2e3562c6313229a52f185cd1446d6c2
 ---
 
 本模块提供了打开和关闭蓝牙、获取蓝牙开关状态以及其他相关方法。
 
-说明
+**说明** 
 
 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { access } from '@kit.ConnectivityKit';
+```js
+import { access } from '@kit.ConnectivityKit';
 ```
 
 ## access.enableBluetooth
-
-PhonePC/2in1TabletTVWearable
 
 enableBluetooth(): void
 
@@ -51,21 +47,19 @@ enableBluetooth(): void
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. access.enableBluetooth();
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+try {
+    access.enableBluetooth();
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## access.enableBluetoothAsync20+
-
-PhonePC/2in1TabletTVWearable
 
 enableBluetoothAsync(): Promise<void>
 
@@ -81,7 +75,7 @@ enableBluetoothAsync(): Promise<void>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -100,25 +94,23 @@ enableBluetoothAsync(): Promise<void>
 | 2900014 | User refuse the action. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. access.enableBluetoothAsync().then(() => {
-5. console.info('enableBluetoothAsync');
-6. }, (error: BusinessError) => {
-7. console.error('enableBluetoothAsync: errCode:' + error.code + ',errMessage' + error.message);
-8. })
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+try {
+    access.enableBluetoothAsync().then(() => {
+        console.info('enableBluetoothAsync');
+    }, (error: BusinessError) => {
+        console.error('enableBluetoothAsync: errCode:' + error.code + ',errMessage' + error.message);
+    })
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## access.disableBluetooth
-
-PhonePC/2in1TabletTVWearable
 
 disableBluetooth(): void
 
@@ -145,21 +137,19 @@ disableBluetooth(): void
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. access.disableBluetooth();
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+try {
+    access.disableBluetooth();
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## access.disableBluetoothAsync20+
-
-PhonePC/2in1TabletTVWearable
 
 disableBluetoothAsync(): Promise<void>
 
@@ -175,7 +165,7 @@ disableBluetoothAsync(): Promise<void>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -194,35 +184,37 @@ disableBluetoothAsync(): Promise<void>
 | 2900014 | User refuse the action. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. access.disableBluetoothAsync().then(() => {
-5. console.info('disableBluetoothAsync');
-6. }, (error: BusinessError) => {
-7. console.error('disableBluetoothAsync: errCode:' + error.code + ',errMessage' + error.message);
-8. })
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+try {
+    access.disableBluetoothAsync().then(() => {
+        console.info('disableBluetoothAsync');
+    }, (error: BusinessError) => {
+        console.error('disableBluetoothAsync: errCode:' + error.code + ',errMessage' + error.message);
+    })
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## access.getState
-
-PhonePC/2in1TabletTVWearable
 
 getState(): BluetoothState
 
 获取蓝牙开关状态。
 
+**需要权限**：
+
+* API版本10-12：ohos.permission.ACCESS\_BLUETOOTH
+
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -234,35 +226,38 @@ getState(): BluetoothState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied.  适用版本：10-12 |
 | 801 | Capability not supported. |
 | 2900001 | Service stopped. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let state = access.getState();
-5. } catch (err) {
-6. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-7. }
+try {
+    let state = access.getState();
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## access.on('stateChange')
-
-PhonePC/2in1TabletTVWearable
 
 on(type: 'stateChange', callback: Callback<BluetoothState>): void
 
 订阅本端蓝牙开关状态变化事件。使用Callback异步回调。从API18开始不再校验ohos.permission.ACCESS\_BLUETOOTH权限。
 
+**需要权限**：
+
+* API版本10-17：ohos.permission.ACCESS\_BLUETOOTH
+
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -275,38 +270,41 @@ on(type: 'stateChange', callback: Callback<BluetoothState>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied.  适用版本：10-17 |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function onReceiveEvent(data: access.BluetoothState) {
-4. console.info('bluetooth state = '+ JSON.stringify(data));
-5. }
-6. try {
-7. access.on('stateChange', onReceiveEvent);
-8. } catch (err) {
-9. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-10. }
+function onReceiveEvent(data: access.BluetoothState) {
+    console.info('bluetooth state = '+ JSON.stringify(data));
+}
+try {
+    access.on('stateChange', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## access.off('stateChange')
-
-PhonePC/2in1TabletTVWearable
 
 off(type: 'stateChange', callback?: Callback<BluetoothState>): void
 
 取消订阅本端蓝牙开关状态变化事件。从API18开始不再校验ohos.permission.ACCESS\_BLUETOOTH权限。
 
+**需要权限**：
+
+* API版本10-17：ohos.permission.ACCESS\_BLUETOOTH
+
 **元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -319,29 +317,28 @@ off(type: 'stateChange', callback?: Callback<BluetoothState>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied.  适用版本：10-17 |
 | 401 | Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 2900099 | Operation failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. function onReceiveEvent(data: access.BluetoothState) {
-4. console.info('bluetooth state = '+ JSON.stringify(data));
-5. }
-6. try {
-7. access.on('stateChange', onReceiveEvent);
-8. access.off('stateChange', onReceiveEvent);
-9. } catch (err) {
-10. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-11. }
+function onReceiveEvent(data: access.BluetoothState) {
+    console.info('bluetooth state = '+ JSON.stringify(data));
+}
+try {
+    access.on('stateChange', onReceiveEvent);
+    access.off('stateChange', onReceiveEvent);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
 
 ## access.addPersistentDeviceId16+
-
-PhonePC/2in1TabletTVWearable
 
 addPersistentDeviceId(deviceId: string): Promise<void>
 
@@ -358,13 +355,13 @@ addPersistentDeviceId(deviceId: string): Promise<void>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"。  该地址一般来源于蓝牙扫描结果，如：可通过调用[startScan](js-apis-bluetooth-ble.md#startscan15)或[connection.startBluetoothDiscovery](js-apis-bluetooth-connection.md#connectionstartbluetoothdiscovery)扫描得到。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -383,22 +380,20 @@ addPersistentDeviceId(deviceId: string): Promise<void>
 | 2900010 | The number of supported device addresses has reached the upper limit. |
 | 2900099 | Add persistent device address failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let deviceId = '11:22:33:44:55:66'  // 该地址可通过BLE扫描获取
-4. try {
-5. access.addPersistentDeviceId(deviceId);
-6. } catch (err) {
-7. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-8. }
+let deviceId = '11:22:33:44:55:66'  // 该地址可通过BLE扫描获取
+try {
+    access.addPersistentDeviceId(deviceId);
+} catch (err) {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+}
 ```
 
 ## access.deletePersistentDeviceId16+
-
-PhonePC/2in1TabletTVWearable
 
 deletePersistentDeviceId(deviceId: string): Promise<void>
 
@@ -412,13 +407,13 @@ deletePersistentDeviceId(deviceId: string): Promise<void>
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"，  该地址一般来源于蓝牙扫描结果，如：通过调用[startScan](js-apis-bluetooth-ble.md#startscan15)或[connection.startBluetoothDiscovery](js-apis-bluetooth-connection.md#connectionstartbluetoothdiscovery)扫描得到。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -436,22 +431,20 @@ deletePersistentDeviceId(deviceId: string): Promise<void>
 | 2900003 | Bluetooth disabled. |
 | 2900099 | delete persistent device address failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. let deviceId = '11:22:33:44:55:66'  // 该地址可通过BLE扫描获取
-4. try {
-5. access.deletePersistentDeviceId(deviceId);
-6. } catch (err) {
-7. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-8. }
+let deviceId = '11:22:33:44:55:66'  // 该地址可通过BLE扫描获取
+try {
+    access.deletePersistentDeviceId(deviceId);
+} catch (err) {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+}
 ```
 
 ## access.getPersistentDeviceIds16+
-
-PhonePC/2in1TabletTVWearable
 
 getPersistentDeviceIds(): string[];
 
@@ -463,7 +456,7 @@ getPersistentDeviceIds(): string[];
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -480,21 +473,19 @@ getPersistentDeviceIds(): string[];
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Get persistent device address failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let deviceIds = access.getPersistentDeviceIds();
-5. } catch (err) {
-6. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-7. }
+try {
+    let deviceIds = access.getPersistentDeviceIds();
+} catch (err) {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+}
 ```
 
 ## access.isValidRandomDeviceId16+
-
-PhonePC/2in1TabletTVWearable
 
 isValidRandomDeviceId(deviceId: string): boolean;
 
@@ -508,13 +499,13 @@ isValidRandomDeviceId(deviceId: string): boolean;
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | deviceId | string | 是 | 对端设备的虚拟MAC地址，例如："XX:XX:XX:XX:XX:XX"。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
@@ -532,23 +523,21 @@ isValidRandomDeviceId(deviceId: string): boolean;
 | 2900003 | Bluetooth disabled. |
 | 2900099 | Check persistent device address failed. |
 
-**示例：**
+**示例**：
 
-```
-1. import { BusinessError } from '@kit.BasicServicesKit';
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let deviceId = '11:22:33:44:55:66'  // 该地址可通过BLE扫描获取
-5. let isValid = access.isValidRandomDeviceId(deviceId);
-6. console.info("isValid: " + isValid);
-7. } catch (err) {
-8. console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
-9. }
+try {
+    let deviceId = '11:22:33:44:55:66'  // 该地址可通过BLE扫描获取
+    let isValid = access.isValidRandomDeviceId(deviceId);
+    console.info("isValid: " + isValid);
+} catch (err) {
+    console.error('errCode: ' + err.code + ', errMessage: ' + err.message);
+}
 ```
 
 ## access.convertUuid22+
-
-PhonePC/2in1TabletTVWearable
 
 convertUuid(uuid: string): string
 
@@ -563,35 +552,70 @@ convertUuid(uuid: string): string
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 
-**参数：**
+**参数**：
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | uuid | string | 是 | 16bit、32bit、128bit的UUID。 |
 
-**返回值：**
+**返回值**：
 
 | 类型 | 说明 |
 | --- | --- |
 | string | 转换后的128bit的UUID。 |
 
-**示例：**
+**示例**：
 
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+
+try {
+    let inputUuid: string = '1801';
+    let convertedUuid: string = access.convertUuid(inputUuid);
+    console.info("convertedUuid: " + convertedUuid);
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
 
-3. try {
-4. let inputUuid: string = '1801';
-5. let convertedUuid: string = access.convertUuid(inputUuid);
-6. console.info("convertedUuid: " + convertedUuid);
-7. } catch (err) {
-8. console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-9. }
+## access.isBluetoothSupported
+
+isBluetoothSupported(): boolean
+
+查询本机是否支持蓝牙能力。
+
+**起始版本**：26.0.0
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 查询本机是否支持蓝牙能力。true 表示本机支持蓝牙能力，false 表示本机不支持蓝牙能力。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[蓝牙服务子系统错误码](errorcode-bluetoothmanager.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2900099 | Operation failed. |
+
+**示例**：
+
+```js
+try {
+    let isSupported: boolean = access.isBluetoothSupported();
+    console.info("isSupported: " + isSupported);
+} catch (err) {
+    console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
+}
 ```
 
 ## BluetoothState
-
-PhonePC/2in1TabletTVWearable
 
 枚举，蓝牙开关状态。
 

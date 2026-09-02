@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-62
 title: Network connection模块netLost与netUnavailable监听场景如何区别
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > Network connection模块netLost与netUnavailable监听场景如何区别
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:28:14+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-02T15:21:57+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:c40a33718b52f15b8c006311c574298389c8937f0d57799e843f17b02965055f
 ---
 

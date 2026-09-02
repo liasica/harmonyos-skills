@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-new-features-501-release
 title: 新增和增强特性
-breadcrumb: 版本说明 > 历史版本 > HarmonyOS 5.0.1(13) > DevEco Studio > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:36:07+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:3304c3b26db9a75274bb9271ee15901ca0247f64e45cbed845befaa7a2268e1d
+scraped_at: 2026-09-02T14:58:53+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:c0bda4f02b594dad128870d62d9b175c23005d0ebab80abd9e763d3da7055114
 ---
 
 ## DevEco Studio 5.0.1 Release（5.0.5.315）兼容性配套关系
@@ -152,7 +152,7 @@ DevEco Studio 5.0.5.300配套使用的命令行工具列表、支持的API范围
   + setOverrides：设置工程下oh-package.json5中的overrides字段。
   + setProperty：设置hvigor-config.json5配置文件中properties对象指定key值的value值。
 * 新增支持HWASan检测。具体请参考[HWASan检测](../harmonyos-guides/ide-hwasan.md)。
-* 支持在DevEco Studio内上传应用软件包。具体请参考[上传软件包](../harmonyos-guides/ide-publish-app.md#section97874500234)。
+* 支持在DevEco Studio内上传应用软件包。具体请参考[上传软件包](../harmonyos-guides/ide-publish-app.md#section4486164416341)。
 * 应用与服务体检新增一条快速性能检测规则：避免序列化反序列化耗时长。具体请参考[规则总览](../harmonyos-guides/ide-app-analyzer-all-rules.md)。
 * ohpm新增支持resolve\_conflict\_strict严格模式依赖冲突处理功能。具体请参考[ohpmrc](../harmonyos-guides/ide-ohpmrc.md)。
 

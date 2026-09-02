@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.connection (网络连接管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.connection (网络连接管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:21+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:0d1e886871613f7408b0281144c9bc0e1196b43a134927a6d91f86241402300c
+scraped_at: 2026-09-02T15:01:54+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1d0fcc32bbb682004cb8a458c528a39b0bc0adc1017122eb0ebd7b1fbb8b30b9
 ---
 
 网络连接管理提供管理网络一些基础能力，包括获取默认激活的网络、获取所有激活网络列表、获取网络能力信息等功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -18,21 +18,17 @@ content_hash: sha256:0d1e886871613f7408b0281144c9bc0e1196b43a134927a6d91f8624140
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 ```
 
 ## connection.createNetConnection
-
-PhonePC/2in1TabletTVWearable
 
 createNetConnection(netSpecifier?: NetSpecifier, timeout?: number): NetConnection
 
 创建一个NetConnection对象，可用于监听网络状态。[netSpecifier](js-apis-net-connection.md#netspecifier)表示需要监听网络的网络特征；timeout是超时时间（单位：毫秒)；netSpecifier是timeout的必要条件，两者都没有则表示关注默认网络。
 
-说明
+**说明** 
 
 若需要监听网络状态，创建一个NetConnection对象后，还需调用[register](js-apis-net-connection.md#register)注册指定网络状态变化的通知。
 
@@ -45,7 +41,7 @@ createNetConnection(netSpecifier?: NetSpecifier, timeout?: number): NetConnectio
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | netSpecifier | [NetSpecifier](js-apis-net-connection.md#netspecifier) | 否 | 需要监听网络的网络特征，缺省则表示监听默认网络。 |
-| timeout | number | 否 | 获取netSpecifier指定网络时的超时时间，传入值需为uint32\_t范围内的整数，仅netSpecifier存在时生效，默认值为0。  **说明**：当监听网络不存在时，会尝试激活此网络。若超过设置的超时时间，且注册了网络状态监听，则会触发netUnavailable事件。 |
+| timeout | number | 否 | 获取netSpecifier指定网络时的超时时间（单位：ms），传入值需为uint32\_t范围内的整数，仅netSpecifier存在时生效，默认值为0。  **说明**：当监听网络不存在时，会尝试激活此网络。若超过设置的超时时间，且注册了网络状态监听，则会触发netUnavailable事件。 |
 
 **返回值：**
 
@@ -55,38 +51,36 @@ createNetConnection(netSpecifier?: NetSpecifier, timeout?: number): NetConnectio
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. // 示例1：仅关注默认网络, 无需指定netSpecifier参数，timeout参数未传入说明未使用超时时间，此时timeout为0。
-4. let netConnection = connection.createNetConnection();
+// 示例1：仅关注默认网络, 无需指定netSpecifier参数，timeout参数未传入说明未使用超时时间，此时timeout为0。
+let netConnection = connection.createNetConnection();
 
-6. // 示例2：仅关注蜂窝网络，需要指定网络类型为蜂窝网络。
-7. let timeout = 1000;
-8. let netConnectionCellular = connection.createNetConnection({
-9. netCapabilities: {
-10. bearerTypes: [connection.NetBearType.BEARER_CELLULAR]
-11. }
-12. }, timeout);
+// 示例2：仅关注蜂窝网络，需要指定网络类型为蜂窝网络。
+let timeout = 1000;
+let netConnectionCellular = connection.createNetConnection({
+  netCapabilities: {
+    bearerTypes: [connection.NetBearType.BEARER_CELLULAR]
+  }
+}, timeout);
 
-14. // 示例3：关注蜂窝或Wi-Fi网络，需要指定网络类型为蜂窝网络和Wi-Fi网络。
-15. let netConnectionCellularAndWifi = connection.createNetConnection({
-16. netCapabilities: {
-17. bearerTypes: [connection.NetBearType.BEARER_CELLULAR,
-18. connection.NetBearType.BEARER_WIFI]
-19. }
-20. });
+// 示例3：关注蜂窝或Wi-Fi网络，需要指定网络类型为蜂窝网络和Wi-Fi网络。
+let netConnectionCellularAndWifi = connection.createNetConnection({
+  netCapabilities: {
+    bearerTypes: [connection.NetBearType.BEARER_CELLULAR,
+      connection.NetBearType.BEARER_WIFI]
+  }
+});
 ```
 
 ## connection.getDefaultNet
-
-PhonePC/2in1TabletTVWearable
 
 getDefaultNet(callback: AsyncCallback<NetHandle>): void
 
 获取系统默认使用的网络句柄，包含网络ID。使用callback异步回调。
 
-说明
+**说明** 
 
 * 系统默认使用的网络，该网络的capabilities必须具备[NET\_CAPABILITY\_INTERNET](js-apis-net-connection.md#netcap)且不是VPN类型的网络。
 * 该接口的返回由系统决定，与应用是否指定网络无关。
@@ -118,28 +112,26 @@ getDefaultNet(callback: AsyncCallback<NetHandle>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-5. if (error) {
-6. console.error(`Failed to get default net. Code:${error.code}, message:${error.message}`);
-7. return;
-8. }
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. });
+connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+  if (error) {
+    console.error(`Failed to get default net. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.getDefaultNet
-
-PhonePC/2in1TabletTVWearable
 
 getDefaultNet(): Promise<NetHandle>
 
 获取系统默认使用的网络句柄，包含网络ID。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 系统默认使用的网络，该网络的capabilities必须具备[NET\_CAPABILITY\_INTERNET](js-apis-net-connection.md#netcap)且不是VPN类型的网络。
 * 该接口的返回由系统决定，与应用是否指定网络无关。
@@ -170,23 +162,21 @@ getDefaultNet(): Promise<NetHandle>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.getDefaultNet().then((data: connection.NetHandle) => {
-4. console.info("Succeeded to get data: " + JSON.stringify(data));
-5. });
+connection.getDefaultNet().then((data: connection.NetHandle) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.getDefaultNetSync9+
-
-PhonePC/2in1TabletTVWearable
 
 getDefaultNetSync(): NetHandle
 
 获取系统默认使用的网络句柄，包含网络ID。使用同步方式返回。
 
-说明
+**说明** 
 
 * 系统默认使用的网络，该网络的capabilities必须具备[NET\_CAPABILITY\_INTERNET](js-apis-net-connection.md#netcap)且不是VPN类型的网络。
 * 该接口的返回由系统决定，与应用是否指定网络无关。
@@ -217,21 +207,19 @@ getDefaultNetSync(): NetHandle
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. let netHandle = connection.getDefaultNetSync();
+let netHandle = connection.getDefaultNetSync();
 ```
 
 ## connection.setAppHttpProxy11+
-
-PhonePC/2in1TabletTVWearable
 
 setAppHttpProxy(httpProxy: HttpProxy): void
 
 设置应用级Http代理配置信息。
 
-说明
+**说明** 
 
 若需使用本接口所配置的代理信息，则需在[HttpRequestOptions](js-apis-http.md#httprequestoptions)字段中将usingProxy设置为true以启用代理转发。本接口仅负责配置代理规则，不校验代理服务的有效性。
 
@@ -254,45 +242,45 @@ setAppHttpProxy(httpProxy: HttpProxy): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. import { http } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { http } from '@kit.NetworkKit';
 
-5. let exclusionStr = "192.168,baidu.com";
-6. let exclusionArray = exclusionStr.split(',');
-7. connection.setAppHttpProxy({
-8. host: "192.168.xx.xxx",
-9. port: 8080,
-10. exclusionList: exclusionArray
-11. } as connection.HttpProxy);
-12. let httpRequest = http.createHttp();
-13. let options: http.HttpRequestOptions = {
-14. usingProxy: true, // 选择使用网络代理，从API 10开始支持该属性。
-15. };
-16. // 发起一个HTTP请求。
-17. httpRequest.request("EXAMPLE_URL", options, (err: Error, data: http.HttpResponse) => {
-18. if (!err) {
-19. console.info(`Result: ${data.result}`);
-20. console.info(`code: ${data.responseCode}`);
-21. console.info(`type: ${JSON.stringify(data.resultType)}`);
-22. console.info(`header: ${JSON.stringify(data.header)}`);
-23. console.info(`cookies: ${data.cookies}`); // 从API version 8开始支持cookie。
-24. } else {
-25. console.error(`error: ${JSON.stringify(err)}`);
-26. }
-27. });
+// 将exclusionStr以逗号分隔为数组。
+let exclusionStr = "192.168,test.com";
+// exclusionArray将exclusionStr以逗号分隔为数组。
+let exclusionArray = exclusionStr.split(',');
+connection.setAppHttpProxy({
+  host: "192.168.xx.xxx",
+  port: 8080,
+  exclusionList: exclusionArray
+} as connection.HttpProxy);
+let httpRequest = http.createHttp();
+let options: http.HttpRequestOptions = {
+  usingProxy: true, // 选择使用网络代理，从API 10开始支持该属性。
+};
+// 发起一个HTTP请求。
+httpRequest.request("EXAMPLE_URL", options, (err: BusinessError, data: http.HttpResponse) => {
+  if (!err) {
+   console.info('Succeeded to get result: ' + JSON.stringify(data.result));
+   console.info('Succeeded to get code: ' + JSON.stringify(data.responseCode));
+   console.info('Succeeded to get type: ' + JSON.stringify(data.resultType));
+   console.info('Succeeded to get header: ' + JSON.stringify(data.header));
+   console.info('Succeeded to get cookies: ' + JSON.stringify(data.cookies)); // 从API version 8开始支持cookie。
+  } else {
+   console.error(`Failed to get request. Code:${err.code}, message:${err.message}`);
+  }
+});
 ```
 
 ## connection.getDefaultHttpProxy10+
-
-PhonePC/2in1TabletTVWearable
 
 getDefaultHttpProxy(callback: AsyncCallback<HttpProxy>): void
 
 获取网络的默认代理配置信息。使用callback异步回调。
 
-说明
+**说明** 
 
 * 如果设置了全局代理，则返回全局代理配置信息。
 * 如果进程使用[setAppNet](js-apis-net-connection.md#connectionsetappnet9)绑定到指定[NetHandle](js-apis-net-connection.md#nethandle)对应的网络，则返回[NetHandle](js-apis-net-connection.md#nethandle)对应网络的代理配置信息。在其它情况下，将返回默认网络的代理配置信息。
@@ -316,28 +304,26 @@ getDefaultHttpProxy(callback: AsyncCallback<HttpProxy>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultHttpProxy((error: BusinessError, data: connection.HttpProxy) => {
-5. if (error) {
-6. console.error(`Failed to get default http proxy. Code:${error.code}, message:${error.message}`);
-7. return;
-8. }
-9. console.info("Succeeded to get data" + JSON.stringify(data));
-10. });
+connection.getDefaultHttpProxy((error: BusinessError, data: connection.HttpProxy) => {
+  if (error) {
+    console.error(`Failed to get default http proxy. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data" + JSON.stringify(data));
+});
 ```
 
 ## connection.getDefaultHttpProxy10+
-
-PhonePC/2in1TabletTVWearable
 
 getDefaultHttpProxy(): Promise<HttpProxy>
 
 获取网络默认的代理配置信息。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 如果设置了全局代理，则返回全局代理配置信息。
 * 如果进程使用[setAppNet](js-apis-net-connection.md#connectionsetappnet9)绑定到指定[NetHandle](js-apis-net-connection.md#nethandle)对应的网络，则返回[NetHandle](js-apis-net-connection.md#nethandle)对应网络的代理配置信息。在其它情况下，将返回默认网络的代理配置信息。
@@ -361,20 +347,18 @@ getDefaultHttpProxy(): Promise<HttpProxy>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultHttpProxy().then((data: connection.HttpProxy) => {
-5. console.info(JSON.stringify(data));
-6. }).catch((error: BusinessError) => {
-7. console.info(JSON.stringify(error));
-8. });
+connection.getDefaultHttpProxy().then((data: connection.HttpProxy) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get request. Code:${error.code}, message:${error.message} `);
+});
 ```
 
 ## connection.getAppNet9+
-
-PhonePC/2in1TabletTVWearable
 
 getAppNet(callback: AsyncCallback<NetHandle>): void
 
@@ -400,22 +384,20 @@ getAppNet(callback: AsyncCallback<NetHandle>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getAppNet((error: BusinessError, data: connection.NetHandle) => {
-5. if (error) {
-6. console.error(`Failed to get App net. Code:${error.code}, message:${error.message}`);
-7. return;
-8. }
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. })
+connection.getAppNet((error: BusinessError, data: connection.NetHandle) => {
+  if (error) {
+    console.error(`Failed to get App net. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+})
 ```
 
 ## connection.getAppNet9+
-
-PhonePC/2in1TabletTVWearable
 
 getAppNet(): Promise<NetHandle>
 
@@ -440,20 +422,18 @@ getAppNet(): Promise<NetHandle>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getAppNet().then((data: connection.NetHandle) => {
-5. console.info(JSON.stringify(data));
-6. }).catch((error: BusinessError) => {
-7. console.info(JSON.stringify(error));
-8. });
+connection.getAppNet().then((data: connection.NetHandle) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get request. Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ## connection.getAppNetSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getAppNetSync(): NetHandle
 
@@ -478,15 +458,13 @@ getAppNetSync(): NetHandle
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. let netHandle = connection.getAppNetSync();
+let netHandle = connection.getAppNetSync();
 ```
 
 ## connection.setAppNet9+
-
-PhonePC/2in1TabletTVWearable
 
 setAppNet(netHandle: NetHandle, callback: AsyncCallback<void>): void
 
@@ -503,23 +481,23 @@ setAppNet(netHandle: NetHandle, callback: AsyncCallback<void>): void
 | netHandle | [NetHandle](js-apis-net-connection.md#nethandle) | 是 | 网络句柄。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当成功绑定App到指定网络时，error为undefined，否则为错误对象。 |
 
-说明
+**说明** 
 
 当应用不再使用该网络或者该网络不可用时，需要解除App和指定网络的绑定关系，以免导致应用无法上网。
 
 如需解除App和指定网络的绑定关系，可以调用[setAppNet](js-apis-net-connection.md#connectionsetappnet9)，并传入一个netId = 0的NetHandle对象，参考以下示例。
 
-```
-1. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-2. netHandle.netId = 0;
-3. connection.setAppNet(netHandle, (error: BusinessError, data: void) => {
-4. if (error) {
-5. console.error(`Failed to get default net. Code:${error.code}, message:${error.message}`);
-6. return;
-7. }
-8. console.info("Succeeded to get data: " + JSON.stringify(data));
-9. });
-10. });
+```ts
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  netHandle.netId = 0;
+  connection.setAppNet(netHandle, (error: BusinessError, data: void) => {
+    if (error) {
+      console.error(`Failed to get default net. Code:${error.code}, message:${error.message}`);
+      return;
+    }
+    console.info("Succeeded to get data: " + JSON.stringify(data));
+  });
+});
 ```
 
 **错误码：**
@@ -538,56 +516,54 @@ setAppNet(netHandle: NetHandle, callback: AsyncCallback<void>): void
 
 当应用绑定WIFI网络，WIFI弱信号或者断开时，如果不解绑，会导致应用无法上网。
 
-以下示例以绑定WIFI网络为例，结合[on("netAvailable")](js-apis-net-connection.md#onnetavailable)、[on("netLost")](js-apis-net-connection.md#onnetlost)接口，当监听到WIFI网络可用时绑定WIFI网络，不可用时解绑，使用默认网络。
+以下示例以绑定WIFI网络为例，结合[on('netAvailable')](js-apis-net-connection.md#onnetavailable)、[on('netLost')](js-apis-net-connection.md#onnetlost)接口，当监听到WIFI网络可用时绑定WIFI网络，不可用时解绑，使用默认网络。
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 创建NetConnection对象。仅关注WIFI网络，需要指定网络类型为WIFI网络。
-5. let netCon = connection.createNetConnection({
-6. netCapabilities: {
-7. bearerTypes: [connection.NetBearType.BEARER_WIFI]
-8. }
-9. });
+// 创建NetConnection对象。仅关注WIFI网络，需要指定网络类型为WIFI网络。
+let netCon = connection.createNetConnection({
+  netCapabilities: {
+    bearerTypes: [connection.NetBearType.BEARER_WIFI]
+  }
+});
 
-11. // 使用on接口订阅网络可用事件
-12. netCon.on('netAvailable', (netHandle: connection.NetHandle) => {
-13. console.info("Succeeded to get data: " + JSON.stringify(netHandle));
-14. connection.setAppNet(netHandle, (error: BusinessError, data: void) => {
-15. if (error) {
-16. console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
-17. return;
-18. }
-19. console.info("Succeeded to setAppNet, netid: " + JSON.stringify(netHandle.netId));
-20. });
-21. });
+// 使用on接口订阅网络可用事件
+netCon.on('netAvailable', (netHandle: connection.NetHandle) => {
+  console.info("Succeeded to get data: " + JSON.stringify(netHandle));
+  connection.setAppNet(netHandle, (error: BusinessError, data: void) => {
+    if (error) {
+      console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
+      return;
+    }
+    console.info("Succeeded to setAppNet, netid: " + JSON.stringify(netHandle.netId));
+  });
+});
 
-23. // 使用on接口订阅网络丢失事件。
-24. netCon.on('netLost', (netHandle: connection.NetHandle) => {
-25. console.info("Succeeded to get data: " + JSON.stringify(netHandle));
-26. // 网络丢失时，需要主动解除指定网络的绑定关系
-27. netHandle.netId = 0;
-28. connection.setAppNet(netHandle, (error: BusinessError, data: void) => {
-29. if (error) {
-30. console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
-31. return;
-32. }
-33. console.info("Succeeded to setAppNet, netid: " + JSON.stringify(netHandle.netId));
-34. });
-35. });
+// 使用on接口订阅网络丢失事件。
+netCon.on('netLost', (netHandle: connection.NetHandle) => {
+  console.info("Succeeded to get data: " + JSON.stringify(netHandle));
+  // 网络丢失时，需要主动解除指定网络的绑定关系
+  netHandle.netId = 0;
+  connection.setAppNet(netHandle, (error: BusinessError, data: void) => {
+    if (error) {
+      console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
+      return;
+    }
+    console.info("Succeeded to setAppNet, netid: " + JSON.stringify(netHandle.netId));
+  });
+});
 
-37. // 注册网络状态变化事件。此接口要在调用on后调用。
-38. netCon.register((error: BusinessError) => {
-39. if (error) {
-40. console.error(JSON.stringify(error));
-41. }
-42. });
+// 注册网络状态变化事件。此接口要在调用on后调用。
+netCon.register((error: BusinessError) => {
+  if (error) {
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+  }
+});
 ```
 
 ## connection.setAppNet9+
-
-PhonePC/2in1TabletTVWearable
 
 setAppNet(netHandle: NetHandle): Promise<void>
 
@@ -603,21 +579,21 @@ setAppNet(netHandle: NetHandle): Promise<void>
 | --- | --- | --- | --- |
 | netHandle | [NetHandle](js-apis-net-connection.md#nethandle) | 是 | 网络句柄。 |
 
-说明
+**说明** 
 
 当应用不再使用该网络或者该网络不可用时，需要解除App和指定网络的绑定关系，以免导致应用无法上网。
 
 如需解除App和指定网络的绑定关系，可以调用[setAppNet](js-apis-net-connection.md#connectionsetappnet9)，并传入一个netId = 0的NetHandle对象，参考以下示例。
 
-```
-1. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-2. netHandle.netId = 0;
-3. connection.setAppNet(netHandle).then(() => {
-4. console.info("setAppNet success");
-5. }).catch((error: BusinessError) => {
-6. console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
-7. })
-8. });
+```ts
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  netHandle.netId = 0;
+  connection.setAppNet(netHandle).then(() => {
+    console.info("Succeeded to setAppNet");
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
+  })
+});
 ```
 
 **返回值：**
@@ -642,52 +618,50 @@ setAppNet(netHandle: NetHandle): Promise<void>
 
 当应用绑定WIFI网络，WIFI弱信号或者断开时，如果不解绑，会导致应用无法上网。
 
-以下示例以绑定WIFI网络为例，结合[on("netAvailable")](js-apis-net-connection.md#onnetavailable)、[on("netLost")](js-apis-net-connection.md#onnetlost)接口，当监听到WIFI网络可用时绑定WIFI网络，不可用时解绑，使用默认网络。
+以下示例以绑定WIFI网络为例，结合[on('netAvailable')](js-apis-net-connection.md#onnetavailable)、[on('netLost')](js-apis-net-connection.md#onnetlost)接口，当监听到WIFI网络可用时绑定WIFI网络，不可用时解绑，使用默认网络。
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 创建NetConnection对象。仅关注WIFI网络，需要指定网络类型为WIFI网络。
-5. let netCon = connection.createNetConnection({
-6. netCapabilities: {
-7. bearerTypes: [connection.NetBearType.BEARER_WIFI]
-8. }
-9. });
+// 创建NetConnection对象。仅关注WIFI网络，需要指定网络类型为WIFI网络。
+let netCon = connection.createNetConnection({
+  netCapabilities: {
+    bearerTypes: [connection.NetBearType.BEARER_WIFI]
+  }
+});
 
-11. // 使用on接口订阅网络可用事件
-12. netCon.on('netAvailable', (netHandle: connection.NetHandle) => {
-13. console.info("Succeeded to get data: " + JSON.stringify(netHandle));
-14. connection.setAppNet(netHandle).then(() => {
-15. console.info("setAppNet success, netid: " + JSON.stringify(netHandle.netId));
-16. }).catch((error: BusinessError) => {
-17. console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
-18. })
-19. });
+// 使用on接口订阅网络可用事件
+netCon.on('netAvailable', (netHandle: connection.NetHandle) => {
+  console.info("Succeeded to get data: " + JSON.stringify(netHandle));
+  connection.setAppNet(netHandle).then(() => {
+    console.info("Succeeded to setAppNet, netid: " + JSON.stringify(netHandle.netId));
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
+  })
+});
 
-21. // 使用on接口订阅网络丢失事件。
-22. netCon.on('netLost', (netHandle: connection.NetHandle) => {
-23. console.info("Succeeded to get data: " + JSON.stringify(netHandle));
-24. // 网络丢失时，需要主动解除指定网络的绑定关系
-25. netHandle.netId = 0;
-26. connection.setAppNet(netHandle).then(() => {
-27. console.info("setAppNet success, netid: " + JSON.stringify(netHandle.netId));
-28. }).catch((error: BusinessError) => {
-29. console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
-30. })
-31. });
+// 使用on接口订阅网络丢失事件。
+netCon.on('netLost', (netHandle: connection.NetHandle) => {
+  console.info("Succeeded to get data: " + JSON.stringify(netHandle));
+  // 网络丢失时，需要主动解除指定网络的绑定关系
+  netHandle.netId = 0;
+  connection.setAppNet(netHandle).then(() => {
+    console.info("Succeeded to setAppNet, netid: " + JSON.stringify(netHandle.netId));
+  }).catch((error: BusinessError) => {
+    console.error(`Failed to setAppNet. Code:${error.code}, message:${error.message}`);
+  })
+});
 
-33. // 注册网络状态变化事件。此接口要在调用on后调用。
-34. netCon.register((error: BusinessError) => {
-35. if (error) {
-36. console.error(JSON.stringify(error));
-37. }
-38. });
+// 注册网络状态变化事件。此接口要在调用on后调用。
+netCon.register((error: BusinessError) => {
+  if (error) {
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+  }
+});
 ```
 
 ## connection.getAllNets
-
-PhonePC/2in1TabletTVWearable
 
 getAllNets(callback: AsyncCallback<Array<NetHandle>>): void
 
@@ -716,22 +690,20 @@ getAllNets(callback: AsyncCallback<Array<NetHandle>>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getAllNets((error: BusinessError, data: connection.NetHandle[]) => {
-5. if (error) {
-6. console.error(`Failed to get all nets. Code:${error.code}, message:${error.message}`);
-7. return;
-8. }
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. });
+connection.getAllNets((error: BusinessError, data: connection.NetHandle[]) => {
+  if (error) {
+    console.error(`Failed to get all nets. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.getAllNets
-
-PhonePC/2in1TabletTVWearable
 
 getAllNets(): Promise<Array<NetHandle>>
 
@@ -759,17 +731,15 @@ getAllNets(): Promise<Array<NetHandle>>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.getAllNets().then((data: connection.NetHandle[]) => {
-4. console.info("Succeeded to get data: " + JSON.stringify(data));
-5. });
+connection.getAllNets().then((data: connection.NetHandle[]) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.getAllNetsSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getAllNetsSync(): Array<NetHandle>
 
@@ -797,15 +767,13 @@ getAllNetsSync(): Array<NetHandle>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. let netHandle = connection.getAllNetsSync();
+let netHandle = connection.getAllNetsSync();
 ```
 
 ## connection.getConnectionProperties
-
-PhonePC/2in1TabletTVWearable
 
 getConnectionProperties(netHandle: NetHandle, callback: AsyncCallback<ConnectionProperties>): void
 
@@ -836,29 +804,27 @@ getConnectionProperties(netHandle: NetHandle, callback: AsyncCallback<Connection
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 示例： 获取当前默认网络的连接信息。
-5. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-6. if (netHandle.netId == 0) {
-7. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-8. return;
-9. }
-10. connection.getConnectionProperties(netHandle, (error: BusinessError, data: connection.ConnectionProperties) => {
-11. if (error) {
-12. console.error(`Failed to get connection properties. Code:${error.code}, message:${error.message}`);
-13. return;
-14. }
-15. console.info("Succeeded to get data: " + JSON.stringify(data));
-16. })
-17. });
+// 示例： 获取当前默认网络的连接信息。
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  connection.getConnectionProperties(netHandle, (error: BusinessError, data: connection.ConnectionProperties) => {
+    if (error) {
+      console.error(`Failed to get connection properties. Code:${error.code}, message:${error.message}`);
+      return;
+    }
+    console.info("Succeeded to get data: " + JSON.stringify(data));
+  })
+});
 ```
 
 ## connection.getConnectionProperties
-
-PhonePC/2in1TabletTVWearable
 
 getConnectionProperties(netHandle: NetHandle): Promise<ConnectionProperties>
 
@@ -894,24 +860,22 @@ getConnectionProperties(netHandle: NetHandle): Promise<ConnectionProperties>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-4. if (netHandle.netId == 0) {
-5. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-6. return;
-7. }
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
 
-9. connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
-10. console.info("Succeeded to get data: " + JSON.stringify(data));
-11. })
-12. });
+  connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
+    console.info("Succeeded to get data: " + JSON.stringify(data));
+  })
+});
 ```
 
 ## connection.getConnectionPropertiesSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getConnectionPropertiesSync(netHandle: NetHandle): ConnectionProperties
 
@@ -947,27 +911,21 @@ getConnectionPropertiesSync(netHandle: NetHandle): ConnectionProperties
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let netHandle: connection.NetHandle;
-5. let connectionproperties: connection.ConnectionProperties;
-
-7. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-8. if (netHandle.netId == 0) {
-9. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-10. return;
-11. }
-12. netHandle = connection.getDefaultNetSync();
-13. connectionproperties = connection.getConnectionPropertiesSync(netHandle);
-14. console.info("Succeeded to get connectionproperties: " + JSON.stringify(connectionproperties));
-15. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  let connectionproperties = connection.getConnectionPropertiesSync(netHandle);
+  console.info("Succeeded to get connectionproperties: " + JSON.stringify(connectionproperties));
+});
 ```
 
 ## connection.getNetCapabilities
-
-PhonePC/2in1TabletTVWearable
 
 getNetCapabilities(netHandle: NetHandle, callback: AsyncCallback<NetCapabilities>): void
 
@@ -1000,30 +958,28 @@ getNetCapabilities(netHandle: NetHandle, callback: AsyncCallback<NetCapabilities
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-5. if (netHandle.netId == 0) {
-6. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-7. return;
-8. }
-9. connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
-10. if (error) {
-11. console.error(`Failed to get net capabilities. Code:${error.code}, message:${error.message}`);
-12. return;
-13. }
-14. console.info("Succeeded to get data: " + JSON.stringify(data));
-15. })
-16. }).catch((error: BusinessError) => {
-17. console.error(JSON.stringify(error));
-18. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
+    if (error) {
+      console.error(`Failed to get net capabilities. Code:${error.code}, message:${error.message}`);
+      return;
+    }
+    console.info("Succeeded to get data: " + JSON.stringify(data));
+  })
+}).catch((error: BusinessError) => {
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ## connection.getNetCapabilities
-
-PhonePC/2in1TabletTVWearable
 
 getNetCapabilities(netHandle: NetHandle): Promise<NetCapabilities>
 
@@ -1061,26 +1017,24 @@ getNetCapabilities(netHandle: NetHandle): Promise<NetCapabilities>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-5. if (netHandle.netId == 0) {
-6. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-7. return;
-8. }
-9. connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
-10. console.info("Succeeded to get data: " + JSON.stringify(data));
-11. })
-12. }).catch((error: BusinessError) => {
-13. console.error(JSON.stringify(error));
-14. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
+      console.info("Succeeded to get data: " + JSON.stringify(data));
+  })
+}).catch((error: BusinessError) => {
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ## connection.getNetCapabilitiesSync10+
-
-PhonePC/2in1TabletTVWearable
 
 getNetCapabilitiesSync(netHandle: NetHandle): NetCapabilities
 
@@ -1118,27 +1072,22 @@ getNetCapabilitiesSync(netHandle: NetHandle): NetCapabilities
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let netHandle: connection.NetHandle;
-5. let getNetCapabilitiesSync: connection.NetCapabilities;
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
 
-7. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-8. if (netHandle.netId == 0) {
-9. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-10. return;
-11. }
-
-13. getNetCapabilitiesSync = connection.getNetCapabilitiesSync(netHandle);
-14. console.info("Succeeded to get net capabilities sync: " + JSON.stringify(getNetCapabilitiesSync));
-15. });
+  let getNetCapabilitiesSync = connection.getNetCapabilitiesSync(netHandle);
+  console.info("Succeeded to get net capabilities sync: " + JSON.stringify(getNetCapabilitiesSync));
+});
 ```
 
 ## connection.isDefaultNetMetered9+
-
-PhonePC/2in1TabletTVWearable
 
 isDefaultNetMetered(callback: AsyncCallback<boolean>): void
 
@@ -1167,19 +1116,17 @@ isDefaultNetMetered(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.isDefaultNetMetered((error: BusinessError, data: boolean) => {
-5. console.error(JSON.stringify(error));
-6. console.info('data: ' + data);
-7. });
+connection.isDefaultNetMetered((error: BusinessError, data: boolean) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.isDefaultNetMetered9+
-
-PhonePC/2in1TabletTVWearable
 
 isDefaultNetMetered(): Promise<boolean>
 
@@ -1207,17 +1154,15 @@ isDefaultNetMetered(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.isDefaultNetMetered().then((data: boolean) => {
-4. console.info('data: ' + data);
-5. });
+connection.isDefaultNetMetered().then((data: boolean) => {
+console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.isDefaultNetMeteredSync10+
-
-PhonePC/2in1TabletTVWearable
 
 isDefaultNetMeteredSync(): boolean
 
@@ -1245,15 +1190,13 @@ isDefaultNetMeteredSync(): boolean
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. let isMetered = connection.isDefaultNetMeteredSync();
+let isMetered = connection.isDefaultNetMeteredSync();
 ```
 
 ## connection.hasDefaultNet
-
-PhonePC/2in1TabletTVWearable
 
 hasDefaultNet(callback: AsyncCallback<boolean>): void
 
@@ -1282,19 +1225,17 @@ hasDefaultNet(callback: AsyncCallback<boolean>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.hasDefaultNet((error: BusinessError, data: boolean) => {
-5. console.error(JSON.stringify(error));
-6. console.info('data: ' + data);
-7. });
+connection.hasDefaultNet((error: BusinessError, data: boolean) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.hasDefaultNet
-
-PhonePC/2in1TabletTVWearable
 
 hasDefaultNet(): Promise<boolean>
 
@@ -1322,17 +1263,15 @@ hasDefaultNet(): Promise<boolean>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.hasDefaultNet().then((data: boolean) => {
-4. console.info('data: ' + data);
-5. });
+connection.hasDefaultNet().then((data: boolean) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.hasDefaultNetSync10+
-
-PhonePC/2in1TabletTVWearable
 
 hasDefaultNetSync(): boolean
 
@@ -1360,21 +1299,19 @@ hasDefaultNetSync(): boolean
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. let hasDefaultNet = connection.hasDefaultNetSync();
+let hasDefaultNet = connection.hasDefaultNetSync();
 ```
 
 ## connection.reportNetConnected
-
-PhonePC/2in1TabletTVWearable
 
 reportNetConnected(netHandle: NetHandle, callback: AsyncCallback<void>): void
 
 向网络管理上报网络处于可用状态。使用callback方式异步回调。
 
-说明
+**说明** 
 
 该接口用于浏览器连接portal网络，网络认证成功后，向网络管理上报网络连接成功，网络管理会触发网络探测，更新网络状态。
 
@@ -1403,20 +1340,18 @@ reportNetConnected(netHandle: NetHandle, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-5. connection.reportNetConnected(netHandle, (error: BusinessError) => {
-6. console.error(JSON.stringify(error));
-7. });
-8. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  connection.reportNetConnected(netHandle, (error: BusinessError) => {
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+  });
+});
 ```
 
 ## connection.reportNetConnected
-
-PhonePC/2in1TabletTVWearable
 
 reportNetConnected(netHandle: NetHandle): Promise<void>
 
@@ -1452,19 +1387,17 @@ reportNetConnected(netHandle: NetHandle): Promise<void>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-4. connection.reportNetConnected(netHandle).then(() => {
-5. console.info(`report success`);
-6. });
-7. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  connection.reportNetConnected(netHandle).then(() => {
+    console.info(`Succeeded to report`);
+  });
+});
 ```
 
 ## connection.reportNetDisconnected
-
-PhonePC/2in1TabletTVWearable
 
 reportNetDisconnected(netHandle: NetHandle, callback: AsyncCallback<void>): void
 
@@ -1495,28 +1428,26 @@ reportNetDisconnected(netHandle: NetHandle, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet((error: BusinessError, netHandle: connection.NetHandle) => {
-5. if (netHandle.netId == 0) {
-6. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-7. return;
-8. }
-9. connection.reportNetDisconnected(netHandle, (error: BusinessError, data: void) => {
-10. if (error) {
-11. console.error(`Failed to get default net. Code:${error.code}, message:${error.message}`);
-12. return;
-13. }
-14. console.info("report success");
-15. });
-16. });
+connection.getDefaultNet((error: BusinessError, netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  connection.reportNetDisconnected(netHandle, (error: BusinessError, data: void) => {
+    if (error) {
+      console.error(`Failed to get default net. Code:${error.code}, message:${error.message}`);
+      return;
+    }
+    console.info("Succeeded to report");
+  });
+});
 ```
 
 ## connection.reportNetDisconnected
-
-PhonePC/2in1TabletTVWearable
 
 reportNetDisconnected(netHandle: NetHandle): Promise<void>
 
@@ -1552,19 +1483,17 @@ reportNetDisconnected(netHandle: NetHandle): Promise<void>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-4. connection.reportNetDisconnected(netHandle).then( () => {
-5. console.info(`report success`);
-6. });
-7. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  connection.reportNetDisconnected(netHandle).then( () => {
+    console.info(`Succeeded to report`);
+  });
+});
 ```
 
 ## connection.getAddressesByName
-
-PhonePC/2in1TabletTVWearable
 
 getAddressesByName(host: string, callback: AsyncCallback<Array<NetAddress>>): void
 
@@ -1595,22 +1524,20 @@ getAddressesByName(host: string, callback: AsyncCallback<Array<NetAddress>>): vo
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getAddressesByName("xxxx", (error: BusinessError, data: connection.NetAddress[]) => {
-5. if (error) {
-6. console.error(`Failed to get addresses. Code:${error.code}, message:${error.message}`);
-7. return;
-8. }
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. });
+connection.getAddressesByName("xxxx", (error: BusinessError, data: connection.NetAddress[]) => {
+  if (error) {
+    console.error(`Failed to get addresses. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.getAddressesByName
-
-PhonePC/2in1TabletTVWearable
 
 getAddressesByName(host: string): Promise<Array<NetAddress>>
 
@@ -1646,17 +1573,15 @@ getAddressesByName(host: string): Promise<Array<NetAddress>>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.getAddressesByName("xxxx").then((data: connection.NetAddress[]) => {
-4. console.info("Succeeded to get data: " + JSON.stringify(data));
-5. });
+connection.getAddressesByName("xxxx").then((data: connection.NetAddress[]) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 ```
 
 ## connection.getAddressesByNameWithOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Array<NetAddress>>
 
@@ -1694,22 +1619,21 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
-3. let option: connection.QueryOptions = {
-4. family: connection.FamilyType.FAMILY_TYPE_IPV4
-5. };
-6. connection.getAddressesByNameWithOptions("www.example.com", option).then((data: connection.NetAddress[]) => {
-7. console.info(`Succeeded to get data: ${JSON.stringify(data)}`);
-8. }).catch((err: BusinessError) => {
-9. console.error(`get ERROR msg: ${JSON.stringify(err)}`)
-10. });
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let option: connection.QueryOptions = {
+  family: connection.FamilyType.FAMILY_TYPE_IPV4
+};
+connection.getAddressesByNameWithOptions("www.example.com", option).then((data: connection.NetAddress[]) => {
+  console.info(`Succeeded to get data: ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to get msg. Code:${err.code}, message:${err.message}`)
+});
 ```
 
 ## QueryOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 需要查询的IP类型。
 
@@ -1720,8 +1644,6 @@ PhonePC/2in1TabletTVWearable
 | family | [FamilyType](js-apis-net-connection.md#familytype23) | 否 | 是 | 需要查询的具体IP地址类型，默认值为FAMILY\_TYPE\_ALL。 |
 
 ## FamilyType23+
-
-PhonePC/2in1TabletTVWearable
 
 需要查询的具体IP地址类型。
 
@@ -1735,15 +1657,15 @@ PhonePC/2in1TabletTVWearable
 
 ## connection.addCustomDnsRule11+
 
-PhonePC/2in1TabletTVWearable
-
 addCustomDnsRule(host: string, ip: Array<string>, callback: AsyncCallback<void>): void
 
 为当前应用程序添加自定义host和对应的IP地址的映射。使用callback异步回调。
 
-说明
+**说明** 
 
 不需要时可调用[removeCustomDnsRule](js-apis-net-connection.md#connectionremovecustomdnsrule11)删除某一条自定义规则或调用[clearCustomDnsRules](js-apis-net-connection.md#connectionclearcustomdnsrules11)删除当前应用程序的所有的自定义DNS规则 。
+
+调用本接口添加自定义DNS规则后可持续生效，无需重复添加同一条规则。不需要时可按照上述方法删除。
 
 **需要权限**：ohos.permission.INTERNET
 
@@ -1773,30 +1695,30 @@ addCustomDnsRule(host: string, ip: Array<string>, callback: AsyncCallback<void>)
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.addCustomDnsRule("xxxx", ["xx.xx.xx.xx","xx.xx.xx.xx"], (error: BusinessError, data: void) => {
-5. if (error) {
-6. console.error(`Failed to get add custom dns rule. Code:${error.code}, message:${error.message}`);
-7. return;
-8. }
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. })
+connection.addCustomDnsRule("xxxx", ["xx.xx.xx.xx","xx.xx.xx.xx"], (error: BusinessError, data: void) => {
+  if (error) {
+    console.error(`Failed to get add custom dns rule. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+})
 ```
 
 ## connection.addCustomDnsRule11+
-
-PhonePC/2in1TabletTVWearable
 
 addCustomDnsRule(host: string, ip: Array<string>): Promise<void>
 
 为当前应用程序添加自定义host和对应的IP地址的映射。使用Promise异步回调。
 
-说明
+**说明** 
 
 不需要时可调用[removeCustomDnsRule](js-apis-net-connection.md#connectionremovecustomdnsrule11)删除某一条自定义规则或调用[clearCustomDnsRules](js-apis-net-connection.md#connectionclearcustomdnsrules11)删除当前应用程序的所有的自定义DNS规则 。
+
+调用本接口添加自定义DNS规则后可持续生效，无需重复添加同一条规则。不需要时可按照上述方法删除。
 
 **需要权限**：ohos.permission.INTERNET
 
@@ -1831,26 +1753,26 @@ addCustomDnsRule(host: string, ip: Array<string>): Promise<void>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.addCustomDnsRule("xxxx", ["xx.xx.xx.xx","xx.xx.xx.xx"]).then(() => {
-5. console.info("success");
-6. }).catch((error: BusinessError) => {
-7. console.error(JSON.stringify(error));
-8. })
+connection.addCustomDnsRule("xxxx", ["xx.xx.xx.xx","xx.xx.xx.xx"]).then(() => {
+    console.info("success");
+}).catch((error: BusinessError) => {
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+})
 ```
 
 ## connection.removeCustomDnsRule11+
-
-PhonePC/2in1TabletTVWearable
 
 removeCustomDnsRule(host: string, callback: AsyncCallback<void>): void
 
 删除当前应用程序中对应host的自定义DNS规则。使用callback异步回调。
 
-说明
+**说明** 
+
+删除前需确认当前无线程正在使用该自定义规则，以避免冲突。
 
 可调用[addCustomDnsRule](js-apis-net-connection.md#connectionaddcustomdnsrule11)添加自定义规则。
 
@@ -1881,28 +1803,28 @@ removeCustomDnsRule(host: string, callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.removeCustomDnsRule("xxxx", (error: BusinessError, data: void) => {
-5. if (error) {
-6. console.error(`Failed to remove custom dns rule. Code:${error.code}, message:${error.message}`);
-7. return;
-8. }
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. })
+connection.removeCustomDnsRule("xxxx", (error: BusinessError, data: void) => {
+  if (error) {
+    console.error(`Failed to remove custom dns rule. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+})
 ```
 
 ## connection.removeCustomDnsRule11+
-
-PhonePC/2in1TabletTVWearable
 
 removeCustomDnsRule(host: string): Promise<void>
 
 删除当前应用程序中对应host的自定义DNS规则。使用Promise异步回调。
 
-说明
+**说明** 
+
+删除前需确认当前无线程正在使用该自定义规则，以避免冲突。
 
 可调用[addCustomDnsRule](js-apis-net-connection.md#connectionaddcustomdnsrule11)添加自定义规则。
 
@@ -1938,24 +1860,30 @@ removeCustomDnsRule(host: string): Promise<void>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.removeCustomDnsRule("xxxx").then(() => {
-5. console.info("success");
-6. }).catch((error: BusinessError) => {
-7. console.error(JSON.stringify(error));
-8. })
+connection.removeCustomDnsRule("xxxx", (error: BusinessError, data: void) => {
+  if (error) {
+    console.error(`Failed to remove custom dns rule. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+})
 ```
 
 ## connection.clearCustomDnsRules11+
 
-PhonePC/2in1TabletTVWearable
-
 clearCustomDnsRules(callback: AsyncCallback<void>): void
 
 删除当前应用程序的所有的自定义DNS规则。使用callback异步回调。
+
+**说明** 
+
+删除前需确认当前无线程正在使用当前存在的自定义规则，以避免冲突。
+
+可调用[addCustomDnsRule](js-apis-net-connection.md#connectionaddcustomdnsrule11)添加自定义规则。
 
 **需要权限**：ohos.permission.INTERNET
 
@@ -1981,26 +1909,30 @@ clearCustomDnsRules(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.clearCustomDnsRules((error: BusinessError, data: void) => {
-5. if (error) {
-6. console.error(`Failed to clear custom dns rules. Code:${error.code}, message:${error.message}`);
-7. return;
-8. }
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. })
+connection.clearCustomDnsRules((error: BusinessError, data: void) => {
+  if (error) {
+    console.error(`Failed to clear custom dns rules. Code:${error.code}, message:${error.message}`);
+    return;
+  }
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+})
 ```
 
 ## connection.clearCustomDnsRules11+
 
-PhonePC/2in1TabletTVWearable
-
 clearCustomDnsRules(): Promise<void>
 
 删除当前应用程序的所有的自定义DNS规则。使用Promise异步回调。
+
+**说明** 
+
+删除前需确认当前无线程正在使用当前存在的自定义规则，以避免冲突。
+
+可调用[addCustomDnsRule](js-apis-net-connection.md#connectionaddcustomdnsrule11)添加自定义规则。
 
 **需要权限**：ohos.permission.INTERNET
 
@@ -2025,30 +1957,28 @@ clearCustomDnsRules(): Promise<void>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.clearCustomDnsRules().then(() => {
-5. console.info("success");
-6. }).catch((error: BusinessError) => {
-7. console.error(JSON.stringify(error));
-8. })
+connection.clearCustomDnsRules().then(() => {
+    console.info("success");
+}).catch((error: BusinessError) => {
+    console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+})
 ```
 
 ## connection.setPacFileUrl20+
-
-PhonePC/2in1TabletTVWearable
 
 setPacFileUrl(pacFileUrl: string): void
 
 设置PAC脚本（Proxy Auto-Configuration Script，代理自动配置脚本）的URL地址，并启动PAC代理能力，比如：<http://127.0.0.1:21998/PacProxyScript.pac> 。可通过调用[findProxyForUrl](js-apis-net-connection.md#connectionfindproxyforurl20)解析URL地址来获取代理信息。
 
-注意
+**注意** 
 
 1、本接口当前在PC/2in120+、Phone23+、Tablet23+、TV23+设备上支持解析脚本并启用PAC代理能力，Wearable设备类型上只保存脚本地址，不会启用PAC代理能力。
 
-2、该接口不会校验URL真实性，PC设备上在设置完成之后，会启动PAC代理，若URL有误，则启动代理失败，返回2100002错误码。
+2、该接口不会校验URL真实性，在启动PAC代理时，若URL有误，则启动代理失败，返回2100002错误码。
 
 **需要权限**：ohos.permission.SET\_PAC\_URL
 
@@ -2071,16 +2001,14 @@ setPacFileUrl(pacFileUrl: string): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```typescript
+import { connection } from '@kit.NetworkKit';
 
-3. let pacFileUrl = "http://example.com/proxy.pac";
-4. connection.setPacFileUrl(pacFileUrl);
+let pacFileUrl = "http://example.com/proxy.pac";
+connection.setPacFileUrl(pacFileUrl);
 ```
 
 ## connection.getPacFileUrl20+
-
-PhonePC/2in1TabletTVWearable
 
 getPacFileUrl(): string
 
@@ -2104,28 +2032,26 @@ getPacFileUrl(): string
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```typescript
+import { connection } from '@kit.NetworkKit';
 
-3. let pacFileUrl = connection.getPacFileUrl();
-4. console.info(pacFileUrl);
+let pacFileUrl = connection.getPacFileUrl();
+console.info("Succeeded to get pacFileUrl");
 ```
 
 ## connection.findProxyForUrl20+
-
-PhonePC/2in1TabletTVWearable
 
 findProxyForUrl(url: string): string
 
 通过设置的PAC脚本，解析指定的URL代理地址，返回对应的PAC代理信息。
 
-说明
+**说明** 
 
 1、可通过 [setPacFileUrl](js-apis-net-connection.md#connectionsetpacfileurl20) 或 [setPacUrl](js-apis-net-connection.md#connectionsetpacurl15) 设置PAC脚本。
 
 2、如果调用本接口前未设置PAC脚本，则返回空字符串。
 
-3、由于[setPacFileUrl](js-apis-net-connection.md#connectionsetpacfileurl20)接口支持PC/2in120+、Phone23+、Tablet23+、TV23+设备解析脚本并启用PAC代理能力，因此本接口支持PC设备获取PAC代理信息。 Wearable设备调用本接口功能不生效，返回空字串。
+3、由于[setPacFileUrl](js-apis-net-connection.md#connectionsetpacfileurl20)接口支持PC/2in120+、Phone23+、Tablet23+、TV23+设备解析脚本并启用PAC代理能力，因此本接口支持以上设备获取PAC代理信息。 Wearable设备调用本接口功能不生效，返回空字串。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
@@ -2143,22 +2069,20 @@ findProxyForUrl(url: string): string
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```typescript
+import { connection } from '@kit.NetworkKit';
 
-3. let proxyInfo = connection.findProxyForUrl("http://example.com");
-4. console.info(proxyInfo);
+let proxyInfo = connection.findProxyForUrl("http://example.com");
+console.info(proxyInfo);
 ```
 
 ## connection.setPacUrl15+
-
-PhonePC/2in1TabletTVWearable
 
 setPacUrl(pacUrl: string): void
 
 设置系统级代理自动配置（Proxy Auto Config，PAC）脚本地址。
 
-说明
+**说明** 
 
 只支持设置脚本地址，不支持解析和启用代理功能，如需设置脚本并启用代理，则可调用[setPacFileUrl](js-apis-net-connection.md#connectionsetpacfileurl20)接口。
 
@@ -2185,16 +2109,14 @@ setPacUrl(pacUrl: string): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. let pacUrl = "xxx";
-4. connection.setPacUrl(pacUrl);
+let pacUrl = "xxx";
+connection.setPacUrl(pacUrl);
 ```
 
 ## connection.getPacUrl15+
-
-PhonePC/2in1TabletTVWearable
 
 getPacUrl(): string
 
@@ -2219,21 +2141,19 @@ getPacUrl(): string
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. let pacUrl = connection.getPacUrl();
+let pacUrl = connection.getPacUrl();
 ```
 
 ## connection.setNetExtAttribute20+
-
-PhonePC/2in1TabletTVWearable
 
 setNetExtAttribute(netHandle: NetHandle, netExtAttribute: string): Promise<void>
 
 为netHandle对应的网络设置扩展属性，标识网络的安全级别。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口所需的权限目前仅支持PC设备。
 
@@ -2267,33 +2187,31 @@ setNetExtAttribute(netHandle: NetHandle, netExtAttribute: string): Promise<void>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-5. if (netHandle.netId == 0) {
-6. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-7. return;
-8. }
-9. let netExtAttribute: string = "xxx";
-10. connection.setNetExtAttribute(netHandle, netExtAttribute).then(() => {
-11. console.info("setNetExtAttribute success");
-12. }).catch((error: BusinessError) => {
-13. console.error("setNetExtAttribute failed, err: " + error.code);
-14. })
-15. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  let netExtAttribute: string = "xxx";
+  connection.setNetExtAttribute(netHandle, netExtAttribute).then(() => {
+    console.info("Succeeded to setNetExtAttribute");
+  }).catch((error: BusinessError) => {
+    console.error("setNetExtAttribute failed, err: " + error.code);
+  })
+});
 ```
 
 ## connection.setNetExtAttributeSync20+
-
-PhonePC/2in1TabletTVWearable
 
 setNetExtAttributeSync(netHandle: NetHandle, netExtAttribute: string): void
 
 为netHandle对应的网络设置扩展属性，标识网络的安全级别。使用同步方式返回。
 
-说明
+**说明** 
 
 该接口所需的权限目前仅支持PC设备。
 
@@ -2321,20 +2239,18 @@ setNetExtAttributeSync(netHandle: NetHandle, netExtAttribute: string): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let netExtAttribute: string = "xxx";
-5. let netHandle = connection.getDefaultNetSync();
-6. if (netHandle.netId != 0) {
-7. connection.setNetExtAttributeSync(netHandle, netExtAttribute);
-8. }
+let netExtAttribute: string = "xxx";
+let netHandle = connection.getDefaultNetSync();
+if (netHandle.netId != 0) {
+  connection.setNetExtAttributeSync(netHandle, netExtAttribute);
+}
 ```
 
 ## connection.getNetExtAttribute20+
-
-PhonePC/2in1TabletTVWearable
 
 getNetExtAttribute(netHandle: NetHandle): Promise<string>
 
@@ -2369,26 +2285,24 @@ getNetExtAttribute(netHandle: NetHandle): Promise<string>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-5. if (netHandle.netId == 0) {
-6. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-7. return;
-8. }
-9. connection.getNetExtAttribute(netHandle).then((netExtAttribute: string) => {
-10. console.info("getNetExtAttribute: " + netExtAttribute);
-11. }).catch((error: BusinessError) => {
-12. console.error("getNetExtAttribute failed, err: " + error.code);
-13. })
-14. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  connection.getNetExtAttribute(netHandle).then((netExtAttribute: string) => {
+    console.info("Succeeded to getNetExtAttribute: " + netExtAttribute);
+  }).catch((error: BusinessError) => {
+    console.error("getNetExtAttribute failed, err: " + error.code);
+  })
+});
 ```
 
 ## connection.getNetExtAttributeSync20+
-
-PhonePC/2in1TabletTVWearable
 
 getNetExtAttributeSync(netHandle: NetHandle): string
 
@@ -2423,26 +2337,24 @@ getNetExtAttributeSync(netHandle: NetHandle): string
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let netHandle = connection.getDefaultNetSync();
-5. if (netHandle.netId != 0) {
-6. let netExtAttribute: string = connection.getNetExtAttributeSync(netHandle);
-7. console.info("getNetExtAttribute: " + netExtAttribute);
-8. }
+let netHandle = connection.getDefaultNetSync();
+if (netHandle.netId != 0) {
+  let netExtAttribute: string = connection.getNetExtAttributeSync(netHandle);
+  console.info("Succeeded to getNetExtAttribute: " + netExtAttribute);
+}
 ```
 
 ## connection.getIpNeighTable22+
-
-PhonePC/2in1TabletTVWearable
 
 getIpNeighTable(): Promise<Array<NetIpMacInfo>>
 
 获取本地设备IP邻居表条目信息，包括IPv4和IPv6，每个条目信息包括IP地址、MAC地址、网卡名。使用Promise异步回调。
 
-说明
+**说明** 
 
 该接口获取IP邻居表的缓存的数据，并非局域网内所有连接的数据。
 
@@ -2470,30 +2382,28 @@ getIpNeighTable(): Promise<Array<NetIpMacInfo>>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getIpNeighTable().then((data: connection.NetIpMacInfo[]) => {
-5. if (data.length !== 0) {
-6. console.info(`ipAddress:${data[0].ipAddress}`);
-7. console.info(`ifaceName:${data[0].iface}`);
-8. console.info(`macAddress:${data[0].macAddress}`);
-9. }
-10. }).catch((error: BusinessError) => {
-11. console.error(`error fetching ip neigh table. Code:${error.code}, message:${error.message}`);
-12. });
+connection.getIpNeighTable().then((data: connection.NetIpMacInfo[]) => {
+  if (data.length !== 0) {
+    console.info(`Succeeded to get ipAddress: ${JSON.stringify(data[0].ipAddress)}`);
+    console.info(`Succeeded to get iface: ${JSON.stringify(data[0].iface)}`);
+    console.info(`Succeeded to get macAddress: ${JSON.stringify(data[0].macAddress)}`);
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get ip neigh table. Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ## connection.getConnectOwnerUid23+
-
-PhonePC/2in1TabletTVWearable
 
 getConnectOwnerUid(protocol: ProtocolType, local: NetAddress, remote: NetAddress): Promise<number>
 
 用于查询发起指定网络连接的应用UID。使用Promise异步回调。
 
-说明
+**说明** 
 
 * 该接口仅限在VPN应用中调用。
 * 调用接口时请设置local和remote参数的端口号。若未设置端口号或将端口号设置为0，接口会基于其他参数筛选出符合条件的UID的集合，并从中返回一个匹配的UID。
@@ -2531,29 +2441,27 @@ getConnectOwnerUid(protocol: ProtocolType, local: NetAddress, remote: NetAddress
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let protocol = connection.ProtocolType.PROTO_TYPE_TCP;
-5. let local: connection.NetAddress = { address: '192.168.1.100', family: 1, port: 6666 };
-6. let remote: connection.NetAddress = { address: '192.168.1.200', family: 1, port: 8888 };
-7. connection.getConnectOwnerUid(protocol, local, remote).then((uid) => {
-8. console.info(`uid: ${uid}`);
-9. }).catch((error: BusinessError) => {
-10. console.error(`getConnectOwnerUid failed. errorCode: ${error.code} message:${error.message}`);
-11. });
+let protocol = connection.ProtocolType.PROTO_TYPE_TCP;
+let local: connection.NetAddress = { address: '192.168.1.100', family: 1, port: 6666 };
+let remote: connection.NetAddress = { address: '192.168.1.200', family: 1, port: 8888 };
+connection.getConnectOwnerUid(protocol, local, remote).then((uid) => {
+  console.info(`Succeeded to get uid: ${uid}`);
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get ConnectOwnerUid. errorCode: ${error.code} message:${error.message}`);
+});
 ```
 
 ## connection.getConnectOwnerUidSync23+
-
-PhonePC/2in1TabletTVWearable
 
 getConnectOwnerUidSync(protocol: ProtocolType, local: NetAddress, remote: NetAddress): number
 
 用于查询发起指定网络连接的应用UID。使用同步方式返回。
 
-说明
+**说明** 
 
 * 该接口仅限在VPN应用中调用。
 * 调用接口时请设置local和remote参数的端口号。若未设置端口号或将端口号设置为0，接口会基于其他参数筛选出符合条件的UID的集合，并从中返回一个匹配的UID。
@@ -2593,31 +2501,29 @@ getConnectOwnerUidSync(protocol: ProtocolType, local: NetAddress, remote: NetAdd
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let protocol = connection.ProtocolType.PROTO_TYPE_TCP;
-5. let local: connection.NetAddress = { address: '192.168.1.100', family: 1, port: 6666 };
-6. let remote: connection.NetAddress = { address: '192.168.1.200', family: 1, port: 8888 };
-7. try {
-8. let uid = connection.getConnectOwnerUidSync(protocol, local, remote);
-9. console.info(`uid: ${uid}`);
-10. } catch (e) {
-11. let err = e as BusinessError;
-12. console.error(`getConnectOwnerUid failed. errorCode: ${err.code} message:${err.message}`);
-13. }
+let protocol = connection.ProtocolType.PROTO_TYPE_TCP;
+let local: connection.NetAddress = { address: '192.168.1.100', family: 1, port: 6666 };
+let remote: connection.NetAddress = { address: '192.168.1.200', family: 1, port: 8888 };
+try {
+  let uid = connection.getConnectOwnerUidSync(protocol, local, remote);
+  console.info(`Succeeded to get uid: ${uid}`);
+} catch (e) {
+  let err = e as BusinessError;
+  console.error(`Failed to get ConnectOwnerUid. errorCode: ${err.code} message:${err.message}`);
+}
 ```
 
 ## connection.getDnsAscii23+
-
-PhonePC/2in1TabletTVWearable
 
 getDnsAscii(host: string, flag?: ConversionProcess): string
 
 将Unicode编码形式的主机名转换为ASCII编码形式，并可通过可选的转换流程参数（conversionProcess）控制转换行为。
 
-说明
+**说明** 
 
 conversionProcess设置为NO\_CONFIGURATION时，只能转换已正式分配含义的Unicode字符所对应的域名。
 
@@ -2654,18 +2560,16 @@ conversionProcess设置为USE\_STD3\_ASCII\_RULES时，会在转换过程中强�
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```typescript
+import { connection } from '@kit.NetworkKit';
 
-3. let result = connection.getDnsAscii("www.示例.com", connection.ConversionProcess.NO_CONFIGURATION);
-4. console.info(result);  // 预期结果：www.xn--fsq092h.com
-5. let result = connection.getDnsAscii("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
-6. console.info(result);  // 预期结果：www.example.com
+let result = connection.getDnsAscii("www.示例.com", connection.ConversionProcess.NO_CONFIGURATION);
+console.info("Succeeded to getDnsAscii: " + result);  // 预期结果：www.xn--fsq092h.com
+let result = connection.getDnsAscii("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
+console.info("Succeeded to getDnsAscii: " + result);  // 预期结果：www.example.com
 ```
 
 ## connection.getDnsUnicode23+
-
-PhonePC/2in1TabletTVWearable
 
 getDnsUnicode(host: string, flag?: ConversionProcess): string
 
@@ -2698,42 +2602,265 @@ getDnsUnicode(host: string, flag?: ConversionProcess): string
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```typescript
+import { connection } from '@kit.NetworkKit';
 
-3. let result = connection.getDnsUnicode("www.xn--fsq092h.com", connection.ConversionProcess.NO_CONFIGURATION);
-4. console.info(result);  // 预期结果：www.示例.com
-5. let result = connection.getDnsUnicode("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
-6. console.info(result);  // 预期结果：www.example.com
+let result = connection.getDnsUnicode("www.xn--fsq092h.com", connection.ConversionProcess.NO_CONFIGURATION);
+console.info("Succeeded to getDnsUnicode: " + result);  // 预期结果：www.示例.com
+let result = connection.getDnsUnicode("www.example.com", connection.ConversionProcess.NO_CONFIGURATION);
+console.info("Succeeded to getDnsUnicode: " + result);  // 预期结果：www.example.com
+```
+
+## connection.getSystemNetPortStates24+
+
+getSystemNetPortStates(): Promise<NetPortStatesInfo>
+
+获取系统当前监听的所有TCP、UDP端口信息，以及监听端口进程的PID、UID，支持IPv4和IPv6。
+
+**说明** 
+
+该接口获取系统当前监听的TCP、UDP端口信息，详细字段包括：
+
+TCP端口字段：本地地址、本地端口、远端地址、远端端口、TCP连接状态、进程PID、进程UID
+
+UDP端口字段：本地地址、本地端口、进程PID 、进程UID
+
+**需要权限**：ohos.permission.GET\_IP\_MAC\_INFO
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[NetPortStatesInfo](js-apis-net-connection.md#netportstatesinfo24)> | Promise对象，返回系统当前监听的TCP、UDP端口信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[网络连接管理错误码](errorcode-net-connection.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+
+**示例：**
+
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+connection.getSystemNetPortStates().then((data: connection.NetPortStatesInfo) => {
+  console.info(`Succeeded to get data: ${JSON.stringify(data)}`);
+  if (data.tcpPortStatesInfo?.length) {
+    data.tcpPortStatesInfo?.forEach(item => {
+      console.info(`Succeeded to get Tcp data: ${JSON.stringify(item)}`);
+    })
+  } else {
+    console.info("TcpPortStatesInfo is undefined ");
+  }
+  if (data.udpPortStatesInfo?.length) {
+    data.udpPortStatesInfo?.forEach(item => {
+      console.info(`Succeeded to get Udp data: ${JSON.stringify(item)}`);
+    })
+  } else {
+    console.info("UdpPortStatesInfo is undefined ");
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Error fetching getSystemNetPortStates. Code:${error.code}, message:${error.message}`);
+});
+```
+
+## connection.queryTraceRoute
+
+queryTraceRoute(destination: string, option?: TraceRouteOptions): Promise<TraceRouteInfo[]>
+
+查询网络路由跟踪信息，使用Promise方式作为异步方法。
+
+**说明** 
+
+应用调用该接口需申请精确位置权限。根据[申请位置权限开发指导](../harmonyos-guides/location-permission-guidelines.md)，调用方需同时申请ohos.permission.APPROXIMATELY\_LOCATION和ohos.permission.LOCATION。
+
+**起始版本**：26.0.0
+
+**需要权限**：ohos.permission.INTERNET、ohos.permission.ACCESS\_NET\_TRACE\_INFO、ohos.permission.LOCATION和ohos.permission.APPROXIMATELY\_LOCATION
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| destination | string | 是 | 目标域名或IP地址，例如www.example.com、8.8.8.8。 |
+| option | [TraceRouteOptions](js-apis-net-connection.md#tracerouteoptions) | 否 | 路由跟踪的选项参数，缺省则使用默认配置。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[TraceRouteInfo](js-apis-net-connection.md#tracerouteinfo)[]> | Promise对象，返回路由跟踪信息数组。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[网络连接管理错误码](errorcode-net-connection.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 2100001 | Invalid parameter value. |
+| 2100003 | Internal error. |
+
+**示例：**
+
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let dest: string = "www.example.com";
+let options: connection.TraceRouteOptions = {
+    maxJumpNumber: 30,
+    packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP
+};
+
+connection.queryTraceRoute(dest, options).then((data: connection.TraceRouteInfo[]) => {
+    console.info('Succeeded to getDefaultHttpProxy:' + JSON.stringify(data));
+}).catch((err: BusinessError) => {
+    console.error(`Failed to get request. Code:${err.code}, message:${err.message}`);
+});
+```
+
+## connection.queryProbeResult
+
+queryProbeResult(destination: string, duration: number): Promise<ProbeResultInfo>
+
+查询网络探测结果。若出现异常（例如断网），导致发送请求失败，则接口会立即返回，不再进行后续探测。本接口使用Promise方式作为异步方法。
+
+**说明** 
+
+此接口用于对目标主机进行一段持续时间的网络探测，以获取丢包率和RTT信息。
+
+**起始版本**：26.0.0
+
+**需要权限**：ohos.permission.INTERNET。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| destination | string | 是 | 目标域名或IP地址，例如www.example.com、8.8.8.8。 |
+| duration | number | 是 | 探测持续时间，单位为秒，取值范围[1, 1000]。探测间隔为1秒。若未出现异常（例如断网），探测时间到期后返回探测结果。该字段表示探测持续总时长，设置过长可能导致长时间占用应用线程资源。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[ProbeResultInfo](js-apis-net-connection.md#proberesultinfo)> | Promise对象，返回探测结果信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[网络连接管理错误码](errorcode-net-connection.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 2100001 | Invalid parameter value. |
+| 2100003 | Internal error. |
+
+**示例：**
+
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let dest: string = "www.example.com";
+let duration: number = 10;
+
+connection.queryProbeResult(dest, duration).then((data: connection.ProbeResultInfo) => {
+    console.info(`Succeeded to get LossRate: ${data.lossRate}, Succeeded to getRTT: ${data.rtt}`);
+}).catch((err: BusinessError) => {
+    console.error(`Failed to get request. Code:${err.code}, message:${err.message}`);
+});
+```
+
+## connection.refreshGlobalHttpProxy
+
+refreshGlobalHttpProxy(): Promise<HttpProxy>
+
+通知系统重新认证全局代理。
+
+**说明** 
+
+若当前未配置全局代理或代理配置信息有误（例如未正确配置username和password），则会抛出2100003错误码。可通过[getDefaultHttpProxy](js-apis-net-connection.md#connectiongetdefaulthttpproxy10)接口查询当前代理配置信息。
+
+**起始版本**：26.0.0
+
+**需要权限**：ohos.permission.INTERNET
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[HttpProxy](js-apis-net-connection.md#httpproxy10)> | Promise对象，返回全局代理配置信息。其中username和password字段固定为空字符串，不返回有效信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[网络连接管理错误码](errorcode-net-connection.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 2100002 | Failed to connect to the service. |
+| 2100003 | System internal error. |
+
+**示例：**
+
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+connection.refreshGlobalHttpProxy().then((data: connection.HttpProxy) => {
+  console.info(`Succeeded to refresh global http proxy: ${JSON.stringify(data)}`);
+}).catch((error: BusinessError) => {
+  console.error(`Failed to refresh global http proxy. Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ## NetConnection
 
-PhonePC/2in1TabletTVWearable
-
 网络连接对象类型。
 
-说明
+**说明** 
 
-（1）设备从无网络状态转变为有网络状态时，将触发netAvailable事件、netCapabilitiesChange事件和netConnectionPropertiesChange事件；
+（1）设备从无网络状态转变为有网络状态时，将触发[on('netAvailable')](js-apis-net-connection.md#onnetavailable)事件、[on('netCapabilitiesChange')](js-apis-net-connection.md#onnetcapabilitieschange)事件和[on('netConnectionPropertiesChange')](js-apis-net-connection.md#onnetconnectionpropertieschange)事件；
 
-（2）接收到netAvailable事件后，若设备从有网络状态转变为无网络状态，将触发netLost事件；
+（2）接收到[on('netAvailable')](js-apis-net-connection.md#onnetavailable)事件后，若设备从有网络状态转变为无网络状态，将触发[on('netLost')](js-apis-net-connection.md#onnetlost)事件；
 
-（3）若未接收到netAvailable事件，则将直接接收到netUnavailable事件；
+（3）若未接收到[on('netAvailable')](js-apis-net-connection.md#onnetavailable)事件，则将直接接收到[on('netUnavailable')](js-apis-net-connection.md#onnetunavailable)事件；
 
-（4）设备从WiFi网络切换至蜂窝网络时，将先触发netLost事件（WiFi丢失），随后触发netAvailable事件（蜂窝可用）。
+（4）设备从WiFi网络切换至蜂窝网络时，将先触发[on('netLost')](js-apis-net-connection.md#onnetlost)事件（WiFi丢失），随后触发[on('netAvailable')](js-apis-net-connection.md#onnetavailable)事件（蜂窝可用）。
 
 ### register
-
-PhonePC/2in1TabletTVWearable
 
 register(callback: AsyncCallback<void>): void
 
 订阅指定网络状态变化的通知。如需监听特定事件，确保调用on监听事件后再调用register进行注册。
 
-注意
+**注意** 
 
-使用完register接口后需要及时调用unregister取消注册。
+使用完register接口后需要及时调用[unregister](js-apis-net-connection.md#unregister)取消注册。
 
 **需要权限**：ohos.permission.GET\_NETWORK\_INFO
 
@@ -2762,19 +2889,17 @@ register(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let netCon: connection.NetConnection = connection.createNetConnection();
-5. netCon.register((error: BusinessError) => {
-6. console.error(JSON.stringify(error));
-7. });
+let netCon: connection.NetConnection = connection.createNetConnection();
+netCon.register((error: BusinessError) => {
+  console.error(`Failed to register.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ### unregister
-
-PhonePC/2in1TabletTVWearable
 
 unregister(callback: AsyncCallback<void>): void
 
@@ -2803,23 +2928,21 @@ unregister(callback: AsyncCallback<void>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. let netCon: connection.NetConnection = connection.createNetConnection();
-5. netCon.unregister((error: BusinessError) => {
-6. console.error(JSON.stringify(error));
-7. });
+let netCon: connection.NetConnection = connection.createNetConnection();
+netCon.unregister((error: BusinessError) => {
+  console.error(`Failed to unregister.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ### on('netAvailable')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'netAvailable', callback: Callback<NetHandle>): void
 
-订阅网络可用事件。此接口需在调用register接口之前调用。若无需接收网络状态变化的回调通知，应使用unregister取消订阅默认的网络状态变化通知。
+订阅网络可用事件。此接口需在调用[register](js-apis-net-connection.md#register)接口之前调用。若无需接收网络状态变化的回调通知，应使用[unregister](js-apis-net-connection.md#unregister)取消订阅默认的网络状态变化通知。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2834,36 +2957,34 @@ on(type: 'netAvailable', callback: Callback<NetHandle>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 创建NetConnection对象。
-5. let netCon: connection.NetConnection = connection.createNetConnection();
+// 创建NetConnection对象。
+let netCon: connection.NetConnection = connection.createNetConnection();
 
-7. // 先使用on接口订阅网络可用事件。
-8. netCon.on('netAvailable', (data: connection.NetHandle) => {
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. });
+// 先使用on接口订阅网络可用事件。
+netCon.on('netAvailable', (data: connection.NetHandle) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 
-12. // 注册网络状态变化事件。此接口要在调用on后调用。
-13. netCon.register((error: BusinessError) => {
-14. console.error(JSON.stringify(error));
-15. });
+// 注册网络状态变化事件。此接口要在调用on后调用。
+netCon.register((error: BusinessError) => {
+  console.error(`Failed to register.Code:${error.code}, message:${error.message}`);
+});
 
-17. // 使用unregister接口取消订阅网络可用事件。
-18. netCon.unregister((error: BusinessError) => {
-19. console.error(JSON.stringify(error));
-20. });
+// 使用unregister接口取消订阅网络可用事件。
+netCon.unregister((error: BusinessError) => {
+  console.error(`Failed to unregister.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ### on('netBlockStatusChange')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'netBlockStatusChange', callback: Callback<NetBlockStatusInfo>): void
 
-订阅网络阻塞状态事件。此接口需要在调用register接口之前调用。若无需接收网络状态变化的回调通知，应使用unregister取消订阅默认的网络状态变化通知。
+订阅网络阻塞状态事件。此接口需要在调用[register](js-apis-net-connection.md#register)接口之前调用。若无需接收网络状态变化的回调通知，应使用[unregister](js-apis-net-connection.md#unregister)取消订阅默认的网络状态变化通知。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
@@ -2876,36 +2997,34 @@ on(type: 'netBlockStatusChange', callback: Callback<NetBlockStatusInfo>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 创建NetConnection对象。
-5. let netCon: connection.NetConnection = connection.createNetConnection();
+// 创建NetConnection对象。
+let netCon: connection.NetConnection = connection.createNetConnection();
 
-7. // 先使用on接口订阅网络阻塞状态事件。
-8. netCon.on('netBlockStatusChange', (data: connection.NetBlockStatusInfo) => {
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. });
+// 先使用on接口订阅网络阻塞状态事件。
+netCon.on('netBlockStatusChange', (data: connection.NetBlockStatusInfo) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 
-12. // 注册网络状态变化事件。此接口要在调用on后调用。
-13. netCon.register((error: BusinessError) => {
-14. console.error(JSON.stringify(error));
-15. });
+// 注册网络状态变化事件。此接口要在调用on后调用。
+netCon.register((error: BusinessError) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 
-17. // 使用unregister接口取消订阅网络阻塞状态事件。
-18. netCon.unregister((error: BusinessError) => {
-19. console.error(JSON.stringify(error));
-20. });
+// 使用unregister接口取消订阅网络阻塞状态事件。
+netCon.unregister((error: BusinessError) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ### on('netCapabilitiesChange')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'netCapabilitiesChange', callback: Callback<NetCapabilityInfo>): void
 
-订阅网络能力变化事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
+订阅网络能力变化事件。此接口要在[register](js-apis-net-connection.md#register)接口调用前调用，不需要网络状态变化回调通知时，使用[unregister](js-apis-net-connection.md#unregister)取消订阅默认网络状态变化的通知。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -2920,36 +3039,34 @@ on(type: 'netCapabilitiesChange', callback: Callback<NetCapabilityInfo>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 创建NetConnection对象。
-5. let netCon: connection.NetConnection = connection.createNetConnection();
+// 创建NetConnection对象。
+let netCon: connection.NetConnection = connection.createNetConnection();
 
-7. // 先使用on接口订阅网络能力变化事件。
-8. netCon.on('netCapabilitiesChange', (data: connection.NetCapabilityInfo) => {
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. });
+// 先使用on接口订阅网络能力变化事件。
+netCon.on('netCapabilitiesChange', (data: connection.NetCapabilityInfo) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 
-12. // 注册网络状态变化事件。此接口要在调用on后调用。
-13. netCon.register((error: BusinessError) => {
-14. console.error(JSON.stringify(error));
-15. });
+// 注册网络状态变化事件。此接口要在调用on后调用。
+netCon.register((error: BusinessError) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 
-17. // 使用unregister接口取消订阅网络能力变化事件。
-18. netCon.unregister((error: BusinessError) => {
-19. console.error(JSON.stringify(error));
-20. });
+// 使用unregister接口取消订阅网络能力变化事件。
+netCon.unregister((error: BusinessError) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ### on('netConnectionPropertiesChange')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'netConnectionPropertiesChange', callback: Callback<NetConnectionPropertyInfo>): void
 
-订阅网络连接信息变化事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
+订阅网络连接信息变化事件。此接口要在[register](js-apis-net-connection.md#register)接口调用前调用，不需要网络状态变化回调通知时，使用[unregister](js-apis-net-connection.md#unregister)取消订阅默认网络状态变化的通知。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
@@ -2962,36 +3079,34 @@ on(type: 'netConnectionPropertiesChange', callback: Callback<NetConnectionProper
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 创建NetConnection对象。
-5. let netCon: connection.NetConnection = connection.createNetConnection();
+// 创建NetConnection对象。
+let netCon: connection.NetConnection = connection.createNetConnection();
 
-7. // 先使用on接口订阅网络连接信息变化事件。
-8. netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionPropertyInfo) => {
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. });
+// 先使用on接口订阅网络连接信息变化事件。
+netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionPropertyInfo) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 
-12. // 注册网络状态变化事件。此接口要在调用on后调用。
-13. netCon.register((error: BusinessError) => {
-14. console.error(JSON.stringify(error));
-15. });
+// 注册网络状态变化事件。此接口要在调用on后调用。
+netCon.register((error: BusinessError) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 
-17. // 使用unregister接口取消订阅网络连接信息变化事件。
-18. netCon.unregister((error: BusinessError) => {
-19. console.error(JSON.stringify(error));
-20. });
+// 使用unregister接口取消订阅网络连接信息变化事件。
+netCon.unregister((error: BusinessError) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ### on('netLost')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'netLost', callback: Callback<NetHandle>): void
 
-订阅网络丢失事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
+订阅网络丢失事件。此接口要在[register](js-apis-net-connection.md#register)接口调用前调用，不需要网络状态变化回调通知时，使用[unregister](js-apis-net-connection.md#unregister)取消订阅默认网络状态变化的通知。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -3006,36 +3121,34 @@ on(type: 'netLost', callback: Callback<NetHandle>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 创建NetConnection对象。
-5. let netCon: connection.NetConnection = connection.createNetConnection();
+// 创建NetConnection对象。
+let netCon: connection.NetConnection = connection.createNetConnection();
 
-7. // 先使用on接口订阅网络丢失事件。
-8. netCon.on('netLost', (data: connection.NetHandle) => {
-9. console.info("Succeeded to get data: " + JSON.stringify(data));
-10. });
+// 先使用on接口订阅网络丢失事件。
+netCon.on('netLost', (data: connection.NetHandle) => {
+  console.info("Succeeded to get data: " + JSON.stringify(data));
+});
 
-12. // 注册网络状态变化事件。此接口要在调用on后调用。
-13. netCon.register((error: BusinessError) => {
-14. console.error(JSON.stringify(error));
-15. });
+// 注册网络状态变化事件。此接口要在调用on后调用。
+netCon.register((error: BusinessError) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 
-17. // 使用unregister接口取消订阅网络丢失事件。
-18. netCon.unregister((error: BusinessError) => {
-19. console.error(JSON.stringify(error));
-20. });
+// 使用unregister接口取消订阅网络丢失事件。
+netCon.unregister((error: BusinessError) => {
+  console.error(`Failed to get request.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ### on('netUnavailable')
 
-PhonePC/2in1TabletTVWearable
-
 on(type: 'netUnavailable', callback: Callback<void>): void
 
-订阅网络不可用事件。此接口要在register接口调用前调用，不需要网络状态变化回调通知时，使用unregister取消订阅默认网络状态变化的通知。
+订阅网络不可用事件。此接口要在[register](js-apis-net-connection.md#register)接口调用前调用，不需要网络状态变化回调通知时，使用[unregister](js-apis-net-connection.md#unregister)取消订阅默认网络状态变化的通知。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -3050,32 +3163,30 @@ on(type: 'netUnavailable', callback: Callback<void>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. // 创建NetConnection对象。
-5. let netCon: connection.NetConnection = connection.createNetConnection();
+// 创建NetConnection对象。
+let netCon: connection.NetConnection = connection.createNetConnection();
 
-7. // 先使用on接口订阅网络不可用事件。
-8. netCon.on('netUnavailable', () => {
-9. console.info("Succeeded to get unavailable net event");
-10. });
+// 先使用on接口订阅网络不可用事件。
+netCon.on('netUnavailable', () => {
+  console.info("Succeeded to get unavailable net event");
+});
 
-12. // 注册网络状态变化事件。此接口要在调用on后调用。
-13. netCon.register((error: BusinessError) => {
-14. console.error(JSON.stringify(error));
-15. });
+// 注册网络状态变化事件。此接口要在调用on后调用。
+netCon.register((error: BusinessError) => {
+  console.error(`Failed to get register.Code:${error.code}, message:${error.message}`);
+});
 
-17. // 使用unregister接口取消订阅网络不可用事件。
-18. netCon.unregister((error: BusinessError) => {
-19. console.error(JSON.stringify(error));
-20. });
+// 使用unregister接口取消订阅网络不可用事件。
+netCon.unregister((error: BusinessError) => {
+  console.error(`Failed to get unregister.Code:${error.code}, message:${error.message}`);
+});
 ```
 
 ## NetHandle
-
-PhonePC/2in1TabletTVWearable
 
 网络句柄。
 
@@ -3090,8 +3201,6 @@ PhonePC/2in1TabletTVWearable
 | netId | number | 否 | 否 | 网络ID，取值为0代表没有默认网络，其余有效取值必须大于等于100。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 
 ### bindSocket9+
-
-PhonePC/2in1TabletTVWearable
 
 bindSocket(socketParam: TCPSocket | UDPSocket, callback: AsyncCallback<void>): void
 
@@ -3119,69 +3228,67 @@ bindSocket(socketParam: TCPSocket | UDPSocket, callback: AsyncCallback<void>): v
 
 **示例：**
 
-```
-1. import { connection, socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection, socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. interface Data {
-5. message: ArrayBuffer,
-6. remoteInfo: socket.SocketRemoteInfo
-7. }
+interface Data {
+  message: ArrayBuffer,
+  remoteInfo: socket.SocketRemoteInfo
+}
 
-9. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-10. if (netHandle.netId == 0) {
-11. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-12. }
-13. let tcp : socket.TCPSocket = socket.constructTCPSocketInstance();
-14. let udp : socket.UDPSocket = socket.constructUDPSocketInstance();
-15. let socketType = "TCPSocket";
-16. if (socketType == "TCPSocket") {
-17. tcp.bind({address:"192.168.xxx.xxx",
-18. port:8080,
-19. family:1} as socket.NetAddress, (error: Error) => {
-20. if (error) {
-21. console.error('bind fail');
-22. return;
-23. }
-24. netHandle.bindSocket(tcp, (error: BusinessError, data: void) => {
-25. if (error) {
-26. console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
-27. return;
-28. } else {
-29. console.info(JSON.stringify(data));
-30. }
-31. });
-32. });
-33. } else {
-34. let callback: (value: Data) => void = (value: Data) => {
-35. console.info("on message, message:" + value.message + ", remoteInfo:" + value.remoteInfo);
-36. };
-37. udp.bind({address:"192.168.xxx.xxx",
-38. port:8080,
-39. family:1} as socket.NetAddress, (error: BusinessError) => {
-40. if (error) {
-41. console.error(`Failed to bind. Code:${error.code}, message:${error.message}`);
-42. return;
-43. }
-44. udp.on('message', (data: Data) => {
-45. console.info("Succeeded to get data: " + JSON.stringify(data));
-46. });
-47. netHandle.bindSocket(udp, (error: BusinessError, data: void) => {
-48. if (error) {
-49. console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
-50. return;
-51. } else {
-52. console.info(JSON.stringify(data));
-53. }
-54. });
-55. });
-56. }
-57. })
+  connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+  }
+  let tcp : socket.TCPSocket = socket.constructTCPSocketInstance();
+  let udp : socket.UDPSocket = socket.constructUDPSocketInstance();
+  let socketType = "TCPSocket";
+  if (socketType == "TCPSocket") {
+    tcp.bind({address:"192.168.xxx.xxx",
+              port:8080,
+              family:1} as socket.NetAddress, (error: BusinessError) => {
+      if (error) {
+        console.error(`Failed to bind. Code:${error.code}, message:${error.message}`);
+        return;
+      }
+      netHandle.bindSocket(tcp, (error: BusinessError, data: void) => {
+        if (error) {
+          console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
+          return;
+        } else {
+          console.info('Succeeded to getdefaultHttpProxy:' + JSON.stringify(data));
+        }
+      });
+    });
+  } else {
+    let callback: (value: Data) => void = (value: Data) => {
+      console.info("Succeeded to get message, message:" + value.message + ", Succeeded to get remoteInfo:" + value.remoteInfo);
+    };
+    udp.bind({address:"192.168.xxx.xxx",
+              port:8080,
+              family:1} as socket.NetAddress, (error: BusinessError) => {
+      if (error) {
+        console.error(`Failed to bind. Code:${error.code}, message:${error.message}`);
+        return;
+      }
+      udp.on('message', (data: Data) => {
+        console.info("Succeeded to get data: " + JSON.stringify(data));
+      });
+      netHandle.bindSocket(udp, (error: BusinessError, data: void) => {
+        if (error) {
+          console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
+          return;
+        } else {
+          console.info('Succeeded to get defaultHttpProxy: ' + JSON.stringify(data));
+        }
+      });
+    });
+  }
+})
 ```
 
 ### bindSocket9+
-
-PhonePC/2in1TabletTVWearable
 
 bindSocket(socketParam: TCPSocket | UDPSocket): Promise<void>
 
@@ -3214,64 +3321,62 @@ bindSocket(socketParam: TCPSocket | UDPSocket): Promise<void>
 
 **示例：**
 
-```
-1. import { connection, socket } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection, socket } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. interface Data {
-5. message: ArrayBuffer,
-6. remoteInfo: socket.SocketRemoteInfo
-7. }
+interface Data {
+  message: ArrayBuffer,
+  remoteInfo: socket.SocketRemoteInfo
+}
 
-9. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-10. if (netHandle.netId == 0) {
-11. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-12. return;
-13. }
-14. let tcp : socket.TCPSocket = socket.constructTCPSocketInstance();
-15. let udp : socket.UDPSocket = socket.constructUDPSocketInstance();
-16. let socketType = "TCPSocket";
-17. if (socketType == "TCPSocket") {
-18. tcp.bind({address:"192.168.xxx.xxx",
-19. port:8080,
-20. family:1} as socket.NetAddress, (error: Error) => {
-21. if (error) {
-22. console.error('bind fail');
-23. return;
-24. }
-25. netHandle.bindSocket(tcp).then(() => {
-26. console.info("bind socket success");
-27. }).catch((error: BusinessError) => {
-28. console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
-29. });
-30. });
-31. } else {
-32. let callback: (value: Data) => void = (value: Data) => {
-33. console.info("on message, message:" + value.message + ", remoteInfo:" + value.remoteInfo);
-34. }
-35. udp.bind({address:"192.168.xxx.xxx",
-36. port:8080,
-37. family:1} as socket.NetAddress, (error: BusinessError) => {
-38. if (error) {
-39. console.error(`Failed to bind. Code:${error.code}, message:${error.message}`);
-40. return;
-41. }
-42. udp.on('message', (data: Data) => {
-43. console.info("Succeeded to get data: " + JSON.stringify(data));
-44. });
-45. netHandle.bindSocket(udp).then(() => {
-46. console.info("bind socket success");
-47. }).catch((error: BusinessError) => {
-48. console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
-49. });
-50. });
-51. }
-52. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  let tcp : socket.TCPSocket = socket.constructTCPSocketInstance();
+  let udp : socket.UDPSocket = socket.constructUDPSocketInstance();
+  let socketType = "TCPSocket";
+  if (socketType == "TCPSocket") {
+    tcp.bind({address:"192.168.xxx.xxx",
+              port:8080,
+              family:1} as socket.NetAddress, (error: BusinessError) => {
+      if (error) {
+        console.error('Failed to bind');
+        return;
+      }
+      netHandle.bindSocket(tcp).then(() => {
+        console.info("Succeeded to bind socket");
+      }).catch((error: BusinessError) => {
+        console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
+      });
+    });
+  } else {
+    let callback: (value: Data) => void = (value: Data) => {
+      console.info("on message, message:" + value.message + ", remoteInfo:" + value.remoteInfo);
+    }
+    udp.bind({address:"192.168.xxx.xxx",
+              port:8080,
+              family:1} as socket.NetAddress, (error: BusinessError) => {
+      if (error) {
+        console.error(`Failed to bind. Code:${error.code}, message:${error.message}`);
+        return;
+      }
+      udp.on('message', (data: Data) => {
+        console.info("Succeeded to get data: " + JSON.stringify(data));
+      });
+      netHandle.bindSocket(udp).then(() => {
+        console.info("Succeeded to bind socket");
+      }).catch((error: BusinessError) => {
+        console.error(`Failed to bind socket. Code:${error.code}, message:${error.message}`);
+      });
+    });
+  }
+});
 ```
 
 ### getAddressesByName
-
-PhonePC/2in1TabletTVWearable
 
 getAddressesByName(host: string, callback: AsyncCallback<Array<NetAddress>>): void
 
@@ -3304,29 +3409,27 @@ getAddressesByName(host: string, callback: AsyncCallback<Array<NetAddress>>): vo
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-5. if (netHandle.netId == 0) {
-6. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-7. return;
-8. }
-9. let host = "www.example.com";
-10. netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
-11. if (error) {
-12. console.error(`Failed to get addresses. Code:${error.code}, message:${error.message}`);
-13. return;
-14. }
-15. console.info("Succeeded to get data: " + JSON.stringify(data));
-16. });
-17. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  let host = "www.example.com";
+  netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
+    if (error) {
+      console.error(`Failed to get addresses. Code:${error.code}, message:${error.message}`);
+      return;
+    }
+    console.info("Succeeded to get data: " + JSON.stringify(data));
+  });
+});
 ```
 
 ### getAddressesByName
-
-PhonePC/2in1TabletTVWearable
 
 getAddressesByName(host: string): Promise<Array<NetAddress>>
 
@@ -3364,24 +3467,22 @@ getAddressesByName(host: string): Promise<Array<NetAddress>>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-4. if (netHandle.netId == 0) {
-5. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-6. return;
-7. }
-8. let host = "www.example.com";
-9. netHandle.getAddressesByName(host).then((data: connection.NetAddress[]) => {
-10. console.info("Succeeded to get data: " + JSON.stringify(data));
-11. });
-12. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  let host = "www.example.com";
+  netHandle.getAddressesByName(host).then((data: connection.NetAddress[]) => {
+    console.info("Succeeded to get data: " + JSON.stringify(data));
+  });
+});
 ```
 
 ### getAddressesByNameWithOptions23+
-
-PhonePC/2in1TabletTVWearable
 
 getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Array<NetAddress>>
 
@@ -3419,30 +3520,28 @@ getAddressesByNameWithOptions(host: string, option?: QueryOptions): Promise<Arra
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-5. if (netHandle.netId == 0) {
-6. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-7. return;
-8. }
-9. let host = "www.example.com";
-10. let option: connection.QueryOptions = {
-11. family: connection.FamilyType.FAMILY_TYPE_IPV4
-12. };
-13. netHandle.getAddressesByNameWithOptions(host, option).then((data: connection.NetAddress[]) => {
-14. console.info(`Succeeded to get data: ${JSON.stringify(data)}`);
-15. }).catch((err: BusinessError) => {
-16. console.error(`get ERROR msg: ${JSON.stringify(err)}`)
-17. });
-18. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  let host = "www.example.com";
+  let option: connection.QueryOptions = {
+      family: connection.FamilyType.FAMILY_TYPE_IPV4
+    };
+  netHandle.getAddressesByNameWithOptions(host, option).then((data: connection.NetAddress[]) => {
+    console.info(`Succeeded to get data: ${JSON.stringify(data)}`);
+  }).catch((err: BusinessError) => {
+    console.error(`Failed to get addresses by name. Code:${err.code}, message:${err.message}`);
+  });
+});
 ```
 
 ### getAddressByName
-
-PhonePC/2in1TabletTVWearable
 
 getAddressByName(host: string, callback: AsyncCallback<NetAddress>): void
 
@@ -3473,29 +3572,27 @@ getAddressByName(host: string, callback: AsyncCallback<NetAddress>): void
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-4. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-5. if (netHandle.netId == 0) {
-6. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-7. return;
-8. }
-9. let host = "www.example.com";
-10. netHandle.getAddressByName(host, (error: BusinessError, data: connection.NetAddress) => {
-11. if (error) {
-12. console.error(`Failed to get address. Code:${error.code}, message:${error.message}`);
-13. return;
-14. }
-15. console.info("Succeeded to get data: " + JSON.stringify(data));
-16. });
-17. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  let host = "www.example.com";
+  netHandle.getAddressByName(host, (error: BusinessError, data: connection.NetAddress) => {
+    if (error) {
+      console.error(`Failed to get address. Code:${error.code}, message:${error.message}`);
+      return;
+    }
+    console.info("Succeeded to get data: " + JSON.stringify(data));
+  });
+});
 ```
 
 ### getAddressByName
-
-PhonePC/2in1TabletTVWearable
 
 getAddressByName(host: string): Promise<NetAddress>
 
@@ -3531,24 +3628,22 @@ getAddressByName(host: string): Promise<NetAddress>
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
+```ts
+import { connection } from '@kit.NetworkKit';
 
-3. connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
-4. if (netHandle.netId == 0) {
-5. // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
-6. return;
-7. }
-8. let host = "www.example.com";
-9. netHandle.getAddressByName(host).then((data: connection.NetAddress) => {
-10. console.info("Succeeded to get data: " + JSON.stringify(data));
-11. });
-12. });
+connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+  if (netHandle.netId == 0) {
+    // 当前没有已连接的网络时，netHandle的netId为0，属于异常场景。可根据实际情况添加处理机制。
+    return;
+  }
+  let host = "www.example.com";
+  netHandle.getAddressByName(host).then((data: connection.NetAddress) => {
+    console.info("Succeeded to get data: " + JSON.stringify(data));
+  });
+});
 ```
 
 ## NetCap
-
-PhonePC/2in1TabletTVWearable
 
 网络具体能力。
 
@@ -3561,12 +3656,10 @@ PhonePC/2in1TabletTVWearable
 | NET\_CAPABILITY\_INTERNET | 12 | 表示该网络应具有访问Internet的能力，此能力由网络提供者设置，但该网络访问Internet的连通性并未被网络管理成功验证。网络连通性可以通过NET\_CAPABILITY\_VALIDATED和NET\_CAPABILITY\_CHECKING\_CONNECTIVITY判断。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | NET\_CAPABILITY\_NOT\_VPN | 15 | 表示网络不使用VPN（Virtual Private Network，虚拟专用网络）。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | NET\_CAPABILITY\_VALIDATED | 16 | 表示网络管理通过该网络与华为云地址成功建立连接，此能力由网络管理模块设置。  **注意：** 网络管理可能会与华为云地址建立连接失败，导致网络能力不具备此标记位，但不完全代表该网络无法访问互联网。另外，对于新完成连接的网络，由于网络正在进行连通性验证，此值可能无法反映真实的验证结果。对此，应用可以通过NET\_CAPABILITY\_CHECKING\_CONNECTIVITY12+检查网络是否正在检测连通性。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| NET\_CAPABILITY\_PORTAL12+ | 17 | 表示系统发现该网络存在强制网络门户，需要用户登陆认证，该能力由网络管理模块设置。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| NET\_CAPABILITY\_PORTAL12+ | 17 | 表示系统发现该网络存在强制网络门户，需要用户登录认证，该能力由网络管理模块设置。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | NET\_CAPABILITY\_CHECKING\_CONNECTIVITY12+ | 31 | 表示网络管理正在检验当前网络的连通性，此值会在网络连接时设置。当此值存在时，NET\_CAPABILITY\_VALIDATED的值不准确，连通性检测结束后不再设置，此时可以通过判断NetCap是否包含NET\_CAPABILITY\_VALIDATED判断连通性。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## NetBearType
-
-PhonePC/2in1TabletTVWearable
 
 网络类型。
 
@@ -3582,8 +3675,6 @@ PhonePC/2in1TabletTVWearable
 
 ## ConversionProcess23+
 
-PhonePC/2in1TabletTVWearable
-
 ASCII/Unicode转码转换流程参数的枚举。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
@@ -3594,9 +3685,44 @@ ASCII/Unicode转码转换流程参数的枚举。
 | ALLOW\_UNASSIGNED | 1 | 允许转换包含未分配Unicode代码点的域名(在Unicode字符集中，并非所有代码点都已分配字符，即未分配Unicode代码点)。 |
 | USE\_STD3\_ASCII\_RULES | 2 | 在转换过程中，强制使用STD-3 ASCII规则（即RFC 1123标准）检查生成的ASCII域名。 |
 
-## HttpProxy10+
+## TcpState24+
 
-PhonePC/2in1TabletTVWearable
+TCP状态。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| TCP\_ESTABLISHED | 1 | 连接已建立，可正常收发数据。 |
+| TCP\_SYN\_SENT | 2 | 客户端发送SYN，等待服务端ACK+SYN（三次握手的第一步）。 |
+| TCP\_SYN\_RECV | 3 | 服务端接收SYN并发送ACK+SYN，等待客户端ACK（三次握手的第二步）。 |
+| TCP\_FIN\_WAIT1 | 4 | 主动端发送FIN，等待对方ACK。 |
+| TCP\_FIN\_WAIT2 | 5 | 主动端接收自身FIN的ACK，等待对方发送FIN。 |
+| TCP\_TIME\_WAIT | 6 | 主动端接收对方FIN并回复ACK，等待2倍最大报文段生存时间后彻底释放。 |
+| TCP\_CLOSE | 7 | 初始/关闭状态，无连接。 |
+| TCP\_CLOSE\_WAIT | 8 | 被动端接收对方FIN并发送ACK，等待本地应用程序关闭连接。 |
+| TCP\_LAST\_ACK | 9 | 被动端发送FIN后，等待对方ACK。 |
+| TCP\_LISTEN | 10 | 服务端监听，等待客户端连接。 |
+| TCP\_CLOSING | 11 | 双方同时发送FIN，互相等待ACK。 |
+
+## PacketsType
+
+网络探测数据包类型。
+
+**起始版本**：26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| NETCONN\_PACKETS\_ICMP | 0 | ICMP数据包类型。 |
+| NETCONN\_PACKETS\_UDP | 1 | UDP数据包类型。 |
+
+## HttpProxy10+
 
 网络代理配置信息
 
@@ -3610,9 +3736,41 @@ PhonePC/2in1TabletTVWearable
 | username12+ | string | 否 | 是 | 使用代理的用户名。  **说明:** 需同时设置password参数才会生效。 |
 | password12+ | string | 否 | 是 | 使用代理的用户密码。  **说明:** 需同时设置username参数才会生效。 |
 
-## NetSpecifier
+## Socks5DnsStrategy
 
-PhonePC/2in1TabletTVWearable
+SOCKS5代理的DNS查询策略配置信息。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SYSTEM\_MODE | 0 | 使用SOCKS5代理时，DNS解析由系统执行。 |
+| PROXY\_MODE | 1 | 使用SOCKS5代理时，DNS解析由代理服务器执行。 |
+
+## Socks5Proxy
+
+SOCKS5代理配置信息。
+
+**起始版本**：26.0.0
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| host | string | 否 | 否 | 代理服务器主机名。  **说明:** 当该项为空字符串时，视为未配置SOCKS5代理。 |
+| port | number | 否 | 否 | 主机端口。取值范围[0, 65535]。  **说明:** 当参数不在上述取值范围时，视为未配置SOCKS5代理。 |
+| username | string | 否 | 是 | 使用代理的用户名。  **说明:** 需同时设置password参数才会生效。 |
+| password | string | 否 | 是 | 使用代理的用户密码。  **说明:** 需同时设置username参数才会生效。 |
+| dnsStrategy | [Socks5DnsStrategy](js-apis-net-connection.md#socks5dnsstrategy) | 否 | 是 | 指定DNS解析由系统执行还是由代理服务器执行。  **说明:** 当此项未指定时，如果host有socks5h://协议前缀，则DNS解析由代理服务器执行，否则DNS解析由系统执行。 |
+| exclusionList | Array<string> | 否 | 是 | 不使用代理的主机名列表，主机名支持域名、IP地址以及通配符形式，详细匹配规则如下：  1、域名匹配规则：  （1）完全匹配：代理服务器主机名只要与列表中的任意一个主机名完全相同，就可以匹配。  （2）包含匹配：代理服务器主机名只要包含列表中的任意一个主机名，就可以匹配。  例如，如果在主机名列表中设置了“example.com”，则“example.com”、“www.example.com”、“example.com:80”都会被匹配，而 “www.myexample.com”、“myexample.com.org”则不会被匹配。  2、IP地址匹配规则：代理服务器主机名只要与列表中的任意一个IP地址完全相同，就可以匹配。  3、域名跟IP地址可以同时添加到列表中进行匹配。  4、单个“\*”是唯一有效的通配符，当列表中只有通配符时，将与所有代理服务器主机名匹配，表示禁用代理。通配符只能单独添加，不可以与其他域名、IP地址一起添加到列表中，否则通配符将不生效。  5、匹配规则不区分主机名大小写。  6、匹配主机名时，不考虑http、https、socks5、socks5h等协议前缀。 |
+
+## NetSpecifier
 
 提供承载数据网络能力的实例。
 
@@ -3627,33 +3785,31 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. import { connection } from '@kit.NetworkKit';
-2. import { wifiManager } from '@kit.ConnectivityKit';
-3. import { BusinessError } from '@kit.BasicServicesKit';
+```ts
+import { connection } from '@kit.NetworkKit';
+import { wifiManager } from '@kit.ConnectivityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-5. let config: wifiManager.WifiDeviceConfig = {
-6. ssid: "TEST",
-7. preSharedKey: "**********",
-8. securityType: wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
-9. };
-10. // 通过wifiManager.addCandidateConfig获取注册WLAN的networkId。
-11. wifiManager.addCandidateConfig(config,(error,networkId) => {
-12. let netConnectionWlan = connection.createNetConnection({
-13. netCapabilities: {
-14. bearerTypes: [connection.NetBearType.BEARER_WIFI]
-15. },
-16. bearerPrivateIdentifier: `${networkId}`
-17. });
-18. netConnectionWlan.register((error: BusinessError) => {
-19. console.error(JSON.stringify(error));
-20. });
-21. });
+let config: wifiManager.WifiDeviceConfig = {
+  ssid: "TEST",
+  preSharedKey: "**********",
+  securityType: wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
+};
+// 通过wifiManager.addCandidateConfig获取注册WLAN的networkId。
+wifiManager.addCandidateConfig(config,(error,networkId) => {
+ let netConnectionWlan = connection.createNetConnection({
+   netCapabilities: {
+     bearerTypes: [connection.NetBearType.BEARER_WIFI]
+   },
+   bearerPrivateIdentifier: `${networkId}`
+ });
+ netConnectionWlan.register((error: BusinessError) => {
+   console.error(`Failed to get register.Code:${error.code}, message:${error.message}`);
+ });
+});
 ```
 
 ## NetCapabilityInfo10+
-
-PhonePC/2in1TabletTVWearable
 
 提供承载数据网络能力的实例。
 
@@ -3668,22 +3824,18 @@ PhonePC/2in1TabletTVWearable
 
 ## NetCapabilities
 
-PhonePC/2in1TabletTVWearable
-
 网络的能力集。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| linkUpBandwidthKbps | number | 否 | 是 | 上行（设备到网络）带宽，单位(kb/s)。0表示无法评估当前网络带宽。 |
-| linkDownBandwidthKbps | number | 否 | 是 | 下行（网络到设备）带宽，单位(kb/s)。0表示无法评估当前网络带宽。 |
+| linkUpBandwidthKbps | number | 否 | 是 | 上行（设备到网络）带宽，单位(Kbps，千比特每秒)。0表示无法评估当前网络带宽。 |
+| linkDownBandwidthKbps | number | 否 | 是 | 下行（网络到设备）带宽，单位(Kbps，千比特每秒)。0表示无法评估当前网络带宽。 |
 | networkCap | Array<[NetCap](js-apis-net-connection.md#netcap)> | 否 | 是 | 网络具体能力。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | bearerTypes | Array<[NetBearType](js-apis-net-connection.md#netbeartype)> | 否 | 否 | 网络类型。数组里面只包含了一种网络类型。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 
 ## NetConnectionPropertyInfo11+
-
-PhonePC/2in1TabletTVWearable
 
 网络连接信息。
 
@@ -3698,8 +3850,6 @@ PhonePC/2in1TabletTVWearable
 
 ## NetBlockStatusInfo11+
 
-PhonePC/2in1TabletTVWearable
-
 获取网络状态信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
@@ -3713,11 +3863,9 @@ PhonePC/2in1TabletTVWearable
 
 ## ConnectionProperties
 
-PhonePC/2in1TabletTVWearable
-
 网络连接信息。
 
-注意
+**注意** 
 
 linkAddresses、routes和dnses可能为空，需要做好空值保护，建议使用前先判断对象是否存在。
 
@@ -3731,10 +3879,10 @@ linkAddresses、routes和dnses可能为空，需要做好空值保护，建议�
 | routes | Array<[RouteInfo](js-apis-net-connection.md#routeinfo)> | 否 | 否 | 路由信息。 |
 | dnses | Array<[NetAddress](js-apis-net-connection.md#netaddress)> | 否 | 否 | 网络地址，参考[NetAddress](js-apis-net-connection.md#netaddress)。 |
 | mtu | number | 否 | 否 | 最大传输单元。 |
+| isIPv4LinkValid24+ | boolean | 否 | 是 | 当前网络的IPv4是否可用。true：当IPv4地址有效，且存在IPv4的默认路由时，认为IPv4可用；false：当IPv4地址无效，或者不存在IPv4的默认路由时，认为IPv4不可用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| isIPv6LinkValid24+ | boolean | 否 | 是 | 当前网络的IPv6是否可用。true：当IPv6地址有效，且存在IPv6的默认路由时，认为IPv6可用；false：当IPv6地址无效，或者不存在IPv6的默认路由时，认为IPv6不可用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## RouteInfo
-
-PhonePC/2in1TabletTVWearable
 
 网络路由信息。
 
@@ -3751,8 +3899,6 @@ PhonePC/2in1TabletTVWearable
 
 ## LinkAddress
 
-PhonePC/2in1TabletTVWearable
-
 网络链路信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
@@ -3763,8 +3909,6 @@ PhonePC/2in1TabletTVWearable
 | prefixLength | number | 否 | 否 | 链路地址前缀的长度。 |
 
 ## NetAddress
-
-PhonePC/2in1TabletTVWearable
 
 网络地址。
 
@@ -3780,8 +3924,6 @@ PhonePC/2in1TabletTVWearable
 
 ## HttpRequest
 
-PhonePC/2in1TabletTVWearable
-
 type HttpRequest = http.HttpRequest
 
 定义一个HTTP请求，可以通过[http.createHttp](js-apis-http.md#httpcreatehttp)创建。
@@ -3796,8 +3938,6 @@ type HttpRequest = http.HttpRequest
 
 ## TCPSocket
 
-PhonePC/2in1TabletTVWearable
-
 type TCPSocket = socket.TCPSocket
 
 定义一个TCPSocket对象，可以通过[socket.constructTCPSocketInstance](js-apis-socket.md#socketconstructtcpsocketinstance)创建。
@@ -3809,8 +3949,6 @@ type TCPSocket = socket.TCPSocket
 | socket.TCPSocket | 定义一个TCPSocket连接。 |
 
 ## UDPSocket
-
-PhonePC/2in1TabletTVWearable
 
 type UDPSocket = socket.UDPSocket
 
@@ -3824,8 +3962,6 @@ type UDPSocket = socket.UDPSocket
 
 ## NetIpMacInfo22+
 
-PhonePC/2in1TabletTVWearable
-
 IP邻居表条目信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
@@ -3838,8 +3974,6 @@ IP邻居表条目信息。
 
 ## ProtocolType23+
 
-PhonePC/2in1TabletTVWearable
-
 网络协议类型的枚举。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
@@ -3848,3 +3982,95 @@ PhonePC/2in1TabletTVWearable
 | --- | --- | --- |
 | PROTO\_TYPE\_TCP | 6 | TCP网络协议。 |
 | PROTO\_TYPE\_UDP | 17 | UDP网络协议。 |
+
+## TcpNetPortStatesInfo24+
+
+TCP端口状态信息。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| tcpLocalIp | string | 否 | 否 | TCP网络本地IP地址。 |
+| tcpLocalPort | number | 否 | 否 | TCP网络本地端口，取值范围[0, 65535]。 |
+| tcpRemoteIp | string | 否 | 否 | TCP网络远程IP地址。 |
+| tcpRemotePort | number | 否 | 否 | TCP网络远程端口，取值范围[0, 65535]。 |
+| tcpUid | number | 否 | 否 | 监听该TCP端口的用户UID。 |
+| tcpPid | number | 否 | 否 | 监听该TCP端口的进程PID。 |
+| tcpState | [TcpState](js-apis-net-connection.md#tcpstate24) | 否 | 否 | TCP网络状态。 |
+
+## UdpNetPortStatesInfo24+
+
+UDP端口状态信息。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| udpLocalIp | string | 否 | 否 | UDP网络本地IP地址。 |
+| udpLocalPort | number | 否 | 否 | UDP网络本地端口，取值范围[0, 65535]。 |
+| udpUid | number | 否 | 否 | 监听该UDP端口的用户UID。 |
+| udpPid | number | 否 | 否 | 监听该UDP端口的进程PID。 |
+
+## NetPortStatesInfo24+
+
+系统当前监听的TCP、UDP端口信息。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Communication.NetManager.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| tcpPortStatesInfo | Array<[TcpNetPortStatesInfo](js-apis-net-connection.md#tcpnetportstatesinfo24)> | 否 | 是 | 系统当前监听的TCP信息。 |
+| udpPortStatesInfo | Array<[UdpNetPortStatesInfo](js-apis-net-connection.md#udpnetportstatesinfo24)> | 否 | 是 | 系统当前监听的UDP信息。 |
+
+## TraceRouteOptions
+
+路由跟踪的选项。
+
+**起始版本**：26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| maxJumpNumber | number | 否 | 是 | 最大跳数，取值范围[1, 30]，默认值为30。 |
+| packetsType | [PacketsType](js-apis-net-connection.md#packetstype) | 否 | 是 | 探测使用的数据包类型，默认为NETCONN\_PACKETS\_ICMP。 |
+
+## TraceRouteInfo
+
+路由跟踪信息。
+
+**起始版本**：26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| jumpNo | number | 否 | 否 | 跳数序号。 |
+| address | string | 否 | 否 | 该跳的IP地址。 |
+| rtt | number[] | 否 | 否 | 往返时间（RTT），单位为毫秒。每一跳发送5个探测报文，数组元素依次为这些探测报文RTT中的最小值、平均值、最大值、标准差。 |
+
+## ProbeResultInfo
+
+网络探测结果信息。
+
+**起始版本**：26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Communication.NetManager.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| lossRate | number | 否 | 否 | 丢包率，取值范围[0, 100]。例如，100表示100%丢包，50表示50%丢包。 |
+| rtt | number[] | 否 | 否 | 往返时间（RTT），单位为毫秒。对目的主机发送多个探测报文，探测报文数量由[queryProbeResult](js-apis-net-connection.md#connectionqueryproberesult)接口中duration参数决定。数组元素依次为这些探测报文RTT中最小值、平均值、最大值、标准差。 |

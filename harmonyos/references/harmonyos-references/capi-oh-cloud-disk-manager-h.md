@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: oh_cloud_disk_manager.h
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 头文件 > oh_cloud_disk_manager.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:51+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d1bbdc900a5d3bf46592e6a3b22f6acbc942bf0dcdb67173fe85504d5428b62c
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:63c0e32cbb8ebd463c29c21541ad4305194f471dff2e4ac7603fac9e3d915edd
 ---
 
 ## 概述
-
-PC/2in1Tablet
 
 云盘管理模块的接口定义。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 结构体
-
-PC/2in1Tablet
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -45,8 +39,6 @@ PC/2in1Tablet
 
 ### 枚举
 
-PC/2in1Tablet
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [CloudDisk\_SyncState](capi-oh-cloud-disk-manager-h.md#clouddisk_syncstate) | CloudDisk\_SyncState | 文件同步状态的枚举值。 |
@@ -55,8 +47,6 @@ PC/2in1Tablet
 | [CloudDisk\_SyncFolderState](capi-oh-cloud-disk-manager-h.md#clouddisk_syncfolderstate) | CloudDisk\_SyncFolderState | 同步根路径状态的枚举值。 |
 
 ### 函数
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |
@@ -74,14 +64,10 @@ PC/2in1Tablet
 
 ## 枚举类型说明
 
-PC/2in1Tablet
-
 ### CloudDisk\_SyncState
 
-PC/2in1Tablet
-
-```
-1. enum CloudDisk_SyncState
+```c
+enum CloudDisk_SyncState
 ```
 
 **描述**
@@ -101,10 +87,8 @@ PC/2in1Tablet
 
 ### CloudDisk\_OperationType
 
-PC/2in1Tablet
-
-```
-1. enum CloudDisk_OperationType
+```c
+enum CloudDisk_OperationType
 ```
 
 **描述**
@@ -124,10 +108,8 @@ PC/2in1Tablet
 
 ### CloudDisk\_ErrorReason
 
-PC/2in1Tablet
-
-```
-1. enum CloudDisk_ErrorReason
+```c
+enum CloudDisk_ErrorReason
 ```
 
 **描述**
@@ -146,10 +128,8 @@ PC/2in1Tablet
 
 ### CloudDisk\_SyncFolderState
 
-PC/2in1Tablet
-
-```
-1. enum CloudDisk_SyncFolderState
+```c
+enum CloudDisk_SyncFolderState
 ```
 
 **描述**
@@ -165,14 +145,10 @@ PC/2in1Tablet
 
 ## 函数说明
 
-PC/2in1Tablet
-
 ### OH\_CloudDisk\_RegisterSyncFolderChanges()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolderChanges(const CloudDisk_SyncFolderPath syncFolderPath, void (*callback)(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_ChangeData changeDatas[], size_t bufferLength))
+```c
+CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolderChanges(const CloudDisk_SyncFolderPath syncFolderPath, void (*callback)(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_ChangeData changeDatas[], size_t bufferLength))
 ```
 
 **描述**
@@ -196,10 +172,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_UnregisterSyncFolderChanges()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolderChanges(const CloudDisk_SyncFolderPath syncFolderPath)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolderChanges(const CloudDisk_SyncFolderPath syncFolderPath)
 ```
 
 **描述**
@@ -222,10 +196,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_GetSyncFolderChanges()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolderChanges(const CloudDisk_SyncFolderPath syncFolderPath, uint64_t startUsn, size_t count, CloudDisk_ChangesResult **changesResult)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolderChanges(const CloudDisk_SyncFolderPath syncFolderPath, uint64_t startUsn, size_t count, CloudDisk_ChangesResult **changesResult)
 ```
 
 **描述**
@@ -251,10 +223,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_SetFileSyncStates()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_SetFileSyncStates(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_FileSyncState fileSyncStates[], size_t bufferLength, CloudDisk_FailedList **failedLists, size_t *failedCount)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_SetFileSyncStates(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_FileSyncState fileSyncStates[], size_t bufferLength, CloudDisk_FailedList **failedLists, size_t *failedCount)
 ```
 
 **描述**
@@ -281,10 +251,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_GetFileSyncStates()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_GetFileSyncStates(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_PathInfo paths[], size_t bufferLength, CloudDisk_ResultList **resultLists, size_t *resultCount)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_GetFileSyncStates(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_PathInfo paths[], size_t bufferLength, CloudDisk_ResultList **resultLists, size_t *resultCount)
 ```
 
 **描述**
@@ -311,10 +279,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_RegisterSyncFolder()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolder(const CloudDisk_SyncFolder *syncFolder)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_RegisterSyncFolder(const CloudDisk_SyncFolder *syncFolder)
 ```
 
 **描述**
@@ -337,10 +303,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_UnregisterSyncFolder()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolder(const CloudDisk_SyncFolderPath syncFolderPath)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_UnregisterSyncFolder(const CloudDisk_SyncFolderPath syncFolderPath)
 ```
 
 **描述**
@@ -363,10 +327,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_ActiveSyncFolder()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_ActiveSyncFolder(const CloudDisk_SyncFolderPath syncFolderPath)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_ActiveSyncFolder(const CloudDisk_SyncFolderPath syncFolderPath)
 ```
 
 **描述**
@@ -389,10 +351,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_DeactiveSyncFolder()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_DeactiveSyncFolder(const CloudDisk_SyncFolderPath syncFolderPath)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_DeactiveSyncFolder(const CloudDisk_SyncFolderPath syncFolderPath)
 ```
 
 **描述**
@@ -415,10 +375,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_GetSyncFolders()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolders(CloudDisk_SyncFolder **syncFolders, size_t *count)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_GetSyncFolders(CloudDisk_SyncFolder **syncFolders, size_t *count)
 ```
 
 **描述**
@@ -442,10 +400,8 @@ PC/2in1Tablet
 
 ### OH\_CloudDisk\_UpdateCustomAlias()
 
-PC/2in1Tablet
-
-```
-1. CloudDisk_ErrorCode OH_CloudDisk_UpdateCustomAlias(const CloudDisk_SyncFolderPath syncFolderPath, const char *customAlias, size_t customAliasLength)
+```c
+CloudDisk_ErrorCode OH_CloudDisk_UpdateCustomAlias(const CloudDisk_SyncFolderPath syncFolderPath, const char *customAlias, size_t customAliasLength)
 ```
 
 **描述**

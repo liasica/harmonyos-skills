@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: 设备升级继承媒体文件访问权限
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 设备升级继承媒体文件访问权限
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:35+08:00
+scraped_at: 2026-09-02T14:50:19+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:9e5a5aa610ec58bb40ae6f6f588f12b8873fdd772b166898cc31fb3558f49f71
+content_hash: sha256:57894e61eda6aca0823b49f0b44035e88c8eced921564190c1bfc87f4e1a0338
 ---
 
 应用在HarmonyOS 3.1 Release API 9及更低版本运行时，有图片/视频访问权限，并在应用内记录对应的图片/视频文件路径或uri，在进入应用特定界面时，可实时访问图片/视频显示内容。
@@ -14,13 +14,13 @@ content_hash: sha256:9e5a5aa610ec58bb40ae6f6f588f12b8873fdd772b166898cc31fb3558f
 
 本指南将帮助开发者了解如何在升级后，继承媒体文件的访问权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rmZNEZSVSvKP80ZwSmNE5Q/zh-cn_image_0000002589324979.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/9ppj73GjST6L9L6nfgVdgQ/zh-cn_image_0000002736433755.png)
 
 应用在启动或是进入对应的业务界面之后，从应用数据中获取在HarmonyOS 3.1/4.0版本的应用上已有权限且需要继承权限的媒体文件uri，调用Scenario Fusion Kit的接口[convertFileUris](../harmonyos-references/scenario-fusion-fileuriresult.md#convertfileuris)，获取转换后的HarmonyOS 5.0可访问的uri。再调用Media Library Kit的接口[requestPhotoUrisReadPermission()](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#requestphotourisreadpermission14)，输入需要继承访问权限的媒体文件uri，拉起授权界面。在授权界面，根据应用输入的uri，将显示对应图片/视频缩略图。用户可以勾选对应的图片/视频，并同意授权，此时应用将获取该图片/视频的访问权限。
 
 在用户界面的效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/dibm6-hCTCaqO1ygjRpPig/zh-cn_image_0000002589244915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/4uh7zpUCRx25gZDfDDL8xQ/zh-cn_image_0000002706834604.png)
 
 ## 开发步骤
 
@@ -30,78 +30,78 @@ content_hash: sha256:9e5a5aa610ec58bb40ae6f6f588f12b8873fdd772b166898cc31fb3558f
 
 1. 导入相关接口模块文件。
 
-   ```
-   1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+   ```ts
+   import { photoAccessHelper } from '@kit.MediaLibraryKit';
    ```
 2. 初始化输入的uri列表。
 
-   ```
-   1. // 用于初始化时接口类实例
-   2. // 请在组件内获取context，确保this.getUiContext().getHostContext()返回结果为UIAbilityContext
-   3. import { common } from '@kit.AbilityKit';
-   4. let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-   5. let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+   ```ts
+   // 用于初始化时接口类实例
+   // 请在组件内获取context，确保this.getUiContext().getHostContext()返回结果为UIAbilityContext
+   import { common } from '@kit.AbilityKit';
+   let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
    ```
 3. 初始化输入的uri列表并赋值。
 
-   ```
-   1. private uris: Array<string> = new Array<string>();
-   2. // 自行对其赋值，输入需要授权的uri信息
-   3. this.uris = [];
+   ```ts
+   private uris: Array<string> = new Array<string>();
+   // 自行对其赋值，输入需要授权的uri信息
+   this.uris = [];
    ```
 4. 调用接口拉起授权界面。
 
-   ```
-   1. try {
-   2. phAccessHelper.requestPhotoUrisReadPermission(this.uris).then((result: Array<string>) => {
-   3. console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
-   4. if (result) {
-   5. // 授权成功返回授权后新的uri列表
-   6. } else {
-   7. // 授权失败后的处理
-   8. }
-   9. })
-   10. } catch(error) {
-   11. console.error("requestPhotoUrisReadPermission error: " + JSON.stringify(error));
-   12. }
+   ```ts
+   try {
+     phAccessHelper.requestPhotoUrisReadPermission(this.uris).then((result: Array<string>) => {
+       console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
+       if (result) {
+         // 授权成功返回授权后新的uri列表
+       } else {
+         // 授权失败后的处理
+       }
+     })
+   } catch(error) {
+     console.error("requestPhotoUrisReadPermission error: " + JSON.stringify(error));
+   }
    ```
 
 ## 完整示例
 
-```
-1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
-2. import { common } from '@kit.AbilityKit';
-3. @Entry
-4. @Component
-5. struct Index{
-6. private uris: Array<string> = new Array<string>();
+```ts
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+import { common } from '@kit.AbilityKit';
+@Entry
+@Component
+struct Index{
+  private uris: Array<string> = new Array<string>();
 
-8. build() {
-9. Row() {
-10. Column() {
-11. Button("拉起授权界面").width('100%').height('10%').margin({top: 150})
-12. .onClick(()=>{
-13. // 自行对其赋值，输入需要授权的uri信息
-14. this.uris = [];
-15. let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-16. let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-17. try {
-18. phAccessHelper.requestPhotoUrisReadPermission(this.uris).then((result: Array<string>) => {
-19. console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
-20. if (result) {
-21. // 授权成功返回授权后新的uri列表
-22. } else {
-23. // 授权失败后的处理
-24. }
-25. })
-26. } catch(error) {
-27. console.error("requestPhotoUrisReadPermission error: " + JSON.stringify(error));
-28. }
-29. })
-30. }
-31. .width('100%')
-32. }
-33. .height('100%')
-34. }
-35. }
+  build() {
+    Row() {
+      Column() {
+        Button("拉起授权界面").width('100%').height('10%').margin({top: 150})
+          .onClick(()=>{
+            // 自行对其赋值，输入需要授权的uri信息
+            this.uris = [];
+            let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+            try {
+              phAccessHelper.requestPhotoUrisReadPermission(this.uris).then((result: Array<string>) => {
+                console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
+                if (result) {
+                  // 授权成功返回授权后新的uri列表
+                } else {
+                  // 授权失败后的处理
+                }
+              })
+            } catch(error) {
+              console.error("requestPhotoUrisReadPermission error: " + JSON.stringify(error));
+            }
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
 ```

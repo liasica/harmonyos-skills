@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Array)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Array)
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:50+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:7191b767dcafba31c54b6a2adbc8f210ad53dcd3e7ae936df58636049d05696b
+scraped_at: 2026-09-02T15:00:44+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e57c764b2742ac598acba51b87b8d1f4a7fdcebf7e434b220ad7a097b121cfe1
 ---
 
 一种线性数据结构，底层基于数组实现，可以在ArkTS上并发实例间传递。
 
 当需要在ArkTS上并发实例间传递Array时，可以通过传递Array引用提升传递性能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 12开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
@@ -26,15 +26,11 @@ content_hash: sha256:7191b767dcafba31c54b6a2adbc8f210ad53dcd3e7ae936df58636049d0
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { collections } from '@kit.ArkTS';
+```ts
+import { collections } from '@kit.ArkTS';
 ```
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 **元服务API**：从API version 12 开始，该接口支持在元服务中使用。
 
@@ -46,8 +42,6 @@ PhonePC/2in1TabletTVWearable
 
 ## constructor
 
-PhonePC/2in1TabletTVWearable
-
 constructor()
 
 创建一个ArkTS Array的构造函数。
@@ -58,7 +52,7 @@ constructor()
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -66,13 +60,11 @@ constructor()
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>();
+```ts
+let array = new collections.Array<number>();
 ```
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(first: T, ...left: T[])
 
@@ -91,22 +83,19 @@ ArkTS Array的构造函数，通过开发者提供的元素进行初始化。
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Array's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4);
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4);
 ```
 
 ## constructor
-
-PhonePC/2in1TabletTVWearable
 
 constructor(...items: T[])
 
@@ -120,27 +109,24 @@ ArkTS Array的构造函数，通过开发者提供的元素进行初始化。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| items | T[] | 否 | 初始化ArkTS Array的元素。 |
+| items | T[] | 否 | 初始化ArkTS Array的元素，默认值为空数组。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200012 | The Array's constructor cannot be directly invoked. |
 
 **示例：**
 
-```
-1. let arrayPara  = [1,2,3];
-2. let array = new collections.Array<number>(...arrayPara);
+```ts
+let arrayPara = [1,2,3];
+let array = new collections.Array<number>(...arrayPara);
 ```
 
 ## create
-
-PhonePC/2in1TabletTVWearable
 
 static create<T>(arrayLength: number, initialValue: T): Array<T>
 
@@ -165,21 +151,19 @@ static create<T>(arrayLength: number, initialValue: T): Array<T>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 10200011 | The create method cannot be bound.  适用版本：12-17 |
 
 **示例：**
 
-```
-1. let array = collections.Array.create<number>(3, 10); // [10, 10, 10]
+```ts
+let array = collections.Array.create<number>(3, 10); // [10, 10, 10]
 ```
 
 ## from
-
-PhonePC/2in1TabletTVWearable
 
 static from<T>(arrayLike: ArrayLike<T>): Array<T>
 
@@ -203,29 +187,27 @@ static from<T>(arrayLike: ArrayLike<T>): Array<T>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 10200011 | The from method cannot be bound.  适用版本：12-17 |
 
 **示例：**
 
-```
-1. // 正例
-2. let array : Array<string> = ['str1', 'str2', 'str3']; // 原生Array<T>，T是Sendable数据类型。
-3. let sendableArray = collections.Array.from<string>(array); // 返回Sendable Array<T>
+```ts
+// 正例
+let array: Array<string> = ['str1', 'str2', 'str3']; // 原生Array<T>，T是Sendable数据类型。
+let sendableArray = collections.Array.from<string>(array); // 返回Sendable Array<T>
 ```
 
-```
-1. // 反例
-2. let array : Array<Array<string>> = [['str1', 'str2', 'str3'], ['str4', 'str5', 'str6'], ['str7', 'str8', 'str9']]; // 原生Array<T>，T是非Sendable数据类型。
-3. let sendableArray = collections.Array.from<Array<string>>(array); // 打印异常信息：Parameter error.Only accept sendable value
+```ts
+// 反例
+let array: Array<Array<string>> = [['str1', 'str2', 'str3'], ['str4', 'str5', 'str6'], ['str7', 'str8', 'str9']]; // 原生Array<T>，T是非Sendable数据类型。
+let sendableArray = collections.Array.from<Array<string>>(array); // 打印异常信息：Parameter error.Only accept sendable value
 ```
 
 ## from
-
-PhonePC/2in1TabletTVWearable
 
 static from<T>(iterable: Iterable<T>): Array<T>
 
@@ -249,32 +231,30 @@ static from<T>(iterable: Iterable<T>): Array<T>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
+| 10200011 | The from method cannot be bound.  适用版本：12-17 |
 
 **示例：**
 
-```
-1. const mapper = new Map([
-2. ['1', 'a'],
-3. ['2', 'b'],
-4. ]);
-5. let newArray: collections.Array<string> = collections.Array.from(mapper.values());
-6. console.info(newArray.toString()); // 预期输出： a,b
+```ts
+const mapper = new Map([
+  ['1', 'a'],
+  ['2', 'b'],
+]);
+let newArray: collections.Array<string> = collections.Array.from(mapper.values());
+console.info(newArray.toString()); // 预期输出： a, b
 ```
 
 ## from18+
-
-PhonePC/2in1TabletTVWearable
 
 static from<T>(arrayLike: ArrayLike<T> | Iterable<T>, mapFn: ArrayFromMapFn<T, T>): Array<T>
 
 从一个实现了ArrayLike接口的对象创建一个新的ArkTS Array，并且使用自定义函数处理每个数组元素。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -291,31 +271,21 @@ static from<T>(arrayLike: ArrayLike<T> | Iterable<T>, mapFn: ArrayFromMapFn<T, T
 | --- | --- |
 | Array<T> | 新创建的ArkTS Array实例。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. let array : Array<number> = [1, 2, 3]; // 原生Array<T>，T是Sendable数据类型。
-2. let newArray = collections.Array.from<number>(array, (value, index) => value + index); // 返回新的 Array<T>
-3. console.info(newArray.toString()); // 预期输出： 1, 3, 5
+```ts
+let array : Array<number> = [1, 2, 3]; // 原生Array<T>，T是Sendable数据类型。
+let newArray = collections.Array.from<number>(array, (value, index) => value + index); // 返回新的 Array<T>
+console.info(newArray.toString()); // 预期输出： 1, 3, 5
 ```
 
 ## from18+
-
-PhonePC/2in1TabletTVWearable
 
 static from<U, T>(arrayLike: ArrayLike<U> | Iterable<U>, mapFn: ArrayFromMapFn<U, T>): Array<T>
 
 从一个实现了ArrayLike接口的对象创建一个新的ArkTS Array，并且使用自定义函数处理每个数组元素，ArrayLike接口对象的元素类型可以和数组元素的类型不一样。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -332,31 +302,21 @@ static from<U, T>(arrayLike: ArrayLike<U> | Iterable<U>, mapFn: ArrayFromMapFn<U
 | --- | --- |
 | Array<T> | 新创建的ArkTS Array实例。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. let array : Array<number> = [1, 2, 3]; // 原生Array<T>
-2. let newArray = collections.Array.from<number, string>(array, (value, index) => value + "." + index); // 返回新的 Array<T>
-3. console.info(newArray.toString()); // 预期输出： 1.0, 2.1, 3.2
+```ts
+let array: Array<number> = [1, 2, 3]; // 原生Array<T>
+let newArray = collections.Array.from<number, string>(array, (value, index) => value + "." + index); // 返回新的 Array<T>
+console.info(newArray.toString()); // 预期输出： 1.0, 2.1, 3.2
 ```
 
 ## isArray18+
-
-PhonePC/2in1TabletTVWearable
 
 static isArray(value: Object | undefined | null): boolean
 
 检查传入的参数是否是一个ArkTS Array。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -372,31 +332,21 @@ static isArray(value: Object | undefined | null): boolean
 | --- | --- |
 | boolean | 假如给定对象是ArkTS Array数组，返回true，否则返回false。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. let arr: collections.Array<string> = new collections.Array('a', 'b', 'c', 'd');
-2. let result: boolean = collections.Array.isArray(arr);
-3. console.info(result + ''); // 预期输出： true
+```ts
+let arr: collections.Array<string> = new collections.Array('a', 'b', 'c', 'd');
+let result: boolean = collections.Array.isArray(arr);
+console.info(String(result)); // 预期输出： true
 ```
 
 ## of18+
-
-PhonePC/2in1TabletTVWearable
 
 static of<T>(...items: T[]): Array<T>
 
 通过可变数量的参数创建一个新的ArkTS Array。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -412,30 +362,20 @@ static of<T>(...items: T[]): Array<T>
 | --- | --- |
 | Array<T> | 新的ArkTS Array实例。 |
 
-**错误码：**
-
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
-
-| 错误码ID | 错误信息 |
-| --- | --- |
-| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
-
 **示例：**
 
-```
-1. let arr: collections.Array<string> = collections.Array.of('a', 'b', 'c', 'd');
-2. console.info(arr.toString()); // 预期输出： a, b, c, d
+```ts
+let arr: collections.Array<string> = collections.Array.of('a', 'b', 'c', 'd');
+console.info(arr.toString()); // 预期输出： a, b, c, d
 ```
 
 ## copyWithin18+
-
-PhonePC/2in1TabletTVWearable
 
 copyWithin(target: number, start: number, end?: number): Array<T>
 
 从ArkTS Array指定范围内的元素依次拷贝到目标位置。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -455,31 +395,28 @@ copyWithin(target: number, start: number, end?: number): Array<T>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error: Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3. Parameter verification failed. |
 | 10200011 | The copyWithin method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array: collections.Array<number> = collections.Array.from([1, 2, 3, 4, 5, 6, 7, 8]);
-2. let copied: collections.Array<number> = array.copyWithin(3, 1, 3);
-3. console.info(copied.toString()); // 预期输出： 1, 2, 3, 2, 3, 6, 7, 8
+```ts
+let array: collections.Array<number> = collections.Array.from([1, 2, 3, 4, 5, 6, 7, 8]);
+let copied: collections.Array<number> = array.copyWithin(3, 1, 3);
+console.info(copied.toString()); // 预期输出： 1, 2, 3, 2, 3, 6, 7, 8
 ```
 
 ## lastIndexOf18+
-
-PhonePC/2in1TabletTVWearable
 
 lastIndexOf(searchElement: T, fromIndex?: number): number
 
 返回ArkTS Array实例中最后一次出现searchElement的索引，如果对象不包含，则为-1。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -488,7 +425,7 @@ lastIndexOf(searchElement: T, fromIndex?: number): number
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | searchElement | T | 是 | 待索引的值。 |
-| fromIndex | number | 否 | 搜索的起始下标。默认值为0。如果下标大于等于ArkTS Array的长度，则返回-1。如果fromIndex < 0，则会从fromIndex + array.length位置开始搜索。 |
+| fromIndex | number | 否 | 搜索的起始下标。默认值为ArkTS Array长度减1（即从末尾开始）。如果下标大于等于ArkTS Array的长度，则返回-1。如果fromIndex < 0，则会从fromIndex + array.length位置开始搜索。 |
 
 **返回值：**
 
@@ -498,7 +435,7 @@ lastIndexOf(searchElement: T, fromIndex?: number): number
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -507,23 +444,21 @@ lastIndexOf(searchElement: T, fromIndex?: number): number
 
 **示例：**
 
-```
-1. let array: collections.Array<number> = collections.Array.from([3, 5, 9]);
-2. console.info(array.lastIndexOf(3) + ''); // 预期输出： 0
-3. console.info(array.lastIndexOf(7) + ''); // 预期输出： -1
-4. console.info(array.lastIndexOf(9, 2) + ''); // 预期输出： 2
-5. console.info(array.lastIndexOf(9, -2) + ''); // 预期输出： -1
+```ts
+let array: collections.Array<number> = collections.Array.from([3, 5, 9]);
+console.info(String(array.lastIndexOf(3))); // 预期输出： 0
+console.info(String(array.lastIndexOf(7))); // 预期输出： -1
+console.info(String(array.lastIndexOf(9, 2))); // 预期输出： 2
+console.info(String(array.lastIndexOf(9, -2))); // 预期输出： -1
 ```
 
 ## some18+
-
-PhonePC/2in1TabletTVWearable
 
 some(predicate: ArrayPredicateFn<T, Array<T>>): boolean
 
 测试ArkTS Array是否存在满足指定条件的元素。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -541,7 +476,7 @@ some(predicate: ArrayPredicateFn<T, Array<T>>): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -550,20 +485,18 @@ some(predicate: ArrayPredicateFn<T, Array<T>>): boolean
 
 **示例：**
 
-```
-1. let newArray: collections.Array<number> = collections.Array.from([-10, 20, -30, 40, -50]);
-2. console.info(newArray.some((element: number) => element < 0) + ''); // 预期输出： true
+```ts
+let newArray: collections.Array<number> = collections.Array.from([-10, 20, -30, 40, -50]);
+console.info(String(newArray.some((element: number) => element < 0))); // 预期输出： true
 ```
 
 ## reduceRight18+
-
-PhonePC/2in1TabletTVWearable
 
 reduceRight(callbackFn: ArrayReduceCallback<T, T, Array<T>>): T
 
 对Array中的每个元素按照从右到左顺序执行回调函数，将其结果作为累加值，并返回最终的结果。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -581,31 +514,28 @@ reduceRight(callbackFn: ArrayReduceCallback<T, T, Array<T>>): T
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 10200011 | The reduceRight method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let reducedValue = array.reduceRight((accumulator, value) => accumulator + value); // 累加所有元素
-3. console.info(reducedValue + ''); // 预期输出： 15
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let reducedValue = array.reduceRight((accumulator, value) => accumulator + value); // 累加所有元素
+console.info(String(reducedValue)); // 预期输出： 15
 ```
 
 ## reduceRight18+
-
-PhonePC/2in1TabletTVWearable
 
 reduceRight<U = T>(callbackFn: ArrayReduceCallback<U, T, Array<T>>, initialValue: U): U
 
 与 [reduceRight](arkts-apis-arkts-collections-array.md#reduceright18)方法类似，但它接受一个初始值作为第二个参数，用于在Array从右到左顺序遍历开始前初始化累加器。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -624,32 +554,29 @@ reduceRight<U = T>(callbackFn: ArrayReduceCallback<U, T, Array<T>>, initialValue
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types. |
 | 10200011 | The reduceRight method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. // 此处使用一个初始值为0的累加器，并将其与Array中的每个元素相加，最终返回累加后的总和
-2. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-3. let reducedValue = array.reduceRight<number>((accumulator: number, value: number) => accumulator + value, 0); // 累加所有元素，初始值为0
-4. console.info(reducedValue + ''); // 预期输出： 15
+```ts
+// 此处使用一个初始值为0的累加器，并将其与Array中的每个元素相加，最终返回累加后的总和
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let reducedValue = array.reduceRight<number>((accumulator: number, value: number) => accumulator + value, 0); // 累加所有元素，初始值为0
+console.info(String(reducedValue)); // 预期输出： 15
 ```
 
 ## pop
-
-PhonePC/2in1TabletTVWearable
 
 pop(): T | undefined
 
 从ArkTS Array中移除并返回最后一个元素。如果Array为空，则返回undefined，且Array不发生变化。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -661,7 +588,7 @@ pop(): T | undefined
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -670,14 +597,12 @@ pop(): T | undefined
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3);
-2. let lastElement = array.pop(); // 返回3，Array变为[1, 2]
+```ts
+let array = new collections.Array<number>(1, 2, 3);
+let lastElement = array.pop(); // 返回3，Array变为[1, 2]
 ```
 
 ## push
-
-PhonePC/2in1TabletTVWearable
 
 push(...items: T[]): number
 
@@ -691,7 +616,7 @@ push(...items: T[]): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| items | T[] | 否 | 要添加到Array末尾的元素。 |
+| items | T[] | 否 | 要添加到Array末尾的元素，默认值为空数组。 |
 
 **返回值：**
 
@@ -701,24 +626,21 @@ push(...items: T[]): number
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The push method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3);
-2. let length = array.push(4, 5); // 返回5，Array变为[1, 2, 3, 4, 5]
+```ts
+let array = new collections.Array<number>(1, 2, 3);
+let length = array.push(4, 5); // 返回5，Array变为[1, 2, 3, 4, 5]
 ```
 
 ## join
-
-PhonePC/2in1TabletTVWearable
 
 join(separator?: string): string
 
@@ -742,24 +664,21 @@ join(separator?: string): string
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The join method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<string>('a', 'b', 'c');
-2. let joinedString = array.join('-'); // 返回 "a-b-c"
+```ts
+let array = new collections.Array<string>('a', 'b', 'c');
+let joinedString = array.join('-'); // 返回 "a-b-c"
 ```
 
 ## shift
-
-PhonePC/2in1TabletTVWearable
 
 shift(): T | undefined
 
@@ -777,7 +696,7 @@ shift(): T | undefined
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -786,20 +705,18 @@ shift(): T | undefined
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3);
-2. let firstElement = array.shift(); // 返回1，Array变为[2, 3]
+```ts
+let array = new collections.Array<number>(1, 2, 3);
+let firstElement = array.shift(); // 返回1，Array变为[2, 3]
 ```
 
 ## reverse18+
-
-PhonePC/2in1TabletTVWearable
 
 reverse(): Array<T>
 
 反转ArkTS Array数组中的元素，并返回同一数组的引用。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -811,7 +728,7 @@ reverse(): Array<T>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -820,15 +737,13 @@ reverse(): Array<T>
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let reversed = array.reverse();
-3. console.info(array.toString()); // 预期输出： 5, 4, 3, 2, 1
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let reversed = array.reverse();
+console.info(array.toString()); // 预期输出： 5, 4, 3, 2, 1
 ```
 
 ## unshift
-
-PhonePC/2in1TabletTVWearable
 
 unshift(...items: T[]): number
 
@@ -842,7 +757,7 @@ unshift(...items: T[]): number
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| items | T[] | 否 | 要插入到Array首端的元素。 |
+| items | T[] | 否 | 要插入到Array首端的元素，默认值为空数组。 |
 
 **返回值：**
 
@@ -852,30 +767,27 @@ unshift(...items: T[]): number
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The unshift method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3);
-2. let newLength = array.unshift(0); // 返回4，Array变为[0, 1, 2, 3]
+```ts
+let array = new collections.Array<number>(1, 2, 3);
+let newLength = array.unshift(0); // 返回4，Array变为[0, 1, 2, 3]
 ```
 
 ## toString18+
-
-PhonePC/2in1TabletTVWearable
 
 toString(): string
 
 ArkTS数组转换为字符串。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -896,15 +808,13 @@ ArkTS数组转换为字符串。
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let stringArray = array.toString();
-3. console.info(stringArray); // 预期输出：1,2,3,4,5
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let stringArray = array.toString();
+console.info(stringArray); // 预期输出： 1, 2, 3, 4, 5
 ```
 
 ## slice
-
-PhonePC/2in1TabletTVWearable
 
 slice(start?: number, end?: number): Array<T>
 
@@ -929,24 +839,21 @@ slice(start?: number, end?: number): Array<T>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The slice method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let slicedArray = array.slice(1, 3); // 返回[2, 3]，Array保持不变
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let slicedArray = array.slice(1, 3); // 返回[2, 3]，Array保持不变
 ```
 
 ## sort
-
-PhonePC/2in1TabletTVWearable
 
 sort(compareFn?: (a: T, b: T) => number): Array<T>
 
@@ -970,25 +877,22 @@ sort(compareFn?: (a: T, b: T) => number): Array<T>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The sort method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 3, 5, 4, 2);
-2. array.sort((a: number, b: number) => a - b); // [1, 2, 3, 4, 5]
-3. array.sort((a: number, b: number) => b - a); // [5, 4, 3, 2, 1]
+```ts
+let array = new collections.Array<number>(1, 3, 5, 4, 2);
+array.sort((a: number, b: number) => a - b); // [1, 2, 3, 4, 5]
+array.sort((a: number, b: number) => b - a); // [5, 4, 3, 2, 1]
 ```
 
 ## indexOf
-
-PhonePC/2in1TabletTVWearable
 
 indexOf(searchElement: T, fromIndex?: number): number
 
@@ -1013,24 +917,21 @@ indexOf(searchElement: T, fromIndex?: number): number
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The indexOf method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<string>('a', 'b', 'c');
-2. let index = array.indexOf('b'); // 返回1，因为'b'在索引1的位置
+```ts
+let array = new collections.Array<string>('a', 'b', 'c');
+let index = array.indexOf('b'); // 返回1，因为'b'在索引1的位置
 ```
 
 ## forEach
-
-PhonePC/2in1TabletTVWearable
 
 forEach(callbackFn: (value: T, index: number, array: Array<T>) => void): void
 
@@ -1048,26 +949,23 @@ forEach(callbackFn: (value: T, index: number, array: Array<T>) => void): void
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The forEach method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<string>('a', 'b', 'c');
-2. array.forEach((value, index, array) => {
-3. console.info(`Element ${value} at index ${index}`);
-4. });
+```ts
+let array = new collections.Array<string>('a', 'b', 'c');
+array.forEach((value, index, array) => {
+  console.info(`Element ${value} at index ${index}`);
+});
 ```
 
 ## map
-
-PhonePC/2in1TabletTVWearable
 
 map<U>(callbackFn: (value: T, index: number, array: Array<T>) => U): Array<U>
 
@@ -1091,28 +989,25 @@ map<U>(callbackFn: (value: T, index: number, array: Array<T>) => U): Array<U>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The map method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. // 此处将原始Array中的每个字符串元素转换为大写形式，并返回一个新Array，其中包含转换后的字符串
-2. let array = new collections.Array<string>('a', 'b', 'c');
-3. let mappedArray = array.map((value, index, array) => {
-4. return value.toUpperCase(); // 将每个字符串元素转换为大写
-5. });
-6. console.info("" + mappedArray); // 输出: A, B, C
+```ts
+// 此处将原始Array中的每个字符串元素转换为大写形式，并返回一个新Array，其中包含转换后的字符串
+let array = new collections.Array<string>('a', 'b', 'c');
+let mappedArray = array.map((value, index, array) => {
+  return value.toUpperCase(); // 将每个字符串元素转换为大写
+});
+console.info(String(mappedArray)); // 输出: A, B, C
 ```
 
 ## filter
-
-PhonePC/2in1TabletTVWearable
 
 filter(predicate: (value: T, index: number, array: Array<T>) => boolean): Array<T>
 
@@ -1136,24 +1031,21 @@ filter(predicate: (value: T, index: number, array: Array<T>) => boolean): Array<
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The filter method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let filteredArray = array.filter((value : number) => value % 2 === 0); // 返回[2, 4]，只包含偶数
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let filteredArray = array.filter((value : number) => value % 2 === 0); // 返回[2, 4]，只包含偶数
 ```
 
 ## reduce
-
-PhonePC/2in1TabletTVWearable
 
 reduce(callbackFn: (previousValue: T, currentValue: T, currentIndex: number, array: Array<T>) => T): T
 
@@ -1177,24 +1069,21 @@ reduce(callbackFn: (previousValue: T, currentValue: T, currentIndex: number, arr
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The reduce method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let reducedValue = array.reduce((accumulator, value) => accumulator + value); // 返回15，累加所有元素
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let reducedValue = array.reduce((accumulator, value) => accumulator + value); // 返回15，累加所有元素
 ```
 
 ## reduce
-
-PhonePC/2in1TabletTVWearable
 
 reduce<U>(callbackFn: (previousValue: U, currentValue: T, currentIndex: number, array: Array<T>) => U, initialValue: U): U
 
@@ -1219,31 +1108,28 @@ reduce<U>(callbackFn: (previousValue: U, currentValue: T, currentIndex: number, 
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The reduce method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. // 此处使用一个初始值为0的累加器，并将其与Array中的每个元素相加，最终返回累加后的总和
-2. let array = new collections.Array(1, 2, 3, 4, 5);
-3. let reducedValue = array.reduce<number>((accumulator: number, value: number) => accumulator + value, 0); // 返回15，累加所有元素，初始值为0
+```ts
+// 此处使用一个初始值为0的累加器，并将其与Array中的每个元素相加，最终返回累加后的总和
+let array = new collections.Array(1, 2, 3, 4, 5);
+let reducedValue = array.reduce<number>((accumulator: number, value: number) => accumulator + value, 0); // 返回15，累加所有元素，初始值为0
 ```
 
 ## at
-
-PhonePC/2in1TabletTVWearable
 
 at(index: number): T | undefined
 
 返回Array中指定索引位置的元素。
 
-**元服务API**：从API version 12 开始，该接口支持在元服务中使用。
+**元服务API**：从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1261,24 +1147,21 @@ at(index: number): T | undefined
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The at method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let elementAtIndex = array.at(2); // 返回3，因为索引是从0开始的
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let elementAtIndex = array.at(2); // 返回3，因为索引是从0开始的
 ```
 
 ## entries
-
-PhonePC/2in1TabletTVWearable
 
 entries(): IterableIterator<[number, T]>
 
@@ -1296,7 +1179,7 @@ entries(): IterableIterator<[number, T]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1305,15 +1188,13 @@ entries(): IterableIterator<[number, T]>
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let iterator = array.entries();
-3. console.info(iterator.next().value); // 输出：[0, 1]，第一个元素的键值对
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let iterator = array.entries();
+console.info(iterator.next().value); // 输出：[0, 1]，第一个元素的键值对
 ```
 
 ## keys
-
-PhonePC/2in1TabletTVWearable
 
 keys(): IterableIterator<number>
 
@@ -1331,7 +1212,7 @@ keys(): IterableIterator<number>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1340,17 +1221,15 @@ keys(): IterableIterator<number>
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let iterator = array.keys();
-3. for (const key of iterator) {
-4. console.info("" + key); // 依次输出 0,1,2,3,4
-5. }
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let iterator = array.keys();
+for (const key of iterator) {
+  console.info(String(key)); // 依次输出 0,1,2,3,4
+}
 ```
 
 ## values
-
-PhonePC/2in1TabletTVWearable
 
 values(): IterableIterator<T>
 
@@ -1368,7 +1247,7 @@ values(): IterableIterator<T>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1377,17 +1256,15 @@ values(): IterableIterator<T>
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let iterator = array.values();
-3. for(const value of iterator) {
-4. console.info("" + value); // 依次输出 1,2,3,4,5
-5. }
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let iterator = array.values();
+for(const value of iterator) {
+  console.info(String(value)); // 依次输出 1,2,3,4,5
+}
 ```
 
 ## find
-
-PhonePC/2in1TabletTVWearable
 
 find(predicate: (value: T, index: number, obj: Array<T>) => boolean): T | undefined
 
@@ -1411,24 +1288,21 @@ find(predicate: (value: T, index: number, obj: Array<T>) => boolean): T | undefi
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The find method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let foundValue = array.find((value: number) => value % 2 === 0); // 返回2，第一个偶数元素
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let foundValue = array.find((value: number) => value % 2 === 0); // 返回2，第一个偶数元素
 ```
 
 ## includes
-
-PhonePC/2in1TabletTVWearable
 
 includes(searchElement: T, fromIndex?: number): boolean
 
@@ -1453,24 +1327,21 @@ includes(searchElement: T, fromIndex?: number): boolean
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The includes method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let includesResult = array.includes(3); // 返回true，因为Array中包含3
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let includesResult = array.includes(3); // 返回true，因为Array中包含3
 ```
 
 ## findIndex
-
-PhonePC/2in1TabletTVWearable
 
 findIndex(predicate: (value: T, index: number, obj: Array<T>) => boolean): number
 
@@ -1494,24 +1365,21 @@ findIndex(predicate: (value: T, index: number, obj: Array<T>) => boolean): numbe
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The findIndex method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let foundIndex = array.findIndex((value: number) => value % 2 === 0); // 返回1，因为2是第一个偶数元素
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let foundIndex = array.findIndex((value: number) => value % 2 === 0); // 返回1，因为2是第一个偶数元素
 ```
 
 ## fill
-
-PhonePC/2in1TabletTVWearable
 
 fill(value: T, start?: number, end?: number): Array<T>
 
@@ -1526,8 +1394,8 @@ fill(value: T, start?: number, end?: number): Array<T>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | T | 是 | 要填充的值。 |
-| start | number | 否 | 开始填充的索引。默认值为0。如果start < 0，则从下标为0的元素开始。如果start > 数组长度或start > end，则不做填充。填充过程中包含start位置下标所在的元素。 |
-| end | number | 否 | 结束填充的索引（不包括该元素）。如果省略或end > 数组长度，则填充到Array的最后一个元素。如果end < 0或start > end，则不做填充。填充过程中不包含end位置下标所在的元素。 |
+| start | number | 否 | 开始填充的索引。默认值为0。如果start < 0，则取max(start + len, 0)。如果start > 数组长度或start > end，则不做填充。填充过程中包含start位置下标所在的元素。 |
+| end | number | 否 | 结束填充的索引（不包括该元素）。如果end < 0，则取max(end + len, 0)。如果省略或end > 数组长度，则填充到Array的最后一个元素。如果start > end，则不做填充。填充过程中不包含end位置下标所在的元素。 |
 
 **返回值：**
 
@@ -1537,24 +1405,21 @@ fill(value: T, start?: number, end?: number): Array<T>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The fill method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array(1, 2, 3, 4, 5);
-2. array.fill(0, 1, 3); // 返回[1, 0, 0, 4, 5]，因为1到3的索引范围内的元素被替换为0
+```ts
+let array = new collections.Array(1, 2, 3, 4, 5);
+array.fill(0, 1, 3); // 返回[1, 0, 0, 4, 5]，因为1到3的索引范围内的元素被替换为0
 ```
 
 ## shrinkTo
-
-PhonePC/2in1TabletTVWearable
 
 shrinkTo(arrayLength: number): void
 
@@ -1568,31 +1433,28 @@ shrinkTo(arrayLength: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| arrayLength | number | 是 | Array的新长度。如果arrayLength >= array.length，则Array不变。 |
+| arrayLength | number | 是 | Array的新长度。取值应为非负整数，否则会抛出异常。如果arrayLength >= array.length，则Array不变。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The shrinkTo method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array1 = new collections.Array(1, 2, 3, 4, 5);
-2. array1.shrinkTo(1); // array内容变为：[1]
+```ts
+let array1 = new collections.Array(1, 2, 3, 4, 5);
+array1.shrinkTo(1); // array内容变为：[1]
 
-4. let array2 = new collections.Array(1, 2, 3, 4, 5);
-5. array2.shrinkTo(10); // array内容不变
+let array2 = new collections.Array(1, 2, 3, 4, 5);
+array2.shrinkTo(10); // array内容不变
 ```
 
 ## extendTo
-
-PhonePC/2in1TabletTVWearable
 
 extendTo(arrayLength: number, initialValue: T): void
 
@@ -1606,38 +1468,35 @@ extendTo(arrayLength: number, initialValue: T): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| arrayLength | number | 是 | Array的新长度。如果arrayLength <= array.length，则Array不变。 |
+| arrayLength | number | 是 | Array的新长度。取值应为非负整数，否则会抛出异常。如果arrayLength <= array.length，则Array不变。 |
 | initialValue | T | 是 | 扩展的部分的填充值。 |
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200011 | The extendTo method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array1 = new collections.Array(1, 2, 3);
-2. array1.extendTo(5, 10); // array内容变为：[1, 2, 3, 10, 10]
+```ts
+let array1 = new collections.Array(1, 2, 3);
+array1.extendTo(5, 10); // array内容变为：[1, 2, 3, 10, 10]
 
-4. let array2 = new collections.Array(1, 2, 3);
-5. array2.extendTo(1, 10); // array内容不变
+let array2 = new collections.Array(1, 2, 3);
+array2.extendTo(1, 10); // array内容不变
 ```
 
 ## concat
-
-PhonePC/2in1TabletTVWearable
 
 concat(...items: ConcatArray<T>[]): Array<T>
 
 拼接两个或多个数组。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1645,7 +1504,7 @@ concat(...items: ConcatArray<T>[]): Array<T>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| items | ConcatArray<T>[] | 否 | 拼接两个或多个数组。 |
+| items | ConcatArray<T>[] | 否 | 拼接两个或多个数组，省略时返回原数组的浅拷贝。 |
 
 **返回值：**
 
@@ -1655,27 +1514,24 @@ concat(...items: ConcatArray<T>[]): Array<T>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Not a valid array. |
 | 10200011 | The concat method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array(1, 2, 3);
-2. let array1 = new collections.Array(4, 5, 6);
-3. let array2 = new collections.Array(7, 8, 9);
+```ts
+let array = new collections.Array(1, 2, 3);
+let array1 = new collections.Array(4, 5, 6);
+let array2 = new collections.Array(7, 8, 9);
 
-5. let concatArray = array.concat(array1, array2); // concatArray的内容为：[1, 2, 3, 4, 5, 6, 7, 8, 9]
+let concatArray = array.concat(array1, array2); // concatArray的内容为：[1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 ## splice
-
-PhonePC/2in1TabletTVWearable
 
 splice(start: number): Array<T>
 
@@ -1689,7 +1545,7 @@ splice(start: number): Array<T>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| start | number | 是 | 开始索引。如果-array.length =< start < 0，从start + array.length开始，如果start < -array.length，则从0开始。 |
+| start | number | 是 | 开始索引。如果-array.length <= start < 0，从start + array.length开始，如果start < -array.length，则从0开始。 |
 
 **返回值：**
 
@@ -1699,30 +1555,27 @@ splice(start: number): Array<T>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200011 | The splice method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-2. let removeArray = array.splice(2); // array内容变为[1, 2]，返回[3, 4, 5]
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let removeArray = array.splice(2); // array内容变为[1, 2]，返回[3, 4, 5]
 ```
 
 ## every18+
-
-PhonePC/2in1TabletTVWearable
 
 every(predicate: ArrayPredicateFn<T, Array<T>>): boolean
 
 测试ArkTS Array中的所有元素是否满足指定条件。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1740,7 +1593,7 @@ every(predicate: ArrayPredicateFn<T, Array<T>>): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1749,20 +1602,18 @@ every(predicate: ArrayPredicateFn<T, Array<T>>): boolean
 
 **示例：**
 
-```
-1. let newArray: collections.Array<number> = collections.Array.from([-10, 20, -30, 40, -50]);
-2. console.info(newArray.every((element: number) => element > 0) + ''); // 预期输出：false
+```ts
+let newArray: collections.Array<number> = collections.Array.from([-10, 20, -30, 40, -50]);
+console.info(newArray.every((element: number) => element > 0) + ''); // 预期输出：false
 ```
 
 ## toLocaleString18+
-
-PhonePC/2in1TabletTVWearable
 
 toLocaleString(): string
 
 根据当前应用的系统地区获取符合当前文化习惯的字符串表示形式，让每个元素调用自己的toLocaleString方法转换为字符串，然后使用逗号将每个元素的结果字符串按照顺序拼接成字符串。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1783,16 +1634,14 @@ toLocaleString(): string
 
 **示例：**
 
-```
-1. // 当前应用所在系统为法国地区
-2. let array = new collections.Array<number | string>(1000, 'Test', 53621);
-3. let stringArray = array.toLocaleString();
-4. console.info(stringArray); // 预期输出：1,000,Test,53,621
+```ts
+// 当前应用所在系统为法国地区
+let array = new collections.Array<number | string>(1000, 'Test', 53621);
+let stringArray = array.toLocaleString();
+console.info(stringArray); // 预期输出：1, 000, Test, 53, 621
 ```
 
 ## splice
-
-PhonePC/2in1TabletTVWearable
 
 splice(start: number, deleteCount: number, ...items: T[]): Array<T>
 
@@ -1806,7 +1655,7 @@ splice(start: number, deleteCount: number, ...items: T[]): Array<T>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| start | number | 是 | 开始索引。如果-array.length =< start < 0，从start + array.length开始，如果start < -array.length，则从0开始。 |
+| start | number | 是 | 开始索引。如果-array.length <= start < 0，从start + array.length开始，如果start < -array.length，则从0开始。 |
 | deleteCount | number | 是 | 删除元素的个数， 如果deleteCount <= 0，则不删除任何元素。 |
 | items | T[] | 否 | 从start位置开始插入的新元素。如果省略，仅删除Array内的指定元素。 |
 
@@ -1818,41 +1667,38 @@ splice(start: number, deleteCount: number, ...items: T[]): Array<T>
 
 **错误码：**
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types. |
 | 10200011 | The splice method cannot be bound. |
 | 10200201 | Concurrent modification error. |
 
 **示例：**
 
-```
-1. // 例1：
-2. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-3. let removeArray = array.splice(2, 2); // array内容变为[1, 2, 5]，返回[3, 4]
+```ts
+// 例1：
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let removeArray = array.splice(2, 2); // array内容变为[1, 2, 5]，返回[3, 4]
 ```
 
-```
-1. // 例2：
-2. let array = new collections.Array<number>(1, 2, 3, 4, 5);
-3. let removeArray = array.splice(2, 2, 6, 7, 8); // array内容变为[1, 2, 6, 7, 8, 5]，返回[3, 4]
+```ts
+// 例2：
+let array = new collections.Array<number>(1, 2, 3, 4, 5);
+let removeArray = array.splice(2, 2, 6, 7, 8); // array内容变为[1, 2, 6, 7, 8, 5]，返回[3, 4]
 ```
 
 ## [Symbol.iterator]
-
-PhonePC/2in1TabletTVWearable
 
 [Symbol.iterator](): IterableIterator<T>
 
 返回一个迭代器，迭代器的每一项都是一个 JavaScript 对象，并返回该对象。
 
-说明
+**说明** 
 
 本接口不支持在.ets文件中使用。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1864,7 +1710,7 @@ PhonePC/2in1TabletTVWearable
 
 **错误码：**
 
-以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+以下错误码的详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1872,23 +1718,21 @@ PhonePC/2in1TabletTVWearable
 
 **示例：**
 
-```
-1. let array= new collections.Array<number>(1, 2, 3, 4);
+```ts
+let array = new collections.Array<number>(1, 2, 3, 4);
 
-3. for (let item of array) {
-4. console.info(`value : ${item}`);
-5. }
+for (let item of array) {
+  console.info(`value : ${item}`);
+}
 ```
 
 ## [index: number]
-
-PhonePC/2in1TabletTVWearable
 
 [index: number]: T
 
 返回Array指定索引位置的元素。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API**： 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Utils.Lang
 
@@ -1906,16 +1750,15 @@ PhonePC/2in1TabletTVWearable
 
 **错误码**：
 
-以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[语言基础类库错误码](errorcode-utils.md)。
+以下错误码详细介绍请参考[语言基础类库错误码](errorcode-utils.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
 | 10200001 | The value of index is out of range. |
 
 **示例：**
 
-```
-1. let array = new collections.Array<number>(1, 2, 4);
-2. console.info("Element at index 1: ", array[1]);
+```ts
+let array = new collections.Array<number>(1, 2, 4);
+console.info(`Element at index 1: ${array[1]}`);
 ```

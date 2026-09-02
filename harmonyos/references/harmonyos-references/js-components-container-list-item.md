@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: list-item
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > list-item
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:56+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:00024fb1d4ea9c0ce3cece28e19c7ac0fe246486b39eb8628b09dced02a46fc6
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:a967a3fa88e069d2772c82b49019f301a8e59558b6ad47743e94675c5ec5fb23
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:00024fb1d4ea9c0ce3cece28e19c7ac0fe246486b39eb8628b09dced02a
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 支持单个子组件。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -42,8 +36,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -52,22 +44,16 @@ PhonePC/2in1TabletTVWearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
-| sticky | { state: boolean } | 吸顶组件回调事件。  value: false表示当前item处于非吸顶状态；  value: true表示当前item处于吸顶状态；  说明：仅当item设置sticky属性时支持注册此事件。 |
+| sticky | { state: boolean } | 吸顶组件回调事件。  state: false表示当前item处于非吸顶状态；  state: true表示当前item处于吸顶状态；  说明：仅当item设置sticky属性时支持注册此事件。 |
 
 ## 方法
-
-PhonePC/2in1TabletTVWearable
 
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
-
-PhonePC/2in1TabletTVWearable
 
 详见[List示例](js-components-container-list.md#示例)。

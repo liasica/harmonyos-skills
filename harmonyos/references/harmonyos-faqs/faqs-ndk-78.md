@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-78
 title: har包的libc++版本与工程不一致时，程序如何兼容
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > har包的libc++版本与工程不一致时，程序如何兼容
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:24:53+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:9665b6e621e4545b622d757bd9a6dd18fb427c791540c7e93849f09e0dbddfe4
 ---
 

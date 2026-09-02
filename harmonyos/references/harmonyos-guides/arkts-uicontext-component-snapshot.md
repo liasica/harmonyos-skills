@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uiconte
 title: 使用组件截图（ComponentSnapshot）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 使用组件截图（ComponentSnapshot）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7c7934fd75edf43b447a546fd5432fb41e57edfb28b8ef0bca131c485ffbc399
+scraped_at: 2026-09-02T14:59:19+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6520e70fbeb500d378ba841f42883696a347a4c75459409cd25d0e076d68e87e
 ---
 
 ## 能力介绍
 
 组件截图是将应用内一个组件节点树的渲染结果生成位图（[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)）的能力，支持两种方式：一种是对已挂树显示的组件进行截图，另一种是对通过Builder或ComponentContent实现的离线组件进行截图。
 
-说明
+**说明** 
 
 组件截图依赖UI上下文，需要在具备明确上下文的环境中调用，因此请优先使用UIContext的getComponentSnapshot接口返回的[ComponentSnapshot](../harmonyos-references/arkts-apis-uicontext-componentsnapshot.md)对象的接口，不建议直接使用从@kit.ArkUI导入的componentSnapshot接口。
 
@@ -24,7 +24,7 @@ content_hash: sha256:7c7934fd75edf43b447a546fd5432fb41e57edfb28b8ef0bca131c485ff
 
 截图仅能获取最近一帧的绘制内容。若在组件触发更新的同时调用截图，更新的渲染内容不会被截取，截图将返回前一帧的绘制内容。
 
-说明
+**说明** 
 
 尽量避免在使用截图时触发待截图组件的刷新，防止对截图内容的干扰。
 
@@ -40,289 +40,282 @@ content_hash: sha256:7c7934fd75edf43b447a546fd5432fb41e57edfb28b8ef0bca131c485ff
 
 ### 截取长内容（滚动截图）
 
-较长内容通常使用滚动类容器组件实现。截图时，仅能捕获容器内可见内容，超出边界部分无法截取。若使用LazyForEach或Repeat，超出显示范围内容亦不会被系统构建及截取。
+较长内容通常使用滚动类容器组件实现。截图时，仅能捕获容器内可见内容，超出边界部分无法截取。若使用[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)或[Repeat](../harmonyos-references/ts-rendering-control-repeat.md)，超出显示范围内容亦不会被系统构建及截取。
 
 可利用滚动类容器接口，模拟用户滑动逐页截图，之后按偏移量拼接各页PixelMap位图，以生成完整长图。关键点在于模拟滑动、维护位移与位图关系及实现PixelMap位图读写。
 
 **步骤1：添加滚动控制器及事件监听**
 
-为了能够模拟滚动，以及监听组件滚动的具体offset，需要为List（此处以列表为例）组件添加滚动控制器以及滚动监听。
+为了能够模拟滚动，以及监听组件滚动的具体[offset](../harmonyos-references/ts-universal-attributes-location.md#offset)，需要为[List](../harmonyos-references/ts-container-list.md)（此处以列表为例）组件添加滚动控制器以及滚动监听。
 
+```typescript
+// src/main/ets/view/ScrollSnapshot.ets
+@Component
+export struct ScrollSnapshot {
+  private scroller: Scroller = new Scroller();
+  private listComponentWidth: number = 0; // 组件宽度，默认值为0
+  private listComponentHeight: number = 0; // 组件高度，默认值为0
+  // list组件的当前偏移量
+  private curYOffset: number = 0;
+  // 每次滚动距离
+  private scrollHeight: number = 0;
+
+  // ...
+  build() {
+    // ...
+        Stack() {
+          // ...
+          // 1.1 绑定滚动控制器，并通过`.id`配置组件唯一标识。
+          List({ space: 12, scroller: this.scroller }) {
+              LazyForEach(this.dataSource, (item: number) => {
+              ListItem() {
+                NewsItem({ index: item })
+              }
+            }, (item: number) => item.toString())
+          }
+          // ...
+          .id(LIST_ID)
+          // 1.2 通过回调获取滚动偏移量。
+          .onDidScroll(() => {
+            this.curYOffset = this.scroller.currentOffset().yOffset;
+          })
+          .onAreaChange((oldValue, newValue) => {
+            // 1.3 获取组件的宽高。
+            this.listComponentWidth = newValue.width as number;
+            this.listComponentHeight = newValue.height as number;
+            this.scrollHeight = this.listComponentHeight;
+          })
+          // ...
+    }
+  }
+}
 ```
-1. // src/main/ets/view/ScrollSnapshot.ets
-2. @Component
-3. export struct ScrollSnapshot {
-4. private scroller: Scroller = new Scroller();
-5. private listComponentWidth: number = 0; // 组件宽度，默认值为0
-6. private listComponentHeight: number = 0; // 组件高度，默认值为0
-7. // list组件的当前偏移量
-8. private curYOffset: number = 0;
-9. // 每次滚动距离
-10. private scrollHeight: number = 0;
-
-12. // ...
-13. build() {
-14. // ...
-15. Stack() {
-16. // ...
-17. // 1.1 绑定滚动控制器，并通过`.id`配置组件唯一标识。
-18. List({ space: 12, scroller: this.scroller }) {
-19. LazyForEach(this.dataSource, (item: number) => {
-20. ListItem() {
-21. NewsItem({ index: item })
-22. }
-23. }, (item: number) => item.toString())
-24. }
-25. // ...
-26. .id(LIST_ID)
-27. // 1.2 通过回调获取滚动偏移量。
-28. .onDidScroll(() => {
-29. this.curYOffset = this.scroller.currentOffset().yOffset;
-30. })
-31. .onAreaChange((oldValue, newValue) => {
-32. // 1.3 获取组件的宽高。
-33. this.listComponentWidth = newValue.width as number;
-34. this.listComponentHeight = newValue.height as number;
-35. this.scrollHeight = this.listComponentHeight;
-36. })
-37. // ...
-38. }
-39. }
-40. }
-```
-
-[ScrollSnapshot.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentSnapshot/entry/src/main/ets/view/ScrollSnapshot.ets#L30-L331)
 
 **步骤2：循环滚动截图并缓存**
 
 通过实现一个递归方法滚动循环截图，并在滚动过程配合一些动效实现。
 
-```
-1. /**
-2. * 递归滚动截图，直到滚动到底，最后合并所有截图
-3. */
-4. async scrollSnapAndMerge() {
-5. try {
-6. // 记录滚动偏移
-7. this.scrollYOffsets.push(this.curYOffset - this.yOffsetBefore);
-8. // 调用组件截图接口，获取list组件的截图
-9. const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
-10. // 获取位图像素字节，并保存在数组中
-11. let area: image.PositionArea =
-12. await ImageUtils.getSnapshotArea(pixelMap, this.scrollYOffsets, this.listComponentWidth,
-13. this.listComponentHeight)
-14. this.areaArray.push(area);
+```typescript
+/**
+ * 递归滚动截图，直到滚动到底，最后合并所有截图
+ */
+async scrollSnapAndMerge() {
+  try {
+    // 记录滚动偏移
+    this.scrollYOffsets.push(this.curYOffset - this.yOffsetBefore);
+    // 调用组件截图接口，获取list组件的截图
+    const pixelMap = await this.getUIContext().getComponentSnapshot().get(LIST_ID);
+    // 获取位图像素字节，并保存在数组中
+    let area: image.PositionArea =
+      await ImageUtils.getSnapshotArea(pixelMap, this.scrollYOffsets, this.listComponentWidth,
+        this.listComponentHeight)
+    this.areaArray.push(area);
 
-16. // 判断是否滚动到底以及用户是否已经强制停止
-17. if (!this.scroller.isAtEnd() && !this.isClickStop) {
-18. // 如果没有到底或被停止，则播放一个滚动动效，延迟一段时间后，继续递归截图
-19. CommonUtils.scrollAnimation(this.scroller, 1000, this.scrollHeight);
-20. await CommonUtils.sleep(1500);
-21. await this.scrollSnapAndMerge();
-22. } else {
-23. // 当滚动到底时，调用`mergeImage`将所有保存的位图数据进行拼接，返回长截图位图对象
-24. this.mergedImage =
-25. await ImageUtils.mergeImage(this.areaArray, this.scrollYOffsets[this.scrollYOffsets.length - 1],
-26. this.listComponentWidth, this.listComponentHeight);
-27. }
-28. } catch (err) {
-29. let error = err as BusinessError;
-30. Logger.error(TAG, `scrollSnapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
-31. }
-32. }
-```
-
-[ScrollSnapshot.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentSnapshot/entry/src/main/ets/view/ScrollSnapshot.ets#L137-L170)
-
-```
-1. // src/main/ets/common/CommonUtils.ets
-2. static scrollAnimation(scroller: Scroller, duration: number, scrollHeight: number): void {
-3. scroller.scrollTo({
-4. xOffset: 0,
-5. yOffset: (scroller.currentOffset().yOffset + scrollHeight),
-6. animation: {
-7. duration: duration,
-8. curve: Curve.Smooth,
-9. canOverScroll: false
-10. }
-11. });
-12. }
+    // 判断是否滚动到底以及用户是否已经强制停止
+    if (!this.scroller.isAtEnd() && !this.isClickStop) {
+      // 如果没有到底或被停止，则播放一个滚动动效，延迟一段时间后，继续递归截图
+      CommonUtils.scrollAnimation(this.scroller, 1000, this.scrollHeight);
+      await CommonUtils.sleep(1500);
+      await this.scrollSnapAndMerge();
+    } else {
+      // 当滚动到底时，调用`mergeImage`将所有保存的位图数据进行拼接，返回长截图位图对象
+      this.mergedImage =
+        await ImageUtils.mergeImage(this.areaArray, this.scrollYOffsets[this.scrollYOffsets.length - 1],
+          this.listComponentWidth, this.listComponentHeight);
+    }
+  } catch (err) {
+    let error = err as BusinessError;
+    Logger.error(TAG, `scrollSnapAndMerge err, errCode: ${error.code}, error message: ${error.message}`);
+  }
+}
 ```
 
-[CommonUtils.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentSnapshot/entry/src/main/ets/common/CommonUtils.ets#L20-L33)
+```typescript
+// src/main/ets/common/CommonUtils.ets
+static scrollAnimation(scroller: Scroller, duration: number, scrollHeight: number): void {
+  scroller.scrollTo({
+    xOffset: 0,
+    yOffset: (scroller.currentOffset().yOffset + scrollHeight),
+    animation: {
+      duration: duration,
+      curve: Curve.Smooth,
+      canOverScroll: false
+    }
+  });
+}
+```
 
 **步骤3：拼接长截图**
 
-使用image.createPixelMapSync()方法创建长截图longPixelMap，并遍历之前保存的图像片段数据（this.areaArray），构建image.PositionArea对象area，然后调用longPixelMap.writePixelsSync(area)方法将这些片段逐个写入到正确的位置，从而拼接成一个完整的长截图。
+使用image.[createPixelMapSync](../harmonyos-references/arkts-apis-image-imagesource.md#createpixelmapsync12)()方法创建长截图longPixelMap，并遍历之前保存的图像片段数据（this.areaArray），构建image.PositionArea对象area，然后调用longPixelMap.[writePixelsSync](../harmonyos-references/arkts-apis-image-pixelmap.md#writepixelssync12)(area)方法将这些片段逐个写入到正确的位置，从而拼接成一个完整的长截图。
 
+```typescript
+static async mergeImage(areaArray: image.PositionArea[], lastOffsetY: number, listWidth: number,
+  listHeight: number): Promise<PixelMap> {
+  // 创建一个长截图位图对象
+  let opts: image.InitializationOptions = {
+    editable: true,
+    pixelFormat: 4,
+    size: {
+      width: uiContext?.vp2px(listWidth) || 0,
+      height: uiContext?.vp2px(lastOffsetY + listHeight) || 0
+    }
+  };
+  let longPixelMap = image.createPixelMapSync(opts);
+  let imgPosition: number = 0;
+
+  for (let i = 0; i < areaArray.length; i++) {
+    let readArea = areaArray[i];
+    let area: image.PositionArea = {
+      pixels: readArea.pixels,
+      offset: 0,
+      stride: readArea.stride,
+      region: {
+        size: {
+          width: readArea.region.size.width,
+          height: readArea.region.size.height
+        },
+        x: 0,
+        y: imgPosition
+      }
+    }
+    imgPosition += readArea.region.size.height;
+    try {
+      longPixelMap.writePixelsSync(area);
+    } catch (err) {
+      let error = err as BusinessError;
+      Logger.error(TAG, `writePixelsSync err, code: ${error.code}, message: ${error.message}`);
+    }
+  }
+  return longPixelMap;
+}
 ```
-1. static async mergeImage(areaArray: image.PositionArea[], lastOffsetY: number, listWidth: number,
-2. listHeight: number): Promise<PixelMap> {
-3. // 创建一个长截图位图对象
-4. let opts: image.InitializationOptions = {
-5. editable: true,
-6. pixelFormat: 4,
-7. size: {
-8. width: uiContext?.vp2px(listWidth) || 0,
-9. height: uiContext?.vp2px(lastOffsetY + listHeight) || 0
-10. }
-11. };
-12. let longPixelMap = image.createPixelMapSync(opts);
-13. let imgPosition: number = 0;
-
-15. for (let i = 0; i < areaArray.length; i++) {
-16. let readArea = areaArray[i];
-17. let area: image.PositionArea = {
-18. pixels: readArea.pixels,
-19. offset: 0,
-20. stride: readArea.stride,
-21. region: {
-22. size: {
-23. width: readArea.region.size.width,
-24. height: readArea.region.size.height
-25. },
-26. x: 0,
-27. y: imgPosition
-28. }
-29. }
-30. imgPosition += readArea.region.size.height;
-31. try {
-32. longPixelMap.writePixelsSync(area);
-33. } catch (err) {
-34. let error = err as BusinessError;
-35. Logger.error(TAG, `writePixelsSync err, code: ${error.code}, message: ${error.message}`);
-36. }
-37. }
-38. return longPixelMap;
-39. }
-```
-
-[ImageUtils.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentSnapshot/entry/src/main/ets/common/ImageUtils.ets#L101-L142)
 
 **步骤4：保存截图**
 
-使用安全控件SaveButton实现截图保存到相册。
+使用安全控件[SaveButton](../harmonyos-references/ts-security-components-savebutton.md)实现截图保存到相册。
 
-```
-1. // src/main/ets/view/SnapshotPreview.ets
-2. SaveButton({
-3. icon: SaveIconStyle.FULL_FILLED,
-4. text: SaveDescription.SAVE_IMAGE,
-5. buttonType: ButtonType.Capsule
-6. })
-7. // ···
-8. .onClick((event, result) => {
-9. this.saveSnapshot(result);
-10. })
-```
-
-[SnapshotPreview.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentSnapshot/entry/src/main/ets/view/SnapshotPreview.ets#L226-L245)
-
-```
-1. async saveSnapshot(result: SaveButtonOnClickResult): Promise<void> {
-2. try {
-3. if (result === SaveButtonOnClickResult.SUCCESS) {
-4. const helper = photoAccessHelper.getPhotoAccessHelper(this.context);
-5. const uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'png');
-6. const file = await fileIo.open(uri, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-7. const imagePackerApi: image.ImagePacker = image.createImagePacker();
-8. const packOpts: image.PackingOption = {
-9. format: 'image/png',
-10. quality: 100,
-11. };
-12. imagePackerApi.packToData(this.mergedImage, packOpts).then((data) => {
-13. fileIo.writeSync(file.fd, data);
-14. fileIo.closeSync(file.fd);
-15. Logger.info(TAG, `Succeeded in packToFile`);
-16. this.getUIContext().getPromptAction().showToast({
-17. // 请将$r('app.string.save_album_success')替换为实际资源文件，在本示例中该资源文件的value值为"Saved to album"
-18. message: $r('app.string.save_album_success'),
-19. duration: 1800
-20. })
-21. }).catch((error: BusinessError) => {
-22. Logger.error(TAG, `Failed to packToFile. Error code is ${error.code}, message is ${error.message}`);
-23. });
-24. }
-25. // ...
-26. } catch (err) {
-27. let error = err as BusinessError;
-28. Logger.error(TAG, `saveSnapshot err, errCode: ${error.code}, error message: ${error.message}`);
-29. }
-30. }
+```typescript
+// src/main/ets/view/SnapshotPreview.ets
+SaveButton({
+  icon: SaveIconStyle.FULL_FILLED,
+  text: SaveDescription.SAVE_IMAGE,
+  buttonType: ButtonType.Capsule
+})
+  // ···
+  .onClick((event, result) => {
+    this.saveSnapshot(result);
+  })
 ```
 
-[SnapshotPreview.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentSnapshot/entry/src/main/ets/view/SnapshotPreview.ets#L80-L113)
+```typescript
+async saveSnapshot(result: SaveButtonOnClickResult): Promise<void> {
+  try {
+    if (result === SaveButtonOnClickResult.SUCCESS) {
+      const helper = photoAccessHelper.getPhotoAccessHelper(this.context);
+      const uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'png');
+      const file = await fileIo.open(uri, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+      try {
+        const imagePackerApi: image.ImagePacker = image.createImagePacker();
+        const packOpts: image.PackingOption = {
+          format: 'image/png',
+          quality: 100,
+        };
+        const data = await imagePackerApi.packToData(this.mergedImage, packOpts);
+        fileIo.writeSync(file.fd, data);
+        Logger.info(TAG, `Succeeded in packToFile`);
+        this.getUIContext().getPromptAction().showToast({
+          // 请将$r('app.string.save_album_success')替换为实际资源文件，在本示例中该资源文件的value值为"Saved to album"
+          message: $r('app.string.save_album_success'),
+          duration: 1800
+        })
+      } catch (error) {
+        let businessError = error as BusinessError;
+        Logger.error(TAG,
+          `Failed to packToFile. Error code is ${businessError.code}, message is ${businessError.message}`);
+      } finally {
+        try {
+          fileIo.closeSync(file.fd);
+        } catch (err) {
+          let error = err as BusinessError;
+          Logger.error(TAG, `Failed to close file. Error code is ${error.code}, message is ${error.message}`);
+        }
+      }
+    }
+    // ...
+  } catch (err) {
+    let error = err as BusinessError;
+    Logger.error(TAG, `saveSnapshot err, errCode: ${error.code}, error message: ${error.message}`);
+  }
+}
+```
 
 **步骤5：保存完成后释放位图**
 
 当位图对象不再使用时，应及时将其赋值为空，例如：this.mergedImage = undefined;。
 
+```typescript
+closeSnapPopup(): void {
+  // 关闭弹窗
+  this.isShowPreview = false;
+  // 释放位图对象
+  this.mergedImage = undefined;
+  // 重置相关参数
+  this.snapPopupWidth = 100;
+  this.snapPopupHeight = 200;
+  this.snapPopupPosition =
+    PopupUtils.calcPopupCenter(this.screenWidth, this.screenHeight, this.snapPopupWidth, this.snapPopupHeight);
+  this.isLargePreview = false;
+}
 ```
-1. closeSnapPopup(): void {
-2. // 关闭弹窗
-3. this.isShowPreview = false;
-4. // 释放位图对象
-5. this.mergedImage = undefined;
-6. // 重置相关参数
-7. this.snapPopupWidth = 100;
-8. this.snapPopupHeight = 200;
-9. this.snapPopupPosition =
-10. PopupUtils.calcPopupCenter(this.screenWidth, this.screenHeight, this.snapPopupWidth, this.snapPopupHeight);
-11. this.isLargePreview = false;
-12. }
-```
-
-[SnapshotPreview.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentSnapshot/entry/src/main/ets/view/SnapshotPreview.ets#L65-L78)
 
 ### 封装全局截图接口
 
 如前文所述，截图接口必须在UI上下文明确的位置使用。然而，应用有时希望对不同模块封装统一的全局截图方法。例如，在下述示例中，awardBuilder构建的组件是固定结构的。GlobalStaticSnapshot提供了一个getAwardSnapshot全局方法，能够满足不同模块的需求，对同一固定模式的组件进行截图，从而实现全局截图接口的封装。本示例从API version 18开始支持。
 
+```typescript
+import { image } from '@kit.ImageKit';
+import { ComponentContent } from '@kit.ArkUI';
+
+export class Params {
+  public text: string | undefined | null = '';
+
+  constructor(text: string | undefined | null) {
+    this.text = text;
+  }
+}
+
+@Builder
+function awardBuilder(params: Params) {
+  Column() {
+    Text(params.text)
+      .fontSize(90)
+      .fontWeight(FontWeight.Bold)
+      .margin({ bottom: 36 })
+      .width('100%')
+      .height('100%')
+  }.backgroundColor('#FFF0F0F0')
+}
+
+export class GlobalStaticSnapshot {
+  /**
+   * 一个可以获取固定对象截图的静态方法
+   */
+  static async getAwardSnapshot(uiContext: UIContext, textParam: Params): Promise<image.PixelMap | undefined> {
+    let resultPixmap: image.PixelMap | undefined = undefined
+    let contentNode = new ComponentContent(uiContext, wrapBuilder(awardBuilder), textParam);
+    await uiContext.getComponentSnapshot()
+      .createFromComponent(contentNode, 320, true, { scale: 1, waitUntilRenderFinished: true })
+      .then((pixmap: image.PixelMap) => {
+        resultPixmap = pixmap;
+      })
+      .catch((err: Error) => {
+        console.error(`error: ${err}`);
+      })
+    return resultPixmap;
+  }
+}
 ```
-1. import { image } from '@kit.ImageKit';
-2. import { ComponentContent } from '@kit.ArkUI';
-
-4. export class Params {
-5. public text: string | undefined | null = '';
-
-7. constructor(text: string | undefined | null) {
-8. this.text = text;
-9. }
-10. }
-
-12. @Builder
-13. function awardBuilder(params: Params) {
-14. Column() {
-15. Text(params.text)
-16. .fontSize(90)
-17. .fontWeight(FontWeight.Bold)
-18. .margin({ bottom: 36 })
-19. .width('100%')
-20. .height('100%')
-21. }.backgroundColor('#FFF0F0F0')
-22. }
-
-24. export class GlobalStaticSnapshot {
-25. /**
-26. * 一个可以获取固定对象截图的静态方法
-27. */
-28. static async getAwardSnapshot(uiContext: UIContext, textParam: Params): Promise<image.PixelMap | undefined> {
-29. let resultPixmap: image.PixelMap | undefined = undefined
-30. let contentNode = new ComponentContent(uiContext, wrapBuilder(awardBuilder), textParam);
-31. await uiContext.getComponentSnapshot()
-32. .createFromComponent(contentNode, 320, true, { scale: 1, waitUntilRenderFinished: true })
-33. .then((pixmap: image.PixelMap) => {
-34. resultPixmap = pixmap;
-35. })
-36. .catch((err: Error) => {
-37. console.error(`error: ${err}`);
-38. })
-39. return resultPixmap;
-40. }
-41. }
-```
-
-[GlobalScreenshot.ets](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkUISample/ComponentSnapshot/entry/src/main/ets/view/GlobalScreenshot.ets#L16-L58)
 
 **完整示例：**
 
@@ -346,7 +339,7 @@ content_hash: sha256:7c7934fd75edf43b447a546fd5432fb41e57edfb28b8ef0bca131c485ff
 
 影响截图预期的主要因素是截图时机与系统服务执行绘制指令的时间差。在发起截图调用时，应用侧之前提交的所有绘制指令可能尚未被图形服务真正执行。为此，可以通过指定[SnapshotOptions](../harmonyos-references/js-apis-arkui-componentsnapshot.md#snapshotoptions12)参数中的waitUntilRenderFinished为true，来确保系统在执行截图请求时等待所有之前的绘制指令均执行完毕，从而截取到更完整的内容。
 
-说明
+**说明** 
 
 建议始终开启waitUntilRenderFinished参数。
 
@@ -357,7 +350,7 @@ content_hash: sha256:7c7934fd75edf43b447a546fd5432fb41e57edfb28b8ef0bca131c485ff
 应用可通过以下几种方式进行优化：
 
 1. 自行提前解析图片为PixelMap格式，将PixelMap配置给图片组件；建议优先以此方法进行优化。
-2. 配置所使用的图片组件的syncLoad属性为true来强制同步加载，这样组件被构建时，即可确保资源可以直接被提交；
+2. 配置所使用的图片组件的[syncLoad](../harmonyos-references/ts-basic-components-image.md#syncload8)属性为true来强制同步加载，这样组件被构建时，即可确保资源可以直接被提交；
 3. 通过指定延迟时长以及checkImageStatus设置为true，尝试截图，当返回160001错误后，重新加大时长进行截图；
 
 ### 及时保存和释放位图对象

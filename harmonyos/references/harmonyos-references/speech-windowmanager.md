@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-wi
 title: WindowManager（窗口管理）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS API > WindowManager（窗口管理）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:26c7df0e2ffe04c5a557863a4668a130ea21aaf1baf9a8ef4b616f4b035507a8
+scraped_at: 2026-09-02T14:53:35+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:2694bca96963befb9b36bc18c9c9a59c837338b67f15a44d517ff28e0e52b5de
 ---
 
 朗读控件的窗口管理类。
@@ -14,15 +14,11 @@ content_hash: sha256:26c7df0e2ffe04c5a557863a4668a130ea21aaf1baf9a8ef4b616f4b035
 
 ## 导入模块
 
-PhonePC/2in1Tablet
-
-```
-1. import { WindowManager } from '@kit.SpeechKit';
+```typescript
+import { WindowManager } from '@kit.SpeechKit';
 ```
 
 ## setWindowStage
-
-PhonePC/2in1Tablet
 
 static setWindowStage(windowStage: window.WindowStage): void
 
@@ -31,6 +27,8 @@ static setWindowStage(windowStage: window.WindowStage): void
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Component.TextReader
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **设备行为差异：** 该接口在PC/2in1中可正常调用，在其他设备类型中无效果。
 
@@ -44,51 +42,49 @@ static setWindowStage(windowStage: window.WindowStage): void
 
 **示例：**
 
-```
-1. import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-2. import { hilog } from '@kit.PerformanceAnalysisKit';
-3. import { window } from '@kit.ArkUI';
-4. import { WindowManager } from '@kit.SpeechKit';
+```typescript
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
+import { WindowManager } from '@kit.SpeechKit';
 
-6. export default class EntryAbility extends UIAbility {
-7. onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-8. hilog.info(0x0000, 'testTag', 'Ability onCreate');
-9. }
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag', 'Ability onCreate');
+  }
 
-11. onDestroy(): void {
-12. hilog.info(0x0000, 'testTag', 'Ability onDestroy');
-13. }
+  onDestroy(): void {
+    hilog.info(0x0000, 'testTag', 'Ability onDestroy');
+  }
 
-15. onWindowStageCreate(windowStage: window.WindowStage): void {
-16. hilog.info(0x0000, 'testTag', 'Ability onWindowStageCreate');
-17. WindowManager.setWindowStage(windowStage);
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    hilog.info(0x0000, 'testTag', 'Ability onWindowStageCreate');
+    WindowManager.setWindowStage(windowStage);
 
-19. windowStage.loadContent('pages/Index', (err, data) => {
-20. if (err) {
-21. hilog.error(0x0000, 'testTag', `Failed to load the content. Code: ${err.code}, message: ${err.message}.`);
-22. return;
-23. }
-24. hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data)}.` );
-25. });
-26. }
+    windowStage.loadContent('pages/Index', (err, data) => {
+      if (err) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Code: ${err.code}, message: ${err.message}.`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data)}.` );
+    });
+  }
 
-28. onWindowStageDestroy(): void {
-29. hilog.info(0x0000, 'testTag', 'Ability onWindowStageDestroy');
-30. }
+  onWindowStageDestroy(): void {
+    hilog.info(0x0000, 'testTag', 'Ability onWindowStageDestroy');
+  }
 
-32. onForeground(): void {
-33. hilog.info(0x0000, 'testTag', 'Ability onForeground');
-34. }
+  onForeground(): void {
+    hilog.info(0x0000, 'testTag', 'Ability onForeground');
+  }
 
-36. onBackground(): void {
-37. hilog.info(0x0000, 'testTag', 'Ability onBackground');
-38. }
-39. }
+  onBackground(): void {
+    hilog.info(0x0000, 'testTag', 'Ability onBackground');
+  }
+}
 ```
 
 ## getWindowStage
-
-PhonePC/2in1Tablet
 
 static getWindowStage(): window.WindowStage
 
@@ -97,6 +93,10 @@ static getWindowStage(): window.WindowStage
 **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.AI.Component.TextReader
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**设备行为差异：** 该接口在PC/2in1中可正常调用，在其他设备类型中无效果。
 
 **起始版本：** 5.0.0(12)
 
@@ -108,13 +108,13 @@ static getWindowStage(): window.WindowStage
 
 **示例：**
 
-```
-1. import { WindowManager } from '@kit.SpeechKit';
+```typescript
+import { WindowManager } from '@kit.SpeechKit';
 
-3. try {
-4. let windowManager = WindowManager.getWindowStage()
-5. console.info(`TextReader succeeded in getting windowStage.`)
-6. } catch (e) {
-7. console.error(`TextReader failed to get windowStage. Code: ${e.code}, message: ${e.message}.`)
-8. }
+try {
+  let windowManager = WindowManager.getWindowStage();
+  console.info(`TextReader succeeded in getting windowStage.`);
+} catch (e) {
+  console.error(`TextReader failed to get windowStage. Code: ${e.code}, message: ${e.message}.`);
+}
 ```

@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: jsvm_types.h
 breadcrumb: API参考 > 公共基础能力 > C API > 头文件 > jsvm_types.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:20+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a5ee98c92c0dd966559ef409ef4fd9837b9789176924dc76985d8f58509911a9
+scraped_at: 2026-09-02T15:03:13+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b12788d3e51ac87890b45dc54803ac1bf0078eecda3adb9a633328757ebf2b70
 ---
 
 ## 概述
-
-PhonePC/2in1TabletWearable
 
 提供JSVM-API类型定义。通过API接口为开发者提供独立、标准、完整的JavaScript引擎能力，包括管理引擎生命周期、编译运行JS代码、实现JS/C++跨语言调用、拍摄快照等。
 
@@ -26,11 +24,13 @@ PhonePC/2in1TabletWearable
 
 ## 汇总
 
-PhonePC/2in1TabletWearable
+### 宏定义
+
+| 名称 | 描述 |
+| --- | --- |
+| **JSVM\_CDECL** | 用于指定函数的C调用约定，主要应用于回调函数指针的声明，以确保跨平台下回调函数使用统一的C调用约定。  当预处理指令\_WIN32检查到为Windows平台时：JSVM\_CDECL被赋值为"\_\_cdecl"，表示使用C调用约定。当预处理指令\_WIN32检查到不是Windows平台时：无须标记，JSVM\_CDECL为空。 |
 
 ### 结构体
-
-PhonePC/2in1TabletWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -61,13 +61,12 @@ PhonePC/2in1TabletWearable
 | [JSVM\_EscapableHandleScope\_\_\*](capi-jsvm-jsvm-escapablehandlescope--8h.md) | JSVM\_EscapableHandleScope | 表示一种特殊类型的handle scope，用于将在特定handle scope内创建的值返回到父作用域。 |
 | [JSVM\_CallbackInfo\_\_\*](capi-jsvm-jsvm-callbackinfo--8h.md) | JSVM\_CallbackInfo | 表示传递给回调函数的不透明数据类型。可用于获取调用该函数的上下文的附加信息。 |
 | [JSVM\_Deferred\_\_\*](capi-jsvm-jsvm-deferred--8h.md) | JSVM\_Deferred | 表示Promise延迟对象。 |
-| [JSVM\_PropertyHandlerConfigurationStruct\*](api-jsvm-jsvm-propertyhandlerconfigurationstruct8h.md) | JSVM\_PropertyHandlerCfg | 包含属性监听回调的结构的指针类型。 |
+| [JSVM\_PropertyHandlerConfigurationStruct\*](capi-jsvm-jsvm-propertyhandlerconfigurationstruct8h.md) | JSVM\_PropertyHandlerCfg | 包含属性监听回调的结构的指针类型。 |
 | [JSVM\_CallbackStruct\*](capi-jsvm-jsvm-callbackstruct8h.md) | JSVM\_Callback | 用户提供的native函数的函数指针类型，这些函数通过JSVM-API接口暴露给JavaScript。 |
 | [JSVM\_CompileProfile](capi-jsvm-jsvm-compileprofile.md) | JSVM\_CompileProfile | 与JSVM\_COMPILE\_COMPILE\_PROFILE一起传递的编译采样文件。 |
+| [JSVM\_DeserializeResult](capi-jsvm-jsvm-deserializeresult.md) | JSVM\_DeserializeResult | 与JSVM\_COMPILE\_BACKGROUND\_DESERIALIZE\_RESULT一起传递的后台反序列化结果。 |
 
 ### 枚举
-
-PhonePC/2in1TabletWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -97,20 +96,18 @@ PhonePC/2in1TabletWearable
 
 ### 函数
 
-PhonePC/2in1TabletWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
 | [typedef void (JSVM\_CDECL\* JSVM\_Finalize)(JSVM\_Env env,void\* finalizeData,void\* finalizeHint)](capi-jsvm-types-h.md#jsvm_finalize) | JSVM\_CDECL\* JSVM\_Finalize | 函数指针类型，当native类型对象或数据与JS对象被关联时，传入该指针。该函数将会在关联的JS对象被GC回收时被调用，用以执行native的清理动作。 |
-| [typedef bool (JSVM\_CDECL\* JSVM\_OutputStream)(const char\* data,int size,void\* streamData)](capi-jsvm-types-h.md#jsvm_outputstream) | JSVM\_CDECL\* JSVM\_OutputStream | ASCII输出流回调的函数指针类型。参数data是指输出的数据指针。参数size是指输出的数据大小。空数据指针指示流的结尾。参数streamData是指与回调一起传递给API函数的指针，该API函数向输出流生成数据。 |
+| [typedef void (JSVM\_CDECL\* JSVM\_FinalizeArrayBuffer)(JSVM\_Env env,void\* finalizeData,void\* finalizeHint,bool copied)](capi-jsvm-types-h.md#jsvm_finalizearraybuffer) | JSVM\_CDECL\* JSVM\_FinalizeArrayBuffer | 函数指针类型，在调用[OH\_JSVM\_CreateArrayBufferFromExternalMemory](capi-jsvm-h.md#oh_jsvm_createarraybufferfromexternalmemory)接口时，可传入该类型的函数调用。回调函数将会在接口创建的ArrayBuffer对象被GC回收时被调用，用以执行native的清理动作（必须先定义JSVM\_EXPERIMENTAL宏才能使用此接口）。 |
+| [typedef bool (JSVM\_CDECL\* JSVM\_OutputStream)(const char\* data,int size,void\* streamData)](capi-jsvm-types-h.md#jsvm_outputstream) | JSVM\_CDECL\* JSVM\_OutputStream | 输出流回调的函数指针类型。参数data是指输出的数据指针。参数size是指输出的数据大小。空数据指针指示流的结尾。参数streamData是指与回调一起传递给API函数的指针，该API函数向输出流生成数据。 |
 | [typedef void (JSVM\_CDECL\* JSVM\_HandlerForGC)(JSVM\_VM vm, JSVM\_GCType gcType, JSVM\_GCCallbackFlags flags, void\* data)](capi-jsvm-types-h.md#jsvm_handlerforgc) | JSVM\_CDECL\* JSVM\_HandlerForGC | GC回调的函数指针类型。 |
+| [typedef void (JSVM\_CDECL\* JSVM\_HandlerForHeapThreshold)(JSVM\_VM vm, uint64\_t threshold, void\* data)](capi-jsvm-types-h.md#jsvm_handlerforheapthreshold) | JSVM\_CDECL\* JSVM\_HandlerForHeapThreshold | 堆内存阈值回调的函数指针类型。 |
 | [typedef void (JSVM\_CDECL\* JSVM\_HandlerForOOMError)(const char\* location,const char\* detail,bool isHeapOOM)](capi-jsvm-types-h.md#jsvm_handlerforoomerror) | JSVM\_CDECL\* JSVM\_HandlerForOOMError | OOM-Error回调的函数指针类型。 |
 | [typedef void (JSVM\_CDECL\* JSVM\_HandlerForFatalError)(const char\* location,const char\* message)](capi-jsvm-types-h.md#jsvm_handlerforfatalerror) | JSVM\_CDECL\* JSVM\_HandlerForFatalError | Fatal-Error回调的函数指针类型。 |
 | [typedef void (JSVM\_CDECL\* JSVM\_HandlerForPromiseReject)(JSVM\_Env env, JSVM\_PromiseRejectEvent rejectEvent, JSVM\_Value rejectInfo)](capi-jsvm-types-h.md#jsvm_handlerforpromisereject) | JSVM\_CDECL\* JSVM\_HandlerForPromiseReject | Promise-Reject回调的函数指针类型。 |
 
 ### 变量
-
-PhonePC/2in1TabletWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -118,14 +115,10 @@ PhonePC/2in1TabletWearable
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletWearable
-
 ### JSVM\_PropertyAttributes
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_PropertyAttributes
+```c
+enum JSVM_PropertyAttributes
 ```
 
 **描述**
@@ -149,10 +142,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_ValueType
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_ValueType
+```c
+enum JSVM_ValueType
 ```
 
 **描述**
@@ -176,10 +167,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_TypedarrayType
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_TypedarrayType
+```c
+enum JSVM_TypedarrayType
 ```
 
 **描述**
@@ -204,10 +193,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_Status
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_Status
+```c
+enum JSVM_Status
 ```
 
 **描述**
@@ -247,10 +234,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_KeyCollectionMode
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_KeyCollectionMode
+```c
+enum JSVM_KeyCollectionMode
 ```
 
 **描述**
@@ -266,10 +251,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_KeyFilter
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_KeyFilter
+```c
+enum JSVM_KeyFilter
 ```
 
 **描述**
@@ -289,10 +272,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_KeyConversion
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_KeyConversion
+```c
+enum JSVM_KeyConversion
 ```
 
 **描述**
@@ -308,10 +289,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_MemoryPressureLevel
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_MemoryPressureLevel
+```c
+enum JSVM_MemoryPressureLevel
 ```
 
 **描述**
@@ -325,14 +304,12 @@ PhonePC/2in1TabletWearable
 | JSVM\_MEMORY\_PRESSURE\_LEVEL\_NONE | 无压力。 |
 | JSVM\_MEMORY\_PRESSURE\_LEVEL\_MODERATE | 中等压力。 |
 | JSVM\_MEMORY\_PRESSURE\_LEVEL\_CRITICAL | 临界压力。 |
-| JSVM\_MEMORY\_PRESSURE\_LEVEL\_LOW\_MEMORY | 通知系统内存不足。  警告：这对垃圾回收性能有很强的负面影响。  建议：使用其他值来影响垃圾回收计划。  **起始版本：** 22 |
+| JSVM\_MEMORY\_PRESSURE\_LEVEL\_LOW\_MEMORY | 通知系统内存不足，立即触发垃圾回收。  **起始版本：** 22 |
 
 ### JSVM\_CompileMode
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_CompileMode
+```c
+enum JSVM_CompileMode
 ```
 
 **描述**
@@ -351,10 +328,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_CompileOptionId
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_CompileOptionId
+```c
+enum JSVM_CompileOptionId
 ```
 
 **描述**
@@ -370,13 +345,13 @@ JSVM\_CompileOptions 中的 id 对应类型，每个值有对应的 content 类�
 | JSVM\_COMPILE\_SCRIPT\_ORIGIN | JSVM脚本来源。 |
 | JSVM\_COMPILE\_COMPILE\_PROFILE | JSVM编译依赖。 |
 | JSVM\_COMPILE\_ENABLE\_SOURCE\_MAP | JSVM的 Source Map 的使能情况。 |
+| JSVM\_COMPILE\_BACKGROUND\_DESERIALIZE\_RESULT | JSVM脚本的后台反序列化结果。  **起始版本：** 24 |
+| JSVM\_COMPILE\_CODE\_CACHE\_REJECTED | JSVM字节码缓存是否被拒绝。  **起始版本：** 24 |
 
 ### JSVM\_RegExpFlags
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_RegExpFlags
+```c
+enum JSVM_RegExpFlags
 ```
 
 **描述**
@@ -400,10 +375,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_InitializedFlag
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_InitializedFlag
+```c
+enum JSVM_InitializedFlag
 ```
 
 **描述**
@@ -419,10 +392,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_WasmOptLevel
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_WasmOptLevel
+```c
+enum JSVM_WasmOptLevel
 ```
 
 **描述**
@@ -438,10 +409,8 @@ WebAssembly 函数优化等级。
 
 ### JSVM\_CacheType
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_CacheType
+```c
+enum JSVM_CacheType
 ```
 
 **描述**
@@ -452,15 +421,13 @@ PhonePC/2in1TabletWearable
 
 | 枚举项 | 描述 |
 | --- | --- |
-| JSVM\_CACHE\_TYPE\_JS | JS 缓存, 由接口 OH\_JSVM\_CreateCodeCache 生成。 |
-| JSVM\_CACHE\_TYPE\_WASM | WebAssembly 缓存, 由接口 OH\_JSVM\_CreateWasmCache 生成。 |
+| JSVM\_CACHE\_TYPE\_JS | JS 缓存，由接口 OH\_JSVM\_CreateCodeCache 生成。 |
+| JSVM\_CACHE\_TYPE\_WASM | WebAssembly 缓存，由接口 OH\_JSVM\_CreateWasmCache 生成。 |
 
 ### JSVM\_MicrotaskPolicy
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_MicrotaskPolicy
+```c
+enum JSVM_MicrotaskPolicy
 ```
 
 **描述**
@@ -476,10 +443,8 @@ JSVM 微任务执行策略。
 
 ### JSVM\_TraceCategory
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_TraceCategory
+```c
+enum JSVM_TraceCategory
 ```
 
 **描述**
@@ -490,20 +455,18 @@ JSVM 内部 Trace 事件的类别。
 
 | 枚举项 | 描述 |
 | --- | --- |
-| JSVM\_TRACE\_VM | 采集 JSVM 主要接口调用, 例如执行 js 脚本。 |
-| JSVM\_TRACE\_COMPILE | 采集编译相关的接口调用, 例如后台编译。 |
-| JSVM\_TRACE\_EXECUTE | 采集与运行状态相关的接口调用, 例如中断与微任务。 |
+| JSVM\_TRACE\_VM | 采集 JSVM 主要接口调用，例如执行 js 脚本。 |
+| JSVM\_TRACE\_COMPILE | 采集编译相关的接口调用，例如后台编译。 |
+| JSVM\_TRACE\_EXECUTE | 采集与运行状态相关的接口调用，例如中断与微任务。 |
 | JSVM\_TRACE\_RUNTIME | 采集外部函数调用相关信息。 |
 | JSVM\_TRACE\_STACK\_TRACE | 采集 JSVM 中堆栈相关信息。 |
-| JSVM\_TRACE\_WASM | 采集主要的 WASM 相关接口调用, 例如编译与实例化 WASM 模块。 |
+| JSVM\_TRACE\_WASM | 采集主要的 WASM 相关接口调用，例如编译与实例化 WASM 模块。 |
 | JSVM\_TRACE\_WASM\_DETAILED | 采集更多更细节的 WASM 相关接口调用，例如后台编译、跳板编译。 |
 
 ### JSVM\_CBTriggerTimeForGC
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_CBTriggerTimeForGC
+```c
+enum JSVM_CBTriggerTimeForGC
 ```
 
 **描述**
@@ -519,10 +482,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_GCType
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_GCType
+```c
+enum JSVM_GCType
 ```
 
 **描述**
@@ -542,10 +503,8 @@ GC类型。
 
 ### JSVM\_GCCallbackFlags
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_GCCallbackFlags
+```c
+enum JSVM_GCCallbackFlags
 ```
 
 **描述**
@@ -566,10 +525,8 @@ GC回调函数标记。
 
 ### JSVM\_PromiseRejectEvent
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_PromiseRejectEvent
+```c
+enum JSVM_PromiseRejectEvent
 ```
 
 **描述**
@@ -588,10 +545,8 @@ promise-reject事件。
 
 ### JSVM\_MessageErrorLevel
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_MessageErrorLevel
+```c
+enum JSVM_MessageErrorLevel
 ```
 
 **描述**
@@ -611,10 +566,8 @@ message的报错级别。
 
 ### JSVM\_DefineClassOptionsId
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_DefineClassOptionsId
+```c
+enum JSVM_DefineClassOptionsId
 ```
 
 **描述**
@@ -631,10 +584,8 @@ PhonePC/2in1TabletWearable
 
 ### JSVM\_DebugOption
 
-PhonePC/2in1TabletWearable
-
-```
-1. enum JSVM_DebugOption
+```c
+enum JSVM_DebugOption
 ```
 
 **描述**
@@ -649,14 +600,10 @@ PhonePC/2in1TabletWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletWearable
-
 ### JSVM\_Finalize()
 
-PhonePC/2in1TabletWearable
-
-```
-1. typedef void (JSVM_CDECL* JSVM_Finalize)(JSVM_Env env,void* finalizeData,void* finalizeHint)
+```c
+typedef void (JSVM_CDECL* JSVM_Finalize)(JSVM_Env env,void* finalizeData,void* finalizeHint)
 ```
 
 **描述**
@@ -665,17 +612,38 @@ PhonePC/2in1TabletWearable
 
 **起始版本：** 11
 
-### JSVM\_OutputStream()
+### JSVM\_FinalizeArrayBuffer()
 
-PhonePC/2in1TabletWearable
-
-```
-1. typedef bool (JSVM_CDECL* JSVM_OutputStream)(const char* data,int size,void* streamData)
+```c
+#ifdef JSVM_EXPERIMENTAL
+typedef void(JSVM_CDECL* JSVM_FinalizeArrayBuffer)(JSVM_Env env,void* finalizeData,void* finalizeHint,bool copied);
+#endif // JSVM_EXPERIMENTAL
 ```
 
 **描述**
 
-ASCII输出流回调的函数指针类型。参数data是指输出的数据指针。参数size是指输出的数据大小。空数据指针指示流的结尾。参数streamData是指与回调一起传递给API函数的指针，该API函数向输出流生成数据。
+**注意** 
+
+此接口是实验性接口，需定义JSVM\_EXPERIMENTAL宏后方可使用。
+
+函数指针类型，在调用[OH\_JSVM\_CreateArrayBufferFromExternalMemory](capi-jsvm-h.md#oh_jsvm_createarraybufferfromexternalmemory)接口时，可传入该类型的函数调用。回调函数将会在关联的ArrayBuffer对象被回收时被调用，用以执行native的清理动作。使用JSVM\_FinalizeArrayBuffer请遵循以下规则：
+
+* 由于JSVM\_FinalizeArrayBuffer回调函数的调用时机具有不确定性（可能是GC期间，也可能是虚拟机销毁期间等），回调时JSVM环境可能已经销毁，因此JSVM\_FinalizeArrayBuffer的env参数始终是NULL。
+* 回调函数仅做资源释放，不要执行复杂逻辑。回调函数中不能调用其他JSVM API。
+* 回调函数可能在非JSVM主线程上调用，如果回调需要访问共享状态，必须使用原子操作或锁进行同步。
+* 根据copied参数决定内存的释放策略，详见[使用JSVM-API接口从外部内存创建ArrayBuffer](../harmonyos-guides/use-jsvm-about-external-arraybuffer.md)。
+
+**起始版本：** 26.0.0
+
+### JSVM\_OutputStream()
+
+```c
+typedef bool (JSVM_CDECL* JSVM_OutputStream)(const char* data,int size,void* streamData)
+```
+
+**描述**
+
+输出流回调的函数指针类型。参数data是指输出的数据指针。参数size是指输出的数据大小。空数据指针指示流的结尾。参数streamData是指与回调一起传递给API函数的指针，该API函数向输出流生成数据。
 
 **起始版本：** 12
 
@@ -687,10 +655,8 @@ ASCII输出流回调的函数指针类型。参数data是指输出的数据指�
 
 ### JSVM\_HandlerForGC()
 
-PhonePC/2in1TabletWearable
-
-```
-1. typedef void (JSVM_CDECL* JSVM_HandlerForGC)(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void* data)
+```c
+typedef void (JSVM_CDECL* JSVM_HandlerForGC)(JSVM_VM vm, JSVM_GCType gcType, JSVM_GCCallbackFlags flags, void* data)
 ```
 
 **描述**
@@ -699,12 +665,22 @@ GC回调的函数指针类型。
 
 **起始版本：** 18
 
+### JSVM\_HandlerForHeapThreshold()
+
+```c
+typedef void(JSVM_CDECL* JSVM_HandlerForHeapThreshold)(JSVM_VM vm, uint64_t threshold, void* data)
+```
+
+**描述**
+
+堆内存阈值回调的函数指针类型。
+
+**起始版本：** 26.0.0
+
 ### JSVM\_HandlerForOOMError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. typedef void (JSVM_CDECL* JSVM_HandlerForOOMError)(const char* location,const char* detail,bool isHeapOOM)
+```c
+typedef void (JSVM_CDECL* JSVM_HandlerForOOMError)(const char* location,const char* detail,bool isHeapOOM)
 ```
 
 **描述**
@@ -715,10 +691,8 @@ OOM-Error回调的函数指针类型。
 
 ### JSVM\_HandlerForFatalError()
 
-PhonePC/2in1TabletWearable
-
-```
-1. typedef void (JSVM_CDECL* JSVM_HandlerForFatalError)(const char* location,const char* message)
+```c
+typedef void (JSVM_CDECL* JSVM_HandlerForFatalError)(const char* location,const char* message)
 ```
 
 **描述**
@@ -729,10 +703,8 @@ Fatal-Error回调的函数指针类型。
 
 ### JSVM\_HandlerForPromiseReject()
 
-PhonePC/2in1TabletWearable
-
-```
-1. typedef void (JSVM_CDECL* JSVM_HandlerForPromiseReject)(JSVM_Env env, JSVM_PromiseRejectEvent rejectEvent, JSVM_Value rejectInfo)
+```c
+typedef void (JSVM_CDECL* JSVM_HandlerForPromiseReject)(JSVM_Env env, JSVM_PromiseRejectEvent rejectEvent, JSVM_Value rejectInfo)
 ```
 
 **描述**

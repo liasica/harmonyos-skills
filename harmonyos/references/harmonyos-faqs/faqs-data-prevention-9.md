@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-data-preve
 title: HarmonyOS应用的安全性如何？是否存在被逆向分析的风险
 breadcrumb: FAQ > 系统开发 > 安全 > 数据安全存储（Data Prevention） > HarmonyOS应用的安全性如何？是否存在被逆向分析的风险
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:27:55+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:56+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:47ea5fdc3dded94a6f214e01e2df7d468e88ea9a6f13eee4be931d87c7c65d4f
 ---
 

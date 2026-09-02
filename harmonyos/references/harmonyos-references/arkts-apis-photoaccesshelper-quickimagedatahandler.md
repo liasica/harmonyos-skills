@@ -3,29 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (QuickImageDataHandler)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Interface (QuickImageDataHandler)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:16+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:9ac5b7136f3f95ca0d0ebb6844205ca63bbd07aebac86f5307f3474371d00851
+scraped_at: 2026-09-02T15:02:38+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d449be4680f173ba77ccc3b89e6302264c61cec168f3f6b868419224daed3150
 ---
 
 媒体资源处理器，应用在onDataPrepared方法中可自定义媒体资源处理逻辑。
 
-说明
+**说明** 
 
 * 本模块首批接口从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本Interface首批接口从API version 13开始支持。
 
 ## 导入模块
 
-PhonePC/2in1TabletTV
-
-```
-1. import { photoAccessHelper } from '@kit.MediaLibraryKit';
+```ts
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 ```
 
 ## onDataPrepared13+
-
-PhonePC/2in1TabletTV
 
 onDataPrepared(data: T, imageSource: image.ImageSource, map: Map<string, string>): void
 
@@ -49,12 +45,12 @@ map支持返回的信息：
 
 **示例：**
 
-```
-1. import { image } from '@kit.ImageKit';
+```ts
+import { image } from '@kit.ImageKit';
 
-3. class MediaHandler implements photoAccessHelper.QuickImageDataHandler<image.Picture> {
-4. onDataPrepared(data: image.Picture, imageSource: image.ImageSource, map: Map<string, string>) {
-5. console.info('on image data prepared');
-6. }
-7. }
+class MediaHandler implements photoAccessHelper.QuickImageDataHandler<image.Picture> {
+  onDataPrepared(data: image.Picture, imageSource: image.ImageSource, map: Map<string, string>) {
+    console.info('on image data prepared');
+  }
+}
 ```

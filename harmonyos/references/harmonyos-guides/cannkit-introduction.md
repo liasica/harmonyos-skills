@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-intro
 title: CANN Kit简介
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > CANN Kit简介
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:14+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f763b712df2a57e1df133ae7f5ea693d230bc72956a115149acaa88ff5e2a6b7
+scraped_at: 2026-09-02T15:00:04+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:0f69fb95e88fb54b7853e9768b149deac7979785ffc7f821c0df651114bcf0d3
 ---
 
-CANN（Compute Architecture for Neural Networks）是华为面向AI推出的端云一致的异构计算架构。在HarmonyOS设备上，CANN Kit面向Kirin芯片平台为各种人工智能模型和算法提供统一的接入和运行环境。开发者的应用程序使用CANN Kit的API和开发者数据，在设备端实现智能推理、模型训练以及模型优化等操作，充分发挥设备的本地智能处理能力。
+CANN（Compute Architecture for Neural Networks）是华为面向AI推出的端云一致的异构计算架构。在HarmonyOS设备上，CANN Kit（CANN异构计算框架服务）面向Kirin芯片平台为各种人工智能模型和算法提供统一的接入和运行环境。开发者的应用程序使用CANN Kit的API和开发者数据，在设备端实现智能推理以及模型优化等操作，充分发挥设备的本地智能处理能力。
 
 模型是将人工智能算法应用于大量训练数据后得到的结果。开发者可以使用模型依据新的输入数据进行智能推理和预测。模型能够完成许多用常规代码实现起来难度较大或效率较低的复杂任务。例如，你可以训练模型对图像进行语义分割，识别图像中的不同物体类别并精确划分其区域或者对语音数据进行处理，实现语音唤醒、语音识别以及语音合成等功能。
 
@@ -71,17 +71,19 @@ AscendC 是CANN Kit针对算子开发场景推出的编程语言，支持C和C++
 
 ## 约束与限制
 
-本Kit仅适用于带有Kirin NPU的Phone、Tablet、PC/2in1、TV设备。从5.1.0(18)版本开始，新增支持TV设备。
+本Kit仅适用于带有Kirin NPU的Phone、Tablet、PC/2in1、TV设备。
+
+从5.1.1(19)版本开始，新增支持TV设备。
 
 ## 模拟器支持情况
 
-本kit暂不支持模拟器。
+本Kit暂不支持模拟器。
 
 ## 与相关Kit的关系
 
 HarmonyOS AI开放层次由上层到底层分别为：
 
-* MindSpore Lite Kit：HarmonyOS内置的轻量化AI引擎，提供统一推理接口和多后端硬件加速能力，使能手机、PC/2in1、TV等全场景智能应用。
+* MindSpore Lite Kit：HarmonyOS内置的轻量化AI引擎，提供统一推理接口和多后端硬件加速能力，使能Phone、PC/2in1、TV等全场景智能应用。
 * Neural Network Runtime Kit：面向AI领域的跨芯片推理计算运行时，作为中间桥梁连通上层AI推理框架和底层加速芯片，实现AI模型的跨芯片推理计算。
 * CANN Kit：海思AI硬件统一开放计算架构，支持AscendC NPU自定义编程、端云协同复用，擅长偏重载AI计算、需深度优化性能功耗场景。
 

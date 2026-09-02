@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: HiDebug错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码 > HiDebug错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:29+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:775e3f3deecb2a49e84e52e7faf45e9ea32e626224f2598859ff4c1c77c4242f
+scraped_at: 2026-09-02T15:02:17+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e72c75f1522b501455958b599c18ca6eefe00c3f1f6a7c2a5e0ec101ad3eab12
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 11400101 系统服务获取失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -34,13 +32,11 @@ serviceId参数无效，或对应的服务未启动。
 
 ## 11400104 远程服务异常
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The interface call failed due to a remote exception.
 
-说明
+**说明** 
 
 错误信息请以接口实际返回内容为准。
 
@@ -56,9 +52,26 @@ The interface call failed due to a remote exception.
 
 建议重启设备后重试。若重试后依然失败，请[导出日志信息](../harmonyos-guides/ide-setup-hilog.md#section2114542680)请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
-## 11400107 dump子进程fork失败
+## 11400106 配额超限
 
-PhonePC/2in1TabletTVWearable
+**错误信息**
+
+The number of available invocations for the interface is insufficient. Please wait until the number of available invocations for the interface is reset.
+
+**错误描述**
+
+接口调用配额已超限，无法继续执行操作。
+
+**可能原因**
+
+1. 进程调用次数超出配额（1次/天）。
+2. 整机调用次数超出配额（5次/周）。
+
+**处理步骤**
+
+等待进程或整机的调用配额刷新或者在开发者模式下调用接口。
+
+## 11400107 dump子进程fork失败
 
 **错误信息**
 
@@ -78,8 +91,6 @@ dump子进程fork失败。
 
 ## 11400108 等待dump子进程结束失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to wait for the child process to finish.
@@ -97,8 +108,6 @@ Failed to wait for the child process to finish.
 建议开发者重试。若重试后依然失败，请通过[日志分析](../harmonyos-guides/ide-setup-hilog.md)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
 ## 11400109 等待dump子进程超时
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -118,8 +127,6 @@ dump过程耗时长，建议检查系统负载。
 
 ## 11400110 磁盘空间不足
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to create dump file.
@@ -137,8 +144,6 @@ Failed to create dump file.
 释放磁盘空间，确保空闲空间大于30GB。
 
 ## 11400111 Napi接口调用失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -158,8 +163,6 @@ Napi接口调用时出现异常。
 
 ## 11400112 重复dump采集
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Repeated data dump.
@@ -178,8 +181,6 @@ Repeated data dump.
 
 ## 11400113 创建dump文件失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to create dump file.
@@ -190,17 +191,14 @@ Failed to create dump file.
 
 **可能原因**
 
-1、进程目录下存在同名文件。
-
-2、系统资源不足。
+1. 进程目录下存在同名文件。
+2. 系统资源不足。
 
 **处理步骤**
 
 建议开发者重试。若重试后依然失败，请通过[日志分析](../harmonyos-guides/ide-setup-hilog.md)过滤error级别日志辅助问题定位。若依然无法解决，请通过“华为开发者联盟官网”->“支持”，[在线提单](https://developer.huawei.com/consumer/cn/support/)方式获取支持。
 
 ## 11400114 使能GWP-ASan失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spat
 title: SpatialRecon
 breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 模块 > SpatialRecon
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:51+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7ec822b4995f972f9a5151acd540982f16fb3b3202ef50773a33c3b74541426f
+scraped_at: 2026-09-02T14:53:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:b8c3fccd5d3dae96b18cd0d5170f5886d79a02b4d8e37c316f4daed4ff187e3a
 ---
 
 ## 概述
@@ -18,4 +18,4 @@ content_hash: sha256:7ec822b4995f972f9a5151acd540982f16fb3b3202ef50773a33c3b7454
 
 | 名称 | 描述 |
 | --- | --- |
-| [spatial\_recon\_interface.h](capi-spatial-recon-interface-h.md) | 3D空间重建任务设计模块，通过处理多视角图像输入来生成立体场景。 |
+| [spatial\_recon\_interface.h](capi-spatial-recon-interface-h.md) | 3D空间重建任务设计模块，通过处理多视角图像输入来生成三维场景。 |

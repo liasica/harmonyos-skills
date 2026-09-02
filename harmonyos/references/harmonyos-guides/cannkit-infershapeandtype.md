@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-infer
 title: InferShapeAndType
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > InferShapeAndType
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:39+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ed885e96657b0d0afa2edae9fd2797324406af00ed97f5e62d09bb7ac7d92f8a
+content_hash: sha256:e1c3663820655804e52a4e3d3e81b8919b8d5a1adeec6b4d12d806b327a5e9f4
 ---
 
 ## 函数功能
@@ -16,8 +16,8 @@ content_hash: sha256:ed885e96657b0d0afa2edae9fd2797324406af00ed97f5e62d09bb7ac7d
 
 ## 函数原型
 
-```
-1. graphStatus InferShapeAndType();
+```cpp
+graphStatus InferShapeAndType();
 ```
 
 ## 参数说明

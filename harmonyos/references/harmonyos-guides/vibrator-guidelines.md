@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guid
 title: 振动开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:33:41+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b2b5190437d1446e5ceb60f7cf4a3158458c120c926f6174a836735530504b5f
+scraped_at: 2026-09-02T14:50:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:bc1bf218882f0f8f96b354548a3dcb649ff765c3b91d0359a4ae79144546f3e2
 ---
 
 ## 场景介绍
@@ -45,67 +45,67 @@ content_hash: sha256:b2b5190437d1446e5ceb60f7cf4a3158458c120c926f6174a8367355305
 
 自定义振动配置文件为Json格式，在形式上如下所示：
 
-```
-1. {
-2. "MetaData": {
-3. "Create": "2023-01-09",
-4. "Description": "a haptic case",
-5. "Version": 1.0,
-6. "ChannelNumber": 1
-7. },
-8. "Channels": [
-9. {
-10. "Parameters": {
-11. "Index": 0
-12. },
-13. "Pattern": [
-14. {
-15. "Event": {
-16. "Type": "transient",
-17. "StartTime": 0,
-18. "Parameters": {
-19. "Frequency": 31,
-20. "Intensity": 100
-21. }
-22. }
-23. },
-24. {
-25. "Event": {
-26. "Type": "continuous",
-27. "StartTime": 40,
-28. "Duration": 54,
-29. "Parameters": {
-30. "Frequency": 30,
-31. "Intensity": 38,
-32. "Curve": [
-33. {
-34. "Time": 0,
-35. "Frequency": 0,
-36. "Intensity": 0
-37. },
-38. {
-39. "Time": 1,
-40. "Frequency": 15,
-41. "Intensity": 0.5
-42. },
-43. {
-44. "Time": 40,
-45. "Frequency": -8,
-46. "Intensity": 1.0
-47. },
-48. {
-49. "Time": 54,
-50. "Frequency": 0,
-51. "Intensity": 0
-52. }
-53. ]
-54. }
-55. }
-56. }
-57. ]
-58. }
-59. ]
-60. }
+```json
+{
+    "MetaData": {
+        "Create": "2023-01-09",
+        "Description": "a haptic case",
+        "Version": 1.0,
+        "ChannelNumber": 1
+    },
+    "Channels": [
+        {
+            "Parameters": {
+                "Index": 0
+            },
+            "Pattern": [
+                {
+                    "Event": {
+                        "Type": "transient",
+                        "StartTime": 0,
+                        "Parameters": {
+                            "Frequency": 31,
+                            "Intensity": 100
+                        }
+                    }
+                },
+                {
+                    "Event": {
+                        "Type": "continuous",
+                        "StartTime": 40,
+                        "Duration": 54,
+                        "Parameters": {
+                            "Frequency": 30,
+                            "Intensity": 38,
+                            "Curve": [
+                                {
+                                    "Time": 0,
+                                    "Frequency": 0,
+                                    "Intensity": 0
+                                },
+                                {
+                                    "Time": 1,
+                                    "Frequency": 15,
+                                    "Intensity": 0.5
+                                },
+                                {
+                                    "Time": 40,
+                                    "Frequency": -8,
+                                    "Intensity": 1.0
+                                },
+                                {
+                                    "Time": 54,
+                                    "Frequency": 0,
+                                    "Intensity": 0
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
 ```
 
 JSON文件共包含3个属性。
@@ -160,248 +160,248 @@ JSON文件共包含3个属性。
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/rvV9tGW8TfyB2nswxiDw9g/zh-cn_image_0000002558764982.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Fn9M7kJHQw2LKg1O8foroQ/zh-cn_image_0000002736433567.png)
 2. 配置权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
-   ```
-   1. "requestPermissions": [
-   2. {
-   3. "name": "ohos.permission.VIBRATE"
-   4. }
-   5. ],
+   ```json5
+   "requestPermissions": [
+     {
+       "name": "ohos.permission.VIBRATE"
+     }
+   ],
    ```
 3. 导入模块。
 
-   ```
-   1. import { vibrator } from '@kit.SensorServiceKit';
-   2. import { resourceManager } from '@kit.LocalizationKit';
-   3. import { BusinessError } from '@kit.BasicServicesKit';
-   4. import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```typescript
+   import { vibrator } from '@kit.SensorServiceKit';
+   import { resourceManager } from '@kit.LocalizationKit';
+   import { BusinessError } from '@kit.BasicServicesKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 4. 定义常量。
 
-   ```
-   1. const fileName: string = 'vibrator.json';
-   2. let TAG = 'vibrator:';
+   ```typescript
+   const fileName: string = 'vibrator.json';
+   let TAG = 'vibrator:';
    ```
 5. 振动器查询。
 
    **情形一** 查询所有马达信息：
 
-   ```
-   1. try {
-   2. const vibratorInfoList: vibrator.VibratorInfo[] = vibrator.getVibratorInfoSync();
-   3. console.info(`vibratorInfoList: ${JSON.stringify(vibratorInfoList)}`);
-   4. // ...
-   5. } catch (error) {
-   6. let e: BusinessError = error as BusinessError;
-   7. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   8. }
+   ```typescript
+   try {
+     const vibratorInfoList: vibrator.VibratorInfo[] = vibrator.getVibratorInfoSync();
+     console.info(`vibratorInfoList: ${JSON.stringify(vibratorInfoList)}`);
+     // ...
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 
    **情形二** 查询指定设备的一个或多个马达信息：
 
-   ```
-   1. try {
-   2. const vibratorParam: vibrator.VibratorInfoParam = {
-   3. deviceId: -1    // deviceId 需要是查询出来真实存在的设备
-   4. }
-   5. const vibratorInfoList: vibrator.VibratorInfo[] = vibrator.getVibratorInfoSync(vibratorParam);
-   6. console.info(`vibratorInfoList: ${JSON.stringify(vibratorInfoList)}`);
-   7. // ...
-   8. } catch (error) {
-   9. let e: BusinessError = error as BusinessError;
-   10. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   11. }
+   ```typescript
+   try {
+     const vibratorParam: vibrator.VibratorInfoParam = {
+       deviceId: -1    // deviceId 需要是查询出来真实存在的设备
+     }
+     const vibratorInfoList: vibrator.VibratorInfo[] = vibrator.getVibratorInfoSync(vibratorParam);
+     console.info(`vibratorInfoList: ${JSON.stringify(vibratorInfoList)}`);
+     // ...
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 6. 根据指定振动效果和振动属性触发马达振动。
 
    **情形一** 按照指定持续时间触发马达振动：
 
-   ```
-   1. try {
-   2. // 触发马达振动
-   3. vibrator.startVibration({
-   4. type: 'time',
-   5. duration: 1000,
-   6. }, {
-   7. id: 0,
-   8. usage: 'alarm'
-   9. }, (error: BusinessError) => {
-   10. if (error) {
-   11. console.error(`Failed to start vibration. Code: ${error.code}, message: ${error.message}`);
-   12. return;
-   13. }
-   14. console.info('Succeed in starting vibration');
-   15. });
-   16. } catch (err) {
-   17. let e: BusinessError = err as BusinessError;
-   18. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   19. }
+   ```typescript
+   try {
+     // 触发马达振动
+     vibrator.startVibration({
+       type: 'time',
+       duration: 1000,
+     }, {
+       id: 0,
+       usage: 'alarm'
+     }, (error: BusinessError) => {
+       if (error) {
+         console.error(`Failed to start vibration. Code: ${error.code}, message: ${error.message}`);
+         return;
+       }
+       console.info('Succeed in starting vibration');
+     });
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 
    **情形二** 按照预置振动效果触发马达振动，可先查询振动效果是否被支持，再调用振动接口：
 
-   ```
-   1. try {
-   2. vibrator.isSupportEffect(this.realEffectId, (err: BusinessError, state: boolean) => {
-   3. if (err) {
-   4. console.error(`Failed to query effect. Code: ${err.code}, message: ${err.message}`);
-   5. return;
-   6. }
-   7. console.info('Succeed in querying effect');
-   8. if (state) {
-   9. try {
-   10. // 触发马达振动
-   11. vibrator.startVibration({
-   12. type: 'preset',
-   13. effectId: this.realEffectId,
-   14. count: 1,
-   15. intensity: 50,
-   16. }, {
-   17. usage: 'unknown'
-   18. }, (error: BusinessError) => {
-   19. if (error) {
-   20. console.error(`Failed to start vibration. Code: ${error.code}, message: ${error.message}`);
-   21. } else {
-   22. console.info('Succeed in starting vibration');
-   23. }
-   24. });
-   25. } catch (error) {
-   26. let e: BusinessError = error as BusinessError;
-   27. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   28. }
-   29. }
-   30. })
-   31. } catch (error) {
-   32. let e: BusinessError = error as BusinessError;
-   33. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   34. }
+   ```typescript
+   try {
+     vibrator.isSupportEffect(this.realEffectId, (err: BusinessError, state: boolean) => {
+       if (err) {
+         console.error(`Failed to query effect. Code: ${err.code}, message: ${err.message}`);
+         return;
+       }
+       console.info('Succeed in querying effect');
+       if (state) {
+         try {
+           // 触发马达振动
+           vibrator.startVibration({
+             type: 'preset',
+             effectId: this.realEffectId,
+             count: 1,
+             intensity: 50,
+           }, {
+             usage: 'unknown'
+           }, (error: BusinessError) => {
+             if (error) {
+               console.error(`Failed to start vibration. Code: ${error.code}, message: ${error.message}`);
+             } else {
+               console.info('Succeed in starting vibration');
+             }
+           });
+         } catch (error) {
+           let e: BusinessError = error as BusinessError;
+           console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+         }
+       }
+     })
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 
    **情形三** 按照自定义振动配置文件触发马达振动：
 
-   ```
-   1. // 获取文件资源描述符
-   2. let rawFd: resourceManager.RawFileDescriptor | undefined = this.uiContext.getHostContext()?.resourceManager.getRawFdSync(fileName);
-   3. if (rawFd != undefined) {
-   4. // 触发马达振动
-   5. try {
-   6. vibrator.startVibration({
-   7. type: "file",
-   8. hapticFd: { fd: rawFd.fd, offset: rawFd.offset, length: rawFd.length }
-   9. }, {
-   10. id: 0,
-   11. usage: 'alarm' // 根据实际选择类型归属不同的开关管控
-   12. }, (error: BusinessError) => {
-   13. if (error) {
-   14. console.error(`Failed to start vibration. Code: ${error.code}, message: ${error.message}`);
-   15. return;
-   16. }
-   17. console.info('Succeed in starting vibration');
-   18. });
-   19. } catch (err) {
-   20. let e: BusinessError = err as BusinessError;
-   21. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   22. } finally {
-   23. vibrator.stopVibration();
-   24. this.uiContext.getHostContext()?.resourceManager.closeRawFdSync(fileName);
-   25. }
-   26. }
+   ```typescript
+   // 获取文件资源描述符
+   let rawFd: resourceManager.RawFileDescriptor | undefined = this.uiContext.getHostContext()?.resourceManager.getRawFdSync(fileName);
+   if (rawFd != undefined) {
+     // 触发马达振动
+     try {
+       vibrator.startVibration({
+         type: "file",
+         hapticFd: { fd: rawFd.fd, offset: rawFd.offset, length: rawFd.length }
+       }, {
+         id: 0,
+         usage: 'alarm' // 根据实际选择类型归属不同的开关管控
+       }, (error: BusinessError) => {
+         if (error) {
+           console.error(`Failed to start vibration. Code: ${error.code}, message: ${error.message}`);
+           return;
+         }
+         console.info('Succeed in starting vibration');
+       });
+     } catch (err) {
+       let e: BusinessError = err as BusinessError;
+       console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+     } finally {
+       vibrator.stopVibration();
+       this.uiContext.getHostContext()?.resourceManager.closeRawFdSync(fileName);
+     }
+   }
    ```
 
    **情形四** Pattern类型的马达振动：
 
    添加短振事件的方式获取Pattern，并触发振动：
 
-   ```
-   1. let builder: vibrator.VibratorPatternBuilder = new vibrator.VibratorPatternBuilder();
-   2. try {
-   3. let param: vibrator.TransientParam = {
-   4. intensity: 80,
-   5. frequency: 70,
-   6. index: 0
-   7. }
-   8. builder.addTransientEvent(0, param);
-   9. console.info(`addTransientEvent builder is ${builder.build()}`);
-   10. } catch (error) {
-   11. let e: BusinessError = error as BusinessError;
-   12. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   13. }
-   14. try {
-   15. vibrator.startVibration({
-   16. type: "pattern",
-   17. pattern: builder.build()
-   18. }, {
-   19. id: 1,
-   20. deviceId: -1,
-   21. // 根据实际选择类型归属不同的开关管控
-   22. usage: "alarm"
-   23. }, (error: BusinessError) => {
-   24. if (error) {
-   25. let e: BusinessError = error as BusinessError;
-   26. console.error(`Vibrate fail. Code: ${e.code}, message: ${e.message}`);
-   27. } else {
-   28. console.info(`vibrate success`);
-   29. }
-   30. });
-   31. } catch (error) {
-   32. let e: BusinessError = error as BusinessError;
-   33. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   34. }
+   ```typescript
+   let builder: vibrator.VibratorPatternBuilder = new vibrator.VibratorPatternBuilder();
+   try {
+     let param: vibrator.TransientParam = {
+       intensity: 80,
+       frequency: 70,
+       index: 0
+     }
+     builder.addTransientEvent(0, param);
+     console.info(`addTransientEvent builder is ${builder.build()}`);
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
+   try {
+     vibrator.startVibration({
+       type: "pattern",
+       pattern: builder.build()
+     }, {
+       id: 1,
+       deviceId: -1,
+       // 根据实际选择类型归属不同的开关管控
+       usage: "alarm"
+     }, (error: BusinessError) => {
+       if (error) {
+         let e: BusinessError = error as BusinessError;
+         console.error(`Vibrate fail. Code: ${e.code}, message: ${e.message}`);
+       } else {
+         console.info(`vibrate success`);
+       }
+     });
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 
    添加长振事件的方式获取Pattern，并触发振动：
 
-   ```
-   1. let builder: vibrator.VibratorPatternBuilder = new vibrator.VibratorPatternBuilder();
-   2. try {
-   3. // VibratorCurvePoint参数最少设置4个，最大设置16个
-   4. let pointsMe: vibrator.VibratorCurvePoint[] = [
-   5. { time: 0, intensity: 0, frequency: -7 },
-   6. { time: 42, intensity: 1, frequency: -6 },
-   7. { time: 128, intensity: 0.94, frequency: -4 },
-   8. { time: 217, intensity: 0.63, frequency: -14 },
-   9. { time: 763, intensity: 0.48, frequency: -14 },
-   10. { time: 1125, intensity: 0.53, frequency: -10 },
-   11. { time: 1503, intensity: 0.42, frequency: -14 },
-   12. { time: 1858, intensity: 0.39, frequency: -14 },
-   13. { time: 2295, intensity: 0.34, frequency: -17 },
-   14. { time: 2448, intensity: 0.21, frequency: -14 },
-   15. { time: 2468, intensity: 0, frequency: -21 }
-   16. ]
-   17. let param: vibrator.ContinuousParam = {
-   18. intensity: 97,
-   19. frequency: 34,
-   20. points: pointsMe,
-   21. index: 0
-   22. }
-   23. builder.addContinuousEvent(0, 2468, param);
-   24. console.info(`addContinuousEvent builder is ${builder.build()}`);
-   25. } catch (error) {
-   26. let e: BusinessError = error as BusinessError;
-   27. console.error(`Exception. Code ${e.code}`);
-   28. }
-   29. try {
-   30. vibrator.startVibration({
-   31. type: 'pattern',
-   32. pattern: builder.build()
-   33. }, {
-   34. id: 1,
-   35. deviceId: -1,
-   36. usage:"alarm",
-   37. }, (error: BusinessError) => {
-   38. if (error) {
-   39. let e: BusinessError = error as BusinessError;
-   40. console.error(`Vibrate fail. Code: ${e.code}, message: ${e.message}`);
-   41. } else {
-   42. console.info(`vibrate success`);
-   43. }
-   44. });
-   45. } catch (error) {
-   46. let e: BusinessError = error as BusinessError;
-   47. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   48. }
+   ```typescript
+   let builder: vibrator.VibratorPatternBuilder = new vibrator.VibratorPatternBuilder();
+   try {
+     // VibratorCurvePoint参数最少设置4个，最大设置16个
+     let pointsMe: vibrator.VibratorCurvePoint[] = [
+       { time: 0, intensity: 0, frequency: -7 },
+       { time: 42, intensity: 1, frequency: -6 },
+       { time: 128, intensity: 0.94, frequency: -4 },
+       { time: 217, intensity: 0.63, frequency: -14 },
+       { time: 763, intensity: 0.48, frequency: -14 },
+       { time: 1125, intensity: 0.53, frequency: -10 },
+       { time: 1503, intensity: 0.42, frequency: -14 },
+       { time: 1858, intensity: 0.39, frequency: -14 },
+       { time: 2295, intensity: 0.34, frequency: -17 },
+       { time: 2448, intensity: 0.21, frequency: -14 },
+       { time: 2468, intensity: 0, frequency: -21 }
+     ]
+     let param: vibrator.ContinuousParam = {
+       intensity: 97,
+       frequency: 34,
+       points: pointsMe,
+       index: 0
+     }
+     builder.addContinuousEvent(0, 2468, param);
+     console.info(`addContinuousEvent builder is ${builder.build()}`);
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`Exception. Code ${e.code}`);
+   }
+   try {
+     vibrator.startVibration({
+       type: 'pattern',
+       pattern: builder.build()
+     }, {
+       id: 1,
+       deviceId: -1,
+       usage:"alarm",
+     }, (error: BusinessError) => {
+       if (error) {
+         let e: BusinessError = error as BusinessError;
+         console.error(`Vibrate fail. Code: ${e.code}, message: ${e.message}`);
+       } else {
+         console.info(`vibrate success`);
+       }
+     });
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 7. 停止马达的振动。
 
@@ -409,136 +409,136 @@ JSON文件共包含3个属性。
 
    ​停止固定时长振动：
 
-   ```
-   1. try {
-   2. // 按照VIBRATOR_STOP_MODE_TIME模式停止振动
-   3. vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_TIME, (error: BusinessError) => {
-   4. if (error) {
-   5. console.error(`Failed to stop vibration. Code: ${error.code}, message: ${error.message}`);
-   6. return;
-   7. }
-   8. console.info('Succeed in stopping vibration');
-   9. })
-   10. } catch (err) {
-   11. let e: BusinessError = err as BusinessError;
-   12. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   13. }
+   ```typescript
+   try {
+     // 按照VIBRATOR_STOP_MODE_TIME模式停止振动
+     vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_TIME, (error: BusinessError) => {
+       if (error) {
+         console.error(`Failed to stop vibration. Code: ${error.code}, message: ${error.message}`);
+         return;
+       }
+       console.info('Succeed in stopping vibration');
+     })
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 
    ​停止预置振动：
 
-   ```
-   1. try {
-   2. // 按照VIBRATOR_STOP_MODE_PRESET模式停止振动
-   3. vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_PRESET, (error: BusinessError) => {
-   4. if (error) {
-   5. console.error(`Failed to stop vibration. Code: ${error.code}, message: ${error.message}`);
-   6. return;
-   7. }
-   8. console.info('Succeed in stopping vibration');
-   9. })
-   10. } catch (err) {
-   11. let e: BusinessError = err as BusinessError;
-   12. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   13. }
+   ```typescript
+   try {
+     // 按照VIBRATOR_STOP_MODE_PRESET模式停止振动
+     vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_PRESET, (error: BusinessError) => {
+       if (error) {
+         console.error(`Failed to stop vibration. Code: ${error.code}, message: ${error.message}`);
+         return;
+       }
+       console.info('Succeed in stopping vibration');
+     })
+   } catch (err) {
+     let e: BusinessError = err as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 
    **方式二** 停止所有模式的马达振动，包括自定义振动：
 
-   ```
-   1. try {
-   2. // 停止所有模式的马达振动
-   3. vibrator.stopVibration((error: BusinessError) => {
-   4. if (error) {
-   5. console.error(`Failed to stop vibration. Code: ${error.code}, message: ${error.message}`);
-   6. return;
-   7. }
-   8. console.info('Succeed in stopping vibration');
-   9. })
-   10. } catch (error) {
-   11. let e: BusinessError = error as BusinessError;
-   12. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   13. }
+   ```typescript
+   try {
+     // 停止所有模式的马达振动
+     vibrator.stopVibration((error: BusinessError) => {
+       if (error) {
+         console.error(`Failed to stop vibration. Code: ${error.code}, message: ${error.message}`);
+         return;
+       }
+       console.info('Succeed in stopping vibration');
+     })
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 
    **方式三** 停止指定设备的振动：
 
-   ```
-   1. const vibratorInfoParam: vibrator.VibratorInfoParam = {
-   2. deviceId: -1   // deviceId 需要是查询出来真实存在的设备
-   3. }
-   4. try {
-   5. vibrator.stopVibration(vibratorInfoParam).then(() => {
-   6. console.info('Succeed in stopping vibration');
-   7. }, (error: BusinessError) => {
-   8. console.error(`Failed to stop vibration. Code: ${error.code}, message: ${error.message}`);
-   9. });
-   10. } catch (error) {
-   11. let e: BusinessError = error as BusinessError;
-   12. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   13. }
+   ```typescript
+   const vibratorInfoParam: vibrator.VibratorInfoParam = {
+     deviceId: -1   // deviceId 需要是查询出来真实存在的设备
+   }
+   try {
+     vibrator.stopVibration(vibratorInfoParam).then(() => {
+       console.info('Succeed in stopping vibration');
+     }, (error: BusinessError) => {
+       console.error(`Failed to stop vibration. Code: ${error.code}, message: ${error.message}`);
+     });
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 8. 动态马达状态变化监听。
 
    注册监听。
 
-   ```
-   1. // 回调函数
-   2. vibratorStateChangeCallback = (data: vibrator.VibratorStatusEvent) => {
-   3. console.info('vibrator state callback info:', JSON.stringify(data));
-   4. // ...
-   5. }
-   6. // ...
-   7. try {
-   8. // 订阅 vibratorStateChange事件
-   9. vibrator.on('vibratorStateChange', this.vibratorStateChangeCallback);
-   10. } catch (error) {
-   11. let e: BusinessError = error as BusinessError;
-   12. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   13. }
+   ```typescript
+   // 回调函数
+   vibratorStateChangeCallback = (data: vibrator.VibratorStatusEvent) => {
+     console.info('vibrator state callback info:', JSON.stringify(data));
+     // ...
+   }
+   // ...
+               try {
+                 // 订阅 vibratorStateChange事件
+                 vibrator.on('vibratorStateChange', this.vibratorStateChangeCallback);
+               } catch (error) {
+                 let e: BusinessError = error as BusinessError;
+                 console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+               }
    ```
 
    取消监听,取消传入的callback需与注册的一致。
 
-   ```
-   1. // 回调函数
-   2. vibratorStateChangeCallback = (data: vibrator.VibratorStatusEvent) => {
-   3. console.info('vibrator state callback info:', JSON.stringify(data));
-   4. // ...
-   5. }
-   6. // ...
-   7. try {
-   8. // 取消订阅 vibratorStateChange事件
-   9. vibrator.off('vibratorStateChange', this.vibratorStateChangeCallback);
-   10. // 取消订阅所有 vibratorStateChange事件
-   11. // vibrator.off('vibratorStateChange');
-   12. } catch (error) {
-   13. let e: BusinessError = error as BusinessError;
-   14. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   15. }
+   ```typescript
+   // 回调函数
+   vibratorStateChangeCallback = (data: vibrator.VibratorStatusEvent) => {
+     console.info('vibrator state callback info:', JSON.stringify(data));
+     // ...
+   }
+   // ...
+               try {
+                 // 取消订阅 vibratorStateChange事件
+                 vibrator.off('vibratorStateChange', this.vibratorStateChangeCallback);
+                 // 取消订阅所有 vibratorStateChange事件
+                 // vibrator.off('vibratorStateChange');
+               } catch (error) {
+                 let e: BusinessError = error as BusinessError;
+                 console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+               }
    ```
 9. 通过设备ID和马达ID获取预置振动效果信息。
 
-   ```
-   1. try {
-   2. const effectInfo: vibrator.EffectInfo = vibrator.getEffectInfoSync('haptic.clock.timer', { deviceId: -1, vibratorId: 1});
-   3. console.info(`isEffectSupported: ${effectInfo.isEffectSupported}`);
-   4. // ...
-   5. } catch (error) {
-   6. let e: BusinessError = error as BusinessError;
-   7. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-   8. }
+   ```typescript
+   try {
+     const effectInfo: vibrator.EffectInfo = vibrator.getEffectInfoSync('haptic.clock.timer', { deviceId: -1, vibratorId: 1});
+     console.info(`isEffectSupported: ${effectInfo.isEffectSupported}`);
+     // ...
+   } catch (error) {
+     let e: BusinessError = error as BusinessError;
+     console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+   }
    ```
 10. 查询是否支持高清振动。
 
-    ```
-    1. try {
-    2. // 查询是否支持高清振动
-    3. let ret = vibrator.isHdHapticSupported();
-    4. console.info(`The query result is ${ret}`);
-    5. // ...
-    6. } catch (error) {
-    7. let e: BusinessError = error as BusinessError;
-    8. console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
-    9. }
+    ```typescript
+    try {
+      // 查询是否支持高清振动
+      let ret = vibrator.isHdHapticSupported();
+      console.info(`The query result is ${ret}`);
+      // ...
+    } catch (error) {
+      let e: BusinessError = error as BusinessError;
+      console.error(`An unexpected error occurred. Code: ${e.code}, message: ${e.message}`);
+    }
     ```

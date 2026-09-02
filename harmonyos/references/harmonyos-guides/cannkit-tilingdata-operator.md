@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tilin
 title: operator
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TilingData > operator
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:24+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0d1c4228345bbc82f89b389c86e860f63cdd5c9001e39e3b9cb038ebbae81501
+content_hash: sha256:75c5cee756c2b30f16b34c118665ec09e00c38ec2998bd5c70846988f7b2d269
 ---
 
 ## 函数功能
@@ -14,9 +14,9 @@ content_hash: sha256:0d1c4228345bbc82f89b389c86e860f63cdd5c9001e39e3b9cb038ebbae
 
 ## 函数原型
 
-```
-1. template<typename T>
-2. TilingData &operator<<(TilingData &out, const T &data);
+```cpp
+template<typename T>
+TilingData &operator<<(TilingData &out, const T &data);
 ```
 
 ## 参数说明
@@ -37,15 +37,15 @@ content_hash: sha256:0d1c4228345bbc82f89b389c86e860f63cdd5c9001e39e3b9cb038ebbae
 
 ## 调用示例
 
-```
-1. auto td_buf = TilingData::CreateCap(100U);
-2. auto td = reinterpret_cast<TilingData *>(td_buf.get());
-
-4. struct AppendData{
-5. int a = 10;
-6. int b = 100;
-7. };
-8. AppendData ad;
-9. td << ad;
-10. auto data_size = td.GetDataSize(); // 2 * sizeof(int)
+```cpp
+auto td_buf = TilingData::CreateCap(100U);
+auto td = reinterpret_cast<TilingData *>(td_buf.get());
+ 
+struct AppendData{
+  int a = 10;
+  int b = 100;
+};
+AppendData ad;
+td << ad;
+auto data_size = td.GetDataSize(); // 2 * sizeof(int)
 ```

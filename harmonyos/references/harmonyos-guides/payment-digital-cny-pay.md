@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-digit
 title: 数字人民币支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数字人民币支付场景
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:39:32+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:6d610b7116738b22544fcc718f58ed11d94d9046be2e3da7dffb782f1444dd88
+scraped_at: 2026-09-02T14:59:59+08:00
+doc_updated_at: 2026-09-01
+content_hash: sha256:800d1873165a970a86b1e5994f62d288aa963bdde548c4ff9f846b89517a1b2a
 ---
 
-说明
+**说明** 
 
 1. 用户手机端rom版本过低可能导致应用闪退，建议开发者对开放接口抛出的异常错误进行捕获并进行处理。
 2. 华为钱包最低版本要求为 **1.0.8.305**。
@@ -23,7 +23,7 @@ content_hash: sha256:6d610b7116738b22544fcc718f58ed11d94d9046be2e3da7dffb782f144
 
 数字人民币收银台展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/7YoL41WbRMqte9OPiUHN2w/zh-cn_image_0000002558605934.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/MOGBq19YRM2qrDLuTaSVgg/zh-cn_image_0000002736314219.png)
 
 ## 接入流程
 
@@ -38,7 +38,7 @@ content_hash: sha256:6d610b7116738b22544fcc718f58ed11d94d9046be2e3da7dffb782f144
 
 开发者接入数字人民币支付服务，可以快速实现应用的数字人民币支付能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ot8-_tQuTEm65B3_bD3UAA/zh-cn_image_0000002589325461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/4JGyExHGSDeGXz1SzqLvIA/zh-cn_image_0000002706675176.png)
 
 1. 商户客户端请求商户服务器创建商品订单。
 2. 商户服务器按照商户模式（运营机构商户或受理服务机构商户）调用运营机构或受理服务机构提供的下单接口到数字人民币服务端下单，接口详情请参照商户合作的[运营机构或受理服务机构提供的开发指引](payment-faq-27.md)。
@@ -77,60 +77,61 @@ content_hash: sha256:6d610b7116738b22544fcc718f58ed11d94d9046be2e3da7dffb782f144
 
 当接口通过.then()方法返回时，则表示当前订单支付成功，通过.catch()方法返回表示订单支付失败。
 
-当此次请求有异常时，可通过error.code获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/payment-error-code.md)。
+当此次请求有异常时，可通过error.code获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/errorcode-payment.md)。
 
 示例代码如下：
 
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { ecnyPaymentService } from '@kit.PaymentKit';
+import { common } from '@kit.AbilityKit';
+
+@Entry
+@Component
+struct Index {
+  context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  requestEcnyPaymentPromise() {
+    // 请开发者使用自己的订单信息（orderInfo）
+    const orderInfo: ecnyPaymentService.EcnyOrderInfo = {
+      merchantAppId: '***',
+      merchantNo: '***',
+      acqAgtInstnId: '***',
+      creditorInstitutionId: '***',
+      encryptedKey: '***',
+      encryptedInfo: '***',
+      encryptionSN: '***',
+      extraInfo: '***',
+      lastWalletId: '***'
+    };
+    ecnyPaymentService.requestEcnyPayment(this.context, orderInfo)
+      .then((result: ecnyPaymentService.EcnyPayResult) => {
+        // 支付成功
+        console.info(`succeeded in paying, result.orderNo: ${result.orderNo}, result.extraInfo: ${result.extraInfo}`);
+      })
+
+      .catch((error: BusinessError) => {
+        // 支付失败
+        console.error(`failed to pay, error.code: ${error.code}, error.message: ${error.message}`);
+      });
+  }
+
+  build() {
+    Column() {
+      Button('requestEcnyPaymentPromise')
+        .type(ButtonType.Capsule)
+        .width('50%')
+        .margin(20)
+        .onClick(() => {
+          this.requestEcnyPaymentPromise();
+        })
+      }
+    .width('100%')
+    .height('100%')
+  }
+}
 ```
-1. import { BusinessError } from '@kit.BasicServicesKit';
-2. import { ecnyPaymentService } from '@kit.PaymentKit';
-3. import { common } from '@kit.AbilityKit';
 
-5. @Entry
-6. @Component
-7. struct Index {
-8. context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-9. requestEcnyPaymentPromise() {
-10. // use your own orderInfo
-11. const orderInfo: ecnyPaymentService.EcnyOrderInfo = {
-12. merchantAppId: "***",
-13. merchantNo: "***",
-14. acqAgtInstnId: "***",
-15. creditorInstitutionId: "***",
-16. encryptedKey: "***",
-17. encryptedInfo: "***",
-18. encryptionSN: "***",
-19. extraInfo: "***",
-20. lastWalletId: "***"
-21. };
-22. ecnyPaymentService.requestEcnyPayment(this.context, orderInfo)
-23. .then((result: ecnyPaymentService.EcnyPayResult) => {
-24. // pay success
-25. console.info(`succeeded in paying, result.orderNo: ${result.orderNo}, result.extraInfo: ${result.extraInfo}`);
-26. })
-27. .catch((error: BusinessError) => {
-28. // failed to pay
-29. console.error(`failed to pay, error.code: ${error.code}, error.message: ${error.message}`);
-30. });
-31. }
-
-33. build() {
-34. Column() {
-35. Button('requestEcnyPaymentPromise')
-36. .type(ButtonType.Capsule)
-37. .width('50%')
-38. .margin(20)
-39. .onClick(() => {
-40. this.requestEcnyPaymentPromise();
-41. })
-42. }
-43. .width('100%')
-44. .height('100%')
-45. }
-46. }
-```
-
-说明
+**说明** 
 
 * 如果初次使用数字人民币收银台，系统会自动通过拉起数字人民币元服务，完成授权登录。
 * 支付成功，不建议以客户端返回作为用户的支付结果，需以服务器接收到的结果通知或者查询API返回为准。

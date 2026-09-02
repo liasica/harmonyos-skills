@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 华为账号其他方式登录获取用户风险等级
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取风险等级 > 华为账号其他方式登录获取用户风险等级
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:36:54+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:85384a4f5ac4898e973afc15284dbd59eaf031ff8a005daa6e1508ebb871a90f
+scraped_at: 2026-09-02T14:59:51+08:00
+doc_updated_at: 2026-08-03
+content_hash: sha256:389cf98aceb1fc7dfc22885d599160fbdb13bffdd2caf5a59ea9baad282c639a
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:85384a4f5ac4898e973afc15284dbd59eaf031ff8a005daa6e1508ebb87
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/kgWutW7CRnuXRkQvWbrnbQ/zh-cn_image_0000002558765258.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/9yc4Cmh9Tmi4butLN4SCGQ/zh-cn_image_0000002736433921.png)
 
 流程说明：
 
@@ -62,100 +62,103 @@ content_hash: sha256:85384a4f5ac4898e973afc15284dbd59eaf031ff8a005daa6e1508ebb87
 
    **Client ID**：1\*\*\*\*14
 
-   **背景介绍：** （请提供应用简单介绍，便于快速了解）
+   **背景介绍**：（请提供应用简单介绍，便于快速了解）
 
    **使用场景**：（请提供相关使用场景的文字描述、交互流程图或参考交互视频等，可提供类似应用的使用场景进行说明）
 
-   **使用该权限的必要性：** （请提供应用需要该权限和信息的必要性）
+   **使用该权限的必要性**：（请提供应用需要该权限和信息的必要性）
 
 ## 客户端开发
 
 1. 导入[authentication](../harmonyos-references/account-api-authentication.md)模块及相关公共模块。
 
-   ```
-   1. import { authentication } from '@kit.AccountKit';
-   2. import { hilog } from '@kit.PerformanceAnalysisKit';
-   3. import { util } from '@kit.ArkTS';
-   4. import { BusinessError } from '@kit.BasicServicesKit';
+   ```typescript
+   import { authentication } from '@kit.AccountKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
+   import { util } from '@kit.ArkTS';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 创建授权请求并设置参数。
 
-   ```
-   1. // 创建授权请求，并设置参数
-   2. const authRequest = new authentication.HuaweiIDProvider().createAuthorizationWithHuaweiIDRequest();
-   3. // 获取风险等级需要传如下scope
-   4. authRequest.scopes = ['riskLevel'];
-   5. // 获取authorizationCode需传如下permission
-   6. authRequest.permissions = ['serviceauthcode'];
-   7. // 用户是否需要登录授权，该值为true且用户未登录或未授权时，会拉起用户登录或授权页面
-   8. authRequest.forceAuthorization = true;
-   9. // 用于防跨站点请求伪造
-   10. authRequest.state = util.generateRandomUUID();
+   ```typescript
+   // 创建授权请求，并设置参数
+   const authRequest = new authentication.HuaweiIDProvider().createAuthorizationWithHuaweiIDRequest();
+   // 获取风险等级需要传如下scope
+   authRequest.scopes = ['riskLevel'];
+   // 获取authorizationCode需传如下permission
+   authRequest.permissions = ['serviceauthcode'];
+   // 用户是否需要登录授权，该值为true且用户未登录或未授权时，会拉起用户登录或授权页面
+   authRequest.forceAuthorization = true;
+   // 建议使用generateRandomUUID生成state，可用于一致性比对，防止跨站攻击
+   authRequest.state = util.generateRandomUUID();
    ```
 3. 调用[AuthenticationController](../harmonyos-references/account-api-authentication.md#authenticationcontroller)对象的[executeRequest](../harmonyos-references/account-api-authentication.md#executerequest-1)方法执行授权请求，并处理授权结果，从授权结果中解析出authorizedScopes和Authorization Code。
 
-   ```
-   1. // 执行授权请求
-   2. try {
-   3. // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
-   4. const controller = new authentication.AuthenticationController(this.getUIContext().getHostContext());
-   5. controller.executeRequest(authRequest).then((data) => {
-   6. const authorizationWithHuaweiIDResponse = data as authentication.AuthorizationWithHuaweiIDResponse;
-   7. const state = authorizationWithHuaweiIDResponse.state;
-   8. if (state && authRequest.state !== state) {
-   9. hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
-   10. return;
-   11. }
-   12. hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
-   13. let riskLevelAuthorized: boolean = false;
-   14. const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
-   15. const authorizedScopes = authorizationWithHuaweiIDCredential?.authorizedScopes;
-   16. // 判断授权成功scopes中是否包含riskLevel
-   17. if (authorizedScopes?.includes('riskLevel')) {
-   18. riskLevelAuthorized = true;
-   19. }
-   20. const authorizationCode = authorizationWithHuaweiIDCredential?.authorizationCode;
-   21. // 开发者处理riskLevelAuthorized, authorizationCode
-   22. }).catch((err: BusinessError) => {
-   23. dealAllError(err);
-   24. });
-   25. } catch (error) {
-   26. dealAllError(error);
-   27. }
+   ```typescript
+   // 执行授权请求
+   try {
+     // 此示例为代码片段，实际需在自定义组件实例中使用，并传入有效的Context上下文对象
+     const controller = new authentication.AuthenticationController(this.getUIContext().getHostContext());
+     controller.executeRequest(authRequest).then((data) => {
+       const authorizationWithHuaweiIDResponse = data as authentication.AuthorizationWithHuaweiIDResponse;
+       const state = authorizationWithHuaweiIDResponse.state;
+       // state为空时，归一化处理为空字符串
+       const normalizedRequestState = authRequest.state || '';
+       const normalizedState = state || '';
+       if (normalizedRequestState !== normalizedState) {
+         hilog.error(0x0000, 'testTag', `Failed to authorize. The state is different, response state: ${state}`);
+         return;
+       }
+       hilog.info(0x0000, 'testTag', 'Succeeded in authentication.');
+       let riskLevelAuthorized: boolean = false;
+       const authorizationWithHuaweiIDCredential = authorizationWithHuaweiIDResponse?.data;
+       const authorizedScopes = authorizationWithHuaweiIDCredential?.authorizedScopes;
+       // 判断授权成功scopes中是否包含riskLevel
+       if (authorizedScopes?.includes('riskLevel')) {
+           riskLevelAuthorized = true;
+       }
+       const authorizationCode = authorizationWithHuaweiIDCredential?.authorizationCode;
+       // 开发者处理riskLevelAuthorized, authorizationCode
+     }).catch((err: BusinessError) => {
+       dealAllError(err);
+     });
+   } catch (error) {
+     dealAllError(error);
+   }
    ```
 
-   ```
-   1. // 错误处理
-   2. function dealAllError(error: BusinessError): void {
-   3. hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
-   4. // 在应用获取用户风险等级场景下，涉及UI交互时，建议按照如下错误码指导提示用户
-   5. if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
-   6. // 用户未登录华为账号，请登录华为账号并重试
-   7. } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
-   8. // 网络异常，请检查当前网络状态并重试
-   9. } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
-   10. // 用户取消授权
-   11. } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
-   12. // 系统服务异常，请稍后重试
-   13. } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
-   14. // 重复请求，应用无需处理
-   15. } else {
-   16. // 获取用户信息失败，请稍后重试
-   17. }
-   18. }
+   ```typescript
+   // 错误处理
+   function dealAllError(error: BusinessError): void {
+     hilog.error(0x0000, 'testTag', `Failed to obtain userInfo. Code: ${error.code}, message: ${error.message}`);
+     // 在应用获取用户风险等级场景下，涉及UI交互时，建议按照如下错误码指导提示用户
+     if (error.code === ErrorCode.ERROR_CODE_LOGIN_OUT) {
+       // 用户未登录华为账号，请登录华为账号并重试
+     } else if (error.code === ErrorCode.ERROR_CODE_NETWORK_ERROR) {
+       // 网络错误，请检查当前网络状态并重试
+     } else if (error.code === ErrorCode.ERROR_CODE_USER_CANCEL) {
+       // 用户取消授权
+     } else if (error.code === ErrorCode.ERROR_CODE_SYSTEM_SERVICE) {
+       // 系统服务异常，请稍后重试
+     } else if (error.code === ErrorCode.ERROR_CODE_REQUEST_REFUSE) {
+       // 重复请求，应用无需处理
+     } else {
+       // 获取用户信息失败，请稍后重试
+     }
+   }
 
-   20. export enum ErrorCode {
-   21. // 账号未登录
-   22. ERROR_CODE_LOGIN_OUT = 1001502001,
-   23. // 网络错误
-   24. ERROR_CODE_NETWORK_ERROR = 1001502005,
-   25. // 用户取消授权
-   26. ERROR_CODE_USER_CANCEL = 1001502012,
-   27. // 系统服务异常
-   28. ERROR_CODE_SYSTEM_SERVICE = 12300001,
-   29. // 重复请求
-   30. ERROR_CODE_REQUEST_REFUSE = 1001500002
-   31. }
+   export enum ErrorCode {
+     // 账号未登录
+     ERROR_CODE_LOGIN_OUT = 1001502001,
+     // 网络错误
+     ERROR_CODE_NETWORK_ERROR = 1001502005,
+     // 用户取消授权
+     ERROR_CODE_USER_CANCEL = 1001502012,
+     // 系统服务异常
+     ERROR_CODE_SYSTEM_SERVICE = 12300001,
+     // 重复请求
+     ERROR_CODE_REQUEST_REFUSE = 1001500002
+   }
    ```
 
 ## 服务端开发
@@ -167,7 +170,7 @@ content_hash: sha256:85384a4f5ac4898e973afc15284dbd59eaf031ff8a005daa6e1508ebb87
 
    由于Access Token的有效期仅为60分钟，当Access Token失效或者即将失效时（可通过[REST API错误码](../harmonyos-references/account-api-getuserrisklevel.md#错误码)判断），可以使用Refresh Token（有效期180天）通过[刷新用户级凭证接口](../harmonyos-references/account-api-obtain-refresh-token.md#接口原型)向华为账号服务器请求获取新的Access Token。
 
-   说明
+   **说明** 
 
    1. 当Access Token失效时，若应用不使用Refresh Token向华为账号服务器请求获取新的Access Token，账号的授权信息将会失效，导致使用Access Token的功能都会失败。
    2. 当Access Token非正常失效（如修改密码、退出账号、删除设备）时，应用可重新登录授权获取Authorization Code，向华为账号服务器请求获取新的Access Token。

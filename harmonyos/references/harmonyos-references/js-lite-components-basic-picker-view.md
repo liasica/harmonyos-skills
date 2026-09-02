@@ -3,26 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: picker-view
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > picker-view
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:53+08:00
-doc_updated_at: 2026-04-02
-content_hash: sha256:c19b4c8d3187c56d149155b0a6d7cd0356ca7aa04636e35728f4efb95729982f
+scraped_at: 2026-09-02T15:01:14+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:81f15fb1421dde61fec6c4f310dd3273823f2db17a079e97b7b46f9469b237af
 ---
 
 嵌入页面的滑动选择器。
 
-说明
+**说明** 
 
 该组件从API version 4 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearableLite Wearable
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -47,8 +43,6 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 事件
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 type=text：
 
 | 名称 | 参数 | 描述 |
@@ -63,8 +57,6 @@ type=time：
 
 ## 样式
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
 | color | <color> | #808080 | 否 | 候选项字体颜色。 |
@@ -72,12 +64,12 @@ PhonePC/2in1TabletTVWearableLite Wearable
 | selected-color | <color> | #ffffff | 否 | 选中项字体颜色。 |
 | selected-font-size | <length> | 38px | 否 | 选中项字体尺寸，类型length，单位px。 |
 | selected-font-family | string | HYQiHei-65S | 否 | 选中项字体类型。 |
-| font-family | string | HYQiHei-65S | 否 | 选项字体类型。 |
+| font-family | string | HYQiHei-65S | 否 | 候选项字体类型。 |
 | width | <length> | <percentage>5+ | - | 否 | 设置组件自身的宽度。  未设置时组件宽度默认为0。 |
 | height | <length> | <percentage>5+ | - | 否 | 设置组件自身的高度。  未设置时组件高度默认为0。 |
 | padding | <length> | 0 | 否 | 使用简写属性设置所有的内边距属性。  该属性可以有1到4个值：  - 指定一个值时，该值指定四个边的内边距。  - 指定两个值时，第一个值指定上下两边的内边距，第二个指定左右两边的内边距。  - 指定三个值时，第一个指定上边的内边距，第二个指定左右两边的内边距，第三个指定下边的内边距。  - 指定四个值时分别为上、右、下、左边的内边距（顺时针顺序）。 |
 | padding-[left|top|right|bottom] | <length> | 0 | 否 | 设置左、上、右、下内边距属性。 |
-| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上, 第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
+| margin | <length> | <percentage>5+ | 0 | 否 | 使用简写属性设置所有的外边距属性，该属性可以有1到4个值。  - 只有一个值时，这个值会被指定给全部的四个边。  - 两个值时，第一个值被匹配给上和下，第二个值被匹配给左和右。  - 三个值时，第一个值被匹配给上，第二个值被匹配给左和右，第三个值被匹配给下。  - 四个值时，会依次按上、右、下、左的顺序匹配 (即顺时针顺序)。 |
 | margin-[left|top|right|bottom] | <length> | <percentage>5+ | 0 | 否 | 设置左、上、右、下外边距属性。 |
 | border-width | <length> | 0 | 否 | 使用简写属性设置元素的所有边框宽度。 |
 | border-color | <color> | black | 否 | 使用简写属性设置元素的所有边框颜色。 |
@@ -88,76 +80,77 @@ PhonePC/2in1TabletTVWearableLite Wearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
 | 名称 | 参数 | 描述 |
 | --- | --- | --- |
 | rotation | { focus: boolean } | 控制picker-view是否请求旋转表冠的焦点。设置focus参数为true，picker-view将获取旋转表冠的焦点，允许用户通过旋转表冠来滚动选择器中的选项；设置为false将释放旋转表冠的焦点。该功能仅在picker-view为单列时生效，对于多列picker-view，需通过用户点击来获取焦点以支持旋转表冠操作。 |
 
 ## 示例
 
-PhonePC/2in1TabletTVWearableLite Wearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container" @swipe="handleSwipe">
-3. <text class="title">
-4. Selected：{{time}}
-5. </text>
-6. <picker-view class="time-picker" type="time" selected="{{defaultTime}}" @change="handleChange"></picker-view>
-7. </div>
+```html
+<!-- xxx.hml -->
+  <div class="container">
+  <text class="title">
+    Selected：{{time}}
+  </text>
+  <picker-view class="time-picker" type="time" columns="2" ref="pickerViewObj" selected="{{defaultTime}}" @change="handleChange"></picker-view>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. flex-direction: column;
-4. justify-content: center;
-5. align-items: center;
-6. left: 0px;
-7. top: 0px;
-8. width: 454px;
-9. height: 454px;
-10. }
-11. .title {
-12. font-size: 30px;
-13. text-align: center;
-14. }
-15. .time-picker {
-16. width: 500px;
-17. height: 400px;
-18. margin-top: 20px;
-19. }
-```
-
-```
-1. /* xxx.js */
-2. export default {
-3. data: {
-4. defaultTime: "",
-5. time: "",
-6. },
-7. onInit() {
-8. this.defaultTime = this.now();
-9. },
-10. handleChange(data) {
-11. this.time = this.concat(data.hour, data.minute);
-12. },
-13. now() {
-14. const date = new Date();
-15. const hours = date.getHours();
-16. const minutes = date.getMinutes();
-17. return this.concat(hours, minutes);
-18. },
-
-20. fill(value) {
-21. return (value > 9 ? "" : "0") + value;
-22. },
-
-24. concat(hours, minutes) {
-25. return `${this.fill(hours)}:${this.fill(minutes)}`;
-26. },
-27. }
+```css
+/* xxx.css */
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 454px;
+  height: 454px;
+}
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+.time-picker {
+  width: 500px;
+  height: 400px;
+  margin-top: 20px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/95JFXngjR9yisqrC7o3yww/zh-cn_image_0000002589246745.png)
+```js
+/* xxx.js */
+export default {
+  data: {
+    defaultTime: "",
+    time: "",
+  },
+  onInit() {
+    this.defaultTime = this.now();
+    this.time = this.defaultTime;
+  },
+  handleChange(data) {
+    this.time = this.concat(data.hour, data.minute);
+  },
+  now() {
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    return this.concat(hours, minutes);
+  },
+  fill(value) {
+    return (value > 9 ? "" : "0") + value;
+  },
+  concat(hours, minutes) {
+    return `${this.fill(hours)}:${this.fill(minutes)}`;
+  },
+  onShow() {
+    this.$refs.pickerViewObj.rotation({focus: true})
+  },
+  onHide() {
+    this.$refs.pickerViewObj.rotation({focus: false})
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/xROdvINaTS6wE0yQPEMwuQ/zh-cn_image_0000002736435757.png)

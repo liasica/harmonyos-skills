@@ -3,23 +3,23 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/image-str
 title: 结构体
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:24+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:36084d93c0322471a3f37f0ca1832ecaa5ee20c72db7a3196f3a4325b87c8013
+scraped_at: 2026-09-02T14:52:57+08:00
+doc_updated_at: 2026-07-28
+content_hash: sha256:f226e2e9795f8ac819ec169abf953f517f6041b4703c144e1198f547e0bf324c
 ---
 
 * **[OH\_ImageSourceNative](capi-image-nativemodule-oh-imagesourcenative.md)**
 * **[OH\_ImageSource\_Info](capi-image-nativemodule-imagesource-info.md)**
-* **[OH\_DecodingOptionsForPicture](pi-image-nativemodule-oh-decodingoptionsforpicture.md)**
+* **[OH\_DecodingOptionsForPicture](capi-image-nativemodule-oh-decodingoptionsforpicture.md)**
 * **[OH\_DecodingOptions](capi-image-nativemodule-oh-decodingoptions.md)**
 * **[OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md)**
-* **[OH\_NativeBuffer](ge-nativemodule-image-nativemodule-oh-nativebuffer.md)**
-* **[OH\_Pixelmap\_HdrStaticMetadata](i-image-nativemodule-oh-pixelmap-hdrstaticmetadata.md)**
+* **[OH\_NativeBuffer](capi-image-nativemodule-image-nativemodule-oh-nativebuffer.md)**
+* **[OH\_Pixelmap\_HdrStaticMetadata](capi-image-nativemodule-oh-pixelmap-hdrstaticmetadata.md)**
 * **[OH\_NativeColorSpaceManager](capi-image-nativemodule-oh-nativecolorspacemanager.md)**
-* **[OH\_Pixelmap\_HdrDynamicMetadata](-image-nativemodule-oh-pixelmap-hdrdynamicmetadata.md)**
-* **[OH\_Pixelmap\_HdrGainmapMetadata](-image-nativemodule-oh-pixelmap-hdrgainmapmetadata.md)**
-* **[OH\_Pixelmap\_HdrMetadataValue](pi-image-nativemodule-oh-pixelmap-hdrmetadatavalue.md)**
-* **[OH\_Pixelmap\_InitializationOptions](age-nativemodule-oh-pixelmap-initializationoptions.md)**
+* **[OH\_Pixelmap\_HdrDynamicMetadata](capi-image-nativemodule-oh-pixelmap-hdrdynamicmetadata.md)**
+* **[OH\_Pixelmap\_HdrGainmapMetadata](capi-image-nativemodule-oh-pixelmap-hdrgainmapmetadata.md)**
+* **[OH\_Pixelmap\_HdrMetadataValue](capi-image-nativemodule-oh-pixelmap-hdrmetadatavalue.md)**
+* **[OH\_Pixelmap\_InitializationOptions](capi-image-nativemodule-oh-pixelmap-initializationoptions.md)**
 * **[OH\_Pixelmap\_ImageInfo](capi-image-nativemodule-oh-pixelmap-imageinfo.md)**
 * **[Image\_Size](capi-image-nativemodule-image-size.md)**
 * **[Image\_Region](capi-image-nativemodule-image-region.md)**
@@ -29,7 +29,7 @@ content_hash: sha256:36084d93c0322471a3f37f0ca1832ecaa5ee20c72db7a3196f3a4325b87
 * **[OH\_ImagePackerNative](capi-image-nativemodule-oh-imagepackernative.md)**
 * **[OH\_ImageBufferData](capi-image-nativemodule-oh-imagebufferdata.md)**
 * **[OH\_PackingOptions](capi-image-nativemodule-oh-packingoptions.md)**
-* **[OH\_PackingOptionsForSequence](pi-image-nativemodule-oh-packingoptionsforsequence.md)**
+* **[OH\_PackingOptionsForSequence](capi-image-nativemodule-oh-packingoptionsforsequence.md)**
 * **[OH\_ImageReceiverNative](capi-image-nativemodule-oh-imagereceivernative.md)**
 * **[OH\_ImageReceiverOptions](capi-image-nativemodule-oh-imagereceiveroptions.md)**
 * **[OH\_PictureNative](capi-image-nativemodule-oh-picturenative.md)**
@@ -68,8 +68,11 @@ content_hash: sha256:36084d93c0322471a3f37f0ca1832ecaa5ee20c72db7a3196f3a4325b87
 * **[ImageEffect\_FilterDelegate](capi-imageeffect-imageeffect-filterdelegate.md)**
 * **[ImageEffect\_Region](capi-imageeffect-imageeffect-region.md)**
 * **[ImageEffect\_Size](capi-imageeffect-imageeffect-size.md)**
-* **[ImageProcessing\_ColorSpaceInfo](api-imageprocessing-imageprocessing-colorspaceinfo.md)**
+* **[ImageProcessing\_ColorSpaceInfo](capi-imageprocessing-imageprocessing-colorspaceinfo.md)**
 * **[OH\_ImageProcessing](capi-imageprocessing-oh-imageprocessing.md)**
 * **[Image\_PositionArea](capi-image-nativemodule-image-positionarea.md)**
 * **[Image\_Scale](capi-image-nativemodule-image-scale.md)**
 * **[OH\_ComposeOptions](capi-image-nativemodule-oh-composeoptions.md)**
+* **[OH\_ImageRawData](capi-image-nativemodule-oh-imagerawdata.md)**
+* **[OH\_PictureNative\_AuxiliaryPictureCopyItem](capi-image-nativemodule-oh-picturenative-auxiliarypicturecopyitem.md)**
+* **[OH\_PictureNative\_MetadataCopyItem](capi-image-nativemodule-oh-picturenative-metadatacopyitem.md)**

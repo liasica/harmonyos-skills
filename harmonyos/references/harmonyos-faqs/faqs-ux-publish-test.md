@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ux-publish
 title: UX基础质量测试
 breadcrumb: FAQ > DevEco Testing > 上架预检 > UX基础质量测试
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:30:34+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:19+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:abdccda977f53932072595fa3ec43a51e63f5148ab5e69899c1714673e4fa389
 ---
 

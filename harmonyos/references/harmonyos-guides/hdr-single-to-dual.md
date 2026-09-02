@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-single-to
 title: 单层HDR图片转换双层
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用ImageProcessing处理图片 > 单层HDR图片转换双层
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:35:18+08:00
+scraped_at: 2026-09-02T14:59:46+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d161aaf98a0aefa744bbd2b05c3b798a5fe7de32dc5a0590bbc317b872b89111
+content_hash: sha256:92a1b7dabdd79cc90ba4fe797d4e53f7de4a61eee0c1d78b0e28c61a1e8048b7
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-imageprocessing.md)，实现Decompose单层HDR图片转双层HDR图片。
 
 该能力常用于图片分享中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/p9y7Jw7NTAy9Jdst8dvqWA/zh-cn_image_0000002589324961.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/urYxMuCZTH2SJGhP1SLoIQ/zh-cn_image_0000002706834568.png)
 
 ## 规格说明
 
@@ -55,137 +55,137 @@ content_hash: sha256:d161aaf98a0aefa744bbd2b05c3b798a5fe7de32dc5a0590bbc317b872b
 
 ### 在 CMake 脚本中链接动态库
 
-```
-1. add_library(entry SHARED napi_init.cpp ImageProcessing/ImageProcessing.cpp)
-2. target_link_libraries(entry PUBLIC ${BASE_LIBRARY})
+```screen
+add_library(entry SHARED napi_init.cpp ImageProcessing/ImageProcessing.cpp)
+target_link_libraries(entry PUBLIC ${BASE_LIBRARY})
 ```
 
 ### ArkTS侧调用的开发步骤
 
 1. 通过解码器获取10 bit的PixelMap。
 
-   ```
-   1. const photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-   2. photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-   3. photoSelectOptions.maxSelectNumber = 1;
-   4. const photoViewPicker = new photoAccessHelper.PhotoViewPicker();
-   5. photoViewPicker.select(photoSelectOptions)
-   6. .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-   7. let fd = fileIo.openSync(photoSelectResult.photoUris[0], fileIo.OpenMode.READ_ONLY);
-   8. const imageSource = image.createImageSource(fd.fd);
-   9. let option: image.DecodingOptions = {};
-   10. option.index = 0;
-   11. option.desiredDynamicRange = image.DecodingDynamicRange.AUTO;
-   12. this.pixelMapSrc = imageSource.createPixelMapSync(option);
-   13. this.getColorSpace();
-   14. this.hasPhoto = true;
-   15. })
+   ```ts
+   const photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+   photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+   photoSelectOptions.maxSelectNumber = 1;
+   const photoViewPicker = new photoAccessHelper.PhotoViewPicker();
+   photoViewPicker.select(photoSelectOptions)
+     .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+       let fd = fileIo.openSync(photoSelectResult.photoUris[0], fileIo.OpenMode.READ_ONLY);
+       const imageSource = image.createImageSource(fd.fd);
+       let option: image.DecodingOptions = {};
+       option.index = 0;
+       option.desiredDynamicRange = image.DecodingDynamicRange.AUTO;
+       this.pixelMapSrc = imageSource.createPixelMapSync(option);
+       this.getColorSpace();
+       this.hasPhoto = true;
+     })
    ```
 2. 创建8 bit的PixelMap。
 
-   ```
-   1. let dualPixelMap: image.PixelMap = nativePix.createPixelMap(this.inputHeight, this.inputWidth);
-   2. let gainmapPixelMap: image.PixelMap = nativePix.createPixelMap(this.inputHeight, this.inputWidth);
+   ```ts
+   let dualPixelMap: image.PixelMap = nativePix.createPixelMap(this.inputHeight, this.inputWidth);
+   let gainmapPixelMap: image.PixelMap = nativePix.createPixelMap(this.inputHeight, this.inputWidth);
    ```
 3. 配置色彩框架和元数据信息。
 
-   ```
-   1. let colorSpaceDISPLAY_P3 : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3);
-   2. let colorSpaceBT2020_HLG : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
-   3. sdrpixelMap.setColorSpace(colorSpaceDISPLAY_P3);
-   4. sdrpixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.BASE);
-   5. gainmappixelMap.setColorSpace(colorSpaceDISPLAY_P3);
-   6. gainmappixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.GAINMAP);
-   7. hdrpixelMap.setColorSpace(colorSpaceBT2020_HLG);
-   8. hdrpixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.ALTERNATE);
+   ```ts
+   let colorSpaceDISPLAY_P3 : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceManager.ColorSpace.DISPLAY_P3);
+   let colorSpaceBT2020_HLG : colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
+   sdrpixelMap.setColorSpace(colorSpaceDISPLAY_P3);
+   sdrpixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.BASE);
+   gainmappixelMap.setColorSpace(colorSpaceDISPLAY_P3);
+   gainmappixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.GAINMAP);
+   hdrpixelMap.setColorSpace(colorSpaceBT2020_HLG);
+   hdrpixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.ALTERNATE);
    ```
 
 ### Native侧调用的开发步骤
 
 1. 添加头文件。
 
-   ```
-   1. #include <multimedia/image_framework/image_mdk_common.h>
-   2. #include <multimedia/image_framework/image_pixel_map_mdk.h>
-   3. #include <multimedia/image_framework/image/pixelmap_native.h>
-   4. #include <multimedia/video_processing_engine/image_processing.h>
-   5. #include <multimedia/video_processing_engine/image_processing_types.h>
-   6. #include <native_color_space_manager/native_color_space_manager.h>
+   ```cpp
+   #include <multimedia/image_framework/image_mdk_common.h>
+   #include <multimedia/image_framework/image_pixel_map_mdk.h>
+   #include <multimedia/image_framework/image/pixelmap_native.h>
+   #include <multimedia/video_processing_engine/image_processing.h>
+   #include <multimedia/video_processing_engine/image_processing_types.h>
+   #include <native_color_space_manager/native_color_space_manager.h>
    ```
 2. （可选）初始化环境。
 
    一般在进程内第一次使用时调用，可提前完成部分耗时操作。
 
-   ```
-   1. ImageProcessing_ErrorCode ret =  OH_ImageProcessing_InitializeEnvironment();
+   ```cpp
+   ImageProcessing_ErrorCode ret =  OH_ImageProcessing_InitializeEnvironment();
    ```
 3. （可选）查询能力支持。建议在使用对应能力前调用。
 
-   ```
-   1. //输入格式
-   2. ImageProcessing_ColorSpaceInfo SRC_INFO;
-   3. ImageProcessing_ColorSpaceInfo DST_GAIN_INFO;
-   4. ImageProcessing_ColorSpaceInfo DST_INFO;
-   5. SRC_INFO.colorSpace = BT2020_HLG;
-   6. SRC_INFO.metadataType = HDR_METADATA_TYPE_ALTERNATE;
-   7. SRC_INFO.pixelFormat = PIXEL_FORMAT_RGBA_1010102;
-   8. DST_INFO.colorSpace = DISPLAY_P3;
-   9. DST_INFO.metadataType = HDR_METADATA_TYPE_BASE;
-   10. DST_INFO.pixelFormat = PIXEL_FORMAT_RGBA_8888;
-   11. DST_GAIN_INFO.colorSpace = DISPLAY_P3;
-   12. DST_GAIN_INFO.metadataType = HDR_METADATA_TYPE_GAINMAP;
-   13. DST_GAIN_INFO.pixelFormat = PIXEL_FORMAT_RGBA_8888;
-   14. //能力查询
-   15. bool flag = OH_ImageProcessing_IsDecompositionSupported(&SRC_INFO, &DST_INFO, &DST_GAIN_INFO);
+   ```cpp
+   //输入格式
+   ImageProcessing_ColorSpaceInfo SRC_INFO;
+   ImageProcessing_ColorSpaceInfo DST_GAIN_INFO;
+   ImageProcessing_ColorSpaceInfo DST_INFO;
+   SRC_INFO.colorSpace = BT2020_HLG;
+   SRC_INFO.metadataType = HDR_METADATA_TYPE_ALTERNATE;
+   SRC_INFO.pixelFormat = PIXEL_FORMAT_RGBA_1010102;
+   DST_INFO.colorSpace = DISPLAY_P3;
+   DST_INFO.metadataType = HDR_METADATA_TYPE_BASE;
+   DST_INFO.pixelFormat = PIXEL_FORMAT_RGBA_8888;
+   DST_GAIN_INFO.colorSpace = DISPLAY_P3;
+   DST_GAIN_INFO.metadataType = HDR_METADATA_TYPE_GAINMAP;
+   DST_GAIN_INFO.pixelFormat = PIXEL_FORMAT_RGBA_8888;
+   //能力查询
+   bool flag = OH_ImageProcessing_IsDecompositionSupported(&SRC_INFO, &DST_INFO, &DST_GAIN_INFO);
    ```
 4. 创建8 bit的PixelMap。
 
-   ```
-   1. napi_value ImageProcessing::CreatePixelMap(napi_env env, napi_callback_info info)
-   2. {
-   3. napi_value udfVar = nullptr;
-   4. napi_value pixelMap = nullptr;
-   5. napi_value thisVar = nullptr;
-   6. napi_value argValue[2] = {0};
-   7. size_t argCount = 2;
-   8. size_t count = 2;
-   9. if (napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr) != napi_ok || argCount < count ||
-   10. argValue[0] == nullptr || argValue[1] == nullptr) {
-   11. return nullptr;
-   12. }
-   13. int32_t width = 0;
-   14. int32_t height = 0;
-   15. napi_get_value_int32(env, argValue[1], &width);
-   16. napi_get_value_int32(env, argValue[0], &height);
-   17. struct OhosPixelMapCreateOps createOps;
-   18. createOps.width = width;
-   19. createOps.height = height;
-   20. int32_t rgba8888 = 3;
-   21. createOps.pixelFormat = rgba8888;
-   22. createOps.alphaType = 0;
-
-   24. size_t bufferSize = createOps.width * createOps.height * 4;
-   25. void *buff = malloc(bufferSize);
-   26. int32_t res = OH_PixelMap_CreatePixelMapWithStride(env, createOps, (uint8_t *)buff, bufferSize, createOps.width * 4,
-   27. &pixelMap);
-   28. free(buff);
-   29. OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "createPixelMap",
-   30. "OH_PixelMap_CreatePixelMapWithStride %{public}d", res);
-   31. if (res != IMAGE_RESULT_SUCCESS || pixelMap == nullptr) {
-   32. return udfVar;
-   33. }
-   34. return pixelMap;
-   35. }
+   ```cpp
+   napi_value ImageProcessing::CreatePixelMap(napi_env env, napi_callback_info info)
+   {
+       napi_value udfVar = nullptr;
+       napi_value pixelMap = nullptr;
+       napi_value thisVar = nullptr;
+       napi_value argValue[2] = {0};
+       size_t argCount = 2;
+       size_t count = 2;
+       if (napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr) != napi_ok || argCount < count ||
+           argValue[0] == nullptr || argValue[1] == nullptr) {
+           return nullptr;
+       }
+       int32_t width = 0;
+       int32_t height = 0;
+       napi_get_value_int32(env, argValue[1], &width);
+       napi_get_value_int32(env, argValue[0], &height);
+       struct OhosPixelMapCreateOps createOps;
+       createOps.width = width;
+       createOps.height = height;
+       int32_t rgba8888 = 3;
+       createOps.pixelFormat = rgba8888;
+       createOps.alphaType = 0;
+       
+       size_t bufferSize = createOps.width * createOps.height * 4;
+       void *buff = malloc(bufferSize);
+       int32_t res = OH_PixelMap_CreatePixelMapWithStride(env, createOps, (uint8_t *)buff, bufferSize, createOps.width * 4,
+           &pixelMap);
+       free(buff);
+       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "createPixelMap",
+           "OH_PixelMap_CreatePixelMapWithStride %{public}d", res);
+       if (res != IMAGE_RESULT_SUCCESS || pixelMap == nullptr) {
+           return udfVar;
+       }
+       return pixelMap;
+   }
    ```
 5. 将ArkTS中的PixelMap转换为C++的PixelMap。
 
-   ```
-   1. OH_PixelmapNative* sdr = nullptr;
-   2. OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argValue[0], &sdr);
-   3. OH_PixelmapNative* gainmap = nullptr;
-   4. OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argValue[1], &gainmap);
-   5. OH_PixelmapNative* hdr = nullptr;
-   6. OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argValue[2], &hdr);
+   ```cpp
+   OH_PixelmapNative* sdr = nullptr;
+   OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argValue[0], &sdr);
+   OH_PixelmapNative* gainmap = nullptr;
+   OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argValue[1], &gainmap);
+   OH_PixelmapNative* hdr = nullptr;
+   OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argValue[2], &hdr);
    ```
 6. 创建图片HDR单层转双层模块。
 
@@ -195,25 +195,25 @@ content_hash: sha256:d161aaf98a0aefa744bbd2b05c3b798a5fe7de32dc5a0590bbc317b872b
    * IMAGE\_PROCESSING\_TYPE\_DECOMPOSITION：图片HDR单层转双层。
    * 预期返回值：IMAGE\_PROCESSING\_SUCCESS
 
-   ```
-   1. OH_ImageProcessing* instance = nullptr;
-   2. ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
+   ```cpp
+   OH_ImageProcessing* instance = nullptr;
+   ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
    ```
 7. 执行算法。
 
-   ```
-   1. ret = OH_ImageProcessing_Decompose(instance, hdr, sdr, gainmap);
+   ```screen
+   ret = OH_ImageProcessing_Decompose(instance, hdr, sdr, gainmap);
    ```
 8. 释放实例资源。
 
-   ```
-   1. ret = OH_ImageProcessing_Destroy(instance);
-   2. instance = nullptr;
+   ```cpp
+   ret = OH_ImageProcessing_Destroy(instance);
+   instance = nullptr;
    ```
 9. 释放初始化环境资源。
 
-   ```
-   1. ret = OH_ImageProcessing_DeinitializeEnvironment();
+   ```cpp
+   ret = OH_ImageProcessing_DeinitializeEnvironment();
    ```
 
 ## 完整示例代码

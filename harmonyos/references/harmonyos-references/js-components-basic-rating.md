@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: rating
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > rating
 category: harmonyos-references
-scraped_at: 2026-04-29T13:53:26+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d86c314bcfbaff40617de2fa666929ab5d1a7ce232945b8b7bd742071be298d5
+scraped_at: 2026-09-02T15:01:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:6917498d0db9bbbfb929581cea96181bb792996acf1db7d16db18c4d19ebe0f7
 ---
 
-说明
+**说明** 
 
 从API version 4开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
@@ -16,19 +16,13 @@ content_hash: sha256:d86c314bcfbaff40617de2fa666929ab5d1a7ce232945b8b7bd742071be
 
 ## 权限列表
 
-PhonePC/2in1TabletTVWearable
-
 无
 
 ## 子组件
 
-PhonePC/2in1TabletTVWearable
-
 不支持。
 
 ## 属性
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用属性](js-components-common-attributes.md)外，还支持如下属性：
 
@@ -41,8 +35,6 @@ PhonePC/2in1TabletTVWearable
 
 ## 样式
 
-PhonePC/2in1TabletTVWearable
-
 除支持[通用样式](js-components-common-styles.md)外，还支持如下样式：
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
@@ -54,13 +46,11 @@ PhonePC/2in1TabletTVWearable
 | height | <length>|<percentage> | 24px  12px（不可操作） | 否 | 默认值是在未设置自定义资源和评分星数时，使用5个星和默认资源下的高度值。 |
 | rtl-flip | boolean | true | 否 | 在rtl文字方向下是否自动翻转图源。  true：在rtl文字方向下自动翻转图源。  false：在rtl文字方向下不自动翻转图源。 |
 
-说明
+**说明** 
 
 star-background，star-secondary，star-foreground三个星级图源必须全部设置，否则默认的星级颜色为灰色，以此提示图源设置错误。
 
 ## 事件
-
-PhonePC/2in1TabletTVWearable
 
 除支持[通用事件](js-components-common-events.md)外，还支持如下事件：
 
@@ -70,44 +60,40 @@ PhonePC/2in1TabletTVWearable
 
 ## 方法
 
-PhonePC/2in1TabletTVWearable
-
 支持[通用方法](js-components-common-methods.md)。
 
 ## 示例
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. <!-- xxx.hml -->
-2. <div class="container">
-3. <rating numstars="5" rating="5" @change="changeRating" id="rating">
-4. </rating>
-5. </div>
+```html
+<!-- xxx.hml -->
+<div class="container">
+  <rating numstars="5" rating="5" @change="changeRating" id="rating">
+  </rating>
+</div>
 ```
 
-```
-1. /* xxx.css */
-2. .container {
-3. display: flex;
-4. justify-content: center;
-5. align-items: center;
-6. }
-7. .rating {
-8. width: 200px;
-9. }
-```
-
-```
-1. // xxx.js
-2. import promptAction from '@ohos.promptAction';
-3. export default {
-4. changeRating(e){
-5. promptAction.showToast({
-6. message: e.rating
-7. });
-8. }
-9. }
+```css
+/* xxx.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rating {
+  width: 200px;
+}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/1zyRy5fsRJ2q65JT0Goi7Q/zh-cn_image_0000002589326591.png)
+```js
+// xxx.js
+import promptAction from '@ohos.promptAction';
+export default {
+    changeRating(e){
+        promptAction.showToast({
+            message: e.rating
+        });
+    }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/xr70Xvu_TVW_Z5Rnf4urFA/zh-cn_image_0000002736435541.png)

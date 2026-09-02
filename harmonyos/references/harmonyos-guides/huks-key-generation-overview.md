@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-gene
 title: 密钥生成介绍及算法规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥生成 > 密钥生成介绍及算法规格
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:12+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:792d9392a1c055583032dc434b1901d14f80b580919db650a8989a8b51a0c792
+scraped_at: 2026-09-02T14:59:31+08:00
+doc_updated_at: 2026-06-12
+content_hash: sha256:f73d3dd52f7fc35c98287d55cef367aa9263dcb18fbbcaaeef191d83bab47b79
 ---
 
 当业务需要使用HUKS生成随机密钥，并由HUKS进行安全保存时，可以调用HUKS的接口生成密钥。
 
-说明
+**说明** 
 
 * 密钥别名长度最大为128字节。
 * 密钥别名中禁止包含个人数据等敏感信息。不建议包含加密算法、密钥长度、加密模式等信息。
@@ -33,7 +33,7 @@ content_hash: sha256:792d9392a1c055583032dc434b1901d14f80b580919db650a8989a8b51a
 | HUKS\_AUTH\_STORAGE\_LEVEL\_CE | 1 | 表示密钥仅在首次解锁后可访问。 |
 | HUKS\_AUTH\_STORAGE\_LEVEL\_ECE | 2 | 表示密钥仅在解锁状态时可访问。 |
 
-说明
+**说明** 
 
 业务在使用存储等级为ECE的密钥时，建议通过感知[锁屏事件](../harmonyos-references/commoneventmanager-definitions.md#common_event_screen_locked)来清理使用该密钥创建的会话资源，以保证安全性。
 
@@ -57,8 +57,9 @@ content_hash: sha256:792d9392a1c055583032dc434b1901d14f80b580919db650a8989a8b51a
 | SM4 | 128 | 9+ |
 | DES | 64 | 18+ |
 | 3DES | 128、192 | 18+ |
+| ML-DSA | 安全参数集支持44、65、87 | 26.0.0+ |
 
-说明
+**说明** 
 
 DH算法采用FFDHE知名安全素数群。
 

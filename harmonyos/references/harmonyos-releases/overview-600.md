@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-600
 title: 版本概览
-breadcrumb: 版本说明 > HarmonyOS 6.0.0(20) > 版本概览
+breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > 版本概览
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:34:04+08:00
-doc_updated_at: 2026-01-21
-content_hash: sha256:67b14dc1c8ed030660b85cbf3ea3fdc7ee8c0d8916aa7046b6bb024705227cf4
+scraped_at: 2026-09-02T14:58:39+08:00
+doc_updated_at: 2026-06-27
+content_hash: sha256:c983b217c36ca501ea7788f3822f069c0f4eda4f9dde88bc3d28b01825ccaeaf
 ---
 
 HarmonyOS开发者版本6.0.0(20) Release于2025年9月25日正式发布。
@@ -16,7 +16,7 @@ DevEco Studio新增AI智能辅助编程，进一步提升编译构建效率和�
 
 ## 版本信息
 
-说明
+**说明** 
 
 使用正确的配套关系进行应用开发可以获得更流畅的开发体验。
 
@@ -32,11 +32,11 @@ DevEco Studio新增AI智能辅助编程，进一步提升编译构建效率和�
 | DevEco Studio 6.0.0 Release (6.0.0.858) | 2025/09/25 |
 | SDK | Release | HarmonyOS 6.0.0 Release SDK  基于OpenHarmony SDK Ohos\_sdk\_public 6.0.0.47 (API 20 Release) | 2025/09/25 |
 
-说明
+**说明** 
 
 * **API版本**请在设备的“设置”中点击设备名称，进入“**关于本机**”进行查询。
 
-* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。
+* DevEco Studio版本请从DevEco Studio界面菜单选择“Help > About DevEco Studio”进行查询。请[点击此处](https://developer.huawei.com/consumer/cn/deveco-studio/)获取最新的DevEco Studio软件版本。
 * SDK内置在DevEco Studio，安装DevEco Studio时自动安装配套版本SDK。具体版本请从DevEco Studio界面菜单选择“Help > About HarmonyOS SDK”进行查询。
 
 ## 应用工程版本信息配置建议

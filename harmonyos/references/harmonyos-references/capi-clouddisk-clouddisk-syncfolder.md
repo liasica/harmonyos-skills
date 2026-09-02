@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk_SyncFolder
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 结构体 > CloudDisk_SyncFolder
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:55+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3aa996b48cbff90c56d68ba73e1455e70500d1d92e31833f2d343320d7a832b0
+scraped_at: 2026-09-02T15:01:33+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:f961ed98526a47c7d0eedabf74011ca236364c53400e72a6a90d9fc87ce044a1
 ---
 
-```
-1. typedef struct CloudDisk_SyncFolder {...} CloudDisk_SyncFolder
+```c
+typedef struct CloudDisk_SyncFolder {...} CloudDisk_SyncFolder
 ```
 
 ## 概述
-
-PC/2in1Tablet
 
 同步根属性信息。
 
@@ -26,11 +24,7 @@ PC/2in1Tablet
 
 ## 汇总
 
-PC/2in1Tablet
-
 ### 成员变量
-
-PC/2in1Tablet
 
 | 名称 | 描述 |
 | --- | --- |

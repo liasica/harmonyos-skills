@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-tele
 title: telephony_data.h
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > C API > 头文件 > telephony_data.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:22+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:ce12b29490ddf8f211164a0096c3366db77b227533cbc46f957a3bb8d56401e4
+scraped_at: 2026-09-02T15:02:00+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:62406be6feb5d0810d37df3453bfdccbb3f76b3a1ec0fced70394d1f023a0dbd
 ---
 
 ## 概述
-
-PhoneTabletWearable
 
 为电话蜂窝数据定义C接口。
 
@@ -26,11 +24,7 @@ PhoneTabletWearable
 
 ## 汇总
 
-PhoneTabletWearable
-
 ### 函数
-
-PhoneTabletWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -38,14 +32,10 @@ PhoneTabletWearable
 
 ## 函数说明
 
-PhoneTabletWearable
-
 ### OH\_Telephony\_GetDefaultCellularDataSlotId()
 
-PhoneTabletWearable
-
-```
-1. int32_t OH_Telephony_GetDefaultCellularDataSlotId(void)
+```c
+int32_t OH_Telephony_GetDefaultCellularDataSlotId(void)
 ```
 
 **描述**

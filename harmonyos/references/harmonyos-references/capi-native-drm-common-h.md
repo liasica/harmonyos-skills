@@ -3,14 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_drm_common.h
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > C API > 头文件 > native_drm_common.h
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:01+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ec8aaf3eb49cf0061104c46816431c0a16648f0ada7832fa1e9f77deea1b5490
+scraped_at: 2026-09-02T15:02:29+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:91415e48ccb4974f42b90e7019b6c395ffd6f4b53bdf82eb6100a4f1967d53f1
 ---
 
 ## 概述
-
-PhonePC/2in1TabletTVWearable
 
 定义DRM数据类型。
 
@@ -26,11 +24,7 @@ PhonePC/2in1TabletTVWearable
 
 ## 汇总
 
-PhonePC/2in1TabletTVWearable
-
 ### 结构体
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -43,12 +37,10 @@ PhonePC/2in1TabletTVWearable
 | [DRM\_PsshInfo](capi-drm-drm-psshinfo.md) | DRM\_PsshInfo | DRM内容保护系统专用头（Protection System Specific Header）信息。 |
 | [DRM\_MediaKeySystemInfo](capi-drm-drm-mediakeysysteminfo.md) | DRM\_MediaKeySystemInfo | 加密媒体内容的DRM信息。 |
 | [DRM\_MediaKeySystemDescription](capi-drm-drm-mediakeysystemdescription.md) | DRM\_MediaKeySystemDescription | DRM解决方案名称及其UUID的列表。 |
-| [MediaKeySystem](capi-drm-mediakeysystem.md) | MediaKeySystem | MediaKeySystem结构。 |
-| [MediaKeySession](capi-drm-mediakeysession.md) | MediaKeySession | MediaKeySession结构。 |
+| [MediaKeySystem](capi-drm-mediakeysystem.md) | MediaKeySystem | MediaKeySystem结构，用于表示一个媒体密钥系统实例。MediaKeySystem提供数字版权保护能力，负责DRM插件配置管理、设备证书管理、统计信息获取、内容保护级别查询以及创建MediaKeySession等功能。通过OH\_MediaKeySystem\_Create接口创建实例，通过OH\_MediaKeySystem\_Destroy接口销毁实例。 |
+| [MediaKeySession](capi-drm-mediakeysession.md) | MediaKeySession | MediaKeySession结构，用于表示一个媒体密钥会话实例。MediaKeySession是DRM解密流程的核心组件，负责生成许可证请求、处理许可证响应、管理密钥状态等功能。每个MediaKeySession实例对应一个播放会话的密钥解密过程。通过OH\_MediaKeySystem\_CreateMediaKeySession接口创建实例，通过OH\_MediaKeySession\_Destroy接口销毁实例。每个MediaKeySystem可创建多个MediaKeySession实例，用于处理不同的播放会话。 |
 
 ### 枚举
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
@@ -61,15 +53,11 @@ PhonePC/2in1TabletTVWearable
 
 ### 函数
 
-PhonePC/2in1TabletTVWearable
-
 | 名称 | typedef关键字 | 描述 |
 | --- | --- | --- |
-| [typedef void (\*DRM\_MediaKeySystemInfoCallback)(DRM\_MediaKeySystemInfo \*mediaKeySystemInfo)](capi-native-drm-common-h.md#drm_mediakeysysteminfocallback) | DRM\_MediaKeySystemInfoCallback | 应用为从媒体源获取DRM信息而设置的回调。 |
+| [typedef void (\*DRM\_MediaKeySystemInfoCallback)(DRM\_MediaKeySystemInfo \*mediaKeySystemInfo)](capi-native-drm-common-h.md#drm_mediakeysysteminfocallback) | DRM\_MediaKeySystemInfoCallback | 应用为从媒体源获取DRM信息而设置的回调函数。 |
 
 ### 宏定义
-
-PhonePC/2in1TabletTVWearable
 
 | 名称 | 描述 |
 | --- | --- |
@@ -92,21 +80,17 @@ PhonePC/2in1TabletTVWearable
 | MAX\_MEDIA\_KEY\_STATUS\_NAME\_LEN 64 | 媒体密钥状态名称的最大长度。  **起始版本：** 11 |
 | MAX\_MEDIA\_KEY\_STATUS\_VALUE\_LEN 256 | 媒体密钥状态值的最大长度。  **起始版本：** 11 |
 | DRM\_UUID\_LEN 16 | DRM解决方案的UUID长度。  **起始版本：** 11 |
-| MAX\_PSSH\_DATA\_LEN 2048 | PSSH（Protected System Specific Header）信息的最大长度。  **起始版本：** 11 |
-| MAX\_PSSH\_INFO\_COUNT 8 | PSSH（Protected System Specific Header）信息的最大数量。  **起始版本：** 11 |
+| MAX\_PSSH\_DATA\_LEN 2048 | PSSH（Protection System Specific Header）信息的最大长度。  **起始版本：** 11 |
+| MAX\_PSSH\_INFO\_COUNT 8 | PSSH（Protection System Specific Header）信息的最大数量。  **起始版本：** 11 |
 | MAX\_MEDIA\_KEY\_SYSTEM\_NAME\_LEN 128 | MediaKeySystem名称的最大长度。  **起始版本：** 12 |
 | MAX\_MEDIA\_KEY\_SYSTEM\_NUM 8 | MediaKeySystem的最大数量。  **起始版本：** 12 |
 
 ## 枚举类型说明
 
-PhonePC/2in1TabletTVWearable
-
 ### DRM\_EventType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DRM_EventType
+```c
+enum DRM_EventType
 ```
 
 **描述**
@@ -128,10 +112,8 @@ PhonePC/2in1TabletTVWearable
 
 ### DRM\_ContentProtectionLevel
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DRM_ContentProtectionLevel
+```c
+enum DRM_ContentProtectionLevel
 ```
 
 **描述**
@@ -152,10 +134,8 @@ PhonePC/2in1TabletTVWearable
 
 ### DRM\_MediaKeyType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DRM_MediaKeyType
+```c
+enum DRM_MediaKeyType
 ```
 
 **描述**
@@ -173,10 +153,8 @@ PhonePC/2in1TabletTVWearable
 
 ### DRM\_MediaKeyRequestType
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DRM_MediaKeyRequestType
+```c
+enum DRM_MediaKeyRequestType
 ```
 
 **描述**
@@ -198,10 +176,8 @@ PhonePC/2in1TabletTVWearable
 
 ### DRM\_OfflineMediaKeyStatus
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DRM_OfflineMediaKeyStatus
+```c
+enum DRM_OfflineMediaKeyStatus
 ```
 
 **描述**
@@ -220,10 +196,8 @@ PhonePC/2in1TabletTVWearable
 
 ### DRM\_CertificateStatus
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. enum DRM_CertificateStatus
+```c
+enum DRM_CertificateStatus
 ```
 
 **描述**
@@ -244,19 +218,15 @@ PhonePC/2in1TabletTVWearable
 
 ## 函数说明
 
-PhonePC/2in1TabletTVWearable
-
 ### DRM\_MediaKeySystemInfoCallback()
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. typedef void (*DRM_MediaKeySystemInfoCallback)(DRM_MediaKeySystemInfo *mediaKeySystemInfo)
+```c
+typedef void (*DRM_MediaKeySystemInfoCallback)(DRM_MediaKeySystemInfo *mediaKeySystemInfo)
 ```
 
 **描述**
 
-应用为从媒体源获取DRM信息而设置的回调。
+应用为从媒体源获取DRM信息而设置的回调函数。
 
 **起始版本：** 11
 
@@ -264,4 +234,4 @@ PhonePC/2in1TabletTVWearable
 
 | 参数项 | 描述 |
 | --- | --- |
-| [DRM\_MediaKeySystemInfo](capi-drm-drm-mediakeysysteminfo.md) \*mediaKeySystemInfo | 从媒体源获取的DRM信息。 |
+| [DRM\_MediaKeySystemInfo](capi-drm-drm-mediakeysysteminfo.md) \*mediaKeySystemInfo | 输出参数，从媒体源获取的DRM信息，包含DRM内容保护系统的唯一标识和PSSH数据。 |

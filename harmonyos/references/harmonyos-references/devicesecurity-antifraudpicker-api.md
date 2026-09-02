@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: AntifraudPicker（反诈选择器）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > AntifraudPicker（反诈选择器）
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:13+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:75bccd864cfb805bfca8452a7d11cd5a38b8bf73ad5f26cccc0a7ca4fa8d17b0
+scraped_at: 2026-09-02T14:52:09+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:44f57ab23e060e51f6b5b989383cf1d6410025eafcbae8b676f5d7f226a6370e
 ---
 
 本模块提供获取诈骗消息、诈骗通话记录的接口，应用可以获取选择的消息或通话记录数据，以支撑反诈业务。
@@ -14,17 +14,15 @@ content_hash: sha256:75bccd864cfb805bfca8452a7d11cd5a38b8bf73ad5f26cccc0a7ca4fa8
 
 ## 导入模块
 
-PhoneTablet
-
-```
-1. import {antifraudPicker} from '@kit.DeviceSecurityKit';
+```typescript
+import {antifraudPicker} from '@kit.DeviceSecurityKit';
 ```
 
 ## AntifraudMessageOptions
 
-PhoneTablet
-
 获取诈骗消息的请求参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -32,13 +30,13 @@ PhoneTablet
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50。 |
+| maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50，小于1或者大于50会抛出错误信息，错误码[401](errorcode-devicesecurity-antifraudpicker.md#section401-参数检查失败)。 |
 
 ## SingleAntifraudMessageInfo
 
-PhoneTablet
-
 单条诈骗消息信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -57,9 +55,9 @@ PhoneTablet
 
 ## MmsAttachmentInfo
 
-PhoneTablet
-
 彩信附件信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -72,9 +70,9 @@ PhoneTablet
 
 ## AntifraudMessageResult
 
-PhoneTablet
-
 诈骗消息结果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -86,9 +84,9 @@ PhoneTablet
 
 ## SingleAntifraudCallLogInfo
 
-PhoneTablet
-
 单条诈骗通话记录信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -104,9 +102,9 @@ PhoneTablet
 
 ## AntifraudCallLogResult
 
-PhoneTablet
-
 诈骗通话记录结果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -118,9 +116,9 @@ PhoneTablet
 
 ## AntifraudCallLogOptions
 
-PhoneTablet
-
 获取诈骗通话记录的请求参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -128,15 +126,15 @@ PhoneTablet
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50。 |
+| maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50，小于1或者大于50会抛出错误信息，错误码[401](errorcode-devicesecurity-antifraudpicker.md#section401-参数检查失败)。 |
 
 ## selectFraudMessage
-
-PhoneTablet
 
 selectFraudMessage(context: common.Context, options?: [AntifraudMessageOptions](devicesecurity-antifraudpicker-api.md#antifraudmessageoptions)): Promise<[AntifraudMessageResult](devicesecurity-antifraudpicker-api.md#antifraudmessageresult)>
 
 拉起诈骗消息选择器，并获取用户选择的诈骗消息信息。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.USE\_FRAUD\_MESSAGES\_PICKER
 
@@ -159,46 +157,46 @@ selectFraudMessage(context: common.Context, options?: [AntifraudMessageOptions](
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-antifraudpicker.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-antifraudpicker.md)**。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. Interface caller does not have permission "ohos.permission.USE\_FRAUD\_MESSAGES\_PICKER". |
-| 401 | Input parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
+| 401 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1017100001 | Unknown error. |
 | 1017100002 | The device type is not supported. |
 
 **示例：**
 
-```
-1. import { antifraudPicker} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { common} from '@kit.AbilityKit';
+```typescript
+import { antifraudPicker} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common} from '@kit.AbilityKit';
 
-6. const TAG = "AntifraudPickerJsTest";
+const TAG = "AntifraudPickerJsTest";
 
-8. // 请求获取诈骗消息信息，并进行业务处理
-9. let options: antifraudPicker.AntifraudMessageOptions = {
-10. maxSelectNumber: 5
-11. };
-12. try {
-13. hilog.info(0x0000, TAG, 'SelectFraudMessage begin.');
-14. let context = this.getUIContext().getHostContext();
-15. const result: antifraudPicker.AntifraudMessageResult = await antifraudPicker.selectFraudMessage(context, options);
-16. } catch (err) {
-17. let e: BusinessError = err as BusinessError;
-18. hilog.error(0x0000, TAG, 'SelectFraudMessage failed: %{public}d %{public}s', e.code, e.message);
-19. }
+// 请求获取诈骗消息信息，并进行业务处理
+let options: antifraudPicker.AntifraudMessageOptions = {
+  maxSelectNumber: 5
+};
+try {
+  hilog.info(0x0000, TAG, 'SelectFraudMessage begin.');
+  let context = this.getUIContext().getHostContext();
+  const result: antifraudPicker.AntifraudMessageResult = await antifraudPicker.selectFraudMessage(context, options);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'SelectFraudMessage failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
 
 ## selectFraudCallLog
 
-PhoneTablet
-
 selectFraudCallLog(context: common.Context, options?: [AntifraudCallLogOptions](devicesecurity-antifraudpicker-api.md#antifraudcalllogoptions)): Promise<[AntifraudCallLogResult](devicesecurity-antifraudpicker-api.md#antifraudcalllogresult)>
 
 拉起诈骗通话记录选择器，并获取用户选择的诈骗通话记录信息。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.USE\_FRAUD\_CALL\_LOG\_PICKER
 
@@ -221,44 +219,44 @@ selectFraudCallLog(context: common.Context, options?: [AntifraudCallLogOptions](
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-antifraudpicker.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-antifraudpicker.md)**。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. Interface caller does not have permission "ohos.permission.USE\_FRAUD\_CALL\_LOG\_PICKER". |
-| 401 | Input parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
+| 401 | Parameter error.  Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1017100001 | Unknown error. |
 | 1017100002 | The device type is not supported. |
 
 **示例：**
 
-```
-1. import { antifraudPicker} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { common} from '@kit.AbilityKit';
+```typescript
+import { antifraudPicker} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common} from '@kit.AbilityKit';
 
-6. const TAG = "AntifraudPickerJsTest";
+const TAG = "AntifraudPickerJsTest";
 
-8. // 请求获取诈骗通话记录信息，并进行业务处理
-9. let options: antifraudPicker.AntifraudCallLogOptions = {
-10. maxSelectNumber: 5
-11. };
-12. try {
-13. hilog.info(0x0000, TAG, 'SelectFraudCallLog begin.');
-14. let context = this.getUIContext().getHostContext();
-15. const result: antifraudPicker.AntifraudCallLogResult = await antifraudPicker.selectFraudCallLog(context, options);
-16. } catch (err) {
-17. let e: BusinessError = err as BusinessError;
-18. hilog.error(0x0000, TAG, 'SelectFraudCallLog failed: %{public}d %{public}s', e.code, e.message);
-19. }
+// 请求获取诈骗通话记录信息，并进行业务处理
+let options: antifraudPicker.AntifraudCallLogOptions = {
+  maxSelectNumber: 5
+};
+try {
+  hilog.info(0x0000, TAG, 'SelectFraudCallLog begin.');
+  let context = this.getUIContext().getHostContext();
+  const result: antifraudPicker.AntifraudCallLogResult = await antifraudPicker.selectFraudCallLog(context, options);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'SelectFraudCallLog failed: %{public}d %{public}s', e.code, e.message);
+}
 ```
 
 ## AntifraudAppOptions
 
-PhoneTablet
-
 获取诈骗应用的请求参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -266,13 +264,13 @@ PhoneTablet
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50。 |
+| maxSelectNumber | number | 否 | 是 | 最大可选项数。如果不传，则默认为50。取值范围为1~50，小于1或者大于50会抛出错误信息，错误码[401](errorcode-devicesecurity-antifraudpicker.md#section401-参数检查失败)。 |
 
 ## AntifraudAppResult
 
-PhoneTablet
-
 诈骗应用结果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -284,9 +282,9 @@ PhoneTablet
 
 ## SingleAntifraudAppInfo
 
-PhoneTablet
-
 单条诈骗应用信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Security.Antifraud
 
@@ -301,15 +299,15 @@ PhoneTablet
 | installTime | number | 否 | 否 | 应用安装时间戳，单位：毫秒。 |
 | appId | string | 否 | 否 | 应用ID。 |
 | label | string | 否 | 否 | 应用名称，为用户视角的应用名称，如”时钟”。 |
-| installSource | string | 否 | 否 | 应用程序的安装来源，支持的取值如下：  - pre-installed表示应用为第一次开机时安装的预置应用。  - ota表示应用为系统升级时新增的预置应用。  - recovery表示卸载后再恢复的预置应用。  - 安装来源的格式为包名表示应用由此包名对应的应用安装。  - unknown表示应用安装来源未知 |
+| installSource | string | 否 | 否 | 应用程序的安装来源，支持的取值如下：  - pre-installed表示应用为第一次开机时安装的预置应用。  - ota表示应用为系统升级时新增的预置应用。  - recovery表示卸载后再恢复的预置应用。  - 安装来源的格式为包名表示应用由此包名对应的应用安装。  - unknown表示应用安装来源未知。 |
 
 ## selectFraudApp
-
-PhoneTablet
 
 selectFraudApp(context: common.Context, options?: [AntifraudAppOptions](devicesecurity-antifraudpicker-api.md#antifraudappoptions)): Promise<[AntifraudAppResult](devicesecurity-antifraudpicker-api.md#antifraudappresult)>
 
 拉起诈骗应用选择器，并获取用户选择的诈骗应用信息。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **需要权限：** ohos.permission.USE\_FRAUD\_APP\_PICKER
 
@@ -332,7 +330,7 @@ selectFraudApp(context: common.Context, options?: [AntifraudAppOptions](devicese
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](devicesecurity-arktsapi-errcode-antifraudpicker.md) **。**
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-antifraudpicker.md) **。**
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -343,24 +341,24 @@ selectFraudApp(context: common.Context, options?: [AntifraudAppOptions](devicese
 
 **示例：**
 
-```
-1. import { antifraudPicker} from '@kit.DeviceSecurityKit';
-2. import { BusinessError} from '@kit.BasicServicesKit';
-3. import { hilog } from '@kit.PerformanceAnalysisKit';
-4. import { common} from '@kit.AbilityKit';
+```typescript
+import { antifraudPicker} from '@kit.DeviceSecurityKit';
+import { BusinessError} from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { common} from '@kit.AbilityKit';
 
-6. const TAG = "AntifraudPickerJsTest";
+const TAG = "AntifraudPickerJsTest";
 
-8. // 请求获取诈骗应用信息，并进行业务处理
-9. let options: antifraudPicker.AntifraudAppOptions = {
-10. maxSelectNumber: 5
-11. };
-12. try {
-13. hilog.info(0x0000, TAG, 'SelectFraudApp begin.');
-14. let context = this.getUIContext().getHostContext();
-15. const result: antifraudPicker.AntifraudAppResult = await antifraudPicker.selectFraudApp(context, options);
-16. } catch (err) {
-17. let e: BusinessError = err as BusinessError;
-18. hilog.error(0x0000, TAG, 'SelectFraudApp failed: %{public}d %{public}s', e.code, e.message);
-19. }
+// 请求获取诈骗应用信息，并进行业务处理
+let options: antifraudPicker.AntifraudAppOptions = {
+  maxSelectNumber: 5
+};
+try {
+  hilog.info(0x0000, TAG, 'SelectFraudApp begin.');
+  let context = this.getUIContext().getHostContext();
+  const result: antifraudPicker.AntifraudAppResult = await antifraudPicker.selectFraudApp(context, options);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  hilog.error(0x0000, TAG, 'SelectFraudApp failed: %{public}d %{public}s', e.code, e.message);
+}
 ```

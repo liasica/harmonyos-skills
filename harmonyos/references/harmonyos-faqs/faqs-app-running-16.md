@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 虚拟机打开时，一直报错“无法打开libQt5Network.5.dylib，因为Apple无法检查其是否包含恶意软件”
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 虚拟机打开时，一直报错“无法打开libQt5Network.5.dylib，因为Apple无法检查其是否包含恶意软件”
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:29:57+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:22:16+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:923c895b1888e5b86493dbf0659fe18c4492b946d78bd9d6e18e8a448a52a8dc
 ---
 

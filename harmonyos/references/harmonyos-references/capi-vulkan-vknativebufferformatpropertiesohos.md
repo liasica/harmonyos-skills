@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vulk
 title: VkNativeBufferFormatPropertiesOHOS
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan扩展能力 > VkNativeBufferFormatPropertiesOHOS
 category: harmonyos-references
-scraped_at: 2026-04-28T08:19:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:649df17789a25740b0f25c796029875a511943a78bc3999f85f6353bfc7bffc3
+scraped_at: 2026-09-02T15:03:15+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:1ff44d5d3782d2b4ac8e26fcb5fad90199b06b1489073de8bea1b8ed740ff159
 ---
 
-```
-1. typedef struct VkNativeBufferFormatPropertiesOHOS {...} VkNativeBufferFormatPropertiesOHOS
+```c
+typedef struct VkNativeBufferFormatPropertiesOHOS {...} VkNativeBufferFormatPropertiesOHOS
 ```
 
 ## 概述

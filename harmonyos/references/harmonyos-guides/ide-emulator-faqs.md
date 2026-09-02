@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器错误码
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 模拟器错误码
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:46:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:71a5a429f0f2b2eb64c8f2df427b691f4ac75f64bca1898cf8c6075780982836
+scraped_at: 2026-09-02T14:50:54+08:00
+doc_updated_at: 2026-08-05
+content_hash: sha256:44e33db90db6becaa943b7131db55b3e5828213f5dc6032c81eec69ecf214a22
 ---
 
 当模拟器运行出现错误时，您可以向我们提交错误信息。在扩展菜单栏打开**Bug报告**界面：
@@ -15,7 +15,7 @@ content_hash: sha256:71a5a429f0f2b2eb64c8f2df427b691f4ac75f64bca1898cf8c60757809
 * 在日志文件内容中，可以查看收集的日志内容。
 * 在界面右下方勾选同意用户协议后，点击**保存并发送**按钮，即可将问题和Bug日志传递给我们。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-l6RNf8LRjSfk40Rkw5CMQ/zh-cn_image_0000002561831011.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/YJETLZjgTr6k5qTTMlz8ZQ/zh-cn_image_0000002731541125.png)
 
 ## 00801001 未开启Hyper-V
 
@@ -39,15 +39,15 @@ Hyper-V Not Enabled.
    * 如果不存在，说明系统未预装Hyper-V，请根据系统版本先安装Hyper-V。
    * 如果存在，勾选这三个功能，点击确定并重启电脑。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/BYsfTu3pTKylTO84GTPlfQ/zh-cn_image_0000002530751086.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/lJAuQVF6T1uTEcIWu-AM2w/zh-cn_image_0000002701661924.png)
 3. 若勾选后启动模拟器仍然提示该错误，需要以管理员权限打开命令行窗口执行以下命令，并重启电脑。
 
-   ```
-   1. bcdedit /set hypervisorlaunchtype auto
+   ```bash
+   bcdedit /set hypervisorlaunchtype auto
    ```
 4. 如果按照上述步骤无法解决，打开**任务管理器->性能**，若显示虚拟化已禁用或未开启，则是BIOS中虚拟化没有开启，请根据计算机的主板型号，进入BIOS设置界面，并开启虚拟化功能。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/UYoCeSKcRx6phv_ogj3MkA/zh-cn_image_0000002530911074.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/rgUhz2gpRBS1bDtTBxDZLQ/zh-cn_image_0000002731541147.png)
 
 更多关于Hyper-V安装请参考[在 Windows 上安装 Hyper-V](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/get-started/Install-Hyper-V?f=255&MSPPError=-2147217396)和[Hyper-V 系统要求](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/host-hardware-requirements)。
 
@@ -124,10 +124,10 @@ Emulator failed to start due to insufficient memory.
 
 1. 首先打开**任务管理器>详细信息**，在列表表头右键**>选择列**，找到并勾选“**提交大小**”，点击“**提交大小**”列进行排序，关闭部分提交大小占用高的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/8vHSiovZRyCUBCpMAmCQZg/zh-cn_image_0000002561831013.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/TP7TSsI3QZuvUz1dhKvJwg/zh-cn_image_0000002731381161.png)
 2. 打开**任务管理器>性能>内存**页面，确保已提交内存的剩余量大于模拟器设置的RAM大小。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/t-W2mCiAQjmJLr7JQTS0jA/zh-cn_image_0000002561831015.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/d5sdo4YsTkSULHXitIWZUw/zh-cn_image_0000002731541121.png)
 
 ## 00801006 Windows系统版本过低
 
@@ -183,7 +183,7 @@ The system-image file is missing.
 
 请通过以下两种方式解决：
 
-* 重新下载镜像，具体请参考[创建模拟器](ide-emulator-create.md)。
+* 重新下载镜像，具体请参考[创建模拟器](ide-emulator-create.md)或[命令行下载镜像](ide-emulator-command-line.md#section1999111211815)。
 * 删除已创建的模拟器，然后重新创建模拟器。
 
 ## 00801009 镜像版本不支持
@@ -202,7 +202,7 @@ The current emulator image version is too low.
 
 **处理步骤**
 
-重新下载镜像，具体请参考[创建模拟器](ide-emulator-create.md)。
+重新下载镜像，具体请参考[创建模拟器](ide-emulator-create.md)或[命令行下载镜像](ide-emulator-command-line.md#section1999111211815)。
 
 ## 00801010 镜像版本不匹配
 
@@ -334,11 +334,11 @@ hdc工具的进程存在异常或模拟器镜像和DevEco Studio版本不配套�
 
 1. 执行如下命令，结束hdc的进程，然后尝试重新连接，更多关于hdc工具的使用指导请参考[hdc](hdc.md)。
 
-   ```
-   1. hdc kill
+   ```bash
+   hdc kill
    ```
 2. 若按照步骤1操作后还是不能连接，请重启DevEco Studio和模拟器，然后尝试重新连接。
-3. 重新下载模拟器镜像，具体请参考[创建模拟器](ide-emulator-create.md)。
+3. 重新下载模拟器镜像，具体请参考[创建模拟器](ide-emulator-create.md)或[命令行下载镜像](ide-emulator-command-line.md#section1999111211815)。
 4. 如果已配置hdc环境变量，请检查环境变量配置是否正确。
 
 ## 00801017 安装解析so失败
@@ -376,7 +376,7 @@ The emulator RAM is insufficient.
 
 **处理步骤**
 
-建议在创建模拟器时增加模拟器的运行内存（RAM）大小，请参考[创建模拟器](ide-emulator-create.md#section1764055173710)。
+建议在创建模拟器时增加模拟器的运行内存（RAM）大小，请参考[创建模拟器](ide-emulator-create.md#section1764055173710)或[命令行创建模拟器](ide-emulator-command-line.md#section1147534402018)。
 
 ## 00801019 镜像文件校验失败
 
@@ -394,7 +394,7 @@ Failed to verify the image file.
 
 **处理步骤**
 
-重新下载镜像，具体请参考[创建模拟器](ide-emulator-create.md)。
+重新下载镜像，具体请参考[创建模拟器](ide-emulator-create.md)或[命令行下载镜像](ide-emulator-command-line.md#section1999111211815)。
 
 ## 00801020 Windows ARM系统不支持
 
@@ -414,7 +414,7 @@ Failed to start the Emulator. It does not work with Windows on Arm.
 
 更换系统类型再使用模拟器，具体运行环境要求请参考[使用环境](ide-emulator-requirements.md)。
 
-## 00802001 模拟器卡死
+## 00802001 模拟器冻屏
 
 **错误信息**
 
@@ -426,12 +426,14 @@ Emulator Freeze.
 
 **可能原因**
 
-未知原因。
+1. 系统资源不足，如系统内存不足、CPU占用过高。
+2. 其他未知原因。
 
 **处理步骤**
 
 1. 在弹出的崩溃报告页面，点击**发送报告**按钮，将相关的错误日志信息发送给我们。
-2. 重新启动模拟器。
+2. 清除数据并重新启动模拟器。
+3. 如果仍有问题，可以尝试释放系统资源。打开任务管理器，查看当前运行模拟器时本机的CPU和内存占用情况。若CPU或内存占用过高，可能导致模拟器崩溃，此时需要根据使用情况，清除部分高占用程序，释放系统资源，再重新启动模拟器。
 
 ## 00802002 模拟器无响应
 
@@ -445,12 +447,14 @@ Emulator Graphic Hung.
 
 **可能原因**
 
-图形渲染相关进程异常。
+1. 图形渲染相关进程异常。
+2. GPU性能不足。
 
 **处理步骤**
 
 1. 在弹出的崩溃报告页面，点击**发送报告**按钮，将相关的错误日志信息发送给我们。
-2. 重新启动模拟器。
+2. 清除数据并重新启动模拟器。
+3. 更新驱动或重启电脑，或升级硬件设备，更新至模拟器[推荐的配置](ide-emulator-requirements.md)。
 
 ## 00802003 模拟器闪退
 
@@ -464,9 +468,11 @@ Emulator Crash.
 
 **可能原因**
 
-未知原因异常退出。
+1. 系统内存不足、显存不足等。
+2. 内部错误异常退出。
 
 **处理步骤**
 
 1. 在弹出的崩溃报告页面，点击**发送报告**按钮，将相关的错误日志信息发送给我们。
-2. 重新启动模拟器。
+2. 清除数据并重新启动模拟器。
+3. 尝试释放系统内存，更新显卡驱动或重启电脑。

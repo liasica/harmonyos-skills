@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NodeAdapterEvent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_NodeAdapterEvent
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:19+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:d8a81a628472e27c68af8a4c741be3a92c4539f856cead7580b3bc33bf3fb28b
+scraped_at: 2026-09-02T14:51:51+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:911125befed99d65dc8d91b3745e7b71c8d3527534eec895228d07f9a3539c8c
 ---
 
-```
-1. typedef struct ArkUI_NodeAdapterEvent ArkUI_NodeAdapterEvent
+```c
+typedef struct ArkUI_NodeAdapterEvent ArkUI_NodeAdapterEvent
 ```
 
 ## 概述
 
-PhonePC/2in1TabletTVWearable
-
-定义适配器事件对象。
+定义组件适配器事件对象，用于在节点适配器的事件回调中传递事件类型、宿主节点和数据项索引等信息。
 
 **起始版本：** 12
 

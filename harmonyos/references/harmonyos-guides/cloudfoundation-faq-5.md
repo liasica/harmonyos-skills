@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 如何通过应用侧日志定位预加载问题
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit常见问题 > 预加载 > 如何通过应用侧日志定位预加载问题
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:37:55+08:00
+scraped_at: 2026-09-02T14:50:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:b17cd054da490e52d6f2057fde9dfe3df5f32d02702b6b99dbc3f62d6e52f666
+content_hash: sha256:7af476f0d8197c44fdd826035a006e58b2093d0ec507162d4f955b0eb058d408
 ---
 
 预加载的日志进程为“clouddevelopproxy”，日志过滤选择“No filters”。
@@ -14,17 +14,17 @@ content_hash: sha256:b17cd054da490e52d6f2057fde9dfe3df5f32d02702b6b99dbc3f62d6e5
 
 * 场景一：系统服务在应用安装期间预加载数据成功
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/YddaTIh8SuGQSh0mzc240g/zh-cn_image_0000002558765380.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/tTuNx2zTQk2SPgXF51FZmA/zh-cn_image_0000002706674960.png)
 
   预加载数据成功时日志会提示：http onSuccess code: 200，并且提示预加载的数据大小：get rsp data, len 47（单位为字节）。
 * 场景二：应用调用getPrefetchResult接口获取预加载数据成功
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/PhlmgU7jTjmEOg0dLK1gZw/zh-cn_image_0000002558605724.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/uqvvS6IDSruIuvoR-k4CbQ/zh-cn_image_0000002736434049.png)
 
   数据获取成功时，无Error级别日志，会提示OnGetPreloadCache: end status:0。
 * 场景三：应用调用getPrefetchResult接口获取预加载数据失败
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ChpZXErCRuKSIOKQ6FKY1A/zh-cn_image_0000002589325251.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DkDXxkCNQvyDIQWs6lHywA/zh-cn_image_0000002706834898.png)
 
   **问题现象**
 

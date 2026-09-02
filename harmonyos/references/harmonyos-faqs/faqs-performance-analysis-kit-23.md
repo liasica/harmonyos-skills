@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何获取设备的SDK版本、产品版本、设备类型（平板、手机）、build版本等信息
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何获取设备的SDK版本、产品版本、设备类型（平板、手机）、build版本等信息
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:16+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:13+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:206efbb03925f199fb055d55046fc202a02ad64083b6b6d0734423464be97fad
 ---
 

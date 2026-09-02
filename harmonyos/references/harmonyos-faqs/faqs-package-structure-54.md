@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何安装打包出来的App包（通过什么命令安装）
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何安装打包出来的App包（通过什么命令安装）
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:23:36+08:00
-doc_updated_at: 2026-03-10
+scraped_at: 2026-09-02T15:21:14+08:00
+doc_updated_at: 2026-06-15
 content_hash: sha256:2e2f530ceb59342ba10e28cf4b72fd8b95ad31a18384f61104ecdd479d79d1c3
 ---
 

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-148
 title: 如何解决Web页面输入框拉起键盘后，页面头部被截断的问题
-breadcrumb: FAQ > 应用框架开发 > UI框架 > 方舟UI框架（ArkUI） > 如何解决Web页面输入框拉起键盘后，页面头部被截断的问题
+breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何解决Web页面输入框拉起键盘后，页面头部被截断的问题
 category: harmonyos-faqs
-scraped_at: 2026-04-28T08:25:40+08:00
-doc_updated_at: 2026-03-10
-content_hash: sha256:9cea093b07fe4d9a2e26986ac75eb42560b0df9fa0c8ad530514337f483c83fa
+scraped_at: 2026-09-02T14:54:14+08:00
+doc_updated_at: 2026-06-26
+content_hash: sha256:775705660642566bfb93c1fd9e49ee837c2b393b40e7f62739f1d5ee736e490d
 ---
 
 **问题现象**
@@ -18,64 +18,62 @@ content_hash: sha256:9cea093b07fe4d9a2e26986ac75eb42560b0df9fa0c8ad530514337f483
 
 该问题可通过监听软键盘状态解决：软键盘弹出时，将子窗口高度设置为屏幕高度减去软键盘高度；软键盘收起时，子窗口高度设置为屏幕高度。参考代码如下：
 
+```ts
+// Sub-window page layout
+import { webview } from '@kit.ArkWeb';
+import { window } from '@kit.ArkUI';
+
+@Entry
+@Component
+export struct SubWindowPage {
+  @State webViewVisibility: Visibility = Visibility.Visible;
+  private pageWidth = 320;
+  private pageHeight = 500;
+  private controller: webview.WebviewController = new webview.WebviewController();
+  @State flexAlign: FlexAlign = FlexAlign.Center;
+  @State screenHeight: number | string = '100%';
+
+  aboutToAppear() {
+    window.getLastWindow(this.getUIContext().getHostContext()).then(currentWindow => {
+      // Monitor keyboard pop-up and collapse
+      currentWindow.on('avoidAreaChange', async data => {
+        let property = currentWindow.getWindowProperties();
+        let avoidArea = currentWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD);
+        this.screenHeight = this.getUIContext().px2vp(property.windowRect.height - avoidArea.bottomRect.height);
+      });
+    })
+  }
+
+  build() {
+    Stack() {
+      Column() {
+        Web({ src: $rawfile('index.html'), controller: this.controller })
+          .javaScriptAccess(true)
+          .fileAccess(false)
+          .zoomAccess(false)
+          .domStorageAccess(true)
+          .onlineImageAccess(true)
+          .horizontalScrollBarAccess(false)
+          .verticalScrollBarAccess(false)
+          .cacheMode(CacheMode.Online)
+          .width(this.pageWidth)
+          .height(this.pageHeight)
+          .border({ radius: 6 })
+          .visibility(this.webViewVisibility)
+          .backgroundColor(Color.Pink)
+      }
+      .justifyContent(this.flexAlign)
+      .alignItems(HorizontalAlign.Center)
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height(this.screenHeight)
+    .backgroundColor('#999955')
+    .alignContent(Alignment.Center)
+  }
+}
 ```
-1. // Sub-window page layout
-2. import { webview } from '@kit.ArkWeb';
-3. import { window } from '@kit.ArkUI';
-
-5. @Entry
-6. @Component
-7. export struct SubWindowPage {
-8. @State webViewVisibility: Visibility = Visibility.Visible;
-9. private pageWidth = 320;
-10. private pageHeight = 500;
-11. private controller: webview.WebviewController = new webview.WebviewController();
-12. @State flexAlign: FlexAlign = FlexAlign.Center;
-13. @State screenHeight: number | string = '100%';
-
-15. aboutToAppear() {
-16. window.getLastWindow(this.getUIContext().getHostContext()).then(currentWindow => {
-17. // Monitor keyboard pop-up and collapse
-18. currentWindow.on('avoidAreaChange', async data => {
-19. let property = currentWindow.getWindowProperties();
-20. let avoidArea = currentWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD);
-21. this.screenHeight = this.getUIContext().px2vp(property.windowRect.height - avoidArea.bottomRect.height);
-22. });
-23. })
-24. }
-
-26. build() {
-27. Stack() {
-28. Column() {
-29. Web({ src: $rawfile('index.html'), controller: this.controller })
-30. .javaScriptAccess(true)
-31. .fileAccess(false)
-32. .zoomAccess(false)
-33. .domStorageAccess(true)
-34. .onlineImageAccess(true)
-35. .horizontalScrollBarAccess(false)
-36. .verticalScrollBarAccess(false)
-37. .cacheMode(CacheMode.Online)
-38. .width(this.pageWidth)
-39. .height(this.pageHeight)
-40. .border({ radius: 6 })
-41. .visibility(this.webViewVisibility)
-42. .backgroundColor(Color.Pink)
-43. }
-44. .justifyContent(this.flexAlign)
-45. .alignItems(HorizontalAlign.Center)
-46. .width('100%')
-47. .height('100%')
-48. }
-49. .width('100%')
-50. .height(this.screenHeight)
-51. .backgroundColor('#999955')
-52. .alignContent(Alignment.Center)
-53. }
-54. }
-```
-
-[TheHeaderTruncated.ets](https://gitcode.com/HarmonyOS_Samples/faqsnippets/blob/master/ArkUI/entry/src/main/ets/pages/TheHeaderTruncated.ets#L21-L74)
 
 **参考链接**
 

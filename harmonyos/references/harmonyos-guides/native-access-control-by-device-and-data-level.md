@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-access
 title: 基于设备分类和数据分级的访问控制 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 基于设备分类和数据分级的访问控制 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:21+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:7bd5025810a129f77c0532159c497615d6e8e8ddbaa9b3004e97ce19d898555b
+scraped_at: 2026-09-02T14:59:12+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:d543c10749514cdd5f402a6cb2e223ae47ea8fe88f9ca7be7c80859bbeaa01c5
 ---
 
 ## 场景介绍
@@ -41,7 +41,7 @@ content_hash: sha256:7bd5025810a129f77c0532159c497615d6e8e8ddbaa9b3004e97ce19d89
 
 数据跨设备同步时，基于数据安全标签和设备安全等级进行访问控制。数据库的数据安全标签不高于对端设备的设备安全等级时，数据才能同步。具体访问控制矩阵如下：
 
-| 设备安全级别 | 可同步的数据安全标签 |
+| 设备安全等级 | 可同步的数据安全标签 |
 | --- | --- |
 | SL1 | S1 |
 | SL2 | S1~S2 |
@@ -57,37 +57,33 @@ content_hash: sha256:7bd5025810a129f77c0532159c497615d6e8e8ddbaa9b3004e97ce19d89
 
 1. CMakeLists.txt中添加以下lib。
 
-   ```
-   1. libnative_rdb_ndk.z.so
+   ```txt
+   libnative_rdb_ndk.z.so
    ```
 2. 导入头文件。
 
    ```
-   1. #include <cstring>
-   2. #include "database/rdb/relational_store.h"
-   3. #include "hilog/log.h"
+   #include <cstring>
+   #include "database/rdb/relational_store.h"
+   #include "hilog/log.h"
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/NativeDataEncryption/entry/src/main/cpp/napi_init.cpp#L18-L20)
 3. 调用OH\_Rdb\_SetSecurityLevel接口设置数据库的安全等级。
 
    ```
-   1. OH_Rdb_ConfigV2 *config = OH_Rdb_CreateConfig();
-   2. OH_Rdb_SetDatabaseDir(config, "/data/storage/el2/database");
-   3. OH_Rdb_SetStoreName(config, "RdbTest.db");
-   4. OH_Rdb_SetBundleName(config, "com.example.nativedemo");
-   5. OH_Rdb_SetModuleName(config, "entry");
-   6. // 数据库文件安全等级
-   7. OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S3);
-   8. OH_Rdb_SetEncrypted(config, false);
-   9. OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL2);
-
-   11. int errCode = 0;
-   12. OH_Rdb_Store *store_ = OH_Rdb_CreateOrOpen(config, &errCode);
-   13. OH_Rdb_CloseStore(store_);
-   14. store_ = nullptr;
-   15. OH_Rdb_DestroyConfig(config);
-   16. config = nullptr;
+   OH_Rdb_ConfigV2 *config = OH_Rdb_CreateConfig();
+   OH_Rdb_SetDatabaseDir(config, "/data/storage/el2/database");
+   OH_Rdb_SetStoreName(config, "RdbTest.db");
+   OH_Rdb_SetBundleName(config, "com.example.nativedemo");
+   OH_Rdb_SetModuleName(config, "entry");
+   // 数据库文件安全等级
+   OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S3);
+   OH_Rdb_SetEncrypted(config, false);
+   OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL2);
+       
+   int errCode = 0;
+   OH_Rdb_Store *store_ = OH_Rdb_CreateOrOpen(config, &errCode);
+   OH_Rdb_CloseStore(store_);
+   store_ = nullptr;
+   OH_Rdb_DestroyConfig(config);
+   config = nullptr;
    ```
-
-   [napi\_init.cpp](https://gitcode.com/HarmonyOS_Samples/guide-snippets/blob/HarmonyOS-feature-20260112/ArkData/RelationalStore/NativeDataEncryption/entry/src/main/cpp/napi_init.cpp#L163-L180)

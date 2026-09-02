@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 位置服务错误码
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > 错误码 > 位置服务错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:08+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1df60e7a772cceaf0418ccc13aa7b34d197a58ac99ccf5eaa75ed62927f5856d
+scraped_at: 2026-09-02T15:02:58+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:97741cc3735e3ff788261caca74abf928186e5a0539e92463dda80760befba6c
 ---
 
-说明
+**说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
 
 ## 3301000 位置服务不可用
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -38,8 +36,6 @@ The location service is unavailable.
 
 ## 3301100 位置功能的开关未开启导致功能失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 The location switch is off.
@@ -58,9 +54,7 @@ The location switch is off.
 
 ## 3301200 定位失败，未获取到定位结果
 
-PhonePC/2in1TabletTVWearable
-
-### 1. 网络不可用导致定位失败
+### 错误原因1. 网络不可用导致定位失败
 
 **错误信息**
 
@@ -78,7 +72,7 @@ The network locating is failed because the network cannot be accessed.
 
 请检查设备是否能联网，设备是否插入SIM卡，Wi-Fi开关是否开启等。
 
-### 2. 定位结果不满足精度要求导致定位超时
+### 错误原因2. 定位结果不满足精度要求导致定位超时
 
 **错误信息**
 
@@ -99,7 +93,7 @@ The positioning result does not meet the precision requirement (maxAccuracy) in 
 * 当[scenario](js-apis-geolocationmanager.md#locationrequestscenario)为NAVIGATION/TRAJECTORY\_TRACKING/CAR\_HAILING，或者[priority](js-apis-geolocationmanager.md#locationrequestpriority)为ACCURACY时，建议设置maxAccuracy为大于10的值。
 * 当[scenario](js-apis-geolocationmanager.md#locationrequestscenario)为DAILY\_LIFE\_SERVICE/NO\_POWER，或者[priority](js-apis-geolocationmanager.md#locationrequestpriority)为LOW\_POWER/FIRST\_FIX时，建议设置maxAccuracy为大于100的值。
 
-### 3. 获取缓存位置失败
+### 错误原因3. 获取缓存位置失败
 
 **错误信息**
 
@@ -117,7 +111,25 @@ The system does not have a cache location.
 
 系统未提前将位置信息进行缓存的情况下，需使用[getCurrentLocation](js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)接口获取实时位置信息。
 
-### 4. 其他原因导致定位失败
+### 错误原因4. 获取后处理轨迹失败
+
+**错误信息**
+
+Failed to obtain the post processing track because sports type is not supported.
+
+**错误描述**
+
+不支持当前输入的运动类型，无法获取后处理轨迹。
+
+**可能原因**
+
+入参设置错误，请使用支持的sports类型。
+
+**处理步骤**
+
+请参考[getPostProcessingTrack](js-apis-geolocationmanager.md#geolocationmanagergetpostprocessingtrack)入参说明，使用支持的sports类型。
+
+### 错误原因5. 其他原因导致定位失败
 
 **错误信息**
 
@@ -138,8 +150,6 @@ Failed to obtain the geographical location.
 * 请在“日期和时间”页面勾选自动设置。
 
 ## 3301300 逆地理编码查询失败
-
-PhonePC/2in1TabletWearable
 
 **错误信息**
 
@@ -163,8 +173,6 @@ Reverse geocoding query failed.
 
 ## 3301400 地理编码查询失败
 
-PhonePC/2in1TabletWearable
-
 **错误信息**
 
 Geocoding query failed.
@@ -185,8 +193,6 @@ Geocoding query failed.
 
 ## 3301500 区域信息（包含国家码）查询失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to query the area information.
@@ -204,8 +210,6 @@ Failed to query the area information.
 建议增加重试机制。
 
 ## 3301600 地理围栏操作失败
-
-PhoneTablet
 
 **错误信息**
 
@@ -229,8 +233,6 @@ Failed to operate the geofence.
 
 ## 3301601 地理围栏个数超过最大值限制导致添加围栏失败
 
-PhoneTablet
-
 **错误信息**
 
 The number of geofences exceeds the maximum.
@@ -248,8 +250,6 @@ The number of geofences exceeds the maximum.
 请在删除多余围栏之后再添加新的围栏。
 
 ## 3301602 地理围栏ID错误导致删除围栏失败
-
-PhoneTablet
 
 **错误信息**
 
@@ -291,8 +291,6 @@ No response to the request.
 
 ## 3301800 启动Wi-Fi或蓝牙扫描失败
 
-PhonePC/2in1TabletTVWearable
-
 **错误信息**
 
 Failed to start Wi-Fi or Bluetooth scanning.
@@ -314,8 +312,6 @@ Failed to start Wi-Fi or Bluetooth scanning.
 重新关闭开启Wi-Fi或蓝牙开关。
 
 ## 3301900 由于Wi-Fi未连接导致获取Wi-Fi热点的MAC地址失败
-
-PhonePC/2in1TabletTVWearable
 
 **错误信息**
 
@@ -339,8 +335,6 @@ Failed to obtain the hotspot MAC address because the Wi-Fi is not connected.
 
 ## 3501100 由于位置功能开关未打开导致添加beacon围栏失败
 
-PhoneTablet
-
 **错误信息**
 
 Failed to add a beacon fence because the location switch is off.
@@ -358,8 +352,6 @@ Failed to add a beacon fence because the location switch is off.
 请提示用户开启位置功能的开关。
 
 ## 3501101 由于蓝牙功能开关未打开导致添加beacon围栏失败
-
-PhoneTablet
 
 **错误信息**
 
@@ -379,8 +371,6 @@ Failed to add a beacon fence because the bluetooth switch is off.
 
 ## 3501601 由于beacon围栏个数超过最大值限制导致添加围栏失败
 
-PhoneTablet
-
 **错误信息**
 
 The number of beacon fence exceeds the maximum.
@@ -399,8 +389,6 @@ beacon围栏个数超过最大值限制导致添加围栏失败。
 
 ## 3501602 由于beacon围栏信息不正确导致删除围栏失败
 
-PhoneTablet
-
 **错误信息**
 
 Failed to delete the fence due to incorrect beacon fence information.
@@ -418,8 +406,6 @@ beacon围栏信息不正确导致删除围栏失败。
 请在调用删除beacon围栏接口时传入正确的围栏信息。
 
 ## 3501603 由于存在重复的beacon围栏导致添加围栏失败
-
-PhoneTablet
 
 **错误信息**
 

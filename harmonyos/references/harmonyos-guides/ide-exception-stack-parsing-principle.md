@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception
 title: 异常堆栈解析原理
 breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析 > 异常堆栈解析原理
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:46:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9347eec2589bc36aef69442908be999d26b4cc6861372598667ac5b03fc33ce0
+scraped_at: 2026-09-02T15:00:25+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:80fba1c31bab706f980536be97b64c3d7d8103af2a7dfc898860861271acf3ce
 ---
 
 ## 构建产物介绍
@@ -14,62 +14,66 @@ content_hash: sha256:9347eec2589bc36aef69442908be999d26b4cc6861372598667ac5b03fc
 
 release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{product}/cache/default/default@CompileArkTS/esmodule/release/sourceMaps.map
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/k7uWuzt0RNqkh1cDWIcnJA/zh-cn_image_0000002530912872.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/tBP5y6G2RIatkJ6P26mJwQ/zh-cn_image_0000002701662906.png)
 
 ### C++调试产物debug so
 
-带debug信息的so数据，产物位置：{ProjectPath}/{ModuleName}/build/{product}/intermediates/libs
+带调试信息的so数据，产物位置：{ProjectPath}/{ModuleName}/build/{product}/intermediates/libs
 
-配置方式请参考[release编译带debug信息的so](ide-exception-stack-parsing-principle.md#section5147812132)。
+配置方式请参考[release编译带调试信息的so](ide-exception-stack-parsing-principle.md#section5147812132)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/JorfyS5oTqqmiGNDiLi5Mw/zh-cn_image_0000002530912888.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/pz1R6yKFRM6nBBdyiHJ06g/zh-cn_image_0000002731382123.png)
 
 ### 代码混淆产物nameCache
 
 反混淆映射表，release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{product}/cache/default/default@CompileArkTS/esmodule/release/obfuscation
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/4BZgcm0tQ4216gV8R_bUxA/zh-cn_image_0000002530752886.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/6vZNqTCDSPqHfTsJvqKJiQ/zh-cn_image_0000002731542095.png)
 
 ## C++堆栈解析原理
 
 ### 编译选项差异
 
-* Debug：不优化代码，附加调试信息。
+* Debug：不优化代码，附加调试信息，如果能够稳定复现，建议优先使用该选项。
 * Release：最大化优化代码，但不包含调试信息。
-* RelWithDebInfo：近似于Release模式，既进行了代码优化，同时保留部分调试信息。
+* RelWithDebInfo：近似于Release模式，既进行了代码优化，同时保留部分调试信息；代码优化默认采用O2的优化，该优化可能会导致无法解析到具体代码行，出现该问题可在CMakeLists.txt中增加以下配置，其中crash.cpp需要替换为产生异常的cpp文件。
 
-### release编译带debug信息的so
+  ```txt
+  set_source_files_properties(crash.cpp PROPERTIES COMPILE_FLAGS "-O0 -g -DNDEBUG")
+  ```
+
+### release编译带调试信息的so
 
 通常release的so中的符号表、调试信息会被移除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/JyHCbSZ1TCWgyOALRfiaAA/zh-cn_image_0000002561832789.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/vlU9A9ReQi6xhXcVHZt8ww/zh-cn_image_0000002701822816.png)
 
 若需要保留so文件中的符号表、调试信息，需要在build-profile.json5的buildOption/externalNativeOptions中配置参数："arguments": "-DCMAKE\_BUILD\_TYPE=RelWithDebInfo"。
 
-```
-1. {
-2. "apiType": "stageMode",
-3. "buildOption": {
-4. "externalNativeOptions": {
-5. "path": "./src/main/cpp/CMakeLists.txt",
-6. "arguments": "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-7. "cppFlags": "",
-8. }
-9. },
-10. ...
-11. }
+```json5
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    "externalNativeOptions": {
+      "path": "./src/main/cpp/CMakeLists.txt",
+      "arguments": "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "cppFlags": "",
+    }
+  },
+  ...
+}
 ```
 
 编译后会生成2份so产物：
 
-* libs：带debug信息的so。
+* libs：带调试信息的so。
 * stripped\_native\_libs：移除调试信息等冗余数据后的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ra3J788-QM2gk0qzrgf7rg/zh-cn_image_0000002530912870.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/rMH5Hpv6So2MRWqglMomlg/zh-cn_image_0000002731542103.png)
 
 ### C++堆栈解析流程
 
-llvm-addr2line（[获取llvm-addr2line工具](ide-exception-stack-parsing-principle.md#li11164144153)）是将函数地址解析成文件名或行号的工具。
+llvm-addr2line（在DevEco Studio安装目录的sdk/default/openharmony/native/llvm/bin目录下）是将函数地址解析成文件名或行号的工具。
 
 给出一个可执行文件中的地址或一个可重定位对象中的偏移部分的地址，使用调试信息来找出与之相关的文件名和行号。
 
@@ -89,48 +93,39 @@ llvm-addr2line（[获取llvm-addr2line工具](ide-exception-stack-parsing-princi
 
 查看文件名、行号和函数名相关信息：
 
-```
-1. llvm-addr2line -f -e File.so
+```bash
+llvm-addr2line -f -e File.so
 ```
 
 查找指定的地址所对应的代码位置：
 
-```
-1. llvm-addr2line 0x00000000004005e7 -e test -f -C -s
+```bash
+llvm-addr2line 0x00000000004005e7 -e test -f -C -s
 ```
 
 例如：
 
-```
-1. llvm-addr2line -e libapplication.so 00003714 -f -C
+```bash
+llvm-addr2line -e libapplication.so 00003714 -f -C
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/c0HBvuc9TZuRkqfeKXistA/zh-cn_image_0000002530752868.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/CvGSdiK7RYWLP8_4OKU0BA/zh-cn_image_0000002701662908.png)
 
 ASan堆栈解析：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/ZZ672zWhR26Mbf74kD_8oQ/zh-cn_image_0000002561832809.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/FACUyEEHTZWgf7rC18tYHw/zh-cn_image_0000002731382127.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/OkfW9Z25RVaDrjxAbfen-Q/zh-cn_image_0000002530912890.png)
-
-### 常见问题
-
-* 什么是UUID？
-
-  每一个可执行程序都有一个build UUID来唯一标识。Crash日志包含发生crash的这个应用（app）的build UUID以及crash发生时应用加载的所有库文件的build UUID。
-* 如何获取llvm-addr2line工具？
-
-  在DevEco Studio安装目录/deveco-studio/sdk/default/openharmony/native/llvm/bin下即可找到llvm-addr2line.exe。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/sJAF07anQHanewi4BruXww/zh-cn_image_0000002701662898.png)
 
 ## ArkTS堆栈解析原理
 
 ### sourceMap格式
 
 **图1** 源码   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/l49dCtrzTl6d-w5e0pRQrA/zh-cn_image_0000002530912876.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/OhAw6g6sRTSz7RR5xkRmiA/zh-cn_image_0000002701822820.png)
 
 **图2** 编译后产物   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/y_lBi6NxQr2ZQ7hvz_rYUw/zh-cn_image_0000002561752827.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/V5JrXdeeSaSXs15Urvrc4w/zh-cn_image_0000002731542097.png "点击放大")
 
 **实际代码行映射关系：**
 
@@ -144,7 +139,7 @@ ASan堆栈解析：
 
 **sourceMap结构：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/FZhQJA3fRb6Eypw8yw6Oyw/zh-cn_image_0000002561752811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/F0dPkDjER6GVoL7rRAkVvQ/zh-cn_image_0000002731542091.png)
 
 单个module构建产物sourceMaps.map为merge文件，实际包含该模块的所有文件的映射关系；每个json中key以编译构建产物的唯一路径作为主键，运行程序的abc中保留了对应的key信息，当运行时异常代码归属到该文件时输出信息为该key，sources为实际源码文件信息，用于异常堆栈还原源码；mappings为编码后的行列号映射表，每个文件有独立的映射关系。
 
@@ -165,7 +160,7 @@ ASan堆栈解析：
 以“|”为分隔符，entry是本模块oh-package.json5中的name，har1|1.0.0是依赖的har1包的oh-package.json5中的name和version（如果没有依赖包，则是本模块oh-package.json5中的name和version），src/main/ets/pages/w.ts是引用的源码文件路径。
 
 **图3** sourceMap中的key结构化处理   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/PGRj3OP2QxmDKIvo-SXOug/zh-cn_image_0000002530912878.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/gtfIoRD_QhKxdzQODngijg/zh-cn_image_0000002701662896.png "点击放大")
 
 ## 反混淆解析原理
 
@@ -175,46 +170,46 @@ ASan堆栈解析：
 
 混淆映射表：$ProjectPath\$ModuleName\build\$product\cache\default\default@CompileArkTS\esmodule\release\obfuscation\nameCache.json
 
-```
-1. {
-2. "home/src/main/ets/homeability/HomeAbility.ets": {
-3. "IdentifierCache": {
-4. "#AbilityConstant": "AbilityConstant",
-5. "#hilog": "hilog",
-6. "#UIAbility": "UIAbility",
-7. "#Want": "Want",
-8. "#window": "window",
-9. "HomeAbility#onWindowStageCreate#__function": "i"
-10. },
-11. "MemberMethodCache": {
-12. "onCreate:10:16": "onCreate",
-13. "onDestroy:18:20": "onDestroy",
-14. "onWindowStageCreate:22:33": "onWindowStageCreate",
-15. "onWindowStageDestroy:35:38": "onWindowStageDestroy",
-16. "onForeground:40:43": "onForeground",
-17. "onBackground:45:48": "onBackground"
-18. },
-19. "obfName": "home/src/main/ets/homeability/HomeAbility.ets"
-20. },
-21. "compileSdkVersion": "5.0.0.25",
-22. "entryPackageInfo": "home|1.0.0",
-23. "PropertyCache": {
-24. "integratedHsp": "i",
-25. "asanClick": "j",
-26. "Index_Params": "m",
-27. "testNapi": "o",
-28. "Index": "t",
-29. "testObfuscation": "g2"
-30. }
-31. }
+```json
+{
+  "home/src/main/ets/homeability/HomeAbility.ets": {
+    "IdentifierCache": {
+      "#AbilityConstant": "AbilityConstant",
+      "#hilog": "hilog",
+      "#UIAbility": "UIAbility",
+      "#Want": "Want",
+      "#window": "window",
+      "HomeAbility#onWindowStageCreate#__function": "i"
+    },
+    "MemberMethodCache": {
+      "onCreate:10:16": "onCreate",
+      "onDestroy:18:20": "onDestroy",
+      "onWindowStageCreate:22:33": "onWindowStageCreate",
+      "onWindowStageDestroy:35:38": "onWindowStageDestroy",
+      "onForeground:40:43": "onForeground",
+      "onBackground:45:48": "onBackground"
+    },
+    "obfName": "home/src/main/ets/homeability/HomeAbility.ets"
+  },
+  "compileSdkVersion": "5.0.0.25",
+  "entryPackageInfo": "home|1.0.0",
+  "PropertyCache": {
+    "integratedHsp": "i",
+    "asanClick": "j",
+    "Index_Params": "m",
+    "testNapi": "o",
+    "Index": "t",
+    "testObfuscation": "g2"
+  }
+}
 ```
 
 * **originalfieldname**：该字段为每个文件的原始文件路径及名称，例如以上的"home/src/main/ets/homeability/HomeAbility.ets"。
 
 * **ObfName**：key为固定字段，value为每个文件混淆后的名称，与**originalfieldname**配对。
 
-  ```
-  1. "obfName": "home/src/main/ets/pages/a.ts"
+  ```json
+  "obfName": "home/src/main/ets/pages/a.ts"
   ```
 * **IdentifierCache**：该字段对应的值为该文件下的变量名混淆前后的映射关系。
 
@@ -222,8 +217,8 @@ ASan堆栈解析：
 
   普通变量映射关系的格式如下：
 
-  ```
-  1. originalvariablename :  obfuscatedvariablename
+  ```txt
+  originalvariablename :  obfuscatedvariablename
   ```
 
   + originalvariablename 表示原始的变量名称。
@@ -231,9 +226,9 @@ ASan堆栈解析：
 
   类方法变量映射关系的格式如下：
 
-  ```
-  1. /*--------------------------key----------------------------------  :  -----------value----------*/
-  2. originalmethodname: originalmethodstartline: originalmethodendline :  obfuscatedmethodname
+  ```txt
+  /*--------------------------key----------------------------------  :  -----------value----------*/
+  originalmethodname: originalmethodstartline: originalmethodendline :  obfuscatedmethodname
   ```
 
   + originalmethodname 表示原始的方法名称。
@@ -243,16 +238,16 @@ ASan堆栈解析：
 
   开启属性混淆时，成员方法映射关系的格式如下：
 
-  ```
-  1. /*--------------------------key---------------------------------  :  -----------value----------*/
-  2. originalmethodname:originalmethodstartline:originalmethodendline  :  obfuscatedmethodname
+  ```txt
+  /*--------------------------key---------------------------------  :  -----------value----------*/
+  originalmethodname:originalmethodstartline:originalmethodendline  :  obfuscatedmethodname
   ```
 
   未开启属性混淆时，成员方法映射关系的格式如下：
 
-  ```
-  1. /*--------------------------key-------------------------------------  :  -----------value----------*/
-  2. originalmethodname : originalmethodstartline : originalmethodendline  :  originalmethodname
+  ```txt
+  /*--------------------------key-------------------------------------  :  -----------value----------*/
+  originalmethodname : originalmethodstartline : originalmethodendline  :  originalmethodname
   ```
 
   + originalmethodname 表示原始的成员方法名称。
@@ -262,9 +257,9 @@ ASan堆栈解析：
 
   属性名映射关系格式如下：
 
-  ```
-  1. /*--------key-------  :  -----------value----------*/
-  2. originalpropertyname  :  obfuscatedmethodname
+  ```txt
+  /*--------key-------  :  -----------value----------*/ 
+  originalpropertyname  :  obfuscatedmethodname
   ```
 
   + originalpropertyname 表示原始的属性名称。
@@ -274,55 +269,55 @@ ASan堆栈解析：
 
 异常堆栈如下：
 
-```
-1. Pid:58348
-2. Uid:20020156
-3. Reason:RangeError
-4. Error name:RangeError
-5. Error message:The number cannot be converted to a BigInt because it is not an integer
-6. Stacktrace:
-7. Cannot get SourceMap info, dump raw stack:
-8. at g2 (home|home|1.0.0|src/main/ets/pages/a.ts:6:6)
-9. at getVersion (home|home|1.0.0|src/main/ets/pages/a.ts:2:2)
-10. at anonymous (home|home|1.0.0|src/main/ets/pages/Index.ts:61:61)
+```txt
+Pid:58348
+Uid:20020156
+Reason:RangeError
+Error name:RangeError
+Error message:The number cannot be converted to a BigInt because it is not an integer
+Stacktrace:
+Cannot get SourceMap info, dump raw stack:
+    at g2 (home|home|1.0.0|src/main/ets/pages/a.ts:6:6)
+    at getVersion (home|home|1.0.0|src/main/ets/pages/a.ts:2:2)
+    at anonymous (home|home|1.0.0|src/main/ets/pages/Index.ts:61:61)
 ```
 
 1. 经过sourceMap映射转码堆栈如下：
 
-   ```
-   1. at g2 (home/src/main/ets/pages/tool.ts:7:27)
-   2. at getVersion (home/src/main/ets/pages/tool.ts:2:30)
-   3. at anonymous (home/src/main/ets/pages/Index.ets:23:40)
+   ```txt
+   at g2 (home/src/main/ets/pages/tool.ts:7:27)
+   at getVersion (home/src/main/ets/pages/tool.ts:2:30)
+   at anonymous (home/src/main/ets/pages/Index.ets:23:40)
    ```
 
    a.ts通过sourceMap还原为tool.ts。
 
-   ```
-   1. "home|home|1.0.0|src/main/ets/pages/a.ts": {
-   2. "version": 3,
-   3. "file": "tool.ts",
-   4. "sources": [
-   5. "home/src/main/ets/pages/tool.ts"
-   6. ],
-   7. "names": [],
-   8. "mappings": "AAAA,MAAM,CAAC,OAAO,UAAU,UAAU,IAAI,MAAM;IAC1C,IAAI,KAAM,IAAiB,CAAA;IAC3B,UAAW;AACb,CAAC;AAED,eAA2B,MAAM;IAC/B,IAAI,GAAG,GAAG,MAAM,CAAC,MAAM,CAAC,CAAA;IACxB,OAAO,GAAG,CAAC;AACb,CAAC",
-   9. "sourceRoot": "",
-   10. "entry-package-info": "home|1.0.0"
-   11. }
+   ```json
+   "home|home|1.0.0|src/main/ets/pages/a.ts": {
+       "version": 3,
+       "file": "tool.ts",
+       "sources": [
+         "home/src/main/ets/pages/tool.ts"
+       ],
+       "names": [],
+       "mappings": "AAAA,MAAM,CAAC,OAAO,UAAU,UAAU,IAAI,MAAM;IAC1C,IAAI,KAAM,IAAiB,CAAA;IAC3B,UAAW;AACb,CAAC;AAED,eAA2B,MAAM;IAC/B,IAAI,GAAG,GAAG,MAAM,CAAC,MAAM,CAAC,CAAA;IACxB,OAAO,GAAG,CAAC;AACb,CAAC",
+       "sourceRoot": "",
+       "entry-package-info": "home|1.0.0"
+     }
    ```
 2. 函数级文件名映射。
 
    查看混淆映射表：$ProjectPath\$ModuleName\build\$product\cache\default\default@CompileArkTS\esmodule\release\obfuscation\nameCache.json
 
-   ```
-   1. "home/src/main/ets/pages/tool.ts": {
-   2. "IdentifierCache": {
-   3. "getVersion#res": "h2",
-   4. "#testObfuscation:6:9": "g2"
-   5. },
-   6. "MemberMethodCache": {},
-   7. "obfName": "home/src/main/ets/pages/a.ts"
-   8. }
+   ```json
+   "home/src/main/ets/pages/tool.ts": {
+       "IdentifierCache": {
+         "getVersion#res": "h2",
+         "#testObfuscation:6:9": "g2"
+       },
+       "MemberMethodCache": {},
+       "obfName": "home/src/main/ets/pages/a.ts"
+     }
    ```
 
    该字段的IdentifierCache与MemberMethodCache中保存了方法名混淆前后的映射关系，对应格式为："源码方法名:该方法起始行号:该方法结束行号":"混淆后方法名"。
@@ -334,13 +329,13 @@ ASan堆栈解析：
    1. 通过key(home/src/main/ets/pages/tool.ts)查找到映射表。
    2. 在上述字段中找出所有混淆后方法名为"g2"的条目，该条目为：
 
-      ```
-      1. "#testObfuscation:6:9": "g2"
+      ```json
+      "#testObfuscation:6:9": "g2"
       ```
    3. 找到行号范围包含步骤一中还原后行号的条目，步骤一中得到的行号为7包含在6-9之内，因此可以得到源码对应方法名为"#testObfuscation"，经过字符串处理结果为"testObfuscation"。
 
-      ```
-      1. at testObfuscation (home/src/main/ets/pages/tool.ts:7:27)
-      2. at getVersion (home/src/main/ets/pages/tool.ts:2:30)
-      3. at anonymous (home/src/main/ets/pages/Index.ets:23:40)
+      ```txt
+      at testObfuscation (home/src/main/ets/pages/tool.ts:7:27)
+      at getVersion (home/src/main/ets/pages/tool.ts:2:30)
+      at anonymous (home/src/main/ets/pages/Index.ets:23:40)
       ```

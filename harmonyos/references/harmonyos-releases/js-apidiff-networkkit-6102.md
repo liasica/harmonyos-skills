@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-networkkit-6102
 title: Network Kit
-breadcrumb: 版本说明 > HarmonyOS 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta2引入的变更 > Network Kit
+breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > API变更清单 > 6.1.0(23) Beta2引入的变更 > Network Kit
 category: harmonyos-releases
-scraped_at: 2026-04-28T07:33:21+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-02T15:16:20+08:00
+doc_updated_at: 2026-06-27
 content_hash: sha256:ddbd332005d0f3a336c7cda949552262249fa45ff2573fec0792965b4cfbb780
 ---
 

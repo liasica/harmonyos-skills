@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: 配置超参
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > RAG > RAG配置 > 配置超参
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:22+08:00
+scraped_at: 2026-09-02T14:49:56+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:866ec5fb529a6cc8b5f432cc26cb491e8c581a69e3d96f95ae64c383b921bcf3
+content_hash: sha256:e2fc86d6450794ee6d030e5daf0273bd424bb6d5145ff5ce58fb89e19d18bb94
 ---
 
 ## 功能介绍
@@ -38,16 +38,16 @@ content_hash: sha256:866ec5fb529a6cc8b5f432cc26cb491e8c581a69e3d96f95ae64c383b92
 
 超参配置文件hyper\_param.json示例如下，实际文件内容请根据业务需要进行配置。
 
-```
-1. {
-2. "retrieveTimeoutSeconds": 5,
-3. "llmChunkTimeoutSeconds": 30,
-4. "llmOutputTimeoutSeconds": 120,
-5. "defaultHisLen": 1,
-6. "summaryDefaultHisLen": 1,
-7. "maxQueryLength": 1000,
-8. "maxRetrievalLength": 16000,
-9. "llmOutputLengthLimit": 8192,
-10. "historyLengthLimit": 8000
-11. }
+```typescript
+{
+    "retrieveTimeoutSeconds": 5,
+    "llmChunkTimeoutSeconds": 30,
+    "llmOutputTimeoutSeconds": 120,
+    "defaultHisLen": 1,
+    "summaryDefaultHisLen": 1,
+    "maxQueryLength": 1000,
+    "maxRetrievalLength": 16000,
+    "llmOutputLengthLimit": 8192,
+    "historyLengthLimit": 8000
+}
 ```

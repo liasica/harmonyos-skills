@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-clear
 title: ClearChangedResourceKeys
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferenceContext > ClearChangedResourceKeys
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:33+08:00
+scraped_at: 2026-09-02T14:50:41+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c92fbe9df6116de667d5b8287dba713243aec0c94849270a6e7f8d7a9d06dd19
+content_hash: sha256:dcc1ea0d4f88206fa3ef4b427a06efa4cb0370786e68e29964c78bfbe7a7f985
 ---
 
 ## 函数功能
@@ -16,8 +16,8 @@ content_hash: sha256:c92fbe9df6116de667d5b8287dba713243aec0c94849270a6e7f8d7a9d0
 
 ## 函数原型
 
-```
-1. void ClearChangedResourceKeys()
+```cpp
+void ClearChangedResourceKeys()
 ```
 
 ## 参数说明

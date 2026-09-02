@@ -3,60 +3,54 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.networkSecurity (网络安全校验)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.networkSecurity (网络安全校验)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:28+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:618d72fb9da2f61eee98d68451e9dcee8e39a59f129df7ae7602e3718b2d1416
+scraped_at: 2026-09-02T15:01:55+08:00
+doc_updated_at: 2026-08-29
+content_hash: sha256:e9ea29517f5ea09cf48d22bbacb171faec05699930938c746dad4cb601469de4
 ---
 
 本模块提供网络安全校验能力。应用可以通过证书校验API完成证书校验功能。
 
-说明
+**说明** 
 
 本模块首批接口从API version 11开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
-PhonePC/2in1TabletTVWearable
-
-```
-1. import { networkSecurity } from '@kit.NetworkKit';
+```ts
+import { networkSecurity } from '@kit.NetworkKit';
 ```
 
 ## 完整示例
 
-PhonePC/2in1TabletTVWearable
+```ts
+import { networkSecurity } from '@kit.NetworkKit';
 
-```
-1. import { networkSecurity } from '@kit.NetworkKit';
+// Define certificate blobs
+const cert: networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n... (certificate data) ...\n-----END CERTIFICATE-----',
+};
 
-3. // Define certificate blobs
-4. const cert: networkSecurity.CertBlob = {
-5. type: networkSecurity.CertType.CERT_TYPE_PEM,
-6. data: '-----BEGIN CERTIFICATE-----\n... (certificate data) ...\n-----END CERTIFICATE-----',
-7. };
+const caCert: networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n... (CA certificate data) ...\n-----END CERTIFICATE-----',
+};
 
-9. const caCert: networkSecurity.CertBlob = {
-10. type: networkSecurity.CertType.CERT_TYPE_PEM,
-11. data: '-----BEGIN CERTIFICATE-----\n... (CA certificate data) ...\n-----END CERTIFICATE-----',
-12. };
-
-14. // Perform asynchronous certificate verification
-15. networkSecurity.certVerification(cert, caCert)
-16. .then((result) => {
-17. console.info('Certificate verification result:', result);
-18. })
-19. .catch((error: BusinessError) => {
-20. console.error('Certificate verification failed:', error);
-21. });
+// Perform asynchronous certificate verification
+networkSecurity.certVerification(cert, caCert)
+  .then((result) => {
+    console.info('Certificate verification result:', result);
+  })
+  .catch((error: BusinessError) => {
+    console.error('Certificate verification failed:', error);
+  });
 ```
 
-注意
+**注意** 
 
 请务必将示例中的证书数据替换为实际的证书内容。
 
 ## CertType
-
-PhonePC/2in1TabletTVWearable
 
 证书编码类型。
 
@@ -69,8 +63,6 @@ PhonePC/2in1TabletTVWearable
 
 ## CertBlob
 
-PhonePC/2in1TabletTVWearable
-
 证书数据。
 
 **系统能力**: SystemCapability.Communication.NetStack
@@ -81,8 +73,6 @@ PhonePC/2in1TabletTVWearable
 | data | string | ArrayBuffer | 否 | 否 | 证书内容。 |
 
 ## networkSecurity.certVerification
-
-PhonePC/2in1TabletTVWearable
 
 certVerification(cert: CertBlob, caCert?: CertBlob): Promise<number>
 
@@ -122,49 +112,47 @@ certVerification(cert: CertBlob, caCert?: CertBlob): Promise<number>
 | 2305010 | Certificate has expired. |
 | 2305011 | CRL is not yet valid. |
 | 2305012 | CRL has expired. |
-| 2305018 | Self-signed certificate. |
+| 2305018 | Self-signed certificate.  适用版本：12+ |
 | 2305023 | Certificate has been revoked. |
 | 2305024 | Invalid certificate authority (CA). |
 | 2305027 | Certificate is untrusted. |
-| 2305069 | Invalid certificate verification context. |
+| 2305069 | Invalid certificate verification context.  适用版本：12+ |
 
-说明
+**说明** 
 
 这些错误代码对应于证书验证过程中的各种失败。
 
 **示例：**
 
+```ts
+import { networkSecurity } from '@kit.NetworkKit';
+
+// Define certificate blobs
+const cert:networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n... (certificate data) ...\n-----END CERTIFICATE-----',
+};
+
+const caCert:networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n... (CA certificate data) ...\n-----END CERTIFICATE-----',
+};
+
+// Perform asynchronous certificate verification
+networkSecurity.certVerification(cert, caCert)
+  .then((result) => {
+    console.info('Certificate verification result:', result);
+  })
+  .catch((error: BusinessError) => {
+    console.error('Certificate verification failed:', error);
+  });
 ```
-1. import { networkSecurity } from '@kit.NetworkKit';
 
-3. // Define certificate blobs
-4. const cert:networkSecurity.CertBlob = {
-5. type: networkSecurity.CertType.CERT_TYPE_PEM,
-6. data: '-----BEGIN CERTIFICATE-----\n... (certificate data) ...\n-----END CERTIFICATE-----',
-7. };
-
-9. const caCert:networkSecurity.CertBlob = {
-10. type: networkSecurity.CertType.CERT_TYPE_PEM,
-11. data: '-----BEGIN CERTIFICATE-----\n... (CA certificate data) ...\n-----END CERTIFICATE-----',
-12. };
-
-14. // Perform asynchronous certificate verification
-15. networkSecurity.certVerification(cert, caCert)
-16. .then((result) => {
-17. console.info('Certificate verification result:', result);
-18. })
-19. .catch((error: BusinessError) => {
-20. console.error('Certificate verification failed:', error);
-21. });
-```
-
-注意
+**注意** 
 
 请务必将示例中的证书数据替换为实际的证书内容。
 
 ## networkSecurity.certVerificationSync
-
-PhonePC/2in1TabletTVWearable
 
 certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 
@@ -204,53 +192,139 @@ certVerificationSync(cert: CertBlob, caCert?: CertBlob): number
 | 2305010 | Certificate has expired. |
 | 2305011 | CRL is not yet valid. |
 | 2305012 | CRL has expired. |
-| 2305018 | Self-signed certificate. |
+| 2305018 | Self-signed certificate.  适用版本：12+ |
 | 2305023 | Certificate has been revoked. |
 | 2305024 | Invalid certificate authority (CA). |
 | 2305027 | Certificate is untrusted. |
-| 2305069 | Invalid certificate verification context. |
+| 2305069 | Invalid certificate verification context.  适用版本：12+ |
 
-说明
+**说明** 
 
 这些错误代码对应于证书验证过程中的各种失败。
 
 **示例：**
 
+```ts
+import { networkSecurity } from '@kit.NetworkKit';
+
+// Create certificate blobs
+const cert: networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n...'
+};
+
+const caCert: networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n...'
+};
+
+// Asynchronous verification
+networkSecurity.certVerification(cert, caCert)
+  .then((result) => {
+    console.info('Verification Result:', result);
+  })
+  .catch((error: BusinessError) => {
+    console.error('Verification Error:', error);
+  });
+
+// Synchronous verification
+let resultSync: number = networkSecurity.certVerificationSync(cert, caCert);
+console.info('Synchronous Verification Result:', resultSync);
 ```
-1. import { networkSecurity } from '@kit.NetworkKit';
 
-3. // Create certificate blobs
-4. const cert: networkSecurity.CertBlob = {
-5. type: networkSecurity.CertType.CERT_TYPE_PEM,
-6. data: '-----BEGIN CERTIFICATE-----\n...'
-7. };
+**注意** 
 
-9. const caCert: networkSecurity.CertBlob = {
-10. type: networkSecurity.CertType.CERT_TYPE_PEM,
-11. data: '-----BEGIN CERTIFICATE-----\n...'
-12. };
+请务必将示例中的证书数据替换为实际的证书内容。
 
-14. // Asynchronous verification
-15. networkSecurity.certVerification(cert, caCert)
-16. .then((result) => {
-17. console.info('Verification Result:', result);
-18. })
-19. .catch((error: BusinessError) => {
-20. console.error('Verification Error:', error);
-21. });
+## networkSecurity.verifyCertChain
 
-23. // Synchronous verification
-24. let resultSync: number = networkSecurity.certVerificationSync(cert, caCert);
-25. console.info('Synchronous Verification Result:', resultSync);
+verifyCertChain(cert: CertBlob[], caCert?: CertBlob, hostname?: string): Promise<CertBlob[]>
+
+传入证书链数组，进行证书链校验并构建排序后的证书链。系统将使用证书管理中的预置CA证书和用户安装的CA证书来配合校验传入的证书。使用promise异步回调。
+
+**起始版本：** 26.0.0
+
+**系统能力**：SystemCapability.Communication.NetStack
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| cert | [CertBlob](js-apis-networksecurity.md#certblob)[] | 是 | 待校验证书数组。第一个元素必须是叶子证书（end-entity certificate），其余元素为中间证书。 |
+| caCert | [CertBlob](js-apis-networksecurity.md#certblob) | 否 | 传入自定义的CA证书。不传入则使用系统预置CA证书。 |
+| hostname | string | 否 | 需要验证的主机名，用于校验证书中的主机名是否匹配。不传入则跳过主机名验证。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[CertBlob](js-apis-networksecurity.md#certblob)[]> | 以promise形式返回排序后的证书链数组，顺序为从叶子节点到根节点。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[网络安全校验错误码](errorcode-net-networksecurity.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 2305001 | Unspecified error. |
+| 2305002 | Unable to get issuer certificate. |
+| 2305004 | Unable to decrypt certificate signature. |
+| 2305006 | Unable to decode issuer public key. |
+| 2305007 | Certificate signature failure. |
+| 2305009 | Certificate is not yet valid. |
+| 2305010 | Certificate has expired. |
+| 2305018 | Self-signed certificate. |
+| 2305024 | Invalid certificate authority (CA). |
+| 2305027 | Certificate is untrusted. |
+| 2305062 | Invalid hostname. |
+| 2305069 | Invalid certificate verification context. |
+
+**说明** 
+
+这些错误代码对应于证书验证过程中的各种失败。
+
+**示例：**
+
+```ts
+import { networkSecurity } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+// Define certificate blobs
+const cert1: networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n... (server certificate) ...\n-----END CERTIFICATE-----',
+};
+
+const cert2: networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n... (intermediate certificate) ...\n-----END CERTIFICATE-----',
+};
+
+const caCert: networkSecurity.CertBlob = {
+  type: networkSecurity.CertType.CERT_TYPE_PEM,
+  data: '-----BEGIN CERTIFICATE-----\n... (CA certificate) ...\n-----END CERTIFICATE-----',
+};
+
+// Verify and build sorted cert chain
+networkSecurity.verifyCertChain([cert1, cert2], caCert, "example.com")
+  .then((sortedChain: Array<networkSecurity.CertBlob>) => {
+    console.info('Certificate chain verified and sorted, chain length:', sortedChain.length);
+    for (let i = 0; i < sortedChain.length; i++) {
+      console.info(`Certificate ${i}: type=${sortedChain[i].type}, data=${sortedChain[i].data}`);
+    }
+  })
+  .catch((error: BusinessError) => {
+    console.error('Certificate chain verification failed:', error);
+  });
 ```
 
-注意
+**注意** 
 
 请务必将示例中的证书数据替换为实际的证书内容。
 
 ## networkSecurity.isCleartextPermitted18+
-
-PhonePC/2in1TabletTVWearable
 
 isCleartextPermitted(): boolean
 
@@ -276,20 +350,18 @@ isCleartextPermitted(): boolean
 
 **示例：**
 
-```
-1. import { networkSecurity } from '@kit.NetworkKit';
+```ts
+import { networkSecurity } from '@kit.NetworkKit';
 
-3. try {
-4. let result: boolean = networkSecurity.isCleartextPermitted();
-5. console.info(`isCleartextPermitted Result: ${JSON.stringify(result)}`);
-6. } catch (error) {
-7. console.error(`isCleartextPermitted Error: ${JSON.stringify(error)}`);
-8. }
+try {
+  let result: boolean = networkSecurity.isCleartextPermitted();
+  console.info(`isCleartextPermitted Result: ${JSON.stringify(result)}`);
+} catch (error) {
+  console.error(`isCleartextPermitted Error: ${JSON.stringify(error)}`);
+}
 ```
 
 ## networkSecurity.isCleartextPermittedByHostName18+
-
-PhonePC/2in1TabletTVWearable
 
 isCleartextPermittedByHostName(hostName: string): boolean
 
@@ -321,13 +393,13 @@ isCleartextPermittedByHostName(hostName: string): boolean
 
 **示例：**
 
-```
-1. import { networkSecurity } from '@kit.NetworkKit';
+```ts
+import { networkSecurity } from '@kit.NetworkKit';
 
-3. try {
-4. let result: boolean = networkSecurity.isCleartextPermittedByHostName("xxx");
-5. console.info(`isCleartextPermitted Result: ${JSON.stringify(result)}`);
-6. } catch (error) {
-7. console.error(`isCleartextPermitted Error: ${JSON.stringify(error)}`);
-8. }
+try {
+  let result: boolean = networkSecurity.isCleartextPermittedByHostName("xxx");
+  console.info(`isCleartextPermitted Result: ${JSON.stringify(result)}`);
+} catch (error) {
+  console.error(`isCleartextPermitted Error: ${JSON.stringify(error)}`);
+}
 ```
