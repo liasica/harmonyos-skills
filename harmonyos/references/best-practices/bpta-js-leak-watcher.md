@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-js-leak-wa
 title: JsLeakWatcher开发实践
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 资源泄漏类问题检测 > 内存泄漏类问题检测方法 > JsLeakWatcher开发实践
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:01d6865a369c98c9b822bfc29fa69adcf67a524b5589586f85487db649a70bb7
+scraped_at: 2026-09-04T06:33:23+08:00
+doc_updated_at: 2026-09-03
+content_hash: sha256:0a640cbdbe2ebea50736d1c430b716c23a7f6646050790297079a8d93fcec9cf
 ---
 
 ## 概述
@@ -59,7 +59,7 @@ ArkTS对象内存泄漏，通常会带来以下影响：
    2. 尝试去解除引用（参考[dispose](../harmonyos-references/js-apis-arkui-framenode.md#dispose12)()）的组件对象会被记录在列表list1。当组件对象生命周期结束时，FinalizationRegistry对象会通过a步骤注册的回调函数上报销毁组件对象，并将其记录在列表list2；list1与list2的差集（对应下图LeakObjMap）会记录到泄漏对象列表jsleaklist文件，最终会随ArkTS堆快照（rawheap）文件一起落盘至应用沙箱。
 3. 应用在退出时调用enableLeakWatcher接口关闭ArkTS泄漏检测功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/x4XYvtENS8menA9GbfxUlg/zh-cn_image_0000002533197977.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/w9lJNrJwQ9y2ZCxH2VllXA/zh-cn_image_0000002533197977.png "点击放大")
 
 ### 生成文件类型介绍
 
@@ -70,9 +70,13 @@ ArkTS对象内存泄漏，通常会带来以下影响：
 
 ## 命令行使能JsLeakWatcher
 
+### 起始版本
+
+命令行使能JsLeakWatcher功能自HarmonyOS 7.0开始支持。
+
 ### 功能概述
 
-JsLeakWatcher提供零代码开发检测能力，支持通过配置系统参数启用内存泄漏检测功能（默认关闭）。无需应用调用JsLeakWatcher API接口，仅需设置相应的系统参数，即可针对目标应用（debug签名应用）启用泄漏检测。
+JsLeakWatcher提供零代码开发检测能力，支持通过配置系统参数启用内存泄漏检测功能（默认关闭）。无需应用调用JsLeakWatcher API接口，仅需设置相应的系统参数，即可针对目标应用（debug签名应用）启用泄漏检测。若开发者需要通过代码接入，请参考[场景案例](bpta-js-leak-watcher.md#section1726813110465)中的步骤开发。
 
 ### 使用方法
 
@@ -149,11 +153,11 @@ hdc shell "param set hiviewdfx.hichecker.jsleakwatcher.leak.check enable.com.exa
 5. **分析生成的文件**
    1. 将\*.rawheap文件导入IDE DevEco Studio执行解析：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/hwbjfKszSLeSA2sJaQ8PRg/zh-cn_image_0000002533077929.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/KSfXYfviSQmjLM9Wgyv2GQ/zh-cn_image_0000002533077929.png "点击放大")
 
       解析结果：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/uVUw7bPmQiCEE-rL2HMzkw/zh-cn_image_0000002501437912.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/NfZuQEs4QhmFaOYWgeUosA/zh-cn_image_0000002501437912.png "点击放大")
 
       上图展示了ArkTS Snapshot的信息，其中记录了ArkTS对象的属性，包括成员变量、占用内存大小、类型名等。
 
@@ -162,17 +166,17 @@ hdc shell "param set hiviewdfx.hichecker.jsleakwatcher.leak.check enable.com.exa
       ArkTS Snapshot分析方法，详细请参考资料：[分析Snapshot数据](../harmonyos-guides/ide-arkts-memory-leak-analysis.md#section87474517134)。
    2. 将\*.jsleaklist文件导入DevEco Studio解析：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/3sPhdwl7SAC_esgLRHg9cw/zh-cn_image_0000002501278062.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/q9WEcH18QuSiYFWZEzq3aA/zh-cn_image_0000002501278062.png)
 
       解析之后展示泄漏对象的信息，是ArkTS堆快照的子集，分析方法和上述ArkTS Snapshot分析方式相同。
 
       查看[应用对象名称解析](../harmonyos-guides/ide-snapshot-basic-operations.md#section17661924162612)数据以及泄漏对象对应代码行号：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Cn5dhcHOQv-BcggbjaH4gQ/zh-cn_image_0000002533197979.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/ncwQAg0DREG8KEAtNHEjEw/zh-cn_image_0000002533197979.png "点击放大")
 
       查看泄漏对象的[节点属性与引用链](../harmonyos-guides/ide-snapshot-basic-operations.md#section1964818525439)：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/X1t-oCH9RV2dXHJERJCgHQ/zh-cn_image_0000002533077931.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/d9xna9VzTaqXaMGmrGkCqQ/zh-cn_image_0000002533077931.png "点击放大")
 
       DevEco支持导入jsleaklist文件的约束限制参考：[离线导入内存快照](../harmonyos-guides/ide-snapshot-basic-operations.md#section6760173514388)。
 

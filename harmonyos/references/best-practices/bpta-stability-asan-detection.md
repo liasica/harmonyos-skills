@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用ASan检测内存错误
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 使用ASan检测内存错误
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
+scraped_at: 2026-09-04T06:33:22+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:b0dabcb1398967b8bcaf2f68b7c604bc31056d1eb0871ab348d5bb817b3bc69e
+content_hash: sha256:848b5f700f790e059c44ea851feaee45041408312444de24713fe6f3e3fcf929
 ---
 
 ASan的能力概述和检测原理可参看[地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)以及[ASan检测原理](bpta-stability-address-sanitizer-principle.md#section159561141247)，适用于开发态调试压测场景。
@@ -91,10 +91,10 @@ handle_sigbus=0
 
 1. 在运行调试窗口，点击**Diagnostics**，勾选**Address Sanitizer**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/qvS9uk71Q3eV8RjmqLO1Mg/zh-cn_image_0000002404045249.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/aQnLe-BuRjmGVbjMnnCeVA/zh-cn_image_0000002404045249.png)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_ASAN=ON”，表示以ASan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/uYbpctDbQUulvdxwqLgxwQ/zh-cn_image_0000002370565420.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/jOqNf_PSQH-VOFffnpNQsQ/zh-cn_image_0000002370565420.png)
 
 **流水线场景**
 
@@ -116,7 +116,7 @@ hvigorw [taskNames...] ohos-debug-asan=true  <options>
     "asanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/u3OrUwqEQ6qhBiCSCr7d1Q/zh-cn_image_0000002404125085.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/LMw5thbiQAKDvwDStsa_jw/zh-cn_image_0000002404125085.png)
 2. 设置模块级构建ASan插桩。
 
    在需要使能ASan的模块中，通过添加构建参数开启ASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
@@ -125,7 +125,7 @@ hvigorw [taskNames...] ohos-debug-asan=true  <options>
     "arguments": "-DOHOS_ENABLE_ASAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/DCWXNxZ_TWWwViWYZK344A/zh-cn_image_0000002370405540.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/YjflqnztTqON4Y82mbSVvQ/zh-cn_image_0000002370405540.png)
 
 **说明** 
 
@@ -166,7 +166,7 @@ llvm-readelf工具路径为：${DevEco Studio安装目录}/sdk/default/openharmo
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处（非release版本）。release版本本地无工程代码，可以使用[AnalyzeStackTrace功能](../harmonyos-guides/ide-release-app-stack-analysis.md)，提供要解析堆栈的so，解析结果为源码地址。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/8Iz_hQ2LRqyhpU6sR4mRug/zh-cn_image_0000002404045253.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Pp_zPufiR2S6Ll7ViBtz7Q/zh-cn_image_0000002404045253.png)
 
 ## ASan异常检测类型
 
@@ -216,7 +216,7 @@ int HeapBufferOverflow()
 
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/UXVOO3kmTUazq6cC9b0dmQ/zh-cn_image_0000002537425473.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/dto4z2upTXiEYqY7KCOSjg/zh-cn_image_0000002537425473.png)
 
 **修改方法**
 
@@ -254,7 +254,7 @@ int StackBufferOverflow() {
 
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/6yDZZ2hLT7G4e096eKHhrg/zh-cn_image_0000002505625648.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/VsMRb7TuQwOfpkdSAa61QQ/zh-cn_image_0000002505625648.png)
 
 **优化建议**
 
@@ -288,7 +288,7 @@ int StackBufferUnderflow() {
 
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/iVBg-PmhShqUkalb9ubWiw/zh-cn_image_0000002505465892.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/cB-brlXtQMCMcn4ANwfdIw/zh-cn_image_0000002505465892.png)
 
 **优化建议**
 
@@ -321,7 +321,7 @@ int HeapUseAfterFree()
 
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Eq0V19kKR6CA5QatynXHPg/zh-cn_image_0000002505625820.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ClKTHTWfQkKUM2b4VaBfhw/zh-cn_image_0000002505625820.png)
 
 **修改方法**
 
@@ -362,7 +362,7 @@ int StackUseAfterScope() {
 
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/yWFL0FTISJiM32N7_zOYeA/zh-cn_image_0000002537425861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/DzioD3bGRWeB-RRqYpT1XA/zh-cn_image_0000002537425861.png)
 
 **优化建议**
 
@@ -397,7 +397,7 @@ AddressSanitizer: attempting free on address which was not malloc()-ed
 
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/9fHrWCCmT3mXChmTuqDLjw/zh-cn_image_0000002505626186.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/KZ-DNj9eRAyBo8ShF2KZ5Q/zh-cn_image_0000002505626186.png)
 
 **优化建议**
 
@@ -431,7 +431,7 @@ int DoubleFree() {
 
 如果有工程代码，直接开启ASan检测，debug模式运行后复现该错误，可以触发ASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/FH6zfmzWTNCZ9v-hQryAWQ/zh-cn_image_0000002505466522.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/vvICszGDQJ2rYRTYjhZwHQ/zh-cn_image_0000002505466522.png)
 
 **修改方法**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/changelogs-o
 title: 26.0.0的行为变更汇总
 breadcrumb: 变更预告 > 变更预告 > 26.0.0的行为变更汇总
 category: harmonyos-roadmap
-scraped_at: 2026-09-02T14:55:00+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:1d261dd7f51328c7d2f2873d575881e3b8af4cd40f60c7ead8bddac66fc0f9ab
+scraped_at: 2026-09-04T06:36:05+08:00
+doc_updated_at: 2026-09-03
+content_hash: sha256:a8411862c8bc2c0dfdce80f41b8d4eb7fede8734bda73047d479e2df1b2fcf19
 ---
 
 ## 针对所有应用的变更
@@ -32,6 +32,7 @@ content_hash: sha256:1d261dd7f51328c7d2f2873d575881e3b8af4cd40f60c7ead8bddac66fc
 | [组件的阴影模糊半径规格变更](../harmonyos-releases/changelogs-for-all-apps-7001.md#ch2026022422576) | 26.0.0 Beta1 | targetSdkVersion ≥ 26.0.0变更生效 |
 | [List组件onScrollVisibleContentChange事件行为变更](../harmonyos-releases/changelogs-for-all-apps-7002.md#ch2026032364747) | 26.0.0 Beta2 | targetSdkVersion ≥ 26.0.0变更生效 |
 | [Image组件autoResize属性默认行为变更](../harmonyos-releases/changelogs-for-all-apps-7003.md#ch2026082810311) | 26.0.0 Release | 全部生效 |
+| [沉浸光感新增生效约束](../harmonyos-releases/changelogs-for-all-apps-7003.md#section126372211) | 26.0.0 Release | targetSdkVersion ≥ 26.0.0变更生效 |
 | ArkWeb | [ArkWeb基于上游社区的Chromium内核从132升级为144版本](../harmonyos-releases/changelogs-for-all-apps-7001.md#ch2026032368425) | 26.0.0 Beta1 | 全部生效 |
 | [Cookie存储目录变更](../harmonyos-releases/changelogs-for-all-apps-7002.md#ch2026051550855) | 26.0.0 Beta2 | 全部生效 |
 | Core File Kit | [沙箱路径/storage/Users/currentUser/appdata下无权限目录的stat和access行为变更](../harmonyos-releases/changelogs-for-all-apps-7003.md#ch2026072798462) | 26.0.0 Release | targetSdkVersion ≥ 26.0.0变更生效 |

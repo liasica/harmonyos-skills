@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用UBSan检测未定义行为
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 使用UBSan检测未定义行为
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
+scraped_at: 2026-09-04T06:33:23+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:cd49e24866e846a5b2ba24375c009caa302113a689e204272e0d1309dd035265
+content_hash: sha256:a2c4363d226a3e1c706da5b2c11a9a7004a1ca81fbdd6bdbb365eb24e44e64f8
 ---
 
 ## 原理概述
@@ -28,7 +28,7 @@ ASan、TSan、UBSan 和 HWASan 不能同时开启，只能启用其中一个。
 
 点击**Run > Edit Configurations > Diagnostics**，勾选**UndefinedBehaviorSanitizer**开启检测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/urfFXGwIQtWS8pXPWlQLhQ/zh-cn_image_0000002193851168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/2pLix-CzQs-18c50Oo9PwA/zh-cn_image_0000002193851168.png)
 
 **流水线场景**
 
@@ -48,7 +48,7 @@ hvigorw [taskNames...] ohos-enable-ubsan=true  <options>
 "arguments": "-DOHOS_ENABLE_UBSAN=ON"
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/3kmjl_igTt6QW6TQSaD-FA/zh-cn_image_0000002193851164.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/EtGrOy3OQqaL70tVntxjEg/zh-cn_image_0000002193851164.png)
 
 **流水线场景**
 

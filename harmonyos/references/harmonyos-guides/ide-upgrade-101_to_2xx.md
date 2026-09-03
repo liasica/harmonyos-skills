@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-upgrade-1
 title: 1.0.1升级至2.X.X/5.X.X版本
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 版本升级 > 1.0.1升级至2.X.X/5.X.X版本
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
+scraped_at: 2026-09-04T06:27:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:14d5744cd899574437580948a95cc16b5f6e81226217e4c2a81b1364c6151b1f
+content_hash: sha256:9c21281430cdd11a4eb694bd914fd32f345701802bb5abaaa3bc19a70c7d0835
 ---
 
 升级至2.X.X版本与升级至5.X.X版本步骤一致，本文以升级至2.X.X版本为例。
@@ -26,7 +26,7 @@ content_hash: sha256:14d5744cd899574437580948a95cc16b5f6e81226217e4c2a81b1364c61
 
 2. 下载并解压工具包：下载版本2.X.X的ohpm-repo私仓工具包，并解压（请解压到一个空文件夹中）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/xvhY-dU5Qd6IrO5f-DGCBg/zh-cn_image_0000002731541603.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/RRc9eUgbQCCjyfmGPUrzfA/zh-cn_image_0000002731541603.png)
 
 3. 安装完成之后，进入ohpm-repo 私仓工具包解压目录下的bin目录，执行如下命令：
 
@@ -155,7 +155,7 @@ content_hash: sha256:14d5744cd899574437580948a95cc16b5f6e81226217e4c2a81b1364c61
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/8jLUkuoAT6GJ0dPq0vDMvA/zh-cn_image_0000002731541597.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/6q6FK_rJTXCiUwweXftTEA/zh-cn_image_0000002731541597.png "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
 
      **说明** 
@@ -170,7 +170,7 @@ content_hash: sha256:14d5744cd899574437580948a95cc16b5f6e81226217e4c2a81b1364c61
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/Ft-1xlbkQ9qgo4-mbKHNfQ/zh-cn_image_0000002731381631.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/AZBAO2CXQkiHzHF8Dl2Gmg/zh-cn_image_0000002731381631.png "点击放大")
 
      **说明** 
 

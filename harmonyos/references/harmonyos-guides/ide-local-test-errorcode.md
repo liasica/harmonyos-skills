@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-local-tes
 title: 本地测试错误码
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 本地测试错误码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:55+08:00
+scraped_at: 2026-09-04T06:27:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:296f9c435823eb465a1ee423c12dc7e6ae07b9f7fceccb42a82131cfda0f3140
+content_hash: sha256:d0f2b9e7c12dfea7031fe9fd33a2ffc708af3080a554d2098c65494dc202af01
 ---
 
 ## 00521001 测试用例名称存在非法字符
@@ -155,7 +155,7 @@ The function where the method XXX is located is not registered in the 'List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/bI9NRs5YSVu5uzvAyavcTA/zh-cn_image_0000002701663356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/RpJaMO_-RcSWmAEcHBrY6w/zh-cn_image_0000002701663356.png)
 
 ## 00522002 函数未在List.test.ets文件中注册
 
@@ -175,7 +175,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ABcL-TPWTfSjHxGZqeyh1A/zh-cn_image_0000002701663358.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/feFzp5jTRc2Gf7Sj6vTsNQ/zh-cn_image_0000002701663358.png)
 
 ## 00522005 文件中所有函数都没有在List.test.ets文件中注册
 
@@ -195,7 +195,7 @@ None of the functions in the file XXX have been registered in the 'List.test.ets
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/fZOxeI7yQK2QSNZhwZDiNQ/zh-cn_image_0000002701823274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/0zxgrlffSY-q6v7meZPrIA/zh-cn_image_0000002701823274.png)
 
 ## 00522006 测试文件中找不到测试用例
 
@@ -216,7 +216,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/4nq889teQHONya02rXBUjA/zh-cn_image_0000002731542551.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hrS3aGGKQiecRwMmtBrWqQ/zh-cn_image_0000002731542551.png)
 
 ## 00522007 找不到任何测试用例
 
@@ -292,7 +292,7 @@ Failed to start local test, please check the XXX path!
 1. 点击菜单栏**Build > Clean Project**清理缓存，再重新执行测试。
 2. 检查运行配置是否取消了构建任务，如果取消就重新添加构建任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/834orKvmQ5KgwY03pjv2HA/zh-cn_image_0000002731382573.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/G6eE05gcRpOeW7Ofp22Exg/zh-cn_image_0000002731382573.png)
 
 ## 00523004 内存不足
 

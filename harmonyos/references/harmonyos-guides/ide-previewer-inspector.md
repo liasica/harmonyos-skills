@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: Inspector双向预览
 breadcrumb: 指南 > 编写与调试应用 > 界面预览 > Inspector双向预览
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:24+08:00
+scraped_at: 2026-09-04T06:27:16+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:d4b2a0bcb6ee316ca5ec9f9744e6a824c89803ebd12012eddb5b5f73f5986b13
+content_hash: sha256:1b5f36be1366b454de44d507790187a6f3869986ae2a465c03872ef15a3b5466
 ---
 
-DevEco Studio提供HarmonyOS应用/元服务的UI预览界面与源代码文件间的双向预览功能，支持ets文件与预览器界面的双向预览。使用双向预览功能时，需要在预览器界面单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/6vcyJRpfSxCNlxpHLxRauA/zh-cn_image_0000002701822900.png)图标打开双向预览功能。
+DevEco Studio提供HarmonyOS应用/元服务的UI预览界面与源代码文件间的双向预览功能，支持ets文件与预览器界面的双向预览。使用双向预览功能时，需要在预览器界面单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/lXJ7PXumQOaZO-b4lo4btw/zh-cn_image_0000002701822900.png)图标打开双向预览功能。
 
 **说明** 
 
 不支持服务卡片的双向预览功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/8_6Wu9msQ-CiJEjSTTL7EQ/zh-cn_image_0000002731382201.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/nLL_53xRTa-5nmt5h8GkzA/zh-cn_image_0000002731382201.png "点击放大")
 
 开启双向预览功能后，支持代码编辑器、UI界面和组件树三者之间的联动：
 
@@ -22,7 +22,7 @@ DevEco Studio提供HarmonyOS应用/元服务的UI预览界面与源代码文件�
 * 选中布局文件中的代码块，则在UI界面会高亮显示，组件树上的组件节点也会呈现被选中的状态。
 * 选中组件树中的组件，则对应的代码块和UI界面也会高亮显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ZPVqVHOOQAenwAhS41fZSA/zh-cn_image_0000002701662976.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/qcfP-o2GQoCY69m_KFMDRA/zh-cn_image_0000002701662976.png "点击放大")
 
 在预览界面还可以通过组件的属性面板修改属性或样式，修改后，预览器会自动同步到代码编辑器中修改源码，并实时刷新UI界面；同样的，在代码编辑器中修改源码，也会实时刷新UI界面，并更新组件树信息及组件属性。
 

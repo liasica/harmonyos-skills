@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conv
 title: ohpm convert
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
+scraped_at: 2026-09-04T06:27:26+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:c2d2af0c424382e4b2e4a1b96b80bc551135080b9767163342068cc346647acc
+content_hash: sha256:cc97f5a4c80f20d0f81bee95b9c8d00c06ce98291531e2fff917db8a59141353
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -98,13 +98,13 @@ ohpm INFO: A total of 9 packets are converted successfully.
 ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712127991590" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/RKlO-wzySaGT2hvl_iAT2Q/zh-cn_image_0000002701663792.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Q6MGwPmHQDytpLZ_7sFzZQ/zh-cn_image_0000002701663792.png "点击放大")
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Al8CwNiJQfyuxolYq26-0A/zh-cn_image_0000002731542991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/XUxZ0YMpRUu5w052qXsOIQ/zh-cn_image_0000002731542991.png)
 
 ```screen
 ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
@@ -120,4 +120,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712128912583" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/GdwfIzABToSW7msYT914Ug/zh-cn_image_0000002701823718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/8JDbX-rHSEGDoqHMrOOu1A/zh-cn_image_0000002701823718.png)

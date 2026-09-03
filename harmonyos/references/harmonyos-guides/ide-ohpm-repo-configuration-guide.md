@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 安全配置指南
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 安全配置指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:48+08:00
+scraped_at: 2026-09-04T06:27:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:05c4fb9bd08500ea55ca16510de2ff0255e56d609eaab74a9658f24bd93940c1
+content_hash: sha256:63c3810d2f653a8c84533a2f1255bc1339ae6beb7c34bb0480eb1cf37eaa0aa0
 ---
 
 为了保障用户在使用ohpm-repo过程中更加安全可靠，我们推荐如下安全配置项，用户可以根据自己的需要采纳配置。
@@ -79,7 +79,7 @@ store:
 
 在默认设置下，ohpm-repo仓库中的所有包信息均可供任意用户自由查看，且包文件也支持任意用户下载。为了避免不相关的人访问ohpm-repo，我们建议在ohpm-repo管理界面的**系统设置>系统安全**页面，关闭匿名访问功能（默认保持开启）。关闭后，只有在.ohpmrc文件中正确[配置仓库只读或读写AccessToken](ide-ohpm-certification.md#li168806431480)的用户才能够通过ohpm工具下载三方包，只有登录ohpm-repo账户，才能够访问ohpm-repo管理界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/jADyaBoQSTaJKR0lezdmLg/zh-cn_image_0000002701821954.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/XU_oj-TzTg6l1tBcLxYzig/zh-cn_image_0000002701821954.png "点击放大")
 
 ## 用户访问频率控制
 

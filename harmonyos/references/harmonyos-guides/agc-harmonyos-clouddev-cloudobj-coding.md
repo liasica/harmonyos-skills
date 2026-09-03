@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发云对象
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 开发云对象
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:19+08:00
+scraped_at: 2026-09-04T06:27:07+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:4a85f4cab8868cf8bba60be91ba2bf464ce5f55e6c52ae6c538759425075993c
+content_hash: sha256:e8e1bfa354b44543b4d76e8eb4c2895950933dcac6bdfe609ddbd677414cdca1
 ---
 
 云对象创建完成后，您便可以直接在云对象中编写需要实现的方法。例如，通过云对象实现add与subtract两个方法。
@@ -23,7 +23,7 @@ content_hash: sha256:4a85f4cab8868cf8bba60be91ba2bf464ce5f55e6c52ae6c53875942507
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/AP6XsTyzQtWE9mQ2NcD-nA/zh-cn_image_0000002179338600.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/YmVcmRNKTiuPCAc72U1sDg/zh-cn_image_0000002179338600.png)
 
    **注意** 
 
@@ -41,8 +41,8 @@ content_hash: sha256:4a85f4cab8868cf8bba60be91ba2bf464ce5f55e6c52ae6c53875942507
 
    右击“package.json”文件，选择“Run 'npm install'”菜单，也可以实现依赖包安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/wj3aOf76QtaUF5TwjzBFGw/zh-cn_image_0000002425894173.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/72ofE7XZTMemS8SSAtCk_Q/zh-cn_image_0000002425894173.png)
 
    所有安装的依赖包都会存储在当前云对象的“node\_modules”目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/q6o42Iw0Tm2xdnObP2OV4Q/zh-cn_image_0000002425974957.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/NciKdafmSLOolf17gttO5Q/zh-cn_image_0000002425974957.png)

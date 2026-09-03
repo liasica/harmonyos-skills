@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ta
 title: 构建任务说明
 breadcrumb: 指南 > 构建应用 > 概述 > 构建任务说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:26+08:00
+scraped_at: 2026-09-04T06:27:20+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:90f69c47e7934e09fa058067a34cec22977276a7e3186a454c87f4364976580f
+content_hash: sha256:a4008439b2bc09683a16830c054e5d47529ef2e75eeb44c06fca24129a1fcd4f
 ---
 
 本章节将对构建的任务进行说明，可以更直观地了解到构建的任务流程。
@@ -14,15 +14,15 @@ content_hash: sha256:90f69c47e7934e09fa058067a34cec22977276a7e3186a454c87f436497
 
 ### HAP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/b1SD95dEQr2n18LPIQvFuQ/zh-cn_image_0000002701823192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/tthrE_pGQVOXlUKOmZKRFQ/zh-cn_image_0000002701823192.png)
 
 ### HSP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/JevEFLcsRHuCumdnXNUJzw/zh-cn_image_0000002731382497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/c_TiOJrkQ-qLnfcLiOqYvQ/zh-cn_image_0000002731382497.png)
 
 ### HAR基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/xt7nUnGWQ-ifLxnPhgZoyw/zh-cn_image_0000002701663274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/10XhD6MLSsqHZ_KQNpwdqQ/zh-cn_image_0000002701663274.png)
 
 ## 使用命令查看任务
 
@@ -34,7 +34,7 @@ hvigorw taskTree
 
 获取任务树时会根据工程中的模块，将模块中注册的任务以下图形式输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/vu-KXqntQ_OIYQliO28sww/zh-cn_image_0000002731542467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/I47aW2qRRXuj680znejOTg/zh-cn_image_0000002731542467.png)
 
 执行顺序举例说明：如图所示，assembleHap依赖CollectDebugSymbol，CollectDebugSymbol依赖于PackageHap；则任务执行顺序为PackageHap->CollectDebugSymbol->assembleHap。
 

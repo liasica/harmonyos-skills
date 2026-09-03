@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 日志
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 日志
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
+scraped_at: 2026-09-04T06:27:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:af8d72ce1ae6b6f0489d4e8513b234e17aee9b9047eb99d005689bbe469fe9e8
+content_hash: sha256:b04f25bab64f069ada3d5912c15a874a96fba4d36d6ccbf439f3be5e02d89ed6
 ---
 
 与任何Web应用程序相同，ohpm-repo有一个内置的日志记录器，其定义了四种日志类型。
@@ -18,7 +18,7 @@ content_hash: sha256:af8d72ce1ae6b6f0489d4e8513b234e17aee9b9047eb99d005689bbe469
 
 操作日志中主要包含操作时间、日志级别、操作人id（userId）、终端IP（ip）、操作资源（resource）、操作方法名（event）以及操作结果（result），其文件保存个数最多为180个。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/0arEJCrgS6q4tSlCNoTD_A/zh-cn_image_0000002701822344.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/OpJwvACvT-2kxafoTv--bQ/zh-cn_image_0000002701822344.png "点击放大")
 
 **说明** 
 
@@ -58,7 +58,7 @@ content_hash: sha256:af8d72ce1ae6b6f0489d4e8513b234e17aee9b9047eb99d005689bbe469
 
 运行日志中主要包含操作时间、日志级别以及日志信息，其文件保存个数最多为30个。运行日志定义了日志级别：all，trace，debug，info，warn，error，fatal，mark和off。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/TL7IKcZvS3KRjW6zgdAzUw/zh-cn_image_0000002731381651.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/2b8gFk3nR-KO_ILDKXD_eA/zh-cn_image_0000002731381651.png "点击放大")
 
 ## 运行错误日志 - repoError.log
 

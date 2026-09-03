@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 能力说明
 breadcrumb: 指南 > 构建应用 > 定制构建 > 灵活定制编译选项 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:27+08:00
+scraped_at: 2026-09-04T06:27:21+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:383843ba2d3a74f3ad442ba2ffbf2cb5c4c18110f91d0806267ef7415f9d3f2b
+content_hash: sha256:ae12727372ef3fdf5f4f07e434e3e679a049f210bb0d6e32add58fa3dcb5a49c
 ---
 
 Hvigor支持灵活定制构建模式，当您创建新工程时，DevEco Studio会自动创建"debug" 、"release"和"test" 构建模式。"test"模式虽然没有出现在工程级build-profile.json5配置文件中，但是用测试框架开启测试时，会自动使用"test"构建模式。
@@ -14,9 +14,9 @@ Hvigor支持灵活定制构建模式，当您创建新工程时，DevEco Studio�
 
 ### 界面设置
 
-DevEco Studio支持界面配置Build Mode配置选项，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/GThRxWUgRAOYbIe7o29LGA/zh-cn_image_0000002731542665.png)图标选择构建模式：
+DevEco Studio支持界面配置Build Mode配置选项，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/CkTTOs2_T1W6b1SpYq5TMw/zh-cn_image_0000002731542665.png)图标选择构建模式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/HxdtEOVbSwqXp59IIljntw/zh-cn_image_0000002701663472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/3U9BlXXHQVGkCX-VQztqCQ/zh-cn_image_0000002701663472.png)
 
 内置三个选项：<Default>，debug，release。
 
@@ -95,4 +95,4 @@ Hvigor支持定制构建模式，采用buildOption字段声明编译选项，并
 
 优先级：命令行配置>targets配置>buildOptionSet配置>buildOption配置>products配置>buildModeSet配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Pi5Q5vegSy21i2nsgwpD3g/zh-cn_image_0000002731382693.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/foEQ2e6LQzKTN1QP2SkgQQ/zh-cn_image_0000002731382693.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGBUS非法内存访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGBUS非法内存访问故障模式说明
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:a7c8b9db54d5b1fe9db7752e58de17c3048bf94a3dc07d20d38039fda2d2c412
+scraped_at: 2026-09-04T06:33:24+08:00
+doc_updated_at: 2026-09-03
+content_hash: sha256:2f8dcee4f2b59823353db5183d82c5d835ebb23e40c7b0d9af88c0fd2d013a68
 ---
 
 ## BUS\_ADRALN内存地址对齐错误
@@ -446,13 +446,13 @@ SIGBUS BUS\_OBJERR类型的Native崩溃，根本原因在于程序访问的内�
 
    证据3：从上往下跳过C库的调用栈，找到内存访问出错的调用栈，对应#00层调用栈。
 
-   ```cpp
+   ```screen
    napi_value AccessMemWithoutCheck(napi_env env, napi_callback_info info)
    {
        const char* fileName = "/data/storage/el2/log/sigbustest";
        size_t mapSize = 4096 * 2;
        size_t truncateSize = 4096;
-       
+
        // 1. Create and fill a file (O_SYNC reduces cache latency)
        int fd = open(fileName, O_RDWR | O_CREAT | O_TRUNC | O_SYNC, 0666); // 0666 : -rw-rw-rw-
        if (fd < 0) {
@@ -461,7 +461,7 @@ SIGBUS BUS\_OBJERR类型的Native崩溃，根本原因在于程序访问的内�
        }
        ftruncate(fd, mapSize);
        close(fd);
-       
+
        // Thread A: simulate log writing thread.
        std::thread writer([=] () {
            int fd = open(fileName, O_RDWR);
@@ -475,8 +475,8 @@ SIGBUS BUS\_OBJERR类型的Native崩溃，根本原因在于程序访问的内�
            }
            munmap(addr, mapSize);
        });
-       
-       // Thread B: simulate the log clearing thread and continuously truncates the file to tuncated size.
+
+       // Thread B: simulate the log clearing thread and continuously truncates the file to truncated size.
        std::thread cleaner([=] () {
            while (true) {
                int fd = open(fileName, O_RDWR);
@@ -484,7 +484,7 @@ SIGBUS BUS\_OBJERR类型的Native崩溃，根本原因在于程序访问的内�
                close(fd);
            }
        });
-       
+
        writer.join();
        cleaner.join();
        return nullptr;
@@ -574,7 +574,7 @@ napi_value AccessMemWithCheck(napi_env env, napi_callback_info info)
 
 1、检查文件大小并限制访问范围。
 
-```cpp
+```screen
 int CorrectMmapUsage()
 {
     const char* filePath = "/tmp/correct_mmap_test";
@@ -583,7 +583,7 @@ int CorrectMmapUsage()
         std::cout << "Open failed, errno: " << errno << std::endl;
         return -1;
     }
-    
+
     // set file size
     size_t fileSize = 1024;
     if (ftruncate(fd, fileSize) != 0) {
@@ -591,7 +591,7 @@ int CorrectMmapUsage()
         close(fd);
         return -1;
     }
-    
+
     // get file size actually (double check)
     struct stat st;
     if (fstat(fd, &st) != 0) {
@@ -600,17 +600,17 @@ int CorrectMmapUsage()
         return -1;
     }
     fileSize = st.st_size;
-    
-    // The mapped area dose not exceed the file size.
+
+    // The mapped area does not exceed the file size.
     size_t mapSize = fileSize;
     void* mapped = mmap(nullptr, mapSize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     close(fd);
-    
+
     if (mapped == MAP_FAILED) {
         std::cout << "mmap failed, errno: " << errno << std::endl;
         return -1;
     }
-    
+
     // Checking whether the access offset is valid before the access.
     size_t accessOffset = 100;
     if (accessOffset < fileSize) {
@@ -620,7 +620,7 @@ int CorrectMmapUsage()
     } else {
         std::cout << "Access offset " << accessOffset << " exceeds file size " << fileSize << std::endl;
     }
-    
+
     munmap(mapped, mapSize);
     return 0;
 }

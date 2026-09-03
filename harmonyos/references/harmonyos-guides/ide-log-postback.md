@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-log-postb
 title: 日志收集和诊断数据
 breadcrumb: 指南 > 编写与调试应用 > 附录 > 日志收集和诊断数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:26+08:00
+scraped_at: 2026-09-04T06:27:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f176883a924ec437ca27067ee38150644bd8eabe3454344aacb89cf650b1f94b
+content_hash: sha256:33d430b74c4a4404e6a19e091906e5237ac09bcc4e63628eb9dfdf92562672f0
 ---
 
 若开发过程中遇到DevEco Studio卡顿、卡死或其他故障时，可通过如下两种方式回传日志信息，帮助DevEco Studio提升稳定性体验。
@@ -18,22 +18,22 @@ content_hash: sha256:f176883a924ec437ca27067ee38150644bd8eabe3454344aacb89cf650b
 
 可点击**DevEco Studio** **Error**问题弹窗中的**Send Report**，点击**OK**后向DevEco Studio回传日志信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/glBpJA-BTyCZD9BL6tRzZg/zh-cn_image_0000002701663516.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/HoIhYTgBTaOMyjeCXZHUuQ/zh-cn_image_0000002701663516.png)
 
 **方式二**
 
 1. 开发者需要开启数据采集功能，请在**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**）**> Appearance & Behavior > System Settings > Data Sharing**设置界面，勾选**Send usage statistics**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/OiZ25h2mQQGY5YuMwy2m2w/zh-cn_image_0000002701823434.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/IdYjZFoYSke-KigsuXsJ5g/zh-cn_image_0000002701823434.png)
 2. 回传DevEco Studio日志信息。
 
    * 26.0.0及以上版本
-     1. 点击菜单栏**Help > Collect Logs and Diagnostic Data**或点击工具窗口右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/-H3r0orkQNWyO4h3Jdlbcw/zh-cn_image_0000002701663508.png)Feedback按钮。
+     1. 点击菜单栏**Help > Collect Logs and Diagnostic Data**或点击工具窗口右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/nWWxIbwDSsa9LuGaBqNVrg/zh-cn_image_0000002701663508.png)Feedback按钮。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/t0gNSb9wTeGscebyHElNkA/zh-cn_image_0000002731542705.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ZvNtSkY6QGiJLLecoesJww/zh-cn_image_0000002731542705.png "点击放大")
      2. 在**Problem Description**中填写问题描述，点击**Add**可上传图片或视频文件，点击**View Details**查看和选择要上传的.log文件。若需上传日志文件，请勾选**Upload DevEco Studio Logs。**点击**Submit**，向DevEco Studio回传日志信息。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/WLBBF4gTQN-r2PUaRCMX2w/zh-cn_image_0000002731542711.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/5V5gSP2RQTqGD35ZJB7SEg/zh-cn_image_0000002731542711.png)
 
         **说明** 
 
@@ -41,7 +41,7 @@ content_hash: sha256:f176883a924ec437ca27067ee38150644bd8eabe3454344aacb89cf650b
    * 26.0.0以下版本
      1. 点击菜单栏**Help > Collect Logs and Diagnostic Data。**
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/kukW5RSHSEG0bCC9UyLqFA/zh-cn_image_0000002701663512.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/J0NNazOfR6em4YJH8lyANg/zh-cn_image_0000002701663512.png "点击放大")
      2. 选择.log文件后，点击**OK**向DevEco Studio回传日志信息。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/oS9ExPx-SeSqhI5pEBXMVA/zh-cn_image_0000002731382733.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/ReeURIYIRMO6IegqK4unFA/zh-cn_image_0000002731382733.png "点击放大")

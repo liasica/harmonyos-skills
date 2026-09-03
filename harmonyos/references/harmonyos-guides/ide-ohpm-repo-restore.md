@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo restore
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo restore
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
+scraped_at: 2026-09-04T06:27:05+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:d0d4134b38875a36d1e347f8bdcbf22c38f4c1234512c31ea72f1586400a9f98
+content_hash: sha256:f51d9e8fe18d6108477e0a51e032ea12bc5b10519ec485ef057d66397de44ce1
 ---
 
 将ohpm-repo pack打包产物替换<deploy\_root>目录下相应文件，重启服务。
@@ -52,4 +52,4 @@ ohpm-repo restore "D:\pack_1702625827995.zip"
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/9n6cr-QxQvmTsMTmf3H1Fw/zh-cn_image_0000002731541779.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/PJu3Hw-sRCmCxQ2dLQK-QA/zh-cn_image_0000002731541779.png "点击放大")

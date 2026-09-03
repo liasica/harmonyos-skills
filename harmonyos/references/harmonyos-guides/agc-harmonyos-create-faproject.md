@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 创建元服务工程
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 创建端云一体化开发工程 > 创建元服务工程
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:19+08:00
+scraped_at: 2026-09-04T06:27:06+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:5fee870312be5f7a9ae9bed613c6bb9ff54102caa54e4f1a407708a6554bb4c1
+content_hash: sha256:be2589b9f4c5fc3e9d95384accccaf2f461a23a92b8a0dcfdc1d7759ace8d08e
 ---
 
 ## 新建工程
@@ -27,7 +27,7 @@ content_hash: sha256:5fee870312be5f7a9ae9bed613c6bb9ff54102caa54e4f1a407708a6554
 
    当前仅支持通用云开发模板（[CloudDev]Empty Ability）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Qveifhs5R82Uj6bFnnCQmA/zh-cn_image_0000002495751689.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/1ZpTtY2qS0W741DO_IuvaA/zh-cn_image_0000002495751689.png)
 
 ### 关联云开发资源
 
@@ -35,11 +35,11 @@ content_hash: sha256:5fee870312be5f7a9ae9bed613c6bb9ff54102caa54e4f1a407708a6554
 
 1. （可选）如您尚未登录DevEco Studio，点击“Sign In”，在弹出的账号登录页面，使用[已实名认证](agc-harmonyos-clouddev-account.md)的华为开发者账号完成登录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/rLWoSG4jSBmQlO8aQwgM3w/zh-cn_image_0000002214858877.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/02UIfutCQkGguAhV1bdMLA/zh-cn_image_0000002214858877.png)
 
    登录成功后，界面将展示账号昵称。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/KtKl4g5UQn2ja0_rALyquQ/zh-cn_image_0000002179498232.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/rgMcNTycRpeeKom7zmSXHQ/zh-cn_image_0000002179498232.png)
 2. 选择已登录账号下的APP ID，以关联AGC上的元服务。
    * 从APP ID下拉列表中选中所需的APP ID后，界面会展示该元服务在AGC控制台的名称、所属项目、包名与数据处理位置。确认无误后，点击“Next”。
 
@@ -47,15 +47,15 @@ content_hash: sha256:5fee870312be5f7a9ae9bed613c6bb9ff54102caa54e4f1a407708a6554
 
      元服务包名为自动生成，格式为固定前缀与appid的组合（com.atomicservice.[appid]）。不符合命名规范的包名无法在APP ID下拉列表中展示。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1jrQYY_CRaiEgCteWCGd7Q/zh-cn_image_0000002496005713.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/glTv3W4JQdqbQTzvC8d7Rg/zh-cn_image_0000002496005713.png)
    * 当出现以下场景时，您可点击“Register App ID”，[前往AGC控制台补充创建元服务](agc-harmonyos-create-faproject.md#section397317130308)。创建成功后返回DevEco Studio界面，即可看到新建的元服务信息。
      + APP ID框为空，即当前账号尚未在AGC控制台创建任何元服务。
      + 您需为待创建工程关联一个新的元服务。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/7fsNtD0SRVeemNeyPFUPhg/zh-cn_image_0000002214858837.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Oea9bMzhTseaIEqQYyfasw/zh-cn_image_0000002214858837.png)
    * 如查询到的元服务尚未关联任何项目，则无法选中。请先[将游离元服务添加到AGC项目下](agc-harmonyos-create-faproject.md#section152521927193013)，再返回DevEco Studio界面操作。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/eqdJlBxhRP-pyBRXt8JodA/zh-cn_image_0000002462648052.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/9SPz4lo7Sr-S6YPJmrX8Zg/zh-cn_image_0000002462648052.png)
    * 如果查询到的元服务所属项目尚未启用数据处理位置，请点击界面提示内的“AppGallery Connect”[设置数据处理位置](../app/agc-help-datalocation-0000001160439813.md)。设置完成后返回DevEco Studio界面，点击“Refresh”刷新当前APP ID列表，即可看到设置的数据处理位置。
 
      **注意** 
@@ -63,7 +63,7 @@ content_hash: sha256:5fee870312be5f7a9ae9bed613c6bb9ff54102caa54e4f1a407708a6554
      + 由于云开发目前仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外），请确保项目启用的数据处理位置包含“中国”。
      + 无论项目启用的默认数据处理位置为哪个站点，后续开发的云服务资源都将部署在“中国”站点。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/XO-bJd6gSCOBi90BqDWWwA/zh-cn_image_0000002462747966.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/lGbtvi86TwCOemT0d4Pj7w/zh-cn_image_0000002462747966.png)
 
 ### 配置工程信息
 
@@ -76,7 +76,7 @@ content_hash: sha256:5fee870312be5f7a9ae9bed613c6bb9ff54102caa54e4f1a407708a6554
    | Device type | 该工程模板支持的设备类型，目前仅支持手机设备。 |
    | Enable CloudDev | 是否启用云开发。云开发模板默认启用且无法更改。 |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/j86Fa4uMT2aKXIPAL3sNHA/zh-cn_image_0000002547471367.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9HAD9yPfQdGKhHN7uLIXvg/zh-cn_image_0000002547471367.png)
 
 2. 点击“Finish”，进入主开发界面，DevEco Studio执行工程同步操作，端侧工程会自动执行“ohpm install”，云侧工程会自动执行“npm install”，以分别下载端侧和云侧依赖。
 
@@ -84,10 +84,10 @@ content_hash: sha256:5fee870312be5f7a9ae9bed613c6bb9ff54102caa54e4f1a407708a6554
 
    若云侧执行“npm install”失败，请排查是否尚未[配置NPM代理](ide-environment-config.md#section197296441787)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/tWUsSmdnTDyh43MqvUeyTw/zh-cn_image_0000002214858865.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/3unpEYrSQVGe9B_8fwL_nQ/zh-cn_image_0000002214858865.png)
 3. 在主开发界面，可查看刚刚新建的工程。关于工程的详细目录结构介绍，请参见[端云一体化开发工程目录结构](agc-harmonyos-create-faproject.md#section20250910164411)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/UkAqePJmSSudQSdcycAF4Q/zh-cn_image_0000002214704493.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/xHol0loJR0-kOy9DnfsMLQ/zh-cn_image_0000002214704493.png)
 
 ## 工程初始化配置
 
@@ -110,31 +110,31 @@ DevEco Studio为工程关联的项目自动开通云函数、云数据库、云�
 
 端开发工程主要用于开发应用端侧的业务代码，使用通用云开发模板创建的端开发工程目录结构如下图所示。“Application/cloud\_objects”模块用于存放云对象的调用接口类，“src/main/ets/pages”目录下包含了云存储、云数据库和云函数页面，其他目录文件介绍请参见[工程目录结构](ide-project-structure.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/4j6ZE6syTlC_aGosqgRaTw/zh-cn_image_0000002179498204.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/6WlypDhTT9CNftxNP5sKlQ/zh-cn_image_0000002179498204.png)
 
 ### 云开发工程（CloudProgram）
 
 在云开发工程中，您可为您的元服务开发云端代码，包括云函数和云数据库服务代码。使用通用云开发模板创建的云开发工程目录结构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/AME5dBvaQYm1_HyG2SQTew/zh-cn_image_0000002279948894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/N9uhDbUgTpK0uHsLPrPGwA/zh-cn_image_0000002279948894.png)
 
 * clouddb：云数据库目录，包含数据条目目录（dataentry）和对象类型目录（objecttype）。
   + dataentry：用于存放数据条目文件。
 
     该目录下一般会根据您选择的云开发模板预置数据条目示例文件。在通用云开发模板工程中，该目录下会预置名为“d\_Post.json”的数据条目示例文件，内含两条示例数据。您可按需使用、修改或删除。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/e2KdFfweTkiKLHJUnRrNbw/zh-cn_image_0000002314788585.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/l93u-T_KTQqhFtYclPRADA/zh-cn_image_0000002314788585.png)
   + objecttype：用于存放对象类型文件。
 
     该目录下一般会根据您选择的云开发模板预置对象类型示例文件。在通用云开发模板工程中，该目录下会预置名为“Post.json”的对象类型示例文件，内含对象类型“Post”的权限、索引、字段名称和字段值等。您可按需使用、修改或删除。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/ndeFVHUMQsSAl0VP0x0bkA/zh-cn_image_0000002179498164.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/KchrVYLbQaKf0wHdony5_g/zh-cn_image_0000002179498164.png)
   + db-config.json：模块配置文件，主要包含云数据库工程的配置信息，如默认存储区名称、默认数据处理位置。
 * cloudfunctions：云函数目录，包含各个云函数/云对象子目录。每个子目录下包含了云函数/云对象的配置文件、入口文件、依赖文件等。
 
   该目录下一般会根据您选择的云开发模板预置示例函数。通用云开发模板工程下预置了一个用于生成UUID的示例云对象“id-generator”，您可按需使用、修改或删除。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/f0KyM5GgSQWyiGMDmbi6lQ/zh-cn_image_0000002179498100.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/MEPGw7AwSNm1Sys08sMciA/zh-cn_image_0000002179498100.png)
 * node\_modules：工程同步时执行“npm install”生成，包含“typescript”和“@types/node”公共依赖。
 * cloud-config.json：云开发工程配置文件，包含应用名称与ID、项目名称与ID、启用的数据处理位置、支持的设备类型等。
 * package.json：定义了“typescript”和“@types/node”公共依赖。
@@ -148,10 +148,10 @@ DevEco Studio为工程关联的项目自动开通云函数、云数据库、云�
 
 1. 点击“Register App ID”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/pYTQ8aJ6T72qJLq4b1bcCQ/zh-cn_image_0000002214704425.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/OIbaBBO9TkivIU1eL-zB1w/zh-cn_image_0000002214704425.png)
 2. 在弹窗中填写待创建的元服务信息后，点击“OK”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/juqIipuuTq21GWXBLMmsDQ/zh-cn_image_0000002496008473.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/bF6k2d5rRiG_0W2bpsLo2Q/zh-cn_image_0000002496008473.png)
 
    | 参数 | 说明 |
    | --- | --- |
@@ -165,7 +165,7 @@ DevEco Studio为工程关联的项目自动开通云函数、云数据库、云�
 
    若元服务关联的是一个新建项目或者尚未启用数据处理位置的已有项目，则还会提示尚未启用数据处理位置，参考[上文](agc-harmonyos-create-faproject.md#li58931263712)处理即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/q63K9Br6TPGBaOJj8hUW3Q/zh-cn_image_0000002463542130.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/sX-PwWpbR3qwkv4Bp3YMkA/zh-cn_image_0000002463542130.png)
 
 ### 将游离元服务添加到AGC项目下
 
@@ -177,33 +177,33 @@ DevEco Studio为工程关联的项目自动开通云函数、云数据库、云�
 
 1. 点击“Not associated yet”，或点击界面下方提示内的“AppGallery Connect”，可打开AGC控制台“开发与服务”页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/mZad55QwRi-sUD8RFK7r6Q/zh-cn_image_0000002495887153.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8_0r7WWeTnCXvW9DwpfXlw/zh-cn_image_0000002495887153.png)
 2. 点击选择希望为元服务关联的项目，或者点击“添加项目”新建一个项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/vfb0dBrcT6OqeyoypCeQdQ/zh-cn_image_0000002463616410.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/GHvL58yYSLCJ2dG5geb2mQ/zh-cn_image_0000002463616410.png)
 3. 如选择了新建一个项目，设置项目名称，点击“确认”。
 
    如选择了已有项目，则忽略此步骤。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/oWcrlBvGQ22aithB-8ER5A/zh-cn_image_0000002179498244.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/mvz9V1sTTzOWOuj8f5mmNQ/zh-cn_image_0000002179498244.png)
 4. 设置或管理项目的数据处理位置。
    * 如项目尚未设置数据处理位置：
      1. 点击“启用”。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/d-NthJehQkyez7LSB9tWoA/zh-cn_image_0000002179338536.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/JGd5Pp5uQnqjMJUQWL9k2A/zh-cn_image_0000002179338536.png)
      2. 仔细阅读提示框的文字说明后，在“启用”栏为您的项目勾选一个或多个数据处理位置，并在“设为默认”栏将其中一个设置为默认数据处理位置。
 
         **注意** 
 
         启用的数据处理位置必须包含中国站点。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/i-SGlwYAQT2AUin76W1ilg/zh-cn_image_0000002179498220.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/tTIVI8QxQ1ytYIFX2GiJ4Q/zh-cn_image_0000002179498220.png)
    * 如项目已设置过数据处理位置，可点击“管理”启用新的数据处理位置、取消已启用的数据处理位置，或修改默认数据处理位置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/XeG-Gc7ASrWFrF4lrYHInw/zh-cn_image_0000002179338548.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/DxulcTkdQR6tR2czlE4VpQ/zh-cn_image_0000002179338548.png)
 5. 点击“确认”，元服务成功关联项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ngA9MuFYS1Kk1hjkoPaMUA/zh-cn_image_0000002214858853.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/N8OmEmZ7SW-LRkkHbV0VzQ/zh-cn_image_0000002214858853.png)
 6. 返回DevEco Studio，点击“Refresh”刷新，可看到元服务已关联上了项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/fEw1zJ3JTK6Y1xF1eoJt0Q/zh-cn_image_0000002509136865.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/cVN4XcjRRlmU6bbrLA2x7w/zh-cn_image_0000002509136865.png)

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用DevEco Testing进行稳定性测试
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 稳定性测试 > 使用DevEco Testing进行稳定性测试
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
+scraped_at: 2026-09-04T06:33:23+08:00
 doc_updated_at: 2026-08-10
-content_hash: sha256:4c158a2e217e410449db354647505aee3cc974dd448e888b9e598ae5ad90567e
+content_hash: sha256:de2af2964a90acf7c30803b5b46989926c3754bb68ccedef3b6e3600656382f8
 ---
 
 本文介绍DevEco Testing为HarmonyOS NEXT应用开发者提供的稳定性测试服务，涵盖稳定性基础质量测试和应用探索测试。稳定性基础质量测试依据HarmonyOS NEXT稳定性测试建议，提供应用稳定性基础检测能力，帮助开发者快速上手稳定性测试。应用探索测试采用基于专家经验的智能遍历方法，驱动测试高效执行，构建应用专属测试模型，帮助开发者有效识别应用故障。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UeBSTo74SV-WRQRQJXdvMg/zh-cn_image_0000002441736772.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/31TN--QsRkuUwosKCRpDkw/zh-cn_image_0000002441736772.png)
 
 ## 稳定性基础质量测试
 
@@ -20,7 +20,7 @@ content_hash: sha256:4c158a2e217e410449db354647505aee3cc974dd448e888b9e598ae5ad9
 
 进入DevEco Testing客户端，在左侧菜单栏选择“稳定性基础质量测试”，点击“稳定性基础质量测试”服务卡片，即进入任务创建界面。按需配置任务参数，点击创建任务即开始测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/8-8_TfBQRRWemQr6GuGjkw/zh-cn_image_0000002475040597.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/ZR80KRAuTiSaLPqSZWEr0A/zh-cn_image_0000002475040597.png)
 
 任务名称：用于标识任务，工具会根据时间生成默认任务名，支持自定义修改。
 
@@ -44,7 +44,7 @@ content_hash: sha256:4c158a2e217e410449db354647505aee3cc974dd448e888b9e598ae5ad9
 
 创建任务后，将会跳转到执行页，进入测试环境初始化阶段。待测试环境初始化完成，待测应用被启动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/f8cWIlv7Q7quGZLkXYCJ0Q/zh-cn_image_0000002475126385.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/_le6tLdhTnC31KyOeY7emw/zh-cn_image_0000002475126385.png)
 
 测试过程中，在测试页面可以看到测试进度、检测状态、实时投屏及执行日志。
 
@@ -54,13 +54,13 @@ content_hash: sha256:4c158a2e217e410449db354647505aee3cc974dd448e888b9e598ae5ad9
 
 任务信息中，可查看当前应用信息、任务执行时长及详细的环境参数（配置信息及环境信息），点击打开目录按钮支持导出 HTML 的报告文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/COnfol4CTOq93QeEFyHYmg/zh-cn_image_0000002475127285.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/WNw2cP5nSky2-TItKPc5sg/zh-cn_image_0000002475127285.png)
 
 测试概览中，包含结果统计及检测规则，可直观查看本次任务中，测试项检测结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ip13sxTNQsSEjIsIWXGCgw/zh-cn_image_0000002441728014.png)检测不通过或检测异常的规则项，点击查看详情即可查看异常问题详情，包含检测项概览、测试截图、问题列表。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/tbEpeNvlQgW291f9nXJOVg/zh-cn_image_0000002441728014.png)检测不通过或检测异常的规则项，点击查看详情即可查看异常问题详情，包含检测项概览、测试截图、问题列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ZLmr5KJFRROoDB3vfcuw3A/zh-cn_image_0000002475048409.png)点击查看按钮，支持查看测试过程中的日志，用户可结合问题描述及日志详情进一步分析。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/8nQMhR8WTruWKfqakHOp9A/zh-cn_image_0000002475048409.png)点击查看按钮，支持查看测试过程中的日志，用户可结合问题描述及日志详情进一步分析。
 
 **说明** 
 

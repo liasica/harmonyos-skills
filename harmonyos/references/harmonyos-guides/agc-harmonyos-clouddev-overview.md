@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 业务介绍
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 业务介绍
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:19+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:4f7b2c3cfb810a7aae916c6e66c352208ee459e2813db725c3a00ba980325521
+scraped_at: 2026-09-04T06:27:06+08:00
+doc_updated_at: 2026-09-03
+content_hash: sha256:d72696219d3e2402c34280943a319290456e37cd6e72c6af5da0783f33f1d8dc
 ---
 
 ## 什么是端云一体化开发
@@ -72,7 +72,7 @@ DevEco Studio支持开发者在本地完成云侧服务资源的开发与部署�
 
 ### 支持的签名方式
 
-支持[关联注册应用进行自动签名](ide-signing.md#section20943184413328)和[手动签名](ide-signing.md#section297715173233)两种方式。
+支持[关联注册应用进行自动签名](ide-signing-auto.md#section6333421192714)和[手动签名](ide-signing-manual.md)两种方式。
 
 ### 模拟器支持情况
 

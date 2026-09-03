@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用DevEco Studio静态检测编码规范
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 稳定性编码规范 > 使用DevEco Studio静态检测编码规范
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
+scraped_at: 2026-09-04T06:33:27+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:95181f0b45e95147ff576342410d4cfb4a1d5541943903e5990b998cbf3fcad5
+content_hash: sha256:3234a620b62872d42fea968d722966102d5f6f12bef6614a34c3ab484a49eed9
 ---
 
 ## 使用Clang-Tidy检测
@@ -16,11 +16,11 @@ DevEco Studio集成了开源的Clang-Tidy。
 
 1. 开发者可以在Setting -> Editor -> Inspections页面，选择CPP -> clang-tidy的配置页进行Clang-Tidy Checks配置，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/7_L2jZ6ZSSeSPMgl4gJbLQ/zh-cn_image_0000002194009836.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/A7KQvqmeS8q7EcydHpUZlg/zh-cn_image_0000002194009836.png)
 
 2. 开发者可以在Setting -> Languages & Frameworks -> C/C++中进行Clang-Tidy Checks配置，勾选“Use clang-tidy via clangd to enable the following checks”，然后配置规则，如下图所示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/-LWEeF6ETJ-Ag6eZiZHPdA/zh-cn_image_0000002229335633.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ZjA9qN6kRmK3C2uKEZWzXQ/zh-cn_image_0000002229335633.png)
 
 配置参考文档：
 
@@ -30,21 +30,21 @@ DevEco Studio集成了开源的Clang-Tidy。
 
 1. 需触发按钮 Code -> Inspect Code -> Analyze
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ZX5YWCWfQpGBviztBxPQXw/zh-cn_image_0000002229335613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/2D-OIc-nQ2-0njc96SBezw/zh-cn_image_0000002229335613.png)
 
 2. 实时触发的规则如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ri7LR4JlQLKtURk28RJO8w/zh-cn_image_0000002229450133.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/QZoO7xhJTjqd8tG4_0fLOg/zh-cn_image_0000002229450133.png)
 
 **DevEco Studio默认检查规则检查示例**
 
 1. 手动检查代码，示例中不符合检查规则“clang-analyzer-huawei-InfiniteLoopChecker”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/jAqhrRHYSGm0Lws3_oeUag/zh-cn_image_0000002193850236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/X2gBFhk5RQyPAhBM1Dh0VA/zh-cn_image_0000002193850236.png)
 
 2. 实时检查，示例中不符合检查规则“misc-unused-local-variable”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/CyKZOp2CTmO0HQA11fWwcw/zh-cn_image_0000002194009820.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/n5ayF_76RuCXHKx2TWhzNA/zh-cn_image_0000002194009820.png)
 
 **默认配置检查内容**
 
@@ -77,11 +77,11 @@ DevEco Studio集成了Code Linter，用于针对ArkTS/TS代码进行最佳实践
 
 在已打开的代码编辑器窗口中，单击右键选择Code Linter，或在工程管理窗口中选中单个或多个文件/目录，右键选择Code Linter > Full Linter执行全量代码检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/VCDzUa4gSUioFF-8xCZkXA/zh-cn_image_0000002194009856.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/M4WH5RndQiG2FOUKzNPaTw/zh-cn_image_0000002194009856.png)
 
 如需对Git工程中的增量文件（新增、修改、重命名）进行检查，可在commit界面右下角点击齿轮图标，选择Incremental Linter执行增量检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/sfOe5p23TRO1fCNZWJRExw/zh-cn_image_0000002193850228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/v5RK-tLjTYaSIklXNKCf-A/zh-cn_image_0000002193850228.png)
 
 **说明** 
 
@@ -181,21 +181,21 @@ overrides：针对工程根目录下的部分特定目录或文件，可以配�
 
 扫描完成后，在底部工具面板查看检查结果。勾选Defects中的告警等级，查看对应告警信息。双击告警结果，跳转到代码缺陷位置。选中告警结果时，右侧Defect Description窗口显示规则详细说明。搜索规则时，可设定全词匹配和大小写敏感。
 
-单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/TQeuDaN1R0qYWIFC_wh2_A/zh-cn_image_0000002194009816.png)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/VGzRJF9fTIipwVhnd1AJMw/zh-cn_image_0000002229335641.png)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
+单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/1PiWTdKIQayhBFN1Q8DDNw/zh-cn_image_0000002194009816.png)图标，查看可修复的代码规则，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3kPNlGYnSoqWUbFPUsm_xw/zh-cn_image_0000002229335641.png)代码修复图标，可以一键式批量修复告警，并刷新检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/suRyR5wSQji4prsMsddxCg/zh-cn_image_0000002194009860.png)屏蔽告警信息：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/6uhn2aIkQxq3OhL_YGDwEg/zh-cn_image_0000002194009860.png)屏蔽告警信息：
 
-* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/kNmCfKSLQWGmfwa8wy9f_Q/zh-cn_image_0000002193850240.png)Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板Ignore图标批量执行操作；
+* 在某些特殊场景下，若扫描结果中出现误报，点击单条告警结果后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/mz58wAv-To6BEcQ0KbcKwQ/zh-cn_image_0000002193850240.png)Ignore图标，可以忽略对告警所在行的code linter检查；或勾选文件名称或多条待屏蔽的告警，点击左侧工具面板Ignore图标批量执行操作；
 * 在文件顶部添加注释/\* eslint-disable \*/可以屏蔽整个文件执行code linter检查，在eslint-disable 后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则；
 * 在需要忽略检查的代码块前后分别添加/\* eslint-disable \*/和/\* eslint-enable \*/添加注释信息，再执行Code Linter，将不再显示该代码块扫描结果；在待屏蔽的代码行前一行添加/\* eslint-disable-next-line \*/，也可屏蔽对该代码行的codelinter检查。
 
 如需恢复忽略的报错信息，删除该行上方的注释，然后重新执行Code Linter检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TmnrN-0FSZ-Ayg_c5-jgXg/zh-cn_image_0000002194009844.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/eBMTVOsQTc2727SwCyWkuw/zh-cn_image_0000002194009844.png)
 
-导出检查结果：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/NlfLXSpZTzyu0yxOKb29VA/zh-cn_image_0000002229450101.png)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
+导出检查结果：点击工具面板左侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/V96JP_gaS-yXKs-goPSc1g/zh-cn_image_0000002229450101.png)导出按钮，即可导出检查结果到excel文件，包含告警所在行，告警明细，告警级别等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/s15D7IarTq2iYzwvLDhAKQ/zh-cn_image_0000002229450125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/odil3bNcRCGclJjmPTVcmw/zh-cn_image_0000002229450125.png)
 
 **实践说明**
 
@@ -245,7 +245,7 @@ Foo.bar();
 
 对pages/Index.ets文件进行代码检查，结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/yxx81bGaQ3WVIrMHDcWVzA/zh-cn_image_0000002194009852.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/rrIYfvtcRG6eywObxwQjVg/zh-cn_image_0000002194009852.png)
 
 **示例2：对类名Foo的命名风格校验**
 
@@ -305,7 +305,7 @@ class foo {    //Here is an example of a naming style error, where foo is the in
 
 对pages/Index.ets文件执行代码检查，显示检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/aWhsecgKQTCZUU3G59q9TA/zh-cn_image_0000002229335649.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/YJA7pYecSWa8VdglceXfmg/zh-cn_image_0000002229335649.png)
 
 **示例3：检查代码文件的命名风格**
 
@@ -340,4 +340,4 @@ class foo {    //Here is an example of a naming style error, where foo is the in
 
 对pages/test.ets文件执行代码检查，显示检查结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/pBtjIy41QQuPXvqvFZ2SaA/zh-cn_image_0000002229450117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/YdmVJSNKTlmXXJPLXBLKDQ/zh-cn_image_0000002229450117.png)

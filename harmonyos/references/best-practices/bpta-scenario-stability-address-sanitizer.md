@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: 地址越界类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 地址越界类问题案例
 category: best-practices
-scraped_at: 2026-09-02T14:53:47+08:00
+scraped_at: 2026-09-04T06:33:27+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:8e4a8191940b83b9126968fb115bac7b6caad8287c711a43108321eabb9eaa27
+content_hash: sha256:d36d1a79da2921a6c91066e14790d0a22798d48951606530c3f3352b13e939b7
 ---
 
 本文按照[地址越界类问题分析方法](bpta-stability-address-illegal-way.md)的流程展开，以实际案例的形式指导开发者如何从CppCrash日志出发，分析、定位，修复地址越界问题。开发者可阅读[地址越界类问题检测](bpta-stability-ram-detection.md)了解系统检测地址越界问题的原理和机制。
@@ -62,7 +62,7 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 
 首先从日志可以看到这是一个SIGSEGV(SEGV\_MAPERR) 的问题，这表示进程试图访问一个不存在的内存地址，或者试图访问一个没有映射到进程地址空间的内存地址。这种情况通常是由于程序中的指针错误或内存泄漏引起。接下来就要解栈初步定位出问题的代码行， 根据[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#section14952241528)反编译#00号栈，可以看到该栈对应下图中黄色高亮代码行，该代码行在对裸指针做类型转换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/sdSVWBskQ8q0BPrOA0LWEQ/zh-cn_image_0000002404125237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/e0oDd_M2TdmjOhSV_vseVg/zh-cn_image_0000002404125237.png "点击放大")
 
 用[llvm-objdump](bpta-scenario-stability-cppcrash.md#section10107179911)工具解该栈的地址，发现出问题的是x8寄存器，从当前指针里面取其中的第一个成员（虚表地址）取到了一个异常地址，从中偏移-80取内容的时候挂了。
 
@@ -83,15 +83,15 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 
 前方的代码如下，从fnode指针中获取其成员时出现故障，通过汇编和代码初步定位可能是地址中的内存被覆盖。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/R6ImwV-gTv6CyB5g7X9EDQ/zh-cn_image_0000002370405692.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/_AUdcL3nT7KygpPnH89fdQ/zh-cn_image_0000002370405692.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/1VGBzXacRKqbbwYfT2nJWQ/zh-cn_image_0000002404045421.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/rC1DK2cuTja1MGB4_9AD6A/zh-cn_image_0000002404045421.png "点击放大")
 
 **第二步：场景分析**
 
 通过走读代码，发现可疑点，几个地址越界问题的流水日志都有一个共同点，存在设置声音的操作。最终决定增加设置声音的测试用例进行压测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/anEfrR9MSZ-nQilL0F_NZw/zh-cn_image_0000002370565604.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/WfjUYVPfSy2HpFMHfw_wKA/zh-cn_image_0000002370565604.png)
 
 **第三步：内存特征分析**
 
@@ -122,11 +122,11 @@ lr:0000005af25e9480 sp:0000007fba087420 pc:0000005af07df83c
 
 从指令add x0, x0, #864可以看出，在执行bl跳转之前，x0寄存器的值被偏移了864字节，目的是定位到类中的某个成员变量。为确定该偏移对应的具体成员，可通过gdb的ptype /o命令查看类的内存布局。如图所示，864字节的偏移恰好对应NG::FrameNode结构体中的成员变量accessibilityProperty\_的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/UrpJfTmsRTi0vqiJQURj7Q/zh-cn_image_0000002552638491.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/i9BKB0eeTX6nt0IRL9mE7g/zh-cn_image_0000002552638491.png)
 
 因此可判断，此时的x0指向的就是accessibilityProperty\_ 成员的地址。紧随其后的bl指令跳转至0xa5f814（DynamicCast），该函数会以x0为实参，对其执行虚表查找，并尝试进行向下类型转换。看x0的内存布局，和FrameNode结构体内存大小也能对上。说明FrameNode是正常的，但是里面的这个成员的指针指向的内容异常了，如下图所示5c3eb6ad68地址的值异常，可能是accessibilityProperty\_这个指针本身被踩，也可能是这个对象的内容被踩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/oGaqnrMnQGytIgCLiOqXnw/zh-cn_image_0000002370405696.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/TG0Wc6JRQwSimL9X7nLdNA/zh-cn_image_0000002370405696.png)
 
 **第四步：用例部署**
 
@@ -193,18 +193,18 @@ Tid:3609, Name:ohos.sceneboard
 
 看汇编hwasan抓到tag不对了，从汇编看就是x0寄存器不对，也就是dest的指针有问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/PyAPFPBST6CyG8YL0Oj6mg/zh-cn_image_0000002404045425.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/RVnhRO2oS76IJ-vHgEt76A/zh-cn_image_0000002404045425.png "点击放大")
 
 向前回栈看：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Syuv0k5_Tlq2G01PeZ4o3g/zh-cn_image_0000002370565608.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/WFKb5I5TTh2qHd1mSDpvKg/zh-cn_image_0000002370565608.png "点击放大")
 
 结合反编译第一个参数，是音频audiorenderer传过来找soundpool要数据填充的目的地址，看是否提前释放导致野指针了。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/kLmaSpkHTnum5VgXFz8MYQ/zh-cn_image_0000002370405700.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/6-4qMQsEQMyiifaD58TWUg/zh-cn_image_0000002370405700.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/MiMzF6NTSIqOYoOeZ2aebg/zh-cn_image_0000002404045429.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/RiU3KkrQSkGSZk-YXAW9vQ/zh-cn_image_0000002404045429.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Bh6FsK9KQoSgG2mD6WeBNQ/zh-cn_image_0000002370565612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/FZLvyh2ZTC-IPnlsTT-sFA/zh-cn_image_0000002370565612.png "点击放大")
 
 问题已明确是Use-After-Free问题，GetBufferDesc函数将cbBuffer\_的裸指针返回出去，另一个线程将RendererInClientInner销毁了，生命周期不一致导致了Use-After-Free问题。

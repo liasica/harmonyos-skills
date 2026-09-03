@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-realtime-
 title: 代码实时检查及快速修复
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > 代码实时检查及快速修复
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-09-04T06:27:10+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:257aed9f4861d1e491c1b17c94f7fe4300a0ef447f274260d6ad76f440ab6432
+content_hash: sha256:356e9f87d1a1cfaae644290bd201d1a1fcc26407cda003e0fb0084e72d9fdd7a
 ---
 
 ## 实时检查
@@ -14,7 +14,7 @@ content_hash: sha256:257aed9f4861d1e491c1b17c94f7fe4300a0ef447f274260d6ad76f440a
 
 对于ArkTS代码，从DevEco Studio 4.0 Release版本开始，当compileSdkVersion≥10时，编辑器代码实时检查支持ArkTS性能语法规范检查。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/CgYiQkPPQ8aDMVrPkklnFQ/zh-cn_image_0000002701663178.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/uy8S7cnoT7Cujf3oWzCdKw/zh-cn_image_0000002701663178.png)
 
 **说明** 
 
@@ -30,7 +30,7 @@ DevEco Studio支持代码快速修复能力，辅助开发者快速修复ArkTS�
 
 **快速修复：**将光标放在错误告警的位置，可在弹出的悬浮窗中查看问题描述和对应修复方式；单击**M****ore actions**可查看更多修复方法。或是在页面出现灯泡图标时，可点击图标并根据相应建议，实现代码快速修复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/QKFBABOvTLeMigm3LKnVgQ/zh-cn_image_0000002731542371.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/JqgWS697Rk2yIpHvhAqS-Q/zh-cn_image_0000002731542371.png)
 
 **C++快速修复使用演示**
 
@@ -38,7 +38,7 @@ DevEco Studio支持代码快速修复能力，辅助开发者快速修复ArkTS�
 
 * 光标悬浮在switch表达式的条件变量处，点击灯泡图标，在下拉菜单中选择**Create missing switch cases**，完成缺失的case条件补充。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vOJ_YvTlTCylErJl0IBdBQ/zh-cn_image_0000002731542377.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/FpVNw42EStWrQYYXKgdsRg/zh-cn_image_0000002731542377.gif)
 * 点击构造函数名称，左侧出现红色灯泡后，点击灯泡图标选择**Create new constructor 'xxx'**生成构造函数。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/FCyQMWyCQcm3iFvL4giphg/zh-cn_image_0000002731382401.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/l7Q1hlUHSVynpJnP0ANqLQ/zh-cn_image_0000002731382401.gif)

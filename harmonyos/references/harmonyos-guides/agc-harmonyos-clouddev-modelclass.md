@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: (可选）一键生成Model Class
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库 > (可选）一键生成Model Class
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:19+08:00
+scraped_at: 2026-09-04T06:27:07+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:5a33d1fb12ea90b9322f64c8de1b1e4410d8835c3f12086b332aa806a66c64b0
+content_hash: sha256:9f7861d0f7db239ff808b5d70e138d03c644c1773d57cc892555616fb765a8cf
 ---
 
 云数据库支持从端侧或者云侧云函数（含云对象）访问云数据库，代码涉及调用云数据库时，需引入对应云数据库对象类型的Model Class。当前支持为对象类型一键生成Server Model与Client Model，供您在端侧及云侧云函数（含云对象）开发时引用。
@@ -14,15 +14,15 @@ content_hash: sha256:5a33d1fb12ea90b9322f64c8de1b1e4410d8835c3f12086b332aa806a66
 
 1. 右击需要调用的对象类型文件（以“Post.json”为例），选择“Generate Server Model”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/kHmsaYn4T1aFfpTw3bjZvw/zh-cn_image_0000002214704509.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/lHfkhusfQg-bJO2HNSphkA/zh-cn_image_0000002214704509.png)
 2. 选择生成的Server Model文件存放的云函数（或云对象）目录，以“id-generator”为例。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/X3foC_bPTRuQdbjx96C1zw/zh-cn_image_0000002214704513.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Pdu1r5bXQwe2DYSurtlHoQ/zh-cn_image_0000002214704513.png)
 3. 点击“OK”。
 
    指定目录下生成对应对象类型的Server Model文件，后续您便可以在代码中方便地引用该Server Model 。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/pCg4s6rZSqWRdWpfI5ooeg/zh-cn_image_0000002179498268.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/gHAYjxZ1Q2uEp-GKWEayzQ/zh-cn_image_0000002179498268.png)
 4. 在云对象“id-generator”目录的package.json文件中引入@hw-agconnect/cloud-server依赖。
 
    ```typescript
@@ -31,7 +31,7 @@ content_hash: sha256:5a33d1fb12ea90b9322f64c8de1b1e4410d8835c3f12086b332aa806a66
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/3oqr3h9CQ16wPY2Qnh4-yg/zh-cn_image_0000002308906729.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YYoJNj-fSjGl1hpdlwivvA/zh-cn_image_0000002308906729.png)
 5. 在云对象文件idGenerator.ts中添加如下代码，实现云函数访问云数据库。
 
    ```screen
@@ -65,12 +65,12 @@ content_hash: sha256:5a33d1fb12ea90b9322f64c8de1b1e4410d8835c3f12086b332aa806a66
 
 1. 右击需要调用的对象类型文件（以“Post.json”为例），选择“Generate Client Model”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/cDJZxGikSzKeI45qarL9rQ/zh-cn_image_0000002214858901.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/7hOnrUGSSauNvly_p2UJPg/zh-cn_image_0000002214858901.png)
 2. 选择生成的Client Model文件存放的端侧目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/zCiBiNvnRZuNxlLViHusmA/zh-cn_image_0000002214858897.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/wapX5vvgQKC0E0-FnTUrZA/zh-cn_image_0000002214858897.png)
 3. 点击“OK”。
 
    指定目录下生成对应对象类型的Client Model文件，后续您便可以在端侧代码中方便地引用该Client Model，具体可参考端云一体化工程初始化代码中的Client Model示例（“ets/pages/CloudDb/Post.ts”）在CloudDb.ets以及DbInset.ets中的引用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/aE-b1qzCR--BtwO2XPLzww/zh-cn_image_0000002179338564.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Xh2fTSyCTKSWgfBBHkpvZw/zh-cn_image_0000002179338564.png)

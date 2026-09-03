@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发流程
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库 > 开发流程
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:49+08:00
+scraped_at: 2026-09-04T06:27:07+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:2a7241005f5387bad6a6ae45b5f9504dc3645ea1749a6073d8c7108a286c8da2
+content_hash: sha256:690929daa953c25511f229eca6e9b5dad673f9eb0ca4e4db68b6c52b2de5509e
 ---
 
 |  |  |
@@ -14,7 +14,7 @@ content_hash: sha256:2a7241005f5387bad6a6ae45b5f9504dc3645ea1749a6073d8c7108a286
 
 您可以使用DevEco Studio在端云一体化云侧工程下开发云数据库，总体流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/dus7Y7mkTeaTDi9nKvZl6Q/zh-cn_image_0000002314347097.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/6Eb37gEkSRSQY3ubaGRiaQ/zh-cn_image_0000002314347097.png "点击放大")
 
 1. [创建对象类型](agc-harmonyos-clouddev-objecttype.md)：创建一个用于存储数据条目的对象类型。
 2. [添加数据条目](agc-harmonyos-clouddev-dataentry.md)：在刚刚创建的对象类型内添加一条条数据，并配置数据所在的存储区。

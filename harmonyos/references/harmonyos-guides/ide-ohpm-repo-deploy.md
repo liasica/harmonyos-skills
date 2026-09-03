@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo deploy
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo deploy
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
+scraped_at: 2026-09-04T06:27:05+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:d1bd8cb62dfcf140b5cc2bf09a42914c8d0b4da0f44c7ba807e6b8b57eaf4eca
+content_hash: sha256:5b5d8a5e18a0964302bf33df5e4c481591c8bc2cf611cc9bc57f1cd18dff9cd5
 ---
 
 使用备份文件部署新的ohpm-repo实例。
@@ -83,4 +83,4 @@ ohpm-repo deploy D:\ohpm-repo\bin\pack_1695805599689.zip --deploy_root D:\new-oh
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/w5UKY8Q3RZqKjv8Kwb4yug/zh-cn_image_0000002701822014.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7OV1nvCwQZOvv0uAnkrRog/zh-cn_image_0000002701822014.png "点击放大")

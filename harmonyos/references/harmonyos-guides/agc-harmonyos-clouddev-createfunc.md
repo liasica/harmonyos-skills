@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 创建并配置函数
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 创建并配置函数
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:19+08:00
+scraped_at: 2026-09-04T06:27:07+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:8788405e1ea73523479ac932a305d55d678cbfb580cf3e863a478eceaa305975
+content_hash: sha256:57d0ccde68de6953c73a625245ecd3cabeb1196d121ea955f76b379bab29a3bc
 ---
 
 您可直接在DevEco Studio创建函数、为函数配置调用的触发器等。
@@ -14,12 +14,12 @@ content_hash: sha256:8788405e1ea73523479ac932a305d55d678cbfb580cf3e863a478eceaa3
 
 1. 右击“cloudfunctions”目录，选择“New > Cloud Function”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ZdpPrDZZT2CXwsNJ_aK14A/zh-cn_image_0000002383015060.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/D2xagsjITm2cYt-Db2hggw/zh-cn_image_0000002383015060.png)
 2. 在“Select the Cloud Function Type”栏选择“Cloud Function”，输入云函数名称（如“my-cloud-function”），点击“OK”。
 
    函数名称长度2-63个字符，仅支持小写英文字母、数字、中划线（-），首字符必须为小写字母，结尾不能为中划线（-）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/xGT7eoqIS12l9oGlHtY2KQ/zh-cn_image_0000002214858969.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/_Iz_SWOTTDKtGWtBewiWdg/zh-cn_image_0000002214858969.png)
 
    “cloudfunctions”目录下生成新建的“my-cloud-function”函数目录，目录下主要包含如下文件：
 
@@ -27,13 +27,13 @@ content_hash: sha256:8788405e1ea73523479ac932a305d55d678cbfb580cf3e863a478eceaa3
    * 函数入口文件“myCloudFunction.ts”
    * 依赖配置文件“package.json”
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/gzaoQbEwRQujf2DBg7e6Hg/zh-cn_image_0000002179338652.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/9P7SCNK2QL-18PlO6Z41Mw/zh-cn_image_0000002179338652.png)
 
 ## 配置函数
 
 函数创建完毕后，您可在配置文件“function-config.json”的“triggers”下配置触发器，通过触发器暴露的触发条件来实现函数调用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/djSkkx96ROmHUUNKIT0WYg/zh-cn_image_0000002296067548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/ufwz6l0LS2myTju_fCxgsw/zh-cn_image_0000002296067548.png)
 
 **说明** 
 

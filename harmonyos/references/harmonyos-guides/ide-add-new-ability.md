@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-new-a
 title: 添加Ability
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 添加Ability
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:19+08:00
+scraped_at: 2026-09-04T06:27:06+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:140fc38a43eebf961f0543678d6502aa121a1f68aac1d1ae82b9ac31604e33a4
+content_hash: sha256:a37e38bc9a490839dc177b7494405850a054a2d8eb6a747c6f9c4a99269f0493
 ---
 
 Ability是应用/元服务所具备的能力的抽象，应用的一个Module可以包含一个或多个Ability，元服务仅包含一个Ability。应用/元服务先后提供了两种应用模型：
@@ -25,7 +25,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
 1. 选中对应的模块，单击鼠标右键，选择**New > Ability**。
 2. 设置Ability名称，选择是否在设备主屏幕上显示该功能的启动图标，单击**Finish**完成Ability创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/6hO8b_gsSs2_zsx6df18qw/zh-cn_image_0000002731383137.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/vGk2oJNfQEWkHYujWtlU-A/zh-cn_image_0000002731383137.png)
 
 ### 在模块中添加Extension Ability
 
@@ -46,10 +46,10 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
      + **EmbeddedUIExtensionAbility**：用于提供[跨进程界面嵌入](embeddeduiextensionability.md)的能力。
      + **WorkScheduler**：用于提供[延迟任务](work-scheduler.md)的相关能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/UqdFGbmcTt-o-v9vFi4ncA/zh-cn_image_0000002731543109.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Gk_A2ebxROqO1Zf9F_TTPA/zh-cn_image_0000002731543109.png)
 2. 设置Ability名称，单击Finish完成Extension Ability创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/AhpSYS0CQUav7wmpZ_t6KA/zh-cn_image_0000002731383135.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/7-Qrf0w7QLunzXsW0EbFeA/zh-cn_image_0000002731383135.png)
 
 ## FA模型添加Ability
 
@@ -57,7 +57,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
 
 1. 选中对应的模块，单击鼠标右键，选择**New > Ability** ，然后选择对应的Data Ability/Service Ability模板。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/XTpQ_1ADTw2kUyUQRfHqcg/zh-cn_image_0000002701823836.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/VoHlGSzkQjyPrcKxwktCEg/zh-cn_image_0000002701823836.png)
 2. 根据选择的Ability模板，设置Ability的基本信息。
    * **Ability name**：Ability类名称，由大小写字母、数字和下划线组成。
    * **Language**：该Ability使用的开发语言。
@@ -67,7 +67,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
 
 1. 选中对应的模块，单击鼠标右键，选择**New > Ability** ，然后选择对应的Page Ability模板。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/yt151sLZTjKrkg0JR9TqlQ/zh-cn_image_0000002701663910.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/filTj3iJRLu9FXr0QskZmg/zh-cn_image_0000002701663910.png)
 2. 根据选择的Ability模板，设置Ability的基本信息。
    * **Ability name**：Ability类名称，由大小写字母、数字和下划线组成。
    * **Launcher ability**：表示该Ability在终端桌面上是否有启动图标，一个HAP可以有多个启动图标，来启动不同的FA。

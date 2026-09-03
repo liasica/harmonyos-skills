@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-template
 title: 工程模板介绍
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 工程模板介绍
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:48+08:00
+scraped_at: 2026-09-04T06:27:04+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:ba427ff57325c118b9afc92fb832cf1c8b5552f884920c88422819814bf80d1d
+content_hash: sha256:de5ff8ca34e3d7a5f36624d2f3ca3707d27893bf2361a95db5d64b7efd93c18e
 ---
 
 DevEco Studio支持多种品类的应用/元服务开发，预置丰富的工程模板，可以根据工程向导轻松创建适应于各类设备的工程，并自动生成对应的代码和资源模板。同时，DevEco Studio还提供了多种编程语言供开发者进行应用/元服务开发，包括ArkTS、JS和C/C++。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_v1OQVx4RJiGVAvuehfWqw/zh-cn_image_0000002701662684.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cmJS67ZTTpCXbV-WQPsjWw/zh-cn_image_0000002701662684.png)
 
 工程模板支持的开发语言及模板说明如下表所示：
 

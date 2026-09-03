@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: NativeHeap堆过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > NativeHeap堆过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
+scraped_at: 2026-09-04T06:33:25+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:24be747d06fa3fa345f6d637a1a702ea46f1ce6233d9a50e61f3bdb46451ddc8
+content_hash: sha256:077f84346d415e443d27b456ed6971dc3794925a8c1e2ef4525ae07c58f9a83e
 ---
 
 ## 概述
@@ -50,7 +50,7 @@ NativeHeap堆内存泄漏：应用由于申请的内存未释放、过量申请�
   ```
 * 根据[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)找到NativeHeap内存调用栈后，计算每份内存的Bytes/Count，筛选符合可疑size范围的内存调用栈，并通过调用栈进一步确认泄漏位置。每个内存调用栈申请的总内存Bytes与申请次数count，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/PgLrXj-sRxWsWOZvNGt5vw/zh-cn_image_0000002680624044.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/kuk19PI7Riu5MP5BclDP9Q/zh-cn_image_0000002680624044.png "点击放大")
 
 ### 开发态问题分析思路
 
@@ -141,10 +141,10 @@ NativeHeap堆内存泄漏：应用由于申请的内存未释放、过量申请�
   + 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
   + 找到内存申请异常的内存及其调用栈，如下图⑤处框选的内容。从框选的内容中可以看出这份内存栈共申请了6次，总共申请了2.25GB内存，单次申请内存约402653184字节，恰好与分析NMD维测日志得到的结果一致，进一步证实此调用栈为泄漏的内存栈。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/RuMD0TpeRlyj5hpbgymmwA/zh-cn_image_0000002710303807.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/mVAHRNaXThat9RAaM851RA/zh-cn_image_0000002710303807.png "点击放大")
 * 分析内存调用栈指向的代码段，可以得出应用正在循环申请一次超大内存，且未释放，最终导致了RSS内存泄漏：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/cpy7ZSxITgu1lnRVlYdBmA/zh-cn_image_0000002680464162.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/FLHsyor-TZmEhaz6e_RkXQ/zh-cn_image_0000002680464162.png "点击放大")
 
 **开发态分析思路**
 
@@ -152,13 +152,13 @@ NativeHeap堆内存泄漏：应用由于申请的内存未释放、过量申请�
 
 * 录制完成后，单击All Heap中的Native Heap泳道，发现NativeHeap内存异常增长：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/WVphHN9STxu3Fn7ttqI5TA/zh-cn_image_0000002710143971.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/fVAb4BNrQNyRfIfrOS60xw/zh-cn_image_0000002710143971.png "点击放大")
 * 单击①处Call Trees按钮，单击②处筛选Created & Existing，可以找到异常申请的内存块和它的内存申请调用栈，内存申请调用栈如下图③处框中所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/xHOOr8HbQom1mFh_npUimw/zh-cn_image_0000002680624056.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/vufK6CImQ2e5b0E3NbfXMA/zh-cn_image_0000002680624056.png "点击放大")
 * 分析内存调用栈指向的代码段，可以得出应用正在循环申请一次超大内存，且未释放，最终导致了RSS内存泄漏：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/xzrCiquQQfyDmyuZCj_mjg/zh-cn_image_0000002710303817.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/X-dg3Z9dQh2ajXputiGkjw/zh-cn_image_0000002710303817.png "点击放大")
 
 **修复建议**
 

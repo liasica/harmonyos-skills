@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 能耗诊断：Energy分析
 breadcrumb: 指南 > 优化应用性能 > 能耗诊断：Energy分析
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:28+08:00
+scraped_at: 2026-09-04T06:27:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:57f964077cd196405ed4ecf9cfbfa1b5526e2f38861b4e4985e70d9156e5747b
+content_hash: sha256:e5fd5e54ba7fda91654e31cf56206f480f0b3831ba9abec86dd4d46180cf5f09
 ---
 
 ## 功能介绍
@@ -33,14 +33,14 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 
 * 将鼠标悬浮于泳道上，可以查看空跑的渲染帧数（RS Empty Run）、不能正常调用动态系统合成器（DSS）合成而直接使用GPU进行渲染导致能耗恶化的帧的次数（GPU Consumption）、UI空跑次数（UI Empty Run）、CPU高负载异常次数（High CPU Load）。下方**Details**区域，可以看到所选范围内的能耗异常类型、开始时间、结束时间、能耗异常信息、能耗异常原因、能耗异常数量。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/IL8wTXzOSru2ezC5sEfw0A/zh-cn_image_0000002731382157.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/mFkcH7s3SG64-a1fp51_Kw/zh-cn_image_0000002731382157.png "点击放大")
 
 * 点击对应的异常类型数据（**RS Empty Run**、**UI Empty Run**、**GPU Consumption**），右侧**More**区域展示该异常帧信息，包括VSyncId、帧持续时间。点击异常类型数据为RS Empty Run和GPU Consumption中的跳转按钮可以跳转到Frame泳道中对应的具体帧，可以参考[Frame页面布局信息](ide-insight-session-frame.md#section1784351123920)查看页面组件的布局情况，和识别存在能耗问题的组件。点击类型为UI Empty Run中的跳转按钮可以跳转到Callstack泳道。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/9U7C-oV5SqOl6KHAAceOZw/zh-cn_image_0000002731542131.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/4LjlkUNtQJiZIXxuzCDz_A/zh-cn_image_0000002731542131.png "点击放大")
 * 点击**CPU高负载**异常数据，右侧**More**区域展示该异常帧信息，包括进程ID、线程ID、负载值，点击跳转按钮可以跳转到对应线程调用栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/wnvW1jdVR5ap4nI_CTGAvw/zh-cn_image_0000002731382153.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/gktUMyuZRB2yf9T1IQVxkw/zh-cn_image_0000002731382153.png "点击放大")
 
 **Temperature泳道**
 
@@ -48,7 +48,7 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 
 * 将鼠标悬浮于泳道上可以查看对应时间范围的温度、温度等级，帮助用户明确温度是否有明显上升，从而进行进一步的能耗定位。下方**Detail****s**区域，可以看到所选范围内的最大温度、最小温度、平均温度。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-EECN5IdSzqRJJTl3KLN5A/zh-cn_image_0000002701662934.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/68v2gwHvRuOiQh7ypQqomw/zh-cn_image_0000002701662934.png "点击放大")
 
 **Energy泳道**
 
@@ -57,4 +57,4 @@ Energy模板支持的泳道包括：Energy Anomaly、Temperature、Energy、Fram
 * 可在Energy泳道中查看录制范围内具体器件消耗的电量，器件包含：CPU、\*Display（屏幕显示耗电量）、GPU、Location（定位模块耗电量）、Camera（相机耗电量）、Bluetooth（蓝牙功能耗电量）、Flashlight（闪光灯功能耗电量）、Audio（声音模块耗电量）、Wifi（无线功能耗电量）、Modem（信号模块耗电量）。\*Device表示整机电流消耗情况。
 * 框选Energy泳道数据，**Energy Detail**中呈现框选时间段内的详情信息，根据不同器件的消耗可结合Callstack泳道的调用栈信息进行进一步分析。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/rqGPpFMOTxC4oCt0sp-Iwg/zh-cn_image_0000002701822854.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/YbU92H2dRqCkmEgwrVC1KQ/zh-cn_image_0000002701822854.png "点击放大")

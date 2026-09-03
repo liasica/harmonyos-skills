@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界检测工具原理
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 地址越界检测工具原理
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
+scraped_at: 2026-09-04T06:33:22+08:00
 doc_updated_at: 2026-06-23
-content_hash: sha256:d7c6e7e1a2f38728193e0f8188485b365997ca83975965b1155dcbe03f1adb3e
+content_hash: sha256:4829c9c37af6c6ddc244294574d0ff87c67997e05803b3b6333a9dc87ff50250
 ---
 
 ## ASan检测原理
@@ -32,7 +32,7 @@ ASan工具主要由插桩模块和动态运行库模块构成。
 
 ASan利用在运行时通过影子内存（shadow memory）来标记内存的状态，从而检测出非法的内存操作。默认8个字节内存对应1字节的shadow，也就是当malloc(13)时，ASan会将其按8字节对齐分配16字节有效内存，并在前后插入8字节的红区，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/xeZ97IXtTKan_CRl_y_C0g/zh-cn_image_0000002468818137.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Xw7I8jtUS3anzFhQFsCACQ/zh-cn_image_0000002468818137.png "点击放大")
 
 日志中会给出Shadow byte legend，这部分解释了每个shadow byte的含义，每个shadow byte代表8个字节。这些字节被用来表示内存状态，以帮助诊断内存错误。
 
@@ -130,7 +130,7 @@ HWASan的tag机制是其核心部分，利用处理器TopBitIgnore特性，它�
 * 指针的tag同步：指向该内存对象的指针也会被赋予相同的tag值。这样，当程序访问该内存对象时，指针的tag值与内存对象的tag值需要一致，否则会触发错误，上报hwasan日志。
 * shadow memory的tag存储：除了在指针中存储tag值，HWASan还会在shadow memory中为每个内存对象存储一个对应的tag值。shadow memory是HWASan用来记录内存对象tag值的辅助存储区域，通常每16字节的内存对应1字节的shadow memory。若分配的内存小于16字节（短颗粒内存（short granules）），shadow会做特殊处理。Shadow Memory存储实际有效长度，而Tag保存内存在该16字节区域的末字节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/3H_OmtLATP6GcsgJY1dMfQ/zh-cn_image_0000002370565416.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/fhDDSMPlTjiBSWH39l5GeA/zh-cn_image_0000002370565416.png "点击放大")
 
 更详细的内容可参考LLVM [Hardware-assisted AddressSanitizer官方文档](https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html)。
 
@@ -168,11 +168,11 @@ GWP-ASan通过在内存分配路径（如 malloc、calloc、realloc）上设置�
 
 在初始化过程中，GWP-ASan会根据slots数量参数提前分配一个下图所示保护区；每个Guard Page页都被设置为不可读写权限，用于检测堆内存上下溢出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Lok7qkrDQrqab_tSeBQxlw/zh-cn_image_0000002404125081.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Ic26xE1mSR-DqKFP1Y0KWw/zh-cn_image_0000002404125081.png "点击放大")
 
 之后，hook应用堆内存分配行为，每次分配堆内存时，随机决定目标内存是走GWP-ASan分配，还是走系统原生分配。如果走GWP-ASan分配，那么目标内存会被随机左对齐/右对齐分配在一个空闲的Slot上，同时记录分配内存的堆栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/TvG42SzBRU-nsCxtsY1NKA/zh-cn_image_0000002370405536.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/BGhUBee6TG6yKhPl01Mw0Q/zh-cn_image_0000002370405536.png "点击放大")
 
 当释放内存时，会先判断目标内存是否在GWP-ASan受保护内存池上，如果是，那么释放这块内存和其所在的Slot，该Slot页设置为不可读写权限，同时记录释放内存的堆栈。Slot空闲后，可以重新被用于分配。堆栈信息记录在metadata中。
 

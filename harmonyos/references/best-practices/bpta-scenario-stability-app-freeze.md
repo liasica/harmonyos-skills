@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: 应用冻屏类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用冻屏类问题案例
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
+scraped_at: 2026-09-04T06:33:27+08:00
 doc_updated_at: 2026-08-17
-content_hash: sha256:63f814e304fc9588173f1b861af3c0962783f62a2909affc31fb8616b1886614
+content_hash: sha256:ca8fb756132be6df3a0b5c63f44104945b35d9518183c9b7c337dd98e4c3abcb
 ---
 
 ## ThreadBlock类问题案例-未正确使用锁
@@ -362,15 +362,15 @@ Tid:2918, Name:example.sceneboard
 
 首先找到上报APP\_INPUT\_BLOCK的时间点，大约在13:40:59.448。事件上报完后，dfx将卡死的scb杀掉。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/GUuLMSdTTmO9exCtY3vSUA/zh-cn_image_0000002370565628.png)往前推6s左右，可以看到在14:40:53.498左右，有一个点击事件发给了scb。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/eXjqaVn7SRKOVq0SH2XbbA/zh-cn_image_0000002370565628.png)往前推6s左右，可以看到在14:40:53.498左右，有一个点击事件发给了scb。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/D2nnIT24QYCkhPSfaM3j7g/zh-cn_image_0000002404125265.png)这之间的6s存在大量的scb日志，判断是在进行更新渲染。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/_vmP264aS9OiuR-9589ZBA/zh-cn_image_0000002404125265.png)这之间的6s存在大量的scb日志，判断是在进行更新渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/dIX7HRRIRxGuK_dJRlthtg/zh-cn_image_0000002411349608.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/XMRqgQDcSyGnNYw2KQ3wbw/zh-cn_image_0000002411349608.png)
 
 查看对应时间点的trace：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/dNopGaA8RcS6JA7Phk7WWw/zh-cn_image_0000002404045457.png)发现scb主线程被占满，非常繁忙。耗时较长的任务是**CustomNodeUpdate SwiperPage**，后续需排查该组件里为何一直在刷新。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/7CI6FUmjSTqgSL_W3cWAkQ/zh-cn_image_0000002404045457.png)发现scb主线程被占满，非常繁忙。耗时较长的任务是**CustomNodeUpdate SwiperPage**，后续需排查该组件里为何一直在刷新。
 
 对应领域排查后发现：swiperPage上将themeStyle加入到了key里面，key变化就会触发控件新建流程。
 
@@ -543,7 +543,7 @@ Tid:5235, Name:edialibrarydata
 
 查看对应时间点的流水信息：进程调用datashare加载云图后卡死，与堆栈信息吻合。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/1mh1jED1SzaLKTKpAjXFbQ/zh-cn_image_0000002370565632.png)查看具体代码：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/1AI3KtnuTaeDVgDMMJcrhw/zh-cn_image_0000002370565632.png)查看具体代码：
 
 在循环中同步加载fileUri是不合理的，当弱网环境或者同时加载大量数据时，极易出现卡死情况，应用侧需进行整改。
 

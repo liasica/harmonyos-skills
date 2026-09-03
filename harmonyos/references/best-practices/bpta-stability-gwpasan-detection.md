@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用GWP-ASan检测内存错误
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 使用GWP-ASan检测内存错误
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
+scraped_at: 2026-09-04T06:33:22+08:00
 doc_updated_at: 2026-08-10
-content_hash: sha256:89f00e8dac0b28a2b2b7f9a9b0516bde3ac6caa080ddf54a588318f7582c7ee4
+content_hash: sha256:5050c15cd366f0f632ea8be5ac87a6bc06528e736f9d87d11c652baa2e4afeee
 ---
 
 GWP-ASan的能力概述和检测原理可参看[地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)以及[GWP-ASan检测原理](bpta-stability-address-sanitizer-principle.md#section555616291854)，适用于运行态商用场景。
@@ -22,7 +22,7 @@ ASan、TSan、UBSan、HWASan、GWP-ASan不能同时开启，五个只能开启�
 
 在app.json5中添加"GWPAsanEnabled": true配置，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/TWgOEwyKTR-aTH6haSy7HA/zh-cn_image_0000002623557959.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/qD1I5HkVR8KYiP8dLWS79Q/zh-cn_image_0000002623557959.png)
 
 开启GWP-ASan检测后，如果应用发生地址越界问题，且该问题正好被GWP-ASan采样监控，GWP-ASan会记录地址越界事件并且使进程崩溃，开发者可以通过订阅地址越界事件来获取相关信息，请参考：[地址越界事件介绍](../harmonyos-guides/hiappevent-watcher-address-sanitizer-events.md)。
 

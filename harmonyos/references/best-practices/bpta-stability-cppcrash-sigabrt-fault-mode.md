@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGABRT进程主动终止故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGABRT进程主动终止故障模式说明
 category: best-practices
-scraped_at: 2026-09-02T15:03:23+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:60542b3c1a5335cb79cf9f916f57e126384e48cb4dda612022f6b444b9b37187
+scraped_at: 2026-09-04T06:33:24+08:00
+doc_updated_at: 2026-09-03
+content_hash: sha256:7c1639cfdf6c0d823c954b61e9d0dae66364f1b23377e840972b14cae4fef1dd
 ---
 
 ## 根因描述
@@ -321,7 +321,7 @@ libc中select()函数限制监控的FD不超过1024，超过会触发进程主�
    说明1：提示有未捕获异常，导致崩溃。
 2. 查看异常栈帧。
 
-   证据2：根据调用栈，可以看到在#09层栈中抛出异常，跳过中间系统栈帧。
+   证据2：根据调用栈，可以看到在#08层栈中抛出异常，跳过中间系统栈帧。
 
    ```screen
    Fault thread info:

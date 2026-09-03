@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-faultlog-
 title: 查看AppFreeze（应用冻屏）日志
 breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析 > 查看AppFreeze（应用冻屏）日志
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:55+08:00
+scraped_at: 2026-09-04T06:27:18+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:aee27bf525ba9cadc8f794e42527b5ed1423a4b4a016dc88588c9eecf593fb19
+content_hash: sha256:71d179ab94dbc1a3a4d78863230fbf5837c5799c2847b1c00dcd5aa0d457785d
 ---
 
 从DevEco Studio 6.0.0 Beta2版本开始，支持对AppFreeze类型的FaultLog，进行结构化展示和日志过滤。关于AppFreeze日志的检测原理、日志规格等信息请查看[AppFreeze（应用冻屏）检测](appfreeze-guidelines.md)。
 
 1. 打开FaultLog窗口，双击appfreeze日志，**Fault Info**右侧会出现**Fault Analysis**页签。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Am_pw0yeS9mM028J0aEGWQ/zh-cn_image_0000002701823942.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/a-s9H9uKTuyha5fqYDhkMQ/zh-cn_image_0000002701823942.png)
 2. 点击**Fault Analysis**页签，会展示结构化的日志信息。
    * 页面上方的字段对应了FaultLog中的字段，具体对应关系请参考[字段说明](ide-faultlog-appfreeze.md#section6678213185017)。
    * 页面下方包含Stacks、Logs、Binder Communication、System等页签，具体如下。
@@ -24,7 +24,7 @@ content_hash: sha256:aee27bf525ba9cadc8f794e42527b5ed1423a4b4a016dc88588c9eecf59
      + **3s/6s Compare**：从DevEco Studio 6.0.2 Beta1版本开始，新增3s/6s Compare页签，用于对[THREAD\_BLOCK\_6S](appfreeze-guidelines.md#thread_block_6s应用主线程卡死超时)类型的AppFreeze问题，展示3s和6s时间点的主线程堆栈日志，具体请参考[查看3s/6s堆栈日志](ide-faultlog-appfreeze.md#section699194455215)。
      + **Main Thread Task Queue**：从DevEco Studio 6.1.1 Beta1版本开始，新增Main Thread Task Queue页签，对应AppFreeze日志中的[EventHandler信息](appfreeze-guidelines.md#日志主干通用信息)，用于展示主线程的任务队列，包括历史任务和待调度任务，具体请参考[查看主线程任务队列信息](ide-faultlog-appfreeze.md#section3149310135314)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/UH8Wfap9SkOlmXn2fXvx7w/zh-cn_image_0000002731543217.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/QKhU9vWoTn2ButH6gj5tOQ/zh-cn_image_0000002731543217.png)
 
 ## 字段说明
 
@@ -50,7 +50,7 @@ content_hash: sha256:aee27bf525ba9cadc8f794e42527b5ed1423a4b4a016dc88588c9eecf59
 
 Stacks页签用于查看AppFreeze中的堆栈信息，并以线程为单元进行折叠，点击展开按钮，可以展开对应线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/IDVrUD64TCetQ2jyzM4LUA/zh-cn_image_0000002731383243.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/8fNjckO5Sg2dQGlPFAy4ow/zh-cn_image_0000002731383243.png)
 
 图中标注1的勾选框是展开应用堆栈，标注2的勾选框是展开系统堆栈，两个勾选框一共组成了四种状态，具体如下表。
 
@@ -67,7 +67,7 @@ Stacks页签用于查看AppFreeze中的堆栈信息，并以线程为单元进�
 
 Logs页签用于查看AppFreeze中的HiLog日志，支持日志级别的过滤和搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/kaF_3WAKRWeOcp1MdOxejw/zh-cn_image_0000002731383241.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/dxQSS8mkRhmWUbaYwTkO5g/zh-cn_image_0000002731383241.png)
 
 ## 查看Binder通信信息
 
@@ -79,7 +79,7 @@ Binder Communication页签包含以下内容：
 
 ② 查看各进程Binder资源信息，包括进程ID/名称、当前IPC请求数、已启动IPC线程数、最大IPC线程数等，当进程资源紧张时会高亮显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/g8nRLC3UQbmyIxZpRY0jGw/zh-cn_image_0000002731543215.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/GxbRnuiuQ9y53f7_Wqs_Rg/zh-cn_image_0000002731543215.png "点击放大")
 
 ## 查看高负载CPU/内存日志信息
 
@@ -93,7 +93,7 @@ Binder Communication页签包含以下内容：
 
 ③：选中柱状图后，显示相关的日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/v7HXa4kxSymRm9VA91vP0Q/zh-cn_image_0000002701664022.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/bXGhHlAhTBOvc7CpqAHBjw/zh-cn_image_0000002701664022.png "点击放大")
 
 如下是内存的相关日志。
 
@@ -103,7 +103,7 @@ Binder Communication页签包含以下内容：
 
 ③：选中柱状图后，显示相关的日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/adJqiHgdTWuvwuUoftyFVA/zh-cn_image_0000002701664018.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/fSvy2IcBS4uV75tuLBEnRg/zh-cn_image_0000002701664018.png "点击放大")
 
 ## 查看采样栈数据信息
 
@@ -122,17 +122,17 @@ Binder Communication页签包含以下内容：
 
 Sampling Stack页签默认展示堆栈水平条形图，按照堆栈的出现频率从高到低排序，条形图最后的数字是堆栈出现的次数，并通过不同颜色标识应用堆栈和系统堆栈，可通过左上角的勾选框选择查看对应的堆栈。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/nQJNjgYwRPulAnBTDaFPEw/zh-cn_image_0000002701823944.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/FzNes94xTDazTchm4-pWmw/zh-cn_image_0000002701823944.png)
 
 点击切换图表类型按钮，可切换到堆栈火焰图，并通过不同颜色标识堆栈类型，其中红色代表异常堆栈。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/qXuyj7O0TNK5FXp0siGJXg/zh-cn_image_0000002701823940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/A2mdW4gHRVK981Gfjua7Tg/zh-cn_image_0000002701823940.png)
 
 ## 查看3s/6s堆栈日志
 
 从DevEco Studio 6.0.2 Beta1版本开始，新增3s/6s Compare页签，用于对[THREAD\_BLOCK\_6S](appfreeze-guidelines.md#thread_block_6s应用主线程卡死超时)类型的AppFreeze问题，展示3s和6s时间点的主线程堆栈日志，并标识栈帧中可能的故障处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/DSJkHDhRQN2tvKGVPjEGdQ/zh-cn_image_0000002701664020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/etM3vEaMTbOa4EFwndmaIQ/zh-cn_image_0000002701664020.png)
 
 如果不是THREAD\_BLOCK\_6S类型的AppFreeze问题，不会展示3s/6s Compare页签。
 
@@ -148,4 +148,4 @@ Sampling Stack页签默认展示堆栈水平条形图，按照堆栈的出现频
 
 ④ 支持切换查看3s和6s时间点的任务信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/qdZxSsUjRbS67JwpfvX47A/zh-cn_image_0000002731383239.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/lqiKNeYWSFynsC9q1T504w/zh-cn_image_0000002731383239.png)

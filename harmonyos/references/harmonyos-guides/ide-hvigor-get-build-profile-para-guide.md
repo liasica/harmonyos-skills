@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ge
 title: 能力说明
 breadcrumb: 指南 > 构建应用 > 定制构建 > 获取自定义编译参数 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:27+08:00
+scraped_at: 2026-09-04T06:27:21+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:85287e90dedd034c10a3f0974d68c7e0f8aebc90cd354fd5b5467e159a138b78
+content_hash: sha256:808aca962161d326fa74f12ea37f603298d6b2f67b09f27ba7167126c148e4fc
 ---
 
 在编译构建时，Hvigor会生成BuildProfile类，开发者可以通过该类在运行时获取编译构建参数，也可以在build-profile.json5中通过buildProfileFields增加自定义字段，从而在运行时获取自定义的参数。
@@ -30,7 +30,7 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 执行完上述操作后，将在“${moduleName} / build / ${productName} / generated / profile / ${targetName} ”目录下生成BuildProfile.ets文件。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/vRVhO7XkQequ9NNUPoR9Pg/zh-cn_image_0000002731542917.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/3-O39s6oTmi2gWfMtV1xmQ/zh-cn_image_0000002731542917.png)
 
 ### 在代码中获取构建参数
 
@@ -155,7 +155,7 @@ import BuildProfile from '${packageName}/BuildProfile';
 
 执行完上述操作后，将在模块根目录下生成BuildProfile.ets文件（该文件可放置在.gitignore文件中进行忽略）。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/0eUksj7NT7y2C3Ry05F-rA/zh-cn_image_0000002731382941.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/AGp_WbDSRi28yrSl5W1FIA/zh-cn_image_0000002731382941.png)
 
 ### 在代码中获取构建参数
 
@@ -171,7 +171,7 @@ import BuildProfile from './BuildProfile';
 const HAR_VERSION: string = BuildProfile.HAR_VERSION;
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/bhtRr4dATEO_ihoKpF_RAA/zh-cn_image_0000002731382943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/PqJpl06RShWlJRsa_BDSsw/zh-cn_image_0000002731382943.png)
 
 ### 默认参数
 

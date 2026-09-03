@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 创建对象类型
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云数据库 > 创建对象类型
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:19+08:00
+scraped_at: 2026-09-04T06:27:07+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:21eecaaee1d56b3daf7f02d3da207bfd34e2079462c6e4a2572bb7dd3c6592b4
+content_hash: sha256:d9d4f4fcf16039da05dd869ffd9c8e9ebae727c8958eaa06517f42aa759f49b0
 ---
 
 对象类型（ObjectType）用于定义存储对象的集合，不同的对象类型对应的不同数据结构。每创建一个对象类型，云数据库会在每个存储区实例化一个与之结构相对应的对象类型，用于存储对应的数据。
@@ -14,7 +14,7 @@ content_hash: sha256:21eecaaee1d56b3daf7f02d3da207bfd34e2079462c6e4a2572bb7dd3c6
 
 1. 右击“clouddb/objecttype”目录，选择“New > Cloud DB Object Type”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/rSbdN66hTOazXcLgwcsidA/zh-cn_image_0000002416494957.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/vZ1DwgQuQg67ZdmFxizTMg/zh-cn_image_0000002416494957.png)
 
 2. 输入对象类型名称（下文以“objecttype1”为例）后，点击“OK”。
 
@@ -26,11 +26,11 @@ content_hash: sha256:21eecaaee1d56b3daf7f02d3da207bfd34e2079462c6e4a2572bb7dd3c6
    * 必须以字母开头，以字母或者数字结尾，不允许以“sqlite\_”开头，不允许以下划线（\_）结尾。
    * 不允许使用如下系统保留名称： naturalbase\_metadata、objecttypeinfohelper、t\_data\_upgrade\_info、t\_index\_schema、t\_nstore\_config、t\_schema\_negotiate\_info、t\_metadata\_schema、t\_nstore\_permission、t\_system\_config。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/JhCexWS5RMK9lfkCwPhthQ/zh-cn_image_0000002179498152.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/w908WVWLTTS2SlXYjHPmLg/zh-cn_image_0000002179498152.png)
 
    “clouddb/objecttype”目录下生成并打开新建的对象类型JSON文件“objecttype1.json”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/iq8vc4Z2S6mvnrlOl205Vg/zh-cn_image_0000002179338468.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/sq_KNqT-RkylTX_LlDobdA/zh-cn_image_0000002179338468.png)
 3. 在“fields”中为该对象类型配置字段信息。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
@@ -54,7 +54,7 @@ content_hash: sha256:21eecaaee1d56b3daf7f02d3da207bfd34e2079462c6e4a2572bb7dd3c6
    | price | Double | - | - | - | - |
    | publishTime | Date | - | - | - | - |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/gX38jeLhSIyx2oVPNXQEsg/zh-cn_image_0000002214858781.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/xBHF0LVlQ1GEOaDBIL_PwA/zh-cn_image_0000002214858781.png)
 4. 在“indexes”中为该对象类型配置索引、索引包含的字段、以及索引包含的字段的排序方式。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
@@ -70,7 +70,7 @@ content_hash: sha256:21eecaaee1d56b3daf7f02d3da207bfd34e2079462c6e4a2572bb7dd3c6
    | id\_Index | id | ASC |
    | price\_Index | price | DESC |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/j-LqkbMnThef_RaIZ_g4ww/zh-cn_image_0000002179338460.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/GtjhkSZISq-UYC210wpu8g/zh-cn_image_0000002179338460.png)
 5. 在“permissions”中设置各角色是否具有该对象类型的Read、Upsert（包含新增和修改）和Delete权限。
 
    | 参数 | 必选(M)/可选(O) | 说明 |
@@ -91,4 +91,4 @@ content_hash: sha256:21eecaaee1d56b3daf7f02d3da207bfd34e2079462c6e4a2572bb7dd3c6
    | Creator | √ | √ | √ |
    | Administrator | √ | √ | √ |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/ECIeXS7CQMyP9xprHmmClQ/zh-cn_image_0000002214858785.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/8pSBbhu2Qpi10pNWFSYTZQ/zh-cn_image_0000002214858785.png)

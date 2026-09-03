@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器访问网络
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 模拟器访问网络
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:24+08:00
+scraped_at: 2026-09-04T06:27:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b1322036321182cff9ec65289e2f08af88f368b6764e542938800961604a4c8b
+content_hash: sha256:5f9bf64facc7cd95e675589796fa11d73810d06c1d77f35f984cd034d3223db9
 ---
 
 ## 模拟器访问互联网
@@ -41,10 +41,10 @@ content_hash: sha256:b1322036321182cff9ec65289e2f08af88f368b6764e542938800961604
    该命令中127.0.0.1:5555为模拟器B的HDC服务端口号，可通过hdc list targets命令查询。
 4. 在模拟器A上，设置客户端连接到10.0.2.2:<localPort>，其中10.0.2.2为模拟器的默认网关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ZGxRCSYSSdmJiUkAejo_ZQ/zh-cn_image_0000002731541073.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/5o0UK32rSwmGaTezsJAoIg/zh-cn_image_0000002731541073.png)
 
 ## 断网模拟
 
 从26.0.0版本开始，模拟器支持断网模拟。启动模拟器后，下拉控制中心，打开飞行模式，即可模拟断网场景，调试应用在断网状态下的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/-2yj27qHRkOoNXY1nmxtNA/zh-cn_image_0000002731381103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/5UEB8yDESU-Cem44ySGdvg/zh-cn_image_0000002731381103.png)

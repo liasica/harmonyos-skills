@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-database-
 title: 数据库调试
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 数据库调试
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:25+08:00
+scraped_at: 2026-09-04T06:27:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:efcc774650b64a043675f187fd5e7cc64e3857fedaf9fc00a06afd65311dfe1f
+content_hash: sha256:745ccfbb6497c5275b19780f7f569b69bfbfa9197f86cfabf8ab0d73e4051a12
 ---
 
 从DevEco Studio 6.0.2 Beta1版本开始，新增Database Inspector，支持在DevEco Studio上执行SQL语句查看、修改应用数据库，无需将应用数据库先导出到本地，提升开发调试效率，当前支持SQLite和向量数据库。
@@ -35,11 +35,11 @@ content_hash: sha256:efcc774650b64a043675f187fd5e7cc64e3857fedaf9fc00a06afd65311
 
 1. 点击菜单栏**View > Tool Windows > Database Inspector**，打开Database Inspector。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/OzfyzWmDQJKqGUSqYdkMfw/zh-cn_image_0000002701822914.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/DB8EjR1zSvOZjoNxb_tySw/zh-cn_image_0000002701822914.png)
 
    Database Inspector打开后，页面各区域作用如下：①选择设备，②选择应用包名，③数据库和表信息展示，④SQL执行和数据查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/gjmjeUZZQ2W0Zrpm_a-q2Q/zh-cn_image_0000002701662994.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/PLWKszxiQxeecilRvIUqcw/zh-cn_image_0000002701662994.png)
 2. 从设备下拉列表中选择设备（设备需已连接）。
 3. 选择包名，点击右侧的**Connect to Databases**按钮，即可查看数据库相关信息。
 
@@ -47,12 +47,12 @@ content_hash: sha256:efcc774650b64a043675f187fd5e7cc64e3857fedaf9fc00a06afd65311
 
    设备系统版本低于API 22时，Database Inspector会将数据库下载到本地计算机，界面上显示的是本地计算机路径，设备系统为API 22及以上版本时，界面上显示的是设备上的数据库路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/xXlh2OZ8TwS_dj29vgRJJw/zh-cn_image_0000002731542187.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/cEs5KDHFRQm_KvwSP2Wjbg/zh-cn_image_0000002731542187.png)
 4. 双击数据库表名，右侧区域展示表数据，默认按照20条/页展示。
 
    从26.0.0版本开始，支持可视化修改表中的数据（仅支持常规基础数据类型：字符串、数值、布尔等，不支持二进制数据类型）。双击单元格，输入数据后，按Enter键或点击其他区域提交。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/8DebZ9-ZQaOLgA3mS6MchA/zh-cn_image_0000002731382213.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/60uxH3JxRZqxCTCbp8jSyQ/zh-cn_image_0000002731382213.png)
 5. 左侧区域点击**New Query**后，右侧会出现**SQL Editor**页签，根据需要选择数据库，并输入SQL后，点击**Execute**按钮即可查看或修改数据。
 
    修改数据后，点击SQL输入框下方的**Refresh Table**刷新页面上的数据。
@@ -62,4 +62,4 @@ content_hash: sha256:efcc774650b64a043675f187fd5e7cc64e3857fedaf9fc00a06afd65311
    * 通过SQL修改数据或应用更新数据后，数据展示页面不支持自动刷新，需要重新执行查询语句或者点击刷新按钮。
    * 数据展示页面不支持可视化修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/T2d3pkqbQvSgO-hGRd5-gg/zh-cn_image_0000002701662990.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/7FSCbDDATB6BLWSI57E-uQ/zh-cn_image_0000002701662990.png)

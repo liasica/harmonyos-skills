@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 查看内存信息
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 查看内存信息
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:54+08:00
+scraped_at: 2026-09-04T06:27:17+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c1b9ebca12ab39fd33725c471ec6c4f004c514b7db9fea0b7fcffc2351d2dc3f
+content_hash: sha256:33528c0238857f8e1d19a6971e254f3fbac31bda23a8685137b40eecf814dd14
 ---
 
 在 native 调试窗口中，点击“Layout Settings”，勾选 Memory View ，打开内存查看窗口。
@@ -14,11 +14,11 @@ content_hash: sha256:c1b9ebca12ab39fd33725c471ec6c4f004c514b7db9fea0b7fcffc2351d
 
 在内存视图中，填写地址，点击“View”按钮，查看对应地址处的内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/WWqIAuiEQIqds-QVSOJaig/zh-cn_image_0000002731542875.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/znYDNSvARbKKZNQsHkYxXA/zh-cn_image_0000002731542875.png)
 
 点击“Settings”按钮，设置进制、偏移量和展示的内存字节数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/m-QHMfVwSkurCwNSLnY-hw/zh-cn_image_0000002731382905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/x1T3_Z8BREqy_AtGO9zaEQ/zh-cn_image_0000002731382905.png)
 
 ## 内存转换
 
@@ -28,7 +28,7 @@ content_hash: sha256:c1b9ebca12ab39fd33725c471ec6c4f004c514b7db9fea0b7fcffc2351d
 
 在“Variables”变量列表中的某一个变量处右键，在弹出菜单中选择“Inspect Memory”，自动跳转到内存视图展示变量存储地址处的内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Dr1c8uzNTqeImkUBoKLM5Q/zh-cn_image_0000002731382903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ztWxS8a8RTm9din4YZKKvA/zh-cn_image_0000002731382903.png)
 
 ## 内存修改
 

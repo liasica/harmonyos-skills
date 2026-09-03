@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-pro
 title: 性能/内存优化：多目标编译优化实践
 breadcrumb: 指南 > 构建应用 > 提升构建效率 > 实践说明 > 性能/内存优化：多目标编译优化实践
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:27+08:00
+scraped_at: 2026-09-04T06:27:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6a2a9e3df4e4ff794436ba13c26a9d136347c436ff15a30a9e6a07a328f68fe2
+content_hash: sha256:afac3e9b9ca598f91fcfe2eccaa6ce1daf80da49df86b8548f0bad1978025219
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ hvigorw assembleHap -p product=default
 
 由于default target会被默认应用到default product，并且工程级build-profile.json5中没有显式指定test target的applyToProducts，test也被默认应用到default product，导致两个target都被编译。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/J4owuAZsQWSRfGKrSvP6xg/zh-cn_image_0000002701823450.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/k8CeSU7DTEiw_tV8BAM2-g/zh-cn_image_0000002701823450.png)
 
 ### 优化方案
 
@@ -113,7 +113,7 @@ entry(default2) → har2(default2)
 
 可以看到，har2有2个target(default、default2)参与构建，但是由于entry(default2)直接依赖的是har2(default2)，因此最终是har2(default2)参与打包，har2(default)并不会被打包。但是在打包前，har2(default)相关的任务（如:har2:default@PreBuild）也会被执行，这些任务属于冗余任务，会导致不必要的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/kJQlR2wvQHSpDIhE4s2JUg/zh-cn_image_0000002701663532.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/QommC9hpSBuHOSqXMHQ7Qg/zh-cn_image_0000002701663532.png)
 
 ### 优化方案
 

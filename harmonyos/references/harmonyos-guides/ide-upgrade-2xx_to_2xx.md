@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-upgrade-2
 title: 2.X.X/5.X.X升级至更高版本
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 版本升级 > 2.X.X/5.X.X升级至更高版本
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
+scraped_at: 2026-09-04T06:27:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a55ad33ed42afe22baa6a865becc6586f7c59d430b3cfba6ec9fdf273da878ed
+content_hash: sha256:4a40a79585cee911a8f3e6ecd1c3edd73fb4207cdc844e8729c1803b9da088e9
 ---
 
 如需将ohpm-repo 2.X.X或ohpm-repo 5.X.X版本升级到更高版本，可参考此文档。
@@ -28,7 +28,7 @@ content_hash: sha256:a55ad33ed42afe22baa6a865becc6586f7c59d430b3cfba6ec9fdf273da
    * 若想在其他目录使用ohpm-repo，请将对应版本ohpm-repo工具包解压目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section24117279211)path中。
 2. 下载并解压工具包：下载新版本的ohpm-repo私仓工具包，并解压（请解压到一个空文件夹中）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/puV1S9KtQW-iwkvVnwH1xA/zh-cn_image_0000002701662444.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/6LQZ6U8rQSiCRJOw96kaEQ/zh-cn_image_0000002701662444.png)
 3. 安装完成之后，进入ohpm-repo私仓工具包解压目录下的bin目录，执行如下命令：
 
    ```screen
@@ -58,7 +58,7 @@ content_hash: sha256:a55ad33ed42afe22baa6a865becc6586f7c59d430b3cfba6ec9fdf273da
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/HWLTKdiuSCiH1rRkuo0TiA/zh-cn_image_0000002731381671.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/s2nnoTBiSmCmo84Xdj2kOg/zh-cn_image_0000002731381671.png "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，Windows系统和Linux/Mac 系统，有不同处理方式：
      + Windows系统： 关闭当前窗口，重新开启一个窗口。
      + Linux/Mac系统：
@@ -75,7 +75,7 @@ content_hash: sha256:a55ad33ed42afe22baa6a865becc6586f7c59d430b3cfba6ec9fdf273da
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jv17WD88SYCryR7VdU_9nA/zh-cn_image_0000002701822356.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/r6AmR2szRAKSaIx1pESATg/zh-cn_image_0000002701822356.png "点击放大")
 
      **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ui-test
 title: 黑盒覆盖率测试
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 黑盒覆盖率测试
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:25+08:00
+scraped_at: 2026-09-04T06:27:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:203512cfe1f9d176d6abe5ab996c4305aac1ffc99da5b2a58abb09eced15e46f
+content_hash: sha256:ab70425eb679b1504258369f1bd233550a8ce5b64af59e93a3114fa3b35e81d7
 ---
 
 DevEco Studio支持黑盒覆盖率测试，不需要开发测试用例，将编译插桩的HAP包推到设备上，然后对该应用/元服务模拟用户操作，测试完成后可生成覆盖率报告，当前仅支持Stage模型。
@@ -24,7 +24,7 @@ DevEco Studio支持黑盒覆盖率测试，不需要开发测试用例，将编�
 
 从DevEco Studio 5.1.0 Release版本开始，支持自定义参与覆盖率测试的文件。在工程目录下创建coverage-filter.json5文件，在文件中配置相关字段，DevEco Studio编译插桩时将按照coverage-filter.json5文件中的配置进行过滤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/02N6YOF8RTm-aCc_ZkjC6w/zh-cn_image_0000002731382045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/LQ0Lsz1YTWKCyV9DeEfn_Q/zh-cn_image_0000002731382045.png)
 
 **说明** 
 
@@ -105,8 +105,8 @@ export default EntryAbility;
      + 调试场景下，该配置不生效，运行的是未插桩的应用。
      + attach调试和等待调试场景下，该配置会导致断点不准确，建议取消该配置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Jr3PJCj8TsyEXZ54ExAXPA/zh-cn_image_0000002701662822.png)
-  2. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/TNJ0hnvNSNS2suxzTTwN-w/zh-cn_image_0000002731382041.png)，DevEco Studio会启动编译插桩，并推包安装到设备上。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/LAvHz-DWRgu1OOR59PrbvA/zh-cn_image_0000002701662822.png)
+  2. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/6e_gmFMyQPSY9tFkJVg6Ag/zh-cn_image_0000002731382041.png)，DevEco Studio会启动编译插桩，并推包安装到设备上。
 * **方式二：通过命令行进行编译与安装**
   1. 执行hvigor插桩编译命令，编译后在{projectPath}/{moduleName}/.test/default/intermediates/ohosTest路径下会生成init\_coverage.json文件，供后续生成覆盖率报告使用。
 
@@ -115,7 +115,7 @@ export default EntryAbility;
      ```
 
      + moduleName：执行测试的模块。
-     + targetName/productName：当前生效的target/product，可以通过点击DevEco Studio右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Xb8tyEhVS32ACcVBy0SROg/zh-cn_image_0000002731382047.png)图标进行查看。
+     + targetName/productName：当前生效的target/product，可以通过点击DevEco Studio右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/0Es6kSszRFu1BfwE9UH2PQ/zh-cn_image_0000002731382047.png)图标进行查看。
 
      **说明** 
 
@@ -189,7 +189,7 @@ export default EntryAbility;
    在多模块相互跳转的场景下，需要取各模块的init\_coverage.json文件路径，与bjc\_cov\_yyyyMMdd\_HHmmss\_SSS.json文件通过#拼接生成coverageFile参数。
 3. 在本地找到报告文件路径并在浏览器中打开，查看代码覆盖率详情，关于覆盖率的计算方式请参考[查看覆盖率报告](ide-ui-test.md#section10394362109)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/e2fQwX--RMSHvLP13NuoTw/zh-cn_image_0000002731542023.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/N7i98CW9TA-4wLCCiY8LpA/zh-cn_image_0000002731542023.png)
 
 ## 查看覆盖率报告
 
@@ -204,7 +204,7 @@ export default EntryAbility;
 
 * 行覆盖率（Lines）：每个可执行代码行是否都已执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/zzwG_jlcSPyqT8e7VC_fcA/zh-cn_image_0000002731542017.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/VgL5PRMgRdSTIIQOs7Zzjw/zh-cn_image_0000002731542017.png)
 
 以下是关于三个测量维度的细节说明：
 
@@ -279,7 +279,7 @@ export default EntryAbility;
   + 绿色：语句/函数覆盖。
   + Nx：表示当前可执行代码行被执行了N次。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/0iP-Mo58RSSzugkMsvuSSg/zh-cn_image_0000002701822748.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/elKyOC6ESfienSbSEWewWQ/zh-cn_image_0000002701822748.png)
 * **通过注释语法忽略指定代码**
 
   代码中的某些分支可能很难、甚至无法测试，DevEco Studio提供了instrument ignore \* 语法来进行忽略，使得某些代码不计入覆盖率。
@@ -416,7 +416,7 @@ export default EntryAbility;
 
     - 如果方法内没有任何实现，是个空方法，则regions数组只有一个元素，即方法对应的代码区域，示例如下。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/pvRyhCphQReRXx-cUsSh_w/zh-cn_image_0000002701822744.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/NcV0_8h0QmOqLp0a2oGE2Q/zh-cn_image_0000002701822744.png)
 
       ```json5
       {
@@ -440,7 +440,7 @@ export default EntryAbility;
       ```
     - 如果方法内只有一个代码区域，则regions数组有两个元素，示例如下。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/HZZltGWqRoaq7j2kbYTKzw/zh-cn_image_0000002701822740.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/9YOJeNuWQ1yHkpDLPM8XXQ/zh-cn_image_0000002701822740.png)
 
       ```json5
       {
@@ -476,7 +476,7 @@ export default EntryAbility;
       ```
     - 如果方法内存在多个代码区域，则每新增一个代码区域，regions数组就增加一个元素，示例如下。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/C0-Ya6P6Rp2N04C2DCwuuw/zh-cn_image_0000002731542019.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/cgg5mOuYRou4qj8tNYos2w/zh-cn_image_0000002731542019.png)
 
       ```json5
       {
@@ -550,7 +550,7 @@ export default EntryAbility;
 
     **示例一：**调用eeee(2)。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/lJyUax77Tvi4rEfRaWiWHg/zh-cn_image_0000002731382051.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/ykJd2ZyqR_WikziQMlfIUw/zh-cn_image_0000002731382051.png)
 
     ```json5
     {
@@ -634,7 +634,7 @@ export default EntryAbility;
 
     **示例二：**调用bbb(2)和bbb(-1)，该方法触发两次。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/5py87swESouWv3RGDsTzpQ/zh-cn_image_0000002731542015.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/7-sluZOES-qOioV3mklinQ/zh-cn_image_0000002731542015.png)
 
     branches的0号元素，对应12行，trueCount和falseCount都为1，表示该行触发了两次，一次满足条件，一次不满条件。
 
@@ -695,7 +695,7 @@ export default EntryAbility;
 
   exeLine记录了所有可执行行的行号，示例如下。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/nB4v-L-PRNaqM7ZtrHq8Wg/zh-cn_image_0000002701662820.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/DxzG7miHQTGwOUruk1uACg/zh-cn_image_0000002701662820.png)
 
   生成的exeLine为：
 

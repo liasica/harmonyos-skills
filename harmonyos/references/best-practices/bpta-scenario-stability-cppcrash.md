@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: CppCrash类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用异常退出类问题案例 > CppCrash类问题案例
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
+scraped_at: 2026-09-04T06:33:28+08:00
 doc_updated_at: 2026-05-22
-content_hash: sha256:8e2261a2317da4e217b99f7a9d61e5a817780a667b9b82f56ad75d39ea99e16b
+content_hash: sha256:77526d5d08e0962d705b23aa6e99d37defc542a41b56737c5bff83c7985ae172
 ---
 
 本文以列举常见案例方式介绍如何分析并修复CppCrash问题。阅读本文之前，建议开发者先阅读[应用崩溃问题检测方法](bpta-stability-runtime-crash-detection.md)了解系统检测CppCrash问题的原理和机制，然后阅读[CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md)了解分析CppCrash问题的一般步骤。
@@ -70,7 +70,7 @@ napi\_env释放后仍被使用。
 
 核心崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/niXVqaCfQnuq37YSLM6oZA/zh-cn_image_0000002404125269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/8TEd8TFuSY-SVJ1WXWP59A/zh-cn_image_0000002404125269.png)
 
 ### 分析步骤
 
@@ -114,7 +114,7 @@ ipc在线程2中使用先前保存的env,出现崩溃
 
 崩溃调用栈如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/4qmKv8bsSKCgGen0odY4fg/zh-cn_image_0000002370405724.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Df-kgRV3QjKPGpnMgl7Ucg/zh-cn_image_0000002370405724.png)
 
 ### 分析步骤
 
@@ -173,15 +173,15 @@ previously allocated by thread T0 (thread name) here: <- 内存申请的现场
 
 根据调用栈继续分析，JsiWeak析构或重置的时候会触发其成员（类型为JsiObject/JsiValue/JsiFunction）父类JsiType中CopyableGlobal被释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/X_l6uxqiQ4yJWSDY35GlBQ/zh-cn_image_0000002404045461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/ctHPkPEbQw6a8u8tIe4T_g/zh-cn_image_0000002404045461.png)
 
 运行时在GC过程中IterateWeakEcmaGlobalStorage，会对无callback的WeakNode调用DisposeGlobalHandle操作，也对其进行释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/hGqjZN8ZTb-ZJqxWDObuHw/zh-cn_image_0000002370565636.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/QEn1Dma_QXWGIFOuTNOj4A/zh-cn_image_0000002370565636.png)
 
 对于同一个WeakNode，可能会存在两个入口释放。如果是GC过程中IterateWeakEcmaGlobalStorage先释放，因为无callback回调通知到JsiWeak进行清理，JsiWeak那边仍保存一个对已释放的WeakNode引用，即CopyableGlobal；当前面讲的WeakNode所在的NodeList被整体释放，JsiWeak处保留的CopyableGlobal再释放，就会存在重复释放内存问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/jA9ijWK9QzGUpoqOzuFNbw/zh-cn_image_0000002404125273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/183HAj7kQkqpW6WzfbzZpg/zh-cn_image_0000002404125273.png)
 
 ### 修复方法
 
@@ -264,7 +264,7 @@ static napi_value TriggerCrash(napi_env env, napi_callback_info info)
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/escACEfrRjS9F6K6H3Z3mQ/zh-cn_image_0000002370405728.png)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/MPo91aP9Tcqa6e_DphzdSA/zh-cn_image_0000002370405728.png)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
 
 除了调用abort函数外，C++中的另一个异常处理机制还包括assert函数，assert用于校验当前函数执行流程中的一些数据，校验失败进程会主动终止，分析问题的方法都是一样的。
 
@@ -281,7 +281,7 @@ static napi_value TriggerCrash(napi_env env, napi_callback_info info)
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/HFQJr-PNRB2TNeKdsAXwNA/zh-cn_image_0000002404045465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/gqX2Uz_MT5KO8xEGo31Jpw/zh-cn_image_0000002404045465.png)
 
 ## 案例6：通过反汇编分析CppCrash问题
 

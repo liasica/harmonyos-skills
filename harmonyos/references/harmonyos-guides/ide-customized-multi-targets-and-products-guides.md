@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-customize
 title: 能力说明
 breadcrumb: 指南 > 构建应用 > 配置构建流程 > 配置多目标产物 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:18c2598b654fe0facdb5135d7ac5cb6b3502d50ac2fcd02dba0220af027a65e0
+scraped_at: 2026-09-04T06:27:21+08:00
+doc_updated_at: 2026-09-03
+content_hash: sha256:4f57379f0e4c5fe0b7f45a53e46fbc0d6a211036fade1e650e1b039195b95bd9
 ---
 
 通常情况下，应用厂商会根据不同的部署环境，不同的目标人群，不同的运行环境等，将同一个应用定制为不同的版本，如国内版、国际版、普通版、VIP版、免费版、付费版等。针对以上场景，DevEco Studio支持通过少量的代码配置以实例化不同的差异版本，在编译构建过程中实现一个应用构建出不同的目标产物版本，从而实现源代码、资源文件等的高效复用。
@@ -315,8 +315,8 @@ content_hash: sha256:18c2598b654fe0facdb5135d7ac5cb6b3502d50ac2fcd02dba0220af027
 **概念说明**
 
 * packageName：当前模块的oh-package.json5中的name字段对应的值。
-* sourceRoot：<defaultSourceRoot> | <targetSourceRoot> ，其中<defaultSourceRoot>是 src/main，<targetSourceRoot>可自定义，寻址优先级为 <targetSourceRoot> > <defaultSourceRoot>。
-* sourcePath：在sourceRoot中的代码结构目录。
+* sourceRoots：<defaultSourceRoot> | <targetSourceRoot> ，其中<defaultSourceRoot>是 src/main，<targetSourceRoot>可自定义，寻址优先级为 <targetSourceRoot> > <defaultSourceRoot>。
+* sourcePath：在sourceRoots中的代码结构目录。
 * sourceFileName：代码目录下的ets文件名。
 
 例如以下工程目录：
@@ -334,19 +334,17 @@ entry
 ```
 
 * packageName为entry。
-* sourceRoot为src/main、src/target。
+* sourceRoots为src/main、src/target。
 * sourcePath为ets/code、util。
 * sourceFileName为test.ets、util.ets。
 
 **规格限制**
 
-1. import xxx from '<packageName>/sourcePath/sourceFileName' ：通过packageName的方式，省略sourceRoot，可以实现不同target下的差异化构建。
-
-2. 支持hap、hsp、har（请注意：开启[文件/文件夹名称混淆](source-obfuscation-rule-options.md#section-enable-filename-obfuscation)的har模块需要使用-keep-file-name指定sourceRoot，sourcePath，sourceFileName对应的文件/文件夹名称不被混淆）。
-
-3. 不支持跨模块引用。
-
-4. 不支持动态import。
+1. import xxx from '<packageName>/sourcePath/sourceFileName' ：通过packageName的方式，省略sourceRoots，可以实现不同target下的差异化构建。
+2. sourceRoots只能配置到src的下一级目录，如src/main，不支持多级子目录。
+3. 支持hap、hsp、har（请注意：开启[文件/文件夹名称混淆](source-obfuscation-rule-options.md#section-enable-filename-obfuscation)的har模块需要使用-keep-file-name指定sourceRoots，sourcePath，sourceFileName对应的文件/文件夹名称不被混淆）。
+4. 不支持跨模块引用。
+5. 不支持动态import。
 
 **编译时模块target的选择优先级说明**
 
@@ -1010,7 +1008,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
 
 通常情况下，您首先需要在签名配置界面或工程的build-profile.json5文件中配置签名信息。例如在**File > Project Structure > Project > Signing Configs**界面，分别配置default、productA和productB的签名信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/HDj_6MwDQBmQcu_L7FlYXA/zh-cn_image_0000002731382535.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/-ywLRYjERu6l9TRlF-qqbQ/zh-cn_image_0000002731382535.png)
 
 签名信息配置完成后，再添加各个product对应的签名文件，示例如下所示：
 
@@ -1171,14 +1169,14 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 每个target对应一个HAP，每个product对应一个APP包，在编译构建时，如果存在多product或多target时，您可以指定编译具体的包。
 
-单击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/dBA5reeMTtaiiRxjeRM-lA/zh-cn_image_0000002731382527.png)图标，指定需要打包的**Product**及**Target**，然后单击**Apply**保存。例如选择"ProductA"中，entry模块对应的"free" Target。
+单击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/MxoXNUZ1RgeXkc9JB0PlOg/zh-cn_image_0000002731382527.png)图标，指定需要打包的**Product**及**Target**，然后单击**Apply**保存。例如选择"ProductA"中，entry模块对应的"free" Target。
 
 * **Product**：选择需要构建的APP包。
 * **Build Mode**：选择[编译模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 * **Product Info**：该APP包的BundleName和SigningConfig信息。
 * **Target Select**：选择各个模块的Target，该Target需要包含在定义的Product中才能选择，如果未包含则显示"No Target to apply"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/51RV9Ae1RwWu19NlYbh4nA/zh-cn_image_0000002701663304.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/RO9h4WRwSMmCMO0LXc_BNQ/zh-cn_image_0000002701663304.png)
 
 然后执行编译构建APP/HAP的任务：
 
@@ -1187,17 +1185,17 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 如果您想将某个模块下的指定target打包生成HAP，可以在工程目录中，单击模块名，然后再单击**Build > Make Module** **‘模块名** **’**，此时DevEco Studio将构建生成模块下指定target对应的包。例如，按照上述配置，此时DevEco Studio将构建生成entry模块下free的HAP。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/O1hiuteHRkGKMGODd78RMQ/zh-cn_image_0000002701823224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/oCA7XbohQD-C5fn5tVinsg/zh-cn_image_0000002701823224.png)
 
 ## 调试和运行指定的Target
 
-使用DevEco Studio调试或运行应用/元服务时，每个模块只能选择其中的一个target运行，可以通过单击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/YcRObfFBRXy1FLnRV00hAw/zh-cn_image_0000002701823228.png)图标，指定需要调试或运行的**Product**下对应的**Module Target**，然后单击**Apply**保存。
+使用DevEco Studio调试或运行应用/元服务时，每个模块只能选择其中的一个target运行，可以通过单击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/q6zmuvZWS1qUxN7qvRqH3Q/zh-cn_image_0000002701823228.png)图标，指定需要调试或运行的**Product**下对应的**Module Target**，然后单击**Apply**保存。
 
 **说明** 
 
 在选择需要调试或运行的target时，需要注意选择该target所属的Product，否则将找不到可调试和运行的target。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/_-wDDFjnTp29WLDkxerDZQ/zh-cn_image_0000002701663306.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/WeWDzarKRe6aJEesGvrqCQ/zh-cn_image_0000002701663306.png)
 
 ## 多产物构建target
 
@@ -1243,7 +1241,7 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 多个target的优先级顺序为：align target > 命令行指定模块target > 父级模块target > fallback target > default。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/DIXSBENvTZSj70UNhRCdTA/zh-cn_image_0000002731542507.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/C9NXSh8qSMWE37hAbbIPUQ/zh-cn_image_0000002731542507.png)
 
 举例说明：
 
@@ -1301,7 +1299,7 @@ hvigorw --mode module -p module=entry -c properties.ohos.align.target=A -c prope
    ```
 5. 再次执行Sync即可导入插件。导入成功后，可在Hvigor任务树中看到以Seq结尾的新增任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/poLC_FBuSfa_tVRCYuFU6w/zh-cn_image_0000002731382531.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/XTO24s6cRXGPReIcICVRgw/zh-cn_image_0000002731382531.png)
 
 ### 配置依赖
 

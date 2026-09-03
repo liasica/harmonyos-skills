@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-publ
 title: ohpm publish
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm publish
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
+scraped_at: 2026-09-04T06:27:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8b4c95111d0f2cf1acfb3b7f05cf06919a02f7e6a928d506558ec7d5958ce0cb
+content_hash: sha256:6466b083ea356ae4fc207626b9ce3152862e06669092a0357299731ac94d9e76
 ---
 
 发布一个三方库。
@@ -170,4 +170,4 @@ ohpm publish publish_test.har
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/rpNUH9qETDiEjK8UtV1wIA/zh-cn_image_0000002731541843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/UnylcsAJQiqFoqELgr4Mkw/zh-cn_image_0000002731541843.png)

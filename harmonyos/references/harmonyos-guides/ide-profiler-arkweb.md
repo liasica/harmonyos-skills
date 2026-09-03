@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 加载丢帧：ArkWeb分析
 breadcrumb: 指南 > 优化应用性能 > 加载丢帧：ArkWeb分析
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:28+08:00
+scraped_at: 2026-09-04T06:27:24+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:1cb100548b846a3d5e9b128de981cb9f8f4addd8be6c74df1bae764781c72e5e
+content_hash: sha256:49461c261cc9e74268019cd239606d55d8a1498930894bb54e2f248ce298cf7a
 ---
 
 ## 功能介绍
@@ -31,7 +31,7 @@ ArkWeb模板支持的泳道包括：ArkWeb、User Events、ArkTS Callstack、Cal
 
 **Details**区域可以跳转关键trace所在泳道，进一步分析加载问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/WI1FUlULSaGJaWJkV4pMjg/zh-cn_image_0000002701663768.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/AVklbFCbRSS0Wer1zPGWCg/zh-cn_image_0000002701663768.png "点击放大")
 
 ## ArkWeb丢帧问题分析
 
@@ -45,18 +45,18 @@ ArkWeb模板支持的泳道包括：ArkWeb、User Events、ArkTS Callstack、Cal
    * VizCompositorTh：绘制信号监听线程，向图形请求Web本身的vsync信号，触发系统Web相关绘制或执行。
    * Web应用Render线程：以 :render 结尾的线程，主要用于图形渲染任务，包括html、css解析，进行分层布局绘制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/WJAtjHwKRcClaqsnTryAng/zh-cn_image_0000002701823692.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/JxCuYCCvQjSUQjAKkTQqRw/zh-cn_image_0000002701823692.png "点击放大")
 2. 一般结合**H:RosenWeb**泳道和**PresentFence**泳道来分析是否存在丢帧。
 
    H:RosenWeb上标识有待提交给渲染服务的数据量。正常情况下，每个数据量都会提交给硬件进行上屏，即PresentFence泳道上的H:Waiting for PresentFence trace点。如果某个数据量在PresentFence泳道上没有该trace点，那么很可能是存在丢帧问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/8C8xEbcbSTOQs43PWC2jpQ/zh-cn_image_0000002701663766.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Jlr4wrjtSDucuJ7DpQJ9wQ/zh-cn_image_0000002701663766.png "点击放大")
 
 3. 在ArkWeb的子泳道中，Web应用Render线程提供了分析子资源加载各阶段具体耗时的能力。切换到 **Sub Resource**区域，可查看详细信息。
 
    包括统一资源定位符、缓存类型、是否为本地资源替换、请求资源时间（ns）、队列时间（ns）、停滞时间（ms）、dns解析时间（ms）、连接耗时（ms）、ssl连接时间（ms）、服务器响应耗时（ms）、下载耗时（ms）、传输时间（ms）、请求方法、状态码、编码前资源大小、编码后资源大小以及HTTP版本。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/bn48m6PnTZ-dByAeVNlXXg/zh-cn_image_0000002701823690.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/S0jTSYtkSEOM6HWXtb2loA/zh-cn_image_0000002701823690.png "点击放大")
 4. 点选某一行，可以查看该URL对应的缓存信息。包括缓存存在时长、最后修改时刻、过期时刻、缓存指令、资源的唯一标识符以及资源是否过期。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/vbAbU7PiQY27Yg4iUzFuZw/zh-cn_image_0000002701663770.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dhnUXJgiQbCj4zgklWXg4g/zh-cn_image_0000002701663770.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-code-refa
 title: 代码重构
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码重构
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:24+08:00
+scraped_at: 2026-09-04T06:27:15+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:143f66c2321190cadd6caa71673a2f9def8869ca46dc0f434cde04883ec834aa
+content_hash: sha256:ae619c82a55300ac63ab60a5ddaf66cc093638b252c2c1ec5ebd067b0926fa8f
 ---
 
 ## ArkTS/TS代码重构
@@ -20,25 +20,25 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 方法/函数（Method）支持选中代码块或完整语句进行提取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/M6joui4vS3Ov5yGLn6nP5w/zh-cn_image_0000002731543223.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/mGaCUfVhQoGonSG2yWHusQ/zh-cn_image_0000002731543223.gif "点击放大")
 
 在ArkTS语言中，支持将组件调用代码块提取为@Builder装饰器装饰的方法，组件属性调用表达式可提取为@Styles或@Extend装饰器装饰的方法。
 
 **使用方式**：选中需要提取的组件或属性，右键单击**Refactor**，选择**Extract Method...**，组件私有属性可提取为@Extend装饰的方法，通用属性可提取为@Styles或@Extend装饰的方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/pv6t5GwzSECQXxiPEh-rig/zh-cn_image_0000002731383253.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/KlZbkkc8TtOiURZhioqVBg/zh-cn_image_0000002731383253.gif "点击放大")
 
 常量（Constant）支持选中单行表达式进行提取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/MJ9hjnBaQACRa2ePr5qu1Q/zh-cn_image_0000002701664028.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/m36u7rZ9TGaBFeTOihhilg/zh-cn_image_0000002701664028.gif "点击放大")
 
 接口（Interface）支持选中对象自变量进行提取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/5mTNejcETZ272gt9sWL3iw/zh-cn_image_0000002701664030.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/MYhBKJ5ATVGD5UlSnQ-n6g/zh-cn_image_0000002701664030.gif "点击放大")
 
 支持选中表达式提取为变量（Variable）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/AhK9Lwp2S72JBVLwavJeQw/zh-cn_image_0000002731383247.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/s2Vx9pYNTNyk3hQyNr-stw/zh-cn_image_0000002731383247.gif "点击放大")
 
 ### Refactor-Convert代码转换
 
@@ -65,11 +65,11 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 **使用方式**：选中需要重新命名的标识符（变量、类、接口、自定义组件等），右键单击**Refactor**，选择**Rename...**（或使用**快捷键Shift+F6**），在弹框中输入新的标识符名称，并在**Scope**中选择替换的范围，点击**Refactor**完成重新命名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Dm5aC7TPQkiuId5NQf8oKQ/zh-cn_image_0000002731543221.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/ZKZwfrOgQjOpXZWGR8eO_w/zh-cn_image_0000002731543221.png)
 
 代码编辑支持筛选并过滤不需要rename的引用位置。在**Rename...**弹窗中点击**Preview**，在弹出预览窗口中，用户选中无需Rename的选项，单击右键菜单**Exclude****/Remove**进行过滤/删除，完成筛选后点击左下角**Do Refactor**，重新执行Rename操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/v6NYOYzDSWCfA9QzBZ6D_Q/zh-cn_image_0000002731543227.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/wmKTurGfQC6t5Ed_OO9C1A/zh-cn_image_0000002731543227.png)
 
 **说明** 
 
@@ -81,7 +81,7 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 从26.0.0版本开始，针对跨模块移动文件场景优化了移动符号的导入方式，移入、移出模块时Index.ets会适配改动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/IUU81WbqTy-bkfEmhO3_-Q/zh-cn_image_0000002731383251.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/oqBEm1bJSjaQDkOTN36OhQ/zh-cn_image_0000002731383251.png)
 
 ### Safe Delete
 
@@ -89,7 +89,7 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 **使用方式**：在编辑器内选中需要删除的标识符对象或在工程目录选择待删除的文件，右键单击**Refactor**，选择**Safe Delete**，单击**OK**将自动检查当前对象在代码中被引用的情况，点击**View Usages**可查看具体使用的代码内容，点击**Delete Anyway**将直接删除该对象的定义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/NHYEu2QBRcO32CN28EqOqw/zh-cn_image_0000002731383249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/it8xuHGdSO6OWIh4ttG5nw/zh-cn_image_0000002731383249.png)
 
 ## C++代码重构
 
@@ -99,7 +99,7 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 支持在当前宏引用处展开宏。将光标移动至需要展开的宏，右键单击**Refactor**，选择**Inline**，展开此处引用的宏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/FDKcaA1wQKC6x_New5r5kg/zh-cn_image_0000002731383245.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/TVQlAkn6RwiSKR7fBR3XhQ/zh-cn_image_0000002731383245.gif)
 
 ### 交换if分支
 
@@ -115,19 +115,19 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 编辑器内选择需要转换的代码区域，右键单击**Refactor**，选择**Swap If Branches**，对原有if条件取反，并交换if-else原代码块顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/shhxPA8ISk69_MwrdPJXBQ/zh-cn_image_0000002701823950.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/z23eQPYCSXGnIB8aB4X1bQ/zh-cn_image_0000002701823950.gif "点击放大")
 
 ### 移动函数体到声明处
 
 编辑器支持将函数体从源文件移动到头文件中，提高代码可读性。编辑器内选中函数名，右键单击**Refactor**，选择**Move to Declaration**，源文件中的函数实现将移动至头文件中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/amA2iFBGQKKAsAxSrjop3Q/zh-cn_image_0000002701664026.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/6aC-99AnRpWy3ZosZedATg/zh-cn_image_0000002701664026.gif)
 
 ### 移动函数体到实现处
 
 在编辑器内将光标放在或选中函数名，右键单击**Refactor**，选择**Move to Implementation**，选择移动到的文件，将函数定义移动到该文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/AfK23saaQgyTrdY659bJYg/zh-cn_image_0000002701664032.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/xUbP3jpLTOO6SySp79t2iw/zh-cn_image_0000002701664032.gif)
 
 ### 将语句转为原始字符串
 
@@ -135,7 +135,7 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 在编辑器内选择字符串代码区域，右键单击**Refactor**，选择**Convert To Raw String**，将语句转换为原始字符串。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/gR9C8QWyTEKZEyr5rFOroQ/zh-cn_image_0000002701823952.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/-zeK-EM9TjSAxgJ6FMsWxg/zh-cn_image_0000002701823952.gif "点击放大")
 
 ### 定义构造函数
 
@@ -149,34 +149,34 @@ Refactor-Extract代码提取为类型别名（Type Alias）能力仅TS语言支�
 
 **使用方法：**在类的定义的类名处，右键单击**Generate****...**，选择**Constructor**，在弹框中点击**Define**，为成员变量定义一个构造函数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/HqkHJ3ixTUG1x5wXaGfb2A/zh-cn_image_0000002701823946.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/S-LPuaG2SJiwbAJT3BOITw/zh-cn_image_0000002701823946.gif)
 
 ### 提取表达式到变量
 
 在编辑器内，选中需要提取的表达式范围，右键单击**Refactor**，选择**Extract Variable**，支持提取表达式到变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/a_CGybgVQo2Me--l9-neRg/zh-cn_image_0000002731543219.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ORNJMHXBQWCjiomadgyu3A/zh-cn_image_0000002731543219.gif "点击放大")
 
 ### 移除namespace
 
 光标停留在需要移除的namespace处，右键单击**Refactor**，选择**Remove Using Namespace**进行移除，可以避免命名冲突，提高代码可读性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/oCjo7H9oQVmEWLppukVhfw/zh-cn_image_0000002701823948.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/P4KOrmgSRqGuh8bNIYJLuw/zh-cn_image_0000002701823948.gif)
 
 ### 添加using声明
 
 编辑器内，光标停留在需要添加using声明处，右键单击**Refactor**，选择**Add Using**完成使用using定义类型别名。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/gKJsNNzSQzqAKndchTwVuw/zh-cn_image_0000002731543225.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/2lz5TMxBRkmD2Ynv28GGTQ/zh-cn_image_0000002731543225.gif)
 
 ### auto自动展开
 
 在auto关键字处右键单击**Refactor**，选择**Expand Auto Type**，可以使用推断类型替换auto类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/HB_UCBMNSFKTzWPN8toPSw/zh-cn_image_0000002701664024.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/IqpSQFHSRmuh4zPOpQxqRg/zh-cn_image_0000002701664024.gif)
 
 ### 声明隐式成员
 
 编辑器支持在类中声明隐式复制/移动成员。光标停留在需要生成的类处，右键单击**Generate**..., 选择**Copy/Move Members**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/cHAQmn6uSMm97p66bNuvhQ/zh-cn_image_0000002701823954.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/i4yG9oYUTueXE1ZUUps4JQ/zh-cn_image_0000002701823954.gif)

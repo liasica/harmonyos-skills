@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 资源泄漏类问题优化建议
 breadcrumb: 最佳实践 > 稳定性 > 稳定性优化 > 资源泄漏类问题优化建议
 category: best-practices
-scraped_at: 2026-09-02T15:03:24+08:00
+scraped_at: 2026-09-04T06:33:27+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:ccd34b50a8e7e23ef115d6f4c457d0aba96889c4e6eeef229ae3761d5ec7d13c
+content_hash: sha256:d2462dc711c04c5d12181d6265a4c7f5a6c8c9a2224965ab98eb9535e5e6e009
 ---
 
 ## 内存泄漏问题优化建议
@@ -151,15 +151,15 @@ NATIVE层API：**[OH\_PixelmapNative\_SetMemoryName()](../harmonyos-references/c
 
 修改方法示例**：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/d-2NSsJDRda1qNfPTXxJhA/zh-cn_image_0000002370405688.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/FmFwBsYAQKaN4z7gKh7QHQ/zh-cn_image_0000002370405688.png "点击放大")
 
 ashmem日志结果示例展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/lMNr0816Rguvikoqr_mIEQ/zh-cn_image_0000002404045417.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Pr-mHsfdS5CelUQS13TA3g/zh-cn_image_0000002404045417.png "点击放大")
 
 ION日志结果示例展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/WkmJKjbWR3qta_zf9E62Kw/zh-cn_image_0000002370565600.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/zDOTSLI_TOmTg3ZUQ-zQzA/zh-cn_image_0000002370565600.png "点击放大")
 
 ## 句柄泄漏问题优化建议
 

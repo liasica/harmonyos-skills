@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-developer
 title: 开发者选项
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 开发者模式 > 开发者选项
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:54+08:00
+scraped_at: 2026-09-04T06:27:17+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ed2556a3933abeaf624ec34f62d8d1077b1af54c0eacfae8554c448a85dace30
+content_hash: sha256:a5c4f5b4a29b0ed5b54123fb776bf45a371fc02df677898f848f1ad50a3cfc26
 ---
 
 HarmonyOS系统上的“设置”包含开发者选项的界面，用于辅助HarmonyOS应用程序开发、测试及优化，面向开发人员提供商业发行版之外的功能（如API能力），提供更多的调试选项及能力；您可在该界面中通过配置选项来帮助您分析和调试应用，例如，您可以通过启用USB/无线调试进行应用调试、开启DFX稳定性相关选项获取更多应用的故障及性能信息、开启过度绘制等选项快速发现性能问题等等。
@@ -29,7 +29,7 @@ HarmonyOS系统上的“设置”包含开发者选项的界面，用于辅助Ha
 
 * **无线调试**：通过Wi-Fi进行设备连接从而实现设备的调测，在开启无线调试后，可以查看设备的IP地址和端口，通过[DevEco Studio或hdc命令](ide-run-device.md#section9315596477)进行设备连接。使用过程中需要确保您的设备与计算机在同一个Wi-Fi网络中，初次连接需要进行设备授权确认。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/9gCNYsl4Rj6M0KCl1rAbwQ/zh-cn_image_0000002701663414.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/xczGCRJJRmWThPAXQVL6fg/zh-cn_image_0000002701663414.png "点击放大")
 * 清除受信任设备：针对之前授权过的所有计算机，撤销USB/无线调试的访问权限。
 
 DFX稳定性配置选项包括：
@@ -42,10 +42,10 @@ DFX稳定性配置选项包括：
 
 * **意图框架调试**：方便开发者在设备上验证意图框架，可以关闭部分校验机制并直接显示最近使用的意图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/NfwqVReJTP6EisebMOJ_3Q/zh-cn_image_0000002701663416.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/yKp6pj2NS5-b92EsOQ7UtQ/zh-cn_image_0000002701663416.png "点击放大")
 * **显示刷新频率**：刷新频率是指显示器每秒钟更新画面的次数，可在屏幕左上方显示刷新率档位和RenderService实时帧率，更好地了解设备性能和屏幕表现，从而进行针对性的优化或调整。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Iv8mC1oUToi-QraqcTpGVg/zh-cn_image_0000002701663418.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/xD_C3bJdSJaUzIZiHXy45w/zh-cn_image_0000002701663418.png "点击放大")
 * **关闭充电**：连接USB后默认充电，如果开发者希望不充电，需手动打开开关，插拔USB后可恢复默认充电状态。
 
 ## 网络
@@ -57,20 +57,20 @@ DFX稳定性配置选项包括：
 * **显示触摸操作：**开启开关后，当用户触摸屏幕时, 会有一个小圆点跟随手指移动，显示用户的触摸动作。
 * **指针位置：**开启指针位置后，屏幕上会出现十字准线，可以显示指针（点按）位置。屏幕上方会显示一个条形，用于跟踪十字准线的坐标。移动指针时，该条形中的坐标会跟踪十字准线位置，且屏幕上会绘制出指针路径。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/p_x4P5EnTV25zDBpnBjH_Q/zh-cn_image_0000002731542599.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/TJfAsPVjQjy0s5eqvD1TVQ/zh-cn_image_0000002731542599.png "点击放大")
 
 ## 绘图
 
 * **显示布局边界**：开启后可以显示应用的裁剪边界、外边距和设备上的其他界面结构，方便开发者查看控件布局、空白空隙及控件重叠等问题。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/4MgrKN37Q06IMBXGh1fi8Q/zh-cn_image_0000002701823328.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/NzHoa68TTPe23rjjhbbeoA/zh-cn_image_0000002701823328.png)
 
 * **显示重绘刷新区域**：当点击、滚动屏幕或者系统自动刷新使得屏幕上的某块区域重新绘制时，该区域突出显示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/4OOymZXSTYa76-kfLXvvKg/zh-cn_image_0000002701663410.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/4BOqPBrkS9mPqg3NDkmufg/zh-cn_image_0000002701663410.png)
 * **缓存是否命中检测**：在一些属性动画的场景下，您可以使用renderGroup缓存提升属性动画性能；开启选项后，检测缓存未命中的场景，通过颜色标识。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/5Ttm6BhpQUad0H482umVLg/zh-cn_image_0000002731382635.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/DgnWPlACQiGBQTYZi5Aj_g/zh-cn_image_0000002731382635.png "点击放大")
 * **过度绘制检测**：显示设备上的颜色编码，以便可视化相同像素在同一帧中绘制的次数，可视化会显示应用可能在哪里进行了不必要的渲染。过度绘制的程度可以通过颜色来表示。
 * **过渡动画缩放**：设置过渡动画播放速度，便于开发者查看不同速度下的性能。缩放越小，速度越快。
 
