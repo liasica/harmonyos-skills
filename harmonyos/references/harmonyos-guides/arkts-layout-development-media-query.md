@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 媒体查询 (@ohos.mediaquery)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 媒体查询 (@ohos.mediaquery)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:19+08:00
+scraped_at: 2026-09-05T06:14:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:83e2c04bd1a8595dae956df1a40385d05a89be6df79d8352f9441af2c6d272a1
+content_hash: sha256:1cbcb466c483cf47f33d01f3a169ebfe28e644b9c6620284846ce4c2098dcae1
 ---
 
 ## 概述
@@ -210,11 +210,11 @@ struct MediaQueryExample {
 
 **图1** 竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/9lhoGyiISr64bqMCPiynXw/zh-cn_image_0000002706673948.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/stUYgEsMQHS_5SpsUxLNFA/zh-cn_image_0000002712404088.jpg)
 
 **图2** 横屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Zc_E-jsVQs6yBtwvIfF5sw/zh-cn_image_0000002736433037.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/EeFZkhz5TtOXUztSmGOeMA/zh-cn_image_0000002742123037.jpg)
 
 示例二使用媒体查询实现屏幕横竖屏切换时Flex组件的不同布局，竖屏时Flex采用垂直方向布局，横屏时采用水平方向布局。
 
@@ -310,8 +310,8 @@ struct ObtainMediaQueryFlex {
 
 **图3** 竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/7d7TPwLCRQePTr6qcPMKTw/zh-cn_image_0000002706833884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/IJ1RAqCDTWubIGMhbewX2A/zh-cn_image_0000002712244124.png)
 
 **图4** 横屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/t6XUcWOgS9Ck4HTz2iZBxQ/zh-cn_image_0000002736312991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/TJgOS9P1QAiMmAEh1KuSLg/zh-cn_image_0000002742003077.png)

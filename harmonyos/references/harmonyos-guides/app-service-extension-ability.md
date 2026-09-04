@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-service-e
 title: 使用AppServiceExtensionAbility组件实现后台服务
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件 > 使用AppServiceExtensionAbility组件实现后台服务
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
+scraped_at: 2026-09-05T06:13:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1bfcba89cda0e54c023c3850804f9eb215340388cedd25489ee9885e0684fc03
+content_hash: sha256:34f02d31c629c543259456aaa5a3fc9d341cf3966951e27544eb9c046d65a0a5
 ---
 
 ## 概述
@@ -60,7 +60,7 @@ AppServiceExtensionAbility组件当前仅支持2in1设备。
 1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录并命名为myappserviceextability。
 2. 在myappserviceextability目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAppServiceExtAbility.ets。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/hiApg2LdTzSv20aasrAiKA/zh-cn_image_0000002706673078.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/osQ6wic0S4WzlV5JygdRDQ/zh-cn_image_0000002742002211.png)
 
    其目录结构如下所示：
 

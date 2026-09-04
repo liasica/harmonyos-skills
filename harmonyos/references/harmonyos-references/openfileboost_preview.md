@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileb
 title: Preview
 breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > C API > 模块 > Preview
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:fe783d72a737f88deaa448c120d7de2eb80fdab4ba512942da85a0b6272997a4
+scraped_at: 2026-09-05T06:21:25+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:7e2316ba83e01db76f53957501e6c65d9d8d9cdb9bf19b65f5176b8e9a0f0439
 ---
 
 ## 概述
@@ -164,7 +164,7 @@ typedef OpenFileBoost_AppState(*HMS_OpenFileBoost_QueryAppState) (void)
 
 | 类型 | 说明 |
 | --- | --- |
-| [OpenFileBoost\_AppState](openfileboost_preview.md#openfileboost_appstate) | 如果App允许推荐文件，应该返回OPEN\_FILE\_BOOST\_APP\_STATE\_ALLOW\_PRELOAD，系统接下来将调用 [HMS\_OpenFileBoost\_OnFilePreload](openfileboost_preview.md#hms_openfileboost_onfilepreload)去推荐文件进行预加载。  如果App拒绝此次推荐，应该返回OPEN\_FILE\_BOOST\_APP\_STATE\_REJECT\_PRELOAD。  如果App在本次注册期间不想再收到推荐，应该返回OPEN\_FILE\_BOOST\_APP\_STATE\_FOREVER\_REJECT\_PRELOAD，然后尽快调用HMS\_OpenFileBoost\_UnregisterFilePreloadCb来取消注册。 |
+| [OpenFileBoost\_AppState](openfileboost_preview.md#openfileboost_appstate) | 如果App允许推荐文件，应该返回OPEN\_FILE\_BOOST\_APP\_STATE\_ALLOW\_PRELOAD，系统接下来将调用 [HMS\_OpenFileBoost\_OnFilePreload](openfileboost_preview.md#hms_openfileboost_onfilepreload)去推荐文件进行预加载。  如果App拒绝此次推荐，应该返回OPEN\_FILE\_BOOST\_APP\_STATE\_REJECT\_PRELOAD。  如果App在本次注册期间不想再收到推荐，应该返回OPEN\_FILE\_BOOST\_APP\_STATE\_FOREVER\_REJECT\_PRELOAD，然后尽快调用[HMS\_OpenFileBoost\_UnregisterFilePreload](openfileboost_preview.md#hms_openfileboost_unregisterfilepreload)来取消注册。 |
 
 ### FileScanBoost\_ScanOption
 

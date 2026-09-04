@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: URL检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全检测 > URL检测
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:30+08:00
+scraped_at: 2026-09-05T06:14:22+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:9b6e8aca3afa8e550af509851fc162ae30faa5adce709e65c70bc0aa5e8c621b
+content_hash: sha256:607a5b789bb387638cd09a0da770a19bf3da09a713e924c9992f07a43eea1da3
 ---
 
 ## 场景介绍
@@ -21,7 +21,7 @@ content_hash: sha256:9b6e8aca3afa8e550af509851fc162ae30faa5adce709e65c70bc0aa5e8
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/kSt0yHaJT6qiyzJUvG9-vw/zh-cn_image_0000002736433441.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/l7SCWXLxT4iaagJMrDMeYg/zh-cn_image_0000002742123439.png)
 
 **流程说明：**
 

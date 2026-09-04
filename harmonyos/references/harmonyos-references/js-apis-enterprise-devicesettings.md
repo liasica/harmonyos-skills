@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.deviceSettings（设备设置管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.deviceSettings（设备设置管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:09+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:05b1848a088a4342ab5ffb6a6b5ccf0530e0acbec3e812c236563c07268c2d34
+scraped_at: 2026-09-05T06:19:29+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:858102bdb114e061512a6ea8a0e57c787e6262498eef16721ff08a7f7a21f5e2
 ---
 
 本模块提供企业设备设置能力，支持设置和获取设备息屏时间、系统时间、电源策略、护眼模式、默认输入法、壁纸、隐藏设置项等。
@@ -118,7 +118,7 @@ try {
 try {
   // 需根据实际情况进行替换
   let currentInputMethod: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
-  deviceSettings.setValue(wantTemp, 'defaultInputMethod', currentInputMethod.packageName);
+  deviceSettings.setValue(wantTemp, 'defaultInputMethod', currentInputMethod.name);
   console.info(`Succeeded in setting default input method.`);
 } catch (err) {
   console.error(`Failed to set default input method. Code: ${err.code}, message: ${err.message}`);

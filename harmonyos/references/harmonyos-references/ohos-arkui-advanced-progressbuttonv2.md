@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ProgressButtonV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ProgressButtonV2
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:585be28466741c912b07a92418862cbcf5204855dbf472bd29664e73062b4ccb
+scraped_at: 2026-09-05T06:17:30+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:7b26aa073961c0d64991ef21f5f39c28e163fdb4f0151d7e882d122b1f18dccc
 ---
 
 文本下载按钮，可显示具体的下载进度。
@@ -15,8 +15,8 @@ content_hash: sha256:585be28466741c912b07a92418862cbcf5204855dbf472bd29664e73062
 **说明** 
 
 * 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 该组件仅可在Stage模型下使用。
-* 如果ProgressButtonV2设置[通用属性](ts-component-general-attributes.md)和[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到ProgressButtonV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButtonV2设置通用属性和通用事件。
+* 本模块接口仅可在Stage模型下使用。
+* 如果ProgressButtonV2设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到ProgressButtonV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButtonV2设置通用属性和通用事件。
 
 ## 导入模块
 
@@ -49,10 +49,6 @@ ProgressButtonV2({progress: number, content: ResourceStr, progressButtonWidth?: 
 | isEnabled | boolean | 是 | @Param | 下载按钮是否可以点击。  true：可以点击。  false：不可点击。 |
 | colorOptions | [ProgressButtonV2Color](ohos-arkui-advanced-progressbuttonv2.md#progressbuttonv2color) | 否 | @Param | 下载按钮颜色选项。 |
 | progressButtonRadius | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | @Param | 下载按钮的圆角（不支持百分比设置）。  取值范围：[0, height/2]  默认值：height/2  设置非法数值时，按照默认值处理。 |
-
-## 属性
-
-不支持[通用属性](ts-component-general-attributes.md)。
 
 ## ClickCallback
 
@@ -128,10 +124,6 @@ constructor(options: ProgressButtonV2ColorOptions);
 | textColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | 是 | 按钮文本颜色。  默认值：系统默认值(#CE000000) |
 | backgroundColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | 是 | 按钮背景颜色。  默认值：$r('sys.color.ohos\_id\_color\_foreground\_contrary') |
 
-## 事件
-
-不支持[通用事件](ts-component-general-events.md)。
-
 ## 示例
 
 该示例实现了一个简单的带加载进度的文本下载按钮。
@@ -186,4 +178,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/gOZaS4BERa2SuoKDEFikAw/zh-cn_image_0000002736435455.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/XNv75L5zQE6mjjJ8tReeKQ/zh-cn_image_0000002742125479.png)

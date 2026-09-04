@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-tool
 title: hilogtool
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hilogtool
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:41+08:00
+scraped_at: 2026-09-05T06:14:41+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:66cd1b9edefb6f89e51ce4472c38dc70c724a277a4db511711d3e61dd116d96b
+content_hash: sha256:99faa588eec6e58d4fbcf681a40fc0912b6475657231db991b243d2a2e827100
 ---
 
 ## 使用场景
@@ -102,19 +102,19 @@ hilogtool parse --input xxx --output xxx --dict xxx
 
 在当前日志所在目录，通过cmd进入shell窗口，在shell窗口直接执行hilogtool parse，即可进行解析操作，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/fCJ67G_8SbOo0MCI5ibUsA/zh-cn_image_0000002736313567.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Ij5akFPUTl-UPCIU7d1t8g/zh-cn_image_0000002742003649.png)
 
 ### 解析指定目录下的hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/jxt-i59ISS6yPCm93Q5frw/zh-cn_image_0000002706674524.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/k7P8hX8VQmuhC6S2rqO2QQ/zh-cn_image_0000002712404662.png)
 
 ### 解析单个hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test\hilog.025.20231020-154659.gz -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/eSDSisixTrOuh1TwC6-u0w/zh-cn_image_0000002736433613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/47v4C8XuQe2j4MxvdM-W1A/zh-cn_image_0000002742123611.png)
 
 ## 自动化脚本
 
@@ -136,7 +136,7 @@ pause
 
 脚本运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/nUVd3RxERWGlrNHJduwPjg/zh-cn_image_0000002706834462.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-L__mhK8Q66Fp9_OifKVzQ/zh-cn_image_0000002712244698.png)
 
 ### mac平台脚本
 

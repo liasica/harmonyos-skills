@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-lif
 title: UIAbility组件生命周期
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility组件生命周期
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
+scraped_at: 2026-09-05T06:13:45+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ea38ffed6b17ce8da000a95d29af3bd801d7de9f6c771156ace665c82b280c0d
+content_hash: sha256:e4aa3eae21a428430189bf15963e7cb9c9a65106b40d3b257fe36519ea44d8e4
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:ea38ffed6b17ce8da000a95d29af3bd801d7de9f6c771156ace665c82b2
 
 UIAbility的生命周期示意图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/EdGFY0zlSc2rT5rwLmmCYg/zh-cn_image_0000002736432163.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/WU-stmbQRxG-VpVk3W4zrQ/zh-cn_image_0000002712403214.png)
 
 以下是UIAbility启动到前台和后台两种场景说明，以及生命周期回调流程讲解。
 
@@ -28,7 +28,7 @@ UIAbility的生命周期示意图如下所示。
   1. 当用户通过[UIAbilityContext.startAbilityByCall()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口启动一个UIAbility到后台时，系统会依次触发onCreate()、onBackground()（不会执行onWindowStageCreate()生命周期回调）生命周期回调。
   2. 当用户将UIAbility拉到前台，系统会依次触发onNewWant()、onWindowStageCreate()、onForeground()生命周期回调。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/N5Nm8QaJTkSVbKeXuiBKPQ/zh-cn_image_0000002706833008.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/yrAxuJdBTPOZwCE8pFWXFg/zh-cn_image_0000002742122165.png)
 
 ## 生命周期回调
 

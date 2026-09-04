@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.url (URL字符串解析)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.url (URL字符串解析)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9b29dff83c80f80bd00f9364b2b9914462d66c477ac4f5004bdcbb60877f602a
+scraped_at: 2026-09-05T06:16:45+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:48d747c14f5983ec82914380d9b8acb36fcd32b13d34dfc8d75b9707b818e3d2
 ---
 
 URL是统一资源定位符，本模块提供了常用的工具函数，实现了解析URL字符串、构造URL对象以及对URL查询参数的解析和操作等功能。
@@ -473,7 +473,7 @@ console.info(params.toString()); // Output 'fod=1&bard=2&fod=3'
 | port | string | 否 | 否 | 获取和设置URL的端口部分。当port为当前protocol的默认端口时，port将被解析为空字符串。**元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
 | protocol | string | 否 | 否 | 获取和设置URL的协议部分。**元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
 | search | string | 否 | 否 | 获取和设置URL的序列化查询部分。**元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
-| searchParams(deprecated) | [URLSearchParams](js-apis-url.md#urlsearchparamsdeprecated) | 是 | 否 | 获取URLSearchParams对象，用于访问URL查询参数。  - **说明：** 此属性从API version 7开始支持，从API version 9开始废弃。建议使用[URLParams](js-apis-url.md#urlparams9)替代。 |
+| searchParams(deprecated) | [URLSearchParams](js-apis-url.md#urlsearchparamsdeprecated) | 是 | 否 | 获取URLSearchParams对象，用于访问URL查询参数。  - **说明：** 此属性从API version 7开始支持，从API version 9开始废弃。建议使用params9+替代。 |
 | params9+ | [URLParams](js-apis-url.md#urlparams9) | 是 | 否 | 获取URLParams对象，用于访问URL查询参数。**元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
 | username | string | 否 | 否 | 获取和设置URL的用户名部分。**元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
 

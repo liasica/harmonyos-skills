@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: assert
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 调测接口 > assert
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:08+08:00
+scraped_at: 2026-09-05T06:15:29+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:3e39db6d5f71e4a9a948cb3bfc18e16f6e0b3a816973a8a4080853ce9341ea42
+content_hash: sha256:e3b6cbf52211d64a14ed10cbb5a4eb3393afe0a45411b1b150598144a1e39506
 ---
 
 ## 函数功能
@@ -22,7 +22,7 @@ assert(assertFlag == 10, "The assertFlag value is 10.\n");
 assert(assertFlag == 10, "The assertFlag value is %d.\n", assertFlag);
 ```
 
-**说明** 
+![](https://media:401788444104551890) 
 
 assert接口打印功能会对算子实际运行的性能带来一定影响（每一条assert，系统会额外增加一条逻辑判断，具体性能影响取决于代码中assert的使用数量），通常在调测阶段使用。开发者可以按需通过如下方式关闭打印功能。
 

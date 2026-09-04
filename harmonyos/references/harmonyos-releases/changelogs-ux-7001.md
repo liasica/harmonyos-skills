@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Beta1引入的行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:27+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:deb1a48c07a4722e5ea79ad5ccc5e3471909a0f3ca2faa3749219a4a70818111
+scraped_at: 2026-09-05T06:12:27+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:e25fe50ad37c358217e1d2f150073ce16727cc2584542d762382e4b54234dca9
 ---
 
 ## notofonts三方件小语种字体升级变更
@@ -38,7 +38,7 @@ content_hash: sha256:deb1a48c07a4722e5ea79ad5ccc5e3471909a0f3ca2faa3749219a4a708
 
 **变更原因**
 
-[Button](../harmonyos-references/ts-basic-components-button.md)、[样式为Button的Toggle](../harmonyos-references/ts-basic-components-toggle.md)、[Select](../harmonyos-references/ts-basic-components-select.md)、[Chip](../harmonyos-references/ohos-arkui-advanced-chip.md)、[ChipGroup](../harmonyos-references/ohos-arkui-advanced-chipgroup.md)组件触摸热区当前最小高度28vp，点击范围小，不易操作。
+按钮尺寸设置为ControlSize.SMALL的[Button](../harmonyos-references/ts-basic-components-button.md)组件、[样式为Button的Toggle](../harmonyos-references/ts-basic-components-toggle.md)、[Select](../harmonyos-references/ts-basic-components-select.md)、[Chip](../harmonyos-references/ohos-arkui-advanced-chip.md)、[ChipGroup](../harmonyos-references/ohos-arkui-advanced-chipgroup.md)组件触摸热区当前最小高度28vp，点击范围小，不易操作。
 
 **变更影响**
 
@@ -51,7 +51,7 @@ content_hash: sha256:deb1a48c07a4722e5ea79ad5ccc5e3471909a0f3ca2faa3749219a4a708
 * 变更前：组件默认触摸热区高度最小为28vp。
 * 变更后：组件默认触摸热区高度最小为32vp。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/X7WUABOeQIaSCZ9Sc9zTdQ/zh-cn_image_0000002607653205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/3ZWeYzfASKK77PvY33UxiQ/zh-cn_image_0000002607653205.png)
 
 **起始 API Level**
 
@@ -67,7 +67,7 @@ ChipGroup：12
 
 **变更的接口/组件**
 
-Button、Button模式的Toggle、Chip、ChipGroup和Select组件。
+按钮尺寸设置为ControlSize.SMALL的Button组件、Button模式的Toggle、Chip、ChipGroup和Select组件。
 
 **适配指导**
 
@@ -78,6 +78,7 @@ Button、Button模式的Toggle、Chip、ChipGroup和Select组件。
 struct ButtonExample {
   build() {
     Button('xxxxx')
+      .controlSize(ControlSize.SMALL)
       .responseRegion(undefined)
   }
 }
@@ -105,7 +106,7 @@ struct ButtonExample {
 
 孤字换行变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/AagHLgXGSz23OEvMXzWW-A/zh-cn_image_0000002577173246.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Ti5zFynORSK9HJzj9Bj_tw/zh-cn_image_0000002577173246.png)
 
 **场景二：小语种行高优化**
 
@@ -115,7 +116,7 @@ struct ButtonExample {
 
 小语种行高优化变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/nk4z5BG_SnWqlzRKPf_pFw/zh-cn_image_0000002577333224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/QNGAXYd7QWePkV4eJ1_1Vg/zh-cn_image_0000002577333224.png)
 
 **场景三：单词换行改为音节换行**
 
@@ -125,7 +126,7 @@ struct ButtonExample {
 
 文本按单词换行改为按音节换行变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/dHSlGNfsR46GyWPXHnkKNA/zh-cn_image_0000002607733199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/JFpTayTnTPG8TkMK64aYiA/zh-cn_image_0000002607733199.png)
 
 **起始 API Level**
 
@@ -184,19 +185,19 @@ ArkUI组件支持对接沉浸式系统材质功能，为减少应用适配成本
 
 Dialog变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/BgLcwFYZTDuCn6MTiHJ79A/zh-cn_image_0000002607653207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/d_Q8hDakTgeJYuGnSbg_fQ/zh-cn_image_0000002607653207.png)
 
 Toast变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/pihldoinQLOD51Vms20XtQ/zh-cn_image_0000002577173248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/yDnmANpsRnStS1XrBSRFzw/zh-cn_image_0000002577173248.png)
 
 AlphabetIndexer变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/vt4dfdu3RRGhmMVG1leQEQ/zh-cn_image_0000002577333226.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/HJd1EOTTSMaGrx9vwu56Yg/zh-cn_image_0000002577333226.png)
 
 文本选择菜单变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/RUmN3PBxS-O-fSZXboZ0fw/zh-cn_image_0000002607733201.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/LVywlPQoTg2r8Lbu1R8MJQ/zh-cn_image_0000002607733201.png)
 
 **适配指导**
 
@@ -253,13 +254,13 @@ UX规格变更，当前半模态最大高度限制为窗口短边长度的90%，
 
 半模态居中弹窗最大高度：取“短边长度\*90%”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Ixzxf1r_SySFFFyU2JyI0Q/zh-cn_image_0000002607653209.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/TCl65R6VQeq5IotJaqsYTQ/zh-cn_image_0000002607653209.png)
 
 变更后：
 
 半模态居中弹窗最大高度：取“短边长度\*90%”、“窗口高度-信号栏高度\*2”两者中的最小值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/ewWfN2zYTsOiU32oTZEnpA/zh-cn_image_0000002577173250.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/mzhvmk7hTLGKbKlYOU5Wtg/zh-cn_image_0000002577173250.png)
 
 **起始 API Level**
 

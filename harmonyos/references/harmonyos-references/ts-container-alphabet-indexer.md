@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: AlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > AlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:04+08:00
+scraped_at: 2026-09-05T06:17:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d9e8f227ecd0d1ac25138153e703aa7510c9977b97f57bee7d63bad3d2be6812
+content_hash: sha256:18e7ba77fb2b81c502371320d81f963b1c2d03a998a11c799206885941789a80
 ---
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -729,7 +729,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1N_wIGnlTiKs1ryC6NNVEQ/zh-cn_image_0000002706836080.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/j4rmG1MESb--IXed_AmhLQ/zh-cn_image_0000002712246326.gif)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -871,7 +871,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/BTzST-9lRJuSJXLZuz4Bzw/zh-cn_image_0000002736315185.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/3YYUQkq-TSW-QOQ5kB2lpw/zh-cn_image_0000002742005275.gif)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -1002,4 +1002,4 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/NTu22VNqSkSVXBGJ4Q81og/zh-cn_image_0000002706676142.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/1-cSG4uaRzu0CtXf7H1g-w/zh-cn_image_0000002712406286.gif)

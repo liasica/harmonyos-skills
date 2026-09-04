@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getdy
 title: GetDynamicInputNum
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetDynamicInputNum
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:11+08:00
+scraped_at: 2026-09-05T06:15:37+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:4c51e31daa528183dd3c28d613c2259cb7810e942459f892fefc530ecc7f254c
+content_hash: sha256:69c653cd3562901d7684d95c2f727c0066523a6dd76dddcb93fa5713721dc4da
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:4c51e31daa528183dd3c28d613c2259cb7810e942459f892fefc530ecc7
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444110916911) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

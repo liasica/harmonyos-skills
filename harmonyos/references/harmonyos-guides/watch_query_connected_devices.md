@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/watch_query_c
 title: 已连接对端设备查询
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 穿戴侧应用开发 > 已连接对端设备查询
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:10+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:ad8bfb4c1146c3773134c7a868154c6145cc2619b81b149420a1aba1d7ecdf2d
+scraped_at: 2026-09-05T06:14:36+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:0d9b8fa219a52fe229165608b0112f294614f1e72a0289ccd26a763aa638f339
 ---
 
 Wear Engine提供查询用户在穿戴侧已连接的对端设备列表的接口。
@@ -13,7 +13,7 @@ Wear Engine提供查询用户在穿戴侧已连接的对端设备列表的接口
 建议开发者在使用Wear Engine其他API接口前先实现该接口功能，从已连接的对端设备列表中选定设备。
 
 1. 调用[getDeviceClient](../harmonyos-references/wearengine_api.md#wearenginegetdeviceclient)方法，获取[DeviceClient](../harmonyos-references/wearengine_api.md#deviceclient)对象。
-2. 调用[getConnectedDevices](../harmonyos-references/wearengine_api.md#getconnecteddevices)方法，查询用户已连接的穿戴设备列表。
+2. 调用[getConnectedDevices](../harmonyos-references/wearengine_api.md#getconnecteddevices)方法，查询用户已连接的对端设备列表。
 3. 从已连接设备列表中选定需要通信的对端设备。
 4. 查询对端设备的操作系统类型。
 

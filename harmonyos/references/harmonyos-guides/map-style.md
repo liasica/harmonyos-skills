@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-style
 title: 显示自定义地图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示自定义地图
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:58+08:00
+scraped_at: 2026-09-05T06:15:13+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:1065c5d03b18f7055ae96c66a9761f47a56ac31fa56a6aee9d287c970b15d280
+content_hash: sha256:af2902a7c4f47a0b00b9857399ef835666558734c0b4e8f800e2e457771cfd78
 ---
 
 ## 场景介绍
 
 本章节将向您介绍如何在应用中添加自定义样式的地图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/6mFMarszT4WVOqcpgB0cIQ/zh-cn_image_0000002706835032.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VZrnm1-jSa-xHny0bx6QPg/zh-cn_image_0000002712245276.jpg "点击放大")
 
 ## 接口说明
 
@@ -42,25 +42,25 @@ Map Kit提供两种方法设置自定义地图样式：
 
    a.登录[Petal Maps Studio](https://developer.petalmaps.com/console/studio/)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/892vDoDAQAOmhxcDi8VTJQ/zh-cn_image_0000002736314139.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/THJ4DKYaTYaATcKRwZwb5Q/zh-cn_image_0000002742004225.png)
 
    b.点击“Create map”创建自定义样式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/mqdNNbnFTomTrnX0l2dJoA/zh-cn_image_0000002706675096.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/xd8SHuTZRHaDT5h1Z_FVbg/zh-cn_image_0000002712405236.png)
 
    c.导入JSON样式文件，点击“Import”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/naSFirzrQ4C23zKrC_mauw/zh-cn_image_0000002736434185.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/r_av4iiqRHKGkipN7LD0pA/zh-cn_image_0000002742124185.png)
 
    d.在编辑器里修改样式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/3VdEIazuSzqcj2F3xL2KZQ/zh-cn_image_0000002706835034.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/EeTK0iwvTX-K-WaQ6vec2Q/zh-cn_image_0000002712245278.png)
 
    e.点击“SAVE”生成预览ID，预览ID在编辑样式时会重新生成，您可以通过预览ID测试样式效果。点击“PUBLISH”发布生成样式ID，样式ID是唯一ID，一旦发布生效不会变化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/AVQZ_ZffTKCNBJqP8blz0A/zh-cn_image_0000002736314141.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/LxfsXNeDT92UvzCzU_3CEA/zh-cn_image_0000002742004227.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/hvP8nZnJTZCcGdKvPd1TGQ/zh-cn_image_0000002706675098.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/F7Gh4uGPTpaBo3cUEZ4goQ/zh-cn_image_0000002712405238.png)
 3. Map Kit提供两种方法设置样式ID：
 
    * 在创建地图后设置样式ID
@@ -128,7 +128,7 @@ Map Kit提供两种方法设置自定义地图样式：
 
      设置样式ID之后效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/JCa9zCm9T2y9mC3RSJUwNQ/zh-cn_image_0000002736434187.jpg "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kNDvuIjISzeIwg5Z0nyCdw/zh-cn_image_0000002742124187.jpg "点击放大")
 
 ### 设置样式内容
 
@@ -200,7 +200,7 @@ Map Kit提供两种方法设置自定义地图样式：
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/JGhmOwiaSm6Kslb3Q6Afww/zh-cn_image_0000002706835036.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Ybuam06bQx605E-fhYIWNQ/zh-cn_image_0000002712245280.jpg "点击放大")
 
 ### 样式参考
 

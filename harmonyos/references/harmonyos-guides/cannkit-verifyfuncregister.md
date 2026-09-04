@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-verif
 title: VerifyFuncRegister
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > VerifyFuncRegister
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:13+08:00
+scraped_at: 2026-09-05T06:15:40+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:633d43e7f72456a93640db6df91b95189a325f60c4de5c5a6af7144c280af9d8
+content_hash: sha256:3b8e967e9491b48ef5c0b4b73d40ecb78c752c49aa0481fba4357b38bd412e94
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ VerifyFuncRegister构造函数和析构函数。
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444099899858) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

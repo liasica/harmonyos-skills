@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stationary-gu
 title: Stationary开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > Stationary开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:93d369accc87161dc89f7f756cf7e88666e0666c0ca3dd9bcf163bdb04ff79b7
+scraped_at: 2026-09-05T06:14:35+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:8747566141fa233865707772f1ab4842e812f4953631263674c7f73abf77f150
 ---
 
 ## 场景介绍
@@ -79,16 +79,14 @@ if ((algoPara_.resultantAcc > RESULTANT_ACC_LOW_THRHD) && (algoPara_.resultantAc
 
    ```typescript
    import { stationary } from '@kit.MultimodalAwarenessKit';
-   import { BusinessError } from '@kit.BasicServicesKit';
+   import { BusinessError, Callback } from '@kit.BasicServicesKit';
    ```
 2. 订阅绝对静止的进入事件，1秒上报一次。
 
    ```typescript
    let reportLatencyNs = 1000000000; // 单位：纳秒
    try {
-     stationary.on('still', stationary.ActivityEvent.ENTER, reportLatencyNs, (data) => {
-       console.info('data=' + JSON.stringify(data));
-     })
+     stationary.on('still', stationary.ActivityEvent.ENTER, reportLatencyNs, this.callback)
      // ...
    } catch (error) {
      let message = (error as BusinessError).message;
@@ -112,9 +110,7 @@ if ((algoPara_.resultantAcc > RESULTANT_ACC_LOW_THRHD) && (algoPara_.resultantAc
 
    ```typescript
    try {
-     stationary.off('still', stationary.ActivityEvent.ENTER, (data) => {
-       console.info('data=' + JSON.stringify(data));
-     })
+     stationary.off('still', stationary.ActivityEvent.ENTER, this.callback)
      // ...
    } catch (error) {
      let message = (error as BusinessError).message;

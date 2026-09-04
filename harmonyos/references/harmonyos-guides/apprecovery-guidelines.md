@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apprecovery-g
 title: 应用恢复开发指导
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误管理及应用恢复 > 应用恢复开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
+scraped_at: 2026-09-05T06:14:40+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:0b9a9f4974dc8054faf992919a013b5618b6988bbd71e439c8ededd3a17f5fe4
+content_hash: sha256:dc737d27dd4e09f5369e0b00d13a02e0ca972936b7de7307e1f8e8449b4537d8
 ---
 
 ## 场景介绍
@@ -56,13 +56,13 @@ API 9以及未使用**setRestartWant**指定UIAbility的场景，会拉起最后
 
 应用恢复状态标识会在状态保存接口主动或者被动调用时设置。在应用正常退出或者应用异常退出重启后，该状态会被清理。正常退出目前包括用户按后退键退出以及用户清理最近任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/OhKtz4AsTkS_Lln75JadvQ/zh-cn_image_0000002706674506.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/auRQ3_VNTpqknqe5NwrMBA/zh-cn_image_0000002712404644.png)
 
 ### 应用卡死的状态保存及恢复
 
 API 10开始支持应用卡死时的状态保存。JsError故障时，onSaveState接口在主线程进行回调。对于AppFreeze故障，主线程可能处于卡死的状态，onSaveState会在非主线程进行回调。其主要流程如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/pcb-NH1FRpe2AKzTIHHKQg/zh-cn_image_0000002736433595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/IsVfcC8-SbuPyRUmeRm8Sw/zh-cn_image_0000002742123593.png)
 
 由于卡死时的回调不在JS线程上执行，onSaveState回调中的代码建议不要使用import进来的Native动态库，禁止访问主线程创建的thread\_local对象。
 
@@ -76,7 +76,7 @@ API 10开始支持应用卡死时的状态保存。JsError故障时，onSaveStat
 
 下图中并没有标记faultLogger的调用时机，开发者可以根据应用启动时传入的[LastExitReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#lastexitreason)来决定是否调用faultLogger查询上次的故障信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/yGe48nRpQgaM4dSlAFdGJg/zh-cn_image_0000002706834444.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/fs-nQjIbR12ju2FzF9-qew/zh-cn_image_0000002712244680.png)
 
 这里建议应用开发者使用errorManager对应用的异常进行处理，处理完成后开发者可以选择调用状态保存接口并主动重启应用。
 

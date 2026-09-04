@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 适配相机旋转角度(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机旋转 > 适配相机旋转角度(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5fcdd41e7d5579df61a3aa6a1dc18aba77f3ac1f032a4df9e46b954fdae9d2f8
+scraped_at: 2026-09-05T06:14:49+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:382dcefbf2235d11c6493b26de926cfdc34d833c63ec7dde0f67fa9d21552c21
 ---
 
 屏幕处于不同的屏幕状态时，原始图像需旋转不同的角度，以确保图像在合适的方向显示，效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Kget0yjKTHKdLGnkCTUy1A/zh-cn_image_0000002736313653.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Q5OtMADVRZeE2VPoz6IBqA/zh-cn_image_0000002742003735.png)
 
 本开发指导将指导开发者在预览、拍照、录像等不同场景下，如何适配相机的旋转角度。
 
@@ -122,7 +122,7 @@ content_hash: sha256:5fcdd41e7d5579df61a3aa6a1dc18aba77f3ac1f032a4df9e46b954fdae
        }
      }
      ```
-2. 通过[监听Display对象变化](../harmonyos-references/js-apis-display.md#displayonaddremovechange)，感知窗口当前状态，如当前相机窗口发生旋转时，需对预览流进行角度修正。推荐在[会话配置](camera-session-management.md)中完成获取并设置预览旋转后，直接创建监听。
+2. 通过[监听Display对象变化](../harmonyos-references/js-apis-display.md#displayonadd--remove--change)，感知窗口当前状态，如当前相机窗口发生旋转时，需对预览流进行角度修正。推荐在[会话配置](camera-session-management.md)中完成获取并设置预览旋转后，直接创建监听。
 
    * **方案一：**
 

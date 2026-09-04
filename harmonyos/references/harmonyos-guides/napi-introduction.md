@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-introduc
 title: Node-API简介
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
+scraped_at: 2026-09-05T06:15:44+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:f2a85fccace4316db0cf626d0eae10d9f5b53b3d9cc91e61b78118e1da373f30
+content_hash: sha256:2e3fd605833d93671bc43da81a4e7d36eaf923702cce70ac357fadcb6abccd32
 ---
 
 ## 场景介绍
@@ -27,7 +27,7 @@ HarmonyOS Node-API与Node.js 18.x LTS的Node-API规范的接口异同点，详�
 
 **图1** Node-API的组成架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/sDdQNN4_QwaWXG9CbzP_mA/zh-cn_image_0000002736314557.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/QAIxs_M-TDCcHjRfCmzANQ/zh-cn_image_0000002742004641.png)
 
 * Native Module：开发者使用Node-API开发的模块，用于在ArkTS侧导入使用。
 * Node-API：实现ArkTS与C/C++交互的逻辑。
@@ -41,7 +41,7 @@ HarmonyOS Node-API与Node.js 18.x LTS的Node-API规范的接口异同点，详�
 
 **图2** Node-API的关键交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/sva7_0MUSneq2HhkLsXSBA/zh-cn_image_0000002706675514.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/8A1gMKGcTDWCOFu0Egh7-w/zh-cn_image_0000002712405652.png)
 
 ArkTS和C++之间的交互流程，主要分为以下两步：
 

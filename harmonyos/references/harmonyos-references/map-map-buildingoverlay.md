@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-b
 title: Interface (BuildingOverlay)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (BuildingOverlay)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dd197bae9231d04296c0b0cb5eb8ab5a5f4efaa1531298653ea3ece7fd16e7fe
+scraped_at: 2026-09-05T06:21:10+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:cc034e6c8561444158d1261afed2326407a2c586ab8c399bbbcfaca521e28485
 ---
 
 ## 导入模块
@@ -16,7 +16,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 ## BuildingOverlay
 
-3D建筑。缩放层级达到16级或以上，才可正常显示3D建筑效果。
+3D建筑。缩放层级达到16级或以上，才可正常显示3D建筑效果。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addBuildingOverlay](map-map-mapcomponentcontroller.md#addbuildingoverlay)方法时会返回该类型的实例。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

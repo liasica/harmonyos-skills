@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: ArkGraphics 3D场景搭建以及管理
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D场景搭建以及管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:491966b27d8a2bea734091344d8fb01f081f9050e6dc8add16b146089b9b3021
+scraped_at: 2026-09-05T06:14:57+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:eb0055629df5a0042f42d137bdcbc0deca86d44489a22967d5cc84ab02581d68
 ---
 
 一个3D场景通常由光源、相机、模型三个关键部分组成。
@@ -16,7 +16,7 @@ content_hash: sha256:491966b27d8a2bea734091344d8fb01f081f9050e6dc8add16b146089b9
 
 模型加载后，可以通过ArkUI的[Component3D](../harmonyos-references/ts-basic-components-component3d.md)渲染组件呈现给用户，Component3D负责将ArkGraphics 3D场景渲染到界面中。在自定义场景模式下，开发者可以使用ArkTS API创建并管理相机和光源节点，从而设置合适的观察角度和光照效果；在自动场景模式下，框架会根据模型自动创建基础相机和光照。ArkTS API可通过napi调用AGP中由C++实现的相应能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/_A2t8yGNSlWAX7TNQdyefQ/zh-cn_image_0000002736433861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/8ly40PoQRMOznOh62-fMKg/zh-cn_image_0000002742123863.png)
 
 ## 模型的加载及呈现
 
@@ -65,7 +65,7 @@ glTF模型中引用的纹理图片支持以下格式：
 
    ```typescript
    // Create a Camera.
-   this.cam = await rf.createCamera({ 'name': 'Camera' });
+   this.cam = await rf.createCamera({ name: 'Camera' });
    // Set proper camera parameters.
    this.cam.enabled = true;
    this.cam.position.z = 5;
@@ -236,7 +236,7 @@ ArkGraphics 3D提供创建光源及修改光源参数的功能，支持开发者
      this.scene = globalScene;
      this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;
      this.rf = this.scene.getResourceFactory();
-     this.cam = await this.rf.createCamera({ 'name': 'Camera1' });
+     this.cam = await this.rf.createCamera({ name: 'Camera1' });
      this.cam.enabled = true;
      this.cam.position.z = 5;
      // Initialize color value

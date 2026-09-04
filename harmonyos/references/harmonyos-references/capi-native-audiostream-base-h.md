@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audiostream_base.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audiostream_base.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:13807b256c216cd499c72cc11687f0ad72a21313d87744d5f0a799d5329de2d7
+scraped_at: 2026-09-05T06:19:50+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:e791536c1509bd05199601179f630eabe47d87e768cd2fa3d978cc35cfe8669a
 ---
 
 ## 概述
@@ -475,7 +475,7 @@ enum OH_AudioStream_LatencyType
 | --- | --- |
 | AUDIOSTREAM\_LATENCY\_TYPE\_ALL = 0 | 获取包含软件与硬件在内的整体音频处理时延。 |
 | AUDIOSTREAM\_LATENCY\_TYPE\_SOFTWARE = 1 | 获取软件部分的时延，包括软件侧音效处理。 |
-| AUDIOSTREAM\_LATENCY\_TYPE\_HARDWARE = 2 | 获取硬件部分的时延，包括硬件抽象层（HAL） 、驱动与硬件侧音效处理。 |
+| AUDIOSTREAM\_LATENCY\_TYPE\_HARDWARE = 2 | 获取硬件部分的时延，包括硬件抽象层（HAL）、驱动与硬件侧音效处理。 |
 
 ### OH\_AudioStream\_PlaybackCaptureMode
 

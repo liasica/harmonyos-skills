@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.driver.deviceManager (外设管理)"
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > ArkTS API > @ohos.driver.deviceManager (外设管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:12+08:00
+scraped_at: 2026-09-05T06:19:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2db31d70841e70f6d4d634b3c051572bb494d7ea817108f87cfd71a39fb3c3e6
+content_hash: sha256:c9db0211b0d901a06eb2b60aeec925912efc0eb2c45d41ba68948f29ef112751
 ---
 
 本模块是驱动开发套件提供的设备管理接口集合，提供外接设备信息的查询能力、应用与外设驱动之间的绑定与解绑能力。本模块的接口可用于实现以下功能：
@@ -16,7 +16,7 @@ content_hash: sha256:2db31d70841e70f6d4d634b3c051572bb494d7ea817108f87cfd71a39fb
 
 本模块的外设访问能力需要多个 API 组合完成，典型调用流程为：**查询设备 → 绑定设备获取通信对象 → 通过通信对象与驱动交互 → 解绑设备释放资源**。设备绑定的生命周期视图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tihCCtM8TSC00KkGdmyH9A/zh-cn_image_0000002706677120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/7sRXFPDdR2iv4Gw0C0h8JA/zh-cn_image_0000002712407318.png)
 
 **说明** 
 

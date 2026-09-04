@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: Model Zoo
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > Model Zoo
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:24+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:15aa8c7503d3826b43d9bc40f5c420cbeaee8549366ac92514711d5a33a3f798
+content_hash: sha256:8daef54b0bf412fa599dec8efe480f4d99ad9599819b3e6bdf9788d0c2896e41
 ---
 
 ## 概述
@@ -43,7 +43,7 @@ Model Zoo中模型的名称、性能、模型下载信息如下表所示。
 | 超分 | VDSR | 17.71 | 10.67 | [CAFFE&OM](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_package_901_9/a1/v3/ftoOofw5SJ-jyVV3BcpiQg/hwhiaimodelzoo-vdsr-100.520.020.011.zip) | a1063d88e341d6abcf293eb1ba7aee10b5856abd8cd6b8c51594b4375933dc7a | [论文&实现](https://arxiv.org/abs/1511.04587) |
 | 超分 | FSRCNN | 17.24 | 17.02 | [TF&OM](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_package_901_9/ec/v3/K4RspWrzQs-v5rrBUXijpg/hwhiaimodelzoo-fsr-100.520.020.011.zip) | 55c7206c1851ef9b187790a7f8dbba4b58dc4808a1df9798cc0053059b81644c | [论文&实现](https://arxiv.org/abs/1608.00367) |
 
-**说明** 
+![](https://media:401788444061485574) 
 
 * [1] 此性能数据测试基于kirin 9000芯片的华为手机。
 * [2] 原始模型文件是参考论文和实现中的模型训练而来。

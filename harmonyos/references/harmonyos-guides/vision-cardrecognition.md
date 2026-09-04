@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-cardre
 title: 卡证识别
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 卡证识别
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
+scraped_at: 2026-09-05T06:15:44+08:00
 doc_updated_at: 2026-05-28
-content_hash: sha256:00b36a59117e9e71fc8bd94ca036d1a64b52ce7aaa49a2745cf7b94be1113435
+content_hash: sha256:4f955868929aa571372688cb3ed92a607d3db1a511b226852139eaae32161235
 ---
 
 从6.1.1(24)开始，新增支持对港澳居民来往内地通行证、台湾居民来往大陆通行证的识别。
@@ -18,7 +18,7 @@ content_hash: sha256:00b36a59117e9e71fc8bd94ca036d1a64b52ce7aaa49a2745cf7b94be11
 
 **图1** 银行卡识别示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/NVF-8Wj-SYezcTuIuM6Wzw/zh-cn_image_0000002706835432.png)
+![](https://media:401788444058571550)
 
 ## 约束与限制
 
@@ -47,7 +47,7 @@ content_hash: sha256:00b36a59117e9e71fc8bd94ca036d1a64b52ce7aaa49a2745cf7b94be11
    ```
 2. 配置页面的布局，选择需要识别的卡证类型和需要识别的卡证页面，配置对应设置项，在回调中获取结果返回值。
 
-   **说明** 
+   ![](https://media:401788444058592551) 
 
    从5.1.1(19)开始，[CardRecognition](../harmonyos-references/vision-card-recognition.md#cardrecognition)接口中的callback参数废弃，请使用onResult代替。
 

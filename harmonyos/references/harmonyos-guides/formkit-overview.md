@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/formkit-overv
 title: Form Kit简介
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > Form Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:f0b1f8876dd4e66197d72fd2ca244b3cb18cec73f8b78c1403696571939b1c53
+scraped_at: 2026-09-05T06:14:13+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:11c88cff5a9aef94e77ecf46e5727ffbc81f690d3592544dcbc1da5468cc333c
 ---
 
 Form Kit（卡片开发服务）提供了一种在桌面、锁屏等系统应用上嵌入显示应用信息的开发框架和API，可以将应用内用户关注的重要信息或常用操作抽取到服务卡片（简称“卡片”）上，通过将卡片添加到桌面、锁屏等系统应用上，以达到信息展示、服务直达的便捷体验效果。后续统一使用英文名“Form Kit”进行表述。
@@ -23,19 +23,28 @@ Form Kit（卡片开发服务）提供了一种在桌面、锁屏等系统应用
 
 **图1** 卡片常见使用步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Ck5-NkeNQlqeUzatIs1Ypg/zh-cn_image_0000002736313249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/DpnwhGlxQiy2sZf05GpLkg/zh-cn_image_0000002742003333.png)
 
 ## 服务卡片架构
 
 **图2** 服务卡片架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/y-t_6HFMS-WNgQ-nzd_h7Q/zh-cn_image_0000002706674206.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/EAH6Cu6oQdWd5MQqzGtdKg/zh-cn_image_0000002712404346.png)
 
 **卡片场景中涉及到的基本概念**
 
 * 卡片使用方：如上图中的桌面，作为显示卡片内容的宿主应用，用于与用户直接进行交互，完成卡片添加、删除、显示功能，并能控制卡片在宿主中具体展示的位置。
 * 卡片提供方：提供卡片的应用或元服务，是卡片功能的具体实现者，需要设计实现卡片UI、数据更新、以及点击交互处理功能。
 * 卡片管理服务：操作系统内管理整机卡片信息的系统服务，作为卡片提供方和使用方的桥梁，向使用方提供卡片信息查询、添加、删除等能力，同时向提供方提供卡片被添加、被删除、刷新、点击事件等通知能力。
+
+## 模拟器支持情况
+
+本Kit支持模拟器开发，但与真机存在部分能力差异，具体如下：
+
+* 通用差异：详情请参见[模拟器与真机的差异](ide-emulator-specification.md)。
+* 模拟器中不支持 1 \* 1卡片预览。
+* 模拟器中不支持背板透明卡片预览。
+* 模拟器中不支持互动卡片预览。
 
 ## 亮点/特征
 

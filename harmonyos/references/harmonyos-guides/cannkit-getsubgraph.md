@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getsu
 title: GetSubgraph
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetSubgraph
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3d546a833762e9da008d763b30824d9999d2c27817657e3eb246d92151f6e781
+content_hash: sha256:b139c1829dc9e714fcce8801578764e7185f41b89d5c998b163cef9dd6692dc5
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:3d546a833762e9da008d763b30824d9999d2c27817657e3eb246d92151f
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444114007928) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-creat
 title: 算子工程创建工具参数说明
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录 > 算子工程创建工具参数说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:d1b69ac52495d314b64133c82e2a4b0cc9ebe60e6fd7a070083edb80ac5f9a64
+content_hash: sha256:4a0de15d7ca7915a82ad42d864b9d3d65f3d6e2812c319b692f7c4fda0248c2d
 ---
 
 ## 工具概述
@@ -16,7 +16,7 @@ content_hash: sha256:d1b69ac52495d314b64133c82e2a4b0cc9ebe60e6fd7a070083edb80ac5
 
 执行如下命令，参数说明请参见表1。
 
-**说明** 
+![](https://media:401788444092752782) 
 
 开发者按照输入的配置参数生成算子模板后，建议在运行前确认算子工程代码的安全性。
 

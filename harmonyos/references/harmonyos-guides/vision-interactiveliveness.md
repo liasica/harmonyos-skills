@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-intera
 title: 人脸活体检测
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 人脸活体检测
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
+scraped_at: 2026-09-05T06:15:44+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e4f7a155933139e489976ca9c84cfabfe84c660f09c80b28282303cae322056a
+content_hash: sha256:15e1f3ac9aaf1d38194bb1bf95f93bd9ca0d5082aa5efb2db01cdaffb89d5fce
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:e4f7a155933139e489976ca9c84cfabfe84c660f09c80b28282303cae32
 
 动作活体检测支持实时捕捉人脸，需要用户配合做指定动作就可以判断是真实活体，还是非活体攻击（比如：打印图片、人脸翻拍视频以及人脸面具等）。
 
-**说明** 
+![](https://media:401788444057587543) 
 
 活体检测是一项纯端侧算法、试用期免费的系统基础服务，推荐开发者使用在考勤打卡、辅助登录和实名认证等低危业务场景中。活体检测减少动作数量或者指定特定动作会降低其安全性，增加被攻破的风险。
 
@@ -22,11 +22,11 @@ content_hash: sha256:e4f7a155933139e489976ca9c84cfabfe84c660f09c80b28282303cae32
 
 **图1** 权威认证**增强级**检测报告
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/L65dHT8YSUOoQlZ-3koYxg/zh-cn_image_0000002706675492.png)
+![](https://media:401788444057624544)
 
 **图2** 活体检测示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/dQGGwhF1R6uueiVOe8qgjg/zh-cn_image_0000002736434579.png)
+![](https://media:401788444057792545)
 
 ## 约束与限制
 

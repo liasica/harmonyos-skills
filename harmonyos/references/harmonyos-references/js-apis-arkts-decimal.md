@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@arkts.math.Decimal (高精度数学库Decimal)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.math.Decimal (高精度数学库Decimal)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:42f08371570c0e8447544f3302dcc12c14ac1c21fb0b899a75a07990b5d5a1cf
+scraped_at: 2026-09-05T06:16:43+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:77960ca823eabc98e72e2224251a04f1029804e984894aaa2d0acc247030a8f4
 ---
 
 Decimal用于提供高精度数学运算的能力，支持高精度浮点计算。
@@ -3992,7 +3992,8 @@ static sign(n: Value): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 返回参数的符号判断结果。  1：参数为正数。  -1：参数为负数。  0：参数为0。  NaN：参数为NaN。 |
+| Decimal | 适用版本：12-17。返回参数的符号判断结果。 |
+| number | 适用版本：18+。返回参数的符号判断结果。  1：参数为正数。  -1：参数为负数。  0：参数为0。  NaN：参数为NaN。 |
 
 **错误码：**
 

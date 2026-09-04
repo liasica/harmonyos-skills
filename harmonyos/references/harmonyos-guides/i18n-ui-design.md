@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-ui-desig
 title: 国际化界面设计
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 国际化界面设计
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:804025a93036bd8ed735452e3f144c75dad0f95d0ec912a535db3f22edaf5318
+scraped_at: 2026-09-05T06:14:14+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d29c5478aa081f12ec9a4e0e2de57291ade0d1025d6e899aa0560609dcb13535
 ---
 
 一套有效的国际化界面布局设计规则，既可以树立产品在国际化设计中产品调性，还可以保证操作的一致性，遵循以下设计规则可有效提升应用全球化质量。
@@ -19,10 +19,10 @@ content_hash: sha256:804025a93036bd8ed735452e3f144c75dad0f95d0ec912a535db3f22eda
 | 英文字符数量（个） | 预留的空间比率 |
 | --- | --- |
 | 小于等于10 | 100%～200% |
-| 大于等于11，小于等于20 | 80%~100% |
-| 大于等于21，小于等于30 | 60%~80% |
-| 大于等于31，小于等于50 | 40%~60% |
-| 大于等于51，小于等于70 | 30%~40% |
+| 大于等于11，小于等于20 | 80%～100% |
+| 大于等于21，小于等于30 | 60%～80% |
+| 大于等于31，小于等于50 | 40%～60% |
+| 大于等于51，小于等于70 | 30%～40% |
 | 大于等于71 | 30% |
 
 ## 界面镜像
@@ -36,20 +36,20 @@ content_hash: sha256:804025a93036bd8ed735452e3f144c75dad0f95d0ec912a535db3f22eda
 
 **图1** 一般布局示例（英文）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/m0nE6xDrT_i4i8lrmLZ_Hg/zh-cn_image_0000002736313321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/He4lKuQJRYiTEjcrvSAtaQ/zh-cn_image_0000002742003405.png)
 
 **图2** 镜像布局示例（阿拉伯文）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/R4xRXGbgTA2POErF-m4vKw/zh-cn_image_0000002706674278.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/XA9lGbx_T2KbCfXOy5xJVg/zh-cn_image_0000002712404418.png)
 
 **图3** 一般图标资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/pz_10qSrS7aTTpzJ1JvO-Q/zh-cn_image_0000002736433369.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Qrpa8dRYTHad2RikFhF-aw/zh-cn_image_0000002742123367.png)
 
 **图4** RTL语言系统下提供的图标资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/jxTwlSVaS_KgxC0_y1uUig/zh-cn_image_0000002706834214.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/EivgyIo3SRGOGEI2NV11xQ/zh-cn_image_0000002712244454.png)
 
 **图5** RTL语言下提供的镜像控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/aUQW23aNQq2Ufv9vCtnCpw/zh-cn_image_0000002736313323.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Mi4o9xsgR_qBWDZKld15HQ/zh-cn_image_0000002742003407.png)

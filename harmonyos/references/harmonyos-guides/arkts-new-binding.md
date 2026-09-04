@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-bin
 title: "!!语法：双向绑定"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 语法糖 > !!语法：双向绑定
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8b6fe3ce5bb2757c773873fc7836f1f862e7d949b7c2f3a967559f0c720c4b29
+scraped_at: 2026-09-05T06:13:57+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:528a9734b13eeebbb12bd184defb0703d3c2ff1709cc37e8bfbf41c41c4cf20d
 ---
 
 在状态管理V1中，推荐使用[$$](arkts-two-way-sync.md)实现系统组件的双向绑定。
@@ -126,7 +126,7 @@ content_hash: sha256:8b6fe3ce5bb2757c773873fc7836f1f862e7d949b7c2f3a967559f0c720
 
 ### 系统组件参数双向绑定
 
-!!运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步。添加方式是在变量名后添加，例如isShow!!。
+!!运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步。添加方式是在变量名后添加!!，例如isShow!!。
 
 内部状态的含义由组件或属性决定。例如：[bindMenu](../harmonyos-references/ts-universal-attributes-menu.md#bindmenu11)属性的isShow参数。
 
@@ -177,7 +177,7 @@ struct BindMenuInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/PFiQbwdxTEiZOfSYvQOD3Q/zh-cn_image_0000002736432453.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/MZ5IxbKdSY21vsdLBeyBlw/zh-cn_image_0000002742122455.gif)
 
 **使用规则**
 

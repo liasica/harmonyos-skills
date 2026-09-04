@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-partn
 title: 引导用户绑卡场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 引导用户绑卡场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:59+08:00
+scraped_at: 2026-09-05T06:15:15+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:80cdaf806e653ca1638239674278c6f89a47026f135f786861ea5fbd2c91d760
+content_hash: sha256:4d31135099dd8da24ab33665e9f3b05c7f19f4b2ed92e875bf3df55be06fca1e
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:80cdaf806e653ca1638239674278c6f89a47026f135f786861ea5fbd2c9
 
 引导用户绑卡页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/J32KT-zYQHeOSevWAA5dkw/zh-cn_image_0000002706835116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Kpn6cxJpR2ai2VrH7baFIA/zh-cn_image_0000002712245360.png)
 
 ## 提供绑卡跳转应用信息
 
@@ -32,7 +32,7 @@ content_hash: sha256:80cdaf806e653ca1638239674278c6f89a47026f135f786861ea5fbd2c9
 
 开发者接入引导用户绑卡，具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/DTWhXhZUSsyRp-ZCEC9N5A/zh-cn_image_0000002736314223.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/yr1zZng0Tv69lwVWkeqyow/zh-cn_image_0000002742004309.png)
 
 **场景1：用户取消绑卡**
 

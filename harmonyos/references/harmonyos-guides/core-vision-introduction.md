@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-i
 title: Core Vision Kit简介
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > Core Vision Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:14+08:00
+scraped_at: 2026-09-05T06:15:42+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a8faecfac8a016808e8898a957fdc85d01724e55d9fba9e66beb110f6de9d7eb
+content_hash: sha256:352421d129ddded670db822b8db1ae72dc7a2663c4a24b4594a1820c9367cf51
 ---
 
 Core Vision Kit（基础视觉服务）提供了机器视觉相关的基础能力，例如通用文字识别（即OCR，Optical Character Recognition，也称为光学字符识别）、人脸检测、人脸比对以及主体分割等能力。
@@ -48,7 +48,7 @@ Phone、Tablet、PC/2in1。
 | 图像超分 | 输入图片需要满足16px<高度<2048px和16px<宽度<2048px要求，高宽比例无特殊要求。  建议处理1024px\*1024px以下的图片，高分辨率可能出现处理超时的情况。 |
 | 通过文本搜索图片 | 输入图像具有合适成像的质量，100px<高度<10000px，100px<宽度<10000px，高宽比例建议10:1以下（高度小于宽度的10倍），接近手机屏幕高宽比例为宜。 |
 
-**说明** 
+![](https://media:401788444054355522) 
 
 Core Vision Kit的特性支持多用户同时接入，但是不支持同一用户并发调用同一个特性，如同一个特性被同一进程同一时间多次调用，则返回系统繁忙错误，不同进程调用同一特性，则同一时间只有一个进程业务在处理，其他进程进入队列排队。
 

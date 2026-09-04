@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avsc
 title: OH_VideoCaptureInfo
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_VideoCaptureInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2003d109d23954341a6b312e772fe8ae688582a270503bad2d7903b39541d7a8
+scraped_at: 2026-09-05T06:20:25+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:4d220d2e1f1d264196a06969c848c752c749eae0d0d3c2eff94b386c263507cc
 ---
 
 ```c
@@ -29,7 +29,7 @@ typedef struct OH_VideoCaptureInfo {...} OH_VideoCaptureInfo
 | 名称 | 描述 |
 | --- | --- |
 | uint64\_t displayId | 采集物理屏ID，设置后录制指定物理屏幕的内容。使用该参数需要在captureMode为CAPTURE\_SPECIFIED\_SCREEN模式下使用，其他模式下此参数不生效。可通过系统显示管理接口获取有效的displayId值。取值范围大于等于0。传入无效ID时录制失败。 |
-| int32\_t\* missionIDs | 指定窗口ID数组，设置后录制指定窗口内容。适用于仅录制特定应用窗口内容的场景，如录制单个应用操作演示、避免录制桌面背景和隐私信息等。使用该参数需要在captureMode为CAPTURE\_SPECIFIED\_WINDOW模式下使用，其他模式下此参数不生效。可通过窗口接口[getWindowProperties](arkts-apis-window-window.md#getwindowproperties9)获取有效的missionID值。列表长度需与missionIDsLen匹配，ID取值为整数。传入无效ID时录制失败。 |
+| int32\_t \*missionIDs | 指定窗口ID数组，设置后录制指定窗口内容。适用于仅录制特定应用窗口内容的场景，如录制单个应用操作演示、避免录制桌面背景和隐私信息等。使用该参数需要在captureMode为CAPTURE\_SPECIFIED\_WINDOW模式下使用，其他模式下此参数不生效。可通过窗口接口[getWindowProperties](arkts-apis-window-window.md#getwindowproperties9)获取有效的missionID值。列表长度需与missionIDsLen匹配，ID取值为整数。传入无效ID时录制失败。 |
 | int32\_t missionIDsLen | 指定窗口ID数组的长度，使用该参数需要在captureMode为CAPTURE\_SPECIFIED\_WINDOW模式下使用，其他模式下此参数不生效。取值需大于0，且与missionIDs列表实际长度一致。 |
 | int32\_t videoFrameWidth | 采集视频的宽度设置，单位为像素（px）。取值范围需大于等于0。传入负数或超出设备支持分辨率时，屏幕录制将失败。当videoFrameWidth与videoFrameHeight同时为0时，系统将忽略视频采集相关配置参数，不录制屏幕视频数据。 |
 | int32\_t videoFrameHeight | 采集视频的高度设置，单位为像素（px）。取值范围需大于等于0。传入负数或超出设备支持分辨率时，屏幕录制将失败。当videoFrameWidth与videoFrameHeight同时为0时，系统将忽略视频采集相关配置参数，不录制屏幕视频数据。 |

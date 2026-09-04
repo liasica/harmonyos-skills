@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用材质资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > 创建并使用材质资源
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4bea6fddba6d139ee29f0f0d7c1918680790f8a38522f27155b0775f10d11d1c
+scraped_at: 2026-09-05T06:14:58+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d2aebc8b2fab0a540690bbf582f9833e2d18ae3f75ea4f1a9eec0a91ef9dcab3
 ---
 
 材质（Material）：材质是用于定义物体表面视觉效果的重要资源。材质决定了物体如何与光线交互，从而影响其最终的渲染效果，如颜色、金属感、粗糙度等外观属性。
@@ -134,7 +134,7 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
    创建相机对象并设置相机启用状态与观察位置，用于后续展示模型。
 
    ```typescript
-   this.cam = await this.rf.createCamera({ 'name': 'Camera1' });
+   this.cam = await this.rf.createCamera({ name: 'Camera1' });
    this.cam.enabled = true;
    this.cam.position.z = 5;
    ```
@@ -339,7 +339,7 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
    创建一个相机对象，并设置其位置和观察目标。然后启用轨道控制功能，让用户可以通过手势旋转和缩放视图。
 
    ```typescript
-   this.cam = await rf.createCamera({ 'name': 'ClearcoatCam' });
+   this.cam = await rf.createCamera({ name: 'ClearcoatCam' });
    this.cam.enabled = true;
    lookAt(this.cam,{x:0,y:0,z:-3},{x:0,y:0,z:0},{x:0,y:1,z:0});
    this.sceneOpt = { scene: this.scene, modelType: ModelType.SURFACE } as SceneOptions;

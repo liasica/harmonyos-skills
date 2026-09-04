@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 编码支持一入二出
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 编码支持一入二出
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
+scraped_at: 2026-09-05T06:14:47+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:c4453ba9fcf55b7483a19ceb1af23935ea8ef4d3ed2674ed2c327a557a308d6b
+content_hash: sha256:4b5e3d8012852b91924958105de2f078888e4d23286586f3aef5ca2588bea1ba
 ---
 
 从API版本26.0.0开始，对于视频编码场景，支持一入二出编码，即通过同一份视频输入数据，同时驱动**两个独立编码器**产生两路不同编码码流的能力。
@@ -23,7 +23,7 @@ content_hash: sha256:c4453ba9fcf55b7483a19ceb1af23935ea8ef4d3ed2674ed2c327a557a3
 
 以下为一入二出架构图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/CzKdGtI-QQCWFHWpmaw36A/zh-cn_image_0000002736313605.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/cSx8nA5BTZW8ehUhuFoEcg/zh-cn_image_0000002742003687.png)
 
 ### 使用场景
 

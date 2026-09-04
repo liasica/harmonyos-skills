@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-style
 title: "@Styles装饰器：定义组件重用样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Styles装饰器：定义组件重用样式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cd98bda1582b6bcdeaceebcda60177a698bc6b26468149725ad485ae7957df25
+scraped_at: 2026-09-05T06:13:56+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:17e8c653ec5574cfe6b1073e5281b1ccbd3b8e87038453bc93aa144865ca5de9
 ---
 
 如果每个组件的样式都需要单独设置，在开发过程中会出现大量代码在进行重复样式设置，虽然可以复制粘贴，但为了代码简洁性和后续方便维护，我们推出了可以提炼公共样式进行复用的装饰器[@Styles](../harmonyos-references/ts-custom-component-decorator-styles.md#styles)。
@@ -23,7 +23,7 @@ content_hash: sha256:cd98bda1582b6bcdeaceebcda60177a698bc6b26468149725ad485ae795
 ## 装饰器使用说明
 
 * 当前@Styles仅支持[通用属性](../harmonyos-references/ts-component-general-attributes.md)和[通用事件](../harmonyos-references/ts-component-general-events.md)。
-* @Styles可以定义在组件内或全局，在全局定义时需在方法名前面添加function关键字，组件内定义时则不需要添加function关键字。请参考用例[组件内styles和全局styles的用法](arkts-style.md#组件内styles和全局styles的用法)。
+* @Styles可以定义在组件内或全局，在全局定义时需在方法名前面添加function关键字，组件内定义时则不需要添加function关键字。请参考用例[组件内@Styles和全局@Styles的用法](arkts-style.md#组件内styles和全局styles的用法)。
 * 组件内@Styles的优先级高于全局@Styles。框架优先找当前组件内的@Styles，如果找不到，则会全局查找。
 
 **说明** 
@@ -61,7 +61,7 @@ struct FancyUse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/ewYb4FksRh6OQK44BOc2QA/zh-cn_image_0000002736432327.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/7ghIpWDSR1aZzbFWjAOl5g/zh-cn_image_0000002712403374.gif)
 
 ## 限制条件
 
@@ -78,7 +78,7 @@ struct FancyUse {
 ```typescript
 // 正确写法
   @Styles
-  function globalFancy () {
+  function globalFancy() {
     .width(100)
   }
 ```
@@ -148,4 +148,4 @@ struct GlobalFancy {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/F5FOdX0GQTmkQMKwhbMzpA/zh-cn_image_0000002706833172.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/VcsIJ10iTYypLiFNcPSfJA/zh-cn_image_0000002742122325.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-pe
 title: 受限开放权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 受限开放权限
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f5ebd609bd6fd80d8bc7ed096ae99a0aee98e60152c355223d3a5bcbcb52dbcd
+scraped_at: 2026-09-05T06:14:17+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d275892e85bf98bb3f5061f154816a3287931af16524be332ac48d1f06a363f5
 ---
 
 ## 申请方式
@@ -445,19 +445,37 @@ content_hash: sha256:f5ebd609bd6fd80d8bc7ed096ae99a0aee98e60152c355223d3a5bcbcb5
 
 ## ohos.permission.kernel.ALLOW\_WRITABLE\_CODE\_MEMORY
 
-允许应用申请可写可执行匿名内存。
+允许应用申请可写可执行匿名内存，该能力主要用于为应用自带引擎（如 JS 引擎、游戏脚本引擎等）提供即时编译（JIT）能力，提升代码执行效率。
 
 **可申请此权限的特殊场景与功能：**
 
-* 仅提供给应用开启自带引擎的即时编译能力，不允许用于热更新。
-* 申请该权限的应用需要主动适配坚盾模式，在该模式下无闪退。
-* 当前仅平板、PC/2in1设备应用可申请此权限。
+* 应用内置编程语言虚拟机。例如，JavaScript的v8引擎或Lua的LuaJIT等。
+* 应用基于跨平台框架开发，跨平台框架中内置了编程语言虚拟机。例如，CEF、Electron框架等。
+
+以上两种场景因性能原因需要启用即时编译（JIT）提升脚本执行效率时，可申请此权限。
+
+**注意** 
+
+使用该权限时，如果用户开启了坚盾守护模式，系统将禁止应用申请匿名可写可执行内存；应用需考虑该情况的适配，确保应用稳定运行、不会闪退。
+
+**接入要求**：
+
+如果应用包内包含的二进制可执行文件（如：HNP中的node）需要该权限，针对“kernelpermission（即权限名中含.kernel的权限）”存在版本变更，需参考适配指导主动完成适配，请参考：[权限策略变更说明](../harmonyos-releases/changelogs-for-all-apps-7001.md#ch2026031760265)。
+
+**申请主体要求**：完成实名认证的个人开发者帐号、企业开发者帐号。
 
 **申请后AGC的审核时长：** 预计3个工作日内反馈审核结果。
 
 **权限级别**：system\_basic
 
 **授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1 | Tablet
+
+**申请权限注意事项：**
+
+1. 应用若从未上架，“支持设备”请勿勾选手机。
+2. 应用若已上架且勾选手机设备分发，请拆分包体，确保受限开放权限未在手机设备运行的HAP上使用，并在权限申请时特别备注说明。
 
 **起始版本**：14
 

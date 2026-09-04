@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/game-controll
 title: 监听设备上下线（C/C++）
 breadcrumb: 指南 > 应用服务 > Game Controller Kit（游戏控制器服务） > 监听设备上下线（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:55+08:00
+scraped_at: 2026-09-05T06:15:07+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:49863123ccc6615762448945f3e0da96ff8ed05a0354f69078b79812aacf4cea
+content_hash: sha256:28ec93e23ce51215127a47932ac9dec5660d78ee12167958193afd9013013afa
 ---
 
 ## 功能介绍
@@ -14,7 +14,7 @@ Game Controller Kit提供设备上下线事件监听和查询在线设备信息�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Z26Xv29FQ_egBDXhqg14-A/zh-cn_image_0000002736434053.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/N6fk602fTZuYQA7Fhv6kgQ/zh-cn_image_0000002742124053.png)
 
 1. 玩家启动游戏。
 2. 游戏调用[OH\_GameDevice\_RegisterDeviceMonitor](../harmonyos-references/capi-game-device-h.md#oh_gamedevice_registerdevicemonitor)接口注册设备状态变化事件监听。

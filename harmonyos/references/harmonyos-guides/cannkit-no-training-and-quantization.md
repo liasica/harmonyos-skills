@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-no-tr
 title: 无训练量化
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 无训练量化
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:23+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:523cc30468df6b52ccd3fe53c29d31062e5a19ddcc0340bcf60e329b8c5f97e8
+content_hash: sha256:ec8847b23d2e238d5a22dff443dacbc61dfb9e910528c9add488036c184e0605
 ---
 
 ## 输入准备
@@ -26,7 +26,7 @@ content_hash: sha256:523cc30468df6b52ccd3fe53c29d31062e5a19ddcc0340bcf60e329b8c5
 
 开发者需提供bin格式或图片格式的校准集。bin格式的输入数据需按照以下方式存储，如表1。图片格式的数据为存放测试图片的文件夹，图片格式的输入默认以BGR的三通道彩图读取，读出的数据格式为NCHW，其中N为提供图片的数量。
 
-**说明** 
+![](https://media:401788444081574672) 
 
 轻量化工具支持的图片格式包括 ".bmp"，".dib"，".jpeg"，".jpg"，".jpe"，".png"，".webp"，".pbm"，".pgm"，".ppm"，".tiff"，".tif"，".BMP"，".DIB"，".JPEG"，".JPG"，".JPE"，".PNG"，".WEBP"，".PBM"，".PGM"，".PPM"，".TIFF"，".TIF"。
 
@@ -58,7 +58,7 @@ bin格式的输入数据支持两种定义方式，分别适用于任意维度�
 | 文件头（共20字节） | 0016 | 32bit int | 28 | Input width |
 | 数据 | N/A | Float32 | N/A | 数据数量等于50\*3\*28\*28 |
 
-**说明** 
+![](https://media:401788444081597673) 
 
 轻量化工具已提供脚本支撑bin格式文件的转换，详见[Tools下载](cannkit-preparations.md#tools下载)的tools\_dopt/dopt\_tf\_py3/demo/quant8-8/notrain/bin\_data\_preprocessing.py。
 
@@ -83,7 +83,7 @@ preprocess\_parameter包含的子参数说明如下表所示，对于模型有�
 | standard\_deviation | 图片预处理使用的标准差，仅"IMAGE"模式下生效。  类型为float的数值，需要>=0.0。 | 否，默认为0.0 |
 | input\_file\_path | 输入校准集的绝对路径，bin文件路径或存有图片的文件夹。  例如："/path/to/user/data"。 | 是 |
 
-**说明** 
+![](https://media:401788444081624674) 
 
 * 当使用"IMAGE"模式输入时，工具链会对图片做如下处理：image = (image - mean\_value) / standard\_deviation。
 * 当使用"BINARY"模式时，工具链不会对输入数据做任何处理，即image\_format、mean\_value、standard\_deviation三个参数无效。
@@ -159,7 +159,7 @@ pip3 install tensorflow-gpu==2.8
 
 运行该脚本对TensorFlow模型进行无训练量化的参数如下所示。
 
-**说明** 
+![](https://media:401788444081651675) 
 
 * 路径：支持大小写字母、数字、下划线。
 * 文件名：支持大小写字母、数字、下划线和点(.)。
@@ -193,7 +193,7 @@ pip3 install torch==1.11
 
 运行"python3 tools\_dopt/dopt\_pytorch\_py3/dopt\_so.py"。运行该脚本对PyTorch模型进行无训练量化的参数如下所示。
 
-**说明** 
+![](https://media:401788444081674676) 
 
 路径：支持大小写字母、数字、下划线。
 
@@ -245,7 +245,7 @@ pip3 install onnxruntime==1.15
 
 运行该脚本对ONNX模型进行无训练量化的参数如下所示。
 
-**说明** 
+![](https://media:401788444081698677) 
 
 * 路径：支持大小写字母、数字、下划线。
 * 文件名：支持大小写字母、数字、下划线和点(.)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_AccessibilityProviderCallbacksWithInstance
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_AccessibilityProviderCallbacksWithInstance
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c88e301124d89a30e1eabaf88c27bd482cebe3d6b94040ca8b37d9100061e618
+scraped_at: 2026-09-05T06:17:58+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d6d2544d71d386a13e3527a48fb68b2dcb26411455c9327a7e06071af9460025
 ---
 
 ```c
@@ -14,7 +14,7 @@ typedef struct ArkUI_AccessibilityProviderCallbacksWithInstance {...} ArkUI_Acce
 
 ## 概述
 
-适配多实例场景第三方操作[provider](capi-arkui-accessibility-arkui-accessibilityprovider.md)回调函数结构定义，包含节点信息查询、焦点查找与清除、操作执行、光标位置获取等无障碍相关回调函数。该结构需由第三方平台实现，并通过[OH\_ArkUI\_AccessibilityProviderRegisterCallbackWithInstance](capi-native-interface-accessibility-h.md#oh_arkui_accessibilityproviderregistercallbackwithinstance)注册到系统侧，以支持第三方平台接入系统无障碍服务。
+适配多实例场景第三方操作[provider](capi-arkui-accessibility-arkui-accessibilityprovider.md)回调函数结构定义，包含节点信息查询、焦点查找与清除、操作执行、光标位置获取等无障碍相关回调函数。该结构需由第三方平台实现，并通过[OH\_ArkUI\_AccessibilityProviderRegisterCallbackWithInstance](capi-native-interface-accessibility-h.md#oh_arkui_accessibilityproviderregistercallbackwithinstance)注册到系统侧，以支持第三方平台接入系统无障碍服务。所有的回调函数执行线程为IPC线程，非UI线程。
 
 **起始版本：** 15
 

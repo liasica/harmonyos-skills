@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.sendableRelationalStore (共享关系型数据库)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.sendableRelationalStore (共享关系型数据库)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:39+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e3990b3099b437011b59b87742627cec9f6810367fc2389da4cb7f9d9c1592e6
+scraped_at: 2026-09-05T06:16:34+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:543c81099c781ab4e41abdc2742e9f0a1a5a91e46676208a5e5a29f79cdb39a7
 ---
 
 该模块针对关系型数据库（Relational Database，RDB）提供了sendable支持。支持从查询结果集中获取sendable类型ValuesBucket用于并发实例间传递。
@@ -321,7 +321,7 @@ const values = sendableRelationalStore.toSendableValues(array);
 
 ## Asset
 
-记录资产附件（文件、图片、视频等类型文件）的相关信息。用于支持资产数据跨线程传递，继承自[lang.ISendable](js-apis-arkts-lang.md#langisendable)。资产类型的相关接口暂不支持Datashare。使用[sendableRelationalStore.toSendableAsset](js-apis-data-sendablerelationalstore.md#sendablerelationalstoretosendableasset)方法创建。
+记录资产附件（文件、图片、视频等类型文件）的相关信息。用于支持资产数据跨线程传递，继承自[lang.ISendable](js-apis-arkts-lang.md#isendable)。资产类型的相关接口暂不支持Datashare。使用[sendableRelationalStore.toSendableAsset](js-apis-data-sendablerelationalstore.md#sendablerelationalstoretosendableasset)方法创建。
 
 **系统能力：** SystemCapability.DistributedDataManager.RelationalStore.Core
 

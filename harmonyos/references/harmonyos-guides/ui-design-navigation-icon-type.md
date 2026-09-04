@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 图标类型设置
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 图标类型设置
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
+scraped_at: 2026-09-05T06:14:15+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:8af710a90574e92c9fdca26585f3c300815cf31332706dfd39aca644ae3afa5b
+content_hash: sha256:53a5cf04e6b500b7fd6428f353d874a402f1ee091e2836c45d8f360dff4f23c5
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:8af710a90574e92c9fdca26585f3c300815cf31332706dfd39aca644ae3
 
 单字图标([TextStyleMode.SINGLE\_CHARACTER](../harmonyos-references/ui-design-hdsnavigation.md#textstylemode))：适用于需要节省空间的紧凑布局，常用于快速操作入口，建议仅在单个文字或字母的场景使用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/GNKBeF82QDaGsrEIwE8zPQ/zh-cn_image_0000002736313339.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/fUYp-qKWRvStxTKuFEHPjQ/zh-cn_image_0000002742003423.jpg)
 
 ## 开发步骤
 

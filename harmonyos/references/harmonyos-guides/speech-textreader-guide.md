@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speech-textre
 title: 朗读控件
 breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > 朗读控件
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
+scraped_at: 2026-09-05T06:15:44+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:220c5ad11c89cc6746849fa0e2f5641afc8dc0a6b59b5b24fe8da9eb50968e45
+content_hash: sha256:7758fa8386c69ccec2abbe5c022cc91eb7a4c51a49f426b36e0650c566ea365f
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:220c5ad11c89cc6746849fa0e2f5641afc8dc0a6b59b5b24fe8da9eb509
 
 本章节将向您介绍如何使用朗读组件，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/13wl6v2qTyK4PeG1BP9XhQ/zh-cn_image_0000002706835430.png)
+![](https://media:401788444057517542)
 
 ## 接口说明
 

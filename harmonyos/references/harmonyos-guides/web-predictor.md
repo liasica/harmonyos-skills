@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-predictor
 title: 加速Web页面的访问
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 加速Web页面的访问
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-05T06:14:10+08:00
+doc_updated_at: 2026-09-04
 content_hash: sha256:a004fd3eb9dcec1d39034d8c7b028ce3951ecb644f564b8332c928aa13662e36
 ---
 

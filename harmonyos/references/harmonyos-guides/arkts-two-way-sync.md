@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way
 title: $$语法：系统组件双向同步
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 语法糖 > $$语法：系统组件双向同步
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1bddccc8599fd50fd921baa22012fab75b6bc2a751fa3fa9a7f522480d7a90ed
+scraped_at: 2026-09-05T06:13:57+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:a76b8142b580cd55359aa72d5421b651a9fe483323bdefe18e0e6837fa7d75a9
 ---
 
 $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步。
@@ -15,7 +15,7 @@ $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组�
 ## 使用规则
 
 * 当前$$支持基础类型变量，当该变量使用[@State](arkts-state.md)、[@Link](arkts-link.md)、[@Prop](arkts-prop.md)、[@Provide](arkts-provide-and-consume.md)等状态管理V1装饰器装饰，或者[@Local](arkts-new-local.md)等状态管理V2装饰器装饰时，变量值的变化会触发UI刷新。
-* 当前$$支持的组件：
+* 当前$$支持的组件和通用属性：
 
   | 组件 | 支持的参数/属性 | 起始API版本 |
   | --- | --- | --- |
@@ -75,4 +75,4 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/KudkworJSXq-beSw1tZFMA/zh-cn_image_0000002706673362.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/PFOchP_0Q7ePY_dlBMV71Q/zh-cn_image_0000002712403504.gif)

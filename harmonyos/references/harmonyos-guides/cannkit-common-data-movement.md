@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commo
 title: 普通数据搬运
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 数据搬运 > DataCopy > 普通数据搬运
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:36+08:00
+scraped_at: 2026-09-05T06:15:28+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:8dfa4ae9fee5d0c506837801a8d6f820c7bd60506a6a3cbbb65b98f69e3648a4
+content_hash: sha256:ff17df78d2b0a69016c2a14e3aba4a820d7f3cee3d9456abd3ddb5b2172689a3
 ---
 
 ## 函数功能
@@ -105,7 +105,7 @@ content_hash: sha256:8dfa4ae9fee5d0c506837801a8d6f820c7bd60506a6a3cbbb65b98f69e3
 
 下面的样例呈现了DataCopyParams结构体参数的使用方法，样例中完成了2个连续传输数据块的搬运，每个数据块含有8个datablock，源操作数相邻数据块之间无间隔，目的操作数相邻数据块尾与头之间间隔1个datablock。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/uErzIV1ySa-jcwgLsLXAEw/zh-cn_image_0000002706675404.png)
+![](https://media:401788444116286946)
 
 ## 支持的型号
 

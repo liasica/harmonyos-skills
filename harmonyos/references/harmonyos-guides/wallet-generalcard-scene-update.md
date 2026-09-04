@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-genera
 title: 更新通用凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 通用凭证 > 开发场景 > 更新通用凭证
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
+scraped_at: 2026-09-05T06:15:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5afb4e4e17a77696f5b229cbc87c9ae2483cdcaba711661169825bf7944b9a13
+content_hash: sha256:b4fdbe28d0e96b9944147918cedcbb5277ddefcdb6c2e6f6a89d645ace75cbad
 ---
 
 当通用凭证信息发生变更时，如预约时间变更、状态更新等，更新钱包中的凭证数据。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/6ftO-3YlSwCgVrQrjz5pBQ/zh-cn_image_0000002706675314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/qQEOpgAFRsux_xsMQT21kA/zh-cn_image_0000002712405452.png)
 
 ## 服务端开发
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/webgl-2d-guid
 title: 使用WebGL绘制图形
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > WebGL > 使用WebGL绘制图形
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:21+08:00
+scraped_at: 2026-09-05T06:14:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:359fa58f72dcdcfbda734f1a36b8c3bc097ca140c112b00c44d8962c900a35aa
+content_hash: sha256:92f84061c5fd4067432c214dad04a6c8b5d5861a75c7ba71af71ef67efd1bfff
 ---
 
 ## 场景介绍
@@ -318,4 +318,4 @@ WebGL的全称为Web Graphics Library（网页图形库），主要用于交互�
 
 最终实现效果示意如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Dfg_aMEyQ36LwgH_TDSYwg/zh-cn_image_0000002736433137.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/p6SJkEAFRsWccIc308ICrw/zh-cn_image_0000002742123135.png)

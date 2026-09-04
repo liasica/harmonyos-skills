@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Interface (MapSignalLine)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MapSignalLine)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4abc0b8c22377e33a269f57c94933f1897767bb16669bf15abd4df0431aa54cf
+scraped_at: 2026-09-05T06:21:10+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:4a4be079f1477e52c591b02fc48c4c24829c0772e73eaee2daa143aa0c5b37f9
 ---
 
 ## 导入模块
@@ -16,7 +16,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 ## MapSignalLine
 
-信号路线管理对象，继承[BaseOverlay](map-map-baseoverlay.md)。在调用[addSignalLine](map-map-mapcomponentcontroller.md#addsignalline)方法时会返回该类型的实例。
+信号路线管理对象，继承[BaseOverlay](map-map-baseoverlay.md)。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addSignalLine](map-map-mapcomponentcontroller.md#addsignalline)方法时会返回该类型的实例。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

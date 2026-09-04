@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-faq-12
 title: 如何更换回执服务器证书的问题
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见问题 > 如何更换回执服务器证书的问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:01+08:00
+scraped_at: 2026-09-05T06:15:18+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:fd9172decfc1b3ede5f1199aff4709534f1d19b45a787ad9e3cdcf2485e5cf50
+content_hash: sha256:7c69bddfd11cbeaee499409993eb590becde25db8ad3fbb8e341c4db37ea8402
 ---
 
 * 场景1：新旧证书均为商用CA签发证书或自签证书但CA未改变。
@@ -21,7 +21,7 @@ content_hash: sha256:fd9172decfc1b3ede5f1199aff4709534f1d19b45a787ad9e3cdcf2485e
   2. 选择需要修改回执的应用，点击“修改”应用回执状态。
   3. 在“选择回执”页面，选择需要更换证书的回执，点击“修改”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/DyWzZ4fUSuybOIDR-fGenA/zh-cn_image_0000002736314273.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/emJz0Q2SRPyqrUeZp_CdcA/zh-cn_image_0000002742004359.png)
   4. 在“回执配置”页面，回执服务会检测最新的证书信息，您无需做任何修改。
   5. 点击“提交”，保存回执信息。
   6. 点击“确定”，返回“配置”页面。
@@ -36,7 +36,7 @@ content_hash: sha256:fd9172decfc1b3ede5f1199aff4709534f1d19b45a787ad9e3cdcf2485e
   1. 参考场景2，进入“回执配置”页面。
   2. 在“回执配置”页面，点击“设置备用证书”，填入新证书信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/wInMgTMsRayBrUMf_cyyLg/zh-cn_image_0000002706675230.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/vTuX_pVtSyibtkMrGrVqqw/zh-cn_image_0000002712405370.png)
   3. 点击“提交”，保存回执信息。
   4. 点击“确定”，返回“配置”页面。
 

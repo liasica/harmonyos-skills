@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-light
 title: 概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:23+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:5f1e7aa444c78feab5d0a971145ee6859a66f005dc1effe9c92e27c10a5ad799
+content_hash: sha256:ebaa8129911922d1c67b19b21d7d6f2bb379923401fcf7f847488ba54bb3b1bd
 ---
 
 ## 简介
@@ -24,7 +24,7 @@ content_hash: sha256:5f1e7aa444c78feab5d0a971145ee6859a66f005dc1effe9c92e27c10a5
 | 网络结构搜索训练 | TensorFlow、PyTorch | NASEA | 支持GPU，支持单机单卡和单机多卡。 |
 | 大语言模型低位量化 | PyTorch | Quant\_INT16-4 | 支持GPU，量化蒸馏支持单机多卡。 |
 
-**说明** 
+![](https://media:401788444078296661) 
 
 Quant\_INT8-8：数据8bit量化，权重8bit量化。
 

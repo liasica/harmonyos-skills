@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸式系统材质视效
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 沉浸式系统材质视效
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:18+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:c4312c65a96d6147d9a302dc36d4fb9f144f9fb51156c5327225c1530e715438
+scraped_at: 2026-09-05T06:14:01+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:290cc1c6026b9baf9808c773f91609b32961e24043548036344840faaf92690d
 ---
 
 本文介绍如何按场景定制沉浸式系统材质的视效，包括设置沉浸式系统材质反色、为沉浸式系统材质赋色、设置沉浸式系统材质交互效果以及设置沉浸式系统材质阴影效果。
@@ -18,7 +18,7 @@ content_hash: sha256:c4312c65a96d6147d9a302dc36d4fb9f144f9fb51156c5327225c1530e7
 
 以下示例为自动反色的效果：材质下方的背景在黑白之间滚动变化，为TabBar组件设置colorInvert为true的ULTRA\_THIN材质后，TabBar内的文字和图标颜色随背景自动反色，使文字与图标清晰可读。
 
-```ts
+```typescript
 import { uiMaterial } from '@kit.ArkUI';
 
 @Component
@@ -84,7 +84,7 @@ struct PageMaterialReverse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/4q9zU5VmQMSWDt0dUsjhEw/zh-cn_image_0000002706673774.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fELDUZrzSVC80gH8myGohg/zh-cn_image_0000002712403916.gif)
 
 ## 为沉浸式系统材质赋色
 
@@ -96,7 +96,7 @@ materialColor参数对所有档位的算力设备均生效。在高算力和中�
 
 以下示例为材质赋色的效果：为ULTRA\_THIN材质组件设置半透明的materialColor后，材质在透出背景内容的同时呈现对应的色调。
 
-```ts
+```typescript
 import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
@@ -143,7 +143,7 @@ struct MaterialColorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/gxOjqNRbQhu9_g5yguSyQA/zh-cn_image_0000002736432865.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/t7UG5HDaTduPsmXz238n1Q/zh-cn_image_0000002742122865.jpg)
 
 ## 设置沉浸式系统材质交互效果
 
@@ -154,12 +154,12 @@ struct MaterialColorExample {
 
 以下示例为交互形变与点光源的效果：设置interactive为true并传入lightEffect对象后，按压组件时产生弹性形变，手指触摸时产生流光跟随效果。
 
-```ts
+```typescript
 import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
 @Component
-struct MaterialColorExample {
+struct MaterialInteractiveLightExample {
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End }) {
@@ -201,7 +201,7 @@ struct MaterialColorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/MhJ_Zq3HS0WKCAAP1fe2Qw/zh-cn_image_0000002706833710.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/FJX3hR7-RQmQy6gJvJTuuQ/zh-cn_image_0000002712243952.gif)
 
 ## 设置沉浸式系统材质阴影效果
 
@@ -209,7 +209,7 @@ struct MaterialColorExample {
 
 将applyShadow置为false后设置自定义shadow（如粉色阴影）的效果，示例如下：
 
-```ts
+```typescript
 import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
@@ -257,4 +257,4 @@ struct CustomShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/lJR8QWyzRoiSmHZwGMFgQA/zh-cn_image_0000002736312819.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/CV7arFS1TeSFsPDqJ2mBhg/zh-cn_image_0000002742002905.jpg)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendabl
 title: Sendable对象简介
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable对象简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:13+08:00
+scraped_at: 2026-09-05T06:13:52+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f0f9eaf580fe0e074dd06d06aa3b884be6020639903761d7361a12f3ce676218
+content_hash: sha256:5474b4ef87bf871ecb58ebab875a72890272943fb2017cf4d5145ffcee4e39b9
 ---
 
 在传统JS引擎中，要优化对象的并发通信开销，唯一的方法是将实现下沉到Native侧，通过[Transferable对象](transferabled-object.md)的转移或共享来降低开销。然而，开发者仍有大量对象并发通信的需求，这个问题在业界JS引擎中尚未解决。
@@ -14,7 +14,7 @@ ArkTS提供了Sendable对象类型，它是一种可在ArkTS并发实例间安�
 
 Sendable对象可共享，跨线程前后指向同一个JS对象。如果Sendable对象通过调用Napi接口与一个Native对象绑定，当共享传递Sendable对象时，其绑定的Native对象也会一并共享传递。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/vTw7NKXSSz2X3lPOG-VNRg/zh-cn_image_0000002736432233.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/NPHieUy6Ry2zFZUdEgWyPw/zh-cn_image_0000002712403284.png)
 
 与其它ArkTS数据对象不同，符合Sendable协议的数据对象在运行时应为类型固定的对象。
 
@@ -160,7 +160,7 @@ struct enumusage {
 
 **SharedHeap与LocalHeap关系图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/fV5n5FhPRLCucRzjs4Rl4A/zh-cn_image_0000002706833078.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/2dDMSKyHRlaqbCEQm9I2JA/zh-cn_image_0000002742122235.png)
 
 各个并发实例的LocalHeap是隔离的。SharedHeap是进程级别的堆，可以被所有并发实例共享，但SharedHeap不能引用LocalHeap中的对象。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: list
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 容器组件 > list
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:14+08:00
+scraped_at: 2026-09-05T06:17:39+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c2500c7d26cb2a088571c4ac5e18d0b2e87683d1a2fd34f25d55f565ce39a264
+content_hash: sha256:5bf1a80c6651ef6afba8c1d86b8bb511eeff25087fa396e37203bbff31d2776a
 ---
 
 列表包含一系列相同宽度的列表项。适合连续、多行呈现同类数据，例如图片和文本。
@@ -140,4 +140,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/maeN_s3ZSuKY72xMsjNhiQ/zh-cn_image_0000002706836596.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ubmZhGBjRaK0XgRpfY4sRQ/zh-cn_image_0000002712246906.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-devel
 title: 开发流程
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子部署 > 算子入图（GE图）开发 > 开发流程
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:915d62b9620d8df677b2131556d6a71b0fa7c868e87b11b23596515d903bf0d5
+content_hash: sha256:a60e826f55e9d050b4dca79c5f14e767145df99763285e3335c45c4cf54dbe59
 ---
 
 该开发流程以[工程化算子开发](cannkit-overview-of-engineering-operator.md)为基础，除了需要提供[算子实现](cannkit-operator-prototype-definition.md)中的算子实现文件外，还需要额外交付算子入图的代码文件。本节仅提供算子入图代码文件的开发指导。
@@ -16,7 +16,7 @@ content_hash: sha256:915d62b9620d8df677b2131556d6a71b0fa7c868e87b11b23596515d903
 
 **图1** shape与datatype推导示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/oeVWBWxBTXq-Zu2gQ6SvwA/zh-cn_image_0000002736314421.png)
+![](https://media:401788444095719817)
 
 除了tiling实现外，算子入图时需要额外提供的实现代码有以下几种：
 
@@ -163,7 +163,7 @@ if (shape_tensor->GetDataType() == ge::DT_INT32) {
 
 [InferShapeContext](cannkit-infershapecontext-getinputshape.md) public继承自[ExtendedKernelContext](cannkit-getinputdesc.md)，因此ExtendedKernelContext中提供的方法如获取算子type、name、属性等接口均可以在[InferShapeContext](cannkit-infershapecontext-getinputshape.md)实例中调用。
 
-**说明** 
+![](https://media:401788444095749818) 
 
 * InferShape推导函数和使用Follow接口去Follow shape不能混用，即不支持部分输出采用InferShape推导、部分输出采用Follow推导的情况。若开发者同时使用了InferShape函数和Follow接口，以开发者的InferShape函数为准，需要保证在InferShape函数中能够推导出所有的输出shape。
 * 为了效率考虑，调用InferShape函数时，框架不会为输出shape做初始化，因此，在InferShape函数中，可以认为输出是**未初始化**的状态。如果在InferShape时，希望通过Append方式操作输出shape，需要先将输出shape的DimNum清零，以防止出现未定义行为。
@@ -266,7 +266,7 @@ if (shape_tensor->GetDataType() == ge::DT_INT32) {
 }
 ```
 
-**说明** 
+![](https://media:401788444095774819) 
 
 * 只有声明过数据依赖的输入，才可以在InferShape时调用GetInputTensor等获取tensor的接口获取其对应的tensor数据。若对一个未声明数据依赖的输入调用GetInputTensor等获取tensor的接口，只能在tensor中获取到正确的shape、format、datatype信息，无法获取到真实的tensor数据地址（获取到的地址为nullptr）。
 * 从tensor中获取tensor\_data时(GetData<int32\_t>或GetData<int64\_t>)，使用者需要保证获取的数据类型是正确的，否则行为是未定义的。

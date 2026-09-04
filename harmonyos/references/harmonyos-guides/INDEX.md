@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 5719 篇文档。
+共 5722 篇文档。
 
 - [24h功耗器件分解统计事件](24-hour-battery-usage-event.md)
 - [aa工具](aa-tool.md)
@@ -535,10 +535,10 @@
 - [mutableBuilder：实现全局@Builder动态更新](arkts-mutablebuilder.md)
 - [MVVM模式（V2）](arkts-mvvm-v2.md)
 - [MVVM模式（V1）](arkts-mvvm.md)
-- [Navigation动画常见问题](arkts-navigation-animation-faq.md)
 - [Navigation转场动画](arkts-navigation-animation.md)
 - [Navigation基础架构介绍](arkts-navigation-architecture.md)
 - [Navigation跨包路由](arkts-navigation-cross-package.md)
+- [Navigation常见问题](arkts-navigation-faq.md)
 - [组件导航和页面路由概述](arkts-navigation-introduction.md)
 - [Navigation页面路由](arkts-navigation-jump.md)
 - [Navigation子页面](arkts-navigation-navdestination.md)
@@ -2357,6 +2357,7 @@
 - [使用HiAppEvent订阅事件](event-subscription.md)
 - [应用基础功能和兼容性体验建议](experience-suggestions-compatibility.md)
 - [体验建议概述](experience-suggestions-overview.md)
+- [应用系统资源管理体验建议](experience-suggestions-resource-management.md)
 - [应用稳定性体验建议](experience-suggestions-stability.md)
 - [应用UX体验建议](experience-suggestions-ux.md)
 - [显式Want与隐式Want匹配规则](explicit-implicit-want-mappings.md)
@@ -3786,6 +3787,7 @@
 - [HSP](in-app-hsp.md)
 - [来电场景](incoming-calls.md)
 - [使用TaskPool执行独立的耗时任务](independent-time-consuming-task.md)
+- [Input Kit术语](input-kit-glossary.md)
 - [Input Kit（多模输入服务）](input-kit.md)
 - [输入法子类型开发指南](input-method-subtype-guide.md)
 - [Input Kit简介](input-overview.md)
@@ -4296,7 +4298,7 @@
 - [网络场景识别](networkboost-scenecallback.md)
 - [弱网感知判决 (C/C++)](networkboost-weaksignaljudge-c.md)
 - [弱网感知判决](networkboost-weaksignaljudge.md)
-- [Neural Network Runtime Kit术语表](neural-network-runtime-glossary.md)
+- [Neural Network Runtime Kit术语](neural-network-runtime-glossary.md)
 - [Neural Network Runtime对接AI推理框架开发指导](neural-network-runtime-guidelines.md)
 - [Neural Network Runtime Kit简介](neural-network-runtime-kit-introduction.md)
 - [Neural Network Runtime Kit（Neural Network运行时服务）](neural-network-runtime-kit.md)
@@ -5016,6 +5018,7 @@
 - [Desktop Extension Kit（桌面拓展服务）](status-bar-extension-kit-guide.md)
 - [应用接入状态栏](statusbar-extension-guide.md)
 - [Desktop Extension Kit简介](statusbar-extension-introduction.md)
+- [存储空间使用与文件生命周期管理](storage-usage-file-lifecycle.md)
 - [附录](store-attribution-appendix.md)
 - [注册企业账号](store-attribution-config-agc.md)
 - [登记归因来源及转化](store-attribution-developmentguide.md)

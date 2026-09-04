@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 状态管理V1和V2混用指导（API version 19及之后）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1和V2混用场景 > 状态管理V1和V2混用指导（API version 19及之后）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:16+08:00
+scraped_at: 2026-09-05T06:13:58+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1ddcc0525e16ad8137511e7eda39957f747e63b89aa0846eadd0f432ca32f125
+content_hash: sha256:b94889d148b30434c6d4b10fc072571fa7be276e8cd7b268a2c2a3b78d4560c0
 ---
 
 ## 概述
@@ -108,7 +108,7 @@ content_hash: sha256:1ddcc0525e16ad8137511e7eda39957f747e63b89aa0846eadd0f432ca3
 
 开发者在使用这两个接口混用V1V2时，可遵循下图逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/sE4wSeT-T4KFbUytc4tccg/zh-cn_image_0000002706673382.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/xjySj-Z4Ta2zD8Nd1A0OwA/zh-cn_image_0000002712403524.png)
 
 ## V1中使用V2的自定义组件
 
@@ -161,7 +161,7 @@ struct CompV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/pZw3sZR7TJSFG-M5qOpreQ/zh-cn_image_0000002736432473.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Z0vEI4sZSjiHe58aM0Ub3A/zh-cn_image_0000002742122475.gif)
 
 **@Observed+@Track装饰的class**
 
@@ -231,7 +231,7 @@ struct CompV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/hzWX1B3TQ_qw41Q6Z26ABg/zh-cn_image_0000002706833320.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Yp2TXprDT7iGXN5KwqTe4g/zh-cn_image_0000002712243562.gif)
 
 ### 传递内置类型（V1->V2）
 
@@ -282,7 +282,7 @@ struct ArrayCompV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/RYe_Xi-6SduUs2rVr_0g1Q/zh-cn_image_0000002736312429.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/vAkG5fP0QSu5WVlSA56GLw/zh-cn_image_0000002742002515.gif)
 
 ### 传递二维数组（V1->V2）
 
@@ -362,7 +362,7 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/nLyxssbLRmGmXNpDUe-QDQ/zh-cn_image_0000002706673384.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/CER7oiYTSyi6tVqJ0QxLCQ/zh-cn_image_0000002712403526.gif)
 
 ### 传递嵌套类型（V1->V2）
 
@@ -504,7 +504,7 @@ struct NestedClassV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Tv2cdrxITmm6vskLJ2wApg/zh-cn_image_0000002736432475.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/iWP5yA4RSweYHSTrNRBcoA/zh-cn_image_0000002742122477.gif)
 
 以上例子刷新行为可总结为：
 
@@ -567,7 +567,7 @@ struct CompV1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/E3yhgU--S5ix3cO0x2lRaQ/zh-cn_image_0000002706833322.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/AQNkBgy-QUOnFpiHMUqcPg/zh-cn_image_0000002712243564.gif)
 
 **@Observed+@Track装饰的class**
 
@@ -632,7 +632,7 @@ struct CompV1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/WBBf7JvNThGFEKc8YBaoLA/zh-cn_image_0000002736312431.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/9b4NXMQRRkq97afU2g8RcA/zh-cn_image_0000002742002517.gif)
 
 ### 传递内置类型（V2->V1）
 
@@ -681,7 +681,7 @@ struct ArrayCompV1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/XG_5BrU9S9yDX8ru3Kphag/zh-cn_image_0000002706673386.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ORtKjQ8URDmgAV6UVA5V4g/zh-cn_image_0000002712403528.gif)
 
 ### 传递二维数组（V2->V1）
 
@@ -762,7 +762,7 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/_8ixYy1uRyqgffP_T9LC5g/zh-cn_image_0000002736432477.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/D9XweUWWSyah8ophMUAYLg/zh-cn_image_0000002742122479.gif)
 
 ### 传递嵌套类型（V2->V1）
 
@@ -899,4 +899,4 @@ struct NestedClassV1ObjectLinkArrayItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/6QqhW30tRBKxlsl0UmU96g/zh-cn_image_0000002706833324.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/xp81kYYSRXKdo13egSM4DA/zh-cn_image_0000002712243566.gif)

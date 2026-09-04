@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: Web组件长截图
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > Web组件长截图
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:57c2423d6088eed74cb7c172fbe0830479d2cc7474148402adee3943b44b1983
+scraped_at: 2026-09-05T06:14:10+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:c9fff47ade6fc3a021b76192a678e1044b1c86edd3d450b0c2c262ca0e99c733
 ---
 
 ## 场景描述
@@ -16,7 +16,7 @@ Web组件的长截图功能可以对网页内容进行截图，旨在为用户�
 
 点击“一键截图”按钮即可完成整个网页的长截图，并可将截图保存至相册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/6E70y2y2TrCg2vFHgJTldw/zh-cn_image_0000002706834088.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/EFGY3xOoTcyRWZSVPpmZ-g/zh-cn_image_0000002712244328.gif)
 
 ## 功能实现
 
@@ -24,7 +24,7 @@ Web组件可以通过滚动截图方案以及使用WebView提供的[webPageSnaps
 
 **使用滚动截图的方式进行网页长截图**
 
-Web组件滚动长截图和[滚动组件长截图](../best-practices/bpta-long-snapshot-practice.md#section1398314519326)开发流程大体一样，主要是控制组件的滚动的方法不同。List组件使用的是[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)，而Web组件使用的是[webViewController](../harmonyos-references/arkts-basic-components-web-t.md#webviewcontroller9)。
+Web组件滚动长截图和[滚动组件长截图](arkts-long-screenshot.md#滚动组件长截图)开发流程大体一样，主要是控制组件的滚动的方法不同。List组件使用的是[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)，而Web组件使用的是[webViewController](../harmonyos-references/arkts-basic-components-web-t.md#webviewcontroller9)。
 
 在滚动截图过程中，webViewController负责控制Web组件的滚动，通过调用[webViewController.scrollBy](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#scrollby)方法来实现。为了判断是否已滚动到底部，使用this.webViewController.getPageHeight() 方法获取网页内容的总高度，详情可参考[获取网页内容高度](web-getpage-height.md)，并将当前偏移量this.curYOffset加上组件自身的高度与网页总高度进行比较。如果两者的和小于网页总高度，则表示尚未触底。
 

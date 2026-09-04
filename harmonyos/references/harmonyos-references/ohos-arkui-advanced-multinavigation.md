@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: MultiNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > MultiNavigation
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:01+08:00
+scraped_at: 2026-09-05T06:17:13+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:486b10c4923034410e322ab61f449d8510f75cac0cc32f67682b75053670d3bf
+content_hash: sha256:dd86e561ea34382f543af6071f46467bf0a02ba20bc545ea45d446fdfb8723c4
 ---
 
 MultiNavigation用于在大尺寸设备上分栏显示、进行路由跳转。
@@ -1599,12 +1599,12 @@ export struct PagePlaceholder {
 
 分栏效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/H9eXnAkXSqGuCOszPKQAfg/zh-cn_image_0000002736434979.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/U4pZf9SbQgOMhJB-gCvu2g/zh-cn_image_0000002742124985.gif)
 
 主页跳转详情页效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Le0Dm7-7SuekudCdRVT9tQ/zh-cn_image_0000002706835832.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/AZaYJyUVSduUbqjflihn5Q/zh-cn_image_0000002712246078.gif)
 
 全屏类型页面效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/jKihEQ7QQLm2DKJX4TI5RQ/zh-cn_image_0000002736314937.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ugl4cfOdSr-f6OgwSnTPZQ/zh-cn_image_0000002742005027.gif)

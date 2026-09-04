@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: namespace (ASON)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.utils (ArkTS工具库) > namespace (ASON)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4a3d58b4e5d5f97d58d59c4e28810bf729cba9aae2d07985c53266d8970a30f6
+scraped_at: 2026-09-05T06:16:44+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:028ccde37a4529642e93aa7548421c291891e961132970781f3b49cca3f8f8bd
 ---
 
 为支持将JSON字符串解析为共享数据，即[Sendable支持的数据类型](../harmonyos-guides/arkts-sendable.md#sendable支持的数据类型)，ArkTS语言基础库新增了ASON工具。ASON工具支持解析JSON字符串并生成共享数据，用于跨并发实例引用传递，同时也支持将共享数据转换为JSON字符串。
@@ -34,7 +34,7 @@ ISendable是所有Sendable类型（除null和undefined）的父类型。自身�
 
 | 类型 | 说明 |
 | --- | --- |
-| [lang.ISendable](js-apis-arkts-lang.md#langisendable) | 所有Sendable类型的父类型。 |
+| [lang.ISendable](js-apis-arkts-lang.md#isendable) | 所有Sendable类型的父类型。 |
 
 ## Transformer
 

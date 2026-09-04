@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-scala
 title: Mins
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 标量双目指令 > Mins
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:36+08:00
+scraped_at: 2026-09-05T06:15:27+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:2548e8fefba8a2480172330f23981c441fa9854c536ecdbb26f0e3ad5fa4ff3c
+content_hash: sha256:b90c394dc3257fa52bb2b517ea92df4bf066a60db543588e2b4b24cd60fb3d43
 ---
 
 ## 功能说明
 
 源操作数矢量内每个元素与标量相比，如果大于标量，则取标量值；小于标量，则取源操作数；等于标量，则取源操作数值或标量值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/IlAaCGQUR525TzwY5gvGYA/zh-cn_image_0000002706675394.png)
+![](https://media:401788444118436972)
 
 ## 函数原型
 

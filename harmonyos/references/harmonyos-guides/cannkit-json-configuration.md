@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-json-
 title: 固定输入/输出顺序的算子json配置
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 数据准备和配置说明 > 固定输入/输出顺序的算子json配置
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:ae8d38821e6271b26b851a916b9c4dac37c73161388d46f5acab3ccf715613d9
+content_hash: sha256:25f51f91c884040deb6abcd6b9b87484813bd0cc7e278ce51305e1fc5dcb43b1
 ---
 
 ## json配置说明
@@ -149,7 +149,7 @@ content_hash: sha256:ae8d38821e6271b26b851a916b9c4dac37c73161388d46f5acab3ccf715
   ```
 * **场景3：支持原地算子格式的输入。**
 
-  **说明** 
+  ![](https://media:401788444096587831) 
 
   暂不支持该方式设置输入。
 

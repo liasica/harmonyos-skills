@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 监听文本缩放因子变化
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 监听文本缩放因子变化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:31+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a4e8354f8b0cf8e009cc2615d4692adedafba9692d6eb9819a8c5c643f0747c3
+scraped_at: 2026-09-05T06:15:18+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:6e5c3617345f25b87d381a26cb2e3623a8a086fad275a23082f17cd8643b226a
 ---
 
 在[智慧多窗](multi-window-intro.md)等场景时，文本缩放因子[Display.scaledDensity](../harmonyos-references/js-apis-display.md#display)属性会发生变化。如果文本缩放因子的值与当前值不符，开发者需要更新[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的scaledDensity属性，触发ReaderComponentController组件控制器的setPageConfig接口重新进行页面排版。
@@ -30,7 +30,7 @@ content_hash: sha256:a4e8354f8b0cf8e009cc2615d4692adedafba9692d6eb9819a8c5c643f0
    import { display } from '@kit.ArkUI';
    import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-2. 通过[display.on](../harmonyos-references/js-apis-display.md#displayonaddremovechange)接口监听文本缩放因子的变化。
+2. 通过[display.on](../harmonyos-references/js-apis-display.md#displayonadd--remove--change)接口监听文本缩放因子的变化。
 
    在监听接口中比对系统值与当前值是否一致，如果不一致则通过应用级变量的状态管理[AppStorage](arkts-appstorage.md)将isDensityChange值设为true，并退出阅读页。
 

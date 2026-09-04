@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opreg
 title: 构造函数和析构函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > 构造函数和析构函数
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d4c448056907b6137102fae9331e6afc48f27d98e50c4f53a225887f8fd1c733
+content_hash: sha256:2dd36e198e47236acfaf9921be0b92dd28b9a7e4c4a3e0b0f7f3376d007be8ef
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ OpRegistrationData构造函数和析构函数。
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444104128885) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

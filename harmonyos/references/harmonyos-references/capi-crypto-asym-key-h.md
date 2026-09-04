@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: crypto_asym_key.h
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 头文件 > crypto_asym_key.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:26475ce3a8f45b1fbfb82c2740979da7695071bb04274775e44432fdf851fe6a
+scraped_at: 2026-09-05T06:18:34+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:e1f7bc0ad7ba9c6d6018bca3ff1ecaf3bd3a8353356e510dbe5d8c6c65b0d52c
 ---
 
 ## 概述
@@ -409,7 +409,7 @@ OH_Crypto_ErrCode OH_CryptoPubKey_Encode(OH_CryptoPubKey *key, Crypto_EncodingTy
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Crypto\_ErrCode](capi-crypto-common-h.md#oh_crypto_errcode) | CRYPTO\_SUCCESS：操作成功。  CRYPTO\_INVALID\_PARAMS：key、out或encodingStandard为NULL，type不是 有效的Crypto\_EncodingType，或编码标准与密钥类型不兼容。  CRYPTO\_NOT\_SUPPORTED：不支持的编码格式。  CRYPTO\_MEMORY\_ERROR：内存分配失败。  CRYPTO\_OPERTION\_ERROR：编码失败。 |
+| [OH\_Crypto\_ErrCode](capi-crypto-common-h.md#oh_crypto_errcode) | CRYPTO\_SUCCESS：操作成功。  CRYPTO\_INVALID\_PARAMS：key、out或encodingStandard为NULL，type不是有效的Crypto\_EncodingType，或编码标准与密钥类型不兼容。  CRYPTO\_NOT\_SUPPORTED：不支持的编码格式。  CRYPTO\_MEMORY\_ERROR：内存分配失败。  CRYPTO\_OPERTION\_ERROR：编码失败。 |
 
 ### OH\_CryptoPubKey\_GetParam()
 
@@ -897,7 +897,7 @@ OH_Crypto_ErrCode OH_CryptoEcPoint_GetCoordinate(OH_CryptoEcPoint *point, Crypto
 
 获取椭圆曲线点的x和y坐标。
 
-注意：使用完成后必须通过[OH\_Crypto\_FreeDataBlob](capi-crypto-common-h.md#oh_crypto_freedatablob)释放x和y内存
+注意：使用完成后必须通过[OH\_Crypto\_FreeDataBlob](capi-crypto-common-h.md#oh_crypto_freedatablob)释放x和y内存。
 
 **起始版本：** 20
 

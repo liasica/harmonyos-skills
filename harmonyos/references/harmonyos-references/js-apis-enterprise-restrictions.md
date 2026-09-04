@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.restrictions（限制类策略）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.restrictions（限制类策略）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:11+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:e81be54a3782ce93cc588c1278faf731f62b10cf53b3987a89e83b717f345793
+scraped_at: 2026-09-05T06:19:31+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:88ebe672055f04f4d2183419c3001e7ab0c234490fb393672ba01137b8460e94
 ---
 
 本模块提供设置通用限制类策略能力。可以全局禁用和解除禁用蓝牙、HDC、USB、Wi-Fi、蜂窝数据、相机、麦克风等特性。
@@ -96,7 +96,7 @@ setDisallowedPolicy(admin: Want, feature: string, disallow: boolean): void
 | tethering14+ | 网络共享能力（设备已有网络共享给其他设备的能力，即共享热点能力）。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS 或 ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS |
 | inactiveUserFreeze14+ | 非活跃用户运行能力。禁用后，非UIAbility进程一般不会被冻结，UIAbility申请短时任务、长时任务、延迟任务或能效资源等后台运行任务也不会被冻结。当前仅支持PC/2in1设备使用。企业空间场景下，系统切换到企业空间用户，个人空间用户属于非活跃用户。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
 | camera14+ | 设备相机能力。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS 或 ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS |
-| mtpClient18+ | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccountdeprecated)设置了某用户禁用MTP客户端写入能力时，再通过本接口禁用MTP客户端能力，会报策略冲突。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
+| mtpClient18+ | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。在配置此特性之前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccountdeprecated)设置了某用户禁用MTP客户端写入能力时，再通过本接口禁用MTP客户端能力，会报策略冲突。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
 | mtpServer18+ | MTP服务端能力，当前仅支持手机、平板设备使用。 | API版本26.0.0之前：ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS，API版本26.0.0开始：ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS 或 ohos.permission.PERSONAL\_MANAGE\_RESTRICTIONS |
 | sambaClient20+ | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
 | sambaServer20+ | samba服务端能力，当前仅支持PC/2in1设备使用。 | ohos.permission.ENTERPRISE\_MANAGE\_RESTRICTIONS |
@@ -775,7 +775,7 @@ getUserRestrictedForAccount(admin: Want | null, settingsItem: string, accountId:
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | admin | [Want](js-apis-app-ability-want.md) | null | 是 | 企业设备管理扩展组件。Want中必须包含企业设备管理扩展能力的abilityName和所在应用的bundleName。 |
-| settingsItem | string | 是 | 指定设置项。  - modifyWallpaper：修改壁纸，包含锁屏壁纸和桌面壁纸。在配置此特性之前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。 |
+| settingsItem | string | 是 | 指定设置项。  - modifyWallpaper：修改壁纸，包含锁屏壁纸和桌面壁纸。 |
 | accountId | number | 是 | 用户ID，取值范围：大于等于0。  accountId可以通过[getOsAccountLocalId](js-apis-osaccount.md#getosaccountlocalid9-1)等接口来获取。 |
 
 **返回值：**
@@ -1305,7 +1305,7 @@ try {
 | TETHERING | 17 | 网络共享能力（设备已有网络共享给其他设备的能力，即共享热点能力）。  **起始版本：** 26.0.0 |
 | INACTIVE\_USER\_FREEZE | 18 | 非活跃用户运行能力。禁用后，非UIAbility进程一般不会被冻结，UIAbility申请短时任务、长时任务、延迟任务或能效资源等后台运行任务也不会被冻结。当前仅支持PC/2in1设备使用。企业空间场景下，系统切换到企业空间用户，个人空间用户属于非活跃用户。  **起始版本：** 26.0.0 |
 | CAMERA | 19 | 设备相机能力。  **起始版本：** 26.0.0 |
-| MTP\_CLIENT | 20 | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)设置了某用户禁用MTP客户端写入能力时，再禁用MTP客户端能力，会报策略冲突。  **起始版本：** 26.0.0 |
+| MTP\_CLIENT | 20 | MTP客户端能力（包含读取和写入），当前仅支持PC/2in1设备使用。在配置此特性之前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。MTP（Media Transfer Protocol，媒体传输协议），该协议允许用户在移动设备上线性访问媒体文件。当已经通过[setDisallowedPolicyForAccount](js-apis-enterprise-restrictions.md#restrictionssetdisallowedpolicyforaccount)设置了某用户禁用MTP客户端写入能力时，再禁用MTP客户端能力，会报策略冲突。  **起始版本：** 26.0.0 |
 | MTP\_SERVER | 21 | MTP服务端能力，当前仅支持手机、平板设备使用。  **起始版本：** 26.0.0 |
 | SAMBA\_CLIENT | 22 | samba客户端能力，当前仅支持PC/2in1设备使用。samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Message Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。  **起始版本：** 26.0.0 |
 | SAMBA\_SERVER | 23 | samba服务端能力，当前仅支持PC/2in1设备使用。  **起始版本：** 26.0.0 |
@@ -1391,4 +1391,4 @@ try {
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| MODIFY\_WALLPAPER | 0 | 修改壁纸，包含锁屏壁纸和桌面壁纸。 |
+| MODIFY\_WALLPAPER | 0 | 修改壁纸，包含锁屏壁纸和桌面壁纸。在配置此特性之前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。 |

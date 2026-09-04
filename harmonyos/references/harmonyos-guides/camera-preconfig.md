@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-precon
 title: 使用相机预配置(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 使用相机预配置(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:45+08:00
+scraped_at: 2026-09-05T06:14:49+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:7e7ba5b06b41ad328f4b081e5ba827cf8eb11ee4ab81079fa6fc47490ea36d07
+content_hash: sha256:720945efe1ea175386708d507932e45ba8ad5a82c96a3af3f80b0ef59332454e
 ---
 
 相机预配置（Preconfig），对常用的场景和分辨率进行了预配置集成，可简化开发相机应用流程，提高应用的开发效率。
@@ -16,7 +16,7 @@ content_hash: sha256:7e7ba5b06b41ad328f4b081e5ba827cf8eb11ee4ab81079fa6fc47490ea
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。以拍照（PhotoSession）为例，相机预配置（Preconfig）开发流程与[通用流程](camera-shooting-case.md)开发，存在以下差异：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/C2z_SiWpSHSKWsxkxMCZwg/zh-cn_image_0000002706674620.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/xUtftuiIR9yhYv3x8u03Aw/zh-cn_image_0000002712404758.png)
 
 **其他相关能力：**
 

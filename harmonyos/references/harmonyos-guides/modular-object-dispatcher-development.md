@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/modular-objec
 title: 使用ModularObjectDispatcher实现动态接口调用 (C/C++)
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 基于ModularObjectExtensionAbility的模块化对象开发指导 (C/C++) > 使用ModularObjectDispatcher实现动态接口调用 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:11+08:00
+scraped_at: 2026-09-05T06:13:48+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9c48dad9e5fc9a6fdbd9c9b4427eeab7d59eb36500d0645d5ffbb1244865c950
+content_hash: sha256:6afe28923c55feed83afd4f8a14b24640bba0bbf504bdf09ae4fbb5dfb3bbe1a
 ---
 
 在跨进程调用场景中，客户端通常需要在编译期依赖服务端生成的Proxy头文件才能发起接口调用。当接口数量多或服务端频繁变更时，客户端每次都要重新同步头文件并编译，维护成本较高；同时静态绑定要求调用目标在编译期完全确定，难以适应运行时才能决定调用目标的场景。
@@ -24,7 +24,7 @@ content_hash: sha256:9c48dad9e5fc9a6fdbd9c9b4427eeab7d59eb36500d0645d5ffbb124486
 
 ## 运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/dBsCGJ2qRCmyxHF5l3F47Q/zh-cn_image_0000002706833052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/i4KrFdArT-WQLUp3_1oGNg/zh-cn_image_0000002742122209.png)
 
 ModularObjectDispatcher的调用流程分为以下几个阶段：
 

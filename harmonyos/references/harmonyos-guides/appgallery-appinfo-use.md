@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-ap
 title: 实现应用图标动态切换
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 图标管理服务 > 实现应用图标动态切换
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:53+08:00
+scraped_at: 2026-09-05T06:15:03+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:45d6f2b973c537a29f151f50967a0d4a68c6ea55ef2a6d8530547ae4213fe8a4
+content_hash: sha256:299fe0eddb479505ae0b3fcbc0b0668616c578bbfb058fb159593e96605aa19f
 ---
 
 AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信息、切换动态图标、恢复默认图标功能。
@@ -28,7 +28,7 @@ AppGallery Kit为使用动态图标的应用客户端提供查询动态图标信
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/YHlnSqVSSkGF0Y0KUP2OWQ/zh-cn_image_0000002736433959.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/uCKSiaWQRFSigAc56CdG0A/zh-cn_image_0000002742123961.png)
 
 ### 查询动态图标信息
 

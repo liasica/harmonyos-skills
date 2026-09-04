@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-platf
 title: 简介
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > Host API > 平台信息获取PlatformAscendC > 简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:08+08:00
+scraped_at: 2026-09-05T06:15:30+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3780738cb12db619eacbc6c23c41d424a2b546b1b629c4212a3fb2585ddc2111
+content_hash: sha256:762def88741fbcb227617cc974117810cf9dc199002fd07b02850d4623a6f389
 ---
 
 ## 函数功能
 
 在实现Host侧的Tiling函数时，可能需要获取一些硬件平台的信息，来支撑Tiling的计算，比如获取硬件平台的核数等信息。PlatformAscendC类提供获取这些平台信息的功能。
 
-**说明** 
+![](https://media:401788444101532868) 
 
 使用该功能需要包含"tiling/platform/platform\_ascendc.h"头文件。
 

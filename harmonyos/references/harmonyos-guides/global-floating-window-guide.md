@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/global-floati
 title: 全局悬浮窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 全局悬浮窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:06f747818489d871ce264dd3f1455bf6e40fd0d2c9a419c0f7f4b539867fb42f
+scraped_at: 2026-09-05T06:14:08+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:48e166bea5c306c28e1c80e41d6144136de2b6dfa68ddf65e1944707a78f6d8c
 ---
 
 ## 场景介绍
@@ -58,7 +58,7 @@ content_hash: sha256:06f747818489d871ce264dd3f1455bf6e40fd0d2c9a419c0f7f4b539867
          };
          window.createWindow(config, (err, data) => {
            if (err?.code) {
-             console.error('Failed to create the floatWindow. Cause: ' + JSON.stringify(err));
+             console.error(`Failed to create the floatWindow. Cause code: ${err.code}, message: ${err.message}`);
              return;
            }
            floatWindowClass = data;
@@ -74,7 +74,7 @@ content_hash: sha256:06f747818489d871ce264dd3f1455bf6e40fd0d2c9a419c0f7f4b539867
    // 2.全局悬浮窗窗口创建成功后，设置全局悬浮窗的位置、大小及相关属性等。
    floatWindowClass.moveWindowTo(100, 100, (err) => {
      if (err?.code) {
-       console.error('Failed to move the window. Cause:' + JSON.stringify(err));
+       console.error(`Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
        return;
      }
      console.info('Succeeded in moving the window.');
@@ -84,7 +84,7 @@ content_hash: sha256:06f747818489d871ce264dd3f1455bf6e40fd0d2c9a419c0f7f4b539867
      }
      floatWindowClass.resize(600, 900, (err) => {
        if (err?.code) {
-         console.error('Failed to change the window size. Cause:' + JSON.stringify(err));
+         console.error(`Failed to change the window size. Cause code: ${err.code}, message: ${err.message}`);
          return;
        }
        console.info('Succeeded in changing the window size.');
@@ -99,14 +99,14 @@ content_hash: sha256:06f747818489d871ce264dd3f1455bf6e40fd0d2c9a419c0f7f4b539867
    // 3.为全局悬浮窗加载对应的目标页面。
    floatWindowClass.setUIContent('pages/FloatWindow', (err) => {
      if (err?.code) {
-       console.error('Failed to load the content. Cause:' + JSON.stringify(err));
+       console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
        return;
      }
      console.info('Succeeded in loading the content.');
      // 显示全局悬浮窗。
      (floatWindowClass as window.Window).showWindow((err) => {
        if (err?.code) {
-         console.error('Failed to show the window. Cause: ' + JSON.stringify(err));
+         console.error(`Failed to show the window. Cause code: ${err.code}, message: ${err.message}`);
          return;
        }
        console.info('Succeeded in showing the window.');
@@ -118,10 +118,10 @@ content_hash: sha256:06f747818489d871ce264dd3f1455bf6e40fd0d2c9a419c0f7f4b539867
    当不再需要全局悬浮窗时，可根据具体实现逻辑，使用[destroyWindow()](../harmonyos-references/arkts-apis-window-window.md#destroywindow9-1)接口销毁全局悬浮窗。
 
    ```typescript
-   // 4.销毁子窗口。当不再需要子窗口时，可根据具体实现逻辑，使用destroy对其进行销毁。
+   // 4.销毁全局悬浮窗。当不再需要全局悬浮窗时，可根据具体实现逻辑，使用destroy对其进行销毁。
    floatWindowClass.destroyWindow((err) => {
      if (err?.code) {
-       console.error('Failed to destroy the window. Cause: ' + JSON.stringify(err));
+       console.error(`Failed to destroy the window. Cause code: ${err.code}, message: ${err.message}`);
        return;
      }
      console.info('Succeeded in destroying the window.');

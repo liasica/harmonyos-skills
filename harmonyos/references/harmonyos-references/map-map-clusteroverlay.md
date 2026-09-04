@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-c
 title: Interface (ClusterOverlay)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (ClusterOverlay)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d5f267e1e9fd59291b025c5ac643d0ae89614143721c0bf5395cd628ac6a0866
+scraped_at: 2026-09-05T06:21:10+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:7f07255c43bf4edbeafb63f915dcf874d38803755e7762762a54b55d828f644a
 ---
 
 ## 导入模块
@@ -16,7 +16,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 ## ClusterOverlay
 
-聚合图层类。ClusterOverlay用于在地图上展示聚合后的标记点，以优化大量标记点显示时的性能和用户体验。它将地理位置相近的多个标记点合并为一个聚合点，并支持点击聚合点展开查看具体标记点。适用于展示大量POI数据、避免地图过于拥挤的情况。
+聚合图层类。ClusterOverlay用于在地图上展示聚合后的标记点，以优化大量标记点显示时的性能和用户体验。它将地理位置相近的多个标记点合并为一个聚合点，并支持点击聚合点展开查看具体标记点。适用于展示大量POI数据、避免地图过于拥挤的情况。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addClusterOverlay](map-map-mapcomponentcontroller.md#addclusteroverlay)方法时会返回该类型的实例。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

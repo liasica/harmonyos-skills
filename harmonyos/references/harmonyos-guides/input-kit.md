@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/input-kit
 title: Input Kit（多模输入服务）
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:31+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:98b5baabb966bf5730123b06f909a1875affa5256af5b6705890ae5f0efb2c97
+scraped_at: 2026-09-05T06:14:33+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:54ad2a52fa04ad376e263ad04bfca90dd1f39d4f6cc8ac00cf1cea4c549a10fc
 ---
 
 * **[Input Kit简介](input-overview.md)**
@@ -14,3 +14,4 @@ content_hash: sha256:98b5baabb966bf5730123b06f909a1875affa5256af5b6705890ae5f0ef
 * **[鼠标光标开发指导](pointerstyle-guidelines.md)**
 * **[事件监听开发指导（C/C++）](monitor-guidelines.md)**
 * **[事件拦截开发指导（C/C++）](interceptor-guidelines.md)**
+* **[Input Kit术语](input-kit-glossary.md)**

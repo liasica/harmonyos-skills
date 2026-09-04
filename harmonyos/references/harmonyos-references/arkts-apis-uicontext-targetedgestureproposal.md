@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (TargetedGestureProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (TargetedGestureProposal)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:19+08:00
+scraped_at: 2026-09-05T06:16:51+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2be0352ef00c9763cef2ceb8e056e76530bf8e7f2f4d7af5b24081ca8fbef046
+content_hash: sha256:fca2541a8e85b636826e98077d881cf4b9f5ff83f653ddac689210a060efee38
 ---
 
 带目标节点的智慧手势处理基类。
@@ -82,4 +82,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/WgTATJzVRWywqN3v8D7Ydw/zh-cn_image_0000002736434677.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/4N2CLAcoSMOOZCU4QjCdeg/zh-cn_image_0000002742124677.png)

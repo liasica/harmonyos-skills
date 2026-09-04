@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getva
 title: GetValue
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > AttrValue > GetValue
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:11+08:00
+scraped_at: 2026-09-05T06:15:36+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:7777794bce9417daabab39593b1281b6f861732dee976b9448f089c7b447763b
+content_hash: sha256:e865af9acd1bf8ccea8eb2adfd600b50c114d3f5f8c9063645f06c868adbd13e
 ---
 
 ## 函数功能
@@ -18,7 +18,7 @@ content_hash: sha256:7777794bce9417daabab39593b1281b6f861732dee976b9448f089c7b44
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444105343891) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

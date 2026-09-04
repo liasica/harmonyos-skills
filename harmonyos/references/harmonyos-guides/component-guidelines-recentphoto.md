@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-gui
 title: 使用RecentPhoto组件获取最近一张图片
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用RecentPhoto组件获取最近一张图片
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
+scraped_at: 2026-09-05T06:14:53+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:a6c6cac90e3e8e11aa419dd46786161c894d7590fba2bb9298c20ae776d7cc68
+content_hash: sha256:5e0419db0cd4b5a5dced9c04e459fa1679470080daa58c4915b35ac17f49ee28
 ---
 
 应用可以在布局中嵌入最近图片组件，通过此组件，应用无需申请权限，即可指定配置访问公共目录中最近的一个图片或视频文件。授予的权限仅包含只读权限。
 
 界面效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/2SNZOzc7R8uUtv6u7AUYmQ/zh-cn_image_0000002736313707.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/yXOsLSQpS9qKZA39tQf61Q/zh-cn_image_0000002742003789.png)
 
 ## 开发步骤
 

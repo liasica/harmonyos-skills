@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: RiskControlEngine（星盾机密风控引擎）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > RiskControlEngine（星盾机密风控引擎）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a8bc7982834ff299662a4002c606d6913d3410168338c1746e90b1cb8ba82f6a
+scraped_at: 2026-09-05T06:18:35+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:355afc09b9b848ecfc35c4af68b1bbef20c5a0af4e97b934a181304d128a686b
 ---
 
 本模块提供基于应用风险因子的风险控制检测能力。通过接收应用侧采集的多维度风险因子数据，结合预定义的风控策略进行综合风险评估，帮助应用实现设备安全风险识别和防控。
@@ -135,7 +135,7 @@ importRiskFactors(data: ImportData): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-riskcontrolengine.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-riskcontrolengine.md)。
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
@@ -155,7 +155,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { util } from '@kit.ArkTS';
 
-const TAG = "riskControlEngineJsTest";
+const TAG = 'riskControlEngineJsTest';
 
 let rand = cryptoFramework.createRandom();
 let len = 32;
@@ -164,8 +164,8 @@ let base64 = new util.Base64Helper();
 // 导入应用风险因子数据
 let data: riskControlEngine.ImportData = {
   appFactorData: [
-    { factorName: "factor_1", factorValue: 3600 },
-    { factorName: "factor_2", factorValue: false }
+    { factorName: 'factor_1', factorValue: 3600 },
+    { factorName: 'factor_2', factorValue: false }
   ],
   nonce: base64.encodeToStringSync(randData.data) // 16-66字节随机数
 };
@@ -209,7 +209,7 @@ getRiskControlResult(req: RiskControlDetectionRequest): Promise<RiskControlDetec
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-riskcontrolengine.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-riskcontrolengine.md)。
 
 | **错误码ID** | **错误信息** |
 | --- | --- |
@@ -229,7 +229,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { util } from '@kit.ArkTS';
 
-const TAG = "riskControlEngineJsTest";
+const TAG = 'riskControlEngineJsTest';
 
 let rand = cryptoFramework.createRandom();
 let len = 32;
@@ -237,7 +237,7 @@ let randData = rand.generateRandomSync(len);
 let base64 = new util.Base64Helper();
 
 const request: riskControlEngine.RiskControlDetectionRequest = {
-  policyName: "Policy_1001", // 风险策略
+  policyName: 'Policy_1001', // 风险策略
   nonce: base64.encodeToStringSync(randData.data) // 16-66字节随机数
 };
 

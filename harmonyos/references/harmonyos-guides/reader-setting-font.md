@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义字体
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义字体
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
+scraped_at: 2026-09-05T06:15:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:718f4f167557f8ca25b99263a65df32f49cc4bf9326d6840b4f65bf2f2c5a8e1
+content_hash: sha256:6237f4ed710270baf5055e6755e6e4c4e10d866296a548cb2da8932092d81368
 ---
 
 当应用需要支持自定义字体时，开发者可通过[ReaderSetting](../harmonyos-references/reader-read-core.md#readersetting)的fontPath属性，实现对阅读内容字体的实时修改。
@@ -17,7 +17,7 @@ content_hash: sha256:718f4f167557f8ca25b99263a65df32f49cc4bf9326d6840b4f65bf2f2c
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/T0GaQ2nkSgmOm-XwBRd_Hw/zh-cn_image_0000002736434321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/DjYeSfUXTkuDT3FtLd66CQ/zh-cn_image_0000002742124321.png)
 
 ## 接口说明
 

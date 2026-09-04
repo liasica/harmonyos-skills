@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-parse
 title: ParseSubgraphPostFn
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > ParseSubgraphPostFn
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:38+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:71f12154bbc4a08c3c95be4e7c7639eeeec0a09cf5adffda163231c01dd69a58
+content_hash: sha256:12ea6726d3ea18731421d413e7411ed04191a3aecc4bf2aec5f59559f594b89b
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:71f12154bbc4a08c3c95be4e7c7639eeeec0a09cf5adffda163231c01dd
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444111430913) 
 
 数据类型为ParseSubgraphFunc的接口后续版本会废弃，建议使用数据类型为ParseSubgraphFuncV2的接口。
 

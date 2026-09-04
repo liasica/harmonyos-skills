@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interna
 title: UI国际化
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI国际化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:19+08:00
+scraped_at: 2026-09-05T06:14:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0b29d5413989a224036a202c17c0ed03c3a38dfc2af6e971b14f6143e5247f06
+content_hash: sha256:21f5cb34a4270fc50761aa0a01002e5ca02a94f03fefcc5b4575929a0b6cf2b5
 ---
 
 本文介绍如何实现应用程序UI界面的国际化，包含资源配置和镜像布局，关于应用适配国际化的详细参考，请参考[Localization Kit（本地化开发服务）](i18n-l10n.md)。
@@ -170,7 +170,7 @@ struct CustomizeCanvasComponentDrawing {
 
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/p0tQL-V4RyqTB3uRty5Kkg/zh-cn_image_0000002736312963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/OFCYLRMzSd6d1bOOzjxShA/zh-cn_image_0000002742003049.png)
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
 
@@ -178,4 +178,4 @@ struct CustomizeCanvasComponentDrawing {
 2. 弱字符的方向性：弱字符不具备明确的方向性，这些字符不会影响其周围中性字符的方向。
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/aoCyMJHmTN-i4HuX60Mxrg/zh-cn_image_0000002706673922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/CKSUyClSSDuYfwzGDsT9eg/zh-cn_image_0000002712404062.png)

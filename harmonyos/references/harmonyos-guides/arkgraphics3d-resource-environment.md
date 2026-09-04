@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用环境资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > 创建并使用环境资源
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8d7d5ff0288fae023974ecdf83b277bc28bb3307a7a6b0d51349263af5b7cd24
+scraped_at: 2026-09-05T06:14:58+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:a87636e6de77c371e426fb67132a9f6d3c99517b41e2a03350bed5648017529e
 ---
 
 环境（Environment）：环境是3D场景背景的一种描述，可以基于图片进行创建。通过将一张图片进行正方体或者球体的映射处理，将图片贴在正方体或者球体上，在3D场景中模拟真实的环境。
@@ -48,7 +48,7 @@ ArkGraphics 3D支持用户创建环境资源，定义3D场景的背景。
    创建相机对象并设置相机启用状态与观察位置，用于后续展示模型。
 
    ```typescript
-   this.cam = await this.rf.createCamera({ 'name': 'Camera1' });
+   this.cam = await this.rf.createCamera({ name: 'Camera1' });
    this.cam.enabled = true;
    this.cam.position.z = 5;
    ```

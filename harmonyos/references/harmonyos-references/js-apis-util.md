@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.util (util工具函数)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util (util工具函数)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cfc3ad6253c43f26aa4d5e9466869c8126a624eb2a71e59cc0bb5e8f37ff0644
+scraped_at: 2026-09-05T06:16:47+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:5e99b980f83943515e8e5a77431a96fc01ddd23e8fb5783a7c184d3ddd54144d
 ---
 
 该模块主要提供常用的工具函数，实现字符串编解码（[TextEncoder](js-apis-util.md#textencoder)，[TextDecoder](js-apis-util.md#textdecoder)）、有理数运算（[RationalNumber8+](js-apis-util.md#rationalnumber8)）、缓冲区管理（[LRUCache9+](js-apis-util.md#lrucache9)）、范围判断（[ScopeHelper9+](js-apis-util.md#scopehelper9)）、Base64编解码（[Base64Helper9+](js-apis-util.md#base64helper9)）、内置对象类型检查（[types8+](js-apis-util.md#types8)）、对方法进行插桩和替换（[Aspect11+](js-apis-util.md#aspect11)）、虚拟机维测能力（[ArkTSVM23+](js-apis-util.md#arktsvm23)）、二进制流解码（[StringDecoder12+](js-apis-util.md#stringdecoder12)）、堆内存阈值配置（[HeapMemoryThreshold24+](js-apis-util.md#heapmemorythreshold24)）等功能。此外还提供获取对象Hash值（[util.getHash12+](js-apis-util.md#utilgethash12)）、获取主线程栈追踪信息（[util.getMainThreadStackTrace20+](js-apis-util.md#utilgetmainthreadstacktrace20)）等工具函数。
@@ -2852,7 +2852,7 @@ for (let value of pro) {
 // 3, 15
 ```
 
-## ScopeComparable8+
+## ScopeComparable7+
 
 ScopeComparable类型的值需要实现compareTo方法，确保传入的数据具有可比性。
 
@@ -2872,7 +2872,7 @@ compareTo(other: ScopeComparable): boolean
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| other | [ScopeComparable](js-apis-util.md#scopecomparable8) | 是 | 表示要比较的值。 |
+| other | [ScopeComparable](js-apis-util.md#scopecomparable7) | 是 | 表示要比较的值。 |
 
 **返回值：**
 
@@ -2919,7 +2919,7 @@ type ScopeType = ScopeComparable | number
 | 类型 | 说明 |
 | --- | --- |
 | number | 表示值的类型为数字。 |
-| [ScopeComparable](js-apis-util.md#scopecomparable8) | 表示值的类型为ScopeComparable。 |
+| [ScopeComparable](js-apis-util.md#scopecomparable7) | 表示值的类型为ScopeComparable。 |
 
 ## ScopeHelper9+
 

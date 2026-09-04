@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对所有应用的变更
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Release引入的行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-09-04T06:23:40+08:00
-doc_updated_at: 2026-09-03
-content_hash: sha256:91da7b66ee810331a5493a3bc9feba38fd2d12115bb3bff06929ac40c7252886
+scraped_at: 2026-09-05T06:12:27+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:06cb8beaa7fc020229be53f5fd5fe0fbd9e333fa10fc3c7b311ed1a4a3b87b15
 ---
 
 ## Ability Kit
@@ -18,7 +18,7 @@ content_hash: sha256:91da7b66ee810331a5493a3bc9feba38fd2d12115bb3bff06929ac40c72
 
 **变更影响**
 
-此变更不涉及应用适配。
+此变更涉及应用适配。
 
 变更前：
 
@@ -66,7 +66,7 @@ RequestContext参数类型中，RequestContext.getClientSessionId()方法仅在C
 
 **说明** 
 
-此变更涉及的接口为26.0.0 Beta版本新增接口，因此变更仅在应用的targetSdkVersion设置为大于等于26.0.0时生效。
+此变更涉及的接口为26.0.0 Beta版本新增接口，因此仅在26.0.0 Beta版本上新建应用或已将应用升级至26.0.0 Beta版本的开发者需予以关注。
 
 * 变更前：[OnDataCallback](../harmonyos-references/hmaf-a2a-protocol.md#ondatacallback)的method参数类型为AgentOperation枚举；RequestContext.getClientSessionId()方法可用。
 * 变更后：[OnDataCallback](../harmonyos-references/hmaf-a2a-protocol.md#ondatacallback)的method参数类型为string；RequestContext.getClientSessionId()方法已删除。
@@ -195,7 +195,7 @@ Image($r('app.media.large_image'))
 
 **说明** 
 
-此变更涉及的接口为26.0.0 Beta版本新增接口，因此变更仅在应用的targetSdkVersion设置为大于等于26.0.0时生效。
+此变更涉及的接口为26.0.0 Beta版本新增接口，因此仅在26.0.0 Beta版本上新建应用或已将应用升级至26.0.0 Beta版本的开发者需予以关注。
 
 * 变更前：针对支持开启沉浸光感的所有组件，沉浸光感开启后，沉浸光感效果生效。
 * 变更后：
@@ -246,11 +246,11 @@ struct MaterialScopeExample {
 
 变更前，Column组件通过systemMaterial设置了沉浸光感，沉浸光感效果生效。示例图片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/fKU8qgH7QCC1QIgkBI3C4w/zh-cn_image_0000002741598241.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/2-0G8f8STzuVcfw4JGvubg/zh-cn_image_0000002744123695.jpg)
 
 变更后，Column组件通过systemMaterial设置了沉浸光感，由于不处于生效范围内，沉浸光感效果不生效。示例图片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/boV8nFUqS2iJJKhkQL_5aA/zh-cn_image_0000002711839340.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/CYesaLCUSWye2CiapRcRDQ/zh-cn_image_0000002714364828.jpg)
 
 **起始 API Level**
 
@@ -258,29 +258,29 @@ struct MaterialScopeExample {
 
 **变更的接口/组件**
 
-**除以下清单以外**的所有ArkUI组件：
+除以下清单以外的所有ArkUI组件：
 
-* 弹窗类组件（[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)、[ActionSheet](../harmonyos-references/ts-methods-action-sheet.md)、[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)、[CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[SelectionMenu](../harmonyos-references/ohos-arkui-advanced-selectionmenu.md)、[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)弹窗、[Text](../harmonyos-references/ts-basic-components-text.md)设置[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单）。
-* 弹窗类接口（[PromptAction](../harmonyos-references/arkts-apis-uicontext-promptaction.md)、[ArkUI\_NativeDialog](../harmonyos-references/capi-arkui-nativemodule-arkui-nativedialog.md)、[@ohos.promptAction (弹窗)](../harmonyos-references/js-apis-promptaction.md)、[Popup控制](../harmonyos-references/ts-universal-attributes-popup.md)、[Tips控制](../harmonyos-references/ts-universal-attributes-tips.md)、[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)、[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)）。
+* 弹窗类组件（[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)、[ActionSheet](../harmonyos-references/ts-methods-action-sheet.md)、[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)、[CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[SelectionMenu](../harmonyos-references/ohos-arkui-advanced-selectionmenu.md)、[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)弹窗、[Text](../harmonyos-references/ts-basic-components-text.md)设置copyOption后长按或双击触发的文本菜单）。
+* 弹窗类接口（[PromptAction](../harmonyos-references/arkts-apis-uicontext-promptaction.md)、[ArkUI\_NativeDialog](../harmonyos-references/capi-arkui-nativemodule-arkui-nativedialog.md)、[@ohos.promptAction](../harmonyos-references/js-apis-promptaction.md) (弹窗)、[Popup控制](../harmonyos-references/ts-universal-attributes-popup.md)、[Tips控制](../harmonyos-references/ts-universal-attributes-tips.md)、[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)、[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)）。
 * 按钮与选择类组件（[Slider](../harmonyos-references/ts-basic-components-slider.md)、[Toggle](../harmonyos-references/ts-basic-components-toggle.md)、[Select](../harmonyos-references/ts-basic-components-select.md)）。
 
 **适配指导**
 
 变更后，如果组件需要沉浸光感效果，需要将该组件放置于Navigation/NavDestination标题栏或Tabs的底部TabBar。
 
-下面提供两个示例，分别介绍如何将组件放置于Navigation标题栏、横向Tabs中barPosition为BarPosition.End的底部TabBar中，从而显示沉浸光感效果。
+下面提供三个示例，分别介绍如何将组件放置于Navigation标题栏、横向Tabs中barPosition为BarPosition.End的底部TabBar中，开启沉浸光感效果，以及弹窗类组件开启沉浸光感的使用示例。
 
 * Navigation标题栏适配指导
 
   以下示例展示了通过Navigation标题栏，使得通过systemMaterial设置Column组件的沉浸光感效果生效。
 
   ```ts
-  import { CircleShape, TitleBarType, uiMaterial } from '@kit.ArkUI';
+  import { CircleShape, uiMaterial } from '@kit.ArkUI';
 
   @Entry
   @Component
   struct MaterialScopeAdaptExample {
-    private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    private titleHeight: number = 140
 
     @Builder
     customTitle() {
@@ -310,7 +310,7 @@ struct MaterialScopeExample {
       }
       .alignItems(VerticalAlign.Center)
       .width('100%')
-      .height(140)
+      .height(this.titleHeight)
       .padding(16)
     }
 
@@ -335,7 +335,8 @@ struct MaterialScopeExample {
           .justifyContent(FlexAlign.Center)
           .alignItems(HorizontalAlign.Center)
         }
-        .title(this.customTitle, { barStyle: BarStyle.STACK })
+        .title({ builder: this.customTitle, height: this.titleHeight },   { barStyle: BarStyle.STACK })
+        .titleMode(NavigationTitleMode.Full)
 
         // 在沉浸光感生效范围外，通过systemMaterial设置Column组件的沉浸光感效果，沉浸光感效果不生效。
         // this.customTitle()
@@ -346,11 +347,11 @@ struct MaterialScopeExample {
 
   在自定义组件中，为Column组件设置了沉浸光感，处于生效范围外，沉浸光感效果不生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/5BPvddmmQpOCQSxPAFACEw/zh-cn_image_0000002741638285.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/pE6TKFW6Qbqw0uLGHecz1Q/zh-cn_image_0000002743963725.jpg)
 
   在Navigation标题栏中，为Column组件设置了沉浸光感，处于生效范围内，沉浸光感效果生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/nN6Dd8bBQ3-vDox8p4Isjw/zh-cn_image_0000002711999280.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/iQdqd9f3QoSG01S3BfL0-g/zh-cn_image_0000002714524792.jpg)
 * 底部TabBar适配指导
 
   以下示例展示了使用底部TabBar，使得通过systemMaterial设置Column组件的沉浸光感效果生效。
@@ -433,7 +434,7 @@ struct MaterialScopeExample {
         }
         .barFloatingStyle({
           adaptToHandedness: true,
-          systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.THIN, colorInvert: false })
+          systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.THIN,   colorInvert: false })
         })
         .barOverlap(true)
         .width('100%')
@@ -448,11 +449,84 @@ struct MaterialScopeExample {
 
   在自定义组件中，为Column组件设置了沉浸光感，处于生效范围外，沉浸光感效果不生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/bZzxPrBsRcC33886xhx5tA/zh-cn_image_0000002741598243.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/7PH1Vp4tS-q_YHInhpuTzg/zh-cn_image_0000002744123697.jpg)
 
   在底部TabBar中，为Column组件设置了沉浸光感，处于生效范围内，沉浸光感效果生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/aAN2pSuQQK-sFv-i3BRZOQ/zh-cn_image_0000002742027321.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/lLjvejzAS8KkI0IxQAC8JQ/zh-cn_image_0000002714364830.jpg)
+* 弹窗类组件沉浸光感使用示例
+
+  由于不处于Navigation/NavDestination标题栏或Tabs的底部TabBar的区域内，因此以下两个场景，设置于背板的沉浸光感效果不会生效：
+
+  + 使用Stack组件堆叠的形式配合组件可见性实现的类弹窗效果。
+  + 设置于自定义弹窗外层容器组件上的沉浸光感效果。
+
+  上述两种场景，若想生效沉浸光感效果，建议使用弹窗类组件和弹窗类接口配合沉浸光感属性进行改造。以下示例展示了通过[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)的systemMaterial属性开启沉浸光感。
+
+  ```ts
+  import { uiMaterial } from '@kit.ArkUI';
+
+  @CustomDialog
+  struct CustomDialogExample {
+    controller?: CustomDialogController;
+
+    build() {
+      Column() {
+        Text('这是自定义弹窗')
+          .fontSize(30)
+          .height(100)
+        Button('点我关闭弹窗')
+          .onClick(() => {
+            if (this.controller != undefined) {
+              this.controller.close();
+            }
+          })
+          .margin(20)
+      }
+      // 在自定义弹窗外层容器上设置沉浸光感效果，不处于沉浸光感的生效区域中，沉浸光感效果不生效
+      // .systemMaterial(new uiMaterial.ImmersiveMaterial({
+      //   style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+      // }))
+    }
+  }
+
+  @Entry
+  @Component
+  struct CustomDialogUser {
+    dialogController: CustomDialogController | null = new CustomDialogController({
+      builder: CustomDialogExample(),
+      systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THIN })
+    })
+
+    build() {
+      Stack({ alignContent: Alignment.Top }) {
+        Column() {
+          Button('CustomDialog')
+            .margin(20)
+            .onClick(() => {
+              if (this.dialogController != null) {
+                this.dialogController.open();
+              }
+            })
+        }
+        .height('100%')
+        .width('100%')
+        .linearGradient({
+          angle: 0,
+          colors: [
+            ['#004AAF', 0.0],
+            ['#2787D9', 0.5],
+            ['#F0FAFF', 1.0]
+          ]
+        })
+      }
+    }
+  }
+  ```
+
+  使用CustomDialog的systemMaterial属性开启弹窗的沉浸光感效果，示例图片如下：
+
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/3aZJ6UbfTvy1QevEmulnPw/zh-cn_image_0000002743963727.jpg)
 
 ## Core File Kit
 
@@ -464,7 +538,7 @@ struct MaterialScopeExample {
 
 **变更影响**
 
-此变更不涉及应用适配。
+此变更涉及应用适配。
 
 **说明** 
 
@@ -511,7 +585,7 @@ musl/unistd.h中access、faccessat等接口。
 
 **说明** 
 
-此变更涉及的接口为26.0.0 Beta版本新增接口，因此变更仅在应用的targetSdkVersion设置为大于等于26.0.0时生效。
+此变更涉及的接口为26.0.0 Beta版本新增接口，因此仅在26.0.0 Beta版本上新建应用或已将应用升级至26.0.0 Beta版本的开发者需予以关注。
 
 从API版本26.0.0开始，新增接口的错误码类型为number类型，此前版本接口的错误码类型仍为string类型。
 
@@ -558,7 +632,7 @@ musl/unistd.h中access、faccessat等接口。
 
 **说明** 
 
-此变更涉及的接口为26.0.0 Beta版本新增接口，因此变更仅在应用的targetSdkVersion设置为大于等于26.0.0时生效。
+此变更涉及的接口为26.0.0 Beta版本新增接口，因此仅在26.0.0 Beta版本上新建应用或已将应用升级至26.0.0 Beta版本的开发者需予以关注。
 
 * 变更前：企业设备管理服务接口错误码类型为string类型。
 * 变更后：企业设备管理服务接口错误码类型为number类型。

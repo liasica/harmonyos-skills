@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ipc-
 title: ipc_cremote_object.h
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > C API > 头文件 > ipc_cremote_object.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7feefbd2612ad2440ac63f19fa4ac7c090b0ec439ea602ce4694727ef7906274
+scraped_at: 2026-09-05T06:18:23+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:db7d6fbb040cf3db0c92400a52ac291115fd60ad5551c3e5e6406886a34cd639
 ---
 
 ## 概述
@@ -258,7 +258,7 @@ IPC消息发送函数，用于Proxy端向远端Stub发送IPC消息请求，支�
 | const [OHIPCRemoteProxy](capi-ohipcparcel-ohipcremoteproxy.md) \*proxy | OHIPCRemoteProxy对象指针，不能为空。 |
 | uint32\_t code | 用户定义的IPC命令字，范围：[0x01, 0x00ffffff]。超出范围时返回OH\_IPC\_CODE\_OUT\_OF\_RANGE错误码。建议按业务模块分段定义code值，确保Proxy端和Stub端使用相同的命令字定义。同一服务接口的不同操作使用不同的code值区分。 |
 | const [OHIPCParcel](capi-ohipcparcel.md) \*data | 请求数据对象指针，不能为空。 |
-| [OHIPCParcel](capi-ohipcparcel.md) \*reply | 回应数据对象指针。同步请求时不能为空，用于存储响应结果；异步请求时可以为空，为空时不存储响应结果。 |
+| [OHIPCParcel](capi-ohipcparcel.md) \*reply | 响应数据对象指针。同步请求时不能为空，用于存储响应结果；异步请求时可以为空，为空时不存储响应结果。 |
 | const [OH\_IPC\_MessageOption](capi-ohipcremoteobject-oh-ipc-messageoption.md) \*option | 消息选项指针，用于配置IPC消息发送模式（同步/异步）。当需要使用异步模式或自定义消息选项时传入此参数。异步请求时必须传入并设置相应的请求模式，同步请求时可以不传或传NULL。不传入或传NULL时默认使用同步模式（OH\_IPC\_REQUEST\_MODE\_SYNC）。 |
 
 **返回：**

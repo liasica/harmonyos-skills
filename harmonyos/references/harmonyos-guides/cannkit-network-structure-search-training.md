@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-netwo
 title: 网络结构搜索训练
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 网络结构搜索训练
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:24+08:00
 doc_updated_at: 2026-07-17
-content_hash: sha256:4f8bed1749809d09d7335e6f8813e85e1a511c47d29de3a124e2bb745d8db804
+content_hash: sha256:78471ba8908f9bd99b80f6364ae8f4eb5a7d797d99c2f49b25ab0b2943f8489c
 ---
 
 网络结构搜索训练请按照如下步骤进行：
@@ -42,7 +42,7 @@ content_hash: sha256:4f8bed1749809d09d7335e6f8813e85e1a511c47d29de3a124e2bb745d8
 
    请使用pip或者conda安装上述依赖。
 
-   **说明** 
+   ![](https://media:401788444086490719) 
 
    如果仅需要在单机单卡运行工具，可跳过后续步骤。如需要单机多卡环境运行，请继续完成如下步骤。
 2. 安装并配置[Horovod](https://github.com/horovod/horovod#instal)和Open MPI。
@@ -67,7 +67,7 @@ content_hash: sha256:4f8bed1749809d09d7335e6f8813e85e1a511c47d29de3a124e2bb745d8
 
 1. 在user\_module.py中定义数据集函数，并在该函数中接收scen.yaml传入的数据集路径。
 
-   **说明** 
+   ![](https://media:401788444086699720) 
 
    TensorFlow版本中函数名为build\_dataset\_search，PyTorch版本中函数名为dataset\_define。
 2. 解析数据集，读取图片和标签。根据is\_training判断是训练还是评估模式。
@@ -153,7 +153,7 @@ scenario:
 | name | string | Tensorflow\_standalone/ pytorch\_standalone | 是 | 资源对象名称。 |
 | gpu\_id | string | N/A | 是 | 指定使用的gpuID。  - 填写一个gpu id，如0，则使用单机单卡模式进行训练。  - 填写多个gpu id，如0, 1, 2, 3，则使用单机多卡模型进行训练。 |
 
-**说明** 
+![](https://media:401788444086736721) 
 
 [1] 优化器类型支持SGD，Momentum和Adam三种优化器类型。
 
@@ -167,7 +167,7 @@ scenario:
 
 网络结构搜索基于TensorFlow框架进行训练，开发者需要按照如下的接口定义配置模型训练文件。
 
-**说明** 
+![](https://media:401788444086763722) 
 
 仅支持tf.keras实现。
 
@@ -190,7 +190,7 @@ scenario:
   | --- | --- | --- | --- |
   | 学习率更新策略函数。 | def **lr\_scheduler**(self, lr\_init, global\_step) | lr\_init：学习率的初始值。  global\_step：TensorFlow的global step。 | 已更新的学习率。 |
 
-  **说明** 
+  ![](https://media:401788444086792723) 
 
   推荐将学习率的初始值设为常数。
 * 评估函数。
@@ -286,7 +286,7 @@ scenario:
 
 TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.yaml，即开启搜索训练；PyTorch开发者执行python3 tools\_dopt/dopt\_pytorch\_py3/dopt\_so.py -c scen.yaml。针对每种场景都有对应的demo目录入口，详见[TensorFlow NASEA网络结构搜索Demo](cannkit-examples.md#tensorflow-nasea网络结构搜索demo)。
 
-**说明** 
+![](https://media:401788444086843724) 
 
 在执行上述命令时，工具将在当前目录下查找user\_module.py文件。
 
@@ -296,13 +296,13 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 * loss-模型精度损失loss曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/po5P2W4JQKu1aXS2Cb-XrQ/zh-cn_image_0000002706835276.png)
+  ![](https://media:401788444086879725)
 * lr-学习率变化曲线
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/0ZbZBM0uQuiVA59v2s7cdw/zh-cn_image_0000002736314381.png)
+  ![](https://media:401788444086911726)
 * pareto-帕累托前沿图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/kmlgXDpARbWKWC-5KV4W2w/zh-cn_image_0000002706675338.png)
+  ![](https://media:401788444086949727)
 
 帕累托图横坐标为模型大小或计算量即约束项，纵坐标为结构搜索后的精度。图中的精度为搜索过程的评估结果，如果要获得更好的精度，建议对搜索结构进行充分训练。
 
@@ -312,7 +312,7 @@ TensorFlow开发者执行python3 tools\_dopt/dopt\_tf\_py3/dopt\_so.py -c scen.y
 
 搜索结束后，工具会自动将pareto图中模型结构保存在results目录，生成多个model\_arch\_result\_$NUM.py文件。其中$NUM文件编号与pareto图上的编号一致，头部有model\_param\_size和accuracy，开发者可根据TensorBoard中的pareto图或者这两个参数选择合适的网络结构，例如TensorFlow版本的搜索结果（PyTorch版本的搜索结果只是实现框架不同，不再赘述）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/iiZ-oybfS_SW7OqDd9D7hw/zh-cn_image_0000002736434425.png)
+![](https://media:401788444086991728)
 
 开发者选定合适的模型结构文件，可以拷贝到results的上一级目录，并执行模型结构文件。
 
@@ -322,4 +322,4 @@ python3 model_arch_result_$NUM.py
 
 执行结束后，当前目录下会生成模型的pb文件和TensorBoard日志文件，开发者可通过TensorBoard查看模型的图结构。如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/eEYaRpywQ_aRpFM9TI7EVA/zh-cn_image_0000002706835278.png)
+![](https://media:401788444087027729)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-i
 title: 图像超分
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 图像超分
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:14+08:00
+scraped_at: 2026-09-05T06:15:42+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:70858eaa9abfe81aa8ff38ba3490b42a4c4ed629c6a0665a645ca9fb995c70e7
+content_hash: sha256:7e93ff05a7847a2b4d62b49721255d28f7e91a4a8debcd55871ff6354f786a8f
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:70858eaa9abfe81aa8ff38ba3490b42a4c4ed629c6a0665a645ca9fb995
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/PcN8esRSRMOQOhxiOiHbFg/zh-cn_image_0000002736434523.png "点击放大")
+![](https://media:401788444060514569 "点击放大")
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uiconte
 title: 使用组件截图（ComponentSnapshot）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 使用组件截图（ComponentSnapshot）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6520e70fbeb500d378ba841f42883696a347a4c75459409cd25d0e076d68e87e
+scraped_at: 2026-09-05T06:14:04+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:e3ddfbdf2716089c7acf6305fb668fae25ffec0705ffe57d599852a05c00677b
 ---
 
 ## 能力介绍
@@ -319,7 +319,7 @@ export class GlobalStaticSnapshot {
 
 **完整示例：**
 
-完整示例请参考[长截图](../best-practices/bpta-long-snapshot-practice.md#section1566681910427)。
+完整示例请参考[长截图](arkts-long-screenshot.md)。
 
 ## 组件截图最佳实践
 

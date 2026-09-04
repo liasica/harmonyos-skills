@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件的自定义布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:47+08:00
+scraped_at: 2026-09-05T06:13:54+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2359973f5a273a17435f2676bcb2591ff89e17b98944b3e57925163deba58d2c
+content_hash: sha256:f284df939f69b20535b61a4c75160b7a504c6d03d80c9741ce47c8f230faafd1
 ---
 
 如果系统提供的布局组件（如[Flex](../harmonyos-references/ts-container-flex.md)，[Column](../harmonyos-references/ts-container-column.md)，[Row](../harmonyos-references/ts-container-row.md)等）无法满足复杂布局需求，或开发者希望自定义计算组件内子组件的大小和位置，建议在自定义组件中使用以下接口：
@@ -83,4 +83,4 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/M9NxosOsRaeGQKCebEpRvw/zh-cn_image_0000002736312225.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/0wKpqovMRmSPDb3i_U8HWQ/zh-cn_image_0000002712243356.png)

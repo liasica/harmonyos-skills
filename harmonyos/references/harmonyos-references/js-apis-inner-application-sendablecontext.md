@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: SendableContext
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > SendableContext
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:21ad22685fc43b8f96ecc0ab5c8a8ed0dccaf2ec636f1f3f39c14fe04af04786
+scraped_at: 2026-09-05T06:16:21+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:a6c4e87b11c1b1af96b01d1b85449cf55cba3dccf25ac10f313e3e54e9d05df0
 ---
 
-SendableContext符合[Sendable协议](../harmonyos-guides/arkts-sendable.md#sendable协议)，继承自[lang.ISendable](js-apis-arkts-lang.md#langisendable)。
+SendableContext符合[Sendable协议](../harmonyos-guides/arkts-sendable.md#sendable协议)，继承自[lang.ISendable](js-apis-arkts-lang.md#isendable)。
 
 **说明** 
 

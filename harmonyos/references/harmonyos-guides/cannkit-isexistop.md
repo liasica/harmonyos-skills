@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-isexi
 title: IsExistOp
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OperatorFactory > IsExistOp
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:11+08:00
+scraped_at: 2026-09-05T06:15:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1ee49f85fa2f59cb5a861a7dacf091597abb61641b31ad0ab7d00d6eae47d64c
+content_hash: sha256:514c6e130bbfd071d1c52cf36651a8ad7c91974caa4af9e6515be0316d7cc654
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:1ee49f85fa2f59cb5a861a7dacf091597abb61641b31ad0ab7d00d6eae4
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444105467892) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

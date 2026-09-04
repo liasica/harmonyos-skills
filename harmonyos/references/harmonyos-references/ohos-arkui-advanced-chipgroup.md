@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroup
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:49e5f5286f00d150ef671fdab9aa06bb410a41bf909183f5ae26bae16cf6801e
+scraped_at: 2026-09-05T06:17:29+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:e8ed45b35400354c037beaff4254eec90a6c876c390f31a41cf36d6da147f18a
 ---
 
 ChipGroup组件提供操作块群组能力，支持单选或多选模式，可自定义样式、图标和间距，支持选中状态管理和事件回调。适用于文件分类、资源筛选、标签选择、内容分组等多种场景，帮助开发者快速实现选择功能，提供统一的视觉和交互体验。
@@ -14,6 +14,7 @@ ChipGroup组件提供操作块群组能力，支持单选或多选模式，可�
 
 * 该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本模块接口仅可在Stage模型下使用。
+* 如果ChipGroup设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到ChipGroup本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ChipGroup设置通用属性和通用事件。
 
 ## 导入模块
 
@@ -338,7 +339,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ut8EsNxjTZS-KXG4eqRq9g/zh-cn_image_0000002706836268.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/F7muNG--T3Ob6lTgmkniCA/zh-cn_image_0000002712246514.png)
 
 ### 示例2（有最右侧的builder）
 
@@ -434,7 +435,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/zubgpZ8oS4iBNatyWewVBw/zh-cn_image_0000002736315373.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/AaCrxFRRR6KseQJ1H2gEqQ/zh-cn_image_0000002742005463.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -534,7 +535,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Pn6BkJv0T96WS-aaF--3lQ/zh-cn_image_0000002706676334.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/l6R0iDa9RhSd250FC8f4Sw/zh-cn_image_0000002712406474.png)
 
 ### 示例4（单选时无障碍朗读）
 
@@ -955,7 +956,7 @@ struct ChipGroupMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/0FQYaLSzRIWybgefYtT_YA/zh-cn_image_0000002736435421.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Ca4YfzQlTWqIRmj3khh1DQ/zh-cn_image_0000002742125423.png)
 
 ### 示例7（设置组件选中状态的系统材质样式）
 
@@ -1047,4 +1048,4 @@ struct ChipGroupMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/4WN8p3s2Tn2h7Y1AUBDs6w/zh-cn_image_0000002706836270.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/BxbWM8wfQGqDShUMOm0rGA/zh-cn_image_0000002712246516.png)

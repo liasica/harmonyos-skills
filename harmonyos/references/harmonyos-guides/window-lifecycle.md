@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-lifecy
 title: 窗口生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口生命周期
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
+scraped_at: 2026-09-05T06:14:08+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:4bd21bad689888ecfad3a4b81ba7fc3b4e4e51fc1ea60113ffd939e7ba8fc086
+content_hash: sha256:ce46c86e009d8eacadb7ec762464890e677943aae87f9dfc93fdafb3808d285d
 ---
 
 ## 生命周期概述
@@ -14,7 +14,7 @@ content_hash: sha256:4bd21bad689888ecfad3a4b81ba7fc3b4e4e51fc1ea60113ffd939e7ba8
 
 Stage模型下，一个UIAbility对应一个WindowStage，一个WindowStage对应一个应用主窗（MainWindow），UIAbility、WindowStage和应用主窗三者之间的关系如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/-j1UPvf8TZWuJSpUdRSGtQ/zh-cn_image_0000002736313143.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/80UlDBKkTSq-KiEhPdL0Rw/zh-cn_image_0000002742003227.png)
 
 每个UIAbility实例都会与一个WindowStage实例绑定。WindowStage是应用进程内的窗口管理器，负责管理主窗口的生命周期和显示逻辑。主窗口是ArkUI的绘制区域，可以加载不同的ArkUI页面，为用户提供交互界面。
 
@@ -52,7 +52,7 @@ RESUMED和PAUSED状态分别在窗口切换至前台和切换至后台时触发�
 
 应用主窗口生命周期事件流转关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/7R65c9dcR1CdSNx5XfHnFg/zh-cn_image_0000002706674100.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/byDRM1SGQYiq4WF9UXh_og/zh-cn_image_0000002712404240.png)
 
 ### 监听应用主窗的生命周期状态变化
 

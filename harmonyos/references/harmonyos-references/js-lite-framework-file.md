@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-f
 title: 文件组织
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 框架说明 > 文件组织
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:13+08:00
+scraped_at: 2026-09-05T06:17:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:192d1c322a1ed726cfafbf75992b8429f6fd690f6ed749021f7eb2e0c1f38d01
+content_hash: sha256:be382cb12ac406ec7961742081278f1a677413a26e55d4f5d9d2488b01581af5
 ---
 
 ## 目录结构
@@ -14,7 +14,7 @@ JS FA应用的JS模块(entry/src/main/js/module)的典型开发目录结构如�
 
 **图1** 目录结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/GUn_MO3sReC5p4cG5LjIZQ/zh-cn_image_0000002736315625.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/iOPDPPoxTZaK3c4-n_E5vQ/zh-cn_image_0000002742005779.png)
 
 目录结构中文件分类如下：
 

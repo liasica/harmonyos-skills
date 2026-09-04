@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-loc
 title: "@Local装饰器：组件内部状态"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Local装饰器：组件内部状态
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:15+08:00
+scraped_at: 2026-09-05T06:13:57+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7ae0bde1b5c7ed542163dc56b5c0a2bc5e241dba8826d7740182eb62703317f4
+content_hash: sha256:9ea60f4417dbbb0eeac41d4e07496063856bc4231670d3b19d22ca62b286eed3
 ---
 
 为了实现对@ComponentV2装饰的自定义组件中变量变化的观测，开发者可以使用[@Local](../harmonyos-references/ts-state-management-local.md#local)装饰器装饰变量。
@@ -362,7 +362,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/hG9Xcm-8RTeT2e9BWu-M3g/zh-cn_image_0000002736312345.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bJnX5btIQ_aeM8qN_kgsFQ/zh-cn_image_0000002712243478.gif)
 
 ### 装饰Array类型变量
 
@@ -426,7 +426,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/Z8FnwCi1ToeiB1-nUYptgA/zh-cn_image_0000002706673302.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/1Bc-5eWUQua0yCADKYdmyw/zh-cn_image_0000002742002433.gif)
 
 ### 装饰Date类型变量
 
@@ -482,7 +482,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/7OOu64uHTQ2agSh5qlTVBQ/zh-cn_image_0000002736432393.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/UPse7ICISBGKEFWmlPuVaQ/zh-cn_image_0000002712403444.gif)
 
 ### 装饰Map类型变量
 
@@ -545,7 +545,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/cZ5tpGsJSBW-8rBrqRYqWw/zh-cn_image_0000002706833240.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/b9HY8s1lRH6RPRcHB7uRoQ/zh-cn_image_0000002742122391.gif)
 
 ### 装饰Set类型变量
 
@@ -601,7 +601,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/ikDbmQPYTteh1oYSfQNN1Q/zh-cn_image_0000002736312347.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/xIieks01RRuZaouchYzf1A/zh-cn_image_0000002712243480.gif)
 
 ### 联合类型
 
@@ -639,7 +639,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/wiswAiQGRI6IJueJjv00Cw/zh-cn_image_0000002706673304.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/WLh5FmaESlChzTuAt6QwRA/zh-cn_image_0000002742002435.gif)
 
 ## 常见问题
 
@@ -685,7 +685,7 @@ struct Index {
 
 上述代码中，开发者预期的动画效果是：绿色矩形从长宽100变为200，字符串从Hello World变为Hello ArkUI。但由于当前animateTo与V2的刷新机制不兼容，执行动画前的额外修改未生效，实际显示的动画效果是：绿色矩形从长宽50变为200，字符串从Hello变为Hello ArkUI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ZER0uFZWSrmZIjtmgZ-1ag/zh-cn_image_0000002736432395.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/rYjBbpePRVmd75d4K67xxA/zh-cn_image_0000002712403446.gif)
 
 从API version 22开始，可以使用[applySync接口](arkts-new-applysync-flushupdates-flushuiupdates.md)实现预期的显示效果。
 
@@ -731,4 +731,4 @@ struct Index {
 
 原理为使用applySync接口同步刷新闭包函数内的状态变量变化，再执行原来的动画达成预期的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/o4vCxZUvRxWpVg3gEz0a6g/zh-cn_image_0000002706833242.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/3UfwHO6SQV2FSurbJ3uQ9g/zh-cn_image_0000002742122393.gif)

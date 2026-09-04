@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avscreen_capture.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > native_avscreen_capture.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6e95cfbffb0dcd3501a9df13d0620d05de98decc75f905fed0f8f8c34fab7a34
+scraped_at: 2026-09-05T06:20:24+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:1e8de50272168ad918147203f9cf7b67d491697147575d39bb5cb27824c4fc0f
 ---
 
 ## 概述
@@ -1362,6 +1362,10 @@ OH_AVSCREEN_CAPTURE_ErrCode OH_AVScreenCapture_SetCaptureAreaHighlight(struct OH
 设置屏幕捕获区域高亮模式。
 
 在录屏过程中，可对指定的捕获区域进行高亮显示，以区分捕获区域与非捕获区域的视觉效果，帮助用户识别当前录屏范围。适用于需要在录屏过程中突出显示捕获区域边界的场景，如多区域录制时帮助用户识别当前录制范围，或教学演示中标识重点操作区域。
+
+**说明** 
+
+此功能只在[OH\_CaptureMode](capi-native-avscreen-capture-base-h.md#oh_capturemode)设置为OH\_CAPTURE\_SPECIFIED\_WINDOW指定窗口进行录制，或使用Picker选择窗口进行录制时生效。
 
 **起始版本：** 22
 

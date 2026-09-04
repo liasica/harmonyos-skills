@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-asyn
 title: 使用Node-API接口进行异步任务开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口进行异步任务开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
+scraped_at: 2026-09-05T06:15:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4753b0b3ed85b31e46ba53793cf02f58cecd6e21f35c495c54ff0d817490b8b6
+content_hash: sha256:fb849951d887c357f0d8882e9a819c8b28dbde206a0386668679ff2c56e08fb7
 ---
 
 ## 场景介绍
@@ -21,11 +21,11 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 异步调用支持callback和Promise两种方式，选择哪种方式由开发者决定。以下是两种方式的示例代码：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/G8reWmTiRw2664y3KJH86A/zh-cn_image_0000002706675516.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/eEhNdLqgRGCJPPaw_NLN5Q/zh-cn_image_0000002712405654.png)
 
 ## 使用Promise方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/810CWz7sRX--Mq2J05J9jQ/zh-cn_image_0000002736434603.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/aViLVk7kTS67BjoJC0yugQ/zh-cn_image_0000002742124603.png)
 
 1. CMakeLists.txt配置
 
@@ -156,7 +156,7 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 ## 使用callback方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/WaGoWmu0TOetTZydVUmpbA/zh-cn_image_0000002706835456.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/oYsqnkwtRuifh4w9uvxKtA/zh-cn_image_0000002712245696.png)
 
 1. 使用napi\_create\_async\_work创建异步任务，并使用napi\_queue\_async\_work将异步任务加入队列，等待执行。
 

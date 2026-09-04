@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SplitLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SplitLayout
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c41b093a496b75f389e74c523fb5a17997374c956c2dbcfeae095f54087afb7f
+scraped_at: 2026-09-05T06:17:30+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:5991e61912fe0e5450a52665c2e7c8905b1f2cd6fb598b4b9d5a62ba38eee880
 ---
 
 SplitLayout组件提供了常用的页面布局样式，主要用于展示图片、标题和内容容器的组合布局，适用于需要自适应不同屏幕尺寸的分栏展示场景（如详情页、设置页等）。支持自适应不同屏幕宽度（小于等于600vp、大于600vp且小于等于840vp、大于840vp三种布局），解决了在不同尺寸设备上需要展示不同布局样式的需求，提升页面适配性和用户体验。
@@ -13,8 +13,8 @@ SplitLayout组件提供了常用的页面布局样式，主要用于展示图片
 **说明** 
 
 * 该组件从API version 10开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-* 该组件仅可在Stage模型下使用。
-* SplitLayout不支持设置[通用属性](ts-component-general-attributes.md)和[通用事件](ts-component-general-events.md)。如果设置，编译工具链会额外生成\_\_Common\_\_节点，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到SplitLayout本身，导致设置的属性或事件不生效。
+* 本模块接口仅可在Stage模型下使用。
+* 如果SplitLayout设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到SplitLayout本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议SplitLayout设置通用属性和通用事件。
 
 ## 导入模块
 
@@ -47,14 +47,6 @@ SplitLayout是分栏布局组件，支持自适应布局能力，在不同宽度
 | secondaryText | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 副标题内容，无长度限制。当需要在标题下方显示副标题时传入，不传入时不显示副标题。 |
 | tertiaryText | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 辅助文本，无长度限制。显示在副标题下方区域，当需要显示辅助文本时传入，不传入时不显示辅助文本。 |
 | container | () => void | 是 | @BuilderParam | 容器内组件，用于在布局下方区域承载自定义组件内容，无返回值。 |
-
-## 事件
-
-不支持[通用事件](ts-component-general-events.md)。
-
-## 属性
-
-不支持[通用属性](ts-component-general-attributes.md)。
 
 ## 示例
 
@@ -89,12 +81,12 @@ struct Index {
 
 小于等于600vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/FLSUsjZCSDWUszuSjQ0FGA/zh-cn_image_0000002736435467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/PVjg0kggR1yxS8hENmlKkg/zh-cn_image_0000002742125503.png)
 
 大于600vp且小于等于840vp的布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/K8pbH75fSqW87QDMIk9lTA/zh-cn_image_0000002706836316.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/IbT95CXDQ12rGFoYpB9s4g/zh-cn_image_0000002712246596.png)
 
 大于840vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/kBSbeGlYTR-jCoJ_NHNHxw/zh-cn_image_0000002736315421.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/FtYdB7WhTs-Bst5SK97d5Q/zh-cn_image_0000002742005547.png)

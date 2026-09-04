@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextInput
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > TextInput
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:02+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:36594fe2340d6554854f7c6b5264536161605ca82a73d8b377b2f82e8491af7b
+scraped_at: 2026-09-05T06:17:16+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:1a8513459673c67dec0284713de967f6463194165711ff829adbab49efaad79f
 ---
 
 单行文本输入框组件，用于接收用户的单行文本输入。支持多种输入类型（如文本、密码、邮箱、数字等）、自定义样式（字体、颜色、下划线、装饰线等）、输入过滤、密码输入模式、自动填充等功能，适用于登录注册、搜索、表单填写等多种场景。能够解决文本输入验证、格式化、安全输入等常见需求，简化开发流程、提升用户体验并增强数据安全性。
@@ -401,7 +401,7 @@ textDirection(direction: TextDirection | undefined)
 
 selectedBackgroundColor(value: ResourceColor)
 
-设置文本选中底板颜色。如果未设置不透明度，默认为20%不透明度。未通过该接口设置时，默认为'#FF007DFF'（蓝色），Wearable设备上默认值为'#FF1F71FF'（蓝色，比'#FF007DFF'颜色稍深）。
+设置文本选中高亮颜色。如果未设置不透明度或设置为完全不透明，默认使用20%不透明度。未通过该接口设置时，默认为'#007DFF'（蓝色），Wearable设备上默认值为'#1F71FF'（蓝色，比'#007DFF'颜色稍深）。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -413,7 +413,7 @@ selectedBackgroundColor(value: ResourceColor)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 文本选中底板颜色。 |
+| value | [ResourceColor](ts-types.md#resourcecolor) | 是 | 文本选中高亮颜色。 |
 
 ### caretStyle10+
 
@@ -1657,8 +1657,8 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| Default | - | 默认风格，光标宽1.5vp，光标高度与文本选中底板高度和字体大小相关。 |
-| Inline | - | 内联输入风格，也称内联模式。文本选中底板高度与输入框高度相同。  内联输入是在有明显的编辑态/非编辑态的区分场景下使用，例如：文件列表视图中的重命名。  不支持showError属性。  不支持showCounter属性，内联模式下字符计数器不显示。  内联模式下，不支持拖入文本。 |
+| Default | - | 默认风格，光标宽1.5vp，光标高度与文本选中高亮高度和字体大小相关。 |
+| Inline | - | 内联输入风格，也称内联模式。文本选中高亮高度与输入框高度相同。  内联输入是在有明显的编辑态/非编辑态的区分场景下使用，例如：文件列表视图中的重命名。  不支持showError属性。  不支持showCounter属性，内联模式下字符计数器不显示。  内联模式下，不支持拖入文本。 |
 
 ## PasswordIcon10+对象说明
 
@@ -2365,7 +2365,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/LE4PpzfOTh2o3MDs1B7IUQ/zh-cn_image_0000002706835930.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/5HxaTfVJQl6vuNuOErwkGA/zh-cn_image_0000002712246176.gif)
 
 ### 示例2（设置下划线）
 
@@ -2467,7 +2467,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/IVNarDAyQeO98v2kKQ4MqQ/zh-cn_image_0000002736315035.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/Hfm8Kd4lTG2L2aAh8_xDsg/zh-cn_image_0000002742005125.png)
 
 ### 示例3（设置自定义键盘）
 
@@ -2538,7 +2538,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/acCmgCx9TQutrKFCu5wDwg/zh-cn_image_0000002706675992.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/JqVcFJA6QIiPWkXtqCVENw/zh-cn_image_0000002712406136.gif)
 
 ### 示例4（设置右侧清除按钮样式）
 
@@ -2574,7 +2574,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/GiKRewhfQmGz9i9veOR7bg/zh-cn_image_0000002736435079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/UnyXel0jSBuzxXgJ1MCZJQ/zh-cn_image_0000002742125085.png)
 
 ### 示例5（设置计数器）
 
@@ -2609,7 +2609,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/R7o04q8bS2qAgjWJhY4BFg/zh-cn_image_0000002706835932.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/RjvtgJUUTViNF5oLqBlbcQ/zh-cn_image_0000002712246178.jpg)
 
 ### 示例6（电话号码格式化）
 
@@ -2758,7 +2758,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/V7oLcjqiS8eFvmSTpNLP7Q/zh-cn_image_0000002736315037.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/EYcJTzkVSv2B0TP0rFuEoQ/zh-cn_image_0000002742005127.png)
 
 ### 示例7（设置文本断行规则）
 
@@ -2818,7 +2818,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/6mDgLc4RQJ21a3gzW_wA3w/zh-cn_image_0000002706675994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/SGy3xFERTO2Td1TGuLf0CA/zh-cn_image_0000002712406138.png)
 
 ### 示例8（设置文本样式）
 
@@ -2866,7 +2866,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/1J_ajZ1wRYKckjcGY6p5uQ/zh-cn_image_0000002736435081.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/xciEaW87QWq8Rc9sqkmvaQ/zh-cn_image_0000002742125087.png)
 
 ### 示例9（设置文字特性效果）
 
@@ -2897,7 +2897,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/n6euq2ldT4-ZzRC3NigNMw/zh-cn_image_0000002706835934.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/_dT-B-QrQNyoNVgUs1y6rQ/zh-cn_image_0000002712246180.png)
 
 ### 示例10（自定义键盘避让）
 
@@ -2968,7 +2968,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/jFofjs1BSM23tlAa7d_pcA/zh-cn_image_0000002736315039.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/TvUxx6j-SVONCrTre2ngzg/zh-cn_image_0000002742005129.gif)
 
 ### 示例11（设置文本自适应）
 
@@ -3020,7 +3020,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/UHoC9_-jQ7qLO7C3mSst3Q/zh-cn_image_0000002706675996.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/n5LGf8Q8QNaDGQcraKp_yA/zh-cn_image_0000002712406140.png)
 
 ### 示例12（设置折行规则）
 
@@ -3064,7 +3064,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/RyJ8CzXpQ8mGvIA0Q7pDFg/zh-cn_image_0000002736435083.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/76qxGL3IR8Kd0YLsbEI2Mg/zh-cn_image_0000002742125089.gif)
 
 ### 示例13（支持插入和删除回调）
 
@@ -3130,7 +3130,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/yUHvQRUAQ8S0iveAxjPpgQ/zh-cn_image_0000002706835936.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/jjNJJdB7QEWj3pZ3aqE7dg/zh-cn_image_0000002712246182.png)
 
 ### 示例14（文本扩展自定义菜单）
 
@@ -3216,7 +3216,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/lN3jRph3QHOjXeCrSRbZUw/zh-cn_image_0000002736315041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/eG5pRBLRTGK2HDtIw78VpQ/zh-cn_image_0000002742005131.png)
 
 ### 示例15（设置symbol类型清除按钮）
 
@@ -3245,7 +3245,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/9FHTjPldSviUag8zjjcbhg/zh-cn_image_0000002706675998.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/LlY-DjsSSCWD_W8G7BHiSg/zh-cn_image_0000002712406142.jpg)
 
 ### 示例16（文本设置省略模式）
 
@@ -3313,7 +3313,7 @@ struct EllipsisModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/AktTrw6FSCShU1hLquXGcg/zh-cn_image_0000002736435085.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/PpLmChkuSiiMJMmtYzEZfQ/zh-cn_image_0000002742125091.gif)
 
 ### 示例17（输入框支持输入状态变化等回调）
 
@@ -3434,7 +3434,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/xrVT86nfQ-e-9oU0Oz-9-A/zh-cn_image_0000002706835938.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Lsmb9YV2QK6eAf8u6x9ebw/zh-cn_image_0000002712246184.png)
 
 ### 示例18（设置最小字体范围与最大字体范围）
 
@@ -3534,7 +3534,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/UcKvyASDQWyzTWNjUrFADw/zh-cn_image_0000002736435087.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/jm6xECHPSCSWEY2EYWCPrA/zh-cn_image_0000002742125093.png)
 
 ### 示例20（设置文本描边）
 
@@ -3582,7 +3582,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Ius8IhSPRISjmWlx87-OvQ/zh-cn_image_0000002706835940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/IK18o3FIS5qYcPUV8nXRdQ/zh-cn_image_0000002712246186.png)
 
 ### 示例21（设置中西文自动间距）
 
@@ -3609,7 +3609,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/8xi51W-ISeekHUti5v8Krg/zh-cn_image_0000002736315045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/wLAqSVPZT-GiI6O4OI12FQ/zh-cn_image_0000002742005135.png)
 
 ### 示例22（设置字符计数颜色以及超出字符颜色）
 
@@ -3646,7 +3646,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/B2_nu3vOTPCDZaJ9r01kYw/zh-cn_image_0000002706676002.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/lm01YB6qS6O-DvJlXKHP7g/zh-cn_image_0000002712406146.gif)
 
 ### 示例23（设置placeholder富文本样式）
 
@@ -3713,7 +3713,7 @@ struct TextInputExample  {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/1cznFEYASBCwr0NCalpj-g/zh-cn_image_0000002736435089.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/mfN9SpM2TC6aR3mv1AYzDQ/zh-cn_image_0000002742125095.jpg)
 
 ### 示例24（设置输入法扩展信息）
 
@@ -3769,7 +3769,7 @@ struct TextInputBarStateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/hgiIti6dTcOV_yfY7YkjHA/zh-cn_image_0000002706835942.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/qHIqmP1QSJ-VWRHtPvO8cw/zh-cn_image_0000002712246188.gif)
 
 ### 示例26（设置行首标点符号压缩和行尾标点符号悬挂）
 
@@ -3820,7 +3820,7 @@ struct PunctuationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/UnxY5NvQScW0eT0QtQsLsQ/zh-cn_image_0000002736315047.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/FZYvTacLR6aQEcooOkKaoQ/zh-cn_image_0000002742005137.gif)
 
 ### 示例27（设置自适应间距）
 
@@ -3887,7 +3887,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/24vned-6R1izsGCvzI_xwA/zh-cn_image_0000002706676004.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/LiBSbJ2CTIqXqB8PdXTwIw/zh-cn_image_0000002712406148.gif)
 
 ### 示例28（设置文本拖拽时的背板样式）
 
@@ -3914,7 +3914,7 @@ struct TextInputTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/WZ5706XKS5iYm5rkFMEQuQ/zh-cn_image_0000002736435091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Q_bTe69lTZq2gPNzJzIMew/zh-cn_image_0000002742125097.png)
 
 ### 示例29（删除文本框内的最后一个字符）
 
@@ -3941,7 +3941,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/fPe-hpZGQHmEQb5LB4wYrA/zh-cn_image_0000002706835944.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/5fBwXXI-Ql298LePPIeXpw/zh-cn_image_0000002712246190.gif)
 
 ### 示例30（设置文本排版方向）
 
@@ -3989,7 +3989,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/TympYo2kSpSvE1yZz8vBAQ/zh-cn_image_0000002736315049.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/grqge7fzQxan6mlkbtod7w/zh-cn_image_0000002742005139.png)
 
 ### 示例31（将指定范围的文字滚动到可视区内）
 
@@ -4019,7 +4019,7 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/ysD-Tt5HQ_eA2HsqLMRCrQ/zh-cn_image_0000002706676006.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/s02-A0PeRYejKsmIYHq4hA/zh-cn_image_0000002712406150.gif)
 
 ### 示例32（设置文本排版时是否使能孤字优化）
 
@@ -4062,11 +4062,11 @@ struct TextExample {
 
 不开启孤字优化：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/aSDWORo5SrCveR3GJ-QF2Q/zh-cn_image_0000002736435093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/wagC5WR1RDq40naueWcTMQ/zh-cn_image_0000002742125099.png)
 
 开启孤字优化：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/r7KggFHwS0StBxqRc-4-DA/zh-cn_image_0000002706835946.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/1usDFBXWS6q8O6ttC5H0kw/zh-cn_image_0000002712246192.png)
 
 ### 示例33（设置文本着色器效果）
 
@@ -4136,7 +4136,7 @@ struct ShaderColorStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/7g_mgw9eR9-_LEZd1hph5A/zh-cn_image_0000002736315051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/zljWFLZDQT2e3QTeARF8Ag/zh-cn_image_0000002742005141.png)
 
 ### 示例34（设置文本选择的AI菜单）
 
@@ -4165,4 +4165,4 @@ struct Demo34 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/1LDhB_nUTVmq0Q9jG1DhJg/zh-cn_image_0000002706676008.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/lI45OgUwR4GTPw9H7dfbaw/zh-cn_image_0000002712406152.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/texttospeech-
 title: 文本转语音
 breadcrumb: 指南 > AI > Core Speech Kit（基础语音服务） > 文本转语音
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:14+08:00
+scraped_at: 2026-09-05T06:15:42+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:0c0a8dbf25bbb0c0103fe841bad31ebe3c8e751003d6cd81138c916c63a1e594
+content_hash: sha256:4a0e1baa202533987e87fa7f8569b402522b38e48664497887e1b32bc777efd4
 ---
 
 Core Speech Kit支持将一篇不超过10000字符数的中英文文本（简体中文、繁体中文、数字、英文）合成为语音，并以选定音色进行播报。
@@ -150,7 +150,7 @@ Core Speech Kit支持将一篇不超过10000字符数的中英文文本（简体
 
 由于不同场景下，模型自动判断所选择的播报策略可能与实际需求不同，此章节提供对于播报策略进行主动设置的方法。
 
-**说明** 
+![](https://media:401788444055643531) 
 
 以下取值说明均为有效取值，若所使用的数值在有效取值之外则播报结果可能与预期不符，并产生错误的播报结果。
 

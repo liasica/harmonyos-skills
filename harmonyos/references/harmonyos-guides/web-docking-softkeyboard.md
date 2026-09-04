@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-docking-s
 title: Web组件对接软键盘
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件对接软键盘
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
+scraped_at: 2026-09-05T06:14:10+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1af5854dcee296f09b567a2451db421db792e8b762a951e1ce2ef85040377ae8
+content_hash: sha256:444141b7fb2d4e6af80a7d6d16454b145cd14799ef27a82ece64e236082f569c
 ---
 
 开发者能够通过Web组件对接软键盘，来处理系统软键盘的显示与交互问题，同时实现软键盘的自定义功能。主要有以下场景：
@@ -187,11 +187,11 @@ ArkWeb组件将跟随ArkUI重新布局，效果如图1和图2所示。
 
 **图1** Web组件网页默认软键盘避让模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/uPX-zFexTYeuJ6WAxxahLg/zh-cn_image_0000002706674122.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/mFkWtkHgSiu3MdE800xvxQ/zh-cn_image_0000002712404262.png)
 
 **图2** Web组件网页跟随ArkUI软键盘避让模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/jyCxyj6dTRi-4GWlZ8twjQ/zh-cn_image_0000002736433213.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/bjiuJd5WR_S0z36Mo3BDow/zh-cn_image_0000002742123211.png)
 
 2.在UIContext的键盘避让模式为Offset模式时，应用可通过[WebKeyboardAvoidMode()](../harmonyos-references/arkts-basic-components-web-e.md#webkeyboardavoidmode12)设置ArkWeb组件的键盘避让模式。Web组件的[WebKeyboardAvoidMode()](../harmonyos-references/arkts-basic-components-web-e.md#webkeyboardavoidmode12)接口优先级高于W3C侧virtualKeyboard.overlayContent。
 
@@ -234,7 +234,7 @@ ArkWeb组件根据避让模式进行避让，效果见图3。
 
 **图3** Web组件网页自身软键盘避让模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/1a3WpAaOQMeMjruNRLIfFg/zh-cn_image_0000002706834058.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/8NkeZdJhTbyD_X7kIu8kvg/zh-cn_image_0000002712244298.png)
 
 3.在软键盘弹出时，为使Web组件不发生避让行为，可通过调用[expandSafeArea()](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)设置Web组件扩展安全区域。更多详细示例可参考[网页中安全区域计算和避让适配](web-safe-area-insets.md)。
 
@@ -441,12 +441,12 @@ ArkWeb自定义键盘的示例效果如图4、图5和图6所示。
 
 **图4** ArkWeb自定义键盘数字键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/u_NIVSWjTiyo-H1sKSjzDw/zh-cn_image_0000002736313167.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/DSNjuGjORNOsfUJnvCd0ow/zh-cn_image_0000002742003251.png)
 
 **图5** ArkWeb自定义键盘字母键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/lH-Vi-DeR1S3OW8bcWV18g/zh-cn_image_0000002706674124.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Ki6kN0jvTKu305-pA1dD6g/zh-cn_image_0000002712404264.png)
 
 **图6** ArkWeb自定义键盘符号键盘
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ThOGDr16QOWq_Qs60MbW2Q/zh-cn_image_0000002736433215.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/mVorGIXWQvCmHH0SdntBDg/zh-cn_image_0000002742123213.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 管理通知渠道
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 管理通知渠道
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1d4fadf51021e205fbebd27b80032970417b427b03f39195c05642a104e24c03
+scraped_at: 2026-09-05T06:15:14+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:0a2d5967900a8d1b82bae2d01db7ebcca954ec1b2af0933751b618b74e58b6c6
 ---
 
 系统支持多种[通知渠道](notification-glossary.md#notification-slot通知渠道)，不同通知渠道对应的[通知提醒方式](notification-glossary.md#notification-reminder-mode通知提醒方式)不同，可以根据应用的实际场景选择适合的通知渠道，并对通知渠道进行管理（支持创建、查询、删除等操作）。
@@ -17,6 +17,8 @@ content_hash: sha256:1d4fadf51021e205fbebd27b80032970417b427b03f39195c05642a104e
 **说明** 
 
 用户可以通过“设置 > 通知和状态栏”进入对应的应用，管理该应用的通知渠道。当应用中的“允许通知”开关开启时，横幅通知默认关闭（不支持应用配置、用户可手动开启），锁屏通知、桌面角标、铃声和振动等默认开启。
+
+实际显示效果依赖于设备能力和通知中心UI样式，详情请参考[通知提示场景](../design-guides/system-features-notification-0000001793074217.md#section162699204401)。
 
 | SlotType | 取值 | 分类 | [对应Push消息分类标准](push-apply-right.md#通知消息分类标准与提醒方式) | 通知中心 | 横幅 | 锁屏 | 铃声/振动 | 状态栏图标 | 自动亮屏 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

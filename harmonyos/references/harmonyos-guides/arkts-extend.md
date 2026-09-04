@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend
 title: "@Extend装饰器：定义扩展组件样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Extend装饰器：定义扩展组件样式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:014eb3e0f65fbef4cc355da66cafc9e1ea1c0ecd76ca25b8dfa474b7025e4412
+scraped_at: 2026-09-05T06:13:55+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d7f1b315933a408bafeab50fe10a29efab09444da1ea810c5f98e7fb5d4c2dd6
 ---
 
 在前文的示例中，可以使用[@Styles](arkts-style.md)复用样式，在@Styles的基础上，我们提供了[@Extend](../harmonyos-references/ts-custom-component-decorator-extend.md#extend)，用于扩展组件样式。
@@ -139,7 +139,7 @@ content_hash: sha256:014eb3e0f65fbef4cc355da66cafc9e1ea1c0ecd76ca25b8dfa474b7025
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/h1dr9HuxQZajrsWHtF1-Ow/zh-cn_image_0000002736312281.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/VbDtojfrSRKppvEA-tDvdQ/zh-cn_image_0000002712243412.gif)
 
 ## 限制条件
 
@@ -225,7 +225,7 @@ content_hash: sha256:014eb3e0f65fbef4cc355da66cafc9e1ea1c0ecd76ca25b8dfa474b7025
           Text('this is TextUse')
 
           Button()
-            .ButtonUse()  // 会有编译告警提示: Property 'ButtonUse' does not exist  on type 'ButtonAttribute'.
+            .ButtonUse()  // 会有编译告警提示: Property 'ButtonUse' does not exist on type 'ButtonAttribute'.
             .height(50)
         }
       }
@@ -307,7 +307,7 @@ struct FancyUse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/CPx3DCZ_Tg6wdZxNGCslBg/zh-cn_image_0000002706673238.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/YFYNp-YYSzW9LlP-H9zViQ/zh-cn_image_0000002742002367.png)
 
 使用@Extend将样式组合复用，示例如下。
 

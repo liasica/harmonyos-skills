@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 按键事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 按键事件
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:54+08:00
+scraped_at: 2026-09-05T06:17:02+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:62509d4bfd28c5ae827e510d46048de2bae48e3690ce77f116bad41f6a11e67c
+content_hash: sha256:7dc9b9125c66d55e669eab8719327e25d4e30ebf1af729a3f54f3d121a2fb8ad
 ---
 
 按键事件是指组件与物理键盘、遥控器等按键设备交互时触发的事件，适用于所有可获焦组件，例如Button。对于默认不可获焦的组件，如Text、Image等，可以将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true后使用按键事件。
@@ -220,7 +220,7 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/c6_t1VgjRZyE3-2LWAVuhg/zh-cn_image_0000002706675656.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/hjNDZAanRqmmOvL0YiW_QA/zh-cn_image_0000002712405802.gif)
 
 ### 示例2（获取Unicode码值）
 
@@ -264,7 +264,7 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/0-r9Pm09QN2vby__rf9m1A/zh-cn_image_0000002736434743.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/SAhFFk6eRySsVy14toT2Yg/zh-cn_image_0000002742124751.gif)
 
 ### 示例3（触发onKeyPreIme回调）
 
@@ -362,4 +362,4 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/LkKm0L_iQt6qXyu1v06gAQ/zh-cn_image_0000002706835596.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/yBWZBY74Rcel_7z0BueYdg/zh-cn_image_0000002712245844.gif)

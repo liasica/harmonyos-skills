@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/br-pair-devic
 title: 配对与连接设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 传统蓝牙 > 配对与连接设备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:66ea718e75e3f19a2c4eaa540035a91f001cfe81212b3b7001b711a0a97f2d63
+scraped_at: 2026-09-05T06:14:28+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:8de2196e7abaaf802ec1af43807f54d510a3a5ec4074d46c0755af1b0d94901e
 ---
 
 ## 简介
@@ -55,7 +55,7 @@ try {
 
 配对过程中，系统会弹出对话框。不同配对类型，对话框样式可能不一样，其中“确认配对密钥（Confirm Passkey）”模式如下图1。若用户同意授权，才能配对成功。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Nh9pW92UShOI0ZydH2ImQQ/zh-cn_image_0000002736433483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/P_fsZ2OtQ3SNIcdz7tf5sA/zh-cn_image_0000002742123481.png)
 
 **图1** 蓝牙配对请求对话框
 
@@ -105,7 +105,7 @@ try {
 
 ### 连接已配对设备的profile
 
-若应用配对完目标设备后，可以调用[connectAllowedProfiles](../harmonyos-references/js-apis-bluetooth-connection.md#connectionconnectallowedprofiles16)，发起连接该设备支持的profile能力（只包括A2DP、HFP和HID）。若应用需要使用SPP连接，请参考[连接和传输数据](spp-development-guide.md)。
+应用配对完目标设备后，可以调用[connectAllowedProfiles](../harmonyos-references/js-apis-bluetooth-connection.md#connectionconnectallowedprofiles16)，发起连接该设备支持的profile能力（包括A2DP、HFP、HID和PAN）。若应用需要使用SPP连接，请参考[连接和传输数据](spp-development-guide.md)。
 
 * 蓝牙子系统会在配对过程中查询和保存目标设备支持的所有profile能力。
 * 配对完成后，应用可以主动查询目标设备的profile能力，需调用[getRemoteProfileUuids](../harmonyos-references/js-apis-bluetooth-connection.md#connectiongetremoteprofileuuids12)。若存在应用需要的能力，则可以在配对完成后30s内，发起连接目标设备的profile。

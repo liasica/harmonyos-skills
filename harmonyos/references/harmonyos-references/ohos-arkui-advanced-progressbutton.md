@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ProgressButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ProgressButton
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4e05cdafdb5d40f20cca7abcd266c3bc71f9ce80b2a9bd7b0df81438f6126422
+scraped_at: 2026-09-05T06:17:30+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:db3d06c041fc2d5dfe8913b0187f476fe01d1aaf67a121f7d5b74885a5095d67
 ---
 
 文本下载按钮，可显示具体下载进度。
@@ -13,7 +13,7 @@ content_hash: sha256:4e05cdafdb5d40f20cca7abcd266c3bc71f9ce80b2a9bd7b0df81438f61
 **说明** 
 
 * 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 该组件仅可在Stage模型下使用。
+* 本模块接口仅可在Stage模型下使用。
 * 如果ProgressButton设置[通用属性](ts-component-general-attributes.md)和[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到ProgressButton本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButton设置通用属性和通用事件。
 
 ## 导入模块
@@ -119,7 +119,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Gguxpr2DTfaSpPQzPC1mTg/zh-cn_image_0000002736435455.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/UcFBRaG8RhmfVT0Xlgq-bw/zh-cn_image_0000002742125479.png)
 
 ### 示例2（自定义颜色按钮）
 
@@ -182,7 +182,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/hpNIoP6QQoGD0VwgMzJFng/zh-cn_image_0000002706836304.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/y8lXhKouTXuAGNit8cKK4A/zh-cn_image_0000002712246572.png)
 
 ### 示例3（自定义圆角按钮）
 
@@ -239,4 +239,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/73u5p-OUQmyp4RdYZm05pw/zh-cn_image_0000002736315409.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Ea4KhsaTQaK88ZMbTWjElg/zh-cn_image_0000002742005523.png)

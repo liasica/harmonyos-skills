@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-bytecod
 title: 方舟字节码基本原理
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 方舟字节码 > 方舟字节码基本原理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9e4631b3c0044670fba39c1f79887dd5865e649382cdabde8eeaad62da95af2b
+scraped_at: 2026-09-05T06:13:54+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:7852cdc2685c2b723e3ac5c2a942e410cf037c1a838e0bd4f339c0ca11802fbd
 ---
 
 ## 总体设计
@@ -496,7 +496,7 @@ function foo3(a: number, b: number): void {}
 | 0x31 | IMM8\_IMM8\_V8 | callthisrange RR, +AA, vBB | 默认入参：acc：函数对象  R：方舟运行时内部使用的8位保留数字  A：参数数量  B：对象  B + 1, ..., B + A：参数 | 将this的值设置为B，以B + 1，...，B + A作为参数，调用acc中存放的函数对象，并将计算结果存放到acc中。 |
 | 0x32 | IMM8\_IMM8\_V8 | supercallthisrange RR, +AA, vBB | R：方舟运行时内部使用的8位保留数字  A：参数数量  B, ..., B + A - 1：参数 | 以B, ..., B + A - 1作为参数, 调用super函数，并将结果存放到acc中。  当A的值是0时，B是**undefined**。  此指令仅出现在非箭头函数中。 |
 | 0x33 | IMM8\_ID16\_IMM8 | definefunc RR, @AAAA, +BB | R：方舟运行时内部使用的8位保留数字  A：method id  B：方法A的形参数量 | 创建方法A的函数对象，并将其存放到acc中。 |
-| 0x34 | IMM8\_ID16\_IMM8 | definemethod RR, @AAAA, +BB | 默认入参：acc：类对象或类对象的对象原型，方法为静态方法时，acc中是类对象  R：方舟运行时内部使用的8位保留数字  A：method id  B：方法A的形参数量 | 创建方法A的函数对象，将acc中的对象设置为该函数对象的[HomeObject](https://262.ecma-international.org/12.0/#sec-ecmascript-function-objects)属性，并将该函数对象存放到acc中。 |
+| 0x34 | IMM8\_ID16\_IMM8 | definemethod RR, @AAAA, +BB | 默认入参：acc：类对象或类对象的对象原型，方法为静态方法时，acc中是类对象  R：方舟运行时内部使用的8位保留数字  A：method id  B：方法A的形参数量 | 创建方法A的函数对象，将acc中的对象设置为该函数对象的[[[HomeObject]]](https://262.ecma-international.org/12.0/#sec-ecmascript-function-objects)属性，并将该函数对象存放到acc中。 |
 | 0x35 | IMM8\_ID16\_ID16\_IMM16\_V8 | defineclasswithbuffer RR, @AAAA, @BBBB, +CCCC, vDD | R：方舟运行时内部使用的8位保留数字  A：类的构造函数的method id  B：literal id  C：方法A的形参数量  D：父类 | 使用索引B对应的字面量数组和父类D，创建A的类对象，并将其存放到acc中。 |
 | 0x36 | V8 | getnextpropname vAA | A：迭代器 | 执行[for-in迭代器](https://262.ecma-international.org/12.0/#sec-createiterresultobject)A的[next](https://262.ecma-international.org/12.0/#sec-%25foriniteratorprototype%25.next)方法，并将结果存放到acc中。 |
 | 0x37 | IMM8\_V8 | ldobjbyvalue RR, vAA | 默认入参：acc：属性键值  R：方舟运行时内部使用的8位保留数字  A：对象 | 加载A对象的键值为acc的属性，并将结果存放到acc中。 |

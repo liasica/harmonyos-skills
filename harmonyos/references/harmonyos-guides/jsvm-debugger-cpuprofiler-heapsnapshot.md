@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-debugger
 title: JSVM-API调试&定位
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API典型使用场景指导 > JSVM-API调试&定位
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
+scraped_at: 2026-09-05T06:15:48+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:2e399617fc92e4af1a7d4b55b965b2ff63eb70e4de2886f49c58bcbfa771a926
+content_hash: sha256:b58503d47cd9b3fa821799449175457ff43b2c4b123191c9385dda9b6b4154b1
 ---
 
 JSVM，即标准JS引擎，是严格遵守ECMAScript规范的JavaScript代码执行引擎。详情参考：[JSVM](../harmonyos-references/capi-jsvm.md)。
@@ -184,19 +184,19 @@ static void EnableInspector(JSVM_Env env) {
 
 1. Chrome浏览器中打开 chrome://inspect/#devices，勾选以下内容：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Q36U_cmCRqSex9Hlipaelg/zh-cn_image_0000002706675520.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/BSrhC0tpQ1q02XWpjz7eaw/zh-cn_image_0000002712405658.png)
 2. 执行端口转发命令：hdc fport [开发者个人计算机侧端口号] [端侧端口号]
 
    例如：hdc fport tcp:9227 tcp:9226
 3. 点击Port forwarding按钮，左侧输入开发者个人计算机侧端口，右侧输入端侧端口号，点击done。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/rQa-BCIbTNWb6PBY5C5UAQ/zh-cn_image_0000002736434607.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Iqw7pE2KS8udEH9-QigijQ/zh-cn_image_0000002742124607.png)
 4. 点击Configure按钮，输入开发者个人计算机侧的端口号，如localhost:9227。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/HhDqZzWQSOuEof9AZKem5A/zh-cn_image_0000002706835460.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/JFyvEaFZSyuWHwHAt-V_Jg/zh-cn_image_0000002712245700.png)
 5. 稍等片刻，会在target下出现调试的内容，点击inspect即可调试。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/PhOAxFL6Rky-5DagkjjwAw/zh-cn_image_0000002736314565.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/hJ1C4H4ARtONOMjnaPIWZg/zh-cn_image_0000002742004649.png)
 
 ### 使用 websocket 端口进行调试
 

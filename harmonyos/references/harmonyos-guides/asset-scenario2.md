@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-scenari
 title: 保护需要用户认证的密码类数据
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > 常见场景 > 保护需要用户认证的密码类数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
+scraped_at: 2026-09-05T06:14:17+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:1a5bf2e21cbca396dcdfd698a72e0f80a8f2bec903b3f668248275314362fb21
+content_hash: sha256:e5054ed3196d918957b6e4d22c4a66210f455fe3a44e398aa23de77d0d70563f
 ---
 
 **说明** 
@@ -26,7 +26,7 @@ content_hash: sha256:1a5bf2e21cbca396dcdfd698a72e0f80a8f2bec903b3f66824827531436
 
 由于统一用户认证（UserIAM）只提供ArkTS接口，故本场景只支持使用ArkTS语言开发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/zJZivzHsSTuY0_3znyGNLg/zh-cn_image_0000002706834270.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/T3lM4kwCRXWM_gy0PsId2w/zh-cn_image_0000002712244510.png)
 
 1. 业务查询符合条件的关键资产属性，根据查询成功或失败，判断关键资产是否存在。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap
 title: SSAP服务端
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > SSAP连接及数据传输 > SSAP服务端
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:e2d4af54429aae2f7ab4e2e2e4d2a42dc6131e9a2f096584ee98102ffe90cb62
+scraped_at: 2026-09-05T06:14:28+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:9e3dd188c43cb70db66c4f8978ff6184e05992eb35dfe799be91a5616e8440c5
 ---
 
 提供SSAP（SparkLink Service Access Protocol）服务端相关的连接、数据传输和服务管理功能。
@@ -16,7 +16,7 @@ content_hash: sha256:e2d4af54429aae2f7ab4e2e2e4d2a42dc6131e9a2f096584ee98102ffe9
 
 ## 场景介绍
 
-支持应用基于Nearlink技术进行数据传输，设备作为服务端，客户端可连接该服务端进行数据传输。
+支持应用基于NearLink技术进行数据传输，设备作为服务端，客户端可连接该服务端进行数据传输。
 
 ## 接口说明
 
@@ -143,7 +143,7 @@ content_hash: sha256:e2d4af54429aae2f7ab4e2e2e4d2a42dc6131e9a2f096584ee98102ffe9
        `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
    }
    ```
-6. 通知客户端属性值更新。其中参数address是步骤4中获取的已连接客户端设备地址。
+6. 订阅客户端写属性请求事件，并在收到写属性请求事件后通知客户端属性值更新。
 
    ```typescript
    let onReceivePropertyWriteEvent:(data: ssap.PropertyWriteRequest) => void = (data: ssap.PropertyWriteRequest) => {

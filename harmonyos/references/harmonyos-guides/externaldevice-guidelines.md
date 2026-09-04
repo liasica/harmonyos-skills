@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevic
 title: 开发带UI界面基础驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设基础驱动开发 > 开发带UI界面基础驱动
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:392d630f7b29da91e85e0e22cbabb9b2ad37d0b7190f9bb518ada4d4ae876b5a
+scraped_at: 2026-09-05T06:14:35+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:e9bcd25f1998ac7cb27f21710e7bf7c4cf7a2083924fb0d087c49a8f438e2003
 ---
 
 ## 场景介绍
@@ -25,8 +25,8 @@ content_hash: sha256:392d630f7b29da91e85e0e22cbabb9b2ad37d0b7190f9bb518ada4d4ae8
 | 接口名 | 描述 |
 | --- | --- |
 | queryDevices(busType?: number): Array<Readonly<Device>> | 查询扩展外设列表。 |
-| bindDriverWithDeviceId(deviceId: number, onDisconnect: AsyncCallback<number>): Promise<RemoteDeviceDriver> | 绑定设备的Promise形式，API19开始支持。 |
-| unbindDriverWithDeviceId(deviceId: number): Promise<number> | 解绑设备的Promise形式，API19开始支持。 |
+| bindDriverWithDeviceId(deviceId: number, onDisconnect: AsyncCallback<number>): Promise<RemoteDeviceDriver> | 绑定设备的Promise形式，API version 19开始支持。 |
+| unbindDriverWithDeviceId(deviceId: number): Promise<number> | 解绑设备的Promise形式，API version 19开始支持。 |
 
 ## 开发步骤
 

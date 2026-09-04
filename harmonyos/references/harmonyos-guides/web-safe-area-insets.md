@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-safe-area
 title: 网页中安全区域计算和避让适配
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 网页中安全区域计算和避让适配
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
+scraped_at: 2026-09-05T06:14:11+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4876a71a294744460484a648cfe3d281b44ce4198c2e5df2c2cbe96220c42ea7
+content_hash: sha256:222ecf9402a24d41db792af17ea531578cdd167f1a5fff166caa6e34e50077e4
 ---
 
 早期设备屏幕多为矩形，应用界面能够完整展示。随着全面屏、刘海屏等异形屏幕的普及，屏幕边缘可能出现圆角、摄像头或系统导航条，导致界面部分被遮挡。
@@ -104,7 +104,7 @@ safe-area-inset-\*是一组CSS环境变量，定义了安全区域与Web可视�
 
 **图1** safe-area-inset-\*示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/aUi2ZI92Rt2_WtOYptdA3w/zh-cn_image_0000002736433235.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/N4RYfySYSjShPe75a7yF_w/zh-cn_image_0000002742123233.png)
 
 当设置viewport-fit=cover时，ArkWeb内核将持续监测Web组件及系统非安全区域的位置与尺寸，根据两者的重叠部分计算网页在四个方向上需避让的具体距离，并设置给环境变量safe-area-inset-\*。在矩形显示器（如普通PC/2in1设备的屏幕）上，这些值为零。在非矩形显示器（如圆形表盘或移动设备屏幕）上，safe-area-inset-\*所界定的内矩形区域即为安全区域，网页内容在该区域内可完整显示，避免被非矩形显示区域裁剪。
 
@@ -140,7 +140,7 @@ Web组件启用沉浸式效果时，渲染内容可能与非安全区域重叠�
 
 **图2** Web组件开启沉浸式效果时网页元素被非安全区域遮挡
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/sfbgDH9QR7uRtc6lDIwAAA/zh-cn_image_0000002706834080.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/SRCX0voRQreHuonYdym_Kw/zh-cn_image_0000002712244320.png)
 
 ```html
 <!-- index.html -->
@@ -222,4 +222,4 @@ Web组件启用沉浸式效果时，渲染内容可能与非安全区域重叠�
 
 **图3** Web组件开启沉浸式效果时网页元素避让非安全区域
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/c3jtePtRTfGL0rBGuAdJEQ/zh-cn_image_0000002736313189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/H2Ty06ZfQmSWYYD9_Vh_fA/zh-cn_image_0000002742003273.png)

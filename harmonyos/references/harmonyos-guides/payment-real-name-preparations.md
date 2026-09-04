@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: （可选）用户身份验证服务接入准备
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > （可选）用户身份验证服务接入准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:59+08:00
+scraped_at: 2026-09-05T06:15:15+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5b81a6b6ed34ecf788b2e77a1d6c4b2ef2feeff630e6be4a602b01f5fbfaa7e9
+content_hash: sha256:a4c656c862ea7702e17bf814add1a96d25bd1979b20da67c38886d6f1ed3510a
 ---
 
 如不涉及身份验证服务接入，可跳过该章节。
@@ -18,17 +18,17 @@ content_hash: sha256:5b81a6b6ed34ecf788b2e77a1d6c4b2ef2feeff630e6be4a602b01f5fbf
 
 开启身份验证服务相关权限开关时，开发者需签署一份“开发者协议”，开发者同意协议并提交申请资料后需要等待审核（审核周期一般在1-3个工作日）通过后才能使用相关服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/Y9IJ2D6_TH6tJkfurcWnyg/zh-cn_image_0000002706675170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/MJWTVNBZSmWkwZQX07AoPQ/zh-cn_image_0000002712405310.png)
 
 ## 上传开发者公钥及下载华为公钥
 
 开发者可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“鸿蒙支付服务 > 身份验证服务”菜单中的“公钥管理”页签下完成开发者证书的上传以及华为公钥证书下载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/p0uIikMBSCy6XdHWq_wFCw/zh-cn_image_0000002736434259.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/ffqXZ8fYRDy4LnReLapuMQ/zh-cn_image_0000002742124259.png)
 
 证书使用如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/E2vEtuDLQ1ygidzAd5FbvQ/zh-cn_image_0000002706835108.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/hlfgsTdKTBO8inVcV8yZTg/zh-cn_image_0000002712245352.png)
 
 证书说明如下：
 

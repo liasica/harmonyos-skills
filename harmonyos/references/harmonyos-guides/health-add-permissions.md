@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-add-pe
 title: 管理用户授权
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 管理用户授权
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:55+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:e59c86b7d9a74aaa50ed6ffdf2a3a2d90a00a3c40d5b8cf86ba30248124a0590
+scraped_at: 2026-09-05T06:15:08+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:fe6151fc744d0676604ff7f88a676e097c186276bf46fa6ab2f1b4a48300412e
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:e59c86b7d9a74aaa50ed6ffdf2a3a2d90a00a3c40d5b8cf86ba30248124
 
 应用所能操作的用户数据，是用户授权和运动健康服务审批通过的数据权限的交集。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/1yK6L9PISMKr7hM1J54WUQ/zh-cn_image_0000002706834930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/3Cjw3eRpRCSkcLTVWcK0Uw/zh-cn_image_0000002712245174.png)
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MediaAssetChangeRequest)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Class (MediaAssetChangeRequest)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:50f607f92c6ab145833edc820bc499f58ac6fbf64a6b28983cb629e506ea4eec
+scraped_at: 2026-09-05T06:20:27+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:592d7200138c672fee8c9a9df1a9ba2b9b4c3dc5fe320482a27285831c0d5f16
 ---
 
 MediaAssetChangeRequest implements [MediaChangeRequest](arkts-apis-photoaccesshelper-i.md#mediachangerequest11).
@@ -643,7 +643,7 @@ saveCameraPhoto(): void
 **说明** 
 
 * 非YUV拍摄模式下，照片资源保存的编码格式与[CameraFormat](arkts-apis-camera-e.md#cameraformat)保持一致。
-* YUV拍摄模式下，该接口无法指定编码格式，图片资源保存为默认的jpg格式。从API版本13开始，如需指定编码格式，请使用[saveCameraPhoto](arkts-apis-photoaccesshelper-mediaassetchangerequest.md#savecameraphoto13)接口。
+* YUV拍摄模式下，该接口无法指定编码格式，图片资源保存为默认的jpg格式。从API version 13开始，如需指定编码格式，请使用[saveCameraPhoto](arkts-apis-photoaccesshelper-mediaassetchangerequest.md#savecameraphoto13)接口。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 
@@ -728,7 +728,7 @@ async function example(context: Context, asset: photoAccessHelper.PhotoAsset) {
 
 discardCameraPhoto(): void
 
-删除相机拍摄的照片，照片将被移入回收站。
+删除相机拍摄的照片。
 
 **系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
 

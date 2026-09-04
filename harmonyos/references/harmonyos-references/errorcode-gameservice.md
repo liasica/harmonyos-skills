@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4a4e60d9be071cbdce17a7fd123d0dfc288a4fe9bf478053ae64a6022cda24b4
+scraped_at: 2026-09-05T06:20:59+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:1fbeb44ef8a70c746e30e1937595698b3763ab5224de41387bfdb80dc222b7ba
 ---
 
 **说明** 
@@ -28,7 +28,7 @@ Game Service Kit系统内部错误。
 
 **处理步骤**
 
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
+请优先重试或重启设备重试，若重试不成功，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
 
 ## 1010300002 鉴权失败
 
@@ -610,11 +610,12 @@ System internal error.
 
 **可能原因**
 
-Game Service Kit系统内部错误。
+传入的参数无法解析。
 
 **处理步骤**
 
-通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
+1. 检查参数传入是否正确。
+2. 若上述方法无法解决问题，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
 
 ## 1018300002 鉴权失败
 

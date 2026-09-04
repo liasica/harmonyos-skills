@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 多网并发网络加速
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 多网并发网络加速
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
+scraped_at: 2026-09-05T06:14:30+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:3d7b5fbf7aa4208a0235f383576b7e2cdaf00f74d2bb0878ab31309e38b46efb
+content_hash: sha256:8ae1d15a00c88f5afa28f51a508566c5d11491e9df9892f8b493f75b91b8e86d
 ---
 
 ## 概述
@@ -55,7 +55,7 @@ content_hash: sha256:3d7b5fbf7aa4208a0235f383576b7e2cdaf00f74d2bb0878ab31309e38b
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ZUNYRtY9ScCYUofaLqbszw/zh-cn_image_0000002706834358.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/tv7RWow8R6-sLlt5w3oBsA/zh-cn_image_0000002712244594.png)
 
 ### 代码实现
 
@@ -559,7 +559,7 @@ content_hash: sha256:3d7b5fbf7aa4208a0235f383576b7e2cdaf00f74d2bb0878ab31309e38b
 
 ### 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Aa171RFkR3OolCVkDdVUUg/zh-cn_image_0000002736313463.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/9c9fB3EARm-3-fneegCS3w/zh-cn_image_0000002742003547.png)
 
 ### 代码实现
 

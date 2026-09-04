@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: 模型转换示例
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > 离线模型转换 > 模型转换示例
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4d32dfd26a009ba125aacd5f9f4a1de5d8579393216ea9ebdd3b7b1323599e8e
+content_hash: sha256:1f04cfa714cc4f9f3a8ec4edcd0c0d3a4b70232555c7c6d152b0f32173331698
 ---
 
 使用CANN Kit工具时，可以预先使用OMG工具将Caffe、TensorFlow、ONNX、MindSpore模型转换为OM离线模型，移动端AI程序直接读取离线模型进行推理。OMG工具位于[Tools下载](cannkit-preparations.md#tools下载)的tools/tools\_omg下，可运行在64位Linux平台上。
@@ -98,7 +98,7 @@ content_hash: sha256:4d32dfd26a009ba125aacd5f9f4a1de5d8579393216ea9ebdd3b7b13235
 ./omg --model=./1batch.onnx --input_shape="inputName:-1,3,128,128" --dynamic_dims="1;2;5" --framework=5 --output=./FlexibleShapeModelName
 ```
 
-**说明** 
+![](https://media:401788444081763678) 
 
 不同shape输入对应的不同输出shape，可在模型转换日志中，通过 "Graph:" 关键字查找对应的shape信息，方便在模型推理时指定对应的输出描述。
 
@@ -124,7 +124,7 @@ MindSpore支持的算子数量有限，建议通过[TensorFlow模型转换](cann
 
 当出现“OMG generate offline model success”时，说明AIPP模型转换成功，会在当前目录下生成AIPP squeezenet.om模型。
 
-**说明** 
+![](https://media:401788444081785679) 
 
 aipp\_conf\_static.cfg是AIPP的配置文件，位置存放在"tools/tools\_omg/sample"文件夹中，具体说明参见[AIPP配置文件说明](cannkit-aipp-configuration-file.md)。
 

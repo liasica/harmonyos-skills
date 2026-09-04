@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-obs
 title: "@ObservedV2装饰器和@Trace装饰器：类属性变化观测"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @ObservedV2装饰器和@Trace装饰器：类属性变化观测
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d7322c0e1c647d7a8592938a614fa3e2975590921030c46800bb996f3fc29ce6
+scraped_at: 2026-09-05T06:13:57+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:726bb687c3be8cd5fccc258c14ac059d50c57db8b5afb9894947c164576c63c5
 ---
 
 为了增强状态管理框架对类对象中属性的观测能力，开发者可以使用[@ObservedV2](../harmonyos-references/ts-state-management-observedv2.md#observedv2)装饰器和[@Trace](../harmonyos-references/ts-state-management-trace.md#trace)装饰器装饰类以及类中的属性。
@@ -79,7 +79,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Y9VUYDcVSH6Ap71jtkVE0Q/zh-cn_image_0000002706833256.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/DTuuQbCcRgm1XWQ1lwV6HA/zh-cn_image_0000002742122407.png)
 
 在上述代码中，点击Text组件增加age的值时，不会触发UI刷新。原因在于现有的状态管理框架无法观测到嵌套类中属性age的值变化。V1版本的解决方案是使用[@ObjectLink装饰器](arkts-observed-and-objectlink.md)与自定义组件来实现观测。
 
@@ -140,7 +140,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/OR3eGUiVQ76Omfx39WvCMA/zh-cn_image_0000002736312365.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/prdETxAwTZWECN4nsAarQQ/zh-cn_image_0000002712243496.gif)
 
 通过这种方式虽然能够实现对嵌套类中属性变化的观测，但是当嵌套层级较深时，代码将会变得十分复杂，易用性差。因此推出类装饰器@ObservedV2与成员变量装饰器@Trace，增强对嵌套类中属性变化的观测能力。
 
@@ -192,7 +192,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/YHaj4AzuR-OKS6RjNdMbfA/zh-cn_image_0000002706673320.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ZrH-bfh_Sk-VYUNOPEOAhg/zh-cn_image_0000002742002451.gif)
 
 * 在继承类中使用@Trace装饰的属性具有被观测变化的能力。
 
@@ -225,7 +225,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/HdCIPJ-rTJWdTQUn-dfoMA/zh-cn_image_0000002736432411.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/88IXURGhR7CMn65myuSyyQ/zh-cn_image_0000002712403462.gif)
 
 * 类中使用@Trace装饰的静态属性具有被观测变化的能力。
 
@@ -253,7 +253,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/RrqXbxf-Ssy5ranHQAqjVA/zh-cn_image_0000002706833258.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/sL7hOyAKQEayTpKb_v0QbA/zh-cn_image_0000002742122409.gif)
 
 * @Trace装饰内置类型时，可以观测各自API导致的变化：
 
@@ -304,7 +304,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/qq5MeWHJQEiqfeBpLCJM-A/zh-cn_image_0000002736312367.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/yv2_MfuWR5OAHApxP2lpdQ/zh-cn_image_0000002712243498.gif)
 
 * @ObservedV2仅能装饰class，无法装饰自定义组件。
 
@@ -402,7 +402,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/5Ooknsf4RaeFLdl7XGjaJg/zh-cn_image_0000002706673322.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/aLoJR515To-QsFydLRc61g/zh-cn_image_0000002742002453.gif)
 
 * 继承自@ObservedV2的类无法和@State等V1的装饰器混用，运行时报错。
 
@@ -536,7 +536,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/tmF-BSPbRuSMRkHgUUZLxw/zh-cn_image_0000002736432413.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/NNXIa3BRQxCpe3wo8eGAKQ/zh-cn_image_0000002712403464.gif)
 
 ### 继承类场景
 
@@ -544,7 +544,7 @@ struct Page {
 
 以下例子中，声明class GrandFather、Father、Uncle、Son、Cousin，继承关系如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bTNi4vBXT1Wre7Ah4WNXkA/zh-cn_image_0000002706833260.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/MB-ohhHsS1Kq5fLmTdPuZg/zh-cn_image_0000002742122411.png)
 
 创建类Son和类Cousin的实例，点击Button('change Son age')和Button('change Cousin age')可以触发UI的刷新。
 
@@ -632,7 +632,9 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/rf_EHyi5Ty-CVtblWc1dqw/zh-cn_image_0000002736312369.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/TTC_jJm5SbSu2suWpQFfvw/zh-cn_image_0000002712243500.gif)
+
+在继承场景中，不建议在子类中重复声明与父类同名的@Trace属性，否则可能导致非预期的依赖收集。详情请参考[延迟加载场景下父子类同名@Trace属性导致非预期的依赖收集](arkts-new-observedv2-and-trace.md#延迟加载场景下父子类同名trace属性导致非预期的依赖收集)。
 
 ### @Trace装饰基础类型的数组
 
@@ -764,7 +766,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/JqZ7v2bsQse41Fsu0sIytA/zh-cn_image_0000002706673324.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/hLRufQwuQ2qJgp83jG9a6Q/zh-cn_image_0000002742002455.gif)
 
 ### @Trace装饰对象数组
 
@@ -842,7 +844,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/6I6DPezPRj6mnJg7-qfT4g/zh-cn_image_0000002736432415.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/SZLYlBGDQPSPkPpoBGa8wg/zh-cn_image_0000002712403466.gif)
 
 ### @Trace装饰Map类型
 
@@ -911,7 +913,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ap_TAtL8QzSErKj99XGorQ/zh-cn_image_0000002706833262.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/lPSTSnbIQbyQRsdgbUBFIg/zh-cn_image_0000002742122413.gif)
 
 ### @Trace装饰Set类型
 
@@ -971,7 +973,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/qIimpzN0ScucHgqSbx0q7A/zh-cn_image_0000002736312371.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/-sWOYKEASYaETi2lsZr5jA/zh-cn_image_0000002712243502.gif)
 
 ### @Trace装饰Date类型
 
@@ -1027,7 +1029,7 @@ struct DateSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/_Hj2LUBhQviXPd5-TQhAzw/zh-cn_image_0000002706673326.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DoUMEZINT1SeM5DeyKA05Q/zh-cn_image_0000002742002457.gif)
 
 ## 常见问题
 
@@ -1227,7 +1229,7 @@ struct SerializationAndDeserialization {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/I55nHNjRQF6lJDjl3Ruz_w/zh-cn_image_0000002736432417.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/DCmNhfodTn-ZLmNd4gMu0Q/zh-cn_image_0000002712403468.gif)
 
 ### router传递的@ObservedV2类型显示异常
 
@@ -1372,4 +1374,90 @@ struct Detail {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/z0wOq8cAS3S9dJ00fyp7OA/zh-cn_image_0000002706833264.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/0uPPlTp0T2akhmjGCjqBcQ/zh-cn_image_0000002742122417.gif)
+
+### 延迟加载场景下父子类同名@Trace属性导致非预期的依赖收集
+
+框架执行[@Computed](arkts-new-computed.md)计算、组件渲染或[PersistenceV2](arkts-new-persistencev2.md)持久化时，会收集执行过程中访问到的状态变量依赖。如果父类和子类声明了同名的@Trace属性，子类又通过[延迟加载（lazy import）](arkts-lazy-import.md)延迟加载，并恰好在上述依赖收集过程中首次加载，则该子类同名属性会触发到父类的同名属性的读取，从而收集到该同名属性的依赖。
+
+因此，在首次修改该同名属性时，会触发非预期的@Computed重新计算、组件刷新或PersistenceV2持久化写入；再次修改时不会继续触发这一非预期行为。建议仅在父类中声明该@Trace属性，由子类直接继承，不要在子类中重复声明。以下以@Computed场景为例进行说明。
+
+【反例】
+
+```typescript
+// LazyImportTraceBase.ets
+@ObservedV2
+export class Parent {
+  @Trace value: number = 0;
+}
+```
+
+```typescript
+// LazyImportTraceChild.ets
+import { Parent } from './LazyImportTraceBase';
+
+@ObservedV2
+export class Child extends Parent {
+  @Trace value: number = 0;
+  @Trace value2: number = 0;
+}
+```
+
+```typescript
+// 延迟加载Child类
+import lazy { Child } from './LazyImportTraceChild';
+
+@Entry
+@ComponentV2
+struct LazyImportTrace {
+  @Local count: number = 1;
+  child?: Child;
+
+  @Computed
+  get doubleCount(): number {
+    if (!this.child) {
+      // Child通过lazy import延迟加载，并在@Computed初始化过程中首次加载
+      // 父类和子类声明了同名的@Trace value，此时会收集到当前@Computed doubleCount的依赖
+      this.child = new Child();
+    }
+    console.info('execute @Computed doubleCount');
+    // 预期仅在count改变时，才会触发@Computed doubleCount重新计算
+    return this.count * 2;
+  }
+
+  build() {
+    Column({ space: 10 }) {
+      Text(`doubleCount ${this.doubleCount}`)
+        .fontSize(20)
+      Button(`Change child value ${this.child?.value}`)
+        .onClick(() => {
+          if (this.child) {
+            this.child.value++;
+          }
+        })
+      Button(`Change count ${this.count}`)
+        .onClick(() => {
+          this.count++;
+        })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
+【正例】
+
+将value统一定义在父类中，子类直接继承该属性，不再重复声明同名的@Trace属性。仅需按以下方式修改LazyImportTraceChild.ets，其他代码保持不变。
+
+```typescript
+import { Parent } from './LazyImportTraceBase';
+
+@ObservedV2
+export class Child extends Parent {
+  // 不在子类重复定义value，直接继承父类中被@Trace装饰的value属性
+  @Trace value2: number = 0;
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/xnrg1F3hQYG9_nuA3qFwFw/zh-cn_image_0000002712243504.gif)

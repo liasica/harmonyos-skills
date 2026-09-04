@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-l
 title: 应用生命周期概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用生命周期概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:10+08:00
+scraped_at: 2026-09-05T06:13:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:96fc1f71c832206b0d2034a03780ce9b8c0af1f0c4c39adf4fbfd2581e587821
+content_hash: sha256:0648a6a36a9f3d90b85dfe2297b256e3779d12bc246989e393ee4ec284305746
 ---
 
 ## 概述
@@ -20,12 +20,12 @@ content_hash: sha256:96fc1f71c832206b0d2034a03780ce9b8c0af1f0c4c39adf4fbfd2581e5
 
   当应用的首个进程创建时，意味着应用的启动；当应用的所有进程结束时，则意味着应用退出（具体关联见下图）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/IjMhu0zURi2hsGQQLGTT8w/zh-cn_image_0000002706833020.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/5EJ-QDVeTxOPDudRqmOZIA/zh-cn_image_0000002742122177.png)
 * 应用进程生命周期与UIAbility组件的关系
 
   应用进程的生命周期直接制约并影响着UIAbility组件的生命周期（具体关联见下图）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/e0rNOtIzTZ6gtFXLR9urIA/zh-cn_image_0000002736312129.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/rseBjno5T7K3drlH_zF8Mw/zh-cn_image_0000002712243262.png)
 
   [UIAbility组件生命周期](uiability-lifecycle.md)的前后台回调与进程的前后台状态密切相关，但二者并非完全等同：
 

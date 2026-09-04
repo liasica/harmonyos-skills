@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-opensl-
 title: 使用OpenSL ES开发音频播放功能(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > OpenSL ES开发指导(不再推荐) > 使用OpenSL ES开发音频播放功能(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:f49261266182ec4fc42db4ce1cbae84086ea66feb12b566f4bc6b12473c3219f
+scraped_at: 2026-09-05T06:14:45+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:6cff9e58921251af6cc3dba3eb3e38027761bffb6466daf998fa5cbaeaccc569
 ---
 
 OpenSL ES全称为Open Sound Library for Embedded Systems，是一个嵌入式、跨平台、免费的音频处理库。为嵌入式移动多媒体设备上的应用开发者提供标准化、高性能、低延迟的API。HarmonyOS的Native API基于[Khronos Group](https://www.khronos.org/)开发的[OpenSL ES](https://www.khronos.org/opensles/) 1.0.1 API 规范实现，开发者可以通过<SLES/OpenSLES.h>和<SLES/OpenSLES\_OpenHarmony.h>在HarmonyOS上使用相关API。
@@ -24,7 +24,7 @@ OHAudio的开发指南请参考：[推荐使用OHAudio开发音频播放功能(C
 
 OpenSL ES中提供了以下的接口，HarmonyOS当前仅实现了部分[接口](https://gitcode.com/openharmony/third_party_opensles/blob/master/api/1.0.1/OpenSLES.h)，可以实现音频播放的基础功能。
 
-调用未实现接口后会返回**SL\_RESULT\_FEATURE\_UNSUPPORTED**, 当前没有相关扩展可以使用。
+调用未实现接口后会返回**SL\_RESULT\_FEATURE\_UNSUPPORTED**，当前没有相关扩展可以使用。
 
 以下列表列举了HarmonyOS上已实现的OpenSL ES的接口，具体说明请参考[OpenSL ES](https://www.khronos.org/opensles/)规范：
 

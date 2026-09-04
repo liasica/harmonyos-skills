@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: crypto_signature.h
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 头文件 > crypto_signature.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:41+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b8af3f6a08f6a75e57ec8d06f9de417d06acaa02abf3aee956e1070a4493dcf6
+scraped_at: 2026-09-05T06:18:32+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:84d0837d7d46b3cdfe2ee1789e3f169bc785f11f71f58e7f0fb4a0eaf08a2688
 ---
 
 ## 概述
@@ -207,7 +207,7 @@ bool OH_CryptoVerify_Final(OH_CryptoVerify *ctx, Crypto_DataBlob *in, Crypto_Dat
 
 | 类型 | 说明 |
 | --- | --- |
-| bool | 返回bool类型的验签结果。返回true表示验签通过，返回false表示验签失败。可能的原因：公钥不正确、签名数据损坏、摘要算法不匹配、  填充模式不匹配，或数据与原始签名数据不匹配。 |
+| bool | 返回bool类型的验签结果。返回true表示验签通过，返回false表示验签失败。可能的原因：公钥不正确、签名数据损坏、摘要算法不匹配、填充模式不匹配，或数据与原始签名数据不匹配。 |
 
 ### OH\_CryptoVerify\_Recover()
 
@@ -285,7 +285,7 @@ OH_Crypto_ErrCode OH_CryptoVerify_SetParam(OH_CryptoVerify *ctx, CryptoSignature
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Crypto\_ErrCode](capi-crypto-common-h.md#oh_crypto_errcode) | CRYPTO\_SUCCESS：操作成功。  CRYPTO\_INVALID\_PARAMS：ctx或value为NULL，value->data为NULL，  value->len与type期望的大小不匹配，或type不是有效的CryptoSignature\_ParamType。  CRYPTO\_NOT\_SUPPORTED：不支持的操作或算法。  CRYPTO\_MEMORY\_ERROR：内存操作失败。  CRYPTO\_OPERTION\_ERROR：设置参数失败。 |
+| [OH\_Crypto\_ErrCode](capi-crypto-common-h.md#oh_crypto_errcode) | CRYPTO\_SUCCESS：操作成功。  CRYPTO\_INVALID\_PARAMS：ctx或value为NULL，value->data为NULL，value->len与type期望的大小不匹配，或type不是有效的CryptoSignature\_ParamType。  CRYPTO\_NOT\_SUPPORTED：不支持的操作或算法。  CRYPTO\_MEMORY\_ERROR：内存操作失败。  CRYPTO\_OPERTION\_ERROR：设置参数失败。 |
 
 ### OH\_CryptoVerify\_GetParam()
 

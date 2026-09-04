@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-examp
 title: 模型轻量化示例
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 模型轻量化示例
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a3ad9265afda46279b4a0a37deabfbf6d219bf8a1c1a53a394dc0b01c3b3a2af
+content_hash: sha256:2be0d2e4d17eee510e038fbff55ddaf945ca438105ba6763adbb5d49421f1f1d
 ---
 
 ## TensorFlow Quant\_INT8-8无训练量化Demo
@@ -29,7 +29,7 @@ content_hash: sha256:a3ad9265afda46279b4a0a37deabfbf6d219bf8a1c1a53a394dc0b01c3b
 
 "dopt\_tf\_py3/demo/quant8-8/notrain/tensorflow\_mnist"中存有量化后的pb模型和量化配置文件，运行demo后生成的文件如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/mQpcQ2idQ16vzTxZaGlMww/zh-cn_image_0000002736314383.png)
+![](https://media:401788444087120730)
 
 ## PyTorch Quant\_INT8-8无训练量化Demo
 
@@ -54,7 +54,7 @@ content_hash: sha256:a3ad9265afda46279b4a0a37deabfbf6d219bf8a1c1a53a394dc0b01c3b
 
 "dopt\_pytorch\_py3/demo/quant8-8/notrain/pytorch\_mnist/"中存有PyTorch无训练量化示例文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/OZWdC8qbRMeC_ypw-svwIw/zh-cn_image_0000002706675340.png)
+![](https://media:401788444087144731)
 
 ## ONNX Quant\_INT8-8无训练量化Demo
 
@@ -270,7 +270,7 @@ if __name__ == "__main__":
 
 分类网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_cls\_imagenet，包含5个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Gxm13mwBRA-vV_UVFD3VOA/zh-cn_image_0000002736434427.png)
+![](https://media:401788444087174732)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -322,7 +322,7 @@ if __name__ == "__main__":
       export PYTHONPATH=$PYTHONPATH:`pwd`/models/
       ```
 
-   **说明** 
+   ![](https://media:401788444087205733) 
 
    每次打开终端需要重新执行一次上述命令，或添加到“~/.bashrc”文件，并执行“source ~/.bashrc”。
 4. 配置demo下的scen.yaml文件，请参见[搜索参数配置](cannkit-network-structure-search-training.md#搜索参数配置)。scen.yaml中提供了建议参数，开发者可根据实际需求修改。
@@ -333,7 +333,7 @@ if __name__ == "__main__":
 
 检测网络Demo位于"tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_det\_coco"，包含6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/blgpM7pMTtKz2jxL-DrXPw/zh-cn_image_0000002706835280.png)
+![](https://media:401788444087239734)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项。
@@ -411,7 +411,7 @@ if __name__ == "__main__":
 
 分割网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_seg\_voc，包含 6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/h-Zyltc8Q9icIz9mVF6Brw/zh-cn_image_0000002736314385.png)
+![](https://media:401788444087271735)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项
@@ -489,7 +489,7 @@ if __name__ == "__main__":
          export PYTHONPATH=$PYTHONPATH:`pwd`/models/
          ```
 
-         **说明** 
+         ![](https://media:401788444087297736) 
 
          每次打开终端需要重新执行一次上述命令，或添加到"~/.bashrc"文件，并执行"source ~/.bashrc"。
    8. 修改开源实现，按照readme.md中修改开源实现的步骤，修改相关开源文件。
@@ -503,7 +503,7 @@ if __name__ == "__main__":
 
 分类网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_cls\_imagenet\_pytorch，包含5个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/CBJrkzyJQAerJhtCPwaB0A/zh-cn_image_0000002706675342.png)
+![](https://media:401788444087328737)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -523,7 +523,7 @@ if __name__ == "__main__":
 
 分割网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_seg\_voc\_pytorch，包含 6个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/FjATrpG1QcKBoCImsUKMqQ/zh-cn_image_0000002736434429.png)
+![](https://media:401788444087356738)
 
 * blocks.so：搜索空间文件
 * pre\_train.yaml：预训练的配置项

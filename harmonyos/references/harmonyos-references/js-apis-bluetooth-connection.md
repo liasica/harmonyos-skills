@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.connection (蓝牙connection模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.connection (蓝牙connection模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:01eb0e1edc133fd5bdaef65c5fb629fa6f1133f030b1aec3d8c5ee92dff37a76
+scraped_at: 2026-09-05T06:18:48+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:72eeb074802368896174a550169c07b14110210a10185f4c8304847189c8f3f9
 ---
 
 connection模块提供了蓝牙设备的配对、连接、状态查询、设备扫描发现、扫描模式设置、电量信息获取及事件订阅等能力，适用于需要在应用中实现蓝牙设备发现、配对、连接和信息查询的场景。
@@ -1885,7 +1885,7 @@ try {
 
 connectAllowedProfiles(deviceId: string, callback: AsyncCallback<void>): void
 
-连接对端设备支持的Profile（只包括A2DP、HFP和HID）。使用Callback异步回调。
+连接对端设备所支持的Profile（包括A2DP、HFP、HID和PAN），蓝牙子系统会识别对端设备支持的Profile类型。使用Callback异步回调。
 
 * API版本26.0.0之前，需先调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对，且仅允许在每次发起配对后30秒内调用此接口一次。
 * 从API版本26.0.0开始，针对A2DP和HFP，调用接口无时间限制，可以在调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对后任意时间内进行调用。针对HID，仍需在每次发起配对后30秒内调用此接口。
@@ -1940,7 +1940,7 @@ try {
 
 connectAllowedProfiles(deviceId: string): Promise<void>
 
-连接对端设备支持的Profile（只包括A2DP、HFP和HID）。使用Promise异步回调。
+连接对端设备所支持的Profile（包括A2DP、HFP、HID和PAN），蓝牙子系统会识别对端设备支持的Profile类型。使用Promise异步回调。
 
 * API版本26.0.0之前，需先调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对，且仅允许在每次发起配对后30秒内调用此接口一次。
 * 从API版本26.0.0开始，针对A2DP和HFP，调用接口无时间限制，可以在调用[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)发起配对后任意时间内进行调用。针对HID，仍需在每次发起配对后30秒内调用此接口。
@@ -1998,9 +1998,10 @@ try {
 
 disconnectAllowedProfiles(deviceId: string): Promise<void>
 
-断开对端设备支持的Profile（只包括A2DP和HFP）。
+断开对端设备支持的Profile。使用Promise异步回调。
 
-* 需要与接口[connection.connectAllowedProfiles](js-apis-bluetooth-connection.md#connectionconnectallowedprofiles16)配合使用。
+* 非系统应用调用该接口需要与接口[connection.connectAllowedProfiles](js-apis-bluetooth-connection.md#connectionconnectallowedprofiles16)配合使用，直接调用该接口会抛出错误码2900099。非系统应用调用该接口仅允许断开A2DP和HFP两类Profile，其他Profile涉及系统应用功能，仅限系统应用操作。
+* 系统应用可直接调用该接口，断开当前连接的全部Profile，包括A2DP，HFP，HID，PAN等。
 
 **起始版本**：26.0.0
 

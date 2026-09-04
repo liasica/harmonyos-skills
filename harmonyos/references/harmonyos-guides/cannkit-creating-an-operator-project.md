@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-creat
 title: 创建算子工程
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 创建算子工程
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:25+08:00
 doc_updated_at: 2026-06-05
-content_hash: sha256:e1adad8cae230d2915498aa380dd5296cb1f9dae8cb636460d85b115ecc223ce
+content_hash: sha256:2952561e617433c771f7c9a511069cfb5794a49af89be6f0feedd4cea80ac816
 ---
 
 DDK开发套件包中提供了自定义算子工程生成工具msOpGen，可基于算子原型定义输出算子工程：包括**算子host侧代码实现文件**、**算子kernel侧实现文件**以及**工程编译配置文件等**。
@@ -133,7 +133,7 @@ source ddk/tools/tools_ascendc/set_ascendc_env.sh
    * -i：指定算子原型定义文件add\_custom.json所在路径，请根据实际情况修改。
    * -c：ai\_core-<soc\_version>代表算子在AI Core上执行，<soc\_version>为AI处理器的型号，当前支持ai\_core-kirin9020、ai\_core-kirinX90。
 
-   **说明** 
+   ![](https://media:401788444095346814) 
 
    AI处理器的型号<soc\_version>请在运行环境上通过命令行获取：
 
@@ -168,7 +168,7 @@ source ddk/tools/tools_ascendc/set_ascendc_env.sh
    └── scripts // 自定义算子工程打包相关脚本所在目录
    ```
 
-   **说明** 
+   ![](https://media:401788444095370815) 
 
    上述目录结构中的粗体文件为后续算子开发过程中需要修改的文件，其他文件无需修改。
 

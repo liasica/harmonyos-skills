@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片适配常见问题
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片适配常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:25+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:0c86a3cf6fbba282917763dc67cdf4650454a28840dbe62fdea07a9f78b5a135
+scraped_at: 2026-09-05T06:14:14+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:81af371a833e5dd8b05094d034597fb246394e92660f68588c16db99f065095f
 ---
 
 ## ArkTS卡片使用V2装饰器进行状态管理
 
 ArkTS卡片开发支持V2装饰器语法(如[@ObservedV2](arkts-new-observedv2-and-trace.md)、[@ComponentV2](arkts-create-custom-components.md#componentv2))，建议开发者使用V2装饰器替代V1语法进行状态管理，以获得更优的组件渲染性能和状态同步能力。
 
-完整的语法差异对比、迁移步骤及示例代码，请参见官方文档: [V1->V2迁移指导概述](arkts-v1-v2-migration.md)。
+完整的语法差异对比、迁移步骤及示例代码，请参见官方文档： [V1->V2迁移指导概述](arkts-v1-v2-migration.md)。
 
 ## 如何定位ArkTS卡片白屏问题？
 
@@ -28,11 +28,11 @@ ArkTS卡片白屏问题定位请参考[服务卡片显示问题定位指导](htt
 
 导入particleAbility、audio、camera、media、backgroundTaskManager后应用崩溃，FaultLog指向相关调用行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/MopodR2lS72onQ_RRTTFWw/zh-cn_image_0000002706834204.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Ujh9gYUiSe2lga9AogicGA/zh-cn_image_0000002712244444.png)
 
 报错对应的代码行如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/1W3SbGKMQv2TE9BADRy48w/zh-cn_image_0000002736313313.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Q1scWKboRsCs_xCSoIcveQ/zh-cn_image_0000002742003397.png)
 
 ### 原因
 

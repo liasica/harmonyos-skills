@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hmaf-a2a-
 title: A2A (A2A协议)
 breadcrumb: API参考 > AI > Agent Framework Kit（智能体框架服务） > ArkTS API > A2A (A2A协议)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:63adbb7f7c62912bb24e46076e5c7b23d29c607e50d877e5c5d8878159e73fd7
+scraped_at: 2026-09-05T06:21:31+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:7c7a07892554192228819d5385c7ced62041ca0873327dc9c591bf4658ca12eb
 ---
 
 本模块提供A2A（Agent to Agent）协议的服务端实现能力，包括创建A2A Server实例、处理客户端请求、管理任务状态和Artifact（智能体执行任务的产物）等。
@@ -196,6 +196,7 @@ A2A服务端处理来自A2A客户端的消息请求，并将响应发送回客�
 
 ```typescript
 // server对象通过createA2AServer接口创建
+// data是通过传输层获取的客户端的请求数据
 // proxy提供外部定义的消息发送接口
 server.onMessage(data, (response: string) => {
   proxy.sendData(response);
@@ -230,7 +231,7 @@ A2A服务端处理来自A2A客户端的密钥协商请求。
 
 ```typescript
 // server对象通过createA2AServer接口创建
-// data是通过传输层拿到的客户端的鉴权数据
+// data是通过传输层获取的客户端的鉴权数据
 const authResp: string = server.onAuth(data);
 ```
 
@@ -256,6 +257,8 @@ updateStatus(taskId: string, status: TaskStatus): void
 **示例：**
 
 ```typescript
+// server对象通过createA2AServer接口创建
+// taskId是通过RequestContext的getTaskId接口获取的任务ID
 server.updateStatus(taskId, {
   state: TaskState.COMPLETED,
   message: {
@@ -290,6 +293,8 @@ addArtifact(taskId: string, taskArtifactParam: TaskArtifactParam): void
 **示例：**
 
 ```typescript
+// server对象通过createA2AServer接口创建
+// taskId是通过RequestContext的getTaskId接口获取的任务ID
 server.addArtifact(taskId, {
   artifactId: 'result-artifact-id',
   parts: [{

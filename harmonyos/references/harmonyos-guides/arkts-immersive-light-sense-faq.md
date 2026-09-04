@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:18+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:fbd298017d8d828d201ce32de2b93ad0c4b328d0cc8c0e6133a68a616675a981
+scraped_at: 2026-09-05T06:14:01+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:26ecca40a47c75506960bb5138e173827589a88b8cf393a8e50f2debf45e08ea
 ---
 
 本文提供沉浸光感开发过程中的常见问题及解决措施。沉浸光感的完整能力介绍及开发指导，请参见[沉浸光感简介](arkts-immersive-light-sense-overview.md)。
@@ -36,13 +36,14 @@ content_hash: sha256:fbd298017d8d828d201ce32de2b93ad0c4b328d0cc8c0e6133a68a61667
 
 **可能原因**
 
-沉浸光感开启后，除了弹窗类组件或方法、Slider、Toggle，其他组件仅在以下区域中生效：Navigation/NavDestination标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar中。
+沉浸光感开启后，
 
-弹窗类组件或方法包括：Popup、Tips、Menu、BindSheet、showActionMenu、AlertDialog、CustomDialog、ActionSheet、CalendarPickerDialog、DatePickerDialog、TextPickerDialog、TimePickerDialog、Toast、Select、AlphabetIndexer气泡弹窗、Text设置copyOption后长按或双击触发的文本菜单、SelectionMenu（结合bindSelectionMenu一起使用）。
+* 弹窗类组件（AlertDialog、ActionSheet、CustomDialog、CalendarPickerDialog、DatePickerDialog、TimePickerDialog、TextPickerDialog、SelectionMenu、AlphabetIndexer弹窗、Text设置copyOption后长按或双击触发的文本菜单）和弹窗类接口（PromptAction、ArkUI\_NativeDialog、@ohos.promptAction (弹窗)、Popup控制、Tips控制、菜单控制、半模态转场）以及按钮与选择类组件（Slider、Toggle、Select）可在页面内全部区域生效。
+* 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 
 **解决措施**
 
-将需要沉浸光感效果的组件置于Navigation/NavDestination标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar中。
+将需要沉浸光感效果的组件置于Navigation/NavDestination标题栏区域，或横向Tabs中barPosition为BarPosition.End的底部TabBar区域中。
 
 若无法满足生效范围要求，可改用[backgroundColor](../harmonyos-references/ts-universal-attributes-background.md#backgroundcolor)等通用属性替代材质效果。
 
@@ -50,18 +51,19 @@ content_hash: sha256:fbd298017d8d828d201ce32de2b93ad0c4b328d0cc8c0e6133a68a61667
 
 以下示例展示了分别在Navigation标题栏中和Navigation内容区，开启沉浸光感的显示效果。位于Navigation标题栏中的Column开启沉浸光感正常生效；位于Navigation内容区中的Column组件，因其不处于Navigation标题栏或底部TabBar中，不生效沉浸光感效果。
 
-```ts
+```typescript
 import { CircleShape, TitleBarType, uiMaterial } from '@kit.ArkUI';
- 
+
 @Entry
 @Component
 struct MaterialScopeAdaptExample {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
- 
+
   @Builder
   NavigationTitle() {
     Row() {
-      Text('标题栏')
+      // 请将$r('app.string.title_bar')替换为实际资源文件，在本示例中该资源文件的value值为"标题栏"
+      Text($r('app.string.title_bar'))
         .fontColor('#182431')
         .fontSize(30)
         .lineHeight(41)
@@ -87,16 +89,17 @@ struct MaterialScopeAdaptExample {
     .width('100%')
     .padding(16)
   }
- 
+
   build() {
     Column() {
       Navigation() {
         Column() {
           Row() {
-            Text('内容区')
- 
+            // 请将$r('app.string.content_area')替换为实际资源文件，在本示例中该资源文件的value值为"内容区"
+            Text($r('app.string.content_area'))
+
             Blank()
- 
+
             Column() {
               SymbolGlyph($r('sys.symbol.a_3d_square_fill'))
             }
@@ -138,7 +141,7 @@ struct MaterialScopeAdaptExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/C3_N4pu-Tua4M7e-9bTFug/zh-cn_image_0000002736312821.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2x-XdAsdTpu6G70vAIXGIQ/zh-cn_image_0000002742002907.jpg)
 
 ### 背景色或背景模糊遮挡材质效果
 
@@ -345,10 +348,10 @@ Column() {
 
 * Checkbox可视区域为40\*40的圆形，材质渲染区域为40\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/OQkaAPcvRz-Nm_ST_rfWfQ/zh-cn_image_0000002706673778.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/y6fdBvOMSNqQkhc964P87g/zh-cn_image_0000002712403920.jpg)
 * Text组件可视区域为文本内容，材质渲染区域为100\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/W3N0LMAfQjqVspumxThvWw/zh-cn_image_0000002736432869.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/V9o6mT_YSC2rpIGI6zdVHA/zh-cn_image_0000002742122869.jpg)
 
 **可能原因**
 
@@ -398,7 +401,7 @@ Row() {
 
 同时给组件设置沉浸式系统材质和背景色，材质效果被遮盖。例如TextArea组件设置背景色后，会遮盖材质效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mZXxw8_STmSbnanf7Ob6bQ/zh-cn_image_0000002706833714.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ijQ1c71HS7O-TceLWplC1g/zh-cn_image_0000002712243956.jpg)
 
 **可能原因**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ToolBarV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ToolBarV2
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:09+08:00
+scraped_at: 2026-09-05T06:17:31+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1d9525ccb2bb1728cfb5111f1c56e82d134d82d3f13ede0330e2b04294a92768
+content_hash: sha256:05ccdd37b05d048f56c500ceb4f72e4de32062552fb15f6bd451f20cee4b1a47
 ---
 
 工具栏用于展示针对当前界面内容的操作选项，在界面底部显示。底部最多显示5个入口，超过则收纳入“更多”子项中，在最右侧显示。
@@ -546,7 +546,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/RU5_UpjDTc2zMYAaNRkCsQ/zh-cn_image_0000002736315429.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/QTJhTWw9QiO5aqfDDmxIjw/zh-cn_image_0000002742005561.png)
 
 ### 示例2（设置工具栏自定义样式）
 
@@ -678,7 +678,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/FRPLFK_AQB2Yws4tJ4US3w/zh-cn_image_0000002706676390.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/GOEqXR6QQXWz04AKu9TF4g/zh-cn_image_0000002712406572.png)
 
 ### 示例3（设置工具栏自定义播报）
 
@@ -804,4 +804,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/mNhBqcjyTyiyyBv7k-TD2w/zh-cn_image_0000002736315429.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/37KwtdizRkehPRPdJKmizw/zh-cn_image_0000002742005561.png)

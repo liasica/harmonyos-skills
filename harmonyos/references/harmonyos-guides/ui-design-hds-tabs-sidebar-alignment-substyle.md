@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置侧边栏半屏居中对齐样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置侧边栏半屏居中对齐样式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
+scraped_at: 2026-09-05T06:14:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d5481b5851ec9ce1418360d20f0d1da3895b3c8dd2013e5ee9d3a2d8d68a65f8
+content_hash: sha256:bf6c0a18ca9fedab174fd47783d33568accfebb3fce1adab9abd22ebf20dfc86
 ---
 
 ## 场景介绍
@@ -16,12 +16,12 @@ content_hash: sha256:d5481b5851ec9ce1418360d20f0d1da3895b3c8dd2013e5ee9d3a2d8d68
 
 * 半屏居中对齐布局
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/vKkepvlrQIyyT5rrlMN5-A/zh-cn_image_0000002736433393.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/celnEgVtQFOfJ_Wzpg_aOA/zh-cn_image_0000002742123391.png)
 * 默认横向和纵向布局
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/RpOttnFtSA-6QfnBks_Qeg/zh-cn_image_0000002706834238.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/JXjVMFuhROWZ__YGGA97sg/zh-cn_image_0000002712244478.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/RlNDcsZVT2umKCyk7hDemg/zh-cn_image_0000002736313347.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ll1bmBM9TGmhy8gYCI-VVA/zh-cn_image_0000002742003431.png)
 
 ## 约束条件
 

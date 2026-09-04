@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: assert功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > 更多功能 > assert功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a03234c973317c650239d79aecbb93baf282dbde04547a8bd5c5bdd865294443
+content_hash: sha256:a71709afbbb0d669541a089c1baa4c422ffb56fe82ccf4661f4ef9458fabae0e
 ---
 
 ## 功能介绍
 
 使用工具进行算子调测时，支持断言功能。当核函数代码中条件判断为false时，则立即中断运行流程并打印相关信息，方便快速定位错误。
 
-**说明** 
+![](https://media:401788444105682893) 
 
 固定为每个核分配的打印数据的最大可使用空间为1M，目前该大小不支持修改，若打印超过1M，打印内容不再显示，请开发者控制待打印的数据量。
 

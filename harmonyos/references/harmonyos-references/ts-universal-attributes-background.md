@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 背景设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 背景设置
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2a0dd1851d5389d167e6943b93012515a01afd7436dc9c049a6023e6f875c908
+scraped_at: 2026-09-05T06:17:03+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:ef54384121bc55075b4d475f073b9b17c580016e2dd097b3afb7cf72f8552a16
 ---
 
 设置组件的背景样式。
@@ -479,7 +479,7 @@ backdropBlur(radius: Optional<number>, options?: BlurOptions, sysOptions?: Syste
 
 **说明** 
 
-backgroundBlurStyle、blur和backdropBlur为实时接口，每帧执行实时渲染，性能负载较大。当模糊内容与模糊半径均无需变动时，推荐采用静态模糊接口[blur](js-apis-effectkit.md#blur)。最佳实践请参考[图像模糊动效优化-使用场景](../best-practices/bpta-fuzzy-scene-performance-optimization.md#section4945532519)。
+backgroundBlurStyle、blur和backdropBlur为实时接口，每帧执行实时渲染，性能负载较大。当模糊内容与模糊半径均无需变动时，推荐采用静态模糊接口[blur](js-apis-effectkit.md#blur)。最佳实践请参考对比动态模糊与静态模糊中的[使用场景](../harmonyos-guides/ui-dynamic-vs-static-blur-examples.md#使用场景)。
 
 ## backgroundEffect11+
 
@@ -541,7 +541,7 @@ backgroundEffect(options: Optional<BackgroundEffectOptions>, sysOptions?: System
 
 **说明** 
 
-backgroundEffect为实时接口，每帧对模糊效果执行实时渲染，性能负载较大。当组件背景模糊效果无需变动时，推荐采用静态模糊接口[blur](js-apis-effectkit.md#blur)实现模糊效果。最佳实践请参考：[图像模糊动效优化-使用场景](../best-practices/bpta-fuzzy-scene-performance-optimization.md#section4945532519)。
+backgroundEffect为实时接口，每帧对模糊效果执行实时渲染，性能负载较大。当组件背景模糊效果无需变动时，推荐采用静态模糊接口[blur](js-apis-effectkit.md#blur)实现模糊效果。最佳实践请参考：对比动态模糊与静态模糊中的[使用场景](../harmonyos-guides/ui-dynamic-vs-static-blur-examples.md#使用场景)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -789,7 +789,7 @@ struct BackgroundExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/v5w1Yl7YQya7ek5LoMS0rA/zh-cn_image_0000002736434757.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/4vEYlVYST6Sye7OcRrRalQ/zh-cn_image_0000002742124765.png)
 
 ### 示例2（设置背景模糊样式）
 
@@ -820,7 +820,7 @@ struct BackgroundBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/YNFpPORUQFqHV9xvDeHD9A/zh-cn_image_0000002706835610.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/7YYh8hOUT4ObKj1zdx7I7g/zh-cn_image_0000002712245858.png)
 
 ### 示例3（设置组件背景）
 
@@ -855,7 +855,7 @@ struct BackgroundExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/c7_77w0FRcK0_ktVdxu_Jw/zh-cn_image_0000002736314715.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Ht5UMnN6SYSxC6WMCQ5PyQ/zh-cn_image_0000002742004807.png)
 
 ### 示例4（设置组件背景提亮效果）
 
@@ -890,15 +890,15 @@ struct BackgroundBrightnessDemo {
 
 rate和lightUpDegree参数值为0.5,0.5：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/hOJVH6XqRm6AViGRO7G7IA/zh-cn_image_0000002706675672.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/B7wXT9EnRQG0oGORwlrreg/zh-cn_image_0000002712405818.png)
 
 修改rate和lightUpDegree参数值为0.5,-0.1：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Mw9KLmguQHi2htDbPwaG2Q/zh-cn_image_0000002736434759.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/KhKeHLCIQ6-2yH-uA1A5vw/zh-cn_image_0000002742124767.png)
 
 去掉backgroundBrightness的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/wvSJoT5lS-qr0WpKdaGpBw/zh-cn_image_0000002706835612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/Fjr4fEJaQwab8ogibnojHw/zh-cn_image_0000002712245860.png)
 
 ### 示例5（设置模糊属性）
 
@@ -939,7 +939,7 @@ struct BlurEffectsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/-SpUFFgoTVe9hLeAHsWrUw/zh-cn_image_0000002736314717.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/aArLXxl4S963msdNjOHAxQ/zh-cn_image_0000002742004809.png)
 
 ### 示例6（设置文字异形模糊效果）
 
@@ -1039,7 +1039,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/U0VPUO77RDGQbvHUnYLXhQ/zh-cn_image_0000002706675674.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/tiStubMnQ0C7b3D7OWb0QQ/zh-cn_image_0000002712405820.jpeg)
 
 ### 示例7（模糊效果对比）
 
@@ -1096,7 +1096,7 @@ struct BackgroundBlur {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/OKOOsOp_TB65c7uHzuh-7Q/zh-cn_image_0000002736434761.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/qPFWkmIsSFObG45Jh_p1zA/zh-cn_image_0000002742124769.png)
 
 ### 示例8（设置P3色域背景效果）
 
@@ -1123,7 +1123,7 @@ struct P3BackgroundDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/7A_ARD51RBa0p4AZSOkvag/zh-cn_image_0000002706835614.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/PQBzT2W1SmCbo3PnZjftFg/zh-cn_image_0000002712245862.png)
 
 ### 示例9（设置组件背景扩展）
 
@@ -1176,4 +1176,4 @@ struct BackgroundExtension {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/YlsnwfNoSb2Yuu5ouU9BVw/zh-cn_image_0000002736314719.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/qtzkBJ5hRFCQKAdaG8G9sA/zh-cn_image_0000002742004811.png)

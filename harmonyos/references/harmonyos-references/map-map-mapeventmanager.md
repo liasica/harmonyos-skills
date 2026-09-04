@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Interface (MapEventManager)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MapEventManager)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b91b585ac449aaf8c133ea559421076e51b85265927273901d33c5d47f5062b6
+scraped_at: 2026-09-05T06:21:11+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:0cfd16d119fc0e619f79e19452d5fd46c30bdd7cbb5d00ebd6f1a57b591250c9
 ---
 
 ## 导入模块
@@ -16,7 +16,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 ## MapEventManager
 
-地图监听事件管理器。
+地图监听事件管理器。获取地图的控制器类mapController参见[MapComponentController](map-map-mapcomponentcontroller.md#mapcomponentcontroller)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

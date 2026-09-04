@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-ove
 title: USB串口通信服务开发概述
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口通信服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
+scraped_at: 2026-09-05T06:14:32+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:c7564d4816a58822c195d42935d4eef2f24a52b1372754439cb4aa7a87c91fa7
+content_hash: sha256:e1e7b4b176890c5fdc65423d78d26321865de86cc8781e71d89f406fa52f9fc3
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ USB串口服务主要包括两个阶段：
 
 **图1** USB串口收发数据流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/SQmPmAy6RKK3TwrLBq_vaQ/zh-cn_image_0000002736313483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/QiFm9wmJRNm3f5bsk34_Xw/zh-cn_image_0000002742003565.png)
 
 ### 约束和限制
 

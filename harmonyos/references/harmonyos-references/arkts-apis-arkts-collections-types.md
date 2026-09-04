@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Types
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7476f33066a6aae1f58781a7c41b3a7a40288ca7a16e72504c6b90727c7afabb
+scraped_at: 2026-09-05T06:16:41+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:f6b77a2456143093bc5f4a85861d92d82825ac4b19a6461cbd07ea6e0c382adf
 ---
 
 **说明** 
@@ -26,7 +26,7 @@ ISendable是所有Sendable类型（除null和undefined）的父类型。自身�
 
 | 类型 | 说明 |
 | --- | --- |
-| [lang.ISendable](js-apis-arkts-lang.md#langisendable) | 所有Sendable类型的父类型。 |
+| [lang.ISendable](js-apis-arkts-lang.md#isendable) | 所有Sendable类型的父类型。 |
 
 ## ArrayFromMapFn18+
 

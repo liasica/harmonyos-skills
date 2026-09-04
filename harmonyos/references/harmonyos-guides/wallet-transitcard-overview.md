@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transi
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 交通卡 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:03+08:00
+scraped_at: 2026-09-05T06:15:21+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:30c0cb25089650177182a8342892236f17433d04b050fd1ac457db90080cdc6f
+content_hash: sha256:d9b0bdb082e935ecafb8a83899db820c02feee5af44d4833540197c0c37df006
 ---
 
 Wallet Kit中的交通卡服务向开发者App提供NFC交通卡的开通、卡片信息读取、余额在线充值、卡片信息更新和删卡等开放能力。
@@ -14,7 +14,7 @@ Wallet Kit中的交通卡服务向开发者App提供NFC交通卡的开通、卡�
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/1UeHF2LWRY-Yc_nkFXNIKA/zh-cn_image_0000002736314339.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/7OnsOu96Q1KR2vZPR_Q-hg/zh-cn_image_0000002742004425.png)
 
 ### 角色分工
 

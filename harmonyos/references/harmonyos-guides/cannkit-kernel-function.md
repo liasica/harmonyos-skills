@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-kerne
 title: 核函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程模型 > 核函数
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:25+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:17565518b8405aded47c5ea3385f845d9af227aadbcbb3d73e3a0c42e85f6cbf
+content_hash: sha256:8ec24a961b9a4e625ef00f36e7e9c9f10544ef823fde7f880fb9b7eb44098a33
 ---
 
 从[SPMD模型](cannkit-spmd-model.md)可以得知，使用AscendC进行编程时，我们编写一份算子实现代码，算子被调用时，将启动N个运行实例，在N个核上运行。本节将介绍算子实现的入口函数。
@@ -14,7 +14,7 @@ content_hash: sha256:17565518b8405aded47c5ea3385f845d9af227aadbcbb3d73e3a0c42e85
 
 AscendC允许开发者使用核函数这种C/C++函数的语法扩展来管理设备端的运行代码，开发者在核函数中进行算子类对象的创建和其成员函数的调用，由此实现该算子的所有功能。核函数是主机端和设备端连接的桥梁，本章将具体介绍核函数的用法。
 
-**说明** 
+![](https://media:401788444094739807) 
 
 Kirin9020/Kirin9030/KirinX90系列处理器暂不支持通过<<<>>>调用核函数。
 
@@ -40,7 +40,7 @@ extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t* x, __gm__ uint8
 
   **图1** 核函数（device侧执行）、host侧执行函数、device侧执行函数（除核函数之外的）调用关系
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/OLEqucytQIatGmqFVcjojQ/zh-cn_image_0000002736314399.png)
+  ![](https://media:401788444094769808)
 * **使用变量类型限定符**
 
   指针入参变量需要增加变量类型限定符\_\_gm\_\_，表明该指针变量指向Global Memory上某处内存地址。
@@ -95,7 +95,7 @@ blockDim是逻辑核的概念，取值范围为[1, 65535]。为了充分利用�
   + 针对仅包含Cube计算的算子，blockDim用于设置启动多少个Cube(AIC)实例执行，比如某款AI处理器上有20个Cube核，建议设置为20。
   + 针对Vector/Cube融合计算的算子，启动时，按照AIV和AIC组合启动，blockDim用于设置启动多少个组合执行，比如某款AI处理器上有40个Vector核和20个Cube核，一个组合是2个Vector核和1个Cube核，建议设置为20，此时会启动20个组合，即40个Vector核和20个Cube核。
 
-    **说明** 
+    ![](https://media:401788444094799809) 
 
     该场景下，设置的blockDim逻辑核的核数不能超过物理核（2个Vector核和1个Cube核组合为1个物理核）的核数。
   + AIC/AIV的核数分别通过[GetCoreNumAic](cannkit-getcorenumaic.md)和[GetCoreNumAiv](cannkit-getcorenumaiv.md)接口获取。

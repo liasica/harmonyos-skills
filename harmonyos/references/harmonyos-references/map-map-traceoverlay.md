@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-t
 title: Interface (TraceOverlay)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (TraceOverlay)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c146320a683a44ecdd0a5a82b3d689460395e7f81e1f70a1ac0e8930c5d96c18
+scraped_at: 2026-09-05T06:21:10+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:976101011172464d4a2967512d96a7388f7194e2a082a0482579e67f57203a53
 ---
 
 ## 导入模块
@@ -16,7 +16,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 ## TraceOverlay
 
-动态轨迹。
+动态轨迹。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addTraceOverlay](map-map-mapcomponentcontroller.md#addtraceoverlay)方法时会返回该类型的实例。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

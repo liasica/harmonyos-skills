@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: React Native框架+H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > React Native框架+H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:01+08:00
+scraped_at: 2026-09-05T06:15:19+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:423437ad8c6d4464e7d39ef462cb7742acf312b2f82a146d074ec01ccefe1b02
+content_hash: sha256:71243b7b10aa22e96df76b214926b2ddf9d93602f01d2e43306d3af5383d634c
 ---
 
 **说明** 
@@ -26,7 +26,7 @@ HarmonyOS版React Native环境搭建请参考官方文档[React Native环境搭�
 
 ## React Native输入框效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/LMiUG2v3T0qMuKHUzoSgpg/zh-cn_image_0000002706675248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/mhTBpJmnQuyv4aeCbqWH2A/zh-cn_image_0000002712405388.png)
 
 ## 示例代码
 
@@ -106,7 +106,7 @@ export default RNTesterApp;
 
 ## React Native框架中加载的H5页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nXHeF3unQ3yJ5NiwSy5HYw/zh-cn_image_0000002736434337.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/tvpHzO8DRwKAQfyOAv-99A/zh-cn_image_0000002742124337.png)
 
 React Native框架加载H5页面场景，通过给form表单的input输入框（form表单的子节点）配置[autocomplete](scenario-fusion-mappingrelationship.md#h5-autocomplete和harmonyos的contenttype的映射关系)属性来支持智能填充，代码如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 安全区域
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 安全区域
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:55+08:00
+scraped_at: 2026-09-05T06:17:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4430cee3542b5aee67bc081932c21a57825a81ff3f93a966310a959f0069d21f
+content_hash: sha256:3d8cd341957be10912181fb3baab672fa7ed1583166ff37ce2ea0bfab4460b9c
 ---
 
 安全区域是指页面的显示区域，默认情况下开发者开发的界面都布局在安全区域内，不与系统设置的避让区（如状态栏、导航栏）重叠。提供属性方法允许开发者设置组件绘制内容突破安全区域限制：
@@ -232,7 +232,7 @@ struct SafeAreaExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5b9-oNyGT_m72E-NKwm1lg/zh-cn_image_0000002706835630.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/q080aS6eSmOfVAZyL3i1sg/zh-cn_image_0000002712245878.png)
 
 ### 示例2（同时设置固定宽高和expandSafeArea属性）
 
@@ -264,7 +264,7 @@ struct SafeAreaExample2 {
 
 如下图：Column组件扩展至了顶部状态栏[SafeAreaEdge.TOP]，未扩展至底部导航条[SafeAreaEdge.BOTTOM]，扩展后的组件高度维持设置值不变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/_7w0BlwDTQSdW7SSDtIwCQ/zh-cn_image_0000002736314735.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Fn4qcdckTB-VdfubKvFWyA/zh-cn_image_0000002742004827.png)
 
 ### 示例3（键盘避让时固定背景图位置）
 
@@ -308,7 +308,7 @@ struct SafeAreaExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ghmaZvCmRgC9OaRrucQMUw/zh-cn_image_0000002706675692.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/y46PEYDJQdOLwveRUHWP2w/zh-cn_image_0000002712405838.gif)
 
 ### 示例4（设置键盘避让模式为压缩）
 
@@ -361,7 +361,7 @@ struct KeyboardAvoidExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/aSuiYy8rTwuX4Odb4NAzAw/zh-cn_image_0000002736434779.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Fd9qLV3CTaqxbPgvpb6NEQ/zh-cn_image_0000002742124787.gif)
 
 ### 示例5（设置键盘避让模式为上抬）
 
@@ -414,7 +414,7 @@ struct KeyboardAvoidExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/rOwR5_zeTvO4rxJc9KgFZQ/zh-cn_image_0000002706835632.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/m86DNjjfTY61MNPjfKscNw/zh-cn_image_0000002712245880.gif)
 
 ### 示例6（切换避让模式）
 
@@ -473,7 +473,7 @@ struct KeyboardAvoidExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/gGx176wBRYmWMBPcjkKBHg/zh-cn_image_0000002736314737.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/y7-GmKF0Tt-vRv2_Hhd-PQ/zh-cn_image_0000002742004829.gif)
 
 ### 示例7（滚动类容器扩展安全区）
 
@@ -539,7 +539,7 @@ struct ExpandSafeAreaTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/NKkURLz5TtOY7ABfee9XFQ/zh-cn_image_0000002706675694.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/nYJZ4wkySfOYf2Y4E42UeA/zh-cn_image_0000002712405840.png)
 
 ### 示例8（ignoreLayoutSafeArea延伸组件布局范围）
 
@@ -580,7 +580,7 @@ struct IgnoreLayoutSafeAreaTest1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/xKkhhUiDRCuPF3T1YSKRVw/zh-cn_image_0000002736434781.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/ZS2lHiKBS8CLJSmjk1sznQ/zh-cn_image_0000002742124789.jpg)
 
 ### 示例9（ignoreLayoutSafeArea配合LayoutPolicy.matchParent延伸组件布局范围）
 
@@ -619,7 +619,7 @@ struct IgnoreLayoutSafeAreaTest2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ebvHQHF1QLqmDfQq_og26Q/zh-cn_image_0000002706835634.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/gVi6HdDtR_Spf3dOSLU2Nw/zh-cn_image_0000002712245882.jpg)
 
 ### 示例10（expandSafeArea与ignoreLayoutSafeArea的区别）
 
@@ -691,4 +691,4 @@ struct IgnoreLayoutSafeAreaTest3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/BPne3k0MSTeCnrtj--TMtQ/zh-cn_image_0000002736314739.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/P-RUiyZmQP6_3t3IWd47zA/zh-cn_image_0000002742004831.jpg)

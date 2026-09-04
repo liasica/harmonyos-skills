@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.Ability (Ability基类)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.Ability (Ability基类)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:31+08:00
+scraped_at: 2026-09-05T06:16:15+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7d4e97e03ea9f7fad437f2cfb2ef09c832cad953ae82aa025d15368afd2d0add
+content_hash: sha256:583602436d701ebdc969e73fc67fc0f1ce59d8c9a139f462b22e019f017bb928
 ---
 
 Ability类是应用生命周期调度的基本单元，是[UIAbility](js-apis-app-ability-uiability.md)和[ExtensionAbility](js-apis-app-ability-extensionability.md)的基类，提供系统配置更新回调和系统内存级别变化回调能力。该基类不支持开发者直接继承，开发者应根据具体的业务场景选择使用[UIAbility](js-apis-app-ability-uiability.md)或[ExtensionAbility](js-apis-app-ability-extensionability.md)，相关指南参见[Ability Kit简介](../harmonyos-guides/abilitykit-overview.md)。
@@ -30,7 +30,7 @@ Ability基类及其子类的继承关系如下图所示。
 
 部分ExtensionAbility组件（例如[FormExtensionAbility](js-apis-app-form-formextensionability.md)、[InputMethodExtensionAbility](js-apis-inputmethod-extension-ability.md)等）与下图中的ExtensionAbility基类不存在继承关系，均未在图中列出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/P-JGWtKtT4qcFADFiM735A/zh-cn_image_0000002736434653.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/jk7OJ6ECRKai9ex45fhLMg/zh-cn_image_0000002742124653.png)
 
 ## Ability.onConfigurationUpdate
 

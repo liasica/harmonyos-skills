@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging
 title: 使用DevTools工具调试前端页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用DevTools工具调试前端页面
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
+scraped_at: 2026-09-05T06:14:11+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4e2a9f9d214f53ad4a7cf3433759161f5f23f6f00081355f94c6cd742edc959d
+content_hash: sha256:300965836f3f0ab5755981ca7a22179b091b20a763284dc394a5ec91464c42e8
 ---
 
 Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开发调试工具，支持在电脑上调试移动设备前端页面。开发者通过[setWebDebuggingAccess()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setwebdebuggingaccess)接口开启Web组件前端页面调试能力，使用DevTools在电脑上调试移动前端网页，设备需为4.1.0及以上版本。
@@ -81,11 +81,11 @@ Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开�
 
 如果前面的步骤执行成功，Chrome的调试页面将显示待调试的网页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/IfoVBjOyTTSqsIGDTEqAlA/zh-cn_image_0000002706834098.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/jE2XIAV5TmWL3c3Q_9XQNw/zh-cn_image_0000002712244338.jpg)
 
 ### 开始网页调试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/lfqrzdwMS-KDKKDq70C9-w/zh-cn_image_0000002736313207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/krihQvXYQP-0qE-wXUj86g/zh-cn_image_0000002742003291.png)
 
 ## USB连接调试
 
@@ -146,10 +146,10 @@ Web组件支持使用DevTools工具调试前端页面。DevTools是Web前端开�
 
    * 如果命令返回设备的ID，表示hdc已连接上设备。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/qZS6KXfwTUSY9pnpXRpdXw/zh-cn_image_0000002706674164.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/dLVNnAgORF6ZbNBrOfyWhQ/zh-cn_image_0000002712404304.png)
    * 如果命令返回 [Empty]，则说明hdc还没有发现设备。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kbNXQLWgSc2Mv-MzgjDg5w/zh-cn_image_0000002736433255.jpg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ZX6qpus1Tzy1NHj1gWgDKw/zh-cn_image_0000002742123253.jpg)
 3. 进入hdc shell。
 
    连接设备后，执行以下命令进入hdc shell。
@@ -176,7 +176,7 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
    * 如果前几步操作无误，该命令的执行结果将显示用于查询的domain socket端口。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ilN5YpHRTIqmiT38RQVJ0Q/zh-cn_image_0000002706834100.jpg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/gHh5e9UGSEmqHNEMBKNdRQ/zh-cn_image_0000002712244340.jpg)
    * 如果没有查询到结果， 请再次确认。
 
      (1) 应用开启了Web调试开关。
@@ -204,7 +204,7 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
    命令执行成功示意图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/eRJpcBjtTWm1I5JL0QMabA/zh-cn_image_0000002736313209.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/m44qWhqGR7Wye35t_lLIvQ/zh-cn_image_0000002742003293.jpg)
 3. 在命令行里执行如下命令，检查端口是否转发成功。
 
    ```shell
@@ -213,10 +213,10 @@ Chrome浏览器无法直接访问到设备上的domain socket， 因此需要将
 
    * 如果有返回端口转发的任务，则说明端口转发成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/MNzY4I16T02I5SXCOiZwmg/zh-cn_image_0000002706674166.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ZqCykHpyS6yXJY1pEAygAw/zh-cn_image_0000002712404306.png)
    * 如果返回 [Empty]， 则说明端口转发失败。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/qfYlou5gQAuV8muzIrjRwg/zh-cn_image_0000002736433257.jpg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/zXJKRsKGSma49YywHZlMgQ/zh-cn_image_0000002742123255.jpg)
 
 ### 便捷脚本
 
@@ -376,20 +376,20 @@ hdc fport ls
 
    (2) 在 "Target discovery settings" 中添加要监听的本地端口localhost:9222。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/czwT57FVR4u6i7Xvghusuw/zh-cn_image_0000002706834102.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Qk8ig9MMQBO1FPHuGnuDBw/zh-cn_image_0000002712244342.jpg)
 3. 为了同时调试多个应用，请在Chrome浏览器的调试工具网页内，于“Devices”选项中的“configure”部分添加多个端口号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/w7GGkGAmS9a3uTQoa2l4wA/zh-cn_image_0000002736313211.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Rf26MQv2TkuGKinY-n89EQ/zh-cn_image_0000002742003295.png)
 
 ### 等待发现被调试页面
 
 如果前面的步骤执行成功，Chrome的调试页面将显示待调试的网页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/4Fe9SfS3Rb-jdU_GyXW4xg/zh-cn_image_0000002706834098.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/tLaEDrdvRn2uMMs_KNBd0A/zh-cn_image_0000002712244338.jpg)
 
 ### 开始网页调试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/IxmrgaZ_RWG6QB8ks8GBxQ/zh-cn_image_0000002736313207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_XfTIyu2TO6dRrD2-RklHw/zh-cn_image_0000002742003291.png)
 
 ## 常见问题与解决方法
 
@@ -500,10 +500,10 @@ hdc list targets
 
   + 如果网页有内容， 说明端口转发成功，请在Chrome的调试页面[等待被调试页面的出现](web-debugging-with-devtools.md#等待发现被调试页面)。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/JnRumPp1T2itumRhlt2iFw/zh-cn_image_0000002706674168.jpg)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/8MzAlR_ZSs2RP0YV0v-q3Q/zh-cn_image_0000002712404308.jpg)
   + 如果展示的是错误网页， 说明端口转发失败， 请参阅[端口转发不成功](web-debugging-with-devtools.md#端口转发不成功)中的解决方法。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/dsdgPv42SGKZJn3VB7sK2A/zh-cn_image_0000002736433259.jpg)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/QoPPjytVTQiDBYgKQPm78Q/zh-cn_image_0000002742123257.jpg)
 * 电脑端Chrome浏览器打开 <http://localhost:9222/json> 页面有内容，但是Chrome的调试工具界面还是无法发现调试目标。
 
   + 请确保Chrome调试工具界面的 "Configure" 中配置的端口号，与端口转发指定的TCP端口号一致。

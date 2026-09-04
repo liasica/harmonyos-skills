@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: CanvasRenderingContext2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 画布组件 > CanvasRenderingContext2D对象
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:14+08:00
+scraped_at: 2026-09-05T06:17:39+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e03d5b966e469ef658f643df868a515b49182273696821b4b57059917528beb9
+content_hash: sha256:af3f879993f2dc982a5450f716f6da51137334a84fee88d156be2ee98a32e209
 ---
 
 使用CanvasRenderingContext2D在canvas画布组件上进行绘制，绘制对象可以是矩形、文本。
@@ -37,7 +37,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/vJLVsl-tT6SRMgiRnMteGA/zh-cn_image_0000002736315713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/-J0X9k1aS2e1zbse_p3OfA/zh-cn_image_0000002742005863.png)
 
 ## fillRect()
 
@@ -54,7 +54,7 @@ export default {
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/7MeEjj62SNGy-F43qdIuEA/zh-cn_image_0000002706676670.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/7kTvEN1OTJ6yPDg7tTG9LA/zh-cn_image_0000002712406876.png)
 
 ```javascript
 ctx.fillRect(20, 20, 200, 150);
@@ -72,7 +72,7 @@ ctx.fillRect(20, 20, 200, 150);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/N6bPziEORpC5dhrTdEADkg/zh-cn_image_0000002736435761.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/Ez0ZvL1uQqi6BRIUjStofw/zh-cn_image_0000002742125825.png)
 
 ```javascript
 ctx.fillStyle = '#0000ff';
@@ -94,7 +94,7 @@ ctx.fillRect(20, 20, 150, 100);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/K7VdmklUS7y-u8ZPYfu93w/zh-cn_image_0000002706836606.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/OaGievsPRQW4x3time0VRw/zh-cn_image_0000002712246916.png)
 
 ```javascript
 ctx.strokeRect(30, 30, 200, 150);
@@ -114,7 +114,7 @@ ctx.strokeRect(30, 30, 200, 150);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/kzrIsy14QKSREc6K0U5mCw/zh-cn_image_0000002736315715.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/GqapWoXATHqGkRio5HRZlQ/zh-cn_image_0000002742005865.png)
 
 ```javascript
 ctx.font = '35px sans-serif';
@@ -133,7 +133,7 @@ ctx.fillText("Hello World!", 20, 60);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/z8X0t2ZXSxKdOPVbE1tv1g/zh-cn_image_0000002706676672.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/CQ2tAleMTY-kf9NNuqHpiA/zh-cn_image_0000002712406878.png)
 
 ```javascript
 ctx.lineWidth = 5;
@@ -152,7 +152,7 @@ ctx.strokeRect(25, 25, 85, 105);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/OX8rF9t4Ro6kaGgpp0xHmQ/zh-cn_image_0000002736435763.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/QeGA8GkzSMmQN3lqkDSHow/zh-cn_image_0000002742125827.png)
 
 ```javascript
 ctx.lineWidth = 10;
@@ -166,7 +166,7 @@ ctx.strokeRect(25, 25, 155, 105);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/F06o9sBDRgOQbMxzIEOjKQ/zh-cn_image_0000002706836608.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/tAXuUs8jTCS9LMqsEb_X4Q/zh-cn_image_0000002712246920.png)
 
 ```javascript
 ctx.moveTo(25, 25);
@@ -181,7 +181,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/cxAdKpYUSQCe_EUEAbYjFg/zh-cn_image_0000002736315717.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Zey0m5x3TTWMtZl7omRdNw/zh-cn_image_0000002742005867.png)
 
 ```javascript
 ctx.beginPath();
@@ -205,7 +205,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/CY3T0tP_S7W3mNlvUfy0qA/zh-cn_image_0000002706676674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/FNWNVXCLR5K0BdtW_xI2Ag/zh-cn_image_0000002712406880.png)
 
 ```javascript
 ctx.beginPath();
@@ -227,7 +227,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/mc5cm_ZUROSZPBMys6nWfw/zh-cn_image_0000002736435765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/C3OFD67MS7mGKSrNx_iaJg/zh-cn_image_0000002742125829.png)
 
 ```javascript
 ctx.beginPath();
@@ -242,7 +242,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/DdugC_GITmiwrEDG-vks2Q/zh-cn_image_0000002706836610.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/1YDCeCE5RtOIn3hBMkfwtQ/zh-cn_image_0000002712246922.png)
 
 ```javascript
 ctx.beginPath();
@@ -265,7 +265,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/wifQ7Pc3T1aOXhb6DMGpLA/zh-cn_image_0000002736315719.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/K_5arJrtQmqNoS3gchcDRQ/zh-cn_image_0000002742005869.png)
 
 ```javascript
 ctx.font = '30px sans-serif';
@@ -284,7 +284,7 @@ ctx.fillText("Hello World", 20, 60);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/gvusUr_pQKOxBe7_S-CLJg/zh-cn_image_0000002706676676.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/zR6lQRZ_SOuXLGCRZS322A/zh-cn_image_0000002712406882.png)
 
 ```javascript
 ctx.strokeStyle = '#0000ff';
@@ -320,7 +320,7 @@ ctx.fillText('textAlign=right',140, 140);
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/A_-ZmW_1Tc6jvoTdLzS-EQ/zh-cn_image_0000002736435767.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/o-FrMdzWQOGgNyRqvaTDYA/zh-cn_image_0000002742125831.png)
 
 ```javascript
 ctx.beginPath();
@@ -343,7 +343,7 @@ ctx.stroke();
 
 **示例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/2aHUd_3_Qh6jfnLgqyI5OA/zh-cn_image_0000002706836612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/5ExNdZAjTWSG2dHH0wacdA/zh-cn_image_0000002712246924.png)
 
 ```javascript
 ctx.rect(20, 20, 100, 100); // Create a 100*100 rectangle at (20, 20)

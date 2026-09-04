@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationRequest
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationRequest
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:01+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:200313c0f9d1c57c6132bdf181389e48f068e5fd2d75f40ea9afe070167a12da
+scraped_at: 2026-09-05T06:21:16+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:647bdcda25bc553e3dadc56343d0bda34c7cf77e65681e429aed48fc73c954c6
 ---
 
 定义了[通知请求](../harmonyos-guides/notification-glossary.md#notification-request通知请求)的数据结构，用于描述一条通知的全部信息，包括[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)、标识、展示样式、交互行为等。
@@ -39,9 +39,9 @@ content_hash: sha256:200313c0f9d1c57c6132bdf181389e48f068e5fd2d75f40ea9afe070167
 | autoDeletedTime | number | 否 | 是 | 通知定时清除时间。设置该参数可使通知在指定时间后自动清除。默认值为0。传入小于0的值或过去的时间值，该参数不生效。  数据格式：时间戳。  单位：毫秒。  例如，希望某通知存留3秒（3000ms）后对其进行清除，则对应的清除时间为：new Date().getTime() + 3000。 |
 | deliveryTime | number | 否 | 是 | 通知发送时间。系统自动生成，无需开发者配置。  数据格式：时间戳。  单位：毫秒。 |
 | label | string | 否 | 是 | 通知标签。  label字段的功能类似于id，可以单独使用，也可与id结合共同作为通知的标识。优先推荐使用id。  如果发布通知时label不为空，那么在更新或删除该通知时，也需要指定相应的label。  大小不超过202字节，超出部分会被截断。默认为空。 |
-| smallIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 通知小图标，默认为空。图标像素的总字节数不超过192KB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取），超出后设置不生效。  未设置smallIcon时，通知将展示应用默认图标。建议图标像素长宽为128\*128。实际显示效果依赖于设备能力和通知中心UI样式。 |
-| largeIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 通知大图标，默认为空。图标像素的总字节数不超过192KB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取），超出后设置不生效。  未设置largeIcon时，通知将不展示大图标。建议图标像素长宽为128\*128。实际显示效果依赖于设备能力和通知中心UI样式。 |
-| overlayIcon23+ | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 通知重叠图标，默认为空。图标像素的总字节数不超过192KB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取），超出后设置不生效。  未设置overlayIcon时，通知将不展示重叠图标。  此接口只在[notificationSlotType](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)类型设置为SOCIAL\_COMMUNICATION时生效。建议图标像素长宽为128\*128。实际显示效果依赖于设备能力和通知中心UI样式。 |
+| smallIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 通知左侧图标，默认为空。系统自动生成，无需开发者配置。  图标像素的总字节数不超过192KB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取），超出后设置不生效。建议图标像素长宽为128\*128。实际显示效果依赖于设备能力和通知中心UI样式，详情请参考[单条通知](../design-guides/system-features-notification-0000001793074217.md#section16881184782819)中的通知图标。 |
+| largeIcon | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 通知右侧图标，默认为空。当content使用[NotificationPictureContent](js-apis-inner-notification-notificationcontent.md#notificationpicturecontent)时，该参数设置不生效。  图标像素的总字节数不超过192KB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取），超出后设置不生效。建议图标像素长宽为128\*128。实际显示效果依赖于设备能力和通知中心UI样式，详情请参考[图片预览通知](../design-guides/system-features-notification-0000001793074217.md#section16214134103817)。 |
+| overlayIcon23+ | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 通知重叠图标，替换通知左侧图标，默认为空。此接口只在[notificationSlotType](js-apis-inner-notification-notificationrequest.md#notificationrequest-1)类型设置为SOCIAL\_COMMUNICATION时生效。  图标像素的总字节数不超过192KB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取），超出后设置不生效。建议图标像素长宽为128\*128。实际显示效果依赖于设备能力和通知中心UI样式，详情请参考[通讯对话类通知](../design-guides/system-features-notification-0000001793074217.md#section158281459143810)。 |
 | groupName8+ | string | 否 | 是 | 通知所属组。当不同通知的groupName相同时，这些通知将成组展示。  大小不超过202字节，超出部分会被截断。默认为空。 |
 | template8+ | [NotificationTemplate](js-apis-inner-notification-notificationtemplate.md) | 否 | 是 | 通知模板，默认为空。 |
 | extraInfo | {[key: string]: any} | 否 | 是 | 扩展参数。为应用提供定制服务。默认为空。  以下Key由系统赋值，开发者手动修改也不会生效，系统在数据传递时会自动修改为实际值。  - 'ohos.notificationManager.wantUri'：用户点击通知时传递给应用的[Want](js-apis-app-ability-want.md#want) 中的uri字段，使用[getActiveNotifications](js-apis-notification.md#notificationgetactivenotifications)接口获取该信息。 |

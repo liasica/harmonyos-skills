@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool
 title: bm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > bm工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:41+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:669e50bd1882d271ac27e42278ae451513bfa7c9f712cc84bbe45e101109eab6
+scraped_at: 2026-09-05T06:14:42+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:bcdee517482adbfa6768168c8206d6a5f2dc824b8994261d75b7b6df87c5c5ed
 ---
 
 Bundle Manager（包管理工具，简称bm）是实现应用安装、卸载、更新、查询等功能的工具，bm为开发者提供基本的应用安装包的调试能力。
@@ -526,9 +526,9 @@ HAP包签名文件存在异常。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568320 签名文件不存在
 
@@ -546,15 +546,15 @@ HAP/HSP包没有签名。
 
 **处理步骤**
 
-请开发者根据实际场景选择自动签名或者手动签名，例如无法连接互联网的情况下推荐使用手动签名方式，详情参考[使用场景说明](ide-signing.md#section54361623194519)。
+请开发者根据实际场景选择自动签名或者手动签名，例如无法连接互联网的情况下推荐使用手动签名方式，详情参考[使用场景说明](ide-signing.md)。
 
 **说明** 
 
 在工程级build-profile.json5文件下的products标签中，signingConfig字段为非必填字段，若该字段缺失，将导致签名失效。详情请参考[products](ide-hvigor-build-profile-app.md#section45865492619)标签下的字段说明。
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 方法三. 如果安装APP时报这个错误码，需要在[工程级build-profile.json5文件](ide-hvigor-build-profile-app.md)里配置[packOptions](ide-hvigor-build-profile-app.md#section03812484215)的appWithSignedPkg属性为true，保证APP里的HAP/HSP有签名。
 
@@ -574,9 +574,9 @@ HAP包签名文件存在异常。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568323 签名摘要验证未通过
 
@@ -594,9 +594,9 @@ HAP包签名不正确。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568324 签名完整性校验未通过
 
@@ -614,9 +614,9 @@ HAP包签名不正确。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568326 签名公钥存在异常
 
@@ -634,9 +634,9 @@ HAP包签名不正确。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568327 签名获取异常
 
@@ -654,9 +654,9 @@ HAP包签名不正确。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568328 未找到配置文件区块
 
@@ -674,9 +674,9 @@ HAP包签名不正确。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568330 初始化签名源失败
 
@@ -694,9 +694,9 @@ HAP包签名不正确。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568257 签名文件Pkcs7校验失败
 
@@ -718,9 +718,9 @@ error: fail to verify pkcs7 file.
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568344 解析配置文件失败
 
@@ -728,7 +728,7 @@ error: fail to verify pkcs7 file.
 
 error: install parse profile prop check error.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/sVGjoWORQAC3JT6NA_gGzg/zh-cn_image_0000002736313555.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/vjQJZkheQIiQIdR6RZRPUA/zh-cn_image_0000002742003637.png)
 
 **错误描述**
 
@@ -762,13 +762,13 @@ error: Failed to install the HAP or HSP because the dependent module does not ex
 
 * 方法一：先通过[bm install -p](bm-tool.md#安装命令install)命令安装依赖的动态共享包（HSP）模块，再在应用运行配置页勾选Keep Application Data，点击OK保存配置，再运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/7tuI5IkERz2csvfaIbw6rQ/zh-cn_image_0000002706674512.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/r-MbnbY7QdSS65FmD2tMCw/zh-cn_image_0000002712404650.png)
 * 方法二：在运行配置页，选择Deploy Multi Hap标签页，勾选Deploy Multi Hap Packages，选择依赖的模块，点击OK保存配置，再进行运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Rq-yc_AhTl6eqiIDzvvyLw/zh-cn_image_0000002736433601.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/dhEkCA2CQ8mddMLTnk7BYQ/zh-cn_image_0000002742123599.png)
 * 方法三：单击Run > Edit Configurations，在General中，勾选Auto Dependencies。点击OK保存配置，再运行/调试。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/210fUAUWQLaGQn5AbOx_qQ/zh-cn_image_0000002706834450.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/I7GqxhjGRPu7t1Jgkh5qzQ/zh-cn_image_0000002712244686.png)
 
 场景二：依赖的HSP与HAP不在同一工程内：
 
@@ -780,7 +780,7 @@ error: Failed to install the HAP or HSP because the dependent module does not ex
 
 DevEco Studio自动安装运行应用时，查看Run中的日志，如果存在remote\_hsp目录，说明依赖集成态HSP，remote\_hsp目录下的HSP文件就是集成态HSP编译后的包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/f7T6zWRmS3aRS8zju1q-ig/zh-cn_image_0000002736313557.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/rTIdAdYRRJm1wMYWi5b3XA/zh-cn_image_0000002742003639.png)
 
 ### 9568259 安装解析配置文件缺少字段
 
@@ -788,7 +788,7 @@ DevEco Studio自动安装运行应用时，查看Run中的日志，如果存在r
 
 error: install parse profile missing prop.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/mhtUb4NXR1WMpypetIsJiA/zh-cn_image_0000002706674514.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/55Sbj7R1Qw2_C5Fenmsw9g/zh-cn_image_0000002712404652.png)
 
 **错误描述**
 
@@ -819,7 +819,7 @@ error: install parse profile missing prop.
 
 error: install releaseType target not same.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Aw4W8EE1QpG_yNNITQnoSw/zh-cn_image_0000002736433603.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/-obA-dshS8-bHgWkGft8qw/zh-cn_image_0000002742123601.png)
 
 **错误描述**
 
@@ -1010,7 +1010,7 @@ error: install file path invalid.
 
 error: signature verification failed due to not trusted app source.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/cS3HoB2OSoCs4DbE6telFw/zh-cn_image_0000002706834452.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/tV9ChSnLSz623lisbmnjzQ/zh-cn_image_0000002712244688.png)
 
 **错误描述**
 
@@ -1071,7 +1071,7 @@ error: install failed due to insufficient disk memory.
 
 error: install failed due to grant request permissions failed.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Q42F0iL7RJe6u6nZ2bWfEg/zh-cn_image_0000002736313559.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/flDTlB6rS6OQyiOsD5PykQ/zh-cn_image_0000002742003641.png)
 
 **错误描述**
 
@@ -1155,7 +1155,7 @@ SysCap不一致导致安装失败。
 
 error: install failed due to older sdk version in the device.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/WChIQaAuTcaIAZ6kucG5fg/zh-cn_image_0000002706674516.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/hNQZdFLLRay7l1HHYRSIGw/zh-cn_image_0000002712404654.png)
 
 **错误描述**
 
@@ -1218,7 +1218,7 @@ error: moduleName is not unique.
 
 error: install sign info inconsistent.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/-sG-P4XFQPmmUNmLNgNgPQ/zh-cn_image_0000002736433605.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/QVBHOG0YSAOlHGHZnhMdig/zh-cn_image_0000002742123603.png)
 
 **错误描述**
 
@@ -1226,8 +1226,8 @@ error: install sign info inconsistent.
 
 **可能原因**
 
-1. 设备上已安装的应用与新安装的应用中签名不一致或者多个包（HAP和HSP）之间的签名存在差异。若两个应用的签名[密钥](ide-signing.md#section462703710326)或[APP ID](../app/agc-help-create-app-0000002247955506.md#section16423184171915)中至少有一项相同，则认为它们的签名一致。如果在DevEco Studio的“Edit Configurations”中勾选了“Keep Application Data”（即不卸载应用，直接覆盖安装），并且重新进行了签名，将导致该报错。
-2. 如果某个应用被卸载但是保留了数据，那么后面安装相同包名的应用时，需要校验其签名信息的一致性。如果两者签名信息中的[密钥](ide-signing.md#section462703710326)和[APP ID](../app/agc-help-create-app-0000002247955506.md#section16423184171915)都不一致，则会导致该报错。
+1. 设备上已安装的应用与新安装的应用中签名不一致或者多个包（HAP和HSP）之间的签名存在差异。若两个应用的签名[密钥](ide-signing-manual.md#section1245916381106)或[APP ID](../app/agc-help-create-app-0000002247955506.md#section16423184171915)中至少有一项相同，则认为它们的签名一致。如果在DevEco Studio的“Edit Configurations”中勾选了“Keep Application Data”（即不卸载应用，直接覆盖安装），并且重新进行了签名，将导致该报错。
+2. 如果某个应用被卸载但是保留了数据，那么后面安装相同包名的应用时，需要校验其签名信息的一致性。如果两者签名信息中的[密钥](ide-signing-manual.md#section1245916381106)和[APP ID](../app/agc-help-create-app-0000002247955506.md#section16423184171915)都不一致，则会导致该报错。
 
 **处理步骤**
 
@@ -1241,7 +1241,7 @@ error: install sign info inconsistent.
 
 error: verify signature failed.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/GPdzHSYrTvq42wZPl14hhA/zh-cn_image_0000002706834454.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/e5FvGnAJQDWbPFII-F_inA/zh-cn_image_0000002712244690.png)
 
 **错误描述**
 
@@ -1263,7 +1263,7 @@ error: verify signature failed.
 
 error: install permission denied.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Yq1C9rUcTNqGF2wxoID0Hw/zh-cn_image_0000002736313561.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/k11gOgbNSgWcgpOohiQO7w/zh-cn_image_0000002742003643.png)
 
 **错误描述**
 
@@ -1349,7 +1349,7 @@ error: signature file path is invalid.
 
 **处理步骤**
 
-使用[自动签名](ide-signing.md#section18815157237)或者[手动签名](ide-signing.md#section297715173233)重新签名后安装调试。
+使用[自动签名](ide-signing-auto.md)或者[手动签名](ide-signing-manual.md)重新签名后安装调试。
 
 ### 9568325 由于文件过大，签名验证失败
 
@@ -1367,7 +1367,7 @@ error: signature verification failed due to oversize file.
 
 **处理步骤**
 
-使用[自动签名](ide-signing.md#section18815157237)或者重新申请签名证书，在[手动签名](ide-signing.md#section297715173233)重新签名后安装调试。
+使用[自动签名](ide-signing-auto.md)或者重新申请签名证书，在[手动签名](ide-signing-manual.md)重新签名后安装调试。
 
 ### 9568336 应用调试类型与已安装应用不一致
 
@@ -2279,10 +2279,10 @@ error: installd set selinux label failed.
 
 1. 确认签名文件p7b中apl字段是否有误。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/mZMjy4FZQiyJl1glAJjp5w/zh-cn_image_0000002706674518.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/XstkTLM8SKWrpOLiY0VnZQ/zh-cn_image_0000002712404656.png)
 2. 若apl字段有误，修改UnsgnedReleasedProfileTemplate.json文件中apl字段，并重新签名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/y7oV9MI3TAKx7jFZj_dE7Q/zh-cn_image_0000002736433607.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/XdLexdRmRiyw2WL3EaI4vA/zh-cn_image_0000002742123605.png)
 
 ### 9568360 安装overlay应用出现错误
 
@@ -2540,7 +2540,7 @@ error: Encrypted bundle cannot be installed.
 
 **处理步骤**
 
-1. 使用[自动签名](ide-signing.md#section18815157237)或者[手动签名](ide-signing.md#section297715173233)重新签名后安装调试。
+1. 使用[自动签名](ide-signing-auto.md)或者[手动签名](ide-signing-manual.md)重新签名后安装调试。
 
 ### 9568417 签名校验失败
 
@@ -2560,7 +2560,7 @@ error: bundle cannot be installed because the appId is not same with preinstalle
 
 方法一：重新签名。
 
-通过重新签名，确保应用签名信息中的[密钥](ide-signing.md#section462703710326)和[APP ID](../app/agc-help-create-app-0000002247955506.md#section16423184171915)至少有一项与预置应用保持一致。
+通过重新签名，确保应用签名信息中的[密钥](ide-signing-manual.md#section1245916381106)和[APP ID](../app/agc-help-create-app-0000002247955506.md#section16423184171915)至少有一项与预置应用保持一致。
 
 如果直接使用DevEco Studio自动签名，由于生成的签名信息均为随机值，与预置应用不匹配，将导致应用安装失败。因此，您需要用之前[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)的账号，重新[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)或直接使用发布Profile对应用重新签名，完成签名后，重新安装应用。
 
@@ -3093,7 +3093,7 @@ error: install failed due to U1Enabled can not change.
 
 **处理步骤**
 
-方案一：重新签名，签名过程中，请参考[自动签名](ide-signing.md#section18815157237)的支持ACL权限、或者[手动签名](ide-signing.md#section297715173233)的使用ACL的签名配置指导进行配置，确保待安装应用与已安装应用配置一致。
+方案一：重新签名，签名过程中，请参考[自动签名](ide-signing-auto.md)的支持ACL权限、或者[手动签名](ide-signing-manual.md)的使用ACL的签名配置指导进行配置，确保待安装应用与已安装应用配置一致。
 
 方案二：先卸载设备上已安装的应用（PC/2in1设备需要确保所有用户下都卸载完成，手机/平板侧需要关注隐私空间和主用户下是否卸载完成），再尝试安装待安装应用。
 
@@ -3113,7 +3113,7 @@ error: Install failed due to the U1Enabled is not same in all haps.
 
 **处理步骤**
 
-重新签名，签名过程中，请参考[自动签名](ide-signing.md#section18815157237)的支持ACL权限、或者[手动签名](ide-signing.md#section297715173233)的使用ACL的签名配置指导进行配置，使多个HAP包签名信息中allowed-acls的U1Enabled信息一致。
+重新签名，签名过程中，请参考[自动签名](ide-signing-auto.md)的支持ACL权限、或者[手动签名](ide-signing-manual.md)的使用ACL的签名配置指导进行配置，使多个HAP包签名信息中allowed-acls的U1Enabled信息一致。
 
 ### 9568445 一次仅支持安装一个APP包
 
@@ -3190,9 +3190,9 @@ APP包签名不正确或没有签名。
 
 **处理步骤**
 
-方法一. 使用[自动签名](ide-signing.md#section18815157237)。在连接设备后，重新为应用进行签名。
+方法一. 使用[自动签名](ide-signing-auto.md)。在连接设备后，重新为应用进行签名。
 
-方法二. 使用手动签名，请参考[手动签名](ide-signing.md#section297715173233)。
+方法二. 使用手动签名，请参考[手动签名](ide-signing-manual.md)。
 
 ### 9568449 二进制文件校验失败
 

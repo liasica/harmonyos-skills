@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: DumpTensor
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 调测接口 > DumpTensor
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:07+08:00
+scraped_at: 2026-09-05T06:15:29+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:8778ac9aa84c55faae01d176bc00eddc001dd06493bc7b3a34c3267dfe287942
+content_hash: sha256:b3fdef4627e6fe6c1a9de9494cbefa206177141c735daa1dc6e9d124c6597d36
 ---
 
 ## 函数功能
@@ -18,7 +18,7 @@ content_hash: sha256:8778ac9aa84c55faae01d176bc00eddc001dd06493bc7b3a34c3267dfe2
 AscendC::DumpTensor(srcLocal,5, dataLen);
 ```
 
-**说明** 
+![](https://media:401788444101213863) 
 
 DumpTensor接口打印功能会对算子实际运行的性能带来一定影响，通常在调测阶段使用。开发者可以按需通过如下方式关闭打印功能。
 

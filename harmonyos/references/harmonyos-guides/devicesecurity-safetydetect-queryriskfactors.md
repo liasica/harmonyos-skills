@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 统一风控凭证
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全检测 > 统一风控凭证
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:30+08:00
+scraped_at: 2026-09-05T06:14:22+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:7158d79c073457d520280134059333f45b7afc13ae24445e3d889fe6b399192b
+content_hash: sha256:67364735c32a3e4c03095ef4124ac49cd1d11b66b15b8ad546fabfa919b1bb13
 ---
 
 ## 场景介绍
@@ -25,7 +25,7 @@ content_hash: sha256:7158d79c073457d520280134059333f45b7afc13ae24445e3d889fe6b39
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/6YJ3Xnw-RACca1wwG089fg/zh-cn_image_0000002736313395.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/5KNZDKAWSlSa-ihBplSpcA/zh-cn_image_0000002742003479.png)
 
 **流程说明：**
 

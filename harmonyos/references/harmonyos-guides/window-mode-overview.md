@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-mode-o
 title: 窗口模式简介
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 窗口模式简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
+scraped_at: 2026-09-05T06:14:08+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:da159977a7b401468e6c87229fbd01e175febd12d0e063ef706af2d62d01ec5d
+content_hash: sha256:02c0946b5cdb6300f3a5050953e93cafe304d1956722d1eb51dcb39763e916ba
 ---
 
 ## 场景介绍
@@ -165,7 +165,7 @@ content_hash: sha256:da159977a7b401468e6c87229fbd01e175febd12d0e063ef706af2d62d0
 
 分屏模式是指应用窗口占据屏幕的某个部分，与另一个窗口同时显示的状态。当前支持应用内分屏及应用间分屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/JrxhTWPxRDqjDme-k9lJDQ/zh-cn_image_0000002706674080.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ttUIQvUWQO6-yFPp_gnoUQ/zh-cn_image_0000002712404220.png)
 
 **特点：**
 

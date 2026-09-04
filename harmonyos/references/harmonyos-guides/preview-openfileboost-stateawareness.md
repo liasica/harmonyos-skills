@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-openf
 title: 文件打开加速状态感知（已废弃）
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > 文件打开加速状态感知（已废弃）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:199f542098e54e3378f31439032c1c05cc7a026d3e3ad2eda2715882969089ce
+scraped_at: 2026-09-05T06:15:17+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:0680fbaf138e2035b803c4860be3c4afdd7dccfa24cc41e8751d3483120d7a6a
 ---
 
 从5.0.5(17)版本开始，如浏览器等支持下载文件的应用，可以接入文件预加载状态感知接口，动态感知文件预加载状态，通过UI（user interface）标识对加速文件进行显性化提示，进一步提升用户体验。
@@ -28,7 +28,7 @@ content_hash: sha256:199f542098e54e3378f31439032c1c05cc7a026d3e3ad2eda2715882969
 
 ## 约束限制
 
-当前仅在PC/2in1和tablet设备上支持。
+支持的设备类型：PC/2in1，从26.0.0版本开始，新增支持tablet设备。
 
 ## 开发步骤
 

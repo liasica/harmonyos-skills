@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVWaterFlowLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVWaterFlowLayout
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:00+08:00
+scraped_at: 2026-09-05T06:17:10+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:8c4d5a666af8ee4f9fea76b9c4fb30133fd89258960f75085eaf7f14eb363579
+content_hash: sha256:cc25ed7caf835666d19a9035073bd1a616301ca9680efb5cb9334b95c5e008ab
 ---
 
 LazyVWaterFlowLayout用于实现支持懒加载的瀑布流布局，适用于展示大量高度不一的列表项场景，如图片墙、商品列表等。通过懒加载机制，该组件仅加载可视区域及附近内容，减少内存占用和渲染开销，提升滚动流畅度。该组件应位于竖直方向的[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)或[WaterFlow](ts-container-waterflow.md)组件下，并支持通过[FlowItem](ts-container-flowitem.md)、[LazyColumnLayout](ts-container-lazycolumnlayout.md)、自定义组件或[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后使用。
@@ -442,7 +442,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/rPvjJv09R12E5OqtvSRfgw/zh-cn_image_0000002706675866.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/mNWUzneZTVeQJ_wXzsVAeg/zh-cn_image_0000002712406010.png)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -551,7 +551,7 @@ struct LazyVWaterFlowLayoutStickyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/NUD_GqauRjSzjzdYxCjrlQ/zh-cn_image_0000002736434953.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/VReL3LWSTYGyJLHseVLgAw/zh-cn_image_0000002742124959.gif)
 
 ### 示例3（设置自适应列数）
 
@@ -681,4 +681,4 @@ struct LazyVWaterFlowLayoutColumnsTemplateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/uflCmueNRSqzZd0BtSd6hQ/zh-cn_image_0000002706835806.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/jJmPKY68RceWz5DNaTjOjA/zh-cn_image_0000002712246052.gif)

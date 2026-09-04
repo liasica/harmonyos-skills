@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 颜色渐变
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 颜色渐变
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:56+08:00
+scraped_at: 2026-09-05T06:17:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6fa20cede353e9cd0d8152fc2b33c0f28fe004ab6c0572d7b290e9554d2bed64
+content_hash: sha256:0e4543e5aae7b24c22d4bcc75f0fd24f072d8973115affbd4a92971b1dc61283
 ---
 
 设置组件的颜色渐变效果。
@@ -288,7 +288,7 @@ struct ColorGradientExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/nzfzzBS2SXqSN2scTO3-oQ/zh-cn_image_0000002706835652.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/gnI8DB3BRTagBzrfhetcDA/zh-cn_image_0000002712245900.png)
 
 ### 示例2（颜色按旋转角度渐变）
 
@@ -351,7 +351,7 @@ struct ColorGradientExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/J5n9A4ecSCWS-Po0e7Ku6Q/zh-cn_image_0000002736314757.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/MjvRxYEvRhSv7a_zlYVNUA/zh-cn_image_0000002742004849.png)
 
 ### 示例3（颜色按径向渐变）
 
@@ -390,4 +390,4 @@ struct ColorGradientExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/h6itk_ZxS9iQnJWOF7IVZg/zh-cn_image_0000002706675714.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/xiwrY552TZen61PSIR_awg/zh-cn_image_0000002712405860.png)

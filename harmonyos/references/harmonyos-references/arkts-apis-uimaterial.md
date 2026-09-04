@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.arkui.uiMaterial (系统材质)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.uiMaterial (系统材质)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:51+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:760511670cea34c5d564c8428d20744912c35ff0fdba432cee4f7986c15f6af4
+scraped_at: 2026-09-05T06:16:52+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:47d88521bc20d5a70c4b99d7ed1bc0df23ca58e79f23a8bf62a2dd72fc18da79
 ---
 
 本模块提供系统材质的接口定义。不同的系统材质对应不同的UI效果，包括背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)、材质层滤镜[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)效果。当前提供的系统材质为沉浸式材质类型[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)，沉浸式材质对象在不同设备上的表现存在差异，只有支持沉浸式材质的设备上设置才有效果，在不支持沉浸式材质的设备上可设置但无效果，可通过[isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质。在支持沉浸式材质的设备上，材质效果在不同算力的设备上有分档表现，可通过[getGlobalMaterialLevel](arkts-apis-uimaterial.md#uimaterialgetglobalmateriallevel)获取设备的材质等级，分档效果具体参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的描述。
@@ -24,10 +24,10 @@ import { uiMaterial } from '@kit.ArkUI';
 
 沉浸式材质类，继承自[Material](arkts-apis-uimaterial.md#material)。
 
-组件上设置ImmersiveMaterial时，沉浸式材质的生效需满足任一条件：
+组件上设置ImmersiveMaterial时，
 
-* 组件位于Navigation/NavDestination标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar中。
-* 组件为Popup、Tips、Menu、BindSheet、showActionMenu、AlertDialog、CustomDialog、ActionSheet、CalendarPickerDialog、DatePickerDialog、TextPickerDialog、TimePickerDialog、Toast、Select、AlphabetIndexer气泡弹窗、Text设置copyOption后长按或双击触发的文本菜单、SelectionMenu（结合bindSelectionMenu一起使用）。
+* 弹窗类组件（AlertDialog、ActionSheet、CustomDialog、CalendarPickerDialog、DatePickerDialog、TimePickerDialog、TextPickerDialog、SelectionMenu、AlphabetIndexer弹窗、Text设置copyOption后长按或双击触发的文本菜单）和弹窗类接口（PromptAction、ArkUI\_NativeDialog、@ohos.promptAction (弹窗)、Popup控制、Tips控制、菜单控制、半模态转场）以及按钮与选择类组件（Slider、Toggle、Select）可在页面内全部区域生效。
+* 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效，在其他区域中设置不生效。
 
 沉浸式材质根据设备是否支持沉浸式材质和设备算力有分档表现，可通过[isImmersiveMaterialSupported](arkts-apis-uimaterial.md#uimaterialisimmersivematerialsupported)判断设备是否支持沉浸式材质，通过[getGlobalMaterialLevel](arkts-apis-uimaterial.md#uimaterialgetglobalmateriallevel)获取设备的材质等级。在不支持沉浸式材质的设备上可设置沉浸式材质但无效果。在支持沉浸式材质的高算力和中算力设备上，通过材质层滤镜属性[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)和阴影[shadow](ts-universal-attributes-image-effect.md#shadow)属性实现材质效果，当[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)属性生效后，已设置的背景色属性[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)会被恢复为透明色，已设置的边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)属性会被恢复为无边框效果。在支持沉浸式材质的低算力设备上，通过背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)属性实现材质效果。同一材质的效果，会受到系统设置应用中沉浸光感配置项的影响，不同强弱程度的沉浸光感配置下，材质的参数和效果存在差异。
 
@@ -118,7 +118,7 @@ static get empty(): Material
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DEFAULT | 0 | 默认模式。[弹出框Dialog](../harmonyos-guides/arkts-base-dialog-overview.md)、[即时反馈（Toast）](../harmonyos-guides/arkts-create-toast.md)、[AlphabetIndexer](ts-container-alphabet-indexer.md)在组件本身未设置背景颜色、模糊参数和阴影参数时默认开启沉浸式系统材质；[Text](ts-basic-components-text.md)设置[copyOption](ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单默认开启沉浸式系统材质；其他组件由应用主动设置。 |
-| ENABLE | 1 | 使能模式。[弹出框Dialog](../harmonyos-guides/arkts-base-dialog-overview.md)、[即时反馈（Toast）](../harmonyos-guides/arkts-create-toast.md)、[AlphabetIndexer](ts-container-alphabet-indexer.md)、[ChipGroup](ohos-arkui-advanced-chipgroup.md)、[Chip](ohos-arkui-advanced-chip.md)、[Select](ts-basic-components-select.md)、[菜单控制](ts-universal-attributes-menu.md)、[Toggle](ts-basic-components-toggle.md)、[SegmentButton](ohos-arkui-advanced-segmentbutton.md)、[SegmentButtonV2](ohos-arkui-advanced-segmentbuttonv2.md)、[Slider](ts-basic-components-slider.md)、[SelectionMenu](ohos-arkui-advanced-selectionmenu.md)组件默认开启沉浸式系统材质；[Text](ts-basic-components-text.md)设置[copyOption](ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单默认开启沉浸式系统材质。此模式下，沉浸式系统材质样式生效的优先级高于组件本身设置的背景色、模糊、阴影和边框样式。其他组件需开发者主动设置。 |
+| ENABLE | 1 | 使能模式。此模式下，[弹出框Dialog](../harmonyos-guides/arkts-base-dialog-overview.md)、[即时反馈（Toast）](../harmonyos-guides/arkts-create-toast.md)、[AlphabetIndexer](ts-container-alphabet-indexer.md)、[ChipGroup](ohos-arkui-advanced-chipgroup.md)、[Chip](ohos-arkui-advanced-chip.md)、[Select](ts-basic-components-select.md)、[菜单控制](ts-universal-attributes-menu.md)、[Toggle](ts-basic-components-toggle.md)、[SegmentButton](ohos-arkui-advanced-segmentbutton.md)、[SegmentButtonV2](ohos-arkui-advanced-segmentbuttonv2.md)、[Slider](ts-basic-components-slider.md)、[SelectionMenu](ohos-arkui-advanced-selectionmenu.md)默认开启沉浸式系统材质；[Text](ts-basic-components-text.md)设置[copyOption](ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单默认开启沉浸式系统材质；[Navigation](ts-basic-components-navigation.md)/[NavDestination](ts-basic-components-navdestination.md)标题栏默认开启沉浸式系统材质；[Tabs](ts-container-tabs.md)设置[barFloatingStyle](ts-container-tabs.md#barfloatingstyle)并生效悬浮样式，页签栏Tabbar默认开启沉浸式系统材质。其他组件需开发者主动设置。此模式下，沉浸式系统材质样式生效的优先级高于组件本身设置的背景色、模糊、阴影和边框样式。 |
 | DISABLE | 2 | 禁用模式。所有组件禁止开启沉浸式系统材质，即使主动为组件设置沉浸式系统材质参数也不会生效。 |
 
 ## MaterialInfo
@@ -318,107 +318,153 @@ import { uiMaterial } from '@kit.ArkUI';
 @Entry
 @Component
 struct SystemMaterialPage {
-
-  @Builder
-  NavigationTitle() {
-    Column() {
-      Stack() {
-        Image($r('app.media.bg1')) // $r('app.media.bg1')需要替换为开发者所需的图像资源文件
-          .width('100%')
-          .height('100%')
-
-        Column({ space: 30 }) {
-          Column() {
-            Text('ULTRA_THIN')
-          }
-          .width(328)
-          .height(56)
-          .borderRadius(28)
-          .justifyContent(FlexAlign.Center)
-          .alignItems(HorizontalAlign.Center)
-          .systemMaterial(new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
-          }))
-
-          Column() {
-            Text('THIN')
-          }
-          .width(328)
-          .height(56)
-          .borderRadius(28)
-          .justifyContent(FlexAlign.Center)
-          .alignItems(HorizontalAlign.Center)
-          .systemMaterial(new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.THIN,
-          }))
-
-          Column() {
-            Text('REGULAR')
-          }
-          .width(328)
-          .height(56)
-          .borderRadius(28)
-          .justifyContent(FlexAlign.Center)
-          .alignItems(HorizontalAlign.Center)
-          .systemMaterial(new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.REGULAR,
-          }))
-
-          Column() {
-            Text('THICK')
-          }
-          .width(328)
-          .height(56)
-          .borderRadius(28)
-          .justifyContent(FlexAlign.Center)
-          .alignItems(HorizontalAlign.Center)
-          .systemMaterial(new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.THICK,
-          }))
-
-          Column() {
-            Text('ULTRA_THICK')
-          }
-          .width(328)
-          .height(56)
-          .borderRadius(28)
-          .justifyContent(FlexAlign.Center)
-          .alignItems(HorizontalAlign.Center)
-          .systemMaterial(new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.ULTRA_THICK,
-          }))
-        }
-      }
-      .height('90%')
-      .width('90%')
-    }
-    .width('100%')
-    .alignItems(HorizontalAlign.Center)
-    .justifyContent(FlexAlign.Center)
-  }
+  @State currentStyle: uiMaterial.ImmersiveStyle = uiMaterial.ImmersiveStyle.ULTRA_THIN;
+  private styles: uiMaterial.ImmersiveStyle[] = [
+    uiMaterial.ImmersiveStyle.ULTRA_THIN,
+    uiMaterial.ImmersiveStyle.THIN,
+    uiMaterial.ImmersiveStyle.REGULAR,
+    uiMaterial.ImmersiveStyle.THICK,
+    uiMaterial.ImmersiveStyle.ULTRA_THICK,
+  ];
 
   build() {
     Column() {
-      Navigation() {
-        // 页面内容
+      Tabs({ barPosition: BarPosition.End }) {
+        TabContent() {
+          // $r('app.media.invert')需要替换为开发者所需的图像资源文件
+          Image($r('app.media.invert'))
+            .width('100%')
+            .height('100%')
+            .objectFit(ImageFit.Cover)
+        }.tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), 'ULTRA_THIN')
+          .labelStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+          .iconStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+        )
+
+        TabContent() {
+          Image($r('app.media.invert'))
+            .width('100%')
+            .height('100%')
+            .objectFit(ImageFit.Cover)
+        }.tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), 'THIN')
+          .labelStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+          .iconStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+        )
+
+        TabContent() {
+          Image($r('app.media.invert'))
+            .width('100%')
+            .height('100%')
+            .objectFit(ImageFit.Cover)
+        }.tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), 'REGULAR')
+          .labelStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+          .iconStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+        )
+
+        TabContent() {
+          Image($r('app.media.invert'))
+            .width('100%')
+            .height('100%')
+            .objectFit(ImageFit.Cover)
+        }.tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), 'THICK')
+          .labelStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+          .iconStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+        )
+
+        TabContent() {
+          Image($r('app.media.invert'))
+            .width('100%')
+            .height('100%')
+            .objectFit(ImageFit.Cover)
+        }.tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), 'ULTRA_THICK')
+          .labelStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+          .iconStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+        )
       }
-      .title({ builder: this.NavigationTitle, height: '100%' })
-    }.width('100%').height('100%')
+      .barFloatingStyle({
+        systemMaterial: new uiMaterial.ImmersiveMaterial({
+          style: this.currentStyle,
+        }),
+        maskColor: Color.Transparent,
+      })
+      .barOverlap(true)
+      .onChange((index: number) => {
+        this.currentStyle = this.styles[index];
+      })
+      .barWidth(500)
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
   }
 }
 ```
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/1vRFuSN_QACacuUqHFwOJQ/zh-cn_image_0000002736314643.jpg)
+ULTRA\_THIN样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/2_TuE6WCQ1G6paVR-vSwlg/zh-cn_image_0000002742004727.jpg)
+
+THIN样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/tzTa2r_QSbmwHOFSr059AA/zh-cn_image_0000002712405738.jpg)
+
+REGULAR样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/S1l5pbLeSu6lK10UWKSpqA/zh-cn_image_0000002742124687.jpg)
+
+THICK样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/TP9rYOUUSjykK8DsBZ0vqQ/zh-cn_image_0000002712245780.jpg)
+
+ULTRA\_THICK样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/ApBo5HrkTAu3UefqEEGoSQ/zh-cn_image_0000002742004729.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/XpKauM6dQVaEME3dl9TgoA/zh-cn_image_0000002706675600.jpg)
+ULTRA\_THIN样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Sj8aVREkR66J2K3xGs-FJg/zh-cn_image_0000002712405740.jpg)
+
+THIN样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/kpIX9AG0TPuprNy6nI7Row/zh-cn_image_0000002742124689.jpg)
+
+REGULAR样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/C1pHIvpyQVCWGKgCZObxEA/zh-cn_image_0000002712245782.jpg)
+
+THICK样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/XNhRqQOnRV6E7nC4yvKtAw/zh-cn_image_0000002742004731.jpg)
+
+ULTRA\_THICK样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/O7gcVDnkS46nMJy1kh_ZTA/zh-cn_image_0000002712405742.jpg)
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/FNzmkx3HQLWiLz1_rKjoAg/zh-cn_image_0000002736434687.jpg)
+ULTRA\_THIN样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/AxDuCkKeTL6GIKMIzBFz4g/zh-cn_image_0000002742124691.jpg)
+
+THIN样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/vOD-IzwcSkeqT93QEgrHTA/zh-cn_image_0000002712245784.jpg)
+
+REGULAR样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/AkNfJtZ6QUqj6DbdSUFroQ/zh-cn_image_0000002742004733.jpg)
+
+THICK样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/14oIFDwNQDu0M7yWvPXL_w/zh-cn_image_0000002712405744.jpg)
+
+ULTRA\_THICK样式：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/a_pZa7EuSXOuacCNyKaKEQ/zh-cn_image_0000002742124693.jpg)
 
 ### 示例2（获取材质配置信息并使用空材质关闭沉浸式系统材质）
 
@@ -453,51 +499,38 @@ import { uiMaterial } from '@kit.ArkUI';
 struct MaterialInfoPage {
   // 获取材质配置信息
   private info: uiMaterial.MaterialInfo = uiMaterial.getMaterialInfo();
-  @Builder
-  NavigationTitle() {
-    Column() {
-      Text(`MaterialState: ${this.info.state}`)
-        .fontSize(16)
-        .margin({ bottom: 10 })
-      Text(`MaterialType: ${this.info.type}`)
-        .fontSize(16)
-        .margin({ bottom: 20 })
-
-      // 根据状态决定组件行为
-      if (this.info.state === uiMaterial.MaterialState.ENABLE) {
-        // 主动使用沉浸式材质
-        Button('Enable UiMaterial')
-          .backgroundColor(Color.Transparent)
-          .systemMaterial(new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.ULTRA_THIN
-          }))
-          .fontColor(Color.Blue)
-          .margin({ bottom: 10 })
-        // Select组件默认开启沉浸式系统材质
-        Select([
-          {value: 'select item'}
-        ]).value('select item')
-        .margin({ bottom: 10 })
-        // 单独关闭Select组件的沉浸式系统材质
-        Select([
-          {value: 'select item'}
-        ]).value('select item')
-        .systemMaterial(uiMaterial.Material.empty)
-      }
-    }
-    .width('100%')
-    .justifyContent(FlexAlign.Center)
-    // $r('app.media.img')需要替换为开发者所需的图像资源文件
-    .backgroundImage($r('app.media.img'))
-    .backgroundImageSize(ImageSize.FILL)
-  }
 
   build() {
     Column() {
-      Navigation() {
-        // 页面内容
+      Column({ space: 20 }) {
+        Column() {
+          Text(`MaterialState: ${this.info.state}`)
+            .fontSize(16)
+          Text(`MaterialType: ${this.info.type}`)
+            .fontSize(16)
+        }
+        .backgroundColor(Color.White)
+        .padding(15)
+
+        // 根据状态决定组件行为
+        if (this.info.state === uiMaterial.MaterialState.ENABLE) {
+          // Toggle组件默认开启沉浸式系统材质
+          Toggle({ type: ToggleType.Switch })
+            .width(100)
+            .height(50)
+          // 单独关闭Toggle组件的沉浸式系统材质
+          Toggle({ type: ToggleType.Switch })
+            .width(100)
+            .height(50)
+            .systemMaterial(uiMaterial.Material.empty)
+        }
       }
-      .title({ builder: this.NavigationTitle, height: '100%' })
+      .width('100%')
+      .height('100%')
+      .justifyContent(FlexAlign.Center)
+      // $r('app.media.img')需要替换为开发者所需的图像资源文件
+      .backgroundImage($r('app.media.img'))
+
     }.width('100%').height('100%')
   }
 }
@@ -505,15 +538,15 @@ struct MaterialInfoPage {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ENDX2AZcQEqVdiOs0ALXmQ/zh-cn_image_0000002706835540.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/SwYfm0rFRiyqXUCXSqcEzg/zh-cn_image_0000002712245786.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/sIdxs4htSgeTQwDk83frjA/zh-cn_image_0000002736314645.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/4wTAmeyPQxSGIbs4GZhtyw/zh-cn_image_0000002742004735.jpg)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/07BAbd44TyK2q_U35xFnrw/zh-cn_image_0000002706675602.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/26Rc4xCHRSyzgwhxSVkXdQ/zh-cn_image_0000002712405746.jpg)
 
 ### 示例3（设置组件材质的交互形变效果）
 
@@ -527,44 +560,47 @@ import { uiMaterial } from '@kit.ArkUI';
 @Entry
 @Component
 struct Index {
-  @Builder
-  NavigationTitle() {
-    Stack() {
-      // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-      Image($r('app.media.startIcon'))
-      Column() {
-        Column() {
-          Text('Context')
-        }
-        .margin({ bottom: 100 })
-        .width(248)
-        .height(56)
-        .borderRadius(28)
-        .justifyContent(FlexAlign.Center)
-        .alignItems(HorizontalAlign.Center)
-        .systemMaterial(new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
-          interactive: true,
-        }))
-      }
-      .height('100%')
-      .width('100%')
-      .justifyContent(FlexAlign.Center)
-    }
-  }
-
   build() {
     Column() {
-      Navigation() {
-        // 页面内容
+      Tabs({ barPosition: BarPosition.End }) {
+        TabContent() {
+          // $r('app.media.invert')需要替换为开发者所需的图像资源文件。
+          Image($r('app.media.invert'))
+            .width('100%')
+            .height('100%')
+        }.tabBar(new BottomTabBarStyle($r('sys.media.ohos_icon_mask_svg'), 'tab1')
+          .labelStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+          .iconStyle({ selectedColor: $r('sys.color.brand'), unselectedColor: $r('sys.color.font_primary') })
+        )
       }
-      .title({ builder: this.NavigationTitle, height: '100%' })
-    }.width('100%').height('100%')
+      .barFloatingStyle({
+        systemMaterial: new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+          // 开启交互形变效果
+          interactive: true,
+        }),
+        maskColor: Color.Transparent,
+      })
+      .barOverlap(true)
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/vhA6BP5eRz-uRHkXaX3zdQ/zh-cn_image_0000002736434689.gif)
+在支持沉浸式材质的高算力设备上表现：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/q1TFQqWOSB2AOc8Q7sAymQ/zh-cn_image_0000002742124695.gif)
+
+在支持沉浸式材质的中算力设备上表现：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/CUV4UcqTQ9u-amNCQQkV5w/zh-cn_image_0000002712245788.gif)
+
+在支持沉浸式材质的低算力设备上表现：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/nfcBp1XtSP-9axvChiUJbA/zh-cn_image_0000002742004737.gif)
 
 ### 示例4（设置组件材质的光感交互反馈效果）
 
@@ -573,54 +609,82 @@ struct Index {
 从API版本26.0.0开始，新增lightEffect接口。
 
 ```ts
+// xxx.ets
 import { uiMaterial } from '@kit.ArkUI';
+
+@Styles
+function systemMaterialStyle() {
+  .margin(5)
+  .width(70)
+  .height(70)
+  .borderRadius(50)
+}
 
 @Entry
 @Component
-struct LightEffect {
-  @State itemsKey: number[] = [0, 1, 2];
-  @State circleRadius: number = 40;
-  @State spaceValue: number = 10;
-  // 创建沉浸式材质对象，启用交互形变和光感交互反馈效果（lightEffect.color为undefined时使用默认白色光感颜色）
-  @State myMaterial: uiMaterial.Material = new uiMaterial.ImmersiveMaterial({
+struct NavigationTitleMaterialDemo {
+  @State myMaterial: uiMaterial.ImmersiveMaterial = new uiMaterial.ImmersiveMaterial({
     style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
     interactive: true,
-    lightEffect: { color: undefined },
+    lightEffect: {},
   });
+
   @Builder
-  NavigationTitle() {
-    Column() {
+  CustomMenuBuilder() {
+    Stack() {
       Row() {
-        Row({ space: this.spaceValue }) {
-          ForEach(this.itemsKey, (_: number, __: number) => {
-            Row()
-              .width(this.circleRadius * 2)
-              .height(this.circleRadius * 2)
-              .borderRadius(this.circleRadius)
-              .systemMaterial(this.myMaterial)
-          })
+        Text('Title')
+          .fontSize(30)
+          .fontColor(Color.White)
+          .margin({ right: 50 })
+
+        Column() {
         }
+        .systemMaterialStyle()
+        .systemMaterial(this.myMaterial)
+
+        Column() {
+        }
+        .systemMaterialStyle()
+        .systemMaterial(this.myMaterial)
+
+        Column() {
+        }
+        .systemMaterialStyle()
+        .systemMaterial(this.myMaterial)
       }
       .justifyContent(FlexAlign.End)
-      .backgroundColor(Color.Black)
-      .width('100%')
-      .padding(20)
     }
     .width('100%')
+    .height(100)
   }
 
   build() {
-    Column() {
+    Stack() {
+      // $r('app.media.invert')需要替换为开发者所需的图像资源文件
+      Image($r('app.media.invert'))
       Navigation() {
         // 页面内容
       }
-      .title({ builder: this.NavigationTitle, height: '100%' })
-    }.width('100%').height('100%')
+      .title(this.CustomMenuBuilder())
+    }
+    .width('100%')
+    .height('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/3O0qLVVBTDK_ScR5wPyWKw/zh-cn_image_0000002706835542.gif)
+在支持沉浸式材质的高算力设备上表现：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/H0XYapPhRkqj-w1MA-HHnA/zh-cn_image_0000002712405748.gif)
+
+在支持沉浸式材质的中算力设备上表现：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/zgq7yxCKShGbVaE0yjlnqA/zh-cn_image_0000002742124697.gif)
+
+在支持沉浸式材质的低算力设备上表现：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/WZKUcl2tSxuLkWZlJnzmkg/zh-cn_image_0000002712245790.gif)
 
 ### 示例5（查询材质等级与是否支持沉浸式材质）
 
@@ -629,94 +693,108 @@ struct LightEffect {
 从API版本26.0.0开始，新增getGlobalMaterialLevel和isImmersiveMaterialSupported方法。
 
 ```ts
+// xxx.ets
 import { uiMaterial } from '@kit.ArkUI';
+
+@Styles
+function systemMaterialStyle() {
+  .margin(5)
+  .width(70)
+  .height(70)
+  .borderRadius(50)
+}
 
 @Entry
 @Component
-struct MaterialLevelPage {
+struct NavigationTitleMaterialDemo {
   private materialLevel: uiMaterial.MaterialLevel = uiMaterial.getGlobalMaterialLevel(); // 材质档位由设备决定，应用运行后不会改变
   private isSupported: boolean = uiMaterial.isImmersiveMaterialSupported(); // 是否支持沉浸式材质由设备决定，应用运行后不会改变
 
   @Builder
-  NavigationTitle() {
-    Column({ space: 20 }) {
-      Text(`MaterialLevel: ${this.materialLevel}`)
-        .fontSize(16)
+  CustomMenuBuilder() {
+    Stack() {
+      Row() {
+        Text('Title')
+          .fontSize(30)
+          .fontColor(Color.White)
+          .margin({ right: 50 })
 
-      Text(`IsImmersiveMaterialSupported: ${this.isSupported}`)
-        .fontSize(16)
+        Column() {
+        }
+        .systemMaterialStyle()
+        .backgroundColor(this.isSupported ? Color.Transparent :
+          '#f2f1f3f5') // 背景色写到systemMaterial之前，在支持沉浸式材质的低算力设备上，沉浸式材质中包含的背景色效果最终生效
+        // 在支持沉浸式材质的设备上，设置透明的背景色和沉浸式材质，沉浸式材质后设置生效；在不支持沉浸式材质的设备上，设置'#f2f1f3f5'的背景色和undefined的无材质效果，'#f2f1f3f5'的背景色属性生效
+        .systemMaterial(this.isSupported ? new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.REGULAR,
+        }) : undefined)
 
-      Column({ space: 20 }) {
-        // 适配方式1，判断设备是否支持材质，根据支持情况设不同的属性，写法更直观，能适用的属性范围更广
-        Column()
-          .width(328)
-          .height(56)
-          .borderRadius(28)
-          .backgroundColor(this.isSupported ? Color.Transparent :
-            '#f2f1f3f5') // 背景色写到systemMaterial之前，在支持沉浸式材质的低算力设备上，沉浸式材质中包含的背景色效果最终生效
-          // 在支持沉浸式材质的设备上，设置透明的背景色和沉浸式材质，沉浸式材质后设置生效；在不支持沉浸式材质的设备上，设置'#f2f1f3f5'的背景色和undefined的无材质效果，'#f2f1f3f5'的背景色属性生效
-          .systemMaterial(this.isSupported ? new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.REGULAR,
-          }) : undefined)
+        Column() {
+        }
+        .systemMaterialStyle()
+        .backgroundColor(this.isSupported ? Color.Transparent :
+          $r('sys.color.comp_background_emphasize')) // 背景色写到systemMaterial之前，在支持沉浸式材质的低算力设备上，沉浸式材质中包含的背景色效果最终生效
+        // 在支持沉浸式材质的设备上，设置透明的背景色和带赋色的沉浸式材质，带赋色的沉浸式材质后设置生效；在不支持沉浸式材质的设备上，设置资源值的背景色和undefined的无材质效果，资源值的背景色属性生效
+        .systemMaterial(this.isSupported ? new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.REGULAR,
+          materialColor: $r('sys.color.comp_background_emphasize'),
+        }) : undefined)
 
-        Column()
-          .width(328)
-          .height(56)
-          .borderRadius(28)
-          .backgroundColor(this.isSupported ? Color.Transparent :
-            $r('sys.color.comp_background_emphasize')) // 背景色写到systemMaterial之前，在支持沉浸式材质的低算力设备上，沉浸式材质中包含的背景色效果最终生效
-          // 在支持沉浸式材质的设备上，设置透明的背景色和带赋色的沉浸式材质，带赋色的沉浸式材质后设置生效；在不支持沉浸式材质的设备上，设置资源值的背景色和undefined的无材质效果，资源值的背景色属性生效
-          .systemMaterial(this.isSupported ? new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.REGULAR,
-            materialColor: $r('sys.color.comp_background_emphasize'),
-          }) : undefined)
-
-        // 适配方式2，后设置systemMaterial属性，利用systemMaterial能覆盖与材质冲突的属性的特性
-        Column()
-          .width(328)
-          .height(56)
-          .borderRadius(28)
-          .backgroundColor($r('sys.color.comp_background_emphasize')) // 背景色写到systemMaterial之前，在支持沉浸式材质的低算力设备上，沉浸式材质中包含的背景色效果最终生效
-          // 在支持沉浸式材质的设备上，如果是高算力或中算力设备，后设置的沉浸式材质会清除背景色效果为透明色，使用材质效果；如果是低算力设备，后设置的沉浸式材质中包含的背景色效果覆盖了backgroundColor属性的效果，使用材质颜色
-          // 在不支持沉浸式材质的设备上，设置systemMaterial无作用，资源值的背景色属性生效
-          .systemMaterial(new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.REGULAR,
-            materialColor: $r('sys.color.comp_background_emphasize')
-          }))
+        Column() {
+        }
+        .systemMaterialStyle()
+        .backgroundColor($r('sys.color.comp_background_emphasize')) // 背景色写到systemMaterial之前，在支持沉浸式材质的低算力设备上，沉浸式材质中包含的背景色效果最终生效
+        // 在支持沉浸式材质的设备上，如果是高算力或中算力设备，后设置的沉浸式材质会清除背景色效果为透明色，使用材质效果；如果是低算力设备，后设置的沉浸式材质中包含的背景色效果覆盖了backgroundColor属性的效果，使用材质颜色
+        // 在不支持沉浸式材质的设备上，设置systemMaterial无作用，资源值的背景色属性生效
+        .systemMaterial(new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.REGULAR,
+          materialColor: $r('sys.color.comp_background_emphasize')
+        }))
       }
-      .backgroundImage($r('app.media.bg1')) // $r("app.media.bg1")需要替换为开发者所需的图像资源文件
-      .backgroundImageSize({ width: '100%', height: '100%' })
-      .width('90%')
-      .height(300)
-      .justifyContent(FlexAlign.Center)
+      .justifyContent(FlexAlign.End)
     }
+    .backgroundColor('#99000000')
     .width('100%')
-    .justifyContent(FlexAlign.Center)
+    .height(100)
   }
 
   build() {
-    Column() {
+    Stack() {
+      // $r('app.media.invert')需要替换为开发者所需的图像资源文件
+      Image($r('app.media.invert'))
+
       Navigation() {
-        // 页面内容
+        Column() {
+          Text(`MaterialLevel: ${this.materialLevel}`)
+            .fontSize(16)
+
+          Text(`IsImmersiveMaterialSupported: ${this.isSupported}`)
+            .fontSize(16)
+        }
+        .backgroundColor(Color.White)
+        .margin({ top: 100 })
+        .padding(15)
       }
-      .title({ builder: this.NavigationTitle, height: '100%' })
-    }.width('100%').height('100%')
+      .title(this.CustomMenuBuilder())
+    }
+    .width('100%')
+    .height('100%')
   }
 }
 ```
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/zuJpRHIySWGIAH8uxLJqsA/zh-cn_image_0000002736314647.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/dGXMk1aSRs6E1LldYUTZFw/zh-cn_image_0000002742004739.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/G_Aw1p95QbSYx_kpps03dA/zh-cn_image_0000002706675604.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/nRCZ41OZT5OOrC5na_eDiw/zh-cn_image_0000002712405750.jpg)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/M5LsCTBRQaCe2y-AMbhu3g/zh-cn_image_0000002736434691.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/sSpTuAovRAGXqi5kSSgRxw/zh-cn_image_0000002742124699.jpg)
 
 在不支持沉浸式材质的设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/5w-Gya7kQ0K6_58xObxVOQ/zh-cn_image_0000002706835544.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/LuF1jFjfTiqAlbetLHDuEg/zh-cn_image_0000002712245792.jpg)

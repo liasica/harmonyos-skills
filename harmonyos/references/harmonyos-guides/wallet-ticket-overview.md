@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:03+08:00
+scraped_at: 2026-09-05T06:15:22+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:eb348f9e219d8e3510935cfb4ce7f56a82290c125dd29cd813614c9f4d3ead76
+content_hash: sha256:c8d1fbbf7dbeccd4b6f9fd5066e25831f00d933e78ff9f3a6a3272441171761a
 ---
 
 活动/景点门票即为特定活动（如比赛，演唱会等）或景点所制作的电子入场凭证，用户通过活动/景点门票可以在手机上进行快速验票，以提升验票体验、活动运营效率及服务满意度。
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/t29QFk5TR3id-Gku_F6GIA/zh-cn_image_0000002736434395.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/gGTGGhxhQmOCl9SPC9yl1Q/zh-cn_image_0000002742124395.png)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -27,11 +27,11 @@ content_hash: sha256:eb348f9e219d8e3510935cfb4ce7f56a82290c125dd29cd813614c9f4d3
 
 ### 活动/景点门票开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/SycswrprTKKU2ICuPNuKLw/zh-cn_image_0000002736434415.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/MAkJsNWLReSWsSyA89k1AQ/zh-cn_image_0000002742124415.png)
 
 ### 活动/景点门票展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/AIL0V8wZQeGFqrckvFECcg/zh-cn_image_0000002706835266.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/hTEjyoqSTKGM-rczgdOoVw/zh-cn_image_0000002712245508.png)
 
 ## 接入流程
 

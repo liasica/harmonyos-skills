@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.graphics.sendableColorSpaceManager (可共享的色彩管理)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.sendableColorSpaceManager (可共享的色彩管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:40+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:70441e6561b4cc5143b4b84a8f736c8185ac75f5457afe42594e9cc801330c35
+scraped_at: 2026-09-05T06:20:30+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:b99241bb0342b0b1dda9c5881b0654bf5812f6feeb4840fec3cc96d3c43a0cf7
 ---
 
 本模块提供管理抽象化色域对象的基础能力，包括可共享的色彩管理的创建与可共享的色域基础属性的获取等。适用于需要在多线程间传递色域信息的场景，能够解决跨线程色彩管理对象无法共享的问题，提高色彩处理的效率和一致性。
@@ -30,7 +30,7 @@ type ISendable = lang.ISendable
 
 | 类型 | 说明 |
 | --- | --- |
-| [lang.ISendable](js-apis-arkts-lang.md#langisendable) | 所有Sendable类型的父类型。 |
+| [lang.ISendable](js-apis-arkts-lang.md#isendable) | 所有Sendable类型的父类型。 |
 
 ## sendableColorSpaceManager.create
 

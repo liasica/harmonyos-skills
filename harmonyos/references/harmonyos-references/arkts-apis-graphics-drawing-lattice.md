@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Lattice)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Lattice)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:41+08:00
+scraped_at: 2026-09-05T06:20:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:30c608d80349c5ec60deb369807f7a94fa6c91eefd8005c85b28de43aad54466
+content_hash: sha256:bd538c286ee15688315d52b2f3ab29d2587d063d791ef15255caaeaa6a87ee2a
 ---
 
 矩形网格对象。该对象用于将图像按照矩形网格进行划分，支持固定指定网格区域、缩放其余网格实现局部拉伸、自定义网格绘制类型、网格颜色填充以及指定绘制边界矩形等能力。创建Lattice对象后，需配合[Canvas.drawImageLattice](arkts-apis-graphics-drawing-canvas.md#drawimagelattice18)方法使用以实现图像的局部拉伸绘制。
@@ -72,7 +72,7 @@ class DrawingRenderNode extends RenderNode {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/dnZ5gmMVRHCJoVqIMmRNfw/zh-cn_image_0000002706837066.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/q0TZH4JASIa0S4ez-nVOmA/zh-cn_image_0000002712247368.png)
 
 ## createImageLattice18+
 

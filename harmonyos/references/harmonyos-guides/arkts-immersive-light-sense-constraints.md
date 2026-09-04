@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感功耗优化
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感功耗优化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:18+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:f8d08d6df892e283fc7d0d2c71e02591527c1d81c4c6575e42acf2ca181b5ecd
+scraped_at: 2026-09-05T06:14:01+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:8247c4ba841643cbc1d262bef2ae9ff1bc4e842ee286dad8014ed0c463569135
 ---
 
 沉浸光感效果由材质滤镜、折射、高光、阴影等多层效果叠加而成，渲染时需要消耗GPU资源，不合理使用会显著增加功耗。
@@ -14,13 +14,14 @@ content_hash: sha256:f8d08d6df892e283fc7d0d2c71e02591527c1d81c4c6575e42acf2ca181
 
 ## 控制材质使用面积
 
-沉浸式系统材质影响的区域越大，需要处理的像素越多，功耗越高。应避免在单个超大尺寸区域上使用沉浸式系统材质，也应避免在大量小区域上重复使用沉浸式系统材质；约束在Navigation/NavDestination标题栏和横向Tabs中barPosition为BarPosition.End的底部TabBar中使用，优先将沉浸式系统材质限定在需要凸显的局部区域中。
+沉浸式系统材质影响的区域越大，需要处理的像素越多，功耗越高。应避免在单个超大尺寸区域上使用沉浸式系统材质，也应避免在大量小区域上重复使用沉浸式系统材质；推荐在Navigation顶部标题栏和底部Tabs区域中少量使用，优先将沉浸式系统材质限定在需要凸显的局部区域中。
 
 **说明** 
 
-沉浸光感开启后，除了弹窗类组件或方法、Slider、Toggle，其他组件仅在以下区域中生效：Navigation/NavDestination标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar中。
+沉浸光感开启后，
 
-弹窗类组件或方法包括：Popup、Tips、Menu、BindSheet、showActionMenu、AlertDialog、CustomDialog、ActionSheet、CalendarPickerDialog、DatePickerDialog、TextPickerDialog、TimePickerDialog、Toast、Select、AlphabetIndexer气泡弹窗、Text设置copyOption后长按或双击触发的文本菜单、SelectionMenu（结合bindSelectionMenu一起使用）。
+* 弹窗类组件（AlertDialog、ActionSheet、CustomDialog、CalendarPickerDialog、DatePickerDialog、TimePickerDialog、TextPickerDialog、SelectionMenu、AlphabetIndexer弹窗、Text设置copyOption后长按或双击触发的文本菜单）和弹窗类接口（PromptAction、ArkUI\_NativeDialog、@ohos.promptAction (弹窗)、Popup控制、Tips控制、菜单控制、半模态转场）以及按钮与选择类组件（Slider、Toggle、Select）可在页面内全部区域生效。
+* 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 
 ```ts
 import { uiMaterial } from '@kit.ArkUI';

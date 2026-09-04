@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: hdsEffect (hds高级视效)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsEffect (hds高级视效)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:39+08:00
+scraped_at: 2026-09-05T06:18:29+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2e3f47c8958a39ec8ee1ec60a6ccbd398d4a937dc6385f744f7e645b9129ccea
+content_hash: sha256:3fa827985527aaa6a692e84ffe86622569e37019634b82c22d760e6ddd26dca6
 ---
 
 本模块提供组件的拓展视效能力，包括组件点光源效果、按压光效、动画控制。
@@ -127,7 +127,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/dFnyp0WlTF69eBqzN9TARw/zh-cn_image_0000002736435865.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/fOUA4t00S5mvf8R9gxAWhA/zh-cn_image_0000002742125931.jpg)
 
 ### pressShadow
 
@@ -202,7 +202,7 @@ struct PressShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/k6r-U35tSRCNP17tVccshg/zh-cn_image_0000002706836710.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/KqLkfirsQJenEeLC_AnhmA/zh-cn_image_0000002712247022.gif)
 
 ### shaderEffect
 
@@ -304,7 +304,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/NA9nQaIgTf2z3UL6b-bhaA/zh-cn_image_0000002736315819.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/OBq2DhVPQpy9xPRPp_boUw/zh-cn_image_0000002742005969.gif)
 
 ### buildEffect
 

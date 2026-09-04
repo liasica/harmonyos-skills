@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: transform样式动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > transform样式动画
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:21+08:00
+scraped_at: 2026-09-05T06:14:07+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:5d384d6349512f01b42c4638cdd808fb313c0183221589fdf85468895450069f
+content_hash: sha256:967613e3b94285c86a8f5721e58f6d96ac0089a7785900c55bf012ff586d2155
 ---
 
 设置transform属性对组件进行旋转、缩放、移动和倾斜。
@@ -96,7 +96,7 @@ content_hash: sha256:5d384d6349512f01b42c4638cdd808fb313c0183221589fdf8546889545
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/iIi89Vc8RPigwtyraa-nww/zh-cn_image_0000002736313081.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/CqDKiz6kQl-rHEoKY3c-Og/zh-cn_image_0000002742003165.png)
 
 ## 设置平移动画
 
@@ -174,7 +174,7 @@ content_hash: sha256:5d384d6349512f01b42c4638cdd808fb313c0183221589fdf8546889545
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Al-jKo81SEGPVOVOMw5orA/zh-cn_image_0000002706674038.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/PoWhTn8MRbKPYkUzP_aRRg/zh-cn_image_0000002712404178.gif)
 
 ## 设置旋转动画
 
@@ -306,7 +306,7 @@ content_hash: sha256:5d384d6349512f01b42c4638cdd808fb313c0183221589fdf8546889545
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/0FC7acA8STuhxO9vWAxV8Q/zh-cn_image_0000002736433129.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/YtgDL-DKSzer6ePFS7PybA/zh-cn_image_0000002742123127.gif)
 
 **说明** 
 
@@ -418,7 +418,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/IN-69wYhTAuWgHKisIZm3Q/zh-cn_image_0000002706833974.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/cM88yBTDRR28DYwzyFwa0g/zh-cn_image_0000002712244214.gif)
 
 **说明** 
 
@@ -466,7 +466,7 @@ matrix是一个参数为六个值的矩阵，6个值分别代表：scaleX, skewY
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/TKdlFKj0QBmkMwSfV0kUzw/zh-cn_image_0000002736313083.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/IgnWRsALS9--jlf2b_6luQ/zh-cn_image_0000002742003167.gif)
 
 ## 整合transform属性
 
@@ -575,7 +575,7 @@ transform可以设置多个值并且多个值可同时设置，下面案例中�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/G8tk9UvoQZi4ek0bovhB5Q/zh-cn_image_0000002706674040.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/orrzlNe5T_CK2EGU8gIbsQ/zh-cn_image_0000002712404180.gif)
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setat
 title: SetAttr
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > SetAttr
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:38+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:3d35e6deb60fec788c4eacbae1e1609e48bd38f4f2f8a83fcc7260d0a37d8311
+content_hash: sha256:06e8e18d5f3273d1c00b231930c11eaa48df082810495338ac5ae821f9e88f38
 ---
 
 ## 函数功能
@@ -36,7 +36,7 @@ content_hash: sha256:3d35e6deb60fec788c4eacbae1e1609e48bd38f4f2f8a83fcc7260d0a37
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444115043934) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

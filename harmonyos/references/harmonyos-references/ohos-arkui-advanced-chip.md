@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Chip
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Chip
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:6c54e687cbbf5c74f8b15211b01a12b03ec9f29c7f3d525fc01e0e4671db5feb
+scraped_at: 2026-09-05T06:17:28+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:130a24fc71b9cabf3e098ed05bc8cfcc445cfdba2eb4b0e0b8bf9816bd152a51
 ---
 
 Chip组件用于标签展示和交互场景，支持自定义样式、图标、激活态等功能，适用于搜索框历史记录、邮件发送列表等场景，可快速实现标签的创建、删除和交互能力。
@@ -14,6 +14,7 @@ Chip组件用于标签展示和交互场景，支持自定义样式、图标、�
 
 * 该组件从API version 11开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本模块接口仅可在Stage模型下使用。
+* 如果Chip设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到Chip本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议Chip设置通用属性和通用事件。
 
 ## 导入模块
 
@@ -346,7 +347,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-oqAA3NKQDCSnSVUWGx3aA/zh-cn_image_0000002736315367.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/kOzfpWtVQOqUy1OykvJGzA/zh-cn_image_0000002742005457.png)
 
 ### 示例2（设置默认后缀图标）
 
@@ -395,7 +396,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ru9yaUvdQ96J62t5jszbog/zh-cn_image_0000002706676328.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/VYP2Nt4pRE2Ts2EOSaWNGg/zh-cn_image_0000002712406468.png)
 
 ### 示例3（不显示后缀图标）
 
@@ -443,7 +444,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/yDdizcZUT2GJGlGOjzXpag/zh-cn_image_0000002736435415.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/PYW3lzDHRI-FhJ9aSNfX3g/zh-cn_image_0000002742125417.png)
 
 ### 示例4（激活态操作块）
 
@@ -501,7 +502,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/7QZ4BSY4Tx-FhQFpyoLc7g/zh-cn_image_0000002706836264.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/fs0mZEhcR_K9dJ9yI6RonA/zh-cn_image_0000002712246510.gif)
 
 ### 示例5（设置symbol类型图标）
 
@@ -556,7 +557,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/z850gtiPRjOnZXZEhk8IcQ/zh-cn_image_0000002736315369.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_mBXdjVpTKOne7b0qRcdhg/zh-cn_image_0000002742005459.gif)
 
 ### 示例6（设置镜像效果）
 
@@ -608,7 +609,7 @@ struct ChipPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/7mZMdjdqRh2qEZi5WQLWEA/zh-cn_image_0000002706676330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UlhEO4pCS4KvVDQF-DluFg/zh-cn_image_0000002712406470.png)
 
 ### 示例7（Image类型无障碍朗读）
 
@@ -993,4 +994,4 @@ struct ChipMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/NYH39q6FR4ucU_C1sOZPrg/zh-cn_image_0000002736435417.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/LIyjfLrQQ1KtIRgPzIP_Wg/zh-cn_image_0000002742125419.png)

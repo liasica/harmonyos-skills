@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-keyfra
 title: 关键帧动画 (keyframeAnimateTo)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 关键帧动画 (keyframeAnimateTo)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:06+08:00
+scraped_at: 2026-09-05T06:17:23+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9f2dedf192e10eedb03bf163d14f95eb344097d70ade889cb94ea83ebd01495b
+content_hash: sha256:32ee833c35260aa2809c717785c240daee810a1040c9e92540c51fa55f0af878
 ---
 
 在[UIContext](arkts-apis-uicontext-uicontext.md)中提供keyframeAnimateTo接口来指定一个或多个关键帧状态，实现分段的动画。关键帧动画是通过若干个关键时刻的状态，将动画过程划分为多段，同一属性在动画过程内不是单调的从起点到终点的过渡，而可以是分段的过渡。与[animateTo](arkts-apis-uicontext-uicontext.md#animateto)属性动画类似，布局类改变宽高的动画，内容都是直接到终点状态，例如文字、[Canvas](ts-components-canvas-canvas.md)的内容等，如果要内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性配置。keyframeAnimateTo与[animateTo](arkts-apis-uicontext-uicontext.md#animateto)不能同时作用于同一组件的同一属性，若在同一属性上先后调用，后调用的动画将覆盖前一个动画的效果。
@@ -129,4 +129,4 @@ struct KeyframeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/5fboenPvQIuHyxnTbKxQOA/zh-cn_image_0000002736315291.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/ljqcsUw3QTSlWFfHtLb04w/zh-cn_image_0000002742005381.gif)

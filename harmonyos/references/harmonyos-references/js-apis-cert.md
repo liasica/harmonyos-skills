@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.security.cert (证书模块)"
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > ArkTS API > @ohos.security.cert (证书模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:16b6e47ec6dc409d886b754a8f319deba119480b7b62a1a696915dbaf6eb57a6
+scraped_at: 2026-09-05T06:18:45+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:1e2b173585324d5c03446ccca238ce305aaafd5ccd5627b9f9c8abc5f9a3d0f2
 ---
 
 证书算法库框架提供证书相关接口。其中，依赖加解密算法库框架的基础算法能力的部分，详细接口说明可参考[@ohos.security.cryptoFramework (加解密算法库框架)](js-apis-cryptoframework.md)。
@@ -815,7 +815,7 @@ CMS封装数据的接收者信息。
 | --- | --- | --- | --- | --- |
 | contentDataFormat | [CmsContentDataFormat](js-apis-cert.md#cmscontentdataformat18) | 否 | 是 | 内容数据的格式。默认为CmsContentDataFormat.BINARY。 |
 | outFormat | [CmsFormat](js-apis-cert.md#cmsformat18) | 否 | 是 | Cms最终数据的输出格式。默认为DER。 |
-| isDetached | boolean | 否 | 是 | Cms最终数据是否不包含原始数据。默认为false。true为包含，false为不包含。 |
+| isDetached | boolean | 否 | 是 | Cms最终数据是否不包含原始数据。默认为false。true为不包含，false为包含。 |
 
 ## CmsVerificationConfig22+
 

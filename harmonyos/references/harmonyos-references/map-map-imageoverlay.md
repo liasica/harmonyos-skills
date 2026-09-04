@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-i
 title: Interface (ImageOverlay)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (ImageOverlay)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:49ae4afecbf664e7e633db0e644938bfe9250f96ea967d764d25ce19c3ec77c3
+scraped_at: 2026-09-05T06:21:10+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:78f0d147c7675c23302030ad12392813f3cf82f58924fc3c2ee3b8348cd0ff67
 ---
 
 ## 导入模块
@@ -16,7 +16,7 @@ import { mapCommon } from '@kit.MapKit';
 
 ## ImageOverlay
 
-图片覆盖物。继承[BaseOverlay](map-map-baseoverlay.md)。
+图片覆盖物，继承[BaseOverlay](map-map-baseoverlay.md)。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addImageOverlay](map-map-mapcomponentcontroller.md#addimageoverlay)方法时会返回该类型的实例。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

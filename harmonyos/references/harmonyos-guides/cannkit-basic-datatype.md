@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic
 title: 数据类型
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 数据类型
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:14+08:00
+scraped_at: 2026-09-05T06:15:41+08:00
 doc_updated_at: 2026-08-14
-content_hash: sha256:b9d037194d32af6bb63bd31c39842c033ded300a2189f569d460c9b189d82d8a
+content_hash: sha256:14a72f024741048df42b9ed18dc770f0982948f91bec96cedd18a4ea2b27e6fc
 ---
 
 KirinX90/Kirin9030除了不支持bfloat16\_t，MrgSort、Mmad基础api（如不支持float等）、Cast基础API（如不支持s64）等部分API还存在其它数据类型差异，详见[《Ascend C算子接口》](cannkit-ascend-c-apis.md)。若开发者在Ascend910B/Ascend910C使用bfloat16\_t数据类型，在Kirin平台上需要替换成其它数据类型（比如half）。
@@ -45,7 +45,7 @@ KirinX90/Kirin9030除了不支持bfloat16\_t，MrgSort、Mmad基础api（如不�
     mmad<L0cDtype, L0aDtype, L0bDtype, BiasDtype>(dstLocal, fmLocal, filterLocal, biasLocal, mmadParams);
 ```
 
-**说明** 
+![](https://media:401788444096327827) 
 
 * 各产品对应的NPU\_ARCH，请参见[概述](cannkit-migration-guidance-overview.md)中表1产品型号和\_\_NPU\_ARCH\_\_的对应关系。
 * 若数据类型差异影响算子输入和输出数据类型，建议采用方式1。

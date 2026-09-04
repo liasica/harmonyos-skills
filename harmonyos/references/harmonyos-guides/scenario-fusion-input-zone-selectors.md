@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 省市区选择器Input
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Input > 省市区选择器Input
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:01+08:00
+scraped_at: 2026-09-05T06:15:19+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e496b21e4386abc85ea8608e4a82ed569d2aac505dbf602683dfe2c3ed37baec
+content_hash: sha256:db706789413b457142e56cb73926e2aa550ea48bb9e096eb8c875fcb2e452b5d
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:e496b21e4386abc85ea8608e4a82ed569d2aac505dbf602683dfe2c3ed3
 
 运行示例代码后单击“所在地区”文本框，拉起选择地区页面，按照需求选择地址信息，选择完成后将所选地址回填至文本框中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/nOHtVRmeTdiyPbqePs_Pig/zh-cn_image_0000002706675234.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/WheownAuSeuPBTCd7s5MgQ/zh-cn_image_0000002712405374.png)
 
 ## 前提条件
 

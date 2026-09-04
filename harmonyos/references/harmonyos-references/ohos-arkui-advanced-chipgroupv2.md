@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroupV2
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:54594aad19ba0dce26f7d7a48db0a08fd10c5ea784a2925fa92a3a90799eb528
+scraped_at: 2026-09-05T06:17:29+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:130a181c16e6cf3fd394f66d691dcf56c991b9c1727fd9dd26e962bcb8909abb
 ---
 
 ChipGroupV2组件提供操作块群组容器，支持单选或多选、自定义样式和间距、以及尾部自定义内容。该组件适用于文件或资源内容的分类、标签选择、筛选等场景，可帮助开发者快速构建美观且交互丰富的标签组界面。
@@ -14,7 +14,8 @@ ChipGroupV2组件提供操作块群组容器，支持单选或多选、自定义
 
 **说明** 
 
-本模块接口仅可在Stage模型下使用。
+* 本模块接口仅可在Stage模型下使用。
+* 如果ChipGroupV2设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到ChipGroupV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ChipGroupV2设置通用属性和通用事件。
 
 **起始版本：** 26.0.0
 
@@ -620,7 +621,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/h2tPAijxROSIlfcok3IIBg/zh-cn_image_0000002736315375.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/XxqdfBjwR3iw8-ykk41bHw/zh-cn_image_0000002742005465.png)
 
 ### 示例2（ChipGroupV2设置最右侧自定义组件）
 
@@ -718,7 +719,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/3Ar8DpjhRd2Ma1tHtC0RpQ/zh-cn_image_0000002706676336.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/vxvEdXQIReq_o1nWj2CLNQ/zh-cn_image_0000002712406476.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -820,7 +821,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/R6P_QKrmS4y-mZ_jVa15kw/zh-cn_image_0000002736435423.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/5G0NWyQvSeCiGMphpdoxeA/zh-cn_image_0000002742125425.png)
 
 ### 示例4（监听ChipGroupV2内对象类型属性的内部属性变化）
 
@@ -897,4 +898,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/6wMrh6DrTTOsH5ECD7QYSg/zh-cn_image_0000002706836272.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/8wQ4wQSnT5SD_tlCFx-quA/zh-cn_image_0000002712246518.gif)

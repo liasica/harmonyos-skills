@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: CounterV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > CounterV2
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:10+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:947951a36256ce4c4d9c1093aa072a2aa74fc07daf50c422709085cc72c3b312
+scraped_at: 2026-09-05T06:17:31+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:4d9ba08715bd6f3c95723afec09469492ef99f0968935337c01cde246496cd3b
 ---
 
 CounterV2组件用于精确调节数值，包含列表型、紧凑型、数值内联型和日期内联型四种类型，适用于购物车数量调节、日期选择等场景。
@@ -14,8 +14,8 @@ CounterV2组件用于精确调节数值，包含列表型、紧凑型、数值�
 
 **说明** 
 
-* 如果CounterV2设置[通用属性](ts-component-general-attributes.md)和[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到CounterV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议为CounterV2设置通用属性和通用事件。
-* 该组件接口仅可在Stage模型下使用。
+* 本模块接口仅可在Stage模型下使用。
+* 如果CounterV2设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到CounterV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议CounterV2设置通用属性和通用事件。
 
 **起始版本：** 26.0.0
 
@@ -283,14 +283,6 @@ CounterV2DateStyleOptions定义日期内联型CounterV2的属性和事件。
 | day | number | 否 | 是 | 设置日期内联型初始日。  默认值：1  取值范围：[1, 31]  必须为合法日期，如month为2月时，day传入30将视为异常值，按默认值处理。  超出取值范围按默认值处理。  值为undefined时，按默认值处理。 |
 | onDateChange | [OnDateCounterV2ChangeCallback](ohos-arkui-advanced-counterv2.md#ondatecounterv2changecallback) | 否 | 是 | 当日期改变时，触发该回调。回调参数date表示当前显示的日期值。  使用场景：当需要在日期变化时执行自定义操作（如更新关联数据、触发业务逻辑、记录日志等）时传入此回调。  默认值：undefined，表示不触发该回调。  值为undefined时，按默认值处理。 |
 
-## 属性
-
-不支持[通用属性](ts-component-general-attributes.md)。
-
-## 事件
-
-不支持[通用事件](ts-component-general-events.md)。
-
 ## 示例
 
 ### 示例1（列表型CounterV2）
@@ -324,7 +316,7 @@ struct ListCounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/1-JlRoDNTwS9EdGOQsOOuw/zh-cn_image_0000002736435479.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/00ZieHqlQAOJtiFZ4tGNtg/zh-cn_image_0000002742125525.gif)
 
 ### 示例2（紧凑型CounterV2）
 
@@ -358,7 +350,7 @@ struct CompactCounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Oo8e1SOqRgyJVjhgHVlVgQ/zh-cn_image_0000002706836328.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/UcGe1z-tToKRSg8v2l2G7w/zh-cn_image_0000002712246618.gif)
 
 ### 示例3（数值内联型CounterV2）
 
@@ -395,7 +387,7 @@ struct NumberStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/rCFXIEobQx6NxfU42bvNmA/zh-cn_image_0000002736315433.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/duOAdPrlTYGp2VNap2SXqA/zh-cn_image_0000002742005567.gif)
 
 ### 示例4（日期内联型CounterV2）
 
@@ -428,7 +420,7 @@ struct DateStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/6cw-9hcoTeSllcGuYEv7Ow/zh-cn_image_0000002706676394.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/18AOWQrCTWugrw8n_d4YPw/zh-cn_image_0000002712406580.gif)
 
 ### 示例5（镜像布局展示）
 
@@ -516,4 +508,4 @@ struct CounterPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/j34FgwrpTmmBhwKMUCcI1A/zh-cn_image_0000002736435481.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/KXCOAVZKQ_auPkAJ25Qq_w/zh-cn_image_0000002742125527.png)

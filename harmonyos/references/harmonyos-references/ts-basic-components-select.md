@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Select
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Select
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:02+08:00
+scraped_at: 2026-09-05T06:17:15+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:9d45066ba49bc47ced534ea441c2e23be55be164c6c9e0a0a0bd34849b1c453b
+content_hash: sha256:c3e7ca0790983a58099c3a50cd0968ad36f2ea86538036d65153714fb9a91505
 ---
 
 提供下拉选择菜单，让用户在多个选项间选择。Select组件支持设置选项图标、自定义样式、分割线等，适用于需要在有限空间内展示多个选项供用户选择的场景。
@@ -1263,7 +1263,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/lzq6CNooSMGDUeWyeSQ9wg/zh-cn_image_0000002736314987.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/RfB1jXWSQ0-cv-Yi8HPZ-w/zh-cn_image_0000002742005077.png)
 
 ### 示例2（设置symbol类型图标）
 
@@ -1324,7 +1324,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/SonmdMSrR0uvc72F619XIg/zh-cn_image_0000002706675944.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/u1Hk6QFnSGGzAyHKXXymQQ/zh-cn_image_0000002712406088.png)
 
 ### 示例3（自定义下拉菜单）
 
@@ -1414,7 +1414,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qp2wkP3nSBaXFEeKM5ZzvQ/zh-cn_image_0000002736435031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Fjty88vlQoeU_teQy7PXCg/zh-cn_image_0000002742125037.png)
 
 ### 示例4（设置分割线样式）
 
@@ -1471,7 +1471,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/OZB6QpeZRtisxQsIjND2Gw/zh-cn_image_0000002706835884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/WcusTEo9Rna5bOlcRwaPJQ/zh-cn_image_0000002712246130.png)
 
 ### 示例5（设置无分割线样式）
 
@@ -1518,7 +1518,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/Hjw1KRu8Tk2SNXU-Kb0_SQ/zh-cn_image_0000002736314989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/ravyWywWSzKeAXJNc79XjA/zh-cn_image_0000002742005079.png)
 
 ### 示例6（设置Select中文本和箭头样式）
 
@@ -1593,7 +1593,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/VhuR664WRryM-h2o2DEcLw/zh-cn_image_0000002706675946.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Rr-2yawAQheR3fJWTC7-0w/zh-cn_image_0000002712406090.png)
 
 ### 示例7（设置Select下拉菜单选中和非选中项文本样式）
 
@@ -1670,7 +1670,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/a4JoVuRIRR6uflWmXKYnFA/zh-cn_image_0000002736435033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/e_3rfWKQRfWnZTgMnGS3rA/zh-cn_image_0000002742125039.png)
 
 ### 示例8（设置分割线模式）
 
@@ -1704,7 +1704,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/WJEPGNl7RjO8xb6xloUDow/zh-cn_image_0000002706835886.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/2H7eftYoTrClkccdWQvWEA/zh-cn_image_0000002712246132.png)
 
 ### 示例9（设置Select下拉菜单外描边样式）
 
@@ -1759,7 +1759,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/j9fSwjZ_SCKI2mjvXz9HcQ/zh-cn_image_0000002736314991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/rxV3XZ0DQ1yGalRcPWw_7A/zh-cn_image_0000002742005081.png)
 
 ### 示例10（设置Select弹出菜单避让软键盘）
 
@@ -1839,7 +1839,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/hVHlymX3RQygLHId-k47QA/zh-cn_image_0000002706675948.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/63A_ljBWQleDPWAF-iYrig/zh-cn_image_0000002712406092.gif)
 
 ### 示例11（设置Select和下拉菜单沉浸光感效果）
 
@@ -1886,8 +1886,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/QYkribZ5QpG6m40ycgDTpw/zh-cn_image_0000002736435035.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/lFbG2dBwTCmXMFwELIcgxQ/zh-cn_image_0000002742125041.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Ssm2FUT2RbOjdO9Gj9qtUA/zh-cn_image_0000002706835888.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/MGN5zKPTRMmdIwwlTSKXcw/zh-cn_image_0000002712246134.gif)

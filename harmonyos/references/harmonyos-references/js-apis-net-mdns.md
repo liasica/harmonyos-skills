@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.mdns (MDNS管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.mdns (MDNS管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4347ac05c8853a7ba967974a6288a944137520ecd08a80716a6417f51306adb5
+scraped_at: 2026-09-05T06:18:58+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:1232a9cbadafbeec0b953b9af11d0bf11a779f3317520387bb63ad725d34d3b0
 ---
 
 MDNS即多播DNS（Multicast DNS），提供局域网内的本地服务添加、移除、发现、解析等能力。
@@ -300,7 +300,7 @@ createDiscoveryService(context: Context, serviceType: string): DiscoveryService
 
 | 类型 | 说明 |
 | --- | --- |
-| DiscoveryService | 基于指定服务类型（serviceType）和Context的发现服务对象。 |
+| [DiscoveryService](js-apis-net-mdns.md#discoveryservice) | 基于指定服务类型（serviceType）和Context的发现服务对象。 |
 
 **错误码：**
 
@@ -653,7 +653,7 @@ discoveryService.stopSearchingMDNS();
 
 ### off('discoveryStop')
 
-off(type: 'discoveryStop', callback?: Callback<[DiscoveryEventInfo](js-apis-net-mdns.md#discoveryeventinfo11)>): void
+off(type: 'discoveryStop', callback?: Callback<DiscoveryEventInfo>): void
 
 取消订阅停止监听MDNS服务的通知。
 

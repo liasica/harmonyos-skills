@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@hms.collaboration.serviceInteraction (碰一碰)"
 breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS API > @hms.collaboration.serviceInteraction (碰一碰)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:170f70a796e2ef9dc6e5dd013e06077d31af4385640d356690767cf47ae72990
+scraped_at: 2026-09-05T06:19:09+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:5f34c3472b1eb9440272d50635a5ae6486c3de9623f8fb93311c7368798766c8
 ---
 
 本模块提供碰一碰能力，包括设备间通过顶端碰的方式触发连接、传递信息、断开连接等。
@@ -378,7 +378,7 @@ struct LuckyCardExchangePage {
     try {
       serviceInteraction.onServiceInteraction(config, callback);
     } catch (error) {
-      hilog.info(0, 'MEMOMOCK', '注册失败，message：' + error.message);
+      hilog.error(0, 'MEMOMOCK', '注册失败，message：' + error.message);
     }
     hilog.info(0, 'MEMOMOCK', '已注册服务交互监听');
   }
@@ -395,7 +395,7 @@ struct LuckyCardExchangePage {
     try {
       serviceInteraction.offServiceInteraction(config);
     } catch (error) {
-      hilog.info(0, 'MEMOMOCK', '注册失败，message：' + error.message);
+      hilog.error(0, 'MEMOMOCK', '取消注册失败，message：' + error.message);
     }
     hilog.info(0, 'MEMOMOCK', '已取消服务交互监听');
   }
@@ -523,7 +523,7 @@ struct LuckyCardExchangePage {
             try {
               connnection.connection.sendMessage(uint8Array.buffer);
             } catch (error) {
-              hilog.info(0, 'MEMOMOCK', '注册失败，message：' + error.message);
+              hilog.error(0, 'MEMOMOCK', '发送消息失败，message：' + error.message);
             }
           })
         })
@@ -533,7 +533,7 @@ struct LuckyCardExchangePage {
             try {
               connnection.connection.disconnect();
             } catch (error) {
-              hilog.info(0, 'MEMOMOCK', '注册失败，message：' + error.message);
+              hilog.error(0, 'MEMOMOCK', '断开连接失败，message：' + error.message);
             }
           })
         })

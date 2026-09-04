@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-loading-l
 title: 使用列表
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用列表与网格 > 使用列表
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:20+08:00
+scraped_at: 2026-09-05T06:14:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f62e5cc2dc679716c824b28866ff4e92b60f39525d127a46062113fe7401b490
+content_hash: sha256:36215a125c91f7a002889ba1e80f576107f89a9784375e84c768ea6d4ee645d2
 ---
 
 ArkUI开发框架在NDK接口提供了列表组件，使用列表可以轻松高效地显示结构化、可滚动的信息。列表组件支持控制滚动位置、支持分组显示内容、支持使用[NodeAdapter](ndk-loading-long-list.md#nodeadapter介绍)实现懒加载以提升列表创建性能。
@@ -27,7 +27,7 @@ NDK提供了NodeAdapter对象替代ArkTS侧的[LazyForEach](../harmonyos-referen
 * 设置了NodeAdapter属性的节点，不支持直接通过[addChild](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#addchild)等接口添加子组件。子组件完全由NodeAdapter管理，使用属性方法设置NodeAdapter时，会判断父组件是否已经存在子节点，如果父组件已经存在子节点，则设置NodeAdapter操作失败，返回错误码。
 * NodeAdapter通过相关事件通知开发者按需生成组件，类似组件事件机制，开发者使用NodeAdapter时要通过[OH\_ArkUI\_NodeAdapter\_RegisterEventReceiver](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeadapter_registereventreceiver)注册事件监听器，在监听器事件中处理逻辑，相关事件通过[ArkUI\_NodeAdapterEventType](../harmonyos-references/capi-native-node-h.md#arkui_nodeadaptereventtype)定义。另外NodeAdapter不会主动释放不在屏幕内显示的组件对象，开发者需要在[NODE\_ADAPTER\_EVENT\_ON\_REMOVE\_NODE\_FROM\_ADAPTER](../harmonyos-references/capi-native-node-h.md#arkui_nodeadaptereventtype)事件中进行组件对象的释放，或者进行缓存复用。下图展示了典型列表滑动场景下的事件触发机制：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/mzyUZN0lRDiW73PYqcaLrw/zh-cn_image_0000002736312999.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/n3LqRh_DQOSXWhxwdUDUfQ/zh-cn_image_0000002742003085.png)
 
 以下示例提供了懒加载适配器的实现方法，仅包含主要步骤，完整代码请参考[NdkCreateList](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/NativeType/NdkCreateList)。
 

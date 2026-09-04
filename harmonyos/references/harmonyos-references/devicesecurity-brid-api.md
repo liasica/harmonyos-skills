@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: BusinessRiskIntelligentDetection（业务风险检测）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > BusinessRiskIntelligentDetection（业务风险检测）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f7e4fb36110a73b911e1c58263eb69b88ca8c57df8de46e8ad918a0a6da2f7ed
+scraped_at: 2026-09-05T06:18:35+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:b55bb67e6fa2e2b26e65473ddfc33b4413c095b634a27b4a7f23601da87d8919
 ---
 
 本模块提供识别当前设备的涉诈行为风险能力和自动化点击、设备农场等作弊行为检测能力。
@@ -104,7 +104,7 @@ detectFraudRisk(params: FraudDetectionRequest): Promise<string>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-devicesecurity-brid.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-devicesecurity-brid.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -122,7 +122,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-const TAG = "[BusinessRiskIntelligentDetectionModel]";
+const TAG = '[BusinessRiskIntelligentDetectionModel]';
 
 let rand = cryptoFramework.createRandom();
 let len = 48;
@@ -190,7 +190,7 @@ import { businessRiskIntelligentDetection } from '@kit.DeviceSecurityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
-const TAG = "BusinessRiskIntelligentDetectionJsTest";
+const TAG = 'BusinessRiskIntelligentDetectionJsTest';
 
 let params = {
   version: 1
@@ -254,7 +254,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-const TAG = "BusinessRiskIntelligentDetectionJsTest";
+const TAG = 'BusinessRiskIntelligentDetectionJsTest';
 
 let nonceLength = 48;
 let nonceBlob = cryptoFramework.createRandom().generateRandomSync(nonceLength);

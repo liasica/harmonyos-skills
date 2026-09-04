@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1fe3cf1fc51b930cafeef5b7af2fc11352d8ecaec0472438efac495338b787b5
+scraped_at: 2026-09-05T06:18:57+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:80d7c3fda265c9aa35ec0cf85a1e2078f427ce47e6b1125278e233df9dd71fed
 ---
 
 **说明** 
@@ -92,7 +92,7 @@ The data writing process is congested.
 
 **错误描述**
 
-发送数传数据异常。
+数据写入过程拥塞将返回该错误码。
 
 **可能原因**
 

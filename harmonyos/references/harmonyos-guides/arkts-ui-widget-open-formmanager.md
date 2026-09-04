@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 在应用内将ArkTS卡片添加到桌面
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > 在应用内将ArkTS卡片添加到桌面
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
+scraped_at: 2026-09-05T06:14:13+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:14f9edfeeceb6d3bffa798e874b74182f20816a5326938849163260c989595ca
+content_hash: sha256:80b5f366ae75ed4878331d1797e48ab3b8db536ced2320f6118e08ca857500fe
 ---
 
 从API version 18开始，Form Kit提供在应用内将ArkTS卡片添加到桌面的能力，以方便用户后续便捷查看信息或快速进入应用。
@@ -78,4 +78,4 @@ content_hash: sha256:14f9edfeeceb6d3bffa798e874b74182f20816a5326938849163260c989
    ```
 3. 用户可在卡片管理页面，点击“添加至桌面”或者“添加至负一屏”，此时在桌面或者负一屏即可看到新添加的卡片。结果示例如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/_zN7N5okS3-QLC8WDPVU3w/zh-cn_image_0000002706834158.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/o8ureDIlTU2Z1oukDHmwdA/zh-cn_image_0000002712244398.gif)

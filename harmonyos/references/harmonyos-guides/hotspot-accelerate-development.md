@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hotspot-accel
 title: 启用热点加速
 breadcrumb: 指南 > 系统 > 基础功能 > Linx Kit（灵犀加速库） > 启用热点加速
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:09+08:00
+scraped_at: 2026-09-05T06:14:34+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:b0e66bc437734dec9fa148f037b21a3cc59d35d4e5b6ba17ec3152e9ce0e7bca
+content_hash: sha256:810e54c7fcd95309459681356ada7ff619a27a8544fc4ec4b13c83966d3f50c1
 ---
 
 Linx Kit提供实现热点加速优化的API接口，通过对线程执行过程中的热点代码模式进行针对性优化，提升线程执行效率。该功能主要用于优化特定线程的性能表现，适用于需要提升线程执行效率的场景。
@@ -14,7 +14,7 @@ Linx Kit提供实现热点加速优化的API接口，通过对线程执行过程
 
 以某场景为例，可以看到其CPU上的负载重点线程（逻辑线程和渲染线程），均具有帧粒度的周期性：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/BgDlW4HGRaWYjjsXvdnw4w/zh-cn_image_0000002736433549.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/ntSaZqkZTYCPK9MIDJJ4oQ/zh-cn_image_0000002742123547.png)
 
 开发者确定对应源码位置后，在具有周期性的热点流程入口和出口位置分别调用本接口，本热点加速模块便可记录程序运行行为，例如分支跳转等关键信息，将其保存，并在下一帧进行重放，达到提升线程执行效率的效果。
 

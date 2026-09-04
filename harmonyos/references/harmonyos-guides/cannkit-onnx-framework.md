@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-onnx-
 title: ONNX框架
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子部署 > AI框架算子适配 > ONNX框架
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:5276ba13a8acc4cf747b9af2064c562ca0006d38068cbcfa0ec3ff59aaf8c560
+content_hash: sha256:e9e4e91e85fa0a172a2fccae1f7eb4d1af9637502aca977c164914e64d3b96ab
 ---
 
 ## 适配插件开发
@@ -89,7 +89,7 @@ namespace domi {
    }
    ```
 
-   **说明** 
+   ![](https://media:401788444095875820) 
 
    * 当前版本GetAttr与SetAttr接口不支持对原始文件中数据类型为double和uint64的字段进行解析。
    * 使用omg工具执行模型转换时，对属性的获取情况不会进行强校验。所以进行算子适配插件实现时，若开发者调用GetAttr失败，建议根据算子实际情况增加相应的处理逻辑，例如，针对必选属性，可返回失败，针对可选属性，可设置默认值。
@@ -156,7 +156,7 @@ namespace domi {
    * --target：转换后的模型类型，自定义算子场景仅支持omc。
    * --platform：omc模型为硬件相关模型，指定omc模型运行的芯片平台。
 
-     **说明** 
+     ![](https://media:401788444095910821) 
 
      模型转换命令相关参数参考[离线模型转换](../hiai-Guides/offline-model-conversion-0000001053807006.md)。
 3. 若提示有出现如下信息，则说明进入了AscendC自定义算子编译流程且模型转换成功。

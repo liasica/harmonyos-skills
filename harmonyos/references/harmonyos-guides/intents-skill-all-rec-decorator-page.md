@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 基于Page的装饰器方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 基于Page的装饰器方案
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:44+08:00
+scraped_at: 2026-09-05T06:15:43+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:254d6617632da7ced80421676a38afa2c58a91329a1e8a24c128b9ec87b7713f
+content_hash: sha256:19bfced7f924e12901b9d9a00e2e8ccb3f557a4ac4fb0e47e2a92983f9881667
 ---
 
 ## 概述
@@ -102,25 +102,25 @@ content_hash: sha256:254d6617632da7ced80421676a38afa2c58a91329a1e8a24c128b9ec87b
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/0BqNwv9tREynnfKrRd3hVQ/zh-cn_image_0000002706675454.png)
+      ![](https://media:401788444091080768)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/WlHsq-wsRpi0vId1Foe4RQ/zh-cn_image_0000002736434541.png)
+      ![](https://media:401788444091132769)
    3. 在选中的代码块上右键CodeGenie > Insight Intent，选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/gy_sRk6kSMaFHHOP2_pSmA/zh-cn_image_0000002706835394.png)
+      ![](https://media:401788444091178770)
    4. 在DevEco CodeGenie对话框中对意图定义，功能，参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/9JAxfopzQYCdab49RpRP8g/zh-cn_image_0000002736314499.png)
+      ![](https://media:401788444091231771)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/l-ZSWQsRQjOEzHH1k3bkVQ/zh-cn_image_0000002706675456.png)
+      ![](https://media:401788444091290772)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
       插入前：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/YnBYv_hPSQCpNTPu1PgoWw/zh-cn_image_0000002736434543.png)
+      ![](https://media:401788444091347773)
 
       插入后：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/ITdzw0mnQ-qP20ZA99F8vQ/zh-cn_image_0000002706835396.png)
+      ![](https://media:401788444091403774)

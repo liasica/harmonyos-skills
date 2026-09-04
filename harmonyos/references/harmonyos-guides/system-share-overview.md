@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-share-
 title: 概述
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
+scraped_at: 2026-09-05T06:15:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e661c155168520ebb74d1ee93eacf9ea81fa9a153275dabe378b45bfc2f18362
+content_hash: sha256:8fc6d304a37a8d913db84fbcbc11411065a71025d8f8776f2024332417ed3008
 ---
 
 ## 场景介绍
 
 在手机设备中，分享框通过模态弹窗方式被拉起，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/3cKu_I84RQ68sYFdqIYgXw/zh-cn_image_0000002706675266.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/BSGt0VG1Q1CL7h-aRXJp-w/zh-cn_image_0000002712405406.png)
 
 在2in1设备上分享框通过Popup形式展示，效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/V9mtcXYGSjeGRl5zsqUqAQ/zh-cn_image_0000002736434355.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/cUWnp-9ZQxeoF0bMD_NJRg/zh-cn_image_0000002742124355.png)
 
 1. 宿主应用可以分享一段文本、一个文件或一条备忘录到其他应用。
 2. 宿主应用可以分享多个内容，如文本、图片等到其他应用。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Av5_-wTkR3CWS40Fn5an_A/zh-cn_image_0000002706835206.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/NAzhQZmSSwGrx3OK0K3fwA/zh-cn_image_0000002712245448.png)
 
 流程说明：
 

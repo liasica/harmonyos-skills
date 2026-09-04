@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyColumnLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyColumnLayout
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:00+08:00
+scraped_at: 2026-09-05T06:17:10+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ea4d3f405226fc04452493bafece4c086341068dbb222d1616f4ddffabd5e372
+content_hash: sha256:9e0d5fb5d93ee4312a83553af5eb76e24a8350cd19eb57548ab8698546e3e021
 ---
 
 该组件用于实现支持懒加载的垂直线性布局，其父组件仅限于[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)或[FlowItem](ts-container-flowitem.md)，并支持使用自定义组件或[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后应用在上述组件中。
@@ -341,7 +341,7 @@ struct LazyColumnLayoutSample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9Ys7ztwZSTeU4_wUt2sfOw/zh-cn_image_0000002736314911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/YYlTpDIVSBCSbmpIRvmTfg/zh-cn_image_0000002742005001.png)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -512,4 +512,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/vKeTkyTaRZmYOX5AGh6nYw/zh-cn_image_0000002706675868.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/M8OsK2b2RAGSJT3lSFnDeg/zh-cn_image_0000002712406012.gif)

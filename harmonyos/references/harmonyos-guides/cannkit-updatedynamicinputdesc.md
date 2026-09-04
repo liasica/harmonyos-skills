@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-updat
 title: UpdateDynamicInputDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > UpdateDynamicInputDesc
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:38+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:9607552c42492a802ca6db9b9b71a7c17eb057e55ff21614ec987cf80767261b
+content_hash: sha256:ea005c0ca9468be163904857cf6038ef19bd86ecdbb8f42256da0e4a75e7344f
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:9607552c42492a802ca6db9b9b71a7c17eb057e55ff21614ec987cf8076
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444115723939) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

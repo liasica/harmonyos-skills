@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 组件适配沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 组件适配沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:18+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:5f684dd73ae999b530d52f31638e93c25a87b3f7ed524efd4a49bd9ee37be09d
+scraped_at: 2026-09-05T06:14:01+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:46b74ad95aa013ef8b40e99a36c405750f8347201aed36ddd16a85cd0d222666
 ---
 
-本文按导航类、弹窗类、按钮与选择类三大组件分类，系统介绍各组件如何通过应用级开关与组件级配置开启沉浸光感，涵盖沉浸光感的视觉效果、设置方法及适配要点，帮助开发者快速完成沉浸光感的组件适配。
+本文按导航类、弹窗类、按钮与选择类、其余组件四大场景分类，系统介绍各组件如何通过应用级开关与组件级配置开启沉浸光感，涵盖沉浸光感的视觉效果、设置方法及适配要点，帮助开发者快速完成沉浸光感的组件适配。
 
 ## 导航类组件
 
@@ -33,7 +33,7 @@ Navigation标题栏支持通过应用级开启、组件级开启方式开启沉�
 
 底部页签支持通过应用级开启、组件级开启方式开启沉浸光感。
 
-应用级开启：应用级开关处于[ENABLE](../harmonyos-references/arkts-apis-uimaterial.md#materialstate)模式下，底部页签不会默认开启沉浸光感。
+应用级开启：应用级开关处于[ENABLE](../harmonyos-references/arkts-apis-uimaterial.md#materialstate)模式下，底部页签不会默认开启沉浸光感；设置[barFloatingStyle](../harmonyos-references/ts-container-tabs.md#barfloatingstyle)属性并生效底部页签的悬浮样式时，底部页签默认开启沉浸光感，沉浸式系统材质样式默认取值为THIN。
 
 组件级开启：底部页签支持通过[barFloatingStyle](../harmonyos-references/ts-container-tabs.md#barfloatingstyle)属性中[FloatingTabBarStyle](../harmonyos-references/ts-container-tabs.md#floatingtabbarstyle)的systemMaterial字段，设置TabBar背板的沉浸光感效果。
 
@@ -191,3 +191,7 @@ Popup和Tips支持通过应用级开启、组件级开启方式开启沉浸光�
 * 设置自动反色时，即colorInvert为true，如果SegmentButton中的fontColor、selectedFontColor，或SegmentButtonV2中的itemFontColor、itemSelectedFontColor、itemIconFillColor、itemSelectedIconFillColor等使用支持反色的系统资源，颜色自动适配到材质背景色的反色。
 
 组件开启沉浸光感的效果请参见[示例8（设置背景板材质）](../harmonyos-references/ohos-arkui-advanced-segmentbutton.md#示例8设置背景板材质)和[示例6（设置背景板材质）](../harmonyos-references/ohos-arkui-advanced-segmentbuttonv2.md#示例6设置背景板材质)。
+
+## 其余组件
+
+其余组件均支持通用属性[systemMaterial](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)设置沉浸式系统材质，跟随通用属性的生效规则呈现效果，例如[布局容器](arkts-layout-development-overview.md)、[滚动容器](arkts-list-grid-development-overview.md)。生效区域为Navigation/NavDestination标题栏，或横向Tab中barPosition为BarPosition.End的底部TabBar。开启后的常见问题请参考[沉浸光感常见问题](arkts-immersive-light-sense-faq.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/subwindow-gui
 title: 子窗口开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 子窗口开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:33ce7735c59268fa4f6bcff76403ba5fc78150a55a1b247fe4508e1416b7f244
+scraped_at: 2026-09-05T06:14:08+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:a4e7191316fbf9b41ef763f80a4f2176b5a64970e363d7130a51e26a5018f049
 ---
 
 ## 场景介绍
@@ -38,7 +38,7 @@ content_hash: sha256:33ce7735c59268fa4f6bcff76403ba5fc78150a55a1b247fe4508e1416b
            // 1.使用createSubWindow接口创建子窗
            windowStage_.createSubWindow('SubWindow', (err, data) => {
              if (err?.code) {
-               console.error('Failed to create the subwindow. Cause: ' + JSON.stringify(err));
+               console.error(`Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
              }
              subWindowClass = data;
              if (!subWindowClass) {
@@ -48,6 +48,7 @@ content_hash: sha256:33ce7735c59268fa4f6bcff76403ba5fc78150a55a1b247fe4508e1416b
              console.info('Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
              // ...
            })
+         }
    ```
 
    ```typescript
@@ -88,7 +89,7 @@ content_hash: sha256:33ce7735c59268fa4f6bcff76403ba5fc78150a55a1b247fe4508e1416b
    // 2.子窗口创建成功后，设置子窗口的位置、大小及相关属性等。
    independentWindowClass.moveWindowTo(100, 100, (err) => {
      if (err?.code) {
-       console.error('Failed to move the window. Cause:' + JSON.stringify(err));
+       console.error(`Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
        return;
      }
      console.info('Succeeded in moving the window.');
@@ -98,7 +99,7 @@ content_hash: sha256:33ce7735c59268fa4f6bcff76403ba5fc78150a55a1b247fe4508e1416b
      }
      independentWindowClass.resize(1000, 500, (err) => {
        if (err?.code) {
-         console.error('Failed to change the window size. Cause:' + JSON.stringify(err));
+         console.error(`Failed to change the window size. Cause code: ${err.code}, message: ${err.message}`);
          return;
        }
        console.info('Succeeded in changing the window size.');
@@ -115,7 +116,7 @@ content_hash: sha256:33ce7735c59268fa4f6bcff76403ba5fc78150a55a1b247fe4508e1416b
    // 3.为子窗口加载对应的目标页面。
    independentWindowClass.setUIContent('pages/IndependentSubWindow', (err) => {
      if (err?.code) {
-       console.error('Failed to load the content. Cause:' + JSON.stringify(err));
+       console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
        return;
      }
      console.info('Succeeded in loading the content.');
@@ -126,11 +127,12 @@ content_hash: sha256:33ce7735c59268fa4f6bcff76403ba5fc78150a55a1b247fe4508e1416b
      // 显示子窗口。
      independentWindowClass.showWindow((err) => {
        if (err?.code) {
-         console.error('Failed to show the window. Cause: ' + JSON.stringify(err));
+         console.error(`Failed to show the window. Cause code: ${err.code}, message: ${err.message}`);
          return;
        }
        console.info('Succeeded in showing the window.');
      });
+   });
    ```
 4. 销毁子窗口。
 
@@ -142,7 +144,7 @@ content_hash: sha256:33ce7735c59268fa4f6bcff76403ba5fc78150a55a1b247fe4508e1416b
    // 4.销毁子窗口。当不再需要子窗口时，可根据具体实现逻辑，使用destroy对其进行销毁。
    independentWindowClass.destroyWindow((err) => {
      if (err?.code) {
-       console.error('Failed to destroy the window. Cause: ' + JSON.stringify(err));
+       console.error(`Failed to destroy the window. Cause code: ${err.code}, message: ${err.message}`);
        return;
      }
      console.info('Succeeded in destroying the window.');

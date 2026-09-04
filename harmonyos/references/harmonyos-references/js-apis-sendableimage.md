@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.multimedia.sendableImage (基于Sendable对象的图片处理)"
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.sendableImage (基于Sendable对象的图片处理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:237d10634504e519c888fae4ae364a0311610d441444e2ee29b345967ddea216
+scraped_at: 2026-09-05T06:20:11+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:70c0911cccfd10f95c00de33dde6a2bcbaff38b82c798b5fdd72cad3d29ba921
 ---
 
 本模块基于[Sendable](../harmonyos-guides/arkts-sendable.md)对象，提供图片处理效果，包括通过属性创建PixelMap、读取图像像素数据、读取区域内的图片数据等。
@@ -399,7 +399,7 @@ ISendable是所有Sendable类型（除null和undefined）的父类型。自身�
 
 | 类型 | 说明 |
 | --- | --- |
-| [lang.ISendable](js-apis-arkts-lang.md#langisendable) | 所有Sendable类型的父类型。 |
+| [lang.ISendable](js-apis-arkts-lang.md#isendable) | 所有Sendable类型的父类型。 |
 
 ## PixelMap
 

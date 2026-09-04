@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.worker (启动一个Worker)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.worker (启动一个Worker)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d1589416e15d4187005940d9aa4d1783370dd7c723d3709e7b1ffb1de9703de0
+scraped_at: 2026-09-05T06:16:50+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:582275e4b08b9b615aee527d37fec38e0999a24d8ad54117ab430e9ee415f04e
 ---
 
 Worker是与宿主线程并行的独立线程。创建Worker的线程称为宿主线程，Worker自身的线程称为Worker线程。创建Worker时传入的URL文件在Worker线程中执行，可以处理耗时操作，但不能直接操作UI。
@@ -73,11 +73,11 @@ Worker线程的优先级枚举，各优先级对应关系请参考[QoS等级定�
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| onexit9+ | (code: number) => void | 否 | 是 | 回调函数。表示Worker线程销毁时被调用的事件处理程序，该处理程序在宿主线程中执行。回调函数的code参数类型为number，异常退出时code为1，正常退出时code为0。默认值为undefined。  **元服务API**：从API version 11开始，该属性支持在元服务中使用。 |
-| onerror9+ | (err: [ErrorEvent](js-apis-worker.md#errorevent)) => void | 否 | 是 | 回调函数，用于处理onmessage回调函数中同步代码产生的异常，处理程序在宿主线程中执行。回调函数的err类型为[ErrorEvent](js-apis-worker.md#errorevent)，表示收到的异常数据。默认值为undefined。  **元服务API**：从API version 11开始，该属性支持在元服务中使用。 |
-| onAllErrors18+ | [ErrorCallback](js-apis-worker.md#errorcallback18) | 否 | 是 | 回调函数。表示Worker线程生命周期内发生异常被调用的事件处理程序，处理程序在宿主线程中执行。默认值为undefined。  **元服务API**：从API version 18开始，该属性支持在元服务中使用。 |
-| onmessage9+ | (event: [MessageEvents](js-apis-worker.md#messageevents9)) => void | 否 | 是 | 回调函数。表示宿主线程接收到来自其创建的Worker通过workerPort.[postMessage](js-apis-worker.md#postmessage9-3)或workerPort.[postMessageWithSharedSendable](js-apis-worker.md#postmessagewithsharedsendable12-1)接口发送的消息时被调用的事件处理程序，处理程序在宿主线程中执行。其中回调函数中event类型为[MessageEvents](js-apis-worker.md#messageevents9)，表示收到的Worker线程发送的消息数据。默认值为undefined。  **元服务API**：从API version 11开始，该属性支持在元服务中使用。 |
-| onmessageerror9+ | (event: [MessageEvents](js-apis-worker.md#messageevents9)) => void | 否 | 是 | 回调函数。用于处理Worker对象接收到的无法被序列化的消息。该处理程序在宿主线程中执行，event类型为[MessageEvents](js-apis-worker.md#messageevents9)，表示收到的Worker消息数据。默认值为undefined。  **元服务API**：从API version 11开始，该属性支持在元服务中使用。 |
+| onexit9+ | (code: number) => void | 否 | 是 | 回调函数。表示Worker线程销毁时被调用的事件处理程序，该处理程序在宿主线程中执行。回调函数的code参数类型为number，异常退出时code为1，正常退出时code为0。默认值为undefined。  以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。  - 10200004：The Worker instance is not running.  - 10200005：The called API is not supported in the worker thread.  **元服务API**：从API version 11开始，该属性支持在元服务中使用。 |
+| onerror9+ | (err: [ErrorEvent](js-apis-worker.md#errorevent)) => void | 否 | 是 | 回调函数，用于处理onmessage回调函数中同步代码产生的异常，处理程序在宿主线程中执行。回调函数的err类型为[ErrorEvent](js-apis-worker.md#errorevent)，表示收到的异常数据。默认值为undefined。  以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。  - 10200004：The Worker instance is not running.  - 10200005：The called API is not supported in the worker thread.  **元服务API**：从API version 11开始，该属性支持在元服务中使用。 |
+| onAllErrors18+ | [ErrorCallback](js-apis-worker.md#errorcallback18) | 否 | 是 | 回调函数。表示Worker线程生命周期内发生异常被调用的事件处理程序，处理程序在宿主线程中执行。默认值为undefined。  以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。  - 10200004：The Worker instance is not running.  - 10200005：The called API is not supported in the worker thread.  **元服务API**：从API version 18开始，该属性支持在元服务中使用。 |
+| onmessage9+ | (event: [MessageEvents](js-apis-worker.md#messageevents9)) => void | 否 | 是 | 回调函数。表示宿主线程接收到来自其创建的Worker通过workerPort.[postMessage](js-apis-worker.md#postmessage9-3)或workerPort.[postMessageWithSharedSendable](js-apis-worker.md#postmessagewithsharedsendable12-1)接口发送的消息时被调用的事件处理程序，处理程序在宿主线程中执行。其中回调函数中event类型为[MessageEvents](js-apis-worker.md#messageevents9)，表示收到的Worker线程发送的消息数据。默认值为undefined。  以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。  - 10200004：The Worker instance is not running.  - 10200005：The called API is not supported in the worker thread.  **元服务API**：从API version 11开始，该属性支持在元服务中使用。 |
+| onmessageerror9+ | (event: [MessageEvents](js-apis-worker.md#messageevents9)) => void | 否 | 是 | 回调函数。用于处理Worker对象接收到的无法被序列化的消息。该处理程序在宿主线程中执行，event类型为[MessageEvents](js-apis-worker.md#messageevents9)，表示收到的Worker消息数据。默认值为undefined。  以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。  - 10200004：The Worker instance is not running.  - 10200005：The called API is not supported in the worker thread.  **元服务API**：从API version 11开始，该属性支持在元服务中使用。 |
 
 使用Worker模块时，API version 18及之后的版本建议在宿主线程中注册onAllErrors回调，以捕获Worker线程生命周期内的各种异常。API version 18之前的版本应注册onerror回调。如果未注册onAllErrors或onerror回调，当Worker线程出现异常时会发生崩溃问题。注意，onerror接口仅能捕获onmessage回调中的同步异常，捕获异常后，Worker线程将进入销毁流程，无法继续使用。
 

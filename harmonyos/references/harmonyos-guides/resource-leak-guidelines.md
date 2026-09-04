@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-leak
 title: Resource Leak（资源泄漏）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > Resource Leak（资源泄漏）检测
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:39+08:00
+scraped_at: 2026-09-05T06:14:38+08:00
 doc_updated_at: 2026-08-04
-content_hash: sha256:6a30beb9e97046bdb7886d3c82508145cc9ebe264216aa99fe9e3502cac2e281
+content_hash: sha256:71be4edfd848a5312f29fe94cdc1c93361b392824b8efc08a2864bfb476124a5
 ---
 
 ## 简介
@@ -78,7 +78,7 @@ content_hash: sha256:6a30beb9e97046bdb7886d3c82508145cc9ebe264216aa99fe9e3502cac
 
   DevEco Studio的profiler模块提供[Allocation](ide-insight-session-allocations-memory.md)（获取native调用栈profiler）和 **[Snapshot](ide-arkts-memory-leak-analysis.md)** （获取JS层heapdump）两种采集方式：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ED8h5w_2QpCyJpRHRi6pMQ/zh-cn_image_0000002736433585.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/00G-owBGRFKRpOSavC9kWg/zh-cn_image_0000002742123583.png)
 * 方式三：通过HiAppEvent接口订阅。
 
   HiAppEvent对外提供故障订阅接口，可以订阅各类故障打点，详见[HiAppEvent介绍](hiappevent-intro.md)，其中资源泄漏的订阅方式详见[资源泄漏事件介绍](hiappevent-watcher-resourceleak-events.md)。资源泄漏故障日志存于/data/storage/el2/log/resourcelimit/路径，日志名统一为RESOURCE\_OVERLIMIT\_[TIMESTAMP]\_[PID].log，可根据日志内容区分文件类型。
@@ -595,7 +595,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
 * 检测到泄漏后抓取**15min内的进程内存trace**，可将日志如下图通过Open File加载到DevEco Studio进行解析。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/_Tqp6YXnTeq03SHw7FRwgw/zh-cn_image_0000002706834434.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/DHRTbz26R1iUXHrWUv_xmg/zh-cn_image_0000002712244670.png)
 
   **注意** 
 
@@ -604,7 +604,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
   点击Call Trees可以查看抓取进程的调用栈，筛选“Created & Existing”，根据没有释放的内存占比排序，展开可查看详细进程调用信息，优先排查内存占用较高的堆栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/kUYiyWJuRVK29D92T-5sEQ/zh-cn_image_0000002736313541.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ePr23UYUQkikroaKaSyY8w/zh-cn_image_0000002742003623.png)
 
   **说明** 
 
@@ -613,7 +613,7 @@ bins:           size ind    allocated      nmalloc (#/sec)      ndalloc (#/sec) 
 
   同样选择“Created & Existing”，表示在hook抓取内存申请未释放的。长度越长代表在剩余内存中占用越多，优先排查。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/6UySHOLFRW6Snbl4OIg1YA/zh-cn_image_0000002706674498.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/D73T0THhSFGc6tUzOKFztA/zh-cn_image_0000002712404636.png)
 
 ### native泄漏聚类规则
 

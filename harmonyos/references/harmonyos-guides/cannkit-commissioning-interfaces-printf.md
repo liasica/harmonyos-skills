@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: printf
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 调测接口 > printf
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:07+08:00
+scraped_at: 2026-09-05T06:15:29+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:d83dc6f9bdf66aca7ba6370c484e2605fab3685a11d2b66272177a63d67359a2
+content_hash: sha256:029fb344aafe8129ad622f5e8ff26f489d7af98da1f0f64798a57ea60ca0b56a
 ---
 
 ## 函数功能
@@ -20,7 +20,7 @@ AscendC::printf("fmt string %d\n", 0x123);
 AscendC::PRINTF("fmt string %d\n", 0x123);
 ```
 
-**说明** 
+![](https://media:401788444102929881) 
 
 printf(PRINTF)接口打印功能会对算子实际运行的性能带来一定影响，通常在调测阶段使用。开发者可以按需通过如下方式关闭打印功能。
 

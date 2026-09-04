@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-locate-m
 title: JSVM 定位内存泄漏问题指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API典型使用场景指导 > JSVM 定位内存泄漏问题指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
+scraped_at: 2026-09-05T06:15:48+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:320ebb55e6a38a5c9cb65112f0445991bdaaf2d40960ac3fbf7e7d7d2023873f
+content_hash: sha256:3a2470134ad4866eec7b95ee691f682ef4cb744eae3cdeb1b413985e34d1bc04
 ---
 
 JSVM的内存占用包括Native内存占用(C/C++侧的内存占用)和底层的JS引擎的堆内存占用，JS引擎会维护一个堆来管理其生成的JS对象，其生命周期由JS引擎维护，除此之外的内存我们归为Native内存。用户在使用JSVM时，可能碰到这两种内存异常增长的情况。
@@ -20,7 +20,7 @@ JSVM的内存占用包括Native内存占用(C/C++侧的内存占用)和底层的
 hidumper --mem $(pidof dest_app)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/TdUP2NFYTU-l74TJXBFN1w/zh-cn_image_0000002706675522.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/EWx-LmhtTFygf8aRKDL7fQ/zh-cn_image_0000002712405660.png)
 
 ## Native内存泄漏定位
 
@@ -49,10 +49,10 @@ OH_JSVM_GetReferenceValue(env, reference, &result);
 
 1. 使用Profiler的Allocation模块记录一段时间内的Native内存信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/QwmGEog1QtiDsn9_0_gezQ/zh-cn_image_0000002736434609.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/VREqKBnOSg6it4ooE40q9w/zh-cn_image_0000002742124609.png)
 2. 比较这段时间内"Created & Existing"的内存变化情况，如果存在占比较大且Count较大的未释放内存，则怀疑存在内存泄漏，展开进一步查看调用栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/gqHDyq52Qlaqwq6SS10GaQ/zh-cn_image_0000002706835462.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/wKiT4wRgTRCq-IWUEhkStw/zh-cn_image_0000002712245702.png)
 
 ## JS引擎堆内存泄漏定位
 
@@ -77,4 +77,4 @@ JSVM目前提供了OH\_JSVM\_OpenInspector开启inspector，参考[使用OH\_JSV
 
 通过使用DevTools工具，对目标场景内的堆内存进行快照（快照前先点击上方的垃圾回收按钮进行垃圾回收），利用快照对比功能，找到未释放的JS对象和其所在源码中的位置，进一步指导定位堆内存未释放的原因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/B-hIOSDdTdyu4QZwBvAobQ/zh-cn_image_0000002736314567.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Rp8t5mt1TxGV_97WeZAmhQ/zh-cn_image_0000002742004651.png)

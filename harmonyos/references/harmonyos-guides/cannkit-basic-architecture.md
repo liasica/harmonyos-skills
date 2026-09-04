@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic
 title: 基本架构
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 硬件架构 > 基本架构
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:24+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:8bffccf8b6728fcc1f851dfb2ea3b7e6bb58c2840a382451071b332b9badaa4a
+content_hash: sha256:91862118b15fc3e2cb005f7053d8be053610a0d10b5860ce2776b1fd448997d0
 ---
 
 如下展示了总体的硬件基本架构。其中，AI Core通过数据总线与硬件结构中其它基本单元相连接，基于AscendC开发的算子，通过总线传输并最终运行在AI Core上。下文的编程模型基于硬件架构的抽象进行介绍，了解该内容能够更好的理解编程模型；对于需要完成高性能编程的深度开发者，更需要了解硬件架构相关知识，最佳实践中很多内容都以本章为基础进行介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/OoUW9kQiSMW7EG5HjB-r1Q/zh-cn_image_0000002706835290.png)
+![](https://media:401788444092926783)
 
 AI Core负责执行标量、向量和张量相关的计算密集型算子，包括三种基础**计算单元**：Cube（矩阵）计算单元、Vector（向量）计算单元和Scalar（标量）计算单元，同时还包含**存储单元**（包括硬件存储和用于数据搬运的搬运单元）和**控制单元**。硬件架构根据Cube计算单元和Vector计算单元是否同核部署分为**耦合架构**和**分离架构**两种。
 
@@ -20,9 +20,9 @@ Kirin9020/Kirin9030/KirinX90系列处理器：耦合架构
 
 耦合架构是指Cube计算单元和Vector计算单元同核部署，架构图如下图所示。下图中列出了计算架构中的[存储单元](cannkit-storage-unit.md)和[计算单元](cannkit-computing-unit.md)，箭头表示数据处理流向，MTE1/MTE2/MTE3代表[搬运单元](cannkit-storage-unit.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/0E_QqtKcTSyJwZ2p7wxwvw/zh-cn_image_0000002736314395.png)
+![](https://media:401788444092959784)
 
-**说明** 
+![](https://media:401788444092997785) 
 
 图中的虚线箭头表明Kirin9020/Kirin9030/KirinX90系列处理器支持Scalar直接读写GM数据。
 
@@ -30,7 +30,7 @@ Kirin9020/Kirin9030/KirinX90系列处理器：耦合架构
 
 如下图所示，分离架构将AI Core拆成矩阵计算(AI Cube、AIC)和向量计算(AI Vector、AIV)两个独立的核，每个核都有自己的Scalar单元，能独立加载自己的代码段，从而实现矩阵计算与向量计算的解耦，在系统软件的统一调度下互相配合达到计算效率优化的效果。AIV与AIC之间通过Global Memory进行数据传递。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/gX4iNZlNQJOzabhs2cc6iQ/zh-cn_image_0000002706675352.png)
+![](https://media:401788444093032786)
 
 * AIC架构
 

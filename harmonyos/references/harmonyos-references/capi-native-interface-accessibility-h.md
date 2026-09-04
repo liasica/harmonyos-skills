@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_accessibility.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_interface_accessibility.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8b734976e8cd662a02e4b5edbf5bdeaa60fb5296b298de9c350453ef78b91f73
+scraped_at: 2026-09-05T06:17:44+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:b6be921cbb96bc06207aaaac47b8d5c8b200a8fb57d3b54ab6e835a6f474c859
 ---
 
 ## 概述
@@ -35,8 +35,8 @@ content_hash: sha256:8b734976e8cd662a02e4b5edbf5bdeaa60fb5296b298de9c350453ef78b
 | [ArkUI\_AccessibleRangeInfo](capi-arkui-accessibility-arkui-accessiblerangeinfo.md) | ArkUI\_AccessibleRangeInfo | 用于表示特定组件（如[Slider](ts-basic-components-slider.md)、[Rating](ts-basic-components-rating.md)、[Progress](ts-basic-components-progress.md)）的范围值信息，包含当前值、最大值和最小值，供无障碍服务读取并向障碍用户播报。 |
 | [ArkUI\_AccessibleGridInfo](capi-arkui-accessibility-arkui-accessiblegridinfo.md) | ArkUI\_AccessibleGridInfo | 用于描述网格组件的整体布局属性。该结构体用于向无障碍服务提供网格组件的行数、列数和选择模式等信息，支持无障碍服务获取网格的整体布局信息。 |
 | [ArkUI\_AccessibleGridItemInfo](capi-arkui-accessibility-arkui-accessiblegriditeminfo.md) | ArkUI\_AccessibleGridItemInfo | 用于描述网格组件内某个网格项的无障碍属性。该结构体用于向无障碍服务提供网格项的位置、跨度、选中状态等信息，支持无障碍服务获取网格项的布局信息。 |
-| [ArkUI\_AccessibilityProviderCallbacks](capi-arkui-accessibility-arkui-accessibilityprovidercallbacks.md) | ArkUI\_AccessibilityProviderCallbacks | 第三方[provider](capi-arkui-accessibility-arkui-accessibilityprovider.md)回调函数结构定义，需要第三方平台实现的相关函数，通过[OH\_ArkUI\_AccessibilityProviderRegisterCallback](capi-native-interface-accessibility-h.md#oh_arkui_accessibilityproviderregistercallback)注册到系统侧。适用于读屏软件、语音控制、开关控制等无障碍辅助场景，第三方平台通过实现这些回调响应系统的无障碍查询和操作请求。 |
-| [ArkUI\_AccessibilityProviderCallbacksWithInstance](capi-arkui-accessibility-arkui-accessibilityprovidercallbackswithinstance.md) | ArkUI\_AccessibilityProviderCallbacksWithInstance | 适配多实例场景第三方操作[provider](capi-arkui-accessibility-arkui-accessibilityprovider.md)回调函数结构定义，包含节点信息查询、焦点查找与清除、操作执行、光标位置获取等无障碍相关回调函数。该结构需由第三方平台实现，并通过[OH\_ArkUI\_AccessibilityProviderRegisterCallbackWithInstance](capi-native-interface-accessibility-h.md#oh_arkui_accessibilityproviderregistercallbackwithinstance)注册到系统侧，以支持第三方平台接入系统无障碍服务。 |
+| [ArkUI\_AccessibilityProviderCallbacks](capi-arkui-accessibility-arkui-accessibilityprovidercallbacks.md) | ArkUI\_AccessibilityProviderCallbacks | 第三方[provider](capi-arkui-accessibility-arkui-accessibilityprovider.md)回调函数结构定义，需要第三方平台实现的相关函数，通过[OH\_ArkUI\_AccessibilityProviderRegisterCallback](capi-native-interface-accessibility-h.md#oh_arkui_accessibilityproviderregistercallback)注册到系统侧。适用于读屏软件、语音控制、开关控制等无障碍辅助场景，第三方平台通过实现这些回调响应系统的无障碍查询和操作请求。所有的回调函数执行线程为IPC线程，非UI线程。 |
+| [ArkUI\_AccessibilityProviderCallbacksWithInstance](capi-arkui-accessibility-arkui-accessibilityprovidercallbackswithinstance.md) | ArkUI\_AccessibilityProviderCallbacksWithInstance | 适配多实例场景第三方操作[provider](capi-arkui-accessibility-arkui-accessibilityprovider.md)回调函数结构定义，包含节点信息查询、焦点查找与清除、操作执行、光标位置获取等无障碍相关回调函数。该结构需由第三方平台实现，并通过[OH\_ArkUI\_AccessibilityProviderRegisterCallbackWithInstance](capi-native-interface-accessibility-h.md#oh_arkui_accessibilityproviderregistercallbackwithinstance)注册到系统侧，以支持第三方平台接入系统无障碍服务。所有的回调函数执行线程为IPC线程，非UI线程。 |
 | [ArkUI\_AccessibilityElementInfo](capi-arkui-accessibility-arkui-accessibilityelementinfo.md) | [ArkUI\_AccessibilityElementInfo](capi-arkui-accessibility-arkui-accessibilityelementinfo.md) | 无障碍元素信息，用于向无障碍服务、辅助应用（屏幕朗读等）传递元素的属性、操作、位置、文本等信息，适用于无障碍服务获取和操作界面元素的辅助场景。 |
 | [ArkUI\_AccessibilityEventInfo](capi-arkui-accessibility-arkui-accessibilityeventinfo.md) | [ArkUI\_AccessibilityEventInfo](capi-arkui-accessibility-arkui-accessibilityeventinfo.md) | 无障碍事件信息。当无障碍服务或辅助应用要求控件执行操作后，应用需发送执行成功事件以通知操作结果，适用于需要向无障碍服务反馈操作执行情况的场景。 |
 | [ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md) | [ArkUI\_AccessibilityProvider](capi-arkui-accessibility-arkui-accessibilityprovider.md) | 该结构体为无障碍第三方操作提供者，用于承载回调函数的实现。开发者可通过该结构体注册和管理无障碍操作相关的回调，实现自定义的无障碍交互逻辑，适用于需要扩展或定制ArkUI无障碍能力的场景。 |

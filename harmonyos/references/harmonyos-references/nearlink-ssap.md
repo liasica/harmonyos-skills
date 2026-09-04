@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: ssap（星闪SSAP连接能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > ssap（星闪SSAP连接能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1c6ba28c220e6349a865ddc7e1fe2e45d39c3713a00797af3abaeea7ec95a921
+scraped_at: 2026-09-05T06:18:56+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:72256734ce3f89924898e1b6aeff663b379d33b67e84cdc401813ce1b7efd0ca
 ---
 
 本模块提供了SSAP（SparkLink Service Access Protocol）连接功能。
@@ -526,7 +526,7 @@ setPropertyNotification(property: Property, enable: boolean): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | property | [Property](nearlink-ssap.md#property) | 是 | 服务端属性。 |
-| enable | boolean | 是 | true: 打开通知功能。false: 关闭通知功能。 |
+| enable | boolean | 是 | true表示打开通知功能。false表示关闭通知功能。 |
 
 **返回值：**
 
@@ -1718,7 +1718,7 @@ try {
 | propertyUuid | string | 否 | 否 | 表示Property的UUID，数据格式同serviceUuid。 |
 | value | ArrayBuffer | 否 | 否 | 表示描述符的数据值。 |
 | descriptorType | [PropertyDescriptorType](nearlink-ssap.md#propertydescriptortype) | 否 | 否 | 表示Property的描述符类型。 |
-| isWriteable | boolean | 否 | 是 | 表示描述符是否是可写的。true：可写，false：不可写。默认值为true。 |
+| isWriteable | boolean | 否 | 是 | 表示描述符是否是可写的。true表示可写，false表示不可写。默认值为true。 |
 
 ## PropertyReadRequest
 

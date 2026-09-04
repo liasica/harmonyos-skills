@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-output-
 title: 实现音频输出设备路由切换
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理 > 实现音频输出设备路由切换
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:48dd2d00c462561732e78827646eae6e71dc05d11b89834788452c0b94a1f47d
+scraped_at: 2026-09-05T06:14:45+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:c814d8870fde3e4e8afcaa4306dc674e062e28ca051b65fce4d7c99750ada154
 ---
 
 当应用进行音频输出时，系统将依据音频流类型自动匹配对应的输出设备。如果系统输出设备不满足应用需求，应用可通过AVCastPicker或setDefaultOutputDevice实现音频输出设备路由切换。在连接音频外设（如蓝牙耳机、有线耳机）的情况下，应用还可通过setMediaOutputDevice强制将媒体输出切换到扬声器。
@@ -40,7 +40,7 @@ AVCastPicker组件也适用于通话场景，应用可使用[通话设备切换�
 | STREAM\_USAGE\_VOICE\_COMMUNICATION | 2 | VoIP语音通话。 |
 | STREAM\_USAGE\_VIDEO\_COMMUNICATION | 17 | VoIP视频通话。 |
 
-支持的设备类型:
+支持的设备类型：
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-overv
 title: 算子入图概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子部署 > 算子入图（GE图）开发 > 算子入图概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:74033494e297002fb69635dedf96cad9d712d44da75fb73ee3993f9b89f8f831
+content_hash: sha256:a8de0ff40429bb0d37ce8a547f38491ac87f4f0cd909f26c6d5501416b7a909c
 ---
 
 图模式是神经网络模型的一种运行模式，在图模式下开发者首先将模型的计算过程构造成一张图，然后通过GE将图下发到Kirin硬件执行。相对于单个算子依次下发的方式，图模式下，GE可以通过计算图优化、多流并行、内存复用、模型下沉等技术手段，加速模型执行效率，减少模型内存占用。
 
 算子入图的开发流程如下图所示，算子工程创建完成后，基于工程代码框架完成算子原型定义、Kernel侧算子实现、Host侧Tiling实现并完成算子入图开发，通过工程编译脚本完成算子的编译部署，之后即可基于图IR执行算子，比如单算子模型执行或者IR构图的方式调用自定义算子。该开发流程以[工程化算子开发](cannkit-overview-of-engineering-operator.md)为基础，除了需要提供[算子实现](cannkit-operator-prototype-definition.md)中的算子实现文件外，还需要额外交付算子入图的代码文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/EELqP843RRWJdPfHcUxyLA/zh-cn_image_0000002706835316.png)
+![](https://media:401788444094141801)
 
 1. 环境准备。
 
@@ -26,6 +26,6 @@ content_hash: sha256:74033494e297002fb69635dedf96cad9d712d44da75fb73ee3993f9b89f
 4. [算子编译安装](cannkit-operator-project-compilation.md)。通过工程编译脚本完成算子的编译安装。
 5. [图编译和图执行](cannkit-graph-compilation-and-execution.md)。基于图IR执行算子，比如单算子模型执行或者IR构图的方式调用自定义算子。
 
-   **说明** 
+   ![](https://media:401788444094183802) 
 
    HarmonyOS Next暂不支持图编译与图执行，仅支持通过[AI框架算子适配](cannkit-overview-of-ai-framework-operator.md)方式集成算子。

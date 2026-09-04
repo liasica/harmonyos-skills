@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ipc-rpc-devel
 title: IPC与RPC通信开发指导(ArkTS)
 breadcrumb: 指南 > 应用框架 > IPC Kit（进程间通信服务） > IPC与RPC通信开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:26+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:83344fede3e205ad9eddb585ca9c0c98324c36d12dc768585f1f4c290cd8a885
+scraped_at: 2026-09-05T06:14:14+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:4723743f69ebdc5552798276ddffb2ad32f8179e503d8193b89973c9cef8601c
 ---
 
 ## 场景介绍
@@ -17,7 +17,7 @@ IPC/RPC的主要工作是跨进程建立对象通信的连接（客户端进程�
 **说明** 
 
 * 在进行IPC&RPC跨进程通信前需要通过Ability Kit获取服务端的代理对象。
-* 不支持三方应用实现跨进程通信，三方应用仅可通过[connectServiceExtensionAbility](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#connectserviceextensionability)连接系统提供的ServiceExtensionAbility，通过返回的代理对[ServiceExtensionAbility](extensionability-overview.md)进行通信从而达到三方应用和系统服务通信的目的。
+* 不支持三方应用实现跨进程通信，三方应用仅可通过[connectServiceExtensionAbility](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#connectserviceextensionability)连接系统提供的ServiceExtensionAbility，通过返回的代理对象[ServiceExtensionAbility](extensionability-overview.md)进行通信从而达到三方应用和系统服务通信的目的。
 * 从API version 20开始，在2in1设备上，开发者可使用AppServiceExtensionAbility组件，为应用提供后台服务能力。三方应用可[connectAppServiceExtensionAbility](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#connectappserviceextensionability20)连接AppServiceExtensionAbility，通过返回的代理对象和[AppServiceExtensionAbility](../harmonyos-references/js-apis-app-ability-appserviceextensionability.md)进行通信从而达到三方和三方应用通信的目的。详细开发步骤参考[AppServiceExtensionAbility](app-service-extension-ability.md#连接一个后台服务)。
 * 三方应用之间也可通过[动态订阅公共事件](common-event-subscription.md)进行进程间通信。
 * 完整的IPC&RPC通信开发流程涉及系统ServiceExtensionAbility的实现，故本篇指南仅提供客户端示例代码。

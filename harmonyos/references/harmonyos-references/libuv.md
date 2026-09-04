@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/libuv
 title: libuv
 breadcrumb: API参考 > 标准库 > libuv
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:14+08:00
+scraped_at: 2026-09-05T06:21:41+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d4bbce61e6db84f4d105fc1391a529f0872d1c7f979eb8741c11839334a80d52
+content_hash: sha256:18332dd8616cc8f3b222235a8e0ed016bd1d4e83f6a38744529eed99faad7357
 ---
 
 ## 简介
@@ -1255,7 +1255,7 @@ handle：线程间通信句柄。
 1. uv\_async\_t从调用uv\_async\_init开始后就一直处于活跃状态，除非用uv\_close将其关闭。
 2. uv\_async\_t的执行顺序严格按照uv\_async\_init的顺序，而非通过uv\_async\_send的顺序来执行的。因此按照初始化的顺序来管理好时序问题是必要的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/NYxgfTjYRHq5o0Ad0FeQxg/zh-cn_image_0000002736316239.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/UcD23lxAT3GfwPqMTrR7lw/zh-cn_image_0000002742006379.jpg)
 
 示例代码：
 
@@ -1352,7 +1352,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 下图为原生libuv的线程池工作流程，图中流程已简化，默认句柄的pending标志为1，worker线程个数不代表线程池中线程的真实数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/wqD7kZ81R5e0AKhYFVnISg/zh-cn_image_0000002706677194.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Lb9LnJMzQauZh2jXVb-Dxw/zh-cn_image_0000002712407392.jpg)
 
 **2. 异步任务提交注意事项**
 
@@ -1372,7 +1372,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 另外，在应用主线程中，所有的异步任务尽管最终都是通过libuv得到执行的。但是在当前系统中，libuv的线程池已经对接到了FFRT中，任何抛向libuv的异步任务都会在FFRT的线程中得到调度。应用主线程的回调函数也通过PostTask接口插入到eventhandler的队列上。这就意味着FFRT线程上的异步任务完成后不再通过uv\_async\_send的方式触发主线程的回调。过程如下图:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/QW_N-RB0TOaLi_MOIIRcCA/zh-cn_image_0000002736436283.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/LVUcW4aeStuz0op-pgZaNQ/zh-cn_image_0000002742126343.jpg)
 
 我们总结了五种类型的请求任务是直接可以按照正常用法在应用主循环中生效的：
 

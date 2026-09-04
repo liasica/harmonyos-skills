@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-a
 title: 音频编码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频编码同步模式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
+scraped_at: 2026-09-05T06:14:46+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:c701e44138da913d09e19b8e64e97364d5555641db05c921b5cb167f3d83f4ab
+content_hash: sha256:9efbccedb2658de5c0386c7fba5f9f8e34489bf7d31a7f930f97457601067846
 ---
 
 从API version 20开始，支持音频编码同步模式。
@@ -45,7 +45,7 @@ content_hash: sha256:c701e44138da913d09e19b8e64e97364d5555641db05c921b5cb167f3d8
 * 虚线表示可选。音频编码不涉及解密，无需调用OH\_AudioCodec\_SetDecryptionConfig。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/LKFIeUwxSo6-He5QJ7kcMA/zh-cn_image_0000002736433641.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/D1OPrC3ORvq-vDBQE2dgcw/zh-cn_image_0000002742123639.png)
 
 ### 在CMake脚本中链接动态库
 
@@ -97,11 +97,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/qUCm-Q_CReC8r4nikNxd7w/zh-cn_image_0000002736313595.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/9ZNwO9hUS_K-U7rw7ybH8g/zh-cn_image_0000002742003677.png)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/2zfy7cDZTlKg9xfvpNQXeg/zh-cn_image_0000002706674552.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/y2Alf-4tQ5q7ieAjxTe_sw/zh-cn_image_0000002712404690.png)
 
    例如，对44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
 

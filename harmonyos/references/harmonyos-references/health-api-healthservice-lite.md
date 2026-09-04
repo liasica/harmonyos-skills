@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthService (运动健康联动服务)(Lite)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > healthService (运动健康联动服务)(Lite)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:55+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:85aa1911540cc90e5545a9da31e6e718d5b4cd9c942a17e6c9942e2ee342de9a
+scraped_at: 2026-09-05T06:21:03+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:fcee9444bc556b995a913edc26ff2c9298a8bea325bd0de043e564478782fb71
 ---
 
 本模块提供运动健康联动服务。
@@ -208,7 +208,7 @@ type ConfigType = number | string | boolean
 | FILE\_NOT\_FOUND | 1 | 算法库文件未找到。 |
 | SERVICE\_BUSY | 2 | 算法库文件已被加载。 |
 | OPERATION\_FAILED | 3 | 操作失败。 |
-| SYSTEM\_INTERNAL\_ERROR | 4 | 未知错误。 |
+| SYSTEM\_INTERNAL\_ERROR | 4 | 系统内部错误。 |
 
 ### workout.config
 
@@ -235,7 +235,7 @@ config(workoutConfig: WorkoutConfig): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | [201](errorcode-healthservice.md#health-service-kit调用失败返回201) | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
-| [1009104003](errorcode-healthservice.md#section1009104003-非法指令) | Illegal command. Called when workout not in stoped or idle state. |
+| [1009104003](errorcode-healthservice.md#section1009104003-非法指令) | Illegal command. Called when workout not in stopped or idle state. |
 | [1009104999](errorcode-healthservice.md#section1009104999-通用错误码) | System internal error. |
 
 **示例：**
@@ -327,7 +327,7 @@ pause(): void
 | --- | --- |
 | [201](errorcode-healthservice.md#health-service-kit调用失败返回201) | Permission verification failed. Please ensure that the app has applied for the Health Service Kit, selected the product type, enabled the corresponding data read and write permissions, and the user has completed authorization. |
 | [1009104001](errorcode-healthservice.md#section1009104001-联动已开启) | Sport service busy. Workout is already started by other application. |
-| [1009104003](errorcode-healthservice.md#section1009104003-非法指令) | Illegal command. Called when workout in ready, paused or stoped state. |
+| [1009104003](errorcode-healthservice.md#section1009104003-非法指令) | Illegal command. Called when workout in ready, paused or stopped state. |
 | [1009104999](errorcode-healthservice.md#section1009104999-通用错误码) | System internal error. |
 
 **示例：**
@@ -544,7 +544,7 @@ offData(dataType: undefined, listener?: Callback<SampleReal[]>): void
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| dataType | undefined | 是 | 监听所有联动运动数据类型。 |
+| dataType | undefined | 是 | 取消监听所有联动运动数据类型。 |
 | listener | Callback<[SampleReal](health-api-healthservice-lite.md#samplereal)[]> | 否 | 需要取消订阅的回调函数，若不填写则代表取消所有监听。 |
 
 **错误码：**

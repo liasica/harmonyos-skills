@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-infer
 title: InferShapeFuncRegister
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > InferShapeFuncRegister
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:11+08:00
+scraped_at: 2026-09-05T06:15:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9cd3fdb6b7297cd28543627aab2188408139d7b8ebc149c3c1dc3bda238f020f
+content_hash: sha256:847f553952f7960fa341436dcc2b38912676b6d78daa3ddf75175879ac0055bc
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ InferShapeFuncRegister构造函数和析构函数。
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444098891856) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

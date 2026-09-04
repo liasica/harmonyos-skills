@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-cpu-t
 title: CPU孪生调试功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > CPU孪生调试功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:25+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:a3605fdb82d486e92399da353a1c0065184851e2436aeebc4e185a40a656d6e4
+content_hash: sha256:0a3ac0b8254ebb50ce29e8bf8f57b75468c9258c2fc97fb38b3913bc2ccb90cc
 ---
 
 ## 功能介绍
 
-**说明** 
+![](https://media:401788444095499816) 
 
 * 当开发者需要快速进行代码逻辑调试，可优先选择算子CPU调测。使用通用的打印、gdb调测手段，快速定位代码问题。
 * 在NPU板端上板运行之前，可优先选择算子CPU调测初步定位算子精度问题，提高算子NPU上板成功率。

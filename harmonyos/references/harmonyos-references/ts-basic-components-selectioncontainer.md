@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SelectionContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SelectionContainer
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:03+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c361c901ad3c50691ba41ac7fc5355031e52c07b5a7c3a923a8c7e51111c8287
+scraped_at: 2026-09-05T06:17:15+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:b4ac97883a8f97646014a7cd527b907f9b9aa570492098045ac54b795a8d102c
 ---
 
-SelectionContainer组件用于为多个文本节点提供跨节点文本选中、复制及菜单扩展能力，支持统一配置选中文本的手柄颜色和底板颜色，支持灵活的文本拼接策略，支持自定义选择菜单和扩展菜单选项。适用于需要跨多个Text组件实现文本连续选中、统一复制、样式自定义及菜单扩展的场景，解决了多Text组件场景下文本选择体验割裂的问题，提升了用户在复杂文本布局中的交互体验。
+SelectionContainer组件用于为多个文本节点提供跨节点文本选中、复制及菜单扩展能力，支持统一配置选中文本的手柄颜色和高亮颜色，支持灵活的文本拼接策略，支持自定义选择菜单和扩展菜单选项。适用于需要跨多个Text组件实现文本连续选中、统一复制、样式自定义及菜单扩展的场景，解决了多Text组件场景下文本选择体验割裂的问题，提升了用户在复杂文本布局中的交互体验。
 
 **说明** 
 
@@ -102,7 +102,7 @@ caretColor(color: Optional<ResourceColor>)
 
 selectedBackgroundColor(color: Optional<ResourceColor>)
 
-设置选中文本底板颜色。未通过该接口设置时，默认选中文本底板颜色为'#007DFF'（蓝色），如果未设置不透明度，默认为20%不透明度。
+设置文本选中高亮颜色。未通过该接口设置时，默认文本选中高亮颜色为'#007DFF'（蓝色），如果未设置不透明度或设置为完全不透明，默认使用20%不透明度。
 
 **说明** 
 
@@ -119,7 +119,7 @@ selectedBackgroundColor(color: Optional<ResourceColor>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| color | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ResourceColor](ts-types.md#resourcecolor)> | 是 | 选中文本底板颜色。 |
+| color | [Optional](ts-universal-attributes-custom-property.md#optionalt)<[ResourceColor](ts-types.md#resourcecolor)> | 是 | 文本选中高亮颜色。 |
 
 ### enableHapticFeedback
 
@@ -492,7 +492,7 @@ struct SelectionContainerExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/21pZq3DDS2W5SZaaVPBEYw/zh-cn_image_0000002706676052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/eHqE1MDiT5G87St0uetqnw/zh-cn_image_0000002712406196.png)
 
 ### 示例2（绑定自定义选择菜单）
 
@@ -591,7 +591,7 @@ struct SelectionContainerExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/mm8RH2hDROCF9c4Q_SURtQ/zh-cn_image_0000002736435139.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/j65Bj2jHRLC-iJpGcN46VA/zh-cn_image_0000002742125145.png)
 
 ### 示例3（扩展菜单选项）
 
@@ -734,7 +734,7 @@ struct SelectionContainerExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/F7mPLfyqRmWlxdH1JECQ7A/zh-cn_image_0000002706835992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/8AUF1Bp2SA6u6GIsqp0Eqw/zh-cn_image_0000002712246238.png)
 
 ### 示例4（通过控制器关闭选择菜单与清除文本选中）
 
@@ -791,4 +791,4 @@ struct SelectionContainerControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/8FXbiIDkQ1e_K6-FF0lWig/zh-cn_image_0000002736315097.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/_Z3XC_MISBOP9kuQ7PrZuA/zh-cn_image_0000002742005187.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/metadatabindi
 title: 记忆链接开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 记忆链接开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d3a217110ff8df150ada38d52dc9c828e552a2467a580183674ef6c671e4357b
+scraped_at: 2026-09-05T06:14:35+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:39f79135f9c2eb1b4a45cde9acf0edfab865188cf043a9934fcefc027945dee9
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ MetadataBinding（记忆链接）指由第三方应用提供[鸿蒙App Linking�
 
 ## 演示示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/QrwGx6xqRS6yQ86SMYc9SQ/zh-cn_image_0000002736433559.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/f_2AL6S1SqmAFTPlcSYRtw/zh-cn_image_0000002742123557.gif)
 
 ## 接口说明
 
@@ -50,7 +50,7 @@ MetadataBinding（记忆链接）指由第三方应用提供[鸿蒙App Linking�
 
    ```typescript
    let callback : Callback<number> = (event: number) => {};
-   let bundleName: string = '';
+   let bundleName: string = 'com.example.app';
    ```
 3. 订阅记忆服务。
 
@@ -68,7 +68,7 @@ MetadataBinding（记忆链接）指由第三方应用提供[鸿蒙App Linking�
 4. 提供鸿蒙App Linking链接。
 
    ```typescript
-   let metadata: string = '';
+   let metadata: string = 'sample metadata';
    try {
      metadataBinding.submitMetadata(metadata);
      // ...

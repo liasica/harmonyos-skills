@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-develo
 title: 实现跨平台加解密数据兼容性
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 实现跨平台加解密数据兼容性
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d7a1bd788210a62c09fda8b966a0fec7921370aae0735cfcc4a8b68dc5b3d03e
+scraped_at: 2026-09-05T06:14:20+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:a4e8c312ff6c9a6151676b4227805ff7d29f49a3e8e478f4620374ffa24e4363
 ---
 
 ## 概述
@@ -110,7 +110,7 @@ HarmonyOS平台与其它平台在加解密使用上存在差异。
 
 1. HarmonyOS平台加解密API要求密钥和待处理的数据为Uint8Array格式，可参考[数据编码格式差异](crypto-development-practice.md#数据编码格式差异)实现数据格式的转换。
 2. 在HarmonyOS平台上，默认支持SM2算法。需要注意的是，HarmonyOS仅支持ASN.1格式的数据（如密钥和密文）。因此，SM2算法在跨平台加解密时，需要进行原始裸数据与ASN.1格式数据的转换，包括密钥格式转换和密文格式转换，具体可参考[SM2加解密](crypto-development-practice.md#sm2加解密)。
-3. HarmonyOS平台在初始化加解密引擎时，需要传入固定的参数，参数格式可参考[加解密算法规格](crypto-encrypt-decrypt-spec.md)。以AES为例，详细分析密钥长度使用问题和偏移量参数的设置问题，具体可参考[AES加解密](crypto-development-practice.md#aes加解密)。
+3. HarmonyOS平台在初始化加解密引擎时，需要传入固定的参数，参数格式可参考[加解密算法规格](crypto-encryption-decryption.md)。以AES为例，详细分析密钥长度使用问题和偏移量参数的设置问题，具体可参考[AES加解密](crypto-development-practice.md#aes加解密)。
 
 ### SM2加解密
 

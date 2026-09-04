@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 拉起应用选择页
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用选择页 > 拉起应用选择页
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:02+08:00
+scraped_at: 2026-09-05T06:15:20+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:eb2e5fcc323d8854fb6e94ef53c8a9a522d78fbbc0706850daaf9592a7dccbb1
+content_hash: sha256:5f2b12da2a23c30b287b33fe19069cab2d97ffbd5b020f3628c96513fabff32a
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:eb2e5fcc323d8854fb6e94ef53c8a9a522d78fbbc0706850daaf9592a7d
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/aEOwagcEScufEqTvUrQ13w/zh-cn_image_0000002736314299.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/neaektPiR42UwTCLvIQYYw/zh-cn_image_0000002742004385.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/SWDUS626SwG8ciLTGy-OYw/zh-cn_image_0000002706675256.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/qCKOd_WKToa-Y7GbU_n9uA/zh-cn_image_0000002712405396.png)
 
 流程说明：
 

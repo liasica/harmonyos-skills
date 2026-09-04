@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SwipeRefresher
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SwipeRefresher
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d3a8786d12982541695233b01d84b8a095d7919c70eceabef4b283c5dcf41be8
+scraped_at: 2026-09-05T06:17:30+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:c356116c2fb864afb5f4f143f50905abed19528003f532ba5ad4295571d35d74
 ---
 
 内容加载指获取内容并加载出来，常用于衔接展示下拉加载的内容。
@@ -13,8 +13,8 @@ content_hash: sha256:d3a8786d12982541695233b01d84b8a095d7919c70eceabef4b283c5dcf
 **说明** 
 
 * 该组件及其子组件从 API version 10 开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-* 该组件仅可在Stage模型下使用。
-* 如果SwipeRefresher设置[通用属性](ts-component-general-attributes.md)和[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到SwipeRefresher本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议SwipeRefresher设置通用属性和通用事件。
+* 本模块接口仅可在Stage模型下使用。
+* 如果SwipeRefresher设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到SwipeRefresher本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议SwipeRefresher设置通用属性和通用事件。
 
 ## 导入模块
 
@@ -45,10 +45,6 @@ SwipeRefresher({content?: ResourceStr, isLoading: boolean})
 | content | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 内容加载时显示的文本。  默认值：空字符串。  **说明**：如果文本大于列宽时，文本被截断。从API version 20开始，支持Resource类型。 |
 | isLoading | boolean | 是 | @Prop | 当前是否正在加载。  true：正在加载。  false：未在加载。 |
 
-## 事件
-
-不支持[通用事件](ts-component-general-events.md)。
-
 ## 示例
 
 展示设置属性content为空字符串及不为空、isLoading为true和false的不同加载效果。
@@ -78,4 +74,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/hmOtA1gbRkG48hk4iGqFBg/zh-cn_image_0000002706836322.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/3k59d_GITlWmOQwvJS4usA/zh-cn_image_0000002712246606.gif)

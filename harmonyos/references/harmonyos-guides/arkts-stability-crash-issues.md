@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-stabili
 title: UI相关应用崩溃常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI稳定性故障调试 > UI相关应用崩溃常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:53+08:00
+scraped_at: 2026-09-05T06:14:07+08:00
 doc_updated_at: 2026-06-03
-content_hash: sha256:63ef5525ccd8a7e905a71f12e9a6602ce88797e86d8346f1aa1195a37291e820
+content_hash: sha256:42705bde3cbd70e0dcbda46433f041422d7eb06f7ed98561fc4a4200b3daf56f
 ---
 
 本文档收集整理了一些常见的会导致应用崩溃的ArkUI API错误用法，旨在帮助开发者了解这些会导致应用崩溃问题的错误用法，从而避免在实际应用开发过程中犯类似错误。
@@ -31,7 +31,7 @@ Reason:Signal:SIGSEGV(SEGV_ACCERR)@0x0000005c5f09a280
 
 应用通过[OH\_NativeXComponent\_RegisterCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_nativexcomponent_registercallback)接口注册的[OH\_NativeXComponent\_Callback](../harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent-callback.md)回调函数对象以裸指针形式保存在XComponentPattern对象中。这些回调的生命周期由应用控制。如果应用提前销毁了OH\_NativeXComponent\_Callback回调函数对象，将导致裸指针指向非法内存，引发Use-After-Free问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/jICCes0-Q-aNKl5WvNLTLw/zh-cn_image_0000002706833982.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/EcrtsdZzSVmJr9tzmgu5Yw/zh-cn_image_0000002712244222.png)
 
 **解决措施**
 
@@ -73,13 +73,13 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/wbNX9eRvQleK-EHmnOZf9A/zh-cn_image_0000002736313091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/adUFxWBcSMyK9J4ziL1yKg/zh-cn_image_0000002742003175.png)
 
 **可能原因**
 
 报错发生在@Consume初始化阶段，原因是@Consume初始化时仅通过key匹配对应的@Provide变量。如果未找到对应的@Provide，就会出现报错（missing @Provide）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/OZsAtUe_Rcy42IrR29-2xA/zh-cn_image_0000002706674048.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/UC03J-wXQPWjt1_quR7sag/zh-cn_image_0000002712404188.png)
 
 **解决措施**
 
@@ -95,17 +95,17 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/mqBdv5a5STGWvCdylDHkTg/zh-cn_image_0000002736433139.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/-SjpNd9gT629M210X7KSDg/zh-cn_image_0000002742123137.png)
 
 从API version 23开始，添加对@Link数据源错误的校验，运行时错误变为编译期报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/XRhxComTQR215FhyP23Zsw/zh-cn_image_0000002706833984.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BfEpn7nNSZaLYthVu_Jo4A/zh-cn_image_0000002712244224.png)
 
 **可能原因**
 
 报错发生在@Link初始化阶段，原因是@Link初始化时会注册到父组件并调用父组件的addSubscriber方法。如果此时数据源的类型与@Link不完全一致，或者使用常量初始化@Link，会导致该方法无法调用，从而引发“is not callable”错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ObrTsA0kS2GfJ6WMlmyoKA/zh-cn_image_0000002736313093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/T7vzsS34TACzNpN5jAK1QA/zh-cn_image_0000002742003177.png)
 
 **解决措施**
 
@@ -121,13 +121,13 @@ OH\_NativeXComponent使用裸指针管理。应用侧持有其裸指针。如果
 
 应用闪退并生成如下jscrash崩溃栈：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/3xe69UZITfyjlAuJuBo0pg/zh-cn_image_0000002706674050.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/FojxDwE_S-ugzdCDjqeFIQ/zh-cn_image_0000002712404190.png)
 
 **可能原因**
 
 报错发生在@Provide初始化阶段，原因是@Provide重写需要声明allowOverride。声明后，别名和属性名都可以被覆盖。如果未声明且存在重复的别名或属性名，将导致错误（duplicate @Provide property with name xxxxx）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/C3xcxjhnQM6gnaIpqyKlNg/zh-cn_image_0000002736433141.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/4QIkAoizSTq2Tfs5emGlzg/zh-cn_image_0000002742123139.png)
 
 **解决措施**
 

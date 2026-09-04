@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: advertising（星闪广播能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > advertising（星闪广播能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b241de7863d52417ea86c869e5d04f7e05807feb7fc37e07c3c49080c3259850
+scraped_at: 2026-09-05T06:18:54+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:8a9b3f33bbf1910492f5a3e3f0ef24d33c464423aabc9622e791f93332455786
 ---
 
 本模块提供了发送星闪广播的相关功能，包括启动广播、停止广播、订阅广播状态等。
@@ -47,7 +47,7 @@ import { advertising } from '@kit.NearLinkKit';
 | --- | --- | --- | --- | --- |
 | interval | number | 否 | 是 | 广播间隔配置参数。单位slot，范围160-16777215，默认值为5000。1个slot对应的时间长度是0.125ms，例如：5000\*0.125=625ms。 |
 | power | [TxPowerMode](nearlink-advertising.md#txpowermode) | 否 | 是 | 广播发射功率配置参数。如果不配置，则默认值为ADV\_TX\_POWER\_LOW。 |
-| isConnectable | boolean | 否 | 是 | true: 表示可连接的广播。false：表示不可连接的广播。默认值为true。 |
+| isConnectable | boolean | 否 | 是 | true表示可连接的广播。false表示不可连接的广播。默认值为true。 |
 
 ## AdvertisingData
 
@@ -64,7 +64,7 @@ import { advertising } from '@kit.NearLinkKit';
 | serviceUuids | Array<string> | 否 | 是 | 服务UUID列表。若未配置则默认不携带该字段。UUID格式参考[星闪标准服务UUID](../harmonyos-guides/nearlink-faq.md#星闪标准服务uuid的格式)。 |
 | manufacturerData | Array<[ManufacturerData](nearlink-advertising.md#manufacturerdata)> | 否 | 是 | 厂商数据。若未配置则默认不携带该字段。 |
 | serviceData | Array<[ServiceData](nearlink-advertising.md#servicedata)> | 否 | 是 | 服务数据。若未配置则默认不携带该字段。 |
-| includeDeviceName | boolean | 否 | 是 | 指示广播数据中是否携带本机设备名。true：表示包含设备名称。false：表示不包含设备名称。默认值为false。 |
+| includeDeviceName | boolean | 否 | 是 | 指示广播数据中是否携带本机设备名。true表示包含设备名称。false表示不包含设备名称。默认值为false。 |
 
 ## ManufacturerData
 
@@ -113,7 +113,7 @@ import { advertising } from '@kit.NearLinkKit';
 
 ## TxPowerMode
 
-表示广播发送模式，为枚举值。
+表示广播发送功率模式，为枚举值。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

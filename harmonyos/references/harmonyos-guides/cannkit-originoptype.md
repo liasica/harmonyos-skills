@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-origi
 title: OriginOpType
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > OriginOpType
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8682d649ebb05f857498a64d89c6a79f30827109775386de2b8b7537fa297ffa
+content_hash: sha256:4ea305c678031984d492ec9360e02d9900afa4b7ce611be05d11a2cd213cec16
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:8682d649ebb05f857498a64d89c6a79f30827109775386de2b8b7537fa2
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444107921905) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-stora
 title: 存储单元
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 硬件架构 > 存储单元
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:25+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:6833a12ecd7c717f534b7602be762088debfdf84c65a123ab9f8dcab9df46515
+content_hash: sha256:8100747b0419894f2e5f050614907c1d5577c2a9f0f71c529be8208e54d4e406
 ---
 
 AI处理器中的计算资源要想发挥强劲算力，必要条件是保证输入数据能够及时准确地出现在计算单元中，需要精心设计存储系统，保证计算单元所需的数据供应。
@@ -34,7 +34,7 @@ AI Core的内部存储列表如表1所示。
 | MTE3 | 负责如下通路的数据搬运：UB -> GM |
 | FixPipe | 只有分离架构支持，负责如下通路的数据搬运，搬运过程中可以完成随路数据格式/类型转换：  - L0C->{GM/L1}  - L1->FP Buffer |
 
-**说明** 
+![](https://media:401788444096385828) 
 
 * 不同类型的AI处理器，存储单元大小不同，开发者可通过[GetCoreMemSize](cannkit-getcorememsize.md)接口获取。
 * 所有通过搬运单元读写GM的数据都缺省被缓存在L2Cache，以此加快访问速度，提高访问效率。核外L2Cache以cacheline为单位加载数据，根据硬件规格不同，cacheline大小不同（128/256/512Byte等）。

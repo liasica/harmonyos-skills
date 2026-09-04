@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: Node.js
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > 开发云函数 > 开发函数 > Node.js
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:54+08:00
+scraped_at: 2026-09-05T06:15:05+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:9cbd08ac35a6e4aa78ef965681bd819e0b01702e566c5fe5dff5824b1a338053
+content_hash: sha256:9626b01e293f0348a190ef859a3f103e3622d3226ed87868d46befcc7f492784
 ---
 
 ## 约束与限制
@@ -49,7 +49,7 @@ let env1 = context.env.env1;
 
 若环境变量未配置，则会返回环境变量为undefined。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/UYzdXNG7TEqdgRX6ck9gEg/zh-cn_image_0000002706834860.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/jxDwMBM3Q_2vbAiwaKRrJQ/zh-cn_image_0000002712245104.png)
 
 ## 异常处理
 
@@ -142,4 +142,4 @@ my-function.zip
 
 可通过npm工具的相关命令，安装与管理依赖。例如npm install xxx命令（执行路径无限制）可将依赖xxx自动安装到根目录的node\_modules文件夹下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/GWgf33MeR46tcXiknu00rQ/zh-cn_image_0000002736313967.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/2VrOHdsAShKDXsEF9loFnw/zh-cn_image_0000002742004053.png)

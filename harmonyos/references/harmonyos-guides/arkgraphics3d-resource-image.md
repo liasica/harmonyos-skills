@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用图片资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D资源创建以及使用 > 创建并使用图片资源
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:453e7aad4e3780a52dcce3524742071192cfc9a1399da2b6af0a4eaab705b163
+scraped_at: 2026-09-05T06:14:58+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:b3be4084e19e3ac24b15242d0ca3a6316312a56fb4eefd0966d6207534d4d449
 ---
 
 图片（Image）：图片本质上是一个储存信息的二维内存块(buffer)，用于储存3D渲染计算过程需要的相关信息，比如基础颜色、法线等等。
@@ -48,7 +48,7 @@ ArkGraphics 3D提供基于png、jpg、ktx格式创建Image资源的能力，支�
    创建相机对象并设置相机启用状态与观察位置，用于后续展示模型。
 
    ```typescript
-   this.cam = await this.rf.createCamera({ 'name': 'Camera1' });
+   this.cam = await this.rf.createCamera({ name: 'Camera1' });
    this.cam.enabled = true;
    this.cam.position.z = 5;
    ```

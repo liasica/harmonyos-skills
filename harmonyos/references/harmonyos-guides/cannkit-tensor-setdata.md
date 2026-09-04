@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: SetData
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Tensor > SetData
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:13+08:00
+scraped_at: 2026-09-05T06:15:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a5c627c744a3250a5673d9b9df7d306a16a231dbd7af6b4061cf9ba4423f3eb7
+content_hash: sha256:08738e300c063399408d5c0c31dce4a3a8731ef501f61c52b0d3ff6e1a8be052
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:a5c627c744a3250a5673d9b9df7d306a16a231dbd7af6b4061cf9ba4423
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444113333923) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

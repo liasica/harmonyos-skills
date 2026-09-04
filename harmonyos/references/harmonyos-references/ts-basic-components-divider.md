@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 空白与分隔 > Divider
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:05+08:00
+scraped_at: 2026-09-05T06:17:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4638b28cf1371c2e789c4712d8e813e3e1db0939a0714838d21f36f06381710b
+content_hash: sha256:d67c739e3eacfe3d48d31a9c2781ae9c10873f3d4f4c913f9f10c2cfa90256c0
 ---
 
 提供分割线组件，分割不同内容块/内容元素。
@@ -195,7 +195,7 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/1h7iGGWJR92jThkFOpwf6g/zh-cn_image_0000002706676168.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/rAtFhJ9SR9iteQGJcCXAFw/zh-cn_image_0000002712406312.png)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -234,4 +234,4 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/w-IJjNWTTRyMZdBbF6m45A/zh-cn_image_0000002736435255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/6z_4QIPpSi6xQjPTykru8A/zh-cn_image_0000002742125261.png)

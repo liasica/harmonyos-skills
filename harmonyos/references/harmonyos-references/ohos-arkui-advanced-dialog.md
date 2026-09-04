@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: 弹出框 (Dialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 弹出框 (Dialog)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:07+08:00
+scraped_at: 2026-09-05T06:17:25+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:fc5006435c0a83a2fb65f4a3e21dabf69f0ed75ec42e0d8096e2a274de921eec
+content_hash: sha256:583143bd6573ef96d7651180bd7862ca07ea586d1db555213f96ab8bb03d2918
 ---
 
 弹出框是一种模态窗口，用于临时展示用户需关注的信息或待处理的操作，同时保持当前上下文环境。用户必须完成交互才能退出该模式。
@@ -276,7 +276,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/o25_TdfoRZKhjKqrIzmOmQ/zh-cn_image_0000002706836236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/emaN3lauTj2M-GpwI3iTbw/zh-cn_image_0000002712246482.png)
 
 ### 示例2（纯列表弹出框）
 
@@ -343,7 +343,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/kL902wSvQe-0Ia31hKfAYw/zh-cn_image_0000002736315341.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/2rCkW24ATv6tLRfLRZ4I7A/zh-cn_image_0000002742005431.png)
 
 ### 示例3（文本与勾选弹出框）
 
@@ -406,7 +406,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/DbBYIvKySreA7Y7M4wfANw/zh-cn_image_0000002706676302.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/bm9lUd4SRKGR4hVUy-Oycg/zh-cn_image_0000002712406442.png)
 
 ### 示例4（纯文本弹出框）
 
@@ -461,7 +461,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/9DuC_UbfThOL9UU85cktFA/zh-cn_image_0000002736435389.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/zByDECr9SQu67KSKQok5KA/zh-cn_image_0000002742125391.png)
 
 ### 示例5（进度加载类弹出框）
 
@@ -502,7 +502,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/yHBXn419RxOTo2lqhqqqwQ/zh-cn_image_0000002706836238.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/s29_D85TTg6jXdhxUpFJlA/zh-cn_image_0000002712246484.gif)
 
 ### 示例6（自定义主题风格弹出框）
 
@@ -559,7 +559,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/bL2fSw4HQsSaprBjx8ZXyw/zh-cn_image_0000002736315343.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Y9K1n71KRkGiBvIOgMERwA/zh-cn_image_0000002742005433.png)
 
 ### 示例7（自定义深浅色模式弹出框）
 
@@ -601,7 +601,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/y7P0-1IIRxa-iFKlV8-tUw/zh-cn_image_0000002706676304.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/seTaouNHQCSG53DhVz8wdQ/zh-cn_image_0000002712406444.png)
 
 ### 示例8（自定义内容弹出框）
 
@@ -660,7 +660,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/_u4Jm_dBRP2tmQsbBmVmVA/zh-cn_image_0000002736435391.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ixCBpv6OR0aV_JoST_Espg/zh-cn_image_0000002742125393.png)
 
 ### 示例9（跟手弹出框）
 
@@ -721,7 +721,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/7C_2Iv5eTYuVzpaiOqFIFg/zh-cn_image_0000002706836240.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/qkAp2j5kTMGpDf2kopMihA/zh-cn_image_0000002712246486.png)
 
 ### 示例10（弹出框按钮设置默认获焦）
 
@@ -773,4 +773,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/6tse7KBnT1S3LTORYDoPtg/zh-cn_image_0000002736315345.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/3IeRvPVOQDueUfYruXBxlg/zh-cn_image_0000002742005435.png)

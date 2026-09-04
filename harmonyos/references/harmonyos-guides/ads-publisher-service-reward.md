@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 激励广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 激励广告
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:52+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:850df01951ed767a47b3a8c177e19efb7d2e39ef3a06ae42f724b11a3229411b
+scraped_at: 2026-09-05T06:15:02+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:41a38ae1a7e082e36b55541b8fd3de6bf172dfdd9d54146a3a9c3bcda8321d41
 ---
 
 ## 场景介绍
 
 激励广告是一种全屏幕的视频广告，用户可以选择点击观看，以换取相应奖励。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/nbJbHMKMSu6oyEf7sIf4lA/zh-cn_image_0000002706834778.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/gwcfHXtMRxS5Ube3zbadbg/zh-cn_image_0000002712245024.png)
 
 ## 约束与限制
 
@@ -315,7 +315,7 @@ content_hash: sha256:850df01951ed767a47b3a8c177e19efb7d2e39ef3a06ae42f724b11a322
 
 服务端验证回调是指鲸鸿动能平台发送给媒体服务器的网址请求，其中带有特定的查询参数，用来通知媒体服务器某位用户因为与激励视频广告互动而应予以奖励，从而规避欺骗的行为。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/IH3RG2gtTouQbetcSf60NA/zh-cn_image_0000002736313885.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/jVo1pjheQ0encNpX_SOB8w/zh-cn_image_0000002742003973.png)
 
 ### 奖励用户
 
@@ -332,7 +332,7 @@ App上架至华为应用市场（AppGallery）时间超过12小时才可以收�
 
    您在[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)上申请激励视频广告位时选择“媒体管理（点击媒体名）> 新增展示位 > 选择激励视频（点击下一步，进入编辑页面）”，设置奖励类型和奖励数量，并点击“高级设置”，设置服务器端验证的URL。如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/lcEsM1g6S96ZjieF8LpmEw/zh-cn_image_0000002706674844.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Xq7Jw6WqTa-FJWOy0UXiCg/zh-cn_image_0000002712404984.png)
 2. （可选）设置自定义数据customData和userId。
 
    您在[展示广告第2点](ads-publisher-service-reward.md#展示广告)之前可以设置自定义数据customData和userId。示例代码如下所示：
@@ -360,7 +360,7 @@ App上架至华为应用市场（AppGallery）时间超过12小时才可以收�
 
    ```typescript
    {
-       "adId" : "tj14rx3xtac",
+       "adId" : "j14rx3xtac",
        "data" : "CUSTOM_DATA",
        "keyId" : "12345678",
        "rewardAmount" : "10",
@@ -444,11 +444,11 @@ App上架至华为应用市场（AppGallery）时间超过12小时才可以收�
 
    a. 在[鲸鸿动能媒体服务平台](https://developer.huawei.com/consumer/cn/service/ads/publisher/html/index.html?lang=zh)上查看对应的账户信息时选择“账户”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/1sABWJjwSd21gZvCekoqGA/zh-cn_image_0000002736433931.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/YnO7TdpVRJybeYTQWphFIw/zh-cn_image_0000002742123933.png)
 
    通过点击上图所示的“获取密钥”按钮弹出如下所示的弹框，获取“开发者ID”和“密钥”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/6103REq8TMqIinC-EnnX_A/zh-cn_image_0000002706834780.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/VWe1GDPtT6Cmsa6sno1Fsg/zh-cn_image_0000002712245026.png)
 
    b. 您根据应用分发区域不同，需要使用对应站点的接口URL去获取公钥列表，不同站点对应的接口URL如下所示：
 

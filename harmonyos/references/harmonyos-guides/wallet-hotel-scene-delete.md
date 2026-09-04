@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 删除酒店房卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 开发场景 > 删除酒店房卡
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
+scraped_at: 2026-09-05T06:15:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:55564bf9e227d83f512eb8ee01703090130f5a8199d2cf7107d522584ed739d9
+content_hash: sha256:fc75f91528793c287740ee1878256676a1caba86fbd0f04e6d28402234606c56
 ---
 
 用户主动删除，将酒店房卡从钱包中移除。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Z8xdkIqaQaiXQvGeEAie5Q/zh-cn_image_0000002736314365.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/s6CoPqbgRf-IwNp-k0-CjA/zh-cn_image_0000002742004449.png)
 
 ## 服务端开发
 

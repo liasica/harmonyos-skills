@@ -1,6 +1,6 @@
 # API 参考（harmonyos-references）
 
-共 4761 篇文档。
+共 4762 篇文档。
 
 - [ABR_CameraData](_a_b_r___camera_data.md)
 - [ABR_Vector3](_a_b_r___vector3.md)
@@ -3164,6 +3164,7 @@
 - [@ohos.data.distributedData (分布式数据管理)](js-apis-distributed-data.md)
 - [@ohos.distributedDeviceManager (设备管理)](js-apis-distributeddevicemanager.md)
 - [@ohos.application.DistributedExtensionAbility (协同Extension)](js-apis-distributedextensionability.md)
+- [@ohos.application.DistributedExtensionContext (协同Extension上下文)](js-apis-distributedextensioncontext.md)
 - [@ohos.data.distributedKVStore (分布式键值数据库)](js-apis-distributedkvstore.md)
 - [@ohos.dlpPermission (数据防泄露)](js-apis-dlppermission.md)
 - [@ohos.document (文件交互)](js-apis-document.md)
@@ -3814,7 +3815,7 @@
 - [advertising（星闪广播能力）](nearlink-advertising.md)
 - [NearLink Kit（星闪服务）](nearlink-api.md)
 - [ArkTS API](nearlink-arkts.md)
-- [cdsm（星闪合作设备集合能力）](nearlink-cdsm.md)
+- [cdsm（星闪合作设备集合管理能力）](nearlink-cdsm.md)
 - [constant（星闪公共常量定义）](nearlink-constant.md)
 - [dataTransfer（星闪数传能力）](nearlink-data-transfer-api.md)
 - [manager（星闪开关能力）](nearlink-manager.md)

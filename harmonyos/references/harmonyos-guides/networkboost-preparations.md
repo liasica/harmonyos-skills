@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 开发准备
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:01b7ed03c9d2c19e8b3b405bb2201dac58f6e78acbdc7acfdffbb24fffb48110
+scraped_at: 2026-09-05T06:14:29+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:4a30074c20b6c8876bfb91cb6d16c7d95e6163ec244de0823d1e32fdca9d226e
 ---
 
 ## 申请权限
@@ -62,23 +62,23 @@ target_link_libraries(entry PUBLIC libnetwork_boost.so) #链接libnetwork_boost.
 
 ## 配置签名
 
-* 调试阶段需要在AGC中[申请调试证书](ide-signing.md#section081822416419)、[注册设备](../app/agc-help-add-device-0000002283189937.md)、[申请调试Profile文件和添加权限信息](ide-signing.md#section89479413571)后，再[配置调试签名](ide-signing.md)，或者通过DevEco Studio自动签名完成申请，在自动签名的过程中，将由DevEco Studio完成向AGC申请受限权限的步骤，开发者可直接使用，具体请参考[自动签名](ide-signing-auto.md)。
+* 调试阶段需要在AGC中[申请调试证书](ide-signing-manual.md#section294112511046)、[注册设备](../app/agc-help-add-device-0000002283189937.md)、[申请调试Profile文件和添加权限信息](ide-signing-manual.md#section201901445352)后，再[配置调试签名](ide-signing.md)，或者通过DevEco Studio自动签名完成申请，在自动签名的过程中，将由DevEco Studio完成向AGC申请受限权限的步骤，开发者可直接使用，具体请参考[自动签名](ide-signing-auto.md)。
 * 发布阶段，在API版本26.0.0 Beta1之前，需要[申请发布证书](../app/agc-help-release-cert-0000002283336729.md)、[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)，并完成[配置签名信息](ide-publish-app.md#section945904791115)。在API版本26.0.0 Beta1及以上，发布时无需上述操作，流程已简化。
 
 ## 受限ACL权限申请
 
-1. [申请调试Profile文件和添加权限信息](ide-signing.md#section89479413571)和[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)操作步骤中第4步“申请权限”是必须的，选中“受限ACL权限”后再点击“选择”。
+1. [申请调试Profile文件和添加权限信息](ide-signing-manual.md#section201901445352)和[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)操作步骤中第4步“申请权限”是必须的，选中“受限ACL权限”后再点击“选择”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/fprDS0YmTDKZNcg655noog/zh-cn_image_0000002736433507.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/lClRQI05TBGgPrzMSZL5nQ/zh-cn_image_0000002742123505.png)
 2. 在权限搜索框中输入"ohos.permission.LINKTURBO"找到LINKTURBO的权限并勾选，再提交申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/R4qlYF-rTQWJLr5PeqXV0A/zh-cn_image_0000002706834356.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/B3Su6AkSQJSYtdBr9bpCLA/zh-cn_image_0000002712244592.png)
 3. 根据实际业务需求填写申请原因并提交，提交后将在1个工作日回复，可以[互动中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)查看申请情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/6tDNCYxBTx2BbKzYDwlTlA/zh-cn_image_0000002736313461.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/mlfaoMOPR8yNV7Q9d6EqQg/zh-cn_image_0000002742003545.png)
 4. 权限申请通过后在“已获取权限”中可以看到已申请的权限，勾选后点击确定。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/K6P4NuDWRpqP9X3JsErMEg/zh-cn_image_0000002706674420.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/bs7eB4eGQiaktvQ_me75Eg/zh-cn_image_0000002712404558.png)
 5. 选择权限后点击“添加”生成新的Profile文件，下载后按[手动签名](ide-signing-manual.md)替换profile文件。
 6. 在工程中entry模块的module.json5文件中，在"requestPermissions"节点添加"ohos.permission.LINKTURBO"权限，如下所示：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: ArkGraphics 3D场景动画控制以及管理
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D场景动画控制以及管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:91060389c93e0669045d69478cb0af0ca630a78e1496cdd0342ebceed8aac19b
+scraped_at: 2026-09-05T06:14:58+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:b580fc1e642af2a2f491ce3e3c0583957e1f60042598efbf40a0af28f67196d4
 ---
 
 动画（animation）：动画是3D场景中重要的资源类型，用于控制场景中各种元素的运动。比如想要场景中的人物进行走路这个动作，每帧计算人物每一个关节的旋转角并进行设置是难以实现的。所以在完成类似的要求时，3D场景资源的制作者会将动画制作好，在模型文件中保存动画的关键帧数据以及关键帧间的插值器类型。
@@ -69,7 +69,7 @@ ArkGraphics 3D提供播放并控制场景动画的能力，支持开发者灵活
 
    ```typescript
    // create a new camera.
-   this.cam = await rf.createCamera({ 'name': 'Camera' });
+   this.cam = await rf.createCamera({ name: 'Camera' });
    // set the camera.
    this.cam.enabled = true;
    this.cam.position.z = 5;

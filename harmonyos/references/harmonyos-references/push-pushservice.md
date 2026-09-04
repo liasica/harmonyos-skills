@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-push
 title: pushService（推送服务基础能力）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > pushService（推送服务基础能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
+scraped_at: 2026-09-05T06:21:26+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:981831917ed1cc534596c83e3809a3ab9a9a24af2ee8352dbb699251c032e844
+content_hash: sha256:8c82e7df58c4e93aa81e4352aa90416e7bc3f82160c920a411fe71b585b73338
 ---
 
 本模块作为HarmonyOS消息推送的基础模块，提供Push Token管理、应用内多账号消息推送及消息接收等核心能力。
@@ -14,7 +14,7 @@ content_hash: sha256:981831917ed1cc534596c83e3809a3ab9a9a24af2ee8352dbb699251c03
 
 Push Token是Push Kit为应用分配的推送令牌，每台设备上每个应用的Push Token具有唯一性。开发者获取Push Token后需上报到应用服务器，用于向终端设备推送消息，Push Cloud将根据消息体中携带的Push Token，将消息下发至目标设备的目标应用。推送消息流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/saRhObOCSiOjQQcpvTQ0vw/zh-cn_image_0000002706837116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Mv9bgiysTiywPutk4ybZdg/zh-cn_image_0000002712247418.png)
 
 若应用服务器未及时更新Push Token，将影响消息的正常推送。
 
@@ -49,7 +49,7 @@ Push Token是设备与应用实例的唯一标识，与应用内账号无关。�
 
 接收消息流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/3uduUcKSSHqYyg7BJqwJaQ/zh-cn_image_0000002736316225.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/5xb11GdoSUqn4qTWRNo7Tg/zh-cn_image_0000002742006365.png)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

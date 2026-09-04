@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-musi
 title: 音乐服务卡片
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片最佳实践 > 音乐服务卡片
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:25+08:00
+scraped_at: 2026-09-05T06:14:14+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc3070c6e
+content_hash: sha256:1a298b4471749ccaf47d6c5fdc912a65490312f77a702dfe2d6b908b5e8cddb2
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 **图 1** 音乐服务卡片场景效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/vs-G6uETTU6iCAFVf7d6ZA/zh-cn_image_0000002706834176.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/u4rBg9iNSZ616ZIx7Q3jiw/zh-cn_image_0000002712244416.png)
 
 本文将以音乐服务卡片场景为例，分别介绍音乐播控、歌单推荐、心动歌词、动态歌词四种服务卡片的实现，包括卡片设计和功能开发，以及开发中常见的一些问题。通过本案例，开发者可以更加深入的了解服务卡片与应用的交互和卡片的数据更新机制，快速高效的进行精美的服务卡片开发。
 
@@ -24,7 +24,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 ### 音乐播控
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/G2p8VNmWRbe78Tb5ASDypg/zh-cn_image_0000002736313285.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/hqU4KuVkQ5uFF7DxR9cS9g/zh-cn_image_0000002742003369.png)
 
 场景定义：
 
@@ -33,7 +33,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 ### 动态歌词
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/m6KHkfmGTDmKn_niP_H0gw/zh-cn_image_0000002706674242.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/fk5N46-BRWSEmFfvOdLYhA/zh-cn_image_0000002712404382.jpg)
 
 场景定义：
 
@@ -42,7 +42,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 ### 歌单推荐
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/jBHGnKtYTbiUCCrYcoi4gA/zh-cn_image_0000002736433333.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/zZjC1W-ARZOgmhUUu6hw5g/zh-cn_image_0000002742123331.png)
 
 场景定义：
 
@@ -51,7 +51,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 ### 心动歌词
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/v-9zun2TRVSrPf5-lwghNA/zh-cn_image_0000002706834178.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/eJDFSa8SRO63doDxxB4SXw/zh-cn_image_0000002712244418.png)
 
 场景定义：
 
@@ -60,7 +60,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 ### 场景互动卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/SP7tdQc6RcK9S-B0-DPbAg/zh-cn_image_0000002736313287.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Vc5x_hLtRhCk5zK_ZMp_lQ/zh-cn_image_0000002742003371.png)
 
 场景定义：
 
@@ -73,7 +73,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 **图 2** 音乐服务卡片沉浸效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ISrHjlDqTF-4eMQ8LMQe9g/zh-cn_image_0000002706674244.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/aWxihbmURXOB7lv-YtwACw/zh-cn_image_0000002712404384.png)
 
 音乐播控、歌单推荐、心动歌词和动态歌词卡片设计效果如下所示：
 
@@ -94,13 +94,13 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 **图 3** 音乐服务卡片运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Temh2JUzSRu0g87UpN3tHg/zh-cn_image_0000002706674250.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/5O-vA6gCRWyUyMXOzhYKdg/zh-cn_image_0000002712404390.png)
 
 音乐应用包含[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)（主进程）和[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)（卡片进程）两个进程。其中，主进程包含音乐播控、收藏、热门歌单、以及歌词处理等功能模块；卡片进程是卡片业务逻辑模块，提供卡片创建、刷新、销毁等生命周期回调。如下图所示：
 
 **图 4** 音乐应用进程结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/reqsTrW9QZWzAQWhSyOvWQ/zh-cn_image_0000002736433341.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/DbVOCvWFRhekyRzfg902HQ/zh-cn_image_0000002742123339.png)
 
 开发者可以根据FormExtensionAbility生命周期回调，在对应回调方法中处理卡片数据持久化、卡片数据更新等操作，FormExtensionAbility生命周期回调时机和功能实现说明如下表所示：
 
@@ -117,7 +117,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 场景类型互动卡片在定位上是对普通卡片能力的增强，因此开发者需首先完成普通卡片的业务开发。之后在特定业务环节通过接口请求，触发互动卡片特有的动态效果。开发者可参考[互动卡片开发](arkts-ui-liveform.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/p-Una3oGQ2C_I1nnj9vnXw/zh-cn_image_0000002706834186.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ALEqnkNfR1KQe8iB8ap1KA/zh-cn_image_0000002712244426.png)
 
 ### 关键技术
 
@@ -173,13 +173,13 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 **实现步骤**
 
-音乐播控卡片的主要实现步骤如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/hw_l9HdbTCaksG7eWTHetQ/zh-cn_image_0000002736313295.png)
+音乐播控卡片的主要实现步骤如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/l23WzpDtTtC3-upjkEUpwA/zh-cn_image_0000002742003379.png)
 
 其中“实现音乐播控功能”需要通过卡片、数据库、媒体播放等多个模块之间的数据交互来实现，音乐播控功能实现时序图如下：
 
 **图 5** 卡片音乐播控时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1x484CgdSzGuL1B-Mdkbjw/zh-cn_image_0000002706674252.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/sbxbuYPmSvKDteSm1vrJEw/zh-cn_image_0000002712404392.png)
 
 音乐播控卡片的详细开发流程如下：
 
@@ -187,7 +187,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
    **图 6** 音乐播控卡片效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/kJAHzM6tQMSao8CQuG-R4w/zh-cn_image_0000002736433343.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/zHHnAS3TQg2Zpex0z9VWXA/zh-cn_image_0000002742123341.png)
 
    分别创建2x2和2x4两个规格的动态卡片，动态卡片的创建可以参考[创建ArkTS卡片](arkts-ui-widget-creation.md)。对于比较复杂的布局，优先考虑使用相对布局 [RelativeContainer](arkts-layout-development-relative-layout.md)来减少性能开销。由于2x4卡片包含了2x2卡片的功能，下面将以2x4卡片为例介绍音乐播控卡片的实现。
 
@@ -241,7 +241,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
    **图 7** 音乐播控卡片预览效果
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/AAQTHt73Rtirk4qagIpQxw/zh-cn_image_0000002706834188.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/eUx38ysiTRWn1WGYmVZBgA/zh-cn_image_0000002712244428.png)
 
    在音乐应用中，EntryFormAbility继承了FormExtensionAbility类并实现了其生命周期回调方法。当预览卡片时，会触发EntryFormAbility的onAddForm()回调方法，在此方法中可以获取卡片名称、卡片ID等信息。开发者可以根据卡片名称判断是否为音乐播控卡片，如果是，则调用FormUtils.updateMusicControlCard()方法更新卡片数据。FormUtils是卡片管理工具类，封装了卡片添加、删除、更新等相关功能。示例代码如下：
 
@@ -968,7 +968,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
    **图 8** 卡片沉浸效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/NBvUL2fnSXqCmNupkzU0PQ/zh-cn_image_0000002706834190.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/79mrwPdOSRen-1EqaV5KmQ/zh-cn_image_0000002712244430.gif)
 
    **说明** 
 
@@ -1088,7 +1088,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
    **图 9** 点击卡片跳转到播放页面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/GeV9i6TfSPSOTIR6e-zXsA/zh-cn_image_0000002736313299.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/wSizPONERIuupIrpwhqm3Q/zh-cn_image_0000002742003383.gif)
 
 ### 动态歌词卡片
 
@@ -1096,13 +1096,13 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 动态歌词卡片的主要实现步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/SJWSU0qvTnS7tYa5y2EDUQ/zh-cn_image_0000002706674256.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/1EL9pTUnSxGdWh8m4kw_JA/zh-cn_image_0000002712404396.png)
 
 动态歌词目前支持2\*4规格的卡片，效果图如下：
 
 **图 10** 动态歌词卡片效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/lWRiVqMvSlq4Uq-kV5NB7g/zh-cn_image_0000002736433347.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/2qzaoHqkQC-6il-T0uRtuw/zh-cn_image_0000002742123345.png)
 
 动态歌词卡片的**播控**相关内容，具体实现请参考[音乐播控卡片](arkts-ui-music-service-form.md#音乐播控卡片)的详细开发流程。
 
@@ -1161,13 +1161,13 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
    **图 11** 动态歌词最终效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/kl6WF5SWTn2K-FBd3veUMQ/zh-cn_image_0000002706834192.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/1UKuFOM5TOmfWKD3WKHmJg/zh-cn_image_0000002712244432.gif)
 
 **应用内添加卡片到桌面场景实现步骤**
 
 应用内**添加卡片到桌面**功能开发流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/T7KQKvt2TXWaUkecv0eAwQ/zh-cn_image_0000002736313301.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/x7nJnBXMRBibFlwdYXOWOw/zh-cn_image_0000002742003385.png)
 
 1. 配置好添加卡片的相关数据（ cardRealName：卡片名称；cardDimension：卡片类型； displayName：显示名称； description：卡片描述； url：预览图），已完成卡片布局开发。
 
@@ -1283,11 +1283,11 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
    **图 12** 应用内添加到桌面
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Ze92p8WCQECPI0Ia6w5eMA/zh-cn_image_0000002706674258.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/tniO6R_mSbKRW7NAtAAu4g/zh-cn_image_0000002712404398.gif)
 
 ### 音乐播控互动卡片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/_No-ZWd6RJy101kiRUWlow/zh-cn_image_0000002736433349.png)/
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/ee7jze6aQCqsRBHKxxmU0A/zh-cn_image_0000002742123347.png)/
 
 **实现步骤**
 
@@ -1451,7 +1451,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
 **图 13** 歌单推荐卡片效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/zi75_ZieTImKpptRD-38Qw/zh-cn_image_0000002706834194.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/dmU5UqIKT_Oo2iBDqSr3Cg/zh-cn_image_0000002712244434.png)
 
 **实现步骤**
 
@@ -1767,7 +1767,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
    **图 14** 点击卡片跳转效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/EmeRyMddRAaT0n1oUTYifQ/zh-cn_image_0000002736313303.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/qnpLFHK7Tw-rucVHMBO-Og/zh-cn_image_0000002742003387.gif)
 
 ### 心动歌词卡片
 
@@ -1888,7 +1888,7 @@ content_hash: sha256:2da6774a7dc42bfa71bc4b90444efc576515eb398f312e32724ae98dc30
 
    **图 15** 心动歌词卡片效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/DiuRNQrHQM6nRfTV7T6SiQ/zh-cn_image_0000002706674260.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/SCRQWJRJTw2pCYMBidrqqg/zh-cn_image_0000002712404400.png)
 
 ## 常见问题
 

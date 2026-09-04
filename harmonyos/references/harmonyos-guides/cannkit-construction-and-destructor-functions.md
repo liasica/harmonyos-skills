@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-const
 title: 构造函数与析构函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > TensorData > 构造函数与析构函数
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:10+08:00
+scraped_at: 2026-09-05T06:15:34+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9c161f1f0d19b4e4fbe422ec699588424be4a12078ba1081d090a57cda23c6e7
+content_hash: sha256:ac4187c250097312fe5ba6d999242de2edbef3533287dc6d03ce3d6068acc01f
 ---
 
 ## 函数功能
@@ -16,7 +16,7 @@ content_hash: sha256:9c161f1f0d19b4e4fbe422ec699588424be4a12078ba1081d090a57cda2
 * 构造方式2：指定了tensor数据的地址、用于管理tensor数据的函数manager、tensor数据所占内存大小、tensor数据所在的位置（host、device）。
 * 构造方式3：移动构造形式。
 
-**说明** 
+![](https://media:401788444101931869) 
 
 若manager为nullptr，则认为addr就是tensor的数据地址。否则，tensor数据的地址由manager给出。
 

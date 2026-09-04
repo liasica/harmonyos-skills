@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager-p
 title: 应用证书凭据开发指导
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书管理服务 > 应用证书凭据开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:30+08:00
+scraped_at: 2026-09-05T06:14:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6153ddbd95bb7a5fe9a24ae42d5d38bc33909a5eb9cc821182bc8710bd85abc5
+content_hash: sha256:54c928dfd2a001ca61bf5979944facbef92ed7fe6a6cbfe7e705685f034d6ec9
 ---
 
 如果您的应用服务器需要为您的应用颁发证书凭据，并在您的应用访问服务器接口时通过证书凭据进行身份认证，则您的应用可以使用本功能进行应用证书凭据的安装和使用。
@@ -14,7 +14,7 @@ content_hash: sha256:6153ddbd95bb7a5fe9a24ae42d5d38bc33909a5eb9cc821182bc8710bd8
 
 您的应用可以读取已安装应用证书凭据的证书链，及使用对应私钥进行签名，但不能读取私钥数据（保护私钥数据的安全）。应用证书凭据的公私钥对存储在[Universal Keystore Kit](huks-overview.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/ujhTFhoST9Ot5cgWC6Wrgw/zh-cn_image_0000002736313385.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/dljy37E0TzqA8S7R0pD5CA/zh-cn_image_0000002742003469.png)
 
 **说明** 
 

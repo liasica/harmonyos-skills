@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感兼容性适配
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感兼容性适配
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:50+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:c5ad4b9e6e8174b49382c8a03730af045bc942bdb7c9c4baaebccca0987bbc09
+scraped_at: 2026-09-05T06:14:01+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:79468bcc4653270d42c7b5cf74c900d290cf6657dd14b91fee8e73bb896b8978
 ---
 
-沉浸光感从API版本26.0.0开始支持。应用在接入沉浸光感时，如果需要兼容低版本，需要处理好两方面问题。一是应用级开启时，避免沉浸式系统材质属性冲突。二是组件级开启时，沉浸式系统材质接口在低版本上不可用，需要进行版本判断，在低版本上将材质设置为undefined，保持组件原有样式。
+沉浸光感从API版本26.0.0开始支持。应用在接入沉浸光感时，如果需兼容低版本，需要处理好两方面问题。一是应用级开启时，避免沉浸式系统材质属性冲突。二是组件级开启时，沉浸式系统材质接口在低版本上不可用，需要进行版本判断，在低版本上将材质设置为undefined，保持组件原有样式。
 
 本文从应用级开启和组件级开启两个维度，提供沉浸式系统材质向低版本兼容的适配方案。
 
@@ -24,7 +24,7 @@ content_hash: sha256:c5ad4b9e6e8174b49382c8a03730af045bc942bdb7c9c4baaebccca0987
 
 以下示例以支持应用级开启的Select组件为例，该组件在ENABLE模式下默认开启沉浸式系统材质。通过uiMaterial.getMaterialInfo()获取材质配置信息后，当状态为ENABLE（即沉浸式系统材质已开启）时，将backgroundColor置为undefined，避免白色背景遮挡材质效果；否则保持Color.White白色背景，保证材质未开启时的显示效果。
 
-```ts
+```typescript
 import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
@@ -41,8 +41,11 @@ struct AppLevelCompatibility {
         .backgroundImage($r('app.media.invert'))
 
       Column() {
-        Select([{ value: '选项1' }, { value: '选项2' }])
-          .value('选择')
+        // 请将$r('app.string.select_option_1')替换为实际资源文件，在本示例中该资源文件的value值为"选项1"
+        // 请将$r('app.string.select_option_2')替换为实际资源文件，在本示例中该资源文件的value值为"选项2"
+        Select([{ value: $r('app.string.select_option_1') }, { value: $r('app.string.select_option_2') }])
+          // 请将$r('app.string.select_placeholder')替换为实际资源文件，在本示例中该资源文件的value值为"选择"
+          .value($r('app.string.select_placeholder'))
           // 应用级沉浸式系统材质开启时，将backgroundColor置为undefined，避免遮挡材质效果
           .backgroundColor(this.info.state === uiMaterial.MaterialState.ENABLE ? undefined :  Color.White)
       }
@@ -56,11 +59,11 @@ struct AppLevelCompatibility {
 
 应用级ENABLE模式下，Select呈现沉浸式系统材质样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Sa8x5HykSA-5ERkK0AfA8g/zh-cn_image_0000002706673776.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/0IDr1Id2TMq8S9McAd1jnw/zh-cn_image_0000002712403918.jpg)
 
 应用级在非ENABLE模式下，Select按钮背景为白色，呈现默认样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Wofo1MibScqdwZRzDc7c9w/zh-cn_image_0000002736432867.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/HbgoqZ_vQeeM_-tjrMX52w/zh-cn_image_0000002742122867.jpg)
 
 ## 组件级开启的兼容性适配方案
 
@@ -74,7 +77,7 @@ struct AppLevelCompatibility {
 
 以下以Select组件为例，通过deviceInfo.sdkApiVersion判断系统软件API版本：不低于26.0.0时，为组件设置材质样式为THIN的ImmersiveMaterial；低于26.0.0时，将systemMaterial设置为undefined，组件恢复原有样式。
 
-```ts
+```typescript
 import { uiMaterial } from '@kit.ArkUI';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
@@ -90,8 +93,11 @@ struct ComponentLevelCompatibility {
         .backgroundImage($r('app.media.invert'))
 
       Column() {
-        Select([{ value: '选项1' }, { value: '选项2' }])
-          .value('选择')
+        // 请将$r('app.string.select_option_1')替换为实际资源文件，在本示例中该资源文件的value值为"选项1"
+        // 请将$r('app.string.select_option_2')替换为实际资源文件，在本示例中该资源文件的value值为"选项2"
+        Select([{ value: $r('app.string.select_option_1') }, { value: $r('app.string.select_option_2') }])
+          // 请将$r('app.string.select_placeholder')替换为实际资源文件，在本示例中该资源文件的value值为"选择"
+          .value($r('app.string.select_placeholder'))
           // API版本不低于26.0.0时，设置沉浸式系统材质；低于26.0.0时，设置为undefined组件恢复原有样式。
           .systemMaterial(deviceInfo.sdkApiVersion >= 26 ?
             new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.THIN }) : undefined)
@@ -106,8 +112,8 @@ struct ComponentLevelCompatibility {
 
 系统软件API版本低于26.0.0时，组件保持原有样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/dwKCNXjbT4SkeMD4GDL90g/zh-cn_image_0000002706833712.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_2-jBLyMQsGg-49urh5jNA/zh-cn_image_0000002712243954.jpg)
 
 系统软件API版本26.0.0及以上时，组件呈现沉浸式系统材质效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/JFhiZTv8QAOeHWaKZtC8BQ/zh-cn_image_0000002706673776.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/uFZYo9-hRLuEgc_dEO38wg/zh-cn_image_0000002712403918.jpg)

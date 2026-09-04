@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 基于Surface模式进行视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 基于Surface模式进行视频编码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
+scraped_at: 2026-09-05T06:14:47+08:00
 doc_updated_at: 2026-08-24
-content_hash: sha256:9b9820df318e436b86b8ab7ecf85b376d831c9d0e0a2650d3069798fe0719b44
+content_hash: sha256:75d31d483b043045b94ed5a2bf4418dfa3116bbb017f69955bdee636aac8ba54
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ Surface分为生产者ProducerSurface和消费者ConsumerSurface。NativeWindow�
 
 Surface轮转流程如下所示，生产者先申请到一块Buffer，填充数据后将Buffer返回给BufferQueue。在触发回调函数后，通知消费者Buffer已经被生产者填充好数据。之后，消费者可以获取填充好数据的Buffer，直到不再需要该Buffer后，释放对应的Buffer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/jO_Qqb_PS3-oQKi28nBQTA/zh-cn_image_0000002736313623.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/zwNt0qArT02vdSSMnLmGjw/zh-cn_image_0000002742003705.png)
 
 视频编码器提供了获取NativeWindow的接口，通过NativeWindow可以将相机产生的数据与视频编码器进行对接。视频编码器作为消费者，将Buffer数据进行消费编码，从而实现视频编码的操作。下面我们将通过相机录制和屏幕录制，介绍基于Surface模式进行视频编码。
 
@@ -50,7 +50,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 6. 创建并启动编码输出子线程。
 7. 将从编码器中获取的NativeWindow对象设置给AVScreenCapture，启动屏幕录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/YDxHI3o9TFeRDssRcGTQiw/zh-cn_image_0000002706674580.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/b1R5Wm2_TXGg-ZwGWUACSw/zh-cn_image_0000002712404718.png)
 
 ### 开发步骤
 
@@ -291,7 +291,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 5. 启动视频编码器。
 6. 创建并启动编码输出子线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/C2QZc36gTHmewLl_z2IjDA/zh-cn_image_0000002736433669.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/XvlF-iZ4TBK-IZz-ybIilw/zh-cn_image_0000002742123667.png)
 
 ### 开发步骤
 

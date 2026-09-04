@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_routing_manager.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_routing_manager.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:fe78a147059ea393ad7b8fe68843d69c99f52fb9e383530c88f6c5fafaae6cbd
+scraped_at: 2026-09-05T06:19:50+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:0b37e375de24fc0654343e86a9125f2f54f9c95738b00200ec1e00dbc7519425
 ---
 
 ## 概述
@@ -489,7 +489,7 @@ OH_AudioCommon_Result OH_AudioRoutingManager_SetMicBlockStatusCallback(OH_AudioR
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AudioRoutingManager](capi-ohaudio-oh-audioroutingmanager.md) \*audioRoutingManager | 指向通过[OH\_AudioManager\_GetAudioRoutingManager](capi-native-audio-routing-manager-h.md#oh_audiomanager_getaudioroutingmanager)获取的音频路由管理器实例。 |
-| [OH\_AudioRoutingManager\_OnDeviceBlockStatusCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondeviceblockstatuscallback) callback | 函数指针将指向用于返回接受设备麦克风堵塞状态[OH\_AudioRoutingManager\_OnDeviceBlockStatusCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondeviceblockstatuscallback)。 |
+| [OH\_AudioRoutingManager\_OnDeviceBlockStatusCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondeviceblockstatuscallback) callback | 函数指针将指向用于返回接收设备麦克风堵塞状态[OH\_AudioRoutingManager\_OnDeviceBlockStatusCallback](capi-native-audio-routing-manager-h.md#oh_audioroutingmanager_ondeviceblockstatuscallback)。 |
 | void \*userData | 用户自定义数据指针。 |
 
 **返回：**

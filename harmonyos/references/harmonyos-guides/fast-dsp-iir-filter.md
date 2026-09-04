@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-dsp-iir-
 title: 使用DSP进行二阶IIR滤波
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用DSP进行二阶IIR滤波
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-05-28
-content_hash: sha256:25eae40e9258e35cde0c96ca7c27e6ec790f7dccb58f2464929c2b4aa5731542
+scraped_at: 2026-09-05T06:14:33+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:6b1b4c0a74edf0f1708f2a5ebe149fd2ee9cc7a19b7b2a2feed7c5e309a2ff9b
 ---
 
 二阶IIR滤波器用于音频和信号处理中的滤波操作，例如实现低通、高通或带通滤波。
@@ -148,11 +148,15 @@ FAST_ErrorCode multi_channel_filter_demo() {
         return ret;
     }
 
-    // 设置2节滤波器系数
+    // 设置滤波器系数：每个通道各 2 节，按 [通道][节] 顺序排列
     float coefficients[] = {
-        // 第1节系数
+        // 通道0 第1节系数
         0.049922035f, 0.099844069f, 0.049922035f, -1.558153539f, 0.649003273f,
-        // 第2节系数
+        // 通道0 第2节系数
+        0.049922035f, 0.099844069f, 0.049922035f, -1.558153539f, 0.649003273f,
+        // 通道1 第1节系数
+        0.049922035f, 0.099844069f, 0.049922035f, -1.558153539f, 0.649003273f,
+        // 通道1 第2节系数
         0.049922035f, 0.099844069f, 0.049922035f, -1.558153539f, 0.649003273f
     };
 

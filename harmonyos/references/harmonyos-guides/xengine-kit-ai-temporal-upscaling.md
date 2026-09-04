@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 时域AI超分
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 时域AI超分
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:51+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:a513a2302738393ce1beaa45e3eaa6456f1566ee3bdffc81bacc5285667d1d61
+scraped_at: 2026-09-05T06:15:00+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d7c8ffd6b71ccadbdd5c4026c2f9c89f32087329410e0e45215acebf1a6734df
 ---
 
 从6.0.0(20) 版本开始，新增支持OpenGL ES协议。
@@ -26,11 +26,18 @@ XEngine Kit提供时域AI超分特性，利用相机的抖动获取不同位置�
 
 以下接口为OpenGL ES和Vulkan时域AI超分设置接口，如需使用更丰富的设置和查询接口，具体API说明详见[接口文档](../harmonyos-references/xengine-kit-xengine.md)。
 
+**OpenGL ES接口：**
+
 | 接口名 | 描述 |
 | --- | --- |
 | const GLubyte \* HMS\_XEG\_GetString (GLenum name) | XEngine OpenGL ES扩展特性查询接口。 |
 | GL\_APICALL void GL\_APIENTRY HMS\_XEG\_TemporalUpscaleParameter(GLenum pname, const GLvoid \*param) | 设置时域AI超分输入参数。 |
-| GL\_APICALL void GL\_APIENTRY HMS\_XEG\_RenderTemporalUpscale(  GLuint inputTexture,  GLuint depthTexture,  GLuint motionVectorTexture,  GLuint dynamicMaskTexture,  GLfloat jitterX,  GLfloat jitterY  ) | 录制时域AI超分渲染命令。 |
+| GL\_APICALL void GL\_APIENTRY HMS\_XEG\_RenderTemporalUpscale(  GLuint inputTexture,  GLuint depthTexture,  GLuint motionVectorTexture,  GLuint dynamicMaskTexture,  GLfloat jitterX,  GLfloat jitterY  ) | 执行时域AI超分渲染命令。 |
+
+**Vulkan接口：**
+
+| 接口名 | 描述 |
+| --- | --- |
 | VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_EnumerateDeviceExtensionProperties (VkPhysicalDevice physicalDevice, uint32\_t \* pPropertyCount, XEG\_ExtensionProperties \* pProperties) | XEngine Vulkan扩展特性查询接口。 |
 | VKAPI\_ATTR VkResult VKAPI\_CALL HMS\_XEG\_CreateTemporalUpscale (VkDevice device, XEG\_TemporalUpscaleCreateInfo \* pTemporalUpscaleInfo, XEG\_TemporalUpscale \* pTemporalUpscale) | 创建XEG\_TemporalUpscale对象。 |
 | VKAPI\_ATTR void VKAPI\_CALL HMS\_XEG\_CmdRenderTemporalUpscale (VkCommandBuffer commandBuffer, XEG\_TemporalUpscale temporalUpscale, XEG\_TemporalUpscaleDescription \* pDescription) | 录制时域AI超分渲染命令。 |
@@ -40,23 +47,23 @@ XEngine Kit提供时域AI超分特性，利用相机的抖动获取不同位置�
 
 * 下面是基于OpenGL ES图形API平台集成时域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/oTqZ3fnJS9umafImCCJuEA/zh-cn_image_0000002736313851.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/FjFZVFi_QBqHWaF2WrOdBg/zh-cn_image_0000002742003939.jpg)
 
 1. 在游戏初始化阶段，调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性列表。检查返回列表中是否包含[XEG\_TEMPORAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_temporal_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_TemporalUpscaleParameter](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_temporalupscaleparameter)接口配置超分相关参数。
 3. 游戏运行时，首先渲染待超分的当前帧纹理。此阶段需完成包含Jitter的主Pass渲染，并确保Depth、Motion Vector和Color等输入纹理已准备就绪。
-4. 当待超分纹理渲染完成后，调用[HMS\_XEG\_RenderTemporalUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_rendertemporalupscale)接口对纹理执行时域AI超分处理。
+4. 当待超分纹理渲染完成后，调用[HMS\_XEG\_RenderTemporalUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_rendertemporalupscale)接口执行时域AI超分渲染命令。
 5. 超分完成后，继续渲染剩余纹理，如UI等。全部渲染结束后，进行帧送显。
 6. 游戏退出时，XEngine Kit会自动释放超分相关资源，无需手动管理。
 
 * 下面是基于Vulkan图形API平台集成时域AI超分的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/pS_PK1ziR-O8lyn2EDrr9Q/zh-cn_image_0000002706674808.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/c_e7wqchQeKk3R2k-KNuaA/zh-cn_image_0000002712404948.jpg)
 
 1. 用户进入游戏初始化场景时，调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性列表。检查返回列表中是否包含[XEG\_TEMPORAL\_UPSCALE\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_temporal_upscale_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_CreateTemporalUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_createtemporalupscale)接口创建时域AI超分实例。
 3. 游戏运行过程中，渲染当前待超分的帧纹理。
-4. 待超分纹理渲染完成（即带jitter的主pass渲染结束，且depth、motion vector、color等输入纹理准备就绪）后，调用[HMS\_XEG\_CmdRenderTemporalUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_cmdrendertemporalupscale)接口执行超分处理。
+4. 待超分纹理渲染完成（即带jitter的主pass渲染结束，且depth、motion vector、color等输入纹理准备就绪）后，调用[HMS\_XEG\_CmdRenderTemporalUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_cmdrendertemporalupscale)接口录制时域AI超分渲染命令。
 5. 超分渲染完成后，继续渲染剩余纹理（如UI等），渲染结束后进行画面送显。
 6. 游戏退出时，调用[HMS\_XEG\_DestroyTemporalUpscale](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_destroytemporalupscale)接口销毁超分实例。
 

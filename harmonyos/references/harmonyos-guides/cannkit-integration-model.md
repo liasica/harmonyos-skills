@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-integ
 title: 集成模型
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > App集成 > 集成模型
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:24+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8b6611cd79aa7934e88bc124bada945ebe7dde4f250b31b034ea29ad28f71edf
+content_hash: sha256:78971f72aaa363f4e4636f6f79e881061405623f0de162c46e9a929aa3d715cd
 ---
 
 模型的加载、编译和推理主要是在native层实现，应用层主要作为数据传递和展示作用。
@@ -14,7 +14,7 @@ content_hash: sha256:8b6611cd79aa7934e88bc124bada945ebe7dde4f250b31b034ea29ad28f
 
 本节阐述同步模式下单模型的使用，从流程上分别阐述每个步骤在应用层和native层的实现和调用。接口请参见[API参考](../harmonyos-references/cannkit.md)，示例请参见[SampleCode](https://gitcode.com/HarmonyOS_Samples/cannkit-samplecode-clientdemo-cpp)，本示例支持加载离线模型对图片中的物体进行分类，App运行效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/__hSkkirTgShT-Z8svNFgQ/zh-cn_image_0000002706835288.png)
+![](https://media:401788444085796714)
 
 ## 预置模型
 
@@ -140,7 +140,7 @@ content_hash: sha256:8b6611cd79aa7934e88bc124bada945ebe7dde4f250b31b034ea29ad28f
 
 ## 同步推理离线模型
 
-**说明** 
+![](https://media:401788444086000715) 
 
 如果不更换模型，则首次编译加载完成后可多次推理，即一次编译加载，多次推理。
 
@@ -158,6 +158,6 @@ content_hash: sha256:8b6611cd79aa7934e88bc124bada945ebe7dde4f250b31b034ea29ad28f
 
 上述流程可参见[SampleCode](https://gitcode.com/HarmonyOS_Samples/cannkit-samplecode-clientdemo-cpp)中"entry/src/main/cpp/Classification.cpp"文件中的GetResult、UnloadModel函数和"entry/src/main/cpp/HIAIModelManager.cpp"中的HIAIModelManager::GetResult、HIAIModelManager::UnloadModel函数。
 
-**说明** 
+![](https://media:401788444086050716) 
 
 开发者可根据需要自行设置模型推理优先级。使用[OH\_NNCompilation\_SetPriority](../harmonyos-references/capi-neural-network-core-h.md#oh_nncompilation_setpriority)接口，默认值为OH\_NN\_PRIORITY\_NONE，本接口应在模型推理前调用。

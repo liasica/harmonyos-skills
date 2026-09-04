@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: manager（星闪开关能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > manager（星闪开关能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:06de48ead2a979b6e469540b3777082c7b79ac3daedb5fa139e17eb2440f2d29
+scraped_at: 2026-09-05T06:18:55+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:6745d9b6dbb6f06c664b7e6b502e078dbbd33c84009721ee2fdd24b16428a43e
 ---
 
 本模块提供了管理星闪基础能力，包括获取设备信息、订阅状态变化事件等。
@@ -123,7 +123,7 @@ isNearLinkSupported(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 返回true：设备支持星闪。返回false：设备不支持星闪。 |
+| boolean | true表示设备支持星闪。false表示设备不支持星闪。 |
 
 **示例：**
 
@@ -336,7 +336,7 @@ try {
 
 on(type: 'pairingStateChange', callback: Callback<PairingStateParam>): void
 
-订阅配对请求事件。使用callback异步回调。
+订阅配对状态变化事件。。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -350,7 +350,7 @@ on(type: 'pairingStateChange', callback: Callback<PairingStateParam>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'pairingStateChange'，表示配对请求事件。  当调用[remoteDevice.startPairing](nearlink-remote-device.md#startpairing)发起主动配对，或者本机设备收到其他设备的配对请求时，触发该事件。 |
+| type | string | 是 | 事件回调类型，支持的事件为'pairingStateChange'，表示配对状态变化事件。  当调用[remoteDevice.startPairing](nearlink-remote-device.md#startpairing)发起主动配对，或者本机设备收到其他设备的配对请求时，触发该事件。 |
 | callback | Callback<[PairingStateParam](nearlink-manager.md#pairingstateparam)> | 是 | 回调函数，返回订阅的配对状态变化结果。 |
 
 **错误码：**
@@ -371,7 +371,7 @@ import { manager } from '@kit.NearLinkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let onPairingStateEvent:(data: manager.PairingStateParam) => void = (data: manager.PairingStateParam) => {
-  console.info('onPairStateChange addr: ' + data.address + 'state:' + data.state);
+  console.info('onPairStateChange addr: ' + data.address + ', state: ' + data.state);
 };
 try {
   manager.on('pairingStateChange', onPairingStateEvent);
@@ -384,7 +384,7 @@ try {
 
 off(type: 'pairingStateChange', callback?: Callback<PairingStateParam>): void
 
-取消订阅配对请求事件。使用callback异步回调。
+取消订阅配对状态变化事件。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -398,7 +398,7 @@ off(type: 'pairingStateChange', callback?: Callback<PairingStateParam>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型，支持的事件为'pairingStateChange'，表示配对请求事件。 |
+| type | string | 是 | 事件回调类型，支持的事件为'pairingStateChange'，表示配对状态变化事件。 |
 | callback | Callback<[PairingStateParam](nearlink-manager.md#pairingstateparam)> | 否 | 回调函数，返回订阅的配对状态变化结果。  填写该参数则取消当前callback订阅。不填写该参数则取消该type对应的所有回调。 |
 
 **错误码：**

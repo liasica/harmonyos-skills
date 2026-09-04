@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.form.FormExtensionAbility (FormExtensionAbility)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.FormExtensionAbility (FormExtensionAbility)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7f9d706af2fc170c3aa0971b50a8635fda8866f0cf378a1036425c73b678c63c
+scraped_at: 2026-09-05T06:18:19+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d0fbec8c851f790da79927e1821b25f3f30a5873ced93f6570e55fdf0b2ac838
 ---
 
 FormExtensionAbility为卡片扩展模块，提供卡片创建、销毁、刷新等生命周期回调。适用于需要在应用中实现卡片功能的场景，帮助开发者快速构建卡片数据更新机制，提升用户与应用的交互体验。
@@ -102,7 +102,7 @@ export default class MyFormExtensionAbility extends FormExtensionAbility {
 
 onCastToNormalForm(formId: string): void
 
-卡片提供方收到卡片使用方将临时卡片转常态卡片的通知接口。临时卡片、常态卡片是卡片使用方的概念，其中：临时卡片是短期存在的，在特定事件或用户行为后显示，完成后自动消失。常态卡片具有持久性，在用户主动清除或更改前将一直保留；日常开发的功能卡片均归属此类。在当前版本，卡片使用方不使用临时卡片。
+卡片提供方收到卡片使用方将临时卡片转为常态卡片的通知接口。临时卡片、常态卡片是卡片使用方的概念，使用方会在需要时请求将临时卡片转换为常态卡片；提供方收到通知后，应将本地记录中该卡片由临时卡片数据更新为常态卡片数据，避免后续清理长时间未删除的临时卡片时误删已转换的卡片信息。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

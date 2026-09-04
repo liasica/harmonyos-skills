@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opensles
 title: OpenSL ES
 breadcrumb: API参考 > 标准库 > OpenSL ES
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6a85116f61892621c91a3484a94d667213cfcd3df597cec89943ed3ba24aefc7
+scraped_at: 2026-09-05T06:21:39+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:bf3fee4eb627279c618b0735e518d425222ecf05cb3e8c253c8426fee4325ad7
 ---
 
 **说明** 
@@ -14,13 +14,13 @@ HarmonyOS上的OpenSL ES接口，是早期SDK8版本开始提供，用于支持�
 
 ## 简介
 
-OpenSL ES（Open Sound Library for Embedded System）即嵌入式音频加速标准。为开发者提供了标准化、高性能以及低响应时间的音频功能开发的对象和接口。相对于开源免费的OpenSL ES，HarmonyOS基于[OpenSL ES](https://www.khronos.org/opensles/) 1.0.1 API规范实现了部分Native API，相关接口开放情况如表[支持的API](opensles.md#支持的api)所示。
+OpenSL ES（Open Sound Library for Embedded Systems）即嵌入式音频加速标准。为开发者提供了标准化、高性能以及低响应时间的音频功能开发的对象和接口。相对于开源免费的OpenSL ES，HarmonyOS基于[OpenSL ES](https://www.khronos.org/opensles/) 1.0.1 API规范实现了部分Native API，相关接口开放情况如表[支持的API](opensles.md#支持的api)所示。
 
 ## 引入OpenSL ES能力
 
 如果开发者需要使用OpenSL ES相关功能，首先请添加头文件：
 
-```screen
+```
 #include <SLES/OpenSLES.h>
 #include <SLES/OpenSLES_OpenHarmony.h>
 #include <SLES/OpenSLES_Platform.h>
@@ -28,7 +28,7 @@ OpenSL ES（Open Sound Library for Embedded System）即嵌入式音频加速标
 
 其次在CMakeLists.txt中添加以下链接动态库：
 
-```screen
+```
 libOpenSLES.so
 ```
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Interface (MarkerClusterInfo)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MarkerClusterInfo)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dd91e0aa0df71773b0b2bdba99d802d4cc796984872dcc58d863d67267dd1031
+scraped_at: 2026-09-05T06:21:10+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d8c9689a20c3efc079328c953db66a1df8c355afe86c3ea06defb09d67c2b359
 ---
 
 ## 导入模块
@@ -16,7 +16,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 ## MarkerClusterInfo
 
-聚合图层的标记的信息。
+聚合图层的标记的信息。当进入室内图时，会通过[on](map-map-clusteroverlay.md#onclusterclick)方法触发回调，并返回[MarkerClusterInfo](map-map-markerclusterinfo.md)类型的实例。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

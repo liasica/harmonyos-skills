@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bluetooth-hci
 title: 如何抓取蓝牙HCI日志
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙常见问题 > 如何抓取蓝牙HCI日志
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
+scraped_at: 2026-09-05T06:14:28+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:261d26b7f47ecd527d770b1859d2562728488cc1350e00b455b4e8adc2a7fa21
+content_hash: sha256:5595a6c2647ba39e1952bdc9df915336c0144015e14c2ce61824c51e1de1b59a
 ---
 
 ## 简介
@@ -27,21 +27,21 @@ content_hash: sha256:261d26b7f47ecd527d770b1859d2562728488cc1350e00b455b4e8adc2a
 
 在调测手机上进入开发者模式，开启方法请参考 **[开启开发者选项](ide-developer-mode.md#section530763213432)**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/YTmN6_ByQsuDkBWSpUelKg/zh-cn_image_0000002706834330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/DaWGvigVTgS0K0hFCCV3ew/zh-cn_image_0000002712244568.png)
 
 ### 步骤二：连接蓝牙设备进行调试
 
 开启手机蓝牙，连接需要调试的蓝牙外设，进行设备连接调试或问题复现操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/tE7RYgpCQ0GzAcH6Im7XoQ/zh-cn_image_0000002736313437.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/lINyBB8QQHaDBWbfCwbygw/zh-cn_image_0000002742003521.png)
 
 ### 步骤三：一键采集HCI日志
 
 连接调试操作完毕后，下拉通知栏，点击**开发者模式**卡片，卡片下方会显示**收集**按钮，点击即可一键采集HCI日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/3yfnvRdvT3K-Xc9nYRLCZg/zh-cn_image_0000002706674396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/UERwb-OVQGGOzJk-VaPDZA/zh-cn_image_0000002712404534.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/FGPPMhfZQj-NJhRHLyHeJg/zh-cn_image_0000002736433485.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/HKe05qJdTzuMlEIQz8BJyg/zh-cn_image_0000002742123483.png)
 
 **说明** 
 
@@ -53,13 +53,13 @@ content_hash: sha256:261d26b7f47ecd527d770b1859d2562728488cc1350e00b455b4e8adc2a
 
 采集完成后，进入手机文件管理，选择**我的手机**，点击**Documents**目录，即可找到日志压缩包
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Tsovt6XMSLufuygw2xF--g/zh-cn_image_0000002706834332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/3-iXfxD_SPK4n9UNxeBG7w/zh-cn_image_0000002712244570.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/wOLzQ40ST26YKWILbhrrOQ/zh-cn_image_0000002736313439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/-4mpoZ_PT8ucLJaPKucsTg/zh-cn_image_0000002742003523.png)
 
 通过**华为分享**、**三方应用**等方式，将日志压缩包分享到PC侧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ZZ8B5XdRQluVDCKBPIMxSw/zh-cn_image_0000002706674398.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/j_PajLWzRPi6_DLx0r9bLw/zh-cn_image_0000002712404536.png)
 
 **说明** 
 

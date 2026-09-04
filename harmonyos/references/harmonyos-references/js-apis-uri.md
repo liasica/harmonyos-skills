@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.uri (URI字符串解析)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.uri (URI字符串解析)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7378db1e161fb0e5e92c3aeeafb94afe6f2119da4c6589c1908897603b5049be
+scraped_at: 2026-09-05T06:16:45+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:782d68890aed146a05e51ba45f4d74aee8f8c9a660698224a0624cc46a5ffdb3
 ---
 
 本模块提供URI字符串解析功能，支持URI各组成部分（协议、主机、端口、路径、查询参数和片段等）的提取与设置，以及URI编码/解码、比较判断、路径规范化和查询参数操作等能力。
@@ -657,7 +657,7 @@ console.info(uriInstance.getSegment().toString()); // path,to,image.jpg
 
 ### createFromParts12+
 
-createFromParts(scheme: string, ssp: string, fragment: string): URI
+static createFromParts(scheme: string, ssp: string, fragment: string): URI
 
 根据提供的方案（scheme）、方案特定部分（ssp）以及片段（fragment）创建一个新的URI对象。
 

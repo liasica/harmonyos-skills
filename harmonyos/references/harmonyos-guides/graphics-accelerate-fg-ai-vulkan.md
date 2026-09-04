@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: Vulkan平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > AI超帧模式 > Vulkan平台
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:21+08:00
+scraped_at: 2026-09-05T06:14:58+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:24cfa30781a090d6f239ab0bd780b52c6d636e25d0d96d0e9033ce2cbda4f901
+content_hash: sha256:960a878093cb2a5ae4d9b4b29eb1a30859af8ce997a809a6296938867c174c03
 ---
 
 ## 业务流程
@@ -14,7 +14,7 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
 
 下面是基于Vulkan图形API平台，集成AI超帧的主要业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/kwvSJ6omSSaCw8CUQ9VeRg/zh-cn_image_0000002706674782.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/LLKIKLt7RouIWEiqSFfq7g/zh-cn_image_0000002712404922.png)
 
 1. 用户进入超帧适用的游戏场景。
 2. 游戏应用调用[HMS\_FG\_IsFrameGenerationSupported](../harmonyos-references/_graphics_accelerate.md#hms_fg_isframegenerationsupported)查询是否支持AI超帧特性。如果当前设备支持此特性，则继续步骤3创建超帧上下文实例，否则返回false，结束流程。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-creat
 title: CreateOperator
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OperatorFactory > CreateOperator
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:11+08:00
+scraped_at: 2026-09-05T06:15:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c33c634bfd284a587e1a93cf44e58b3afdb82b97cf8897c9429dd42be689a119
+content_hash: sha256:1ae9e007a37d8b14b1d4e7ac342c90edbfe85491f4592863fd10fd5def92baf9
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:c33c634bfd284a587e1a93cf44e58b3afdb82b97cf8897c9429dd42be68
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444102209870) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

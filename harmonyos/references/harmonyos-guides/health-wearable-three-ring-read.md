@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearab
 title: 实时三环数据
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据 > 实时三环数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:56+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-05T06:15:08+08:00
+doc_updated_at: 2026-09-04
 content_hash: sha256:2c1cb916755741868d7fe08384e2a5bf5f8bcfa43e36092657801e5d2ea24691
 ---
 

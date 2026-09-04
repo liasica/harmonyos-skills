@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-f
 title: 企业类应用可用权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 企业类应用可用权限
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:62485e562a5e4bb8cf34c6592cf49591f4fdbbd37a0717590e830aee75570ade
+scraped_at: 2026-09-05T06:14:17+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:0e2a474e71d27b2cf76aa3eb15b02765802ad68139d42096155d6559a74cce88
 ---
 
 以下权限面向企业类应用开放。
@@ -45,7 +45,7 @@ content_hash: sha256:62485e562a5e4bb8cf34c6592cf49591f4fdbbd37a0717590e830aee755
 
 **注意** 
 
-以下权限不支持自动签名，因此在调试和发布阶段，均需参照[手动签名](ide-signing.md#section297715173233)的步骤，完成手动签名。
+以下权限不支持自动签名，因此在调试和发布阶段，均需参照[手动签名](ide-signing-manual.md)的步骤，完成手动签名。
 
 ## ohos.permission.SET\_FILE\_GUARD\_POLICY
 

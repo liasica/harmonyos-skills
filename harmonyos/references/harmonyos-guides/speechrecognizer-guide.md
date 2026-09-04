@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speechrecogni
 title: 语音识别
 breadcrumb: 指南 > AI > Core Speech Kit（基础语音服务） > 语音识别
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:14+08:00
+scraped_at: 2026-09-05T06:15:42+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:ff8365566781d886870a618d72f1135eb260d3d4b90ca41747351b8dba2eb0da
+content_hash: sha256:474b3fc16a1cfaa913e17e1e315bbf9d15bd4eb399c95458a72ce78e4cfbe30a
 ---
 
 将一段中文音频信息（中文、中文语境下的英文；短语音模式不超过60s，长语音模式不超过8h）转换为文本，音频信息可以为PCM音频文件或者实时语音。
@@ -113,7 +113,7 @@ content_hash: sha256:ff8365566781d886870a618d72f1135eb260d3d4b90ca41747351b8dba2
    asrEngine?.writeAudio(sessionId, uint8Array);
    ```
 
-   **说明** 
+   ![](https://media:401788444057939546) 
 
    1. 如需通过录音获取音频流，请打开麦克风权限，参考步骤10配置相关权限。
    2. 如需从音频文件中读取音频流，请在项目中的main\resources\resfile路径下存放pcm文件。

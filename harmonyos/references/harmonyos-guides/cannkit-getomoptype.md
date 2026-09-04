@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getom
 title: GetOmOptype
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OpRegistrationData > GetOmOptype
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:73baf19a9baab833d15148671567d6fa5f868b6fd781068cca3f86727e76daf5
+content_hash: sha256:6368cf479e191bcd52a08c50b185e021036ae497acee121b5f4ec8b7499d6587
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:73baf19a9baab833d15148671567d6fa5f868b6fd781068cca3f86727e7
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444113256922) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: MindSpore Lite Kit算子支持列表
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 附录 > MindSpore Lite Kit算子支持列表
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
+scraped_at: 2026-09-05T06:15:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6aac83edc6bdbbfe479927130b7b077a50198a5ea66d9ef46f61c58bf10b41c0
+content_hash: sha256:1f0aff4c4cc046f0389133c54d863f986b0796ac78cfb101d55f17fe3a361bf0
 ---
 
 本文档介绍了MindSpore Lite Kit与ONNX Opset18相比所支持的CPU后端[算子](mindspore-lite-term.md#operator算子)列表以及对应关系。在使用模型转换工具将ONNX模型转换为ms模型进行部署时，通过查询此表可以知道MindSpore Lite Kit所支持的常用ONNX算子，以确保模型转换成功。
 
-**说明** 
+![](https://media:401788444063716592) 
 
 * 以下所有算子，均不支持int64类型输入。
 

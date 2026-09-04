@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: scan（星闪扫描能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > scan（星闪扫描能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7b724d8109cddc962244e7773fbd0e66b186a7239e3668643190b9d6f51f7071
+scraped_at: 2026-09-05T06:18:55+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:afe0b7a6813020b46cac08740499c16c0edb291892e6f12cd591d69e79768a53
 ---
 
 本模块提供了星闪扫描相关功能。
@@ -307,8 +307,8 @@ try {
 | rssi | number | 否 | 否 | 表示扫描到的设备rssi值，取值范围[-128, 127]，单位dBm，其中127表示无效值。 |
 | data | ArrayBuffer | 否 | 否 | 表示广播包数据。 |
 | deviceName | string | 否 | 否 | 表示扫描到的设备名称。字符串长度范围[0, 30]。 |
-| isConnectable | boolean | 否 | 否 | 表示扫描到的广播是否可连接。true：可连接，false：不可连接 |
-| deviceClass | [constant.DeviceClass](nearlink-constant.md#deviceclass) | 否 | 是 | 表示扫描到的设备类型  **起始版本：** 5.1.0(18) |
+| isConnectable | boolean | 否 | 否 | 表示扫描到的广播是否可连接。true表示可连接，false表示不可连接。 |
+| deviceClass | [constant.DeviceClass](nearlink-constant.md#deviceclass) | 否 | 是 | 表示扫描到的设备类型。  **起始版本：** 5.1.0(18) |
 
 ## ScanFilters
 
@@ -342,7 +342,7 @@ try {
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scanMode | [ScanMode](nearlink-scan.md#scanmode) | 否 | 是 | 表示扫描模式。默认值为'SCAN\_MODE\_LOW\_POWER'。 |
-| duration | number | 否 | 是 | 表示扫描持续时间。单位second，取值范围[10, 60]，默认值为全时段扫描。 |
+| duration | number | 否 | 是 | 表示扫描持续时间。单位：s，取值范围[10, 60]，默认值为全时段扫描。 |
 
 ## ScanMode
 

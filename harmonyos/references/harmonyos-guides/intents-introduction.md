@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-intro
 title: Intents Kit简介
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > Intents Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:14+08:00
+scraped_at: 2026-09-05T06:15:42+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:56c691868af86ace10323df6352570415ba58b90756278fc56531e7fd08b5baf
+content_hash: sha256:66f4c86ecab66f95d4a1f05eba9f6aa1a68ae8d85df8279f2e4144da81bb8b41
 ---
 
 Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意图连接了应用/元服务内的业务功能。
@@ -14,7 +14,7 @@ Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意�
 
 系统入口、意图框架、鸿蒙生态的关系如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/BwatTfNdRwOp1zuX38X3Jw/zh-cn_image_0000002736314481.png)
+![](https://media:401788444054452523)
 
 ## Intents Kit优势
 
@@ -38,7 +38,7 @@ Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意�
 
 HarmonyOS、应用/元服务的交互中，意图运行方式分为意图调用和意图共享：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/yFjpmTkWQzmwaYYTcsoGrA/zh-cn_image_0000002706675438.png)
+![](https://media:401788444054497524)
 
 | “**意图”运行方式** | **发起者** | **定义** |
 | --- | --- | --- |

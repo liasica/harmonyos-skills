@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-graph
 title: 图编译和图执行
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子部署 > 算子入图（GE图）开发 > 图编译和图执行
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-05-12
-content_hash: sha256:c05287d7830d11c5fc9cb8696261e0c9257907577b70d23daf5f6488d71e1ee7
+content_hash: sha256:ed0dd81583b98d5be0468ebf1784be258deb4aeedb9aaff6bba021aa4c50c876
 ---
 
 单算子模型执行是指基于图IR执行算子，先编译算子（例如，使用OMG工具将Ascend IR定义的单算子描述文件编译成算子omc模型文件），再调用模型加载推理接口执行单算子网络。下文仅提供单算子模型执行的样例和基础内容讲解，详细内容请参考[端侧部署](cannkit-whole-deployment-process.md)章节。
 
-**说明** 
+![](https://media:401788444096765835) 
 
 HarmonyOS Next暂不支持图编译与图执行，仅支持通过[AI框架算子适配](cannkit-overview-of-ai-framework-operator.md)方式集成自定义算子，以下步骤仅供参考。
 

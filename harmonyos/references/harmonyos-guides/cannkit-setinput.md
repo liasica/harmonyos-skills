@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-setin
 title: SetInput
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > SetInput
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:e27f57d12fe01ebddbb6314dbb33db65586733e793274745368d774172861118
+content_hash: sha256:01ca37a98f74a1023d1fc2d5445a26a1e2c8133dfee37abe5cb981d0a32e3e93
 ---
 
 ## 函数功能
@@ -20,7 +20,7 @@ content_hash: sha256:e27f57d12fe01ebddbb6314dbb33db65586733e793274745368d7741728
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444115328935) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

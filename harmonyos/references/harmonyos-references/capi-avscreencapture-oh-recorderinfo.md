@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avsc
 title: OH_RecorderInfo
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_RecorderInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:18e41cd03521539f0d06a8171e7b2e245fb9a04aa61e7100ba3835ca393214c0
+scraped_at: 2026-09-05T06:20:25+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:e9e26e13619ed34b3d33433d5fbdbde94f4995b7b5d2557d71f6ce7d29980b2a
 ---
 
 ```c
@@ -30,6 +30,6 @@ OH\_RecorderInfo用于存储屏幕录制文件的输出信息，包括录制文�
 
 | 名称 | 描述 |
 | --- | --- |
-| char\* url | 录制文件的URL，用于指定录屏文件的输出位置。仅支持本地文件路径URL格式。需与urlLen配合使用。 |
+| char \*url | 录制文件的URL，用于指定录屏文件的输出位置。仅支持本地文件路径URL格式。需与urlLen配合使用。 |
 | uint32\_t urlLen | 录制文件的URL的长度值，表示url参数所指字符串的字节长度（不包括终止空字符）。需与url参数配合使用，不匹配时可能导致录制异常。 |
 | [OH\_ContainerFormatType](capi-native-avscreen-capture-base-h.md#oh_containerformattype) fileFormat | 录制文件的容器封装格式类型，用于指定录屏输出的文件封装格式。可选值：CFT\_MPEG\_4A（M4A格式，适用于仅需要录制音频的场景）、CFT\_MPEG\_4（MP4格式，适用于需要同时录制音视频的场景）。可选值为[OH\_ContainerFormatType](capi-native-avscreen-capture-base-h.md#oh_containerformattype)中定义的格式类型。 |

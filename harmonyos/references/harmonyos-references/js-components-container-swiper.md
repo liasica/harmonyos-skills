@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > swiper
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:12+08:00
+scraped_at: 2026-09-05T06:17:36+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:74c165e372d848a8dae779f8186aa49f0d4ef1986ad391d3072ff30269406e7d
+content_hash: sha256:1528803f71c3f70882a90bc2b4df25c1f823ecbd00f5b7edc36a22d625afcf91
 ---
 
 **说明** 
@@ -161,4 +161,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/h-aFkkx-TWWeAw7Z0LpbDg/zh-cn_image_0000002736315481.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/OHZLs3KdQjCLRwRrZTQraA/zh-cn_image_0000002742005635.gif)

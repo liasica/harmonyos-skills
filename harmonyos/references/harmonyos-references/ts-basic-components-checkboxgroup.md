@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: CheckboxGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > CheckboxGroup
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:01+08:00
+scraped_at: 2026-09-05T06:17:12+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b48e07efe6c959703530c9f82f164ffa3082ea56a8eb4cf3ceadc463dfa214d3
+content_hash: sha256:afd19d5c5cedcf2049c23aa2155b532d62211066abaebe454eed8379b9079213
 ---
 
 多选框群组，用于控制多选框全选或取消全选状态。适用于需要批量管理多个Checkbox选择状态的场景，如列表项批量选择、表单全选等，可简化用户操作，提升交互体验。
@@ -448,7 +448,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/gZiCDb3DSEWHAbOy36jpRQ/zh-cn_image_0000002706835860.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/u4ifGTusS4u1dfvubmSUoA/zh-cn_image_0000002712246106.gif)
 
 ### 示例2（自定义勾选样式）
 
@@ -527,7 +527,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/BxBh7pn5TX6clDGV0GdIkg/zh-cn_image_0000002736314965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/LcA-Uq1oRveZ23al-NQoLg/zh-cn_image_0000002742005055.gif)
 
 ### 示例3（自定义多选框样式）
 
@@ -649,7 +649,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/gIWcKSyTRAGK0lWD1LGzGQ/zh-cn_image_0000002706675922.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/1QAk9MYgTOGe8X3fODqp_w/zh-cn_image_0000002712406066.gif)
 
 ### 示例4（设置全选）
 
@@ -806,4 +806,4 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/-TuvYWUjQ36_FFxQ257EWw/zh-cn_image_0000002736435009.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/S-0uyZ-oRKeyGjHUSAd1EA/zh-cn_image_0000002742125015.gif)

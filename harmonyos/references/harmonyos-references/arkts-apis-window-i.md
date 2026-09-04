@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:53+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:e72af30ba8344459ca4399aba6bb3dde0ca225c298342ba6c5dc32aa22e20730
+scraped_at: 2026-09-05T06:16:59+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:9a0801bcae0284c37ea5da85f225c4f00c8c9b2b6c79d5ede6ad2ef7b51023a8
 ---
 
 **说明** 
@@ -141,7 +141,7 @@ content_hash: sha256:e72af30ba8344459ca4399aba6bb3dde0ca225c298342ba6c5dc32aa22e
 
 示意图展示了leftRect、topRect、rightRect、bottomRect的含义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/0zuH9obVR4GQ-mnE3b2N3Q/zh-cn_image_0000002706835590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/fpuEFMMITTK8iV-ZUNdeTg/zh-cn_image_0000002712245838.png)
 
 ## UIEnvAvoidAreaVP23+
 
@@ -256,7 +256,7 @@ content_hash: sha256:e72af30ba8344459ca4399aba6bb3dde0ca225c298342ba6c5dc32aa22e
 | drawableRect11+ | [Rect](arkts-apis-window-i.md#rect7) | 否 | 否 | 窗口内的可绘制区域尺寸，其中左边界上边界是相对于窗口左上顶点计算。在Stage模型下，需要在调用[loadContent()](arkts-apis-window-window.md#loadcontent9)或[setUIContent()](arkts-apis-window-window.md#setuicontent9)加载页面内容后获取该属性。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | type(deprecated) | [WindowType](arkts-apis-window-e.md#windowtype7) | 否 | 否 | 窗口类型。  当前存在主窗使用[getWindowProperties()](arkts-apis-window-window.md#getwindowproperties9)接口返回type不准确的问题，从API版本26.0.0开始废弃，可使用[windowType](arkts-apis-window-i.md#windowproperties)字段代替。  **起始版本：** 7  **废弃版本：** 26.0.0  **替代接口：** [windowType](arkts-apis-window-i.md#windowproperties)  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | windowType | [WindowType](arkts-apis-window-e.md#windowtype7) | 否 | 是 | 窗口类型，默认值是[TYPE\_MAIN](arkts-apis-window-e.md#windowtype7)。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
-| isFullScreen | boolean | 否 | 否 | 窗口是否处于[沉浸式布局](../harmonyos-guides/immersive-window-feature.md#沉浸式布局)并设置了状态栏隐藏。对于主窗口，如果主动调用了接口（如[setSpecificSystemBarEnabled](arkts-apis-window-window.md#setspecificsystembarenabled11)或者[setWindowSystemBarEnable](arkts-apis-window-window.md#setwindowsystembarenable9)）设置状态栏隐藏且满足isLayoutFullScreen为true的条件下，返回值为true；其他情况下返回值均为false。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
+| isFullScreen | boolean | 否 | 否 | 窗口是否处于[沉浸式布局](../harmonyos-guides/immersive-window-feature.md#沉浸式布局)并设置了状态栏隐藏。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core  **设备行为差异：**  - 在PC/2in1设备或其他设备的电脑模式下：  在HarmonyOS 6.1.1之前，如果主窗口或子窗口处于沉浸式布局（即isLayoutFullScreen为true）并且已进入全屏会返回true；其他情况下返回值均为false。  从HarmonyOS 6.1.1开始，如果主窗口调用接口（如[setSpecificSystemBarEnabled](arkts-apis-window-window.md#setspecificsystembarenabled11)或者[setWindowSystemBarEnable](arkts-apis-window-window.md#setwindowsystembarenable9)）设置状态栏隐藏且处于沉浸式布局（即isLayoutFullScreen为true）的条件下，返回值为true；其他情况下返回值均为false。  - 在其他设备或其他模式下：  如果主窗口调用接口（如[setSpecificSystemBarEnabled](arkts-apis-window-window.md#setspecificsystembarenabled11)或者[setWindowSystemBarEnable](arkts-apis-window-window.md#setwindowsystembarenable9)）设置状态栏隐藏且处于沉浸式布局（即isLayoutFullScreen为true）的条件下，返回值为true；其他情况下返回值均为false。 |
 | isLayoutFullScreen7+ | boolean | 否 | 否 | 窗口是否处于[沉浸式布局](../harmonyos-guides/immersive-window-feature.md#沉浸式布局)。对于子窗，如果设置了沉浸式布局，返回值为true。  对于主窗，如果设置了沉浸式布局且处于全屏模式，返回值为true。  其他情况下均返回false  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | focusable7+ | boolean | 否 | 否 | 窗口是否可获焦。true表示可获焦；false表示不可获焦。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |
 | touchable7+ | boolean | 否 | 否 | 窗口是否可触摸。true表示可触摸；false表示不可触摸。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.WindowManager.WindowManager.Core |

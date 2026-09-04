@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 不透明度设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 不透明度设置
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:56+08:00
+scraped_at: 2026-09-05T06:17:03+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ee47aacc83f0057d80ed5e14593375d6c5d7b0ff4e6eaba09092fbeedebf397b
+content_hash: sha256:05500378b4e76fc2cddfe7f9f0fd67ec9ccc2543aba8319372252371a943132e
 ---
 
 设置组件的不透明度。
@@ -92,4 +92,4 @@ struct OpacityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/r-vHx-dKTYCC46iWdiwaWA/zh-cn_image_0000002706835640.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/uxDrsJwDT9q64PtdBSmqtA/zh-cn_image_0000002712245888.png)

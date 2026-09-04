@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearab
 title: 读取健康记录
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据 > 读取健康记录
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:56+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-05T06:15:08+08:00
+doc_updated_at: 2026-09-04
 content_hash: sha256:08e5b979ad2ae96b2145bea95b3815cceb4c63baafc9243eeeb1ef4ba15afeec
 ---
 

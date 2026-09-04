@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@arkts.lang (ArkTS语言基础能力)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.lang (ArkTS语言基础能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cc9febd66b9469595bc854c47440c698db0744d91b3a2dbc699f5ad36c7919cf
+scraped_at: 2026-09-05T06:16:41+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:45e8c36c2e0d515f77a356a2c48a83a4ab05f8c5ef9384f374925b942df3a504
 ---
 
 本模块提供ArkTS语言的基础类型定义，支持跨线程传递数据结构、注解保留策略控制等功能。当前提供ISendable类型、RetentionPolicy枚举类型和Retention注解。
@@ -22,7 +22,9 @@ content_hash: sha256:cc9febd66b9469595bc854c47440c698db0744d91b3a2dbc699f5ad36c7
 import { lang, Retention, RetentionPolicy } from '@kit.ArkTS';
 ```
 
-## lang.ISendable
+## lang
+
+### ISendable
 
 是所有[Sendable](../harmonyos-guides/arkts-sendable.md#基础概念)对象类型（除null和undefined）的父类型。实现该接口后，自定义类的实例将支持跨线程传递。自身不定义任何方法和属性。
 

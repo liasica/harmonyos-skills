@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 窗口错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > 图形图像 > 窗口错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c86bc746722563b6d24c77e7c1c66369393171e5b856a937c5c9eda3ae56ec09
+scraped_at: 2026-09-05T06:18:03+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:f38436f14c7bd4d69b1bd383ae2bdbc34b3241e990d713d7db7f5db581b25bc3
 ---
 
 **说明** 
@@ -537,6 +537,45 @@ This window context is abnormal.
 **处理步骤**
 
 在对窗口上下文进行操作前，检查该窗口上下文是否存在，确保其未被销毁，再进行相关操作。
+
+## 1300007 恢复当前窗口的主窗口到前台显示失败
+
+**错误信息**
+
+Restore parent main window failed.
+
+**错误描述**
+
+恢复当前窗口的主窗口到前台显示失败。
+
+**可能原因**
+
+1. 主窗口处于PAUSED生命周期状态。
+2. 主窗口处于后台。
+
+**处理步骤**
+
+确保主窗口生命周期状态正常，再进行相关操作。
+
+## 1300008 显示设备异常
+
+**错误信息**
+
+The display device is abnormal.
+
+**错误描述**
+
+显示设备异常。
+
+**可能原因**
+
+1. 显示设备没有准备好。
+2. 显示设备被移除。
+3. 显示设备被损坏。
+
+**处理步骤**
+
+确保显示设备正常，再进行相关开发。
 
 ## 1300009 父窗口无效
 

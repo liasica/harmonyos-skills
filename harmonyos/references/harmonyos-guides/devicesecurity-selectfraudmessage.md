@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 获取诈骗消息
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 反诈选择器 > 获取诈骗消息
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:30+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:84c8ca314c6b0f8d5ccaa37954530014a25d2263f835a3ecb2c1c27787f0c010
+scraped_at: 2026-09-05T06:14:23+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:d2a196fd04b391be05a57ad3c6f4ae688597a29a974ba8c9c46e265440b8f882
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:84c8ca314c6b0f8d5ccaa37954530014a25d2263f835a3ecb2c1c27787f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Fh4xcP_9QHW3V39K5V3RgA/zh-cn_image_0000002736313413.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/jMOI6SDNRRi71Do_50Al9A/zh-cn_image_0000002742003497.png)
 
 **流程说明：**
 
@@ -33,7 +33,7 @@ content_hash: sha256:84c8ca314c6b0f8d5ccaa37954530014a25d2263f835a3ecb2c1c27787f
 
 | 接口名 | 描述 |
 | --- | --- |
-| selectFraudMessage(context: common.Context, options?: AntifraudMessageOptions): Promise<AntifraudCallLogResult> | 获取诈骗消息信息。 |
+| selectFraudMessage(context: common.Context, options?: AntifraudMessageOptions): Promise<AntifraudMessageResult> | 获取诈骗消息信息。 |
 
 ## 开发步骤
 

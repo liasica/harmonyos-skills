@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataaugmentat
 title: 智慧化数据检索-ArkTS
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > 智慧化数据检索-ArkTS
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
+scraped_at: 2026-09-05T06:14:13+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:8276b36e0f94bf5fda97cbd3ee800babbe10e1c98a3a48bd89035c81c7deb85e
+content_hash: sha256:1d9e2d27ca67df9aa7f790f6d0d2a7a653ab967be9f80dc5bba0100ee29e82ee
 ---
 
 ## 场景介绍
@@ -70,7 +70,7 @@ content_hash: sha256:8276b36e0f94bf5fda97cbd3ee800babbe10e1c98a3a48bd89035c81c7d
 
 以多路召回结果作为输入，基于RRF算法实现多路召回结果的重排，并支持多路召回的每路进行权重配置。RRF算法通常会根据元素在各个召回策略中的排名来计算RRF得分。例如，对于一个元素在不同召回策略中的排名分别为 \_r\_1,\_r\_2,⋯,r\*\*n，其 RRF得分可以通过以下公式来计算。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/StbD9zy2Toe5TswmS3ax-w/zh-cn_image_0000002706834140.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/lGRv8lrTTJ6ALTUekHObXg/zh-cn_image_0000002712244380.png)
 
 其中\_k\_是一个常数，用于调整排名的影响程度。通过计算每个元素的RRF得分，将元素根据得分进行排序，得到结果列表。
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-alloc
 title: AllocTensor
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 内存管理与同步控制 > TQueBind > AllocTensor
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:06+08:00
+scraped_at: 2026-09-05T06:15:29+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:50edd1aa68f5be9fe9f1ad502b4807edaae27c0d3b36fb0e3d9fc0b4e34aef10
+content_hash: sha256:ffb44aaf28e22d1b503decfedcd0bffdca440e417a20797138869aee0a129187
 ---
 
 ## 功能说明
 
 从队列中分配Tensor，Tensor所占大小为InitBuffer时设置的每块内存长度。
 
-**说明** 
+![](https://media:401788444117972969) 
 
 分配的Tensor内容并非全0，可能会是随机值。
 

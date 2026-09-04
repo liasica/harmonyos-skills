@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-s
 title: 通过App Linking应用链接拉起指定应用
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过App Linking应用链接拉起指定应用
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:53+08:00
+scraped_at: 2026-09-05T06:15:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9e844631386108028488d098a49fab7b5c46501bf6d9016bdaccbddf11758155
+content_hash: sha256:d8a1e78b7a626c24e08aa5555b7a3c20e1b91595b3bb692956712b45fce83b75
 ---
 
 ## 场景介绍
@@ -88,14 +88,14 @@ content_hash: sha256:9e844631386108028488d098a49fab7b5c46501bf6d9016bdaccbddf117
 2. 在项目列表中点击HarmonyOS应用所在的项目。
 3. 在左侧导航栏中选择“增长 > App Linking > 应用链接”，点击“创建”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/1UqumWkgSJW2FVPL--r7Pw/zh-cn_image_0000002736313923.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/KE5yBofXSvqV0QZHDNxVnQ/zh-cn_image_0000002742004009.png)
 4. 填写[建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)的网址域名，例如：https://www.example.com。必须输入精确的域名，不可输入包含特殊字符的模糊网址。
 
    **说明** 
 
    不可以在域名后面添加/，即不支持https://www.example.com/形式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Et6lAcYdS9eAJfKqxs_Rqg/zh-cn_image_0000002706674880.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/9iREQif3RFC9V5figMgKVA/zh-cn_image_0000002712405020.png)
 5. 设置完成后点击“发布”，AGC会对该网站域名的配置文件所包含的应用与本项目内的应用列表进行交集校验。
 
    **说明** 
@@ -104,15 +104,15 @@ content_hash: sha256:9e844631386108028488d098a49fab7b5c46501bf6d9016bdaccbddf117
 
    例如：开发者在4月7日17:21创建了应用链接，系统会在4月8日17:30去域名服务器上重新获取配置文件，然后进行交集校验，更新发布状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/y-u5Oj1GQJOTMyBzCIJdLQ/zh-cn_image_0000002736433967.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/2tnhcHkxSH-fe13CQM0hXQ/zh-cn_image_0000002742123969.png)
 
    * 如果域名的配置文件中存在本项目中的应用，则发布成功，点击“查看”可显示该域名关联的应用信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/jlIOCAyjSWKuSbOnY06ZBQ/zh-cn_image_0000002706834818.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/qfpfENtPTrmX02Nra2L9QQ/zh-cn_image_0000002712245062.png)
    * 如果还在校验中，则状态为“发布中”。
    * 如果配置文件中没有包含任何本项目中的应用，则发布失败，点击“查看”可显示发布失败原因。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/gikTRhcSTpiiUAf3JKWmyg/zh-cn_image_0000002736313925.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Xyw2sEXRTPiEPrH3t2-R6Q/zh-cn_image_0000002742004011.png)
 
 ### 在module.json5中配置关联的网址域名
 
@@ -327,7 +327,7 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
 
 通过系统级扫码入口扫描App Linking应用链接对应的二维码，然后查看跳转效果。以“扫码直达”服务的美团单车场景为例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/aMlZX6EPSoW7QXSIO-ZdkA/zh-cn_image_0000002706674882.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/XzbpnRGhQh67cFYkjkrQZg/zh-cn_image_0000002712405022.gif)
 
 ## FAQ
 

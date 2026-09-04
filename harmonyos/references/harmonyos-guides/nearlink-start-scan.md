@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-star
 title: 发起星闪扫描
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > 发起星闪扫描
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:7a17fd313af630a1a9ebada87f2350df0a702c228610c2fddd04bd1f90caa861
+scraped_at: 2026-09-05T06:14:29+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:1a9f6834084aa16665f4652669d5ec519df2e672fc9044acb68eb20cd3d1e8e1
 ---
 
 ## 场景介绍
@@ -221,7 +221,7 @@ content_hash: sha256:7a17fd313af630a1a9ebada87f2350df0a702c228610c2fddd04bd1f90c
        `errCode: ${(err as BusinessError).code}, errMessage: ${(err as BusinessError).message}`);
    }
    ```
-7. 取消订阅扫描结果，其中onReceiveEvent是在步骤3中注册的回调函数。
+7. 取消订阅扫描结果。
 
    ```typescript
    try {

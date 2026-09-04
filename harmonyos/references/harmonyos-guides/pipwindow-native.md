@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-nat
 title: 使用NDK接口实现画中画功能开发 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 画中画开发指导 > 使用NDK接口实现画中画功能开发 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:355eed9e24324beb475d6436bfd278a0c1b7f8d7892f4c6bef9b1888f305f1f2
+scraped_at: 2026-09-05T06:14:08+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:dd1e14d0f76e62313be09235c60567e21d8519fbd1baf3d15ffa6f1abf8917f0
 ---
 
 本文以视频播放为例，介绍通过NDK接口实现画中画功能的基本开发步骤。
@@ -19,7 +19,7 @@ content_hash: sha256:355eed9e24324beb475d6436bfd278a0c1b7f8d7892f4c6bef9b1888f30
 
 * 画中画窗口中画面的呈现不通过传入XComponent Controller实现，而是通过渲染surfaceId（在开启画中画回调中获取）对应的组件实现。
 * 与typeNode实现方式相同，系统不缓存页面。如需进行页面操作，应用需要开启画中画生命周期监听，在对应周期内进行对应操作。
-* 不支持设置自动拉起画中画。
+* API版本26.0.0之前，不支持设置在拉起画中画的应用主窗退后台时是否自动启动画中画。从API版本26.0.0开始，支持使用OH\_PictureInPicture\_SetAutoStartEnabled接口设置在拉起画中画的应用主窗退后台时是否自动启动画中画。
 
 ## 开发步骤
 
@@ -954,4 +954,4 @@ struct NDKImplementIndexPage {
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/qiRu5IVIRe-BvvDtWahU4Q/zh-cn_image_0000002736313123.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/jmga7qZpQNS6Sy2-8Q6u0A/zh-cn_image_0000002742003207.gif)

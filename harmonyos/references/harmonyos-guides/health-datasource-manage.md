@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-dataso
 title: 管理数据源
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 管理数据源
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:55+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-05T06:15:08+08:00
+doc_updated_at: 2026-09-04
 content_hash: sha256:cd8d6c4bf1be00cfe7b321536d54f62999782688027d3ba46e4cfcc008b6ad5b
 ---
 

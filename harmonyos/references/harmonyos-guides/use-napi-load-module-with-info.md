@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-load
 title: 使用Node-API接口进行模块加载
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口进行模块加载
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
+scraped_at: 2026-09-05T06:15:46+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:b191113c4b4f26a9dd1dccdc927a18f240bc26224eb8b0b3a2f82af00a3f47ba
+content_hash: sha256:77bdad927ce8eed04f46849deaa1f862f11e97e0d553607a96a1ba2ee5c0de94
 ---
 
 Node-API中的napi\_load\_module\_with\_info接口的功能是进行模块的加载，当模块加载出来之后，可以使用函数napi\_get\_property获取模块导出的变量，也可以使用napi\_get\_named\_property获取模块导出的函数，该函数可以在[新创建的ArkTS基础运行时环境](use-napi-ark-runtime.md)中使用，即napi\_create\_ark\_runtime接口创建的运行时环境。
@@ -50,7 +50,7 @@ napi_status napi_load_module_with_info(napi_env env, const char* path, const cha
 
 1. 在模块加载过程中，若出现包内未找到对应文件或build-profile.json5配置错误等问题，返回错误码napi\_generic\_failure，并打印报错日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/vRNd4XDfRPGARZOU1I5y6Q/zh-cn_image_0000002736314561.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/GkR1E6gDSw-vwDiyaBOAOQ/zh-cn_image_0000002742004645.png)
 2. 系统侧发生非预期行为导致加载模块无法正常执行，将抛出cppcrash。
 
 ## 使用示例

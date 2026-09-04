@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ExceptionPrompt
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ExceptionPrompt
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
+scraped_at: 2026-09-05T06:17:28+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:fb03417feaa3634ffe421b04c44a6d4f5872c2780419cd7cdfc858c01c7b5a64
+content_hash: sha256:17b7775cecbfc6dc52985b0efd54203dc22832595874d19f39a990813086c2b1
 ---
 
 异常提示，适用于有异常需要提示异常内容的情况。
@@ -120,7 +120,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/2EkRv3NFRVqrfAdngYvlEA/zh-cn_image_0000002706676352.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/YWUmXJOUSDiCrrsFMtSw7Q/zh-cn_image_0000002712406502.png)
 
 ### 示例2（设置弹窗类型的异常提示）
 
@@ -238,7 +238,7 @@ struct Index1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/onzTge9_TLyi3W_WvtZUdA/zh-cn_image_0000002736435439.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/TCm3J9UcRHOtxwl1Xbv19A/zh-cn_image_0000002742125451.gif)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -278,4 +278,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/yiC3_XzOSS-2PU2Qp7oV_A/zh-cn_image_0000002706836288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/FuBOevwJQMasXMVRGmtnyA/zh-cn_image_0000002712246544.png)

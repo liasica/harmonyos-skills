@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-overvie
 title: ArkUI简介
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > ArkUI简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:47+08:00
+scraped_at: 2026-09-05T06:13:54+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0a0c564556f8b4e2015442fbb18181004d82c433f05f274093495197d978a0d4
+content_hash: sha256:0a5206ace37e82568e21bf02aaac3c87bab179360e29c7ff328b451660f9f3bd
 ---
 
 ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，包括简洁的UI语法、丰富的UI功能（组件、布局、动画以及交互事件），以及实时界面预览工具等，可以支持开发者进行可视化界面开发。
@@ -30,7 +30,7 @@ ArkUI（方舟UI框架）为应用的UI开发提供了完整的基础设施，�
 
   **图1** 方舟UI框架示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/1mxKjzKVSkywzfLLGg1FVg/zh-cn_image_0000002706833104.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/9OLSXYCtQ0GbGbsEjVIPMA/zh-cn_image_0000002742122259.png)
 
 ## 不同应用类型支持的开发范式
 

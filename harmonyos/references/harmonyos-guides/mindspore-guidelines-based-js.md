@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-gui
 title: 使用MindSpore Lite实现图像分类 (ArkTS)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现图像分类 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
+scraped_at: 2026-09-05T06:15:44+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:16e9c07f5b83b901e31af4d68c8afb758ab6784814f043cfb2824a9154df7831
+content_hash: sha256:92a3ed39d27a3e93313086d28d6760b33f927cab646a706f5e8a2463803c4b43
 ---
 
 ## 场景说明
@@ -348,9 +348,9 @@ content_hash: sha256:16e9c07f5b83b901e31af4d68c8afb758ab6784814f043cfb2824a9154d
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/xGsKkgauRx6HoqByXhRgsg/zh-cn_image_0000002706675486.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Gic1taYHR5-4vvcNiZBQkg/zh-cn_image_0000002736434573.png)
+![](https://media:401788444058905553) ![](https://media:401788444058945554)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/abiViLaXRKiiSeTd67VhxQ/zh-cn_image_0000002706835426.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/YJjSYpVuT4qHzWYx-fU9ug/zh-cn_image_0000002736314531.png)
+![](https://media:401788444059006555) ![](https://media:401788444059055556)
 
 ## 示例代码
 

@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16849 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16853 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1249 篇
 
@@ -1254,7 +1254,7 @@
 - [应用升级适配指导——向26.0.0升级](harmonyos-releases/upgrade-adaptation.md)
 - [版本号格式调整说明](harmonyos-releases/version-number-26.md)
 
-## 指南（`harmonyos-guides`）— 5719 篇
+## 指南（`harmonyos-guides`）— 5722 篇
 
 - [24h功耗器件分解统计事件](harmonyos-guides/24-hour-battery-usage-event.md)
 - [aa工具](harmonyos-guides/aa-tool.md)
@@ -1789,10 +1789,10 @@
 - [mutableBuilder：实现全局@Builder动态更新](harmonyos-guides/arkts-mutablebuilder.md)
 - [MVVM模式（V2）](harmonyos-guides/arkts-mvvm-v2.md)
 - [MVVM模式（V1）](harmonyos-guides/arkts-mvvm.md)
-- [Navigation动画常见问题](harmonyos-guides/arkts-navigation-animation-faq.md)
 - [Navigation转场动画](harmonyos-guides/arkts-navigation-animation.md)
 - [Navigation基础架构介绍](harmonyos-guides/arkts-navigation-architecture.md)
 - [Navigation跨包路由](harmonyos-guides/arkts-navigation-cross-package.md)
+- [Navigation常见问题](harmonyos-guides/arkts-navigation-faq.md)
 - [组件导航和页面路由概述](harmonyos-guides/arkts-navigation-introduction.md)
 - [Navigation页面路由](harmonyos-guides/arkts-navigation-jump.md)
 - [Navigation子页面](harmonyos-guides/arkts-navigation-navdestination.md)
@@ -3611,6 +3611,7 @@
 - [使用HiAppEvent订阅事件](harmonyos-guides/event-subscription.md)
 - [应用基础功能和兼容性体验建议](harmonyos-guides/experience-suggestions-compatibility.md)
 - [体验建议概述](harmonyos-guides/experience-suggestions-overview.md)
+- [应用系统资源管理体验建议](harmonyos-guides/experience-suggestions-resource-management.md)
 - [应用稳定性体验建议](harmonyos-guides/experience-suggestions-stability.md)
 - [应用UX体验建议](harmonyos-guides/experience-suggestions-ux.md)
 - [显式Want与隐式Want匹配规则](harmonyos-guides/explicit-implicit-want-mappings.md)
@@ -5040,6 +5041,7 @@
 - [HSP](harmonyos-guides/in-app-hsp.md)
 - [来电场景](harmonyos-guides/incoming-calls.md)
 - [使用TaskPool执行独立的耗时任务](harmonyos-guides/independent-time-consuming-task.md)
+- [Input Kit术语](harmonyos-guides/input-kit-glossary.md)
 - [Input Kit（多模输入服务）](harmonyos-guides/input-kit.md)
 - [输入法子类型开发指南](harmonyos-guides/input-method-subtype-guide.md)
 - [Input Kit简介](harmonyos-guides/input-overview.md)
@@ -5550,7 +5552,7 @@
 - [网络场景识别](harmonyos-guides/networkboost-scenecallback.md)
 - [弱网感知判决 (C/C++)](harmonyos-guides/networkboost-weaksignaljudge-c.md)
 - [弱网感知判决](harmonyos-guides/networkboost-weaksignaljudge.md)
-- [Neural Network Runtime Kit术语表](harmonyos-guides/neural-network-runtime-glossary.md)
+- [Neural Network Runtime Kit术语](harmonyos-guides/neural-network-runtime-glossary.md)
 - [Neural Network Runtime对接AI推理框架开发指导](harmonyos-guides/neural-network-runtime-guidelines.md)
 - [Neural Network Runtime Kit简介](harmonyos-guides/neural-network-runtime-kit-introduction.md)
 - [Neural Network Runtime Kit（Neural Network运行时服务）](harmonyos-guides/neural-network-runtime-kit.md)
@@ -6270,6 +6272,7 @@
 - [Desktop Extension Kit（桌面拓展服务）](harmonyos-guides/status-bar-extension-kit-guide.md)
 - [应用接入状态栏](harmonyos-guides/statusbar-extension-guide.md)
 - [Desktop Extension Kit简介](harmonyos-guides/statusbar-extension-introduction.md)
+- [存储空间使用与文件生命周期管理](harmonyos-guides/storage-usage-file-lifecycle.md)
 - [附录](harmonyos-guides/store-attribution-appendix.md)
 - [注册企业账号](harmonyos-guides/store-attribution-config-agc.md)
 - [登记归因来源及转化](harmonyos-guides/store-attribution-developmentguide.md)
@@ -6976,7 +6979,7 @@
 - [XML概述](harmonyos-guides/xml-overview.md)
 - [XML解析](harmonyos-guides/xml-parsing.md)
 
-## API 参考（`harmonyos-references`）— 4761 篇
+## API 参考（`harmonyos-references`）— 4762 篇
 
 - [ABR_CameraData](harmonyos-references/_a_b_r___camera_data.md)
 - [ABR_Vector3](harmonyos-references/_a_b_r___vector3.md)
@@ -10140,6 +10143,7 @@
 - [@ohos.data.distributedData (分布式数据管理)](harmonyos-references/js-apis-distributed-data.md)
 - [@ohos.distributedDeviceManager (设备管理)](harmonyos-references/js-apis-distributeddevicemanager.md)
 - [@ohos.application.DistributedExtensionAbility (协同Extension)](harmonyos-references/js-apis-distributedextensionability.md)
+- [@ohos.application.DistributedExtensionContext (协同Extension上下文)](harmonyos-references/js-apis-distributedextensioncontext.md)
 - [@ohos.data.distributedKVStore (分布式键值数据库)](harmonyos-references/js-apis-distributedkvstore.md)
 - [@ohos.dlpPermission (数据防泄露)](harmonyos-references/js-apis-dlppermission.md)
 - [@ohos.document (文件交互)](harmonyos-references/js-apis-document.md)
@@ -10790,7 +10794,7 @@
 - [advertising（星闪广播能力）](harmonyos-references/nearlink-advertising.md)
 - [NearLink Kit（星闪服务）](harmonyos-references/nearlink-api.md)
 - [ArkTS API](harmonyos-references/nearlink-arkts.md)
-- [cdsm（星闪合作设备集合能力）](harmonyos-references/nearlink-cdsm.md)
+- [cdsm（星闪合作设备集合管理能力）](harmonyos-references/nearlink-cdsm.md)
 - [constant（星闪公共常量定义）](harmonyos-references/nearlink-constant.md)
 - [dataTransfer（星闪数传能力）](harmonyos-references/nearlink-data-transfer-api.md)
 - [manager（星闪开关能力）](harmonyos-references/nearlink-manager.md)

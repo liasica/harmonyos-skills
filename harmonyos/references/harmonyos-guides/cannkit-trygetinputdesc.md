@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tryge
 title: TryGetInputDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > TryGetInputDesc
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:38+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:974982221ce73907ad01f8b91e13975f1bacef8f6968f53de4958bcd8cc7b088
+content_hash: sha256:1158b2a952e217026c96a759a664500933612e6f30a6fe4bcf1797d031fd25ad
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:974982221ce73907ad01f8b91e13975f1bacef8f6968f53de4958bcd8cc
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444115566936) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

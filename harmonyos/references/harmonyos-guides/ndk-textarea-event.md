@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-textarea-
 title: 添加输入框文本事件监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 添加输入框文本事件监听
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:52+08:00
+scraped_at: 2026-09-05T06:14:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f6531ced237561253c16164e4bb63f5f96309b7c00eff960f8c24006b2f02509
+content_hash: sha256:baa3b18537a0f0244381345bb9c7fad0c74d5e90f22684589cd2b6d0300d1884
 ---
 
 输入框包含多种交互行为，开发者可注册事件监听并获取状态。以下以多行文本输入框为例进行说明，单行文本输入框添加文本事件监听的步骤与此类似。
@@ -217,4 +217,4 @@ content_hash: sha256:f6531ced237561253c16164e4bb63f5f96309b7c00eff960f8c24006b2f
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/-Lox6giSTSCxDzhf145b2A/zh-cn_image_0000002736433051.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/i5cHhm9-QeCupiIXTS9NcQ/zh-cn_image_0000002742123049.gif)

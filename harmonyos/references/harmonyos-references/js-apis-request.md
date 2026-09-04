@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.request (上传下载)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.request (上传下载)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:02+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:042e28abefec33af291c309edc0a54e8efc646808f542429b1147b730ea12392
+scraped_at: 2026-09-05T06:19:16+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:4742755beeb1505e1881bc7aa11dc5be104e64279e42fa27ab33d521f68adabe
 ---
 
 request模块给应用提供上传下载文件、后台代理传输的基础功能，支持HTTP/HTTPS协议，提供任务进度监控、断点续传、后台任务管理、网络类型选择等能力，适用于应用内文件上传下载、后台持续传输等场景。
@@ -513,7 +513,7 @@ off(type: 'complete' | 'fail', callback?: Callback<Array<TaskState>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | the parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
+| 401 | The parameters check fails. Possible causes: 1. Missing mandatory parameters. 2. Incorrect parameter type. 3. Parameter verification failed.  适用版本：12+ |
 
 **示例：**
 

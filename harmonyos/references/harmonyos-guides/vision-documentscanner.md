@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-docume
 title: 文档扫描
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 文档扫描
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:81e307c6a2d77520c93472e0cf318ee3e326fc10daf01049c8b980f2ab97e690
+scraped_at: 2026-09-05T06:15:44+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:7714ab9672d51185613d67cb218fcc85d42538b863fabd06d504c73a8517c33c
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:81e307c6a2d77520c93472e0cf318ee3e326fc10daf01049c8b980f2ab9
 
 **图1** 文档扫描示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/5dsSTL6LStKB72EPdO6-og/zh-cn_image_0000002706835432.png)
+![](https://media:401788444059173557)
 
 ## 约束与限制
 
@@ -31,7 +31,7 @@ content_hash: sha256:81e307c6a2d77520c93472e0cf318ee3e326fc10daf01049c8b980f2ab9
 | 接口名 | 描述 |
 | --- | --- |
 | [DocumentScanner](../harmonyos-references/vision-document-scanner.md#documentscanner) | 文档扫描控件 |
-| [DocumentScannerResultCallback](../harmonyos-references/vision-document-scanner.md#documentscannerresultcallback) | 文档扫描结果 |
+| [DocumentScannerResultCallback](../harmonyos-references/vision-document-scanner.md#documentscannerresultcallback) | 文档扫描结果回调 |
 
 ## 开发步骤
 

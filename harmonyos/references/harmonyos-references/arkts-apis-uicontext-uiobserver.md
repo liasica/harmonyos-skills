@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIObserver)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIObserver)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:51+08:00
+scraped_at: 2026-09-05T06:16:52+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b85ff85ed2f66b567e4f32f8bae306df8a42023dc39b89b4e76e9ef278b214fd
+content_hash: sha256:3010b46cef259794dd935766a4f5c12411182b1c3e08ca072fd36d2fcbda86a5
 ---
 
 UIObserver提供UI组件行为变化的无感监听能力。无感监听是指开发者注册回调函数后，无需手动轮询或主动查询组件状态；当目标组件状态变化时，系统会自动触发回调并返回变化信息。UIObserver支持监听Navigation页面状态变化（NavDestination）、滚动事件、路由页面状态、屏幕像素密度变化、绘制与布局完成情况、点击事件、手势触发信息、文本变化及组件内容切换等UI行为，适用于页面生命周期监控、滚动事件处理和渲染性能优化等场景。
@@ -2258,7 +2258,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/XdUGuxJTSz2j31wz6CzurA/zh-cn_image_0000002736434685.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/CRGmEZs5TjOuY1ggCdMjvQ/zh-cn_image_0000002742124685.gif)
 
 ## off('nodeRenderState')20+
 
@@ -2479,7 +2479,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/E3XERMfZS1yprHvQ8sqL5Q/zh-cn_image_0000002706835538.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/WzjMIWfMQGGzApLlQZJttw/zh-cn_image_0000002712245778.gif)
 
 ## removeGlobalGestureListener20+
 

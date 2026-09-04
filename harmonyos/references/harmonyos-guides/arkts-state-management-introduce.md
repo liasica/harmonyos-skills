@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 状态管理原理介绍
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理原理介绍
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:15+08:00
+scraped_at: 2026-09-05T06:13:56+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0b03b599d005b847425a59b996dbbfa45b085aa2ff9d2f752f0a3cb41b53ccd8
+content_hash: sha256:d399dd745343fdf66fe1238582ce2cb0cb3fa06e1d566b41a4b88df5d81751de
 ---
 
 本文将介绍状态管理的基本原理。状态管理的核心逻辑是处理状态变量、自定义组件和系统组件之间的绑定关系。其工作流程可以概括为两个核心阶段：收集依赖和触发更新。
@@ -75,7 +75,7 @@ struct Index {
 
 UI渲染的流程主要有以下几个步骤：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/GfSv5VLmRCiDJwNLG-7Dmw/zh-cn_image_0000002736312287.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/tULJB_PLSquQHtsb75g-7Q/zh-cn_image_0000002712243418.png)
 
 1. 事件触发状态变量发生改变，执行状态变量的set方法，将自定义组件和系统组件标脏，并请求一个刷新信号。
 2. 刷新脏节点：刷新标脏的自定义组件和系统组件。
@@ -83,7 +83,7 @@ UI渲染的流程主要有以下几个步骤：
 
 同样以上述示例代码为例，使用DevEco Studio的[Profiler工具](ui-inspector-profiler.md#状态管理profiler调优能力)，点击Button1，抓取状态变量的变化打点，trace如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/OrkVhM5BR4ed1qOJcC2vqg/zh-cn_image_0000002706673244.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/LuEirGxSR6-WdcIojDnEWw/zh-cn_image_0000002742002373.png)
 
 对上图中的标记点进行逐一介绍：
 
@@ -97,7 +97,7 @@ UI渲染的流程主要有以下几个步骤：
 
 其中，状态管理的基本流程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Gm8JpqcnSP2sTGtMLQZJlg/zh-cn_image_0000002736432335.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/WHEvtOJ9TTKxvh1d1vO4uQ/zh-cn_image_0000002712403382.png)
 
 状态管理循环执行两大步骤：收集依赖和触发更新。收集状态变量与组件之间的依赖关系。当状态变量发生变化时，执行标脏，刷新对应的UI，同时更新依赖关系。
 

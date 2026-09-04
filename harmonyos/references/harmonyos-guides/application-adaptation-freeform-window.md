@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-a
 title: 应用适配自由窗口
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 自由窗口 > 应用适配自由窗口
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
+scraped_at: 2026-09-05T06:14:08+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:0a8335b6c9f6567f074e253513f552f75a49fce95d1f1ef2bbd4238cf7f12d28
+content_hash: sha256:4e73a588d469ffcf214d7601cfdf500e977a26ec45c7491f8748fea7616859a0
 ---
 
 ## 场景介绍
@@ -324,7 +324,7 @@ content_hash: sha256:0a8335b6c9f6567f074e253513f552f75a49fce95d1f1ef2bbd4238cf7f
 
 示意图中，windowRect为窗口尺寸，类型为[Rect](../harmonyos-references/arkts-apis-window-i.md#rect7)；drawableRect为可绘制区域尺寸，类型为[Rect](../harmonyos-references/arkts-apis-window-i.md#rect7)；decorHeight为标题栏高度，类型为number，单位为vp；density为本窗口所处屏幕的系统显示大小缩放系数，类型为number；w为窗口宽度，类型为number，单位为px；h为窗口高度，类型为number，单位为px。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/s9QDDyaXRX2T27XyR8FBuA/zh-cn_image_0000002736313141.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/N6Vn-Z-oSa6R5AU2heYY4w/zh-cn_image_0000002742003225.png)
 
 典型场景及对应方案如下：
 
@@ -340,7 +340,7 @@ content_hash: sha256:0a8335b6c9f6567f074e253513f552f75a49fce95d1f1ef2bbd4238cf7f
 
 如果应用希望在窗口内有更大的可绘制区域，可以通过隐藏标题栏，并适配窗口三键的位置和尺寸。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/F-TBQ4o6RNqgMk-nFKlJAg/zh-cn_image_0000002706674098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/B3IZZlG6T0K4w-fmhG6p0g/zh-cn_image_0000002712404238.png)
 
 典型场景及对应方案如下：
 
@@ -472,11 +472,11 @@ content_hash: sha256:0a8335b6c9f6567f074e253513f552f75a49fce95d1f1ef2bbd4238cf7f
 
 下图表示不隐藏标题栏时，应用最顶部的布局区域（粉色区域）只能在标题栏之下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/8iykc8Z6TKadM1KQwu6FzQ/zh-cn_image_0000002736433189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/UH9fgBjbSEysAb9LpPF-Hw/zh-cn_image_0000002742123187.png)
 
 下图表示隐藏标题栏时，避让窗口三键后，应用最顶部可用于布局的区域（粉色区域）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/tpTtPcLsRmehFQDzS4zv4w/zh-cn_image_0000002706834034.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/nLWCYGnbRpC4slpm6AJwNA/zh-cn_image_0000002712244274.png)
 
 ## 自由窗口状态下窗口进入全屏显示
 

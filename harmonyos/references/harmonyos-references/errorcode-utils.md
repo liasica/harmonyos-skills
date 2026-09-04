@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 语言基础类库错误码
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > 错误码 > 语言基础类库错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:97611adff12a37eb2dc81d024c401f653aeb1aed3eaf61337f599723ea93e2bf
+scraped_at: 2026-09-05T06:16:49+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:8599daaece516ebc98580f561e40925ad2fd5a917db96de9e56dafcf9bad9684
 ---
 
 **说明** 
@@ -979,6 +979,24 @@ Incorrect encoding format, only support utf-8.
 **处理步骤**
 
 修改编码格式为utf-8。
+
+## 10200067 transfer传入不支持的类型
+
+**错误信息**
+
+Transfer Error. The input name is not supported!
+
+**错误描述**
+
+transfer转换失败，传入不支持的类型。
+
+**可能原因**
+
+传入的类型为不支持的类型。
+
+**处理步骤**
+
+调用时，确保传入的类型是可用的。无法保证时，需要捕获异常。
 
 ## 10200068 引用已释放或分离的ArrayBuffer
 

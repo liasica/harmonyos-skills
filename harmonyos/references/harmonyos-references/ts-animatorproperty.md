@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animat
 title: 属性动画 (animation)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 属性动画 (animation)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1adc0b4a5360854fa63ef0cd781cf47b12ee6b6af17b10fdf596679a8b2bf657
+scraped_at: 2026-09-05T06:17:24+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:5d6b06de17b41d5c82e627b4dc15c03bdd3f53bf672bdf9955cf2265b2d9cec0
 ---
 
 组件的某些通用属性变化时，若不设置动画，属性变化会直接跳变到目标值。通过属性动画可实现渐变过渡效果，使界面变化更加自然流畅。支持的属性包括[width](ts-universal-attributes-size.md#width)、[height](ts-universal-attributes-size.md#height)、[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[opacity](ts-universal-attributes-opacity.md#opacity)、[scale](ts-universal-attributes-transformation.md#scale)、[rotate](ts-universal-attributes-transformation.md#rotate)、[translate](ts-universal-attributes-transformation.md#translate)等。对于改变布局类属性（如宽高）的动画，内容通常会直接跳变到最终状态，例如文字或[Canvas](ts-components-canvas-canvas.md)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性进行配置。
@@ -22,7 +22,7 @@ animation(value:AnimateParam): T
 
 **说明** 
 
-* 在单一页面上同时存在数十个及以上应用动效的组件时，可以使用[renderGroup](ts-universal-attributes-image-effect.md#rendergroup10)方法来解决卡顿问题，从而提升动画性能。最佳实践请参考[动画使用指导-使用renderGroup](../best-practices/bpta-fair-use-animation.md#section1223162922415)。
+* 在单一页面上同时存在数十个及以上应用动效的组件时，可以使用[renderGroup](ts-universal-attributes-image-effect.md#rendergroup10)方法来解决卡顿问题，从而提升动画性能。最佳实践请参考优化动画性能中的[使用renderGroup](../harmonyos-guides/arkts-animation-usage-guide.md#使用rendergroup)。
 * 该接口不支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用，在attributeModifier中调用animation不会产生动画效果。如需在attributeModifier中实现属性变化动画，请使用[显式动画](ts-explicit-animation.md)（animateTo）替代。
 * 仅对部分通用属性生效（包括width、height、backgroundColor、opacity、scale、rotate、translate等）。对于改变布局类属性（如宽高）的动画，组件内容（如文字或Canvas中的内容）通常会直接跳转到最终状态。如果希望内容跟随宽高变化平滑过渡，可以配合使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性进行配置，建议将renderFit设置为RenderFit.CENTER或RenderFit.TOP\_LEFT等值，使内容在动画过程中随组件尺寸同步变化。
 
@@ -149,4 +149,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/I5V5-e2mQIq9qslbNYiORw/zh-cn_image_0000002706676250.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/VaoNhKKqT1moCDhLwc9AKA/zh-cn_image_0000002712406390.gif)

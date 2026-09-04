@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-litewe
 title: 运动联动管理
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > LiteWearable应用开发 > 运动联动管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:13a6bf2deccf02e7b78989d711dc88091563a66360458cd41b612dcd6a655cde
+scraped_at: 2026-09-05T06:15:08+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:207178477a99fa7e18a4db8afff1db9a19f0eec226c22cc257ec312cb1c5e98a
 ---
 
 ## 场景介绍
@@ -32,7 +32,7 @@ content_hash: sha256:13a6bf2deccf02e7b78989d711dc88091563a66360458cd41b612dcd6a6
 ## 开发前检查
 
 * 完成[申请运动健康服务](health-apply.md)。
-* 需先通过[用户授权](health-litewearable-add-permissions.md)接口引导用户授权，用户授权应根据[权限说明](health-permission-description.md#lite-wearable)中要求来打开锻炼记录读/写和联动接口控制权限，。
+* 需先通过[用户授权](health-litewearable-add-permissions.md)接口引导用户授权，用户授权应根据[权限说明](health-permission-description.md#lite-wearable)中要求来打开锻炼记录读/写和联动接口控制权限。
 * 常见问题请参考[Health Service Kit常见问题](health-faqs.md)。
 
 ## 开发步骤
@@ -116,7 +116,7 @@ content_hash: sha256:13a6bf2deccf02e7b78989d711dc88091563a66360458cd41b612dcd6a6
 6. 下发融合数据（根据需求调整调用时机）。
 
    ```javascript
-   function saveData() {
+   function sendData() {
      let sampleReal = {
        dataType: healthStore.healthDataTypes.WORKOUT_REALTIME,
        time: new Date().getTime(),

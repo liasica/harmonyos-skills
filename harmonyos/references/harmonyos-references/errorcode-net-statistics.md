@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 流量管理错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 流量管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e5a676c2675a7e2108162d915677202331817004c080b50e05002eceeaf888ff
+scraped_at: 2026-09-05T06:19:03+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:f7a037bd4770b16f0d400e43c80ccd01a608852741a845b03ea9209ab7c79d67
 ---
 
 **说明** 
@@ -47,7 +47,7 @@ Failed to connect to the service.
 **处理步骤**
 
 1. 检查系统服务运行状态是否正常。
-2. 重启手机后再次尝试。
+2. 重启设备后再次尝试。
 
 ## 2100003 系统内部错误
 

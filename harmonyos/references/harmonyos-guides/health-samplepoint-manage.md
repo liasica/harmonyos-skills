@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-sample
 title: 运动健康采样数据
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发 > 管理运动健康数据 > 运动健康采样数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:56+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-05T06:15:08+08:00
+doc_updated_at: 2026-09-04
 content_hash: sha256:b956a19c3e7849ba327cf941e584e17064a0a2aef59bbeec8e8809a95723b3e5
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationContent
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationContent
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6d399ecc292521c7e6117208528387f52ab9a46bb099063fbd71c4c80374afd3
+scraped_at: 2026-09-05T06:21:16+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:f8d50e6bd2c337a05825c7bfac77281768295e7fe530497bc484a938e6c8ff2e
 ---
 
 NotificationContent中定义通知的内容结构，提供多种通知类型的内容描述接口。当应用需要发布通知时，可根据通知的展示需求（如普通文本、长文本、多行文本、图片、实况窗），选择对应的内容类型接口构造[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。
@@ -93,14 +93,14 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 
   当该类型通知单独展示，没有与其他通知形成组通知时，该通知类型的展示效果默认为展开态，显示的标题为展开时的标题expandedTitle，显示的正文为该类型继承的普通文本中的text+该类型的图片内容picture。
 * 用户点击成组展示的通知，查看各个通知详情时，该通知的展示效果变化为展开态。
-* 实际显示效果依赖于设备能力和[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)UI样式。
+* 实际显示效果依赖于设备能力和[通知中心](../harmonyos-guides/notification-glossary.md#notification-center通知中心)UI样式，详情请参考[图片预览通知](../design-guides/system-features-notification-0000001793074217.md#section16214134103817)。
 
 **系统能力**：SystemCapability.Notification.Notification
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | expandedTitle | string | 否 | 否 | 通知展开时的标题。  不可为空字符串，大小不超过1024字节，超出部分会被截断。 |
-| picture | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 通知展开后显示的图片内容。  图标像素的总字节数不能超过2MB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取）。 |
+| picture | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 否 | 通知展开后显示的右侧图标。  图标像素的总字节数不能超过2MB（图标像素的总字节数通过[getPixelBytesNumber](arkts-apis-image-pixelmap.md#getpixelbytesnumber7)获取）。 |
 | briefText | string | 否 | 否 | 通知概要内容，是对[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)的总结，不在通知中心中显示。  不可为空字符串，大小不超过1024字节，超出部分会被截断。 |
 
 ## NotificationSystemLiveViewContent

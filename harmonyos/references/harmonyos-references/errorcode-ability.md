@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 元能力子系统错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 元能力子系统错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:38+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:15f52df852ec41f731d698431d065a6fbad110986b091a04a70bfe6ec51d4959
+scraped_at: 2026-09-05T06:16:27+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:ad6341279e14d850ba78d52425c5855a4726b42e33d78b95d45da864422dcab5
 ---
 
 **说明** 
@@ -1032,6 +1032,24 @@ Want中的deviceId不为空且非本机的设备ID。
 **处理步骤**
 
 将Want中的deviceId字段设为空，或配置为本机的deviceId。
+
+## 16000125 不支持启动插件UIAbility
+
+**错误信息**
+
+Starting a plugin UIAbility is not supported.
+
+**错误描述**
+
+不支持启动插件。
+
+**可能原因**
+
+Want中的parameters指定了启动插件UIAbility。
+
+**处理步骤**
+
+检查Want中的parameters参数，不要将ohos.params.pluginAbility设置为true。
 
 ## 16000130 UIAbility不属于调用方
 

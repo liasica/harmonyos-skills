@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: badge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 容器组件 > badge
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:14+08:00
+scraped_at: 2026-09-05T06:17:40+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:6068ea2e3d1a230d518a4d8e98e044b73a87422dfe4b0a0f137ca6bb459e614f
+content_hash: sha256:0dc6157ca3d6a60cd7132f32f4ec791b8142805be5b373ad651068464f28859a
 ---
 
 应用中如果有需用户关注的新事件提醒，可以采用新事件标记来标识。
@@ -99,4 +99,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/HpKga2C2RTuSxdDPS_F_MA/zh-cn_image_0000002736315723.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/6x5Jg7rKQQSt9wTaVXTCRQ/zh-cn_image_0000002742005873.png)

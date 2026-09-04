@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-d
 title: 应用开发导读
 breadcrumb: 指南 > 基础入门 > 应用开发导读
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:16:55+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-05T06:13:43+08:00
+doc_updated_at: 2026-09-04
 content_hash: sha256:64a8d81eb3597737472e12e1936aa509720a06b54810f9402b94f8f5836346d8
 ---
 

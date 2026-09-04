@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-kit-int
 title: Audio Kit简介
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:277a04167fc7becfb6a6169a9a1a197fbd0e3769f4a7f02af222a8e1abaca481
+scraped_at: 2026-09-05T06:14:43+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:c86145ec7292364b275771a10dea01dbd4970fde0bf7b03aea885666b9b3cfdc
 ---
 
 Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口，助力开发者迅速构建音频高清采集及沉浸式播放能力。
@@ -28,7 +28,7 @@ Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口�
 
 开发者可以利用Audio Kit的接口，使用音频系统提供的播放、录音及音频策略管理能力，进而访问相应的音频硬件。音频架构定义了系统如何封装和管理音频硬件能力。音频架构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Jysirkf8QQqeatKOCbbzEA/zh-cn_image_0000002736313577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/5GV71F1ET06DedTo4TjCZg/zh-cn_image_0000002742003659.png)
 
 **Application**
 
@@ -98,7 +98,7 @@ audio模块下的接口支持PCM编码，包括AudioRenderer、AudioCapturer、T
 
 音频格式说明：
 
-* 支持的音频采样率（Hz）：8000、11025、12000、16000、22050、24000、32000、44100、48000、64000、8820012+、96000，17640012+、19200012+具体参考枚举[AudioSamplingRate](../harmonyos-references/arkts-apis-audio-e.md#audiosamplingrate8)。
+* 支持的音频采样率（Hz）：8000、11025、12000、16000、22050、24000、32000、44100、48000、64000、8820012+、96000、17640012+、19200012+具体参考枚举[AudioSamplingRate](../harmonyos-references/arkts-apis-audio-e.md#audiosamplingrate8)。
 
   不同设备支持的采样率规格会存在差异。
 * 支持单声道、双声道，具体参考[AudioChannel](../harmonyos-references/arkts-apis-audio-e.md#audiochannel8)。

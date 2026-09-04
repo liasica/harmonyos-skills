@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-workgro
 title: 音频工作组管理
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频性能调优 > 音频工作组管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3f52f31ac8a73230a5b35476037f3622e607ced4dd08c22e8f21375f99a6bf3f
+scraped_at: 2026-09-05T06:14:45+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:dd6f45bfde5fd74b9a68d7af6dfa5a589640b2c4af792b63a17d5624f9b92934
 ---
 
-音频工作组是一套通过标记来帮助系统识别应用内音频关键线程的接口，系统通过应用提供的关键音频线程以及工作组运行信息可以提升音频线程的运行的稳定性。
+音频工作组是一套通过标记来帮助系统识别应用内音频关键线程的接口，系统通过应用提供的关键音频线程以及工作组运行信息可以提升音频线程运行的稳定性。
 
 以下各步骤示例为代码片段，可通过示例代码右下方链接获取[完整示例](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/Media/Audio/AudioRendererSampleC)。
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-cdsm
-title: cdsm（星闪合作设备集合能力）
-breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > cdsm（星闪合作设备集合能力）
+title: cdsm（星闪合作设备集合管理能力）
+breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > cdsm（星闪合作设备集合管理能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-05T06:18:55+08:00
+doc_updated_at: 2026-09-04
 content_hash: sha256:ca963f2ef28c815610303da2f12fdd47ac8b31a175290e421bd7f0e0c0df9694
 ---
 
@@ -124,7 +124,7 @@ let addr: string = '00:11:22:33:AA:FF'; // 已配对连接的合作设备集合�
 let client: cdsm.CdsmClient;
 try {
   client = cdsm.createCdsmClient(addr); // 一个应用针对一个远端设备只需要创建一次实例
-let cdsmInformation: cdsm.CdsmInfo = client.getCdsmInfo();
+  let cdsmInformation: cdsm.CdsmInfo = client.getCdsmInfo();
   console.info('cdsmInformation:' + JSON.stringify(cdsmInformation));
 } catch (err) {
   console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);

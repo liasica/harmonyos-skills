@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: DumpTensor功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > 更多功能 > DumpTensor功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:25+08:00
 doc_updated_at: 2026-05-12
-content_hash: sha256:9433d8856dbd1d63fca19b84d7d3ddca5770ce2d69895e3895a3faaf59db6dba
+content_hash: sha256:1c5d598731c85d69543cfd39d1e099c3dc01603f502f7a587d1916c686ddd7a2
 ---
 
 ## 功能介绍
 
 使用工具进行算子调测时，支持DumpTensor功能，默认从Tensor的第0位元素开始打印指定长度的元素值。
 
-**说明** 
+![](https://media:401788444102585875) 
 
 * simulator调测场景下的DumpTensor，受dump mode参数控制。
 * 固定为每个核分配的打印数据的最大可使用空间为1M，目前该大小不支持修改，若打印超过1M，打印内容不再显示，请开发者控制待打印的数据量。

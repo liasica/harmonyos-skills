@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-envir
 title: 环境准备
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 环境准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:24+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:3b70625c238978638da17eaf387b6ad44c22259ce5fa7db8ed0cdb5d9eb2c0b1
+content_hash: sha256:2393f1f1beb08606bb53688a15f5b540224fab47097a32e0cce0d57ffa84c46b
 ---
 
 进行环境准备前，你需要了解如下基本概念，以便更好的理解后续操作。
@@ -15,7 +15,7 @@ content_hash: sha256:3b70625c238978638da17eaf387b6ad44c22259ce5fa7db8ed0cdb5d9eb
 * 开发环境与运行环境合设场景：开发环境和运行环境在同一台机器上，开发者使用连接上Kirin AI处理器的机器作为运行环境，同时在该环境上进行代码开发与编译。
 * 开发环境与运行环境分设场景：开发环境和运行环境不在同一台机器上，开发者使用连接上Kirin AI处理器的机器作为运行环境；使用其他独立机器进行代码开发与编译，作为开发环境。
 
-  **说明** 
+  ![](https://media:401788444082558689) 
 
   开发运行环境需要满足以下要求：
 
@@ -26,7 +26,7 @@ content_hash: sha256:3b70625c238978638da17eaf387b6ad44c22259ce5fa7db8ed0cdb5d9eb
 
 1. [下载tools\_ascendc](cannkit-preparations.md#tools下载)，并在Linux环境上解压。
 
-   **说明** 
+   ![](https://media:401788444082584690) 
 
    在Windows平台解压会导致软链接失效。
 2. 下载需要的[平台插件包](cannkit-preparations.md#tools下载)，在linux开发环境上解压，并将需要的平台插件拷贝到${install\_path}/ddk/tools/platform下。其中${install\_path}为tools包的解压目录。拷贝后的目录结构如下。

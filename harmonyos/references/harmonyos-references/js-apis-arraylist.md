@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.util.ArrayList (线性容器ArrayList)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.ArrayList (线性容器ArrayList)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:af13b2d5e67f15d3fa126ab888a175690a83e5544c42ca7d3450e9bdf0aaaa9a
+scraped_at: 2026-09-05T06:16:45+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:16ee90745f4660f7217ee1a3900fa3d091a54c7e2e116dc466065cecb9e8cc4c
 ---
 
 ArrayList是一种线性数据结构，底层基于数组实现，解决了固定大小数组无法动态扩容的限制。ArrayList会根据实际需要动态调整容量，每次扩容增加50%。
@@ -932,7 +932,7 @@ while (!iteratorResult.done) {
 // value: 4
 ```
 
-### ArrayListComparatorFn<T>23+
+## ArrayListComparatorFn<T>23+
 
 type ArrayListComparatorFn<T> = (firstValue: T, secondValue: T) => number
 

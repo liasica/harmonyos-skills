@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-rsqrt
 title: Rsqrt
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 单目指令 > Rsqrt
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:36+08:00
+scraped_at: 2026-09-05T06:15:27+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:8fd3a0cd088143aa5cecdc3603c357ddbd8ce7e7cc7579ec29f6b2beaead402c
+content_hash: sha256:1f5b2f8429c40aebf749ba2ee976fd74d25ecfc0a68eb9e8297398dbefb5ad04
 ---
 
 ## 函数功能
 
 按元素做开方后取倒数，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/T7omPV6jTauUYjdRtYDRrQ/zh-cn_image_0000002706835326.png)
+![](https://media:401788444119078978)
 
 ## 函数原型
 

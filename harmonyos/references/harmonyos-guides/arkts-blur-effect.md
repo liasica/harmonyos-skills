@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-blur-ef
 title: 动态模糊
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 模糊 > 动态模糊
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f79acde608b5097e2ba588f0c114c280da5787932aec0b9966288fd722b30169
+scraped_at: 2026-09-05T06:14:03+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:8016106ec6aa16af6879c05ffb1c7b63818dfebe95ee928767d51e24450d2e51
 ---
 
 动画效果可以丰富界面的细节，提升UI界面的真实感和品质感。例如，模糊和阴影效果可以让物体看起来更加立体，使得动画更加生动。ArkUI提供了丰富的效果接口，开发者可快速打造出精致、个性化的效果。本章主要介绍常用的模糊、阴影和色彩效果等接口。
@@ -22,7 +22,7 @@ content_hash: sha256:f79acde608b5097e2ba588f0c114c280da5787932aec0b9966288fd722b
 
 **说明** 
 
-以上接口均为实时模糊接口，每帧执行实时渲染，性能负载较大。当模糊内容与模糊半径均无需变动时，推荐采用静态模糊接口[blur](../harmonyos-references/js-apis-effectkit.md#blur)。最佳实践请参考：[图像模糊动效优化-使用场景](../best-practices/bpta-fuzzy-scene-performance-optimization.md#section4945532519)。
+以上接口均为实时模糊接口，每帧执行实时渲染，性能负载较大。当模糊内容与模糊半径均无需变动时，推荐采用静态模糊接口[blur](../harmonyos-references/js-apis-effectkit.md#blur)。最佳实践请参考：对比动态模糊与静态模糊中的[使用场景](ui-dynamic-vs-static-blur-examples.md#使用场景)。
 
 ## 使用backdropBlur为组件添加背景模糊
 
@@ -50,7 +50,7 @@ struct BlurEffectsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/9AXZKv_vRm-E6vridrfkeQ/zh-cn_image_0000002706673862.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/QiHUkukzQGy-dCFcGXIl2Q/zh-cn_image_0000002712404004.png)
 
 ## 使用blur为组件添加内容模糊
 
@@ -112,7 +112,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/qX5oSAY9R-u9L1wg3jy5_Q/zh-cn_image_0000002736432953.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/JlWblIqtRQezGjNdC4SUMg/zh-cn_image_0000002742122953.gif)
 
 ## 使用backgroundBlurStyle为组件添加背景模糊效果
 
@@ -382,7 +382,7 @@ struct BackDropBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/IV90fp3HRei9_KGsALIm2g/zh-cn_image_0000002706833798.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/onnHHVpPTLSwPhANMmfNtw/zh-cn_image_0000002712244040.png)
 
 ## 使用foregroundBlurStyle为组件添加内容模糊效果
 
@@ -650,7 +650,7 @@ struct ForegroundBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/36DzCgcPQpCeEydsK95R7g/zh-cn_image_0000002736312907.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/cpc9ielrSzW8H7bmmWrZ2w/zh-cn_image_0000002742002993.png)
 
 ## 使用motionBlur为组件添加运动模糊效果
 
@@ -696,4 +696,4 @@ struct motionBlurTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/l6DB94E3SCKQmDo-Ex3flA/zh-cn_image_0000002706673864.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/N6qLTFNqRgGVBLsRztuFLA/zh-cn_image_0000002712404006.gif)

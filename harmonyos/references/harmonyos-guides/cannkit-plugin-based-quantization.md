@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-plugi
 title: 插件式量化
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 插件式量化
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
+scraped_at: 2026-09-05T06:15:23+08:00
 doc_updated_at: 2026-07-17
-content_hash: sha256:68eb3731ad51d0e5ccd9617e72e1da2bc9aeaf8c158588813190af7602be724d
+content_hash: sha256:230304eb51efa303f0a3b9afe4d5327e165a4881faa377ebf6fc55e32e32c96e
 ---
 
 ## 依赖环境准备
 
 插件式量化运行环境依赖开发者本身的训练工程环境，目前轻量化工具支持TensorFlow和PyTorch两种框架的插件式量化。
 
-**说明** 
+![](https://media:401788444085466707) 
 
 插件式量化环境配置完成后，可同时支持无训练和重训练量化。
 
@@ -118,7 +118,7 @@ generate_config_file(sess, dst_path="./config_gen.json")
 }
 ```
 
-**说明** 
+![](https://media:401788444085508708) 
 
 * layer\_strategy中包含的为当前版本所支持的所有可量化层，开发者不应额外添加层。
 * 开发者需要根据op\_type选择支持的量化策略，若配置op\_type为不支持的量化策略，那么在后续量化环节会报错。
@@ -261,7 +261,7 @@ PyTorch模型优化训练如下步骤：
   pip3 install torch==1.11.0
   ```
 
-**说明** 
+![](https://media:401788444085534709) 
 
 * 路径：支持大小写字母、数字、下划线。
 * 文件名：支持大小写字母、数字、下划线和点(.)。
@@ -407,7 +407,7 @@ set_calibrate_state(quant_model, calibrate_mode)
 
 完成无训练模式的设置之后，使用量化后的quant\_model对校准集进行前向推理就可进行无训练量化。
 
-**说明** 
+![](https://media:401788444085564710) 
 
 * 调用optimize\_model函数的入参model需要是未经过torch.nn.parallel.DistributedDataParallel等分布式API封装的模型，且优化器optimizer需要针对quant\_model而非原始浮点模型。
 * 量化损失非必须添加，quant\_loss需要根据实际量化损失的大小和原始损失的大小进行超参数的调节，一般量化损失函数与原始损失函数比例为1:20，如对优化方向产生较大影响，建议减少量化损失的占比。
@@ -441,7 +441,7 @@ generate_final_model(
 | pth\_file | 是 | 量化训练的权重文件。 |
 | output\_dir | 是 | PyTorch和量化参数保存路径。请确保该路径存在，如果不填写，模型将默认保存到当前路径下。 |
 
-**说明** 
+![](https://media:401788444085596711) 
 
 * 调用generate\_final\_model函数的入参model须为重新构建的浮点模型。
 * 生成的PyTorch模型中不带有量化参数，但是会做部分图融合以及伪量化处理。

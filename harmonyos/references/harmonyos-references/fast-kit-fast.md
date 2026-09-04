@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: FAST
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 模块 > FAST
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:06+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:ecf6480e65b9e93b5541badfa2c7bfc46260bad7bb6f9fb232a21b62fb691330
+scraped_at: 2026-09-05T06:19:24+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:846ddb3ae7ae0cce1821b286f3c9c6fc7035ed63fa28d50d6986f06267c4c199
 ---
 
 ## 概述
@@ -297,7 +297,7 @@ typedef struct FAST_Poly FAST_Poly
 
 **描述**
 
-定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/nqgSZXSjSJ-NfciIs8o08w/zh-cn_image_0000002706836738.png)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
+定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/gx_D28GVQHaO_qQps_9AyA/zh-cn_image_0000002712247050.png)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
 
 **起始版本：** 26.0.0
 
@@ -755,7 +755,7 @@ const uint32_t FAST_MAX_FFT_LOG2N = 16;
 
 **描述**
 
-FFT支持的最大点数N对应的以2为底的对数值。即FAST\_MAX\_FFT\_LOG2N=![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/0Gco03znQgWg81IKkMkmnA/zh-cn_image_0000002736315847.png)，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
+FFT支持的最大点数N对应的以2为底的对数值。即FAST\_MAX\_FFT\_LOG2N=![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/vN_xCl_GRRmE7LEKzUaGLA/zh-cn_image_0000002742005997.png)，其中N为FFT支持的最大点数，例如该值为16时，最大点数为65536。
 
 **起始版本**：26.0.0
 
@@ -1425,7 +1425,7 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffSingle (FAST_Biquadm * filter, const flo
 
 **描述**
 
-从单精度源数组设置所有二阶滤波器系数（单精度滤波器）。系数按每节[b0, b1, b2, a1, a2]的顺序排列。
+从单精度源数组设置所有二阶滤波器系数（单精度滤波器）。系数按每个（通道，节）对排列，顺序为 [b0, b1, b2, a1, a2]。按通道为主顺序排列：记录索引为：通道 \* 节数 + 节。
 
 **起始版本：** 6.1.1(24)
 
@@ -1453,7 +1453,7 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffDouble (FAST_Biquadm * filter, const dou
 
 **描述**
 
-从双精度源数组设置所有二阶滤波器系数（单精度滤波器）。系数按每节[b0, b1, b2, a1, a2]的顺序排列。
+从双精度源数组设置所有二阶滤波器系数（单精度滤波器）。系数按每个（通道，节）对排列，顺序为 [b0, b1, b2, a1, a2]。按通道为主顺序排列：记录索引为：通道 \* 节数 + 节。
 
 **起始版本：** 6.1.1(24)
 
@@ -1481,7 +1481,7 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffSingleD (FAST_BiquadmD * filter, const f
 
 **描述**
 
-从单精度源数组设置所有二阶滤波器系数（双精度滤波器）。系数按每节[b0, b1, b2, a1, a2]的顺序排列。
+从单精度源数组设置所有二阶滤波器系数（双精度滤波器）。系数按每个（通道，节）对排列，顺序为 [b0, b1, b2, a1, a2]。按通道为主顺序排列：记录索引为：通道 \* 节数 + 节。
 
 **起始版本：** 6.1.1(24)
 
@@ -1509,7 +1509,7 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetCoeffDoubleD (FAST_BiquadmD * filter, const d
 
 **描述**
 
-从双精度源数组设置所有二阶滤波器系数（双精度滤波器）。系数按每节[b0, b1, b2, a1, a2]的顺序排列。
+从双精度源数组设置所有二阶滤波器系数（双精度滤波器）。系数按每个（通道，节）对排列，顺序为 [b0, b1, b2, a1, a2]。按通道为主顺序排列：记录索引为：通道 \* 节数 + 节。
 
 **起始版本：** 6.1.1(24)
 
@@ -1537,7 +1537,7 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFilters (FAST_Biquadm * filter, const u
 
 **描述**
 
-设置二阶滤波器节的激活掩码（单精度）。掩码顺序为：[ch0\_sec0, ch0\_sec1, ch0\_sec2, ..., ch1\_sec0, ch1\_sec1, ch1\_sec2, ...]。
+设置二阶滤波器节的激活掩码（单精度）。掩码顺序为：[sec0, sec1, ...]。
 
 **起始版本：** 6.1.1(24)
 
@@ -1564,7 +1564,7 @@ FAST_ErrorCode HMS_FAST_Biquadm_SetActiveFiltersD (FAST_BiquadmD * filter, const
 
 **描述**
 
-设置二阶滤波器节的激活掩码（双精度）。掩码顺序为：[ch0\_sec0, ch0\_sec1, ch0\_sec2, ..., ch1\_sec0, ch1\_sec1, ch1\_sec2, ...]。
+设置二阶滤波器节的激活掩码（双精度）。掩码顺序为：[sec0, sec1, ...]。
 
 **起始版本：** 6.1.1(24)
 

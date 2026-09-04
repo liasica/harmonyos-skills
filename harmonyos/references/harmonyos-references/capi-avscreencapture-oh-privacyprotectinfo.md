@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avsc
 title: OH_PrivacyProtectInfo
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_PrivacyProtectInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:18ab27a74799b824eaf99c1ad6a6a401dfa6d1b2e853e66416d0d956f1efa7af
+scraped_at: 2026-09-05T06:20:25+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:ab9851d79b0ad2cb0bd10b909eecd56ddba4315596cfa0f45bfa899b214c49eb
 ---
 
 ```c
-typedef struct {...} OH_PrivacyProtectInfo;
+typedef struct {...} OH_PrivacyProtectInfo
 ```
 
 ## 概述

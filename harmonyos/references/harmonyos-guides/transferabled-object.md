@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/transferabled
 title: Transferable对象 (NativeBinding对象)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Transferable对象 (NativeBinding对象)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
+scraped_at: 2026-09-05T06:13:52+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7a801449d0e950ec02aee63f4c437d131fa4d9171a7b067908e8afc5baf9e7dd
+content_hash: sha256:62a56ab1067109385b163e090d5b6c29eb88e7218fccfbce0fe5800fb295dd7e
 ---
 
 Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS对象，其主要功能由C++提供，JS对象壳则分配在虚拟机的本地堆（LocalHeap）中。跨线程传输时复用同一个C++对象，相比JS对象的拷贝模式，传输效率更高。因此，可共享或转移的NativeBinding对象被称为Transferable对象。开发者可以自定义Transferable对象，详细示例请参考[自定义Native Transferable对象的多线程操作场景](napi-coerce-to-native-binding-object.md)。
@@ -14,7 +14,7 @@ Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS�
 
 如果C++实现能够确保线程安全性，则NativeBinding对象的C++部分支持跨线程共享。NativeBinding对象跨线程传输后，只需重新创建JS壳即可桥接到同一个C++对象上，实现C++对象的共享。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/3RtwE918Q--nD3SE9PvSbw/zh-cn_image_0000002736312185.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/TeVTX2BlQoCEb-Yi-RgMVA/zh-cn_image_0000002712243318.png)
 
 常见的共享模式NativeBinding对象包括：应用上下文（[ApplicationContext](../harmonyos-references/js-apis-inner-application-applicationcontext.md)）、窗口上下文（WindowContext）、组件上下文（AbilityContext或ComponentContext）等Context类型对象。这些上下文对象封装了应用程序组件的上下文信息，提供了访问系统服务和资源的能力，使得应用程序组件可以与系统进行交互。获取Context信息的方法可以参考[获取上下文信息](application-context-stage.md)。跨线程共享使用上下文的示例可参考[使用TaskPool进行频繁数据库操作](batch-database-operations-guide.md#使用taskpool进行频繁数据库操作)。
 
@@ -22,7 +22,7 @@ Transferable对象，也称为NativeBinding对象，是指绑定C++对象的JS�
 
 如果C++实现包含数据且无法保证线程安全性，则NativeBinding对象的C++部分需要采用转移方式传输。NativeBinding对象跨线程传输后，重新创建JS壳可桥接到C++对象上，但需移除原JS壳与C++对象的绑定关系。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/4uZknZELThOGOrETQ1Q-6A/zh-cn_image_0000002706673142.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/93Im6IN0T0Cop_TTX3AqXw/zh-cn_image_0000002742002275.png)
 
 常见的转移模式NativeBinding对象包括[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)对象，它可以读取或写入图像数据，获取图像信息，常用于显示图片。
 

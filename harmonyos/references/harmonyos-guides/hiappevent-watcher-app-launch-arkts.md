@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅启动耗时事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 启动耗时事件 > 订阅启动耗时事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:ca37804a72fbe21366b6d2c004d0155af81fb2f862f9ef4c705583d9e2bd6687
+scraped_at: 2026-09-05T06:14:39+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:af1231f8a9681a9a420e13f0d1d527787c23a7765a99eb05f7f73b4511457178
 ---
 
 ## 接口说明
@@ -64,3 +64,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    HiAppEvent eventName=APP_LAUNCH
    HiAppEvent eventInfo={"domain":"OS","name":"APP_LAUNCH","eventType":4,"params":{"animation_finish_time":662,"bundle_name":"com.example.myapplication","bundle_version":"1.0.0","extend_time":0,"icon_input_time":1709367533224,"process_name":"com.example.myapplication","start_type":0,"time":1709367533901}}
    ```
+
+## 示例代码
+
+* [订阅启动耗时事件](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/xperf/app_start)

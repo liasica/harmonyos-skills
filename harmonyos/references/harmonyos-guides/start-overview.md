@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-overvie
 title: 开发准备
 breadcrumb: 指南 > 基础入门 > 快速入门 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:07+08:00
+scraped_at: 2026-09-05T06:13:43+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:f79de0b47c03bd4d14dd681db31f158ab49cddcec92b5291fa54581291697b0b
+content_hash: sha256:13a8edba053b43c2530cd42793ae8f8c0c3f8c7ed186d1f85cda1ba0c0c4d9a4
 ---
 
 本文档适用于HarmonyOS应用开发的初学者。通过构建一个简单的具有页面跳转/返回功能的应用（如下图所示），快速了解工程目录的主要文件，熟悉HarmonyOS应用开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/jivJAS2dS4yt_c9O0V22tw/zh-cn_image_0000002736432139.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/et95J2OnQUutMVbMUqMAuw/zh-cn_image_0000002712403190.png)
 
 在开始之前，您需要了解有关HarmonyOS应用的一些基本概念：UI框架的简单说明、应用模型的基本概念。
 

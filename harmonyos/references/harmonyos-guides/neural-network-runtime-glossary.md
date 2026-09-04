@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/neural-network-runtime-glossary
-title: Neural Network Runtime Kit术语表
-breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > Neural Network Runtime Kit术语表
+title: Neural Network Runtime Kit术语
+breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > Neural Network Runtime Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-05T06:15:44+08:00
+doc_updated_at: 2026-09-04
 content_hash: sha256:fbfa61eda906495e24c31b12bf0d0c2de990aef7f986478ccb84cba0ed1fcadb
 ---
 

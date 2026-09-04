@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 请求体参数说明
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 请求体参数说明
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
+scraped_at: 2026-09-05T06:21:27+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870f93a1
+content_hash: sha256:c7d8edeb1f741bd030adfdd5edd70b910f0f1539c70ac4eb10e116aea8eda564
 ---
 
 ## pushOptions
@@ -318,7 +318,7 @@ content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870
 
 ### Extend
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ChAkmFHnTCm1RqGEzEMFCw/zh-cn_image_0000002706677180.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Y-d1gdiFTLO6lL6l3bCOCA/zh-cn_image_0000002712407378.png)
 
 * 1 实况卡片辅助区类型，对应type字段：
   + 当辅助区类型为1时，辅助区显示普通文本，使用API字段text传入文本内容。
@@ -337,7 +337,7 @@ content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870
 
 ### Game
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/sD6OBwnZQYeL9AItcJwaKg/zh-cn_image_0000002736436269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/uekYN_CQT5mLFtZx5NMgsA/zh-cn_image_0000002742126329.png)
 
 * 1 左侧队伍名称，对应host中的[name](push-scenariozed-api-request-param.md#team)字段。
 * 2 左侧队伍图标，对应host中的[icon](push-scenariozed-api-request-param.md#team)和[iconUrl](push-scenariozed-api-request-param.md#team)字段。
@@ -416,7 +416,7 @@ content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870
 
 ### SingleTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/YmLhtcdbTj6Ld17yyeV9sA/zh-cn_image_0000002706837120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/rtMKa4n9QfGUUas5-Z294Q/zh-cn_image_0000002712247422.png)
 
 * 1 辅助标记文本，对应firstLine字段。
 * 2 强调文本内容，对应secondLine字段。
@@ -431,7 +431,7 @@ content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870
 
 ### FirstTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/AlTiE_pbR0-u1mGZSQQHCw/zh-cn_image_0000002736316229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/1J45FAMhTlORU3gxkA1ruw/zh-cn_image_0000002742006369.png)
 
 * 1 左侧首行文本，对应firstLine字段。
 * 2 左侧次行文本内容，对应secondLine字段。
@@ -446,7 +446,7 @@ content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870
 
 ### LastTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/k3UwNurdRK-DPoQQFw1LnQ/zh-cn_image_0000002706677184.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/I95j1qmIRzK--GyrVKYXPQ/zh-cn_image_0000002712407382.png)
 
 * 3 右侧首行文本，对应firstLine字段。
 * 4 右侧次行文本内容，对应secondLine字段。
@@ -466,7 +466,7 @@ content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870
 
 ### RichProgress
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/00KBNtq6R-2Jrgh4h-m0rA/zh-cn_image_0000002736436273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/gK9cMUrqRje_IAzvtanjAw/zh-cn_image_0000002742126333.png)
 
 * 1 进度百分比，对应progress字段。
 * 2 进度指示器左侧的进度点及节点图标的颜色，对应color字段。
@@ -494,7 +494,7 @@ content_hash: sha256:0f8028f376187dcfb0a95fa2d4b0f0190b09b7a453db297575695204870
 
 ### ExternalData
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/SR_BagpcQg-mOAPvbWkdvg/zh-cn_image_0000002706837122.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/dqNEXxB8QTieASwyh2EKAQ/zh-cn_image_0000002712247424.png)
 
 * 1 自定义的外屏通知标题，对应title字段。
 * 2 自定义的外屏通知内容，对应body字段。

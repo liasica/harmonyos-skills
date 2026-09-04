@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: 算子原型定义实现
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 基于工程实现算子 > 算子原型定义实现
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:25+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:9cf24d759238b2faa9ba5ab5bd6a7c95031758889880c3a5b962b64fa7fb8f14
+content_hash: sha256:9de3de2d91d77b342bbe1b221e74b3b61d3263cc0967b5593f61067f2cdc12ad
 ---
 
 算子原型主要描述了算子的输入输出、属性等信息以及算子在AI处理器上相关实现信息，并关联[Host侧Tiling实现](cannkit-tiling-implementation-on-the-host.md)等函数。算子原型通过自定义的算子类来承载，该算子类继承自[OpDef](cannkit-input.md)。完成算子的原型定义等操作后，需要调用[原型注册接口(OP\_ADD)](cannkit-prototype-api-registration.md)接口，传入算子类型（自定义算子类的类名），进行算子原型注册。下面是一个简单的Add算子原型定义和注册的例子。
@@ -41,7 +41,7 @@ OP_ADD(AddCustom);
 } // namespace ops
 ```
 
-**说明** 
+![](https://media:401788444100737859) 
 
 注册算子类型后，框架会根据算子类型获取算子注册信息，同时在编译和运行时按照一定的规则匹配算子实现文件名称和kernel侧核函数名称。为了保证正确匹配，算子类型、算子实现文件名称和核函数名称需要遵循如下定义规则。通常情况下，开发者只需要保证创建算子工程时原型定义json文件中算子类型op的参数值为大驼峰命名方式即可，工程创建后自动生成的代码即满足该规则。在手动编写算子原型定义和算子实现文件时需要按照如下规则定义。
 

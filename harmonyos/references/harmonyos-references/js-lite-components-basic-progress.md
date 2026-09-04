@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > progress
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:14+08:00
+scraped_at: 2026-09-05T06:17:39+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9b292f05f0bd450c740ff734c562a2cbaeb0be2cf2623f7e0479f08aded372d5
+content_hash: sha256:85625f770fb429fa45bf2364f70b34f30025d533b44507a8d46aacf3e08d94d5
 ---
 
 进度条，用于显示内容加载或操作处理进度。
@@ -126,4 +126,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/LBP6kbz-SAiIGxixrd5ITw/zh-cn_image_0000002706836602.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/C3TkAaMhTcugako9onq22Q/zh-cn_image_0000002712246912.png)

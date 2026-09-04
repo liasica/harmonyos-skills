@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件内容模糊
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 组件内容模糊
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9bfa8447f4180b934a8bdf0b6274d9b57c312c69ebb90aab31685d1b601cdcea
+scraped_at: 2026-09-05T06:17:05+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:5457ce1600b8469a5ccc2aa7088c89a1571b71c988f83b874690fc3096149b95
 ---
 
 为当前组件添加内容模糊效果。
@@ -14,7 +14,7 @@ content_hash: sha256:9bfa8447f4180b934a8bdf0b6274d9b57c312c69ebb90aab31685d1b601
 
 * 从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本模块接口仅可在Stage模型下使用。
-* foregroundBlurStyle接口为实时模糊接口，每帧执行实时渲染，性能负载较大。当模糊内容与模糊半径均无需变动时，推荐采用静态模糊接口[blur](js-apis-effectkit.md#blur)。最佳实践请参考：[图像模糊动效优化-使用场景](../best-practices/bpta-fuzzy-scene-performance-optimization.md#section4945532519)。
+* foregroundBlurStyle接口为实时模糊接口，每帧执行实时渲染，性能负载较大。当模糊内容与模糊半径均无需变动时，推荐采用静态模糊接口[blur](js-apis-effectkit.md#blur)。最佳实践请参考：对比动态模糊与静态模糊中的[使用场景](../harmonyos-guides/ui-dynamic-vs-static-blur-examples.md#使用场景)。
 
 ## foregroundBlurStyle
 
@@ -74,7 +74,7 @@ foregroundBlurStyle(style: Optional<BlurStyle>, options?: ForegroundBlurStyleOpt
 
 **说明** 
 
-foregroundBlurStyle接口为实时模糊接口，每帧执行实时渲染，性能负载高于静态模糊接口。当模糊内容与模糊半径均无需变动时，推荐采用静态模糊接口[blur](js-apis-effectkit.md#blur)。最佳实践请参考：[图像模糊动效优化-使用场景](../best-practices/bpta-fuzzy-scene-performance-optimization.md#section4945532519)。
+foregroundBlurStyle接口为实时模糊接口，每帧执行实时渲染，性能负载高于静态模糊接口。当模糊内容与模糊半径均无需变动时，推荐采用静态模糊接口[blur](js-apis-effectkit.md#blur)。最佳实践请参考：对比动态模糊与静态模糊中的[使用场景](../harmonyos-guides/ui-dynamic-vs-static-blur-examples.md#使用场景)。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -179,4 +179,4 @@ struct ForegroundBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/L6bz5uDeRleSpvAdkxkcQg/zh-cn_image_0000002706835658.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/a0ULhlWFRr6zK3mJHzwMbA/zh-cn_image_0000002712245906.png)

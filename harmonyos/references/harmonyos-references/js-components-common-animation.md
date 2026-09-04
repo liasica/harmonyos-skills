@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:11+08:00
+scraped_at: 2026-09-05T06:17:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:85dfc49ee4e50535d497185f628e588467b8b1042f7b47484b9062bd8a4c1b77
+content_hash: sha256:1da5cc176dce296db612edc0403e11b40f3d57f541100ed8a9f4fa69352efe4c
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:85dfc49ee4e50535d497185f628e588467b8b1042f7b47484b9062bd8a4
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/kf1LNfQfTMq7oYjCHPY0jw/zh-cn_image_0000002706836362.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/ZTAeKfcRRV2bYeFcLt1Gnw/zh-cn_image_0000002712246672.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/kcqO6vcpRQiWlx25jvZVlg/zh-cn_image_0000002736315467.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/508YI0V5SUednCmy_kesyw/zh-cn_image_0000002742005621.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/0XD3gsYrRgiXKTuNmiBeGQ/zh-cn_image_0000002706676428.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/5eiSR7BnTYm0CVhwQEo2Aw/zh-cn_image_0000002712406634.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/3Xq7Fm8dTmiqyuVVULlsqA/zh-cn_image_0000002736435515.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/XO9DqoWjRrWbowHKy1fNfA/zh-cn_image_0000002742125581.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 基础知识
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > svg开发指导 > 基础知识
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:21+08:00
+scraped_at: 2026-09-05T06:14:07+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:de7616f4c8f69778cfda2f1628763b77762919db362f3191514a16b2f4d46af2
+content_hash: sha256:cd629ba37626a2e358176a10d1100ade4db984ca083240ed3ce4d8827341dc0e
 ---
 
 svg组件主要作为svg画布的根节点使用，也可以在svg中嵌套使用。具体用法请参考[svg](../harmonyos-references/js-components-svg.md)。
@@ -40,7 +40,7 @@ svg{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/FIvcR6K5TVuSbZ7SP_AKPA/zh-cn_image_0000002706674034.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/nmeaZJPUSBiyYwg9s9R3jg/zh-cn_image_0000002712404174.png)
 
 ## 设置属性
 
@@ -74,7 +74,7 @@ svg{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/D6Rgyo8USKCVnBHvhblPZw/zh-cn_image_0000002736433125.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/i8_HOXGUQoGtomcQSTylmQ/zh-cn_image_0000002742123123.png)
 
 **说明** 
 

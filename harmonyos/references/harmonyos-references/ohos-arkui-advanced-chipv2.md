@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipV2
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:60fae06c3fe6b95d083b1527a74e340b1c7c9b40d42a188932d1c78c72cd84df
+scraped_at: 2026-09-05T06:17:28+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:7c4b0eaecccab2bacaa3dbf84b46ca987ce5d1825c9af40b15d16b56f55e930c
 ---
 
 ChipV2是提供丰富样式和交互能力的操作块组件，支持前缀图标、后缀图标、激活状态、关闭按钮等特性，支持Symbol和Image两种图标类型，并提供完善的无障碍访问能力。该组件适用于搜索历史记录、邮件发送列表、标签选择、过滤器、联系人展示等场景。
@@ -14,7 +14,8 @@ ChipV2是提供丰富样式和交互能力的操作块组件，支持前缀图�
 
 **说明** 
 
-本模块接口仅可在Stage模型下使用。
+* 本模块接口仅可在Stage模型下使用。
+* 如果ChipV2设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到ChipV2本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ChipV2设置通用属性和通用事件。
 
 **起始版本：** 26.0.0
 
@@ -1014,7 +1015,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/zp5fObg8QZe4s3qPK5_9CQ/zh-cn_image_0000002706836266.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/-cMXp2ElT3WS73BMtclQow/zh-cn_image_0000002712246512.png)
 
 ### 示例2（设置ChipV2激活状态）
 
@@ -1079,7 +1080,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/-NC4DgKLQP2dxdDUGn8AFQ/zh-cn_image_0000002736315371.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/UIXBJDevR2WFaIwB-q0AoQ/zh-cn_image_0000002742005461.gif)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -1138,7 +1139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/4STuh1hMQQ2DpgGTRU8dUQ/zh-cn_image_0000002706676332.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/9_1OQdARRwKTv4oKtYop4w/zh-cn_image_0000002712406472.gif)
 
 ### 示例4（监听ChipV2Options内对象类型属性的内部属性变化）
 
@@ -1181,4 +1182,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/3cnLvXhXTqeVDwfeITORHg/zh-cn_image_0000002736435419.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/pp0HNOCgRi2BZYxulcTm4A/zh-cn_image_0000002742125421.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_pasteboard.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > oh_pasteboard.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:25be404aa06bb60693ccb82f6fb98faee32516e4ac295e0986a4038fc3c3a96d
+scraped_at: 2026-09-05T06:19:21+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:e1cfec5b890cd40b64aec5fbe8f649a895c19a299330bc91a11a19eddb805661
 ---
 
 ## 概述
@@ -40,8 +40,8 @@ content_hash: sha256:25be404aa06bb60693ccb82f6fb98faee32516e4ac295e0986a4038fc3c
 | [PASTEBOARD\_MIMETYPE\_TEXT\_PLAIN](capi-oh-pasteboard-h.md#pasteboard_mimetype_text_plain) "text/plain" | 纯文本类型。 |
 | [PASTEBOARD\_MIMETYPE\_TEXT\_URI](capi-oh-pasteboard-h.md#pasteboard_mimetype_text_uri) "text/uri" | URI类型。 |
 | [PASTEBOARD\_MIMETYPE\_TEXT\_HTML](capi-oh-pasteboard-h.md#pasteboard_mimetype_text_html) "text/html" | HTML类型。 |
-| [PASTEBOARD\_MIMETYPE\_PIXELMAP](capi-oh-pasteboard-h.md#pasteboard_mimetype_pixelmap) "pixelMap" | pixelMap类型。 |
-| [PASTEBOARD\_MIMETYPE\_TEXT\_WANT](capi-oh-pasteboard-h.md#pasteboard_mimetype_text_want) "text/want" | want类型。 |
+| [PASTEBOARD\_MIMETYPE\_PIXELMAP](capi-oh-pasteboard-h.md#pasteboard_mimetype_pixelmap) "pixelMap" | PixelMap类型。 |
+| [PASTEBOARD\_MIMETYPE\_TEXT\_WANT](capi-oh-pasteboard-h.md#pasteboard_mimetype_text_want) "text/want" | Want类型。 |
 
 ### 枚举
 
@@ -132,7 +132,7 @@ HTML类型。
 
 **描述**
 
-pixelMap类型。
+PixelMap类型。
 
 **起始版本：** 22
 
@@ -144,7 +144,7 @@ pixelMap类型。
 
 **描述**
 
-want类型。
+Want类型。
 
 **起始版本：** 22
 
@@ -608,7 +608,9 @@ OH_UdmfData* OH_Pasteboard_GetData(OH_Pasteboard* pasteboard, int* status)
 
 **起始版本：** 13
 
-**需要权限**：ohos.permission.READ\_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](../harmonyos-guides/get-pastedata-permission-guidelines.md)。[使用粘贴控件](../harmonyos-guides/pastebutton.md)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](../harmonyos-guides/get-pastedata-permission-guidelines.md)。应用[使用粘贴控件](../harmonyos-guides/pastebutton.md)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ\_PASTEBOARD
 
 **参数：**
 
@@ -901,7 +903,9 @@ OH_UdmfData* OH_Pasteboard_GetDataWithProgress(OH_Pasteboard* pasteboard, Pasteb
 
 **起始版本：** 15
 
-**需要权限**：ohos.permission.READ\_PASTEBOARD，应用访问剪贴板内容需[申请访问剪贴板权限](../harmonyos-guides/get-pastedata-permission-guidelines.md)。[使用粘贴控件](../harmonyos-guides/pastebutton.md)访问剪贴板内容的应用，可以无需申请权限。
+应用使用自定义控件访问剪贴板内容需[申请访问剪贴板权限](../harmonyos-guides/get-pastedata-permission-guidelines.md)。应用[使用粘贴控件](../harmonyos-guides/pastebutton.md)访问剪贴板内容，无需申请权限。
+
+**需要权限：** ohos.permission.READ\_PASTEBOARD
 
 **参数：**
 

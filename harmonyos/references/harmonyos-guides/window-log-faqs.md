@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-log-fa
 title: 窗口开发常见日志问题与定位
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发常见日志问题与定位
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:29607978cae5a010b2bd40148ff378a54887543efb7eb014a365af27c6eb452a
+scraped_at: 2026-09-05T06:14:09+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:94455dd221f498b13d43a7ddd46ed6e557652d7e47de0b500c9b4fedb800e731
 ---
 
 ## 使用窗口hidumper命令查看窗口信息定位问题
@@ -273,7 +273,7 @@ windowStage.createSubWindow('subWindow', (err, windowClass) => {
         return;
     }
     // 立即加载页面内容
-    windowClass.loadContent('pages/SubWindowPage', (err) => {
+    windowClass.setUIContent('pages/SubWindowPage', (err) => {
         if (err.code) {
             console.error('Failed to load content.');
             return;

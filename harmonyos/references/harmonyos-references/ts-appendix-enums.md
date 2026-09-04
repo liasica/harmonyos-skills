@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-append
 title: 枚举说明
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 枚举说明
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a7908f9cf7585c50222b03bd55fe758e04231a4de483c8003518aa296bde1b5e
+scraped_at: 2026-09-05T06:17:34+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:3bc5edde066368262759f64dece84c78561b7947da4654473215669fe4c28eb6
 ---
 
 本文档汇总ArkUI开发中的公共枚举，供开发者查询枚举值的含义和适用场景。
@@ -1621,8 +1621,8 @@ type Nullable<T> = T | undefined
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| DEFAULT | - | 默认风格。光标宽度为1.5vp，光标高度与文本选中底板高度和字体大小相关。 |
-| INLINE | - | 内联输入风格。文本选中底板高度与输入框高度相同。  内联输入是在有明显的编辑态/非编辑态的区分场景下使用，例如：文件列表视图中的重命名。  不支持showError属性。  内联模式下，不支持拖入文本。 |
+| DEFAULT | - | 默认风格。光标宽度为1.5vp，光标高度与文本选中高亮高度和字体大小相关。 |
+| INLINE | - | 内联输入风格。文本选中高亮高度与输入框高度相同。  内联输入是在有明显的编辑态/非编辑态的区分场景下使用，例如：文件列表视图中的重命名。  不支持showError属性。  内联模式下，不支持拖入文本。 |
 
 ## TextSelectableMode12+
 

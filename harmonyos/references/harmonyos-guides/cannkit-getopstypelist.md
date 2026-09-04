@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-getop
 title: GetOpsTypeList
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > OperatorFactory > GetOpsTypeList
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:11+08:00
+scraped_at: 2026-09-05T06:15:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a805f3e701be55abab9e6818b59f3645fe75a0dd13d425ae2254f87795c6591a
+content_hash: sha256:69b2873513d58c299896a208ac1142730847814936bfa1dc4892656bb4d910f0
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:a805f3e701be55abab9e6818b59f3645fe75a0dd13d425ae2254f87795c
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444104001884) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-
 title: Video
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > Video
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:04+08:00
+scraped_at: 2026-09-05T06:17:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:fa240457a88e8e688319f0a771a942aadaf2a13f421f366a4540331b2dfe38d9
+content_hash: sha256:c1212ac054b44a2fd741c5c80b078e6967e95c55b394fc1826bdb3bd32edcd56
 ---
 
 Video组件用于播放视频文件并控制其播放状态，支持播放、暂停、进度控制、倍速播放、全屏切换等功能。
@@ -953,7 +953,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/J3h-j_tZSfmI6jBhEMzBsA/zh-cn_image_0000002706676088.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/N-pJmsLYQ16zDJJRVzpASQ/zh-cn_image_0000002712406232.gif)
 
 ### 示例2（图像分析功能）
 
@@ -1111,7 +1111,7 @@ struct VideoObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/C1e3wkXmTua53xgJ42JFng/zh-cn_image_0000002736435175.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LhICiAjYREKeNQ42dYscrA/zh-cn_image_0000002742125181.png)
 
 ### 示例5（onError事件上报错误码）
 
@@ -1154,7 +1154,7 @@ struct VideoErrorComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/eA5qE9wTSky3u59x_9YsmA/zh-cn_image_0000002706836028.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/LwTO8sVFTYWCYyHFcHQvog/zh-cn_image_0000002712246274.png)
 
 ### 示例6（使用attributeModifier动态设置Video组件的属性及方法）
 
@@ -1276,7 +1276,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/DwOVy_qVTCy8W42G1HLRRQ/zh-cn_image_0000002736315133.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/LRa0zM4RSi27TFpcYRO3gg/zh-cn_image_0000002742005223.png)
 
 ### 示例7（VideoControllerAsync用法）
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileb
 title: open_file_boost.h
 breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > C API > 头文件和结构体 > 头文件 > open_file_boost.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:be6a9b08620140af34c5e4478cc1aa0ee5ce3e087f2947ba044b1510f548ef2e
+scraped_at: 2026-09-05T06:21:24+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:13e51df64c74475bd4892633635d317ddf2993e6c11652b718e8f482b3b4a437
 ---
 
 ## 概述
@@ -81,7 +81,7 @@ content_hash: sha256:be6a9b08620140af34c5e4478cc1aa0ee5ce3e087f2947ba044b1510f54
 | [OpenFileBoost\_ErrCode](openfileboost_preview.md#openfileboost_errcode) [HMS\_Preview\_OpenFileBoost\_OptionsDestroy](openfileboost_preview.md#hms_preview_openfileboost_optionsdestroy) ([OpenFileBoost\_Options](openfileboost_preview.md#openfileboost_options) \*options) | 销毁[OpenFileBoost\_Options](openfileboost_preview.md#openfileboost_options)。 |
 | [OpenFileBoost\_ErrCode](openfileboost_preview.md#openfileboost_errcode) [HMS\_Preview\_OpenFileBoost\_RegisterFilePreloadWithOption](openfileboost_preview.md#hms_preview_openfileboost_registerfilepreloadwithoption) (HMS\_OpenFileBoost\_QueryAppState queryAppState, HMS\_OpenFileBoost\_OnFilePreload filePreload, HMS\_OpenFileBoost\_OnFilePreload cancelFilePreload, [OpenFileBoost\_Options](openfileboost_preview.md#openfileboost_options) \*options) | 注册预加载回调，允许应用传入支持预加载的文件信息。 |
 | bool [HMS\_Preview\_FileBoost\_IsSupported](openfileboost_preview.md#hms_preview_fileboost_issupported) (void) | 查询当前设备是否支持文件打开加速功能。建议开发者在使用文件打开加速功能之前，先调用本接口检查当前设备是否支持文件打开加速功能。确认支持后再使用其他文件打开加速接口如[HMS\_OpenFileBoost\_RegisterFilePreload](openfileboost_preview.md#hms_openfileboost_registerfilepreload)、[HMS\_Preview\_FileScanBoost\_RegisterFileScan](openfileboost_preview.md#hms_preview_filescanboost_registerfilescan)等。 |
-| bool [HMS\_Preview\_OpenFileBoost\_IsEnabled](openfileboost_preview.md#hms_preview_openfileboost_isenabled) (void) | 查询应用加速特性是否使能。 |
+| bool [HMS\_Preview\_OpenFileBoost\_IsEnabled](openfileboost_preview.md#hms_preview_openfileboost_isenabled) (void) | 查询应用加速特性是否可用。 |
 | [OpenFileBoost\_ErrCode](openfileboost_preview.md#openfileboost_errcode) [HMS\_Preview\_OpenFileBoost\_FileOperationInfoCreate](openfileboost_preview.md#hms_preview_openfileboost_fileoperationinfocreate) (const char \*path, uint32\_t pathLen, const char \*operation, uint32\_t operationLen, [OpenFileBoost\_FileOperationInfo](openfileboost_preview.md#openfileboost_fileoperationinfo) \*\*outFileOperationInfo) | 创建[OpenFileBoost\_FileOperationInfo](openfileboost_preview.md#openfileboost_fileoperationinfo)。 |
 | [OpenFileBoost\_ErrCode](openfileboost_preview.md#openfileboost_errcode) [HMS\_Preview\_OpenFileBoost\_FileOperationInfoDestroy](openfileboost_preview.md#hms_preview_openfileboost_fileoperationinfodestroy) ([OpenFileBoost\_FileOperationInfo](openfileboost_preview.md#openfileboost_fileoperationinfo) \*fileOperationInfo) | 销毁[OpenFileBoost\_FileOperationInfo](openfileboost_preview.md#openfileboost_fileoperationinfo)。 |
 | [OpenFileBoost\_ErrCode](openfileboost_preview.md#openfileboost_errcode) [HMS\_Preview\_OpenFileBoost\_NotifyFileOperation](openfileboost_preview.md#hms_preview_openfileboost_notifyfileoperation) ([OpenFileBoost\_FileOperationInfo](openfileboost_preview.md#openfileboost_fileoperationinfo) \*fileOperationInfo) | 当用户对文件进行操作时，App调用该接口通知系统文件操作类型，这将有助于提高预加载文件预测的准确性。 |

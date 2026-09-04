@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: DumpAccChkPoint功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > 更多功能 > DumpAccChkPoint功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:25+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:df6d3316e98aa32033f17b7f0b8b30baae63b7fc1b27947ae971325d9a695170
+content_hash: sha256:c46c1c999ac6c29e959d41b3bf8057b00021e3a43e3a104b4654ee64a776bca0
 ---
 
 ## 功能介绍
@@ -14,7 +14,7 @@ content_hash: sha256:df6d3316e98aa32033f17b7f0b8b30baae63b7fc1b27947ae971325d9a6
 
 当Tensor数据较大时，可通过DumpAccChkPoint指定偏移位置，截取指定长度的元素值打印。
 
-**说明** 
+![](https://media:401788444104422889) 
 
 * simulator调测场景下的Dump偏移位置Tensor，受dump mode参数控制。
 * 固定为每个核分配的打印数据的最大可使用空间为1M，目前该大小不支持修改，若打印超过1M，打印内容不再显示，请开发者控制待打印的数据量。

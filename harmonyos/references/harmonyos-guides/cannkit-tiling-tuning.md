@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tilin
 title: Tiling调测功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > Tiling调测功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:25+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:bbd680987228d9381576ffb9e9d6cda26741250787923a2e83d007fe29f064a1
+content_hash: sha256:95e8b7fd7046c725a98026b88204e9e363a8875a8c318e34e3c3c88603d5600e
 ---
 
 ## 功能介绍
@@ -14,7 +14,7 @@ Tiling是算子开发中独立且关键的部分，描述了Kirin AI处理器SoC
 
 对单算子执行Tiling调测时，根据Tiling so文件执行Tiling运算，生成Tiling bin文件。
 
-**说明** 
+![](https://media:401788444093821800) 
 
 目前仅标准自定义算子工程场景、ops\_adv算子工程场景、built-in工程场景、内源框架工程场景需要进行Tiling调测，其余场景不涉及。
 

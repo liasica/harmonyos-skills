@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-websoc
 title: 使用WebSocket访问网络(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用WebSocket访问网络(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
+scraped_at: 2026-09-05T06:14:29+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a663347ad955f76fb3acce5b386d629370acc98dd63a89628033f68800179f76
+content_hash: sha256:44c073e5ac5d750b1843692f0cd02f284be1ffdc74e9e7cd9a4d095784549d6e
 ---
 
 ## 场景介绍
@@ -337,7 +337,7 @@ struct Index {
 
 注意：如图所示，在add\_library中的entry是工程自动生成的modename，若要做修改，需和步骤3中.nm\_modname保持一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/mE93DuUcQ8243yfQWm2lyA/zh-cn_image_0000002706834336.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/XHKjjzOdSQOCCfm2DMH2WQ/zh-cn_image_0000002712244574.png)
 
 7、调用WebSocket C API接口要求应用拥有ohos.permission.INTERNET权限，在module.json5中的requestPermissions项添加该权限。
 
@@ -349,7 +349,7 @@ struct Index {
 
 2、运行工程，设备上会弹出以下图片所示界面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/w51IdzHFQ9OkHQ02TuQrdQ/zh-cn_image_0000002736313443.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/JHeweC1TRo-E_6UacuUdFg/zh-cn_image_0000002742003527.jpg)
 
 简要说明：
 
@@ -358,6 +358,6 @@ struct Index {
 * 在Content输入框里输入要发送给服务器的内容，点击Send按钮发送。如果服务器返回消息，会触发onMessage回调，打印日志。
 * 点击Close按钮，WebSocket连接释放，可以重新输入新的WebSocket URL。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/_yeKpmLRQ8mLfHm71THxfw/zh-cn_image_0000002706674402.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/fq4N2_05TFumajG90pkqEg/zh-cn_image_0000002712404540.jpg)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/iSjLUuE3TmeofGUOvUF7xQ/zh-cn_image_0000002736433491.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Pbe9B6R6R8SM9ACzIpBkYw/zh-cn_image_0000002742123489.png)

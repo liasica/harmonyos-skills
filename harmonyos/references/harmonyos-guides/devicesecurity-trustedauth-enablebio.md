@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 开通生物特征认证能力
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 生物特征绑定、认证与解绑 > 开通生物特征认证能力
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
+scraped_at: 2026-09-05T06:14:22+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:404131a66f2f858be75071ebcfa7994130d20ad3bdb897546df7df4f7fa7a581
+content_hash: sha256:41f858b3419022c2ff185f0ecfcb95ba67ed092c7e58f6b4b6c4008636517a25
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:404131a66f2f858be75071ebcfa7994130d20ad3bdb897546df7df4f7fa
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/a-eZB65MQ7Ka8OR7lKAjqQ/zh-cn_image_0000002736433451.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/rtHl2LxdRlGGA-ZMTPBY_w/zh-cn_image_0000002742123449.jpg)
 
 ## 接口说明
 
@@ -35,7 +35,7 @@ content_hash: sha256:404131a66f2f858be75071ebcfa7994130d20ad3bdb897546df7df4f7fa
 
 如图表示开通人脸认证时对应的UI界面示例，当密码认证通过后，则会拉起系统人脸认证界面进行人脸信息绑定。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/iOX5j3crRy25J_FfI9lmSA/zh-cn_image_0000002706834296.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/xSnMD6eDSciSH27xtZcohA/zh-cn_image_0000002712244536.png)
 
 ## 开发步骤
 

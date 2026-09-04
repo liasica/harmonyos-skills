@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: 使用MindSpore Lite进行模型转换
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite进行模型转换
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
+scraped_at: 2026-09-05T06:15:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ee019cf609d1e45f94c45e87428c3c994ed6d5c3ff418aacd5de7c9984532612
+content_hash: sha256:6f34d1f4c5781587cac3b9bd0ebe83d138cdbcb0c7d51c6b56d15f66ed2b55ee
 ---
 
 ## 场景介绍
@@ -27,7 +27,7 @@ MindSpore Lite AI模型部署流程是：
 
 ### 通过源码编译
 
-**说明** 
+![](https://media:401788444057283538) 
 
 * 由于支持转换PyTorch模型的编译选项默认关闭，因此下载的安装包不支持转换PyTorch模型，只能通过源码编译方式获取。
 * 模型中有transpose与convolution[算子融合](mindspore-lite-term.md#operator-fusion算子融合)，需要通过源码编译方式获取。否则可能会发生类似警告：node infer shape failed, node is Default/Conv2DFusion-xxx。
@@ -83,7 +83,7 @@ MindSpore Lite模型转换工具提供了多种参数设置，用户可根据需
 | --outputDataType | 否 | 设定量化模型输出tensor的数据类型。仅当模型输出tensor的量化参数（scale和zero point）配置时有效。默认与原始模型输出tensor的数据类型保持一致。  默认值为DEFAULT。 | FLOAT32、INT8、UINT8、DEFAULT |
 | --outputDataFormat | 否 | 设定导出模型的输出format，只对四维输出有效。  默认值为NHWC。 | NHWC、NCHW |
 
-**说明** 
+![](https://media:401788444057308539) 
 
 * 参数名和参数值之间用等号连接，中间不能有空格。
 * CAFFE模型一般分为两个文件：\*.prototxt模型结构，对应--modelFile参数；\*.caffemodel模型权值，对应--weightFile参数。

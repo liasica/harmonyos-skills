@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: switch
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > switch
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:14+08:00
+scraped_at: 2026-09-05T06:17:39+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b93fcaa74e0bf5b56830a64e2374ab56f19830b80f1ac0027b1d4e508cdfcb3e
+content_hash: sha256:b05a9d52f5428957ba4dcd5f9d3f17645ac7900b04d41c2774f2d64eebf1ec40
 ---
 
 开关选择器，通过开关，开启或关闭某个功能。
@@ -100,4 +100,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/AxXEMCs4QuuK52j4Cbef-g/zh-cn_image_0000002736435759.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/f-UlnhV8TfSRExSs0L-CuQ/zh-cn_image_0000002742125823.gif)

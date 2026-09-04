@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-openf
 title: 文件打开加速（C/C++）
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > 文件打开加速（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:77a9c2c4647564a6617b61b8a3ddce2397d1550f8afa7944e9503fc62ec3883b
+scraped_at: 2026-09-05T06:15:17+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:1ea3c7b465e3e6bfbd36d4a7714d3810487fd66fc5e5759c093366de65363949
 ---
 
 从5.0.3(15)版本开始，新增文件打开加速功能。提供注册和取消注册接口，应用可以注册一系列回调，文件打开加速服务通过调用回调接口向应用推荐文件进行预加载动作。
@@ -54,7 +54,7 @@ content_hash: sha256:77a9c2c4647564a6617b61b8a3ddce2397d1550f8afa7944e9503fc62ec
 
 ## 约束限制
 
-当前仅在PC/2in1和tablet设备上支持。
+支持的设备类型：PC/2in1，从26.0.0版本开始，新增支持tablet设备。
 
 ## 开发步骤
 
@@ -435,10 +435,10 @@ content_hash: sha256:77a9c2c4647564a6617b61b8a3ddce2397d1550f8afa7944e9503fc62ec
                                                              static_cast<uint32_t>(strlen(reportPath.c_str())), scanResult);
 
             if (res == FILE_SCAN_BOOST_SUCCESS) {
-                // 报告失败，应用可自定义错误处理
                 OH_LOG_INFO(LOG_APP, "ReportScanResult successfully for: %{public}s", reportPath.c_str());
                 reportCount++;
             } else {
+                // 报告失败，应用可自定义错误处理
                 OH_LOG_ERROR(LOG_APP, "ReportScanResult failed for %{public}s, ret :%{public}d", reportPath.c_str(), res);
             }
 

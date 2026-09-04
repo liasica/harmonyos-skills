@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scsi-peripher
 title: 开发适用SCSI协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用SCSI协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:917213f77038007c515861c439b0d0c88a3a8260a9d9b3cba0b765e1fafc8394
+scraped_at: 2026-09-05T06:14:35+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:5c9e2beb1fad65b180e8e340aa9a9a7a517803a20dbdaa8c641ef3b6a7ae00e9
 ---
 
 ## 简介
@@ -29,7 +29,7 @@ ScsiPeripheralDDK支持SPC（SCSI Primary Commands）、SBC（SCSI Block Command
   BMS（Bundle Manager Service）在HarmonyOS上主要负责应用的安装、卸载和数据管理。
 * **DDK**
 
-  DDK（Driver Development Kit）是HarmonyOS基于扩展外设框架，为开发者提供的驱动应用开发的工具包，可针对SCSI非标外设，开发对应的驱动。
+  DDK（Driver Development Kit）是HarmonyOS基于扩展外设框架，为开发者提供的驱动应用开发的工具包，可针对非标USB设备，开发对应的驱动。
 * **非标外设**
 
   非标外设（也称为自定义外设或专有外设）是指不遵循通用标准或专门为特定应用场景定制设计的外围设备。这类设备往往需要专门的软件支持或者特殊的接口来实现与主机系统的通信。
@@ -49,7 +49,7 @@ ScsiPeripheralDDK支持SPC（SCSI Primary Commands）、SBC（SCSI Block Command
 
 **图1** ScsiPeripheralDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/vKrWICc0To6_cyW85lbuFQ/zh-cn_image_0000002706674470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/5IAuMq8HTQqi761bhpkkZg/zh-cn_image_0000002712404608.png)
 
 ### 约束与限制
 

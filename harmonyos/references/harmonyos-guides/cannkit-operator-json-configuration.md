@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: params归一格式的算子json配置
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 数据准备和配置说明 > params归一格式的算子json配置
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:9aadde38da3d655914782490d4b3850a46b482a5dcf1833f773737886c36d56d
+content_hash: sha256:ee8219f343f5a1cfe3502709b5884f5d43abe326a06943d8410e41537c7bf885
 ---
 
 ## json配置说明
 
 为了支持输入/输出参数交叉配置的场景，params归一配置格式应运而生，所有输入/输出参数均放在“params”配置项中。该算子json配置文件中参数可以按**输入/输出规则排布**，也可以按**输入/输出交叉排布**，只要保证参数顺序与Kernel入口函数的参数顺序保持一致即可。
 
-**说明** 
+![](https://media:401788444097957852) 
 
 * **调试工具暂不支持该配置**。
 * **输入/输出规则排布**（所有输出参数排布在输入参数之后）：例如Kernel入口函数的参数排布为extern "C" \_\_global\_\_ \_\_aicore\_\_ void add\_custom(GM\_ADDR input1, GM\_ADDR input2, GM\_ADDR input3,**GM\_ADDR output**)。

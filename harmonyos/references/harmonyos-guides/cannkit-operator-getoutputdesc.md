@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: GetOutputDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator > GetOutputDesc
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:12+08:00
+scraped_at: 2026-09-05T06:15:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c7c7cc2b1b564a870448d4f5b1c20c5b1bad66635e8dc3c79422454c874f541f
+content_hash: sha256:4c1a551de8b182144ff1da279398bf2f916455072c6ae605782eefce5c66dbf8
 ---
 
 ## 函数功能
@@ -14,7 +14,7 @@ content_hash: sha256:c7c7cc2b1b564a870448d4f5b1c20c5b1bad66635e8dc3c79422454c874
 
 ## 函数原型
 
-**说明** 
+![](https://media:401788444114787933) 
 
 数据类型为string的接口后续版本会废弃，建议使用数据类型为非string的接口。
 

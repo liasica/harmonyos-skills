@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆实践指导
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆实践指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
+scraped_at: 2026-09-05T06:13:54+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:e483c3d2526f804f0291c6956c9ee371e974796c0f3cde28a19e67c3b33d4d4b
+content_hash: sha256:4a8818bfca48402332f576690d57d360677faceafff206b771f708ea84d08a21
 ---
 
 ## 概述
@@ -45,11 +45,11 @@ enable默认为false，默认不开启源码混淆功能（在DevEco Studio 5.0.
 
 **图 1** DevEco Studio选择release编译模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/oxff1lsdRyyAqJfu1o3tEA/zh-cn_image_0000002706833098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/8PinK3oFQR-H97jPaM8bMg/zh-cn_image_0000002742122253.png)
 
 **图 2** DevEco Studio指定模块编译
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/osaF8fFmSsqbcJo1ubSY1g/zh-cn_image_0000002736312207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/OnuOKWyLSeSf1kK0LMSoqw/zh-cn_image_0000002712243338.png)
 
 ## 混淆配置能力
 
@@ -65,13 +65,13 @@ enable默认为false，默认不开启源码混淆功能（在DevEco Studio 5.0.
 
 **图 3** 编译配置文件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/Gy3OM0-JSs2iAyrFLTxnsg/zh-cn_image_0000002706673162.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/bq794W-_SoeaRbXx9gwe-Q/zh-cn_image_0000002742002295.png)
 
 新建工程时，每个模块下都有obfuscation-rules.txt文件，用于配置混淆。
 
 **图 4** 混淆配置文件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/FAWXKk0FT4-L8pXeFzaf2A/zh-cn_image_0000002736432253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/g4l2z_2fSAGIU_VLAq_6Lg/zh-cn_image_0000002712403304.png)
 
 在上图中，obfuscation-rules.txt文件中添加了-enable-property-obfuscation和-enable-toplevel-obfuscation开关，表示已启用属性混淆和顶层作用域名称混淆。
 
@@ -143,7 +143,7 @@ DevEco Studio混淆选项及功能描述如下：
 
     **图 5** DevEco Studio编译产物与缓存文件
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/dySwXoPNQcWnU7iEAfP11A/zh-cn_image_0000002706833100.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/AEQDVGnzQ5aBNU0cztH0sA/zh-cn_image_0000002742122255.png)
 
 ## 调试
 

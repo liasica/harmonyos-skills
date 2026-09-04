@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义组件成员属性访问限定符使用限制
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件成员属性访问限定符使用限制
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c7e889665009331853d6df42191015427aad25887404be0d82a32dd828704de3
+scraped_at: 2026-09-05T06:13:55+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:f1e39ff14919c8816b271ac70a4223990cd96400e9a1affdb5b1122d57dfac88
 ---
 
 在状态管理V1版本中，完成自定义组件封装后，调用方难以明确知晓应传入哪些变量作为组件的输入参数。当组件开发者不希望状态变量被外部初始化时，可以使用private访问限定符来限制当前变量不允许被外部初始化。外部初始化也需要遵循装饰器自身的规则，具体规则见[使用限制](arkts-custom-components-access-restrictions.md#使用限制)。
@@ -24,11 +24,11 @@ ArkTS会对自定义组件的成员变量使用的访问限定符private/public/
 * [@StorageLink](arkts-appstorage.md#storagelink)/[@StorageProp](arkts-appstorage.md#storageprop)/[@LocalStorageLink](arkts-localstorage.md#localstoragelink)/[@LocalStorageProp](arkts-localstorage.md#localstorageprop)/[@Consume](arkts-provide-and-consume.md)变量的初始化规则为不可以被外部初始化，当组件开发者希望当前变量被外部初始化而使用public修饰时，与装饰器本身的初始化规则不符，会有编译告警日志提示。
 * [@Link](arkts-link.md)/[@ObjectLink](arkts-observed-and-objectlink.md)变量的初始化规则为必须被外部初始化，禁止本地初始化。当组件开发者使用private对变量进行修饰时，与装饰器本身的初始化规则不符，会有编译告警日志提示。
 * 由于struct没有继承能力，上述所有的这些变量使用protected修饰时，会有编译告警日志提示。
-* [@Require](arkts-require.md)含义是当前被@Require装饰的变量必须被外部初始化，当@Require装饰器和private访问限定符同时修饰[@State](arkts-state.md)/[@Prop](arkts-prop.md)/[@Provide](arkts-provide-and-consume.md)/[@BuilderParam](arkts-builderparam.md)装饰的变量或常规成员变量(不涉及更新的普通变量)时，它们的含义是自相矛盾的，会有编译告警日志提示。
+* [@Require](arkts-require.md)含义是当前被@Require装饰的变量必须被外部初始化，当@Require装饰器和private访问限定符同时修饰[@State](arkts-state.md)/[@Prop](arkts-prop.md)/[@Provide](arkts-provide-and-consume.md)/[@BuilderParam](arkts-builderparam.md)装饰的变量或常规成员变量（不涉及更新的普通变量）时，它们的含义是自相矛盾的，会有编译告警日志提示。
 
 ## 使用场景
 
-1. 当成员变量被private访问限定符和@State/@Prop/@Provide/@BuilderParam装饰器同时修饰，并且通过父组件进行初始化赋值，ArkTS会进行校验并产生告警日志。
+1. 当@State/@Prop/@Provide/@BuilderParam装饰的变量或常规成员变量（不涉及更新的普通变量）被private访问限定符修饰，并且通过父组件进行初始化赋值，ArkTS会进行校验并产生告警日志。
 
    【反例】
 

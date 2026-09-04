@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-preci
 title: 精度转换指令
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 精度转换指令
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:06+08:00
+scraped_at: 2026-09-05T06:15:28+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:cf53521743d963a9bc1b2aa750c8e98a6f3a76504fb871f98aeb41e72b93a2ea
+content_hash: sha256:f736e239285fbb5b540b5c96739d4079dd18e314985368cdd401472295080f7d
 ---
 
 ## Cast
@@ -30,7 +30,7 @@ content_hash: sha256:cf53521743d963a9bc1b2aa750c8e98a6f3a76504fb871f98aeb41e72b9
 
   当E全为1时，若M全为0，表示的结果为±inf（取决于符号位）；若M不全为0，表示的结果为nan。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Z3hs_TTmQHO9M12q2g3UcA/zh-cn_image_0000002706835336.png)
+  ![](https://media:401788444106734896)
 
   上图中S = 0，E = 15，M = 2-1 + 2-2，表示的结果为1.75。
 * float共32bit，包括1bit符号位（S），8bit指数位（E）和23bit尾数位（M）。
@@ -45,7 +45,7 @@ content_hash: sha256:cf53521743d963a9bc1b2aa750c8e98a6f3a76504fb871f98aeb41e72b9
 
   当E全为1时，若M全为0，表示的结果为±inf（取决于符号位）；若M不全为0，表示的结果为nan。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/LoxScUXKRA6qShSvCpOkBA/zh-cn_image_0000002736314441.png)
+  ![](https://media:401788444106759897)
 
   上图中S = 0，E = 127，M = 2-1 + 2-2，最终表示的结果为1.75 。
 * bfloat16\_t共16bit，包括1bit符号位（S），8bit指数位（E）和7bit尾数位（M）。
@@ -60,13 +60,13 @@ content_hash: sha256:cf53521743d963a9bc1b2aa750c8e98a6f3a76504fb871f98aeb41e72b9
 
   当E全为1时，若M全为0，表示的结果为±inf（取决于符号位）；若M不全为0，表示的结果为nan。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/fnaBJs3bT-CtEVyMK1IhMA/zh-cn_image_0000002706675398.png)
+  ![](https://media:401788444106781898)
 
   上图中S = 0，E = 127，M = 2-1 + 2-2，最终表示的结果为1.75。
 
 **二进制的舍入规则和十进制类似，具体如下。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/2EMyAw32R4iD0ABQ8YdzrA/zh-cn_image_0000002736434485.png)
+![](https://media:401788444106807899)
 
 * CAST\_RINT模式下，若待舍入部分的第一位为0，则不进位；若第一位为1且后续位不全为0，则进位；若第一位为1且后续位全为0，当M的最后一位为0则不进位，当M的最后一位为1则进位。
 * CAST\_FLOOR模式下，若S为0，则不进位；若S为1，当待舍入部分全为0则不进位，否则，进位。

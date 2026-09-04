@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: crypto_sym_key.h
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 头文件 > crypto_sym_key.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e4f119dd569420637b32c6af0975aae1cbeae00d314db9c84ed71289b05e5a31
+scraped_at: 2026-09-05T06:18:32+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:c4e5f0374b9d5c6c3371cde8fc77c52f68c879b07b8aabdf466885dcf0ff2ca9
 ---
 
 ## 概述
@@ -56,7 +56,7 @@ OH_Crypto_ErrCode OH_CryptoSymKeyGenerator_Create(const char *algoName, OH_Crypt
 
 根据给定的算法名称创建对称密钥生成器。例如AES256。
 
-注意：创建的资源必须通过[OH\_CryptoSymKeyGenerator\_Destroy](capi-crypto-sym-key-h.md#oh_cryptosymkeygenerator_destroy)销毁
+注意：创建的资源必须通过[OH\_CryptoSymKeyGenerator\_Destroy](capi-crypto-sym-key-h.md#oh_cryptosymkeygenerator_destroy)销毁。
 
 **起始版本：** 12
 

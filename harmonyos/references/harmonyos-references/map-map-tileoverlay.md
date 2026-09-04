@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-t
 title: Interface (TileOverlay)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (TileOverlay)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:85e48b9e04e0262deb6b8ccfcda3370e33c46525067391d10585fc42f444f8e8
+scraped_at: 2026-09-05T06:21:10+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:529215e55a27e60ee203769010841ab37797b4c6e5d4068c521ddd0211390ba2
 ---
 
 ## 导入模块
@@ -16,7 +16,7 @@ import { map, mapCommon } from '@kit.MapKit';
 
 ## TileOverlay
 
-瓦片图层，继承[BaseOverlay](map-map-baseoverlay.md)。瓦片图层是一种基于[BaseOverlay](map-map-baseoverlay.md)实现的地图覆盖层，用于展示自定义瓦片。
+瓦片图层，继承[BaseOverlay](map-map-baseoverlay.md)。瓦片图层是一种基于[BaseOverlay](map-map-baseoverlay.md)实现的地图覆盖层，用于展示自定义瓦片。在调用map.[MapComponentController](map-map-mapcomponentcontroller.md)类的[addTileOverlay](map-map-mapcomponentcontroller.md#addtileoverlay)方法时会返回该类型的实例。
 
 **说明** 
 

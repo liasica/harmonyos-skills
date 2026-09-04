@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.appManager (应用管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.appManager (应用管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:78a406994ca286046cf2ec79dd79bf39ea9d7e794a469c52230ac47358bc4e9f
+scraped_at: 2026-09-05T06:16:18+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:646aa8b5bc1b1bc928dd58ef02bdac15b89b5e5f4be653deb34026e2ee45641a
 ---
 
 appManager模块提供应用管理的能力，包括查询当前系统是否处于稳定性测试场景、查询当前设备是否为RAM（Random Access Memory，随机存取存储器）受限设备、获取当前应用程序可以使用的最大内存值、获取有关运行进程的信息等。
@@ -276,11 +276,7 @@ appManager.getAppMemorySize((err, data) => {
 
 getRunningProcessInformation(): Promise<Array<ProcessInformation>>
 
-获取当前应用运行进程的相关信息。使用Promise异步回调。
-
-**说明** 
-
-从API version 11开始，该接口仅用于获取调用方自身的进程信息，不再需要申请权限。
+从API版本11开始，默认仅返回调用方自身的进程信息；若拥有 ohos.permission.GET\_RUNNING\_INFO 权限（该权限仅系统应用可申请），则可查询全量应用的进程信息。使用Promise异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -321,11 +317,7 @@ appManager.getRunningProcessInformation().then((data) => {
 
 getRunningProcessInformation(callback: AsyncCallback<Array<ProcessInformation>>): void
 
-获取当前应用运行进程的相关信息。使用callback异步回调。
-
-**说明** 
-
-从API version 11开始，该接口仅用于获取调用方自身的进程信息，不再需要申请权限。
+从API版本11开始，默认仅返回调用方自身的进程信息；若拥有 ohos.permission.GET\_RUNNING\_INFO 权限（该权限仅系统应用可申请），则可查询全量应用的进程信息。使用callback异步回调。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 

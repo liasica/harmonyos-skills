@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-call-de
 title: 开发音频通话功能
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频通话 > 开发音频通话功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:07b5e78d911f89915c4206bb2bd0a30db721374e2377d6a26152366e1afa8319
+scraped_at: 2026-09-05T06:14:45+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:8a0765f99722251f6167d30f6eb73a31c9618f67eab38ac28976534233b0f278
 ---
 
 在音频通话场景下，应用需要同时进行音频输出（播放对端声音）和音频输入（录制本端声音）。应用可以使用AudioRenderer实现音频输出，使用AudioCapturer实现音频输入，并结合系统API version 8之后提供的3A算法（声学回声消除、噪声抑制、自动增益控制）提升通话质量。
@@ -93,7 +93,7 @@ async function initArguments(context: common.UIAbilityContext) {
     try {
       let bufferLength = fs.readSync(file.fd, buffer, options);
       bufferSize += buffer.byteLength;
-      // 如果当前回调传入的数据不足一帧，空白区域需要使用静音数据填充,否则会导致播放出现杂音。
+      // 如果当前回调传入的数据不足一帧，空白区域需要使用静音数据填充，否则会导致播放出现杂音。
       if (bufferLength < buffer.byteLength) {
         let view = new DataView(buffer);
         for (let i = bufferLength; i < buffer.byteLength; i++) {
@@ -209,7 +209,7 @@ async function stop() {
 // 销毁实例，释放资源。
 async function release() {
   if (audioRenderer !== undefined) {
-    // 渲染器状态不是released状态,才能release。
+    // 渲染器状态不是released状态，才能release。
     if (audioRenderer.state.valueOf() === audio.AudioState.STATE_RELEASED) {
       console.info('Renderer already released');
       // ...
@@ -357,7 +357,7 @@ async function stop() {
 // 销毁实例，释放资源。
 async function release() {
   if (audioCapturer !== undefined) {
-    // 采集器状态不是STATE_RELEASED或STATE_NEW状态,才能release。
+    // 采集器状态不是STATE_RELEASED或STATE_NEW状态，才能release。
     if (audioCapturer.state.valueOf() === audio.AudioState.STATE_RELEASED ||
       audioCapturer.state.valueOf() === audio.AudioState.STATE_NEW) {
       console.info('Capturer already released');

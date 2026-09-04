@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-examp
 title: 算子json配置文件样例
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录 > 调测工具样例与参数说明 > 算子json配置文件样例
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:05+08:00
+scraped_at: 2026-09-05T06:15:26+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:f0160ee5d2709f92f1beb1cc78a6f2fcd255afd9a7619634eabcadecce873f29
+content_hash: sha256:0e42cd988db29de162011fed4ebdbebbe86f52d4c8c98ced6b86425a8d850eaf
 ---
 
 ## 样例1：NPU/CPU调测算子json配置文件样例
 
-**说明** 
+![](https://media:401788444096114826) 
 
 * 在"param\_type"："optional"时，"ignore"为true，表示不需要该输入；"ignore"为false，表示需要该输入。
 * 在"param\_type"："required"时，"ignore"不能配置为true。

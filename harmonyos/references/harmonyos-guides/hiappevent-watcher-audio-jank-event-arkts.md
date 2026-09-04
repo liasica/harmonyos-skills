@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅音频卡顿事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 音频卡顿事件 > 订阅音频卡顿事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:11+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:66b9bdae84fae29e6f8e3ba6ae80b98cec22194ebe41ee23b6415dce99a644eb
+scraped_at: 2026-09-05T06:14:39+08:00
+doc_updated_at: 2026-09-04
+content_hash: sha256:3e539acc4ba415626d4678fe2ac0ae4f9a7da5946f066cca0ce43c98bfb7facf
 ---
 
 ## 接口说明
@@ -60,7 +60,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
        g_invalidCount--;
        return audio.AudioDataCallbackResult.INVALID;
      }
-     //在此添加写数据逻辑
+     // 在此添加写数据逻辑
      return audio.AudioDataCallbackResult.VALID;
    }
    ```
@@ -96,3 +96,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    HiAppEvent eventName=AUDIO_JANK_FRAME
    HiAppEvent eventInfo={"domain":"OS","name":"AUDIO_JANK_FRAME","eventType":1,"params":{"bundle_name":"com.samples.audio","bundle_version":"1.0.0","fault_type":"application","happen_time":3240511783,"max_frame_time":260,"process_name":"","time":1755587168818}}
    ```
+
+## 示例代码
+
+* [订阅音频卡顿事件](https://gitcode.com/HarmonyOS_Samples/guide-snippets/tree/master/xperf/audio_jank)
