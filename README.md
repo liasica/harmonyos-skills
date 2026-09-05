@@ -1,5 +1,7 @@
 # harmonyos-skills
 
+*让 AI 编程助手写鸿蒙代码时有据可查——16800+ 篇华为官方文档的离线镜像。*
+
 HarmonyOS NEXT 离线参考库 + 采集脚本，供 AI 编程助手（Claude Code、Gemini CLI、Codex / Copilot 等）按需查阅华为开发者官方文档。
 
 > 文档由 [`scraper/`](scraper) 子项目从 https://developer.huawei.com/consumer/cn/doc/ 自动采集。
