@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16853 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16852 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1249 篇
 
@@ -1254,7 +1254,7 @@
 - [应用升级适配指导——向26.0.0升级](harmonyos-releases/upgrade-adaptation.md)
 - [版本号格式调整说明](harmonyos-releases/version-number-26.md)
 
-## 指南（`harmonyos-guides`）— 5722 篇
+## 指南（`harmonyos-guides`）— 5721 篇
 
 - [24h功耗器件分解统计事件](harmonyos-guides/24-hour-battery-usage-event.md)
 - [aa工具](harmonyos-guides/aa-tool.md)
@@ -1722,7 +1722,6 @@
 - [ArkTS高性能编程实践](harmonyos-guides/arkts-high-performance-programming.md)
 - [沉浸光感典型场景](harmonyos-guides/arkts-immersive-light-sample.md)
 - [沉浸式系统材质视效](harmonyos-guides/arkts-immersive-light-sense-common-capability.md)
-- [沉浸光感兼容性适配](harmonyos-guides/arkts-immersive-light-sense-compatibility.md)
 - [组件适配沉浸光感](harmonyos-guides/arkts-immersive-light-sense-component-adaptation.md)
 - [沉浸光感功耗优化](harmonyos-guides/arkts-immersive-light-sense-constraints.md)
 - [沉浸光感开发指导](harmonyos-guides/arkts-immersive-light-sense-development.md)

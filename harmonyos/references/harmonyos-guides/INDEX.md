@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 5722 篇文档。
+共 5721 篇文档。
 
 - [24h功耗器件分解统计事件](24-hour-battery-usage-event.md)
 - [aa工具](aa-tool.md)
@@ -468,7 +468,6 @@
 - [ArkTS高性能编程实践](arkts-high-performance-programming.md)
 - [沉浸光感典型场景](arkts-immersive-light-sample.md)
 - [沉浸式系统材质视效](arkts-immersive-light-sense-common-capability.md)
-- [沉浸光感兼容性适配](arkts-immersive-light-sense-compatibility.md)
 - [组件适配沉浸光感](arkts-immersive-light-sense-component-adaptation.md)
 - [沉浸光感功耗优化](arkts-immersive-light-sense-constraints.md)
 - [沉浸光感开发指导](arkts-immersive-light-sense-development.md)

@@ -3,19 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 开启沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 开启沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:01+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:d5b464792f6fd949c668a52ad332fa8d9b3a93018794a97a3db189ce4765c292
+scraped_at: 2026-09-07T06:01:32+08:00
+doc_updated_at: 2026-09-06
+content_hash: sha256:7fd228dff4bd2ec40c8193ed3f31241c0a1522f5e5d5284733ee67baacc470d0
 ---
 
 沉浸光感提供应用级开启和组件级开启两种方式，可按需选择。沉浸光感开启后，需要大量GPU资源，具体的适配指导请参考[沉浸光感功耗优化](arkts-immersive-light-sense-constraints.md)，其余开启后的常见问题请参考[沉浸光感常见问题](arkts-immersive-light-sense-faq.md)。
 
 **说明** 
 
-* 开启沉浸光感，要确保应用的[targetAPIVersion](app-configuration-file.md)不低于26.0.0。如需适配低版本，请参考[沉浸光感兼容性适配](arkts-immersive-light-sense-compatibility.md)。
-* 沉浸光感开启后，
-
-  弹窗类组件（AlertDialog、ActionSheet、CustomDialog、CalendarPickerDialog、DatePickerDialog、TimePickerDialog、TextPickerDialog、SelectionMenu、AlphabetIndexer弹窗、Text设置copyOption后长按或双击触发的文本菜单）和弹窗类接口（PromptAction、ArkUI\_NativeDialog、@ohos.promptAction (弹窗)、Popup控制、Tips控制、菜单控制、半模态转场）以及按钮与选择类组件（Slider、Toggle、Select）可在页面内全部区域生效。
+* 开启沉浸光感，要确保应用的[targetSDKVersion](../harmonyos-releases/app-compatibility-influence-factor.md)不低于26.0.0。如果应用需要开启沉浸光感，同时还需要兼容在低于26.0.0的老版本的运行，请参考[ArkTS API兼容性保护](../harmonyos-releases/arkts-api-compatibility-warning-elim.md)。
+* 沉浸光感开启后，弹窗类组件（AlertDialog、ActionSheet、CustomDialog、CalendarPickerDialog、DatePickerDialog、TimePickerDialog、TextPickerDialog、SelectionMenu、AlphabetIndexer弹窗、Text设置copyOption后长按或双击触发的文本菜单）和弹窗类接口（PromptAction、ArkUI\_NativeDialog、@ohos.promptAction (弹窗)、Popup控制、Tips控制、菜单控制、半模态转场）以及按钮与选择类组件（Slider、Toggle、Select）可在页面内全部区域生效。
 
   其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 * 沉浸式系统材质反色、材质赋色、交互形变与点光源、阴影开关等个性化配置，具体请参见[沉浸式系统材质视效](arkts-immersive-light-sense-common-capability.md)。
