@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-large
 title: LLM模型一站式量化
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > Transformer结构量化 > LLM模型一站式量化
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:23+08:00
+scraped_at: 2026-09-08T06:39:18+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:6a1f1d972b0c0f03676cd5526bfa79709c14ef5cd2874e64c7f2ed5c612d3c02
+content_hash: sha256:7d28fdb68f62e71e0d85d102c983fe475f266b59d65a75fbc3a8231f32dc858e
 ---
 
 ## 简介
@@ -27,7 +27,7 @@ content_hash: sha256:6a1f1d972b0c0f03676cd5526bfa79709c14ef5cd2874e64c7f2ed5c612
 * 量化配置文件[config.yaml](cannkit-large-language-one-stop.md#configyaml示例)
 * [run.sh](cannkit-large-language-one-stop.md#runsh示例)执行脚本
 
-![](https://media:401788444088258747) 
+**说明** 
 
 * LLM在量化过程中使用AutoModelForCausalLM以及AutoTokenizer加载，所以开发者的HuggingFace浮点模型需要满足该加载方式约束。
 * run.sh执行脚本环境须与开发者推理或者训练环境保持一致，否则模型加载或推理失败。
@@ -213,7 +213,7 @@ trained_quant_weight.pth ### 阶段一的输出，阶段二的输入
 
 量化完成后，开发者可进行量化仿真推理，通过对比量化模型与原始浮点模型的输出结果，来评估量化模型精度是否满足要求。量化仿真推理工程可参考[qwen2模型量化仿真推理demo](cannkit-large-language-one-stop.md#qwen2模型量化仿真推理demo)。
 
-![](https://media:401788444088318748)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/E_wnKO6xQxyhxCTRtPk2Zw/zh-cn_image_0000002747292079.jpg)
 
 ### 插件方法
 

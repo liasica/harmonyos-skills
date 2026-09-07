@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-faqs-
 title: 算子开发常见问题
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子开发常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:26+08:00
+scraped_at: 2026-09-08T06:39:21+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:d159e508de64510d5ef40961bbc4ea97798017d45b3ac5db208e7b9f294dc439
+content_hash: sha256:e99a54105a79b8fa9358e22b860889c3d2ad441d56a073a68363d52470c75fd4
 ---
 
 ## 核函数运行验证时算子存在精度问题
@@ -277,7 +277,7 @@ class KernelAddCustom_omc4 {
    which ascendebug
    ```
 
-   ![](https://media:401788444087574740) 
+   **说明** 
 
    一般情况下，ascendebug工具路径缺省为“{INSTALL\_DIR}/tools/tools\_ascendc/package/ascendebug”，其中${INSTALL\_DIR}请替换为DDK软件安装后文件存储路径。
 2. 打开ascendebug工具启动脚本（以缺省路径为例）。
@@ -336,7 +336,7 @@ opc编译方式下，kernel编译报错，如图1所示。
 
 **图1** 报错样例
 
-![](https://media:401788444087644741)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/diRFQwFMSce2CxcV3uZpRQ/zh-cn_image_0000002717612172.png)
 
 ### 可能的原因
 
@@ -362,7 +362,7 @@ Kernel代码实现有误，导致编译失败。
 
       **图2** NPU编译命令
 
-      ![](https://media:401788444087678742)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/euIuBg69TNWWle-wnsf-dA/zh-cn_image_0000002747292125.png)
 
 ## NPU编译失败提示RuntimeError: Cannot get compiling bash file! Maybe template json does not match
 
@@ -372,7 +372,7 @@ opc编译方式下，kernel编译报错，如图3所示。
 
 **图3** 报错样例
 
-![](https://media:401788444087753743)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ghvPoxsiQwW6wPiVr834oQ/zh-cn_image_0000002747212041.png)
 
 ### 可能的原因
 
@@ -441,7 +441,7 @@ CPU/Simulator的Kernel执行失败，导致输出路径下无输出文件生成�
 
 **图4** 报错样例
 
-![](https://media:401788444087951744)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/6xyAsPDYRPy5QmEkYpaMoQ/zh-cn_image_0000002717772106.png)
 
 ### 处理方案
 
@@ -474,7 +474,7 @@ CPU/Simulator调测生成的精度比对结果文件出现“Failed”，部分�
 
 **图5** 精度比对结果文件
 
-![](https://media:401788444088044745)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/COn30IjMQUiSW9aSlW18ng/zh-cn_image_0000002717612174.png)
 
 ### 可能的原因
 
@@ -504,7 +504,7 @@ Tiling函数代码实现有误或者输入配置有误（如数据、算子json�
    1. 在debug\_op.log中找到“gen\_tiling\_data\_cmd”关键字。
    2. 手动拷贝gen\_tiling\_data\_cmd后的所有命令，在终端窗口执行，通过打屏或者落盘的日志文件进一步分析问题。
 
-   ![](https://media:401788444088090746) 
+   **说明** 
 
    执行命令之前，请确保当前终端[环境准备](cannkit-environment-preparation.md)设置并生效。
 

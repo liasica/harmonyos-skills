@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-a2a-dev-
 title: 通过AgentAbilityExtension实现智能体间A2A协议通信
 breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > 通过AgentAbilityExtension实现智能体间A2A协议通信
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-08T06:39:18+08:00
+doc_updated_at: 2026-09-07
 content_hash: sha256:99438097dfdc1a57ca9605ee36454e4dd1553b82ebf24ed39801f7e50078ff23
 ---
 

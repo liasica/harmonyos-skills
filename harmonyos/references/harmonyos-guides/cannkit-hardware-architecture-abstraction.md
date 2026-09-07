@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-hardw
 title: 硬件架构抽象
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程模型 > 硬件架构抽象
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:25+08:00
+scraped_at: 2026-09-08T06:39:19+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:9d85eb477e3f2efbde6cc38da2a58f01699f81647ee267182ce4b8487a47766c
+content_hash: sha256:28e48f329f723219e1a6e19e33c7a0f9941851d3db320e79f95fe8871cb5d6dc
 ---
 
 AscendC基于硬件抽象架构进行编程，屏蔽不同硬件之间的差异。
 
 **图1** 硬件架构抽象
 
-![](https://media:401788444096448829)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/NqEGhiXrScC2Kwpg3zKh3w/zh-cn_image_0000002747292099.png)
 
 AI Core中包含**计算单元、存储单元、搬运单元**等核心组件。
 

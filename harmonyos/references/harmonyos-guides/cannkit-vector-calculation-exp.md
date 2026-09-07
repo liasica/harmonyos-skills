@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: Exp
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 单目指令 > Exp
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:26+08:00
+scraped_at: 2026-09-08T06:39:21+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:f4fd20a12b873d3dbccad11b09949d4651ee305c89b939f02e4c86df77257e91
+content_hash: sha256:88e852e4da87eea9a81dfabdcfa5ad26cdaf4fa08a0868175a74a60b5bc74ef9
 ---
 
 ## 函数功能
 
 按元素取自然指数，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://media:401788444115966941)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/RR_7NtyYRCWF058V4-qTJA/zh-cn_image_0000002747212043.png)
 
 ## 函数原型
 

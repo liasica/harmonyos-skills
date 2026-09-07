@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commi
 title: printf/PRINTF功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > 更多功能 > printf/PRINTF功能
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:25+08:00
+scraped_at: 2026-09-08T06:39:20+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:90f0a066c14786b924dd7b679a9da0d12f7ecd0159ba24f040b76edeed29dfbd
+content_hash: sha256:4fa110d62ed250bda07f933a8ba3ca6aa4fe70c3c6bde06e26c0d88c1f3b7075
 ---
 
 ## 功能介绍
 
 使用工具进行算子调测时，支持printf/PRINTF功能，可以打印Scalar数据。
 
-![](https://media:401788444101000861) 
+**说明** 
 
 * CPU调测场景支持printf和PRINTF打印，其中printf采用C++自身打印功能，不受dump-mode参数控制。
 * simulator调测场景支持printf和PRINTF打印，受dump mode参数控制。
@@ -35,7 +35,7 @@ content_hash: sha256:90f0a066c14786b924dd7b679a9da0d12f7ecd0159ba24f040b76edeed2
    --dump-mode取normal，开启通用打印Scalar模式，其他参数参考[NPU调测参数](cannkit-cli-parameters.md#npu调测参数)按需配置。
 3. 查看屏显打印结果，示例如下。
 
-   ![](https://media:401788444101027862)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/6cMA8EWsTmWh9eD0RvhG_Q/zh-cn_image_0000002747212035.png)
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-aipp-
 title: AIPP参数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > AIPP > AIPP参数
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:24+08:00
+scraped_at: 2026-09-08T06:39:19+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:17a34aa9d9d42cc91804068a3388cd9d9c2d5d345d03dd35a70e423a285a782d
+content_hash: sha256:8b57fc7b1ffd6a96ddfa5983bdd12536dfdc8ef956ff177abccfe112ff4392a2
 ---
 
 AIPP分为静态AIPP和动态AIPP，两者使用严格区分，静态AIPP模型不能接收模型推理时传入的AIPP参数，不兼容动态AIPP场景，静态与动态AIPP区别详见下表。
@@ -32,7 +32,7 @@ AIPP可配置的图片格式如下：
 
 除以上列举的图片类型，AIPP还可以通过开启Channel Swap通道交换功能，支持更加丰富的图片输入格式。
 
-![](https://media:401788444081844680) 
+**说明** 
 
 YUYV\_U8和AYUV444\_U8当前版本不支持。
 
@@ -97,22 +97,22 @@ RB/UV通道交换丰富了输入图片的格式，开启RB/UV通道交换后，A
 
 * YUV转BGR
 
-  ![](https://media:401788444082014681)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/2eJICAgsQWiGclIPSyhInw/zh-cn_image_0000002717772066.png)
 * BGR转YUV
 
-  ![](https://media:401788444082043682)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/9-MTLgF-ScybH1EY-rhtNQ/zh-cn_image_0000002717612134.png)
 
 参考2：BT-601 narrow、JPEG和BT-709 narrow三种类型图片的转换公式。
 
 * BT-601 narrow
 
-  ![](https://media:401788444082143683)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/eS7Hu_WvTwOET4iR1YjSdg/zh-cn_image_0000002747292087.png)
 * JPEG
 
-  ![](https://media:401788444082200684)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/q8FaGNs5SeWPaVSYlmHoYg/zh-cn_image_0000002747212003.png)
 * BT-709 narrow
 
-  ![](https://media:401788444082230685)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7D3EuxgbQU6O19msY0CMLA/zh-cn_image_0000002717772068.png)
 
 使用配置文件生成静态AIPP模型时，需要根据以上的公式配置CSC矩阵以及"input\_bias"或者"output\_bias"的值。使用IR定义AIPP CSC功能算子，以及使用CANN Kit接口配置CSC参数时，支持传入目标类型，由系统来填充CSC配置参数。
 
@@ -149,7 +149,7 @@ RB/UV通道交换丰富了输入图片的格式，开启RB/UV通道交换后，A
   | --- | --- | --- | --- |
   | matrix\_r0c0 : 77  matrix\_r0c1 : 150  matrix\_r0c2 : 29  matrix\_r1c0 : 128  matrix\_r1c1 : -107  matrix\_r1c2 : -21  matrix\_r2c0 : -43  matrix\_r2c1 : -85  matrix\_r2c2 : 128  output\_bias\_0 : 0  output\_bias\_1 : 128  output\_bias\_2 : 128 | matrix\_r0c0 : 66  matrix\_r0c1 : 129  matrix\_r0c2 : 25  matrix\_r1c0 : 112  matrix\_r1c1 : -94  matrix\_r1c2 : -18  matrix\_r2c0 : -38  matrix\_r2c1 : -74  matrix\_r2c2 : 112  output\_bias\_0 : 16  output\_bias\_1 : 128  output\_bias\_2 : 128 | matrix\_r0c0 : 77  matrix\_r0c1 : 150  matrix\_r0c2 : 29  matrix\_r1c0 : 128  matrix\_r1c1 : -107  matrix\_r1c2 : -21  matrix\_r2c0 : -43  matrix\_r2c1 : -85  matrix\_r2c2 : 128  output\_bias\_0 : 0  output\_bias\_1 : 128  output\_bias\_2 : 128 | matrix\_r0c0 : 47  matrix\_r0c1 : 157  matrix\_r0c2 : 16  matrix\_r1c0 : 112  matrix\_r1c1 : -102  matrix\_r1c2 : -10  matrix\_r2c0 : -26  matrix\_r2c1 : -87  matrix\_r2c2 : 112  output\_bias\_0 : 16  output\_bias\_1 : 128  output\_bias\_2 : 128 |
 
-![](https://media:401788444082298686) 
+**说明** 
 
 从使用的角度，将灰度图转成RGB没有意义，系统约束当输入格式配置为YUV400\_U8时，不支持CSC。
 
@@ -209,7 +209,7 @@ DTC涉及的配置参数如下表。
 | var\_reci\_chn\_2 | 通道2方差。 | [-65504, 65504] |
 | var\_reci\_chn\_3 | 通道3方差。 | [-65504, 65504] |
 
-![](https://media:401788444082341687) 
+**说明** 
 
 当DTC开关为false时，或者开发者调用CANN Kit接口未传入DTC参数时，系统默认对图片输入数据进行类型强转，效果同通道均值和最小值均为0，通道方差为1。
 
@@ -238,7 +238,7 @@ AIPP的Padding功能用于对输入图片进行补边，涉及的参数如下。
 | padding\_value\_chn\_2 | 通道2 Padding的值。 | [-65504, 65504] |
 | padding\_value\_chn\_3 | 通道3 Padding的值。 | [-65504, 65504] |
 
-![](https://media:401788444082412688) 
+**说明** 
 
 * 上下左右的Padding值不要超过32，如果Padding值过大，AIPP将使用软件代码进行处理，效率低于硬件实现。
 * padding\_value\_chn\_0~padding\_value\_chn\_3暂不支持。

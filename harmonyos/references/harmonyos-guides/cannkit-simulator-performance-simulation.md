@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-simul
 title: Simulator性能仿真功能
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > Simulator性能仿真功能
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:26+08:00
+scraped_at: 2026-09-08T06:39:20+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:bca3215f76c4bdb48bb0810947d5343c43b5158103fcd9304632f6ffa16b0a07
+content_hash: sha256:3c927d72a614e04397bde55ca249ad391c1f76b148cfe37d65a4d77f06b47c4d
 ---
 
 ## CAModel性能仿真
@@ -14,7 +14,7 @@ content_hash: sha256:bca3215f76c4bdb48bb0810947d5343c43b5158103fcd9304632f6ffa16
 
 算子可以在仿真器上进行性能仿真，目前主要支持CAModel仿真器。
 
-![](https://media:401788444096643832) 
+**说明** 
 
 * 由于model本身存在准确性问题，CAModel建议只跑单核，仿真性能会比较准，多核一块跑比较慢，误差也大很多。
 
@@ -121,7 +121,7 @@ CAModel仿真结果存放在${root}/${work\_dir}/simulator路径下，其中${ro
 
 算子进行CAModel仿真时，可对算子任意运行阶段进行打点，从而分析不同指令的流水图，以便进一步性能调优。
 
-![](https://media:401788444096670833) 
+**说明** 
 
 Kirin9020/Kirin9030/KirinX90暂不支持使用该方法进行调优。
 
@@ -141,7 +141,7 @@ Kirin9020/Kirin9030/KirinX90暂不支持使用该方法进行调优。
 
    **图1** 仿真打点示意图
 
-   ![](https://media:401788444096709834)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/zYLREE9tRu69E0ha07Oujg/zh-cn_image_0000002747292119.png)
 
 ### Trace接口说明
 

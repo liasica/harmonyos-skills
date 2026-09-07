@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-trans
 title: TransDataTo5HD
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 数据转换 > TransDataTo5HD
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:28+08:00
+scraped_at: 2026-09-08T06:39:22+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:26f2e9469cb4e05039516d493084e2f3704805427cea782f28bf27ea2977bcc6
+content_hash: sha256:0c50c0f31c1fd342b9bab574ada9e6114ee64739c8702d5d4590badf84e32b74
 ---
 
 ## 功能说明
@@ -18,17 +18,17 @@ content_hash: sha256:26f2e9469cb4e05039516d493084e2f3704805427cea782f28bf27ea297
 
   **图1** 输入数据类型为int16\_t/uint16\_t/half时的转换规则
 
-  ![](https://media:401788444117056958)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/crhUWCw1SgSeFoCSlIJaJw/zh-cn_image_0000002717612192.png)
 * 当数据类型是float/int32\_t/uint32\_t时，每个datablock包含8个数，指令内部会循环8次，每次循环都会分别从指定的16个datablock中的对应位置取值，组成2个新的datablock放入目的地址中。如下图所示：
 
   **图2** 输入数据类型为float/int32\_t/uint32\_t时的转换规则
 
-  ![](https://media:401788444117082959)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/Vs40fPL4QTKh068GDUTVbA/zh-cn_image_0000002747292145.png)
 * 当数据类型是int8\_t/uint8\_t时，每个datablock包含32个数，指令内部会循环16次，每次循环都会分别从指定的16个datablock中的对应位置取值，组成半个datablock放入目的地址中，读取和存放是在datablock的高半部还是低半部由参数srcHighHalf和dstHighHalf决定。如下图所示：
 
   **图3** 输入数据类型为int8\_t/uint8\_t时的转换规则
 
-  ![](https://media:401788444117112960)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ErGX6WX5QUGbWGn8V6VqwQ/zh-cn_image_0000002747212061.png)
 
 基于以上的转换规则，使用该接口进行NC1HWC0格式转换或者矩阵转置。NC1HWC0格式转换相对复杂，这里给出其具体的转换方法：
 
@@ -36,7 +36,7 @@ NCHW格式转换成NC1HWC0格式时，如果是数据类型是float/int32\_t/uin
 
 **图4** NCHW格式转换成NC1HWC0格式时的转换规则
 
-![](https://media:401788444117141961)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/uLSsm5xXQMiNJos5mMgs3A/zh-cn_image_0000002717772126.png)
 
 ## 函数原型
 

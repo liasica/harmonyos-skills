@@ -12033,7 +12033,7 @@
 - [资源提前加载](best-practices/bpta-preloading-resources.md)
 - [程序框架](best-practices/bpta-program-framework.md)
 - [前台资源合理使用](best-practices/bpta-properly-use-foreground-resources.md)
-- [阔折叠应用开发](best-practices/bpta-purax-guide.md)
+- [阔折叠/阔直板应用开发](best-practices/bpta-purax-guide.md)
 - [应用质量概览](best-practices/bpta-quality-overview.md)
 - [阅读器翻页](best-practices/bpta-reader-page-flip.md)
 - [后台音频播放合理使用](best-practices/bpta-reasonable-audio-playback-use.md)

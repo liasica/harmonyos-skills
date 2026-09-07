@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-matri
 title: 矩阵编程算子实现
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 矩阵编程（高阶API） > 矩阵编程算子实现
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:25+08:00
+scraped_at: 2026-09-08T06:39:20+08:00
 doc_updated_at: 2026-05-12
-content_hash: sha256:d802ddfa84328ae5c44f39f37bff9f3e8683cf726ca7dfe9c460ae14ae1427a5
+content_hash: sha256:1cd7f238f0b8cb5300a6e9c69c0bf02bf8dd0dd4bb2564ba9b12b6d191756496
 ---
 
 ## 实现流程
 
 上文介绍了Matmul矩阵乘的数据切分方案和数据流。AscendC提供一组Matmul高阶API，封装了这些常用的切分和数据搬运、计算的算法逻辑，方便开发者快速实现Matmul矩阵乘法的运算操作。开发者在host侧通过调用API自动获取Tiling参数，该参数传递到kernel侧后，在初始化操作时传入，通过几个简单的API即可完成矩阵乘操作。以下代码仅包含Matmul的关键步骤，不能直接运行。
 
-![](https://media:401788444094953810)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/htpRq6iVRQqZZXbIOH7BDw/zh-cn_image_0000002717772094.png)
 
 **host侧自动获取Tiling参数的关键步骤介绍如下。**
 
@@ -120,7 +120,7 @@ matmul::Matmul<aType, bType, cType, biasType> mm;
 
 ND\_ALIGN用于配置输出矩阵时按照一定的补齐规则进行输出。ND–>ND\_ALIGN变换过程下图所示，矩阵数据类型为uint32\_t，假设输出矩阵输出到UB，原矩阵N方向没有32字节对齐，设置ND\_ALIGN则在其后补0，将其对齐到32字节。
 
-![](https://media:401788444095056811)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/HjSASVRxR2atwI7JKpavPA/zh-cn_image_0000002717612162.png)
 
 ## 设置Shape信息
 
@@ -133,8 +133,8 @@ Host Tiling时可以设置Shape信息，用于Tiling计算；kernel侧运行时�
 
 通过[数据分块(Tiling)](cannkit-basic-knowledge.md#数据分块tiling)的介绍我们已经了解了orgShape(M、N、K)，singleCoreShape(singleCoreM、singleCoreN、singleCoreK)，baseShape(baseM、baseN、baseK)的概念，如下图所示：
 
-![](https://media:401788444095215812)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xxVMCzuAQrKHgoBSYr9QfQ/zh-cn_image_0000002747292115.png)
 
 除此之外，单核的Matmul Tiling时，实际参与Matmul计算的shape可以是原始shape中的一部分，singleM, singleN, singleK用于表达实际参与Matmul计算的shape，如下图所示。在单核的情况下，singleM, singleN, singleK会透传给singleCoreM, singleCoreN, singleCoreK。
 
-![](https://media:401788444095284813)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Kb8CwyQgRkqha7PqZGSgUQ/zh-cn_image_0000002747212031.png)

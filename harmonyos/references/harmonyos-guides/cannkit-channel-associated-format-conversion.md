@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-chann
 title: 随路格式转换
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 数据搬运 > DataCopy > 随路格式转换
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:27+08:00
+scraped_at: 2026-09-08T06:39:22+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:666f841649f6c2dbc7081df5e02822e4d8ad6be9b0de55ba48e75913b2e61fb9
+content_hash: sha256:dcc8c3f8394550a5858e702cfcead232f2d2bc02f4ee39dea78ea850f7778d1a
 ---
 
 ## 功能说明
@@ -29,7 +29,7 @@ content_hash: sha256:666f841649f6c2dbc7081df5e02822e4d8ad6be9b0de55ba48e75913b2e
   | --- | --- | --- |
   | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | GM->A1/B1 | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
 
-  ![](https://media:401788444117228962) 
+  **说明** 
 
   使用该接口时需要预留8K的Unified Buffer空间，作为接口的临时数据存放区。
 * 源操作数为LocalTensor，目的操作数为LocalTensor
@@ -50,7 +50,7 @@ content_hash: sha256:666f841649f6c2dbc7081df5e02822e4d8ad6be9b0de55ba48e75913b2e
   | --- | --- | --- |
   | Kirin9020系列处理器、Kirin9030系列处理器、KirinX90系列处理器 | VECIN / VECCALC / VECOUT -> TSCM | int8\_t/uint8\_t/int16\_t/uint16\_t/int32\_t/uint32\_t/half/float |
 
-  ![](https://media:401788444117251963) 
+  **说明** 
 
   当前Kirin9020、Kirin9030通用核只考虑32Byte对齐的情形，后续根据需要增强接口。
 
@@ -90,7 +90,7 @@ ND2NZ转换示意图如下，样例中参数设置值和解释说明如下。
 
 **图1** Nd2Nz转换示意图
 
-![](https://media:401788444117323964)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/ywQawQfKSf6hwd-Fi1A8wQ/zh-cn_image_0000002747212063.png)
 
 ## 支持的型号
 

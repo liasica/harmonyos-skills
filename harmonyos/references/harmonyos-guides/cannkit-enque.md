@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-enque
 title: EnQue
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 内存管理与同步控制 > TQueBind > EnQue
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:29+08:00
+scraped_at: 2026-09-08T06:39:23+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:27759cfb013d835591a86f43466fab2a42201eab7b647184d090a04243af756b
+content_hash: sha256:1b0ed8af015ebc155aaadc5d4fa856094de5b2f42aff312c0a19d0eb95b4f2cd
 ---
 
 ## 功能说明
@@ -29,7 +29,7 @@ __aicore__ inline bool EnQue(const LocalTensor<T>& tensor)
 
 **图1** 将LocalTensor通过EnQue放入A1/B1的Queue中
 
-![](https://media:401788444118956977)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ObKK0jS8T-e_5jaWcDVJ1w/zh-cn_image_0000002747212069.png)
 
 ## 支持的型号
 

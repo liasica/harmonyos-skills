@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-asr
 title: 使用MindSpore Lite实现语音识别 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现语音识别 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-08T06:39:36+08:00
+doc_updated_at: 2026-09-07
 content_hash: sha256:57c1e9780605d8dd3d1ac717696ee890cac2bbacde3e73a1eb99764858485112
 ---
 

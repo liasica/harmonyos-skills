@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/neural-networ
 title: Neural Network Runtime对接AI推理框架开发指导
 breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > Neural Network Runtime对接AI推理框架开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:44+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:b1a9a30d5737da28d1722dd6dda2008fa84aea0b7379e3a901e3dea9f1efdbc1
+scraped_at: 2026-09-08T06:39:37+08:00
+doc_updated_at: 2026-09-07
+content_hash: sha256:1daaa41e58d7ad280d0d4e9963f7a1ef59cf1983ce16d11866038c081482b630
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ Neural Network Runtime作为AI推理引擎和加速芯片的桥梁，为AI推理
 
 **图1** Add单算子网络示意图
 
-![](https://media:401788444057400540)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/WlsjUSU3T_qONOT2lea9JQ/zh-cn_image_0000002747212149.png)
 
 ## 环境准备
 
@@ -656,7 +656,7 @@ Neural Network Runtime的开发流程主要包含**模型构造**、**模型编�
 
    如果在调测环境下，Neural Network Runtime对接的HDI服务支持模型缓存功能，执行完 nnrt\_example, 可以在 /data/local/tmp 目录下找到生成的缓存文件。
 
-   ![](https://media:401788444057430541) 
+   **说明** 
 
    模型的IR需要传递到硬件驱动层，由HDI服务将统一的IR图，编译成硬件专用的计算图，编译的过程非常耗时。Neural Network Runtime支持计算图缓存的特性，可以将HDI服务编译生成的计算图，缓存到设备存储中。当下一次在同一个加速芯片上编译同一个模型时，通过指定缓存的路径，Neural Network Runtime可以直接加载缓存文件中的计算图，减少编译消耗的时间。
 

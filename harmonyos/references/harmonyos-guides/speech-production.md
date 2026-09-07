@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speech-produc
 title: Speech Kit简介
 breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > Speech Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-08T06:39:36+08:00
+doc_updated_at: 2026-09-07
 content_hash: sha256:ca4e3156cdd3551c8d2175a3d156792160da0c8a46f4df1e6977c66731e4343f
 ---
 

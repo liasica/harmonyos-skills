@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/natural-langu
 title: 分词
 breadcrumb: 指南 > AI > Natural Language Kit（自然语言理解服务） > 分词
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:45+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-08T06:39:36+08:00
+doc_updated_at: 2026-09-07
 content_hash: sha256:2cdca70ed949405405c60184c7129ce63a7b9c55575f5e3ebefb8c311c63749a
 ---
 

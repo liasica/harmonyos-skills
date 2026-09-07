@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 方案概述
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 方案概述
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:43+08:00
+scraped_at: 2026-09-08T06:39:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0e6e4834f22eecda266751968126f7bf7d790bfe8b7a456465160d36af710e8c
+content_hash: sha256:c4dba7989b655528ae30789fc1c52a0fdb42826333f36c7417bfeb6998164bbc
 ---
 
 从6.0.0(20)开始，支持通过装饰器开发意图，支持将现有功能通过装饰器快速集成至系统入口。开发者可自定义意图，通过添加装饰器方式实现意图快速接入，支持Link跳转、Page和函数等意图装饰器，方便开发者快速开放应用内功能。
 
-![](https://media:401788444088803751) 
+**说明** 
 
 自定义意图的触发语料要求必须包含所属应用/元服务的名称。以“XX商城”应用开发“打开购物车”的自定义意图为例，用户触发语料需包含“XX商城”，示例：打开XX商城的购物车。
 
-![](https://media:401788444088904752)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/ZRi6Ii_kSaeWNO7BFsBb3g/zh-cn_image_0000002747292193.png)
 
 开发者可根据想要暴露的应用功能，选择不同类型的装饰器进行意图声明：
 

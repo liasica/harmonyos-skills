@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smart-reac
 title: 智感握姿
 breadcrumb: 最佳实践 > 技术创新 > 智感握姿
 category: best-practices
-scraped_at: 2026-09-02T15:03:15+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:49b319fb1e5fdb91fe6d3197eac846d87a86223f555fab2c4db62d1be92575c1
+scraped_at: 2026-09-08T06:43:56+08:00
+doc_updated_at: 2026-09-07
+content_hash: sha256:0d3b53b4e72a99b911cb76977b22f4c57d0d49d7481014a431b5f9e4e4996e26
 ---
 
 随着大屏和折叠屏设备的普及，用户单手握持设备时，拇指难以覆盖整个屏幕区域，尤其是位于屏幕顶部与侧边的交互元素往往难以触及。为有效解决这一痛点，HarmonyOS系统提供了[智感握姿](../design-guides/smart-reachability-0000002556657823.md)能力。该能力能够实时识别用户与设备的交互姿态，应用可据此将核心高频组件动态调整至拇指的可达范围内，从而显著提升单手操作的便捷性。智感握姿示例图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Z8CRsm5qRk21-C06kBbbLA/zh-cn_image_0000002594053134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/CZEl7tkCTlu6-JdMFuZBrw/zh-cn_image_0000002594053134.png "点击放大")
 
 本文将从智感握姿的概念与适用场景出发，结合新闻阅读应用示例，详细讲解如何在HarmonyOS应用中接入智感握姿能力，具体包括组件原生适配与自定义交互感知两种方案。
 
@@ -73,11 +73,11 @@ content_hash: sha256:49b319fb1e5fdb91fe6d3197eac846d87a86223f555fab2c4db62d1be92
 
 本示例通过配置HdsTabs的[barOverlap](../harmonyos-references/ui-design-hdstabs.md#baroverlap)属性开启底部悬浮模式，同时启用[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性中的adaptToHandedness参数实现智感握姿自动跟随功能。效果图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/zI4UtBoGR0GRQLQ5vJOdVw/zh-cn_image_0000002624492661.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/9r876ZxvRXuSJ0B3xsxPDg/zh-cn_image_0000002624492661.gif)
 
 具体适配方式如下：
 
-```screen
+```typescript
 HdsTabs({ controller: this.controller }) {
   Repeat(this.tabsBar).each((repeatItem: RepeatItem<BottomTabBarStyle>) => {
     TabContent() {
@@ -119,7 +119,7 @@ HdsTabs({ controller: this.controller }) {
 
 本示例中侧边按钮通过自定义感知握持状态实现智感握姿。效果图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/8-G5c7THRxiYSb1E9G_bPA/zh-cn_image_0000002690301446.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/ydptqiShSeqTDPGfdyaGdQ/zh-cn_image_0000002690301446.gif "点击放大")
 
 具体适配步骤如下：
 
@@ -127,7 +127,7 @@ HdsTabs({ controller: this.controller }) {
 
    在module.json5中声明获取用户动作所需的权限：
 
-   ```screen
+   ```typescript
    {
      "module": {
        // ...
@@ -150,7 +150,7 @@ HdsTabs({ controller: this.controller }) {
 
    通过[@ohos.multimodalAwareness.motion (动作感知能力)](../harmonyos-references/js-apis-awareness-motion.md)中的[motion.on('holdingHandChanged')](../harmonyos-references/js-apis-awareness-motion.md#motiononholdinghandchanged-20)，订阅握持手状态变化。其中，[HoldingHandStatus](../harmonyos-references/js-apis-awareness-motion.md#holdinghandstatus20)支持未握持（NOT\_HELD）、左手握持（LEFT\_HAND\_HELD）、右手握持（RIGHT\_HAND\_HELD）、双手握持（BOTH\_HANDS\_HELD）以及未识别（UNKNOWN\_STATUS）状态。
 
-   ```screen
+   ```typescript
    import { motion } from '@kit.MultimodalAwarenessKit';
    // ...
      handleHoldingHandChange: Callback<motion.HoldingHandStatus> = (status: motion.HoldingHandStatus) => {
@@ -194,7 +194,7 @@ HdsTabs({ controller: this.controller }) {
 
    两个过渡由框架自动同步执行，无需手动管理动画时序。
 
-   ```screen
+   ```typescript
      @Local isFloatingRight: boolean = true;
      @Local floatingHasAppeared: boolean = false;
      handleHoldingHandChange: Callback<motion.HoldingHandStatus> = (status: motion.HoldingHandStatus) => {
@@ -283,7 +283,13 @@ HdsTabs({ controller: this.controller }) {
 
 ### 智感握姿在所有设备上都支持吗？
 
-不是。智感握姿依赖设备硬件传感器的支持，部分设备可能不具备握持检测能力。建议在应用中做好兼容处理，当设备不支持时提供默认布局。可以通过功能提示弹窗告知用户"当前机型暂不支持该功能"。自定义握持感知方案可以使用[checkAccessToken](../harmonyos-references/js-apis-abilityaccessctrl.md#checkaccesstoken9)判断应用被授予ohos.permission.DETECT\_GESTURE权限状态，如果设备不支持，将返回801错误码。具体可参考获取握持手状态开发指导的[约束与限制](../harmonyos-guides/motion-guidelines.md#约束与限制-1)。
+不是。智感握姿依赖设备硬件传感器的支持，部分设备可能不具备握持检测能力。建议在应用中做好兼容处理：
+
+1. 首先通过[canIUse](../harmonyos-references/js-apis-syscap.md#caniuse)('SystemCapability.MultimodalAwareness.Motion')检测设备是否支持动作感知能力，不支持时提供默认布局；
+2. 可选地通过功能提示弹窗告知用户“当前机型暂不支持该功能”。
+3. 自定义交互感知方案，可通过
+   * [motion.on('holdingHandChanged')](../harmonyos-references/js-apis-awareness-motion.md#motiononholdinghandchanged-20)监听握持手状态，并在catch中处理801错误码实现降级。具体可参考获取握持手状态开发指导的[约束与限制](../harmonyos-guides/motion-guidelines.md#约束与限制-1)。
+   * [motion.on('operatingHandChanged')](../harmonyos-references/js-apis-awareness-motion.md#motiononoperatinghandchanged)监听操作手状态，并在catch中处理801错误码实现降级。具体可参考获取操作手状态开发指导的[约束与限制](../harmonyos-guides/motion-guidelines.md#约束与限制)。
 
 ### 如何适配兼容性，最低支持哪个API版本？
 

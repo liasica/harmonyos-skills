@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-s
 title: 主体分割
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 主体分割
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:42+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:9e467af423768fb77fed86f67296ae76e5c2b84fc74840c95c5cf984e3a72611
+scraped_at: 2026-09-08T06:39:35+08:00
+doc_updated_at: 2026-09-07
+content_hash: sha256:96fbce9d0ebe44e05b0b67c86673a048a1b9a032278fec755f28943f01c00976
 ---
 
 ## 适用场景
@@ -19,7 +19,7 @@ content_hash: sha256:9e467af423768fb77fed86f67296ae76e5c2b84fc74840c95c5cf984e3a
 
 效果如下图所示：
 
-![](https://media:401788444059268558)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/DOBr4CsVQ8aN5yhMkwPeSQ/zh-cn_image_0000002717772158.png)
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-spatiality
 title: 沉浸光感
 breadcrumb: 最佳实践 > 技术创新 > 沉浸光感
 category: best-practices
-scraped_at: 2026-09-02T15:03:15+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6e9373
+scraped_at: 2026-09-08T06:43:56+08:00
+doc_updated_at: 2026-09-07
+content_hash: sha256:ed0de0faa791c4e46c1538ee275327d6a495256e4ac940519edd085c09ab0013
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
 [沉浸光感](../harmonyos-guides/arkts-immersive-light-sense.md)是空间化视觉的基石，为组件（标题栏、导航栏、工具栏等）提供三种视觉效果：内容相关的毛玻璃模糊、按压状态的弹性光效反馈、以及滑动过程的透明度渐变。悬浮组件则是空间化的交互载体，底部导航栏从传统的贴底色块变为悬浮圆角胶囊，配合MiniBar折叠展开、智感握姿左右跟随等能力，让交互更加自然流畅。空间化的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/OdMlJZlzQfaCDD1hFQQztw/zh-cn_image_0000002594475428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/_5Hf-sJ5RTW0YWd9F7F1Vw/zh-cn_image_0000002594475428.png "点击放大")
 
 本文将从沉浸光感的基础概念切入，重点围绕首眼沉浸光感、自适应悬浮导航与智感握姿智能交互三大应用场景，系统介绍如何在HarmonyOS应用中快速接入沉浸光感能力。
 
@@ -35,7 +35,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
 沉浸光感视觉示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/GkjsNz-iRdGbCNbno-gjmQ/zh-cn_image_0000002594053198.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Actzl4u7SfSQenTBMiNOZg/zh-cn_image_0000002594053198.png "点击放大")
 
 ### 沉浸光感的档位
 
@@ -50,7 +50,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
 **说明** 
 
-在绝大多数场景下，建议使用ADAPTIVE（自适应）模式。系统会根据当前设备的算力和性能状态，自动选择最佳的光效表现，在保证流畅度的同时达到最优视觉效果。如果对视觉效果有极高要求，可以手动指定材质类型和级别，例如强制使用EXQUISITE（精致）级别。但必须注意设备兼容性，因为并非所有设备都支持高级沉浸光感。强行在低端设备上开启可能导致卡顿和发热。因此，需要[getSystemMaterialTypes()](../harmonyos-references/ui-design-hdsmaterial.md#getsystemmaterialtypes)先查询设备支持的能力，再进行优雅降级。沉浸光感代表了HarmonyOS在空间、光影与交互设计上的新思考，合理运用能显著提升应用质感。
+在绝大多数场景下，建议使用ADAPTIVE（自适应）模式。系统会根据当前设备的算力和性能状态，自动选择最佳的光效表现，在保证流畅度的同时达到最优视觉效果。如果对视觉效果有极高要求，可以手动指定材质类型和级别，例如强制使用EXQUISITE（精致）级别。但必须注意设备兼容性，因为并非所有设备都支持高级沉浸光感。强行在低端设备上开启可能导致卡顿和发热。因此，需要[getSystemMaterialTypes](../harmonyos-references/ui-design-hdsmaterial.md#getsystemmaterialtypes)先查询设备支持的能力，再进行优雅降级。沉浸光感代表了HarmonyOS在空间、光影与交互设计上的新思考，合理运用能显著提升应用质感。
 
 **注意事项与限制**
 
@@ -63,7 +63,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 沉浸光感的适配要从框架层面整体规划，核心策略是：
 
 * 采用HDS系列组件替代传统组件以直接获得沉浸效果，具体请参考[UI Design Kit（UI设计套件）](../harmonyos-guides/ui-design-kit-guide.md)下的[沉浸光感](../harmonyos-guides/ui-design-hds-component-material.md)。
-* 普通ArkUI组件通过[应用级开启](../harmonyos-guides/arkts-immersive-light-sense.md#应用级开启)或者[组件级开启](../harmonyos-guides/arkts-immersive-light-sense.md#组件级开启)方式开启沉浸光感，具体请参考[UI开发（ArkTS声明式开发范式）](../harmonyos-guides/arkts-ui-development.md)下的[沉浸光感](../harmonyos-guides/arkts-immersive-light-sense.md)。
+* 普通ArkUI组件通过应用级开启或者组件级开启方式[开启沉浸光感](../harmonyos-guides/arkts-immersive-light-sense-enable.md)，具体请参考[UI开发（ArkTS声明式开发范式）](../harmonyos-guides/arkts-ui-development.md)下的[沉浸光感](../harmonyos-guides/arkts-immersive-light-sense.md)。
 
 为有效实现沉浸光感效果，应遵循“从整体到局部”的适配原则：首先通过整体框架适配确立应用的基础视觉规范，为后续工作奠定基础；在此基础上，针对标题栏、底部导航及内容区域组件进行针对性调整，以确保视觉风格统一与交互体验连贯。
 
@@ -79,27 +79,34 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
    已采用HDS系列组件的应用，即可通过systemMaterialEffect属性配置沉浸光感效果，且始终跟随最新规范，大大减少了适配工作量。
 2. 普通组件开启沉浸光感
 
-   本文通过[组件级开启](../harmonyos-guides/arkts-immersive-light-sense.md#组件级开启)方式设置沉浸式系统材质，设置方式分为通过通用属性设置和通过独有接口设置两类来实现：
+   组件开启沉浸光感可以查看[组件适配沉浸光感](../harmonyos-guides/arkts-immersive-light-sense-component-adaptation.md)，系统介绍各组件如何通过应用级开关与组件级配置开启沉浸光感，涵盖沉浸光感的视觉效果、设置方法及适配要点，帮助开发者快速完成沉浸光感的组件适配。
+
+   本文通过组件级开启方式设置沉浸式系统材质，设置方式分三种方式开启：
 
    * 通过通用属性设置
 
      通过设置组件的[systemMaterial](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)属性来开启新材质效果。该属性本身是一个开关：
 
-     1. **开启效果**：.systemMaterial(new uiMaterial.ImmersiveMaterial())
-     2. **关闭效果**：.systemMaterial(undefined)
-   * 通过组件独有接口设置
+     1. **开启效果**：.systemMaterial(new uiMaterial.ImmersiveMaterial())或者.systemMaterial(undefined)
+     2. **关闭效果**：.systemMaterial(uiMaterial.Material.empty)
+   * 通过组件专属接口设置
 
-     弹窗类组件支持通过设置自身的systemMaterial属性开启沉浸式系统材质，具体查看[组件级开启](../harmonyos-guides/arkts-immersive-light-sense.md#组件级开启)示例。
+     当前支持设置的组件包括：Select下拉菜单的[menuSystemMaterial](../harmonyos-references/ts-basic-components-select.md#menusystemmaterial)、Navigation标题栏的[systemMaterial](../harmonyos-references/ts-basic-components-navigation.md#navigationtitleoptions11)。
+   * 弹窗类组件通过options参数中的systemMaterial字段设置。
 
    **说明** 
 
-   为保证性能与体验的平衡，沉浸光感效果会根据设备算力自动进行分级渲染，这意味着同一材质在不同性能的设备上会呈现差异化的视觉效果。具体参数分级策略请参阅 [ImmersiveMaterial](../harmonyos-references/arkts-apis-uimaterial.md#immersivematerial)类的官方文档及沉浸光感[开启后的效果](../harmonyos-guides/arkts-immersive-light-sense.md#开启后的效果)说明。
+   * 开启沉浸光感，要确保应用的[targetAPIVersion](../harmonyos-guides/app-configuration-file.md)不低于26.0.0。如果低版本适配，适配指导请参考[沉浸光感兼容性适配](../harmonyos-guides/arkts-immersive-light-sense-compatibility.md)。
+   * 沉浸光感开启后，除了弹窗类组件或方法、Slider、Toggle，其他组件仅在以下区域中生效：Navigation/NavDestination标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar中。
+
+     弹窗类组件或方法包括：Popup、Tips、Menu、BindSheet、showActionMenu、AlertDialog、CustomDialog、ActionSheet、CalendarPickerDialog、DatePickerDialog、TextPickerDialog、TimePickerDialog、Toast、Select、AlphabetIndexer气泡弹窗、Text设置copyOption后长按或双击触发的文本菜单、SelectionMenu（结合bindSelectionMenu一起使用）。
+   * 沉浸光感开启后，需要大量GPU资源，具体的使用指导请参考[沉浸光感功耗优化](../harmonyos-guides/arkts-immersive-light-sense-constraints.md)，其余开启后的常见问题请参考[沉浸光感常见问题](../harmonyos-guides/arkts-immersive-light-sense-faq.md)。
 
 ### 标题栏适配
 
 标题栏是沉浸光感最直观的体现。沉浸光感标题栏示意图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/iOY1IHZFTmuqnDZwy-hVmA/zh-cn_image_0000002624492723.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/wlcsu_HcT7Sxr6kfLEGDpw/zh-cn_image_0000002624492723.gif "点击放大")
 
 * 标题栏使用材质
 
@@ -137,14 +144,14 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
   悬浮导航示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ChNrwEDcSJqmaUOlWY8Tkg/zh-cn_image_0000002594213114.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/hn4zbIGtQneimtSw1A-DVw/zh-cn_image_0000002594213114.png "点击放大")
 * 设置沉浸光感效果
 
   悬浮导航栏的沉浸光感效果可通过barFloatingStyle中的systemMaterialEffect属性进行配置，其中materialType用于定义材质风格，materialLevel则控制材质强度。
 
   沉浸光感示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/CxyRs9pPS7SGXNJhqRtHNg/zh-cn_image_0000002624612573.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/qPHN2HXaQnqxXOyMVIxHrQ/zh-cn_image_0000002624612573.png "点击放大")
 * 沉浸式MiniBar
 
   针对悬浮导航的多功能场景，例如音乐播放等需同时展示底部导航和播放控制的场景，HdsTabs提供了MiniBar能力，即在底部导航栏中嵌入一个可折叠展开的[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)。
@@ -154,7 +161,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
   MiniBar示意图如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/T3ZcRhv2RamHnDeuTtAmhg/zh-cn_image_0000002594053200.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/tU0iKKwRRm6zLOF_1Q22ag/zh-cn_image_0000002594053200.gif)
 
 ### 内容区域组件适配
 
@@ -164,9 +171,13 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 * **interactive**：控制是否启用交互形变效果。
 * **lightEffect**：用于配置光感交互反馈效果。
 
+**说明** 
+
+沉浸光感开启后，除了弹窗类组件或方法、Slider、Toggle，其他组件仅在以下区域中生效：Navigation/NavDestination标题栏，或横向Tabs中barPosition为BarPosition.End的底部TabBar中。
+
 效果示意图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HC4CtIcAQDaK0cPPDJaAXQ/zh-cn_image_0000002624492725.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Q2Wf8bx3QgiD_pT8dd2wBw/zh-cn_image_0000002624492725.gif)
 
 ## 场景一：应用首眼沉浸光感
 
@@ -182,7 +193,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
   沉浸光感标题栏的实现通过设置titleBar.style.systemMaterialEffect以启用材质效果，设置titleBar.style.scrollEffectOpts以配置标题栏的滚动效果。
 
-  ```screen
+  ```typescript
   import {
     hdsMaterial,
     HdsNavigation,
@@ -226,7 +237,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
   2. 通过[dynamicHideTitleBar](../harmonyos-references/ui-design-hdsnavigation.md#dynamichidetitlebar)属性的mode设置为HideMode.SCROLL\_UP\_TO，上滑到固定位置隐藏，下滑到固定位置显示。
   3. 调用[bindToScrollable](../harmonyos-references/ui-design-hdsnavigation.md#bindtoscrollable)接口绑定内容区滚动组件，实现标题栏和状态栏模糊度与透明度的同步变化。
 
-  ```screen
+  ```typescript
   .hideBackButton(false)
   .titleMode(HdsNavigationTitleMode.MINI)
   .dynamicHideTitleBar({
@@ -244,7 +255,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
    首页底部导航可通过HdsTabs悬浮模式实现，配置[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性可自定义悬浮栏样式，包括圆角、背景色及位置偏移等参数，适配多设备布局需求。
 
-   ```screen
+   ```typescript
    HdsTabs({ controller: this.controller }) {
      // ...
    }
@@ -277,7 +288,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
    悬浮导航栏的材质效果通过统一配置systemMaterialEffect的参数[SystemMaterialParams](../harmonyos-references/ui-design-hdstabs.md#systemmaterialparams)，让标题栏与悬浮导航栏呈现出协调一致的光感视觉风格。
 
-   ```screen
+   ```typescript
    HdsNavigation() {
      // ...
    }
@@ -300,11 +311,11 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
 菜单栏沉浸光感适配的核心是通过封装版本兼容的材质工具类，实现API级别的平滑过渡。菜单栏沉浸光感效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/BMxCO-gqTXSKSx1hmBlNOA/zh-cn_image_0000002624951609.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/9J2AcGTfQMOlMlwV2HXbNQ/zh-cn_image_0000002624951609.gif "点击放大")
 
 * 材质工具类封装
 
-  ```screen
+  ```typescript
   import { uiMaterial } from '@kit.ArkUI';
   import { deviceInfo } from '@kit.BasicServicesKit';
   import { hdsMaterial } from '@kit.UIDesignKit';
@@ -333,7 +344,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
 * 菜单栏具体实现
 
-  ```screen
+  ```typescript
   private menuId: string = 'MaterialLevelMenu' + this.currentIndex;
   private menus: HdsNavigationMenuContentOptions = {
     value: [
@@ -385,7 +396,7 @@ content_hash: sha256:9090db41faf6ce10c8d23be51b0282d41c012a0a50319af512737b9d5d6
 
    通过[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)方法的miniBar属性自定义迷你栏。
 
-```screen
+```typescript
 import {
   HdsBarStyle,
   hdsMaterial,
