@@ -1,0 +1,7 @@
+# 文档采集脚本只在 CI 与维护者本机运行，不属于插件运行时
+scraper/
+
+.DS_Store
+__pycache__/
+*.pyc
+.venv/

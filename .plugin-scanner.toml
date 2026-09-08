@@ -1,0 +1,6 @@
+# plugin-scanner（hashgraph-online/ai-plugin-scanner-action）配置
+
+[scanner]
+# harmonyos/references/ 是华为官方文档的离线镜像，文档正文里的示例私钥、示例密码会被密钥
+# 扫描器判为硬编码凭据。这些是华为文档原文中的占位值，不是真实凭据，详见 SECURITY.md
+ignore_paths = ["harmonyos/references/*"]

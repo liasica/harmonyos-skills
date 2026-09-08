@@ -12,7 +12,7 @@ HarmonyOS NEXT 离线参考库 + 采集脚本，供 AI 编程助手（Claude Cod
 .
 ├── harmonyos/                  ← AI Skill：本仓库的对外契约
 │   ├── SKILL.md                ← Skill 入口（含 frontmatter）
-│   ├── rules/                  ← ArkTS / ArkUI 编码强制规则
+│   ├── rules/                  ← ArkTS / ArkUI 编码强制规则、在线兜底说明
 │   └── references/             ← 全部 Markdown 文档（采集产物，入库）
 │       ├── INDEX.md
 │       ├── harmonyos-releases/INDEX.md + *.md
@@ -32,6 +32,8 @@ HarmonyOS NEXT 离线参考库 + 采集脚本，供 AI 编程助手（Claude Cod
 ├── .codex-plugin/              ← Codex plugin 清单
 ├── .github/workflows/          ← 每日自动采集并发布 Release
 ├── install.sh                  ← 多 AI CLI 一键安装
+├── SECURITY.md                 ← 权限边界与漏洞报告方式
+├── LICENSE                     ← 采集脚本与配套代码的许可
 └── README.md                   ← 本文件
 ```
 
@@ -292,3 +294,9 @@ content_hash: sha256:...
 | 变更预告 | https://developer.huawei.com/consumer/cn/doc/harmonyos-roadmap/changelogs-overview-pre |
 
 目录树里的文档按所属根归类；正文中指向白名单外的链接保留为绝对 URL。
+
+## 许可
+
+`scraper/`、`mcp/`、`install.sh` 等本仓库自有代码按 [MIT](LICENSE) 许可。
+
+`harmonyos/references/` 下是华为开发者文档的镜像，著作权归华为所有，按各文档页面的原始条款使用；每篇 `.md` 的 frontmatter 保留了 `url` 字段指向原文。
