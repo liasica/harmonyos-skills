@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 规则总览
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 规则总览
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-09T06:30:32+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:dbe187a25e213fd2c434cdab7beccc1693eac974fb626afce44186867491b7bb
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor
 title: 概述
 breadcrumb: 指南 > 构建应用 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:11+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-09T06:30:32+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:332777c842c9ae4646b2e9b76a2828d3f7da74a78a80d8b337196ee2fce7548d
 ---
 

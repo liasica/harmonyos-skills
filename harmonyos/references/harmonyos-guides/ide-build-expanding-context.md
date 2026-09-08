@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-exp
 title: 插件上下文
 breadcrumb: 指南 > 构建应用 > 扩展构建能力 > 扩展构建API > 插件上下文
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-09T06:30:35+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:9623b1b672a7d9261b657f52d126b0b0360bade4e7ee871f30c2351883b1581c
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-back
 title: 基于长时任务与实况窗的视频后台导出方案
 breadcrumb: 最佳实践 > 场景创新 > 基于长时任务与实况窗的视频后台导出方案
 category: best-practices
-scraped_at: 2026-09-02T15:03:15+08:00
+scraped_at: 2026-09-09T06:35:54+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:1601284b916da650390455d1e542e9ddcba8c1fe6c5a2a02f65b31db2024f029
+content_hash: sha256:48800c7a4b329a065ec2cbd0d0405715f025ca5a52f9438c4b0ad7a552f89bc1
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:1601284b916da650390455d1e542e9ddcba8c1fe6c5a2a02f65b31db202
 
 下图展示了正常导出流程中各模块的完整交互：用户点击导出后，应用依次完成草稿持久化、实况窗创建、长时任务启动、C++ Native管线逐帧解码-合成-编码与进度回调，最终将视频写入系统相册并结束实况窗和后台任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/eMhHkNtVS3KSFG9MkghZ9g/zh-cn_image_0000002729556591.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/s_EGBq5DR2CEu6WaluB4Lg/zh-cn_image_0000002729556591.png "点击放大")
 
 ## 视频导出与进度回调
 
@@ -38,7 +38,7 @@ content_hash: sha256:1601284b916da650390455d1e542e9ddcba8c1fe6c5a2a02f65b31db202
 
 视频导出通过NativeExportUtil调用C++ Native模块，Native层内部使用[音视频编解码](../harmonyos-guides/audio-video-codec.md)完成视频解封装、硬件解码、OpenGL ES水印合成、硬件编码和封装的全流程。ArkTS层只需打开输入输出文件获取文件描述符，将水印参数和旋转角度传入，通过回调函数接收进度和完成通知。支持通过nativeexport.cancelExport()随时取消正在执行的导出任务。视频导出流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/7dZJghSmT7ew69Hinn3tmQ/zh-cn_image_0000002699677372.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/RAqfK2QYTaqLm27ys6KAOg/zh-cn_image_0000002699677372.png "点击放大")
 
 关键接口：
 
@@ -103,7 +103,7 @@ content_hash: sha256:1601284b916da650390455d1e542e9ddcba8c1fe6c5a2a02f65b31db202
 
 [Background Tasks Kit（后台任务开发服务）](../harmonyos-guides/background-task-overview.md)提供了ContinuousTaskRequest机制，应用通过声明MODE\_SPECIAL\_SCENARIO\_PROCESSING模式和SUBMODE\_MEDIA\_PROCESS\_NORMAL\_NOTIFICATION子模式，向系统申请特殊场景的后台长时任务。该任务允许应用在后台持续运行，同时系统会在通知栏展示任务状态。后台任务管理流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/-tlK8dGrSRCJ2nO76IsKPg/zh-cn_image_0000002729436643.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/kQuhfoBVQWioWoZl6yGGzA/zh-cn_image_0000002729436643.png "点击放大")
 
 关键接口：
 
@@ -277,7 +277,7 @@ content_hash: sha256:1601284b916da650390455d1e542e9ddcba8c1fe6c5a2a02f65b31db202
 
 实况窗的生命周期分为三个阶段：创建（startLiveView）、更新（updateLiveView）和结束（stopLiveView）。导出开始时创建实况窗并显示初始进度，Native管线每回调一次进度就更新实况窗内容，导出完成或失败时更新为最终状态并结束实况窗。实况窗管理流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/v_JWldZIT5Kz6WTvoKlF_g/zh-cn_image_0000002699837266.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/ngjkZgrIS7WSPjOrRFiKHA/zh-cn_image_0000002699837266.png "点击放大")
 
 关键接口：
 

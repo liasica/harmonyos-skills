@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-bu
 title: 工程级build-profile.json5文件
 breadcrumb: 指南 > 构建应用 > 配置文件 > 工程级build-profile.json5文件
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-09T06:30:33+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:82e96cfec12f1416d81181dbdf2442d606e9ccf7a295b9bd02d66716d3dd8dd5
 ---
 

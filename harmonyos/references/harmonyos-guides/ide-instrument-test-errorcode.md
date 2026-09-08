@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-instrumen
 title: 仪器测试错误码
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 仪器测试错误码
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:19+08:00
+scraped_at: 2026-09-09T06:30:31+08:00
 doc_updated_at: 2026-07-15
-content_hash: sha256:fe33b9f51b9da044429e3e752a62e7ab803a7c9b6af7617dbcb4f15b702553ee
+content_hash: sha256:66ea58d905b79b991a25fd8925ba71a9d29c0e15764e111dbad6df2afd4b3882
 ---
 
 ## 00501001 测试套件名称含有变量
@@ -156,7 +156,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/DNA6aO0GRYG3U0qYh0FEgw/zh-cn_image_0000002731541897.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/lXFAfAP7QkSxz-QMs7aN9w/zh-cn_image_0000002731541897.png)
 
 ## 00502002 找不到测试用例
 
@@ -210,7 +210,7 @@ The current file does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/crNef9N9Rzi6YS3of4bG2A/zh-cn_image_0000002701662704.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/cdBp3briScqQCjLQld4Szg/zh-cn_image_0000002701662704.png)
 
 ## 00502005 测试包中的所有函数都没有在List.test.ets文件中注册
 
@@ -230,7 +230,7 @@ The current package does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/sH1DMZCtQM6uIPIWsRsdBg/zh-cn_image_0000002731541895.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/5o00UiV1Q26W33t-B6XD6A/zh-cn_image_0000002731541895.png)
 
 ## 00502006 函数没有在List.test.ets文件中注册
 
@@ -250,7 +250,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/uJ5JSQESRhW2XT3IA9k6wA/zh-cn_image_0000002701822626.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/k8zU-xqKR_6MzLodVgVG_w/zh-cn_image_0000002701822626.png)
 
 ## 00502007 测试文件中找不到测试套件
 

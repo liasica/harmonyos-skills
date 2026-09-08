@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 使用预览器调试应用
 breadcrumb: 指南 > 编写与调试应用 > 界面预览 > 使用预览器调试应用
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:54+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-09T06:30:28+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:38ee5d767a518953c94d182ffc3221129b714bdd0cf7360a63d619078d7264cd
 ---
 

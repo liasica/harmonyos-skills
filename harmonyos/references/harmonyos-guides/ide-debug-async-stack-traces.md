@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-asy
 title: 查看异步函数堆栈
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 查看异步函数堆栈
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:17+08:00
+scraped_at: 2026-09-09T06:30:29+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:800e87074b35d4e654c5b56f2466d1d0137350ed347f2ee691cf16ead762c555
+content_hash: sha256:71b6e294c9ab0d492a1ab91e7f38556f5c4790b4b72ce252f71db515658cf9d2
 ---
 
 从DevEco Studio 5.1.1 Beta1版本开始，开发者可通过打开异步堆栈跟踪开关、设置异步调用链深度来跟踪异步函数调用的顺序。
@@ -21,7 +21,7 @@ content_hash: sha256:800e87074b35d4e654c5b56f2466d1d0137350ed347f2ee691cf16ead76
    * 勾选**Enable async stack traces**打开异步堆栈跟踪开关。
    * 设置异步调用链深度**Async call chain depth**大于0，才能在调试堆栈时展示调用链对应层数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/dZoR5n8oQzWz9IsT-WwnsA/zh-cn_image_0000002701823592.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/KvZ4jX05SWaCOJiI6ST5dg/zh-cn_image_0000002701823592.png)
 2. 在异步调用链中设置断点，启动调试，命中断点后，堆栈列表将展示对应调用链层数。如果实际的调用链层数比设置的异步调用链深度小，则只展示实际调用链层数。每个异步调用链以**Async call from**分隔，后面是调用函数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/-p-MnrBHT2qzeTXBy8TRpw/zh-cn_image_0000002701663670.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/fHEx8cOFQ3OOkJLoziF7ng/zh-cn_image_0000002701663670.png)

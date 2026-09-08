@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-inst
 title: ohpm install
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm install
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:25+08:00
+scraped_at: 2026-09-09T06:30:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f63cfc2eb67af433f5aa6e56fae09301f6a20fbd34880646b390f61f310cce7e
+content_hash: sha256:2dbf6afbcd7f8a9faf983b96b92db571cc96cee372386b8482eb4a8113965210
 ---
 
 安装三方库。
@@ -262,7 +262,7 @@ ohpm install @ohos/lottie
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/dGWhMtQFTg6VHEB7cfFz8g/zh-cn_image_0000002731383019.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/WMw0hDObSaaAhMrgD33xMQ/zh-cn_image_0000002731383019.png "点击放大")
 
 ## oh\_modules
 

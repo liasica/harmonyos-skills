@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 设备支持类型
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 设备支持类型
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:24+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-09T06:30:28+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:de835017705ce63d8a02e3d67e22f1d67c388ada8796efa7d36bc21fef25d4d7
 ---
 

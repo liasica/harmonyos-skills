@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: Agent模式
 breadcrumb: 指南 > AI Coding > DevEco Code > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:27+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:0ba88441f0ee7384e99259d847dc3b6679fb7e8e9ecba772c3eb03f2dea188d7
+scraped_at: 2026-09-09T06:30:39+08:00
+doc_updated_at: 2026-09-08
+content_hash: sha256:fdc179a4a193fe20464d6c38261122b154ac6f90a15ef3f0c91b1f19aca9a105
 ---
 
 ## 功能概述
@@ -24,11 +24,11 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/q_br1IgsSoWGF1r31WcdXQ/zh-cn_image_0000002731383159.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/0b3G-UT5T7C0GrzYVNYnWA/zh-cn_image_0000002731383159.png "点击放大")
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/d1/v3/SyRg_Pk3T3u2VyfLbI5wRA/zh-cn_media_0000002701663942.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/3f/v3/rXfIh4lGSg62-YekmZ9AOg/zh-cn_media_0000002701663942.mp4)
 
 ## Plan + Build模式
 
@@ -42,7 +42,7 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/rwIxq25BS_yo07jzmIayFA/zh-cn_image_0000002701823856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/K_jENXO_TzugDKKM724C8A/zh-cn_image_0000002701823856.png "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
@@ -52,7 +52,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2d/v3/XCWSEqztQPeVd6mj9B03Rg/zh-cn_media_0000002701823862.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/10/v3/HY455KgtQ3mtO-Viv67Pow/zh-cn_media_0000002701823862.mp4)
 
 ## Goal模式
 
@@ -66,7 +66,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Um9F8_5KRH6SH2tcfhd5OQ/zh-cn_image_0000002701663938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/b8VmW3q9SbKMpYHNq7cPLw/zh-cn_image_0000002701663938.png "点击放大")
 
 Goal Agent实现流程分为两大阶段：
 
@@ -75,4 +75,4 @@ Goal Agent实现流程分为两大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a5/v3/hSumZSE9TH-h7i1rO_jBvA/zh-cn_media_0000002731543137.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/f6/v3/P4Coj6JCRjm_B7qGl710_A/zh-cn_media_0000002731543137.mp4)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 命令
 breadcrumb: 指南 > AI Coding > DevEco CLI > 命令
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-09T06:30:40+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:70d7963326ce953339e94875512775b8b3cc318572a30467bce8c3f7d31d99f3
 ---
 

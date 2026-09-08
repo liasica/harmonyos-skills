@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-mix-langu
 title: 性能优化：混合语言工程Sync优化实践
 breadcrumb: 指南 > 构建应用 > 提升构建效率 > 实践说明 > 性能优化：混合语言工程Sync优化实践
 category: harmonyos-guides
-scraped_at: 2026-09-04T06:27:22+08:00
+scraped_at: 2026-09-09T06:30:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9c0649f9e7f991abf72a8560323d2ade610822bdde25191b429811f89eeff609
+content_hash: sha256:ca478fbd9d0a3a14789445186fc7d1bee77c41aaf429c7a7706e23927c3071ed
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:9c0649f9e7f991abf72a8560323d2ade610822bdde25191b429811f89ee
 
    **开启方式：**点击**File >** **Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable ohpm execution by hvigor**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/l4f8VcVATvSCg8RuxN0NOw/zh-cn_image_0000002731542977.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/73d3JSgbRWmCbWvC3w-zLg/zh-cn_image_0000002731542977.png)
 
 ## 优化措施二：启用C++并行同步编译
 
@@ -37,10 +37,10 @@ content_hash: sha256:9c0649f9e7f991abf72a8560323d2ade610822bdde25191b429811f89ee
 
 * 场景一：多个C++模块之间无依赖关系，则是并行编译，构建窗口中只有一个syncNative的Tab页，对应了多个模块的编译日志，如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1rN1vtE9TGSlAPILVXnBdQ/zh-cn_image_0000002701663782.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/DsKwLGB7T3-_b7GyZGruxw/zh-cn_image_0000002701663782.png)
 * 场景二：多个C++模块之间有依赖关系，比如entry依赖hsp1，hsp1依赖hsp，hsp依赖har和har1模块，则会先执行被依赖的模块，如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/kVj3mbL-R4qyCRVFpIs7Zg/zh-cn_image_0000002701823706.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/piZOMBorQDaZmaI4JN4cfQ/zh-cn_image_0000002701823706.png)
 
 **可能影响**：如果在hvigorfile.ts脚本的compileNative任务阶段有自定义插件或任务，开启开关后，由于compileNative任务不会被执行，会导致自定义插件或任务未执行。
 
@@ -65,7 +65,7 @@ add_library(MyProject SHARED ${PROJECT_SOURCE})
 
 从26.0.0版本开始，新增Refresh C++ Project功能，允许开发者主动触发CMake重新配置项目，确保动态生成的源码列表与当前文件系统状态同步。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/EDxL64_-SsuyO-3RDuIUWg/zh-cn_image_0000002731383005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Ax-xLfdXSWedq722740V4w/zh-cn_image_0000002731383005.png)
 
 ## 优化措施四：修改代码索引模式
 

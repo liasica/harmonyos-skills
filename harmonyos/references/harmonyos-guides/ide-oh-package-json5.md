@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-oh-packag
 title: oh-package.json5
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > oh-package.json5
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-09T06:30:38+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:7a0f7783b76e770eee4098f4557dd94e50cd7df33fd3277e77eb403ee9b91cb9
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hypium-python
 title: 应用UI测试（基于Python）
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 应用UI测试（基于Python）
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:45+08:00
+scraped_at: 2026-09-09T06:30:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f0530e39eaafc5ecbe8a4143336abb08e65c107bf2fddc5eacc6b6b91ec17bda
+content_hash: sha256:2925b1f97a952b7ea5ade8033a25004bc20fa3949159b7d8c54a227adce3b14a
 ---
 
 ## 框架概述
@@ -273,7 +273,7 @@ UiViewer插件当前仅支持USB连接本地设备调测和本地模拟器进行
 
 a）直接使用以下附件中的模板工程。
 
-[HypiumProjectTemplate.zip](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145420.46179425033343051389088358461583:20260909063944:2800:D80CF8F6E3FE93CDBCAA81E58D74D05A780EDEA8F2CA80B8A57D81BC3D42B866.zip?needInitFileName=true)
+[HypiumProjectTemplate.zip](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145420.46179425033343051389088358461583:20260910063019:2800:A92B7082C9A6A43770AB9B48DE84AE56AFCE892B02D11D382B960C254717C41F.zip?needInitFileName=true)
 
 b）通过PyCharm上的DevEcoTesting-Hypium插件进行创建。请参考本文档的**“安装向导 -> DevEco Testing Hypium插件安装及使用方法 -> 插件功能 -> 工程创建区域****”**小节。
 

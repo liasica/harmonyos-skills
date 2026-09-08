@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-se
 title: hvigor-config.json5文件
 breadcrumb: 指南 > 构建应用 > 配置文件 > hvigor-config.json5文件
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-09T06:30:32+08:00
+doc_updated_at: 2026-09-08
 content_hash: sha256:aa90e6d424faf00c01295317a084ff00d339f12a4628ed578666a12f383830db
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-wavewheel-
 title: 实现修图软件的波轮菜单功能
 breadcrumb: 最佳实践 > 场景创新 > 实现修图软件的波轮菜单功能
 category: best-practices
-scraped_at: 2026-09-02T15:03:15+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:bcd4bce56097219ad6efd20d2cdba775fd32643818ddd365767216fbc16181ce
+scraped_at: 2026-09-09T06:35:54+08:00
+doc_updated_at: 2026-09-08
+content_hash: sha256:95cc7ba6a96c862a5c93734b2f024fe06c9483ae29c569972eed79ea4b99af53
 ---
 
 ## 概述
@@ -73,12 +73,7 @@ WaveWheelController是SDK的核心控制器，负责管理菜单选项、处理�
 
 ```screen
 {
-  "name": "imageeditwithwavewheelsample",
-  "version": "1.0.0",
-  "description": "Please describe the basic information.",
-  "main": "",
-  "author": "",
-  "license": "",
+  // ...
   "dependencies": {
     'wavewheel': '../wavewheel'
   }
@@ -291,21 +286,18 @@ SDK支持运行时动态修改菜单选项，开发者可以提供设置界面�
 
 **实现原理**
 
-使用@StorageLink装饰器（参见：《[AppStorage：应用全局的UI状态存储](../harmonyos-guides/arkts-appstorage.md#storagelink)》）将菜单选项与AppStorage同步，实现跨组件状态共享。设置界面修改选项后，通过AppStorage通知控制器更新菜单。
+使用[@StorageLink](../harmonyos-guides/arkts-appstorage.md#storagelink)装饰器将菜单选项与AppStorage同步，实现跨组件状态共享。设置界面修改选项后，通过AppStorage通知控制器更新菜单。
 
 **开发步骤**
 
 1. 使用@StorageLink()同步菜单选项：在设置界面和主页面中使用相同的key同步选项数据。
 
 ```screen
-@Component
-struct WaveWheelSettingView {
-  // ...
-  @StorageLink(APP_STORAGE_KEY) simpleWaveWheelOptions: SimpleWaveWheelOption[] =
-    []; // Synchronize this variable on save. On initialization, read currently selected features from this variable.
-  @State allOptions: WaveWheelTaskOption[] = []; // Stores all available options
-  @State needSaveOptions: WaveWheelTaskOption[] = []; // Temporarily stores the user's current modifications
-  @State draggedIndex: number = -1; // Tracks the index of the item being dragged during reordering
+@StorageLink(APP_STORAGE_KEY) simpleWaveWheelOptions: SimpleWaveWheelOption[] =
+  []; // Synchronize this variable on save. On initialization, read currently selected features from this variable.
+@State allOptions: WaveWheelTaskOption[] = []; // Stores all available options
+@State needSaveOptions: WaveWheelTaskOption[] = []; // Temporarily stores the user's current modifications
+@State draggedIndex: number = -1; // Tracks the index of the item being dragged during reordering
 ```
 
 2. 在主页面监听选项变化：使用@StorageLink()接收设置界面的修改。
@@ -367,6 +359,8 @@ async onWindowStageCreate(windowStage: window.WindowStage): Promise<void> {
   controller.init(windowStage);
   WaveWheelController.getInstance()
     .setDarkMode(this.context.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+  // ...
+}
 ```
 
 2. 在EntryAbility中监听配置变化：在onConfigurationUpdate()中调用setDarkMode()。
