@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 使用硬件熵源生成安全随机数(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 使用硬件熵源生成安全随机数(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7634d4e913b87348b362ac019609aed0481ae3aa43edc7ff666895584073c12e
 ---
 

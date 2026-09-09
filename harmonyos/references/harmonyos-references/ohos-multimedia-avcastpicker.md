@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-mult
 title: "@ohos.multimedia.avCastPicker (投播组件)"
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS组件 > @ohos.multimedia.avCastPicker (投播组件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:24+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:11+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0320c984aca9e78179d308201761842ef93b20f88bac68ca2fc57a1a7c0bef13
 ---
 

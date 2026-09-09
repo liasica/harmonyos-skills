@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-o
 title: "@ohos.telephony.observer (电话服务状态监听)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.observer (电话服务状态监听)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:394684d562a8c3d1d37e07cbeabe3ed66f339d14f5a9620930ae9f640e01e807
 ---
 

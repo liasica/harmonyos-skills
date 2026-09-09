@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-inten
 title: 调试意图
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 意图框架开发指导 > 调试意图
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:16:57+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:21:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7c69d97a849501092a06ea66c8e6ec82b2ff50fad38c09a1998b1165eab61afd
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/abilityconnec
 title: 跨设备连接UIAbility开发指南
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 应用跨设备连接管理 > 跨设备连接UIAbility开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:82f7c02cd36580f18736bf7f99549c3da90368f20ea6b219cac307f5a4c32ec1
+scraped_at: 2026-09-10T06:22:36+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:58a4f8d8a56be768c1a59ac24f7370c7068fdb834d80f9beb58e0e7cccb55a79
 ---
 
 ## 简介
@@ -37,7 +37,7 @@ content_hash: sha256:82f7c02cd36580f18736bf7f99549c3da90368f20ea6b219cac307f5a4c
 
 **图1** 应用跨设备连接运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/KvuyYOvlS5y4NTbL5dxuPw/zh-cn_image_0000002712404538.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/hdL69mS6Ssqkp3bgKFpJeQ/zh-cn_image_0000002747291145.png)
 
 ### 约束与限制
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: chart开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > chart开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:07+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:a14b8bcd7934de31905009ec39cfd8b991c1953931aff56ac6dccea6c24c5671
+scraped_at: 2026-09-10T06:22:12+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:620ead5a4a50b49f0d09617c6d1277f8ec1ff19fd2508bc7cbb4c470eb80c204
 ---
 
 chart为图表组件，用于呈现线形图、柱状图和量规图界面。具体用法请参考[chart](../harmonyos-references/js-components-basic-chart.md)。
@@ -67,7 +67,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/c-Uk_K9WRvyAqHD8qzMl6g/zh-cn_image_0000002712404152.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Ie6dKR_cSbqPHCUod5l9_w/zh-cn_image_0000002747290759.png)
 
 ## 设置图表类型
 
@@ -210,7 +210,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/1eJPwJzBT4en0UllOXxSpA/zh-cn_image_0000002742123101.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/XHpI2Hi-QKu6_PfU7u_yGg/zh-cn_image_0000002747210677.gif)
 
 **说明** 
 
@@ -512,4 +512,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/laM4fLXHRRKbopnaNYoK5A/zh-cn_image_0000002712244188.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Aw9IWhptTJe3HyJbUrha8g/zh-cn_image_0000002717770742.gif)

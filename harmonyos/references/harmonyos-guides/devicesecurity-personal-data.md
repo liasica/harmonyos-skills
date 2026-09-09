@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 个人数据处理说明
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 个人数据处理说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f2165f2c68f8ce1449bdde2c880bfa065a3f69130a9ece7e1db343a304c2d42e
 ---
 

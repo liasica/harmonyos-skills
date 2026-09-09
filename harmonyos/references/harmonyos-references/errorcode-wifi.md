@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Wi-Fi错误码
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 错误码 > Wi-Fi错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d557cff72a02731a68199cf8c91090b4ee6ebb0ecaa957dea4b401f76a320f07
 ---
 

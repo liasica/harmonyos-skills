@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 属性
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 属性
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9297046cbfbb46c7b3d57c91adf1ac0e30a0fd7a4accf88b8c11d6950336bff5
 ---
 

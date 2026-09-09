@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.calendarManager (日程管理能力)"
 breadcrumb: API参考 > 应用服务 > Calendar Kit（日历服务） > ArkTS API > @ohos.calendarManager (日程管理能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:11+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:cafa5b9c25aee274684d1f6972b8d5051be8f68c8e8db19e09d76536e29c8e8e
 ---
 

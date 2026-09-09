@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-ukey-pin
 title: UKey PIN码认证介绍及规格
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 外部密钥管理扩展 > UKeyPIN码认证管理 > UKey PIN码认证介绍及规格
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2871ad12afe8c2beb775cad0df86f594f948df7f350d630750da528c1d318b89
 ---
 

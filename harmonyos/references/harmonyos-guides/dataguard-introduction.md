@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataguard-int
 title: Enterprise Data Guard Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > Enterprise Data Guard Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:31+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c6feb64359d7be3c9460fb6870ed9f62cac36dc7f8d0a7fb35f723d33eefc84e
 ---
 

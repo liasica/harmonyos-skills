@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-applica
 title: 管理应用拥有的状态概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理应用拥有的状态 > 管理应用拥有的状态概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:48+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:01+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:57b6d24f36df49f6a7470a2b4643a98f28f73a556a30fcad2d4aa5cf5d9954ee
 ---
 

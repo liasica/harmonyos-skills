@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-m
 title: 媒体数据封装
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 媒体数据封装与解封装 > 媒体数据封装
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0a4327313236e9b9de29734b48f5e9fd5afb085ef11cd4953d708facc322116d
 ---
 

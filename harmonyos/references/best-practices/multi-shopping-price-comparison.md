@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-shopping-
 title: 多设备购物比价界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备购物比价界面
 category: best-practices
-scraped_at: 2026-09-02T15:03:18+08:00
-doc_updated_at: 2026-06-10
-content_hash: sha256:b1d8f612bbacb0533decbda65c18b7dfaeb2a66256ed4aa4e332868586a7ed62
+scraped_at: 2026-09-10T06:30:07+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:5d0753ea9b07ded03f93e6869a330cef059af5a29f13acd5b6eacc81d698f212
 ---
 
 ## 概述
@@ -23,14 +23,14 @@ content_hash: sha256:b1d8f612bbacb0533decbda65c18b7dfaeb2a66256ed4aa4e332868586a
 下文将从UX设计、架构设计、页面开发三个方面，系统介绍购物应用在实际开发中的最佳实践，为开发者提供可借鉴的实现思路。
 
 * [UX设计](multi-shopping-price-comparison.md#section23951509373)：介绍购物应用的交互逻辑和通用设计要点，可供同类购物应用开发者直接参考复用。
-* [工程管理](multi-shopping-price-comparison.md#zh-cn_topic_0000001744653537_section189781175313)：基于分层架构搭建“一多”应用代码工程，以清晰的目录结构明确各层逻辑，同时针对购物业务场景提供适配的工程配置方案。
+* [工程管理](multi-shopping-price-comparison.md#section189781175313)：基于分层架构搭建“一多”应用代码工程，以清晰的目录结构明确各层逻辑，同时针对购物业务场景提供适配的工程配置方案。
 * [移动端页面](multi-shopping-price-comparison.md#section1731674118398)和[电脑端页面](multi-shopping-price-comparison.md#section121051857195719)：按照实际应用开发流程，以页面为基本单元，分别讲解不同设备端页面在窗口适配、页面开发、交互开发及功能开发等环节的设计思路与具体实现方法。
 
 ## UX设计
 
 购物比价应用的UX设计可参考[电商购物类](../design-guides/responsive-design-examples5-0000001930419478.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/S17-HPwlQpKoblWURAisXw/zh-cn_image_0000002591755542.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Gufba9DpT4u74xyNmIB8kQ/zh-cn_image_0000002591755542.png "点击放大")
 
 ## 工程管理
 
@@ -187,7 +187,7 @@ content_hash: sha256:b1d8f612bbacb0533decbda65c18b7dfaeb2a66256ed4aa4e332868586a
 
 商品详情页在折叠屏上提供分屏功能，满足用户同时查看两个商品详细参数进行比价的需求。分屏功能通过创建新的UIAbility并设置窗口显示为分屏模式实现。分屏后，左右屏幕的宽度比例为1:1。双折叠上的效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/0CCbGl2pQjSzC9jpPJwkbQ/zh-cn_image_0000002622155223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/owuUz15_TgCBJxKrfX2BZg/zh-cn_image_0000002622155223.png "点击放大")
 
 ### 商品支付页
 
@@ -245,7 +245,7 @@ content_hash: sha256:b1d8f612bbacb0533decbda65c18b7dfaeb2a66256ed4aa4e332868586a
 
 ### 首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/pg3_-aB0Rr2W9fNiQqG7qA/zh-cn_image_0000002591595638.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/jLzq-KS3QpiJldQHHQyQwQ/zh-cn_image_0000002591595638.png "点击放大")
 
 使用[Navigation](../harmonyos-references/ts-basic-components-navigation.md)代替[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)作为导航，其余feature层代码复用，自由窗口的布局会复用断点进行适配，可以使自由窗口无论何时都有较好的布局效果。
 

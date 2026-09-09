@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebSchemeHandlerResponse)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebSchemeHandlerResponse)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:19+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:190769b50894acc9e0d31f6c42471f982b36b357b33ba2aa1febeb9cc5511bce
 ---
 

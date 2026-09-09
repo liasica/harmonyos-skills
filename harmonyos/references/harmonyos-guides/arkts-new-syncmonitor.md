@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-syn
 title: "@SyncMonitor装饰器：状态变量修改同步监听"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @SyncMonitor装饰器：状态变量修改同步监听
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a55257f7a758d1ac907ab53b79434d90da6dd61ac303e7053b1f727ab47f76f9
 ---
 

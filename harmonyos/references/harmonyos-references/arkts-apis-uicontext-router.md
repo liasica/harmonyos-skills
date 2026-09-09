@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Router)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (Router)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:99b07f82350814e0b8d95bd7f44bd20a97558b594078c0edbcd4abb1a8cc8491
 ---
 

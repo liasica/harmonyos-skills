@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 业务概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 业务概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:21+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:23:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:cb706d55d006b07176fe2ef0d815038f8ca7fdccba4781bdaca881a2d5083b8d
 ---
 

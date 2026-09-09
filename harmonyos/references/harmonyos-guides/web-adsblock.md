@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-adsblock
 title: 使用Web组件的广告过滤功能
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的网络安全与隐私 > 使用Web组件的广告过滤功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:db6eee03364d3264b44bc2caa0ec36710f56f78a40a209959f4755f98512378b
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:24+08:00
-doc_updated_at: 2026-08-04
-content_hash: sha256:9977085fe7733ae0b5e52907855d0bcc082b69893eaec28c6222c8158b99d14b
+scraped_at: 2026-09-10T06:21:18+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2d2e9954f7c81e4568f80efa90389fd46f07fe394d28d6ef69e0d7c158d7fd76
 ---
 
 ## Ability Kit
@@ -130,7 +130,7 @@ content_hash: sha256:9977085fe7733ae0b5e52907855d0bcc082b69893eaec28c6222c8158b9
 
 ## Crypto Architecture Kit
 
-[非对称密钥生成和转换](../harmonyos-guides/crypto-asym-key-generation-conversion-spec.md#使用字符串参数生成-1)、[密钥协商](../harmonyos-guides/crypto-key-agreement-overview.md#ecdh)、[签名验签](../harmonyos-guides/crypto-sign-sig-verify-overview.md#ecdsa)所使用的ECC算法支持secp256k1曲线。
+[非对称密钥生成和转换](../harmonyos-guides/crypto-key-generation-conversion.md#ecc)、[密钥协商](../harmonyos-guides/crypto-key-agreement-overview.md#ecdh)、[签名验签](../harmonyos-guides/crypto-sign-sig-verify-overview.md#ecdsa)所使用的ECC算法支持secp256k1曲线。
 
 ## Data Protection Kit
 

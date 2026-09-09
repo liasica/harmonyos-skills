@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 查询用户优惠券列表
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 商家券 > 用户券 > 查询用户优惠券列表
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0f5dd079548f58f8e6cb105d539b25690a2f6b8ca60381f6852e84eb63df8e4d
 ---
 

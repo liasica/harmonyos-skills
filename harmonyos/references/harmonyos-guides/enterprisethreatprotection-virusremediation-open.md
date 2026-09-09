@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisethr
 title: 打开文件
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Threat Protection Kit（企业威胁防护服务） > 病毒检测与处置 > 打开文件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:03+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:22:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:db26ccf12ce8e10c7678ef60608961231b40968995ee1d7eec5a91bedbd07baf
 ---
 

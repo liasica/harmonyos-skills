@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-delete-k
 title: 密钥删除(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥删除 > 密钥删除(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0511e0b3a48467c8bb7e83ae76e84b3ddb696da79014a09e5b1f18a42681937a
 ---
 

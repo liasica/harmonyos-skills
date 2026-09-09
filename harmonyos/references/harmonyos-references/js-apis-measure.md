@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-m
 title: "@ohos.measure (文本计算)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.measure (文本计算)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:51+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:25:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c3272dc723e4ab130a456f2cb80edaec0dda96334204a8d14a6e12f107229cdd
 ---
 

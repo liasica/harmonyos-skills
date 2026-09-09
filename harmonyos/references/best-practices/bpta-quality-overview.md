@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-quality-ov
 title: 应用质量概览
 breadcrumb: 最佳实践 > 应用质量概览 > 应用质量概览
 category: best-practices
-scraped_at: 2026-09-02T14:53:44+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:d7c4c54e5a51e797b69417a365c65ab6aa615809a30967db05486e405cdddb0b
+scraped_at: 2026-09-10T06:30:11+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:b16175f3082e4737ff0eee8754c7f7c246cf4300660b5a2230b7c33b55d8898b
 ---
 
 DFX（Design For eXcellence）是指产品的非功能性设计的总称，其中X代表产品的某个特性或产品生命周期的某个阶段。HarmonyOS DFX子系统提供了一系列DFX功能，帮助开发者创建高质量的应用和游戏。这些功能包括：
@@ -49,7 +49,7 @@ DFX（Design For eXcellence）是指产品的非功能性设计的总称，其�
 
 | **场景** | **二级场景** | **开发态检测** | **运行态检测** | **分析**方法 | 案例 |
 | --- | --- | --- | --- | --- | --- |
-| 稳定性 | 地址越界 | * [地址越界检测工具原理](bpta-stability-address-sanitizer-principle.md) * [使用ASan检测内存错误](bpta-stability-asan-detection.md) * [使用HWASan检测内存错误](bpta-stability-hwasan-detection.md) * [使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md) | * [地址越界类问题检测方法](bpta-stability-runtime-address-sanitizer-detection.md) | * [地址越界类问题分析方法](bpta-stability-address-illegal-way.md) * [地址越界问题类型](bpta-stability-address-sanitizer-catagory.md) | * [地址越界类问题案例](bpta-scenario-stability-address-sanitizer.md) |
+| 稳定性 | 地址越界 | * [地址越界检测工具原理](bpta-stability-address-sanitizer-principle.md) * [使用ASan检测内存错误](bpta-stability-asan-detection.md) * [使用HWASan检测内存错误](bpta-stability-hwasan-detection.md) * [使用GWP-ASan检测内存错误](bpta-stability-gwpasan-detection.md) | * [地址越界类问题检测方法](bpta-stability-runtime-address-sanitizer-detection.md) | * [地址越界类问题分析方法](bpta-stability-address-illegal-way.md) * [地址越界问题类型](bpta-stability-address-sanitizer-category.md) | * [地址越界类问题案例](bpta-scenario-stability-address-sanitizer.md) |
 | 资源泄漏 | * [开发态资源泄漏类问题检测](bpta-stability-leak-detection.md) | * [运行态资源泄漏类问题检测方法](bpta-stability-runtime-leak-detection.md) | * [内存泄漏分析方法](bpta-stability-leak-way.md#section728319329442) * [句柄泄漏分析方法](bpta-stability-leak-way.md#section9594173320417) * [线程泄漏分析方法](bpta-stability-leak-way.md#section282262074411) | * [native内存泄漏类问题案例](bpta-scenario-stability-leak.md#section10929163884819) * [PixelMap泄漏导致ashmem内存泄漏案例](bpta-scenario-stability-leak.md#section189600384502) * [句柄泄漏类问题案例](bpta-scenario-stability-leak.md#section5313162915382) * [线程泄漏类问题案例](bpta-scenario-stability-leak.md#section107128486383) * [更多…](bpta-scenario-stability-leak.md) |
 | 应用冻屏 | - | * [THREAD\_BLOCK\_6S 应用主线程卡死超时检测](../harmonyos-guides/appfreeze-guidelines.md#thread_block_6s-应用主线程卡死超时) * [APP\_INPUT\_BLOCK 用户输入响应超时检测](../harmonyos-guides/appfreeze-guidelines.md#app_input_block-用户输入响应超时) | * [应用冻屏类问题分析](bpta-analysis-of-app-freeze-in-develop.md) | * [应用冻屏类问题案例](bpta-scenario-stability-app-freeze.md) |
 | 应用异常退出 | * [使用TSan检测线程问题](bpta-stability-tsan-detection.md) * [使用UBSan检测未定义行为](bpta-stability-ubsan-detection.md) | * [JS Crash（进程崩溃）检测](../harmonyos-guides/jscrash-guidelines.md) * [Cpp Crash（进程崩溃）检测](../harmonyos-guides/cppcrash-guidelines.md) * [应用被查杀问题检测](bpta-stability-runtime-appkilled-detection.md) | * [JS Crash类问题分析方法](bpta-stability-app-crash-js-way.md) * [CppCrash类问题分析方法](bpta-stability-app-crash-cpp-way.md) * [应用被查杀类问题分析方法](bpta-stability-app-killed-way.md) | * [应用异常退出类问题案例](bpta-scenario-stability-exception-exit.md) |

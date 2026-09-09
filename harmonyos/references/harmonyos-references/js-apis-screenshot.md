@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.screenshot (屏幕截图)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 屏幕管理 > @ohos.screenshot (屏幕截图)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4b16dfbfd0052384c586da4d51c363be2a1ba0560d3efeebedc701e59a44a795
 ---
 

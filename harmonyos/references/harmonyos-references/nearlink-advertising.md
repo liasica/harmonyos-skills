@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: advertising（星闪广播能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > advertising（星闪广播能力）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:54+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:27:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8a9b3f33bbf1910492f5a3e3f0ef24d33c464423aabc9622e791f93332455786
 ---
 

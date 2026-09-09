@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.vpn (VPN管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.vpn (VPN管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:21fae3cfbda5f943d5018a7b95a775aecae299252f7e9b53be56a71fc7eeaa02
+scraped_at: 2026-09-10T06:27:09+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:c8e79af8e1cfc2c037d9eca3dc388cabc8284bd2b86325ab85397b7ca202f4a6
 ---
 
 本模块是操作系统提供的内置VPN功能，允许用户通过系统的网络设置进行VPN连接，通常提供的功能较少，而且有比较严格的限制。
@@ -24,7 +24,7 @@ import { vpn } from '@kit.NetworkKit';
 
 type LinkAddress = connection.LinkAddress
 
-获取网络链接信息。
+表示网络链路信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
@@ -36,7 +36,7 @@ type LinkAddress = connection.LinkAddress
 
 type RouteInfo = connection.RouteInfo
 
-获取网络路由信息。
+表示网络路由信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 

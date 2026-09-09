@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:840201642538e59870c300d87e9c26015f950e59832e3ed2bfa2ed321d29157c
 ---
 

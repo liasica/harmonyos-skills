@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > Navigation常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:07+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:2668f63a4ff8caa4b7b4a18e4b82eb1cbc857ef591260efbaf78d7538e0e6db4
+scraped_at: 2026-09-10T06:22:13+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:1efa3a098b8ddf5032bb8882df77b80afcb868a0f1ee57c771dce7848756583a
 ---
 
 ## Dialog类型NavDestination蒙层动画不流畅
@@ -16,10 +16,10 @@ content_hash: sha256:2668f63a4ff8caa4b7b4a18e4b82eb1cbc857ef591260efbaf78d7538e0
 
 * 将蒙层背景色设置在页面上：pop页面的时候蒙层没有马上消失，而是等内容下滑退出后才消失。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/mnyrnjjAQuu6jvgtG6HnIg/zh-cn_image_0000002742003185.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/KPl9xJPXR6KNpITT_m0AdA/zh-cn_image_0000002717610852.gif)
 * 将蒙层背景色设置在内容区域：蒙层一起从上向下退出。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/QlVaSlcFT4eleLh3ajNlOQ/zh-cn_image_0000002712404198.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/S5b95ttRQNGf4TsNDpk2kQ/zh-cn_image_0000002747290805.gif)
 
 期望退出时蒙层渐隐，同时内容区域向下退出。
 
@@ -67,7 +67,7 @@ export struct DialogNavDestination {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/BYnhf7j5S0eFUzLTJvWWOw/zh-cn_image_0000002742123147.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/UWuHl1HlSIKIqPMjOi5TdQ/zh-cn_image_0000002747210723.gif)
 
 ## router、navigation动画冲突
 

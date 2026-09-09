@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: ArkGraphics 3D简介
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics 3D简介
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:57+08:00
+scraped_at: 2026-09-10T06:23:06+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:11f687ac4f65ff27a10cb09f3d9864d9f531faab958884e4ceab08fcec3fbf97
+content_hash: sha256:672d769cdfe4eb4e03ed2e400bc67dea4aba28dcc9978fee1997456effc1556d
 ---
 
 ArkGraphics 3D（方舟3D图形）基于轻量级的3D引擎以及渲染管线为开发者提供基础3D场景绘制能力，供开发者便捷、高效地构建3D场景并完成渲染。
@@ -26,7 +26,7 @@ ArkGraphics 3D以自定义场景模式为核心能力，支持开发者自行构
 
 ## 框架原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/-CRRfla_RGKKHbjNILhZ9A/zh-cn_image_0000002712404912.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/0ruyT_DCTmW9cNpt_y6o9A/zh-cn_image_0000002747291517.png)
 
 如上图 ArkGraphics 3D接口能力由图形后端、引擎层以及接口层三个关键部分共同组成。
 

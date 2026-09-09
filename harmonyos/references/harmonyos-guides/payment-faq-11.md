@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-faq-1
 title: 收银台报错“服务暂不可用，请稍后重试”？
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit常见问题 > 收银台报错“服务暂不可用，请稍后重试”？
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1b9a3d1d1a4300b0a2765dacd43c202181a2ac0c91412ae59257df54214c9440
 ---
 

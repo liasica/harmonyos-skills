@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: 知识加工
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > 知识加工
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:19+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7ecb8526436291968cf7bf1a841bb3bcc3ce296ecd9a43ae639494509229a140
 ---
 

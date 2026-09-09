@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataaugmentat
 title: 智慧化数据检索-C++
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > 智慧化数据检索-C++
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:25+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:22:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3620683b7646a60d5fb4d094a4be33871bfc676b6894be6406155e45a1ca924c
 ---
 

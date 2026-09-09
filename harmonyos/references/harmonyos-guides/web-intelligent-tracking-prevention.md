@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-intellige
 title: 使用智能防跟踪功能
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的网络安全与隐私 > 使用智能防跟踪功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:00a0debc0359c29b7bccb1e47562ca3de47dc222e7b7270897e6134c21d668be
 ---
 

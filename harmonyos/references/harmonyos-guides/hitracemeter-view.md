@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-
 title: 查看HiTraceMeter日志
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 性能跟踪 > 查看HiTraceMeter日志
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-07-09
+scraped_at: 2026-09-10T06:22:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:31e2b9713895d8a547c2be34204aa8a6a9a8ffe120547b0827e5b0d78ca65792
 ---
 

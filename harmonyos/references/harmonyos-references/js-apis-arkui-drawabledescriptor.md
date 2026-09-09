@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.drawableDescriptor (DrawableDescriptor)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.drawableDescriptor (DrawableDescriptor)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a31ea6de405b14b711418da79cbbe9442b1ed3b27e8a3ded38f585c950e56052
 ---
 

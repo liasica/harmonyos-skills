@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 获取云侧文件的元数据
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云存储 > 获取云侧文件的元数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2cfa2f4ac220b84e7628d8927cdb6be963e5ee94da0b9311bf997ee5ce93bc9a
 ---
 

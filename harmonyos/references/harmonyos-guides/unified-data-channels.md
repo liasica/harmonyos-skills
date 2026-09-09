@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unified-data-
 title: 通过标准化数据通路实现数据共享 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 跨应用数据共享 > 多对多跨应用数据共享 > 通过标准化数据通路实现数据共享 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9a1d1e3b0b9c3369f930de759cf7c6b0376860af52986875ccedd09b58ef7066
 ---
 

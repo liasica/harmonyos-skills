@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ProxyController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (ProxyController)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f2316e267884881e916c53a6554567fabef276553eaefa5b454b1bb3db4d54cd
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-vsync-
 title: NativeVSync开发指导 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > NativeVSync开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:20+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ba860cb267bc3a997eb08363311f2dcc9847a6b62887d5a895ea4f43db9df4c7
 ---
 

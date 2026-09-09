@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-error-f
 title: Image Kit异常处理
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit常见问题 > Image Kit异常处理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-04-24
+scraped_at: 2026-09-10T06:22:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:aa36442823d980875bc392c09d2c0d56e55270f738e71f8239c7bfaaa168cf9d
 ---
 

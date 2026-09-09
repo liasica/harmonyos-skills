@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: JsLeakWatcher错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码 > JsLeakWatcher错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4081e7aa0e41834e4ac1b0f6b1507d21035143d64eb70ac84eec35fe14b8a71a
 ---
 

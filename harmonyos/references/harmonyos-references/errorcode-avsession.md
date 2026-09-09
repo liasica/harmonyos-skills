@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 媒体会话管理错误码
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > 错误码 > 媒体会话管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:25e6cef3a16d2fee6e09c43df2e1b60199900c7c6c05004fe9630a49033722bd
 ---
 

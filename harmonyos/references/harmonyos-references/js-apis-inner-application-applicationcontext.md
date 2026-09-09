@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: ApplicationContext (应用上下文)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > ApplicationContext (应用上下文)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f6c7900d83c180acae412ced188905e4461fcd1be0300d69c109bf6a1948da5f
 ---
 

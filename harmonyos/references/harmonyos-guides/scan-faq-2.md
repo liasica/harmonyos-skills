@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-2
 title: 扫码直达跳转失败
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 扫码直达跳转失败
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1a5e60bfd91fbb400642687fe6b37314947735519a88ca14ae69eb7c30c1fbb4
 ---
 

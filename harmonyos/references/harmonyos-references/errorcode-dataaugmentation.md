@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d6d90227a24da7b5b5b42c77a0b56c064ce3dfc5dad456c909f2edbbf552d63e
 ---
 

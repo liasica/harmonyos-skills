@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-input-d
 title: 实现音频输入设备路由切换
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理 > 实现音频输入设备路由切换
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ae41cb293b1969132c26cccd746bdd967b960ab37e397afaba3a3882f6f1af1b
 ---
 

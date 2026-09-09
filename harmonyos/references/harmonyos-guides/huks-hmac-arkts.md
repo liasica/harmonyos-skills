@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-hmac-ark
 title: HMAC(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > HMAC > HMAC(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:278e5313e93e96b57fc0a6525d086702eb05d0ee10f551cb0a3674abe785e679
 ---
 

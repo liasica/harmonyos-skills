@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: loadNativeModule (同步动态加载系统库接口)
 breadcrumb: API参考 > 公共基础能力 > ArkTS API > loadNativeModule (同步动态加载系统库接口)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5a464d30dc36fe172f4c82d3cf3675815debcfaaac10f20f315627d65d2ca771
 ---
 

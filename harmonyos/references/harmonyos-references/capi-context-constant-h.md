@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cont
 title: context_constant.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > context_constant.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:306b90a33f9d6c7f3e125423b314cbd2786eac7e6ba798f36b260f2163a4e153
 ---
 

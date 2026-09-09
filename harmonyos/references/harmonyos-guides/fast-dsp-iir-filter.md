@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-dsp-iir-
 title: 使用DSP进行二阶IIR滤波
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用DSP进行二阶IIR滤波
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:33+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6b1b4c0a74edf0f1708f2a5ebe149fd2ee9cc7a19b7b2a2feed7c5e309a2ff9b
 ---
 

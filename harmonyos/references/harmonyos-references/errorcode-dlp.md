@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: DLP服务错误码
 breadcrumb: API参考 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 错误码 > DLP服务错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:80f8a85b79c2968e1c2c0b74549efc8469269777508d563c7fd2503fc8ce0eda
 ---
 

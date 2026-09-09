@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hicollie-guid
 title: 使用HiCollie检测业务线程卡死卡顿问题（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 业务线程超时检测 > 使用HiCollie检测业务线程卡死卡顿问题（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:43302f8af4242acdd4ee9e2d57c76c40cbf13b06ac43952e3de0500fcc9b3e94
 ---
 

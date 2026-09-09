@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 通行密钥
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > ArkTS API错误码 > 通行密钥
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:291b2d410fb3d20315d771ad5363cafbf0ada6ddf988d9663bfa704873e5f7f6
 ---
 

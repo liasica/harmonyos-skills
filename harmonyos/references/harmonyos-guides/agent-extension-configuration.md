@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-extensi
 title: AgentExtensionAbility配置文件说明
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 端侧A2A框架开发指导 > 开发端侧智能体 > AgentExtensionAbility配置文件说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:26473a018c33e762cd374c5c645ac1b02350c2f53fb38cf57e9c11348265be53
 ---
 

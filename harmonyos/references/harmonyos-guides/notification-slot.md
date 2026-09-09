@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 管理通知渠道
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 管理通知渠道
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:14+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:23:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0a2d5967900a8d1b82bae2d01db7ebcca954ec1b2af0933751b618b74e58b6c6
 ---
 

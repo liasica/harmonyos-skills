@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Functions
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:956fafdf44eca0ebaf44df64f7bfc35d4c363765a51013630cc55723805030f1
 ---
 

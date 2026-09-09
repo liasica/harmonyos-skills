@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-hdr-dec
 title: 使用Image_NativeModule完成HDR图片解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码 > 使用Image_NativeModule完成HDR图片解码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a83accc1f729ec5ff48b6269dfa1ebc3c5f58ce7ea566295b601f51dcec124ab
 ---
 

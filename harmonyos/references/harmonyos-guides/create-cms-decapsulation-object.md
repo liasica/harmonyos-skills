@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-cms-de
 title: 证书CMS解封装
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书CMS解封装
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d5041e15a99db26534d9f1504841a0cc8ddd614bf1dad4b503a0d6ff2d891263
 ---
 

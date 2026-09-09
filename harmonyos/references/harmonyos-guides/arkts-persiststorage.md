@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-persist
 title: PersistentStorage：持久化存储UI状态
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理应用拥有的状态 > PersistentStorage：持久化存储UI状态
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:13:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d0b87bed991b71c4e1913572dbdc170e79c2fcbe8a0e31b3bf75c9afd8f4b7b0
+scraped_at: 2026-09-10T06:22:01+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:5a188c44c5327530bf5a19df96dacc42ea53ca7a92ad2ae6a2a15a7936a0ec1e
 ---
 
 PersistentStorage是应用程序中的可选单例对象。此对象的作用是持久化存储选定的AppStorage属性，以确保这些属性在应用程序重新启动时的值与应用程序关闭时的值相同。
@@ -113,7 +113,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/BcOJ9q1TRr2IyvMGP7pTFA/zh-cn_image_0000002742002429.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/wBFNqlDBRzeQEQtvo5h1NQ/zh-cn_image_0000002717770032.png)
 
 * 新应用安装后首次启动运行：
 
@@ -125,7 +125,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 
   **图1** persistProp初始化流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/QBO99cxbT3SCukfnhiXeeg/zh-cn_image_0000002712403438.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/bxp-_WNwQGOgcB5wB8ry7w/zh-cn_image_0000002717610098.png)
 * 触发点击事件后：
 
   1. 状态变量@StorageLink('aProp') aProp改变，触发Text组件重新刷新。
@@ -221,7 +221,7 @@ struct TestCase6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/QGg5hl58TGC_pV1phH02fw/zh-cn_image_0000002742122387.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/oSVVqFFITKmGKPs2cITpxg/zh-cn_image_0000002747290049.gif)
 
 ### 持久化Date类型变量
 
@@ -288,7 +288,7 @@ struct PersistedDate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/N8-Kd-9-QWW_uQKyRgqwsA/zh-cn_image_0000002712243476.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/dNdI-bT7QJWxD7MqPHLhMg/zh-cn_image_0000002747209967.gif)
 
 ### 持久化Map类型变量
 
@@ -344,7 +344,7 @@ struct PersistedMap {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Pg8J3VfvS3aAgJjMW_wWqg/zh-cn_image_0000002742002431.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/RoFfmomKRt2A_teF5sVfyQ/zh-cn_image_0000002717770034.gif)
 
 ### 持久化Set类型变量
 
@@ -421,4 +421,4 @@ struct PersistedSet {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/5xLPhDgBQbK5fG524e-fzw/zh-cn_image_0000002712403442.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/n9YqH9L3TEqsKJDmZ_z94w/zh-cn_image_0000002717610100.gif)

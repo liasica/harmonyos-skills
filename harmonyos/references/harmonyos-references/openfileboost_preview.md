@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileb
 title: Preview
 breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > C API > 模块 > Preview
 category: harmonyos-references
-scraped_at: 2026-09-05T06:21:25+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:29:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7e2316ba83e01db76f53957501e6c65d9d8d9cdb9bf19b65f5176b8e9a0f0439
 ---
 

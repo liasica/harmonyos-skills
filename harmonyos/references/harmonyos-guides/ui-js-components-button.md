@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: button开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > button开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:06+08:00
+scraped_at: 2026-09-10T06:22:12+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:ee6b43e65b9a177a2fcf59b0ea1b41bcb62878b6d7a5f385973170a2c09aa5af
+content_hash: sha256:20bab162c6a3c0b0c90200f3de99c842f8d429dab6db050def809cbb20ba782a
 ---
 
 button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按钮、弧形按钮、下载按钮。具体用法请参考[button API](../harmonyos-references/js-components-basic-button.md)。
@@ -33,7 +33,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/4rBMfYcLSXeq0vWigcHS3w/zh-cn_image_0000002712244174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/KO4RZ0DWQjmTs0PoDULLTw/zh-cn_image_0000002717770728.png)
 
 ## 设置button类型
 
@@ -73,7 +73,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/RAaX6obGS3aDrKcvJOOmKg/zh-cn_image_0000002742122805.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/MNBYy6GRR9iLeVTFh09apw/zh-cn_image_0000002747290465.png)
 
 **说明** 
 
@@ -166,7 +166,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Lli6g1y6S8CMJ_i7FOeWAQ/zh-cn_image_0000002742003127.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/e_iuK0EIQ8mUqnXOY6r5tw/zh-cn_image_0000002717610794.gif)
 
 **说明** 
 
@@ -273,4 +273,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/7pN8CrmQRv6849JFDT-_Ww/zh-cn_image_0000002712404140.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/hxuaVNYQSw2B1Wb4Mqo5Ow/zh-cn_image_0000002747290747.gif)

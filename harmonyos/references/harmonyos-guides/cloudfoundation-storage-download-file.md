@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 下载云侧文件至本地
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云存储 > 下载云侧文件至本地
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:54+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:92ea5bf99d4c66464ad237d88319268c55f2453385c3b59b67da77566d15c50b
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-moving
 title: 动态照片拍摄(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 动态照片拍摄(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:45+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7753fe61070f32fca3d46d2c55fd99aa5d456309a2384f9462308e2ff23b35eb
 ---
 

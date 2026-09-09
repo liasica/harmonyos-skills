@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2d88dfe63c352d4e8bebcbd212fbff808ac7e90e540e2be2a760670d83e93867
 ---
 

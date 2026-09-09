@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-09-02T14:53:44+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:e99a0c5480b1b347241b1b2f00d8d84160fee9f5d1758fb4b99c775503ecae4b
+scraped_at: 2026-09-10T06:30:13+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:4c4ae31fdb2ccb5fb04cb39aef320170930cc3ec2a8fd0c64b10e90b13465d70
 ---
 
 ## 概述
@@ -82,7 +82,7 @@ build() {
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/rmCk1ZQ1SKqeJCOqtXZlyA/zh-cn_image_0000002194010900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/O1TTdWdCR5KyZ6PsOrIdYA/zh-cn_image_0000002194010900.png)
 
 示例如下：
 
@@ -132,7 +132,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/mOKCl8X4QEW1QttD-uiGRA/zh-cn_image_0000002194010908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/7-b42YFDRm-iwD9A2JRHOw/zh-cn_image_0000002194010908.png "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -159,7 +159,7 @@ getTitleHeight(title: string): number {
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/TOlIs6ezQImXZEtEu_iRAg/zh-cn_image_0000002194010904.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/2gpZStnmSzOx9CT-d-PIog/zh-cn_image_0000002194010904.png "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 

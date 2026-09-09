@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.reminderAgent (后台代理提醒)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > 已停止维护的接口 > @ohos.reminderAgent (后台代理提醒)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ab732c7fba034c462041d7bd544f96dc9f1c712d76433d88b6aa31a93cba734c
 ---
 

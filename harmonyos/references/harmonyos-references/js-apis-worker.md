@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.worker (启动一个Worker)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.worker (启动一个Worker)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:50+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:25:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:582275e4b08b9b615aee527d37fec38e0999a24d8ad54117ab430e9ee415f04e
 ---
 

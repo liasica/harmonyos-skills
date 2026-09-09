@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthStore (运动健康数据服务)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > healthStore (运动健康数据服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:55+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:29:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2af5acf9917d915ae3da0e0dc62f88f7fb336c645a987633c1ee3b563ee25f1d
 ---
 

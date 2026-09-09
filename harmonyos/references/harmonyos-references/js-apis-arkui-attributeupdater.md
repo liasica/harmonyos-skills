@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: AttributeUpdater
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > AttributeUpdater
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:54+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0a60a27377e388b6da0fcd6f0a354a1e085fdd147e44412d15be5333e6239811
+scraped_at: 2026-09-10T06:25:07+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2eb5f062ef907f644d56bc8eb661e7a4b8e3cf848a2bfe76b34498a9312ae265
 ---
 
 将属性直接设置给组件，无需标记为状态变量即可直接触发UI更新。适用于需要在不定义状态变量的情况下动态更新组件属性的场景，如动态修改组件构造参数、避免为一次性属性更新定义状态变量等。
@@ -148,7 +148,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/v5cLrh6GRkywP4Z0PObRoQ/zh-cn_image_0000002742124743.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4wD-NnGcTYS4OqbLAA1r2A/zh-cn_image_0000002747212315.gif)
 
 ### attribute
 
@@ -203,7 +203,7 @@ struct UpdaterDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/BVAqMgs-R-e5SSQnz6Fzzg/zh-cn_image_0000002712245836.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Hf2WkJRAR7STJF7o18A5ig/zh-cn_image_0000002717772380.gif)
 
 ### 属性
 
@@ -252,7 +252,7 @@ struct AttributeDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/3eIrf9XUSMieEXDhEDVX4A/zh-cn_image_0000002742004785.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Yw9cu51_Qj6qpNTCaOQz4w/zh-cn_image_0000002717612448.gif)
 
 ### onComponentChanged
 
@@ -319,4 +319,4 @@ struct UpdaterDemo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/USno8z9gQquxgIhZpeIF_w/zh-cn_image_0000002712405796.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/JZmZxLiEQsSFrXXpy5SDHw/zh-cn_image_0000002747292401.gif)

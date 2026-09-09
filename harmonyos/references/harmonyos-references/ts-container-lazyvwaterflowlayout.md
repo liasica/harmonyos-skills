@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVWaterFlowLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVWaterFlowLayout
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:10+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cc25ed7caf835666d19a9035073bd1a616301ca9680efb5cb9334b95c5e008ab
+scraped_at: 2026-09-10T06:25:23+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:3073c437c9f90287a29a7d2572652d78426886b6aed8525f0046d279c073c180
 ---
 
 LazyVWaterFlowLayout用于实现支持懒加载的瀑布流布局，适用于展示大量高度不一的列表项场景，如图片墙、商品列表等。通过懒加载机制，该组件仅加载可视区域及附近内容，减少内存占用和渲染开销，提升滚动流畅度。该组件应位于竖直方向的[List](ts-container-list.md)、[Scroll](ts-container-scroll.md)或[WaterFlow](ts-container-waterflow.md)组件下，并支持通过[FlowItem](ts-container-flowitem.md)、[LazyColumnLayout](ts-container-lazycolumnlayout.md)、自定义组件或[NodeContainer](ts-basic-components-nodecontainer.md)组件封装后使用。
@@ -442,7 +442,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/mNWUzneZTVeQJ_wXzsVAeg/zh-cn_image_0000002712406010.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/ZajuFRpeTwOGivfiPQiqRA/zh-cn_image_0000002747292615.png)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -551,7 +551,7 @@ struct LazyVWaterFlowLayoutStickyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/VReL3LWSTYGyJLHseVLgAw/zh-cn_image_0000002742124959.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/zHVU90GrTt-y4pMAV-whrA/zh-cn_image_0000002747212531.gif)
 
 ### 示例3（设置自适应列数）
 
@@ -681,4 +681,4 @@ struct LazyVWaterFlowLayoutColumnsTemplateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/jJmPKY68RceWz5DNaTjOjA/zh-cn_image_0000002712246052.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/9jvG02TnRSa0mlTo5iWfig/zh-cn_image_0000002717772596.gif)

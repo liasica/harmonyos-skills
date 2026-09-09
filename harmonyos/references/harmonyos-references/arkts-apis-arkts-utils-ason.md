@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: namespace (ASON)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.utils (ArkTS工具库) > namespace (ASON)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:44+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:24:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:028ccde37a4529642e93aa7548421c291891e961132970781f3b49cca3f8f8bd
 ---
 

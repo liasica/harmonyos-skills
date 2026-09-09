@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-use-pa
 title: 使用剪贴板进行复制粘贴（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 使用剪贴板进行复制粘贴（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f101cd1285b1be8b1d2f39af4766789b01570d9831aea2d5644073a35bc5301e
 ---
 

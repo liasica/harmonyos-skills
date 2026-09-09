@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-perform
 title: 提升音频性能体验
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频性能调优 > 提升音频性能体验
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d9da43ff2df3a86d1fd7bdaf33b59ebd9bc160e4f2f3eb2605a6e062a9723531
+scraped_at: 2026-09-10T06:22:53+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9ddae33ad6b44e87150208cd3a6de8f980c16a49e1c1f9fe8cd695d3f8c4d442
 ---
 
 在各种终端设备的使用过程中，对于音频相关功能的体验，用户在不同场景下，有多方面的核心性能诉求，包含流畅度、响应速度、省电等，典型的场景如下：
@@ -77,35 +77,35 @@ HiSmartPerf工具完整的介绍可参考指南：[HiSmartPerf](../AppGallery-co
 
 1. 进入CPU Trace。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/-DOrer9iSM-IwvZDZjrByQ/zh-cn_image_0000002742123627.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/_u1w0guEQa2WskK1e67nRw/zh-cn_image_0000002747211203.png)
 
    打开HiSmartPerf工具，进入游戏性能分析的CPU Trace页面。虽然标题是游戏性能分析，但分析场景并不仅限于游戏场景。
 2. 抓取配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/-0180nlPT8-BYyPheNTxDQ/zh-cn_image_0000002712244714.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/RyrvqsSfRgK7wdOmt5JMMQ/zh-cn_image_0000002717771268.png)
 
    配置项主要有数据文件名、缓存容量、最大文件大小、数据项和采集时间。要抓取系统音频相关的数据项，需要勾选zaudio。采集时间可以按测试场景进行调节，需要注意，测试时长和勾选的数据项数量会影响文件大小，往往需要同步调节。
 3. 开始采集。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/k42QDNrZTk2bF5uYBBp4Aw/zh-cn_image_0000002742003667.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/3EAZzPFkTH6G-g2Jo7SLmQ/zh-cn_image_0000002717611334.png)
 
    采集完成后将提示文件回传，当文件较大时请耐心等待。
 4. 查看Trace。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/OIpheywRSl6ODMY3kTNzZQ/zh-cn_image_0000002712404680.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/CwcL7UpoRLSF8TMIpbYkVg/zh-cn_image_0000002747291287.png)
 
    采集时间内的cpu性能分析结果。
 5. 找到音频数据处理线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/xVCd42PYTrOELxxsRD27jw/zh-cn_image_0000002742123629.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/wG9AGXjmQRmTIWax9POn-g/zh-cn_image_0000002747211205.png)
 
    对于音频播放业务，可以通过OnWriteData搜索目标测试应用为系统输入播放数据的位置，进一步分析数据的生产来源的性能情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/CkqntJ-VQE-7e0RGc4oFSw/zh-cn_image_0000002712244716.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/zvovHMSHSQe7p87PWvMbiA/zh-cn_image_0000002717771270.png)
 
    Runnable表示线程在等待调度，当存在由于过长的Runnable导致数据未能被及时写入的情况，包括应用自身的数据生产线程，则需要考虑接入音频工作组，以提升线程的优先级并保障CPU资源分配。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/k24yLsiFTnOpCsj_0EUYsw/zh-cn_image_0000002742003669.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/eaqxiGiPQMuHVXsIQZutQA/zh-cn_image_0000002717611336.png)
 
    在CPU Usage中可以查看每个任务的CPU占用情况。
 

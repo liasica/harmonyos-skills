@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/simple-text-c
 title: 简单文本绘制与显示（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 简单文本绘制与显示（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8de2604a7702b1ca6cab9ed6d072efa44ac751a00bb6c43806cbc32661dc5d7a
+scraped_at: 2026-09-10T06:23:05+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:62ca378cdd99fa497165480ce7588ca6e4b85541d9a2fc36733ef14a00645614
 ---
 
 ## 场景介绍
@@ -80,4 +80,4 @@ content_hash: sha256:8de2604a7702b1ca6cab9ed6d072efa44ac751a00bb6c43806cbc32661d
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/SP_cqlh0RFSZlIP6H2EFxw/zh-cn_image_0000002742003883.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Hqh2fXBkQAqeLtOCcdCdgA/zh-cn_image_0000002717611548.png)

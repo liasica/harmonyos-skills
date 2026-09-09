@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-bac
 title: 后台播放
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 后台播放
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:84fb37183eedd2ac283b618e442621407f319a56f3c05c2d0017c27de25d4b9f
 ---
 

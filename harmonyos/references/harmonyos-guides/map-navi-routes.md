@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-navi-rout
 title: 出行路线规划
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 路径规划 > 出行路线规划
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:58+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:45c4f8fcfe30c5bece56cc0e05389bb229968a48b7f3bff4c5fcee4d700f8679
 ---
 

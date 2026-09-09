@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-package
 title: HAP
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包开发与使用 > HAP
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:41+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:21:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:bf2ac4e738e858a8cdf789bc4c6a3e336561c36f6862172929aa26dcc5038920
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ipc-rpc-devel
 title: IPC与RPC通信开发指导(ArkTS)
 breadcrumb: 指南 > 应用框架 > IPC Kit（进程间通信服务） > IPC与RPC通信开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:14+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:22:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4723743f69ebdc5552798276ddffb2ad32f8179e503d8193b89973c9cef8601c
 ---
 

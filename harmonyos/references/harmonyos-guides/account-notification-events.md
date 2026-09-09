@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-notif
 title: Account Kit通知事件
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit通知事件
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:02+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:8435cbdd558dff11147d48d1f9c144c1cb3b634c1bd317778e00edd85d3e857a
+scraped_at: 2026-09-10T06:23:10+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:051e0e834573d4fd1b34dcb3321b814d3145f266ba98aa10a8a79900e2972b21
 ---
 
 ## 概述
@@ -176,17 +176,17 @@ content_hash: sha256:8435cbdd558dff11147d48d1f9c144c1cb3b634c1bd317778e00edd85d3
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/fixnR4ueRZ2uhO8SBYOKvw/zh-cn_image_0000002712245020.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/QHtNhL8UT2moOWsoeBJwgA/zh-cn_image_0000002717771564.png)
 2. 在项目列表选择项目。
 3. 进入“项目设置 > 开放能力管理”页面，点击“RISC”对应的“管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/4oibz1XETYqoLULh43IzuA/zh-cn_image_0000002742003969.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/b-TU8HsLSpWcpOcfCN1g1Q/zh-cn_image_0000002717611632.png)
 4. 点击“启用”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Bcs6bYGDQgK9LWGH5cgplA/zh-cn_image_0000002712404980.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/f36hjUsvS3-p0GKUnnMocw/zh-cn_image_0000002747291583.png)
 5. 点击“订阅通知”按钮，在弹窗中配置“回调地址”及“订阅范围”，然后点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/A84wKfRrROOsWvTv2eXsoQ/zh-cn_image_0000002742123929.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/2M4hr3EsSNmcVN8UTGeBSw/zh-cn_image_0000002747211501.png)
 
    **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts
 title: pdfService（PDF服务）
 breadcrumb: API参考 > 应用服务 > PDF Kit（PDF服务） > ArkTS API > pdfService（PDF服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:06+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:9650dfaaa685cc0b651b7b4bb78aef9e6fc595235313858bd377a79213cdec30
+scraped_at: 2026-09-10T06:29:41+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:ee045262e7981c8ba0213b1191ebcf354acd54cbfedbf5735e882d646cdadde5
 ---
 
 本模块为应用提供统一的管理PDF页面的页眉页脚、水印和背景、文档的多种批注风格和书签等便捷的PDF能力。
@@ -3555,7 +3555,7 @@ let watermarkInfo = new pdfService.WatermarkInfo();
 
 ## TextWatermarkInfo
 
-文本水印类的相关属性，继承[WatermarkInfo](pdf-arkts-pdfservice.md#watermarkinfo)。
+文本水印类的相关属性，继承[WatermarkInfo](pdf-arkts-pdfservice.md#watermarkinfo)。当前在PC/2in1设备上暂不支持中文文本水印。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

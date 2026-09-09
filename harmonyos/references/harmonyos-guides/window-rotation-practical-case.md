@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-rotati
 title: 窗口旋转实践案例
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口旋转与实践案例 > 窗口旋转实践案例
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5c4efa1dbda32874a8a2582fa5935ef630221d072db9ecb016d08fd688366abc
 ---
 

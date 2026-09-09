@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-faq-1
 title: 同一次支付请求接收到多次回调通知，怎么解决？
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit常见问题 > 同一次支付请求接收到多次回调通知，怎么解决？
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-05-19
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ae9e3c4217115ad10f05b2377cd2b15eda1c02e4c207173af038cb67443a0550
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-buffer
 title: NativeBuffer开发指导 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形缓冲区 > NativeBuffer开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:21+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:74aa1abceb4d69fa9b082b39ef78b43a1120fc133ee0df5808ed04f091ca6e5a
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 动态修改ContentType值
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 动态修改ContentType值
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:19+08:00
+scraped_at: 2026-09-10T06:23:29+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:229a1479d55bf9542984ed1e6e0182d4963b8073a88cfa53ac2c6b6a398f9d93
+content_hash: sha256:ef17bb368ac76dac695968a4bc37b4415d06c4367cd81b0e58e524d3a3d5cdc7
 ---
 
 在填写实名信息表单的场景，表单中存在身份证和其他证件输入，其中，多种证件号共用一个输入框，ContentType.ID\_CARD\_NUMBER目前只支持身份证号的推荐、填充，不支持其他类型的证件，需要开发者根据输入场景动态配置输入框的ContentType，只在身份证输入场景下使用ContentType.ID\_CARD\_NUMBER。
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/LtPZ45vxQZirhKE1jq1fCA/zh-cn_image_0000002712405386.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/2V-kj1vwRumJEj0g15fb1g/zh-cn_image_0000002747291991.png)
 
 ## 示例代码
 

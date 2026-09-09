@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.application.BackupExtensionAbility (备份恢复扩展能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.application.BackupExtensionAbility (备份恢复扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:31+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f3f88fa14344c40b8556a4f536f0085addb22e0fd6df87dd81645b76aa9883d6
 ---
 

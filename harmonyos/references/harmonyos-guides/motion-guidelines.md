@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/motion-guidel
 title: 获取用户动作开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 获取用户动作开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c31cec8b70bcb1c7016875f59fffdc455bd18466d5bab5267c7f4619dc412d4c
 ---
 

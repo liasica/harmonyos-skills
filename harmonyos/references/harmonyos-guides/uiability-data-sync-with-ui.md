@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-dat
 title: UIAbility组件与UI的数据同步
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility组件与UI的数据同步
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f729964db58d2ee0ebdefada94cfa578859a5ac660f7a61989fbffc7c92043eb
 ---
 

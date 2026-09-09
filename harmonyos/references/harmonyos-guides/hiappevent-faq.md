@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-fa
 title: HiAppEvent常见问题
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > HiAppEvent常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a79077587f1c4f99e896e8b53826aaa5c7f52bd92a7bdfbcb06c6e26abf1adf5
 ---
 

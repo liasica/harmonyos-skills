@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-que
 title: 获取文件属性标签
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控 > 获取文件属性标签
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:84680ab492d35085cde4d736706ef8756b56bb40450c8b6d1bd42d1fac88d105
 ---
 

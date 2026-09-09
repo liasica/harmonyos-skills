@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 应用内状态变量迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 应用内状态变量迁移
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:19eb558ff04b02a12d28244eaa4f578f62546a8f519eea641957d943c776ae50
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取用户实名年龄段
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 实名认证 > 获取用户实名年龄段
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ec5efb478e36f14b5046378157cdf464a231f109befbf2f17e4f5929c6287584
 ---
 

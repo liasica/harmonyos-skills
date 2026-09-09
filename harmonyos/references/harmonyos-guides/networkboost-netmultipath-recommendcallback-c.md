@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 多网建议监听(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移(多网并发)（C/C++） > 多网建议监听(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:597e09c38c6a569927de55e66c24a3addeaef22d1202942721da93723fa4d65b
 ---
 

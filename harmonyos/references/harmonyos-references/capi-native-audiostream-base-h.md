@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audiostream_base.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audiostream_base.h
 category: harmonyos-references
-scraped_at: 2026-09-05T06:19:50+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:28:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e791536c1509bd05199601179f630eabe47d87e768cd2fa3d978cc35cfe8669a
 ---
 

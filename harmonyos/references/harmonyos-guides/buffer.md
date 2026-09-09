@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/buffer
 title: Buffer与FastBuffer
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > Buffer与FastBuffer
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:27+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:21:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f913681812ac0254e6664699c7f3b6095a2766a70daa130e9d6f484d8225b1e1
 ---
 

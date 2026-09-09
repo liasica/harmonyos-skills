@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.hiTraceMeter (性能打点)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hiTraceMeter (性能打点)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:562f080bd45e6a06f16099e71c0eb6811498cfd1ae749b8b8fb9258c652bd7b3
 ---
 

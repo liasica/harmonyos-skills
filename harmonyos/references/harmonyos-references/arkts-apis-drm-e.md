@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > ArkTS API > @ohos.multimedia.drm (数字版权保护) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0da9cd65bbd62c8b6ab38c05d6356645db0f1f37bfa1f104d8052d904ed18b74
+scraped_at: 2026-09-10T06:28:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:04e973d884c61c0c38f9f7c50003e8dcfe316ac635058d9d53cfb67f57b225b2
 ---
 
 **说明** 
@@ -16,7 +16,7 @@ content_hash: sha256:0da9cd65bbd62c8b6ab38c05d6356645db0f1f37bfa1f104d8052d904ed
 
 枚举，错误码。
 
-**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -31,7 +31,7 @@ content_hash: sha256:0da9cd65bbd62c8b6ab38c05d6356645db0f1f37bfa1f104d8052d904ed
 
 枚举，预定义的配置属性。
 
-**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -49,7 +49,7 @@ content_hash: sha256:0da9cd65bbd62c8b6ab38c05d6356645db0f1f37bfa1f104d8052d904ed
 
 枚举，媒体密钥类型。
 
-**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -62,7 +62,7 @@ content_hash: sha256:0da9cd65bbd62c8b6ab38c05d6356645db0f1f37bfa1f104d8052d904ed
 
 枚举，离线媒体密钥状态。
 
-**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -76,7 +76,7 @@ content_hash: sha256:0da9cd65bbd62c8b6ab38c05d6356645db0f1f37bfa1f104d8052d904ed
 
 枚举，设备证书状态。
 
-**元服务API：** 从API版本14开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -92,7 +92,7 @@ content_hash: sha256:0da9cd65bbd62c8b6ab38c05d6356645db0f1f37bfa1f104d8052d904ed
 
 枚举，媒体密钥请求类型。
 
-**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 
@@ -109,7 +109,7 @@ content_hash: sha256:0da9cd65bbd62c8b6ab38c05d6356645db0f1f37bfa1f104d8052d904ed
 
 枚举，内容保护级别。
 
-**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Drm.Core
 

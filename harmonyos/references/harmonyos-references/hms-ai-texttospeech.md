@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-te
 title: textToSpeech（文本转语音）
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API > textToSpeech（文本转语音）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f8ec2bd51b5774584eee59648c9cedb2c0bcd2f44cf03ad15887ecd7c2e9a5a1
 ---
 

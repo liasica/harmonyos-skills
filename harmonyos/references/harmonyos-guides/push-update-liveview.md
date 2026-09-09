@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-update-l
 title: 推送实况窗消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送实况窗消息
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4b3a96ba1a850b261a6ff80a9ce82735c8491de6a3b430306a8dfb1b9cd4f437
+scraped_at: 2026-09-10T06:23:27+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:eb1e993f6c23b1067b5704dc15daa01ea93c1aec94f879b711e9771911360e13
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:4b3a96ba1a850b261a6ff80a9ce82735c8491de6a3b430306a8dfb1b9cd
 
 **通过Live View Kit创建实况窗，Push Kit更新与结束实况窗**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/u2wnYjiQTRWLuLU9-qkKdg/zh-cn_image_0000002712405352.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/wG3EDYYXT9K9RJm4SFyXFQ/zh-cn_image_0000002747291957.png)
 
 1. 使用Push Kit，获取Push Token。
 2. 使用Live View Kit创建实况窗成功后，开发者需要将实况窗id、pushToken、实况窗场景event以及业务服务的相关的状态属性保存到业务服务端。
@@ -32,7 +32,7 @@ content_hash: sha256:4b3a96ba1a850b261a6ff80a9ce82735c8491de6a3b430306a8dfb1b9cd
 
 **通过Push Kit创建、更新、结束实况窗**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/UwlMAPnkR1OLQqDJ_4220Q/zh-cn_image_0000002742124301.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/E_jp1xrmR6KsVRyTjOZhXQ/zh-cn_image_0000002747211873.png)
 
 1. 使用Push Kit，获取Push Token。
 2. 将Push Token保存到业务的服务端。
@@ -40,7 +40,7 @@ content_hash: sha256:4b3a96ba1a850b261a6ff80a9ce82735c8491de6a3b430306a8dfb1b9cd
 
 **实况窗更新效果示例图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/_70VIXcFSvCAVBxvbEQwLw/zh-cn_image_0000002712245394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/bzguq9VhTCmJl70k1HBMqg/zh-cn_image_0000002717771938.png)
 
 **说明** 
 

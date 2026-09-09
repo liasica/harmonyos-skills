@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: Or
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 双目指令 > Or
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:22+08:00
+scraped_at: 2026-09-10T06:23:37+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:17e070ab96a971d49a889ee6022ddce173dc5d321937cf587e72052491559b9f
+content_hash: sha256:e86975ac0bc6351e9c6aeae2d8d977062ade918f91d554eb88ac9917e5502a03
 ---
 
 ## 功能说明
 
 每对元素按位或运算：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/9BXngeyhQRij60QwWCgcfA/zh-cn_image_0000002747292135.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/N-STL_-cQz6es4XxhKWehw/zh-cn_image_0000002747292135.png)
 
 ## 函数原型
 

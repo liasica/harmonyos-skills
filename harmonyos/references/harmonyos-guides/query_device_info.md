@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/query_device_
 title: 穿戴设备信息查询
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 穿戴设备信息查询
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:38+08:00
-doc_updated_at: 2026-05-12
+scraped_at: 2026-09-10T06:22:44+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1cee79d7a1c0c80358755462c019bc9198d2dfb11fa6fbcc762ff92c88d7c433
 ---
 

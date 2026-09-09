@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.infraredEmitter (红外管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.infraredEmitter (红外管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:76e98bf82dde91a750f5c89216d55da429ad6db865b573cdef2ab82144e7009b
 ---
 

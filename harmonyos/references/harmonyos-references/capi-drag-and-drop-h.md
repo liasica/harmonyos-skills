@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag
 title: drag_and_drop.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > drag_and_drop.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fd2da2b6db549837dd349ef30d286bb6cc61bd2e596dd40342a547df1d661f29
 ---
 

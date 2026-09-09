@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.file.sendablePhotoAccessHelper (基于Sendable对象的相册管理模块)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.sendablePhotoAccessHelper (基于Sendable对象的相册管理模块)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:20:27+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:28:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:cf42e05ac3e1b8534c65170f1c7d1d0e8fadab1999f600b4fa607b42263a2ef0
 ---
 

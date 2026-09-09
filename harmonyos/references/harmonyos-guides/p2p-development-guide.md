@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/p2p-developme
 title: P2P模式开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > P2P模式开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9bb9053430e46c3b343d699d2a5199d429f48cedb806eb6ffc7f48e7376e6043
 ---
 

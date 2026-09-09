@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-use-text-
 title: 使用Text组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 使用Text组件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:20+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9af864bf5a2540aadfecc01e0e1ab7d588978993e31b39a17715f7388ffa1700
 ---
 

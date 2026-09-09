@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-tab-
 title: 常见导航样式案例
 breadcrumb: 最佳实践 > 手势与导航 > 常见导航样式案例
 category: best-practices
-scraped_at: 2026-09-02T15:03:16+08:00
+scraped_at: 2026-09-10T06:30:01+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:fc66f2d24d24c6c8391e5e0ae6b9b7e0b358cf8cc0fc177a73ffd5a32d4b83d7
+content_hash: sha256:da79fe5e0cfd2ef398afc558827edd201352b688c9a5ca5b4d3833c27436e65a
 ---
 
 ## 概述
@@ -15,13 +15,13 @@ content_hash: sha256:fc66f2d24d24c6c8391e5e0ae6b9b7e0b358cf8cc0fc177a73ffd5a32d4
 本文基于常见应用的页签导航效果，给出对应的实现方案。不同页签导航效果如下图所示。
 
 **图1** 底部导航效果示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/rdm4z7cOQqG3Wp0SxzFAzQ/zh-cn_image_0000002229451797.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/IX3VA96SR6KAnJJlA7vrnQ/zh-cn_image_0000002229451797.png "点击放大")
 
 **图2** 顶部导航效果示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/_KSdxLElSyCkT1EGWoxkBQ/zh-cn_image_0000002229337321.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/RG89uNZWS5CQ_CPqO_6ZFQ/zh-cn_image_0000002229337321.png "点击放大")
 
 **图3** 侧边导航效果示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/_jPlMjmoSpKkZL_nITDEYQ/zh-cn_image_0000002229337301.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Qo885M6vRE2ESsugaXvm8w/zh-cn_image_0000002229337301.png "点击放大")
 
 ## 底部导航
 
@@ -29,7 +29,7 @@ content_hash: sha256:fc66f2d24d24c6c8391e5e0ae6b9b7e0b358cf8cc0fc177a73ffd5a32d4
 
 基础底部导航属于常规导航，一般以图标加文字的形式展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/qW4Ca-IeQL6G2RkwoB_6AA/zh-cn_image_0000002229337297.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/CshRc-qgTPadlBWEBwjxyw/zh-cn_image_0000002229337297.png "点击放大")
 
 1. 使用Tabs组件，设置barPosition为BarPosition.End控制导航条底部展示。Tabs组件嵌套tabContentBuilder自定义组件。
 
@@ -132,7 +132,7 @@ content_hash: sha256:fc66f2d24d24c6c8391e5e0ae6b9b7e0b358cf8cc0fc177a73ffd5a32d4
 
 舵式导航是基础底部导航的一种扩展，中间按钮一般为核心功能，并且在设计效果上中心图标可以超出导航条的高度，两侧为普通操作按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/vzBkF1JCRrCvOpEAF-kNXA/zh-cn_image_0000002193851932.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/meuamJogQpGvRL7sF2Ia5w/zh-cn_image_0000002193851932.png "点击放大")
 
 1. 使用Tabs组件，设置barPosition为BarPosition.End控制导航条底部展示。Tabs组件嵌套TabContent组件实现内容区。
 
@@ -219,7 +219,7 @@ content_hash: sha256:fc66f2d24d24c6c8391e5e0ae6b9b7e0b358cf8cc0fc177a73ffd5a32d4
 
 居左对齐导航属于常规导航，由于Tabs组件导航只能居中展示，无法通过tabBar属性设置导航条。为实现居左对齐样式，可使用自定义布局替代tabBar控制按钮对齐方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/_pqEn9ZWTrGAbOrC2fjIbA/zh-cn_image_0000002194011508.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/aDqlze0WQv6utd46JJzV5Q/zh-cn_image_0000002194011508.png "点击放大")
 
 1. Stack组件中嵌套Row组件和Column组件，实现导航条文字和下划线两部分。
 
@@ -353,7 +353,7 @@ content_hash: sha256:fc66f2d24d24c6c8391e5e0ae6b9b7e0b358cf8cc0fc177a73ffd5a32d4
 
 可滑动导航样式在居左对齐基础上增加滑动功能，适合页签数较多场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/ubMX_gLXRMShfWC5muthXg/zh-cn_image_0000002194011516.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ewNh0-qxRv2R-T7AH_TDkg/zh-cn_image_0000002194011516.png "点击放大")
 
 实现方式与居左对齐样式相同，唯一区别在于导航布局中嵌套List组件实现可滑动效果。
 
@@ -386,7 +386,7 @@ Row() {
 
 下划线导航样式属于常规导航，以文字加下划线的形式展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/QhBb1js7SByD50pREwBSkw/zh-cn_image_0000002193851928.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/TTBZOUTzQ1qNszJ6FzYG5Q/zh-cn_image_0000002193851928.gif "点击放大")
 
 1. 使用Tabs组件，设置barPosition为BarPosition.Start控制导航条顶部展示。通过tabBar属性和Builder装饰器实现导航。
 
@@ -431,7 +431,7 @@ Row() {
 
 背景高亮导航样式属于常规导航，通过背景色突出选中页签。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/9s-4Kd31RXq1Luv3jNjfYA/zh-cn_image_0000002229451809.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/tzzH025ET3GwlbN18XWfJA/zh-cn_image_0000002229451809.png "点击放大")
 
 1. 使用Tabs组件，设置barPosition为BarPosition.Start控制导航条顶部展示。通过自定义布局实现导航背景高亮样式。
 
@@ -491,7 +491,7 @@ Row() {
 
 文字缩放式导航样式属于常规导航，通过字体加粗放大突出选中页签。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/U3o79v7SRWuhv5NV-rArJQ/zh-cn_image_0000002229451789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/biOu-A4STcW4T5G6EDOGPA/zh-cn_image_0000002229451789.png "点击放大")
 
 1. 使用Tabs组件，设置barPosition为BarPosition.Start。通过tabBar属性和Builder装饰器实现导航。
 
@@ -529,7 +529,7 @@ Row() {
 
 双层嵌套样式拥有两层导航，外层嵌套内层，与单层导航相比可以容纳更多页签。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/1xXSu-7iRymxoAMLAb3KgA/zh-cn_image_0000002229451793.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/H7klZNJuTwyYo31Qn8ayow/zh-cn_image_0000002229451793.png "点击放大")
 
 外层导航通过在TabContent组件设置tabBar属性，其中TabContent中嵌套List和子级Tabs。List组件嵌套subTabBuilder自定义组件实现内层导航。子级Tabs组件嵌套TabContent组件实现内容区。
 
@@ -597,7 +597,7 @@ subTabBuilder(tabName: string | Resource, tabIndex: number) {
 
 属于侧边导航类，通过List去实现左侧导航条区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/bYOspq0sSeyiVcmyH4PgOw/zh-cn_image_0000002194011512.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ZpoQHqvaTQuWykx34w5rZA/zh-cn_image_0000002194011512.png "点击放大")
 
 基础侧边导航使用左右布局：左侧通过List组件与ListItem组件实现导航布局，右侧实现导航内容区。
 
@@ -636,7 +636,7 @@ Column() {
 
 抽屉式导航属于侧边导航类，核心思路是“隐藏”，点击入口或侧滑可以像“抽屉”一样拉出菜单。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/gL-Re1TSSracKcLiq8jeAQ/zh-cn_image_0000002424305076.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/NqSXK8O4SG6wJfLkrFku-Q/zh-cn_image_0000002424305076.png "点击放大")
 
 1. 使用[SideBarContainer组件](../harmonyos-references/ts-container-sidebarcontainer.md#示例)实现侧边导航，并且通过设置该组件的showSideBar控制显示隐藏。在SideBarContainer实现左侧导航样式和右侧内容区。controlButton属性控制侧边导航按钮位置。
 

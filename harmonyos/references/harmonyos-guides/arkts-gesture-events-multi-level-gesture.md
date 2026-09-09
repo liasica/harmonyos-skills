@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 多层级手势事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 多层级手势事件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7e2ade15819f200b9afca49d5aff82cd68e1d77fe18a1e4aafef15a8da969402
 ---
 

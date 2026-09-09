@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-sys
 title: systemShare（分享）
 breadcrumb: API参考 > 应用服务 > Share Kit（分享服务） > ArkTS API > systemShare（分享）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:bf16c62f7a8a1e4856eb14432e0e566542ee4cf064b21156f1ff30c67175b54e
 ---
 

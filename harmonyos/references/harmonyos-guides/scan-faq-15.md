@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-15
 title: 自定义界面扫码如何实现扫码框
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 自定义界面扫码如何实现扫码框
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8e7e5613dcd07295c8eb574695fa1c9eb7311bdf3f6fc9447589a6ea15d32d37
 ---
 

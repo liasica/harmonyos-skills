@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 流式传输
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现流式请求 > 流式传输
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:35+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:38f7453652d6f770f430a631316cd8dbcea660de4bf979b7b6bf6274ba0dea7d
 ---
 

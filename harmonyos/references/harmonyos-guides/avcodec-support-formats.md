@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-suppo
 title: AVCodec支持的格式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec支持的格式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:54+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c8ed2ed2c55ca10c600482e6f6bfb1351f5622f5d44af1412dd36918ec0ee550
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 关键资产存储服务错误码
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > 错误码 > 关键资产存储服务错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:998bb5c9ab0cc82df2cba4191b1a710b017c6d5ef75606c297db1ee3e29c74f0
 ---
 

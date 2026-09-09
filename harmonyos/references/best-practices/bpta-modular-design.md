@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-modular-de
 title: 模块化设计
 breadcrumb: 最佳实践 > 应用架构 > 模块化设计
 category: best-practices
-scraped_at: 2026-09-02T15:03:15+08:00
+scraped_at: 2026-09-10T06:30:00+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:448322baad621185fdf4edb3aad969bee2d22afa4d354a6e500f62a9ead093f0
+content_hash: sha256:62abf1f204164aad03e1f9c825efdf7f59330c3b049919218b43a65c46705a88
 ---
 
 ## 模块化设计理念
@@ -61,7 +61,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 对于大型软件，不同业务和基础能力由多个团队开发，各团队之间需要代码仓隔离。如果某个或若干个HAR工程模块由某个团队负责，又想代码仓隔离，可以在独立工程中开发这些HAR，并通过公司私有的OHPM仓发布和集成编译产物。如下图所示。
 
 **图1** 多工程合作模式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/2NYKq4WlSOe4VEIfyjpDxA/zh-cn_image_0000002462347089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/CRQNQUl0R_6-tbgHNGU6pg/zh-cn_image_0000002462347089.png "点击放大")
 
 这部分可以发布到OHPM仓的模块，叫做共享模块，可以将公共能力共享给多个应用使用，如公司内部多个应用使用某个公共能力网络库；或者也可以将该公共能力封装成库贡献给社区，给其他应用集成使用，这样的话这个模块也只能是HAR模块。
 
@@ -89,7 +89,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 在多HAP/HSP引用相同HAR包时，由于共享包的动态和静态差异，HAR包中的单例可能失效，影响应用冷启动性能。
 
 **图2** HAP包和HSP包分别引用相同HAR包  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/BgCvh9kMT_WDEuZYpOes_A/zh-cn_image_0000002428868504.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/JLgJBGVUQSS5CUQbSjt6qA/zh-cn_image_0000002428868504.png "点击放大")
 
 如上图所示，工程内包含三个模块：HAP包作为应用主入口模块，HSP包作为应用主界面显示模块，HAR\_COMMON集成了所有通用工具类，其中funcResult是func方法的执行结果。
 
@@ -98,7 +98,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 仅从性能角度考虑，可以采用以下方式进行修改，以缩短冷启动阶段的耗时。
 
 **图3** 切换为HAP包和HAR包分别引用相同HAR包  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/M4bmF-zkTNubv_etpcgefQ/zh-cn_image_0000002462467345.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ZfMwrRCPS16PEZkIs77hWw/zh-cn_image_0000002462467345.png "点击放大")
 
 **说明** 
 
@@ -161,11 +161,11 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 
 **图4** 优化前，使用HSP包
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/gZhp-YjbQJaMiI-jgyjWiA/zh-cn_image_0000002194010360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/pzrmLLadQqaxWSOEI4plIA/zh-cn_image_0000002194010360.png "点击放大")
 
 **图5** 优化后，使用HAR代替HSP
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/L8m-RoQJSxKnCM0n5Imd9w/zh-cn_image_0000002229336161.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/FX8VvwQCRqezreOty1ekcA/zh-cn_image_0000002229336161.png "点击放大")
 
 优化前后的对比数据如下：
 
@@ -195,7 +195,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 这里提到的“仅有一个HAP”是指一种设备类型仅包含一个HAP，而不是指.app文件包中仅有一个HAP。.app文件包可以包含其他设备的HAP包，例如手表和大屏设备的HAP包，以支持多设备分发。
 
 **图6** 非按需加载工程模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/HJRWRvYZRfqabIutnKEw_A/zh-cn_image_0000002428709052.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/mfLH-jgjT-Ce4O252VRHqg/zh-cn_image_0000002428709052.png "点击放大")
 
 上图工程架构中，除了产品模块层中与设备相关的HAP外，其他模块均为HAR。这些被依赖的HAR最终都会被编译进HAP中。
 
@@ -218,7 +218,7 @@ HarmonyOS应用的业务逻辑需要通过[UIAbility组件](../harmonyos-guides/
 对于App Size优先的，可以考虑将公共依赖的模块封装在一个HSP模块壳中，如下图所示：
 
 **图7** 公共依赖模块通过HSP模块壳承载  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/LguErO76SyGkQVzwpyGpAw/zh-cn_image_0000002428709172.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/kCZOJw7YSbuQU3Pf77sZtQ/zh-cn_image_0000002428709172.png "点击放大")
 
 hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D；而按需加载模块hsp\_B依赖于独有的共享库har\_B，同时需要依赖于har\_C和har\_D。
 
@@ -233,7 +233,7 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 对于性能优先的，则不需要再封装一个公共的HSP模块，直接依赖公共HAR包：
 
 **图8** 公共依赖模块使用HAR模块承载  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Z48qnWtpQ_G9ZTx99P3dlA/zh-cn_image_0000002428869404.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/zbCEiT4fQC6AC0im6Cr54Q/zh-cn_image_0000002428869404.png "点击放大")
 
 因为公共HSP包需要安装和加载，所以会有一些性能损耗。对于启动性能敏感型的应用，则将hap\_A和hsp\_B直接依赖于har\_C和har\_D。最终编译产物里面有2个，hap\_A.hap和hsp\_B.hsp，但是这两个编译产物里面均会包含har\_C和har\_D，App Size会比采用公共HSP模型大。
 
@@ -250,7 +250,7 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 一般多HAP应用架构普适性采用以下模型，除了产品组件中存在HAP包之外，其余的均是HAR包，如下图所示：
 
 **图9** 多HAP工程模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/mVDCd9_gSJiklWpCqcOjmA/zh-cn_image_0000002462468177.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/8H79yBc2TIiDqEOCFwNtxQ/zh-cn_image_0000002462468177.png "点击放大")
 
 编译产物中，多个HAP之间存在相同的HAR包（如har\_2、har\_3、har\_C、har\_D、har\_E）。这种情况下，App Size可能会增大。如果App Size不是应用的瓶颈，或者HAR包的大小较小，对App Size的影响可控，可以采用这种模型，从而减少动态加载的性能损耗。
 
@@ -259,7 +259,7 @@ hap\_A依赖于独有的共享库har\_A，同时需要依赖于har\_C和har\_D�
 上述问题的本质在于如何在HAP和HSP之间分布HAR包，以最小化App的大小并减少HAR的重复编译和打包。主要思路是将公共能力模块封装为公共HSP，从而最小化App Size。如下图所示：
 
 **图10** 多HAP工程模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Nna90qOhSEijwca2vxKawA/zh-cn_image_0000002428869664.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/un6zkYd6SvuaTXClf_rYRA/zh-cn_image_0000002428869664.png "点击放大")
 
 **说明** 
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.multimedia.videoProcessing (视频处理)"
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.videoProcessing (视频处理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ebd34eb9fc4786709508e8deba684c75cb3bada1b35bde859e392ad80f2aa02c
 ---
 

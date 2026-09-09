@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 场景动效类型互动卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 场景动效类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9a196150ef030920b093f5fd0bb524db70488d88990521cc22b36bb447f09c7c
+scraped_at: 2026-09-10T06:22:20+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:ecb27cac795e47782e6ca39cfb55f7140801e0b1658178dd91bed6d22c880ddd
 ---
 
 从API version 20开始，场景动效类型互动卡片支持在特定场景下触发互动卡片的特有效果。例如，开发者可以选择将动效渲染区域扩展到卡片自身的渲染区域之外，营造“破框”效果。本文档提供了场景动效类型互动卡片的开发指导，包括场景动效类型互动卡片概念、约束和限制、卡片非激活态、激活态UI界面开发和卡片配置文件开发。
@@ -20,11 +20,11 @@ content_hash: sha256:9a196150ef030920b093f5fd0bb524db70488d88990521cc22b36bb447f
 
 **图1** 互动卡片状态切换说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/4aZ7A10ET92SxuV4qlD-MQ/zh-cn_image_0000002742003365.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/eemEhlauRmeEA6TfJdCaOw/zh-cn_image_0000002717611032.png)
 
 **图2** 互动卡片动效触发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/VS-h-tBQQQK1qfAIghaVFA/zh-cn_image_0000002712404378.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/kgZszZInR1iJjy-OO0KBUQ/zh-cn_image_0000002747290985.png)
 
 ## 实现原理
 
@@ -32,15 +32,15 @@ content_hash: sha256:9a196150ef030920b093f5fd0bb524db70488d88990521cc22b36bb447f
 
 **图3** 点击触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/aRtkUcMBQzqsCm5d7kd6zQ/zh-cn_image_0000002742123327.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/tZh34kv7Rlq_iSEE6OaA5A/zh-cn_image_0000002747210903.png)
 
 **图4** 定时定点触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/SdUJt2m2TQ60L9S6hRPr3A/zh-cn_image_0000002712244414.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/nJaS4B--TbiFavvk6K6I8Q/zh-cn_image_0000002717770968.png)
 
 **图5** 摇一摇触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/P0YpXw4vTYC0XGdcXojmGQ/zh-cn_image_0000002742003367.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/4przx8TGQrKWBLacrC37Gg/zh-cn_image_0000002717611034.png)
 
 ## 约束和限制
 
@@ -65,7 +65,7 @@ content_hash: sha256:9a196150ef030920b093f5fd0bb524db70488d88990521cc22b36bb447f
 
 **图6** 互动卡片动效区域申请规则说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/a5eK8NOiTLaBbMh_kkex4w/zh-cn_image_0000002712404380.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/cRVJOE1VSC-3mhErvvdr1Q/zh-cn_image_0000002747290987.png)
 
 例如：某设备上一个2\*2卡片宽度为158vp，高度为158vp。对应上图则有：
 
@@ -509,4 +509,4 @@ content_hash: sha256:9a196150ef030920b093f5fd0bb524db70488d88990521cc22b36bb447f
 
 以下是按照本文档代码示例开发而成的效果demo，demo执行动效时，点击按钮，将调用 [formProvider.cancelOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidercanceloverflow20) 接口，打断当前破框动效，卡片切换为非激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CkZduhOxSo2LLbRBmJaSyA/zh-cn_image_0000002742123329.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/PXuSojYoQ2SidEsa___-QA/zh-cn_image_0000002747210905.gif)

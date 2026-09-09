@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: assetDownloadManager（资源包下载管理）
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > assetDownloadManager（资源包下载管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:43fd6f5cc7e2dbd69dbd13bb0498251696e3c4a719ac93c2d9b080b488c1a734
 ---
 

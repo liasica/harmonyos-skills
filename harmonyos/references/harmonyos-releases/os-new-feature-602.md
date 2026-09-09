@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: OS新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 6.0.2(22) > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:37+08:00
-doc_updated_at: 2026-08-04
-content_hash: sha256:fded6ff1fccba881450369888b08e90253e219ec22920b071bdea2465951319c
+scraped_at: 2026-09-10T06:20:54+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2188272d7438934f070d6372a6d97fa02584425bf49ff71c5747cdabe0278cff
 ---
 
 ## 6.0.2(22) Release
@@ -99,7 +99,7 @@ UDMF新增iWork文件格式的标准数据类型定义。详见[UTD预置列表�
 ### Crypto Architecture Kit
 
 * 新增支持ChaCha20算法的加解密。（[指南-ArkTS](../harmonyos-guides/crypto-chacha20-encrypt-decrypt.md)，[指南-C/C++](../harmonyos-guides/crypto-chacha20-encrypt-decrypt-ndk.md)）
-* 新增支持ChaCha20-Poly1305算法的加解密。（[指南-ArkTS](../harmonyos-guides/crypto-chacha20-encrypt-decrypt-poly1305.md)，[指南-C/C++](../harmonyos-guides/crypto-chacha20-encrypt-decrypt-poly1305-ndk.md)）
+* 新增支持ChaCha20-Poly1305算法的加解密。（[指南-ArkTS](../harmonyos-guides/crypto-chacha20-encrypt-decrypt.md#使用chacha20对称密钥poly1305模式加解密)，[指南-C/C++](../harmonyos-guides/crypto-chacha20-encrypt-decrypt-ndk.md#使用chacha20对称密钥poly1305模式加解密)）
 
 ### DeskTop Extension Kit
 

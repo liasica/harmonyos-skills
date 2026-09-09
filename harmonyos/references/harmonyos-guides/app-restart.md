@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-restart
 title: 应用重启
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用重启
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1e4e005a980d65ca2720dbf37e96fda87d122c446a88877eb2cbf053bd7a5e58
 ---
 

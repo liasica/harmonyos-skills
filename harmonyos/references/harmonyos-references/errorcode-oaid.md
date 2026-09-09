@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 开放匿名设备标识服务错误码
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > 错误码 > 开放匿名设备标识服务错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:29:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4d050e207043b4831ca7d86cb4889b72df487153c00f23abe87c6bd9ddb2f2c9
 ---
 

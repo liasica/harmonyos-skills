@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a0f1cbab5d9ebc9fe97f2de533fa8140057e77dc5b53da5e9497053bc144ca83
 ---
 

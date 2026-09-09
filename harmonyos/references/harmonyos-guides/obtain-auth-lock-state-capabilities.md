@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-auth-l
 title: 查询指定认证类型的认证冻结状态
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 查询指定认证类型的认证冻结状态
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:facb6627cddd1dfd29212b372fb29fd6df3b6d26fbf2d70e367d971c631c45ea
 ---
 

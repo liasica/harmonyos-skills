@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.geolocation (位置服务)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > 已停止维护的接口 > @ohos.geolocation (位置服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3523e77819b84ed3a174c8402ba2eb810c1bb4eaf3751d20723a387c9f072a69
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/outgoing-call
 title: 去电场景
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 去电场景
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ad27d5ad6b5adf5a08cb01060b9b9974e7db9ada5553a585e6d37ae92514e23c
+scraped_at: 2026-09-10T06:23:13+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:90b78eb0403dec4586bbba16ce7964c84ab237a864942f76cc86067e93b334f4
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:ad27d5ad6b5adf5a08cb01060b9b9974e7db9ada5553a585e6d37ae9251
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BWL8p15US1imBk6vVt_HVQ/zh-cn_image_0000002742124003.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/gcUOUQXfS4CvEFUYjEK4Yg/zh-cn_image_0000002747211575.jpg)
 
 ## 接口说明
 

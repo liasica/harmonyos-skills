@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 获取云侧文件下载地址
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云存储 > 获取云侧文件下载地址
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2b6a52aa9a5d23e9965b7d379f40a5c71447db050828701b71c0fd66597fc772
 ---
 

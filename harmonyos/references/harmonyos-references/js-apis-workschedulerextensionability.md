@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.WorkSchedulerExtensionAbility (延迟任务调度回调)"
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API > @ohos.WorkSchedulerExtensionAbility (延迟任务调度回调)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2715c1d31ee246462edfdc450ab8a669c4252f7ad40b9b2e8cd6fa398c1d9d61
 ---
 

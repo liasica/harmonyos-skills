@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MaskFilter)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (MaskFilter)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:41+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3087beee78661b897697148cf0fc22b30e762666f6e3a0dec5b918c06f7b0e42
 ---
 

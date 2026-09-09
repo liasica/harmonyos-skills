@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-export-k
 title: 密钥导出(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 密钥导出 > 密钥导出(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d0027e7dddc5d0b830c4635f2cb09e41aaae351ec748b0f57ea5288ef207aca5
 ---
 

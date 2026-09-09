@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.window.floatingBall (闪控球窗口)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window.floatingBall (闪控球窗口)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:14ebc8db4238efc36802e1e7cd2dd2359ebbccbf98fa7db75235a97284a508be
 ---
 

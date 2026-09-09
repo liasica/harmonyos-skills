@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faqs-useriam-
 title: 指纹登录怎么检测设备指纹是否发生变化
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > User Authentication Kit常见问题 > 指纹登录怎么检测设备指纹是否发生变化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a28595deeb9e460b5ae318ab326af52c6e76cb8d48f8bc9683f19183f3229434
 ---
 

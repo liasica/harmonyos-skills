@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: LocalHandle类型内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkTS内存泄漏故障模式说明 > LocalHandle类型内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-04T06:33:24+08:00
+scraped_at: 2026-09-10T06:30:17+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:20721ed98399f4f310cb5c3b4019e2f9243f83633e05e3ea1e6fa7b7ca397551
+content_hash: sha256:a63afb5fac388c0411cec81c9504db296c868bbd7ffa2219d2a443de05a259ff
 ---
 
 ## 概述
@@ -66,11 +66,11 @@ LocalHandleRoot：Native代码为了管理临时对象创建了句柄LocalHandle
 
 代码中前端按钮调用Native接口no\_open\_close\_handle\_scope()，该接口在UV异步任务后触发AfterWorkCallback()回调函数。在AfterWorkCallback()函数中存在300次循环，每次循环创建一个内存大小为1MB的string对象。LocalHandle持有创建的对象，但不添加napi\_open\_handle\_scope()/napi\_close\_handle\_scope()来管理生命周期，该字符串对象为LocalHandleRoot。示例如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/z5fo8IKjQAG3HG5LVPWcpQ/zh-cn_image_0000002729464443.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/6mjFM4x4Qe2wxeSBajb2-A/zh-cn_image_0000002729464443.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Uvqpd0zDRsSny2YZtv1GMw/zh-cn_image_0000002699865072.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/t5S8paUoSX-x26POf5bZUg/zh-cn_image_0000002699865072.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/zGGUVqqWS-u7tlnKZy-0Sg/zh-cn_image_0000002729584403.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/e0yiRcy3T7CVWjztCyaZBw/zh-cn_image_0000002729584403.png "点击放大")
 
 **问题分析思路**
 
@@ -80,11 +80,11 @@ LocalHandleRoot：Native代码为了管理临时对象创建了句柄LocalHandle
 
 3. 参考[运维态内存泄漏分析方法](bpta-overview-of-arkts-memory-leaks-overview.md#section1289738624)，发现内存快照中有大量Distance为1的string对象，在内存快照中占用了最多的内存。查看string对象的根节点类型为LocalHandleRoot，说明是LocalHandle持有ArkTS对象导致泄漏。内存快照如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/I4M3QA3KQwmUew4Ww1IslA/zh-cn_image_0000002699705184.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zjCEXN2CSrqmC7AiQl9oUw/zh-cn_image_0000002699705184.png "点击放大")
 
 4. 使用[Handle泄漏检测工具使用方法](bpta-overview-of-arkts-memory-leaks-overview.md#section1943877608)进行进一步分析，找到对应创建LocalHandle引用的调用栈。检测工具获取的调用栈如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/VkThOCmUTDqsMKs6ozO-ig/zh-cn_image_0000002729464445.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Mv9Mxs7JRXWrTe5wmkZ70w/zh-cn_image_0000002729464445.png)
 
 5. 分析调用栈可知泄漏对象创建路径，结合业务代码分析是否存在内存泄漏场景。查看该调用栈，发现开发者没有调用napi\_open\_handle\_scope()和napi\_close\_handle\_scope()合理管控napi\_value的生命周期导致内存泄漏。
 

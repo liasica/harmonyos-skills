@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.abilityManager (Ability信息管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.abilityManager (Ability信息管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e73951f3748ee4c5fb2b260a9edf88ebd4c7fbf8e1c9ed3b8d2bd486baeedd15
 ---
 

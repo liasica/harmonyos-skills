@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-ciphertext-conversion-ndk
 title: 使用SM2密文格式转换(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密介绍 > 使用SM2密文格式转换(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用SM2密文格式转换(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f9a1b4e8727ed4d339cc3eb2b338dcf85d091f8dde758f3e21624c35e00fabd8
 ---
 

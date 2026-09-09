@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-dsp-vect
 title: 使用DSP进行向量计算
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用DSP进行向量计算
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:308ac88fbee723057f09a3c0535c79dfe46b1c619c216823c50bd5265afaf45c
 ---
 

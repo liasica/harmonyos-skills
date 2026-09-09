@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-query
 title: 订阅状态查询
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 订阅状态查询
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:56+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:29:19+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9d9669191b91da2f202e1a48f849937ff5af47a5aca3864c24fadf6766218d35
 ---
 

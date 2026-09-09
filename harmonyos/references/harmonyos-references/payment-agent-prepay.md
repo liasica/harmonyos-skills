@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 预下单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 基础支付 > 预下单
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4755b3fd58affccf120f99712ae129653f1e693e785f43c6550d5de3a967b5f5
 ---
 

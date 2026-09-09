@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全摄像头场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 安全摄像头场景
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2e3bd901e86d0303372c18090c950ea83e5f2bdb55e46ba66c5306534285af2a
+scraped_at: 2026-09-10T06:22:28+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:08f340a0b7eb2a1ebfbed2a5cf6baaa1951157b00711417662c3bc397f50d6da
 ---
 
 ## 场景介绍
@@ -43,7 +43,7 @@ private getSecureCameraDevice(cameraManager: camera.CameraManager): camera.Camer
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ZT3dtb0GRNiOfNLkHzCcww/zh-cn_image_0000002712404492.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/YFzXARgjQGWRmm97sGNufA/zh-cn_image_0000002747291099.jpg)
 
 ## 接口说明
 

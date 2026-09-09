@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-gettings
 title: 使用入门
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 使用入门
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:00+08:00
-doc_updated_at: 2026-04-30
+scraped_at: 2026-09-10T06:23:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6ce0d6dabaf861edb85c7a7db956c3de16a141cb0dfe76e9fe8db409efe36356
 ---
 

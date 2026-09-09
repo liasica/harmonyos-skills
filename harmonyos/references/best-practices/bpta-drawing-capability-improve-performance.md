@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-drawing-ca
 title: Drawing自绘制性能提升
 breadcrumb: 最佳实践 > 图形 > 图形绘制 > Drawing自绘制性能提升
 category: best-practices
-scraped_at: 2026-09-02T15:03:17+08:00
+scraped_at: 2026-09-10T06:30:04+08:00
 doc_updated_at: 2026-08-10
-content_hash: sha256:af5f98824eba0418c82ba43314749c45e89c9c791de807606d947326497c396b
+content_hash: sha256:297371471bde3bd90c507f9c28cea66a8685a3c46bace03428c60cd1e0962d0f
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:af5f98824eba0418c82ba43314749c45e89c9c791de807606d947326497
 
 下图是一个绘制1000个透明空心圆与背景图融合的绘制场景，下面分别使用Canvas CanvasRenderingContext2D和Native侧的Drawing来实现该场景，并分析两者的性能差异。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/zkmq-bhLRn6GjiqwPVW8Ig/zh-cn_image_0000002229450853.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/IXv-brZDSry9fRVDq6_QoA/zh-cn_image_0000002229450853.gif "点击放大")
 
 ### 使用Canvas CanvasRenderingContext2D绘制
 
@@ -165,7 +165,7 @@ Canvas CanvasRenderingContext2D使用[globalCompositeOperation](../harmonyos-ref
 
    使用Canvas CanvasRenderingContext2D绘制的trace图，可以看到绘制1000个圆圈耗时14.9毫秒。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/_FncfAuPSnaPG7MRbzx9Sw/zh-cn_image_0000002283607973.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/lF4xi261SCCVceZlr1Sx8g/zh-cn_image_0000002283607973.png)
 
 ### 使用Native侧Drawing绘制
 
@@ -419,7 +419,7 @@ Native Drawing主要使用分层接口[OH\_Drawing\_CanvasSaveLayer()](../harmon
 
    使用Native侧Drawing绘制trace图，可以看到绘制1000个圆圈耗时2.4毫秒，相较于Canvas CanvasRenderingContext2D绘制有较大的性能提升。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/TNRKOywMQQ6ErrG_t2Ip3w/zh-cn_image_0000002283528493.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/VRNZMDb-SRW1DglpIMCQ6w/zh-cn_image_0000002283528493.png)
 
 ## 效果对比
 

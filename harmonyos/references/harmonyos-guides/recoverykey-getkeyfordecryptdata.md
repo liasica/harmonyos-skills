@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/recoverykey-g
 title: 获取解密硬盘数据的企业恢复密钥
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 企业恢复密钥 > 获取解密硬盘数据的企业恢复密钥
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:31+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b7a35d082399e0622599e3ae544769821a6cb64759e94e1b6e088c638b795643
 ---
 

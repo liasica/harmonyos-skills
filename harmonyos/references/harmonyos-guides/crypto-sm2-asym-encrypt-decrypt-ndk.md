@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-asym-encrypt-decrypt-ndk
 title: 使用SM2非对称密钥加解密(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密介绍 > 使用SM2非对称密钥加解密(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用SM2非对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:568c2397bbfd700f187c5d7bb98fc5e0344c3a69151c498b49f0ce19d29e4f1d
 ---
 

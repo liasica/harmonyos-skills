@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-09-02T15:03:17+08:00
+scraped_at: 2026-09-10T06:30:03+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:38d33df213ea4e502fd0a02dc2da1286d67a025e4845fb7b7cd6e93428be712b
+content_hash: sha256:3b763e1cb59dbe2fac00365938a4c2a105fe71fe3f05fc462d9fd5bf81396645
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVRecorder集成了音频输入录制、音频编码和媒体封装的功能，�
 
 基于AVRecorder录制格式化音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/tZmkZO4UQbqM0P4kGuPouA/zh-cn_image_0000002524061074.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/A1EGmcnsQYSywHEQYZyQWQ/zh-cn_image_0000002524061074.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -30,7 +30,7 @@ AVRecorder提供了开始录制、暂停录制、恢复录制、停止录制、�
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/CddcQAjKS7-mAeh451l_pQ/zh-cn_image_0000002555220983.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/NT2ptcdtQtuNMfIWTCrX1Q/zh-cn_image_0000002555220983.png "点击放大")
 
 ### 开发步骤
 

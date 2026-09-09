@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 通用错误码
 breadcrumb: API参考 > API参考概述 > 通用错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:01+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:24:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:56b3e9940b81d95438b87983b25e469b2edeb76e7ce57d1d2be678a15ce5addd
 ---
 

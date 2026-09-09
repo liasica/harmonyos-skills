@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: Resource
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > Resource
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f43ed9059700f275b26fb4e0cda5c57b9e2b96346aefbd41e450e3ba6be06eec
 ---
 

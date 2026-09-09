@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-gets
 title: 查询星闪开关状态
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > 查询星闪开关状态
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5e552e303798d2161bdf5da70eb7482104245a5855e86339dbb607434750468c
 ---
 

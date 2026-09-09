@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioSuite_SpaceRenderPositionParams
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioSuite_SpaceRenderPositionParams
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c97e1d44c0bb9b2da8dde350dc7224ba9e61f872f8fd47ae2da341fa3e5b9659
+scraped_at: 2026-09-10T06:28:06+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9ce45243583c194d5c12bd8ca9a440f3eb9eee33bd9514c0da37ffb96d6f4864
 ---
 
 ```c
-typedef struct {...} OH_AudioSuite_SpaceRenderPositionParams
+typedef struct OH_AudioSuite_SpaceRenderPositionParams {...} OH_AudioSuite_SpaceRenderPositionParams
 ```
 
 ## 概述

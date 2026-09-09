@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-share-c
 title: 获取分享结果
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 宿主应用发起分享 > 获取分享结果
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6ecb6190acfb989a08574dbaa6e4f98c89ab8767232dcb149ba20066dccc1e68
 ---
 

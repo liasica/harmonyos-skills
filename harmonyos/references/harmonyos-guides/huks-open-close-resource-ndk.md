@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-open-clo
 title: 打开资源/关闭资源(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 外部密钥管理扩展 > 资源管理 > 打开资源/关闭资源(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:92864f435a8579d538fea7a34ebb5a4f8416d7b9c1b35cf126481b90c5f787ca
 ---
 

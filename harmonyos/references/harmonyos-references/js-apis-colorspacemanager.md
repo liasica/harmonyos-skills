@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.graphics.colorSpaceManager (色彩管理)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.colorSpaceManager (色彩管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3c0f3117f6ff1abcf0a1a5dffb2a09b1406ce3f4d76c650e91118cf803c180dd
 ---
 

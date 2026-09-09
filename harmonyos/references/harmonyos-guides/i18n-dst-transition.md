@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-dst-tran
 title: 夏令时跳变
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 时区与夏令时国际化 > 夏令时跳变
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:15+08:00
+scraped_at: 2026-09-10T06:22:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0e55b9ff382aac09f9b9a359a8a435c0a696a9846e6e4368127609a4e59517ab
+content_hash: sha256:28c4b311182757af113e88ec32ebe78b589c9c622f8a14815a105ba2778671a3
 ---
 
 ## 功能介绍
@@ -45,7 +45,7 @@ content_hash: sha256:0e55b9ff382aac09f9b9a359a8a435c0a696a9846e6e4368127609a4e59
 
 在夏令时内，本地时间显示建议添加夏令时标识。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/yKjlw0kFRdSx6cJPKWFCOg/zh-cn_image_0000002712404420.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/56QD1AM7Sg6wztfQSL_nQQ/zh-cn_image_0000002747291027.png)
 
 ### 存储和传输时间数据
 

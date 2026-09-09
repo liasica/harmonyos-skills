@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: FIDO
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > ArkTS API错误码 > FIDO
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:44+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:26:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2c5c87f8bd97f58b621611210ffb9e9b0d4f5bf88aecf6cc0915685607799f17
 ---
 

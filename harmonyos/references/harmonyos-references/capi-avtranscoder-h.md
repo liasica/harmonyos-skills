@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avtr
 title: avtranscoder.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avtranscoder.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:93b370a5dbc93846ea6e0a8650772de0fd6d0b7d216a782267f4fd0010bb6d1f
 ---
 

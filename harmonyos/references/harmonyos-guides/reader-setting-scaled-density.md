@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 监听文本缩放因子变化
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 监听文本缩放因子变化
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:18+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:23:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6e5c3617345f25b87d381a26cb2e3623a8a086fad275a23082f17cd8643b226a
 ---
 

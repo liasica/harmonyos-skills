@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: neural_network_core.h
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 头文件 > neural_network_core.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:12+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:b53f66ef41d8e53e0decd79be51f8c6a0bceffabdbb862c49746da78ebe89e59
+scraped_at: 2026-09-10T06:29:53+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:e43b0cb69cc5cf960bffa01aa89aad8399dda9d9d722c1fd3055c96f9f9b7396
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ Neural Network Core的接口目前均不支持多线程并发调用。
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_AddExtensionConfig(OH\_NNCompilation \*compilation,const char \*configName,const void \*configValue,const size\_t configValueSize)](capi-neural-network-core-h.md#oh_nncompilation_addextensionconfig) | 为自定义硬件属性添加扩展配置。  某些设备有自己的特定属性，这些属性尚未在NNRt中打开。该接口为您提供了另一种方式设置设备的这些自定义硬件属性。  您应该从设备供应商的文档查询它们的名称和值，并将它们逐一添加到编译实例中。这些属性将直接传递给设备驱动程序，如果驱动程序无法解析它们，该接口将返回错误码。  调用[OH\_NNCompilation\_Build](capi-neural-network-core-h.md#oh_nncompilation_build)后，**configName**和**configValue**就可以释放了。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_SetDevice(OH\_NNCompilation \*compilation, size\_t deviceID)](capi-neural-network-core-h.md#oh_nncompilation_setdevice) | 指定模型编译和计算的硬件。  编译阶段，需要指定模型编译和执行计算的硬件设备。先调用[OH\_NNDevice\_GetAllDevicesID](capi-neural-network-core-h.md#oh_nndevice_getalldevicesid)获取可用的设备ID，通过[OH\_NNDevice\_GetType](capi-neural-network-core-h.md#oh_nndevice_gettype)和[OH\_NNDevice\_GetName](capi-neural-network-core-h.md#oh_nndevice_getname)获取设备信息后，将期望编译执行的设备ID传入该接口进行设置。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_SetCache(OH\_NNCompilation \*compilation, const char \*cachePath, uint32\_t version)](capi-neural-network-core-h.md#oh_nncompilation_setcache) | 设置编译模型的缓存目录和版本。 |
-| [OH\_NN\_ReturnCode OH\_NNCompilation\_SetPerformanceMode(OH\_NNCompilation \*compilation,OH\_NN\_PerformanceMode performanceMode)](capi-neural-network-core-h.md#oh_nncompilation_setperformancemode) | 设置模型计算的性能模式。  Neural Network Runtime 支持为模型计算设置性能模式，满足低功耗到极致性能的需求。如果编译阶段没有调用该接口设置性能模式，编译实例为模型默认分配[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式。在[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式下，硬件按默认的性能模式执行计算。 在不支持性能模式设置的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。 |
+| [OH\_NN\_ReturnCode OH\_NNCompilation\_SetPerformanceMode(OH\_NNCompilation \*compilation,OH\_NN\_PerformanceMode performanceMode)](capi-neural-network-core-h.md#oh_nncompilation_setperformancemode) | 设置模型计算的性能模式。  如果编译阶段没有调用该接口设置性能模式，编译实例为模型默认分配[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式。在[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式下，硬件按默认的性能模式执行计算。 在不支持性能模式设置的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_SetPriority(OH\_NNCompilation \*compilation, OH\_NN\_Priority priority)](capi-neural-network-core-h.md#oh_nncompilation_setpriority) | 设置模型计算的优先级。  Neural Network Runtime 支持为模型设置计算优先级，优先级仅作用于相同uid进程创建的模型，不同uid进程、不同设备的优先级不会相互影响。 在不支持优先级设置的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_EnableFloat16(OH\_NNCompilation \*compilation, bool enableFloat16)](capi-neural-network-core-h.md#oh_nncompilation_enablefloat16) | 是否以float16的浮点数精度计算。  浮点模型默认使用float32精度计算。如果在支持float16精度的硬件上调用该接口，float32浮点数精度的模型将以float16的精度执行计算，可减少内存占用和执行时间。 该选项对于定点模型是无效的，例如int8类型的定点模型。  在不支持float16精度计算的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。 |
 | [OH\_NN\_ReturnCode OH\_NNCompilation\_Build(OH\_NNCompilation \*compilation)](capi-neural-network-core-h.md#oh_nncompilation_build) | 执行模型编译。  完成编译配置后，调用该接口执行模型编译。编译实例将模型和编译选项推送至硬件设备进行编译。  在调用该接口后，无法进行额外的编译操作，调用[OH\_NNCompilation\_SetDevice](capi-neural-network-core-h.md#oh_nncompilation_setdevice)、[OH\_NNCompilation\_SetCache](capi-neural-network-core-h.md#oh_nncompilation_setcache)、[OH\_NNCompilation\_SetPerformanceMode](capi-neural-network-core-h.md#oh_nncompilation_setperformancemode)、[OH\_NNCompilation\_SetPriority](capi-neural-network-core-h.md#oh_nncompilation_setpriority)和[OH\_NNCompilation\_EnableFloat16](capi-neural-network-core-h.md#oh_nncompilation_enablefloat16)接口将返回[OH\_NN\_OPERATION\_FORBIDDEN](capi-neural-network-runtime-type-h.md#oh_nn_returncode)。 |
@@ -378,7 +378,7 @@ OH_NN_ReturnCode OH_NNCompilation_SetPerformanceMode(OH_NNCompilation *compilati
 
 设置模型计算的性能模式。
 
-Neural Network Runtime 支持为模型计算设置性能模式，满足低功耗到极致性能的需求。如果编译阶段没有调用该接口设置性能模式，编译实例为模型默认分配[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式。在[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式下，硬件按默认的性能模式执行计算。 在不支持性能模式设置的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。
+如果编译阶段没有调用该接口设置性能模式，编译实例为模型默认分配[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式。在[OH\_NN\_PERFORMANCE\_NONE](capi-neural-network-runtime-type-h.md#oh_nn_performancemode)模式下，硬件按默认的性能模式执行计算。 在不支持性能模式设置的硬件上调用该接口，将返回[OH\_NN\_UNAVAILABLE\_DEVICE](capi-neural-network-runtime-type-h.md#oh_nn_returncode)错误码。
 
 **起始版本：** 9
 

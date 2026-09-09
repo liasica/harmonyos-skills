@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: "@hms.core.authentication (华为账号应用统一认证服务)"
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > @hms.core.authentication (华为账号应用统一认证服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:71d68f81a3166d50010de5ee737be3b7099c8777d9b269632eec31da94f4015b
 ---
 

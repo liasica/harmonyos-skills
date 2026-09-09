@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: Session间缓存共享
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 使用HTTP缓存功能提升资源获取性能 > Session间缓存共享
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e92cfea7b81a29fbab3f0d20c1dc7aa7691a35befc1a1000ed677d399066de65
 ---
 

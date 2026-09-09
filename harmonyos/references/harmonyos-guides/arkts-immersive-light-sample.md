@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感典型场景
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感典型场景
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:01+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325830fa
+scraped_at: 2026-09-10T06:22:06+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:5f8c84f19d8b98f2192c5286731c988ba734806e6ed8fdb13dad58752254c1f1
 ---
 
 本文档提供沉浸光感两个典型场景的开发指导，包括搜索框标题栏效果和内容区标题栏开启沉浸光感。
@@ -16,7 +16,7 @@ content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325
 
 1. 设置底部Tabs悬浮并为Tabs组件开启沉浸光感，同时使用[ExpandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)将显示内容延伸至状态栏区域，使应用整体体验更加一致。
 
-   ```ts
+   ```typescript
    @Entry
    @ComponentV2
    struct BestPractise {
@@ -33,7 +33,7 @@ content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325
          Text(title)
            .fontSize(10)
            .fontColor(this.currentTab === index ? '#007dff' : '#999999')
-          .margin({ top: 2 })
+           .margin({ top: 2 })
        }.justifyContent(FlexAlign.Center)
        .width('100%')
        .height('100%')
@@ -87,124 +87,99 @@ content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325
      }
    }
    ```
-2. 针对跳转的目标页面，通过[NavigationTitleOptions](../harmonyos-references/ts-basic-components-navigation.md#navigationtitleoptions11)为对应的页签页面标题栏区域开启沉浸光感。建议将Navigation组件的BarStyle设置为STACK模式，使内容区显示在标题栏下方，从而实现透底的效果。下面代码实现以下效果：
+2. 针对跳转的目标页面，通过[NavigationTitleOptions](../harmonyos-references/ts-basic-components-navigation.md#navigationtitleoptions11)为对应的页签页面标题栏区域开启沉浸光感。建议将Navigation组件的BarStyle设置为STACK模式，使内容区显示在标题栏下方，从而实现透底的效果。下面代码实现以下效果：标题栏以及标题栏子组件开启沉浸光感。上滑时搜索框隐藏，分类列表保留并突出显示。分类列表项开启沉浸光感，提升用户交互体验和内容曝光率。
 
-* 标题栏以及标题栏子组件开启沉浸光感。
-* 上滑时搜索框隐藏，分类列表保留并突出显示。分类列表项开启沉浸光感，提升用户交互体验和内容曝光率。
+   ```typescript
+   @ComponentV2
+   struct ExploreHomePage {
+     @Local currentIndex: number = 0
+     @Local searchOpacity: number = 1
+     @Local classifyType: Array<string> = []
+     totalTitleHeight = 110
+     @Local titleHeight:number = this.totalTitleHeight
+     @Local scrollOffset: number = 0
+     @Local titleOffset: number = 0
+     @Builder
+     exploreTitleBar() {
+       Column() {
+         Row() {
+           Text('探索').fontSize(28).fontWeight(FontWeight.Bold).fontColor('#1A1A1A')
+           Blank()
+           Search({ placeholder: '探索探索' })
+             .searchButton('搜索')
+             .height(40)
+             .width(220)
+             .systemMaterial(new uiMaterial.ImmersiveMaterial({}))
+         }.expandSafeArea([SafeAreaType.SYSTEM])
+         .width('100%')
+         .opacity(this.searchOpacity)
+         .height(50)
 
-  ```ts
-  @ComponentV2
-  struct ExploreHomePage {
-    @Local currentIndex: number = 0
-    @Local searchOpacity: number = 1
-    @Local classifyType: Array<string> = [
-       '策略', '动作', '竞技', '射击', '卡牌', '体育', '休闲', '音乐'
-     ]
-    titleHeight:number = 150
-    @Local scrollOffset: number = 0
-    @Local titleOffset: number = 0
-    @Builder
-    exploreTitleBar() {
-      Column() {
-        Row() {
-          Text('探索').fontSize(28).fontWeight(FontWeight.Bold).fontColor('#1A1A1A')
-          Blank()
-          Search({ placeholder: '探索探索' })
-            .searchButton('搜索')
-            .height(40)
-            .width(220)
-            .systemMaterial(new uiMaterial.ImmersiveMaterial({}))
-        }.expandSafeArea([SafeAreaType.SYSTEM])
-        .width('100%')
-        .opacity(this.searchOpacity)
-        .height(50)
+         ClassifyComponent()
+       }.expandSafeArea([SafeAreaType.SYSTEM])
+       .width('100%')
+       .height(this.titleHeight)
+       .padding({ left: 20, right: 20})
+       .position({x: 0, y: -this.titleOffset})
+     }
 
-        List({space: 12}) {
-          ForEach(this.classifyType, (item: string, index: number) => {
-            ListItem() {
-              Row() {
-                SymbolGlyph($r('sys.symbol.star_fill'))
-                  .fontSize(20)
-                  .fontColor(['#d3d3d3'])
-                  .margin({left: 16})
-                Text(item)
-                  .fontSize(16)
-                  .fontColor(this.currentIndex === index ? Color.White : '#666666')
-                  .padding({ left: 4, right: 12, top: 6, bottom: 6})
-              }.borderRadius(16)
-              .systemMaterial(new uiMaterial.ImmersiveMaterial({
-                materialColor: this.currentIndex === index ? '#333333' : undefined,
-                lightEffect: {color: Color.White}
-              }))
-            }
-          })
-        }.listDirection(Axis.Horizontal)
-        .width('100%')
-        .scrollBar(BarState.Off)
-        .margin(5)
-      }.expandSafeArea([SafeAreaType.SYSTEM])
-      .width('100%')
-      .height(this.titleHeight)
-      .padding({ left: 20, right: 20})
-      .position({x: 0, y: -this.titleOffset})
-      // 设置Column组件开启沉浸光感
-      .systemMaterial(new uiMaterial.ImmersiveMaterial({}))
-    }
+     build() {
+       NavDestination() {
+         Scroll() {
+           // 滑动区域的具体内容
+           Column() {
+             Image($r('app.media.startIcon')).width('100%').height(180)
+               .borderRadius(12)
+               .backgroundColor('#e0e0e0')
+               .objectFit(ImageFit.Cover)
 
-    build() {
-      NavDestination() {
-        Scroll() {
-          // 滑动区域的具体内容
-          Column() {
-            Image($r('app.media.startIcon')).width('100%').height(180)
-              .borderRadius(12)
-              .backgroundColor('#e0e0e0')
-              .objectFit(ImageFit.Cover)
+             List() {
+               ForEach(listItems, (item: ListItemData) => {
+                 ListItem() {
+                   Row() {
+                     SymbolGlyph(item.image).fontSize(36)
+                       .fontColor(['#007dff'])
+                       .margin({ right: 16})
+                     Text(item.name).fontSize(16)
+                       .fontColor('#333333')
+                   }.width('100%')
+                   .padding({ left: 20, right: 20, top: 14, bottom: 14 })
+                 }
+               }, (item: ListItemData) => item.id)
+             }
+           }
+         }
+         // 避让标题栏显示区域
+         .contentStartOffset(this.totalTitleHeight)
+         .scrollable(ScrollDirection.Vertical)
+         .scrollBar(BarState.Off)
+         .edgeEffect(EdgeEffect.Spring)
+         .width('100%')
+         .height('100%')
+         .onDidScroll((xOffset: number, yOffset: number, state: ScrollState) => {
+           this.scrollOffset += yOffset
+           // 搜索框大小范围内
+           if (this.scrollOffset <= 50) {
+             this.titleOffset = this.scrollOffset;
+             this.titleHeight = this.totalTitleHeight - this.titleOffset
+             this.searchOpacity = 1 - this.titleOffset / 50
+           }
+         })
+       }.title(
+         { builder: this.exploreTitleBar, height: this.titleHeight },
+         { barStyle: BarStyle.STACK,
+           // 设置标题栏模糊
+           scrollEffectOptions: {
+             scrollEffectType: ScrollEffectType.GRADUAL_BLUR
+           }
+         }
+       ).hideBackButton(true)
+       .expandSafeArea([SafeAreaType.SYSTEM])
+     }
+   }
+   ```
 
-            List() {
-              // 开发者需要自定义参数listItems, 示例中的数据结构为 interface ListItemData { name: string; image: Resource; id: string}
-              ForEach(listItems, (item: ListItemData) => {
-                ListItem() {
-                  Row() {
-                    SymbolGlyph(item.image).fontSize(36)
-                      .fontColor(['#007dff'])
-                      .margin({ right: 16})
-                    Text(item.name).fontSize(16)
-                      .fontColor('#333333')
-                  }.width('100%')
-                  .padding({ left: 20, right: 20, top: 14, bottom: 14 })
-                }
-              }, (item: ListItemData) => item.id)
-            }
-          }
-        }
-        // 避让标题栏显示区域
-        .contentStartOffset(this.titleHeight)
-        .scrollable(ScrollDirection.Vertical)
-        .scrollBar(BarState.Off)
-        .edgeEffect(EdgeEffect.Spring)
-        .width('100%')
-        .height('100%')
-        .onDidScroll((xOffset: number, yOffset: number, state: ScrollState) => {
-          this.scrollOffset += yOffset
-          // 搜索框大小范围内
-          if (this.scrollOffset <= 50) {
-            this.titleOffset = this.scrollOffset;
-            this.searchOpacity = 1 - this.titleOffset / 50
-          }
-        })
-      }.title(
-        { builder: this.exploreTitleBar, height: this.titleHeight },
-        { barStyle: BarStyle.STACK,
-          systemMaterial: new uiMaterial.ImmersiveMaterial({})
-       }
-     ).hideBackButton(true)
-      .expandSafeArea([SafeAreaType.SYSTEM])
-    }
-  }
-  ```
-
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/WEEHyfsQTi6oq0HPN4QOjw/zh-cn_image_0000002712440406.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/_IbtUaBQRQOuGMArlX9rOg/zh-cn_image_0000002717610576.gif)
 
 ## 内容区标题栏开启沉浸光感
 
@@ -212,54 +187,48 @@ content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325
 
 1. 提取内容区中小标题为独立组件。
 
-   ```ts
+   ```typescript
    @ComponentV2
    export struct ClassifyComponent {
-     classifyType: Array<string> = [
-       '策略', '动作', '竞技', '射击', '卡牌', '体育', '休闲', '音乐'
-     ]
+     @Local selectedIndexes: Array<number> = [0]
+     info: Array<ChipGroupItemOptions> = []
 
-     @Local currentIndex: number = 0
+     aboutToAppear(): void {
+       let classifyType: string[] = ['策略', '动作', '竞技', '射击', '卡牌', '体育', '休闲', '音乐']
+
+       for (let index: number = 0; index < classifyType.length; index++) {
+         this.info.push({label: {text: classifyType[index]}, prefixSymbol: {
+           activated: new SymbolGlyphModifier($r('sys.symbol.star_fill')).fontSize(20).fontColor(['#d3d3d3']),
+           normal: new SymbolGlyphModifier($r('sys.symbol.star_fill')).fontSize(20).fontColor([Color.Black])
+         }})
+       }
+     }
 
      build() {
-       List({space: 12}) {
-         ForEach(this.classifyType, (item: string, index) => {
-           ListItem() {
-             Row() {
-               SymbolGlyph($r('sys.symbol.star_fill'))
-                 .fontSize(20)
-                 .fontColor(['#d3d3d3'])
-                 .margin({ left: 16})
-               Text(item)
-                 .fontColor(this.currentIndex === index ? Color.White : '#666666')
-                 .fontSize(16)
-                 .padding({ left: 4, right: 12, top: 6, bottom: 6})
-             }.borderRadius(16)
-             .systemMaterial(new uiMaterial.ImmersiveMaterial({
-               materialColor: this.currentIndex === index ? '#333333' : undefined,
-               lightEffect: { color: Color.White }
-             }))
-             .onClick(() => {
-               this.currentIndex = index
-             })
-           }
-         })
-       }.listDirection(Axis.Horizontal)
-       .width('100%')
-       .scrollBar(BarState.Off)
-       .expandSafeArea([SafeAreaType.SYSTEM])
-       .margin(5)
-       .alignListItem(ListItemAlign.Center)
+       ChipGroup({
+         items: this.info,
+         itemStyle: {
+           backgroundColor: Color.Transparent,
+           selectedFontColor: '#d3d3d3'
+         },
+         backgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+           colorInvert: true,
+           interactive: true
+         }),
+         selectedIndexes: this.selectedIndexes,
+         onChange: (activeIndexes: Array<number>) => {
+           this.selectedIndexes = activeIndexes
+         }
+       })
      }
    }
    ```
 2. 滑动内容区，当内容区标题滑动到标题栏区域时，将其切换到标题栏中显示。
 
-   ```ts
-   // 添加系统路由表入口
+   ```typescript
    @ComponentV2
    struct GamePage {
-     @Local titleHeight: number = 100
+     @Local titleHeight: number = 60
      @Local scrollOffset: number = 0
      @Local showTitle: boolean = false
      @Local titleOpacity: number = 1
@@ -287,16 +256,15 @@ content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325
          Button() {
            SymbolGlyph($r('sys.symbol.AI_search')).fontSize(20)
          }.borderRadius(180).width(40).height(40)
-           .systemMaterial(new uiMaterial.ImmersiveMaterial({
+         .backgroundColor(Color.Transparent)
+         .systemMaterial(new uiMaterial.ImmersiveMaterial({
              lightEffect: { color: Color.White },
              materialColor: '#d3d3d3'
-         }))
-         .backgroundColor(Color.Transparent)
+           }))
        }.expandSafeArea([SafeAreaType.SYSTEM])
        .width('100%')
        .height('100%')
        .padding({ left: 20, right: 20 })
-       .systemMaterial(new uiMaterial.ImmersiveMaterial({}))
        .alignItems(VerticalAlign.Center)
      }
 
@@ -304,8 +272,7 @@ content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325
        NavDestination() {
          Scroll() {
            Column() {
-             // 请开发者替换为实际的资源文件
-             Image($r('app.media.background'))
+             Image($r('app.media.startIcon'))
                .width('100%')
                .height(180)
                .borderRadius(12)
@@ -313,7 +280,6 @@ content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325
                .objectFit(ImageFit.Cover)
              ClassifyComponent().id('content').visibility(this.showTitle ? Visibility.Hidden : Visibility.Visible)
              List() {
-               // 开发者需要自定义参数listItems, 示例中的数据结构为 interface ListItemData { name: string; image: Resource; id: string}
                ForEach(listItems, (item: ListItemData) => {
                  ListItem() {
                    Row() {
@@ -360,10 +326,12 @@ content_hash: sha256:056fcf70e6007abed1275a3845ed6a3be4736f10fabbb8616c64fa3a325
        .hideBackButton(true)
        .title({ builder: this.gameTitleBar, height: this.titleHeight }, {
          barStyle: BarStyle.STACK,
-         systemMaterial: new uiMaterial.ImmersiveMaterial({})
+         scrollEffectOptions: {
+           scrollEffectType: ScrollEffectType.GRADUAL_BLUR
+         }
        })
      }
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/AWjofpEWQAuGWa8XICNQHA/zh-cn_image_0000002712440318.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/OeNFi4kwSW6luMzEWhadKw/zh-cn_image_0000002747290529.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 模块描述
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > 模块描述
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:35db4468be5a575e6868009ed131f0fcf81770c52dd9e63ef19ea1e50bb2f5f6
 ---
 

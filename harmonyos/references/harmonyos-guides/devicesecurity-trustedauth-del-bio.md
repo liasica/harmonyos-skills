@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 关闭指定生物类型认证能力
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 生物特征绑定、认证与解绑 > 关闭指定生物类型认证能力
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:22+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:91e8079c3e4b7ed121692d5a9f0d7d1d9f69d3cee2205af78095fd7429948288
+scraped_at: 2026-09-10T06:22:29+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:a3f1d1129055acedc32673c60eaa13eaf3c735877386e8e78438911d2855106f
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:91e8079c3e4b7ed121692d5a9f0d7d1d9f69d3cee2205af78095fd74299
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/56Qfss02SiuMzpZsyAg3mQ/zh-cn_image_0000002742123451.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/vhyFgQ7pQf2u16Uzg4s6-Q/zh-cn_image_0000002747211027.jpg)
 
 ## 接口说明
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-scheduli
 title: 使用perfHint系统性能优化(ArkTS)
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > perfHint系统性能优化 > 使用perfHint系统性能优化(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:08+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d14af2bd82b6ca618f7fbb8813c3faca31a7f4ca4f6979b0bf177958a3afb811
 ---
 

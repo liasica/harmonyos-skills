@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-barr
 title: 视频场景弹幕绘制低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 视频场景弹幕绘制低功耗规则
 category: best-practices
-scraped_at: 2026-09-02T14:53:45+08:00
+scraped_at: 2026-09-10T06:30:14+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:972fb5f923f2bf51223c8299268d393c96d9162e0c7b20de24e50ac23896f38e
+content_hash: sha256:9b62c57a99924a2f1b2440ca3dbf350b27adb1444e9cb0628cb338241fbd2f60
 ---
 
 ## 规则
@@ -61,7 +61,7 @@ void EGLCore::Draw() {
 
 抓取视频弹幕播放的systrace，三方应用调用RenderService进程进行弹幕绘制时，调用“H:RSDisplayRenderNodeDrawable Flush”函数，表示执行基于GPU硬件加速的渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/PY7zXwjUTOK41VdmOkYB5g/zh-cn_image_0000002194011168.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/WNfLGnlVR5-h6FNw9h5CBw/zh-cn_image_0000002194011168.png "点击放大")
 
 ## 示例代码
 

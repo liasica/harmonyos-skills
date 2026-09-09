@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: Want
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口 > ability > Want
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c59ed57374a5683a4efd0c4ec22e770658a8f87fffe98f0cf7b42a2996bf3c55
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-collect
 title: 共享容器
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > 共享容器
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ffde9ef4ed234800a2f065d1721061aac83e954e5d2b010b2959ec8338af021d
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.fileio (文件管理)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > 已停止维护的接口 > @ohos.fileio (文件管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:dc5f196b9cb8208fb68467b54ac74e4c47a412e1f107067fea0303dedb9e1262
 ---
 

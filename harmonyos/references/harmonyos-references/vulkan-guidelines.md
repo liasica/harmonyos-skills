@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vulkan-gu
 title: Vulkan Surface开发指导
 breadcrumb: API参考 > 标准库 > Vulkan > Vulkan开发指导 > Vulkan Surface开发指导
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:965a5a532dbd19aff4ff154a0af4ee509c68271bb740216ab635582114f2c0b7
 ---
 

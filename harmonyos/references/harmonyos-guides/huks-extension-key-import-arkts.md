@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-extensio
 title: 密钥导入(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 外部密钥管理扩展 > 密钥管理 > 密钥导入(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:04+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1b85187da445369c7a222b90d5eae942e9ebb8cd9b5f191fac6bb5cbed35767b
 ---
 

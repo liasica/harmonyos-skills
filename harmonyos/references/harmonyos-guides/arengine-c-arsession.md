@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ar
 title: 管理AR会话（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 管理AR会话 > 管理AR会话（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-08-14
+scraped_at: 2026-09-10T06:23:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5611e5f7d15c7a4f81915a3966d78edb5fcdb0ded89fbe0df7704845482f4505
 ---
 

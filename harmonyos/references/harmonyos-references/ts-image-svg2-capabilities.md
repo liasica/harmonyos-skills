@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-
 title: SVG标签解析能力增强
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > SVG标签解析能力增强
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:57d6cf5490315e75c9099f1d496424f8c4328b992744562fb6454cca46771d29
 ---
 

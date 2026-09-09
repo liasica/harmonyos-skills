@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-verifi
 title: 申请验证获取正式权限
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 申请验证获取正式权限
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:09+08:00
+scraped_at: 2026-09-10T06:23:19+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:d874622a2c5c1e38c8a3d11a5ed5ae5e12cd05d5b010ec5eceab50fcc6a15d4c
+content_hash: sha256:83a954757f53f67aa3776016dfedb461d804635e011026ac81445c51a8436ee6
 ---
 
 完成[申请运动健康服务](health-apply.md)后，审核通过的权限为测试权限，有100个用户数量的限制。为解除用户数的限制，应用开发完成后，在上架之前，请按照以下步骤提交验证申请，以获取正式权限。完成验证后，您的应用可支持正式大规模商用。
@@ -16,12 +16,12 @@ content_hash: sha256:d874622a2c5c1e38c8a3d11a5ed5ae5e12cd05d5b010ec5eceab50fcc6a
 2. 在项目列表选择项目，并在应用列表下选择需要申请运动健康服务的应用。
 3. 进入**项目设置** > **开放能力管理**页面，点击**运动健康服务**对应的**管理**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/m49qLtRUTPmNM8hHZcELjw/zh-cn_image_0000002712405128.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/4J5VS8P2QXqWq8Y626TVpw/zh-cn_image_0000002747291733.png)
 4. 单击“申请验证”按钮，选择验证的权限，提交审核材料由专家组进行评审，审批周期约为15个工作日，请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/e7JP0gpqToWjN5ntuCGwPg/zh-cn_image_0000002742004123.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/1Xx2S9koS8OC9AUhOMQ0KQ/zh-cn_image_0000002717611786.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/ovLnkHNmRdaDu9k_0DmfJQ/zh-cn_image_0000002712405134.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/ent9boZlS0WWEY0KRIYJsA/zh-cn_image_0000002747291739.png)
 
    审核结果会出现以下两种类型，将以短信和邮件的形式通知您。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-packer-
 title: 使用Image_NativeModule完成多图对象编码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编码 > 使用Image_NativeModule完成多图对象编码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a7b8b97d95fae058da7f767d373658354487114f021b8e76c9aa42d2ab956c22
 ---
 

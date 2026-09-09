@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: nfctech (标准NFC-Tag Nfc 技术)
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > tag > nfctech (标准NFC-Tag Nfc 技术)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:85cefdfeac4491fae0eaee4c3aa8bae5ce2559c1d51e54d624a3f0ab279eddc8
 ---
 

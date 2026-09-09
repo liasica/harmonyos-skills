@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serviceintera
 title: 碰一碰实现设备间交互
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 碰一碰实现设备间交互
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:35+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0eaf5ca8ca0fa21ce0c78d0c5f66ff154d0c2226374afa8fb8548dc7ba71ab45
 ---
 

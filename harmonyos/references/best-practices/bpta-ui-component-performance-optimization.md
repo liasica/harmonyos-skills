@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-ui-compone
 title: UI组件性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > UI组件性能优化
 category: best-practices
-scraped_at: 2026-09-02T15:03:21+08:00
+scraped_at: 2026-09-10T06:30:13+08:00
 doc_updated_at: 2026-08-10
-content_hash: sha256:58acfcb4cad1e644c7ebc1dc3104882e5a510d6ded5d56cb3ecedb3b70a272c1
+content_hash: sha256:57cdad14b24ce7ec13e3f25fcec22a7237341a1cd7ebba966361411dfec8ecb4
 ---
 
 应用启动到UI页面展示过程包含框架初始化、页面加载和布局渲染三个步骤。其中页面加载和布局渲染的主要流程如下：
 
 **图1** 页面首次加载过程流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/kOGJNC9EThGZujcM3Fq-MA/zh-cn_image_0000002229336857.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/qRuAjax3QOqOVBj3gEvpiQ/zh-cn_image_0000002229336857.png "点击放大")
 
 * 在执行页面文件时，前端UI描述会在后端创建相应的FrameNode节点树。该树主要用于处理UI组件属性更新、布局测算、事件处理。每个树节点和前端UI组件是一一对应的关系。
 * FrameNode节点树生成之后，根节点开始创建布局任务。该任务遍历所有子节点并创建子节点的布局包装任务。布局包装任务包括执行相关测算和布局任务。
@@ -29,7 +29,7 @@ content_hash: sha256:58acfcb4cad1e644c7ebc1dc3104882e5a510d6ded5d56cb3ecedb3b70a
 
 **图2** 自定义组件生命周期流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/W5ph77wzSOirXzK5q-9a9g/zh-cn_image_0000002229451353.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/p4Bp8Jd8Rgi1LgaV12Cs6w/zh-cn_image_0000002229451353.png "点击放大")
 
 如上图所示，自定义组件创建完成之后，在build函数执行之前，将先执行aboutToAppear()生命周期回调函数。此时若在该函数中执行耗时操作，将阻塞UI渲染，增加UI主线程负担。因此，应尽量避免在自定义组件的生命周期内执行高耗时操作。对于复杂计算的耗时场景，可以将计算结果进行缓存处理。对于不需要等待结果的高耗时任务，可以采用多线程处理该任务，通过并发的方式避免主线程阻塞。在aboutToAppear()生命周期函数内建议只做当前组件的初始化逻辑，其他业务逻辑可以按需提前或延后处理。假设在首页视频列表中的子组件内需要初始化创建一个复杂播放器对象，该对象的创建非常耗时。若在该组件的aboutToAppear()函数中创建该对象，当首页加载渲染时，列表内每个子组件的渲染都将等待相应的播放器对象初始化创建完成，此时页面加载将非常耗时甚至可能出现白屏。伪代码如下:
 
@@ -145,7 +145,7 @@ struct Index {
 
 可以通过[冷启动分析：Launch分析](../harmonyos-guides/ide-launch-overview.md)工具抓取Trace，根据hiTraceMeter性能打点，查看耗时为1.956ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/HfpMIj6WTEO_Kdr-5aKhWg/zh-cn_image_0000002193851480.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/mGvSstRQTwOcYu4SWbm3uw/zh-cn_image_0000002193851480.png "点击放大")
 
 **正例**
 
@@ -186,7 +186,7 @@ struct Index {
 
 可以通过[冷启动分析：Launch分析](../harmonyos-guides/ide-launch-overview.md)工具抓取Trace，根据hiTraceMeter性能打点，查看耗时为0.071ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/2ITbDX_ESHuoNLPPaFio1A/zh-cn_image_0000002229451345.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/EIjgFCS4SI6QIxmjXeg_YQ/zh-cn_image_0000002229451345.png "点击放大")
 
 **表1** 耗时统计
 
@@ -238,7 +238,7 @@ build() {
 
 **图3** 表格展示头像组件界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/yBnmSzILSZiWAqzq2qHRMw/zh-cn_image_0000002193851484.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/vAJN9bBKQn6KIbH54y4alg/zh-cn_image_0000002193851484.png "点击放大")
 
 使用属性方法的方式给头像组件设置属性，代码如下：
 
@@ -417,10 +417,10 @@ struct Avatar {
 | First Frame - App Phase | 45ms554μs | 45ms638μs | 52ms918μs | 52ms643μs | 44ms603μs | 43ms923μs | 46ms709μs | 46ms355μs |
 
 **图4** 静态注册属性和动态注册属性在不同属性数量下LoadPage耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/dek51_SKTqCmOxwLdR2Udg/zh-cn_image_0000002193851492.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/7u3K6mrbTDWk1igbQXEkgA/zh-cn_image_0000002193851492.png "点击放大")
 
 **图5** 静态注册属性和动态注册属性在不同属性数量下First Frame - App Phase耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/5zDBFUa5QBWVicgInTs9TA/zh-cn_image_0000002229451349.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/uteuoEEFT2ODvFgAgFuNPA/zh-cn_image_0000002229451349.png "点击放大")
 
 可以看到，当注册的属性个数较少时，使用动态注册的方案收益并不明显。当注册的属性个数递增时，动态注册的收益效果同步线性递增。
 
@@ -429,7 +429,7 @@ struct Avatar {
 在ArkUI中使用自定义组件时，在build阶段将在后端FrameNode树创建一个相应的CustomNode节点，在渲染阶段时也会创建对应的RenderNode节点，如下图所示。
 
 **图6** 前后端UI组件树关系图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/ehWePXDSTle7bc5FX-k7mQ/zh-cn_image_0000002229336861.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/pS1hSFJVR56QsIKQ7mPQHQ/zh-cn_image_0000002229336861.png "点击放大")
 
 * 前端UI描述结构会在后端创建相应的FrameNode节点树；
 * FrameNode节点树主要用于处理UI组件属性更新、布局测算、事件处理等业务逻辑；
@@ -448,7 +448,7 @@ struct Avatar {
 
 **图7** 卡片列表界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/rhs7uAlcQ_aUus9IuPr9-w/zh-cn_image_0000002194011052.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/18mliWKrSuawpSc9vgP_1g/zh-cn_image_0000002194011052.png "点击放大")
 
 使用自定义组件方案，示例代码如下：
 
@@ -581,10 +581,10 @@ export struct UserCardList {
 将组件数量从30个递增到3000个，通过profiler获取页面加载标签PageRouterManager::LoadPage和页面UI刷新任务标签UITaskScheduler::FlushTask的耗时，对比两种方案的耗时如下：
 
 **图8** 两种方案LoadPage标签耗时对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/4wJ8ho1IRh656ooATxMyyg/zh-cn_image_0000002193851476.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cmyGJeduSmWRPXNTqpEfaQ/zh-cn_image_0000002193851476.png "点击放大")
 
 **图9** 两种方案UITaskSchedule标签耗时对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/vueXjbPuTvuuljp-niLWPg/zh-cn_image_0000002229451369.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/wnHLKOdVSVq3CMJAmhhjyQ/zh-cn_image_0000002229451369.png "点击放大")
 
 通过对比图可以看到，@Builder方案在页面加载和刷新UI页面（包括布局、渲染和动画）方面优于自定义组件方案。随着组件个数增加，收益也线性增加。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.arkui.StateManagement (状态管理)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.StateManagement (状态管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2e21487737a5fabace09efa82118ffc01f4ed537cdb994502b463635060c1a9c
 ---
 

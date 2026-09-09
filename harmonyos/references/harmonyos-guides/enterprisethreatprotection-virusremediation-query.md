@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisethr
 title: 隔离查询
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Threat Protection Kit（企业威胁防护服务） > 病毒检测与处置 > 隔离查询
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:03+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:22:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:84b73dcf7400d791dcdc28785cd7259bc14aa4b2a0b39a968246c0205782c516
 ---
 

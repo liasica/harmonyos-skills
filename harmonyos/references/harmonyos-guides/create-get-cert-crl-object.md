@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-get-ce
 title: 证书集合及证书吊销列表集合对象的创建和获取
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书集合及证书吊销列表集合对象的创建和获取
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f935ee70eba229a5345d51d3c11f83acf8d3db102ff922c9a445c903c4dca50b
 ---
 

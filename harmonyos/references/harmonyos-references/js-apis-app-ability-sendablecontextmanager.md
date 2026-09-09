@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.sendableContextManager (sendable上下文管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.sendableContextManager (sendable上下文管理)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:17+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:24:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:72731455232a949deb5d3f1cbbe9d2725ef8b0bfc7653b4044e3f2c1de17f36d
 ---
 

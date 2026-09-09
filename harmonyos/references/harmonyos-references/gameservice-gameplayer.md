@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: gamePlayer（基础游戏服务）
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gamePlayer（基础游戏服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6f61ddeeb6b29770c477032a51c4d51594e09336f21907615f0f9370d17bd9f3
 ---
 

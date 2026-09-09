@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.ability.screenLockFileManager (锁屏敏感数据管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.ability.screenLockFileManager (锁屏敏感数据管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:511fc402ca4552e07b849003f8422e1f23433c5b308d06d65a2a0cd8625262db
 ---
 

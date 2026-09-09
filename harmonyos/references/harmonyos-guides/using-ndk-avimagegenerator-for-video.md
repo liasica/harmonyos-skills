@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avi
 title: 使用AVImageGenerator获取视频帧(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 媒体信息查询 > 使用AVImageGenerator获取视频帧(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:18+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:23:01+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e4dd0f181abbe33c073b3c169b45e312ae1cda85f714276761982b1683258afe
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: promotionService(营销服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > promotionService(营销服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:02+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8ecd28f78116b45d7335d521bd85253b55d0bb7d014cfaafecb8a8f8288dfa1f
 ---
 

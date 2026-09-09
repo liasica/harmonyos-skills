@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: FullScreenLaunchComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FullScreenLaunchComponent
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8e8b8175c6a15f3aa91fcffddde8ffa911e90f995b30dc1e48e41c43b51c5a05
 ---
 

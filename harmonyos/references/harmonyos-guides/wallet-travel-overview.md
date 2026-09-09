@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:22+08:00
+scraped_at: 2026-09-10T06:23:32+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:dd5ebcc3df9f51b25ad8abd3a3a1546affe45bbf5abdf70e1a2de535c7c802e8
+content_hash: sha256:1f1734bd82bd3916d1f11ce3149981033d4b9c837ae7c045e67c3b50eb88ec0d
 ---
 
 出行凭证即在用户购买机票或车票后所产生的电子乘车凭据，用户可在华为钱包中方便查看。
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/t20pwlbpSLaNBaWDRpSncQ/zh-cn_image_0000002742124395.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/fry52OGAQ1ikL_QzYFZJMw/zh-cn_image_0000002747211967.png)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -27,15 +27,15 @@ content_hash: sha256:dd5ebcc3df9f51b25ad8abd3a3a1546affe45bbf5abdf70e1a2de535c7c
 
 ### 出行凭证开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/qTqMBH8bQeG99dxyX69AlA/zh-cn_image_0000002712405460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/1Ckn9acnToGOHuFH4aubtQ/zh-cn_image_0000002747292065.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/eyavABb4SZaCy6afwGwmkw/zh-cn_image_0000002742124409.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ZV-AGK5HS5e7cCNfgaxpqA/zh-cn_image_0000002747211981.png)
 
 ### 出行凭证展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/OP-E6fqoR4yyQVvycLIGJg/zh-cn_image_0000002712245502.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/9r6OPgHPQqueFOzWIpOz2w/zh-cn_image_0000002717772046.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/1Ns4cGKeSVOwAib-h0eu3w/zh-cn_image_0000002742004451.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/AhqMiA0GSDaLiUUqveoc5Q/zh-cn_image_0000002717612114.png)
 
 ## 接入流程
 

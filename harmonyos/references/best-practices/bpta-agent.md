@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-agent
 title: 智能体场景开发案例
 breadcrumb: 最佳实践 > AI使能 > 智能体场景开发案例
 category: best-practices
-scraped_at: 2026-09-02T15:03:21+08:00
+scraped_at: 2026-09-10T06:30:11+08:00
 doc_updated_at: 2026-08-10
-content_hash: sha256:ea31520c806aac6a61f2e846685caeb85214d051b7545564f43152b461447889
+content_hash: sha256:bc6ef612ca6aca82e2725d3a4acd3ea2e300953d9cf5a1e7e5dc48a98fa4ad2b
 ---
 
 ## 简介
@@ -32,7 +32,7 @@ content_hash: sha256:ea31520c806aac6a61f2e846685caeb85214d051b7545564f43152b4614
 
 准备条件：真机调试及端插件开发需在HarmonyOS 5.1.0 Release及以上版本的设备上进行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/12wZ2bsWTIOo1sNHajXRjQ/zh-cn_image_0000002358083477.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/uFptFGHATL6YSdjES10JQg/zh-cn_image_0000002358083477.png "点击放大")
 
 ### 模式选择
 
@@ -52,7 +52,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 不同编排模式的智能体，能力拓展部分的功能点也会有所区别。各编排模式的区别可参考开发者指导文档[智能体分类](../service/differences-in-arrangement-modes-0000002471344117.md)，开发者可根据不同模式的区别，考虑使用场景应该适配何种编排模式的智能体，选择对应的编排模式，并设定智能体相关信息，便可创建对应模式的智能体。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Di5d2tNUQIiY8X0aFbzrUg/zh-cn_image_0000002490331108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/1syRJcXGSTmQG-aS9lVwDw/zh-cn_image_0000002490331108.png "点击放大")
 
 ### 智能体编排
 
@@ -60,9 +60,9 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 以下为LLM模式和工作流模式的编排页面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/E8jWI2V8RUq1NdcuL4BEVQ/zh-cn_image_0000002522373909.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/rqdXVze7SoKqvIG0E5f44g/zh-cn_image_0000002522373909.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/wdpogd2FQmGjHjrTVri0wg/zh-cn_image_0000002490496464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/i5z0eiLgRsyNroNllSWllw/zh-cn_image_0000002490496464.png "点击放大")
 
 ### 功能验证
 
@@ -109,7 +109,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 1. 调试测试：调试与预览界面可以进行交互测试，预览实际交互场景，也可点击右上角调试按钮，进入调试详情页，查看详细的调测信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/uNqTckB5SOec7-OT80VgOQ/zh-cn_image_0000002358083481.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/wmw_FAOcT9CgA0wr9CnFBg/zh-cn_image_0000002358083481.png "点击放大")
 2. 真机测试：点击调试与预览页面右上角的真机测试，可发布真机测试。真机测试前需配置白名单，开发者（团队账户需管理员权限）可通过新增组来管理真机调试用户，每个团队最多可创建100个用户组，每个用户组最多可添加100个用户。 开发者在服务发布至真机调试后，处于真机调试用户白名单中的用户可以访问到该开发测试服务，详见开发者指导文档[真机测试](../service/list-of-user-groups-for-real-machine-testing-0000002471264273.md)。
 
 **上架升级**
@@ -440,10 +440,10 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
       |  |  |
    3. 按照任务执行顺序连接对应节点
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/VxXk9BpVTOChatjR0zOBEQ/zh-cn_image_0000002358003581.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Nw6MNhctQxqm6JAOg5DOQA/zh-cn_image_0000002358003581.png "点击放大")
 3. 测试上架：点击【试运行】后，进入调试页面，可自行测试整体流程（无法在小艺开放平台调试端插件适配情况，只能测试工作流整体流程）。测试无误后，点击【上架】，进入上架审核阶段，待审核通过，即可在智能体中添加插件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/STHE0cRFRq-Ecvo7heogsA/zh-cn_image_0000002324005016.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/vWqLPGYcRKORV5uKXCkMbw/zh-cn_image_0000002324005016.png "点击放大")
 
 **工作流模式智能体编排**
 
@@ -465,7 +465,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[上/下架、升级流程介绍](../service/process-introduction-0000002509696971.md)。上架完成后，可在端侧小艺的智能体页面搜索查询到创建的智能体并使用。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/UymT8ZQ4Rve09TyajVeEiw/zh-cn_image_0000002358003589.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/yUM6wQv5QQeN2JhynijVsA/zh-cn_image_0000002358003589.png "点击放大")
 
 ## 总结
 

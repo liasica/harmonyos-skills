@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-inten
 title: 使用配置文件开发意图
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 意图框架开发指导 > 开发意图 > 使用配置文件开发意图
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2ae0a7203b0fe96fc1b0351576c2cf19dbf1196aab7be25131b8e6a614b22833
 ---
 

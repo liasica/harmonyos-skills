@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-adap
 title: Web页面视频适配
 breadcrumb: 最佳实践 > 应用框架 > ArkWeb > Web页面视频适配
 category: best-practices
-scraped_at: 2026-09-02T15:03:17+08:00
+scraped_at: 2026-09-10T06:30:02+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:90803db463a08a6670f49ae7819fe251e6d8086d8bbbffb85cc643083f7eb0ee
+content_hash: sha256:32006ed07e6a2feffaa04c552f5e4880ed5bfdd0f16fe183116b075ad9ebacd3
 ---
 
 ## 概述
@@ -24,12 +24,12 @@ content_hash: sha256:90803db463a08a6670f49ae7819fe251e6d8086d8bbbffb85cc643083f7
 
 **图1** 默认情况下进入视频全屏播放效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/VknDZ5F7T0ucOQra7ARRQg/zh-cn_image_0000002651587052.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/YhNud-OhTMqrC2Aaio-iVg/zh-cn_image_0000002651587052.gif)
 
 ### 实现原理
 
 **图2** Web页面适配全屏播放视频流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ReRQg8RfTWajHfmCRTb9tA/zh-cn_image_0000002229335673.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/fO7kJjTKRn-svmQ5cWmq3g/zh-cn_image_0000002229335673.png "点击放大")
 
 全屏播放视频首先需要Web页面做沉浸式展示，才能保证在进入全屏显示后，视频能够在非安全区展示。具体实现可以参考[开发应用沉浸式效果](../harmonyos-guides/arkts-develop-apply-immersive-effects.md)。
 
@@ -43,7 +43,7 @@ content_hash: sha256:90803db463a08a6670f49ae7819fe251e6d8086d8bbbffb85cc643083f7
 * 若为使用Navigation加载的页面，则可在NavDestination的[onBackPressed()](../harmonyos-references/ts-basic-components-navdestination.md#onbackpressed10)回调中，同样通过调用[exitFullScreen()](../harmonyos-references/arkts-apis-webview-nativemediaplayerbridge.md#exitfullscreen12)退出全屏。
 
 **图3** Web页面适配全屏播放效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/LCzN3yxxSYW3VJYcFOLEcQ/zh-cn_image_0000002681626841.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/XIVtXePWRSW5p-4DQOj37A/zh-cn_image_0000002681626841.gif)
 
 ### 实现步骤
 
@@ -162,7 +162,7 @@ content_hash: sha256:90803db463a08a6670f49ae7819fe251e6d8086d8bbbffb85cc643083f7
 长按复制视频链接经常被应用于社交分享的场景，用户在应用内看到感兴趣的视频内容希望分享给周边的人，通过长按希望分享的视频选中“复制视频链接地址”选项，可以帮助用户快捷准确地获取到视频的链接地址。
 
 **图4** 长按复制视频链接地址效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/QzP6jOIyRSSnIXI0Bd77LQ/zh-cn_image_0000002651427152.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/CspEmCUwQwKhE6rAhqICEQ/zh-cn_image_0000002651427152.gif)
 
 ### 实现原理
 
@@ -327,7 +327,7 @@ content_hash: sha256:90803db463a08a6670f49ae7819fe251e6d8086d8bbbffb85cc643083f7
 ### 实现原理
 
 **图5** 长按下载视频整体适配流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/hQUWb8C8T6aTurEn8nYrKQ/zh-cn_image_0000002194009868.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Tu4dxT1rQbWUPMJj10I-KQ/zh-cn_image_0000002194009868.png "点击放大")
 
 长按视频区域后，可通过在[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)接口中的事件参数[event.param.getSourceUrl()](../harmonyos-references/arkts-basic-components-web-webcontextmenuparam.md#getsourceurl9)获取到视频链接地址。
 
@@ -341,7 +341,7 @@ content_hash: sha256:90803db463a08a6670f49ae7819fe251e6d8086d8bbbffb85cc643083f7
 通过Web组件关联的WebviewController调用[startDownload()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#startdownload11)并传入视频链接地址触发下载。
 
 **图6** 长按下载视频效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/hJHHNDJ2TCKP6bDsg-dwLA/zh-cn_image_0000002681786659.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/_kSySFQNQkuh4gkc0UJmlA/zh-cn_image_0000002681786659.gif)
 
 ### 开发步骤
 

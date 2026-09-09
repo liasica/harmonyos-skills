@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-ove
 title: USB串口通信服务开发概述
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口通信服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:32+08:00
-doc_updated_at: 2026-03-17
-content_hash: sha256:e1e7b4b176890c5fdc65423d78d26321865de86cc8781e71d89f406fa52f9fc3
+scraped_at: 2026-09-10T06:22:39+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:221eccb04e405cfcf74ee5c7c87db9b1d049c4372c25093847f4f71a92dd47b0
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ USB串口服务主要包括两个阶段：
 
 **图1** USB串口收发数据流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/QiFm9wmJRNm3f5bsk34_Xw/zh-cn_image_0000002742003565.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ElaqKr5JSBmtbQQSUCyqzg/zh-cn_image_0000002717611232.png)
 
 ### 约束和限制
 
@@ -57,7 +57,7 @@ USB串口服务主要包括两个阶段：
   DevEco Studio作为开发工具，是进行USB串口通信服务开发必备条件之一，开发者可以使用该工具进行开发、调试、打包等操作。请[下载安装](https://developer.huawei.com/consumer/cn/download/)该工具，并参考[DevEco Studio使用指南](../harmonyos-guides-V14/ide-tools-overview-V14.md)中的[创建工程及运行](../harmonyos-guides-V14/ide-create-new-project-V14.md)进行基本的操作验证，保证DevEco Studio可正常运行。
 * SDK版本配置：
 
-  本模块提供的ArkTs接口，所需SDK版本为API19及以上才可使用。
+  本模块提供的ArkTS接口，所需SDK版本为API19及以上才可使用。
 
 ### 搭建环境
 

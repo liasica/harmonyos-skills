@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-common-
 title: Image Kit常见崩溃报错问题
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit常见问题 > Image Kit常见崩溃报错问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-08-21
+scraped_at: 2026-09-10T06:22:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1171f2e8ace9b379ecc01ea32c4889ef07f16107249957a9f52be7ae322d0416
 ---
 

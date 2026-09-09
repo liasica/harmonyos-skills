@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-scene
 title: sceneMap（场景化控件）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > sceneMap（场景化控件）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6fe3528634cbe334c148510de4903d79c4fdf5e96ebf63d6fa3b02d89ed88792
 ---
 

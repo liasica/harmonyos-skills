@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-js-sync
 title: 同步（备份恢复）关键资产(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit开发指导(ArkTS) > 同步（备份恢复）关键资产(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e741453b9855ac19b56c79a52b0f17221e1b8a06f9d8905644cc7b5b1d60ece3
 ---
 

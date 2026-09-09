@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_child_process.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > native_child_process.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8d3ccebbf6df0f2c5099316635c8a8a50f80e747c31b64a7380a4f4d0eb9e80b
 ---
 

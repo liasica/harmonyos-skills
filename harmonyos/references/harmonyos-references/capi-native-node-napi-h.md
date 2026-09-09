@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_node_napi.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node_napi.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:89e9b4dd2c8d5ef1c816b25797c436d10691c36b7ce61ff60bf29fba51c845fe
 ---
 

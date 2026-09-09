@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Font)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Font)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:41+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:28:46+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1f30d973aff930cac53a0f07f3d2e952fe02f8a41dbce5ff285ecd92286a89b4
 ---
 

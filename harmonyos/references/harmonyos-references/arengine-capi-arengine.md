@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AR Engine
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 模块 > AR Engine
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4f244394360753914b0af33632ea5faaaba595543764ad8df3b69996fac563f1
 ---
 

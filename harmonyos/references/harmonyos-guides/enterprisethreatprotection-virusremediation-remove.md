@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisethr
 title: 文件隔离删除
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Threat Protection Kit（企业威胁防护服务） > 病毒检测与处置 > 文件隔离删除
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:03+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:22:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d8040382fec87e921bb0a1a0986b787e19380ccdfb60692e8cfcd70b406724a2
 ---
 

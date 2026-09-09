@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取用户风险等级
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 获取用户风险等级
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9b86f5a277c42f6e45cf63e53178b9b80bfcb08c888dbd89c5dc82e128260fc6
 ---
 

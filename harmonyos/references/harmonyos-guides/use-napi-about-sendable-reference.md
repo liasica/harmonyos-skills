@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用扩展的Node-API接口创建对ArkTS对象的Sendable强引用
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口创建对ArkTS对象的Sendable强引用
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:46+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:23:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9f72715e3a6188c51f3afd4ccd3344564a45cf624b2b9ef20523e5a21df2cf59
 ---
 

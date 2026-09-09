@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-proc
 title: 使用Node-API实现跨语言交互开发流程
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > 使用Node-API实现跨语言交互开发流程
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:23:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:42017042c829fc1251c87f282a2feb1c88a8d6279066f2658a97fd53357dc000
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 碰一碰文件分享
 breadcrumb: 最佳实践 > 自由流转 > 多端协同 > 碰一碰文件分享
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
+scraped_at: 2026-09-10T06:30:08+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:f6d9ab2ebcd757761ef89793ac0a78e99bc34a0bf5056c0f87ec916070b1700e
+content_hash: sha256:f9749b4908fd2fffe9e5c625810a68c6eecbcf74567a1d6aa5538bbed962e2f5
 ---
 
 ## 概述
@@ -28,11 +28,11 @@ content_hash: sha256:f6d9ab2ebcd757761ef89793ac0a78e99bc34a0bf5056c0f87ec916070b
 
 ## 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/1qXwY_pqTnmjSxTDk_KFHQ/zh-cn_image_0000002447912893.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/hXoLfcCGR8C02JWmN1u1Fw/zh-cn_image_0000002447912893.png "点击放大")
 
 碰一碰文件分享基于华为分享服务，通过手机与手机碰一碰或手机与PC/2in1屏幕碰一碰实现文件的跨端传输。应用需实现监听方法[on('knockShare')](../harmonyos-references/share-harmony-share.md#onknockshare)，用户触发碰一碰后即可分享文件至对方设备。文件接收则由分享服务按照[规则](../harmonyos-guides/share-access-one-step.md)处理，存储于图库或文件管理中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/t7fbxGUIRXOu55t74yl_tg/zh-cn_image_0000002414273862.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/dXiqzb46QM-gmXkWn5nHEw/zh-cn_image_0000002414273862.png "点击放大")
 
 PC/2in1设备除了可以默认碰一碰将文件保存到文件管理中，应用还可以注册监听文件接收接口[on('dataReceive')](../harmonyos-references/share-harmony-share.md#ondatareceive)方法，手机分享的文件将存储于应用沙箱目录下。详情可参考[手机与手机碰一碰分享](../harmonyos-guides/knock-share-between-phones.md)、[手机与PC/2in1碰一碰分享](../harmonyos-guides/knock-share-pc-phones.md)。
 

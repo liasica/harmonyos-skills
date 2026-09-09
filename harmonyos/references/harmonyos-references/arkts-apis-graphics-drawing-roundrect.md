@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (RoundRect)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (RoundRect)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:41+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:28:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:39307c7ade56f2b95838cf68d3259b937dea725138a71c8c9930daa65eb15393
 ---
 

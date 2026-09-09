@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/concurrency-f
 title: 并发常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e0d6c22562ebe6285e7dd311f81c6d52dabf87839f0351fb3cac8ddbed912aad
 ---
 

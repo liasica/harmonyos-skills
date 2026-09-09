@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-r
 title: 获取验证ID Token的JWT公钥信息
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力 > 获取验证ID Token的JWT公钥信息
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6e92c18f2bb4dbd7bcc5dc3c484bbf0bbe50e1bfd38632cd1d4564d55c1faf2f
 ---
 

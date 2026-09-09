@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-sp
 title: speechRecognizer（语音识别）
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API > speechRecognizer（语音识别）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:683ad15c29b1541d2d46567b22478b6578f6366bdafc0d1f2378ad668d2e0e7b
 ---
 

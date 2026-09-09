@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-tele
 title: telephony_data.h
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > C API > 头文件 > telephony_data.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:62406be6feb5d0810d37df3453bfdccbb3f76b3a1ec0fced70394d1f023a0dbd
+scraped_at: 2026-09-10T06:27:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9cb7f87fe15c1960900431ba178af0506bcfdffb98e20188ac440a1b2598b053
 ---
 
 ## 概述
@@ -50,4 +50,4 @@ int32_t OH_Telephony_GetDefaultCellularDataSlotId(void)
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 默认移动数据的SIM卡接口 (0 表示卡槽1, 1 表示卡槽2)。 |
+| int32\_t | 默认移动数据的卡槽（0表示卡槽1，1表示卡槽2）。 |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-intents
 title: 共享联系人信息到分享推荐区
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 目标应用处理分享内容 > 共享联系人信息到分享推荐区
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:02+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:47dced9ec66eae5f30f5110f1c6e58164a7620808e152aa6732fcac2e72c2a65
 ---
 

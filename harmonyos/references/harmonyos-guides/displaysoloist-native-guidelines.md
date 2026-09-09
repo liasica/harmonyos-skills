@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/displaysolois
 title: NativeDisplaySoloist开发指导 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 使用可变帧率能力定制不同内容的绘制帧率 > NativeDisplaySoloist开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:64ea5bc70257c84cb56ca2619f782ed6e0bc87712309c3ee3f90b3e1ff6439d3
 ---
 

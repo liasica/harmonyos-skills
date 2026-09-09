@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-swiper
 title: Indicator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > Indicator
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:10+08:00
+scraped_at: 2026-09-10T06:25:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0c6ac5e75c13bd4b4203ce5bdfc98f67b1ae93579a64a030f1d7eb0d06ca17fe
+content_hash: sha256:e145e0b1157b0920c45c91d083da2033fe01f2c71e0009e16fe276662a917b81
 ---
 
 导航点组件，提供圆点导航点以及数字导航点两种导航点样式。
@@ -297,7 +297,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/F5McIjQeQ7i29LNxio5ZhQ/zh-cn_image_0000002742005011.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Hx8SAupJTvC-wLguh8Qmqg/zh-cn_image_0000002717612674.gif)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -359,4 +359,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/cj_qWtWVTz63r-aZtf8KEw/zh-cn_image_0000002712406022.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/1fXbJu80SoudxrpkQ7O5GA/zh-cn_image_0000002747292627.gif)

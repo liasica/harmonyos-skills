@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.socket (蓝牙socket模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.socket (蓝牙socket模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:49+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:70a6dd5f7460713a5d6c034cd7b7ff9f28fae6fac4c65ba03ea7e8412e7be254
+scraped_at: 2026-09-10T06:27:00+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:aa41ce48e4539bca8105dace2ff2bb6cca16aadb1a3a5a4584e34087033cd391
 ---
 
 本模块提供一种蓝牙套接字功能，可实现设备间连接和数据传输。当两个设备间进行蓝牙套接字通信交互时，依据设备功能的不同，可区分客户端与服务端。
@@ -135,6 +135,7 @@ sppAccept(serverSocket: number, callback: AsyncCallback<number>): void
 服务端使用，接受客户端的套接字连接请求。使用Callback异步回调。
 
 * 须在调用[socket.sppListen](js-apis-bluetooth-socket.md#socketspplisten)创建服务端套接字成功后，才能调用该接口监听客户端的连接请求。
+* 该接口是阻塞式接口，直到收到客户端的连接请求。
 * 客户端可通过[socket.sppConnect](js-apis-bluetooth-socket.md#socketsppconnect)向该服务端发起连接请求。
 * 连接建立成功后，即可通过[socket.sppWrite](js-apis-bluetooth-socket.md#socketsppwrite)、[socket.sppWriteAsync](js-apis-bluetooth-socket.md#socketsppwriteasync18)、[socket.sppReadAsync](js-apis-bluetooth-socket.md#socketsppreadasync18)等接口，与客户端进行数据传输。
 * 当服务端不再需要已建立的连接时，可通过[socket.sppCloseClientSocket](js-apis-bluetooth-socket.md#socketsppcloseclientsocket)主动断开指定的客户端套接字连接。

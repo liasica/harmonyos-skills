@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.form.formBindingData (卡片数据绑定类)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formBindingData (卡片数据绑定类)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b5f796e932a5e2382b6b69a571bdafc23c7b87f5380a23cf02b3804958a5cdff
 ---
 

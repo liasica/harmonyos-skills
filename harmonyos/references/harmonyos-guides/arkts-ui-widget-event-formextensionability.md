@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 卡片传递消息给应用（message事件）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面交互 > 卡片传递消息给应用（message事件）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c698210971133b982c7068ed78a8ac42ac4870115ecb3a8cc5bbad932b4cc0cd
 ---
 

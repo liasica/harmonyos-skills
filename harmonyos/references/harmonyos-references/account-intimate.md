@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-i
 title: "@hms.core.account.intimate (华为账号亲密圈)"
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > @hms.core.account.intimate (华为账号亲密圈)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:12b0f852c30252905554eec10f92c98b6aa7d93e82afbf1ec7b45ec2a76e8149
 ---
 

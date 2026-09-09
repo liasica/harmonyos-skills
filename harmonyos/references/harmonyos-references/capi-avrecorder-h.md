@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avre
 title: avrecorder.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avrecorder.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:72f6bce0423bfa21ff4ad45e4b252e53315c3612e0186cf8f45b5b2b62974a19
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-singular
 title: 支持单复数
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用本地化 > 提升可翻译性 > 支持单复数
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:48+08:00
-doc_updated_at: 2026-04-02
+scraped_at: 2026-09-10T06:22:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5268f3485478b6505d9c2a0a1d2feee3dfaa96113fd6238ff2a9dd4e3478bb1b
 ---
 

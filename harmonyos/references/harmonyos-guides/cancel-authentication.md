@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cancel-authen
 title: 认证过程中取消认证
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 认证过程中取消认证
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:04+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ad5d2fc493f658df7e291c0c0280817a50be1bef285acbd037fc523c4db048e7
 ---
 

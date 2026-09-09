@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-imag
 title: 图像跟踪（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 图像跟踪 > 图像跟踪（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:49+08:00
-doc_updated_at: 2026-08-14
+scraped_at: 2026-09-10T06:23:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:616b7c564103443a85b74d7a394b1c4692b9345a12e18df93bd22a0d1b6e5cf6
 ---
 

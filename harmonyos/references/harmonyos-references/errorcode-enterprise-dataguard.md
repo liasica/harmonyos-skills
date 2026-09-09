@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 企业数据保护服务错误码
 breadcrumb: API参考 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > ArkTS API > 企业数据保护服务错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:44+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:26:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4a2c0cb00257354a7b862f2f062cf648aab029892768c974c57753de0710c143
 ---
 

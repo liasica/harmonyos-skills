@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.faultLogger (故障日志获取)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > 已停止维护的接口 > @ohos.faultLogger (故障日志获取)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:54+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:bddf49af0e6824874de9db7d988ee0695ca288b962c6a191fc3526e62dc3bcb8
 ---
 

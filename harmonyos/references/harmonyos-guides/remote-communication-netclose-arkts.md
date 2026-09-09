@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 关闭会话（ArkTS）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 发起HTTP请求，获取响应 > 关闭会话（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b3b7fc0b4f60e1811a29c81d2afc261d0850ee51993e454b17c874824044aa95
 ---
 

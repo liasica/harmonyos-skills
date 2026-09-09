@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-c
 title: 应用配置文件概述
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件 > 应用配置文件概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:21:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9c9dbaf885d635ff66c9b9522fba742c666d6af69486927edab28066594157c6
 ---
 

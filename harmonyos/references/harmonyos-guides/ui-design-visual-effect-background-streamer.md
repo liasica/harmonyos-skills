@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-vis
 title: 背景流光
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 视效 > 背景流光
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:16+08:00
-doc_updated_at: 2026-05-07
-content_hash: sha256:d81198f91bf6a1b77d19ec008d10fcdfe2b0414f78839e2fbe277b4556ed4edc
+scraped_at: 2026-09-10T06:22:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:7f547863fb64ea6baaa900ff31f3313eaef3419d8831bb413140e12667882002
 ---
 
 ## 场景介绍
@@ -52,4 +52,4 @@ content_hash: sha256:d81198f91bf6a1b77d19ec008d10fcdfe2b0414f78839e2fbe277b4556e
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/XU31rQDqTXaUrZdlt0iUrw/zh-cn_image_0000002742003439.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/5rWJGGToRF2NCU1LZs_OJg/zh-cn_image_0000002717611106.jpg)

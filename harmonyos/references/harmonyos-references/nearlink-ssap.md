@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: ssap（星闪SSAP连接能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > ssap（星闪SSAP连接能力）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:56+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:27:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:72256734ce3f89924898e1b6aeff663b379d33b67e84cdc401813ce1b7efd0ca
 ---
 

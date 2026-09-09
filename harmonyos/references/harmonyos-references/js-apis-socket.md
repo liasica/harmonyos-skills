@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.net.socket (Socket连接)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.socket (Socket连接)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9c1bb554fb2c3848f43e6b1fcd91b0506819bfa4e04fe668bf510fba50cc10d5
 ---
 

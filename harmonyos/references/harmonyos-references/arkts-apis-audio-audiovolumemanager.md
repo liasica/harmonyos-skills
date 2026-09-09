@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioVolumeManager)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioVolumeManager)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:01+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2ad7b13318463206ea1ad3b56ca7f6e4405b5fe3558b0ff71103c55d3c666dfd
 ---
 

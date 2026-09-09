@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-window
 title: 使用WindowManager管理多模输入事件 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 使用WindowManager管理多模输入事件 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1414c3b731ca69824e1e30f737f412f1088cc567e89afe51917d899db6d5ccd8
 ---
 

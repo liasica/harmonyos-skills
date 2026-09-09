@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bgtask-design
 title: Background Tasks Kit接入规范
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > Background Tasks Kit接入规范
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:21654de929674fb671d98dc55f06eede2739fa957bb98694463acd0205e01ce3
 ---
 

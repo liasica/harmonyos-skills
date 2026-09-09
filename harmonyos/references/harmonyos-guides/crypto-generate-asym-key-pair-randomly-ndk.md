@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 随机生成非对称密钥对(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 随机生成非对称密钥对(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:cd96392c2a0b2455e5620d9e45e2fd0debe991fb7687a0ebb44f9b1da7342ed1
 ---
 

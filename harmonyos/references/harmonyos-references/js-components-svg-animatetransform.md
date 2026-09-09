@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: animateTransform
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > animateTransform
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:37+08:00
+scraped_at: 2026-09-10T06:25:51+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ddfbe1ebb6907df8932ee32210773dc46c351e3d5653708e313b4a0be99c7ae5
+content_hash: sha256:564cba5d30efb4692679fb0e3c9cebf0d413a57c40f956f6b706770a6d741c6c
 ---
 
 **说明** 
@@ -93,7 +93,7 @@ transform动效，支持的组件范围：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/iKBf07fDRAaxluwS67IO0Q/zh-cn_image_0000002712406716.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rN0itMJfQM67ICknIB7l9g/zh-cn_image_0000002747293257.gif)
 
 动画叠加
 
@@ -148,7 +148,7 @@ transform动效，支持的组件范围：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/hdd-vR7QQU-Bi3MAO6KQ9Q/zh-cn_image_0000002742125663.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/583HGTIhTFm8o27ZBqsYpQ/zh-cn_image_0000002747213173.gif)
 
 涉及组件示例
 
@@ -216,4 +216,4 @@ transform动效，支持的组件范围：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/fFUZblcPR_OzN4xJf6xvaA/zh-cn_image_0000002712246756.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/x2uhJLP1TgK5m_TCSBILaw/zh-cn_image_0000002717773238.gif)

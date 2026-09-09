@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-navi-matr
 title: 批量算路
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 路径规划 > 批量算路
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:58+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:95f4d8f71e6db3c71fb99eccaf9b0c33f148dff49c699109cb8b72eafc55a5f2
 ---
 

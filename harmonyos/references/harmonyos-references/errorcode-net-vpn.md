@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: VPN错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > VPN错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:139f15e1109406259e73a09db3fdec97737107c6a9e74c2b2d2d8afe7b128096
+scraped_at: 2026-09-10T06:27:16+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:f6c0f79c942fe46a045ba7158de8a0fa1f8f74132330d8b9a97225f35ea6294f
 ---
 
 **说明** 
@@ -156,4 +156,5 @@ VPN系统内部错误。
 
 **处理步骤**
 
-检查VPN系统服务是否正常。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 检查VPN系统服务是否正常。如果问题仍然存在，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。

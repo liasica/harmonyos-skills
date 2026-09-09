@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deflate-and-i
 title: 压缩与解压
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 压缩与解压 > 压缩与解压
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:198b8e01c17414a612ca668d2b9928d4f58359a2269834881702c89431f369d2
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ipc-
 title: ipc_cparcel.h
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > C API > 头文件 > ipc_cparcel.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:544376a8b7b63de8b191ea801f29bf0cdde25223e2e7304dcc2ba8c3780d8d28
 ---
 

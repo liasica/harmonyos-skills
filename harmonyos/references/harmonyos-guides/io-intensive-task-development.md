@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/io-intensive-
 title: I/O密集型任务开发指导 (TaskPool)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 耗时任务并发场景 > I/O密集型任务开发指导 (TaskPool)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5305a4cec24bee20f2e775f5d39a6fdcbd4f9f6931128514fc851f8e90653ac0
 ---
 

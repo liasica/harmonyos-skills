@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-recordi
 title: 录音无声定位指导
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit常见问题 > 录音无声定位指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7bd6b811ac78375515cdf21568f78124c2f096dda65254ba58159907c4d3bc85
 ---
 

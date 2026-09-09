@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sign-sig-verify-overview
-title: 签名验签介绍及算法规格
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签介绍及算法规格
+title: 签名验签
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3f45527c1c64d28c9b08f0027ff5c9c7415dda903d014a791eadb42072ba3ea3
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-ge
 title: 密钥生成与转换
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:78d570cc9662279db61bcddaa9fff0ddcb97472bae57131935388b7a151ce836
 ---
 

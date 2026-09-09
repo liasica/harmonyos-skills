@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-ove
 title: 用户文件概述
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 用户文件概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-07-17
+scraped_at: 2026-09-10T06:22:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:eb2d90077a94a593534bfe27b5c3234f79dabcd03fc48b76d9b038b6e7bfabe8
 ---
 

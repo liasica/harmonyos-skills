@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-sign-sig-verify-ndk
 title: 使用RSA密钥对签名验签(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签介绍及算法规格 > 使用RSA密钥对签名验签(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用RSA密钥对签名验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5ceeff28547adeb28be10b923984f1b3fd6df5d4e0e13c19fe86de97dc780860
 ---
 

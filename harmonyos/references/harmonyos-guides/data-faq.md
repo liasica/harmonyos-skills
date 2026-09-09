@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-faq
 title: ArkData常见问题
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > ArkData常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:21:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3fa5c532f60fef6822339ff71dfe3eabcf87500b7f49d106761c2ca96de402c6
 ---
 

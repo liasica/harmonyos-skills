@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handw
 title: HandwriteComponent（手写套件组件）
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > ArkTS组件 > HandwriteComponent（手写套件组件）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0fd2cddbcaede1d5e5c67074fa682fc21d31f64e0deae25ba98a560a247ee95e
 ---
 

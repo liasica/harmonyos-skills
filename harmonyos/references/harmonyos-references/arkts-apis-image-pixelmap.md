@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PixelMap)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (PixelMap)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:31+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c2c065ccbd233a7d69594a48ebb69964b015827f2f053497987b8eb85436440c
 ---
 

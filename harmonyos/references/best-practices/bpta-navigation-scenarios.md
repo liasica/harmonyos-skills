@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-navigation
 title: 导航定位场景低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 导航定位场景低功耗规则
 category: best-practices
-scraped_at: 2026-09-02T14:53:45+08:00
+scraped_at: 2026-09-10T06:30:14+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2634f4745876342bea9cee41af65359f801d5a2941505bb19cb3a4f7925cbb36
+content_hash: sha256:933aabf133c5f9c54acb1b3193ffffe072c63680998d67a5eaa31723b26d4344
 ---
 
 ## 规则
@@ -56,14 +56,14 @@ audio.createAudioRenderer(audioRendererOptions, (err, data) => {
   ```
 * 执行效果如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/79KRNWATQiOgRCefL-rhhA/zh-cn_image_0000002229450993.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/z95crIOKRHSAvCCxtFxGFw/zh-cn_image_0000002229450993.png "点击放大")
 
 ## 结果对比
 
 * 优化前：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/tSmdpp1ZT8W76vEjZcOT4g/zh-cn_image_0000002193851136.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/OEZ4OvXsTBmw1U-b3apXXA/zh-cn_image_0000002193851136.png "点击放大")
 
 * 优化后，图中字段证明系统低功耗方案使能成功（根据实验室测试功耗，功耗负载降低约43.89%。）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/cKND9THWSKy8vX6LmL6Wyw/zh-cn_image_0000002194010716.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/jbwyB7C-QuG7hHcWgS3jAQ/zh-cn_image_0000002194010716.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-shared-bic
 title: 快捷骑行体验
 breadcrumb: 最佳实践 > 行业场景解决方案 > 出行导航 > 快捷骑行体验
 category: best-practices
-scraped_at: 2026-09-02T15:03:20+08:00
+scraped_at: 2026-09-10T06:30:11+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:a602f365e1585a6b975f8b9ff2f7ee9fc837a4d05a276935e9c5b3230f02c316
+content_hash: sha256:bed7ac8334bf04ee3b6080b5fc373e6b263f9d83b3d926a52868c25514d601ce
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:a602f365e1585a6b975f8b9ff2f7ee9fc837a4d05a276935e9c5b3230f0
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/H54w0lSSQ5eMXjCNQ8AhXg/zh-cn_image_0000002229450033.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Zwt51f1BQuq56Lt4qphWZg/zh-cn_image_0000002229450033.gif)
 
 ## 场景说明
 
@@ -55,15 +55,15 @@ content_hash: sha256:a602f365e1585a6b975f8b9ff2f7ee9fc837a4d05a276935e9c5b3230f0
 
 左图展示了当前骑行场景的流程，右图展示了优化后的流程。优化后，省去了在应用间切换和寻找功能入口的步骤，简化了用户操作，提升了用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/ATUHqBRTQ2K55ngs4XVLpQ/zh-cn_image_0000002193850172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/K3X23TF0RM29AIoY92z8dQ/zh-cn_image_0000002193850172.png)
 
 ### 骑行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/X57tUcU2S_CASlNxlz0ABg/zh-cn_image_0000002194009740.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/P4-8MXL8QXWIurq7xGgQ1w/zh-cn_image_0000002194009740.png)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/ovOgLHLxRF2LXpgGBTpLbA/zh-cn_image_0000002193850156.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/kgJ1VDzSQ9y_W_dIlSYlHg/zh-cn_image_0000002193850156.png "点击放大")
 
 ## 扫码解锁
 
@@ -71,13 +71,13 @@ content_hash: sha256:a602f365e1585a6b975f8b9ff2f7ee9fc837a4d05a276935e9c5b3230f0
 
 在首页或者共享单车页面，点击扫码进入扫码界面，可以使用后置摄像头进行扫码，也可以点击图库选择二维码图片进行扫码。“扫码直达”相关的使用请参见“[接入扫码直达服务](../harmonyos-guides/scan-directservice.md)”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/EWHlwy2HR8ew9bQquD0v6g/zh-cn_image_0000002229335549.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/1sDTTSGGQqqdBDeqqI7Cyw/zh-cn_image_0000002229335549.gif)
 
 ### 时序图
 
 主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/pkd_DkfxQT-ttLP0P-98sQ/zh-cn_image_0000002193850148.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/aIzt9xM2R6uMsHHLlGToKQ/zh-cn_image_0000002193850148.png "点击放大")
 
 ### 关键点说明
 
@@ -142,11 +142,11 @@ export class ScanUtil {
 
 进入找车页面后，可以点击任意位置模拟自行车的所在地，地图将进行步行路线规划并增加标记点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/mJzozi2LT1qAXI_xMUEdXw/zh-cn_image_0000002193850168.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/m1NMcTwWS5qccsd6fNLQKQ/zh-cn_image_0000002193850168.gif)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/b9OQxaGVTDW7jGY8sf66Cw/zh-cn_image_0000002194009744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/W1E3vLnoRuOFadefC-MX8w/zh-cn_image_0000002194009744.png "点击放大")
 
 ### 关键点说明
 
@@ -336,11 +336,11 @@ public static async paintRoute(routeResult: navi.RouteResult, mapPolyline?: map.
 
 点击解锁后，实况窗显示骑行状态。完成还车、支付等操作后，实况窗的状态实时更新。支持在锁屏、通知中心显示卡片，状态栏显示胶囊形态。点击状态栏的胶囊后，展开悬浮卡片，方便用户查看骑行状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/pZU-YdjORT6cbMFNTSqe3w/zh-cn_image_0000002229335553.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/zH96QtWoRG2UnSucYn-XdA/zh-cn_image_0000002229335553.gif)
 
 ### 时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/vIL5mnDxTg2WynTv9D81_g/zh-cn_image_0000002194009760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/eW3ok_XOSrGKZtd6IPeoLA/zh-cn_image_0000002194009760.png "点击放大")
 
 ### 关键点说明
 

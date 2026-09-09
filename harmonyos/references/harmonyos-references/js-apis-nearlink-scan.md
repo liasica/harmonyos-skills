@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.scan (星闪扫描能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.scan (星闪扫描能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1e54c0b2fac39f1b5280b4f4180b5ba9b1db88175a4430b1fbd6a8ef06318df1
 ---
 

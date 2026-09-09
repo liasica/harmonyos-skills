@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohpr
 title: ohprint.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > ohprint.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8ed3ed23746a5b10303edea0817b3e5af3663e83db40d36bc9af2cea5e07df73
 ---
 

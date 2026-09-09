@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-issu
 title: 查询是否支持星闪
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > 查询是否支持星闪
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2d04a1a630c22a604dad257e8b80f8ab48131c2de53a90ce564e262f36c844dd
 ---
 

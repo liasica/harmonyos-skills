@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-faq-abou
 title: 稳定性相关问题汇总
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API常见问题汇总 > 稳定性相关问题汇总
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:46+08:00
+scraped_at: 2026-09-10T06:23:57+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:da9c57e8d38cea4a0a787b3a1fc4bd31eb1b8bed6d0c531ee6975c2781ab3a14
+content_hash: sha256:8aa54589899a4b9b34ce5d906982872b98006238cf4fbc845996a072b444b60f
 ---
 
 ## 应用运行过程中出现高概率闪退怎么进行定位解决
@@ -41,7 +41,7 @@ Tid:15894, Name:e.myapplication
 
    DevEco Studio开关：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/cTG_rTEOQwmU22C8Xct2wA/zh-cn_image_0000002712405656.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/rRPeWuGMRYG888xsmwo8HQ/zh-cn_image_0000002747292261.png)
 2. 使用Node-API接口时入参非法导致。
 
 * 这种情况一般是崩溃栈上的so会很浅，so调用了某个具体的Node-API接口，比如调用了napi\_call\_function之类的接口，然后Node-API又调到了libark\_jsruntime的so，然后直接崩溃在libark\_jsruntime里面。

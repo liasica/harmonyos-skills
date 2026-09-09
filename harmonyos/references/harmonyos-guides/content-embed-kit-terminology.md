@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: Content Embed Kit术语
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > Content Embed Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:11+08:00
+scraped_at: 2026-09-10T06:22:17+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:51286731eafa80b1848d9b8bc2859d0262637895335e0437c7c6b739e049635b
+content_hash: sha256:a7331cc04a5e41991c05a69930a98a9d0d38a39f4e5fee3875a278f76c3ee882
 ---
 
 本文介绍Content Embed Kit相关术语。
@@ -26,7 +26,7 @@ OE是Object Editor（对象编辑）的缩写，代表HarmonyOS提供的对象�
 
 OE文档是一种采用结构化存储的复合文件，结构化存储定义了如何将单个文件视为有两种类型对象（存储对象和流对象）组成的层次化集合，这两种对象分别表现为目录和文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/GM_0vWsxSBCcjhOzjw0BHg/zh-cn_image_0000002742003303.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vfYM2uNtQA-VyKdH6Z43pA/zh-cn_image_0000002717610970.jpg)
 
 * root storage对象：在复合文件中，这个特殊的存储对象扮演着“根节点”的角色。它不仅是storage对象和stream对象层级结构的**最顶层父对象**，在访问任何子存储对象或流对象之前，必须先访问它。
 * storage对象：复合文件中的一个对象，类似于文件系统中的目录。storage对象的父对象必须是另一个storage对象或root storage对象。

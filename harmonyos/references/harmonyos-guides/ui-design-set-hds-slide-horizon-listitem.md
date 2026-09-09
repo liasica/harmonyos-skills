@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-set
 title: 设置附带横滑的列表样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 列表 > 设置附带横滑的列表样式
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f085271fe92476e87ab6a5f795c3d09677150e9484082100d0d88aa4c80b3f67
+scraped_at: 2026-09-10T06:22:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:18b5958d4484b49caaa18fd0e079e4ca51f5c6b31e901ae555bcab99281e536b
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:f085271fe92476e87ab6a5f795c3d09677150e9484082100d0d88aa4c80
 
 应用使用[HdsListItem (列表项)](../harmonyos-references/ui-design-hdslistitem.md)组件实现多设备上的系统列表的横滑动效按钮的内容和样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/fKlwbVy6QLmOfwx3Ww_JHA/zh-cn_image_0000002742003435.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/YPXUfH-gRLaUyEe5JIyoTg/zh-cn_image_0000002717611102.gif)
 
 ## 开发步骤
 

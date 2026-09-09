@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.form.FormExtensionAbility (FormExtensionAbility)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.FormExtensionAbility (FormExtensionAbility)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:19+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:26:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d0fbec8c851f790da79927e1821b25f3f30a5873ced93f6570e55fdf0b2ac838
 ---
 

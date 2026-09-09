@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-child-p
 title: 子进程开发指导（ArkTS）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 扩展进程开发指导 > 子进程开发指导（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:21:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:bdfccda51f02c8b70a3d59499663529d64e47b7411e96cf5e0af1c0b88251a59
 ---
 

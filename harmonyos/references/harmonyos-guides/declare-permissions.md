@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permi
 title: 声明权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 声明权限
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:465984b51a56cf91f5388aa392ff05877943b6424510910fe73ae63760be694f
 ---
 

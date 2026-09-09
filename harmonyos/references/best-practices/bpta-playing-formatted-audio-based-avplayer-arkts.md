@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-fo
 title: 基于AVPlayer播放格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AVPlayer播放格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-09-02T15:03:17+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:94903365fe4af26eebfe9c1b98debf729509fe4da0d8e8c532dfe091e53fa6b4
+scraped_at: 2026-09-10T06:30:03+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:02cd9789bceb92dea99c98eed7429b21f0cf19610269b1c55daed5c1bde3daf7
 ---
 
 ## 概述
@@ -14,14 +14,14 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 本文是音频播放系列文章的第3篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/TK2AUjGeRd2aAcop0kIQSQ/zh-cn_image_0000002555217523.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/-7JoaTcPTn2NUhiOIow9bQ/zh-cn_image_0000002524217626.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/RbI0jrvARIC_Q1I7d-nC7w/zh-cn_image_0000002555337497.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9kLDew5oQECl4XRlJyJKGg/zh-cn_image_0000002555217523.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/1i_0thczR8-z1YLLWJd3ug/zh-cn_image_0000002524217626.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/ttUyXqYnR9mWCoM8g0Yi2g/zh-cn_image_0000002555337497.gif "点击放大")
 
 ## 场景分析
 
 | 场景名称 | 描述 | 实现方案 |
 | --- | --- | --- |
-| [基础播控](bpta-playing-formatted-audio-based-avplayer-arkts.md#section1764813377511) | 音频资源的加载、播放、暂停、退出等操作。 | 使用[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)接口实现。 |
-| [跳转播放](bpta-playing-formatted-audio-based-avplayer-arkts.md#section16920851193717) | 滑动进度条精准跳转到指定时间进行播放。 | 使用[Slider组件](../harmonyos-references/ts-basic-components-slider.md)实现进度条，在[onChange()](../harmonyos-references/ts-basic-components-slider.md#onchange)回调中触发进度调节获取目标时间，使用AVPlayer的[seek()](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)接口，跳转到目标时间。 |
+| [基础播控](bpta-playing-formatted-audio-based-avplayer-arkts.md#section1764813377511) | 音频资源的加载、播放、暂停、退出等操作。 | 使用[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)接口实现。 |
+| [跳转播放](bpta-playing-formatted-audio-based-avplayer-arkts.md#section16920851193717) | 滑动进度条精准跳转到指定时间进行播放。 | 使用[Slider](../harmonyos-references/ts-basic-components-slider.md)组件实现进度条，在[onChange()](../harmonyos-references/ts-basic-components-slider.md#onchange)回调中触发进度调节获取目标时间，使用AVPlayer的[seek()](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)接口，跳转到目标时间。 |
 | [静音播放](bpta-playing-formatted-audio-based-avplayer-arkts.md#section125715278533) | 点击按钮设置静音播放。 | 使用AVPlayer的[setMediaMuted()](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)控制静音状态。 |
 | [切换歌曲播放](bpta-playing-formatted-audio-based-avplayer-arkts.md#section590418431566) | 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。 | 使用[reset()](../harmonyos-references/arkts-apis-media-avplayer.md#reset9-1)接口重置播放器状态，给AVPlayer的fd或fdSrc属性赋值为新的歌曲资源，实现播放不同的功能。 |
 | [倍速设置](bpta-playing-formatted-audio-based-avplayer-arkts.md#section189460361122) | 滑动倍速调节面板调节播放速度。 | 使用[setSpeed()](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)接口设置播放倍速。 |
@@ -34,17 +34,17 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 ### 场景描述
 
-通过[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
+通过[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/R2knoSn6QfSdfgEXC10EaQ/zh-cn_image_0000002524057632.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/fFIQq4dBSYKd-iQkplkP9Q/zh-cn_image_0000002524057632.gif "点击放大")
 
 ### 实现原理
 
-核心原理是使用[AVPlayer](../harmonyos-references/arkts-apis-media-avplayer.md)接口实现播放、暂停等功能，需要特别注意的是，AVPlayer播放器在执行不同的操作前，必须要保证此时处于正确的状态，比如执行播放操作前，只有当前状态在prepared/paused/completed时，才能正确执行，否则系统可能会抛出异常或生成其他未定义的行为。AVPlayer的播放状态和不同接口间的关系参考[使用AVPlayer播放视频](../harmonyos-guides/video-playback.md)一节中的播放状态变化示意图。
+核心原理是使用[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)接口实现播放、暂停等功能，需要特别注意的是，AVPlayer播放器在执行不同的操作前，必须要保证此时处于正确的状态，比如执行播放操作前，只有当前状态在prepared/paused/completed时，才能正确执行，否则系统可能会抛出异常或生成其他未定义的行为。AVPlayer的播放状态和不同接口间的关系参考[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)一节中的播放状态变化示意图。
 
 主要的开发步骤如下：
 
-1. 开发者可以通过[createAVPlayer()](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)构建一个AVPlayer实例，创建成功后，此时播放器处于idle状态。
+1. 开发者可以通过[media.createAVPlayer()](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)构建一个AVPlayer实例，创建成功后，此时播放器处于idle状态。
 2. 注册[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)回调，主动获取当前状态变化。
 
    **注意** 
@@ -67,7 +67,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 ### 开发步骤
 
-1. 通过[createAVPlayer()](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)创建一个AVPlayer实例。
+1. 通过[media.createAVPlayer()](../harmonyos-references/arkts-apis-media-f.md#mediacreateavplayer9)创建一个AVPlayer实例。
 
 ```typescript
 // Initialize the player
@@ -86,7 +86,7 @@ public async initAVPlayer() {
 
 2. 注册[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)回调，主动获取当前状态变化。
 
-```typescript
+```screen
 // Watch state
 private stateChangeCallback() {
   if (!this.avPlayer) {
@@ -119,7 +119,7 @@ private stateChangeCallback() {
 
 3. 注册[on('error')](../harmonyos-references/arkts-apis-media-avplayer.md#onerror9)回调，发生异常后，监听错误事件。
 
-```typescript
+```screen
 private errorCallback() {
   if (!this.avPlayer) {
     return;
@@ -132,7 +132,7 @@ private errorCallback() {
 
 4. 通过[url](../harmonyos-references/arkts-apis-media-avplayer.md#属性)、[fdSrc](../harmonyos-references/arkts-apis-media-avplayer.md#属性)等属性设置播放资源。
 
-```typescript
+```screen
 async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
   if (!songRawFileDescriptor) {
     Logger.error(TAG, `loadSongAssent faile : songRawFileDescriptor get failed`);
@@ -142,13 +142,13 @@ async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
     return;
   }
   this.avPlayer.fdSrc = songRawFileDescriptor;
-  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}，curState is ${this.avPlayer?.state}`);
+  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}, curState is ${this.avPlayer?.state}`);
 }
 ```
 
 5. 执行[prepare()](../harmonyos-references/arkts-apis-media-avplayer.md#prepare9)接口准备播放音频。
 
-```typescript
+```screen
 // Prepare the player
 public async prepare() {
   if (!this.avPlayer) {
@@ -166,7 +166,7 @@ public async prepare() {
 
 6. 执行[play()](../harmonyos-references/arkts-apis-media-avplayer.md#play9)接口，开始播放音频资源。
 
-```typescript
+```screen
 public async play() {
   if (!this.avPlayer) {
     Logger.info(TAG, 'avPlayer is undefined')
@@ -188,7 +188,7 @@ public async play() {
 
 7. 执行[pause()](../harmonyos-references/arkts-apis-media-avplayer.md#pause9)接口，暂停播放。
 
-```typescript
+```screen
 public pause() {
   if (!this.avPlayer) {
     Logger.info(TAG, 'avPlayer is undefined')
@@ -201,7 +201,7 @@ public pause() {
 
 8. 执行[stop()](../harmonyos-references/arkts-apis-media-avplayer.md#stop9)接口，停止播放音频。
 
-```typescript
+```screen
 public async stop() {
   if (!this.avPlayer) {
     Logger.error(TAG, 'avPlayer is undefined')
@@ -215,7 +215,7 @@ public async stop() {
 
 9. 执行[release()](../harmonyos-references/arkts-apis-media-avplayer.md#release9)，销毁播放资源。
 
-```typescript
+```screen
 public release() {
   if (!this.avPlayer) {
     Logger.error(TAG, 'avPlayer is undefined')
@@ -232,17 +232,17 @@ public release() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/aHLoNHDkRB-ghVyLbdlkxg/zh-cn_image_0000002555217525.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/XCo0Ly9CTtm8Tl8UW74z2g/zh-cn_image_0000002555217525.gif "点击放大")
 
 ### 实现原理
 
-使用[Slider组件](../harmonyos-references/ts-basic-components-slider.md)实现进度条，在[onChange()](../harmonyos-references/ts-basic-components-slider.md#onchange)回调中触发进度调节获取目标时间，使用AVPlayer的[seek()](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)接口，跳转到目标时间。
+使用[Slider](../harmonyos-references/ts-basic-components-slider.md)组件实现进度条，在[onChange()](../harmonyos-references/ts-basic-components-slider.md#onchange)回调中触发进度调节获取目标时间，使用AVPlayer的[seek()](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)接口，跳转到目标时间。
 
 ### 开发步骤
 
 使用AVPlayer的[seek()](../harmonyos-references/arkts-apis-media-avplayer.md#seek9)接口，跳转到目标时间。
 
-```typescript
+```screen
 public seek(ms: number) {
   if (!this.avPlayer) {
     Logger.info(TAG, 'avPlayer is undefined')
@@ -258,7 +258,7 @@ public seek(ms: number) {
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/PxIghX2RQae-kUml3auiFg/zh-cn_image_0000002524217628.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/-R8QwgZZQVCqBRkOCbCYNQ/zh-cn_image_0000002524217628.gif "点击放大")
 
 ### 实现原理
 
@@ -268,7 +268,7 @@ public seek(ms: number) {
 
 调用AVPlayer的[setMediaMuted()](../harmonyos-references/arkts-apis-media-avplayer.md#setmediamuted12)设置静音。
 
-```typescript
+```screen
 public setSilentMode(isSilentMode: boolean) {
   if (!this.avPlayer) {
     Logger.error(TAG, 'avPlayer is undefined')
@@ -285,7 +285,7 @@ public setSilentMode(isSilentMode: boolean) {
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/n2P4llyWRWmdKxMSu9XFSQ/zh-cn_image_0000002555337501.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/IaLORNegRx24M-xB1PyAcg/zh-cn_image_0000002555337501.gif "点击放大")
 
 ### 实现原理
 
@@ -295,7 +295,7 @@ public setSilentMode(isSilentMode: boolean) {
 
 1. 停止当前播放的歌曲， 用[reset()](../harmonyos-references/arkts-apis-media-avplayer.md#reset9-1)接口重置播放器状态。
 
-```typescript
+```screen
 public async stop() {
   if (!this.avPlayer) {
     Logger.error(TAG, 'avPlayer is undefined')
@@ -309,7 +309,7 @@ public async stop() {
 
 2. 给AVPlayer的fd或fdSrc属性赋值为新的歌曲资源。
 
-```typescript
+```screen
 async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
   if (!songRawFileDescriptor) {
     Logger.error(TAG, `loadSongAssent faile : songRawFileDescriptor get failed`);
@@ -319,7 +319,7 @@ async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
     return;
   }
   this.avPlayer.fdSrc = songRawFileDescriptor;
-  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}，curState is ${this.avPlayer?.state}`);
+  Logger.info(TAG, `set avPlayer url is ${this.avPlayer.fdSrc}, curState is ${this.avPlayer?.state}`);
 }
 ```
 
@@ -329,7 +329,7 @@ async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/H8d0QWNSS9COQsStfqnn4g/zh-cn_image_0000002524057634.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/3BfI8KDjQOyY3yG8uqNFww/zh-cn_image_0000002524057634.gif "点击放大")
 
 ### 实现原理
 
@@ -339,7 +339,7 @@ async loadSongAssent(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
 
 1. 通过调节面板获取速度值，传入[setSpeed()](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)接口中。
 
-```typescript
+```screen
 Slider({
   value: this.speed,
   min: 0.25,
@@ -359,7 +359,7 @@ Slider({
 
 2. 使用[setSpeed()](../harmonyos-references/arkts-apis-media-avplayer.md#setspeed9)接口设置播放速度。
 
-```typescript
+```screen
 // Set Speed
 public setSpeed(speed: number) {
   if (!this.avPlayer) {
@@ -377,7 +377,7 @@ public setSpeed(speed: number) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Na6xpfvjRzmHXn7LCPgNXA/zh-cn_image_0000002555217531.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bdNSL752RkmmI9bBiAphAA/zh-cn_image_0000002555217531.gif "点击放大")
 
 ### 实现原理
 
@@ -387,7 +387,7 @@ public setSpeed(speed: number) {
 
 1. 通过调节面板获取音量值，传入[setVolume()](../harmonyos-references/arkts-apis-media-avplayer.md#setvolume9)接口中。
 
-```typescript
+```screen
 Slider({
   value: this.volume,
   min: 0,
@@ -409,7 +409,7 @@ Slider({
 
 2. 使用[setVolume()](../harmonyos-references/arkts-apis-media-avplayer.md#setvolume9)设置播放音量。
 
-```typescript
+```screen
 // Set Volume
 public setVolume(volume: number) {
   if (!this.avPlayer) {
@@ -434,18 +434,18 @@ public setVolume(volume: number) {
 
 **可能原因**
 
-AVPlayer的当前状态不支持此操作，执行接口前检查下当前AVPlayer的播放状态。AVPlayer播放器在执行不同的操作前，必须要保证此时处于正确的状态，比如执行播放操作前，只有当前状态在prepared/paused/completed时，才能正确执行。针对问题现象中举例的两种场景，其错误的原因可能如下。
+AVPlayer的当前状态不支持此操作，调用接口前检查下当前AVPlayer的播放状态。AVPlayer播放器在执行不同的操作前，必须要保证此时处于正确的状态，比如执行播放操作前，只有当前状态在prepared/paused/completed时，才能正确执行。针对问题现象中举例的两种场景，其错误的原因可能如下。
 
 * 设置完url、fdSrc等属性后，AVPlayer并不是就立刻进入initialized状态，如果设置完url属性后就立刻执行[prepare()](../harmonyos-references/arkts-apis-media-avplayer.md#prepare9)接口，当代码运行此行时，AVPlayer的播放状态可能还是处于idle的状态，并没有变成initialized，这时就可能产生“Operation not allowed.”的错误。
 * 同样，执行完[prepare()](../harmonyos-references/arkts-apis-media-avplayer.md#prepare9)接口，AVPlayer也不是立刻进入prepared状态，如果此时立刻执行[play()](../harmonyos-references/arkts-apis-media-avplayer.md#play9)接口，AVPlayer的播放状态可能还没有变成prepared状态，执行就可能报错。
 
 **解决方案**
 
-1. 先了解在AVPlayer的不同播放状态下，可以执行哪些接口。熟悉AVPlayer的播放状态和不同接口间的关系，可以参考[使用AVPlayer播放视频](../harmonyos-guides/video-playback.md)一节中的播放状态变化示意图。
+1. 先了解在AVPlayer的不同播放状态下，可以执行哪些接口。熟悉AVPlayer的播放状态和不同接口间的关系，可以参考[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)一节中的播放状态变化示意图。
 
-2. 保证在在正确的播放状态下，执行对应的接口。建议开发者务必注册[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)状态监听，当监听到AVPlayer的播放状态到达目标状态时，执行对应的接口。在[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)中监听到AVPlayer处于initialized状态时，再执行[prepare()](../harmonyos-references/arkts-apis-media-avplayer.md#prepare9)接口，监听到AVPlayer处于prepared状态时，再执行[play()](../harmonyos-references/arkts-apis-media-avplayer.md#play9)接口。
+2. 保证在正确的播放状态下，执行对应的接口。建议开发者务必注册[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)状态监听，当监听到AVPlayer的播放状态到达目标状态时，执行对应的接口。在[on('stateChange')](../harmonyos-references/arkts-apis-media-avplayer.md#onstatechange9)中监听到AVPlayer处于initialized状态时，再执行[prepare()](../harmonyos-references/arkts-apis-media-avplayer.md#prepare9)接口，监听到AVPlayer处于prepared状态时，再执行[play()](../harmonyos-references/arkts-apis-media-avplayer.md#play9)接口。
 
-```typescript
+```screen
 // Watch state
 private stateChangeCallback() {
   if (!this.avPlayer) {

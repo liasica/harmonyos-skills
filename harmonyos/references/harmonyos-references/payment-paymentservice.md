@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: paymentService (鸿蒙支付服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > paymentService (鸿蒙支付服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:23606bb17fbbe79216e2b62b18acb8ec8e7fc7557451c08275ea8f89f2418ae9
 ---
 

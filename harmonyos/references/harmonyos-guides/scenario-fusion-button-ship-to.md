@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 选择收货地址Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 选择收货地址Button
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:01+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:859c9cd42c7303866d32375c47d96a32796f11a91278d3a6e9f16c14d3e908f2
 ---
 

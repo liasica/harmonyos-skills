@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-toke
 title: 获取Push Token
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 获取Push Token
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:00+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:23:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4d961e3e8097d3c50f63d08a56e0c7e9ac856b87c4d30bf11e42974822bc7b5a
 ---
 

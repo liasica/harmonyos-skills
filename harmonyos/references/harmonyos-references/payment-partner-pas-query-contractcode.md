@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 通过mercContractCode查询签约信息
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 支付并签约 > 查询签约订单 > 通过mercContractCode查询签约信息
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2d9e0079f7e245167fd810e3d3928db9578badcfc9381833618408d06b9ab1a1
 ---
 

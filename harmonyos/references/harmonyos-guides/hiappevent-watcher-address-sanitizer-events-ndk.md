@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅地址越界事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 地址越界事件 > 订阅地址越界事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:46+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1d33ee5907556160cd45e71c450bad036cead4696e4ab0961f0d54e0b4adc98e
 ---
 

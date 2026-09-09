@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avm
 title: 使用AVMetadataExtractor获取元数据(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 媒体信息查询 > 使用AVMetadataExtractor获取元数据(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:18+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:23:01+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:36c00122b0f3de2e0065ff6be78e4d44c3612be00ff0ebffe5f0f5c8367c736b
 ---
 

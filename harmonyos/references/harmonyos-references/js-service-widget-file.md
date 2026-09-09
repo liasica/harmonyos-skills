@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 文件组织
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 框架说明 > 文件组织
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2235ec65e95b7ac71b66bf0703a000c3bc3156ff30eb0b1ed8e05936ee7a7996
 ---
 

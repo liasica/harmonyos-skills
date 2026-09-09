@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.security.asset (关键资产存储服务)"
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > ArkTS API > @ohos.security.asset (关键资产存储服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5ba3ba851dbf43e8a0c5fa389ccde91e62748e33c1783094ad3b0341bc93e0ad
 ---
 

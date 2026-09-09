@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 层叠布局 (Stack)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 层叠布局 (Stack)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:13:59+08:00
+scraped_at: 2026-09-10T06:22:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:94f9c3363470dc0119382dae09e4625298741d28848171e94ca63ae8dc19e596
+content_hash: sha256:ea761fb570e149ebb2d100384be6d8ba67921b2b89dfc6cd02255ee90729d63e
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:94f9c3363470dc0119382dae09e4625298741d28848171e94ca63ae8dc1
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/g1MIYx7hSgutLT_lJJnryg/zh-cn_image_0000002742122569.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/hAqmr0CzQ2exlh29N-cx0g/zh-cn_image_0000002747290227.png)
 
 **说明** 
 
@@ -47,7 +47,7 @@ struct StackLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/jTmyrlTHQIC5eeLC17R9cQ/zh-cn_image_0000002712243656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/DUThQ9oQQsyeBlHojBq8Zw/zh-cn_image_0000002747210145.png)
 
 ## 对齐方式
 
@@ -55,7 +55,7 @@ Stack组件通过[alignContent参数](../harmonyos-references/ts-container-stack
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/5z7cvJtuRIuP1uiAiA585Q/zh-cn_image_0000002742002609.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/vLQNScA8TyuBNNR-_kR9dA/zh-cn_image_0000002717770212.png)
 
 ```typescript
 // xxx.ets
@@ -97,7 +97,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/cI8rmMfTRWuCqgXbJ0-lgA/zh-cn_image_0000002712403622.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/KHrN_xpZRRCIYEUd5EPzwA/zh-cn_image_0000002717610278.png)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
@@ -120,7 +120,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/xnqJq51ZQoSnnLQ0CS9-Ag/zh-cn_image_0000002742122571.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/_tT1yZFSTladQlnXsl0qgA/zh-cn_image_0000002747290229.png)
 
 ## 场景示例
 
@@ -165,7 +165,7 @@ struct StackSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/a0Hw_S_yRRusQIdJZIOrFg/zh-cn_image_0000002712243658.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/5w2jBONNS3ql3LmyBOs2nA/zh-cn_image_0000002747210147.png)
 
 ## 示例代码
 

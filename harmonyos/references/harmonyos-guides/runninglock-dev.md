@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/runninglock-d
 title: 阻止系统闲时进入睡眠开发指南
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 电源管理 > 运行锁使用指南 > 阻止系统闲时进入睡眠开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-24
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4974d8a058d8b277b5843c499f70fbd8bb443852ee832772ed34604303dbd017
 ---
 

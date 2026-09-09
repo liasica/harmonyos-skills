@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-suite
 title: 接入手写套件
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入手写套件
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:35+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:c5d913cce1fc48946f374fa0b09dac0a556c9e846c7c6cfefecfb9e67a2e8bd4
+scraped_at: 2026-09-10T06:22:43+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:385a72cec45513f5e91f9bec84cb0ce0c810679ba08cd7ad0a1fc6c9e197a965
 ---
 
 接入手写套件后，可以在应用中创建手写功能界面。界面包括画布和工具栏两部分，画布部分支持手写笔和手指的书写效果绘制，工具栏部分提供多种笔刷和编辑工具，并支持对手写功能进行设置。接入手写套件后将自动开启一笔成形和报点预测功能，无需再单独接入。
@@ -22,7 +22,7 @@ content_hash: sha256:c5d913cce1fc48946f374fa0b09dac0a556c9e846c7c6cfefecfb9e67a2
 
 在应用中创建手写功能界面，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/cmN0OjDjS7m6LiQQ5tLptw/zh-cn_image_0000002712244646.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/MjkMYPwsQMiv3o50ba5zKA/zh-cn_image_0000002717771200.png)
 
 1. 可以加载和显示手写文件。
 2. 可以编辑和保存手写文件。
@@ -30,7 +30,7 @@ content_hash: sha256:c5d913cce1fc48946f374fa0b09dac0a556c9e846c7c6cfefecfb9e67a2
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/olANPFA0RIu6-2iSiPSw7A/zh-cn_image_0000002742003599.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/dPVpzCPKSyeMOKEBLlDTPw/zh-cn_image_0000002717611266.png)
 
 ## 接口说明
 

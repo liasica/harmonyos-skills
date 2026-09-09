@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: SendableResource
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > global > SendableResource
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:38+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:eaa124c592cdf2d8d158f2153ffe5d93893b2d21e1e797d19a02819df20e91c0
 ---
 

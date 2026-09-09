@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-right-s
 title: 选择合适的播放流类型
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 选择合适的播放流类型
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-14
+scraped_at: 2026-09-10T06:22:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6f64577d257a2f509019ba7bb4fc3556b71b1c2ae4b56f8aaa43240257841c2e
 ---
 

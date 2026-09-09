@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ipc-rpc-overv
 title: IPC Kit简介
 breadcrumb: 指南 > 应用框架 > IPC Kit（进程间通信服务） > IPC Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:26+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-10T06:22:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:569221b9dc736774a9334dc280b54505ee96a56debb367dd1c55064e2012ed42
 ---
 

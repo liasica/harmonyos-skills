@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Classes (其他)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Classes (其他)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fe3f42793001365b88a0e4c88e00b09e99620657f15092a9c0d656372703a9e0
 ---
 

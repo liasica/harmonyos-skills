@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-foldable-g
 title: 双折叠应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 手机 > 双折叠应用开发
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
+scraped_at: 2026-09-10T06:30:09+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:8f2ae810a32070507735856918a0d9a41e345c3d8cfc0b5aab3899a0914806cd
+content_hash: sha256:23141e2fc2802d5fd970c157dde65d5faed3c321ac44791d4a47442de0617c1a
 ---
 
 相对于直板机，双折叠有以下明显特点：
@@ -146,17 +146,17 @@ content_hash: sha256:8f2ae810a32070507735856918a0d9a41e345c3d8cfc0b5aab3899a0914
 
 1. **智感握姿**：系统提供感知用户当前握持手信息的能力，应用可依据获取的手部信息，自适应调整核心交互组件的显示位置，有效提升用户单手操作便捷性。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/4IaTreYcRIS4begJfyeElw/zh-cn_image_0000002585466362.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/6oYuFItISwSGJJ4hR426ug/zh-cn_image_0000002585466362.png "点击放大")
 
    通过订阅握持手状态变化感知事件[motion.on('holdingHandChanged')](../harmonyos-references/js-apis-awareness-motion.md#motiononholdinghandchanged-20)，获取到握持手信息后，更改组件的显示位置。
 2. **跟手弹框**：为了减少用户操作路径过长的情况，在折叠态和展开态可通过跟手弹窗进行展示，弹出框的弹出位置离手更近，以便用户能够快速操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ZQJoWjGTQnOArvQx-SSb6A/zh-cn_image_0000002585626308.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/twJ3jEjNR1W5FZ0o7KdgwQ/zh-cn_image_0000002585626308.png "点击放大")
 
    构建UI布局时，可通过条件表达式判断：当横向断点为sm时，使用普通居中弹框；否则，使用跟手弹框[PopoverDialog](../harmonyos-references/ohos-arkui-advanced-dialog.md#popoverdialog14)，提升大屏设备的操作效率。
 3. **跟手半模态**：在折叠态，半模态窗口通常从屏幕底部弹出；在展开态，可以考虑跟手半模态窗口或者居中半模态窗口显示，具体根据业务需要选择。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/lBm8px4vTXeg3V2GmV4fIw/zh-cn_image_0000002615986035.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/kX8BGVC9T7ewIFy4eZUpLA/zh-cn_image_0000002615986035.png "点击放大")
 
    使用[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)绑定半模态转场时，设置半模态属性preferType为[SheetType](../harmonyos-references/ts-universal-attributes-sheet-transition.md#sheettype11枚举说明).POPUP。设置该属性后，窗口宽度小于600vp的设备将默认显示底部弹窗，其他设备则自动适配为跟手弹窗。
 
@@ -164,7 +164,7 @@ content_hash: sha256:8f2ae810a32070507735856918a0d9a41e345c3d8cfc0b5aab3899a0914
 
 双折叠展开态时可切换至悬停态。悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。悬停态的实现方案可参考[折叠屏悬停态](bpta-folded-hover.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/K9clFLQ_TZGY7FPvgnuAAA/zh-cn_image_0000002616066165.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/7QBhW_G8TOOBek32GrTDRA/zh-cn_image_0000002616066165.png "点击放大")
 
 ### 开合适配
 
@@ -174,19 +174,19 @@ content_hash: sha256:8f2ae810a32070507735856918a0d9a41e345c3d8cfc0b5aab3899a0914
 
 在双折叠设备上，可以借助[HdsTabs](../harmonyos-references/ui-design-hdstabs.md)组件的[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性实现悬浮导航栏，可适配各类形态切换场景，充分释放屏幕可视区域；通过悬浮材质参数[SystemMaterialParams](../harmonyos-references/ui-design-hdstabs.md#systemmaterialparams)配置透明磨砂材质效果，提升界面通透感，适配沉浸式浏览体验。搭配[HdsTabsMiniBar](../harmonyos-references/ui-design-hdstabs.md#hdstabsminibar)可扩展迷你标签栏，拓展多维度快捷入口，适配展开态的分区操作，同时保障折叠态和展开态下交互逻辑统一，降低用户切换成本，有效提升操作效率与使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/MgZSlHWlQJqBygVzDhbiTA/zh-cn_image_0000002585466424.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/vfrkUroRSbeO1p1hmClYqA/zh-cn_image_0000002585466424.png "点击放大")
 
 ### 视频自适应沉浸
 
 双折叠设备可以切换折叠态和展开态，且窗口模式可以转换分屏、悬浮窗，为避免视频播放画面在形态切换时出现拉伸、裁剪、显示比例错乱等问题，可采用自适应沉浸全屏播放方案，精简界面元素、减少视觉干扰，让用户聚焦视频画面，充分利用大屏开阔视野，有效提升观看体验。具体实现方案，可参考[视频适配不同尺寸屏幕](bpta-multi-device-screen-diff.md#section1452572513130)章节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/qcRcDRV_ROi1jLyF6rdGgw/zh-cn_image_0000002585626364.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/d5N0pRFQRK-5qRz2XkyhKQ/zh-cn_image_0000002585626364.gif "点击放大")
 
 ### 全景多窗
 
 [全景多窗](../harmonyos-guides/multi-window-intro.md#全景多窗)旨在帮助用户高效处理多个任务。通过全景多窗，用户可以突破物理屏幕局限，在同一屏幕内并行运行多款应用，实现应用间快捷切换，提升操作效率。双折叠可依托全景多窗能力，充分利用大屏空间优势，最高支持三个窗口同屏并行运行，助力用户一边浏览资讯、一边编辑内容、一边沟通办公，多任务同步处理、互不冲突，实现办公、娱乐、日常操作一站式协同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/3Rxp8ktXQc-uCLdri8ExQA/zh-cn_image_0000002615986079.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PL6DOmI5TbaOMx-Nx8XQLQ/zh-cn_image_0000002615986079.png "点击放大")
 
 ## 设备常见适配问题
 

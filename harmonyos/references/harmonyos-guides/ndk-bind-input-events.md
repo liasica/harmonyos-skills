@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-bind-inpu
 title: 绑定基础输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 添加事件响应 > 绑定基础输入事件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:11+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a7cb359e9e9adc76b68e387171ed4dd8fbcb5b69dbf3f1000b2f867074f89eee
 ---
 

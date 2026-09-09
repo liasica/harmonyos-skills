@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: RotationGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > RotationGesture
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:07+08:00
+scraped_at: 2026-09-10T06:25:20+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d772bf811076c25347bfd95ab1cf0cbdc80ab0a6794c024f77672c0296ba4a92
+content_hash: sha256:fa2e621b58709dfaf02b117527ac22bfef2c1571b79c5d0a8f13b643ed9a92ae
 ---
 
 用于触发旋转手势，最少需要2指，最多5指，最小角度变化为1度，适用于需要识别用户多指旋转操作并实现旋转类交互的场景。该手势不支持通过触控板双指旋转操作触发。
@@ -184,4 +184,4 @@ struct RotationGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/IHVBSxfXTDWikVG7sKx_kA/zh-cn_image_0000002712245976.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/vo_dNS5CRqCn8I5wN7N2SQ/zh-cn_image_0000002717772520.png)

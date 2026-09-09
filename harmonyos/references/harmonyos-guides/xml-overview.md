@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xml-overview
 title: XML概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > XML生成、解析与转换 > XML概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:21:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fc942aa936ba2dea0a0ca565d214e3e002551e2a179fddd8bcdf73a9f3e00e0d
 ---
 

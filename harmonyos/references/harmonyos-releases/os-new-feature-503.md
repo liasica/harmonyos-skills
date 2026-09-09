@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.3(15) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:23+08:00
-doc_updated_at: 2026-08-04
-content_hash: sha256:6e1f3bb63a3534cbe97a2fbc25c7c75dd534398668804e5576e0f997ecf986ce
+scraped_at: 2026-09-10T06:21:16+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:54dd389d82a90988c80fde0f84210e67dbc6545bd1cccb77a0b650a1ef704696
 ---
 
 ## Ability Kit
@@ -205,7 +205,7 @@ NativeBuffer支持的格式新增BLOB格式（NATIVEBUFFER\_PIXEL\_FMT\_BLOB）�
 ## Input Kit
 
 * 新增支持游戏手柄设备的按键事件的识别和分发。（[API参考](../harmonyos-references/js-apis-keycode.md#keycode)）
-* 新增支持红外信号发射能力，应用可使用该能力与外部接收红外信号的设备进行交互。（[API参考](../harmonyos-references/js-apis-infraredemitter.md#infraredemittertransmitinfrared)）
+* 新增支持红外信号发射能力，应用可使用该能力与外部接收红外信号的设备进行交互。（[API参考](../harmonyos-references/js-apis-infraredemitter.md#infraredemittertransmitinfrared15)）
 * 新增支持Capslock灯的查询/修改，密码框可以提示用户大写已打开，输入法应用可以更新Capslock灯的状态。（[API参考](../harmonyos-references/js-apis-inputdevice.md)）
 
 ## Localization Kit

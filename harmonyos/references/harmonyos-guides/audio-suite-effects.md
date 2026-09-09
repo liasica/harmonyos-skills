@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-e
 title: 音频效果(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音频效果(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0de80ac73863660abf7a7e297e24f1df998a98c0c9077880503aabb80c3919e5
 ---
 

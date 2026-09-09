@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-aaid
 title: 获取AAID
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 获取AAID
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:31+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f8cdbffb5de3f55dc340a949c98e81142c348caf405d1b58c3fea85c99759ddd
 ---
 

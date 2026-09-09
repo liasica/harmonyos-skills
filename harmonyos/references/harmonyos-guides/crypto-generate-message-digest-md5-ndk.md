@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-generate-message-digest-md5-ndk
 title: 消息摘要计算MD5(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息摘要计算介绍及算法规格 > 消息摘要计算MD5(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息摘要计算 > 消息摘要计算MD5(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3a6103e5bc7a9e8854ff1b0ef5d57bec0b52977fcd94c1c1a6af59850347e756
 ---
 

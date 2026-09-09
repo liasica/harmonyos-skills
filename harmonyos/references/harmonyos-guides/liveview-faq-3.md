@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-faq-
 title: 关于实况窗生命周期的问题
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > Live View Kit常见问题 > 关于实况窗生命周期的问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:57+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:23:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f012c5a3c0305a171a17e54a7e1e85325ff4855d4d4172d1cd2c21c3a6a7d46f
 ---
 

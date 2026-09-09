@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-c
 title: 文本组件公共接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > 文本组件公共接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:47a62c80868a37d9f0accfd243a71bd6d97034b3e4f8b8e2cff2c80bf2ba9cf9
 ---
 

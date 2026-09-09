@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.rdb (关系型数据库)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > @ohos.data.rdb (关系型数据库)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:42+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:24:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1cc90a7e8aa2c8c27d6fa4b53a7687fc73a70e415d379d856475556b8dd8cf37
 ---
 

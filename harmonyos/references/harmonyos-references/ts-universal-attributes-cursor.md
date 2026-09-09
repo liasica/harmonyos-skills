@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 鼠标光标控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 鼠标光标控制
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bfeeaa812b8c953cc4ec654148c312c52bf8a0d628b65e04e377eed45a74b852
+scraped_at: 2026-09-10T06:25:17+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:d8078b9749064ea44b8b780d9a6ae73bb28271859d67cfd5c1f8acf686a5b85c
 ---
 
 鼠标光标控制用于控制鼠标光标的显示样式，适用于需要根据组件状态或交互区域切换光标样式的场景，帮助提升用户的交互识别和操作反馈体验。
@@ -111,8 +111,8 @@ struct CursorControlExample {
 
 当鼠标悬浮在蓝色区域时，显示：向西箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/sPiRhGcWSKW3jLqo01L22w/zh-cn_image_0000002742124837.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/g2uYfSr-TBWkvxFm0-a_qg/zh-cn_image_0000002747212409.jpg)
 
 当鼠标悬浮在绿色区域时，显示：向东箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mI3RfCI6SqeVlw7rPjn1tQ/zh-cn_image_0000002712245930.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/0vye3pNkSvei4MUaLi-okw/zh-cn_image_0000002717772474.jpg)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-dns
 title: 使用DNS解析域名
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用DNS解析域名
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d3b8a3d813a9edabf5d076dcf03c52cc50476185831096d53b25e9e73a362168
 ---
 

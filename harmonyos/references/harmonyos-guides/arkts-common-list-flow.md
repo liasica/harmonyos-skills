@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 常见列表流
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 常见列表流
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:13:59+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:d4f0f0a650d292e707f7efd1c105fa727b35a9b0c8fbf11432c62c0b8c70e945
+scraped_at: 2026-09-10T06:22:05+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:26e8710df65ecaf97a44e32e31f993c3b426bda746930d6dfbc3fb3070c38475
 ---
 
 ## 概述
@@ -59,7 +59,7 @@ Refresh组件可以进行页面下拉操作并显示刷新动效，List组件配
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/9d6DqbHIRGizU91Uo6mFwQ/zh-cn_image_0000002712403736.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Gjn_3TuASCqtBDAfoKPSWw/zh-cn_image_0000002717610392.png)
 2. 在List的第一个ListItem分组中，使用Swiper组件构建页面轮播图内容。
 
    ```ts
@@ -89,7 +89,7 @@ Refresh组件可以进行页面下拉操作并显示刷新动效，List组件配
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/AGyO2i42QXy4pMXHdHk63w/zh-cn_image_0000002742122685.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/THZk3vkZSMSJ2fVDx_PIIg/zh-cn_image_0000002747290343.png)
 3. 在List的第二个ListItem分组中，使用Grid组件构建页面网格区域。
 
    ```ts
@@ -121,7 +121,7 @@ Refresh组件可以进行页面下拉操作并显示刷新动效，List组件配
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/MhvNoH3MQYq1325qBO2I9A/zh-cn_image_0000002742122663.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/VwpLtLvIQCuq91ZvfGnbvw/zh-cn_image_0000002747290321.png)
 4. 推荐内容及列表内容的构建。
 
    ```ts
@@ -187,7 +187,7 @@ Refresh组件可以进行页面下拉操作并显示刷新动效，List组件配
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/5hzSrPewTMWfKqPmupeilg/zh-cn_image_0000002712243772.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/bywEdTVVQEW5XIbY-8KfRA/zh-cn_image_0000002747210261.png)
 5. 将构建好的页面内容，放在Refresh组件内部，并给List和Refresh组件添加对应的[onReachEnd()](../harmonyos-references/ts-container-list.md#onreachend)和[onRefreshing()](../harmonyos-references/ts-container-refresh.md#onrefreshing)回调，实现下拉模拟刷新和上滑添加列表数据的效果。
 
    ```ts
@@ -310,7 +310,7 @@ Tabs组件可以在页面内快速实现视图内容的切换，让用户能够�
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/iKN7G-eLQ-eZVAhpD3ji1A/zh-cn_image_0000002742002727.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/itFZiFW6Ql2GlvgoU7QdAw/zh-cn_image_0000002717770330.png)
 2. 构建顶部搜索区域。
 
    ```ts
@@ -329,7 +329,7 @@ Tabs组件可以在页面内快速实现视图内容的切换，让用户能够�
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VR4f_ZvLTQ2EX_b3DFBy2Q/zh-cn_image_0000002712403740.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/EcWop-c7Rk2NDlXaqvrZrQ/zh-cn_image_0000002717610396.png)
 3. 图片占位区域、自定义导航内容及列表内容构建。
 
    ```ts
@@ -376,7 +376,7 @@ Tabs组件可以在页面内快速实现视图内容的切换，让用户能够�
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/LAorNAB_SUevW4eVL6IfWw/zh-cn_image_0000002742122689.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/uDTWLNlmTrGgOKzTyVxdHA/zh-cn_image_0000002747290347.png)
 4. 给List组件添加的[nestedScroll](../harmonyos-references/ts-container-list.md#nestedscroll10)属性，结合calc计算实现中间自定义Tab页签区域吸顶展示的效果。
 
    ```ts
@@ -403,7 +403,7 @@ Tabs组件可以在页面内快速实现视图内容的切换，让用户能够�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/4Ur8NSiHSBqNh4b87Kvtzg/zh-cn_image_0000002712243776.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Y5ze3GC1RNiz8pxuhfB42g/zh-cn_image_0000002747210265.gif)
 
 ## 分组吸顶场景
 
@@ -538,7 +538,7 @@ Tabs组件可以在页面内快速实现视图内容的切换，让用户能够�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/YMkO6SHLSBKVkld_Ks-ZSg/zh-cn_image_0000002742122691.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/_G48f462TKCi7wFo_7r_iw/zh-cn_image_0000002747290349.gif)
 
 ## 二级联动场景
 
@@ -634,7 +634,7 @@ Tabs组件可以在页面内快速实现视图内容的切换，让用户能够�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/xKRvbX4sSn6a-J4ABA-1QQ/zh-cn_image_0000002712403744.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/8i7QLSVxQm-6Ucvq7iLp5Q/zh-cn_image_0000002717610400.gif)
 
 ## 示例代码
 

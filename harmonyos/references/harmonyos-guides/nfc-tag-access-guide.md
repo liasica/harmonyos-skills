@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-tag-acces
 title: NFC标签读写开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > NFC > NFC标签读写开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:22:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:21332efe8f411accf116e230da9f6a40a23f99cf2d5b8f0eb8db075c87372e53
 ---
 

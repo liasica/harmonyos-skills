@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.uniformTypeDescriptor (标准化数据定义与描述)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.uniformTypeDescriptor (标准化数据定义与描述)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:40+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:24:46+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:dac20411ff434a38c91107562e5c1b19d625a42169271404c1d24821a0132bdc
 ---
 

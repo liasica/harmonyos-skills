@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.AbilityConstant (Ability相关常量)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.AbilityConstant (Ability相关常量)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a97c0be05c1d3487c47c7f1e817947be186a3ebb31238662f90e7dac3afb811c
 ---
 

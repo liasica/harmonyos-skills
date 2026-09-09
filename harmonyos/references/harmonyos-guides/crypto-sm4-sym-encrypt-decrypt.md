@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm4-sym-encrypt-decrypt
 title: 使用SM4对称密钥加解密(ArkTS)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密介绍 > 使用SM4对称密钥加解密(ArkTS)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用SM4对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b54910cb2095871d93812da37caeea6b4c6ca348e61159ea8739e5b7756022c6
 ---
 

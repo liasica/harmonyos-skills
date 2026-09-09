@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: subjectSegmentation（主体分割）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > subjectSegmentation（主体分割）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:abbcebc64198357c7cb380dd653b93925bcfaba3cffa58993955c9b116253362
 ---
 

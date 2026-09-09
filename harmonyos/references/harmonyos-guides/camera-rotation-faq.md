@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 相机预览画面旋转异常问题
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit常见问题 > 相机预览画面旋转异常问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:856488bfb97550f4bf915a8ec98c9f881a4397869b6eb1e723ce9f2dfef9b729
 ---
 

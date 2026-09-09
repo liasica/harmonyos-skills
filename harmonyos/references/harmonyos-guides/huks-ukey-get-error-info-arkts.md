@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-ukey-get
 title: 获取错误信息(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 外部密钥管理扩展 > 通用操作 > 获取错误信息(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:54ab38af5513c360821a2c47894a508cce4265bfed7db46aea2b5e04323f0329
 ---
 

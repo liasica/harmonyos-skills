@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputDevice (输入设备)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputDevice (输入设备)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:284285c79435f724096b7562ad807f977b316b5272cd09f3c2734e9891a8c344
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wlan-overview
 title: WLAN服务开发概述
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > WLAN > WLAN服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:34a38f2bdb3d489463bf947836c204868c1c6034ea5d9ecf45ef1b2a25deef04
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_type.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:20+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9606c5c30949b1ce81955fe0a59600f5f5f18f00604ef86336c6d49d648cfb5b
 ---
 

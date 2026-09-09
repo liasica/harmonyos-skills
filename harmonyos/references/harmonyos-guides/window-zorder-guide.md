@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-zorder
 title: 窗口层级
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口层级
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fda7c3a6289062d833ca0049959f8342e39072e3620c2fb91184dade09a7ad6c
 ---
 

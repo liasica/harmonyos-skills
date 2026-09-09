@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-check-ke
 title: 查询密钥是否存在(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 查询密钥是否存在 > 查询密钥是否存在(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:04+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ee8932e827bd9368b4549377ff14e3862dba386df9a78f4a3243d3ced545244a
 ---
 

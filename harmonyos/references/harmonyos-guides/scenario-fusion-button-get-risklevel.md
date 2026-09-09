@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 获取手机号和风险等级Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 获取手机号和风险等级Button
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:02+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0f66d6363fdc349547a368133797f449b9b138fbbad07ecd92125cd8e29dab85
 ---
 

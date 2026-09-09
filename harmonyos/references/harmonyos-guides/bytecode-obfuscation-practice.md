@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: 不同包类型的字节码混淆建议
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > 不同包类型的字节码混淆建议
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-10T06:21:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f32c07731abdcff664cb5e43983389db46c1b33b9ee272095d4d40f4ad4dfb3d
 ---
 

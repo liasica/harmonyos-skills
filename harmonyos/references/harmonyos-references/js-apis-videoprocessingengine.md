@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-v
 title: "@ohos.multimedia.videoProcessingEngine (视频处理引擎)"
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.videoProcessingEngine (视频处理引擎)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f8e6d451ec67b6caad7e1d673b8ca368910f8fae91bed31121ab2130d05f1164
 ---
 

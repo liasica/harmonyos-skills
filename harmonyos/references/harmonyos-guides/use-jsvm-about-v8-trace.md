@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用HiSmartPerf采集JSVM trace
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM性能调试指导 > 使用HiSmartPerf采集JSVM trace
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e3aa81cbe89e5ef9fd7d1261d3d01101a56ade9293e3db3aef0e89f7768451ba
 ---
 

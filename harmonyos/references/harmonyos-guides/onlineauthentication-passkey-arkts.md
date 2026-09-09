@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: 通行密钥身份认证（ArkTS）
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > 通行密钥 > 通行密钥身份认证（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:29c6bf2353e608293ca152c1ae898b4cba819ab44a6da15f67b123105b1077ae
 ---
 

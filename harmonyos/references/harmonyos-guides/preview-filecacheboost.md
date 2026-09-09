@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-filec
 title: 通用文件缓存加速（C/C++）
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > 通用文件缓存加速（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:17+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:23:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c318d41f3f8d4c70c3025b8d3112b2e36b59fb4d7a889123aac629d331fa31f0
 ---
 

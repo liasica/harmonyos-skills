@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 调用跳链安装预加载
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 调用预加载 > 调用跳链安装预加载
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:54+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8b40029ba2bdde64d55d055d96a6f003ff7a8472e1fe0b75c202bef764b78baf
 ---
 

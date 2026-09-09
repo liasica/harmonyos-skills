@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-use-
 title: 密钥使用介绍及通用流程
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 密钥使用介绍及通用流程
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:31+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1988364c9a5619d3059dab8cbc8b5b7f992beadbf20599655096ed56f70aa028
 ---
 

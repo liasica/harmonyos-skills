@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-faq-1
 title: 如何处理推送消息时遇到的问题
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见问题 > 如何处理推送消息时遇到的问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:34+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a4f23215f991214969c6fbf91c139c56fe9f7cc3cc9bf0145fa8f736fcfd661f
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (RdbPredicates)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Class (RdbPredicates)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:dee37acf9f9032628ae785c42232d4a9baf6457ca5c829f14a5e61a76ce5cbf6
 ---
 

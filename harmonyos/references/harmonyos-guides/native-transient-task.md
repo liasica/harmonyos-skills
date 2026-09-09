@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-transi
 title: 短时任务(C/C++)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 短时任务(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:781dcffc4b0338800a6e3837662768210a81a4d24013e6023ccb6ce6f370e5f2
 ---
 

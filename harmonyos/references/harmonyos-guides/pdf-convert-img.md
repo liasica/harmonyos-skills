@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-convert-i
 title: 转换整个PDF文档为图片
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 转换PDF文档为图片 > 转换整个PDF文档为图片
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:31d10147428182ca7ae31a1772f6290555cedb881ba92868f7eca01ba4a9d78a
 ---
 

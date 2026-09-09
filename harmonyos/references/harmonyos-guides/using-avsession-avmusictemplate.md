@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avsessi
 title: 使用音频模板
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 音频模板 > 使用音频模板
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a3c7fd2c8036c5f3a5c42bc7dd9893a1d47c75f805659724ed5fa0ead9a3d109
 ---
 

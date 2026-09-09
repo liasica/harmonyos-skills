@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.display (屏幕属性)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 屏幕管理 > @ohos.display (屏幕属性)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:97e6c57eb0e2f83fcc7eb97348309ed52867b6b71df3a97bafa8e43c7e46a281
 ---
 

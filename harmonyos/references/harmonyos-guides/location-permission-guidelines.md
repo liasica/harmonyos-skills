@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-perm
 title: 申请位置权限开发指导
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 开发准备 > 申请位置权限开发指导
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:40+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8151f3ee625484c472b96cf0ca990f01acf0b99c984b2c87a291f71d5b9e072f
 ---
 

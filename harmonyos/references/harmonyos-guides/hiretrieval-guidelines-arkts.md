@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiretrieval-g
 title: 使用HiRetrieval进行应用灰度采集（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 应用灰度采集 > 使用HiRetrieval进行应用灰度采集（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b67f698cd96fb04df22b3dc5232a6204e4dbb91fe5d51ec8dcbda3607c21f84c
 ---
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smart-reac
 title: 智感握姿
 breadcrumb: 最佳实践 > 技术创新 > 智感握姿
 category: best-practices
-scraped_at: 2026-09-08T06:43:56+08:00
+scraped_at: 2026-09-10T06:29:59+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:0d3b53b4e72a99b911cb76977b22f4c57d0d49d7481014a431b5f9e4e4996e26
+content_hash: sha256:912fe089c65e17569e02b5bbe457e7ed2ee5b50b9d149d1a4b2d24c15e1ec3ca
 ---
 
 随着大屏和折叠屏设备的普及，用户单手握持设备时，拇指难以覆盖整个屏幕区域，尤其是位于屏幕顶部与侧边的交互元素往往难以触及。为有效解决这一痛点，HarmonyOS系统提供了[智感握姿](../design-guides/smart-reachability-0000002556657823.md)能力。该能力能够实时识别用户与设备的交互姿态，应用可据此将核心高频组件动态调整至拇指的可达范围内，从而显著提升单手操作的便捷性。智感握姿示例图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/CZEl7tkCTlu6-JdMFuZBrw/zh-cn_image_0000002594053134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VsFcUy5QRkab6lTHaisFOw/zh-cn_image_0000002594053134.png "点击放大")
 
 本文将从智感握姿的概念与适用场景出发，结合新闻阅读应用示例，详细讲解如何在HarmonyOS应用中接入智感握姿能力，具体包括组件原生适配与自定义交互感知两种方案。
 
@@ -73,7 +73,7 @@ content_hash: sha256:0d3b53b4e72a99b911cb76977b22f4c57d0d49d7481014a431b5f9e4e49
 
 本示例通过配置HdsTabs的[barOverlap](../harmonyos-references/ui-design-hdstabs.md#baroverlap)属性开启底部悬浮模式，同时启用[barFloatingStyle](../harmonyos-references/ui-design-hdstabs.md#barfloatingstyle)属性中的adaptToHandedness参数实现智感握姿自动跟随功能。效果图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/9r876ZxvRXuSJ0B3xsxPDg/zh-cn_image_0000002624492661.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/1cVKC_SFS4el9LiPmxyfbA/zh-cn_image_0000002624492661.gif)
 
 具体适配方式如下：
 
@@ -119,7 +119,7 @@ HdsTabs({ controller: this.controller }) {
 
 本示例中侧边按钮通过自定义感知握持状态实现智感握姿。效果图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/ydptqiShSeqTDPGfdyaGdQ/zh-cn_image_0000002690301446.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/X2xkwx-oTnCSGX_GeXo5QQ/zh-cn_image_0000002690301446.gif "点击放大")
 
 具体适配步骤如下：
 

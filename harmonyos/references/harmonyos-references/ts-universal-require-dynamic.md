@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: "@Require装饰器：校验构造传参"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > @Require装饰器：校验构造传参
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:37e04ecb753f45c6a563ca0c840bb5e895ea7b4f81dc4b5afaf2516f366a4b65
 ---
 

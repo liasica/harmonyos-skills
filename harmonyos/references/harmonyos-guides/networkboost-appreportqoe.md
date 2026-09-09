@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 应用传输体验反馈
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 网络质量 > 应用传输体验反馈
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:22:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3a70920e9e13b9a36e7c8e415d67d938187b367f82f8d90eaf79e75d4891755d
 ---
 

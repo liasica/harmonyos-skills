@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-incognito
 title: 使用隐私模式
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 使用隐私模式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f1bda9
 ---
 

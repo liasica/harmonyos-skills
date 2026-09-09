@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-fast-pl
 title: 低时延音频播放(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 低时延音频播放(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:be0638393da76857c1feb4891a154552fb9a3ed8c3c41699a8ee36bea9696384
 ---
 

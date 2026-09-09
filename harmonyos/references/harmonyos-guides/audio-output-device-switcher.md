@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-output-
 title: 实现音频输出设备路由切换
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理 > 实现音频输出设备路由切换
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:45+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:22:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c814d8870fde3e4e8afcaa4306dc674e062e28ca051b65fce4d7c99750ada154
 ---
 

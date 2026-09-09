@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 地点选取
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 地点选取
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:13+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:345cee21bab4ed70a020907402e4890dccc2f9a90a63c71b27f22c83ee3389f4
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:5213f2b518998520e3de945cbac11e907cabb4ca5f2588475e16e1d815ef1bda
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:345cee21bab4ed70a020907402e4890dccc2f9a90a63c71b27f22c83ee3
 
 **图1** 地点选取页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YLSXKTykRtW6xKzsspuZ9Q/zh-cn_image_0000002742004263.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/jFfoCMpbR2KFLTIhoYWx-w/zh-cn_image_0000002717611926.jpg "点击放大")
 
 **图2** 地点选取
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/bPesuoOKTsSuG9wA6tdMJQ/zh-cn_image_0000002712405274.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/iVwtheXQRMeDpX9aF-mVMA/zh-cn_image_0000002747291879.jpg "点击放大")
 
 ## 约束与限制
 

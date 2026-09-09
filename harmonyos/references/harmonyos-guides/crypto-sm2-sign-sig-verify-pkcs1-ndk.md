@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-sign-sig-verify-pkcs1-ndk
 title: 使用SM2密钥对签名验签(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签介绍及算法规格 > 使用SM2密钥对签名验签(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用SM2密钥对签名验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f67c5c355ad26d2316a39cdc383903a61634301e02302c30845dc1b44c593f52
 ---
 

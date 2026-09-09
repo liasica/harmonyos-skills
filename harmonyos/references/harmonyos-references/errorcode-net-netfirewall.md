@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 防火墙错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 防火墙错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ab2d2d515e5e7eeed9cd93ffb1c527e07473fafeb52266723220cd87257c232e
+scraped_at: 2026-09-10T06:27:16+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:a3949bea2b68143f028ea5caaff0a755068e2e74a9dceaefce1590d84357de5c
 ---
 
 **说明** 
@@ -28,7 +28,7 @@ The specified user does not exist.
 
 **处理步骤**
 
-检查系统是否创建该用户ID。
+检查系统是否创建该用户userid。
 
 ## 29400001 防火墙规则数量超过最大值
 
@@ -98,13 +98,13 @@ domain类型的防火墙规则中，域名规则数量超过最大值。
 
 **可能原因**
 
-1.添加/更新的一条domain规则里的域名参数NetFirewallDomainParams的个数大于100个。
+1.添加/更新的一条域名规则里的域名参数NetFirewallDomainParams的个数大于100个。
 
-2.单个用户userid的所有domain规则里的域名参数NetFirewallDomainParams的个数大于1000个。
+2.单个用户userid的所有域名规则里的域名参数NetFirewallDomainParams的个数大于1000个。
 
 **处理步骤**
 
-检查添加的一条domain规则里的域名参数NetFirewallDomainParams的个数是否大于100个。
+检查添加的一条域名规则里的域名参数NetFirewallDomainParams的个数是否大于100个，同时检查当前用户所有域名规则的域名参数NetFirewallDomainParams总个数是否大于1000个。
 
 ## 29400005 模糊域名规则数量超过最大值
 

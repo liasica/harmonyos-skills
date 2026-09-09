@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-derivation-overview
-title: 密钥派生介绍及算法规格
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生介绍及算法规格
+title: 密钥派生
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3fcc1c599c613a5c4560e529d49117353d9c29efae6770b722c7e3791266a5e8
 ---
 

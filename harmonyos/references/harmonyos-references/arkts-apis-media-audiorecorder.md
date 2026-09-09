@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 废弃的Interface (AudioRecorder, deprecated)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > 废弃的Interface (AudioRecorder, deprecated)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:25ed94f2e122a94d7fc4252794e561fcd6cd98a5a94d8478c298d9c2be5a041d
 ---
 

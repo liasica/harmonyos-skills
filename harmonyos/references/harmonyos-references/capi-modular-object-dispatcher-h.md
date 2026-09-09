@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-modu
 title: modular_object_dispatcher.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > modular_object_dispatcher.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8b6230c9ab4c61701128200b71c24c340bbb9c879ea6ce2a444da10fac32845d
 ---
 

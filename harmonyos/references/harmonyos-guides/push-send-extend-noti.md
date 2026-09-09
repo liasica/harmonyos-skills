@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-send-ext
 title: 发送语音播报消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送语音播报消息 > 发送语音播报消息
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:00+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-10T06:23:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9ab5d309ddc08706a60da6665978e51d05d0510b13a67f1d196432294d57e8ba
 ---
 

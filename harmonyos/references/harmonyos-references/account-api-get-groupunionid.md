@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 通过OpenID或UnionID获取GroupUnionID
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力 > 通过OpenID或UnionID获取GroupUnionID
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:dc3b9dc2d9b81c45075dff466f6790775e2307401e4f3de3286eaf6953c0d99c
 ---
 

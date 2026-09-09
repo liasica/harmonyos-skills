@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: qrcode开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > qrcode开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:06+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:55b17841b7eaa7d811b3e09eea6aa43335629fcd0b0833eb8e826ce67af0bde7
+scraped_at: 2026-09-10T06:22:12+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:09d3dacf7dbf310077a863193e474d80dd17035f97384cb70fc91d853d72d5ef
 ---
 
 生成并显示二维码，具体用法请参考[qrcode](../harmonyos-references/js-components-basic-qrcode.md)。
@@ -33,7 +33,7 @@ content_hash: sha256:55b17841b7eaa7d811b3e09eea6aa43335629fcd0b0833eb8e826ce67af
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Mv3axKPgQvyOsc31ZFprPg/zh-cn_image_0000002712244196.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/qNZHTfIjRFyia_2wy7MHAg/zh-cn_image_0000002717770750.png)
 
 **说明** 
 
@@ -82,7 +82,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/YH87XQphS5KL8uDoES8nKQ/zh-cn_image_0000002742003149.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/ayp-Q18FQISdK3Rm7Q-Jtw/zh-cn_image_0000002717610816.gif)
 
 ## 设置样式
 
@@ -112,7 +112,7 @@ qrcode{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/6CqiYvquS5iCC9qeVDwT4Q/zh-cn_image_0000002712404162.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/_UwHdAY5R7OSuDaYZBreKQ/zh-cn_image_0000002747290769.png)
 
 **说明** 
 
@@ -159,4 +159,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/gkNpQS4sT3W7gzz3jPd2mw/zh-cn_image_0000002742123111.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/-Y2OAhX8SHGgWDuyX_D9kw/zh-cn_image_0000002747210687.gif)

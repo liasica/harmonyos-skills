@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-catalo
 title: 获取目录列表
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取目录列表
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:18+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a4f8ebab641d0200fd4bdd621556e96375f8f6a83c2f8ff67ef4fa4e3389bba9
+scraped_at: 2026-09-10T06:23:28+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:d6c1f3235e2b86302d56fbc34538a2c2a2adc0f885dddb0d95a9c1abe298e92d
 ---
 
 当应用需要展示书籍目录列表时，开发者可通过解析能力获取目录节点列表，实现目录列表中章节名称按顺序、层级的展示。当用户点击目录节点时，开发者也需要获取目录位置及资源信息，用于跳转到指定位置。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/LVqWeGRLQwSlv4ob-mVMLw/zh-cn_image_0000002742004361.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/BEHUcp8TQD-FD_lPO0gyQw/zh-cn_image_0000002717612024.png)
 
 ## 接口说明
 

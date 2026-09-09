@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.securityManager（安全管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.securityManager（安全管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:44+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f71a0ecd11951f01883a7adf14835f722613381d359ac662298d60c3ffebf477
 ---
 

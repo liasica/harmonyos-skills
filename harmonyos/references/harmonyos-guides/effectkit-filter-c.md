@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/effectkit-fil
 title: 添加图像效果 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 离线图像处理 > 添加图像效果 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:20+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:23:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:159c9da142f0495e7002db4e7a0678fe0e8f8ce68a8cde8e98ab59a2b74466e6
 ---
 

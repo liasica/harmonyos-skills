@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/displaymanage
 title: 屏幕开发常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 屏幕管理 > 屏幕开发常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:48+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:22:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:dc14a32a55c59f4b235a746edbb4a93f235ea2cd615e3523a4eedf16b67c8d78
 ---
 

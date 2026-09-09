@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 通过router或call事件刷新卡片内容
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面交互 > 通过router或call事件刷新卡片内容
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2eb33288ac9d4c4e16e33430300a4472a970dc1162b2da815821fa4e4135b91d
 ---
 

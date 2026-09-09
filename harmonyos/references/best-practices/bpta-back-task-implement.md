@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-back-task-
 title: 应用后台运行
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 应用后台运行
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
+scraped_at: 2026-09-10T06:30:15+08:00
 doc_updated_at: 2026-05-22
-content_hash: sha256:c21c273f534708c885482e6cd9ee9bf97e089f8429fdc666a9cb8f4ff744fa2a
+content_hash: sha256:89829eb64de6754be2898c3a556d7a63101b86f9f17d0ff06ff827a350233f9b
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:c21c273f534708c885482e6cd9ee9bf97e089f8429fdc666a9cb8f4ff74
 
 标准系统支持规范内受约束的后台任务，包括短时任务、长时任务、延迟任务、代理提醒。开发者可以根据如下介绍，选择合适的[后台任务](../harmonyos-guides/background-task-overview.md#后台任务类型)，以满足应用退至后台后继续运行的需求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/GeNpFSLQSla0z-cvqmVtmA/zh-cn_image_0000002193850856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/V640WEK9Rku0Q1Jk3Lzx-g/zh-cn_image_0000002193850856.png "点击放大")
 
 以下表格对比总结了各类后台任务的概念、适用场景以及任务执行过程中的应用状态。
 
@@ -44,7 +44,7 @@ content_hash: sha256:c21c273f534708c885482e6cd9ee9bf97e089f8429fdc666a9cb8f4ff74
 
 在应用进行小文件下载、缓存、信息发送等业务场景时，如果应用短暂退至后台导致进程被挂起，重新切换到前台，可能因应用的前后台周期回调中存在业务代码逻辑，导致应用使用状态异常。此时，可以申请短时任务作为解决方案。以下示例展示了如何使用ApplicationContext订阅应用前后台切换的回调，以在应用切后台时申请短时任务，解决因短暂切换前后台导致的消息发送异常问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/dhmcDmaCShyvNEO0NW4_0g/zh-cn_image_0000002193850852.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/XyQxPtTFRkKOiQ4WtxahfQ/zh-cn_image_0000002193850852.png "点击放大")
 
 1. 定义短时任务信息SuspendTaskInfo()接口，包括短时任务的ID和获取对应短时任务的剩余时间delayTime。
 
@@ -163,14 +163,14 @@ content_hash: sha256:c21c273f534708c885482e6cd9ee9bf97e089f8429fdc666a9cb8f4ff74
 
 **实现效果**
 
-* **系统息屏场景/应用置于后台场景：**前台应用在自动息屏后，会被识别为置于后台。此时，应用可以申请短时任务，剩余时长上限为3分钟（如下图所示，delayTime为180000ms）。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/676pTDESRdSKvcHBouQ0KQ/zh-cn_image_0000002193850864.png)
-* 当短时任务的剩余时间不足时，系统会触发回调，停止任务。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/8GDywnIDRLyWG540IxL5tA/zh-cn_image_0000002229450725.png)
+* **系统息屏场景/应用置于后台场景：**前台应用在自动息屏后，会被识别为置于后台。此时，应用可以申请短时任务，剩余时长上限为3分钟（如下图所示，delayTime为180000ms）。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/SvfiZwHpRs2DlEIQ2jvZXg/zh-cn_image_0000002193850864.png)
+* 当短时任务的剩余时间不足时，系统会触发回调，停止任务。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/XkSAjodkRbaFqXbU8p-NVQ/zh-cn_image_0000002229450725.png)
 
 ### 应用后台长时间运行不中断
 
 当应用涉及数据传输、音频播放、录音操作、定位导航、蓝牙和WLAN相关应用、多设备互联、音视频通话、复杂计算任务等场景时，需要应用在后台长时间运行。为了确保应用在这些情况下正常运作，可以申请后台长时任务来实现。以下示例展示了如何使用长时任务管理应用的定位服务，以实现应用在后台长时间运行时，持续获取设备位置信息的功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/KZpiwT0USFetg0SaTWNCkQ/zh-cn_image_0000002194010444.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3hYFGE0rRyCGpuTUyhuvVA/zh-cn_image_0000002194010444.png "点击放大")
 
 1. 在定位、导航类的应用场景下，为了确保应用在后台仍能使用定位服务，需在module.json5配置文件中为EntryAbility声明定位类型的长时任务，并申请定位相关权限。
 
@@ -308,9 +308,9 @@ content_hash: sha256:c21c273f534708c885482e6cd9ee9bf97e089f8429fdc666a9cb8f4ff74
 
 **实现效果**
 
-* 在定位和导航应用场景中，应用前台运行时开启位置订阅，控制台定期打印位置信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/n21tytK0TDeR4Nlt0FNjlg/zh-cn_image_0000002229450733.png)
+* 在定位和导航应用场景中，应用前台运行时开启位置订阅，控制台定期打印位置信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/AscSOyxvTpCU0WQbBaOyxQ/zh-cn_image_0000002229450733.png)
 
-* 在定位和导航应用场景中，应用退至后台持续运行，控制台日志定时打印位置信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/vR8r9tFfT8WYG-bPW8ifEg/zh-cn_image_0000002194010448.png)
+* 在定位和导航应用场景中，应用退至后台持续运行，控制台日志定时打印位置信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/IEuujQpvS6G8MAXuXdUdSA/zh-cn_image_0000002194010448.png)
 
 ## 示例代码
 

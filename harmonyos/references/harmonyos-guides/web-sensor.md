@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-sensor
 title: 使用运动和方向传感器监测设备状态
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 使用运动和方向传感器监测设备状态
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-07-09
+scraped_at: 2026-09-10T06:22:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:89908efb81cfdce57a33a581c587300e1a45a5b44f0662ca7d920a1740f5c055
 ---
 

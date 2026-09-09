@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Media错误码
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > 错误码 > Media错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5756c0d47dc04ac689acc26c6d40e825b582ef5b8cedddd0889414c7ad8023a2
 ---
 

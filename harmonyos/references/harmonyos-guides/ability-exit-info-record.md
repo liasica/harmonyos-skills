@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-exit-
 title: 获取应用异常退出原因
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 获取应用异常退出原因
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:de44dd3d6ac58ff4e915e7c845b7eb78b1230347c04f25001f9d5af5006bd078
 ---
 

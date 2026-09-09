@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-add
 title: addMonitor/clearMonitor接口：动态添加/取消监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > addMonitor/clearMonitor接口：动态添加/取消监听
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:67a3d12bc8b6f114ba8ccfc465329ef213fde951f4d91ec0f8d2aa1fedc8c901
 ---
 

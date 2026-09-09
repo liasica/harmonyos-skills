@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-signing-
 title: 签名/验签(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 签名/验签 > 签名/验签(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:31+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:930b723dde5e9a64727c328bc80242c3a47787a41ca080a834ff1dd268f995e9
 ---
 

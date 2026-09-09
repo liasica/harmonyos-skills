@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-suppor
 title: 查询支持的认证能力
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 查询支持的认证能力
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:04+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:bfc083606427635c3f6a37b8dbf736e8525e380ddec0d87beb31d39559edf078
 ---
 

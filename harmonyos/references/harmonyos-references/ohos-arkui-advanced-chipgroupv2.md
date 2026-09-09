@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroupV2
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:29+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:130a181c16e6cf3fd394f66d691dcf56c991b9c1727fd9dd26e962bcb8909abb
+scraped_at: 2026-09-10T06:25:42+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9ade348a446c05a29cc68b3eb9af5ce9d5bf02c5af90bd84242d4118728ce4af
 ---
 
 ChipGroupV2组件提供操作块群组容器，支持单选或多选、自定义样式和间距、以及尾部自定义内容。该组件适用于文件或资源内容的分类、标签选择、筛选等场景，可帮助开发者快速构建美观且交互丰富的标签组界面。
@@ -621,7 +621,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/XxqdfBjwR3iw8-ykk41bHw/zh-cn_image_0000002742005465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/7sAuq7u8S7iAf-_TFtqV4Q/zh-cn_image_0000002717613130.png)
 
 ### 示例2（ChipGroupV2设置最右侧自定义组件）
 
@@ -719,7 +719,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/vxvEdXQIReq_o1nWj2CLNQ/zh-cn_image_0000002712406476.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/OO5Tx-dqTwS1Yqj-5oYftw/zh-cn_image_0000002747293083.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -821,7 +821,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/5G0NWyQvSeCiGMphpdoxeA/zh-cn_image_0000002742125425.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/PzehMKynSryVXdUhPmQM9A/zh-cn_image_0000002747212999.png)
 
 ### 示例4（监听ChipGroupV2内对象类型属性的内部属性变化）
 
@@ -898,4 +898,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/8wQ4wQSnT5SD_tlCFx-quA/zh-cn_image_0000002712246518.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/oulvgVONQz-RXasqi2_2nA/zh-cn_image_0000002717773064.gif)

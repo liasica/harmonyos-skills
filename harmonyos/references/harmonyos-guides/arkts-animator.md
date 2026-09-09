@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animato
 title: 帧动画（ohos.animator）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 帧动画（ohos.animator）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:03+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cdaa6e0cccf5f83b57a9581f4165e548e2b6f723a76641c362c7974d2a9d0f96
+scraped_at: 2026-09-10T06:22:08+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:49ef03101f5ca8546c44a05b16245bb3d53a94809d1015fce395a8479dec4f4f
 ---
 
 帧动画具备逐帧回调的特性，便于开发者在每一帧中处理需调整的属性。通过向应用提供[AnimatorResult](../harmonyos-references/js-apis-animator.md#animatorresult)的onFrame属性逐帧回调，帧动画使开发者能够在应用的每一帧设置属性值，从而实现组件属性值变化的自然过渡，营造出动画效果。帧动画接口详情可参考[@ohos.animator (动画)](../harmonyos-references/js-apis-animator.md)。
@@ -19,9 +19,9 @@ content_hash: sha256:cdaa6e0cccf5f83b57a9581f4165e548e2b6f723a76641c362c7974d2a9
 
 如图所示，帧动画在动画过程中即可实时响应，而属性动画按最终状态响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/O5oQA-2uQhSaJ0pqZ_DRGA/zh-cn_image_0000002742122965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/NMJmrHi7R-CW6fwS0UFbhw/zh-cn_image_0000002747210541.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/1U8KmA2uTxSA4E3Zn9R5MQ/zh-cn_image_0000002712244052.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/GBRbXkCKQm-niU6Xvkq98Q/zh-cn_image_0000002717770606.gif)
 
 ## 使用帧动画实现动画效果
 
@@ -242,4 +242,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/0jwBLOobSl6RCNnQRfjJDw/zh-cn_image_0000002742003005.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/aazFY2UVSmWHZGFT6XOSSA/zh-cn_image_0000002717610672.gif)

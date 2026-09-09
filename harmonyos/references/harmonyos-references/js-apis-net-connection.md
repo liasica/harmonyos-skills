@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.connection (网络连接管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.connection (网络连接管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:11+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1d0fcc32bbb682004cb8a458c528a39b0bc0adc1017122eb0ebd7b1fbb8b30b9
 ---
 

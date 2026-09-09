@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracemeter-
 title: 使用HiTraceMeter跟踪性能（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 性能跟踪 > 使用HiTraceMeter跟踪性能（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fcb2d4904afe2d621e2c3e05190ca899dc28ef9aeb76d3a610a3d07b032a79b8
 ---
 

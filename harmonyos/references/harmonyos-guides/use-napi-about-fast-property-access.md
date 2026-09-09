@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用扩展的Node-API接口加速属性访问
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口加速属性访问
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:23:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f080bf564be8e7a0b9d8dfe313435fccf60cf3b90c5311c8ccb5a76067cae845
 ---
 

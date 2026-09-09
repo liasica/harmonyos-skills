@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 视效设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 视效设置
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:60a1ca7f2608bf2e8bd6ebe256b78b87c2233b5cb2d30f5906612d0b64966bf8
+scraped_at: 2026-09-10T06:25:17+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:d56d57881a50f5ee062fb10f1c9e6f848e0eab5a6cbc8b84844c17b658565deb
 ---
 
 本模块提供接口设置组件视觉效果，包括滤镜效果（如：模糊、像素扩展等）和非滤镜效果（如：点光源等）。
@@ -227,4 +227,4 @@ struct FilterEffectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/eucnUMi9Rka4EZfrAcMMew/zh-cn_image_0000002742124813.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/UVYDg5mVQdexZh9zvl9FIw/zh-cn_image_0000002747212385.jpg)

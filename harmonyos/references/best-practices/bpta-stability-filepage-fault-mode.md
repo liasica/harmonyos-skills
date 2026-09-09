@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 文件映射过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 文件映射过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-04T06:33:24+08:00
+scraped_at: 2026-09-10T06:30:18+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:6e1d5e73f1f0308468b3c90ddb80175a2574a26c8991410ac509b259944dd429
+content_hash: sha256:4bc3b209a8408a287200ac694771eb4e4203401dc1714f465f48da20c5acd595
 ---
 
 ## 概述
@@ -76,10 +76,10 @@ content_hash: sha256:6e1d5e73f1f0308468b3c90ddb80175a2574a26c8991410ac509b259944
 4. 根据上述信息可初步定界当前RSS内存泄漏故障为文件映射-HAP包过大。
 5. 参考[内存栈日志获取方法](bpta-stability-rssleak-fault-mode-overreview.md#section18531162841113)获取内存栈日志后，将日志导入DevEco Studio，参考[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)选中All Anonymous VM泳道，按照Bytes从大到小排序找到异常申请的内存及其调用栈，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/K19hLn7IRSu9N6SXRVBrhw/zh-cn_image_0000002729611089.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/h8KR193CR62_VAgEXxatng/zh-cn_image_0000002729611089.png "点击放大")
 6. 分析内存调用栈指向的代码段，发现应用在CreateMultipleSmallMappingsLeak()函数中反复mmap()映射，且未解映射。内存调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/OtPZO4kDS9e4S8JZggK4hg/zh-cn_image_0000002699891762.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/5uWKId2HQVSB_67-gyzRcw/zh-cn_image_0000002699891762.png "点击放大")
 
 **开发态分析思路**
 
@@ -88,10 +88,10 @@ content_hash: sha256:6e1d5e73f1f0308468b3c90ddb80175a2574a26c8991410ac509b259944
 1. 启动录制后，遍历可疑的泄漏场景以复现RSS内存泄漏问题。
 2. 单击下图1处选择All Anonymous VM泳道，单击下图2处Call Trees查看内存申请调用栈，找到异常增长内存点及其申请调用栈如下图3处所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/RvimTSYxTmCnIsr7q6cA3g/zh-cn_image_0000002699731876.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Irc9-n4sSYujsiuZuuSo8A/zh-cn_image_0000002699731876.png "点击放大")
 3. 分析内存调用栈指向的代码段，发现应用在CreateMultipleSmallMappingsLeak()函数中反复mmap()映射，且未解映射。内存调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/HmHK_0EDSeCfHDef8SOP2Q/zh-cn_image_0000002729491131.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/lYse10dgQo2SuhsGxuhKQg/zh-cn_image_0000002729491131.png "点击放大")
 
 **修复建议**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: BundleInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > BundleInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2e72fd3acd1ff20f1611d478aaecc650ed28db0646ef14b8ec6df407475df59a
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-col
 title: 颜色选择与收藏管理
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 颜色选择与收藏管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6127fe6803e4342d3b0fa89f171b6184ef095ec60540df5efb5b81e8d2624ba4
 ---
 

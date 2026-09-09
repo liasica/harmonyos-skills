@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 游戏上划退出后，场景切换阶段存在振动，应该如何避免
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏启动加速服务 > 游戏上划退出后，场景切换阶段存在振动，应该如何避免
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-05-08
+scraped_at: 2026-09-10T06:23:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b47bc411cfd03dfa0d20440352c6ff83cb29214489803fb851f44d332eb2d0ba
 ---
 

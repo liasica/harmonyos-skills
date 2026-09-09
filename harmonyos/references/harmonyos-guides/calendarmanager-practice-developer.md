@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/calendarmanag
 title: 日历服务实践案例
 breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > 日历服务实践案例
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:05+08:00
+scraped_at: 2026-09-10T06:23:14+08:00
 doc_updated_at: 2026-08-04
-content_hash: sha256:de7b7474550ce36da06111e06cd60b9ea24e734f5f182424e7996afb68f32222
+content_hash: sha256:47ac91de860a404b0db8a56541b2f937e2be58a65e4f8e1cd42007456df063df
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:de7b7474550ce36da06111e06cd60b9ea24e734f5f182424e7996afb68f
 * 日程详情：始终显示。
 * 日程通知：通知弹出时显示，通知中心内点击对应日程卡片后显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/fnl-QGwfRS6I_lvu6iY2JA/zh-cn_image_0000002712245082.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Xi_qsgORTASI9svEbbxNSA/zh-cn_image_0000002717771626.png)
 
 ## 开发准备
 
@@ -205,7 +205,7 @@ content_hash: sha256:de7b7474550ce36da06111e06cd60b9ea24e734f5f182424e7996afb68f
 
 示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/8QWOPqLyTIWT3YXHQhZnow/zh-cn_image_0000002742004031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/XdeBN_r_RhiX1vFuVN7m2g/zh-cn_image_0000002717611694.png)
 
 ### 酒店住宿场景
 
@@ -282,7 +282,7 @@ async createHotelCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/s_09e2oASEeGuPPsXIxBBw/zh-cn_image_0000002712405042.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/pQ3eQrUPTKes7NqE9l3g8Q/zh-cn_image_0000002747291647.png)
 
 ### 直播预约场景
 
@@ -351,7 +351,7 @@ async createLiveCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/5pM8CfpBRvmN3XReqcxuzA/zh-cn_image_0000002742123991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/SBbNp8cWRfGuV9ghNrM-mQ/zh-cn_image_0000002747211563.png)
 
 ### 抢购预约场景
 
@@ -420,7 +420,7 @@ async createShoppingCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/qJ0_RwP0S4ugKeEICLfu7A/zh-cn_image_0000002712245084.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/x6k-W8W2RTGdLHcvxW52Ig/zh-cn_image_0000002717771628.png)
 
 ### 还款提醒场景
 
@@ -491,7 +491,7 @@ async createRepaymentCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/65MLEgMjSsCuTztGU-eRcw/zh-cn_image_0000002742004033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/4p9LOSq2Ru6V99zJ2uV8gg/zh-cn_image_0000002717611696.png)
 
 ### 课程提醒场景
 
@@ -560,7 +560,7 @@ async createClassCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/DNHxkRUUTzyAQ8uAfzR97g/zh-cn_image_0000002712405044.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Go8ZWoC3QVKWcQ76pZgJWw/zh-cn_image_0000002747291649.png)
 
 ### 影音娱乐场景
 
@@ -629,7 +629,7 @@ async createSportsCalendarAndEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/LRn3IRsDR0-quAq1jR1qmA/zh-cn_image_0000002742123993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/VeMH7gyqRdeRkgeSSQhwVw/zh-cn_image_0000002747211565.png)
 
 ### 运动训练场景
 
@@ -698,7 +698,7 @@ async createSportsExerciseEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/jMmkt--vSqSKgZXCB_GUew/zh-cn_image_0000002712245086.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/3UyAkfJqSDiG0aGX9Aw_Ig/zh-cn_image_0000002717771630.png)
 
 ### 会议场景
 
@@ -789,4 +789,4 @@ async createMeetingEvent(): Promise<void> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/jHmNnPpwS021yI-20BZZvQ/zh-cn_image_0000002742004035.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/mHGrE1AlRR2Hm6likDDXSw/zh-cn_image_0000002717611698.png)

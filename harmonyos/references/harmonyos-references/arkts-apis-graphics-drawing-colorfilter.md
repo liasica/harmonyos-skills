@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ColorFilter)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (ColorFilter)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:41+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2241e9af8ebc07d6a42388572c3062fb3ad31e8ba190e7b10aa2954d6d0283d8
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-passw
 title: 免密代扣说明
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 免密代扣说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-05-26
+scraped_at: 2026-09-10T06:23:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:16ec68f95189e1f9bcd17fcd17c231ad72c5774699220865c4bd4b718affe2a5
 ---
 

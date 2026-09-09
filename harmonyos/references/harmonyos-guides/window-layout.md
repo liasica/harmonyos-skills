@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-layout
 title: 窗口布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口布局
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:22:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3ec162970dff0f08e55472949a81cca8bf0b05fdcc8c42462e0f10885d99d584
 ---
 

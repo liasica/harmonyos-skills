@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 获取网格扫描信息（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 环境Mesh识别 > 获取网格扫描信息（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-14
+scraped_at: 2026-09-10T06:23:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:24cebcfd94c726bcf1179847c7bf47d7e191b1b14bc0551d251799ae6f057ed1
 ---
 

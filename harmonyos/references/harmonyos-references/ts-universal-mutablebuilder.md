@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: "mutableBuilder: 实现全局@Builder动态更新"
 breadcrumb: "API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > mutableBuilder: 实现全局@Builder动态更新"
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f45315ece033cf4ff53bd4ee4f09c98dc30c10149cc0dc76d5a20506f8abe785
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ipc-
 title: ipc_cremote_object.h
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > C API > 头文件 > ipc_cremote_object.h
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:23+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:26:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:db7d6fbb040cf3db0c92400a52ac291115fd60ad5551c3e5e6406886a34cd639
 ---
 

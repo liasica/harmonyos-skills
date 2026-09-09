@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 手势事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 手势事件
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:06+08:00
+scraped_at: 2026-09-10T06:22:11+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:134d24e3701d37871f0c23736a93239104f6c02dc752357bb89c062ef47ba4c6
+content_hash: sha256:fa30ae08ecb95500c16682849b468f65a71f2c126066621a8b1531f460d8cc68
 ---
 
 手势表示由单个或多个事件识别的语义动作（例如：触摸、点击和长按）。一个完整的手势也可能由多个事件组成，对应手势的生命周期。支持的事件有：
@@ -112,4 +112,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/aiDfmqY5TtC_g7Qc-aEK8w/zh-cn_image_0000002742003107.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/wVqTaTI3TWyGPUxPu13-nQ/zh-cn_image_0000002717610774.gif)

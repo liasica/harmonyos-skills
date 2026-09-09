@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/service-suppo
 title: 检测设备硬件一致性
 breadcrumb: 指南 > 系统 > 基础功能 > Service Support Kit（服务与支持） > 检测设备硬件一致性
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:09+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b562a20a320c86b15b7bcd933563734ce40fa4c95b2e07880a7bd51b10a293ee
 ---
 

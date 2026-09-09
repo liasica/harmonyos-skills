@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avsessi
 title: 媒体会话提供方(ArkTS)
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 媒体会话提供方(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e43fbe29d3aae68b3e209e65fa63d848257064baddd2b66ec833d5090b40b76c
 ---
 

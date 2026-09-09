@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.sendablePreferences (共享用户首选项)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.sendablePreferences (共享用户首选项)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:39+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7efb5bee80f7c5508c03c20ebb7c966b7c226324b0f29dea43d455dd93199267
 ---
 

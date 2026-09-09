@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverdevelop
 title: Driver Development Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > Driver Development Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:35+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:b5084b5186871e3fb5cd287e2fa095528e4978e6a198ba3a70602fd0203c21dd
+scraped_at: 2026-09-10T06:22:42+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:a4ff85a4781a9400e0ec4ef6cd0f0ebbe24a9ee9be592689157e5e42e4172620
 ---
 
 Driver Development Kit（驱动开发套件）为外设驱动开发者提供高效、安全、丰富的扩展外设驱动开发解决方案ArkTS-API和C-API，支持外设驱动开发者为消费者带来外设即插即用的极致体验。
@@ -46,7 +46,7 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图1** 扩展外设驱动原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/kDAulCBcQ7KkE_EkUJBn9g/zh-cn_image_0000002712404606.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/9jQbDf0KSoWRRCzXiJ3tRw/zh-cn_image_0000002747291213.png)
 
 ### 运作流程
 
@@ -54,13 +54,13 @@ HDF扩展驱动框架为扩展外设驱动开发，提供稳定统一的外设�
 
 **图2** 非标外设与对应扩展外设驱动应用匹配的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/nVkqFSmhRfKNdQv2hapC_Q/zh-cn_image_0000002742123555.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/_3M9XPInTG23VV6ejYlBkQ/zh-cn_image_0000002747211131.png)
 
 用户使用扩展外设驱动客户端时，扩展外设驱动客户端与扩展外设驱动的绑定流程如图3所示。
 
 **图3** 扩展外设驱动客户端与扩展外设驱动绑定的时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Ci4txc78Ru2cDt1Lrv_geg/zh-cn_image_0000002712244642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/DAWTxcApSTSbUNRuY0VQ7Q/zh-cn_image_0000002717771196.png)
 
 ## 约束与限制
 

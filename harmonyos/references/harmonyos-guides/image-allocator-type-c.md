@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-allocat
 title: 图片解码内存优化(C/C++)
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码 > 图片解码内存优化(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a4294c4ce5ac52dfa4b443db650ff58021b75e3bdd6e8ea12a8ca361329f538e
 ---
 

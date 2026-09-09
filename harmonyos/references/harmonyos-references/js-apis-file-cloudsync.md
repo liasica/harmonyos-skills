@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.cloudSync (端云同步能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.cloudSync (端云同步能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:effe357a0d77d1524c8e254702822a56b5dd7755ae5f125c15a5e6453295f299
 ---
 

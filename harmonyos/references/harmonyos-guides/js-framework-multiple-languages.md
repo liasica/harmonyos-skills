@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: 多语言支持
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 多语言支持
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:52+08:00
-doc_updated_at: 2026-03-23
+scraped_at: 2026-09-10T06:22:11+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9a36abbfe9a1769b16fe8720cc42d597b1853571342ca83ab52aafaf4489d803
 ---
 

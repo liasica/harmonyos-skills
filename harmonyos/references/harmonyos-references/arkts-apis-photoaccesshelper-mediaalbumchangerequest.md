@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MediaAlbumChangeRequest)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Class (MediaAlbumChangeRequest)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7558e5c92f960a5d0603c30a23fd4a6c866086a1cc6cc3748de91b4545f2b171
 ---
 

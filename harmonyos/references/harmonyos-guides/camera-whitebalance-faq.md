@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-whiteb
 title: 白平衡相关问题
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit常见问题 > 白平衡相关问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3fac9447cdd9603ec388413eec6c8340659b4cf8f088592ce9708a83924dfb86
 ---
 

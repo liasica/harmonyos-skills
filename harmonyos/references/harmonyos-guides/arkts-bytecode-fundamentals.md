@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-bytecod
 title: 方舟字节码基本原理
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 方舟字节码 > 方舟字节码基本原理
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:13:54+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:21:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7852cdc2685c2b723e3ac5c2a942e410cf037c1a838e0bd4f339c0ca11802fbd
 ---
 

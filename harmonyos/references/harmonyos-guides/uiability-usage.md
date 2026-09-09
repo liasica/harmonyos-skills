@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-usa
 title: UIAbility组件基本用法
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility组件基本用法
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f9d330144fceeffb3e7aeb120bb65ffe397869a98c6d6d3685f52059601f6563
 ---
 

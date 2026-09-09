@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.InputMethodExtensionAbility (InputMethodExtensionAbility)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.InputMethodExtensionAbility (InputMethodExtensionAbility)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ea1300da69fa2a479c9f5d197b75d00e2f2c9d425c65481bfb43990062a083e0
 ---
 

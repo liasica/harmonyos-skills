@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-sessio
 title: 会话配置问题
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit常见问题 > 相机无法启动 > 会话配置问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4e8eff19c0d4afab2d67bca5a9cc1da4d77d79d1630f1f41b0cc90f2e5e7c493
 ---
 

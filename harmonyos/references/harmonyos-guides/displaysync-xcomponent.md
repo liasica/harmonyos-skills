@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/displaysync-x
 title: 请求自绘制内容绘制帧率
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 使用可变帧率能力定制不同内容的绘制帧率 > 请求自绘制内容绘制帧率
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f48cd76849d1a56956671ffc80e1908dfec9d6d8613f35a8c81679beeb699d62
 ---
 

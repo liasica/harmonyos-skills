@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口方向
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口方向
 category: best-practices
-scraped_at: 2026-09-02T15:03:18+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:69112f0f0418e18d61437c7579a6502feba8e30438f2d55e957d017f3487305f
+scraped_at: 2026-09-10T06:30:05+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:b6a332a3028b0602549b132d33dcd753fc27c08845b7d5d5c71a38a4d0c1ef88
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:69112f0f0418e18d61437c7579a6502feba8e30438f2d55e957d017f348
 
 目前HarmonyOS系统中设备的显示方向有以下四种，对应真机实际状态如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/ECO3wCttSHG5k6veSB1K5w/zh-cn_image_0000002566756945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/H7pOC1-wQOKpIR0bvjUOKw/zh-cn_image_0000002566756945.png)
 
 **基本定义：**
 
@@ -189,7 +189,7 @@ content_hash: sha256:69112f0f0418e18d61437c7579a6502feba8e30438f2d55e957d017f348
 
 上述表格也可以抽象为如下的决策逻辑，如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/i9KCg2oQRguMoMP3AvfieA/zh-cn_image_0000002572763022.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/X_r-xJ4pTQ2o3E5e_bmPNQ/zh-cn_image_0000002572763022.png "点击放大")
 
 **说明** 
 
@@ -466,7 +466,7 @@ content_hash: sha256:69112f0f0418e18d61437c7579a6502feba8e30438f2d55e957d017f348
 
 以备忘录应用为例，当系统关闭旋转锁定后，应用页面会随手机旋转自动切换横竖屏；打开旋转锁定时，则不会发生旋转行为，此时需配置为AUTO\_ROTATION\_RESTRICTED。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/wE8V4u3bQgaV142vUVb-dw/zh-cn_image_0000002693704626.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/YxcLjGJDQGCQ1iHNRM007Q/zh-cn_image_0000002693704626.png "点击放大")
 
 ### 窗口级配置
 
@@ -511,7 +511,7 @@ aboutToDisappear(): void {
 
 视频播窗横竖屏切换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/l-ars_0UTF-kbByA_8dsdg/zh-cn_image_0000002566916979.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Z-QclX2oSC-O5gNczq1g6g/zh-cn_image_0000002566916979.png "点击放大")
 
 ### 页面级配置
 
@@ -656,11 +656,11 @@ aboutToDisappear(): void {
 
 例如：视频或者游戏类应用在横屏模式下开启悬浮窗后，页面没有适配横屏，导致内容显示不全或者观看体验不好。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/9e9d6RpeQ5O_rWh7EymfqA/zh-cn_image_0000002566757003.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/6W1TX4O_ROG_CQtuA2jagg/zh-cn_image_0000002566757003.gif "点击放大")
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/DXLcx6pvSzOAv9t0f__YSg/zh-cn_image_0000002535837220.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/h7uBeF35QDaKrftYt6sh3w/zh-cn_image_0000002535837220.gif "点击放大")
 
 ## 为多设备配置旋转策略
 
@@ -924,7 +924,7 @@ function ImageItem(imageSrc: ResourceStr) {
 
 下图展示了应用层、多设备工具模块与系统层之间的整体协作流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/SBrTj0YCQA2btRlW1IeQcA/zh-cn_image_0000002693534420.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/yA0Bo4UEQ_CCC5IYlK52Yw/zh-cn_image_0000002693534420.png "点击放大")
 
 **响应式规则引擎**（responsiverule目录模块）
 
@@ -1538,14 +1538,14 @@ aboutToAppear() {
 
 ### 应用首页案例
 
-应用首页通常支持横屏与竖屏显示。但是在类直板机上横屏的用户体验不好，所以直板机始终竖屏显示；在非类直板机（如平板、双折叠展开态、三折叠M/G态）支持竖屏与横屏展示。体验标准如下：
+应用首页通常支持横屏与竖屏显示。但是在类直板机上横屏的用户体验不好，所以直板机始终竖屏显示；在非类直板机（如平板、双折叠展开态、三折叠双屏/三屏态）支持竖屏与横屏展示。体验标准如下：
 
 | 体验标准 | 仅竖屏 | 支持自由旋转，受开关控制 |
 | --- | --- | --- |
-| 支持设备形态 | 直板机、双折叠折叠态、三折叠F态 | 双折叠展开态、三折叠M/G态、平板 |
+| 支持设备形态 | 直板机、双折叠折叠态、三折叠单屏态 | 双折叠展开态、三折叠双屏/三屏态、平板 |
 | 效果图 |  |  |
 
-对于市场上大多数应用的首页用户行为及体验，推荐使用FOLLOW\_DESKTOP策略，以满足应用在不同设备上的窗口旋转策略需求。同时，FOLLOW\_DESKTOP支持在同设备的折叠状态切换时，窗口旋转策略自动更新。例如，三折叠F态仅支持竖屏，切换至三折叠M态时，自动变为自由旋转，并受控制中心旋转开关的控制。
+对于市场上大多数应用的首页用户行为及体验，推荐使用FOLLOW\_DESKTOP策略，以满足应用在不同设备上的窗口旋转策略需求。同时，FOLLOW\_DESKTOP支持在同设备的折叠状态切换时，窗口旋转策略自动更新。例如，三折叠单屏态仅支持竖屏，切换至三折叠双屏态时，自动变为自由旋转，并受控制中心旋转开关的控制。
 
 首先，需对应用启动时的旋转策略进行设置，具体可参考[配置module.json5文件中的orientation字段](bpta-landscape-and-portrait-development.md#section1188593118171)。以实现多开发为例，为满足直板机和平板设备的不同策略，设置为follow\_desktop，此字段主要解决不同设备上默认旋转策略差异的问题。
 
@@ -1589,7 +1589,7 @@ export struct Home {
 
 | 体验标准 | 竖屏游戏仅支持竖屏 | 横屏游戏支持横屏旋转，受开关控制 |
 | --- | --- | --- |
-| 支持设备形态 | 直板机、双折叠折叠态、三折叠F/M/G态、平板 | 直板机、双折叠折叠态、三折叠F/M/G态、平板 |
+| 支持设备形态 | 直板机、双折叠折叠态、三折叠单屏/双屏/三屏态、平板 | 直板机、双折叠折叠态、三折叠单屏/双屏/三屏态、平板 |
 | 效果图 |  |  |
 
 对于游戏类应用，无论横竖屏游戏，均为固定方式或仅支持一个方向（例竖屏及反向竖屏）的旋转切换，此类应用均不需要在应用内进行开关控制，所以只需要在module.json5配置文件中进行相应的配置即可。一般有以下几种情况：
@@ -1604,22 +1604,22 @@ export struct Home {
 
 ### 图库应用案例
 
-图库应用通常在所有设备上支持竖屏或横屏显示。但是在直板机上反向竖屏的用户体验不好，所以直板机只能旋转至竖屏、横屏、反向横屏三个方向，受开关控制；在非类直板机（如平板、双折叠展开态、三折叠M/G态）保持当前窗口方向，支持自由旋转，且受开关控制。体验标准如下：
+图库应用通常在所有设备上支持竖屏或横屏显示。但是在直板机上反向竖屏的用户体验不好，所以直板机只能旋转至竖屏、横屏、反向横屏三个方向，受开关控制；在非类直板机（如平板、双折叠展开态、三折叠双屏/三屏态）保持当前窗口方向，支持自由旋转，且受开关控制。体验标准如下：
 
 | 体验标准 | 三向旋转（竖屏/横屏/反向横屏），受开关控制 | 自由旋转，受开关控制 |
 | --- | --- | --- |
-| 支持设备形态 | 直板机、双折叠折叠态、三折叠F态 | 双折叠展开态、三折叠M/G态、平板 |
+| 支持设备形态 | 直板机、双折叠折叠态、三折叠单屏态 | 双折叠展开态、三折叠双屏/三屏态、平板 |
 | 效果图 |  |  |
 
 推荐图库应用案例在module.json5中的“orientation”字段或页面中通过[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)使用AUTO\_ROTATION\_UNSPECIFIED策略。
 
 ### 个股详情页 & 股票K线图页案例
 
-个股详情页通常支持横屏与竖屏显示。但是在类直板机上横屏的用户体验不好，所以直板机始终竖屏显示，不支持旋转；在非类直板机（如平板、双折叠展开态、三折叠M/G态）保持当前窗口方向，支持自由旋转，且受控制中心的旋转开关控制。体验标准如下：
+个股详情页通常支持横屏与竖屏显示。但是在类直板机上横屏的用户体验不好，所以直板机始终竖屏显示，不支持旋转；在非类直板机（如平板、双折叠展开态、三折叠双屏/三屏态）保持当前窗口方向，支持自由旋转，且受控制中心的旋转开关控制。体验标准如下：
 
 | 体验标准 | 仅竖屏 | 支持自由旋转，受开关控制 |
 | --- | --- | --- |
-| 支持设备形态 | 直板机、双折叠折叠态、三折叠F态 | 双折叠展开态、三折叠M/G态、平板 |
+| 支持设备形态 | 直板机、双折叠折叠态、三折叠单屏态 | 双折叠展开态、三折叠双屏/三屏态、平板 |
 | 效果图 |  |  |
 
 在个股详情页面上，在aboutToAppear生命周期中采用window窗口提供的设置窗口方向的能力，通过[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)设置窗口旋转策略为FOLLOW\_DESKTOP，在aboutToDisappear中恢复上级页面的窗口旋转策略。
@@ -1660,7 +1660,7 @@ export struct StockDetail {
 
 | 体验标准 | 横屏旋转，受开关控制 |
 | --- | --- |
-| 支持设备形态 | 直板机、双折叠折叠态、三折叠F/M/G态、平板 |
+| 支持设备形态 | 直板机、双折叠折叠态、三折叠单屏/双屏/三屏态、平板 |
 | 效果图 |  |
 
 **示例代码**
@@ -1691,18 +1691,18 @@ aboutToDisappear(): void {
 
 ### 视频详情页 & 全屏播放页案例
 
-视频详情页通常支持横屏与竖屏显示。但是在直板机上反向竖屏的用户体验不好，所以直板机只能旋转至竖屏、横屏、反向横屏三个方向，且横屏时自动显示全屏播放页，竖屏时自动显示视频详情页；在非类直板机（如平板、双折叠展开态、三折叠M/G态）保持当前窗口方向，支持自由旋转，且受开关控制。体验标准如下：
+视频详情页通常支持横屏与竖屏显示。但是在直板机上反向竖屏的用户体验不好，所以直板机只能旋转至竖屏、横屏、反向横屏三个方向，且横屏时自动显示全屏播放页，竖屏时自动显示视频详情页；在非类直板机（如平板、双折叠展开态、三折叠双屏/三屏态）保持当前窗口方向，支持自由旋转，且受开关控制。体验标准如下：
 
 | 体验标准 | 三方向旋转（竖屏/横屏/反向横屏），受开关控制 | 自由旋转，受开关控制 |
 | --- | --- | --- |
-| 支持设备形态 | 直板机、双折叠折叠态、三折叠F态 | 双折叠展开态、三折叠M/G态、平板 |
+| 支持设备形态 | 直板机、双折叠折叠态、三折叠单屏态 | 双折叠展开态、三折叠双屏/三屏态、平板 |
 | 效果图 |  |  |
 
 全屏播放页仅横屏显示，支持横屏旋转，并受控制中心旋转开关控制。在类直板机上，用户点击全屏按钮进入全屏播放页时，仅能旋转至横屏和反向横屏两个方向；若开启旋转开关，从横屏或反向横屏进入全屏播放页时，支持旋转至竖屏、横屏、反向横屏三个方向，并在旋转至竖屏时切换至视频详情页。在双折叠展开态（接近正方形）下，可自由旋转至四个方向，且受开关控制。体验标准如下：
 
 | 体验标准 | 横屏旋转，受开关控制 | 自由旋转，受开关控制 | 横屏旋转，受开关控制 |
 | --- | --- | --- | --- |
-| 支持设备形态 | 类直板机 | 双折叠展开态、三折叠M | 三折叠G态、平板 |
+| 支持设备形态 | 类直板机 | 双折叠展开态、三折叠双屏态 | 三折叠三屏态、平板 |
 | 效果图 |  |  |  |
 
 对于视频类应用，在具体需要实现横竖屏切换的页面上，例如视频播放页面支持横屏，但是首页的内容是支持仅竖屏的，那么就需要在进入对应的页面时，采用window窗口提供的设置窗口方向的能力，通过[setPreferredOrientation](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)将窗口显示的方向修改为横屏、竖屏的状态。应用的默认旋转策略和如何通过[setPreferredOrientation](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)方法设置窗口方向可参考首页案例代码。
@@ -1846,7 +1846,7 @@ export struct VideoDetail {
 
 rotation的取值有4种，分别对应下图所示的4个方向（以直板机为例）。如果需要更精准的角度信息，则需要配合设备sensor获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/jGV91_teSy2OTT45Ls3PSQ/zh-cn_image_0000002535837336.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/VabuHYtwTbG9puNzyL6WUA/zh-cn_image_0000002535837336.png "点击放大")
 
 | 值 | 含义 |
 | --- | --- |
@@ -1866,7 +1866,7 @@ rotation的取值有4种，分别对应下图所示的4个方向（以直板机�
 
 display.Orientation 为屏幕当前的朝向状态，display.rotation 为屏幕相对自然方向的物理旋转角度。display.Orientation 为和 display.rotation 均为只读属性，且用于描述屏幕当前旋转状态，但二者定义逻辑不同，在各类设备形态下不存在固定对应关系，开发过程中不可相互替代。若混用接口，在折叠屏等多形态设备适配场景中极易引发兼容性问题。以三折叠设备为例：当 display.rotation 取值为 0° 时，display.Orientation 既可能为竖屏状态，也可能为反向横屏状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/vshkw4T0TuuEDRGczTwM6A/zh-cn_image_0000002622960129.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/d4of0GDRRI66JGLyKZcYoA/zh-cn_image_0000002622960129.jpg "点击放大")
 
 ### window.getLastWindow的方式获取窗口出现延迟
 
@@ -1909,7 +1909,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 2. 打开Log页面，依次在筛选框中选择“当前的连接设备”、“No filters”、“当前的调试应用”、“Debug”或“Info”，最后在关键字栏填写“SetRequestedOrientation”。
 3. 操作问题页面后，在日志中查看系统日志，找到应用包名一行的日志，lastReqOrientation表示应用最后的窗口旋转策略，target表示目标窗口旋转策略，后面的数字可参考下方对照表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/EkSrjhKTQSe81Md3MNRvlQ/zh-cn_image_0000002593796295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/VQO6GvwdQsiLHRPnRoJxow/zh-cn_image_0000002593796295.png)
 
 日志中查看窗口方向对照表
 

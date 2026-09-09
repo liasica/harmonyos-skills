@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-maleoon-gp
 title: 马良GPU渲染优化
 breadcrumb: 最佳实践 > 图形 > GPU加速 > 马良GPU渲染优化
 category: best-practices
-scraped_at: 2026-09-02T15:03:18+08:00
+scraped_at: 2026-09-10T06:30:04+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:b73d7529e5ddc02f32a75785431e065f918871cabd802bfb02880d4d94136c71
+content_hash: sha256:f0a3e922b45f633df901b4bc831fe0152cbc0d1abcad617c878a376adc912567
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:b73d7529e5ddc02f32a75785431e065f918871cabd802bfb02880d4d941
 
 图形渲染的基本流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/7ft2rHeJR7SYze4ejRvzOQ/zh-cn_image_0000002229450553.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/wCUs0Nr_QmucJtW0vuEuGg/zh-cn_image_0000002229450553.jpg "点击放大")
 
 **说明** 
 
@@ -41,7 +41,7 @@ vkAllocateMemory为了避免分配的内存没有真正被渲染线程使用，�
 
 根据资源需求，选择最为匹配的内存类型进行内存分配，相同类型的memory按照用户实际需求一次分配大块size用于不同类型的资源（比如index buffer、vertex buffer及uniform buffer），可以提升内存申请的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/0_3ithWfQ9OvKHkdbRSpPg/zh-cn_image_0000002229336081.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/K6T-ru3BSWeCbpofl-RHZQ/zh-cn_image_0000002229336081.jpg "点击放大")
 
 * vkFreeMemory一定要与vkAllocateMemory成对使用，避免内存泄漏。
 * 绑定的memory资源尽量分时复用。
@@ -953,7 +953,7 @@ vkCmdEndRenderPass()；
 
 Job的执行顺序如下图所示，可见graphics jobs之间存在较大空隙，compute和graphics jobs为串行执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/hEp4Ndh0Taer4QV55lcvQQ/zh-cn_image_0000002194010276.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/UqXaLjtATLaSPRrs5Zph4g/zh-cn_image_0000002194010276.jpg "点击放大")
 
 为了避免以上情况出现，compute执行时，尽量让可以并行的graphics任务与compute同时执行。API序列如下所示：
 
@@ -974,7 +974,7 @@ vkCmdEndRenderPass();
 
 Job的执行顺序如下图所示，此时compute和graphics jobs可以并发执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/sWorBVcKRn2j4oh3qMDhHw/zh-cn_image_0000002193850692.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/vR3yGymlTj2N9EPupZJoLA/zh-cn_image_0000002193850692.jpg "点击放大")
 
 **【不推荐】**
 

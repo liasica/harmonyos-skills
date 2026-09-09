@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/subwindow-gui
 title: 子窗口开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 子窗口开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:08+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:22:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a4e7191316fbf9b41ef763f80a4f2176b5a64970e363d7130a51e26a5018f049
 ---
 

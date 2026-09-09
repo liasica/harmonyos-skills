@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-acc
 title: 应用接入AVSession场景介绍
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 应用接入AVSession场景介绍
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:84ecb0085debbb13fcc263a7e13f0e2683e1d65b59f9eed2f9d043207616a096
 ---
 

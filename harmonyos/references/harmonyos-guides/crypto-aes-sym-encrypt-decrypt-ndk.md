@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sym-encrypt-decrypt-ndk
 title: 使用AES对称密钥加解密(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密介绍 > 使用AES对称密钥加解密(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用AES对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7b603596a41820764592ec2b6435ce76c25cc95b34eccaefa556f7c2e38d7043
 ---
 

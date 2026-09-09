@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resident-task
 title: 常驻任务开发指导 (Worker)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 常驻任务并发场景 > 常驻任务开发指导 (Worker)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:12c20af1269d0e4d19e628ab6f91c6d9f07e0ad803ac723d8272d72947710a2b
 ---
 

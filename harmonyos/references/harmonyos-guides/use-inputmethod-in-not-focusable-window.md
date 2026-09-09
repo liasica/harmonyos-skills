@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 不可获焦窗口中输入框与输入法交互指南
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 不可获焦窗口中输入框与输入法交互指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f672fd8836caeea72a54037b8743bf936e22aaacb7d3b64b4083cdc1b6e210a5
 ---
 

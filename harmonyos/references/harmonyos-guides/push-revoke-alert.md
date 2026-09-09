@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-revoke-a
 title: 撤回通知消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送通知消息 > 撤回通知消息
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:00+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-10T06:23:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0ac108b6a1e7958dd2b3068e5e380fefae2cb10c7e9d494c65e4611e342af721
 ---
 

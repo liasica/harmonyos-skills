@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/verify-certch
 title: 使用系统预置CA证书校验证书链
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 使用系统预置CA证书校验证书链
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9a40df7575a5276cc19f3d225443fa8ff171b66ea11c3a28c502fd06eb1f7565
 ---
 

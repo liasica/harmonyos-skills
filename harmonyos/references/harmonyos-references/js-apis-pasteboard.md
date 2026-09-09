@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.pasteboard (剪贴板)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.pasteboard (剪贴板)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:19:17+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:27:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ec03c7d30937061feec42f095129855e95c189f4ba19ef90b2b73fe31f785578
 ---
 

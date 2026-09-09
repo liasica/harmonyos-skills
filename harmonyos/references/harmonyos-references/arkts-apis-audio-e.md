@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5023d81f1e87f1d20f8d15fce9fd30588315fe7e6d2b735eb646f270c557f04b
 ---
 

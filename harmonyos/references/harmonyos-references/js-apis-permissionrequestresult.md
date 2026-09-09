@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: PermissionRequestResult
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > security > PermissionRequestResult
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4463a968bb086adb0f4c9f057d727034d65ece2b6ff1dfbb1b448c649bffc5f4
 ---
 

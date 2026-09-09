@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-hashmap
 title: 使用Hashmap完成键值数据的维护
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用Hashmap完成键值数据的维护
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:08+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c88bc3978249130509fa9aa8868bdc87ec1875bea46e1048e404b74d5f2d9e94
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-imag
 title: 图片风控
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 图片风控
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6e0ef7bfb783c8853fd767b5b33057aaf481a25c0693999de501287ba85540f7
 ---
 

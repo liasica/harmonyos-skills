@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 地图选点Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 地图选点Button
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:01+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:40761cb3b1e65f4e3d4fff183933687311b92372c722bfedd0acef1f3f924cca
 ---
 

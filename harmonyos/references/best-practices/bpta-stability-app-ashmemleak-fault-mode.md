@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用ASHMEM内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ASHMEM内存泄漏故障模式说明 > 应用ASHMEM内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-04T06:33:25+08:00
+scraped_at: 2026-09-10T06:30:18+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:3ea32d211cae2417696126a86fe0788788654b79b677b01a79380c96fd1963d8
+content_hash: sha256:33ffd1dec041c03efc862592acf839660339186933941416e78245eaf3d6369a
 ---
 
 ## 概述
@@ -77,10 +77,10 @@ ASHMEM内存泄漏问题，通常情况下，有如下几种常见原因：
 3. 先排查Physical\_size较大或者存在大量重复Physical\_size的ASHMEM内存，筛选出可疑内存块的Ashmem\_name为dev/ashmem/ashmem\_leak。开发者可以根据ASHMEM内存标签在代码搜索排查相关业务，分析是否存在未调用释放接口或异常分支未走到释放程序等问题。
 4. 如果无法直接通过ASHMEM内存标签定位到具体泄漏业务，可以通过[内存栈日志获取方法](bpta-stability-ashmemleak-fault-mode-overreview.md#section2689241446)获取ASHMEM内存栈日志后，将内存栈日志导入DevEco Studio并参考[内存栈日志分析方法](bpta-stability-ashmemleak-fault-mode-overreview.md#section94641340515)定位到ASHMEM内存申请的调用栈如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/iAi7C6arQzeycwdUx0eSvw/zh-cn_image_0000002729491147.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/yaf6h4rZT6SKsuGIGymHJA/zh-cn_image_0000002729491147.png "点击放大")
 5. 分析内存栈指向的代码段，发现应用在StartInjectAshmem()函数中通过Ashmem.create()方法创建了一块ASHMEM内存，并将ashmem\_leak\_XXX\_X作为标签对这块ASHMEM内存进行了命名，创建完成后未执行unmapAshmem()和closeAshmem()方法释放这些ASHMEM内存。泄漏点代码如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ZWgxiaY5R_qQf_hlyZTUng/zh-cn_image_0000002729611107.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/7SISXWZ7Rd6Q9EWuWYd7Yg/zh-cn_image_0000002729611107.png)
 
 **开发态分析思路**
 
@@ -89,13 +89,13 @@ ASHMEM内存泄漏问题，通常情况下，有如下几种常见原因：
 1. 启动录制后，遍历可疑的泄漏场景以复现ASHMEM内存泄漏问题。
 2. 完成录制后，在下图1处Memory的options按钮中选择下图2处FilePage Other复选框，观察下图3处FilePage Other内存占用，如果FilePage Other内存的占用存在明显增长，那么说明可能抓到了ASHMEM的内存泄漏点：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/zC0BUgZlTGma1KTY5IZrqQ/zh-cn_image_0000002699891780.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/d8Jl21HOQ560bjLAVt-6Ag/zh-cn_image_0000002699891780.png "点击放大")
 3. 选择下图1处ALL Anonymous VM中的VM:ASHMem泳道（下图2处），单击下图3处Call Trees查看内存申请调用栈，而后单击下图4处筛选Created & Existing可以找到内存增长点的内存申请调用栈，内存申请调用栈如下图5、6处框中所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Grkoayp5SGW1a94f5bt50w/zh-cn_image_0000002699731894.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/cJzRHfVXST-kPHT02Gxxrw/zh-cn_image_0000002699731894.png "点击放大")
 4. 根据调用栈能够找到具体的代码行，通过分析业务代码可以找到ASHMEM内存创建业务如下：应用在StartInjectAshmem()函数中通过Ashmem.create()方法创建了一块ASHMEM内存，并将ashmem\_leak\_XXX\_X作为标签对这块ASHMEM内存进行了命名，创建完成后未执行unmapAshmem()和closeAshmem()方法释放这些ASHMEM内存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/O4xQzGfrQP-_WEe0HCu0_w/zh-cn_image_0000002729491149.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Yqv89v2MTQKhLOsjGCKhww/zh-cn_image_0000002729491149.png)
 
 ## 修复建议
 

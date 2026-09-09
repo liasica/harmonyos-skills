@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:39+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b4eb27f5e319180cd1c9f5db96f3aa94e342440e0e4f1d9212081cfb0f8814a4
 ---
 

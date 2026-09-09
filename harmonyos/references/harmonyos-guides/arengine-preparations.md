@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-prep
 title: 开发准备
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:26579e6cc3184f238fde4e7b4fd4725c7800e7e3505fec78a97a052a56c5e762
 ---
 

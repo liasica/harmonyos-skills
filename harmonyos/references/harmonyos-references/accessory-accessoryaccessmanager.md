@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/accessory
 title: accessoryAccessManager（配件接入管理）
 breadcrumb: API参考 > 系统 > 网络 > Accessory Kit（配件接入服务） > ArkTS API > accessoryAccessManager（配件接入管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:48+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:18ba95ec275b52adc7291f8d360ce614932b587d4eae7d51e7b2e92e7b9e5495
 ---
 

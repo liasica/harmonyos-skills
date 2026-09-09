@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: 废弃的Interface (VideoPlayer, deprecated)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > 废弃的Interface (VideoPlayer, deprecated)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:505a860113d55220b6f0842b0d06cea02aacbf96cce42e2523a3d759ff4bafa3
 ---
 

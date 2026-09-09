@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-whiteb
 title: 白平衡设置(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 白平衡设置(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:16+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:821bc5af9113fe2427f4aa30d0e6e38d5b5e7dbeb4831e1e1e3dde30d60bb540
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Class (MapComponentController)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (MapComponentController)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:58+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1da73608f388b1a1e8c9fa2ddb618ca400bcded9d5282e0d604685c435b906ca
 ---
 

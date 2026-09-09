@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioFormat
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioFormat
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c3596a7bed53a6f0320d07bbbd3f175afd56d048ed5ad6b3c1b64750c0f82c9d
+scraped_at: 2026-09-10T06:28:06+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:5c02c4bfca276bffccaad6c0f7eefca7d5891bdb1fafae36632ee3dee4591c4a
 ---
 
 ```c
-typedef struct {...} OH_AudioFormat
+typedef struct OH_AudioFormat {...} OH_AudioFormat
 ```
 
 ## 概述

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-guideline
 title: 数据防泄漏服务开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 数据防泄漏服务 > 数据防泄漏服务开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:29+08:00
-doc_updated_at: 2026-04-28
+scraped_at: 2026-09-10T06:22:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f89e5f05b065b1993b27a8aa8e6b602a5619690ed01b724480158662129510dd
 ---
 

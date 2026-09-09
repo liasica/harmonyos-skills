@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 修改翻页方式、字体大小及行间距
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 修改翻页方式、字体大小及行间距
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:31+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ec2a10fdb194e86bb1cae9244430ead2025c1633ecbfaa6aa828cea3d41b88a4
 ---
 

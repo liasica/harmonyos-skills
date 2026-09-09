@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PathEffect)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (PathEffect)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:41+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:28:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ffe1d866be7a0190647ed5d234a2caf45841ba2eb9ef38cc3e83c45dde2fb4b7
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 更新酒店房卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 开发场景 > 更新酒店房卡
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:22+08:00
+scraped_at: 2026-09-10T06:23:32+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:5b0b4e2f5f12c93fbbd384dc30095b4ea20dca295cad2fbe046bdbbdc04c9638
+content_hash: sha256:2dccc14b6014d9373c2ce64c1f30f326b97c7c74d898906945d95bb658b9160d
 ---
 
 当用户更换房间时，更新钱包中的房卡数据，自动同步为新房间号，无需重新开卡。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/4wdfrZuATZuxxz5EyH40zQ/zh-cn_image_0000002712245500.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/0I2Ku2rvQFSShlfjKpYZfA/zh-cn_image_0000002717772044.png)
 
 ## 服务端开发
 

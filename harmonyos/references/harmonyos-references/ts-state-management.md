@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-
 title: 应用级变量的状态管理
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > 应用级变量的状态管理
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:256e610b2eb0afd67fd023f2d99741a8f2f78e14f922014c4ac47a7b386eb39a
 ---
 

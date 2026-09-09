@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.vpnExtension (VPN增强管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.vpnExtension (VPN增强管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4143eebc7110824290b20eaa30e5075d5eea173d53c26c2a1cf75e5da079c1c9
 ---
 

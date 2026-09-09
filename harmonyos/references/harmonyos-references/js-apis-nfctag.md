@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nfc.tag (标准NFC-Tag)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.tag (标准NFC-Tag)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:01+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:eb6ff90ed3df99ff4de99c0a2e82ebadc32e84b64fc705f7e9d2fb0192f5c3d9
 ---
 

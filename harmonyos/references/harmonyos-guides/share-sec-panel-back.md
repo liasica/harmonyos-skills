@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-sec-pan
 title: 分享详情页关闭分享面板
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 目标应用处理分享内容 > 分享详情页关闭分享面板
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:682e7e64a6ca4d4ca7c3cc516007c689dabceddc02210b60ef4c2cf9a39f6e0e
 ---
 

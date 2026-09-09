@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: 跨设备互通NDK开发指导
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 跨设备互通NDK（C） > 跨设备互通NDK开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8ea70f9b1f751f73c1df02b8cc8168d5ba5b1248dd39f1cbacc965d202390709
 ---
 

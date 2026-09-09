@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-1
 title: 不同开发者的应用之间如何实现用户数据互通
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 不同开发者的应用之间如何实现用户数据互通
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:52+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a331f5bd20cc2c036d3ac2595cba14d459dfb987c90f381a58152d19bc1570f3
 ---
 

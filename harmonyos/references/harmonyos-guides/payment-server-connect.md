@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-serve
 title: 云侧服务准备
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > 云侧服务准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:59+08:00
-doc_updated_at: 2026-05-19
+scraped_at: 2026-09-10T06:23:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2290a1f6db76a22150472a19800445e22347a0d50a0393fca33fd8883bcfcdcf
 ---
 

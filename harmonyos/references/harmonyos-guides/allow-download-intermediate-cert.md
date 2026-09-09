@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/allow-downloa
 title: 证书链校验时下载缺失的中间CA证书
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书链校验时下载缺失的中间CA证书
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fb8f5bdf2b6dda90a8a00ffd6ab1a2d0f3bc9c54de769e05f21540bd85b4b39b
 ---
 

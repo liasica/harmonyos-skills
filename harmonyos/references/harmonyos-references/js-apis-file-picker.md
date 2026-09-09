@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.picker (选择器)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.picker (选择器)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:31+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:582f5c3423afbe65a79899816506f7fbf672a69fa7cfc6c39024979a82645cff
 ---
 

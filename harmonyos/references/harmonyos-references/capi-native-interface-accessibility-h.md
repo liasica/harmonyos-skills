@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_accessibility.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_interface_accessibility.h
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:44+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:b6be921cbb96bc06207aaaac47b8d5c8b200a8fb57d3b54ab6e835a6f474c859
+scraped_at: 2026-09-10T06:25:59+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:cbbd7a09c71a2013e9b4583580f401e07ca8e553a73a34ccaea2901aee42d8ae
 ---
 
 ## 概述
@@ -170,7 +170,7 @@ Accessibility事件类型的枚举。
 | ARKUI\_ACCESSIBILITY\_NATIVE\_EVENT\_TYPE\_TEXT\_UPDATE = 0x00000010 | 文本更新事件，需要在文本更新时发送。 |
 | ARKUI\_ACCESSIBILITY\_NATIVE\_EVENT\_TYPE\_PAGE\_STATE\_UPDATE = 0x00000020 | 页面更新事件，当页面跳转、切换、大小更改或移动时发送。 |
 | ARKUI\_ACCESSIBILITY\_NATIVE\_EVENT\_TYPE\_PAGE\_CONTENT\_UPDATE = 0x00000800 | 页面内容发生变化时需要发送事件。 |
-| ARKUI\_ACCESSIBILITY\_NATIVE\_EVENT\_TYPE\_SCROLLED = 0x000001000 | scrolled事件，当可滚动的组件上发生滚动事件时，会发送此事件。 |
+| ARKUI\_ACCESSIBILITY\_NATIVE\_EVENT\_TYPE\_SCROLLED = 0x000001000 | 滚动事件，当可滚动的组件上发生滚动事件时，会发送此事件。 |
 | ARKUI\_ACCESSIBILITY\_NATIVE\_EVENT\_TYPE\_ACCESSIBILITY\_FOCUSED = 0x00008000 | Accessibility焦点事件，在UI组件响应后发送。 |
 | ARKUI\_ACCESSIBILITY\_NATIVE\_EVENT\_TYPE\_ACCESSIBILITY\_FOCUS\_CLEARED = 0x00010000 | Accessibility焦点清除事件，在UI组件响应后发送。 |
 | ARKUI\_ACCESSIBILITY\_NATIVE\_EVENT\_TYPE\_REQUEST\_ACCESSIBILITY\_FOCUS = 0x02000000 | 主动请求指定节点聚焦。 |

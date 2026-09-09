@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-w
 title: oh_window_event_filter.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > oh_window_event_filter.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f9f4f9e678a36d9bc0af101fdcd441c94b477d400746e17897124520a7a4167a
 ---
 

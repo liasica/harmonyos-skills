@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: OS新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:34+08:00
-doc_updated_at: 2026-08-06
-content_hash: sha256:fd8e69c97c718af26c360c0932cd5b86d21bbb7e424458a15ef26c2f859dc06b
+scraped_at: 2026-09-10T06:20:48+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:3190905fce6eb703ca02a83507c3069ea9a66e5ba779c860a9b81d4566c4e0c6
 ---
 
 ## 6.1.0(23) Release新增关键特性
@@ -261,7 +261,7 @@ AppFreeze日志中调用栈的堆栈信息增加线程状态信息。（[指南]
 * 底部页签和导航组件新增支持沉浸式材质效果。（[API参考-底部页签材质参数](../harmonyos-references/ui-design-hdstabs.md#systemmaterialparams)、[API参考-导航组件材质参数](../harmonyos-references/ui-design-hdsnavigation.md#systemmaterialparams)）
 * 列表卡片新增支持无障碍相关能力，包括无障碍分组、聚合播报等。（[API参考](../harmonyos-references/ui-design-hdslistitemcard.md#accessibilitygroupoptions)）
 * 新增支持设置列表的预览菜单样式、横滑删除触发类型以及拦截无障碍事件等能力。（[API参考](../harmonyos-references/ui-design-hdslistitem.md#menustyle)）
-* 侧边栏新增支持通过横滑手势打开/关闭侧边栏。（[API参考](../harmonyos-references/ui-design-hdssidebar.md#hdssidebar-1)）
+* 侧边栏新增支持通过横滑手势打开/关闭侧边栏。（[API参考](../harmonyos-references/ui-design-hdssidebar.md#hdssidebar)）
 * 操作栏新增支持设置操作栏上下边距。（[API参考](../harmonyos-references/ui-design-hdsactionbar.md#actionbarstyle)）
 * 即时消息栏新增支持高度随组件文本内容自适应变化。（[API参考](../harmonyos-references/ui-design-hdssnackbar.md#snackbarstyleoptions)）
 * 新增材质模块，支持设置材质类型和等级，实现组件的沉浸式材质效果。（[API参考](../harmonyos-references/ui-design-hdsmaterial.md)）

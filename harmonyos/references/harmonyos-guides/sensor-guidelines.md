@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-guidel
 title: 传感器开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 传感器 > 传感器开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b2907d30
+scraped_at: 2026-09-10T06:22:43+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:f19dd9b24a4c0431f6792a8d9c109f061bf7ccf68fc982e791aca93803eb37c9
 ---
 
 ## 场景介绍
@@ -32,7 +32,7 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/hN8JENUrRXeir62ivCtvLw/zh-cn_image_0000002742003601.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/8oo1BUd3TGOPtO2-J1qmnQ/zh-cn_image_0000002717611268.png)
 2. 配置加速度传感器权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5
@@ -62,7 +62,7 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
          if (error) {
              console.error(TAG + 'getSensorList failed');
          } else {
-             console.info('getSensorList success');
+             console.info(TAG + 'getSensorList success');
              for (let i = 0; i < data.length; i++) {
                  console.info(TAG + JSON.stringify(data[i]));
                  // ...
@@ -75,7 +75,7 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/cjsftHbuR8qVGC-keP0Ifw/zh-cn_image_0000002712404614.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/9FoobGdeQRGp6GBOs5w6AQ/zh-cn_image_0000002747291221.png)
 
    该传感器支持的最小采样周期为5000000纳秒，最大采样周期是200000000纳秒。不同传感器支持的采样周期范围也不同，interval应该设置在传感器支持范围内，大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。设置数值越小数据上报越频繁，其功耗越大。
 
@@ -86,12 +86,12 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
      this.deviceId = -1;
      // 第一个参数deviceId 非必填，缺省默认查询的为本地设备。
      const sensorList: sensor.Sensor[] = sensor.getSensorListByDeviceSync(this.deviceId);
-     console.info(`sensorList length: ${sensorList.length}`);
-     console.info(`sensorList: ${JSON.stringify(sensorList)}`);
-     // ···
+     console.info(`${TAG}sensorList length: ${sensorList.length}`);
+     console.info(`${TAG}sensorList: ${JSON.stringify(sensorList)}`);
+     // ...
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to get sensorList. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to get sensorList. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 
@@ -102,12 +102,12 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
      this.deviceId = -1;
      // 第二个参数deviceId 非必填
      const sensorList: sensor.Sensor[] = sensor.getSingleSensorByDeviceSync(sensor.SensorId.ACCELEROMETER, this.deviceId);
-     console.info(`sensorList length: ${sensorList.length}`);
-     console.info(`sensorList Json: ${JSON.stringify(sensorList)}`);
+     console.info(`${TAG}sensorList length: ${sensorList.length}`);
+     console.info(`${TAG}sensorList Json: ${JSON.stringify(sensorList)}`);
      // ...
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to get sensorList. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to get sensorList. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 6. 注册监听。可以通过on()和once()两种接口监听传感器的调用结果。
@@ -117,12 +117,12 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
    ```typescript
    try {
      sensor.on(sensor.SensorId.ACCELEROMETER, (data: sensor.AccelerometerResponse) => {
-           console.info("Succeeded in obtaining data. x: " + data.x + " y: " + data.y + " z: " + data.z);
+           console.info(TAG + 'Succeeded in obtaining data. x: ' + data.x + ' y: ' + data.y + ' z: ' + data.z);
            // ...
      }, { interval: 100000000 });
    } catch (error) {
        let e: BusinessError = error as BusinessError;
-       console.error(`Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
+       console.error(`${TAG}Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 
@@ -131,32 +131,32 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
    ```typescript
    try {
      sensor.on(sensor.SensorId.ACCELEROMETER, (data: sensor.AccelerometerResponse) => {
-           console.info("Succeeded in obtaining data. x: " + data.x + " y: " + data.y + " z: " + data.z);
+           console.info(TAG + 'Succeeded in obtaining data. x: ' + data.x + ' y: ' + data.y + ' z: ' + data.z);
            // ...
      }, { interval: 100000000, sensorInfoParam: { deviceId: -1 } });
    } catch (error) {
        let e: BusinessError = error as BusinessError;
-       console.error(`Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
+       console.error(`${TAG}Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Ku9PENwxSr2GQzbZdIBD1g/zh-cn_image_0000002742123563.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/QUP9ewNITwOvGyBGUmhBjg/zh-cn_image_0000002747211139.png)
 
    通过once()接口，实现对传感器的一次监听。
 
    ```typescript
    try {
      sensor.once(sensor.SensorId.ACCELEROMETER, (data: sensor.AccelerometerResponse) => {
-         console.info("Succeeded in obtaining data. x: " + data.x + " y: " + data.y + " z: " + data.z);
+         console.info(TAG + 'Succeeded in obtaining data. x: ' + data.x + ' y: ' + data.y + ' z: ' + data.z);
          // ...
      });
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to invoke once. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to invoke once. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/JH8-m6Y5QFe_WPfTanZJww/zh-cn_image_0000002712244650.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/AtMYkaOqTP-NNWadfWRcig/zh-cn_image_0000002717771204.png)
 7. 取消持续监听。
 
    取消持续监听，此场景下未订阅而取消监听为异常行为，需处理异常。
@@ -166,7 +166,7 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
      sensor.off(sensor.SensorId.ACCELEROMETER);
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to invoke off. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to invoke off. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 
@@ -177,24 +177,24 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
      sensor.off(sensor.SensorId.ACCELEROMETER, { deviceId: -1 });
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to invoke off. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to invoke off. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 8. 动态传感器状态的监听，在收到设备下线事件通知时，用户应主动调用off关闭该设备上的传感器。
 
-   注册监听，SensorStatusEvent会返回事件时间戳、传感器ID、传感器索引、上线或下线、设备id、设备名称等值。
+   注册监听，SensorStatusEvent 会返回事件时间戳、传感器ID、传感器索引、上线或下线、设备id、设备名称等值。
 
    ```typescript
    try {
      sensor.on('sensorStatusChange', (data: sensor.SensorStatusEvent) => {
-         console.info(`timestamp: ${data.timestamp},
+         console.info(`${TAG}timestamp: ${data.timestamp},
          deviceId: ${data.deviceId} deviceName: ${data.deviceName}
          sensorId: ${data.sensorId} sensorIndex:${data.sensorIndex} isSensorOnline: ${data.isSensorOnline}`);
      });
-     // ···
+     // ...
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 
@@ -203,10 +203,10 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
    ```typescript
    try {
      sensor.off('sensorStatusChange');
-     // ···
+     // ...
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 9. 获取某时刻地球上特定位置的地磁场信息
@@ -218,20 +218,20 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
      sensor.getGeomagneticInfo({ latitude: 80, longitude: 0, altitude: 0 }, 1580486400000,
          (err: BusinessError, data: sensor.GeomagneticResponse) => {
        if (err) {
-         console.error(`Failed to get geomagneticInfo. Code: ${err.code}, message: ${err.message}`);
+         console.error(`${TAG}Failed to get geomagneticInfo. Code: ${err.code}, message: ${err.message}`);
          return;
        }
-       console.info("Succeeded in getting geomagneticInfo x" + data.x);
-       console.info("Succeeded in getting geomagneticInfo y" + data.y);
-       console.info("Succeeded in getting geomagneticInfo z" + data.z);
-       console.info("Succeeded in getting geomagneticInfo geomagneticDip" + data.geomagneticDip);
-       console.info("Succeeded in getting geomagneticInfo deflectionAngle" + data.deflectionAngle);
-       console.info("Succeeded in getting geomagneticInfo levelIntensity" + data.levelIntensity);
-       console.info("Succeeded in getting geomagneticInfo totalIntensity" + data.totalIntensity);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo x' + data.x);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo y' + data.y);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo z' + data.z);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo geomagneticDip' + data.geomagneticDip);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo deflectionAngle' + data.deflectionAngle);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo levelIntensity' + data.levelIntensity);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo totalIntensity' + data.totalIntensity);
      });
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to get geomagneticInfo. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to get geomagneticInfo. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 
@@ -241,19 +241,19 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
    try {
      const promise = sensor.getGeomagneticInfo({ latitude: 80, longitude: 0, altitude: 0 }, 1580486400000);
      promise.then((data: sensor.GeomagneticResponse) => {
-       console.info("Succeeded in getting geomagneticInfo x" + data.x);
-       console.info("Succeeded in getting geomagneticInfo y" + data.y);
-       console.info("Succeeded in getting geomagneticInfo z" + data.z);
-       console.info("Succeeded in getting geomagneticInfo geomagneticDip" + data.geomagneticDip);
-       console.info("Succeeded in getting geomagneticInfo deflectionAngle" + data.deflectionAngle);
-       console.info("Succeeded in getting geomagneticInfo levelIntensity" + data.levelIntensity);
-       console.info("Succeeded in getting geomagneticInfo totalIntensity" + data.totalIntensity);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo x' + data.x);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo y' + data.y);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo z' + data.z);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo geomagneticDip' + data.geomagneticDip);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo deflectionAngle' + data.deflectionAngle);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo levelIntensity' + data.levelIntensity);
+       console.info(TAG + 'Succeeded in getting geomagneticInfo totalIntensity' + data.totalIntensity);
      }, (err: BusinessError) => {
-       console.error(`Failed to get geomagneticInfo. Code: ${err.code}, message: ${err.message}`);
+       console.error(`${TAG}Failed to get geomagneticInfo. Code: ${err.code}, message: ${err.message}`);
      });
    } catch (error) {
      let e: BusinessError = error as BusinessError;
-     console.error(`Failed to get geomagneticInfo. Code: ${e.code}, message: ${e.message}`);
+     console.error(`${TAG}Failed to get geomagneticInfo. Code: ${e.code}, message: ${e.message}`);
    }
    ```
 10. 根据气压值获取海拔高度
@@ -266,14 +266,14 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       let currentPressure = 1500.0;
       sensor.getDeviceAltitude(seaPressure, currentPressure, (err: BusinessError, data: number) => {
         if (err) {
-          console.error(`Failed to get altitude. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to get altitude. Code: ${err.code}, message: ${err.message}`);
           return;
         }
-        console.info('Succeeded in getting altitude: ' + data);
+        console.info(TAG + 'Succeeded in getting altitude: ' + data);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get altitude. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get altitude. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -285,13 +285,13 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       let currentPressure = 1500.0;
       const promise = sensor.getDeviceAltitude(seaPressure, currentPressure);
       promise.then((data: number) => {
-        console.info('Succeeded in getting device altitude: ', data);
+        console.info(TAG + 'Succeeded in getting device altitude: ', data);
       }, (err: BusinessError) => {
-        console.error(`Failed to get altitude. Code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}Failed to get altitude. Code: ${err.code}, message: ${err.message}`);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get altitude. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get altitude. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 11. 根据倾斜矩阵计算地磁倾角
@@ -308,14 +308,14 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       ]
       sensor.getInclination(inclinationMatrix, (err: BusinessError, data: number) => {
         if (err) {
-          console.error(`Failed to get inclination. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to get inclination. Code: ${err.code}, message: ${err.message}`);
           return;
         }
-        console.info('Succeeded in getting inclination: ' + data);
+        console.info(TAG + 'Succeeded in getting inclination: ' + data);
       })
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get inclination. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get inclination. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -331,13 +331,13 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       ]
       const promise = sensor.getInclination(inclinationMatrix);
       promise.then((data: number) => {
-        console.info('Succeeded in getting inclination: ' + data);
+        console.info(TAG + 'Succeeded in getting inclination: ' + data);
       }, (err: BusinessError) => {
-        console.error(`Failed to get inclination. Code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}Failed to get inclination. Code: ${err.code}, message: ${err.message}`);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get inclination. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get inclination. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 12. 计算两个旋转矩阵之间的角度变化
@@ -359,20 +359,20 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       ];
       sensor.getAngleVariation(currentRotationMatrix, preRotationMatrix, (err: BusinessError, data: Array<number>) => {
         if (err) {
-          console.error(`Failed to get angle variation. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to get angle variation. Code: ${err.code}, message: ${err.message}`);
           return;
         }
         if (data.length < 3) {
-          console.error("Failed to get angle variation, length" + data.length);
+          console.error(TAG + 'Failed to get angle variation, length' + data.length);
           return;
         }
-        console.info("Z: " + data[0]);
-        console.info("X: " + data[1]);
-        console.info("Y: " + data[2]);
+        console.info(TAG + 'Z: ' + data[0]);
+        console.info(TAG + 'X: ' + data[1]);
+        console.info(TAG + 'Y: ' + data[2]);
       })
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get angle variation. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get angle variation. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -394,18 +394,18 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       const promise = sensor.getAngleVariation(currentRotationMatrix, preRotationMatrix);
       promise.then((data: Array<number>) => {
         if (data.length < 3) {
-          console.error("Failed to get angle variation, length" + data.length);
+          console.error(TAG + 'Failed to get angle variation, length' + data.length);
           return;
         }
-        console.info("Z: " + data[0]);
-        console.info("X: " + data[1]);
-        console.info("Y: " + data[2]);
+        console.info(TAG + 'Z: ' + data[0]);
+        console.info(TAG + 'X: ' + data[1]);
+        console.info(TAG + 'Y: ' + data[2]);
       }, (err: BusinessError) => {
-        console.error(`Failed to get angle variation. Code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}Failed to get angle variation. Code: ${err.code}, message: ${err.message}`);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get angle variation. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get angle variation. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 13. 根据旋转矢量获取旋转矩阵
@@ -417,16 +417,16 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       let rotationVector = [0.20046076, 0.21907, 0.73978853, 0.60376877];
       sensor.getRotationMatrix(rotationVector, (err: BusinessError, data: Array<number>) => {
         if (err) {
-          console.error(`Failed to get rotationMatrix. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to get rotationMatrix. Code: ${err.code}, message: ${err.message}`);
           return;
         }
         for (let i = 0; i < data.length; i++) {
-          console.info('Succeeded in getting data[' + i + ']: ' + data[i]);
+          console.info(TAG + 'Succeeded in getting data[' + i + ']: ' + data[i]);
         }
       })
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get rotationMatrix. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get rotationMatrix. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -438,14 +438,14 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       const promise = sensor.getRotationMatrix(rotationVector);
       promise.then((data: Array<number>) => {
         for (let i = 0; i < data.length; i++) {
-          console.info('Succeeded in getting data[' + i + ']: ' + data[i]);
+          console.info(TAG + 'Succeeded in getting data[' + i + ']: ' + data[i]);
         }
       }, (err: BusinessError) => {
-        console.error(`Failed to get rotationMatrix. Code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}Failed to get rotationMatrix. Code: ${err.code}, message: ${err.message}`);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get rotationMatrix. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get rotationMatrix. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 14. 根据指定坐标系映射旋转矩阵
@@ -461,16 +461,16 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       ];
       sensor.transformRotationMatrix(rotationMatrix, { x: 1, y: 3 }, (err: BusinessError, data: Array<number>) => {
         if (err) {
-          console.error(`Failed to transform rotationMatrix. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to transform rotationMatrix. Code: ${err.code}, message: ${err.message}`);
           return;
         }
         for (let i = 0; i < data.length; i++) {
-          console.info('Succeeded in getting data[' + i + '] = ' + data[i]);
+          console.info(TAG + 'Succeeded in getting data[' + i + '] = ' + data[i]);
         }
       })
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to transform rotationMatrix. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to transform rotationMatrix. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -486,14 +486,14 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       const promise = sensor.transformRotationMatrix(rotationMatrix, { x: 1, y: 3 });
       promise.then((data: Array<number>) => {
         for (let i = 0; i < data.length; i++) {
-          console.info('Succeeded in getting data[' + i + ']: ' + data[i]);
+          console.info(TAG + 'Succeeded in getting data[' + i + ']: ' + data[i]);
         }
       }, (err: BusinessError) => {
-        console.error(`Failed to transform rotationMatrix. Code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}Failed to transform rotationMatrix. Code: ${err.code}, message: ${err.message}`);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to transform rotationMatrix. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to transform rotationMatrix. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 15. 根据旋转向量计算归一化四元数
@@ -505,16 +505,16 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       let rotationVector = [0.20046076, 0.21907, 0.73978853, 0.60376877];
       sensor.getQuaternion(rotationVector, (err: BusinessError, data: Array<number>) => {
         if (err) {
-          console.error(`Failed to get quaternion. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to get quaternion. Code: ${err.code}, message: ${err.message}`);
           return;
         }
         for (let i = 0; i < data.length; i++) {
-          console.info('Succeeded in getting data[' + i + ']: ' + data[i]);
+          console.info(TAG + 'Succeeded in getting data[' + i + ']: ' + data[i]);
         }
       })
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get quaternion. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get quaternion. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -526,14 +526,14 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
         const promise = sensor.getQuaternion(rotationVector);
         promise.then((data: Array<number>) => {
             for (let i = 0; i < data.length; i++) {
-                console.info('Succeeded in getting data[' + i + ']: ' + data[i]);
+                console.info(TAG + 'Succeeded in getting data[' + i + ']: ' + data[i]);
             }
         }, (err: BusinessError) => {
-            console.error(`Failed to get quaternion. Code: ${err.code}, message: ${err.message}`);
+            console.error(`${TAG}Failed to get quaternion. Code: ${err.code}, message: ${err.message}`);
         });
     } catch (error) {
         let e: BusinessError = error as BusinessError;
-        console.error(`Failed to get quaternion. Code: ${e.code}, message: ${e.message}`);
+        console.error(`${TAG}Failed to get quaternion. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 16. 根据旋转矩阵计算设备方向
@@ -549,19 +549,19 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       ];
       sensor.getOrientation(preRotationMatrix, (err: BusinessError, data: Array<number>) => {
         if (err) {
-          console.error(`Failed to get orientation. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to get orientation. Code: ${err.code}, message: ${err.message}`);
           return;
         }
         if (data.length < 3) {
-          console.error("Failed to get orientation, length" + data.length);
+          console.error(TAG + 'Failed to get orientation, length' + data.length);
         }
-        console.info("Succeeded in getting data. Z: " + data[0]);
-        console.info("Succeeded in getting data. X: " + data[1]);
-        console.info("Succeeded in getting data. Y: " + data[2]);
+        console.info(TAG + 'Succeeded in getting data. Z: ' + data[0]);
+        console.info(TAG + 'Succeeded in getting data. X: ' + data[1]);
+        console.info(TAG + 'Succeeded in getting data. Y: ' + data[2]);
       })
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get orientation. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get orientation. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -577,14 +577,14 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       const promise = sensor.getOrientation(preRotationMatrix);
       promise.then((data: Array<number>) => {
         for (let i = 0; i < data.length; i++) {
-          console.info('Succeeded in getting data[' + i + ']: ' + data[i]);
+          console.info(TAG + 'Succeeded in getting data[' + i + ']: ' + data[i]);
         }
       }, (err: BusinessError) => {
-        console.error(`Failed to get orientation. Code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}Failed to get orientation. Code: ${err.code}, message: ${err.message}`);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get orientation. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get orientation. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 17. 根据重力矢量和地磁矢量计算旋转矩阵
@@ -597,14 +597,14 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       let geomagnetic = [210.87253, -78.6096, -111.44444];
       sensor.getRotationMatrix(gravity, geomagnetic, (err: BusinessError, data: sensor.RotationMatrixResponse) => {
         if (err) {
-          console.error(`Failed to get rotationMatrix. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to get rotationMatrix. Code: ${err.code}, message: ${err.message}`);
           return;
         }
-        console.info('Succeeded in getting rotationMatrix' + JSON.stringify(data));
+        console.info(TAG + 'Succeeded in getting rotationMatrix' + JSON.stringify(data));
       })
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get rotationMatrix. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get rotationMatrix. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -616,13 +616,13 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
       let geomagnetic = [210.87253, -78.6096, -111.44444];
       const promise = sensor.getRotationMatrix(gravity, geomagnetic);
       promise.then((data: sensor.RotationMatrixResponse) => {
-        console.info('Succeeded in getting rotationMatrix' + JSON.stringify(data));
+        console.info(TAG + 'Succeeded in getting rotationMatrix' + JSON.stringify(data));
       }, (err: BusinessError) => {
-        console.error(`Failed to get rotationMatrix. Code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}Failed to get rotationMatrix. Code: ${err.code}, message: ${err.message}`);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get rotationMatrix. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get rotationMatrix. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 18. 获取指定传感器类型的属性信息
@@ -633,14 +633,14 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
     try {
       sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER, (err: BusinessError, data: sensor.Sensor) => {
         if (err) {
-          console.error(`Failed to get singleSensor. Code: ${err.code}, message: ${err.message}`);
+          console.error(`${TAG}Failed to get singleSensor. Code: ${err.code}, message: ${err.message}`);
           return;
         }
-        console.info('Succeeded in getting sensor: ' + JSON.stringify(data));
+        console.info(TAG + 'Succeeded in getting sensor: ' + JSON.stringify(data));
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get singleSensor. Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get singleSensor. Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -649,13 +649,13 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
     ```typescript
     try {
       sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER).then((data: sensor.Sensor) => {
-        console.info('Succeeded in getting sensor: ' + JSON.stringify(data));
+        console.info(TAG + 'Succeeded in getting sensor: ' + JSON.stringify(data));
       }, (err: BusinessError) => {
-        console.error(`Failed to get singleSensor. Code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}Failed to get singleSensor. Code: ${err.code}, message: ${err.message}`);
       });
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get singleSensor . Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get singleSensor . Code: ${e.code}, message: ${e.message}`);
     }
     ```
 
@@ -664,9 +664,9 @@ content_hash: sha256:53ae8047643f612464879eaa3a7d75f5dff41955880fb8f8e1031575b29
     ```typescript
     try {
       let ret = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
-      console.info('Succeeded in getting sensor: ' + JSON.stringify(ret));
+      console.info(TAG + 'Succeeded in getting sensor: ' + JSON.stringify(ret));
     } catch (error) {
       let e: BusinessError = error as BusinessError;
-      console.error(`Failed to get singleSensor . Code: ${e.code}, message: ${e.message}`);
+      console.error(`${TAG}Failed to get singleSensor . Code: ${e.code}, message: ${e.message}`);
     }
     ```

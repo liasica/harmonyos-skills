@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 代理通道管理错误码
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 错误码 > 代理通道管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ef4fdf5026af5439377ef3e447f34ede67456f5680e36b889b957a9652eaecbe
 ---
 

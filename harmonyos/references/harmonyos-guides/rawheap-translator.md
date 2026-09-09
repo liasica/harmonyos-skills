@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rawheap-trans
 title: rawheap-translator工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具 > rawheap-translator工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-11
+scraped_at: 2026-09-10T06:22:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7bd61dd1a106045763c18d43c4ff1d2333214e5164968dcf9764f10a8c57d40f
 ---
 

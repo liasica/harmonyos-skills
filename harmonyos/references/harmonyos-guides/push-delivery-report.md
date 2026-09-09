@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-delivery
 title: （可选）推送报告
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）推送报告
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:18+08:00
+scraped_at: 2026-09-10T06:23:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:935f4521c94259ef25f5e218316ccfeacee31b88b0158f005af1b74f8629eeb0
+content_hash: sha256:af68f6a10b737a0ae8ad2538fdd593391e8ea7d5601dff214c841fe3b0a4e93f
 ---
 
 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中找到您的项目，通过“增长 > 推送服务 > 推送报告”，您可以在“推送报告”中查看推送消息详情和推送用户详情。
@@ -18,13 +18,13 @@ content_hash: sha256:935f4521c94259ef25f5e218316ccfeacee31b88b0158f005af1b74f862
 
 您可以查看推送消息的详情，场景化消息的统计图和对应表格，同时可以按照通道维度进行查看，有“通过AGC控制台”、“通过API方式”和“全部通道”；也可以按照消息类型维度进行查看。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/EsBh3enbQMuoeHmFzUL4eQ/zh-cn_image_0000002712405364.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/MuqqT4OqTXOTmgrKeL4v3Q/zh-cn_image_0000002747291969.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/hssTzgJST7a-tDH19YXi7Q/zh-cn_image_0000002742124313.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/KiVFDbSVQpa3XkY5fmKnRw/zh-cn_image_0000002747211885.png)
 
-点击自定义后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ycZ1ftuQTauckS3zsBACsA/zh-cn_image_0000002712245406.png)，可自定义推送消息报表展示的表格列，默认展示的表格列有：日期、消息类型、请求量、发送量、到达量、显示量、点击量、到达率（%）、点击率（%）、沉默设备丢弃、应用被卸载、无效TOKEN、通知关闭。全选可展示全部表格列，重置则恢复默认表格列。
+点击自定义后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/1VjXsIftSqmUmbVXPlNJ4g/zh-cn_image_0000002717771950.png)，可自定义推送消息报表展示的表格列，默认展示的表格列有：日期、消息类型、请求量、发送量、到达量、显示量、点击量、到达率（%）、点击率（%）、沉默设备丢弃、应用被卸载、无效TOKEN、通知关闭。全选可展示全部表格列，重置则恢复默认表格列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/FArPBCV3Rv6LKz3rbd6ysw/zh-cn_image_0000002742004355.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Cda4kGiDR4yLokPF947nNw/zh-cn_image_0000002717612018.png)
 
 报表数据条目说明：
 
@@ -54,7 +54,7 @@ content_hash: sha256:935f4521c94259ef25f5e218316ccfeacee31b88b0158f005af1b74f862
 
 您可以查看推送用户的详情，根据时间维度查看活跃用户、新增用户和总用户的统计数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/PWvIbTohQr69X-O3_WgtLA/zh-cn_image_0000002712405366.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/4cOK3zW4TWqyXkJWooIMNw/zh-cn_image_0000002747291971.png)
 
 报表数据条目说明：
 

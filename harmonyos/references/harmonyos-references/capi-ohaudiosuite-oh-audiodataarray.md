@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioDataArray
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioDataArray
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f8d74bc900aebfcd0c1bdb39bdf63a22aee5e16df29b49c2dca00f6070a3f68a
+scraped_at: 2026-09-10T06:28:06+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9a187211f5e0f9c10f4d8cd7bd9a224a39cc2e2b170e22d83cfadde1a8b2861f
 ---
 
 ```c
-typedef struct {...} OH_AudioDataArray
+typedef struct OH_AudioDataArray {...} OH_AudioDataArray
 ```
 
 ## 概述

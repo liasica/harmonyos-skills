@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-sorting-
 title: 创建索引
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 多语言排序 > 创建索引
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:57d95e4b2317c482268e9df4e7e35ff6a28b24d8c9a977650a19072ff0986755
 ---
 

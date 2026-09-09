@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取华为账号用户信息-获取头像昵称
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 获取华为账号用户信息-获取头像昵称
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:78057b48fcab28391353c575894af9ed60e2afd079bae7b204c9959523e664f2
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiperf
 title: hiperf
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hiperf
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:58614ab7e838bd13db65898d287979ff5e00a9d18417d724b9a432b025c27cd8
 ---
 

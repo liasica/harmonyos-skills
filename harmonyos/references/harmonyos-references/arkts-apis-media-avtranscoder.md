@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVTranscoder)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVTranscoder)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b315cac3bd0941a3a579720fb3d3cd3f2c9f9ce31e20dc4e417955f54b8f0731
 ---
 

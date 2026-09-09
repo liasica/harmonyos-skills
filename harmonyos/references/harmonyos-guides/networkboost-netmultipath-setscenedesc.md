@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 业务场景设置
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 连接迁移（多网并发） > 业务场景设置
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:afd6e7e1dfcc552ba584428534f15a02efb34f2760dc4be5b73710d3a3e3a4d3
 ---
 

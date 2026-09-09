@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-user-pre
 title: 用户偏好
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 语言与用户偏好 > 用户偏好
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7419f03ccacbef1523c1be7eadb56747b61ae3d75fe163065c301eb9e985ae5e
 ---
 

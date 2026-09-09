@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Component3D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > Component3D
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ee8f9af25d4ee2a940ac08d4a1c0b8c78b56c1496ddd9083e195fd1fbf2ebf4e
 ---
 

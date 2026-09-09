@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-device
 title: 相机管理(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用必选能力(ArkTS) > 相机管理(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-03-27
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:400279dff04425b235c7a0bea64651a62cd79a8e087e79be1a1b8df530220132
 ---
 

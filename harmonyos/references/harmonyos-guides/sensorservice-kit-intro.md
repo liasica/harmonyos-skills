@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensorservice
 title: Sensor Service Kit开发简介
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > Sensor Service Kit开发简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:38+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:82f8f9bae6c54a03925bbba92918b58f7b912aa2d7a95cc4f5a0d04081cb90af
+scraped_at: 2026-09-10T06:22:43+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:873d06bb3284c44d928db11395411cf48224870e68e153515ddfc0ea66e846ef
 ---
 
 ## 使用场景
@@ -19,7 +19,7 @@ Sensor Service Kit（传感器服务）使应用程序能够从传感器获取�
 * Vibrator（振动）模块最大化开放马达器件能力，通过拓展马达服务实现振动与交互融合设计，打造细腻精致的一体化振动体验和差异化体验，提升用户交互效率和易用性、提升用户体验、增强品牌竞争力。
 
   + 本地马达: 设备内置的马达，常用的包括转子马达、线性马达等。
-  + 动态马达: 设备外置的多个马达支持独立控制，且可以根据设备的连接、马达的状态等信息进行灵活的管理。动态马达广泛应用于外接设备，包括手柄、遥控器、外接振动器等，为了管理这些动态接入的设备，应使用 vibrator.on('vibratorStateChange', callback) 来监听设备上下线事件。
+  + 动态马达：设备外置的多个马达支持独立控制，且可以根据设备的连接、马达的状态等信息进行灵活的管理。动态马达广泛应用于外接设备，包括手柄、遥控器、外接振动器等，为了管理这些动态接入的设备，应使用 vibrator.on('vibratorStateChange', callback) 来监听设备上下线事件。
 
 ## 约束限制
 

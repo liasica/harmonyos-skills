@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipV2
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:28+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:7c4b0eaecccab2bacaa3dbf84b46ca987ce5d1825c9af40b15d16b56f55e930c
+scraped_at: 2026-09-10T06:25:42+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:533ce3b6d6075b48c27d41cabf18a4ebe5437f96524af1d667cf2ef87de2780f
 ---
 
 ChipV2是提供丰富样式和交互能力的操作块组件，支持前缀图标、后缀图标、激活状态、关闭按钮等特性，支持Symbol和Image两种图标类型，并提供完善的无障碍访问能力。该组件适用于搜索历史记录、邮件发送列表、标签选择、过滤器、联系人展示等场景。
@@ -1015,7 +1015,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/-cMXp2ElT3WS73BMtclQow/zh-cn_image_0000002712246512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/0vPi4Dr6TS6XN-fLHSUB6A/zh-cn_image_0000002717773058.png)
 
 ### 示例2（设置ChipV2激活状态）
 
@@ -1080,7 +1080,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/UIXBJDevR2WFaIwB-q0AoQ/zh-cn_image_0000002742005461.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/tG9a1PhfQdq9QYBWQK6Ulw/zh-cn_image_0000002717613126.gif)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -1139,7 +1139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/9_1OQdARRwKTv4oKtYop4w/zh-cn_image_0000002712406472.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/6jw664paTVq0ac6I42rVGA/zh-cn_image_0000002747293079.gif)
 
 ### 示例4（监听ChipV2Options内对象类型属性的内部属性变化）
 
@@ -1182,4 +1182,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/pp0HNOCgRi2BZYxulcTm4A/zh-cn_image_0000002742125421.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UObmwgLuRm65hUYajUpeHQ/zh-cn_image_0000002747212995.gif)

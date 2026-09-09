@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-cookie-an
 title: 管理Cookie及数据存储
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 管理Cookie及数据存储
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:824347112120ee0d2516c580bbe33c21aa530712161cf7c52b27e9a37bb42a85
 ---
 

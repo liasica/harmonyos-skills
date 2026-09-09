@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/serviceco
 title: CollaborationCamera (跨设备互通组件)
 breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > ArkTS组件 > CollaborationCamera (跨设备互通组件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:59+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f624366030f5d4b7354ac67e14d40738591a61ab357c58a78a25a17e309edff2
 ---
 

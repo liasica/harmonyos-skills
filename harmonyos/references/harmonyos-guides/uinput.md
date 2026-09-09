@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uinput
 title: uinput
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > uinput
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:41+08:00
-doc_updated_at: 2026-07-09
+scraped_at: 2026-09-10T06:22:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8e2eec4d508f65f01fc1f3657cba9c0b9cdd293f2de01d2ef71923dca96b269e
 ---
 

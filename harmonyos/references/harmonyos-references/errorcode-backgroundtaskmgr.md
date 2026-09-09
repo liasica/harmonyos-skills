@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: backgroundTaskManager错误码
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 错误码 > backgroundTaskManager错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d2b6c3c7a60f51277a9434e5711e7c20d40799128d21090370e7ac99290c28c3
 ---
 

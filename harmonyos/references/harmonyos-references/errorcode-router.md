@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 页面路由错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > 页面路由错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:16759d27e5dd914c5acc47c9bdb7eeca8c0291074bdb34cbd153155e766657c0
 ---
 

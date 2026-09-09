@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-config
 title: 窗口元数据配置
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口元数据配置
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-08-24
+scraped_at: 2026-09-10T06:22:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:353a98905c2842387b416a5a636ebcfda4c86ccb835d48b90db3a2fb94fc740a
 ---
 

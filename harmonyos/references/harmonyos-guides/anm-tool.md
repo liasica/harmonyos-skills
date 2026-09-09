@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/anm-tool
 title: anm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > anm工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:13+08:00
-doc_updated_at: 2026-03-17
+scraped_at: 2026-09-10T06:22:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0e1380e9b70f3f588a75c085086cfe102828bbb35784471d38ff2858a2918bbe
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: postCardAction
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > postCardAction
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9ed861877a04a7b28163f7df8e6c3a26c7b654401598a1496e6b3defa91f9b0f
 ---
 

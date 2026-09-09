@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.intelligence (智慧数据平台)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.intelligence (智慧数据平台)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:39+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:46+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:636232ffc39b5e3f79e92c2aa10c2353933e33bc4cf17df8d18b635976839d28
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: swiper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > swiper开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:06+08:00
-doc_updated_at: 2026-07-03
-content_hash: sha256:e6b928455e3e2921a601b7cdaa003fe58bde795bba8f5a6fb0d79f823f5f9efd
+scraped_at: 2026-09-10T06:22:12+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:cfc4a1d44ea39bf1ac4df9e9ada1f5287b0590993969240d1dc025919b667d86
 ---
 
 swiper为滑动容器，提供切换显示子组件的能力。具体用法请参考[swiper](../harmonyos-references/js-components-container-swiper.md)。
@@ -58,7 +58,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/SItqzX7bTOeQIKKCGo5-Hg/zh-cn_image_0000002712244166.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/pwMBLhs2QL2uplw8UI1cDA/zh-cn_image_0000002717770720.gif)
 
 **说明** 
 
@@ -115,7 +115,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/2thG2JeIQWeU3ma9UtEnTA/zh-cn_image_0000002742003119.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/fqGInAG2SNyGpXpDG6f0bQ/zh-cn_image_0000002717610786.gif)
 
 **说明** 
 
@@ -177,7 +177,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/7z3Zie9ySGacNGXvvCx_nQ/zh-cn_image_0000002712404132.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/jmbUA-s6QYyPkqM-Jau5Hw/zh-cn_image_0000002747290739.gif)
 
 ## 绑定事件
 
@@ -275,7 +275,7 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/8kyDwfXxTY2aQGQc6z0XtA/zh-cn_image_0000002742123081.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/jtk0Rsi_R060FW7AR4qXfg/zh-cn_image_0000002747210657.gif)
 
 ## 场景示例
 
@@ -352,4 +352,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/54-M1qCWTQiNKopdZjeRjA/zh-cn_image_0000002712244168.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/kBOSoC3hTNeuHGwaFr2VDA/zh-cn_image_0000002717770722.gif)

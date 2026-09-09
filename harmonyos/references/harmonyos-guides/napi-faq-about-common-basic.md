@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-faq-abou
 title: 常见基本功能问题汇总
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API常见问题汇总 > 常见基本功能问题汇总
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:46+08:00
-doc_updated_at: 2026-08-21
+scraped_at: 2026-09-10T06:23:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5545142f63e82d983df43ae7f05502983ca9af98580a32bfc97f143cb3262521
 ---
 

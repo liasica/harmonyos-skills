@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-render
 title: LazyForEach
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > LazyForEach
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:46+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4089e303e1db45babd6a610475831b9eddba7594e9041d2892d44bbe179fcb46
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-wrap-key
 title: 加密导出导入密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 加密导出导入密钥 > 加密导出导入密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-04-29
+scraped_at: 2026-09-10T06:22:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c5e416ea0232c67267bcd6a40345279a22bb94b4e869f902624da833c703fa3d
 ---
 

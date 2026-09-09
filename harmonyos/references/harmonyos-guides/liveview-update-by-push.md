@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-upda
 title: 通过Push Kit更新实况窗
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发实况窗场景 > 通过Push Kit更新实况窗
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:11+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:74a25e959000bceae8ff0b09ff23338a17e99ccf58a0ab8d14a9b5f0ae3f5694
+scraped_at: 2026-09-10T06:23:20+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:047b1a1578ebef03716093e88b8360ada768e6b16db0b7ee7fdbd8d530f49a57
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:74a25e959000bceae8ff0b09ff23338a17e99ccf58a0ab8d14a9b5f0ae3
 
 通过Push Kit更新实况窗的流程如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/HYK8sh3rT2e8xpoHMIysfQ/zh-cn_image_0000002742124153.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/YoQhCEkBRaWhdpsEXri4mA/zh-cn_image_0000002747211725.png)
 
 1. 使用Push Kit，获取Push Token。
 2. 使用Live View Kit创建实况窗成功后，开发者需要将实况窗id、pushToken、实况窗场景event以及业务服务的相关的状态属性保存到业务服务端。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.eap (扩展认证)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.eap (扩展认证)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2a218e3e98c493d0d07fd58eab13f46571ca85ad391aa1f41f60e3001dd0838e
 ---
 

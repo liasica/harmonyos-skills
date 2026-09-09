@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感功耗优化
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感功耗优化
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:01+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:22:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8247c4ba841643cbc1d262bef2ae9ff1bc4e842ee286dad8014ed0c463569135
 ---
 

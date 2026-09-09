@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-api-
 title: 消息回执
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 消息回执
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:31f8d046189e958f617dcef3b20973ef60663203aa1cefe0bc01f2386139bf79
 ---
 

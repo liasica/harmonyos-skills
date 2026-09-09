@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-launc
 title: 基于URL跳转方式
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 拉起三方支付收银台 > 基于URL跳转方式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4d258adde946ac89086a71621fd59d4ea887f0994329f9a6ec2f87582e8917dd
 ---
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-des-sym-encrypt-decrypt-ecb-ndk
 title: 使用DES对称密钥加解密(C/C++)
-breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密介绍 > 使用DES对称密钥加解密(C/C++)
+breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用DES对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:646575b9c590c2c3ca81703dac6550bf1c4d1753ab99496f5c9d1c9d90ee47d9
 ---
 

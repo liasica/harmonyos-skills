@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.ability.featureAbility (FeatureAbility模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > FA模型能力的接口 > @ohos.ability.featureAbility (FeatureAbility模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:668ae4a892e7b2abbcca23f4140237b40d0d181c005cc546efe69494d4e205a1
 ---
 

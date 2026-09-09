@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: SDK编译校验错误码
 breadcrumb: API参考 > API参考概述 > SDK编译校验错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:21cd2dc65b2d67a82d3d2517726514e27b608588170af1edf7f149aefe47e2a7
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicestatus-
 title: 设备状态感知开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 设备状态感知开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:499c191b7ed1f2271f7786213e884f5fc707baf5320f28ac85901739c452f271
 ---
 

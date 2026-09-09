@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.multimodalAwareness.userStatus (用户状态感知)"
 breadcrumb: API参考 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > ArkTS API > @ohos.multimodalAwareness.userStatus (用户状态感知)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fd520ff313c166a2d93e7b640c00a59beadcf0d507a1b5ede1b6ac7dbb2fbd0e
 ---
 

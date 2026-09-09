@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.graphics.sendableColorSpaceManager (可共享的色彩管理)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.sendableColorSpaceManager (可共享的色彩管理)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:20:30+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:28:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b99241bb0342b0b1dda9c5881b0654bf5812f6feeb4840fec3cc96d3c43a0cf7
 ---
 

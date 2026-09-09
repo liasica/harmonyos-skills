@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:11+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:29:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a7b1123083a40cafa081bcd4445c72ede5bfb38233d470049c3fe2061a15c951
 ---
 

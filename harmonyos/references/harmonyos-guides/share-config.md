@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-config
 title: 应用间配置共享 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 跨应用数据共享 > 一对多跨应用数据共享 > 应用间配置共享 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a8ecdea81b480505f29194f760357b0de28ebe5b11f324fd2ed6d14c8ec69ff2
 ---
 

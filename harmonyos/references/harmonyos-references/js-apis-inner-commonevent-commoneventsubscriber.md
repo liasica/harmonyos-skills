@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: CommonEventSubscriber
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > commonEvent > CommonEventSubscriber
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:04+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:29+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8f82f8f6d1cb6cf309d24398a892ccb02257788861f77e70fe1a52230b9093b8
 ---
 

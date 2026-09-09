@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-openf
 title: 文件打开加速状态感知（已废弃）
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > 文件打开加速状态感知（已废弃）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:17+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:23:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0680fbaf138e2035b803c4860be3c4afdd7dccfa24cc41e8751d3483120d7a6a
 ---
 

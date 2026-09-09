@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: AR Engine错误码
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > AR Engine错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f9f071433fab57cb593dbb16b9a178b91b350fcb7f3c6549dbfe628b6c8c270e
 ---
 

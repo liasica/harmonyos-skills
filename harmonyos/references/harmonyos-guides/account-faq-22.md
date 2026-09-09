@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-2
 title: 1001502003 输入参数值无效的可能原因和解决办法
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 1001502003 输入参数值无效的可能原因和解决办法
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:874caa0210ea540657a88b82a0497ca7fbb4e66e276abc351e8b21515af87021
+scraped_at: 2026-09-10T06:23:10+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9d25cb2962c2add35dd014a5190d7412f1596ea1db114f563a88b08e68685c78
 ---
 
 **问题现象**
@@ -23,7 +23,7 @@ content_hash: sha256:874caa0210ea540657a88b82a0497ca7fbb4e66e276abc351e8b21515af
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择对应的项目和对应的应用，在“常规 > 应用 ”下，找到**应用**的Client ID和APP ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/un585SIsRvyeYaKz3AQ3Dg/zh-cn_image_0000002742123909.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/l1XnfxAuTV6dOpBl4valFg/zh-cn_image_0000002747211481.png)
 
    * 若Client ID和APP ID不同：请检查module type为entry的模块下module.json5中的client\_id是否配置或配置的值是否正确，参考[配置Client ID](account-client-id.md)。
    * 若Client ID和APP ID相同：可无需配置Client ID。

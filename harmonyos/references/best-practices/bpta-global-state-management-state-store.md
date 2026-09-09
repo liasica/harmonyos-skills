@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-global-sta
 title: 基于StateStore的全局状态管理
 breadcrumb: 最佳实践 > 声明式语法 > 基于StateStore的全局状态管理
 category: best-practices
-scraped_at: 2026-09-02T15:03:16+08:00
+scraped_at: 2026-09-10T06:30:01+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:5bdb0f152631bc1615f69a7e43bc55ca960c708df8053a4774c633aa695b9e04
+content_hash: sha256:7f5df30bf5f3504ae4319c92f2b1d51298bb5a0de7f70044179e4e9c88514995
 ---
 
 ## 概述
@@ -28,15 +28,15 @@ StateStore提供了下列功能特性：
 
 **图1** 待办列表效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/XNuajLpIRlSbaiP6nc8J_Q/zh-cn_image_0000002194011108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/qI9dKo0CQHa06dDmZWe2wQ/zh-cn_image_0000002194011108.png "点击放大")
 
 新增和删除功能按钮分别位于两个兄弟组件中。在开发时，父组件需要维护一个listDatas列表，并通过@Link装饰器实现数据的双向同步，从而实现兄弟组件之间的状态同步。删除功能和新增功能逻辑分别由两个子组件处理，但是这两个组件都需要引入与UI渲染无关的listDatas数据，造成了状态与UI的高耦合。使得状态管理变得复杂，难以维护和扩展。组件结构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/R3wXyokjQz6Vx9Qp1_K0TQ/zh-cn_image_0000002194011116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/MZTCcTxyRiOX2jPtQ6uzkw/zh-cn_image_0000002194011116.png)
 
 引入StateStore库后，开发者可以将listDatas数据存储在全局仓库（Store）中，组件从Store中获取数据进行UI渲染，并通过向Store发送事件来更新数据。这样，状态更新逻辑被集中管理，组件无需额外引入状态进行逻辑处理，从而实现了状态与UI的低耦合。组件结构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/QWxPyradR7mmW6Qo3bFbFw/zh-cn_image_0000002194011104.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/PlfFqtUGSteIVyhhwcEphA/zh-cn_image_0000002194011104.png)
 
 ## 实现原理
 
@@ -52,7 +52,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图2** **运行原理图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/UkFprvg1RQOYgYyuDAW2uQ/zh-cn_image_0000002194011124.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/QdpV-CEUTx6ZbMQK036PTg/zh-cn_image_0000002194011124.png "点击放大")
 
 **核心概念解释**
 
@@ -115,7 +115,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图3** **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/_Pq6l21JS2qlMnydhG6qxw/zh-cn_image_0000002194011120.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/7Sm_PlR3QgS0bKP_z4WMDA/zh-cn_image_0000002194011120.png "点击放大")
 
 ### 开发步骤
 
@@ -294,7 +294,7 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 
 **图4** **效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/pq8mkh6lTSyy_SaJoVZNYQ/zh-cn_image_0000002229336913.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/NZzeNTv_Qvmu9Lth775NiA/zh-cn_image_0000002229336913.gif)
 
 上图效果图中，用户点击同步数据库按钮，子线程去读写数据库，同时更新进度条。
 
@@ -424,11 +424,11 @@ StateStore基于ArkUI的状态管理特性（[@Observed](../harmonyos-guides/ark
 在本节中，我们将通过日志埋点场景，展示如何利用中间件优雅地扩展状态管理功能。
 
 **图5** **日志效果图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/v3tF-3mwQdiE1TB8FsWXPw/zh-cn_image_0000002194011100.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/I5DdPNDiTg6JqKNpb362Mg/zh-cn_image_0000002194011100.png "点击放大")
 
 **图6** **中间件执行流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/-1S8K9GXSnqnthj6_gAQUA/zh-cn_image_0000002229451401.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rb23-NfvRLObOqEOgIHpkw/zh-cn_image_0000002229451401.png)
 
 ### 开发步骤
 

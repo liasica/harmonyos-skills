@@ -3,33 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: SafetyDetect（安全检测）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > ArkTS API错误码 > SafetyDetect（安全检测）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1f5a34ca85e72d1b263b7da05debbf53921cab542a8c3c30cc5e686b35790607
+scraped_at: 2026-09-10T06:26:50+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:23ffc155d125c9168af79c00ec76a8125ac78162e51bc7a17ec12f8112c1716f
 ---
 
 **说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参见[通用错误码](errorcode-universal.md)。
-
-## 201 权限校验失败
-
-**错误信息**
-
-Permission denied.
-
-**错误描述**
-
-权限校验失败。
-
-**可能原因**
-
-应用hap未开通Device Security服务。
-
-**处理步骤**
-
-1. 请参见[开通Device Security服务](../harmonyos-guides/devicesecurity-deviceverify-activateservice.md)在AppGallery Connect开通“安全检测服务”。
-2. 重新[申请Profile](../app/agc-help-profile-0000002270709473.md)，将新申请到的Profile作为工程的签名文件后重试。
 
 ## 1010800001 内部异常
 

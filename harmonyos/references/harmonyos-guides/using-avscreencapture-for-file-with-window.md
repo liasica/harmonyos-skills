@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avscree
 title: 使用AVScreenCapture实现窗口级录屏(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture实现窗口级录屏(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:01+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6aa4c6525e715c482a05c1917097b529b103083ad2c79b248b0d4168e037e1a6
 ---
 

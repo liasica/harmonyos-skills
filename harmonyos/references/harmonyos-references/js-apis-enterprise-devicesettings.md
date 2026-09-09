@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.deviceSettings（设备设置管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.deviceSettings（设备设置管理）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:19:29+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:27:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:858102bdb114e061512a6ea8a0e57c787e6262498eef16721ff08a7f7a21f5e2
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 其他资源泄漏问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 资源泄漏类问题分析 > 其他资源泄漏问题分析方法
 category: best-practices
-scraped_at: 2026-09-04T06:33:26+08:00
+scraped_at: 2026-09-10T06:30:19+08:00
 doc_updated_at: 2026-07-22
-content_hash: sha256:ebadef1be42f3f3eccab7edf361bae82f203575ff52d2717d987f8bc5737108a
+content_hash: sha256:10d5ed613f49b011b2189d6784b885a59d78d4431f2adb741416e26a72c34fb6
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:ebadef1be42f3f3eccab7edf361bae82f203575ff52d2717d987f8bc573
 
 这些内存都是由图片编解码框架提供的编解码工具申请的，申请代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/-n5GkWQdRPORFvxj85LIFg/zh-cn_image_0000002404045337.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/z5ErUsQeTXmzG2sOaoKiTw/zh-cn_image_0000002404045337.png "点击放大")
 
 解码框架本身没有问题，一旦完成解码，ashmem的所有权会转移给C++的PixelMap对象，如果是ashmem泄漏，基本上可以断定是C++层的PixelMap泄漏。
 
@@ -48,7 +48,7 @@ content_hash: sha256:ebadef1be42f3f3eccab7edf361bae82f203575ff52d2717d987f8bc573
 
 1. 对于DMA(ION)泄漏，开发者可在DMA(ION)泄漏维测日志[memleak-kernel-[module]-0-[timestamp].txt]中搜索“Total dmaheap size of”查看自身应用进程的DMA(ION)内存占用量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/eGGpj53WSpmMu48CJ-itPQ/zh-cn_image_0000002370565512.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5e9GqPNGS16tYnrAZ-z24A/zh-cn_image_0000002370565512.png)
 2. 搜索magic这一列，magic相同表示属于用一块buffer，正常如下，应该是存在buffer流转，buffer被多个进程共享。
 
    ```screen
@@ -71,7 +71,7 @@ content_hash: sha256:ebadef1be42f3f3eccab7edf361bae82f203575ff52d2717d987f8bc573
 
    **step2：**如果应用根本就没有使用Node-API实现C++代码，那么排查是否使用JS层的PixelMap，可能存在JS对象泄漏或者缓存太多导致PixelMap大量占用，可使用IDE抓两次snapshot看一下对象的增量分析，操作方法见下图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/NHqtyfAxQRa2xhPIGqHCuw/zh-cn_image_0000002404125177.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/0hgW9j1ISem0BVpKOF9nNw/zh-cn_image_0000002404125177.png)
 
    **step3:**  **【推荐】**pixmap使用的DMA(ION)内存，应用自定义绑定pixmap名字，当出现DMA(ION)泄漏，快速根据DMA(ION)的buffer名锁定哪张图片存在问题，反推至对应的问题组件。
 
@@ -186,21 +186,21 @@ content_hash: sha256:ebadef1be42f3f3eccab7edf361bae82f203575ff52d2717d987f8bc573
 
    开发者可以将获取到的profiler文件（[内存栈](../harmonyos-guides/resource-leak-guidelines.md#内存栈-1)）导入DevEco Studio Profiler插件中进行分析，导入后会在界面展示进程的内存分配情况及其调用栈。按照如下步骤将解析结果展开，按照前置分析框选怀疑泄漏的泳道，选择Created & Existing，按照内存申请大小来排查可疑的泄漏点，并通过调用栈进一步确认泄漏位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/YyW4ZqwsS-6FyvKWjgeNWg/zh-cn_image_0000002504303346.png)可本地搭建[Smartperf](https://gitcode.com/openharmony-sig/smartperf)环境，并导入profiler日志进行解析，按照前置分析框选怀疑泄漏的泳道，选择Created & Existing，通过步骤二分析出异常size范围进行匹配，来排查可疑的泄漏点，并通过调用栈进一步确认泄漏位置。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/2lzFseb0QnmYadFERF_5-w/zh-cn_image_0000002504303346.png)可本地搭建[Smartperf](https://gitcode.com/openharmony-sig/smartperf)环境，并导入profiler日志进行解析，按照前置分析框选怀疑泄漏的泳道，选择Created & Existing，通过步骤二分析出异常size范围进行匹配，来排查可疑的泄漏点，并通过调用栈进一步确认泄漏位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/f06kQETuRrmS1ru1YJTm2g/zh-cn_image_0000002504143532.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/6AeM4XdcTvOlOWBim283kg/zh-cn_image_0000002504143532.png)
 
 ### gpu\_rs泄漏
 
 1. 对于gpu\_rs泄漏，开发者可以在维测日志[memleak-kernel-[module]-0-[timestamp].txt]中搜索“used summary:”字段，来查看renderservice的内存使用情况；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/vCaE9rXPSZuo5-LbYajRFQ/zh-cn_image_0000002370405636.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/euaGYt0bQbKSPICFt2MKQA/zh-cn_image_0000002370405636.png)
 2. 找到render\_service对应的GPU内存信息打印，gpu\_rs上报的进程泄漏是通过render\_service进行统一渲染的，因此需要分析render\_service的GPU内存信息占用来排查问题；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/cOuPyC85QjW1K3KTI9c-xg/zh-cn_image_0000002404045341.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/H4cF9aI_SMii2czpY-28gg/zh-cn_image_0000002404045341.png)
 3. 进一步查看rs gpu的内存占用发现vulkan image和vulkan buffer占用比较高，重点排查一下框选的两处维测信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/VjQf7-XkR0CkgEmaEka3tg/zh-cn_image_0000002370565516.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/2aaKbisPTpmKtivLT96JFw/zh-cn_image_0000002370565516.png)
 
 ## 句柄泄漏分析方法
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-filesh
 title: 授权持久化(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 选择与保存用户文件 > 授权持久化(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d90498731afa03e347a8e4fe3ff38ab2bacb4e962a0f1558fdf12574ee8232d7
 ---
 

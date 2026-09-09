@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 相机管理 (C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用必选能力(C/C++) > 相机管理 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:45+08:00
-doc_updated_at: 2026-05-26
+scraped_at: 2026-09-10T06:22:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2b649faabb3af846c89d427c9e7e9f48891d13e026c2a20657bcd1f694ef5236
 ---
 

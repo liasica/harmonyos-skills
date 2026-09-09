@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectionMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectionMenu
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:30+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:1eee57deb5a42725a29cd9740ad2ed8caf71a2f3d1983ce3b6e07fc54941775a
+scraped_at: 2026-09-10T06:25:44+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:20ecbb8fe33e503081031f0c410d23a36860e84616d79352eb945651d9fa5660
 ---
 
 文本选择菜单，适用于[RichEditor](ts-basic-components-richeditor.md)组件通过[bindSelectionMenu](ts-basic-components-richeditor.md#bindselectionmenu)或[Text](ts-basic-components-text.md)组件通过[bindSelectionMenu](ts-basic-components-text.md#bindselectionmenu11)绑定自定义文本选择菜单，支持编辑菜单和扩展下拉菜单两种类型，可通过配置实现复制、粘贴、剪切、全选等内置功能，也可通过自定义菜单项和事件回调实现扩展功能。建议绑定鼠标右键或鼠标选中方式弹出，不支持作为普通组件单独使用。适用于富文本编辑场景，可为用户提供便捷的文本操作入口，提升文本编辑效率。
@@ -456,7 +456,7 @@ struct Index {
 
 示例图为鼠标操作触发的自定义菜单弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/gHzdqCXmTFmo_xZ7oYXAAg/zh-cn_image_0000002712246592.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/wO8045wgTx-n3a4BS-qevw/zh-cn_image_0000002717773106.gif)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -793,7 +793,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/4n25VMUqThqFIUQVMx3eTA/zh-cn_image_0000002742005543.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/cp0Ma2_JR6-MVVOS6eFC9g/zh-cn_image_0000002717613174.jpg)
 
 ### 示例3（设置背景板材质）
 
@@ -907,4 +907,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/AXlaVaqbTTCskuwvY3I-VA/zh-cn_image_0000002712406554.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/CaPnSKe2RHKmBZZRAtPvTQ/zh-cn_image_0000002747293127.jpg)

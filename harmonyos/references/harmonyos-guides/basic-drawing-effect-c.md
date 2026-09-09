@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-drawing
 title: 基础绘制效果（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 基础绘制效果（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:49+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:43f5e97bf99fe8f54ad96d68f44f12988fb03e84fdd7710dd6db078893263b13
 ---
 

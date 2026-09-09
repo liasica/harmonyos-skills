@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅应用终止事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用终止事件 > 订阅应用终止事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:342d2af8ec4eec4646615ec4382f75ee21d0f2e1ab109e80ee9f3362632b57bc
 ---
 

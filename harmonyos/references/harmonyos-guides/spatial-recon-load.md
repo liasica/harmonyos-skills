@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: 加载3DGS模型
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务） > 加载3DGS模型
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:00+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:6f0b5055cdd3dd122d3d8b85c5de94103ded42dd6b643371cd44c989f8c9ff1e
+scraped_at: 2026-09-10T06:23:08+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:8f17389c218886e6bb5521f2245d5530f26adab6897568ada237155eefa6d569
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:6f0b5055cdd3dd122d3d8b85c5de94103ded42dd6b643371cd44c989f8c
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/uzM4TcfBRZOycFM7jQnn7Q/zh-cn_image_0000002712404946.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ScmS6BB_R_apvsGW4h7Abw/zh-cn_image_0000002747291551.png)
 
 ## 接口说明
 

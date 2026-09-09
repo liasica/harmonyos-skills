@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 设置云侧文件的元数据
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云存储 > 设置云侧文件的元数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d797847977966c2e9c295f4c3fb9ea6936c04aadc50fd8dfcbf8fb6f384c92a9
 ---
 

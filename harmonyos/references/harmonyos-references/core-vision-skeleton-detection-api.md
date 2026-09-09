@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: skeletonDetection（骨骼点检测）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > skeletonDetection（骨骼点检测）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f780614dd4fef86b2ce1aea416ef4306213621ae7d466228ebd2771d12edebf2
 ---
 

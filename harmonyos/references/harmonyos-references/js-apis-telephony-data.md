@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.telephony.data (蜂窝数据)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.data (蜂窝数据)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:00+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:27:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:985831dbd93feb57dd85e0529e02784d06e53d2479045b09a48a9cc67e3ec72d
 ---
 

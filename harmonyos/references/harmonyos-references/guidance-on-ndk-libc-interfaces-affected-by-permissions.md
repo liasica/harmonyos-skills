@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/guidance-
 title: NDK涉及的musl libc接口使用限制的说明
 breadcrumb: API参考 > 标准库 > 附录 > NDK涉及的musl libc接口使用限制的说明
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0343e97252423a9f08b04b131ac15627c2f397b05c2c8975427c9f753c516022
 ---
 

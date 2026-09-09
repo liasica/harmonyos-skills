@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-
 title: 动态订阅公共事件
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 进程线程通信 > 使用公共事件进行进程间通信 > 动态订阅公共事件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a6a44eaa9e8e31a2ff95905195cf1d7adbc9df1bb2973960610a831f2723397c
 ---
 

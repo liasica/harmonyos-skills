@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-hce-guide
 title: HCE卡模拟开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > NFC > HCE卡模拟开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1b043cde3aacbae29d4aa5a1a4f7db602d95d03eb083162f6c97c5aa436eeca6
 ---
 

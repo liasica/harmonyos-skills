@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smooth-app
 title: 性能体验设计
 breadcrumb: 最佳实践 > 性能 > 性能体验设计
 category: best-practices
-scraped_at: 2026-09-02T15:03:21+08:00
-doc_updated_at: 2026-07-14
-content_hash: sha256:d04e769a2fb7b4af6a9b5c5188169658896257f0ddce39cb14c0748ef7db4971
+scraped_at: 2026-09-10T06:30:11+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:b4f2898255ef7285fa25f61b79942e9aff692fde4f925bab5b3e7ab5d7f552de
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:d04e769a2fb7b4af6a9b5c5188169658896257f0ddce39cb14c0748ef7d
 通过这些设计流程，不仅能提高用户满意度和忠诚度，还能降低应用风险，提升用户好感，增强市场竞争力。接下来，将首先介绍用户感知的整体指标和测评方法，然后分别阐述交互流畅体验和视觉流畅体验的设计原则及评价指标。
 
 **图1** 感知流畅性示意图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/M2BtjQ83QJOgqnzsfYpMEQ/zh-cn_image_0000002194011640.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Pv7cWLiKRDC5oEZUdHGmMA/zh-cn_image_0000002194011640.png "点击放大")
 
 ## 用户体验设计
 
@@ -84,7 +84,7 @@ content_hash: sha256:d04e769a2fb7b4af6a9b5c5188169658896257f0ddce39cb14c0748ef7d
 根据完成时延进行评测并优化，优化前后对比图如下所示。
 
 **图2** 应用启动优化前后对比图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/WevKjOEgS46n9-k0oDa9MQ/zh-cn_image_0000002193852052.gif "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/YtbjrsKERCWLp76TH2ylXw/zh-cn_image_0000002193852052.gif "点击放大")
 
 ## 交互流畅体验设计
 
@@ -207,7 +207,7 @@ content_hash: sha256:d04e769a2fb7b4af6a9b5c5188169658896257f0ddce39cb14c0748ef7d
 根据最大连续丢帧数的评测指标进行优化，优化前后对比图如下所示。
 
 **图3** 最大连续丢帧数优化前后对比图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/8dmsveWaQkOarCYKqPSNsg/zh-cn_image_0000002194011636.gif "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/pnOoKpY2REuF8w2nN-JB-Q/zh-cn_image_0000002194011636.gif "点击放大")
 
 ## 总结
 

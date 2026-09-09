@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-faq-21
 title: developerPayload处理机制及使用建议
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > IAP Kit常见问题 > developerPayload处理机制及使用建议
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:34+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3b54ae161f78f820f1d51474d92925cebac992fee4e4c8ec881167a18c5d259a
 ---
 

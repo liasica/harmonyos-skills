@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.hid (蓝牙hid模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.hid (蓝牙hid模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:48+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3b7f6c2f68695ab31d7a6402323281fe8b359eef5fd88e4fd58b4ae67990548d
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restool
 title: restool工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > restool工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:41+08:00
-doc_updated_at: 2026-08-24
+scraped_at: 2026-09-10T06:22:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6e995bc8df501b4800ccb211f70d8f647148ba11ecee385c6352327bfb81ba8b
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fence-
 title: GPU/CPU内存访问同步操作开发指南 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形缓冲区 > GPU/CPU内存访问同步操作开发指南 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:21+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0ffeca605188e8954072a8d0a3672e0baaaab33e5434f8e5a3ec4c972f02f026
 ---
 

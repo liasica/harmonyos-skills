@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-9
 title: 自定义界面扫码黑屏现象
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 自定义界面扫码黑屏现象
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:23:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a4e237d0eaaf659b4c3da99d62088c9a49563aac40bb6a65865155afed3728ce
 ---
 

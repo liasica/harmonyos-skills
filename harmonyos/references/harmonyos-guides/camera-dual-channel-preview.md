@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-dual-c
 title: 双路预览(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 双路预览(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:49+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:aa6f3230e16d156eeffa353931f217ed7ccfda939cc9d5cd540b57480ecea876
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:413f59dd8092d2bacd1abe1ab338cc4ba8b60f35c726f76ccf2c2e647d251aa3
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -27,7 +27,7 @@ content_hash: sha256:aa6f3230e16d156eeffa353931f217ed7ccfda939cc9d5cd540b57480ec
 
 双路方案调用流程图建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/PIOHMvLRT46-aGBbZm7YBQ/zh-cn_image_0000002742003729.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Fbk_jvKaT8WwaHCtQQldLA/zh-cn_image_0000002717611396.png)
 
 ## 开发步骤
 

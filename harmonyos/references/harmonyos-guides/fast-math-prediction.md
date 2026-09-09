@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-math-pre
 title: 使用mathPrediction进行数理预测
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用mathPrediction进行数理预测
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:08+08:00
-doc_updated_at: 2026-07-03
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:42b68f6d76db01b6c685f33be94dbe8e7825f0dabb412197ef31a8da8645fcce
 ---
 

@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-searc
 title: 场景体验
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 本地搜索方案 > 场景体验
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:36+08:00
+scraped_at: 2026-09-10T06:23:54+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ce4fdfa433616dbd73f800a8874bd49c64820faf339cc4fbc24fcda776871bcd
+content_hash: sha256:ea1d356c9fb63760b653943159154383676b23a52856a3d60d0bd190ec14671d
 ---
 
 ## 典型场景
 
 **功能搜索：** 开发者将应用内的功能接入Intents Kit后，在小艺搜索入口，搜索对应功能名或者应用名，可以将应用内功能直接搜出，比如视频应用接入“会员中心”功能后，用户可通过搜索应用名或功能名搜出具体功能，点击后直接拉起应用中的功能页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/_60CmYLuQBerjKHIjEff7w/zh-cn_image_0000002747212127.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/13M0xpWmSoWe6bkBdZwrSw/zh-cn_image_0000002747212127.png)
 
 **内容搜索：** 以音乐为例，当用户在使用应用时，应用可以将音乐数据通过端侧API共享到意图框架，这里的音乐数据可以是用户收听过的歌曲，或是应用预测用户感兴趣的歌曲，那么后续用户在小艺搜索入口中搜索歌名时，系统将会在应用共享数据中检索对应内容，并使用模板卡片展示内容结果。当用户点击对应卡片热区时，可以跳转进具体音乐播放页或者后台执行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/tZsy19qyQAOTL1jEjaWnRA/zh-cn_image_0000002717772192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/BdZ0hOQdQA-og2W9C5c4IQ/zh-cn_image_0000002717772192.png)
 
 ## 卡片展示效果
 
@@ -24,4 +24,4 @@ content_hash: sha256:ce4fdfa433616dbd73f800a8874bd49c64820faf339cc4fbc24fcda7768
 
 模板卡片包含应用/元服务和内容必要信息，比如歌曲名称、歌曲封面图、歌曲描述，这类参数需要开发者共享到系统。各垂域适用的风格卡片不同，以实际特性场景要求为准。以下为歌曲本地搜索的模板卡样式的示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/iT422eWNTAWYh7gTWmUrJg/zh-cn_image_0000002717612260.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/b7r9yEcfRWqJYaD-_YVdaQ/zh-cn_image_0000002717612260.png)

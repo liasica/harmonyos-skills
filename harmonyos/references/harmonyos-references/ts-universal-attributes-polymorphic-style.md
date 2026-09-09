@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 多态样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 多态样式
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cd13f74e5603740939773c45d760d9f39f6968344f3af3a48e6ae9c52ff2ca95
+scraped_at: 2026-09-10T06:25:17+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:844e0d855d5ab0bad2ccf2008b9f7253efa25503d3a3ec0a9a50014e3759a8bf
 ---
 
 设置组件在不同状态下的样式，适用于需要根据各种交互状态动态切换组件样式的场景，帮助开发者统一管理组件状态样式。
@@ -217,7 +217,7 @@ struct StyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/WdVtq-35TF6bkP-i2P1JbA/zh-cn_image_0000002742004879.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ReknCz5XTkuqVG5YJxWsHw/zh-cn_image_0000002717612542.gif)
 
 ### 示例2（设置Radio多态样式）
 
@@ -283,7 +283,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/kO0FaRCYTOuByBCfFPqyaQ/zh-cn_image_0000002712405890.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/kOlLuFkCSdui7VxkktNe6g/zh-cn_image_0000002747292495.gif)
 
 ### 示例3（设置Builder多态样式）
 
@@ -344,4 +344,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/ik1RIkcATKGtIMal5Ja-Ew/zh-cn_image_0000002742124839.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/jUR2rmCLQK2QHn8T55hPNg/zh-cn_image_0000002747212411.gif)

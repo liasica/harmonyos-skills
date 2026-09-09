@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-intert
 title: C++线程间数据共享场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > C++线程间数据共享场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e42095b2fb1b0556b2195dc484fc4757f67e2363d73c287fbba69e4bc0a8238e
 ---
 

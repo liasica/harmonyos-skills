@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohavses
 title: 媒体会话提供方(C/C++)
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 媒体会话提供方(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e58702afbce92ed71519f0ccdab35592edf8019425032c11e892f94c9615f6eb
 ---
 

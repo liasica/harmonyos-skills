@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-c
 title: 开发后自检
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 开发后自检
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:26+08:00
-doc_updated_at: 2026-07-03
+scraped_at: 2026-09-10T06:23:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4678296d17ffea0c254f633eb9a89eb16cc26637f04947338837b6e243aabde2
 ---
 

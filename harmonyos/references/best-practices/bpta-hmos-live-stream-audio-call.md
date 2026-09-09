@@ -3,26 +3,26 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播连麦功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播连麦功能
 category: best-practices
-scraped_at: 2026-09-02T15:03:20+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:7dfeb094855c48cc7d25b9a1bf9ec99e008eaadf3eb5b798a1ea7e623ca9f2f7
+scraped_at: 2026-09-10T06:30:10+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:18332228e1c0f9398918a6b9efd47b4396810e6634b51e55791bbe0f619092c9
 ---
 
 ## 概述
 
-连麦是直播中的一种常见场景，指两位及以上主播或主播与粉丝进行实时音视频交互，实现跨空间共同直播的模式，广泛应用于娱乐互动、电商带货、在线教育等领域。例如，在娱乐场景中，连麦可支持主播PK、合唱互动，提升观众参与感；在电商场景中，品牌主播与达人连麦能整合双方流量，扩大商品曝光；在教育场景中，师生连麦可实现实时答疑，模拟线下课堂体验。
+连麦是直播中的一种常见场景，指两位及以上主播或主播与粉丝进行实时音视频交互，跨空间共同直播。该模式被广泛应用于娱乐互动、电商带货、在线教育等领域。例如，在娱乐场景中，连麦可支持主播PK、合唱互动，提升观众参与感；在电商场景中，品牌主播与达人连麦能整合双方流量，扩大商品曝光；在教育场景中，师生连麦可实现实时答疑，模拟线下课堂体验。
 
 对于直播应用开发者而言，客户端开播侧的核心技术为音视频采集与编码，相关内容已在[基于媒体能力实现直播单播功能](bpta-hmos-live-stream-solution.md)中重点阐述。在直播连麦场景下，新增对连麦方（主播/粉丝）音视频流的解码与渲染开发。
 
 因此，本文将聚焦于客户端开播侧的音视频流解码播放，详细介绍对应的技术实现方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播连麦系统的处理链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/yJyqBCTzTse6T6mAHxwNhg/zh-cn_image_0000002549729061.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ghX2sqdfQXCnR0svYzd0EA/zh-cn_image_0000002741148431.png "点击放大")
 
 ## 直播连麦架构
 
 以两路主播连麦场景为例，云端、应用客户端及系统的分层技术架构图如下图所示。实际直播场景支持多路连麦，每一路客户端的技术方案和基本原理均相似。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/VKhogyjsTYyhfcrVfmt4AA/zh-cn_image_0000002518209536.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/vGEt6c7pR_S_C0FFz93suA/zh-cn_image_0000002518209536.png "点击放大")
 
 由上图可见，直播连麦的整个流程可以分为**“发起连麦”**、**“连麦建立”** 和 **“观众观看”**三个主要阶段。
 
@@ -42,7 +42,7 @@ content_hash: sha256:7dfeb094855c48cc7d25b9a1bf9ec99e008eaadf3eb5b798a1ea7e623ca
 
 主播1客户端从云端拉取主播2的视频码流（通常为H.264或H.265格式）并解码，与连麦UI布局XComponent创建的Surface ID关联后，即可直接渲染上屏显示。其原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/tvZttW8hR86vter41KYKxg/zh-cn_image_0000002518369668.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2Iz3YS-PSNqlHQ8Wwrcfwg/zh-cn_image_0000002518369668.png "点击放大")
 
 ### 开发步骤
 
@@ -133,7 +133,7 @@ int32_t VideoDecoder::Start() {
 
 ## 看播端解决方案
 
-由[上文架构](bpta-hmos-live-stream-audio-call.md#section1270917618481)看出，看播端拉流的音频和视频数据来源于云端，并在云端完成了合流操作。因此，看播端解决方案与基础单播场景一致，开发者可参考媒体直播单播场景的[看播端解决方案](bpta-hmos-live-stream-solution.md#section1818019424273)。
+由[直播连麦架构](bpta-hmos-live-stream-audio-call.md#section1270917618481)看出，看播端拉流的音频和视频数据来源于云端，并在云端完成了合流操作。因此，看播端解决方案与基础单播场景一致，开发者可参考媒体直播单播场景的[看播端解决方案](bpta-hmos-live-stream-solution.md#section1818019424273)。
 
 ## 示例代码
 

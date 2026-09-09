@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkui-support
 title: 支持适老化
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 无障碍与适老化 > 支持适老化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:51+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:22:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a73d7e69f6c83ea17ef20967d17762ec2f7a5a834ea581336b8cd82ea17d4fc2
 ---
 

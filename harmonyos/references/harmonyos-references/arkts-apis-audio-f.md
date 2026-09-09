@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Functions
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2c3c968b89d39eca4c6a83055479b5c03d18b12ef8dfd80bcfef4cc6d9d7b448
 ---
 

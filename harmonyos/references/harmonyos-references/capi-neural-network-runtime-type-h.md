@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-neur
 title: neural_network_runtime_type.h
 breadcrumb: API参考 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > C API > 头文件 > neural_network_runtime_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:12+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f653d1d13040f549e1710a0c7a168164e3cc6667520fab5d3d2142a9631e24b9
+scraped_at: 2026-09-10T06:29:52+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:0fc7cfa3e7517046c426948e493beb899cfa89c5433183a44da4d483ee281a43
 ---
 
 ## 概述
@@ -77,10 +77,10 @@ enum OH_NN_PerformanceMode
 | 枚举项 | 描述 |
 | --- | --- |
 | OH\_NN\_PERFORMANCE\_NONE = 0 | 无性能模式偏好。 |
-| OH\_NN\_PERFORMANCE\_LOW = 1 | 低能耗模式。 |
+| OH\_NN\_PERFORMANCE\_LOW = 1 | 低性能模式。 |
 | OH\_NN\_PERFORMANCE\_MEDIUM = 2 | 中性能模式。 |
 | OH\_NN\_PERFORMANCE\_HIGH = 3 | 高性能模式。 |
-| OH\_NN\_PERFORMANCE\_EXTREME = 4 | 极致性能模式。 |
+| OH\_NN\_PERFORMANCE\_EXTREME = 4 | 最高性能模式。 |
 
 ### OH\_NN\_Priority
 

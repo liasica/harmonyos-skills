@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-algorith
 title: 使用Sort进行通用和自然语言排序
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用Sort进行通用和自然语言排序
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0787a2ef3e61f674d7497b9234a3b274dd1e0ca9457133cb746e2034152e67f3
 ---
 

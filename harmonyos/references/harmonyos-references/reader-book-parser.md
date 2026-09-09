@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/reader-bo
 title: bookParser（书籍解析能力）
 breadcrumb: API参考 > 应用服务 > Reader Kit（阅读服务） > ArkTS API > bookParser（书籍解析能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:bf19af8f3a1bdda025109d1bc21ac9b4360960625f831b364c8cb3110a691d77
 ---
 

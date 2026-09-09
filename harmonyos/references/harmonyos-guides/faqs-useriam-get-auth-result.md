@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faqs-useriam-
 title: 如何感知指纹登录中间认证失败结果
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > User Authentication Kit常见问题 > 如何感知指纹登录中间认证失败结果
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e222336a73fde449a7da295c476ff8b88581016bb1c761a48fee744127a5b998
 ---
 

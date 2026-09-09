@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-strea
 title: 弱网直播优化
 breadcrumb: 最佳实践 > 技术创新 > 弱网直播优化
 category: best-practices
-scraped_at: 2026-09-02T15:03:15+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:874e25567229169faae7ca623f7249b1042f6b68948ab5094500b80d7f67ef68
+scraped_at: 2026-09-10T06:29:59+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9ee896009fe310fb266f5e6f6effeb1f17399d17c7f9e95c08e2550e5f0053a1
 ---
 
 ## 概述
 
 随着移动互联网的快速发展，观看直播已成为用户获取信息和娱乐的重要方式。然而，在复杂的网络环境下，传统TCP协议在直播传输中存在建链时延大、队头阻塞、网络切换时断线重连等问题，严重影响用户体验。
 
-QUIC（Quick UDP Internet Connections）协议是一种基于UDP的传输协议，旨在加速HTTP传输。它能够有效解决上述TCP协议问题，为直播场景提供更快速、更稳定的网络传输体验。针对当前TCP传输直播业务面临的挑战，本文面向HarmonyOS应用开发者，以[ijkplayer](https://gitcode.com/openharmony-sig/ohos_ijkplayer)播放器为例，介绍如何集成[Remote Communication Kit](../harmonyos-references/remote-communication-api.md)提供的RCP\_QUIC能力（具体请参考[rcp\_quic.h](../harmonyos-references/rcp_quic_h.md)），以提升直播播放的流畅度和用户体验。
+QUIC（Quick UDP Internet Connections）协议是一种基于UDP的传输协议，旨在加速HTTP传输。它能够有效解决上述TCP协议问题，为直播场景提供更快速、更稳定的网络传输体验。针对当前TCP传输直播业务面临的挑战，本文面向HarmonyOS应用开发者，以[ijkplayer](https://gitcode.com/openharmony-sig/ohos_ijkplayer)播放器为例，介绍如何集成[Remote Communication Kit（远场通信服务）](../harmonyos-references/remote-communication-api.md)提供的RCP\_QUIC能力（具体请参考[rcp\_quic.h](../harmonyos-references/rcp_quic_h.md)），以提升直播播放的流畅度和用户体验。
 
 ## 场景描述
 
@@ -28,11 +28,11 @@ QUIC（Quick UDP Internet Connections）协议是一种基于UDP的传输协议�
 
 QUIC协议通过多路复用和拥塞控制等核心特性，在高并发、移动网络及弱网场景下实现更高效、更可靠的数据传输。多路复用允许在同一连接上并行传输多个数据流，有效避免TCP的队头阻塞问题；拥塞控制机制能更好地适应弱网环境，在高丢包、高时延的网络下仍能保持稳定传输。
 
-下面通过ijkplayer阐述RCP\_QUIC的适配过程。ijkplayer是OpenHarmony环境下的一款基于FFmpeg的视频播放器。集成[Remote Communication Kit](../harmonyos-references/remote-communication-api.md)提供的QUIC传输能力需要完成两项核心工作：[FFmpeg层](bpta-live-streaming-optimization.md#section14816428203814)实现QUIC传输协议支持，[ijkplayer层](bpta-live-streaming-optimization.md#section964812492396)支持QUIC URL解析与播放。
+下面通过ijkplayer阐述RCP\_QUIC的适配过程。ijkplayer是OpenHarmony环境下的一款基于FFmpeg的视频播放器。集成[Remote Communication Kit（远场通信服务）](../harmonyos-references/remote-communication-api.md)提供的QUIC传输能力需要完成两项核心工作：[FFmpeg支持QUIC传输](bpta-live-streaming-optimization.md#section14816428203814)协议支持，[ijkplayer层](bpta-live-streaming-optimization.md#section964812492396)支持QUIC URL解析与播放。
 
 FFmpeg层QUIC传输的适配主要包含创建连接、终止连接、创建数据流、数据读写、关闭数据流等核心操作。整体流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/PbTTjbsnQPmmU0VYcEAYtA/zh-cn_image_0000002594078330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/VJk-Kd7sTVaqcO10mQ-yqg/zh-cn_image_0000002594078330.png)
 
 ## 实现流程
 
@@ -48,15 +48,15 @@ FFmpeg层QUIC传输的适配主要包含创建连接、终止连接、创建数�
 6. 使用[HMS\_Rcp\_QuicConnStreamSend](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicconnstreamsend)()通过数据流发送数据。
 7. 传输完成之后使用[HMS\_Rcp\_QuicConnDestroy](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicconndestroy)()销毁连接对象，关闭所有流并释放连接资源；使用[HMS\_Rcp\_QuicDestroySession](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicdestroysession)()销毁会话对象，释放全局资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/5QcGp-kySNK7dLHHT4onPw/zh-cn_image_0000002594238244.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/q1EdOWWIS021ECehRtuM4w/zh-cn_image_0000002594238244.png "点击放大")
 
 ## FFmpeg支持QUIC传输
 
-本节介绍FFmpeg中QUIC协议传输层的核心实现。FFmpeg通过集成[Remote Communication Kit](../harmonyos-references/remote-communication-api.md)中的[rcp\_quic.h](../harmonyos-references/rcp_quic_h.md)接口，完成连接管理与数据收发等底层操作。
+本节介绍FFmpeg中QUIC协议传输层的核心实现。FFmpeg通过集成[Remote Communication Kit（远场通信服务）](../harmonyos-references/remote-communication-api.md)中的[rcp\_quic.h](../harmonyos-references/rcp_quic_h.md)接口，完成连接管理与数据收发等底层操作。
 
 ### 开发步骤
 
-1. 建立QUIC/HTTP3连接
+1. 建立QUIC连接
 
 创建QUIC连接对象，解析并保存URI，建立QUIC连接并完成HTTP/3握手，最终返回连接结果。
 
@@ -147,9 +147,9 @@ done:
 }
 ```
 
-2. 握手阶段处理
+2.握手阶段处理
 
-QUIC 协议服务端握手流程：底层协议握手 → 读取客户端请求头 → 发送响应头 → 握手完成。
+QUIC协议服务端握手流程：底层协议握手→读取客户端请求头→发送响应头→握手完成。
 
 ```c
 static int Http3Handshake(URLContext *c)
@@ -321,22 +321,22 @@ static int Http3Close(URLContext *h)
 }
 ```
 
-## ijkplayer层：QUIC URL支持
+## ijkplayer层
 
-本节介绍 ijkplayer 中对 QUIC URL 的支持配置，包括协议白名单配置和 URL 协议转换两部分。
+本节介绍 ijkplayer中对QUIC URL的支持配置，包括协议白名单配置和URL协议转换两部分。
 
 ### 开发步骤
 
 1. 配置协议白名单
 
-通过[setOption](https://gitcode.com/openharmony-sig/ohos_ijkplayer/blob/master/README_zh.md)()方法设置protocol\_whitelist参数，将"quic"和"quics"加入播放器可识别的协议列表。
+设置protocol\_whitelist参数，将"quic"和"quics"加入播放器可识别的协议列表。
 
 ```arkts
 this.ijkplayer_napi._setOption(this.id, IjkMediaPlayer.OPT_CATEGORY_FORMAT, "protocol_whitelist",
   "async,cache,crypto,file,http,https,quic,quics,ijkhttphook,ijkinject,ijklivehook,ijklongurl,ijksegment,ijktcphook,pipe,rtp,tcp,tls,udp,ijkurlhook,data");
 ```
 
-2. URL 协议转换
+2. URL协议转换
 
 在HarmonyOS应用中，根据用户选择的直播类型动态转换URL协议。当使用QUIC时，将“https://”前缀替换为“quics://”。
 

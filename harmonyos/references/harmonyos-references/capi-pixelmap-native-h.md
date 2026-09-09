@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pixe
 title: pixelmap_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > pixelmap_native.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8a116a48763ac8b8f6935e698feaeebba89e4cc58d79c14eacaadca168b265cc
 ---
 

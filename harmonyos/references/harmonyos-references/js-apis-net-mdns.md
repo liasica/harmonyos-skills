@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.mdns (MDNS管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.mdns (MDNS管理)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:58+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:27:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1232a9cbadafbeec0b953b9af11d0bf11a779f3317520387bb63ad725d34d3b0
 ---
 

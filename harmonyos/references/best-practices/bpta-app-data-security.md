@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-data-s
 title: 应用数据安全
 breadcrumb: 最佳实践 > 安全设计 > 应用数据安全
 category: best-practices
-scraped_at: 2026-09-02T15:03:25+08:00
+scraped_at: 2026-09-10T06:30:21+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:62223911d0940f1cfe270d99a78b50909e21bdfd51cb9ba647b1c512975afe01
+content_hash: sha256:d4c00e3fbfa312d2c607b6054ee698f4139efcca291e7285fc11a2bea64cec7a
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 根据设备安全能力，如是否有TEE和安全存储芯片等，将设备安全等级分为SL1、SL2、SL3、SL4和SL5五个等级。例如，智能穿戴设备通常为低安全的SL1设备，手机和平板通常为高安全的设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/RbXzKtc2RGSQ9thpabdy7A/zh-cn_image_0000002229450445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/QtqzMCfGR4Szm54rrLuXpw/zh-cn_image_0000002229450445.png "点击放大")
 
 设备从SL1到SL5分级，在完整性保护、加密及数据保护、权限及访问控制、可信执行环境和漏洞防利用这几个维度对应的安全能力要求逐渐提高。
 
@@ -63,7 +63,7 @@ HarmonyOS安全能力以分级安全为架构基础，构建安全应用生态�
 
 除了对数据进行内容分类，开发者还需遵守相关法律法规，例如通用数据保护条例（GDPR）和个人信息保护法，以保护用户隐私和数据安全。具体的数据分类图如图1所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/3ZZDwkQkQ1ClR3HvEXFPLw/zh-cn_image_0000002229335969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lLX7HJmqQseD_0YEJpKosQ/zh-cn_image_0000002229335969.png)
 
 按照个人数据分类分级规范要求，可将数据分为S1、S2、S3、S4四个安全等级。
 
@@ -158,7 +158,7 @@ getEl1Path(): void {
 
 **图1** 场景设计图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/DkW3_fHtQreVVsbBbqtV5g/zh-cn_image_0000002651598502.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/4PJBJlvnT4OnN89mpzNCxQ/zh-cn_image_0000002651598502.png "点击放大")
 
 ### 场景开发
 

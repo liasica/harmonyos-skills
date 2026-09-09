@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-type-o
 title: 窗口类型开发概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 窗口类型开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:22+08:00
-doc_updated_at: 2026-06-16
+scraped_at: 2026-09-10T06:22:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2551ceadd3a45135d3f425ca10390afcde0dac44ecf38dcd6c9e2876e0366f08
 ---
 

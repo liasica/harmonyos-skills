@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: 验证deviceToken
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > REST API > 验证deviceToken
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5e6f9474603b453fc53496dc5a4394cb7b20fd2f7dab9ebf51611414c0b02152
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-code
 title: CodecBase
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 模块 > CodecBase
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:82cc4499452e7e46e9558e27802114e8bd436ade7afee343e0bf822bc7fa330b
 ---
 

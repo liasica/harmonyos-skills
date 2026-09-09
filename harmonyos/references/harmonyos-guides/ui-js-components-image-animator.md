@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: image-animator开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > image-animator开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:06+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:151dae6abbaab05b7d71b788ac0b6c3c19f87be81c95f8d8d8d67847653a862f
+scraped_at: 2026-09-10T06:22:12+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:586fedef6f3d093f3cfa8f855ccdb6670baf6f0f2499a811e86182e6a64f42e3
 ---
 
 image-animator组件为图片帧动画播放器。具体用法请参考[image-animator](../harmonyos-references/js-components-basic-image-animator.md)。
@@ -53,7 +53,7 @@ export default {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/cY7rh36tTeGXscoJ4OfxDw/zh-cn_image_0000002712244180.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/sz5ssoOzQrCgGDZilXJ0hA/zh-cn_image_0000002717770734.gif)
 
 ## 设置image-animator组件属性
 
@@ -132,7 +132,7 @@ export default {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/9GzYSt8GTVyIfkz2D9ZI3Q/zh-cn_image_0000002742003133.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/BgtrVhCERCieiL1YEcg1aw/zh-cn_image_0000002717610800.gif)
 
 **说明** 
 
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/D9vjQcT6Toq3hhoXF-o2dg/zh-cn_image_0000002712404146.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Gqb6QiPjQ_-2IIt7NdWxqg/zh-cn_image_0000002747290753.gif)
 
 ## 场景示例
 
@@ -322,4 +322,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/rZjIU7QaTXG65SuE5Fktig/zh-cn_image_0000002742123095.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/XUaT9dW-S86hUaNKsHP8qg/zh-cn_image_0000002747210671.gif)

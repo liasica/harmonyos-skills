@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 复用选项
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 其他 > 复用选项
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0e9439a077c0d24d19e82c7e3c41ee38af7a94c3089af203ee9789f9314e260d
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/serial-guidel
 title: 串口通信开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 串口通信服务 > 开发串口通信服务 > 串口通信开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:90afa5eaf395da8abb6aa39b6329354591da499f08840cf1c0bb7cef2b97c3d1
 ---
 

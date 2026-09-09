@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: oh_commonevent.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > oh_commonevent.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0768d03289786671594880b4aa24bca79710cc29146101f14fd4db81da44626d
 ---
 

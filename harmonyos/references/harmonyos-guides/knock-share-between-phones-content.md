@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-b
 title: 内容分享
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与手机碰一碰分享 > 内容分享
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:21+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:1ac27d6045d93c777cf7a28809fe53f36c44ef9f223192d2bfe0d75944c3709b
+scraped_at: 2026-09-10T06:23:31+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:a3a118e59eda04e8c0d5f09924ff8e6e802e95f452664fd07ac17a00663fbe63
 ---
 
 ## 注册碰一碰事件
@@ -16,10 +16,10 @@ content_hash: sha256:1ac27d6045d93c777cf7a28809fe53f36c44ef9f223192d2bfe0d75944c
 
 * 文本提示**可碰一碰分享至 HarmonyOS 5 及以上版本手机**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/uGt4SxoXRESB53BGT0MFcA/zh-cn_image_0000002742004401.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/otmS3lcnS4mngcrqr-_IIA/zh-cn_image_0000002717612064.png)
 * 动图提示**可碰一碰分享**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ldoAa120S0K16z1janB6pQ/zh-cn_image_0000002712405412.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/9fdUjZW9RU-IpxmiDGI_XQ/zh-cn_image_0000002747292017.png)
 
   Share Kit提供统一的动图资源文件以方便应用接入。
 
@@ -208,7 +208,7 @@ export struct HarmonyShareScenes {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/aQjcTz3HScyX4H3oYnWrwg/zh-cn_image_0000002712405416.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/C_2Axz31Sb-cRry2eGqm1w/zh-cn_image_0000002747292021.png)
 
 示例代码：
 

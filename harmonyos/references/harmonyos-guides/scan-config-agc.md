@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-config-a
 title: 开发准备
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:68530b4c4a8d7a8979b2f1974be17ffcd073f88b9b582e7021c22dc43f71dc4a
 ---
 

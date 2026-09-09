@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: 更新设备标记状态
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > REST API > 更新设备标记状态
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:38f90ee167b22a3da522bec3d73f37be1c72ee2d0173ab8f749669f8852038f1
 ---
 

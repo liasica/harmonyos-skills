@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-cross-doma
 title: Web页面跨域解决方案
 breadcrumb: 最佳实践 > 应用框架 > ArkWeb > Web页面跨域解决方案
 category: best-practices
-scraped_at: 2026-09-02T15:03:17+08:00
+scraped_at: 2026-09-10T06:30:02+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:8e7b088a7158a0b50af57ccb39b4784e6987ce7765bb15b7f170dd1eb9e76784
+content_hash: sha256:6f9c09c413a2d595a228fa3ad6355666b6a7782148b8ec3b777751ee5e1bf302
 ---
 
 ## 概述
@@ -86,7 +86,7 @@ Web({ src: 'resource://resfile/LocalResource/dist/index.html', controller: this.
 * 代理请求：在WebView中设置拦截器拦截Web页面发起的跨域请求，使用[rcp](../harmonyos-references/remote-communication-rcp.md)请求代理请求到目标远程服务器。RCP请求与远程服务器的通信不受浏览器限制，因此可以接收到服务器的响应结果，但将结果传回WebView时仍需配置跨域响应头来解决跨域问题。
 
   **图1** 代理请求方案流程图  
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/FGTFeziPSoOjcdo3lEu_Nw/zh-cn_image_0000002451165758.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/tD244lFCRlW9wTJOCR4slg/zh-cn_image_0000002451165758.png "点击放大")
 
 ### 开发步骤
 

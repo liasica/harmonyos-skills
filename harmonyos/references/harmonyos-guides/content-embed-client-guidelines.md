@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/content-embed
 title: 客户端应用开发
 breadcrumb: 指南 > 应用框架 > Content Embed Kit（内容嵌入服务） > 客户端应用开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-08-18
+scraped_at: 2026-09-10T06:22:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5a62dc4f038c2517a8e7d2fe9ccca122d1329bce33554d86d5f60444ecb529ce
 ---
 

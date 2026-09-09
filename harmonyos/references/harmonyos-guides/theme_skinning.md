@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme_skinnin
 title: 设置应用内主题换肤
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 主题设置 > 设置应用内主题换肤
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:04+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f12b98b9f2ac67fa5677b4e474557fc648d573b093a2d0937017390d3550d205
+scraped_at: 2026-09-10T06:22:09+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2544843ee2f6615fb19d797e108198fcbd33dce2ef1dce6d20765dc67d4e8104
 ---
 
 ## 概述
@@ -201,7 +201,7 @@ export let gAppTheme: CustomTheme = new AppTheme();
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/2kHVdbGkS3urxlLIodzDKw/zh-cn_image_0000002742003053.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/koKFYSyeSp6eID4rPEUX4A/zh-cn_image_0000002717610720.png)
 
   **说明** 
 
@@ -283,7 +283,7 @@ struct DisplayPage1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/SPUMSq6PS3OWSEKdcUWMKg/zh-cn_image_0000002712404066.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/jfeKcNxMQZa3VhW0KGO2lA/zh-cn_image_0000002747290673.gif)
 
 ## 设置应用页面局部深浅色
 
@@ -295,7 +295,7 @@ struct DisplayPage1 {
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/O0r1v2MiSrWXkSaExQVDWw/zh-cn_image_0000002742123015.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/N8pmjnRFSwmFsLcl4vM1Iw/zh-cn_image_0000002747210591.png)
 
 dark.json数据示例：
 
@@ -348,7 +348,7 @@ struct DisplayPage3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/KxrAKexzTyu54_5oVKt1XA/zh-cn_image_0000002712244102.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/QA1H8KFUQx2vHFmACljx7A/zh-cn_image_0000002717770656.png)
 
 ## 系统缺省token色值
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-openf
 title: 文件打开加速（C/C++）
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > 文件打开加速（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:17+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:23:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1ea3c7b465e3e6bfbd36d4a7714d3810487fd66fc5e5759c093366de65363949
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.statistics (流量管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.statistics (流量管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c18fa171380c3ba5901232cd73eb7859493834b7431bb869732a09e2a4578b60
 ---
 

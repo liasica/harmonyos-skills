@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.FusionConnectivity.PartnerAgentExtensionAbility (支持设备状态通知的ExtensionAbility组件)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.FusionConnectivity.PartnerAgentExtensionAbility (支持设备状态通知的ExtensionAbility组件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fae7f170d2d07a40d9e4c2a8c42c384c430d64c651af5d9b7dab0bfe42253ec7
 ---
 

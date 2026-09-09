@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-picker
 title: 通过系统相机拍照和录像(CameraPicker)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 通过系统相机拍照和录像(CameraPicker)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1874968ab60b1e015c22cd7453e6a357f923d326494277e8c5705fc5be58d05c
 ---
 

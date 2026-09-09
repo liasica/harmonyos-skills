@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: loginComponentManager (华为账号登录组件管理)
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS组件 > loginComponentManager (华为账号登录组件管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fdc9485899f4f1bf3b79e5719857c0dc6a14986f7a84322bff9e55bb6b37973f
 ---
 

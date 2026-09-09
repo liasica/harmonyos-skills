@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: zlib子系统错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > zlib子系统错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0abb41043a7379675f97c5d48701b3cc08c6cc2f46c6843761fd04f319cc0096
 ---
 

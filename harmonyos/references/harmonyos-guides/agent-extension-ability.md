@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-extensi
 title: 使用AgentExtensionAbility组件实现智能体服务
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 端侧A2A框架开发指导 > 开发端侧智能体 > 使用AgentExtensionAbility组件实现智能体服务
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:53dd44743abdc670a1e96b3fd947e0420a2fcf2c5dd11e42e1673bcf32c279d3
 ---
 

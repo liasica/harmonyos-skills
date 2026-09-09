@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebStorage)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebStorage)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:19+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b6b96e37af92ea19432a341bdd4913314a6977af7b578fba956e20dd13d24f58
 ---
 

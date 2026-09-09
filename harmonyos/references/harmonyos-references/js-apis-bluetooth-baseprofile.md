@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.baseProfile (蓝牙baseProfile模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.baseProfile (蓝牙baseProfile模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:48+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:28e1a3e7e42d550fede11acd186caaa50a2994f1e078d97bfdd15ef4166f36e6
 ---
 

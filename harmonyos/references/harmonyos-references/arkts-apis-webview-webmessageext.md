@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebMessageExt)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebMessageExt)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5572caf9ed379440843d7f1aeea8afc05ac3a75055afa3dd4ff760aeeb8e3f32
 ---
 

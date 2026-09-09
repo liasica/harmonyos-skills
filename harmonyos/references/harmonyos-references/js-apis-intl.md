@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.intl (国际化-Intl)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.intl (国际化-Intl)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d551e618186971b492295651ffeff4cb4d2a5d1c1ad479c7c9a5838a15a407a2
 ---
 

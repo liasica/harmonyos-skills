@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/watch_p2p_com
 title: 应用间消息通信
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 穿戴侧应用开发 > 应用间消息通信
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:38+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:44+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6146250a603a03d4d80cb583444b19d0a0498f62c8e71193a6cf9d3942863416
 ---
 

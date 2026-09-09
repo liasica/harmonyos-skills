@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-ove
 title: UIAbility组件概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility组件概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6e777b0992f1739997b27e1abc84420832169e886bc70b6866aaf504ec65976f
 ---
 

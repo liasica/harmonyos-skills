@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-z
 title: "@ohos.zlib (Zip模块)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.zlib (Zip模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b9b4c4e6135af705dfee79647a8dc70b07de0821369f0d9a808b42690d58598c
 ---
 

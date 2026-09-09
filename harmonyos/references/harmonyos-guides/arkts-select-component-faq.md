@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-
 title: 按钮与选择组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 按钮与选择组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:07+08:00
+scraped_at: 2026-09-10T06:22:13+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2620dc8082112f13834e0fe2697e96613d23deccd0e6c8e2a1679bd2c09b44d4
+content_hash: sha256:3b83ecf412a6d7bed9e4a55c51ee069b475480c337554a5734f668a0cb8ee0bf
 ---
 
 本文档介绍按钮与选择组件的常见问题并提供参考。
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/I7OAziNcSZ2a5Y9u4Y8rbQ/zh-cn_image_0000002712244234.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/c7FwcdMrQN2LsjjETjNEdA/zh-cn_image_0000002717770788.jpg)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/DvO3_f1XQLeF4mflpyxYtA/zh-cn_image_0000002742003187.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/WFaq1zrzSVqOtTIdI9LiJA/zh-cn_image_0000002717610854.jpg)
 
 **示例**
 
@@ -117,7 +117,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/9Ud0Duv8Tk6GxCBA1ustRw/zh-cn_image_0000002712404200.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/OzKpjYpvSceWKAakeEIVnw/zh-cn_image_0000002747290807.png)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ struct ButtonTypeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4XUGfj2BRgaE7VWrNehtMw/zh-cn_image_0000002742123149.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/_MQTZzuOR8iUzh_d4Cr4zQ/zh-cn_image_0000002747210725.png)

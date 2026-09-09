@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-pixelma
 title: 位图操作
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(依赖JS对象)(不再推荐) > 位图操作
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:46+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:324ae604f87b69976823bc33296cd18e7311ffb0f4c0e561146b3f2a435769f7
 ---
 

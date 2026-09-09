@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-native-
 title: 同步（备份恢复）关键资产(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit开发指导(C/C++) > 同步（备份恢复）关键资产(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7c45525a964b1402b24ebf605fe64932e3d334ef68d40ee7accb1b29855b4918
 ---
 

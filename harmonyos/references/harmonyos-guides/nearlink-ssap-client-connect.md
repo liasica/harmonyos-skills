@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap
 title: SSAP客户端
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > SSAP连接及数据传输 > SSAP客户端
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:34+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8b5292f9d043d936db04083fdd8640f70cd4b4df4128b23473d6f6f8812444fc
 ---
 

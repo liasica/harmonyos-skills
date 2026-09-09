@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 分段式拍照(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 分段式拍照(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:45+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:be1b3652fe1e6d69976c3c98f59d50d02f87266fc7d89c2b2a893838b90a54d1
 ---
 

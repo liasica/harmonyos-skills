@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-menu-ov
 title: 菜单概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 菜单 > 菜单概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:50+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0d6d88f3225300fad9115de175eeb4c545976d9e6c0d75da090d08b039ec4250
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > divider
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:40+08:00
+scraped_at: 2026-09-10T06:25:54+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7b4feb0fac0a1624e833563fc3aaf757adfad9585d2e2f00411478176b2e8a5d
+content_hash: sha256:5d01ed99f7f0ea4304ecbd47843d0db3d1e9e27cf7f2df27155cb9096bd0d92f
 ---
 
 分隔器组件，分隔不同内容块/内容元素。可用于列表或界面布局。
@@ -83,4 +83,4 @@ content_hash: sha256:7b4feb0fac0a1624e833563fc3aaf757adfad9585d2e2f00411478176b2
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/u6Fx4ZoeTemh09HZBKTtpw/zh-cn_image_0000002712406892.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/AyUkIGEZRlidQnwtYZ9UoQ/zh-cn_image_0000002747293435.png)

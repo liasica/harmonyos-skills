@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered
 title: 代理提醒(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 代理提醒(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:04dc7a1afd8286dd4add6a41880de1ab3a77552c6c5a617a064183f187ecfd4a
+scraped_at: 2026-09-10T06:22:17+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:fd71b7dbc65ef8217001ca9a5205579b385680b09760f438ba060650eb6e81dc
 ---
 
 ## 功能介绍
@@ -82,17 +82,17 @@ content_hash: sha256:04dc7a1afd8286dd4add6a41880de1ab3a77552c6c5a617a064183f187e
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要申请代理提醒的应用。如果无对应应用，请先[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 3. 进入“项目设置”->“开放能力管理”页面，点击“代理提醒”卡片对应的“申请”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/VoRPtqgbQtuzPLXxi4UvMQ/zh-cn_image_0000002742123261.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/c9SAnxDWRxaaV1jzYbFyWw/zh-cn_image_0000002747210837.png)
 4. 在“新建业务申请”窗口填写申请原因，上传代理提醒功能场景截图和应用分类信息截图，然后点击“提交”。应用分类信息可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，在“APP”页签中选择“应用上架”->“应用信息”查询。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ZTLXAjz0QV2eqMxpLcep9g/zh-cn_image_0000002712244348.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Dr-U0nUyRI-n9Wxgw7e2XA/zh-cn_image_0000002717770902.png)
 5. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”，8个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/rMjUkNIpTzGK93H4mUKJUg/zh-cn_image_0000002742003301.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/0-j3vDhUT4O3lxzYlewoRw/zh-cn_image_0000002717610968.png)
 6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 7. 能力申请通过后，勾选代理提醒的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。此时，调试和发布应用必须重新生成Profile文件并使用[手动签名](ide-signing-manual.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/lssqF7FXTri_2Gx1pUxdOA/zh-cn_image_0000002712404314.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Q2PlXWOtTcGSvFyaVrD0og/zh-cn_image_0000002747290921.png)
 
 ### 申请权限
 

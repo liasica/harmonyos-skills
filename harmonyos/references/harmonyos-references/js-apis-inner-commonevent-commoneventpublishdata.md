@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: CommonEventPublishData
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > commonEvent > CommonEventPublishData
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:04+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c37b1befe7a11aabdd2995856c339619093176d96020d6d3881ed7f0e2b24439
 ---
 

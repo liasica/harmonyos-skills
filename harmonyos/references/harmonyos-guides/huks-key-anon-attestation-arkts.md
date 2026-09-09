@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-anon
 title: 匿名密钥证明(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥证明 > 匿名密钥证明(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b166488da3f9cc4d0c1c3f8f3f08518b1854bfe967958e1ccdb77559f709b3dd
 ---
 

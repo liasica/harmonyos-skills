@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-recordi
 title: 录音并发策略说明
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 录音并发策略说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:343c3dea38be3d009a6fca55a42f7b8bd0dbb68e3606e0bae6791d29f032a6e7
 ---
 

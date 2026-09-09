@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-receive
 title: 使用ImageReceiver完成图片接收
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片接收 > 使用ImageReceiver完成图片接收
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e2b4a1a528096b67391b5c0f172c68d7d9bd9a8aee37a7948157dbc5b8a847bd
 ---
 

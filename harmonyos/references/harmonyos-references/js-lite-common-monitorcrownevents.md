@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: 旋转表冠事件监听
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 全局接口 > 旋转表冠事件监听
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f7efa8a19f71a82bf43d121ce1f6f7204296d877ca7695dd6811040d32745f78
 ---
 

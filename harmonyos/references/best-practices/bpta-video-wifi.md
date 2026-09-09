@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-wifi
 title: 视频场景Wi-Fi加载低功耗建议
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 视频场景Wi-Fi加载低功耗建议
 category: best-practices
-scraped_at: 2026-09-02T14:53:45+08:00
+scraped_at: 2026-09-10T06:30:14+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:e44a10044b149add41e8ddfee7dd9c0ac2f6ebf87ac9e35e1909ad4c2476f4b7
+content_hash: sha256:195728faaf1e796650e3952a85ca4b2af887400ac48194d8c4cd02a7a9be1269
 ---
 
 ## 建议
@@ -34,7 +34,7 @@ send(out);
 
 1. 按聚合方式下载时，例如每20s下载一次，每次下载3到5s，Wi-Fi器件在大部分时间处于idle状态，实测Wi-Fi功耗为35mA。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/wMGKmxATTZ-I7hcwrLQMNg/zh-cn_image_0000002193850568.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_tH3r78SSpe4hg-6HinR5Q/zh-cn_image_0000002193850568.png "点击放大")
 2. 当以小流量持续下载时，例如每1s下载一次，Wi-Fi器件的空闲时间会减少。实测结果显示，小流量持续下载的Wi-Fi功耗为55mA，而聚合下载的功耗为35mA。因此，建议应用采用聚合方式下载，以避免小流量持续下载导致的高Wi-Fi功耗。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/GaEABIR0RLKRy65lMKR0fQ/zh-cn_image_0000002193850572.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Od23F-8SSWWr8hE12AGCMQ/zh-cn_image_0000002193850572.png "点击放大")

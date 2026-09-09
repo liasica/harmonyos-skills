@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-buff
 title: buffer_common.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > buffer_common.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:74669b4000931ebed5249968243910fb31c4ff1dab8353a3ba7f227a6c099d02
 ---
 

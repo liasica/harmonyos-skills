@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 解绑账号通知
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 解绑账号通知
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:14+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9ca87fa1816619ea283d844daced4b47a6e58189e5d073c5aa04c50111543a5e
 ---
 

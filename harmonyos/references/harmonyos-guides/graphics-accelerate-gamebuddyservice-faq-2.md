@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 游戏截图回调没有返回的文件描述符如何处理
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏伴随服务 > 游戏截图回调没有返回的文件描述符如何处理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e6d7ee0c5a3fe16edc7e5e9f13074e910112996e9ff386f9ac4578c28c79eaa6
 ---
 

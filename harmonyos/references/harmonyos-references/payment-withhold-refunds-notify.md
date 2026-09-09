@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 退款结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 退款结果回调通知
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:025e876f2ceff72ad0a7551646b76723b15a311698fe48450c40b92631bbb31c
 ---
 

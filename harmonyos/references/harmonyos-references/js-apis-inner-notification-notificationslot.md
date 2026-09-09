@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationSlot
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationSlot
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:02+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:77d6fcd199edeacf44afeaa297e7ec719b3c32eb78615f51568079f3edf2d83d
 ---
 

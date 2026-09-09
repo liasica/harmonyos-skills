@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-star
 title: start_options.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > start_options.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:afc7d5fbf62365f0d0afa26e4fbbd9300b46faf0720988e3634e06f6cbf89bde
 ---
 

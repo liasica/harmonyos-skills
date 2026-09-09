@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-desktop-sh
 title: 桌面快捷方式
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 桌面快捷方式
 category: best-practices
-scraped_at: 2026-09-02T15:03:16+08:00
+scraped_at: 2026-09-10T06:30:02+08:00
 doc_updated_at: 2026-03-17
-content_hash: sha256:5834fbb189247516de4925d2eea821a60981cd2612deea28a0bb81f5e0ba23b8
+content_hash: sha256:d27d9328a1318670cf8355860355373fad391e8c81214b28dc570c26a0554bdb
 ---
 
 ## 概述
@@ -20,10 +20,10 @@ content_hash: sha256:5834fbb189247516de4925d2eea821a60981cd2612deea28a0bb81f5e0b
 
 * 点击快捷方式入口列表中的“回家”项，即可快速打开地图应用，开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/ziiu1zF9TEmv-Xj0J-Jt2Q/zh-cn_image_0000002229451729.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/V9wu8XppS8uOOg0pRBOBRw/zh-cn_image_0000002229451729.gif "点击放大")
 * 长按快捷方式入口列表中的“回家”项，可将其拖动至桌面，点击桌面对应图标，即可开启从当前位置到家的导航路线选择。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/iE7TXQq_QOeZVWRnS9kskg/zh-cn_image_0000002229451733.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/dR02weJoSXqkSkvd64m39Q/zh-cn_image_0000002229451733.gif "点击放大")
 
 **说明** 
 

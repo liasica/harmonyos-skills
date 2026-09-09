@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/controltransf
 title: USB控制传输
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB控制传输
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a4e909bd87b2f92766e622cd90e6b5412128b402b6e36f0888452ed441178a71
+scraped_at: 2026-09-10T06:22:39+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9258f039367b99c6ad6f45a9a79b089366b12e423d64d442fd517e735a5d0c64
 ---
 
 ## 场景介绍
@@ -21,7 +21,7 @@ content_hash: sha256:a4e909bd87b2f92766e622cd90e6b5412128b402b6e36f0888452ed4411
   DevEco Studio作为驱动开发工具，是进行驱动开发必备条件之一，开发者可以使用该工具进行开发、调试、打包等操作。请[下载安装](https://developer.huawei.com/consumer/cn/download/)该工具，并参考[DevEco Studio使用指南](ide-tools-overview.md)中的[创建工程及运行](ide-create-new-project.md)进行基本的操作验证，保证DevEco Studio可正常运行。
 * SDK版本配置：
 
-  扩展外设管理提供的ArkTs接口，所需SDK版本为API16及以上才可使用。
+  扩展外设管理提供的ArkTS接口，所需SDK版本为API16及以上才可使用。
 * HDC配置：
 
   HDC（HarmonyOS Device Connector）是为开发人员提供的用于调试的命令行工具，通过该工具可以在Windows/Linux/Mac系统上与真实设备或者模拟器进行交互，详细参考[HDC配置](hdc.md)。

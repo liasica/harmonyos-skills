@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 内存越界访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 内存越界访问故障模式说明
 category: best-practices
-scraped_at: 2026-09-04T06:33:24+08:00
+scraped_at: 2026-09-10T06:30:17+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:ffc8eb5679f29381669e482b6bb295fa304339dcc4b9f68d54d1fea371ac6070
+content_hash: sha256:1cc9f0a606ea9ba5b40f462804561f672a8cf213786a46a4e4236eaa16e76f67
 ---
 
 堆、栈内存对象均具有明确的有效地址范围。索引计算错误可能导致程序读写对象边界之外的地址，引发内存越界访问，造成数据异常或应用崩溃。开启检测能力后，可在越界访问时记录异常地址、访问大小和现场调用栈等信息。
@@ -112,7 +112,7 @@ content_hash: sha256:ffc8eb5679f29381669e482b6bb295fa304339dcc4b9f68d54d1fea371a
 
    解析后代码如下图所示，越界发生在位置1：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/aeEZ416VSxqGMdltT0y-ng/zh-cn_image_0000002693605642.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/dWNY_QESQ_S_Yqy3K_msoQ/zh-cn_image_0000002693605642.png)
 
    应用侧将imageValue.data传入atoi()的流程中。atoi()是基于C字符串语义的接口，它会一直循环遍历字符串，直到遇到非数字字符或'\0'才停止。因此，如果传入的数据没有以'\0'结尾，则atoi()会继续向后读取，存在越界风险。初步猜测，该问题可能与字符串未加结束符相关。继续追溯数据来源发现，imageValue.data由位置2处通过引用赋值得到，因此需要进一步分析OH\_PictureMetadata\_GetProperty()接口里对imageValue.data的赋值流程。
 4. 分析分配栈，进一步确认产生越界的原因。
@@ -129,7 +129,7 @@ content_hash: sha256:ffc8eb5679f29381669e482b6bb295fa304339dcc4b9f68d54d1fea371a
 
    解析分配栈#1，定位到具体业务代码行如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/e7OGV1lmSJy9GkyzBcMeAQ/zh-cn_image_0000002723285073.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/GRWlXwdMS-q5EW7WepLvQg/zh-cn_image_0000002723285073.png)
 
    结合源码发现，1号位置传入的value变量是通过2号位置的memcpy\_s()拷贝得到。source传入的是字符串指针，实际包含末尾的'\0'结束符；但source\_size却直接使用val.size()，该值仅统计有效字符长度，不包含末尾的'\0'。因此，回调返回的字符串本身未显式包含'\0'结束符，后续继续按照C字符串处理，导致堆内存上越界访问。
 
@@ -188,7 +188,7 @@ atoi()属于危险函数，对于通过外部接口获取的数据，应做校�
 
    证据3：解析调用栈，定位到具体业务代码行如下图所示，越界访问发生在位置1：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/8pvKHTPtRHCduzZUNquUGg/zh-cn_image_0000002693765528.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/f2d4rPpsQrKK2z0S_sLwWw/zh-cn_image_0000002693765528.png)
 
    Append()函数会直接将字符写入buffer\_[length]，然后自增length。此处明显是个危险操作，如果length超过buffer的大小，就会发生写越界。
 
@@ -384,7 +384,7 @@ HWASan依赖ringbuffer记录内存分配栈和报错栈。在高频malloc()/free
 
    证据3：解析调用栈llvm-addr2line -Cfipe libentry.so 0x256bec，定位到具体业务代码如下图所示，越界访问发生在位置1：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/mKlHvrtPRTG8STTxd70qNg/zh-cn_image_0000002723404999.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/EmoLLPU5TaaaodeIB0EPHw/zh-cn_image_0000002723404999.png)
 
    该行在循环中持续写入heap\_buffer，但循环上限是1500，超过了实际申请的1024 字节缓冲区大小，因此在i == 1024时触发写越界。
 4. 结合ASan Shadow信息辅助确认。
@@ -482,7 +482,7 @@ HWASan依赖ringbuffer记录内存分配栈和报错栈。在高频malloc()/free
 
    证据3：解析报错栈llvm-addr2line -Cfipe libsample.so 0x93e4，定位到具体业务代码如下图所示，越界访问发生在位置1：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/KKuR0-BrQS-X9vy8qi4JYQ/zh-cn_image_0000002693605644.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/oN6cbx89TF2aQGoJNgIe4A/zh-cn_image_0000002693605644.png)
 
    malloc(bufferSize)申请了1024字节的堆内存，而buffer的类型为int\*。1个int占4字节，因此该内存最多只能存放256个 int，合法下标范围为buffer[0]至buffer[255]。代码中使用buffer[bufferSize]，实际访问的是buffer[1024]，对应相对起始地址4096字节的偏移（1024 × 4）。该地址已经超出所申请内存的右边界3072字节，与日志中4096 bytes to the right of a 1024-byte allocation的描述一致。因此，本次问题的根因是将表示字节数的bufferSize直接作为int数组下标使用，造成字节数与元素个数混用，最终触发堆内存上越界访问。
 
@@ -541,7 +541,7 @@ HWASan依赖ringbuffer记录内存分配栈和报错栈。在高频malloc()/free
 
    证据3：解析报错栈 llvm-addr2line -Cfipe libsample.so+0x9460，定位到具体业务代码如下图所示，越界访问发生在位置1：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/4-u4ClxXQSewSGDMbrXHrQ/zh-cn_image_0000002723285075.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/WnVkYN-bT1au0HipovytHQ/zh-cn_image_0000002723285075.png)
 
    buffer[-1]会访问buffer起始地址之前的一个int。一个int为4字节，因此正好对应日志中的：4 bytes to the left of a1024-byte allocation。
 
@@ -614,7 +614,7 @@ HWASan依赖ringbuffer记录内存分配栈和报错栈。在高频malloc()/free
 
    通过解析后的#0帧信息可以直观地看出，触发本次内存异常的具体位置为napi\_init.cpp文件的第306行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/38uL5Zc1QhyC55NlhnjOfA/zh-cn_image_0000002693765530.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/v1cRVMynT_abcTegg7vheA/zh-cn_image_0000002693765530.png)
 3. 结合业务代码，进一步判断越界产生的原因。
 
    程序定义了包含42个char元素的数组，合法索引范围是buffer[0]到buffer[41]，buffer[subscript]试图访问第-1个元素，是栈内存下越界访问。
@@ -672,7 +672,7 @@ HWASan依赖ringbuffer记录内存分配栈和报错栈。在高频malloc()/free
 
    通过解析后的#1帧信息可以直观地看出，触发本次内存异常的具体位置为napi\_init.cpp文件的第244行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/mSZ5quq2QeSaihpxelzslw/zh-cn_image_0000002723405001.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/jz92_F5mSwCM8wgLrzob3Q/zh-cn_image_0000002723405001.png)
 3. 结合业务代码，进一步判断越界产生的原因。
 
    程序定义了包含5个有效字母的字符串，合法索引范围是buffer到buffer+5，memcpy()试图写入buffer+6，是栈内存上越界访问。
@@ -757,7 +757,7 @@ HWASan依赖ringbuffer记录内存分配栈和报错栈。在高频malloc()/free
 
    通过解析后的#0帧信息可以直观地看出，触发本次内存异常的具体位置为napi\_init.cpp文件的第306行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/4rRdYH6ZTbmRQxYgS15N4A/zh-cn_image_0000002693605646.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/RFN6xli7RlWIbNfHO6fJlg/zh-cn_image_0000002693605646.png)
 3. 结合业务代码，进一步判断越界产生的原因。
 
    程序定义了包含42个char元素的数组，合法索引范围是buffer[0]到buffer[41]，buffer[subscript]试图访问第-1个元素，是栈内存下越界访问。
@@ -815,7 +815,7 @@ HWASan依赖ringbuffer记录内存分配栈和报错栈。在高频malloc()/free
 
    通过解析后的#1帧信息可以直观地看出，触发本次内存异常的具体位置为napi\_init.cpp文件的第244行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/bHLquiJ4RAi0p99lPP5LaQ/zh-cn_image_0000002723285077.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/eeCgZj_rRDGZ5BNGhtEwIQ/zh-cn_image_0000002723285077.png)
 3. 结合业务代码，进一步判断越界产生的原因。
 
    程序定义了包含5个有效字母的字符串，合法索引范围是buffer到buffer+5，memcpy()试图写入buffer+6，是栈内存上越界访问。

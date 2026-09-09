@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-polyline
 title: 折线
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 折线
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:13+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:df89b56e644b4f92ea4a2a0f3e3ed3e706efe14b4b5c176900bd0dac0b459eea
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:b1a382958d6e991706fb645728dd031712f4b41cc1c336b9e54feadd801cc015
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:df89b56e644b4f92ea4a2a0f3e3ed3e706efe14b4b5c176900bd0dac0b4
 
 5.0.3(15)开始，支持折线绘制纹理功能；26.0.0开始，支持折线添加文字。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/gEPDUOBPSOqx0Ofyma37tw/zh-cn_image_0000002712405254.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/8aFhWbwgSIyD7huk_6ASYQ/zh-cn_image_0000002747291859.jpg "点击放大")
 
 ## 接口说明
 
@@ -107,7 +107,7 @@ content_hash: sha256:df89b56e644b4f92ea4a2a0f3e3ed3e706efe14b4b5c176900bd0dac0b4
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/USSLqXVcTa6zHzPYJMOnjA/zh-cn_image_0000002742124203.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Nx0Pb7TQQCmaEw6PlILPMw/zh-cn_image_0000002747211775.jpg "点击放大")
 
 ### 设置折线分段颜色
 
@@ -141,7 +141,7 @@ let colors = [0xffffff00, 0xff000000];
 this.mapPolyline.setColors(colors);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/jWlNeEqqRNiHUePLi0LTeA/zh-cn_image_0000002712245296.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/cxCM_S1WQQSQW6tXsYm_3g/zh-cn_image_0000002717771840.jpg "点击放大")
 
 ### 设置折线可渐变
 
@@ -174,7 +174,7 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 this.mapPolyline.setGradient(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/BcCcWIUlRHyZwJ3CMgOVYA/zh-cn_image_0000002742004245.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/l9Q0_pvZQ22mCkJCiA-JBQ/zh-cn_image_0000002717611908.jpg "点击放大")
 
 ### 绘制纹理
 
@@ -203,7 +203,7 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 await this.mapPolyline.setCustomTexture('icon/naviline_arrow.png');
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/f_-twqIkQX-IR7ko-yl8Mg/zh-cn_image_0000002712405256.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ljlz9iglQMO_l-pa2cLfcA/zh-cn_image_0000002747291861.jpg "点击放大")
 
 ### 折线设置分段纹理
 
@@ -240,7 +240,7 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 let mapPolyline = await this.mapController.addPolyline(polylineOption);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/JKWfBJgWTb-DjOT7FyQlgA/zh-cn_image_0000002742124205.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/yVmsuhGPR8iCgXkIj68VIA/zh-cn_image_0000002747211777.jpg "点击放大")
 
 ### 折线添加文字
 
@@ -264,4 +264,4 @@ this.mapPolyline.addLineText(textLine);
 this.mapPolyline.removeLineText();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3ww7ofxVQUa4iIT9khdukA/zh-cn_image_0000002712245298.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/3lXV13pJSeW2qDQj-JcRuA/zh-cn_image_0000002717771842.jpg "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unpacking-too
 title: 拆包工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 打包拆包工具 > 拆包工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:41+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:71aca55a47dce4ad1f1f94a8983eede89ef5f8c172ed136640b8d92d4e03b9aa
 ---
 

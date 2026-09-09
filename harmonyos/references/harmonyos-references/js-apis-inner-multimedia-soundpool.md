@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: SoundPool (音频池)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > multimedia > SoundPool (音频池)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7c5d1bac9bf6d1c22640fcffd9870b0e7a389b25d505a7131f0494c6778c7d21
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-faq-22
 title: 数字商品服务中订单订购状态有哪些？
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > AppGallery Kit常见问题 > 数字商品服务中订单订购状态有哪些？
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:24+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:12+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:382da1b18de41c64134b640e0ff1044e4f129b4679e4396020567fefecee661a
 ---
 

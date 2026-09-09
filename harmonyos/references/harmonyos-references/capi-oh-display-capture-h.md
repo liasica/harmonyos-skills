@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-d
 title: oh_display_capture.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > oh_display_capture.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:712dc6ae60e2540bf070623ae7c1e53dea29226f56c226b95a2a9cd1d0328f09
 ---
 

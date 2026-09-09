@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 基于ScrollComponents实现瀑布流
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于ScrollComponents实现瀑布流
 category: best-practices
-scraped_at: 2026-09-02T15:03:16+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:65832902da37343ca43fd28c82dbe415b32c7383d0318167ab3fe63f151627ba
+scraped_at: 2026-09-10T06:30:01+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:89fa494236adf5bbf19328e0742f31c0f5ed3c58259f3c2a65832ab0d0bbde5e
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 如图1是RecyclerView整体流程图，当节点从可视区移除时，NodeAdapter会通知视图管理器将组件回收，经NodeFactory回收处理之后，组件最终被存入到组件复用池。当节点需要创建时，NodeAdapter通知视图管理器开始创建，NodeFactory会向复用池请求复用节点，获取到节点之后经过一系列更新组件、组件拼接之后返回，最后由NodeAdapter将节点添加到可视区。
 
 **图1** RecyclerView整体流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rb25Po-yRIKJmzEcYSMHaw/zh-cn_image_0000002358395533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/gduVQlpETguSQa5R8iIa8Q/zh-cn_image_0000002358395533.png "点击放大")
 
 ### 开发流程
 
@@ -180,12 +180,12 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
       当组件将要被销毁时，会移出视图容器并进入到item复用池。当组件将要被创建时，会向item复用池获取item节点，当item节点和目标节点类型存在差异时，会先将差异部分即PartReuse中的组件回收到对应的组件复用池，然后将目标组件所需要的差异组件从对应组件复用池中取出，并和item节点拼接，成为目标组件，并进入到视图容器中。
 
       **图2** 可拆分组件复用创建流程图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Xhbi-W35S2yQippFFNCLKA/zh-cn_image_0000002324516902.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/AAVuqa6KR_aQMQbjZB1c-w/zh-cn_image_0000002324516902.png "点击放大")
 
       开发者可参考图3日志打印"generateItem reuse "表示复用，检验是否复用成功。
 
       **图3** 日志效果图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/NgMIXI9eRwax2pWmgKvYCQ/zh-cn_image_0000002358435669.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/dULEDIa8QTayW8DJ0_3JJA/zh-cn_image_0000002358435669.png "点击放大")
 
       **说明** 
 
@@ -316,7 +316,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 开发者可能存在多个页面间复用WaterFlow，比如Tab栏切换。ScrollComponents提供了全局复用能力。
 
 **图4** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/_WMi3egIQ_-4emKQxB9hYw/zh-cn_image_0000002324357106.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/YnaiL9iYQeepnDvCwjLdIw/zh-cn_image_0000002324357106.gif "点击放大")
 
 ### 开发步骤
 
@@ -381,7 +381,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 冷启动后首次打开瀑布流页面，由于页面的图片或者视频等媒体资源过多，出现白屏或者白块，等好几秒才慢慢刷出内容。ScrollComponents库支持组件预创建，能打开页面后瞬间看到文字、图片骨架，减少卡顿。
 
 **图5** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/d6kAATtYT_SXDgdpofMmrQ/zh-cn_image_0000002358395541.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/GezQtlblRxW_V9Wz0B7ChQ/zh-cn_image_0000002358395541.gif "点击放大")
 
 ### 开发步骤
 
@@ -409,12 +409,12 @@ aboutToAppear(): void {
 @Reusable：网络请求期间主线程大段空闲，请求结束后首屏组件绘帧耗时较长。
 
 **图6** @Reusable测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/M9aj_88wTgyRHR2teZJrxg/zh-cn_image_0000002324516906.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/oSdEvYk9RqG6coBCyDfA1Q/zh-cn_image_0000002324516906.png "点击放大")
 
 ScrollComponents：网络请求期间主线程空闲较少，请求结束后首屏组件绘帧耗时较短
 
 **图7** ScrollComponents测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/DH_j31k3SSGIAcdOA4V_-Q/zh-cn_image_0000002358435673.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Q8FFNaB_QHSz52mNBkhvXQ/zh-cn_image_0000002358435673.png "点击放大")
 
 **表1** 首屏组件创建时间对比表
 
@@ -434,7 +434,7 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 为了减少快速滑动过程中网络不好产生的白块，ScrollComponents内置了内容预取能力Prefetcher，支持动态自适应网络状态。通过提前下载图片或资源，确保资源在需要时立即显示，减少白块出现。动态预加载适用于数据请求耗时较长的场景，如滑动列表中包含大量图片资源。
 
 **图8** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/tJX20FKyTVC92pVPZZ7gkA/zh-cn_image_0000002324357110.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/EVUISZU2Q5GqmvxWvKnzYg/zh-cn_image_0000002324357110.gif "点击放大")
 
 ### 开发步骤
 
@@ -557,7 +557,7 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 下拉刷新是提升用户体验的关键功能，既要保证数据无缝加载，又要维持流畅的交互效果。推荐使用懒加载刷新数据避免媒体资源加载造成UI渲染阻塞。实现逻辑可参考[实现下拉刷新上拉加载更多](../harmonyos-references/ts-container-refresh.md#示例6实现下拉刷新上拉加载更多)。
 
 **图9** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/AaQheh2-SLWsvrIB9El4KA/zh-cn_image_0000002324708832.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/kZGlQ2A4SV-HIOCy44dp9A/zh-cn_image_0000002324708832.gif "点击放大")
 
 ### 开发步骤
 
@@ -614,7 +614,7 @@ ScrollComponents：网络请求期间主线程空闲较少，请求结束后首�
 当开发瀑布流页面涉及大量数据，需要进行分页请求时，结合ScrollComponents提供的懒加载能力实现上拉分页加载的效果。
 
 **图10** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/J_d8rNMmQ2-LETOsf6H02Q/zh-cn_image_0000002358827425.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/iDoWa27ERlWBa5_087V6PA/zh-cn_image_0000002358827425.gif "点击放大")
 
 核心代码参考如下：
 
@@ -653,7 +653,7 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 长按时显示删除按钮，点击按钮可以删除对应item。
 
 **图11** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/P5lrkfgkSMiBIXwmxe37Fw/zh-cn_image_0000002358435681.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/9puf4fxhTWyp1_Y7IlOBpA/zh-cn_image_0000002358435681.gif "点击放大")
 
 1. 绑定长按手势。
 
@@ -707,7 +707,7 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 分组混排瀑布流中，不同区域展示不同的item效果，例如前三个每行一个item，中间每行两个item，每个item保持高度一致，后面的每行两个item，每个item高度不一致。瀑布流分组功能参考：[《创建瀑布流：分组混合布局》](../harmonyos-guides/arkts-layout-development-create-waterflow.md#分组混合布局)。
 
 **图12** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/RGCC74_WTryVaB9EqAGCQg/zh-cn_image_0000002324357118.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/hFHUSWApSH-1Enk6sBlIZg/zh-cn_image_0000002324357118.png "点击放大")
 
 ### 开发步骤
 
@@ -805,7 +805,7 @@ FrameNode创建WaterFlow目前暂不支持设置[footer和footerContent](../harm
 向上滑动瀑布流，当横向列表组件滑动到顶部，达到吸顶效果时，其下方的瀑布流列表可以继续滑动。
 
 **图13** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/47iNMkKxSRmKjLaTgleAcg/zh-cn_image_0000002358395549.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/VnmPwgO3Tg23SZP0Bj0qKg/zh-cn_image_0000002358395549.gif "点击放大")
 
 ### 开发步骤
 

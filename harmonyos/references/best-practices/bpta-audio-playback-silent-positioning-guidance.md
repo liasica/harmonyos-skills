@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-play
 title: 音频播放无声问题定位指导
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 音频播放无声问题定位指导
 category: best-practices
-scraped_at: 2026-09-02T15:03:20+08:00
+scraped_at: 2026-09-10T06:30:11+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:5405ca493d682705bf7dbf9219d4e69e5d2881972b694d3da5b44c1ce7fc7861
+content_hash: sha256:97d041539684b8f32f21a211f645933107a322689916011fd9b88dbb2812842b
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:5405ca493d682705bf7dbf9219d4e69e5d2881972b694d3da5b44c1ce7f
 
 音频渲染流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/FKPRUlwOQlCAhtp_cxNjqw/zh-cn_image_0000002703506142.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/gQKqvw0VStu5_Gwo-jD2Kw/zh-cn_image_0000002703506142.png "点击放大")
 
 * 应用（Application）：用户或上层软件发起音频播放请求的起点。
 * AudioRenderer：应用层的音频渲染接口，负责将音频数据传递给下层模块。
@@ -226,7 +226,7 @@ pause
    ```
 3. 针对数据读取异常的情况，可通过可视化PCM dump数据来进行佐证，发现应用给过来的数据有问题。如下图所示PCM音频数据中确实有一段无声：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/DLzlDMkGRbKv7Kxts_tIGg/zh-cn_image_0000002733345335.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/FIstttZQTyqaiTnapDECVg/zh-cn_image_0000002733345335.png "点击放大")
 
 ### AudioRenderer异常释放导致播放无声
 
@@ -252,7 +252,7 @@ pause
    ```
 2. 同时，可以通过trace日志进一步佐证AudioRenderer实例异常释放（可选操作）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/foIfwZq2RYCb7yjFsD07rQ/zh-cn_image_0000002703666060.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/nhPdiVn6TgOeIGmdAF1aBw/zh-cn_image_0000002703666060.png "点击放大")
 
 ### 焦点冲突导致设备切换后无声
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bundle.bundleManager (应用程序包管理模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.bundleManager (应用程序包管理模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9db2726be3a8eb77c49c8adb142fbaaadaec9d0ddf2e7e21c177c81b9fc6f1dc
 ---
 

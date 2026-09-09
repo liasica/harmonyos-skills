@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 用户相册资源使用指导
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 用户相册资源使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:23c1975fbc29265a8f17a242143c71f50e99f472920553f7dffcb5c03832383d
 ---
 

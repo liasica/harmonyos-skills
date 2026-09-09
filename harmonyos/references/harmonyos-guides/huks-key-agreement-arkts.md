@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agre
 title: 密钥协商(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 密钥协商 > 密钥协商(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8dd85e9d7bcd8d61a957fd6f6fd4e733c4651c823819717de7ba21a7d983cc70
 ---
 

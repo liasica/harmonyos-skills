@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-p
 title: oh_pasteboard.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > oh_pasteboard.h
 category: harmonyos-references
-scraped_at: 2026-09-05T06:19:21+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:27:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e1cfec5b890cd40b64aec5fbe8f649a895c19a299330bc91a11a19eddb805661
 ---
 

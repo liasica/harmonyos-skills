@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-s
 title: 应用启动流程
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用启动流程
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:13:47+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4baf3edda4808be94316f6db0d01f66c1cb5c4652bb883edbc3b3bec967811b0
+scraped_at: 2026-09-10T06:21:51+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:06d95f839aeb92dedcb92565b8c5fccb37bccbc43abe77b3932b7789441f2ec5
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:4baf3edda4808be94316f6db0d01f66c1cb5c4652bb883edbc3b3bec967
 
 进程、AbilityStage与UIAbility生命周期的关系如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/UcpKBY4lTC-3txMxw22AAA/zh-cn_image_0000002742002219.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/QMCFhP74TvSvjSg03L-Lfw/zh-cn_image_0000002717769826.png)
 
 | 阶段 | 触发时机 | 主要职责 |
 | --- | --- | --- |

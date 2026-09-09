@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 网络安全校验错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 网络安全校验错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f34bf928f5dc7ef5fbf9319e9dd52f21aa5acf4d654d80ad6ad6f159d2df1125
+scraped_at: 2026-09-10T06:27:16+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:cd63b2b5b55bf077be1dc800e26a16be6765595511118ea9f20ecfc34cd021f5
 ---
 
 **说明** 
@@ -56,7 +56,7 @@ Unable to get certificate revocation list (CRL).
 
 **错误描述**
 
-无法获取证书注销列表（CRL）。
+无法获取证书吊销列表（CRL）。
 
 **可能原因**
 
@@ -100,7 +100,7 @@ CRL的加密算法不被客户端支持，或者用于加密CRL签名的密钥�
 
 **处理步骤**
 
-检查并确保客户端有正确的私钥，且私钥与CRL的公钥匹配，且私钥格式正确。
+检查并确保客户端有正确的证书颁发机构（CA）公钥，且该公钥与签发该CRL的CA相匹配，且公钥格式正确。
 
 ## 2305006 无法解码颁发者公钥
 
@@ -110,7 +110,7 @@ Unable to decode issuer public key.
 
 **错误描述**
 
-无法解码发行公钥。
+无法解码颁发者公钥。
 
 **可能原因**
 
@@ -155,7 +155,7 @@ CRL的签名计算错误，或者CRL使用的数字签名算法不被客户端�
 
 **处理步骤**
 
-检查CRL的签名算法、检查CRL的签名密钥、重新生成CRL、更新CRL。
+检查CRL的签名算法、检查CRL的签名密钥与公钥是否匹配、重新生成CRL、更新CRL。
 
 ## 2305009 证书尚未生效
 
@@ -210,7 +210,7 @@ CRL的开始日期在当前日期之后。
 **处理步骤**
 
 1. 检查并确保CRL的有效时间在开始日期和结束日期之间。
-2. 重新生成或更新CRL。
+2. 重新生成或更新CRL，或使用在线证书状态协议 (OCSP) 进行证书状态检查。
 
 ## 2305012 CRL已过期
 

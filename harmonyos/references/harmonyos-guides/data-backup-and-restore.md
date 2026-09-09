@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-a
 title: 数据库备份与恢复 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 数据库备份与恢复 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:57aa4956f215b60d471287f07ce389d454ebf4464229931a56d3094c3ed0c562
 ---
 

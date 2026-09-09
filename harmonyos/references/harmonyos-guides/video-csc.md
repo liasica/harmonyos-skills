@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-csc
 title: 视频色彩空间转换
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 视频处理 > 视频色彩空间转换
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:53+08:00
+scraped_at: 2026-09-10T06:23:01+08:00
 doc_updated_at: 2026-04-30
-content_hash: sha256:1da5a6bb65a2ce3a7c2c8a9530f760de580b74bcb361109cfc705005265fcd3f
+content_hash: sha256:be90f197c47adff3019818bcde4a4eb5fd44d26f6e5a76ee796edf6f293ac6f8
 ---
 
 开发者可以调用本模块提供的[C API接口](../harmonyos-references/capi-videoprocessing.md)，实现HDR2SDR、HDR2HDR、SDR2SDR、SDR2HDR的色彩空间转换。
@@ -14,17 +14,17 @@ content_hash: sha256:1da5a6bb65a2ce3a7c2c8a9530f760de580b74bcb361109cfc705005265
 
 * **视频编辑**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/2abhZXdMTRiy_VSv2DB-iw/zh-cn_image_0000002742123747.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/tg0mwd9dToqSIQRgl77bog/zh-cn_image_0000002747211323.png)
 * **视频分享**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/iG4rWXV3SZaKXovgwiM4fQ/zh-cn_image_0000002712244838.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/QsKfBO_YQySna28G66i2pw/zh-cn_image_0000002717771388.png)
 * **视频直播**
 
   **支持以下场景使用：**
 
   使用HDR Vivid视频直播连麦，且对端不支持HDR Vivid视频录制场景。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/hRyikuJ9Q_6JPWN_a5oZxQ/zh-cn_image_0000002742003787.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Fqkqlnf_R0akFx-DQ2QlLQ/zh-cn_image_0000002717611456.png)
 
 ## 规格说明
 

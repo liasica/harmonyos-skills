@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: objectDetection（多目标识别）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > objectDetection（多目标识别）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f6db5320f13dbd7628c0e70c8b9ef57273e83f4645532f713f3b9f12480540d6
 ---
 

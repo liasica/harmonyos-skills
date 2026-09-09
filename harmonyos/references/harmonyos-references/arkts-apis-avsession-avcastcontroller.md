@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVCastController)
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avsession (媒体会话管理) > Interface (AVCastController)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:23+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8dc444361f17eb1fddbed2ca5cc38a499fcdc42ecce350526e893b8917cb3809
 ---
 

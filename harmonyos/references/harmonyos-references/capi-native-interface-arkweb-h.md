@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_arkweb.h
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 头文件 > native_interface_arkweb.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d2bdd4ecff8f25fcfb9d3adbe40af804845468b9b0328381940db70342917f36
 ---
 

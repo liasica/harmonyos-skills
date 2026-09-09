@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: QUIC长连接接收消息推送
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用QUIC协议进行网络通信 > QUIC长连接接收消息推送
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d8955e13cbac04bf75e4d5bc4c722bd33aa7f3a5d973d629f469be06438c53e9
 ---
 

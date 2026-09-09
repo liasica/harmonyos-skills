@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: SafetyDetect（安全检测）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > SafetyDetect（安全检测）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:179debaf9fc0872b635a61369f506cefbb5368dbce9e9acaae80bb0648b404c2
 ---
 

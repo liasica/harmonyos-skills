@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/selection-ser
 title: 实现一个划词扩展能力
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 划词服务 > 实现一个划词扩展能力
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9e1effcb48e4bc260328a9180f884154bd7e6c0be3fef5409db67df3077b8f77
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:38d956ed9d9ba6fb3e2e9c1cb04da933b1775782b0f8bc91edd6b987329a9763
 ---
 
 ## 接口说明
@@ -48,7 +48,7 @@ content_hash: sha256:9e1effcb48e4bc260328a9180f884154bd7e6c0be3fef5409db67df3077
    ├── module.json5                             # 配置文件
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/n_d_Jz6XS0iikp82AXSdNQ/zh-cn_image_0000002712244614.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/g7Tn0nG7SPerSMx4HCf54w/zh-cn_image_0000002717771168.png)
 2. 在[SelectionModel.ets](https://gitcode.com/openharmony/applications_app_samples/blob/master/code/DocsSample/SelectionService/SelectionAppSample/entry/src/main/ets/models/SelectionModel.ets)文件中，开发者可自定义划词模块管理类，用于统一管理划词内容、窗口等信息。并且实现一些get、set接口，便于信息的类间传递。
 
    ```typescript

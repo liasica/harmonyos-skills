@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/weather-servi
 title: 获取天气数据
 breadcrumb: 指南 > 应用服务 > Weather Service Kit（天气服务） > 获取天气数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:03+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:23:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:51063099f813e8f30fab822647f55ebba1a03cb0f961e96d09424528f6c4b67c
 ---
 

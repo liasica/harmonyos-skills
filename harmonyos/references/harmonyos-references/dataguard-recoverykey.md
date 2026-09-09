@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataguard
 title: recoveryKey（企业恢复密钥）
 breadcrumb: API参考 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > ArkTS API > recoveryKey（企业恢复密钥）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9606f906956e735af4b8496bf340c094c164c0936112275361f5b976297ff25c
 ---
 

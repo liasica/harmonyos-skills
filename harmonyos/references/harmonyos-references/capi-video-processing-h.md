@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vide
 title: video_processing.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > video_processing.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:37+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:738039fff07e0c36e7089c8b45100c8bf5407e3cb785b1d5d644fd91d351e02c
 ---
 

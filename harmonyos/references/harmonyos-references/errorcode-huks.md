@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: HUKS错误码
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 错误码 > HUKS错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:48+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d51c72957e0d63b51825d2f368c8194f325f06704f747717fc1a343a25a04160
 ---
 

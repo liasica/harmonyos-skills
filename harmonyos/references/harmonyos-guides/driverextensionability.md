@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/driverextensi
 title: 开发无UI界面基础驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设基础驱动开发 > 开发无UI界面基础驱动
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:bf1ba7980757f4711befa9ba57098cdad0d07dd6217d2b00ab54f60cdf205951
 ---
 

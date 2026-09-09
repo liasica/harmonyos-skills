@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/async-concurr
 title: 异步并发 (Promise和async/await)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 异步并发 (Promise和async/await)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:95c35c66aabf24544d9d26e0fa66e6a4bbe1d0030506dbaccb14c438ba46042d
 ---
 

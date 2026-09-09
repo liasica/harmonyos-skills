@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 输入事件注入错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > 错误码 > 输入事件注入错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e1169d579413c280c2a80cde150703afa1067f02d9f2758c27d621ed46fabcde
 ---
 

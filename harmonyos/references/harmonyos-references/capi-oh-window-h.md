@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-w
 title: oh_window.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > oh_window.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:cf1b77bbc2f162056dca84f6ab06bb95cdf91910d3519ebb45e9a45c63d45e3d
 ---
 

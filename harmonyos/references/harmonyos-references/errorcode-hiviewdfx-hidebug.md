@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: HiDebug错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码 > HiDebug错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e72c75f1522b501455958b599c18ca6eefe00c3f1f6a7c2a5e0ec101ad3eab12
 ---
 

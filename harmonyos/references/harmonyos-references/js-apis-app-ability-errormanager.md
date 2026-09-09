@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.errorManager (错误管理模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.errorManager (错误管理模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:34+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:24:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:37e9d15e9fafb7b2589d0df8548cf47329fc8d80410a1133b566c57a6893998b
 ---
 

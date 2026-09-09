@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-faq
 title: 本地媒体会话常见问题
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > AVSession Kit常见问题 > 本地媒体会话常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:739af3ebf5525faa6059fd9741a63742831ae98189c16f9840b19d86e2432a1b
 ---
 

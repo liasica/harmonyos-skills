@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: AbilityDelegator
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > 接口依赖的元素及定义 > AbilityDelegator
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c9d723b71c37bce7032b44e308b5899339cf3f0b2a466c55d646a5db7e8f7cfd
 ---
 

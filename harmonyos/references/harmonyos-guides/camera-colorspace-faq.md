@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-colors
 title: 色彩空间配置异常问题
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit常见问题 > 色彩空间配置异常问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:46b2fb671f8d338284c5352e39f99a6423351b7ead67937f95916a9419264fca
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-intro
 title: Preview Kit简介
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务） > Preview Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:17+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:72f73aca46084be41b0fa952fb23312d580d042f01788487625ec5c22d40e768
+scraped_at: 2026-09-10T06:23:26+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:df4921af278514555fabdd789c3cd2158d5ea28526dba85cf91eee0da36c1378
 ---
 
 Preview Kit（文件预览服务）为应用提供便捷的文件快速预览和文件打开加速能力。
@@ -74,7 +74,7 @@ Preview Kit支持图片、视频、音频、文本、html进行查看，表中�
 
 ## 文件预览基本概念
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/DFc8dTNkRkOlonWu9hUZbA/zh-cn_image_0000002712405332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/6gZj76E9T5eixMo_ajZe_g/zh-cn_image_0000002747291937.png)
 
 * 模态窗：和父窗口绑定，模态窗存在时父窗口不可移动，不可操作，模态窗永远置于父窗口前面。
 * 应用窗：应用窗口，可以通过AMS启动。

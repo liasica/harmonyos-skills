@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-launc
 title: 基于接口拉起方式
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 拉起三方支付收银台 > 基于接口拉起方式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:59+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:549cb49dc268756fa3c672ced023e0b3d8bfd5474d3af46ee49ff1861caa6611
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/we-device-sel
 title: 目标设备选择
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 目标设备选择
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:38+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:44+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5434c8dbc00542d02aa9616de130a5d3406429b4318189234c50117639067415
 ---
 

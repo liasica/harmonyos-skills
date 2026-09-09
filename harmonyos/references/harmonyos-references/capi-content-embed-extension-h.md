@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cont
 title: content_embed_extension.h
 breadcrumb: API参考 > 应用框架 > Content Embed Kit（内容嵌入服务） > C API > 头文件 > content_embed_extension.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0d4dcc4020d3927c12af7a947dc12a4c7c6d045e331bef5bed020efe66d430aa
 ---
 

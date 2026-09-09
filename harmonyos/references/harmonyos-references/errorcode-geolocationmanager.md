@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 位置服务错误码
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > 错误码 > 位置服务错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:58+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:97741cc3735e3ff788261caca74abf928186e5a0539e92463dda80760befba6c
 ---
 

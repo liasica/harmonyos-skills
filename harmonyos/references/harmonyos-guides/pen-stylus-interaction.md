@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-stylus-in
 title: 接入手写交互
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入手写交互
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:37+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e1070c50926535cab80e0193df8c77a4caeb410dc89f9682fccf86ebdbb0aef5
 ---
 

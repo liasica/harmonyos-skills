@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: SkillInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > SkillInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9ff6f4b525098f2c9e1c463d3ca5a4a1328d4741da78ecacd23f833a2f8b973e
 ---
 

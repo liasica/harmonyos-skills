@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.fastbuffer (FastBuffer)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.fastbuffer (FastBuffer)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2f84b2c953853a221ad4cbb24a74f53d4a7b3595f0d99609a629c704729b2bb6
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-l
 title: "@ohos.distributedsched.linkEnhance (增强连接)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedsched.linkEnhance (增强连接)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:11a8ef451ac4f6e7cfa32027be380ea90b0734a414a2c9724de6cd09d98de631
 ---
 

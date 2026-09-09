@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义事件拦截
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互事件分发控制 > 自定义事件拦截
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8f01ccf74b886caa24f5c0bcf26c308fe180d255695517d11ddb2def8bae7faa
 ---
 

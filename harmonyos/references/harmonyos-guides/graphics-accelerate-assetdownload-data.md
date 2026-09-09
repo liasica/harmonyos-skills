@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 查看资源包分发数据
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 查看资源包分发数据
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:58+08:00
+scraped_at: 2026-09-10T06:23:07+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:dc0c622b9b03aa74ba870a9e52132194b9b11f259e54cef2a93d54cf8d48880d
+content_hash: sha256:8b1a79ab7d73fda5bf5c54678e3d5f08966d120a4732a5ff12e9ca7026e699b7
 ---
 
 资源包下载任务正式发布后，开发者可以前往AppGallery Connect查看资源包分发情况。
@@ -13,7 +13,7 @@ content_hash: sha256:dc0c622b9b03aa74ba870a9e52132194b9b11f259e54cef2a93d54cf8d4
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“分析”，在应用列表中选择对应的游戏。
 2. 选择“分发分析 > 资源包后台下载分析”，在页面右侧切换“资源包版本”和“日期”为展示依据查看资源包下载数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/UFzWV1scRZOMVmsSZO-BNw/zh-cn_image_0000002742003927.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Nao3aHHTRVmOblNsHYsYcw/zh-cn_image_0000002717611590.png)
 
    | 参数 | 单位 | 说明 |
    | --- | --- | --- |

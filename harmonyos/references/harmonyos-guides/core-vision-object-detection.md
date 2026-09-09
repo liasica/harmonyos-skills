@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-o
 title: 多目标识别
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 多目标识别
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:35+08:00
+scraped_at: 2026-09-10T06:23:53+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:d30d0cd47f5be3571ecff0063be949383330d64e8c139a9985ec1f01ddcb9efc
+content_hash: sha256:2957ce181e984cdb0fbab59bb7aefa1577b8cd69d826c9700431236633ed9818
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:d30d0cd47f5be3571ecff0063be949383330d64e8c139a9985ec1f01ddc
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/JfgjMkV_TlO_zOy0RJcBFg/zh-cn_image_0000002717612226.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ZPg5gTNZQ7CGQ84wkH_q2w/zh-cn_image_0000002717612226.png)
 
 ## 开发步骤
 

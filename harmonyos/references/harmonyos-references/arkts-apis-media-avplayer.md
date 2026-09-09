@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVPlayer)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVPlayer)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1b27ce27133393bc7cd02e10c92c645e07f7b570b9b9e203a9b499bd49ac25b6
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/call-faq-1
 title: 来电横幅无法拉起
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > Call Service Kit常见问题 > 来电横幅无法拉起
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:24+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:884a884b427cde7fdd998fa87a9f69b87de92c6046eba360c4adab4c3f238f0b
 ---
 

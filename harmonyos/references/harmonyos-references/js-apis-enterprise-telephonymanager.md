@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.telephonyManager（通话管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.telephonyManager（通话管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c5c3f960fb49e71fbd8c656e594ba3be334f7a3c2bb84aef71f877c4ec0b510d
 ---
 

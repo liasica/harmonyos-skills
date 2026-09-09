@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-access-a
 title: 跨设备文件共享和访问
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 分布式文件系统 > 跨设备文件共享和访问
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:670739bbc2fa482ca03ebd093476642f46635228d01b07093f8a140d6fdb33f5
 ---
 

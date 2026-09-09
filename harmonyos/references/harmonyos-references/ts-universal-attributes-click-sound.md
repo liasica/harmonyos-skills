@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击音效
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 点击音效
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:60b98c870d21aba131a88a30b0203886f901b6cb78243a7bbd419801671702f4
 ---
 

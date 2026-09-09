@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-p
 title: 分享内容直达应用界面
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与PC/2in1碰一碰分享 > 分享内容直达应用界面
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-06-05
+scraped_at: 2026-09-10T06:23:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d03c913e877c7b57443fe5b3da43c1fe8ebbb169f8837dba74a33aa619484b6b
 ---
 

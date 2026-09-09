@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-faq-5
 title: 拉起收银台无反应或报错？
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit常见问题 > 拉起收银台无反应或报错？
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:14+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2f99ca67bbf93306b080f390235fc89a9db11d3732f21449b32a1d3b3e0c499f
 ---
 

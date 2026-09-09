@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.sensor (传感器)"
 breadcrumb: API参考 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > ArkTS API > @ohos.sensor (传感器)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f2b887eb67bef30499c26504ef21418d53828c13acd8cb2518b097bc198cc211
+scraped_at: 2026-09-10T06:27:52+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:e7a87cd1bc06b7437825b1ab3630ca65e7a94a892f7a8a99c55b1aa9ae08e8b7
 ---
 
 @ohos.sensor 模块是鸿蒙操作系统提供的传感器服务模块，属于 SensorServiceKit。该模块为开发者提供了统一的传感器数据访问能力，涵盖设备上各类物理传感器的数据订阅、查询以及传感器算法计算。
@@ -46,7 +46,7 @@ import { sensor } from '@kit.SensorServiceKit';
 
 on(type: SensorId.ACCELEROMETER, callback: Callback<AccelerometerResponse>, options?: Options): void
 
-订阅加速度传感器数据。加速度传感器用于测量设备在X、Y、Z三个方向上的加速度，包含重力加速度分量。适用于需要感知设备运动状态、实现屏幕旋转、游戏操控、计步等场景。调用后，系统会按设定频率通过callback持续上报加速度数据。
+订阅加速度传感器数据。使用callback异步回调。加速度传感器用于测量设备在X、Y、Z三个方向上的加速度，包含重力加速度分量。适用于需要感知设备运动状态、实现屏幕旋转、游戏操控、计步等场景。调用后，系统会按设定频率通过callback持续上报加速度数据。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -100,7 +100,7 @@ try {
 
 on(type: SensorId.FUSION\_PRESSURE, callback: Callback<FusionPressureResponse>, options?: Options): void
 
-订阅融合压力传感器数据。融合压力传感器用于获取经融合算法处理的压力数据，仅适用于智能手表设备。适用于需要获取手腕压力数据的健康监测场景。调用后，系统会按设定频率通过callback持续上报融合压力数据。
+订阅融合压力传感器数据。使用callback异步回调。融合压力传感器用于获取经融合算法处理的压力数据，仅适用于智能手表设备。适用于需要获取手腕压力数据的健康监测场景。调用后，系统会按设定频率通过callback持续上报融合压力数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -147,7 +147,7 @@ try {
 
 on(type: SensorId.ACCELEROMETER\_UNCALIBRATED, callback: Callback<AccelerometerUncalibratedResponse>, options?: Options): void
 
-订阅未校准加速度传感器数据。未校准加速度传感器与加速度传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始加速度数据或自行实现校准算法的场景。与sensor.on('SensorId.ACCELEROMETER')相比，本接口额外提供偏移值信息，适用于需要分析设备校准偏差的场景。
+订阅未校准加速度传感器数据。使用callback异步回调。未校准加速度传感器与加速度传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始加速度数据或自行实现校准算法的场景。与sensor.on('SensorId.ACCELEROMETER')相比，本接口额外提供偏移值信息，适用于需要分析设备校准偏差的场景。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -202,7 +202,7 @@ try {
 
 on(type: SensorId.AMBIENT\_LIGHT, callback: Callback<LightResponse>, options?: Options): void
 
-订阅环境光传感器数据。环境光传感器用于测量周围环境的光照强度，适用于自动调节屏幕亮度、判断环境明暗等场景。调用后，系统会按设定频率通过callback持续上报环境光强度数据。
+订阅环境光传感器数据。使用callback异步回调。环境光传感器用于测量周围环境的光照强度，适用于自动调节屏幕亮度、判断环境明暗等场景。调用后，系统会按设定频率通过callback持续上报环境光强度数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -249,7 +249,7 @@ try {
 
 on(type: SensorId.AMBIENT\_TEMPERATURE, callback: Callback<AmbientTemperatureResponse>, options?: Options): void
 
-订阅环境温度传感器数据。温度传感器用于测量设备周围的环境温度，适用于环境温度监测、温度补偿等场景。调用后，系统会按设定频率通过callback持续上报温度数据。
+订阅环境温度传感器数据。使用callback异步回调。温度传感器用于测量设备周围的环境温度，适用于环境温度监测、温度补偿等场景。调用后，系统会按设定频率通过callback持续上报温度数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -296,7 +296,7 @@ try {
 
 on(type: SensorId.BAROMETER, callback: Callback<BarometerResponse>, options?: Options): void
 
-订阅气压计传感器数据。气压计传感器用于测量大气压强，适用于海拔估算、天气预报辅助等场景。调用后，系统会按设定频率通过callback持续上报气压数据。
+订阅气压计传感器数据。使用callback异步回调。气压计传感器用于测量大气压强，适用于海拔估算、天气预报辅助等场景。调用后，系统会按设定频率通过callback持续上报气压数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -343,7 +343,7 @@ try {
 
 on(type: SensorId.GRAVITY, callback: Callback<GravityResponse>, options?: Options): void
 
-订阅重力传感器数据。重力传感器用于测量设备在X、Y、Z三个方向上受到的重力加速度分量，适用于需要分离重力分量进行运动分析的场景，如游戏操控、运动检测。调用后，系统会按设定频率通过callback持续上报重力分量数据。
+订阅重力传感器数据。使用callback异步回调。重力传感器用于测量设备在X、Y、Z三个方向上受到的重力加速度分量，适用于需要分离重力分量进行运动分析的场景，如游戏操控、运动检测。调用后，系统会按设定频率通过callback持续上报重力分量数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -392,7 +392,7 @@ try {
 
 on(type: SensorId.GYROSCOPE, callback: Callback<GyroscopeResponse>, options?: Options): void
 
-订阅校准的陀螺仪传感器数据。陀螺仪传感器用于测量设备绕X、Y、Z轴的旋转角速度，适用于设备旋转检测、姿态跟踪、游戏操控等场景。调用后，系统会按设定频率通过callback持续上报角速度数据。
+订阅校准的陀螺仪传感器数据。使用callback异步回调。陀螺仪传感器用于测量设备绕X、Y、Z轴的旋转角速度，适用于设备旋转检测、姿态跟踪、游戏操控等场景。调用后，系统会按设定频率通过callback持续上报角速度数据。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -446,7 +446,7 @@ try {
 
 on(type: SensorId.GYROSCOPE\_UNCALIBRATED, callback: Callback<GyroscopeUncalibratedResponse>, options?: Options): void
 
-订阅未校准陀螺仪传感器数据。未校准陀螺仪传感器与陀螺仪传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始陀螺仪数据或自行实现校准算法的场景。与sensor.on('SensorId.GYROSCOPE')相比，本接口额外提供偏移值信息，适用于需要分析设备陀螺仪校准偏差的场景。
+订阅未校准陀螺仪传感器数据。使用callback异步回调。未校准陀螺仪传感器与陀螺仪传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始陀螺仪数据或自行实现校准算法的场景。与sensor.on('SensorId.GYROSCOPE')相比，本接口额外提供偏移值信息，适用于需要分析设备陀螺仪校准偏差的场景。
 
 **需要权限**：ohos.permission.GYROSCOPE
 
@@ -501,7 +501,7 @@ try {
 
 on(type: SensorId.HALL, callback: Callback<HallResponse>, options?: Options): void
 
-订阅霍尔传感器数据。霍尔传感器用于检测磁场变化，常用于检测翻盖手机或皮套的开合状态。当霍尔事件被触发得较为频繁时，可通过options参数限定事件上报频率。调用后，系统会通过callback持续上报霍尔状态数据。
+订阅霍尔传感器数据。使用callback异步回调。霍尔传感器用于检测磁场变化，常用于检测翻盖手机或皮套的开合状态。当霍尔事件被触发得较为频繁时，可通过options参数限定事件上报频率。调用后，系统会通过callback持续上报霍尔状态数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -511,7 +511,7 @@ on(type: SensorId.HALL, callback: Callback<HallResponse>, options?: Options): vo
 | --- | --- | --- | --- |
 | type | [SensorId](js-apis-sensor.md#sensorid9).HALL | 是 | 传感器类型，该值固定为SensorId.HALL。 |
 | callback | Callback<[HallResponse](js-apis-sensor.md#hallresponse)> | 是 | 回调函数，异步上报的传感器数据固定为HallResponse。 |
-| options | [Options](js-apis-sensor.md#options) | 否 | 可选参数列表，当霍尔事件被触发的很频繁时，用于设置传感器上报频率，默认值为200000000ns（即200ms）。 |
+| options | [Options](js-apis-sensor.md#options) | 否 | 可选参数列表，当霍尔事件被触发得很频繁时，用于设置传感器上报频率，默认值为200000000ns（即200ms）。 |
 
 **错误码**：
 
@@ -548,7 +548,7 @@ try {
 
 on(type: SensorId.HEART\_RATE, callback: Callback<HeartRateResponse>, options?: Options): void
 
-订阅心率传感器数据。心率传感器用于测量用户的心率值，适用于健康监测、运动辅助等场景。调用后，系统会按设定频率通过callback持续上报心率数据。
+订阅心率传感器数据。使用callback异步回调。心率传感器用于测量用户的心率值，适用于健康监测、运动辅助等场景。调用后，系统会按设定频率通过callback持续上报心率数据。
 
 **需要权限**：ohos.permission.READ\_HEALTH\_DATA
 
@@ -598,7 +598,7 @@ try {
 
 on(type: SensorId.HUMIDITY, callback: Callback<HumidityResponse>, options?: Options): void
 
-订阅湿度传感器数据。湿度传感器用于测量周围环境的相对湿度，适用于环境湿度监测、智能家居联动等场景。调用后，系统会按设定频率通过callback持续上报湿度数据。
+订阅湿度传感器数据。使用callback异步回调。湿度传感器用于测量周围环境的相对湿度，适用于环境湿度监测、智能家居联动等场景。调用后，系统会按设定频率通过callback持续上报湿度数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -645,7 +645,7 @@ try {
 
 on(type: SensorId.LINEAR\_ACCELEROMETER, callback: Callback<LinearAccelerometerResponse>, options?: Options): void
 
-订阅线性加速度传感器数据。线性加速度传感器用于测量设备在X、Y、Z三个方向上的加速度（不含重力加速度分量），适用于需要感知设备纯粹运动加速度的场景，如运动追踪、碰撞检测。与sensor.on('SensorId.ACCELEROMETER')相比，本接口已去除重力分量，适用于仅需设备运动加速度的场景。
+订阅线性加速度传感器数据。使用callback异步回调。线性加速度传感器用于测量设备在X、Y、Z三个方向上的加速度（不含重力加速度分量），适用于需要感知设备纯粹运动加速度的场景，如运动追踪、碰撞检测。与sensor.on('SensorId.ACCELEROMETER')相比，本接口已去除重力分量，适用于仅需设备运动加速度的场景。
 
 **需要权限**：ohos.permission.ACCELEROMETER
 
@@ -697,7 +697,7 @@ try {
 
 on(type: SensorId.MAGNETIC\_FIELD, callback: Callback<MagneticFieldResponse>, options?: Options): void
 
-订阅地磁传感器数据。地磁传感器用于测量设备周围的磁场强度在X、Y、Z三个方向上的分量，适用于指南针、方向检测、金属检测等场景。调用后，系统会按设定频率通过callback持续上报磁场分量数据。
+订阅地磁传感器数据。使用callback异步回调。地磁传感器用于测量设备周围的磁场强度在X、Y、Z三个方向上的分量，适用于指南针、方向检测、金属检测等场景。调用后，系统会按设定频率通过callback持续上报磁场分量数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -746,7 +746,7 @@ try {
 
 on(type: SensorId.MAGNETIC\_FIELD\_UNCALIBRATED, callback: Callback<MagneticFieldUncalibratedResponse>, options?: Options): void
 
-订阅未校准地磁传感器数据。未校准地磁传感器与地磁传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始磁场数据或自行实现校准算法的场景。与sensor.on('SensorId.MAGNETIC\_FIELD')相比，本接口额外提供偏移值信息，适用于需要分析设备地磁校准偏差的场景。
+订阅未校准地磁传感器数据。使用callback异步回调。未校准地磁传感器与地磁传感器的区别在于，其上报的偏移值(biasX/biasY/biasZ)未经系统校准补偿，适用于需要获取原始磁场数据或自行实现校准算法的场景。与sensor.on('SensorId.MAGNETIC\_FIELD')相比，本接口额外提供偏移值信息，适用于需要分析设备地磁校准偏差的场景。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -798,7 +798,7 @@ try {
 
 on(type: SensorId.ORIENTATION, callback: Callback<OrientationResponse>, options?: Options): void
 
-订阅方向传感器数据。方向传感器用于测量设备绕Z轴旋转的角度(alpha)、绕X轴旋转的角度(beta)和绕Y轴旋转的角度(gamma)，适用于屏幕旋转、指南针、姿态感知等场景。调用后，系统会按设定频率通过callback持续上报方向数据。调用本接口的应用或服务可以通过提示用户使用8字校准法来提高应用获取的方向传感器的精度，此传感器理论误差正负5度，具体的精度根据不同的驱动及算法实现可能存在差异。
+订阅方向传感器数据。使用callback异步回调。方向传感器用于测量设备绕Z轴旋转的角度(alpha)、绕X轴旋转的角度(beta)和绕Y轴旋转的角度(gamma)，适用于屏幕旋转、指南针、姿态感知等场景。调用后，系统会按设定频率通过callback持续上报方向数据。调用本接口的应用或服务可以通过提示用户使用8字校准法来提高应用获取的方向传感器的精度，此传感器理论误差正负5度，具体的精度根据不同的驱动及算法实现可能存在差异。
 
 **说明** 
 
@@ -853,7 +853,7 @@ try {
 
 on(type: SensorId.PEDOMETER, callback: Callback<PedometerResponse>, options?: Options): void
 
-订阅计步器传感器数据。计步器传感器用于统计用户的步行步数，适用于运动追踪、健康管理等场景。计步传感器数据上报有一定延迟，延迟时间由具体的实现产品决定。调用后，系统会按设定频率通过callback持续上报步数数据。
+订阅计步器传感器数据。使用callback异步回调。计步器传感器用于统计用户的步行步数，适用于运动追踪、健康管理等场景。计步传感器数据上报有一定延迟，延迟时间由具体的实现产品决定。调用后，系统会按设定频率通过callback持续上报步数数据。
 
 **说明** 
 
@@ -907,7 +907,7 @@ try {
 
 on(type: SensorId.PEDOMETER\_DETECTION, callback: Callback<PedometerDetectionResponse>, options?: Options): void
 
-订阅计步检测器传感器数据。计步检测器传感器用于检测用户是否发生了计步事件（如迈步动作），适用于需要实时检测步行状态的场景。与sensor.on('SensorId.PEDOMETER')相比，本接口上报的是计步事件标量而非累计步数，适用于需要检测单步事件的场景。
+订阅计步检测器传感器数据。使用callback异步回调。计步检测器传感器用于检测用户是否发生了计步事件（如迈步动作），适用于需要实时检测步行状态的场景。与sensor.on('SensorId.PEDOMETER')相比，本接口上报的是计步事件标量而非累计步数，适用于需要检测单步事件的场景。
 
 **需要权限**：ohos.permission.ACTIVITY\_MOTION
 
@@ -957,7 +957,7 @@ try {
 
 on(type: SensorId.PROXIMITY, callback: Callback<ProximityResponse>, options?: Options): void
 
-订阅接近光传感器数据。接近光传感器用于检测物体与设备的距离状态，常用于通话时自动关闭屏幕以防止误触。当接近光事件被触发得较为频繁时，可通过options参数限定事件上报频率。调用后，系统会通过callback持续上报接近状态数据。
+订阅接近光传感器数据。使用callback异步回调。接近光传感器用于检测物体与设备的距离状态，常用于通话时自动关闭屏幕以防止误触。当接近光事件被触发得较为频繁时，可通过options参数限定事件上报频率。调用后，系统会通过callback持续上报接近状态数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -967,7 +967,7 @@ on(type: SensorId.PROXIMITY, callback: Callback<ProximityResponse>, options?: Op
 | --- | --- | --- | --- |
 | type | [SensorId](js-apis-sensor.md#sensorid9).PROXIMITY | 是 | 传感器类型，该值固定为SensorId.PROXIMITY。 |
 | callback | Callback<[ProximityResponse](js-apis-sensor.md#proximityresponse)> | 是 | 回调函数，异步上报的传感器数据固定为ProximityResponse。 |
-| options | [Options](js-apis-sensor.md#options) | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns（即200ms）。当接近光事件被触发的很频繁时，该参数用于限定事件上报的频率。 |
+| options | [Options](js-apis-sensor.md#options) | 否 | 可选参数列表，用于设置传感器上报频率，默认值为200000000ns（即200ms）。当接近光事件被触发得很频繁时，该参数用于限定事件上报的频率。 |
 
 **错误码**：
 
@@ -1004,7 +1004,7 @@ try {
 
 on(type: SensorId.ROTATION\_VECTOR, callback: Callback<RotationVectorResponse>, options?: Options): void
 
-订阅旋转矢量传感器数据。旋转矢量传感器用于表示设备的姿态旋转，数据由X、Y、Z分量和标量W组成，可用于设备姿态估计、AR/VR场景等。调用后，系统会按设定频率通过callback持续上报旋转矢量数据。
+订阅旋转矢量传感器数据。使用callback异步回调。旋转矢量传感器用于表示设备的姿态旋转，数据由X、Y、Z分量和标量W组成，可用于设备姿态估计、AR/VR场景等。调用后，系统会按设定频率通过callback持续上报旋转矢量数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -1052,7 +1052,7 @@ try {
 
 on(type: SensorId.SIGNIFICANT\_MOTION, callback: Callback<SignificantMotionResponse>, options?: Options): void
 
-订阅有效运动传感器数据，用于检测用户拿起设备、明显移动或剧烈摇晃等有效运动事件。适用于需要根据用户活动状态唤醒设备、启动应用或切换模式的场景。调用后，系统会通过callback持续上报有效运动事件数据。
+订阅有效运动传感器数据，用于检测用户拿起设备、明显移动或剧烈摇晃等有效运动事件。使用callback异步回调。适用于需要根据用户活动状态唤醒设备、启动应用或切换模式的场景。调用后，系统会通过callback持续上报有效运动事件数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -1097,7 +1097,7 @@ try {
 
 on(type: SensorId.WEAR\_DETECTION, callback: Callback<WearDetectionResponse>, options?: Options): void
 
-订阅佩戴检测传感器数据。佩戴检测传感器用于检测设备是否被用户佩戴，适用于智能手表等可穿戴设备的佩戴状态检测，以便自动切换工作模式。调用后，系统会按设定频率通过callback持续上报佩戴状态数据。
+订阅佩戴检测传感器数据。使用callback异步回调。佩戴检测传感器用于检测设备是否被用户佩戴，适用于智能手表等可穿戴设备的佩戴状态检测，以便自动切换工作模式。调用后，系统会按设定频率通过callback持续上报佩戴状态数据。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -1142,7 +1142,7 @@ try {
 
 on(type: 'sensorStatusChange', callback: Callback<SensorStatusEvent>): void
 
-监听传感器上线下线状态的变化，callback返回传感器状态事件数据。适用于需要感知传感器设备动态上下线的场景，如远程传感器连接或断开时自动更新传感器列表或订阅状态。
+监听传感器上线下线状态的变化。使用callback异步回调。适用于需要感知传感器设备动态上下线的场景，如远程传感器连接或断开时自动更新传感器列表或订阅状态。
 
 **系统能力**：SystemCapability.Sensors.Sensor
 
@@ -6473,7 +6473,7 @@ try {
 | HALL | 10 | 霍尔传感器类型，用于检测设备周围是否存在磁力吸引。 |
 | PROXIMITY | 12 | 接近光传感器类型，用于检测物体与设备显示器的接近程度。 |
 | HUMIDITY | 13 | 湿度传感器类型，用于测量环境的相对湿度。 |
-| ORIENTATION | 256 | 方向传感器类型，用于测量设备的旋转方向角度。  **元服务API**：从API version 11开始，该接口在支持元服务中使用。 |
+| ORIENTATION | 256 | 方向传感器类型，用于测量设备的旋转方向角度。  **元服务API**：从API version 11开始，该接口支持在元服务中使用。 |
 | GRAVITY | 257 | 重力传感器类型，用于测量设备的重力加速度。 |
 | LINEAR\_ACCELEROMETER | 258 | 线性加速度传感器类型，用于测量设备排除重力后的线性加速度。 |
 | ROTATION\_VECTOR | 259 | 旋转矢量传感器类型，用于描述设备相对于参考方向的旋转状态。 |
@@ -6909,7 +6909,7 @@ type SensorFrequency = 'game' | 'ui' | 'normal'
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_ACCELEROMETER, callback: Callback<AccelerometerResponse>,options?: Options): void
 
-监听加速度传感器的数据变化。适用于需要感知设备运动状态、实现屏幕旋转或游戏操控的场景。如果多次调用该接口，仅最后一次调用生效。
+监听加速度传感器的数据变化。使用callback异步回调。适用于需要感知设备运动状态、实现屏幕旋转或游戏操控的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -6945,7 +6945,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER, (data: sensor.Accelero
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_LINEAR\_ACCELERATION,callback:Callback<LinearAccelerometerResponse>, options?: Options): void
 
-监听线性加速度传感器的数据变化。适用于需要获取排除重力影响的线性加速度数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听线性加速度传感器的数据变化。使用callback异步回调。适用于需要获取排除重力影响的线性加速度数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -6967,7 +6967,7 @@ on(type: SensorType.SENSOR\_TYPE\_ID\_LINEAR\_ACCELERATION,callback:Callback<Lin
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_ACCELEROMETER\_UNCALIBRATED,callback: Callback<AccelerometerUncalibratedResponse>, options?: Options): void
 
-监听未校准加速度传感器的数据变化。适用于需要获取包含偏差校准数据的加速度原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听未校准加速度传感器的数据变化。使用callback异步回调。适用于需要获取包含偏差校准数据的加速度原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7006,7 +7006,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, (data: se
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_GRAVITY, callback: Callback<GravityResponse>,options?: Options): void
 
-监听重力传感器的数据变化。适用于需要感知设备重力方向的场景。如果多次调用该接口，仅最后一次调用生效。
+监听重力传感器的数据变化。使用callback异步回调。适用于需要感知设备重力方向的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7040,7 +7040,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GRAVITY, (data: sensor.GravityRespons
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_GYROSCOPE, callback: Callback<GyroscopeResponse>, options?: Options): void
 
-监听陀螺仪传感器的数据变化。适用于需要感知设备旋转角速度的场景。如果多次调用该接口，仅最后一次调用生效。
+监听陀螺仪传感器的数据变化。使用callback异步回调。适用于需要感知设备旋转角速度的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7076,7 +7076,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE, (data: sensor.GyroscopeRes
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_GYROSCOPE\_UNCALIBRATED,callback:Callback<GyroscopeUncalibratedResponse>, options?: Options): void
 
-监听未校准陀螺仪传感器的数据变化。适用于需要获取包含偏差校准数据的陀螺仪原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听未校准陀螺仪传感器的数据变化。使用callback异步回调。适用于需要获取包含偏差校准数据的陀螺仪原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7115,7 +7115,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_GYROSCOPE_UNCALIBRATED, (data: sensor
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_SIGNIFICANT\_MOTION, callback: Callback<SignificantMotionResponse>, options?: Options): void
 
-监听有效运动传感器数据变化。适用于需要检测设备是否有显著运动的场景。如果多次调用该接口，仅最后一次调用生效。
+监听有效运动传感器数据变化。使用callback异步回调。适用于需要检测设备是否有显著运动的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7147,7 +7147,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, (data: sensor.Sig
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_PEDOMETER\_DETECTION, callback: Callback<PedometerDetectionResponse>, options?: Options): void
 
-监听计步检测传感器的数据变化。适用于需要检测用户是否在行走的场景。如果多次调用该接口，仅最后一次调用生效。
+监听计步检测传感器的数据变化。使用callback异步回调。适用于需要检测用户是否在行走的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7181,7 +7181,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER_DETECTION, (data: sensor.Pe
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_PEDOMETER, callback: Callback<PedometerResponse>, options?: Options): void
 
-监听计步传感器的数据变化。适用于需要获取用户步数数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听计步传感器的数据变化。使用callback异步回调。适用于需要获取用户步数数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7215,7 +7215,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER, (data: sensor.PedometerRes
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_AMBIENT\_TEMPERATURE, callback:Callback<AmbientTemperatureResponse>, options?: Options): void
 
-监听环境温度传感器的数据变化。适用于需要感知环境温度的场景。如果多次调用该接口，仅最后一次调用生效。
+监听环境温度传感器的数据变化。使用callback异步回调。适用于需要感知环境温度的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7247,7 +7247,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_TEMPERATURE, (data: sensor.Am
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_MAGNETIC\_FIELD, callback: Callback<MagneticFieldResponse>,options?: Options): void
 
-监听磁场传感器的数据变化。适用于需要感知设备周围磁场强度与方向的场景。如果多次调用该接口，仅最后一次调用生效。
+监听磁场传感器的数据变化。使用callback异步回调。适用于需要感知设备周围磁场强度与方向的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7281,7 +7281,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, (data: sensor.Magneti
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_MAGNETIC\_FIELD\_UNCALIBRATED, callback: Callback<MagneticFieldUncalibratedResponse>, options?: Options): void
 
-监听未校准磁场传感器的数据变化。适用于需要获取包含偏差校准数据的磁场原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听未校准磁场传感器的数据变化。使用callback异步回调。适用于需要获取包含偏差校准数据的磁场原始数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7318,7 +7318,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, (data: s
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_PROXIMITY, callback: Callback<ProximityResponse>,options?: Options): void
 
-监听接近光传感器的数据变化。适用于需要感知设备前方是否有物体靠近的场景。如果多次调用该接口，仅最后一次调用生效。
+监听接近光传感器的数据变化。使用callback异步回调。适用于需要感知设备前方是否有物体靠近的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7350,7 +7350,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_PROXIMITY, (data: sensor.ProximityRes
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_HUMIDITY, callback: Callback<HumidityResponse>,options?: Options): void
 
-监听湿度传感器的数据变化。适用于需要感知环境湿度的场景。如果多次调用该接口，仅最后一次调用生效。
+监听湿度传感器的数据变化。使用callback异步回调。适用于需要感知环境湿度的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7382,7 +7382,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_HUMIDITY, (data: sensor.HumidityRespo
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_BAROMETER, callback: Callback<BarometerResponse>,options?: Options): void
 
-监听气压计传感器的数据变化。适用于需要感知环境气压的场景。如果多次调用该接口，仅最后一次调用生效。
+监听气压计传感器的数据变化。使用callback异步回调。适用于需要感知环境气压的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7414,7 +7414,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_BAROMETER, (data: sensor.BarometerRes
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_HALL, callback: Callback<HallResponse>, options?: Options): void
 
-监听霍尔传感器的数据变化。适用于需要检测设备翻盖或磁铁状态的场景。如果多次调用该接口，仅最后一次调用生效。
+监听霍尔传感器的数据变化。使用callback异步回调。适用于需要检测设备翻盖或磁铁状态的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7446,7 +7446,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_HALL, (data: sensor.HallResponse) => 
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_AMBIENT\_LIGHT, callback: Callback<LightResponse>, options?: Options): void
 
-监听环境光传感器的数据变化。适用于需要感知环境光照强度的场景。如果多次调用该接口，仅最后一次调用生效。
+监听环境光传感器的数据变化。使用callback异步回调。适用于需要感知环境光照强度的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7478,7 +7478,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_AMBIENT_LIGHT, (data: sensor.LightRes
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_ORIENTATION, callback: Callback<OrientationResponse>, options?: Options): void
 
-监听方向传感器的数据变化。适用于需要感知设备姿态方向的场景。如果多次调用该接口，仅最后一次调用生效。
+监听方向传感器的数据变化。使用callback异步回调。适用于需要感知设备姿态方向的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7512,7 +7512,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ORIENTATION, (data: sensor.Orientatio
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_HEART\_RATE, callback: Callback<HeartRateResponse>, options?: Options): void
 
-监听心率传感器的数据变化。适用于需要获取用户心率数据的场景。如果多次调用该接口，仅最后一次调用生效。
+监听心率传感器的数据变化。使用callback异步回调。适用于需要获取用户心率数据的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7534,7 +7534,7 @@ on(type: SensorType.SENSOR\_TYPE\_ID\_HEART\_RATE, callback: Callback<HeartRateR
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_ROTATION\_VECTOR, callback: Callback<RotationVectorResponse>,options?: Options): void
 
-监听旋转矢量传感器的数据变化。适用于需要感知设备三维空间旋转状态的场景。如果多次调用该接口，仅最后一次调用生效。
+监听旋转矢量传感器的数据变化。使用callback异步回调。适用于需要感知设备三维空间旋转状态的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 
@@ -7569,7 +7569,7 @@ sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, (data: sensor.Rotati
 
 on(type: SensorType.SENSOR\_TYPE\_ID\_WEAR\_DETECTION, callback: Callback<WearDetectionResponse>,options?: Options): void
 
-监听所佩戴的检测传感器的数据变化。适用于需要检测设备是否被佩戴的场景。如果多次调用该接口，仅最后一次调用生效。
+监听所佩戴的检测传感器的数据变化。使用callback异步回调。适用于需要检测设备是否被佩戴的场景。如果多次调用该接口，仅最后一次调用生效。
 
 **说明** 
 

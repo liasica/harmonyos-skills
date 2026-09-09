@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 应用冻屏事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用冻屏事件 > 应用冻屏事件介绍
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:39+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:46+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:99fbe248e02e04af8fd00ceca6b6ddd0f6800eefa31f8c5724033eaeb66b5f2d
 ---
 

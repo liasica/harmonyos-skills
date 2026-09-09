@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: HapModuleInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > HapModuleInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1fbf376ce6f45f79b4d3108ef6c5e4a7fd3bf2e7da43c05cecda6bc48304ce17
 ---
 

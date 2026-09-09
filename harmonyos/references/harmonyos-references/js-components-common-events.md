@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用事件
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ffa1eeac634b7ae2de4d1246de7c70b1ea079b3a31cb76a881bd0915e17b3e52
 ---
 

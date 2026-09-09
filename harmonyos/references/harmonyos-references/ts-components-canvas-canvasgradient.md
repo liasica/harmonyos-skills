@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: CanvasGradient
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasGradient
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:22+08:00
+scraped_at: 2026-09-10T06:25:36+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:046d7f10854db7a5de3de77cd2a413eb3c2b5d1fea5147481d7590073894e8db
+content_hash: sha256:e641610eb84f2d6026c4f580b899d614e0f6463ba1852c4272401b57fad52e2f
 ---
 
 渐变对象，可通过addColorStop方法设置多个颜色断点，实现平滑的颜色过渡，适用于Canvas填充和描边等场景。
@@ -66,7 +66,7 @@ struct AddColorStop {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/YAa1-VbsTdi0QRSRiIqWLA/zh-cn_image_0000002712246356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/IbawAWgKSpuIlOyp8alU8A/zh-cn_image_0000002717772900.png)
 
 ## addColorStop20+
 
@@ -157,7 +157,7 @@ struct AddColorStop {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/sMSNn57qSEGKxQdBiQ27FQ/zh-cn_image_0000002742005305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/fm_60NOcQo-qls7DTDb1gA/zh-cn_image_0000002717612968.png)
 
 以下示例演示SDR与HDR渐变的亮度差异。通过[ColorMetrics](js-apis-arkui-graphics.md#colormetrics12)可以构造BT2020色域的HDR颜色，颜色分量值可以超过1.0，超过1.0的部分用于表现超出普通屏幕亮度范围的高亮效果。左侧使用sRGB色域的红->白->绿渐变，右侧使用BT2020色域的HDR颜色且高光白色亮度倍数达到1.5，在支持HDR的屏幕上右侧高光区域明显比左侧更亮。
 
@@ -231,4 +231,4 @@ struct CanvasGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/WRo3XOckQDyL5xK6RJRDbA/zh-cn_image_0000002712406316.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/_sGHZbZYS0yen3dbwUxPmA/zh-cn_image_0000002747292921.png)

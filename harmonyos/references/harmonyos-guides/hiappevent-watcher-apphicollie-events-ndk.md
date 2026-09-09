@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅任务执行超时事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 任务执行超时事件 > 订阅任务执行超时事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:39+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e0f8bf9121cd87078fce4f5f4b684e71511dbd9ae3141b46689e8c8e18517b1d
 ---
 

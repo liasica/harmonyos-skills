@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioSessionManager)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioSessionManager)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:01+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a8902548978c1b5675e37d19aa61fcf3a4953afe957b3ec0eea6da79c79ef942
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.wifiManager（Wi-Fi管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.wifiManager（Wi-Fi管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e3d51e5a6aed6df263586ccf269475309e238a398eecbb81baefe86c4dab0bf5
 ---
 

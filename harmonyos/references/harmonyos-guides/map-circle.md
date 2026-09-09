@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-circle
 title: 圆形
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 圆形
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:13+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:3761e3e95a761a8104487d9cdcad8679c4e7d564e34866e834e2e8aeb09cbc47
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:09debdfa18adebdd749e364e37c33cfa6b49dade879f5b157ce3953e10e9bba3
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:3761e3e95a761a8104487d9cdcad8679c4e7d564e34866e834e2e8aeb09
 
 圆形通常用于表示特定区域的服务覆盖范围、地理围栏或兴趣点的影响区域。通过设置中心点和半径，可以直观地展示某一地点周边一定距离内的范围。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/IeALblZxQyCo6x8dFZGDlg/zh-cn_image_0000002712245304.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/goun-t9RQFOjksSCyRJ1Qg/zh-cn_image_0000002717771848.jpg "点击放大")
 
 ## 接口说明
 
@@ -96,4 +96,4 @@ content_hash: sha256:3761e3e95a761a8104487d9cdcad8679c4e7d564e34866e834e2e8aeb09
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/LdIMZXKaSvuHunUHIp9JNQ/zh-cn_image_0000002742004253.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/N85Ze2LXSUqSgPq1NwoKFQ/zh-cn_image_0000002717611916.jpg "点击放大")

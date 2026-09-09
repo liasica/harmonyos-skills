@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-fa
 title: 人脸跟踪（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人脸识别与跟踪 > 人脸跟踪（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:49+08:00
-doc_updated_at: 2026-08-14
+scraped_at: 2026-09-10T06:23:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:aabed61beadb7232397d760a531b08c5af9e3fbbb990296079eb74ee5bc92a1b
 ---
 

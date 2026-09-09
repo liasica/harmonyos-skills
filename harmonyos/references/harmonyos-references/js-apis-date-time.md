@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.systemDateTime (系统时间、时区)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 其他 > @ohos.systemDateTime (系统时间、时区)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:04+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:16df30c843bdf23defe516235982cb1577c145174735c16832b374b03ad3ec66
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.ble (蓝牙ble模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.ble (蓝牙ble模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:49+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0f374d681f682ad51b2241066c3ec09823375e8bee0e241e5c8248c6a95d1639
+scraped_at: 2026-09-10T06:27:02+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:dd46dbf72bfd13d121e4e60ae6068f68e69cb766ee4a0d48a434a1a5b9892484
 ---
 
 本模块提供了基于低功耗蓝牙（Bluetooth Low Energy，[BLE](../harmonyos-guides/terminology.md#ble)）技术的蓝牙能力，支持发起BLE扫描、发送BLE广播报文、以及基于通用属性协议（Generic Attribute Profile，[GATT](../harmonyos-guides/terminology.md#gatt)）的连接和传输数据。适用于智能穿戴设备、健康监测、物联网设备互联等低功耗短距离无线通信场景，有助于降低设备功耗、延长续航时间。
@@ -152,6 +152,7 @@ createGattClientDevice(deviceId: string, setting: GattSetting): GattClientDevice
 * 通过该实例可以操作client端行为，如调用[connect](js-apis-bluetooth-ble.md#connect)向对端设备发起连接，调用[getServices](js-apis-bluetooth-ble.md#getservices)获取对端设备支持的所有服务能力。
 * 创建该实例所需要的设备地址表示server端设备。可以通过[ble.startBLEScan](js-apis-bluetooth-ble.md#blestartblescan)或[BleScanner](js-apis-bluetooth-ble.md#blescanner15)的[startScan](js-apis-bluetooth-ble.md#startscan15)接口获取server端设备地址，且需保证server端设备的BLE广播是可连接的。
 * 通过[GattSetting](js-apis-bluetooth-ble.md#gattsetting)设置连接的传输类型transport时，若不清楚设备的传输类型[BluetoothTransport](js-apis-bluetooth-connection.md#bluetoothtransport)，默认为[TRANSPORT\_LE](js-apis-bluetooth-connection.md#bluetoothtransport)，但不能设置为[TRANSPORT\_UNKNOWN](js-apis-bluetooth-connection.md#bluetoothtransport)（未知的设备传输方式），否则无法成功创建[GattClientDevice](js-apis-bluetooth-ble.md#gattclientdevice)实例。
+* 若支持远端设备可用时自动连接，即GattSetting参数autoConnect设为true时，对端的[蓝牙设备地址类型](../harmonyos-guides/bluetooth-overview.md#蓝牙设备地址类型)须为Public Address（公共设备地址）、Static Random Address（静态随机地址）或者是通过[connection.pairDevice](js-apis-bluetooth-connection.md#connectionpairdevice)配对后的Resolvable Private Address（可解析私有地址）。未配对的Resolvable Private Address（可解析私有地址）不支持远端设备可用时自动连接，调用connect也无法连接到对端设备。
 
 **起始版本**：26.0.0
 
@@ -4105,6 +4106,7 @@ setBLEMtuSize(mtu: number): void
 client端同server端协商[MTU](../harmonyos-guides/terminology.md#mtu)（最大传输单元）大小。
 
 * 需先调用[connect](js-apis-bluetooth-ble.md#connect)方法，等GATT profile连接成功后才能使用。
+* 应用调用该接口后，本端设备会向对端设备发起MTU协商请求。
 * 通过[on('BLEMtuChange')](js-apis-bluetooth-ble.md#onblemtuchange-1)，订阅MTU协商结果。
 * 如果未协商，MTU大小默认为23字节。
 
@@ -4153,6 +4155,7 @@ setBLEMtu(mtu: number): Promise<number>
 client端同server端协商[MTU](../harmonyos-guides/terminology.md#mtu)（最大传输单元）大小。与[setBLEMtuSize](js-apis-bluetooth-ble.md#setblemtusize)相比，本接口直接通过Promise返回实际协商成功的MTU结果，无需额外订阅[on('BLEMtuChange')](js-apis-bluetooth-ble.md#onblemtuchange-1)事件获取协商结果。
 
 * 需先调用[connect](js-apis-bluetooth-ble.md#connect-1)方法，等GATT profile连接成功后才能使用。
+* 应用调用该接口后，本端设备会向对端设备发起MTU协商请求。
 * 需保证入参符合取值范围，不在取值范围内会直接返回异常。
 * 如果未协商，MTU大小默认为23字节。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appkilled-gui
 title: App Killed（应用终止）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > App Killed（应用终止）检测
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:10+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8bfda97a9630791b882d9ddcbb17cd8b78f9d5070d2a5f2ecb8e83ade116c576
 ---
 

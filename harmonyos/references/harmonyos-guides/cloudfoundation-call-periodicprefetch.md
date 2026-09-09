@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 调用周期性预加载
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 调用预加载 > 调用周期性预加载
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:54+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:63c34386879c9ea03f301fa10f651bbcd5406c03a9bb22d870df21820dfc8d42
 ---
 

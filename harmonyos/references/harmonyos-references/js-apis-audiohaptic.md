@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.multimedia.audioHaptic (音振协同)"
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audioHaptic (音振协同)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c255547177f5f96d64560de7b20aa3ff4aaa1fa0a33e7f36e6f105736530ae38
 ---
 

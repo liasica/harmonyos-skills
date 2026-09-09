@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/volume-manage
 title: 播放音量管理
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 播放音量管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:22:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9ba53426688da9b3f36a38f7897cea63432e459fd6aad481aebf436e22051f89
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AtomicServiceBar)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Interface (AtomicServiceBar)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:781ccd9733f8b86e5c205b5f2a934e5dba65c6640806d5be9e0110065a5e7555
 ---
 

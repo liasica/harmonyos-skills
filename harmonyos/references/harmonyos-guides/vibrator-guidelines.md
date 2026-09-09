@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guid
 title: 振动开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:048e061257975541784782f0ff89cec6916a7ee43738fb146355eefa078d3fdf
+scraped_at: 2026-09-10T06:22:44+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:f9c14f2d2cb7f8e85393eec97a38ea54dc71a74bcb79e0d3b1085fae21bc87c4
 ---
 
 ## 场景介绍
@@ -29,8 +29,8 @@ content_hash: sha256:048e061257975541784782f0ff89cec6916a7ee43738fb146355eefa078
 | isSupportEffect(effectId: string, callback: AsyncCallback<boolean>): void | 查询是否支持传入的参数effectId。返回true则表示支持，否则不支持，使用Callback异步回调。 |
 | getEffectInfoSync(effectId: string, param?: VibratorInfoParam): EffectInfo | 同步查询是否支持传入的参数effectId，param可指定具体马达。返回EffectInfo中isEffectSupported字段可判断是否支持。 |
 | getVibratorInfoSync(param?: VibratorInfoParam): Array<VibratorInfo> | 同步查询一个或所有设备的马达信息列表。返回VibratorInfo包含设备ID、马达ID、设备名称、是否支持高清振动、是否本地设备等信息。 |
-| on(type: 'vibratorStateChange', callback: Callback<VibratorStatusEvent>): void | 注册马达设备上线下状态变化的监听。callback参数VibratorStatusEvent可返回事件时间戳、设备ID、马达数量、上线或下线等信息。 |
-| off(type: 'vibratorStateChange', callback?: Callback<VibratorStatusEvent>): void | 注销马达设备上线下状态变化的监听。 |
+| on(type: 'vibratorStateChange', callback: Callback<VibratorStatusEvent>): void | 注册马达设备上下线状态变化的监听。callback参数VibratorStatusEvent可返回事件时间戳、设备ID、马达数量、上线或下线等信息。 |
+| off(type: 'vibratorStateChange', callback?: Callback<VibratorStatusEvent>): void | 注销马达设备上下线状态变化的监听。 |
 | isHdHapticSupported(): boolean | 查询是否支持高清振动。 |
 
 ## 振动效果说明
@@ -160,7 +160,7 @@ JSON文件共包含3个属性。
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/mee8r3ihQUmj9LT1slIQEw/zh-cn_image_0000002742123565.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ZdgYIWDfT-inks36-E8F_g/zh-cn_image_0000002747211141.png)
 2. 配置权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5
@@ -498,7 +498,7 @@ JSON文件共包含3个属性。
                }
    ```
 
-   取消监听,取消传入的callback需与注册的一致。
+   取消监听，取消传入的callback需与注册的一致。
 
    ```typescript
    // 回调函数

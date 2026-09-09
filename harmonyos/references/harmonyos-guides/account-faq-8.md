@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-8
 title: 无法获取到头像昵称如何解决
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 无法获取到头像昵称如何解决
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:23+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e90749e2840122144cda0400774c0c0b3245c304e760956a15fa07c81a758efe
 ---
 

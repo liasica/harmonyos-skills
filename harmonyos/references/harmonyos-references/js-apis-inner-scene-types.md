@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: SceneType
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d > SceneType
 category: harmonyos-references
-scraped_at: 2026-09-05T06:20:46+08:00
+scraped_at: 2026-09-10T06:29:01+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4de8a74382ba434700c3c3ce72d272d2779198db19be570b9fe2a660f48096ef
+content_hash: sha256:4754da34da6017758770677cb6271af7bd3c4320fa6d0171de742273ff3c4072
 ---
 
 本模块提供ArkGraphics 3D中常用的数据类型。
@@ -230,7 +230,7 @@ import { Vec2, Vec3, Vec4, Quaternion, Aabb, Color, Rect, RenderingPipelineType,
 
 以radius=0.5，height=1，segmentCount=20为例，生成圆柱体的网格以及UV布局如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/W3UtMk82QXeysQ669_od_A/zh-cn_image_0000002742126313.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/N-ZLQfy6Qw29f3cRHHl5Cg/zh-cn_image_0000002747213821.png)
 
 ## Mat4x423+
 

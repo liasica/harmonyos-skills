@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: "@Component：自定义组件"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件装饰器 > @Component：自定义组件
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3200889424a80beee95ba92762f1136c96ab2be5e4d01dbdf4100b5332fc7bd5
 ---
 

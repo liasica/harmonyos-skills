@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 预览流二次处理(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 预览流二次处理(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7999de3f848589dfc2c2df9223e84a1e9c28f6e6bce2ff40789e59fe255168ae
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸测试控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 触摸交互控制 > 触摸测试控制
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:791a2c86383d30f57a0d41917f7c93dbedce5839416e6653853a7736a934abdf
 ---
 

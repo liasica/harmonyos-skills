@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片Push刷新
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > ArkTS卡片Push刷新
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:19+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d962221bb4b4958bc9df893af61257b3531836c0975c40daac3f46a2e7d2009e
 ---
 

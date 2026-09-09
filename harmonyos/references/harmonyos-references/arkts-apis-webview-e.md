@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:98fed077000ef7fd382a6aadc77091c4e40553b01b0ecb0cb97ed8035a4c51ea
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-scala
 title: Adds
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 标量双目指令 > Adds
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:22+08:00
+scraped_at: 2026-09-10T06:23:37+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:6aebf220bd5a3aee3e0481ced423db5470c0944aefa736ddcfe6548e9e5aa68d
+content_hash: sha256:148f64a5c7f6d2b5df8b9070d7d93de958660b83cc712c697f50a2cdca1c2176
 ---
 
 ## 功能说明
 
 矢量内每个元素与标量求和，计算公式如下，其中PAR表示矢量计算单元一个迭代能够处理的元素个数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/vMOmgQmHRX6vU3JAqO69oA/zh-cn_image_0000002747212051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/pfAWeXgqQBidMHuJ-f-ONA/zh-cn_image_0000002747212051.png)
 
 ## 函数原型
 

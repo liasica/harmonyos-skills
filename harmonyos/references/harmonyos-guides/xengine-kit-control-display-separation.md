@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-c
 title: 控显分离
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 控显分离
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:00+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:3f8bf7831d1e83d7fe77e2c896e545f483b8d8fdca894f758a70da25f864a4a8
+scraped_at: 2026-09-10T06:23:08+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:c30059294c0027421938cd35dbd3fc9bb7eceb92b7b99da906b280fff0b6f8fb
 ---
 
 从API版本26.0.0开始，新增控显分离特性。
@@ -31,7 +31,7 @@ XEngine Kit针对折叠屏设备推出“控显分离”创新方案。在设备
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/orItYLfYRYOcS-kxI_KIEQ/zh-cn_image_0000002742003945.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/vJlaBXsnSUiy7t5tJvn1Wg/zh-cn_image_0000002717611608.jpg)
 
 1. 环境配置：游戏应用需首先在module.json5配置文件中声明控显分离特性，以启用系统级的适配能力。
 2. 设置特性的监听回调函数：用户点击启动游戏后，应用调用[HMS\_XEG\_SetControlDisplaySeparationStatusListener](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_setcontroldisplayseparationstatuslistener)设置控显分离特性监听函数，返回值为true时，展示特性开关；否则不展示特性开关。

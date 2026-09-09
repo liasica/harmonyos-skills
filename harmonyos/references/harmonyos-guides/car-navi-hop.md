@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-navi-hop
 title: 导航流转至车机
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 实现车机导航流转 > 导航流转至车机
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:35+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:df9d47cf78caab8e431d68f3c3f2c45209e6512018db54b636d681348a577e76
+scraped_at: 2026-09-10T06:22:42+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:a9e33970a278b51313e381a7a6d8123fb19484135a3a7ab8589d64ffcd1eaea7
 ---
 
 ## 场景介绍
@@ -14,13 +14,13 @@ content_hash: sha256:df9d47cf78caab8e431d68f3c3f2c45209e6512018db54b636d681348a5
 
 * 碰一碰导航流转：用户在手机地图的指定页面中（地图选点页面、规划路线页面、驾车导航页面），与车机中控屏指定区域碰一碰后，将手机上的导航数据流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/nM5_4jnwSEqeyzT2dFuIpw/zh-cn_image_0000002712244636.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kbhHmfJeSWysi5q_5QiGVA/zh-cn_image_0000002717771190.png)
 * 上车导航自动流转：用户使用手机地图应用发起驾车导航后上车，手机上的导航数据会自动流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/b9jRp--qQHqxIILQP_kAfQ/zh-cn_image_0000002742003589.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/GxbiC-LzSe6XZvQKNeOGWA/zh-cn_image_0000002717611256.png)
 * 车内导航自动流转：用户在车内，使用手机地图应用发起驾车导航，手机上的导航数据会自动流转至车机。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/A0-kttQuQkCJifQp8qHuhA/zh-cn_image_0000002712404602.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ydqhuhQWT_yFJKMrI7Lhzw/zh-cn_image_0000002747291209.png)
 
 ## 接口说明
 
@@ -44,7 +44,7 @@ SmartMobilityEvent事件名（eventName）取值如下：
 
 ## 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/hkqXt4XjS-KS2ppAG3yFbg/zh-cn_image_0000002742123551.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/XusBr1KxS4SeBvwHJ9H1_g/zh-cn_image_0000002747211127.png)
 
 ## 开发步骤
 

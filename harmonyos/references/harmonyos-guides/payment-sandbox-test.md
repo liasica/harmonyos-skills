@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-sandb
 title: 沙盒环境验证
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 沙盒环境验证
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:59+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f89a0fd0a64ca7930b51d7ce48376d53e72a8c0e3943e731d185b0a4f431698b
 ---
 

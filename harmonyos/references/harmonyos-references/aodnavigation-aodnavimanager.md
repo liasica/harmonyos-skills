@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/aodnaviga
 title: aodNaviManager (熄屏导航服务)
 breadcrumb: API参考 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > ArkTS API > aodNaviManager (熄屏导航服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7dbb94e2c01abbc5dce83d880e14cf5f96769df7e6b586ce82cb3fb4679dae57
 ---
 

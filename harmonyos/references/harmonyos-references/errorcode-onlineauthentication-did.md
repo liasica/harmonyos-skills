@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: DID数字身份服务
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > ArkTS API错误码 > DID数字身份服务
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:29741d247e554a2c720f74420732c5fb5cebd191213ca1a42b379b857b3aae7d
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch
 title: "@Watch装饰器：状态变量更改通知"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Watch装饰器：状态变量更改通知
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:13:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:defeb03d45c0aec84f4934e364346367f7789a8d44ae70f9a4f94bec0c55fd53
+scraped_at: 2026-09-10T06:22:01+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:48891bfe1ac35dc5eaf7bcd824819861b66cf8a7fda3a0fdaba13aac30051de6
 ---
 
 [@Watch](../harmonyos-references/ts-state-management-watch.md#watch)应用于对状态变量的监听。如果开发者需要关注某个状态变量的值是否改变，可以使用@Watch为状态变量设置回调函数。
@@ -141,7 +141,7 @@ struct CountModifier {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/DFv3YvH4RwSytuK2ZwandA/zh-cn_image_0000002742002407.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/6NSXD86ZT7OhY6dW-g2d3g/zh-cn_image_0000002717770014.gif)
 
 处理步骤：
 
@@ -223,7 +223,7 @@ struct BasketModifier {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/1vO4P_0kSfm6IVfdn4fvzg/zh-cn_image_0000002712403416.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/nVXHwJqZRL-mNlPSrpo15A/zh-cn_image_0000002717610080.gif)
 
 ### @Watch的触发时机
 
@@ -342,7 +342,7 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/BFjogXUMRi68k8MeSqQyUg/zh-cn_image_0000002742122369.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/DIsl-gCSTNe-9fNo2S9uSw/zh-cn_image_0000002747290031.gif)
 
 处理步骤如下：
 
@@ -406,7 +406,7 @@ struct UsePropertyName {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/C5MJZke1RliBQEgKLX539g/zh-cn_image_0000002712243458.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/7m_KS4prQ-W-x50S5_LMEg/zh-cn_image_0000002747209949.gif)
 
 处理步骤如下：
 

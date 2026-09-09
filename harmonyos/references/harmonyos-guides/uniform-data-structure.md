@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-
 title: 标准化数据结构 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义 > 标准化数据结构 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:54+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2be3bbdef38b81fb3668472677811920a45002d0a9d28ffe8243ee2072f3ee16
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 请求体结构说明
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 请求体结构说明
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:07+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c2235de5813506ba58bebd72f3ed91cff9169959904c3992faa774909656ef2f
 ---
 

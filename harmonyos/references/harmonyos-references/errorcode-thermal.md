@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 热管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 热管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6758c866294658e32a7e64f33f454ff95e5c918060fe7f0c28f835b82414e6a4
 ---
 

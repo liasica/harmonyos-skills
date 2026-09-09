@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-app-st
 title: 拉起系统应用
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起系统应用
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:10+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:21:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2a719c1a5db0de7bcb1145ab8d424c9ba3241b8fc0ea869b8c18d0f0d5ee1f00
 ---
 

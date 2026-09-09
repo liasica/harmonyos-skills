@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 若开发者在游戏中使用Unity Addressables资源管理框架，如何集成游戏资源包后台下载功能
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏资源加速服务 > 若开发者在游戏中使用Unity Addressables资源管理框架，如何集成游戏资源包后台下载功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-05-08
+scraped_at: 2026-09-10T06:23:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:bb13f5645a2cb7fb0aff7ed4ec560b2d35212f5ea6179c40f0bc5a05ea962374
 ---
 

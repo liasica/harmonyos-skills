@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 一键登录获取华为账号绑定号码和UnionID/OpenID（不推荐）
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 附录 > 一键登录获取华为账号绑定号码和UnionID/OpenID（不推荐）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3ee31037d2850414933b93f28a6b9f6eb4cbea9370d2055b61eceadf89fd7a14
 ---
 

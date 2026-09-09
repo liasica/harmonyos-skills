@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/form-glossary
 title: Form Kit术语
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > Form Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:25+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:887f0ade6b43cc683356776473d9e984d7f62d10c3d583f311d2be2cb50677f4
+scraped_at: 2026-09-10T06:22:20+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:abcdd9fb7c1139e708eb2f3a582efd6c3d3c9721ba82aaf14adb3422ae82ac96
 ---
 
 ## A
@@ -72,7 +72,7 @@ ArkTS卡片的一种类型，仅支持UI组件和布局能力，通过FormLink�
 
 ### Temporary Widget；临时卡片
 
-短期存在的卡片类型，在特定事件或用户行为后显示，完成后自动消失。与常态卡片相对，当前卡片使用方不会使用临时卡片，属于卡片使用方的概念。
+卡片使用方不持久化保存的卡片类型。临时卡片在卡片使用方进程存活期间不会自动销毁，仅在卡片使用方进程退出时由系统自动清理，因此卡片不再使用时需主动删除，若需长期保留则转为常态卡片。与常态卡片相对，属于卡片使用方的概念。
 
 ## W
 

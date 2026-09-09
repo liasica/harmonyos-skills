@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 网络质量评估
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 网络质量 > 网络质量评估
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-07-03
+scraped_at: 2026-09-10T06:22:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5b3913e4c8c077323dec7d2e1f88f0d62757dd6330cfefcf53bfd75cca04de10
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: DatePickerComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > DatePickerComponent
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b49b20fedc5015387f581734fc236f2da2ee69d7161a2518263e3da7fd9750ee
+scraped_at: 2026-09-10T06:25:44+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2a0903480b2790a3e0f47c41332e72cdf4ec185a0462c5b90bb654adc87de8d7
 ---
 
 DatePickerComponent组件用于选择日期（年月日）和时间（时分秒）。
@@ -293,7 +293,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/9PXSa3kMRFOHyIl17_aKDw/zh-cn_image_0000002712246620.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/iClk8KPZSZCBVlxbwxPKvA/zh-cn_image_0000002717773122.gif)
 
 ### 示例2（时间选择器）
 
@@ -330,7 +330,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/lzS_1wmvRKG21UBud-LWaw/zh-cn_image_0000002742005571.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Ure-HycvSd6Y5i62HzuOAw/zh-cn_image_0000002717613190.gif)
 
 ### 示例3（日期时间选择器）
 
@@ -377,7 +377,7 @@ struct DateTimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/HyLrY1raQKm2OqViW9XbJw/zh-cn_image_0000002712406584.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ED5wy6vLSZSFGnpP1wSxug/zh-cn_image_0000002747293143.gif)
 
 ### 示例4（关闭循环模式）
 
@@ -413,4 +413,4 @@ struct NoLoopPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/N4JlvLKLRH-7j6UrDe1JuA/zh-cn_image_0000002742125531.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/vPSiBIdySwK3aBwIpGSFpA/zh-cn_image_0000002747213059.gif)

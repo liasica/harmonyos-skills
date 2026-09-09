@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: BaseContext
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > BaseContext
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:dd54518710fbff3c1d49c8216f33bd9008e4b57a8a959211670955efca3b3542
 ---
 

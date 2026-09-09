@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-confi
 title: 订阅确认发货
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 订阅确认发货
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:56+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:29:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c4e9d18906c784481c09be34944d2b876b8b275e5be920509f8355ebf8a07c15
 ---
 

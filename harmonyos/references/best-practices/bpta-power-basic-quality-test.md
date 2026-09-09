@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-power-basi
 title: 功耗基础质量测试
 breadcrumb: 最佳实践 > 功耗 > 应用功耗检测 > 开发态功耗检测 > 功耗基础质量测试
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
+scraped_at: 2026-09-10T06:30:14+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:83e9c2302d42cf05479ba4a7462ecea43ed037cb0658f6096c478059e01c091d
+content_hash: sha256:6ffa10e9b20ce3c5947edcc248cc9ddc47318408f4ba78925da801203e69665a
 ---
 
 功耗基础质量测试的适用场景：保障HarmonyOS应用功耗质量和体验满足商用要求，识别应用存在的明显功耗异常，应用上架时，应用市场也会进行功耗基础质量测试，避免应用上架后出现因高耗电导致设备快速发热、续航缩短的严重问题。常用的工具有DevEco Studio开发工具中Tools->AppAnalyzer、[DevEco Testing](../harmonyos-guides/deveco-testing.md)，开发者也可以在上架前进行基础质量测试，提高应用上架的效率。
@@ -24,11 +24,11 @@ content_hash: sha256:83e9c2302d42cf05479ba4a7462ecea43ed037cb0658f6096c478059e01
 
 测试完成后，功耗测试报告如下图所示，客观呈现了前后台功耗管控规则整体达成情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/tXPwBRFJSkuy5K14ZvspIg/zh-cn_image_0000002370565348.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/kM4Qj1YBQO-BTnIPEV_PaA/zh-cn_image_0000002370565348.png "点击放大")
 
 其中，检测未通过项和异常项可以进一步查询详细的测试数据与日志，用户可通过测试过程截图进行问题复现，查看日志进行问题分析定位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/PVD-NG4zTy2o9HpZo60dYw/zh-cn_image_0000002372036910.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xo8EyILyThuuKQ_VII3-AQ/zh-cn_image_0000002372036910.png "点击放大")
 
 **注意** 
 

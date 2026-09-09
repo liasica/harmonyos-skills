@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-o
 title: "@ohos.identifier.oaid (开放匿名设备标识服务)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API > @ohos.identifier.oaid (开放匿名设备标识服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:be907bb87acda1bfa61a659ab3f6bba7fcdf9487afff5df3a8ebb0f7812c6dc2
 ---
 

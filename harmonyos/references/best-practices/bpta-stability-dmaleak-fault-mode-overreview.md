@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: DMA内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > DMA内存泄漏故障模式说明 > DMA内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-09-04T06:33:25+08:00
+scraped_at: 2026-09-10T06:30:18+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:480fdd04720cff33ff3c753f45ec18adf98e9c9aa126f55ee2a81385f2e39d3e
+content_hash: sha256:5c8b7c5bfd77138dba9827940891a0fcfa8d1d68668d6c7b9fbfdc15b98d621a
 ---
 
 ## 概述
@@ -183,7 +183,7 @@ com.example.dfx_test  28812   	67      	130965504	7899    	28812   	xample.dfx_t
 5. 找到异常申请的内存及其调用栈，如下图5、6处框选的内容。这里建议将Bytes从大到小排序，按照申请大小顺序排查内存调用栈，分析可疑的内存泄漏点。
 6. 结合调用栈对代码进行分析，找到泄漏根因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/E3JZRy85TqOiTA7Vc5qfaQ/zh-cn_image_0000002729491141.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/NGpX36DKRk-82Y83fHwpmA/zh-cn_image_0000002729491141.png "点击放大")
 
 ## 开发态问题分析方法
 
@@ -259,12 +259,12 @@ hidumper命令行工具更多用于实时观察应用的内存占用和DMA内存
 
 开发者在调试过程中，如果遇到应用闪退或者后台冷启问题，可以在DevEco Studio中找到日志组件如下图1处，再选择应用终止如下图2处，单击3选择应用进程名，筛选出调试应用的历史退出原因，如果原因为“ResourceLeak(IonLeak)”如下图4所示，说明应用在调试过程中发生了DMA内存泄漏故障。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ZyRvWmyYRHeg-5ingSf8SA/zh-cn_image_0000002729611101.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/an5kb6hOQLSL03mtKbqGkg/zh-cn_image_0000002729611101.png "点击放大")
 
 确认问题为DMA内存泄漏后，推荐开发者使用DevEco Studio的Profiler工具中的Allocation功能进行分析，使用方法可参考[基础内存：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)。具体分析步骤如下：
 
 1. 启动录制前先在Allocation的配置页中执行如下图所示的准备工作：单击下图1处录制设置按钮，单击下图2处打开JS栈记录开关，单击下图3处打开异步回栈开关。由于NativeHeap的Malloc频率非常高，可以单击取消勾选4处的Malloc复选框，不抓取应用Malloc内存分配栈，减少对DMA内存分析的影响。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/r7x-9Pg1SBONi9oe0X6zDw/zh-cn_image_0000002699891774.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/rXhw-L97Q8qmQaSALj0zwQ/zh-cn_image_0000002699891774.png "点击放大")
 2. 启动抓取后，可做正常的用户操作，遍历可疑的泄漏场景。
 3. 抓取完成后，结合[内存栈日志分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section94641340515)定位内存泄漏点。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.sendableRelationalStore (共享关系型数据库)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.sendableRelationalStore (共享关系型数据库)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:34+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:24:46+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:543c81099c781ab4e41abdc2742e9f0a1a5a91e46676208a5e5a29f79cdb39a7
 ---
 

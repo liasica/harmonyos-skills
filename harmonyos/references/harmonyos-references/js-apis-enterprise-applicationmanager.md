@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.applicationManager（应用管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.applicationManager（应用管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:42b2c2bf1fff7db0b2cedc0d127528a91ef138a551cbbf2d609cda2d1eb62a49
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Font)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (Font)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:49+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:25:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:931b919594f9e296ba2636793a05e10fa637cf5c322683b069095ccd8c1a6017
 ---
 

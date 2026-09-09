@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-common
 title: 订阅公共事件（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 进程线程通信 > 使用公共事件进行进程间通信 > 订阅公共事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6bd8811ce374cfbd5b14e1f0b9f54b1b847b1fb362f2393e1479a4f7289cb5fa
 ---
 

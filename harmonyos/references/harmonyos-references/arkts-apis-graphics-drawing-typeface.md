@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Typeface)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Typeface)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f5aabaa0600def7aaed8d13209743025a45f54fdc63ab79f54784d14d579a45e
 ---
 

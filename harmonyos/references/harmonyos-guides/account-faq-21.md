@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-2
 title: 60180007 服务端通过Authorization Code无法获取到华为账号一键登录手机号如何解决
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 60180007 服务端通过Authorization Code无法获取到华为账号一键登录手机号如何解决
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:23+08:00
-doc_updated_at: 2026-05-12
+scraped_at: 2026-09-10T06:23:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:18c9ecd9fa0b33ddb5b57ca256e494107a153dd367145d47198fabe82b5e7e39
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 生成优惠签名购买参数
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 生成优惠签名购买参数
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a665920fc378c0e1bdd6b95624cd898351d901021fb94f4e9f2dc2e38f271e1d
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:240fff11b58813ee89d1dc58fddbea4e72ab167e63d84822a7a5e7c1b70d32a0
 ---
 

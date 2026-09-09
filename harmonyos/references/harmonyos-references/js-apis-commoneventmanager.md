@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.commonEventManager (公共事件模块)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > @ohos.commonEventManager (公共事件模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fec2f75bcf66a1fb1e0eacbd01c471b9de2eff9d9e5858baad3f031aa928363e
 ---
 

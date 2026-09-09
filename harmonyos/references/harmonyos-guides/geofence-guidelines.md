@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/geofence-guid
 title: 端侧GNSS围栏开发指导
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 地理围栏开发指导 > 端侧GNSS围栏开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:28+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2856a938d29a95ccf36734be47eb4ae8735edd6c94ef5b550c6fa5feaf3c68d5
 ---
 

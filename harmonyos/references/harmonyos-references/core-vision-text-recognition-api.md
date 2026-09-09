@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: textRecognition（文字识别）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > textRecognition（文字识别）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:71959c6eee25c8c76db4e273b61147d5311504564ecbd24c132dd24316c8c2b4
 ---
 

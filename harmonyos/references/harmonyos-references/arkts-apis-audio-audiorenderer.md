@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioRenderer)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioRenderer)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:afda854f174abbf377e062c22168799f20c853e229a6985f5a5f524f326473a2
 ---
 

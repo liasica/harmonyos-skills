@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取二维码信息
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 扫码授权登录 > 获取二维码信息
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2e9f563095631bf8a5e7421460279153d20507daaac16a5bd81265370eaca5ea
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-intent-rec
 title: 意图框架习惯推荐场景
 breadcrumb: 最佳实践 > AI使能 > 意图框架习惯推荐场景
 category: best-practices
-scraped_at: 2026-09-02T15:03:20+08:00
+scraped_at: 2026-09-10T06:30:11+08:00
 doc_updated_at: 2026-05-18
-content_hash: sha256:dc5bb9253a876b86e2188af90e75c832536e98061822e2e0587d91784570b510
+content_hash: sha256:a6304392acc436aabe41fe0eb661bee64df71100ad8a2d0b8f4c8583f8db4cca
 ---
 
 ## 概述
@@ -24,11 +24,11 @@ content_hash: sha256:dc5bb9253a876b86e2188af90e75c832536e98061822e2e0587d9178457
 
 以“音乐播放”为例，从意图注册、意图共享以及意图调用三大块介绍意图运行的开发过程。如果应用支持播放功能并且需要实现推荐播放接续，例如音乐、长视频以及课程的播放接续，可以参考本文。首先需要在设置中开启意图框架调试，如下图所示。确保意图框架调试开启且在界面成功展示设备支持测试应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/dphKttzvSXSGFC0fM1js8w/zh-cn_image_0000002229337513.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/YQVffSjaQSiXqt-5Q2tfYw/zh-cn_image_0000002229337513.png "点击放大")
 
 **开发步骤**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9K_zrJN5QyiN8r7mUpA9yg/zh-cn_image_0000002521635964.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/kWR_uP0xQnCZ_h_5FUvs7g/zh-cn_image_0000002521635964.png "点击放大")
 
 1. 在应用工程中新增PROJECT\_HOME/entry/src/main/resources/base/profile/insight\_intent.json文件注册意图，指定意图名称和所属垂域，并且指定一个意图调用逻辑入口。比如在本示例中将调用逻辑放在了EntryAbility下的InsightIntentExecutorImpl文件中。
 
@@ -181,7 +181,7 @@ content_hash: sha256:dc5bb9253a876b86e2188af90e75c832536e98061822e2e0587d9178457
    ```
 3. 调用[shareIntent()](../harmonyos-references/intents-arkts-api-insightintent.md#shareintent)接口将意图对象输入到HarmonyOS，用于学习用户的行为规律。成功共享后“小艺建议”会展示对应应用的音乐模板卡片。展示效果如图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/BeIPUb1DQHC_kqeaBvZfPw/zh-cn_image_0000002229337517.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/7ShZzWyxQTeBOQH6jjO7qg/zh-cn_image_0000002229337517.png "点击放大")
 
    ```typescript
    static async shareIntent(context: Context, input: string): Promise<string> {
@@ -302,7 +302,7 @@ content_hash: sha256:dc5bb9253a876b86e2188af90e75c832536e98061822e2e0587d9178457
 
    如果想删除掉意图，可以调用[deleteIntent()](../harmonyos-references/intents-arkts-api-insightintent.md#deleteintent)，在注册文件只有一个意图的情况下卡片入口会消失。运行效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/K54hmjHwQ5mYyspQxYPa1A/zh-cn_image_0000002229452009.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-LeSMs2zSueBUPj7mmLXlQ/zh-cn_image_0000002229452009.gif "点击放大")
 
 **说明** 
 

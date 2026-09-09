@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/access-token-
 title: 访问控制概述
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 访问控制概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:00+08:00
-doc_updated_at: 2026-03-30
+scraped_at: 2026-09-10T06:22:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:cd055f2fea7b4fbc8827802338ee8a8166e748f5448be1c2f2e4bb5ca54173cc
 ---
 

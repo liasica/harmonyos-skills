@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-att
 title: attributionManager（应用归因服务）
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > attributionManager（应用归因服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9832a61270f5a317e125864f28aa52c1106132f050838b4829ad5c6f7f3d13ca
 ---
 

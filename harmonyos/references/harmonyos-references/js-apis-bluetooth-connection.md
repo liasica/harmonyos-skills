@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.connection (蓝牙connection模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.connection (蓝牙connection模块)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:48+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:72eeb074802368896174a550169c07b14110210a10185f4c8304847189c8f3f9
+scraped_at: 2026-09-10T06:27:02+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9c005da17e9dfd860527227fd443e28567cb37434a4b08c6947c19ab85c3691b
 ---
 
 connection模块提供了蓝牙设备的配对、连接、状态查询、设备扫描发现、扫描模式设置、电量信息获取及事件订阅等能力，适用于需要在应用中实现蓝牙设备发现、配对、连接和信息查询的场景。
@@ -926,7 +926,7 @@ setLocalName(name: string): void
 
 **说明** 
 
-从API version 10开始支持，从API version 12开始废弃，不再提供替代接口。
+从API version 10开始支持，但出于安全与敏感信息等考虑，此接口从API version 12开始废弃，不再提供替代接口。若需要修改本机蓝牙设备名称，可在系统设置中进行修改。
 
 **需要权限**：ohos.permission.ACCESS\_BLUETOOTH
 

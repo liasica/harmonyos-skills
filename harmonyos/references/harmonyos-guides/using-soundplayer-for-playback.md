@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-soundpl
 title: 使用SoundPlayer开发系统音效播放功能
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 使用SoundPlayer开发系统音效播放功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:80df3d9fccf561fd4565e752501a1156c8b6ba7b42f96a280aa021e5090a214c
 ---
 

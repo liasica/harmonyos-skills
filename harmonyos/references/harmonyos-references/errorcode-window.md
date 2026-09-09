@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 窗口错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > 图形图像 > 窗口错误码
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:03+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:26:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f38436f14c7bd4d69b1bd383ae2bdbc34b3241e990d713d7db7f5db581b25bc3
 ---
 

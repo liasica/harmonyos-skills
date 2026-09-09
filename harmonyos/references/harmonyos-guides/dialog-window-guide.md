@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dialog-window
 title: 模态窗口开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 模态窗口开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:08+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:22:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b26e2baa6a6b795efd90d18fcabbab69a1b4f84e13b0af2e41221d62f06ecac2
 ---
 

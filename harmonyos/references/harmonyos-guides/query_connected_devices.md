@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/query_connect
 title: 已连接穿戴设备查询
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 已连接穿戴设备查询
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:38+08:00
-doc_updated_at: 2026-05-12
+scraped_at: 2026-09-10T06:22:44+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:90fa038398eec09d2559b096eeaeb32e68a6ad4ca523f6f789ae34d033bbcf52
 ---
 

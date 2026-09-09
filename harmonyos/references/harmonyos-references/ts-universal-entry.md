@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: "@Entry：页面入口"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件装饰器 > @Entry：页面入口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:07+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a8c1da60d5f61770835518072365960f04da76c9aac78b9b378a5528a81b6271
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avscree
 title: 使用AVScreenCaptureRecorder录屏写文件(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 录制 > 使用AVScreenCaptureRecorder录屏写文件(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:260c5fc549379b309a0d0a74131f7a967b9481d2b9e8fc43f651d7ea41a70f9b
 ---
 

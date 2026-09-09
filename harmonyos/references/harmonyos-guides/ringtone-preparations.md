@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ringtone-prep
 title: 设置铃声
 breadcrumb: 指南 > 媒体 > Ringtone Kit（铃声服务） > 设置铃声
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:23:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e58f3f8a74cbeace3f82fa11e91a597415c68a0cf8e44da8aab6e068df0c50e1
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.preferences (用户首选项)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.preferences (用户首选项)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:39+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1f5ba375ac57eaa40b81bb7318bafa4844ecc79bf87e9c79f82720b4f9030b8a
 ---
 

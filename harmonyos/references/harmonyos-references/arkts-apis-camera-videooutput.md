@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (VideoOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (VideoOutput)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:52937ffc065db31cb26769d65caaf1cf578a09094e4c24090623f3b7b58e1808
 ---
 

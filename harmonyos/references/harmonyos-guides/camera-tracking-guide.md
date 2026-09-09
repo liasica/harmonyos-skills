@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-tracki
 title: 目标拍摄跟踪开发指南
 breadcrumb: 指南 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务） > 目标拍摄跟踪开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:38+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:22:44+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d480b3f5c9a63adb0eaddb7f51127aa4a37e7a18774ca59af79e90f893666bc1
 ---
 

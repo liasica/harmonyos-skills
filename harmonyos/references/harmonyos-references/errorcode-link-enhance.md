@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 增强连接错误码
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 错误码 > 增强连接错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:85c43bcf88127444d3ea8791a7246ed7430f5f819b17542a97c92b3eb5ce64a7
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/calendarmanag
 title: Calendar Kit简介
 breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > Calendar Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:24+08:00
-doc_updated_at: 2026-04-29
+scraped_at: 2026-09-10T06:23:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:32357f6c08df430382a9a63bdd02c1d226c13a1f1b076f26bdf600220b7aaacd
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Circle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Circle
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:22+08:00
+scraped_at: 2026-09-10T06:25:36+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e1f9d242238c91d8b48ea13b1e477fcbc690d83c9d4b6bc4eb9f81a4d7dfe7ed
+content_hash: sha256:0586a1cc9cdf5d9689234fccee1161a2edc5d813edbf8c336037663f93592c47
 ---
 
 用于绘制圆形的组件。
@@ -143,7 +143,7 @@ struct CircleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/PuA1DsOUQqamL6ZroRnRFQ/zh-cn_image_0000002742005361.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/sCqUoGwCSc2ahH3RAwK5Zw/zh-cn_image_0000002717613024.png)
 
 ### 示例2（宽和高使用不同参数类型绘制圆）
 
@@ -167,7 +167,7 @@ struct CircleTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/p6vSpqVFTnar23b3O-wbHQ/zh-cn_image_0000002712406372.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/_GjdhBR6TjKSn_e4f1ENoQ/zh-cn_image_0000002747292977.png)
 
 ### 示例3（使用attributeModifier动态设置Circle组件的属性）
 
@@ -205,7 +205,7 @@ struct CircleModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/KIV6ziakSSaSTsFLu1XMSQ/zh-cn_image_0000002742125321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Z4T8O5HsQWOrRsCyuVH9ZA/zh-cn_image_0000002747212893.png)
 
 ### 示例4（使用ColorMetrics设置HDR填充和边框颜色）
 
@@ -248,4 +248,4 @@ struct CircleHDRDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/6IwrbIvbROKndHbzPgs8vw/zh-cn_image_0000002712246414.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/yyRz98LRTl6a0tUpLeustg/zh-cn_image_0000002717772958.png)

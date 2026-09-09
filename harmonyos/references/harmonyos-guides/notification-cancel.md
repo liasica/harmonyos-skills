@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 取消通知
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 取消通知
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fd53c7ea811a5799ad5f61aba787fe25e8334acc3f6b00d2aea5eadf00247286
 ---
 

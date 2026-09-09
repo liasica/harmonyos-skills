@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 日历服务错误码
 breadcrumb: API参考 > 应用服务 > Calendar Kit（日历服务） > 错误码 > 日历服务错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:64613f0f98c9f82ed007669d76185b6b0b6008b7483e5f7d9e37e01f09b83cd8
 ---
 

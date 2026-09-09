@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 登记归因来源及转化
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 登记归因来源及转化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:53+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:23:12+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9a5b50ed770ec8ef4ec6966cbedeb3f8e83ef9b70df32542c0ea235381140a6d
 ---
 

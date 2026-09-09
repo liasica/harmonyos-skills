@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-get-re
 title: 画布的获取与绘制结果的显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 画布的获取与绘制结果的显示 > 画布的获取与绘制结果的显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:20+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7d51af0ae60aa5a17b06836a743f1a1b23f16c18d373302a71df6adb84ba16bf
 ---
 

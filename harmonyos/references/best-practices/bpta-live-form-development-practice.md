@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-form-
 title: 互动卡片开发实践
 breadcrumb: 最佳实践 > 技术创新 > 互动卡片开发实践
 category: best-practices
-scraped_at: 2026-09-02T15:03:15+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:9971fb82aa02aff9b8b98679b1183f24c9dd982fc6d79b02e2481aa98f8bfa7a
+scraped_at: 2026-09-10T06:29:59+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:03c4d1e6478c763c5c74d3376be4be24e39e88f2da85f78e08914231bb2f2dcd
 ---
 
 ## 概述
 
-[场景动效类型互动卡片](../harmonyos-guides/arkts-ui-liveform-sceneanimation.md)（本文后续简称为互动卡片），是一种支持动态动画和实时交互的卡片形态，区别于动态卡片，互动卡片能够在用户触发时展示流畅的帧动画、3D变换效果，并支持陀螺仪等传感器交互，还能将动效渲染区域扩展到卡片自身边界之外，营造“破框”效果。互动卡片包含非激活态和激活态两种状态：非激活态下，卡片与普通卡片行为一致，由FormExtensionAbility管理；激活态下，由LiveFormExtensionAbility加载动态UI页面展示动画和交互内容。
+场景动效类型互动卡片（本文后续简称为互动卡片），是一种支持动态动画和实时交互的卡片形态，区别于动态卡片，互动卡片能够在用户触发时展示流畅的帧动画、3D变换效果，并支持陀螺仪等传感器交互，还能将动效渲染区域扩展到卡片自身边界之外，营造“破框”效果。互动卡片包含非激活态和激活态两种状态：非激活态下，卡片与普通卡片行为一致，由FormExtensionAbility管理；激活态下，由LiveFormExtensionAbility加载动态UI页面展示动画和交互内容。详细信息请参考[场景动效类型互动卡片开发指导](../harmonyos-guides/arkts-ui-liveform-sceneanimation-development.md)
 
 **说明** 
 
@@ -41,7 +41,7 @@ content_hash: sha256:9971fb82aa02aff9b8b98679b1183f24c9dd982fc6d79b02e2481aa98f8
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/quxqHEHkTbKo2PLm_sBc-w/zh-cn_image_0000002623694219.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/2Le-L3SBQVmYnDaCAdlSxw/zh-cn_image_0000002623694219.gif "点击放大")
 
 ### 快递卡片
 
@@ -55,7 +55,7 @@ content_hash: sha256:9971fb82aa02aff9b8b98679b1183f24c9dd982fc6d79b02e2481aa98f8
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/vBbvqzFAQzq9knnh4jRbeA/zh-cn_image_0000002623534345.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/6-FQhAOXRVudDLCnR7q55Q/zh-cn_image_0000002623534345.gif "点击放大")
 
 ### 运动卡片
 
@@ -72,10 +72,10 @@ content_hash: sha256:9971fb82aa02aff9b8b98679b1183f24c9dd982fc6d79b02e2481aa98f8
 
 * 开始运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/zuqp166gQrWSL-WUoutFJg/zh-cn_image_0000002593094810.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/_wF8hKyBQFu69-KiOhh_Vw/zh-cn_image_0000002593094810.gif "点击放大")
 * 结束运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/LfZHljUhR1WBLXRgo0hO4w/zh-cn_image_0000002593254736.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/L-H8g6W_RnCoO52oRKl29w/zh-cn_image_0000002593254736.gif "点击放大")
 
 ### 音乐卡片
 
@@ -92,14 +92,14 @@ content_hash: sha256:9971fb82aa02aff9b8b98679b1183f24c9dd982fc6d79b02e2481aa98f8
 
 * 播放：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Q-UHy3Y9RTGBZ3Kmwp5pJw/zh-cn_image_0000002623694221.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/amGYGrEvSpeyV6Z08sgykQ/zh-cn_image_0000002623694221.gif "点击放大")
 * 切歌：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/kbuaoXdOT9-eH9NkkBIHxQ/zh-cn_image_0000002623534347.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/JCTjNrn4Tjy2mR9Jun9Sqw/zh-cn_image_0000002623534347.gif "点击放大")
 
 ## 整体方案
 
-互动卡片以动态卡片作为入口，通过form\_config.json中的[sceneAnimationParams标签](../harmonyos-guides/arkts-ui-widget-configuration.md#sceneanimationparams标签)配置关联LiveFormExtensionAbility。用户触发激活（点击或摇一摇）后，系统根据sceneAnimationParams.abilityName激活对应的LiveFormExtensionAbility实例，调用[onLiveFormCreate](../harmonyos-references/js-apis-app-form-liveformextensionability.md#onliveformcreate)方法加载动态UI页面，展示动画和交互内容。详见互动卡片[实现原理](../harmonyos-guides/arkts-ui-liveform-sceneanimation-overview.md#实现原理)。
+互动卡片以动态卡片作为入口，通过form\_config.json中的[sceneAnimationParams标签](../harmonyos-guides/arkts-ui-widget-configuration.md#sceneanimationparams标签)配置关联LiveFormExtensionAbility。用户触发激活（点击或摇一摇）后，系统根据sceneAnimationParams.abilityName激活对应的LiveFormExtensionAbility实例，调用[onLiveFormCreate](../harmonyos-references/js-apis-app-form-liveformextensionability.md#onliveformcreate)方法加载动态UI页面，展示动画和交互内容。详见互动卡片[实现原理](../harmonyos-guides/arkts-ui-liveform-sceneanimation-development.md#实现原理)。
 
 ### 动态卡片创建
 
@@ -175,7 +175,7 @@ content_hash: sha256:9971fb82aa02aff9b8b98679b1183f24c9dd982fc6d79b02e2481aa98f8
 
 以快递卡片为例，演示完整的互动卡片开发流程。快递卡片需要实现点击触发出框动画、陀螺仪交互驱动憨憨移动、摇一摇激活等功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/3cFP8NPCSTOYIgb_c10sWQ/zh-cn_image_0000002593094812.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/dAT2r65eSfeD1hqj3A3JEA/zh-cn_image_0000002593094812.gif "点击放大")
 
 ### 实现原理
 

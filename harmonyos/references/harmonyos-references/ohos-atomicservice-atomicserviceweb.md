@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceWeb
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceWeb
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:07+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:909c5f197da4ba5955060a3bead1a49f8c32c3928d1a408f647fe59ece9cc473
 ---
 

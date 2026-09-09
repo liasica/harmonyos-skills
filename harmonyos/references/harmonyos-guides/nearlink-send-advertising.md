@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-send
 title: 发送星闪广播
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > 发送星闪广播
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8a9d1e3c9f1b5be21c74625f0b67cdb3ce7501f9cf50783c1f19dbc70dd10fe3
 ---
 

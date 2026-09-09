@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-3
 title: Scan Kit无法识别多个码图
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > Scan Kit无法识别多个码图
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:43+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:02+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1c3c405141df6b152c3c44e65f9480870b835c1a2941f19278bc5e150b16e6e2
 ---
 

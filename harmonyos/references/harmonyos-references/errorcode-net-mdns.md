@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: MDNS错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > MDNS错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e736723f0dc4ed62a644f14d5ef507a67ecf9dfd58b3b106be7fa57de71d3ddf
+scraped_at: 2026-09-10T06:27:16+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:6af8556fa70081595d28b08628121825d3dcb77c1452d15b8c289ecfdb404506
 ---
 
 **说明** 
@@ -150,7 +150,7 @@ Failed to send the message.
 
 **错误描述**
 
-发送信息失败。
+发送消息失败。
 
 **可能原因**
 

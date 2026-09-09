@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-v
 title: "@ohos.vibrator (振动)"
 breadcrumb: API参考 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > ArkTS API > @ohos.vibrator (振动)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5dbad9569b33431081ef4823bdc55b3507b37d03ac82b79eb149e27f3aa2f53f
+scraped_at: 2026-09-10T06:27:50+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:4f2d7d7283c57fc92d0d5ba4525d5035b535649eb749980f9e9260bfe391f6a2
 ---
 
 vibrator模块是设备马达振动的控制模块，属于SensorServiceKit。该模块提供精确控制设备马达振动的能力，支持按指定时长、预置效果、自定义配置文件、自定义振动模式等多种方式触发振动，并支持按指定模式或全部模式停止振动。此外，模块还提供振动效果支持查询、马达设备信息查询、马达上下线状态监听等能力。
@@ -1064,7 +1064,7 @@ on(type: 'vibratorStateChange', callback: Callback<VibratorStatusEvent>): void
 
 当开发者需要实时感知马达设备的上下线状态变化时使用此接口。适用于分布式多设备场景中动态获取马达设备信息，以便在马达上线时及时触发振动或在下线时停止振动。注册成功后，当马达设备上线或下线时，系统将回调VibratorStatusEvent对象，包含设备ID、马达数量、上下线状态等信息。回调中获取的deviceId可用于[startVibration](js-apis-vibrator.md#vibratorstartvibration9)和[stopVibration](js-apis-vibrator.md#vibratorstopvibration19)等接口指定目标设备。
 
-注册回调后，需在合适的时机调用[vibrator.off](js-apis-vibrator.md#vibratoroff19)注销回调，避免内存泄露。同一type重复注册同一callback不会覆盖，需先off再on。
+注册回调后，需在合适的时机调用[vibrator.off](js-apis-vibrator.md#vibratoroff19)注销回调，避免内存泄漏。同一type重复注册同一callback不会覆盖，需先off再on。
 
 **系统能力**：SystemCapability.Sensors.MiscDevice
 
@@ -1526,7 +1526,7 @@ type VibrateEffect = VibrateTime | VibratePreset | VibrateFromFile | VibrateFrom
 
 使用时需注意以下问题：
 
-* 振动结束后建议及时关闭文件描述符，避免资源泄露。使用getRawFd获取的文件描述符需通过closeRawFd关闭，使用fileIo.open获取的需通过fileIo.close关闭。
+* 振动结束后建议及时关闭文件描述符，避免资源泄漏。使用getRawFd获取的文件描述符需通过closeRawFd关闭，使用fileIo.open获取的需通过fileIo.close关闭。
 
 **系统能力**：SystemCapability.Sensors.MiscDevice
 

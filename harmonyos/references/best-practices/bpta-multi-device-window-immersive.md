@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口沉浸式
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口沉浸式
 category: best-practices
-scraped_at: 2026-09-02T15:03:18+08:00
+scraped_at: 2026-09-10T06:30:05+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:ac93b4d451d9c770dc021333950493e1d6baf088e93bc825783ecc944a6bd888
+content_hash: sha256:dfc1a88739ac0bd0119a728ba898d6222d6728e8926abc4cd10284c3a826f434
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:ac93b4d451d9c770dc021333950493e1d6baf088e93bc825783ecc944a6
 * 布局扩展：充分利用屏幕可视区域，使页面内容延伸到状态栏和导航条区域（即“安全区”之外的避让区），获得更大的布局空间。
 * 沉浸体验：在游戏、视频等场景中隐藏系统元素，提供无干扰的全屏体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/yy8QJ6g3RWOno65KY93okQ/zh-cn_image_0000002499414192.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/7hGxzNhcT8yOBFT93H5WlQ/zh-cn_image_0000002499414192.jpg "点击放大")
 
 本文将介绍沉浸式原理、实现方案，并提供常见沉浸式页面开发场景下适配问题的解决方案。
 
@@ -124,7 +124,7 @@ content_hash: sha256:ac93b4d451d9c770dc021333950493e1d6baf088e93bc825783ecc944a6
 * 使用[getTitleButtonRect()](../harmonyos-references/arkts-apis-window-window.md#gettitlebuttonrect11)获取窗口标题栏上的三键区位置和大小，用于不同场景下的页面布局避让。
 * 使用[on('windowTitleButtonRectChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowtitlebuttonrectchange11)注册右上角三键大小变化监听。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bWxfRhHGSq6WaztRwRxzkQ/zh-cn_image_0000002531334143.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/_arqpkedRD2emQHNcnYjPQ/zh-cn_image_0000002531334143.jpg "点击放大")
 
 ## 顶部或底部背景延伸案例
 
@@ -319,7 +319,7 @@ content_hash: sha256:ac93b4d451d9c770dc021333950493e1d6baf088e93bc825783ecc944a6
 
 自由窗口模式下，需隐藏默认标题栏，保留关闭、最小化、最大化三键区，使页面延伸至原标题栏区域，实现窗口沉浸式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/aKY00fuKQ9W6CRNRvnTVjQ/zh-cn_image_0000002531334153.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/cncRCg_pQM-VQ2yD_MsSEQ/zh-cn_image_0000002531334153.jpg "点击放大")
 
 ### 开发步骤
 

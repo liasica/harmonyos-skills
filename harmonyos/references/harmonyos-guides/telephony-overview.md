@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/telephony-ove
 title: Telephony Kit简介
 breadcrumb: 指南 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > Telephony Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d4ce2e7f522b41a624cce6064726c9fc9758c8bafed8e24b7c06fc52c799b4a4
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/getting-start
 title: 从Java到ArkTS的迁移指导
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 面向其他语言的ArkTS迁移指导 > 从Java到ArkTS的迁移指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0419cfee80c39b2546e7490d1339c9439c6ba4d775f5e86e04116f4aa1465c93
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/continuous-ta
 title: 长时任务(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 长时任务(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:455e3e35194de480c57b6c62328073db7e36f5be03507e69f6d897bed22d6d70
 ---
 

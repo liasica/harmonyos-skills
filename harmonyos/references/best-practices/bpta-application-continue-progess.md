@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 常见接续最佳实践
 breadcrumb: 最佳实践 > 自由流转 > 跨端迁移 > 常见接续最佳实践
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
+scraped_at: 2026-09-10T06:30:08+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:4066b45f828ff1fbef69ad1e026c3d3619fba8551bcabbc6c80f4163d4048023
+content_hash: sha256:ac6ab1a4b6c2f18b2d4610b2607223b7e92a9d5429d2794bfaf784b59342d067
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:4066b45f828ff1fbef69ad1e026c3d3619fba8551bcabbc6c80f4163d40
 
 接续过程底层依赖分布式框架和软总线，开发者只需要启用接续、保存数据和恢复数据，具体运作机制可参考：[运作机制](bpta-continue-cast.md#section1218874218264)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/vlHwynjQSWmRhm3PRJjXCQ/zh-cn_image_0000002622048193.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Ft0S8zlhTiCA9MW6szvucg/zh-cn_image_0000002622048193.png "点击放大")
 
 ## 开发流程
 
@@ -147,7 +147,7 @@ content_hash: sha256:4066b45f828ff1fbef69ad1e026c3d3619fba8551bcabbc6c80f4163d40
 
 在社交媒体、新闻资讯等应用中，用户经常需要浏览长列表内容。当用户滚动到列表的某个位置后，可能会切换设备，且切换后希望自动恢复到之前的滚动位置，避免重复操作。开发者可以利用接续能力提升此类场景的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/aIukZAtQTGyop4ZVBBf4kw/zh-cn_image_0000002591568722.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Rkqrgso_SumILwk5FFUMiA/zh-cn_image_0000002591568722.gif "点击放大")
 
 ### 实现原理
 
@@ -162,7 +162,7 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 然而，该方法存在局限性，具体支持的场景和版本详见[分布式迁移标识](../harmonyos-references/ts-universal-attributes-restoreid.md)的说明。若需在开发中进行更多自定义设置以提升用户体验，可参考以下步骤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/OWpwUiFHREGKbPVcjXq2bQ/zh-cn_image_0000002622128325.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/VKWD2jPjQ8edepv88WOb2w/zh-cn_image_0000002622128325.jpg "点击放大")
 
 ### 开发步骤
 
@@ -198,13 +198,13 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 在视频播放场景中，用户可能会在观看视频的过程中切换至其他设备，例如从手机切换到平板/PC等大屏设备。用户切换设备后期望能从之前的播放位置继续观看而非重新开始播放。针对此类场景，开发者可以通过接续功能提升用户观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/eLrDxrEsRyyIyhHKqPS1QQ/zh-cn_image_0000002591728656.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/QofVfJDoSui1b0HBytuyUg/zh-cn_image_0000002591728656.gif "点击放大")
 
 ### 实现原理
 
 媒体播放接续的内容主要包括播放列表中的集数、播放状态和进度。此外，还可以接续其他播放设置，以进一步提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/PgBJAzeDQk-xhMBUxceCdQ/zh-cn_image_0000002622048215.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/4XOwiXs-S6OIIzMQE8oLPA/zh-cn_image_0000002622048215.jpg "点击放大")
 
 ### 开发步骤
 
@@ -238,13 +238,13 @@ WaterFlow({ footer: this.footStyle, scroller: this.waterFlowScroller }) {
 
 在Web网页浏览场景中，用户可能会在浏览网页的过程中切换至其他设备。用户切换后期望能恢复到之前的网页URL和滚动位置，以保持浏览上下文的连续性。针对此类场景，开发者可以利用接续功能，进一步提升用户的浏览体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Iq7-U7VvRFmjhxMJ0arFww/zh-cn_image_0000002591568746.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/6IOif0CpT2qTUHLexg9Z8w/zh-cn_image_0000002591568746.gif "点击放大")
 
 ### 实现原理
 
 系统提供的Web组件用于在应用程序中展示Web页面内容。当Web组件加载大量信息时，保持浏览进度的连续性尤为重要。为了实现内容的连续展示，需要像处理长列表一样，通过传递当前的滚动位置来维持这一连续性。这可以通过使用[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)接口来获取和恢复滚动位置来实现。具体步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/sE3W7Z-KRIeuWKYQmZZh6Q/zh-cn_image_0000002622128349.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/nb-jBPRnQO2GRtUp9TbyIQ/zh-cn_image_0000002622128349.jpg "点击放大")
 
 ### 开发步骤
 

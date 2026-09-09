@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: 重建三维场景（C/C++）
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务） > 重建三维场景（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:803c77e17f3b88d721e18b5fed5fdeeb85c9919c2e39d2185be2a7f9e35c47dc
 ---
 

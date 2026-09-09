@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/contacts-intr
 title: Contacts Kit简介
 breadcrumb: 指南 > 应用服务 > Contacts Kit（联系人服务） > Contacts Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:54+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:523c8406633c4f1878ff67610345b958adceeb445feccbb892f2c58c3162f85e
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 广告服务框架错误码
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > 错误码 > 广告服务框架错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b9ce6d209e7b037ae0ed8b9dbba76b2fbe56a2feeb547634b021036c6d188af2
 ---
 

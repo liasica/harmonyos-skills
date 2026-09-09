@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-use-anima
 title: 动画概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用动画 > 动画概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:52+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:07df78e4c52f3a9195f13bd52c4398991b1ed9ec13850cd2d983cb4a237769e0
 ---
 

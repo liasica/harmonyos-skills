@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.PiPWindow (画中画窗口)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.PiPWindow (画中画窗口)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1d6a2d04134a2b25f39cd7a6b299e1ed9bd89ec923cda68b08c576d63fcac380
 ---
 

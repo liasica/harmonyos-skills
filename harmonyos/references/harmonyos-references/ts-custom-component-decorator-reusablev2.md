@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: "@ReusableV2：组件复用V2"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > @ReusableV2：组件复用V2
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5da9c9388d79fef3a13bb5cf65f82dbe4feeab260266e383b2c32f673df53421
 ---
 

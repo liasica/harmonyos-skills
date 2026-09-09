@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:26+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1a8f80b65f1dcd4883184ae1ba4f0b0d94bfe950f404bab0d7302a219a7bf81a
 ---
 

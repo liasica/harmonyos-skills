@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permissio
 title: 应用权限组列表
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限组列表
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-10T06:22:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:60bdb8c343ca9d158845db6ab1d23d32533360fe8582fdddb03397bbe2746982
 ---
 

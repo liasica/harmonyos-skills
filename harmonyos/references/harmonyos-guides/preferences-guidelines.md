@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preferences-g
 title: 通过用户首选项实现数据持久化 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过用户首选项实现数据持久化 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:54+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ed2c6a45f19021c198ecc9c0021735622d750c3476bc9936b2eb9637e9b6a591
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVRecorder)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVRecorder)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b1bb9e6c5c468dac68d00b77fe556f424c01c5a5b032b50fd5ba2ca773b120a4
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.window.floatView (闪控窗)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window.floatView (闪控窗)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:53+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:25:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1999af0d61c6d7fa2a32057a6942a3cd3cfb7f27323f4e405d26ff66db547ec5
 ---
 

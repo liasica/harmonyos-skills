@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 管理通知角标
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 管理通知角标
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:af0bd2d905fcc6051d315c79693a3810d2907cdfaecbb111aee1a78692bdc5c4
 ---
 

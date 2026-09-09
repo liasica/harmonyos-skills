@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 系统电源管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码 > 系统电源管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:10c988c07b68b3aa13dbd33b4f9f0d1ec8fe5fff5422a5e8d1e95ccd01032e41
 ---
 

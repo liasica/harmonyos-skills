@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用DMA内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > DMA内存泄漏故障模式说明 > 应用DMA内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-09-04T06:33:26+08:00
+scraped_at: 2026-09-10T06:30:18+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:f875ba34b402f8754e1c6cfbcdeef58cd9ddb60caf37cce62c7fc2ec1b56bc85
+content_hash: sha256:ab661da609a6fe3140ade87be0cbb25d8f6379b6ebbfd83d7b04940171962058
 ---
 
 ## 概述
@@ -72,20 +72,20 @@ DMA内存资源通常与图像显示等业务有关，一些常见的DMA内存�
 4. 根据这些DMA内存的“buf\_name”和“leak\_type”可以确定为PixelMap出现了泄漏，根据规则对“buf\_name”进行匹配，可以确定是[使用ImageSource完成图片解码](../harmonyos-guides/image-decoding.md)功能时发生了泄漏。
 5. 仅通过DMA内存标签无法直接定位到具体泄漏点，因此推荐开发者通过[内存栈日志获取方法](bpta-stability-dmaleak-fault-mode-overreview.md#section2689241446)获取DMA内存栈日志后，将内存栈日志导入DevEco Studio参考[内存栈日志分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section94641340515)定位到DMA内存调用栈如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/qw79YJ02Qk-_O3Za7IBNHA/zh-cn_image_0000002699731888.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/FP9R4uDWSHuoiNFofitnvw/zh-cn_image_0000002699731888.png "点击放大")
 6. 结合代码分析，发现当前应用通过createImageSource()函数申请了超大DMA内存但是未释放，最终导致DMA内存泄漏问题。内存调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/uzRFs7AmQQSYP_SsP8_Q4A/zh-cn_image_0000002729491143.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/0rmv26c7R0mz8Ml9v0-thA/zh-cn_image_0000002729491143.png "点击放大")
 
 **开发态问题分析：**
 
 对于开发态存在的问题，开发者大致能够推断出当前出现DMA内存泄漏的场景，那么可以参考[开发态问题分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section796854014215)抓取DMA内存调用栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/17xErXJSQRSzoalp95ibMw/zh-cn_image_0000002729611103.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/YtXalQ4DQtGuaTGFHvV7_g/zh-cn_image_0000002729611103.png "点击放大")
 
 结合代码分析，发现当前应用通过createImageSource()函数申请了超大DMA内存但是未释放，最终导致DMA内存泄漏问题。内存调用栈指向的代码段如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/PhYID3HqTwa6cQqjx2Q5Jw/zh-cn_image_0000002699891776.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/YmLDeymsRZynZyKthmwweg/zh-cn_image_0000002699891776.png "点击放大")
 
 ### 案例二：ArkWeb组件使用不当导致内存泄漏
 
@@ -128,20 +128,20 @@ DMA内存资源通常与图像显示等业务有关，一些常见的DMA内存�
 4. 根据这些DMA内存的“buf\_name”和“leak\_type”与DMA命名规则进行匹配，确定是ArkWeb组件发生了泄漏。开发者后续可以通过排查使用ArkWeb组件的业务，找到DMA内存泄漏点。
 5. 通过[内存栈日志获取方法](bpta-stability-dmaleak-fault-mode-overreview.md#section2689241446)获取内存调用栈后，按照[内存栈日志分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section94641340515)找到可疑内存块及其调用栈如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/M7-WMStrS5qeDL77-HMsTA/zh-cn_image_0000002699731890.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/MoqCxxxSSqaZeUzGI2yL_g/zh-cn_image_0000002699731890.png "点击放大")
 6. 结合代码分析，发现应用通过RequestBufferBySurfaceId()函数拿到JS层下发的ArkWeb组件相关的SurfaceId，并申请了5个尺寸为5000×5000的超大buffer并循环导入到Surface组件中进行渲染，最终导致应用整体DMA内存冲高无法回落。内存调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/HK-Pndl4QJesNccdD9YTSg/zh-cn_image_0000002729491145.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Hmh9YbLTSn-fU-1AXxZD6Q/zh-cn_image_0000002729491145.png "点击放大")
 
 **开发态问题分析：**
 
 对于开发态存在的问题，如果开发者大致能够推断出泄漏问题发生的场景，并且在问题复现过程中，发现当前allocation中DMA内存增长趋势最快，那么可以参考[开发态问题分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section796854014215)抓取DMA内存调用栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/p2oxsp9XTTaw88jC4hj-Fw/zh-cn_image_0000002729611105.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gg2FexKTRCeLL8kFZMXDNw/zh-cn_image_0000002729611105.png "点击放大")
 
 结合代码分析，发现应用通过RequestBufferBySurfaceId()函数拿到JS层下发的ArkWeb组件相关的SurfaceId，申请了5个尺寸为5000×5000的超大buffer并循环导入到Surface组件中进行渲染，最终导致应用整体DMA内存冲高无法回落。内存调用栈指向的代码段如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/S1T1wMEwQxW1XNdsfCWz4w/zh-cn_image_0000002699891778.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/m3LMZWGpRUe0Q0EalCvHQQ/zh-cn_image_0000002699891778.png "点击放大")
 
 ## 修复建议
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的自定义布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9b12db47a548cf5c4c9c33d19a680c67d3bd73f7bf7f280947ff1db042412127
+scraped_at: 2026-09-10T06:25:41+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:ebdc4fd21efd7ba3948ee2869c1f2c563cc93d576de61eff18425219b4071014
 ---
 
 自定义组件的自定义布局允许开发者通过onMeasureSize和onPlaceChildren接口，以数据计算的方式精确控制子组件的位置和尺寸，实现更灵活的布局效果。适用于需要实现复杂非标准布局、内置布局组件无法满足特定排列需求、需要根据动态数据计算子组件位置和尺寸等场景。
@@ -525,7 +525,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/EIBKz14YQgCl5zK_UBd2RA/zh-cn_image_0000002742125413.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/eMEmfQclQjSQqj8BrNopSg/zh-cn_image_0000002747212985.png)
 
 ### 示例2（判断是否参与布局计算）
 
@@ -628,7 +628,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/AvOoswBQS3y5F39b7eXwtA/zh-cn_image_0000002712246506.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/VXiUYT84QkSQbAhMv_LMFQ/zh-cn_image_0000002717773052.png)
 
 ### 示例3（获取子组件FrameNode并设置相关属性）
 
@@ -705,7 +705,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/b9SsCXyQTyixmNrn6O-noQ/zh-cn_image_0000002742005455.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/W-PlxoCJR6uLYkZoAAWxug/zh-cn_image_0000002717613120.jpg)
 
 ### 示例4（子组件超过父组件大小约束）
 
@@ -779,4 +779,4 @@ struct CustomLayoutText {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/39fUUD4fTLSod7E7pI18bQ/zh-cn_image_0000002712406466.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/8x8e6YzETmma-XfsoM-L_g/zh-cn_image_0000002747293073.jpg)

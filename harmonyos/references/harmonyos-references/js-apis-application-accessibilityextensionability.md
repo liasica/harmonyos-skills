@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.application.AccessibilityExtensionAbility (辅助功能扩展能力)"
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > @ohos.application.AccessibilityExtensionAbility (辅助功能扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:38+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6084408eea82e19ff2a42955904c67ac521534e0f8024d92c91ea674156232a2
 ---
 

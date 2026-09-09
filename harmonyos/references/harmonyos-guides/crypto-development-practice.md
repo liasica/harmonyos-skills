@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-develo
 title: 实现跨平台加解密数据兼容性
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 实现跨平台加解密数据兼容性
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:20+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:22:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a4e8c312ff6c9a6151676b4227805ff7d29f49a3e8e478f4620374ffa24e4363
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-faqs
 title: Health Service Kit常见问题
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > Health Service Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:27+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:19+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c0d0c5d85b85c890b630cdabc420ae7afed87ce938806c788d387fb743836468
 ---
 

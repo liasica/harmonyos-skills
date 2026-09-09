@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-render
 title: Repeat
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > Repeat
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:da7484ec35ff66b88aeb4a850b5edbed2cea92bc8d863bccb9679c73b05bc6de
 ---
 

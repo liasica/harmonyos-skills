@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-native-
 title: 删除关键资产(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit开发指导(C/C++) > 删除关键资产(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7274de328634af877e7ad5b6cadc6bc087866ba33b2eb51ebf41d3c3b8672bc3
 ---
 

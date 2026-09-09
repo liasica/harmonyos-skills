@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-uplo
 title: 应用文件上传下载
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 上传下载 > 应用文件上传下载
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d0b0edeff1b7e379b00e9bd0a73d9d05574531e70640363042473b207a60df61
 ---
 

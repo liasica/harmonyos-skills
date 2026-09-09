@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-json
 title: JSON扩展库
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > JSON扩展库
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:165fe023a8d70b2c426b0e38aa526092d6e24a2f5a5ba5c8b3b17834b1a07634
 ---
 

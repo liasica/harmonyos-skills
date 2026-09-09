@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVMetadataExtractor)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVMetadataExtractor)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5359719e72ae3973d7e460aba1d3c40d84b275af1731e11a831265e77d3b6e6b
 ---
 

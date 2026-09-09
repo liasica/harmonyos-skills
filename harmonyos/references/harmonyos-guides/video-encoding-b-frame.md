@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: B帧视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > B帧视频编码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:22:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1d64ffdb5ebab6d1a57a4d71bb7b3dafd1dbb871fdd6fa75d5bcbbbb7204e2d4
 ---
 

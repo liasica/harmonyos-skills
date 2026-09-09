@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fullscr
 title: 全屏启动元服务 (FullScreenLaunchComponent)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 嵌入式组件 > 全屏启动元服务 (FullScreenLaunchComponent)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:04+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:465c8edd027226d11372f360f1c46a9544d2a0ed723e4acd4cac6d18ac96bb8c
+scraped_at: 2026-09-10T06:22:10+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:d5a481373163ce3be4606057f08f90c4ed86fd6042892f2d54bfc0891102c02e
 ---
 
 FullScreenLaunchComponent允许开发者以全屏方式拉起元服务，使得应用能够提供更友好的用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/opFZW1-kS1-bXNbdXNIk0Q/zh-cn_image_0000002712404090.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Fge3llhXQoSV1G1ljsSpQg/zh-cn_image_0000002747290697.png)
 
 ## 基本概念
 
@@ -27,7 +27,7 @@ FullScreenLaunchComponent提供的一种全屏启动元服务的能力。需要�
 
 跳出式运行元服务是指，非组件化的方式拉起EmbeddableUIAbility，交互体验接近独立窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/H-c8cPvfQPS4gfoUiu_MEg/zh-cn_image_0000002742123039.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/4qUrnd5YSNKHDyvy5aoPxg/zh-cn_image_0000002747210615.png)
 
 ## 能力范围
 

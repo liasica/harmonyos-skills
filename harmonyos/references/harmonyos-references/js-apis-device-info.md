@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.deviceInfo (设备信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.deviceInfo (设备信息)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:01+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:e9ac65fbfd939efd107c02d4fa7c34e27d7132de9be3044199eb0e740be9f61d
+scraped_at: 2026-09-10T06:27:24+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2d8cc773672a574fcb2d1abf450b40bc4e482ff5be355077aac7132465c62435
 ---
 
 本模块提供终端设备信息查询能力，支持获取设备类型、品牌、型号、系统版本、安全补丁级别、设备唯一标识等多种设备信息，适用于设备适配、版本兼容性检查、设备识别、统计分析等场景，帮助开发者快速获取设备信息进行应用适配和优化。开发者不可配置这些信息。
@@ -71,8 +71,8 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 | udid7+ | string | 是 | 设备UDID，该接口在执行期间会拉起临时进程，当系统负载较高时，可能引发阻塞风险。为确保应用主线程的响应性能，建议避免在主线程中调用。设备信息因设备而异且固定不变，可在首次获取后缓存在本地，避免每次使用时重复获取，以提升性能。  **说明**：数据长度为65字节(包含结束符)。可作为设备唯一识别码。  **需要权限**：ohos.permission.sec.ACCESS\_UDID(该权限只允许系统应用及企业类应用申请)  示例：9D6AABD147XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXE5536412 |
 | distributionOSName10+ | string | 是 | 发行版系统名称。  示例：HarmonyOS |
 | distributionOSVersion10+ | string | 是 | 发行版系统版本号。格式为x.x.x，x是数字  示例：5.0.0 |
-| distributionOSApiVersion10+ | number | 是 | 发行版系统API版本。  API版本26.0.0之前  版本号格式：X.Y.Z(N)  参数取值：X\*10000+Y\*100+Z，以50001为基数递增  示例：API版本为6.1.1(24)时distributionOSApiVersion返回60101  API版本26.0.0及之后  版本号格式：X.Y.Z（参考语义化版本规范）  参数取值：X\*10000+Y\*100+Z，以260000为基数递增  示例：API版本为26.0.0时distributionOSApiVersion返回260000  注意：根据API版本演进关系，API版本6.1.1(24)的下一个版本为26.0.0。  所有已发布的API版本请参见https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion。  示例：50001 |
-| distributionOSApiName13+ | string | 是 | 发行版系统API版本名称。  不建议用于版本号判断，API版本26.0.0版本号为分界点：  API版本26.0.0之前  示例：5.0.1  版本号格式：X.Y.Z(N)  API版本26.0.0及之后  示例：26.0.0  版本号格式：X.Y.Z（参考语义化版本规范）  注意：根据API版本演进关系，API版本6.1.1(24)的下一个版本为26.0.0。  所有已发布的API版本请参见https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion。 |
+| distributionOSApiVersion10+ | number | 是 | 发行版系统API版本。  API版本26.0.0之前  版本号格式：X.Y.Z(N)  参数取值：X\*10000+Y\*100+Z，以50001为基数递增  示例：API版本为6.1.1(24)时distributionOSApiVersion返回60101  API版本26.0.0及之后  版本号格式：X.Y.Z（参考语义化版本规范）  参数取值：X\*10000+Y\*100+Z，以260000为基数递增  示例：API版本为26.0.0时distributionOSApiVersion返回260000  注意：根据API版本演进关系，API版本6.1.1(24)的下一个版本为26.0.0。  所有已发布的API版本请参见[所有HarmonyOS开发套件版本](../harmonyos-releases/overview-allversion.md)。  示例：50001 |
+| distributionOSApiName13+ | string | 是 | 发行版系统API版本名称。  不建议用于版本号判断，API版本26.0.0版本号为分界点：  API版本26.0.0之前  示例：5.0.1  版本号格式：X.Y.Z(N)  API版本26.0.0及之后  示例：26.0.0  版本号格式：X.Y.Z（参考语义化版本规范）  注意：根据API版本演进关系，API版本6.1.1(24)的下一个版本为26.0.0。  所有已发布的API版本请参见[所有HarmonyOS开发套件版本](../harmonyos-releases/overview-allversion.md)。 |
 | distributionOSReleaseType10+ | string | 是 | 发行版系统类型。  示例：Release |
 | ODID12+ | string | 是 | ODID（Open Developer Identifier，开发者匿名设备标识符）。  **ODID值会在以下场景重新生成**：  手机恢复出厂设置。  同一设备上同一个开发者(developerId相同)的应用全部卸载后重新安装时。  **ODID生成规则**：  根据签名信息里developerId解析出的groupId生成，developerId规则为groupId.developerId，若无groupId则取整个developerId作为groupId。  同一设备上运行的同一个开发者(developerId相同)的应用，ODID相同。  同一个设备上不同开发者(developerId不同)的应用，ODID不同。  不同设备上同一个开发者(developerId相同)的应用，ODID不同。  不同设备上不同开发者(developerId不同)的应用，ODID不同。  **说明**：数据长度为37字节(包含结束符)。  示例：1234a567-XXXX-XXXX-XXXX-XXXXXXXXXXXX |
 | diskSN15+ | string | 是 | 硬盘序列号，该接口在执行期间会拉起临时进程，当系统负载较高时，可能引发阻塞风险。为确保应用主线程的响应性能，建议避免在主线程中调用。设备信息因设备而异且固定不变，可在首次获取后缓存在本地，避免每次使用时重复获取，以提升性能。  **说明** ：该字段只能在部分2in1设备上进行查询，其他设备查询结果为空。  **需要权限**：ohos.permission.ACCESS\_DISK\_PHY\_INFO(该权限只允许系统应用及企业类应用申请)  示例：2502EM400567 |

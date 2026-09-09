@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: animate
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > animate
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:38+08:00
+scraped_at: 2026-09-10T06:25:51+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4be4712b0d12595dc1bde460ca979f06ff1c829d01f962abef754de78d41034b
+content_hash: sha256:76655b33ede6a0eb01827438487d8d87b77312561cacb60b580abe5b9e2aef4b
 ---
 
 **说明** 
@@ -55,7 +55,7 @@ content_hash: sha256:4be4712b0d12595dc1bde460ca979f06ff1c829d01f962abef754de78d4
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/p8u3jBXHSrqi3zyT-euW5g/zh-cn_image_0000002742125661.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/f1cS5oIGTju3S36Cd07Y-A/zh-cn_image_0000002747213171.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -69,7 +69,7 @@ content_hash: sha256:4be4712b0d12595dc1bde460ca979f06ff1c829d01f962abef754de78d4
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/DRZwL_5vTyiP_Jb3Oa4vRQ/zh-cn_image_0000002742125579.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/nUNCbWNdTmWIFhiZmoRNvg/zh-cn_image_0000002747213089.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -82,7 +82,7 @@ content_hash: sha256:4be4712b0d12595dc1bde460ca979f06ff1c829d01f962abef754de78d4
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/nY7qkl0lRwqXcM_s1kRyrA/zh-cn_image_0000002712246754.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/s_ddhfTvQfGe2_y1NOMVDw/zh-cn_image_0000002717773236.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -114,4 +114,4 @@ content_hash: sha256:4be4712b0d12595dc1bde460ca979f06ff1c829d01f962abef754de78d4
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/tjbl2knwQRO2yckSv5Ylfw/zh-cn_image_0000002742005703.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/0Ar97rCsRCGdritmhRxz3Q/zh-cn_image_0000002717613304.gif)

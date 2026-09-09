@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.remoteDevice (星闪远端设备连接能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.remoteDevice (星闪远端设备连接能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:94bb510108f7e5e3740d7b045495e1d235dd29bad1917c98b48f4c0f30d6e9a9
 ---
 

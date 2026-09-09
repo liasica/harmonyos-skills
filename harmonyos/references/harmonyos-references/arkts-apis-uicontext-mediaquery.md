@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MediaQuery)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (MediaQuery)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4b4698dab835923051f582e7d184f5fd7527ef1b32886ce8363ca8c1adc3130a
 ---
 

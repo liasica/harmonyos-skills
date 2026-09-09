@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.telephony.esim (eSIM卡管理)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.esim (eSIM卡管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:59+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:274e76245ee8b896499b1e48b1235a6abe4c218e2596c5ab7ccccb336b1c8400
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.rpc (RPC通信)"
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > ArkTS API > @ohos.rpc (RPC通信)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:26+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:26:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c405ae1ce9d5f50b3e93f455bfa8eba679bb7373e414d3d94e540325a6c21bec
 ---
 

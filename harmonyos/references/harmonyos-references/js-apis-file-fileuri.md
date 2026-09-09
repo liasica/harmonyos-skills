@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.fileuri (文件URI)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.fileuri (文件URI)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:31+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:232515078721782fd95b8c830f7d9be27bb267a00fcbfd2a544cd06ad3e4e8d5
 ---
 

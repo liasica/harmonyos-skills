@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitrace
 title: hitrace
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hitrace
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-07-03
+scraped_at: 2026-09-10T06:22:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e7452f8e1e4d92712f5f84bd53143321c5324c36baa82a5a4f3fc92cea6627a5
 ---
 

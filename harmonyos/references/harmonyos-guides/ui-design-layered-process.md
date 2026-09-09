@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-lay
 title: （推荐）分层图标处理
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 图标处理 > （推荐）分层图标处理
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:15+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:12175d1c6a957b45ac05005eec03108c4bf8650cd9680dbfdaceb8ba13e2e41f
+scraped_at: 2026-09-10T06:22:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:860feeaa78c52be87ffc099d2b892ae1e485d0f019648b081bb7f8d6def2cc1f
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:12175d1c6a957b45ac05005eec03108c4bf8650cd9680dbfdaceb8ba13e
 * 展示应用详情：可调用UI Design Kit处理单个分层图标的接口获取处理后的应用图标。
 * 展示跟随在线主题的应用图标：可调用UI Design Kit处理分层图标的接口获取主题换肤后的应用图标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/UwJljVmXSrmdCtU67niBrw/zh-cn_image_0000002712244464.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Xso6s3KuSJaEWOZoxTS67w/zh-cn_image_0000002742003417.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/3iPsc5WhRoObQvY1ErZHvw/zh-cn_image_0000002712404430.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/oeHwSyqlQ-aRkfPFIBoDPg/zh-cn_image_0000002717771018.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/WU42vhQ2SmKVfwfa1dLuhA/zh-cn_image_0000002717611084.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/FnhyEeWKTsi1xk5cKbCrYA/zh-cn_image_0000002747291037.png)
 
 ## 约束条件
 
@@ -26,7 +26,7 @@ content_hash: sha256:12175d1c6a957b45ac05005eec03108c4bf8650cd9680dbfdaceb8ba13e
 
 ## 开发步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/JSs5wmMMQNmTAbqyVtVjXw/zh-cn_image_0000002742123379.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/4qIMQTyJQy6TsYztlyWCYA/zh-cn_image_0000002747210955.png)
 
 1. 设置分层图标，将前景资源和背景资源放至entry/src/main/resources/base/media文件中，并在该目录下创建一个json文件（例如：drawable.json）：
 

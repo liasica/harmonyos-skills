@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 事件
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 事件
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5da22c4cc34926fb2e1e57b092b3343d6986cfdcae60bf48d6cf5ebb8f75b294
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi
 title: 多应用管控
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 多应用管控
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ec7c0148d552c173253257a68b90b963689b633df13266f5890b0cef5c0919bb
 ---
 

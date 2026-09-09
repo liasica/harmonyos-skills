@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: ExtensionAbilityInfo
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > bundleManager > ExtensionAbilityInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4fc98935790229714024b8d0a36a3ce0a54d2aa79201a071374457700a8ca5b7
 ---
 

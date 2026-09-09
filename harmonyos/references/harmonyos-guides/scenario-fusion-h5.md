@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:19+08:00
+scraped_at: 2026-09-10T06:23:29+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e015f25c3b145e6b491d90fc65b53586810c8349675edd28eea5fab8aa98c655
+content_hash: sha256:90d1e451d02e496409a25c593b91f87a4bdbe3f72becd6cc4f92b8cff2d20e75
 ---
 
 本章节介绍在ArkWeb的Web组件加载H5文件如何实现智能填充功能。
@@ -18,7 +18,7 @@ content_hash: sha256:e015f25c3b145e6b491d90fc65b53586810c8349675edd28eea5fab8aa9
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/leC0h1BoQn-r17AyxWJ-jw/zh-cn_image_0000002742004377.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Rnw09XoCRaOJGpwNtM9cCg/zh-cn_image_0000002717612040.png)
 
 ## 示例代码一
 

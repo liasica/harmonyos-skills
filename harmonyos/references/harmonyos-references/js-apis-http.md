@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.net.http (数据请求)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.http (数据请求)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a88b844c20bb53c95c513e1b4bddaddb0684f1c035709e2179759d6cd4edfa55
 ---
 

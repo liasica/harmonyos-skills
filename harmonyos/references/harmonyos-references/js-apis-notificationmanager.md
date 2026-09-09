@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.notificationManager (NotificationManager模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > @ohos.notificationManager (NotificationManager模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1c83af2359965633faf1602bca021eb138c7afd03c5881ab863355a374b6655a
 ---
 

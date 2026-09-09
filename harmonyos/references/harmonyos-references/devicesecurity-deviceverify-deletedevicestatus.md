@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: 删除设备标记状态
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > REST API > 删除设备标记状态
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ef4dc4524fa7fb5afb55953e3736fc3838d0f9152f52c8258cc508e040ffa7d3
 ---
 

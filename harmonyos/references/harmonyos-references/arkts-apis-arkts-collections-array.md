@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Array)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Array)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e57c764b2742ac598acba51b87b8d1f4a7fdcebf7e434b220ad7a097b121cfe1
 ---
 

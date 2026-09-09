@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 文件管理错误码
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > 错误码 > 文件管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6a18a6078e3bb5c47afa254d64b79a65fd7cebd08608dbf6000953b9e6a702a9
 ---
 

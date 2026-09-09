@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/parallel-deco
 title: 创建视频解码器和NativeWindow初始化并行
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit常见问题 > 创建视频解码器和NativeWindow初始化并行
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-10T06:22:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:892ceb292c8df2cbcae6c4d09f522033cd04b91409abe0b60085a085873360e6
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-promo
 title: 商家券场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 运营工具 > 商家券场景
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:16+08:00
-doc_updated_at: 2026-06-03
-content_hash: sha256:5415d14390f547c7d3ff6f1c6267306eebd4cfb6c0048ec62c357d67113f9817
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:6cbdb84919c45956b0e364bc5f8bccbe1833c890d21b2592d6491ab5f576b68c
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:5415d14390f547c7d3ff6f1c6267306eebd4cfb6c0048ec62c357d67113
 
 用户在华为钱包卡包可见的商家券样式（参考下图，商家自定义）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ERhwq-1sSsyUKjX9V4Q26Q/zh-cn_image_0000002742124271.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/nRniTGcKTS2d1DsHL_m5RA/zh-cn_image_0000002747211843.png)
 
 ## 接入前置条件
 
@@ -78,7 +78,7 @@ content_hash: sha256:5415d14390f547c7d3ff6f1c6267306eebd4cfb6c0048ec62c357d67113
 
 如果系统对商家券Code无特殊要求，则使用随机Code模式（HWPAY\_MODE），华为在代发商家券时，随机生成券码给用户发券，发券成功后会回调通知本次发券所使用的券码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/GTAl82SXTMmVpCKb9kgwGA/zh-cn_image_0000002712245364.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/xQn_Cj1hQ_uZm88vQ8WghQ/zh-cn_image_0000002717771908.png)
 
 **券批次管理**
 
@@ -124,7 +124,7 @@ content_hash: sha256:5415d14390f547c7d3ff6f1c6267306eebd4cfb6c0048ec62c357d67113
 
 如果华为商家券系统中对商家券Code有特殊要求，希望华为流量场景代发券时使用自有券码，则在创建券批次时选用MERCHANT\_UPLOAD模式，并把自有券码通过[上传券预存Code](../harmonyos-references/payment-api-common-promotion-service-merc-coup-coupbatch-upload.md)接口同步到华为商家券系统。华为商家券系统在代发商家券时，随机选取已上传的券码给用户发券，发券成功后会回调通知本次发放所使用的券码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/GejMwk5dSWa-bgVIRlbJ9w/zh-cn_image_0000002742004313.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/U0V_Sw2bQJCK2bIqfZWkqA/zh-cn_image_0000002717611976.png)
 
 **券批次管理**
 
@@ -154,7 +154,7 @@ content_hash: sha256:5415d14390f547c7d3ff6f1c6267306eebd4cfb6c0048ec62c357d67113
 
 如果系统对商家券Code有特殊要求，仅希望在华为流量场景中展示用户在自有应用中领取到的券，则使用商户平台发券和指定券Code（MERCHANT\_API）模式，在调用“发放优惠券”接口时，把券码同步到华为商家券系统。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/2oJQvW-4QZavAYm5QgBhSg/zh-cn_image_0000002712405324.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/U0UjBSLIRxKMpC-TXREyKw/zh-cn_image_0000002747291929.png)
 
 **券批次管理**
 

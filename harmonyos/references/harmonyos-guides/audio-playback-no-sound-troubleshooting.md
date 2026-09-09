@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playbac
 title: 播放无声定位指导
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit常见问题 > 播放无声定位指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:54+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1019d865c9e7872f8b6d69404d987e9320d936f680b71a435431791eae2997a8
 ---
 

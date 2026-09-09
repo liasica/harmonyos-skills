@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.security.CryptoExtensionAbility (密钥扩展能力)"
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > ArkTS API > @ohos.security.CryptoExtensionAbility (密钥扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:56+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ce66e044d64b8b7fe6bf34f9f9feb1ae9028a65b1d7ca3364914a7e47dac95ed
 ---
 

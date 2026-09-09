@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-dis
 title: 展示数字商品
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 应用内分发数字商品 > 展示数字商品
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:52+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:23:11+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:22e6bdd67f37cf207ddccddd377853890ec91147644478e562b5ba7481e35da4
 ---
 

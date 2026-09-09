@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-relati
 title: 通过关系型数据库实现数据持久化 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过关系型数据库实现数据持久化 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:54+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b964845051b20566937f89a9787e564f53e89b24fd334bfaf891db4a04430a2c
 ---
 

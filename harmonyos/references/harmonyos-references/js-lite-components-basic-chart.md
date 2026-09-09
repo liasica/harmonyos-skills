@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:39+08:00
+scraped_at: 2026-09-10T06:25:52+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:80a31ac3417aacea2be275ff8d3b8acf0ea8e23ee1cb25faa5368c51b30ae3b8
+content_hash: sha256:6db263426c1a935bc37be497e074b94c4f2560c1f1a3ee100edaf23e7861df0a
 ---
 
 图表组件，用于呈现线形图、柱状图界面。
@@ -207,7 +207,7 @@ content_hash: sha256:80a31ac3417aacea2be275ff8d3b8acf0ea8e23ee1cb25faa5368c51b30
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6_rmHuZUQIeLEifVOU--ng/zh-cn_image_0000002742125817.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/64nj4UqGSYS3xFbt6G5hxA/zh-cn_image_0000002747213325.png)
 2. 柱状图
 
    ```html
@@ -268,4 +268,4 @@ content_hash: sha256:80a31ac3417aacea2be275ff8d3b8acf0ea8e23ee1cb25faa5368c51b30
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/8OmFvw-rRnSxB2XFt5t8DQ/zh-cn_image_0000002712246908.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/GLSQFhiRRRakoEa6_jPy4w/zh-cn_image_0000002717773392.png)

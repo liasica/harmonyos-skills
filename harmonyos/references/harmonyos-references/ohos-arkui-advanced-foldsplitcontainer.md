@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: FoldSplitContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FoldSplitContainer
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:29+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:25:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e232827184d43f1f2e763c3f1f43a968ebe0f172df04dd52b17cb42afff99e86
 ---
 

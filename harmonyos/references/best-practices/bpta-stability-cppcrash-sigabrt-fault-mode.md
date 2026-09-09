@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: SIGABRT进程主动终止故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > CppCrash故障模式说明 > SIGABRT进程主动终止故障模式说明
 category: best-practices
-scraped_at: 2026-09-04T06:33:24+08:00
-doc_updated_at: 2026-09-03
-content_hash: sha256:7c1639cfdf6c0d823c954b61e9d0dae66364f1b23377e840972b14cae4fef1dd
+scraped_at: 2026-09-10T06:30:16+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:b51ed9e5094e8937343eef11db36f0bf0602940c523450aba8d07abf0290ae7e
 ---
 
 ## 根因描述
@@ -97,11 +97,11 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
    }
    ```
 
-   说明3：由于pc初始化为空，assert时，触发abort()。
+   说明3：由于pc初始化为空，assert判断失败时，隐式调用abort()函数。
 
 **问题结论与总结**
 
-应用主动调用abort()函数触发故障。
+应用代码，通过使用assert判空，主动调用abort()函数，触发故障。
 
 ### 案例二：因资源不足导致线程创建失败进而崩溃
 
@@ -162,11 +162,11 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
 
 **问题结论与总结**
 
-应用创建线程超限触发异常。
+应用创建线程数量超限，触发异常。
 
 **修复建议**
 
-线程资源使用完成后，要及时回收释放相关资源。
+线程资源使用完成后，要及时回收，释放相关资源。
 
 ### 案例三：库函数校验失败触发崩溃
 
@@ -186,7 +186,7 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
    ```
 
    说明1：musl库校验失败，触发崩溃。
-2. 分析调用栈特征。识别为代码执行触发了句柄异常。
+2. 分析调用栈特征，识别为代码执行触发了句柄异常。
 
    证据2：
 
@@ -260,7 +260,7 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
    #endif
    ```
 
-   可以看到\_\_fortify\_error会主动调用abort()函数导致进程退出。
+   可以看到\_\_fortify\_error()会主动调用abort()函数导致进程退出。
 
    ```cpp
    void __fortify_error(const char* info, ...)
@@ -291,15 +291,15 @@ SIGABRT进程异常终止，通常为进程自身调用标准函数库的abort()
    1539->/dev/null native object of unknown type 0
    1540->/dev/null native object of unknown type 0
    ```
-6. 进一步分析业务发现为使用select()函数监听FD时校验FD数量超限触发进程主动终止。
+6. 进一步分析业务发现，代码使用select()体系接口监听FD，在执行FD\_SET()宏时因fd超出FD\_SETSIZE（1024）限制触发musl库校验失败，进程主动终止。
 
 **问题结论与总结**
 
-libc中select()函数限制监控的FD不超过1024，超过会触发进程主动终止。
+libc中select()体系接口限制监控的FD不超过1024，FD\_SET()宏的fortify校验发现fd超过1024时会调用abort()触发进程主动终止。
 
 **修复建议**
 
-根据使用场景，选择合适的系统API，可以使用poll()函数替换使用select()函数。
+根据使用场景选择合适的系统API，使用poll()函数替换select()函数。poll()使用pollfd结构体管理监听对象，没有FD\_SETSIZE（1024）的数量限制。若必须使用select()，需在执行FD\_SET()宏前校验fd小于FD\_SETSIZE，超出限制的fd不写入fd\_set。
 
 ### 案例四：符号冲突导致异常捕获失败
 
@@ -321,7 +321,7 @@ libc中select()函数限制监控的FD不超过1024，超过会触发进程主�
    说明1：提示有未捕获异常，导致崩溃。
 2. 查看异常栈帧。
 
-   证据2：根据调用栈，可以看到在#08层栈中抛出异常，跳过中间系统栈帧。
+   证据2：根据调用栈，可以看到在#07层栈中抛出异常，跳过中间系统栈帧。
 
    ```screen
    Fault thread info:
@@ -365,7 +365,7 @@ libc中select()函数限制监控的FD不超过1024，超过会触发进程主�
    说明2：此处未按照预期捕获vip::VError，导致了程序崩溃。
 3. 分析更多上下文。
 
-   #09帧调用TestCatch()函数。
+   #09帧间接调用TestCatchVError()函数。
 
    ```screen
    auto testCatch = reinterpret_cast<ReturnType>(dlsym(handleB, "TestCatchVError"));
@@ -559,7 +559,7 @@ libc中select()函数限制监控的FD不超过1024，超过会触发进程主�
 
 **修复建议**
 
-数组通过下标访问时需要严格校验下标的合法性。
+数组通过下标访问时需要严格校验下标的合法性，避免越界访问。或者使用try-catch捕获std::out\_of\_range异常，并进行相应的业务处理。
 
 ### 案例七：NAPI触发异常
 

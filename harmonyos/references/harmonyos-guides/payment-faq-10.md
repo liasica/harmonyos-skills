@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-faq-1
 title: 接口请求响应“无效的签名”应该如何排查？
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit常见问题 > 接口请求响应“无效的签名”应该如何排查？
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:16+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:306ee4c8af69e3b3fea37db0fa80c3783c44ce51f7e9de43920bfe67b9a8ed20
 ---
 

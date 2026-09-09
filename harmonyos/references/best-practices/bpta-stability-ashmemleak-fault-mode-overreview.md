@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: ASHMEM内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ASHMEM内存泄漏故障模式说明 > ASHMEM内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-09-04T06:33:26+08:00
+scraped_at: 2026-09-10T06:30:18+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:6a697ddc6d88602573f82a09933672ad16f19333ec9a3397bb66a0c3bed5490c
+content_hash: sha256:0a5c0f4e2800979312f710d3c04a4d6ad9119ec5163bcbe12aa815924e8f886a
 ---
 
 ## 概述
@@ -148,7 +148,7 @@ ASHMEM内存维测日志中，一行代表申请的一个ASHMEM内存的句柄�
 5. 找到异常申请的内存及其调用栈，如下图5、6处框选的内容。这里建议将Bytes从大到小排序，按照申请大小顺序排查内存调用栈，分析可疑的内存泄漏点。
 6. 结合调用栈对代码进行分析，找到泄漏根因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2w2t7gQ5R4WtVDS3inXWEA/zh-cn_image_0000002699731892.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/O7iEUszMSsycXLPc0y7HJQ/zh-cn_image_0000002699731892.png)
 
 ## 开发态问题分析方法
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 解析凭证
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 开放接口调用凭证 > 解析凭证
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fb2894698a9ac836e631df4b9d22386219d58885e7da930af28efd34a48dbb42
 ---
 

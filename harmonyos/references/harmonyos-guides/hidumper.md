@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper
 title: hidumper
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hidumper > hidumper
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-21
+scraped_at: 2026-09-10T06:22:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:30ddf0fd877f5334565740a863c47240a0a51a3e8099225fdf37f4fc4a3444ec
 ---
 

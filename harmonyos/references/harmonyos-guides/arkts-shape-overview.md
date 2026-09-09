@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-shape-o
 title: 几何图形绘制概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 几何图形绘制 > 几何图形绘制概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:48+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:22:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:443b5b7c3d81798a3db4707a6588a2135e31937919e290c795d36accfb0f9924
 ---
 

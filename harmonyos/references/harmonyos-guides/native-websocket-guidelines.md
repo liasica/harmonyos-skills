@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-websoc
 title: 使用WebSocket访问网络(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用WebSocket访问网络(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:44c073e5ac5d750b1843692f0cd02f284be1ffdc74e9e7cd9a4d095784549d6e
+scraped_at: 2026-09-10T06:22:36+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:6aadb4638e55c1ccfb5c2249ded2127cc1aa4400dbb0f008556726909fdbda62
 ---
 
 ## 场景介绍
@@ -337,7 +337,7 @@ struct Index {
 
 注意：如图所示，在add\_library中的entry是工程自动生成的modename，若要做修改，需和步骤3中.nm\_modname保持一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/XHKjjzOdSQOCCfm2DMH2WQ/zh-cn_image_0000002712244574.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/IUF7t24RSC63RScoeJEz0Q/zh-cn_image_0000002717771128.png)
 
 7、调用WebSocket C API接口要求应用拥有ohos.permission.INTERNET权限，在module.json5中的requestPermissions项添加该权限。
 
@@ -349,7 +349,7 @@ struct Index {
 
 2、运行工程，设备上会弹出以下图片所示界面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/JHeweC1TRo-E_6UacuUdFg/zh-cn_image_0000002742003527.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/3dfjLpuATzGeyE4MC7ZDBQ/zh-cn_image_0000002717611194.jpg)
 
 简要说明：
 
@@ -358,6 +358,6 @@ struct Index {
 * 在Content输入框里输入要发送给服务器的内容，点击Send按钮发送。如果服务器返回消息，会触发onMessage回调，打印日志。
 * 点击Close按钮，WebSocket连接释放，可以重新输入新的WebSocket URL。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/fq4N2_05TFumajG90pkqEg/zh-cn_image_0000002712404540.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/F8JxgZlTQ5Cat6dqrDLnFQ/zh-cn_image_0000002747291147.jpg)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Pbe9B6R6R8SM9ACzIpBkYw/zh-cn_image_0000002742123489.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/xGRl8CCLSwirrxMt0TT20g/zh-cn_image_0000002747211065.png)

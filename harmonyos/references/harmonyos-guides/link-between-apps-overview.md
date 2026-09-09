@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/link-between-
 title: 应用间跳转概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e6a7ec744601ff4a0ffbe34d6228eb7a4a03c518cfe0d3093c394030bbcf0712
 ---
 

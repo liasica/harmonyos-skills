@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-inspect
 title: 检查页面布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 检查页面布局
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1efd63375f5fd3ac14cbd1b45c6bdf9d4ca3e84b036af5f937a7b10577796658
 ---
 

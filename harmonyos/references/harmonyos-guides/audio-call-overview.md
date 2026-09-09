@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-call-ov
 title: 音频通话开发概述
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频通话 > 音频通话开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:14+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1ae628bf88df448a8d6ab3de35cec8f2d0f19a3803ce31b2724b3fbe4392303a
 ---
 

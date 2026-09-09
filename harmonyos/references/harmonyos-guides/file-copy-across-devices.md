@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-copy-acr
 title: 跨设备文件拷贝
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 分布式文件系统 > 跨设备文件拷贝
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0b9d5ffc75dd16b2bf0a2c96aa1ce0818a394685e3b598cb5df97c877b3c5aae
 ---
 

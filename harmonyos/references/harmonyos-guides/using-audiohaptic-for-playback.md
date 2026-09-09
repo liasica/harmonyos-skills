@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-audioha
 title: 使用AudioHaptic开发音振协同播放功能(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 使用AudioHaptic开发音振协同播放功能(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:51+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c98b588ab38fa4a15802bb4f64c83ea582c2b231e3ac08afdd6d0004218ce4a4
 ---
 

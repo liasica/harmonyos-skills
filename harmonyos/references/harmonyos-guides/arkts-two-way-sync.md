@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way
 title: $$语法：系统组件双向同步
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 语法糖 > $$语法：系统组件双向同步
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:13:57+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:a76b8142b580cd55359aa72d5421b651a9fe483323bdefe18e0e6837fa7d75a9
+scraped_at: 2026-09-10T06:22:02+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:f5ce6d3c4a7eba4069dbde79890a17f14cb2cca5e48f2b72dfe767194278908b
 ---
 
 $$运算符为系统组件提供TS变量的引用，使得TS变量和系统组件的内部状态保持同步。
@@ -75,4 +75,4 @@ struct TextInputExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/PFOchP_0Q7ePY_dlBMV71Q/zh-cn_image_0000002712403504.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/WoAo-983QryY3VD_S6LjyQ/zh-cn_image_0000002717610162.gif)

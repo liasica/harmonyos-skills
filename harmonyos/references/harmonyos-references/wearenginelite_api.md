@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wearengin
 title: wearEngineLite（穿戴设备能力开放）（Lite）
 breadcrumb: API参考 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > ArkTS API > wearEngineLite（穿戴设备能力开放）（Lite）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1344424cd6e5afaaece9711d58f9132d05185f73c00ccece54b7888e5cda67a9
 ---
 

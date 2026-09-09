@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avbuffer.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avbuffer.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:de92835f3a4c0e3980d140970162ac85ef98909f281bc859a88d2e90f477bf56
 ---
 

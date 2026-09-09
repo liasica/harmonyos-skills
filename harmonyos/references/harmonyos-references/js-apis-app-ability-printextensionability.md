@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.PrintExtensionAbility (打印扩展能力)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.app.ability.PrintExtensionAbility (打印扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f7f360496efa0cd90a1d71186b31601d6a78b75aa4cd84be3e13f67e2acfc440
 ---
 

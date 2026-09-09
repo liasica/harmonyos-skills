@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ResultSet)
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.relationalStore (关系型数据库) > Interface (ResultSet)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:edf9f5d3588979e856251bac56cb253cc96f2c90a4d3d2e7b14a6f496836bfff
 ---
 

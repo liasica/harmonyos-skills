@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ime-kit-intro
 title: IME Kit简介
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > IME Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:256fa1c58e80dd96d583fc9f7a08f5aec38658b56aeee8bd138d6a6219c99070
+scraped_at: 2026-09-10T06:22:20+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:8fea1459eefabe972c7e490487d399e9908d8ffa91a5ef9e47c1770596ab8021
 ---
 
 IME Kit 负责建立编辑框所在应用与输入法应用之间的通信通道，确保两者可以共同协作提供文本输入功能，也为系统应用提供管理输入法应用的能力。
@@ -16,7 +16,7 @@ IME Kit提供输入法框架和输入法服务两类API。用于实现输入法�
 
 ## 框架原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/pM8oKjTbS6azla2pAArSEQ/zh-cn_image_0000002742003399.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Ba3rC_WPSW2XyqyOGakeLQ/zh-cn_image_0000002717611066.png)
 
 ## 功能特点
 

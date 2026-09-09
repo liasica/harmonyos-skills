@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-avcodec-i
 title: 基于AVCodec播放DRM节目(C/C++)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 基于AVCodec播放DRM节目(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:45+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:aa48f90c1b385d0e1604e2638088a3e7965a1460a8697e1b57719bfde8974d79
+scraped_at: 2026-09-10T06:22:58+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:38f5b20b518eed0461135658cfc5bee7a328d12fb0f9c1141d74fc32a51f0d2b
 ---
 
 ## 功能介绍
@@ -59,6 +59,7 @@ target_link_libraries(sample PUBLIC libnative_drm.so)
 2. 获取设备支持的DRM解决方案名称和唯一标识的列表。
 
    ```
+   #include <cstring>
    uint32_t count = 3; // count是当前设备实际支持的DRM插件的个数，用户根据实际情况设置。
    DRM_MediaKeySystemDescription descriptions[3];
    memset(descriptions, 0, sizeof(descriptions));

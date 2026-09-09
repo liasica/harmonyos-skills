@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: dataTransfer（星闪数传能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > dataTransfer（星闪数传能力）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:56+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:27:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ac1edcf6478bc1fe18df2b4e6316c9686134cacd4d6c43ebd48f16c086e3be43
 ---
 

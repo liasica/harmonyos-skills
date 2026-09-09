@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-backgrou
 title: 推送后台消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送后台消息
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:00+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:23:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:22e9a8e6a4c0dac7522ebaf39014f507b94cdfec8bf40f0480a6e241970b6f3b
 ---
 

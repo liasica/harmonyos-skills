@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-output-
 title: 响应输出设备变更时合理暂停
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理 > 响应输出设备变更时合理暂停
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b10034604270fcc083a44f86d96616841d5d98d9de12415f5b8994a150906c9f
 ---
 

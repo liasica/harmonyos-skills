@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-aggregate
 title: 点聚合
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 点聚合
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:13+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:c56d00d849f8b0e1334b27a8ab4025bab8dd2b251373afb2fcbed7e50d832da2
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:6a4b848661f1148bde1b54ca6bfe955baf940814572859b2b0affd5b101b2b83
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:c56d00d849f8b0e1334b27a8ab4025bab8dd2b251373afb2fcbed7e50d8
 
 5.0.3(15)开始，支持聚合标记点击事件监听功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/YdjuoCwHRsS2tAyF7R0dJA/zh-cn_image_0000002712245308.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ygHyE54eSUWcTSls4QQaEg/zh-cn_image_0000002717771852.jpg "点击放大")
 
 ## 接口说明
 

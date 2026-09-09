@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hopping
 title: 自由流转概述
 breadcrumb: 最佳实践 > 自由流转 > 自由流转概述
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:5e255870c6b468f794ca5291db7bd93bb5c9badce855b418bad5f78591bfe4cc
+scraped_at: 2026-09-10T06:30:08+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:bb7de59805ea80a35704ae44a61c6e01a5e8bf457148ed7fb315ce232d7e0da9
 ---
 
 ## 概述
@@ -42,9 +42,9 @@ content_hash: sha256:5e255870c6b468f794ca5291db7bd93bb5c9badce855b418bad5f78591b
 
 ### 框架
 
-自由流转依赖于鸿蒙系统提供的分布式运行环境，底层依托分布式软总线，解决设备发现、连接、组网等痛点，打通1+8+N互联互通能力，对外提供硬件、数据、应用三个维度的跨设备访问能力，应用开发只需遵循框架并适配应用层提供的API，就能实现设备之间的跨端迁移和多端协同。
+自由流转依赖于HarmonyOS提供的分布式运行环境，底层依托分布式软总线，解决设备发现、连接、组网等痛点，打通1+8+N互联互通能力，对外提供硬件、数据、应用三个维度的跨设备访问能力，应用开发只需遵循框架并适配应用层提供的API，就能实现设备之间的跨端迁移和多端协同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ufGTS9yzQWubwdbPTXx_HA/zh-cn_image_0000002563685202.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/Ns4R4hRbSLqrtAMw5lVIVw/zh-cn_image_0000002563685202.png "点击放大")
 
 ### 特性
 

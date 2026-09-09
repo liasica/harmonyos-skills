@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-permission
 title: 应用权限申请
 breadcrumb: 最佳实践 > 应用安全 > 应用权限申请
 category: best-practices
-scraped_at: 2026-09-02T15:03:20+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:1f90f4cd92c0d883e20b079fa5b724798010d416ae99f8d0e3b299072479824f
+scraped_at: 2026-09-10T06:30:11+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:1b0166a34e41961282ba536d6aea7a6d476ca28c85ea927011a5720532cdc520
 ---
 
 ## 概述
@@ -59,7 +59,7 @@ content_hash: sha256:1f90f4cd92c0d883e20b079fa5b724798010d416ae99f8d0e3b29907247
 * 核心原则：尊重用户选择权，不应强制授予权限。
 * 实施策略：如果用户拒绝了某项权限申请，应用不应再次弹窗请求该权限。应在页面的适当位置添加明确的提示，指导用户开启权限或退出当前需要该权限的场景，直到用户重新触发时再引导其完成授权。例如，权限申请被拒绝后，按钮上方显示提示文字，具体效果见下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/XkyJA9niQeKBV7lZK5gUOg/zh-cn_image_0000002194010136.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/CFITQdQhTAGRmmHNzPo_Xg/zh-cn_image_0000002194010136.png "点击放大")
 
 ## 明确声明原因
 
@@ -86,7 +86,7 @@ content_hash: sha256:1f90f4cd92c0d883e20b079fa5b724798010d416ae99f8d0e3b29907247
 
   解释：此示例清晰地说明了应用为何需要位置信息（展示您的当前位置信息），并承诺了信息的使用范围及用途（仅用于本应用的展示），确保了信息的保密性，符合规范且易于用户理解。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/tbKYfG12T36miUCKwXuhPg/zh-cn_image_0000002193850544.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/OtttGQmdR8yuM3Z3tWWTug/zh-cn_image_0000002193850544.png "点击放大")
 
 * 正例2
 
@@ -131,11 +131,11 @@ content_hash: sha256:1f90f4cd92c0d883e20b079fa5b724798010d416ae99f8d0e3b29907247
 2. 本次使用允许：点击后将会对应用授予临时的权限，详情请参考[向用户申请单次授权](../harmonyos-guides/one-time-authorization.md)，若临时权限被取消，再次调用requestPermissionsFromUser()方法将会拉起该权限设置弹框；
 3. 不允许：点击后应用无法获取该权限，且再次调用requestPermissionsFromUser()方法无法拉起该权限设置弹框。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/hL97enVBS7meSu4UhMYL7Q/zh-cn_image_0000002194010128.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/15RBOygIQz-XiH4aTFWwoA/zh-cn_image_0000002194010128.png "点击放大")
 
 具体流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/hmmkNa_2Q_2BCdRXUMLCDA/zh-cn_image_0000002267532549.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/8xyqFiF4SiOrdvRSf-jvIQ/zh-cn_image_0000002267532549.jpg "点击放大")
 
 **示例代码**
 
@@ -241,7 +241,7 @@ private openPermissionsSetting(): void {
 
 用户可以在系统设置中，打开超级隐私模式或者关闭相机、麦克风、位置的全局开关，此时，即使应用已经被授权相关权限，也不能完成访问目标的操作。应用需要检测到这种状态，并通过适当的方式（如拉起全局开关的弹窗或一段描述性文字引导用户开启全局开关等）来提醒用户并辅助开启对应的全局开关。所以需要在调用接口前判断全局开关是否被关闭，如果全局开关被关闭，则需要调用[requestGlobalSwitch()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestglobalswitch12)方法来打开它，之后才能继续调用所需的接口，具体流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/ZPM1LN7BQOO_xOjeKONOJQ/zh-cn_image_0000002267612717.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/aS4W-fgaQjSukMvsxLMG-g/zh-cn_image_0000002267612717.jpg "点击放大")
 
 以下为判断各全局开关是否打开的方法：
 

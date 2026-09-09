@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-com
 title: ArkWeb组件安全开发
 breadcrumb: 最佳实践 > 应用安全 > ArkWeb组件安全开发
 category: best-practices
-scraped_at: 2026-09-02T15:03:21+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:139f946cf92a342c841970c9da28521dbe1216c530e75287b09013b7d02fdba0
+scraped_at: 2026-09-10T06:30:10+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:1e112d918bc0738a4358402cc3376fea629ff30441f61d69bb7077b7a894b23a
 ---
 
 ## 概述
@@ -300,7 +300,7 @@ struct WebComponent {
 
 ArkWeb默认不允许跨域访问本地文件资源，除非使用[setPathAllowingUniversalAccess()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setpathallowinguniversalaccess12)设置了允许跨域访问的本地文件目录。在此情况下，务必最小化允许访问的文件目录范围，且目录中不得存放敏感资源，如用户数据、cookie、各类token等。
 
-注：鸿蒙系统仅开放针对应用文件目录（Context.filesDir）、应用资源目录（Context.resourceDir）设置允许跨域访问。若设置路径列表不符合要求，则会导致设置失败。
+注：HarmonyOS仅开放针对应用文件目录（Context.filesDir）、应用资源目录（Context.resourceDir）设置允许跨域访问。若设置路径列表不符合要求，则会导致设置失败。
 
 **【风险说明】**
 

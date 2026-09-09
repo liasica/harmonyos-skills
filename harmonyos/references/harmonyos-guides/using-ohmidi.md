@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohmidi
 title: 使用OH_MIDI进行MIDI开发(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > MIDI设备通信 > 使用OH_MIDI进行MIDI开发(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:54+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:74ed0e4c7f5536f91c50ea76406ae67c381c32477488137045000ea6121b9bc7
 ---
 

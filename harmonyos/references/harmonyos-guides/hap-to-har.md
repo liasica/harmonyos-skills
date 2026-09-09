@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-to-har
 title: HAP转HAR指导
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > HAP转HAR指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5dc4ab155731a682574ec5fe39d40107d826ac6b2c9c33aa213d86d8f158ee54
 ---
 

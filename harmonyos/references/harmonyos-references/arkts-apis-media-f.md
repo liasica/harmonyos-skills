@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Functions
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:34+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:28:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c8b8827ec77a4b2d04ddee133883d40288547a0c28bcd39f7c846acca2989fd8
 ---
 

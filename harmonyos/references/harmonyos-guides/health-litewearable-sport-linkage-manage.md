@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-litewe
 title: 运动联动管理
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > LiteWearable应用开发 > 运动联动管理
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:08+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:23:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:207178477a99fa7e18a4db8afff1db9a19f0eec226c22cc257ec312cb1c5e98a
 ---
 

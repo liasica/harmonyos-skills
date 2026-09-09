@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片使用画布组件绘制自定义图形
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片UI界面开发 > ArkTS卡片使用画布组件绘制自定义图形
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:13+08:00
+scraped_at: 2026-09-10T06:22:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:76ac4f16d0617444f1bf7cad6e7334b86ea7070835ef11c6101cc9a2868c5298
+content_hash: sha256:6732eeed372142df207ceb1e8ab3002220578516b2b815656b92f5e3af5f0cec
 ---
 
 ArkTS卡片开放了自定义绘制的能力，在卡片上可以通过[Canvas](../harmonyos-references/ts-components-canvas-canvas.md)组件创建一块画布，然后通过[CanvasRenderingContext2D](../harmonyos-references/ts-canvasrenderingcontext2d.md)对象在画布上进行自定义图形的绘制，如下示例代码实现了在画布的中心绘制了一个笑脸。
@@ -95,4 +95,4 @@ struct CustomCanvasDrawingCard {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/KuZu46m7ReiBjs75WtufYA/zh-cn_image_0000002742003343.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/LjBl8qoWSx6NbfgwRoZBjQ/zh-cn_image_0000002717611010.jpeg)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawable_descriptor.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > drawable_descriptor.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:08b0529c7e62b1934827a4ed88f39ec9b3b3b15577f071759b6bc3899783f841
 ---
 

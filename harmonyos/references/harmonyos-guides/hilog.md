@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog
 title: hilog
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hilog
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:41+08:00
-doc_updated_at: 2026-08-18
+scraped_at: 2026-09-10T06:22:49+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ea6ae8f3f3af30f0d9581e3f084ef0e7871bc492edcb3c89b6560a11f3a6083b
 ---
 

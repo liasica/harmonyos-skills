@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-faq-2
 title: 关于云侧接口推送成功但设备收不到推送消息的问题
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见问题 > 关于云侧接口推送成功但设备收不到推送消息的问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:35+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:52b8a73d847cc0cbcfe59c6717e60bf60323546599c51384de37304f2c88a003
 ---
 

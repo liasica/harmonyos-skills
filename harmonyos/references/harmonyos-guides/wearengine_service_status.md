@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine_se
 title: 管理应用与Wear Engine服务的连接状态
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 管理应用与Wear Engine服务的连接状态
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:10+08:00
-doc_updated_at: 2026-05-12
+scraped_at: 2026-09-10T06:22:44+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:243a94029cd0d2a31f0b4b08a84d790809e0678fc88d8d183793d556368bfceb
 ---
 

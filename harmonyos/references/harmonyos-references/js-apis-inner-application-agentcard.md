@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: AgentCard
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > AgentCard
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1be8840bc78ed9111613dc8f593fe870b2689ddb1c3faca82c4f8f3c1fbd1bd4
 ---
 

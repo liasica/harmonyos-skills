@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-
 title: 创建异步线程执行AVTranscoder视频转码(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码 > 创建异步线程执行AVTranscoder视频转码(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:52+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:15767ab4b5a1a7dbbb927993f9319e774ebef0a3604ccdc4f828308d6e9c1c57
+scraped_at: 2026-09-10T06:23:00+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2f145799633358533040ae542b63b1a32b7b6219a08cff48efa50d91c4e39418
 ---
 
 在开发过程中，应用经常会创建异步线程执行视频转码任务以满足不同诉求，主要包括：
@@ -55,13 +55,13 @@ content_hash: sha256:15767ab4b5a1a7dbbb927993f9319e774ebef0a3604ccdc4f828308d6e9
 
   计算过程：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/OCPuzkLcTzejXQhCmsDXXA/zh-cn_image_0000002712244812.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/XyxCdROnQn-jgMW7fVq5kg/zh-cn_image_0000002717771364.png)
 
   分辨率和帧率的系数由以下经验公式计算可得。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/cDOZnNHoTI2qNlEmRXl9kA/zh-cn_image_0000002742003763.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/0X_H_Dl9RMOIMoZHzbouxQ/zh-cn_image_0000002717611430.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/YofVeAm7RHS8scGj1CAz1w/zh-cn_image_0000002712404776.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/vReWTdJOSlO-HmqJm8mjcA/zh-cn_image_0000002747291383.png)
 
   上述计算帧率的公式y=clip(0.5, 2, x)表示：如果x∈[0.5, 2.0]，取y=x；如果x＜0.5，取y=0.5；如果x＞2.0，取y=2.0。
 * **码率计算**

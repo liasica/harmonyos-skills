@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cont
 title: content_embed_proxy.h
 breadcrumb: API参考 > 应用框架 > Content Embed Kit（内容嵌入服务） > C API > 头文件 > content_embed_proxy.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:31+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8aa98735393a3b57c37aa5e0d0f7ab4a4e08f8de740ad0d9dc06b48644162356
 ---
 

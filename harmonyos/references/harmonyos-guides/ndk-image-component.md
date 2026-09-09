@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-image-com
 title: 显示图片（Image）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 媒体展示 > 显示图片（Image）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:20+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3522236845e49d3c4cda5e089ebd1b97ee1fb5087fa4ae98a19d50b45032f00b
 ---
 

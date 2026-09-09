@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-
 title: 使用HiTraceChain打点（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 分布式调用链跟踪 > 使用HiTraceChain打点（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:394c213b44e1113ac2962d16def94c7ec3fbf7099bf2e817a85e440a0e4c1524
 ---
 

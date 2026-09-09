@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置页签栏的分割线
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置页签栏的分割线
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c5895230f26741e42f46c5aab31077d0459c1160a2efa6580cd2ab98530367d1
 ---
 

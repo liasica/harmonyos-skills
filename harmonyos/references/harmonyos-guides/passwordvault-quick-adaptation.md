@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 快速适配
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 应用接入密码保险箱 > 快速适配
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:22:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d72c4f6e36aec1a5ce65fa5daafeedd761aa5ac406b7553d95f775bde71479cd
 ---
 

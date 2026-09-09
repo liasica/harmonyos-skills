@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-guide
 title: MDM Kit开发指南
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > MDM Kit开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:41+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:906570fc4e8e29c034f4eef7b8bf199bebe387469f18734256e8f915a1761dcf
 ---
 

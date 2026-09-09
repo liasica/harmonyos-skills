@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-te
 title: TextReader（朗读控件）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS API > TextReader（朗读控件）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:35+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:29:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3450f745c38d649a8150ed784fecb59c03ce990caae7656a9578ce8cf3da593e
 ---
 

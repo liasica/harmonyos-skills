@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/open-permissi
 title: 手动设置授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 手动设置授权
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:16+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:9bb3e8f4e7c507506c8fb6efb39f59b525a840958d514abb98f2359a13faf26c
+scraped_at: 2026-09-10T06:22:23+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:806bd509d11cc002d29708e81f3596e4ccf6808af774ebcb8008980a857cfe34
 ---
 
 当应用需要访问用户的隐私信息或使用敏感系统能力时，如拦截键盘输入事件，应向用户申请授权。这些权限属于[manual\_settings](app-permission-mgmt-overview.md#manual_settings手动设置授权)权限。
@@ -78,11 +78,11 @@ content_hash: sha256:9bb3e8f4e7c507506c8fb6efb39f59b525a840958d514abb98f2359a13f
 
    路径一：设置 > 隐私和安全 > 权限类型（如键盘输入辅助） > 某个应用
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/tzSoIwiCSMGIYiHkodxQQg/zh-cn_image_0000002742003443.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/qQ1zxz-SS5i1ZpajnS7eVQ/zh-cn_image_0000002717611110.png)
 
    路径二：设置 > 应用和元服务 > 某个应用 > 权限类型（如键盘输入辅助）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/0QWBZCNKQ0-tazZSJ7rdxQ/zh-cn_image_0000002712404456.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/TWkAIIlLTE6lNDDP9d1CXA/zh-cn_image_0000002747291063.png)
 
    应用在UIAbility的onWindowStageCreate()回调中调用[openPermissionOnSetting()](../harmonyos-references/js-apis-abilityaccessctrl.md#openpermissiononsetting22)方法引导用户跳转到“设置”，或根据业务需要在UI中引导用户跳转到“设置”。
 
@@ -90,7 +90,7 @@ content_hash: sha256:9bb3e8f4e7c507506c8fb6efb39f59b525a840958d514abb98f2359a13f
 
    效果展示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/hQIBcpfwT_SRZMKRbruVUA/zh-cn_image_0000002742123405.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/_zIo-LKUR62RZbKcweKJyw/zh-cn_image_0000002747210981.png)
 
    * 在UIAbility中引导用户跳转到系统应用“设置”中的对应路径。
 

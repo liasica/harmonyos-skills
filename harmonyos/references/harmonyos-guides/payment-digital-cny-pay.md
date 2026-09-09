@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-digit
 title: 数字人民币支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数字人民币支付场景
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:15+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:eba01d7c8eb0cb9ad85f2438e5d0285487b70aa91a9ade6dc7064ce0c99a2d6e
+scraped_at: 2026-09-10T06:23:24+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:c107de6df403efb8adb8d5668bcb39a02eec17fc5c7e3cd085e8f8fbc245f899
 ---
 
 **说明** 
@@ -23,7 +23,7 @@ content_hash: sha256:eba01d7c8eb0cb9ad85f2438e5d0285487b70aa91a9ade6dc7064ce0c99
 
 数字人民币收银台展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/2X3Efoq9TBWp8kwzdKt1dg/zh-cn_image_0000002742004305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/N1bKImMgSvSWm913HlTCHQ/zh-cn_image_0000002717611968.png)
 
 ## 接入流程
 
@@ -38,7 +38,7 @@ content_hash: sha256:eba01d7c8eb0cb9ad85f2438e5d0285487b70aa91a9ade6dc7064ce0c99
 
 开发者接入数字人民币支付服务，可以快速实现应用的数字人民币支付能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/xYFCv9fxRy6oft1EJtiAtA/zh-cn_image_0000002712405316.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/3hcUCz96Rxe791XcVijRkg/zh-cn_image_0000002747291921.png)
 
 1. 商户客户端请求商户服务器创建商品订单。
 2. 商户服务器按照商户模式（运营机构商户或受理服务机构商户）调用运营机构或受理服务机构提供的下单接口到数字人民币服务端下单，接口详情请参照商户合作的[运营机构或受理服务机构提供的开发指引](payment-faq-27.md)。

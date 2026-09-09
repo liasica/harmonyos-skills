@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Socket错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > Socket错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ac6e566d48f9d3a8c38b2594445c3e20d304ce9509e86b158080b8b4b4bf2c56
 ---
 

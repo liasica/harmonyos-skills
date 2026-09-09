@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-append
 title: 枚举说明
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 枚举说明
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:34+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:25:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3bc5edde066368262759f64dece84c78561b7947da4654473215669fe4c28eb6
 ---
 

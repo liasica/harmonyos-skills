@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: OS新增和增强特性
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:60b74b18a46e4870a0ed6583a900f6ce8358c72d286ea8e6aee5076d781c4e53
+scraped_at: 2026-09-10T06:20:37+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:0950063eba7f63933a01dc1d626934a6c8cfde075ad7977d01bb8e99360dfc38
 ---
 
 ## 26.0.0 Release新增和增强特性
@@ -224,7 +224,7 @@ C API新增元数据对象扩展概念的声明。（[C API参考](../harmonyos-
 
 ### Online Authentication Kit
 
-* 新增用户认证失败切换其他认证方式的认证方式指示。（[ArkTS API参考](../harmonyos-references/onlineauthentication-passkey-api.md#authenticate)、[C API参考](../harmonyos-references/onlineauthentication_capi_header_fido2.md#枚举)）
+* 新增用户认证失败切换其他认证方式的认证方式指示。（[ArkTS API参考](../harmonyos-references/onlineauthentication-passkey-api.md#fido2authenticate)、[C API参考](../harmonyos-references/onlineauthentication_capi_header_fido2.md#枚举)）
 * 新增可选择的认证类型列表。（[ArkTS API参考](../harmonyos-references/onlineauthentication-passkey-api.md#clientcapability)、[C API参考](../harmonyos-references/onlineauthentication_capi_header_fido2.md#枚举)）
 * 新增credentialDisclosurePropertyList参数，支持查看凭证披露属性列表。([API参考](../harmonyos-references/onlineauthentication-did-api.md#credentialfilter))
 
@@ -318,7 +318,7 @@ LoginWithHuaweiIDButton组件新增支持自定义设置文本多语言显示、
 
 * 新增通用属性systemMaterial，所有支持通用属性的组件，均支持通过systemMaterial设置系统材质。（[API参考](../harmonyos-references/ts-universal-attributes-image-effect.md#systemmaterial)）
 * Chip组件新增支持通过backgroundSystemMaterial和activatedBackgroundSystemMaterial配置正常状态和激活状态下的系统材质背景。（[API参考](../harmonyos-references/ohos-arkui-advanced-chip.md#示例10设置系统材质样式)）
-* 弹窗类组件或元素新增配置项systemMaterial，支持系统材质效果：[Tips组件悬浮气泡](../harmonyos-references/ts-universal-attributes-tips.md#示例3设置悬浮气泡的系统材质视效)、[Toast](../harmonyos-references/js-apis-promptaction.md#showtoastoptions)、[对话框](../harmonyos-references/js-apis-promptaction.md#showdialogoptions)、[操作菜单](../harmonyos-references/js-apis-promptaction.md#actionmenuoptions)、[自定义弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)、[半模态](../harmonyos-references/ts-universal-attributes-sheet-transition.md#示例10半模态设置系统材质)、[Popup](../harmonyos-references/ts-universal-attributes-popup.md#popupoptions类型说明)等。
+* 弹窗类组件或方法新增配置项systemMaterial，支持系统材质效果：[Tips控制](../harmonyos-references/ts-universal-attributes-tips.md)、[Toast](../harmonyos-references/js-apis-promptaction.md#showtoastoptions)、[对话框](../harmonyos-references/js-apis-promptaction.md#showdialogoptions)、[操作菜单](../harmonyos-references/js-apis-promptaction.md#actionmenuoptions)、[自定义弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)、[半模态](../harmonyos-references/ts-universal-attributes-sheet-transition.md#示例10半模态设置系统材质)、[Popup](../harmonyos-references/ts-universal-attributes-popup.md#popupoptions类型说明)等。
 * 新增ArkUI组件级沉浸光感，提供的一套高品质视觉与动效体系，通过沉浸式系统材质效果与空间动效的结合，为应用组件带来通透、精致的视觉表现。（[指南](../harmonyos-guides/arkts-immersive-light-sense.md)）
 * 新增容器断点组件ContainerReader，允许开发者基于容器尺寸而非窗口尺寸实现自适应布局。（[指南](../harmonyos-guides/arkts-layout-development-container-reader.md)、[API参考](../harmonyos-references/ts-container-containerreader.md)）
 * 新增懒加载垂直瀑布流布局容器LazyVWaterFlowLayout，嵌套在可滚动父组件（Scroll、List、WaterFlow）内部，负责按需加载子组件。（[指南](../harmonyos-guides/arkts-layout-development-create-lazy-layout.md)、[API参考](../harmonyos-references/ts-container-lazyvwaterflowlayout.md)）

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/geocode-guide
 title: 正地理编码与逆地理编码开发指导
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 正地理编码与逆地理编码开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:57+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5a4db42e9465a4fb0a7c257b25814929c8fdde2c4a5713b548630b4005efb8d7
 ---
 

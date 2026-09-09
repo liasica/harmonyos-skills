@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-cdsm
 title: 获取星闪合作设备集合信息
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > 获取星闪合作设备集合信息
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:395598ecdd3ad1e7528ca8638cddac74dc9e34c9fea7aa515266464010ae82a9
 ---
 

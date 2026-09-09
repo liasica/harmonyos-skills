@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-antipeep-p
 title: 防窥保护
 breadcrumb: 最佳实践 > 技术创新 > 防窥保护
 category: best-practices
-scraped_at: 2026-09-02T15:03:15+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:f6ed041c256b178158ae9cff4a404a05c42f88344bc3d8c323f7c41bb35c2318
+scraped_at: 2026-09-10T06:29:59+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:f0ddb65de4899c77c1783c06c9fea976386211458243e832d7052d30692c2eef
 ---
 
 ## 概述
@@ -28,13 +28,13 @@ HarmonyOS自发布以来持续深化安全与隐私能力体系建设：从早�
 
 1. 金融类应用汇集了大量的财务敏感信息——账户余额、收益曲线、持仓明细，每一项都是不希望被他人知晓的隐私数据。在地铁、咖啡厅等人流密集的公共场所，用户往往无暇顾及身旁是否有人窥视屏幕。接入dlpAntiPeep能力后，应用可在检测到窥视的瞬间自动将敏感数字替换为 \*\*\*\*，并可选触发系统级防窥蒙层，让用户在任何环境下都能放心查看财务信息，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/b6VMwCKFSoGQEnWVcFDtaA/zh-cn_image_0000002624454639.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/7Pcpth5xQz-babIapBk2bw/zh-cn_image_0000002624454639.gif "点击放大")
 2. 短视频内容往往折射出用户的个人偏好、生活习惯乃至私密时刻，这些信息在公共场所被他人看到，会带来不同程度的隐私不适感。接入dlpAntiPeep能力后，应用可在检测到窥视时暂停定制化推送内容的展示，或对关注列表进行模糊隐藏，待窥视解除后自动恢复，在不打断用户使用节奏的前提下，为内容浏览筑起一道隐形屏障，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/U3cfmX8tQ_GaS56dpzcC5w/zh-cn_image_0000002594175038.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/VWUwDYXdTwmWCZaKGZQDPw/zh-cn_image_0000002594175038.png "点击放大")
 3. 即时通讯是隐私敏感度最高的应用场景之一——消息列表中的联系人姓名、消息预览，聊天详情中的情感交流、商业沟通，任何一条信息被旁观者读取都可能造成难以挽回的隐私损失。接入dlpAntiPeep能力后，应用可在检测到窥视时将消息内容隐藏或替换为自定义不敏感内容，确保私密对话只属于对话双方，效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/iiPoz3xsTXCxOiqSTtuzFA/zh-cn_image_0000002624574493.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/8qunLrD4R0CLaFzczE7AtA/zh-cn_image_0000002624574493.png "点击放大")
 
 ## 案例实现
 
@@ -46,11 +46,11 @@ dlpAntiPeep能力属于[Device Security Kit（设备安全服务）](../harmonyo
 
 整体实现流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/du684xoYQciVdxVC8h0frA/zh-cn_image_0000002594015116.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/L0uISG4vRLSbP--6pHclhg/zh-cn_image_0000002594015116.jpg "点击放大")
 
 ## 开发前置条件
 
-在正式接入防窥保护能力前，开发者需要引导用户授权打开防窥保护开关。防窥保护功能需要用户在系统设置中主动开启，应用才能获取相关权 限并启用防窥能力。API23版本开始，可调用[requestAntiPeepOptions](../harmonyos-references/devicesecurity-dlpantipeep-api.md#requestantipeepoptions)拉起弹窗，弹窗中开启系统设置中的防窥保护按钮，此接口避免了用户主动转到设置中开启按钮。
+在正式接入防窥保护能力前，开发者需要引导用户授权打开防窥保护开关。防窥保护功能需要用户在系统设置中主动开启，应用才能获取相关权限并启用防窥能力。API23版本开始，可调用[requestAntiPeepOptions](../harmonyos-references/devicesecurity-dlpantipeep-api.md#requestantipeepoptions)拉起弹窗，弹窗中开启系统设置中的防窥保护按钮，此接口避免了用户主动转到设置中开启按钮。
 
 ```typescript
 // Request the system to obtain the configuration options for anti-peeping protection

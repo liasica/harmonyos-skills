@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 事件订阅（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 事件订阅（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:39+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:03e3200622afe8a3c6ae5a8907fc7c008cd495d1f46751dce7fd459e092de4e3
 ---
 

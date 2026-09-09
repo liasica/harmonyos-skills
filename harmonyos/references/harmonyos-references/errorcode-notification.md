@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 通知错误码
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > 错误码 > 通知错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:02+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d783ee0bf95955c0dba63c1c22c0a69d47b4aacf224573ed897b9c4eff926730
 ---
 

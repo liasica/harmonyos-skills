@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arViewController（AR场景管理能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arViewController（AR场景管理能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:39+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:44+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3260cbc661ac12a520c766813f2659a268a30d44b2797bbb6e5f394a7301bff2
 ---
 

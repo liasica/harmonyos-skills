@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioLoopback)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioLoopback)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0e6e5348a2d3f2130d4750525a860ab28b600fe34a4e9996d691faacca3b6104
 ---
 

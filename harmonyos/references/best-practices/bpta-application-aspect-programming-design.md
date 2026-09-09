@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用切面编程设计
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 应用切面编程设计
 category: best-practices
-scraped_at: 2026-09-02T15:03:16+08:00
+scraped_at: 2026-09-10T06:30:02+08:00
 doc_updated_at: 2026-07-31
-content_hash: sha256:06a9ab00031c3557d94c24d887aedc2e3abb65fab766cd2e97edf94696872572
+content_hash: sha256:387160539612108285e61e95959b1762c261dacbd567886ef6a615914c3bd750
 ---
 
 ## 概述
@@ -32,24 +32,24 @@ HarmonyOS主要通过插桩机制来实现切面编程，并提供了[Aspect类]
 addBefore()、addAfter()、replace()接口的原理基于class的ECMAScript语义，即类的静态方法是类的属性，类的实例方法是类的原型对象(prototype)的属性。
 
 **图1** class的ECMAScript语义示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/DPqeEbrbQBCD0PKOmObpZQ/zh-cn_image_0000002380185801.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/SKlS8UWmQWSucWH4vaXO8Q/zh-cn_image_0000002380185801.png "点击放大")
 
 ### 原理解析
 
 类的实例有一个属性\_\_proto\_\_（称为原型），它是指向类的prototype的引用，如图2所示。实例调用方法时，会通过\_\_proto\_\_找到类的prototype，再在prototype中找到方法并执行。类的原型对象prototype被所有实例共享，因此修改原型对象中的方法会影响所有实例。
 
 **图2** 类的实例化示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/cTlcAkqYTEaOiGReqAap9w/zh-cn_image_0000002346386188.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/p6z_S4h9QVa_olt8ogN6_A/zh-cn_image_0000002346386188.png "点击放大")
 
 原型对象也有原型\_proto\_。类的继承通过原型实现。实例方法调用时，会在原型链上查找方法，找到后执行调用。具体如图3所示。
 
 **图3** 类的原型与继承  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/RWfEHCQmRoW0FhaOf7hbng/zh-cn_image_0000002346386564.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Fd3XXR9rRnmP8iaPgev3CA/zh-cn_image_0000002346386564.png "点击放大")
 
 插桩和替换的操作是将回调参数与原方法组合成新函数，再用新函数替换原方法。具体如图4所示。
 
 **图4** 插桩和替换原理示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Sp6QB36vQ7aAVjKQSJa2og/zh-cn_image_0000002346546400.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/gocO-ZtuRluMQrWlmtfZPw/zh-cn_image_0000002346546400.png "点击放大")
 
 ### 接口原理的伪代码示例
 

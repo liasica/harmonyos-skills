@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.access (蓝牙access模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.access (蓝牙access模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:24da69912a2b4e25996d00a29ef7a92cc2e3562c6313229a52f185cd1446d6c2
+scraped_at: 2026-09-10T06:26:59+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:8234b95e3cae2a2fcc509f1223633ec2ca9bdbe2af5b9a96384013b2bfd87f2c
 ---
 
 本模块提供了打开和关闭蓝牙、获取蓝牙开关状态以及其他相关方法。
@@ -346,7 +346,7 @@ addPersistentDeviceId(deviceId: string): Promise<void>
 
 * 应用通过蓝牙相关接口，如扫描等途径获取到的设备地址（虚拟MAC地址）和实际的设备MAC地址不同。蓝牙子系统会保存一个虚拟MAC地址和实际设备MAC地址的映射关系。若应用想长期对该蓝牙设备进行操作使用，建议用此接口持久化存储该设备的虚拟MAC地址，后续可直接使用，该地址映射关系不会再改变。
 * 指定持久化存储的虚拟MAC地址需是有效的（可使用[access.isValidRandomDeviceId](js-apis-bluetooth-access.md#accessisvalidrandomdeviceid16)判断）。
-* 使用该接口时，开发者应确保该虚拟MAC地址对应的对端蓝牙设备实际地址是保持不变的，若对端设备实际地址发生变化，持久化存储的地址信息将失效，无法继续使用。
+* 使用该接口时，开发者应确保该虚拟MAC地址对应的对端蓝牙设备实际地址是保持不变的，若对端设备实际地址发生变化，持久化存储的地址信息将失效，无法继续使用；若应用卸载重装过，持久化将失效，该应用需重新添加。
 * 可调用[access.deletePersistentDeviceId](js-apis-bluetooth-access.md#accessdeletepersistentdeviceid16)删除已持久化存储的虚拟MAC地址。
 
 **需要权限**：ohos.permission.ACCESS\_BLUETOOTH 和 ohos.permission.PERSISTENT\_BLUETOOTH\_PEERS\_MAC

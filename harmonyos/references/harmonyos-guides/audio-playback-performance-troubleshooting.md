@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playbac
 title: 播放卡顿、杂音定位指导
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit常见问题 > 播放卡顿、杂音定位指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:53+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:513bc2e3b51596f8f51b2d4b816e837cdd3789f2f92bbe6d529a61e5093cecfc
 ---
 

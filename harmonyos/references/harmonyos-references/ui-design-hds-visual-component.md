@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsVisualComponent (视效组件)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsVisualComponent (视效组件)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:29+08:00
+scraped_at: 2026-09-10T06:26:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b3febb4b05b06cbe7e9fe4be0f86b548c96717250092217d1d2785dfc161f2d3
+content_hash: sha256:ebbb58dba6cb50f0946ce20638ec3de65d10e7ff4063fba02d448f572fd9bf25
 ---
 
 HdsVisualComponent组件承载复杂视效实现，应用开发者通过HdsVisualComponent选择具体视效场景完成复杂视效的开发。
@@ -273,4 +273,4 @@ struct EdgeFlowLightVisualComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/jXWPSgDEQE-8B9Z4v3aOeA/zh-cn_image_0000002742125945.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/R8MpyGeYQFagGl_g9L6Nhg/zh-cn_image_0000002747213451.gif)

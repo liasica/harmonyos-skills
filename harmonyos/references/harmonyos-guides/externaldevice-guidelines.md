@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevic
 title: 开发带UI界面基础驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设基础驱动开发 > 开发带UI界面基础驱动
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:35+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:22:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e9bcd25f1998ac7cb27f21710e7bf7c4cf7a2083924fb0d087c49a8f438e2003
 ---
 

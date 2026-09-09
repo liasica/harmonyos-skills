@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.distributedDeviceManager (设备管理)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedDeviceManager (设备管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:52+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7f40d8f8c3b72dbf6e39a79101a4ce90ccd551c30ef88eee2b17316db3126e93
+scraped_at: 2026-09-10T06:27:05+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:4f3bedf98adf45b6a288165822a65e55d7c2166ea9e89332141828a4a6cecf2e
 ---
 
 本模块提供分布式设备管理能力，包括设备的发现、认证、状态监听和信息查询等功能。设备管理基于设备信任模型，通过发现周边设备并进行认证绑定来建立可信连接，已认证的可信设备可用于分布式业务。
@@ -1238,7 +1238,7 @@ try {
 
 ### on('serviceDie')
 
-on(type: 'serviceDie', callback?: Callback<{}>): void
+on(type: 'serviceDie', callback: Callback<{}>): void
 
 注册设备管理服务死亡回调，以便在服务死亡时通知应用。使用callback异步回调。
 
@@ -1253,7 +1253,7 @@ on(type: 'serviceDie', callback?: Callback<{}>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | type | string | 是 | 注册设备管理服务死亡回调，以便在DeviceManager服务异常终止时通知应用，固定为serviceDie。 |
-| callback | Callback<{}> | 否 | 注册serviceDie的回调方法，当设备管理服务异常终止时触发该回调通知应用。如果不传入callback参数，则不会注册回调。 |
+| callback | Callback<{}> | 是 | 注册serviceDie的回调方法，当设备管理服务异常终止时触发该回调通知应用。 |
 
 **错误码：**
 

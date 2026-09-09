@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-worker
 title: 在Worker线程中使用相机(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 在Worker线程中使用相机(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:49+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:dc92194bc6f6edf6ce0661df09d31a8aa325e69e646005a445d05cfe7805e73d
+scraped_at: 2026-09-10T06:22:56+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:9d8d9ef733fc0d953c02d862562711c602e9029ba7a829aae29cece8e8f78415
 ---
 
 [Worker](worker-introduction.md)主要作用是为应用程序提供一个多线程的运行环境，可满足应用程序在执行过程中与主线程分离，在后台线程中运行一个脚本进行耗时操作，极大避免类似计算密集型或高延迟的任务阻塞主线程的运行。
@@ -249,8 +249,8 @@ content_hash: sha256:dc92194bc6f6edf6ce0661df09d31a8aa325e69e646005a445d05cfe780
 
 不使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Dxw1ZpxzSU-v90dPsXk-Lw/zh-cn_image_0000002712244780.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/WUxm88RiQ3iaSXtwdjfYTQ/zh-cn_image_0000002717771334.png)
 
 使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/JF3m0eBgTFOXZ0JAnfgbRA/zh-cn_image_0000002742003733.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/0iECpFvCS925qB6PufY6kw/zh-cn_image_0000002717611400.png)

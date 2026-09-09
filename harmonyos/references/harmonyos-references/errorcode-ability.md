@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 元能力子系统错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 元能力子系统错误码
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:27+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:24:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ad6341279e14d850ba78d52425c5855a4726b42e33d78b95d45da864422dcab5
 ---
 

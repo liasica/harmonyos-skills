@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pipwindow-nat
 title: 使用NDK接口实现画中画功能开发 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 画中画开发指导 > 使用NDK接口实现画中画功能开发 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:08+08:00
+scraped_at: 2026-09-10T06:22:14+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:dd1e14d0f76e62313be09235c60567e21d8519fbd1baf3d15ffa6f1abf8917f0
+content_hash: sha256:c2e8ef1289cd800eb60545c7ec33b626fd60255ee4960bace5a1495b08c6a43b
 ---
 
 本文以视频播放为例，介绍通过NDK接口实现画中画功能的基本开发步骤。
@@ -954,4 +954,4 @@ struct NDKImplementIndexPage {
 
 以上示例代码对应的示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/jmga7qZpQNS6Sy2-8Q6u0A/zh-cn_image_0000002742003207.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ai7Yo_jaRCWB6tUXw09AqQ/zh-cn_image_0000002717610874.gif)

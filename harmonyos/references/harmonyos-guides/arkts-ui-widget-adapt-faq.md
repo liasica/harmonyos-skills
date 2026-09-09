@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片适配常见问题
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片适配常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:14+08:00
+scraped_at: 2026-09-10T06:22:20+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:81af371a833e5dd8b05094d034597fb246394e92660f68588c16db99f065095f
+content_hash: sha256:67a5a4f7d19c7a294e06f66aed3f8456c08f19367e7ec1b6e88bbabd1858c2cb
 ---
 
 ## ArkTS卡片使用V2装饰器进行状态管理
@@ -28,11 +28,11 @@ ArkTS卡片白屏问题定位请参考[服务卡片显示问题定位指导](htt
 
 导入particleAbility、audio、camera、media、backgroundTaskManager后应用崩溃，FaultLog指向相关调用行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Ujh9gYUiSe2lga9AogicGA/zh-cn_image_0000002712244444.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/v3VJKyHTSBarDkqT12hYjQ/zh-cn_image_0000002717770998.png)
 
 报错对应的代码行如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Q1scWKboRsCs_xCSoIcveQ/zh-cn_image_0000002742003397.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/IhsbUBlbRIGBMdLmsYQarA/zh-cn_image_0000002717611064.png)
 
 ### 原因
 

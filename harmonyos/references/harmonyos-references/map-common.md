@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-commo
 title: mapCommon（地图属性模型）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > mapCommon（地图属性模型）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3700f8f7497444a18e0b152f5083af86716c2ae445af6256f4db19ae64310b20
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 解约结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 支付并签约 > 解约结果回调通知
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ccb5c54af6dfcbfe8f33613912a43585a93a124985ffafffc57fb7bd769e0e8b
 ---
 

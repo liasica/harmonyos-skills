@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcapability.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcapability.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9e0ad0a12c4dea84ab4b5d62f0e3b0be8d757eaf9d115696970516e0cf6b1c09
 ---
 

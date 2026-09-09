@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.UiTest"
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > @ohos.UiTest
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:01+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:884c8e0009bf569d0d0e3bc3bf4bf7afb98927fa603fb5bcffb7f2e371097f14
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: Enterprise Space Kit常见问题
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > Enterprise Space Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2666d93b2de552c07eed8625369c1574dc1a12521fac0899dcb07be66419079b
 ---
 

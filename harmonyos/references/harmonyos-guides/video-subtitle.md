@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-subtitl
 title: 使用AVPlayer添加视频外挂字幕(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用AVPlayer添加视频外挂字幕(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:18+08:00
-doc_updated_at: 2026-06-13
+scraped_at: 2026-09-10T06:23:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9bd82a3e4425f9a5bc1bd2167b79a9238b1705fddc39648411acd70ed49a4dda
 ---
 

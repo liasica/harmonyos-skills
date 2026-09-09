@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mic-managemen
 title: 管理麦克风静音状态
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 管理麦克风静音状态
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9c5c552c3cd37e6e7b62efc2c2af362010eb9ed67ace2236684446fbbc5ce27c
 ---
 

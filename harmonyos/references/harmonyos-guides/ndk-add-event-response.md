@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-add-event
 title: 添加事件响应
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 添加事件响应
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:20+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0cbe5ad170737699ac6f1a216b493fc405de92d1bc168dd2b49fd70bae13d6f7
 ---
 

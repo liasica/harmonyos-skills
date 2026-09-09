@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-fa
 title: 应用内快捷方式加桌返回401错误码
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > AppGallery Kit常见问题 > 应用内快捷方式加桌返回401错误码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:29+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:13+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ddea43924c24b2b62d6e481f0daf0f419fb6b91e0a7ef10c3dc49f972a2316ca
 ---
 

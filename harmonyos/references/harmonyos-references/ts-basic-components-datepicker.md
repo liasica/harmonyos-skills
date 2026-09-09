@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d4ee3d19fcbee0e3090b44b01eebd4159b280ffdbbcca33fa8c815a0a207c8a1
+scraped_at: 2026-09-10T06:25:25+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:0c9dfb1083e81ad4faf9ad9f833393feaec8b73fd51588cecea56e288969f56f
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/wpvB3xyITQ26qg6MGc6IQQ/zh-cn_image_0000002742005063.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/rw63p2jSTq-seCeHTOBFdg/zh-cn_image_0000002717612726.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/q4pj_hQnSrKcfhCmRRszIA/zh-cn_image_0000002712406074.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Lu_bhMQ1SbiLrJMjJX8Q2Q/zh-cn_image_0000002747292679.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/ByoW7JTdTNWjoquvqUG8vQ/zh-cn_image_0000002742125023.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/usTVpSuLTNOTZhtKcboBgA/zh-cn_image_0000002747212595.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/H8zC86CEQ8qVJXpeZSlTCQ/zh-cn_image_0000002712246116.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/QRdtplQTSiqY4Ahcxfxfdg/zh-cn_image_0000002717772660.gif)

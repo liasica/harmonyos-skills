@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 组件适配沉浸光感
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 组件适配沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-09-07T06:01:32+08:00
-doc_updated_at: 2026-09-06
-content_hash: sha256:46b74ad95aa013ef8b40e99a36c405750f8347201aed36ddd16a85cd0d222666
+scraped_at: 2026-09-10T06:22:07+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:adb8804eba1b6b6268ca778ba10f8f5056d7b5287a67fd4b0dc7d8191feb2480
 ---
 
 本文按导航类、弹窗类、按钮与选择类、其余组件四大场景分类，系统介绍各组件如何通过应用级开关与组件级配置开启沉浸光感，涵盖沉浸光感的视觉效果、设置方法及适配要点，帮助开发者快速完成沉浸光感的组件适配。
@@ -103,7 +103,7 @@ Popup和Tips支持通过应用级开启、组件级开启方式开启沉浸光�
 * 沉浸光感开启后，如果已主动设置背景色、背景模糊等自定义样式属性，则不呈现沉浸光感效果，否则沉浸式系统材质样式ImmersiveStyle默认取值为ImmersiveStyle.ULTRA\_THICK。具体请参考[Dialog或Toast组件默认没有材质效果](arkts-immersive-light-sense-faq.md#dialog或toast组件默认没有材质效果)。
 * 大面积的弹出框开启沉浸光感效果，会带来更多的动效绘制开销，不建议开启。详见[控制弹窗尺寸](arkts-immersive-light-sense-constraints.md#控制弹窗尺寸)中的尺寸建议。
 * [CalendarPicker](../harmonyos-references/ts-basic-components-calendarpicker.md)组件拉起的弹出框目前暂不支持开启沉浸光感效果，通过通用属性设置的沉浸光感效果会体现在CalendarPicker组件本身。
-* [DatePicker](../harmonyos-references/ts-basic-components-datepicker.md)、[TextPicker](../harmonyos-references/ts-basic-components-textpicker.md)、[TimePicker](../harmonyos-references/ts-basic-components-timepicker.md)组件沉浸光感效果同CustomDialog相同。
+* [CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)组件沉浸光感效果同CustomDialog相同。
 
 组件开启沉浸光感的效果请参见[示例9（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-alert-dialog-box.md#示例9设置弹窗的沉浸光感效果)、[示例14（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-custom-dialog-box.md#示例14设置弹窗的沉浸光感效果)、[示例9（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-action-sheet.md#示例9设置弹窗的沉浸光感效果)和[示例10（半模态设置系统材质）](../harmonyos-references/ts-universal-attributes-sheet-transition.md#示例10半模态设置系统材质)。
 

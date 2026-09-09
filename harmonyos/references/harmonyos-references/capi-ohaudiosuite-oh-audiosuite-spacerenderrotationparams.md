@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioSuite_SpaceRenderRotationParams
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioSuite_SpaceRenderRotationParams
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f96a0f7b72d6686600ecbd25ffc2aa91eb43d5031ad6e28683008355539df11f
+scraped_at: 2026-09-10T06:28:06+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:a1897c8a770c5679eefcd70cd13153b5c3db3a3441c95707ce3182bf1ff72070
 ---
 
 ```c
-typedef struct {...} OH_AudioSuite_SpaceRenderRotationParams
+typedef struct OH_AudioSuite_SpaceRenderRotationParams {...} OH_AudioSuite_SpaceRenderRotationParams
 ```
 
 ## 概述

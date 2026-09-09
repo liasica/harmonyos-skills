@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-short-vid
 title: 多设备短视频界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备短视频界面
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
-doc_updated_at: 2026-07-14
-content_hash: sha256:c6cf7d3e1122ed17266b3a7e5f9111ded7dd42ef1f4abc2a7cbda5018f8ff5eb
+scraped_at: 2026-09-10T06:30:07+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2c229e32521fe5740b762bd3fe66050c1c640efab510982be312c65cab61cf0b
 ---
 
 ## 概述
@@ -22,15 +22,15 @@ content_hash: sha256:c6cf7d3e1122ed17266b3a7e5f9111ded7dd42ef1f4abc2a7cbda5018f8
 
 下文将从UX设计、工程管理和页面开发三个角度，详细介绍短视频应用在实际开发中的最佳实践，为开发者提供可参考落地的思路。
 
-* [UX设计](multi-short-video-app.md#zh-cn_topic_0000001744653537_section17797105112306)：介绍短视频应用的交互逻辑和通用设计要点，供同类短视频应用开发者直接参考
-* [工程管理](multi-short-video-app.md#zh-cn_topic_0000001744653537_section189781175313)：推荐“一多”应用采用分层架构，通过清晰的目录结构组织工程，明确各层逻辑。同时，介绍短视频应用适用的架构配置。
-* [移动端页面](multi-short-video-app.md#zh-cn_topic_0000001744653537_section7318163817529)、[电脑端页面](multi-short-video-app.md#section1415242321718)、[智慧屏页面](multi-short-video-app.md#section67231377369)和[智能穿戴页面](multi-short-video-app.md#section259716292206)：遵循实际应用开发流程，以页面为基本单元，详细讲解各页面在窗口适配、页面开发、交互开发及功能开发方面的设计思路与实现方法。
+* [UX设计](multi-short-video-app.md#section17797105112306)：介绍短视频应用的交互逻辑和通用设计要点，供同类短视频应用开发者直接参考
+* [工程管理](multi-short-video-app.md#section189781175313)：推荐“一多”应用采用分层架构，通过清晰的目录结构组织工程，明确各层逻辑。同时，介绍短视频应用适用的架构配置。
+* [移动端页面](multi-short-video-app.md#section7318163817529)、[电脑端页面](multi-short-video-app.md#section1415242321718)、[智慧屏页面](multi-short-video-app.md#section67231377369)和[智能穿戴页面](multi-short-video-app.md#section259716292206)：遵循实际应用开发流程，以页面为基本单元，详细讲解各页面在窗口适配、页面开发、交互开发及功能开发方面的设计思路与实现方法。
 
 ## UX设计
 
 短视频应用的UX设计可参考影音娱乐类多设备响应式设计指南的[短视频](../design-guides/responsive-design-examples1-0000001957369849.md#section286164710457)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/tevNfSthSwmc1FK8flMXAA/zh-cn_image_0000002622296745.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/U13BJ0jTQA-AL2LZrbzE1g/zh-cn_image_0000002622296745.png "点击放大")
 
 ## 工程管理
 
@@ -271,7 +271,7 @@ content_hash: sha256:c6cf7d3e1122ed17266b3a7e5f9111ded7dd42ef1f4abc2a7cbda5018f8
 
 短视频应用首页主要为推荐精品短视频。根据功能设计，将应用首页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/H6likGONSa2TtfZYfvij0A/zh-cn_image_0000002591977212.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/wzA_4JPTTNCld65Hw1zlWA/zh-cn_image_0000002591977212.png "点击放大")
 
 **界面开发**
 
@@ -299,7 +299,7 @@ content_hash: sha256:c6cf7d3e1122ed17266b3a7e5f9111ded7dd42ef1f4abc2a7cbda5018f8
 
 短视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/4B0WuOByQ06qbd_qwwbW5w/zh-cn_image_0000002622296757.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/dzVzQc3ORc67vjNzVI53jA/zh-cn_image_0000002622296757.png "点击放大")
 
 **界面开发**
 
@@ -324,7 +324,7 @@ content_hash: sha256:c6cf7d3e1122ed17266b3a7e5f9111ded7dd42ef1f4abc2a7cbda5018f8
 
 短视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/a3YBASxuSuuerYWMbax2Uw/zh-cn_image_0000002622336875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/NCVKpZHjRoaYeMAFvjmBRQ/zh-cn_image_0000002622336875.png "点击放大")
 
 **界面开发**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 网络场景识别
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 网络质量 > 网络场景识别
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:cbd9eb7094ab4128576e25868efc7d14e41ffa094fcf793c209620507e384420
 ---
 

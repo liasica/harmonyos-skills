@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-data-
 title: 数据类型说明
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > 数据类型说明
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:20+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:29:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a3712b206529c6a88837e492558baad0c946530bf12bb226cd43a842cc2ed310
 ---
 

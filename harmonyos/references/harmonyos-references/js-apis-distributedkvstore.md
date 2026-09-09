@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.distributedKVStore (分布式键值数据库)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.distributedKVStore (分布式键值数据库)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:39+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:24:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:52d728524ed9a135a9f116aa5d7d460560a510713ad6bad590dc8b97f05a7c11
 ---
 

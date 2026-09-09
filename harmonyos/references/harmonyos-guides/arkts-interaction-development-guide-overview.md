@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 添加交互响应
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:50+08:00
-doc_updated_at: 2026-06-03
+scraped_at: 2026-09-10T06:22:06+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8e422e4198688083a78660bac9b9de608797259dcd0e50c3e333d26a3d942409
 ---
 

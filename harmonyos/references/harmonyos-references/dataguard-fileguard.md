@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataguard
 title: fileGuard (文件分级管控)
 breadcrumb: API参考 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > ArkTS API > fileGuard (文件分级管控)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:afb47be1fa61e25ac47b5f99203c547d40fcf0907f6aa467b71a276a9a5f6cbe
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-r
 title: 公共说明
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 公共说明
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:03+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:05671231eff56539b10d826c478c122b76ffb6d7992d21eb82aaef5520940d1e
 ---
 

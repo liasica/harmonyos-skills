@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gestures-shar
 title: 分享App Linking直达应用
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 隔空传送 > 分享App Linking直达应用
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:23:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4ad49c2763206cb182155078a880605d6a99c74bb01350d76088d50b4ce6b51c
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: LiveFormExtensionContext
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > application > LiveFormExtensionContext
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:33+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b86d94d98cd225bf20ddcfc8a192915f6565f6d882121ca5216c9f4342c0254c
 ---
 

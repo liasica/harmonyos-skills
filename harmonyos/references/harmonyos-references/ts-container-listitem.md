@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ListItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ListItem
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:eb793d7ef4caa97597804da1fcaedfec06809b4a3d316c9c445f177e97cc0ed4
+scraped_at: 2026-09-10T06:25:21+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:03fb40f2e46401021515bdc07ca2f38de19c470e6f26662160e4542a04556d6e
 ---
 
 ListItem用于展示列表中的具体列表项，支持设置划出菜单、选中状态、鼠标框选和卡片样式等能力，必须配合List组件使用，适用于需要在列表中展示内容并对单个列表项进行交互操作（如滑动删除、选中标记）的场景。
@@ -437,7 +437,7 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/1DY5ZKcgQ6OK3rPAwVTpIg/zh-cn_image_0000002712246010.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/JXn2KxO2SWG1jbwS_5EcOQ/zh-cn_image_0000002717772554.gif)
 
 ### 示例2（设置划出组件）
 
@@ -519,7 +519,7 @@ struct ListItemExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/vQa-c57URDiAN5nLpL7gnA/zh-cn_image_0000002742004959.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Pg5UltiQSOS1m_uIhGWJpA/zh-cn_image_0000002717612622.gif)
 
 ### 示例3（设置卡片样式）
 
@@ -561,7 +561,7 @@ struct ListItemExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/xe-68TydTXmx9CAs1HrxSg/zh-cn_image_0000002712405970.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/ntqGD1hjSAOKDVWm4SmQkg/zh-cn_image_0000002747292575.jpeg)
 
 ### 示例4（通过ComponentContent设置划出组件）
 
@@ -676,7 +676,7 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ims2KJnJSluRg2r6A59Rjw/zh-cn_image_0000002742124919.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/cEzC-nghSzy729XxohzrGQ/zh-cn_image_0000002747212491.gif)
 
 ### 示例5（通过ListItemSwipeActionManager管理划出菜单）
 
@@ -774,4 +774,4 @@ struct ListItemExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/krK_XBRYSqGd2SwVU36uxw/zh-cn_image_0000002712246012.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Ys06nO59RPmbA_hHi6-jsw/zh-cn_image_0000002717772556.gif)

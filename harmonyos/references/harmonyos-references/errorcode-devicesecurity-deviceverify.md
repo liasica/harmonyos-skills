@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: DeviceVerify（应用设备状态检测）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > ArkTS API错误码 > DeviceVerify（应用设备状态检测）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ad92132d2a30cfb552b8900e010b191b53cdc30bd52f40ae67217874bd3199a7
 ---
 

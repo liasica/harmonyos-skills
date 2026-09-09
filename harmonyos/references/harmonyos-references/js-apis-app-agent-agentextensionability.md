@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.agent.AgentExtensionAbility (智能体扩展组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.agent.AgentExtensionAbility (智能体扩展组件)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c6208fa9a4a005ef0b8981d2f327f5487d3f2d19e360fbc17e9a90c5d1ae6594
+scraped_at: 2026-09-10T06:24:30+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:8a7ad79fda4a1f2026bd879d9060b06b1531e3e7c3ae9a1a1e28c2b574bc5b2e
 ---
 
 AgentExtensionAbility继承自[ExtensionAbility](js-apis-app-ability-extensionability.md)，提供智能体扩展能力，包括智能体服务的创建、销毁、连接、断开的生命周期回调接口，以及接收客户端所发送数据和安全认证的回调接口。
@@ -30,7 +30,7 @@ import { AgentExtensionAbility } from '@kit.AbilityKit';
 
 **图1** AgentExtensionAbility生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/l84YxmRPQYKSb4UffgTQOg/zh-cn_image_0000002742124655.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/2OjNgDR5QxKPV1XYoMtHrA/zh-cn_image_0000002747212227.png)
 
 * **onCreate**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.multimedia.sendableImage (基于Sendable对象的图片处理)"
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.sendableImage (基于Sendable对象的图片处理)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:20:11+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:28:27+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:70c0911cccfd10f95c00de33dde6a2bcbaff38b82c798b5fdd72cad3d29ba921
 ---
 

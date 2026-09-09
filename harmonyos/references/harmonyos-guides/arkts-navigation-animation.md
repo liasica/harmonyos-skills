@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation转场动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation转场动画
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b08a6c8c50fba68e64bfa67e77bc9a6fe85071f3b46e78ce7fadcdc6f60717c0
 ---
 

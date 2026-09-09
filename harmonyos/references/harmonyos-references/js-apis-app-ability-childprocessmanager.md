@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.childProcessManager (子进程管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.childProcessManager (子进程管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:29+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:85e5494674dba273cdfbafd781a7faa9eeae5c6d6724d112fdde26a131d2f8c8
 ---
 

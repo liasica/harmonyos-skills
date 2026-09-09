@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bulktransfer
 title: USB批量传输
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB批量传输
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6c2889000cbfbca2259a55e2e1b4851ae3e0f537262ab74aea36b6013e58f17d
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-
 title: ArkTS语言介绍
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > ArkTS语言介绍
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:93cbbed508f0497be4e79639e7a742fc144ed8a463bcf1e2b6b39b1eb3f66463
 ---
 

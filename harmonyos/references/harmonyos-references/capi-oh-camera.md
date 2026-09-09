@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-c
 title: OH_Camera
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 模块 > OH_Camera
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:18+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2f36103ac82133d1c0e04df482b34863a1bd4a6372dbe81452618b9cc7cc1753
 ---
 

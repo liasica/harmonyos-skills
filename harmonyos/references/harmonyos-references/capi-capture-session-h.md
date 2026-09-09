@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capt
 title: capture_session.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > capture_session.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:28+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:823af8ef0aae9ef3a53d365cbec5d91a161cb0efca764b6238741521146ac4de
 ---
 

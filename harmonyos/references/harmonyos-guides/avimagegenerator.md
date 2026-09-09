@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avimagegenera
 title: 使用AVImageGenerator提取视频指定时间图像(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体信息查询 > 使用AVImageGenerator提取视频指定时间图像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-05-26
+scraped_at: 2026-09-10T06:23:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9ba75d8f7fe3085c2906c47bbf78d54e42a82ab821177bf01115ab50023a38aa
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-site-geoc
 title: 地理编码
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 位置搜索 > 地理编码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:58+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:94b9b5304c69471090b9e96967a0a1388d51f6999b369c26beccecb5dabdc67a
 ---
 

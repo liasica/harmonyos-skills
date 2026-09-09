@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-m
 title: 数据模型说明
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数据模型说明
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3146a9731b3bcd60598adf060837d4e7bf8ba45974c05d91e04a9e4ac614ebdd
 ---
 

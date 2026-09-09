@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/preview-a
 title: openFileBoost（文件打开加速）（已废弃）
 breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > ArkTS API > openFileBoost（文件打开加速）（已废弃）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:39+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:68ed4af63a8935d22d33a820d13c912730c45d1ef6afd97dfb1c67065a8e721b
 ---
 

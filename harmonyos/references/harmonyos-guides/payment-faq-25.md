@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-faq-2
 title: 收银台支付报错“应用信息校验不通过，请联系商家处理”？
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit常见问题 > 收银台支付报错“应用信息校验不通过，请联系商家处理”？
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8489c3c334bf65c7e4f41ad5853e238c524837e3b2e0b8e72aded79b5361bcc0
 ---
 

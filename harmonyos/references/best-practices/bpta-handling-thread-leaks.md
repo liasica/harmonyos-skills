@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-handling-t
 title: 运维态高效处理线程泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析 > 运维态高效处理线程泄漏
 category: best-practices
-scraped_at: 2026-09-04T06:33:27+08:00
+scraped_at: 2026-09-10T06:30:20+08:00
 doc_updated_at: 2026-09-02
-content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29ae9a27
+content_hash: sha256:76fe9ffbf9656acd5f0665f83559ae10655f46e8a3b2191813bd687044850735
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 排查流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/6-HKpT7oR06goPKeYMALDQ/zh-cn_image_0000002729540781.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/ZiaAuKsLSxy3bSXMiS3cGQ/zh-cn_image_0000002729540781.png "点击放大")
 
 **排查步骤**
 
@@ -38,7 +38,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 故障分析表格会将相同根因类型的故障聚类并排序。表格会展示故障模块、发生次数（占比）、影响设备数（占比）等关键信息，开发者可以通过发生占比和故障模块结合业务实际情况找出高优的问题，并在问题状态和优先级这一栏做出标记，优先解决高优先级的问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/W0RtfqeWS1eJ3KWPCs0IqA/zh-cn_image_0000002699661556.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/rXLchJGzTbKsfYG7ijcvmg/zh-cn_image_0000002699661556.png "点击放大")
 
 **关键指标说明**
 
@@ -52,7 +52,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 故障详情页如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/YMuLmghbQQmapfpPrcJsgQ/zh-cn_image_0000002729420829.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/UTKe0lhHTmqnLa0_IphA9g/zh-cn_image_0000002729420829.png "点击放大")
 
 **证据链**
 
@@ -66,7 +66,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 证据链列表界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ITcKiOk6T6uWwofBMCfwcw/zh-cn_image_0000002699821464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/AbC4DU8NQ-q6KQxUTZXnIA/zh-cn_image_0000002699821464.png "点击放大")
 
 **现场数据**
 
@@ -74,7 +74,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 现场数据页面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/s23UY2mHTsyGE1Tsuv2RQA/zh-cn_image_0000002729540783.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ZjY0O8AHRiKHckzs0J9Jfg/zh-cn_image_0000002729540783.png "点击放大")
 
 **创建线程调用栈信息**
 
@@ -82,7 +82,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 创建线程调用栈信息页面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Ba3m5GpXQiiSWSvthUutWw/zh-cn_image_0000002699661558.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/fciwapMjQ9WkkYIU9Nf6Ug/zh-cn_image_0000002699661558.png "点击放大")
 
 ## APMS平台线程泄漏分析案例
 
@@ -92,13 +92,13 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 故障预警配置界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/s8XuA0MvSA-2u4hA-4oN7w/zh-cn_image_0000002729420831.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/O1iU5xFLTR6f1OTOjdsNZQ/zh-cn_image_0000002729420831.png "点击放大")
 
 创建告警之后，故障触发后台会开始收集数据。当泄漏达到告警阈值后，会触发故障预警。
 
 故障预警通知如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/YKoVgzeqQEGFewulcvpuuA/zh-cn_image_0000002699821466.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5XP6N4wkRbaivIje2JGVTQ/zh-cn_image_0000002699821466.png "点击放大")
 
 ### 问题查看与聚类
 
@@ -112,13 +112,13 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 线程泄漏查询界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Pp64obrxRda7d3-QcCeENw/zh-cn_image_0000002729540785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/qivShm0JTw-AC-S5_JGVWQ/zh-cn_image_0000002729540785.png "点击放大")
 
 在资源泄漏信息详情中，可查看当前应用的线程泄漏情况。
 
 资源泄漏信息详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/sGwFvnj4RVa9tAQIdR6brA/zh-cn_image_0000002699661560.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/CrWoQ4HSRQ2SR9yOUIUIuw/zh-cn_image_0000002699661560.png "点击放大")
 
 ### 根因定位与分析
 
@@ -130,7 +130,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 证据链详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/KP8kbxT2SzOYUx0cz_VjzA/zh-cn_image_0000002729420833.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/mt5Wfnm2ROiMjkN5GPMc8w/zh-cn_image_0000002729420833.png "点击放大")
 
 **现场数据分析**
 
@@ -138,7 +138,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 现场数据详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/hDKbwlc6TaWMQ7MYfcwRcQ/zh-cn_image_0000002699821468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/SShzDQ8kSqWssFWfL3cdzw/zh-cn_image_0000002699821468.png "点击放大")
 
 **创建线程调用栈信息分析**
 
@@ -146,7 +146,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 创建线程调用栈信息详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/1NLkVu8SR_Sa9ChUbVFYjw/zh-cn_image_0000002729540787.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/Me29J0fvSkWKM2EVHtgEmw/zh-cn_image_0000002729540787.png "点击放大")
 
 **下钻分析**
 
@@ -154,7 +154,7 @@ content_hash: sha256:03800a4355fa00139e8a0e445e5bcb1ac9a233e2ac08712c0016eb1e29a
 
 下钻分析界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/Kmi93kR4S_C7jw86ZhZd9Q/zh-cn_image_0000002699661562.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/cirEM6hWRcSH14hXRud7gw/zh-cn_image_0000002699661562.png "点击放大")
 
 ### 修复建议验证与闭环
 
@@ -178,7 +178,7 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件。在DevE
 
 Operation Analyzer平台界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/p7cisX4gRIGSliktLp8Hvw/zh-cn_image_0000002729420835.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/N0I_-WZjQdq0IeddUtR9Ig/zh-cn_image_0000002729420835.png "点击放大")
 
 ### 问题分析
 
@@ -188,7 +188,7 @@ Operation Analyzer平台界面如下所示：
 
 Operation Analyzer证据链界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/0tPzMpfETVSxuxWBHcZ4lA/zh-cn_image_0000002699821470.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/AyQLBEx2RsKChssnNlQV_w/zh-cn_image_0000002699821470.png "点击放大")
 
 **分析现场数据**
 
@@ -196,7 +196,7 @@ Operation Analyzer证据链界面如下所示：
 
 现场数据界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/D9U__uZMReyqvaldEURP6g/zh-cn_image_0000002729540789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/lWJZSOQaRM6WmQdSkVpK2Q/zh-cn_image_0000002729540789.png "点击放大")
 
 **分析创建线程调用栈**
 
@@ -204,7 +204,7 @@ Operation Analyzer证据链界面如下所示：
 
 创建线程调用栈界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/O433qeDCRSGw8l4e_ttC3Q/zh-cn_image_0000002699661564.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/morz0_phRQe5Cacmg1JHEg/zh-cn_image_0000002699661564.png "点击放大")
 
 **Operation Analyzer关联离线符号表**
 
@@ -212,11 +212,11 @@ Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符�
 
 关联离线符号表界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/UlqoOQScTJis8xbRQ-3mqg/zh-cn_image_0000002729420837.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/EUrsBmhxRNyHobFZCnBomQ/zh-cn_image_0000002729420837.png "点击放大")
 
 上传符号表界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/m7pcCcopRnC0q3Oi3DVlWA/zh-cn_image_0000002699821472.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/yXe7Ygs3T-qmmQUoOZ9dQQ/zh-cn_image_0000002699821472.png "点击放大")
 
 **Operation Analyzer关联代码**
 
@@ -224,11 +224,11 @@ Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符�
 
 关联代码界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/eFK7jxfhQ5WJo0Bm0BW7VA/zh-cn_image_0000002729540791.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/xemhZozTQFmO9TryXj2PdA/zh-cn_image_0000002729540791.png "点击放大")
 
 查看故障处源码步骤如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/nAKrZNxnT-uDR7bsq7uceA/zh-cn_image_0000002699661568.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/J1QynSBoQBGQlI__RNqoHQ/zh-cn_image_0000002699661568.png "点击放大")
 
 ### 问题修复
 
@@ -236,4 +236,4 @@ Operation Analyzer平台会给出故障分析与修复建议，开发者可根�
 
 问题修复界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/OWxX94otTuaDRU04-4RLZQ/zh-cn_image_0000002729420841.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/MNWW-j3XQQWIJYNkOZOojg/zh-cn_image_0000002729420841.png "点击放大")

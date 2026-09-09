@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 打开APP Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 打开APP Button
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:01+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:23:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:16bf89e6451a6d8320c16dfb60b70a24222c7f90e41caeb65a619a06c9ecd32f
 ---
 

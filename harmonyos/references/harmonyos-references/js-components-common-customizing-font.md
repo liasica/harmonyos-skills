@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 自定义字体样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 自定义字体样式
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6576e6824ff491779fd29edf1d0d41c2ee6aa7508754bcc8872583f931bcc2ad
 ---
 

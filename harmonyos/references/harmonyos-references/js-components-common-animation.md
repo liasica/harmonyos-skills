@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:35+08:00
+scraped_at: 2026-09-10T06:25:48+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1da5cc176dce296db612edc0403e11b40f3d57f541100ed8a9f4fa69352efe4c
+content_hash: sha256:5c287dea28ad5d11e4fbaa91244bc6d1d121c6a2322ffa265e1e5b021ac58061
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:1da5cc176dce296db612edc0403e11b40f3d57f541100ed8a9f4fa69352
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/ZTAeKfcRRV2bYeFcLt1Gnw/zh-cn_image_0000002712246672.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/0FhRNJaCQBKH0fUWxCRPWg/zh-cn_image_0000002717773154.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/508YI0V5SUednCmy_kesyw/zh-cn_image_0000002742005621.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/W8ERhnVYQhajPzwyxC8msw/zh-cn_image_0000002717613222.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/5eiSR7BnTYm0CVhwQEo2Aw/zh-cn_image_0000002712406634.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/NMposK56Rq-38BhmoV0TzA/zh-cn_image_0000002747293175.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/XO9DqoWjRrWbowHKy1fNfA/zh-cn_image_0000002742125581.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/3TbDyt5iR9uQiU5LI4vYag/zh-cn_image_0000002747213091.png)

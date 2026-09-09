@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 句柄泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 句柄泄漏故障模式说明 > 句柄泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-09-04T06:33:25+08:00
+scraped_at: 2026-09-10T06:30:19+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:2128674f405e3bb280bb97ae53d64e4d9b90c2d0366a4716dfbe9768d41c3240
+content_hash: sha256:788f2d4c44577ca3d52c775e8771c6b9353ba0014e139657101a68c694e3f9f9
 ---
 
 系统会监控进程句柄数量，当进程持有的句柄数量超过阈值，系统会抓取维测并对异常应用进行管控。本文旨在介绍句柄泄漏检测机制，并提供开发态与运维态的问题分析思路。此外，本文还提供句柄泄漏问题分析与定位实践系列文章，旨在系统梳理句柄泄漏常见根因与问题分析方法，引导开发者在编码中建立良好的句柄资源使用习惯。文章如下：
@@ -134,7 +134,7 @@ HiAppEvent eventInfo={"domain":"OS","name":"APP_KILLED","eventType":2,"params":{
 6. 单击想要排查的句柄，展开其调用栈，如下图6处。
 7. 结合调用栈对代码进行分析，找到泄漏根因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/bZqclYzKR5WM6zla3y0eVg/zh-cn_image_0000002729611109.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/3XxCG9ADQsawMMg1smm2vQ/zh-cn_image_0000002729611109.png)
 
 ## 开发态分析方法
 

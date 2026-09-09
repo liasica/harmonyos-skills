@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-site-sear
 title: POI搜索
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 位置搜索 > POI搜索
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:58+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e769fb5f9a834de3f8b897b757244436d84f7850f16a201b18839f668aec16b4
 ---
 

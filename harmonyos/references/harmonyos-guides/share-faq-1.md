@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-faq-1
 title: 拉起系统分享框失败
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit常见问题 > 拉起系统分享框失败
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-10T06:23:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6a883c73c9cb73701c8e23029c29967491bcfc9c1941ebe6fe9d3d7180dddb2f
 ---
 

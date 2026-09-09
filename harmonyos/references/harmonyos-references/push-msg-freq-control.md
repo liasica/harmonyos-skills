@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-msg-
 title: 消息频控
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 消息频控
 category: harmonyos-references
-scraped_at: 2026-09-05T06:21:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8929f6bd7241ea27c92231acf4f49ea8bf7f20ccc9490b1b22b7b696ea094131
+scraped_at: 2026-09-10T06:29:41+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:2ec768f2832adcd31c1527d65438336124a47eefbe6e1e8bf4d97ee83f4a1929
 ---
 
 Push Kit消息频控包括场景化消息频控、设备消息频控、测试消息频控和消息推送速率管控，当超过了某个频控规则限制会返回对应的[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
@@ -42,7 +42,7 @@ Push Kit消息频控包括场景化消息频控、设备消息频控、测试消
 
 消息推送速率是指应用QPS（每秒推送的设备个数），当应用QPS超过阈值时请求会返回[HTTP响应码](push-scenariozed-api-response.md#http响应码) 503。应用QPS与应用类型相关，并且随着应用在华为终端上的月活跃用户人数增加而增长，您可以登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)查询到应用QPS阈值，查询路径：“开发与服务 > 推送服务 > 配置 > 选择应用”，选择需要查看的应用，下方即可查到对应的QPS阈值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/l0CQ8ZT7SlmXrua1_BpCFA/zh-cn_image_0000002742126335.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/awE9UB2kRA2n_v0ZOerLog/zh-cn_image_0000002747213843.png)
 
 **说明** 
 

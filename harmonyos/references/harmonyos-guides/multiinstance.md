@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multiinstance
 title: 创建应用多实例
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 创建应用多实例
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:41+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:9aadb300181d2f0c999a4c54fe57d9e6841b597cff8cb569f8a26ed5cb74f4fd
 ---
 

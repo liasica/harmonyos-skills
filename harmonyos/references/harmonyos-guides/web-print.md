@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-print
 title: 使用Web组件打印前端页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件打印前端页面
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:162cbfcb9e064d8e2dc3afb48374ab31fe38a044ac8e138cdd3edae6762ceab3
 ---
 

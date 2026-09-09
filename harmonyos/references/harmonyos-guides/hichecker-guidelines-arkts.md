@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hichecker-gui
 title: 使用HiChecker检测问题（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 检测模式 > 使用HiChecker检测问题（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:47+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ef9ff50ae40dc0b4bea2fb504fd626906f836ec474c873c64b7b1335beb3edde
 ---
 

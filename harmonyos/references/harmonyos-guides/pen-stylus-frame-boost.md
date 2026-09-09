@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-stylus-fr
 title: 接入手写笔跟手性加速
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入手写笔跟手性加速
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:09+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f918387335c6a264f6a4434cb0c4178519189eace2bd33bf7e2259f538971d80
 ---
 

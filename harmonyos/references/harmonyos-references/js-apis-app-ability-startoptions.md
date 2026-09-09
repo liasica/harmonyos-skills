@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.StartOptions (startAbility的可选参数)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.StartOptions (startAbility的可选参数)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:29+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c0af1c5f2c4ffb519acafd3794ab55b07a95aa57a0804f833419115979d2cdf4
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-flow-fiel
 title: 流场图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 流场图层
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:13+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:ffb7227ccf80767b943421ecfeb413b0993ec4150e566ee0dd0aa15605de6388
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:cae783a0b56a6cbc6678548276b0f7865792d54260177f84ee7f19d0c6dc8e8b
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:ffb7227ccf80767b943421ecfeb413b0993ec4150e566ee0dd0aa15605d
 
 6.0.0(20)开始，支持流场图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/BrUAgZ-_RJihAxoTEr7c_w/zh-cn_image_0000002712245312.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/yXiigl_LRPSwCJCkCIUdNw/zh-cn_image_0000002717771856.gif "点击放大")
 
 ## 接口说明
 

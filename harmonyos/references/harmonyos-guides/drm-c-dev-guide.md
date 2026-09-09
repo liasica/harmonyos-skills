@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-c-dev-gui
 title: 数字版权保护(C/C++)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 数字版权保护(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-04-10
-content_hash: sha256:10c3e715c19cbefda1ac1dbaa86d0e0cc54384b7e77cce6ff8831d30f7e5acce
+scraped_at: 2026-09-10T06:22:58+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:0e39e03262026ccb85c9d8e1b5af4117facb4ef88c2ed92f9b149aeaf5b38d71
 ---
 
 ## 功能介绍
@@ -34,6 +34,7 @@ DRM Kit提供MediaKeySystem实现DRM证书管理、DRM许可证管理功能，�
 3. 获取设备支持的DRM解决方案名称和唯一标识的列表。
 
    ```
+   #include <cstring>
    uint32_t count = 3; // count是当前设备实际支持的DRM插件的个数，用户根据实际情况设置。
    DRM_MediaKeySystemDescription descriptions[3];
    memset(descriptions, 0, sizeof(descriptions));

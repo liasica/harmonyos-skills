@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 通过contractId查询签约订单信息
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 查询签约订单 > 通过contractId查询签约订单信息
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:27+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:34+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4160f145960f21028b9b61aa51c76a2e92a9629563691fe6c8645a67f613ec0a
 ---
 

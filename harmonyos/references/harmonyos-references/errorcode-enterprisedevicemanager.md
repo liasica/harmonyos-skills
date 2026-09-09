@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 企业设备管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 错误码 > 企业设备管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:10+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:27:43+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0424fb62e09ef4d3bc5acca45f996080042b9bfc49a00e798ea1e58437701f33
 ---
 

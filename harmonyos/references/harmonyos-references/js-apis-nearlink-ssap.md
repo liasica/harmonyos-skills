@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.ssap (星闪SSAP连接能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.ssap (星闪SSAP连接能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:50+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:05+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6cfab7d02438359a01851f928d5712ac37973d1b9d1481251fb24633973f1b0f
 ---
 

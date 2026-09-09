@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/streaming-med
 title: 使用AVPlayer播放流媒体(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用AVPlayer播放流媒体(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:66dfc1eb3721b49641f4d26e7c348126834e599c7d8758ccb743149074a62350
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gatt-developm
 title: 连接和传输数据
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 低功耗蓝牙 > 连接和传输数据
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a319e9414a2e4bb65bbd289187f813306345fd596cab51d979b2cfd5fc61176f
+scraped_at: 2026-09-10T06:22:35+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:a80038707dbfa716500352328c6b1a53c450d801437bc4b836626cc73d5977a3
 ---
 
 ## 简介
@@ -41,7 +41,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 **1. 创建客户端实例**
 
-客户端通过查找设备流程搜索到目标设备后，即可构造客户端实例，后续所有操作都基于该客户端实例。
+客户端通过查找设备流程搜索到目标设备后，即可构造客户端实例，后续所有操作都基于该客户端实例。若需连接多个目标设备，则需构造多个客户端实例，即可实现多设备连接。
 
 ```ts
 // 此处是伪代码

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: AbilityResult
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > ability > AbilityResult
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c32ab133308ec17095e4e842d7f0b9e744f61145ef21d3be8234122effc8dffb
 ---
 

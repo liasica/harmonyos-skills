@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-calculate
 title: 距离计算
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图计算工具 > 距离计算
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:29+08:00
-doc_updated_at: 2026-05-18
+scraped_at: 2026-09-10T06:23:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0e9bef8258b747ee39703747eba7ce13a01213829b2381927f11168b0d6d407c
 ---
 

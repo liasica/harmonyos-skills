@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-v
 title: "@ohos.app.ability.VpnExtensionAbility (三方VPN能力)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.app.ability.VpnExtensionAbility (三方VPN能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:47d3a7643632b93284a22d49cee5ea6b4e3bd47660d79c80a1899aff24dee9d7
 ---
 

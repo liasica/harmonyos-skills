@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-soundpo
 title: 使用SoundPool播放短音频(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用SoundPool播放短音频(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-03-20
+scraped_at: 2026-09-10T06:23:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:88b9f968d743dec1f9391f377d53cd1fa5f41dba4465c68e9a4a866287f53fff
 ---
 

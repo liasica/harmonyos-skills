@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-to-hsp
 title: HAR转HSP指导
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > HAR转HSP指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d9a3f9798d015c9e3ea15e3bea0cddfe123b14a15ba64864e700d0852bf9ad9f
 ---
 

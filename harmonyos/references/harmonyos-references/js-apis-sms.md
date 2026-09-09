@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.telephony.sms (短信服务)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.sms (短信服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:00+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4b92eeafe5aecbf4870930d1825d302d3e62ea9aab962cabe53ef7b78db069ce
 ---
 

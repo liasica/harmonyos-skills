@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-te
 title: TextReaderIconV2（朗读听筒图标）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS组件 > TextReaderIconV2（朗读听筒图标）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:21:37+08:00
+scraped_at: 2026-09-10T06:29:52+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:806326b733b99c3f1fe3b178ab000b533f605c81be7b48670a49032c0197ba03
+content_hash: sha256:481cbc407ecb0afd99d0df0c4d4ee824ef98bc16d6d857655bec681aaf9b8d59
 ---
 
 朗读听筒图标，可以作为动态组件加载，并配置成为播放面板的主入口。
@@ -194,8 +194,8 @@ struct Index {
 
 静止状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/JVOWPGPVT3mV9rX7UiHj-g/zh-cn_image_0000002742126339.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Hmv0vQEkSo2gHub4meZ3Fg/zh-cn_image_0000002747213847.png)
 
 播放状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/tHXNBYmHQr6DuO4BDV17tw/zh-cn_image_0000002712247430.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Ki5pAZWtRk2ASOalgHihxA/zh-cn_image_0000002717773912.png)

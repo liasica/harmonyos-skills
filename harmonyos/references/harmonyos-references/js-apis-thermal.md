@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.thermal (热管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.thermal (热管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b2b1cb3491ed152dc7d0c3ff50a3b1a2be1bead702a6adf7d268d4d9b623b320
 ---
 

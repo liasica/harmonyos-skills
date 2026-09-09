@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: 管理Spatial Recon会话
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务） > 管理Spatial Recon会话
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1ca2929224d5395f38d995543c1752f92ec3279a7a29219b28d8d595242a55af
 ---
 

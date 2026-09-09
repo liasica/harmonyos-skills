@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备资源文件
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备资源文件
 category: best-practices
-scraped_at: 2026-09-02T15:03:18+08:00
+scraped_at: 2026-09-10T06:30:06+08:00
 doc_updated_at: 2026-03-19
-content_hash: sha256:6445cb2c4e2da081e7dc098fb739acd5733bfd54a70cee9a3820b139e64a0eec
+content_hash: sha256:288be7541b22ab7d2dede6fe96ee6d836e7b0ddc4cf5730baa29f58bc945cc53
 ---
 
 在页面开发过程中，经常需要用到颜色、字体、间距、图片等资源，在不同的设备或配置中，这些资源的值可能不同。有两种方式处理：
@@ -87,7 +87,7 @@ base目录与限定词目录下面可以创建资源组目录，用于存放特�
 
 在代码中通过 "$r('app.type.name')" 的形式使用应用资源，并分别在默认设备和平板上查看代码的运行效果，可以发现同一资源在不同设备上的取值不同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/NEgcDDiTQvyp95cAxVUEgw/zh-cn_image_0000002321308262.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/fBFrva7pQdWw_WZ19NVBeg/zh-cn_image_0000002321308262.png "点击放大")
 
 ```typescript
 @Entry

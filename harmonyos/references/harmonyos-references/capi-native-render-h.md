@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_render.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_render.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:04+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4947e4dd2290235c99f9dd9b3b3cf1fc3086760a5d786ec026535a11a8eac237
 ---
 

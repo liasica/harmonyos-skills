@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationInfo
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:32+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:99470c5e5202ed520f3d2db98e08e5857c9000ff93975bdc61e8b4562c08b549
 ---
 

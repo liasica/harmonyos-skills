@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-click-to-c
 title: 点击响应时延分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 点击响应时延分析
 category: best-practices
-scraped_at: 2026-09-02T15:03:21+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:c9f70ad0de54229ce92fc8f2df39fc9021fa83d3f783620892c1b8367123ff2d
+scraped_at: 2026-09-10T06:30:11+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:da684c4377a257e2fd5d7fe131984bc10b2a34b96141f8eb9571d444c02a31e6
 ---
 
 ## 响应优化概述
@@ -15,7 +15,7 @@ content_hash: sha256:c9f70ad0de54229ce92fc8f2df39fc9021fa83d3f783620892c1b836712
 [《应用性能体验建议》](../harmonyos-guides/performance-delay.md#section118706211961)指出，应用或元服务内点击操作响应时延应<=100ms。为了保证操作响应及时，提供极致流畅体验，需要分析从手势抬手到渲染上屏这段时间内应用执行的耗时操作，并针对性地优化相关逻辑。
 
 **图1** 点击响应起止点示意图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/o8Sz1nanQ2a5NXW89Ov5Gg/zh-cn_image_0000002229336589.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/2FEnOGWhTdyDz9Nzc5zqlg/zh-cn_image_0000002229336589.png "点击放大")
 
 点击响应优化指通过分析响应阶段、优化应用性能，加快点击后页面的响应速度，提升用户操作体验。优化点击响应速度，既满足高性能要求，增强产品竞争力，又能提升用户满意度。
 
@@ -34,7 +34,7 @@ content_hash: sha256:c9f70ad0de54229ce92fc8f2df39fc9021fa83d3f783620892c1b836712
 
 **图2** 问题定位流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/wh9T2UlxQjCp7ceW95yQag/zh-cn_image_0000002456578994.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/nPH4GG45Qs2x0VWGCVLoMA/zh-cn_image_0000002456578994.png "点击放大")
 
 如上图所示，分析点击响应时延问题通常需要以下步骤：
 
@@ -52,13 +52,13 @@ content_hash: sha256:c9f70ad0de54229ce92fc8f2df39fc9021fa83d3f783620892c1b836712
 1. 在DevEco Studio中启动AppAnalyzer工具，详细参见[AppAnalyzer](bpta-performance-detection.md#section135451444171)。
 2. 点击“手动性能页面间转场体检”按钮启动检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/e7O1YDfeTku_WfkQY1NVqQ/zh-cn_image_0000002512366839.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/DWGGPaEVSZ-WzvySZu8UTw/zh-cn_image_0000002512366839.png "点击放大")
 3. 开发者需根据提示，在应用中找到待检测页面，点击工具中的开始按钮，然后在应用中手动执行转场，操作后点击停止完成本次检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/pTOVCqCvStaBVOP_hK8pjg/zh-cn_image_0000002514736963.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/FnyswyyFTVyIYsqnapWV2w/zh-cn_image_0000002514736963.png "点击放大")
 4. 检测结果分析，点击响应时延应小于或等于100ms。图中存在大于100ms的点击响应时延，判断为存在性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/q6JR6_wuS7atUa1igtLq9A/zh-cn_image_0000002554625509.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/FgFMmfXiR0-t6bIKz4xdrg/zh-cn_image_0000002554625509.png "点击放大")
 
 具体使用可参考[《应用与元服务体检》](../harmonyos-guides/ide-app-analyzer.md)。
 
@@ -71,7 +71,7 @@ content_hash: sha256:c9f70ad0de54229ce92fc8f2df39fc9021fa83d3f783620892c1b836712
 
 1. 获得检测结果后，点击详情报告中的“点击响应时延”，可以查看UI线程应用自身方法耗时长的检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/w6QuQuiAQlGfMvSEzFarHw/zh-cn_image_0000002523545578.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/b2BzufsoRYuXYB3I1Ha6Ng/zh-cn_image_0000002523545578.png "点击放大")
 
    检测结果中，可以根据方法总耗时的大小来判断该方法是否为耗时方法。
 
@@ -98,10 +98,10 @@ content_hash: sha256:c9f70ad0de54229ce92fc8f2df39fc9021fa83d3f783620892c1b836712
 
 1. 获得检测结果后，点击详情报告中的“点击响应时延”，可以查看UI线程应用自定义组件创建耗时检测结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/zkqegPAyTDq33ShBZbQvvA/zh-cn_image_0000002554665471.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/fnb1OtnsSK-33iYvgA-GAA/zh-cn_image_0000002554665471.png "点击放大")
 2. 可点击源文件定位到创建耗时的UI组件，根据提供的可能故障原因，去对UI组件进行相应优化修改，减少该UI组件自身创建耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/sct8y4nPSkaxQR8w6OlMLg/zh-cn_image_0000002523585572.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/aJcTWXnVRiu0XJ4OTly3Sg/zh-cn_image_0000002523585572.png "点击放大")
 
 ## 使用Profiler Frame工具检测和分析
 
@@ -116,7 +116,7 @@ content_hash: sha256:c9f70ad0de54229ce92fc8f2df39fc9021fa83d3f783620892c1b836712
    4. 操作到指定页面，点击“Create Session”创建Frame模板。
    5. 点击Frame模板框中的播放按钮开始录制，操作应用界面进行点击响应，完成后点击结束录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/f5ZCCtqPSxqUjeZmPKfJ8Q/zh-cn_image_0000002456418534.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/eOCcGH1dRd6sxUQXrzfdmQ/zh-cn_image_0000002456418534.png "点击放大")
 2. 确认响应起点和终点：
    1. 根据点击响应的初始位置，找到手势抬起的那一帧，设置为分析起点。该帧对应mmi-service泳道中H:service report的type为up的事件。
    2. 确定页面变化后的第一帧，将其作为分析的终点，对应于RSHardwareThread泳道的CommitAndReleaseLayers结束点。
@@ -130,10 +130,10 @@ content_hash: sha256:c9f70ad0de54229ce92fc8f2df39fc9021fa83d3f783620892c1b836712
 
    应用阶段（如下图中标记2与3之间的部分）是开发者需要优化的部分。若应用阶段耗时超过25ms，加上机器硬件30ms的耗时，整体时延可能超过100ms，导致点击响应体验不佳，需定位性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/KWrXF2lIR4WALQ7gje2vCw/zh-cn_image_0000002489617765.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/jnsfB3zDRu2LOOR02Z0jlQ/zh-cn_image_0000002489617765.png "点击放大")
 4. 分析定位原因：针对框选的应用阶段，分析主进程泳道，观察是否存在耗时长的函数阻塞主线程或超长耗时单帧。如果有长段的ExecuteJs，查看具体的调用栈或火焰图，定位耗时函数。如果是FlushLayoutTask阶段耗时，结合UI组件树分析布局合理性，查找优化空间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/IYJdTiCkRTekODo3K0TMZg/zh-cn_image_0000002489537833.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/v14vRJZUTlm2pp28WH7dZQ/zh-cn_image_0000002489537833.png "点击放大")
 
 更多使用方法参考[《Frame分析》](../harmonyos-guides/ide-insight-session-frame.md)。
 
@@ -162,7 +162,7 @@ if/else条件渲染是ArkUI开发框架提供的功能，可根据应用状态�
 首次绘制组件时，若组件启用renderGroup状态，将对组件及其子组件进行离屏绘制，并保存到缓存中。此后重新绘制相同组件时，优先使用缓存，降低绘制负载，加快响应速度。
 
 **图3** renderGroup使用场景示例   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ctDtbwmHRM2fN5KOUkts6A/zh-cn_image_0000002194010780.gif)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/2LYqQjZjT6-ok0BK1-5Y_w/zh-cn_image_0000002194010780.gif)
 
 为了使renderGroup功能生效，存在以下限制条件：
 
@@ -221,7 +221,7 @@ Image('https://example.com/icon.png')
 下图是页面及自定义组件的生命周期流程：
 
 **图4** 生命周期流程图   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/B2Co9fRsRyS8rQa_g4azUA/zh-cn_image_0000002193851184.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/XHOdLef5TiqqqcQ3s6RkoA/zh-cn_image_0000002193851184.png "点击放大")
 
 通常可以采用的逻辑优化方法有：
 
@@ -257,7 +257,7 @@ Image('https://example.com/icon.png')
 开发者可以在用户交互动作开始时，添加动画元素，如单击效果、转场缩放、加载进度条和共享动画。这些动画能告知用户状态已发生变化，应用正在快速运作。动画背后涉及数据计算、布局渲染和内容加载等操作。当新界面渲染完成，动画元素可通过渐变消失或移出屏外等友好的方式退出视觉区域。
 
 **图5** 应用响应的两个视角   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/sk60uFvxRo2gdlgaHLqVSg/zh-cn_image_0000002193851196.png)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/MJFLhEgHToKzKsWB0Z2Uvg/zh-cn_image_0000002193851196.png)
 
 使用连贯的感知元素，可以提供视觉隐喻，平滑地引导用户从上一个页面过渡到下一个页面。交互动画如果友好、有趣且实用，会提升用户的响应体验，使他们觉得应用性能好、反应速度快。
 

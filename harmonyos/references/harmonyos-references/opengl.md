@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengl
 title: OpenGL
 breadcrumb: API参考 > 标准库 > OpenGL
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:37+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ca8b290a77f778df088bf7487abb895741aabaa663e89da20556c68e4942daa7
 ---
 

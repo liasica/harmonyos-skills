@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/subscribe-rem
 title: 远端状态订阅开发实例
 breadcrumb: 指南 > 应用框架 > IPC Kit（进程间通信服务） > 远端状态订阅开发实例
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:26+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-10T06:22:21+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c7f87ce514333d438b9ab7a97f185cfef31e02ae6e6f5949085598d763399954
 ---
 

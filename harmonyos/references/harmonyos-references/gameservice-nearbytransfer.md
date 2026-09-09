@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: gameNearbyTransfer（游戏近场快传）
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gameNearbyTransfer（游戏近场快传）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:15+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c3b08cf0f7b3df298e1ebedc708621c61bd717c25ecb8c9a6aee273b1dcb004e
 ---
 

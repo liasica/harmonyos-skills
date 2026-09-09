@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-mate-book-
 title: 折叠电脑应用开发
 breadcrumb: 最佳实践 > 多端设备体验提升 > 电脑 > 折叠电脑应用开发
 category: best-practices
-scraped_at: 2026-09-02T15:03:20+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:14f85f473f5259ae7766263e5b5b800972bde6eba74aec7d1f7340ed1bf97fe3
+scraped_at: 2026-09-10T06:30:10+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:cdb2c2592544075e73235d33935373dfc61194f072952751f284969e49670b50
 ---
 
 ## 概述
@@ -80,7 +80,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
   [Display](../harmonyos-references/js-apis-display.md#display)对象中包含屏幕宽高，屏幕可用区域宽高等重要信息，对应的Display区域如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Cu2SqfwTTgqeLYiD_tEW-Q/zh-cn_image_0000002585466890.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/z5HBB7TNQJuwXmuHvsi92g/zh-cn_image_0000002585466890.png "点击放大")
 
   | API | 说明 |
   | --- | --- |
@@ -88,11 +88,11 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
   | [display.getDisplayByIdSync()](../harmonyos-references/js-apis-display.md#displaygetdisplaybyidsync12) | 根据displayId获取对应的Display对象。具体的displayId可参考[屏幕规格信息](bpta-mate-book-fold.md#section9491153322214)表格中屏幕ID行。  除半折叠态（关闭全尺寸键盘）分为上下两屏，上屏displayId为0，下屏displayId为999，其余状态折叠电脑屏幕的displayId均为0。 |
   | [display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9) | 获取当前默认的Display对象。除半折叠态（关闭全尺寸键盘）获取的Display对象为displayId为0的上屏，其余设备形态下获取的Display区域如上图所示。 |
   | [display.getPrimaryDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetprimarydisplaysync14) | 获取主屏信息。对于折叠电脑，当外接屏幕时，获取的是当前主屏幕的Display对象；当没有外接屏幕时，获取的是设备自带屏幕中displayId为0的Display对象。 |
-  | [display.on('add'|'remove'|'change')](../harmonyos-references/js-apis-display.md#displayonaddremovechange) | 开启显示设备新增、移除、变化的监听。 |
+  | [display.on('add' | 'remove' | 'change')](../harmonyos-references/js-apis-display.md#displayonadd--remove--change) | 开启显示设备新增、移除、变化的监听。 |
 
   **说明** 
 
-  display.on('add'|'remove'|'change')触发场景如下：
+  display.on('add' | 'remove' | 'change')触发场景如下：
   + display.on('add')：半折叠态（唤起全尺寸键盘）->半折叠态（关闭全尺寸键盘），展开态->半折叠态，外接显示器。
   + display.on('change')：涉及Display变化，包括折叠状态、屏幕方向、可用区域变化等。
   + display.on('remove')：半折叠态（关闭全尺寸键盘）->半折叠态（唤起全尺寸键盘），半折叠态->展开态，取消外接显示器。
@@ -150,7 +150,7 @@ HarmonyOS折叠电脑凭借其独特的折叠设计、全屏触控和[虚拟键�
 
 悬停态支持设备平稳放置于桌面，实现免手持体验，常用于视频通话、视频播放、拍照、听歌等不需要频繁交互的场景。这种状态下，应用需要对中间折痕区域进行避让，并对上下两个界面进行悬停态布局适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Ks6zV_7HS2aRFQa59xM4Fw/zh-cn_image_0000002585626830.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/KdaHEz7SQTSksXBxAgCCoA/zh-cn_image_0000002585626830.png "点击放大")
 
 ### 开合适配
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-avplayer-b
 title: 基于AVPlayer基础播控实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVPlayer播放视频系列开发实践 > 基于AVPlayer基础播控实践
 category: best-practices
-scraped_at: 2026-09-02T15:03:17+08:00
+scraped_at: 2026-09-10T06:30:03+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:1d93edabbe4f633868842f587868e611188dbc32fa94b284d6769ac3aa003e1e
+content_hash: sha256:ce6ddbde6ad277e5f1e49aaf0412ddba15514ad282cde7695630bb8db0c9977a
 ---
 
 ## 概述
@@ -61,7 +61,7 @@ content_hash: sha256:1d93edabbe4f633868842f587868e611188dbc32fa94b284d6769ac3aa0
 
 进度条是视频应用的一个基础能力，可以通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/JH0A7qApQ7Kbxil-zTQmjw/zh-cn_image_0000002453067562.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/SPrP77C7QFyezADJ2keuNg/zh-cn_image_0000002453067562.gif "点击放大")
 
 ### 实现原理
 
@@ -107,7 +107,7 @@ Slider({
 
 通过界面按钮快捷切换视频播放静音状态，实现一键开启或关闭静音，提升媒体播放的交互便捷性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/t9exOPhvQiGlt0p8pj7dxw/zh-cn_image_0000002486107325.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ls2UTyo0QoyAjQRyWa2y6Q/zh-cn_image_0000002486107325.gif "点击放大")
 
 ### 实现原理
 
@@ -196,10 +196,10 @@ this.avPlayer.on('stateChange', async (state) => {
 点击按钮即可弹出设置弹窗，可选择"拉伸至与窗口等大"模式，视频拉伸至与窗口等大，适合需要充分利用显示区域且对比例变化不敏感的场景；选择"缩放至最短边填满窗口"模式，视频将保持原始宽高比并以最短边为基准进行缩放，适合需要保持画面比例不变的场景。
 
 **图1** 拉伸至与窗口等大模式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/dtIwL4zoSpqkktULuQohxA/zh-cn_image_0000002452907970.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/nb0Wnk2EQDi8OHEuPTbW7A/zh-cn_image_0000002452907970.gif "点击放大")
 
 **图2** 缩放至最短边填满窗口  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/eCYffYqfRDqcU_yeU6FLUA/zh-cn_image_0000002485947349.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/fkWGCw-UTZuoKYp0zjMSJw/zh-cn_image_0000002485947349.gif "点击放大")
 
 ### 实现原理
 
@@ -284,7 +284,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 通过点击按钮选择预设倍速实现倍速设置，为用户提供灵活的视频播放速率控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/4Msn-ZN4QkedK7rRmWdcpw/zh-cn_image_0000002453067566.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/MtADzspnRBKhGqn1Jrvm2Q/zh-cn_image_0000002453067566.gif "点击放大")
 
 ### 实现原理
 
@@ -398,7 +398,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 滑动调节音量是一项非常实用的功能，它允许用户在不离开视频播放界面的情况下快速调整音量，以获得更好的观看体验。该功能位于窗口左侧，通过上下滑动手势即可调整音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/YAuR2VFASzenWe294COL1g/zh-cn_image_0000002486107329.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/WDNg2aOlQDOqNOd6NcF2Dw/zh-cn_image_0000002486107329.gif "点击放大")
 
 ### 实现原理
 
@@ -460,7 +460,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 在视频播放前，用户可设置外挂字幕文件，字幕将精准同步显示于视频画面下方，并可以通过按钮切换字幕语言，提升观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/pjwOs-xeTbSA7Ilkhcu_8Q/zh-cn_image_0000002452907974.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/mAueBWAbRnWFtrn1QcNC1w/zh-cn_image_0000002452907974.gif "点击放大")
 
 ### 实现原理
 

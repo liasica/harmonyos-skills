@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: faceComparator（人脸比对）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > faceComparator（人脸比对）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d7c4833ed7d14ae1d0c8b2aa90c256938c3de079904de688eb9e95467bd64e87
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-financial
 title: 多设备银行理财界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备银行理财界面
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
+scraped_at: 2026-09-10T06:30:06+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:3c96169b85b46a7945971cf6d962676fee9b9b4fcaceabd096aed3c57cd6197e
+content_hash: sha256:422a16a3794bc401f25445dfda255a1b276fabadddedf565c33b00ab7b67d50f
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:3c96169b85b46a7945971cf6d962676fee9b9b4fcaceabd096aed3c57cd
 
 应用的UX设计可参考[金融理财类](../design-guides/responsive-design-examples6-0000001793536905.md)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/0r79i9xDS9er4e5E5lUZQQ/zh-cn_image_0000002619248557.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/UKOHDtHkReKPmRz19URzCw/zh-cn_image_0000002619248557.png "点击放大")
 
 ## 工程管理
 
@@ -212,7 +212,7 @@ content_hash: sha256:3c96169b85b46a7945971cf6d962676fee9b9b4fcaceabd096aed3c57cd
 
 银行理财应用首页主要承担业务入口、消息公告、卡片内容和财富推荐的聚合展示。根据功能设计，应用首页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/cCnoFJDfRDy6mMYKgZMgYQ/zh-cn_image_0000002610026103.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Al9FMK7MT3qYtjUPGjfasA/zh-cn_image_0000002610026103.png "点击放大")
 
 **界面开发**
 
@@ -231,7 +231,7 @@ content_hash: sha256:3c96169b85b46a7945971cf6d962676fee9b9b4fcaceabd096aed3c57cd
 
 账户总览页用于展示用户总资产、昨日收益概览，及活期、投资、负债等资产模块的分区信息。根据功能设计，应用账户总览页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/-Exkyz8DTv-V4BFBwhh2oA/zh-cn_image_0000002579426308.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/irVOfKghSvuRYmWEMyIaIg/zh-cn_image_0000002579426308.png "点击放大")
 
 **界面开发**
 
@@ -250,7 +250,7 @@ content_hash: sha256:3c96169b85b46a7945971cf6d962676fee9b9b4fcaceabd096aed3c57cd
 
 理财详情页用于展示单个理财产品的关键信息、交易时间线及产品亮点，并提供“关注/买入”的底部操作入口。根据功能设计，将应用首页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/-917Ntw9RDiMMtCTJbyUUg/zh-cn_image_0000002609946203.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/Y66GgUCuTTWXURf9bwpbqw/zh-cn_image_0000002609946203.png "点击放大")
 
 **界面开发**
 
@@ -268,7 +268,7 @@ content_hash: sha256:3c96169b85b46a7945971cf6d962676fee9b9b4fcaceabd096aed3c57cd
 
 购买页用于完成理财产品的申购确认，用户在此确认金额、选择付款方式并核对产品信息。根据功能设计，将应用首页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/IqIlAZUXSXqEy_BpiTiM9g/zh-cn_image_0000002579586218.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/0S0NTCwST3CgbK4NikN_4A/zh-cn_image_0000002579586218.png "点击放大")
 
 **界面开发**
 

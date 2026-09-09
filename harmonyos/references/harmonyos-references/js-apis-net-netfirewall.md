@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.netFirewall (网络防火墙)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.netFirewall (网络防火墙)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:58+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:27:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:231e3f1892ee772bc3a06135f26190bc0f9280204772455669f266c94dc90e30
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Chip
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Chip
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:28+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:130a24fc71b9cabf3e098ed05bc8cfcc445cfdba2eb4b0e0b8bf9816bd152a51
+scraped_at: 2026-09-10T06:25:42+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:d750f28883810a08820c1acbc2ad11b08a7d55287a78b9e46abfcb95ac4d4313
 ---
 
 Chip组件用于标签展示和交互场景，支持自定义样式、图标、激活态等功能，适用于搜索框历史记录、邮件发送列表等场景，可快速实现标签的创建、删除和交互能力。
@@ -347,7 +347,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/kOzfpWtVQOqUy1OykvJGzA/zh-cn_image_0000002742005457.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/NyMWBYSiRdiNAPUlDzFlpw/zh-cn_image_0000002717613122.png)
 
 ### 示例2（设置默认后缀图标）
 
@@ -396,7 +396,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/VYP2Nt4pRE2Ts2EOSaWNGg/zh-cn_image_0000002712406468.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/pEvMMk5FTpKSTCH1GOArtQ/zh-cn_image_0000002747293075.png)
 
 ### 示例3（不显示后缀图标）
 
@@ -444,7 +444,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/PYW3lzDHRI-FhJ9aSNfX3g/zh-cn_image_0000002742125417.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/bEuUVwvfSwODllMoYqA_Vw/zh-cn_image_0000002747212989.png)
 
 ### 示例4（激活态操作块）
 
@@ -502,7 +502,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/fs0mZEhcR_K9dJ9yI6RonA/zh-cn_image_0000002712246510.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/dM84NkcgT7y1Araq7LA39g/zh-cn_image_0000002717773056.gif)
 
 ### 示例5（设置symbol类型图标）
 
@@ -557,7 +557,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_mBXdjVpTKOne7b0qRcdhg/zh-cn_image_0000002742005459.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/-_9y4YxIT62nXpRzt9dLsw/zh-cn_image_0000002717613124.gif)
 
 ### 示例6（设置镜像效果）
 
@@ -609,7 +609,7 @@ struct ChipPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UlhEO4pCS4KvVDQF-DluFg/zh-cn_image_0000002712406470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/iqNgEDA-QG233Cnqj7B9cw/zh-cn_image_0000002747293077.png)
 
 ### 示例7（Image类型无障碍朗读）
 
@@ -994,4 +994,4 @@ struct ChipMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/LIyjfLrQQ1KtIRgPzIP_Wg/zh-cn_image_0000002742125419.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/LzlbsudbSlmPZsCYWu6iTw/zh-cn_image_0000002747212993.png)

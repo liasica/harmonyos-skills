@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb_ren
 title: ArkWeb渲染框架适配
 breadcrumb: 最佳实践 > 应用框架 > ArkWeb > ArkWeb渲染框架适配
 category: best-practices
-scraped_at: 2026-09-02T15:03:17+08:00
+scraped_at: 2026-09-10T06:30:02+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:2ce5f9bcff2cb52e3eb84089deaf2cb367ec24ea89fd19931ec772beeff4950a
+content_hash: sha256:7a9cf554fe8fa8e676ab4fc50e9c629347494b487916968e9577981c229c3e17
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ Hybrid应用开发是介于Web应用和系统应用两者之间的应用开发�
 
 ### 整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/tCHz8kAnRx--Zb-cqnTxmA/zh-cn_image_0000002194010404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/NBa4F78cRPW2vGLiOi-P-w/zh-cn_image_0000002194010404.png)
 
 1. Ark进程：由ArkTS引擎提供运行时，具备调用系统API的能力。应用启动从Ark进程进入，完成EntryAbility的初始化并创建HarmonyOS应用页面。Ark进程可以动态或者静态创建Webview运行时环境，并加载html/css/js资源文件。
 2. Webview进程：默认支持标准W3C API，对ArkTS侧资源的访问有限制。Webview渲染能力主要由Web组件提供。用户可以通过Web组件的属性配置是否开启同层渲染能力、是否允许执行JavaScript脚本等。
@@ -26,7 +26,7 @@ Hybrid应用开发是介于Web应用和系统应用两者之间的应用开发�
 
 Hybrid应用鸿蒙化方案主要集中在双端通信JSBridge实现、拓展接口实现和基于同层渲染的原生组件实现。JSBridge是前端与ArkTS进行双向通信的桥梁。通过JSBridge，前端应用能访问到ArkTS侧实现的拓展接口，实现更丰富的业务功能。视图层方面，可以使用系统提供的同层渲染能力，把部分性能要求比较高的前端组件改成ArkTS实现，以达到更好的体验效果。下图蓝色背景的方框图展示了上述三点所处的框架位置：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/CdO_srExTvW0IeKAWnXo7Q/zh-cn_image_0000002229450681.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Byfv8wiSSeqTABdHNdaIrQ/zh-cn_image_0000002229450681.png)
 
 ## 业务实现中的关键点
 
@@ -82,7 +82,7 @@ JSBridge扮演Webview进程与ArkUI主进程沟通的桥梁，是一种双向通
 
 通过对比，javaScriptProxy注入对象的方式构造JSBridge是一个比较好的技术选型。建议JSBridge的实现基于注入机制进行设计，并考虑分层设计来提高其通用性和灵活性，下图展示一种分层设计思路：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/_vPOpZNRSU69pvIIYeUnyQ/zh-cn_image_0000002229450697.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/fGDulBAnQ9iehUcnIrhANA/zh-cn_image_0000002229450697.png)
 
 1. 通信层：对上层屏蔽具体的通信机制，主要负责Web侧和ArkTS侧数据的传递，但不解析数据的业务含义，不关注传递的数据内容。数据可以序列化为字符串进行传递或者以object对象进行传递。使用javaScriptProxy代理机制实现的通信层代码示例如下：
 
@@ -157,7 +157,7 @@ JSBridge的设计是否合理关系到应用的性能，开发者也可以考虑
 
 H5业务设计中除了使用W3C API外，还可以使用ArkTS侧API拓展来访问设备。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/nTG9XLoxRSSvwDRNZ9zIog/zh-cn_image_0000002229450693.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/eEPst5M_Q_2Xi-R4jvTM8g/zh-cn_image_0000002229450693.png)
 
 系统高阶API是对系统API的一层封装，实现更符合业务要求的接口。拓展API的规范设计具有较大的灵活性，建议对API的参数，返回值类型格式进行限制，使用基本类型或者简单的字典对象，尽量避免使用复杂的类型的参数或返回值，可以参考比较成熟的小程序框架，其规范格式可以分成三种类型：
 
@@ -167,7 +167,7 @@ H5业务设计中除了使用W3C API外，还可以使用ArkTS侧API拓展来访
 
 设计过程中可以把API都汇聚到一个对象作为属性字段存在，方便在切面视角增加统一的参数、返回值加工处理，拦截处理。示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Qzq9jO5kSUKyk1rIxVM6hg/zh-cn_image_0000002229450701.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/bfPaa9hhSZSaesqMfOUWwg/zh-cn_image_0000002229450701.png)
 
 ### 组件鸿蒙化
 
@@ -175,11 +175,11 @@ HarmonyOS提供同层渲染能力把原生组件直接渲染到WebView层级，�
 
 开发角度：前端页面开发者使用<embed>标签来表示使用原生组件；应用开发者使用NodeContainer关联离屏节点树，使用makeNode()接口在H5页面上渲染出组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/YYBjO0mERtiCdgrWPRijHw/zh-cn_image_0000002229450685.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/AM5UEbWhTri6tcwQYSZZtQ/zh-cn_image_0000002229450685.png)
 
 离屏节点动态上下树：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/k168gdp6RNmmYlOM3aNhJQ/zh-cn_image_0000002229450689.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/6cNkYBynRQKzZxNJ6rTJNg/zh-cn_image_0000002229450689.png)
 
 1）开发者初始构建一个NodeContainer对象表示一个空的占位符。NodeContainer里面内容为空时，在初始化的时候大小为0，不参与布局。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-open-docu
 title: 打开和保存PDF文档
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > pdfService能力 > 打开和保存PDF文档
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:23:25+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3521f52ee704f740d5aafaa3b2976ba7758fd60fa97bfedb1ba28f2bcc541857
 ---
 

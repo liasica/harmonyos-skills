@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue-c
 title: 应用接续概述
 breadcrumb: 最佳实践 > 自由流转 > 跨端迁移 > 应用接续概述
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202e7330
+scraped_at: 2026-09-10T06:30:08+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:bcfd5a9a9a558e9c02856312e42c4c975e9f1388c2761a02606fff19cd87bf46
 ---
 
 ## 概述
 
-应用接续，指当用户在一个设备上操作某个应用时，可以在另一个设备的相同应用中快速切换，无缝衔接上一个设备的应用体验。比如在用户使用过程中，使用情景发生了变化，之前使用的设备不再适合继续当前任务，或者周围有更合适的设备，此时用户可以选择使用新的设备来继续当前的任务。接续完成后，之前设备的应用可退出或保留，用户可以将注意力集中在被启动的设备上，继续执行任务。
+应用接续，指用户在一个设备上操作某个应用时，可以快速切换到另一个设备的相同应用，无缝衔接之前的应用体验。比如在用户使用过程中，使用情景发生了变化，之前使用的设备不再适合继续当前任务，或者周围有更合适的设备，此时用户可以选择使用新的设备来继续当前的任务。接续完成后，之前设备的应用可退出或保留，用户可以将注意力集中在被启动的设备上，继续执行任务。
 
 如图所示，在手机上编辑备忘录，到办公室后切换到电脑上继续编辑，完成任务的无缝衔接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/XmHgPQf1R9-t7Xq2LjbgMw/zh-cn_image_0000002591861418.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/I-JxTxlBSVW_0ecw2WLmAA/zh-cn_image_0000002591861418.gif "点击放大")
 
-鸿蒙系统底层解决了应用接续过程中设备发现、连接、组网等过程繁琐的开发难点，应用在接入时仅需关注数据的传输和恢复，参考如下章节完成开发：
+HarmonyOS底层解决了应用接续过程中设备发现、连接、组网等过程繁琐的开发难点，应用在接入时仅需关注数据的传输和恢复，参考如下章节完成开发：
 
 * [约束限制](bpta-continue-cast.md#section157187257261)：应用接续使用时应该满足的设备限制和使用限制。
 * [常见接续场景体验建议](bpta-continue-cast.md#section15231331142614)：不同垂类下接续场景的接入建议，哪些场景需要接续同步内容，以及源端是否需要退出。
@@ -76,7 +76,7 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/liEvoQvASQKXXqaWDlebaw/zh-cn_image_0000002610187449.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/BamJiPlDT7yjlsEvbJrOCg/zh-cn_image_0000002610187449.png "点击放大")
 
 1. 在源端，通过[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md#uiability)的onContinue()回调，开发者可以保存待接续的业务数据。
 
@@ -90,7 +90,7 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
 
 | **接口名** | **描述** |
 | --- | --- |
-| onContinue(wantParam : {[key: string]: Object}): OnContinueResult | 接续源端在该回调中保存迁移所需要的数据，同时返回是否同意迁移：   * AGREE：表示同意。 * REJECT：表示拒绝，如应用在onContinue中异常可以直接REJECT。 * MISMATCH：表示版本不匹配，接续源端应用可以在onContinue中获取到迁移对端应用的版本号，进行协商后，如果版本不匹配导致无法迁移，可以返回该错误。 |
+| onContinue(wantParam : {[key: string]: Object}): OnContinueResult | 接续源端在该回调中保存迁移所需数据，并返回是否同意迁移：   * AGREE：同意迁移。 * REJECT：拒绝迁移，如应用在onContinue中发生异常，可直接返回REJECT。。 * MISMATCH：版本不匹配，接续源端应用可以在onContinue中获取到迁移对端应用的版本号，进行协商后，如果版本不匹配导致无法迁移，可以返回该错误。 |
 | onCreate(want: Want, param: AbilityConstant.LaunchParam): void; | 接续目的端为冷启动或多实例应用热启动时，在该回调中完成数据恢复，并触发页面恢复。 |
 | onNewWant(want: Want, launchParams: AbilityConstant.LaunchParam): void; | 接续目的端为单实例应用热启动时，在该回调中完成数据恢复，并触发页面恢复。 |
 
@@ -149,7 +149,7 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
        const versionThreshold: number = 1000;
        // Reject continuation when target side is below required version.
        if (targetVersion < versionThreshold) {
-         // Give user-friendly reason when continuation is rejected.q
+         // Give user-friendly reason when continuation is rejected.
          try {
            this.context.windowStage.getMainWindowSync()
              .getUIContext()
@@ -182,7 +182,7 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
 
 在Stage模型中，应用在不同启动模式下将调用不同的接口，以恢复数据、加载界面。不同情况下的函数调用如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/4Ufga6uRReq2kr-kCjsEyQ/zh-cn_image_0000002579667558.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/aZoS3QwCT5SEgu6kYHRnXg/zh-cn_image_0000002579667558.png "点击放大")
 
 **说明** 
 
@@ -344,7 +344,7 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
 2. 为应用A申请接续服务。
    1. 进入A应用详情页找到接续服务，点击“申请”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Gb9eZhn-RtukAguco2032A/zh-cn_image_0000002579827480.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/ZEXWpYo2TJasvtvnqQv1iA/zh-cn_image_0000002579827480.png "点击放大")
    2. 在“新建业务申请”页面填写如下字段，填写完成后点击“提交”。
       * “接续应用AppID1”：填入“APP ID\_B”
       * “接续应用AppID2”：填入“APP ID\_A”。
@@ -361,16 +361,16 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
       | TV端 | PC端/移动端 | ① PC版A应用AppID  ② TV版A应用AppID  ③ 移动版A应用AppID |
       | PC端 | TV端/移动端 | ① TV版A应用AppID  ② PC版A应用AppID  ③ 移动版A应用AppID |
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Pp_-mwWATOmMxW05jNavmQ/zh-cn_image_0000002610107361.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/pPK5VYuSQ_Ck3LrMbHPtQw/zh-cn_image_0000002610107361.png "点击放大")
    3. 进入互动中心页面，可看到申请已提交的消息。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/FmCkZYfnTbGbBkcgl738KQ/zh-cn_image_0000002610187451.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/ktCda5bdTZyYS3Txp0pqaQ/zh-cn_image_0000002610187451.png "点击放大")
    4. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/Qnhzq1dJRt60TE9na7Fv4A/zh-cn_image_0000002579667560.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JzFDr7PUSFGC5qmJ_1g99Q/zh-cn_image_0000002579667560.png "点击放大")
    5. 申请审批通过后，互动中心会发送通知消息给您。“申请中”按钮会变为“申请”，同时对应的能力开关会为您自动开启。至此，您的应用已成功接入接续服务能力。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/eA64WoLjRfaN1fEygFs7JA/zh-cn_image_0000002579827482.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/-laibvhFSomcSYLRxQ1DzA/zh-cn_image_0000002579827482.png "点击放大")
 
 3. 为应用B进行接续服务申请，详细步骤同第2步。
 4. 重新分别申请并下载对应的Profile文件以供后续打包使用。
@@ -397,7 +397,7 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
    在设备B的应用配置文件中，continueBundleName字段配置包含设备A上应用的BundleName，com.demo.example1为设备A上应用的BundleName。
 
    ```screen
-   // 在设备B的应用配置文件中，continueBundleName字段配置包含设备A上应用的BundleName。
+   // In the configuration file on device B, the continueBundleName field contains the BundleName of the app on device A.
    {
      "module": {
        // ...
@@ -439,7 +439,7 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
 | 第一次启动请求 | onCreate (冷启动)  或 onNewWant (热启动) | AbilityConstant.LaunchReason.PREPARE\_CONTINUATION |
 | 第二次启动请求 | onNewWant | AbilityConstant.LaunchReason.CONTINUATION |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/d6_B8CCQTXaC6VPb3doJGQ/zh-cn_image_0000002610107363.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/PR-sKgHZQ8OB1AYLCnhWrQ/zh-cn_image_0000002610107363.png "点击放大")
 
 如果没有配置快速启动，则触发迁移时只会收到一次启动请求：
 
@@ -450,38 +450,43 @@ content_hash: sha256:2b7f0220f0b264a6754552ba6504c5e6b044a4dbc2e86ab798924be7202
 配置快速启动后，对应的onCreate()/onNewWant()接口实现可参考如下示例：
 
 ```screen
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-// ...
-const TAG: string = '[MigrationAbility]';
-const DOMAIN_NUMBER: number = 0xFF00;
-
-export default class MigrationAbility_quickStart extends UIAbility {
-  storage : LocalStorage = new LocalStorage();
-
+export default class EntryAbility extends UIAbility {
+  // ...
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'Ability onCreate');
-
-    if (launchParam.launchReason === AbilityConstant.LaunchReason.PREPARE_CONTINUATION) {
+    try {
       // ...
+      if (launchParam.launchReason === AbilityConstant.LaunchReason.CONTINUATION) {
+        // Restore migration payload and stack snapshot from continuation parameters.
+        this.context.setMissionContinueState(AbilityConstant.ContinueState.ACTIVE, (result) => {
+        });
+        // ...
+        // Restore window stage so UI can reconstruct previous continuation state.
+        this.context.restoreWindowStage(new LocalStorage());
+      }
+    } catch (err) {
+      hilog.error(DOMAIN, 'testTag', 'Failed to set colorMode. Cause: %{public}s', JSON.stringify(err));
     }
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
   }
 
   onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(DOMAIN_NUMBER, TAG, 'onNewWant');
-
-    if (launchParam.launchReason === AbilityConstant.LaunchReason.PREPARE_CONTINUATION) {
+    try {
+      // Keep system color mode unmanaged by the app.
       // ...
-    }
-
-    if (launchParam.launchReason === AbilityConstant.LaunchReason.CONTINUATION) {
-      let continueInput = '';
-      if (want.parameters !== undefined) {
-        continueInput = JSON.stringify(want.parameters.data);
-        hilog.info(DOMAIN_NUMBER, TAG, `continue input ${JSON.stringify(continueInput)}`);
+      if (launchParam.launchReason === AbilityConstant.LaunchReason.CONTINUATION) {
+        // Restore migration payload and stack snapshot from continuation parameters.
+        this.context.setMissionContinueState(AbilityConstant.ContinueState.ACTIVE, (result) => {
+          hilog.info(DOMAIN, 'testTag', 'setMissionContinueState');
+        });
+        // ...
+        // Restore window stage so UI can reconstruct previous continuation state.
+        this.context.restoreWindowStage(new LocalStorage());
       }
-      this.context.restoreWindowStage(this.storage);
+    } catch (err) {
+      hilog.error(DOMAIN, 'testTag', 'Failed to set colorMode. Cause: %{public}s', JSON.stringify(err));
     }
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onNewWant');
+    // ...
   }
 
   // ...
@@ -571,7 +576,7 @@ onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
   } catch (err) {
     hilog.error(DOMAIN, 'testTag', 'Failed to set colorMode. Cause: %{public}s', JSON.stringify(err));
   }
-  hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+  hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onNewWant');
   // ...
 }
 ```
@@ -687,7 +692,7 @@ onContinue(wantParam: Record<string, Object>) {
 
    执行完成后，RemoteDeviceInfo中列出的设备即为已成功与当前设备组网的设备。如下图所示，该设备已与两台其他设备成功组网。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Nr9U0_CYS02yK9tPk-J4HQ/zh-cn_image_0000002610187453.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/m54cAxxYS76zdH831BQdXQ/zh-cn_image_0000002610187453.png)
 
 ### 1分钟以上无任何操作，图标将自动消失；再次操作应用时，图标将重新出现
 

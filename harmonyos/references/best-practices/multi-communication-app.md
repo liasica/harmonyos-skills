@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-communica
 title: 多设备即时通讯界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备即时通讯界面
 category: best-practices
-scraped_at: 2026-09-02T15:03:19+08:00
+scraped_at: 2026-09-10T06:30:07+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:a9be8e00e71285e7d3b4573ddd0734a2a58d475dd48aae8d75f521cfeeb31934
+content_hash: sha256:e670c209f78c5ad95f02679a5a2653c0cbf1c1297d4fa07ae39277bb481cad4c
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:a9be8e00e71285e7d3b4573ddd0734a2a58d475dd48aae8d75f521cfeeb
 
 即时通讯应用的UX设计可参考社交通讯类多设备响应式设计指南的[社交通讯类](../design-guides/responsive-design-examples2-0000001793536901.md)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Ins5WeZDTIi-u9fzlKzQSA/zh-cn_image_0000002579689282.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/znYJe-LZSACAixJlic7CVQ/zh-cn_image_0000002579689282.png "点击放大")
 
 ## 工程管理
 
@@ -187,7 +187,7 @@ content_hash: sha256:a9be8e00e71285e7d3b4573ddd0734a2a58d475dd48aae8d75f521cfeeb
 
 即时通讯应用消息页主要用于展示消息列表、消息详情，满足用户聊天需求。根据功能设计，将消息页相关内容划分为5个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/3JsRa9lJQHmycJKMpl_N9g/zh-cn_image_0000002610129075.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/a4jXiBElR0Gw67aXqxZDwQ/zh-cn_image_0000002610129075.png "点击放大")
 
 **界面开发**
 
@@ -205,7 +205,7 @@ content_hash: sha256:a9be8e00e71285e7d3b4573ddd0734a2a58d475dd48aae8d75f521cfeeb
 
 即时通讯应用通讯录页主要用于展示通讯录列表、联系人主页，满足查看联系人需求。根据功能设计，将通讯录页相关内容划分为5个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/A8LKYgf0SouY6sbag1Y-cA/zh-cn_image_0000002610209169.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/GbV1tyhvTXydml8cuGLx0Q/zh-cn_image_0000002610209169.png "点击放大")
 
 **界面开发**
 
@@ -223,7 +223,7 @@ content_hash: sha256:a9be8e00e71285e7d3b4573ddd0734a2a58d475dd48aae8d75f521cfeeb
 
 即时通讯应用朋友圈页主要用于展示朋友圈列表，满足查看朋友动态分享的需求。根据功能设计，将朋友圈页相关内容划分为4个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/AuIt6n4PQOamNQ2bz1ASrg/zh-cn_image_0000002579689290.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/gVqUt3aRSNSLeKlFaZ5ldg/zh-cn_image_0000002579689290.png "点击放大")
 
 **界面开发**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-config
 title: module.json5配置文件
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件 > module.json5配置文件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-10T06:21:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:91769592358a5dc42825f98cd3bc70fbe6499fcba54cbec58209e37e1fd9c8f5
 ---
 

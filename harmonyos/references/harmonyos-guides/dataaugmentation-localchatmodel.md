@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataaugmentat
 title: 端侧问答模型
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > 端侧问答模型
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:19+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f7b6620d3cc8f0e56efbff62d285e64819c958382dc2256ed437408b92bd8aa8
 ---
 

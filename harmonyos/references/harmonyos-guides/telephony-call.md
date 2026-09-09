@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/telephony-cal
 title: 拨打电话
 breadcrumb: 指南 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > 拨打电话
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:35+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:22:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:194efc1b5c41358a6e9d4827508bf84a7fb8fd95a59c4c7932ffc68405a3f040
 ---
 

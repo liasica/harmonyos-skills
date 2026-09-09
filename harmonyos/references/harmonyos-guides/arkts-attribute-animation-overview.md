@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribu
 title: 属性动画概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 属性动画 > 属性动画概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:55+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-10T06:22:07+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8a5e7083e92b600e0426d644721fe22d6afb333a2772ce32572623f9207abece
 ---
 

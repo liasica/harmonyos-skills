@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.pbap (蓝牙pbap模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.pbap (蓝牙pbap模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:49+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:59+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2a69d8f39274a145160c55bb625d236e576d9d223363904ba6b382849d2f7b89
 ---
 

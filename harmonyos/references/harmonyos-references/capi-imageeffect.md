@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: ImageEffect
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 模块 > ImageEffect
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:24+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f2cbb32b2c91cc6368bbe3faee71c5c0340f2ac0b579d6bcc901f41c0905bb83
 ---
 

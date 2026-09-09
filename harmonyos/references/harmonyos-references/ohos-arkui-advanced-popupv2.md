@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: PopupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > PopupV2
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:30+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c87f6c879ab73388671103d0913fe5a7e21feea8db2a2dca94f9d9963430679f
+scraped_at: 2026-09-10T06:25:43+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:64cde55c5b77c93485543244fcd8cdf92b0a6c90e10316aa6bf356ba8c326284
 ---
 
 PopupV2用于显示特定样式的气泡，适用于提示信息、操作确认或信息通知等需要用户关注或响应的场景。
@@ -138,7 +138,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/dRd35y8ZSBG7BOXuxz8wsg/zh-cn_image_0000002712246568.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/W9V1YEoyTgWKpg8Hd938HA/zh-cn_image_0000002717773094.png)
 
 ### 示例2（设置布局方向）
 
@@ -194,7 +194,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/tSWb7l3kRWG6ZHuUSiwg4Q/zh-cn_image_0000002742005519.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Mf98WU7qQR2kMBYeyKtYyQ/zh-cn_image_0000002717613162.png)
 
 ### 示例3（设置自定义宽度）
 
@@ -251,4 +251,4 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/UUlAt5trQkWGThT6L7EOAA/zh-cn_image_0000002712406530.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/YszkQRLiTzGbTBUUouL0Pg/zh-cn_image_0000002747293115.png)

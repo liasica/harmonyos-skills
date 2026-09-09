@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.manager (星闪基础管理能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.manager (星闪基础管理能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:34285239052c28d1db876758c6753ca6904d41b2760d0ade855f364573a8dd63
 ---
 

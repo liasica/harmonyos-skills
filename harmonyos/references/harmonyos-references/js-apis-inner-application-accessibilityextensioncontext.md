@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: AccessibilityExtensionContext (辅助功能扩展上下文)
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > AccessibilityExtensionContext (辅助功能扩展上下文)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:38+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:40+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d8bf51ad116fff355e57ceb1f4d620b18c77792fbe123ad37126df40ed60e5db
 ---
 

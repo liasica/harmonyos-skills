@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:52+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4354ac71bca15a13174d1f25478a899ce07f23ed450c5c6d5adf30d9b6c87e2f
 ---
 

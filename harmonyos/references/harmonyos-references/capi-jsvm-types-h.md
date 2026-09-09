@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-jsvm
 title: jsvm_types.h
 breadcrumb: API参考 > 公共基础能力 > C API > 头文件 > jsvm_types.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b12788d3e51ac87890b45dc54803ac1bf0078eecda3adb9a633328757ebf2b70
 ---
 

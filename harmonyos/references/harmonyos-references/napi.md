@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/napi
 title: Node-API
 breadcrumb: API参考 > 标准库 > Node-API
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:41ca6907ee7174256aebf45ef3eb958d5a244162a89239185b6e1a5d627e037d
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.fs (文件管理)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.fs (文件管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:29+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:70377208f0750dc754e5e6ad91f2c8ccd10deab6e7ff7b3a713409e1878e5a5e
 ---
 

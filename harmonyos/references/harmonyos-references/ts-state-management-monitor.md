@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-
 title: "@Monitor：状态变量修改监听"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > 状态管理V2装饰器 > @Monitor：状态变量修改监听
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:25:46+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0373f77407313105ed68243dcadf911d37611a2b59e4b5043620fab7854df8a7
 ---
 

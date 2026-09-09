@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-pdf-previ
 title: 使用Web组件的PDF文档预览能力
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件的PDF文档预览能力
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:f56e6f0bab1330b33e610be89b752fac28367ddf23aae1465d991ddb4b87aa11
 ---
 

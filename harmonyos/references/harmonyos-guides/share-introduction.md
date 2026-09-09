@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-introdu
 title: Share Kit简介
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > Share Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:20+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:0d68961f24080608c75f6344805e557fd60d21ef46f8942617fe9fe245e8f86b
+scraped_at: 2026-09-10T06:23:30+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:ace11d3b252297ccf620e275692acddb29d4fd559a24896e7c8ff7b728bbf75e
 ---
 
 Share Kit（分享服务）为应用提供文本、图片、视频等内容跨应用、跨端分享能力。
@@ -21,15 +21,15 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 **图1** 手机分享面板效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1Bq6ZQqrSAaX7w_rZtOowQ/zh-cn_image_0000002712405404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/7VlkA-tnQSiLLrCRUhdaDA/zh-cn_image_0000002747292009.png)
 
 **图2** 手机碰一碰跨端发起华为分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/OxNSEFIMQH6e3C6579hngg/zh-cn_image_0000002742124353.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/3KvOEL50TEOS7IVObaTH4g/zh-cn_image_0000002747211925.gif)
 
 **图3** 手机与PC/2in1设备碰一碰分享效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/CXHzAvHsQ2a7XqtzaK1l2A/zh-cn_image_0000002712245446.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/MnlHHeKITrmj3J6Jgp4Y_w/zh-cn_image_0000002717771990.gif)
 
 ## 基本概念
 
@@ -62,7 +62,7 @@ Share Kit提供的[SampleCode示例工程](https://gitcode.com/harmonyos_samples
 
 **图4** 分享运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/S1ugvYnuTTWHu8eAPyA9Xg/zh-cn_image_0000002742004395.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/PYKKpOIGQQmlwKyIMrse0A/zh-cn_image_0000002717612058.png)
 
 | 应用类型 | 相关逻辑 |
 | --- | --- |

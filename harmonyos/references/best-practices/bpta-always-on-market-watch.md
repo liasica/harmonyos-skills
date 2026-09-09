@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-always-on-
 title: 全链路盯盘开发实践
 breadcrumb: 最佳实践 > 场景创新 > 全链路盯盘开发实践
 category: best-practices
-scraped_at: 2026-09-09T06:35:54+08:00
+scraped_at: 2026-09-10T06:30:00+08:00
 doc_updated_at: 2026-09-08
-content_hash: sha256:f9a79607c6bef7f218491d680b3c3a1930b0dfb42b8ce231b89566fa31cce365
+content_hash: sha256:f2429ad2b69e4d7db783d050b93b25e0e56d60da128dcc64716717e74d271e77
 ---
 
 ## 概述
@@ -19,7 +19,7 @@ content_hash: sha256:f9a79607c6bef7f218491d680b3c3a1930b0dfb42b8ce231b89566fa31c
 
 全链路盯盘涉及多项系统能力的综合运用，各能力之间的协作关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/m3cGFJFuQ7Cu-o4MWYnnJA/zh-cn_image_0000002748611785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/IxqznAXwR7aOCAh9Q7mCTw/zh-cn_image_0000002748611785.png "点击放大")
 
 本文主要内容如下：
 
@@ -49,7 +49,7 @@ content_hash: sha256:f9a79607c6bef7f218491d680b3c3a1930b0dfb42b8ce231b89566fa31c
 
 **闪控球**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/edBptgUcTlyFOI_Q_c9bsQ/zh-cn_image_0000002718931886.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ytwx309BST2FN8dTbUYSbg/zh-cn_image_0000002718931886.png "点击放大")
 
 |  |  |  |
 | --- | --- | --- |
@@ -79,7 +79,7 @@ content_hash: sha256:f9a79607c6bef7f218491d680b3c3a1930b0dfb42b8ce231b89566fa31c
 
 桌面盯盘的初始化流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/AD_QEIMpRsqtWHlTKFS_ew/zh-cn_image_0000002748611789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Kn6KvyjITcmbaZiLprL63A/zh-cn_image_0000002748611789.png "点击放大")
 
 ### 开发步骤
 
@@ -350,7 +350,7 @@ async startFloatPanel() {
 
 **防窥保护**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/jI-WNwZvQCaoloGFURZHqg/zh-cn_image_0000002718931890.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/nkSgOTa-TXmm1S_7yFRCUA/zh-cn_image_0000002718931890.png "点击放大")
 
 ### 实现原理
 
@@ -368,7 +368,7 @@ async startFloatPanel() {
 
 防窥保护的监听流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/YNahEe50S5i6Opz-SChjUA/zh-cn_image_0000002719091808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/b_3cCwFnT2aXqYVcBL2gSA/zh-cn_image_0000002719091808.png "点击放大")
 
 ### 开发步骤
 
@@ -508,7 +508,7 @@ private async handleAntiPeepStatus(status: dlpAntiPeep.DlpAntiPeepStatus) {
 
 **锁屏卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/fbeo0y-ATrGcGSPuvOvzow/zh-cn_image_0000002748531717.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/KHAfCUvJQQurSe5Em_sbmg/zh-cn_image_0000002748531717.png "点击放大")
 
 ### 实现原理
 
@@ -623,7 +623,7 @@ struct LockScreenCard {
 
 当设备插入充电器或开启“不充电可显示”开关，设备横屏锁屏并与桌面夹角45°至90°稳定摆放（折叠机需切换为外屏；同时折叠机支持帐篷模式显示），即可进入待机屏保界面。用户可在待机屏保编辑界面添加全链路盯盘卡片，在充电待机状态下持续查看股票行情。待机屏保盯盘功能效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/w7WgGgO_TziupfUzfgrJZw/zh-cn_image_0000002748611791.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/7C88Erq2RDiuqmd5XeM5vg/zh-cn_image_0000002748611791.png "点击放大")
 
 ### 实现原理
 

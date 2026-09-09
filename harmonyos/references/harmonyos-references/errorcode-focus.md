@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 焦点错误码
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面 > 焦点错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:b0695de28e72df4dd631be261870093301a413c1046d44d2654960ffd24a3a4a
 ---
 

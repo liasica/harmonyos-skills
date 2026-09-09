@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-develo
 title: Web加载性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > Web性能优化 > Web加载性能优化
 category: best-practices
-scraped_at: 2026-09-02T15:03:22+08:00
+scraped_at: 2026-09-10T06:30:14+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:f41b9d38c4a8b35292ccb42bd140219cc6113685aeb3039ddae2294782d672b7
+content_hash: sha256:05d08a8b55df68e5d302befec7ca8ca78ced09a42251ec07029c395facd19122
 ---
 
 ## 概述
@@ -41,7 +41,7 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 * 资源拦截替换加速：资源拦截替换加速支持ArrayBuffer格式的入参，开发者可直接使用ArrayBuffer格式的数据进行拦截替换，无需在应用侧进行格式转换。
 
 **图1** Web页面加载流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/mJCWnOx7RCeAGj1iataL_Q/zh-cn_image_0000002229451093.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZeSCUOT8SweSnthlRAEGPg/zh-cn_image_0000002229451093.png "点击放大")
 
 **由于所有的关键点都是建立在预处理的思路上，因此如果用户实际并未打开预处理的Web页面，将会造成额外的资源消耗。**下表列出了各优化方法的具体效果、代价和适用场景对比。
 
@@ -69,7 +69,7 @@ Web页面加载流程包括网络连接、资源下载（包括等待网络资�
 建议在Web页面启动前执行预启动Web渲染进程，例如在应用冷启动阶段或广告展示阶段。如果无法在冷启动期间预启动Web渲染进程，建议在系统空闲时间进行预启动。
 
 **图2** 预启动Web渲染流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/aDH10W3IQAW6Oud0VYGmHg/zh-cn_image_0000002229451109.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ZDEzaS6OSfWsQ2hqpIza8A/zh-cn_image_0000002229451109.png "点击放大")
 
 **说明** 
 
@@ -155,7 +155,7 @@ export struct Second {
 
 点击“加载测试页面”按钮，页面加载完成耗时82ms，具体如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/dbbMMjZGTg-bOoW4OYRmtg/zh-cn_image_0000002229336649.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/mDKbHnPyR7G7gFL1Yim6bA/zh-cn_image_0000002229336649.png "点击放大")
 
 【推荐用法】
 
@@ -372,7 +372,7 @@ export struct Second {
 
 点击“加载测试页面”按钮，页面加载完成耗时44ms，具体如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_OAR0m9cTei3abhjEPll1g/zh-cn_image_0000002229336617.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/hL2rBZADQZ-QVX61nMBQuQ/zh-cn_image_0000002229336617.png "点击放大")
 
 **说明** 
 
@@ -396,7 +396,7 @@ export struct Second {
 * 如下图中c节点所示，页面加载完成后，设置用户下一步可能点击页面的URL，进行预解析和预连接，推荐在onPageEnd()及后续时机执行。
 
 **图3** 预连接优化原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/sxUTsfCOR6OMRtI0muV29Q/zh-cn_image_0000002194010808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/IvYg6W5BQcW4oOg7R8XYHg/zh-cn_image_0000002194010808.png "点击放大")
 
 **说明** 
 
@@ -493,7 +493,7 @@ struct WebComponent {
 如下图所示，ArkWeb组件运行包含onAppear()、load()、onPageBegin()、onPageEnd()。开发者可以在onPageEnd()设置下一步访问的URL，提前下载所需资源。这种方式适用于Web页面启动和跳转场景，例如，在引导流程完成后，预下载需要跳转的页面。创建ArkWeb组件实例后，可以在当前页面加载完成后，设置URL并进行预下载。本方案可以消除资源下载耗时及资源下载导致的页面DOM解析、JS代码编译执行的阻塞耗时，预估收益在数百毫秒（具体时间依赖当前网络环境）。
 
 **图4** 预下载优化原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/WGl5ZgbIRsiRPjBpEdu1ww/zh-cn_image_0000002194010844.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/JjuQK1RnQIqoz1lKb6qu3Q/zh-cn_image_0000002194010844.png "点击放大")
 
 **说明** 
 
@@ -541,7 +541,7 @@ prefetchPage会缓存下载的资源，缓存时效为5分钟。
 3. 绑定[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)组件：与NodeController绑定，实现动态页面显示。
 
 **图5** 预渲染优化原理图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/k4uEeZ4wS7KVlQA-sjDxyw/zh-cn_image_0000002194010800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/eVIysWRQRxaL_LndiVFQhw/zh-cn_image_0000002194010800.png "点击放大")
 
 **说明** 
 
@@ -1000,7 +1000,7 @@ struct Index {
 
 通过[HiTraceMeter](../harmonyos-references/js-apis-hitracemeter.md)在Web页面加载前后添加性能打点，点击“加载页面”按钮，[查询自定义打点信息](../harmonyos-guides/ide-insight-session-time.md#section1977218292919)获取的Trace数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/7b9MUYr8Tr2I7OMcETjDSA/zh-cn_image_0000002193851232.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/VvAQ2tujQb2CgIywxi0b4A/zh-cn_image_0000002193851232.png "点击放大")
 
 **说明** 
 
@@ -1069,7 +1069,7 @@ JavaScript的编译时间受文件大小和逻辑复杂度的影响。
 
    点击“加载页面”按钮，性能打点数据如下：getMessageData进程中的Duration表示加载页面从开始到结束的耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/YcFUVH_yQmuXxIzkTqsTEA/zh-cn_image_0000002229336625.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/JNJ20pArQwm8-N6B1ORnyw/zh-cn_image_0000002229336625.png)
 
    **说明** 
 
@@ -1096,11 +1096,11 @@ JavaScript的编译时间受文件大小和逻辑复杂度的影响。
 
 **图6** JS资源编译执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/dokvXaXSQR-pLt0JDuwCqA/zh-cn_image_0000002193851224.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/OKfUmvy2RWSAB3wgogih2w/zh-cn_image_0000002193851224.png "点击放大")
 
 **图7** 资源拦截替换后JS资源编译执行流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/-4VxwGTJRaqmvZp7Ob82qQ/zh-cn_image_0000002194010828.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/ffN4rq1nRmaTlvJkz6dmmw/zh-cn_image_0000002194010828.png "点击放大")
 
 Web组件默认支持HTTP协议和自定义协议的JavaScript生成字节码缓存。具体步骤如下：
 
@@ -1191,7 +1191,7 @@ ResponseData为JavaScript内容，ResponseDataID用于区分内容是否变更�
 
 打开应用后关闭，重复两次，然后查看第三次页面加载的耗时。性能打点数据如下：getMessageData 进程中的 Duration 表示页面加载从开始到结束的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/GQi3wZ5wTT-w6rzXEUCQ9w/zh-cn_image_0000002229451101.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/dM-9jH1SR9izBoU4AO4KtA/zh-cn_image_0000002229451101.png)
 
 【推荐用法】
 
@@ -1244,7 +1244,7 @@ struct Index {
 
 打开应用后关闭，重复两次，然后查看第三次页面加载的耗时。性能打点数据如下：getMessageData 进程中的 Duration 表示页面加载从开始到结束的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Cbuk40I6R4i-ndOAntsDqQ/zh-cn_image_0000002193851248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/25e27c-pRAyOvNaGBXtdbg/zh-cn_image_0000002193851248.png)
 
 案例二：调用ArkTS接口customizeSchemes()，在注册自定义协议的情况下，实现JavaScript生成字节码缓存，具体步骤如下：
 
@@ -1394,7 +1394,7 @@ struct Index {
 
    性能打点数据如下，getMessageData进程中的Avg Wall Duration为两次加载页面开始到结束的平均耗时：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/FBMC0TvkR8Ct73s4ga0cYA/zh-cn_image_0000002193851216.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/d2RmgI2sTs2KcG4VoV4aEw/zh-cn_image_0000002193851216.png "点击放大")
 
 **总结****（以拦截替换HTTP协议的JavaScript生成字节码缓存场景性能数据举例）**
 
@@ -1458,7 +1458,7 @@ struct Index {
 
 性能打点数据如下，getMessageData进程中的Duration为加载页面开始到结束的耗时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/s6gXe7JwTrWhRyqJO32AaQ/zh-cn_image_0000002229336641.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/B8S1FVGcTvWJewyxVxcDLQ/zh-cn_image_0000002229336641.png)
 
 案例二：使用资源免拦截注入加载Web页面，请参考以下步骤：
 
@@ -1568,7 +1568,7 @@ struct Index {
 
    性能打点数据如下：getMessageData进程中的Duration表示加载页面的总耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/B90js_2fQcm-d2cUVv5rrA/zh-cn_image_0000002229451121.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/avZgPNMUQTuqSqb8xBT-PQ/zh-cn_image_0000002229451121.png)
 
 **总结**
 
@@ -1653,7 +1653,7 @@ struct Index {
 
 资源替换耗时如图所示。getMessageData和someFunction的执行时间表示页面加载资源的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/yNDdsS5gRM-pTmtX0qIERw/zh-cn_image_0000002194010852.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/U1bRfEtTQBKANljX4patcw/zh-cn_image_0000002194010852.png "点击放大")
 
 案例二：使用ArrayBuffer格式的数据做拦截替换
 
@@ -1784,7 +1784,7 @@ struct WebComponent {
 
 资源替换耗时如图所示。getMessageData和william someFunction的执行时间表示页面加载资源的耗时。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/7jid4pvaSqmZJtotXrQ1Tg/zh-cn_image_0000002229451125.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/UiQWhNoITOO5CN9v-dA8GA/zh-cn_image_0000002229451125.png "点击放大")
 
 **总结**
 
@@ -1803,11 +1803,11 @@ struct WebComponent {
 
 应用使用ArkTS或C++语言混合开发，或应用架构接近小程序架构，自带C++环境，推荐使用ArkWeb在Native侧提供的ArkWeb\_ControllerAPI和ArkWeb\_ComponentAPI实现JSBridge功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rH1IfZjqT5CAKH5FHNQmEw/zh-cn_image_0000002458691281.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/4oTMOB05R0uJDcc5cQk2KA/zh-cn_image_0000002458691281.png "点击放大")
 
 上图展示了小程序的一般架构，逻辑层使用自带的JavaScript运行时，现有C++环境通过Native接口直接与视图层（ArkWeb渲染器）通信，无需返回ArkTS环境调用JSBridge接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/qnBwANICT82qzbrgDHr7Rw/zh-cn_image_0000002229451137.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/j6sT1OzPRsC2BEMSrNlCtw/zh-cn_image_0000002229451137.png "点击放大")
 
 Native JSBridge方案解决ArkTS环境的冗余切换，允许回调在非UI线程上报，避免UI阻塞。
 
@@ -1882,7 +1882,7 @@ struct WebComponent {
 
 点击runJavaScript按钮后，触发h5页面的htmlTest方法，页面内容将变更为当前时间戳。如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/JyjCABMuTMCKdJKSP8nbDw/zh-cn_image_0000002420463960.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/E8tOYameQfyN-UiBFnaVXw/zh-cn_image_0000002420463960.png "点击放大")
 
 经过多轮测试，从点击ArkTS侧的Button到触发H5侧的htmlTest()方法，耗时7到9毫秒。
 
@@ -2271,7 +2271,7 @@ runJS.html作为应用前端页面：
 
 点击“runJS hello”按钮后，触发H5页面的runJSRetStr()方法，页面内容更新为当前时间戳。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/cLf4bMRzTn29-EY5jPWxQA/zh-cn_image_0000002229336597.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/uD83xon7SICXsCAc4QWLUA/zh-cn_image_0000002229336597.png "点击放大")
 
 经过多轮测试，从点击ArkTS侧的Button到触发H5侧的runJSRetStr方法，耗时2到6毫秒。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.locationManager（位置服务管理）"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.locationManager（位置服务管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:42+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d9b7b1528f8de3a3d5f1b807c93e42c4e06c94aad9b97f3e2db0d75ec43806fc
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 发布资源包下载任务
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 发布资源包下载任务
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:59+08:00
+scraped_at: 2026-09-10T06:23:07+08:00
 doc_updated_at: 2026-06-03
-content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc56a9e4
+content_hash: sha256:e4ccb6ebd3810508c68fbdb4eab3f9ec9fb4e33bf6a07f326025bc443df588b5
 ---
 
 在AppGallery Connect支持创建“使用华为CDN”或“使用三方CDN”的游戏资源包下载任务。
@@ -32,7 +32,7 @@ content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc5
 
 资源包下载任务的状态说明请参见[下载任务状态说明](graphics-accelerate-assetdownload-release.md#下载任务状态说明)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/3raNbd1mS8ipct2b6-JnWw/zh-cn_image_0000002742123879.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/HpGFZ6NTTCWYmwP5H3JjEA/zh-cn_image_0000002747211451.png)
 
 ## 创建下载任务
 
@@ -44,7 +44,7 @@ content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc5
 
 在“资源包后台下载申请”页面填写资源包信息后，点击“提交申请”，提交资源包下载任务。若暂不提交该任务，点击“保存草稿”，允许继续编辑后再提交申请。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/0V2XgzZdTIaWPWThBywRLA/zh-cn_image_0000002712244970.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/7pNDw3E8SeC1gQFIvjVEKw/zh-cn_image_0000002717771516.png)
 
 | 配置项 | 是否可选 | 填写说明 |
 | --- | --- | --- |
@@ -63,7 +63,7 @@ content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc5
 
 在“资源包后台下载申请”页面填写资源包信息，具体步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/hFrFU_MFS92JAOZeKRMDMw/zh-cn_image_0000002742003921.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/KOGuTr3tTJOTMxCjeXZyHg/zh-cn_image_0000002717611584.png)
 
 1. 请选择“下载类型”。建议根据应用自身是否内置下载器进行选择。
 
@@ -113,7 +113,7 @@ content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc5
 
    开发者可以通过hotversion版本号指定下一级文件的存储路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/rJm4QWRSQMaQiLzEcV6Vxw/zh-cn_image_0000002712404930.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/P3xnucouSxq9Q-hb2CBjeg/zh-cn_image_0000002747291535.png)
 
    例如，资源包版本号为2.1，hotversion为2.1.0，资源包文件的存储路径如下：
 
@@ -144,10 +144,10 @@ content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc5
 
 1. 在任务列表中找到“草稿”状态的任务，点击“操作”列中的“编辑”进入申请详情页。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/_ozhrwC9R-CZtpGtD4Cjnw/zh-cn_image_0000002742123881.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vPQNguEmSVWpf5xhgLEyNQ/zh-cn_image_0000002747211453.png)
 2. 在申请页填写资源包信息，填写要求请参见[创建下载任务](graphics-accelerate-assetdownload-release.md#创建下载任务)。完成后，点击“提交申请”提交资源包下载任务，当前任务状态变更为“预上线”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/pRIJ5QV2QIGs7p5smXtxBA/zh-cn_image_0000002712244972.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/B8cVCyM8Sa6spEUxOXm-Cw/zh-cn_image_0000002717771518.png)
 
 ## 测试下载功能
 
@@ -157,7 +157,7 @@ content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc5
 
 请在HarmonyOS 5.1.0及以上版本测试设备的“游戏中心”客户端打开“我的 > 设置 > 服务管理 > 游戏服务”，打开“允许资源包自动更新”开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/hKs-mc2ZRkqPuIkTgjoB8w/zh-cn_image_0000002742003923.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/_qgL7v4lRnOzwUtMzetPGA/zh-cn_image_0000002717611586.png "点击放大")
 
 ### 配置设备号
 
@@ -167,13 +167,13 @@ content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc5
    hdc shell bm get --udid
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/whcLJFJ3SlKCa5G9Eyw5zA/zh-cn_image_0000002712404932.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/KlHrhgftTnKzmUbJOoD4_Q/zh-cn_image_0000002747291537.png)
 2. 在AppGallery Connect页面点击“测试设备”后的“编辑”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/r0FS6keeRO6XnumCXW8czA/zh-cn_image_0000002742123883.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/HXnxQhiKQVGhErD0ULqcqg/zh-cn_image_0000002747211455.png)
 3. 在输入框中最多添加10台测试设备的设备号，且使用英文逗号（,）间隔开，完成后点击“保存”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/Ar-V-8DBTYSrD8040pe0kQ/zh-cn_image_0000002712244974.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/6i5HNciISLmgl4KFawXI_Q/zh-cn_image_0000002717771520.png)
 
 ### 验证方式
 
@@ -192,24 +192,24 @@ content_hash: sha256:364b36849900f83aeb4f2141e7bc16504bdfe23911d84709bca230fabc5
    ```
 3. 验证以上两个场景是否触发系统后台下载资源包：查看测试设备的通知栏出现下载任务，则系统后台下载资源包功能验证通过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/8jlL6u40QX60mBFi9D3ErQ/zh-cn_image_0000002742003925.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/iewcJe23Sk-dkaxMZTRv3g/zh-cn_image_0000002717611588.png "点击放大")
 
 ## 发布下载任务
 
 1. 在任务列表找到“预上线”状态的任务，点击“操作”列中的“发布”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/HyFVjZH8QgeA7WERmbLiSA/zh-cn_image_0000002712404934.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/IhZdzut3Tl6nrSSQNf1NLw/zh-cn_image_0000002747291539.png)
 
    在弹出的提示窗中点击“确认”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/sEHqtI7xSvi32uOzJXiU0Q/zh-cn_image_0000002742123885.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/fxIwDMHISsidLvsZiRIilQ/zh-cn_image_0000002747211457.png)
 
    发布该任务后，华为运营人员将在1~3个工作日内完成审批，请耐心等待。
 
    任务通过审批后，游戏资源包将在指定时间内向满足条件的用户设备进行推送。
 2. 若需要终止已发布的任务，可以在任务列表中主动点击“终止”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/WZORhnhYSASiZ4FTuUdzrA/zh-cn_image_0000002712244976.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/M-mtGeqmQTOtyBIV5_-lNw/zh-cn_image_0000002717771522.png)
 
    此时，系统将不再对该资源包进行自动下载。对于用户设备上已开始下载的游戏资源包不会立刻删除，而是在下一次启动自动更新时，删除下载时间大于7\*24小时的游戏资源包。
 

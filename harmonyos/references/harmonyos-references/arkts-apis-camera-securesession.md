@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (SecureSession)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (SecureSession)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:17+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5080a268d4b882df7b1b893de6f7909a383bcf464259a8aeafd9cf96778466df
 ---
 

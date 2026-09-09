@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/input-method-
 title: 输入法子类型开发指南
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 输入法子类型开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:20+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:128a9e44eba92d33941b7366ddb39f23ce9c2d0fa74a3741e6e5c601632c0d98
 ---
 

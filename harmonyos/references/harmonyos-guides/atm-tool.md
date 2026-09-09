@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/atm-tool
 title: atm工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > atm工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:13+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:48+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:555557b287d0ca6e0ac78717e332f926405d2642fac50878bed5b37ef82e36ec
 ---
 

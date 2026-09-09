@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drm
 title: Drm
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > C API > 模块 > Drm
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:22+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:0f9ed90525ffe40ae467fac80da878f29a380f76948779b4745dc7d38abbfe4f
 ---
 

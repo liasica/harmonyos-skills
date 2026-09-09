@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-arkts-dev
 title: 数字版权保护(ArkTS)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 数字版权保护(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:98f92b640f2d56d5fff517408c9a7d659eb1f98bbce88bbadd5b7ede6ca46181
 ---
 

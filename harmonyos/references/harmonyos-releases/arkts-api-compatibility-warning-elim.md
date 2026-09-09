@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/arkts-api-c
 title: ArkTS API兼容性保护
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > API兼容性保护和告警屏蔽 > ArkTS API兼容性保护
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2305884cce6063b0db93693c5bcf48224fa7e616bd32603f8468d0c3f6421aeb
+scraped_at: 2026-09-10T06:21:47+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:74fefc5e34aa245552b32f5660da4c02db2b088aac57e5408f54299c01f34ed2
 ---
 
 ## 简介
@@ -182,7 +182,7 @@ apiAvailable 接口运行结果仅包含两种返回状态：返回 true 时，�
 
 **场景描述**：应用操作栏（ActionBar）在不同系统版本下的兼容性适配方案。场景中，支持点击操作栏中间的按钮，进行切换图标及展开和收起操作栏。
 
-代码通过判断设备的distributionOSApiVersion是否达到6.0.0(20)（对应的值为60000）来实现适配：在高版本系统（6.0.0(20)及以上）中，直接使用UIDesignKit提供的HdsActionBar组件，利用其原生支持的startButtons、endButtons配置项快速构建操作栏，而在低版本系统中，采用Row容器与基础Button组件组合的降级方案，通过条件渲染模拟按钮的展开和收起状态，并用基本点击事件实现图标切换逻辑，确保核心交互功能在低版本设备上仍可正常使用。
+代码通过调用 apiAvailable 判断设备能力是否达到6.0.0(20)（对应的值为60000）来实现适配：在高版本系统（6.0.0(20)及以上）中，直接使用UIDesignKit提供的HdsActionBar组件，利用其原生支持的startButtons、endButtons配置项快速构建操作栏，而在低版本系统中，采用Row容器与基础Button组件组合的降级方案，通过条件渲染模拟按钮的展开和收起状态，并用基本点击事件实现图标切换逻辑，确保核心交互功能在低版本设备上仍可正常使用。
 
 ```screen
 import { HdsActionBar, ActionBarButton, ActionBarStyle } from '@kit.UIDesignKit';

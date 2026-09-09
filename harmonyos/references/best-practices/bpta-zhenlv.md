@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-zhenlv
 title: 帧率问题分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 帧率问题分析
 category: best-practices
-scraped_at: 2026-09-02T15:03:21+08:00
-doc_updated_at: 2026-08-10
-content_hash: sha256:16f6b4a064a4c1b0a1d302fa794a0dd1d99a0b5b1c0cb54a16a6f1da53dc5dbd
+scraped_at: 2026-09-10T06:30:12+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:47816665f533ef3e412fff71b38cd456737b549a75936b918c0b37b4a585b5db
 ---
 
 帧率问题指的是应用在运行时，画面刷新频率未能达到流畅体验的标准，导致用户感受到卡顿或延迟。
@@ -20,7 +20,7 @@ HarmonyOS图形系统采用统一渲染模式，遵循流水线模式。90Hz刷�
 
 **图1** 90Hz刷新率渲染流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/_uD0B3-hTxq_MIhJzsG94Q/zh-cn_image_0000002464821893.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/edpu-sDIQqeg8ugpfLcVAw/zh-cn_image_0000002464821893.png "点击放大")
 
 在整个渲染流程中，应用侧首先响应屏幕点击等输入事件，处理后提交给Render Service。Render Service协调GPU等资源处理，最终将图像送到屏幕上显示。
 
@@ -31,7 +31,7 @@ HarmonyOS图形系统采用统一渲染模式，遵循流水线模式。90Hz刷�
 其中应用侧的渲染流程如下图所示，了解ArkUI的渲染流程有助于定位应用侧的卡顿问题。如下图所示：
 
 **图2** ArkUI渲染管线结构与Frame Insight性能打点   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/M9RAyA_iQXGHt6jBrGn8oQ/zh-cn_image_0000002324311552.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/cPrqs69ZSGuK6tb4CrAKNA/zh-cn_image_0000002324311552.png "点击放大")
 
 * Animation：动画阶段，动画过程中会修改相应的FrameNode节点，触发脏区标记。在特定场景下，会执行用户侧ETS代码实现自定义动画。
 * Events：事件处理阶段，例如手势事件处理。手势处理过程中会修改FrameNode节点，触发脏区标记。在特定场景下，会执行用户侧ETS代码实现自定义事件。
@@ -45,18 +45,18 @@ HarmonyOS图形系统采用统一渲染模式，遵循流水线模式。90Hz刷�
 
 **图3** 应用卡顿导致丢帧的故障模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Gagc0l8DQOS_XwVx4tHOLg/zh-cn_image_0000002431346600.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/1vKhXVIvRWurQJ5621kcaQ/zh-cn_image_0000002431346600.png "点击放大")
 
 **图4** Render Service卡顿导致丢帧的故障模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Gs0q4dNBTPeF4aGXvlLqmQ/zh-cn_image_0000002464785897.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/qKmZHS15SPy1rtC6IC_g4Q/zh-cn_image_0000002464785897.png "点击放大")
 
 ## 丢帧问题思路分析
 
 下图展示了解决丢帧问题的简要流程：
 
 **图5** 丢帧问题处理流程   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/wS5zEXamSiGzbStF-HiQqg/zh-cn_image_0000002484386113.png)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/r4EZzuOQS4CqEu5nEpH5KA/zh-cn_image_0000002484386113.png)
 
 从上图可以看到处理丢帧问题可以采用以下步骤：
 
@@ -72,7 +72,7 @@ HarmonyOS图形系统采用统一渲染模式，遵循流水线模式。90Hz刷�
 
 **图6** ”HMOS世界”首页长列表示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/FfnxROa4TlaeAOVVxEzbpw/zh-cn_image_0000002324311568.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Msvm13OqSyOuyKKkDvZOUA/zh-cn_image_0000002324311568.png "点击放大")
 
 ### 第1步：丢帧问题检测
 
@@ -84,17 +84,17 @@ HarmonyOS图形系统采用统一渲染模式，遵循流水线模式。90Hz刷�
 
 1. 在DevEco Studio中启动AppAnalyzer工具，详细请参考：[AppAnalyzer](bpta-performance-detection.md#section135451444171)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/RleTEuA7Q1GebHRqaeUpeg/zh-cn_image_0000002510742749.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/5h4yxvSGRou5lWkJ6r7hbA/zh-cn_image_0000002510742749.png "点击放大")
 2. 执行滑动场景体检。选择场景化体检，然后点击“手动性能页面滑动体检”，工具会进行准备，自动编译、安装、运行当前工程，需要保持手机解锁状态。
    1. 当提示“准备完成，请操作手机至检测页面”等内容时，需要在手机应用中找到待检测的滑动页面，然后点击开始按钮。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wAPfabJyTLeN6WursDZyQA/zh-cn_image_0000002510822777.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/3HQkCsALT52DwAPsMxBORQ/zh-cn_image_0000002510822777.png "点击放大")
    2. 等待工具录制准备，当提示“体检中，请操作手机”时，在手机上的待检测页面执行滑动若干次。等待剩余时间结束或点击暂停按钮，再点击停止完成本次检测。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Y-SYDvXdSASskQ2EKjDLGQ/zh-cn_image_0000002478622848.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/rqeoQqfFSFiKWSnGIq_1gQ/zh-cn_image_0000002478622848.png "点击放大")
 3. 生成性能体检报告。工具分析后，若检测未通过如下所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nqP6fb4_S42VWio60Nf-QA/zh-cn_image_0000002478782820.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/FbGc7VPbS1KuihGj2OOTFg/zh-cn_image_0000002478782820.png "点击放大")
 
 **说明** 
 
@@ -116,19 +116,19 @@ UI线程方法耗时过长会导致滑动卡顿，工具会将耗时长的函数
 
 * 如果函数的单次调用耗时长（查看平均耗时），说明是函数本身耗时长，开发者自行优化函数，将函数放到子线程或者进行缓存，开发者可参考[其他主线程优化思路](bpta-time-optimization-of-the-main-thread.md#section4365993361)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/IKLCl3rqSmirJBmEGwdhRg/zh-cn_image_0000002510827059.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/2MrGnGS9SL6Tj3erTuAd_w/zh-cn_image_0000002510827059.png "点击放大")
 * 如果函数本身耗时不长，但是函数调用次数多（例如在高频回调里打日志等操作）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/RxTgy7_FRdKJoCG-Q_xwDg/zh-cn_image_0000002510747255.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/FKoCedZUQtuOKpMxKg1b5Q/zh-cn_image_0000002510747255.png "点击放大")
 
   确认函数是不是每次都要调用，能否通过一些全局或者缓存的方式降低调用次数，避免高频回调，开发者可参考[高频回调场景](bpta-time-optimization-of-the-main-thread.md#section10112623611)。
 * 如果方法名aboutToBeDeleted调用次数过多，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Gbs8WYKYSG28E4X7e3CkDQ/zh-cn_image_0000002510827321.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/VTeimWBTSDCLdgzSLdxiew/zh-cn_image_0000002510827321.png "点击放大")
 
   此时需要点击**总耗时**列的超链接，打开trace向前排查主线程是否有阻塞。如下图所示也是因为前面的主线程阻塞导致的，因为destroy只会发生在idle，如果主线程阻塞一直没有idle，就会积压；
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/VgkZOsQCRKKXSMyCD_B9Dg/zh-cn_image_0000002484280497.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/uKezCh3LT2m8DbZdyfhr1A/zh-cn_image_0000002484280497.png "点击放大")
 
   解决方案：可以采用并行化，或者缓存的方式来优化业务逻辑。开发者可参考[其他主线程优化思路](bpta-time-optimization-of-the-main-thread.md#section4365993361)。
 
@@ -140,11 +140,11 @@ UI线程方法耗时过长会导致滑动卡顿，工具会将耗时长的函数
 
 在测试结果列表中，工具会明确标识出滑动等高频操作中存在创建行为的组件，这些组件可能存在优化空间，建议结合“[组件复用](bpta-component-reuse.md)”机制进行相应调整。组件的复用更新流程与常规状态管理更新方式保持一致，具体可参考[状态管理最佳实践](bpta-status-management.md)。各种复用问题的分析优化可参考[组件复用问题诊断分析](bpta-component-reuse-issue-diagnosis-and-analysis.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/hhWhOsQXTByGWabETqI-xQ/zh-cn_image_0000002478627544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/uk6k1iTjQ9upDeVhu59ePw/zh-cn_image_0000002478627544.png "点击放大")
 
 **问题3：图片纹理过大**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/NWGZRC1IQjG0opZ4VSoq-A/zh-cn_image_0000002510747477.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/fjXV1hz9RA-OKrzWYSAgYg/zh-cn_image_0000002510747477.png "点击放大")
 
 开发者可以根据**图片组件所在源码文件**，以及**图片来源**中的路径信息，查找图片并修改；
 
@@ -170,7 +170,7 @@ UI线程方法耗时过长会导致滑动卡顿，工具会将耗时长的函数
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Yu_DHWi4TmyTPkOoNZBCLw/zh-cn_image_0000002510827519.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/1jPHKOl_RCCJdjHxgEsPuQ/zh-cn_image_0000002510827519.png "点击放大")
 
 如果问题仍未解决，可以根据建议，进一步分析Trace定位问题，然后选择优化方式。
 
@@ -182,17 +182,17 @@ UI线程方法耗时过长会导致滑动卡顿，工具会将耗时长的函数
 
 录制完成后，在时间轴上拖动鼠标选定要查看的时间段，例如2.5秒的时间区段。选中Frame主泳道，查看Statistics栏，可以发现应用在这个时间段内丢失了16帧，丢帧率为7%。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/LenOFJwbT26RPpjekSdJuw/zh-cn_image_0000002324311644.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/_BmmmYFpQa6k2oqRBw1tnQ/zh-cn_image_0000002324311644.png "点击放大")
 
 **认识卡顿帧**
 
 使用Frame Profiler录制了一段Trace。在时间轴上拖动鼠标选定要查看的时间段，选择了一个2.5秒的时间区段。选中Frame主泳道，查看下面的Statistics栏，发现应用在这个时间段内丢失了16帧，丢帧率为7%。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/mmmL7QDGS-qPsQUqaj0YRQ/zh-cn_image_0000002358350081.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/7w7QcOD4QuOdYR4xpoTLWA/zh-cn_image_0000002358350081.png "点击放大")
 
 丢帧问题可能出现在Render Service或App侧。上图中的丢帧主要出现在应用帧，针对这种现象，继续分析，放大右侧图表，选中超时帧查看详细数据。期望时间为8.3毫秒（当前设备为120赫兹），而实际处理时间为8.9毫秒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/z-7mT305QXKWDtbmEWNMjg/zh-cn_image_0000002324471436.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/d2KZSI4uQFyGkBWOhLtpoA/zh-cn_image_0000002324471436.png "点击放大")
 
 **说明** 
 
@@ -209,13 +209,13 @@ UI线程方法耗时过长会导致滑动卡顿，工具会将耗时长的函数
 从下图可以看到，应用线程大部分时间处于Running状态，无特殊异常，运行在CPU10和CPU11上。
 
 **图7** 丢帧处应用主线程状态   
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/4L4dpBq0QlaPL_aXAH9d_g/zh-cn_image_0000002358270221.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/DCmmEAn_Sx2cXTViWjg5jw/zh-cn_image_0000002358270221.png "点击放大")
 
 查看关键任务是否在小核上以低频运行。从图8的CPU Slice和Frequency泳道中，可以看到丢帧处的应用线程和前面正常帧类似，主要运行在大核上（该设备0~3号CPU为小核，4~11号CPU为大核）。将鼠标悬停在Frequency泳道上，可以查看CPU的运行频率。
 
 **图8** 丢帧处应用主线程运行核
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/QoYsu951SfuwjnRBXXPI4g/zh-cn_image_0000002324311656.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ijLSkv0gSSWlanp90g2d5g/zh-cn_image_0000002324311656.png "点击放大")
 
 通过分析，应用线程在CPU大核上正常运行，且频率正常。因此，可以排除系统异常。
 
@@ -240,33 +240,33 @@ UI线程方法耗时过长会导致滑动卡顿，工具会将耗时长的函数
 
 前面示例中的丢帧主要出现在应用侧。针对这种丢帧现象，继续分析。放大右侧图表，选中超时的帧（220#帧）查看详细数据。期望处理时间为8.3ms（当前设备为120Hz），而实际处理时间为8.9ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/TTfKZzOwTOO3wO70J1obYg/zh-cn_image_0000002536911353.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Jd-pHEDqRRW7BuA9zHa1TA/zh-cn_image_0000002536911353.png "点击放大")
 
-接下来通过Trace查看每一帧的具体耗时，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/53-gFqrSTMKnYkp7xkeung/zh-cn_image_0000002504870956.png "点击放大")图标跳转到卡顿帧应用侧Trace详情，如下图所示。开发者，可以点击泳道信息区的收藏按钮，将应用帧处理的泳道收藏置顶，防止上下文信息丢失。
+接下来通过Trace查看每一帧的具体耗时，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Uk20xzThQLmmAznEmWOjDw/zh-cn_image_0000002504870956.png "点击放大")图标跳转到卡顿帧应用侧Trace详情，如下图所示。开发者，可以点击泳道信息区的收藏按钮，将应用帧处理的泳道收藏置顶，防止上下文信息丢失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/SKBAurSPS26xbTgxJXFI9g/zh-cn_image_0000002505041340.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/lyW99cilQ0GVUc2n9ass1w/zh-cn_image_0000002505041340.png "点击放大")
 
 从上图可见，每个卡顿帧下均通过BuildLazyItem方法构建列表项，且耗时较长。可以推断，列表懒加载时，Item绘制时间较长是导致卡顿的主要原因。在ArkUI Component泳道上，直观可见自定义组件ArticleView的绘制频率高且耗时，频繁绘制组件可能影响应用的帧率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/38TBzHgPQjmtAC8NBARtEw/zh-cn_image_0000002358270229.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Z-x9aG3rSjq5V7kCB7SNyQ/zh-cn_image_0000002358270229.png "点击放大")
 
 在Frame模板中，要查看ArkUI Component泳道，需在泳道录制前手动勾选，如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/H9jqHd6vRbO1y3wvoiYVAQ/zh-cn_image_0000002324311668.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/-9YZQ7WlRM-De0lc1puPvA/zh-cn_image_0000002324311668.png)
 
 **3 查看ArkTS函数调用栈信息，排查应用代码。**
 
 可以结合Frame Profiler工具，选择ArkTS Callstack泳道查看热点函数，方便地跳转到源码，定位绘制时间较长的自定义组件。如下图所示，可以看到自定义组件ArticleCardView的绘制频繁。下面以220#帧为例子，通过热点函数可以看到其中initialRenderView 和\_\_lazyForEachItemGenFunction这两个方法比较耗时，占比分别达到52.7%和22.9%，其中绿色的”ArkTS”表示双击该行可以跳转到应用源码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/beFLyxRXT4-tWK8-xjS1YA/zh-cn_image_0000002358350101.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/hMcHx6InRBi0hXtQvnkjmg/zh-cn_image_0000002358350101.png "点击放大")
 
 以initialRenderView函数的耗时为例进行分析，展开函数后，可以看到主要耗时在列表项ListItem的子组件ArticleCardView的创建上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/ZBWH7L7ISOqOgfBps_AB8Q/zh-cn_image_0000002324471460.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/dUtY8rwqRjeepMU7t1xuag/zh-cn_image_0000002324471460.png "点击放大")
 
 展开组件函数调用链进行详细分析，通过查看函数调用可以发现，使用了@Prop变量。@Prop装饰的变量会对父组件传入的状态值进行深拷贝，如果@Prop装饰器装饰的变量为复杂对象、类或其类型数组时，会增加状态创建时间并占用大量内存。双击跳转到源码，可以看到自定义组件ActionButtonView中确实使用了@Prop装饰器变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/3Ljzs8OJSYuCKZBVZpBomQ/zh-cn_image_0000002358270233.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/p2SN5bwATgOsUBHUQ27inQ/zh-cn_image_0000002358270233.png "点击放大")
 
 其它函数的详细调用和耗时情况在此不再一一列举。
 
@@ -389,7 +389,7 @@ struct AnimationDemo1 {
 
 使用Frame Profiler录制Trace，可以看到动画帧率为63fps，而当前设备支持120Hz的刷新率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/sTFIF8QpQnyCyesj1JvJ2w/zh-cn_image_0000002358350105.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/VTTml-sqR-uKtbLxFekmMg/zh-cn_image_0000002358350105.png "点击放大")
 
 建议开发者使用系统属性动效API实现动效功能，下面以属性动画为例：
 
@@ -433,7 +433,7 @@ struct AnimationDemo2 {
 
 使用Frame Profiler录制优化后的Trace，动画帧率提升至116.9fps。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/w3MSleMZRxaoV2ZwIYJhqQ/zh-cn_image_0000002324471464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/TtjlYHAYR5-M6raeViMP6w/zh-cn_image_0000002324471464.png "点击放大")
 
 ### 布局嵌套过深
 
@@ -507,13 +507,13 @@ struct ChildComponent {
 
 使用Frame Profiler进行录制，直接查看应用侧的Trace数据，具体分析步骤请参见前面的丢帧问题分析思路章节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/7jH3bVNdRbyMD7w0JeM5pg/zh-cn_image_0000002358270237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/UPA2zs7VRrSCnlp9LsFtTg/zh-cn_image_0000002358270237.png "点击放大")
 
 结合卡顿帧对应时间段的Trace数据，定位到FlushLayoutTask耗时过长。其作用是重新测量和布局所有Item，Measure方法耗时较长。卡顿原因可能是布局处理逻辑复杂或低效。
 
 开发者可以使用ArkUI Inspector，在DevEco Studio上查看应用在真机上的UI显示效果。利用ArkUI Inspector工具，开发者可以快速定位布局问题或其他UI相关问题。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/oNMjVrHNS-GPkHCiNeDQJw/zh-cn_image_0000002324311680.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/1kN6fH3YRiaQty1c_HK12Q/zh-cn_image_0000002324311680.png "点击放大")
 
 可以直观看到Item的嵌套较深。接下来，减少不必要的嵌套以解决丢帧问题。示例代码如下：
 
@@ -539,7 +539,7 @@ struct ChildComponent {
 
 再次使用Frame Profiler进行录制，可以看到丢帧问题已经解决。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/FljHEwcwRUWKrLrBxBvpZQ/zh-cn_image_0000002358350117.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/MJg3msT4TEeDMoy-rYucAA/zh-cn_image_0000002358350117.png "点击放大")
 
 ### 主线程中执行冗余和耗时操作
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opengles
 title: OpenGL ES
 breadcrumb: API参考 > 标准库 > OpenGL ES
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:57+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:4fb9f5b64128072e7c6b7abffaf4d5845f67d86e39d8ff4535c748690c2e4a37
 ---
 

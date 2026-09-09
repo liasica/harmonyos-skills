@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: UIAbilityContext
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > UIAbilityContext
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:22+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-10T06:24:35+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ad817057e6c1bf13dd6d6e1ea3bce37e7de87f6379c99ad1fdc2be190cd87bf3
 ---
 

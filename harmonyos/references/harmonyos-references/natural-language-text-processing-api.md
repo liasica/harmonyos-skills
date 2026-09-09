@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/natural-l
 title: textProcessing（文本处理）
 breadcrumb: API参考 > AI > Natural Language Kit（自然语言理解服务） > ArkTS API > textProcessing（文本处理）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:50+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:c2d8bec22aff1d1d535a177fa5c1bc9ee97660ab520a2d76b9306ea4f63f9049
 ---
 

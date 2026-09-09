@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Toggle
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:13+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:a0c7508a6018ab2b7d98695901b0dbe77d1e70a7e3bb6f606fca5a18ce37f541
+scraped_at: 2026-09-10T06:25:24+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:8fb3bd3916add3a945c8bb9a051ac45a1933d7ec3e82e490a9a5380e7d69932b
 ---
 
 组件提供勾选框样式、状态按钮样式和开关样式，适用于需要快速切换状态或进行单选确认的场景，能够有效提升交互体验与界面的直观性。
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/m3h3DRNSSuKpLuC43Ls7CA/zh-cn_image_0000002742005049.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/QoOW-wIcQRe3HfQdM4J6Lw/zh-cn_image_0000002717612712.gif)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -335,7 +335,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/GnBP5rbkTBGXzNPtmWn79A/zh-cn_image_0000002712406060.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/889WxXPwR_uWaj-9ctPdzQ/zh-cn_image_0000002747292665.gif)
 
 ### 示例3（自定义Toggle样式）
 
@@ -395,7 +395,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/3akqRDjqTvyW-YnEXANurQ/zh-cn_image_0000002742125009.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/FiaJEilkR1-o-iW3fdbhtA/zh-cn_image_0000002747212581.gif)
 
 ### 示例4（Toggle沉浸光感效果）
 
@@ -441,8 +441,8 @@ struct ToggleMaterialTest {
 
 高算力设备场景示例图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/F38zqp6dTWOoYkHEJtBdTg/zh-cn_image_0000002712246102.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/b2YrzZNJR66mKXlF-ghxrw/zh-cn_image_0000002717772646.gif)
 
 低算力设备场景示例图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/lFIbB7WhRISGPpxOyR1pHg/zh-cn_image_0000002742005051.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/8OFtTFbLRjmtT9eNXTgXHA/zh-cn_image_0000002717612714.gif)

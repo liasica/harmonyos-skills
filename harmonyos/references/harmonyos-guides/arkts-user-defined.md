@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义能力概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义能力概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:01+08:00
-doc_updated_at: 2026-04-17
+scraped_at: 2026-09-10T06:22:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:522b9056a0840bb1c00a8154e001eae00a7c3122254946a41c956b19f30f9b25
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transi
 title: 充值交通卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 交通卡 > 开发场景 > 充值交通卡
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:15:21+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:37dc0ae470d8804a39e77d5a2e61cf44673bf45c5c843ceb4358167866df32fe
+scraped_at: 2026-09-10T06:23:31+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:422d0b20209310d92b2717d8edfafa7d5dfec07c0679f3caa9ee8cebc887a6b3
 ---
 
 用户为钱包中的交通卡充值，恢复或增加卡内余额，无需排队购票，方便公交、地铁出行。
@@ -14,7 +14,7 @@ content_hash: sha256:37dc0ae470d8804a39e77d5a2e61cf44673bf45c5c843ceb4358167866d
 
 交通卡的充值过程分为：卡片展示、生成并支付充值订单和发起充值三个步骤，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/YKcedy_tSGmOdJ-Nf7joWA/zh-cn_image_0000002742124385.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/IleB21ltSqiK_VEBckPw1w/zh-cn_image_0000002747211957.png)
 
 ## 开发步骤
 

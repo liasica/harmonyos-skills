@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unified-data-
 title: 通过标准化数据通路实现数据共享 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 跨应用数据共享 > 多对多跨应用数据共享 > 通过标准化数据通路实现数据共享 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:5e5fa35621bc606f10a01323e299e0e115dba6d55ba06d8c870b077a3c4965c5
 ---
 

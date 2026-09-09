@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OhosImageComponent
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OhosImageComponent
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:31+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:38c6038aae37da77ed01fce23d0bfb5c941d226650f7b86a1de43926a9449dcd
 ---
 

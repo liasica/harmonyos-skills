@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.taskpool (启动任务池)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.taskpool (启动任务池)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:8e7684526f869d715e73f19c5c8216f376a5c40bae774be362efb9750ec85730
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 文件路径转换API
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 文件路径转换API
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:23:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:431212783aa19f5a4de708a2ea3efe8379a7d25162147f04be6cdc01e417ce9c
 ---
 

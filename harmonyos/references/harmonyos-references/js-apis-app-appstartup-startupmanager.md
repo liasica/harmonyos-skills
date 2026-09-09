@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.appstartup.startupManager (启动框架管理能力)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.appstartup.startupManager (启动框架管理能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:24:30+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:fa1e54d8c158a9e211785ec521a3756df499cace025707bbb35bd909bece2f01
 ---
 

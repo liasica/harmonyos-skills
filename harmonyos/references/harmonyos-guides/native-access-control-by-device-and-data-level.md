@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-access
 title: 基于设备分类和数据分级的访问控制 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 基于设备分类和数据分级的访问控制 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:21:55+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:d543c10749514cdd5f402a6cb2e223ae47ea8fe88f9ca7be7c80859bbeaa01c5
 ---
 

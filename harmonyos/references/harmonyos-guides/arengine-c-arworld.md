@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ar
 title: 物体摆放（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 命中检测 > 物体摆放（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-14
+scraped_at: 2026-09-10T06:23:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:a90db284693fe6c73af2b136c7195f989b9f793b52950fe1a33ec21e8a8a3dcc
 ---
 

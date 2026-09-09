@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethodEngine (输入法服务)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethodEngine (输入法服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:6ad567b570097a78c48f8e9bf112a1e86835421d3d7062c4368bc817a73f9b16
 ---
 

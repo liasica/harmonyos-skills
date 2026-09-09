@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-parse-
 title: "证书PKCS #12的创建和解析"
 breadcrumb: "指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书PKCS #12的创建和解析"
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:28+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:1ffa94dc494c183d3a2f59cf13fbd84afed3204e967e9e14cba54cc17cb6f88d
 ---
 

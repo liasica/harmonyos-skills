@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口从外部内存创建ArrayBuffer
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口从外部内存创建ArrayBuffer
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:23:58+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:3f50c21f6d7c7565e6fe19d0d8eedd1ffbbfa2aa6e76743600a6bc441accd3aa
 ---
 

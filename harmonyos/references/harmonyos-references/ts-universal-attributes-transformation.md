@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图形变换
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 图形变换
 category: harmonyos-references
-scraped_at: 2026-09-05T06:17:04+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b92feb76d32fa40c74790bf9a1697bfaf2222e1e2346eadbf18d51672ff288ec
+scraped_at: 2026-09-10T06:25:16+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:fd63da2e8a14ae3bfb4cdb802f0ea3a2fedc00a65597596e834c4903d3fc8359
 ---
 
 用于对组件进行旋转、平移、缩放、矩阵变换等操作。
@@ -415,7 +415,7 @@ struct TransformExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/wQvK2VecR3axIf8Ak3RHxg/zh-cn_image_0000002712405848.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/8phNnsHsQ9K5CF-4M99wqg/zh-cn_image_0000002747292453.png)
 
 ### 示例2（设置旋转视距）
 
@@ -459,7 +459,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/cSCk3ZksRqC7RVqXUsHEew/zh-cn_image_0000002742124797.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/wmSP0eTGSuKQODRe6GIl-A/zh-cn_image_0000002747212369.gif)
 
 ### 示例3（按中心点旋转）
 
@@ -533,7 +533,7 @@ struct MatrixExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/NDJgLC0mR0-XZ1yAUOKbTA/zh-cn_image_0000002712245890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/VCEtmwrhTbOCX5p2_9Fe6g/zh-cn_image_0000002717772434.png)
 
 ### 示例4（通过transform3D实现图形变换）
 
@@ -571,7 +571,7 @@ struct Transform3DExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/bq0OxtELTZyalEYhPSYQBQ/zh-cn_image_0000002742004839.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/DSKFrpL2QeqZoWWdR6Nblg/zh-cn_image_0000002717612502.png)
 
 ### 示例5（按各轴旋转角的方式实现旋转）
 
@@ -612,4 +612,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/vEC_uAtjQNKB6NKlBaEJDA/zh-cn_image_0000002712405850.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/2NlC1hMvTSmgZlYsPBpq2g/zh-cn_image_0000002747292455.png)

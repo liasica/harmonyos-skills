@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AutoDeviceSwitch)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (AutoDeviceSwitch)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:28:16+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7ae243a60418f0fb658faf85ebeb1e25026b4c32b3cb1c28d5f8af305c180cde
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.distributedsched.proxyChannelManager (代理通道管理)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedsched.proxyChannelManager (代理通道管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:08+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:eb21862b07baedfd84ac693e15044c16c46d9a608ceb249683cb5a425abcb9d4
 ---
 

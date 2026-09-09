@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-pro
 title: productViewManager (应用市场推荐)
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API > productViewManager (应用市场推荐)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:29:09+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:e4c1a772288a126002b9edb39fa5e5df55942c246bf339ab0870ca01c9fce121
 ---
 

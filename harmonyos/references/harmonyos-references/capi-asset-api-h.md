@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-asse
 title: asset_api.h
 breadcrumb: API参考 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > C API > 头文件 > asset_api.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:26:45+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:7d78ef52f760b8bdb9def2d1bf1359fa9fc85c1139dd54fa3d027f9feb383981
 ---
 

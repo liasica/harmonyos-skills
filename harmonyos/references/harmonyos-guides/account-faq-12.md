@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-1
 title: ID Token的使用场景与使用方法
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > ID Token的使用场景与使用方法
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:52+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-10T06:23:10+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:89eed20a508038ade2da323da050b9945ab397e9c138d61c61a73e8519f90aee
 ---
 

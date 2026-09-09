@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-statistic
 title: 统计网络流量消耗
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 管理网络 > 统计网络流量消耗
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:22:36+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:ecf86d42e489bb01afeedb15601d74552a9f2c207b13ac196dcd00085ce8062b
 ---
 

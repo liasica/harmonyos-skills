@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-on-
 title: NDK多线程创建组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > NDK多线程创建组件
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c9e2cb633cbba1dbdc32251b54a93d61fda7cc19ef5fd4dad5741fcf2308835c
+scraped_at: 2026-09-10T06:22:11+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:971f4f2bc8a35de32048ced9474cb6d0731d87484cf99320fbf4a343a947f790
 ---
 
 ## 概述
@@ -176,7 +176,7 @@ content_hash: sha256:c9e2cb633cbba1dbdc32251b54a93d61fda7cc19ef5fd4dad5741fcf230
 
 点击CreateNodeTree按钮触发在多个非UI线程并行创建Button组件，之后在UI线程将创建完成的Button组件挂载到UI主树上，使组件显示在页面上。点击DisposeNodeTree按钮将已创建的组件从UI主树上卸载并销毁，清空页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/NBN3QeTEQ6Kw8EUv9X0-Pw/zh-cn_image_0000002742003097.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/__0E-ElsTpy1tvDGer68BQ/zh-cn_image_0000002717610764.gif)
 
 示例主要展示了如何获取和使用多线程NDK接口，并使用[OH\_ArkUI\_PostAsyncUITask](../harmonyos-references/capi-native-node-h.md#oh_arkui_postasyncuitask)、[OH\_ArkUI\_PostUITask](../harmonyos-references/capi-native-node-h.md#oh_arkui_postuitask)和[OH\_ArkUI\_PostUITaskAndWait](../harmonyos-references/capi-native-node-h.md#oh_arkui_postuitaskandwait)等接口将组件创建和属性设置等任务分发到多线程并行执行。
 

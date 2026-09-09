@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: Netstack
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 模块 > Netstack
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d3a5521c372f752508042889879d9b47a70a48b980b71027032652c4cf73d835
+scraped_at: 2026-09-10T06:27:10+08:00
+doc_updated_at: 2026-09-09
+content_hash: sha256:f1c42896a0d39ff365b95acb5c891aca3e1c3099853a1a73d647997fcb4171b1
 ---
 
 ## 概述
 
 提供网络相关模块的C接口，包括SSL/TLS证书链校验、WebSocket客户端、HTTP请求和HTTP全局拦截器等功能。
+
+调用范式：以HTTP请求为例，典型调用流程为：创建请求实例→设置请求参数→发起请求→获取响应→销毁实例；WebSocket客户端需按创建实例→连接服务器→收发数据→关闭连接的顺序调用；SSL/TLS证书链校验需在发起网络请求前先加载并校验证书链；HTTP全局拦截器需先注册后使用，并在不再需要时注销。
 
 **起始版本：** 11
 

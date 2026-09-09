@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/basic-service
 title: Basic Services Kit简介
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > Basic Services Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:07+08:00
-doc_updated_at: 2026-04-30
+scraped_at: 2026-09-10T06:22:38+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:71c4921c16946f720cd847b70bcd03d2c84a6a8cae716f67ebf60892324e314c
 ---
 

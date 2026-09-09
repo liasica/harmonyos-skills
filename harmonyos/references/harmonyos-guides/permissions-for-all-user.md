@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-f
 title: 开放权限（用户授权）
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 开放权限（用户授权）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-10T06:22:23+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:35fa7a2863a810ed093ee1733a0438b044234dbfedeb8ea4058f3e96fa71872e
 ---
 

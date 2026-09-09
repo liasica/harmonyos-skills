@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.FusionConnectivity.ranging (融合测距模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.FusionConnectivity.ranging (融合测距模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-10T06:27:00+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:2769ddd6aea993594bff41772f485c710c2a5ab3aa4954e9bfcfdc18999d1eba
 ---
 

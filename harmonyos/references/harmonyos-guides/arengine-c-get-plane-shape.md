@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 识别目标形状（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 物体语义 > 识别目标形状（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-08-14
+scraped_at: 2026-09-10T06:23:03+08:00
+doc_updated_at: 2026-09-09
 content_hash: sha256:aabd1ee044347321e7b1ab9cad28d3c09014ec95de85b5f04e47c571b1c3f4ed
 ---
 
