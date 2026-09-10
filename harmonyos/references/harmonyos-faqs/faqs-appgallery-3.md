@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 上架审核提示软著不通过应该如何处理
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 上架审核提示软著不通过应该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:50+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:717dedd0d889779d2bcd22233a11fbaea8917e03d0209408f03a55a86585afa4
+scraped_at: 2026-09-11T06:31:45+08:00
+doc_updated_at: 2026-09-10
+content_hash: sha256:d00643072e4814303f2a5752f95d3415b6ea366e2e4e6162cb8b891ca544661b
 ---
 
 ## 问题现象
@@ -37,3 +37,7 @@ A：上架的应用版权证书指的是计算机软件著作权证书，包括�
 Q：软著申请较久，如果用现有其他平台的软著申请一个电子版权认证证书，是否可以用于上架？
 
 A：参考应用资质审核要求，《计算机软件著作权登记证书》上软件名称/简称需与上传的应用名称一致，且没有限定系统字样，即可复用；建议先提交上架申请，具体以审核结果为准；相关问题可参考计算机软件著作权证书常见问题。
+
+Q：上架应用名称与软著证书上的软件全称和简称是否都需要一致？
+
+A：不需要都一致，上架应用名称与软著证书中的全称或者简称其中一个一致即可。

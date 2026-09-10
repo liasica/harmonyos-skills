@@ -3,18 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-6
 title: 文档扫描后保存图片预览页面空白
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 文档扫描后保存图片预览页面空白
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:59+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:22d34ba43ae4ff34ac3e6b54df9ff040cf75f96728b0dda9700edc7ba1f7cdab
+scraped_at: 2026-09-11T06:32:08+08:00
+doc_updated_at: 2026-09-10
+content_hash: sha256:941a5187d8362d9afe57da8670e23fe81293fc9b97fa302af118664d5f4330c9
 ---
 
 ## 问题现象
 
 文档扫描控件DocumentScanner扫描出图片后，使用相册管理模块弹窗showAssetsCreationDialog保存图片，预览页面空白。
-
-## 效果预览
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/6dhNrk9YTE2EfbpCr0hcIw/zh-cn_image_0000002628554718.gif "点击放大")
 
 ## 背景知识
 
@@ -23,14 +19,14 @@ content_hash: sha256:22d34ba43ae4ff34ac3e6b54df9ff040cf75f96728b0dda9700edc7ba1f
 
 ## 问题定位
 
-* 文档扫描控件DocumentScanner问题：DocumentScanner控件在文档扫描结束后，仅在结果回调[DocumentScannerResultCallback](../harmonyos-references/vision-document-scanner.md#documentscannerresultcallback)中生成一个临时文档URI列表。
-* 相册管理模块弹窗问题：查看接口showAssetsCreationDialog参数，发现入参的srcFileUris可能存在问题导致预览空白。
+* 文档扫描控件[DocumentScanner](../harmonyos-references/vision-document-scanner.md)问题：DocumentScanner控件在文档扫描结束后，仅在结果回调[DocumentScannerResultCallback](../harmonyos-references/vision-document-scanner.md#documentscannerresultcallback)中生成一个临时文档URI列表。
+* 相册管理模块弹窗问题：查看接口[showAssetsCreationDialog](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#showassetscreationdialog12)参数，发现入参的srcFileUris可能存在问题导致预览空白。
 
 ## 分析结论
 
-当使用文档扫描控件DocumentScanner完成回调后得到URI列表，再调用接口showAssetsCreationDialog，由于showAssetsCreationDialog的入参srcFileUris需要使用[fileUri.getUriFromPath](../harmonyos-references/js-apis-file-fileuri.md#fileurigeturifrompath)获取的沙箱路径URI或者[媒体文件URI](../harmonyos-guides/user-file-uri-intro.md#媒体文件uri)，才可以正常预览，但实际入参的srcFileUris是临时生成的，导致保存图片预览页面空白。
+当使用文档扫描控件[DocumentScanner](../harmonyos-references/vision-document-scanner.md)完成回调后得到URI列表，再调用接口[showAssetsCreationDialog](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#showassetscreationdialog12)，由于showAssetsCreationDialog的入参srcFileUris需要使用[fileUri.getUriFromPath](../harmonyos-references/js-apis-file-fileuri.md#fileurigeturifrompath)获取的沙箱路径URI或者[媒体文件URI](../harmonyos-guides/user-file-uri-intro.md#媒体文件uri)，才可以正常预览，但实际入参的srcFileUris是临时生成的，导致保存图片预览页面空白。
 
-## 解决方案
+## 修改建议
 
 使用文档扫描控件DocumentScanner完成回调后，将图片保存至沙箱目录下，后调用接口showAssetsCreationDialog保存图片，可以正常显示并保存图片至图库。
 
@@ -59,30 +55,30 @@ content_hash: sha256:22d34ba43ae4ff34ac3e6b54df9ff040cf75f96728b0dda9700edc7ba1f
    ```ts
    async saveImageToAsset(uri: string, nameExtension: string): Promise<void> {
      hilog.info(0x0001, TAG, `ShowAssetsCreationDialogDemo：${uri}`);
-   try {
-     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(this.context);
-     // 获取需要保存到媒体库的位于应用沙箱的图片/视频uri
-     let srcFileUris: Array<string> = [uri];
-     let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [{
-       title: 'test',
-       // 可选
-       fileNameExtension: nameExtension,
-       photoType: photoAccessHelper.PhotoType.IMAGE,
-       // 可选，支持：普通图片、动态图片
-       subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
-     }];
-     let desFileUris: Array<string> = await phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs);
-     hilog.info(0x0001, TAG, `showAssetsCreationDialog success, data is：${desFileUris}`);
-     if (desFileUris.length == 0) {
-       // 用户拒绝保存
-       throw (new Error('用户拒绝保存'));
+     try {
+       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(this.context);
+       // 获取需要保存到媒体库的位于应用沙箱的图片/视频uri
+       let srcFileUris: Array<string> = [uri];
+       let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [{
+         title: 'test',
+         // 可选
+         fileNameExtension: nameExtension,
+         photoType: photoAccessHelper.PhotoType.IMAGE,
+         // 可选，支持：普通图片、动态图片
+         subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+       }];
+       let desFileUris: Array<string> = await phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs);
+       hilog.info(0x0001, TAG, `showAssetsCreationDialog success, data is：${desFileUris}`);
+       if (desFileUris.length == 0) {
+         // 用户拒绝保存
+         throw (new Error('用户拒绝保存'));
+       }
+       this.createAssetByIo(uri, desFileUris[0]);
+       return Promise.resolve();
+     } catch (err) {
+       hilog.error(0x0001, TAG, `showAssetsCreationDialog failed, errCode is：${err.code}` + `errMsg is：${err.message}`);
+       return Promise.reject(err);
      }
-     this.createAssetByIo(uri, desFileUris[0]);
-     return Promise.resolve();
-   } catch (err) {
-     hilog.error(0x0001, TAG, `showAssetsCreationDialog failed, errCode is：${err.code}` + `errMsg is：${err.message}`);
-     return Promise.reject(err);
-   }
    }
 
    createAssetByIo(sourceFilePath: string, targetFilePath: string) {
@@ -99,7 +95,7 @@ content_hash: sha256:22d34ba43ae4ff34ac3e6b54df9ff040cf75f96728b0dda9700edc7ba1f
    }
    ```
 
-完整示例参考如下：
+完整代码如下：
 
 ```ts
 import {
@@ -247,12 +243,12 @@ export struct DocDemoPage {
 }
 ```
 
+效果图：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/6G0tpOhgSmax9XykwlaIBg/zh-cn_image_0000002714110564.gif "点击放大")
+
 ## 常见FAQ
 
-Q：文本识别（TextRecognition）和文档扫描（DocumentScanner）是否有使用限制？
-
-A：有，单个App每个月最多被调用10000次，超过将无法使用。
-
-Q：let desFileUris: Array<string> = await phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs); desFileUris数组中的URI里面返回的是-3006。
+Q：let desFileUris: Array = await phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs); desFileUris数组中的URI里面返回的是-3006。
 
 A：photoCreationConfigs中的title值，不可以包含：([./:\*?"'`<>|{}[]])等这些特殊字符。

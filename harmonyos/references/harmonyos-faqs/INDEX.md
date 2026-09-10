@@ -2768,7 +2768,7 @@
 - [DevEco Studio上使用生成NAPI功能时， 提示“Could not find usage of napi_module_register in napi_init.cpp.”错误](faqs-coding-15.md)
 - [DevEco Studio启动报错：“Scan files to index fail”](faqs-coding-16.md)
 - [server启动失败，进程意外退出](faqs-coding-17.md)
-- [DevEco Studio上使用使用api或组件时编辑器提示各种报错与告警](faqs-coding-18.md)
+- [DevEco Studio上使用api或组件时编辑器提示各种报错与告警](faqs-coding-18.md)
 - [为什么ArkTS API接口注释中@since版本看起来比接口实际引入时间更晚](faqs-coding-19.md)
 - [DevEco中是否有一键检查未引用资源的功能](faqs-coding-2.md)
 - [DevEco Studio自动提示导入部分标准库异常](faqs-coding-20.md)
