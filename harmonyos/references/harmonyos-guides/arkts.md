@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts
 title: ArkTS（方舟编程语言）
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:13+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ed561a509d4ade7acf491c042bdb42fb8ed5053fe763a9a199a811087493d73b
 ---
 

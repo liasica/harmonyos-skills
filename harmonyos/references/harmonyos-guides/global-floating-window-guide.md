@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/global-floati
 title: 全局悬浮窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 全局悬浮窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:48e166bea5c306c28e1c80e41d6144136de2b6dfa68ddf65e1944707a78f6d8c
+scraped_at: 2026-09-15T07:01:33+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:f8c3a5bd0e7ac80cbd6fe955d06f381610e444d83ec4b8dd2613735f5f4b62b5
 ---
 
 ## 场景介绍
@@ -13,22 +13,6 @@ content_hash: sha256:48e166bea5c306c28e1c80e41d6144136de2b6dfa68ddf65e1944707a78
 全局悬浮窗具有在应用主窗口退后台时，继续在前台显示的能力，适用于如多人视频通话、屏幕共享等场景。
 
 全局悬浮窗的层级比所有应用主窗口、子窗口的层级高。
-
-**全局悬浮窗和闪控窗的对比：**
-
-* 共同点：全局悬浮窗和[闪控窗](../harmonyos-references/js-apis-floatview.md)均为一种特殊的应用辅助窗口，具备在应用主窗口和对应UIAbility退至后台后仍然可以在前台显示的能力。
-* 区别：
-
-  + 全局悬浮窗由开发者管理并实现UI绘制，无统一UI及动效。
-  + 闪控窗由系统管理并统一绘制UI，动效更为高端精致。
-  + 闪控窗支持和闪控球联合使用，实现更复杂的场景。
-  + 全局悬浮窗仅支持在PC/2in1设备上使用。
-  + 闪控窗支持在Phone、Tablet、PC/2in1设备上使用。
-* 适用场景：
-
-  + 全局悬浮窗适用于多人视频通话、屏幕共享的场景。
-  + 闪控窗适用于需要在独立小窗口中持续展示应用内容或提供快捷操作的场景。比如股市盯盘应用、手机直播应用。具体可见[闪控窗开发指导](float-view-guide.md)。
-  + 针对其他非指定场景，如视频播放、视频会议、视频通话等，建议使用画中画功能来以小窗模式呈现视频内容。具体可见[画中画开发指导](window-pipwindow.md)。
 
 ## 约束限制
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-recordin
 title: 性能问题定位：深度录制
 breadcrumb: 指南 > 优化应用性能 > 使用Profiler进行性能调优 > 性能问题定位：深度录制
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:35+08:00
+scraped_at: 2026-09-15T07:03:53+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2b29c2495538562cd8649aaea62e91dac85002713b9092afc86dc5eb224f23df
+content_hash: sha256:75f1995ebe962c8cb1c5c657f574af43328f6e35d05c57f94c07c10c017b5988
 ---
 
 开发者可针对不同的性能问题场景选择不同模式的分析任务，对应用/元服务进行深度分析。当前支持以下调优场景：
@@ -29,29 +29,29 @@ content_hash: sha256:2b29c2495538562cd8649aaea62e91dac85002713b9092afc86dc5eb224
 
 1. 打开DevEco Profiler，选择场景模板，创建会话。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/cLPOLUriRb-Kv6SHSTx_OA/zh-cn_image_0000002701822716.png)：在设备列表中选择设备。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/9XrXq1-6S-mQGdpTJOz3qw/zh-cn_image_0000002701822716.png)：在设备列表中选择设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/btkbKzcUTlO9q-4NSazJmA/zh-cn_image_0000002701662792.png)：在进程列表中选择要调测的应用（可以是正在运行的应用，也可以是已安装但未启动的应用）。从26.0.0版本开始，支持将前台应用展示在进程列表中Running Applications的最上方。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/sPjMCWIuT_ydpyGgP3Sb9w/zh-cn_image_0000002701662792.png)：在进程列表中选择要调测的应用（可以是正在运行的应用，也可以是已安装但未启动的应用）。从26.0.0版本开始，支持将前台应用展示在进程列表中Running Applications的最上方。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/r7AVHAhYQqa1zfMB3c6VqA/zh-cn_image_0000002701822718.png)：在主界面的新建任务区域，单击要创建的场景调优分析任务类型，并单击“Create Session”。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/KZ5bEh24Qgm-cjdOEEuxTA/zh-cn_image_0000002701822718.png)：在主界面的新建任务区域，单击要创建的场景调优分析任务类型，并单击“Create Session”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/CXiximBaSICKuBnC131K0w/zh-cn_image_0000002701662800.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/rWdhlcZ3T2mZwIoZcs-qQA/zh-cn_image_0000002701662800.png "点击放大")
 2. 配置并确认会话环境。在录制详情区域，工具控制栏上有很多小图标，鼠标放上去会有一些功能提示，可以添加一些录制选项，各泳道区域也有下拉框选项，下拉选择不同的设置可以调整录制功能。
 
-   支持在录制前单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/xRq6bbgsSRW_9v6Zc1tM5A/zh-cn_image_0000002731382021.png "点击放大")指定要录制的泳道。
+   支持在录制前单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/tqneg0LUSC2YYv4tgO-Dfg/zh-cn_image_0000002731382021.png "点击放大")指定要录制的泳道。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/xpJr8samQimQmqptUTuBbQ/zh-cn_image_0000002731541999.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/9SfSm2_ESLuMylFzoVX_7A/zh-cn_image_0000002731541999.png)
 3. 启动录制，复现性能劣化场景。
 
-   单击任务窗口左上角的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/gqERitLVR9uJAFJ5sy2_lA/zh-cn_image_0000002701662796.png)或左侧的任务列表中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/j-0jmqIFQAKEN9BWBJTcMA/zh-cn_image_0000002731382019.png)，启动录制。在调优设备操作APP，执行要验证的操作，等待任务状态由“initializing”变为“recording”。录制过程中整个DevEco Profiler不能再点击其他的模板进行操作，如果想录制其他模板可以结束本次录制重新选择其他模板开始录制。
+   单击任务窗口左上角的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/lZKpNxb8Q8OhkqGIubrXYQ/zh-cn_image_0000002701662796.png)或左侧的任务列表中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/sD9OL2-gSdKljsN0sC0YbQ/zh-cn_image_0000002731382019.png)，启动录制。在调优设备操作APP，执行要验证的操作，等待任务状态由“initializing”变为“recording”。录制过程中整个DevEco Profiler不能再点击其他的模板进行操作，如果想录制其他模板可以结束本次录制重新选择其他模板开始录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/aWQdRz44TeWTtRV1gVpnhQ/zh-cn_image_0000002731541993.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/6PyPD-yuQDaDMn8iLZtS1Q/zh-cn_image_0000002731541993.png "点击放大")
 4. 性能劣化场景完成，停止录制。
 
-   单击停止按钮 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/UZrPd96lR2maHdYAzViPSg/zh-cn_image_0000002731382025.png)，进入数据解析阶段，泳道任务状态由“analyzing”变为“rendering”时解析结束，右侧调优详情区域显示具体调优内容。解析过程可能包含大量的数据，请耐心等待解析完成。
+   单击停止按钮 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/ELY7VvUSTyeQYBmRcI5BUA/zh-cn_image_0000002731382025.png)，进入数据解析阶段，泳道任务状态由“analyzing”变为“rendering”时解析结束，右侧调优详情区域显示具体调优内容。解析过程可能包含大量的数据，请耐心等待解析完成。
 
    **说明** 
 
    若录制结束后，ArkTS Callstack、Callstack、All Heap & Anonymous VM、All Heap、All Anonymous VM、ArkTS Allocation等泳道显示No Data，在泳道名称处可将光标悬浮于三角告警图标处，查看泳道报错的原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/5TPsMNqJSv2e5NwIIU5dWA/zh-cn_image_0000002731541997.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Mk4KpsEXRZmIbs0r1mT3vQ/zh-cn_image_0000002731541997.png "点击放大")

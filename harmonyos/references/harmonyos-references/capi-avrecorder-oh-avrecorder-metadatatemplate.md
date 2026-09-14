@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avre
 title: OH_AVRecorder_MetadataTemplate
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_AVRecorder_MetadataTemplate
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:37+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:db256f55562bfdd5da54e4b2eba355cc7a8fc18cdfa4d2d6aa26a239a5d12bd7
+scraped_at: 2026-09-15T07:08:14+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:3dd531a4750694dc1730e71182ec73f78a93716056811c1fe8544f838a159a5c
 ---
 
 ```c
@@ -28,5 +28,5 @@ typedef struct OH_AVRecorder_MetadataTemplate {...} OH_AVRecorder_MetadataTempla
 
 | 名称 | 描述 |
 | --- | --- |
-| char\* key | 元数据的键。 |
-| char\* value | 元数据的值。 |
+| char \*key | 元数据的键。 |
+| char \*value | 元数据的值。 |

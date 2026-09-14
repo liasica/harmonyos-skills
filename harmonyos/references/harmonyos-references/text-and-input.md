@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/text-and-
 title: 文本与输入
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:30+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:04:59+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:1df45c7125fcb11818a571799b234a998e958a2a7b4a630939e1a4ce81ba3ad9
 ---
 

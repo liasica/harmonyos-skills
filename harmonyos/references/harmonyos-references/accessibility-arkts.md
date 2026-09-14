@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/accessibi
 title: ArkTS API
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:07+08:00
-doc_updated_at: 2026-06-03
+scraped_at: 2026-09-15T07:04:11+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8c0f5fcca857e693dc83678a4d737d3949a3871fa78daf0fdab9d96983ab980d
 ---
 

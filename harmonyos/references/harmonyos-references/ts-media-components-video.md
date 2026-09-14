@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-
 title: Video
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > Video
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0784ce7c3a9cbd5cd4b24c44c59816070e2419c421349cad8adcaf7c735653a3
+scraped_at: 2026-09-15T07:05:02+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:c208a934d87bb73a1dc5080eb15031d762c29136e3cc3e670f00e197c77db4c4
 ---
 
 Video组件用于播放视频文件并控制其播放状态，支持播放、暂停、进度控制、倍速播放、全屏切换等功能。
@@ -953,7 +953,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/jvnw8d9HRYSTwBYbMVZ7yQ/zh-cn_image_0000002747292837.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/XhAQnxOKQTaXG4zrVMbKOw/zh-cn_image_0000002723697172.gif)
 
 ### 示例2（图像分析功能）
 
@@ -1111,7 +1111,7 @@ struct VideoObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/bwVUEkmOS5aV_dPx3QB_Xw/zh-cn_image_0000002747212753.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/9QpLNBqXSJeeiire3VCJCw/zh-cn_image_0000002753296939.png)
 
 ### 示例5（onError事件上报错误码）
 
@@ -1154,7 +1154,7 @@ struct VideoErrorComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/iBSnzQSLTPWB3v2Smfv78w/zh-cn_image_0000002717772818.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/nWW8BbRJRHSg452iKoQkHg/zh-cn_image_0000002753456857.png)
 
 ### 示例6（使用attributeModifier动态设置Video组件的属性及方法）
 
@@ -1276,7 +1276,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/viu2UmJpSK2UXVP_MV8jJg/zh-cn_image_0000002717612886.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/mDVu6ZZFRwuJV9twIEWTPA/zh-cn_image_0000002723857092.png)
 
 ### 示例7（VideoControllerAsync用法）
 
@@ -1290,7 +1290,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Entry
 @Component
 struct VideoControllerAsyncExample {
-  @State videoSrc: Resource = $rawfile('video1.mp4');// 替换为开发者所需的视频资源文件。
+  @State videoSrc: Resource = $rawfile('video1.mp4'); // 替换为开发者所需的视频资源文件。
   controller: VideoControllerAsync = new VideoControllerAsync();
 
   build() {
@@ -1349,7 +1349,7 @@ struct VideoControllerAsyncExample {
               console.info('start success')
             })
             .catch((err: BusinessError) => { // catch处理执行失败的场景。
-              console.info(`start failed: ${err.message}`)
+              console.error(`start failed: ${err.message}`)
             })
         }).margin(2)
         Button('pause').onClick(() => {
@@ -1358,7 +1358,7 @@ struct VideoControllerAsyncExample {
               console.info('pause success')
             })
             .catch((err: BusinessError) => {
-              console.info(`pause failed: ${err.message}`)
+              console.error(`pause failed: ${err.message}`)
             })
         }).margin(2)
         Button('stop').onClick(() => {
@@ -1367,7 +1367,7 @@ struct VideoControllerAsyncExample {
               console.info('stop success')
             })
             .catch((err: BusinessError) => {
-              console.info(`stop failed: ${err.message}`)
+              console.error(`stop failed: ${err.message}`)
             })
         }).margin(2)
         Button('reset').onClick(() => {
@@ -1376,7 +1376,7 @@ struct VideoControllerAsyncExample {
               console.info('reset success')
             })
             .catch((err: BusinessError) => {
-              console.info(`reset failed: ${err.message}`)
+              console.error(`reset failed: ${err.message}`)
             })
         }).margin(2)
       }

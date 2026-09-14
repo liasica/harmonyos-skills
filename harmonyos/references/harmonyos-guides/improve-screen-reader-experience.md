@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/improve-scree
 title: 提升屏幕朗读无障碍体验
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:43+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:10+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ebf0fd8ad804e039836d4396d369dde1d6e7388a29ca0a900e198ac4047164e2
 ---
 

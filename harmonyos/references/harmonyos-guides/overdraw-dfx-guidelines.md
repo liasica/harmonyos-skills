@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/overdraw-dfx-
 title: 过度绘制调试使用指导
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 过度绘制调试使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:04+08:00
+scraped_at: 2026-09-15T07:02:30+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:54b90059dcea01708c7fbd8cfacdd095cddf02102280402c146c2f81be426c62
+content_hash: sha256:9d67f47cbb3431b8ef34606f4aaf682d959ca89a1df2a4584deca7cda6473781
 ---
 
 当应用页面布局的嵌套程度过深时，应用渲染阶段会存在一些组件的绘制指令被其他组件的绘制指令部分或完全覆盖遮挡的情况，造成冗余的CPU、GPU等计算资源的使用。这种一个屏幕上的像素点被重复绘制了多次的情况被称为过度绘制（Overdraw）。开发者可通过系统提供的过度绘制调试指令，查看引起过度绘制的组件位置及其层级，从而减轻应用渲染时的负载。
@@ -23,14 +23,14 @@ content_hash: sha256:54b90059dcea01708c7fbd8cfacdd095cddf02102280402c146c2f81be4
   param set debug.graphic.overdraw true
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/PfnGNaPxRVqg8gtk9TqjCA/zh-cn_image_0000002747211351.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/1so2Sk4ERba7HxBOGQ5yJg/zh-cn_image_0000002753295537.png)
 * 关闭过度绘制调试功能：
 
   ```screen
   param set debug.graphic.overdraw false
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/F1PguGSEQ0uN09vh__3kvg/zh-cn_image_0000002717771416.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/ysljDc6vSUi1-brjKJT_Fw/zh-cn_image_0000002753455455.png)
 * 查看是否开启了过度绘制调试功能：
 
   true表示开启了过度绘制功能，false则表示未开启。
@@ -39,7 +39,7 @@ content_hash: sha256:54b90059dcea01708c7fbd8cfacdd095cddf02102280402c146c2f81be4
   param get debug.graphic.overdraw
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/9nFWJK-aTkOFBVT404FvcQ/zh-cn_image_0000002717611484.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/qVGKrnA7RNisgb0LqvUpzg/zh-cn_image_0000002723855690.png)
 
 ## 过度绘制组件分析
 
@@ -91,7 +91,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/dvSHF7ujQjq9acM2rW-zzA/zh-cn_image_0000002747291435.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/f5rc_ejrRDi8QC-Jd6UyDg/zh-cn_image_0000002723695772.png)
 
 编译安装后打开过度绘制调试功能，应用界面如上图所示。
 

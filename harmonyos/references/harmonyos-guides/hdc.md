@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc
 title: hdc
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hdc
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:df871765bfc1704820684bab56461f34369392571e4b4f06eefc13e5cd6d335a
+scraped_at: 2026-09-15T07:02:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:3e6f82a8f1d462d5a0c735ca65377e66681f6a3dabc1294d8b8fce4cafc5d6ce
 ---
 
 hdc（HarmonyOS Device Connector）是提供给开发人员的命令行调试工具，用于与设备进行交互调试、数据传输、日志查看以及应用安装等操作。该工具支持在Windows/Linux/MacOS系统上运行，为开发者提供高效、便捷的设备调试能力。
@@ -20,7 +20,7 @@ hdc包含三部分：
 
 如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/G1VJz_OxTR6-deoQ9e234w/zh-cn_image_0000002747291253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/fpUnjStYS3K4iKAbx9aiiA/zh-cn_image_0000002723695590.png)
 
 **说明** 
 
@@ -32,9 +32,8 @@ hdc包含三部分：
 
 hdc可以选择以下任意一种方式获取：
 
-1.通过HarmonyOS SDK获取hdc工具。HarmonyOS SDK已嵌入[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)中，无需额外下载配置。hdc默认安装在DevEco Studio/sdk/default/openharmony/toolchains路径下，MacOS系统的sdk位于DevEco Studio/Contents目录下。
-
-2.通过[Command Line Tools](https://developer.huawei.com/consumer/cn/download/)工具中的sdk目录获取相关工具。hdc程序默认安装在Command Line Tools/sdk/default/openharmony/toolchains路径下。
+1. 通过HarmonyOS SDK获取hdc工具。HarmonyOS SDK已嵌入[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/)中，无需额外下载配置。hdc默认安装在DevEco Studio/sdk/default/openharmony/toolchains路径下，MacOS系统的sdk位于DevEco Studio/Contents目录下。
+2. 通过[Command Line Tools](https://developer.huawei.com/consumer/cn/download/)工具中的sdk目录获取相关工具。hdc程序默认安装在Command Line Tools/sdk/default/openharmony/toolchains路径下。
 
 hdc支持USB和无线两种连接调试方式。在设备的设置>系统>开发者选项中开启或关闭调试开关 ，无需重启设备即可生效。如果设备未启用“开发者选项”，可参考[开发者选项](ide-developer-mode.md#section530763213432)进行启用。具体调试连接方式及操作步骤请参考[USB连接场景](hdc.md#usb连接场景)和[TCP连接场景](hdc.md#tcp连接场景)。
 
@@ -398,7 +397,7 @@ TCP调试功能尚未稳定，建议仅在测试环境中使用。
 
 远程连接场景指客户端（通常是开发者使用的本地电脑）通过网络与服务器（通常是连接了调试设备的服务器或开发机）建立连接，实现客户端对目标设备的远程调试，控制和管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/6TamOlYDSvKlvxS19SV3Yw/zh-cn_image_0000002747211171.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/sX44kEhuRXmK10d6kDI40A/zh-cn_image_0000002753295357.png)
 
 远程连接使用-s参数来指定服务器的网络参数，包括地址和端口号，该设置只在当前命令执行期间有效，命令格式如下：
 
@@ -783,7 +782,7 @@ hdc file send [-a|-sync|-z|-m|-cwd path|-b bundlename] SOURCE DEST
 | 参数名 | 说明 |
 | --- | --- |
 | SOURCE | 本地待传输的文件路径。 |
-| DEST | 远程目标文件路径。  从API版本21开始，媒体库文件支持通过hdc进行部分操作（低版本使用会提示[Fail]Error opening file: ...）。  媒体库文件路径：/mnt/data/<uid>/media\_fuse/Photo/目录及其子目录，<uid>为当前用户的id。  通过hdc对媒体库操作指导参见[mediatool](mediatool.md#hdc命令)。 |
+| DEST | 远程目标文件路径。  从API版本21开始，媒体库文件支持通过hdc进行部分操作（低版本使用会提示[Fail]Error opening file: ...）。  媒体库文件路径：/mnt/data/<uid>/media\_fuse/Photo/目录及其子目录，<uid>为当前用户的id。  通过hdc对媒体库操作指导参见[mediatool](mediatool.md)。 |
 | -a | 保留文件修改时间戳。 |
 | -sync | 只传输文件mtime有更新的文件。  mtime（modified timestamp）：修改后的时间戳。 |
 | -z | 通过LZ4格式压缩传输，此功能未开放，请勿使用。 |
@@ -828,7 +827,7 @@ hdc file recv [-a|-sync|-z|-m|-cwd path|-b bundlename] DEST SOURCE
 | 参数名 | 说明 |
 | --- | --- |
 | SOURCE | 本地待接收的文件路径。 |
-| DEST | 远程待传输的文件路径。  从API版本21开始，媒体库文件支持通过hdc进行部分操作（低版本使用会提示[Fail]Error opening file: ...）。  媒体库文件路径：/mnt/data/<uid>/media\_fuse/Photo/目录及其子目录，<uid>为当前用户的id。  媒体库操作更多信息参见[mediatool](mediatool.md#hdc命令)。 |
+| DEST | 远程待传输的文件路径。  从API版本21开始，媒体库文件支持通过hdc进行部分操作（低版本使用会提示[Fail]Error opening file: ...）。  媒体库文件路径：/mnt/data/<uid>/media\_fuse/Photo/目录及其子目录，<uid>为当前用户的id。  媒体库操作更多信息参见[mediatool](mediatool.md)。 |
 | -a | 保留文件修改时间戳。 |
 | -sync | 只传输文件mtime有更新的文件。  mtime（modified timestamp）：修改后的时间戳。 |
 | -z | 通过LZ4格式压缩传输，此功能未开放，请勿使用。 |
@@ -1864,7 +1863,7 @@ Linux和MacOS系统非管理员角色运行hdc后，使用USB方式连接设备�
 
 hdc文件传输命令执行出现乱码，如使用file recv从设备端发送带有中文名称的文件到本地，报错提示[Fail]Error opening file: no such file or directory, path:XXXXX，其中path显示中文乱码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/TwTYDy0bS7CBpsE9uVu7Dw/zh-cn_image_0000002717771236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/sIuFZGyKSBSluaHOmeibnw/zh-cn_image_0000002753455275.png)
 
 **可能原因&解决方法**
 
@@ -1878,7 +1877,7 @@ API版本12开始，文件传输命令支持参数路径中包含中文，版本
 
 使用hdc list targets命令查询已连接设备，连接设备标识后显示Unauthorized。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/7uKq483PRYKAoVozW_a-Qw/zh-cn_image_0000002717611302.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/sN39ASidTxKWVSJxrbykqw/zh-cn_image_0000002723855510.png)
 
 **可能原因&解决方法**
 

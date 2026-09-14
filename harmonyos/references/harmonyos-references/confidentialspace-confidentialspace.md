@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/confident
 title: "@hms.security.confidentialSpace (机密空间服务)"
 breadcrumb: API参考 > 系统 > 安全 > Confidential Space Kit（机密空间服务） > ArkTS API > @hms.security.confidentialSpace (机密空间服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:40+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a82e9d7751fd5beaa9ff8f01931af378c7d9706176a2d037e6c3d20ec64511be
+scraped_at: 2026-09-15T07:06:19+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:f4dc5485d36f43f9fbea448bf6259db31e33417e77b64064976732cfed125ec3
 ---
 
 机密空间服务提供了在机密空间内部运行数据应用、处理隐私数据的能力，支持应用与系统、应用与应用在空间内安全地共享数据。
@@ -381,6 +381,7 @@ runApp(appPath: string, argv: string[]): Promise<DataAppHandle>
 | 1028700005 | Access permission denied. |
 | 1028700006 | Call limit reached. |
 | 1028700007 | Operation timed out. |
+| 1028700009 | Communication between client and data manager failed. |
 | 1028700012 | The profile contains invalid configuration items. |
 | 1028700015 | Internal error on the client side. |
 | 1028700016 | Internal error on the confidential space manager side. |

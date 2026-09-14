@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/external-audi
 title: 开发麦克风录制(外录)功能
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:02:16+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:249f0f79fc02ca8e9ef0704cd448748c5bd617598bd8327e5ea62af2ad19c4d6
 ---
 

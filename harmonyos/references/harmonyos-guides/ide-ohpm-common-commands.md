@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-comm
 title: 常用命令
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:40+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:03:54+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:a54e8f8149390b7f938ac90f35c13536f1d6a10dbb5d11b57c0021140ac99cd3
 ---
 

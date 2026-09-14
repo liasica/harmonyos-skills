@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-reliabil
 title: 数据可靠性与安全性
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:19+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:12+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:1c714b0f223c52956da70519b449e3bc6e104c807061211a2f5b0beb82331bb4
 ---
 

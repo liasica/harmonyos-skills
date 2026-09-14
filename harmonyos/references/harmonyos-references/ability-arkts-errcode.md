@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ability-a
 title: 错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:03+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:04:10+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fd9bb0d39db5c3dd6844e1220403ce4a418a1a2f4e5a68e5113122aade0a0fdf
 ---
 

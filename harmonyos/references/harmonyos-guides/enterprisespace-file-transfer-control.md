@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 文件外发管控
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 空间互传 > 文件外发管控
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:15+08:00
+scraped_at: 2026-09-15T07:02:42+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e50896f4f44e405ebe30c7c50f034299f2679619e1866e100bb71ed290fc3a6a
+content_hash: sha256:1d69be787a5c925e7e04541644bc16d7489f2dbc61bab34b204739593bc32633
 ---
 
 从API版本6.0.0(20)开始，支持设置和获取审批信息、配置空间互传单双通策略的能力。
 
 ## 场景介绍
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/BjQMvNf4T9ibi3xV-U9Mbw/zh-cn_image_0000002717611756.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/DwcZWTqzR7SuUYpAcEQEfw/zh-cn_image_0000002723855962.jpg)
 
 支持在文件传输场景中，通过设置空间的单通或双通策略，灵活配置应用文件在空间间的外发权限，实现安全可控的跨空间文件共享。当文件外发需纳入审批流程管控时，系统支持配置相关审批信息。同时，通过调用审批状态同步接口，实时获取审批结果，确保外发流程的安全与合规。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-vid
 title: 分享视频
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享视频
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:30+08:00
+scraped_at: 2026-09-15T07:02:58+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:8492b1e48ba4a79c4e52056d77a2f50d4d0d4edb6337b5e483ba5f59ce03d802
+content_hash: sha256:c674158d8e2ea4592c72f6973b510d5f2a8380172b231d0c0482641606a1e1b6
 ---
 
 视频类型分享支持将一个或多个视频分享到目标设备/目标应用。
@@ -13,7 +13,7 @@ content_hash: sha256:8492b1e48ba4a79c4e52056d77a2f50d4d0d4edb6337b5e483ba5f59ce0
 * 目标设备接收时，视频会保存到图库中。
 * 目标应用接收时，可便捷地处理视频内容。例如：将一个视频分享给畅连，发送给畅连好友。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/GJwa9XyVShqNykCI681dGw/zh-cn_image_0000002717612062.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/oTfzsDiKTeK7GukbfvxH0Q/zh-cn_image_0000002723856268.png)
 
 ## 开发步骤
 

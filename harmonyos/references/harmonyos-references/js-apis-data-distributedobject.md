@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.distributedDataObject (分布式数据对象)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.distributedDataObject (分布式数据对象)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c213d5031febd443e857fc3822406959b33caeaa48244916350462f8ec5187aa
+scraped_at: 2026-09-15T07:04:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:d39bfc380a46da5d108d6ebd6acfa9f5b845277f15c0eeddab2ba9acd4686df7
 ---
 
 本模块提供管理基本数据对象的相关能力，包括创建、查询、删除、修改、订阅等；同时支持相同应用多设备间的分布式数据对象协同能力。分布式数据对象处理数据时，不会解析用户数据的内容，存储路径安全性较低，不建议传输个人敏感数据和隐私数据。
@@ -189,7 +189,7 @@ type StatusObserver = (sessionId: string, networkId: string, status: string) => 
 | --- | --- | --- | --- |
 | sessionId | string | 是 | 标识变更对象的sessionId。长度不大于128字节，且只能包含字母、数字或下划线\_。 |
 | networkId | string | 是 | 对端设备的网络标识。要求字符串非空且长度不超过255字节。 |
-| status | string | 是 | 标识分布式数据对象的状态，可能的取值有'online'（上线）、'offline'（下线）和'restore'（恢复）。 |
+| status | string | 是 | 标识分布式数据对象的状态，可能的取值有'online'（上线）、'offline'（下线）和'restored'（恢复）。 |
 
 ## ProgressObserver20+
 

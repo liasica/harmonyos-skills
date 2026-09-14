@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（动效、视效相关属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（动效、视效相关属性）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:01d581489b8ac5a7bb7ed4b6c33d448123bdceabbe9b96930b815dba157b6b08
+scraped_at: 2026-09-15T07:05:28+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:4a4482e7a15c2250e46883c802e9276e400912769a57b941a5612f6de21a538a
 ---
 
 ```c
@@ -334,95 +334,89 @@ NODE_CLIP_SHAPE = 24
 
 **参数：**
 
-1.rect类型：
+1. rect类型：
 
-| 参数项 | 描述 |
-| --- | --- |
-| .value[0].i32 | 裁剪类型，参数类型[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，rect类型需设置为ARKUI\_CLIP\_TYPE\_RECTANGLE。 |
-| .value[1].f32 | 矩形宽度，单位为vp。 |
-| .value[2].f32 | 矩形高度，单位为vp。 |
-| .value[3].f32 | 矩形圆角宽度，单位为vp。 |
-| .value[4].f32 | 矩形圆角高度，单位为vp。 |
-| .value[5]?.f32 | 矩形形状的左上圆角半径，单位为vp，默认值0。 |
-| .value[6]?.f32 | 矩形形状的左下圆角半径，单位为vp，默认值0。 |
-| .value[7]?.f32 | 矩形形状的右上圆角半径，单位为vp，默认值0。 |
-| .value[8]?.f32 | 矩形形状的右下圆角半径，单位为vp，默认值0。 |
-| .object | 参数类型为[ArkUI\_RenderNodeClipOption](capi-arkui-nativemodule-arkui-rendernodeclipoption.md)，矩形形状的坐标偏移量，在仅传入.object参数时生效。 |
+   | 参数项 | 描述 |
+   | --- | --- |
+   | .value[0].i32 | 裁剪类型，参数类型[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，rect类型需设置为ARKUI\_CLIP\_TYPE\_RECTANGLE。 |
+   | .value[1].f32 | 矩形宽度，单位为vp。 |
+   | .value[2].f32 | 矩形高度，单位为vp。 |
+   | .value[3].f32 | 矩形圆角宽度，单位为vp。 |
+   | .value[4].f32 | 矩形圆角高度，单位为vp。 |
+   | .value[5]?.f32 | 矩形形状的左上圆角半径，单位为vp，默认值0。 |
+   | .value[6]?.f32 | 矩形形状的左下圆角半径，单位为vp，默认值0。 |
+   | .value[7]?.f32 | 矩形形状的右上圆角半径，单位为vp，默认值0。 |
+   | .value[8]?.f32 | 矩形形状的右下圆角半径，单位为vp，默认值0。 |
+   | .object | 参数类型为[ArkUI\_RenderNodeClipOption](capi-arkui-nativemodule-arkui-rendernodeclipoption.md)，矩形形状的坐标偏移量，在仅传入.object参数时生效。 |
+2. circle类型：
 
-2.circle类型：
+   | 参数项 | 描述 |
+   | --- | --- |
+   | .value[0].i32 | 裁剪类型，参数类型ArkUI\_ClipType，circle类型需设置为ARKUI\_CLIP\_TYPE\_CIRCLE。 |
+   | .value[1].f32 | 圆形宽度，单位为vp。 |
+   | .value[2].f32 | 圆形高度，单位为vp。 |
+   | .object | 参数类型为[ArkUI\_RenderNodeClipOption](capi-arkui-nativemodule-arkui-rendernodeclipoption.md)，圆形坐标偏移量，在仅传入.object参数时生效。 |
+3. ellipse类型：
 
-| 参数项 | 描述 |
-| --- | --- |
-| .value[0].i32 | 裁剪类型，参数类型ArkUI\_ClipType，circle类型需设置为ARKUI\_CLIP\_TYPE\_CIRCLE。 |
-| .value[1].f32 | 圆形宽度，单位为vp。 |
-| .value[2].f32 | 圆形高度，单位为vp。 |
-| .object | 参数类型为[ArkUI\_RenderNodeClipOption](capi-arkui-nativemodule-arkui-rendernodeclipoption.md)，圆形坐标偏移量，在仅传入.object参数时生效。 |
+   | 参数项 | 描述 |
+   | --- | --- |
+   | .value[0].i32 | 裁剪类型，参数类型ArkUI\_ClipType，ellipse类型需设置为ARKUI\_CLIP\_TYPE\_ELLIPSE。 |
+   | .value[1].f32 | 椭圆形宽度，单位为vp。 |
+   | .value[2].f32 | 椭圆形高度，单位为vp。 |
+   | .object | 参数类型为[ArkUI\_RenderNodeClipOption](capi-arkui-nativemodule-arkui-rendernodeclipoption.md)，椭圆形坐标偏移量，在仅传入.object参数时生效。 |
+4. path类型：
 
-3.ellipse类型：
-
-| 参数项 | 描述 |
-| --- | --- |
-| .value[0].i32 | 裁剪类型，参数类型ArkUI\_ClipType，ellipse类型需设置为ARKUI\_CLIP\_TYPE\_ELLIPSE。 |
-| .value[1].f32 | 椭圆形宽度，单位为vp。 |
-| .value[2].f32 | 椭圆形高度，单位为vp。 |
-| .object | 参数类型为[ArkUI\_RenderNodeClipOption](capi-arkui-nativemodule-arkui-rendernodeclipoption.md)，椭圆形坐标偏移量，在仅传入.object参数时生效。 |
-
-4.path类型：
-
-| 参数项 | 描述 |
-| --- | --- |
-| .value[0].i32 | 裁剪类型，参数类型ArkUI\_ClipType，path类型需设置为ARKUI\_CLIP\_TYPE\_PATH。 |
-| .value[1].f32 | 路径宽度，单位为vp。 |
-| .value[2].f32 | 路径高度，单位为vp。 |
-| .string | 路径绘制的命令字符串，格式遵循SVG path数据语法，如'M0 0 L100 100 Z'。 |
-| .object | 参数类型为[ArkUI\_RenderNodeClipOption](capi-arkui-nativemodule-arkui-rendernodeclipoption.md)，路径绘制的命令，在仅传入.object参数时生效。 |
+   | 参数项 | 描述 |
+   | --- | --- |
+   | .value[0].i32 | 裁剪类型，参数类型ArkUI\_ClipType，path类型需设置为ARKUI\_CLIP\_TYPE\_PATH。 |
+   | .value[1].f32 | 路径宽度，单位为vp。 |
+   | .value[2].f32 | 路径高度，单位为vp。 |
+   | .string | 路径绘制的命令字符串，格式遵循SVG path数据语法，如'M0 0 L100 100 Z'。 |
+   | .object | 参数类型为[ArkUI\_RenderNodeClipOption](capi-arkui-nativemodule-arkui-rendernodeclipoption.md)，路径绘制的命令，在仅传入.object参数时生效。 |
 
 **返回：**
 
-1.rect类型：
+1. rect类型：
 
-| 类型 | 说明 |
-| --- | --- |
-| .value[0].i32 | 裁剪类型，参数类型为[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，rect类型返回ARKUI\_CLIP\_TYPE\_RECTANGLE。 |
-| .value[1].f32 | 矩形宽度，单位为vp。 |
-| .value[2].f32 | 矩形高度，单位为vp。 |
-| .value[3].f32 | 矩形圆角宽度，单位为vp。 |
-| .value[4].f32 | 矩形圆角高度，单位为vp。 |
-| .value[5]?.f32 | 矩形形状的左上圆角半径，单位为vp。 |
-| .value[6]?.f32 | 矩形形状的左下圆角半径，单位为vp。 |
-| .value[7]?.f32 | 矩形形状的右上圆角半径，单位为vp。 |
-| .value[8]?.f32 | 矩形形状的右下圆角半径，单位为vp。 |
-| .value[9]?.f32 | 矩形形状的横坐标偏移，单位为vp。 |
-| .value[10]?.f32 | 矩形形状的纵坐标偏移，单位为vp。 |
+   | 类型 | 说明 |
+   | --- | --- |
+   | .value[0].i32 | 裁剪类型，参数类型为[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，rect类型返回ARKUI\_CLIP\_TYPE\_RECTANGLE。 |
+   | .value[1].f32 | 矩形宽度，单位为vp。 |
+   | .value[2].f32 | 矩形高度，单位为vp。 |
+   | .value[3].f32 | 矩形圆角宽度，单位为vp。 |
+   | .value[4].f32 | 矩形圆角高度，单位为vp。 |
+   | .value[5]?.f32 | 矩形形状的左上圆角半径，单位为vp。 |
+   | .value[6]?.f32 | 矩形形状的左下圆角半径，单位为vp。 |
+   | .value[7]?.f32 | 矩形形状的右上圆角半径，单位为vp。 |
+   | .value[8]?.f32 | 矩形形状的右下圆角半径，单位为vp。 |
+   | .value[9]?.f32 | 矩形形状的横坐标偏移，单位为vp。 |
+   | .value[10]?.f32 | 矩形形状的纵坐标偏移，单位为vp。 |
+2. circle类型：
 
-2.circle类型：
+   | 类型 | 说明 |
+   | --- | --- |
+   | .value[0].i32 | 裁剪类型，参数类型为[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，circle类型返回ARKUI\_CLIP\_TYPE\_CIRCLE。 |
+   | .value[1].f32 | 圆形宽度，单位为vp。 |
+   | .value[2].f32 | 圆形高度，单位为vp。 |
+   | .value[3]?.f32 | 圆形横坐标偏移，单位为vp。 |
+   | .value[4]?.f32 | 圆形纵坐标偏移，单位为vp。 |
+3. ellipse类型：
 
-| 类型 | 说明 |
-| --- | --- |
-| .value[0].i32 | 裁剪类型，参数类型为[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，circle类型返回ARKUI\_CLIP\_TYPE\_CIRCLE。 |
-| .value[1].f32 | 圆形宽度，单位为vp。 |
-| .value[2].f32 | 圆形高度，单位为vp。 |
-| .value[3]?.f32 | 圆形横坐标偏移，单位为vp。 |
-| .value[4]?.f32 | 圆形纵坐标偏移，单位为vp。 |
+   | 类型 | 说明 |
+   | --- | --- |
+   | .value[0].i32 | 裁剪类型，参数类型为[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，ellipse类型返回ARKUI\_CLIP\_TYPE\_ELLIPSE。 |
+   | .value[1].f32 | 椭圆形宽度，单位为vp。 |
+   | .value[2].f32 | 椭圆形高度，单位为vp。 |
+   | .value[3]?.f32 | 椭圆形横坐标偏移，单位为vp。 |
+   | .value[4]?.f32 | 椭圆形纵坐标偏移，单位为vp。 |
+4. path类型：
 
-3.ellipse类型：
-
-| 类型 | 说明 |
-| --- | --- |
-| .value[0].i32 | 裁剪类型，参数类型为[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，ellipse类型返回ARKUI\_CLIP\_TYPE\_ELLIPSE。 |
-| .value[1].f32 | 椭圆形宽度，单位为vp。 |
-| .value[2].f32 | 椭圆形高度，单位为vp。 |
-| .value[3]?.f32 | 椭圆形横坐标偏移，单位为vp。 |
-| .value[4]?.f32 | 椭圆形纵坐标偏移，单位为vp。 |
-
-4.path类型：
-
-| 类型 | 说明 |
-| --- | --- |
-| .value[0].i32 | 裁剪类型，参数类型为[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，path类型返回ARKUI\_CLIP\_TYPE\_PATH。 |
-| .value[1].f32 | 路径宽度，单位为vp。 |
-| .value[2].f32 | 路径高度，单位为vp。 |
-| .string | 路径绘制的命令字符串。 |
+   | 类型 | 说明 |
+   | --- | --- |
+   | .value[0].i32 | 裁剪类型，参数类型为[ArkUI\_ClipType](capi-native-type-visual-h.md#arkui_cliptype)，path类型返回ARKUI\_CLIP\_TYPE\_PATH。 |
+   | .value[1].f32 | 路径宽度，单位为vp。 |
+   | .value[2].f32 | 路径高度，单位为vp。 |
+   | .string | 路径绘制的命令字符串。 |
 
 ## NODE\_TRANSFORM
 

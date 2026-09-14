@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸式系统材质视效
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 沉浸式系统材质视效
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:06+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:5f164fed9bad47a166c519a71fe2a6c8e73ac21817ae77c05b75bc91c2cc74b0
+scraped_at: 2026-09-15T07:01:26+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:e4b2ec6ca8aa2978178f9aa2cf5466397110f010c22df9c71d4cc3d40e3299e0
 ---
 
 本文介绍如何按场景定制沉浸式系统材质的视效，包括设置沉浸式系统材质反色、为沉浸式系统材质赋色、设置沉浸式系统材质交互效果以及设置沉浸式系统材质阴影效果。
@@ -16,7 +16,7 @@ content_hash: sha256:5f164fed9bad47a166c519a71fe2a6c8e73ac21817ae77c05b75bc91c2c
 
 如开启自动反色后文字颜色没有变化，排查步骤请参见[开启自动反色后文字颜色没有变化](arkts-immersive-light-sense-faq.md#开启自动反色后文字颜色没有变化)。
 
-以下示例为自动反色的效果：材质下方的背景在黑白之间滚动变化，为TabBar组件设置colorInvert为true的ULTRA\_THIN材质后，TabBar内的文字和图标颜色随背景自动反色，使文字与图标清晰可读。
+以下示例为高算力设备均衡档位自动反色的效果：材质下方的背景在黑白之间滚动变化，为TabBar组件设置colorInvert为true的ULTRA\_THIN材质后，TabBar内的文字和图标颜色随背景自动反色，使文字与图标清晰可读。
 
 ```typescript
 import { uiMaterial } from '@kit.ArkUI';
@@ -84,7 +84,7 @@ struct PageMaterialReverse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/YrjoCs0xR5eRj--3AWMsrg/zh-cn_image_0000002717610572.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/6P8I7ezgRIyqyDc7c42K-g/zh-cn_image_0000002723854780.gif)
 
 ## 为沉浸式系统材质赋色
 
@@ -94,7 +94,7 @@ struct PageMaterialReverse {
 
 materialColor参数对所有档位的算力设备均生效。在高算力和中算力设备上，该参数为材质滤镜再混合一层纯色效果；在低算力设备上，该参数作为背景色[backgroundColor](../harmonyos-references/ts-universal-attributes-background.md#backgroundcolor)属性值。
 
-以下示例为材质赋色的效果：为ULTRA\_THIN材质组件设置半透明的materialColor后，材质在透出背景内容的同时呈现对应的色调。
+以下示例为高算力设备均衡档位的材质赋色的效果：为ULTRA\_THIN材质组件设置半透明的materialColor后，材质在透出背景内容的同时呈现对应的色调。
 
 ```typescript
 import { uiMaterial } from '@kit.ArkUI';
@@ -143,7 +143,7 @@ struct MaterialColorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/900dXPaARbGDq-1zuvI-hA/zh-cn_image_0000002747290525.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/6O6Z4BwaRlCw7VBq_3GWHw/zh-cn_image_0000002723694862.jpg)
 
 ## 设置沉浸式系统材质交互效果
 
@@ -152,7 +152,7 @@ struct MaterialColorExample {
 * **交互形变**：通过[interactive](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)开启交互形变，组件在按压时产生弹性形变，松手后自动恢复，增强交互的视觉反馈。
 * **点光源**：通过[lightEffect](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)开启点光源，用户手指触摸组件时会产生流光跟随效果。lightEffect传入有效对象即启用，传入null或undefined则不启用；对象中的color字段自定义流光颜色，默认值为Color.White。
 
-以下示例为交互形变与点光源的效果：设置interactive为true并传入lightEffect对象后，按压组件时产生弹性形变，手指触摸时产生流光跟随效果。
+以下示例为高算力设备均衡档位的交互形变与点光源的效果：设置interactive为true并传入lightEffect对象后，按压组件时产生弹性形变，手指触摸时产生流光跟随效果。
 
 ```typescript
 import { uiMaterial } from '@kit.ArkUI';
@@ -201,13 +201,13 @@ struct MaterialInteractiveLightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/MYCKPFOGTKCZkxUxPIn9Vg/zh-cn_image_0000002747210443.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/EbZc-MC6QvmsWlNs7nsCCw/zh-cn_image_0000002753294629.gif)
 
 ## 设置沉浸式系统材质阴影效果
 
 沉浸式系统材质默认自带阴影效果（[applyShadow](../harmonyos-references/arkts-apis-uimaterial.md#immersiveoptions)为true），优先于[shadow](../harmonyos-references/ts-universal-attributes-image-effect.md#shadow)通用属性，此时自定义的shadow设置不会生效。如需使用自定义阴影，将applyShadow置为false后再设置shadow，沉浸式系统材质的阴影效果即不生效。
 
-将applyShadow置为false后设置自定义shadow（如粉色阴影）的效果，示例如下：
+将applyShadow置为false后设置自定义shadow（如粉色阴影）的效果，示例为高算力设备均衡档位的效果如下：
 
 ```typescript
 import { uiMaterial } from '@kit.ArkUI';
@@ -257,4 +257,4 @@ struct CustomShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/sPQ8Aqr0TLa-aTDqdEjX1w/zh-cn_image_0000002717770508.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/RDIOoh8bRKmBhdA2ilQo4w/zh-cn_image_0000002753454547.jpg)

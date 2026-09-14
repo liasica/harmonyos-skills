@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 自定义弹窗 (CustomDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 自定义弹窗 (CustomDialog)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f49278529da1eae3c16195ce87273610ab4c2fab812181dd7d4bd4a021aae2a3
+scraped_at: 2026-09-15T07:05:10+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:4a7ae1af2de036c851308cb83c8f55c6931ba5402b2f86b717f5355c768df59d
 ---
 
 通过CustomDialogController类显示自定义弹窗。使用弹窗组件时，优先考虑自定义弹窗，便于弹窗样式与内容的自定义。
@@ -342,7 +342,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/FKXy1WNvQ-OpnlFTR3nhhg/zh-cn_image_0000002747293017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/dr_n3ljjQT2zeRKDxOmfTg/zh-cn_image_0000002723857272.gif)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
@@ -435,7 +435,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/WW0MVhgcQyivyYVZrLPHaQ/zh-cn_image_0000002747212933.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/nMId48gCTsOHLZCUtilw9w/zh-cn_image_0000002723697354.jpg)
 
 ### 示例3（设置弹窗的样式）
 
@@ -527,7 +527,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/D-mrjWQ6QDKWy9FJIMWDzg/zh-cn_image_0000002717772998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/2VJ3SkY9QiupMCuFmjCU0g/zh-cn_image_0000002753297121.gif)
 
 ### 示例4（悬停态弹窗）
 
@@ -621,7 +621,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/L5diAc4aRkeKBZvSatbysA/zh-cn_image_0000002717613066.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/luQuLcsKQGq087HIfzn-2A/zh-cn_image_0000002753457039.gif)
 
 ### 示例5（获取弹窗的状态）
 
@@ -786,7 +786,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/EaON-oQXS72bWoc8qN7WFg/zh-cn_image_0000002747293019.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/X2Z3bJGeTqi3Jl639XUpqg/zh-cn_image_0000002723857274.gif)
 
 ### 示例7（自定义带loading的弹窗）
 
@@ -891,7 +891,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/vgLTvdEES2O1otFbkmq-Dw/zh-cn_image_0000002747212935.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Xup-752RTqKhhCniT_7X7g/zh-cn_image_0000002723697356.gif)
 
 ### 示例8（不使用keyboardAvoidDistance调整弹窗与软键盘的间距）
 
@@ -1032,7 +1032,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/OJBTvt2kRCW16xwA1aoo5A/zh-cn_image_0000002717773000.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/jRG6AfMiToyK1z1EUpfOQw/zh-cn_image_0000002753297123.gif)
 
 ### 示例9（弹窗生命周期）
 
@@ -1129,7 +1129,7 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/It5oteRqQ4mn8e1gmzPIeg/zh-cn_image_0000002717613068.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/vXI9BwYNTkCXFqSsC1dkrw/zh-cn_image_0000002753457041.gif)
 
 ### 示例10（不同customStyle下的弹窗示例）
 
@@ -1215,7 +1215,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/oM0dSLZkTNKSerRKtl1tiA/zh-cn_image_0000002747293021.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Jeo2vQ_ARWOq-iMnnlHPFQ/zh-cn_image_0000002723857276.gif)
 
 ### 示例11（自定义背景模糊效果参数）
 
@@ -1277,7 +1277,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/YPj1q7WwQBmfZ6AiqY1grw/zh-cn_image_0000002747212937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/dp3k_se0TUOvvOmnNEWLhA/zh-cn_image_0000002723697358.png)
 
 ### 示例12（自定义背景效果参数）
 
@@ -1340,7 +1340,7 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/fDg1azDOQbqD_i6Pr9ncSA/zh-cn_image_0000002717773002.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/u-FQA0ljRmuZZH1UhfiRhQ/zh-cn_image_0000002753297125.png)
 
 ### 示例13（自定义弹窗动态刷新宽度）
 
@@ -1407,13 +1407,13 @@ struct CustomDialogUser {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/NkzojCR4QBy-2SX52xwLUQ/zh-cn_image_0000002717613070.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/m3MTX4PAQuamET0QQt7ADA/zh-cn_image_0000002753457043.gif)
 
 ### 示例14（设置弹窗的沉浸光感效果）
 
-该示例通过[systemMaterial](ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)设置组件的系统材质，实现沉浸光感效果。
+该示例通过[systemMaterial](ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)设置组件的系统材质，实现沉浸光感效果。设置系统材质后，CustomDialog弹出过程中会有非线性形变和边缘流光。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在[CustomDialogControllerOptions](ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)中新增了systemMaterial属性。
 
@@ -1471,8 +1471,8 @@ struct CustomDialogUser {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/3BhpnyxHT1qxkSdNZU82sw/zh-cn_image_0000002747293023.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/S5f-GMpaRuuepHZB2O_ArQ/zh-cn_image_0000002723857278.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qPOjc6wUSDKOWKs6L9384w/zh-cn_image_0000002747212939.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/YjOlOHHgSUCZSJ7tUaDYLw/zh-cn_image_0000002723697360.gif)

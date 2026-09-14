@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: extension调试
 breadcrumb: 指南 > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > extension调试
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:29+08:00
+scraped_at: 2026-09-15T07:03:45+08:00
 doc_updated_at: 2026-01-15
-content_hash: sha256:a26b675c808cf30d5bcd1c781786c5553e9aa1a2b3cbede537deaabe0ba0772b
+content_hash: sha256:6f85cad8c8e56aecb249e78f00fe25be8e0f3d2c74d30b3213ee09b018f7147d
 ---
 
 开发者可通过两种方式对[Extension Ability](extensionability-overview.md)生命周期函数进行调试。
@@ -17,22 +17,22 @@ content_hash: sha256:a26b675c808cf30d5bcd1c781786c5553e9aa1a2b3cbede537deaabe0ba
 
 1. 参考[等待调试](ide-debug-arkts-attach-to-process.md)对当前调试工程进行调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/GWV-Qgi1TjehyV9DsG5UaA/zh-cn_image_0000002731383071.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/lSDzlfpdRrmSYK5XEPwkrw/zh-cn_image_0000002731383071.png)
 2. 在Extension Ability生命周期内设置断点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/X6yHOFp1R72a0tRD4mKMHQ/zh-cn_image_0000002731543045.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/W0mRSAC4RdSK0of5x2SCRw/zh-cn_image_0000002731543045.png)
 3. 等待Extension Ability生命周期函数代码调用从而命中断点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ifzkXHKgRAK-J1cYu8SaUA/zh-cn_image_0000002731543041.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/rIRpJsAfRgah3eLRuELyiA/zh-cn_image_0000002731543041.png)
 
 ## 修改运行配置方式
 
 1. 在运行调试窗口，运行配置项**Launch Options**选择**Specified Ability**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/XSWktWqjTTq_DSAVLcsirQ/zh-cn_image_0000002701823784.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/mFA8QmmiSa6Esna_ezQXLg/zh-cn_image_0000002701823784.png)
 2. 选择需要进行调试的Extension Ability。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/tQlXPiqqT6GoFunSs78BEQ/zh-cn_image_0000002731383077.png)
-3. 点击**OK**保存配置后，点击调试按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-OE1V83GRNe1M7RH7-WTbw/zh-cn_image_0000002701663862.png)，启动调试即可命中 Extension Ability 中的生命周期函数断点。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ULgsUWKSQFSZztdMo8xxtA/zh-cn_image_0000002731383077.png)
+3. 点击**OK**保存配置后，点击调试按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/0KCVx2opTL2N10_99SeU8w/zh-cn_image_0000002701663862.png)，启动调试即可命中 Extension Ability 中的生命周期函数断点。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/dN0ZvzMEQAuOFtF1Qi-qNA/zh-cn_image_0000002731543053.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/xI9RpLT4TzCQSPrruwKeRg/zh-cn_image_0000002731543053.png)

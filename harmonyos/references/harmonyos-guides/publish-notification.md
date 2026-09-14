@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/publish-notif
 title: 发布通知
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 发布通知
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:29+08:00
-doc_updated_at: 2026-04-30
+scraped_at: 2026-09-15T07:02:51+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:27179be870b25105a76bbed45c1e5cde77ea83252ec04de43f4abbd2e4d2effd
 ---
 

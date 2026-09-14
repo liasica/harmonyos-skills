@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-send-ale
 title: 发送通知消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送通知消息 > 发送通知消息
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:27+08:00
+scraped_at: 2026-09-15T07:02:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ac3b145b4473b45ac01df1c8d240fb82e38cfeecc9f4eeeb465d6856c52131be
+content_hash: sha256:f9a9d4215807b0ac0ec4af6fb1da409f7ff39143e030759a193377ec910611a2
 ---
 
 ## 场景介绍
@@ -421,7 +421,7 @@ Push Kit提供了多种通知消息样式，您可以自定义其中内容来吸
 
 您在发送通知消息时[notification](../harmonyos-references/push-scenariozed-api-request-param.md#notification)参数中必须携带**title**与**body**字段，来设置应用收到通知消息后展示在通知中心的标题与内容。文本内容最多显示3行，超出3行以“...”截断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/KMJNEN1CQDmUYOBaw5PvlQ/zh-cn_image_0000002717771932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Kmr4eLGCR5yXJXe31Mv7YA/zh-cn_image_0000002753455971.png)
 
 消息体示例：
 
@@ -454,7 +454,7 @@ Wearable、TV不支持此通知样式。
 
 您可以发送通知消息时携带[badge](../harmonyos-references/push-scenariozed-api-request-param.md#badge)字段来设置应用收到通知消息后以数字的形式展示角标，提醒用户查看消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/9ksyzZfPSVCv-QrQG9i_GQ/zh-cn_image_0000002717612000.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Y2Z1XdrnTlWhRsuPft1MJg/zh-cn_image_0000002723856206.png)
 
 消息体示例：
 
@@ -500,7 +500,7 @@ Wearable不支持此通知样式。
 
 您可以发送通知消息时携带[image](../harmonyos-references/push-scenariozed-api-request-param.md#notification)字段设置消息大图标内容，提醒用户查看消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/lq_-mgjHSgOSe6c7PeGugA/zh-cn_image_0000002747291953.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Q6vHyjVvREaCFrLVA76nSQ/zh-cn_image_0000002723696288.png)
 
 消息体示例：
 
@@ -534,7 +534,7 @@ Wearable不支持此通知样式。
 
 您可以发送通知消息时在[notification](../harmonyos-references/push-scenariozed-api-request-param.md#notification)中携带**inboxContent**和**style**字段设置通知消息为多行文本样式。最多可展示3行内容，每行内容无法完全展示时以“...”截断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/t5IOUWiuQx6JdhGb1b8O5w/zh-cn_image_0000002747211869.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/bs4gs8eqReWvT-iwBuUSQg/zh-cn_image_0000002753296055.png)
 
 消息体示例：
 

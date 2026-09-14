@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-follo
 title: 应用与系统实现未成年人模式联动
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 应用与系统实现未成年人模式联动
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:02+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:36+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:6e0efefd6dfa223eb3c2005f47991b0b34e3423628f168ba5b6b33cf1b622076
 ---
 

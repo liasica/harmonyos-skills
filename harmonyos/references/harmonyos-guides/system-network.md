@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-networ
 title: 网络
 breadcrumb: 指南 > 系统 > 网络
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:57+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:b46ca30c4bebc1c9ae573909387b6add857ee5600bc60da9829d74dd97853fad
 ---
 

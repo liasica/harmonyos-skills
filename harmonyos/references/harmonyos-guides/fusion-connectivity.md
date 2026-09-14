@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fusion-connec
 title: 融合短距
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 融合短距
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:01:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4021cfe495870009b015b0b737949b0622e255701d0073816331839d60506123
 ---
 

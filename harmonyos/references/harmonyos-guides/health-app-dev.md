@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-app-de
 title: Phone/Tablet应用开发
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Phone/Tablet应用开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:10+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:44+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e58e32e458490a47967e7dc130a7be41cffa8bff11c44a9644bebafd9bcb854c
 ---
 

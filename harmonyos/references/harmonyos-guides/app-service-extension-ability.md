@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-service-e
 title: 使用AppServiceExtensionAbility组件实现后台服务
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件 > 使用AppServiceExtensionAbility组件实现后台服务
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:98f634ff70181d7747d7186671be59f8c991613f45ce8353a6d448632bcf177a
+scraped_at: 2026-09-15T07:01:08+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:eba65bede3d640f918d4fc39c87af7c7262580a03330a62ea25b53a97759cd4a
 ---
 
 ## 概述
 
 从API version 20开始，支持开发者使用[AppServiceExtensionAbility](../harmonyos-references/js-apis-app-ability-appserviceextensionability.md)组件，为应用提供后台服务能力，其他三方应用可通过启动或连接该AppServiceExtensionAbility组件获取相应的服务。
 
-例如，企业部署的数据防泄漏 (DLP) 软件需要能够长期无界面运行，持续监听文件操作、网络流量，并拦截违规行为，可以使用AppServiceExtensionAbility组件来实现其核心的后台监控服务。
+例如，企业部署的数据防泄露 (DLP) 软件需要能够长期无界面运行，持续监听文件操作、网络流量，并拦截违规行为，可以使用AppServiceExtensionAbility组件来实现其核心的后台监控服务。
 
 **说明** 
 
@@ -60,7 +60,7 @@ AppServiceExtensionAbility组件当前仅支持2in1设备。
 1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录并命名为myappserviceextability。
 2. 在myappserviceextability目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAppServiceExtAbility.ets。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Bhd9p66mQHSDoRMvv_M-1w/zh-cn_image_0000002717769818.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/OHfQvW3TQBCoJbwKBkRVWA/zh-cn_image_0000002753453857.png)
 
    其目录结构如下所示：
 

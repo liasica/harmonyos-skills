@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 显隐控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 显隐控制
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:15+08:00
+scraped_at: 2026-09-15T07:04:46+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d3691f19e9ad02c4ef49d24b41144ec3a294b38fa3df51917014146083292467
+content_hash: sha256:aa63c1bd2594669cd4c374c841ffd98008f831fcc44b876281b6d292c0f8b4d7
 ---
 
 控制组件是否可见，适用于根据业务状态动态调整组件显示效果和页面布局的场景。
@@ -67,4 +67,4 @@ struct VisibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/nDEzQMiTTrGFAqAQ7JyPtQ/zh-cn_image_0000002747292421.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/5rrT0ST0StqfQQoStfbWJw/zh-cn_image_0000002723696756.png)

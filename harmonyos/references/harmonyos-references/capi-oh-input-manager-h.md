@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-i
 title: oh_input_manager.h
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 头文件 > oh_input_manager.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c1a36ba873e4eb8ee4d8deadc4b6bad01fdf3e06e06330a6b0aa55d77d034853
+scraped_at: 2026-09-15T07:07:17+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:fa7439e75669f04f9bf13e44c43fa911283f32734340887bf8ae16a656817d7d
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:c1a36ba873e4eb8ee4d8deadc4b6bad01fdf3e06e06330a6b0aa55d77d0
 | [Input\_InterceptorEventCallback](capi-input-input-interceptoreventcallback.md) | Input\_InterceptorEventCallback | 拦截回调事件结构体，拦截鼠标事件、触屏输入事件和轴事件。 |
 | [Input\_DeviceListener](capi-input-input-devicelistener.md) | Input\_DeviceListener | 定义一个结构体用于监听设备热插拔。 |
 | [OH\_PixelmapNative](capi-input-oh-pixelmapnative.md) | OH\_PixelmapNative | 像素图。 |
-| [Input\_KeyState](capi-input-input-keystate.md) | Input\_KeyState | 定义按键信息，用于标识按键行为。例如，“Ctrl”按键信息包含键值和键类型。 |
+| [Input\_KeyState](capi-input-input-keystate.md) | Input\_KeyState | 定义按键信息，用于标识按键行为。例如，“Ctrl”按键信息包含键值和键状态。 |
 | [Input\_KeyEvent](capi-input-input-keyevent.md) | Input\_KeyEvent | 按键事件对象。 |
 | [Input\_MouseEvent](capi-input-input-mouseevent.md) | Input\_MouseEvent | 鼠标事件对象。 |
 | [Input\_TouchEvent](capi-input-input-touchevent.md) | Input\_TouchEvent | 触屏输入事件对象。 |
@@ -71,9 +71,9 @@ content_hash: sha256:c1a36ba873e4eb8ee4d8deadc4b6bad01fdf3e06e06330a6b0aa55d77d0
 | [typedef void (\*Input\_DeviceAddedCallback)(int32\_t deviceId)](capi-oh-input-manager-h.md#input_deviceaddedcallback) | Input\_DeviceAddedCallback | 回调函数，用于接收输入设备的热插事件。 |
 | [typedef void (\*Input\_DeviceRemovedCallback)(int32\_t deviceId)](capi-oh-input-manager-h.md#input_deviceremovedcallback) | Input\_DeviceRemovedCallback | 回调函数，用于接收输入设备的热拔事件。 |
 | [typedef void (\*Input\_InjectAuthorizeCallback)(Input\_InjectionStatus authorizedStatus)](capi-oh-input-manager-h.md#input_injectauthorizecallback) | Input\_InjectAuthorizeCallback | 回调函数，用于获取注入权限状态。 |
-| [Input\_Result OH\_Input\_GetKeyState(struct Input\_KeyState\* keyState)](capi-oh-input-manager-h.md#oh_input_getkeystate) | - | 查询按键状态的枚举对象。 |
-| [struct Input\_KeyState\* OH\_Input\_CreateKeyState()](capi-oh-input-manager-h.md#oh_input_createkeystate) | - | 创建按键状态的枚举对象。通过调用[OH\_Input\_DestroyKeyState](capi-oh-input-manager-h.md#oh_input_destroykeystate)销毁按键状态的枚举对象。 |
-| [void OH\_Input\_DestroyKeyState(struct Input\_KeyState\*\* keyState)](capi-oh-input-manager-h.md#oh_input_destroykeystate) | - | 销毁按键状态的枚举对象。 |
+| [Input\_Result OH\_Input\_GetKeyState(struct Input\_KeyState\* keyState)](capi-oh-input-manager-h.md#oh_input_getkeystate) | - | 查询按键状态的结构体对象。 |
+| [struct Input\_KeyState\* OH\_Input\_CreateKeyState()](capi-oh-input-manager-h.md#oh_input_createkeystate) | - | 创建按键状态的结构体对象。通过调用[OH\_Input\_DestroyKeyState](capi-oh-input-manager-h.md#oh_input_destroykeystate)销毁按键状态的结构体对象。 |
+| [void OH\_Input\_DestroyKeyState(struct Input\_KeyState\*\* keyState)](capi-oh-input-manager-h.md#oh_input_destroykeystate) | - | 销毁按键状态的结构体对象。 |
 | [void OH\_Input\_SetKeyCode(struct Input\_KeyState\* keyState, int32\_t keyCode)](capi-oh-input-manager-h.md#oh_input_setkeycode) | - | 设置按键状态对象的键值。 |
 | [int32\_t OH\_Input\_GetKeyCode(const struct Input\_KeyState\* keyState)](capi-oh-input-manager-h.md#oh_input_getkeycode) | - | 获取按键状态对象的键值。 |
 | [void OH\_Input\_SetKeyPressed(struct Input\_KeyState\* keyState, int32\_t keyAction)](capi-oh-input-manager-h.md#oh_input_setkeypressed) | - | 设置按键状态对象的按键是否按下。 |
@@ -452,7 +452,7 @@ enum Input_Result
 | INPUT\_INJECTION\_AUTHORIZING = 3900005 | 正在授权中。  **起始版本：** 20 |
 | INPUT\_INJECTION\_OPERATION\_FREQUENT = 3900006 | 重复请求。  **起始版本：** 20 |
 | INPUT\_INJECTION\_AUTHORIZED = 3900007 | 当前应用已经授权。  **起始版本：** 20 |
-| INPUT\_INJECTION\_AUTHORIZED\_OTHERS = 3900008 | 其它应用已经授权。  **起始版本：** 20 |
+| INPUT\_INJECTION\_AUTHORIZED\_OTHERS = 3900008 | 其他应用已经授权。  **起始版本：** 20 |
 | INPUT\_APP\_NOT\_FOCUSED = 3900009 | 当前应用不是焦点应用。  **起始版本：** 20 |
 | INPUT\_DEVICE\_NO\_POINTER = 3900010 | 无鼠标类输入外设。  **起始版本：** 20 |
 | INPUT\_INVALID\_WINDOWID = 26500001 | 无效的窗口ID。  **起始版本：** 22 |
@@ -634,7 +634,7 @@ Input_Result OH_Input_GetKeyState(struct Input_KeyState* keyState)
 
 **描述**
 
-查询按键状态的枚举对象。
+查询按键状态的结构体对象。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
 
@@ -644,7 +644,7 @@ Input_Result OH_Input_GetKeyState(struct Input_KeyState* keyState)
 
 | 参数项 | 描述 |
 | --- | --- |
-| struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的枚举对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
+| struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的结构体对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
 
 **返回：**
 
@@ -660,7 +660,7 @@ struct Input_KeyState* OH_Input_CreateKeyState()
 
 **描述**
 
-创建按键状态的枚举对象。通过调用[OH\_Input\_DestroyKeyState](capi-oh-input-manager-h.md#oh_input_destroykeystate)销毁按键状态的枚举对象。
+创建按键状态的结构体对象。通过调用[OH\_Input\_DestroyKeyState](capi-oh-input-manager-h.md#oh_input_destroykeystate)销毁按键状态的结构体对象。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
 
@@ -680,7 +680,7 @@ void OH_Input_DestroyKeyState(struct Input_KeyState** keyState)
 
 **描述**
 
-销毁按键状态的枚举对象。
+销毁按键状态的结构体对象。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
 
@@ -690,7 +690,7 @@ void OH_Input_DestroyKeyState(struct Input_KeyState** keyState)
 
 | 参数项 | 描述 |
 | --- | --- |
-| struct [Input\_KeyState](capi-input-input-keystate.md)\*\* keyState | 按键状态的枚举对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
+| struct [Input\_KeyState](capi-input-input-keystate.md)\*\* keyState | 按键状态的结构体对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
 
 ### OH\_Input\_SetKeyCode()
 
@@ -710,7 +710,7 @@ void OH_Input_SetKeyCode(struct Input_KeyState* keyState, int32_t keyCode)
 
 | 参数项 | 描述 |
 | --- | --- |
-| struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的枚举对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
+| struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的结构体对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
 | int32\_t keyCode | 按键键值，具体请参考[Input\_KeyCode](capi-oh-key-code-h.md#input_keycode)。 |
 
 ### OH\_Input\_GetKeyCode()
@@ -731,7 +731,7 @@ int32_t OH_Input_GetKeyCode(const struct Input_KeyState* keyState)
 
 | 参数项 | 描述 |
 | --- | --- |
-| const struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的枚举对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
+| const struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的结构体对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
 
 **返回：**
 
@@ -757,7 +757,7 @@ void OH_Input_SetKeyPressed(struct Input_KeyState* keyState, int32_t keyAction)
 
 | 参数项 | 描述 |
 | --- | --- |
-| struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的枚举对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
+| struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的结构体对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
 | int32\_t keyAction | 按键是否按下，具体请参考[Input\_KeyEventAction](capi-oh-input-manager-h.md#input_keyeventaction)。 |
 
 ### OH\_Input\_GetKeyPressed()
@@ -778,7 +778,7 @@ int32_t OH_Input_GetKeyPressed(const struct Input_KeyState* keyState)
 
 | 参数项 | 描述 |
 | --- | --- |
-| const struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的枚举对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
+| const struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的结构体对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
 
 **返回：**
 
@@ -804,7 +804,7 @@ void OH_Input_SetKeySwitch(struct Input_KeyState* keyState, int32_t keySwitch)
 
 | 参数项 | 描述 |
 | --- | --- |
-| struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的枚举对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
+| struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的结构体对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
 | int32\_t keySwitch | 按键开关。 |
 
 ### OH\_Input\_GetKeySwitch()
@@ -825,7 +825,7 @@ int32_t OH_Input_GetKeySwitch(const struct Input_KeyState* keyState)
 
 | 参数项 | 描述 |
 | --- | --- |
-| const struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的枚举对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
+| const struct [Input\_KeyState](capi-input-input-keystate.md)\* keyState | 按键状态的结构体对象，具体请参考[Input\_KeyStateAction](capi-oh-input-manager-h.md#input_keystateaction)。 |
 
 **返回：**
 
@@ -1994,7 +1994,7 @@ Input_Result OH_Input_RequestInjection(Input_InjectAuthorizeCallback callback)
 
 | 类型 | 说明 |
 | --- | --- |
-| [Input\_Result](capi-oh-input-manager-h.md#input_result) | 函数返回值，参见[Input\_Result](capi-oh-input-manager-h.md#input_result)。  INPUT\_SUCCESS = 0 申请授权成功，等待用户授权结果并回调授权状态。  INPUT\_PARAMETER\_ERROR = 401 参数错误，参数callback为空。  INPUT\_DEVICE\_NOT\_SUPPORTED = 801 表示不支持该功能。  INPUT\_SERVICE\_EXCEPTION = 3800001 服务异常。  INPUT\_INJECTION\_AUTHORIZING = 3900005 正在授权中。  INPUT\_INJECTION\_OPERATION\_FREQUENT = 3900006 重复请求（当前应用连续申请授权弹窗成功，间隔时间不超过3秒）。  INPUT\_INJECTION\_AUTHORIZED = 3900007 当前应用已经授权。  INPUT\_INJECTION\_AUTHORIZED\_OTHERS = 3900008 其它应用已经授权。 |
+| [Input\_Result](capi-oh-input-manager-h.md#input_result) | 函数返回值，参见[Input\_Result](capi-oh-input-manager-h.md#input_result)。  INPUT\_SUCCESS = 0 申请授权成功，等待用户授权结果并回调授权状态。  INPUT\_PARAMETER\_ERROR = 401 参数错误，参数callback为空。  INPUT\_DEVICE\_NOT\_SUPPORTED = 801 表示不支持该功能。  INPUT\_SERVICE\_EXCEPTION = 3800001 服务异常。  INPUT\_INJECTION\_AUTHORIZING = 3900005 正在授权中。  INPUT\_INJECTION\_OPERATION\_FREQUENT = 3900006 重复请求（当前应用连续申请授权弹窗成功，间隔时间不超过3秒）。  INPUT\_INJECTION\_AUTHORIZED = 3900007 当前应用已经授权。  INPUT\_INJECTION\_AUTHORIZED\_OTHERS = 3900008 其他应用已经授权。 |
 
 ### OH\_Input\_QueryAuthorizedStatus()
 
@@ -2114,7 +2114,7 @@ Input_Result OH_Input_GetAxisEventAction(const Input_AxisEvent* axisEvent, Input
 | 参数项 | 描述 |
 | --- | --- |
 | const [Input\_AxisEvent](capi-input-input-axisevent.md)\* axisEvent | 轴事件对象，通过[OH\_Input\_CreateAxisEvent](capi-oh-input-manager-h.md#oh_input_createaxisevent)接口可以创建轴事件对象。  使用完需使用[OH\_Input\_DestroyAxisEvent](capi-oh-input-manager-h.md#oh_input_destroyaxisevent)接口销毁轴事件对象。 |
-| [InputEvent\_AxisAction](capi-oh-axis-type-h.md#inputevent_axisaction) \*action | action 出参，返回轴事件动作，具体请参考在[InputEvent\_AxisAction](capi-oh-axis-type-h.md#inputevent_axisaction)。 |
+| [InputEvent\_AxisAction](capi-oh-axis-type-h.md#inputevent_axisaction) \*action | 出参，返回轴事件动作，具体请参考[InputEvent\_AxisAction](capi-oh-axis-type-h.md#inputevent_axisaction)。 |
 
 **返回：**
 
@@ -2596,7 +2596,7 @@ Input_Result OH_Input_AddMouseEventMonitor(Input_MouseEventCallback callback)
 
 添加鼠标事件监听，包含鼠标点击，移动，不包含滚轮事件，滚轮事件归属于轴事件。
 
-该接口处于录屏场景时才允许调用，否则调用该接口不生效。
+应用处于录屏场景时才允许调用该接口，否则调用不生效。
 
 **系统能力：** SystemCapability.MultimodalInput.Input.Core
 
@@ -3448,7 +3448,7 @@ Input_Result OH_Input_GetDevice(int32_t deviceId, Input_DeviceInfo **deviceInfo)
 
 | 类型 | 说明 |
 | --- | --- |
-| [Input\_Result](capi-oh-input-manager-h.md#input_result) | [INPUT\_SUCCESS](capi-oh-input-manager-h.md#input_result) 表示操作成功。  [INPUT\_PARAMETER\_ERROR](capi-oh-input-manager-h.md#input_result) 表示deviceInfo为空指针或deviceId无效。  可以通过 [OH\_Input\_GetDeviceIds](capi-oh-input-manager-h.md#oh_input_getdeviceids) 表示接口查询系统支持的设备ID。 |
+| [Input\_Result](capi-oh-input-manager-h.md#input_result) | [INPUT\_SUCCESS](capi-oh-input-manager-h.md#input_result) 表示操作成功。  [INPUT\_PARAMETER\_ERROR](capi-oh-input-manager-h.md#input_result) 表示deviceInfo为空指针或deviceId无效。  可以通过 [OH\_Input\_GetDeviceIds](capi-oh-input-manager-h.md#oh_input_getdeviceids) 接口查询系统支持的设备ID。 |
 
 ### OH\_Input\_CreateDeviceInfo()
 
@@ -3509,7 +3509,7 @@ Input_Result OH_Input_GetKeyboardType(int32_t deviceId, int32_t *keyboardType)
 | 参数项 | 描述 |
 | --- | --- |
 | int32\_t deviceId | 输入设备的唯一标识，同一个物理设备反复插拔或重启，设备ID可能会发生变化。 |
-| int32\_t \*keyboardType | keyboardType 指向输入设备的键盘类型指针。 |
+| int32\_t \*keyboardType | keyboardType 指向输入设备的键盘类型的指针。 |
 
 **返回：**
 

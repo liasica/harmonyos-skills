@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/driver-de
 title: 结构体
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:37+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:07:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:7d825e64f0116da93a95394f4523cb0a655efdc3a092bd23b96a41319ee82619
 ---
 

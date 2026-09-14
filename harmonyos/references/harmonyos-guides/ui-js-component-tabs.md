@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: tabs开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > tabs开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:12+08:00
+scraped_at: 2026-09-15T07:01:32+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:9f31a4c9038ce65f07fe6e052825b34019451c20cb680991993e450284963ff0
+content_hash: sha256:b11a84437ddff342e3d9cb14af876379350373c9c635fe0f8060b941dbd1d98a
 ---
 
 tabs是一种常见的界面导航结构。通过页签容器，用户可以快捷地访问应用的不同模块。具体用法请参考[tabs API](../harmonyos-references/js-components-container-tabs.md)。
@@ -54,7 +54,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/WaiMfHf0TOWUN8gQwEyrrA/zh-cn_image_0000002717770718.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/NPjX9kyVRXuzzKARg-P9Jg/zh-cn_image_0000002753454757.gif)
 
 ## 设置样式
 
@@ -108,7 +108,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/jXCirN9KRhyVO1YB_yWSSA/zh-cn_image_0000002717610784.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/h1PkU2E3QZO72YFp4rvJeQ/zh-cn_image_0000002723854992.gif)
 
 ## 显示页签索引
 
@@ -146,7 +146,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/iS4uaaN8Rum0ASjh6tOTXQ/zh-cn_image_0000002747290737.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/93GcrZphQ9qSb-I09wYlMA/zh-cn_image_0000002723695074.gif)
 
 **说明** 
 
@@ -264,4 +264,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/P4DsP6pPS_mVcyFaiVXzAQ/zh-cn_image_0000002747210655.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/SSxjQLjlQTmcIIKxahPsbQ/zh-cn_image_0000002753294841.gif)

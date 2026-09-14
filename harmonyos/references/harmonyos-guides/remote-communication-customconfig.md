@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: Configuration：高效实现定制功能
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信 > 实现HTTP请求定制 > Configuration：高效实现定制功能
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:05+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2340ec5dda099875b31fab87605be95d3afd035eef89b0f64abd3348dc3e55e1
 ---
 

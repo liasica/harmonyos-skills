@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 动画样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 动画样式
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:48+08:00
+scraped_at: 2026-09-15T07:05:18+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5c287dea28ad5d11e4fbaa91244bc6d1d121c6a2322ffa265e1e5b021ac58061
+content_hash: sha256:891f4cf32d16380fbc8ff258850f141ef378c030d8670ca28bdc27550fc76b8e
 ---
 
 **说明** 
@@ -111,7 +111,7 @@ content_hash: sha256:5c287dea28ad5d11e4fbaa91244bc6d1d121c6a2322ffa265e1e5b021ac
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/0FhRNJaCQBKH0fUWxCRPWg/zh-cn_image_0000002717773154.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/HOjcrM1eRFq43-Z8oy56oQ/zh-cn_image_0000002753297279.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -159,7 +159,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/W8ERhnVYQhajPzwyxC8msw/zh-cn_image_0000002717613222.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/CiN82OO6S0S8qzJyyi768w/zh-cn_image_0000002753457197.gif)
 
 ```html
 <!-- xxx.hml -->
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/NMposK56Rq-38BhmoV0TzA/zh-cn_image_0000002747293175.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/sVh_qwE0RmqZxYnnWqvZhg/zh-cn_image_0000002723857432.gif)
 
 **说明** 
 
@@ -225,4 +225,4 @@ export default {
 
 steps函数的end和start含义如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/3TbDyt5iR9uQiU5LI4vYag/zh-cn_image_0000002747213091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/b2vWeTsXTHKvs3yVbboxEQ/zh-cn_image_0000002723697514.png)

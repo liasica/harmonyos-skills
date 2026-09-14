@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: DevEco Code
 breadcrumb: 指南 > AI Coding > DevEco Code
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:59+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:56+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:abf00f9d0c7ed5065f39c1cf1551fbf7461cf8bc3b036edec19a18d104fe6713
 ---
 

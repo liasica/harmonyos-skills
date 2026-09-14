@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-guid
 title: Sendable使用场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable使用场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f8f5958ee26a362544a02141873340df3e153e255de4d5a5218d057914e86e48
+scraped_at: 2026-09-15T07:01:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:1a7805c8afd5d33e8b788608d9e2613329e6bd35975ef2832ffe334fa8ac2563
 ---
 
 Sendable对象在不同并发实例间默认采用引用传递，这种方式比序列化更高效，且不会丢失类成员方法。因此，Sendable能够解决两个关键场景的问题：
@@ -169,7 +169,7 @@ struct Index {
           center: { anchor: '__container__', align: VerticalAlign.Center },
           middle: { anchor: '__container__', align: HorizontalAlign.Center }
         })
-        .onClick(() => {
+        .onClick(async () => {
           await test();
           this.message = 'success';
         })

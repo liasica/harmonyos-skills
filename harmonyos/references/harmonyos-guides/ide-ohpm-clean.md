@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-clea
 title: ohpm clean
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm clean
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:03:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:538e94b4181fc427257f1cb162c99a8f464875f53b95845c99a9501163934f28
 ---
 

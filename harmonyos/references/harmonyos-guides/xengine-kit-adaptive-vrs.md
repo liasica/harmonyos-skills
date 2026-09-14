@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-a
 title: 自适应VRS
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 自适应VRS
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:08+08:00
+scraped_at: 2026-09-15T07:02:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3cd3316919dc48c55b77319cdac52cff716bef1df078725951b464849e451522
+content_hash: sha256:81fdb451e12a703f4ee9f552a4ab0796bbaf91b496bc9d56029cb4054c0aade4
 ---
 
 XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源，视觉无损降低渲染频次，使不同的渲染图像使用不同的渲染速率，能够有效提高渲染性能。
@@ -36,7 +36,7 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
 
 * 下面是基于OpenGL ES图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/5vgfn7qTR3KEb3IZE7WaPQ/zh-cn_image_0000002717611604.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/mXvXBfs9S52d_YSMc2lj1g/zh-cn_image_0000002723855810.jpg)
 
 1. 当用户在进入游戏初始化场景时调用[HMS\_XEG\_GetString](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_getstring)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_AdaptiveVRSParameter](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_adaptivevrsparameter)接口配置自适应VRS参数。
@@ -48,7 +48,7 @@ XEngine Kit提供自适应VRS特性，其通过合理分配画面的计算资源
 
 * 下面是基于Vulkan图形API平台集成自适应VRS的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZgHKhheoRxiObX1jXzK6FA/zh-cn_image_0000002747291555.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/cE6flLN0Q5WCe4BS6LqbYA/zh-cn_image_0000002723695892.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_ADAPTIVE\_VRS\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_adaptive_vrs_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 调用[HMS\_XEG\_CreateAdaptiveVRS](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_createadaptivevrs)接口创建自适应VRS实例。

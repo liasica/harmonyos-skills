@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playbac
 title: 音频播放
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:13+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:16+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:452f561261d04382f5f4221940ecad363bf842ae6564b6646fe6b95e160822e4
 ---
 

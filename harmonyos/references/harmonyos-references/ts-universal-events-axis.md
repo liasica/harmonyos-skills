@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 轴事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 轴事件
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a1b64b077fb7e522938a4dff81362ef7966c3af8255c336d06f2ba5d9e78fd3e
+scraped_at: 2026-09-15T07:04:45+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:23985f70dc7c1e30b1d731c70fc716df74a3351d0098e95004906145d69e389c
 ---
 
 轴事件是指当鼠标或触控板等带指针输入设备的指针位于组件区域内时，因操作滚轮、触控板双指沿特定方向（轴）滑动或触控板双指捏合时触发的事件。“轴”指二维坐标系中的方向，分为水平（X轴）和垂直（Y轴）。
@@ -138,7 +138,7 @@ hasAxis(axisType: AxisType): boolean
 
 getCurrentLocalPosition?(): Coordinate2D
 
-获取鼠标光标相对于当前组件实时位置左上角的坐标。
+获取鼠标光标相对于当前组件实时位置左上角的坐标。在事件无法提供有效的实时组件坐标时，返回空值，使用前请进行判空处理。
 
 **起始版本：** 26.0.0
 
@@ -192,7 +192,7 @@ struct AxisEventExample {
 
 鼠标滚轮滚动时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/nfMTy3BaTZC955UMLwaiNQ/zh-cn_image_0000002717612454.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Fbv9v4POR0WinRvyoli6zw/zh-cn_image_0000002723856660.png)
 
 ### 示例2（获取组件实时位置）
 
@@ -228,4 +228,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/LDd8EnaHTqS03Bl0_Vwuyg/zh-cn_image_0000002717772386.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/QNOg-NTMTDKZIbb25PD3wQ/zh-cn_image_0000002753456425.gif)

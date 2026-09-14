@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 应用与元服务体检
 breadcrumb: 指南 > 编写与调试应用 > 开发自测试 > 应用与元服务体检
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:55+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:03:47+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fec7f78a4d6b11664ebb90261ad041432b302c78804a703aac657df32a2889b3
 ---
 

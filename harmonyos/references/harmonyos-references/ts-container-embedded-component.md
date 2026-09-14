@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: EmbeddedComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > EmbeddedComponent
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:36+08:00
+scraped_at: 2026-09-15T07:05:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f0e22337c8573ccb513cb7926cebe18bca861cd4ddb418daabc0336bf68d6e3f
+content_hash: sha256:f56d36ca4f2cf4c8cd99b3f9b22eb978509831dd2b60b769fc763074e90cad60
 ---
 
 EmbeddedComponent用于支持在当前页面嵌入本应用内或满足跨应用权限条件的其他[EmbeddedUIExtensionAbility](js-apis-app-ability-embeddeduiextensionability.md)提供的UI。EmbeddedUIExtensionAbility在独立进程中运行，完成页面布局和渲染。
@@ -410,4 +410,4 @@ DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensi
   ```
 * 示例图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/DEx4vE1TTUe6O_WPiN36Yg/zh-cn_image_0000002747212907.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/NGUhfAaoTHq-wpD3vYV9FQ/zh-cn_image_0000002723857246.png)

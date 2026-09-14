@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.multimedia.camera (相机管理)"
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:50+08:00
-doc_updated_at: 2026-04-30
+scraped_at: 2026-09-15T07:07:51+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:5ad1a3282190eaf985aaa3a69f9d604d314e978c7af2927304e70cc8fea554c9
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/monitor-guide
 title: 事件监听开发指导（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 事件监听开发指导（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7a7ca5d463b957ca341c4c4c9718cb9ffb517d50b568be575c55c965053fd355
+scraped_at: 2026-09-15T07:02:05+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:c23ae3a7f2833ec949a5735839e7bf9785ab578e8207320737aa3bc4fb95047e
 ---
 
 ## 功能介绍
@@ -33,7 +33,7 @@ content_hash: sha256:7a7ca5d463b957ca341c4c4c9718cb9ffb517d50b568be575c55c965053
 
 ### 链接动态库
 
-调用创建和删除事件监听前，需链接相关动态库。链接动态库的方法是，在CMakeList.txt文件中新增如下配置：
+调用创建和删除事件监听前，需链接相关动态库。链接动态库的方法是，在CMakeLists.txt文件中新增如下配置：
 
 ```txt
 target_link_libraries(entry PUBLIC libohinput.so)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/insight-inten
 title: 意图框架开发指导
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 意图框架开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:16:57+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:09+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2084ace96b437491cbccf726323664b5309c0268cdb42e21dba6c8f9d7b78a16
 ---
 

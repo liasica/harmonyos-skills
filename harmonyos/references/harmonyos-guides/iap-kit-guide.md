@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-kit-guide
 title: IAP Kit（应用内支付服务）
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:27+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4d2a6cd0f8b3620e659148aa224e69462b12f77eaecae6b5762ac013770785ba
 ---
 

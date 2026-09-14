@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/data-file
 title: 数据文件处理
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:27+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:07:02+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:11db7d5df936c39de7dc9fa4f2e8b92770a9b2faa30b14bc87b64dd5c0fd4584
 ---
 

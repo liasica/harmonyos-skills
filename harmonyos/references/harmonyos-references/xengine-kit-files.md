@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/xengine-k
 title: 头文件
 breadcrumb: API参考 > 图形 > XEngine Kit（GPU加速引擎服务） > C API > 头文件和结构体 > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:12+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:08:39+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:16a9ba41be3ff584c4ec483f49f2df3b2fc2d95df01fd565f0b3f08774fda3bf
 ---
 

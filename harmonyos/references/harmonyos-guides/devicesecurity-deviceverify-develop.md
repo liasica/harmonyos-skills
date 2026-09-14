@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 应用设备状态检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 应用设备状态检测
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:28+08:00
+scraped_at: 2026-09-15T07:01:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:fb44727cda633ebf7195839601bfca95cbd13bfab9c636a8f7b9b024ac3d114c
+content_hash: sha256:daf12c773961e7089cecb3c4d71e5e7aa307b3ea6c462f83f899254237883637
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:fb44727cda633ebf7195839601bfca95cbd13bfab9c636a8f7b9b024ac3
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GEWYP8tiRmSRfnnQRwykDg/zh-cn_image_0000002717771078.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/jhbHAEpGT3CkNMphXIItww/zh-cn_image_0000002753455117.png)
 
 流程说明：
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-kit
 title: Image Kit（图片处理服务）
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:bbdb333f9a79e689f2b830d066847139f282c242ffcf1a7354a8cb39726c0e54
 ---
 

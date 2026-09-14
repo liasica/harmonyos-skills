@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-scenario
 title: Node-API典型使用场景
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:46+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:03:26+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:63c242308c912b2f1768e844ae81400cfa5fa533f466cada7e65918043eaa146
 ---
 

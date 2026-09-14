@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: ImageData
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > ImageData
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:36+08:00
+scraped_at: 2026-09-15T07:05:06+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:bf1186dec66659683eae16094e7798adf9e656935c8c07e4afc62341ad13180d
+content_hash: sha256:8dae190c47c85d7fc910d1e27f1e28422658f60207b409540ed548bbd998745e
 ---
 
 ImageData对象用于存储Canvas渲染的像素数据，支持对像素进行读取、修改和操作，适用于图像处理、像素级编辑、特效滤镜等场景。通过ImageData可以精确控制图像的每个像素点，实现自定义图像处理算法，为Canvas绘图提供灵活的像素级数据访问能力。
@@ -109,4 +109,4 @@ struct Translate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/gGAkY4_nSVyeIxwfPwHY_Q/zh-cn_image_0000002747292929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/kUtzn7HRQbKGPG2YSdtyJQ/zh-cn_image_0000002753456949.png)

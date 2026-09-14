@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 开通云数据库服务
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 开发准备 > 开通云数据库服务
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:14+08:00
+scraped_at: 2026-09-15T07:02:40+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ba8ae0c6e15f240c002d76b828b21e5215500125d03cd37e69f7239596f9d029
+content_hash: sha256:bb1cb89caeac8064150bd244b714c013eb9035bae06561943747e68facd7b1fb
 ---
 
 首次使用云数据库服务前，需要先开通此服务。如果已经开通，可跳过本步骤。
@@ -14,7 +14,7 @@ content_hash: sha256:ba8ae0c6e15f240c002d76b828b21e5215500125d03cd37e69f7239596f
 2. 在项目列表中点击需要开通云数据库的项目。
 3. 在左侧导航栏选择“云开发（Serverless）> 云数据库”，进入云数据库页面，点击“立即开通”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/7t8TH6UJSJ66eu-bTDjkZg/zh-cn_image_0000002747291665.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/s9kSr2PcTlCKGZNfExj5kg/zh-cn_image_0000002723696000.png)
 
    **说明** 
 

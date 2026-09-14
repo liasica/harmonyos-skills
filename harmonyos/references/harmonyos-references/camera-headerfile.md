@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/camera-he
 title: 头文件
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:52+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:07:54+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:19104e9d5d0a44f8a2c55031e3a080d45517317a7195300acc7c23e412206d85
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.advertising.AdComponent (广告展示组件)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS组件 > @ohos.advertising.AdComponent (广告展示组件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dc8e54d09b7ddae75d1dc4a0070a67c281f6170778f020ee26f76f6415dd7ac6
+scraped_at: 2026-09-15T07:08:45+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:e0d950eb7f4b5c92eb7915dc0df52d831ee4244e9d04f19a7aa01e417c0c42c0
 ---
 
 本模块提供展示广告的能力，覆盖了原生、贴片、开屏等广告样式。
@@ -52,7 +52,17 @@ AdComponent({
 
 为了保证广告能正确展示，该接口必须和请求广告接口配套使用。效果和使用方法可参考[原生广告](../harmonyos-guides/ads-publisher-service-native.md)、[贴片广告](../harmonyos-guides/ads-publisher-service-roll.md)、[开屏广告](../harmonyos-guides/ads-publisher-service-splash.md)接入和展示。
 
-**示例：**
+### build
+
+build(): void
+
+用于创建AdComponent对象的构造函数。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Advertising.Ads
+
+## 示例
 
 ```typescript
 import { AdComponent, advertising } from '@kit.AdsKit';
@@ -95,13 +105,3 @@ struct Index {
   }
 }
 ```
-
-### build
-
-build(): void
-
-用于创建AdComponent对象的构造函数。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Advertising.Ads

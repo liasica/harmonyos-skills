@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimedia.image (图片处理)"
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:54+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:07:59+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3c18b80dbb6087ece44aa59dcb311a7bc482794385b98326810ef6d1b28acf60
 ---
 

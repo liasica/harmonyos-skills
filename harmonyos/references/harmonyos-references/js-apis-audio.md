@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.multimedia.audio (音频管理)"
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:43+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:07:34+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c7f1857bad677ae22360d2f0afc1a6a84bd6f1bf124c37e071166611230d4860
 ---
 

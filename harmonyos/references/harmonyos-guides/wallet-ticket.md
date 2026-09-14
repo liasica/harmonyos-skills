@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-ticket
 title: 活动/景点门票
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 活动/景点门票
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:03:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f0c70215052bc5fc900ef374182de010646413d4090dd2a6035281c7501a004d
 ---
 

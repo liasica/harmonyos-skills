@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-log-and-f
 title: 日志与故障分析
 breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:57+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9f6c037b7b08d0ffd5c9c2b37379b9328afad03cdf83644be5e30619d55d1d95
 ---
 

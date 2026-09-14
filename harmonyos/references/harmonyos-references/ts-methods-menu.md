@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: ContextMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 菜单 > ContextMenu
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:37+08:00
+scraped_at: 2026-09-15T07:05:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2f03fcd8f7a3dc9866792d0ca202b5a22923b4ec5d89a8f7ba941a4dbcc55b7c
+content_hash: sha256:8c778069ebeb1a7738dae2a6f744130e176f3c8a1ebe7b606f5e79d65cddfb8b
 ---
 
 在页面范围内关闭通过[bindContextMenu](ts-universal-attributes-menu.md#bindcontextmenu12)属性绑定的菜单。
@@ -77,4 +77,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/_1U85MfqRCClTrx6SGaVaA/zh-cn_image_0000002717613042.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/qybCqO-xTqKrQSTiiE8gQw/zh-cn_image_0000002753297097.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/input-ark
 title: 错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:34+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:07:16+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9939a240dde59ea2188c06f26e26182d2b8fdabf800f476d21c4467d5970a743
 ---
 

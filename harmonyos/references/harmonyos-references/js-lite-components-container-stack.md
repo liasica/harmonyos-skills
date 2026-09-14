@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: stack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 容器组件 > stack
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:52+08:00
+scraped_at: 2026-09-15T07:05:24+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:d8ef39233c7e466eb81930e185713f7c318b127ea21a6991e622c4d9c20314a1
+content_hash: sha256:6b7638f28ad463ec01b8acf892d3e19c7b4382b00694b67b70922919d96c9167
 ---
 
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
@@ -99,4 +99,4 @@ content_hash: sha256:d8ef39233c7e466eb81930e185713f7c318b127ea21a6991e622c4d9c20
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/rZPMGpAiTS2GAh8G1eoLSw/zh-cn_image_0000002717613458.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/x0WoKNNnTU2Llhlvhj1mkg/zh-cn_image_0000002753457431.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restool
 title: restool工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > restool工具
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6e995bc8df501b4800ccb211f70d8f647148ba11ecee385c6352327bfb81ba8b
+scraped_at: 2026-09-15T07:02:14+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:53751b91447f3812bd5e84790c1c79b93dd05de16917f02392373f27da9a0f56
 ---
 
 ## 简介
@@ -53,11 +53,9 @@ MccMnc匹配规则：Mcc（国家码）必须相同；Mnc（网络码）不存�
 
 Locale匹配规则：Locale匹配需满足以下三条规则。
 
-1、语言须相同。
-
-2、脚本（文字）不存在时默认匹配，否则必须相同。
-
-3、国家或地区不存在时默认匹配，否则必须相同。
+1. 语言须相同。
+2. 脚本（文字）不存在时默认匹配，否则必须相同。
+3. 国家或地区不存在时默认匹配，否则必须相同。
 
 参数举例说明：Locale[zh\_CN,en\_US];Device[phone]，该参数过滤其他语言，保留能匹配上zh\_CN和en\_US的语言；过滤其他设备，保留phone；其他参数（如MccMnc、Orientation等）配置不过滤均保留。
 
@@ -215,32 +213,30 @@ entry/src/main
 
 编译资源的方式有三种，分别是全量资源编译、增量资源编译和叠加资源编译。其中增量编译仅预览模式可用，用于预览开发阶段的组件效果；全量编译用于构建工程的资源文件；叠加编译支持将工程中的资源叠加进已有的HAP模板资源中，复用已编译的资源项。
 
-1、全量资源编译，命令如下：
+1. 全量资源编译，命令如下：
 
-```sh
-restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
-```
+   ```sh
+   restool -i entry/src/main -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
+   ```
+2. 增量资源编译，具体步骤如下：
 
-2、增量资源编译，具体步骤如下：
+   步骤一：生成资源中间件，命令如下:
 
-步骤一：生成资源中间件，命令如下:
+   ```sh
+   restool -x entry/src/main/resource -o out
+   ```
 
-```sh
-restool -x entry/src/main/resource -o out
-```
+   步骤二：编译资源中间件，命令如下:
 
-步骤二：编译资源中间件，命令如下:
+   ```sh
+   restool -i out1 -i out2 -o out -p com.ohos.demo -r out/ResourceTable.txt -j entry/src/main/module.json -f -z
+   ```
+3. 叠加资源编译，命令如下：
 
-```sh
-restool -i out1 -i out2 -o out -p com.ohos.demo -r out/ResourceTable.txt -j entry/src/main/module.json -f -z
-```
-
-3、叠加资源编译，命令如下：
-
-```sh
-# hapResource为解压后的HAP包路径
-restool -i entry/src/main -i hapResource -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
-```
+   ```sh
+   # hapResource为解压后的HAP包路径
+   restool -i entry/src/main -i hapResource -j entry/src/main/module.json -p com.ohos.demo -o out -r out/ResourceTable.txt -f
+   ```
 
 ### 固定资源ID
 

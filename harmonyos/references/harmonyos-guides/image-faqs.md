@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-faqs
 title: Image Kit常见问题
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:21+08:00
-doc_updated_at: 2026-04-17
+scraped_at: 2026-09-15T07:02:24+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2807269239d895d71c56bf55183ffd701b49a6676833f628a3996c9ec04319e2
 ---
 

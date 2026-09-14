@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVImageGenerator)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVImageGenerator)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:43021f6a46d0b6dbbe80326ce4ff0d8cb5e739f7fc65c4646a17a4e0aa386250
+scraped_at: 2026-09-15T07:08:09+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:70b689511669f8bd4e5e9016f416053065b3ce769d2cef6a47ff6a5bb39a4dbf
 ---
 
 视频缩略图获取类，用于从视频资源中获取缩略图。在调用AVImageGenerator的方法前，需要先通过[createAVImageGenerator()](arkts-apis-media-f.md#mediacreateavimagegenerator12)构建一个AVImageGenerator实例。
@@ -291,7 +291,7 @@ release(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 异步方式释放资源release方法的Promise返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ipc-kit
 title: IPC Kit（进程间通信服务）
 breadcrumb: 指南 > 应用框架 > IPC Kit（进程间通信服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-06-13
+scraped_at: 2026-09-15T07:01:42+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9adecd7426053bf270bd5940285f21b2c373b57c780ec21b12a97a221a5bbfba
 ---
 

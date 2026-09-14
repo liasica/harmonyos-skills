@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.graphics.drawing (绘制模块)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:04+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:08:20+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:865ca45ee4f5c6ecb40eb9611d2a5fdeef04a58b9b66d084502e7b43426d94b1
 ---
 

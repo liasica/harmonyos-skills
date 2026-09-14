@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-res
 title: REST API
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > REST API
 category: harmonyos-references
-scraped_at: 2026-09-02T15:20:36+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:08:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e708d578d28c36db63944d892851dc4d13f4757fd077120ea9b616474a54ba5f
 ---
 

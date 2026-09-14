@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.netFirewall (网络防火墙)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.netFirewall (网络防火墙)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:231e3f1892ee772bc3a06135f26190bc0f9280204772455669f266c94dc90e30
+scraped_at: 2026-09-15T07:06:46+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:8336fc0ba6305329fb341abea858c2615e7f10a77656aad36f2964104fb0421b
 ---
 
 本模块为应用程序提供网络防火墙能力。应用程序可以对机器进行防火墙拦截记录的查询。
@@ -569,7 +569,7 @@ netFirewall.getNetFirewallRule(100, 1).then((rule: netFirewall.NetFirewallRule) 
 | appUid | number | 否 | 是 | 应用程序或服务UID。 |
 | localIps | Array<[NetFirewallIpParams](js-apis-net-netfirewall.md#netfirewallipparams)> | 否 | 是 | 本地IP地址。当type=RULE\_IP时有效，否则将被忽略，最多10个。 |
 | remoteIps | Array<[NetFirewallIpParams](js-apis-net-netfirewall.md#netfirewallipparams)> | 否 | 是 | 远端IP地址。当type=RULE\_IP时有效，否则将被忽略，最多10个。 |
-| protocol | number | 否 | 是 | 协议，包含TCP：6，UDP：17。当type=RULE\_IP时有效。 |
+| protocol | number | 否 | 是 | 协议，包含TCP：6，UDP：17，ICMP：1，ICMPv6：58。当type=RULE\_IP时有效。 |
 | localPorts | Array<[NetFirewallPortParams](js-apis-net-netfirewall.md#netfirewallportparams)> | 否 | 是 | 本地端口。当type=RULE\_IP时有效，否则将被忽略，最多10个。 |
 | remotePorts | Array<[NetFirewallPortParams](js-apis-net-netfirewall.md#netfirewallportparams)> | 否 | 是 | 远端端口。当type=RULE\_IP时有效，否则将被忽略。最多10个。 |
 | domains | Array<[NetFirewallDomainParams](js-apis-net-netfirewall.md#netfirewalldomainparams)> | 否 | 是 | 域名列表，当type=RULE\_DOMAIN时有效，否则将被忽略，目前不支持中文域名。 |

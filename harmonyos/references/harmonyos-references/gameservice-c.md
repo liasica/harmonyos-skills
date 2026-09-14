@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: C API
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > C API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:45+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:08:50+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d76bb357965ddc3c3095a0c4de2aaf91a7ec1b72a8298f5a00162727805fcfd7
 ---
 

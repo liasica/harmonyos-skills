@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 在端侧调用云存储
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发端侧工程 > 在端侧调用云侧代码 > 在端侧调用云存储
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:49+08:00
-doc_updated_at: 2026-04-22
+scraped_at: 2026-09-15T07:03:34+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:322cdf6dd5105937c07717b5f2e9c8376983a615bc99a8f539fa7f01c2d373c4
 ---
 

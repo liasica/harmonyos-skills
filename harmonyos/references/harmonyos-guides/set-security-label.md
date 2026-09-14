@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/set-security-
 title: 设置分布式文件数据等级
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 分布式文件系统 > 设置分布式文件数据等级
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d50cd2dd27f8ccf0f6a62e2a36bd1f9b79c6bec7289932300d3e7b1fef970ceb
+scraped_at: 2026-09-15T07:01:39+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:af41b5d7f5fbfd51f5ce181972cd0cdc80058a749152061bae961a197cfcd09a
 ---
 
 不同设备本身的安全能力差异较大，一些小的嵌入式设备安全能力远弱于平板等设备类型。用户或者应用不同的文件数据有不同安全诉求，例如个人的健康信息和银行卡信息等不期望被弱设备读取。因此，HarmonyOS提供一套完整的数据分级、设备分级标准，并针对不同设备制定不同的数据流转策略，具体规则请参见[数据、设备安全分级](access-control-by-device-and-data-level.md)。
@@ -38,7 +38,7 @@ import { fileIo } from '@kit.CoreFileKit';
 ```
 
 ```typescript
-// 获取需要设备数据等级的文件沙箱路径，请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
+// 获取需要设置数据等级的文件沙箱路径，请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
 let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 let pathDir = context.filesDir;
 let filePath = pathDir + '/test.txt';

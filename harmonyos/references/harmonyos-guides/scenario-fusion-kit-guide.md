@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: Scenario Fusion Kit（融合场景服务）
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:56+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:70caaae7928b03f36a05e528354ddff16e7e9ad5ffa8668282c6e5abe985af10
 ---
 

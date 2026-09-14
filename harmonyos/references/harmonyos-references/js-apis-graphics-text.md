@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.graphics.text (文本模块)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.text (文本模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:52+08:00
+scraped_at: 2026-09-15T07:08:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c98f8c1c7a411cc893d4c9d2ccdec14082fa1d9777764bfe5ebca5b0c7f3479b
+content_hash: sha256:4cd6e944f1395d1ae3e602c2490c071aa1020ea8c3c902732a906ffc67806fa3
 ---
 
 本模块提供一系列用于文本布局和字体管理的编程接口。文本布局相关的接口旨在提供高质量的排版，包括字符到字形的转换、字距调整、换行、对齐、文本测量等。字体管理接口提供字体注册、字体描述符、字体集管理等功能。
@@ -1634,13 +1634,13 @@ struct Index {
 | CENTER\_OF\_ROW\_BOX | 5 | 居中对齐。 |
 | FOLLOW\_PARAGRAPH20+ | 6 | 跟随文本排版对齐。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3uwhFpd2T3SGR9Psy2WXeQ/zh-cn_image_0000002747213815.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/8XSPtUoTRKy6DrSGgAhqFw/zh-cn_image_0000002723698236.png)
 
 **说明** 
 
 示意图展示了后三种对齐方式，前三种对齐方式在文本基线对齐方式上类似，比较位置是文本基线，即绿色线条部分。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/6dvUYlRPTLK1E1KiSLS_8A/zh-cn_image_0000002717773880.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/KTu0SUtwQ9qlXLO-YMSeQw/zh-cn_image_0000002753298003.png)
 
 ## PlaceholderSpan
 
@@ -1836,7 +1836,7 @@ async prepareLayoutPromise() {
 
 示意图展示了点击按钮后layout接口示例代码的运行结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/TTxD1nfORLWOdXKtPbkZCQ/zh-cn_image_0000002717613950.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/lmYi021sT6WFGYKBtuuY3w/zh-cn_image_0000002753457921.png)
 
 ### layoutWithConstraints24+
 
@@ -3566,15 +3566,15 @@ struct Index {
 
 示意图展示文本行排版参数：width（包含左右空格的文本行宽度）、ascent（上升高度最高点）、descent（下降高度最低点）、leading（行间距）、top（当前行最高点）、baseline（字符基线）、bottom（当前行最低点）、next line top（下一行最高点）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/4Zdax1OAQ2yWtggevt-vzw/zh-cn_image_0000002747293901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/bcQ3J5cUQKCTJLgmoCuSbQ/zh-cn_image_0000002723858156.png)
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/p9iVxljmSJ-j5BZAlz7ZdA/zh-cn_image_0000002747213817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/XFD-iJqoStq2EhcfOMiikQ/zh-cn_image_0000002723698238.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/LosGLwMNRDWxIo5bf5HBbQ/zh-cn_image_0000002717773882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/7hfQEnDLSzWArt_o5DaNeA/zh-cn_image_0000002753298005.png)
 
 ## CaretOffsetsCallback18+
 
@@ -3789,11 +3789,11 @@ getTypographicBounds(): TypographicBounds
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/clUdKTKXTlC1NXUr57mf2A/zh-cn_image_0000002747213817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/d5ElzjQPSD--a5tDsTQvxQ/zh-cn_image_0000002723698238.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/NENraOs1R36_8hJ191ll2A/zh-cn_image_0000002717773882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/1oxn-n3lTQuE97IR_ZKDwA/zh-cn_image_0000002753298005.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -3822,11 +3822,11 @@ getImageBounds(): common2D.Rect
 
 示意图展示了字符串为" a b "的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/CvuRqWZOSZesabVVbf6yWQ/zh-cn_image_0000002717613952.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/3tzw2-X7TS6szXjF30EDdg/zh-cn_image_0000002753457923.png)
 
 示意图展示了字符串为"j"或"E"的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/_cq-ZMK3SEmEY2dtZE20TQ/zh-cn_image_0000002747293903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/nngy93PBTHm6npKaqTVytw/zh-cn_image_0000002723858158.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -4329,11 +4329,11 @@ getImageBounds(): common2D.Rect
 
 示意图展示了字符串为" a b "的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/IscLLOclTCOdtnF7FnVjfA/zh-cn_image_0000002717613952.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/YWDOTxL5QVixrmd993gRlQ/zh-cn_image_0000002753457923.png)
 
 示意图展示了字符串为"j"或"E"的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/b_D_qlAnTDug2IATm_H-5g/zh-cn_image_0000002747293903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/goAysJ4iSrGK1yHPcCUbxQ/zh-cn_image_0000002723858158.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -4361,11 +4361,11 @@ getTypographicBounds(): TypographicBounds
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/bnp-YcwURGe-ARc63MZcxw/zh-cn_image_0000002747213817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/A7uaRI6pTlS-gU_kKJmXsg/zh-cn_image_0000002723698238.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/QTpkAc47RvSDY0tmx_8hkA/zh-cn_image_0000002717773882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/gqJ1rCfASR28q1IQW9-ssQ/zh-cn_image_0000002753298005.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -4532,15 +4532,15 @@ function numberToRGBA(colorNum: number): common2D.Color {
 
 alignment为CENTER，location为200，文本为"12/t345"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/PI2d7FSIQD-SojPhfx2KNg/zh-cn_image_0000002747213819.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ppPMZXelQ3CV7O0WU280dA/zh-cn_image_0000002723698240.png)
 
 alignment为LEFT，location为100，文本为"abccccccccc/tdef"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/lxm1taKJS4StrWvXEGWO8g/zh-cn_image_0000002717773884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Xxz040HDSQqy8Q8yruXOuw/zh-cn_image_0000002753298007.png)
 
 alignment为RIGHT，location为100，文本为"aabcdef/tg hi/tjkl/tmno/tp qr"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/MW_OLkmDTtuxFwaboX_MOA/zh-cn_image_0000002717613954.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/0vWcpWnVQ4qnkiaFQf-LiQ/zh-cn_image_0000002753457925.png)
 
 ## SystemFontType14+
 

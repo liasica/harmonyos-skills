@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics-2
 title: ArkGraphics 2D（方舟2D图形服务）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:20+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:30+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9532678c11097c76e00a0b46f63dfeb71c5dd78b0889d71f4338a998905251fa
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-testing-o
 title: HarmonyOS 开发者测试服务概述
 breadcrumb: 指南 > 应用测试 > HarmonyOS 开发者测试服务概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:49+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:6bc16b765a5a2516a69c70c8253fd6ab80f4eb251734ce80a376a3948e66650c
+scraped_at: 2026-09-15T07:03:34+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:99341661015137016a9d521a1b82de1cc7d802043b366f0c6932e5394af1d6e2
 ---
 
 本章节介绍HarmonyOS 开发者测试服务的所有环节，包括代码静态检查、单元测试、应用和元服务体检、UI测试、上架预检测试、用户测试、应用性能监测服务和持续集成与交付（CI/CD）。
@@ -58,4 +58,4 @@ HarmonyOS 应用/元服务上架后，开发者可能会关注其在真实海量
 
 ## 持续集成与交付（CI/CD）
 
-使用 [CI/CD](ide-command-line-building-app.md) [流水线](ide-command-line-building-app.md)，开发者可以通过命令行集成华为官方的测试工具。通过 DevEco Studio 的命令行工具调用 Hvigor任务进行 HAP/APP 构建、签名、安装运行等操作。
+使用 [CI/CD 流水线](ide-command-line-building-app.md)，开发者可以通过命令行集成华为官方的测试工具。通过 DevEco Studio 的命令行工具调用 Hvigor任务进行 HAP/APP 构建、签名、安装运行等操作。

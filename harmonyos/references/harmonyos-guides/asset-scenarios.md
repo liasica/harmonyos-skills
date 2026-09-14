@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-scenari
 title: 常见场景
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > 常见场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:42:10+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:45+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2e4552e15631e404a9d5dab520129a08cbb6d4ed1d4bf60e17f8e8ee4cfa9c3d
 ---
 

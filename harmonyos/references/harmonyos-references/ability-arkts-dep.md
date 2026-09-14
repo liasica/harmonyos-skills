@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ability-a
 title: 已停止维护的接口
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口
 category: harmonyos-references
-scraped_at: 2026-04-29T13:49:03+08:00
-doc_updated_at: 2026-04-28
+scraped_at: 2026-09-15T07:04:06+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:479c294cf1177376c728e5799140d61a1bed199c7e6fd9e29e4d8c13844d3719
 ---
 

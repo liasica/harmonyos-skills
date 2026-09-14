@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-on-de
 title: 端侧部署
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:21+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:01+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d14ee0bcc5d7d2c0ee6c274345a1a7c95f6bb1b1677716bb9ae3650cb91cf6d2
 ---
 

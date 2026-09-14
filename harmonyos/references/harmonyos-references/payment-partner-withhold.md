@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 签约代扣
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 签约代扣
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:03+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:09:12+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:113a18df237cd4fceaabb4db4a4502233390e3ee842b0171484f12914f5d09ee
 ---
 

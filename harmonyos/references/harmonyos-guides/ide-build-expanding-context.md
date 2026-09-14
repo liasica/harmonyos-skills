@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-exp
 title: 插件上下文
 breadcrumb: 指南 > 构建应用 > 扩展构建能力 > 扩展构建API > 插件上下文
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:35+08:00
-doc_updated_at: 2026-09-08
-content_hash: sha256:9623b1b672a7d9261b657f52d126b0b0360bade4e7ee871f30c2351883b1581c
+scraped_at: 2026-09-15T07:03:52+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:0afea6ed8a33d665dcb4c9f7862b4b60ac1fe5d3013dec2f8429599af6d9a1cc
 ---
 
 ## OhosPluginId
@@ -1193,7 +1193,7 @@ export default {
 
 ## OhosHapContext
 
-hap模块Plugin提供的上下文接口，在hap模块的hvigor节点中可通过getContext方法传入OhosPluginId.OHOS\_HAP\_PLUGIN\_ID获取该接口，接口中主要包含了hap模块中module、target信息。
+hap模块Plugin提供的上下文接口，在hap模块的hvigor节点中可通过getContext方法传入OhosPluginId.OHOS\_HAP\_PLUGIN获取该接口，接口中主要包含了hap模块中module、target信息。
 
 ### 导入模块
 

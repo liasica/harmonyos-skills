@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-ark
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Share Kit（分享服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:42+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:09:20+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9f23342cb31579a1fef9fa7ec99a4f70aabbad1d6d89a3bd0f3dcf63240e7028
 ---
 

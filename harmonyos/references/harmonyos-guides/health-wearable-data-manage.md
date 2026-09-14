@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearab
 title: 管理运动健康数据
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:13+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:44+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:6044654b76b2b753e860c40665a146b9ab888ac25f6760a69dbae4293ea91e0d
 ---
 

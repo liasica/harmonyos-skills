@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 云数据库
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云数据库
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:41+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:41+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:521ceee41f2e3c2c13257ace43f999004dfd6c7b4822173c840290d995a4db7d
 ---
 

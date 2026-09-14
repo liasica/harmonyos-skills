@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/basic-pro
 title: 基础属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性
 category: harmonyos-references
-scraped_at: 2026-04-28T08:00:59+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:04:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:15a9ebb02401d2faf62b0aa1fb255359cd3744525f3145eeb9ddfaea35684504
 ---
 

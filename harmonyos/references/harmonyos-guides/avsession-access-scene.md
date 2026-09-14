@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-acc
 title: 应用接入AVSession场景介绍
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 应用接入AVSession场景介绍
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:84ecb0085debbb13fcc263a7e13f0e2683e1d65b59f9eed2f9d043207616a096
+scraped_at: 2026-09-15T07:02:20+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:e4f3c6d5d8883d1e896ec4239694eee02b172d040961b269d38d48351b22b366
 ---
 
 音视频应用在实现音视频功能的同时，需要接入媒体会话即AVSession Kit，本文结合典型案例，介绍接入AVSession的展示与控制场景，为开发者提供适配参考。
@@ -954,13 +954,13 @@ struct Index {
                 console.info(`on play , do play task`);
                 // ...
                 // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('play')取消监听。
-                // 处理完毕后，请使用setAVPlayState上报播放状态。
+                // 处理完毕后，请使用setAVPlaybackState上报播放状态。
               });
               session.on('pause', () => {
                 console.info(`on pause , do pause task`);
                 // ...
                 // 如暂不支持该指令，请勿注册；或在注册后但暂不使用时，通过session.off('pause')取消监听。
-                // 处理完毕后，请使用setAVPlayState上报播放状态。
+                // 处理完毕后，请使用setAVPlaybackState上报播放状态。
               });
               // ...
             } catch (err) {

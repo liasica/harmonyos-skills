@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ContainerReader
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > ContainerReader
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:762115fd97bec40d45fb96b5371641f4b41ba6603c6b8ad16e83cffec3880b47
+scraped_at: 2026-09-15T07:04:52+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:4df81f576543e35c819a933267d244ff39946c34efeb57c51154fbde2b7a2b62
 ---
 
 ContainerReader是容器断点组件，用于在动态场景下根据容器尺寸获取断点信息并进行响应式布局。该组件通过[双向绑定](../harmonyos-guides/arkts-new-binding.md#系统组件参数双向绑定)实时返回容器的尺寸和断点，使开发者能够基于容器大小进行差异化的组件创建和布局。
@@ -19,6 +19,12 @@ ContainerReader是容器断点组件，用于在动态场景下根据容器尺�
 * 更多关于容器断点的开发指导和完整示例，可参考[容器断点 (ContainerReader)](../harmonyos-guides/arkts-layout-development-container-reader.md)。
 
 **起始版本：** 26.0.0
+
+## 导入模块
+
+```ts
+import { ContainerReader } from '@kit.ArkUI';
+```
 
 ## 子组件
 
@@ -185,7 +191,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/vERWrxHrR4eOzX1PfvV66Q/zh-cn_image_0000002747292559.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/NcOOw35OTWG4P9rNhxK_3Q/zh-cn_image_0000002723696894.gif)
 
 ### 示例2 （自定义断点配置）
 
@@ -260,7 +266,7 @@ struct Index {
 
 通过单击按钮改变父容器的宽度，返回不同的宽度断点值，从而调整布局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/DcqFFrxmS9-N1G68tBiMxQ/zh-cn_image_0000002747212475.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/3D9Xp-VjTH6zsaYp-W_yUg/zh-cn_image_0000002753296661.gif)
 
 ### 示例3 （利用宽度断点动态调整列数）
 
@@ -345,4 +351,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/bLa5bf9zSHKGY-5wLZCmuA/zh-cn_image_0000002717772540.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ofF8oJcBRJSLIJAhB0tUlw/zh-cn_image_0000002753456579.gif)

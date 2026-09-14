@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-rotati
 title: 适配相机旋转角度(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机旋转 > 适配相机旋转角度(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6c6a8cfca0b6699e4e64ef9e8158d4be064c6a270d1be9ab6000ca3c632b1fde
+scraped_at: 2026-09-15T07:02:22+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:da69dc801b55a9b8ced7591d2c2eb9b1ebdf32b7c217364a3c4ea29f8b7c972a
 ---
 
 屏幕处于不同的屏幕状态时，原始图像需旋转不同的角度，以确保图像在合适的方向显示，效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/kdd1FrrPR0mCDMXsntka3g/zh-cn_image_0000002717611402.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Fz6LyXalTqK6VrPfw_ABjQ/zh-cn_image_0000002723855610.png)
 
 本开发指导将指导开发者在预览、拍照、录像等不同场景下，如何适配相机的旋转角度。
 
@@ -214,7 +214,7 @@ content_hash: sha256:6c6a8cfca0b6699e4e64ef9e8158d4be064c6a270d1be9ab6000ca3c632
      ```
    * **方案二：**
 
-     从API版本23开始开始，入参deviceDegree为可选参数，当不传入参数时，由系统获取deviceDegree进行录像旋转角度计算。当重力传感器数据无效，无法计算deviceDegree时，系统将使用最后一次有效的deviceDegree。如果应用涉及使用USB相机或在多屏场景下，建议使用方案二。
+     从API版本23开始，入参deviceDegree为可选参数，当不传入参数时，由系统获取deviceDegree进行录像旋转角度计算。当重力传感器数据无效，无法计算deviceDegree时，系统将使用最后一次有效的deviceDegree。如果应用涉及使用USB相机或在多屏场景下，建议使用方案二。
 
      ```typescript
      getVideoRotationWithoutDeviceDegree(videoOutput: camera.VideoOutput): camera.ImageRotation {

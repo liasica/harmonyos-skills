@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/system-ha
 title: 硬件
 breadcrumb: API参考 > 系统 > 硬件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:37+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:07:22+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:1faffcd958adc7db20bc99d5c835141b5aceff135cb06d56623e49752eea7384
 ---
 

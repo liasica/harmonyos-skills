@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.window.floatView (闪控窗)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window.floatView (闪控窗)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1999af0d61c6d7fa2a32057a6942a3cd3cfb7f27323f4e405d26ff66db547ec5
+scraped_at: 2026-09-15T07:04:40+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:6736fd5b5e9f7426bd3f46b397572d97957874912c0c23d49a090fbe06b48635
 ---
 
 闪控窗是悬浮在桌面/应用界面上的小型窗口，提供灵活的窗口管理能力。
@@ -19,25 +19,7 @@ content_hash: sha256:1999af0d61c6d7fa2a32057a6942a3cd3cfb7f27323f4e405d26ff66db5
 * 股市盯盘应用：用户在浏览其他应用时，通过闪控窗实时查看股票行情变化，无需频繁切换应用。
 * 手机直播应用：主播在直播过程中使用闪控窗展示自定义的互动面板或控制界面，方便实时操作和互动。
 
-**闪控窗和闪控球对比**
-
-* 共同点：闪控窗和[闪控球](js-apis-floatingball.md)均为一种特殊的应用辅助窗口，具备在应用主窗口和对应UIAbility（应用组件）退至后台后仍然可以在前台显示的能力。可以用于应用退至后台后，使用闪控窗或闪控球继续显示UI。
-* 区别：
-  + 显示形式不同。闪控球以小圆球的形式展现，适用于展示关键信息。闪控窗以小型窗口展示，展示区域较大，可以持续展示应用内容或提供快捷操作。
-  + 闪控球只能贴边展示，闪控窗则没有此限制。
-  + 闪控球模板固定，应用不能定制UI。闪控窗同样存在模板，并由系统管理并统一绘制UI，但是提供了可绘制的区域，可供应用加载指定页面内容。
-
-**与闪控球联动：**
-
-本模块可与[@ohos.window.floatingBall](js-apis-floatingball.md)（闪控球）联合使用。通过[floatView.bind](js-apis-floatview.md#floatviewbind)接口将闪控窗控制器与闪控球控制器绑定后，用户点击闪控球可展开为闪控窗，点击闪控窗左上角的缩小按钮可收起为闪控球，实现两种窗口形态的相互切换。
-
-**全局悬浮窗和闪控窗对比**
-
-* 共同点：全局悬浮窗和闪控窗均为一种特殊的应用辅助窗口，具备在应用主窗口和对应UIAbility退至后台后仍然可以在前台显示的能力。可以用于应用退至后台后，使用全局悬浮窗或闪控窗继续显示UI。
-* 区别：
-  + 全局悬浮窗由开发者管理并实现UI绘制，无统一UI及动效。
-  + 闪控窗由系统管理并统一绘制UI，动效更为高端精致。
-  + 闪控窗支持与[闪控球](js-apis-floatingball.md)互相绑定联合使用，实现更复杂场景。
+**相关对比**：[闪控球和闪控窗的对比](../harmonyos-guides/window-type-overview.md#闪控球和闪控窗的对比)、[全局悬浮窗和闪控窗的对比](../harmonyos-guides/window-type-overview.md#全局悬浮窗和闪控窗的对比)
 
 **起始版本：** 26.0.0
 

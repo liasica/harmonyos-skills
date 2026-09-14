@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-exception
 title: 异常堆栈解析原理
 breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析 > 异常堆栈解析原理
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:30+08:00
-doc_updated_at: 2026-09-08
-content_hash: sha256:5fd28098f1264f24a7457b253e83e900840b9157f90e95653c278122f2a4883f
+scraped_at: 2026-09-15T07:03:47+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:e063c194f82d2316eec88d7f8203b7f59370a6d543064dc0e0f809aa8f96a945
 ---
 
 ## 构建产物介绍
@@ -14,7 +14,7 @@ content_hash: sha256:5fd28098f1264f24a7457b253e83e900840b9157f90e95653c278122f2a
 
 release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{product}/cache/default/default@CompileArkTS/esmodule/release/sourceMaps.map
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/JjSXRcCiRva9zMHgfkfCCA/zh-cn_image_0000002701662906.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/aTGhSDhaSi6y7phs2k5adg/zh-cn_image_0000002701662906.png)
 
 ### C++调试产物debug so
 
@@ -22,13 +22,13 @@ release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{pro
 
 配置方式请参考[release编译带调试信息的so](ide-exception-stack-parsing-principle.md#section5147812132)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/PKrzzqPFS5uv7o64jFmCPg/zh-cn_image_0000002731382123.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fF0gCguoROaZaPq58Y5A9Q/zh-cn_image_0000002731382123.png)
 
 ### 代码混淆产物nameCache
 
 反混淆映射表，release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{product}/cache/default/default@CompileArkTS/esmodule/release/obfuscation
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/dFzDMeQmTPmAQcz3HF_j_Q/zh-cn_image_0000002731542095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/QMCojFlzQo--1OszNKFY8w/zh-cn_image_0000002731542095.png)
 
 ## C++堆栈解析原理
 
@@ -46,7 +46,7 @@ release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{pro
 
 通常release的so中的符号表、调试信息会被移除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/IGGNls1rTGS-KA6ED7Zs4g/zh-cn_image_0000002701822816.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/zXcxS-DhQyO2kpkYRZcbzw/zh-cn_image_0000002701822816.png)
 
 若需要保留so文件中的符号表、调试信息，需要在build-profile.json5的buildOption/externalNativeOptions中配置参数："arguments": "-DCMAKE\_BUILD\_TYPE=RelWithDebInfo"。
 
@@ -69,7 +69,7 @@ release模式编译产物，产物位置：{ProjectPath}/{ModuleName}/build/{pro
 * libs：带调试信息的so。
 * stripped\_native\_libs：移除调试信息等冗余数据后的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/YIutk56oTZWsb9UGsqVFRA/zh-cn_image_0000002731542103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/IYH8mSeEQd6NPwnCX5K1pw/zh-cn_image_0000002731542103.png)
 
 ### C++堆栈解析流程
 
@@ -109,23 +109,23 @@ llvm-addr2line 0x00000000004005e7 -e test -f -C -s
 llvm-addr2line -e libapplication.so 00003714 -f -C
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/G122le40QYiGFJwPCnDx5Q/zh-cn_image_0000002701662908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/iQ0N6HILTkqD2c_PwbTgnQ/zh-cn_image_0000002701662908.png)
 
 ASan堆栈解析：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/mtbjZSTDSFCl91DebvPCqQ/zh-cn_image_0000002731382127.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/IblrmFpPRuS5CYnmZjetvg/zh-cn_image_0000002731382127.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/FBCn0ZjBR764o9iVNN_mtg/zh-cn_image_0000002701662898.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/CeWQE5neRY2pfC7tzRsjiA/zh-cn_image_0000002701662898.png)
 
 ## ArkTS堆栈解析原理
 
 ### sourceMap格式
 
 **图1** 源码   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/s3ye22BrS7m7Q7iugrV4HQ/zh-cn_image_0000002701822820.png)
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/jyLapULIRsCD2CuvZYorVA/zh-cn_image_0000002701822820.png)
 
 **图2** 编译后产物   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/m4qwiF6mTDmLOU77tTheWw/zh-cn_image_0000002731542097.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/AsCb1eR4QDqIVboCLDlzaQ/zh-cn_image_0000002731542097.png "点击放大")
 
 **实际代码行映射关系：**
 
@@ -139,7 +139,7 @@ ASan堆栈解析：
 
 **sourceMap结构：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/iv61ib1wS8KDJYT1DKn6pA/zh-cn_image_0000002731542091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/GgbHltawSC-8hjWzwI656A/zh-cn_image_0000002731542091.png)
 
 单个module构建产物sourceMaps.map为merge文件，实际包含该模块的所有文件的映射关系；每个json中key以编译构建产物的唯一路径作为主键，运行程序的abc中保留了对应的key信息，当运行时异常代码归属到该文件时输出信息为该key，sources为实际源码文件信息，用于异常堆栈还原源码；mappings为编码后的行列号映射表，每个文件有独立的映射关系。
 
@@ -160,7 +160,7 @@ ASan堆栈解析：
 以“|”为分隔符，entry是本模块oh-package.json5中的name，har1|1.0.0是依赖的har1包的oh-package.json5中的name和version（如果没有依赖包，则是本模块oh-package.json5中的name和version），src/main/ets/pages/w.ts是引用的源码文件路径。
 
 **图3** sourceMap中的key结构化处理   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/VQG8l8NrSzy_kCD58GOpVA/zh-cn_image_0000002701662896.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/m3DcxX7UQSKdOn7Ao4XaUQ/zh-cn_image_0000002701662896.png "点击放大")
 
 ## 反混淆解析原理
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-onc
 title: "@Once装饰器：初始化同步一次"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理组件拥有的状态 > @Once装饰器：初始化同步一次
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:01+08:00
+scraped_at: 2026-09-15T07:01:20+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b2e2db4abf9ede00318d5cdcb95cfb137e9c3d2a26ca42a0066c546b9a51cbe5
+content_hash: sha256:bcaf50a0ba29a61d711c8552ab1ec96b8fb7b10a540665fb6ff396ae85322f43
 ---
 
 想要实现仅从外部初始化一次且不接受后续同步变化的能力，可以使用[@Once](../harmonyos-references/ts-state-management-once.md#once)装饰器搭配@Param装饰器。
@@ -107,7 +107,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/LqKLYd5BTxqt6EtLdlLVZA/zh-cn_image_0000002747290061.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/L5kRM0YSSkCHY9uhExkkvA/zh-cn_image_0000002723694400.gif)
 
 ### 本地修改@Param变量
 
@@ -187,4 +187,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/IpJMoX_USsKdgQLO9Hb4-A/zh-cn_image_0000002747209979.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/0zNpze0lQlGQx0zr8q2HLg/zh-cn_image_0000002753294167.gif)

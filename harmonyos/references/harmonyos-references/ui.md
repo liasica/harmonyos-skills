@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui
 title: UI界面
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:18+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:04:32+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2c1187a8aa5eb59b13994f4d3820d307fc01cb29353636aacdd9e6433d9b3718
 ---
 

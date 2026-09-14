@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-features
 title: 手写功能开发
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:09+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:06+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:6e4616c7fe281b87c5ee774acc0f918933c75f0941248bab59150f6c3763d5d3
 ---
 

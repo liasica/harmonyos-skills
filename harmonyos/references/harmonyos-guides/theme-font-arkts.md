@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-ar
 title: 使用主题字体（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 使用主题字体（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:05+08:00
+scraped_at: 2026-09-15T07:02:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3724f9b78c0af106bfb5f2ba870aa67b607e2b990d57a0ff8c1ab71cc61027ee
+content_hash: sha256:ec53500697faa22a029660c5c9d1523baee5937623c527081df1a22d01136ff9
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:3724f9b78c0af106bfb5f2ba870aa67b607e2b990d57a0ff8c1ab71cc61
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/pH4Y9e-cR7mNRyb3_-Khgg/zh-cn_image_0000002747211391.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/voVhBbC2Qa2qE5uDf6qSjA/zh-cn_image_0000002753295577.jpg)
 
 针对主题字的切换使用，应用方应确保订阅主题字体变更事件，当接收到字体变更事件后，由应用方主动调用页面刷新才能实现主题字的切换，否则主题字只能在重启应用后才生效。
 
@@ -163,8 +163,8 @@ content_hash: sha256:3724f9b78c0af106bfb5f2ba870aa67b607e2b990d57a0ff8c1ab71cc61
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/MGd8ULwFQqqjpCWrGLV6FQ/zh-cn_image_0000002717771456.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/P7SEimtfQc-gZ1dkZ1WJGA/zh-cn_image_0000002753455495.png)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/MdsWWDi6Q_231b7l710Vwg/zh-cn_image_0000002717611524.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/5oa51UYDQ1SypgPq6E4bWg/zh-cn_image_0000002723855730.png)

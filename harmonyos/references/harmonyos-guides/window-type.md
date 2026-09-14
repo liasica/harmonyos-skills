@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-type
 title: 窗口类型
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-15T07:01:33+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:93243a26355bc638f6e96b57d0a1dcbcaa2f4ad96e2cc7b66c11b2056b5afe40
 ---
 

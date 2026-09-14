@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-library
 title: Media Library Kit常见问题
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > Media Library Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:27+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:729ca2c160a0920769c947fc46dc801f5d370b22fa2e356ca33b26e4aa9ed1f1
 ---
 

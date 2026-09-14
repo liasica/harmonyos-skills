@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-kit-skil
 title: （可选）接入Skill
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > （可选）接入Skill
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:31+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:48ba541b7cbe3cd7ac6125989af1a4d455496920d7873bd778ddaf9813d47b2f
 ---
 

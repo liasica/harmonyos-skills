@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/system-se
 title: 安全
 breadcrumb: API参考 > 系统 > 安全
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:06+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:06:16+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:85ef00e3ded9359d45d45221976ed9935f8457e8dae1760b791b7ce463611b7d
 ---
 

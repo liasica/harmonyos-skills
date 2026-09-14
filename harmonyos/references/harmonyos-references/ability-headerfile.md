@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ability-h
 title: 头文件
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:06+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:04:08+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8cfd90366a2b1e594b59545951dae181314cf9e9d05b63e4e2b458e030c9f42f
 ---
 

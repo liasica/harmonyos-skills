@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-vivid-cap
 title: HDR Vivid能力
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > HDR Vivid能力
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:45:47+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:19+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9fa8d15a57a9a17cfc8571e43666bffd6ebca16ff704a9d9ee2e49522aeb604a
 ---
 

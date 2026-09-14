@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: Want
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口 > ability > Want
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c59ed57374a5683a4efd0c4ec22e770658a8f87fffe98f0cf7b42a2996bf3c55
+scraped_at: 2026-09-15T07:04:07+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:3c84ab50c5f848e96181bd5f6a357b4f577b50a7e56a20dfab9fa833b4b17dd2
 ---
 
 Want是对象间信息传递的载体, 可以用于应用组件间的信息传递。 Want的使用场景之一是作为[startAbility](js-apis-inner-application-uiabilitycontext.md#startability)的参数, 其包含了指定的启动目标, 以及启动时需携带的相关数据, 如bundleName和abilityName字段分别指明目标Ability所在应用的Bundle名称以及对应包内的Ability名称。当Ability A需要启动Ability B并传入一些数据时, 可使用Want作为载体将这些数据传递给Ability B。
@@ -30,7 +30,7 @@ import Want from '@ohos.app.ability.Want';
 | bundleName | string | 否 | 是 | 表示Bundle名称。 |
 | abilityName | string | 否 | 是 | 表示待启动的Ability名称。如果在Want中该字段同时指定了bundleName和abilityName，则Want可以直接匹配到指定的Ability。abilityName需要在一个应用的范围内保证唯一。 |
 | uri | string | 否 | 是 | 表示URI。如果在Want中指定了URI，则Want将匹配指定的URI信息，包括scheme、schemeSpecificPart、authority和path信息。 |
-| type | string | 否 | 是 | 表示MIME type类型，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/\*'等，MIME定义参考：https://www.iana.org/assignments/media-types/media-types.xhtml?utm\_source=ld246.com。 |
+| type | string | 否 | 是 | 表示MIME type类型，打开文件的类型，主要用于文管打开文件。比如：'text/xml' 、 'image/\*'等，MIME定义参考：<https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com>。 |
 | flags | number | 否 | 是 | 表示处理Want的方式。默认传数字，具体参考：[flags说明](js-apis-ability-wantconstant.md#flags)。 |
 | action | string | 否 | 是 | 表示要执行的通用操作（如：查看、分享、应用详情）。在隐式Want中，您可以定义该字段，配合uri或parameters来表示对数据要执行的操作。具体参考：[Action说明](js-apis-ability-wantconstant.md#action)。隐式Want定义及匹配规则参考：[显式Want与隐式Want匹配规则](../harmonyos-guides/explicit-implicit-want-mappings.md)。 |
 | parameters | { [key: string]: any } | 否 | 是 | 表示WantParams，由开发者自行决定传入的键值对。默认会携带以下key值：  ohos.aafwk.callerPid 表示拉起方的pid。  ohos.aafwk.param.callerToken 表示拉起方的token。  ohos.aafwk.param.callerUid 表示[bundleInfo](js-apis-bundle-bundleinfo.md#bundleinfodeprecated)中的uid，应用包里应用程序的uid。  - component.startup.newRules：表示是否启用新的管控规则。  - moduleName：表示拉起方的模块名，该字段的值即使定义成其他字符串，在传递到另一端时会被修改为正确的值。  - ohos.dlp.params.sandbox：表示dlp文件才会有。 |

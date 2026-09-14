@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 业务风险检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:51+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:1059403e1709ff0c42e43d59a314349416a078bb99741b156003239cfb79ad79
 ---
 

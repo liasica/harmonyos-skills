@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/atomic-se
 title: AtomicService
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:25+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:05:09+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f1c67c4c558ce9eea08a6b66be10f5e9d8f05bb0717f4ef4337f335cd9176436
 ---
 

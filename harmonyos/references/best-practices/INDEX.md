@@ -1,6 +1,6 @@
 # 最佳实践（best-practices）
 
-共 480 篇文档。
+共 476 篇文档。
 
 - [PC/2in1异形窗口](bpta-2in1-window-shape.md)
 - [基于AbcKitTS实现字节码插桩](bpta-abckitts-implements-instrumentation.md)
@@ -111,10 +111,8 @@
 - [跨设备剪贴板常见场景](bpta-distributed-pasteboard.md)
 - [开发态快速定位DMA泄漏](bpta-dma-leak-in-develop.md)
 - [Drawing自绘制性能提升](bpta-drawing-capability-improve-performance.md)
-- [三方动态链接库集成](bpta-dynamic-link-library.md)
 - [平行视界](bpta-easygo-parallel.md)
 - [运维态高效处理FD资源泄漏](bpta-efficiently-handle-fd-leaks.md)
-- [动画使用指导](bpta-fair-use-animation.md)
 - [基于SFFT的大文件高速并发传输](bpta-file-transmission-based-on-sfft.md)
 - [文件上传下载优化](bpta-file-upload-and-download-performance.md)
 - [双折叠应用开发](bpta-foldable-guide.md)
@@ -224,7 +222,6 @@
 - [新闻阅读](bpta-news-reading.md)
 - [首页信息流体验优化](bpta-news_homepage.md)
 - [对象序列化性能优化](bpta-object-serialization-performance.md)
-- [一镜到底动效](bpta-one-shot-to-the-end.md)
 - [性能分析简介](bpta-optimization-overview.md)
 - [性能分析](bpta-optimization-tool-practice.md)
 - [ArkTS内存泄漏故障模式概述](bpta-overview-of-arkts-memory-leaks-overview.md)
@@ -428,7 +425,6 @@
 - [Swiper组件加载丢帧优化](bpta-swiper_high_performance_development_guide.md)
 - [平板](bpta-tablet-pc.md)
 - [图片资源加载优化](bpta-texture-compression-improve-performance.md)
-- [高负载场景线程优先级设置](bpta-thread-priority-setting.md)
 - [跨线程序列化耗时问题分析](bpta-threads-serialization-timeout-analysis.md)
 - [主线程耗时操作优化](bpta-time-optimization-of-the-main-thread.md)
 - [出行导航](bpta-travel-navigation.md)

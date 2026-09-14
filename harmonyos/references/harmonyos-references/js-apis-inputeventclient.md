@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputEventClient (输入事件注入)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputEventClient (输入事件注入)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d6926b65fb8863e7b58227f444408baba6a9aab5b4aad870b22d1ece4ef96b02
+scraped_at: 2026-09-15T07:07:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:b771f3b0b4b9569a7d9629898ab7c0969249229bc1b679971b1a8d99116cd681
 ---
 
 输入事件注入模块，提供输入按键、鼠标/触控板、触屏输入事件注入能力。
@@ -724,7 +724,7 @@ touchDown(touch: TouchPoint): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
-| 4300001 | Invalid input event sequence. Possible causes: 1. The touch point is touching the display; 2. The touch point ID is not within the valid range [0,9]. |
+| 4300001 | Invalid input event sequence. Possible causes: 1. The touch point is touching the display; 2. The touch point ID is not within the valid range [0, 9]. |
 | 4300002 | The display does not exist. |
 | 3800001 | Input service exception. |
 
@@ -816,7 +816,7 @@ touchMove(touch: TouchPoint): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
-| 4300001 | Invalid input event sequence. Possible causes: 1. The touch point is not touching the display; 2. The touch point ID is not within the valid range [0,9]. |
+| 4300001 | Invalid input event sequence. Possible causes: 1. The touch point is not touching the display; 2. The touch point ID is not within the valid range [0, 9]. |
 | 3800001 | Input service exception. |
 
 **示例：**
@@ -858,7 +858,7 @@ touchUp(touch: TouchPoint): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
-| 4300001 | Invalid input event sequence. Possible causes: 1. The touch point is not touching the display; 2. The touch point ID is not within the valid range [0,9]. |
+| 4300001 | Invalid input event sequence. Possible causes: 1. The touch point is not touching the display; 2. The touch point ID is not within the valid range [0, 9]. |
 | 3800001 | Input service exception. |
 
 **示例：**

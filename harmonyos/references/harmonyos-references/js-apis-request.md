@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.request (上传下载)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.request (上传下载)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:29+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-15T07:07:05+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4742755beeb1505e1881bc7aa11dc5be104e64279e42fa27ab33d521f68adabe
 ---
 

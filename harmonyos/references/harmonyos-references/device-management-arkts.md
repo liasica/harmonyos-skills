@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/device-ma
 title: 设备管理
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:26+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:07:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4651699bb51fa40fb4370f3c12827e523061258d5a8a70ef75a11d0f696ab037
 ---
 

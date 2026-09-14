@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/system-pr
 title: 系统预置UI组件库
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:36+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:05:12+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:df2c35810fef6fb8fcc5ec0deeef3ae0b9acb2ae7c5dbf0a25497fd980393e18
 ---
 

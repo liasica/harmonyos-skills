@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/backgroun
 title: ArkTS API
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:32+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:05:56+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:161df7fe4af7167dcbd70364634387936ab2327dac5138449c6a6b7fc132bc2c
 ---
 

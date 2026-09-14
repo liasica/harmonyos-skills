@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-files
 title: 用户文件
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:17+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:39+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0d22a2044c5ef301822223a1ac8da9a2af5e4a018c6c80e9317d99bc43d4af32
 ---
 

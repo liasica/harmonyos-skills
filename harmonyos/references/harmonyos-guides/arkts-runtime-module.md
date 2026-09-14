@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-runtime
 title: ArkTS模块化
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:16+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:dfcb1bacf9239b98e9c435cc18dbb7fe5755515bff47aa6facbc1f3ff9e998bd
 ---
 

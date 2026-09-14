@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-i
 title: PdfView预览组件
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:23+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:53+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:39f77f4a5e4097fede480200135042118cb0361eeaf893c16a7bf815d8eb2d68
 ---
 

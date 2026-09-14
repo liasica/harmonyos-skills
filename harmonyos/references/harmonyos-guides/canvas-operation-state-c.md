@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canvas-operat
 title: 画布操作及状态处理（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 画布操作及状态 > 画布操作及状态处理（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:04+08:00
+scraped_at: 2026-09-15T07:02:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3dd62e85c0bcf05b9ff20f17575c9acae4135cadfb77049b1c269a4246a951c5
+content_hash: sha256:0655fbbf741b6f66d44de17a5ac61eba43653adcf5c0071e0aa5b9d0118311e9
 ---
 
 ## 场景介绍
@@ -235,7 +235,7 @@ OH_Drawing_PointDestroy(point);
 OH_Drawing_MatrixDestroy(matrix);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/1cNlTypXS0yCuzNmq8bBPQ/zh-cn_image_0000002747291443.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/pO0Y8NRFTFKbaVB4h8ms9g/zh-cn_image_0000002723695780.png)
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButtonV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButtonV2
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2388797fd679db9c5a44e08fa724201a939f25f10ea732327d992b6b285dace1
+scraped_at: 2026-09-15T07:05:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:a26990af0ee04891601a1b9fd3c4fd6c9f553876dd553d92d90822e3b4e06e06
 ---
 
 分段按钮组件用于创建页签型、单选或多选的胶囊型分段按钮，支持文本、图标、Symbol等多种选项类型及图文混合配置，可自定义字体、颜色、圆角等样式。页签型分段按钮适用于页签切换场景，单选胶囊型分段按钮适用于单选切换场景，多选胶囊型分段按钮适用于多选筛选场景。
@@ -115,7 +115,7 @@ TabSegmentButtonV2({
 | itemSelectedSymbolFontColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | @Param | 配置分段按钮选中选项的HM Symbol类型图标颜色。  默认值：$r('sys.color.font\_primary')  值为undefined时，按默认值处理。  **说明：**  items设置symbolModifier/fontColor属性值时，itemSelectedSymbolFontColor不生效。  backgroundSystemMaterial设置自动反色的系统材质时，该属性使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。  该成员只读，不支持更改。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | languageDirection | [Direction](ts-appendix-enums.md#direction) | 否 | @Param | 配置分段按钮的布局方向。  默认值：Direction.Auto  超出取值范围按默认值处理。  该成员只读，不支持更改。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | enableStateAnimation24+ | boolean | 否 | @Param | 设置当通过变量修改selectedIndex值时，是否开启分段按钮的属性动画。  true表示开启分段按钮的属性动画；未配置该属性或值为false时表示不开启分段按钮的属性动画，使用组件默认的切换动画效果。  默认值：false  该成员只读，不支持更改。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。  分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。  默认值：无材质效果。  该成员只读，不支持更改。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。  分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。  默认值：无材质效果。  该成员只读，不支持更改。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 **说明** 
 
@@ -203,7 +203,7 @@ CapsuleSegmentButtonV2({
 | itemSelectedSymbolFontColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | @Param | 配置分段按钮选中的选项中HM Symbol类型图标颜色。  默认值：$r('sys.color.font\_on\_primary')  值为undefined时，按默认值处理。  **说明：**  items设置symbolModifier/fontColor属性值时，itemSelectedSymbolFontColor不生效。  backgroundSystemMaterial设置自动反色的系统材质时，该属性使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。  该成员只读，不支持更改。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | languageDirection | [Direction](ts-appendix-enums.md#direction) | 否 | @Param | 配置分段按钮的布局方向。  默认值：Direction.Auto  超出取值范围按默认值处理。  该成员只读，不支持更改。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | enableStateAnimation24+ | boolean | 否 | @Param | 设置当通过变量修改selectedIndex值时，是否开启分段按钮的属性动画。  true表示开启分段按钮的属性动画；未配置该属性或值为false时表示不开启分段按钮的属性动画，使用组件默认的切换动画效果。  默认值：false  该成员只读，不支持更改。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。  分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。  默认值：无材质效果。  该成员只读，不支持更改。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Param | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同系统材质包含不同的属性影响效果。传入材质后，SegmentButtonV2的动效发生改变。  分段按钮在使用系统材质时支持选中项的背景跟随手指拖拽的能力，分段按钮被选中的选项下标在跟随手指拖拽过程中保持不变、在拖拽结束时更新。  默认值：无材质效果。  该成员只读，不支持更改。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 **说明** 
 
@@ -595,7 +595,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/iJ9sgXZKQmy1Cx6_IZWwMg/zh-cn_image_0000002747293121.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/tM4YgwuARAiL8bgw6LU7gQ/zh-cn_image_0000002723857378.gif)
 
 ### 示例2（单选的胶囊型分段按钮）
 
@@ -725,7 +725,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/_Q84RZbaTa6cvC214dHimw/zh-cn_image_0000002747213037.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/hRymTFJTSSatvdd-MnZlsQ/zh-cn_image_0000002723697460.gif)
 
 ### 示例3（多选的胶囊型分段按钮）
 
@@ -855,7 +855,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/xaX83pdRTLyk0YpcW1BvfA/zh-cn_image_0000002717773102.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/4Pe01FacS6ytJZFbmqhmxw/zh-cn_image_0000002753297227.gif)
 
 ### 示例4（分段按钮Modifier的基本用法）
 
@@ -950,7 +950,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/gJKR-vO3RJmGPR0zXcEKyA/zh-cn_image_0000002717613170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/B_oHWMs-QVqBf2TodLmIQw/zh-cn_image_0000002753457145.png)
 
 ### 示例5（开启SegmentButtonV2的属性动画）
 
@@ -1045,7 +1045,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/X9Gcx7IUTsS5NIxMYds9dA/zh-cn_image_0000002747293123.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/BuH0kNnOQP6jJiUCIdSB8g/zh-cn_image_0000002723857380.gif)
 
 ### 示例6（设置背景板材质）
 
@@ -1163,7 +1163,9 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ahlYxabgSWanyXrUczb0Jw/zh-cn_image_0000002747213039.gif)
+该示例配图为高算力设备强档效果。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/PUfNmKgIR0a0momzYlDpmQ/zh-cn_image_0000002723697462.gif)
 
 ### 示例7（监听对象类型属性内部属性的变化）
 
@@ -1210,4 +1212,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NbVl4fQMQoG5r0BbnL3cOA/zh-cn_image_0000002717773104.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/O4c4q-P5ScidP4wdHeMS1g/zh-cn_image_0000002753297229.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectionMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectionMenu
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:20ecbb8fe33e503081031f0c410d23a36860e84616d79352eb945651d9fa5660
+scraped_at: 2026-09-15T07:05:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:116e873ae34121eb32a79ec54deea19a093e92c70d20e65f673584124376c532
 ---
 
 文本选择菜单，适用于[RichEditor](ts-basic-components-richeditor.md)组件通过[bindSelectionMenu](ts-basic-components-richeditor.md#bindselectionmenu)或[Text](ts-basic-components-text.md)组件通过[bindSelectionMenu](ts-basic-components-text.md#bindselectionmenu11)绑定自定义文本选择菜单，支持编辑菜单和扩展下拉菜单两种类型，可通过配置实现复制、粘贴、剪切、全选等内置功能，也可通过自定义菜单项和事件回调实现扩展功能。建议绑定鼠标右键或鼠标选中方式弹出，不支持作为普通组件单独使用。适用于富文本编辑场景，可为用户提供便捷的文本操作入口，提升文本编辑效率。
@@ -62,7 +62,7 @@ SelectionMenuOptions定义SelectionMenu的可选菜单类型项及其配置参�
 | onPaste | (event?: [EditorEventInfo](ohos-arkui-advanced-selectionmenu.md#editoreventinfo)) => void | 否 | 是 | 替代内置系统菜单粘贴项的事件回调。  生效前提是一定要有controller参数，有系统默认菜单才能替换内置粘贴功能。  **说明：**  event为返回信息。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | onCut | (event?: [EditorEventInfo](ohos-arkui-advanced-selectionmenu.md#editoreventinfo)) => void | 否 | 是 | 替代内置系统菜单剪切项的事件回调。  生效前提是一定要有controller参数，有系统默认菜单才能替换内置剪切功能。  **说明：**  event为返回信息。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | onSelectAll | (event?: [EditorEventInfo](ohos-arkui-advanced-selectionmenu.md#editoreventinfo)) => void | 否 | 是 | 替代内置系统菜单全选项的事件回调。  生效前提是一定要有controller参数，有系统默认菜单才能替换内置全选功能。  **说明：**  event为返回信息。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 菜单背景板使用的系统材质，用于bindSelectMenu，或放置在Navigation或NavDestination的标题栏子树、或横向Tabs的底部TabBar子树中，菜单背景板的沉浸光感效果才会生效。用于实现菜单背景的视觉效果（如模糊、透明度等）。不同系统材质包含不同的属性，影响最终的显示效果。具体材质类型及属性请参考[uiMaterial.Material](arkts-apis-uimaterial.md#material)。默认值：undefined，无材质效果。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 菜单背景板使用的系统材质，用于实现菜单背景的视觉效果（如模糊、透明度等）。不同系统材质包含不同的属性，影响最终的显示效果。具体材质类型及属性请参考[uiMaterial.Material](arkts-apis-uimaterial.md#material)。默认值：undefined，无材质效果。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## EditorMenuOptions
 
@@ -456,7 +456,7 @@ struct Index {
 
 示例图为鼠标操作触发的自定义菜单弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/wO8045wgTx-n3a4BS-qevw/zh-cn_image_0000002717773106.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/rOPgyHYQSjWzdfHxq_JzgQ/zh-cn_image_0000002753297231.gif)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -793,7 +793,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/cp0Ma2_JR6-MVVOS6eFC9g/zh-cn_image_0000002717613174.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/XDnUgS1uTxOHnvaSY_UL_Q/zh-cn_image_0000002753457149.jpg)
 
 ### 示例3（设置背景板材质）
 
@@ -907,4 +907,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/CaPnSKe2RHKmBZZRAtPvTQ/zh-cn_image_0000002747293127.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Z9LpAACrRgmOADACTqiBng/zh-cn_image_0000002723857384.jpg)

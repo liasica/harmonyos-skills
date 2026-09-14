@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-set-attri
 title: 设置基本属性和事件
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:40:50+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:35+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:088644d68664cfb1d12aefe4e8f5f3e2050634e74bdad43188b451991abcc85e
 ---
 

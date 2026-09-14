@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/apis-avse
 title: "@ohos.multimedia.avMusicTemplate (音频模板)"
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:48+08:00
-doc_updated_at: 2026-06-03
+scraped_at: 2026-09-15T07:07:47+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:6c65904267c41686996e041ab6090fcde2257f693bcda4fdc8c642c4cbee94d8
 ---
 

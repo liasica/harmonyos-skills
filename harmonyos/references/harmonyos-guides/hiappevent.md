@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent
 title: 事件订阅
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:17:25+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:09+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:542b48def0fff702fd1a2456d41e1b4dc75636f9d8f1e55f3307b999b46badf9
 ---
 

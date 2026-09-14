@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: SaveButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > SaveButton
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:39+08:00
+scraped_at: 2026-09-15T07:05:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9f75b047254236671159c19eced68c7b669c52827ab13c66b31910a57e825660
+content_hash: sha256:7f9575a07a1357b014c2c9e613243303db79612ab47ed3fa6abae2921705422d
 ---
 
 安全控件的保存控件系统接口，适用于应用需要临时获取媒体库访问权限以保存图片或视频的场景，例如图片保存到相册、媒体内容导出等。
@@ -379,7 +379,7 @@ symbolRenderingStrategy(strategy: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/buYw4JdEQiW4ZUJ_MO96Vg/zh-cn_image_0000002747292803.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/3m51aTb4T9yx7ZpQiAZr6w/zh-cn_image_0000002723697138.png)
 
 ## 事件
 
@@ -480,7 +480,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/38cTeGSURTeMsEszVI4zWA/zh-cn_image_0000002717773036.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/JYwtBe27Rw68ZbewH7lJdQ/zh-cn_image_0000002753297157.png)
 
 ## 示例2
 
@@ -555,7 +555,7 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/iVM0MeFfRgGO5tKLb2lImQ/zh-cn_image_0000002717613104.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ysUipn-2TmOsRbhnWwu0yQ/zh-cn_image_0000002753457075.png)
 
 ## 示例3
 
@@ -619,4 +619,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/chaWXfSOR-KkOTBKcc1qng/zh-cn_image_0000002747293055.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/VLGD-AVOSvmYFSRWmOHtig/zh-cn_image_0000002723857310.jpeg)

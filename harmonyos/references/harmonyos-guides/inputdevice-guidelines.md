@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputdevice-g
 title: 输入设备开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 输入设备开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:46ebc16372a153d64f568a286c7ce924a212e17cf2a9c47c269c114c90af21a9
+scraped_at: 2026-09-15T07:02:04+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:50a5987a93c4ab99cdc8097bcc1a5fe1c7db7e1f2058990ba224e0eef908bb76
 ---
 
 ## 场景介绍
@@ -35,8 +35,8 @@ import { inputDevice } from '@kit.InputKit';
 
 ### 开发步骤
 
-1. 调用[getDeviceList](../harmonyos-references/js-apis-inputdevice.md#inputdevicegetdevicelist9)方法查询所有连接的输入设备，调用[getKeyboardType](../harmonyos-references/js-apis-inputdevice.md#inputdevicegetkeyboardtype9)方法遍历所有连接的设备，判断是否有物理键盘，若有则标记已有物理键盘连接，该步骤确保监听设备热插拔之前，检测所有插入的输入设备。
-2. 调用[on](../harmonyos-references/js-apis-inputdevice.md#inputdeviceonchange9)接口监听输入设备热插拔事件，若监听到有物理键盘插入，则标记已有物理键盘连接；若监听到有物理键盘拔掉，则标记没有物理键盘连接。
+1. 调用[getDeviceList](../harmonyos-references/js-apis-inputdevice.md#inputdevicegetdevicelist9)方法查询所有连接的输入设备，并遍历所有连接的设备，对每个设备调用[getKeyboardType](../harmonyos-references/js-apis-inputdevice.md#inputdevicegetkeyboardtype9)方法，判断是否有物理键盘，若有则标记已有物理键盘连接，该步骤确保在监听设备热插拔之前，先检测所有已插入的输入设备。
+2. 调用[on](../harmonyos-references/js-apis-inputdevice.md#inputdeviceonchange9)接口监听输入设备热插拔事件，若监听到有物理键盘插入，则标记已有物理键盘连接；若监听到有物理键盘拔出，则标记没有物理键盘连接。
 
 ```typescript
 import { inputDevice } from '@kit.InputKit';

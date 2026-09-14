@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 资源包后台下载
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:28+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:33+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:62e6e70797f3dd379858e21fb3c6ab3bf94dbcfc4a8b8602c54f7183b4ea236f
 ---
 

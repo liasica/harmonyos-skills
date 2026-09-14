@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-mu
 title: 多模块管理
 breadcrumb: 指南 > 构建应用 > 配置构建流程 > 多模块管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:27+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:03:48+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4cdc03e632ae7ba056bd9eee0794d2f9c2b2d316cf01448b6720c66b0bada236
 ---
 

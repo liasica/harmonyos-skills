@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 通过命令行使用模拟器
 breadcrumb: 指南 > 编写与调试应用 > 使用模拟器运行应用 > 通过命令行使用模拟器
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:24+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:febb5727de463d3134e5e5bc1fbc35453db2b9fd5997158db4e07171d1bb60fe
+scraped_at: 2026-09-15T07:03:46+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:88ca039a270fbb491d693492beea75c960b10821143f064384f8384974b72121
 ---
 
 除了在DevEco Studio的设备管理中使用模拟器外，开发者还可以通过Emulator命令行使用模拟器，支持Windows、macOS和Linux平台，Linux平台的使用方式请参考[模拟器工具（Emulator）](ide-commandline-emulator.md)。
@@ -536,8 +536,8 @@ Emulator -instance {模拟器名称} -gps {-longitude/-latitude/-altitude/-city/
 | --- | --- |
 | -instance | 必选参数，指定模拟器名称。 |
 | -gps | 必选参数，GPS场景化命令。gps可选参数可组合使用。当命令中-city参数与其他参数冲突时，以-city参数为准，其他冲突参数会被忽略。 |
-| -longitude | 可选参数，经度参数，取值范围[-90.0, 90.0]，支持小数点后八位。 |
-| -latitude | 可选参数，纬度参数，取值范围[-180.0, 180.0]，支持小数点后八位。 |
+| -longitude | 可选参数，经度参数，取值范围[-180.0, 180.0]，支持小数点后八位。 |
+| -latitude | 可选参数，纬度参数，取值范围[-90.0, 90.0]，支持小数点后八位。 |
 | -altitude | 可选参数，海拔参数，取值范围[-10000.0, 10000.0]，支持小数点后两位。 |
 | -city | 可选参数，城市参数，不区分大小写。   * 在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）使用，支持以下参数： Beijing/Shanghai/Guangzhou/Tianjin/Chongqing/Zhengzhou/Shijiazhuang/Taiyuan/Jinan/Changsha/Wuhan/Harbin/Changchun/Shenyang/Nanjing/Hangzhou/Fuzhou/Hefei/Nanchang/Xian/Chengdu/Guiyang/Haikou/Taipei/Kunming/Lanzhou/Xining/Hohhot/Urumqi/Lhasa/Yinchuan/Nanning/Hong Kong/Macao * 在其他国家或地区使用，支持以下参数： Beijing/Shanghai/New York/London/Moscow/Paris |
 | -bearing | 可选参数，方位角参数，取值范围[0.0, 359.99]，支持小数点后两位。 |

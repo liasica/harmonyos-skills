@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-displa
 title: 使用OH_DisplayManager实现屏幕基础信息查询和状态监听 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 屏幕管理 > 使用OH_DisplayManager实现屏幕基础信息查询和状态监听 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c30820010fe53fce0def57b59a070d9d91b744895f14d8e2e3781303d85db2e2
+scraped_at: 2026-09-15T07:01:35+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:04530fec7934ec8ec40fc214e8a307c4fecd146ed628fc5d8b4112f0c626811d
 ---
 
 ## 场景介绍
@@ -287,7 +287,7 @@ private callFoldableCallback(): void {
   this.promptAction.openToast({ message: '调用register displayMode方法' }).catch((error: Error) => {
     console.error(`callFoldableCallback error ${JSON.stringify(error)}`);
   }).then(() => {
-    let registerIndex = displayNapi.registerFoldDisplayModeChange();
+    let registerIndex: number = displayNapi.registerFoldDisplayModeChange();
     console.info(`register foldable value is: ${registerIndex}`);
     console.info(`unregister foldable value is: ${displayNapi.unregisterFoldDisplayModeChange(registerIndex)}`);
   });
@@ -305,7 +305,7 @@ private callDealListenCallback(): void {
   this.promptAction.openToast({ message: '调用register change方法' }).catch((error: Error) => {
     console.error(`callDealListenCallback error ${JSON.stringify(error)}`);
   }).then(() => {
-    let registerIndex = displayNapi.registerDisplayChange();
+    let registerIndex: number = displayNapi.registerDisplayChange();
     console.info(`register display change value is: ${registerIndex}`);
     console.info(`unregister display change value is: ${displayNapi.unregisterDisplayChange(registerIndex)}`);
   });

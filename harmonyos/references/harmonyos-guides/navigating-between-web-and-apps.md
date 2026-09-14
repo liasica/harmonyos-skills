@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/navigating-be
 title: Web和应用的跳转与拉起
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > Web和应用的跳转与拉起
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:465d098dd7b426c1a0dd75986cc6e4e005087262e091e2c8ec07a7cb6118875d
+scraped_at: 2026-09-15T07:01:09+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:4e474d48cc7088d6478094fe9da62c5ac424d51af9a0e66287cef601d8f3cb78
 ---
 
 ## 概述
@@ -200,7 +200,7 @@ NavDestination() {
 
 **图 1** Web页面打开效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ryRnWOOlSI6C2S7KRM318Q/zh-cn_image_0000002717609920.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/EWRCyICpS9GXlitNQald8A/zh-cn_image_0000002723854128.png)
 
 因此，Deep Linking适用于需要在已安装的应用之间进行跳转，实现相对简单，但当无应用匹配时用户体验不佳。而App Linking适用于社交分享、广告引流等需要外部链接访问应用的场景，以及对安全性和用户体验要求较高的场景。AppLinking在Deep Linking的基础上增加了域名校验，提高了链接的安全性和可靠性，且无论应用是否安装，用户都能访问内容。
 

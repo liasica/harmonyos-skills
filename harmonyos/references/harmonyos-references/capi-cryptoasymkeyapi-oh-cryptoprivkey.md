@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: OH_CryptoPrivKey
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体 > OH_CryptoPrivKey
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6a46c3d2884d000338dddf1932080099bc621c19bf28745e10f4e96f52f8921e
+scraped_at: 2026-09-15T07:06:21+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:50bc99033c783a377c63ae1d760a42c91d2d3667b42e0e071294c65b5624b45e
 ---
 
 ```c
@@ -14,7 +14,7 @@ typedef struct OH_CryptoPrivKey OH_CryptoPrivKey
 
 ## 概述
 
-定义私钥结构体。
+私钥结构体，表示私钥。
 
 **起始版本：** 20
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Tips控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > Tips控制
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:18+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:1e85a4749f6d2050fa416215c0fb363533c372d0adb802274f721ca72772220a
+scraped_at: 2026-09-15T07:04:49+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:2612380e62b46df29ffc8688a516c811a8b147e07ae472f3b37ed89fd2b44bf4
 ---
 
 为组件绑定Tips悬浮气泡，当鼠标悬浮在组件上时，自动显示提示信息；鼠标离开组件时，悬浮气泡自动隐藏。
@@ -106,7 +106,7 @@ struct TipsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/l6_AhROJQ0eGkoQ1Mb_A1w/zh-cn_image_0000002717772482.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/BmJ6CUU1SFm_rbvKgnYemw/zh-cn_image_0000002753456521.gif)
 
 ### 示例2（多个悬浮气泡的显示和消失）
 
@@ -145,13 +145,13 @@ struct TipsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/VadoooTwSkG-kJOsVX_Vlw/zh-cn_image_0000002717612550.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/PODaCnnESUidIa3lFQzK2w/zh-cn_image_0000002723856756.gif)
 
 ### 示例3（设置悬浮气泡的沉浸光感视效）
 
 该示例通过[TipsOptions](ts-universal-attributes-tips.md#tipsoptions类型说明)中的systemMaterial属性设置组件的系统材质，实现了bindTips的沉浸光感视效。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在TipsOptions中新增了systemMaterial属性。
 
@@ -182,8 +182,8 @@ struct TipsExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/9H0VO5LgRK2C-I-8vx7JKA/zh-cn_image_0000002747292503.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/nwYb9bvQQgKROHkbO4J-SA/zh-cn_image_0000002723696838.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/mIlsamgTTlS2NBn8lBnTBA/zh-cn_image_0000002747212419.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/FhpzTB5OS8S5Vvtl-46k9A/zh-cn_image_0000002753296605.gif)

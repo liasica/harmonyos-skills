@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/screentim
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:31+08:00
-doc_updated_at: 2026-07-03
+scraped_at: 2026-09-15T07:09:19+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c9297b7d7e51343f1154f4041eeb9c3fcc187b706099029c35b98cfcf67ca309
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-file
 title: 头文件
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:59+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:06:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ff20fe6da6862f2e0d84cda8e860bd14ca257bb3f222e376abceda068d49b75f
 ---
 

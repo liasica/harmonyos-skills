@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ads-arkts
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:14+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:08:44+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:35fe5e8a36ac30f81aa48d7559b6590f38dbfc299748cdf20e672fede06b25d4
 ---
 

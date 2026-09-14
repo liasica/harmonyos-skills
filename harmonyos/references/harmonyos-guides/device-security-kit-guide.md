@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-securi
 title: Device Security Kit（设备安全服务）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:50+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4d0c7b6b0cdf0d57cdb2de836268b7c649c72b00ac2c7467853807a14cd8b9b7
 ---
 

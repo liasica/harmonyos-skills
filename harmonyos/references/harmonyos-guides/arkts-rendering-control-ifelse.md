@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-renderi
 title: if/else：条件渲染
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式渲染控制 > if/else：条件渲染
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3986842d25e8ad1695434ea6f5b2646b03790737f7450309a1ab56d3786b13e2
+scraped_at: 2026-09-15T07:01:22+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:406b84b29c71fa24ef92f42fcec44e09c63c631c5671abe687662c68d9c011da
 ---
 
 ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if、else和else if渲染相应的UI内容。
@@ -28,9 +28,9 @@ ArkTS提供了渲染控制能力。条件渲染可根据应用状态，使用if�
 
 1. 评估if和else if的状态判断条件，如果分支没有变化，无需执行以下步骤。如果分支有变化，则执行2、3步骤。
 2. 移除此前构建的所有子组件。
-3. 执行新分支的构造函数，将生成的子组件添加到if父容器中。如果缺少适用的else分支，则不创建任何内容。
+3. 执行新分支的构建函数，将生成的子组件添加到if父容器中。如果缺少适用的else分支，则不创建任何内容。
 
-条件可以包含Typescript表达式。构造函数中的表达式不得更改应用程序状态。
+条件可以包含Typescript表达式。构建函数中的表达式不得更改应用程序状态。
 
 ## 使用场景
 
@@ -65,16 +65,16 @@ struct IfExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/sARY7tcaRISUrzhD4onCCw/zh-cn_image_0000002747290147.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/gTOR09a0QVqLS7YwMSTpnQ/zh-cn_image_0000002723694486.gif)
 
 if语句的每个分支都包含一个构建函数。此类构建函数必须创建一个或多个子组件。在初始渲染时，if语句会执行构建函数，并将生成的子组件添加到其父组件中。
 
 每当if或else if条件语句中使用的状态变量发生变化时，条件语句都会更新并重新评估新的条件值。如果条件值评估发生了变化，这意味着需要构建另一个条件分支。此时ArkUI框架将：
 
 1. 移除所有以前渲染的（早期分支的）组件。
-2. 执行新分支的构造函数，将生成的子组件添加到其父组件中。
+2. 执行新分支的构建函数，将生成的子组件添加到其父组件中。
 
-在以上示例中，当count从0增至1时，if (this.count > 0)更新为true，执行该分支的构造函数，创建一个[Text](../harmonyos-references/ts-basic-components-text.md)组件并添加到父组件Column中。如果后续count更改为0，则Text组件将从[Column](../harmonyos-references/ts-container-column.md)组件中删除。由于没有else分支，因此不会执行新的构造函数。
+在以上示例中，当count从0增至1时，if (this.count > 0)更新为true，执行该分支的构建函数，创建一个[Text](../harmonyos-references/ts-basic-components-text.md)组件并添加到父组件Column中。如果后续count更改为0，则Text组件将从[Column](../harmonyos-references/ts-container-column.md)组件中删除。由于没有else分支，因此不会执行新的构建函数。
 
 ### if ... else ...语句和子组件状态
 
@@ -123,7 +123,7 @@ struct MainView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3D133-Y3SbudyA48Nk8fzw/zh-cn_image_0000002747210065.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/zspOA30bT0iDYku8sRqcWQ/zh-cn_image_0000002753294253.gif)
 
 **初次渲染**：创建CounterView子组件（label为 'CounterView #positive'），其状态变量counter初始值为0。
 
@@ -185,7 +185,7 @@ struct KeepMainView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/6dUf_DhbRduuVj2NJZ2OUw/zh-cn_image_0000002717770132.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/jWio4Sq5TfqlAZN5MjSI5Q/zh-cn_image_0000002753454171.gif)
 
 此处，@State counter变量归父组件所有。因此，当KeepCounterView组件实例被删除时，该变量不会被销毁。KeepCounterView组件通过[@Link](arkts-link.md)装饰器引用状态。状态必须从子级移动到其父级（或父级的父级），以避免在条件内容或重复内容被销毁时丢失状态。
 
@@ -243,4 +243,4 @@ struct NestedIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bOBXOB0FQOO4KnOPT49DMw/zh-cn_image_0000002717610198.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/K90vKVe7S26UfTh6BvfwjA/zh-cn_image_0000002723854406.gif)

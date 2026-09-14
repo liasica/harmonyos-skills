@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 使用HTTP缓存功能提升资源获取性能
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 使用HTTP缓存功能提升资源获取性能
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:08+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:01+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:933ddaa0a7d1a8804306a9fb68e7ce6e845b33fe2e322ae16a81e8d34912c59b
 ---
 

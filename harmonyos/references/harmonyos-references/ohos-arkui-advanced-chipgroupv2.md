@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroupV2
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9ade348a446c05a29cc68b3eb9af5ce9d5bf02c5af90bd84242d4118728ce4af
+scraped_at: 2026-09-15T07:05:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:599fc4e7500ed50c33d2d56871bfb29b7b1aaeb26f5f365a6a4b670eccff81c3
 ---
 
 ChipGroupV2组件提供操作块群组容器，支持单选或多选、自定义样式和间距、以及尾部自定义内容。该组件适用于文件或资源内容的分类、标签选择、筛选等场景，可帮助开发者快速构建美观且交互丰富的标签组界面。
@@ -261,8 +261,8 @@ ChipGroupV2ItemStyle定义了ChipV2的共通属性类。
 | fontColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | 是 | ChipV2文字颜色。  默认值：$r('sys.color.ohos\_id\_color\_text\_primary')  值为undefined时，按默认值处理。  **装饰器类型：** @Trace |
 | selectedFontColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | 是 | ChipV2选中时的文字颜色。设置后，当ChipV2被选中时，label文本会显示此颜色，替代未选中状态下的fontColor。  默认值：$r('sys.color.ohos\_id\_color\_text\_primary\_contrary')  值为undefined时，按默认值处理。  **装饰器类型：** @Trace |
 | selectedBackgroundColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | 是 | ChipV2选中时的背景颜色。设置后，当ChipV2被选中时，背景会填充此颜色，替代未选中状态下的backgroundColor。  默认值：$r('sys.color.ohos\_id\_color\_emphasize')  值为undefined时，按默认值处理。  **装饰器类型：** @Trace |
-| backgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。  **装饰器类型：** @Trace |
-| selectedBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件选中状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。设置后，当ChipV2被选中时，应用此材质样式，替代未选中状态下的backgroundSystemMaterial。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。  **装饰器类型：** @Trace |
+| backgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。  **装饰器类型：** @Trace |
+| selectedBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件选中状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。设置后，当ChipV2被选中时，应用此材质样式，替代未选中状态下的backgroundSystemMaterial。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。  **装饰器类型：** @Trace |
 
 ### constructor
 
@@ -307,8 +307,8 @@ ChipGroupV2ItemStyleConfig定义了ChipV2的共通属性配置。
 | fontColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | 是 | ChipV2文字颜色。  默认值：$r('sys.color.ohos\_id\_color\_text\_primary')  值为undefined时，按默认值处理。 |
 | selectedFontColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | 是 | ChipV2选中时的文字颜色。设置后，当ChipV2被选中时，label文本会显示此颜色，替代未选中状态下的fontColor。  默认值：$r('sys.color.ohos\_id\_color\_text\_primary\_contrary')  值为undefined时，按默认值处理。 |
 | selectedBackgroundColor | [ColorMetrics](js-apis-arkui-graphics.md#colormetrics12) | 否 | 是 | ChipV2选中时的背景颜色。设置后，当ChipV2被选中时，背景会填充此颜色，替代未选中状态下的backgroundColor。  默认值：$r('sys.color.ohos\_id\_color\_emphasize')  值为undefined时，按默认值处理。 |
-| backgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
-| selectedBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件选中状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。设置后，当ChipV2被选中时，应用此材质样式，替代未选中状态下的backgroundSystemMaterial。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
+| backgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
+| selectedBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件选中状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。设置后，当ChipV2被选中时，应用此材质样式，替代未选中状态下的backgroundSystemMaterial。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
 
 ## ChipGroupV2Space
 
@@ -486,7 +486,7 @@ ChipGroupV2IconGroupSuffix({
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | Array<[ChipGroupV2IconItemConfig](ohos-arkui-advanced-chipgroupv2.md#chipgroupv2iconitemconfig) | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | [ChipGroupV2SymbolItemConfig](ohos-arkui-advanced-chipgroupv2.md#chipgroupv2symbolitemconfig)> | 是 | @Require  @Param | 尾部区域显示的自定义项数组，支持ChipGroupV2IconItemConfig（Image图标）、SymbolGlyphModifier（Symbol图标）或ChipGroupV2SymbolItemConfig（Symbol图标配置）类型。  传参SymbolGlyphModifier时，不支持使用symbolEffect修改动效类型和[effectStrategy](ts-basic-components-symbolglyph.md#effectstrategy)设置动效。 |
-| iconBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | @Param | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
+| iconBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | @Param | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
 
 ### build
 
@@ -621,7 +621,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/7sAuq7u8S7iAf-_TFtqV4Q/zh-cn_image_0000002717613130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/lBSL0RViRnCNB1LwzYJfuQ/zh-cn_image_0000002723697420.png)
 
 ### 示例2（ChipGroupV2设置最右侧自定义组件）
 
@@ -719,7 +719,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/OO5Tx-dqTwS1Yqj-5oYftw/zh-cn_image_0000002747293083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/L8jdqzIWRYqj3OPDo48ZDQ/zh-cn_image_0000002753297187.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -821,7 +821,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/PzehMKynSryVXdUhPmQM9A/zh-cn_image_0000002747212999.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/TsF3XqnZScWWepGYC_D4sw/zh-cn_image_0000002753457105.png)
 
 ### 示例4（监听ChipGroupV2内对象类型属性的内部属性变化）
 
@@ -898,4 +898,94 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/oulvgVONQz-RXasqi2_2nA/zh-cn_image_0000002717773064.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Sh6hm0ybSlKF3we9tFNvJg/zh-cn_image_0000002723857340.gif)
+
+### 示例5（设置系统材质样式）
+
+该示例通过设置[ChipGroupV2ItemStyle](ohos-arkui-advanced-chipgroupv2.md#chipgroupv2itemstyle)的backgroundSystemMaterial属性，实现了[ChipGroupV2](ohos-arkui-advanced-chipgroupv2.md#chipgroupv2-1)的系统材质样式效果，包括沉浸式材质和自动反色功能。组件需放置在Navigation的标题栏中，沉浸光感效果才会生效。
+
+从API版本26.0.0开始，[ChipGroupV2ItemStyle](ohos-arkui-advanced-chipgroupv2.md#chipgroupv2itemstyle)新增backgroundSystemMaterial属性。
+
+```ts
+import {
+  ChipGroupV2,
+  ChipGroupV2Items,
+  ChipGroupV2ItemStyle,
+  ChipGroupV2Space,
+  ChipGroupV2Padding,
+  LengthMetrics,
+  UIUtils,
+  uiMaterial,
+  ColorMetrics
+} from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct Index {
+  @Local items: ChipGroupV2Items = new ChipGroupV2Items([
+    {
+      label: { text: '操作块1' }
+    },
+    {
+      label: { text: '操作块2' }
+    },
+    {
+      label: { text: '操作块3' }
+    },
+    {
+      label: { text: '操作块4' }
+    },
+    {
+      label: { text: '操作块5' }
+    }
+  ]);
+  @Local chipGroupSpace: ChipGroupV2Space = new ChipGroupV2Space({ itemSpace: 8 });
+  @Local chipGroupPadding: ChipGroupV2Padding = new ChipGroupV2Padding({ top: 10, bottom: 10 });
+  @Local itemStyle: ChipGroupV2ItemStyle = new ChipGroupV2ItemStyle({
+    backgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+      style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+      colorInvert: true
+    }),
+  });
+  @Local selectedIndexes: number[] = [];
+
+  @Builder
+  NavigationTitle() {
+    Column({ space: 10 }) {
+      ChipGroupV2({
+        items: this.items,
+        $items: (items: ChipGroupV2Items) => { this.items = items; },
+        itemStyle: this.itemStyle,
+        chipGroupSpace: this.chipGroupSpace,
+        chipGroupPadding: this.chipGroupPadding,
+        selectedIndexes: this.selectedIndexes,
+        $selectedIndexes: (indexes: number[]) => { this.selectedIndexes = indexes; },
+      })
+    }
+    .linearGradient({
+      angle: 90, // 渐变角度，90度是从左到右。
+      colors: [
+        ['#FF9A9E', 0.0], // 起始颜色及位置（0.0表示起点）。
+        ['#FECFEF', 0.5], // 中间颜色及位置。
+        ['#3B324C', 1.0] // 结束颜色及位置（1.0表示终点）。
+      ]
+    })
+    .padding(12)
+    .width('100%')
+  }
+
+  build() {
+    Column() {
+      Navigation() {
+        // 页面内容
+      }
+      .title({ builder: this.NavigationTitle, height: '100%' })
+    }.width('100%').height('100%')
+  }
+
+}
+```
+
+该示例配图为高算力设备强档效果。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Ickqp9hjTniXlwmwfgqxtg/zh-cn_image_0000002723697422.png)

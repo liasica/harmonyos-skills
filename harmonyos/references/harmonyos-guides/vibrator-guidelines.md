@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guid
 title: 振动开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:44+08:00
+scraped_at: 2026-09-15T07:02:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f9c14f2d2cb7f8e85393eec97a38ea54dc71a74bcb79e0d3b1085fae21bc87c4
+content_hash: sha256:690f521cd4a18b0977a0d0c8d7e2879c548fe0438b2d4e743b206cc46b61961c
 ---
 
 ## 场景介绍
@@ -160,7 +160,7 @@ JSON文件共包含3个属性。
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ZdgYIWDfT-inks36-E8F_g/zh-cn_image_0000002747211141.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/d9CdHn58TI6Y9vz-_-yz6w/zh-cn_image_0000002753295327.png)
 2. 配置权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5

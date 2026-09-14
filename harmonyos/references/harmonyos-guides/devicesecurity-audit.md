@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全审计
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:51+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:237e8a93bfb8814da687c24f5460777526947dcc2a46b7ca4d0dd4d153d65728
 ---
 

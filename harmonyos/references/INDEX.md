@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 16820 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 16816 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1249 篇
 
@@ -4417,7 +4417,7 @@
 - [开发者模式](harmonyos-guides/ide-developer-options.md)
 - [访问设备文件](harmonyos-guides/ide-device-file-explorer.md)
 - [编辑区对话](harmonyos-guides/ide-edit-area-code-generation.md)
-- [代码阅读](harmonyos-guides/ide-editer-overview.md)
+- [代码阅读](harmonyos-guides/ide-editor-overview.md)
 - [模拟器访问网络](harmonyos-guides/ide-emulator-access-network.md)
 - [通过命令行使用模拟器](harmonyos-guides/ide-emulator-command-line.md)
 - [操控屏幕](harmonyos-guides/ide-emulator-control-screen.md)
@@ -5391,9 +5391,9 @@
 - [Node-API简介](harmonyos-guides/napi-introduction.md)
 - [Node-API常见问题汇总](harmonyos-guides/napi-questions.md)
 - [Node-API典型使用场景](harmonyos-guides/napi-scenarios.md)
+- [Node-API接口返回状态码介绍](harmonyos-guides/napi-status-introduction.md)
 - [Node-API使用指导](harmonyos-guides/napi-use.md)
 - [自定义渲染 (XComponent)](harmonyos-guides/napi-xcomponent-guidelines.md)
-- [Node-API接口返回状态码介绍](harmonyos-guides/napi_status_introduction.md)
 - [基于设备分类和数据分级的访问控制 (C/C++)](harmonyos-guides/native-access-control-by-device-and-data-level.md)
 - [数据库备份与恢复 (C/C++)](harmonyos-guides/native-backup-and-restore.md)
 - [NativeBuffer开发指导 (C/C++)](harmonyos-guides/native-buffer-guidelines.md)
@@ -6857,6 +6857,7 @@
 - [Web组件长截图](harmonyos-guides/web-component-long-screenshot.md)
 - [Web组件在不同的窗口间迁移](harmonyos-guides/web-component-migrate.md)
 - [ArkWeb简介](harmonyos-guides/web-component-overview.md)
+- [ArkWeb进程](harmonyos-guides/web-component-process.md)
 - [Web页面显示内容滚动](harmonyos-guides/web-content-scrolling.md)
 - [管理Cookie及数据存储](harmonyos-guides/web-cookie-and-data-storage-mgmt.md)
 - [使用Crashpad收集Web组件崩溃信息](harmonyos-guides/web-crashpad.md)
@@ -6875,6 +6876,7 @@
 - [使用Web组件上传文件](harmonyos-guides/web-file-upload.md)
 - [Web组件大小自适应页面内容布局](harmonyos-guides/web-fit-content.md)
 - [Web组件焦点管理](harmonyos-guides/web-focus.md)
+- [Web组件支持视频沉浸式全屏播放](harmonyos-guides/web-full-screen.md)
 - [管理位置权限](harmonyos-guides/web-geolocation-permission.md)
 - [使用Web组件的手势与应用交互](harmonyos-guides/web-gesture.md)
 - [获取网页内容高度](harmonyos-guides/web-getpage-height.md)
@@ -6917,8 +6919,6 @@
 - [在应用中使用前端页面JavaScript](harmonyos-guides/web-use-frontend-page-js.md)
 - [使用网页多媒体](harmonyos-guides/web-use-multimedia.md)
 - [定位与解决Web白屏问题](harmonyos-guides/web-white-screen.md)
-- [ArkWeb进程](harmonyos-guides/web_component_process.md)
-- [Web组件支持视频沉浸式全屏播放](harmonyos-guides/web_full_screen.md)
 - [使用WebGL绘制图形](harmonyos-guides/webgl-2d-guidelines.md)
 - [使用WebSocket访问网络](harmonyos-guides/websocket-connection.md)
 - [JS卡片开发指导（FA模型）](harmonyos-guides/widget-development-fa.md)
@@ -9625,7 +9625,7 @@
 - [Socket错误码](harmonyos-references/errorcode-net-socket.md)
 - [流量管理错误码](harmonyos-references/errorcode-net-statistics.md)
 - [VPN错误码](harmonyos-references/errorcode-net-vpn.md)
-- [webSocket错误码](harmonyos-references/errorcode-net-websocket.md)
+- [WebSocket错误码](harmonyos-references/errorcode-net-websocket.md)
 - [ArkTS API错误码](harmonyos-references/errorcode-networkboost.md)
 - [NFC错误码](harmonyos-references/errorcode-nfc.md)
 - [注册节点渲染状态监听错误码](harmonyos-references/errorcode-node-render-monitor.md)
@@ -11545,7 +11545,7 @@
 - [自定义属性设置](harmonyos-references/ts-universal-attributes-custom-property.md)
 - [拖拽控制](harmonyos-references/ts-universal-attributes-drag-drop.md)
 - [拖拽排序](harmonyos-references/ts-universal-attributes-drag-sorting.md)
-- [自定义绘制设置](harmonyos-references/ts-universal-attributes-draw-modifier.md)
+- [自定义绘制](harmonyos-references/ts-universal-attributes-draw-modifier.md)
 - [禁用控制](harmonyos-references/ts-universal-attributes-enable.md)
 - [安全区域](harmonyos-references/ts-universal-attributes-expand-safe-area.md)
 - [视效设置](harmonyos-references/ts-universal-attributes-filter-effect.md)
@@ -11743,7 +11743,7 @@
 - [XEngine](harmonyos-references/xengine-kit-xengine.md)
 - [zlib](harmonyos-references/zlib.md)
 
-## 最佳实践（`best-practices`）— 480 篇
+## 最佳实践（`best-practices`）— 476 篇
 
 - [PC/2in1异形窗口](best-practices/bpta-2in1-window-shape.md)
 - [基于AbcKitTS实现字节码插桩](best-practices/bpta-abckitts-implements-instrumentation.md)
@@ -11854,10 +11854,8 @@
 - [跨设备剪贴板常见场景](best-practices/bpta-distributed-pasteboard.md)
 - [开发态快速定位DMA泄漏](best-practices/bpta-dma-leak-in-develop.md)
 - [Drawing自绘制性能提升](best-practices/bpta-drawing-capability-improve-performance.md)
-- [三方动态链接库集成](best-practices/bpta-dynamic-link-library.md)
 - [平行视界](best-practices/bpta-easygo-parallel.md)
 - [运维态高效处理FD资源泄漏](best-practices/bpta-efficiently-handle-fd-leaks.md)
-- [动画使用指导](best-practices/bpta-fair-use-animation.md)
 - [基于SFFT的大文件高速并发传输](best-practices/bpta-file-transmission-based-on-sfft.md)
 - [文件上传下载优化](best-practices/bpta-file-upload-and-download-performance.md)
 - [双折叠应用开发](best-practices/bpta-foldable-guide.md)
@@ -11967,7 +11965,6 @@
 - [新闻阅读](best-practices/bpta-news-reading.md)
 - [首页信息流体验优化](best-practices/bpta-news_homepage.md)
 - [对象序列化性能优化](best-practices/bpta-object-serialization-performance.md)
-- [一镜到底动效](best-practices/bpta-one-shot-to-the-end.md)
 - [性能分析简介](best-practices/bpta-optimization-overview.md)
 - [性能分析](best-practices/bpta-optimization-tool-practice.md)
 - [ArkTS内存泄漏故障模式概述](best-practices/bpta-overview-of-arkts-memory-leaks-overview.md)
@@ -12171,7 +12168,6 @@
 - [Swiper组件加载丢帧优化](best-practices/bpta-swiper_high_performance_development_guide.md)
 - [平板](best-practices/bpta-tablet-pc.md)
 - [图片资源加载优化](best-practices/bpta-texture-compression-improve-performance.md)
-- [高负载场景线程优先级设置](best-practices/bpta-thread-priority-setting.md)
 - [跨线程序列化耗时问题分析](best-practices/bpta-threads-serialization-timeout-analysis.md)
 - [主线程耗时操作优化](best-practices/bpta-time-optimization-of-the-main-thread.md)
 - [出行导航](best-practices/bpta-travel-navigation.md)

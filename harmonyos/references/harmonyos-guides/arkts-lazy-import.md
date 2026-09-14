@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-lazy-im
 title: 延迟加载 (lazy import)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 延迟加载 (lazy import)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:59+08:00
+scraped_at: 2026-09-15T07:01:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c7e34e4a5d1c67881aa50f338de00aaf79c4181b9cc0a83cd70ae956406ba286
+content_hash: sha256:71ffc8f1db894e871592fd1a7067b961f8de418b7ba674928d6cafd49964bc0b
 ---
 
 随着应用程序功能的扩展，冷启动时间显著增加，主要是因为启动初期加载了大量未实际执行的模块。这不仅延长了应用的初始化时间，还浪费了资源。需要精简加载流程，剔除非必需的文件执行，优化冷启动性能，确保用户体验流畅。
@@ -332,7 +332,7 @@ ReferenceError: module environment is undefined
 
 子线程文件名：data/app/el2/100/base/com.example.myapplication/files/com.example.myapplication\_18089\_redundant\_file.txt
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/S-5rCV5TRPSr45VR3Z2RAw/zh-cn_image_0000002717769890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/zvCOJ-2mQwy-B39KND23Tw/zh-cn_image_0000002753453929.png)
 
 ### 检测原理
 
@@ -535,7 +535,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/0w2kjS0vQQCZgGcvqthkoA/zh-cn_image_0000002717609956.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/hHPXTP2PS1SWxZQWlZrK0Q/zh-cn_image_0000002723854164.png)
 
 通过抓取Trace图查看调用栈，可以发现应用在冷启动时加载了A文件。
 
@@ -554,7 +554,7 @@ struct Index {
    ```
 4. 对上述示例代码获取到的文件进行分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/87tOP-ovQQqNqpQBviMeOQ/zh-cn_image_0000002747289907.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/b-A6UCnFSBKJ5SiAuGMgNA/zh-cn_image_0000002723694246.png)
 
 **修改方式**
 
@@ -583,7 +583,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/J5vJqTiQQYmt0Tu5fZe1fw/zh-cn_image_0000002747209825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/9SxaWaRoRguc2hf4GjDd5A/zh-cn_image_0000002753294013.png)
 
 通过抓取Trace图查看调用栈可以发现，使用lazy-import标识后，应用在冷启动时不再加载A文件。
 

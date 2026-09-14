@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-fo
 title: "@typescript-eslint/prefer-for-of"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-for-of
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:39+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3083d9ae03e24c58b87fc6e85ce95fe8cd58fa24f2b4062342b5e22ce7d51724
 ---
 

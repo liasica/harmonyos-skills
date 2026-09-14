@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uniform-data-
 title: 标准化数据定义
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:11+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:11+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e0ac9236e28664e77660daa3eaf21e7f7f38194ca4bc93bea67019a41512cab4
 ---
 

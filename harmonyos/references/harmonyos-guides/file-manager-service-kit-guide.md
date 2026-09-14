@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-manager-
 title: File Manager Service Kit（文件管理服务）
 breadcrumb: 指南 > 应用服务 > File Manager Service Kit（文件管理服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:02:42+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c85777d5cc5cf17bd77ee9780baade64e2efdbc249fce4f09fcd6767febd27aa
 ---
 

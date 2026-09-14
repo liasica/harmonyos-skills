@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/content-e
 title: 结构体
 breadcrumb: API参考 > 应用框架 > Content Embed Kit（内容嵌入服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:58+08:00
-doc_updated_at: 2026-04-30
+scraped_at: 2026-09-15T07:05:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f693be27d1dc2910b177c65a721d664cd935f2b268a758ecb6217da91d644549
 ---
 

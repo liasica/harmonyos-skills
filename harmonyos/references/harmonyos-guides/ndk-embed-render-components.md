@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-embed-ren
 title: 构建渲染节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建渲染节点
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:11+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-15T07:01:31+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e0b9b9
 ---
 

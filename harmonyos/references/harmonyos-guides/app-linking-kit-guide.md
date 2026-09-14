@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-k
 title: App Linking Kit（应用链接服务）
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:24+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:39+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:50eae9bdb5c500433f6e51f3daccd8d9af612ebc0cd518e8017121da37192196
 ---
 

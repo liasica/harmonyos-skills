@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 命令
 breadcrumb: 指南 > AI Coding > DevEco Code > 命令
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:30+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6e43e9331555841776609bd89168f7ad53cf1fc371798e8a050d28c716e3bda3
+scraped_at: 2026-09-15T07:03:56+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:39203d8739b6eca64f7abff64e1488d3124fda24028aba84893969aaf84bba4b
 ---
 
 ## collect
 
-DevEco Code从0.2.0版本开始，当DevEco Code出现异常（如卡顿、报错、崩溃等）时，支持通过该命令触发日志上传弹框，在弹框中勾选需要上传的日志文件，以便定位和修复工具问题。
+从0.2.0版本开始，当DevEco Code出现异常（如卡顿、报错、崩溃等）时，支持通过该命令触发日志上传弹框，在弹框中勾选需要上传的日志文件，以便定位和修复工具问题。
 
 DevEco Code日志默认存储路径为：
 

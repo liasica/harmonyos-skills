@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-hardwa
 title: 硬件
 breadcrumb: 指南 > 系统 > 硬件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:09+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:05+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4fbd3bd98e9785241bfa40ab229f29b94bc60b5d41d5516c5a79a2d1258b15cd
 ---
 

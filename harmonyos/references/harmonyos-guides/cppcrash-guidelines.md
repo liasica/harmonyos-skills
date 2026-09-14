@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guid
 title: Cpp Crash（进程崩溃）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 崩溃检测 > Cpp Crash（进程崩溃）检测
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4b3ff3f6858f958cefa7e832d02e63fcfa69ba7dd40e8615228d47d13016df31
+scraped_at: 2026-09-15T07:02:10+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:39b0bb9099529720467d539a9da1655a43d0304783c96269aa45a82c7a155a3b
 ---
 
 ## 简介
@@ -419,9 +419,8 @@ ARM 64位系统支持抓取CPP和JS之间跨语言的调用栈，因此如果在
 
 空指针解引用通常有以下两个常见的场景：
 
-1.形如SIGSEGV(SEGV\_MAPERR)@0x00000000或cppcrash日志的Register中打印的r0，r1等传参寄存器的值为0，应首先考虑调用时是否传入了空指针。
-
-2.形如SIGSEGV(SEGV\_MAPERR)@0x0000000c（小于一个内存页大小）或cppcrash日志Register中打印的r1等传参寄存器的值为一个很小的值时应考虑调用入参的结构体成员是否包含空指针。
+1. 形如SIGSEGV(SEGV\_MAPERR)@0x00000000或cppcrash日志的Register中打印的r0，r1等传参寄存器的值为0，应首先考虑调用时是否传入了空指针。
+2. 形如SIGSEGV(SEGV\_MAPERR)@0x0000000c（小于一个内存页大小）或cppcrash日志Register中打印的r1等传参寄存器的值为一个很小的值时应考虑调用入参的结构体成员是否包含空指针。
 
 该场景会在日志中打印出提示信息，表明故障很有可能是因为空指针解引用导致。以下是一份DevEco Studio归档在FaultLog的进程崩溃日志的核心内容。
 
@@ -570,7 +569,7 @@ pstate:0000000060001000 esr:0000000000000000
 
 原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/FvZ9W4uKQruT_Vg91icytg/zh-cn_image_0000002747211157.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/CX4-Ci9xTVmeYZg5tFi1Iw/zh-cn_image_0000002753295343.png)
 
 1. 提交线程搜集自身的调用栈信息，保存至进程特定区域内存的异步栈表中。
 2. 记录保存后，异步栈表返回唯一标识stackId。

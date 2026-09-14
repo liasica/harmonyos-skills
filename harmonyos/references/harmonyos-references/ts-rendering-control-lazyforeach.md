@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-render
 title: LazyForEach
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > LazyForEach
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4089e303e1db45babd6a610475831b9eddba7594e9041d2892d44bbe179fcb46
+scraped_at: 2026-09-15T07:05:16+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:9592f77f114fedcf67353ad4167b9a52e72058d57d6ab8a7aca9b50b1621ded9
 ---
 
 **说明** 
@@ -27,8 +27,6 @@ LazyForEach从提供的数据源中按需迭代数据，并在每次迭代过程
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **参数：**
 

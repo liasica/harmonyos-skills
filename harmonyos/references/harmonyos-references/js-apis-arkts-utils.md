@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@arkts.utils (ArkTS工具库)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.utils (ArkTS工具库)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:14+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-15T07:04:25+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:23db0135cdd0ba30385c633f745e9f8d8d6c285a5a80cc53be5ce16a2f4fe586
 ---
 

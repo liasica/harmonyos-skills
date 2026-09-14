@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-faq
 title: IAP Kit常见问题
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > IAP Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:29+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:47+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:7fe99f3db1ec7bf4006fbda27e40c1ea1ea2784b588d31c6e69146da83a1aba4
 ---
 

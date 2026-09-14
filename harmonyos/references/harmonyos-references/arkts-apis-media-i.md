@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7d54b8bb28057fb432218a62e95cdc3d894ad0f2acd4f33c80fa3c3cd2ac6a72
+scraped_at: 2026-09-15T07:08:10+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:79351c6c19a7b13dda96779a3c47c91fb74007a4e44930d3dd7f6b3780144ea9
 ---
 
 **说明** 
@@ -159,7 +159,7 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 
 ## AVRecorderProfile9+
 
-音视频录制的配置文件。
+音视频录制配置参数。
 
 **系统能力：** SystemCapability.Multimedia.Media.AVRecorder
 

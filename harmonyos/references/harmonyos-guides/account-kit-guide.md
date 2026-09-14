@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-kit-g
 title: Account Kit（华为账号服务）
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:35+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:b699118b3888d620a5f05357391ded466a2d423d9e2af9749c0157e8798fa306
 ---
 

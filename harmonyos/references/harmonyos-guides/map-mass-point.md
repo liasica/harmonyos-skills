@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-mass-poin
 title: 海量点图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 海量点图层
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:22+08:00
+scraped_at: 2026-09-15T07:02:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:15e475c75dc47f1c5f55b38cd58f2db3c0bb6e6857c037d70e135f78d1b3550c
+content_hash: sha256:6a231ad093848e5d0c438c7733a5a5c9d4b67f13b0a80de8f9b4802531b41619
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:15e475c75dc47f1c5f55b38cd58f2db3c0bb6e6857c037d70e135f78d1b
 
 6.0.0(20)开始，支持海量点图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/YJMc8xUnSDW9Bg7--PdWaA/zh-cn_image_0000002717611924.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/myCJaOpJSSuF0cj0CN_JHQ/zh-cn_image_0000002723856130.jpg "点击放大")
 
 ## 接口说明
 

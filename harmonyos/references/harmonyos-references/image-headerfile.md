@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/image-hea
 title: 头文件
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:16+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:08:02+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8d9600f13ddcb820eae73d9a3c693ab246124c7bf27044b13be241222ac4814f
 ---
 

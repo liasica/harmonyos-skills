@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conv
 title: ohpm convert
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:38+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:cb24e9f1dbd973a2b4e3bb9c75b918b229ce2c21d95e32c09db35567fd02c922
+scraped_at: 2026-09-15T07:03:55+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:5ee92d00172f0d46155984c19be59c594c86393da9962b4b8baee5da012351c3
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -98,13 +98,13 @@ ohpm INFO: A total of 9 packets are converted successfully.
 ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712127991590" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/uP9rv-cYQNCyjKHuMHgD9A/zh-cn_image_0000002701663792.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/IVzpHNB2RSOxdKg3_Spmug/zh-cn_image_0000002701663792.png "点击放大")
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/StzwpSqrSu6kVPVr856lUQ/zh-cn_image_0000002731542991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/zdjeYdo6SHOXMybucByCCQ/zh-cn_image_0000002731542991.png)
 
 ```screen
 ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
@@ -120,4 +120,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712128912583" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ENLxOviARHiaOM52OWBStA/zh-cn_image_0000002701823718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/kZKnS3kDSSmAGjL54jqErw/zh-cn_image_0000002701823718.png)

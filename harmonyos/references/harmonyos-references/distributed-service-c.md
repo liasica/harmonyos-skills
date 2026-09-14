@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/distribut
 title: C API
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > C API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:15+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:06:41+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:967a951f707c581906a805e31ab55e2a948cda12cc8eab294721e8cb72e85a1d
 ---
 

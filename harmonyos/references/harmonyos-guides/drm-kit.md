@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-kit
 title: DRM Kit（数字版权保护服务）
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:10+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:895e306213e0a6e90d1d341930a8d8d1d31d008e90c53c399b8675d502fc0c81
 ---
 

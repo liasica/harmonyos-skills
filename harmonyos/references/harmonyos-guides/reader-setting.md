@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 修改阅读设置
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:39+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:56+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:a1acb314564f5ca6c9660676a1b90b32e956d2f3ed23be864015adeaef973b94
 ---
 

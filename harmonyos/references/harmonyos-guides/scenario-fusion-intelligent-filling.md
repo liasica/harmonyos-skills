@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 智能填充服务
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:46+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:56+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c39fcd06385fa8724d18e55054c616b616f5e916b869d8d2e17565c3910d833c
 ---
 

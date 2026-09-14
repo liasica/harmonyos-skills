@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Slider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Slider
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1178064f49da5b1ac098b1e37fb394a3ebd04e7c6341f4e7a745142936e3e363
+scraped_at: 2026-09-15T07:04:57+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:ea78ab1bcd684bec1854a1428d683421c85f33f4602276777b7bf3e40541a625
 ---
 
 滑动条组件，通常用于快速调节设置值，如音量调节、亮度调节等应用场景。支持样式定制、方向配置、交互方式和无障碍功能，能解决UI一致性问题，提升开发效率，从而改善用户体验并降低开发成本。
@@ -1099,7 +1099,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/yS-h8mfpTLumGOSUd4ZxzA/zh-cn_image_0000002717612746.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/9X8MSj_ZQ7S-HNQhCx3YOA/zh-cn_image_0000002723856952.gif)
 
 ### 示例2（设置滑动条样式）
 
@@ -1154,7 +1154,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/1FVCw149Qo-71v-zFrQRwA/zh-cn_image_0000002747292699.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/z5QplQMpQParwXwmA6veeg/zh-cn_image_0000002723697034.png)
 
 ### 示例3（自定义滑动条）
 
@@ -1272,7 +1272,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/lGEIYrz1QoSb6thzOnMhWw/zh-cn_image_0000002747212615.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/xErWxujMS_ypmlSSwJkjZg/zh-cn_image_0000002753296801.gif)
 
 ### 示例4（设置滑动条渐变色）
 
@@ -1355,7 +1355,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/KvkhXEjyTI6shKehUU0uUA/zh-cn_image_0000002717772680.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5PyDF5hwTG-m1cnEKxtaug/zh-cn_image_0000002753456719.gif)
 
 ### 示例5（滑动条设置前后缀内容）
 
@@ -1572,7 +1572,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/fZtPFWFzQFmVNustZRHwnw/zh-cn_image_0000002717612748.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/rCLnCJz_TwuXmgNjOMvghg/zh-cn_image_0000002723856954.jpeg)
 
 ### 示例6（滑动条设置刻度点无障碍文本）
 
@@ -1640,7 +1640,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/N2t7-kfpRLqzTYfn-qehxg/zh-cn_image_0000002747292701.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/H-ysamvNQLqD0ocL1DIAsg/zh-cn_image_0000002723697036.png)
 
 ### 示例7（设置滑动条的双向绑定）
 
@@ -1673,7 +1673,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/oLc54F12RyOoVWRiYJXRoQ/zh-cn_image_0000002747212617.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Nb_Ej0XvSxm_WwgaMODRRw/zh-cn_image_0000002753296803.gif)
 
 ### 示例8（滑块设置渐变色）
 
@@ -1792,7 +1792,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eTHW5GuyQJiOYxZ65MTFJQ/zh-cn_image_0000002717772682.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/5_UK5BdnQrq-uFfJxXJ61g/zh-cn_image_0000002753456721.png)
 
 ### 示例9（设置滑轨的背景颜色）
 
@@ -1836,13 +1836,13 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/3dl4DP_QQV6U878BAilFqQ/zh-cn_image_0000002717612750.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/S4FoZQQwQvexBfvendz52A/zh-cn_image_0000002723856956.png)
 
 ### 示例10（设置滑动条的沉浸光感效果）
 
 该示例通过通用属性[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)设置滑动条的系统材质，实现沉浸光感效果。设置系统材质后，Slider滑动过程中会产生粒子动画效果。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，新增systemMaterial接口。
 
@@ -1876,8 +1876,8 @@ struct SliderSystemMaterial {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/q20jOLjIQeeaXBgaWUM3GQ/zh-cn_image_0000002747292703.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/gIOxOMSUTw-X4CKBA3dyEA/zh-cn_image_0000002723697038.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/N-gjMhN2Rc-OR8EQWO4hlg/zh-cn_image_0000002747212619.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Hk0z1O8zQRmaWjNkAtgDyw/zh-cn_image_0000002753296805.gif)

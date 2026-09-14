@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义组件节点 (FrameNode)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义组件节点 (FrameNode)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:06cb72e8879dc6c06337feb9760c62bc65be972dcd2ecc251b61dcf9badd4aab
+scraped_at: 2026-09-15T07:01:29+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:fe351a501a064a2d2eb572720a386e031a989823b31cd679c277f7071e65d7e0
 ---
 
 ## 概述
 
 对于拥有自定义前端的第三方框架（如JSON、XML、DOM树等），需将特定的DSL转换为ArkUI的声明式描述。如下图描述了JSON定义的前端框架和ArkUI声明式描述的对应关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/6kgbWGrKTsm7H83MBTJE4w/zh-cn_image_0000002747210553.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qCKoeIbLSWSvaJIh0RlECw/zh-cn_image_0000002753294739.png)
 
 上述转换过程需要依赖额外的数据驱动，绑定至[Builder](arkts-builder.md)中，较为复杂且性能欠佳。这类框架通常依赖于ArkUI的布局、事件处理、基础的节点操作和自定义能力。大部分组件通过自定义实现，但需结合使用部分系统组件以实现混合显示，如下图示例既使用了[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的自定义方法进行绘制，又使用了系统组件[Column](../harmonyos-references/ts-container-column.md)及其子组件[Text](../harmonyos-references/ts-basic-components-text.md)，通过[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)的方式将其挂载到根节点的FrameNode上混合显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/lmMyn_geTe-C2PxMJVLUSQ/zh-cn_image_0000002717770618.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/GdP-bGMXSWyYfFN58l3UBA/zh-cn_image_0000002753454657.png)
 
 [FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的设计初衷正是为了解决上述转换问题。FrameNode表示组件树中的实体节点，与自定义占位容器组件[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)相配合，实现在占位容器内构建一棵自定义的节点树。该节点树支持动态操作，如节点的增加、修改和删除。基础的FrameNode具备设置通用属性和事件回调的功能，同时提供完整的自定义能力，涵盖自定义测量、布局和绘制等方面。
 
@@ -435,7 +435,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/1tmbCa2rQzadorujJ8mdxw/zh-cn_image_0000002717610684.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/zEC8b0HUT-y2hSGIROkV5A/zh-cn_image_0000002723854892.gif)
 
 ## 设置节点通用属性和事件回调
 
@@ -806,13 +806,12 @@ FrameNode提供了查询接口用于返回实体节点的基础信息。具体�
 
 **说明** 
 
-1、当前接口提供的可查询的信息包括：
+1. 当前接口提供的可查询的信息包括：
 
-* 节点大小：[getMeasuredSize](../harmonyos-references/js-apis-arkui-framenode.md#getmeasuredsize12)，[getUserConfigSize](../harmonyos-references/js-apis-arkui-framenode.md#getuserconfigsize12)
-* 布局信息：[getPositionToWindow](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontowindow12)，[getPositionToParent](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoparent12)，[getLayoutPosition](../harmonyos-references/js-apis-arkui-framenode.md#getlayoutposition12)，[getUserConfigBorderWidth](../harmonyos-references/js-apis-arkui-framenode.md#getuserconfigborderwidth12)，[getUserConfigPadding](../harmonyos-references/js-apis-arkui-framenode.md#getuserconfigpadding12)，[getUserConfigMargin](../harmonyos-references/js-apis-arkui-framenode.md#getuserconfigmargin12)
-* 节点信息：[getId](../harmonyos-references/js-apis-arkui-framenode.md#getid12)，[getUniqueId](../harmonyos-references/js-apis-arkui-framenode.md#getuniqueid12)，[getNodeType](../harmonyos-references/js-apis-arkui-framenode.md#getnodetype12)，[getOpacity](../harmonyos-references/js-apis-arkui-framenode.md#getopacity12)，[isVisible](../harmonyos-references/js-apis-arkui-framenode.md#isvisible12)，[isClipToFrame](../harmonyos-references/js-apis-arkui-framenode.md#iscliptoframe12)，[isAttached](../harmonyos-references/js-apis-arkui-framenode.md#isattached12)，[getInspectorInfo](../harmonyos-references/js-apis-arkui-framenode.md#getinspectorinfo12)，[getCustomProperty](../harmonyos-references/js-apis-arkui-framenode.md#getcustomproperty12)
-
-2、无法获取UINode类型节点，例如：JsView节点、[Span](../harmonyos-references/ts-basic-components-span.md)、[ContainerSpan](../harmonyos-references/ts-basic-components-containerspan.md)、[ContentSlot](../harmonyos-references/ts-components-contentslot.md)、[ForEach](../harmonyos-references/ts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)、if/else组件等。
+   * 节点大小：[getMeasuredSize](../harmonyos-references/js-apis-arkui-framenode.md#getmeasuredsize12)，[getUserConfigSize](../harmonyos-references/js-apis-arkui-framenode.md#getuserconfigsize12)
+   * 布局信息：[getPositionToWindow](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontowindow12)，[getPositionToParent](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoparent12)，[getLayoutPosition](../harmonyos-references/js-apis-arkui-framenode.md#getlayoutposition12)，[getUserConfigBorderWidth](../harmonyos-references/js-apis-arkui-framenode.md#getuserconfigborderwidth12)，[getUserConfigPadding](../harmonyos-references/js-apis-arkui-framenode.md#getuserconfigpadding12)，[getUserConfigMargin](../harmonyos-references/js-apis-arkui-framenode.md#getuserconfigmargin12)
+   * 节点信息：[getId](../harmonyos-references/js-apis-arkui-framenode.md#getid12)，[getUniqueId](../harmonyos-references/js-apis-arkui-framenode.md#getuniqueid12)，[getNodeType](../harmonyos-references/js-apis-arkui-framenode.md#getnodetype12)，[getOpacity](../harmonyos-references/js-apis-arkui-framenode.md#getopacity12)，[isVisible](../harmonyos-references/js-apis-arkui-framenode.md#isvisible12)，[isClipToFrame](../harmonyos-references/js-apis-arkui-framenode.md#iscliptoframe12)，[isAttached](../harmonyos-references/js-apis-arkui-framenode.md#isattached12)，[getInspectorInfo](../harmonyos-references/js-apis-arkui-framenode.md#getinspectorinfo12)，[getCustomProperty](../harmonyos-references/js-apis-arkui-framenode.md#getcustomproperty12)
+2. 无法获取UINode类型节点，例如：JsView节点、[Span](../harmonyos-references/ts-basic-components-span.md)、[ContainerSpan](../harmonyos-references/ts-basic-components-containerspan.md)、[ContentSlot](../harmonyos-references/ts-components-contentslot.md)、[ForEach](../harmonyos-references/ts-rendering-control-foreach.md)、[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)、if/else组件等。
 
 ## 获取节点位置偏移信息
 
@@ -820,7 +819,7 @@ FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移�
 
 [getPositionToWindow](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontowindow12)，[getPositionToParent](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoparent12)，[getPositionToScreen](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoscreen12)三个接口获取到的位置信息关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/k-DiAUIRRVq_G3C9Qb0ruw/zh-cn_image_0000002747290637.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/QCFA25A-Sxas1qMJQG6C4A/zh-cn_image_0000002723694974.png)
 
 ```typescript
 import { NodeController, FrameNode, UIContext } from '@kit.ArkUI';
@@ -2100,7 +2099,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/wvyV5ZGySUCuS0hHiXBr2A/zh-cn_image_0000002747210555.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/JxsQ4Zm0Ruel1AqY8tOSNA/zh-cn_image_0000002753294741.png)
 
 ## 更新当前帧节点
 
@@ -2200,7 +2199,7 @@ struct ListNodeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/VL48oN8cR2eaIvUdN9wzwA/zh-cn_image_0000002717770620.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YEKmyzN1Ska23pNANxfMyw/zh-cn_image_0000002753454659.png)
 
 ## 判断节点是否处于渲染状态
 
@@ -2271,4 +2270,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/boZudR8rRB-sE0-PJ7TaSQ/zh-cn_image_0000002717610686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/aCB1bJDuR_6DwClSJRSadg/zh-cn_image_0000002723854894.png)

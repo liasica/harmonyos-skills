@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowp
 title: lowpower_audio_sink.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > lowpower_audio_sink.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5b5e35d79816a7500597edd8b6fa4015ce3594fd7078b354a869930f3ed76d97
+scraped_at: 2026-09-15T07:08:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:5f0923e53d14acbb04ce3787a7e13be45d4300c1655cb29a2fe29c9d08e341b9
 ---
 
 ## 概述
@@ -52,7 +52,7 @@ content_hash: sha256:5b5e35d79816a7500597edd8b6fa4015ce3594fd7078b354a869930f3ed
 | [OH\_AVErrCode OH\_LowPowerAudioSinkCallback\_SetErrorListener(OH\_LowPowerAudioSinkCallback\* callback, OH\_LowPowerAudioSink\_OnError onError, void\* userData)](capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosinkcallback_seterrorlistener) | 为LowPowerAudioSinkCallback设置错误监听。 |
 | [OH\_AVErrCode OH\_LowPowerAudioSinkCallback\_SetInterruptListener(OH\_LowPowerAudioSinkCallback\* callback, OH\_LowPowerAudioSink\_OnInterrupted onInterrupted, void\* userData)](capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosinkcallback_setinterruptlistener) | 为LowPowerAudioSinkCallback设置音频焦点打断监听。 |
 | [OH\_AVErrCode OH\_LowPowerAudioSinkCallback\_SetDeviceChangeListener(OH\_LowPowerAudioSinkCallback\* callback, OH\_LowPowerAudioSink\_OnDeviceChanged onDeviceChanged, void\* userData)](capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosinkcallback_setdevicechangelistener) | 为LowPowerAudioSinkCallback设置音频设备切换监听。 |
-| [OH\_AVErrCode OH\_LowPowerAudioSinkCallback\_SetEosListener(OH\_LowPowerAudioSinkCallback callback, OH\_LowPowerAudioSink\_OnEos onEos, void userData)](capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosinkcallback_seteoslistener) | 为LowPowerAudioSinkCallback设置播放完成监听。 |
+| [OH\_AVErrCode OH\_LowPowerAudioSinkCallback\_SetEosListener(OH\_LowPowerAudioSinkCallback\* callback, OH\_LowPowerAudioSink\_OnEos onEos, void\* userData)](capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosinkcallback_seteoslistener) | 为LowPowerAudioSinkCallback设置播放完成监听。 |
 
 ## 函数说明
 

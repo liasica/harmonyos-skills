@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: gameBuddyService（游戏伴随服务）
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > gameBuddyService（游戏伴随服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:08:37+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:dc327729d0a136a3c23df62680789f90af705ee4f54eaa6121cd4bbf4c9c2897
 ---
 

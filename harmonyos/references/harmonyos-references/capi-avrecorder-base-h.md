@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avre
 title: avrecorder_base.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avrecorder_base.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:19c2c82fd57ebbb7ac26ef050461eceba5c7884068233a043adef57ffcdd8666
+scraped_at: 2026-09-15T07:08:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:2696d96ad2c78fed7b247010bfeced7bdcedeba35747ebad191613a48eaa5e57
 ---
 
 ## 概述
 
-定义了媒体AVRecorder的结构体、枚举和回调函数。
+定义AVRecorder的结构体、枚举和回调函数类型。
 
 **引用文件：** <multimedia/player\_framework/avrecorder\_base.h>
 

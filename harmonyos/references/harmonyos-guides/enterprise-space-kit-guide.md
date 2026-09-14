@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprise-sp
 title: Enterprise Space Kit（企业数字空间服务）
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-06-13
+scraped_at: 2026-09-15T07:02:42+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d331ed13b5d6574d7abecbfd6b09c6f8fd6bd1818f6503ac939e6396fb71991f
 ---
 

@@ -3,19 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preparations_
 title: 上架前准备-获取地图服务协议及资质证明
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 上架前准备-获取地图服务协议及资质证明
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:23+08:00
+scraped_at: 2026-09-15T07:02:50+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:bb2d2edf893198b6aee02fd85751fee19368c615c77ebc71ca09ba084b1d208b
+content_hash: sha256:c860cf492463eea3dc88f3011686588cd806d9e92c444f87a0bd49a9cf953eb8
 ---
 
 ## 华为地图服务使用协议
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“协议签署记录”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/EUnVjJ9ET2WJ9NT-PfndCQ/zh-cn_image_0000002747291889.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/itvZF0nET6CXQ--12-G2zw/zh-cn_image_0000002723696224.png)
 2. 在查看下载协议中选择可查看“华为地图服务使用协议”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/cAJL2MGFRHWliwAq3FtGSQ/zh-cn_image_0000002747211805.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Wwa0Iyp8TKGAIbeeIRjE-g/zh-cn_image_0000002753295991.png)
 
 ## 地图审图号
 

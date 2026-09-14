@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-full-c
 title: 容器组件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:55+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:05:19+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e97c738c7a1fc0cfb38aa2138de6f18e1ea06eb328fd5fa8c49bf8218535a0ef
 ---
 

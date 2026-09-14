@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-ndk
 title: UI开发 (基于NDK构建UI)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:52+08:00
-doc_updated_at: 2026-08-21
+scraped_at: 2026-09-15T07:01:29+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:bd0a547a1cfca8ef53afd8b666109f75544ceecb97fc245374921d22c78643b0
 ---
 

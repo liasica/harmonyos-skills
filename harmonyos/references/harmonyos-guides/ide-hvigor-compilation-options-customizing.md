@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 灵活定制编译选项
 breadcrumb: 指南 > 构建应用 > 定制构建 > 灵活定制编译选项
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:16+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:49+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ba27c4d5c1c30e5208339b490b64c5a06868d0dc160e231a335724c2f2bcf30a
 ---
 

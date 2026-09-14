@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compone
 title: 自定义组件复用
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:47+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:18+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0ec947ea4fcb25aa493e4653c8dfca37cff75345a7ab0211c72c19ac1c2d2cb8
 ---
 

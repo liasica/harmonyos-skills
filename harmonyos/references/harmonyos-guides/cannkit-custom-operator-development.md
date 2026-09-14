@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-custo
 title: 自定义算子开发
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:23+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:02+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fa2dd2cdd65a8b5e328daedeb3e1218b7961c5c0340e68ce32693381f8da1bd5
 ---
 

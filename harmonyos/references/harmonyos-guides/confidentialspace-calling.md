@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/confidentials
 title: 运行数据应用处理数据
 breadcrumb: 指南 > 系统 > 安全 > Confidential Space Kit（机密空间服务） > 运行数据应用处理数据
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:24+08:00
+scraped_at: 2026-09-15T07:01:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:aab6b5fa9b0dabbc181f1dd6659d7c732ae68430dbf73d410a80a7420416167f
+content_hash: sha256:0c5f03d32ee0cd4b059590fbebeb327f6d57e152c959cf9f6c5fffdf6624e53f
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:aab6b5fa9b0dabbc181f1dd6659d7c732ae68430dbf73d410a80a742041
 
 应用在机密空间中运行数据应用（以下简称DA）的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/mnwGXNqfQWmdJPJR80UZ-g/zh-cn_image_0000002717611130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/e8xy09vdTv2AEwwXJH5Y6Q/zh-cn_image_0000002723855338.png)
 
 1. 应用调用[runApp](../harmonyos-references/confidentialspace-confidentialspace.md#confidentialspacerunapp)，异步发起运行DA请求：
 

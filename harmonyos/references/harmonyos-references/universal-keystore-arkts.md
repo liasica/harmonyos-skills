@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/universal
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:07:43+08:00
-doc_updated_at: 2026-03-20
+scraped_at: 2026-09-15T07:06:29+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:883415a1c6804eaef77a3a01654b20cdab75b2cb8207260f170d33319a441c5a
 ---
 

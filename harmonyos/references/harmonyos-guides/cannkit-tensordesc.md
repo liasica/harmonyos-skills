@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tenso
 title: TensorDesc
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > TensorDesc
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:56+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:03:19+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:468377ce7e378e81726c655a369156f383c41f5c3fd8389dd77715541eec3ee8
 ---
 

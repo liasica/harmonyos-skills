@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Swiper
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:23+08:00
+scraped_at: 2026-09-15T07:04:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a36c53c3ce1b8079b3a09d74659433ce22692f9ea13aedc41184b0863be1ffd2
+content_hash: sha256:fb6cd4aba1145d3b93a62dbe374a413fe9709be461144583fb84a740e849504d
 ---
 
 滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -2336,7 +2336,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/cwCEctU6SEmYXvpjq9QIBQ/zh-cn_image_0000002717612648.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/FHklrgHvTqSEICZiVN4HtQ/zh-cn_image_0000002723856854.gif)
 
 ### 示例2（设置数字指示器）
 
@@ -2423,7 +2423,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/nzRLh6ZmRHK40lMUTWQ4GQ/zh-cn_image_0000002747292601.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/74Jf_-tATPGwaUxFzAVGvA/zh-cn_image_0000002723696936.gif)
 
 ### 示例3（设置按组翻页）
 
@@ -2513,7 +2513,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/XpnQoMnMTb67kidHCwnwZQ/zh-cn_image_0000002747212517.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/PQmVEHddT1eXZBo2foNDKA/zh-cn_image_0000002753296703.gif)
 
 ### 示例4（设置自定义页面切换动画）
 
@@ -2649,7 +2649,7 @@ struct SwiperCustomAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/yZg_A3jaT-aqX7MY0JgBhQ/zh-cn_image_0000002717772582.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/m0_aovLCT_qw4O6IsrjUCg/zh-cn_image_0000002753456621.gif)
 
 ### 示例5（设置圆点导航点超长显示）
 
@@ -2745,7 +2745,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/NTQzItIZTWCJUpynzY11iw/zh-cn_image_0000002717612650.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/coQ19jRZTGeLv8j6RRaA5w/zh-cn_image_0000002723856856.gif)
 
 ### 示例6（预加载子节点）
 
@@ -2925,7 +2925,7 @@ struct TabsSwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5TfiyND7QIuum_Ddpp_pbw/zh-cn_image_0000002747292603.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/7vqX2jEBSLqG4RC1I_6ddQ/zh-cn_image_0000002723696938.gif)
 
 ### 示例8（滑动行为拦截事件）
 
@@ -3014,7 +3014,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ksqBWW5GTnCqVCpsX5pkjQ/zh-cn_image_0000002747212519.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Y8fiVULXSS-KNkNR0GPcIA/zh-cn_image_0000002753296705.gif)
 
 ### 示例9（演示导航点space与bottom）
 
@@ -3118,7 +3118,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/cNXsCDO-QGqTuUlZsckgRw/zh-cn_image_0000002717772584.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/dGhUoc6WTSuTriishhhgxA/zh-cn_image_0000002753456623.gif)
 
 ### 示例10（Swiper组件基于断点配置显示个数）
 
@@ -3182,11 +3182,11 @@ struct SwiperExample {
 
 Swiper宽度属于[sm](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)及更小的断点区间时显示1列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ldykxOf8S2qgRq881xjP8A/zh-cn_image_0000002717612652.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/yDUed8QASUa2D6KXIDul_Q/zh-cn_image_0000002723856858.jpg)
 
 Swiper宽度属于[md](../harmonyos-guides/arkts-layout-development-grid-layout.md#栅格容器断点)断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/7bDQ_PsiSvKFRKMmroDUaA/zh-cn_image_0000002747292605.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/h474ERubS-SHvyugW7dKbQ/zh-cn_image_0000002723696940.jpg)
 
 ### 示例11（Swiper组件模拟拖拽）
 
@@ -3250,7 +3250,7 @@ struct SwiperFakeDragExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/CiHwAG17Rha8YGqygcvdNw/zh-cn_image_0000002747212521.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/RBr1puB2RSq1WWdywKb5Vg/zh-cn_image_0000002753296707.gif)
 
 ### 示例12（配置Swiper组件导航点图标）
 
@@ -3297,4 +3297,4 @@ struct SwiperIndicatorIconExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/IiwlMtuGSnKKQpzLcQH6Zw/zh-cn_image_0000002717772586.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/CMlx8cY5Rv-smsHnEaXOXQ/zh-cn_image_0000002753456625.jpg)

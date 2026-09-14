@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-arkts
 title: Asset Store Kit开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:59+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:45+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4fc14c45eadf08c888a662cadacbcbf7807d565140a46f0d7cc282a401781de0
 ---
 

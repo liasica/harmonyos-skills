@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/modular-objec
 title: 基于ModularObjectExtensionAbility的模块化对象开发指导 (C/C++)
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 基于ModularObjectExtensionAbility的模块化对象开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:01:10+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0f5b0886fdfcf502b67a98cdb6abd85b754d94d1870d9ee32b00e22345002004
 ---
 

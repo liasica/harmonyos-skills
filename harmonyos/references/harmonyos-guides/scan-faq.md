@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq
 title: Scan Kit常见问题
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:28+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:22dcb1a705381fcf2174fdb567eccdb3a1025280035401531034ab21cd1dce3e
 ---
 

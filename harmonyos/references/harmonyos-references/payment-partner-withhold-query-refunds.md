@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 查询退款订单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 签约代扣 > 查询退款订单
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:06+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:09:13+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:87137264eb8e3e2fd607250730f73fa87bb626195fbbc160b49d97ac50e99882
 ---
 

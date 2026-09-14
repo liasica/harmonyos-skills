@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-local
 title: 位置推荐方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 位置推荐方案
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:33+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0b239924cb8e064dfe485a2711b73e677399504884142732ce5f08c8399c3af5
 ---
 

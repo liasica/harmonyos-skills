@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 典型场景展示
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 典型场景展示
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:28+08:00
+scraped_at: 2026-09-15T07:02:56+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:f3e2df0b99dca9e176eb0604bea2914d78a81b16ea3709a78f44e229721abcb0
+content_hash: sha256:410dce4145106e7dc3ac9a31374bbe0455c81ad344e2a9ea6bec23abe5c5a50d
 ---
 
 如下展示两种智能填充的典型场景。
@@ -18,11 +18,11 @@ content_hash: sha256:f3e2df0b99dca9e176eb0604bea2914d78a81b16ea3709a78f44e229721
 
 剪贴板数据源推荐场景目前仅支持中文姓名和中文地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/kmsXZQrCRfGNMguKuB8xjw/zh-cn_image_0000002747291989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/PMyi6c8FQYqCRnNGo0YRJg/zh-cn_image_0000002723696324.png)
 
 示例二：根据用户输入，智能关联设备上历史表单输入、华为账号等信息提供输入建议，一键填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/BRt3QdiXRo20MunmUrX0Pg/zh-cn_image_0000002747211905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/HXuxlpdARBCbMmnjlx8v5A/zh-cn_image_0000002753296091.png)
 
 ## 填写收货地址场景
 
@@ -32,11 +32,11 @@ content_hash: sha256:f3e2df0b99dca9e176eb0604bea2914d78a81b16ea3709a78f44e229721
 
 剪贴板数据源推荐场景目前仅支持中文姓名和中文地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/RTC2CntXTwqq2RWH8o5AdA/zh-cn_image_0000002717771970.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/iPERTmKkRs2iqIQUn4lx4A/zh-cn_image_0000002753456009.png)
 
 示例二：根据用户输入，智能关联设备上历史表单输入、华为账号等信息提供输入建议，一键填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/1AEs-J08TUq8lPFb0kn-Hg/zh-cn_image_0000002717612038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/9V2Rc_WzTYKXClAnU-QgPg/zh-cn_image_0000002723856244.png)
 
 ## 示例代码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/concurrency-f
 title: 并发常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e0d6c22562ebe6285e7dd311f81c6d52dabf87839f0351fb3cac8ddbed912aad
+scraped_at: 2026-09-15T07:01:16+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:05b20caff5bd68c021d59de3426b708b8699eb8886a8fbef43321994de5162da
 ---
 
 ## TaskPool任务不执行快速定位指导
@@ -157,9 +157,8 @@ content_hash: sha256:e0d6c22562ebe6285e7dd311f81c6d52dabf87839f0351fb3cac8ddbed9
 
 **解决方案**
 
-1.分析其他任务执行耗时3s/5s是否合理；
-
-2.调整taskA优先级。
+1. 分析其他任务执行耗时3s/5s是否合理；
+2. 调整taskA优先级。
 
 ### 排查方向：晚执行的TaskPool任务是串行任务或者依赖其他任务
 
@@ -202,7 +201,8 @@ TaskPool第一次执行任务慢，间隔几百毫秒，原因是子线程反序
 
 **解决方案**
 
-1.可拆分@Concurrent方法到单独的ets文件，减少模块初始化时间；2.使用延迟加载（[lazy import](arkts-lazy-import.md)）。
+1. 可拆分@Concurrent方法到单独的ets文件，减少模块初始化时间；
+2. 使用延迟加载（[lazy import](arkts-lazy-import.md)）。
 
 ## TaskPool序列化失败问题定位指导
 

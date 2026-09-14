@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opimp
 title: OpImplRegisterV2
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间 > OpImplRegisterV2
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:04+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:12+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:457bef68f7bb602f3ecda0b4a89a27a66e1f752b192ff50edd07e6f9a07e89fe
 ---
 

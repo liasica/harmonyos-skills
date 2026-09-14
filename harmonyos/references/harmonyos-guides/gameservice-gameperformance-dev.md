@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 游戏场景感知（可选）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:26+08:00
-doc_updated_at: 2026-06-13
+scraped_at: 2026-09-15T07:02:43+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:20f1a631541799f95a553bc3acbb15f2b810ebad147296a9439228a6f0e7b914
 ---
 

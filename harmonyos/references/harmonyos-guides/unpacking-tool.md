@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unpacking-too
 title: 拆包工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 打包拆包工具 > 拆包工具
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:71aca55a47dce4ad1f1f94a8983eede89ef5f8c172ed136640b8d92d4e03b9aa
+scraped_at: 2026-09-15T07:02:14+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:05e80ede85c2d284ba0bfe454a9a2d5d89e8418e13682643fbb88dc34e704991
 ---
 
 拆包工具是HarmonyOS提供的一种调测工具，支持通过命令行方式将HAP、HSP、App等文件解压成文件夹，并且提供Java接口对HAP、HSP、App等文件进行解析。
@@ -228,7 +228,7 @@ java -jar app_unpacking_tool.jar --mode appqf --appqf-path <path> --out-path <pa
 | label | String | 标识应用的label。 | NA |
 | description | String | 标识应用的描述信息。 | Stage模型新增。 |
 | minCompatibleVersionCode | int | 标识应用能够兼容的最低版本号。 | NA |
-| distributedNotificationEnabled | boolean | 标记该应用是否开启分布式通知。true表示开启，false表示不开启。 | Stage模型新增。 |
+| distributedNotificationEnabled | boolean | 标识该应用是否开启分布式通知。true表示开启，false表示不开启。 | Stage模型新增。 |
 | bundleType | String | 标识bundle的类型，取值：  - app：应用。  - atomicService：元服务。  - shared：应用间共享库。 | NA |
 | compileSdkVersion | String | 标识编译该应用时使用的sdk版本。 | 仅限API10及以后的应用。 |
 | compileSdkType | String | 标识编译该应用时使用的sdk类别。 | 仅限API10及以后的应用。 |
@@ -492,7 +492,7 @@ java -jar app_unpacking_tool.jar --mode appqf --appqf-path <path> --out-path <pa
 | name | String | 标识forms的名称。 | NA |
 | type | String | 标签标识卡片的类型。 | NA |
 | updateEnabled | boolean | 标识该卡片是否支持定时刷新。true表示支持，false表示不支持。 | NA |
-| scheduledUpdateTime | String | 标签标识卡片顶点刷新的时间，采用24小时计数，精确到分钟。 | NA |
+| scheduledUpdateTime | String | 标签标识卡片定时刷新的时间，采用24小时计数，精确到分钟。 | NA |
 | updateDuration | int | 标识卡片定时刷新的更新频率，单位为30分钟，取值为30的倍数值。 | NA |
 | supportDimensions | List<String> | 标识卡片外观规格，取值为”1 \* 2“，”2 \* 2“，”2 \* 4“，”4 \* 4“。 | NA |
 | defaultDimension | String | 标识卡片默认外观规格，取值必须在supportDimensions配置的列表中。 | NA |

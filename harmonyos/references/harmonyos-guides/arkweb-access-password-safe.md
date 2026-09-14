@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-access
 title: 网页接入密码保险箱
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务 > 网页接入密码保险箱
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:24+08:00
+scraped_at: 2026-09-15T07:01:45+08:00
 doc_updated_at: 2026-08-14
-content_hash: sha256:81048d9b236287d08928f3bd209ea20080f743958bd9d14738a31544bc55d9c8
+content_hash: sha256:59b2e77b4dde72e485c1d28cf56bc77eefe4a86aeb39b8a5353bc2a1d67107e6
 ---
 
 网页中的登录表单，登录成功后，用户可将用户名和密码保存到系统密码保险箱中。再次打开该网页时，密码保险箱可以提供用户名、密码的自动填充。
@@ -16,21 +16,21 @@ content_hash: sha256:81048d9b236287d08928f3bd209ea20080f743958bd9d14738a31544bc5
 
 1. 在网站中输入用户名、密码，登录成功后，ArkWeb会提示将用户名和密码保存到密码保险箱中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/pNfZuca8TuOLif-10HrZwQ/zh-cn_image_0000002747291071.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/WclfI2oRQ6iCSYjCbey3BQ/zh-cn_image_0000002723695408.png)
 2. 再次打开相同的网站，点击用户名或者密码框中时，会弹出密码保险箱的填充提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Dn7gVOM8T1SpdlfWmNXX7Q/zh-cn_image_0000002747210989.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/T2WmUL4NSLykZxGr7wy8FQ/zh-cn_image_0000002717771054.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/sw711_WeQZCRF70JCaPNuA/zh-cn_image_0000002753295175.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/tyNjDSFPSwGbOgJmLsiJ2Q/zh-cn_image_0000002753455093.png)
 3. 可以选择提示框中的用户名，通过认证，就能直接在网页中填入之前保存的用户名、密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Oxhw693PTyWmrSy68XRSKQ/zh-cn_image_0000002717611120.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/EZwLTgSXT6y1DYSRA3WpBg/zh-cn_image_0000002723855328.png)
 4. 点击“使用其他账号”，选择密码保险箱中保存的其他账号。认证后在网页中填入选择的用户名、密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Z11qO9i8Sru7tY9BxnovRw/zh-cn_image_0000002747291073.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/Lz0HvXhJQdu5xwSTn3n1Eg/zh-cn_image_0000002747210991.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/HVf73t4fQIm1bG9syOMiyQ/zh-cn_image_0000002717771056.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/-aDHsBiYRLCrNAPWN84lZQ/zh-cn_image_0000002723695410.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/ShzIWq9rRu-h30SIrqh_6w/zh-cn_image_0000002753295177.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/V51EXTDSSWyWN9_2ZPjDrw/zh-cn_image_0000002753455095.png)
 5. 点击“手动输入”或者提示框之外的地方，会弹出小艺输入法，会提示可用于密码填充的用户名和钥匙图标。
 
    点击用户名可触发在网页中填入用户名、密码；点击钥匙图标，进入选择账号的界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/OEXOELm-Ri2IszqzEF09pA/zh-cn_image_0000002717611122.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ca4aLUpAQVSnAp7DREYMXg/zh-cn_image_0000002747291075.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/OwvILMfyQKqt9_MlEQ40gg/zh-cn_image_0000002747210993.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/wF74oaoCTOaT3Em3yWkC_Q/zh-cn_image_0000002723855330.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/mZkWu-bQR561h_g1i2bCKw/zh-cn_image_0000002723695412.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kR5vSh1vTruoGPYR9RQu2A/zh-cn_image_0000002753295179.png)
 
 ## 2in1使用场景
 
@@ -38,16 +38,16 @@ content_hash: sha256:81048d9b236287d08928f3bd209ea20080f743958bd9d14738a31544bc5
 
 1. 在网站中输入用户名、密码，登录成功后，ArkWeb会提示将用户名和密码保存到密码保险箱中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/6w8LVvmfRBCn4x70BlYKSg/zh-cn_image_0000002717771058.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vY37ugpETzWr-50Ks3JJgw/zh-cn_image_0000002753455097.png)
 2. 再次打开相同的网站，点击用户名或者密码框中时，会弹出密码保险箱的下拉框。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/23FPBMP0RPiXeKcfcTfmpA/zh-cn_image_0000002717611124.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/26dCDTqkThqGqN6xBn9IAg/zh-cn_image_0000002723855332.png)
 3. 选择下拉框中的用户名，通过认证，就能直接在网页中填入之前保存的用户名、密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Y_fzpB33QrS5BweP1XN8PQ/zh-cn_image_0000002747291077.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/S6BGF50lRpuVK4a6-T6Bxw/zh-cn_image_0000002723695414.png)
 4. 也可以点击下拉框中的“使用其他账号”，选择密码保险箱中保存的其他账号。认证后在网页中填入选择的用户名、密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/bhks1zT8QpOA2P_jcpbubQ/zh-cn_image_0000002747210995.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/hgiR4SFxRU-cH-O53vK0Dg/zh-cn_image_0000002753295181.png)
 
 ## 网页密码保存规格
 
@@ -137,11 +137,11 @@ ArkWeb使用Chromium智能算法，自动识别网页中的用户名、密码元
 
 【案例1】：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/4nIGsJeTQmqveeDsPgyhJQ/zh-cn_image_0000002717771060.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qLI0WX-SQCWffWpegOjJVg/zh-cn_image_0000002753455099.png)
 
 【案例2】：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/4TiG2a9lTG6z_L-0WGpnTw/zh-cn_image_0000002717611126.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/EzxpefE4TDivuLxXk-WZ8g/zh-cn_image_0000002723855334.png)
 
 ### 不支持自动填充的密码登录表单类型
 

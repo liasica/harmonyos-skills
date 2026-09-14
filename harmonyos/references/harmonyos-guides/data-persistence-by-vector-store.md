@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过向量数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过向量数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:984f88604407272dab7aefeac5813884019dcf1464cf53907edb2f5dd443d6ca
+scraped_at: 2026-09-15T07:01:12+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:a49af2c763270420baaeeb1beaca3804539c9a7a6b89ae5ccd5566613d8c8324
 ---
 
 ## 场景介绍
@@ -21,7 +21,7 @@ content_hash: sha256:984f88604407272dab7aefeac5813884019dcf1464cf53907edb2f5dd44
 
 ## 约束限制
 
-* 系统默认日志方式是[WAL](data-terminology.md#wal模式)（Write Ahead Log）模式，系统默认落盘方式是[FULL模式](data-terminology.md#full模式)。
+* 系统默认日志方式是[WAL](data-terminology.md#wal-mode-write-ahead-logwal模式)（Write Ahead Log）模式，系统默认落盘方式是[FULL模式](data-terminology.md#full-modefull模式)。
 * 数据库中默认有4个读连接和1个写连接，线程获取到空闲读连接时，即可进行读取操作。当没有空闲读连接时，会创建新的读连接。
 * 为保证数据的准确性，数据库同一时间只能支持一个写操作，并发的写操作会串行执行。
 * 当应用被卸载完成后，设备上的相关数据库文件及临时文件会被自动清除。

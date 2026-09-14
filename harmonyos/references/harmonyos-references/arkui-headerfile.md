@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-hea
 title: 头文件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:43+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:05:26+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:91eb8d04b7760defe15d4d0febe63f81825dd3f8d6c5a092b4f11e4927857c56
 ---
 

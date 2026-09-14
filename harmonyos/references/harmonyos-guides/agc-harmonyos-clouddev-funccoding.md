@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发函数
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 开发函数
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:18+08:00
-doc_updated_at: 2026-07-15
-content_hash: sha256:4897dc863631844743d6b5c6c4889b514577b97b5058cbd74ef74f216b773c11
+scraped_at: 2026-09-15T07:03:33+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:14dc48b6d1890d2e372999e1fd07795045d9e33da86fb5e2fb02f11509a07200
 ---
 
 函数创建并配置完成后，您便可以开始编写函数业务代码了。
@@ -80,8 +80,8 @@ content_hash: sha256:4897dc863631844743d6b5c6c4889b514577b97b5058cbd74ef74f216b7
 
    右击“package.json”文件，选择“Run 'npm install'”菜单，也可以实现依赖包安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ka2BTMn0Touu-PKQX5RBmw/zh-cn_image_0000002425891501.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/D3GvibTrS3mK1sZlf_ndvA/zh-cn_image_0000002425891501.png)
 
    所有安装的依赖包都会存储在当前函数的“node\_modules”目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/VwPeVfWISJieVUd1aByEVQ/zh-cn_image_0000002392213118.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/O0NOAAbgQOOzCasz-e3ZaA/zh-cn_image_0000002392213118.png)

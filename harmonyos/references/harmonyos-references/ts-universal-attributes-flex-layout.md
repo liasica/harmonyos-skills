@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Flex布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > Flex布局
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:15+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:18483eac4f60301f55a22aca2f4ae2ff7644a0405728028b1713c2b98b2a4b8c
+scraped_at: 2026-09-15T07:04:47+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:2823c21bd1bcb841bf723f3b9ccef99aafa17d2e6d11cbd0f69b4796f8400999
 ---
 
 Flex布局提供灵活的组件排列和对齐能力，可以动态分配容器内的子组件空间，使元素根据可用空间自动扩展或收缩。适用于响应式UI布局、动态内容布局、复杂布局实现等场景，能解决传统布局在多设备适配困难、内容变化导致布局错位、复杂对齐需求难以实现等问题。
@@ -100,6 +100,10 @@ flexShrink(value: number): T
 alignSelf(value: ItemAlign): T
 
 子组件在父容器交叉轴（与主轴垂直的方向）的对齐格式，设置后会覆盖父容器的alignItems设置。仅Flex、Column、Row、DynamicLayout和GridRow容器支持此属性。
+
+**说明** 
+
+当父容器为[Flex](ts-container-flex.md)时，alignSelf仅在父容器设置FlexWrap.NoWrap时生效；设置FlexWrap.Wrap或FlexWrap.WrapReverse时不生效。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -210,4 +214,4 @@ struct FlexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/oWxJ1gTUS-mWa2uXOUzVgQ/zh-cn_image_0000002747212357.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Vf6jNMUrQhO6Rb6e82ND4g/zh-cn_image_0000002753296543.png)

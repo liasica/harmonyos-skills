@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: CryptoKdfApi
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 模块 > CryptoKdfApi
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:981b576514df9aced1e79f8c1d235b6ec2d2ed72b803064e058db29b56fb66dc
+scraped_at: 2026-09-15T07:06:19+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:ba9ef9537294182e3bf5c5366a831f50217dc8cabde0fcbe7948b6e7cc3fa9d6
 ---
 
 ## 概述
 
-为应用提供密钥派生函数(KDF)接口。
+描述HarmonyOS为应用提供的密钥派生(KDF)接口。
 
 **起始版本：** 20
 

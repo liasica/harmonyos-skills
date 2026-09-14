@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-ffrt-n
 title: "@performance/hp-ffrt-no-use-std"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-ffrt-no-use-std
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:52+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:41+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:36cd50c7c4e6311d3ac3b8dd5d6ef95e9b2199eaccdeab82f681982f89ed6929
 ---
 

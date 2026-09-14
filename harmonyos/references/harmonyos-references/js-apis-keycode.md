@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-k
 title: "@ohos.multimodalInput.keyCode (键值)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.keyCode (键值)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f0497676cf26574e1e4a0b0eef0572ddbc2dee7dcde26edf0d50a8cb19053bda
+scraped_at: 2026-09-15T07:07:16+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:936171df7e0e84b8690f4d8eb333d095b8e4f95430e14c482d6e4a2fca0c4958
 ---
 
 按键设备的键值，按键设备包括键盘、光盘、游戏手柄等。
@@ -197,8 +197,8 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_MACRO | 2610 | 宏键。 |
 | KEYCODE\_NUMPAD\_PLUSMINUS | 2611 | 数字键盘上的加号/减号键。 |
 | KEYCODE\_SCALE | 2612 | 扩展键。 |
-| KEYCODE\_HANGUEL | 2613 | 日文韩语键。 |
-| KEYCODE\_HANJA | 2614 | 日文汉语键。 |
+| KEYCODE\_HANGUEL | 2613 | 韩文键。 |
+| KEYCODE\_HANJA | 2614 | 韩文汉字键。 |
 | KEYCODE\_YEN | 2615 | 日元键。 |
 | KEYCODE\_STOP | 2616 | 停止键。 |
 | KEYCODE\_AGAIN | 2617 | 重复键。 |
@@ -363,7 +363,7 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_WLAN | 2844 | 无线局域网。 |
 | KEYCODE\_UWB | 2845 | 超宽带控制键。 |
 | KEYCODE\_WWAN\_WIMAX | 2846 | 移动网络控制键。 |
-| KEYCODE\_RFKILL | 2847 | 控制所有收音机的键。 |
+| KEYCODE\_RFKILL | 2847 | 控制所有无线设备的键。 |
 | KEYCODE\_CHANNEL | 3001 | 向上频道键。 |
 | KEYCODE\_BTN\_0 | 3100 | 按键0。 |
 | KEYCODE\_BTN\_1 | 3101 | 按键1。 |

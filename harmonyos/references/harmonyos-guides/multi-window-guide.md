@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 智慧多窗应用开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-15T07:01:34+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:a409ceeec119d0442d9a98e00cbb26fccc84cda8b5511e4570c5cba6071a33c3
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: ArkTS API
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:10+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:08:36+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c7025b89ed691cf31c7c79783f193092b8a5b0718cfa0b38e40083b708b2311e
 ---
 

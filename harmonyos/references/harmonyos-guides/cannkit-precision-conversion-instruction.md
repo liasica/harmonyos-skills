@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-preci
 title: 精度转换指令
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 精度转换指令
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:38+08:00
+scraped_at: 2026-09-15T07:03:06+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:3911afadfa08c776477067f4e14f7521026e4a47dd67c40d613c44d6cd8cc84d
+content_hash: sha256:368a8fa18fc8c47d4e22654e54cfb223da012988318b1b24b38b64d7ae3308b9
 ---
 
 ## Cast
@@ -30,7 +30,7 @@ content_hash: sha256:3911afadfa08c776477067f4e14f7521026e4a47dd67c40d613c44d6cd8
 
   当E全为1时，若M全为0，表示的结果为±inf（取决于符号位）；若M不全为0，表示的结果为nan。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/fZtoDxmuR1CHsekepj2Y2g/zh-cn_image_0000002717772120.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/-pZoSeZGQNKBIEoAZHLJXA/zh-cn_image_0000002753456159.png)
 
   上图中S = 0，E = 15，M = 2-1 + 2-2，表示的结果为1.75。
 * float共32bit，包括1bit符号位（S），8bit指数位（E）和23bit尾数位（M）。
@@ -45,7 +45,7 @@ content_hash: sha256:3911afadfa08c776477067f4e14f7521026e4a47dd67c40d613c44d6cd8
 
   当E全为1时，若M全为0，表示的结果为±inf（取决于符号位）；若M不全为0，表示的结果为nan。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/q3dulwVUQMiOy661CguO9Q/zh-cn_image_0000002717612188.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/YzGV7ZC2QIOZ1G0VjDPiZQ/zh-cn_image_0000002723856394.png)
 
   上图中S = 0，E = 127，M = 2-1 + 2-2，最终表示的结果为1.75 。
 * bfloat16\_t共16bit，包括1bit符号位（S），8bit指数位（E）和7bit尾数位（M）。
@@ -60,13 +60,13 @@ content_hash: sha256:3911afadfa08c776477067f4e14f7521026e4a47dd67c40d613c44d6cd8
 
   当E全为1时，若M全为0，表示的结果为±inf（取决于符号位）；若M不全为0，表示的结果为nan。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/xPk3-xj8SBm5h8Hl0SDWOA/zh-cn_image_0000002747292141.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/nMY4trtES4GSAGenlqbJ0A/zh-cn_image_0000002723696476.png)
 
   上图中S = 0，E = 127，M = 2-1 + 2-2，最终表示的结果为1.75。
 
 **二进制的舍入规则和十进制类似，具体如下。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/0D6Ip6TeSm6u9GWnoDapOQ/zh-cn_image_0000002747212057.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/m-YW-X5ASeu6ZdHz9fG2AQ/zh-cn_image_0000002753296243.png)
 
 * CAST\_RINT模式下，若待舍入部分的第一位为0，则不进位；若第一位为1且后续位不全为0，则进位；若第一位为1且后续位全为0，当M的最后一位为0则不进位，当M的最后一位为1则进位。
 * CAST\_FLOOR模式下，若S为0，则不进位；若S为1，当待舍入部分全为0则不进位，否则，进位。

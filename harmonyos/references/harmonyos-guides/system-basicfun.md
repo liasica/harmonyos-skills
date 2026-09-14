@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-basicf
 title: 基础功能
 breadcrumb: 指南 > 系统 > 基础功能
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:07+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:01+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e2894926a741518b7093118473ac2fac6a40b637b6709e8bfff5de0e00ab1409
 ---
 

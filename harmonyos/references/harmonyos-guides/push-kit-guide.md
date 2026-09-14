@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-kit-guid
 title: Push Kit（推送服务）
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:31+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:02:54+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4817841456e0427584e6ef9efabc37286185144afd50df22caca018975751462
 ---
 

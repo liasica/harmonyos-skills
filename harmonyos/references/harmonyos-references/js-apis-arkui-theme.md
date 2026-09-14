@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.theme(主题换肤)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.theme(主题换肤)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:03+08:00
+scraped_at: 2026-09-15T07:04:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:dbddceddd4c640519effb52f67f0ced42a16d932ffd0d0725f65827750a67556
+content_hash: sha256:2172ddc1f2fe2019d9c6ed56f4fec81487a8b661e241a1ecd1496950e2e04ab1
 ---
 
 支持自定义主题风格，实现App组件风格跟随Theme切换。
@@ -219,9 +219,9 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/5QbDxAbyQsqdktpROMYZJA/zh-cn_image_0000002747212239.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/f-vaKLNrTJGeTaTaDvipTw/zh-cn_image_0000002753296425.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/iumYV9k_RXmKHOe0ATGB0w/zh-cn_image_0000002717772304.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Hmdf0aOcSwueX01FB49gvQ/zh-cn_image_0000002753456343.png)
 
 ### 示例2（设置组件主题色）
 
@@ -283,4 +283,4 @@ struct TextPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/BtmaoacBR42jQYKbP2LNkA/zh-cn_image_0000002717612372.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/WJgYnek2QdOv_o4oLvGSfg/zh-cn_image_0000002723856578.png)

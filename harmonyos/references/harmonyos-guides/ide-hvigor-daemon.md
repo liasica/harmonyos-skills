@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-da
 title: 守护进程
 breadcrumb: 指南 > 构建应用 > 提升构建效率 > 默认特性 > 守护进程
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:51+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:09b1e5afba0d37655dbb72d121972a5988363e23d5ee68230c5af4435cd62f0a
 ---
 

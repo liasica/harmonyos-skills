@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-quick
 title: 登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:35+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:70d18289c1350044817de3b8518ef882953d54c5ffed630a4c78ea4bd1bdea7f
 ---
 

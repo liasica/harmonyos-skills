@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 多层级手势事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 多层级手势事件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7e2ade15819f200b9afca49d5aff82cd68e1d77fe18a1e4aafef15a8da969402
+scraped_at: 2026-09-15T07:01:27+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:26ba23fbc76f6ff7ecb5d9874849263bd044ebb46230aa7111a55768113c4ff2
 ---
 
 多层级手势事件指父子组件嵌套时，父子组件均绑定了手势或事件。在该场景下，手势或者事件的响应受到多个因素的影响，相互之间发生传递和竞争，容易出现预期外的响应。
@@ -65,9 +65,8 @@ Stack() {
 
 响应优先级遵循以下条件：
 
-1.当父子组件均绑定同一类手势时，子组件优先于父组件触发。
-
-2.当一个组件绑定多个手势时，先达到手势触发条件的手势优先触发。
+1. 当父子组件均绑定同一类手势时，子组件优先于父组件触发。
+2. 当一个组件绑定多个手势时，先达到手势触发条件的手势优先触发。
 
 ```typescript
 Column() {

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-netc
 title: NetConnection
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 模块 > NetConnection
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:21+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:06:49+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:176921244b1b0a2970068956d6c8472fba29cfdb2c7c519f26506a846e690ad1
 ---
 

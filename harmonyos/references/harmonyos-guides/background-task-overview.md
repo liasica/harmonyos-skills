@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/background-ta
 title: Background Tasks Kit简介
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > Background Tasks Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:17+08:00
+scraped_at: 2026-09-15T07:01:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0dcf18ffa32245871705a2baf5a2ee0e86f129d8bc4e047ec959a7cc05c2084d
+content_hash: sha256:27ed4c1f2179bad7a1f95aa365d4064943f4573b536bf339cf122b2d4e153320
 ---
 
 ## 功能介绍
@@ -31,7 +31,7 @@ Background Tasks Kit提供了规范内受约束的后台任务，包括短时任
 
   **图1** 后台任务类型选择
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/3vH_cbmIQzG8D2j4HS98Vw/zh-cn_image_0000002717770900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/OpnfAAAYRH-9oB75wvevew/zh-cn_image_0000002753454939.png)
 
 **说明** 
 

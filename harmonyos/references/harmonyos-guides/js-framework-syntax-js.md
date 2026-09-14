@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: JS语法参考
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 语法 > JS语法参考
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:11+08:00
+scraped_at: 2026-09-15T07:01:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7da8c69d7d0c21e26eaaf2584118525d1d94b88d5fe86e423f117840c32eafc9
+content_hash: sha256:8573e2efa622fccc1b106a8e2cd24ad0809ef61d3b24f3d3848dd52dbbaa182d
 ---
 
 JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语言。基于JavaScript语言的动态化能力，可以使应用更加富有表现力，具备更加灵活的设计能力。下面讲述JS文件的编译和运行的支持情况。
@@ -224,7 +224,7 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
    };
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/dAWZlbitQpWMeOC_1nzOYg/zh-cn_image_0000002747210639.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/ojvn-NQ3RZmzdi8meGkzZg/zh-cn_image_0000002753294825.gif)
 
 ## 获取ViewModel
 
@@ -250,7 +250,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/YnxRGxihQCeFiC7Tx6ubqA/zh-cn_image_0000002717770704.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/WbZ2q37gSG-7mlS182dU9A/zh-cn_image_0000002753454743.png)
 
 自定义parent组件：
 
@@ -308,4 +308,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/FlfrQ2__TFGylBaMeaXK0A/zh-cn_image_0000002717610770.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/RrjP_agRQ76TrMZgvNDGIw/zh-cn_image_0000002723854978.gif)

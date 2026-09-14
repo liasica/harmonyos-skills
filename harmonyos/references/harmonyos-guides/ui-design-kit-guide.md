@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-kit
 title: UI Design Kit（UI设计套件）
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:01:43+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:6d17fcc082fa9edd1f5910a6db9ed9741e0afd37a33b958aabd03df7ac8bad39
 ---
 

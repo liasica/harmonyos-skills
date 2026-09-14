@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transi
 title: 开通交通卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 交通卡 > 开发场景 > 开通交通卡
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:31+08:00
+scraped_at: 2026-09-15T07:02:59+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:268b8240c0c117687228cbf52b58dcb66e642c8298c48ecf1a5a5f8c7db493f0
+content_hash: sha256:c04e0fbfbc598794b3f233d7818afd9c4bec4fa86594a777bde9ee2f01c604e2
 ---
 
 申请开通交通卡，将交通卡添加至钱包，实现公交、地铁等nfc刷卡能力。
@@ -14,7 +14,7 @@ content_hash: sha256:268b8240c0c117687228cbf52b58dcb66e642c8298c48ecf1a5a5f8c7db
 
 交通卡的开通过程分为：获取卡片开通入口、确认卡片是否支持添加、生成并支付订单和完成添卡四个步骤，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/nS-Iv1o3T3GsYMH-vX4b_Q/zh-cn_image_0000002747292041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/3zvrs8i0TR6FEj0K5x7phg/zh-cn_image_0000002723696376.png)
 
 ## 开发步骤
 

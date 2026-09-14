@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-faqs-
 title: 算子开发常见问题
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子开发常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:37+08:00
+scraped_at: 2026-09-15T07:03:04+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:6212317d77e4de59850d1613d161fd5f209d665e845285bda6ebb41e7af238b0
+content_hash: sha256:ef30c7cafc9322eb5bfdd122febdd2fbdb20c5d6848a39adda3e0dbdcb0a3354
 ---
 
 ## 核函数运行验证时算子存在精度问题
@@ -336,7 +336,7 @@ opc编译方式下，kernel编译报错，如图1所示。
 
 **图1** 报错样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/8XjRa25PSpqFiLo2HOalQg/zh-cn_image_0000002717612172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/hCNTYwhLQMGyckbDlxupqg/zh-cn_image_0000002723856378.png)
 
 ### 可能的原因
 
@@ -362,7 +362,7 @@ Kernel代码实现有误，导致编译失败。
 
       **图2** NPU编译命令
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/qty7ScHWSTu852Vo440WTQ/zh-cn_image_0000002747292125.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/iR5F5_GKTgWZrXifp8k9Ew/zh-cn_image_0000002723696460.png)
 
 ## NPU编译失败提示RuntimeError: Cannot get compiling bash file! Maybe template json does not match
 
@@ -372,7 +372,7 @@ opc编译方式下，kernel编译报错，如图3所示。
 
 **图3** 报错样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/x8_feQWSQDar6Bb5G0Xzeg/zh-cn_image_0000002747212041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/hT-Msp5aQGmXE28Yzt0gWw/zh-cn_image_0000002753296227.png)
 
 ### 可能的原因
 
@@ -441,7 +441,7 @@ CPU/Simulator的Kernel执行失败，导致输出路径下无输出文件生成�
 
 **图4** 报错样例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/dcm9sQTVQamOKrHgYkBwqQ/zh-cn_image_0000002717772106.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/3_Dau-LVQtCfWrBSVj3YyQ/zh-cn_image_0000002753456145.png)
 
 ### 处理方案
 
@@ -474,7 +474,7 @@ CPU/Simulator调测生成的精度比对结果文件出现“Failed”，部分�
 
 **图5** 精度比对结果文件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/igz1iVu3RyGr7hAw_ehMiQ/zh-cn_image_0000002717612174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/zYdrFyhDRRGXmK-RoUwGIQ/zh-cn_image_0000002723856380.png)
 
 ### 可能的原因
 

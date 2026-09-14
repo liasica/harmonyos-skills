@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-servic
 title: Health Service Kit（运动健康服务）
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:26+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-09-15T07:02:44+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8feb7c6a074d5020061ba488ebd4509f18bdb0d556f6b06c1d2cb1e5c579b20e
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 安全检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全检测
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:50+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:be27390d4aba37479a5ad8a22f7384a9d0926815f570c26c5b644b4f131e0b71
 ---
 

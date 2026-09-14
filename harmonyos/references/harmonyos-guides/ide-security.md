@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-security
 title: 安全规则@security
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:53+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:40+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:42671318e93c7f0df39de6068d422dca56e619b833ea84c94013e5a40df2bc3a
 ---
 

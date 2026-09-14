@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.fileio (文件管理)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > 已停止维护的接口 > @ohos.fileio (文件管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dc5f196b9cb8208fb68467b54ac74e4c47a412e1f107067fea0303dedb9e1262
+scraped_at: 2026-09-15T07:06:02+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:c96105ee1afc57bd188e4cc6abd40cc789ce5ca746d350885777477e87a490fe
 ---
 
 该模块提供文件存储管理能力，包括文件基本管理、文件目录管理、文件信息统计、文件流式读写等常用功能。
@@ -23,21 +23,7 @@ import fileio from '@ohos.fileio';
 
 ## 使用说明
 
-使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：
-
-```ts
- import UIAbility from '@ohos.app.ability.UIAbility';
- import window from '@ohos.window';
-
- export default class EntryAbility extends UIAbility {
-   onWindowStageCreate(windowStage: window.WindowStage) {
-     let context = this.context;
-     let pathDir = context.filesDir;
-   }
- }
-```
-
-使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径，获取方式及其接口用法请参考：[应用上下文Context-获取应用文件路径](../harmonyos-guides/application-context-stage.md#获取应用文件路径)
+使用该功能模块对文件/目录进行操作前，需要先获取其应用沙箱路径pathDir，获取沙箱路径的方式及其接口用法可参考：[应用上下文Context-获取应用文件路径](../harmonyos-guides/application-context-stage.md#获取应用文件路径)。
 
 ## fileio.stat
 

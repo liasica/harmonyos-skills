@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-exerci
 title: 锻炼记录数据
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 数据类型 > 锻炼记录数据
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:17+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:45+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:67ad2b8e85a3e246d4c4e0706a13da79155a3c4e38905901edb3f7c3494e6e45
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkgraphi
 title: ArkTS API
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:14:35+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:08:20+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:dc52b6cb07e60ed8d28eec2d71d1298eab39fd83956449477d4daad450ba45d1
 ---
 

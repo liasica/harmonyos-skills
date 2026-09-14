@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-l
 title: 堆栈解析工具（hstack）
 breadcrumb: 指南 > 命令行工具 > 堆栈解析工具（hstack）
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:38+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f0b10fbdf35ae33dcbb28a5731205041321cad4cff26a4e2f2155427200e3eed
+scraped_at: 2026-09-15T07:03:54+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:a3f2ce300ed9d9ded54c666074cfe7bfa4a078e01bf0d303edace7cf8fa68fd0
 ---
 
 ## 简介
@@ -45,23 +45,23 @@ options: 可选配置，请参考[表hstack命令行配置](ide-command-line-hst
 1. hstack工具在Command Line Tools的bin目录下，需要[将bin目录配置到PATH变量中](ide-commandline-get.md#section17776863449)。
 2. 如果需要对C++文件产生的异常进行解析，则需要将SDK中的native\llvm\bin目录配置到环境变量中，变量名设置为“ADDR2LINE\_PATH”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/gLlJW07UTsSvSW5Bhvqp_A/zh-cn_image_0000002731542081.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/DAL8WkbQToi09QLd_59GwA/zh-cn_image_0000002731542081.png)
 
 ## 使用示例
 
 1. 将应用产生的crash文件归档到crashDir目录下（或者-c指定一条crash堆栈），关于堆栈的获取方式请参考[崩溃检测](fault-detection-overview.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/6emgaENaQU-PUoJCjpFLHA/zh-cn_image_0000002731542077.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/eNBITKFaQfmXMh63bVP4EQ/zh-cn_image_0000002731542077.png)
 2. 使用-o指定输出目录，当不指定时，会输出至-i指定的crashDir目录下（通过-c输入为crash堆栈时，可以使用-o指定一个输出文件，或不指定，直接将结果输出至控制台）。
 3. 使用-s指定工程对应sourceMap文件归档目录（可选，与shared object文件归档目录至少提供一项）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/KJ5rfR3aQdKsIxjf_s0eaw/zh-cn_image_0000002731382109.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Um6lt_osR_GyjFMxSw54EA/zh-cn_image_0000002731382109.png)
 4. 使用--so指定shared object文件归档目录（可选，与sourceMap归档目录至少提供一项）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/gdYGwEArS46c5RqC1xXy2w/zh-cn_image_0000002701662884.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/c0MwC2OmRMmImJs_KZnJ-A/zh-cn_image_0000002701662884.png)
 5. 使用-n指定nameCache文件归档目录（可选）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/F7ON87FfSvqwrDnQbtKdag/zh-cn_image_0000002701662890.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ioJfmltkTiurh3LGx1S2pA/zh-cn_image_0000002701662890.png)
 6. 执行以下命令，可将release应用crash堆栈解析为源码对应堆栈。
 
    ```bash
@@ -71,11 +71,11 @@ options: 可选配置，请参考[表hstack命令行配置](ide-command-line-hst
    hstack -c "at anonymous (entry|entry|1.0.0|src/main/ets/pages/Index.ts:401:1)" -o D:\outputDir\out.txt -s D:\sourcemapDir --so D:\soDir -n D:\nameCacheDir
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/P6uen_xmT0m1MXS_nV7nwg/zh-cn_image_0000002701822812.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/5Yj5nviOTuGwUpmzBrqzEA/zh-cn_image_0000002731382105.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ClnCTT0bSjme6OMjnHC_WA/zh-cn_image_0000002701822812.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/vObX4il8SFGc4fOhXaJNrA/zh-cn_image_0000002731382105.png "点击放大")
 
    如果是指定crash文件归档目录，解析完成后，outputDir目录下会生成对应的解析结果，文件以原始crash文件名加“\_”前缀进行命名。crash堆栈中的C++日志以及ArkTS日志均已解析为源码对应的文件路径以及行列号，结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/KrpD6-pXQviXoPfmvaHO5Q/zh-cn_image_0000002701822806.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/EP-kjeF3RVOmLEkbC-O4fw/zh-cn_image_0000002701822806.png)
 
    在构建Release应用时，so文件是默认不包含符号表信息的，如果需要在构建Release应用时生成包含符号表的so文件，需要在工程的模块级build-profile.json5文件的buildOption属性中，配置如下信息：
 

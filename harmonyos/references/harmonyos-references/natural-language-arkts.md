@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/natural-l
 title: ArkTS API
 breadcrumb: API参考 > AI > Natural Language Kit（自然语言理解服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:34+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:09:26+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:760ceab392a87454984eba7e95c2c28ce0db30d5f59e7856e22c2bf18eaa5e6f
 ---
 

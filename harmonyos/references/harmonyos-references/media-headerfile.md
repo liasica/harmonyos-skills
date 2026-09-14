@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/media-hea
 title: 头文件
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:13:51+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:08:11+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8e964e1c6e8679423e1778067c0c7db7df2f0e968ddf146199294839bf761bce
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-obje
 title: Sendable对象
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:33+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:15+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:41e3aafcb3559050e5c68069b19a9bd596875c6fdf7b7e4ea60e1318de3b02a2
 ---
 

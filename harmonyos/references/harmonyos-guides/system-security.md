@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-securi
 title: 安全
 breadcrumb: 指南 > 系统 > 安全
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:44+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9a643121ae5ff2947bf773f189c706a3e6144b2240814869cb7820de37c5e423
 ---
 

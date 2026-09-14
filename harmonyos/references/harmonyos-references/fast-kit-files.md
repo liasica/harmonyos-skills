@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: 头文件
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 头文件和结构体 > 头文件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:32+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:07:11+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fa8364682fca1c08cde6bf975ce71af21922098af02670eb74be1927e28715e1
 ---
 

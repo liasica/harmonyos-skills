@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: crypto_signature.h
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 头文件 > crypto_signature.h
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:32+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:84d0837d7d46b3cdfe2ee1789e3f169bc785f11f71f58e7f0fb4a0eaf08a2688
+scraped_at: 2026-09-15T07:06:21+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:b99fee7a84ade3c39b2943e322c7bdd96b8d5bbd9dbf6982c142b229ec02c98b
 ---
 
 ## 概述
@@ -528,7 +528,7 @@ OH_Crypto_ErrCode OH_CryptoSign_GetParam(OH_CryptoSign *ctx, CryptoSignature_Par
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_Crypto\_ErrCode](capi-crypto-common-h.md#oh_crypto_errcode) | CRYPTO\_SUCCESS：操作成功。  CRYPTO\_PARAMETER\_CHECK\_FAILED：ctx或value为NULL。  CRYPTO\_NOT\_SUPPORTED：不支持的操作或算法。  CRYPTO\_MEMORY\_ERROR：内存操作失败。  #CRYPTO\_OPERTION\_ERROR：密码操作失败。 |
+| [OH\_Crypto\_ErrCode](capi-crypto-common-h.md#oh_crypto_errcode) | CRYPTO\_SUCCESS：操作成功。  CRYPTO\_PARAMETER\_CHECK\_FAILED：ctx或value为NULL。  CRYPTO\_NOT\_SUPPORTED：不支持的操作或算法。  CRYPTO\_MEMORY\_ERROR：内存操作失败。  CRYPTO\_OPERTION\_ERROR：密码操作失败。 |
 
 ### OH\_CryptoSign\_Destroy()
 

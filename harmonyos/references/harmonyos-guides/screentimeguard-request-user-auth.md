@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 请求用户授权
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 请求用户授权
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:29+08:00
+scraped_at: 2026-09-15T07:02:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:422adacf8494953b6f65b6f2d3e48b9a79a771a840a8d40224f373edcad4ac59
+content_hash: sha256:15cd6ba78c6928a0408ef21068522e82746bf3a04dcd37c22522ffe6704dd7ff
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ Screen Time Guard Kit支持对用户设备的时间管理和应用限制，因�
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/hPVy4nU5Rp-jgSxKI8anNQ/zh-cn_image_0000002747211913.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/OE_GdLxYTwir3pOVEoGExg/zh-cn_image_0000002753296099.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/CQ5MutP6ScOPclQ7jmhKjQ/zh-cn_image_0000002717771978.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/hBni_kGzT7m_61C7gPGwcg/zh-cn_image_0000002753456017.png)
 
 流程说明：
 

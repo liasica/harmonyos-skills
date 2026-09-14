@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo import_userinfo
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo import_userinfo
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:03:32+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:5981e131067ac9ecc0d739d3f4a1c744aac288ef345e4d59a478edba307366c7
 ---
 

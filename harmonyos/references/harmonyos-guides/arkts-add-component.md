@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-add-com
 title: 添加组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加组件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:40+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:25+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d0f061cb31983e3128b72d2ef90b9014ba2823bcdd0cb3b3f34a9360532baa8b
 ---
 

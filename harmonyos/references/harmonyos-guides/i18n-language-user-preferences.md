@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-language
 title: 语言与用户偏好
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 语言与用户偏好
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:45+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:42+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f819ba0649758cccd11acd764bb037068e6dfcf2686ebc2c8dbeb5d978e190a7
 ---
 

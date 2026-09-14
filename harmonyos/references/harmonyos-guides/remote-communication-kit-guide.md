@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: Remote Communication Kit（远场通信服务）
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:06+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c5b3674725a14f1fcd3da2730a9a8a4e19b3197257782e01cea23e34228b219f
 ---
 

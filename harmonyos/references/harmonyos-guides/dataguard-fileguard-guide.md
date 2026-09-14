@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataguard-fil
 title: 文件分级管控
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:52+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:041b718f8d73685f51faffcc855fec7956de04f155d19ab91a638b84110c36d4
 ---
 

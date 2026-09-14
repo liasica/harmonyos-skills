@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-s
 title: REST API错误码
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > REST API错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c08f3c5686252a6b35943fd419ebde9d28562e7a15e59d3335d1a05e66159079
+scraped_at: 2026-09-15T07:08:45+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:eaaccca19a8888fa500ea14a1ac28bcd607b9642f8708836055a04c5d6691a76
 ---
 
 ## 获取用户级凭证
@@ -285,12 +285,12 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 
 | NSP\_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
-| 6 | 会话失效，session timeout。  可能原因:  - access\_token无效或已过期  - access\_token格式不正确  - 其他内部原因 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 未对access\_token进行URLEncode处理，可参考[示例代码](account-api-get-user-info-get-nickname-and-avatar.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 105 | 参数错误 | 参考API文档的说明，调整参数传值。 |
+| 6 | 会话失效或已超时（session timeout）。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 未对access\_token进行URLEncode处理，可参考[示例代码](account-api-get-user-info-get-nickname-and-avatar.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 105 | 参数错误。 | 参考API文档的说明，调整参数传值。 |
 | 403 | 访问无权限。 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
 | 500 | 接口内部错误。 | 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |
-| 70001201 | 参数不合法 | 参考API文档的说明，调整参数传值。 |
+| 70001201 | 参数不合法。 | 参考API文档的说明，调整参数传值。 |
 | 70001402 | 系统鉴权错误。 | 鉴权系统异常，若重试无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 70020002 | 内部网络错误。 | 内部网络错误，若重试无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 70001401 | 系统内部错误。 | 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
@@ -341,7 +341,7 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 | 403 | 无权限访问。 | 通常是调用方网络安全策略阻止了访问，请检查网络环境配置。若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 404 | 找不到服务。 | 请检查请求URI是否正确。 |
 | 405 | 不支持的http请求method。 | 请检查http请求method是否与接口说明一致。 |
-| 415 | 不支持的媒体类型 | 请检查http请求的contentType是否与接口说明一致。 |
+| 415 | 不支持的媒体类型。 | 请检查http请求的contentType是否与接口说明一致。 |
 | 500 | 服务内部错误。 | 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 502 | 请求连接异常，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 504 | 请求连接超时，常见于网络状况不稳定。 | 建议稍后重试，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
@@ -349,13 +349,13 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 
 | errCode | 描述 | 解决方法 |
 | --- | --- | --- |
-| 6 | 会话失效，session timeout。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 本接口请求数据格式为 application/json;charset=utf-8，在构造请求体时，请确保不对access\_token参数进行URLEncode处理，可参考[示例代码](account-api-getuserrisklevel.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 403 | 无权访问 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
+| 6 | 会话失效或已超时（session timeout）。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 本接口请求数据格式为 application/json;charset=utf-8，在构造请求体时，请确保不对access\_token参数进行URLEncode处理，可参考[示例代码](account-api-getuserrisklevel.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 403 | 无权访问。 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |
-| 70001201 | 请求参数错误 | 修改请求url或者请求体中的参数。 |
+| 70001201 | 请求参数错误。 | 修改请求url或者请求体中的参数。 |
 | 70001402 | 系统鉴权错误。 | 鉴权系统异常，若重试无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 70020002 | 接口内部超时 | 稍后重试。 |
-| 70001401 | 接口内部错误 | 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 70020002 | 接口内部超时。 | 稍后重试。 |
+| 70001401 | 接口内部错误。 | 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 
 ## 获取实名信息
 

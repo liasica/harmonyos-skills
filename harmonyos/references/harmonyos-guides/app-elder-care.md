@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-elder-car
 title: 应用长辈关怀功能体验
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 应用长辈关怀功能体验
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:11+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e7ed285ed7230bf46a247aa8961f667eb2818348699f09429e93842dad8954f2
 ---
 

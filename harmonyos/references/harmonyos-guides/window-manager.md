@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-manage
 title: 窗口管理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:33+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e1dac5a3842b695a77ff2dab2dbfd6f9c54d82a03a7ec9354a0ab39f314166dd
 ---
 

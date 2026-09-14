@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-c
 title: 音视频编解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:15+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-15T07:02:18+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:cc1abacb6dc641e29f29a2313960f8c7833e3babc57299c811e6c124034f27f4
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/build-with-nd
 title: 构建NDK工程
 breadcrumb: 指南 > NDK开发 > 构建NDK工程
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:45+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-15T07:03:25+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ea2302b4c0175fed83bc88fb089184266f5c9118e851504dfbfcd6ad07bbca62
 ---
 

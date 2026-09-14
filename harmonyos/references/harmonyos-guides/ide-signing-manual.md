@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-m
 title: 手动签名
 breadcrumb: 指南 > 编写与调试应用 > 配置调试签名 > 手动签名
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:74de53c75b2d71fcd92fb3d2191d84328df9f5c9f48299578c3c2b2cba095dea
+scraped_at: 2026-09-15T07:03:44+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:ee83f413522cb103dedc05afe1be4e7bcc3838e62e0d87863bed6c5b10fad29c
 ---
 
 ## 功能介绍
@@ -26,7 +26,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
 1. 在主菜单栏单击**Build > Generate Key** **and CSR**。
 2. 在**Generate Key** **and CSR**界面，可以单击**Select an existing key**选择已有的密钥库文件（存储有密钥的.p12文件），若没有密钥库文件则进行填写。下面以新创建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/tCH7rjM5RJWvBZSWvLLLgA/zh-cn_image_0000002731381991.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/yByfIiahQk6kd8fVZ3EDLQ/zh-cn_image_0000002731381991.png)
 3. 在**Generate Key**窗口，填写密钥库信息后，点击**Next**。
    * **Keystore Name**：填写p12文件名称，仅允许包含字母、数字、下划线（\_）、中划线（-）、句号（.）。
    * **Select file save path**：设置密钥库文件存储路径。
@@ -46,15 +46,15 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
 
      First and last name、Organizational unit、Organization、City or locality、State or province填写要求小于64个字符，不可使用双引号（"）、斜杠（\）、反引号（`）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/-0R-nMU_QVWdPBqAUv2okg/zh-cn_image_0000002701822684.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/QbEOLcmHR_ypHFSYmykWpg/zh-cn_image_0000002701822684.png)
 4. 在**Generate** **Certificate Request File (CSR)**窗口，设置CSR文件名和CSR文件存储路径后，点击**Finish**。
    * **CSR File Name**：填写CSR文件名称，仅允许包含字母、数字、下划线（\_）、中划线（-）、句号（.）。
    * **Select file save path**：设置CSR文件存储路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/b4Mjzd8eQbGJXdnxtByBWg/zh-cn_image_0000002701662776.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Xev4wYldSHqbnCz3Qa0kvw/zh-cn_image_0000002701662776.png)
 5. 创建CSR文件成功，可以在存储路径下获取生成的密钥库文件（.p12）、证书请求文件（.csr）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/ggo3V90eTnqphOr80QxD5A/zh-cn_image_0000002701822670.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/HLMnY1PGQD66d3_k4u5vWw/zh-cn_image_0000002701822670.png "点击放大")
 
 **DevEco Studio 6.1.0 Beta2以下版本**
 
@@ -65,13 +65,13 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    如果本地已有对应的密钥，无需新生成密钥，可以在**Generate Key**界面中单击下方的Skip跳过密钥生成过程，直接使用已有密钥生成证书请求文件。
 2. 在**Key store file**中，可以单击**Choose Existing**选择已有的密钥库文件（存储有密钥的.p12文件）；如果没有密钥库文件，单击**New**进行创建。下面以新创建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/d-lTNS-eRSKg1jGuET2j2w/zh-cn_image_0000002701662766.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/_TXVOBlpThCa2vNr8BLaWA/zh-cn_image_0000002701662766.png)
 3. 在**Create Key Store**窗口，填写密钥库信息后，单击**OK**。
    * **Key store file**：设置密钥库文件存储路径，并填写p12文件名。
    * **Password**：设置密钥库密码，必须由大写字母、小写字母、数字和特殊符号中的两种以上字符的组合，长度至少为8位。请记住该密码，后续签名配置需要使用。
    * **Confirm password**：再次输入密钥库密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ufmcb-VlRZS_ke7Ft5g82w/zh-cn_image_0000002701662762.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/C7-AOzPzQTGUYxU8tf6dsw/zh-cn_image_0000002701662762.png)
 4. 在**Generate Key** **and CSR**界面，继续填写密钥信息后，单击**Next**。
    * **Alias**：必填，别名，用于标识密钥名称。请记住该别名，后续签名配置需要使用。
    * **Password**：必填，密码，与密钥库密码保持一致，无需手动输入。
@@ -87,13 +87,13 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
 
    First and last name、Organizational unit、Organization、City or locality、State or province要求：字符长度为（0，64），且不可使用双引号（"）、斜杠（\）、反引号（`）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Bx_c0mf1QOu4cgvI_QblLw/zh-cn_image_0000002731541967.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/MOtijU41T-OhqWPPtDyr-A/zh-cn_image_0000002731541967.png)
 5. 在**Generate Key** **and CSR**界面，设置CSR文件存储路径和CSR文件名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/WB4a0ltVR7WnVydo-ul0TA/zh-cn_image_0000002701662770.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/_x3IFDW-Qf6fx6l2JMYDTA/zh-cn_image_0000002701662770.png)
 6. 单击**Finish**，创建CSR文件成功，可以在存储路径下获取生成的密钥库文件（.p12）、证书请求文件（.csr）和material文件夹（存放密码加密材料等）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/hk_1W3jqRumizFaMGQBbnA/zh-cn_image_0000002701822698.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/sC7lcbt5QFSznWigAAiulg/zh-cn_image_0000002701822698.png)
 
 ## 申请调试证书
 
@@ -126,7 +126,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/-J5MJjZCR6eE9qs0hRl0_Q/zh-cn_image_0000002701662754.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/fmjO7aQaRT2QNqDgFsepow/zh-cn_image_0000002701662754.png)
 2. 使用上述生成的调试证书，在AGC中申请和下载Profile，将生成的Profile保存至本地，供配置签名使用，具体请参考[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)。
 
 ## 配置签名信息
@@ -145,13 +145,13 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    * Store file、Profile file、Certpath file三个字段支持配置相对路径，以项目根目录为起点，配置文件所在位置的路径名称。
    * 密钥库文件、密钥库密码、密钥别名、密钥密码、Profile文件、数字证书文件必须配套使用，否则会导致签名失败。若失败请根据报错信息进行修改，再进行签名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/9nHo1nTQQRmXVArwyGDOww/zh-cn_image_0000002701822686.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/C9Wq56GdRNyWVCrufHxuHA/zh-cn_image_0000002701822686.png "点击放大")
 
-   配置完成后，将鼠标悬停在**Provisioning Profile: DevEco Manage Profile**后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/EwcsxJ3ARhKzKNj_vyMhUA/zh-cn_image_0000002701662760.png)，可查看证书有效期、包名（bundle name）、企业名称（common name）、ACL权限（acl）、开放能力（capability）相关信息；或者进入工程级build-profile.json5文件，在“signingConfigs”下查看到配置成功的签名信息。
+   配置完成后，将鼠标悬停在**Provisioning Profile: DevEco Manage Profile**后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/0lWq0xGTSnWRNfLl9Sku9w/zh-cn_image_0000002701662760.png)，可查看证书有效期、包名（bundle name）、企业名称（common name）、ACL权限（acl）、开放能力（capability）相关信息；或者进入工程级build-profile.json5文件，在“signingConfigs”下查看到配置成功的签名信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/5rVRoEMzST2eSrGDx1pOqg/zh-cn_image_0000002701662758.png "点击放大")
-2. 配置完成后，将鼠标悬停在**Provisioning Profile: DevEco Manage Profile**后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/S3jurzfcSXqtjS3DiLdhjA/zh-cn_image_0000002701822688.png)，可查看证书有效期、包名（bundle name）、企业名称（common name）、ACL权限（acl）、开放能力（capability）相关信息；或者进入工程级build-profile.json5文件，在“signingConfigs”下查看到配置成功的签名信息。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/IigwDMcsQYGSTZD8i88-uA/zh-cn_image_0000002701662758.png "点击放大")
+2. 配置完成后，将鼠标悬停在**Provisioning Profile: DevEco Manage Profile**后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/iAfCgiedQJy4ghNjq3DorA/zh-cn_image_0000002701822688.png)，可查看证书有效期、包名（bundle name）、企业名称（common name）、ACL权限（acl）、开放能力（capability）相关信息；或者进入工程级build-profile.json5文件，在“signingConfigs”下查看到配置成功的签名信息。
 
    点击右上角的“Run”按钮运行应用/元服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/OWdsP-BfR62E3QVy6FStMQ/zh-cn_image_0000002731541939.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/NTWE-75xTma3nUnjx10p-g/zh-cn_image_0000002731541939.png "点击放大")

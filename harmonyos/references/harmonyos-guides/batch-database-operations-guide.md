@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/batch-databas
 title: 批量数据写数据库场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 批量数据写数据库场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:233f4f55d82606dbdc96e67c2639b233692acdd10988b18a67f68dda05f3ed14
+scraped_at: 2026-09-15T07:01:16+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:fbdc1169592e3167d3fa11673f34fe22815dcccc45bf3b41cc393fe173f26a9b
 ---
 
 ## 使用TaskPool进行频繁数据库操作
@@ -30,7 +30,7 @@ async function create(context: Context) {
 
   // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
   let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-  console.info(`Insert data successfully!`);
+  console.info(`Get Store.db successfully!`);
 
   // 创建表
   const CREATE_TABLE_SQL = 'CREATE TABLE IF NOT EXISTS test (' +
@@ -52,7 +52,7 @@ async function insert(context: Context, valueBucketArray: Array<relationalStore.
 
   // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
   let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-  console.info(`Insert data successfully!`);
+  console.info(`Get Store.db successfully!`);
 
   // 数据插入
   await store.batchInsert('test', valueBucketArray as Object as Array<relationalStore.ValuesBucket>);
@@ -67,7 +67,7 @@ async function query(context: Context): Promise<Array<relationalStore.ValuesBuck
 
   // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
   let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-  console.info(`Insert data successfully!`);
+  console.info(`Get Store.db successfully!`);
 
   // 获取结果集
   let predicates: relationalStore.RdbPredicates = new relationalStore.RdbPredicates('test');
@@ -191,7 +191,7 @@ struct Index {
 
      // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
      let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-     console.info(`Insert data successfully!`);
+     console.info(`Get Store.db successfully!`);
 
      // 创建表
      const CREATE_TABLE_SQL = 'CREATE TABLE IF NOT EXISTS test (' +
@@ -213,7 +213,7 @@ struct Index {
 
      // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
      let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-     console.info(`Insert data successfully!`);
+     console.info(`Get Store.db successfully!`);
 
      // 数据插入
      await store.batchInsert('test', valueBucketArray as Object as Array<relationalStore.ValuesBucket>);
@@ -228,7 +228,7 @@ struct Index {
 
      // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
      let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-     console.info(`Insert data successfully!`);
+     console.info(`Get Store.db successfully!`);
 
      // 获取结果集
      let predicates: relationalStore.RdbPredicates = new relationalStore.RdbPredicates('test');
@@ -384,7 +384,7 @@ struct Index {
      try {
        // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
        let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-       console.info('Insert data successfully!');
+       console.info('Get Store.db successfully!');
 
        // 创建表
        const CREATE_TABLE_SQL = 'CREATE TABLE IF NOT EXISTS test (' +
@@ -411,7 +411,7 @@ struct Index {
 
      // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
      let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-     console.info('Insert data successfully!');
+     console.info('Get Store.db successfully!');
 
      // 数据插入
      await store.batchInsert('test', valueBucketArray as Object as Array<ValuesBucket>);
@@ -426,7 +426,7 @@ struct Index {
 
      // 默认数据库文件路径为 context.databaseDir + "/rdb/" + StoreConfig.name
      let store: relationalStore.RdbStore = await relationalStore.getRdbStore(context, CONFIG);
-     console.info('Insert data successfully!');
+     console.info('Get Store.db successfully!');
 
      // 获取用于查询的谓词
      let predicates: relationalStore.RdbPredicates = new relationalStore.RdbPredicates('test');

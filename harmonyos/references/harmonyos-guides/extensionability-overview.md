@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionabil
 title: ExtensionAbility组件
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c793c7fca26d0d6462eca18695c566248c2b0539973621dedf499c8a37a8feab
+scraped_at: 2026-09-15T07:01:08+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:2dee20f75d611da43ddc176c651dd07c3f4815804b7fe7a20135836b894d4685
 ---
 
 [ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)组件是一种面向特定场景的应用组件。每一个具体场景对应一个不同类型的ExtensionAbility，例如用于卡片场景的[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)，用于输入法场景的[InputMethodExtensionAbility](../harmonyos-references/js-apis-inputmethod-extension-ability.md)，用于延时任务场景的[WorkSchedulerExtensionAbility](../harmonyos-references/js-apis-workschedulerextensionability.md)等。开发者通过使用不同类型的ExtensionAbility组件，可以扩展和丰富应用功能，更好地与其他应用或系统开展交互。
@@ -43,7 +43,7 @@ content_hash: sha256:c793c7fca26d0d6462eca18695c566248c2b0539973621dedf499c8a37a
 | [SelectionExtensionAbility](../harmonyos-references/js-apis-selectioninput-selectionextensionability.md) | 划词扩展能力，提供系统应用后台服务的连接和断开等生命周期回调。 | 是 | 否 |
 | [FaultLogExtensionAbility](../harmonyos-references/js-apis-hiviewdfx-faultlogextensionability.md) | 提供故障延迟通知的能力。 | 是 | 否 |
 | [WebNativeMessagingExtensionAbility](../harmonyos-references/arkts-apis-web-webnativemessagingextensionability.md) | Web插件对接能力。提供插件对接native应用能力。 | 是 | 否 |
-| [NotificationSubscriberExtensionAbility](../harmonyos-references/js-apis-notificationsubscriberextensionability.md) | 通知订阅拓展能力，用于发送通知数据到三方穿戴设备。 | 是 | 否 |
+| [NotificationSubscriberExtensionAbility](../harmonyos-references/js-apis-notificationsubscriberextensionability.md) | 通知订阅扩展能力，用于发送通知数据到三方穿戴设备。 | 是 | 否 |
 | [PartnerAgentExtensionAbility](../harmonyos-references/js-apis-fusionconnectivity-partneragentextensionability.md) | 基于蓝牙通信技术，提供设备发现与设备下线的通知功能。 | 是 | 否 |
 | [PhotoEditorExtensionAbility](../harmonyos-references/js-apis-app-ability-photoeditorextensionability.md) | 照片编辑扩展能力，提供给应用实现图片编辑的功能。 | 是 | 否 |
 | [VpnExtensionAbility](../harmonyos-references/js-apis-vpnextensionability.md) | VPN扩展能力，提供三方VPN创建、销毁等生命周期回调。 | 是 | 否 |
@@ -76,7 +76,7 @@ content_hash: sha256:c793c7fca26d0d6462eca18695c566248c2b0539973621dedf499c8a37a
 
 **图1** 使用InputMethodExtensionAbility组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pz2lIQwrRou-iRHF1Lexgw/zh-cn_image_0000002717609882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/bW97vXtCQmSVfOx3y46xqw/zh-cn_image_0000002723854090.png)
 
 ## 实现指定类型的ExtensionAbility组件
 
@@ -84,7 +84,7 @@ content_hash: sha256:c793c7fca26d0d6462eca18695c566248c2b0539973621dedf499c8a37a
 
 卡片FormExtensionAbility实现方不用关心使用方何时去请求添加、删除卡片，FormExtensionAbility实例及其所在的[ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)进程的整个生命周期，都是由卡片管理系统服务FormManagerService进行调度管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/LiioMrcuR5u4D05OBi88cQ/zh-cn_image_0000002747289833.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/YxBy-p_BTMic_bbv5Dwp-w/zh-cn_image_0000002723694172.png)
 
 * **[EmbeddedUIExtensionAbility](embeddeduiextensionability.md)**
 * **[使用AppServiceExtensionAbility组件实现后台服务](app-service-extension-ability.md)**

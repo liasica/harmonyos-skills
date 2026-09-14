@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-start
 title: 应用启动
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:42+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:01:08+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:26c8f8c880a96155301aaaa8aaea3dbb9ee8685dd21749edb9de5850bbd7b714
 ---
 

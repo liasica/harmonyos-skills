@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: ArkTS组件
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:05+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:06:15+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0855757ec585fdb46ffeb46ad39c8663693e4ab0549fb57ef1479e7756493ada
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-rest
 title: REST API
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:55+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:08:54+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ea28b02e518aae187f55f77e5ef9d7b50e08612499961972a900dd7af8577954
 ---
 

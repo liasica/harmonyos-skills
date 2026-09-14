@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-park-s
 title: 查看园区卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 园区卡 > 开发场景 > 查看园区卡
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:31+08:00
+scraped_at: 2026-09-15T07:02:59+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:8688fc9771df6dbd534518bf8a352b9a7e0a1fbf7a3cd9e1570a9315a363c045
+content_hash: sha256:dbf15a3417fe24fcc98aec1fb886592729ac02fa89a07a0a229cc268f385c8b2
 ---
 
 查询已开通园区卡的状态并展示，用户可以点击跳转钱包园区卡详情页，查看和使用更多功能。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/gUNTkCrHQnKT1P4n78XhHA/zh-cn_image_0000002747211965.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/d_eeKePoTeq78aacpNKubA/zh-cn_image_0000002753296151.png)
 
 ## 客户端开发
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/visual-ef
 title: 视效与模糊
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:24+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:04:47+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e578e2aa3be4636e88b9729c6e576b2fb4b96a009c0cd96de671bb3cd8160bda
 ---
 

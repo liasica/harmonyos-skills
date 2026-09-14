@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: rect
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > rect
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:51+08:00
+scraped_at: 2026-09-15T07:05:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:1d7a3137141867391e6308cf0564f0137d0d0492193bc8c2518b8a3142b710b7
+content_hash: sha256:1146c738f4e3478c80928376e385fb48274feb91ead8336a47f814ccfd3e9e4b
 ---
 
 **说明** 
@@ -51,4 +51,4 @@ content_hash: sha256:1d7a3137141867391e6308cf0564f0137d0d0492193bc8c2518b8a3142b
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/GziXCxv5T0m6zt-UdYEQMA/zh-cn_image_0000002747213159.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/GokcUTj6S2KquZkqAffMZw/zh-cn_image_0000002723697582.png)

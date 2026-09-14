@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq
 title: Account Kit常见问题
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:04+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:36+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:22a6d381f5b4759780eb4033427650d900a644a96f9d50f2d73686f8f4115751
 ---
 

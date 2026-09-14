@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-kit-g
 title: Preview Kit（文件预览服务）
 breadcrumb: 指南 > 应用服务 > Preview Kit（文件预览服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:30+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:54+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:245724021facfc18f102eb38efe7954fa90e4c0d7e448840d5df9aa652dd206a
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (WindowStage)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (WindowStage)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ac03d0c49d42cc15752bc0f3744e9eeb6a7465acd7fde54c4eecd785d97f2660
+scraped_at: 2026-09-15T07:04:41+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:a8267ecc7b27044faf24c3489fa35cf177a51616aea2804eb71151c57b2af712
 ---
 
 **说明** 
@@ -1163,11 +1163,9 @@ on(eventType: 'windowStageLifecycleEvent', callback: Callback<WindowStageLifecyc
 
 [on('windowStageEvent')](arkts-apis-window-windowstage.md#onwindowstageevent9)与本接口的区别：
 
-1.前者无法保证状态切换间的顺序，对于状态间的顺序有要求的情况下不推荐使用，推荐使用本接口；
-
-2.当前接口不提供WindowStage的获焦失焦状态监听，对于windowStage获焦失焦状态有监听需求的情况下，推荐使用[on('windowEvent')](arkts-apis-window-window.md#onwindowevent10)；
-
-3.其他系统机制及其生命周期状态切换的详细说明，请参考[主窗口的生命周期](../harmonyos-guides/window-lifecycle.md#管理应用主窗的生命周期)。
+1. 前者无法保证状态切换间的顺序，对于状态间的顺序有要求的情况下不推荐使用，推荐使用本接口；
+2. 当前接口不提供WindowStage的获焦失焦状态监听，对于windowStage获焦失焦状态有监听需求的情况下，推荐使用[on('windowEvent')](arkts-apis-window-window.md#onwindowevent10)；
+3. 其他系统机制及其生命周期状态切换的详细说明，请参考[主窗口的生命周期](../harmonyos-guides/window-lifecycle.md#管理应用主窗的生命周期)。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

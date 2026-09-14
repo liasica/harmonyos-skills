@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: 画布绘制通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > 画布绘制通用属性
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:36+08:00
+scraped_at: 2026-09-15T07:05:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:257dd9dcfafba9eefb0f745b4489d14b85ce64e9ce3e1629d48a33d7a688980d
+content_hash: sha256:8f0708b756e78a647d61f0d296372c5d4ea26e9a263f522ce1699211ffbb5a03
 ---
 
 画布绘制组件[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)和[OffscreenCanvasRenderingContext2D](ts-offscreencanvasrenderingcontext2d.md)的通用属性。
@@ -91,7 +91,7 @@ struct FillStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/hQ5sMXO9ToSsTmiU5Rz4vw/zh-cn_image_0000002717772922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/UASFiulRRjOHLhpNhtzDyg/zh-cn_image_0000002723697278.png)
 
 ## lineWidth
 
@@ -139,7 +139,7 @@ struct LineWidthExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/_d2TMawhQoea8asnxsRPFQ/zh-cn_image_0000002717612990.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/7fNhYrkBSguwghydzg7AKg/zh-cn_image_0000002753297045.png)
 
 ## strokeStyle
 
@@ -219,7 +219,7 @@ struct StrokeStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/u--8a4J7T4yJvoF7SWkfmQ/zh-cn_image_0000002747292943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/9-MRCwT3SYySnoaNbywSvQ/zh-cn_image_0000002753456963.png)
 
 ## lineCap
 
@@ -271,7 +271,7 @@ struct LineCapExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8qQAw-10RIymnqyXYmzEEw/zh-cn_image_0000002747212859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/zZpo-IxqSCae4MM3XKnL2Q/zh-cn_image_0000002723857198.png)
 
 ## lineJoin
 
@@ -324,7 +324,7 @@ struct LineJoinExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/wdw-218FTq-4JjcnXZIdSA/zh-cn_image_0000002717772924.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/9vdUWYzzTT2VoSFRI-mVTg/zh-cn_image_0000002723697280.png)
 
 ## miterLimit
 
@@ -377,7 +377,7 @@ struct MiterLimit {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/NH76Z4XjRoyi4N5PoNPm7g/zh-cn_image_0000002717612992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/naRyh27_TQyWS5szBeokRg/zh-cn_image_0000002753297047.png)
 
 ## font
 
@@ -447,7 +447,7 @@ struct FontDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/D4BU4WpZSdu__yn3Ev39pQ/zh-cn_image_0000002747292945.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/mfXIoCcOQImBZAJWJUUxEw/zh-cn_image_0000002753456965.jpeg)
 
 ## textAlign
 
@@ -514,7 +514,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/E9UmeER6SiiTXAVYNeKrqA/zh-cn_image_0000002747212861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/PQM5Lge7QmqkSa6x87S1dQ/zh-cn_image_0000002723857200.png)
 
 ## textBaseline
 
@@ -581,7 +581,7 @@ struct TextBaseline {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/pBvsEiw-S46mLpqPfzJ8Jg/zh-cn_image_0000002717772926.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/pugsijudS5m2sfdwXzZ1_A/zh-cn_image_0000002723697282.jpg)
 
 ## globalAlpha
 
@@ -632,7 +632,7 @@ struct GlobalAlpha {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/u4uUyJp8TYmiQH-fNG5Kuw/zh-cn_image_0000002717612994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/yb9c5fGNTNeB26sz7yns3w/zh-cn_image_0000002753297049.png)
 
 ## lineDashOffset
 
@@ -682,7 +682,7 @@ struct LineDashOffset {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/A1cEFzzrRaCgLM2bXc-koQ/zh-cn_image_0000002747292947.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/6Qqp9lysRxyFLbn35Z8Oeg/zh-cn_image_0000002753456967.png)
 
 ## globalCompositeOperation
 
@@ -876,7 +876,7 @@ struct GlobalCompositeOperation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/F21Q3Pu6QSGCCprYYMHhmg/zh-cn_image_0000002747212863.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/tojqH162QdeobRQh7Ia6aA/zh-cn_image_0000002723857202.png)
 
 ## shadowBlur
 
@@ -926,7 +926,7 @@ struct ShadowBlur {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/_8eGKg4bQQK56kRp2ATZBg/zh-cn_image_0000002717772928.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/FSaV09Y9Td-wPRf-JEjTnQ/zh-cn_image_0000002723697284.jpg)
 
 ## shadowColor
 
@@ -976,7 +976,7 @@ struct ShadowColor {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/WNXsCtLJS8a5qTI6UGAeIQ/zh-cn_image_0000002717612996.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/QgcYCdmIQPa9Y74fJQizDA/zh-cn_image_0000002753297051.jpg)
 
 ## shadowOffsetX
 
@@ -1027,7 +1027,7 @@ struct ShadowOffsetX {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/8s80SyxdSUeFV3hiagCHLg/zh-cn_image_0000002747292949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/mSlsbVHtRlO-TXwipUQuzQ/zh-cn_image_0000002753456969.png)
 
 ## shadowOffsetY
 
@@ -1078,7 +1078,7 @@ struct ShadowOffsetY {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/2PYWgdF4RFm9wCBcIgobjA/zh-cn_image_0000002747212865.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/iQRB-94vQxKtG6sCc0Wvig/zh-cn_image_0000002723857204.png)
 
 ## imageSmoothingEnabled
 
@@ -1132,7 +1132,7 @@ struct ImageSmoothingEnabled {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/hjLneep_S9yJxAsgglo6tg/zh-cn_image_0000002717772930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/l6CZv8z_QU2yMwAFaqbo5Q/zh-cn_image_0000002723697286.png)
 
 ## imageSmoothingQuality
 
@@ -1191,7 +1191,7 @@ justifyContent: FlexAlign.Center }) {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/WmU3PVRORT6pEH-CnsY24g/zh-cn_image_0000002717612998.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/iWwh2YnfTpWwqZyufruUFw/zh-cn_image_0000002753297053.jpeg)
 
 ## direction
 
@@ -1247,7 +1247,7 @@ justifyContent: FlexAlign.Center }) {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/bCSgmpaXTAKrdEgvdIm-Dg/zh-cn_image_0000002747292951.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/RLyt_AVXTACHTjgYwl0p4Q/zh-cn_image_0000002753456971.jpeg)
 
 ## filter
 
@@ -1332,7 +1332,7 @@ justifyContent: FlexAlign.Center }) {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/W0i8Zio1RvKGO3SkuNzaYA/zh-cn_image_0000002747212867.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/z_5Zk0CiSkS6oj8oMafsmA/zh-cn_image_0000002723857206.jpeg)
 
 ## letterSpacing18+
 
@@ -1384,7 +1384,7 @@ justifyContent: FlexAlign.Center }) {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/p0kx8tkTTxGiOAIF6AmV4w/zh-cn_image_0000002717772932.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/wQQGW14QT0G2wTFU7UinAw/zh-cn_image_0000002723697288.jpeg)
 
 ## antialias24+
 
@@ -1452,7 +1452,7 @@ struct AntialiasDemoOff {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/PMk3jIwzSDaJN-Ik0e9LoQ/zh-cn_image_0000002717613000.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/6qFJKy0-Rf6q-eOhXQCiSg/zh-cn_image_0000002753297055.jpeg)
 
 ## CanvasDirection
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-k
 title: oh_key_code.h
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 头文件 > oh_key_code.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0cdc8cd35d1ea9690d7b6bd264d7f19f070c11d088408429ab5c18fa582c0654
+scraped_at: 2026-09-15T07:07:16+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:a499a795e2938f4b113fa1db3e8e135c99899c1a057a431f73bb476b4db274cd
 ---
 
 ## 概述
@@ -215,8 +215,8 @@ enum Input_KeyCode
 | KEYCODE\_MACRO = 2610 | 宏键  **起始版本：** 22 |
 | KEYCODE\_NUMPAD\_PLUSMINUS = 2611 | 数字键盘上的加号/减号键  **起始版本：** 22 |
 | KEYCODE\_SCALE = 2612 | 扩展键  **起始版本：** 22 |
-| KEYCODE\_HANGUEL = 2613 | 日文韩语键  **起始版本：** 22 |
-| KEYCODE\_HANJA = 2614 | 日文汉语键  **起始版本：** 22 |
+| KEYCODE\_HANGUEL = 2613 | 韩文键  **起始版本：** 22 |
+| KEYCODE\_HANJA = 2614 | 韩文汉字键  **起始版本：** 22 |
 | KEYCODE\_YEN = 2615 | 日元键  **起始版本：** 22 |
 | KEYCODE\_STOP = 2616 | 停止键  **起始版本：** 22 |
 | KEYCODE\_AGAIN = 2617 | 重复键  **起始版本：** 22 |
@@ -381,7 +381,7 @@ enum Input_KeyCode
 | KEYCODE\_WLAN = 2844 | 无线局域网  **起始版本：** 22 |
 | KEYCODE\_UWB = 2845 | 超宽带控制键  **起始版本：** 22 |
 | KEYCODE\_WWAN\_WIMAX = 2846 | 移动网络控制键  **起始版本：** 22 |
-| KEYCODE\_RFKILL = 2847 | 控制所有收音机的键  **起始版本：** 22 |
+| KEYCODE\_RFKILL = 2847 | 控制所有无线设备的键  **起始版本：** 22 |
 | KEYCODE\_CHANNEL = 3001 | 向上频道键  **起始版本：** 22 |
 | KEYCODE\_BTN\_0 = 3100 | 按键0  **起始版本：** 22 |
 | KEYCODE\_BTN\_1 = 3101 | 按键1  **起始版本：** 22 |

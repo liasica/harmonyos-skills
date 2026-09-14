@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/basic-ser
 title: 错误码
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:31+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:07:10+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:32cbbb9f2d6f74de7feb6cdeb75e07d89cdf170fd7e32f04450ceb874567641c
 ---
 

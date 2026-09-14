@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PageSwitchActionProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (PageSwitchActionProposal)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:04+08:00
+scraped_at: 2026-09-15T07:04:35+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:c9c80a970556a7916e69bc14b40dbab4103925e78d86bf80b87b8447350b8af6
+content_hash: sha256:6e78cdf6690209b7157a4d13456be58fc2028e53fd6b5bad095e5ad6c53a4eec
 ---
 
 智慧手势翻页动作处理，默认方向为向前翻页，包括向右和向下。当通过[registerMonitor](arkts-apis-uicontext-smartgesturecontroller.md#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](arkts-apis-uicontext-gesturehandlingresolution.md)的selectedProposal为该类型对象，会触发目标组件的翻页操作。
@@ -121,4 +121,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/CyE3huPrQpek_-_hi-doSw/zh-cn_image_0000002717772316.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/HUM1n_eyROGPbG5fCytBuA/zh-cn_image_0000002753456355.png)

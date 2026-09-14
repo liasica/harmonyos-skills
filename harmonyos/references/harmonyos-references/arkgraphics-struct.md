@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkgraphi
 title: 结构体
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:09+08:00
-doc_updated_at: 2026-06-03
+scraped_at: 2026-09-15T07:08:31+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c0c651740cc15870023d801007f6e7a2da89e8af4db5a54e20800040d97a4f61
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 学习UI范式状态管理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:47+08:00
-doc_updated_at: 2026-06-05
+scraped_at: 2026-09-15T07:01:19+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:17cdcc989224aad7a2bbafd563d209ce23da09700436e45cd25f7a5476571bbb
 ---
 

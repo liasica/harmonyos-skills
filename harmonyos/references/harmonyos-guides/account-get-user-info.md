@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-u
 title: 获取华为账号用户信息
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-07-03
+scraped_at: 2026-09-15T07:02:35+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:92ea071ff1038217c6dc9fe4547cfb74673b7a2113fbdb247e9bb82792ab549c
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 场景体验
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 场景体验
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:53+08:00
+scraped_at: 2026-09-15T07:03:23+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:42ddd9b359a93b555f4b257b063406b037f7a1b4f54406d186b35cf0b3e5d742
+content_hash: sha256:dca608878471a84a05f09e1a9038625f89b611c5839a4123e1270fc17a60f484
 ---
 
 用户通过小艺对话进行自然语言输入实现服务闭环和内容查询。主要场景分为两大类：任务执行和功能一步达。其中任务执行体验又分为两种：功能服务类和信息交互类。
@@ -33,4 +33,4 @@ content_hash: sha256:42ddd9b359a93b555f4b257b063406b037f7a1b4f54406d186b35cf0b3e
 
 开发者将应用内的功能声明接入意图框架后，用户可以通过小艺直接打开相应功能页面，比如“打开XX视频的会员中心”，可直接拉起对应页面，实现一步直达。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/2QmoR_xEQtqs4MnfRe3R3Q/zh-cn_image_0000002717772172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/UIhmWKW_Sa210SFpBrpeBg/zh-cn_image_0000002753456211.png)

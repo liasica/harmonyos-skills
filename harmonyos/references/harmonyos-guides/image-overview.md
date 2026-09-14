@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-overvie
 title: Image Kit简介
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
+scraped_at: 2026-09-15T07:02:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:79dbf75a8f76b9b89cbd6c7c8006b07531f5c764f9e792c09703d819dc8ea8e8
+content_hash: sha256:c581640c4163949066389fbd0ebd81ff783f923aa25c6c6963f5bf80d2f60f04
 ---
 
 开发者通过调用Image Kit（图片处理服务）提供的接口，可以实现图片的解码、编码、编辑、元数据处理和图片接收等功能。
@@ -51,11 +51,11 @@ Image Kit还提供了读取和[编辑图片EXIF信息](image-tool.md)的能力�
 
 **图1** 图片解码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Pw85Os6uQj2sw2soSH7fig/zh-cn_image_0000002747211287.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/ik5wZhGtRseHG3Tiy9AdYw/zh-cn_image_0000002753295473.png)
 
 **图2** 图片编码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/-FhE3Dj0QFSHUD8TH2NBGA/zh-cn_image_0000002717771352.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/NFO61GiNQhCL7ZpgD9ZVHA/zh-cn_image_0000002753455391.png)
 
 ## 约束与限制
 

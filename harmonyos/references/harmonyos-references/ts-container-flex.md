@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Flex
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Flex
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:20+08:00
+scraped_at: 2026-09-15T07:04:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:086c8bf267f7e2fcca6c7241100c34326b91ccc8543e1cb170dc323cd3ce2c15
+content_hash: sha256:a1e9cfdf9677b6f62304dc6fbcbc45f2966877e5d26034d9a383efa15c563854
 ---
 
 Flex是以弹性方式布局子组件的容器组件，能够高效地排列、对齐子元素并分配剩余空间。
@@ -147,7 +147,7 @@ struct FlexExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Rvh4_KtfTZarEsn8zF6PJw/zh-cn_image_0000002717612594.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/hrDxCSVdQ7-PTTl6MozBHw/zh-cn_image_0000002723856800.png)
 
 ### 示例2（子组件单/多行排列）
 
@@ -197,7 +197,7 @@ struct FlexExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/0bNwSx6JTV-JGwYxQ8TLWw/zh-cn_image_0000002747292547.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/DlBGSGPrR5eZxnJqj2iuew/zh-cn_image_0000002723696882.png)
 
 ### 示例3（子组件在主轴上的对齐格式）
 
@@ -250,7 +250,7 @@ struct FlexExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/dFsfW7UCRZCeECyxQrA4uw/zh-cn_image_0000002747212463.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/X0F03m2-R6WKIQw-Qy_ApQ/zh-cn_image_0000002753296649.png)
 
 ### 示例4（子组件在交叉轴上的对齐方式）
 
@@ -303,7 +303,7 @@ struct FlexExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/N893eS5ATg-bRv8OV2CSUA/zh-cn_image_0000002717772528.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Id4f4-kHTdyFnVmx7ZqOYA/zh-cn_image_0000002753456567.png)
 
 ### 示例5（多行内容的对齐方式）
 
@@ -368,7 +368,7 @@ struct FlexExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/KGWWPBADQjSKu8QiBNMFDA/zh-cn_image_0000002717612596.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/RtQCfTSoS4u5PP2gpy_ElA/zh-cn_image_0000002723856802.png)
 
 ### 示例6（子组件单/多行排列时的主/交叉轴间距）
 
@@ -419,7 +419,7 @@ struct FlexExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/CoqZRZ_GTV-KXzi8X6BcTg/zh-cn_image_0000002747292549.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/NRSIWxJWRdOvdAelLB3Tkg/zh-cn_image_0000002723696884.png)
 
 ### 示例7（宽度自适应的Flex容器）
 
@@ -475,4 +475,4 @@ struct FlexExample7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/eBatnx0xTHK6LoTICFIiRQ/zh-cn_image_0000002747212465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/pI6CdY7YQ3yzR13lsAM44w/zh-cn_image_0000002753296651.png)

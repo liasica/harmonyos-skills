@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/debugging-com
 title: 调试命令
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:17:27+08:00
-doc_updated_at: 2026-05-07
+scraped_at: 2026-09-15T07:02:12+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9080db03ebc32b5102b52d338d59b9dbabadd90fb44d23df2517543d966f6b11
 ---
 

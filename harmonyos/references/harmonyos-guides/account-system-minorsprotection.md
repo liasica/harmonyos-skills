@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-syste
 title: 应用与系统联动切换未成年人模式
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 应用与系统实现未成年人模式联动 > 应用与系统联动切换未成年人模式
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:10+08:00
+scraped_at: 2026-09-15T07:02:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5e2bff7261d1dad3998d8b7b2f09b4eef0ef809fdf68e4ccf33f2814871d4f65
+content_hash: sha256:741f8092eb86862fdaf052a58f38d62a9259bb300da08623f0201add54ce12de
 ---
 
 ## 场景介绍
@@ -23,7 +23,7 @@ content_hash: sha256:5e2bff7261d1dad3998d8b7b2f09b4eef0ef809fdf68e4ccf33f2814871
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/AzLyUbBYQ0yiYj9Tm6yoVw/zh-cn_image_0000002747211497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/k3IERlfHSW6sw0I7yXsXeA/zh-cn_image_0000002753295683.png)
 
 流程说明：
 

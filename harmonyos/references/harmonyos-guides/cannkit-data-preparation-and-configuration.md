@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-data-
 title: 数据准备和配置说明
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 数据准备和配置说明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:28+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:03+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:889d59c08b895a3bfb7aa8d011ae49dcc554b50cc0be1e7a3cca640350246227
 ---
 

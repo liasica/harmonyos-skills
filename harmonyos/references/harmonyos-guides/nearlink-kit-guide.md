@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-kit-
 title: NearLink Kit（星闪服务）
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:5a96cc13d2c767d6320df9ad48d8199de1c6de350b9eab3458ee50c55e712a7f
 ---
 

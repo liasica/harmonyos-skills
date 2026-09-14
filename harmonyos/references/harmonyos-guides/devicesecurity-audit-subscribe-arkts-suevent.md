@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 单客户端订阅场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 单客户端订阅场景
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:29+08:00
+scraped_at: 2026-09-15T07:01:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4e1640cebcea2943316bfebb70254ec4c623f94f30eec50d41cad70da7affd70
+content_hash: sha256:9bf6881e7c06bf010c37cd856b1b62271e99ea94831cff1979c981076777e7b3
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:4e1640cebcea2943316bfebb70254ec4c623f94f30eec50d41cad70da7a
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/q9J62WCuQsWcySAHSkReCQ/zh-cn_image_0000002747291111.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FWJr2cBCQua0IDdL7BnFPQ/zh-cn_image_0000002723695448.png)
 
 **流程说明：**
 

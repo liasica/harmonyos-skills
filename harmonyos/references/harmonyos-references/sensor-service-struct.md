@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/sensor-se
 title: 结构体
 breadcrumb: API参考 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:11:09+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:07:26+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2298bd5a9afc1b3705326942e767c3141c41f60fe12be048d43fc684f8d7ad96
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-example-
 title: Function Flow Runtime开发样例(C++)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:29+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:04+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:7b6018dbd3491f879d85f3c41feed5e1f61e8038d8e8c380eece7f0724fc2691
 ---
 

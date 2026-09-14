@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-kit
 title: Media Kit（媒体服务）
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:18+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:25+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:5053c5fed163281e1086ea71fcc48e2a8eb3cc3b9b20242645c0d7ca08e9d35c
 ---
 

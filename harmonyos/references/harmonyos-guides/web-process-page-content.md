@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-process-p
 title: 处理网页内容
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:55+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:37+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:788872a02a0ea9fb62e6f0a681e2530206ec226c0b0950b25799cd1e79d809bd
 ---
 

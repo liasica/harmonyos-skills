@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 获取风险等级
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取风险等级
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:01+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:35+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:64a1a879fa87bc27d36a40d251ce9cffc9dba6d5d47dc54adb5071d8a567efa8
 ---
 

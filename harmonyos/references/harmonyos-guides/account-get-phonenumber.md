@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-p
 title: 获取手机号
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取手机号
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:09+08:00
+scraped_at: 2026-09-15T07:02:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8caba6cf29d170ec8832c9ef8087323cf4105e6d7f2d2c13ecd5c6a5096ece5e
+content_hash: sha256:29e8aefb74fa9b8ab888658e5f9eea798bc5847ea3896894b9773dada10e425b
 ---
 
 ## 场景介绍
@@ -19,11 +19,11 @@ content_hash: sha256:8caba6cf29d170ec8832c9ef8087323cf4105e6d7f2d2c13ecd5c6a5096
 
 **图1** 手机端获取手机号（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/d1rqvnycR8Ovf3T-goRa8w/zh-cn_image_0000002747211491.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ukxFsHaVQtq_IBI1dxBpIw/zh-cn_image_0000002753295677.png "点击放大")
 
 **图2** Wearable设备获取手机号（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/PEWZycZzR2ueyWtw1OKTdw/zh-cn_image_0000002717771556.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/qT1nvRM7Sb2GmW249EZGeQ/zh-cn_image_0000002753455595.png "点击放大")
 
 ## 约束与限制
 
@@ -34,7 +34,7 @@ content_hash: sha256:8caba6cf29d170ec8832c9ef8087323cf4105e6d7f2d2c13ecd5c6a5096
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/b1pTqGHpTASKSQEtxU9Ywg/zh-cn_image_0000002717611624.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/Mw6oi_pWRmGfidhNoU-imA/zh-cn_image_0000002723855830.png)
 
 流程说明：
 

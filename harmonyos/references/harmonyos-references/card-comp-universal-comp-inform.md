@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/card-comp
 title: 组件通用信息
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 组件通用信息
 category: harmonyos-references
-scraped_at: 2026-04-28T08:03:34+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:05:24+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f13841b5aaebff3a8558383a7643cd6a6b63bfa594ca9913ac42dc23c2f8ba34
 ---
 

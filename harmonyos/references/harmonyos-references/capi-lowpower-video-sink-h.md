@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-lowp
 title: lowpower_video_sink.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > lowpower_video_sink.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:733e22a1782c9e4d20019be28ca22fabe4bb87da988e15498f0d6757c496e4b7
+scraped_at: 2026-09-15T07:08:14+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:197fc7fad3b81b39a6a58810a3d19b40a10a2b34b030a293f135d00e99f7597b
 ---
 
 ## 概述
@@ -480,7 +480,7 @@ OH_AVErrCode OH_LowPowerVideoSink_SetTargetStartFrame(OH_LowPowerVideoSink* sink
 | [OH\_LowPowerVideoSink](capi-lowpowervideosink-oh-lowpowervideosink.md)\* sink | 指向OH\_LowPowerVideoSink实例的指针。 |
 | const int64\_t framePts | 渲染的目标视频帧的pts。单位为微秒。 |
 | [OH\_LowPowerVideoSink\_OnTargetArrived](capi-lowpower-video-sink-base-h.md#oh_lowpowervideosink_ontargetarrived) onTargetArrived | OH\_LowPowerVideoSink\_OnTargetArrived方法，当目标帧渲染时触发该方法。 |
-| const int64\_t timeoutMs | 如果等待第一帧的时间超过timeoutMs，则直接调用onTargetArrived。单位为毫秒。 |
+| const int64\_t timeoutMs | 如果等待第一帧的时间超过timeoutMs，则直接调用onTargetArrived。单位为毫秒（ms）。 |
 | void\* userData | 用户数据。 |
 
 **返回：**

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp
 title: 数据防泄漏服务
 breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 数据防泄漏服务
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:01+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:49+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4b206d4bf0a7b2e2cf756081d104cb58dcd8b43f6a26aed47dc4b00d12294689
 ---
 

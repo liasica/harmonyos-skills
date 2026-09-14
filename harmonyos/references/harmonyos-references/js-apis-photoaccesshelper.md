@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.file.photoAccessHelper (相册管理模块)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:01+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:08:16+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:1054320aa7a7a2b4cfe65d2717dc0395157d82648eebb8a2567557bc60a8872f
 ---
 

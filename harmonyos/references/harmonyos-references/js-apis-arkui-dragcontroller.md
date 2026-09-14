@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.dragController (DragController)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.dragController (DragController)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:12bba3ec2be5452de4fe2fd5db7633bed4dd8c6674eb4201104dbd9eb832e089
+scraped_at: 2026-09-15T07:04:34+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:f5f73de254290ef3dce4473fab5ffe7d99de1abf1d4f17c5648dd6bd9a024569
 ---
 
 本模块提供发起主动拖拽的能力，当应用接收到触摸或长按等事件时可以主动发起拖拽动作，并在拖拽过程中携带拖拽信息，适用于应用需要自主控制拖拽发起时机、拖拽预览效果和拖拽数据传递的场景，帮助应用实现更灵活的自定义拖拽交互。
@@ -138,7 +138,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Es08IxW9T6CD2JJsOdRwgg/zh-cn_image_0000002717772300.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/v_tBKwynTAGOQGU-UylcVQ/zh-cn_image_0000002753456339.gif)
 
 ## dragController.executeDrag(deprecated)
 
@@ -290,7 +290,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ToXmH5kaR1OOKL8vXO-hIg/zh-cn_image_0000002717612368.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/bhztwzqpRTCK-wdAuniFGA/zh-cn_image_0000002723856574.gif)
 
 ## DragInfo
 
@@ -585,7 +585,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/LY1hKCyYTjKAHD_AHCrzjA/zh-cn_image_0000002747292321.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/rT5DdWh7SquOZWGzW1ZZaA/zh-cn_image_0000002723696656.gif)
 
 ## DragAction11+
 
@@ -861,7 +861,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8afxPWLvQwCDParlpkWs6A/zh-cn_image_0000002747212237.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/kXHM7x94RaGHgdSTmsJr2A/zh-cn_image_0000002753296423.gif)
 
 ### on('statusChange')11+
 
@@ -1305,7 +1305,7 @@ animate(options: AnimationOptions, handler: () => void): void
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/W1hKNyz-QzCGheQu6ri2tg/zh-cn_image_0000002717772302.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/U5qUCAx-S4izfFW0muovbw/zh-cn_image_0000002753456341.gif)
 
 ## DragStartRequestStatus18+
 
@@ -1347,7 +1347,7 @@ animate(options: AnimationOptions, handler: () => void): void
 | --- | --- | --- | --- | --- |
 | stillTimeLimit | number | 否 | 是 | 进入悬停检测BEGIN状态所需保持静止的时间，单位：ms。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值500。 |
 | updateInterval | number | 否 | 是 | 进入悬停检测UPDATE状态后，更新通知的时间间隔，单位：ms。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值100。 |
-| updateNotifyCount | number | 否 | 是 | 进入悬停检测UPDATE状态后，更新通知的最大次数。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值3。 |
+| updateNotifyCount | number | 否 | 是 | 进入悬停检测UPDATE状态后，更新通知的最大次数。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值3。取值为0时，不发送UPDATE通知，并在BEGIN状态后立即触发END状态。 |
 | updateToFinishInterval | number | 否 | 是 | 从UPDATE状态到END状态的最长等待时间，单位：ms。取值范围为[0, 231-1]的整数。输入浮点数时只取整数部分。输入非法值（负数、null、undefined、NaN）时取默认值100。 |
 
 ## SpringLoadingDragInfos20+

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/camera-st
 title: 结构体
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:51+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:07:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:a15e546f0cf1e0a6dfa67314c21d2db9bfd48666fda27a14efa5c1915d427d2a
 ---
 

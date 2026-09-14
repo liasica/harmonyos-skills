@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-fa
 title: 使用文本常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 使用文本常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:720527e84d2ea1bfefbe3e9daead00b88926248515b6553522a936a73812754f
+scraped_at: 2026-09-15T07:01:34+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:f7ddb231e90c7821d437570b85d0b8ee7b9af5cb00f99ecfa6d48b41c45e1c72
 ---
 
 本文档介绍使用文本的常见问题并提供参考。
@@ -20,7 +20,7 @@ content_hash: sha256:720527e84d2ea1bfefbe3e9daead00b88926248515b6553522a936a7381
 
 在Text组件上未设置宽度，当内容过长时，省略号与组件边缘之间会留有较大空白，且内容更新时省略号的位置会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/8Ziusr_oSbS7F7eD9RAt8w/zh-cn_image_0000002717610856.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/EsYS05jEQIeGX4GO7dTVRw/zh-cn_image_0000002723855064.gif)
 
 **原因分析**
 
@@ -65,7 +65,7 @@ struct WordBreakd {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Qdd8VTrYTBiW280GerAnRQ/zh-cn_image_0000002747290809.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/lk-dmn3cTyOSMfT7D3ToOw/zh-cn_image_0000002723695146.gif)
 
 ### Text组件如何实现行末展开样式
 
@@ -126,7 +126,7 @@ struct HeightAdaptivePolicy {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/-_M2uwOxRdKAEN9Ki82nBw/zh-cn_image_0000002747210727.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/6oqQWR-YS36i_8WUPZN3BA/zh-cn_image_0000002753294913.gif)
 
 ### 在文本前后添加自定义标签
 
@@ -140,9 +140,8 @@ struct HeightAdaptivePolicy {
 
 实现步骤：
 
-1.将标签和长文本放在同一个沿水平方向布局的容器Row中。
-
-2.中间长文本设置textOverflow属性为TextOverflow.Ellipsis，空间不足时截断文本，显示省略号。
+1. 将标签和长文本放在同一个沿水平方向布局的容器Row中。
+2. 中间长文本设置textOverflow属性为TextOverflow.Ellipsis，空间不足时截断文本，显示省略号。
 
 实现案例请参考[实现热搜榜](arkts-common-components-text-display.md#实现热搜榜)，该示例中，文字“1”、“爆”就是“我是热搜词条”的两个标签。这种实现方式写法简便，适合单行文本添加标签的场景。
 
@@ -152,13 +151,10 @@ struct HeightAdaptivePolicy {
 
 实现步骤：
 
-1.将标签和长文本放在Stack中。
-
-2.在组件显示之前的回调[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)中，使用[measureTextSize](../harmonyos-references/arkts-apis-uicontext-measureutils.md#measuretextsize12)计算前标签的宽度，作为中间多行文本的首行缩进距离。
-
-3.在组件显示之前的回调aboutToAppear中，通过[getParagraphs](../harmonyos-references/arkts-apis-uicontext-measureutils.md#getparagraphs20)计算中间多行文本最后一行的宽度、除最后一行文本之外的高度，作为后标签的偏移量offset。
-
-4.设置后标签相对于Stack左上角的偏移量。
+1. 将标签和长文本放在Stack中。
+2. 在组件显示之前的回调[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)中，使用[measureTextSize](../harmonyos-references/arkts-apis-uicontext-measureutils.md#measuretextsize12)计算前标签的宽度，作为中间多行文本的首行缩进距离。
+3. 在组件显示之前的回调aboutToAppear中，通过[getParagraphs](../harmonyos-references/arkts-apis-uicontext-measureutils.md#getparagraphs20)计算中间多行文本最后一行的宽度、除最后一行文本之外的高度，作为后标签的偏移量offset。
+4. 设置后标签相对于Stack左上角的偏移量。
 
 示例：
 
@@ -255,7 +251,7 @@ struct LengthMetric {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/MwzpGwD1Sh6H31Dh2W2Iqg/zh-cn_image_0000002717770792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/LPTmkwgdTuqm1APDkYvdEQ/zh-cn_image_0000002753454831.png)
 
 ### Text组件如何实现表情与文字一起显示
 
@@ -368,7 +364,7 @@ struct DisplayedTogether {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/1WMztLYaSLSLoDHItipiTg/zh-cn_image_0000002717610858.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/212p-mRZRReC_FplNiHIFg/zh-cn_image_0000002723855066.png)
 
 ### 文本超长时如何展示
 
@@ -412,7 +408,7 @@ struct TextLong {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/kQYBE3XETxK4_04RxnkVsw/zh-cn_image_0000002747290811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/7s_8iMs1SOyLjCmjKb-jJw/zh-cn_image_0000002723695148.png)
 
 **解决措施二**
 
@@ -449,7 +445,7 @@ struct TextLongTow {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/NXfRiCasTJy3oi0a5kYPCQ/zh-cn_image_0000002747210729.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/AB5_TVVwR1-yethHQnyFqg/zh-cn_image_0000002753294915.gif)
 
 ### selection如何触发弹出自定义菜单并设置菜单字体大小
 
@@ -519,7 +515,7 @@ export struct HowToSetCustomSelectionMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ExJv9D69QQifia8W8oUiCg/zh-cn_image_0000002717770794.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/UiIMxhqiQcymSPhxwTHrAQ/zh-cn_image_0000002753454833.gif)
 
 ### 如何屏蔽文本的长按手势
 
@@ -635,4 +631,4 @@ export struct CursorPersistsWhenTextInputIsCoveredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/mZy8bxjhS0GbzeLXmM3vLw/zh-cn_image_0000002717610860.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/XIoxP5pfRZSYlXVcK61yjg/zh-cn_image_0000002723855068.gif)

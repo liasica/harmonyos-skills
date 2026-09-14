@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkdata
 title: ArkData（方舟数据管理）
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:10+08:00
-doc_updated_at: 2026-04-24
+scraped_at: 2026-09-15T07:01:11+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:49d8cdf1daa1b461ff40e1743c5a584f197ee1fd641ba24b9e0834790769874c
 ---
 

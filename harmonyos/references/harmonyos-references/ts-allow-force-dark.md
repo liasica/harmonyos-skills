@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-allow-
 title: 禁用反色能力
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 禁用反色能力
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:15+08:00
+scraped_at: 2026-09-15T07:04:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5d2b52739982b94b6535e322e491a25346aae0481e232d21fe128fd2dd411906
+content_hash: sha256:d14f8d20fc66cd91035eb473a337945070ad693edbd5d2234dab3bad77e08cd2
 ---
 
 设置组件是否使用反色能力，反色能力是在深浅色切换时自动对颜色值进行反色或变换，开发者可以通过主动设置不启用反色算法，以保持在深浅色切换时的原有逻辑。
@@ -78,4 +78,4 @@ struct ComponentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Bq7CR7UHRwOIKbWVTI0qYA/zh-cn_image_0000002717772412.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/e2pWZQddRviwU3E6N9LCWQ/zh-cn_image_0000002753456451.png)

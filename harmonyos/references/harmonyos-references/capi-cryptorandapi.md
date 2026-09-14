@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: CryptoRandApi
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 模块 > CryptoRandApi
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4ca388909e3a1486b6437d887328d04cf2451027b9116996240a3ecd7cb2199b
+scraped_at: 2026-09-15T07:06:19+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:1611d51341aaa2cde75b910eb4d0f0fc5461175d4a704caa86c88b7aab876cc4
 ---
 
 ## 概述
 
-为应用提供随机数生成算法接口。
+描述HarmonyOS为应用提供的随机数生成接口。
 
 **起始版本：** 20
 
@@ -18,4 +18,4 @@ content_hash: sha256:4ca388909e3a1486b6437d887328d04cf2451027b9116996240a3ecd7cb
 
 | 名称 | 描述 |
 | --- | --- |
-| [crypto\_rand.h](capi-crypto-rand-h.md) | 定义随机数生成器API。 |
+| [crypto\_rand.h](capi-crypto-rand-h.md) | 定义随机数生成器接口。 |

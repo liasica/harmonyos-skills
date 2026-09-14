@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-kit-gu
 title: Reader Kit（阅读服务）
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:37+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:92c92ad5d840229eed19a418d4235b74340696ec208540932faf86a700e98881
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-o
 title: "@ohos.identifier.oaid (开放匿名设备标识服务)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API > @ohos.identifier.oaid (开放匿名设备标识服务)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:be907bb87acda1bfa61a659ab3f6bba7fcdf9487afff5df3a8ebb0f7812c6dc2
+scraped_at: 2026-09-15T07:08:44+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:72b40956a042038e8a5ba7f809e1fa3925d3932eafb7264db40100c6459afe6e
 ---
 
 本模块提供开放匿名设备标识符（Open Anonymous Device Identifier, OAID，以下简称OAID）的获取能力。
@@ -59,6 +59,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 void identifier.getOAID().then((data: string) => {
   const oaid: string = data;
+  hilog.info(0x0000, 'testTag', `Succeeded in getting OAID: ${oaid}`);
 }).catch((error: BusinessError) => {
   hilog.error(0x0000, 'testTag', `Failed to get oaid. Code is ${error.code}, message is ${error.message}`);
 });
@@ -103,5 +104,6 @@ identifier.getOAID((err: BusinessError, data: string) => {
     return;
   }
   const oaid: string = data;
+  hilog.info(0x0000, 'testTag', `Succeeded in getting OAID: ${oaid}`);
 });
 ```

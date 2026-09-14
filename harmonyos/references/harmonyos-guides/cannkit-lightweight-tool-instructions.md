@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-light
 title: 模型轻量化
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:15+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:01+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:09ee33d53d3f42d974abd5e1cc9bc2310bc12717e304017fb0a2e64259631672
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-bubble
 title: 气泡
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 气泡
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:22+08:00
+scraped_at: 2026-09-15T07:02:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8c1faf865d88669521615230352df36b1532b4541eb6fc756b70f194d1fb6612
+content_hash: sha256:c2ce1b57722abb584b59e9a09a64afec3aa4392274e68464077d46162a7a0812
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:8c1faf865d88669521615230352df36b1532b4541eb6fc756b70f194d1f
 * 支持设置图标动画。
 * 支持添加点击事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/bWj4UbwBS_6plcWIwwOrNA/zh-cn_image_0000002747291871.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/-qULfayHRV-oHlJ92eZSbg/zh-cn_image_0000002723696206.jpg "点击放大")
 
 ## 接口说明
 
@@ -116,7 +116,7 @@ content_hash: sha256:8c1faf865d88669521615230352df36b1532b4541eb6fc756b70f194d1f
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wbc8LeIeQIGf4Sm868TntQ/zh-cn_image_0000002747211787.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/aKzVvTAsQwmhFQagv0Pzfw/zh-cn_image_0000002753295973.jpg "点击放大")
 
 ### 设置监听气泡点击事件
 

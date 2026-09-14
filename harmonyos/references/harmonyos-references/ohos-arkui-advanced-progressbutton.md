@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ProgressButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ProgressButton
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:44+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:c39a4f5a4be32d8dda6cab578b71dc4b9da2db0cae7d842c8d372290647fda8d
+scraped_at: 2026-09-15T07:05:14+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:49bd6a95784ac033aafa788049cf918914f226a5508646158078feeb286ac95e
 ---
 
 文本下载按钮，可显示具体下载进度。
@@ -14,7 +14,7 @@ content_hash: sha256:c39a4f5a4be32d8dda6cab578b71dc4b9da2db0cae7d842c8d372290647
 
 * 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本模块接口仅可在Stage模型下使用。
-* 如果ProgressButton设置[通用属性](ts-component-general-attributes.md)和[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到ProgressButton本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButton设置通用属性和通用事件。
+* 如果ProgressButton设置[通用属性](ts-component-general-attributes.md)或[通用事件](ts-component-general-events.md)，编译工具链会额外生成节点\_\_Common\_\_，并将通用属性或通用事件挂载在\_\_Common\_\_上，而不是直接应用到ProgressButton本身。这可能导致开发者设置的通用属性或通用事件不生效或不符合预期，因此，不建议ProgressButton设置通用属性和通用事件。
 
 ## 导入模块
 
@@ -58,10 +58,6 @@ ProgressButton({progress: number, content: ResourceStr, progressButtonWidth?: Le
 | borderColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 按钮描边颜色。  默认值：#330A59F7 |
 | textColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 按钮文本颜色。  默认值：系统默认值（#CE000000） |
 | backgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 按钮背景色。  默认值：$r('sys.color.ohos\_id\_color\_foreground\_contrary') |
-
-## 事件
-
-不支持[通用事件](ts-component-general-events.md)。
 
 ## 示例
 
@@ -119,7 +115,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/ieqKrsG6Rpui73O7EsxrJQ/zh-cn_image_0000002747213031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FSZkdcbuQe6RNloeB-gKrg/zh-cn_image_0000002723857372.png)
 
 ### 示例2（自定义颜色按钮）
 
@@ -182,7 +178,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/sJyL90xlSxSTGaEhGJ5KfA/zh-cn_image_0000002717773096.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/YOLOdx7qQhew3AhtyHLaRA/zh-cn_image_0000002723697454.png)
 
 ### 示例3（自定义圆角按钮）
 
@@ -239,4 +235,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/i73jqMAAQUCp34ygZR4B4Q/zh-cn_image_0000002717613164.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/CTzPGOaVS0SFMIbouiiXtw/zh-cn_image_0000002753297221.png)

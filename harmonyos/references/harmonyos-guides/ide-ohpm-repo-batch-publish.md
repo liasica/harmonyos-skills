@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo batch_publish
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo batch_publish
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:03:32+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:76ad318b403bd17e6b364e04950127d3aacbb9a7a8c277ef455464107f58b8f0
 ---
 

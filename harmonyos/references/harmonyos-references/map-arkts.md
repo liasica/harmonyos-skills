@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-arkts
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:21+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:08:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c67ae98d2fd0bb23fee7c1ebcef768165a467e784884b75302d5bae117615b4e
 ---
 

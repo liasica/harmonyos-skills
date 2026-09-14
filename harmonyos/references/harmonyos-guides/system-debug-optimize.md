@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-debug-
 title: 调测调优
 breadcrumb: 指南 > 系统 > 调测调优
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:56+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:08+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:b407a097339495984f7d76464be84baa49c10497a2a0969053e8f4857da9e66f
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.UiTest"
 breadcrumb: API参考 > 系统 > 调测调优 > Test Kit（应用测试服务） > ArkTS API > @ohos.UiTest
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:01+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-15T07:07:36+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:884c8e0009bf569d0d0e3bc3bf4bf7afb98927fa603fb5bcffb7f2e371097f14
 ---
 
@@ -7831,7 +7831,7 @@ inputText(text: string): Promise<void>
 
 向控件中输入文本，仅针对可编辑的文本组件生效。使用Promise异步回调。
 
-**说明**
+**说明** 
 
 从API version 8开始支持，从API version 9开始废弃，建议使用[inputText9+](js-apis-uitest.md#inputtext9)替代。
 

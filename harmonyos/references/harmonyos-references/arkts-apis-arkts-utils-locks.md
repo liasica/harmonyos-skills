@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: namespace (locks)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.utils (ArkTS工具库) > namespace (locks)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0ad4649ef5c6b1abbd130c58674f62c5957dbb719497996f104fdd860c84e47c
+scraped_at: 2026-09-15T07:04:27+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:fcac0e3c7c5a86ba9d39443ec7b877018bdf0bd7149157fd93cf6a7544cdb78c
 ---
 
 为了解决多并发实例间的数据竞争问题，ArkTS语言基础库引入了异步锁能力。为了开发者的开发效率，AsyncLock对象支持跨并发实例引用传递。
@@ -462,7 +462,7 @@ let p = lock.lockAsync<void, string>(
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 锁的名称。 |
 | mode | [AsyncLockMode](arkts-apis-arkts-utils-locks.md#asynclockmode) | 否 | 否 | 锁的模式。 |
-| contextId | number | 否 | 否 | [AsyncLockMode](arkts-apis-arkts-utils-locks.md#asynclockmode)调用者的执行上下文标识符。 |
+| contextId | number | 否 | 否 | [AsyncLock](arkts-apis-arkts-utils-locks.md#asynclock)调用者的执行上下文标识符。 |
 
 ## AbortSignal
 

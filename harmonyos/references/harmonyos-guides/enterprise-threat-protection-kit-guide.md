@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprise-th
 title: Enterprise Threat Protection Kit（企业威胁防护服务）
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Threat Protection Kit（企业威胁防护服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:52+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:17a7bd45813e14bdeaae0df52f14b9c5f6dd8e43b67457e1deb1a403d6a08414
 ---
 

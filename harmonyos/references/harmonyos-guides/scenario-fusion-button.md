@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 场景化Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:41+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:56+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d121593caf865024cb816273bffa1ed92bd45a409fe7703750cba6e462682cf2
 ---
 

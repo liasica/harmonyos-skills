@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/call-arkt
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Call Service Kit（通话服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:29+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:08:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2b933a1e4d70a9c33f1514c28ba2077e89e7ef20f14ec1f1ec229b53843758e8
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-atte
 title: 密钥证明
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥证明
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:03+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:55634d93580f0eb8fcad0f8de25185f72f21befbc375825387ff50398816378d
 ---
 

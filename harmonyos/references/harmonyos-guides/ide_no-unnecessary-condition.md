@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unnece
 title: "@typescript-eslint/no-unnecessary-condition"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unnecessary-condition
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:38+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8f314eca0b8b3deada09f515b0e4c457db7d06ebedee2de2b1bf6ff2f7b1f958
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Toggle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Toggle
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8fb3bd3916add3a945c8bb9a051ac45a1933d7ec3e82e490a9a5380e7d69932b
+scraped_at: 2026-09-15T07:04:56+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:8bfd67ce7f64f3ef03daad8f2243f44f3f171ee54c8c3ef704b72618eaeacb56
 ---
 
 组件提供勾选框样式、状态按钮样式和开关样式，适用于需要快速切换状态或进行单选确认的场景，能够有效提升交互体验与界面的直观性。
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/QoOW-wIcQRe3HfQdM4J6Lw/zh-cn_image_0000002717612712.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/RqyaMLlnR-GF3zBznZ9DXg/zh-cn_image_0000002723856918.gif)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -335,7 +335,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/889WxXPwR_uWaj-9ctPdzQ/zh-cn_image_0000002747292665.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/GUVTrC1JRPymII0z7i2pOg/zh-cn_image_0000002723697000.gif)
 
 ### 示例3（自定义Toggle样式）
 
@@ -395,13 +395,13 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/FiaJEilkR1-o-iW3fdbhtA/zh-cn_image_0000002747212581.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/n6-U1tjFTOCXsqWTNWuIpw/zh-cn_image_0000002753296767.gif)
 
 ### 示例4（Toggle沉浸光感效果）
 
-该示例展示了Toggle组件Switch类型在开启沉浸光感前后的效果对比，包括不设置系统材质、设置undefined、设置系统材质以及设置系统材质并配合[switchPointColor](ts-basic-components-toggle.md#switchpointcolor)设置点光源颜色的效果。示例使用通用属性[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)接口来实现沉浸光感效果。
+该示例展示了Toggle组件Switch类型在开启沉浸光感前后的效果对比。示例使用通用属性[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)接口来实现沉浸光感效果。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，新增systemMaterial属性。
 
@@ -417,32 +417,21 @@ import { uiMaterial } from '@kit.ArkUI';
 @Component
 struct ToggleMaterialTest {
   build() {
-    Column({ space: 10 }) {
-      // 不设置系统材质接口，无沉浸光感效果
-      Toggle({ type: ToggleType.Switch, isOn: true })
-
-      // systemMaterial设置undefined，恢复为无沉浸光感的效果
-      Toggle({ type: ToggleType.Switch, isOn: true })
-        .systemMaterial(undefined)
-
+    Stack() {
       // 设置系统材质，开启沉浸光感效果（systemMaterial参数任意仅作为系统材质开关，最终使用组件侧固定参数），默认白色点光源（颜色为switchPointColor默认值）
       Toggle({ type: ToggleType.Switch, isOn: true })
         .systemMaterial(new uiMaterial.Material())
-
-      // 设置系统材质，开启沉浸光感效果（systemMaterial参数任意仅作为系统材质开关，最终使用组件侧固定参数），点光源颜色跟随switchPointColor设置
-      Toggle({ type: ToggleType.Switch, isOn: true })
-        .systemMaterial(new uiMaterial.Material())
-        .switchPointColor(Color.Red)
     }
     .width('100%')
+    .height('100%')
   }
 }
 ```
 
-高算力设备场景示例图：
+未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/b2YrzZNJR66mKXlF-ghxrw/zh-cn_image_0000002717772646.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/ctpJyUHXQqeQ1LuwWNCb0w/zh-cn_image_0000002753456685.gif)
 
-低算力设备场景示例图：
+设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/8OFtTFbLRjmtT9eNXTgXHA/zh-cn_image_0000002717612714.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/LQRMh2QjRpKJUC6n_IzFgA/zh-cn_image_0000002723856920.gif)

@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avre
 title: OH_AVRecorder_Profile
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_AVRecorder_Profile
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9aec4e8fdb9a9c8b04e6ba53fbcbbdf89f254d7b5bbeb7d6ddfecbd95be36754
+scraped_at: 2026-09-15T07:08:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:0ff46645d9e65804548145c09d6cf1df56108563eb14fbfca152059487004bc6
 ---
 
 ```c
-typedef struct OH_AVRecorder_Profile {/* 成员变量详见汇总部分 */} OH_AVRecorder_Profile;
+typedef struct OH_AVRecorder_Profile {/* 成员变量详见汇总部分 */} OH_AVRecorder_Profile
 ```
 
 ## 概述

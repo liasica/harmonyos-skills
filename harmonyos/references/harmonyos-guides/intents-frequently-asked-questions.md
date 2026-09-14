@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-frequ
 title: 常见问题
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:45+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:24+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:033327e5d1e18ae52c9696df941e7b4177274da2b32ffbb4431f455a91c1fa9e
 ---
 

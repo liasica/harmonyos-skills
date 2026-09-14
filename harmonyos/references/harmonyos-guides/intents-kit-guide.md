@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-kit-g
 title: Intents Kit（意图框架服务）
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8eb807cf6f2fd6462a188b03c9bf831f3916142f8d6389e71f6452990abc4a84
 ---
 

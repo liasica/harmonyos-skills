@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ime-arkts
 title: ArkTS API
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:05+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:06:05+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:1340b9e8d0ed272e6390b49b48c371517941aac4bba7dc686e962b7be741ef48
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.componentSnapshot (组件截图)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentSnapshot (组件截图)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bf215a29e909c3cf83213331cc0e85892be4f0868ae550b7f4d02edac9a22ca9
+scraped_at: 2026-09-15T07:04:33+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:677af8ea32a3ac98cf707cb5144c0ba2d801d4084171d4173665e44f97cda694
 ---
 
 本模块提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。组件截图只能够截取组件大小的区域，如果组件的绘制超出了它的区域，或子组件的绘制超出了父组件的区域，这些在组件区域外绘制的内容不会在截图中呈现。兄弟节点堆叠在组件区域内，截图不会显示兄弟组件。
@@ -108,7 +108,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/YbGccWeQS5-kcwi4mWdc7w/zh-cn_image_0000002717772298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/uzEFO1jFSFylOyj4VGTBtA/zh-cn_image_0000002753456337.gif)
 
 ## componentSnapshot.get(deprecated)
 
@@ -194,7 +194,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/YYPPM7hwSCGNsWmtkrYbFg/zh-cn_image_0000002717772298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/8YzacDouQnGKtrMRD1eAbg/zh-cn_image_0000002753456337.gif)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -300,7 +300,7 @@ struct OffscreenSnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/8QwHq3lkT3GOsnbJUztDYw/zh-cn_image_0000002717612366.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/yn0P1F2QTU-jLyGzffDIPQ/zh-cn_image_0000002723856572.gif)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -409,7 +409,7 @@ struct OffscreenSnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/YKpd66JPRx20RQFSWZ5Wfg/zh-cn_image_0000002717612366.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/haIwxImaRXqr2yiQs7PmSw/zh-cn_image_0000002723856572.gif)
 
 ## componentSnapshot.getSync12+
 
@@ -495,7 +495,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/_Ds3KSWxSnGGQSlCGQKLEA/zh-cn_image_0000002717772298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/PkcmFjeoRBSZSkFtYr3EaQ/zh-cn_image_0000002753456337.gif)
 
 ## SnapshotSizeLimitation
 
@@ -511,8 +511,8 @@ struct SnapshotExample {
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maxWidth | number | 否 | 否 | 组件截图的最大宽度限制。  取值范围：[0, +∞)  单位：px |
-| maxHeight | number | 否 | 否 | 组件截图的最大高度限制。  取值范围：[0, +∞)  单位：px |
+| maxWidth | number | 否 | 否 | 组件截图的最大宽度限制。  取值范围：(0, +∞)。异常值为-1，表示查询组件截图尺寸限制失败。  单位：px |
+| maxHeight | number | 否 | 否 | 组件截图的最大高度限制。  取值范围：(0, +∞)。异常值为-1，表示查询组件截图尺寸限制失败。  单位：px |
 
 ## SnapshotOptions12+
 
@@ -590,7 +590,7 @@ struct SnapshotColorModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/rnAanqOwSTOWOYaJdTnDGg/zh-cn_image_0000002717772298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/qGTbfuPyS16IsE1cHsC3hQ/zh-cn_image_0000002753456337.gif)
 
 ## DynamicRangeModeOptions23+
 
@@ -653,7 +653,7 @@ struct SnapshotDynamicRangeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fuGMUEBRQJWcDlmzXBoZbA/zh-cn_image_0000002717772298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/CXkpeQ2iQAGn-tapJ3xk4Q/zh-cn_image_0000002753456337.gif)
 
 ## SnapshotRegionType15+
 
@@ -771,4 +771,4 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/G0yuxUUGS0SoXOy_QUWWKQ/zh-cn_image_0000002747292319.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/rnnWV100RM6s8AgMj9zP3A/zh-cn_image_0000002723696654.gif)

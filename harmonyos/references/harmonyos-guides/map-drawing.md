@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-drawing
 title: 在地图上绘制
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:28+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:49+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8c3299d5b707ebdf122f930bfc086c50eff7f163acfb1f44019e021320113514
 ---
 

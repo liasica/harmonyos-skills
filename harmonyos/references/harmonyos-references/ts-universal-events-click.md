@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 点击事件
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:938c2b4b2afca29b92f3c86790d6d048c213fad8acfeb2a82c4575a522736623
+scraped_at: 2026-09-15T07:04:46+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:fb29315c5d4ee655d7db49a8c97473b546ea8e5717eee6a80af01682f5b6de31
 ---
 
 点击事件用于监听组件被点击时触发的交互行为，开发者可通过该事件获取点击位置、触发来源等点击事件信息，并可在支持的接口中设置点击手势移动阈值，适用于处理组件点击响应、区分触发来源和控制点击识别范围的场景。
@@ -130,7 +130,7 @@ onClick(event: (event: ClickEvent) => void): T
 
 getCurrentLocalPosition?(): Coordinate2D
 
-获取点击位置相对于当前组件实时位置的左上角坐标，适用于组件发生位移、动画或布局变化后，需要获取点击点相对于组件当前位置坐标的场景。
+获取点击位置相对于当前组件实时位置的左上角坐标，适用于组件发生位移、动画或布局变化后，需要获取点击点相对于组件当前位置坐标的场景。在事件无法提供有效的实时组件坐标时，返回空值，使用前请进行判空处理。
 
 **起始版本：** 26.0.0
 
@@ -257,7 +257,7 @@ struct ClickExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pE_TA21zQneG2qS_lHXliw/zh-cn_image_0000002747292409.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Xm0FAubvRSS66VGsu6JAng/zh-cn_image_0000002723696744.gif)
 
 ### 示例2（获取组件实时位置）
 
@@ -293,4 +293,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/pPxjlEzWSY2o4QbhXvi5pg/zh-cn_image_0000002717772386.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3KKgQXkLQvCZje1QjlTQUQ/zh-cn_image_0000002753456425.gif)

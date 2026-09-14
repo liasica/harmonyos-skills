@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkweb-st
 title: 结构体
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:26+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:05:54+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ae72f0280840f888149ca7c4248a49c1a82afab3282039eaa296cee2dbd8440c
 ---
 

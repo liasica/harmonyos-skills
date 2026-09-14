@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Web
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:55+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-15T07:05:52+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:84004fcf38d0d5383f5553de4d816164be770c1ce7797919a911c3a6a722edc3
 ---
 

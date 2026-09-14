@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toolchain-mak
 title: Make构建工程配置HarmonyOS编译工具链
 breadcrumb: 指南 > NDK开发 > 编译工具链 > Make构建工程配置HarmonyOS编译工具链
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:24:00+08:00
+scraped_at: 2026-09-15T07:03:30+08:00
 doc_updated_at: 2026-05-07
-content_hash: sha256:05cb6c71543db47c3144e6efc57142401763f8d20914c886c22d2176689105f4
+content_hash: sha256:63a4a25330d49c4bd09a0ac30161a534f07914f07a24c177298e36dd92e9428a
 ---
 
 ## 概述
@@ -47,7 +47,7 @@ Makefile是Make工具的配置文件，用于描述项目的构建规则和依�
 
    通过分析源库的Makefile文件可知，以下几个内容需要进行重新配置：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/g4q60RSBRUGFePmLC5xwCw/zh-cn_image_0000002747292291.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/L-YOkaN7QPmJkhZi1do2sg/zh-cn_image_0000002723696626.png)
 
    **a. 编译命令配置。**
 

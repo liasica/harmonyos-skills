@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/movingphotovi
 title: 使用MovingPhotoView播放动态照片
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 动态照片 > 使用MovingPhotoView播放动态照片
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:01+08:00
+scraped_at: 2026-09-15T07:02:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:54acabcdd8adbc8c3d57cdf712ea0729fec66a365f66d21840fe5cfacc480102
+content_hash: sha256:9bb918a9ce5f983e54f2468440d184f72cb018f921a2e3ed787680465f4bce33
 ---
 
 系统提供了MovingPhotoView组件，在一些社交类、图库类应用中，可用于播放动态照片文件。
@@ -128,4 +128,4 @@ content_hash: sha256:54acabcdd8adbc8c3d57cdf712ea0729fec66a365f66d21840fe5cfacc4
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/cvurO1NSRbS-op0qjbuqkw/zh-cn_image_0000002747291411.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/EE-NJ-nuRBmatFViCWpBMg/zh-cn_image_0000002723695748.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-kit-g
 title: Payment Kit（鸿蒙支付服务）
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:29+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:51+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4ad5f514d46dceae91ca0a5f85e62a476e72c99f1954fcaf6738916dfbc5d92e
 ---
 

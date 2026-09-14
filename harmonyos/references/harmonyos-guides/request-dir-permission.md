@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-dir-p
 title: 获取并使用公共目录
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 获取并使用公共目录
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8cc998b6880f9a332e21ee4c2aad5d210c20f751242c7f49a011023c59534a18
+scraped_at: 2026-09-15T07:01:39+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:7cc98bc89ab58b0c4e4f524b9d6570c990fdd55f99d8fc30b55c2f6902394bc0
 ---
 
 ## 通过 ArkTS 接口获取并访问公共目录
@@ -162,10 +162,10 @@ target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
        FileManagement_ErrCode ret = OH_Environment_GetUserDownloadDir(&downloadPath);
        if (ret == 0) {
            OH_LOG_INFO(LOG_APP, "Succeeded in getting user download directory, download path=%{public}s", downloadPath);
-           free(downloadPath);
        } else {
            OH_LOG_ERROR(LOG_APP, "Failed to get download path, error code is %{public}d", ret);
        }
+       free(downloadPath);
    }
    ```
 2. 调用OH\_Environment\_GetUserDownloadDir接口获取用户Download目录沙箱路径，并查看Download目录下的文件。示例代码如下所示：

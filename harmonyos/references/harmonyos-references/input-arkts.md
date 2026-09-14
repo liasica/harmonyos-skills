@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/input-ark
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:33+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:07:14+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:88f2f8d7f08350337d269d5af40627207d20f845d515845442c486aee9a29b32
 ---
 

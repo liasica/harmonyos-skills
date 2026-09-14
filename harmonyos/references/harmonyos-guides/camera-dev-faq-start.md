@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-dev-fa
 title: 相机无法启动
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit常见问题 > 相机无法启动
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:857cbc63c973bcf36968807cfcb82aeb43420ee720705a4f41aa9479c6929db2
 ---
 

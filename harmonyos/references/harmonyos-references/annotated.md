@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/annotated
 title: 结构体
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:15:43+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:08:38+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:bf77d9ad7c5c84381a4211a914e6237ad3bc5a4b645159bb6ee07ec6672b1101
 ---
 

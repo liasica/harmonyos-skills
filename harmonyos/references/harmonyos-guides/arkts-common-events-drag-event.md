@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持统一拖拽
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 支持统一拖拽
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7826a93e279c5f1611bc80f0317e92aaede9aa5ea326444b3cfb810e78289033
+scraped_at: 2026-09-15T07:01:27+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:b15cbef67717db6f387f15e05cfcf66f812abc6990ceead7448adfff9faffa58
 ---
 
 统一拖拽提供了一种通过鼠标或手势触屏传递数据的机制，即从一个组件位置拖出（drag）数据并将其拖入（drop）到另一个组件位置，以触发响应。在这一过程中，拖出方提供数据，而拖入方负责接收和处理数据。这一操作使用户能够便捷地移动、复制或删除指定内容。
@@ -29,7 +29,7 @@ content_hash: sha256:7826a93e279c5f1611bc80f0317e92aaede9aa5ea326444b3cfb810e782
 
 手势拖拽（手指/手写笔）触发拖拽流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/jZtxzYWpSSash0o3e1el4g/zh-cn_image_0000002717610618.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/pXFD79HbQTG9IlWvLddTbQ/zh-cn_image_0000002723854826.png)
 
 ### ​鼠标拖拽
 
@@ -90,7 +90,7 @@ content_hash: sha256:7826a93e279c5f1611bc80f0317e92aaede9aa5ea326444b3cfb810e782
 
 拖拽背板图当前支持设置透明度、圆角、阴影和模糊，具体用法见[拖拽控制](../harmonyos-references/ts-universal-attributes-drag-drop.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/T__BfXUfSsaqx5VUuxn2-w/zh-cn_image_0000002747290571.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/B27Lh2R6TfWCUllCnnP4sQ/zh-cn_image_0000002723694908.png)
 
 **约束限制：**
 
@@ -468,7 +468,7 @@ export struct DefaultDrag {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/pcsNOEN5QeKH7GbXlRAnig/zh-cn_image_0000002747210489.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/__65oBe_T1i_FdJUG4kr7A/zh-cn_image_0000002753294675.gif)
 
 ### 多选拖拽适配
 
@@ -753,7 +753,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/rAu7VikxTRyznMjb-Bggew/zh-cn_image_0000002717770554.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/9DLcJeaBRAuGpckCP3wwwg/zh-cn_image_0000002753454593.gif)
 
 ### 适配自定义落位动效
 
@@ -905,7 +905,7 @@ export struct DropAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/ujlFCko_QaytG71YbL5AGg/zh-cn_image_0000002717610620.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Hnh5ZgtzR1KcohalbtlcSA/zh-cn_image_0000002723854828.gif)
 
 ### 处理大批量数据
 
@@ -1200,7 +1200,7 @@ struct GridEts {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/nwQUQez8TRiBQkPznkUGuQ/zh-cn_image_0000002747290573.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/_2ZHjrenQj696Qs58Ncf4w/zh-cn_image_0000002723694910.gif)
 
 ## 支持悬停检测
 
@@ -1215,7 +1215,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 除了实现视图切换跳转功能，该能力也可用于特定视图的激活。例如，在用户将一段文本拖拽至按钮上停留后，可激活一个文本输入框。用户随后可将所拖拽文本移动至该输入框上方释放，触发搜索结果展示，实现单手高效完成整个操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/0QRUTy-mQGiETeB6LBWLaw/zh-cn_image_0000002747210491.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/GAdX0NxDSJyBn9s7YeYCJg/zh-cn_image_0000002753294677.png)
 
 ### 触发原理
 
@@ -1223,7 +1223,7 @@ Spring Loading，即拖拽悬停检测（又叫弹簧加载）是拖拽操作的
 
 Spring Loading的整个过程包含三个阶段：悬停检测 -> 回调通知 -> 结束。在结束之前，如果用户重新开始移动，会自动中断Spring Loading，并通知应用取消。如果在悬停检测期间移动，且尚未进入Spring Loading状态，则不会触发取消通知。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qTx49GRzTU6AfjvteDPIYg/zh-cn_image_0000002717770556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/PNt6bNrFRI-TqHL-wLq7fA/zh-cn_image_0000002753454595.png)
 
 应用通过回调接收当前的状态，动态改变UI显示，从而达到用户提醒的效果。
 
@@ -1245,167 +1245,162 @@ Spring Loading的整个过程包含三个阶段：悬停检测 -> 回调通知 -
 
 1. 触发参数自定义
 
-[onDragSpringLoading](../harmonyos-references/ts-universal-events-drag-drop.md#ondragspringloading20)接口还提供了一个可选参数configuration供应用自定义静止检测时长以及触发间隔与次数等配置，可以通过此参数来个性化定义Spring Loading触发条件。但绝大多数情况下，不需要进行修改，使用系统默认配置即可。
+   [onDragSpringLoading](../harmonyos-references/ts-universal-events-drag-drop.md#ondragspringloading20)接口还提供了一个可选参数configuration供应用自定义静止检测时长以及触发间隔与次数等配置，可以通过此参数来个性化定义Spring Loading触发条件。但绝大多数情况下，不需要进行修改，使用系统默认配置即可。
 
-configuration参数必须在检测开始前准备就绪。系统一旦启动Spring Loading检测过程，将不再从该参数读取配置。然而，可以通过回调中传入的context对象中的updateConfiguration方法动态更新配置。此动态更新仅对当前触发有效，不会影响通过configuration的配置。
+   configuration参数必须在检测开始前准备就绪。系统一旦启动Spring Loading检测过程，将不再从该参数读取配置。然而，可以通过回调中传入的context对象中的updateConfiguration方法动态更新配置。此动态更新仅对当前触发有效，不会影响通过configuration的配置。
 
-推荐使用默认配置，或通过onDragSpringLoading接口的configuration配置固定参数。在绝大多数情况下，无需在Spring Loading过程中动态修改这些检测参数。但若需针对不同的拖拽数据类型提供不同的用户提示效果，则可考虑使用此功能。
+   推荐使用默认配置，或通过onDragSpringLoading接口的configuration配置固定参数。在绝大多数情况下，无需在Spring Loading过程中动态修改这些检测参数。但若需针对不同的拖拽数据类型提供不同的用户提示效果，则可考虑使用此功能。
 
-**说明** 
+   **说明** 
 
-不要设置过长的时间间隔和过多的触发次数，这对于用户提醒通常没有意义。
+   不要设置过长的时间间隔和过多的触发次数，这对于用户提醒通常没有意义。
+2. 动态终止
 
-2.动态终止
+   当系统检测到用户悬停足够时长，回调onDragSpringLoading接口设置到回调函数时，有机会决定即将出现的Spring Loading通知是否继续，这发生在需要观察用户拖拽的数据类型并与自身业务逻辑结合的情况下。
 
-当系统检测到用户悬停足够时长，回调onDragSpringLoading接口设置到回调函数时，有机会决定即将出现的Spring Loading通知是否继续，这发生在需要观察用户拖拽的数据类型并与自身业务逻辑结合的情况下。
+   以下是一段伪代码示例：
 
-以下是一段伪代码示例：
+   ```typescript
+     .onDragSpringLoading((context: DragSpringLoadingContext)=>{
+       // 检查当前的状态
+       if (context.state == DragSpringLoadingState.BEGIN) {
+         // 检查用户所拖拽的数据类型是否自己能够处理的
+         boolean isICanHandle = false;
+         let dataSummary = context?.dragInfos?.dataSummary;
+         if (dataSummary != undefined) {
+           for (const [type, size] of dataSummary) {
+             if (type === "general.plain-text") { // 只能处理纯文本类型
+               isICanHandle = true;
+               break;
+             }
+           }
+         }
+        // 如果数据无法处理，直接终止Spring Loading
+         if (!isICanHandle) {
+           context.abort();
+           return;
+         }
+       }
+     })
+   ```
+3. 禁用Spring Loading
 
-```typescript
-  .onDragSpringLoading((context: DragSpringLoadingContext)=>{
-    // 检查当前的状态
-    if (context.state == DragSpringLoadingState.BEGIN) {
-      // 检查用户所拖拽的数据类型是否自己能够处理的
-      boolean isICanHandle = false;
-      let dataSummary = context?.dragInfos?.dataSummary;
-      if (dataSummary != undefined) {
-        for (const [type, size] of dataSummary) {
-          if (type === "general.plain-text") { // 只能处理纯文本类型
-            isICanHandle = true;
-            break;
-          }
-        }
-      }
-      // 如果数据无法处理，直接终止Spring Loading
-      if (!isICanHandle) {
-        context.abort();
-        return;
-      }
-    }
-  })
-```
+   如果不再需要该组件上响应任何Spring Loading事件，则可以通过传递null给onDragSpringLoading来明确关闭响应。
 
-3.禁用Spring Loading
-
-如果不再需要该组件上响应任何Spring Loading事件，则可以通过传递null给onDragSpringLoading来明确关闭响应。
-
-```typescript
-.onDragSpringLoading(null)
-```
+   ```typescript
+   .onDragSpringLoading(null)
+   ```
 
 ### 实现示例
 
 下面通过实现搜索设备的简单示例来展示如何通过onDragSpringLoading实现提醒和视图切换。
 
-1.准备一些组件
+1. 准备一些组件
 
-为了简化示例，准备一个可拖出文字的组件以供用户拖出待搜索的文字，并添加一个按钮控件，用于响应Spring Loading来进一步激活视图。被激活的视图通过[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)实现，内部配置有一个输入框控件用于接收拖拽文本，以及一个文本组件用于展示搜索结果。
+   为了简化示例，准备一个可拖出文字的组件以供用户拖出待搜索的文字，并添加一个按钮控件，用于响应Spring Loading来进一步激活视图。被激活的视图通过[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)实现，内部配置有一个输入框控件用于接收拖拽文本，以及一个文本组件用于展示搜索结果。
 
-```typescript
-build() {
-  Column() {
-    // ...
-      Column() {
-        // 请将$r('app.string.DoubleClick_Text')替换为实际资源文件，在本示例中该资源文件的value值为"双击文字选择后拖出: \n     DeviceName"
-        Text($r('app.string.DoubleClick_Text'))
-          .fontSize(30)
-          .copyOption(CopyOptions.InApp) // 开启copyOption之后，文本组件即可支持选择内容进行拖拽
-      }.padding({ bottom: 30 })
+   ```typescript
+   build() {
+     Column() {
+       // ...
+         Column() {
+           // 请将$r('app.string.DoubleClick_Text')替换为实际资源文件，在本示例中该资源文件的value值为"双击文字选择后拖出: \n     DeviceName"
+           Text($r('app.string.DoubleClick_Text'))
+             .fontSize(30)
+             .copyOption(CopyOptions.InApp) // 开启copyOption之后，文本组件即可支持选择内容进行拖拽
+         }.padding({ bottom: 30 })
 
-      // 请将$r('app.string.Search_Device')替换为实际资源文件，在本示例中该资源文件的value值为"搜索设备"
-      Button($r('app.string.Search_Device'))
-        .width('80%')
-        .height('80vp')
-        .fontSize(30)
-        .bindSheet($$this.isShowSheet, this.SheetBuilder(), {
-          detents: [SheetSize.MEDIUM, SheetSize.LARGE, 600],
-          preferType: SheetType.BOTTOM,
-          // 请将$r('app.string.Search_Device')替换为实际资源文件，在本示例中该资源文件的value值为"搜索设备"
-          title: { title: $r('app.string.Search_Device') },
-        })
-        // ...
-  }.width('100%').height('100%')
-  .justifyContent(FlexAlign.Center)
-}
-```
+         // 请将$r('app.string.Search_Device')替换为实际资源文件，在本示例中该资源文件的value值为"搜索设备"
+         Button($r('app.string.Search_Device'))
+           .width('80%')
+           .height('80vp')
+           .fontSize(30)
+           .bindSheet($$this.isShowSheet, this.SheetBuilder(), {
+             detents: [SheetSize.MEDIUM, SheetSize.LARGE, 600],
+             preferType: SheetType.BOTTOM,
+             // 请将$r('app.string.Search_Device')替换为实际资源文件，在本示例中该资源文件的value值为"搜索设备"
+             title: { title: $r('app.string.Search_Device') },
+           })
+           // ...
+     }.width('100%').height('100%')
+     .justifyContent(FlexAlign.Center)
+   }
+   ```
+2. 实现SheetBuilder
 
-2.实现SheetBuilder
+   实现半模态弹框的UI界面。
 
-实现半模态弹框的UI界面。
+   ```typescript
+   @Builder
+   SheetBuilder() {
+     Column() {
+       // 输入框
+       // 请将$r('app.string.Push_Here')替换为实际资源文件，在本示例中该资源文件的value值为"拖入此处"
+       TextInput({ placeholder: $r('app.string.Push_Here') })
+         .width('80%')
+         .borderWidth(1)
+         .borderColor(Color.Black)
+         // ...
+         .onChange((value: string) => {
+           if (value.length == 0) {
+             this.isSearchDone = false;
+             return;
+           }
+           // 此处简化处理，直接显示固定搜索结果
+           this.isSearchDone = true;
+         })
+       if (this.isSearchDone) {
+         Text(this.searchResult).fontSize(20)
+         // ...
+       }
+     }.width('100%').height('100%')
+   }
+   ```
+3. 为Button控件添加进入和离开的响应
 
-```typescript
-@Builder
-SheetBuilder() {
-  Column() {
-    // 输入框
-    // 请将$r('app.string.Push_Here')替换为实际资源文件，在本示例中该资源文件的value值为"拖入此处"
-    TextInput({ placeholder: $r('app.string.Push_Here') })
-      .width('80%')
-      .borderWidth(1)
-      .borderColor(Color.Black)
-      // ...
-      .onChange((value: string) => {
-        if (value.length == 0) {
-          this.isSearchDone = false;
-          return;
-        }
-        // 此处简化处理，直接显示固定搜索结果
-        this.isSearchDone = true;
-      })
-    if (this.isSearchDone) {
-      Text(this.searchResult).fontSize(20)
-      // ...
-    }
-  }.width('100%').height('100%')
-}
-```
+   为了达到提醒效果，为目标组件也增加onDragEnter和onDragLeave的处理。当用户拖拽文字进入到组件范围时，变化背景色，以提醒用户在此处停留。
 
-3.为Button控件添加进入和离开的响应
+   ```typescript
+   .onDragEnter(() => {
+     // 当用户拖拽进入按钮范围，即提醒用户，此处是可以处理数据的
+     this.buttonBackgroundColor = this.reminderColor;
+   })
+   .onDragLeave(() => {
+     // 当用户拖拽离开按钮范围，恢复UI
+     this.buttonBackgroundColor = this.normalColor;
+   })
+   ```
+4. 实现Spring Loading响应
 
-为了达到提醒效果，为目标组件也增加onDragEnter和onDragLeave的处理。当用户拖拽文字进入到组件范围时，变化背景色，以提醒用户在此处停留。
+   实现一个Spring Loading的响应函数，处理所有状态，如下：
 
-```typescript
-.onDragEnter(() => {
-  // 当用户拖拽进入按钮范围，即提醒用户，此处是可以处理数据的
-  this.buttonBackgroundColor = this.reminderColor;
-})
-.onDragLeave(() => {
-  // 当用户拖拽离开按钮范围，恢复UI
-  this.buttonBackgroundColor = this.normalColor;
-})
-```
-
-4.实现Spring Loading响应
-
-实现一个Spring Loading的响应函数，处理所有状态，如下：
-
-```typescript
-handleSpringLoading(context: SpringLoadingContext) {
-  // BEGIN 状态时检查拖拽数据类型
-  if (context.state == dragController.DragSpringLoadingState.BEGIN) {
-    // ···
-    // 进行必要判断，决定是否要终止触发
-    return;
-  }
-  if (context.state == dragController.DragSpringLoadingState.UPDATE) {
-    // ···
-    // 刷新提醒
-    return;
-  }
-  // 处理Spring Loading结束，触发视图切换
-  if (context.state == dragController.DragSpringLoadingState.END) {
-    // ···
-    // 视图激活或跳转
-    return;
-  }
-  // 处理CANCEL状态，复原UI
-  if (context.state == dragController.DragSpringLoadingState.CANCEL) {
-    // ···
-    // 恢复状态与UI
-    return;
-  }
-}
-```
+   ```typescript
+   handleSpringLoading(context: SpringLoadingContext) {
+     // BEGIN 状态时检查拖拽数据类型
+     if (context.state == dragController.DragSpringLoadingState.BEGIN) {
+       // ...
+       // 进行必要判断，决定是否要终止触发
+       return;
+     }
+     if (context.state == dragController.DragSpringLoadingState.UPDATE) {
+       // ...
+       // 刷新提醒
+       return;
+     }
+     // 处理Spring Loading结束，触发视图切换
+     if (context.state == dragController.DragSpringLoadingState.END) {
+       // ...
+       // 视图激活或跳转
+       return;
+     }
+     // 处理CANCEL状态，复原UI
+     if (context.state == dragController.DragSpringLoadingState.CANCEL) {
+       // ...
+       // 恢复状态与UI
+       return;
+     }
+   }
+   ```
 
 **完整示例：**
 
@@ -1560,7 +1555,7 @@ export struct SpringLoadingPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/fAw4NVtKRP6Jvqnn2rI2oQ/zh-cn_image_0000002717610622.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/AFl_-Nl2Sn-OvADzsLbqpA/zh-cn_image_0000002723854830.gif)
 
 ## 示例代码
 

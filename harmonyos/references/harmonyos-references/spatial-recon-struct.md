@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/spatial-r
 title: 结构体
 breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 头文件和结构体 > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-02T15:20:32+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-15T07:08:39+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:a6f20bd177e57306890950c88e1938259f3c5d4af27717e9ee5623ce1a95f460
 ---
 

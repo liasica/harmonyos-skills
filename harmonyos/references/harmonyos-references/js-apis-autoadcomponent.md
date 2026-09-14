@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.advertising.AutoAdComponent (轮播广告展示组件)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS组件 > @ohos.advertising.AutoAdComponent (轮播广告展示组件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a8f318c48fae5752f24f4db623e19f361603ae7fbde3a6dd256c73e78d170304
+scraped_at: 2026-09-15T07:08:45+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:cd73004c42b9f6a4bb024f0ff67aee4c5ff7a5cab64f253b714fda7121c4d68f
 ---
 
 本模块提供展示轮播广告的能力。
@@ -48,7 +48,17 @@ AutoAdComponent({
 | displayOptions | advertising.[AdDisplayOptions](js-apis-advertising.md#addisplayoptions) | 是 | - | 广告展示参数。 |
 | interactionListener | advertising.[AdInteractionListener](js-apis-advertising.md#adinteractionlistener) | 是 | - | 广告状态变化回调。 |
 
-**示例：**
+### build
+
+build(): void
+
+用于创建AutoAdComponent对象的构造函数。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Advertising.Ads
+
+## 示例
 
 ```typescript
 import { advertising, AutoAdComponent } from '@kit.AdsKit';
@@ -113,13 +123,3 @@ struct Index {
   }
 }
 ```
-
-### build
-
-build(): void
-
-用于创建AutoAdComponent对象的构造函数。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.Advertising.Ads

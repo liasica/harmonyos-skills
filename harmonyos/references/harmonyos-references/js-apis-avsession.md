@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.multimedia.avsession (媒体会话管理)"
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avsession (媒体会话管理)
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:14+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:07:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e90736da22217158365920b1a4d8e1c7329cd06f5102ade8549a31b5e1f9e573
 ---
 

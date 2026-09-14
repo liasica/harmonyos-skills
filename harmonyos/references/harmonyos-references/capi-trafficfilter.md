@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-traf
 title: TrafficFilter
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 模块 > TrafficFilter
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:21+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:06:49+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3e4b5f4c4fba69219c9ff789b96f5be57afdc03324f49464c6ba1c508520e08d
 ---
 

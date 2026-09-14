@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multithread-d
 title: 应用多线程开发实践案例
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:15+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3d1def69ca32a7506600edf5c15969727d91ccb922bab0be0c2f0761607aadfb
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nets
 title: Netstack
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 模块 > Netstack
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:10+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-15T07:06:48+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f1c42896a0d39ff365b95acb5c891aca3e1c3099853a1a73d647997fcb4171b1
 ---
 

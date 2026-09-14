@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-sid
 title: 侧边栏样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 侧边栏样式
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:52+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:43+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fd816814a648d993133b7b42f2a8e97bc78b575661b68b9771f3bb5d1dc1b19f
 ---
 

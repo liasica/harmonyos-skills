@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 命令
 breadcrumb: 指南 > AI Coding > DevEco CLI > 命令
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:40+08:00
-doc_updated_at: 2026-09-08
-content_hash: sha256:70d7963326ce953339e94875512775b8b3cc318572a30467bce8c3f7d31d99f3
+scraped_at: 2026-09-15T07:03:57+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:2e24f759bf6702da64296c0ef1eb02d5e444c9856a4fe1f272b78f8d7fb5e445
 ---
 
 ## help
@@ -55,7 +55,7 @@ devecocli init --mcp --project D:\work\ARKTS\NewsData -f
 
 ## auth login
 
-部分功能需要授权后才可正常使用，按照指引登录华为账号。从1.3.0版本开始支持。
+从1.3.0版本开始，部分功能需要授权后才可正常使用，请按照指引登录华为账号。
 
 **命令格式：**
 
@@ -65,7 +65,7 @@ devecocli auth login
 
 ## auth status
 
-查询当前登录的用户。从1.3.0版本开始支持。
+从1.3.0版本开始，支持查询当前登录的用户。
 
 **命令格式：**
 
@@ -75,7 +75,7 @@ devecocli auth status
 
 ## auth team list
 
-查询当前登录用户所在的团队信息，包括团队名称和团队ID。从1.3.0版本开始支持。
+从1.3.0版本开始，支持查询当前登录用户所在的团队信息，包括团队名称和团队ID。
 
 **命令格式：**
 
@@ -98,7 +98,7 @@ devecocli auth team list --json
 
 ## auth logout
 
-退出登录。从1.3.0版本开始支持。
+从1.3.0版本开始，支持退出登录。
 
 **命令格式：**
 
@@ -250,7 +250,7 @@ devecocli build clean
 
 ## signature generate
 
-配置调试签名。执行命令可自动生成签名所需的材料，并将签名信息配置到工程级的build-profile.json5中。从1.3.0版本开始支持。
+从1.3.0版本开始，支持配置调试签名。执行命令可自动生成签名所需的材料，并将签名信息配置到工程级的build-profile.json5中。
 
 **命令格式：**
 
@@ -356,7 +356,7 @@ devecocli log --follow --bundle-name com.example.app
 
 ## check lint
 
-按照[Code Linter代码规则](ide-codelinter-rule.md)，对ArkTS代码工程进行正确性、兼容性等检查，并自动修复问题。从1.3.0版本开始支持。
+从1.3.0版本开始，支持按照[Code Linter代码规则](ide-codelinter-rule.md)，对ArkTS代码工程进行正确性、兼容性等检查，并自动修复问题。
 
 **命令格式：**
 
@@ -394,7 +394,7 @@ devecocli check lint --limit 20
 
 ## check compat
 
-检查当前工程/模块/文件对目标SDK版本的兼容性。从1.3.0版本开始支持。
+从1.3.0版本开始，支持检查当前工程/模块/文件对目标SDK版本的兼容性。
 
 **命令格式：**
 
@@ -428,7 +428,7 @@ devecocli check compat --source-version "HarmonyOS_6.1.0(23)_Beta2" --target-ver
 
 ## check compat versions
 
-查询可用于兼容性检查的SDK版本。从1.3.0版本开始支持。
+从1.3.0版本开始，支持查询可用于兼容性检查的SDK版本。
 
 **命令格式：**
 
@@ -679,7 +679,7 @@ devecocli emulator license accept
 
 ## emulator shake
 
-触发一次模拟器的摇一摇功能。从1.3.0版本开始支持。
+从1.3.0版本开始，支持触发一次模拟器的摇一摇功能。
 
 **命令格式：**
 
@@ -701,7 +701,7 @@ devecocli emulator shake --target myPhone
 
 ## emulator power
 
-设置模拟器亮/熄屏。从1.3.0版本开始支持。
+从1.3.0版本开始，支持设置模拟器亮/熄屏。
 
 **命令格式：**
 
@@ -723,7 +723,7 @@ devecocli emulator power --target myPhone
 
 ## emulator rotate
 
-旋转模拟器。从1.3.0版本开始支持。
+从1.3.0版本开始，支持旋转模拟器。
 
 **命令格式：**
 
@@ -746,7 +746,7 @@ devecocli emulator rotate left --target myPhone
 
 ## emulator volume
 
-调整模拟器的音量。从1.3.0版本开始支持。
+从1.3.0版本开始，支持调整模拟器的音量。
 
 **命令格式：**
 
@@ -769,7 +769,7 @@ devecocli emulator volume up --target myPhone
 
 ## emulator fold
 
-设置模拟器的折叠开合状态。从1.3.0版本开始支持。
+从1.3.0版本开始，支持设置模拟器的折叠开合状态。
 
 **命令格式：**
 
@@ -812,7 +812,7 @@ devecocli emulator fold left-half-folded-right-half-folded --target myPhone
 
 ## emulator battery
 
-设置模拟器电池的电量和充电状态。从1.3.0版本开始支持。
+从1.3.0版本开始，支持设置模拟器电池的电量和充电状态。
 
 **命令格式：**
 
@@ -838,7 +838,7 @@ devecocli emulator battery --target myPhone --status charging
 
 ## emulator geolocation
 
-设置模拟器的地理坐标和方向信息。从1.3.0版本开始支持。
+从1.3.0版本开始，支持设置模拟器的地理坐标和方向信息。
 
 **命令格式：**
 
@@ -871,7 +871,7 @@ devecocli emulator geolocation --target myPhone --direction 0
 
 ## emulator scene
 
-启动运动模拟场景。从1.3.0版本开始支持。
+从1.3.0版本开始，支持启动运动模拟场景。
 
 **命令格式：**
 
@@ -896,7 +896,7 @@ devecocli emulator scene drivingNavigation --target myPhone
 
 ## emulator sensor
 
-为模拟器设置传感器。从1.3.0版本开始支持。
+从1.3.0版本开始，支持为模拟器设置传感器。
 
 **命令格式：**
 
@@ -1084,7 +1084,7 @@ devecocli skills remove --skill skillname --agent agentname  # skillname需替�
 
 ## ui layout
 
-以字符树的形式查看应用的界面布局，包括控件类型、控件ID、控件坐标边界（[left,top,right,bottom]） 、控件文本和交互标志（clickable、longClickable、scrollable、checkable）。从1.3.0版本开始支持。
+从1.3.0版本开始，支持以字符树的形式查看应用的界面布局，包括控件类型、控件ID、控件坐标边界（[left,top,right,bottom]） 、控件文本和交互标志（clickable、longClickable、scrollable、checkable）。
 
 **命令格式：**
 
@@ -1121,7 +1121,7 @@ devecocli ui layout --window 15 --format json
 
 ## ui window list
 
-查看设备上的窗口列表。从1.3.0版本开始支持。
+从1.3.0版本开始，支持查看设备上的窗口列表。
 
 **命令格式：**
 
@@ -1158,7 +1158,7 @@ devecocli ui window list --all
 
 ## ui screenshot
 
-对真机或模拟器进行全屏截图。从1.3.0版本开始支持。
+从1.3.0版本开始，支持对真机或模拟器进行全屏截图。
 
 **命令格式：**
 
@@ -1187,7 +1187,7 @@ devecocli ui screenshot --device Phone --display 0 --path ./screenshots/phone.pn
 
 ## ui click
 
-单击指定坐标或单击节点ID的中心位置。从1.3.0版本开始支持。
+从1.3.0版本开始，支持单击指定坐标或单击节点ID的中心位置。
 
 **命令格式：**
 
@@ -1215,7 +1215,7 @@ devecocli ui click --id submit_button --window main_window
 
 ## ui doubleclick
 
-双击指定坐标或双击节点ID的中心位置。从1.3.0版本开始支持。
+从1.3.0版本开始，支持双击指定坐标或双击节点ID的中心位置。
 
 **命令格式：**
 
@@ -1243,7 +1243,7 @@ devecocli ui doubleclick --id photo_thumb --window main_window
 
 ## ui longclick
 
-长按指定坐标或长按节点ID的中心位置。从1.3.0版本开始支持。
+从1.3.0版本开始，支持长按指定坐标或长按节点ID的中心位置。
 
 **命令格式：**
 
@@ -1271,7 +1271,7 @@ devecocli ui longclick --id menu_item --window main_window
 
 ## ui swipe
 
-从起点缓慢滑到终点。内容随手指移动，手指离开即停止，适用于在特定区域滑动的场景，如拖动Slider。从1.3.0版本开始支持。
+从1.3.0版本开始，支持从起点缓慢滑到终点。内容随手指移动，手指离开即停止，适用于在特定区域滑动的场景，如拖动Slider。
 
 **命令格式：**
 
@@ -1298,7 +1298,7 @@ devecocli ui swipe 100 500 100 200 --speed 1000
 
 ## ui fling
 
-从起点快速滑到终点。手指快速滑动后脱离屏幕，内容存在惯性滚动，适用于在特定区域快速滑动的场景。从1.3.0版本开始支持。
+从1.3.0版本开始，支持从起点快速滑到终点。手指快速滑动后脱离屏幕，内容存在惯性滚动，适用于在特定区域快速滑动的场景。
 
 **命令格式：**
 
@@ -1325,7 +1325,7 @@ devecocli ui fling 100 800 100 200 --speed 1000
 
 ## ui dircfling
 
-按照指定的方向快速滑动且有惯性。适用于快速按方向浏览的场景，如页面滚动、列表快速滑动。从1.3.0版本开始支持。
+从1.3.0版本开始，支持按照指定的方向快速滑动且有惯性。适用于快速按方向浏览的场景，如页面滚动、列表快速滑动。
 
 **命令格式：**
 
@@ -1351,7 +1351,7 @@ devecocli ui dircfling right
 
 ## ui drag
 
-拖拽操作。从1.3.0版本开始支持。
+从1.3.0版本开始，支持拖拽操作。
 
 **命令格式：**
 
@@ -1378,7 +1378,7 @@ devecocli ui drag 100 500 100 200 --speed 1500
 
 ## ui text
 
-在当前焦点、指定坐标或指定节点位置输入文本。从1.3.0版本开始支持。
+从1.3.0版本开始，支持在当前焦点、指定坐标或指定节点位置输入文本。
 
 **命令格式：**
 
@@ -1455,7 +1455,7 @@ devecocli ui text "Hello World" --id search_box --window main_window
 
 ## serve lsp
 
-启动本地LSP语言服务。智能体配置LSP服务后，可通过LSP协议实现代码检查、代码引用查找、代码跳转、代码补全等代码编辑相关的能力。从1.3.0版本开始支持。
+从1.3.0版本开始，支持启动本地LSP语言服务。智能体配置LSP服务后，可通过LSP协议实现代码检查、代码引用查找、代码跳转、代码补全等代码编辑相关的能力。
 
 具体配置如下，当前支持ArkTS和clangd：
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-imagerec
 title: 图像识码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:41+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:28+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fef34856cefd01fe1c194fe5d59ea687c90ca9f5ff290ed39f3d9ead1d1a5dbc
 ---
 

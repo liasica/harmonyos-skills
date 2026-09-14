@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义组件冻结（V1）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件冻结 > 自定义组件冻结（V1）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:01+08:00
+scraped_at: 2026-09-15T07:01:19+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:555ab29fd760488eebc7128029126bcaf8ff7143cf6539ea2888143c070c814b
+content_hash: sha256:3cf08368a627a3ab0ad2350579309fda1ae69a9c2e00c5f7c12849ec4dcad0ac
 ---
 
 自定义组件冻结功能专为优化复杂UI页面的性能而设计，尤其适用于包含多个页面栈、长列表或宫格布局的场景。当状态变量绑定多个UI组件时，其变化易触发大量组件刷新，导致界面卡顿与响应延迟。为提升这类高负载UI界面的刷新性能，建议开发者使用自定义组件冻结功能。
@@ -53,7 +53,7 @@ content_hash: sha256:555ab29fd760488eebc7128029126bcaf8ff7143cf6539ea2888143c070
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/HVFL-9_8TEi-hZaAyYdTog/zh-cn_image_0000002717769940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/jBoFzF0ISlqFGgAgmGrHug/zh-cn_image_0000002753453979.png)
 
 页面1：
 
@@ -144,7 +144,7 @@ struct PageTwo {
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/8e98k9s3TVm3I41EOhgL5A/zh-cn_image_0000002717610006.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/vwZYf2SkTAKyXY58dB3CFA/zh-cn_image_0000002723854214.png)
 
 ```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -207,7 +207,7 @@ struct FreezeChild {
 
 3.再次点击change message更改message的值，仅当前显示的TabContent子组件中的@Watch注册的方法onMessageUpdated被触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/VxRFKVYEQyWbUg-WytnECw/zh-cn_image_0000002747289957.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/UN0x1_SrQbm4EXf7a2Z4BA/zh-cn_image_0000002723694296.gif)
 
 ### LazyForEach
 
@@ -364,7 +364,7 @@ struct FreezeChild {
 
 3.再次点击change message更改message的值，仅有当前显示的ListItem中的子组件@Watch注册的方法onMessageUpdated被触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/r0wfhhWsSb67wqRsibbPyg/zh-cn_image_0000002747209875.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/gXJynm3KSlefAzS5_fb_bw/zh-cn_image_0000002753294063.gif)
 
 ### Navigation
 
@@ -583,7 +583,7 @@ struct NavigationContentMsgStack {
 
 10.再次点击Back Page回到初始页，此时，无任何触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Dbdrcv3yQGCd2JVSOp-i_w/zh-cn_image_0000002717769942.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WttqQMjzSvC26uSsBsnCBQ/zh-cn_image_0000002753453981.gif)
 
 ### 组件复用
 
@@ -836,11 +836,11 @@ struct Page {
 
 图示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/byrY_aE4Q3WkfG8XUJuOng/zh-cn_image_0000002717610008.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/zM_DZuS6SCuyPlAl4zTetg/zh-cn_image_0000002723854216.png)
 
 可通过trace观察，仅触发了15个ChildComponent节点的刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/fvR5wCfcQHahlRcgeNOS4A/zh-cn_image_0000002747289959.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/pbgCCdImTjitp97QwclD4g/zh-cn_image_0000002723694298.png)
 
 **LazyForEach、if、组件复用和组件冻结混用场景**
 
@@ -1025,11 +1025,11 @@ struct Page {
 
 开启组件冻结trace：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/gT9055ibSiOiilxejRiffw/zh-cn_image_0000002747209877.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/hB06TIvUQ1aRs4bwXtMQTA/zh-cn_image_0000002753294065.png)
 
 没有开启组件冻结trace：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/mhKCEqxsSjO1QW-Ux-ty9A/zh-cn_image_0000002717769944.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/WELhbL1oTFCRxvAMtzdoPA/zh-cn_image_0000002753453983.png)
 
 ### 组件混用
 
@@ -1213,29 +1213,29 @@ struct PageTwoStack {
 
 代码运行结果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/EeKtBcy4R-KRzjaIc4jlzw/zh-cn_image_0000002717610010.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/I1ubjC0RR6miwZrAxDzEaw/zh-cn_image_0000002723854218.gif)
 
 点击Next Page，进入pageOne页面，页面中存在两个tab标签，默认在Update标签，开启组件冻结功能，TabContent的标签如果未被选中，状态变量不会刷新，如以下操作。
 
 点击Incr state，日志中查询Appmonitor，存在3个打印。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/kGPJ1LLWQi62kE_-ORTcMw/zh-cn_image_0000002747289961.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/fyHA7PRHQIarMylft-qNQA/zh-cn_image_0000002723694300.png)
 
 切换到DelayUpdate标签，点击Incr state，日志中查询Appmonitor，存在2个打印。DelayUpdate中状态变量不会刷新与Update标签中相关的状态变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/8XE38vM5ReO1uB7n2J8NYQ/zh-cn_image_0000002747209879.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/ydrKMYNbRjGaIDqCf76_nw/zh-cn_image_0000002753294067.png)
 
 在API version 17及以下：
 
 点击Next page进入下一个页面并返回，标签默认在DelayUpdate，再次点击Incr state，日志中查询Appmonitor，存在4个打印，页面路由返回时，会解冻TabContent所有的标签。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/5fDVFrsRR3Gu50_ZoBdAWA/zh-cn_image_0000002717769946.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/97tjemg3SaifZI2WUB9EKw/zh-cn_image_0000002753453985.png)
 
 在API version 18及以上：
 
 点击Next page进入下一个页面并返回，标签默认在DelayUpdate，再次点击Incr state，日志中查询Appmonitor，存在2个打印，页面路由返回时，只会解冻对应标签的节点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/WxLcawJuQxiO_38rPpWeRQ/zh-cn_image_0000002717610012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/YHgZvQc9SbGJjlPHdFFJmw/zh-cn_image_0000002723854220.png)
 
 **页面和LazyForEach**
 
@@ -1405,23 +1405,23 @@ struct Page {
 
 在组件复用场景中，已经对LazyForEach的节点进行了详细说明，分为屏上节点和cachedCount节点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/m9GdGevqTHaHCdbFcVOixQ/zh-cn_image_0000002747289963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/V1vTxph8TNaMnjgJ7KLOag/zh-cn_image_0000002723694302.png)
 
 向下滑动LazyForEach，让cachedCount补充节点，点击add sum，搜索打印日志：sum: Change，出现了8条打印。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/CXvsCQrmRkuEMW67oG6VtQ/zh-cn_image_0000002747209881.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Vac_-aATTZWFI0KeQlMWpA/zh-cn_image_0000002753294069.png)
 
 在API version 17及以下：
 
 灭屏之后亮屏，触发OnPageShow，点击add sum，打印数量为屏上节点与cachedCount数量的总和。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/8oKIW6UxSIWnn4pRa-P4GA/zh-cn_image_0000002717769948.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BAWjvlIJTxiSQ6zmDFHbMQ/zh-cn_image_0000002753453987.png)
 
 从API version 18开始：
 
 灭屏之后亮屏，触发OnPageShow，点击add sum，只会打印屏上节点数量，不会再解冻cachedCount中的节点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Uzb-osF7SXOkhp20R507Tg/zh-cn_image_0000002717610014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/n5HLUUvzTziuDXUzLnruKg/zh-cn_image_0000002723854222.png)
 
 ## 限制条件
 
@@ -1541,7 +1541,7 @@ struct FreezeBuildNode {
 
 点击change，改变message的值，当前正在显示的TabContent组件中@Watch注册的方法onMessageUpdated被触发。未显示的TabContent中的BuilderNode节点下组件的@Watch方法onMessageUpdated也被触发，并没有被冻结。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/33geZTkIQdmfkZWcXQMB9g/zh-cn_image_0000002747289965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/qkBLCeR0TZm6R8JNysOh9A/zh-cn_image_0000002723694304.gif)
 
 ### 组件冻结与组件复用混用时解冻不会触发Watch
 

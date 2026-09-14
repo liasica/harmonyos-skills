@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.infraredEmitter (红外管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.infraredEmitter (红外管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:76e98bf82dde91a750f5c89216d55da429ad6db865b573cdef2ab82144e7009b
+scraped_at: 2026-09-15T07:07:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:a6b81406e7d18d5d646df0177f90d475e702d9bb77e424071cce4a1118165f36
 ---
 
 红外管理模块提供产生特定频率和大小的红外信号，以及查询设备支持的频率范围等功能。
@@ -35,7 +35,7 @@ transmitInfrared(infraredFrequency: number, pattern: Array<number>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | infraredFrequency | number | 是 | 红外频率，单位：Hz。 |
-| pattern | Array<number> | 是 | 红外电平信号，单位为微秒（μs）。电平信号的数量取值范围为[0,1024]，取值为0时，接口调用不生效。电平信号的取值需大于0。  比如[100,200,300,400]该电平信号数组，其中100μs为高电平信号、200μs为低电平信号、300μs为高电平信号、400μs为低电平信号。 |
+| pattern | Array<number> | 是 | 红外电平信号，单位为微秒（μs）。电平信号的数量取值范围为[0, 1024]，取值为0时，接口调用不生效。电平信号的取值需大于0。  比如[100,200,300,400]该电平信号数组，其中100μs为高电平信号、200μs为低电平信号、300μs为高电平信号、400μs为低电平信号。 |
 
 **错误码：**
 

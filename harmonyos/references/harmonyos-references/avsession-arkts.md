@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/avsession
 title: ArkTS API
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:12:14+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:07:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:03cd2beeb4a9b8b4345c4ad0b30c5dbadea8675018487adab19470a2e69ea9e5
 ---
 

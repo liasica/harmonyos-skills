@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-guideli
 title: 使用HiLog打印日志（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 日志打印 > 使用HiLog打印日志（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c7a8dc9e64ce9f8d62b08f1bd0ea893c4a4e2becbefde88e4bfbf881e385172a
+scraped_at: 2026-09-15T07:02:09+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:075b1bb48d0ae33e91303368db0d44bc7315cd70960ad5d35c150978fff87aca
 ---
 
 在应用开发过程中，可在关键代码处输出日志信息。在运行应用后，通过查看日志信息来分析应用执行情况（如应用是否正常运行、代码运行时序、运行逻辑分支是否正常等）。
@@ -124,9 +124,8 @@ debug版本应用下，OH\_LOG\_SetMinLogLevel()和OH\_LOG\_SetLogLevel()函数�
 
 **注意** 
 
-1.在回调函数中禁止递归调用HiLog接口，否则会导致循环调用问题。
-
-2.一个进程只需注册一次回调函数，若多次注册，以最后一次注册的回调函数为准。
+1. 在回调函数中禁止递归调用HiLog接口，否则会导致循环调用问题。
+2. 一个进程只需注册一次回调函数，若多次注册，以最后一次注册的回调函数为准。
 
 ```
 #include "hilog/log.h"

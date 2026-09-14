@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vecto
 title: 单目指令
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 基础API > 矢量计算 > 单目指令
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:36+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:04+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9c45d232ef8d545681422122296cc20d2942843b905d0d82c7d356afd64d3e3b
 ---
 

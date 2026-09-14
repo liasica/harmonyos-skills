@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/development-f
 title: 开发基础知识
 breadcrumb: 指南 > 基础入门 > 开发基础知识
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:41+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:05+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e01d73f646c64dd2504258affe3006c8f2d5d3bff7421671b30f261a7f4e6a3d
 ---
 

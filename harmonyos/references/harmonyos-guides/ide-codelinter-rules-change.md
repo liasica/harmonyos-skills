@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codelinte
 title: 规则变更说明
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 规则变更说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:37+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3fd4c1415b45a2b4bb68975f1886212e22831ac7588897565bcb6afd80b27329
 ---
 

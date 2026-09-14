@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avre
 title: OH_AVRecorder_Range
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 结构体 > OH_AVRecorder_Range
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:41d0d1c854e1e157ae1e2990693b1636dcfecba3ab1b3abe2499d96009fcc1f7
+scraped_at: 2026-09-15T07:08:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:d7405315ffe531160211fac96d4ca64d7a795df1646b5feca252e928d31eb189
 ---
 
 ```c
-typedef struct OH_AVRecorder_Range {...} OH_AVRecorder_Range;
+typedef struct OH_AVRecorder_Range {...} OH_AVRecorder_Range
 ```
 
 ## 概述

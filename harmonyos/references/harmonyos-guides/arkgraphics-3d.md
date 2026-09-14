@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics-3
 title: ArkGraphics 3D（方舟3D图形）
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:20+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:31+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:08c86fcef6779fc5e2fbb908e51d8c741bd689046b6494d8c656358be7ba9c16
 ---
 

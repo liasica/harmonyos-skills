@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 警告弹窗 (AlertDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 警告弹窗 (AlertDialog)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3b7f8ed403ef4a09c8e2138de37cb5ab02e3ec106711d8dfebf4cd71bf33e6d8
+scraped_at: 2026-09-15T07:05:10+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:5e79ea130e3781c29d8b5aa531e6be3d9b926c32a3e08573fbebb6794d097c5c
 ---
 
 显示警告弹窗组件，可设置文本内容与响应回调。
@@ -436,7 +436,7 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/UIY4CSYURwGYOicroCYuVQ/zh-cn_image_0000002747293007.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/lwT9hW8YTm6AQghjgjEq6w/zh-cn_image_0000002723857262.gif)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
@@ -506,7 +506,7 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/6PFvkAojQT67-s4FEiy4Mg/zh-cn_image_0000002747212923.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/O6plL-x6ReePlCGAsqq9Mg/zh-cn_image_0000002723697344.jpg)
 
 ### 示例3（设置弹窗的动画）
 
@@ -553,7 +553,7 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/RH1h_GVJRH-dCnxlLXjopA/zh-cn_image_0000002717772988.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/sdcFwo0SRLWHyDaDXsIkyQ/zh-cn_image_0000002753297111.gif)
 
 ### 示例4（设置弹窗的样式）
 
@@ -618,7 +618,7 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/mHUf_3XkRAqrNfQnmr0DNQ/zh-cn_image_0000002717613056.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BzAdTZp1RVGxsEac561CWQ/zh-cn_image_0000002753457029.gif)
 
 ### 示例5（悬停态弹窗）
 
@@ -670,7 +670,7 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9EQlTgtJQpSMTO17iHZKqA/zh-cn_image_0000002747293009.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/gyBhTgxkRf6shOD0ZKT_BQ/zh-cn_image_0000002723857264.gif)
 
 ### 示例6（弹窗生命周期）
 
@@ -726,7 +726,7 @@ struct AlertDialogLifecycleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/iAsjPoOWTKO5vVCw6s1utw/zh-cn_image_0000002747212925.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/wpcFz_9eTqaBNhCzvL-DoQ/zh-cn_image_0000002723697346.gif)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -777,7 +777,7 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/mkXIMtomQr-UzmyOcgqwiA/zh-cn_image_0000002717772990.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/np50gKjLRg-V7L4PPA0Htw/zh-cn_image_0000002753297113.png)
 
 ### 示例8（自定义背景效果参数）
 
@@ -829,13 +829,13 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/NSRGtMCZTEW7Tu50XTTmJA/zh-cn_image_0000002717613058.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/tHfawOpWRcWmOE8dOLhQEQ/zh-cn_image_0000002753457031.png)
 
 ### 示例9（设置弹窗的沉浸光感效果）
 
-该示例通过[AlertDialogParam](ts-methods-alert-dialog-box.md#alertdialogparam对象说明)中的systemMaterial属性设置组件的系统材质，实现沉浸光感效果。
+该示例通过[AlertDialogParam](ts-methods-alert-dialog-box.md#alertdialogparam对象说明)中的systemMaterial属性设置组件的系统材质，实现沉浸光感效果。设置系统材质后，AlertDialog弹出过程中会有非线性形变和边缘流光。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在AlertDialogParam中新增了systemMaterial属性。
 
@@ -882,8 +882,8 @@ struct AlertDialogExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/QvGsM03kTAuj2SxP5_Pqfg/zh-cn_image_0000002747293011.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/1-PmaQJJRcOQtul0-t89Vg/zh-cn_image_0000002723857266.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/HvOKffTJSqm5GWhBYP4SWQ/zh-cn_image_0000002747212927.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/njTbOviYQSyOuwBy2wpCiw/zh-cn_image_0000002723697348.gif)

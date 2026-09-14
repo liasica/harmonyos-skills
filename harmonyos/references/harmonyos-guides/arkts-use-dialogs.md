@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-dia
 title: 弹出框 (Dialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:43+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:25+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f4c4d8e609eb8a6944cbdd79caeaf6b8dbbfc253aecb1bb5cd5361fb02da0377
 ---
 

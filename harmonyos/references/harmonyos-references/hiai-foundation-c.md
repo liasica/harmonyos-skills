@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hiai-foun
 title: C API
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:18:48+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:09:22+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:cceb0544ab28cd740f99ab65640601ff6c3c4413454a1650f76acc0f47046aa0
 ---
 

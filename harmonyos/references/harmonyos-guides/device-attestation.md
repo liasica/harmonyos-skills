@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-attest
 title: 应用真实性证明
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 应用真实性证明
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:25+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:b60e22f4e08a4fcedacae933802927026e451ed63d19b5e3b6cf413a46e19e5a
 ---
 

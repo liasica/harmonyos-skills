@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-ap
 title: Speech Kit（场景化语音服务）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:35+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:09:28+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2ff7d8c88a7a7710096798128f4c88cf5b2bfaf7e9cfab52f001806790277980
 ---
 

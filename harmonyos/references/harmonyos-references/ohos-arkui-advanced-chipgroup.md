@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroup
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:41+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:bb38481ac8a20e3fa5c7cdade0b77f9f70b9444c85177d24a14bf767e1c89eed
+scraped_at: 2026-09-15T07:05:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:b5a43e9021cbc80ba766f14f1e27ca6c2e84cbb7a239d7fd269f23ba811f0ea1
 ---
 
 ChipGroup组件提供操作块群组能力，支持单选或多选模式，可自定义样式、图标和间距，支持选中状态管理和事件回调。适用于文件分类、资源筛选、标签选择、内容分组等多种场景，帮助开发者快速实现选择功能，提供统一的视觉和交互体验。
@@ -61,13 +61,13 @@ suffix?: Callback<void>
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | [ChipGroupItemOptions[]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-chipgroup#chipgroupitemoptions) | 是 | @Require @Prop | 每个Chip的特定属性，参考[ChipGroupItemOptions[]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-chipgroup#chipgroupitemoptions)类型。  若为undefined时，ChipGroup默认为空。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| itemStyle | [ChipItemStyle](ohos-arkui-advanced-chipgroup.md#chipitemstyle) | 否 | @Prop | Chip的style属性，如颜色、大小等，参考[ChipItemStyle](ohos-arkui-advanced-chipgroup.md#chipitemstyle)类型。当需要自定义Chip的外观样式（如改变背景色、字体颜色、尺寸）时传入此参数。  默认值：  { size: ChipSize.NORMAL, backgroundColor: $r('sys.color.ohos\_id\_color\_button\_normal'), fontColor: $r('sys.color.ohos\_id\_color\_text\_primary'), selectedFontColor: $r('sys.color.ohos\_id\_color\_text\_primary\_contrary'), selectedBackgroundColor: $r('sys.color.ohos\_id\_color\_emphasize') }  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| itemStyle | [ChipItemStyle](ohos-arkui-advanced-chipgroup.md#chipitemstyle) | 否 | @Prop | Chip的样式属性，如颜色、大小等，参考[ChipItemStyle](ohos-arkui-advanced-chipgroup.md#chipitemstyle)类型。当需要自定义Chip的外观样式（如改变背景色、字体颜色、尺寸）时传入此参数。  默认值：  { size: ChipSize.NORMAL, backgroundColor: $r('sys.color.ohos\_id\_color\_button\_normal'), fontColor: $r('sys.color.ohos\_id\_color\_text\_primary'), selectedFontColor: $r('sys.color.ohos\_id\_color\_text\_primary\_contrary'), selectedBackgroundColor: $r('sys.color.ohos\_id\_color\_emphasize') }  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | selectedIndexes | Array<number> | 否 | @Prop | 被选中Chip的索引，索引从0开始计数。  取值范围：索引值为非负整数，且不能超过items数组长度减1。  传入负数、超出数组范围的索引值或非整数时，该索引值不生效。  默认值：[0]  若multiple=false，selectedIndexes为空数组时默认选中第1个；selectedIndexes包含多个元素时仅第一个索引生效。  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | multiple | boolean | 否 | @Prop | 是否选中多个Chip。  true：支持多个Chip选中，适用于需要同时选择多个选项的场景（如多标签选择、多条件筛选）；false：仅支持单个Chip选中，适用于单选场景（如单项选择）。  默认值：false  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | chipGroupSpace | [ChipGroupSpaceOptions](ohos-arkui-advanced-chipgroup.md#chipgroupspaceoptions) | 否 | @Prop | 左右内边距及Chip之间间距。参考[ChipGroupSpaceOptions](ohos-arkui-advanced-chipgroup.md#chipgroupspaceoptions)类型。当默认间距无法满足布局要求或需要根据UI设计调整Chip之间的间隔时传入此参数。  默认值：{ itemSpace: 8, startSpace: 16, endSpace: 16 }  单位：vp  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | chipGroupPadding | [ChipGroupPaddingOptions](ohos-arkui-advanced-chipgroup.md#chipgrouppaddingoptions) | 否 | @Prop | 设置ChipGroup的上下内边距，以控制整体高度。类型为[ChipGroupPaddingOptions](ohos-arkui-advanced-chipgroup.md#chipgrouppaddingoptions)。当需要调整ChipGroup组件的垂直空间占用或匹配特定UI设计要求时传入此参数。  默认值：{ top: 14, bottom: 14 }  单位：vp  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如$r('sys.color.font\_primary')），颜色自动适配到材质背景色的反色。当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突。  默认值：undefined  值为undefined时，不应用材质样式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| selectedBackgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Prop | 设置组件选中状态的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件选中时的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)视觉属性。设置自动反色的系统材质时，selectedFontColor如果使用系统预定义的可反色颜色资源（如$r('sys.color.font\_primary')），颜色自动适配到材质背景色的反色。当设置selectedBackgroundSystemMaterial时，应将selectedBackgroundColor设为Color.Transparent，否则会与系统材质冲突。  默认值：undefined  值为undefined时，不应用选中状态的材质样式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如$r('sys.color.font\_primary')），颜色自动适配到材质背景色的反色。当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突。  默认值：undefined  值为undefined时，不应用材质样式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| selectedBackgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Prop | 设置组件选中状态的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件选中时的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)视觉属性。设置自动反色的系统材质时，selectedFontColor如果使用系统预定义的可反色颜色资源（如$r('sys.color.font\_primary')），颜色自动适配到材质背景色的反色。当设置selectedBackgroundSystemMaterial时，应将selectedBackgroundColor设为Color.Transparent，否则会与系统材质冲突。  默认值：undefined  值为undefined时，不应用选中状态的材质样式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | onChange | [Callback](ts-types.md#callback12)<Array<number>> | 否 | - | Chip状态改变时的回调方法，用于监听Chip选中状态的变更。该回调在selectedIndexes属性更新后触发，开发者可在回调中获取最新的选中状态并执行相应操作，如更新UI、保存选中数据、触发业务逻辑等。当需要监听用户选择Chip的操作并执行相应业务逻辑时传入此参数。不传入时，无法接收Chip状态变化的通知。  若为undefined，不触发该回调。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | suffix | [Callback](ts-types.md#callback12)<void> | 否 | @BuilderParam | 支持开发者自定义builder，如需在组件最右侧显示自定义内容可配置suffix属性，使用属性suffix需引用[IconGroupSuffix](ohos-arkui-advanced-chipgroup.md#icongroupsuffix)接口。  默认不传入时，没有suffix。  值为undefined时，没有suffix。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
@@ -215,7 +215,7 @@ IconGroupSuffix({
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | items | Array<[IconItemOptions](ohos-arkui-advanced-chipgroup.md#iconitemoptions) | [SymbolGlyphModifier](ts-universal-attributes-attribute-symbolglyphmodifier.md#symbolglyphmodifier) | [SymbolItemOptions](ohos-arkui-advanced-chipgroup.md#symbolitemoptions14)> | 是 | @Require @Prop | 尾部区域显示的自定义项数组，支持IconItemOptions（Image图标）、SymbolGlyphModifier（Symbol图标）或SymbolItemOptions（Symbol图标配置）类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| iconBackgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如$r('sys.color.font\_primary')），颜色自动适配到材质背景色的反色。  默认值：undefined  值为undefined时，不应用材质样式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| iconBackgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | @Prop | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)视觉属性。设置自动反色的系统材质时，fontColor如果使用系统预定义的可反色颜色资源（如$r('sys.color.font\_primary')），颜色自动适配到材质背景色的反色。  默认值：undefined  值为undefined时，不应用材质样式。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 **说明** 
 
@@ -339,7 +339,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/8es_XhlgTg2xDavxTpivFg/zh-cn_image_0000002717773060.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/Y97Pms5lQ1CUk1hh2MTg7Q/zh-cn_image_0000002753297183.png)
 
 ### 示例2（有最右侧的builder）
 
@@ -435,7 +435,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/u2SFJDpiQVyceFvZUJJEuw/zh-cn_image_0000002717613128.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/FCxR3F6LTHaRiL1Fbtvmtw/zh-cn_image_0000002753457101.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -535,7 +535,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/TMiFWk_aTryY57mufTebmw/zh-cn_image_0000002747293081.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/iu1hbT9iTX2q4huB6WdY5A/zh-cn_image_0000002723857336.png)
 
 ### 示例4（单选时无障碍朗读）
 
@@ -720,6 +720,8 @@ export struct ChipGroupExample2 {
 }
 ```
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/izUJuCbTTNyfde6SWRo0dA/zh-cn_image_0000002723697418.png)
+
 ### 示例5（多选时无障碍朗读）
 
 该示例实现了ChipGroup在多选模式下，有后缀区域和无后缀区域的屏幕朗读功能，具体播报内容为accessibilityText属性中的内容。
@@ -872,6 +874,8 @@ export struct ChipGroupExample2 {
 }
 ```
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Ty1rLR_CRRaaIacRbQY9Hg/zh-cn_image_0000002753297185.png)
+
 ### 示例6（设置系统材质样式）
 
 该示例通过配置backgroundSystemMaterial和iconBackgroundSystemMaterial实现系统材质样式，开启自动反色功能使文本颜色适配背景色。
@@ -956,7 +960,9 @@ struct ChipGroupMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/C41Yim9sR96lpSes70KZ0g/zh-cn_image_0000002747212997.png)
+该示例配图为高算力设备强档效果。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/z5fqOiiKSoSQoI9AnN-4_w/zh-cn_image_0000002753457103.png)
 
 ### 示例7（设置组件选中状态的系统材质样式）
 
@@ -1048,4 +1054,6 @@ struct ChipGroupMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_Tia98GYQZy6Kbk1bH2CDA/zh-cn_image_0000002717773062.png)
+该示例配图为高算力设备强档效果。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/L6mhXS6QSHWIk8Ltf2eXTQ/zh-cn_image_0000002723857338.png)

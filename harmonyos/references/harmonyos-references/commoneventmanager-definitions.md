@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneve
 title: 系统定义的公共事件
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > 系统定义的公共事件
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:03+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5b1fd326da5cb7ee93406f0d54765c8f1fa2c24d62dbf3108ea110ecea229284
+scraped_at: 2026-09-15T07:07:08+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:d04358480d3196efd9c89d0fd498c0a815f8ab15f3099eef6b6532af572c24ce
 ---
 
 本文档提供了系统定义的公共事件清单。
@@ -1095,6 +1095,68 @@ Wi-Fi连接状态发生改变。
 **订阅者所需权限：** ohos.permission.GET\_WIFI\_INFO
 
 **取值：** "usual.event.wifi.p2p.GROUP\_STATE\_CHANGED"
+
+## Core File Kit
+
+### COMMON\_EVENT\_VOLUME\_REMOVED
+
+表示外部存储设备正常移除的公共事件。
+
+当外部存储设备处于卸载状态，移除该设备时，会发送此公共事件。
+
+**系统能力：** SystemCapability.Notification.CommonEvent
+
+**订阅者所需权限：** ohos.permission.STORAGE\_MANAGER（该权限仅系统应用可申请）
+
+**取值：** "usual.event.data.VOLUME\_REMOVED"
+
+### COMMON\_EVENT\_VOLUME\_UNMOUNTED
+
+表示外部存储设备状态变更为卸载的公共事件。
+
+当外部存储设备处于挂载状态时，用户选择通过调用unmount接口或者直接移除设备的方法弹出该设备，并且已将外部存储设备卸载成功后，会发送此公共事件。
+
+**系统能力：** SystemCapability.Notification.CommonEvent
+
+**订阅者所需权限：** ohos.permission.STORAGE\_MANAGER（该权限仅系统应用可申请）
+
+**取值：** "usual.event.data.VOLUME\_UNMOUNTED"
+
+### COMMON\_EVENT\_VOLUME\_MOUNTED
+
+表示外部存储设备状态变更为挂载的公共事件。
+
+当用户插入外部存储设备自动挂载成功或者将处于卸载状态的外部存储设备调用mount接口进行挂载成功后，会发送此公共事件。
+
+**系统能力：** SystemCapability.Notification.CommonEvent
+
+**订阅者所需权限：** ohos.permission.STORAGE\_MANAGER（该权限仅系统应用可申请）
+
+**取值：** "usual.event.data.VOLUME\_MOUNTED"
+
+### COMMON\_EVENT\_VOLUME\_BAD\_REMOVAL
+
+表示外部存储设备异常移除的公共事件。
+
+当外部存储设备处于挂载状态时，用户直接移除该外部存储设备，会发送此公共事件。
+
+**系统能力：** SystemCapability.Notification.CommonEvent
+
+**订阅者所需权限：** ohos.permission.STORAGE\_MANAGER（该权限仅系统应用可申请）
+
+**取值：** "usual.event.data.VOLUME\_BAD\_REMOVAL"
+
+### COMMON\_EVENT\_VOLUME\_EJECT
+
+表示外部存储设备即将被弹出的公共事件。
+
+当外部存储设备处于挂载状态时，用户选择通过调用unmount接口或者直接移除设备的方法弹出该设备时，会发送此公共事件。
+
+**系统能力：** SystemCapability.Notification.CommonEvent
+
+**订阅者所需权限：** ohos.permission.STORAGE\_MANAGER（该权限仅系统应用可申请）
+
+**取值：** "usual.event.data.VOLUME\_EJECT"
 
 ## MDM Kit
 

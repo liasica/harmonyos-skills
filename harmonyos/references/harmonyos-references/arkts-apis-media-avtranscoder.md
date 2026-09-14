@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVTranscoder)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVTranscoder)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b315cac3bd0941a3a579720fb3d3cd3f2c9f9ce31e20dc4e417955f54b8f0731
+scraped_at: 2026-09-15T07:08:09+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:b3e057f557646398950952968d8ad6823fef13f71622ad0aaf7fa651e3284a05
 ---
 
 视频转码管理类，用于视频转码。在调用AVTranscoder的方法前，需要先通过[createAVTranscoder()](arkts-apis-media-f.md#mediacreateavtranscoder12)构建一个AVTranscoder实例。
@@ -82,7 +82,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { media } from '@kit.MediaKit';
 import { image } from '@kit.ImageKit';
 
-async function test() {
+async function test(context: Context) {
   // 创建转码实例。
   let avTranscoder = await media.createAVTranscoder();
   
@@ -95,6 +95,24 @@ async function test() {
       height: 300,
   };
 
+  // 获取资源管理器。
+  let resourceManager = context.resourceManager;
+  // 获取rawfile中水印图片的描述符，'img.png'可替换为实际水印图片文件名。
+  let rawFileDescriptor = resourceManager.getRawFdSync('img.png');
+  // 根据文件描述符创建ImageSource。
+  let watermarkImageSource = image.createImageSource(rawFileDescriptor.fd);
+
+  // 创建水印PixelMap。
+  const decodingOptions: image.DecodingOptions = {
+    // 可编辑像素。
+    editable: true,
+    // 像素格式。
+    desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+  };
+  const watermarkPixelMap = await watermarkImageSource.createPixelMap(decodingOptions);
+  console.info('PixelMap created for watermark');
+
+  // 添加水印。
   avTranscoder.addWatermark(watermarkPixelMap, watermarkConfig).then((watermarkId: number) => {
     console.info('addWatermark success, watermarkId: ' + watermarkId);
   }).catch((err: BusinessError) => {
@@ -491,7 +509,7 @@ async function test() {
   // 创建转码实例。
   let avTranscoder = await media.createAVTranscoder();
   avTranscoder.on('error', (err: BusinessError) => {
-    console.info('case avTranscoder.on(error) called, errMessage is ' + err.message);
+    console.error('case avTranscoder.on(error) called, errMessage is ' + err.message);
   });
 }
 ```

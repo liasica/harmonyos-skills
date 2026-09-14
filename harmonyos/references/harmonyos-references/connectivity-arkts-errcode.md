@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/connectiv
 title: 错误码
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:06:40+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4e0a8b9595c9090688a90a8c16a40c167f605ea5dcd52d0e88752058af852e54
 ---
 

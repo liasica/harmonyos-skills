@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 阻断类客户端信息查询场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 阻断类客户端信息查询场景
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:29+08:00
+scraped_at: 2026-09-15T07:01:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7369c5adaa96597bff5b48a33aacc506f19bec13d6b6a31f993fcc6f1c8c5f0f
+content_hash: sha256:df7685e98a870192b390977897cc65762b4cccfb3afdc9c22f1482eeeeba6da3
 ---
 
 从API版本26.0.0开始，新增阻断类客户端信息查询功能，支持应用获取设备上订阅了阻断类事件的所有客户端信息。其中，阻断类信息是指被系统拦截并阻止执行的安全审计事件记录。
@@ -21,7 +21,7 @@ content_hash: sha256:7369c5adaa96597bff5b48a33aacc506f19bec13d6b6a31f993fcc6f1c8
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/S9s9ikcIRAaqSYQJTrZksw/zh-cn_image_0000002717771096.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/tRPY0-ABSxO73KbWl-SmCA/zh-cn_image_0000002753455135.png)
 
 **流程说明：**
 

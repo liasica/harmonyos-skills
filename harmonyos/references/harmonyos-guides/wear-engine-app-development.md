@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wear-engine-a
 title: 应用开发
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:51+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:08+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:eb458f730fd2cd00d78a4abd2f80239e18c188b478573d933034da3668106afc
 ---
 

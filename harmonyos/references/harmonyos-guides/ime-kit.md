@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ime-kit
 title: IME Kit（输入法开发服务）
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-06-03
+scraped_at: 2026-09-15T07:01:41+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:94210ec2d1cb9c4d377e07eaf9c5c03ec20f481e2c5628b3ea586c025cf265fa
 ---
 

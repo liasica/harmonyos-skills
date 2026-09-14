@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisethr
 title: 病毒检测与处置
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Threat Protection Kit（企业威胁防护服务） > 病毒检测与处置
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:52+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ce6c0d83c3a892d4e5b5abd5cf1d21e96c31a46477e00262234d4ea04ce7f15a
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-arkts
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:20+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:08:53+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f65e48278ca5e19df7fba0db481bd9b0e438aebc0f6c575479a86e24da6d25f2
 ---
 

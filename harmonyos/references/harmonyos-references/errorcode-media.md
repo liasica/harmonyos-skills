@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Media错误码
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > 错误码 > Media错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5756c0d47dc04ac689acc26c6d40e825b582ef5b8cedddd0889414c7ad8023a2
+scraped_at: 2026-09-15T07:08:17+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:d3b3e4e5f6d198638c7265f0e63a9c0192da82a09119cde929ba177ef5d210e2
 ---
 
 **说明** 
@@ -505,7 +505,7 @@ The parameter check failed, parameter value out of range.
 
 调整参数值，使其在取值范围内。
 
-## 5411001 解析或链接服务端地址错误
+## 5411001 解析或连接服务端地址错误
 
 **错误信息**
 
@@ -513,16 +513,16 @@ Can not find host.
 
 **错误描述**
 
-解析或链接服务端地址错误。
+解析或连接服务端地址错误。
 
 **可能原因**
 
-1. 链接服务端地址错误。
-2. 链接服务端地址解析失败。
+1. 连接服务端地址错误。
+2. 连接服务端地址解析失败。
 
 **处理步骤**
 
-当前使用链接服务端地址错误或是无法被解析，需使用其他链接服务端地址。
+当前使用连接服务端地址错误或是无法被解析，需使用其他连接服务端地址。
 
 ## 5411002 网络连接超时
 
@@ -630,11 +630,11 @@ Cannot find available network resources.
 
 **可能原因**
 
-链接服务端地址异常。
+连接服务端地址异常。
 
 **处理步骤**
 
-1. 确认链接服务端地址是否正常。
+1. 确认连接服务端地址是否正常。
 2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
 
 ## 5411008 服务端校验客户端证书失败
@@ -664,15 +664,15 @@ SSL connection failed.
 
 **错误描述**
 
-SSL链接失败。
+SSL连接失败。
 
 **可能原因**
 
-SSL链接失败。
+SSL连接失败。
 
 **处理步骤**
 
-1. 确认SSL链接是否已失效。
+1. 确认SSL连接是否已失效。
 2. 销毁当前实例，并重新创建，如果重新创建失败，则停止相关操作。
 
 ## 5411010 客户端校验服务端证书失败

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-avcodec-
 title: AVCodec Kit常见问题
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:15+08:00
-doc_updated_at: 2026-05-26
+scraped_at: 2026-09-15T07:02:19+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:cded039d044a7a6b8d5de152a9cb5849c81f8d729c7693f28a91b33607b120af
 ---
 

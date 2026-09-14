@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 数据备份
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 数据备份
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:394e994073d18704e5d27c8e737a5f3871f31f6702bbfdaba94a970645b29acf
+scraped_at: 2026-09-15T07:03:32+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:fbf7349333207066f88c5082788aef77545e33c67d2ca99998cee5857e27c997
 ---
 
 数据迁移或者版本升级之前请务必进行数据备份，以免重要数据丢失，无法回滚。备份的内容包括**ohpm-repo**中**<deploy\_root**>部署根目录内的数据、db元数据以及store三方包数据。
@@ -23,7 +23,7 @@ ohpm-repo在版本1.1.0之前不支持配置<deploy\_root>，都采用默认值�
 
 如果配置文件中db，storage，logs和uplink的存储路径可配置，且存储位置不在ohpm-repo部署根目录<deploy\_root>中，请找到对应目录进行数据备份。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/oQ3YElsyRgW_jue4XdWyBw/zh-cn_image_0000002731381419.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/s5FgHD97T4aWjMcc1E6EgA/zh-cn_image_0000002731381419.png "点击放大")
 
 ## 备份<包存储目录>和<mysql>
 
@@ -33,8 +33,8 @@ ohpm-repo在版本1.1.0之前不支持配置<deploy\_root>，都采用默认值�
 
 * 如果您的配置项db使用了mysql存储，请根据配置的数据库名，备份结构和数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/BAs5UJozSA218qzAsdxZVw/zh-cn_image_0000002731381413.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/KYXC9I-9Tve024VGn0l-sA/zh-cn_image_0000002731381413.png "点击放大")
 
 * 如果您的配置项store使用了Sftp存储或自定义存储插件存储，请根据配置的存储目录，进行备份（图片以sftp存储举例）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/4NeB1J_PQLuJdWdgQRoNGQ/zh-cn_image_0000002701822100.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/OhA1E7b0TviIz-5ObhNVXg/zh-cn_image_0000002701822100.png "点击放大")

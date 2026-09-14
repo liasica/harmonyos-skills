@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arktsdocs
 title: 标准标签
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 生成ArkTSDoc文档 > 标准标签
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:33+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:43+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0295b89739091fcea4fd42b5ca895cff73d2dbb358d0d4d4ad33a0d491e3e2ab
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/system-ba
 title: 基础功能
 breadcrumb: API参考 > 系统 > 基础功能
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:26+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:06:59+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3974a40bc099feba3da6eeeefd0ff567eda090a4737981789d729f7aee6ebb7c
 ---
 

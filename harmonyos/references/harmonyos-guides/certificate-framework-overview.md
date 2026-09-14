@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certificate-f
 title: 证书算法库框架概述
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书算法库框架概述
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
+scraped_at: 2026-09-15T07:01:49+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:fc6d7f556b9b090bb437ec7aa893f4cda7d968b3382a0d6ac49aaef497289257
+content_hash: sha256:afbbb874529cfc62f85212fe6e6698a10cbc3351a1c283a3a50d698203cdc5fd
 ---
 
 证书算法库框架是一个屏蔽了第三方算法库实现差异的证书算法框架，向应用提供证书、证书扩展域段、证书吊销列表的创建、解析及校验能力，此外还提供了证书链的校验能力。
@@ -38,19 +38,19 @@ content_hash: sha256:fc6d7f556b9b090bb437ec7aa893f4cda7d968b3382a0d6ac49aaef4972
 
 ### X.509证书的基本结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Lg2NKs3qSZmjS7OBix7H2Q/zh-cn_image_0000002717771066.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/G6_RP2aqSN2j9ldX0LwgAg/zh-cn_image_0000002753455105.png)
 
 样例证书文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/E1ziPZqfTL2t641CqosnJQ/zh-cn_image_0000002717611132.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/GWc-hErSTImo5WSa80zYaA/zh-cn_image_0000002723855340.png)
 
 ### X.509证书吊销列表（CRL）基本结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ltMLiF2kTRqwg0c9gAtYRA/zh-cn_image_0000002747291085.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/NUXKkiQMQ16tcyra92hcvw/zh-cn_image_0000002723695422.png)
 
 样例CRL文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ZWc6vVkvTc6VngYWYY1o8A/zh-cn_image_0000002747211003.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/KgtBZbhTRReZz3c0go4Nyw/zh-cn_image_0000002753295189.png)
 
 ## 约束与限制
 

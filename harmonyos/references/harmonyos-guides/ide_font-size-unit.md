@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_font-size
 title: "@cross-device-app-dev/font-size-unit"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/font-size-unit
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:53+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:43+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f069b77737db51d947b0110d21738a6dbc0501cdeedf3e5eb44558443d072b23
 ---
 

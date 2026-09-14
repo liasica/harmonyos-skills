@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-faq-4
 title: 设置地图Logo始终显示
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > Map Kit常见问题 > 设置地图Logo始终显示
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:23+08:00
+scraped_at: 2026-09-15T07:02:50+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:fccefea3e9ea1bf30784b564746314ecf3dc759fb5a4fd95755137ebd82fae4b
+content_hash: sha256:8be5effc599dbc193cd563a5789c94ff4e6c87e0626f33c93bef1de65b45f8d9
 ---
 
 **现象描述**
 
 Map Kit地图Logo不可见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/UYjJtx2lQ_iBd_VS-kbD5g/zh-cn_image_0000002717771868.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/CwYsN3tvSG-YObH11iWzlQ/zh-cn_image_0000002753455907.jpg "点击放大")
 
 **可能原因**
 
@@ -147,4 +147,4 @@ struct MapKitAppDemo {
 
 展示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/NLjiKxKGTW6NpNoPizoWMg/zh-cn_image_0000002717611936.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/zO6-tvdcTvS8x2pjv_sXXQ/zh-cn_image_0000002723856142.gif "点击放大")

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/buttons-a
 title: 按钮与选择
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择
 category: harmonyos-references
-scraped_at: 2026-04-28T08:01:41+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:04:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:bd8469dc8379c220ea90bb4c0701271e7fbc38fbc5225a3e1bd4da3b6f8b1fda
 ---
 

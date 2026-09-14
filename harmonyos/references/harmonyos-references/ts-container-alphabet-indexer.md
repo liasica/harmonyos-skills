@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: AlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > AlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dabb04c0f36ba12e01f80ce7ec690de551b338cfdbe5b58021135dc5458fd078
+scraped_at: 2026-09-15T07:05:04+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:d2cab68c371695777f0110234340a3a4468bf4fa9c6020013d89f69f5e2e4f5e
 ---
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -729,7 +729,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Fg8seCdqSEWFWG1rQKoqrQ/zh-cn_image_0000002717772870.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/-IiOsZEERe-xzrKl1ffixQ/zh-cn_image_0000002753456909.gif)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -871,7 +871,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Zh2QeL9tTKySZe37UKMdQA/zh-cn_image_0000002717612938.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/OvxA9ErYQ3O9jt373H1yVg/zh-cn_image_0000002723857144.gif)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -1002,4 +1002,124 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zL7fRRcrQQeJ7SzFAoGHmA/zh-cn_image_0000002747292891.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/R9qckG0hQDC2sIBZq3EITQ/zh-cn_image_0000002723697226.gif)
+
+### 示例4（设置提示弹窗的沉浸光感效果）
+
+该示例展示索引条提示弹窗的沉浸光感效果。
+
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+
+从API版本26.0.0开始，索引条参数[popupBackground](ts-container-alphabet-indexer.md#popupbackground)和[popupBackgroundBlurStyle](ts-container-alphabet-indexer.md#popupbackgroundblurstyle12)均未主动设置（或参数value传入undefined）时，提示弹窗默认开启沉浸光感，默认材质样式为THICK。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct AlphabetIndexerSample {
+  private arrayA: string[] = ['安'];
+  private arrayB: string[] = ['卜', '白', '包', '毕', '丙'];
+  private arrayC: string[] = ['曹', '成', '陈', '催'];
+  private arrayL: string[] = ['刘', '李', '楼', '梁', '雷', '吕', '柳', '卢'];
+  private value: string[] = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+    'H', 'I', 'J', 'K', 'L', 'M', 'N',
+    'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+    'V', 'W', 'X', 'Y', 'Z'];
+
+  build() {
+    Stack({ alignContent: Alignment.Start }) {
+      Row() {
+        List({ space: 20, initialIndex: 0 }) {
+          ForEach(this.arrayA, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayB, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayC, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+
+          ForEach(this.arrayL, (item: string) => {
+            ListItem() {
+              Text(item)
+                .width('80%')
+                .height('5%')
+                .fontSize(30)
+                .textAlign(TextAlign.Center)
+            }
+          }, (item: string) => item)
+        }
+        .width('30%')
+        .height('100%')
+
+        Column() {
+          Column() {
+            AlphabetIndexer({ arrayValue: this.value, selected: 0 })
+              .usingPopup(true) // 索引项被选中时显示提示弹窗
+              .alignStyle(IndexerAlign.Left) // 提示弹窗在索引条右侧弹出
+              .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
+              .itemBorderRadius(14) // 设置索引项背板圆角半径
+              .popupTitleBackground(0xCCCCCC) // 设置提示弹窗一级索引项背景颜色
+              .onSelect((index: number) => {
+                console.info(this.value[index] + ' Selected!');
+              })
+              .onRequestPopupData((index: number) => {
+                // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
+                // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
+                if (this.value[index] == 'A') {
+                  return this.arrayA;
+                } else if (this.value[index] == 'B') {
+                  return this.arrayB;
+                } else if (this.value[index] == 'C') {
+                  return this.arrayC;
+                } else if (this.value[index] == 'L') {
+                  return this.arrayL;
+                } else {
+                  return [];
+                }
+              })
+              .onPopupSelect((index: number) => {
+                console.info('onPopupSelected:' + index);
+              })
+          }
+          .height('80%')
+        }
+        .width('70%')
+      }
+      .width('100%')
+      .height('100%')
+      // $r('app.media.image')需要替换为开发者所需的图像资源文件。
+      .backgroundImage($r("app.media.image"))
+    }
+  }
+}
+```
+
+未设置系统材质时：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/FBWDqweOTp2KmpWoQlOsfg/zh-cn_image_0000002753296993.gif)
+
+设置系统材质后：
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/8wrElRsHSi6rQm36iT4fHw/zh-cn_image_0000002753456911.gif)

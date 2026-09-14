@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: canvas组件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > canvas组件
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:50+08:00
+scraped_at: 2026-09-15T07:05:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ae3951694ae7545eb2f3dde8d02373b5463d5585970cb831f94fafca11a145f0
+content_hash: sha256:492d6f0eb6c7f6b6e97daae5f95ea11cce1158a261f75c9f6c489d238e80508c
 ---
 
 **说明** 
@@ -108,4 +108,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/sgyNeZtVSueNO5arp0IRow/zh-cn_image_0000002747293207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/W0jc_qtjQ2-Wh_x_u3UpWA/zh-cn_image_0000002723857464.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ta
 title: 构建任务说明
 breadcrumb: 指南 > 构建应用 > 概述 > 构建任务说明
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:32+08:00
+scraped_at: 2026-09-15T07:03:48+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:ea1a1b22b7a4489d4aa165bc3973055d3c4878db2b3bb39648be0ed2e54d9592
+content_hash: sha256:404b252b70e3f253f02eadc196dbc8e0767066d41b4ec1a0749a08354c998616
 ---
 
 本章节将对构建的任务进行说明，可以更直观地了解到构建的任务流程。
@@ -14,15 +14,15 @@ content_hash: sha256:ea1a1b22b7a4489d4aa165bc3973055d3c4878db2b3bb39648be0ed2e54
 
 ### HAP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/42HQmozXSg-p9QjfY3GftA/zh-cn_image_0000002701823192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Q2h_ZsHuRRuSSzZgtYfK0w/zh-cn_image_0000002701823192.png)
 
 ### HSP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/MOSS6z3tQduJx5NatORVZA/zh-cn_image_0000002731382497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/QTHkg80NRryH1h7MvDByCQ/zh-cn_image_0000002731382497.png)
 
 ### HAR基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/t-LlQaaFQXKlx5GHIJc9QQ/zh-cn_image_0000002701663274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/6H4WnJu0Tg2fsGR_VdmeJw/zh-cn_image_0000002701663274.png)
 
 ## 使用命令查看任务
 
@@ -34,7 +34,7 @@ hvigorw taskTree
 
 获取任务树时会根据工程中的模块，将模块中注册的任务以下图形式输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/LOcUgua7QlWU4tNSr1a6cw/zh-cn_image_0000002731542467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/lOlNe3BIQD2clqgcb4mSVA/zh-cn_image_0000002731542467.png)
 
 执行顺序举例说明：如图所示，assembleHap依赖CollectDebugSymbol，CollectDebugSymbol依赖于PackageHap；则任务执行顺序为PackageHap->CollectDebugSymbol->assembleHap。
 

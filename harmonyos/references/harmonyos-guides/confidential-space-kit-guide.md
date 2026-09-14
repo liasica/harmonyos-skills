@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/confidential-
 title: Confidential Space Kit（机密空间服务）
 breadcrumb: 指南 > 系统 > 安全 > Confidential Space Kit（机密空间服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:59+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ed683aa5fb2b88238c64e13406d8725156115d700292c74363a53ea792d9f66a
 ---
 

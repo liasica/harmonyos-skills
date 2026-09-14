@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: Spatial Recon Kit（空间建模服务）
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:34+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:646d1bcf4e7c5994b42d54572b1ac3f0b3c4f9c29914203e1676ef9115d7fef4
 ---
 

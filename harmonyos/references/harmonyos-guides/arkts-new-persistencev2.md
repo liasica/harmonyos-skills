@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-per
 title: "PersistenceV2: 持久化存储UI状态"
 breadcrumb: "指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理应用拥有的状态 > PersistenceV2: 持久化存储UI状态"
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2684e9d97b6a2076b2365825a7ea8cd7adf8f74c6a6d7548254bd82a2a6e28e2
+scraped_at: 2026-09-15T07:01:21+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:c50ea628ea364508eeff11220aa1413444d64fa47b5e63d4422a9e4f5dd68adc
 ---
 
 为了增强状态管理框架对持久化存储UI的能力，开发者可以使用PersistenceV2存储持久化的数据。
@@ -76,7 +76,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
       // 定义持久化的数据类型
       type: collections.Array<number>,
       // 定义默认构造器，返回时需要调用makeObserved，才能实现自动持久化
-      defaultCreator: () => UIUtils.makeObserved(new collections.Array<number>(1,2))
+      defaultCreator: () => UIUtils.makeObserved(new collections.Array<number>(2, 1))
     })!;
     // 基于collections.Array构建Repeat的数据源
     toArray<T>(array: collections.Array<T>): Array<T> {
@@ -102,53 +102,53 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
             .key((item: number, index: number) => `${index} - ${item}`)
         }
         Divider().width('100%')
-        // 点击'array.push(0)'，重启应用，Repeat数组项是：1, 2, 0
-        Button('array.push(0)')
+        // 以下按钮依次演示对collections.Array的操作；数据已自动持久化，重启应用后保持当前数组状态
+        // 点击后追加元素4，数组项变为：2, 1, 4
+        Button('array.push(4)')
           .onClick(() => {
-            this.array.push(Math.round(0));
+            this.array.push(4);
           })
           .width(300)
           .margin(10)
-        // 点击'array.pop()'，重启应用，Repeat数组项是：1, 2
+        // 点击后对数组升序排序，数组项变为：1, 2, 4
+        Button('array.sort')
+          .onClick(() => {
+            this.array.sort((a, b) => a - b);
+          })
+          .width(300)
+          .margin(10)
+        // 点击后反转数组，数组项变为：4, 2, 1
+        Button('array.reverse')
+          .onClick(() => {
+            this.array.reverse();
+          })
+          .width(300)
+          .margin(10)
+        // 点击后在索引1处插入元素9，数组项变为：4, 9, 2, 1
+        Button('array.splice(1, 0, 9)')
+          .onClick(() => {
+            this.array.splice(1, 0, 9);
+          })
+          .width(300)
+          .margin(10)
+        // 点击后替换前两个元素为7和8，数组项变为：7, 8, 2, 1
+        Button('array.splice(0, 2, 7, 8)')
+          .onClick(() => {
+            this.array.splice(0, 2, 7, 8);
+          })
+          .width(300)
+          .margin(10)
+        // 点击后移除末尾元素，数组项变为：7, 8, 2
         Button('array.pop()')
           .onClick(() => {
             this.array.pop();
           })
           .width(300)
           .margin(10)
-        // 点击'array.splice(0)'，重启应用，Repeat数组项为空
+        // 点击后清空数组，数组项为空
         Button('array.splice(0)')
           .onClick(() => {
             this.array.splice(0);
-          })
-          .width(300)
-          .margin(10)
-        // 点击'splice(1, 0, random)'，重启应用：Repeat组件再次显示相同的数组项
-        Button('array.splice(1, 0, random)')
-          .onClick(() => {
-            this.array.splice(1, 0, Math.round(100*Math.random()));
-          })
-          .width(300)
-          .margin(10)
-        // 点击'array.splice(0, 2, random, random)'，前两个数组项目被替换，记录下来
-        // 重启应用：Repeat组件再次显示数组项
-        Button('array.splice(0, 2, random, random)')
-          .onClick(() => {
-            this.array.splice(0, 2, Math.round(100*Math.random()), Math.round(100*Math.random()));
-          })
-          .width(300)
-          .margin(10)
-        // 点击'array.sort', 对数组项升序排列，重启应用，Repeat组件展示升序数组
-        Button('array.sort')
-          .onClick(() => {
-            this.array.sort((a, b) => a -b);
-          })
-          .width(300)
-          .margin(10)
-        // 点击'array.reverse', 对数组项降序排列，重启应用，Repeat组件展示降序数组
-        Button('array.reverse')
-          .onClick(() => {
-            this.array.reverse();
           })
           .width(300)
           .margin(10)
@@ -158,7 +158,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/8JAMzo5uQRCBJCkiZ58VFg/zh-cn_image_0000002717610146.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/vW2wDAPzQbqL7UPRqr4_Qg/zh-cn_image_0000002723854354.gif)
 * globalConnect在持久化多个相同[集合类型](arkts-new-persistencev2.md#globalconnect支持集合的类型)时，需要提供不同的key来区分持久化数据。
 
   如下展示开发者持久化相同的Array<number>类型的部分示例代码片段：
@@ -251,7 +251,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Ho6hu3gETX-gCkEGkEs0OA/zh-cn_image_0000002747290097.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Q919Xt8bRIOCObaSZlX9xw/zh-cn_image_0000002723694436.gif)
 
   如下为globalConnect支持Date类型的持久化示例：
 
@@ -285,7 +285,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/uk5ys3b0Tgy3XCC0zvN0Fg/zh-cn_image_0000002747210015.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/onVML26zTZ6nOddji5wwPw/zh-cn_image_0000002753294203.gif)
 
   如下为globalConnect支持Number类型作为class子属性的持久化示例：
 
@@ -326,7 +326,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/k8KR4MM4RBSSRj1mNB1QEw/zh-cn_image_0000002717770082.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/hxDSTQ4zS0C74btT0kL6jg/zh-cn_image_0000002753454121.png)
 
 6、在API version 23以前，不支持循环引用对象的持久化。
 
@@ -396,7 +396,7 @@ PersistenceV2继承自[AppStorageV2](../harmonyos-references/js-apis-statemanage
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/t4RUqbuzQJ2PU_FVvVSdUQ/zh-cn_image_0000002717610148.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/5jC4qq0pStSIti6ljQ6awQ/zh-cn_image_0000002723854356.png)
 
 7、只有[@Trace](arkts-new-observedv2-and-trace.md)的数据改变会触发自动持久化，如V1状态变量、[@Observed](arkts-observed-and-objectlink.md)对象、普通数据的改变不会触发持久化。
 
@@ -527,7 +527,8 @@ import { PersistenceV2, UIUtils } from '@kit.ArkUI';
 
 class ClassA {
   public propA: number = 0;
-  public classAToString() : string {
+
+  public classAToString(): string {
     return this.propA?.toString()
   }
 }
@@ -537,7 +538,13 @@ class ClassA {
 struct Page1 {
   @Local arr: Array<ClassA> = PersistenceV2.globalConnect({
     type: Array<ClassA>,
-    defaultCreator: () => UIUtils.makeObserved(new Array<ClassA>()),
+    defaultCreator: () => {
+      const arr = UIUtils.makeObserved(new Array<ClassA>());
+      const item = new ClassA();
+      item.propA = 2;
+      arr.push(UIUtils.makeObserved(item));
+      return arr;
+    },
     // 添加defaultSubCreator，通知状态管理框架如何创建ClassA对象
     // 另外持久化后的数据需要加上makeObserved，否则会持久化失败
     defaultSubCreator: () => UIUtils.makeObserved(new ClassA())
@@ -552,7 +559,8 @@ struct Page1 {
               Text(`Item: `)
                 .fontSize(20)
                 .margin(10)
-              Text(ri.item?.classAToString ? ri.item?.classAToString(): `classAToString() missing from object, propA: ${ri.item?.propA}`)
+              Text(ri.item?.classAToString ? ri.item?.classAToString() :
+                `classAToString() missing from object, propA: ${ri.item?.propA}`)
                 .fontSize(20)
                 .margin(10)
             }
@@ -562,76 +570,71 @@ struct Page1 {
       .width('100%')
 
       Divider().width('100%')
-      // 点击'array.push(0)'，重启应用，Repeat数组项是：1, 2, 0
-      Button('array.push(0)')
+      // 以下按钮依次演示对Array<ClassA>的操作；数据已自动持久化，重启应用后保持当前数组状态
+      // 点击后追加元素(propA=1)，数组propA序列变为：2, 1
+      Button('array.push(1)')
         .width(300)
         .margin(10)
         .onClick(() => {
           let temp = new ClassA();
-          temp.propA = 0;
+          temp.propA = 1;
           this.arr.push(UIUtils.makeObserved(temp));
         })
-        .fontSize(24)
-      // 点击'array.pop()'，重启应用，Repeat数组项是：1, 2
-      Button('array.pop()')
-        .width(300)
-        .margin(10)
-        .onClick(() => {
-          this.arr.pop();
-        })
-        .fontSize(24)
-      // 点击'array.splice(0)'，重启应用，Repeat数组项为空
-      Button('array.splice(0)')
-        .width(300)
-        .margin(10)
-        .onClick(() => {
-          this.arr.splice(0);
-        })
-        .fontSize(24)
-      // 点击'splice(1, 0, random)'，重启应用：Repeat组件再次显示相同的数组项
-      Button('array.splice(1, 0, random)')
-        .margin(10)
-        .onClick(() => {
-          let temp = new ClassA();
-          temp.propA = Math.round(100 * Math.random());
-          this.arr.splice(1, 0, UIUtils.makeObserved(temp));
-        })
-        .fontSize(24)
-      // 点击'array.splice(0, 2, random, random)'，前两个数组项目被替换，记录下来
-      // 重启应用：Repeat组件再次显示数组项
-      Button('array.splice(0, 2, random, random)')
-        .margin(10)
-        .onClick(() => {
-          let tempA = new ClassA();
-          tempA.propA = Math.round(100 * Math.random());
-          this.arr.splice(0, 2,
-            UIUtils.makeObserved(tempA),
-            UIUtils.makeObserved(tempA));
-        })
-        .fontSize(18)
-      // 点击'array.sort', 对数组项升序排列，重启应用，Repeat组件展示升序数组
+      // 点击后按propA升序排序，数组propA序列变为：1, 2
       Button('array.sort')
         .width(300)
         .margin(10)
         .onClick(() => {
-          this.arr.sort((tempA, tempB)=> tempA?.propA - tempB?.propA);
+          this.arr.sort((tempA, tempB) => tempA?.propA - tempB?.propA);
         })
-        .fontSize(24)
-      // 点击'array.reverse', 对数组项降序排列，重启应用，Repeat组件展示降序数组
+      // 点击后反转数组，数组propA序列变为：2, 1
       Button('array.reverse')
         .width(300)
         .margin(10)
         .onClick(() => {
           this.arr.reverse();
         })
-        .fontSize(24)
+      // 点击后在索引1处插入元素(propA=9)，数组propA序列变为：2, 9, 1
+      Button('array.splice(1, 0, 9)')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          let temp = new ClassA();
+          temp.propA = 9;
+          this.arr.splice(1, 0, UIUtils.makeObserved(temp));
+        })
+      // 点击后替换前两个元素(propA=7、8)，数组propA序列变为：7, 8, 1
+      Button('array.splice(0, 2, 7, 8)')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          let tempA = new ClassA();
+          tempA.propA = 7;
+          let tempB = new ClassA();
+          tempB.propA = 8;
+          this.arr.splice(0, 2, UIUtils.makeObserved(tempA), UIUtils.makeObserved(tempB));
+        })
+      // 点击后移除末尾元素，数组propA序列变为：7, 8
+      Button('array.pop()')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.arr.pop();
+        })
+      // 点击后清空数组，数组为空
+      Button('array.splice(0)')
+        .width(300)
+        .margin(10)
+        .onClick(() => {
+          this.arr.splice(0);
+        })
     }
     .width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/k_wQi05nTMqhIh7YQX4FKg/zh-cn_image_0000002747290099.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/QhI8rktATmSw6T9Bdxkf-Q/zh-cn_image_0000002723694438.gif)
 
 ## 使用场景
 
@@ -819,7 +822,7 @@ struct Page2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/THJiq9aXQaylmV7-mx9x9A/zh-cn_image_0000002747210017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/rZE545V9SF2JOcgC9385oQ/zh-cn_image_0000002753294205.gif)
 
 ### 使用globalConnect存储数据
 
@@ -876,7 +879,7 @@ struct Page1 {
   build() {
     Column() {
       // 显示数据
-      // 被@Trace修饰的数据可以自动持久化进磁盘
+      // 被@Trace装饰的属性可以自动持久化进磁盘
       Text('Key SampleGlobalConnect: ' + this.p.father.childId.toString())
         .onClick(() => {
           this.p.father.childId += 1;
@@ -961,7 +964,7 @@ struct Page1 {
       // save接口
       Text('not save key SampleGlobalConnect: ' + this.p.father.groupId.toString() + ' refresh: ' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储
+          // 未被@Trace装饰的属性无法自动存储
           this.p.father.groupId += 1;
           this.refresh += 1;
         })
@@ -969,7 +972,7 @@ struct Page1 {
         .margin(5)
       Text('save key SampleGlobalConnect: ' + this.p.father.groupId.toString() + ' refresh: ' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储，需要调用save存储
+          // 未被@Trace装饰的属性无法自动存储，需要调用save存储
           this.p.father.groupId += 1;
           PersistenceV2.save(SampleGlobalConnect);
           this.refresh += 1;
@@ -982,7 +985,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/GOt4sks7R4G17jWo50wUKw/zh-cn_image_0000002717770084.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/52g_6XyNRpeMyTFr7A9hdw/zh-cn_image_0000002753454123.gif)
 
 ### 在不同的module中使用connect和globalConnect
 
@@ -1088,7 +1091,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/WNMaMfPkT_6bZdpmQxT4Gg/zh-cn_image_0000002717610150.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/-Xp_l8RdQK-HGSePrHMZ4Q/zh-cn_image_0000002723854358.png)
 
 ```typescript
 // 模块2
@@ -1148,7 +1151,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/G3CLLmQTSDGRNR4d9Z5MXA/zh-cn_image_0000002747290101.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/cgHMvwNCS_mFZ0A4LyYwjw/zh-cn_image_0000002723694440.png)
 
 当开发者对newModule使用不同启动方式会有以下现象：
 
@@ -1216,10 +1219,10 @@ struct Index {
         .fontColor(Color.Red)
 
       // save接口
-      // 未被@Trace装饰的变量需要借助状态变量refresh才能刷新
+      // 未被@Trace装饰的属性需要借助状态变量refresh才能刷新
       Text('save key connectSample: ' + this.p.father.groupId.toString() + ' refresh:' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储，需要调用save存储
+          // 未被@Trace装饰的属性无法自动存储，需要调用save存储
           this.p.father.groupId += 1;
           PersistenceV2.save('connectSample');
           this.refresh += 1;
@@ -1232,7 +1235,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Lw0p1y4CTWSm2iCHBXtTqA/zh-cn_image_0000002747210019.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/UgiLq0--QH-lqdaIy7Ibbg/zh-cn_image_0000002753294207.gif)
 
 起始时，SampleChild中的childInfo变量类型为SampleInfo，正常存储后，将childInfo变量的类型切换为number，并赋值为1，之后再次启动程序，此时会由于存储数据的结构与当前数据的结构不一致，导致数据反序列化失败。此时会通过notifyOnError中写入的回调，将磁盘中存储的旧的序列化数据打印出来。即在Error日志中显示：
 
@@ -1290,10 +1293,10 @@ struct Page1 {
         .fontColor(Color.Red)
 
       // save接口
-      // 未被@Trace装饰的变量需要借助状态变量refresh才能刷新
+      // 未被@Trace装饰的属性需要借助状态变量refresh才能刷新
       Text('save key connect3: ' + this.p.father.groupId.toString() + ' refresh:' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储，需要调用save存储
+          // 未被@Trace装饰的属性无法自动存储，需要调用save存储
           this.p.father.groupId += 1;
           PersistenceV2.save('connect3');
           this.refresh += 1;
@@ -1306,7 +1309,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/2fg1ppw1TVaVxsbbz_UpHg/zh-cn_image_0000002717770086.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/BuBFZomARDSi5h3umbo4lw/zh-cn_image_0000002753454125.gif)
 
 ```typescript
 // 迁移到globalConnect
@@ -1345,7 +1348,7 @@ function move() {
     let p: Sample = PersistenceV2.connect(Sample, 'connect3', () => new Sample())!;
     PersistenceV2.remove('connect3');
     let p1 = PersistenceV2.globalConnect({ type: Sample, key: 'connect4', defaultCreator: () => p })!; // 使用默认构造函数也可以
-    // 赋值数据，@Trace修饰的会自动保存
+    // 赋值数据，@Trace装饰的属性会自动保存
     p1.father = p.father;
     // 将迁移标志设置为true
     movingState.isCompleteMoving = true;
@@ -1374,10 +1377,10 @@ struct Page1 {
         .fontColor(Color.Red)
 
       // save接口
-      // 未被@Trace装饰的变量需要借助状态变量refresh才能刷新
+      // 未被@Trace装饰的属性需要借助状态变量refresh才能刷新
       Text('save key connect4: ' + this.p.father.groupId.toString() + ' refresh:' + this.refresh)
         .onClick(() => {
-          // 未被@Trace保存的对象无法自动存储，需要调用save存储
+          // 未被@Trace装饰的属性无法自动存储，需要调用save存储
           this.p.father.groupId += 1;
           PersistenceV2.save('connect4');
           this.refresh += 1;
@@ -1390,7 +1393,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/-7-VNw9oS8-Cd0vx-6P4Dg/zh-cn_image_0000002717610152.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5nucCL8rTz2fgxlEAfwVRQ/zh-cn_image_0000002723854360.gif)
 
 connect向globalConnect迁移，需要将key绑定的value赋值给globalConnect进行存储，之后当自定义组件使用globalConnect连接时，globalConnect绑定的数据即为之前使用connect保存的数据，开发者可以自定义move函数，并将其放在合适位置迁移即可。
 
@@ -1448,7 +1451,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/LOrqGwhVRvmAtBpzd4EBNw/zh-cn_image_0000002747290103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/OnIAWfX1S_Sx8JubKLFl1Q/zh-cn_image_0000002723694442.png)
 
 下表将结合样例，说明在变更数据结构时会触发notifyOnError的情形。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-act
 title: 核心操作栏
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 核心操作栏
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:56+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:44+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c4f60ab8cb88bd8544e7389f4720c7ff0cd7dcbdf2249b92e6eb0e59b2e407a4
 ---
 

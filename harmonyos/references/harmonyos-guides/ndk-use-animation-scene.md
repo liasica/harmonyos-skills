@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-use-anima
 title: 使用动画开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用动画 > 使用动画开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:11+08:00
+scraped_at: 2026-09-15T07:01:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a2fe05efc73394895c2498627e85e9a3e7666d35696a4ee9ec408fef492a506d
+content_hash: sha256:c5f20a2e6dd3cecac4f3d4db6b493a910758d0dfb84b0fa14b49dbb1bfa7a023
 ---
 
 本篇中的所有示例仅提供核心接口的调用方法，完整的示例工程请参考[AnimationNDK](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/AnimationNDK)。
@@ -120,7 +120,7 @@ content_hash: sha256:a2fe05efc73394895c2498627e85e9a3e7666d35696a4ee9ec408fef492
    animateApi->animateTo(context, option, update, completeCallback);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/HFGAqY2NSrqSoPEFG7bBeg/zh-cn_image_0000002747290709.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/wCA7quKjR5emCGgB5JsCQQ/zh-cn_image_0000002723695046.gif)
 
 ## 组件出现/消失转场
 
@@ -258,7 +258,7 @@ content_hash: sha256:a2fe05efc73394895c2498627e85e9a3e7666d35696a4ee9ec408fef492
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-2-FJhe_T7eaGtYdYQwQjg/zh-cn_image_0000002747210627.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/2h_ItxtYQWWZMsSzhFEX6Q/zh-cn_image_0000002753294813.gif)
 
 ## 一镜到底转场
 
@@ -406,7 +406,7 @@ content_hash: sha256:a2fe05efc73394895c2498627e85e9a3e7666d35696a4ee9ec408fef492
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/jIbe_kgER56bY5Lki4CsQA/zh-cn_image_0000002717770692.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/-fEBDS9qRlCy7jbHgeGkxg/zh-cn_image_0000002753454731.gif)
 
 ## 使用关键帧动画
 
@@ -521,7 +521,7 @@ column->AddChild(textNode);
 column->AddChild(button);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/5kTZwmRRRWymvKxwbJfXJA/zh-cn_image_0000002717610758.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/DWAsVbfeSI2k7k51GxCOjg/zh-cn_image_0000002723854966.gif)
 
 ## 使用帧动画
 
@@ -739,4 +739,4 @@ std::shared_ptr<ArkUIBaseNode> CreateAnimator()
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/8qxVe4fJRnKKCS-YX-OfSQ/zh-cn_image_0000002747290711.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/YuN2lCOXQEGllleBPW-mgg/zh-cn_image_0000002723695048.gif)

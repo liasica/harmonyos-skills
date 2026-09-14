@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decodin
 title: 图片解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:17+08:00
-doc_updated_at: 2026-05-28
+scraped_at: 2026-09-15T07:02:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:7af6c6424901f9cbb399ff2764f3b00422c37db7d3756cf74a1ca7ef07c5caf4
 ---
 

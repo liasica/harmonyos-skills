@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取华为账号用户信息-获取头像昵称
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 获取用户信息 > 获取华为账号用户信息-获取头像昵称
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:78057b48fcab28391353c575894af9ed60e2afd079bae7b204c9959523e664f2
+scraped_at: 2026-09-15T07:08:44+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:24dfc2172b0edbdd7d4cc91b5e99cafc6b0c4edc3bc358babe2c61ea8c1b379d
 ---
 
 **注意** 
@@ -85,8 +85,8 @@ access_token=<Access Token>
 | --- | --- | --- | --- |
 | openID | 是 | String | 用户OpenID。具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。 |
 | unionID | 是 | String | 用户UnionID。具体格式要求请参考[OpenID和UnionID的格式说明](../harmonyos-guides/account-faq-9.md)。 |
-| displayName | 否 | String | 用户昵称，该字段返回场景详见[获取头像昵称](../harmonyos-guides/account-get-avatar-nickname.md)。  - 请求参数“getNickName”为0或不传时，返回匿名化账号。  - 请求参数“getNickName”为1时，返回昵称，没有昵称时返回匿名化账号。  **说明：**  调用成功后响应中若不包含用户昵称displayName，请确认获取的Authorization Code是否携带了profile（昵称和头像）scope。参考[客户端开发](../harmonyos-guides/account-get-avatar-nickname.md#客户端开发) |
-| displayNameFlag | 否 | int | 返回的昵称类型 。  0：昵称。  1：匿名账号。  **说明：**  调用成功后响应中若不包含昵称类型displayNameFlag，请确认获取的Authorization Code是否携带了profile（昵称和头像）scope。参考[客户端开发](../harmonyos-guides/account-get-avatar-nickname.md#客户端开发) |
+| displayName | 否 | String | 用户昵称，该字段返回场景详见[获取头像昵称](../harmonyos-guides/account-get-avatar-nickname.md)。  - 请求参数“getNickName”为0或不传时，返回匿名化账号。  - 请求参数“getNickName”为1时，返回昵称，没有昵称时返回匿名化账号。  **说明：**  调用成功后响应中若不包含用户昵称displayName，请确认获取的Authorization Code是否携带了profile（昵称和头像）scope。参考[客户端开发](../harmonyos-guides/account-get-avatar-nickname.md#客户端开发)。 |
+| displayNameFlag | 否 | int | 返回的昵称类型 。  0：昵称。  1：匿名账号。  **说明：**  调用成功后响应中若不包含昵称类型displayNameFlag，请确认获取的Authorization Code是否携带了profile（昵称和头像）scope。参考[客户端开发](../harmonyos-guides/account-get-avatar-nickname.md#客户端开发)。 |
 | headPictureURL | 否 | String | 用户头像，该字段返回场景详见[获取头像昵称](../harmonyos-guides/account-get-avatar-nickname.md)。用户未设置头像时不返回。  **说明：**  当用户更新头像后，原头像链接会立即失效。为确保头像正常显示，建议先将头像下载保存后再使用，避免因用户头像链接失效而影响业务流程。 |
 
 调用失败时，响应消息返回如下：
@@ -195,12 +195,12 @@ Response Header中的NSP\_STATUS字段，在处理成功时不会返回。
 
 | NSP\_STATUS | 描述 | 解决方法 |
 | --- | --- | --- |
-| 6 | 会话失效，session timeout。  可能原因:  - access\_token无效或已过期  - access\_token格式不正确  - 其他内部原因 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 未对access\_token进行URLEncode处理，可参考[示例代码](account-api-get-user-info-get-nickname-and-avatar.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
-| 105 | 参数错误 | 参考API文档的说明，调整参数传值。 |
+| 6 | 会话失效或已超时（session timeout）。  可能原因:  - access\_token无效或已过期。  - access\_token格式不正确。  - 其他内部原因。 | - 请检查传参是否正确，如无问题请尝试重新获取。  - 未对access\_token进行URLEncode处理，可参考[示例代码](account-api-get-user-info-get-nickname-and-avatar.md#示例代码)组装参数。  - 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
+| 105 | 参数错误。 | 参考API文档的说明，调整参数传值。 |
 | 403 | 访问无权限。 | 请前往AppGallery Connect（简称AGC）为应用申请开放权限，详见[申请账号权限](../harmonyos-guides/account-config-permissions.md)。 |
 | 500 | 接口内部错误。 | 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 503 | 触发系统流控。 | 请稍后重试。 |
-| 70001201 | 参数不合法 | 参考API文档的说明，调整参数传值。 |
+| 70001201 | 参数不合法。 | 参考API文档的说明，调整参数传值。 |
 | 70001402 | 系统鉴权错误。 | 鉴权系统异常，若重试无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 70020002 | 内部网络错误。 | 内部网络错误，若重试无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |
 | 70001401 | 系统内部错误。 | 根据返回的错误描述进行处理，若仍无法解决，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。 |

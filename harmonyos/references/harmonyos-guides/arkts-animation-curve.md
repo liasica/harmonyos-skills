@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animati
 title: 动画曲线
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画曲线
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:39:57+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:27+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:25f3321ed29edacb2920db8f9dc0f1faea7ed40af4c22440af77ab8b79fd9efa
 ---
 

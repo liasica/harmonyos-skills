@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-med
 title: 自定义播控中心控制按钮显示布局
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 自定义播控中心控制按钮显示布局
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:147fa1c8d258e1ced7cd1165cfbb57a8e33e2f0052097cb1fef028fc204d14fc
+scraped_at: 2026-09-15T07:02:21+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:e650d22a81649a8849d4cec3dcf4ca86327f120e8cbe32c446e4eb84bcccd760
 ---
 
 从API版本26.0.0开始，系统支持自定义播控中心控制按钮的显示布局。本文档介绍播控中心控制按钮的默认显示规则，以及应用如何自定义控制按钮的显示。
@@ -16,11 +16,11 @@ content_hash: sha256:147fa1c8d258e1ced7cd1165cfbb57a8e33e2f0052097cb1fef028fc204
 
 * **五元组**：显示五个控制按钮，如播控中心二级界面会使用五元组进行显示。如下图所示，五元组从左到右显示的位置分别称为4号位、2号位、1号位、3号位、5号位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/g6_Yu37NRgas1jb9PXw_Tw/zh-cn_image_0000002717771320.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/r0fnkypRSceZ2CbWcrp4TA/zh-cn_image_0000002753455359.png)
 
 * **三元组**：显示三个控制按钮，如播控中心一级界面会使用三元组进行显示。如下图所示，三元组从左到右显示的位置分别称为2号位、1号位、3号位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/rnzZGT8XRoWfhtDy1Hwt0g/zh-cn_image_0000002717611386.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/LmnWpb7DSFSHAIW4Ri4IUA/zh-cn_image_0000002723855594.png)
 
 播控中心根据应用设置的[AVSessionType](../harmonyos-references/arkts-apis-avsession-t.md#avsessiontype10)会话类型（本文提到的会话类型均指应用设置的AVSessionType）决定三元组/五元组控制按钮的显示：
 
@@ -35,9 +35,9 @@ content_hash: sha256:147fa1c8d258e1ced7cd1165cfbb57a8e33e2f0052097cb1fef028fc204
 
   + audio类型：循环模式、上一首、播放/暂停、下一首、收藏。
 
-    当应用[支持倍速](avsession-mediacentercontroltype-scene.md#speedSupportExplain)时，五元组的4号位和5号位显示如下：
+    当应用支持倍速时，五元组的4号位和5号位显示如下：
 
-    - 应用既[支持循环模式](avsession-mediacentercontroltype-scene.md#loopSupportExplain)也支持收藏（注册了是否收藏的监听）：4号位显示循环模式，5号位显示收藏。
+    - 应用既支持循环模式也支持收藏：4号位显示循环模式，5号位显示收藏。
     - 应用支持收藏但不支持循环模式：4号位显示收藏，5号位显示倍速。
     - 应用支持循环模式但不支持收藏：4号位显示循环模式，5号位显示倍速。
     - 应用不支持循环模式和收藏：4号位显示空白，5号位显示倍速。

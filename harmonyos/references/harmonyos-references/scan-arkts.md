@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-arkt
 title: ArkTS API
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:03+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:08:19+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:190e43f99c381a35beab449c4d1684af92d1bce669b01016effe26bcf49ca041
 ---
 

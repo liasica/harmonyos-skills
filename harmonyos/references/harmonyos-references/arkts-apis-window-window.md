@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Window)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (Window)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:769a147c092c5cb4cd7fe832a975b25037206e0324ba7191b6f2d2514324f66e
+scraped_at: 2026-09-15T07:04:44+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:40290c2ed0ad20dadba47fa395e441261a31be23d20aee1db52df61f92e4e05f
 ---
 
 当前窗口实例，窗口管理器管理的基本单元。
@@ -10957,13 +10957,10 @@ setFollowParentWindowLayoutEnabled(enabled: boolean): Promise<void>
 
 设置子窗或模态窗口（即WindowType为TYPE\_DIALOG的窗口）的布局信息（position和size）是否跟随主窗，使用Promise异步回调。
 
-1、只支持主窗的一级子窗或模态窗口使用该接口。其中非[独立子窗](../harmonyos-guides/window-type-overview.md#辅助窗口)支持调用。[独立子窗](../harmonyos-guides/window-type-overview.md#辅助窗口)调用此接口时，将返回1300004错误码。
-
-2、当子窗或模态窗口调用该接口后，立即使其布局信息与主窗完全一致并保持，除非传入false再次调用该接口，否则效果将持续。
-
-3、当子窗或模态窗口调用该接口后，再调用moveTo、resize等修改布局信息的接口将不生效。
-
-4、当子窗或模态窗口不再使用该功能后，不保证子窗或模态窗口的布局信息（position和size）为确定的值，需要应用重新进行设置。
+1. 只支持主窗的一级子窗或模态窗口使用该接口。其中非[独立子窗](../harmonyos-guides/window-type-overview.md#辅助窗口)支持调用。[独立子窗](../harmonyos-guides/window-type-overview.md#辅助窗口)调用此接口时，将返回1300004错误码。
+2. 当子窗或模态窗口调用该接口后，立即使其布局信息与主窗完全一致并保持，除非传入false再次调用该接口，否则效果将持续。
+3. 当子窗或模态窗口调用该接口后，再调用moveTo、resize等修改布局信息的接口将不生效。
+4. 当子窗或模态窗口不再使用该功能后，不保证子窗或模态窗口的布局信息（position和size）为确定的值，需要应用重新进行设置。
 
 该接口调用生效后，[setRelativePositionToParentWindowEnabled()](arkts-apis-window-window.md#setrelativepositiontoparentwindowenabled20)接口调用不生效。
 
@@ -11662,7 +11659,7 @@ convertOrientationAndRotation(from: RotationInfoType, to: RotationInfoType, valu
 
 示意图和表格展示了直板机窗口方向、屏幕方向和屏幕角度的关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/dgdSWwfSTmytiodX6JupGg/zh-cn_image_0000002747212317.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/o2PVbTMWT0uI-j_UMi-U8A/zh-cn_image_0000002753296503.png)
 
 | 屏幕角度 | 屏幕方向 | 窗口方向 |
 | --- | --- | --- |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-map-cre
 title: 宿主应用发起分享
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 宿主应用发起分享
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:50:58+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:7f1482ac709ab999df556d9ba52a49d5c714c17f6a58f9f40fdafcfd5b329ae8
 ---
 

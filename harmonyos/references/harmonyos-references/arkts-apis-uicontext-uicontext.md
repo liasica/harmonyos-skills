@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIContext)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIContext)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8c88a46702a2815532aa4857227e87416ba29d3a49ac18332c37eabcc884a49d
+scraped_at: 2026-09-15T07:04:36+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:56972ea5b6b80ba8da1ab3fde5a556986edce59aeab4a65dfda4461bd2ee132f
 ---
 
 UIContext实例对象，用于提供与当前UI实例关联的上下文能力，支持获取UI相关控制器、管理弹窗与动画、查询节点和窗口信息、进行像素单位转换等，适用于在指定UI实例中管理页面、组件和交互行为的场景。
@@ -459,7 +459,7 @@ struct UIContextCompare {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/eFl3raVaRdK8EZ-pxBh4FA/zh-cn_image_0000002747292337.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/76ZVyNz4Rd6zgKcti0NLmw/zh-cn_image_0000002723696672.gif)
 
 ## getFont
 
@@ -822,7 +822,7 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/f5ZgxKg1Th-uwkQwxgYBYQ/zh-cn_image_0000002747212253.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/IQPE0aLDSWWA8iCI9PUY_w/zh-cn_image_0000002753296439.gif)
 
 ## animateTo
 
@@ -1333,7 +1333,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/rXRS7NCNTr26yEuOsxFR-Q/zh-cn_image_0000002717772318.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/-H3qESyXSIuTmBWD9ud9kg/zh-cn_image_0000002753456357.gif)
 
 ## showActionSheet
 
@@ -1405,7 +1405,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ggqfpCrKQm2tpitXoajP4w/zh-cn_image_0000002717612386.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/nXnJ-OcYQsar59ERngiyLQ/zh-cn_image_0000002723856592.gif)
 
 ## showDatePickerDialog
 
@@ -1482,7 +1482,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/eZZY7QNaQVOTsanWok-rlg/zh-cn_image_0000002747292339.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/G7G7PoSWR-SVXY5MBIHQwQ/zh-cn_image_0000002723696674.gif)
 
 ## showTimePickerDialog
 
@@ -1628,7 +1628,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/F0hrP89FTT-yIvo5hhT9kQ/zh-cn_image_0000002747212255.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/76T5J8G0QDK_Os7LtpU3_Q/zh-cn_image_0000002753296441.gif)
 
 ## showTextPickerDialog20+
 
@@ -3603,7 +3603,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/yzPkjF7_T-CN727WjU5euw/zh-cn_image_0000002717772320.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/rF_3ix39SdSnYNOBrS5IJw/zh-cn_image_0000002753456359.gif)
 
 ## unbindTabsFromScrollable13+
 
@@ -4216,7 +4216,7 @@ struct Index {
           placeholder: 'TextInput1 bind CustomKeyboardBuilder',
           controller: this.controller,
           text: this.inputValue
-        })// 绑定自定义键盘
+        }) // 绑定自定义键盘
           .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
           .margin(10)
           .border({ width: 1 })
@@ -4224,7 +4224,7 @@ struct Index {
           placeholder: 'TextInput2 bind CustomKeyboardBuilder2',
           controller: this.controller2,
           text: this.inputValue2
-        })// 绑定自定义键盘
+        }) // 绑定自定义键盘
           .customKeyboard(this.CustomKeyboardBuilder2(), { supportAvoidance: this.supportAvoidance })
           .margin(10)
           .border({ width: 1 })
@@ -4234,7 +4234,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/eHZOPGKvShO3Qvim5Odl2w/zh-cn_image_0000002717612388.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/6hfdeiMGSNqEr4JpFwvMfA/zh-cn_image_0000002723856594.gif)
 
 ## getPageRootNode24+
 
@@ -4387,7 +4387,7 @@ export struct PageThree {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/rM4BK7nuR7a0CqbRZ_GAuA/zh-cn_image_0000002747292341.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/rLxiu5EBRGC28InRZYF-HQ/zh-cn_image_0000002723696676.jpg)
 
 ## isEasySplit24+
 

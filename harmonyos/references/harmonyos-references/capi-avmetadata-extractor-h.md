@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: avmetadata_extractor.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avmetadata_extractor.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9c5d5b3f04827827fbe53a62a70792abfed8f2a8ccea3a623c352d20fe43a25c
+scraped_at: 2026-09-15T07:08:12+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:4555a43cfe26f1a4468e4984e0a250d5f516ee2533c3adef0ef11d41fbcc034b
 ---
 
 ## 概述
@@ -171,7 +171,7 @@ OH_AVErrCode OH_AVMetadataExtractor_FetchFramesByTimes(OH_AVMetadataExtractor *e
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVMetadataExtractor](capi-avmetadataextractor-oh-avmetadataextractor.md) \*extractor | 指向OH\_AVMetadataExtractor实例的指针。 |
-| int64\_t timesUs[] | 从视频源提取图像时的时间点数组（单位：微秒）。 |
+| int64\_t timesUs[] | 从视频源提取图像时的时间点数组，单位为微秒（μs）。 |
 | uint16\_t timesUsSize | 输入时间点数组的长度。 |
 | [OH\_AVMedia\_SeekMode](capi-avmedia-base-h.md#oh_avmedia_seekmode) seekMode | 定义每个给定时间与关键帧之间关系的跳转选项，详见[OH\_AVMedia\_SeekMode](capi-avmedia-base-h.md#oh_avmedia_seekmode)。 |
 | [const OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)\* outputParam | 图像的输出参数，例如图像的高度或者宽度。详见[OH\_AVMetadataExtractor\_OutputParam](capi-avmetadataextractor-oh-avmetadataextractor-outputparam.md)。若该参数为空指针，则获取的帧使用视频原始尺寸。 |

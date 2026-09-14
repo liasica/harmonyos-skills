@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-build-exp
 title: 扩展构建能力
 breadcrumb: 指南 > 构建应用 > 扩展构建能力
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:57:21+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:51+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:116597184338d39c4faafef264f0fe3ad9b2b0dfbc6fea7efa2529dd8dbeefca
 ---
 

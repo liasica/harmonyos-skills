@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-interacti
 title: 地图交互
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:44+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:49+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3b604c7390f758bad02ed50995654d6ff8c17ce75367b664b1c0c0488603c5ca
 ---
 

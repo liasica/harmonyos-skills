@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 扩展能力
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力
 category: harmonyos-references
-scraped_at: 2026-04-28T08:16:14+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:08:44+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f27507c84a095c72a3376c22153eebaa216076121c2d9d983891f12cc5757aeb
 ---
 

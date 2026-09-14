@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-service
 title: 常见分享场景
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:01+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fd955a6f495b119bc6febf5c1d27319b621e5b508e50f0caec2ecc03738e960d
 ---
 

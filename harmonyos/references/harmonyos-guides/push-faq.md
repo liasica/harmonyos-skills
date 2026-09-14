@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-faq
 title: Push Kit常见问题
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:31+08:00
-doc_updated_at: 2026-07-03
+scraped_at: 2026-09-15T07:02:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:86744ea24edd48606a89891b2dc40d69183fc463568c152d75bbe6d87ca6e242
 ---
 

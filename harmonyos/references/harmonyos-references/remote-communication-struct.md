@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-co
 title: 结构体
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:23+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:06:54+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0b1ddfe36709bbbea217337f8145caf57d392bf29f3f8ea504b1463d43fd483e
 ---
 

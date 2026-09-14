@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/store-ark
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > AppGallery Kit（应用市场服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:15+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:08:45+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d18753822b4beae157b4ce3db254d163202138fc98699bda940cd1b35785a069
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-lis
 title: 列表
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 列表
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:41:56+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:43+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:88afe4e11f6784f5ea44638372c7fe28894de19a607675a45cc96e1da96d25cb
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/backgroun
 title: 错误码
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:39+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:05:57+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:5886c93f3835769c7b505ae9a959fc00cace49f68198fa9706ce0810690ab07d
 ---
 

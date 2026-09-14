@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 列表选择弹窗 (ActionSheet)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 列表选择弹窗 (ActionSheet)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e794bea73602819ee89c2750201b77e6b4b0c8d7a67083adb2e5981605347f6c
+scraped_at: 2026-09-15T07:05:09+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:d74ffe5e8665f79189f8f2f1ef8c4e1eeaf2104467ee0f8cf75b8a8bcfef50bf
 ---
 
 用于显示列表选择项的弹窗组件。
@@ -259,7 +259,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/a0Z34f1aTHuXwdEjm-M9IQ/zh-cn_image_0000002717772992.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/5PP9gynYSZqZ-mvV_ju81A/zh-cn_image_0000002753297115.gif)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
@@ -331,7 +331,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/xHDMXWirRXupnj0iksgvUQ/zh-cn_image_0000002717613060.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/mBVAt5TPQxOUE0eNx4uCzg/zh-cn_image_0000002753457033.jpg)
 
 ### 示例3（设置弹窗的动画）
 
@@ -393,7 +393,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Zs5DYIDjSrqEccCu08m7ow/zh-cn_image_0000002747293013.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/C5z7ZESmSTqylF95m92Mqg/zh-cn_image_0000002723857268.gif)
 
 ### 示例4（设置弹窗的样式）
 
@@ -475,7 +475,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/na1UD1s-R-SIyUqPkmTqEQ/zh-cn_image_0000002747212929.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/STFgCKo_TLuJmG07LYvPeQ/zh-cn_image_0000002723697350.gif)
 
 ### 示例5（悬停态弹窗）
 
@@ -547,7 +547,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/GdBFozEAR_2LrPwpualEWA/zh-cn_image_0000002717772994.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/wFibDHKkSuqhS1fh_qGIPA/zh-cn_image_0000002753297117.gif)
 
 ### 示例6（弹窗生命周期）
 
@@ -625,7 +625,7 @@ struct Example1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/VxZ2idJJRkyczSCs6aOubQ/zh-cn_image_0000002717613062.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/zVIYhwWSRm6qaV9gUqrtTg/zh-cn_image_0000002753457035.gif)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -685,7 +685,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/CG-PDGH4QZSgc6EjCulTcQ/zh-cn_image_0000002747293015.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/YsNyBjCITIiWCnWdwh5d6Q/zh-cn_image_0000002723857270.png)
 
 ### 示例8（自定义背景效果参数）
 
@@ -746,13 +746,13 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/GRdEnJ0hTJ2rnlqYnA1saQ/zh-cn_image_0000002747212931.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/hyHH9VaVQdmQBr-nxNmyVQ/zh-cn_image_0000002723697352.png)
 
 ### 示例9（设置弹窗的沉浸光感效果）
 
-该示例通过[ActionSheetOptions](ts-methods-action-sheet.md#actionsheetoptions对象说明)中的systemMaterial属性设置组件的系统材质，实现沉浸光感效果。
+该示例通过[ActionSheetOptions](ts-methods-action-sheet.md#actionsheetoptions对象说明)中的systemMaterial属性设置组件的系统材质，实现沉浸光感效果。设置系统材质后，ActionSheet弹出过程中会有非线性形变和边缘流光。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在[ActionSheetOptions](ts-methods-action-sheet.md#actionsheetoptions对象说明)中新增了systemMaterial属性。
 
@@ -809,8 +809,8 @@ struct ActionSheetExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/QAd3yjJ9Ti6XhuDznx4BEw/zh-cn_image_0000002717772996.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/d98Tr5CDQWS2IscBp0u6BA/zh-cn_image_0000002753297119.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5A493L0VSxGw-pNjqXQA7w/zh-cn_image_0000002717613064.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/x_oKiEr7SYmgfHO1VmCb_w/zh-cn_image_0000002753457037.gif)

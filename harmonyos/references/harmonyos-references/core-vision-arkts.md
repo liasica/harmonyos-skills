@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: ArkTS API
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:33+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:09:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:36ccd60aaf33f12bbbda328e3968eb575dd660b76f1f98bc27d334e6315d3d9d
 ---
 

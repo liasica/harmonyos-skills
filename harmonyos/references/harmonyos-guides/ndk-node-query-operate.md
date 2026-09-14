@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-node-quer
 title: 查询和操作NDK节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 查询和操作NDK节点
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2b3f5080a54cf2bcaf893034273d7e2ae3ef7c802eb7b26759a2eacb2028160d
+scraped_at: 2026-09-15T07:01:31+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:cb47c082298553a617099fa8870c0e458c7bb2590b372d7f9a5dee45cde378ef
 ---
 
 NDK提供一系列节点查询、遍历、操作能力，通过使用以下接口，开发者可以高效地访问和操控节点。
@@ -476,7 +476,7 @@ const unsigned int VALUE_3 = 50;
    ```
 4. 运行程序，点击按钮，Stack节点会移动到目标位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/ZnyChFOHRCufRsgiVNkGKw/zh-cn_image_0000002747290715.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/AgbKvkxiQFOUSHJmBdtWMA/zh-cn_image_0000002723695052.gif)
 
 ## 在当前即时帧触发节点属性更新
 
@@ -668,7 +668,7 @@ const unsigned int VALUE_3 = 50;
    ```
 4. 运行程序，点击按钮，切换图片正常展示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Y4ku8_m9TYSt7hZoyjVqxw/zh-cn_image_0000002747210633.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/wZ-5OuFYRDe4qy5NkZob6A/zh-cn_image_0000002753294819.png)
 
 ## 用不同的展开模式获取对应下标的子节点
 
@@ -1136,4 +1136,4 @@ NDK支持通过不同的展开方式获取目标节点下的有效节点信息�
    ```
 4. 运行程序，点击change text visibility后打印text是否在渲染树上。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KC6IPxi4SxqB3Q00dPB6tw/zh-cn_image_0000002717770698.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/GhBWkBGdQ6S1UYS3RuwoHw/zh-cn_image_0000002753454737.png)

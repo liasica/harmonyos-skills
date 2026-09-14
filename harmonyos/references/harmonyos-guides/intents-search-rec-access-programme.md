@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-searc
 title: 接入方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 本地搜索方案 > 接入方案
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:42+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:24+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e6715d7e27c356cc9dcc442883b67232acd70fc85f6060904f499ecbb19f5e54
 ---
 

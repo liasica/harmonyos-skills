@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avre
 title: avrecorder.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avrecorder.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:72f6bce0423bfa21ff4ad45e4b252e53315c3612e0186cf8f45b5b2b62974a19
+scraped_at: 2026-09-15T07:08:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:40d7a44bd032eb67c25568ca43f4ed862f86d9fd13be0cefe28684654821c391
 ---
 
 ## 概述
@@ -505,7 +505,7 @@ OH_AVErrCode OH_AVRecorder_SetWillMuteWhenInterrupted(OH_AVRecorder *recorder, b
 ### OH\_AVRecorder\_GetAudioCapturerMaxAmplitude()
 
 ```c
-OH_AVErrCode OH_AVRecorder_GetAudioCapturerMaxAmplitude(OH_AVRecorder *recorder, int32_t *amplitude)
+OH_AVErrCode OH_AVRecorder_GetAudioCapturerMaxAmplitude(OH_AVRecorder *recorder, int32_t* amplitude)
 ```
 
 **描述**
@@ -521,7 +521,7 @@ OH_AVErrCode OH_AVRecorder_GetAudioCapturerMaxAmplitude(OH_AVRecorder *recorder,
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVRecorder](capi-avrecorder-oh-avrecorder.md) \*recorder | 指向OH\_AVRecorder实例的指针。 |
-| int32\_t \*amplitude | 输出参数，用于返回获取到的音频最大振幅值，表示最近两次调用之间音频信号的最大振幅。不可为nullptr，否则返回AV\_ERR\_INVALID\_VAL。 |
+| int32\_t\* amplitude | 输出参数，用于返回获取到的音频最大振幅值，表示最近两次调用之间音频信号的最大振幅。不可为nullptr，否则返回AV\_ERR\_INVALID\_VAL。 |
 
 **返回：**
 

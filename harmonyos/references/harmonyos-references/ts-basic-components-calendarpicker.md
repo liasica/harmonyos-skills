@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: CalendarPicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > CalendarPicker
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:25+08:00
+scraped_at: 2026-09-15T07:04:55+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:dee37aa96c0d25dc1f20b97fcb835a450b4f8d86c078bb16a69cf9d6c83b2fae
+content_hash: sha256:647b6e4908958c6b50a45515ef8d9eeb75b62fe9dde9be3517f72757181c46dc
 ---
 
 日历选择器组件，提供下拉日历弹窗，用户可快速选择日期。适用于需要用户选择具体日期的场景，如预订系统、日程安排、日期筛选等，提供直观的日历视图，提升用户日期输入体验。
@@ -271,7 +271,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/JaHeJTymSz2xKrDbhHEgRw/zh-cn_image_0000002747292677.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/LuKUDz0BSZafgTFylR-aZg/zh-cn_image_0000002723697012.gif)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -304,7 +304,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/FkHZlnJmRZClmlDQsjOB5A/zh-cn_image_0000002747212593.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/37SvFlzPRm6b2mWoGqzxcA/zh-cn_image_0000002753296779.png)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -338,4 +338,4 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/HrIGDlOKRJWRfr0GQrc1ww/zh-cn_image_0000002717772658.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/EYg_e3xbT6SZHNBkFj_fkA/zh-cn_image_0000002753456697.gif)

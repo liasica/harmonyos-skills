@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-cross-dev
 title: 一次开发多端部署规则@cross-device-app-dev
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:56:21+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:42+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:af00f61c5ff05c25152ca9b3b7324b771e8d3e98e217d2542c5f9d4d5c2546f3
 ---
 

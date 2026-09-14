@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/weather-servi
 title: Weather Service Kit（天气服务）
 breadcrumb: 指南 > 应用服务 > Weather Service Kit（天气服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:12+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:03:01+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fc02b037ad5474e87d36382e74eaeb20496f1f8378cda5abe8b16eb71bbc24c8
 ---
 

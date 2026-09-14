@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.uri (URI字符串解析)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.uri (URI字符串解析)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:45+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:782d68890aed146a05e51ba45f4d74aee8f8c9a660698224a0624cc46a5ffdb3
+scraped_at: 2026-09-15T07:04:28+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:0b7cbe0c0ea40fa56088811fbf0af08c12101bf547592fdd608ad0e7564e980f
 ---
 
 本模块提供URI字符串解析功能，支持URI各组成部分（协议、主机、端口、路径、查询参数和片段等）的提取与设置，以及URI编码/解码、比较判断、路径规范化和查询参数操作等能力。
@@ -261,9 +261,8 @@ normalize(): URI
 
 如果此URI是不透明的，或者其路径已经是规范形式，则返回该URI。否则将构造一个新的URI，该URI与当前URI相同，唯一的区别是其路径通过规范化当前URI的路径来计算，具体规则如下：
 
-1.移除所有的 .（点）段。
-
-2.如果 ..（双点）段前面有一个非 .. 段，则将这两个段一起移除。重复此步骤，直到不再适用为止。
+1. 移除所有的 .（点）段。
+2. 如果 ..（双点）段前面有一个非 .. 段，则将这两个段一起移除。重复此步骤，直到不再适用为止。
 
 如果路径规范化后以 ..（双点）段开头，这表明之前没有足够的非 .. 段可以移除，因此路径将以 .. 段开始。
 

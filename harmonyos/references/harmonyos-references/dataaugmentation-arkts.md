@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: ArkTS API
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:00+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:06:03+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3348af44b983a2a77d9a81c37f721e32efa60bc03caa6b757bd863ec145892d4
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.advertising (广告服务框架)"
 breadcrumb: API参考 > 应用服务 > Ads Kit（广告服务） > ArkTS API > @ohos.advertising (广告服务框架)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9076aa4efeda6a0effbf609ac80ead4b0696f0387a663ef1ff978e8fd26f33f1
+scraped_at: 2026-09-15T07:08:45+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:2457a1c6147d51c250e97cd5f6cf57f6de64fbb213fe2073834f83f4787f3134
 ---
 
 本模块提供广告操作能力，包括请求广告、展示广告。
@@ -44,7 +44,7 @@ showAd(ad: Advertisement, options: AdDisplayOptions, context?: common.UIAbilityC
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid input parameter. Possible causes:  1. Mandatory parameters are left unspecified. |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified. |
 | 21800001 | System internal error. |
 | 21800004 | Failed to display the ad. |
 
@@ -96,8 +96,8 @@ getAdRequestBody(adParams: AdRequestParams[], adOptions: AdOptions): Promise<str
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid input parameter. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
-| 801 | Device not supported. |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
+| 801 | Capability not supported. |
 | 21800001 | System internal error. |
 
 **示例：**
@@ -140,8 +140,8 @@ parseAdResponse(adResponse: string, listener: MultiSlotsAdLoadListener, context:
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid input parameter. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
-| 801 | Device not supported. |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
+| 801 | Capability not supported. |
 | 21800001 | System internal error. |
 | 21800005 | Failed to parse the ad response. |
 
@@ -195,7 +195,7 @@ registerWebAdInterface(controller: web\_webview.WebviewController, context: comm
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid input parameter. Possible causes:  1. Mandatory parameters are left unspecified. |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified. |
 | 21800001 | System internal error. |
 
 **示例：**
@@ -251,7 +251,7 @@ registerWebAdInterface(controller: web\_webview.WebviewController, context: comm
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid input parameter. Possible causes: Mandatory parameters are left unspecified. |
+| 401 | Parameter error. Possible causes: Mandatory parameters are left unspecified. |
 | 21800001 | System internal error. |
 
 **示例：**
@@ -306,7 +306,7 @@ deleteWebAdInterface(controller: web\_webview.WebviewController, needRefresh: bo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid input parameter. Possible causes: Mandatory parameters are left unspecified. |
+| 401 | Parameter error. Possible causes: Mandatory parameters are left unspecified. |
 | 21800001 | System internal error. |
 
 **示例：**
@@ -397,8 +397,8 @@ loadAd(adParam: AdRequestParams, adOptions: AdOptions, listener: AdLoadListener)
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid input parameter. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
-| 801 | Device not supported.  适用版本：12+ |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
+| 801 | Capability not supported.  适用版本：12+ |
 | 21800001 | System internal error. |
 | 21800003 | Failed to load the ad request. |
 
@@ -457,8 +457,8 @@ loadAdWithMultiSlots(adParams: AdRequestParams[], adOptions: AdOptions, listener
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid input parameter. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
-| 801 | Device not supported.  适用版本：12+ |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
+| 801 | Capability not supported.  适用版本：12+ |
 | 21800001 | System internal error. |
 | 21800003 | Failed to load the ad request. |
 

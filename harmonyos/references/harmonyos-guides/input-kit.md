@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/input-kit
 title: Input Kit（多模输入服务）
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:33+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-09-15T07:02:04+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:54ad2a52fa04ad376e263ad04bfca90dd1f39d4f6cc8ac00cf1cea4c549a10fc
 ---
 

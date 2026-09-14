@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map
 title: map（地图显示功能）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:21+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:08:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:94046be4951cd09eea9ee4e4b58c6a55d18995cba19cbbd846ac12b9e246de65
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-ge-op
 title: Operator
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > ge命名空间 > Operator
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:52:38+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:17+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d6c8fd2ce9ce507742a5682ab9d8d1a22bb3625fd6fbc6ffd48fe1c55c54c144
 ---
 

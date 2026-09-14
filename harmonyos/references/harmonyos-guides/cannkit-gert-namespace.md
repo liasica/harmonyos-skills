@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-gert-
 title: gert命名空间
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > 基础数据结构和接口 > gert命名空间
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:47+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:09+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e73954c174104fb94fcc300d55b6241a8abcd7aa557bd6623f51d64ff2cc4b13
 ---
 

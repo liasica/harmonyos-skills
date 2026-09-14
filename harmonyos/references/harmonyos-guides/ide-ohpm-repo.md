@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo私仓搭建工具
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:48+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:31+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:97e7b554aaa9b0ec92e2e3b416004571ad030fa39847fb791d9615faeecbd094
 ---
 

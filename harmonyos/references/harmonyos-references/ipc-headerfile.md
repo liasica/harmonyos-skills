@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ipc-heade
 title: 头文件
 breadcrumb: API参考 > 应用框架 > IPC Kit（进程间通信服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:21+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:06:08+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:93500bc7e2fc117c2784dbda93691b3ef4624e8e0442a8b79d731b6d14aaa874
 ---
 

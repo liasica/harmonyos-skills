@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/localizat
 title: 错误码
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > 错误码
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:39+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:06:13+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d2d8fb403c6291fb82381d9c330c332e62fa3c7642463cf3ae8af22e318b22c1
 ---
 

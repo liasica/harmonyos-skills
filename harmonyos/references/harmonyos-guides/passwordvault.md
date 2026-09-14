@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault
 title: 密码自动填充服务
 breadcrumb: 指南 > 系统 > 安全 > 密码自动填充服务
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:17:14+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:44+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:bca593c22c305e40355d41f0a19ee52a7e752aa4622ebd8ad13baee9c1e17325
 ---
 

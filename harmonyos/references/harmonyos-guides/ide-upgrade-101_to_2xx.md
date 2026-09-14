@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-upgrade-1
 title: 1.0.1升级至2.X.X/5.X.X版本
 breadcrumb: 指南 > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 版本升级 > 1.0.1升级至2.X.X/5.X.X版本
 category: harmonyos-guides
-scraped_at: 2026-09-09T06:30:17+08:00
+scraped_at: 2026-09-15T07:03:32+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:11925deea522b50ec7304374ec4e4657b664dd554ce07eee9aa641d8f0e0dfe8
+content_hash: sha256:f6986055e5a20cce93b1b261920448502af61847be2c7a7564b0ab8f8f81f102
 ---
 
 升级至2.X.X版本与升级至5.X.X版本步骤一致，本文以升级至2.X.X版本为例。
@@ -26,7 +26,7 @@ content_hash: sha256:11925deea522b50ec7304374ec4e4657b664dd554ce07eee9aa641d8f0e
 
 2. 下载并解压工具包：下载版本2.X.X的ohpm-repo私仓工具包，并解压（请解压到一个空文件夹中）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/kRVjcwqsR9KWDi_GGN6Kcg/zh-cn_image_0000002731541603.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/BqVhesMcQ9y-oZi2ELgzwQ/zh-cn_image_0000002731541603.png)
 
 3. 安装完成之后，进入ohpm-repo 私仓工具包解压目录下的bin目录，执行如下命令：
 
@@ -155,7 +155,7 @@ content_hash: sha256:11925deea522b50ec7304374ec4e4657b664dd554ce07eee9aa641d8f0e
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/0zCNLCyyTkS5DEQ8SW0wqA/zh-cn_image_0000002731541597.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Jh6sAcA-QBCVHnvhR-9vcw/zh-cn_image_0000002731541597.png "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
 
      **说明** 
@@ -170,7 +170,7 @@ content_hash: sha256:11925deea522b50ec7304374ec4e4657b664dd554ce07eee9aa641d8f0e
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/-549OZeNQDCpkToHpuJ7TA/zh-cn_image_0000002731381631.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/duteoYQgQju_b3Sz7LHKpw/zh-cn_image_0000002731381631.png "点击放大")
 
      **说明** 
 

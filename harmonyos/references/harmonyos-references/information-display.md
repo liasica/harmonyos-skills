@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/informati
 title: 信息展示
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示
 category: harmonyos-references
-scraped_at: 2026-04-28T08:02:00+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:05:02+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:29a4d07ff63355735d9ec02d7259f049c048175c999b73013c987b1b780cb3a1
 ---
 

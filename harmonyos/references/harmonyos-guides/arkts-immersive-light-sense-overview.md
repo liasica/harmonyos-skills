@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感简介
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感简介
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f809cab103b78215f6edbd119348c14ca685a654c8d79ae0b381d58a42586f28
+scraped_at: 2026-09-15T07:01:26+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:f6748b3546639f01a9abb163d8f8099649643f557a7a8cff13adb45700cf951e
 ---
 
 从API版本26.0.0开始，ArkUI新增沉浸光感。
 
 沉浸光感是ArkUI提供的一套从“视觉层”到“感知层”的体验，将光影材质与交互动效表现相结合，帮助应用建立清晰的视觉层次，并在不同设备上保持和谐一致的观感。例如：用户展开菜单时，伴随着形变弹出打破生硬的规整边界，边缘流光勾勒着面板轮廓，将菜单的弹出操作转化为富有沉浸感的体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/mSWFC-HqTeuf2yk3JGQ28g/zh-cn_image_0000002717770506.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/75wKiWuDTGKrTMsJEPBtgg/zh-cn_image_0000002753454545.gif)
 
 沉浸光感包含[沉浸式系统材质](arkts-immersive-light-sense-overview.md#沉浸式系统材质)与[沉浸式空间动效](arkts-immersive-light-sense-overview.md#沉浸式空间动效)两部分能力，前者为组件赋予轻盈通透的质感、在内容之上建立清晰的视觉层次，后者为弹窗和菜单的弹出过程增添灵动自然的动态表现。
 
@@ -46,13 +46,15 @@ content_hash: sha256:f809cab103b78215f6edbd119348c14ca685a654c8d79ae0b381d58a425
 | 边缘流光 | 流光塑造视觉焦点与层级秩序，依靠光流走向引导用户的视线流转。 | AlertDialog，具体示例请参考[示例9（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-alert-dialog-box.md#示例9设置弹窗的沉浸光感效果)。  CustomDialog，具体示例请参考[示例14（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-custom-dialog-box.md#示例14设置弹窗的沉浸光感效果)。  ActionSheet，具体示例请参考[示例9（设置弹窗的沉浸光感效果）](../harmonyos-references/ts-methods-action-sheet.md#示例9设置弹窗的沉浸光感效果)。  菜单控制，具体示例请参考[示例24（设置菜单的沉浸光感）](../harmonyos-references/ts-universal-attributes-menu.md#示例24设置菜单的沉浸光感)。 |
 | 粒子动画 | 粒子承载信息具象表达，以粒子光点传递信息变化。 | Slider，具体示例请参考[示例10（设置滑动条的沉浸光感效果）](../harmonyos-references/ts-basic-components-slider.md#示例10设置滑动条的沉浸光感效果)。 |
 
-### 约束与限制
+## 约束与限制
 
 沉浸光感生效范围请参考[开启沉浸光感](arkts-immersive-light-sense-enable.md)。
 
 沉浸光感开启后，
 
-* 弹窗类组件（AlertDialog、ActionSheet、CustomDialog、CalendarPickerDialog、DatePickerDialog、TimePickerDialog、TextPickerDialog、SelectionMenu、AlphabetIndexer弹窗、Text设置copyOption后长按或双击触发的文本菜单）和弹窗类接口（PromptAction、ArkUI\_NativeDialog、@ohos.promptAction (弹窗)、Popup控制、Tips控制、菜单控制、半模态转场）以及按钮与选择类组件（Slider、Toggle、Select）可在页面内全部区域生效。
+* 指定弹窗类组件（[AlertDialog](../harmonyos-references/ts-methods-alert-dialog-box.md)、[ActionSheet](../harmonyos-references/ts-methods-action-sheet.md)、[CustomDialog](../harmonyos-references/ts-methods-custom-dialog-box.md)、[CalendarPickerDialog](../harmonyos-references/ts-methods-calendarpicker-dialog.md)、[DatePickerDialog](../harmonyos-references/ts-methods-datepicker-dialog.md)、[TimePickerDialog](../harmonyos-references/ts-methods-timepicker-dialog.md)、[TextPickerDialog](../harmonyos-references/ts-methods-textpicker-dialog.md)、[SelectionMenu](../harmonyos-references/ohos-arkui-advanced-selectionmenu.md)、[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)弹窗、[Text](../harmonyos-references/ts-basic-components-text.md)设置[copyOption](../harmonyos-references/ts-basic-components-text.md#copyoption9)后长按或双击触发的文本菜单）的沉浸光感效果可在全页面生效。
+* 指定弹窗类接口（[PromptAction](../harmonyos-references/arkts-apis-uicontext-promptaction.md)、[ArkUI\_NativeDialog](../harmonyos-references/capi-arkui-nativemodule-arkui-nativedialog.md)、[@ohos.promptAction (弹窗)](../harmonyos-references/js-apis-promptaction.md)、[Popup控制](../harmonyos-references/ts-universal-attributes-popup.md)、[Tips控制](../harmonyos-references/ts-universal-attributes-tips.md)、[菜单控制](../harmonyos-references/ts-universal-attributes-menu.md)、[半模态转场](../harmonyos-references/ts-universal-attributes-sheet-transition.md)）的沉浸光感效果可在全页面生效。
+* [Slider](../harmonyos-references/ts-basic-components-slider.md)、[Toggle](../harmonyos-references/ts-basic-components-toggle.md)、[Select](../harmonyos-references/ts-basic-components-select.md)的沉浸光感效果可在全页面生效。
 * 其他组件仅在Navigation/NavDestination标题栏或横向Tab中barPosition为BarPosition.End的底部TabBar中生效。在其他区域中设置沉浸光感效果不生效。
 
 ## 与相关Kit的关系

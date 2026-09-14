@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用扩展的Node-API接口创建和销毁临界区作用域及访问字符串内容
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口创建和销毁临界区作用域及访问字符串内容
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9b0a5d7f9693a6a5f23fdc37f5ab829607b4595d9c5b6c58f06b5d50cd1191e4
+scraped_at: 2026-09-15T07:03:28+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:08663abb6c11cbab487366317aae3b345f4997be8f79b9f8969cf3acfbdae43a
 ---
 
 Node-API扩展接口napi\_open\_critical\_scope用于打开临界区作用域，napi\_close\_critical\_scope用于关闭临界区作用域。
@@ -30,9 +30,8 @@ Node-API扩展接口napi\_open\_critical\_scope用于打开临界区作用域，
 
 **注意** 
 
-1.当ArkTS String以UTF-16编码存储时，napi\_get\_buffer\_string\_utf16\_in\_critical\_scope才能正确获取其内存缓冲区，否则该函数返回错误。
-
-2.napi\_create\_string\_utf16和napi\_create\_string\_utf8的功能是将输入数据以指定编码传递给虚拟机。这些函数不控制字符串在虚拟机的内部存储编码方式。
+1. 当ArkTS String以UTF-16编码存储时，napi\_get\_buffer\_string\_utf16\_in\_critical\_scope才能正确获取其内存缓冲区，否则该函数返回错误。
+2. napi\_create\_string\_utf16和napi\_create\_string\_utf8的功能是将输入数据以指定编码传递给虚拟机。这些函数不控制字符串在虚拟机的内部存储编码方式。
 
 ## 示例代码
 

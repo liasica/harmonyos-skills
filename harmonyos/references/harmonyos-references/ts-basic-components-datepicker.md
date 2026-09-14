@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:25+08:00
+scraped_at: 2026-09-15T07:04:56+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0c9dfb1083e81ad4faf9ad9f833393feaec8b73fd51588cecea56e288969f56f
+content_hash: sha256:b1a5fee43a2587b00715f0ca58996494b79b8d6afd5333fba228c3aacf224a47
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/rw63p2jSTq-seCeHTOBFdg/zh-cn_image_0000002717612726.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/mFr-Of7URLG-v-IRPjUyCw/zh-cn_image_0000002723856932.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Lu_bhMQ1SbiLrJMjJX8Q2Q/zh-cn_image_0000002747292679.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/fToYv-nlQ8Cxj-nxkwK2wA/zh-cn_image_0000002723697014.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/usTVpSuLTNOTZhtKcboBgA/zh-cn_image_0000002747212595.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/QRQid26pTzyI3cMF5ufqGA/zh-cn_image_0000002753296781.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/QRdtplQTSiqY4Ahcxfxfdg/zh-cn_image_0000002717772660.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ts1gYrmiQ8uLorPrxoXCPw/zh-cn_image_0000002753456699.gif)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/location-
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:03+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:08:57+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c969e178fe9f00a743448ae590f1f1e50a4593d76b4a2a710e560a31f2a40c59
 ---
 

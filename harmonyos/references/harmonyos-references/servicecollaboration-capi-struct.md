@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/serviceco
 title: 结构体
 breadcrumb: API参考 > 系统 > 网络 > Service Collaboration Kit（协同服务） > C API > 头文件和结构体 > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:16+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:06:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fd175b38594335ffe07ee003d7bd0eee63557c4be91577979330e6cbef2adcaf
 ---
 

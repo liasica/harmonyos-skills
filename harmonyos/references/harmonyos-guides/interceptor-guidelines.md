@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/interceptor-g
 title: 事件拦截开发指导（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 事件拦截开发指导（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d4b49767195692f95f8a9244d1a300241a2a36af001fef4957646eb316650725
+scraped_at: 2026-09-15T07:02:04+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:1d99228c589bba943aee0dd94a34a446e8862a169fc6dc6a4972857d2ba2d3dc
 ---
 
 ## 功能介绍
@@ -27,7 +27,7 @@ content_hash: sha256:d4b49767195692f95f8a9244d1a300241a2a36af001fef4957646eb3166
 
 ### 链接动态库
 
-调用创建和删除事件拦截前，需链接相关动态库。链接动态库的方法是，在CMakeList.txt文件中做下面例子所示的配置：
+调用创建和删除事件拦截前，需链接相关动态库。链接动态库的方法是，在CMakeLists.txt文件中做下面例子所示的配置：
 
 ```txt
 target_link_libraries(entry PUBLIC libohinput.so)

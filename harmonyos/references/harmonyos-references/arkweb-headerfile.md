@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkweb-he
 title: 头文件
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:05:24+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:05:54+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:79951fe31f6190c4304421566e5597400cefa2c0d8fad6d9e9cd535b6e85c186
 ---
 

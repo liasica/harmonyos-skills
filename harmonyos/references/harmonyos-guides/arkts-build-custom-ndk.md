@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-build-c
 title: 使用自定义能力
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用自定义能力
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:52+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:30+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0fd344e691bf265b5270a432c8554405598ea402143e66beff2c1ee402e74352
 ---
 

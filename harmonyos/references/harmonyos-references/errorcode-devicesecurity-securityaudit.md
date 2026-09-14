@@ -3,50 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: SecurityAudit（安全审计）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > ArkTS API错误码 > SecurityAudit（安全审计）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b38085dc97e2e739b2851ec38a5af3a00f3e41ead04672c15b6ffadaaf77904d
+scraped_at: 2026-09-15T07:06:24+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:45e15318c7837a6de52f6bbef99da2d80c1c188ae3043f94784e9eae369a9161
 ---
 
 **说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参见[通用错误码](errorcode-universal.md)。
-
-## 201 权限校验失败
-
-**错误信息**
-
-check permission fail.
-
-**错误描述**
-
-权限校验失败。
-
-**可能原因**
-
-应用包未申请ohos.permission.QUERY\_AUDIT\_EVENT或ohos.permission.kernel.AUTH\_AUDIT\_EVENT权限。
-
-**处理步骤**
-
-只允许清单内的企业类应用申请该权限，申请方式请参考：[企业类应用可用权限](../harmonyos-guides/permissions-for-enterprise-apps.md)。
-
-## 401 参数检查失败
-
-**错误信息**
-
-Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
-
-**错误描述**
-
-参数检查失败。
-
-**可能原因**
-
-必选参数没有传入，或者参数类型、规格错误。
-
-**处理步骤**
-
-请检查必选参数是否没有传入，或者传的参数类型、规格是否错误。
 
 ## 1012000001 内部异常
 

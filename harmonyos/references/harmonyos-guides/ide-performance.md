@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-performan
 title: 性能规则@performance
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:55:58+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:03:40+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9d6c0fb7d95affd2d0e7c80464115af9ac89f25c6ee31828ac3b46344394741e
 ---
 

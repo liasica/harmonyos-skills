@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > DevEco Studio > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:32+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T06:59:56+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8bb9400eb703cd41c2cafdf50b6c3c4a826aaeba21cd3c67664f23b5f8fccc56
 ---
 

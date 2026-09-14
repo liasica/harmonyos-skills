@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-b
 title: 结构体
 breadcrumb: API参考 > 系统 > 网络 > Network Boost Kit（网络加速服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:50+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:06:53+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2b79931e852013fa8084e28494a6b14febe3038b5a584499181e2d73039c04aa
 ---
 

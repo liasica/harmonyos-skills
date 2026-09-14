@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkdata-s
 title: 结构体
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T07:59:35+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:04:21+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f8279eadb820b25e553afc5b204c94b9d0a93c39c3031dbd099e74e929f2ced3
 ---
 

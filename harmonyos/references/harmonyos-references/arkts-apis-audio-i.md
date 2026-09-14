@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:18+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c8ab28d5aed8ce5e806c82c77094bd992e1f007a3c5505f6ec86d741cf691a0e
+scraped_at: 2026-09-15T07:07:37+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:a6ea20cf40d06f3fb9892ebf226911545073ca06a613fcb37e500c9c63ec8eb8
 ---
 
 **说明** 
@@ -286,15 +286,21 @@ content_hash: sha256:c8ab28d5aed8ce5e806c82c77094bd992e1f007a3c5505f6ec86d741cf6
 
 **说明** 
 
-从API version 7开始支持，从API version 9开始废弃，无替代接口。
+从API version 7开始支持，从API version 9开始废弃。
+
+申请音频焦点时，建议使用[AudioRendererOptions](arkts-apis-audio-i.md#audiorendereroptions8).rendererInfo替代，[StreamUsage](arkts-apis-audio-e.md#streamusage)决定音频流的焦点策略。
+
+建议使用[on('audioInterrupt')](arkts-apis-audio-audiorenderer.md#onaudiointerrupt9)接口监听音频焦点事件[InterruptEvent](arkts-apis-audio-i.md#interruptevent9)，替代音频中断事件。
+
+使用已废弃的接口[on('interrupt')](arkts-apis-audio-audiomanager.md#oninterruptdeprecated)不会打断新机制的音频流，也不会收到焦点中断事件。
 
 **系统能力：** SystemCapability.Multimedia.Audio.Renderer
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| streamUsage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 否 | 否 | 音频流使用类型。 |
-| contentType | [ContentType](arkts-apis-audio-e.md#contenttypedeprecated) | 否 | 否 | 音频打断媒体类型。 |
-| pauseWhenDucked | boolean | 否 | 否 | 音频打断时是否可以暂停音频播放。true表示音频播放可以在音频打断期间暂停，false表示音频播放不可以在音频打断期间暂停。 |
+| streamUsage | [StreamUsage](arkts-apis-audio-e.md#streamusage) | 否 | 否 | 音频流使用类型。  **说明：** 从API version 7开始支持，从API version 9开始废弃，建议使用[AudioRendererOptions](arkts-apis-audio-i.md#audiorendereroptions8).rendererInfo替代。 |
+| contentType | [ContentType](arkts-apis-audio-e.md#contenttypedeprecated) | 否 | 否 | 音频打断媒体类型。  **说明：** 从API version 7开始支持，从API version 9开始废弃，建议使用[AudioRendererOptions](arkts-apis-audio-i.md#audiorendereroptions8).rendererInfo替代。 |
+| pauseWhenDucked | boolean | 否 | 否 | 音频打断时是否可以暂停音频播放。true表示音频播放可以在音频打断期间暂停，false表示音频播放不可以在音频打断期间暂停。  **说明：** 从API version 7开始支持，从API version 9开始废弃，建议使用[InterruptEvent](arkts-apis-audio-i.md#interruptevent9).hintType替代。 |
 
 ## CaptureFilterOptions(deprecated)
 

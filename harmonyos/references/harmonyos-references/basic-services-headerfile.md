@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/basic-ser
 title: 头文件
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:47+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:07:08+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e65b82cd18e317e62bfd6045fe2ed1b9ab9919ce6cdecaf4a2f60c86dffda676
 ---
 

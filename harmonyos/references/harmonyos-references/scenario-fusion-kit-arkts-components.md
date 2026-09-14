@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-
 title: ArkTS组件
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS组件
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:31+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:09:19+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:166fae3bcf9282c43e1f0c2647fccddc4440c529e98ed917ffc8f077cf0f0dad
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Chip
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Chip
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d750f28883810a08820c1acbc2ad11b08a7d55287a78b9e46abfcb95ac4d4313
+scraped_at: 2026-09-15T07:05:12+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:3f368f38c25f28aa8728dd3dddc298b9ef60aa7938e6ae731fe1bdc120b3385d
 ---
 
 Chip组件用于标签展示和交互场景，支持自定义样式、图标、激活态等功能，适用于搜索框历史记录、邮件发送列表等场景，可快速实现标签的创建、删除和交互能力。
@@ -67,8 +67,8 @@ ChipOptions定义Chip的样式及具体样式参数。
 | suffixSymbolOptions14+ | [ChipSuffixSymbolGlyphOptions](ohos-arkui-advanced-chip.md#chipsuffixsymbolglyphoptions14) | 否 | 是 | symbol类型后缀图标的无障碍朗读功能属性及点击事件回调等。  默认值：不设置对应属性。  值为undefined时，按默认值处理。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | backgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Chip背景颜色。  默认值：$r('sys.color.ohos\_id\_color\_button\_normal')。  值为undefined时，按默认值处理。赋值为非法值时，背景颜色透明。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | activatedBackgroundColor12+ | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | Chip激活态的背景颜色。  默认值：$r('sys.color.ohos\_id\_color\_emphasize')。  值为undefined时，按默认值处理。赋值为非法值时，背景颜色透明。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。适用于需要实现沉浸式背景效果、半透明磨砂效果等场景。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)等视觉属性。  默认值：undefined  值为undefined时，不应用材质样式。  **说明**：当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突；当backgroundSystemMaterial为undefined时，backgroundColor属性生效。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| activatedBackgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。适用于需要激活状态下保持或切换材质效果的交互场景，如标签选中、状态切换等。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)等视觉属性。  默认值：undefined  值为undefined时，不应用材质样式。  **说明**：当设置activatedBackgroundSystemMaterial时，应将activatedBackgroundColor设为Color.Transparent，否则会与系统材质冲突；当activatedBackgroundSystemMaterial为undefined时，activatedBackgroundColor属性生效。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。适用于需要实现沉浸式背景效果、半透明磨砂效果等场景。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)等视觉属性。  默认值：undefined  值为undefined时，不应用材质样式。  **说明**：当设置backgroundSystemMaterial时，应将backgroundColor设为Color.Transparent，否则会与系统材质冲突；当backgroundSystemMaterial为undefined时，backgroundColor属性生效。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| activatedBackgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。适用于需要激活状态下保持或切换材质效果的交互场景，如标签选中、状态切换等。不同材质具有不同的效果，能够影响组件的[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、[border](ts-universal-attributes-border.md#border)、[shadow](ts-universal-attributes-image-effect.md#shadow)等视觉属性。  默认值：undefined  值为undefined时，不应用材质样式。  **说明**：当设置activatedBackgroundSystemMaterial时，应将activatedBackgroundColor设为Color.Transparent，否则会与系统材质冲突；当activatedBackgroundSystemMaterial为undefined时，activatedBackgroundColor属性生效。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | borderRadius | [Dimension](ts-types.md#dimension10) | 否 | 是 | Chip背景圆角半径大小，不支持百分比，传入百分比时按默认值处理。  取值范围：[0, +∞)  默认值：$r('sys.float.ohos\_id\_corner\_radius\_button')。  单位：vp  值为undefined时，按默认值处理。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | allowClose | boolean | 否 | 是 | 关闭图标是否显示。  默认值：true  true：关闭图标显示；false：关闭图标不显示。  值为undefined时，按默认值处理。  **说明**：当suffixSymbol有传入参数时，allowClose不生效；当suffixSymbol没有传入参数而suffixIcon有传入参数时，allowClose不生效；当suffixSymbol和suffixIcon都没有传入参数时，allowClose决定是否显示关闭图标。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | onClose | ()=>void | 否 | 是 | 默认关闭图标点击事件回调，无参数和返回值。当用户点击默认关闭图标时触发该回调。  值为undefined时，不触发关闭图标点击事件。  **说明**：仅当关闭图标显示时生效，即suffixSymbol和suffixIcon都未传入参数且allowClose为true时。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
@@ -347,7 +347,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/NyMWBYSiRdiNAPUlDzFlpw/zh-cn_image_0000002717613122.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/yZakMkgFREiae8cyAnUbww/zh-cn_image_0000002753457093.png)
 
 ### 示例2（设置默认后缀图标）
 
@@ -396,7 +396,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/pEvMMk5FTpKSTCH1GOArtQ/zh-cn_image_0000002747293075.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/WqXJwcrgQZykEZAYaagPdA/zh-cn_image_0000002723857328.png)
 
 ### 示例3（不显示后缀图标）
 
@@ -444,7 +444,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/bEuUVwvfSwODllMoYqA_Vw/zh-cn_image_0000002747212989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/bZrr953VSd6qpI45CC0ANw/zh-cn_image_0000002723697410.png)
 
 ### 示例4（激活态操作块）
 
@@ -502,7 +502,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/dM84NkcgT7y1Araq7LA39g/zh-cn_image_0000002717773056.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/99fMjyTFS4u6Y_qBe9gTuQ/zh-cn_image_0000002753297177.gif)
 
 ### 示例5（设置symbol类型图标）
 
@@ -557,7 +557,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/-_9y4YxIT62nXpRzt9dLsw/zh-cn_image_0000002717613124.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/uySWoNP0QwG04C3H3ZhYfw/zh-cn_image_0000002753457095.gif)
 
 ### 示例6（设置镜像效果）
 
@@ -609,7 +609,7 @@ struct ChipPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/iqNgEDA-QG233Cnqj7B9cw/zh-cn_image_0000002747293077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/zIU2FVKhQYCCW40h4gUbCA/zh-cn_image_0000002723857330.png)
 
 ### 示例7（Image类型无障碍朗读）
 
@@ -700,6 +700,8 @@ struct ChipExample2 {
   }
 }
 ```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/d1HnbOL5Q3yd7nqAFwB8_g/zh-cn_image_0000002723697412.png)
 
 ### 示例8（symbol类型无障碍朗读）
 
@@ -829,6 +831,8 @@ struct ChipExample2 {
 }
 ```
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/yh3d5kx7QpefL0jBlM4Jzg/zh-cn_image_0000002753297179.png)
+
 ### 示例9（Chip组件无障碍朗读）
 
 示例展示Chip组件的无障碍属性设置，包括不同的accessibilitySelectedType类型和各种无障碍属性。
@@ -929,6 +933,8 @@ struct ChipAccessibilityExample {
 }
 ```
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/lIkPBJxuTIal9e6JausP-w/zh-cn_image_0000002753457097.png)
+
 ### 示例10（设置系统材质样式）
 
 该示例通过配置backgroundSystemMaterial和activatedBackgroundSystemMaterial实现系统材质样式，启用自动反色功能适配标签文本颜色。
@@ -994,4 +1000,6 @@ struct ChipMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/LzlbsudbSlmPZsCYWu6iTw/zh-cn_image_0000002747212993.png)
+该示例配图为高算力设备强档效果。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/qGVHLOTWR-OFaMll3IyIBg/zh-cn_image_0000002723857332.png)

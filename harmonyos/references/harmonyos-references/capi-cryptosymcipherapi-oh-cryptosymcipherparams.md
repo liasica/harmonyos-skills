@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: OH_CryptoSymCipherParams
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 结构体 > OH_CryptoSymCipherParams
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:488f3a8263a4e97ac52a5785748fa78730167135378fb48d97660c3651244f76
+scraped_at: 2026-09-15T07:06:22+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:c248291e326f528fc64c973e56d19c951834747f6c9850deb90fed520712ec8a
 ---
 
 ```c
@@ -14,7 +14,7 @@ typedef struct OH_CryptoSymCipherParams OH_CryptoSymCipherParams
 
 ## 概述
 
-定义对称加解密参数结构体。
+对称密钥加解密参数结构体，表示对称密钥加解密参数。
 
 **起始版本：** 12
 

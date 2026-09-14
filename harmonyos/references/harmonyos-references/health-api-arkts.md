@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:18+08:00
-doc_updated_at: 2026-04-30
+scraped_at: 2026-09-15T07:08:51+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0a5b494e9e830a640e49224c0bcc71eb2679bdeba8dd2e90871da2a3d8ab3bca
 ---
 

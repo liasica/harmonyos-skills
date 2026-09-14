@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-avme
 title: avmetakeys.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > avmetakeys.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d13325c7a4a87e82982f5534145183207651f09d3c74c0b747dd47f900c942be
+scraped_at: 2026-09-15T07:08:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:56e7e93e092519efe8d714ab1af6d51eb33a690fde7674547a9bbdbc81701ee7
 ---
 
 ## 概述
@@ -31,9 +31,9 @@ content_hash: sha256:d13325c7a4a87e82982f5534145183207651f09d3c74c0b747dd47f900c
 | const char \* OH\_AVMETA\_KEY\_TRACK\_INDEX | 轨道索引，值类型为int32\_t。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_TRACK\_TYPE | 轨道类型，值类型为int32\_t。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_MIME\_TYPE | 编解码器MIME类型，值类型为字符串（string）。  **起始版本：** 23 |
-| const char \* OH\_AVMETA\_KEY\_DURATION | 媒体时长（单位：微秒），值类型为int64\_t。  **起始版本：** 23 |
+| const char \* OH\_AVMETA\_KEY\_DURATION | 媒体时长，单位为微秒（μs），值类型为int64\_t。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_BITRATE | 比特率（单位：bps），值类型为int64\_t。  **起始版本：** 23 |
-| const char \* OH\_AVMETA\_KEY\_FRAME\_RATE | 视频帧率，单位为每秒帧数（fps），值类型为double。  **起始版本：** 23 |
+| const char \* OH\_AVMETA\_KEY\_FRAME\_RATE | 视频帧率（每100秒的帧数），值类型为double。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_WIDTH | 视频宽度，单位为像素（px），值类型为int32\_t。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_HEIGHT | 视频高度，单位为像素（px），值类型为int32\_t。  **起始版本：** 23 |
 | const char \* OH\_AVMETA\_KEY\_CHANNEL\_COUNT | 音频声道数，值类型为int32\_t。  **起始版本：** 23 |

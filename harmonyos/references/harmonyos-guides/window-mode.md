@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-mode
 title: 窗口模式
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-09-15T07:01:34+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:1c05890163e171b86ef2b4db53e56cee76a696a8cdacf6abae6afa32339076e0
 ---
 

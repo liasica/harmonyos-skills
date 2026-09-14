@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 通用接口
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:20:49+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:09:13+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:34d06726f418299c9703bdd3a2e2721334a8ef4a93d11b39d5aa1238d5640052
 ---
 

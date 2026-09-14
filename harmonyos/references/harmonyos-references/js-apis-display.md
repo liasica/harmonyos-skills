@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.display (屏幕属性)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 屏幕管理 > @ohos.display (屏幕属性)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:97e6c57eb0e2f83fcc7eb97348309ed52867b6b71df3a97bafa8e43c7e46a281
+scraped_at: 2026-09-15T07:04:41+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:6a1e08a8d92c8887e295e9914c2de662d706da656821c40f7254ad51c30b39ac
 ---
 
 屏幕属性提供管理显示设备的基础能力，包括获取默认显示设备的信息、获取所有显示设备的信息以及监听显示设备的插拔状态变化等。该模块支持多种显示设备类型的管理，适用于多屏协同、折叠屏适配或屏幕状态监听等场景，帮助开发者实现适配不同显示设备的应用布局、响应屏幕状态变化和优化多屏用户体验等功能。
@@ -756,7 +756,7 @@ getFoldDisplayMode(): FoldDisplayMode
 
 **系统能力：** SystemCapability.Window.SessionManager
 
-**设备行为差异：** 该接口在支持多种显示模式的设备中可正常调用，在其他设备中返回FoldDisplayMode.FOLD\_DISPLAY\_MODE\_UNKNOWN。
+**设备行为差异：** 该接口在支持多种显示模式（[getAllDisplayPhysicalResolution](js-apis-display.md#displaygetalldisplayphysicalresolution12)接口返回值中包含设备支持的所有显示模式）的设备中可正常调用，在其他设备中返回FoldDisplayMode.FOLD\_DISPLAY\_MODE\_UNKNOWN。
 
 **返回值：**
 
@@ -2099,5 +2099,46 @@ try {
   console.info(`Succeeded in getting the live crease region. Data: ${JSON.stringify(data)}`);
 } catch (exception) {
   console.error(`Failed to get the live crease region. Code: ${exception.code}, message: ${exception.message}`);
+}
+```
+
+### getDisplayCapability18+
+
+getDisplayCapability(): string
+
+获取当前设备屏幕的折叠状态、显示模式、旋转角度和显示方向信息。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Window.SessionManager
+
+**测试接口：** 此接口仅在自动化测试脚本中使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | JSON字符串，包含以下字段：  - capability：设备支持的各折叠状态foldStatus（取值及含义可见[FoldStatus](js-apis-display.md#foldstatus10)）与显示模式foldDisplayMode（取值及含义可见[FoldDisplayMode](js-apis-display.md#folddisplaymode10)）组合，以及各组合下支持的旋转角度rotation（取值及含义可见[Display属性](js-apis-display.md#属性)中的rotation属性）和显示方向orientation（取值及含义可见[Orientation](js-apis-display.md#orientation10)）。  - foldScreenType：设备折叠产品类型。例如“6,1,0,0”，其中第一位参数表示：1：大折叠（内折），2：小折叠，3：大折叠（外折），4：阔折叠，5：折叠PC，6：双折轴设备；第二位参数表示存在几块物理屏幕；第三、四位参数暂未使用，返回默认值0。  - buildin\_screen：设备是否存在内置屏幕。值为“0”时表示无内置屏幕，值为“1”时表示有内置屏幕。  - allCreaseRegion：各显示模式foldDisplayMode（取值及含义可见[FoldDisplayMode](js-apis-display.md#folddisplaymode10)）下不同显示方向displayOrientation（取值及含义可见[Orientation](js-apis-display.md#orientation10)）对应的折痕区域creaseRects（取值及含义可见[FoldCreaseRegion](js-apis-display.md#foldcreaseregion10)）。该字段仅在可折叠设备上返回。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[屏幕错误码](errorcode-display.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. |
+| 1400001 | Invalid display or screen. |
+| 1400003 | This display manager service works abnormally. |
+
+**示例：**
+
+```ts
+let displayClass: display.Display | null = null;
+try {
+  displayClass = display.getDefaultDisplaySync();
+  let data: string = displayClass.getDisplayCapability();
+  console.info(`Succeeded in getting the display capability. Data: ${data}`);
+} catch (exception) {
+  console.error(`Failed to get the display capability. Code: ${exception.code}, message: ${exception.message}`);
 }
 ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-ui-
 title: UI界面
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面
 category: harmonyos-references
-scraped_at: 2026-04-28T08:04:52+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:05:48+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:a6b4f43006eb0fd253a05f0346be0138f8d0b3646e88febc228cd4fcf4a72953
 ---
 

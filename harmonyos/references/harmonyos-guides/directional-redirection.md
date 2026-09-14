@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/directional-r
 title: 拉起指定应用
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定应用
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:16:56+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:01:09+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:9400fbdb638fcaf34145cbcf8f06e7f73e639c9478fa5d2a6bcd114245278df2
 ---
 

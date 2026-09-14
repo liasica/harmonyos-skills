@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-wit
 title: 端云数据同步云侧环境部署指导
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用端云数据同步（分布式） > 端云数据同步云侧环境部署指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:12+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:330ad321d05e5debce5c7ced6b5cbfe635c1e6b2b2868678a568b858483b8f75
+scraped_at: 2026-09-15T07:01:12+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:7c5424918e88c628baaea6cc954678b86ad5375f9a250ccfa8f0b8cea7b6c16e
 ---
 
 ## 场景介绍
@@ -96,12 +96,14 @@ content_hash: sha256:330ad321d05e5debce5c7ced6b5cbfe635c1e6b2b2868678a568b858483
 
    云侧自定义字段名称及类型需要与本地数据接入云空间的字段名称及类型保持一致。对应关系如下表：
 
-   | 云侧字段类型 | 本地字段类型 |
-   | --- | --- |
-   | Encrypted String/String | TEXT |
-   | Integer | INTEGER |
-   | Double | DOUBLE |
-   | Bytes | BLOB |
+   | 云侧字段类型 | 本地字段类型 | 说明 |
+   | --- | --- | --- |
+   | Encrypted String/String | TEXT | - |
+   | Integer | INTEGER | - |
+   | Double | DOUBLE | - |
+   | Bytes | BLOB | - |
+   | Asset | ASSET | 搭载云空间6.3.1及以上版本、HarmonyOS 6.1.0.135及以上版本的设备，支持新建此类型字段。 |
+   | AssetList | ASSETS | 搭载云空间6.3.1及以上版本、HarmonyOS 6.1.0.135及以上版本的设备，支持新建此类型字段。 |
 
    **说明** 
 

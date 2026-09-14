@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-ascen
 title: AscendC API
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:37+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:04+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:76dcc128df8aa338d382726cfaeb948d35d04b864b0aa85c7cc1cb883730ec2c
 ---
 

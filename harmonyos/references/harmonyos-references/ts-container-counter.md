@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Counter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Counter
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:33+08:00
+scraped_at: 2026-09-15T07:05:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:821aba051e837cb8fb405cba26c5e063400717a49146e26577dace095fce7dd5
+content_hash: sha256:4e357bb2e7ad5aa020feab189df7e887244eb505f4329d863868ef16c743533f
 ---
 
 计数器组件，提供增加或减少的计数操作。适用于商品数量选择、参数调整等需要频繁修改数值的场景，帮助用户快速直观地调整数值。
@@ -152,4 +152,4 @@ struct CounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/I9oCaum2RY2u42P8ESaGwg/zh-cn_image_0000002717772874.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/PSzrHcZuQbaGsau5JYJQYA/zh-cn_image_0000002723697230.gif)

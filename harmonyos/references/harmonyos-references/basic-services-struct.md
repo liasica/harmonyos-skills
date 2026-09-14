@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/basic-ser
 title: 结构体
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:51+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:07:09+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:53c3f7821ad593ab77d77c448ff2d45dbb6143a5467eeab9283dc3e447c5461b
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-lit
 title: MindSpore Lite Kit（昇思推理框架服务）
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:45+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:03:24+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f96b5bb3acaf7697b15843375fd841bb6d7d7758b47241e173cc17c5b7083f06
 ---
 

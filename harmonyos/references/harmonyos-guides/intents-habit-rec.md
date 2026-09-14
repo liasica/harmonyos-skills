@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-habit
 title: 习惯推荐方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 习惯推荐方案
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:30+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2616b91c1cdec2e6778cdf56ba918a10df8133f4e10d5f81ea515c43c7487ebd
 ---
 

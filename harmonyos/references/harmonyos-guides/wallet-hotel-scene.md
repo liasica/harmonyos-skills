@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 开发场景
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 开发场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:03:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:949943ba1013b39e102087e486032d6e5a49ee0d31c5f0022e14aae07514e8c4
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-ukey-gen
 title: 通用操作
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 外部密钥管理扩展 > 通用操作
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:04+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:56+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c633c497563f11e7f55f7c54f4e355474e76a692d8bfd86351aa9e980ce411a9
 ---
 

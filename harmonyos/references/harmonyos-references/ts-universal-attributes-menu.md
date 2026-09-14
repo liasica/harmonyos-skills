@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 菜单控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > 菜单控制
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:799688e036e67f104e871c11ef3e7d288ea1504bf79885e820caa851800430cb
+scraped_at: 2026-09-15T07:04:50+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:349078a180ecf94db2cd75bf952e6ebd78bac622d087a6c47610584770911899
 ---
 
 为组件绑定弹出式菜单，支持长按、点击或鼠标右键来触发菜单的弹出，菜单项以垂直列表形式显示。菜单控制适用于需要提供快捷操作选项、设置选项或上下文相关操作的场景，为用户提供便捷的操作入口，提升应用交互体验。支持自定义菜单内容和样式，灵活适配不同业务需求。
@@ -609,7 +609,7 @@ struct MenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/iODLjcb7R9aJ0BOFYTCzkw/zh-cn_image_0000002717612552.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/m5R_d7SSRNKRN01_thccgQ/zh-cn_image_0000002723856758.gif)
 
 ### 示例2（弹出自定义菜单）
 
@@ -660,7 +660,7 @@ struct MenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/UGH6CmueSi2h37EEn4JRkg/zh-cn_image_0000002747292505.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/MVmmXxKoSW-b8JWpOFtojA/zh-cn_image_0000002723696840.gif)
 
 ### 示例3（长按弹出菜单）
 
@@ -697,7 +697,7 @@ struct ContextMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/z4gRq3b8SPe-Ci2fi1nChg/zh-cn_image_0000002747212421.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Ka84xdg3SdaunoGCcSAIqg/zh-cn_image_0000002753296607.gif)
 
 ### 示例4（右键弹出指向型菜单）
 
@@ -740,7 +740,7 @@ struct DirectiveMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/p_JicCCAR1SgJllDjQZeWQ/zh-cn_image_0000002717772486.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Y9n4ZaxzTIOAyqg2Eo_-lw/zh-cn_image_0000002753456525.png)
 
 ### 示例5（长按弹出菜单的截图预览样式）
 
@@ -784,7 +784,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/W0_IX47YSJit3gkSaKJL8g/zh-cn_image_0000002717612554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/GDpC6ynmSVq83yQ8A4SyNg/zh-cn_image_0000002723856760.png)
 
 ### 示例6（长按弹出菜单的自定义预览样式）
 
@@ -836,7 +836,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/jUjVLOl2Q-ymkZxxmP5zQg/zh-cn_image_0000002747292507.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/S1Y2LcKZSLKYkKncKbjZhA/zh-cn_image_0000002723696842.png)
 
 ### 示例7（设置状态变量弹出菜单）
 
@@ -896,7 +896,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/z07BiREtSbikPkAs_BPyNg/zh-cn_image_0000002747292507.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/I-fgfBuDRtunVCMkOszI9A/zh-cn_image_0000002723696842.png)
 
 ### 示例8（设置菜单和预览的动效）
 
@@ -956,7 +956,7 @@ struct MenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/0C7b7VTiTTqHH01YGA_skQ/zh-cn_image_0000002747212423.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/XYW4c7GfTN-sA-a9LyyWaA/zh-cn_image_0000002753296609.gif)
 
 ### 示例9（设置symbol类型图标）
 
@@ -995,7 +995,7 @@ struct MenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/mqNbcq2tSSiq7N-3EhO5WA/zh-cn_image_0000002717772488.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/SY-Ih4BZSmGszq1Zf5sPrQ/zh-cn_image_0000002753456527.png)
 
 ### 示例10（设置一镜到底动效）
 
@@ -1048,7 +1048,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/mbZIEfw1RRadDMDB1lyIWQ/zh-cn_image_0000002717612556.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/uTFtDplQTH-e-8yBf1HrDQ/zh-cn_image_0000002723856762.gif)
 
 ### 示例11（自定义背景模糊效果参数）
 
@@ -1099,7 +1099,7 @@ struct MenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/B7y0dlXRSpanDkNp3-Hung/zh-cn_image_0000002747292509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/29kK3u7iQgWvkFiJ5QzwYA/zh-cn_image_0000002723696844.png)
 
 ### 示例12（自定义背景效果参数）
 
@@ -1151,7 +1151,7 @@ struct MenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/G7M5XqpHTOi5JAi3e2DzWA/zh-cn_image_0000002747212425.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/9F9aNOy_QZ2a7-19wmAGVg/zh-cn_image_0000002753296611.png)
 
 ### 示例13（设置一镜到底动效支持抬手打断）
 
@@ -1210,7 +1210,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/4krkboXzSIW0xzNme-Rfvw/zh-cn_image_0000002717772490.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/F7K12YAISjC05UHbAnZGiA/zh-cn_image_0000002753456529.gif)
 
 ### 示例14（设置预览图边框圆角半径）
 
@@ -1257,7 +1257,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/X3bWANKhRKKvH3XTeozfTQ/zh-cn_image_0000002717612558.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/s3xWzZoBRvW0wYf80KoggQ/zh-cn_image_0000002723856764.jpg)
 
 ### 示例15（bindMenu配置生命周期回调）
 
@@ -1333,7 +1333,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_cXLZ4QuRUGXqehJwJuJtQ/zh-cn_image_0000002747292511.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/0PclmEMCR-2sBO37JIjdkA/zh-cn_image_0000002723696846.gif)
 
 ### 示例16（设置菜单蒙层）
 
@@ -1381,7 +1381,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/AlRRi9NdSBKRs3HqYoVHdQ/zh-cn_image_0000002747212427.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/PuUXlksiQxyHk6gDZVmoKQ/zh-cn_image_0000002753296613.jpg)
 
 ### 示例17（bindMenu设置下拉菜单外描边样式）
 
@@ -1427,7 +1427,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/wGaSXDqsRBCcb9opysQmQg/zh-cn_image_0000002717772492.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/0IwFs4uKTkC_11SxiCXbQg/zh-cn_image_0000002753456531.png)
 
 ### 示例18（bindMenu传入带参数的CustomBuilder）
 
@@ -1475,7 +1475,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/iDWZqBq0TxKuD3Kmkt4Pkw/zh-cn_image_0000002717612560.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/mNFrIxCgQ4KAo1STx_mcAw/zh-cn_image_0000002723856766.gif)
 
 ### 示例19（根据触发方式弹出不同内容的菜单）
 
@@ -1526,7 +1526,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/RDN7Z2Q8Q1eW1PkNWGeetA/zh-cn_image_0000002747292513.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/P9uQmwwyQD239uJH5QomoA/zh-cn_image_0000002723696848.gif)
 
 ### 示例20（设置菜单避让软键盘）
 
@@ -1592,7 +1592,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/wSF0JIX9Q8OI09tMnVU5cQ/zh-cn_image_0000002747212429.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/0qNo7amLQbmaUZoeyyz9bA/zh-cn_image_0000002753296615.gif)
 
 ### 示例21（设置菜单相对于绑定组件左上角的弹出位置）
 
@@ -1665,7 +1665,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/lEjmzxGkTWOvvYD-YeK4Rw/zh-cn_image_0000002717772494.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/VovZvPsmSBmbq0YVJpxwMg/zh-cn_image_0000002753456533.gif)
 
 ### 示例22（设置菜单的最大高度）
 
@@ -1721,7 +1721,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/bsgCpGd6RXOVAgW-iulnCg/zh-cn_image_0000002717612562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/DUoRCIRLS-a7m33YOtSxFg/zh-cn_image_0000002723856768.png)
 
 ### 示例23（设置菜单与目标组件间距）
 
@@ -1770,13 +1770,13 @@ struct Alone {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/6EKfYGTnREy7ITkcn-BGyg/zh-cn_image_0000002747292515.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/oUo5e7QvT9GhHzoHD_5a7Q/zh-cn_image_0000002723696850.png)
 
 ### 示例24（设置菜单的沉浸光感）
 
-该示例通过[ContextMenuOptions](ts-universal-attributes-menu.md#contextmenuoptions10)中的systemMaterial属性设置组件的系统材质，实现了菜单的沉浸光感视效。
+该示例通过[ContextMenuOptions](ts-universal-attributes-menu.md#contextmenuoptions10)中的systemMaterial属性设置组件的系统材质，实现了菜单的沉浸光感视效。设置系统材质后，Menu弹出过程中会有非线性形变和边缘流光。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，在ContextMenuOptions中新增了systemMaterial属性。
 
@@ -1814,11 +1814,11 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/U6L7sqqkToWrHBCOJpwlMw/zh-cn_image_0000002747212431.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/qqy7Mdf5SlaUI7NoI-ATGA/zh-cn_image_0000002753296617.gif)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/C5cKHfoSTG6RXsbrIrEm1w/zh-cn_image_0000002717772496.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/tDb33A-iQaGW-sZAe7yBXQ/zh-cn_image_0000002753456535.gif)
 
 ### 示例25（使用gridStyle设置栅格菜单）
 
@@ -1871,4 +1871,4 @@ struct ContextMenuGridStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/OLwL1dWpRP2V8mb3txqgvw/zh-cn_image_0000002717612564.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/SjdTzrGrSsqv2HyIx-7fKw/zh-cn_image_0000002723856770.png)

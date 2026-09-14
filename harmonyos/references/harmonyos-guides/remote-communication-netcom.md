@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 使用HTTP协议进行网络通信
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 使用HTTP协议进行网络通信
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:44:03+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2be03d11467cce8649bfd0def0e519b80380f716801a1397d9ee06773a6238d4
 ---
 

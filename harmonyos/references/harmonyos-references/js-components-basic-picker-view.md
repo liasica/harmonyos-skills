@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: picker-view
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > picker-view
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:50+08:00
+scraped_at: 2026-09-15T07:05:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:ad7c5e1c9f399c549950e1847ed99547bf91549f788e2adbbfa055978fc2a942
+content_hash: sha256:5edfb040cc589f91734b26f01b3bb3cc7b732252588afb36431383e826171d19
 ---
 
 **说明** 
@@ -167,7 +167,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/qH0F_7zKRWaGqFFoSH_Tsg/zh-cn_image_0000002747213113.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/7T06zUUlQ_ivW8x7OcU8Pg/zh-cn_image_0000002723697536.gif)
 
 ### 时间选择器
 
@@ -225,7 +225,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/0pdFoxIoTQmZ6pDP1eSE-Q/zh-cn_image_0000002717773178.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ehgu1qGBQfa30X5JNCk-6A/zh-cn_image_0000002753297303.png "点击放大")
 
 ### 日期选择器
 
@@ -267,7 +267,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/laOrZJcwSkWzbrc4axegGg/zh-cn_image_0000002717613246.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/eZSUfS7iTX2A0wjmDOFBOw/zh-cn_image_0000002753457221.png "点击放大")
 
 ### 日期时间选择器
 
@@ -309,7 +309,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/-cvvMdf3SWCLUcPT8js3bQ/zh-cn_image_0000002747293199.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/wO7uSUJvQDC0caJD7L7u9A/zh-cn_image_0000002723857456.png "点击放大")
 
 ### 多列文本选择器
 
@@ -356,4 +356,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7xkBPdVTSjilLwij0tE5JQ/zh-cn_image_0000002747213115.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/TDZNrcDaR7iQwfI7Dks_Ww/zh-cn_image_0000002723697538.png "点击放大")

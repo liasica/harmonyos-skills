@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-archit
 title: Crypto Architecture Kit（加解密算法框架服务）
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:24+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-09-15T07:01:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:11370b6c592a58bf598ea813541de3d69cc8e632f67cd11cc0f623b00cddb8ab
 ---
 

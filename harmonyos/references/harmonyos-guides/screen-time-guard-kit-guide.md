@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screen-time-g
 title: Screen Time Guard Kit（屏幕时间守护服务）
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:57+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:1ba536c1e74f98258cac3728532f5f7049a6a3e9a0a9804d1e3b64796695ef8c
 ---
 

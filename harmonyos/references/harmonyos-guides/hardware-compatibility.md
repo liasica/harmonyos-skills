@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hardware-comp
 title: 硬件兼容性
 breadcrumb: 指南 > NDK开发 > 硬件兼容性
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:54:32+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:30+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:6ede46f784c482c19a1bb4abbc41c69d37eb9ee0724d9931e5e11cf14835ba0f
 ---
 

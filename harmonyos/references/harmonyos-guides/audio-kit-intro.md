@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-kit-int
 title: Audio Kit简介
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:51+08:00
+scraped_at: 2026-09-15T07:02:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8fe52f2b7ad9ebc2633ce1e7ae7866a36c0657d88d3400576a517fa08e8dbed2
+content_hash: sha256:0f19414529d26089d0882510a0bc91f6b006ad385af1b1334a485aec451f9850
 ---
 
 Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口，助力开发者迅速构建音频高清采集及沉浸式播放能力。
@@ -28,7 +28,7 @@ Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口�
 
 开发者可以利用Audio Kit的接口，使用音频系统提供的播放、录音及音频策略管理能力，进而访问相应的音频硬件。音频架构定义了系统如何封装和管理音频硬件能力。音频架构图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/yPIN-Nx4SdqBdCCtOEMNlg/zh-cn_image_0000002717611326.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/zAX61PKJSzWkpIBgvi2_5Q/zh-cn_image_0000002723855534.png)
 
 **Application**
 

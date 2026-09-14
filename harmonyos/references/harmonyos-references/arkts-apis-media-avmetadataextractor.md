@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVMetadataExtractor)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVMetadataExtractor)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5359719e72ae3973d7e460aba1d3c40d84b275af1731e11a831265e77d3b6e6b
+scraped_at: 2026-09-15T07:08:09+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:ef198b1ff78b7b1fb5f904341cf653dc9a53c9f02417ce59fe6bfe70df8a0bd3
 ---
 
 元数据获取类，用于从媒体资源中获取元数据、缩略图。在调用AVMetadataExtractor的方法前，需要先通过[media.createAVMetadataExtractor](arkts-apis-media-f.md#mediacreateavmetadataextractor11)构建一个AVMetadataExtractor实例。
@@ -267,7 +267,7 @@ async function fetchFramesByTimesDemo() {
     console.info('Succeeded in creating AVMetadataExtractor');
     avMetadataExtractor.fetchFramesByTimes(timesUs, queryOption, param, (frameInfo: media.FrameInfo, err: BusinessError) => {
       if (err) {
-        console.info(`fetchFramesByTimes callback failed, code: ${err.code} message: ${err.message}`);
+        console.error(`fetchFramesByTimes callback failed, code: ${err.code} message: ${err.message}`);
         return;
       }
       if (frameInfo != undefined && frameInfo.image != undefined) {
@@ -391,7 +391,7 @@ fetchMetadata(callback: AsyncCallback<AVMetadata>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<[AVMetadata](arkts-apis-media-i.md#avmetadata11)> | 是 | 回调函数。异步返回音视频元数据对象（AVMetadata）。 |
+| callback | AsyncCallback<[AVMetadata](arkts-apis-media-i.md#avmetadata11)> | 是 | 回调函数。当获取媒体元数据成功，err为undefined，data为获取到的AVMetadata实例，否则为错误对象。 |
 
 **错误码：**
 
@@ -531,7 +531,7 @@ fetchAlbumCover(callback: AsyncCallback<image.PixelMap>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | AsyncCallback<[image.PixelMap](arkts-apis-image-pixelmap.md)> | 是 | 回调函数。异步返回专辑封面。 |
+| callback | AsyncCallback<[image.PixelMap](arkts-apis-image-pixelmap.md)> | 是 | 回调函数。当获取音频专辑封面成功，err为undefined，data为获取到的PixelMap实例，否则为错误对象。 |
 
 **错误码：**
 
@@ -660,7 +660,7 @@ release(): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 异步方式释放资源release方法的Promise返回值。 |
+| Promise<void> | Promise对象，无返回结果。 |
 
 **错误码：**
 

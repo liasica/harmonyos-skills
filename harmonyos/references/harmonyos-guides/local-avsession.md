@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/local-avsessi
 title: 本地媒体会话
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:15+08:00
-doc_updated_at: 2026-08-03
+scraped_at: 2026-09-15T07:02:20+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:c04152622d0d2ab6af64bb8938f5c19e47aa5f6b4bd7bfdcda8437146ccb54bd
 ---
 

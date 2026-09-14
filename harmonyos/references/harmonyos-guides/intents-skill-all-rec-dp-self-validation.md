@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 开发者测试
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 开发者测试
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:53:41+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:23+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:715bfd7016f0bb477f484dd58e882f499d941e807bc0abe4f48b9a16a08ba16d
 ---
 

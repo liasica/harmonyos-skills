@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-faq-abou
 title: 常见基本功能问题汇总
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API常见问题汇总 > 常见基本功能问题汇总
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5545142f63e82d983df43ae7f05502983ca9af98580a32bfc97f143cb3262521
+scraped_at: 2026-09-15T07:03:28+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:451b795d00143b69b7edba4f2c249386052d486b5e8254cfc3544cfb3da51480
 ---
 
 ## 模块加载失败，报错信息显示Error message: is not callable.
@@ -286,7 +286,7 @@ ArkTS侧import xxx from libxxx.so后，使用xxx报错显示undefined/not callab
 
 ## Node-API接口返回值不是napi\_ok时如何排查定位
 
-Node-API接口正常执行后，会返回一个napi\_ok的状态枚举值，若Node-API接口返回值不为napi\_ok，可先参考[Node-API接口返回状态码介绍](napi_status_introduction.md)。
+Node-API接口正常执行后，会返回一个napi\_ok的状态枚举值，若Node-API接口返回值不为napi\_ok，可先参考[Node-API接口返回状态码介绍](napi-status-introduction.md)。
 
 以下是几个常见场景：
 
@@ -365,7 +365,7 @@ void FinalizeB(napi_env env, void* data, void* hint) {
 
 问题排查：
 
-原因一：napi\_call\_threadsafe\_function函数调用返回值不为napi\_ok。请确认调用napi\_call\_threadsafe\_function相关函数的返回值是否都是napi\_ok，若不是，请根据[Node-API接口返回状态码介绍](napi_status_introduction.md)排查返回值非napi\_ok的原因。
+原因一：napi\_call\_threadsafe\_function函数调用返回值不为napi\_ok。请确认调用napi\_call\_threadsafe\_function相关函数的返回值是否都是napi\_ok，若不是，请根据[Node-API接口返回状态码介绍](napi-status-introduction.md)排查返回值非napi\_ok的原因。
 
 原因二：env所在的ArkTS线程被阻塞。napi\_call\_threadsafe\_function函数的回调将执行在env所在的ArkTS线程上，若ArkTS线程被阻塞，则线程安全函数回调不会被执行。
 

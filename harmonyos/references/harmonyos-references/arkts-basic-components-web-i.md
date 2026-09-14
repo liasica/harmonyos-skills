@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Interfaces（其他）
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Interfaces（其他）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ff48101d47657c9d86c4fbe69742524992b7ea877a444f495a19f399e7838e67
+scraped_at: 2026-09-15T07:05:55+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:331a08c9594041ac424aa5aaca7c7ae700195f2e716b944f588191cf40ded910
 ---
 
 **说明** 
@@ -263,7 +263,7 @@ Web同层渲染的配置。用于配置Web同层渲染选项，包括支持固�
 
 ## OnRenderExitedEvent12+
 
-定义渲染过程退出时触发。适用于需要监控渲染进程异常的场景，提升渲染稳定性和故障排查效率。
+定义渲染进程退出时触发。适用于需要监控渲染进程异常的场景，提升渲染稳定性和故障排查效率。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -746,7 +746,7 @@ Web同层渲染的配置。用于配置Web同层渲染选项，包括支持固�
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| navigationStartTime | number | 否 | 是 | 导航条加载时间，单位以微秒表示。 |
+| navigationStartTime | number | 否 | 是 | 导航开始时间，单位以微秒表示。 |
 | firstMeaningfulPaintTime | number | 否 | 是 | 绘制页面主要内容时间，单位以毫秒表示。 |
 
 ## LargestContentfulPaint12+
@@ -757,7 +757,7 @@ Web同层渲染的配置。用于配置Web同层渲染选项，包括支持固�
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| navigationStartTime | number | 否 | 是 | 导航条加载时间，单位以微秒表示。 |
+| navigationStartTime | number | 否 | 是 | 导航开始时间，单位以微秒表示。 |
 | largestImagePaintTime | number | 否 | 是 | 最大图片加载的时间，单位是以毫秒表示。 |
 | largestTextPaintTime | number | 否 | 是 | 最大文本加载时间，单位是以毫秒表示。 |
 | largestImageLoadStartTime | number | 否 | 是 | 最大图片开始加载时间，单位是以毫秒表示。 |

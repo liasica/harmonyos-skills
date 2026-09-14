@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件内容填充方式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 组件内容填充方式
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:17+08:00
+scraped_at: 2026-09-15T07:04:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f87f7118c8751f25e31013b60122cd34232269a9638574d34a822e5d1a3becb8
+content_hash: sha256:9b56bf53a3ec9d421fab2fbdaee5f046041bde1e5861cf3a282a3026f8789881
 ---
 
 用于决定在组件的宽高动画过程中，动画终态的组件内容在组件上的填充方式。适用于卡片展开、弹窗缩放等需要控制动画内容填充方式的场景。
@@ -122,4 +122,4 @@ struct RenderFitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/kK4xdBhnTTGAopadgMoqog/zh-cn_image_0000002747212387.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Y-ZhjxopSICvK13lC9WLuQ/zh-cn_image_0000002753296573.gif)

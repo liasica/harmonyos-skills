@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Canvas)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Canvas)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:47+08:00
+scraped_at: 2026-09-15T07:08:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:89e1aee9688627c2e958e165a4902111590ff6e37e3a6716166e64f3dd465752
+content_hash: sha256:021d6e9452672fcba11a1292d97f4261668b15d03f64339bc8182115d2a5fd09
 ---
 
 承载绘制内容与绘制状态的载体。Canvas提供矩形、圆形、椭圆、弧线、路径、文字、图片等多种图形的绘制能力，支持通过画笔和画刷设置绘制样式，支持画布裁剪、矩阵变换、画布状态保存与恢复等功能。
@@ -1335,7 +1335,7 @@ drawTextBlob(blob: TextBlob, x: number, y: number): void
 | x | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的横坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的纵坐标，该参数为浮点数。单位为物理像素px。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/BY9gLqAxSZqdgy7Gv9ty5A/zh-cn_image_0000002747213785.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/2mn04GUHSKu6p4DZp8olMQ/zh-cn_image_0000002723698206.png)
 
 **错误码：**
 
@@ -1442,7 +1442,7 @@ drawSingleCharacter(text: string, font: Font, x: number, y: number): void
 | x | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的x轴坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/TZi-Qf4hQfC6JHSRhYSvfg/zh-cn_image_0000002747213785.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Xx1A0QAQRlu7gZVBboqAwg/zh-cn_image_0000002723698206.png)
 
 **错误码：**
 

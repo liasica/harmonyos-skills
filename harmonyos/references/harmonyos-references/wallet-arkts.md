@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-ar
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:32+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:09:20+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0d59ed2cf5c751ccbeacf7d0b58121895c7cdcde8f2711e57698b92f9e7f178c
 ---
 

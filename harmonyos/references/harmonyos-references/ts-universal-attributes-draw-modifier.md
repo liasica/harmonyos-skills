@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-draw-modifier
-title: 自定义绘制设置
-breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义绘制设置
+title: 自定义绘制
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义绘制
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:acb82889e0a5a91c09f87e044228644065228c7fab453405c26d3472e0792500
+scraped_at: 2026-09-15T07:04:49+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:f395bcece5d52ab4f39f18b9df828f82e724a4de96ce88af4750203cb608b5c9
 ---
 
 当组件本身的绘制内容不满足需求时，可使用自定义组件绘制功能，在原有组件基础上部分绘制，或者全部自行绘制，以达到预期效果。例如：独特的按钮形状、文字和图像混合的图标等。自定义组件绘制提供了自定义绘制修改器，来实现更自由的组件绘制。
@@ -55,7 +55,7 @@ DrawModifier可设置遮罩层（drawOverlay23+）、前景（drawForeground20+�
 
 自定义层级示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/lghvio0kRzOytDEv7CrpcA/zh-cn_image_0000002717772512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/DcJ-0wKhTsGh_nYwwFg6Jg/zh-cn_image_0000002753456551.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -443,7 +443,7 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/SHX4pGAbTFWDy6nWWuMRDw/zh-cn_image_0000002717612580.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/IWK9BA_TRQ6w5uToPkr2Kw/zh-cn_image_0000002723856786.gif)
 
 ### 示例2（通过DrawModifier对容器的前景进行自定义绘制）
 
@@ -508,4 +508,4 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9Mq3yWa8RJi0Cq8sV8BkDg/zh-cn_image_0000002747292533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/5AZrBvp1Q0aoWGMhKYMHZw/zh-cn_image_0000002723696868.png)

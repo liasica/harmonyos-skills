@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 系统完整性检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全检测 > 系统完整性检测
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:28+08:00
+scraped_at: 2026-09-15T07:01:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ccc39dbd55a7b3e89f1e6820b0b2fbd598bcd27bb3a88a494fea55461a1d3d9c
+content_hash: sha256:47547b776a2504de2f707e7b332a77e43b64bb7d7d56a3f4f655d48260ae30b2
 ---
 
 ## 场景介绍
@@ -21,7 +21,7 @@ content_hash: sha256:ccc39dbd55a7b3e89f1e6820b0b2fbd598bcd27bb3a88a494fea55461a1
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/71tRKA45Qh2kRuHmfAuA4Q/zh-cn_image_0000002747291097.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/VvyXX3_LTxawvcpoVADP4g/zh-cn_image_0000002723695434.png)
 
 **流程说明：**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-fault-ana
 title: 故障分析
 breadcrumb: 指南 > 编写与调试应用 > 日志与故障分析 > 故障分析
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:55+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e5cd346a007fcee4fb66d5c72d6c91c7d1ac5253035ed227bf9d836c4f8b1322
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片提供方开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:01:40+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f3f7250c4900087219540fcdfa7f1de9e1b234a42efaf89e0fca8e6bee57edb6
 ---
 

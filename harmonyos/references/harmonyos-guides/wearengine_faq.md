@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine_fa
 title: Wear Engine常见问题
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > Wear Engine常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:10+08:00
-doc_updated_at: 2026-07-17
+scraped_at: 2026-09-15T07:02:08+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:adfd24ea93c1faa51bb610a8efeb428f1b87d5e9350e95b12b4ec5e6bc7905c0
 ---
 

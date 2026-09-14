@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-enviro
 title: 获取用户目录环境(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 获取用户目录环境(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7f2aeba435f62b3b7f0711929735821c722e5056dedd4b2d53ab6c8236f9a1b5
+scraped_at: 2026-09-15T07:01:39+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:6462ba8cf1f3f7baacd4e9404291c0da8bbf88d9855af23565a9e406bb2b0d76
 ---
 
 ## 场景介绍
@@ -55,10 +55,10 @@ target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
        FileManagement_ErrCode ret = OH_Environment_GetUserDownloadDir(&downloadPath);
        if (ret == 0) {
            OH_LOG_INFO(LOG_APP, "Succeeded in getting user download directory, path=%{public}s", downloadPath);
-           free(downloadPath);
        } else {
            OH_LOG_ERROR(LOG_APP, "Failed to get download path, error code is %{public}d", ret);
        }
+       free(downloadPath);
    }
    ```
 2. 调用OH\_Environment\_GetUserDesktopDir接口获取用户Desktop目录沙箱路径，在接口中使用malloc申请的内存需要在使用完后释放因此需要free对应的内存。示例代码如下所示：
@@ -70,10 +70,10 @@ target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
        FileManagement_ErrCode ret = OH_Environment_GetUserDesktopDir(&desktopPath);
        if (ret == 0) {
            OH_LOG_INFO(LOG_APP, "Succeeded in getting user desktop directory, path=%{public}s", desktopPath);
-           free(desktopPath);
        } else {
            OH_LOG_ERROR(LOG_APP, "Failed to get user desktop path, error code is %{public}d", ret);
        }
+       free(desktopPath);
    }
    ```
 3. 调用OH\_Environment\_GetUserDocumentDir接口获取用户Document目录沙箱路径，在接口中使用malloc申请的内存需要在使用完后释放因此需要free对应的内存。示例代码如下所示：
@@ -85,10 +85,10 @@ target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
        FileManagement_ErrCode ret = OH_Environment_GetUserDocumentDir(&documentPath);
        if (ret == 0) {
            OH_LOG_INFO(LOG_APP, "Succeeded in getting user document directory, path=%{public}s", documentPath);
-           free(documentPath);
        } else {
            OH_LOG_ERROR(LOG_APP, "Failed to get user document path, error code is %{public}d", ret);
        }
+       free(documentPath);
    }
    ```
 4. 调用OH\_Environment\_GetUserDocumentDir接口获取用户Document目录沙箱路径，使用stat函数判断Document目录空间大小。示例代码如下所示：
@@ -113,9 +113,9 @@ target_link_libraries(sample PUBLIC libohenvironment.so libhilog_ndk.z.so)
            } else {
                OH_LOG_ERROR(LOG_APP, "Failed to stat user document directory, error code is %{public}d", result);
            }
-           free(documentPath);
        } else {
            OH_LOG_ERROR(LOG_APP, "Failed to get user document directory, error code is %{public}d", ret);
        }
+       free(documentPath);
    }
    ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/crypto-ar
 title: 头文件
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:57+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:06:21+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:a497a5738e0e6bf341765599e81fcc0a7116d624d4c9ed261fb8b76a1d027187
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: crypto_asym_cipher.h
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 头文件 > crypto_asym_cipher.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:07efba87da72dfc79e545ad5097ba2874e5b516eccd454d58a53af64adc38db1
+scraped_at: 2026-09-15T07:06:21+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:c481f592ed15f5989e2b7fecafadb4d20f170f2c2b5500e296de5bd150fa5cb9
 ---
 
 ## 概述
@@ -69,8 +69,8 @@ enum CryptoSm2CiphertextSpec_item
 | --- | --- |
 | CRYPTO\_SM2\_CIPHERTEXT\_C1\_X = 0 | 公钥x，也称为C1x。 |
 | CRYPTO\_SM2\_CIPHERTEXT\_C1\_Y = 1 | 公钥y，也称为C1y。 |
-| CRYPTO\_SM2\_CIPHERTEXT\_C2 = 2 | 哈希值，也称为C2。 |
-| CRYPTO\_SM2\_CIPHERTEXT\_C3 = 3 | 密文数据，也称为C3。 |
+| CRYPTO\_SM2\_CIPHERTEXT\_C2 = 2 | 密文数据，也称为C2。 |
+| CRYPTO\_SM2\_CIPHERTEXT\_C3 = 3 | 消息摘要（哈希值），也称为C3。 |
 
 ## 函数说明
 

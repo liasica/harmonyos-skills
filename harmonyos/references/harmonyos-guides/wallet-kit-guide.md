@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-kit-gu
 title: Wallet Kit（钱包服务）
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:59+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:482743e963c3ef6b8759b6c5f5a6a6b03578a0a8ddbcf8dcb9e03c68844d61d2
 ---
 

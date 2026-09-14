@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/system-ne
 title: 网络
 breadcrumb: API参考 > 系统 > 网络
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:14+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:06:34+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:720a1d462b14059c5a3b3d0545cef1d6bec853f596c0d4c8cea680c4fe60c194
 ---
 

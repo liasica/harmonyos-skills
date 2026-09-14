@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 使用云存储上传文件失败，app日志提示“"state":65”，upload进程日志提示“403 Forbidden”
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit常见问题 > 云存储 > 使用云存储上传文件失败，app日志提示“"state":65”，upload进程日志提示“403 Forbidden”
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:15+08:00
+scraped_at: 2026-09-15T07:02:42+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b63e5662f3df93cf07d51d2f70c81530f7c7b48414e29da408fa5fa2dfd74867
+content_hash: sha256:9476410956bc8403e12e5502cc499ec5a923994f38023e67e7b0d73d3b811ec7
 ---
 
 **问题现象**
@@ -14,10 +14,10 @@ content_hash: sha256:b63e5662f3df93cf07d51d2f70c81530f7c7b48414e29da408fa5fa2dfd
 
 * app日志提示“"state":65”
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/4ZXIIlavQYCS6-dliD7PeQ/zh-cn_image_0000002747211619.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/yPMONteKRPiB66llp4MO4A/zh-cn_image_0000002753295805.png)
 * upload进程的日志提示“403 Forbidden”（通过设置“No filters”模式、过滤“C01C50”关键字查找）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/awwhRdyXSGK3mDLGaBGn6A/zh-cn_image_0000002717771684.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/bcAc3L0RTDCgHM3NKe3E7g/zh-cn_image_0000002753455723.png)
 
 **解决措施**
 

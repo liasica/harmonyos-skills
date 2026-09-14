@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/notificat
 title: ArkTS API
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:17:32+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:09:02+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:2c94f10fc52602ee6b2f0bef495ac704678acbc8dbcedb5ad5fbefd46f5a7019
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-data-pers
 title: 应用数据持久化
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:14+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:12+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f84f9b837d35108eecb3c6ce96efc13d4b14f6556c6285ab2c5ad55d3930bf3c
 ---
 

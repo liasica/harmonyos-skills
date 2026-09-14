@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stage-model-a
 title: 应用组件
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:41+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:07+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:796d96f79a970a272fc92d685559fc1485a713721047b95279ff3140345ce74d
 ---
 

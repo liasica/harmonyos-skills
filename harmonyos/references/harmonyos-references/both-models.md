@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/both-mode
 title: 通用能力的接口(推荐)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:03+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:04:02+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4136f05ccf29cc820921446d36ea34039b0fd3ddc6a492d33d43d5a3ae96234c
 ---
 

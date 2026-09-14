@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend-
 title: 组件扩展
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:01:18+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:599676d477974ff01095be94ad4e267f7100156e258a46d3aa5749d58c722efc
 ---
 

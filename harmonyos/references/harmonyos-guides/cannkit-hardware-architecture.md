@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-hardw
 title: 硬件架构
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 硬件架构
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:25+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:03:02+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:af55362811d17dd64673e0ce96bb3ae8685360c4c6ed716ff15ef1087515d950
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-p
 title: 应用程序包基础知识
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:41+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:04+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:771e476439fe8251ef45590a573cfa4220e2852b50e3f89be20dc406a5458d30
 ---
 

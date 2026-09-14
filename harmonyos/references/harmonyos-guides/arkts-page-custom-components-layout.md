@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件的自定义布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:905fadd8ab4c1ff0b4e9969cd3d0f1cff46b4549cba63c65fb884e19e61e9815
+scraped_at: 2026-09-15T07:01:18+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:9fab33bdb73d3303d8146c12718d792a6705dd8889f42f77dc2562983d2d2639
 ---
 
 如果系统提供的布局组件（如[Flex](../harmonyos-references/ts-container-flex.md)，[Column](../harmonyos-references/ts-container-column.md)，[Row](../harmonyos-references/ts-container-row.md)等）无法满足复杂布局需求，或开发者希望自定义计算组件内子组件的大小和位置，建议在自定义组件中使用以下接口：
@@ -13,7 +13,7 @@ content_hash: sha256:905fadd8ab4c1ff0b4e9969cd3d0f1cff46b4549cba63c65fb884e19e61
 * [onMeasureSize](../harmonyos-references/ts-custom-component-layout.md#onmeasuresize10)：组件每次布局时触发，开发者可以在这个回调中增加自定义组件内子组件的大小的计算逻辑，返回自定义组件的尺寸信息，其执行时间先于onPlaceChildren。
 * [onPlaceChildren](../harmonyos-references/ts-custom-component-layout.md#onplacechildren10)：组件每次布局时触发，开发者可以在这个回调中增加放置自定义组件内子组件位置的逻辑。
 
-以下示例中，Index页面包含一个实现了自定义布局的自定义组件，且对应自定义组件的子组件通过index页面内的builder方式传入。
+以下示例中，Index页面包含一个实现了自定义布局的自定义组件，且对应自定义组件的子组件通过Index页面内的builder方式传入。
 
 而在自定义组件中，调用了onMeasureSize和onPlaceChildren设置子组件大小和放置位置。例如，在本示例中，在onMeasureSize中初始化组件大小size=100，后续的每一个子组件size会加上上一个子组件大小的一半，实现组件大小递增的效果。而在onPlaceChildren中，定义startPos=300，设置每一个子组件的位置为startPos减去子组件自身的高度，所有子组件右下角一致在顶点位置(300, 300)，实现一个从右下角开始展示组件的类Stack组件。
 
@@ -83,4 +83,4 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Hs4qICATTqqvxnjyvzXGNw/zh-cn_image_0000002747209853.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/v9GEGtmOQKahGhY1d6bGEw/zh-cn_image_0000002753294041.png)

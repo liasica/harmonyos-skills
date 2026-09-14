@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-dev-na
 title: 开发相机应用基础能力(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:06+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:22+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:fc00239329e01f5ac5e9150ee355c78f6f1723f9c1e89d0da2c18e580b875359
 ---
 

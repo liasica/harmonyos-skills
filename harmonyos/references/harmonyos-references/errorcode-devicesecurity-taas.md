@@ -3,54 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: TrustedAppService（可信应用服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > ArkTS API错误码 > TrustedAppService（可信应用服务）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ef38c1313c2ee3fc6978bb27674cf44e5bc5a25d3a2b57e850b149eaad41d956
+scraped_at: 2026-09-15T07:06:24+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:17f5daa670cdd30b5eac0f9e6b673b6c04a6ca888275a780a12a77fd31728af8
 ---
 
 **说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码](errorcode-universal.md)说明文档。
-
-## 201 权限校验失败
-
-**错误信息**
-
-permission denied.
-
-**错误描述**
-
-权限校验失败。
-
-**可能原因**
-
-1. 应用未开通可信应用服务。
-2. 应用未申请必要权限。
-
-**处理步骤**
-
-1. 开通可信应用服务，请参考“[开通Device Security服务](../harmonyos-guides/devicesecurity-deviceverify-activateservice.md)”。
-2. 申请位置权限，请参考开发指南中安全地理位置[开发步骤](../harmonyos-guides/devicesecurity-taas-securelocation.md#开发步骤)。
-
-## 401 参数检查失败
-
-**错误信息**
-
-argument is invalid.
-
-**错误描述**
-
-参数检查失败。
-
-**可能原因**
-
-1. 未使用Kit提供的枚举值。
-2. userData参数长度不符合要求。
-
-**处理步骤**
-
-1. 使用Kit中提供的枚举值作为传入参数。
-2. 修改userData参数的内容，保证长度在16到127 Bytes之间。
 
 ## 1011500001 无效的算法参数
 

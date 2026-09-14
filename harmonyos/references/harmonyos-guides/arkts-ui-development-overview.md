@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-deve
 title: UI开发（ArkTS声明式开发范式）概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI开发（ArkTS声明式开发范式）概述
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:00+08:00
+scraped_at: 2026-09-15T07:01:18+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:275357e094d9f36ebb48daccffd08f572f77816282d1dd7c494609b8ebd48c73
+content_hash: sha256:b4622bd46ebc71e9d0462d313a0ad41f562b26e3f7c4c2d6d727e4d773e34b25
 ---
 
 基于ArkTS的声明式开发范式的方舟开发框架是一套开发极简、高性能、支持跨设备的UI开发框架，提供了构建应用UI所必需的能力，主要包括：
@@ -54,7 +54,7 @@ content_hash: sha256:275357e094d9f36ebb48daccffd08f572f77816282d1dd7c494609b8ebd
 
 **图1** 整体架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Pw6250u6Qm6NxvxX3KPA3A/zh-cn_image_0000002747209841.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/W6fFL1hrRuGNHKzBlcXe4Q/zh-cn_image_0000002753294029.png)
 
 * **声明式UI前端**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-load
 title: 使用Node-API接口进行模块加载
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口进行模块加载
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:57+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:3ca90bbbdc8b3e284e724ac1844a5988ee9eac6efd1d59f7a885ccfaf937022b
+scraped_at: 2026-09-15T07:03:27+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:62dde522c9de9d0c4659824e8391480df0e7b1886eec175820f7dc4df7f52463
 ---
 
 Node-API中的napi\_load\_module\_with\_info接口的功能是进行模块的加载，当模块加载出来之后，可以使用函数napi\_get\_property获取模块导出的变量，也可以使用napi\_get\_named\_property获取模块导出的函数，该函数可以在[新创建的ArkTS基础运行时环境](use-napi-ark-runtime.md)中使用，即napi\_create\_ark\_runtime接口创建的运行时环境。
@@ -50,7 +50,7 @@ napi_status napi_load_module_with_info(napi_env env, const char* path, const cha
 
 1. 在模块加载过程中，若出现包内未找到对应文件或build-profile.json5配置错误等问题，返回错误码napi\_generic\_failure，并打印报错日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/-29aULiYQ0C-yKcb_Fbd6g/zh-cn_image_0000002717612308.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/keyoJcLWTm-qWS6BWg7tTg/zh-cn_image_0000002723856514.png)
 2. 系统侧发生非预期行为导致加载模块无法正常执行，将抛出cppcrash。
 
 ## 使用示例
@@ -93,28 +93,28 @@ export {value, test};
    2. 路径需要以packageName开头，packageName指的是模块的oh-package.json5中配置的name字段。
 
    ```
-    static napi_value loadModule(napi_env env, napi_callback_info info) {
-        napi_value result;
-        // 1. 使用napi_load_module_with_info加载Test文件中的模块
-        napi_status status = napi_load_module_with_info(env, "entry/src/main/ets/Test", "com.example.application/entry", &result);
-        if (status != napi_ok) {
-            return nullptr;
-        }
+   static napi_value loadModule(napi_env env, napi_callback_info info) {
+       napi_value result;
+       // 1. 使用napi_load_module_with_info加载Test文件中的模块
+       napi_status status = napi_load_module_with_info(env, "entry/src/main/ets/Test", "com.example.application/entry", &result);
+       if (status != napi_ok) {
+           return nullptr;
+       }
 
-        napi_value testFn;
-        // 2. 使用napi_get_named_property获取test函数
-        napi_get_named_property(env, result, "test", &testFn);
-        // 3. 使用napi_call_function调用函数test
-        napi_call_function(env, result, testFn, 0, nullptr, nullptr);
+       napi_value testFn;
+       // 2. 使用napi_get_named_property获取test函数
+       napi_get_named_property(env, result, "test", &testFn);
+       // 3. 使用napi_call_function调用函数test
+       napi_call_function(env, result, testFn, 0, nullptr, nullptr);
 
-        napi_value value;
-        napi_value key;
-        std::string keyStr = "value";
-        napi_create_string_utf8(env, keyStr.c_str(), keyStr.size(), &key);
-        // 4. 使用napi_get_property获取变量value
-        napi_get_property(env, result, key, &value);
-        return result;
-    }
+       napi_value value;
+       napi_value key;
+       std::string keyStr = "value";
+       napi_create_string_utf8(env, keyStr.c_str(), keyStr.size(), &key);
+       // 4. 使用napi_get_property获取变量value
+       napi_get_property(env, result, key, &value);
+       return result;
+   }
    ```
 
 * **加载源码HAR模块**

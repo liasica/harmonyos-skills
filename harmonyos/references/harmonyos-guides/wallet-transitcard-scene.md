@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-transi
 title: 开发场景
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 交通卡 > 开发场景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:33+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:59+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:33c5906bd19594c22e1b5e37111086c0c6308f51a131824da8bbf57c6668eacc
 ---
 

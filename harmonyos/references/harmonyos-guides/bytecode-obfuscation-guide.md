@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:17ef9c04d6fc3563dc34583a989c0f6089e139a9ef4cd31463cf65240e3df0cc
+scraped_at: 2026-09-15T07:01:17+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:32b11a21589401086027878009f023125035743518b7ce995fd7bdcd1856324a
 ---
 
 **注意** 
@@ -161,7 +161,7 @@ content_hash: sha256:17ef9c04d6fc3563dc34583a989c0f6089e139a9ef4cd31463cf65240e3
    4. 验证应用功能以及模块被依赖时的接口调用功能，排查遗漏的场景。若应用出现功能异常，可依据混淆后的报错栈，在模块的 **build/default/[...]/release/obfuscation/** 目录下查阅 **nameCache.json**（名称映射表）、**config.json**（混淆项与白名单）等产物，按[查看混淆效果](bytecode-obfuscation-guide.md#查看混淆效果)对照定位源码行；并按需使用-keep-global-name、-keep-property-name等进行保留。
 4. 待上述选项应用适配成功后，开启-enable-filename-obfuscation选项。此选项开启后以下场景需要适配：
 
-   1. 若代码中有动态import语句，如const path = './filePath'; import (path)，会出现文件引用失败的情况，需要使用-keep-file-name，filePath来保留这个文件名。
+   1. 若代码中有动态import语句，如const path = './filePath'; import (path)，会出现文件引用失败的情况，需要使用-keep-file-name filePath来保留这个文件名。
    2. 若应用中有描述路由表信息的[routerMap配置](module-configuration-file.md#routermap标签)，其中的pageSourceFile字段标记页面在模块的路径，需要使用-keep-file-name来保留这个路径。
    3. 若代码中有传入ohmUrl进行页面跳转，如router.pushUrl({url: '@bundle:com.example.routerPage/Library/Index'})，使用-keep-file-name来保留这个路径。
    4. 验证应用功能，排查遗漏的场景。若应用出现功能异常，且报错栈中的路径为混淆后的路径，可以在模块中的build/default/[...]/release/obfuscation/nameCache.json文件中查询到原始路径，进而找到源码文件。另外，[插件hstack](ide-command-line-hstack.md)支持自动还原混淆后的报错栈。在定位到需要保留的路径后，使用-keep-file-name来保留此路径。
@@ -181,7 +181,7 @@ content_hash: sha256:17ef9c04d6fc3563dc34583a989c0f6089e139a9ef4cd31463cf65240e3
 * origin目录：混淆前的modules.abc文件。
 * 配置信息文件：config.json，该文件记录了混淆的配置项和白名单列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/go0eruuZQuOAfsmQnj5pmg/zh-cn_image_0000002717769904.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/xKZUY47zTum66L7DW4aAwQ/zh-cn_image_0000002753453943.png)
 
 ## 报错栈还原
 
@@ -189,4 +189,4 @@ content_hash: sha256:17ef9c04d6fc3563dc34583a989c0f6089e139a9ef4cd31463cf65240e3
 
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/YboPLoFhR6GhItQjcfnYTw/zh-cn_image_0000002717609970.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Gg6VFxX2T9G3RwUeGqMSXg/zh-cn_image_0000002723854178.png)

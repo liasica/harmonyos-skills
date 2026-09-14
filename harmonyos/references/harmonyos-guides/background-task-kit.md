@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/background-ta
 title: Background Tasks Kit（后台任务开发服务）
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:55+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:37+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:6d50b48047317a2705aa5172f2cd7c5a8bd4041c5375d04e7b34173b5027760b
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: 通用事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件
 category: harmonyos-references
-scraped_at: 2026-09-02T15:18:40+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:04:45+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:05e42329731f247fbbf89e8c9878692433667dd5d021054783a44d25f55446bd
 ---
 

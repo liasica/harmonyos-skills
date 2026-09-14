@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/game-service-
 title: Game Service Kit（游戏服务）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务）
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:00+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:43+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3a48a4300bde773af833b3cc87f46487fdf2be2acdf6504b767c9060fa5edb79
 ---
 

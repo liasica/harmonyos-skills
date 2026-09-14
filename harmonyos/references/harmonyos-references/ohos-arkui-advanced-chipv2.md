@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipV2
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:533ce3b6d6075b48c27d41cabf18a4ebe5437f96524af1d667cf2ef87de2780f
+scraped_at: 2026-09-15T07:05:13+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:a4a402d4fb53170c10462cb2c0231bb9ed3a72ae28a814238c17b12ec5f871a9
 ---
 
 ChipV2是提供丰富样式和交互能力的操作块组件，支持前缀图标、后缀图标、激活状态、关闭按钮等特性，支持Symbol和Image两种图标类型，并提供完善的无障碍访问能力。该组件适用于搜索历史记录、邮件发送列表、标签选择、过滤器、联系人展示等场景。
@@ -114,8 +114,8 @@ ChipV2Options定义ChipV2的样式及具体样式参数。
 | minFontScale | number | [Resource](ts-types.md#resource) | 否 | 是 | ChipV2组件文本与图标的最小字体缩放倍数。  取值范围：[0, 1]  设置的值小于0时，按值为0处理。设置的值大于1时，按值为1处理。异常值默认不生效。  默认值：1。  值为undefined时，按默认值处理。  **装饰器类型：** @Trace |
 | padding | [LocalizedPadding](ts-types.md#localizedpadding12) | 否 | 是 | ChipV2组件的内边距。  默认值：  - size为ChipV2Size.SMALL并且activated为true时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_activated\_small\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_activated\_small\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}。  - size为ChipV2Size.SMALL并且activated为false时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_small\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_small\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}。  - size不为ChipV2Size.SMALL并且activated为true时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_activated\_normal\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_activated\_normal\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}。  - size不为ChipV2Size.SMALL并且activated为false时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_normal\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_normal\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}。  值为undefined时，按默认值处理。  **装饰器类型：** @Trace |
 | fontSize | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 统一设置ChipV2组件的文本与图标的字体大小，不支持百分比。传入百分比时按默认值处理。  该fontSize的优先级低于prefixIcon、label、suffixIcon和closeIcon中的fontSize属性。  默认值：  - size为ChipV2Size.SMALL时，文本默认值：$r('sys.float.chip\_small\_font\_size')；图标默认值：$r('sys.float.chip\_small\_icon\_size')。  - 其他情况下，文本默认值：$r('sys.float.chip\_normal\_font\_size')；图标默认值：$r('sys.float.chip\_normal\_icon\_size')  单位：fp  值为undefined时，按默认值处理。  **装饰器类型：** @Trace |
-| backgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。  **装饰器类型：** @Trace |
-| activatedBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。  **装饰器类型：** @Trace |
+| backgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。  **装饰器类型：** @Trace |
+| activatedBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。  **装饰器类型：** @Trace |
 | onClose | [VoidCallback](ts-types.md#voidcallback12) | 否 | 是 | 默认关闭图标点击事件回调函数。  当allowClose为true且suffixIcon没有传入参数时，点击关闭图标执行此回调函数。  默认值：不执行该回调函数。  值为undefined时，按默认值处理。 |
 | onClicked | [Callback](ts-types.md#callback12)<void> | 否 | 是 | ChipV2点击事件回调函数。  当enabled为true时，点击ChipV2触发点击事件；当enabled为false时，不触发点击事件。  默认值：不执行该回调函数。  值为undefined时，按默认值处理。 |
 
@@ -176,8 +176,8 @@ IChipV2OptionsConfig定义ChipV2选项的配置接口。
 | minFontScale | number | [Resource](ts-types.md#resource) | 否 | 是 | ChipV2组件文本与图标的最小字体缩放倍数。  取值范围：[0, 1]  设置的值小于0时，按值为0处理。设置的值大于1时，按值为1处理。异常值默认不生效。  默认值：1。  值为undefined时，按默认值处理。 |
 | padding | [LocalizedPadding](ts-types.md#localizedpadding12) | 否 | 是 | ChipV2的内边距。  默认值：  - size为ChipV2Size.SMALL并且activated为true时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_activated\_small\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_activated\_small\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}。  - size为ChipV2Size.SMALL并且activated为false时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_small\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_small\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}。  - size不为ChipV2Size.SMALL并且activated为true时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_activated\_normal\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_activated\_normal\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}。  - size不为ChipV2Size.SMALL并且activated为false时，默认值：{ start: LengthMetrics.resource('sys.float.chip\_normal\_text\_padding'), end: LengthMetrics.resource('sys.float.chip\_normal\_text\_padding'), top: LengthMetrics.vp(4), bottom: LengthMetrics.vp(4)}。  值为undefined时，按默认值处理。 |
 | fontSize | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 统一设置ChipV2组件的文本与图标的字体大小，不支持百分比。传入百分比时按默认值处理。  该fontSize的优先级低于prefixIcon、label、suffixIcon和closeIcon中的fontSize属性。  默认值：  - size为ChipV2Size.SMALL时，文本默认值：$r('sys.float.chip\_small\_font\_size')；图标默认值：$r('sys.float.chip\_small\_icon\_size')。  - 其他情况下，文本默认值：$r('sys.float.chip\_normal\_font\_size')；图标默认值：$r('sys.float.chip\_normal\_icon\_size')  单位：fp  值为undefined时，按默认值处理。 |
-| backgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
-| activatedBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
+| backgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
+| activatedBackgroundSystemMaterial | uiMaterial.[Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 设置组件激活状态下的系统材质样式。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同材质具有不同的效果，能够影响组件的背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)效果、材质层滤镜效果[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)。  默认值：undefined，不应用材质样式。 |
 | onClose | [VoidCallback](ts-types.md#voidcallback12) | 否 | 是 | 默认关闭图标点击事件回调函数。  当allowClose为true且suffixIcon没有传入参数时，点击关闭图标执行此回调函数。  默认值：不执行该回调函数。  值为undefined时，按默认值处理。 |
 | onClicked | [Callback](ts-types.md#callback12)<void> | 否 | 是 | ChipV2点击事件回调函数。  当enabled为true时，点击ChipV2触发点击事件；当enabled为false时，不触发点击事件。  默认值：不执行该回调函数。  值为undefined时，按默认值处理。 |
 
@@ -1015,7 +1015,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/0vPi4Dr6TS6XN-fLHSUB6A/zh-cn_image_0000002717773058.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/sVpnEfdsR9qdttD1V-F-Ew/zh-cn_image_0000002723697414.png)
 
 ### 示例2（设置ChipV2激活状态）
 
@@ -1080,7 +1080,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/tG9a1PhfQdq9QYBWQK6Ulw/zh-cn_image_0000002717613126.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ChO2XeXhQKitSA77ZQ2rJg/zh-cn_image_0000002753297181.gif)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -1139,7 +1139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/6jw664paTVq0ac6I42rVGA/zh-cn_image_0000002747293079.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/UjwKzw0IRc2mlz79GDt-ig/zh-cn_image_0000002753457099.gif)
 
 ### 示例4（监听ChipV2Options内对象类型属性的内部属性变化）
 
@@ -1182,4 +1182,63 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UObmwgLuRm65hUYajUpeHQ/zh-cn_image_0000002747212995.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/gA-5iaa0T6G7n3_hyCcd_Q/zh-cn_image_0000002723857334.gif)
+
+### 示例5（设置系统材质样式）
+
+该示例通过设置[ChipV2Options](ohos-arkui-advanced-chipv2.md#chipv2options)的backgroundSystemMaterial属性，实现了[ChipV2](ohos-arkui-advanced-chipv2.md#chipv2-1)的系统材质样式效果，包括沉浸式材质和自动反色功能。组件需放置在Navigation的标题栏中，沉浸光感效果才会生效。
+
+从API版本26.0.0开始，[ChipV2Options](ohos-arkui-advanced-chipv2.md#chipv2options)新增backgroundSystemMaterial属性。
+
+```ts
+import { ChipV2, ChipV2Options, ChipV2Label, LengthMetrics, ColorMetrics, UIUtils, uiMaterial } from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct Index {
+  @Local chipV2Options: ChipV2Options = new ChipV2Options({
+    // 设置文本属性。
+    label: new ChipV2Label({ text: '操作块' }),
+    // 使用UIUtils.makeObserved包裹padding，使内部属性start和end可被观测。
+    padding: UIUtils.makeObserved({ start: LengthMetrics.fp(20), end: LengthMetrics.fp(20) }),
+    backgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+      style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+      colorInvert: true
+    }),
+    // backgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_button_normal')),
+    borderRadius: LengthMetrics.resource($r('sys.float.ohos_id_corner_radius_button')),
+    enabled: true,
+  });
+  @Local currentPadding: number = 20;
+
+  @Builder
+  NavigationTitle() {
+    Row({ space: 10 }) {
+      ChipV2({ chipV2Options: this.chipV2Options })
+      ChipV2({ chipV2Options: this.chipV2Options })
+    }
+    .linearGradient({
+      angle: 90, // 渐变角度，90度是从左到右。
+      colors: [
+        ['#FF9A9E', 0.0], // 起始颜色及位置（0.0表示起点）。
+        ['#FECFEF', 0.5], // 中间颜色及位置。
+        ['#3B324C', 1.0] // 结束颜色及位置（1.0表示终点）。
+      ]
+    })
+    .padding(12)
+    .width('100%')
+  }
+  build() {
+    Column() {
+      Navigation() {
+        // 页面内容
+      }
+      .title({ builder: this.NavigationTitle, height: '100%' })
+    }.width('100%').height('100%')
+  }
+}
+```
+
+该示例配图为高算力设备强档效果。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/4VOL-QA_Svm_UPYG6BUZhg/zh-cn_image_0000002723697416.png)

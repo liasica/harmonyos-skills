@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics3
 title: graphics3d
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:10+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:08:36+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:bd7442f8c8ddf5d7e6ef3a6bd597dcf5ce4f7d6ea2b737b64f1b23bd3e837ba6
 ---
 

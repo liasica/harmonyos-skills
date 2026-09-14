@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-app-fil
 title: 应用共享目录配置
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用共享目录配置
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:af31f26fcd4e1bbc97b904cd2ec5a311cdf58c31ca2b46991c5d95fdfd455c48
+scraped_at: 2026-09-15T07:01:39+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:e5a7d01d10f98c338ef46317f7d0e3085780168432c094c6bc4794392811072b
 ---
 
 从API版本23开始，系统支持配置共享目录。在[应用文件分享](share-app-file.md)场景中，开发者可[配置共享目录](share-app-file-configuration.md#配置共享目录)，配置后仅共享目录中的文件可供用户分享给其他应用查阅，以防止应用敏感数据泄露。配置仅在手机（Phone）、平板（Tablet）上生效。
@@ -59,27 +59,23 @@ content_hash: sha256:af31f26fcd4e1bbc97b904cd2ec5a311cdf58c31ca2b46991c5d95fdfd4
 
 ### 路径限制说明
 
-1.路径深度限制：
+1. 路径深度限制：
 
-* 单路径最浅需配置2级，如/el2/base。
-* 单路径最深可配置10级，如/el2/base/files/level4/level5/level6/level7/level8/level9/level10。
+   * 单路径最浅需配置2级，如/el2/base。
+   * 单路径最深可配置10级，如/el2/base/files/level4/level5/level6/level7/level8/level9/level10。
+2. 路径数量限制：
 
-2.路径数量限制：
+   * 配置的路径不可重复，最多可配置20条路径。
+3. 路径格式限制：
 
-* 配置的路径不可重复，最多可配置20条路径。
+   * 必须以/开头，不允许有'.'、'..'、'\0'字符，不允许以'/'结尾。
+4. 父子目录限制：
 
-3.路径格式限制：
+   * 存在父目录配置时，不允许配置子目录。
+   * 如已配置/el2/base/parentsA，那么不允许再配置/el2/base/parentsA/childrenA，允许配置/el2/base/parentsB/childrenB。
+5. 验证方式及定位：
 
-* 必须以/开头，不允许有'.'、'..'、'\0'字符，不允许以'/'结尾。
-
-4.父子目录限制：
-
-* 存在父目录配置时，不允许配置子目录。
-* 如已配置/el2/base/parentsA，那么不允许再配置/el2/base/parentsA/childrenA，允许配置/el2/base/parentsB/childrenB。
-
-5.验证方式及定位：
-
-* 为保持与旧版本系统的兼容性，当应用的任何一条路径配置不符合路径限制时，会自动清除该应用的全部已配置路径。可通过系统日志搜索相关报错，关键字："TransAndSetToMapInner failed for bundle"。
+   * 为保持与旧版本系统的兼容性，当应用的任何一条路径配置不符合路径限制时，会自动清除该应用的全部已配置路径。可通过系统日志搜索相关报错，关键字："TransAndSetToMapInner failed for bundle"。
 
 ### 配置捐献沙箱目录
 

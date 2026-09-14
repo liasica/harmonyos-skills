@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cann-kit-guid
 title: CANN Kit（CANN异构计算框架服务）
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:34+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:03:01+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:b5b263d79f2fc1fc579ebfe22e7598e84ff3f63bf15c7f9bb2f3ed2e9dd68ce8
 ---
 

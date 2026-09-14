@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 半模态转场
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 模态转场设置 > 半模态转场
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1d55d718e7351e54949fd6302b3f3ec1a4e7e0af8faf8461dbbe08ba28ee8e66
+scraped_at: 2026-09-15T07:04:51+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:56e2f83395966ec8702d5278f72b6bc25e0e053d3072eebd3fcde5bc16f41d28
 ---
 
 通过bindSheet属性为组件绑定半模态页面，支持底部、居中、跟手、侧边、全屏等多种弹窗样式，在组件插入时可通过设置自定义或默认的内置高度确定半模态大小（侧边弹窗和全屏弹窗不支持自定义高度）。
@@ -410,7 +410,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/3_YZbVM_RGS1et-nR_Ot_g/zh-cn_image_0000002717612568.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/3J9G1v81S963hukPWgyYfQ/zh-cn_image_0000002723856774.gif)
 
 ### 示例2（设置三个不同高度的挡位）
 
@@ -463,7 +463,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/jtxRaVU3TcCEFsrenWqhDg/zh-cn_image_0000002747292521.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/CfG_BfDES4yKjDMatH7p1A/zh-cn_image_0000002723696856.gif)
 
 ### 示例3（使用边框宽度和颜色）
 
@@ -519,11 +519,11 @@ struct SheetTransitionExample {
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/RU_pwJePT4CXM5azjwKm9Q/zh-cn_image_0000002747212437.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/0IrotGqJQEePG75RaCMcpA/zh-cn_image_0000002753296623.png)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/bKeuheXSR-SIbGThWOcfrw/zh-cn_image_0000002717772502.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/79_xA-jqQc2MGeMWgNrHIQ/zh-cn_image_0000002753456541.png)
 
 ### 示例4（使用关闭回调函数）
 
@@ -577,7 +577,7 @@ struct BindSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/jbYGJB3_QQGQ_I8tl45GCQ/zh-cn_image_0000002717612570.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/SfLy23EVQeCaZiq3Ms2zhA/zh-cn_image_0000002723856776.gif)
 
 ### 示例5（设置内容区刷新时机）
 
@@ -630,11 +630,11 @@ struct Index {
 
 跟手触发挡位切换时，松手才触发面板内容高度刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/F0Ame9haQuGQ5cR5k6mqXQ/zh-cn_image_0000002747292523.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ODT6Zjv_TMaPRRWAo1GmKg/zh-cn_image_0000002723696858.gif)
 
 跟手触发挡位切换时，跟手时期就会触发面板内容高度刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/5QvwnnCaR2e1JsgLB0LMmQ/zh-cn_image_0000002747212439.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/SU0bMc8yR_i4MbGHMFTuQg/zh-cn_image_0000002753296625.gif)
 
 ### 示例6（设置压缩模态内容）
 
@@ -750,7 +750,7 @@ struct ListenKeyboardHeightChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/B9glGRUBTGS1FYW6IMXmBQ/zh-cn_image_0000002717772504.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ukh_MQuTThmTE7o9-tol_Q/zh-cn_image_0000002753456543.gif)
 
 ### 示例7（镜像场景下如何设置圆角属性）
 
@@ -803,11 +803,11 @@ struct SheetTransitionExample {
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/mZxBtP0CTnGZB8nq29abpg/zh-cn_image_0000002717612572.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/d3cvYuV1RI2FqvOjuSGh4w/zh-cn_image_0000002723856778.png)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/mr2j_fEYTCuXzrUbnucW-g/zh-cn_image_0000002747292525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/lIiK2l2aQqeTk8EhjTkFcA/zh-cn_image_0000002723696860.png)
 
 ### 示例8（半模态Side侧边样式）
 
@@ -909,7 +909,7 @@ struct SheetSideExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/BsmdXjGiR9WVjUsIH9hsCw/zh-cn_image_0000002747212441.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/HRK9_cbiQpqouIDd9rQPdw/zh-cn_image_0000002753296627.gif)
 
 ### 示例9（半模态ContentCover全屏样式）
 
@@ -971,11 +971,13 @@ struct ContentCoverExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/clcK5UmLSyeaKNtfAbY6Zg/zh-cn_image_0000002717772506.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/p_YXQVzSSW2yRgIsFg_7Sw/zh-cn_image_0000002753456545.gif)
 
 ### 示例10（半模态设置系统材质）
 
 该示例通过半模态systemMaterial属性设置系统材质。
+
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
 
 从API版本26.0.0开始，[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)新增systemMaterial属性。
 
@@ -1034,4 +1036,4 @@ struct SheetMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/seW-zdDOSKiESwydGUk02g/zh-cn_image_0000002717612574.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/d1P9NzLESgmcdvjkeoCIDA/zh-cn_image_0000002723856780.jpg)

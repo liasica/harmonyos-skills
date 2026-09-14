@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-appli
 title: 应用模型
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 应用模型
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:41+08:00
+scraped_at: 2026-09-15T07:02:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e6a79a1a7f0d39dae03263e0af14ed05a397d2912f8c48b55eba0d6489d977a5
+content_hash: sha256:0b8c0084871061124e2b0140d79d7e0099bac53d9fa96b08532f58f375ae860a
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ MDM应用进程模型继承于普通应用[进程模型](process-model-overview.
 
 **图1** MDM应用进程模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/MyozOE8wSrSKrgfuLyNdfg/zh-cn_image_0000002747291199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/b_2H3iaFRd6pBl4OwZiG0w/zh-cn_image_0000002723695536.png)
 
 ### EnterpriseAdmin进程的生命周期
 
@@ -30,19 +30,19 @@ Admin组件被激活后有独立的进程，支持系统状态变更回调。与
 
 **图2** MDM应用处于前台并且已经激活时
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/vpvhfg50TWKtKipozff-cw/zh-cn_image_0000002747211117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/L73gupaLTSCbYKHjw7rlTQ/zh-cn_image_0000002753295303.png)
 
 **图3** 存在MDM应用的前台进程和EnterpriseAdmin进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/3nXB06k2QxaV1HZZli5I0A/zh-cn_image_0000002717771182.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/h0JJ6XEiRYGT_Q-H879kLA/zh-cn_image_0000002753455221.png)
 
 **图4** 应用主进程停止时，EnterpriseAdmin进程仍然运行
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/afHKIeMQQP-0AvKJxiAiNA/zh-cn_image_0000002717611248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/tQKIKyOFSE20rLVWksVzRg/zh-cn_image_0000002723855456.png)
 
 **图5** EnterpriseAdmin进程支持系统事件回调
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/bQsoierlQL-goQCyFuZX6A/zh-cn_image_0000002747291201.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/e2p9H6vXQ7a25w5UK6dclQ/zh-cn_image_0000002723695538.png)
 
 * onAdminEnabled：当MDM应用的Admin组件被激活时的事件回调。
 * onAdminDisabled：当MDM应用的Admin组件被取消激活时的事件回调。
@@ -78,4 +78,4 @@ MDM管控接口使用[ACL授权](app-permission-mgmt-overview.md#权限机制中
 
 **图6** EDM服务校验逻辑
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/qO2t2zsrQDufcAQYuwZuwg/zh-cn_image_0000002747211119.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/1Iuu3kHBQsactDAYU2uxAw/zh-cn_image_0000002753295305.png)

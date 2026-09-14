@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloud-fou
 title: Cloud Foundation Kit（云开发服务）
 breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:20:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:08:46+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:b3e57513dfe54995e533d6fd2c332579faa20cee05a2b3e3730ad05e4fbf10b5
 ---
 

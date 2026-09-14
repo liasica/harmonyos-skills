@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 守护策略管理
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:32+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:57+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:b7eed1ad6ab987ffbf345682d73d4a2f6bace82c7f6e2d0a78bbd620813a2018
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-logo-u
 title: 标志使用规范
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 附录 > 标志使用规范
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:19+08:00
+scraped_at: 2026-09-15T07:02:46+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:50223c0c022db92a85ad80771bb6e427daddad57d573808829470a95f3b6a4fa
+content_hash: sha256:5ff00fb889d879e091f8f3dfa16113133e3138ecfcc0efe43be4462c78fd7f9b
 ---
 
 开发者应用在面向用户呈现华为运动健康品牌图标时，需要遵循《[HUAWEI Health授权使用规范](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/private/HuaweiHealthLicenseUsageGuidelines/000/001/044/0000100000000001044.20240417160150.64977181324752114137620022856507:20740405160241:100005355:DBEDC693E5482E439BFCDF5A73D1B74F41B5BEABF7F62F4AA2807330B8335543.pdf)》，图标样式请点击[资源下载](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/private/huaweiLogo/000/001/044/1000000000000001044.20231121144534.39714294158320889793671141568467:20731108144750:100005355:F16C5DE4AF6D9AC89675DAD1BB4D12821B5BCC039AFCADFF9ECEA7852757F9AA.zip)获取。
@@ -14,7 +14,7 @@ content_hash: sha256:50223c0c022db92a85ad80771bb6e427daddad57d573808829470a95f3b
 
 标志以“心形”为主要图形元素，并结合了运动跑道元素，凸显了运动健康品牌的专属性和识别性，品牌色用橙色来体现运动的活力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/FL59Rq-GSJ-_aJW3EC83CQ/zh-cn_image_0000002747211655.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/-WBkoRf0S4Ww4X6JEFS3Sg/zh-cn_image_0000002753295841.png)
 
 ## 标志使用
 
@@ -24,16 +24,16 @@ content_hash: sha256:50223c0c022db92a85ad80771bb6e427daddad57d573808829470a95f3b
 
 * 在授权入口展示数据来源、授权状态信息等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/PAI3EEL3Q9KyLWsIZMnHSw/zh-cn_image_0000002717771720.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/tHqnHzLcRZiv9ihbjrRZjQ/zh-cn_image_0000002753455759.png)
 * 授权连接详情页面，展示应用连接情况。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/BlM2cK2pR0Wy8ZyPqEJKiQ/zh-cn_image_0000002717611788.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/IkDwkXqWQEKPf3AS2CIJgw/zh-cn_image_0000002723855994.png)
 
 ### 使用HUAWEI Health标志
 
 包括英文和中文标志，且有横版和竖版两种版式，需要满足《[HUAWEI Health授权使用规范](https://hihealthbase-drcn.things.hicloud.com/healthkit/fileServer/getFile/private/HuaweiHealthLicenseUsageGuidelines/000/001/044/0000100000000001044.20240417151926.42901802932267224964253317308041:20740405152107:100005355:87328F4DFA033BC9DD8B6A03A0E9EB60C11ABA7EF92169AC42A4C205D3EA7514.pdf)》中横版和竖版网格正确比例的要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/cEkVnHB7SbWYeGXb4b9xqA/zh-cn_image_0000002747291741.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/1jQz141YT-W4MlU95ivZ9g/zh-cn_image_0000002723696076.png)
 
 ### 仅使用文本
 
@@ -45,7 +45,7 @@ content_hash: sha256:50223c0c022db92a85ad80771bb6e427daddad57d573808829470a95f3b
 
 除联合品牌使用HUAWEI Health标志外，仅华为运动健康授权的软件生态合作伙伴可以使用Health徽章。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/L283IJ7aT4CM6UaRsPR10g/zh-cn_image_0000002747211657.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/wfXHjeXIQ3OH7LodFAGzww/zh-cn_image_0000002753295843.png)
 
 **2.Health 徽章使用场景及示例**
 
@@ -61,7 +61,7 @@ content_hash: sha256:50223c0c022db92a85ad80771bb6e427daddad57d573808829470a95f3b
   + 在方版或者竖版KV中，徽章的高度大小以KV的宽为准，徽章的宽度不超过KV宽度的1/4，取徽章的高度为X，徽章及免责声明距离画面右侧及底部均为X。
   + 在横版KV中，徽章的高度大小以KV的宽为准，徽章的宽度不超过KV宽度的1/6，取徽章的高度为X，徽章及免责声明距离画面右侧及底部均为X。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/34FBL04SRRCydQqn1MAxiw/zh-cn_image_0000002717771722.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/-F2Oony_QTGExwLHEC4uPg/zh-cn_image_0000002753455761.png)
 * Health徽章在已授权的软件生态合作伙伴App下载详情页的使用规范及示例
 
   **核心原则**
@@ -72,7 +72,7 @@ content_hash: sha256:50223c0c022db92a85ad80771bb6e427daddad57d573808829470a95f3b
 
   徽章的宽度为页面宽度的1/3，取徽章的宽度为X，徽章与上方信息内容的间距为0.24X，此间距可根据实际情况适配调整。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/9va1IwxUT6CrG82vhv3Ang/zh-cn_image_0000002717611790.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/uHQUvetsQNyhRbRZq6cakQ/zh-cn_image_0000002723855996.png)
 * Health徽章在已授权的合作伙伴产品宣传视频中的使用规范
 
   **核心原则**
@@ -85,11 +85,11 @@ content_hash: sha256:50223c0c022db92a85ad80771bb6e427daddad57d573808829470a95f3b
 
     **图1** 横版样式参考
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/iwy-W4UXS6ywoXSBSXNxUQ/zh-cn_image_0000002747291743.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/9CYanTAaRqiY-8SLhtAZqA/zh-cn_image_0000002723696078.png)
 
     **图2** 竖版样式参考
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/4yNzhb8LQzmSD9Iic6KtHw/zh-cn_image_0000002747211659.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/K_91uRiKTJWaxjm1e_b1Ww/zh-cn_image_0000002753295845.png)
   + **硬件生态合作伙伴：**
 
     在已授权的硬件合作伙伴的产品宣传视频中，需要提示设备支持连接华为运动健康的功能时，使用文案方式书写为：**支持连接华为运动健康**。
@@ -102,4 +102,4 @@ content_hash: sha256:50223c0c022db92a85ad80771bb6e427daddad57d573808829470a95f3b
 
 HUAWEI Health标志的比例、颜色以及图形在任何情况下都不得改变。以下为常见错误用法示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/ZC7l59ysTmipsx1SXPqP3Q/zh-cn_image_0000002717771724.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Iw5TN2vJTlyMQlObQ7aItw/zh-cn_image_0000002753455763.png)

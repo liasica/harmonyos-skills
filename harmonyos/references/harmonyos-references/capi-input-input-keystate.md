@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-inpu
 title: Input_KeyState
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 结构体 > Input_KeyState
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:311d894dc643538ec6dedbf0b8251c2a584d36db0eab1b2db0c61d594f1c4af2
+scraped_at: 2026-09-15T07:07:16+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:03ec3d82346fba92e21a4de58423ab7b95869de7619c560b5f773607d63e4277
 ---
 
 ```c
@@ -27,4 +27,4 @@ typedef struct Input_KeyState Input_KeyState
 | 名称 | 描述 |
 | --- | --- |
 | [OH\_Input\_CreateKeyState](capi-oh-input-manager-h.md#oh_input_createkeystate) | 创建按键状态的结构体对象。通过调用[OH\_Input\_DestroyKeyState](capi-oh-input-manager-h.md#oh_input_destroykeystate)销毁按键状态的结构体对象。 |
-| [OH\_Input\_DestroyKeyState](capi-oh-input-manager-h.md#oh_input_destroykeystate) | 销毁按键状态的枚举对象。 |
+| [OH\_Input\_DestroyKeyState](capi-oh-input-manager-h.md#oh_input_destroykeystate) | 销毁按键状态的结构体对象。 |

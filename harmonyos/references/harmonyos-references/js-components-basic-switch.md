@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: switch
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > switch
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:50+08:00
+scraped_at: 2026-09-15T07:05:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7af42f41179c932a34258825f1e4cbeaae72269aa1a3fd0bf6f93cfba4f84ea8
+content_hash: sha256:4b7423a51b98aed0954e39d8e4d0d8f25578f346ca9364bbe821353ec3e37359
 ---
 
 **说明** 
@@ -124,4 +124,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/BrrwbazeRXC4HMgbfww0Xg/zh-cn_image_0000002717773184.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Lotbtz5aRbmCzutiNgoSXQ/zh-cn_image_0000002753297309.gif)

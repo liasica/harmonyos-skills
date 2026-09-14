@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:54+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:01:18+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:714ce3b376239cf9f41c4848eb51c0922eb03573de1100d9db124ed058c079f5
 ---
 

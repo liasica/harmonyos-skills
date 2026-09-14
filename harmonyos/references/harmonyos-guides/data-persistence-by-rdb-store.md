@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过关系型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过关系型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:54+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8dd7cb649f155e197f0c14da74f781c3e950972f35379bb59f3c969c5cae4709
+scraped_at: 2026-09-15T07:01:12+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:737caf4bb1d875ed431c2a6714c944de72cfa8b70819552495b8b72eede54ad3
 ---
 
 ## 场景介绍
@@ -30,11 +30,11 @@ content_hash: sha256:8dd7cb649f155e197f0c14da74f781c3e950972f35379bb59f3c969c5ca
 
 **图1** 关系型数据库运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/GwUE3UBTTXu0zvn_S7Mfuw/zh-cn_image_0000002747289881.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/vSFgC2igTNSmXUur7P7uuQ/zh-cn_image_0000002723694220.jpg)
 
 ## 约束限制
 
-* 系统默认日志方式是[WAL](data-terminology.md#wal模式)（Write Ahead Log）模式，系统默认落盘方式是[FULL模式](data-terminology.md#full模式)。
+* 系统默认日志方式是[WAL](data-terminology.md#wal-mode-write-ahead-logwal模式)（Write Ahead Log）模式，系统默认落盘方式是[FULL模式](data-terminology.md#full-modefull模式)。
 * 数据库中常驻有4个读连接和1个写连接。读连接会动态扩充，无可用读连接时，会创建新的读连接执行读操作。写连接不会动态扩充，无可用写连接时，会等待连接释放后执行写操作。
 * 为保证数据的准确性，数据库同一时间只能支持一个写操作。
 * 当应用被卸载完成后，设备上的相关数据库文件及临时文件会被自动清除。

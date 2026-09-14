@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputDevice (输入设备)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputDevice (输入设备)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:284285c79435f724096b7562ad807f977b316b5272cd09f3c2734e9891a8c344
+scraped_at: 2026-09-15T07:07:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:2d1f54af4059c4132a391c16a83fc5ce67f74b6e66eb29ec60c8322a8c2d4204
 ---
 
 本模块提供输入设备管理能力，包括监听输入设备的连接和断开状态，查询设备名称等输入设备信息。
@@ -637,7 +637,7 @@ struct Index {
 
 ## inputDevice.supportKeys9+
 
-supportKeys(deviceId: number, keys: Array<KeyCode>, callback: AsyncCallback <Array<boolean>>): void
+supportKeys(deviceId: number, keys: Array<KeyCode>, callback: AsyncCallback<Array<boolean>>): void
 
 查询指定输入设备是否支持指定按键，使用callback异步回调。
 

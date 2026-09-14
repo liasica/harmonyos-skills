@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 更新车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 更新车钥匙
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:31+08:00
+scraped_at: 2026-09-15T07:02:59+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b725fd544e27f73c4bbfb8cbf529588828f463e90fe8f4c08b1352e74a0f20ea
+content_hash: sha256:1a206726c6de74bbc389cbb5a316d7f9921de8fb19805a2771e72cbd46841fe8
 ---
 
 当车钥匙信息发生变化时，车主App通知钱包更新实例数据，完成移动端数字车钥匙更新。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/eaiuUSbNQAO94p4eBJcedA/zh-cn_image_0000002717772018.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/67fm-riTTrGTAqkRRE2Ddg/zh-cn_image_0000002753456057.png)
 
 ## 服务端开发
 

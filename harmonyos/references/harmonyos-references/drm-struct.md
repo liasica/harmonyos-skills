@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/drm-struc
 title: 结构体
 breadcrumb: API参考 > 媒体 > DRM Kit（数字版权保护服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:53+08:00
-doc_updated_at: 2026-08-21
+scraped_at: 2026-09-15T07:07:58+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:6afb1b0548b5f7a1ea89fdb30b55dbb2c127343f35af050b595e8a1f252b6d6d
 ---
 

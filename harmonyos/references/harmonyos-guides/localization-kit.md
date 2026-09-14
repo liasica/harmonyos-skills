@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/localization-
 title: Localization Kit（本地化开发服务）
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:57+08:00
-doc_updated_at: 2026-08-11
+scraped_at: 2026-09-15T07:01:42+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d33da34bc7582100577368f46c6f53a5669d16b1a4f2c4d2461d20cfb91aea61
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/function-
 title: 模块
 breadcrumb: API参考 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > C API > 模块
 category: harmonyos-references
-scraped_at: 2026-09-02T15:19:51+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:07:13+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:590aed38b3c8059aa4835dc12b1566e2c76d68611815cef547f06dabedaeee18
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unnece
 title: "@typescript-eslint/no-unnecessary-type-arguments"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unnecessary-type-arguments
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:38+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3a01824d663b272bf912c57e528070889a070c08710a44747ec30951ad4158ba
 ---
 

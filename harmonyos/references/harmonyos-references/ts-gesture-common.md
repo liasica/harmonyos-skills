@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 手势公共接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 手势公共接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:901bb22be6b0f8da3babc170e8792308d32f95fa6664576e8a613fd33bd708c5
+scraped_at: 2026-09-15T07:04:51+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:cdc429547fad06f2da777d4ada13cda00fab89f7338d09d561271f40778ac556
 ---
 
 为开发者提供手势相关的公共接口，包括手势公共配置、手势识别器、手势事件信息、手势类型等能力，适用于在应用中识别、控制和处理点击、长按、滑动、捏合等手势交互场景。
@@ -816,7 +816,7 @@ getDistanceMap(): Map<SourceTool, number>
 
 getCurrentLocalPosition?(): Coordinate2D
 
-获取手指位置相对于当前组件实时位置左上角的坐标。
+获取手指位置相对于当前组件实时位置左上角的坐标。在事件无法提供有效的实时组件坐标时，返回空值，使用前请进行判空处理。
 
 **起始版本：** 26.0.0
 

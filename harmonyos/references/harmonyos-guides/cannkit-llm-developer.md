@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-llm-d
 title: LLM大模型能力开放
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > LLM大模型能力开放
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:44+08:00
-doc_updated_at: 2026-05-26
+scraped_at: 2026-09-15T07:03:22+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3abeec12d4dfe58ceecd5c66df0e02f84a2ead18bcf7662fcafcc1d2592456e2
 ---
 

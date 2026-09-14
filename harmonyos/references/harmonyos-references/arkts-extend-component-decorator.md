@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-ext
 title: 组件扩展装饰器
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:05:11+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3a33e06879060d85aee5c7207c8dd79f1da579503384629e08163bef2e283fdb
 ---
 

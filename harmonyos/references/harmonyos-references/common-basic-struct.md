@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/common-ba
 title: 结构体
 breadcrumb: API参考 > 公共基础能力 > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:36+08:00
-doc_updated_at: 2026-06-03
+scraped_at: 2026-09-15T07:09:30+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0429cf0ddea87f13eedcb9a1faa3f4898dc76d1056567ad784c8e621a49cc999
 ---
 

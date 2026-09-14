@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/public-audio-
 title: 空间音频能力查询和状态订阅
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 空间音频能力查询和状态订阅
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bf18e7b07eadb55c99126ffd52444a4355357b5f0ded1b143de8262e42617ca9
+scraped_at: 2026-09-15T07:02:16+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:922c2c93dd738cd78ef50da063a882cea25032cadbfe323cef55c90565e53dfe
 ---
 
 从API version 18开始，支持空间音频能力查询和状态订阅。
@@ -22,7 +22,7 @@ Audio Vivid是基于AI技术的音频编解码标准，由世界超高清视频�
 
 对于播放音频类的应用，开发者可以查询到设备是否支持空间音频的能力，以及当前设备空间音频的开关状态。
 
-### 获取空间音频示例
+### 获取空间音频实例
 
 应用开发者在使用AudioSpatializationManager的接口前，需要先调用[getSpatializationManager](../harmonyos-references/arkts-apis-audio-audiomanager.md#getspatializationmanager18)获取AudioSpatializationManager实例。
 

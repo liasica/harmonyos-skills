@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-in
 title: HiAppEvent介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > HiAppEvent介绍
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:45+08:00
+scraped_at: 2026-09-15T07:02:09+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:eaeedfe9a96afc50dd59c33b48a21331ed73c581ccff526dafd096e40e19df07
+content_hash: sha256:9a7437311d90f92895dbc1f3e8763046cd253ed7c70bfddcee06ef03858f2b89
 ---
 
 ## 简介
@@ -36,7 +36,7 @@ HiAppEvent是系统为应用开发者提供的事件订阅和事件打点机制�
 
 应用调用HiAppEvent的addWatcher接口订阅系统事件并创建共享目录。当应用进程发生故障时，DFX系统捕获相关信息，生成事件和日志，并写入到共享目录。HiAppEvent监听到事件后，将事件回调给应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/hV7laCOnTDWT3Dnc0f6X-A/zh-cn_image_0000002717611296.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Aw-8aapRR_6oKc4JwmiEGw/zh-cn_image_0000002723855504.png)
 
 ### 应用事件订阅机制
 
@@ -44,7 +44,7 @@ HiAppEvent是系统为应用开发者提供的事件订阅和事件打点机制�
 
 HiAppEvent通过事件领域和事件名称关联应用事件，并通过addWatcher接口设置的回调方式将事件回调给应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/wKZ2s0ccTw-DD9b8e9LtmA/zh-cn_image_0000002747291249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/e_Si_H7UQx-q7AB0UxB1fg/zh-cn_image_0000002723695586.png)
 
 **说明** 
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: CryptoKeyAgreementApi
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 模块 > CryptoKeyAgreementApi
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a9ad420800b9df88aa77dcbb9bf425e9f905ece49cab96296ecccad90f015e34
+scraped_at: 2026-09-15T07:06:19+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:4b38188a23f63c9d11062f9b094ce0683c1febe2bd50d954c51bab9dc5766646
 ---
 
 ## 概述
 
-为应用提供密钥协商算法接口。
+描述HarmonyOS为应用提供的密钥协商接口。
 
 **起始版本：** 20
 

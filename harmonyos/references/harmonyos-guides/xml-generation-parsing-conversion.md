@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xml-generatio
 title: XML生成、解析与转换
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > XML生成、解析与转换
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:38:25+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:01:14+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d70a4bf0c8331af917472a296715407c6e7ba233b15e9c57d7e4681293603078
 ---
 

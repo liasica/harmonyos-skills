@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-notif
 title: Account Kit通知事件
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit通知事件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:10+08:00
+scraped_at: 2026-09-15T07:02:37+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:051e0e834573d4fd1b34dcb3321b814d3145f266ba98aa10a8a79900e2972b21
+content_hash: sha256:ab05a428dd3c725d4da18d04d609c1cc547e4593530722778d24a10c764ba05c
 ---
 
 ## 概述
@@ -176,17 +176,17 @@ content_hash: sha256:051e0e834573d4fd1b34dcb3321b814d3145f266ba98aa10a8a79900e29
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/QHtNhL8UT2moOWsoeBJwgA/zh-cn_image_0000002717771564.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/h5IdKoG2RcGpFPluJ-ReRQ/zh-cn_image_0000002753455603.png)
 2. 在项目列表选择项目。
 3. 进入“项目设置 > 开放能力管理”页面，点击“RISC”对应的“管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/b-TU8HsLSpWcpOcfCN1g1Q/zh-cn_image_0000002717611632.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/uvFF7udURwS6OS4ZtHEJ7w/zh-cn_image_0000002723855838.png)
 4. 点击“启用”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/f36hjUsvS3-p0GKUnnMocw/zh-cn_image_0000002747291583.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/tcPrV-7ESQKfpxQy99xejQ/zh-cn_image_0000002723695920.png)
 5. 点击“订阅通知”按钮，在弹窗中配置“回调地址”及“订阅范围”，然后点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/2M4hr3EsSNmcVN8UTGeBSw/zh-cn_image_0000002747211501.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/vf9e3hibTAmwu4I7mxknSQ/zh-cn_image_0000002753295687.png)
 
    **说明** 
 

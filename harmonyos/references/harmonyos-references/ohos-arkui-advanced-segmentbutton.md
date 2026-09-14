@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButton
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a1b198435236a13f24f26309654501cd2c6d1f051a55d1f20af5511d99c647ee
+scraped_at: 2026-09-15T07:05:15+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:f17e92202227797d29195192f0d52da2a79f17b517eaf940dbb87e58c425fd00
 ---
 
 分段按钮组件包含页签类分段按钮和胶囊类分段按钮。页签类分段按钮适用于页面或内容区域的切换场景；胶囊类分段按钮适用于单选或多选的选择场景，包含胶囊类单选分段按钮和胶囊类多选分段按钮。该组件支持自定义文本颜色、字体大小、字体粗细、背景色、图片尺寸、内边距、背景模糊材质等外观属性，支持仅文本、仅图标和图标+文本三种按钮样式，并提供无障碍朗读、布局方向镜像、自定义圆角、属性动画等能力，适用于需要快速构建符合设计规范的分段选择界面的场景。
@@ -95,7 +95,7 @@ SegmentButton({ options: SegmentButtonOptions, selectedIndexes: number[], onItem
 | borderRadiusMode20+ | [BorderRadiusMode](ohos-arkui-advanced-segmentbutton.md#borderradiusmode20) | 否 | 是 | 边框圆角模式，用于控制圆角计算方式。  默认值：BorderRadiusMode.DEFAULT  值为undefined时，按默认值处理。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundBorderRadius20+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分段按钮整体容器的边框圆角半径。  **说明：**  此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。  对于胶囊类多选分段按钮（type为"capsule"且multiply为true），此属性不生效，需要用itemBorderRadius配置圆角。  圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。  默认值：$r('sys.float.segmentbutton\_container\_shape')  值为undefined时，按默认值处理。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 | itemBorderRadius20+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分段按钮中按钮项的边框圆角半径。  **说明：**  此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。  对于胶囊类多选分段按钮（type为"capsule"且multiply为true），只能控制两端的选项圆角。  圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。  默认值：$r('sys.float.segmentbutton\_selected\_background\_shape')  值为undefined时，按默认值处理。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。  对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。  默认值：无材质效果。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。  对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。  默认值：无材质效果。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 **说明** 
 
@@ -215,7 +215,7 @@ type DimensionNoPercentage = PX | VP | FP | LPX | Resource
 | borderRadiusMode20+ | [BorderRadiusMode](ohos-arkui-advanced-segmentbutton.md#borderradiusmode20) | 否 | 是 | 边框圆角模式，用于控制圆角计算方式。  默认值：BorderRadiusMode.DEFAULT  值为undefined时，按默认值处理。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 | backgroundBorderRadius20+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分段按钮整体容器的边框圆角半径。  **说明：**  此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。  对于胶囊类多选分段按钮（type为"capsule"且multiply为true），此属性不生效，需要用itemBorderRadius配置圆角。  圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。  默认值：$r('sys.float.segmentbutton\_container\_shape')  值为undefined时，按默认值处理。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 | itemBorderRadius20+ | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分段按钮中按钮项的边框圆角半径。  **说明：**  此属性仅在borderRadiusMode为BorderRadiusMode.CUSTOM时生效。  对于胶囊类多选分段按钮（type为"capsule"且multiply为true），只能控制两端的选项圆角。  圆角大小受组件尺寸限制，最大值为组件宽或高的一半，不支持百分比设置。超出最大值时自动修正为最大值，使用百分比时按默认值处理。  默认值：$r('sys.float.segmentbutton\_selected\_background\_shape')  值为undefined时，按默认值处理。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
-| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏子树，或横向Tabs的底部TabBar子树中，材质效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。  对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。  默认值：无材质效果。  从API版本26.0.0开始，除胶囊类多选分段按钮（即type为"capsule"且multiply为true）外，backgroundSystemMaterial设置自动反色的系统材质时，fontColor和selectedFontColor使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| backgroundSystemMaterial | [uiMaterial.Material](arkts-apis-uimaterial.md#material) | 否 | 是 | 分段按钮组件的背景板的系统材质。需要将组件放置在Navigation或NavDestination的标题栏，或横向Tabs的底部TabBar中，沉浸光感效果才会生效。不同系统材质具有不同的属性，产生不同的效果。传入材质后，SegmentButton的动效发生改变。  对于胶囊类多选分段按钮（即type为"capsule"且multiply为true），该属性不生效。  默认值：无材质效果。  从API版本26.0.0开始，除胶囊类多选分段按钮（即type为"capsule"且multiply为true）外，backgroundSystemMaterial设置自动反色的系统材质时，fontColor和selectedFontColor使用支持反色的特殊系统资源，颜色自动适配到材质背景色的反色。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## BorderRadiusMode20+
 
@@ -760,7 +760,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Ce0fV-mpR1K9SN9x_wi4Yg/zh-cn_image_0000002747293117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/GoOV-ZUhTAqNkHm9AzL4Iw/zh-cn_image_0000002753457139.png)
 
 ### 示例2（设置分段按钮样式）
 
@@ -868,7 +868,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Pr1Tr_bvRu2hLHmbBW_LLw/zh-cn_image_0000002747213033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/-jNBcOHsTY6Gf2NoskRtJQ/zh-cn_image_0000002723857374.png)
 
 ### 示例3（分段按钮数组处理）
 
@@ -945,7 +945,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xP-TUSX2SzG4tTfEi3qplg/zh-cn_image_0000002717773098.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/7Lcwm0bjSYeerDNstNfpYg/zh-cn_image_0000002723697456.gif)
 
 ### 示例4（设置镜像效果）
 
@@ -1055,7 +1055,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/n5inZI19SByyObChJLTjmA/zh-cn_image_0000002717613166.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/FM0coy3FT62p1hVZCEPeLA/zh-cn_image_0000002753297223.png)
 
 ### 示例5（设置无障碍朗读）
 
@@ -1202,6 +1202,8 @@ struct Index {
 }
 ```
 
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/vGf2Dl41SNalMcVe0vEnnA/zh-cn_image_0000002753457141.png)
+
 ### 示例6（设置自定义圆角）
 
 该示例演示了如何为分段按钮组件设置自定义的边框圆角半径。
@@ -1245,7 +1247,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Xz9eWg8mR8qsW8d7W_3EzA/zh-cn_image_0000002747293119.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Mzh7tq6fTXagiL5YI1AdfA/zh-cn_image_0000002723857376.png)
 
 ### 示例7（开启SegmentButton的属性动画）
 
@@ -1321,7 +1323,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/kFgHvP5STPG-mcapgMn6Ew/zh-cn_image_0000002747213035.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/nkuwC10qTxWr4xc5sedcyA/zh-cn_image_0000002723697458.gif)
 
 ### 示例8（设置背景板材质）
 
@@ -1390,7 +1392,9 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/YW701XsySpGwx98OTXAKLQ/zh-cn_image_0000002717773100.gif)
+该示例配图为高算力设备强档效果。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/a83tfHKURSmNB6gwzY-mLg/zh-cn_image_0000002753297225.gif)
 
 ### 示例9（监听SegmentButtonOptions内属性的变化）
 
@@ -1454,4 +1458,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/lEuT5zd1QpqOPg2PpVGQLQ/zh-cn_image_0000002717613168.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/jQ4mao3pQZ6aw17S7SrXSw/zh-cn_image_0000002753457143.gif)

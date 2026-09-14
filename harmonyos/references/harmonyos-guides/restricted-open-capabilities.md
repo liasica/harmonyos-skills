@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-op
 title: 受限开放能力
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:46:37+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:27+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:efa1860e9c2b62579ec089e9def77fe7119e0fc794f094356797d45caefd9b96
 ---
 

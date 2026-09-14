@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-imagea
 title: AI识图
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > AI识图
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:55+08:00
+scraped_at: 2026-09-15T07:03:25+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:30ca87050f9f3a2efb65a7d892591b1cde14d21315c0470e82aab25ca77958f8
+content_hash: sha256:d7a6dd76bae794fb946d04e8da3fb3f8eb24955c4e47da6dbc276349bfd9a5c4
 ---
 
 ## 场景介绍
@@ -34,7 +34,7 @@ AI识图是通过聚合OCR（Optical Character Recognition）、主体分割、�
 
 **图1** AI识图示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/RN2ckAmeRwKC_xjEM5a8LA/zh-cn_image_0000002717612284.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/uB58Qm74TaG5BP5O4c5tDw/zh-cn_image_0000002723856490.png)
 
 ## 约束与限制
 

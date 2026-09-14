@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unin
 title: ohpm uninstall
 breadcrumb: 指南 > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm uninstall
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:29+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-09-15T07:03:55+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f2ae75491870b49974d3423ecc15aadb9e46a4a171265e6c5cd4b2529f58a7e2
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 通知类客户端信息查询场景（C/C++）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 通知类客户端信息查询场景（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:29+08:00
+scraped_at: 2026-09-15T07:01:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7cde9d8d8f2a6a16adba9a893a91742ecbed47f4561066d89e0cc30e1eece76c
+content_hash: sha256:919198078e4f2fd8b667e32221a16b24b15f4c13ec26c6d4c79f150d2b0b5fce
 ---
 
 从26.0.0开始，支持三方安全应用获取设备上全量的安全审计通知类客户端信息。
@@ -21,7 +21,7 @@ content_hash: sha256:7cde9d8d8f2a6a16adba9a893a91742ecbed47f4561066d89e0cc30e1ee
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/L7rkxp_8Qqi3kgCRMmB5gw/zh-cn_image_0000002747211031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/gmu7JdITQYOEs8kmbQc6Cg/zh-cn_image_0000002753295217.png)
 
 **流程说明：**
 

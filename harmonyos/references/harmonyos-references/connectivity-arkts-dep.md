@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/connectiv
 title: 已停止维护的接口
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 已停止维护的接口
 category: harmonyos-references
-scraped_at: 2026-04-28T08:08:07+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:06:40+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:a3edc1d151cea59a9cdce1f987167494b19560ea36758c2a3e47689b09f2c789
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-prep
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:17:44+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:47+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:e546a85b47feb0c83670858aced22673b92c12613b9a21466fb9dd7e9f3daa8d
 ---
 

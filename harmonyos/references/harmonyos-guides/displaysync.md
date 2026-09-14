@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/displaysync
 title: 使用可变帧率能力定制不同内容的绘制帧率
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 使用可变帧率能力定制不同内容的绘制帧率
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:07+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:30+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:45c1a7b7edf0582fd9ef3de8a3000879d08734ec2d37dc1df0b20b8b61831ade
 ---
 

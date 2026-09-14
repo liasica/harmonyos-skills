@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 顶点标记
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 顶点标记
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:47:25+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:32+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:73c959d09edafa9f57937158ea4b4500542cd60f012b2df94a5b9cab1e37ebde
 ---
 

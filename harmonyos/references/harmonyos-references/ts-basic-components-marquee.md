@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Marquee
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Marquee
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:34+08:00
+scraped_at: 2026-09-15T07:05:06+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8651535fd4904628688fc2c2312f91757f7a6bede03d51ba5e4d461b7f33e73e
+content_hash: sha256:8d3174f7bb7ed1e057117c3a2aac9766a223ea807a65b506296af98c26c4690c
 ---
 
 跑马灯组件，用于滚动展示一段单行文本，支持自定义滚动速度、方向、循环次数等。仅当文本内容宽度大于等于跑马灯组件宽度时滚动，否则不滚动。适用于需要在有限空间内展示较长文本的场景，如新闻标题滚动、通知公告、广告轮播等，可以有效节省界面空间并吸引用户注意。
@@ -347,7 +347,7 @@ struct MarqueeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/W7hQL8LMTS-SfE3TI04ejQ/zh-cn_image_0000002717612950.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/uiO2mRZuQmiHSBrRyfrnMw/zh-cn_image_0000002753297005.gif)
 
 ### 示例2（设置跑马灯停止回调）
 
@@ -424,4 +424,4 @@ struct MarqueeStop4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Em2O4MVlQVeycAlE12T0Gw/zh-cn_image_0000002747292903.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/e71yy6kWSd62Zujm66Fx6A/zh-cn_image_0000002753456923.gif)

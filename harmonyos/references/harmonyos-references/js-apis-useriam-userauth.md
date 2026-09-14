@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.userIAM.userAuth (用户认证)"
 breadcrumb: API参考 > 系统 > 安全 > User Authentication Kit（用户认证服务） > ArkTS API > @ohos.userIAM.userAuth (用户认证)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:00+08:00
+scraped_at: 2026-09-15T07:06:35+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:39e1768ed627545e0e0d2b1eff41385684eb29a85f2d3b6ebe11a46c4f254c96
+content_hash: sha256:cdf091f4e1c8cb93b9955d5c67f88020091c56a27be100c8479f02a3dbc5065f
 ---
 
 **userAuth**模块是HarmonyOS系统中用于用户身份认证的核心模块，提供了设备解锁、支付验证、应用登录等场景下的身份认证能力。
@@ -46,7 +46,7 @@ content_hash: sha256:39e1768ed627545e0e0d2b1eff41385684eb29a85f2d3b6ebe11a46c4f2
 
 * **[UserAuthInstance](js-apis-useriam-userauth.md#userauthinstance10)**：用户认证实例类，提供认证执行、取消、事件订阅等能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/6RDGOyUTSyuYtxUI6btjiQ/zh-cn_image_0000002717773520.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/4GiX-aEZQX2SM4LatWsrPQ/zh-cn_image_0000002753297643.png)
 
 ## API组合使用关系说明
 

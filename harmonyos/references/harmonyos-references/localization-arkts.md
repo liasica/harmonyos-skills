@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/localizat
 title: ArkTS API
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:06:25+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:06:11+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8d5f4e333b162605c003f6f60b1f4658d6fe880c57a18f148dc5029f2d6f7d47
 ---
 

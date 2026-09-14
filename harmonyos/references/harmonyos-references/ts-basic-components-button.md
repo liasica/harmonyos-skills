@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Button
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:25+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:2451a90fa97fcbc11541651b64be410b489f1c7ade94bbd262bd7fa46d0ea7ab
+scraped_at: 2026-09-15T07:04:56+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:1ba0560410ea2efb80b28d71a1a8ec52234aa96b72b86399ce9718de1d11e83b
 ---
 
 按钮组件，可快速创建不同样式的按钮。
@@ -553,7 +553,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/X1VWdy_yTRScHOBDXXeNBg/zh-cn_image_0000002747212575.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ADn10CfpQ2OCY_lvTd18Zw/zh-cn_image_0000002753296761.gif)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -585,7 +585,7 @@ struct ButtonRenderControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/zoZ9bca7SVCoDh5iTa856Q/zh-cn_image_0000002717772640.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ljmBQtIOTTCh8gZCW-ckPA/zh-cn_image_0000002753456679.gif)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -627,7 +627,7 @@ struct ButtonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/dsdX9CMOTaOkhPrFufBI9w/zh-cn_image_0000002717612708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/YBkeaBTcTJu5aJwADpjVIg/zh-cn_image_0000002723856914.png)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -666,7 +666,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/BLNyYN-BTSWyi2jOSN9yuA/zh-cn_image_0000002747292661.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/iMEY3vgIThStOJEAMl_Usw/zh-cn_image_0000002723696996.jpeg)
 
 ### 示例5（设置按钮的角色）
 
@@ -696,7 +696,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/IexQz_vBTvSb-L82CTaBzQ/zh-cn_image_0000002747212577.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/3-XTOa53SkCgkfUEiOhiVw/zh-cn_image_0000002753296763.jpeg)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -765,7 +765,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/wzaQkj66QNKVMQv2Th7lCQ/zh-cn_image_0000002717772642.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/PD_RXCKlTNKukwv7oQ5RLg/zh-cn_image_0000002753456681.gif)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -807,7 +807,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GmFfn1XfSPK8LOOSazHHLg/zh-cn_image_0000002717612710.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/AcNQ9mPdRNOEq_cBz92Lkw/zh-cn_image_0000002723856916.jpeg)
 
 ### 示例8（设置label文本水平对齐方式）
 
@@ -833,13 +833,17 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/34MOROKFSlymFmefX0wEMA/zh-cn_image_0000002747292663.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4UJDhItAQbCUbPxTJclywA/zh-cn_image_0000002723696998.jpeg)
 
 ### 示例9（设置按钮的沉浸光感效果）
 
 该示例使用通用属性[systemMaterial](ts-universal-attributes-image-effect.md#systemmaterial)接口来设置组件的系统材质，以实现沉浸光感效果。
 
-组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+该示例配图为高算力设备强档效果，组件沉浸光感效果会根据设备算力与用户在系统中设置的沉浸光感效果自适应调整，开发者无需额外适配。
+
+**说明** 
+
+如果开发者没有主动设置Button的背景色属性，即使用Button组件默认的背景色参数时，设置系统材质后会自动继承默认的背景色参数。如果开发者主动设置了背景色，且背景色参数设置在系统材质参数之前，则系统材质参数会强制清除开发者主动设置的背景色，将其改为透明色。 如果主动设置的背景色在系统材质之后，则背景色和系统材质会叠加显示（背景色层级更高）。
 
 从API版本26.0.0开始，新增systemMaterial属性。
 
@@ -855,6 +859,7 @@ struct Index {
       Button('helloWorld')
         .width(200)
         .fontColor(Color.Black)
+        // 通过systemMaterial设置系统材质
         .systemMaterial(new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.THIN
         }))
@@ -904,8 +909,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/bMzkCFCsSbqbFQCtub3kuQ/zh-cn_image_0000002747212579.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/6kBJCIfGS-KnRKOQjW8kjw/zh-cn_image_0000002753296765.png)
 
-设置沉浸光感后：
+设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Q3ES__IsT7qWwCqJ4IaRNQ/zh-cn_image_0000002717772644.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/U3cU-ta-Ra2O-cy_ALIXGA/zh-cn_image_0000002753456683.png)

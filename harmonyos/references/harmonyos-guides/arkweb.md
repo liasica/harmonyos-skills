@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb
 title: ArkWeb（方舟Web）
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:54+08:00
-doc_updated_at: 2026-07-21
-content_hash: sha256:f62955c6971673460e814426fc8f94a93e6635c659a371838a9fbb329360dfa5
+scraped_at: 2026-09-15T07:01:35+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:5a06358a86d7b311d9d7e7da5a5221dbf9dbe01fd9778c922ecbe7ac2a6a247c
 ---
 
 * **[ArkWeb简介](web-component-overview.md)**
-* **[ArkWeb进程](web_component_process.md)**
+* **[ArkWeb进程](web-component-process.md)**
 * **[Web组件的生命周期](web-event-sequence.md)**
 * **[设置基本属性和事件](web-set-attributes-events.md)**
 * **[Web渲染和布局](web-render-layout.md)**

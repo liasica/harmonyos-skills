@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-common
 title: 图形缓冲区常见稳定性问题 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形缓冲区 > 图形缓冲区常见稳定性问题 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e66f02c95fecae1a428fc8069670d9a9cfc2d984ab4d7f38589d2c8a92890e15
+scraped_at: 2026-09-15T07:02:32+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:ba308c44750ca3a9521824e1f082884ed4a8c1eeb150cd9361e1dc8add83ec90
 ---
 
 本文档主要针对NativeWindow、NativeBuffer和NativeImage开发过程中的常见问题进行说明，帮助开发者及时避免或定位对应问题，提高应用稳定性。
@@ -79,9 +79,8 @@ int32_t OH_NativeImage_ReleaseNativeWindowBuffer(OH_NativeImage* image,OHNativeW
 
 可能原因如下：
 
-1.错误地减少了一次NativeWindow引用计数，导致NativeWindow计数减为0释放后，其他地方调用或者再次减计数时崩溃。
-
-2.从XComponent组件获取的NativeWindow，抛向子线程使用，XComponent组件销毁时将NativeWindow引用计数减一，若减为0析构后，子线程仍在使用会导致崩溃。
+1. 错误地减少了一次NativeWindow引用计数，导致NativeWindow计数减为0释放后，其他地方调用或者再次减计数时崩溃。
+2. 从XComponent组件获取的NativeWindow，抛向子线程使用，XComponent组件销毁时将NativeWindow引用计数减一，若减为0析构后，子线程仍在使用会导致崩溃。
 
 ### 典型错误代码及解决方案
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-nodes
 title: 自定义节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:51+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:01:28+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0b28045b166fe590b3c69dda13d17d86cd33b8c895559ee0ef429c92b1dba975
 ---
 

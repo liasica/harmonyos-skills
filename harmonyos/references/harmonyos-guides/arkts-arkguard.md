@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-arkguar
 title: ArkGuard源码混淆工具
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:01:17+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:7eefae056fd1841c2924034219aa629bf0db69592bd8f3f7a8c0687c701531ef
 ---
 

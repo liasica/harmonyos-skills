@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_promise-f
 title: "@typescript-eslint/promise-function-async"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/promise-function-async
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:39+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:8927aaba80aa81bf628854116f3ed3d28e542aceca1203672487fcf26cd0cdb4
 ---
 

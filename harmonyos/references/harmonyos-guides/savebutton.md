@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/savebutton
 title: 使用保存控件
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 使用保存控件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:23+08:00
+scraped_at: 2026-09-15T07:01:45+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:59d6f777dd287a6e7b2f4b5ab021e2b8a73afcf5985fb6c49768a1d1bdf3e5f1
+content_hash: sha256:81383011672486873318042d76a3d3089dd454c9a9b066758330c676db127650
 ---
 
 保存控件允许用户通过点击按钮临时获取存储权限，无需权限弹窗确认。
@@ -16,7 +16,7 @@ content_hash: sha256:59d6f777dd287a6e7b2f4b5ab021e2b8a73afcf5985fb6c49768a1d1bdf
 
 保存控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/y0vXBRWXSWO6vjZStiG1uA/zh-cn_image_0000002747210983.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/SPiiKQA7QMepT8875Pt88A/zh-cn_image_0000002753295169.png)
 
 ## 约束与限制
 

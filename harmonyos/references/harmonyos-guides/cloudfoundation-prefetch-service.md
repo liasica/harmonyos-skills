@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 预加载
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:48:45+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:02:41+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:dfd1714a1b6d7e12b48fc86aae8125c10ba84e0c11246a0ac8af015df3a364c7
 ---
 

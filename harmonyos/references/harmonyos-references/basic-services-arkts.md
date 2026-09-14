@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/basic-ser
 title: ArkTS API
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API
 category: harmonyos-references
-scraped_at: 2026-04-28T08:09:24+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-09-15T07:07:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:3dbf46f575079887b54e319ab15e5f2bc311f4d77fd11b8d8efe7c03b006da77
 ---
 

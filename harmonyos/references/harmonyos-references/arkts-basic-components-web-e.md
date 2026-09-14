@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Enums
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2fae9e4a9674f0fd1b9e8e1dee04cd925180906b3db5418d41f18a4b5dfefe4c
+scraped_at: 2026-09-15T07:05:55+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:74fce9d5b934c0923dae9ed322980cc68c2b0347b88265c340be5a798dc89492
 ---
 
 **说明** 
@@ -376,7 +376,7 @@ ProtectedResourceType枚举定义了Web组件需要访问的受保护资源类�
 | RESIZE\_VISUAL | 0 | 软键盘避让时，仅调整可视视口大小，不调整布局视口大小。 |
 | RESIZE\_CONTENT | 1 | 默认值，软键盘避让时，同时调整可视视口和布局视口的大小。 |
 | OVERLAYS\_CONTENT | 2 | 不调整任何视口大小，不会触发软键盘避让。 |
-| RETURN\_TO\_UICONTEXT22+ | 3 | Web组件的软键盘避让行为将跟随UIcontext设置的[KeyboardAvoidMode](arkts-apis-uicontext-e.md#keyboardavoidmode11)模式，Web组件不再处理组件的避让。 |
+| RETURN\_TO\_UICONTEXT22+ | 3 | Web组件的软键盘避让行为将跟随UIContext设置的[KeyboardAvoidMode](arkts-apis-uicontext-e.md#keyboardavoidmode11)模式，Web组件不再处理组件的避让。 |
 
 ## WebElementType13+
 

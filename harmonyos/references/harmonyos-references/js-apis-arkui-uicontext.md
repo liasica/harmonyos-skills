@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.UIContext (UIContext)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:18+08:00
-doc_updated_at: 2026-08-07
+scraped_at: 2026-09-15T07:04:33+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:4417256d5d3983ca50e60bf247c0d5328c7516c6c9c71bccf2d3f81ea3703b64
 ---
 

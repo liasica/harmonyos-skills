@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unused
 title: "@typescript-eslint/no-unused-vars"
 breadcrumb: 指南 > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unused-vars
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:51+08:00
-doc_updated_at: 2026-01-15
+scraped_at: 2026-09-15T07:03:39+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:ebf2c11b97ec5526e183fb2612d8f50816cd711bfb5dadd7f53c00b7ec87f512
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusabl
 title: "@Reusable装饰器：V1组件复用"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > @Reusable装饰器：V1组件复用
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b951285c309e17ee7e42c98a4710fcaa90bd9b528e153f03db212c326540ea22
+scraped_at: 2026-09-15T07:01:19+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:df8cb71399d2142cc6002dd016afde77f09491abeb18eb0cc010e1007c122a94
 ---
 
 [@Reusable](../harmonyos-references/ts-custom-component-decorator-reusable.md#reusable)装饰的自定义组件支持组件复用。当自定义组件从组件树上移除时，会被存入缓存池，后续在创建相同类型的组件节点时，将优先复用缓存池中的组件对象，从而避免重复创建和销毁，提升性能。
@@ -966,7 +966,7 @@ class ListItemObject {
 
 使用aboutToReuse可以在Grid滑动时，从复用缓存中加入到组件树之前触发，从而更新组件状态变量，展示正确内容。
 
-需要注意的是无需在aboutToReuse中对[@Link](arkts-link.md)、[@StorageLink](arkts-appstorage.md#storagelink)、[@ObjectLink](arkts-observed-and-objectlink.md)、[@Consume](arkts-provide-and-consume.md)等自动更新值的状态变量进行更新，可能触发不必要的组件刷新。
+需要注意的是无需在aboutToReuse中对[@Link](arkts-link.md)、[@StorageLink](arkts-appstorage.md#storagelink)、[@ObjectLink](arkts-observed-and-objectlink.md)、[@Consume](arkts-provide-and-consume.md)等自动更新值的状态变量进行更新，否则可能触发不必要的组件刷新。
 
 ```typescript
 // MyDataSource类实现IDataSource接口。

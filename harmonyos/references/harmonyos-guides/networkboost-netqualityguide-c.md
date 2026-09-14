@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 网络质量 (C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 网络质量 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:43:58+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-09-15T07:02:00+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:f52d4f14553f1d671ad2acbf1abb033d936ae61160d45df1a6c3c70022909237
 ---
 

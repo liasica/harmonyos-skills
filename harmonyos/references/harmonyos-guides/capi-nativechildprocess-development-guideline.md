@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/capi-nativech
 title: 子进程开发指导（C/C++）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 扩展进程开发指导 > 子进程开发指导（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:704b3552c81b84acd891be5768c2cffd4a38ebf2cd425c02ee008742b20f974d
+scraped_at: 2026-09-15T07:01:08+08:00
+doc_updated_at: 2026-09-14
+content_hash: sha256:3ef67dce4055cea6f9f7d82e6ebabd6a382afcfe37e7c63d4e65c8ff9ed6db91
 ---
 
 ## 概述
@@ -50,7 +50,7 @@ content_hash: sha256:704b3552c81b84acd891be5768c2cffd4a38ebf2cd425c02ee008742b20
    ```
 2. 在子进程中实现必要的导出方法。
 
-   在子进程中，实现必要的两个函数**NativeChildProcess\_OnConnect**及**NativeChildProcess\_MainProc**并导出（假设代码所在的文件名为ChildProcessSample.cpp）。其中NativeChildProcess\_OnConnect方法返回的OHIPCRemoteStub对象负责与主进程进行IPC通信，具体实现方法请参考[IPC通信开发指导（C/C++)](ipc-capi-development-guideline.md)，本文不再赘述。
+   在子进程中，实现必要的两个函数**NativeChildProcess\_OnConnect**及**NativeChildProcess\_MainProc**并导出（假设代码所在的文件名为ChildProcessSample.cpp）。其中NativeChildProcess\_OnConnect方法返回的OHIPCRemoteStub对象负责与主进程进行IPC通信，具体实现方法请参考[IPC通信开发指导（C/C++）](ipc-capi-development-guideline.md)，本文不再赘述。
 
    子进程启动后会先调用NativeChildProcess\_OnConnect获取IPC Stub对象，之后再调用NativeChildProcess\_MainProc移交主线程控制权，该函数返回后子进程随即退出。
 
@@ -153,10 +153,10 @@ content_hash: sha256:704b3552c81b84acd891be5768c2cffd4a38ebf2cd425c02ee008742b20
    }
    ```
 
-   回调函数传递的第二个参数OHIPCRemoteProxy对象，会与子进程实现的**NativeChildProcess\_OnConnect**方法返回的OHIPCRemoteStub对象间建立IPC通道，具体使用方法参考[IPC通信开发指导（C/C++)](ipc-capi-development-guideline.md)，本文不再赘述；OHIPCRemoteProxy对象使用完毕后，需要调用[OH\_IPCRemoteProxy\_Destroy](../harmonyos-references/capi-ipc-cremote-object-h.md#oh_ipcremoteproxy_destroy)函数释放。
+   回调函数传递的第二个参数OHIPCRemoteProxy对象，会与子进程实现的**NativeChildProcess\_OnConnect**方法返回的OHIPCRemoteStub对象间建立IPC通道，具体使用方法参考[IPC通信开发指导（C/C++）](ipc-capi-development-guideline.md)，本文不再赘述；OHIPCRemoteProxy对象使用完毕后，需要调用[OH\_IPCRemoteProxy\_Destroy](../harmonyos-references/capi-ipc-cremote-object-h.md#oh_ipcremoteproxy_destroy)函数释放。
 5. 在主进程中启动Native子进程。
 
-   调用[OH\_Ability\_CreateNativeChildProcessWithConfigs](../harmonyos-references/capi-native-child-process-h.md#oh_ability_createnativechildprocesswithconfigs)接口启动Native子进程，可通过[OH\_Ability\_CreateChildProcessConfigs](../harmonyos-references/capi-native-child-process-h.md#oh_ability_createchildprocessconfigs)创建子进程配置信息对象，并按需设置进程名、隔离模式和uid隔离等。需注意返回值为NCP\_NO\_ERROR仅代表成功调用native子进程启动逻辑，实际的启动结果通过回调函数异步通知。需注意**仅允许在主进程中创建子进程**。
+   调用[OH\_Ability\_CreateNativeChildProcessWithConfigs](../harmonyos-references/capi-native-child-process-h.md#oh_ability_createnativechildprocesswithconfigs)接口启动Native子进程，可通过[OH\_Ability\_CreateChildProcessConfigs](../harmonyos-references/capi-native-child-process-h.md#oh_ability_createchildprocessconfigs)创建子进程配置信息对象，并按需设置进程名、隔离模式和uid隔离等。需注意返回值为NCP\_NO\_ERROR仅代表成功调用Native子进程启动逻辑，实际的启动结果通过回调函数异步通知。需注意**仅允许在主进程中创建子进程**。
 
    ```
    #include <IPCKit/ipc_kit.h>
@@ -282,7 +282,7 @@ content_hash: sha256:704b3552c81b84acd891be5768c2cffd4a38ebf2cd425c02ee008742b20
    ```
 4. 在主进程中启动Native子进程。
 
-   调用[OH\_Ability\_StartNativeChildProcessWithConfigs](../harmonyos-references/capi-native-child-process-h.md#oh_ability_startnativechildprocesswithconfigs)接口启动Native子进程，可通过[OH\_Ability\_CreateChildProcessConfigs](../harmonyos-references/capi-native-child-process-h.md#oh_ability_createchildprocessconfigs)创建子进程配置信息对象，并按需设置进程名、隔离模式和uid隔离等。返回值为NCP\_NO\_ERROR代表成功启动native子进程。
+   调用[OH\_Ability\_StartNativeChildProcessWithConfigs](../harmonyos-references/capi-native-child-process-h.md#oh_ability_startnativechildprocesswithconfigs)接口启动Native子进程，可通过[OH\_Ability\_CreateChildProcessConfigs](../harmonyos-references/capi-native-child-process-h.md#oh_ability_createchildprocessconfigs)创建子进程配置信息对象，并按需设置进程名、隔离模式和uid隔离等。返回值为NCP\_NO\_ERROR代表成功启动Native子进程。
 
    ```
    #include <AbilityKit/native_child_process.h>

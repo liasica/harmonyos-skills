@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 游戏启动加速服务
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏启动加速服务
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-09-15T07:02:34+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:0cb60dcb5adf083608c38da9dcec0d8694fa0fa6db483670be8a2304081cdb6a
 ---
 

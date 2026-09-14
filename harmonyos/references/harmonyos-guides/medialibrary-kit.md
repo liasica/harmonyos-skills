@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: Media Library Kit（媒体文件管理服务）
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-06-12
+scraped_at: 2026-09-15T07:02:26+08:00
+doc_updated_at: 2026-09-14
 content_hash: sha256:d7bbf7bd1ddb970781f57100bdb90412899170b3853c06b438fa79f9ca09eb8b
 ---
 

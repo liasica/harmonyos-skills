@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: circle
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > circle
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:51+08:00
+scraped_at: 2026-09-15T07:05:21+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:91fddd1f66a6ce42d1eac234db954d182b84d667038b195ef37eb4cd7cfaa328
+content_hash: sha256:e231ecc011bc7fe0a5ca1fcdc1223dc5b823e053a871598be7c3eaa18ab9bafd
 ---
 
 **说明** 
@@ -45,4 +45,4 @@ content_hash: sha256:91fddd1f66a6ce42d1eac234db954d182b84d667038b195ef37eb4cd7cf
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/NaKv1jHlQmaSz2For0pJcw/zh-cn_image_0000002717773224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/zMago30cRrKGe_yCD4aGog/zh-cn_image_0000002753297349.png)
